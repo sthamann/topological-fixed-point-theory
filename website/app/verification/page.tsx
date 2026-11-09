@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { WOLFRAM_BASE, WOLFRAM_EXTENSION } from "@/lib/verification-runs";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import foundation from "@/lib/foundation-index.json";
@@ -60,7 +61,7 @@ export default async function VerificationPage({ searchParams }: { searchParams:
         <dl className={styles.evidence}>
           <div><dt>Python calculations</dt><dd>Inspect the algorithm, its inputs and its negative controls. Run a browser compatible module here, or use the repository for the complete environment.<a href={`${REPO_URL}/tree/main/verification`} className={styles.textLink}>Browse Python sources</a></dd></div>
           <div><dt>Formal mathematics</dt><dd>Read the actual Lean statement and its assumptions. The carrier formalization has a defined mathematical scope.<a href={`${REPO_URL}/tree/main/experiments/lean4-carrier-rigidity`} className={styles.textLink}>Inspect the Lean formalization</a></dd></div>
-          <div><dt>Independent implementation</dt><dd>The Wolfram implementation checks algebraic results through a separate computational path. The recorded runs report 116/116 base checks and 603/603 extension checks. This is distinct from external experimental replication.<a href={`${REPO_URL}/tree/main/verification/wolfram`} className={styles.textLink}>Read the Wolfram implementation</a></dd></div>
+          <div><dt>Independent implementation</dt><dd>The Wolfram implementation checks algebraic results through a separate computational path. The recorded runs report {WOLFRAM_BASE} base checks and {WOLFRAM_EXTENSION} extension checks. This is distinct from external experimental replication.<a href={`${REPO_URL}/tree/main/verification/wolfram`} className={styles.textLink}>Read the Wolfram implementation</a></dd></div>
           <div><dt>Physical comparison</dt><dd>Read each prediction with its freeze, conditions and failure criterion. A passing mathematical check does not decide the experimental comparison.<Link href="/predictions" className={styles.textLink}>Open the prediction register</Link></dd></div>
         </dl>
       </section>

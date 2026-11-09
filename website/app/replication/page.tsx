@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { WOLFRAM_BASE, WOLFRAM_EXTENSION } from "@/lib/verification-runs";
 import Link from "next/link";
 import { pageMetadata } from "@/lib/seo";
 import { REPO_URL } from "@/lib/utils";
@@ -42,7 +43,7 @@ export default function ReplicationPage() {
     <section className="reference-section" id="other-tools">
       <h2>Wolfram and Lean cover specific statements</h2>
       <dl className="reference-rows">
-        <div><dt>Wolfram</dt><dd>The published record reports 116/116 base checks and 603/603 extension checks. This is a second calculation path for its listed algebraic, identity and lattice results. It is a recorded result with that scope, rather than a new Wolfram execution or an external replication of the whole programme.</dd></div>
+        <div><dt>Wolfram</dt><dd>The published record reports {WOLFRAM_BASE} base checks and {WOLFRAM_EXTENSION} extension checks. This is a second calculation path for its listed algebraic, identity and lattice results. It is a recorded result with that scope, rather than a new Wolfram execution or an external replication of the whole programme.</dd></div>
         <div><dt>Lean</dt><dd>The formalization covers named mathematical statements, including carrier and charge results. Read each theorem, its imported assumptions and the relevant audit instructions. A scoped formalization does not establish the full Standard Model or certify a physical interpretation.</dd></div>
       </dl>
       <p>Python execution, Wolfram evaluation, Lean elaboration and source consistency audits are separate operations. Report which you actually performed and preserve the corresponding output.</p>

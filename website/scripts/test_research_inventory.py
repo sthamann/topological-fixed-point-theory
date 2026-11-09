@@ -1,4 +1,5 @@
 """Focused regression for explicit metadata-only publication omissions."""
+import csv
 import importlib.util
 import json
 from pathlib import Path
@@ -53,6 +54,16 @@ class ResearchInventoryTests(unittest.TestCase):
             self.assertTrue(module["snapshotSourceHref"], module["id"])
             self.assertEqual(module["reviewState"], "registered-source-not-executed")
         self.assertIn("around 2", inventory.module_synopsis("The estimates straddle around 2.")[0])
+
+    def test_reported_wolfram_runs_match_the_ledger(self):
+        root = Path(__file__).resolve().parents[2]
+        constants = (root / "website/lib/verification-runs.ts").read_text()
+        with (root / "verification/status_ledger.csv").open(newline="") as file:
+            claims = {row["claim_id"]: row for row in csv.DictReader(file)}
+        for constant, claim in (("WOLFRAM_BASE", "GATE.WOLFRAM.01"),
+                                ("WOLFRAM_EXTENSION", "GATE.WOLFRAM.02")):
+            count = constants.split(f'export const {constant} = "')[1].split('"')[0]
+            self.assertIn(count, claims[claim]["canonical_status"], claim)
 
     def test_withheld_source_keeps_metadata_and_reason_but_cannot_publish_payload(self):
         ref = {

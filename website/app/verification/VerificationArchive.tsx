@@ -14,6 +14,7 @@ import { ResidualChain } from "@/components/ResidualChain";
 import { OpenGates } from "@/components/OpenGates";
 import { NonRhResearchUpdate } from "@/components/NonRhResearchUpdate";
 import { SCRIPT_TOTAL } from "@/lib/suite";
+import { WOLFRAM_BASE, WOLFRAM_EXTENSION } from "@/lib/verification-runs";
 import { REPO_URL, SITE_URL } from "@/lib/utils";
 
 
@@ -76,7 +77,7 @@ const PATHS: { label: string; value: string; body: string }[] = [
   },
   {
     label: "Wolfram mirror",
-    value: "116/116 + 603/603",
+    value: `${WOLFRAM_BASE} + ${WOLFRAM_EXTENSION}`,
     body: "An independent second path for the exact algebraic / identity / lattice results, on the Wolfram Engine: the verified base file plus the v84+ extension file.",
   },
   {
