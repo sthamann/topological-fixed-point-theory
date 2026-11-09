@@ -71,8 +71,8 @@ const datasetJsonLd = {
 const PATHS: { label: string; value: string; body: string }[] = [
   {
     label: "Python suite",
-    value: `${SCRIPT_TOTAL} checks`,
-    body: "One file per claim cluster; run_all.py ends ALL CHECKS PASSED. Exact sympy where possible, mpmath/numpy otherwise.",
+    value: `${SCRIPT_TOTAL} registered modules`,
+    body: "The registry describes each module's purpose and scope. The dated suite logs record executed results; individual numerical, symbolic and exclusion checks have different meanings.",
   },
   {
     label: "Wolfram mirror",
@@ -82,7 +82,7 @@ const PATHS: { label: string; value: string; body: string }[] = [
   {
     label: "Lean carrier",
     value: "0 sorry",
-    body: "The P2 carrier algebra — hypercharge, anomaly-freedom, integer rigidity — formalised in Lean 4 with only kernel axioms.",
+    body: "Lean checks the carrier polynomial, integer rigidity, hypercharge trace, finite glue and other scoped results. Named seam premises are listed separately in the axiom audit.",
   },
   {
     label: "Status ledger",
@@ -92,7 +92,7 @@ const PATHS: { label: string; value: string; body: string }[] = [
 ];
 
 const MARKERS: { m: string; meaning: string; tone: string }[] = [
-  { m: "[E]", meaning: "exact / machine-proven (fine types: identity, lattice/Lie, Lean-formalised, numerical fixed point)", tone: "text-emerald-800 bg-emerald-500/15 ring-emerald-400/30" },
+  { m: "[E]", meaning: "Established in the stated scope. The ledger distinguishes identities, lattice results, Lean theorems and numerical computations.", tone: "text-emerald-800 bg-emerald-500/15 ring-emerald-400/30" },
   { m: "[C]", meaning: "conditional — holds under named hypotheses (fine type: physical bridge / readout)", tone: "text-amber-800 bg-amber-500/15 ring-amber-400/30" },
   { m: "[O]", meaning: "open / axiom — declared input or genuine gap", tone: "text-rose-800 bg-rose-500/15 ring-rose-400/30" },
   { m: "[X]", meaning: "falsifiable kill test (committed in advance)", tone: "text-blue-800 bg-blue-500/15 ring-blue-400/30" },
@@ -105,7 +105,7 @@ const REVIEWER_MAP: { label: string; marker: string; tone: string; items: string
     tone: "border-emerald-400/30 bg-emerald-500/5",
     items: [
       "Anchor a = (1,1,2); the E₈ glue D₅⊕A₃+μ₄ ⇒ E₈",
-      "Gauge group, 3 families, hypercharge (Lean-formalised)",
+      "Lean carrier algebra, including hypercharge, alongside the geometric family construction",
       "α⁻¹ = 137.0359992 — unique root of the self-consistent closure F_U(1)=0",
       "Flavor operator ladder (Q,K,R,L), quark/lepton ratios",
       "θ_QCD = 0, Higgs uniqueness, the order-30 Coxeter cycle",
@@ -116,7 +116,7 @@ const REVIEWER_MAP: { label: string; marker: string; tone: string; items: string
     marker: "[C]",
     tone: "border-amber-400/30 bg-amber-500/5",
     items: [
-      "Reflection positivity + gap (Decoupling Theorem, Δ_eff = 1.648)",
+      "Reflection positivity and the gap in the stated transfer model. R082 leaves the metric transfer comparison open.",
       "G_net algebra + AQFT machinery [E]; seam coupling [C] closed modulo cited theorems (v367/v368 + v376–v379, ground-state witnesses v489/v490)",
       "F_transfer: Koide, η_B, axion relic, m_p/m_e — runnable typed solvers (v371–v375)",
       "Scheme layer / QCD + EW matching for absolute masses",

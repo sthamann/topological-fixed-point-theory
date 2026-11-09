@@ -9,6 +9,16 @@ import summary from "@/lib/research-summary.json";
 import { VerificationTools } from "./VerificationTools";
 import styles from "./verification.module.css";
 
+const leanRoot = `${REPO_URL}/blob/main/experiments/lean4-carrier-rigidity`;
+const leanExamples = [
+  { file: "CarrierRankUniqueness", title: "Carrier rank", detail: "The Pascal carrier equation has the unique solution g = 5." },
+  { file: "Hypercharge", title: "Hypercharge", detail: "The specified 3+2 carrier has the stated diagonal charges, zero trace and carrier polynomial." },
+  { file: "GlueUniqueness", title: "Finite lattice glue", detail: "The isotropic glue for the stated discriminant form is unique up to sheet exchange. The carrier index arithmetic is exact." },
+  { file: "HammingCode", title: "Finite code structure", detail: "The Hamming code properties are checked on the explicit finite code." },
+  { file: "SeamDeckClosure", title: "Conditional clock theorem", detail: "Mark locality implies clock invariance in the given model. The physical seam must still be shown to satisfy mark locality." },
+  { file: "SeamScalingLimit", title: "Conditional continuum interface", detail: "The reduction uses named scaling limit and identification hypotheses. Its Lean statement records those inputs." },
+];
+
 export const metadata: Metadata = pageMetadata("/verification");
 
 export default async function VerificationPage({ searchParams }: { searchParams: Promise<Record<string, string | string[] | undefined>> }) {
@@ -23,6 +33,7 @@ export default async function VerificationPage({ searchParams }: { searchParams:
         <nav className={styles.actions} aria-label="Verification sections">
           <a href="#first-check" className={styles.primary}>Try one check <ArrowRight size={17} aria-hidden /></a>
           <a href="#module-catalog" className={styles.secondary}>Find a verification module</a>
+          <a href="#formal-scope" className={styles.textLink}>See what Lean proves</a>
           <a href="#reproduce" className={styles.textLink}>Reproduce locally</a>
           <a href="#dag" className={styles.textLink}>All technical tools</a>
         </nav>
@@ -37,6 +48,8 @@ export default async function VerificationPage({ searchParams }: { searchParams:
       </section>
       <section id="module-catalog" className={styles.section}>
         <div className={styles.sectionIntro}><h2>Find the source behind a check.</h2></div>
+        <p className={styles.note}>The dated Python suite record includes four shards on each of Python 3.11 and 3.12. Read the job logs for the recorded run. The entries below describe what the modules check and link to their evidence.</p>
+        <a className={styles.textLink} href={`${REPO_URL}/actions/runs/42232789571`}>Open the 6 November 2026 Python suite run</a>
         <ModuleCatalog modules={foundation.modules} query={single(params.moduleQuery)} cluster={single(params.moduleCluster)} requestedPage={single(params.catalogPage)} />
       </section>
       <section className={styles.section}>
@@ -50,6 +63,23 @@ export default async function VerificationPage({ searchParams }: { searchParams:
           <div><dt>Independent implementation</dt><dd>The Wolfram implementation checks algebraic results through a separate computational path. The recorded runs report 116/116 base checks and 603/603 extension checks. This is distinct from external experimental replication.<a href={`${REPO_URL}/tree/main/verification/wolfram`} className={styles.textLink}>Read the Wolfram implementation</a></dd></div>
           <div><dt>Physical comparison</dt><dd>Read each prediction with its freeze, conditions and failure criterion. A passing mathematical check does not decide the experimental comparison.<Link href="/predictions" className={styles.textLink}>Open the prediction register</Link></dd></div>
         </dl>
+      </section>
+      <section id="formal-scope" className={styles.section}>
+        <div className={styles.sectionIntro}>
+          <h2>What Lean proves and what it assumes.</h2>
+          <p>The public source registry indexes {foundation.coverage.publicPaperRegistry.lean_modules} Lean files and {foundation.coverage.publicPaperRegistry.lean_declarations} declarations. The declarations include definitions, interfaces and theorems. Each theorem has its own hypotheses.</p>
+        </div>
+        <dl className={styles.evidence}>
+          {leanExamples.map(item => (
+            <div key={item.file}><dt>{item.title}</dt><dd>{item.detail}<a className={styles.textLink} href={`${leanRoot}/TfptCarrier/${item.file}.lean`}>Read the Lean statements</a></dd></div>
+          ))}
+        </dl>
+        <p className={styles.note}>The CI core checks theorem signatures and declared axiom dependencies. Named seam assumptions remain explicit in the corresponding proofs. The physical identification of the original interacting source, full 3+1D dynamics and quantum gravity have separate requirements.</p>
+        <div className={styles.actions}>
+          <a className={styles.textLink} href={`${REPO_URL}/actions/runs/39106450077`}>Read the 18 October 2026 Lean core run</a>
+          <a className={styles.textLink} href={`${leanRoot}/AUDIT_TRANSCRIPT.txt`}>Read the historical full audit transcript</a>
+          <a className={styles.textLink} href={`${leanRoot}/TfptCarrier/AxiomCheck.lean`}>Inspect the axiom checks</a>
+        </div>
       </section>
       <section id="reproduce" className={styles.section}>
         <div className={styles.sectionIntro}>

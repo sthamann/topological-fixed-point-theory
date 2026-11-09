@@ -37,7 +37,7 @@ ADMIN_IDS = {
 # These patterns remove conversation/agent provenance, personal filesystem paths,
 # and execution identifiers from distributed excerpts, never mathematical symbols.
 PRIVATE = re.compile(r'(?i)(?:\b(?:stefan|user|nutzer|chatgpt|claude\w*|codex|grok\w*|kimi)\b|/Users/|/home/|local_private|\.env\b|session[ _-]?(?:id|uuid)|[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}|(?:api[_-]?key|access[_-]?token|authorization)\s*[:=])')
-NARRATIVE = re.compile(r'(?i)(?:\b(?:session|sitzung|consultation|conversation|chat|collaboration|reviewer|prompt|task.workspace|raw.task|raw.output)\b|(?:round|runde)\s*\d+)')
+NARRATIVE = re.compile(r'(?i)(?:\b(?:session|sitzung|consultation|conversation|chat|collaboration|reviewer|prompt|task.workspace|raw.task|raw.output)\b|\b(?:round|runde)\s*\d+\b)')
 
 def sha(data): return hashlib.sha256(data).hexdigest()
 def encode(v): return (json.dumps(v, ensure_ascii=False, indent=2) + '\n').encode()
@@ -75,6 +75,21 @@ def safe_text(value):
   new,n=re.subn(pattern,replacement,text,flags=re.I)
   if n: edits.append('Non-scientific attribution omitted from public display.');text=new
  return text.strip(), list(dict.fromkeys(edits))
+
+def module_synopsis(value):
+ """Remove review logistics while preserving the registered calculation and scope."""
+ text, edits = safe_text({'en':value})
+ for pattern, replacement in [
+  (r'(?i)\b(?:external[- ]review|promote|review)[- ](?:runde|round)\s+\d{4}-\d{2}-\d{2}\b', 'recorded review'),
+  (r'(?i)\b(?:round|runde)\s+\d+\b', 'the documented check'),
+  (r'(?i)\breviewer\b', 'review'),
+ ]:
+  text, count = re.subn(pattern, replacement, text)
+  if count: edits.append('Non-scientific attribution omitted from public display.')
+ if PRIVATE.search(text) or NARRATIVE.search(text):
+  return '', ['Read the registered original description for the full scope.']
+ return text, list(dict.fromkeys(edits))
+
 
 def excerpt_bytes(path, raw, start, end):
  lines=raw.decode('utf-8').splitlines(); chosen=lines[start-1:end]
@@ -321,8 +336,7 @@ def foundation_snapshot(root, snap, publication_root=None):
   path='verification/'+s['id']+'.py';eid='python_verification:'+path;e=evidence[eid]
   actual=sha((publication_root/path).read_bytes());source_checks.append({'id':s['id'],'path':path,'expectedSha256':e['sha256'],'actualSha256':actual,'current':actual==e['sha256']})
   assert actual==e['sha256'],f'Public registry module source is stale: {path}'
-  synopsis,edits=safe_text({'en':s['descriptionEN']})
-  if PRIVATE.search(synopsis) or NARRATIVE.search(synopsis):synopsis='';edits.append('Non-scientific synopsis omitted.')
+  synopsis,edits=module_synopsis(s['descriptionEN'])
   ids=sorted(cited[eid])
   modules.append({'id':s['id'],'filename':Path(path).name,'path':path,'cluster':s['cluster'],
    'synopsis':synopsis,'publicationNotes':edits,'sourceHref':'/documentation?evidence='+quote(eid,safe=''),

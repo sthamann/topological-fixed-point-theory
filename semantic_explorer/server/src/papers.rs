@@ -437,6 +437,30 @@ fn query_tokens(query: &str) -> Vec<String> {
         .collect()
 }
 
+// Paper bodies are often English even when a German query or an unavailable
+// annotation sends the search through the lexical path.
+fn lexical_aliases(term: &str) -> &'static [&'static str] {
+    match term {
+        "cliffordquelle" => &["clifford"],
+        "transferkern" => &["transfer kernel"],
+        "hintergrund" => &["background"],
+        "gekoppelt" | "gekoppelte" => &["coupled"],
+        "ausschluss" => &["exclusion", "excluded"],
+        "residuenmatrix" => &["residue matrix"],
+        "quarkmassen" => &["quark masses"],
+        "skala" => &["scale"],
+        "masselücke" => &["mass gap"],
+        "brückenmaß" | "brückenmaßes" => &["bridge measure"],
+        "clusterbildung" => &["clustering"],
+        "hamiltonkasten" => &["finite box", "hamiltonian"],
+        "vollständigkeit" => &["completeness"],
+        "thermodynamischer" | "thermodynamischen" | "thermodynamische" => &["thermodynamic"],
+        "kontinuumslimes" | "kontinuumsgrenze" => &["continuum limit", "continuum"],
+        "infrarot" => &["infrared", "ir universality"],
+        _ => &[],
+    }
+}
+
 fn clipped(s: &str, cap: usize) -> String {
     s.chars().take(cap).collect()
 }
@@ -734,7 +758,13 @@ pub fn query(
                 eligible_nodes += 1;
                 let current = observed_freshness(n, g, root, &mut fresh)["current"] == true;
                 let text = searchable(n, current).to_lowercase();
-                let lexical = tokens.iter().filter(|t| text.contains(t.as_str())).count() as f32;
+                let heading = n.label.to_lowercase();
+                let lexical: f32 = tokens.iter().map(|term| {
+                    let aliases = lexical_aliases(term);
+                    let matches = |field: &str| field.contains(term.as_str())
+                        || aliases.iter().any(|alias| field.contains(alias));
+                    if matches(&heading) { 2.0 } else if matches(&text) { 1.0 } else { 0.0 }
+                }).sum();
                 let embedding = if summary_current(n, current) {
                     crate::service::embedding(n)
                 } else {
@@ -1043,6 +1073,16 @@ mod tests {
         )
         .is_err());
     }
+    #[test]
+    fn german_query_finds_current_english_body_without_annotation() {
+        let mut f = Fixture::new();
+        f.graph.nodes[0].label = "Clifford transfer kernel".into();
+        f.graph.nodes[0].attrs["summary_state"] = json!("stale");
+        let hits = f.query("search_papers", json!({"query":"Welchen Transferkern hat die Cliffordquelle?"}));
+        assert_eq!(hits["items"][0]["id"], "section:active");
+        assert_eq!(hits["items"][0]["summary_current"], false);
+    }
+
     #[test]
     fn stale_paper_annotations_do_not_rank_or_display_as_current() {
         let mut f = Fixture::new();

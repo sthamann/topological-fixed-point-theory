@@ -30,10 +30,29 @@ class ResearchInventoryTests(unittest.TestCase):
         )
         for area in areas:
             self.assertIn(area["evidence"], evidence, area["id"])
+            self.assertTrue(area["scope_kind"], area["id"])
+            self.assertTrue(area["related_evidence"], area["id"])
+            self.assertTrue(set(area["related_evidence"]) <= evidence, area["id"])
             for field in ("title", "result", "scope"):
                 self.assertTrue(all(area[field].get(lang) for lang in ("de", "en")), area["id"])
             self.assertTrue(area["href"].startswith("/") and not area["href"].startswith("//"))
 
+
+    def test_resolved_tasks_and_registered_modules_keep_their_evidence(self):
+        root = Path(__file__).resolve().parents[1]
+        graph = json.loads((root / "lib/semantic-atlas.json").read_text())
+        foundation = json.loads((root / "lib/foundation-index.json").read_text())
+        findings = {finding["id"] for finding in graph["findings"] if finding["sourceRefIds"]}
+        resolved = [task for task in graph["tasks"] if task["status"] == "resolved"]
+        self.assertTrue(resolved)
+        for task in resolved:
+            self.assertTrue(task["resolutionIds"], task["id"])
+            self.assertTrue(set(task["resolutionIds"]) <= findings, task["id"])
+        for module in foundation["modules"]:
+            self.assertTrue(module["synopsis"], module["id"])
+            self.assertTrue(module["snapshotSourceHref"], module["id"])
+            self.assertEqual(module["reviewState"], "registered-source-not-executed")
+        self.assertIn("around 2", inventory.module_synopsis("The estimates straddle around 2.")[0])
 
     def test_withheld_source_keeps_metadata_and_reason_but_cannot_publish_payload(self):
         ref = {

@@ -7,6 +7,8 @@ pub fn areas(lang: &str, compact: bool) -> Value {
     json!(entries.iter().map(|area| {
         let mut entry = json!({"id":area["id"], "title":area["title"][lang], "evidence":area["evidence"]});
         if !compact {
+            entry["scope_kind"] = area["scope_kind"].clone();
+            entry["related_evidence"] = area["related_evidence"].clone();
             entry["result"] = area["result"][lang].clone();
             entry["scope"] = area["scope"][lang].clone();
             entry["public_href"] = area["href"].clone();

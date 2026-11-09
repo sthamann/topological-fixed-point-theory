@@ -50,7 +50,7 @@ export function ModuleCatalog({ modules, query = "", cluster = "", requestedPage
         <h3 className="font-serif text-xl font-semibold text-slate-950">{moduleLabel(module)}</h3>
         <p className="mt-1 break-words text-sm text-slate-600">{module.filename} · {module.cluster.replaceAll("_", " ")}</p>
         <details className="mt-2">
-          <summary className="cursor-pointer py-2 font-medium text-blue-800">Read the original description and evidence links</summary>
+          <summary className="cursor-pointer py-2 font-medium text-blue-800">Read the registered purpose, outcome and evidence links</summary>
           <p className="mt-3 max-w-3xl whitespace-pre-line text-sm leading-relaxed">{module.synopsis || "No descriptive synopsis is recorded for this module. Inspect the original source for its statement and checks."}</p>
           {module.pubMirrorMatchesSnapshot===false&&<p className="reference-note">This research snapshot and the older executable publication are different versions. Open the source record to inspect both.</p>}
           <a href={module.sourceHref} className="mt-3 inline-flex min-h-11 items-center text-sm text-blue-800 underline underline-offset-4">Read the original Python source</a>
