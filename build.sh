@@ -115,7 +115,7 @@ run_gen() {  # regenerate every single-source surface (cheap, stdlib python only
   python3 "$ROOT/verification/make_content_registry.py" || exit 1
   # The local knowledge atlas is maintained by its owning project. Public
   # checkouts do not ship local research state.
-  if [ -f "$ROOT/semantic_explorer/refresh.py" ]; then
+  if [ -f "$ROOT/semantic_explorer/refresh.py" ] && [ -f "$ROOT/semantic_explorer/data/knowledge.json" ]; then
     python3 "$ROOT/semantic_explorer/refresh.py" || exit 1
   fi
 }
@@ -163,7 +163,7 @@ run_audit() {
   echo "== Sync audit =="
   python3 "$ROOT/verification/make_content_registry.py" --check || exit 1
   python3 "$ROOT/verification/audit_sync.py" || exit 1
-  if [ -f "$ROOT/semantic_explorer/refresh.py" ]; then
+  if [ -f "$ROOT/semantic_explorer/refresh.py" ] && [ -f "$ROOT/semantic_explorer/data/knowledge.json" ]; then
     echo "== TFPT knowledge atlas =="
     python3 "$ROOT/semantic_explorer/refresh.py" --check || exit 1
   fi
