@@ -1,0 +1,37 @@
+TFPT scientific source excerpt
+Original repository path: experiments/theory-contracts/joint-native-algebra-selection-20261016/check_original_current_schur_kernel.py
+Original file SHA-256: 7420c0d2221cc9292f498230362445e06e2b7a1614130a9f359c0e2b57034e8d
+Inclusive original lines: 52-80
+Line numbers below refer to the original source.
+This bounded excerpt is source evidence; it is not a new proof/checker run.
+Conversation metadata and personal execution details are omitted where indicated.
+
+000052 | def lower(v,mode):
+000053 |     out={}
+000054 |     for lam,c in v.items():
+000055 |         for mu,sign in ribbons(lam).get(mode,[]):out[mu]=out.get(mu,Q.zero)+sign*c
+000056 |     return car.clean(out)
+000057 | 
+000058 | @lru_cache(None)
+000059 | def add_ribbons(lam,mode):
+000060 |     """Power-sum multiplication via infinite Maya beads, no finite-window cutoff."""
+000061 |     count=len(lam)+mode+2
+000062 |     occupied=[(lam[i-1] if i<=len(lam) else 0)-i for i in range(1,count+1)]
+000063 |     occ=set(occupied);out=[]
+000064 |     for old in occupied:
+000065 |         new=old+mode
+000066 |         if new in occ:continue
+000067 |         sign=(-1)**sum(old<x<new for x in occupied)
+000068 |         target=sorted(occ-{old}|{new},reverse=True)
+000069 |         mu=tuple(v+i for i,v in enumerate(target,1))
+000070 |         m.need(all(x>=0 for x in mu),'Infinite Maya tail is fully retained')
+000071 |         mu=tuple(x for x in mu if x)
+000072 |         m.need(sum(mu)==sum(lam)+mode,'Power sum raises exactly source degree')
+000073 |         out.append((mu,sign))
+000074 |     return out
+000075 | 
+000076 | def raise_mode(v,mode):
+000077 |     out={}
+000078 |     for lam,c in v.items():
+000079 |         for mu,sign in add_ribbons(lam,mode):out[mu]=out.get(mu,Q.zero)+sign*c
+000080 |     return car.clean(out)

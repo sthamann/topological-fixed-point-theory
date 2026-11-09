@@ -1,0 +1,33 @@
+TFPT scientific source excerpt
+Original repository path: experiments/theory-contracts/original-paper-source-reconciliation-20261102/fieldsearch_20261106P/evidence/GA-ASSESSMENT.md
+Original file SHA-256: cfab671fbed47174c6790c8fac61ec62dc49e289578182e89671532f9ebd2a77
+Inclusive original lines: 1-25
+Line numbers below refer to the original source.
+This bounded excerpt is source evidence; it is not a new proof/checker run.
+Conversation metadata and personal execution details are omitted where indicated.
+
+000001 | # Ist die genetische Suche hier sinnvoll?
+000002 | 
+000003 | Im aktuellen Feldprogramm bringt ein längerer genetischer Lauf noch keine physikalisch gerichtete Suche. Ich habe den gesamten vorhandenen Raum mit 27 Konfigurationen ausgewertet. Alle 27 erhalten dieselbe Bewertung. Der Algorithmus kann also verschiedene Felder erzeugen, aber anhand der gegenwärtigen Zielfunktion keines davon als physikalisch besser erkennen.
+000004 | 
+000005 | Der Test verwendet genau den bestehenden Feldplugin und seine unveränderte Bewertung. Vier Ergebnisse stammen aus dem bereits ausgeführten Lauf, die übrigen 23 wurden durch denselben Programmeinstieg ergänzt. Die 23 zusätzlichen Auswertungen brauchten lokal rund 0,063 Sekunden. Jede Konfiguration enthält die vollständige 384×384 Matrix aus 96 internen Komponenten und vier räumlichen Fouriermoden. Es wurde kein zusätzlicher genetischer Mehrgenerationenlauf gestartet.
+000006 | 
+000007 | | Tatsächlicher Befund | Ergebnis |
+000008 | | --- | --- |
+000009 | | Vollständig ausgewertete deklarierte Konfigurationen | 27 von 27 |
+000010 | | Unterschiedliche Zielfunktionssignaturen | 1 |
+000011 | | Signatur für jede Konfiguration | `[0, 1]` |
+000012 | | Verletzungen der implementierten Bedingungen pro Konfiguration | 0 |
+000013 | | Größter numerischer Rest dieser Operatorbedingungen | 0 |
+000014 | | Verfügbare ursprüngliche Beiträge W0, WU, WY, WUY | jeweils 0 von 27 |
+000015 | | Verfügbare ursprüngliche Feldmassen | 0 von 27 |
+000016 | 
+000017 | Die erste Zahl der Bewertung zählt harte Verletzungen. Sie ist überall null. Die zweite Zahl zeigt, dass die ursprünglichen Quellenbeiträge fehlen. Sie ist überall eins und liefert keinen physikalischen Vergleich zwischen den Feldern. Auch `feasible=true` bedeutet hier ausschließlich, dass die implementierten Bedingungen pro Konfiguration erfüllt sind.
+000018 | 
+000019 | Die Felder sind tatsächlich verschieden: Die diagnostische Norm der Mischung verschiedener räumlicher Moden reicht von null bis etwa 3,9406. Diese Norm ist kein aus der ursprünglichen gemeinsamen Quelle hergeleitetes Auswahlkriterium. Sie wurde daher nicht nachträglich zur Fitness gemacht. Unterschiedliche Gene und Diversitätsmechanismen können den Raum weiter erkunden, liefern bei der einheitlichen Zielfunktion aber keinen physikalisch begründeten Fortschritt.
+000020 | 
+000021 | Für die jetzigen 27 Konfigurationen ist die vollständige Aufzählung bereits die abgeschlossene sinnvolle Suche innerhalb dieses ausdrücklich kleinen Diagnosefensters. Für einen größeren Raum wird die genetische Gegenfallsuche dann nützlich, wenn die ursprüngliche Quelle eine berechenbare Antwort oder eine konkrete Verletzung liefert, anhand derer Kandidaten verglichen werden können. Der erste fehlende Programmeingang bleibt `original_blocked_fiber_packet` mit den tatsächlichen markierten Beiträgen und der ursprünglichen Feldmasse.
+000022 | 
+000023 | Die gemeinsame Quellenintegration behält ihren eigenen Auswertungsweg. Genetische Auswahl, bevorzugte Kandidaten und ein Archiv eindeutiger Felder dürfen dabei keine ursprünglichen Gewichte oder die Häufigkeit gezogener Konfigurationen ersetzen. Dieser Test berechnet keine ganze Feldquelle und beweist keinen physikalischen Gesamtabschluss.
+000024 | 
+000025 | Daten und alle 27 Einzelbewertungen stehen in `results.json`, die beobachtete Ausführung in `run.log`. `assess.py` verwendet die vorhandene Plugin API. Die eingefrorenen Dateien unter runtime, domain und source wurden gegen STATUS.json geprüft und sind unverändert.

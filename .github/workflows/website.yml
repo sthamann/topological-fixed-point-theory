@@ -8,10 +8,12 @@ on:
     branches: [main]
     paths:
       - "website/**"
+      - "semantic_explorer/**"
       - ".github/workflows/website.yml"
   pull_request:
     paths:
       - "website/**"
+      - "semantic_explorer/**"
       - ".github/workflows/website.yml"
   workflow_dispatch:
 
@@ -37,5 +39,18 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      - name: Check published Atlas inventory and shared evidence links
+        run: |
+          python3 scripts/build-research-inventory.py --check
+          python3 -m unittest discover -s scripts -p 'test_research_inventory.py'
+
       - name: Production build
         run: npm run build
+
+
+  atlas:
+    name: Atlas response and freshness tests
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: cargo test --locked --manifest-path semantic_explorer/server/Cargo.toml

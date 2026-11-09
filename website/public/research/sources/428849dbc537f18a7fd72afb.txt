@@ -1,0 +1,17 @@
+TFPT scientific source excerpt
+Original repository path: experiments/theory-contracts/chat-triangulation-20261108/check_quarter_reference.py
+Original file SHA-256: ba6ee130b89a0088f5bf22d94417da2711f9aced6e7ec93acea3931938638e3a
+Inclusive original lines: 8-16
+Line numbers below refer to the original source.
+This bounded excerpt is source evidence; it is not a new proof/checker run.
+Conversation metadata and personal execution details are omitted where indicated.
+
+000008 | mp.mp.dps = 60
+000009 | rng = np.random.default_rng(252)
+000010 | yukawa = tuple(rng.normal(size=(3, 3)) + 1j * rng.normal(size=(3, 3)) for _ in range(4))
+000011 | raw = rng.normal(size=(3, 3))
+000012 | majorana = raw + raw.T
+000013 | zero = np.zeros((3, 3))
+000014 | mass_matrix = native.full_D(zero, zero, zero, zero, majorana)
+000015 | higgs_matrix = native.full_D(*yukawa, zero)
+000016 | grading = native.grading()

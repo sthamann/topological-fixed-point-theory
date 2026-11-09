@@ -1,4 +1,6 @@
 import Link from "next/link";
+import atlasStatus from "@/lib/atlas-status.json";
+import { SCRIPT_TOTAL } from "@/lib/suite";
 import { ArrowRight, BookOpen, Check, CircleHelp, FlaskConical } from "lucide-react";
 import { semanticAtlas, type AtlasFinding, type AtlasProblem, type SemanticAtlas } from "@/lib/semantic";
 import { FoundationOverview, FoundationTopicPreview, FoundationSearchMatches } from "./FoundationAtlas";
@@ -67,8 +69,32 @@ export default function ResearchPortal({params}:{params:Record<string,string|und
  return <div className="atlas-shell"><header className="atlas-header"><h1>{title}</h1><p>Follow the published construction into its registered claims, then explore reviewed research questions, attempts and the connections that remain open.</p></header>
  <div className="atlas-layout"><aside className="atlas-sidebar"><h2>Research areas</h2><nav aria-label="Research areas"><Link href="/results" aria-current={!topic&&!question&&!record&&!pattern?"page":undefined}>All areas</Link>{primaryTopics.map(t=><Link key={t.id} href={url({topic:t.id,tab:"foundation"})} aria-current={topic?.id===t.id?"page":undefined}>{t.titleEN}</Link>)}</nav><details><summary>More atlas topics</summary>{data.topics.filter(t=>!primaryTopics.includes(t)).map(t=><Link key={t.id} href={url({topic:t.id,tab:"foundation"})}>{t.titleEN}</Link>)}</details><p className="atlas-snapshot">Atlas snapshot<br/><time dateTime={data.meta.generatedAt}>{data.meta.generatedAt.slice(0,10)}</time><br/><a href="/research/semantic-atlas.json">Download the structured atlas</a></p></aside>
  <div className="atlas-content" id="atlas-content">
- {landing&&<section className="atlas-topic-intro"><h2>The current source result, in one view</h2><p>The existing whole source, field, time, reference and OS transports remain available. The original finite static product family has an evaluated connected response and a strict coupling sign in its stated positive weight class. The latest dynamic tests distinguish an action tail from a physical return kernel, bound the mixed time response and identify the scalar stress channel that tracefree probes miss. The full original field and history response, physical time kernel and common interacting spectrum remain to be evaluated.</p><div className="atlas-inline-links"><Link href="/explain#source">Follow the full source route</Link><Link href="/results?record=finding%3Adyn20261106n-profile-action-tail-is-not-positive-physical-return">Inspect the physical return test</Link><Link href="/results?record=finding%3Adyn20261106n-scalar-stress-channel-does-not-close-by-tt-probes">Read the scalar stress test</Link></div></section>}
   <form action="/results" className="atlas-search" role="search"><label htmlFor="atlas-query">Search the knowledge and research history</label><div><input id="atlas-query" name="search" defaultValue={search} placeholder="Alpha, a research question, an attempt…"/>{topic&&<input type="hidden" name="topic" value={topic.id}/>}<button type="submit">Search atlas</button></div></form>
+ {landing && (
+   <section className="atlas-topic-intro" aria-labelledby="atlas-overall-status">
+     <h2 id="atlas-overall-status">TFPT research status</h2>
+     <p>Results and their scope across the theory. The current research question follows separately.</p>
+     <dl>
+       {atlasStatus.map(area => (
+         <div key={area.id}>
+           <dt>{area.title.en}</dt>
+           <dd>
+             <p>{area.result.en} {area.id === "verification" && `The public catalogue contains ${SCRIPT_TOTAL} registered Python modules.`}</p>
+             <p>{area.scope.en}</p>
+             <Link href={area.href}>See evidence for {area.title.en.toLowerCase()}</Link>
+           </dd>
+         </div>
+       ))}
+     </dl>
+     <h3 className="atlas-section-title">Research on the common source</h3>
+     <p>R113 asks which time ordered responses survive the original gauge transport and the large space limit. Its research record tracks the dynamic field weights, the full admissibility projection and the resulting physical cross response.</p>
+     <div className="atlas-inline-links">
+       <Link href={url({question:"problem:chat-triangulation-20261108"})}>Read the current source investigation</Link>
+       <Link href="/explain#source">Follow the original source construction</Link>
+     </div>
+   </section>
+ )}
+
  {search && <FoundationSearchMatches search={search}/>}
  {record?<Finding finding={record} data={data} expanded/>:question?<Question problem={question} data={data} page={page}/>:pattern?<section className="atlas-pattern-detail"><h2>{pattern.titleEN}</h2><p>{pattern.summaryEN}</p><h3>Required conditions</h3><ul>{pattern.conditions.map(x=><li key={x}>{x}</li>)}</ul><h3>What this does not establish</h3><ul>{pattern.counterevidence.map(x=><li key={x}>{x}</li>)}</ul><Sources ids={pattern.sourceRefIds} data={data}/><div className="atlas-inline-links">{pattern.relatedIds.filter(id=>id.startsWith("topic:")).map(id=><Link key={id} href={url({topic:id})}>{data.topics.find(t=>t.id===id)?.titleEN||id}</Link>)}</div></section>:<>
  {topic?<section className="atlas-topic-intro"><h2>{topic.titleEN}</h2><FoundationTopicPreview topicId={topic.id}/><p>{plain(topic.summaryEN)}</p><dl><div><dt>Starting structure in the Atlas orientation</dt><dd>{plain(topic.orientation.have_en)}</dd></div><div><dt>Which connection is sought</dt><dd>{plain(topic.orientation.seek_en)}</dd></div><div><dt>How it connects</dt><dd>{plain(topic.orientation.connection_en)}</dd></div></dl>{topicFindings.length>0&&<div className="atlas-topic-reviewed"><h3>Reviewed conclusions to explore</h3>{topicFindings.slice(0,topicFindings.length<=8?8:3).map(f=><Link key={f.id} href={url({record:f.id})}><span>{statusLabel(f.status)}</span><strong>{f.titleEN}</strong><ArrowRight size={18}/></Link>)}</div>}</section>:!search&&tab==="questions"&&!params.all?<><FoundationOverview/><section className="atlas-start"><h2>Follow a current research question.</h2><div className="atlas-question-starts">{entryQuestions.map(entry=>{const p=data.problems.find(p=>p.id===entry.id);return p&&<Link href={url({question:p.id})} key={p.id}><span>{entry.title}</span><p>{entry.text}</p><ArrowRight size={22}/></Link>})}</div><h3 className="atlas-section-title">Connections worth exploring</h3><div className="atlas-pattern-list">{data.patterns.slice(0,5).map(p=><Link key={p.id} href={url({pattern:p.id})}><span>{p.titleEN}</span><ArrowRight size={18}/></Link>)}</div></section></>:null}

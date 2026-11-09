@@ -1,0 +1,24 @@
+TFPT scientific source excerpt
+Original repository path: verification/v252_full_finite_triple.py
+Original file SHA-256: 820254440e178430422e50605067775656236602996307f67c9e69124ba5d163
+Inclusive original lines: 198-213
+Line numbers below refer to the original source.
+This bounded excerpt is source evidence; it is not a new proof/checker run.
+Conversation metadata and personal execution details are omitted where indicated.
+
+000198 | def run():
+000199 |     reset()
+000200 |     print("v252  full 96-dim finite spectral triple (A_F,H_F,D_F,J,gamma): NCG axioms verified")
+000201 | 
+000202 |     rng = np.random.default_rng(252)
+000203 |     K = Kswap()
+000204 |     gamma = grading()
+000205 | 
+000206 |     # tidy O(1) data for the (value-independent) structural axiom checks
+000207 |     def randY():
+000208 |         return rng.normal(size=(NG, NG)) + 1j * rng.normal(size=(NG, NG))
+000209 |     Yu, Yd, Ye, Ynu = randY(), randY(), randY(), randY()
+000210 |     MR0 = rng.normal(size=(NG, NG)); MR = MR0 + MR0.T          # symmetric Majorana
+000211 |     D = full_D(Yu, Yd, Ye, Ynu, MR)
+000212 |     D_noM = full_D(Yu, Yd, Ye, Ynu, np.zeros((NG, NG)))
+000213 | 

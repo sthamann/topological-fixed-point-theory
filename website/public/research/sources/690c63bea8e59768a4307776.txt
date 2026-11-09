@@ -1,0 +1,141 @@
+TFPT scientific source excerpt
+Original repository path: experiments/theory-contracts/original-paper-source-reconciliation-20261102/solutionsearch_20261106R/research_runtime/context.py
+Original file SHA-256: 1d4509f276921f342e301f405674b251e3cfd4513e3527e232673bba011f35bb
+Inclusive original lines: 1-133
+Line numbers below refer to the original source.
+This bounded excerpt is source evidence; it is not a new proof/checker run.
+Conversation metadata and personal execution details are omitted where indicated.
+
+000001 | """Durable complete context with read-only, scientifically scoped originals."""
+000002 | from pathlib import Path
+000003 | import hashlib
+000004 | import json
+000005 | import shutil
+000006 | import sys
+000007 | 
+000008 | BASE = Path(__file__).resolve().parent.parent
+000009 | sys.path.insert(0, str(BASE))
+000010 | from knowledge_context import build_knowledge_context
+000011 | from proposal_context import all_trial_history
+000012 | 
+000013 | TARGET_GUARDRAILS = {
+000014 |     'finding:bounded-fixed-rank-spectral-action-does-not-normalize-noncompact-higgs-volume',
+000015 |     'finding:rec20261103e-high-gap-retains-coupled-higgs-radial-tail',
+000016 |     'finding:positive-spectral-reweighting-does-not-establish-original-source-rp',
+000017 |     'finding:literal-archived-global-rg-kernel-does-not-preserve-finite-measures',
+000018 |     'finding:whole-undecorated-transfer-does-not-determine-original-marked-field-source',
+000019 |     'finding:actual-disjoint-local-weyls-acquire-spurious-commutator-under-bare-native-compression',
+000020 |     'finding:solutionsearch20261106r3-output-search-no-physical-signal',
+000021 | }
+000022 | 
+000023 | 
+000024 | def target_guardrails(program):
+000025 |     found = {}
+000026 |     def visit(value):
+000027 |         if isinstance(value, dict):
+000028 |             if value.get('id') in TARGET_GUARDRAILS and 'sources' in value:
+000029 |                 found[value['id']] = value
+000030 |             for v in value.values():
+000031 |                 visit(v)
+000032 |         elif isinstance(value, list):
+000033 |             for v in value:
+000034 |                 visit(v)
+000035 |     visit(program)
+000036 |     return {'findings': list(found.values()),
+000037 |             'requested_ids_not_found': sorted(TARGET_GUARDRAILS - found.keys()),
+000038 |             'scope': 'Selected source-target guardrails; the full Atlas remains binding, no claim of complete topical coverage'}
+000039 | 
+000040 | 
+000041 | def digest(path):
+000042 |     return hashlib.sha256(Path(path).read_bytes()).hexdigest()
+000043 | 
+000044 | 
+000045 | def write_json(path, value):
+000046 |     path = Path(path)
+000047 |     temp = path.with_suffix(path.suffix + '.tmp')
+000048 |     temp.write_text(json.dumps(value, ensure_ascii=False, indent=2) + '\n')
+000049 |     temp.replace(path)
+000050 | 
+000051 | 
+000052 | def prepare(repo, out):
+000053 |     paths = [repo / 'semantic_explorer/research/program.json',
+000054 |              repo / 'docs/research/fundamental-plan/progress.json',
+000055 |              Path(__file__), Path(__file__).with_name('prompts.py')]
+000056 | [OMITTED: non-scientific conversation or execution metadata]
+000057 | [OMITTED: non-scientific conversation or execution metadata]
+000058 |     paths += reviews
+000059 |     version = hashlib.sha256(''.join(digest(p) for p in paths).encode()).hexdigest()[:20]
+000060 |     folder = out / 'context' / version
+000061 |     manifest_path = folder / 'manifest.json'
+000062 |     if manifest_path.exists():
+000063 |         return json.loads(manifest_path.read_text())
+000064 |     folder.mkdir(parents=True, exist_ok=True)
+000065 |     pack = build_knowledge_context(repo)
+000066 |     write_json(folder / 'full-knowledge-context.json', pack)
+000067 |     guardrails = target_guardrails(json.loads(paths[0].read_text()))
+000068 |     if guardrails['requested_ids_not_found']:
+000069 |         raise FileNotFoundError('Required target-source findings missing: ' + ', '.join(guardrails['requested_ids_not_found']))
+000070 |     write_json(folder / 'target-source-guardrails.json', guardrails)
+000071 |     history = None
+000072 |     history_origin = None
+000073 |     for runs in dict.fromkeys((out.parent, BASE / 'runs')):
+000074 |         if runs.is_dir() and any(runs.glob('*/results.jsonl')):
+000075 |             candidate = all_trial_history(runs)
+000076 |             if candidate['whole_programs']:
+000077 |                 history, history_origin = candidate, str(runs)
+000078 |                 break
+000079 |     if history is None:
+000080 |         # An installed package need not carry mutable runs. Reuse the complete
+000081 |         # snapshot already archived by this same output, including all versions.
+000082 |         archived = [(p, json.loads(p.read_text())) for p in
+000083 |                     (out / 'context').glob('*/all-finite-trial-history.json')]
+000084 |         archived = [(p, h) for p, h in archived if h.get('whole_programs')]
+000085 |         if not archived:
+000086 |             raise FileNotFoundError('No complete prior finite trial history: neither original runs nor an archived context snapshot is available')
+000087 |         path, history = max(archived, key=lambda pair: len(pair[1]['whole_programs']))
+000088 |         history_origin = str(path)
+000089 |     write_json(folder / 'all-finite-trial-history.json', history)
+000090 | [OMITTED: non-scientific conversation or execution metadata]
+000091 |     # home, email, browser, credentials, website or unrelated projects.
+000092 |     roots = [repo / x for x in ('documents', 'docs', 'verification', 'experiments',
+000093 |              'verify', 'wolfram', 'notes', 'research-20261027-source-unification',
+000094 |              'work/contribution20261106Q', '.venv') if (repo / x).exists()]
+000095 |     for q in (out.parent.parent.parent / 'contribution20261106Q',
+000096 |               BASE.parent / 'contribution20261106Q'):
+000097 |         if q.is_dir():
+000098 |             roots.append(q)
+000099 |             break
+000100 |     files = [p for p in repo.iterdir() if p.is_file() and p.suffix == '.tex']
+000101 |     for row in pack['source_files'].values():
+000102 |         p = Path(row['path']); p = p if p.is_absolute() else repo / p
+000103 |         if p.is_file() and p.is_relative_to(repo) and not any(x.startswith('.') for x in p.relative_to(repo).parts):
+000104 |             files.append(p.resolve())
+000105 |     index = {'scientific_readonly_roots': list(map(str, roots)),
+000106 |              'exact_source_files': sorted(set(map(str, files))),
+000107 |              'reviewed_source_files': pack['source_files'], 'source_handles': pack['source_pool']}
+000108 |     write_json(folder / 'source-index.json', index)
+000109 | [OMITTED: non-scientific conversation or execution metadata]
+000110 |                       ('original-integrand-review.txt', BASE / 'source_review/ORIGINAL-FINITE-INTEGRAND-SOURCE-REVIEW.txt'),
+000111 |                       ('original-provenance.json', BASE / 'source_review/original-integrand-provenance.json')]:
+000112 |         shutil.copyfile(src, folder / name)
+000113 |     review_files = []
+000114 |     for src in reviews:
+000115 |         target = folder / src.name
+000116 |         shutil.copyfile(src, target)
+000117 |         review_files.append(str(target))
+000118 |     manifest = {**pack['manifest'], 'context_version': version, 'repo': str(repo),
+000119 |                 'context_dir': str(folder), 'full_context_path': str(folder / 'full-knowledge-context.json'),
+000120 |                 'full_trial_history_path': str(folder / 'all-finite-trial-history.json'),
+000121 |                 'full_trial_history_origin': history_origin,
+000122 |                 'source_index_path': str(folder / 'source-index.json'),
+000123 |                 'scientific_readonly_roots': index['scientific_readonly_roots'],
+000124 |                 'exact_source_files': index['exact_source_files'],
+000125 | [OMITTED: non-scientific conversation or execution metadata]
+000126 |                 'original_integrand_review': str(folder / 'original-integrand-review.txt'),
+000127 |                 'current_claude_reviews': review_files,
+000128 |                 'target_guardrails_path': str(folder / 'target-source-guardrails.json'),
+000129 |                 'fixed_target_guardrails': guardrails,
+000130 |                 'python': str(repo / 'experiments/tfpt-discovery/.venv/bin/python'),
+000131 |                 'global_context_embedded_in_full_context': True}
+000132 |     write_json(manifest_path, manifest)
+000133 |     return manifest

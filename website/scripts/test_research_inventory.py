@@ -1,5 +1,6 @@
 """Focused regression for explicit metadata-only publication omissions."""
 import importlib.util
+import json
 from pathlib import Path
 import tempfile
 import unittest
@@ -14,6 +15,26 @@ spec.loader.exec_module(inventory)
 
 
 class ResearchInventoryTests(unittest.TestCase):
+    def test_shared_status_has_live_public_evidence(self):
+        root = Path(__file__).resolve().parents[1]
+        areas = json.loads((root / "lib/atlas-status.json").read_text())
+        graph = json.loads((root / "lib/semantic-atlas.json").read_text())
+        foundation = json.loads((root / "lib/foundation-index.json").read_text())
+        evidence = {r["id"] for r in graph["findings"] + graph["patterns"]}
+        evidence.update("claim:" + claim["id"] for claim in foundation["claims"])
+        evidence.add("verification/script_registry.csv")
+        self.assertEqual(
+            {a["id"] for a in areas},
+            {"original-source", "compiler", "matter-alpha", "clocks-quantum",
+             "gravity", "verification", "completion"},
+        )
+        for area in areas:
+            self.assertIn(area["evidence"], evidence, area["id"])
+            for field in ("title", "result", "scope"):
+                self.assertTrue(all(area[field].get(lang) for lang in ("de", "en")), area["id"])
+            self.assertTrue(area["href"].startswith("/") and not area["href"].startswith("//"))
+
+
     def test_withheld_source_keeps_metadata_and_reason_but_cannot_publish_payload(self):
         ref = {
             "id": "source:db19a580b8ce8c1fa806be0b",

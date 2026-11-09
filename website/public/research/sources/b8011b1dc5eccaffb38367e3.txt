@@ -1,0 +1,72 @@
+TFPT scientific source excerpt
+Original repository path: experiments/theory-contracts/e-series-compiler-closure-20261023/e7_neutral_quartic_response_20261106.py
+Original file SHA-256: 46b48ebc62e0b862efbad6ce665e741298800805ce71b325492ea5a33aeeaae7
+Inclusive original lines: 1-64
+Line numbers below refer to the original source.
+This bounded excerpt is source evidence; it is not a new proof/checker run.
+Conversation metadata and personal execution details are omitted where indicated.
+
+000001 | """Neutral ordered four-current response realizing the native E7 quartic."""
+000002 | import ast,json,itertools,argparse
+000003 | from pathlib import Path
+000004 | from collections import Counter,defaultdict
+000005 | from fractions import Fraction as F
+000006 | [OMITTED: non-scientific conversation or execution metadata]
+000007 | parser=argparse.ArgumentParser();parser.add_argument('--out',type=Path,required=True)
+000008 | OUT=parser.parse_args().out;OUT.mkdir(parents=True,exist_ok=True)
+000009 | data=json.loads((OUT/'quartic-descent-results.json').read_text())
+000010 | bootstrap=REPO/'experiments/theory-contracts/e-series-compiler-closure-20261023/e7_full_source_response_20261106.py'
+000011 | tree=ast.parse(bootstrap.read_text());nodes=[]
+000012 | for n in tree.body:
+000013 |     if isinstance(n,ast.For):break
+000014 |     if any(isinstance(z,ast.Name) and z.id in ['parser','OUT'] for z in ast.walk(n)):continue
+000015 |     nodes.append(n)
+000016 | env={};exec(compile(ast.Module(body=nodes,type_ignores=[]),str(bootstrap),'exec'),env)
+000017 | ch,af,ck=(env[k] for k in ['ch','af','ck']);vac={():F(1)}
+000018 | alpha=tuple(data['normal_root_doubled']);ap=ch.ridx[alpha];am=ch.opp[ap]
+000019 | G=[ch.ridx[tuple(r)] for r in data['native56_roots_doubled']]
+000020 | minus=[]
+000021 | for i in G:
+000022 |     b=ch.bracket(am,i);ck(len(b)==1,'actual A1 lowering intertwiner')
+000023 |     j,c=next(iter(b.items()));ck(abs(c)==1,'same-source lowering normalization');minus.append((j,c))
+000024 | 
+000025 | # Y(x)=[Xplus(x),Xminus(x)] and exact coefficient-wise kappa(Y,Y).
+000026 | Y=defaultdict(Counter)
+000027 | for i,j in itertools.product(range(56),repeat=2):
+000028 |     r,c=minus[j]
+000029 |     for k,v in ch.bracket(G[i],r).items():Y[k][tuple(sorted((i,j)))]+=c*v
+000030 | Y={k:{m:c for m,c in p.items() if c} for k,p in Y.items() if any(p.values())}
+000031 | response=Counter()
+000032 | for i,pi in Y.items():
+000033 |     for j,pj in Y.items():
+000034 |         g=ch.kappa(i,j)
+000035 |         if not g:continue
+000036 |         for mi,ci in pi.items():
+000037 |             for mj,cj in pj.items():response[tuple(sorted(mi+mj))]+=g*ci*cj
+000038 | response={m:c for m,c in response.items() if c}
+000039 | Q={tuple(m['indices']):F(m['coefficient']) for m in data['quartic_monomials']}
+000040 | ck(response=={m:-c for m,c in Q.items()},'all1036 neutral four-current coefficients equal minus Q')
+000041 | def linact(terms,n,state):
+000042 |     out={}
+000043 |     for i,c in terms:
+000044 |         if not c:continue
+000045 |         for k,v in af.act(i,n,state).items():out[k]=out.get(k,F(0))+c*v
+000046 |     return {k:v for k,v in out.items() if v}
+000047 | tests=[]
+000048 | points=[]
+000049 | chosen=next(m for m,c in Q.items() if len(set(m))==4 and abs(c)==24)
+000050 | points.append([int(i in chosen) for i in range(56)])
+000051 | points.append([(i%3)-1 for i in range(56)])
+000052 | for x in points:
+000053 |     plus=[(G[i],F(x[i])) for i in range(56)]
+000054 |     neg=[(j,c*x[i]) for i,(j,c) in enumerate(minus)]
+000055 |     state=linact(neg,-1,vac)
+000056 |     state=linact(plus,0,state)
+000057 |     state=linact(neg,0,state)
+000058 |     state=linact(plus,1,state)
+000059 |     value=sum(c*F(__import__('math').prod(x[i] for i in m)) for m,c in response.items())
+000060 |     ck(state==({():value} if value else {}),'actual original affine four-current vacuum evaluation')
+000061 |     tests.append({'x_pattern':'four-support' if x is points[0] else 'ternary-full56','affine_vacuum_response':str(value)})
+000062 | result={'claim':'MATH.ESERIES.NEUTRAL.QUARTIC.RESPONSE.20261106','definition':'Xminus=[e_-alpha,Xplus]; R4(x)=<Omega|J_Xplus(1) J_Xminus(0) J_Xplus(0) J_Xminus(-1)|Omega>','exact_identity':'R4(x)=kappa([Xplus,Xminus],[Xplus,Xminus])=-Q(x)','matched_quartic_monomials':len(Q),'A1_grade_sequence_from_right':[-1,0,-1,0],'net_A1_charge':0,'actual_affine_witnesses':tests,'E6_derivative_identity':'d/dt R4(t s+x)|t=0=-24 P(x), with P=d(x,x,x)/6; normalized symmetric quartic polarization is minus d(suppressed singlet,x,x,x) in the stated root conventions.','scope':'Exact neutral ordered source correlator, using original affine vacuum and current algebra. Not a fully integrated primitive physical response or a determination of the electromagnetic delta_top coefficient48.','checks':dict(env['checks'])}
+000063 | (OUT/'neutral-quartic-response-results.json').write_text(json.dumps(result,indent=2)+'\n')
+000064 | print(json.dumps(result,indent=2))

@@ -1,0 +1,19 @@
+TFPT scientific source excerpt
+Original repository path: verification/v359_grav_nonlinear_einstein.py
+Original file SHA-256: 607d1ed5742664fd809c40ec53e1b473c230663b2e5949c8bee5aa7ae4ceb98a
+Inclusive original lines: 85-95
+Line numbers below refer to the original source.
+This bounded excerpt is source evidence; it is not a new proof/checker run.
+Conversation metadata and personal execution details are omitted where indicated.
+
+000085 |     # 4. coefficient 2: Lambda from alpha (v60 prefactor 3/(4 pi^2) = (8pi)^2 * 48 c3^4)
+000086 |     dtop = 48 * c3 ** 4
+000087 |     prefactor = (8 * pi) ** 2 * dtop                    # = 3/(4 pi^2)
+000088 |     check("COEFFICIENT 2 FROM ALPHA [E]: Jacobson leaves Lambda free; TFPT fixes it -- "
+000089 |           "rho_Lambda/Mbar^4 = (3/(4 pi^2)) e^{-2 alpha^-1}, prefactor (8 pi)^2*48 c3^4 = %s = "
+000090 |           "3/(4 pi^2) (v60). So BOTH coefficients of G_ab + Lambda g_ab = (1/c3) T_ab are "
+000091 |           "TFPT-fixed -- NOT free integration constants"
+000092 |           % sp.nsimplify(prefactor),
+000093 |           sp.simplify(prefactor - sp.Rational(3, 4) / pi ** 2) == 0
+000094 |           and sp.simplify(dtop - sp.Rational(3, 256) / pi ** 4) == 0)
+000095 | 

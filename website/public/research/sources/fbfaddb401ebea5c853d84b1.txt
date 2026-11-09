@@ -1,0 +1,51 @@
+TFPT scientific source excerpt
+Original repository path: verification/v991_detline_bulk_edge.py
+Original file SHA-256: 2c61896c1d59e9d85171760cb9489e3873306c468995374e1089f0a7bbc19bdd
+Inclusive original lines: 1-43
+Line numbers below refer to the original source.
+This bounded excerpt is source evidence; it is not a new proof/checker run.
+Conversation metadata and personal execution details are omitted where indicated.
+
+000001 | """v991 -- SEAM.DETLINE.UNIFICATION.01 [O update: finite bulk-edge
+000002 | determinant-line shadow [E]; continuum Bismut-Freed stays Open].
+000003 | 
+000004 | [OMITTED: non-scientific conversation or execution metadata]
+000005 | content of detline_bulk_edge_probe (not imported) on the v367 QWZ
+000006 | collar:
+000007 | 
+000008 |   [E] BULK: occupied-frame FHS Chern of the determinant line over the
+000009 |         twist torus is +1 at M = 1 (L = 4 and L = 6); curvature
+000010 |         integral = 2 pi * (+1).  M = 3 control is 0 both sizes.
+000011 | 
+000012 |   [E] EDGE: bottom-weighted seam holonomy winding = +1 (phase 2 pi);
+000013 |         occupied-only winding = +1; signed spectral flow of the
+000014 |         in-gap bottom branch = +1, top = -1.
+000015 | 
+000016 |   [E] CORRESPONDENCE: 2 pi * C_bulk == holonomy winding (diff machine
+000017 |         zero; probe 6e-16).  M = 3 control 0 = 0 both sides.
+000018 | 
+000019 |   [E] CONJUGATION MUTANT (SY -> -SY): both signs flip coherently
+000020 |         (C -> -1 and W -> -1).
+000021 | 
+000022 | HONEST SCOPE (firewall): 2+1D bulk / 1D edge finite lattice shadow.
+000023 | Continuum Bismut-Freed and the 4D chiral-measure unification stay [O].
+000024 | No marker move.  Python-only / Wolfram mirror deferred.
+000025 | 
+000026 | Provenance: experiments/tfpt-discovery/detline_bulk_edge_probe.py
+000027 | (ALL PASS; not imported).
+000028 | """
+000029 | import numpy as np
+000030 | 
+000031 | from tfpt_constants import check, summary, reset
+000032 | 
+000033 | SX = np.array([[0, 1], [1, 0]], complex)
+000034 | SY = np.array([[0, -1j], [1j, 0]], complex)
+000035 | SZ = np.array([[1, 0], [0, -1]], complex)
+000036 | TX = (SX / (2j) - SZ / 2)
+000037 | 
+000038 | L_SMALL, L_LARGE = 4, 6
+000039 | N_GRID = 8
+000040 | NY_STRIP, NK_STRIP = 16, 64
+000041 | EPS_DET, XI_BOT = 0.02, 1.2
+000042 | GAP_WINDOW = 0.8
+000043 | NX_CYL, NY_CYL, NT_CYL = 8, 10, 40

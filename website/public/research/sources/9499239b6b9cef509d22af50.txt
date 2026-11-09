@@ -1,0 +1,64 @@
+TFPT scientific source excerpt
+Original repository path: experiments/theory-contracts/e-series-compiler-closure-20261023/e_series_deep_response.py
+Original file SHA-256: 5e02627cb6217184963467b03f448a03a2abb0cb7bab49c692dc7b916fdd05fb
+Inclusive original lines: 1-56
+Line numbers below refer to the original source.
+This bounded excerpt is source evidence; it is not a new proof/checker run.
+Conversation metadata and personal execution details are omitted where indicated.
+
+000001 | """Full Cartan polynomial discriminators and actual source contraction controls."""
+000002 | import ast,itertools,json,math
+000003 | from pathlib import Path
+000004 | from collections import Counter
+000005 | from fractions import Fraction as F
+000006 | import sympy as sp
+000007 | [OMITTED: non-scientific conversation or execution metadata]
+000008 | boot=REPO/'experiments/theory-contracts/e-series-compiler-closure-20261023/e7_full_source_response_20261106.py'
+000009 | t=ast.parse(boot.read_text());nodes=[]
+000010 | for n in t.body:
+000011 |     if isinstance(n,ast.For):break
+000012 |     if any(isinstance(z,ast.Name) and z.id in ['parser','OUT'] for z in ast.walk(n)):continue
+000013 |     nodes.append(n)
+000014 | env={};exec(compile(ast.Module(body=nodes,type_ignores=[]),str(boot),'exec'),env)
+000015 | ch,af,ck,ip=(env[k] for k in ['ch','af','ck','ip']);vac={():F(1)}
+000016 | alpha=(0,0,0,0,0,2,-2,0);G=[i for i,r in enumerate(ch.roots) if ip(alpha,r)==4]
+000017 | native48=[i for i,r in enumerate(ch.roots) if all(abs(x)==1 for x in r) and sum(x<0 for x in r[:5])%2==1 and r[5:]!=(-1,-1,-1)]
+000018 | x=sp.symbols('x0:5');s2=sum(z*z for z in x);s4=sum(z**4 for z in x)
+000019 | def moment(space,n):return sp.expand(sum(sum(sp.Rational(ch.roots[r][i],2)*x[i] for i in range(5))**n for r in space))
+000020 | expected={(56,2):12*s2,(48,2):12*s2,(56,4):6*s2**2,(48,4):9*s2**2-6*s4,(56,5):sp.Integer(0),(48,5):-180*sp.prod(x)}
+000021 | for (dim,n),v in expected.items():ck(sp.expand(moment(G if dim==56 else native48,n)-v)==0,'full D5 Cartan polynomial trace identity')
+000022 | # Independent original E8 adjoint weight identities, all8 Cartan variables.
+000023 | y=sp.symbols('y0:8');r2=sum(z*z for z in y)
+000024 | hy=list(y);hy[6]=hy[5];norm7=sum(z*z for z in hy)
+000025 | for n,v in [(2,12*norm7),(4,6*norm7**2)]:
+000026 |     actual=sp.Poly(sum(sum(sp.Rational(ch.roots[r][i],2)*hy[i] for i in range(8))**n for r in G),*y)
+000027 |     ck(actual==sp.Poly(v,*y),'full seven-dimensional E7 Cartan trace identity')
+000028 | for n,expected8 in [(2,60*r2),(4,36*r2**2),(6,30*r2**3)]:
+000029 |     actual=sp.Poly(sum(sum(sp.Rational(r[i],2)*y[i] for i in range(8))**n for r in ch.roots),*y)
+000030 |     ck(actual==sp.Poly(expected8,*y),'full E8 Cartan trace identity')
+000031 | 
+000032 | def linear(terms,n,state):
+000033 |     result={}
+000034 |     for i,c in terms:
+000035 |         if c:
+000036 |             for word,v in af.act(i,n,state).items():result[word]=result.get(word,F(0))+c*v
+000037 |     return {w:c for w,c in result.items() if c}
+000038 | Y=sp.Matrix([F(-1,3)]*3+[F(1,2)]*2+[0]*3);yc=env['Ri']*Y
+000039 | yt=[(240+i,F(yc[i])) for i in range(8)]
+000040 | def C(state):
+000041 |     a=linear(yt,1,state);b=linear(yt,-1,state)
+000042 |     for w,c in b.items():a[w]=a.get(w,F(0))+c
+000043 |     return {w:c for w,c in a.items() if c}
+000044 | state=vac;mom={}
+000045 | for n in range(1,5):state=C(state);mom[n]=state.get((),F(0))
+000046 | ck(mom[2]==F(5,6) and mom[4]==F(25,12),'actual Y affine vacuum moments')
+000047 | connected=mom[4]-3*mom[2]**2;ck(connected==0,'actual Y fourth connected oscillator cumulant zero')
+000048 | ap=ch.ridx[alpha];am=ch.opp[ap];r=G[0];b=ch.bracket(am,r)
+000049 | bstar={ch.opp[r]:F(-1)}
+000050 | def word(B):
+000051 |     state=linear(list(B.items()),-1,vac);state=linear([(r,F(1))],0,state)
+000052 |     state=linear(list(B.items()),0,state);return linear([(r,F(1))],1,state).get((),F(0))
+000053 | lower=word(b);compact=word(bstar)
+000054 | ck(lower==0 and compact==2,'A1 lowering and actual compact adjoint contractions differ')
+000055 | result={'claim':'MATH.ESERIES.HIGHER.RESPONSE.DISCRIMINATORS.20261106','full_D5_Cartan_trace_identities':{f'Tr{dim}_H{n}':str(sp.factor(v)) for (dim,n),v in expected.items()},'fourth_trace_difference_56_minus48':'3*(2*sum_i x_i^4-(sum_i x_i^2)^2)','fifth_moment_chirality':'Tr48 H^5=-180*x0*x1*x2*x3*x4, whereas Tr56 H^5=0','E7_56_quartic_trace_factorization':'Tr56 H^4=(Tr56 H^2)^2/24, checked as full polynomial on all seven native E7 Cartan directions','E8_adjoint_trace_identities':{'Tr248_H2':'60*sum_i y_i^2','Tr248_H4':'36*(sum_i y_i^2)^2=(Tr248_H2)^2/100','Tr248_H6':'30*(sum_i y_i^2)^3=(Tr248_H2)^3/7200'},'actual_Y_oscillator_vacuum':{'moment2':str(mom[2]),'moment4':str(mom[4]),'connected4':str(connected)},'single_root_contraction_control':{'root_doubled':ch.roots[r],'A1_lowering_R4':str(lower),'compact_adjoint_R4':str(compact)},'scope':'Internal trace polynomials, original affine oscillator and ordered source words. Holomorphic quartic invariant on56 is a different type from a fourth power trace of a Lie algebra element and from a connected physical EM response. This does not exclude interacting or full integrated EM responses.','checks':dict(env['checks'])}
+000056 | (OUT/'deep-response-results.json').write_text(json.dumps(result,indent=2)+'\n');print(json.dumps(result,indent=2))

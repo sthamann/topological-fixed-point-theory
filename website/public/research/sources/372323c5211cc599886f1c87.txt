@@ -1,0 +1,20 @@
+TFPT scientific source excerpt
+Original repository path: experiments/theory-contracts/original-paper-source-reconciliation-20261102/contribution_20261106Q/runtime/original_source_adapter.py
+Original file SHA-256: 2a42bddf5f0d037009fca673ccb2c4ac4b729f6b7c87445a4f9f244d72ed4962
+Inclusive original lines: 170-181
+Line numbers below refer to the original source.
+This bounded excerpt is source evidence; it is not a new proof/checker run.
+Conversation metadata and personal execution details are omitted where indicated.
+
+000170 |     time = b.get("time", {})
+000171 |     if not time.get("id") or time.get("kind") != "original_euclidean_ordered":
+000172 |         raise SourceInputError("explicit original Euclidean time/source dictionary required")
+000173 |     try:
+000174 |         T, tu, ty = (float(time[k]) for k in ("T", "t_U", "t_Y"))
+000175 |     except (KeyError, ValueError, TypeError) as exc:
+000176 |         raise SourceInputError("time requires original T,t_U,t_Y") from exc
+000177 |     if not all(np.isfinite([T, tu, ty])) or not 0 <= tu <= ty <= T:
+000178 |         raise SourceInputError("source order must be 0<=t_U<=t_Y<=T")
+000179 |     if "source_time_id" in domain and domain["source_time_id"] != time["id"]:
+000180 |         raise SourceInputError("source time does not match runtime domain")
+000181 |     G = _matrix(b.get("gram_form"), "gram_form", n)

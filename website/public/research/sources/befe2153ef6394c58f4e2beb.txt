@@ -1,0 +1,155 @@
+TFPT scientific source excerpt
+Original repository path: experiments/theory-contracts/chat-triangulation-20261108/original-zweirand-uebergang-2026-11-08.txt
+Original file SHA-256: 1346b5fcbcbf1a2195b96362ec440723d2c07701abe474bf789c2504261c3120
+Inclusive original lines: 1-147
+Line numbers below refer to the original source.
+This bounded excerpt is source evidence; it is not a new proof/checker run.
+Conversation metadata and personal execution details are omitted where indicated.
+
+000001 | TWOFACE20261108
+000002 | Originaler Zweirandübergang, markierte Stromantwort und spektrale Norm
+000003 | Quellenstand: TFPT Plan 172, Atlas fbe787e741c8471a7d0dffde.
+000004 | 
+000005 | Ergebnis
+000006 | Der statische volle Randübergang unterscheidet die Originalbeule nicht
+000007 | von der flachen Referenz. Auch der unverschobene Zeta-Determinant von
+000008 | D_epsilon(k)^2 ist bei festem k in der geprüften Pin Parität gleich.
+000009 | Der Übergang mit Spektralparameter und mitgeführter Originalmarke
+000010 | rekonstruiert dagegen die Stromantwort. Die Wärmespur unterscheidet die
+000011 | beiden Fälle für jedes positive s.
+000012 | 
+000013 | 1. Originaldomäne und exakter Gegenfall
+000014 | 
+000015 | Setze D0=-i(sigma1 d_x+sigma2 d_w) auf dem ursprünglichen Pin Streifen
+000016 | mit b=+1, c=i und dem früheren glatten geraden Kragenprofil h(w).
+000017 | D_epsilon=rho^(-1/2) D0 rho^(-1/2), rho=exp(epsilon*h).
+000018 | Die Referenz ist epsilon=0 mit derselben Domäne und denselben Marken.
+000019 | Im tatsächlichen Kreiskanal k=2*pi*(n+1/4) verlangt die Pin Relation
+000020 | sigma1 y(-w)=y(w). Die ganze Rechnung auf [-1,1] entspricht dort der
+000021 | Rechnung auf [0,1] mit der Pluslinie von sigma1 an 0 und 1. Das Skalarprodukt
+000022 | auf der Hälfte ist das unitär übertragene Skalarprodukt, die ursprüngliche
+000023 | normierte Nullmarke ist dort die konstante Pluskomponente.
+000024 | 
+000025 | Schreibe u=rho^(1/2)y im sigma1 Eigenrahmen. Die homogene Gleichung
+000026 | (D_epsilon-z)u=0 lautet
+000027 |  y_+'=-(z*rho+k)y_-,   y_-'=(z*rho-k)y_+ .
+000028 | Sie liefert die vollständige 2x2 Übertragung zwischen beiden physischen
+000029 | Rändern. Bei z=0 verschwindet rho aus der Gleichung. Weil rho in beiden
+000030 | Randkragen 1 ist, stimmen auch die physischen Cauchydaten und ihr
+000031 | vollständiger Übergang exakt überein. Das ist kein Vergleich bloßer
+000032 | Determinanten. Der Lauf auf [-1,1] bestätigt Differenz 0.
+000033 | 
+000034 | 2. Spektral aufgelöster und markierter Übergang
+000035 | 
+000036 | Beim Resolventen mit rechter Seite phi_0 erhält die zweite Gleichung
+000037 | die zusätzliche Quelle sqrt(rho). Die Ausgabe ist die integrierte
+000038 | Größe sqrt(rho)*y_+. Durch Mitführen einer konstanten Quellkoordinate
+000039 | und dieser Ausgabe wird die inhomogene Übertragung eine 4x4 Matrix.
+000040 | Die beiden Randbedingungen bestimmen die offene Plusamplitude aus
+000041 |  y_-(0)=y_-(1)=0 .
+000042 | Das ergibt die ursprüngliche markierte Resolvente
+000043 |  <phi_0,(D_epsilon-z)^(-1)phi_0>.
+000044 | Bei z=2i und k=pi/2 weichen direkt integrierter Übergang und drei
+000045 | verkettete Stücke an .37 und .71 um 1.209e-10 ab. Die markierte
+000046 | Resolvente stimmt mit direkter Diagonalisierung des ursprünglichen
+000047 | 257-Moden-Aufrufs bis auf 1.958e-10 überein.
+000048 | 
+000049 | Die Spektralmasse wird aus der Norm der tatsächlichen Eigenlösung
+000050 | bestimmt. Bei Eigenwert lambda ist sie
+000051 |  |int_0^1 sqrt(rho)*y_+ dw|^2 / int_0^1 rho*|y|^2 dw .
+000052 | Der Nenner wird beim Übergang mitgeführt und folgt aus dem ursprünglichen
+000053 | Skalarprodukt. Bei epsilon=0 ist die negative Eigenmode im m-ten Paar
+000054 | lambda=-E_m, E_m=sqrt(k^2+(pi*m)^2). Ihre Pluskomponente ist eine
+000055 | Kosinusmode mit Normfaktor sqrt(1-k/E_m). Differentiation der tatsächlich
+000056 | transportierten Gleichung D0 y=lambda*rho*y und der Marke sqrt(rho)*y
+000057 | liefert die erste Überlappung
+000058 |  (k+lambda)/(2*(k-lambda)) * <phi_0,h*y> .
+000059 | Die Summe ihrer quadrierten Beträge ergibt den epsilon^2 Koeffizienten
+000060 |  a(k)=sum_m h_m^2/16 * ((E_m-k)/(E_m+k))^2 * (1-k/E_m)
+000061 | für positiven k. Der ganze absolute Nenner ist in den Koeffizienten
+000062 | enthalten. Bei negativem k liefert die ursprüngliche Konjugation die
+000063 | entgegengesetzte Besetzungsänderung. Die Wick Antwort an den beiden
+000064 | alten getrennten Bogenmittelpunkten ist die alternierende Summe von
+000065 |  a(2*pi*(n+1/4))+a(2*pi*(n+3/4)).
+000066 | Die Paarbeiträge sind positiv und streng fallend, der erste übertrifft
+000067 | den zweiten. Der volle Koeffizient ist damit strikt positiv. Mit 64
+000068 | normalen und 512 longitudinalen Paaren ergibt sich 0.007296294579304883,
+000069 | derselbe Wert wie in MOVCUT20261108.
+000070 | 
+000071 | Zusätzliche direkte Rechnung: Die ersten 16 negativen Eigenlösungen
+000072 | des Übergangs bei epsilon=+/-0.005 ergeben für die zentrierte
+000073 | Besetzungsmasse geteilt durch epsilon^2 den Wert 0.006548288893923755.
+000074 | Das analytische Ergebnis für dieselben 16 Pole ist 0.006548296485637845.
+000075 | Die übrigen Pole tragen im 64-Paare-Vergleich rund 9.24e-6 zur
+000076 | quadratischen Besetzung bei. Sie werden im analytischen Ausdruck nicht
+000077 | abgeschnitten. Das ist getrennt vom Fehler der zentrierten Ableitung.
+000078 | 
+000079 | 3. Absolute spektrale Faktoren und Grenze eines einzelnen Determinanten
+000080 | 
+000081 | Sei F_epsilon(z)=M_epsilon(z)[2,1] auf der Pin Hälfte. Seine reellen
+000082 | einfachen Nullstellen sind genau die Eigenwerte des ursprünglichen D_epsilon
+000083 | bei festem k. Die Endpunktphase erfüllt theta'=z*rho-k*cos(2*theta);
+000084 | ihre z-Ableitung ist positiv. Auf dem kompakten Intervall ist F ganz
+000085 | vom Exponentialtyp und lambda_n wächst linear mit n. Die kanonische
+000086 | Produktzerlegung von F(z)F(-z) eliminiert die linearen Exponentialfaktoren.
+000087 | Daher gilt ohne freien Skalar
+000088 |  det_F(I+t^2 D_epsilon^(-2)) =
+000089 |    F_epsilon(it) F_epsilon(-it) / F_epsilon(0)^2 .
+000090 | Bei t=2, epsilon=.1, k=pi/2 ist der logarithmische Quotient zur flachen
+000091 | Referenz 0.10099198162517542. Die t^2 Ableitung am Nullpunkt reproduziert
+000092 | Tr D_epsilon^(-2). Das unabhängige Innenintegral nutzt direkt
+000093 | D_epsilon^(-1)=sqrt(rho) D0^(-1) sqrt(rho) mit analytischem flachem
+000094 | Green Kernel. Der maximale Fehler zwischen beiden Wegen ist 1.86e-11.
+000095 | 
+000096 | Der unverschobene Zeta-Determinant D_epsilon(k)^2 ist dennoch gleich
+000097 | dem der flachen Referenz. Dafür setze ds=rho dw, L=int rho dw.
+000098 | Der transformierte Dirac Operator ist J*d_s+(k/rho)*sigma3. Sein
+000099 | Quadrat ist ein gewöhnlicher Matrix-Schrödingeroperator auf [0,L]
+000100 | mit einer Neumann- und einer Dirichletkomponente an jedem Ende. Im
+000101 | relativen kleinen Wärmeterm steht somit (L-1)/sqrt(pi*s)+O(sqrt(s)),
+000102 | ohne konstanten Term. Mellintransformation liefert für die relative
+000103 | verschobene Logdeterminante 2*t*(L-1)+O(1/t). Unabhängig liefert die
+000104 | Übertragung F_epsilon(it)=(i/2)*exp(tL)*(1+O(1/t)): Nach konstanter
+000105 | Diagonalisierung des t-Anteils ist k/rho rein außerdiagonal, und der
+000106 | gedämpfte Modus trägt nach Variation der Konstanten nur O(1/t)
+000107 | zur führenden Amplitude bei. F_epsilon(0)=F_0(0)=-sinh(k).
+000108 | Die obige Fredholm-Identität und
+000109 |  det_F(I+t^2 D^(-2))=det_zeta(D^2+t^2)/det_zeta(D^2)
+000110 | erzwingen daher det_zeta(D_epsilon^2)/det_zeta(D0^2)=1 im festen
+000111 | k-Sektor. Die numerischen Residuen nach Abzug von 2*t*(L-1) sind
+000112 | -0.008782, -0.004452, -0.002233, -0.001117 bei t=8,16,32,64.
+000113 | Der absolute flache Sektorwert ist 4*sinh(k)^2.
+000114 | Das Ergebnis gilt für das Quadrat im einzelnen Sektor, nicht für
+000115 | einen ungeprüften Gesamtdeterminanten oder seine Eta-Phase.
+000116 | 
+000117 | Die ganze positive spektrale Wärmeantwort erkennt die Änderung:
+000118 |  lambda'=-lambda * int h*rho*|y|^2 / int rho*|y|^2 .
+000119 | Das folgt aus demselben generalisierten Eigenproblem bei festem
+000120 | Randvertrag. Für h>=0 und h nicht identisch null ist die Quote positiv,
+000121 | weil eine nichttriviale Eigenlösung nicht auf einem offenen Intervall
+000122 | verschwindet. Damit sinken alle lambda^2 mit epsilon und für jedes
+000123 | s>0 steigt die Wärmespur. Bei s=1 ergibt der Übergang
+000124 | 0.08481374523787806 (flach) und 0.09843925203051436 (epsilon=.1).
+000125 | Der direkte Originalaufruf bestätigt den zweiten Wert bis 9.42e-14.
+000126 | Das ist zugleich ein Gegenfall zur Ersetzung der spektralen Familie
+000127 | durch den einen absoluten unverschobenen Determinanten.
+000128 | 
+000129 | 4. Physischer Anschluss
+000130 | 
+000131 | Diese Tests bestimmen die spektral und durch Marken aufgelöste
+000132 | Übertragung für ein gegebenes ursprüngliches Profil im freien
+000133 | Pin Vergleichszweig. Sie liefern keinen neuen Produzenten für die
+000134 | ursprüngliche Verteilung der Higgs-, Geometrie- und Eichhistorien.
+000135 | Für den vollen S_adm/Z_ref Aufruf fehlen weiterhin der tatsächliche
+000136 | Faseraufruf sowie seine Feld-, Selektor- und Referenzzuordnung zu dieser
+000137 | Realisierung. Der Spektralparameter ist keine physische Zeit.
+000138 | F(0) und Z_0 sind in diesem Versuch nicht als physische Werte berechnet.
+000139 | 
+000140 | Originale im TFPT Repository
+000141 | experiments/theory-contracts/original-admissible-source-closure-20261025/GEOMETRIC-SOURCE-RETURN.txt
+000142 | experiments/theory-contracts/original-admissible-source-closure-20261025/GEOMETRIC-ARC-TRANSFER.txt
+000143 | experiments/theory-contracts/original-admissible-source-closure-20261025/geometric_source_return/source_geometric_machine.py
+000144 | experiments/theory-contracts/original-paper-source-reconciliation-20261102/shorttime_20261105G/shorttime20261105_route3/WHOLE-SPECTRAL-DTN-HEAT-GLUING-20261105.md
+000145 | 
+000146 | [OMITTED: non-scientific conversation or execution metadata]
+000147 | [OMITTED: non-scientific conversation or execution metadata]

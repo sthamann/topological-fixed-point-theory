@@ -1,0 +1,20 @@
+TFPT scientific source excerpt
+Original repository path: experiments/theory-contracts/e-series-compiler-closure-20261023/e7_full_source_response_20261106.py
+Original file SHA-256: c71c9f20fa746f10bfc6f80b877ffd3156796d84b7a80ca5026ddec0b0224d08
+Inclusive original lines: 201-212
+Line numbers below refer to the original source.
+This bounded excerpt is source evidence; it is not a new proof/checker run.
+Conversation metadata and personal execution details are omitted where indicated.
+
+000201 |     for name,normal in normals:
+000202 |         e7=[r for r in phys if ip(normal,r)==0]
+000203 |         a1=[r for r in phys if r==normal or r==-normal]
+000204 |         mixed=[r for r in phys if r not in e7 and r not in a1]
+000205 |         hist=[Counter(F(8-ip(w,r)) for r in part) for part in [e7,a1,mixed]]
+000206 |         row['cuts'].append({'name':name,'grade_one_root_energy_histograms':[{str(k):v for k,v in sorted(h.items())} for h in hist]})
+000207 |     time_response.append(row)
+000208 | 
+000209 | result={'claim':'MATH.SEAM.E7.FULL.RESPONSE.20261106','scope':'The given unitary level-one E8 lattice VOA, its existing vacuum/current normalization and the original H8 generator. No identification with the fully integrated primitive physical S_adm or a new measured coupling.','checks':dict(checks),'branchings':decomp,'PBW_stress':stress,'heat_trace_samples':samples,'source_time_current_response':time_response,'exact_formulas':{'module':'V8=(V7^0 tensor V1^0) direct_sum (V7^56 tensor V1^2)','trace':'Z8=Z7^0 Z1^0+Z7^56 Z1^2','H8':'8 L0-rho_A7.a0+(2a-1)Q/2','vacuum_current_kernel':'K8(t)=exp(-8t)/(1-exp(-8t))^2 * [8+sum_roots exp(t*(rho.r-(2a-1)Q(r)/2))]','local_stress_Gram':'[[7/2,0],[0,1/2]], total4','current_levels':'k_E7=k_A1=k_E8=1','inherited_seam_normalization':'Full coordinate rewrite changes existing c3 by factor1; absolute P1 origin not newly derived.'}}
+000210 | result['source_sha256']=PINS
+000211 | (OUT/'results.json').write_text(json.dumps(result,indent=2)+'\n')
+000212 | print('PASS',sum(checks.values()),'exact/numerical assertions; no new physical constant derived.',flush=True)

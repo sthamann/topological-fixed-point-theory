@@ -1,0 +1,192 @@
+TFPT scientific source excerpt
+Original repository path: experiments/theory-contracts/original-paper-source-reconciliation-20261102/solutionsearch_20261106R/completion.py
+Original file SHA-256: e16913ce17dfb18ffb81f5bfa08463d6b4c4994f19e6d30cc46396b338a4f21f
+Inclusive original lines: 1-184
+Line numbers below refer to the original source.
+This bounded excerpt is source evidence; it is not a new proof/checker run.
+Conversation metadata and personal execution details are omitted where indicated.
+
+000001 | """Independent evaluation of constructed sources, separate from their claims.
+000002 | 
+000003 | Construction candidates may include hypotheses. Neither a model response,
+000004 | catalogue role string nor a source hash establishes original TFPT identity.
+000005 | Only trusted executable checkers can close the declared target obligations.
+000006 | """
+000007 | from pathlib import Path
+000008 | import hashlib
+000009 | import importlib.util
+000010 | import json
+000011 | import sympy as s
+000012 | from source_identity import original_identity_results, providers_for_repository
+000013 | 
+000014 | Q_IDS = (
+000015 |     'original_joint_weighted_Z0_ZU_ZY_ZUY',
+000016 |     'original_OS_history_RP',
+000017 |     'actual_quantum_Ward_SD_contacts',
+000018 |     'whole_physical_P_Ref_Eta_domains',
+000019 |     'original_regulator_limit_order',
+000020 | )
+000021 | F1_IDS = ('constructed_common_values', *Q_IDS,
+000022 |           'primitive_original_source_identity', 'original_marked_time_word_match')
+000023 | TOE_IDS = tuple('TFPT.TOE.COMPLETE.01.T'+str(i) for i in range(1, 9))
+000024 | 
+000025 | 
+000026 | def equality(a, b):
+000027 |     d = s.Matrix(a)-s.Matrix(b) if isinstance(a, s.MatrixBase) else s.sympify(a)-s.sympify(b)
+000028 |     values = list(d) if isinstance(d, s.MatrixBase) else [d]
+000029 |     reduced = [s.simplify(x) for x in values]
+000030 |     if all(x == 0 for x in reduced):
+000031 |         return True
+000032 |     if any(x.is_zero is False for x in reduced):
+000033 |         return False
+000034 |     return None
+000035 | 
+000036 | 
+000037 | def common_values(candidate):
+000038 |     """Recalculate all four jets and contractions from the constructed kernel."""
+000039 |     needed = ['matrix', 'source_symbols', 'dictionary', 'ordered_source_forms']
+000040 |     missing = [x for x in needed if x not in candidate]
+000041 |     if missing:
+000042 |         return {'status': 'MISSING_INPUT', 'missing_inputs': missing}
+000043 |     K = s.Matrix(candidate['matrix'])
+000044 |     ju, jy = candidate['source_symbols']
+000045 |     d = candidate['dictionary']
+000046 |     if set(('P', 'cap', 'reference_scalar', 'outer_scalar'))-set(d):
+000047 |         return {'status': 'MISSING_INPUT', 'missing_inputs': ['actual_outer_dictionary']}
+000048 |     P, cap = s.Matrix(d['P']), s.Matrix(d['cap'])
+000049 |     if P.shape != K.shape or cap.shape != K.shape:
+000050 |         return {'status': 'FAIL', 'counterexample': 'outer dictionary dimension mismatch'}
+000051 |     ref, scalar = s.sympify(d['reference_scalar']), s.sympify(d['outer_scalar'])
+000052 |     if ref == 0:
+000053 |         return {'status': 'FAIL', 'counterexample': 'zero reference denominator'}
+000054 |     at0 = {ju: 0, jy: 0}
+000055 |     forms = {
+000056 |         'Z0': K.subs(at0),
+000057 |         'ZU': K.diff(ju).subs(at0),
+000058 |         'ZY': K.diff(jy).subs(at0),
+000059 |         'ZUY': K.diff(ju, jy).subs(at0),
+000060 |     }
+000061 |     tests, values = {}, {}
+000062 |     for name, form in forms.items():
+000063 |         tests[name+'_form'] = equality(form, candidate['ordered_source_forms'][name])
+000064 |         values[name] = s.simplify(scalar*s.trace(cap*P*form*P)/ref)
+000065 |         tests[name+'_value'] = equality(values[name], candidate[name])
+000066 |     if values['Z0'] == 0:
+000067 |         return {'status': 'FAIL', 'counterexample': 'zero whole-source denominator',
+000068 |                 'unnormalized_values': {k: str(v) for k, v in values.items()}}
+000069 |     tests['nonzero_normalizer'] = (None if values['Z0'].is_zero is None else not values['Z0'].is_zero)
+000070 |     connected = s.simplify(values['ZUY']/values['Z0']-
+000071 |                           values['ZU']*values['ZY']/values['Z0']**2)
+000072 |     tests['connected'] = equality(connected, candidate['normalized']['connected_UY'])
+000073 |     state = 'FAIL' if False in tests.values() else 'NOT_PROVED' if None in tests.values() else 'PASS'
+000074 |     return {'status': state, 'tests': tests,
+000075 |             'unnormalized_values': {k: str(v) for k, v in values.items()},
+000076 |             'connected_UY': str(connected),
+000077 |             'scope': 'exact calculation of this constructed marked kernel, including its stated outer data; original identity is a separate requirement'}
+000078 | 
+000079 | 
+000080 | class OriginalCompletion:
+000081 |     """An injectable, code-bound verifier, with no fixed completion verdict.
+000082 | 
+000083 |     Extensions are trusted Python callables registered by the implementation,
+000084 |     never module paths, commands or result labels supplied by a candidate.
+000085 |     """
+000086 |     def __init__(self, repo, target='joint_source', trusted_checkers=None, original_providers=None):
+000087 |         if target not in ('joint_source', 'tfpt_complete', 'tfpt_validated'):
+000088 |             raise ValueError('unknown original target')
+000089 |         self.repo, self.target = Path(repo), target
+000090 |         self.trusted = dict(trusted_checkers or {})
+000091 |         self.original_providers = (providers_for_repository(self.repo) if original_providers is None
+000092 |                                    else dict(original_providers))
+000093 |         self.required_obligation_ids = F1_IDS + (TOE_IDS if target != 'joint_source' else ())
+000094 |         if target == 'tfpt_validated':
+000095 |             self.required_obligation_ids += ('original_independent_holdouts',)
+000096 |         q = self.repo/'experiments/theory-contracts/original-paper-source-reconciliation-20261102/contribution_20261106Q/runtime/source_adapter.py'
+000097 |         self.q_path = q
+000098 |         program = self.repo/'semantic_explorer/research/program.json'
+000099 |         self.evidence_revision = json.loads(program.read_text())['revision']
+000100 |         self.version = hashlib.sha256(Path(__file__).read_bytes()+
+000101 |             Path(__file__).with_name('source_identity.py').read_bytes()+q.read_bytes()+program.read_bytes()).hexdigest()
+000102 |         self.target_scope = 'original_TFPT_'+target
+000103 | 
+000104 |     def __call__(self, candidate, context=None):
+000105 |         result = {'constructed_common_values': common_values(candidate)}
+000106 |         binding = candidate.get('runtime_binding')
+000107 |         result.update(original_identity_results(candidate, self.original_providers,
+000108 |                       {'runtime_binding': binding, 'validator_context': context}))
+000109 |         if binding is not None:
+000110 |             # Only actual arrays/domain/entries are consumed by Q's reviewed
+000111 |             # callbacks; supplied PASS labels are not used.
+000112 |             spec = importlib.util.spec_from_file_location('tfpt_R_Q_checks', self.q_path.parents[1]/'checks/original_checks.py')
+000113 |             q = importlib.util.module_from_spec(spec)
+000114 |             spec.loader.exec_module(q)
+000115 |             registry = q.ensemble_test_registry(binding['domain'])
+000116 |             # A correct independent packet must not be attached to an
+000117 |             # unrelated proposed kernel. Verify the actual word embedding,
+000118 |             # all four forms, cap, P and absolute scalars first.
+000119 |             relation = self.runtime_relation(candidate, binding, q)
+000120 |             for name in Q_IDS:
+000121 |                 checked = registry[name](binding['result'], binding['entries'], binding['domain'])
+000122 |                 if relation['status'] != 'PASS':
+000123 |                     result[name] = {'status': relation['status'],
+000124 |                                     'candidate_to_runtime_relation': relation,
+000125 |                                     'separate_runtime_check': checked}
+000126 |                 else:
+000127 |                     result[name] = checked
+000128 |                 if result[name]['status'] not in ('PASS', 'FAIL', 'MISSING_INPUT', 'NOT_PROVED', 'ERROR'):
+000129 |                     original = result[name]['status']
+000130 |                     result[name]['native_check_status'] = original
+000131 |                     result[name]['status'] = ('NOT_PROVED' if original.startswith('UNDECIDED') else 'ERROR')
+000132 |         else:
+000133 |             for name in Q_IDS:
+000134 |                 result[name] = {'status': 'MISSING_INPUT',
+000135 |                                 'missing_inputs': ['actual_original_runtime_binding'],
+000136 |                                 'scope': 'existing original source requirement; candidate trace alone is not this check'}
+000137 |         for name in self.required_obligation_ids:
+000138 |             if name in self.trusted:
+000139 |                 result[name] = self.trusted[name](candidate)
+000140 |             elif name not in result:
+000141 |                 result[name] = {'status': 'MISSING_INPUT',
+000142 |                                 'missing_inputs': ['original_executable_evidence_for_'+name]}
+000143 |         for name, row in result.items():
+000144 |             row['id'] = name
+000145 |         # Hypothesis strings and candidate-supplied status flags have no
+000146 |         # authority. Conversely, a trusted proof can close a hypothesis:
+000147 |         # the presence of a hypothesis string is not a permanent False gate.
+000148 |         return {'obligations': list(result.values()), 'scope': self.target_scope,
+000149 |                 'evidence': {
+000150 |                     'computed_values': result['constructed_common_values'].get('unnormalized_values'),
+000151 |                     'connected_UY': result['constructed_common_values'].get('connected_UY'),
+000152 |                     'hypotheses': candidate.get('hypotheses', []),
+000153 |                     'atlas_revision_used': self.evidence_revision}}
+000154 | 
+000155 |     @staticmethod
+000156 |     def runtime_relation(candidate, binding, q):
+000157 |         if 'candidate_to_word_map' not in binding:
+000158 |             return {'status': 'MISSING_INPUT', 'missing_inputs': ['actual_candidate_to_original_word_embedding']}
+000159 |         domain = binding['domain']
+000160 |         payload = domain.get('original_check_inputs', {}).get(Q_IDS[0], {})
+000161 |         try:
+000162 |             d = q.bind_current_caller(payload, binding['result'], binding['entries'], domain)
+000163 |         except q.MissingInput as exc:
+000164 |             return {'status': 'MISSING_INPUT', 'missing_inputs': [str(exc)]}
+000165 |         except (ValueError, KeyError, TypeError) as exc:
+000166 |             return {'status': 'FAIL', 'counterexample': str(exc)}
+000167 |         B = s.Matrix(binding['candidate_to_word_map'])
+000168 |         K = s.Matrix(candidate['matrix'])
+000169 |         if B.rows != K.rows:
+000170 |             return {'status': 'FAIL', 'counterexample': 'candidate/word embedding dimensions differ'}
+000171 |         dic = candidate['dictionary']
+000172 |         tests = {'whole_candidate_span_retained': B.rank() == K.rows,
+000173 |                  'same_word_gram': equality(B.H*B, q.matrix(d['gram_form'])),
+000174 |                  'same_P': equality(B.H*s.Matrix(dic['P'])*B, q.matrix(d['physical_selector_form'])),
+000175 |                  'same_cap': equality(B.H*s.Matrix(dic['cap'])*B, q.matrix(d['boundary_pairing_form'])),
+000176 |                  'same_reference': equality(dic['reference_scalar'], q.scalar(d['reference_scalar'])),
+000177 |                  'same_outer_scalar': equality(dic['outer_scalar'], q.scalar(d['scalar_factor']))}
+000178 |         for name in ('Z0', 'ZU', 'ZY', 'ZUY'):
+000179 |             tests[name+'_same_whole_form'] = equality(
+000180 |                 B.H*s.Matrix(candidate['ordered_source_forms'][name])*B,
+000181 |                 q.matrix(d['observed_retained_source_forms'][name]))
+000182 |             tests[name+'_same_value'] = equality(candidate[name], q.scalar(binding['result'][name]))
+000183 |         return {'status': 'FAIL' if False in tests.values() else 'NOT_PROVED' if None in tests.values() else 'PASS',
+000184 |                 'tests': tests, 'scope': 'actual entire finite retained word and outer-data matching; no continuum identity inferred'}

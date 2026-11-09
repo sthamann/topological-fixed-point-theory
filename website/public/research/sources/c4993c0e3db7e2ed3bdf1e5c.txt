@@ -1,0 +1,204 @@
+TFPT scientific source excerpt
+Original repository path: experiments/theory-contracts/chat-triangulation-20261108/test_original_two_face_transition_20261108.py
+Original file SHA-256: 86c08775a4530e77e527875481793fdfb4d2fb21c415e29bdb598aa58d9260a3
+Inclusive original lines: 1-196
+Line numbers below refer to the original source.
+This bounded excerpt is source evidence; it is not a new proof/checker run.
+Conversation metadata and personal execution details are omitted where indicated.
+
+000001 | """Transfer, marked resolvent and determinant on the original Pin strip."""
+000002 | 
+000003 | import importlib.util
+000004 | import json
+000005 | from pathlib import Path
+000006 | import sys
+000007 | 
+000008 | import numpy as np
+000009 | from scipy.integrate import quad, solve_ivp
+000010 | from scipy.optimize import brentq
+000011 | 
+000012 | 
+000013 | def h(w):
+000014 |     r = (abs(w) - .5) / .25
+000015 |     return np.exp(1 - 1 / (1 - r*r)) if abs(r) < 1 else 0.
+000016 | 
+000017 | 
+000018 | def density(w, eps):
+000019 |     return np.exp(eps*h(w))
+000020 | 
+000021 | 
+000022 | def flow(rhs, a, b, initial):
+000023 |     sol = solve_ivp(rhs, (a, b), initial, method="DOP853",
+000024 |                     rtol=2e-11, atol=2e-12, max_step=.06)
+000025 |     if not sol.success:
+000026 |         raise RuntimeError(sol.message)
+000027 |     return sol.y[:, -1]
+000028 | 
+000029 | 
+000030 | def transfer(z, eps, k, cuts, marked=False):
+000031 |     n = 4 if marked else 2
+000032 | 
+000033 |     def rhs(w, flat):
+000034 |         rho = density(w, eps)
+000035 |         a = np.zeros((n, n), dtype=complex)
+000036 |         a[0, 1], a[1, 0] = -(z*rho+k), z*rho-k
+000037 |         if marked:
+000038 |             # Solve (D_eps-z)u=phi_0 and retain the output integral.
+000039 |             a[1, 2] = a[3, 0] = np.sqrt(rho)
+000040 |         return (a @ flat.reshape(n, n)).ravel()
+000041 | 
+000042 |     total = np.eye(n, dtype=complex)
+000043 |     for a, b in zip(cuts, cuts[1:]):
+000044 |         local = flow(rhs, a, b, np.eye(n, dtype=complex).ravel())
+000045 |         total = local.reshape(n, n) @ total
+000046 |     return total
+000047 | 
+000048 | 
+000049 | def marked_green(m):
+000050 |     return m[3, 2] - m[3, 0]*m[1, 2]/m[1, 0]
+000051 | 
+000052 | 
+000053 | def characteristic_trace(eps, k):
+000054 |     # M_j is the coefficient of z^j in the Cauchy transfer.
+000055 |     a0 = np.array([[0., -k], [-k, 0.]])
+000056 |     j = np.array([[0., -1.], [1., 0.]])
+000057 | 
+000058 |     def rhs(w, flat):
+000059 |         m0, m1, m2 = flat.reshape(3, 2, 2)
+000060 |         a1 = density(w, eps)*j
+000061 |         return np.array([a0@m0, a0@m1+a1@m0, a0@m2+a1@m1]).ravel()
+000062 | 
+000063 |     coeffs = flow(rhs, 0., 1., np.array([np.eye(2), np.zeros((2, 2)),
+000064 |                                         np.zeros((2, 2))]).ravel()).reshape(3, 2, 2)
+000065 |     f0, f1, f2 = coeffs[:, 1, 0]
+000066 |     return (f1/f0)**2 - 2*f2/f0
+000067 | 
+000068 | 
+000069 | def independent_green_trace(eps, k):
+000070 |     def flat(w):
+000071 |         return np.array([[np.cosh(k*w), -np.sinh(k*w)],
+000072 |                          [-np.sinh(k*w), np.cosh(k*w)]])
+000073 | 
+000074 |     norm_cut = np.zeros((2, 2))
+000075 |     norm_cut[0, :] = flat(1.)[1, :]/flat(1.)[1, 0]
+000076 |     j = np.array([[0., -1.], [1., 0.]])
+000077 | 
+000078 |     def inner(w):
+000079 |         def integrand(v):
+000080 |             kernel = flat(w) @ ((np.eye(2) if v <= w else 0.)-norm_cut) @ flat(-v) @ j
+000081 |             return density(v, eps)*np.sum(kernel**2)
+000082 |         return density(w, eps)*quad(integrand, 0, 1, points=[.25, .75, w],
+000083 |                                      epsabs=5e-11, epsrel=5e-11)[0]
+000084 | 
+000085 |     return quad(inner, 0, 1, points=[.25, .75], epsabs=5e-10, epsrel=5e-10)[0]
+000086 | 
+000087 | 
+000088 | def eigenvalue(index, eps, k, optical_length):
+000089 |     def mismatch(z):
+000090 |         theta = flow(lambda w, t: z*density(w, eps)-k*np.cos(2*t),
+000091 |                      0., 1., np.zeros(1))[0]
+000092 |         return theta-index*np.pi
+000093 | 
+000094 |     center = index*np.pi
+000095 |     return brentq(mismatch, (center-abs(k)-.01)/optical_length,
+000096 |                    (center+abs(k)+.01)/optical_length, xtol=1e-11)
+000097 | 
+000098 | 
+000099 | def marked_eigenweight(z, eps, k):
+000100 |     def rhs(w, v):
+000101 |         yp, ym, mass, source = v
+000102 |         rho = density(w, eps)
+000103 |         return [-(z*rho+k)*ym, (z*rho-k)*yp,
+000104 |                 rho*(yp*yp+ym*ym), np.sqrt(rho)*yp]
+000105 | 
+000106 |     yp, ym, mass, source = flow(rhs, 0., 1., np.array([1., 0., 0., 0.]))
+000107 |     assert abs(ym) < 2e-8
+000108 |     return source**2/mass
+000109 | 
+000110 | 
+000111 | def occupation_gain(k, hm):
+000112 |     e = np.hypot(k, np.pi*np.arange(1, len(hm)+1))
+000113 |     return float(np.sum(hm**2/16*((e-k)/(e+k))**2*(1-k/e)))
+000114 | 
+000115 | 
+000116 | def main(root):
+000117 |     path = root / ("experiments/theory-contracts/original-admissible-source-closure-20261025/"
+000118 |                    "geometric_source_return/source_geometric_machine.py")
+000119 |     spec = importlib.util.spec_from_file_location("original_pin", path)
+000120 |     pin = importlib.util.module_from_spec(spec)
+000121 |     spec.loader.exec_module(pin)
+000122 |     k = np.pi/2
+000123 |     eps = .1
+000124 |     unchanged = float(np.max(abs(transfer(0., eps, k, [-1., 1.])
+000125 |                                  - transfer(0., 0., k, [-1., 1.]))))
+000126 |     assert unchanged == 0.
+000127 |     _, d, _, _ = pin.dirac_block(128, eps, k)
+000128 |     eig, vectors = np.linalg.eigh(d)
+000129 |     z = 2j
+000130 |     whole = transfer(z, eps, k, [0., 1.], marked=True)
+000131 |     stitched = transfer(z, eps, k, [0., .37, .71, 1.], marked=True)
+000132 |     sewing_error = float(np.max(abs(whole-stitched)))
+000133 |     green_error = float(abs(marked_green(stitched)-np.sum(abs(vectors[128, :])**2/(eig-z))))
+000134 |     assert sewing_error < 3e-9 and green_error < 3e-9
+000135 | 
+000136 |     f0 = transfer(0., 0., k, [0., 1.])[1, 0].real
+000137 | 
+000138 |     def log_factor(t, strength):
+000139 |         f = transfer(1j*t, strength, k, [0., 1.])[1, 0]
+000140 |         return 2*np.log(abs(f/f0))
+000141 | 
+000142 |     trace_ode = [characteristic_trace(strength, k) for strength in (0., eps)]
+000143 |     trace_integral = [independent_green_trace(strength, k) for strength in (0., eps)]
+000144 |     trace_error = float(np.max(abs(np.asarray(trace_ode)-trace_integral)))
+000145 |     assert trace_error < 2e-8
+000146 |     optical = quad(lambda w: density(w, eps), 0., 1., points=[.25, .75],
+000147 |                    epsabs=1e-12)[0]
+000148 |     factor = log_factor(2., eps)-log_factor(2., 0.)
+000149 |     residuals = [float(log_factor(t, eps)-log_factor(t, 0.)-2*t*(optical-1))
+000150 |                  for t in (8., 16., 32., 64.)]
+000151 | 
+000152 |     roots = np.array([eigenvalue(i, eps, k, optical) for i in range(-4, 5)])
+000153 |     heat = float(np.sum(np.exp(-roots**2)))
+000154 |     heat_direct = float(np.sum(np.exp(-eig**2)))
+000155 |     heat_reference = float(np.exp(-k*k)*(1+2*np.sum(np.exp(-(np.pi*np.arange(1, 5))**2))))
+000156 |     assert abs(heat-heat_direct) < 3e-9 and heat > heat_reference
+000157 | 
+000158 |     hm = np.array([2*quad(lambda w: h(w)*np.cos(np.pi*m*w), .25, .75,
+000159 |                          epsabs=1e-13)[0] for m in range(1, 65)])
+000160 |     coefficients = [occupation_gain(2*np.pi*(n+.25), hm)
+000161 |                     + occupation_gain(2*np.pi*(n+.75), hm) for n in range(512)]
+000162 |     current = float(np.dot((-1.)**np.arange(512), coefficients))
+000163 |     assert current > 0 and np.all(np.diff(coefficients) < 0)
+000164 |     direct_weights = []
+000165 |     # Reconstruct occupied spectral mass from eigenfunction residues,
+000166 |     # independently of the earlier interior matrix projection.
+000167 |     for strength in (.005, -.005):
+000168 |         length = quad(lambda w: density(w, strength), 0., 1., points=[.25, .75])[0]
+000169 |         mass = sum(marked_eigenweight(eigenvalue(-m, strength, k, length), strength, k)
+000170 |                    for m in range(1, 17))
+000171 |         direct_weights.append(mass/strength**2)
+000172 |     direct_gain = float(np.mean(direct_weights))
+000173 |     gain_16 = occupation_gain(k, hm[:16])
+000174 |     assert abs(direct_gain-gain_16) < 2e-8
+000175 | 
+000176 |     print(json.dumps({
+000177 |         "static_two_boundary_transfer_max_change": unchanged,
+000178 |         "spectral_cut_composition_error_at_2i": sewing_error,
+000179 |         "marked_resolvent_vs_original_galerkin_error_at_2i": green_error,
+000180 |         "relative_log_fredholm_factor_at_2i": factor,
+000181 |         "trace_inverse_square_from_boundary": trace_ode,
+000182 |         "trace_inverse_square_from_independent_green_integral": trace_integral,
+000183 |         "trace_inverse_square_max_error": trace_error,
+000184 |         "large_parameter_residuals_after_optical_length": residuals,
+000185 |         "heat_at_1_flat": heat_reference,
+000186 |         "heat_at_1_deformed": heat,
+000187 |         "heat_at_1_direct_error": abs(heat-heat_direct),
+000188 |         "quadratic_current_coefficient_from_boundary_eigenmodes": current,
+000189 |         "lowest_positive_mode_gain_from_boundary_derivative": occupation_gain(k, hm),
+000190 |         "lowest_positive_mode_gain_from_boundary_derivative_16": gain_16,
+000191 |         "lowest_positive_mode_gain_from_16_residues_centered": direct_gain
+000192 |     }, indent=2))
+000193 | 
+000194 | 
+000195 | if __name__ == "__main__":
+000196 |     main(Path(sys.argv[1]))

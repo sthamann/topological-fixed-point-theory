@@ -1,0 +1,105 @@
+TFPT scientific source excerpt
+Original repository path: experiments/theory-contracts/original-paper-source-reconciliation-20261102/solutionsearch_20261106R/source_identity.py
+Original file SHA-256: 7f20ca19d738d587dfd5690f69693b39f48482b06d054c7c2e4ae7715e09382c
+Inclusive original lines: 201-297
+Line numbers below refer to the original source.
+This bounded excerpt is source evidence; it is not a new proof/checker run.
+Conversation metadata and personal execution details are omitted where indicated.
+
+000201 |     # Exact equality as a function includes every time, not selected samples.
+000202 |     time_tests={'whole_time_family_with_same_parameter':source_tests['entire_source_kernel_all_orders']}
+000203 |     for name,A in family.carried_operators.items():
+000204 |         time_tests['actual_carried_operator:'+name]=source_tests['operator:'+name]
+000205 |     # All scalar/reference/operator legs are needed by marked words as well.
+000206 |     time_tests.update({'same_source_transport:'+k:v for k,v in source_tests.items()})
+000207 |     return {
+000208 |         IDS[0]:{'status':verdict(source_tests),'tests':source_tests,
+000209 |                 'scope':'whole represented source family; equality of all source orders, not four jets'},
+000210 |         IDS[1]:{'status':verdict(time_tests),'tests':time_tests,
+000211 |                 'scope':'same original source variables, whole time family and carried marks; no semigroup inferred'},
+000212 |     }
+000213 | 
+000214 | 
+000215 | def original_identity_results(candidate, providers=None, context=None, required_scope=ORIGINAL_SCOPE):
+000216 |     """Only implementation-owned providers can earn original-source credit."""
+000217 |     registry={} if providers is None else providers
+000218 |     packet=candidate.get('original_packet')
+000219 |     provider_id=packet.get('provider_id','original.common_source') if isinstance(packet,dict) else 'original.common_source'
+000220 |     provider=registry.get(provider_id)
+000221 |     if not isinstance(provider,SourceProvider) or not callable(provider.load):
+000222 |         return _missing('code-bound original whole source/time provider; a source ID/hash or four supplied matrices is not that producer')
+000223 |     if provider.acceptance_scope!=required_scope:
+000224 |         return _missing('provider of the required original scope',provider.location,
+000225 |                         supplied_provider_scope=provider.acceptance_scope,required_scope=required_scope)
+000226 |     try:
+000227 |         family=provider.load(context)
+000228 |     except SourceFamilyMissing as exc:
+000229 |         return _missing(str(exc),provider.location,**exc.details)
+000230 |     except Exception as exc:
+000231 |         # A host-bound producer failure is not a counterexample to the
+000232 |         # candidate. Keep the producer and comparison failure axes separate.
+000233 |         return {key:{'status':'ERROR','error_stage':'original_provider_load',
+000234 |                      'error_type':type(exc).__name__,'error':str(exc),
+000235 |                      'provider_location':provider.location}for key in IDS}
+000236 |     try:
+000237 |         results=compare_whole_family(candidate,family,packet)
+000238 |     except SourceFamilyMissing as exc:
+000239 |         return _missing(str(exc),provider.location,**exc.details)
+000240 |     except (ValueError,TypeError,KeyError,s.ShapeError)as exc:
+000241 |         return {key:{'status':'FAIL','counterexample':str(exc),'provider_location':provider.location}for key in IDS}
+000242 |     for result in results.values():
+000243 |         result.update(provider_location=provider.location,acceptance_scope=provider.acceptance_scope,
+000244 |                       hash_or_role_used_as_proof=False,candidate_self_attestation_used=False)
+000245 |     return results
+000246 | 
+000247 | 
+000248 | def providers_for_repository(repo):
+000249 |     """Use the actual installed original contribution path, never candidate code.
+000250 | 
+000251 |     The current installed body consumes four supplied forms. Calling it is
+000252 |     useful evidence, but it cannot reconstruct a whole time/source family
+000253 |     from those four jets. A subsequently derived full original producer must
+000254 |     be registered by the implementation, not selected by a candidate label.
+000255 |     """
+000256 |     from pathlib import Path
+000257 |     import hashlib
+000258 |     import importlib.util
+000259 |     import json
+000260 |     base=Path(repo)/'experiments/theory-contracts/original-paper-source-reconciliation-20261102/contribution_20261106Q'
+000261 |     adapter_path=base/'runtime/original_source_adapter.py'
+000262 |     domain_path=base/'domain/native-diagnostic-v1.json'
+000263 | 
+000264 |     def load(context):
+000265 |         context=context or {}
+000266 |         binding=context.get('runtime_binding') or {}
+000267 |         if not adapter_path.is_file():
+000268 |             raise SourceFamilyMissing('installed original source contribution operation',
+000269 |                                       {'missing_original_file':str(adapter_path.relative_to(Path(repo)))})
+000270 |         spec=importlib.util.spec_from_file_location('_r_original_source_identity_native',adapter_path)
+000271 |         native=importlib.util.module_from_spec(spec);spec.loader.exec_module(native)
+000272 |         domain=binding.get('domain')
+000273 |         if domain is None:
+000274 |             if not domain_path.is_file():
+000275 |                 raise SourceFamilyMissing('actual original source domain for the installed contribution call')
+000276 |             raw=domain_path.read_bytes();domain=json.loads(raw)
+000277 |             domain.update(_sha256=hashlib.sha256(raw).hexdigest(),domain_directory=str(domain_path.parent))
+000278 |         plan=native.integration_plan(domain)
+000279 |         items=plan.get('items') or []
+000280 |         probe=items[0]['configuration'] if items else {
+000281 |             'schema':'tfpt.original-source-unit.v1','original_configuration_id':None}
+000282 |         assembled={'candidate_id':probe.get('native_candidate_id'),
+000283 |                    'domain_id':domain.get('domain_id'),'native_inputs_sha256':domain.get('_sha256'),
+000284 |                    'h_N_role':'not_aliased_to_original_joint_generator'}
+000285 |         attempt=native.evaluate_contribution(probe,assembled,domain)
+000286 |         details={'actual_native_call':{
+000287 |             'operation':'original_source_adapter.evaluate_contribution',
+000288 |             'status':attempt.get('status'),
+000289 |             'missing_operations':attempt.get('missing_operations',[]),
+000290 |             'four_contributions_present':all(attempt.get('contributions',{}).get(k) is not None
+000291 |                                              for k in ('W0','WU','WY','WUY'))},
+000292 |             'existing_transport':'L20261102G fixed full frame preserves each supplied whole S/Z/OS source; it is not a new source producer'}
+000293 |         raise SourceFamilyMissing(
+000294 |             'actual complete original source/time family upstream of the installed contribution operation; '
+000295 |             'four supplied jet forms do not determine all source orders and histories',details)
+000296 | 
+000297 |     return {'original.common_source':SourceProvider(load,ORIGINAL_SCOPE,PROVIDER_LOCATION)}

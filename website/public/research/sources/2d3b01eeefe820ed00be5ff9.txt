@@ -1,0 +1,100 @@
+TFPT scientific source excerpt
+Original repository path: documents/archive--paper-latex--tfpt-theory-fullv28/sections/006-subsection-gravitational-coupling-from-invariants.tex
+Original file SHA-256: d4a755ad36e976b1ef10765c32eebd46c32d354ff0dbff0a1edf64140a726582
+Inclusive original lines: 43-134
+Line numbers below refer to the original source.
+This bounded excerpt is source evidence; it is not a new proof/checker run.
+Conversation metadata and personal execution details are omitted where indicated.
+
+000043 | \begin{corollary}{Axion--Photon Coupling}{gagg}
+000044 | The CFE fixes the axion--photon vertex uniquely:
+000045 | \begin{equation}
+000046 |     \boxed{\gagg = -4\cthree = -\frac{1}{2\pi} \approx -0.1592}
+000047 | \end{equation}
+000048 | This determines cosmic birefringence without free parameters.
+000049 | \end{corollary}
+000050 | 
+000051 | %-----------------------------------------------------------------------------
+000052 | \subsection{Cosmic Birefringence}
+000053 | %-----------------------------------------------------------------------------
+000054 | 
+000055 | \begin{definition}{Topological Excursion Quantization}{topoexcursion}
+000056 | The topological axion excursion is quantized in discrete sector changes:
+000057 | \begin{equation}
+000058 |     \Delta a_{\text{top}} = n\,\phiz, \qquad n\in\mathbb{Z},
+000059 | \end{equation}
+000060 | with $n=1$ the minimal nontrivial class. The corresponding birefringence is
+000061 | $\beta = \Delta a_{\text{top}}/(4\pi) = n\,\phiz/(4\pi)$.
+000062 | \end{definition}
+000063 | 
+000064 | \begin{theorem}{Cosmic Birefringence Prediction}{birefringence}
+000065 | A homogeneous topological axion field $a_{\text{top}}(\eta)$ rotates the polarization plane of light by:
+000066 | \begin{equation}
+000067 |     \frac{d\beta}{d\eta} = 2\cthree\frac{da_{\text{top}}}{d\eta} 
+000068 |     \quad\Rightarrow\quad 
+000069 |     \beta = \frac{\Delta a_{\text{top}}}{4\pi}
+000070 | \end{equation}
+000071 | Using the coupling convention $\gagg=-4\cthree$ (Corollary~\ref{cor:gagg}) and the sign convention for $\beta$ stated below, the transport law is equivalently
+000072 | $\frac{d\beta}{d\eta} = -\frac{1}{2}\gagg\,\frac{da_{\text{top}}}{d\eta} = 2\cthree\,\frac{da_{\text{top}}}{d\eta}$.
+000073 | With the minimal nontrivial sector $n=1$ (Definition~\ref{def:topoexcursion}):
+000074 | \begin{equation}
+000075 |     \boxed{\beta_{\text{th}} = \frac{\phiz}{4\pi} = 0.0042312895\ldots~\text{rad} = 0.2424^\circ}
+000076 | \end{equation}
+000077 | \end{theorem}
+000078 | 
+000079 | \begin{tcolorbox}[colback=yellow!3, colframe=yellow!60!black,
+000080 |     title={\textbf{Sign conventions for $\beta$}}, fonttitle=\bfseries\small]
+000081 | \textbf{Sign:} $\beta>0$ corresponds to a counter-clockwise rotation of linear polarization
+000082 | when looking along the photon propagation direction (IAU convention).\\
+000083 | \textbf{Mapping:} $\beta_{\text{toward source}} = -\beta_{\text{along propagation}}$.
+000084 | Planck PR4 and ACT DR6 report $\beta$ in the IAU convention; our prediction is directly comparable.\\
+000085 | \textbf{Units:} $\beta$ is quoted in radians unless a degree symbol is shown explicitly.
+000086 | \end{tcolorbox}
+000087 | 
+000088 | \begin{center}
+000089 | \begin{tikzpicture}[>=Stealth, font=\small]
+000090 |   \node[circle, draw, fill=red!10, minimum size=0.6cm] (S) at (0,0) {S};
+000091 |   \node[circle, draw, fill=blue!10, minimum size=0.6cm] (O) at (5,0) {O};
+000092 |   \draw[->, thick] (S) -- node[above]{$\vec{k}$ (photon propagation)} (O);
+000093 |   \node[below=0.3cm of O, font=\footnotesize]{looking along $\vec{k}$: CCW $=\beta>0$};
+000094 |   \draw[<-, thick, gray, dashed] (S) ++(0,-0.8) -- ++(5,0) node[midway, below]{\color{gray}toward source: CCW $=\beta<0$};
+000095 | \end{tikzpicture}
+000096 | \end{center}
+000097 | 
+000098 | \subsubsection{Dynamical Completion of the Excursion}
+000099 | \label{sec:deltaa}
+000100 | 
+000101 | \begin{tcolorbox}[colback=red!3, colframe=red!50!black, 
+000102 |     title={\textbf{One Minimal Dynamical Realization: Late-Time Shifted Axion Attractor}}, fonttitle=\bfseries\small]
+000103 | \textbf{Goal:} Provide one minimal dynamical realization compatible with the topological quantization (Definition~\ref{def:topoexcursion}).
+000104 | 
+000105 | \textbf{Shifted periodic potential:} The smallest periodic completion that enforces the geometric shift is
+000106 | \begin{equation}
+000107 |     V(a_{\text{top}},t)=\Lambda^4\Bigl[1-\cos\bigl(a_{\text{top}}-\phiz\,s(t)\bigr)\Bigr],
+000108 |     \label{eq:shifted-axion-potential}
+000109 | \end{equation}
+000110 | where $s(t)$ transitions from $0$ to $1$ at late times (e.g.\ when a TFPT block becomes dynamically relevant).
+000111 | Then the instantaneous minimum shifts from $a=0$ (early) to $a=\phiz$ (late).
+000112 | 
+000113 | \textbf{Attractor consequence (conditional):} If a late-time transition occurs after recombination and the background mode relaxes toward the new minimum,
+000114 | \begin{equation}
+000115 |     \Delta a_{\text{top}} = a_{\text{top}}(t_0)-a_{\text{top}}(t_{\mathrm{rec}}) \simeq \phiz \quad (n=1)
+000116 |     \quad\Rightarrow\quad
+000117 |     \beta \simeq \frac{\phiz}{4\pi},
+000118 | \end{equation}
+000119 | recovering the TFPT birefringence prediction as an attractor rather than a bare assumption.
+000120 | 
+000121 | \textbf{Timing without continuous tuning (one realization):} The effective mass is $m_{\mathrm{eff}}\sim \Lambda^2/f_a$.
+000122 | Requiring $m_{\mathrm{eff}}\sim H_0$ delays the roll to very late times (robustly after recombination). With $f_a\sim 10^{11}$~GeV this corresponds to
+000123 | $\Lambda\sim \sqrt{H_0 f_a}\sim 10^{-6}$~eV (order-of-magnitude).
+000124 | 
+000125 | \textbf{Discrete realization via a TFPT block (optional):} One may treat $\Lambda$ itself as the scale of an additional ultra-light TFPT block,
+000126 | generated by the same universal suppression $\zeta_B \sim (\pi\cthree)\exp(-\beta_B\pi\cthree)\exp(-k_B/\cthree)$ with $k_B=\frac{3}{2}I_1(B)$.
+000127 | A minimal rational charge set $\{1,2/3,2/3\}$ gives $I_1=1+2\cdot(4/9)=17/9$ and $k=17/6$, yielding $\Lambda$ naturally in the $\mu$eV range for late cascade levels,
+000128 | and hence $m_{\mathrm{eff}}\sim 10^{-32}$~eV (cosmologically late roll) without introducing a continuous tuning knob.
+000129 | 
+000130 | \textbf{New test:} If the field is still evolving today, birefringence becomes redshift-dependent:
+000131 | \begin{equation}
+000132 |     \beta(z)=\frac{a(t_0)-a(t(z))}{4\pi}.
+000133 | \end{equation}
+000134 | This can be constrained by birefringence tomography using CMB and polarized sources across redshift.

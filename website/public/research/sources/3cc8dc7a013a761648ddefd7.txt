@@ -1,0 +1,76 @@
+TFPT scientific source excerpt
+Original repository path: experiments/theory-contracts/e-series-compiler-closure-20261023/e7_two_current_gram.py
+Original file SHA-256: 14eedf396879a855632fad463c9f0fce3e5175a580381d99fb29b4e870de414b
+Inclusive original lines: 1-68
+Line numbers below refer to the original source.
+This bounded excerpt is source evidence; it is not a new proof/checker run.
+Conversation metadata and personal execution details are omitted where indicated.
+
+000001 | """Actual compact positive two-current Gram, compared to native quartic projector.
+000002 | No arbitrary projection: build all symmetric two-current states in E8 level1.
+000003 | """
+000004 | import runpy,json,itertools
+000005 | from contextlib import redirect_stdout
+000006 | from io import StringIO
+000007 | from collections import defaultdict
+000008 | from fractions import Fraction as F
+000009 | import numpy as np
+000010 | from scipy.sparse import csr_matrix,diags
+000011 | with redirect_stdout(StringIO()):s=runpy.run_path(str(__import__('pathlib').Path(__file__).with_name('e7_quartic_projector.py')))
+000012 | ch,af,G,K,pairs,ck=(s[k] for k in ['ch','env','G','K','pairs','ck']);af=af['af'];vac={():F(1)}
+000013 | weights=defaultdict(list);states=[]
+000014 | for p,(i,j) in enumerate(pairs):
+000015 |     weights[tuple(a+b for a,b in zip(ch.roots[G[i]],ch.roots[G[j]]))].append(p)
+000016 |     state={}
+000017 |     for a,b in [(i,j),(j,i)]:
+000018 |         for word,c in af.act(G[a],-1,af.act(G[b],-1,vac)).items():state[word]=state.get(word,F(0))+c/2
+000019 |     states.append({w:c for w,c in state.items() if c})
+000020 | rows=[];cols=[];vals=[];count=0
+000021 | mult=[1 if i==j else 2 for i,j in pairs]
+000022 | for block in weights.values():
+000023 |     for p,q in itertools.product(block,repeat=2):
+000024 |         i,j=pairs[p];inner=F(0)
+000025 |         for a,b in [(i,j),(j,i)]:
+000026 |             st=af.act(ch.opp[G[a]],1,states[q]);st=af.act(ch.opp[G[b]],1,st)
+000027 |             inner+=st.get((),F(0))/2
+000028 |         inner*=mult[p]*mult[q]
+000029 |         ck(inner.denominator==1,'actual symmetric pair compact Gram integral')
+000030 |         if inner:rows.append(p);cols.append(q);vals.append(int(inner))
+000031 |         count+=1
+000032 | Gram=csr_matrix((vals,(rows,cols)),shape=K.shape,dtype=np.int64)
+000033 | W=diags(mult,dtype=np.int64,format='csr');Pnum=K+2*s['I']
+000034 | target=W@Pnum
+000035 | rr,cc=Gram.nonzero();ratios={F(int(Gram[i,j]),int(target[i,j])) for i,j in zip(rr,cc) if target[i,j]}
+000036 | ck(len(ratios)==1,'one source-derived compact Gram proportionality')
+000037 | factor=next(iter(ratios));delta=Gram*factor.denominator-target*factor.numerator;delta.eliminate_zeros()
+000038 | ck(delta.nnz==0,'whole1596 source Gram equals compact metric times quartic projector')
+000039 | sym=K.T@W-W@K;sym.eliminate_zeros();ck(sym.nnz==0,'quartic channel operator self-adjoint in inherited compact Sym2 metric')
+000040 | result={'claim':'MATH.ESERIES.ACTUAL.TWO.CURRENT.GRAM.20261106','state_definition':'S_ab=(J_a(-1)J_b(-1)+J_b(-1)J_a(-1))Omega/2; coordinates use2*S_ab for a<b and S_aa on diagonal','inherited_Sym2_metric':'W diagonal1 for a=b and2 for a<b','actual_Gram_identity':f'Gram={factor}*W*(K+2I)={factor*24}*W*P133','compared_weight_allowed_entries':count,'Gram_nonzero_entries':Gram.nnz,'Gram_rank':133,'Gram_nullity':1463,'scope':'Actual positive compact source Gram in original level1 E8 vacuum. Null1463 subspace vanishes in the unitary integrable quotient;133 survives. This is a derived internal two-current state channel, not the primitive physical admissibility projector or physical fermion spectrum.','checks':dict(s['env']['checks'])}
+000041 | 
+000042 | # Formal level variation diagnoses why the original k=1 channel is special.
+000043 | # A four-current vacuum Gram has degree at most2 in k, by affine commutation.
+000044 | # All k=0 pairings vanish; two further levels determine the full polynomial.
+000045 | af2=type(af)(ch,2);vals2=[];rows2=[];cols2=[]
+000046 | states2=[]
+000047 | for i,j in pairs:
+000048 |     state={}
+000049 |     for a,b in [(i,j),(j,i)]:
+000050 |         for word,c in af2.act(G[a],-1,af2.act(G[b],-1,vac)).items():state[word]=state.get(word,F(0))+c/2
+000051 |     states2.append({w:c for w,c in state.items() if c})
+000052 | for block in weights.values():
+000053 |     for p,q in itertools.product(block,repeat=2):
+000054 |         i,j=pairs[p];inner=F(0)
+000055 |         for a,b in [(i,j),(j,i)]:
+000056 |             st=af2.act(ch.opp[G[a]],1,states2[q]);st=af2.act(ch.opp[G[b]],1,st)
+000057 |             inner+=st.get((),F(0))/2
+000058 |         inner*=mult[p]*mult[q]
+000059 |         ck(inner.denominator==1,'actual level2 pair Gram integral')
+000060 |         if inner:rows2.append(p);cols2.append(q);vals2.append(int(inner))
+000061 | Gram2=csr_matrix((vals2,(rows2,cols2)),shape=K.shape,dtype=np.int64)
+000062 | diff=Gram2-W@(6*s['I']+K);diff.eliminate_zeros()
+000063 | ck(diff.nnz==0,'whole1596 level2 Gram fixes full level polynomial')
+000064 | result['formal_level_polynomial']='Gram_k=W*(2*k*(k-1)*I+(k/2)*(K+2I))=W*(2*k*(k+5)*P133+2*k*(k-1)*P1463)'
+000065 | result['formal_level_scope']='Same original current brackets with symbolic level diagnostic. Degree at most2 follows affine commutation; full matrix verified at k=1 and2, with zero constant term. Does not change original level1 or derive its physical selection.'
+000066 | result['positive_level_consequence']='k>0 and positivity of these actual two-current norms imply k>=1; k=1 is the rank133 boundary. This necessary condition alone does not prove unitarity at arbitrary k or select k=1 without its existing premise.'
+000067 | result['checks']=dict(s['env']['checks'])
+000068 | s['OUT'].joinpath('two-current-gram-results.json').write_text(json.dumps(result,indent=2)+'\n');print(json.dumps(result,indent=2))

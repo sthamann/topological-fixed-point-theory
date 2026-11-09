@@ -1,0 +1,89 @@
+TFPT scientific source excerpt
+Original repository path: experiments/theory-contracts/e-series-compiler-closure-20261023/e7_sm_preserving_transport_20261106.py
+Original file SHA-256: d898d7619fb6b718b9cd8b3d90bc98f1315b98c65f3dfdae5f3db4a1d8a17360
+Inclusive original lines: 1-81
+Line numbers below refer to the original source.
+This bounded excerpt is source evidence; it is not a new proof/checker run.
+Conversation metadata and personal execution details are omitted where indicated.
+
+000001 | """Actual SM-preserving two-reflection transport between the two E7 windows."""
+000002 | import ast,json,argparse,itertools
+000003 | from collections import Counter,defaultdict
+000004 | from pathlib import Path
+000005 | from fractions import Fraction as F
+000006 | [OMITTED: non-scientific conversation or execution metadata]
+000007 | parser=argparse.ArgumentParser();parser.add_argument('--out',required=True,type=Path)
+000008 | OUT=parser.parse_args().out;OUT.mkdir(parents=True,exist_ok=True)
+000009 | bootstrap=REPO/'experiments/theory-contracts/e-series-compiler-closure-20261023/e7_full_source_response_20261106.py'
+000010 | t=ast.parse(bootstrap.read_text());nodes=[]
+000011 | for n in t.body:
+000012 |     if isinstance(n,ast.For):break
+000013 |     if any(isinstance(z,ast.Name) and z.id in ['parser','OUT'] for z in ast.walk(n)):continue
+000014 |     nodes.append(n)
+000015 | env={};exec(compile(ast.Module(body=nodes,type_ignores=[]),str(bootstrap),'exec'),env)
+000016 | ch,ck,sp=(env[k] for k in ['ch','ck','sp'])
+000017 | I=sp.eye(8);alpha=sp.Matrix([0]*5+[1,-1,0]);aQ=sp.ones(8,1)/2
+000018 | gamma=sp.Matrix([0]*6+[-1,-1]);beta=sp.Matrix([0]*5+[1,0,1])-aQ
+000019 | M=(I-beta*beta.T)*(I-gamma*gamma.T)
+000020 | ck(M*alpha==aQ and M.T*M==I,'literal two-reflection E7 normal transport')
+000021 | Y=sp.Matrix([F(-1,3)]*3+[F(1,2)]*2+[0]*3)
+000022 | sm=[]
+000023 | for i in range(3):
+000024 |     for j in range(3):
+000025 |         if i!=j:r=sp.zeros(8,1);r[i]=1;r[j]=-1;sm.append(r)
+000026 | r=sp.zeros(8,1);r[3]=1;r[4]=-1;sm.extend([r,-r])
+000027 | ck(M*Y==Y and all(M*r==r for r in sm),'fixed original SM charges and nonabelian roots')
+000028 | comm=[sp.Matrix(r)/2 for r in ch.roots if (sp.Matrix(r)/2).dot(Y)==0 and all((sp.Matrix(r)/2).dot(z)==0 for z in sm)]
+000029 | ck(len(comm)==20 and sp.Matrix.hstack(*comm).rank()==4,'actual A4 root commutant of the marked SM')
+000030 | def ridx(r):return ch.ridx[tuple(int(2*x) for x in r)]
+000031 | def expad(root,v):
+000032 |     out=dict(v);term=dict(v)
+000033 |     for n in range(1,8):
+000034 |         nxt={}
+000035 |         for j,c in term.items():
+000036 |             for k,cf in ch.bracket(root,j).items():nxt[k]=nxt.get(k,F(0))+c*cf/F(n)
+000037 |         term={k:c for k,c in nxt.items() if c}
+000038 |         if not term:return {k:c for k,c in out.items() if c}
+000039 |         for k,c in term.items():out[k]=out.get(k,F(0))+c
+000040 |     raise RuntimeError('nilpotent source exponential did not terminate')
+000041 | def tits(r,v):
+000042 |     i=ridx(r)
+000043 |     return expad(i,expad(ch.opp[i],expad(i,v)))
+000044 | def lift(v):return tits(beta,tits(gamma,v))
+000045 | ck(all(lift({ridx(r):F(1)})=={ridx(r):F(1)} for r in sm),'actual original Tits lift fixes all8 SM root currents exactly')
+000046 | yc=env['Ri']*Y;Yv={240+i:F(yc[i]) for i in range(8) if yc[i]}
+000047 | ck(lift(Yv)==Yv,'actual source lift fixes hypercharge current exactly')
+000048 | normal=lift({ridx(alpha):F(1)})
+000049 | ck(set(normal)=={ridx(aQ)} and abs(normal[ridx(aQ)])==1,'normal root fields transported with actual cocycle sign')
+000050 | for i,r in enumerate(ch.roots):
+000051 |     image=M*sp.Matrix(r)/2
+000052 |     v=lift({i:F(1)})
+000053 |     ck(set(v)=={ridx(image)} and abs(next(iter(v.values())))==1,'all240 root field images match source Weyl map')
+000054 | old=json.loads((OUT/'quartic-descent-results.json').read_text())
+000055 | Gnew=[i for i,r in enumerate(ch.roots) if sum(r)==4]
+000056 | new_index={i:k for k,i in enumerate(Gnew)}
+000057 | new_alpha=ridx(aQ);V={ch.opp[new_alpha]:{():1}}
+000058 | for degree in range(1,5):
+000059 |     nxt=defaultdict(Counter)
+000060 |     for a,root in enumerate(Gnew):
+000061 |         for b,poly in V.items():
+000062 |             for target,c in ch.bracket(root,b).items():
+000063 |                 for mon,v in poly.items():nxt[target][tuple(sorted(mon+(a,)))]+=int(c)*v
+000064 |     V={b:{m:c for m,c in poly.items() if c} for b,poly in nxt.items() if any(poly.values())}
+000065 | mapped=[];signs=[]
+000066 | for r in old['native56_roots_doubled']:
+000067 |     value=lift({ch.ridx[tuple(r)]:F(1)});j,c=next(iter(value.items()))
+000068 |     mapped.append(new_index[j]);signs.append(int(c))
+000069 | predicted={tuple(sorted(mapped[i] for i in mon['indices'])):int(mon['coefficient'])*__import__('math').prod(signs[i] for i in mon['indices']) for mon in old['quartic_monomials']}
+000070 | ck(V=={new_alpha:predicted},'all1036 quartic coefficients transported by the same SM-preserving source lift')
+000071 | rho=sp.Matrix([F(7-2*i,2) for i in range(8)]);q=sp.ones(8,1)
+000072 | changes=[]
+000073 | for a in [F(1,4),F(3,4)]:
+000074 |     w=rho-F(2*a-1,2)*q
+000075 |     ck(M*w!=w,'SM-preserving transport is not a fixed-H8 symmetry')
+000076 |     changes.append({'a':str(a),'w_fixed':False,'M_w':list(map(str,M*w))})
+000077 | result={'claim':'MATH.ESERIES.SM.PRESERVING.E7.TRANSPORT.20261106','native_E7_normal':list(map(str,alpha)),'Q_neutral_E7_normal':list(map(str,aQ)),'reflection_roots':[list(map(str,gamma)),list(map(str,beta))],'source_Tits_normal_sign':str(normal[ridx(aQ)]),'all240_root_fields_transported':True,'all8_SM_root_currents_fixed':True,'hypercharge_current_fixed':True,'transformed_time_markings':changes,'scope':'Exact two-reflection/Tits transport inside the original E8 source. It fixes the SM current algebra, but transports the source clock marking; not a symmetry of the same fixed H8 or identification of56 with48.','checks':dict(env['checks'])}
+000078 | result['SM_commutant_root_count_rank_type']=[20,4,'A4']
+000079 | result['quartic_coefficients_transported']=1036
+000080 | (OUT/'sm-preserving-transport-results.json').write_text(json.dumps(result,indent=2)+'\n')
+000081 | print(json.dumps(result,indent=2))

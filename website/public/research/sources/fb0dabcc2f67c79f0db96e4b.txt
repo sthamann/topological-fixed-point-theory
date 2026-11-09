@@ -1,0 +1,153 @@
+TFPT scientific source excerpt
+Original repository path: experiments/theory-contracts/original-paper-source-reconciliation-20261102/solutionsearch_20261106R/research_runtime/launch.py
+Original file SHA-256: 9c45708f97b65c265728deb823170c6f54fd58a4dfc0a65cde3cd033eddc42d5
+Inclusive original lines: 201-345
+Line numbers below refer to the original source.
+This bounded excerpt is source evidence; it is not a new proof/checker run.
+Conversation metadata and personal execution details are omitted where indicated.
+
+000201 |                 'Name the changed question and run its decisive test; do not repeat a renamed kernel. ' + task)
+000202 |     return task
+000203 | 
+000204 | 
+000205 | def run(repo, out, requested_rounds=0, *, backend_factory=Backend, context_loader=prepare):
+000206 |     repo, out = Path(repo).resolve(), Path(out).resolve()
+000207 |     if out.is_relative_to(repo):
+000208 |         raise ValueError('Run output must be outside the read-only canonical repository')
+000209 |     out.mkdir(parents=True, exist_ok=True)
+000210 |     lock = (out / 'controller.lock').open('a')
+000211 |     fcntl.flock(lock, fcntl.LOCK_EX | fcntl.LOCK_NB)
+000212 |     stopped = False
+000213 |     def stop_handler(signum, frame):
+000214 |         nonlocal stopped
+000215 |         stopped = True
+000216 |     old_handlers = {s: signal.signal(s, stop_handler) for s in (signal.SIGTERM, signal.SIGINT)}
+000217 |     journal = out / 'research-rounds.jsonl'
+000218 |     journal.touch(exist_ok=True)
+000219 |     history = rows(journal)
+000220 |     previous = json.loads((out / 'worker.json').read_text()) if (out / 'worker.json').exists() else {}
+000221 |     totals = {'rounds': len(history), 'model_calls': 0, 'tool_events': 0,
+000222 |               'completed_commands': 0, 'failed_commands': 0}
+000223 |     # Persist real calls even if a process stopped between proposal and critic.
+000224 |     for p in (out / 'rounds').glob('*/*/metrics.json'):
+000225 |         m = json.loads(p.read_text())
+000226 |         totals['model_calls'] += 1
+000227 |         for key in ('tool_events', 'completed_commands', 'failed_commands'):
+000228 |             totals[key] += m.get(key, 0)
+000229 |     worker = {'kind': 'original_source_research', 'pid': os.getpid(), 'status': 'running',
+000230 |         'started_utc': previous.get('started_utc', utc()), 'last_update_utc': utc(),
+000231 |         'requested_rounds': requested_rounds, 'finished_rounds': len(history),
+000232 |         'backend_identity': {'provider': 'openai_codex', 'model': 'gpt-6.1-sol',
+000233 |                              'receipt_verified': bool(previous.get('backend_receipt'))},
+000234 |         'backend_receipt': previous.get('backend_receipt'), 'trial_summary': totals,
+000235 |         'physics_admission': ADMISSION}
+000236 |     def persist():
+000237 |         worker['last_update_utc'] = utc(); write_json(out / 'worker.json', worker)
+000238 |     def update(call):
+000239 |         worker['active_call'] = call
+000240 |         worker['phase']['description'] = 'Originalquellen und Rechnungen im laufenden ' + call['role'] + ' Aufruf'
+000241 |         persist()
+000242 |     backend = backend_factory(lambda: stopped, update)
+000243 |     task = (history[-1]['next_task'] if history and 'target_assessment' in history[-1]
+000244 |             else GOAL_ANCHOR + DIRECT_TARGET_TASK + INITIAL_TASK)
+000245 |     try:
+000246 |         while not stopped and (requested_rounds == 0 or len(history) < requested_rounds):
+000247 |             manifest = context_loader(repo, out)
+000248 |             worker['knowledge_context'] = {k: v for k, v in manifest.items() if k != 'exact_source_files'}
+000249 |             round_id = 'research-' + format(len(history) + 1, '06d')
+000250 |             directory = out / 'rounds' / round_id; directory.mkdir(parents=True, exist_ok=True)
+000251 |             state_path = directory / 'round-state.json'
+000252 |             state = json.loads(state_path.read_text()) if state_path.exists() else {
+000253 |                 'round_id': round_id, 'question': task, 'started_utc': utc(),
+000254 |                 'context_version': manifest['context_version'], 'steering_version': 2}
+000255 |             if 'steering_version' not in state and not any(k in state for k in ('proposer', 'critic')):
+000256 |                 # An old controller can have opened the next directory before
+000257 |                 # the upgrade signal. Preserve that question and all attempt
+000258 | [OMITTED: non-scientific conversation or execution metadata]
+000259 |                 # completed role exists. Completed proposals are never replaced.
+000260 |                 state.setdefault('prior_questions', []).append({
+000261 |                     'question': state['question'], 'context_version': state.get('context_version'),
+000262 | [OMITTED: non-scientific conversation or execution metadata]
+000263 |                 state.update(question=task, context_version=manifest['context_version'], steering_version=2)
+000264 |                 write_json(state_path, state)
+000265 |             task = state['question']
+000266 |             for role in ('proposer', 'critic'):
+000267 |                 if role in state:
+000268 |                     continue
+000269 |                 if stopped:
+000270 |                     break
+000271 |                 worker['active_question'] = task
+000272 |                 worker['phase'] = {'id': role, 'label': 'Herleitung' if role == 'proposer' else 'Unabhängige Gegenprüfung',
+000273 |                     'description': task, 'current': totals['model_calls'],
+000274 |                     'total': requested_rounds * 2 if requested_rounds else None, 'started_at': utc()}
+000275 |                 persist()
+000276 |                 attempt = len(list(directory.glob(role + '-*'))) + 1
+000277 |                 folder = directory / (role + '-' + format(attempt, '03d'))
+000278 |                 compact_manifest = {k: v for k, v in manifest.items()
+000279 |                                     if k not in {'exact_source_files', 'scientific_readonly_roots'}}
+000280 |                 operator_notes = out / 'operator-notes.txt'
+000281 |                 if operator_notes.is_file():
+000282 |                     compact_manifest['operator_notes_path'] = str(operator_notes)
+000283 |                 candidate = {'response': state['proposer'],
+000284 |                     'call': {k: v for k, v in state['proposer_call'].items() if k != 'commands'},
+000285 |                     'proposal_context_version': state['context_version'],
+000286 |                     'context_changed_since_proposal': state['context_version'] != manifest['context_version']} if role == 'critic' else None
+000287 |                 totals['model_calls'] += 1
+000288 |                 persist()
+000289 |                 result, metrics = backend(role, folder, manifest,
+000290 | [OMITTED: non-scientific conversation or execution metadata]
+000291 |                            decision_history=decision_history(history)))
+000292 |                 state[role], state[role + '_call'] = result, metrics
+000293 |                 write_json(state_path, state)
+000294 |                 for key in ('tool_events', 'completed_commands', 'failed_commands'):
+000295 |                     totals[key] += metrics.get(key, 0)
+000296 |                 worker['backend_receipt'] = metrics['receipt']
+000297 |                 worker['backend_identity']['receipt_verified'] = True
+000298 |                 persist()
+000299 |             if stopped:
+000300 |                 break
+000301 |             proposal, review = state['proposer'], state['critic']
+000302 |             assessment = target_assessment(proposal, review, state['proposer_call'], state['critic_call'], manifest['python'])
+000303 |             next_task = followup(proposal, review, history, assessment)
+000304 |             row = {'round_id': round_id, 'question': task, 'started_utc': state['started_utc'],
+000305 |                 'completed_utc': utc(), 'proposal': proposal, 'review': review,
+000306 |                 'proposal_call': state['proposer_call'], 'review_call': state['critic_call'],
+000307 |                 'proposed_status': proposal['proposed_status'], 'critic_verdict': review['verdict'],
+000308 |                 'actual_result': {'observed_commands': state['proposer_call'].get('commands', []) + state['critic_call'].get('commands', []),
+000309 |                     'scope': 'Host observed CLI command outputs and exits; scientific interpretation remains unadmitted'},
+000310 |                 'physics_admission': ADMISSION, 'target_assessment': assessment,
+000311 |                 'next_task': next_task}
+000312 |             with journal.open('a') as stream:
+000313 |                 stream.write(json.dumps(row, ensure_ascii=False) + '\n'); stream.flush(); os.fsync(stream.fileno())
+000314 |             history.append(row); task = next_task
+000315 |             worker['finished_rounds'] = len(history); totals['rounds'] = len(history)
+000316 |             worker['active_call'] = None; persist()
+000317 |             if (out / 'stop-after-round').exists():
+000318 |                 (out / 'stop-after-round').unlink()
+000319 |                 stopped = True
+000320 |         worker['status'] = 'stopped' if stopped else 'completed'
+000321 |     except InterruptedError:
+000322 |         worker['status'] = 'stopped'
+000323 |     except Exception as exc:
+000324 |         worker['status'] = 'error'; worker['error'] = {'type': type(exc).__name__, 'message': str(exc)}
+000325 |     finally:
+000326 |         backend.terminate()
+000327 |         worker['phase'] = {'id': worker['status'], 'label': worker['status'],
+000328 |             'description': worker.get('error', {}).get('message', task), 'current': len(history),
+000329 |             'total': requested_rounds or None, 'started_at': utc()}
+000330 |         persist()
+000331 |         for s, handler in old_handlers.items():
+000332 |             signal.signal(s, handler)
+000333 |         lock.close()
+000334 |     return 1 if worker['status'] == 'error' else 0
+000335 | 
+000336 | 
+000337 | if __name__ == '__main__':
+000338 |     parser = argparse.ArgumentParser(description=__doc__)
+000339 |     parser.add_argument('--repo', required=True, type=Path)
+000340 |     parser.add_argument('--out', required=True, type=Path)
+000341 |     parser.add_argument('--rounds', type=int, default=0)
+000342 |     args = parser.parse_args()
+000343 |     if args.rounds < 0:
+000344 |         parser.error('--rounds must be 0 (unbounded) or positive')
+000345 |     sys.exit(run(args.repo, args.out, args.rounds))

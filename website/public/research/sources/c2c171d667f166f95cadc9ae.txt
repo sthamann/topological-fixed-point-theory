@@ -1,0 +1,143 @@
+TFPT scientific source excerpt
+Original repository path: experiments/theory-contracts/e-series-compiler-closure-20261023/e7_quartic_descent_20261106.py
+Original file SHA-256: a6f55616c1d59a34913c40a539987f708d8cf038854a8b0886f23a622e08075b
+Inclusive original lines: 1-135
+Line numbers below refer to the original source.
+This bounded excerpt is source evidence; it is not a new proof/checker run.
+Conversation metadata and personal execution details are omitted where indicated.
+
+000001 | """Actual E8 bracket -> E7 quartic -> the pre-existing source E6 cubic.
+000002 | Question: does polarized quartic reproduce the existing signed45 cubic?
+000003 | Success: exact root/cocycle dictionary and all coefficients proportional.
+000004 | Stop: failed dictionary or failed proportionality; no alpha-cubic inference.
+000005 | """
+000006 | import ast
+000007 | import argparse
+000008 | import hashlib
+000009 | import json
+000010 | import itertools
+000011 | from pathlib import Path
+000012 | from collections import Counter,defaultdict
+000013 | from fractions import Fraction as F
+000014 | import sympy as sp
+000015 | 
+000016 | [OMITTED: non-scientific conversation or execution metadata]
+000017 | parser=argparse.ArgumentParser();parser.add_argument('--out',required=True,type=Path)
+000018 | OUT=parser.parse_args().out;OUT.mkdir(exist_ok=True,parents=True)
+000019 | bootstrap=REPO/'experiments/theory-contracts/e-series-compiler-closure-20261023/e7_full_source_response_20261106.py'
+000020 | tree=ast.parse(bootstrap.read_text());nodes=[]
+000021 | for n in tree.body:
+000022 |     if isinstance(n,ast.For):break
+000023 |     if any(isinstance(t,ast.Name) and t.id in ['parser','OUT'] for t in ast.walk(n)):continue
+000024 |     nodes.append(n)
+000025 | env={}
+000026 | exec(compile(ast.Module(body=nodes,type_ignores=[]),str(bootstrap),'exec'),env)
+000027 | ch=env['ch'];ck=env['ck'];ip=env['ip']
+000028 | R=ch.roots
+000029 | alpha=(0,0,0,0,0,2,-2,0)
+000030 | ap=ch.ridx[alpha];am=ch.opp[ap]
+000031 | G1=[i for i,r in enumerate(R) if ip(alpha,r)==4]
+000032 | E7=[i for i,r in enumerate(R) if ip(alpha,r)==0]
+000033 | ck(len(G1)==56 and len(E7)==126,'actual56 and126 root grading')
+000034 | index={r:i for i,r in enumerate(G1)}
+000035 | omega=sp.zeros(56)
+000036 | for a,b in itertools.product(range(56),repeat=2):
+000037 |     bracket=ch.bracket(G1[a],G1[b])
+000038 |     ck(set(bracket)<={ap},'grade2 bracket in original root line')
+000039 |     omega[a,b]=bracket.get(ap,0)
+000040 | ck(omega.T==-omega and omega.rank()==56,'native symplectic56 form nondegenerate')
+000041 | 
+000042 | # Polynomial coefficients of (ad x)^4 e_-alpha, retaining original basis.
+000043 | V={am:{():1}}
+000044 | stages=[]
+000045 | for degree in range(1,5):
+000046 |     nxt=defaultdict(Counter)
+000047 |     for a,root in enumerate(G1):
+000048 |         for basis,poly in V.items():
+000049 |             bracket=ch.bracket(root,basis)
+000050 |             for target,coeff in bracket.items():
+000051 |                 ck(coeff.denominator==1,'integral original bracket')
+000052 |                 coeff=int(coeff)
+000053 |                 for mon,v in poly.items():
+000054 |                     key=tuple(sorted(mon+(a,)))
+000055 |                     nxt[target][key]+=coeff*v
+000056 |     V={b:{m:c for m,c in p.items() if c} for b,p in nxt.items() if any(p.values())}
+000057 |     stages.append({'degree':degree,'basis_directions':len(V),'polynomial_entries':sum(len(p) for p in V.values())})
+000058 |     print('stage',stages[-1],flush=True)
+000059 | ck(set(V)=={ap},'quartic ends in alpha root only')
+000060 | Q=V[ap]
+000061 | ck(bool(Q),'quartic nonzero')
+000062 | 
+000063 | actions={}
+000064 | for s in E7:
+000065 |     steps={}
+000066 |     for i,r in enumerate(G1):
+000067 |         b=ch.bracket(s,r)
+000068 |         ck(all(t in index for t in b),'E7 preserves native56')
+000069 |         if b:steps[i]=[(index[t],int(v)) for t,v in b.items()]
+000070 |     actions[s]=steps
+000071 | for s,steps in actions.items():
+000072 |     deriv=Counter()
+000073 |     for mon,c in Q.items():
+000074 |         for old,mult in Counter(mon).items():
+000075 |             for new,v in steps.get(old,[]):
+000076 |                 mm=list(mon);mm.remove(old);mm.append(new)
+000077 |                 deriv[tuple(sorted(mm))]+=c*mult*v
+000078 |     ck(not any(deriv.values()),'all126 E7 Ward equations for quartic')
+000079 | print('quartic',len(Q),'coefficients',dict(Counter(Q.values())),'all126 invariance PASS',flush=True)
+000080 | 
+000081 | # E6 plane inside the same E7: family A2 has roots e5-e6 and e6-e7.
+000082 | u=(0,0,0,0,0,1,1,-2)
+000083 | charge={i:F(ip(u,R[r]),2) for i,r in enumerate(G1)}
+000084 | hist=Counter(charge.values());ck(hist=={F(-3):1,F(-1):27,F(1):27,F(3):1},'56 as1+27+27bar+1 by actual E6 charge')
+000085 | sing={k:next(i for i in range(56) if charge[i]==k) for k in [F(-3),F(3)]}
+000086 | polarized={}
+000087 | for sc,si in sing.items():
+000088 |     p={}
+000089 |     for mon,c in Q.items():
+000090 |         if mon.count(si)==1 and all(charge[j]==-sc/3 for j in mon if j!=si):
+000091 |             mm=list(mon);mm.remove(si);p[tuple(mm)]=c
+000092 |     ck(len(p)==45,'quartic polarization yields45 cubic monomials')
+000093 |     polarized[str(sc)]=p
+000094 | print('E6 charge pieces',dict(hist),'cubic polarizations',[(k,len(v)) for k,v in polarized.items()],flush=True)
+000095 | 
+000096 | # Existing signed cubic certificate, without a newly solved invariant fit.
+000097 | old=json.loads((REPO/'experiments/theory-contracts/compiler-vacuum-current-cubic-20260918/certificate.json').read_text())['cubic']
+000098 | base=[tuple(r) for r in old['base_roots_doubled']]
+000099 | parent=json.loads((REPO/'experiments/theory-contracts/compiler-e6-seam-readout-20260918/certificate.json').read_text())['e6']
+000100 | blocks=[[tuple(r) for r in b] for b in parent['three_27_blocks']]
+000101 | base_family=tuple(sum(r[k] for r in base) for k in [5,6,7])
+000102 | matches=[]
+000103 | for sc,poly in polarized.items():
+000104 |     target_set={R[G1[i]] for i in range(56) if charge[i]==-F(sc)/3}
+000105 |     for orientation in [1,-1]:
+000106 |         for block in blocks:
+000107 |             oriented={tuple(orientation*x for x in r) for r in block}
+000108 |             if target_set!=oriented:continue
+000109 |             target_family=[F(sum(r[k] for r in oriented),27) for k in [5,6,7]]
+000110 |             base_family=[F(sum(r[k] for r in base),27) for k in [5,6,7]]
+000111 |             # Transport the original base by its actual A2 root operation.
+000112 |             delta=tuple([0]*5+[int(target_family[k]*orientation-base_family[k]) for k in range(3)])
+000113 |             mapped=[];signs=[]
+000114 |             for r in base:
+000115 |                 if not any(delta):image=r;sign=1
+000116 |                 else:
+000117 |                     image=tuple(r[k]+delta[k] for k in range(8))
+000118 |                     b=ch.bracket(ch.ridx[delta],ch.ridx[r]);ck(b=={ch.ridx[image]:b.get(ch.ridx[image])} and abs(b.get(ch.ridx[image],0))==1,'literal source A2 transport to E7 27')
+000119 |                     sign=int(b[ch.ridx[image]])
+000120 |                 if orientation==-1:
+000121 |                     # Compact conjugation contributes - on each root vector.
+000122 |                     image=tuple(-x for x in image);sign=-sign
+000123 |                 mapped.append(index[ch.ridx[image]]);signs.append(sign)
+000124 |             expected={tuple(sorted(mapped[i] for i in m['indices'])):int(m['coefficient'])*sp.prod(signs[i] for i in m['indices']) for m in old['monomials']}
+000125 |             ck(set(poly)==set(expected),'all45 original cubic supports match polarization')
+000126 |             ratios={F(poly[m],int(expected[m])) for m in poly}
+000127 |             ck(len(ratios)==1,'all45 original signed cubic coefficients match one source scale')
+000128 |             matches.append({'singlet_charge':sc,'orientation':orientation,'quartic_to_existing_cubic_scale':str(next(iter(ratios))),'matched_monomials':45,'A2_root_doubled':delta})
+000129 | ck(bool(matches),'source cubic is actually identified, not inferred from dimension')
+000130 | print('OLD CUBIC MATCH',matches,flush=True)
+000131 | 
+000132 | result={'claim':'MATH.ESERIES.NATIVE.QUARTIC.DESCENT.20261106','scope':'Original source E8 bracket and internal E7/E6 representations. Known Freudenthal construction realized on native source; no physical coupling or alpha-polynomial identification.','normal_root_doubled':alpha,'native56_roots_doubled':[R[i] for i in G1],'symplectic_rank':56,'stages':stages,'quartic_monomials':[{'indices':m,'coefficient':c} for m,c in sorted(Q.items())],'quartic_coefficient_histogram':dict(Counter(Q.values())),'E7_root_Ward_tests':126,'E6_charge_histogram':{str(k):v for k,v in hist.items()},'source_cubic_matches':matches,'checks':dict(env['checks'])}
+000133 | result['source_sha256']={**env['PINS'],str(bootstrap.relative_to(REPO)):hashlib.sha256(bootstrap.read_bytes()).hexdigest(),'experiments/theory-contracts/compiler-vacuum-current-cubic-20260918/certificate.json':hashlib.sha256((REPO/'experiments/theory-contracts/compiler-vacuum-current-cubic-20260918/certificate.json').read_bytes()).hexdigest()}
+000134 | (OUT/'quartic-descent-results.json').write_text(json.dumps(result,indent=2)+'\n')
+000135 | print('PASS',sum(env['checks'].values()),flush=True)

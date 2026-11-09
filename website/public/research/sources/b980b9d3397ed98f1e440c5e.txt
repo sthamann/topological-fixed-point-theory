@@ -1,0 +1,55 @@
+TFPT scientific source excerpt
+Original repository path: experiments/theory-contracts/original-paper-source-reconciliation-20261102/contribution_20261106Q/checks/ORIGINAL-CHECKS-AND-SCOPE.md
+Original file SHA-256: 81bbb240ddae517a349dfea5a462c7c76e69a4b946d21c3cbda334c36160e29f
+Inclusive original lines: 1-47
+Line numbers below refer to the original source.
+This bounded excerpt is source evidence; it is not a new proof/checker run.
+Conversation metadata and personal execution details are omitted where indicated.
+
+000001 | # Ausführbare Prüfungen der ursprünglichen Quelle
+000002 | 
+000003 | Das neue Modul `original_checks.py` führt fünf mathematische Prüfungen an tatsächlich gelieferten endlichen Daten aus. Es berechnet die Beziehungen und setzt keine Erfolgslabels an ihre Stelle. Die installierte P Version wurde nicht verändert. Fehlende ursprüngliche Daten und Operationen liefern `MISSING_INPUT`; ein nicht entscheidbares symbolisches Vorzeichen bleibt offen.
+000004 | 
+000005 | ## Was tatsächlich berechnet wird
+000006 | 
+000007 | 1. **Vier gemeinsame unnormierte Werte.** Auf derselben vollständigen Atomliste werden zunächst alle vier Matrixformen mit den tatsächlichen Massen summiert. Jede Form muss durch den gegebenen Nullquotienten gehen. Erst anschließend folgen die ursprüngliche äußere Projektion, Randpaarung, der absolute Referenzfaktor und die gemeinsame Normierung. Die Registry rekonstruiert diese Summe aus den aktuellen Runtimebeiträgen und vergleicht ihre vier Werte mit dem aktuellen Aggregationsergebnis. Ein unabhängig geliefertes Prüffamilienbeispiel kann dieses Ergebnis nicht ersetzen.
+000008 | 
+000009 | 2. **Reflexionspositivität.** Die reflektierte Form wird mit dem tatsächlichen geordneten Wortcaller und seinen Reflexions und Zeitabbildungen neu ausgewertet. Alternativ werden die tatsächlich genähten ganzen Halbwortamplituden verwendet und `Tr(K_a* K_b)/Z` gebildet. Die aktuelle aggregierte Q0 Form muss damit übereinstimmen, positiv sein und durch den ursprünglichen Nullquotienten gehen. Ein zusätzliches Hamiltonmodell, eine reduzierende Kompression oder eine Semigruppenannahme wird nicht verlangt. Ein beliebiges positives Eingabegram genügt nicht.
+000010 | 
+000011 | 3. **Ward und Schwinger Dyson.** Für die ursprünglichen Koordinaten x, Wirkung S, Maßdichte J, Variation v und ganze Einfügung O wird exakt der Integrand
+000012 | 
+000013 |    `J v·grad O + O div(J v) − O J v·grad S`
+000014 | 
+000015 |    gebildet. Der tatsächliche ursprüngliche Integrator wertet ihn gegen `exp(−S)` aus. Der originale Randintegrator berechnet den zugehörigen gerichteten Fluss von `O J v exp(−S)` an jeder ursprünglichen Randfläche. Beide integrierten Größen müssen übereinstimmen. Die Maß und Variationsjacobikontakte bleiben erhalten. Es wird weder durch J noch durch einen Pfaffian geteilt und keine Bewegungsgleichung auf jede Konfiguration angewandt.
+000016 | 
+000017 | 4. **Ganze Wortplatzierung und ursprüngliche Transporte.** Die vier ganzen ursprünglichen Wörter werden durch ihren tatsächlichen Caller ausgewertet oder aus den tatsächlichen ganzen Intervallkernen und Marken als K2 K1 K0, K2 K1 U K0, K2 Y K1 K0 und K2 Y K1 U K0 genäht. Die resultierenden zurückgehaltenen Formen werden mit den aktuellen integrierten Formen verglichen. P liegt außerhalb des ganzen Wortes. Nur die tatsächlich ursprünglich angegebenen Domänen, Referenz und Eta Transportrelationen werden zusätzlich geprüft. Komplementrückkehr wird nicht durch gesonderte Kompression jedes Buchstabens entfernt.
+000018 | 
+000019 | 5. **Passender Regulatorbezug.** Eine tatsächliche endliche gewichtete Rückprojektion wird durch Summation ihrer ursprünglichen feinen Atome auf die groben Atome vollständig geprüft. Damit werden alle beschränkten Funktionen auf dieser endlichen groben Domäne erfasst. Der zweite implementierte Zweig berechnet für den tatsächlichen selbstadjungierten Transfer und seinen tatsächlichen stationären Projektor R=T−Pi exakt q=norm(R). Aus q<1 folgt für die gesamte verbleibende Reihe ab n die Schranke q^n/(1−q). Die Restreihe selbst wird zusätzlich als `(I−R)^−1 R^n` berechnet. Dies ist ein analytischer Rest für alle folgenden Iterationen, keine empirische Gegenüberstellung von zwei Abschnitten.
+000020 | 
+000021 | ## Originale und ihre Voraussetzungen
+000022 | 
+000023 | `FULL-SOURCE-REGULATOR-PROOF.txt`, Abschnitte 1 und 2, erhält die tatsächliche vollständige Erzeugende, den Nullquellenskalar, sämtliche äußeren Quellenbeine, den ursprünglichen Jacobian und die geordnete unnormierte Faserintegration. Der zugehörige Grassmannabschnitt erhält höhere gerade Dichten. Der Pythoncheck übernimmt diese Summen und bewahrt die Normierung bis nach der Integration.
+000024 | 
+000025 | `GRADED-HS-REFLECTION-AND-TIME.txt:179–188` gibt für die tatsächlichen geraden geordneten Wärmebeine die positive Form `Tr(K_F* K_G)/Z` und ihre Voraussetzungen an. Es setzt einen passenden tatsächlichen Wort, Adjungierungs und Zeitcaller voraus. Das Modul gestattet auch die bereits gelieferten ganzen genähten Amplituden und verlangt kein zusätzliches globales Hamiltonmodell.
+000026 | 
+000027 | `MATRIX-KERNEL-PROOF.txt:124–136` erhält alle ursprünglichen Quellenmarken zwischen ganzen Intervallen und die Randkontraktion. Seine positive Referenzkette ist ausdrücklich nicht automatisch das physikalische Bosonmaß. Die neue Prüfung verwendet keine solche Gleichsetzung.
+000028 | 
+000029 | `BLOCKING-PATH.txt:31–81` berechnet die ursprüngliche v330 Zylinderfamilie und ihre exakte gewichtete Projektivität. Abschnitt 3 erhält die ganze Faserintegration einschließlich Quellenbeinen und Referenzen und unterscheidet die Elimination bei fester feiner Quelle vom Wechsel äußerer Volumina. Die numerischen Kontrollfälle verwenden genau diese ältere Transferklasse, ohne ihre drei Labels als Higgskoordinaten auszugeben.
+000030 | 
+000031 | `PositiveDescentMaster.lean:68–90` setzt summierbare Defekte über sämtliche Stufen voraus. Zwei ähnliche numerische Regulatorstufen ersetzen diese Voraussetzung nicht. Der neue endliche Transfersatz liefert in seiner eigenen Klasse eine tatsächliche geometrische gesamte Defektschranke. Er liefert keine bisher fehlende uniforme Feld oder Volumenschranke.
+000032 | 
+000033 | `Metrology005:136–178` gibt den ursprünglichen geometrischen Projektivitäts und Grenzwertsatz an und nennt die ursprünglichen kompatiblen Operatoren sowie Positivitäts und Koerzivitätsvoraussetzungen. Das Modul erhält diesen Satz. Für seine numerische Auswertung müssen die tatsächlich passenden ursprünglichen Operatoren, Domänen und Schranken geliefert werden. Eine Schranke für einen anderen endlichen Transfer darf diese Daten nicht ersetzen.
+000034 | 
+000035 | Die exakten Quellpfade, Bereiche und aktuellen SHA256 stehen in `source-provenance.json`. Die Ward Formel ist hier eine direkte Ableitung der angegebenen ursprünglichen unnormierten Integration durch die Produktregel und den Randfluss; sie wird nicht als bereits ausgeführte ganze TFPT Ward Auswertung ausgegeben.
+000036 | 
+000037 | ## Geprüfter Programmweg und verbleibender Umfang
+000038 | 
+000039 | Der bestehende kleine Checker führt 23 Arithmetik und Mutationskontrollen aus. Er benutzt ausschließlich die bereits deklarierte arithmetische P Kontrollquelle, den ursprünglichen v330 Transfer und den symbolischen ursprünglichen R048 Quadratikzweig. Enthalten sind die erfolgreiche Registryauswertung mit aktuellen Beiträgen und aktuellem Ergebnis sowie die Zurückweisung eines veränderten tatsächlichen ZU. Ein Eingabegram allein, leere Quellenfamilien, fehlende Randflüsse und vorzeitig ins Wort geschobene Projektionen werden nicht als bestanden gewertet. Der alte Transfer hat exakt q=64/729; für n=6 wird die ganze Restmajorante `68719476736/136917602842941585` berechnet.
+000040 | 
+000041 | Die beiden Metadatenbindungen von Ward und Regulatorcheck identifizieren den vorgesehenen Quelleninput. Sie beweisen nicht, dass eine unabhängig gelieferte Wirkung, Integration oder Transferfamilie die volle ursprüngliche Feldquelle ist. Die Callbackausgabe benennt dies ausdrücklich. Für die vier Werte, Q0 und die ganze Wortplatzierung werden die tatsächlichen aktuellen Quellenformen zusätzlich numerisch beziehungsweise exakt verglichen.
+000042 | 
+000043 | Alle Arithmetik des neuen Moduls ist exakt für die dargestellten Zahlen. Dezimale Laufzeitzahlen werden als die angegebenen Dezimalrationalen gelesen. Die physikalische Runtime wird niemals mit `nsimplify` passend gemacht. Nur das ausdrücklich arithmetische Testfixture wird aus seiner früheren float Serialisierung zu den beabsichtigten Rationalen restauriert. Für lediglich gerundete native Berechnungen müssen deren tatsächliche Fehlerhüllen erhalten bleiben; der exakte Check beweist keine Rundungsfehlerhülle.
+000044 | 
+000045 | Die endliche gewichtete Projektivität und die endliche Transferrestschranke ergeben bei einer verlangten Feld UV oder äußeren Volumengrenze ausdrücklich `MISSING_INPUT`. Deren erste benötigte Eingabe ist die tatsächlich auf die ursprüngliche volle Regulatorfamilie anwendbare uniforme Majorante beziehungsweise Projektivitäts und Tightnessauswertung. Das ist keine neu erfundene physikalische Voraussetzung.
+000046 | 
+000047 | Ohne die ursprünglichen gemeinsamen Beiträge und Prüfoperationen bleiben alle fünf aktuellen Prüfungen unausgewertet. Es wurde kein globaler physikalischer PASS und keine vollständige Quellenintegration erzeugt. Die fünf Callbacks sind nach unabhängiger Prüfung in der neuen Q Runtimekopie angeschlossen. Drei Kontrollen folgen dabei dem tatsächlichen Feldplugin über seinen Adapter zur Registry. Die eingefrorenen P Versionen bleiben unverändert.

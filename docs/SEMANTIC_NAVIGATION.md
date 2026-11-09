@@ -24,7 +24,9 @@ of the full source body count as complete. Even `semantic_complete: true` leaves
 the AI annotations `reviewed:false`: it does not certify scientific correctness.
 Check source freshness separately from `context_state` (`current`, `stale`,
 `incomplete`): a complete available-body summary can lack original document
-prerequisites. Coverage exposes stale and incomplete context separately. Exact
+prerequisites. Coverage exposes stale and incomplete context separately.
+Search uses current source text and current annotations. Old annotations
+remain accessible as recorded context on an exact paper-section read. Exact
 quotation spans establish where text came from, not that the summary follows
 from those quotations.
 
@@ -40,11 +42,23 @@ section nodes. The same dated service observation reported 156 curated findings,
 16 problems, zero stale curated findings, a separate stale AI claim cache
 (778/788), and partial vector availability (7,580/43,887 in that subsystem).
 These describe separate historical layers and denominators; none is a current
-paper-completion or scientific-validity score. Use live tools after each import.
+paper-completion or scientific-validity score. Use live tools after each import. When original files move or change, run
+`python3 semantic_explorer/papers.py --offline --refresh-registry` in the
+local Atlas installation. It regenerates the source ranges in a temporary
+directory, reuses only valid cached annotations and leaves the tracked
+publication registry untouched.
 
 ## Route for the next session
 
 1. Start with `graph_status` and `theory_overview`, then `paper_coverage`.
+   For a whole-theory status request use the evidence areas and their scope
+   first. `research_state` with a broad status question or an empty query
+   returns a whole-theory view with an independently paged problem index.
+   The current plan is separate. Open exact problem IDs for detail packets;
+   their continuation still follows the given revision and record offset.
+   The local service and public `/results` page share the reviewed entry
+   points in `website/lib/atlas-status.json`. The public inventory is rebuilt
+   from the reviewed records by the existing source-checked export.
 2. Use `search_papers(query, scope="public", limit=5)` or `list_papers` to find
    the document or phrase. For example, search `carrier_rank_pascal_unique`.
 3. Copy the returned exact `document:` ID into `paper_outline(document_id)`.

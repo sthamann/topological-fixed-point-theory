@@ -1,0 +1,61 @@
+TFPT scientific source excerpt
+Original repository path: verification/v221_seam_qecc.py
+Original file SHA-256: 4bb7156fd414a388f64979d0df66ab139aca04291a33bf9de0cc6ed663d30fac
+Inclusive original lines: 37-89
+Line numbers below refer to the original source.
+This bounded excerpt is source evidence; it is not a new proof/checker run.
+Conversation metadata and personal execution details are omitted where indicated.
+
+000037 | from tfpt_constants import check, summary, reset, dim_Splus, g_car
+000038 | 
+000039 | LAMBDA2 = (2 / 3) ** 6      # 64/729, the transfer gap factor
+000040 | LAMBDA3 = (1 / 3) ** 6
+000041 | 
+000042 | 
+000043 | def run():
+000044 |     reset()
+000045 |     print("v221  seam finite recoverability code: recovery rate (2/3)^6 = 64/729")
+000046 | 
+000047 |     check("code dimension = dim S^+ = 16 = 2^(g_car-1) (carrier half-spinor)",
+000048 |           dim_Splus == 16 == 2 ** (g_car - 1))
+000049 | 
+000050 |     # deviation directions: (1,-1,0) and the Nariai anchor (1,1,-2), both _|_ ones
+000051 |     u2 = np.array([1.0, -1.0, 0.0]); u2 /= np.linalg.norm(u2)
+000052 |     u3 = np.array([1.0, 1.0, -2.0]); u3 /= np.linalg.norm(u3)   # Nariai traceless anchor
+000053 |     J = np.ones((3, 3)) / 3.0
+000054 |     T = J + LAMBDA2 * np.outer(u2, u2) + LAMBDA3 * np.outer(u3, u3)
+000055 | 
+000056 |     sym = np.allclose(T, T.T)
+000057 |     dstoch = np.allclose(T.sum(axis=0), 1) and np.allclose(T.sum(axis=1), 1) and (T >= 0).all()
+000058 |     check("transport T is symmetric, doubly stochastic, entrywise >= 0 (a CPTP "
+000059 |           "classical channel) built on (1,-1,0) and the Nariai anchor (1,1,-2)",
+000060 |           sym and dstoch)
+000061 |     evals = sorted(np.linalg.eigvalsh(T).tolist(), reverse=True)
+000062 |     check("spectrum of T = {1, (2/3)^6, (1/3)^6} = {1, 0.08779, 0.001372} "
+000063 |           "(the gapped boundary transport)",
+000064 |           abs(evals[0] - 1) < 1e-12 and abs(evals[1] - LAMBDA2) < 1e-12
+000065 |           and abs(evals[2] - LAMBDA3) < 1e-12)
+000066 | 
+000067 |     # contraction on the trace-zero (deviation) subspace
+000068 |     rng = np.random.default_rng(11)
+000069 |     worst = 0.0
+000070 |     for _ in range(200):
+000071 |         d = rng.normal(size=3)
+000072 |         d -= d.mean()                          # project to trace-zero
+000073 |         if np.linalg.norm(d) < 1e-9:
+000074 |             continue
+000075 |         ratio = np.linalg.norm(T.dot(d)) / np.linalg.norm(d)
+000076 |         worst = max(worst, ratio)
+000077 |     check("CONTRACTION [E]: on the trace-zero (deviation) subspace ||T delta|| / "
+000078 |           "||delta|| <= (2/3)^6 = 0.08779 (max over random deviations = %.6f); "
+000079 |           "the recovery/forgetting rate is exactly the gap factor" % worst,
+000080 |           worst <= LAMBDA2 + 1e-9)
+000081 | 
+000082 |     # per-step recovery bound ||T^n delta|| <= (2/3)^{6n} ||delta||
+000083 |     d0 = np.array([1.0, -1.0, 0.0])
+000084 |     Tn = np.eye(3)
+000085 |     bound_ok = True
+000086 |     for nstep in range(1, 6):
+000087 |         Tn = T.dot(Tn)
+000088 |         err = np.linalg.norm(Tn.dot(d0)) / np.linalg.norm(d0)
+000089 |         bound_ok = bound_ok and err <= LAMBDA2 ** nstep + 1e-12

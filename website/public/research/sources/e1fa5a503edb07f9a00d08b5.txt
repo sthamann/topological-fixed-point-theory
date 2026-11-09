@@ -1,0 +1,19 @@
+TFPT scientific source excerpt
+Original repository path: experiments/theory-contracts/original-paper-source-reconciliation-20261102/manual_20261107/C6-V330-ABGLEICH.md
+Original file SHA-256: 7f33f2829135f760725f2d57c745e2410a8a2223cedbb2dfd972691430593eef
+Inclusive original lines: 1-11
+Line numbers below refer to the original source.
+This bounded excerpt is source evidence; it is not a new proof/checker run.
+Conversation metadata and personal execution details are omitted where indicated.
+
+000001 | # Direkter Abgleich der ursprünglichen C6 Übergänge mit v330
+000002 | 
+000003 | Für die Rechnung wurden die unveränderten Funktionen `U6_power(1)` aus `verification/v17_hexagonal_resolvent.py:22` und `symmetric_transfer()` aus `verification/v330_qgamb_admissible_measure.py:42` verwendet. Die wirklichen Cuspwerte, die algebraische Konstante δ und beide Matrixfunktionen stammen aus `WEIGHT-PRODUCERS-20261105.md:42`. QFT004 §282 beschreibt trennende Labels. §137 setzt für die volle Quelle den blockierten Transfer aus lokalen Kernen, Gewichten und Selektor ein.
+000004 | 
+000005 | Geprüft wird eine konkrete Identifikation. Man multipliziert beliebig viele der gegebenen ungephasten C6 Matrizen G_y^(-1/2) oder G_y^(-1), behält am Ende drei verschiedene Koordinaten und multipliziert links und rechts mit beliebigen positiven Diagonalmatrizen. Jede solche Darstellung bewahrt den paarweisen Quotienten T_ij T_ji/(T_ii T_jj). Der v330 Wert für das Paar 1,3 ist exakt 1456²/(1651·1462). Die C6 Matrizen sind alle im selben Fourierbild diagonal. Für jedes der drei ursprünglichen y und jede positive Potenz n gilt λ_k/λ_0 ≤ q_y^n für k≠0 mit 0<q_y<1. Weitere Faktoren verkleinern die normierten Nebenmoden. Daher ist K_d/K_0 ≥ 1−10q_y^n, gleichmäßig in der Zyklusdistanz d. Sobald eine der Potenzen die jeweilige Schranke 7, 8 oder 3 erreicht, liegt der quadrierte Quotient sicher oberhalb des v330 Werts. Unterhalb dieser Schranken sind alle Kombinationen und Zyklusdistanzen mit gerichteten Intervallen geprüft. Die engste endliche Annäherung hat noch einen Abstand von mehr als 0,00354. Die endlichen Einträge wurden mit direkter Matrixmultiplikation und unabhängig diagonalisierter Gram Matrix nachgerechnet.
+000006 | 
+000007 | Auch eine reduzierende Teilraumdarstellung mit gemeinsamem Skalar scheitert. Dann müsste der Quotient zweier Eigenwerte des vollen Produkts gleich dem v330 Eigenwertverhältnis 64/729 sein. Die geordneten Eigenwerte stammen aus vier Fourierwerten. Für jede Cusp Potenz beschränkt der größte Quotient benachbarter Fourierwerte alle Quotienten verschiedener Werte von oben. Ab den Potenzen 19, 19 beziehungsweise 17 liegt jeder solche Quotient unter 64/729. Die endliche Restprüfung ergibt einen strikten Minimalabstand größer als 0,0000182. Die Einzelfrequenzentartungen liefern nur das Verhältnis 1.
+000008 | 
+000009 | Die Resultate betreffen die direkt geprüften Identifikationen. Gewichte und Selektoren innerhalb der Übergangsfolge ändern die Matrixinvarianten grundsätzlich. Für ihre physische Verwendung braucht es die tatsächliche ursprüngliche Verkettung mit Higgsmarke, Gesamtselektor und Referenz. QFT004 benennt diese Konstruktion. Ihre konkreten vollständigen markierten Einträge wurden im geprüften Weg nicht gefunden. Weder Z0 noch ZU wurde aus den Matrizen abgeleitet.
+000010 | 
+000011 | Reproduzierbar mit `python3 -B work/manual-higgs-block-20261107/check_c6_v330_bridge.py`. Die ausgeführten Werte stehen in `c6-v330-diagonal-bridge.json`. Keine Mutation der Originalquellen oder automatischen Suche.

@@ -1,0 +1,56 @@
+TFPT scientific source excerpt
+Original repository path: experiments/theory-contracts/original-paper-source-reconciliation-20261102/contribution_20261106Q/runtime/original_source_adapter.py
+Original file SHA-256: 2a42bddf5f0d037009fca673ccb2c4ac4b729f6b7c87445a4f9f244d72ed4962
+Inclusive original lines: 309-356
+Line numbers below refer to the original source.
+This bounded excerpt is source evidence; it is not a new proof/checker run.
+Conversation metadata and personal execution details are omitted where indicated.
+
+000309 | def contribution_capability_report(domain):
+000310 |     """Readiness of the actual per-fibre computation, not of ensemble tests."""
+000311 |     base = {"ready": False, "registered_ensemble_test_ids":
+000312 |             list(ensemble_test_registry(domain)),
+000313 |             "configuration_unit": None, "measure_rule": None,
+000314 |             "missing_operations": ["original_blocked_fiber_packet"]}
+000315 |     try:
+000316 |         b = _load_bundle(domain)
+000317 |         if b is None:
+000318 |             return base
+000319 |         if b.get("representation") != "original_exact_finite_fiber_sum":
+000320 |             base["missing_operations"] = ["direct_whole_source_is_not_a_per_configuration_backend"]
+000321 |             return base
+000322 |         # Structural readiness only: DO NOT aggregate the whole domain here.
+000323 |         if b.get("schema") != BUNDLE or b.get("input_role") not in ("source_reviewed_original", "arithmetic_control_only"):
+000324 |             raise SourceInputError("invalid original finite-fibre bundle schema or role")
+000325 |         if b.get("matrix_convention") != "sesquilinear_forms_in_original_word_basis" or b.get("ensemble_scope") != "whole_original_ensemble":
+000326 |             raise SourceInputError("original whole endpoint form convention is required")
+000327 |         for key in ("gram_form", "physical_selector_form", "boundary_pairing_form", "retained_words", "time", "component_bindings", "source_refs"):
+000328 |             if key not in b:
+000329 |                 raise SourceInputError(f"missing original endpoint input {key}")
+000330 |         components = b["component_bindings"]
+000331 |         if not isinstance(components, dict) or any(not isinstance(components.get(k), str) or not components[k].strip()
+000332 |                                                   for k in REQUIRED_COMPONENTS):
+000333 |             raise SourceInputError("actual original component bindings are incomplete")
+000334 |         _complex(b.get("scalar_factor"), "scalar_factor")
+000335 |         if _complex(b.get("reference_scalar"), "reference_scalar") == 0:
+000336 |             raise SourceInputError("original reference denominator is zero")
+000337 |         if not isinstance(b.get("fiber_records"), list) or not b["fiber_records"]:
+000338 |             raise SourceInputError("original finite fibre records required")
+000339 |         if "_sha256" in domain and b.get("native_inputs_sha256") != domain["_sha256"]:
+000340 |             raise SourceInputError("fibre bundle binds a different native input")
+000341 |         if "domain_id" in domain and b.get("domain_id") != domain["domain_id"]:
+000342 |             raise SourceInputError("fibre bundle binds a different domain")
+000343 |         unit = b.get("configuration_unit")
+000344 |         accepted = ("whole_original_history_with_both_bosonic_endpoints",
+000345 |                     "original_retained_field_fiber_with_whole_history_endpoint_packet")
+000346 |         if not isinstance(unit, dict) or unit.get("kind") not in accepted or not unit.get("native_map_binding"):
+000347 |             base["missing_operations"] = ["original_native_configuration_to_whole_fiber_map"]
+000348 |             return base
+000349 |         measure = b.get("measure_rule")
+000350 |         if not isinstance(measure, dict) or measure.get("kind") != "original_finite_atomic_measure" or not measure.get("source_binding"):
+000351 |             base["missing_operations"] = ["original_configuration_measure_rule"]
+000352 |             return base
+000353 |         for row in b["fiber_records"]:
+000354 |             if not isinstance(row, dict) or not row.get("native_candidate_id"):
+000355 |                 base["missing_operations"] = ["original_native_candidate_to_fiber_record_map"]
+000356 |                 return base

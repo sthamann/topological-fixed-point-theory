@@ -1,0 +1,24 @@
+TFPT scientific source excerpt
+Original repository path: experiments/theory-contracts/original-paper-source-reconciliation-20261102/manual_20261107/check_radial_and_quarter.py
+Original file SHA-256: 96c983f867cc6d0b72c550b7f9d11320d16549c5f7329a8fd0ad57eb27cba2e5
+Inclusive original lines: 30-45
+Line numbers below refer to the original source.
+This bounded excerpt is source evidence; it is not a new proof/checker run.
+Conversation metadata and personal execution details are omitted where indicated.
+
+000030 | print('R048: d_s (ZU/Z0) =', s.factor(-uv+u*correction))
+000031 | print('R048: d_s ZU / Z0(0) =', s.factor(-uv))
+000032 | 
+000033 | mp.mp.dps = 85
+000034 | q = mp.exp(-mp.pi)
+000035 | log_product = 96*mp.fsum(mp.log1p(q**(2*k+1)) for k in range(28))
+000036 | log_series = 96*mp.fsum((-1)**(m+1)*q**m/(m*(1-q**(2*m))) for m in range(1,55))
+000037 | product_tail = 96*q**57/(1-q**2)
+000038 | series_tail = 96*q**55/(55*(1-q)*(1-q**110))
+000039 | assert abs(log_product-log_series) < product_tail+series_tail
+000040 | for alpha in (mp.mpf(1)/4,mp.mpf(3)/4):
+000041 |     p = sorted(abs(n+alpha) for n in range(-28,28))
+000042 |     assert p[:28] == [mp.mpf(2*k+1)/4 for k in range(28)]
+000043 | print('S reference trace:', mp.nstr(mp.exp(log_product),37))
+000044 | print('S trace ratio floor:', mp.nstr(mp.exp(-log_product),37))
+000045 | print('log tails:', mp.nstr(product_tail,12), mp.nstr(series_tail,12))

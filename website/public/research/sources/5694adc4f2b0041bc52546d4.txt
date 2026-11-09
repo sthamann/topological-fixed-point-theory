@@ -1,0 +1,171 @@
+TFPT scientific source excerpt
+Original repository path: experiments/theory-contracts/original-paper-source-reconciliation-20261102/contribution_20261106Q/source/ORIGINAL-CX-COORDINATE-TEST.txt
+Original file SHA-256: ce724147fe785efb2b4b42a0a6acd5d440261c95032bb5697d338514217be27a
+Inclusive original lines: 1-163
+Line numbers below refer to the original source.
+This bounded excerpt is source evidence; it is not a new proof/checker run.
+Conversation metadata and personal execution details are omitted where indicated.
+
+000001 | ORIGINAL CX COMPOSITE: CANONICAL LINE AND ACTUAL COORDINATE TEST
+000002 | 6 November 2026. Native source computation, no new physical source.
+000003 | 
+000004 | RESULT
+000005 | 
+000006 | The proposed original :C_a X_ia: doublet exists as a genuine nonlinear
+000007 | operator of the already given chiral E8 lattice source. Its original
+000008 | regular OPE coefficient and its adjoint have now been evaluated, not
+000009 | replaced by plain fermionic Wick. The DIRECT conformal-zero-mode coordinate
+000010 | identification fails: each real/imaginary pair has a nonzero commutator
+000011 | on an explicit original source state. This is a full operator action test,
+000012 | not an inference from conformal weight or from a singular OPE alone.
+000013 | It does not exclude another derived bulk composite or the entire theory.
+000014 | 
+000015 | 1. ORIGINAL FIELDS, LINE AND PHASES
+000016 | 
+000017 | source_program._c_currents fixes the C phases by the same original SU4
+000018 | root transport as the X phases in current_block_geometry. In doubled
+000019 | orthogonal coordinates the actual charges are
+000020 |   2c_a=(-1,-1,-1,-1,-1,s_a),
+000021 |   2x_ia=(1,...,-1_i,...,1,s_a),
+000022 |   s_0=(-1,-1,-1), s_1=(-1,1,1),
+000023 |   s_2=(1,-1,1),   s_3=(1,1,-1).
+000024 | Thus v_ia=c_a+x_ia=(-e_i,s_a),
+000025 | (c_a,x_ia)=0, ||v_ia||^2=4. The regular weight2 OPE term is
+000026 |   :C_a X_ia:=kappa_ia V_(v_ia),
+000027 |   kappa_ia=phase(C_a) phase(X_ia) epsilon(c_a,x_ia).
+000028 | The original lattice two-cocycle is essential; it is included in the code.
+000029 | 
+000030 | The existing source_spin_lift dictionary supplies, internally,
+000031 |  S(u)=det(u)^(-1/2) Lambda^even(u),
+000032 |  Lambda^even C3=Lambda^0 C3 directsum Lambda^2 C3.
+000033 | In precisely that weight dictionary s_0/2=(-1/2,-1/2,-1/2) is the exterior
+000034 | vacuum line. The other source weights are the two-occupancy weights, in
+000035 | source order (23),(13),(12). Hence the scalar line is canonical in this
+000036 | existing internal spinlift chart; it is not selected by a search over a.
+000037 | Its character is det(u)^(-1/2), and its square carries det(u)^(-1).
+000038 | It is an SU3 singlet but not a trivial character along the full U3 path.
+000039 | For the given normalized original Fuchs frame,
+000040 |  det Psi(z)=1-z^4, Psi(0)=I,
+000041 | so that square-line factor is (1-z^4)^(-1), with its original continuation.
+000042 | Trivial determinant MONODROMY does not set that path factor equal to1.
+000043 | 
+000044 | This uses the actual previously given internal S(u) dictionary. It does
+000045 | not infer an embedding of the physical F3 into an arbitrary four-state
+000046 | space from equal dimensions, and it does not identify an internal lift
+000047 | with a whole matter CAR field map. Under another primitive family frame,
+000048 | transport the scalar line, Fuchs connection, C/X fields and time together.
+000049 | Its coordinate label can then be any a. All four source labels have been
+000050 | computed below, so no coordinate-frame label repairs the direct test.
+000051 | 
+000052 | The original carrier SU5 hypercharge action makes the i=3,4 vector
+000053 | components an antidoublet of hypercharge -1/2, with the adjoint doublet
+000054 | of charge+1/2. Charge agreement is a positive necessary test, not a
+000055 | physical field identification. Boundary weight2 is not an exclusion:
+000056 | a genuine normal trace/Green construction can change scaling weights.
+000057 | 
+000058 | 2. EXACT NATIVE ZERO-MODE ACTION AND THE DECISIVE VALUE
+000059 | 
+000060 | Work in the ENTIRE existing conformal-grade-one source block: the240
+000061 | original root states |p> and8 Cartan states. This is a supplied source
+000062 | subspace, not a selected physical vacuum or a new finite theory.
+000063 | For T_ia=o(:C_a X_ia:) the actual vertex rule gives
+000064 |   T_ia |p> = kappa_ia epsilon(v_ia,p)|p+v_ia>
+000065 | when (v_ia,p)=-2, and zero otherwise on this grade.
+000066 | The eight Cartan states have zero image, since charge v has minimum grade2.
+000067 | Bimultiplicativity evaluates the source coefficient directly as
+000068 |   epsilon(v,p)=epsilon(c,p)epsilon(x,p),
+000069 | using only the ORIGINAL cocycle entries. The code also evaluates
+000070 |   epsilon(-v,v)=1
+000071 | from four original cocycle entries and verifies the whole sparse adjoint
+000072 | matrix. Nothing is filled by an assumed sign.
+000073 | 
+000074 | Take the ACTUAL original state p=-c_a. It has grade1 and unit norm. Then
+000075 |   T_ia|-c_a>= +/- |x_ia>,  T_ia^dagger|-c_a>=0,
+000076 |   [T_ia,T_ia^dagger]|-c_a>=-|-c_a>.
+000077 | For the direct real/imaginary coordinate proposal
+000078 |   X_Re=(T+T^dagger)/2, X_Im=(T-T^dagger)/(2i),
+000079 | this is the exact source matrix element
+000080 |   < -c_a | [X_Re,X_Im] | -c_a > = -i/2.             (A)
+000081 | It is nonzero before any physical restriction. The coefficient (A) is
+000082 | independent of the harmless original unit phase of the regular product.
+000083 | 
+000084 | native_cx_zero_mode.py computes all20 original (i,a) pairs. Each T has
+000085 | rank14 on the248-state grade, and [T,T^dagger] has rank28. All20 have the
+000086 | witness (A), including i=3,4 in all four family frames. The complete sparse
+000087 | T and T^dagger entries are saved in native-cx-zero-mode-result.json.
+000088 | They retain original root labels, input phases, cocycle coefficients and
+000089 | adjoints. No P has been inserted between letters or between T and T^dagger.
+000090 | This is an actual native callable and evaluated matrix value.
+000091 | 
+000092 | 3. ORIGINAL TIME, NOT AN ADDED SUGAWARA HAMILTONIAN
+000093 | 
+000094 | L0 labels the known source grade used in the zero-mode computation. It
+000095 | has not been chosen as the physical OS Hamiltonian. The existing conditional
+000096 | circle source LOCAL_LIMIT_REVIEW retains
+000097 |   H_R=(L0-delta.P)/R, delta=(1/4)^8,
+000098 | including its charge improvement. On a primary momentum v the conformal
+000099 | zero mode satisfies
+000100 |   [H_R,o(V_v)]=-(delta.v)o(V_v)/R.
+000101 | For the canonical s_0 line above delta.v=-1, so the actual chemical term
+000102 | is retained; this mode is not declared stationary under H_R. A frame
+000103 | change transports delta.P as an operator as well. The separate eightfold
+000104 | folded-clock construction has its own old scoped time obstruction and
+000105 | is not substituted for this source time. Fuchs parallel transport is
+000106 | also not equated with either time generator.
+000107 | 
+000108 | The original physical time need not be solved anew to decide the DIRECT
+000109 | coordinate test: (A) is an algebraic source operator identity at the
+000110 | specified initial time. No charge improvement of the generator changes
+000111 | it. A claimed complete source intertwiner must preserve it.
+000112 | 
+000113 | 4. ACTUAL BULK/HS COMPARISON AND SCOPE OF FAILURE
+000114 | 
+000115 | The original light-Higgs theorem gives an actual O(1) section space on the
+000116 | normal S2, with seam-even Higgs amplitudes. In the R113 endpoint-coordinate
+000117 | chart these amplitudes are commuting multiplication coordinates; the
+000118 | whole HYPF contact reconstruction additionally requires their commutation
+000119 | with the original matter CAR coordinates. They are not arbitrary weak
+000120 | charged operators.
+000121 | 
+000122 | The already existing full U/FUNCTOR transport preserves operators,
+000123 | products, domains and reference. The full Clifford/CAR/HS dictionary is
+000124 | also multiplicative on its actual fields and all their words. Consequently
+000125 | any faithful whole-field transport of the proposed T retains (A). This
+000126 | cannot be repaired by a change of representation or normalization. A
+000127 | right-HS copy can commute with left matter operators, but right
+000128 | multiplication reverses products, so its own coordinate commutator is
+000129 | only sign reversed, not killed. A left-plus-right newly defined observable
+000130 | would be a different proposal and is not silently inserted here.
+000131 | 
+000132 | Thus the DIRECT alias of the raw CX zero modes with the four R113 Higgs
+000133 | multiplication coordinates is excluded in this actual source class.
+000134 | The first commutation requirement already fails; there is no need to
+000135 | invent a linear assignment of the96 matter c_i to E8 current labels.
+000136 | This does not claim that every bulk image of a boundary composite is an
+000137 | algebra homomorphism. A different actual normal trace/smearing/compression
+000138 | can define another observable and must retain its true product/return
+000139 | terms. It is not supplied by renaming the raw CX operator. The present
+000140 | calculation excludes neither such a separately derived bulk field nor
+000141 | all nonlinear E8 parents, and does not prove a global P1 nonuniqueness.
+000142 | 
+000143 | 5. NATIVE IMPLEMENTATION AND PRESERVED OLD POSITIVE RESULTS
+000144 | 
+000145 | [OMITTED: non-scientific conversation or execution metadata]
+000146 | [OMITTED: non-scientific conversation or execution metadata]
+000147 | [OMITTED: non-scientific conversation or execution metadata]
+000148 | [OMITTED: non-scientific conversation or execution metadata]
+000149 | [OMITTED: non-scientific conversation or execution metadata]
+000150 | [OMITTED: non-scientific conversation or execution metadata]
+000151 | [OMITTED: non-scientific conversation or execution metadata]
+000152 | 
+000153 | The older exact nonlinear current reader was also reused correctly:
+000154 | its original six-X word is1/576, and its original3C+5X extension word at
+000155 | positions0..7 is -1/4032000. Plain auxiliary-nine-fermion U1 charge18 would
+000156 | give0 for the latter and loses the actual charged extension. Those values
+000157 | are not new Higgs or primitive UY predictions. They establish why a plain
+000158 | Wick replacement is not the missing source implementation.
+000159 | 
+000160 | No primitive Z0,ZU,ZY,ZUY packet or physical HB has been computed. The
+000161 | source-valued result delivered here is (A), which decides the newly proposed
+000162 | direct original composite-coordinate identity. The canonical line and all
+000163 | old source transports remain intact. P source adapter/runtime stay frozen.

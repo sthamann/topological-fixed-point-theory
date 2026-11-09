@@ -1,0 +1,65 @@
+TFPT scientific source excerpt
+Original repository path: documents/archive--paper-latex--tfpt-theory-fullv28/sections/005-section-the-unified-field-equation-ufe.tex
+Original file SHA-256: e2f638d343e1b6b49ba03f067824e646ec4f083d4eab619f60d81bb2fc258ac7
+Inclusive original lines: 37-93
+Line numbers below refer to the original source.
+This bounded excerpt is source evidence; it is not a new proof/checker run.
+Conversation metadata and personal execution details are omitted where indicated.
+
+000037 | \begin{definition}{UFE Action}{UFEaction}
+000038 | On a manifold $M^{4+n}$ with metric $\hat{g}_{AB}$ and torsionful connection 
+000039 | $\hat{\Gamma}^A_{BC}$, the action is:
+000040 | \begin{equation}
+000041 |     S = \int d^{4+n}x\sqrt{-\hat{g}}\left[
+000042 |         \frac{1}{2\hat{\kappa}^2}\hat{R}(\hat{\Gamma}) 
+000043 |         - \frac{1}{4}F_{AB}F^{AB}
+000044 |         + \frac{1}{2}\hat{g}^{AB}\partial_A a\,\partial_B a 
+000045 |         - V(a) 
+000046 |         - \frac{\gagg}{4}\, a\, F_{AB}\tilde{F}^{AB}
+000047 |     \right]
+000048 | \end{equation}
+000049 | Here $\hat{R}(\hat{\Gamma})$ denotes the Ricci scalar constructed from the full torsionful connection $\hat{\Gamma}$.
+000050 | \end{definition}
+000051 | 
+000052 | \noindent\textbf{Minimal torsion sector.} In the parameter-free baseline we set $\mathcal{L}_{\mathrm{tors}}\equiv 0$.
+000053 | All torsion dependence enters through $\hat{R}(\hat{\Gamma})$ with $\hat{\Gamma}=\Gamma(\hat{g})+K$.
+000054 | The quadratic torsion treatment used for the one-loop $R^2$ completion is stated explicitly in Definition~\ref{def:R2torsion} and Appendix~\ref{app:r2}.
+000055 | 
+000056 | \noindent\textbf{Maxwell convention.} We treat the U(1) gauge potential $A$ as a one-form and define the field strength by the exterior derivative
+000057 | $F := dA$, i.e.\ $F_{AB}=2\partial_{[A}A_{B]}$. This definition is independent of the torsionful affine connection $\hat{\Gamma}$; in particular, we do not use $F_{AB}=2\hat{\nabla}_{[A}A_{B]}$. Therefore U(1) gauge invariance is exact in the electromagnetic sector.
+000058 | 
+000059 | \noindent\textbf{Torsion and contorsion.} The torsion of the full connection is $T^A_{\;BC}:=2\hat{\Gamma}^A_{[BC]}$. We decompose
+000060 | $\hat{\Gamma}^A_{BC}=\Gamma^A_{BC}(\hat{g})+K^A_{BC}$, where $\Gamma(\hat{g})$ is the Levi-Civita connection of $\hat{g}_{AB}$ and $K^A_{BC}$ is the contorsion tensor.
+000061 | 
+000062 | \noindent\textbf{Variational scope.} For the letter-level UFE statements we vary the metric while holding the torsionful connection fixed; no independent torsion equation of motion is required at this stage. In the core manuscript $K$ is treated as a background/auxiliary field (algebraic torsion can be integrated out); dynamical torsion is treated as an explicit extension.
+000063 | 
+000064 | \begin{theorem}{Unified Field Equations}{UFE}
+000065 | Variation of the action yields the compact tensor form of the UFE. Since $\delta\hat{g}^{AB}$ is symmetric, only the symmetric part of the torsionful Ricci tensor contributes. Define
+000066 | $\hat{G}_{(AB)}(\hat{\Gamma})$ by
+000067 | \begin{equation*}
+000068 |     \hat{G}_{(AB)}(\hat{\Gamma}) := \hat{R}_{(AB)}(\hat{\Gamma}) - \frac{1}{2}\hat{g}_{AB}\hat{R}(\hat{\Gamma}).
+000069 | \end{equation*}
+000070 | Then:
+000071 | \begin{align}
+000072 |     \hat{G}_{(AB)}(\hat{\Gamma})
+000073 |         &= \hat{\kappa}^2\bigl(T^{(a)}_{AB} + T^{(\text{EM})}_{AB}\bigr)
+000074 |         \label{eq:UFE}\\[0.5em]
+000075 |     \nabla^{\mathrm{LC}}_A F^{AB} + \gagg(\partial_A a)\tilde{F}^{AB} &= 0
+000076 |         \label{eq:maxwell}\\[0.5em]
+000077 |     \nabla^{\mathrm{LC}}_A\tilde{F}^{AB} &= 0
+000078 |         \label{eq:bianchi}
+000079 | \end{align}
+000080 | Here $\tilde{F}^{AB} := \tfrac12\,\epsilon^{ABCD}F_{CD}$ with $\epsilon^{0123}=+1$ and
+000081 | metric signature $(+,-,-,-)$, and the coupling is $\gagg=-4\cthree$.
+000082 | In Eqs.~\eqref{eq:maxwell}--\eqref{eq:bianchi} the covariant derivative is the Levi-Civita derivative of $\hat{g}_{AB}$ (equivalently $\nabla^{\mathrm{LC}}_A X^A=(1/\sqrt{-\hat{g}})\,\partial_A(\sqrt{-\hat{g}}\,X^A)$).
+000083 | When expanding Eq.~\eqref{eq:UFE} in Levi-Civita plus contorsion variables (with $\hat{\Gamma}=\Gamma(\hat{g})+K$), all covariant derivatives are Levi-Civita.
+000084 | In the torsion vacuum $(K \to 0)$, this reduces to Einstein--Hilbert gravity 
+000085 | by Axiom A8.
+000086 | \end{theorem}
+000087 | 
+000088 | \begin{tcolorbox}[colback=gray!5, colframe=gray!60,
+000089 | title={\textbf{On-page variation for the axion--Maxwell term}}, fonttitle=\bfseries\small]
+000090 | \textbf{Interaction:} $L_{\mathrm{int}}=-(\gagg/4)\,a\,F_{AB}\tilde{F}^{AB}$. \\
+000091 | \textbf{Variation:} $\delta(F_{AB}\tilde{F}^{AB})=2\tilde{F}^{AB}\delta F_{AB}$ and $\delta F_{AB}=2\partial_{[A}\delta A_{B]}$. \\
+000092 | \textbf{Result:} integrating by parts yields $\nabla_A F^{AB}+\gagg(\partial_A a)\tilde{F}^{AB}=0$,
+000093 | matching Eq.~\eqref{eq:maxwell}.

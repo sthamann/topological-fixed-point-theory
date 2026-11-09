@@ -1,0 +1,14 @@
+TFPT scientific source excerpt
+Original repository path: verification/v8_horizon.py
+Original file SHA-256: 9e14e3e7123cd820368b1d3812109f44549c2c1087900d9007217de0adcbb301
+Inclusive original lines: 39-44
+Line numbers below refer to the original source.
+This bounded excerpt is source evidence; it is not a new proof/checker run.
+Conversation metadata and personal execution details are omitted where indicated.
+
+000039 |     # birefringence angle beta_rad = phi0/(4 pi)
+000040 |     beta = phi0 / (4 * mp.pi)
+000041 |     check("beta_rad = phi0/(4 pi) ~ 0.0042313 rad", beta, mp.mpf('0.0042313'),
+000042 |           tol=mp.mpf('1e-3'))
+000043 |     check("beta in degrees ~ 0.2424", beta * 180 / mp.pi, mp.mpf('0.2424'),
+000044 |           tol=mp.mpf('2e-3'))

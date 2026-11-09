@@ -1,0 +1,124 @@
+TFPT scientific source excerpt
+Original repository path: experiments/theory-contracts/original-paper-source-reconciliation-20261102/contribution_20261106Q/source/native_cx_zero_mode.py
+Original file SHA-256: 8c5d6eda82b400509deb4b12df878d137108d1f899f9cc868019051a0f9dca18
+Inclusive original lines: 1-116
+Line numbers below refer to the original source.
+This bounded excerpt is source evidence; it is not a new proof/checker run.
+Conversation metadata and personal execution details are omitted where indicated.
+
+000001 | """Original E8 CX regular-product zero modes, with ORIGINAL lattice cocycles.
+000002 | 
+000003 | Native source computation on the entire existing conformal-weight-one block
+000004 | (240 root states plus8 Cartan states). No physical H/time/P/state is chosen.
+000005 | The result tests the proposed DIRECT coordinate identification only.
+000006 | """
+000007 | from fractions import Fraction
+000008 | from pathlib import Path
+000009 | import json
+000010 | from tfpt_explorer.current_block_geometry import _actual_current_source
+000011 | from tfpt_explorer.source_program import _field
+000012 | 
+000013 | 
+000014 | def _get(i,a):
+000015 |     if type(i) is not int or not 0<=i<5 or type(a) is not int or not 0<=a<4:
+000016 |         raise ValueError('use existing carrier i=0..4 and family a=0..3')
+000017 |     s=_actual_current_source();g=s['chevalley']
+000018 |     ci,cp=next(iter(_field({'kind':'C','a':a})[1].items()))
+000019 |     xi,xp=next(iter(_field({'kind':'X','i':i,'a':a})[1].items()))
+000020 |     c,x=tuple(g.roots[ci]),tuple(g.roots[xi])
+000021 |     v=tuple(u+w for u,w in zip(c,x))
+000022 |     dot=lambda p,q:sum(Fraction(u*w,4) for u,w in zip(p,q))
+000023 |     assert dot(c,x)==0 and dot(v,v)==4
+000024 |     kappa=Fraction(cp*xp*g.eps(ci,xi))
+000025 |     return g,ci,xi,c,x,v,kappa,dot
+000026 | 
+000027 | 
+000028 | def cx_zero_mode(i,a):
+000029 |     """Sparse o(:C_a X_ia:), including original OPE and input phases.
+000030 | 
+000031 |     Acting on an original root state |p> at L0=1, the h=2 zero mode selects
+000032 |     (v,p)=-2 and returns kappa*epsilon(v,p)|p+v>. Bimultiplicativity uses
+000033 |     only ORIGINAL root cocycles eps(C,p)eps(X,p), never a new extension.
+000034 |     The8 Cartan states have no output at this grade by charge/energy.
+000035 |     """
+000036 |     g,ci,xi,c,x,v,kappa,dot=_get(i,a)
+000037 |     action={};opposite={}
+000038 |     nc,nx=g.opp[ci],g.opp[xi]
+000039 |     # Actual vertex adjoint, computed from the SAME original 2-cocycle.
+000040 |     adj=g.eps(nc,ci)*g.eps(nc,xi)*g.eps(nx,ci)*g.eps(nx,xi)
+000041 |     assert adj==1
+000042 |     for pi,praw in enumerate(g.roots):
+000043 |         p=tuple(praw)
+000044 |         if dot(v,p)==-2:
+000045 |             q=tuple(u+w for u,w in zip(p,v))
+000046 |             assert q in g.ridx
+000047 |             action[pi]=(g.ridx[q],kappa*g.eps(ci,pi)*g.eps(xi,pi))
+000048 |         if dot(v,p)==2:
+000049 |             q=tuple(u-w for u,w in zip(p,v))
+000050 |             assert q in g.ridx
+000051 |             opposite[pi]=(g.ridx[q],kappa*adj*g.eps(nc,pi)*g.eps(nx,pi))
+000052 |     assert len(action)==len(opposite)
+000053 |     for p,(q,k) in action.items():
+000054 |         assert opposite[q]==(p,k), 'actual lattice adjoint must be matrix adjoint'
+000055 |     return {'source':g,'charge_doubled':v,'kappa':kappa,'adjoint_sign':adj,
+000056 |             'C':c,'X':x,'action':action,'adjoint_action':opposite,
+000057 |             'root_dimension':len(g.roots),'cartan_dimension':8}
+000058 | 
+000059 | 
+000060 | def coordinate_commutator_packet(i,a):
+000061 |     """A native nonzero source matrix element for proposed Re/Im coordinates."""
+000062 |     z=cx_zero_mode(i,a);g=z['source'];T=z['action'];Td=z['adjoint_action']
+000063 |     p=g.ridx[tuple(-u for u in z['C'])]
+000064 |     target,coef=T[p]
+000065 |     assert tuple(g.roots[target])==z['X'] and p not in Td
+000066 |     assert Td[target]==(p,coef) and coef*coef==1
+000067 |     # Full sparse diagonal of [T,Tdagger], including every original root leg.
+000068 |     comm={}
+000069 |     for j in range(len(g.roots)):
+000070 |         tt=Td.get(j)
+000071 |         td=T.get(j)
+000072 |         v=Fraction(0)
+000073 |         if tt:
+000074 |             middle,c=tt;back,d=T[middle];assert back==j;v+=c*d
+000075 |         if td:
+000076 |             middle,c=td;back,d=Td[middle];assert back==j;v-=c*d
+000077 |         if v:comm[j]=v
+000078 |     assert comm[p]==-1 and all(v in (-1,1) for v in comm.values())
+000079 |     return {'i':i,'a':a,'whole_original_grade_dimension':len(g.roots)+8,
+000080 |             'CX_charge_doubled':list(z['charge_doubled']),
+000081 |             'original_regular_OPE_coefficient':str(z['kappa']),
+000082 |             'vertex_adjoint_sign':z['adjoint_sign'],
+000083 |             'T_rank_on_grade_one':len(T),'commutator_nonzero_rank_on_grade_one':len(comm),
+000084 |             'witness_incoming_doubled_charge':list(g.roots[p]),
+000085 |             'witness_T_outgoing_doubled_charge':list(g.roots[target]),
+000086 |             'witness_T_coefficient':str(coef),
+000087 |             'witness_Tdagger_annihilates_incoming':True,
+000088 |             'witness_T_Tdagger_commutator':'-1',
+000089 |             'coordinate_definition':'X_Re=(T+Tdagger)/2, X_Im=(T-Tdagger)/(2i)',
+000090 |             'witness_coordinate_commutator':'-I/2',
+000091 |             'T_sparse':[{'from':p,'to':q,'coefficient':str(c)} for p,(q,c) in sorted(T.items())],
+000092 |             'Tdagger_sparse':[{'from':p,'to':q,'coefficient':str(c)} for p,(q,c) in sorted(Td.items())],
+000093 |             'physical_Higgs_identified':False}
+000094 | 
+000095 | 
+000096 | def main():
+000097 |     rows=[coordinate_commutator_packet(i,a) for a in range(4) for i in range(5)]
+000098 |     frames=[]
+000099 |     for a in range(4):
+000100 |         weak=[r for r in rows if r['a']==a and r['i'] in (3,4)]
+000101 |         frames.append({'coordinate_family_frame':a,'weak_components':[3,4],
+000102 |                        'transport_rule':'conjugate original fields, Fuchs connection, line projector and time together',
+000103 |                        'weak_coordinate_witnesses':[r['witness_coordinate_commutator'] for r in weak],
+000104 |                        'new_physical_line_chosen':False})
+000105 |     out={'scope':'DIRECT CX conformal zero-mode coordinate test in original E8 source; not a TFPT no-go',
+000106 |          'whole_original_grade_one_dimension':248,'original_CX_pairs':20,
+000107 |          'actual_all_twenty_cocycles_and_adjoints_checked':True,
+000108 |          'original_four_family_frames':frames,'packets':rows,
+000109 |          'conclusion':'raw CX zero-mode real/imaginary fields fail commuting-coordinate identity before physical P',
+000110 |          'physical_UY_value':None,'physical_HB':None,'physical_time_selected':False}
+000111 |     path=Path(__file__).with_name('native-cx-zero-mode-result.json')
+000112 |     path.write_text(json.dumps(out,indent=2)+'\n')
+000113 |     print(json.dumps({k:v for k,v in out.items() if k!='packets'},indent=2))
+000114 | 
+000115 | 
+000116 | if __name__=='__main__':main()

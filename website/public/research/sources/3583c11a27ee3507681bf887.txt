@@ -1,0 +1,35 @@
+TFPT scientific source excerpt
+Original repository path: verification/v367_seam_s3_lattice.py
+Original file SHA-256: d43a91462b2f54cf9677b4e0352630ff4ba6030dee50b14a1e2418875f457129
+Inclusive original lines: 6-32
+Line numbers below refer to the original source.
+This bounded excerpt is source evidence; it is not a new proof/checker run.
+Conversation metadata and personal execution details are omitted where indicated.
+
+000006 | invariant -- not a re-assertion of det K / c_-.
+000007 | 
+000008 | It does NOT prove the continuum scaling limit (that is the cited MMST theorem, v336) and does
+000009 | NOT close SEAM.EQUIV.01; it exhibits the explicit invertible lattice phase that S3 asks for.
+000010 | 
+000011 | Model: a single chiral Majorana is the BdG p+ip / QWZ two-band Bloch Hamiltonian
+000012 |     h(k) = sin(kx) sigma_x + sin(ky) sigma_y + (M - cos kx - cos ky) sigma_z,
+000013 | gapped for M not in {0, +-2}, with Chern number C = +-1 in the topological window
+000014 | (|M|<2) and C = 0 trivially (|M|>2).  A chiral Majorana edge carries c_- = C/2, so
+000015 | N_Maj = 16 copies in the topological phase give c_- = 16 * (1/2) = 8 = g_car + N_fam.
+000016 | 
+000017 |   [E] 1. THE BULK IS GAPPED.  for M=1 the band gap 2*min_k|d(k)| = 2 > 0 (numerically), so
+000018 |         the model is a gapped free-fermion phase (a quasi-free invertible candidate).
+000019 |   [E] 2. NON-TRIVIAL CHERN NUMBER (numerically computed).  the Fukui-Hatsugai-Suzuki
+000020 |         plaquette Chern number of the occupied band is |C| = 1 for M=1 (topological) and
+000021 |         C = 0 for M=3 (trivial, neg control) -- a genuine lattice topological invariant.
+000022 |   [E] 3. CHIRAL CENTRAL CHARGE c_- = 8.  each chiral Majorana edge carries c_- = C/2 = 1/2;
+000023 |         the carrier is N_Maj = dim S^+ = 2^(g_car-1) = 16 copies, so c_- = 16/2 = 8 =
+000024 |         g_car + N_fam (the gravitational anomaly / edge chiral central charge).
+000025 |   [E] 4. THE EDGE K-MATRIX DISCRIMINATOR.  the 16-Majorana edge is SO(16)_1 (det Cartan
+000026 |         D8 = 4, four primaries); the order-4 mu4 clock condenses it to (E8)_1 (det Cartan
+000027 |         E8 = 1, one primary) -- det K 4 -> 1, the holomorphy discriminator (v351/v369).
+000028 |   [C] 5. mu4 CONDENSATION TO (E8)_1.  the lattice free-fermion model realises SO(16)_1
+000029 |         directly; the index-4 simple-current (mu4) extension SO(16)_1 -> (E8)_1 (v154/v351)
+000030 |         is the seam glue on top -- cited, conditional.
+000031 |   [O] 6. RESIDUAL.  the genuine continuum SCALING-LIMIT existence (the lattice model's
+000032 |         massless limit IS the chiral CFT, MMST v336) stays [O]; v367 exhibits the explicit

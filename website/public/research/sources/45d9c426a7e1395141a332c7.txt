@@ -1,0 +1,208 @@
+TFPT scientific source excerpt
+Original repository path: experiments/theory-contracts/original-paper-source-reconciliation-20261102/solutionsearch_20261106R/research_runtime/launch.py
+Original file SHA-256: 9c45708f97b65c265728deb823170c6f54fd58a4dfc0a65cde3cd033eddc42d5
+Inclusive original lines: 1-200
+Line numbers below refer to the original source.
+This bounded excerpt is source evidence; it is not a new proof/checker run.
+Conversation metadata and personal execution details are omitted where indicated.
+
+000001 | """Autonomous original-source proposer -> independent critic -> next question.
+000002 | 
+000003 | No model call happens on import. No canonical scientific status is written.
+000004 | """
+000005 | from pathlib import Path
+000006 | import argparse
+000007 | import fcntl
+000008 | import hashlib
+000009 | import json
+000010 | import os
+000011 | import shlex
+000012 | import re
+000013 | import math
+000014 | import signal
+000015 | import sys
+000016 | 
+000017 | from context import prepare, write_json
+000018 | from backend import Backend, utc
+000019 | [OMITTED: non-scientific conversation or execution metadata]
+000020 | 
+000021 | ADMISSION = 'NOT_ADMITTED_BY_RUNTIME'
+000022 | 
+000023 | 
+000024 | def rows(path):
+000025 |     if not path.exists():
+000026 |         return []
+000027 |     # A crash can leave an incomplete final append. Repair only that line; never
+000028 |     # discard completed prior science or silently skip interior corruption.
+000029 |     result, valid_bytes = [], 0
+000030 |     with path.open('rb') as stream:
+000031 |         for line in stream:
+000032 |             try:
+000033 |                 result.append(json.loads(line)); valid_bytes += len(line)
+000034 |             except json.JSONDecodeError:
+000035 |                 if stream.read():
+000036 |                     raise ValueError('Interior journal corruption: ' + str(path))
+000037 |                 with path.open('r+b') as repair:
+000038 |                     repair.truncate(valid_bytes)
+000039 |                 break
+000040 |     return result
+000041 | 
+000042 | 
+000043 | def decision_history(history):
+000044 |     """Small explicit continuity table; the complete journal remains available."""
+000045 |     return [{'round_id': h['round_id'], 'question': h['proposal'].get('question'),
+000046 |              'first_extra_assumption': h['review'].get('first_extra_assumption'),
+000047 |              'blocker_class': h['review'].get('blocker_class', 'unknown'),
+000048 |              'reported_target_progress': h['review'].get('target_progress', 'unknown'),
+000049 |              'host_progress': h.get('target_assessment', {}).get('effective_progress', 'unknown'),
+000050 |              'definition_decision': h['review'].get('definition_decision', 'not_assessed'),
+000051 |              'route': h['review'].get('route', 'not_identified'),
+000052 |              'candidate_id': h['proposal'].get('candidate_id', ''),
+000053 |              'already_implied_by': h['review'].get('already_implied_by', [])}
+000054 |             for h in history]
+000055 | 
+000056 | 
+000057 | def producer_invocation(command, producer, scratch, python):
+000058 |     """Recognize a direct Python script invocation, not cat/echo or shell text."""
+000059 |     try:
+000060 |         args = shlex.split(command)
+000061 |         for _ in range(3):
+000062 |             if len(args) == 3 and Path(args[0]).name in ('sh', 'bash', 'zsh') and args[1] in ('-c', '-lc'):
+000063 |                 args = shlex.split(args[2])
+000064 |             else:
+000065 |                 break
+000066 |         while args and re.fullmatch(r'[A-Za-z_][A-Za-z_0-9]*=.*', args[0]):
+000067 |             if args[0].split('=', 1)[0] in ('PATH', 'PYTHONHOME'):
+000068 |                 return False
+000069 |             args.pop(0)
+000070 |         if not args or any(token in (';', '&&', '||', '|', '&', '>', '>>', '<') for token in args):
+000071 |             return False
+000072 |         executable = Path(args.pop(0))
+000073 |         if not executable.is_absolute() and not re.fullmatch(r'python(?:[0-9.]+)?', executable.name):
+000074 |             return False
+000075 |         actual_python = executable if executable.is_absolute() else Path(python).parent / executable
+000076 |         if actual_python.resolve() != Path(python).resolve():
+000077 |             return False
+000078 |         while args and args[0] in ('-B', '-u', '-I', '-E', '-s', '-S', '-O', '-OO', '-q'):
+000079 |             args.pop(0)
+000080 |         if not args or args[0].startswith('-'):
+000081 |             return False
+000082 |         return (scratch / args[0]).resolve() == producer.resolve()
+000083 |     except (ValueError, TypeError, OSError):
+000084 |         return False
+000085 | 
+000086 | 
+000087 | def computed_value(value):
+000088 |     if isinstance(value, bool):
+000089 |         return False
+000090 |     if isinstance(value, int):
+000091 |         return True
+000092 |     if isinstance(value, float):
+000093 |         return math.isfinite(value)
+000094 |     if isinstance(value, list) and len(value) == 2:
+000095 |         return all(isinstance(x, (int, float)) and computed_value(x) for x in value)
+000096 |     return False
+000097 | 
+000098 | 
+000099 | def target_assessment(proposal, review, proposal_call, review_call, python=sys.executable):
+000100 |     """Evidence of task relevance, never a scientific admission or proof checker."""
+000101 |     claimed = review.get('target_progress', 'none')
+000102 |     effective, reasons = claimed, []
+000103 |     if review.get('verdict') in ('falsified', 'unresolved'):
+000104 |         effective = 'none'; reasons.append('Critic did not establish the proposed result')
+000105 |     if claimed == 'input_derived' and review.get('premises_presupposing_target'):
+000106 |         effective = 'none'; reasons.append('The claimed original input is still presupposed')
+000107 |     if claimed in ('input_derived', 'candidate_excluded', 'definition_decided') and review.get('already_implied_by'):
+000108 |         effective = 'none'; reasons.append('Already implied by: ' + ', '.join(review['already_implied_by']))
+000109 |     evidence = []
+000110 |     for response, call in ((proposal, proposal_call), (review, review_call)):
+000111 |         scratch = Path(call.get('call_dir', '/nonexistent')) / 'scratch'
+000112 |         for name in response.get('progress_evidence', []):
+000113 |             p = (scratch / name).resolve()
+000114 |             if p.is_relative_to(scratch.resolve()) and p.is_file():
+000115 |                 evidence.append(str(p))
+000116 |     if claimed != 'none' and not evidence:
+000117 |         effective = 'none'; reasons.append('No referenced local progress artifact was found')
+000118 |     if claimed == 'definition_decided' and review.get('definition_decision') not in (
+000119 |             'defined', 'not_found_in_scoped_sources'):
+000120 |         effective = 'none'; reasons.append('No scoped definition decision was supplied')
+000121 |     if claimed == 'candidate_excluded' and not (
+000122 |             proposal.get('candidate_id') or review.get('candidate_id')):
+000123 |         effective = 'none'; reasons.append('No concrete excluded candidate was identified')
+000124 |     candidate = {'status': 'not_supplied'}
+000125 |     if claimed == 'candidate_computed':
+000126 |         scratch = Path(proposal_call.get('call_dir', '/nonexistent')) / 'scratch'
+000127 |         def local(name):
+000128 |             p = (scratch / name).resolve()
+000129 |             if not name or not p.is_relative_to(scratch.resolve()) or not p.is_file():
+000130 |                 raise ValueError('Candidate artifact must be an existing file in proposer scratch')
+000131 |             return p
+000132 |         try:
+000133 |             bundle_path = local(proposal.get('candidate_bundle', ''))
+000134 |             bundle = json.loads(bundle_path.read_text())
+000135 |             if not proposal.get('candidate_id') or bundle.get('candidate_id') != proposal['candidate_id']:
+000136 |                 raise ValueError('Candidate identity does not bind the supplied artifact')
+000137 |             slots = bundle.get('slots', {})
+000138 |             for key in ('regulator_family', 'field_operator', 'reference_measure',
+000139 |                         'marked_time_dictionary', 'absolute_reference', 'whole_contributions'):
+000140 |                 slot = slots.get(key, {})
+000141 |                 if slot.get('status') not in ('original', 'hypothesis') or not slot.get('description'):
+000142 |                     raise ValueError('Candidate has an open or undescribed source slot: ' + key)
+000143 |                 if slot['status'] == 'original' and not slot.get('source_references'):
+000144 |                     raise ValueError('Claimed original slot lacks source references: ' + key)
+000145 |                 if slot['status'] == 'hypothesis' and not slot.get('new_assumption'):
+000146 |                     raise ValueError('Hypothesis slot hides its extra assumption: ' + key)
+000147 |             producer, result_file = local(bundle['producer_file']), local(bundle['result_file'])
+000148 |             result = json.loads(result_file.read_text())
+000149 |             values = result.get('unnormalized_values', {})
+000150 |             if any(k not in values or not computed_value(values[k]) for k in ('Z0', 'ZU', 'ZY', 'ZUY')):
+000151 |                 raise ValueError('Candidate has no calculated four unnormalized contributions')
+000152 |             commands = proposal_call.get('commands', [])
+000153 |             digest = hashlib.sha256(result_file.read_bytes()).hexdigest()
+000154 |             if not any(c.get('exit_code') == 0 and
+000155 |                        producer_invocation(c.get('command', ''), producer, scratch, python) and
+000156 |                        ('RESULT_SHA256=' + digest) in (c.get('output') or '') for c in commands):
+000157 |                 raise ValueError('No successful direct producer invocation emitting the current result hash')
+000158 |             candidate = {'status': 'candidate_artifacts_and_execution_observed',
+000159 |                          'candidate_id': proposal['candidate_id'], 'bundle': str(bundle_path),
+000160 |                          'producer': str(producer), 'result_file': str(result_file),
+000161 |                          'scope': 'File and execution evidence only; source identity, calculations and physics require independent review'}
+000162 |         except (ValueError, KeyError, TypeError, OSError) as exc:
+000163 |             effective = 'none'; candidate = {'status': 'incomplete_candidate', 'reason': str(exc)}
+000164 |             reasons.append(str(exc))
+000165 |     return {'reported_progress': claimed, 'effective_progress': effective,
+000166 |             'blocker_class': review.get('blocker_class', 'unknown'),
+000167 |             'evidence_files_found': sorted(set(evidence)), 'candidate': candidate,
+000168 |             'reasons': reasons, 'physics_admission': ADMISSION,
+000169 |             'scope': 'Task steering and observed artifacts, not verification of the scientific claim'}
+000170 | 
+000171 | 
+000172 | def followup(proposal, review, history, assessment=None):
+000173 |     task = review['next_task'].strip() or proposal['next_task'].strip() or INITIAL_TASK
+000174 |     if proposal['proposed_status'] == 'candidate_complete_solution':
+000175 |         return ('Independently verify the candidate complete solution against the actual whole-source '
+000176 |                 'and T1..T8 obligations. Actively seek a counterexample to its first unproved '
+000177 |                 'identification, rerun the actual original check or Lean statement. ' + task)
+000178 |     if assessment is not None:
+000179 |         progress = assessment['effective_progress']
+000180 |         blocker = review.get('blocker_class', 'unknown')
+000181 |         if review.get('verdict') == 'falsified':
+000182 |             return (GOAL_ANCHOR + 'Die konkrete Kandidatenidentifikation wurde widerlegt. '
+000183 |                     'Erhalte den Gegenbefund und ändere genau die widerlegte Annahme. ' + task)
+000184 |         if progress == 'none':
+000185 |             previous = [h['round_id'] for h in history
+000186 |                         if h['review'].get('blocker_class') == blocker]
+000187 |             return (GOAL_ANCHOR + 'Unverkleinerter Zielblocker: ' + blocker + '. '
+000188 |                     + ('Bereits behandelt in: ' + ', '.join(previous) + '. ' if previous else '')
+000189 |                     + DIRECT_TARGET_TASK)
+000190 |         if progress == 'definition_decided' and review.get('definition_decision') == 'not_found_in_scoped_sources':
+000191 |             return (GOAL_ANCHOR + 'Der protokollierte Quellenumfang liefert diesen Input nicht. '
+000192 |                     'Erhalte diesen begrenzten Suchbefund und wiederhole ihn nur bei neuer Quelle. '
+000193 |                     'Entwickle jetzt die begründete primitive Kandidatenregel und prüfe zuerst '
+000194 |                     'Normalisierbarkeit, Originaltyp und ihre erste neue Annahme. ' + task)
+000195 |         return GOAL_ANCHOR + task
+000196 |     if proposal['proposed_status'] == 'no_new_information' or any(
+000197 |         h['proposal']['new_information'].strip() == proposal['new_information'].strip() for h in history):
+000198 |         return ('The previous route produced no distinct new information. Read the complete journal '
+000199 |                 'and choose a different concrete original equation, source dependency or countertest '
+000200 |                 'upstream of the missing nu_Vn/D_Vn input or identical marked IR caller. '

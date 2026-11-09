@@ -1,0 +1,78 @@
+TFPT scientific source excerpt
+Original repository path: experiments/theory-contracts/e-series-compiler-closure-20261023/quartic_clock_probe_20261106.py
+Original file SHA-256: fd4a9dc0a21b33160089474308c019902cb1a1a10989a75e31e17a024b25380c
+Inclusive original lines: 1-70
+Line numbers below refer to the original source.
+This bounded excerpt is source evidence; it is not a new proof/checker run.
+Conversation metadata and personal execution details are omitted where indicated.
+
+000001 | """Canonical symmetric four-current probe of the original E7 quartic.
+000002 | This is a declared charged current-state probe, not a physical selection law.
+000003 | """
+000004 | import ast,itertools,json,argparse
+000005 | from collections import Counter,defaultdict
+000006 | from fractions import Fraction as F
+000007 | from pathlib import Path
+000008 | 
+000009 | [OMITTED: non-scientific conversation or execution metadata]
+000010 | parser=argparse.ArgumentParser();parser.add_argument('--out',required=True,type=Path)
+000011 | OUT=parser.parse_args().out;OUT.mkdir(parents=True,exist_ok=True)
+000012 | bootstrap=REPO/'experiments/theory-contracts/e-series-compiler-closure-20261023/e7_full_source_response_20261106.py'
+000013 | tree=ast.parse(bootstrap.read_text());nodes=[]
+000014 | for n in tree.body:
+000015 |     if isinstance(n,ast.For):break
+000016 |     if any(isinstance(t,ast.Name) and t.id in ['parser','OUT'] for t in ast.walk(n)):continue
+000017 |     nodes.append(n)
+000018 | env={};exec(compile(ast.Module(body=nodes,type_ignores=[]),str(bootstrap),'exec'),env)
+000019 | ch,af,ip,ck=(env[k] for k in ['ch','af','ip','ck'])
+000020 | R=ch.roots;vac={():F(1)}
+000021 | rho=tuple(F(7-2*j,2) for j in range(8))
+000022 | out=[]
+000023 | for direction in [1,-1]:
+000024 |     alpha=(direction,)*8;ap=ch.ridx[alpha];am=ch.opp[ap]
+000025 |     G1=[i for i,r in enumerate(R) if ip(alpha,r)==4]
+000026 |     V={am:{():1}}
+000027 |     for degree in range(1,5):
+000028 |         nxt=defaultdict(Counter)
+000029 |         for a,root in enumerate(G1):
+000030 |             for basis,poly in V.items():
+000031 |                 for target,coeff in ch.bracket(root,basis).items():
+000032 |                     for m,c in poly.items():nxt[target][tuple(sorted(m+(a,)))]+=int(coeff)*c
+000033 |         V={b:{m:c for m,c in p.items() if c} for b,p in nxt.items() if any(p.values())}
+000034 |     ck(set(V)=={ap},'source quartic output')
+000035 |     Q=V[ap];state={}
+000036 |     for mon,c in Q.items():
+000037 |         perms=set(itertools.permutations(mon))
+000038 |         for word in perms:
+000039 |             v=vac
+000040 |             for i in reversed(word):v=af.act(G1[i],-1,v)
+000041 |             for key,value in v.items():state[key]=state.get(key,F(0))+F(c,len(perms))*value
+000042 |     state={k:c for k,c in state.items() if c}
+000043 |     unit=af.act(ap,-3,af.act(ap,-1,vac))
+000044 |     def pair_unit(st):return af.act(am,1,af.act(am,3,st)).get((),F(0))
+000045 |     unit_norm=pair_unit(unit);amplitude=pair_unit(state)
+000046 |     ck(unit_norm==1,'same-source unit lattice head state')
+000047 |     ck(amplitude!=0,'quartic sym current probe survives integrable quotient')
+000048 |     energies={}
+000049 |     for a in [F(1,4),F(3,4)]:
+000050 |         values=set()
+000051 |         for key in state:
+000052 |             L=-sum(m for m,_ in key)
+000053 |             p=tuple(F(x,2) for x in af.weight(key))
+000054 |             ck(L==4 and p==tuple(alpha),'whole probe has grade4 and charge2alpha')
+000055 |             values.add(8*L-ip(rho,p)+F(2*a-1,2)*sum(p))
+000056 |         ck(len(values)==1,'actual H8 eigenstate, not average energy')
+000057 |         energies[str(a)]=str(next(iter(values)))
+000058 |     out.append({'root_orientation':direction,'quartic_monomials':len(Q),'sym_current_PBW_terms':len(state),'unit_reference_norm':str(unit_norm),'quartic_probe_unit_amplitude':str(amplitude),'source_H8_eigenvalues':energies,'physical_identification':'none; specified symmetric current probe, inherited source time only'})
+000059 |     print(out[-1],flush=True)
+000060 | sp=env['sp'];basis=env['R'];I=sp.eye(8);C=I
+000061 | for i in range(8):
+000062 |     root=basis[:,i];C=(I-root*root.T)*C
+000063 | v=alpha0=sp.ones(8,1)/2;orbit=[]
+000064 | for k in range(1,61):
+000065 |     orbit.append(tuple(v));v=C*v
+000066 |     if v==alpha0:break
+000067 | ck(len(orbit)==30,'actual source-basis Coxeter root orbit has30 points')
+000068 | ck(C*alpha0 not in [alpha0,-alpha0],'Coxeter action does not preserve the two charged probes')
+000069 | counter={'root_orbit_size':len(orbit),'preserves_two_charged_probe_directions':False,'H8_energies_along_orbit_at_quarter1_4':list(map(str,sorted({32-2*ip(rho,r)-F(1,2)*sum(r) for r in orbit})))}
+000070 | (OUT/'quartic-clock-results.json').write_text(json.dumps({'claim':'MATH.ESERIES.QUARTIC.CLOCK.PROBE.20261106','probe_definition':'Q mapped by fully symmetrized product of four inherited mode-minus-one currents; this is a declared charged current-state probe, not a self-adjoint observable or an original physical insertion selection theorem.','results':out,'Coxeter_action_countertest':counter,'checks':dict(env['checks']),'source_sha256':env['PINS']},indent=2)+'\n')

@@ -1,0 +1,57 @@
+TFPT scientific source excerpt
+Original repository path: experiments/theory-contracts/tfpt-unified-source-derivation-20261029/aps_source_review/FIXED-CAP-DETERMINANT.txt
+Original file SHA-256: f9f28056d7df22a2a3bfa5008241f4a6bfa76e42c0ab562dcb14275fb90af5fc
+Inclusive original lines: 16-64
+Line numbers below refer to the original source.
+This bounded excerpt is source evidence; it is not a new proof/checker run.
+Conversation metadata and personal execution details are omitted where indicated.
+
+000016 |   K=C^96, gamma=gamma_F with dimensions48+48,
+000017 |   p=n+alpha, alpha=1/4 or3/4, n in Z,
+000018 |   h0=p gamma, h=h0+V, V=-i gamma Phi,
+000019 |   Phi*=Phi, {gamma,Phi}=0, Phi constant,
+000020 |   E=(p^2+Phi^2)^(1/2), h^2=E^2,
+000021 |   P=P_-(h0), R_ell=exp(-ell h), ell>0.
+000022 | Thus E commutes with gamma,h,V and P. On the actual occupied space RanP,
+000023 |   M_p=P R_ell P=cosh(ell E)+|p|E^-1 sinh(ell E).
+000024 | The old-sea exterior matrix element is det M_p. The moving negative sea
+000025 | has exterior amplitude exp(ell Tr_RanP E), using the same underlying
+000026 | transfer representative. Their quotient is det C_p, where
+000027 |   C_p=exp(-ell E)M_p
+000028 |      =a_p+(I-a_p)exp(-2ell E),
+000029 |   a_p=(I+|p|E^-1)/2.
+000030 | The reference old-sea amplitude exp(ell |p| dimRanP) cancels from this
+000031 | quotient. The identification of the E spectrum on old and moving occupied
+000032 | spaces follows from the existing odd singular blocks, not an independent
+000033 | fit or an extra internal species.
+000034 | 
+000035 | 2. Exact positivity and trace-class bound
+000036 | All factors are commuting functions of Phi^2 on RanP. Spectral calculus gives
+000037 |   I-C_p=(I-a_p)(I-exp(-2ell E)) >=0,
+000038 |   C_p>=a_p>=I/2,
+000039 |   0<=I-C_p<=I-a_p
+000040 |      =Phi^2/[2E(E+|p|)]<=Phi^2/(4p^2).
+000041 | These identities include zero singular values by continuity; their C_p is I.
+000042 | No small-mass expansion or finite-momentum cutoff is assumed.
+000043 | 
+000044 | Let C be the direct sum of C_p on directsum_p RanP_-(h0(p)). Since the
+000045 | internal space is finite and sum_n(n+alpha)^-2 converges, I-C is positive
+000046 | trace class. For the actual odd selfadjoint96 component coefficient,
+000047 |   Phi=[[0,F],[F*,0]],
+000048 |   Tr_(gamma+) Phi^2=Tr_(gamma-) Phi^2=(1/2)Tr_K Phi^2.
+000049 | Both signs of p therefore give the same occupied trace bound. In detail,
+000050 |   Tr(I-C)<= (Tr_K Phi^2/8) sum_n 1/(n+alpha)^2
+000051 |           =pi^2 Tr_K Phi^2/[8 sin^2(pi alpha)]
+000052 |           =pi^2 Tr_K Phi^2/4  at alpha=1/4,3/4.
+000053 | There are48 occupied slots per p, including any zero singular slots. The
+000054 | conjugate test slots of the existing selfdual chart are not counted again
+000055 | as additional physical charged fields.
+000056 | 
+000057 | Because spectrum(C) is contained in[1/2,1],
+000058 |   0<=-log C<=2(I-C).
+000059 | Consequently log C is trace class and
+000060 |   det_F C=exp(Tr log C)>0,
+000061 |   exp(-2Tr(I-C))<=det_F C<=1.
+000062 | This proves existence and NONVANISHING of the whole Fredholm determinant.
+000063 | Finite Fourier exhaustions converge in trace norm for I-C, hence give this
+000064 | same positive determinant; this is not a fit to a cutoff product.

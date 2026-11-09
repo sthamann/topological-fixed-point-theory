@@ -1,0 +1,19 @@
+TFPT scientific source excerpt
+Original repository path: experiments/theory-contracts/original-paper-source-reconciliation-20261102/solutionsearch_20261106R/research_runtime/check_controls.py
+Original file SHA-256: 98f7fa923c8ec3cbbac092b4e89498b9d380b2addc541c20d922c0c9f0e817ca
+Inclusive original lines: 201-211
+Line numbers below refer to the original source.
+This bounded excerpt is source evidence; it is not a new proof/checker run.
+Conversation metadata and personal execution details are omitted where indicated.
+
+000201 |     def test_round_boundary_stop_request_is_consumed_once(self):
+000202 |         self.out.mkdir(); (self.out / 'stop-after-round').touch()
+000203 |         self.assertEqual(self.execute(2), 0)
+000204 |         self.assertEqual(len(rows(self.out / 'research-rounds.jsonl')), 1)
+000205 |         self.assertFalse((self.out / 'stop-after-round').exists())
+000206 |         self.assertEqual(self.execute(2), 0)
+000207 |         self.assertEqual(len(rows(self.out / 'research-rounds.jsonl')), 2)
+000208 | 
+000209 | 
+000210 | if __name__ == '__main__':
+000211 |     unittest.main(verbosity=2)

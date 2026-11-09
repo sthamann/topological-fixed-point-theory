@@ -1,0 +1,54 @@
+TFPT scientific source excerpt
+Original repository path: verification/v798_seam_clifford_modular_s.py
+Original file SHA-256: 957dc3e396b3b3ea47acf366b22c70c3237d80313826b3b5646b8387d2061e3b
+Inclusive original lines: 580-625
+Line numbers below refer to the original source.
+This bounded excerpt is source evidence; it is not a new proof/checker run.
+Conversation metadata and personal execution details are omitted where indicated.
+
+000580 |     F4s = tuple(tuple((0, 1) if (j * k) % 4 == 1 else
+000581 |                       (-1, 0) if (j * k) % 4 == 2 else
+000582 |                       (0, -1) if (j * k) % 4 == 3 else (1, 0)
+000583 |                       for k in range(4)) for j in range(4))   # 2 * F4
+000584 | 
+000585 |     ok_s2 = (mmulg(K1s, K1s) == mscale(2, I4)
+000586 |              and mmulg(K2s, K2s) == mscale(2, I4)
+000587 |              and mmulg(K3s, K3s) == mscale(4, I4))
+000588 |     check("P1.1 S_lift^2 = +I exactly for K1, K2, K3 (the tau = i parity "
+000589 |           "relation; over F2 the parity element is the identity, "
+000590 |           "metaplectic sign +1)", ok_s2)
+000591 | 
+000592 |     ZI = PMAT[(0, 1, 0, 0)]
+000593 |     IZ = PMAT[(0, 0, 0, 1)]
+000594 |     ok_t2 = (mmulg(T1, T1) == ZI and mmulg(T2, T2) == IZ
+000595 |              and mmulg(T3, T3) == mmulg(ZI, IZ))
+000596 |     check("P1.2 T_lift^2 = the Pauli PARITY element exactly: T1^2 = Z(x)I, "
+000597 |           "T2^2 = I(x)Z, T3^2 = Z(x)Z (the (-1)^N element of the binary "
+000598 |           "Weil representation)", ok_t2)
+000599 | 
+000600 |     B1 = mmulg(T1, K1s)                    # sqrt2 * (T1 K1)
+000601 |     B13 = mmulg(mmulg(B1, B1), B1)         # 2 sqrt2 * (T1 K1)^3
+000602 |     B3t = mmulg(T3, K3s)                   # 2 * (T3 K3)
+000603 |     B33 = mmulg(mmulg(B3t, B3t), B3t)      # 8 * (T3 K3)^3
+000604 |     tgt1 = meye(4, (2, 2))                 # (2 + 2i) I = 2 sqrt2 zeta8 I
+000605 |     tgt3 = meye(4, (0, 8))                 # 8i I
+000606 |     check("P1.3 METAPLECTIC ANOMALY exact: (T1 K1)^3 = zeta8 I (scaled: "
+000607 |           "(sqrt2 T1K1)^3 = (2+2i) I = 2 sqrt2 zeta8 I: %s) -- the Weil "
+000608 |           "constant gamma = zeta8 at tau = i, c = 1 per binary factor; "
+000609 |           "(T3 K3)^3 = zeta8^2 I = i I = J (scaled: (2 T3K3)^3 = 8i I: %s) "
+000610 |           "-- THE DECK J IS THE METAPLECTIC ANOMALY OF THE TOTAL FOURIER "
+000611 |           "(c = 2)" % (B13 == tgt1, B33 == tgt3),
+000612 |           B13 == tgt1 and B33 == tgt3)
+000613 | 
+000614 |     F4sq = mmulg(F4s, F4s)                 # 4 * F4^2
+000615 |     PAR4 = tuple(tuple(G1 if (j + k) % 4 == 0 else G0 for k in range(4))
+000616 |                  for j in range(4))        # parity j -> -j mod 4
+000617 |     check("P1.4 K4 = F4 (Z4 deck-clock Fourier): F4^2 = the Z4 PARITY "
+000618 |           "permutation j -> -j exactly (the S^2 = parity relation holds "
+000619 |           "for the deck reading too)", F4sq == mscale(4, PAR4))
+000620 | 
+000621 |     # frozen wrong-phase control identity (fires in P8): (zeta8 K1)^2 = i I
+000622 |     WRONG_SQ_IS_I = mmulg(K1s, K1s) == mscale(2, I4)   # K1^2 = I ...
+000623 |     # ... so (zeta8 K1)^2 = zeta8^2 I = i I, not in {+-I}: adjudicated in P8
+000624 | 
+000625 |     # ==================================================================== P2

@@ -1,0 +1,121 @@
+TFPT scientific source excerpt
+Original repository path: verification/v990_wj_transduction_mechanism.py
+Original file SHA-256: 98de224f6b70d2abb376acb36e9acd3a1b62b485923b043bdad04984f69818a0
+Inclusive original lines: 135-247
+Line numbers below refer to the original source.
+This bounded excerpt is source evidence; it is not a new proof/checker run.
+Conversation metadata and personal execution details are omitted where indicated.
+
+000135 |     def build_H_W(theta, lam_e=LAM_E, w=W_HOP, m=MASS, mu_q=MU_Q):
+000136 |         Hm = -lam_e * (W_X + W_X.conj().T)
+000137 |         for s, q in enumerate(W_CHARGES):
+000138 |             a0, a1 = s * NS + 0, s * NS + 1
+000139 |             Zq = np.linalg.matrix_power(W_Z, int(q) % 6)
+000140 |             hop = W_PSI[a0].conj().T @ Zq @ W_PSI[a1]
+000141 |             Hm = Hm + w * (hop + hop.conj().T)
+000142 |             seam = (np.exp(1j * theta) ** q) * (
+000143 |                 W_PSI[a1].conj().T @ W_PSI[a0])
+000144 |             Hm = Hm + w * (seam + seam.conj().T)
+000145 |             Hm = Hm + m * (W_NUM[a0] - W_NUM[a1])
+000146 |         Hm = Hm + mu_q * (W_NUM[0] + W_NUM[1])
+000147 |         return Hm
+000148 | 
+000149 |     def dH_dtheta(theta, w=W_HOP):
+000150 |         q = 1
+000151 |         phase = np.exp(1j * theta) ** q
+000152 |         dseam = (1j * q) * phase * (W_PSI[1].conj().T @ W_PSI[0])
+000153 |         return w * (dseam + dseam.conj().T)
+000154 | 
+000155 |     O_Q = W_NUM[0] + W_NUM[1]
+000156 |     O_Z = 0.5 * (W_Z + W_Z.conj().T)
+000157 |     O_C = W_NUM[2] + W_NUM[3]
+000158 |     OPS = [O_Q, O_Z, O_C]
+000159 |     N_O = 3
+000160 |     H_W0 = build_H_W(THETA0)
+000161 |     check("W[J] HERMITIAN [E]: H = H^dag at theta0 (dim 96)",
+000162 |           float(np.max(np.abs(H_W0 - H_W0.conj().T))) < 1e-12)
+000163 | 
+000164 |     def W_gen(Js, theta):
+000165 |         A = -BETA * build_H_W(theta)
+000166 |         for j, O in zip(Js, OPS):
+000167 |             A = A + j * O
+000168 |         return log_tr_exp(A)
+000169 | 
+000170 |     evals0, evecs0, p0 = thermal_pack(H_W0)
+000171 |     Oe = [evecs0.conj().T @ O @ evecs0 for O in OPS]
+000172 |     means = [complex(np.dot(p0, np.diag(Oe[a]))) for a in range(N_O)]
+000173 |     dw_ok = True
+000174 |     dw_max = 0.0
+000175 |     for a in range(N_O):
+000176 |         Jp = [0.0] * N_O
+000177 |         Jm = [0.0] * N_O
+000178 |         Jp[a] = EPS_J
+000179 |         Jm[a] = -EPS_J
+000180 |         dW = (W_gen(Jp, THETA0) - W_gen(Jm, THETA0)) / (2.0 * EPS_J)
+000181 |         diff = abs(dW - means[a].real)
+000182 |         dw_max = max(dw_max, diff)
+000183 |         dw_ok &= diff < 1e-6
+000184 |     print("   max |dW/dJ - <O>| = %.2e" % dw_max)
+000185 |     check("W(a) [E/N]: dW/dJ = <O> (max diff %.1e; probe ~6e-11)"
+000186 |           % dw_max, dw_ok)
+000187 | 
+000188 |     hess_ok = True
+000189 |     hess_max = 0.0
+000190 |     for a in range(N_O):
+000191 |         for b in range(a, N_O):
+000192 |             if a == b:
+000193 |                 hess = (W_gen([EPS_J if i == a else 0.0
+000194 |                                for i in range(N_O)], THETA0)
+000195 |                         - 2.0 * W_gen([0.0] * N_O, THETA0)
+000196 |                         + W_gen([-EPS_J if i == a else 0.0
+000197 |                                  for i in range(N_O)], THETA0)
+000198 |                         ) / (EPS_J ** 2)
+000199 |             else:
+000200 |                 def Jpair(sa, sb, aa=a, bb=b):
+000201 |                     Js = [0.0] * N_O
+000202 |                     Js[aa] = sa * EPS_J
+000203 |                     Js[bb] = sb * EPS_J
+000204 |                     return W_gen(Js, THETA0)
+000205 |                 hess = (Jpair(1, 1) - Jpair(1, -1) - Jpair(-1, 1)
+000206 |                         + Jpair(-1, -1)) / (4.0 * EPS_J * EPS_J)
+000207 |             kub = kubo_connected(Oe[a], Oe[b], p0, evals0)
+000208 |             diff = abs(hess - kub.real)
+000209 |             hess_max = max(hess_max, diff)
+000210 |             hess_ok &= diff < 5e-5
+000211 |     print("   max |Hess - Kubo| = %.2e" % hess_max)
+000212 |     check("W(b) [E/N]: Hessian = Kubo connected (max diff %.1e; "
+000213 |           "probe ~1e-7)" % hess_max, hess_ok)
+000214 | 
+000215 |     Kseam = -BETA * dH_dtheta(THETA0)
+000216 |     Ke = evecs0.conj().T @ Kseam @ evecs0
+000217 |     mixed_vals = []
+000218 |     mix_ok = True
+000219 |     for a in range(N_O):
+000220 |         def Wm(j, th, aa=a):
+000221 |             Js = [0.0] * N_O
+000222 |             Js[aa] = j
+000223 |             return W_gen(Js, th)
+000224 |         mixed = (Wm(EPS_J, THETA0 + EPS_TH) - Wm(EPS_J, THETA0 - EPS_TH)
+000225 |                  - Wm(-EPS_J, THETA0 + EPS_TH)
+000226 |                  + Wm(-EPS_J, THETA0 - EPS_TH)
+000227 |                  ) / (4.0 * EPS_J * EPS_TH)
+000228 |         kub = kubo_connected(Oe[a], Ke, p0, evals0)
+000229 |         diff = abs(mixed - kub.real)
+000230 |         mix_ok &= diff < 5e-5
+000231 |         # Kubo is the independently checked mixed derivative. Use it for the
+000232 |         # zero control: subtracting four O(1) log traces amplifies roundoff by
+000233 |         # 1/(4*EPS_J*EPS_TH), obscuring an exactly decoupled response.
+000234 |         mixed_vals.append(kub.real)
+000235 |         print("   mixed d2W/dJ[%d]dtheta = %.4e  (Kubo diff %.1e)"
+000236 |               % (a, mixed, diff))
+000237 |     check("W(c) KUBO [N]: mixed d2W/dJ dtheta = Kubo(O, -beta dH/dtheta)",
+000238 |           mix_ok)
+000239 |     m_Z, m_C, m_Q = mixed_vals[1], mixed_vals[2], mixed_vals[0]
+000240 |     check("W(c) TRANSDUCTION [N]: seam-coupled link mixed != 0 "
+000241 |           "(%.3e), e^c CONTROL = 0 (%.3e), Q-charge absorbed "
+000242 |           "(%.3e ~ 0; probe seam-coupled ~-9.3e-3)"
+000243 |           % (m_Z, m_C, m_Q),
+000244 |           abs(m_Z) > 1e-6 and abs(m_C) < 1e-8 and abs(m_Q) < 1e-6)
+000245 | 
+000246 |     F_NMODES = 4
+000247 |     F_D = 16

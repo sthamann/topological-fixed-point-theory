@@ -4,6 +4,15 @@ Scientific findings, their original scope and dated publication history remain
 in the modular `changelog.tex` document. This file records repository structure,
 navigation and maintenance changes that make no new scientific claim.
 
+## 2026-11-09: Preserve the whole TFPT status in the Atlas
+
+Overall status queries keep the full set of research areas and paginate their
+question index independently of individual research packets. The local Atlas
+and public evidence portal share the same scoped entry points. The public
+snapshot includes the reviewed source findings through the current freeze.
+The paper importer can rebuild source ranges before import, and search
+keeps expired annotations separate from current text.
+
 ## 2026-11-06: Improve public search and source navigation
 
 Three topic guides and three original argument reading editions provide stable

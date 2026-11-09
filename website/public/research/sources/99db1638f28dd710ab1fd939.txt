@@ -1,0 +1,111 @@
+TFPT scientific source excerpt
+Original repository path: experiments/theory-contracts/e-series-compiler-closure-20261023/e_series_quadratic_budget_20261106.py
+Original file SHA-256: cb8c1b8407412d5cb08c8091f867d5ade86e05a1eb9fa352657c78226722b95a
+Inclusive original lines: 1-103
+Line numbers below refer to the original source.
+This bounded excerpt is source evidence; it is not a new proof/checker run.
+Conversation metadata and personal execution details are omitted where indicated.
+
+000001 | """Exact native E7 56 versus existing three-family48 response and orbit flag."""
+000002 | import ast,itertools,json,argparse
+000003 | from fractions import Fraction as F
+000004 | from pathlib import Path
+000005 | from collections import Counter
+000006 | import sympy as sp
+000007 | [OMITTED: non-scientific conversation or execution metadata]
+000008 | parser=argparse.ArgumentParser();parser.add_argument('--out',required=True,type=Path)
+000009 | OUT=parser.parse_args().out;OUT.mkdir(parents=True,exist_ok=True)
+000010 | bootstrap=REPO/'experiments/theory-contracts/e-series-compiler-closure-20261023/e7_full_source_response_20261106.py'
+000011 | t=ast.parse(bootstrap.read_text());nodes=[]
+000012 | for n in t.body:
+000013 |     if isinstance(n,ast.For):break
+000014 |     if any(isinstance(z,ast.Name) and z.id in ['parser','OUT'] for z in ast.walk(n)):continue
+000015 |     nodes.append(n)
+000016 | env={};exec(compile(ast.Module(body=nodes,type_ignores=[]),str(bootstrap),'exec'),env)
+000017 | ch,ck,ip=(env[k] for k in ['ch','ck','ip'])
+000018 | R=[sp.Matrix(r)/2 for r in ch.roots]
+000019 | alpha=sp.Matrix([0]*5+[1,-1,0])
+000020 | beta=sp.Matrix([0]*5+[1,0,-1])
+000021 | lam=sp.Matrix([0]*5+[1,0,1])
+000022 | G=[r for r in R if r.dot(alpha)==1]
+000023 | carrier=[r for r in R if all(abs(x)==sp.Rational(1,2) for x in r) and sum(bool(x<0) for x in r[:5])%2==1]
+000024 | Q=[r for r in carrier if tuple(2*x for x in r[5:])!=(-1,-1,-1)]
+000025 | ck(len(G)==56 and len(carrier)==64 and len(Q)==48,'same native56 64 48')
+000026 | M56=sum((r[:5,0]*r[:5,0].T for r in G),sp.zeros(5))
+000027 | M48=sum((r[:5,0]*r[:5,0].T for r in Q),sp.zeros(5))
+000028 | ck(M56==M48==12*sp.eye(5),'all D5 Cartan quadratic responses match')
+000029 | Y=sp.Matrix([F(-1,3)]*3+[F(1,2)]*2+[0]*3)
+000030 | traces={str(n):{'E7_56':str(sum(r.dot(Y)**n for r in G)),'native_48':str(sum(r.dot(Y)**n for r in Q))} for n in [1,2,3,4,5,6]}
+000031 | ck(traces['2']=={'E7_56':'10','native_48':'10'},'same actual hypercharge quadratic trace')
+000032 | ck(traces['4']=={'E7_56':'25/6','native_48':'95/18'},'nonlinear hypercharge discriminator')
+000033 | ck(traces['5']=={'E7_56':'0','native_48':'5/3'},'fifth hypercharge moment detects chirality')
+000034 | half56=[r for r in G if all(abs(x)==sp.Rational(1,2) for x in r)]
+000035 | vec56=[r for r in G if any(r[:5,0]) and r not in half56]
+000036 | sing56=[r for r in G if not any(r[:5,0])]
+000037 | ck((len(half56),len(vec56),len(sing56))==(32,20,4),'actual56 D5 content32+20+4')
+000038 | chiral56=Counter(sum(bool(x<0) for x in r[:5])%2 for r in half56)
+000039 | chiral48=Counter(sum(bool(x<0) for x in r[:5])%2 for r in Q)
+000040 | ck(chiral56=={0:16,1:16} and chiral48=={1:48},'quadratic equality is not chirality equality')
+000041 | for rr in [r for r in R if not any(r[5:])]:
+000042 |     ri=ch.ridx[tuple(int(2*x) for x in rr)];rm=ch.opp[ri]
+000043 |     values=[]
+000044 |     for space in [G,Q]:
+000045 |         members={ch.ridx[tuple(int(2*x) for x in r)] for r in space}
+000046 |         val=F(0)
+000047 |         for j in members:
+000048 |             b=ch.bracket(rm,j)
+000049 |             ck(all(k in members for k in b),'actual D5 root action preserves both modules')
+000050 |             for k,c in b.items():val+=c*ch.bracket(ri,k).get(j,0)
+000051 |         values.append(val)
+000052 |     ck(values==[F(-12),F(-12)],'all40 actual D5 root-pair charge traces match')
+000053 | 
+000054 | E7=[r for r in R if r.dot(alpha)==0]
+000055 | E6=[r for r in E7 if r.dot(beta)==0]
+000056 | D5=[r for r in E6 if r.dot(lam)==0]
+000057 | ck((len(E7),len(E6),len(D5))==(126,72,40),'actual marked orbit stabilizer chain')
+000058 | N=sp.Matrix.hstack(alpha,beta)
+000059 | w7=beta-alpha*(alpha.dot(beta)/2)
+000060 | w6=lam-N*(N.T*N).inv()*N.T*lam
+000061 | w5=sp.Matrix([sp.Rational(-1,2)]*5+[0]*3)
+000062 | def orbit(v,roots):
+000063 |     # Scale by12 so all weights and actual root reflections are integral.
+000064 |     rr=[tuple(int(2*x) for x in r) for r in roots]
+000065 |     first=tuple(int(12*x) for x in v);seen={first};todo=[first]
+000066 |     while todo:
+000067 |         x=todo.pop()
+000068 |         for r in rr:
+000069 |             dot=sum(a*b for a,b in zip(x,r));ck(dot%4==0,'exact reflected weight integrality')
+000070 |             y=tuple(a-dot//4*b for a,b in zip(x,r))
+000071 |             if y not in seen:seen.add(y);todo.append(y)
+000072 |     return seen
+000073 | orbit_sets=[orbit(v,rs) for v,rs in [(alpha,R),(w7,E7),(w6,E6),(w5,D5)]]
+000074 | orbits=list(map(len,orbit_sets))
+000075 | ck(orbits==[240,56,27,16],'actual orbit ladder240 56 27 16')
+000076 | ck(tuple(int(12*x) for x in lam-alpha*(alpha.dot(lam)/2)) in orbit_sets[1],'next marked weight belongs to the same56 orbit')
+000077 | ck(tuple(int(12*x) for x in w5) in {v[:5]+(0,0,0) for v in orbit_sets[2]},'actual27 contains the selected same-chirality D5 spinor projection')
+000078 | ck(Y.dot(w5)==0,'existing hypercharge lies in the final standard A4 Cartan')
+000079 | norms=[v.dot(v) for v in [alpha,w7,w6,w5]]
+000080 | ck(norms==list(map(sp.Rational,['2','3/2','4/3','5/4'])),'native projection norm ladder')
+000081 | ck(len([r for r in D5 if r.dot(w5)==0])==20,'actual final A4 stabilizer roots')
+000082 | result={'claim':'MATH.ESERIES.QUADRATIC.BUDGET.20261106','quadratic_response_matrix56_and48':'12 I5','E7_56_D5_branching':'16+16bar+2*10+4*1','hypercharge_traces':traces,'chirality_counts56':dict(chiral56),'chirality_counts48':dict(chiral48),'actual_Weyl_orbit_sizes':orbits,'projected_weight_norms':list(map(str,norms)),'stabilizer_root_counts':[126,72,40,20],'scopes':['Internal source current characters and actual root reflections, not physical fermion species.','Equal quadratic responses do not identify chiral representations; fourth moments distinguish them.','Known orbit hierarchy and norm formulas, newly compared with native TFPT48; no new physical constant.'],'checks':dict(env['checks'])}
+000083 | result['response_definition']='Internal character chi_R(s)=Tr_R exp(s Y0); these are character moments, not the affine vacuum current OPE level or a spacetime fermion loop without an additional physical identification.'
+000084 | result['actual_D5_root_pair_trace_both_modules']='-12 for every opposite root pair in the original sign convention'
+000085 | result['orbit_flag_scope']='Nested stabilizer flag with a new marked weight from the preceding orbit at each stage, not repeated projection of the same single vector. Final D5 spinor is the odd chirality present in this27.'
+000086 | Gneutral=[r for r in R if sum(r)==2]
+000087 | pair_charges=[Y[i]+Y[j] for i,j in itertools.combinations(range(8),2)]
+000088 | ck(Counter(r.dot(Y) for r in Gneutral)==Counter(pair_charges+[-v for v in pair_charges]),'source-selected neutral E7 56 is literal A7 pair charges28 plus28bar')
+000089 | int28=[r for r in Gneutral if all(x.q==1 for x in r)]
+000090 | half28=[r for r in Gneutral if all(x.q==2 for x in r)]
+000091 | for block in [int28,half28]:
+000092 |     members={ch.ridx[tuple(int(2*x) for x in r)] for r in block}
+000093 |     ck(len(members)==28,'actual A7 pair module size')
+000094 |     for ii,jj in itertools.permutations(range(8),2):
+000095 |         r=sp.zeros(8,1);r[ii]=2;r[jj]=-2;ri=ch.ridx[tuple(r)]
+000096 |         ck(all(k in members for j in members for k in ch.bracket(ri,j)),'all actual A7 root steps retain28 or dual28')
+000097 | result['Q_neutral_56_hypercharge_moments']={str(n):str(sum(r.dot(Y)**n for r in Gneutral)) for n in [2,4,5,6]}
+000098 | result['eight_channel_index_identity']='sum_(i<j)(y_i+y_j)^2=(N-2)sum y_i^2+(sum y_i)^2; for traceless N8 each28 has index6, while complete56 has coefficient12.'
+000099 | result['native48_original_source_Q_histogram']={str(k):v for k,v in Counter(sum(r) for r in Q).items()}
+000100 | result['source_sha256']=env['PINS']
+000101 | result['all_three_lepton_factor_trace_recoding']={'c_e':'128/56=16/7','c_mu':'64/48=4/3','c_tau':'56/48=7/6','scope':'Existing equal-current-Gram projector traces. This is a representation of existing coefficients, not a derivation of the mass readout rule.'}
+000102 | (OUT/'quadratic-budget-results.json').write_text(json.dumps(result,indent=2)+'\n')
+000103 | print(json.dumps(result,indent=2))

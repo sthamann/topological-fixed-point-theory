@@ -1,0 +1,50 @@
+TFPT scientific source excerpt
+Original repository path: experiments/theory-contracts/e-series-compiler-closure-20261023/y_dirac_caller_check_20261106.py
+Original file SHA-256: 055df863c80895010a8eef31d0158b508f1d962acbd8d4c59287633247ade3ab
+Inclusive original lines: 19-60
+Line numbers below refer to the original source.
+This bounded excerpt is source evidence; it is not a new proof/checker run.
+Conversation metadata and personal execution details are omitted where indicated.
+
+000019 | env={'np':np};exec(compile(ast.Module(body=nodes,type_ignores=[]),str(path),'exec'),env)
+000020 | P,NP,NH,rep,K=(env[k] for k in ['P','NP','NH','rep','Kswap']);K=K()
+000021 | checks=Counter()
+000022 | def ck(v,label):
+000023 |     if not bool(v):raise RuntimeError(label)
+000024 |     checks[label]+=1
+000025 | # Infinitesimal unimodular real-bimodule lift: lambda=i/2, m=-i I3/6.
+000026 | # Scale by6 before representation, so every source matrix operation is integral.
+000027 | X=rep(3j,np.zeros((2,2),complex),-1j*np.eye(3))
+000028 | Y6=(X+K@X.conj()@K)/1j
+000029 | X3=rep(0j,np.diag([3j,-3j]),np.zeros((3,3),complex))
+000030 | T36=(X3+K@X3.conj()@K)/1j;Q6=Y6+T36
+000031 | ck(np.array_equal(Y6,np.diag(np.diag(Y6))),'actual real-bimodule hypercharge diagonal')
+000032 | yp=[]
+000033 | for name,ch,c,g in P:
+000034 |     yp.append(1 if ch=='L' and name in ['u','d'] else -3 if ch=='L' else {'u':4,'d':-2,'e':-6,'nu':0}[name])
+000035 | ck(np.array_equal(np.diag(Y6),yp+[-v for v in yp]),'real lift produces original physical L/R charges and their conjugates')
+000036 | gam=env['grading']();ix=np.flatnonzero(np.diag(gam)==1)
+000037 | # Native even exterior16 is the all-left-handed chart, including charge conjugates of R.
+000038 | native=[]
+000039 | for bits in itertools.product([0,1],repeat=5):
+000040 |     if sum(bits)%2:continue
+000041 |     y=-2*sum(bits[:3])+3*sum(bits[3:]);t3=3*(bits[3]-bits[4]);native.append((y,t3))
+000042 | actual=Counter((int(Y6[i,i].real),int(T36[i,i].real)) for i in ix)
+000043 | ck(actual==Counter({k:3*v for k,v in Counter(native).items()}),'native all-left48 maps to gamma-plus full96, not particle48')
+000044 | ck(Counter(int(x) for x in yp)!=Counter(y for y,t in native for _ in range(3)),'particle48 is a different chiral charge chart')
+000045 | 
+000046 | # Exhaust all real and imaginary Yukawa basis directions and symmetric Majorana directions.
+000047 | Z=np.zeros((3,3),complex);basis=[]
+000048 | for f in range(4):
+000049 |     for i,j in itertools.product(range(3),repeat=2):
+000050 |         for phase in [1,1j]:
+000051 |             args=[Z.copy() for _ in range(5)];args[f][i,j]=phase;basis.append(('Yukawa',args))
+000052 | for i in range(3):
+000053 |     for j in range(i,3):
+000054 |         for phase in [1,1j]:
+000055 |             args=[Z.copy() for _ in range(5)];args[4][i,j]=phase;args[4][j,i]=phase;basis.append(('Majorana',args))
+000056 | def comm(a,b):return a@b-b@a
+000057 | nonzero=Counter()
+000058 | for kind,args in basis:
+000059 |     D=env['full_D'](*args);CY=comm(Y6,D);CQ=comm(Q6,D)
+000060 |     ck(np.count_nonzero(CQ)==0,'physical EM direction commutes with whole neutral-H Dirac basis')

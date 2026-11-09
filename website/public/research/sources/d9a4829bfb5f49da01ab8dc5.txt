@@ -1,0 +1,40 @@
+TFPT scientific source excerpt
+Original repository path: experiments/theory-contracts/e-series-compiler-closure-20261023/e7_fixed_clock_transport.py
+Original file SHA-256: f914714498399333d0ff361887371f5f96c69761ddb94b2d0d788a5220f6fd9b
+Inclusive original lines: 1-32
+Line numbers below refer to the original source.
+This bounded excerpt is source evidence; it is not a new proof/checker run.
+Conversation metadata and personal execution details are omitted where indicated.
+
+000001 | """Can native E7 cuts be transported while both SM and the original H8 stay fixed?"""
+000002 | import ast,itertools,json
+000003 | from pathlib import Path
+000004 | from fractions import Fraction as F
+000005 | import sympy as sp
+000006 | [OMITTED: non-scientific conversation or execution metadata]
+000007 | boot=REPO/'experiments/theory-contracts/e-series-compiler-closure-20261023/e7_full_source_response_20261106.py'
+000008 | t=ast.parse(boot.read_text());nodes=[]
+000009 | for n in t.body:
+000010 |     if isinstance(n,ast.For):break
+000011 |     if any(isinstance(z,ast.Name) and z.id in ['parser','OUT'] for z in ast.walk(n)):continue
+000012 |     nodes.append(n)
+000013 | env={};exec(compile(ast.Module(body=nodes,type_ignores=[]),str(boot),'exec'),env)
+000014 | ch,ck,ip=(env[k] for k in ['ch','ck','ip']);R=[sp.Matrix(r)/2 for r in ch.roots]
+000015 | Y=sp.Matrix([F(-1,3)]*3+[F(1,2)]*2+[0]*3);rho=sp.Matrix([F(7-2*j,2) for j in range(8)]);q=sp.ones(8,1)
+000016 | sm=[]
+000017 | for i,j in [(0,1),(1,2),(3,4)]:
+000018 |     v=sp.zeros(8,1);v[i]=1;v[j]=-1;sm.append(v)
+000019 | comm=[r for r in R if all(r.dot(v)==0 for v in sm+[Y])]
+000020 | alpha=sp.Matrix([0]*5+[1,-1,0]);target=sp.ones(8,1)/2
+000021 | result=[]
+000022 | for a in [F(1,4),F(3,4)]:
+000023 |     w=rho-(2*a-1)*q/2;zero=[r for r in comm if r.dot(w)==0]
+000024 |     ck(all(r.dot(w)==0 for r in zero),'centralizer roots preserve fixed original H8')
+000025 |     start=tuple(alpha);goal=tuple(target);todo=[start];words={start:[]}
+000026 |     while todo:
+000027 |         x=sp.Matrix(todo.pop())
+000028 |         for r in zero:
+000029 |             y=tuple(x-x.dot(r)*r)
+000030 |             if y not in words:words[y]=words[tuple(x)]+[tuple(r)];todo.append(y)
+000031 |     result.append({'quarter':str(a),'SM_commutant_roots':len(comm),'fixed_H_commutant_roots':len(zero),'fixed_H_commutant_rank':sp.Matrix.hstack(*zero).rank() if zero else 0,'alpha_H_charge':str(alpha.dot(w)),'target_H_charge':str(target.dot(w)),'normal_orbit_size':len(words),'target_in_orbit':goal in words,'word_roots':[[str(z) for z in r] for r in words.get(goal,[])]})
+000032 | print(json.dumps(result,indent=2));(OUT/'fixed-clock-transport-results.json').write_text(json.dumps(result,indent=2)+'\n')

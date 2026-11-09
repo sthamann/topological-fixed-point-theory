@@ -1,0 +1,37 @@
+TFPT scientific source excerpt
+Original repository path: experiments/theory-contracts/original-paper-source-reconciliation-20261102/manual_20261107/check_radial_and_quarter.py
+Original file SHA-256: 96c983f867cc6d0b72c550b7f9d11320d16549c5f7329a8fd0ad57eb27cba2e5
+Inclusive original lines: 1-29
+Line numbers below refer to the original source.
+This bounded excerpt is source evidence; it is not a new proof/checker run.
+Conversation metadata and personal execution details are omitted where indicated.
+
+000001 | """Recheck the manual radial derivatives and the quarter reference product."""
+000002 | 
+000003 | import mpmath as mp
+000004 | import sympy as s
+000005 | 
+000006 | x, y, xx, xy, yy, v, lam, z, w = s.symbols('x y Gxx Gxy Gyy v lambda z w')
+000007 | poly_u = v**2 + s.sqrt(2)*v*x + x**2/2
+000008 | poly_v = lam*(s.sqrt(2)*v*y**3 + y**4/4)
+000009 | covariance = {(x,x): xx, (y,y): yy, (x,y): xy, (y,x): xy}
+000010 | 
+000011 | def wick(labels):
+000012 |     if not labels:
+000013 |         return s.Integer(1)
+000014 |     return sum(covariance[labels[0], labels[j]]*wick(labels[1:j]+labels[j+1:])
+000015 |                for j in range(1,len(labels)))
+000016 | 
+000017 | mgf = s.exp(xx*z**2/2 + xy*z*w + yy*w**2/2)
+000018 | 
+000019 | def moment(poly, method):
+000020 |     return s.expand(sum(c*method(i,j) for (i,j),c in s.Poly(poly,x,y).terms()))
+000021 | 
+000022 | pairing = lambda i,j: wick((x,)*i+(y,)*j)
+000023 | derivative = lambda i,j: s.diff(mgf,z,i,w,j).subs({z:0,w:0})
+000024 | for poly in (poly_u, poly_v, poly_u*poly_v):
+000025 |     assert s.expand(moment(poly,pairing)-moment(poly,derivative)) == 0
+000026 | u, correction, uv = (moment(p,pairing) for p in (poly_u,poly_v,poly_u*poly_v))
+000027 | assert s.expand(-correction+3*lam*yy**2/4) == 0
+000028 | assert s.expand(-uv+u*correction+3*lam*xy*yy*(xy+4*v**2)/2) == 0
+000029 | print('R048: d_s log Z0 =', -correction)

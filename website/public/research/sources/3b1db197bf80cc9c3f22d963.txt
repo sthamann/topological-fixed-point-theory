@@ -1,0 +1,208 @@
+TFPT scientific source excerpt
+Original repository path: experiments/theory-contracts/original-paper-source-reconciliation-20261102/solutionsearch_20261106R/source_identity.py
+Original file SHA-256: 7f20ca19d738d587dfd5690f69693b39f48482b06d054c7c2e4ae7715e09382c
+Inclusive original lines: 1-200
+Line numbers below refer to the original source.
+This bounded excerpt is source evidence; it is not a new proof/checker run.
+Conversation metadata and personal execution details are omitted where indicated.
+
+000001 | """Exact whole-family comparison against implementation-bound source providers.
+000002 | 
+000003 | A candidate may propose an intertwiner and variable names. It cannot register
+000004 | an original provider or turn a hash/role/status into physical authority. The
+000005 | fixed-frame transport is the existing L20261102G same-source theorem: transport
+000006 | all operators, reference factors, domains and time together. No semigroup is
+000007 | assumed for an arbitrary original interval family.
+000008 | """
+000009 | from dataclasses import dataclass, field, replace
+000010 | from typing import Callable
+000011 | import sympy as s
+000012 | 
+000013 | IDS = ('primitive_original_source_identity', 'original_marked_time_word_match')
+000014 | ORIGINAL_SCOPE = 'primitive_original_source'
+000015 | PROVIDER_LOCATION = (
+000016 |     'experiments/theory-contracts/original-paper-source-reconciliation-20261102/'
+000017 |     'contribution_20261106Q/runtime/original_source_adapter.py:'
+000018 |     '_evaluate_contribution_unchecked -> evaluate_contribution; '
+000019 |     'upstream whole source/time family, not its four supplied jet matrices')
+000020 | 
+000021 | 
+000022 | class SourceFamilyMissing(ValueError):
+000023 |     def __init__(self, message, details=None):
+000024 |         super().__init__(message)
+000025 |         self.details = details or {}
+000026 | 
+000027 | 
+000028 | @dataclass(frozen=True)
+000029 | class SourceTimeFamily:
+000030 |     """Entire represented kernel, with code-owned complete source coordinates.
+000031 | 
+000032 |     ``carried_operators`` includes the actual generator, U/Y, reference/domain
+000033 |     operators or reflection whenever they are part of this original caller.
+000034 |     No new universal operator is required by this comparison. Source and time
+000035 |     symbol maps describe the complete parameters of this represented family;
+000036 |     they are not a selected list of four Taylor coefficients.
+000037 |     Typed extra legs act on these same coordinates: antilinear coefficients
+000038 |     use W J conjugate(W)^-1, bilinear forms use congruence, and domain relations
+000039 |     are pulled back. A one-particle form is never put on a different Fock
+000040 |     space merely because a dimension matches. ``reference_factors`` contains
+000041 |     the actually paired factors including their measure/orientation, not an
+000042 |     isolated Pfaffian whose compensating Jacobian was discarded.
+000043 |     """
+000044 |     kernel: object
+000045 |     source_symbols: dict
+000046 |     time_symbols: dict
+000047 |     P: object
+000048 |     cap: object
+000049 |     reference_scalar: object
+000050 |     outer_scalar: object
+000051 |     carried_operators: dict = field(default_factory=dict)
+000052 |     reference_factors: dict = field(default_factory=dict)
+000053 |     antilinear_operators: dict = field(default_factory=dict)
+000054 |     bilinear_forms: dict = field(default_factory=dict)
+000055 |     domain_relations: dict = field(default_factory=dict)
+000056 | 
+000057 | 
+000058 | @dataclass(frozen=True)
+000059 | class SourceProvider:
+000060 |     """Host-registered producer. Never constructed from candidate JSON."""
+000061 |     load: Callable
+000062 |     acceptance_scope: str
+000063 |     location: str
+000064 | 
+000065 | 
+000066 | def equal(a, b):
+000067 |     a, b = (s.Matrix(a), s.Matrix(b)) if isinstance(a, s.MatrixBase) else (s.sympify(a), s.sympify(b))
+000068 |     if isinstance(a, s.MatrixBase) and a.shape != b.shape:
+000069 |         return False
+000070 |     difference = a-b
+000071 |     entries = list(difference) if isinstance(difference, s.MatrixBase) else [difference]
+000072 |     def identity(x):
+000073 |         expression=s.simplify(x)
+000074 |         answer=expression.is_zero
+000075 |         if answer is not None:
+000076 |             return answer
+000077 |         # A nonzero polynomial is not an identical family, even though it
+000078 |         # vanishes at selected parameter values. This is exact coefficient
+000079 |         # comparison, not floating point sampling or a random identity test.
+000080 |         if expression.free_symbols:
+000081 |             try:
+000082 |                 coefficients=s.Poly(expression,*sorted(expression.free_symbols,key=str)).coeffs()
+000083 |                 signs=[s.simplify(v).is_zero for v in coefficients]
+000084 |                 if False in signs:
+000085 |                     return False
+000086 |                 if all(v is True for v in signs):
+000087 |                     return True
+000088 |             except s.PolynomialError:
+000089 |                 pass
+000090 |         return None
+000091 |     tests = [identity(x) for x in entries]
+000092 |     return False if False in tests else True if all(x is True for x in tests) else None
+000093 | 
+000094 | 
+000095 | def verdict(tests):
+000096 |     return 'FAIL' if False in tests.values() else 'NOT_PROVED' if None in tests.values() else 'PASS'
+000097 | 
+000098 | 
+000099 | def _missing(reason, location=PROVIDER_LOCATION, **extra):
+000100 |     return {key: {'status': 'MISSING_INPUT', 'missing_inputs': [reason],
+000101 |                   'provider_location': location, **extra} for key in IDS}
+000102 | 
+000103 | 
+000104 | def _renaming(candidate_map, original_map, kind):
+000105 |     if not original_map or len(set(original_map.values()))!=len(original_map):
+000106 |         raise SourceFamilyMissing('nonempty independently parameterized original '+kind+' family')
+000107 |     if not isinstance(candidate_map, dict) or set(candidate_map) != set(original_map):
+000108 |         raise SourceFamilyMissing('complete original '+kind+' symbol correspondence')
+000109 |     result = {}
+000110 |     for name, target in original_map.items():
+000111 |         proposed = candidate_map[name]
+000112 |         if not isinstance(proposed, s.Symbol) or not isinstance(target, s.Symbol):
+000113 |             raise ValueError(kind+' correspondence allows symbol renaming, not a new scale or nonlinear reparameterization')
+000114 |         if proposed in result:
+000115 |             raise ValueError('distinct original '+kind+' coordinates were merged')
+000116 |         result[proposed] = target
+000117 |     return result
+000118 | 
+000119 | 
+000120 | def transport_family(original, unitary):
+000121 |     """Existing full fixed-frame U theorem, retaining same time and scalars.
+000122 | 
+000123 |     This transforms a supplied family; it does not produce the primitive
+000124 |     source. For a field-dependent/moving frame the original connection and
+000125 |     derivative terms must instead be supplied by its owning producer.
+000126 |     """
+000127 |     W = s.Matrix(unitary);K = s.Matrix(original.kernel)
+000128 |     if W.shape != K.shape or equal(W.H*W, s.eye(K.rows)) is not True or equal(W*W.H, s.eye(K.rows)) is not True:
+000129 |         raise ValueError('the whole fixed frame must be exactly unitary')
+000130 |     parameters = set(original.source_symbols.values()) | set(original.time_symbols.values())
+000131 |     if any(x.has(*parameters) for x in W) if parameters else False:
+000132 |         raise ValueError('this existing transport is fixed; moving-frame source/time contacts cannot be discarded')
+000133 |     move = lambda A: W*s.Matrix(A)*W.H
+000134 |     return replace(original, kernel=move(K), P=move(original.P), cap=move(original.cap),
+000135 |                    carried_operators={k: move(v) for k, v in original.carried_operators.items()},
+000136 |                    antilinear_operators={k: W*s.Matrix(v)*W.T for k,v in original.antilinear_operators.items()},
+000137 |                    bilinear_forms={k: W.conjugate()*s.Matrix(v)*W.H for k,v in original.bilinear_forms.items()},
+000138 |                    domain_relations={k: s.Matrix(v)*W.H for k,v in original.domain_relations.items()})
+000139 | 
+000140 | 
+000141 | def compare_whole_family(candidate, family, packet):
+000142 |     """Compare exact functions, all their source orders, and all original legs."""
+000143 |     if not isinstance(family, SourceTimeFamily):
+000144 |         raise SourceFamilyMissing('implementation-produced SourceTimeFamily')
+000145 |     if 'matrix' not in candidate or 'dictionary' not in candidate:
+000146 |         raise SourceFamilyMissing('constructed whole kernel and outer dictionary')
+000147 |     if not isinstance(packet, dict):
+000148 |         raise SourceFamilyMissing('proposed whole source/time intertwiner, not a four-jet match')
+000149 |     sources = _renaming(packet.get('source_symbols'), family.source_symbols, 'source')
+000150 |     times = _renaming(packet.get('time_symbols'), family.time_symbols, 'time')
+000151 |     if set(sources) & set(times):
+000152 |         raise ValueError('a source variable was aliased to physical time')
+000153 |     if 'intertwiner' not in packet:
+000154 |         raise SourceFamilyMissing('whole Hilbert-space intertwiner after the original null quotient')
+000155 |     W=s.Matrix(packet['intertwiner']);K=s.Matrix(candidate['matrix']);O=s.Matrix(family.kernel)
+000156 |     if K.rows != K.cols or O.rows != O.cols or W.shape != (K.rows, O.rows):
+000157 |         raise ValueError('whole source/intertwiner dimensions do not match')
+000158 |     mapping={**sources, **times};parameters=set(family.source_symbols.values()) | set(family.time_symbols.values())
+000159 |     # A proposed frame depending on the varied sources/time needs the actual
+000160 |     # original moving-frame contacts, not this fixed-frame identity.
+000161 |     # A renamed candidate coordinate must not hide a frame depending on its
+000162 |     # original target coordinate. Both belong to this varied source/time
+000163 |     # family; the existing theorem here covers fixed frames only.
+000164 |     varied_parameters = set(mapping) | parameters
+000165 |     if any(x.has(*varied_parameters) for x in W) if varied_parameters else False:
+000166 |         raise SourceFamilyMissing('actual moving-frame source/time contacts; the existing fixed-frame theorem alone is insufficient')
+000167 |     rename=lambda value:s.Matrix(value).subs(mapping, simultaneous=True)
+000168 |     dic=candidate['dictionary']
+000169 |     needed={'P','cap','reference_scalar','outer_scalar'}
+000170 |     if needed-set(dic):
+000171 |         raise SourceFamilyMissing('complete original P/cap/reference/absolute dictionary')
+000172 |     source_tests={
+000173 |         'whole_isometry':equal(W.H*W,s.eye(O.rows)),
+000174 |         'whole_onto_not_a_nonreducing_compression':equal(W*W.H,s.eye(K.rows)),
+000175 |         'entire_source_kernel_all_orders':equal(rename(K)*W,W*O),
+000176 |         'whole_P':equal(rename(dic['P'])*W,W*s.Matrix(family.P)),
+000177 |         'whole_cap':equal(rename(dic['cap'])*W,W*s.Matrix(family.cap)),
+000178 |         'absolute_reference':equal(s.sympify(dic['reference_scalar']).subs(mapping,simultaneous=True),family.reference_scalar),
+000179 |         'outer_scalar':equal(s.sympify(dic['outer_scalar']).subs(mapping,simultaneous=True),family.outer_scalar),
+000180 |     }
+000181 |     proposed_operators=packet.get('carried_operators',{})
+000182 |     if set(proposed_operators)!=set(family.carried_operators):
+000183 |         raise SourceFamilyMissing('all actually present original time/mark/domain/reference operators')
+000184 |     for name,A in family.carried_operators.items():
+000185 |         source_tests['operator:'+name]=equal(rename(proposed_operators[name])*W,W*s.Matrix(A))
+000186 |     for field_name,rule in (
+000187 |         ('antilinear_operators',lambda A,B: equal(A*W.conjugate(),W*B)),
+000188 |         ('bilinear_forms',lambda A,B: equal(W.T*A*W,B)),
+000189 |         ('domain_relations',lambda A,B: equal(A*W,B)),
+000190 |     ):
+000191 |         expected=getattr(family,field_name);proposed=packet.get(field_name,{})
+000192 |         if set(proposed)!=set(expected):
+000193 |             raise SourceFamilyMissing('all actually present original '+field_name)
+000194 |         for name,A in expected.items():
+000195 |             source_tests[field_name+':'+name]=rule(rename(proposed[name]),s.Matrix(A))
+000196 |     proposed_factors=packet.get('reference_factors',{})
+000197 |     if set(proposed_factors)!=set(family.reference_factors):
+000198 |         raise SourceFamilyMissing('all actually present paired reference/eta/orientation factors')
+000199 |     for name,value in family.reference_factors.items():
+000200 |         source_tests['factor:'+name]=equal(s.sympify(proposed_factors[name]).subs(mapping,simultaneous=True),value)

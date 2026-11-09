@@ -1,0 +1,86 @@
+TFPT scientific source excerpt
+Original repository path: experiments/theory-contracts/e-series-compiler-closure-20261023/y_dirac_caller_check_20261106.py
+Original file SHA-256: 055df863c80895010a8eef31d0158b508f1d962acbd8d4c59287633247ade3ab
+Inclusive original lines: 1-78
+Line numbers below refer to the original source.
+This bounded excerpt is source evidence; it is not a new proof/checker run.
+Conversation metadata and personal execution details are omitted where indicated.
+
+000001 | """Actual v252 real-bimodule Y insertion, full Dirac contacts and seam target type.
+000002 | No masses, physical coupling values, measure or scalar response are fitted.
+000003 | """
+000004 | import ast,itertools,json,hashlib,sys
+000005 | from pathlib import Path
+000006 | from fractions import Fraction as F
+000007 | from collections import Counter
+000008 | import numpy as np
+000009 | import sympy as sp
+000010 | [OMITTED: non-scientific conversation or execution metadata]
+000011 | path=REPO/'verification/v252_full_finite_triple.py';t=ast.parse(path.read_text())
+000012 | # Original constructor definitions and their literal basis data only, no run().
+000013 | names={'NG','GEN_FIELDS','P','IDX','NP','NH'};funcs={'build_index','dirac_block','full_D','grading','Kswap','rep'};nodes=[]
+000014 | for n in t.body:
+000015 |     if isinstance(n,ast.FunctionDef) and n.name in funcs:nodes.append(n)
+000016 |     elif isinstance(n,ast.Assign):
+000017 |         targets={z.id for target in n.targets for z in ast.walk(target) if isinstance(z,ast.Name)}
+000018 |         if targets & names:nodes.append(n)
+000019 | env={'np':np};exec(compile(ast.Module(body=nodes,type_ignores=[]),str(path),'exec'),env)
+000020 | P,NP,NH,rep,K=(env[k] for k in ['P','NP','NH','rep','Kswap']);K=K()
+000021 | checks=Counter()
+000022 | def ck(v,label):
+000023 |     if not bool(v):raise RuntimeError(label)
+000024 |     checks[label]+=1
+000025 | # Infinitesimal unimodular real-bimodule lift: lambda=i/2, m=-i I3/6.
+000026 | # Scale by6 before representation, so every source matrix operation is integral.
+000027 | X=rep(3j,np.zeros((2,2),complex),-1j*np.eye(3))
+000028 | Y6=(X+K@X.conj()@K)/1j
+000029 | X3=rep(0j,np.diag([3j,-3j]),np.zeros((3,3),complex))
+000030 | T36=(X3+K@X3.conj()@K)/1j;Q6=Y6+T36
+000031 | ck(np.array_equal(Y6,np.diag(np.diag(Y6))),'actual real-bimodule hypercharge diagonal')
+000032 | yp=[]
+000033 | for name,ch,c,g in P:
+000034 |     yp.append(1 if ch=='L' and name in ['u','d'] else -3 if ch=='L' else {'u':4,'d':-2,'e':-6,'nu':0}[name])
+000035 | ck(np.array_equal(np.diag(Y6),yp+[-v for v in yp]),'real lift produces original physical L/R charges and their conjugates')
+000036 | gam=env['grading']();ix=np.flatnonzero(np.diag(gam)==1)
+000037 | # Native even exterior16 is the all-left-handed chart, including charge conjugates of R.
+000038 | native=[]
+000039 | for bits in itertools.product([0,1],repeat=5):
+000040 |     if sum(bits)%2:continue
+000041 |     y=-2*sum(bits[:3])+3*sum(bits[3:]);t3=3*(bits[3]-bits[4]);native.append((y,t3))
+000042 | actual=Counter((int(Y6[i,i].real),int(T36[i,i].real)) for i in ix)
+000043 | ck(actual==Counter({k:3*v for k,v in Counter(native).items()}),'native all-left48 maps to gamma-plus full96, not particle48')
+000044 | ck(Counter(int(x) for x in yp)!=Counter(y for y,t in native for _ in range(3)),'particle48 is a different chiral charge chart')
+000045 | 
+000046 | # Exhaust all real and imaginary Yukawa basis directions and symmetric Majorana directions.
+000047 | Z=np.zeros((3,3),complex);basis=[]
+000048 | for f in range(4):
+000049 |     for i,j in itertools.product(range(3),repeat=2):
+000050 |         for phase in [1,1j]:
+000051 |             args=[Z.copy() for _ in range(5)];args[f][i,j]=phase;basis.append(('Yukawa',args))
+000052 | for i in range(3):
+000053 |     for j in range(i,3):
+000054 |         for phase in [1,1j]:
+000055 |             args=[Z.copy() for _ in range(5)];args[4][i,j]=phase;args[4][j,i]=phase;basis.append(('Majorana',args))
+000056 | def comm(a,b):return a@b-b@a
+000057 | nonzero=Counter()
+000058 | for kind,args in basis:
+000059 |     D=env['full_D'](*args);CY=comm(Y6,D);CQ=comm(Q6,D)
+000060 |     ck(np.count_nonzero(CQ)==0,'physical EM direction commutes with whole neutral-H Dirac basis')
+000061 |     hphi=-1j*gam@D
+000062 |     ck(np.array_equal(comm(Y6,hphi),-1j*gam@CY),'original collar h retains actual hypercharge Higgs commutator')
+000063 |     if kind=='Yukawa':
+000064 |         ck(np.count_nonzero(CY)>0,'hypercharge variation has actual Higgs Yukawa contact')
+000065 |         ck(np.array_equal(comm(Y6,CY),9*D),'all Yukawa double hypercharge commutators equal9 D')
+000066 |     else:ck(np.count_nonzero(CY)==0,'whole Majorana block neutral under Y and EM')
+000067 |     nonzero[kind]+=1
+000068 | moments={str(n):{'native_chiral48':str(sum(F(int(Y6[i,i].real),6)**n for i in ix)),'full96':str(sum(F(int(v.real),6)**n for v in np.diag(Y6)))} for n in [0,2,4,5]}
+000069 | 
+000070 | # Original minimal seam response: delta is an INPUT amplitude, not an output of Y norm.
+000071 | a,d=sp.symbols('a d',positive=True);q=d*sp.exp(-2*a);W=-sp.Rational(5,4)*sp.log(1-q)
+000072 | fourth=sp.factor(sp.diff(W,a,4));expected=20*q*(1+4*q+q*q)/(1-q)**4
+000073 | ck(sp.simplify(fourth-expected)==0,'actual supplied seam functional fourth derivative')
+000074 | result={'claim':'SOURCE.Y.DIRAC.CALLER.CHECK.20261106','original_v252_sha256':hashlib.sha256(path.read_bytes()).hexdigest(),'real_bimodule_Y6_particle_diagonal':yp,'native48_target':'gamma_F=+1 subspace of full96, physical L particles plus conjugates of physical R; opposite gamma block via J','native_joint_Y_T3_weight_match':True,'full_D_basis_directions':dict(nonzero),'Dirac_contacts':{'Qem':'[Qem,D_F]=0 for every original Yukawa and symmetric MR coefficient on the neutral-H chart','hypercharge':'[Y,[Y,D_F]]=D_Yukawa/4, [Y,D_Majorana]=0; all72 real Yukawa and12 real Majorana basis directions checked','scope':'Original finite internal coefficient, not full spacetime/gauge/geometry integration; Higgs and connection variations required for local gauge Ward identity'},'charge_moments':moments,'minimal_seam_response':{'definition':'W_Sigma(a)=-(5/4) log(1-delta exp(-2a))','fourth_derivative':'20 q(1+4q+q^2)/(1-q)^4, q=delta exp(-2a)','delta_input':'delta=48 c3^4 is supplied before differentiation; replacing it by a variable d leaves the algebra valid and does not select its value','target_type':'Zero-source seam defect amplitude; not the coefficient of the fourth Y source variation'},'joint_physical_response':None,'delta_48_derived':False,'fundamental_solution':False,'checks':dict(checks)}
+000075 | result['original_neutral_H_chart']='R078 q(H)=[[bar h2,h1],[-bar h1,h2]]; original v252 diagonal mass edges correspond to q(H)=I, H=(0,1).'
+000076 | result['first_time_intertwining_test']='Native [H8,JY(0)]=0, but original fixed-H collar [Y,h]=-i gammaF[Y,Phi] is nonzero for Yukawa directions. A simultaneous rigid H8->frozen h, JY0->fermionic Y96 map fails this test. Dynamic original bosonic/Higgs charge and HB are retained; no full-source no-go.'
+000077 | result['finite_affine_mode_trace_obstruction']='Full affine Y modes cannot all be represented on96: [JY(1),JY(-1)]=(5/6)I would have trace80 rather than0. Only the zero-mode internal action is being represented; original unbounded spacetime factors remain.'
+000078 | (OUT/'dirac-y-contact-results.json').write_text(json.dumps(result,indent=2)+'\n');print(json.dumps(result,indent=2))

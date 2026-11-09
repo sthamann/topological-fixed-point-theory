@@ -1,0 +1,18 @@
+TFPT scientific source excerpt
+Original repository path: verification/v252_full_finite_triple.py
+Original file SHA-256: 820254440e178430422e50605067775656236602996307f67c9e69124ba5d163
+Inclusive original lines: 119-128
+Line numbers below refer to the original source.
+This bounded excerpt is source evidence; it is not a new proof/checker run.
+Conversation metadata and personal execution details are omitted where indicated.
+
+000119 | def grading():
+000120 |     gp = np.array([1.0 if ch == "L" else -1.0 for (_, ch, _, _) in P])
+000121 |     return np.diag(np.concatenate([gp, -gp]))      # antiparticles: opposite chirality
+000122 | 
+000123 | 
+000124 | def Kswap():
+000125 |     K = np.zeros((NH, NH))
+000126 |     K[:NP, NP:] = np.eye(NP)
+000127 |     K[NP:, :NP] = np.eye(NP)
+000128 |     return K

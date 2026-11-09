@@ -1,0 +1,208 @@
+TFPT scientific source excerpt
+Original repository path: experiments/theory-contracts/original-paper-source-reconciliation-20261102/solutionsearch_20261106R/research_runtime/check_controls.py
+Original file SHA-256: 98f7fa923c8ec3cbbac092b4e89498b9d380b2addc541c20d922c0c9f0e817ca
+Inclusive original lines: 1-200
+Line numbers below refer to the original source.
+This bounded excerpt is source evidence; it is not a new proof/checker run.
+Conversation metadata and personal execution details are omitted where indicated.
+
+000001 | """Controller controls only. Fake backend is never the research backend."""
+000002 | from pathlib import Path
+000003 | import json
+000004 | import tempfile
+000005 | import unittest
+000006 | import hashlib
+000007 | import sys
+000008 | 
+000009 | from backend import command
+000010 | from context import write_json
+000011 | from launch import run, rows, ADMISSION, target_assessment, followup, decision_history
+000012 | from prompts import response_schema, GOAL_ANCHOR
+000013 | 
+000014 | 
+000015 | class FakeControlBackend:
+000016 |     calls = []
+000017 |     fail_critic_once = False
+000018 | 
+000019 |     def __init__(self, stop, update):
+000020 |         self.stop, self.update = stop, update
+000021 | 
+000022 |     def terminate(self):
+000023 |         pass
+000024 | 
+000025 |     def __call__(self, role, folder, manifest, instruction):
+000026 |         self.calls.append(role)
+000027 |         folder.mkdir(parents=True)
+000028 |         if role == 'critic' and self.fail_critic_once:
+000029 |             type(self).fail_critic_once = False
+000030 |             raise RuntimeError('CONTROL_ONLY simulated provider failure')
+000031 |         schema = response_schema(role)
+000032 |         result = {k: [] if v['type'] == 'array' else 'CONTROL_ONLY' for k, v in schema['properties'].items()}
+000033 |         result['proposed_status' if role == 'proposer' else 'verdict'] = (
+000034 |             'candidate_complete_solution' if role == 'proposer' else 'candidate_requires_proof_review')
+000035 |         metrics = {'role': role, 'call_dir': str(folder), 'completed': True,
+000036 |                    'tool_events': 1, 'completed_commands': 1, 'failed_commands': 0,
+000037 |                    'receipt': {'verified': True, 'control_only': True}}
+000038 |         write_json(folder / 'metrics.json', metrics)
+000039 |         return result, metrics
+000040 | 
+000041 | 
+000042 | def control_context(repo, out):
+000043 |     return {'context_version': 'CONTROL_ONLY', 'python': '/usr/bin/python3',
+000044 |             'scientific_readonly_roots': [], 'exact_source_files': []}
+000045 | 
+000046 | 
+000047 | class Controls(unittest.TestCase):
+000048 |     def setUp(self):
+000049 |         self.temp = tempfile.TemporaryDirectory(dir=Path(__file__).parent)
+000050 |         self.root = Path(self.temp.name)
+000051 |         self.repo = self.root / 'repo'; self.repo.mkdir()
+000052 |         self.out = self.root / 'out'
+000053 |         FakeControlBackend.calls = []; FakeControlBackend.fail_critic_once = False
+000054 | 
+000055 |     def tearDown(self):
+000056 |         self.temp.cleanup()
+000057 | 
+000058 |     def execute(self, count):
+000059 |         return run(self.repo, self.out, count, backend_factory=FakeControlBackend,
+000060 |                    context_loader=control_context)
+000061 | 
+000062 |     def test_pinned_model_scoped_permissions_no_fallback(self):
+000063 |         folder = self.root / 'out/rounds/id/proposer-001'
+000064 |         argv, policy = command(folder, control_context(self.repo, self.out))
+000065 |         self.assertEqual(argv[argv.index('--model') + 1], 'gpt-6.1-sol')
+000066 | [OMITTED: non-scientific conversation or execution metadata]
+000067 |             self.assertIn(flag, argv)
+000068 |         self.assertIn('approval_policy="never"', argv)
+000069 |         self.assertIn('model_provider="openai"', argv)
+000070 |         self.assertIn('mcp_servers={}', argv)
+000071 |         self.assertFalse(policy['network']['enabled'])
+000072 |         self.assertNotIn(str(Path.home()), policy['filesystem'])
+000073 |         self.assertEqual(policy['filesystem'][str(folder / 'scratch')], 'write')
+000074 |         self.assertEqual(policy['filesystem']['/opt/homebrew/bin/ollama'], 'deny')
+000075 |         self.assertEqual(policy['filesystem'][str(Path('/opt/homebrew/bin/ollama').resolve())], 'deny')
+000076 |         with self.assertRaises(ValueError):
+000077 |             command(folder, control_context(self.repo, self.out), model='qwen')
+000078 | 
+000079 |     def test_complete_candidate_never_auto_physics_pass_and_resume(self):
+000080 |         self.assertEqual(self.execute(1), 0)
+000081 |         self.assertEqual(FakeControlBackend.calls, ['proposer', 'critic'])
+000082 |         first = rows(self.out / 'research-rounds.jsonl')[0]
+000083 |         self.assertEqual(first['physics_admission'], ADMISSION)
+000084 |         self.assertIn('Independently verify', first['next_task'])
+000085 |         self.assertEqual(self.execute(2), 0)
+000086 |         self.assertEqual(FakeControlBackend.calls, ['proposer', 'critic', 'proposer', 'critic'])
+000087 |         self.assertEqual(len(rows(self.out / 'research-rounds.jsonl')), 2)
+000088 | 
+000089 |     def test_provider_failure_preserves_proposal_and_resumes_critic(self):
+000090 |         FakeControlBackend.fail_critic_once = True
+000091 |         self.assertEqual(self.execute(1), 1)
+000092 |         worker = json.loads((self.out / 'worker.json').read_text())
+000093 |         self.assertEqual(worker['status'], 'error')
+000094 |         self.assertEqual(self.execute(1), 0)
+000095 |         self.assertEqual(FakeControlBackend.calls, ['proposer', 'critic', 'critic'])
+000096 |         self.assertEqual(len(rows(self.out / 'research-rounds.jsonl')), 1)
+000097 | 
+000098 |     def test_partial_last_line_preserves_all_complete_history(self):
+000099 |         self.out.mkdir()
+000100 |         p = self.out / 'research-rounds.jsonl'; p.write_bytes(b'{"id":1}\n{"id":')
+000101 |         self.assertEqual(rows(p), [{'id': 1}])
+000102 |         self.assertEqual(p.read_text(), '{"id":1}\n')
+000103 | 
+000104 |     def test_rephrased_conditional_math_cannot_continue_unchanged_blocker(self):
+000105 |         proposal = {'proposed_status': 'new_derivation',
+000106 |                     'new_information': 'Neue korrekte lokale Formel im anderen Chart.',
+000107 |                     'next_task': 'Noch eine lokale Formel'}
+000108 |         review = {'verdict': 'scoped_result_survives', 'target_progress': 'none',
+000109 |                   'blocker_class': 'JH_test_pairing_domain',
+000110 |                   'next_task': 'Weitere interne Identität berechnen'}
+000111 |         task = followup(proposal, review, [], {'effective_progress': 'none'})
+000112 |         self.assertTrue(task.startswith(GOAL_ANCHOR))
+000113 |         self.assertIn('Bearbeite den benannten fehlenden ursprünglichen Input selbst', task)
+000114 |         self.assertNotEqual(task, review['next_task'])
+000115 | 
+000116 |     def test_presupposed_input_is_not_counted_as_derived(self):
+000117 |         scratch = self.root / 'call/scratch'; scratch.mkdir(parents=True)
+000118 |         (scratch / 'proof.md').write_text('CONTROL ONLY conditional lemma')
+000119 |         proposal = {'progress_evidence': ['proof.md']}
+000120 |         review = {'target_progress': 'input_derived', 'verdict': 'scoped_result_survives',
+000121 |                   'premises_presupposing_target': ['CONTROL_ONLY assumed target'],
+000122 |                   'progress_evidence': ['proof.md']}
+000123 |         call = {'call_dir': str(scratch.parent)}
+000124 |         result = target_assessment(proposal, review, call, call)
+000125 |         self.assertEqual(result['effective_progress'], 'none')
+000126 |         self.assertEqual(result['physics_admission'], ADMISSION)
+000127 | 
+000128 |     def test_candidate_claim_needs_files_values_and_observed_execution(self):
+000129 |         scratch = self.root / 'candidate/scratch'; scratch.mkdir(parents=True)
+000130 |         proposal = {'candidate_id': 'CONTROL', 'candidate_bundle': 'bundle.json',
+000131 |                     'progress_evidence': ['bundle.json']}
+000132 |         review = {'target_progress': 'candidate_computed', 'verdict': 'scoped_result_survives'}
+000133 |         call = {'call_dir': str(scratch.parent), 'commands': []}
+000134 |         self.assertEqual(target_assessment(proposal, review, call, call)['effective_progress'], 'none')
+000135 |         write_json(scratch / 'bundle.json', {'candidate_id': 'CONTROL',
+000136 |                    'producer_file': 'producer.py', 'result_file': 'values.json',
+000137 |                    'slots': {k: {'status': 'hypothesis', 'description': 'CONTROL ONLY',
+000138 |                                   'new_assumption': 'Not physical evidence'} for k in (
+000139 |                        'regulator_family', 'field_operator', 'reference_measure',
+000140 |                        'marked_time_dictionary', 'absolute_reference', 'whole_contributions')}})
+000141 |         (scratch / 'producer.py').write_text('# CONTROL ONLY, no physics')
+000142 |         write_json(scratch / 'values.json', {'unnormalized_values': {k: 1 for k in ['Z0','ZU','ZY','ZUY']}})
+000143 |         self.assertEqual(target_assessment(proposal, review, call, call)['effective_progress'], 'none')
+000144 |         token = 'RESULT_SHA256=' + hashlib.sha256((scratch / 'values.json').read_bytes()).hexdigest()
+000145 |         call['commands'] = [{'command': sys.executable + ' -B producer.py', 'exit_code': 0, 'output': token}]
+000146 |         result = target_assessment(proposal, review, call, call)
+000147 |         self.assertEqual(result['effective_progress'], 'candidate_computed')
+000148 |         self.assertEqual(result['physics_admission'], ADMISSION)
+000149 |         for command in ('cat producer.py', 'echo python producer.py', "/bin/zsh -lc 'cat producer.py'"):
+000150 |             call['commands'][0]['command'] = command
+000151 |             self.assertEqual(target_assessment(proposal, review, call, call)['effective_progress'], 'none')
+000152 |         call['commands'][0]['command'] = sys.executable + ' -B producer.py'
+000153 |         (scratch / 'values.json').write_text((scratch / 'values.json').read_text() + '\n')
+000154 |         self.assertEqual(target_assessment(proposal, review, call, call)['effective_progress'], 'none')
+000155 |         proposal['candidate_bundle'] = '../outside.json'
+000156 |         self.assertEqual(target_assessment(proposal, review, call, call)['effective_progress'], 'none')
+000157 | 
+000158 |     def test_old_history_is_explicitly_unknown_and_in_prompt(self):
+000159 |         row = {'round_id': 'research-legacy', 'proposal': {'question': 'Old question'},
+000160 |                'review': {'first_extra_assumption': 'Old open input'}}
+000161 |         table = decision_history([row])
+000162 |         self.assertEqual(table[0]['blocker_class'], 'unknown')
+000163 |         self.assertEqual(table[0]['reported_target_progress'], 'unknown')
+000164 | [OMITTED: non-scientific conversation or execution metadata]
+000165 | [OMITTED: non-scientific conversation or execution metadata]
+000166 |         self.assertIn('Old open input', rendered)
+000167 | 
+000168 |     def test_empty_legacy_checkpoint_keeps_old_question_and_uses_new_goal(self):
+000169 |         p = self.out / 'rounds/research-000001/round-state.json'
+000170 |         p.parent.mkdir(parents=True)
+000171 |         write_json(p, {'round_id': 'research-000001', 'question': 'Old local chart task',
+000172 |                        'started_utc': 'CONTROL_ONLY', 'context_version': 'OLD'})
+000173 |         self.assertEqual(self.execute(1), 0)
+000174 |         state = json.loads(p.read_text())
+000175 |         self.assertTrue(state['question'].startswith(GOAL_ANCHOR))
+000176 |         self.assertEqual(state['prior_questions'][0]['question'], 'Old local chart task')
+000177 | 
+000178 |     def test_known_r055_rediscovery_does_not_count_as_new_target_progress(self):
+000179 |         scratch = self.root / 'call/scratch'; scratch.mkdir(parents=True)
+000180 |         (scratch / 'proof.md').write_text('CONTROL ONLY reuse of old proof')
+000181 |         proposal = {'proposed_status': 'scoped_exclusion', 'new_information': 'Rediscovery',
+000182 |                     'next_task': 'More local algebra', 'candidate_id': 'CONTROL',
+000183 |                     'progress_evidence': ['proof.md']}
+000184 |         review = {'verdict': 'scoped_result_survives', 'target_progress': 'candidate_excluded',
+000185 |                   'blocker_class': 'nu_Vn_base_law', 'next_task': 'More local algebra',
+000186 |                   'already_implied_by': ['finding:bounded-fixed-rank-spectral-action-does-not-normalize-noncompact-higgs-volume']}
+000187 |         call = {'call_dir': str(scratch.parent)}
+000188 |         result = target_assessment(proposal, review, call, call)
+000189 |         self.assertEqual(result['effective_progress'], 'none')
+000190 |         self.assertNotIn('More local algebra', followup(proposal, review, [], result))
+000191 | 
+000192 |     def test_required_guardrail_absence_is_explicit(self):
+000193 |         from context import prepare
+000194 |         from unittest.mock import patch
+000195 |         for relative in ('semantic_explorer/research/program.json', 'docs/research/fundamental-plan/progress.json'):
+000196 |             p = self.repo / relative; p.parent.mkdir(parents=True, exist_ok=True); p.write_text('{}')
+000197 |         with patch('context.build_knowledge_context', return_value={}):
+000198 |             with self.assertRaisesRegex(FileNotFoundError, 'Required target-source findings missing'):
+000199 |                 prepare(self.repo, self.out)
+000200 | 

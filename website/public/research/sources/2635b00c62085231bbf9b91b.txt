@@ -1,0 +1,120 @@
+TFPT scientific source excerpt
+Original repository path: experiments/theory-contracts/original-paper-source-reconciliation-20261102/manual_20261107/check_c6_v330_bridge.py
+Original file SHA-256: d3e01cda62900b54f8011f3fb5897299dd22b0ee2c0c3f1e66e5a8ba982b41ac
+Inclusive original lines: 1-112
+Line numbers below refer to the original source.
+This bounded excerpt is source evidence; it is not a new proof/checker run.
+Conversation metadata and personal execution details are omitted where indicated.
+
+000001 | from pathlib import Path
+000002 | from itertools import product
+000003 | import json
+000004 | import sys
+000005 | 
+000006 | import mpmath as mp
+000007 | import numpy as np
+000008 | 
+000009 | [OMITTED: non-scientific conversation or execution metadata]
+000010 | sys.path.insert(0, str(repo / 'verification'))
+000011 | from v17_hexagonal_resolvent import U6_power
+000012 | from v330_qgamb_admissible_measure import symmetric_transfer
+000013 | 
+000014 | transfer = symmetric_transfer()[0]
+000015 | shift = np.array(U6_power(1)).astype(float)
+000016 | np.testing.assert_allclose(
+000017 |     transfer, np.array([[1651, 1267, 1456], [1267, 1651, 1456], [1456, 1456, 1462]]) / 4374,
+000018 |     rtol=0, atol=3e-16,
+000019 | )
+000020 | iv = mp.iv
+000021 | iv.dps = 60
+000022 | delta = ((794 - 7 * iv.sqrt(9961)) / 2187) ** (iv.mpf(1) / 6)
+000023 | cos6 = [iv.mpf(x) / 2 for x in (2, 1, -1, -2, -1, 1)]
+000024 | target = iv.mpf(1456) ** 2 / (1651 * 1462)
+000025 | separation = iv.mpf('0.00000001')
+000026 | entries = []
+000027 | tails = []
+000028 | mode_sets = []
+000029 | normalized_matrices = []
+000030 | for numerator, denominator in [(1, 1), (1, 3), (2, 3)]:
+000031 |     y = iv.mpf(numerator) / denominator
+000032 |     a, b = y * y + delta * delta, y * delta
+000033 |     gram_modes = [a - 2 * b * c for c in cos6]
+000034 |     # Work with G^(-n/2) / ||G^(-n/2)||; the quotient cancels from the invariant.
+000035 |     normalized_modes = [iv.mpf(1)] + [iv.sqrt(gram_modes[0] / x) for x in gram_modes[1:]]
+000036 |     q = normalized_modes[1]
+000037 |     assert all(x.b <= q.b for x in normalized_modes[1:])
+000038 |     assert q.b < 1
+000039 |     n = 1
+000040 |     # All nonconstant Fourier modes are bounded above by q^n.
+000041 |     # Then K_d/K_0 >= 1 - 10*q^n uniformly in d.
+000042 |     while True:
+000043 |         lower_bound = 1 - 10 * q ** n
+000044 |         if lower_bound.a > 0 and (lower_bound ** 2 - target).a > separation:
+000045 |             break
+000046 |         n += 1
+000047 |     tails.append({'y': f'{numerator}/{denominator}', 'first_tail_power_n': n,
+000048 |                   'uniform_invariant_lower_bound': float((lower_bound ** 2).a)})
+000049 |     gram_float = float(a.mid) * np.eye(6) - float(b.mid) * (shift + shift.T)
+000050 |     evals, evecs = np.linalg.eigh(gram_float)
+000051 |     mode_sets.append(normalized_modes)
+000052 |     normalized_matrices.append((evals[0] / evals, evecs))
+000053 | 
+000054 | power_ranges = [range(row['first_tail_power_n']) for row in tails]
+000055 | for powers in product(*power_ranges):
+000056 |     if not any(powers):
+000057 |         continue
+000058 |     spectrum = [iv.mpf(1)] * 6
+000059 |     matrix = np.eye(6)
+000060 |     for modes, (eigenvalues, eigenvectors), power in zip(mode_sets, normalized_matrices, powers):
+000061 |         spectrum = [value * mode ** power for value, mode in zip(spectrum, modes)]
+000062 |         matrix = matrix @ ((eigenvectors * (eigenvalues ** (power / 2))) @ eigenvectors.T)
+000063 |     circulant = [sum(spectrum[k] * cos6[(k * d) % 6] for k in range(6)) / 6 for d in range(4)]
+000064 |     for distance in (1, 2, 3):
+000065 |         ratio = (circulant[distance] / circulant[0]) ** 2
+000066 |         numerical_ratio = matrix[0, distance] ** 2 / (matrix[0, 0] * matrix[distance, distance])
+000067 |         assert abs(float(ratio.mid) - numerical_ratio) < 5e-13
+000068 |         gap = abs(ratio - target)
+000069 |         assert gap.a > separation
+000070 |         entries.append({'powers_by_y_1_1over3_2over3': powers, 'distance': distance,
+000071 |                         'invariant': float(ratio.mid), 'separation_lower_bound': float(gap.a)})
+000072 | closest = min(entries, key=lambda x: x['separation_lower_bound'])
+000073 | # Check the other direct interpretation: an arbitrary reducing subspace of
+000074 | # the product, with a common scalar and with the v330 spectral ratios.
+000075 | # There are four distinct Fourier eigenvalues with multiplicities 1,2,2,1.
+000076 | spectral_target = iv.mpf(64) / 729
+000077 | adjacent_ratios = [[modes[j + 1] / modes[j] for j in range(3)] for modes in mode_sets]
+000078 | spectral_limits = []
+000079 | for ratios in adjacent_ratios:
+000080 |     worst_ratio = max(ratios, key=lambda x: float(x.b)).b
+000081 |     assert worst_ratio < 1
+000082 |     exponent = 1
+000083 |     while not (worst_ratio ** exponent).b < spectral_target.a - separation:
+000084 |         exponent += 1
+000085 |     spectral_limits.append(exponent)
+000086 | spectral_checks = []
+000087 | for powers in product(*(range(limit) for limit in spectral_limits)):
+000088 |     if not any(powers):
+000089 |         continue
+000090 |     spectrum = [iv.mpf(1)] * 4
+000091 |     for modes, power in zip(mode_sets, powers):
+000092 |         spectrum = [value * mode ** power for value, mode in zip(spectrum, modes[:4])]
+000093 |     for i in range(3):
+000094 |         for j in range(i+1, 4):
+000095 |             ratio = spectrum[j] / spectrum[i]
+000096 |             gap = abs(ratio - spectral_target)
+000097 |             assert gap.a > separation
+000098 |             spectral_checks.append(float(gap.a))
+000099 | 
+000100 | result = {
+000101 |     'scope': 'The original v330 transfer cannot be a three-coordinate principal submatrix of any nonempty product of original zero-phase C6 Green and structural inverse-root kernels at the three original y, with arbitrary positive diagonal endpoint factors and scalar. The three kernels share a Fourier basis, so order does not matter before endpoint weighting. Interleaved weights and other marked transfers are outside this test.',
+000102 |     'v330_index_pair_one_based': [1, 3], 'target_exact': '1456^2/(1651*1462)', 'target': float(target.mid),
+000103 |     'finite_checks': entries, 'analytic_tails': tails, 'closest_finite_check': closest,
+000104 |     'reducing_subspace_test': {'target_ratio': '64/729', 'finite_pair_checks': len(spectral_checks),
+000105 |                                'smallest_finite_separation': min(spectral_checks),
+000106 |                                'first_tail_powers': spectral_limits},
+000107 |     'original_whole_Z0': None, 'original_whole_ZU': None,
+000108 | }
+000109 | Path(__file__).with_name('c6-v330-diagonal-bridge.json').write_text(json.dumps(result, indent=2) + '\n')
+000110 | print('target', float(target.mid), 'finite checks', len(entries), 'closest', closest)
+000111 | print('tails', tails)
+000112 | print('reducing subspace', result['reducing_subspace_test'])

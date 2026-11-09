@@ -1,0 +1,80 @@
+TFPT scientific source excerpt
+Original repository path: experiments/theory-contracts/historical-two-phase-source-20260919/PROOF.txt
+Original file SHA-256: 5ac42a6eea300a8d3a0da0df04472413a45a1183aba00cbb2ae38e65d056e8ab
+Inclusive original lines: 14-85
+Line numbers below refer to the original source.
+This bounded excerpt is source evidence; it is not a new proof/checker run.
+Conversation metadata and personal execution details are omitted where indicated.
+
+000014 | The historical v2.7/v2.8 sources already assign the slow topological phase to
+000015 | CMB birefringence and the oscillating QCD axion to dark matter. The checked
+000016 | same-field bound excludes only the later or alternative *same-field reading*
+000017 | under its declared same-well, positive-energy, fixed-coupling assumptions. It
+000018 | does not refute the archived two-field TFPT branch, the compiler, or an
+000019 | independently derived boundary holonomy.
+000020 | 
+000021 | ## Exact scoped result
+000022 | 
+000023 | For a single canonical massive QCD phase in one cosine well,
+000024 | 
+000025 | ```text
+000026 | beta <= |g0|/(2) * (Delta theta_emission + Delta theta_observer)
+000027 | ```
+000028 | 
+000029 | with the declared QCD relation and generous endpoint budgets gives
+000030 | 
+000031 | ```text
+000032 | beta_target = 0.004231289511395415 rad = 0.2424350309009295 deg
+000033 | beta_max(r=1) = 2.282511543675679e-18 rad = 1.307782781425069e-16 deg
+000034 | target / bound = 1.853786686476726e15.
+000035 | ```
+000036 | 
+000037 | The unavoidable potential energy in at least one endpoint is
+000038 | `1.1481519154814445e-8 GeV^4`, or `8.85740538200542e29` times the declared
+000039 | recombination comparison density. These values are a necessary consistency
+000040 | bound, not a cosmological likelihood or a claim about all axion/ALP models.
+000041 | 
+000042 | For phases `theta`, positive-definite kinetic matrix `K`, QCD charge vector
+000043 | `N`, and photon vector `c`, with only the QCD rank-one quadratic term, a
+000044 | QCD-flat photon-active direction exists exactly when
+000045 | 
+000046 | ```text
+000047 | exists v: N^T v = 0 and c^T v != 0
+000048 | iff c not in span(N).
+000049 | ```
+000050 | 
+000051 | In canonical coordinates its photon coupling obeys
+000052 | 
+000053 | ```text
+000054 | g_L^2 = c^T K^-1 c - (c^T K^-1 N)^2/(N^T K^-1 N) >= 0.
+000055 | ```
+000056 | 
+000057 | The short proof is to pass to canonical coordinates
+000058 | `n=K^(-1/2)N` and `e=K^(-1/2)c`. The QCD mass operator is
+000059 | `chi*n*n^T`, hence has rank one for `N != 0`; its orthogonal complement is
+000060 | QCD-flat. The squared photon coupling projected to that complement is exactly
+000061 | the displayed `g_L^2`. Cauchy--Schwarz gives nonnegativity, with equality
+000062 | exactly when `e` is parallel to `n`, equivalently when `c` is parallel to `N`
+000063 | in the `K^(-1)` metric. Thus a nonzero light coupling requires the stated
+000064 | nonparallel alignment.
+000065 | 
+000066 | For the same-well cosine bound, if endpoint separation is `delta` then at
+000067 | least one endpoint has `|theta| >= delta/2` by the triangle inequality.
+000068 | Because `1-cos(theta)` is monotone in `|theta|` on `[0,pi]`, that endpoint has
+000069 | potential at least `chi*(1-cos(delta/2))`; symmetric endpoints
+000070 | `theta_e=-delta/2`, `theta_o=delta/2` attain the bound. This is the exact
+000071 | minimax endpoint argument used by the numerical control.
+000072 | 
+000073 | For the historical two-phase convention `N=(0,1)`, `c=(g0,0)` and
+000074 | `K=[[A,B],[B,D]]`, this yields `g_L^2=g0^2/A`,
+000075 | `m_H^2=chi*A/(A*D-B^2)`, and
+000076 | `g_H^2=g0^2*B^2/(A*(A*D-B^2))`. Thus kinetic mixing alone does not remove the
+000077 | QCD-null direction; the result still requires the source to derive `K`, `N`,
+000078 | `c`, all additional potential rows, and the compact phase lattice.
+000079 | 
+000080 | The explicitly moving historical minimum also has the exact balance term
+000081 | 
+000082 | ```text
+000083 | dot(rho) + 3 H (rho+p)
+000084 |   = -Lambda4*phi0*sin(theta-phi0*s)*dot(s).
+000085 | ```

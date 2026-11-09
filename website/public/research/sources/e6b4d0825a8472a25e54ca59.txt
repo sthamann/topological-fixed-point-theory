@@ -1,0 +1,208 @@
+TFPT scientific source excerpt
+Original repository path: experiments/theory-contracts/e-series-compiler-closure-20261023/e7_full_source_response_20261106.py
+Original file SHA-256: c71c9f20fa746f10bfc6f80b877ffd3156796d84b7a80ca5026ddec0b0224d08
+Inclusive original lines: 1-200
+Line numbers below refer to the original source.
+This bounded excerpt is source evidence; it is not a new proof/checker run.
+Conversation metadata and personal execution details are omitted where indicated.
+
+000001 | """Same original E8 affine source: E7+A1 Ward response and full glued trace."""
+000002 | import ast
+000003 | import argparse
+000004 | import hashlib
+000005 | import itertools
+000006 | import json
+000007 | from collections import Counter
+000008 | from fractions import Fraction as F
+000009 | from functools import lru_cache
+000010 | from pathlib import Path
+000011 | import mpmath as mp
+000012 | import numpy as np
+000013 | import sympy as sp
+000014 | 
+000015 | [OMITTED: non-scientific conversation or execution metadata]
+000016 | parser=argparse.ArgumentParser()
+000017 | parser.add_argument('--out',required=True,type=Path)
+000018 | OUT=parser.parse_args().out
+000019 | OUT.mkdir(exist_ok=True,parents=True)
+000020 | PINS={}
+000021 | checks=Counter()
+000022 | def ck(x,name):
+000023 |     if not bool(x): raise RuntimeError(name)
+000024 |     checks[name]+=1
+000025 | class Always(ast.NodeTransformer):
+000026 |     def visit_Assert(self,n):
+000027 |         return ast.copy_location(ast.Expr(ast.Call(ast.Name('ck',ast.Load()),[n.test,ast.Constant('original assertion')],[])),n)
+000028 | def original(path,name,env):
+000029 |     raw=(REPO/path).read_bytes()
+000030 |     PINS[path]=hashlib.sha256(raw).hexdigest()
+000031 |     tree=ast.parse(raw)
+000032 |     node=next(n for n in tree.body if isinstance(n,(ast.ClassDef,ast.FunctionDef)) and n.name==name)
+000033 |     env['ck']=ck
+000034 |     exec(compile(ast.fix_missing_locations(Always().visit(ast.Module(body=[node],type_ignores=[]))),str(REPO/path),'exec'),env)
+000035 |     return env[name]
+000036 | def ip(a,b):return sum(x*y for x,y in zip(a,b))
+000037 | def add(a,b):return tuple(x+y for x,y in zip(a,b))
+000038 | raw=original('verification/v1_e8_glue.py','e8_roots',{'np':np,'itertools':itertools})()
+000039 | roots=[tuple(int(2*x) for x in r) for r in raw]
+000040 | triality_path='experiments/theory-contracts/compiler-integral-triality-20260918/certificate.json'
+000041 | triality_raw=(REPO/triality_path).read_bytes()
+000042 | PINS[triality_path]=hashlib.sha256(triality_raw).hexdigest()
+000043 | triality=json.loads(triality_raw)
+000044 | R=sp.Matrix(triality['integral_triality']['vector_basis']);Ri=R.inv()
+000045 | coords={r:tuple(F(x) for x in Ri*sp.Matrix(r)/2) for r in roots}
+000046 | class Adapter:
+000047 |     n=dim=8
+000048 |     def __init__(self):
+000049 |         self.roots=roots
+000050 |         self.simple=[tuple(int(x) for x in 2*R[:,i]) for i in range(8)]
+000051 |     def alpha_coords(self,r):return coords[r]
+000052 | src='verification/v498_celestial_wp5b_singular_vector.py'
+000053 | ch=original(src,'Chevalley',{'F':F,'ip':ip,'vadd':add})(Adapter())
+000054 | af=original(src,'Affine',{'F':F})(ch,1)
+000055 | vac={():F(1)}
+000056 | ck(ch.sgn==ch.kappa_root==-1,'original compact convention')
+000057 | def star(i):return (ch.opp[i],-1) if i<240 else (i,1)
+000058 | for i in range(240):
+000059 |     for n in [1,2,3]:
+000060 |         j,c=star(i)
+000061 |         value=c*af.act(j,n,af.act(i,-n,vac)).get((),0)
+000062 |         ck(value==n,'inherited level-one root response')
+000063 | 
+000064 | phys=[sp.Matrix(r)/2 for r in ch.roots]
+000065 | rho=sp.Matrix([F(7-2*j,2) for j in range(8)])
+000066 | q=sp.ones(8,1)
+000067 | Y=sp.Matrix([F(-1,3)]*3+[F(1,2)]*2+[0]*3)
+000068 | yc=Ri*Y
+000069 | Ystate={}
+000070 | for i in range(8):
+000071 |     if yc[i]:Ystate[((-1,240+i),)]=F(yc[i])
+000072 | Ygram=F(0)
+000073 | for i in range(8):
+000074 |     if yc[i]:Ygram+=F(yc[i])*af.act(240+i,1,Ystate).get((),F(0))
+000075 | ck(Ygram==F(5,6),'original hypercharge current Gram')
+000076 | normals=[]
+000077 | for i,j in itertools.combinations([5,6,7],2):
+000078 |     for sign in [-1,1]:
+000079 |         a=sp.zeros(8,1);a[i]=1;a[j]=sign
+000080 |         normals.append(('D5_'+str(i)+'_'+str(j)+'_'+str(sign),a))
+000081 | normals.append(('Q_neutral',q/2))
+000082 | decomp=[]
+000083 | for name,a in normals:
+000084 |     e7=[i for i,r in enumerate(phys) if ip(a,r)==0]
+000085 |     a1=[i for i,r in enumerate(phys) if r==a or r==-a]
+000086 |     mixed=[i for i in range(240) if i not in set(e7+a1)]
+000087 |     ck((len(e7),len(a1),len(mixed))==(126,2,112),'full E7 A1 glue branching')
+000088 |     P1=a*a.T/2;P7=sp.eye(8)-P1
+000089 |     ck(sum((r*r.T for r in [phys[i] for i in e7]),sp.zeros(8))==36*P7,'E7 adjoint trace tensor')
+000090 |     ck(sum((r*r.T for r in [phys[i] for i in a1]),sp.zeros(8))==4*P1,'A1 adjoint trace tensor')
+000091 |     ck(sum((r*r.T for r in [phys[i] for i in mixed]),sp.zeros(8))==24*P7+56*P1,'mixed112 trace tensor')
+000092 |     ck(sum((r*r.T for r in phys),sp.zeros(8))==60*sp.eye(8),'whole E8 invariant response')
+000093 |     norms=Counter((F(ip(P7*phys[i],P7*phys[i])),F(ip(P1*phys[i],P1*phys[i]))) for i in mixed)
+000094 |     ck(norms=={(F(3,2),F(1,2)):112},'glue weights 3/4 plus 1/4')
+000095 |     ck(P7*Y==Y and P1*Y==sp.zeros(8,1),'actual hypercharge retained in E7')
+000096 |     ytr=[sum(F(ip(Y,phys[i]))**2 for i in part) for part in [e7,a1,mixed]]
+000097 |     ck(ytr==[F(30),F(0),F(20)],'full hypercharge adjoint trace30 plus20')
+000098 |     decomp.append({'cut':name,'root_counts':[126,2,112],'E7_current_level':1,'A1_current_level':1,'mixed_projection_squared_norms':['3/2','1/2'],'hypercharge_current_Gram':'5/6','hypercharge_adjoint_trace_E7_A1_glue':list(map(str,ytr))})
+000099 | print('Original affine levels and seven full branchings checked.',flush=True)
+000100 | 
+000101 | def addstate(target,state,c=F(1)):
+000102 |     for key,v in state.items():target[key]=target.get(key,F(0))+c*v
+000103 |     return target
+000104 | def sugawara(a=None,which='all'):
+000105 |     P=sp.eye(8) if a is None else (a*a.T/2 if which=='a1' else sp.eye(8)-a*a.T/2)
+000106 |     inds=list(range(240)) if a is None else [i for i,r in enumerate(phys) if (ip(a,r)!=0 if which=='a1' else ip(a,r)==0)]
+000107 |     if which=='a1':inds=[i for i,r in enumerate(phys) if r==a or r==-a]
+000108 |     C=Ri*P*Ri.T
+000109 |     ans={}
+000110 |     for i in inds:addstate(ans,af.act(i,-1,af.act(ch.opp[i],-1,vac)),F(-1))
+000111 |     for i,j in itertools.product(range(8),repeat=2):
+000112 |         if C[i,j]:addstate(ans,af.act(240+i,-1,af.act(240+j,-1,vac)),F(C[i,j]))
+000113 |     h={'all':30,'e7':18,'a1':2}[which]
+000114 |     return {k:v/F(2*(1+h)) for k,v in ans.items() if v}
+000115 | @lru_cache(None)
+000116 | def wordgram(left,right):
+000117 |     state={right:F(1)};c=F(1)
+000118 |     for m,i in left:
+000119 |         j,ci=star(i);c*=ci;state=af.act(j,-m,state)
+000120 |     ck(set(state)<={()},'grade-two PBW vacuum contraction')
+000121 |     return c*state.get((),F(0))
+000122 | def inner(left,right):return sum(c*d*wordgram(k,l) for k,c in left.items() for l,d in right.items())
+000123 | T8=sugawara()
+000124 | stress=[]
+000125 | # One native D5-compatible cut and the source-charge-selected cut are checked
+000126 | # at the actual operator level. All seven invariant trace tensors above agree.
+000127 | for name,a in [normals[0],normals[-1]]:
+000128 |     T7=sugawara(a,'e7');T1=sugawara(a,'a1')
+000129 |     D=dict(T8);addstate(D,T7,F(-1));addstate(D,T1,F(-1));D={k:v for k,v in D.items() if v}
+000130 |     values=[inner(T7,T7),inner(T1,T1),inner(T7,T1),inner(T8,T8),inner(D,D)]
+000131 |     ck(values==[F(7,2),F(1,2),F(0),F(4),F(0)],'actual Sugawara Gram and null coset')
+000132 |     stress.append({'cut':name,'Gram_E7_A1':['7/2','1/2','0'],'Gram_total':'4','norm_T8_minus_T7_minus_T1':'0'})
+000133 |     print('Actual PBW stress response:',name,list(map(str,values)),flush=True)
+000134 | 
+000135 | mp.mp.dps=85
+000136 | M=18
+000137 | def ms(x):return mp.mpf(str(x))
+000138 | def one(t,w,half=False,signed=False,scale=4):
+000139 |     return mp.fsum(((-1)**n if signed else 1)*mp.exp(-scale*t*(mp.mpf(n)+(mp.mpf('.5') if half else 0))**2+t*w*(mp.mpf(n)+(mp.mpf('.5') if half else 0))) for n in range(-M,M+1))
+000140 | def theta8(t,w):
+000141 |     return (mp.fprod(one(t,x) for x in w)+mp.fprod(one(t,x,signed=True) for x in w)+mp.fprod(one(t,x,True) for x in w)+mp.fprod(one(t,x,True,True) for x in w))/2
+000142 | def theta_coordinate_cut(t,w,i,j,sign):
+000143 |     # Turn alpha=e_i+e_j into a difference normal by flipping the j variable.
+000144 |     # An odd sign flip changes the half-integer parity; retain it explicitly.
+000145 |     ww=list(w);parity=1
+000146 |     if sign==1:ww[j]=-ww[j];parity=-1
+000147 |     rest=[k for k in range(8) if k not in [i,j]]
+000148 |     S=mp.fprod(one(t,ww[k]) for k in rest);A=mp.fprod(one(t,ww[k],signed=True) for k in rest)
+000149 |     H=mp.fprod(one(t,ww[k],True) for k in rest);B=parity*mp.fprod(one(t,ww[k],True,True) for k in rest)
+000150 |     Ui=one(t,ww[i]+ww[j],scale=8);Uh=one(t,ww[i]+ww[j],True,scale=8)
+000151 |     E0=(S+A)/2*Ui+(H+B)/2*Uh
+000152 |     E56=(S-A)/2*Uh+(H-B)/2*Ui
+000153 |     A0=one(t,ww[i]-ww[j],scale=8);A2=one(t,ww[i]-ww[j],True,scale=8)
+000154 |     return E0,A0,E56,A2
+000155 | def coefficient(t,rho,sum_value,half=False):
+000156 |     # Coefficient extraction of the actual eight-coordinate lattice product.
+000157 |     # Keys track twice the sum of coordinates, so all arithmetic labels are exact.
+000158 |     acc={0:mp.mpf(1)}
+000159 |     for w in rho:
+000160 |         nxt={}
+000161 |         for n in range(-M,M+1):
+000162 |             v=mp.mpf(n)+(mp.mpf('.5') if half else 0);key=2*n+(1 if half else 0)
+000163 |             val=mp.exp(-4*t*v*v+t*w*v)
+000164 |             for k,c in acc.items():nxt[k+key]=nxt.get(k+key,mp.mpf(0))+c*val
+000165 |         acc=nxt
+000166 |     return acc[2*sum_value]
+000167 | def theta_neutral(t,w):
+000168 |     rr=[ms(x) for x in rho]
+000169 |     E0=coefficient(t,rr,0)+coefficient(t,rr,0,True)
+000170 |     E56=mp.exp(2*t)*(coefficient(t,rr,2)+coefficient(t,rr,2,True))
+000171 |     wa=mp.fsum(w)/2
+000172 |     A0=one(t,wa,scale=8);A2=one(t,wa,True,scale=8)
+000173 |     return E0,A0,E56,A2
+000174 | def trace(t,w):
+000175 |     osc=mp.fprod(1-mp.exp(-8*t*n) for n in range(1,401))
+000176 |     return theta8(t,w)/osc**8
+000177 | samples=[]
+000178 | for a in [mp.mpf('.25'),mp.mpf('.75')]:
+000179 |     w=[ms(x)-(2*a-1)/2 for x in rho]
+000180 |     for t in [mp.mpf('.25'),mp.mpf('.5'),mp.mpf(1),mp.mpf(2)]:
+000181 |         th=theta8(t,w);z=trace(t,w)
+000182 |         row={'a':str(a),'t':str(t),'Z_full':mp.nstr(z,35),'cuts':[]}
+000183 |         for name,normal in normals:
+000184 |             if name=='Q_neutral':E0,A0,E56,A2=theta_neutral(t,w)
+000185 |             else:
+000186 |                 _,si,sj,sgn=name.split('_')
+000187 |                 E0,A0,E56,A2=theta_coordinate_cut(t,w,int(si),int(sj),int(sgn))
+000188 |             val=E0*A0+E56*A2
+000189 |             err=abs(val/th-1)
+000190 |             ck(err<mp.mpf('1e-65'),'full glued original heat trace identity')
+000191 |             row['cuts'].append({'name':name,'relative_error':mp.nstr(err,5),'glue_fraction':mp.nstr(E56*A2/th,25),'E7_A1_product_fraction':mp.nstr(E0*A0/th,25)})
+000192 |         samples.append(row)
+000193 |         print('Full original heat trace:',str(a),str(t),mp.nstr(z,18),'neutral glue',row['cuts'][-1]['glue_fraction'],flush=True)
+000194 | 
+000195 | # Exact source-time response, retaining all positive affine modes by its
+000196 | # geometric series. This is a vacuum current kernel, separate from heat traces.
+000197 | time_response=[]
+000198 | for a in [F(1,4),F(3,4)]:
+000199 |     w=rho-(2*a-1)*q/2
+000200 |     row={'a':str(a),'cuts':[]}
