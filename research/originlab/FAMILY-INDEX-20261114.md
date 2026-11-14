@@ -64,3 +64,77 @@ their different relative indices. An original P1 chirality claim
 requires the phase-sensitive ordered transition, not just the
 positive OS Gram or its four samples. The common weighted R113
 reference and operator domains must be retained.
+
+
+## Conditional one-sided Hardy analyticity obstruction
+
+Assume the physical source supplies one **fixed** S4 representation and a
+four-channel loop U(z)=u0(z)Q+u3(z)P, where u0,u3 are holomorphic in the
+unit disk, continuous and nonzero on its unit-circle boundary.
+Assume further that the primitive P1 winding is the winding of det U.
+By the argument principle, each scalar winding counts its disk zeros,
+and is nonnegative. Then
+
+    wind det U = n0 + 3 n3 = 1
+
+forces n0=1, n3=0. If U is also unitary on the entire boundary, each
+scalar block is a finite Blaschke product, u3 is a constant phase and
+the single zero can occur only on the common Q channel. Consequently
+there is NO relative family index three in this analytic class.
+
+The formerly proposed z^(-2)Q+zP requires a pole of order at least two
+on the common channel. Positive Euclidean P1 time, OS reflection
+positivity, and the already proved *one-sided collar Calderon data*
+do NOT alone prove that this **family loop symbol** is holomorphic on
+the same disk on every sheet. Never use this no-go without the named
+analyticity and determinant-identification premises.
+
+Full continuous SU(4) family invariance is even stronger: its
+irreducible four-dimensional fundamental representation has only
+scalar commuting loops u(z)I, whose determinant winding is 4 wind(u).
+A primitive determinant winding one is impossible until the physical
+family symmetry is reduced.
+
+## A based homotopy preserving every original mark and the determinant
+
+Let f be the localized once-winding phase of the previous control,
+equal to one at 1,i,-1,-i. In the Q/P eigenbasis the quotient of the
+relative candidate by the common-only candidate is
+diag(f^(-3),f,f,f), a product of three SU(2) diagonal loops.
+
+For c=cos t and s=sin t use the two-channel based homotopy
+
+    F_t(f)=[[c^2/f+s^2, cs(1-1/f)],
+            [cs(f-1),    c^2 f+s^2]].
+
+When |f|=1, F_t is unitary with det 1. At t=0 it equals
+diag(f^(-1),f), at t=pi/2 it is I, and F_t(1)=I at every t.
+Embed this block between the common channel and each of the three
+relative channels. Multiplying the three blocks yields an explicit
+continuous deformation from the relative index-three candidate to
+the common-only candidate.
+
+Throughout the deformation, the original four mark matrices,
+the entire pointwise determinant and the positive U*U Gram remain
+unchanged. **What changes is S4 block preservation** at intermediate
+values of t. Thus an index three is protected only by a physically
+proven obstruction to mixing the common and relative channels.
+
+## A finite winding certificate instead of an unbounded grid search
+
+If the original source provides a C1 scalar sector response u(theta)
+with a proved derivative bound |u'|<=L, certified nonzero sample lower
+bound |u(theta_j)|>=m, and maximum angular gap h, then L*h<m
+guarantees that each true curve segment and its straight polygonal
+interpolant lie in a zero-free disk. Their winding numbers coincide.
+For u(z)=z, eight equal samples meet the criterion; the four original
+marks alone do not. This is a mathematically rigorous sufficient test,
+but no such L,m have been computed for the original weighted R113
+family response.
+
+Original-source obligations: establish whether the actual FAMILY loop
+has one Hardy polarization or a sheet-changing/meromorphic relative
+symbol; identify its physical determinant and S4 action; prove or
+refute symmetry-preserving transport; supply sector-resolved amplitudes,
+their derivative bounds, the complete weighted source and the absolute
+reference, and verify mirror decoupling in a local 3+1 theory.

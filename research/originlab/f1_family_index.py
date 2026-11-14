@@ -93,10 +93,113 @@ def finite_mark_blindness():
                 required_original_observation="A source-certified continuous four-mark family loop and its sector-resolved winding, not four samples or determinant alone")
 
 
+def analytic_one_sheet_obstruction():
+    """Conditional theorem: common analytic disk polarization plus unit determinant winding.
+
+    A holomorphic scalar block with no boundary zeros has winding equal
+    to its number of disk zeros. This premise is NOT implied by the
+    previously established positive P1 Euclidean time semigroup.
+    """
+    q,p=projectors()
+    z=sp.symbols("z",nonzero=True)
+    # Sectorwise analytic functions have nonnegative zero counts.
+    solutions=[(n0,n3) for n0 in range(5) for n3 in range(5)
+               if n0+3*n3==1]
+    assert solutions==[(1,0)]
+    # One explicit analytic inner solution: degree one only on Q.
+    a=sp.Rational(1,3)
+    b=(z-a)/(1-a*z)
+    inner=b*q+p
+    assert sp.factor(inner.det()-b)==0
+    assert sp.factor(b*b.subs(z,1/z)-1)==0
+    # The proposed three-relative-family winding has a second-order
+    # pole on the common channel and cannot be analytic in the disk.
+    mixed=z**(-2)*q+z*p
+    assert sp.factor(mixed.det()-z)==0
+    assert (z*z*mixed).applyfunc(lambda x: sp.limit(x,z,0))==q
+    # Full continuous SU(4) mixing does not preserve the rank-three P.
+    h=sp.diag(1,-1,0,0)
+    assert p*h-h*p!=sp.zeros(4)
+    return dict(status="CONDITIONAL_EXACT_ONE_SHEET_NO_GO",
+                assumptions=["fixed S4 action throughout the loop",
+                             "both scalar family blocks holomorphic in one disk",
+                             "boundary invertibility",
+                             "primitive P1 winding equals determinant winding one"],
+                allowed_zero_counts=dict(common=1,relative=0),
+                relative_family_index_from_one_sheet=0,
+                mixed_family_symbol_requires_reference_pole_order_at_least=2,
+                full_SU4_mixing_breaks_relative_projector=True,
+                original_physical_analyticity_proved=False)
+
+
+def based_su4_unwinding():
+    """Based contraction keeping all four marked values and det fixed.
+
+    Mixes Q with relative channels at intermediate stages, so it does
+    NOT preserve the fixed S4 commutant. This is the physical caveat.
+    """
+    f,c,s=sp.symbols("f c s",nonzero=True)
+    h=sp.Matrix([[c/f,s],[-s,c*f]])
+    at_one_inverse=sp.Matrix([[c,-s],[s,c]])
+    b=(h*at_one_inverse).applyfunc(sp.expand)
+    norm=c*c+s*s
+    assert sp.factor(b.det()-norm*norm)==0
+    bstar=b.T.applyfunc(lambda x: x.subs(f,1/f))
+    assert (bstar*b-norm*norm*sp.eye(2)).applyfunc(sp.simplify)==sp.zeros(2)
+    assert b.subs({c:1,s:0})==sp.diag(1/f,f)
+    assert b.subs({c:0,s:1})==sp.eye(2)
+    assert b.subs(f,1)==norm*sp.eye(2)
+
+    def pair(matrix,j):
+        out=sp.eye(4)
+        for x,i in enumerate((0,j)):
+            for y,k in enumerate((0,j)):
+                out[i,k]=matrix[x,y]
+        return out
+
+    product=sp.eye(4)
+    for j in (1,2,3):
+        product=product*pair(b,j)
+    assert product.subs({c:1,s:0})==sp.diag(f**(-3),f,f,f)
+    assert product.subs({c:0,s:1})==sp.eye(4)
+    assert product.subs(f,1)[0,0]==norm**3
+    # The existing witness f equals 1 at 1,i,-1,-i, and winds once.
+    return dict(status="EXACT_SU4_BASED_UNWINDING",
+                same_four_mark_values_throughout=True,
+                same_full_determinant_throughout=True,
+                same_unitary_gram_throughout=True,
+                destroys_fixed_S4_block_equivariance=True,
+                result="relative winding 3 not protected if common/relative mixing is allowed",
+                physical_mixing_admissibility_proved=False)
+
+
+def certified_winding_sampling():
+    """Finite samples can certify a winding only with a genuine source bound.
+
+    If |u'|<=L, min_j |u(theta_j)|>=m and max angular gap h
+    satisfies L*h<m, each true arc and its polygon chord lie in
+    the convex nonzero disk D(u(theta_j),L*h). Thus they are homotopic.
+    No L or m is assumed known for the original weighted R113 source.
+    """
+    assert sp.pi/4 < 1     # u(z)=z, eight equal samples, L=m=1
+    assert 3*sp.pi/10 < 1  # u(z)=z^3, twenty samples, L=3, m=1
+    assert not (sp.pi/2 < 1)  # four mark-only samples do not meet this bound
+    return dict(status="CONDITIONAL_CERTIFIED_WINDING_SAMPLING",
+                sufficient_condition="L * maximum_angular_gap < minimum_sample_modulus_lower_bound",
+                test_examples=[dict(function="z",samples=8,certified=True),
+                               dict(function="z^3",samples=20,certified=True),
+                               dict(function="z",samples=4,certified=False)],
+                source_derivative_bound_supplied=False,
+                original_winding_certified=False)
+
+
 def controls():
     q,p=projectors()
     mark_nonidentifiability=finite_mark_blindness()
     radial_covariance=radial_time_covariance()
+    analytic_obstruction=analytic_one_sheet_obstruction()
+    sector_unwinding=based_su4_unwinding()
+    sampling=certified_winding_sampling()
     assert q*q==q and p*p==p and q*p==sp.zeros(4)
     assert q.rank()==1 and p.rank()==3
     for perm in permutations(range(4)):
@@ -131,6 +234,9 @@ def controls():
         primitive_winding_alone_selects_no_family=True,
         conjugate_pair_total_index=0,radial_time_covariance=radial_covariance,
         finite_mark_nonidentifiability=mark_nonidentifiability,
+        analytic_one_sheet_obstruction=analytic_obstruction,
+        sector_unwinding_without_S4=sector_unwinding,
+        certified_winding_sampling=sampling,
         physical_source_identity_proved=False,
         original_r113_values=None,physical_mirror_decoupling_proved=False,
         next_original_observation="Same-source weighted P1 four-mark loop, determinant winding, conjugate boundary domains, positive time, whole selector and absolute R113 reference")

@@ -39,3 +39,29 @@ def test_same_four_marks_and_determinant_cannot_fix_relative_index():
     assert evidence["same_full_determinant_function"]=="z"
     assert evidence["same_positive_reflected_gram"]=="I4"
     assert evidence["separated_relative_indices"]==[0,-3]
+
+
+def test_holomorphic_one_sheet_forces_no_three_family_winding():
+    from f1_family_index import analytic_one_sheet_obstruction
+    receipt=analytic_one_sheet_obstruction()
+    assert receipt["allowed_zero_counts"]==dict(common=1,relative=0)
+    assert receipt["relative_family_index_from_one_sheet"]==0
+    assert receipt["mixed_family_symbol_requires_reference_pole_order_at_least"]==2
+    assert receipt["original_physical_analyticity_proved"] is False
+
+
+def test_four_marks_and_determinant_remain_equal_during_SU4_unwinding():
+    from f1_family_index import based_su4_unwinding
+    receipt=based_su4_unwinding()
+    assert receipt["same_four_mark_values_throughout"]
+    assert receipt["same_full_determinant_throughout"]
+    assert receipt["destroys_fixed_S4_block_equivariance"]
+    assert receipt["physical_mixing_admissibility_proved"] is False
+
+
+def test_winding_sampling_requires_original_derivative_bound():
+    from f1_family_index import certified_winding_sampling
+    receipt=certified_winding_sampling()
+    assert not receipt["source_derivative_bound_supplied"]
+    assert not receipt["original_winding_certified"]
+    assert [x["certified"] for x in receipt["test_examples"]]==[True,True,False]
