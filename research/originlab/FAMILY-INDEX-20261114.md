@@ -26,3 +26,14 @@ loop determinant/phase with the actual bound reference, real and charged
 sector domain, weak doublet extension, conjugate chirality control,
 and a local 3+1 continuum with spin two and empirical tests.
 No R113 values or physical F1 closure have been produced.
+
+## Positive radial time control
+
+For the Hardy number operator N (the one-particle radial L0), the
+unilateral shift obeys [N,S]=S and [N,(S*)^m]=-m(S*)^m.
+Thus the candidate Q(S*)^2+PS has commutator
+-2Q(S*)^2+PS with N. It CANNOT be a stationary internal
+symmetry commuting with unmodified radial L0. A physical version
+must be an oriented seam defect, spectral-flow operation, or a
+source-derived time-dependent boundary change. This is a conditional
+exclusion, not a proof of P1 source uniqueness.

@@ -46,8 +46,23 @@ def paired_completion(n):
         [sp.kronecker_product(p,b),shared+sp.kronecker_product(p,s.T)]
     ]).as_explicit()
 
+def radial_time_covariance(n=6):
+    """L0 number operator commutators, not a physical source identification."""
+    q,p=projectors()
+    h=sp.kronecker_product(sp.eye(4),sp.diag(*range(n)))
+    replies=[]
+    for k0,k3 in ((0,0),(1,0),(0,1),(-2,1)):
+        d=finite_toeplitz(n,k0,k3)
+        expected=(k0*sp.kronecker_product(q,shift_power(n,k0))
+                  +k3*sp.kronecker_product(p,shift_power(n,k3)))
+        assert h*d-d*h==expected
+        replies.append(dict(k0=k0,k3=k3,commutes_with_L0=expected==sp.zeros(4*n)))
+    assert [v["commutes_with_L0"] for v in replies]==[True,False,False,False]
+    return replies
+
 def controls():
     q,p=projectors()
+    radial_covariance=radial_time_covariance()
     assert q*q==q and p*p==p and q*p==sp.zeros(4)
     assert q.rank()==1 and p.rank()==3
     for perm in permutations(range(4)):
@@ -80,7 +95,8 @@ def controls():
         s4_projector_ranks=[1,3],cases=cases,finite_controls=finite,
         unit_determinant_winding_with_three_relative=dict(k0=-2,k3=1),
         primitive_winding_alone_selects_no_family=True,
-        conjugate_pair_total_index=0,physical_source_identity_proved=False,
+        conjugate_pair_total_index=0,radial_time_covariance=radial_covariance,
+        physical_source_identity_proved=False,
         original_r113_values=None,physical_mirror_decoupling_proved=False,
         next_original_observation="Same-source weighted P1 four-mark loop, determinant winding, conjugate boundary domains, positive time, whole selector and absolute R113 reference")
 
