@@ -70,6 +70,12 @@ def finite_mark_blindness():
     assert sp.simplify(relative_with_counterflow.det()-z)==0
     assert relative_with_counterflow.subs(f,1)==reference_only
     assert relative_with_counterflow.subs(f,-1)==-reference_only
+    # Along |z|=|f|=1, these inverses are adjoints and both
+    # reflected positive Grams are I despite different windings.
+    inverse_a=z**(-1)*q+p
+    inverse_b=z**(-1)*f**3*q+f**(-1)*p
+    assert (inverse_a*reference_only-sp.eye(4)).applyfunc(sp.simplify)==sp.zeros(4)
+    assert (inverse_b*relative_with_counterflow-sp.eye(4)).applyfunc(sp.simplify)==sp.zeros(4)
     # f(e^(i theta))=1 outside (pi/8,3pi/8), and
     # exp(i*(8 theta-pi)) inside this arc: continuous, winding one.
     marks=[sp.Integer(0),sp.pi/2,sp.pi,3*sp.pi/2]
@@ -81,6 +87,7 @@ def finite_mark_blindness():
     assert left["relative_index"]==0 and right["relative_index"]==-3
     return dict(status="EXACT_FINITE_MARK_NONIDENTIFIABILITY",
                 same_four_mark_matrices=True,same_full_determinant_function="z",
+                same_positive_reflected_gram="I4",
                 separated_relative_indices=[0,-3],
                 explicit_unmeasured_angle="pi/4",
                 required_original_observation="A source-certified continuous four-mark family loop and its sector-resolved winding, not four samples or determinant alone")

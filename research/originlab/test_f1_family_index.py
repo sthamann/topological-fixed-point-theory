@@ -37,4 +37,5 @@ def test_same_four_marks_and_determinant_cannot_fix_relative_index():
     evidence=finite_mark_blindness()
     assert evidence["same_four_mark_matrices"]
     assert evidence["same_full_determinant_function"]=="z"
+    assert evidence["same_positive_reflected_gram"]=="I4"
     assert evidence["separated_relative_indices"]==[0,-3]

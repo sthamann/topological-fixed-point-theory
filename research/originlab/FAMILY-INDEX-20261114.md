@@ -52,3 +52,15 @@ Hence even complete determinant data plus four discrete matrix
 samples do not determine physical family winding; the source must
 supply the continuous sector-resolved loop, a topology certificate,
 or sufficient regularity bounds for unambiguous interpolation.
+
+## Reflection positivity cannot supply the winding phase by itself
+
+Every invertible positive Hermitian four-mark Gram G(z) has real
+positive determinant, so its determinant winding is zero. If G
+is rank deficient, its determinant winding is undefined. In the
+constructed pair U_A,U_B, both symbols are unitary on the circle and
+therefore have the SAME reflected Gram U*U=I at every angle, despite
+their different relative indices. An original P1 chirality claim
+requires the phase-sensitive ordered transition, not just the
+positive OS Gram or its four samples. The common weighted R113
+reference and operator domains must be retained.
