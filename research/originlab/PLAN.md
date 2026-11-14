@@ -111,6 +111,18 @@ are still open. The next native test is the colour-2 horizontal matrix
 element on a source-identified Cartan pair, followed by the marked
 two-time rectangle before any claim of physical closure.
 
+The operator campaign of 14 November replaces the closed affine kernels by
+explicit level-one mode operators and adds a class-constrained completion
+search for the mark alphabet. The marked word and all hypercharge neutral
+currents preserve the parity of the weak slot root and generate only
+A1 x E7. A source that agrees with the affine vacuum on every such word is
+still undetermined on the 112 weak doublet currents. The double-cell weak
+slot exchange is the finite control for exactly this direction. The next
+native test therefore adds one weak doublet current word to the marked
+two-time rectangle, on the same weighted form and absolute reference.
+This check was run without the local Atlas and without the original
+weighted source. F1 remains open.
+
 1. Build an independent endpoint evaluator, typed process language, exact
    search and certificate engine. Read the live Atlas for provenance. Preserve source IDs, input hashes,
    proof scope and the distinction between unavailable and false.

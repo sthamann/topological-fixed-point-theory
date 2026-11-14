@@ -21,9 +21,9 @@ from backends import inverse_rank, lean_check
 from verify import car_replay, clock_test, digest, eigenvalue_test, r102
 
 HERE = Path(__file__).resolve().parent
-CAMPAIGNS = ("r113", "r113_synthesis", "source_bridge", "marked_search", "double_cell", "moving_carrier", "affine_polarization", "r102", "bell", "clock", "identifiability", "four_mark_selection",
+CAMPAIGNS = ("r113", "r113_synthesis", "source_bridge", "marked_search", "double_cell", "moving_carrier", "affine_polarization", "affine_operators", "r102", "bell", "clock", "identifiability", "four_mark_selection",
              "spectral_source_controls", "empirical_source_audit", "p0", "f1")
-FINITE_CONTROLS = ("double_cell", "moving_carrier", "affine_polarization")
+FINITE_CONTROLS = ("double_cell", "moving_carrier", "affine_polarization", "affine_operators")
 
 
 def atomic_json(path, payload):
@@ -140,6 +140,9 @@ def execute(campaign, root, args, suggestion_rows, retained_rows, prior_question
     if campaign == "affine_polarization":
         from affine_polarization import controls
         return controls()
+    if campaign == "affine_operators":
+        from affine_operators import controls
+        return controls()
     if campaign == "r102":
         result = r102(3,args.rank_limit)
         result["inverse_smt"] = inverse_rank(3,args.rank_limit)
@@ -227,6 +230,8 @@ def one_round(args, directory, index, retained, prior_questions, manifest):
                         double_cell_control_status=outcomes.get("double_cell",{}).get("status","NOT_RUN"),
                         moving_carrier_control_status=outcomes.get("moving_carrier",{}).get("status","NOT_RUN"),
                         affine_polarization_status=(source_result or {}).get("affine_polarization",{}).get("status","NOT_RUN"),
+                        affine_operator_source_status=outcomes.get("affine_operators",{}).get("status","NOT_RUN"),
+                        mark_alphabet_completion=outcomes.get("affine_operators",{}).get("next_original_observation"),
                         physical_evidence=assess(source_result,outcomes.get("r113_synthesis")),
                         separator_requires_original_field_identification=True,
                         energy_moments=(source_result or {}).get("energy_moments"),

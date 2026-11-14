@@ -29,8 +29,8 @@ Python and SymPy alone.
 python3 -B research/originlab/main.py --finite-controls-only --out /tmp/originlab-controls
 ```
 
-This mode runs the double-cell, moving Hardy carrier and affine polarization
-checks without a local Atlas. Original-source and full F1 campaigns require the local Atlas
+This mode runs the double-cell, moving Hardy carrier, affine polarization
+and affine operator checks without a local Atlas. Original-source and full F1 campaigns require the local Atlas
 program and the matching, hash-checked research inputs. A public checkout
 without those inputs cannot evaluate R113.
 
@@ -196,6 +196,34 @@ An optional `affine_polarization` section of the weighted endpoint packet
 binds the bare and prepared word forms to the same source, time and
 reference. The consumer reports the absolute bare comparison separately
 from normalized Ward agreement.
+
+Run `--campaign affine_operators` for the operator-level source. It builds
+the actual mode operators of the level-one E8 lattice construction in the
+fixed D8 chart and applies them to exact Fock vectors. These currents change
+the charge sector and lie outside the excluded free quadratic class. The
+campaign checks the level-one current relations on explicit vectors, with the
+trivial cocycle as failing control. It recomputes the marked word coefficients
+`min(m,n)`, the Ward response of prepared words coefficient by coefficient,
+and the neutral return spectrum on the full grades zero to two. The joint
+return check extends the single root line. Eight mutually orthogonal roots
+give commuting returns with a rank-eight excess on neutral grade two. Two
+returns commute there exactly when the roots pair to 0 or -1.
+
+The same campaign searches for the fewest further root currents that
+generate all of E8 together with the marked plane, restricted to a declared
+charge class. The marked charges span one A2 with commutant E6, and their
+currents generate 8 of the 248 grade-one vectors. Six further currents are
+necessary by rank and sufficient in five of the eight tested classes,
+including colour-centre neutral D8 pair currents. Three classes are exact
+negatives. Hypercharge neutral currents, and currents neutral under colour
+centre and glue, generate only A1 x E7 with the marked plane. The conserved
+grading is the parity of the pairing with the weak slot root `e4 - e5`. All
+112 missing currents are weak doublets and all carry hypercharge. The
+colour neutral D8 pair currents among them have glue class 2 and
+hypercharge of modulus 1/2. The reported next original observation is one
+ordered word with a weak doublet current on the same weighted source, time
+and absolute reference. These are statements about the given affine vacuum
+module. They carry no weighted R113 value and no physical source identity.
 
 - [SymPy](https://github.com/sympy/sympy) executes exact matrix and polynomial arithmetic.
 - [Z3](https://github.com/Z3Prover/z3) provides inverse integer synthesis, with exact witness replay.
