@@ -29,8 +29,8 @@ Python and SymPy alone.
 python3 -B research/originlab/main.py --finite-controls-only --out /tmp/originlab-controls
 ```
 
-This mode runs the double-cell, moving Hardy carrier, affine polarization
-and affine operator checks without a local Atlas. Original-source and full F1 campaigns require the local Atlas
+This mode runs the double-cell, moving Hardy carrier, affine polarization,
+affine operator and free CAR checks without a local Atlas. Original-source and full F1 campaigns require the local Atlas
 program and the matching, hash-checked research inputs. A public checkout
 without those inputs cannot evaluate R113.
 
@@ -246,6 +246,19 @@ family coordinates as oscillator polarizations. Two class-one spinor
 currents with equal family weight never close on a current. Equal charges
 of affine currents do not identify them with quark or Higgs fields, a
 Yukawa coupling or three physical families.
+
+Run `--campaign affine_car` for the free CAR source of the doublet word.
+Eight complex free fermions in the Neveu-Schwarz sector carry the 112 D8
+pair currents at level one. All three legs of `J^(-delta) J^gamma J^alpha`
+are such bilinears. The positive free source reproduces the kernel
+`min(m,n)` and the weak Casimir value 3/4 and agrees with the lattice
+operators. The marked word has spinor ends and does not exist in this
+source. Of the 28 neutral three-leg words through the marked middle
+current, 12 consist of pair currents and four of those contain a weak
+doublet pair. The sixteen real fermions are the D8 vector. The native
+matter fibres are D5 spinors, so this is a declared model and no native
+evaluation. A quadratic native source needs its own field map to these
+currents before it can evaluate the word.
 
 - [SymPy](https://github.com/sympy/sympy) executes exact matrix and polynomial arithmetic.
 - [Z3](https://github.com/Z3Prover/z3) provides inverse integer synthesis, with exact witness replay.
