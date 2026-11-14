@@ -212,3 +212,15 @@ operational interface. Continuum physical equivalence and source selection
 require separate proofs.
 
 The six-route campaign implements the tests in [Six origin routes](SIX-ROUTES.md). The first physical priority is a shared source binding for exact Petz recovery and original moment closure. Regional reconstruction, inflow, and the full scattering problem remain open beyond the finite tests.
+
+## 14 November 2026: family winding and mirror obstruction
+
+The finite campaign f1_family_index checks S4-equivariant four-mark
+Hardy symbols U(z)=z^k0 Q+z^k3 P. Their determinant winding is k0+3k3.
+A conditional primitive determinant winding one with relative k3=1
+forces a twice counter-winding reference k0=-2. Complex conjugate
+symbols cancel Fredholm indices and a finite unitary boundary
+completion exists. This excludes the *minimal symmetric doubled model*
+as a proof of three physical chiral generations, not general P1.
+The original weighted R113 kernel and the physical boundary domain
+remain open. See FAMILY-INDEX-20261114.md. Do not promote F1 status.

@@ -535,3 +535,11 @@ quarter predictions. A stationary mixture of those quarters is determined
 by two entries and tested on the other entries. The clock job also checks the original gauge average
 and whether the marked opposite spinor module can keep the same background.
 See [the marked folded time derivation](FOLDED-TIME-PROOF.txt).
+
+## Four-mark winding and mirror-index control
+
+The finite campaign f1_family_index checks the previously proposed relative
+three-family Hardy shift against the original unit-winding premise and
+conjugate E8 spinor sector. Its exact finite unitary completion shows
+that the doubled index alone does not protect physical chirality.
+See FAMILY-INDEX-20261114.md. This control is not an R113 producer.
