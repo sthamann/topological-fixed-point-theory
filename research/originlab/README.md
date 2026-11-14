@@ -29,8 +29,8 @@ Python and SymPy alone.
 python3 -B research/originlab/main.py --finite-controls-only --out /tmp/originlab-controls
 ```
 
-This mode runs the double-cell and moving Hardy carrier checks without a
-local Atlas. Original-source and full F1 campaigns require the local Atlas
+This mode runs the double-cell, moving Hardy carrier and affine polarization
+checks without a local Atlas. Original-source and full F1 campaigns require the local Atlas
 program and the matching, hash-checked research inputs. A public checkout
 without those inputs cannot evaluate R113.
 
@@ -185,6 +185,17 @@ Transport between the moving carriers composes, while reproducing all fixed
 carrier moments requires infinite spectral support in each nonconstant
 sector. The original follow-up compares these projection choices on the
 same charged word and absolute empty reference.
+
+Run `--campaign affine_polarization` to compute the normalized connected
+Cartan response of the original affine three-leg word. A single time pair
+sees one outer product. Four pairs span the four matrix directions of the
+two-dimensional charge plane. Its six-dimensional orthogonal complement
+is an exact negative control. Restricting to polarizations orthogonal to
+the middle root leaves just one direction visible to the entire word.
+An optional `affine_polarization` section of the weighted endpoint packet
+binds the bare and prepared word forms to the same source, time and
+reference. The consumer reports the absolute bare comparison separately
+from normalized Ward agreement.
 
 - [SymPy](https://github.com/sympy/sympy) executes exact matrix and polynomial arithmetic.
 - [Z3](https://github.com/Z3Prover/z3) provides inverse integer synthesis, with exact witness replay.

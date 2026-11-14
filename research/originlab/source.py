@@ -92,6 +92,9 @@ def blocked(domain, path, bindings):
                                "bound positive time step and outer physical selector on that same space"]},
                 energy_moments={"status":"BLOCKED",
                     "missing":["first and second moments of the same original generator on a common reflected word space"]},
+                affine_polarization={"status":"BLOCKED",
+                    "missing":["weighted bare and Cartan-prepared three-leg words at shared ordered times",
+                               "same original preparation, adjoint and absolute empty reference bindings"]},
                 obligations={
                     "original_configuration_map":"Produce the ordered original U/Y/UY forms at both endpoints.",
                     "weight":"Derive the full original boson measure, fermion weight, eta and rest on the same domain.",
@@ -554,6 +557,34 @@ def evaluate(root, path=None):
             **checked_marked_time(bundle["marked_affine_time_grid"],source_id,time["id"],
                                   lambda form: sp.expand(numerator(as_form(form,size))/reference),clock_root),
             "input_role":role,"source_id":source_id,"time_id":time["id"]}
+    if "affine_polarization" in bundle:
+        from affine_polarization import checked_polarization
+        data = bundle["affine_polarization"]
+
+        def contract_polarization(form):
+            return sp.expand(numerator(as_form(form,size))/reference)
+
+        candidate["affine_polarization"] = {
+            **checked_polarization(data,source_id,time["id"],contract_polarization),
+            "input_role":role,"source_id":source_id,"time_id":time["id"]}
+        if "alternative" in data:
+            alternate = data["alternative"]
+            if set(alternate)!={"right_root","samples","native_field_binding"} or "right_root" in data or (
+                not isinstance(alternate["native_field_binding"],str) or not alternate["native_field_binding"].strip()
+            ):
+                raise ValueError("the alternative must supply its own distinct charge word and field binding")
+            from affine_polarization import matched_charge_words, root_matrix
+            from reconstruction import scalar as read_scalar
+            expected_right = matched_charge_words(root_matrix())["right_roots"][1]
+            if [read_scalar(value) for value in alternate["right_root"]] != list(map(sp.Rational,expected_right)):
+                raise ValueError("the alternative must use the distinct matched charge word")
+            coordinates = ("left_radial_factor","right_radial_factor")
+            if [tuple(read_scalar(s[k]) for k in coordinates) for s in data["samples"]] != [
+                tuple(read_scalar(s[k]) for k in coordinates) for s in alternate["samples"]
+            ]:
+                raise ValueError("both charge words must use the same ordered time samples")
+            candidate["affine_polarization"]["alternative"] = checked_polarization(
+                {**data,**alternate},source_id,time["id"],contract_polarization)
     if "source_intertwiner" in bundle:
         from intertwiner import solve_operators
         from reconstruction import matrix, require

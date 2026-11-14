@@ -29,6 +29,11 @@ TRIALITY = (0, 1, 2)
 HYPERCHARGES = ("0", "-1/3", "1/3")
 
 
+def charge_signature(weight):
+    y = weight.dot(sp.Matrix([-2, -2, -2, 3, 3, 0, 0, 0]))/6
+    return (2*sum(weight[5:]))%4,(weight[0]+weight[1]-2*weight[2])%3,str(y)
+
+
 def marked_charges():
     # The fixed physical D8 chart, in the left-to-right order of insertions.
     p1 = sp.ones(8, 1)/2
@@ -37,9 +42,7 @@ def marked_charges():
     require(sum(weights, sp.zeros(8, 1)) == sp.zeros(8, 1), "marked word must be neutral")
     rows = []
     for leg, weight, glue, triality, hypercharge in zip(LEGS, weights, GLUE, TRIALITY, HYPERCHARGES):
-        y = weight.dot(sp.Matrix([-2, -2, -2, 3, 3, 0, 0, 0]))/6
-        require(weight.dot(weight) == 2 and (2*sum(weight[5:])) % 4 == glue and
-                (weight[0]+weight[1]-2*weight[2]) % 3 == triality and str(y) == hypercharge,
+        require(weight.dot(weight) == 2 and charge_signature(weight)==(glue,triality,hypercharge),
                 "wrong marked charge in the physical D8 chart")
         rows.append({"field": leg, "root": [str(w) for w in weight], "Y": hypercharge,
                      "color_triality": triality, "internal_glue_class": glue, "D_phase": str(sp.I**glue)})
