@@ -30,3 +30,11 @@ def test_nontrivial_winding_is_not_an_L0_internal_symmetry():
     from f1_family_index import radial_time_covariance
     data=radial_time_covariance()
     assert [row["commutes_with_L0"] for row in data]==[True,False,False,False]
+
+
+def test_same_four_marks_and_determinant_cannot_fix_relative_index():
+    from f1_family_index import finite_mark_blindness
+    evidence=finite_mark_blindness()
+    assert evidence["same_four_mark_matrices"]
+    assert evidence["same_full_determinant_function"]=="z"
+    assert evidence["separated_relative_indices"]==[0,-3]

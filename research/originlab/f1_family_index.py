@@ -60,8 +60,35 @@ def radial_time_covariance(n=6):
     assert [v["commutes_with_L0"] for v in replies]==[True,False,False,False]
     return replies
 
+def finite_mark_blindness():
+    """Two S4-equivariant unit-determinant-winding loops agreeing at all four marks."""
+    q,p=projectors()
+    z,f=sp.symbols("z f",nonzero=True)
+    reference_only=z*q+p
+    relative_with_counterflow=z*f**(-3)*q+f*p
+    assert sp.simplify(reference_only.det()-z)==0
+    assert sp.simplify(relative_with_counterflow.det()-z)==0
+    assert relative_with_counterflow.subs(f,1)==reference_only
+    assert relative_with_counterflow.subs(f,-1)==-reference_only
+    # f(e^(i theta))=1 outside (pi/8,3pi/8), and
+    # exp(i*(8 theta-pi)) inside this arc: continuous, winding one.
+    marks=[sp.Integer(0),sp.pi/2,sp.pi,3*sp.pi/2]
+    assert all(not (sp.pi/8 < angle < 3*sp.pi/8) for angle in marks)
+    assert sp.simplify(sp.exp(sp.I*(8*sp.pi/4-sp.pi)))==-1
+    left=index_data(1,0)
+    right=index_data(-2,1)
+    assert left["det_winding"]==right["det_winding"]==1
+    assert left["relative_index"]==0 and right["relative_index"]==-3
+    return dict(status="EXACT_FINITE_MARK_NONIDENTIFIABILITY",
+                same_four_mark_matrices=True,same_full_determinant_function="z",
+                separated_relative_indices=[0,-3],
+                explicit_unmeasured_angle="pi/4",
+                required_original_observation="A source-certified continuous four-mark family loop and its sector-resolved winding, not four samples or determinant alone")
+
+
 def controls():
     q,p=projectors()
+    mark_nonidentifiability=finite_mark_blindness()
     radial_covariance=radial_time_covariance()
     assert q*q==q and p*p==p and q*p==sp.zeros(4)
     assert q.rank()==1 and p.rank()==3
@@ -96,6 +123,7 @@ def controls():
         unit_determinant_winding_with_three_relative=dict(k0=-2,k3=1),
         primitive_winding_alone_selects_no_family=True,
         conjugate_pair_total_index=0,radial_time_covariance=radial_covariance,
+        finite_mark_nonidentifiability=mark_nonidentifiability,
         physical_source_identity_proved=False,
         original_r113_values=None,physical_mirror_decoupling_proved=False,
         next_original_observation="Same-source weighted P1 four-mark loop, determinant winding, conjugate boundary domains, positive time, whole selector and absolute R113 reference")

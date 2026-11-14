@@ -37,3 +37,18 @@ symmetry commuting with unmodified radial L0. A physical version
 must be an oriented seam defect, spectral-flow operation, or a
 source-derived time-dependent boundary change. This is a conditional
 exclusion, not a proof of P1 source uniqueness.
+
+## Stronger nonidentifiability even with the full determinant function
+
+Let U_A(z)=zQ+P. For theta in (pi/8,3pi/8), let
+f(exp(i theta))=exp(i(8 theta-pi)), and let f=1 outside this arc.
+The phase f is continuous, equals 1 at the four original circle
+marks 1,i,-1,-i, and winds once. Define
+U_B(z)=z f(z)^(-3) Q+f(z)P. Then det U_A=det U_B=z
+for EVERY z and U_A=U_B at ALL FOUR MARKS, but the relative
+winding changes from zero to one (relative index from 0 to -3).
+At theta=pi/4 the two matrix symbols are negatives of one another.
+Hence even complete determinant data plus four discrete matrix
+samples do not determine physical family winding; the source must
+supply the continuous sector-resolved loop, a topology certificate,
+or sufficient regularity bounds for unambiguous interpolation.
