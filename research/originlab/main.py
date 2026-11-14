@@ -21,9 +21,9 @@ from backends import inverse_rank, lean_check
 from verify import car_replay, clock_test, digest, eigenvalue_test, r102
 
 HERE = Path(__file__).resolve().parent
-CAMPAIGNS = ("r113", "r113_synthesis", "source_bridge", "marked_search", "double_cell", "moving_carrier", "affine_polarization", "affine_operators", "f1_family_index", "r102", "bell", "clock", "identifiability", "four_mark_selection",
+CAMPAIGNS = ("r113", "r113_synthesis", "source_bridge", "marked_search", "double_cell", "moving_carrier", "affine_polarization", "affine_operators", "affine_car", "weak_return_rank", "f1_family_index", "r102", "bell", "clock", "identifiability", "four_mark_selection",
              "spectral_source_controls", "empirical_source_audit", "p0", "f1")
-FINITE_CONTROLS = ("double_cell", "moving_carrier", "affine_polarization", "affine_operators", "f1_family_index")
+FINITE_CONTROLS = ("double_cell", "moving_carrier", "affine_polarization", "affine_operators", "affine_car", "weak_return_rank", "f1_family_index")
 
 
 def atomic_json(path, payload):
@@ -142,6 +142,12 @@ def execute(campaign, root, args, suggestion_rows, retained_rows, prior_question
         return controls()
     if campaign == "affine_operators":
         from affine_operators import controls
+        return controls()
+    if campaign == "affine_car":
+        from affine_car import controls
+        return controls()
+    if campaign == "weak_return_rank":
+        from weak_return_rank import controls
         return controls()
     if campaign == "f1_family_index":
         from f1_family_index import controls

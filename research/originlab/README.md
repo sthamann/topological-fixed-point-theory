@@ -197,6 +197,18 @@ binds the bare and prepared word forms to the same source, time and
 reference. The consumer reports the absolute bare comparison separately
 from normalized Ward agreement.
 
+Run `--campaign weak_return_rank` for the six late D8 weak legs. The
+neutral excess return span first reaches rank six at grade two.
+Products of one, two and three returns span cumulative dimensions six,
+24 and 36. The phase-sensitive ordered triple distinguishes two strictly
+positive densities that agree on all shorter words.
+
+Run `--campaign affine_car` for the independent free D8 fermion control.
+It reconstructs the pair current kernel and the weak doublet Casimir.
+Its quadratic currents carry only D8 pair roots. The original marked
+spinor ends and the common weighted P1 reference require their own field
+map and source.
+
 Run `--campaign affine_operators` for the operator-level source. It builds
 the actual mode operators of the level-one E8 lattice construction in the
 fixed D8 chart and applies them to exact Fock vectors. These currents change
