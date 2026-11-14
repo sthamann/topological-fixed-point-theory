@@ -220,10 +220,32 @@ centre and glue, generate only A1 x E7 with the marked plane. The conserved
 grading is the parity of the pairing with the weak slot root `e4 - e5`. All
 112 missing currents are weak doublets and all carry hypercharge. The
 colour neutral D8 pair currents among them have glue class 2 and
-hypercharge of modulus 1/2. The reported next original observation is one
-ordered word with a weak doublet current on the same weighted source, time
-and absolute reference. These are statements about the given affine vacuum
+hypercharge of modulus 1/2. These are statements about the given affine vacuum
 module. They carry no weighted R113 value and no physical source identity.
+
+The weak doublet section checks the follow-up of the parallel session on
+the same operators. The parity is conjugation by the centre of the weak
+SU(2), so a neutral word contains an even number of doublet currents. The
+even currents span an index-two sublattice with system A1 x E7, and every
+one of the 112 doublet currents alone completes them to E8. Each doublet
+current splits its weight as 1/4 on the weak root and 3/4 on E7. In the
+affine vacuum, words in even currents equal those of the E7 x SU(2) vacuum
+at level one and cannot show the doublet sector. This does not extend to a
+physical source with a different time evolution. The roots
+`gamma = e1+e6`, `alpha = e4-e6` and `delta = e1+e4` form a triangle with
+the charges of a down quark singlet, a weak doublet with hypercharge 1/2
+and a quark doublet. The neutral word `J^(-delta) J^gamma J^alpha` has the
+same `min(m,n)` kernel as the marked word. The weak Casimir of the zero
+modes gives 3/4 inside the doublet word and 0 on the marked vector, which
+is the reported next original observation. The marked roots with the
+colour and weak roots generate A4 x A1, then E6 with `alpha`, then E7 and
+E8 with `e6-e7` and `e7-e8`. These eight roots are a lattice basis. The six
+intermediate paths to each quark doublet weight span one line on grade one
+and rank four on grade two, namely one common direction and the three
+family coordinates as oscillator polarizations. Two class-one spinor
+currents with equal family weight never close on a current. Equal charges
+of affine currents do not identify them with quark or Higgs fields, a
+Yukawa coupling or three physical families.
 
 - [SymPy](https://github.com/sympy/sympy) executes exact matrix and polynomial arithmetic.
 - [Z3](https://github.com/Z3Prover/z3) provides inverse integer synthesis, with exact witness replay.

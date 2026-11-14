@@ -74,3 +74,26 @@ def test_wrong_kernel_and_wrong_level_are_rejected():
     assert doubled.vertex(gamma, -1, doubled.vacuum()) != {}       # weight two field, no current algebra
     assert A.current_algebra(doubled, frame, sorted(A.closure((A.MARKED_P1, A.MARKED_P2))), (-1, 0, 1),
                              [doubled.vacuum()]) is None
+
+
+def test_weak_doublet_extension(receipt):
+    doublet = receipt["weak_doublet_extension"]
+    assert doublet["single_odd_current_completes_even_algebra"] == {"tested": 112, "all_reach_e8": True}
+    assert doublet["even_sublattice_index"] == 2
+    assert [row["system"] for row in doublet["ladder"]] == [["A2"], ["A1", "A4"], ["E6"], ["E7"], ["E8"]]
+    assert [row["dimension"] for row in doublet["ladder"]] == [8, 27, 78, 133, 248]
+    assert doublet["quark_doublet_paths"]["span_rank_each"] == 1
+    assert doublet["quark_doublet_paths"]["grade_two_span_rank_each"] == 4
+    assert doublet["spinor_bracket_family_weights"]["equal_family_weight_pairs"] == 0
+
+
+def test_weak_casimir_separates_the_two_words_with_equal_kernel():
+    frame, _ = A.lattice_frame()
+    fock = A.LatticeFock([[A.dot(a, b) for b in frame] for a in frame])
+    alpha, p2, gamma = (A.integral(frame, r) for r in (A.DOUBLET_ALPHA, A.MARKED_P2, A.MARKED_GAMMA))
+    doublet = fock.vertex(alpha, -2, fock.vacuum())
+    assert A.weak_casimir(fock, frame, doublet) == fock.combine((Fraction(3, 4), doublet))
+    assert A.weak_casimir(fock, frame, fock.vertex(p2, -2, fock.vacuum())) == {}
+    assert A.weak_casimir(fock, frame, fock.vertex(gamma, -1, fock.vacuum())) == {}
+    triplet = fock.vertex(A.integral(frame, A.WEAK_ROOT), -1, fock.vacuum())
+    assert A.weak_casimir(fock, frame, triplet) == fock.combine((2, triplet))     # spin one control

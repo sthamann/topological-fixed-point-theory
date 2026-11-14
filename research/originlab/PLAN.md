@@ -123,6 +123,15 @@ two-time rectangle, on the same weighted form and absolute reference.
 This check was run without the local Atlas and without the original
 weighted source. F1 remains open.
 
+The follow-up replaces a bare doublet insertion by the neutral word
+J^(-delta) J^gamma J^alpha with alpha = e4-e6 and delta = e1+e4. Its scalar
+kernel equals the marked kernel, so agreement of that kernel proves
+nothing new. The weak Casimir between the first two insertions gives 3/4
+against 0 and is the discriminating native test. In the affine vacuum the
+even words coincide with the E7 x SU(2) level-one vacuum. Whether the
+original P1 process produces the (56,2) extension with a positive local
+weighted response remains the open source obligation.
+
 1. Build an independent endpoint evaluator, typed process language, exact
    search and certificate engine. Read the live Atlas for provenance. Preserve source IDs, input hashes,
    proof scope and the distinction between unavailable and false.

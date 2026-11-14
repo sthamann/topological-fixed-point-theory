@@ -564,6 +564,171 @@ def joint_return(fock, frame):
             "marked_plane_commutators": marked_commutators}
 
 
+DOUBLET_ALPHA = (0, 0, 0, 2, 0, -2, 0, 0)          # e4 - e6, weak doublet, Y = 1/2
+DOUBLET_DELTA = add(MARKED_GAMMA, DOUBLET_ALPHA)   # e1 + e4, colour triplet weak doublet, Y = 1/6
+
+
+def simple_roots(system):
+    """Simple roots of a closed root system for one generic height function."""
+    height = (1009, 811, 613, 419, 211, 103, 41, 7)
+    positive = [r for r in system if sum(x*y for x, y in zip(r, height)) > 0]
+    require(2*len(positive) == len(system), "height function must be generic")
+    sums = {add(a, b) for a in positive for b in positive}
+    return sorted(r for r in positive if r not in sums)
+
+
+def determinant(matrix):
+    rows = [[Fraction(x) for x in row] for row in matrix]
+    value = Fraction(1)
+    for column in range(len(rows)):
+        pivot = next((i for i in range(column, len(rows)) if rows[i][column]), None)
+        if pivot is None:
+            return Fraction(0)
+        if pivot != column:
+            rows[column], rows[pivot] = rows[pivot], rows[column]
+            value = -value
+        value *= rows[column][column]
+        for i in range(column+1, len(rows)):
+            factor = rows[i][column]/rows[column][column]
+            if factor:
+                rows[i] = [x-factor*y for x, y in zip(rows[i], rows[column])]
+    return value
+
+
+def unit(index):
+    return tuple(2 if i == index else 0 for i in range(8))
+
+
+def weak_casimir(fock, frame, vector):
+    """Quadratic Casimir of the zero modes of the weak slot root, spin j gives j(j+1)."""
+    beta = integral(frame, WEAK_ROOT)
+    minus = tuple(-x for x in beta)
+    orientation = fock.sign(beta, minus)              # [E_beta,0 , E_-beta,0] = orientation * H_beta,0
+    cartan = fock.heisenberg(beta, 0, fock.heisenberg(beta, 0, vector))
+    up_down = fock.vertex(beta, 0, fock.vertex(minus, 0, vector))
+    down_up = fock.vertex(minus, 0, fock.vertex(beta, 0, vector))
+    return fock.combine((Fraction(1, 4), cartan), (Fraction(orientation, 2), up_down),
+                        (Fraction(orientation, 2), down_up))
+
+
+def doublet_extension(fock, frame, word_size):
+    """Weak doublet sector: algebra, lattice and operator checks of the neutral doublet word."""
+    even = frozenset(r for r in ROOTS if dot(r, WEAK_ROOT) % 2 == 0)
+    odd = sorted(ROOT_SET-even)
+    weights = {w: sum(1 for r in ROOTS if dot(r, WEAK_ROOT) == w) for w in (-2, -1, 0, 1, 2)}
+    require(weights == {-2: 1, -1: 56, 0: 126, 1: 56, 2: 1}, "weak weight census changed")
+    require(all(len(closure(even | {r})) == 240 for r in odd),
+            "every single weak doublet current must complete the even algebra to E8")
+
+    # Lattice of the even currents: index two, and the split of the conformal weight.
+    basis = simple_roots(even)
+    index_square = determinant([[dot(a, b) for b in basis] for a in basis])
+    require(len(basis) == 8 and index_square == 4, "even currents must span an index-two sublattice")
+    require(all(abs(dot(r, WEAK_ROOT)) == 1 for r in odd), "odd currents must have weak weight one half")
+    weak_weight = Fraction(1, 2)*Fraction(1, 2)       # |projection on the weak root|^2 / 2
+    require(weak_weight == Fraction(1, 4) and 1-weak_weight == Fraction(3, 4), "conformal weight split changed")
+
+    # Charges of the doublet triangle and the generated ladder.
+    signatures = {name: signature_row(root) for name, root in
+                  (("gamma", MARKED_GAMMA), ("alpha", DOUBLET_ALPHA), ("delta", DOUBLET_DELTA))}
+    require([(row["colour_triality"], row["hypercharge"], row["glue_class"]) for row in signatures.values()]
+            == [(1, "-1/3", 2), (0, "1/2", 2), (1, "1/6", 0)] and dot(MARKED_GAMMA, DOUBLET_ALPHA) == -1
+            and DOUBLET_DELTA in ROOT_SET, "doublet triangle charges changed")
+    e = [unit(i) for i in range(8)]
+    steps = (("marked", (MARKED_P1, MARKED_P2)),
+             ("colour and weak roots", (add(e[0], neg(e[1])), add(e[1], neg(e[2])), WEAK_ROOT)),
+             ("weak doublet e4-e6", (DOUBLET_ALPHA,)),
+             ("internal e6-e7", (add(e[5], neg(e[6])),)),
+             ("internal e7-e8", (add(e[6], neg(e[7])),)))
+    seeds, ladder = [], []
+    for name, extra in steps:
+        seeds.extend(extra)
+        system = closure(seeds)
+        ladder.append({"added": name, "system": components(system), "roots": len(system),
+                       "dimension": len(system)+rank(sorted(system))})
+    require([row["system"] for row in ladder] == [["A2"], ["A1", "A4"], ["E6"], ["E7"], ["E8"]]
+            and determinant([[dot(a, b) for b in seeds] for a in seeds]) == 1,
+            "the eight ladder roots must be a lattice basis passing through E6 and E7")
+    without_doublet = closure([r for r in seeds if r != DOUBLET_ALPHA])
+    require(components(without_doublet) == ["A1", "E6"], "ladder without the doublet must stay proper")
+
+    # Operator checks.
+    gamma, alpha, delta, p2 = (integral(frame, r) for r in (MARKED_GAMMA, DOUBLET_ALPHA, DOUBLET_DELTA, MARKED_P2))
+    minus_delta = tuple(-x for x in delta)
+    zero = ((0,)*8, ())
+    word, casimir_word = {}, {}
+    for m, n in product(range(1, word_size+1), repeat=2):
+        first = fock.vertex(alpha, -n, fock.vacuum())
+        tail = lambda state: fock.vertex(minus_delta, m, fock.vertex(gamma, n-m, state)).get(zero, Fraction(0))
+        word[m, n] = tail(first)
+        casimir_word[m, n] = tail(weak_casimir(fock, frame, first))
+    orientation = word[1, 1]
+    require(orientation in (1, -1) and all(orientation*value == min(m, n) for (m, n), value in word.items()),
+            "the neutral doublet word must have the same min(m,n) kernel")
+    require(all(casimir_word[key] == Fraction(3, 4)*word[key] for key in word),
+            "the weak Casimir must act as 3/4 inside the doublet word")
+    for n in range(1, 5):
+        singlet = fock.vertex(p2, -n, fock.vacuum())
+        doublet = fock.vertex(alpha, -n, fock.vacuum())
+        require(weak_casimir(fock, frame, singlet) == {} and
+                weak_casimir(fock, frame, doublet) == fock.combine((Fraction(3, 4), doublet)),
+                "weak Casimir values 0 and 3/4 failed on the first charged vectors")
+    lower = integral(frame, add(DOUBLET_ALPHA, neg(WEAK_ROOT)))
+    partner = fock.vertex(tuple(-x for x in integral(frame, WEAK_ROOT)), 0, fock.vertex(alpha, -1, fock.vacuum()))
+    target = fock.vertex(lower, -1, fock.vacuum())
+    require(partner in (target, fock.combine((-1, target))), "weak lowering must reach the partner current")
+
+    # The six intermediate paths to each quark doublet weight end on one line.
+    path_counts = []
+    for colour, weak in product(range(3), (3, 4)):
+        goal = add(e[colour], e[weak])
+        vectors, excited = [], []
+        for r in ROOTS:
+            rest = add(goal, neg(r))
+            if (rest in ROOT_SET and charge_signature(r)[1:] == (1, Fraction(-1, 3)) and dot(r, WEAK_ROOT) == 0
+                    and charge_signature(rest)[1:] == (0, Fraction(1, 2)) and abs(dot(rest, WEAK_ROOT)) == 1):
+                vectors.append(fock.vertex(integral(frame, r), 0,
+                                           fock.vertex(integral(frame, rest), -1, fock.vacuum())))
+                excited.append(fock.vertex(integral(frame, r), -1,
+                                           fock.vertex(integral(frame, rest), -1, fock.vacuum())))
+        keys = sorted({key for v in vectors for key in v})
+        require(len(vectors) == 6 and rank([[v.get(key, 0) for key in keys] for v in vectors]) == 1
+                and all(fock.inner(v, v) == 1 for v in vectors), "six unit paths must span one line")
+        # One grade higher the paths differ by their oscillator polarization e_colour + s e_r.
+        keys = sorted({key for v in excited for key in v})
+        require(rank([[v.get(key, 0) for key in keys] for v in excited]) == 4 and
+                sorted(fock.inner(a, b) for a in excited for b in excited).count(2) == 6,
+                "grade-two paths must span the colour direction and the three family coordinates")
+        path_counts.append(len(vectors))
+
+    # Family labels in the bracket of two class-one spinor currents.
+    spinors = [r for r in ROOTS if r[0] % 2 and charge_signature(r)[0] == 1]
+    pairs = [(a, b) for a in spinors for b in spinors if add(a, b) in ROOT_SET]
+    require(len(spinors) == 64 and pairs and all(a[5:] != b[5:] and charge_signature(add(a, b))[0] == 2
+                                                  for a, b in pairs),
+            "two class-one spinor currents with equal family weight must not close on a current")
+    return {
+        "weak_weight_census": {str(k): v for k, v in weights.items()},
+        "single_odd_current_completes_even_algebra": {"tested": len(odd), "all_reach_e8": True},
+        "even_sublattice_index": 2, "odd_sector_conformal_weights": {"A1": "1/4", "E7": "3/4", "sum": "1"},
+        "doublet_triangle": signatures,
+        "neutral_doublet_word": "J^(-delta) J^gamma J^alpha, delta = gamma + alpha",
+        "neutral_doublet_word_coefficients": f"min(m,n) for m,n <= {word_size}, identical to the marked word",
+        "weak_casimir": {"marked_first_vector": "0", "doublet_first_vector": "3/4",
+                         "inside_doublet_word": "3/4 of the word at every tested mode pair"},
+        "ladder": ladder, "ladder_gram_determinant": 1,
+        "ladder_without_doublet": ["A1", "E6"],
+        "quark_doublet_paths": {"weights": len(path_counts), "paths_each": 6, "span_rank_each": 1,
+                                "grade_two_span_rank_each": 4,
+                                "grade_two_reading": "one common direction and the three family Cartan "
+                                                     "coordinates 6, 7, 8 as oscillator polarizations"},
+        "spinor_bracket_family_weights": {"pairs": len(pairs), "equal_family_weight_pairs": 0},
+        "scope": "Statements about the affine E8 vacuum module. Vacuum words in weak-even currents equal "
+                 "those of the E7 x SU(2) level-one vacuum, so they cannot show the doublet sector there. "
+                 "A physical source with its own time evolution is not covered by this blindness.",
+    }
+
+
 def controls(word_size=6, algebra_roots=10):
     frame, completion = lattice_frame()
     gram = [[dot(a, b) for b in frame] for a in frame]
@@ -653,6 +818,7 @@ def controls(word_size=6, algebra_roots=10):
                 for name, rule in CLASSES.items()}
     require(searches["any_root"]["minimal_extra_currents"] == 6, "rank bound must be attained")
     parity = weak_parity(marked)
+    doublet = doublet_extension(fock, frame, min(word_size, 4))
     blocked = sorted(name for name, row in searches.items() if not row["reaches_e8"])
     require(all(searches[name]["conserved_parities"] == [list(WEAK_ROOT)] for name in blocked),
             "every blocked class must be blocked by the weak slot parity alone")
@@ -676,11 +842,12 @@ def controls(word_size=6, algebra_roots=10):
         "mark_completion": searches,
         "blocked_completion_classes": blocked,
         "weak_slot_parity": parity,
+        "weak_doublet_extension": doublet,
         "next_original_observation": (
-            "One ordered word containing a weak doublet current outside the marked plane, on the same "
-            "weighted source, time and absolute reference. The marked word and every word in "
-            "hypercharge neutral currents stay in A1 x E7 and cannot separate sources that differ "
-            "on the 112 weak doublet currents."),
+            "The neutral ordered word J^(-delta) J^gamma J^alpha with alpha = e4 - e6 and delta = e1 + e4, "
+            "with the weak Casimir between the first two insertions, on the same weighted source, time "
+            "and absolute reference. Its scalar kernel equals the marked one, so only the Casimir value "
+            "3/4 against 0 separates the doublet word from the marked word."),
         "physical_source_identity_proved": False, "weighted_r113_values": None,
         "scope": "Original affine E8 vacuum module at level one in the fixed D8 chart. "
                  "The native R113 binding, weighted form and absolute reference remain open.",
