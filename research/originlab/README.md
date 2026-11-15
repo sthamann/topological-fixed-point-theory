@@ -81,6 +81,35 @@ parent. It cannot be used to assign a physical source value. See
 and [independent test cases](test_seam_cohomology.py).
 `--finite-controls-only` includes this control.
 
+## Ramond spinor local-weight-one repair: canonical E8 chiral VOA, physical source still missing
+
+The old 128 even CAR Fock states have different occupation
+energies under the finite depolarizing source transfer. The standard
+16-Majorana CHIRAL CFT instead assigns all 128 positive-chirality
+RAMOND ground spinor fields conformal weight h=16/16=1.
+Together with the 120 Neveu–Schwarz SO16 bilinear currents they
+give a genuine standard abstract E8_1 weight-one current candidate.
+An independently constructed D8+ even unimodular root lattice
+reproduces all 240 roots, all 57,600 integral pairings and all
+13,440 ordered dot-minus-one sums, with a simple-root Gram
+determinant one and native (60,64,60,64) quarter phases.
+
+Run:
+
+    python3 -B research/originlab/main.py --out /tmp/f1-ramond \
+      --campaign f1_ramond_e8_grade_bridge
+
+This is a **mathematically sound repair of the weight-one algebraic
+candidate** once a local chiral fermion CFT, spin structure and
+GSO/simple-current projection are supplied. It is NOT the result of
+second-quantizing the finite M3 CP transfer, and has NOT derived a
+local positive original TFPT Q0, chosen P1 spin structure, the actual
+R113 time, an interacting chiral 3+1D Standard Model or a graviton.
+See [the exact full source and Ramond gate](F1-PREGEOMETRIC-SOURCE-CLOSURE-20261115.md)
+and [five new tests](test_f1_ramond_e8_grade_bridge.py).
+All six new F1 source modules have **38 locally passed regression
+tests**, required in the core workflow. F1 OPEN.
+
 ## One internal positive source -> 8 CAR modes -> 16 Majoranas -> candidate E8, exact affine grade blocker
 
 New fifth exact source-first campaign:
