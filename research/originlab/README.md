@@ -81,6 +81,64 @@ parent. It cannot be used to assign a physical source value. See
 and [independent test cases](test_seam_cohomology.py).
 `--finite-controls-only` includes this control.
 
+## Important correction: regional SL2 transports the marks; it is NOT an internal fixed-mode unitary
+
+Run these two exact finite campaigns:
+
+    python3 -B research/originlab/main.py --out /tmp/p1-moving-source \
+      --campaign p1_moving_divisor_origin --campaign p1_operator_closure
+
+The original four parabolic vector fields span the real noncompact
+Möbius sl2. On a fixed four-puncture divisor its naive action
+creates DOUBLE poles (at z=1 already -1/4 for the derivative of f0),
+and no nonzero infinitesimal PSL2 vector field fixes four distinct
+marks. Correct regional transport MUST move the divisor D(t) itself.
+The exact transported meromorphic five and log-form three modes
+give the standard Sym4+Sym2 complex sl2 representations. Their
+canonical 3->5 evaluation inclusion is D4/quarter compatible but
+NOT full sl2 compatible, and the f2 orientation compensator is
+NOT a globally sl2 invariant line. Every regional Möbius motion
+preserves the cross ratio, so regional symmetry alone cannot
+select the original square.
+
+The noncompact real SL2 has NO nontrivial finite-dimensional
+positive unitary representation. A positive compact SU2 metric
+can be chosen on the complexified polynomial modes, but the
+physical source must derive the reflection, Wick/real form and
+actual moving-field map. **The earlier interpretation of the
+abstract positive principal SU3 Lie closure as a direct physical
+consequence of the original real regional sl2 is too strong.**
+
+Two independent conditional n=4 selection theorems are now exact:
+
+1. If the log-form module F_n=Sym^(n-2)(C²) carries a NONZERO
+   sl2-equivariant internal Lie bracket satisfying Jacobi, then
+   it is perfect and semisimple, its nontrivial sl2 derivations
+   are inner, and irreducibility forces dim F_n=3, n=4.
+   For n=8 the candidate binary sextic third transvectant
+   explicitly FAILS Jacobi with residual 5,184,000 x^6.
+2. If one complete unital quantum operator algebra End(F_n)
+   is built from precisely the scalar plus both original
+   geometric sectors F_n and C_n, then
+   (n-1)^2=1+(n-1)+(n+1), uniquely n=4. At this n,
+   End(C³)=spin0+spin1+spin2, dimensions 1+3+5,
+   with a positive full M3 associative algebra. Its
+   traceless compact bracket is su3.
+
+Crucial source-type exclusion: interpreting the eight geometric
+modenames as **eight independent complex chiral adjoint SU3
+fermions** gives affine SU3 index/level SIX, not the level-one
+regular root-colour subalgebra inside native E8. The same
+dimension 8 does not mean the same physical current.
+
+See [the source-first mathematical proof and falsifiers](P1-MOVING-DIVISOR-PRIMITIVE-CLOSURE-20261115.md),
+[p1_moving_divisor_origin.py](p1_moving_divisor_origin.py)
+and [p1_operator_closure.py](p1_operator_closure.py).
+Ten targeted regression tests were independently executed locally
+and are now required by GitHub Core Verification. No original
+weighted Q0, actual R113 values, physical 3+1D or graviton is
+claimed. **F1 remains open.**
+
 ## Independent principal SU3 route from the original regional sl2 and 5+3 source
 
 Two new finite/named OriginLab campaigns check a DIFFERENT fundamental
