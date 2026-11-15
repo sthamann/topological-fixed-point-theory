@@ -50,6 +50,10 @@ class F1OriginalSourceTheoremTests(unittest.TestCase):
         self.assertFalse(r["first_four_moments_derive_unique_UV_profile"])
         self.assertEqual(r["complete_Laplace_profiles_differ"],
                          "(1-exp(-t))^4/30")
+        self.assertTrue(r["both_normalize_mass_and_have_unique_stationary_measures"])
+        self.assertTrue(r["both_preserve_the_same_four_prescribed_moments"])
+        self.assertTrue(r["both_contract_projectively_to_one_ray_in_one_step"])
+        self.assertTrue(r["still_distinct_complete_Bernstein_profiles"])
 
     def test_integrable_RG_repair_has_valid_unique_fixed_profile(self):
         r=self.report["repaired_positive_RG_comparison"]
