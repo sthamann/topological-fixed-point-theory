@@ -51,6 +51,23 @@ class P1PrincipalSU3Tests(unittest.TestCase):
         self.assertEqual(self.data["quarter_fixed_E8_A2_root_subalgebras"],44)
         self.assertFalse(self.data["physical_colour_SU3_embedding_selected"])
 
+    def test_native_c4_profiles_classify_all_1120_regular_su3_embeddings(self):
+        r=self.data
+        self.assertEqual(r["E8_A2_quarter_grade_profiles"],
+                         {"(2, 2, 2, 2)":480,"(4, 0, 4, 0)":180,
+                          "(4, 2, 0, 2)":416,"(8, 0, 0, 0)":44})
+        self.assertEqual(r["quarter_balanced_E8_A2_subalgebras"],480)
+
+    def test_geometric_balanced_su3_cannot_commute_with_full_native_SM(self):
+        r=self.data
+        self.assertEqual(r["quarter_balanced_A2_commuting_with_native_colour"],48)
+        self.assertEqual(r["A2_commuting_with_native_full_colour_weak_hypercharge"],10)
+        self.assertEqual(r["quarter_balanced_A2_commuting_with_native_full_SM"],0)
+        self.assertEqual(r["native_full_SM_A2_centralizer_quarter_profiles"],
+                         {"(4, 2, 0, 2)":6,"(8, 0, 0, 0)":4})
+        self.assertEqual(r["full_SM_no_go_scope"],
+                         "regular E8 root A2 embedding in pinned physical D8 charge chart")
+
     def test_same_D4_character_does_not_choose_between_CAR_and_su3(self):
         self.assertFalse(self.data["8_complex_free_fermion_interpretation_excluded"])
         self.assertFalse(self.data["original_weighted_Q0_and_R113_produced"])
