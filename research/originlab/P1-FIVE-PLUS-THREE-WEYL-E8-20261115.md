@@ -64,6 +64,17 @@ where alpha_7 denotes the *actual* undoubled seventh root listed above. All E8 l
 
 This is a constructive proof of Weyl conjugacy of the TWO ENTIRE order-four root characters, not just the same character dimension. Every root phase is compared in the independent regression. The standard E8 current bracket is respected by Weyl automorphisms at the abstract Lie algebra level.
 
+## The Weyl word is not an SO16 Bogoliubov map
+
+A complete root-type replay of the explicit 31-reflection witness proves the following transition table in the **same original D8+ root chart**:
+
+| root type before w | pair/D8 root after w | spinor root after w |
+| --- | ---: | ---: |
+| 112 original D8 pair roots | 48 | 64 |
+| 128 original spinor roots | 64 | 64 |
+
+For example, the doubled D8 pair root (2,0,2,0,0,0,0,0) maps to the half-integer spinor root (-1,-1,1,-1,1,1,1,-1). Thus this Weyl transformation is an automorphism of the **full E8 root algebra** but does NOT normalize the fixed original SO16 pair-current root system. No linear orthogonal rotation/Bogoliubov change of the original 16 free Majorana fields could implement this specific w as a root permutation. The physical chiral Spin16 half-spinor *extension* is therefore genuinely load-bearing for identifying the two C4 gradings on the native current algebra. This does not itself prove that the spinor extension is present in the original P1 source.
+
 ## Crucial physical limits
 
 1. This starts with D=mu4; the v512 nonsquare V4 counterwitness remains. It does not derive the square from an unmarked spacetime-free rule.
