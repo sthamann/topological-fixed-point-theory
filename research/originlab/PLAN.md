@@ -31,6 +31,8 @@ source pairing. This is only a necessary representation mechanism and
 still does **not** give three independent colors and three families:
 one rank-3 neutral channel is not a 3x3 color-family carrier.
 
+The same original geometry has a stronger D4-equivariant exact sequence: evaluate the five sections at the two quarter-rotation fixed points 0 and infinity; the rank-two quotient leaves a rank-three kernel, identified with the logarithmic differential family space by multiplication with dz/z and its orientation sign. The full D4 five-mode commutant has four irreducible blocks (1,1,1,2): even with fixed vacuum, unit gap and total energy trace nine, the spectra (0,1,2,3,3) and (0,1,2,2,4) give returns 1/4 and 1/16 at log 2. This makes the native three-channel time response a necessary original source discriminator, not an optional scan.
+
 The new seam_cohomology OriginLab campaign and finite regression tests
 implement these exact positive and negative checks. They are **not**
 native weighted source producers. The source-first next task remains
