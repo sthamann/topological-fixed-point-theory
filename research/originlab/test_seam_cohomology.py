@@ -27,6 +27,23 @@ class SeamCohomologyTests(unittest.TestCase):
             self.assertEqual(sp.simplify(-omega[j].subs(z,1/z)/z**2
                                          -omega[2-j]),0)
 
+    def test_two_fixed_points_give_equivariant_exact_sequence(self):
+        r=sp.diag(1,sp.I,-1,-sp.I,1)
+        s=-sp.Matrix(5,5,lambda i,j:int(i+j==4))
+        er=sp.eye(2)
+        es=sp.Matrix([[0,1],[1,0]])
+        ev=sp.Matrix([[-1,0,0,0,0],[0,0,0,0,1]])
+        inc=sp.Matrix(5,3,lambda i,j:int(i==j+1))
+        fr=sp.diag(sp.I,-1,-sp.I)
+        fs=sp.Matrix(3,3,lambda i,j:int(i+j==2))
+        self.assertEqual((ev.rank(),inc.rank(),(ev*inc).rank()),(2,3,0))
+        self.assertEqual(ev*r,er*ev)
+        self.assertEqual(ev*s,es*ev)
+        self.assertEqual(r*inc,inc*fr)
+        self.assertEqual(s*inc,-inc*fs)
+        self.assertTrue(self.report["D4_orientation_twisted_three_plus_two_exact_sequence"])
+        self.assertEqual(self.report["fixed_point_evaluation_rank"],2)
+
     def test_new_character_five_to_three_plus_two_decomposition(self):
         result = self.report
         self.assertEqual(result["five_mode_c4_multiplicities"],
