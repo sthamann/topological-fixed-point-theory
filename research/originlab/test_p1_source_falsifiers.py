@@ -1,7 +1,7 @@
 """Original-source countermodel and determinant regression checks."""
 import unittest
 import sympy as sp
-from p1_source_falsifiers import controls, four_mark_family, gaussian_arc_determinant, calderon_hardy_obstruction
+from p1_source_falsifiers import controls, four_mark_family, gaussian_arc_determinant, full_gaussian_gluing, calderon_hardy_obstruction
 
 
 class OriginalP1SourceGateTests(unittest.TestCase):
@@ -31,6 +31,14 @@ class OriginalP1SourceGateTests(unittest.TestCase):
                        [0,-b,a+b,-a],[-b,0,-a,a+b]])
         self.assertEqual(sp.factor((lap+sp.ones(4,4)/4).det()),8*a*b*(a+b))
         self.assertEqual(sp.factor(lap[:3,:3].det()),2*a*b*(a+b))
+
+    def test_complete_gaussian_gluing_cancels_vertex_square_bias(self):
+        result=full_gaussian_gluing()
+        self.assertTrue(result["physical_free_boson_partition_independent_of_subdivision"])
+        self.assertTrue(result["vertex_only_square_saddle_canceled_by_interior_modes"])
+        self.assertEqual(result["combined_determinant"],
+                         "64*perimeter (128*pi when perimeter=2*pi)")
+        self.assertFalse(result["physical_F1_modulus_selected"])
 
     def test_two_fourier_modes_refute_local_calderon_deck_equality(self):
         result=calderon_hardy_obstruction()
