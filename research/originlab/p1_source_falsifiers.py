@@ -95,6 +95,48 @@ def gaussian_arc_determinant():
     }
 
 
+def relative_polarization_clock():
+    """Candidate dictionary: cross ratio from two relative boundary involutions.
+
+    Not an identification of the actual original Calderon with a deck
+    involution. Only a finite rank-two parameterized source hypothesis.
+    """
+    t=sp.symbols("t",positive=True)
+    R=sp.diag(1,-1)
+    X=sp.Matrix([[0,1],[1,0]])
+    a=(1-t*t)/(1+t*t)
+    b=2*t/(1+t*t)
+    C=a*R+b*X
+    P=(sp.eye(2)+C)/2
+    U=C*R
+    u=(1+sp.I*t)/(1-sp.I*t)
+    lam=-t*t
+    require(sp.simplify(C*C-sp.eye(2))==sp.zeros(2) and
+            sp.simplify(P*P-P)==sp.zeros(2) and P==P.H,
+            "relative Cauchy polarization no longer orthogonal")
+    require(sp.simplify(U.H*U-sp.eye(2))==sp.zeros(2) and
+            sp.simplify(U.charpoly().as_expr().subs(sp.Symbol("lambda"),u))==0,
+            "relative double-polarization phase not the v512 mark phase")
+    trace=sp.factor(sp.trace(U))
+    require(sp.simplify(lam-(trace-2)/(trace+2))==0,
+            "relative phase trace fails to recover the mark cross ratio")
+    require(U.subs(t,1)**2==-sp.eye(2) and
+            sp.simplify(U.subs(t,sp.Rational(1,2)).trace()-sp.Rational(6,5))==0 and
+            sp.simplify(u.subs(t,sp.Rational(1,2))-(3+4*sp.I)/5)==0,
+            "square and nonsquare relative phase witnesses changed")
+    return {
+      "status":"EXACT_FINITE_RELATIVE_POLARIZATION_CANDIDATE",
+      "relative_unitary":"U=(2 P_C-I) R_deck (proposed, not original identified)",
+      "eigenphases":"u,u^(-1), u=(1+i*t)/(1-i*t)",
+      "cross_ratio_from_trace":"lambda=(trace(U)-2)/(trace(U)+2)=-t^2",
+      "square_iff":"trace(U)=0 iff t=1 (t>0); then U^2=-I",
+      "original_non_square_witness":"t=1/2 -> u=(3+4i)/5, trace(U)=6/5",
+      "microlocal_source_intertwiner_derived":False,
+      "original_p1_quarter_clock_derived":False,
+      "physical_R113_values_produced":False,
+    }
+
+
 def full_gaussian_gluing():
     """Check complete free-circle gluing, including all interior arc modes.
 
@@ -175,6 +217,7 @@ def controls():
     return {
       "four_mark_family":four_mark_family(),
       "gaussian_arc_determinant":gaussian_arc_determinant(),
+      "relative_polarization_clock":relative_polarization_clock(),
       "full_gaussian_gluing":full_gaussian_gluing(),
       "calderon_hardy":calderon_hardy_obstruction(),
       "physical_source_identity_proved":False,
