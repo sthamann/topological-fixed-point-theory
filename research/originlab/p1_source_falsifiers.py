@@ -75,7 +75,7 @@ def gaussian_arc_determinant():
     zshape=d*(sp.pi-d)
     require(sp.diff(zshape,d).subs(d,sp.pi/2)==0 and
             sp.diff(zshape,d,2)==-2 and
-            sp.simplify(sp.pi**2/4-zshape)==(d-sp.pi/2)**2,
+            sp.simplify(sp.pi**2/4-zshape-(d-sp.pi/2)**2)==0,
             "Gaussian square extremum not unique")
     cw=2*sp.atan(sp.Rational(1,2))
     ratio=sp.simplify(4*cw*(sp.pi-cw)/sp.pi**2)
