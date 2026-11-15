@@ -22,8 +22,8 @@ from verify import car_replay, clock_test, digest, eigenvalue_test, r102
 
 HERE = Path(__file__).resolve().parent
 CAMPAIGNS = ("r113", "r113_synthesis", "source_bridge", "marked_search", "double_cell", "moving_carrier", "affine_polarization", "affine_operators", "affine_car", "colour_ward", "weak_source", "weak_folded_clock", "p1_field_search", "weak_return_rank", "four_mark_geometry", "f1_family_index", "r102", "bell", "clock", "identifiability", "four_mark_selection",
-             "spectral_source_controls", "empirical_source_audit", "composed_search", "p0", "f1")
-FINITE_CONTROLS = ("double_cell", "moving_carrier", "affine_polarization", "affine_operators", "affine_car", "colour_ward", "weak_source", "weak_return_rank", "four_mark_geometry", "f1_family_index")
+             "spectral_source_controls", "empirical_source_audit", "composed_search", "seam_cohomology", "p0", "f1")
+FINITE_CONTROLS = ("double_cell", "moving_carrier", "affine_polarization", "affine_operators", "affine_car", "colour_ward", "weak_source", "weak_return_rank", "four_mark_geometry", "f1_family_index", "seam_cohomology")
 
 
 def atomic_json(path, payload):
@@ -158,6 +158,9 @@ def execute(campaign, root, args, suggestion_rows, retained_rows, prior_question
         from composed_search import run as search_composed, square_control
         return search_composed(json.loads(args.composed_search_input.read_text()) if args.composed_search_input
                                else square_control())
+    if campaign == "seam_cohomology":
+        from seam_cohomology import controls
+        return controls()
     if campaign == "double_cell":
         from double_cell import replay
         return replay()
