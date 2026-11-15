@@ -260,6 +260,19 @@ def original_r113_exterior_contract_gate():
             sp.factor(sp.trace(gu)-(sp.eye(2)+U).det())==0 and
             sp.factor(sp.trace(gm)-(sp.eye(2)-U).det())==0,
             "R113 exterior vacuum and full trace were conflated")
+    # The very same two-mode operator U has an ordinary trace and a
+    # parity-graded supertrace. This no longer needs a second -U
+    # evolution, but STILL differs from the original R113 empty cap.
+    parity=sp.diag(1,-1,-1,1)
+    even_projector=(sp.eye(4)+parity)/2
+    odd_projector=(sp.eye(4)-parity)/2
+    even_trace=sp.factor(sp.trace(even_projector*gu))
+    odd_trace=sp.factor(sp.trace(odd_projector*gu))
+    supertrace=sp.factor(sp.trace(parity*gu))
+    require(even_trace==2 and odd_trace==sp.factor(sp.trace(U)) and
+            sp.factor(supertrace-(sp.eye(2)-U).det())==0 and
+            sp.factor(sp.trace(gu)*supertrace-16*t*t/(1+t*t)**2)==0,
+            "native parity grading failed to reproduce determinant pair")
     full_trace=sp.factor(sp.trace(gu)*sp.trace(gm))
     require(sp.factor(full_trace-16*t*t/(1+t*t)**2)==0 and
             (vac.T*gu*vac)[0]*(vac.T*gm*vac)[0]==1,
@@ -270,6 +283,10 @@ def original_r113_exterior_contract_gate():
       "native_zero_fock":"<Omega_F,Gamma(R[b])Omega_F>=1",
       "proposed_full_trace":"Tr Gamma(U)=det(I+U)",
       "opposite_channel_full_trace":"Tr Gamma(-U)=det(I-U)",
+      "same_operator_graded_trace":"Str((-1)^F Gamma(U))=det(I-U)",
+      "same_operator_even_sector_trace":"2",
+      "same_operator_odd_sector_trace":"2*(1-t*t)/(1+t*t)",
+      "ordinary_times_supertrace":"16*t*t/(1+t*t)^2",
       "paired_full_trace":"16*t*t/(1+t*t)^2",
       "paired_empty_contraction":"1",
       "source_scalar_s_and_selection_could_contain_pair":True,
