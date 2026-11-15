@@ -122,6 +122,33 @@ def controls():
                 for r in ROOTS),
             "Weyl-conjugated geometric C4 fails a native E8 root charge")
 
+    # This Weyl equivalence is intrinsically E8 and NOT an O(16)
+    # fermion Bogoliubov map: it does not preserve the original
+    # D8 bilinear-current root subsystem. Count both directions
+    # separately to reject a false "16 free fermions suffice" claim.
+    d8_roots=[root for root in ROOTS if all(x%2==0 for x in root)]
+    spinor_roots=[root for root in ROOTS if all(x%2 for x in root)]
+    def wroot(root):
+        for k in WEYL_WORD:
+            root=reflect(root,SIMPLE_DOUBLED[k-1])
+        return root
+    bilinear_images=Counter(
+        "bilinear" if all(x%2==0 for x in wroot(root)) else "spinor"
+        for root in d8_roots)
+    spinor_images=Counter(
+        "bilinear" if all(x%2==0 for x in wroot(root)) else "spinor"
+        for root in spinor_roots)
+    require(bilinear_images=={"bilinear":48,"spinor":64} and
+            spinor_images=={"bilinear":64,"spinor":64},
+            "Weyl root conjugation unexpectedly preserves native D8")
+    # A concrete original pair-current root transformed into a true
+    # half-integer spinor current by the same 31 reflections:
+    source_pair=(2,0,2,0,0,0,0,0)
+    target_spinor=(-1,-1,1,-1,1,1,1,-1)
+    require(wroot(source_pair)==target_spinor and
+            source_pair in ROOTS and target_spinor in ROOTS,
+            "representative 16-Majorana bilinear-to-spinor witness changed")
+
     return {
       "status":"EXACT_GEOMETRIC_C4_TO_NATIVE_E8_Weyl_CONJUGACY",
       "original_four_mark_mode_dimensions":[5,3],
@@ -141,6 +168,10 @@ def controls():
       "native_glue_torus_weight":list(NATIVE_GLUE_TORUS),
       "weyl_transformed_doubled_torus":list(transformed),
       "weyl_difference":"w(q_geom) = q_native - 4*alpha_7",
+      "Weyl_root_type_conversion":{"D8_to_D8":48,"D8_to_spinor":64,"spinor_to_D8":64,"spinor_to_spinor":64},
+      "bilinear_root_to_spinor_example":{"from":[2,0,2,0,0,0,0,0],"to":[-1,-1,1,-1,1,1,1,-1]},
+      "this_Weyl_transformation_can_be_a_plain_O16_Bogoliubov_rotation":False,
+      "full_E8_spinor_extension_required_for_this_Weyl_word":True,
       "all_240_native_root_phase_equalities_proved":True,
       "geometry_to_fermion_CAR_source_identified":False,
       "five_plus_three_independent_physical_modes_proved":False,
