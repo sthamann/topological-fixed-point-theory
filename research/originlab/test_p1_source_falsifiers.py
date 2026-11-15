@@ -46,6 +46,10 @@ class OriginalP1SourceGateTests(unittest.TestCase):
                          "lambda=(trace(U)-2)/(trace(U)+2)=-t^2")
         self.assertEqual(result["square_iff"],
                          "trace(U)=0 iff t=1 (t>0); then U^2=-I")
+        self.assertEqual(result["relative_determinant_ratio"],
+                         "det(I-U)/det(I+U)=t^2=-lambda")
+        self.assertTrue(result["equal_even_odd_determinants_iff_square"])
+        self.assertFalse(result["original_Pfaffian_line_exchange_derived"])
         self.assertFalse(result["microlocal_source_intertwiner_derived"])
         self.assertFalse(result["physical_R113_values_produced"])
 
