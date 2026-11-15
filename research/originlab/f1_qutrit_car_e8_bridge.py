@@ -5,6 +5,7 @@ independent complex CAR fields and physical original Q0/R113 are NOT derived.
 No finite Hilbert space represents a nonzero-level affine current algebra.
 """
 from collections import Counter
+from fractions import Fraction
 from math import lcm
 import sympy as sp
 from affine_operators import ROOTS, ROOT_SET, dot, components
@@ -195,6 +196,31 @@ def colour_branch():
             sum(labels.values())==240 and len(labels)==13,
             "248=(8,1)+(1,78)+(3,27)+(3bar,27bar) root branching failed")
 
+    # A2 orthogonal projection via the inverse Cartan matrix
+    # G^-1=(1/3)*[[2,1],[1,2]]. On ALL 162 off-diagonal E8
+    # roots the SU3 component has norm^2=2/3 (weight 1/3) and
+    # E6 component norm^2=4/3 (weight 2/3).
+    cartan_inv=((Fraction(2,3),Fraction(1,3)),
+                (Fraction(1,3),Fraction(2,3)))
+    norms=Counter()
+    for root in ROOTS:
+        da,db=dot(root,a),dot(root,b)
+        a2norm=(cartan_inv[0][0]*da*da+
+                (cartan_inv[0][1]+cartan_inv[1][0])*da*db+
+                cartan_inv[1][1]*db*db)
+        e6norm=Fraction(2)-a2norm
+        norms[(a2norm,e6norm)]+=1
+    require(norms=={
+        (Fraction(2),Fraction(0)):6,
+        (Fraction(0),Fraction(2)):72,
+        (Fraction(2,3),Fraction(4,3)):162},
+        "exact E8 SU3(1/3) + E6(2/3) mixed current weights changed")
+    c3=Fraction(8,1+3)   # SU3_k1: dim=8, dual Coxeter=3
+    c6=Fraction(78,1+12) # E6_k1: dim=78, h∨=12
+    c8=Fraction(248,1+30)
+    require((c3,c6,c8)==(2,6,8) and c3+c6==c8,
+            "conformal central charge c(SU3_1)+c(E6_1) != c(E8_1)")
+
     # IMPORTANT: the grouped GEOM_TORUS ordering interleaves
     # C5 and F3: the three F3 axes are 3,5,7, NOT 5,6,7.
     source_a,source_b=_root_at(3,5),_root_at(5,7)
@@ -244,6 +270,12 @@ def colour_branch():
       "native_colour_E6_commutant_dimension_including_Cartan":78,
       "charged_E8_color_weights_each_multiplicity":27,
       "charged_E8_color_weight_count":6,
+      "all_162_mixed_E8_roots_have_conformal_weight_split":["SU3=1/3","E6=2/3","total=1"],
+      "E8_colour_E6_root_norm_classes":{"SU3_only":6,"E6_only":72,"mixed":162},
+      "affine_level_one_conformal_central_charges":{"SU3":2,"E6":6,"E8":8},
+      "free_three_colour_fermions_plus_five_spectators_central_charges":["3","5"],
+      "E6_coset_central_charge_after_SU3":["(3-2)+5=6"],
+      "physical_E6_coset_identified_by_central_charge_alone":False,
       "exact_E8_branching":"248=(8,1)+(1,78)+(3,27)+(3bar,27bar)",
       "source_GEOM_TORUS_in_interleaved_C5_and_F3_mode_order":list(GEOM_TORUS),
       "source_F3_complex_mode_axes":[3,5,7],
