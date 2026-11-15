@@ -57,5 +57,24 @@ class SeamSourceObstructions(unittest.TestCase):
         self.assertEqual(s.integrate(1, (t, 0, s.oo)), s.oo)
 
 
+    def test_joint_z12_marked_grades_do_not_fix_transfer(self):
+        # Latest marked word: 1+2+9 = 0 mod 12. Grades and the
+        # vacuum return may agree while the positive transfer differs.
+        z = s.exp(2*s.pi*s.I/12)
+        phase = s.diag(1, z, z**3)
+        a, b, c = s.zeros(3), s.zeros(3), s.zeros(3)
+        a[1, 0], b[2, 1], c[0, 2] = 1, 1, 1
+        for j, grade in ((a, 1), (b, 2), (c, 9)):
+            self.assertEqual((phase*j*phase.inv()-z**grade*j).applyfunc(s.simplify), s.zeros(3))
+        self.assertEqual(c*b*a, s.diag(1, 0, 0))
+        vacuum = s.Matrix([1, 0, 0])
+        results = []
+        for high_energy in (2, 3):
+            transfer = s.diag(1, s.Rational(1,2), s.Rational(1,2)**high_energy)
+            results.append((vacuum.T*c*transfer*b*transfer*a*vacuum)[0])
+        self.assertEqual(results, [s.Rational(1,8), s.Rational(1,16)])
+        # This is a graded 3-state control, not a full affine E8 module.
+
+
 if __name__ == "__main__":
     unittest.main()
