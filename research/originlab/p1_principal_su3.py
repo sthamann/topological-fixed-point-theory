@@ -115,7 +115,7 @@ def controls():
             sg*rg*sg==rg.inv(),
             "geometric D4 and principal SU3 characters not exactly sign twisted")
     require([_commutant_rank([_rep(sym,quarter),_rep(sym,inversion)]),
-             _commutant_rank([_rep(anti,quarter),_rep(anti,inversion)])]==[2,1],
+             _commutant_rank([_rep(anti,quarter),_rep(anti,inversion)])]==[4,2],
             "D4 commutants of spin 2 and spin 1 changed")
 
     # The original meromorphic central section f2=z²/(z⁴-1)
