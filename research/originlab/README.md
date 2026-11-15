@@ -81,6 +81,35 @@ parent. It cannot be used to assign a physical source value. See
 and [independent test cases](test_seam_cohomology.py).
 `--finite-controls-only` includes this control.
 
+## Charged E8 root triple and determinant source test
+
+The exact P1 source search also provides the named and finite campaign
+p1_charged_modulus:
+
+    python3 -B research/originlab/main.py --out /tmp/originlab-e8-p1 --campaign p1_charged_modulus
+
+It exhausts all 13,440 ordered pairs of E8 roots with inner product -1
+and verifies that their **single free neutral chiral vertex triangle**
+has amplitude modulus proportional to 1/sin(delta). Therefore it has
+a minimum, not a maximum, at the original square. The algebraic
+no-interior-maximum theorem extends to **any single neutral**
+positive-metric free-boson four-mark vertex word. This is not a
+claim about a sum of channels or the original interacting source.
+
+A **conditional** original-source candidate multiplies that free
+E8 triple by BOTH scalar determinant lines of the proposed relative
+boundary polarization, producing an amplitude proportional to
+sin(delta), uniquely maximized at the square. The required net
+physical determinant exponent must be greater than 1/2; at 1/2 it
+only gives a flat modulus. Exact withheld model ratios are
+3/5, 4/5 and 12/13 at t=tan(delta/2)=1/3, 1/2 and 2/3,
+respectively. These are explicitly **synthetic**, not R113 source
+values. The original all-field determinant/Pfaffian/ghost/eta factors,
+charge and source map remain missing. Full proof obligations are in
+[P1-CHARGED-RESIDUAL-ORIGIN-20261115.md](P1-CHARGED-RESIDUAL-ORIGIN-20261115.md),
+with finite regressions in [test_p1_charged_modulus.py](test_p1_charged_modulus.py).
+These controls do not solve F1.
+
 ## Primitive P1 source falsification gate (15 November 2026)
 
 Run `python3 -B research/originlab/main.py --campaign p1_source_falsifiers
