@@ -81,6 +81,48 @@ parent. It cannot be used to assign a physical source value. See
 and [independent test cases](test_seam_cohomology.py).
 `--finite-controls-only` includes this control.
 
+## Source candidate: original four-mark elliptic double cover spectral determinant
+
+The **actual v512 four-point invariant** lifts to a rectangular
+unit-area elliptic double cover with x=t²/(1+t²) and
+y=K(1-x)/K(x). A mathematically rigorous published theorem
+(M. Faulhuber, Mathematische Zeitschrift 2021,
+doi:10.1007/s00209-020-02507-7) states that the regularized
+scalar Laplacian determinant D(y)=y*abs(eta(i*y))^4 has a
+UNIQUE MAXIMUM at y=1 among unit-area rectangular flat tori.
+The exact positive eta-product derivative gives strict
+log-concavity. This is a **conditional, source-adjacent**
+square selector, unlike the bare chiral E8 character whose
+absolute value has a minimum at the square along this family.
+
+Original TFPT source *statistics* matter: a free bosonic path
+integral supplies D^(-1/2) and prefers NOT to maximize the
+square. A positive net fermion/ghost/other determinant power
+D^m could select it, but the actual original all-field BRST,
+Pfaffian and eta factors and their metric/area prescriptions
+are uncomputed.
+
+If the native all-field source were actually proved to
+factor as |chi_E8|²*D^m (a new, unproven source premise), the
+exact square log Hessian along y is 19.1570717979704
+minus 1.29821132491543*m. Therefore a **local** square
+maximum needs m>14.7565126188; the first INTEGER m is 15.
+Neither this m nor even the factorization is an actual
+physical TFPT value. A 2D elliptic double-cover determinant
+is different from the original free 1D circle arc-gluing
+determinant, so their opposite extremal properties are not
+contradictory.
+
+Run:
+
+    python3 -B research/originlab/main.py --out /tmp/elliptic-source \
+      --campaign p1_elliptic_determinant_source
+
+See [source proof and original F1 gates](P1-ELLIPTIC-DETERMINANT-SOURCE-20261115.md)
+and [exact regression](test_p1_elliptic_determinant_source.py).
+Physical P1 Q0, one-sided map, R113 4 values, true time
+and 3+1D universal gravity remain unsolved.
+
 ## F1 P1 modulus: native E8 chiral saddle and actual source-stiffness gate (15 November)
 
 Three new **source-adjacent exact** OriginLab campaigns eliminate a
