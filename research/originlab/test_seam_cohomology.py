@@ -44,6 +44,17 @@ class SeamCohomologyTests(unittest.TestCase):
         self.assertTrue(self.report["D4_orientation_twisted_three_plus_two_exact_sequence"])
         self.assertEqual(self.report["fixed_point_evaluation_rank"],2)
 
+    def test_logarithmic_winding_and_orientation_are_same_form(self):
+        z=sp.symbols("z")
+        eta=1/z  # coefficient of dz/z, not the APS eta invariant
+        self.assertEqual(sp.residue(eta,z,0),1)
+        self.assertEqual(sp.simplify(sp.I*eta.subs(z,sp.I*z)-eta),0)
+        self.assertEqual(sp.simplify(-eta.subs(z,1/z)/z**2+eta),0)
+        self.assertEqual(self.report["dlog_winding_around_zero"],
+                         "1 (geometric, not an original physical P1 response)")
+        self.assertEqual(self.report["candidate_index_times_angle_normalization"],
+                         "1/(8*pi) (physical identification unproved)")
+
     def test_new_character_five_to_three_plus_two_decomposition(self):
         result = self.report
         self.assertEqual(result["five_mode_c4_multiplicities"],
