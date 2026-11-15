@@ -8,6 +8,35 @@ The current [plan audit](PLAN-AUDIT.md) covers the original requirements and
 the three later sets of scenario tests. The first priority is the
 [same-source R113 test](R113-R104-RELATIONAL.md).
 
+## 15 November 2026 · Charged P1 field search and execution
+
+The fixed folded chart provides three early marked lines in
+$(\bar 3,1)_{1/3}$ and two early minus winding weak lines in
+$(1,2)_{1/2}$. The six original affine products realize
+$(3,2)_{1/6}$ on these lines. The coupled W benchmark with the
+original neutral pair on both ends has exact two-time rank four
+for nonzero coupling. A resolved rank-five time rectangle excludes
+that fixed W word.
+
+The new two-face collar search checks all six charged components in
+both original quarter clocks. On those fixed spectra an intrinsic
+variation and co-moving face frames can yield identical covariance
+and heat derivatives. The jointly observed ambient hypercharge
+derivative removes that ambiguity in the charged class. The solver
+recovers the intrinsic field and replays covariance, charge and heat
+together, including a negative heat control. The physical next input
+is the original absolute two-face jet, with the independently anchored
+hypercharge matrix and its cross-face blocks, on the same P1 time and
+weighted reference.
+
+The Boolean lane exhausts all 64 observed-compatible rules in the
+declared binary radius-one grammar. Both answers of its best probe
+leave 32 rules. The autonomous runner extends its saved resolution
+bound and records the original source block separately from failures.
+The ordinary runner continues when the local Atlas is absent. The
+public R006 replay includes compressed copies of the exact original
+benchmark bytes. F1 and the weighted R113 values remain open.
+
 ## 14 November 2026: energy moments and regional motion
 
 Fundamental plan 361, Atlas `32bb9da024c4595c2a8380f7`. The original Higgs
@@ -111,26 +140,112 @@ are still open. The next native test is the colour-2 horizontal matrix
 element on a source-identified Cartan pair, followed by the marked
 two-time rectangle before any claim of physical closure.
 
-The operator campaign of 14 November replaces the closed affine kernels by
-explicit level-one mode operators and adds a class-constrained completion
-search for the mark alphabet. The marked word and all hypercharge neutral
-currents preserve the parity of the weak slot root and generate only
-A1 x E7. A source that agrees with the affine vacuum on every such word is
-still undetermined on the 112 weak doublet currents. The double-cell weak
-slot exchange is the finite control for exactly this direction. The next
-native test therefore adds one weak doublet current word to the marked
-two-time rectangle, on the same weighted form and absolute reference.
-This check was run without the local Atlas and without the original
-weighted source. F1 remains open.
+The operator campaign of 14 November independently checks the closed affine
+kernels with level-one mode operators and adds a class-constrained completion
+search for the mark alphabet. The marked letters together with individually
+hypercharge neutral letters generate A1 x E7 and preserve the weak slot
+parity. All 112 odd roots are weak doublets. For the original test replace
+the middle leg by `e1+e4` and `e6-e4`. Their charges add to the original
+middle root, so the complete word stays neutral. The two orders have
+distinct mode coefficients. Measure both on the same weighted form, time
+map and absolute reference. The double-cell slot exchange inside the even
+weak SU(2) supplies a separate parity test on its own carrier. The original
+weighted endpoint remains open. F1 remains in progress.
 
-The follow-up replaces a bare doublet insertion by the neutral word
-J^(-delta) J^gamma J^alpha with alpha = e4-e6 and delta = e1+e4. Its scalar
-kernel equals the marked kernel, so agreement of that kernel proves
-nothing new. The weak Casimir between the first two insertions gives 3/4
-against 0 and is the discriminating native test. In the affine vacuum the
-even words coincide with the E7 x SU(2) level-one vacuum. Whether the
-original P1 process produces the (56,2) extension with a positive local
-weighted response remains the open source obligation.
+For the affine weak split the mode coefficients extend to every $m,n\geq 1$.
+In the forward order the lattice contraction of $(-p_1,a,b,p_2)$ has
+four pairings equal to $-1$, on $(0,1),(0,3),(1,2),(2,3)$, and two
+pairings equal to zero. In $|z_0|>|z_1|>|z_2|>|z_3|$, expand each
+inverse difference as $z_i^{-1}\sum_{k\geq0}(z_j/z_i)^k$.
+Let $u,v,w,x$ be the four nonnegative expansion indices in edge order.
+The modes $(m,1-m,n-1,-n)$ require $u+v=m-1$, $u-w=m-1$ and
+$x-w=n-1$. Thus $u=m-1$, $x=n-1$, $v=w=0$ is the unique term.
+The forward coefficient is the cocycle times $1$. Interchanging the
+middle modes subtracts the cocycle times the original middle word,
+whose coefficient is $\min(m,n)$. Hence the normalized pair is
+$1/\min(m,n)$ and $1/\min(m,n)-1$ for all positive mode indices in this
+affine vacuum convention. The 36 independently evaluated mode pairs
+check the fixed $D_8$ dictionary and phase. The weighted R113 forms
+still need their own source binding.
+
+### Weak fields, signed winding and the native source
+
+In the fixed $D_8$ chart hold the middle root γ = e₁ + e₆ fixed.
+Seek a right root r with Y = 1/2, weak weight of modulus one, zero
+colour Cartan weight and vanishing colour step action. Require γ + r to
+be a root. Exactly six roots qualify. They form one $D_8$ doublet and
+two spinor doublets, exchanged by the reflection at e₇ − e₈. Completing
+the colour orbit gives six components per alternative and three for the
+marked word. All have ordered A2 pairings −1, with the cocycle-corrected
+coefficient μ(m,n) = min(m,n). Six gauge step generators annihilate each
+completed tensor. The Cartan actions vanish because the three charges
+sum to zero.
+
+Chronologically the marked word carries (bar3, 1) at Y = 1/3 and then
+(1, 1) at Y = 0. All three alternatives carry (1, 2) at Y = 1/2 and then
+(3, 2) at Y = 1/6. A fixed external weak rotation in the first interval
+therefore reads a normalized doublet trace on all alternatives. Two
+rotations compose as the ordered product of the interval matrices. A
+fixed colour rotation reads the conjugate defining character in the first
+marked interval and the defining character in the second weak interval.
+For correlated dynamical links the weighted fibre integral needs its
+actual gauge covariant dressing.
+
+The original coweight −2e₈ gives signed interval windings (−1,−1),
+(0,0), (−1,−1), (+1,+1) in marked, D8, minus spinor and plus spinor order.
+Their glue pairs are (1,3), (2,0), (3,1), (3,1). On the early interval
+compose the quarter insertion of that coweight with the weak diagonal
+element with first entry z = (3 + 4i)/5. Its k-th normalized response is
+
+$$\big((-i)^k,\;c_k,\;(-i)^k c_k,\;i^k c_k\big),\qquad
+c_k=\tfrac12(z^k+\bar z^k).$$
+
+Powers zero through three give determinant
+−5376/3125 + 44928i/15625. They recover four absolute coefficients in
+the specified linear response class. Power four adds an independent
+check, including at a radial point with both widths unseen. The quarter
+insertion is an external diagnostic of the same coweight, distinct from
+the closed cocharacter loop and the derived old $U_G^4$ half phase.
+The uninserted radial coefficient is the sum of min(m,n) x^m y^n over
+positive m,n. Expanding min as a sum over common lower cutoffs gives
+xy/[(1−x)(1−y)(1−xy)]. The campaign emits these affine targets while the
+absolute whole weighted form remains an original input.
+
+On the original 96 dimensional fibre write the two actual Higgs blocks
+as A from the conjugate sterile neutrino to the lepton doublet and D
+from the right down quark to the left quark doublet. Their family ranks
+are three. Suppose the true affine lowering field is this Higgs
+adjoint F and the new charged field is X for δ = γ + α. The affine
+identity [F,[F,X]]=0 follows because δ−2α is no root. On the audited
+early weight, X cannot act because the shifted gauge sector is missing,
+and F squared vanishes. The projected double commutator is
+−2 D* X A*. It forces the corresponding block of X and both middle
+blocks of [F,X] to vanish. The same proof applies after enlargement
+when the old fibre reduces the alpha actions and gauge Cartans and the
+supplied charged field still has its required weight. An altered or
+nonreducing field map changes this hypothesis.
+
+For the polar normalization of that literal Higgs field, 16 disjoint
+full rank families give 48 doublets. The polar Cartan has only the
+weights +1 and −1. On its exterior space exp(iπ dΓ(Hα)) equals the physical
+fermion parity. Every even CAR operator has even adjoint weight, whereas
+the required δ field has weight +1. In a larger representation it must
+exchange the sectors of K = Π exp(iπ Hα). The horizontal A2 control and
+the original D8 pair action on a CAR vacuum realize that exchange when
+an alpha singlet mode is present. The horizontal model has zero return
+for alpha first and unit return for gamma first. These controls concern
+horizontal alpha and a first D8 pair, with no extrapolation to a
+physical negative mode on the weighted source.
+
+The original separated R104 DET16 block has a unique even ground and
+all odd states at energy two. Every odd insertion B from the ground
+returns with exp(−2t) times its initial squared norm. The excited even
+and odd dimensions are 32767 and 32768, so a time commuting odd mirror
+operator has rank at most 65534 and annihilates the ground. The code
+checks all sixteen Majorana ground returns and a thermal word with
+unequal intervals. A time neutral unitary odd spectator on this whole
+block is impossible. A coupled insertion or an energy compensation from
+another part of the source requires a new original field and time map.
 
 1. Build an independent endpoint evaluator, typed process language, exact
    search and certificate engine. Read the live Atlas for provenance. Preserve source IDs, input hashes,
@@ -163,7 +278,8 @@ Compare the original conditions in
 Use a standalone Python engine with exact arithmetic. The search and verifier
 do not import or execute the previous TFPT engines.
 The native replay has no dependency on a new Rust runtime or a second Atlas.
-The synthesis and inverse lanes use cvc5 and Z3. The finite campaign has an explicit
+The binary synthesis lane enumerates exact truth tables. The inverse lane
+uses Z3 when available. The finite campaign has an explicit
 carrier and finite search bound. Any later backend must document which
 additional assumptions it introduces and which question it can decide.
 
@@ -212,15 +328,3 @@ operational interface. Continuum physical equivalence and source selection
 require separate proofs.
 
 The six-route campaign implements the tests in [Six origin routes](SIX-ROUTES.md). The first physical priority is a shared source binding for exact Petz recovery and original moment closure. Regional reconstruction, inflow, and the full scattering problem remain open beyond the finite tests.
-
-## 14 November 2026: family winding and mirror obstruction
-
-The finite campaign f1_family_index checks S4-equivariant four-mark
-Hardy symbols U(z)=z^k0 Q+z^k3 P. Their determinant winding is k0+3k3.
-A conditional primitive determinant winding one with relative k3=1
-forces a twice counter-winding reference k0=-2. Complex conjugate
-symbols cancel Fredholm indices and a finite unitary boundary
-completion exists. This excludes the *minimal symmetric doubled model*
-as a proof of three physical chiral generations, not general P1.
-The original weighted R113 kernel and the physical boundary domain
-remain open. See FAMILY-INDEX-20261114.md. Do not promote F1 status.

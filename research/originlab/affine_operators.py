@@ -159,6 +159,7 @@ def completion_search(marked, allowed):
     negative result. Failed closed systems are remembered, so an
     unsuccessful search at the bound is exhaustive for the class.
     """
+    marked = tuple(marked)
     start = closure(marked)
     reachable = closure(set(marked) | set(allowed))
     if len(reachable) != 240:
@@ -167,6 +168,10 @@ def completion_search(marked, allowed):
                 "conserved_parities": conserved_parities(reachable)}
     allowed = sorted(allowed)
     bound = 8-rank(sorted(start))
+    basis = []
+    for root in marked:
+        if rank([*basis, root]) > len(basis):
+            basis.append(root)
     failed = set()
 
     def search(system, basis, extra):
@@ -183,7 +188,7 @@ def completion_search(marked, allowed):
         failed.add(system)
         return None
 
-    witness = search(start, list(marked), ())
+    witness = search(start, basis, ())
     if witness is None:
         return {"reaches_e8": True, "attains_rank_bound": False, "rank_bound": bound,
                 "closed_systems_exhausted": len(failed)}
@@ -199,6 +204,7 @@ def signature_row(root):
 
 
 WEAK_ROOT = (0, 0, 0, 2, -2, 0, 0, 0)            # exchanges the two weak carrier slots
+WEAK_SPLIT = ((2, 0, 0, 2, 0, 0, 0, 0), (0, 0, 0, -2, 0, 2, 0, 0))
 
 
 def weak_parity(marked):
@@ -415,6 +421,59 @@ def marked_word(fock, frame, size):
         state = fock.vertex(minus_p1, m, state)
         table[m, n] = state.get(((0,)*8, ()), Fraction(0))
     return table
+
+
+def weak_split_word(fock, frame, bare):
+    """Replace the marked middle root by an ordered pair of weak-odd currents."""
+    left, right = WEAK_SPLIT  # e1 + e4, e6 - e4
+    require(add(left, right) == MARKED_GAMMA and dot(left, right) == -1 and
+            (dot(left, WEAK_ROOT), dot(right, WEAK_ROOT)) == (1, -1),
+            "weak-odd split must return the marked middle root")
+    p1, p2, a, b = (integral(frame, r) for r in (MARKED_P1, MARKED_P2, left, right))
+    epsilon = fock.sign(a, b)
+    samples = []
+    for (m, n), value in bare.items():
+        early = fock.vertex(p2, -n, fock.vacuum())
+        forward = fock.vertex(a, 1-m, fock.vertex(b, n-1, early))
+        reverse = fock.vertex(b, n-1, fock.vertex(a, 1-m, early))
+        neutral = ((0,)*8, ())
+        ratios = [fock.vertex(neg(p1), m, state).get(neutral, 0)/(epsilon*value)
+                  for state in (forward, reverse)]
+        overlap = Fraction(1, min(m, n))
+        require(ratios == [overlap, overlap-1], "weak ordering no longer reproduces the marked commutator")
+        samples.append({"m":m,"n":n,"forward":str(ratios[0]),"reverse":str(ratios[1])})
+    return {"left_current":signature_row(left),"right_current":signature_row(right),
+            "mode_convention":"E_(a,1-m) E_(b,n-1); reverse swaps both complete letters",
+            "normalization":"divide by lattice cocycle epsilon(a,b) times the bare marked mode word",
+            "samples":samples,"forward_minus_reverse":"1",
+            "physical_source_identity_proved":False}
+
+
+def checked_weak_split(data, contract):
+    """Contract supplied same-source mode words and compare both affine orders."""
+    if data.get("doubled_middle_roots") != [list(root) for root in WEAK_SPLIT]:
+        raise ValueError("unexpected weak split root dictionary")
+    epsilon = data.get("bound_cocycle_sign")
+    if type(epsilon) is not int or epsilon not in (-1,1):
+        raise ValueError("bind the relative cocycle sign of the three actual currents")
+    seen, samples = set(), []
+    for row in data["samples"]:
+        m,n = row["m"],row["n"]
+        if not (type(m) is int and type(n) is int and 1 <= m <= 6 and 1 <= n <= 6 and (m,n) not in seen):
+            raise ValueError("use distinct positive mode pairs within the checked 6 by 6 grid")
+        seen.add((m,n))
+        bare,forward,reverse = [contract(row[key]) for key in ("bare_form","forward_form","reverse_form")]
+        difference = forward-reverse-epsilon*bare
+        target = Fraction(1,min(m,n))
+        ratios = [value/(epsilon*bare) for value in (forward,reverse)] if bare else None
+        samples.append({"m":m,"n":n,"absolute_bare":str(bare),"absolute_forward":str(forward),
+                        "absolute_reverse":str(reverse),"commutator_residual":str(difference),
+                        "relative_to_cocycle_times_bare":list(map(str,ratios)) if ratios else None,
+                        "affine_ratios_match":ratios == [target,target-1] if ratios else None})
+    if len(seen) < 2:
+        raise ValueError("supply at least two original mode pairs")
+    return {"status":"CHECKED_SUPPLIED_WEAK_SPLIT_FORMS","samples":samples,
+            "physical_source_identity_proved":False}
 
 
 def prepared_word(fock, frame, left, right, size):
@@ -770,6 +829,7 @@ def controls(word_size=6, algebra_roots=10):
     # coefficient is -i^(m+n-2) min(m,n). The sign of word[1,1] is a cocycle gauge.
     require(all(orientation*word[m, n] == min(m, n) for m, n in word),
             "operator word does not reproduce min(m,n)")
+    weak_order = weak_split_word(fock, frame, word)
     pair = (neg(MARKED_P1), MARKED_GAMMA)
     silent = (0, 2, -2, 0, 0, 0, 0, 0)
     require(all(sum(x*y for x, y in zip(silent, r)) == 0 for r in marked), "silent direction changed")
@@ -842,12 +902,16 @@ def controls(word_size=6, algebra_roots=10):
         "mark_completion": searches,
         "blocked_completion_classes": blocked,
         "weak_slot_parity": parity,
+        "weak_split_word": weak_order,
         "weak_doublet_extension": doublet,
         "next_original_observation": (
-            "The neutral ordered word J^(-delta) J^gamma J^alpha with alpha = e4 - e6 and delta = e1 + e4, "
-            "with the weak Casimir between the first two insertions, on the same weighted source, time "
-            "and absolute reference. Its scalar kernel equals the marked one, so only the Casimir value "
-            "3/4 against 0 separates the doublet word from the marked word."),
+            "Replace the marked gamma current by the two weak-odd D8 roots e1+e4 and e6-e4. "
+            "Read both orders before the outer selection on the same weighted source, times and "
+            "absolute empty reference. Together the legs retain the original gamma and the full "
+            "word is neutral. The commutator alone fixes their difference; read each order. "
+            "On the same source and reference also read the neutral doublet word "
+            "J^(-delta) J^gamma J^alpha with alpha = e4 - e6 and delta = e1 + e4. "
+            "Insert the weak Casimir in the first interval to separate its value 3/4 from the marked value 0."),
         "physical_source_identity_proved": False, "weighted_r113_values": None,
         "scope": "Original affine E8 vacuum module at level one in the fixed D8 chart. "
                  "The native R113 binding, weighted form and absolute reference remain open.",

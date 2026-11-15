@@ -53,9 +53,19 @@ def test_completion_needs_six_currents_and_one_weak_doublet(receipt):
     assert receipt["weak_slot_parity"]["colour_neutral_pair_doublets_glue_and_abs_hypercharge"] == [[2, "1/2"]]
 
 
+def test_neutral_weak_split_distinguishes_order_at_fixed_marked_middle(receipt):
+    probe = receipt["weak_split_word"]
+    rows = {(row["m"],row["n"]):(row["forward"],row["reverse"]) for row in probe["samples"]}
+    assert rows[1,1] == ("1","0")
+    assert rows[2,2] == ("1/2","-1/2")
+    assert rows[4,4] == ("1/4","-3/4")
+    assert probe["left_current"]["hypercharge"] == "1/6"
+    assert probe["right_current"]["hypercharge"] == "-1/2"
+
+
 def test_five_currents_never_complete_the_marked_plane():
     # Negative control for the rank bound: a seven-dimensional span cannot contain all roots.
-    marked = (A.MARKED_GAMMA, A.MARKED_P2)
+    marked = (A.MARKED_GAMMA, A.MARKED_P2, A.MARKED_P1)
     witness = A.completion_search(marked, A.ROOTS)["witness"]
     system = A.closure({*marked, *(tuple(r) for r in witness[:5])})
     assert A.rank(sorted(system)) == 7 and len(system) < 240

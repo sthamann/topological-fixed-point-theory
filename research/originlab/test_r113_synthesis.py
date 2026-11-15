@@ -1,9 +1,24 @@
 import unittest
+from pathlib import Path
+import os
 
+from native_weak_bridge import NATIVE, replay as native_weak_bridge
 from r113_synthesis import control, from_input, history_range, spectral_pair
 
 
 class R113SynthesisTests(unittest.TestCase):
+    def test_native_weak_graft_fails_even_with_free_coloured_matrices(self):
+        root = Path(os.environ.get("TFPT_REPO_ROOT",Path(__file__).resolve().parents[2]))
+        report = native_weak_bridge(root,root/NATIVE)
+        self.assertEqual(report["rank_per_colour_and_weak_weight"],[[[3]*5]*2]*3)
+        self.assertEqual(report["native_root_string"]["family_block_allowed_parameters"],0)
+        self.assertEqual([row["native_polar_rank"] for row in report["polar_car_parity"]],[48,48])
+        self.assertTrue(all(row["even_car_allowed_odd_weight_space"]==0 for row in report["polar_car_parity"]))
+        self.assertEqual(report["det16_spectator"]["maximum_time_commuting_odd_operator_rank"],65534)
+        self.assertEqual(report["det16_spectator"]["odd_ground_rank"],0)
+        self.assertEqual(report["det16_spectator"]["odd_ground_return"],"exp(-2*t) * ||B phi||^2")
+        self.assertTrue(all(value is None for value in report["original_values"].values()))
+
     def test_synthesizes_and_separates_two_positive_transfers(self):
         result = control()
         self.assertEqual(result["compatible_mixed_spectra"],2)

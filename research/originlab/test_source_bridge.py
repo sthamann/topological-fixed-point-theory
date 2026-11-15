@@ -32,4 +32,11 @@ def test_original_fixed_history_keeps_the_scalar_separate_from_the_trace():
         assert arb(fibre[key]).overlaps(arb(published_rounding))
     assert arb(fibre["log_unmarked_scalar_over_S"]) < arb(fibre["log_charged_trace_over_S"])
     assert fibre["physical_R113"] == dict.fromkeys(("Z0", "F0", "CUY"))
+    profiles = result["pointwise_affine_profiles"]
+    assert profiles["two_evaluation_sectors"]["charged_rank_outside_unit_return"] == 0
+    assert profiles["transfer_mixing_evaluation_sectors"]["noncommuting_profile_indices"] == [1]
+    rejected = profiles["scalar_average_with_extra_charged_path"]
+    assert rejected["profile_product_mismatches"] == []
+    assert rejected["profile_return_mismatches"] == [[1, 1]]
+    assert rejected["charged_rank_outside_unit_return"] == 1
     assert not result["physical_solution"]

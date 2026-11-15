@@ -17,7 +17,7 @@ import time
 
 from main import atomic_json, current_context, finite_observations
 from scenarios import DYNAMICS, TOPOLOGIES, discriminate
-from source import NATIVE, source_input_key
+from source import NATIVE, missing_source_result, source_input_key
 from verify import digest
 
 HERE = Path(__file__).resolve().parent
@@ -44,6 +44,7 @@ CASE_FIELDS = {
     "r104_variant":(set(),{"modes","phase_pi","modulus"}),
     "r113_orientation":(set(),{"early_radii","late","momentum","time"}),
     "r113_synthesis_case":({"input"},set()),
+    "p1_field_search":(set(),{"input"}),
     "marked_search":(set(),{"input"}),
     "rectangular_intertwiner":({"input"},set()),
     "relational_transition":({"input"},set()),
@@ -222,6 +223,22 @@ def execute(spec,root):
     if lane=="source_bridge":
         from source_bridge import replay
         return replay(root)
+    if lane=="weak_source":
+        from weak_source import affine_controls
+        return affine_controls()
+    if lane=="weak_folded_clock":
+        from weak_clock import controls
+        return controls(root)
+    if lane=="p1_field_search":
+        from p1_field_search import controls, from_input
+        return from_input(spec["input"]) if "input" in spec else controls(root)
+    if lane=="weak_return_rank":
+        from weak_return_rank import controls
+        from weak_return_completion import controls as completion
+        return {**controls(),"completion_orbits":completion()}
+    if lane=="four_mark_geometry":
+        from four_mark_geometry import controls
+        return controls()
     if lane=="original_regional_word":
         from original_paths import original_word
         return original_word(root)
@@ -314,6 +331,11 @@ def specifications(resolution,domain,toolchain,focus,seed_research=True):
     yield 100,{"lane":"r113","domain":str(domain)}
     yield 100,{"lane":"r113_synthesis","domain":str(domain)}
     yield 100,{"lane":"source_bridge"}
+    yield 99,{"lane":"weak_source"}
+    yield 99,{"lane":"weak_folded_clock"}
+    yield 99,{"lane":"p1_field_search"}
+    yield 99,{"lane":"weak_return_rank"}
+    yield 98,{"lane":"four_mark_geometry"}
     yield 100,{"lane":"original_affine_time"}
     yield 100,{"lane":"original_folded_time"}
     if seed_research:
@@ -347,7 +369,7 @@ def specifications(resolution,domain,toolchain,focus,seed_research=True):
     yield 87,{"lane":"complexes","vertices":min(resolution+1,5),"dimension":min(3,resolution)}
     yield 86,{"lane":"rational_equivalence","dimension":2,"height":1 if resolution==3 else 2}
     yield 85,{"lane":"stitch"}
-    yield 80,{"lane":"synthesis","limit":min(32,8*resolution),"split_depth":1}
+    yield 80,{"lane":"synthesis","limit":64,"split_depth":1}
     yield 70,{"lane":"rewrite"}
     if toolchain:
         yield 65,{"lane":"lean","toolchain":toolchain}
@@ -384,10 +406,15 @@ def watched_sources(root, domain):
     from folded_time import SOURCES as FOLDED_SOURCES
     from source_return import ORIGINAL_FILES
     from r113_synthesis import NATIVE_GRADE_CHECK
+    from native_weak_bridge import INPUTS as WEAK_INPUTS
+    from native_weak_w import INPUTS as W_INPUTS
+    from p1_field_search import TANGENT
     from source_bridge import INPUTS
     paths = {root/path for path in SOURCE_FILES}
-    paths.update(root/path for path in (*ORIGINAL_FILES,*SOURCES,*FOLDED_SOURCES,NATIVE_GRADE_CHECK,NATIVE,*INPUTS))
-    for record in json.loads(domain.read_bytes()).get("source_originals",[]):
+    paths.update(root/path for path in (*ORIGINAL_FILES,*SOURCES,*FOLDED_SOURCES,NATIVE_GRADE_CHECK,NATIVE,
+                                       *INPUTS,*WEAK_INPUTS,*W_INPUTS,TANGENT))
+    data = json.loads(domain.read_bytes()) if domain.is_file() else {}
+    for record in data.get("source_originals",[]):
         paths.add((root/record["path"]).resolve())
     return {str(path):digest(path) if path.is_file() else None for path in sorted(paths)}
 
@@ -490,6 +517,16 @@ def search_round(args,db,out,epoch,resolution,context,domain,focus,extras,dsl):
         "weighted_root_doublet":original.get("marked_root_doublet"),
         "original_r113_synthesis":results.get("r113_synthesis"),
         "original_source_bridge":results.get("source_bridge"),
+        "weighted_weak_gauge_responses":original.get("weak_gauge_responses"),
+        "weighted_weak_clock_sectors":original.get("weak_clock_sectors"),
+        "original_weak_folded_clock":results.get("weak_folded_clock"),
+        "weighted_p1_charged_jet":original.get("p1_charged_jet"),
+        "p1_field_search":results.get("p1_field_search"),
+        "weighted_weak_parity_bridge":original.get("weak_parity_bridge"),
+        "weighted_weak_return_grade_two":original.get("weak_return_grade_two"),
+        "affine_weak_source":results.get("weak_source"),
+        "affine_weak_return_rank":results.get("weak_return_rank"),
+        "four_mark_geometry":results.get("four_mark_geometry"),
         "finite_marked_search":results.get("marked_search"),
         "generated_complexes":{k:v for k,v in results.get("complexes",{}).items()
                                if k!="representatives_by_homology"},
@@ -541,10 +578,13 @@ def search_round(args,db,out,epoch,resolution,context,domain,focus,extras,dsl):
     }
     errors = [row for row in rows if row["queue_status"]=="failed"]
     report = {"epoch":epoch,"atlas_revision":context["atlas_revision"],
-              "git_head":context["git_head"],"domain_sha256":digest(domain),"engine_sha256":token(ENGINE),
+              "git_head":context["git_head"],"domain_sha256":digest(domain) if domain.is_file() else None,
+              "engine_sha256":token(ENGINE),
               "created_at":datetime.now(timezone.utc).isoformat(),
               "watched_sources_sha256":token(context["watched_sources"]),
               "original_status":original.get("status","ERROR"),"scenarios":len(scenarios),
+              "p1_field_status":results.get("p1_field_search",{}).get("status"),
+              "binary_rules_found":len(results.get("synthesis",{}).get("rules",[])),
               "r104_status":results.get("r104_variant",{}).get("status"),
               "r113_orientation_status":results.get("r113_orientation",{}).get("status"),
               "relational_status":results.get("relational_controls",{}).get("status"),
@@ -608,7 +648,13 @@ def main():
     args.repo = args.repo.resolve()
     if args.job:
         spec = json.load(sys.stdin) if args.job=="-" else json.loads(args.job)
-        print(packed(execute(spec,args.repo)))
+        try:
+            result = execute(spec,args.repo)
+        except FileNotFoundError as error:
+            result = missing_source_result(args.repo,error)
+            if result is None:
+                raise
+        print(packed(result))
         return
     if not args.out or not (3<=args.start_resolution<=args.max_resolution<=10 and
                             1<=args.workers<=32 and 1<=args.max_dsl_size<=8 and
@@ -616,6 +662,8 @@ def main():
                             (not args.sol_proposals or args.sol_timeout<args.timeout)):
         parser.error("output and valid bounded worker/resolution parameters required")
     domain = (args.domain or args.repo/NATIVE).resolve()
+    if args.domain and not domain.is_file():
+        parser.error("the supplied original domain does not exist")
     out = args.out.resolve()
     out.mkdir(parents=True,exist_ok=True)
     with (out/".supervisor").open("a") as lock:
@@ -642,7 +690,7 @@ def main():
                                  context["plan_revision"],ENGINE,
                                  context["watched_sources"],
                                  context["git_head"],str(args.repo),str(domain),
-                                 args.start_resolution,args.max_resolution,args.lean_toolchain,
+                                 args.start_resolution,args.lean_toolchain,
                                  args.max_dsl_size,observations,proposals,args.sol_proposals,args.sol_timeout])
             if previous and previous["context"] != context_key:
                 epoch += 1

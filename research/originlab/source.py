@@ -18,6 +18,8 @@ COMPONENTS = (
 
 
 def source_input_key(domain,root=None):
+    if not domain.is_file():
+        return sha256(json.dumps(["missing_original_domain",str(domain)]).encode()).hexdigest()
     raw = domain.read_bytes()
     data = json.loads(raw)
     paths = []
@@ -40,6 +42,17 @@ def source_input_key(domain,root=None):
                      if isinstance(ref,dict) and isinstance(ref.get("path"),str))
     components = [sha256(raw).hexdigest(),*[digest(path) if path.is_file() else None for path in paths]]
     return sha256(json.dumps(components,separators=(",",":")).encode()).hexdigest()
+
+
+def missing_source_result(root, error):
+    if error.filename is None:
+        return None
+    root = root.resolve()
+    path = Path(error.filename).resolve()
+    if not any(path.is_relative_to(root/area) for area in ("docs/research","experiments/theory-contracts","verification")):
+        return None
+    return {"status":"BLOCKED","reason":"ORIGINAL_SOURCE_FILE_MISSING",
+            "missing":[str(path.relative_to(root))],"physical_source_identity_proved":False}
 
 
 def rational(value):
@@ -95,6 +108,23 @@ def blocked(domain, path, bindings):
                 affine_polarization={"status":"BLOCKED",
                     "missing":["weighted bare and Cartan-prepared three-leg words at shared ordered times",
                                "same original preparation, adjoint and absolute empty reference bindings"]},
+                affine_profile_returns={"status":"BLOCKED",
+                    "missing":["weighted neutral grade-zero and full-root charged grade-one words",
+                               "same original profile product, adjoint and absolute empty reference bindings"]},
+                weak_split_returns={"status":"BLOCKED",
+                    "missing":["both ordered weak-odd splits of the marked middle root on the weighted word space"]},
+                weak_gauge_responses={"status":"BLOCKED",
+                    "missing":["native local gauge dressing and reflected words for the chosen gauge singlet triangles",
+                               "early and late transport and Casimir insertions on the same weighted form",
+                               "early weak and quarter coweight insertion for fixed-middle path reconstruction"]},
+                weak_clock_sectors={"status":"BLOCKED",
+                    "missing":["the same early joint action at powers zero through seven on one original weighted endpoint and time dictionary"]},
+                p1_charged_jet={"status":"BLOCKED",
+                    "missing":["the whole two-face covariance, anchored hypercharge and heat jets on the original source"]},
+                weak_parity_bridge={"status":"BLOCKED",
+                    "missing":["original alpha Cartan, fermion parity and charged endpoint field on a joint reflected basis"]},
+                weak_return_grade_two={"status":"BLOCKED",
+                    "missing":["weighted grade-two excess words for the 18 fixed-middle weak legs on one reflected source"]},
                 obligations={
                     "original_configuration_map":"Produce the ordered original U/Y/UY forms at both endpoints.",
                     "weight":"Derive the full original boson measure, fermion weight, eta and rest on the same domain.",
@@ -477,7 +507,7 @@ def evaluate(root, path=None):
             raise ValueError("a fitted tensor cannot supply its own original intervention measurements")
         candidate["process_tensor"] = solve(data)
         candidate["process_tensor"]["input_role"] = role
-    if set(bundle)&{"ordered_return","ordered_return_moments","affine_return_anchor","marked_root_doublet"}:
+    if set(bundle)&{"ordered_return","ordered_return_moments","affine_return_anchor","marked_root_doublet","weak_parity_bridge"}:
         reduced_metric = gram.extract(pivots,pivots)
         def read_form(form):
             return quotient(as_form(form,size))
@@ -585,6 +615,103 @@ def evaluate(root, path=None):
                 raise ValueError("both charge words must use the same ordered time samples")
             candidate["affine_polarization"]["alternative"] = checked_polarization(
                 {**data,**alternate},source_id,time["id"],contract_polarization)
+    if "affine_profile_returns" in bundle:
+        from affine_profiles import check_returns
+        data = bundle["affine_profile_returns"]
+        if (data.get("source_id") != source_id or data.get("time_id") != time["id"] or
+                any(not isinstance(data.get(key),str) or not data[key].strip() for key in
+                    ("grade_and_full_root_binding","profile_product_binding","adjoint_binding",
+                     "absolute_reference_binding"))):
+            raise ValueError("profile returns require a common source, time, grade, adjoints and reference")
+        neutral_transfer = None
+        if "neutral_transfer_form" in data:
+            if not isinstance(data.get("transfer_binding"),str) or not data["transfer_binding"].strip():
+                raise ValueError("neutral transfer requires a bound original time step")
+            neutral_transfer = as_form(data["neutral_transfer_form"],len(data["neutral_indices"]))
+        candidate["affine_profile_returns"] = {
+            **check_returns(gram,data["neutral_indices"],data["charged_indices"],data["products"],neutral_transfer),
+            "input_role":role,"source_id":source_id,"time_id":time["id"],
+            "word_space":"reflected Gram before the outer selector",
+        }
+    if "weak_split_returns" in bundle:
+        data = bundle["weak_split_returns"]
+        if (data.get("source_id") != source_id or data.get("time_id") != time["id"] or
+                any(not isinstance(data.get(key),str) or not data[key].strip() for key in
+                    ("charged_field_and_mode_binding","adjoint_binding","absolute_reference_binding"))):
+            raise ValueError("weak split returns require a shared source, time, mode, adjoints and reference")
+        from affine_operators import checked_weak_split
+
+        candidate["weak_split_returns"] = {
+            **checked_weak_split(data,lambda form: numerator(as_form(form,size))/reference),
+            "input_role":role,"source_id":source_id,"time_id":time["id"],
+            "placement":"ordered words before selection; one outer selector in the contraction",
+        }
+    if "weak_gauge_responses" in bundle:
+        from weak_source import checked_responses
+
+        data = bundle["weak_gauge_responses"]
+        if (data.get("source_id") != source_id or data.get("time_id") != time["id"] or
+                any(not isinstance(data.get(key),str) or not data[key].strip() for key in
+                    ("native_three_current_binding","same_dressing_and_inserted_actions_binding",
+                     "casimir_insertions_binding","physical_to_radial_time_binding","absolute_reference_binding"))):
+            raise ValueError("gauge responses require the same source, time, native dressing, and absolute reference")
+        candidate["weak_gauge_responses"] = {
+            **checked_responses(data,lambda form: sp.simplify(numerator(as_form(form,size))/reference)),
+            "input_role":role,"source_id":source_id,"time_id":time["id"],
+        }
+    if "weak_parity_bridge" in bundle:
+        from weak_source import checked_parity_sector
+
+        data = bundle["weak_parity_bridge"]
+        if (data.get("source_id") != source_id or data.get("time_id") != time["id"] or
+                any(not isinstance(data.get(key),str) or not data[key].strip() for key in
+                    ("native_alpha_cartan_and_parity_binding","delta_field_and_adjoint_binding",
+                     "endpoint_projectors_binding","absolute_reference_binding"))):
+            raise ValueError("the parity bridge needs original Cartan, parity, charged field and reference bindings")
+        candidate["weak_parity_bridge"] = {
+            **checked_parity_sector(data,reduced_metric,read_form),
+            "input_role":role,"source_id":source_id,"time_id":time["id"],
+            "word_space":"reflected quotient before the outer selector",
+        }
+    if "weak_clock_sectors" in bundle:
+        from weak_clock import checked_sectors
+
+        data = bundle["weak_clock_sectors"]
+        if (data.get("source_id") != source_id or data.get("time_id") != time["id"] or
+                any(not isinstance(data.get(key),str) or not data[key].strip() for key in
+                    ("common_fields_and_frames_binding","fixed_joint_early_action_binding",
+                     "same_histories_for_all_powers_binding","physical_to_radial_time_binding",
+                     "absolute_reference_binding"))):
+            raise ValueError("weak clock sectors require one original source, action, time and absolute reference")
+        candidate["weak_clock_sectors"] = {
+            **checked_sectors(data,lambda form: numerator(as_form(form,size))/reference),
+            "input_role":role,"source_id":source_id,"time_id":time["id"],
+        }
+    if "p1_charged_jet" in bundle:
+        from p1_field_search import from_input
+
+        data = bundle["p1_charged_jet"]
+        if (data.get("source_id")!=source_id or data.get("time_id")!=time["id"] or
+                any(not isinstance(data.get(key),str) or not data[key].strip() for key in
+                    ("two_face_frame_binding","independently_anchored_hypercharge_binding",
+                     "covariance_and_heat_tangents_binding","absolute_reference_binding"))):
+            raise ValueError("charged collar jets require the same source, two-face frame, anchored charge, time and reference")
+        candidate["p1_charged_jet"] = {
+            **from_input(data),"input_role":role,"source_id":source_id,"time_id":time["id"],
+        }
+    if "weak_return_grade_two" in bundle:
+        from weak_return_completion import checked_grade_two
+
+        data = bundle["weak_return_grade_two"]
+        if (data.get("source_id") != source_id or data.get("time_id") != time["id"] or
+                any(not isinstance(data.get(key),str) or not data[key].strip() for key in
+                    ("charged_modes_and_adjoints_binding","neutral_grade_and_excess_binding",
+                     "absolute_reference_binding"))):
+            raise ValueError("joint excess returns require the same source, time, grade and absolute reference")
+        candidate["weak_return_grade_two"] = {
+            **checked_grade_two(data,lambda form: numerator(as_form(form,size))/reference),
+            "input_role":role,"source_id":source_id,"time_id":time["id"],
+        }
     if "source_intertwiner" in bundle:
         from intertwiner import solve_operators
         from reconstruction import matrix, require
@@ -617,11 +744,18 @@ def evaluate(root, path=None):
 def evaluate_original(root,path=None):
     """Use the exact contract and query the native consumer on its own domain."""
     domain = (path or root/NATIVE).resolve()
-    result = evaluate(root,domain)
-    if domain==(root/NATIVE).resolve():
-        from original_paths import native_readout
-        return native_readout(root,domain,result)
-    return result
+    try:
+        result = evaluate(root,domain)
+        if domain==(root/NATIVE).resolve():
+            from original_paths import native_readout
+            return native_readout(root,domain,result)
+        return result
+    except FileNotFoundError as error:
+        result = missing_source_result(root,error)
+        if result is None:
+            raise
+        return {**result,"first_operation":"load_original_source_inputs",
+                "original_values":dict.fromkeys(MARKS),"connected_UY":None}
 
 
 def compression_defect(gram, step, twice):

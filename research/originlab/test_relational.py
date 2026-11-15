@@ -165,12 +165,25 @@ class RelationalTests(unittest.TestCase):
                       "time":{"id":"clock","kind":"original_euclidean_ordered","T":"1","t_U":"1/4","t_Y":"3/4"},
                       "scalar_factor":[1,0],"reference_scalar":[2,0],
                       "relational_path_forms":regional,"coherent_memory":memory}
-            # A rank-one metric on three labelled words, including the
-            # nontrivial null quotient shared by every endpoint form.
+            # Two orthogonal grades on three labelled words. The charged
+            # words are null-equivalent, and the outer selector keeps grade zero.
             def extend(q):
-                return [[q[0][0]]*3 for _ in range(3)]
-            for field in ("gram_form","physical_selector_form","boundary_pairing_form"):
+                return [[q[0][0], [0,0], [0,0]], *[[[0,0]]*3 for _ in range(2)]]
+            for field in ("physical_selector_form","boundary_pairing_form"):
                 packet[field] = extend(form(1))
+            packet["gram_form"] = [[[1,0],[0,0],[0,0]],
+                                   [[0,0],[1,0],[1,0]],[[0,0],[1,0],[1,0]]]
+            packet["affine_profile_returns"] = {"source_id":source_id,"time_id":"clock",
+                **dict.fromkeys(("grade_and_full_root_binding","profile_product_binding","adjoint_binding",
+                                 "absolute_reference_binding","transfer_binding"),"arithmetic control"),
+                "neutral_indices":[0],"charged_indices":[[1],[2]],
+                "products":[[1,0],[0,1],[1,0]],"neutral_transfer_form":form(1)}
+            packet["weak_split_returns"] = {"source_id":source_id,"time_id":"clock",
+                **dict.fromkeys(("charged_field_and_mode_binding","adjoint_binding",
+                                 "absolute_reference_binding"),"arithmetic control"),
+                "doubled_middle_roots":[[2,0,0,2,0,0,0,0],[0,0,0,-2,0,2,0,0]],"bound_cocycle_sign":1,
+                "samples":[{"m":m,"n":m,"bare_form":extend(form(b)),"forward_form":extend(form(f)),
+                            "reverse_form":extend(form(r))} for m,b,f,r in ((1,2,2,0),(2,4,3,-1))]}
             for path in regional["paths"]:
                 path["form"] = extend(path["form"])
             packet["joint_source_checks"] = {"source_id":source_id,"time_id":"clock","ward_binding":"control",
@@ -191,6 +204,15 @@ class RelationalTests(unittest.TestCase):
             self.assertEqual(result["coherent_memory"]["differences"],{"regional:b":"1 - I"})
             self.assertEqual(result["joint_source_checks"]["mixed"][0]["connected"],"4")
             self.assertTrue(result["joint_source_checks"]["linear_identities"]["probe"]["satisfied"])
+            self.assertEqual(result["affine_profile_returns"]["status"],"COMPATIBLE_ON_SUPPLIED_PROFILES")
+            self.assertEqual(result["affine_profile_returns"]["charged_rank_outside_unit_return"],0)
+            self.assertEqual(result["affine_profile_returns"]["neutral_transfer"]["status"],
+                             "COMMUTES_ON_SUPPLIED_FORMS")
+            self.assertFalse(result["affine_profile_returns"]["physical_source_identity_proved"])
+            weak = result["weak_split_returns"]["samples"]
+            self.assertEqual([row["commutator_residual"] for row in weak],["0","0"])
+            self.assertEqual([row["affine_ratios_match"] for row in weak],[True,False])
+            self.assertEqual([row["absolute_forward"] for row in weak],["1","3/2"])
             atom = packet["fiber_records"][0]
             atom["ordered_window_kernels"]["K0"] = extend(form(0))
             self.assertEqual(fibre_forms(atom,3,sp.S.Zero,sp.S.One)["ZUY"][0,0],12)

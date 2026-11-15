@@ -1,5 +1,10 @@
 # TFPT: Aufgabenplan zur fundamentalen Herleitung
 
+## OriginLab am 15. November 2026
+
+Die aktuelle reproduzierbare Suche und der exakte Test der geladenen P1 Variation stehen im [OriginLab Plan](../../../research/originlab/PLAN.md). OriginLab wertet die beiden ursprünglichen Viertelcharts aus und trennt die geladenen Feldanteile unter der unabhängig verankerten Hyperladung. Der native R113 Aufruf benötigt weiterhin die ursprüngliche gewichtete Randform samt absoluter Referenz. F1 bleibt in Bearbeitung.
+
+
 ## TRIANGULATION20261106O: Tatsächlicher Selektor und Quellenkonstruktor
 
 TRIANGULATION20261106O: Den tatsächlich unveränderten ursprünglichen markierten Blockkern T_Vn[wout,win;marks] beziehungsweise dessen quellenidentische D_Vn und Basisintegration aus der owning Konstruktion herstellen und auswerten. Die gezielte Rückwärtssuche in QFT004, Metrology005, R113 und tatsächlichen Codeconsumern findet Definitionen und vorausgesetzte Inputs, keinen ausführbaren ganzen Vierwerteproduzenten. Dies ist keine Gesamtkorpusabwesenheit und keine neue freie Maß/Zustandsforderung. Alle Felder, ganzer physischer P, Ref/Eta/Domain und ursprüngliche Grenzen bleiben. Z0,ZU,ZY,ZUY unter demselben Regulator gemeinsam auswerten, verbundenen Wert vor der ursprünglichen Grenze bilden und mit vorhandenem neutralem Zeitwort abgleichen. Optionaler FixedP Vorzeichenweg: wirklicher CAR-Operator statt Graphlift; bei ganzer [P,W_B W_F]=0 genügt tatsächliche Bosonsigninvarianz der ganzen Pi. Weder Tensoridentität noch echte H-Abhängigkeit von P aus seiner früheren Seeddefinition folgern. v365 Energiesumme ist TrH=-logdetT, kein Hessianlogdet; bedingtes M=H liefert log[36log(3/2)log3]. chi729/665 beweist allein keine geometrische Tightness. Alte Teilintegrationen und Source/State/Time/Ref Karten direkt verwenden. Keine Ersatzquelle, neue freie Dichte oder erneute allgemeine Brückenforderung. Kein primitiver Wert und keine fundamentale Gesamtlösung erreicht; F1 in_progress,52 bestehende Abschlüsse und Originalowner erhalten.

@@ -33,6 +33,14 @@ class AutonomousResearchTests(unittest.TestCase):
         self.assertGreater(synthesis["questions"][0]["pairs_separated"],0)
         self.assertEqual(certify(32,4,"1/10")["status"],"CERTIFIED_ENCLOSURE")
 
+    def test_every_eligible_boolean_rule_and_both_probe_answers(self):
+        synthesis = synthesize(limit=64,split_depth=1)
+        self.assertEqual(synthesis["status"],"EXHAUSTED")
+        self.assertEqual(synthesis["eligible_count"],64)
+        self.assertEqual(len({tuple(r["truth_table"]) for r in synthesis["rules"]}),64)
+        self.assertEqual([len(branch["rules"]) for branch in synthesis["branches"]],[32,32])
+        self.assertEqual(synthesis["questions"][0]["pairs_separated"],1024)
+
     def test_composition_keeps_source_identity(self):
         rule = [("join",("charge","regions"),"shared")]
         self.assertNotIn("shared",derive([("a","charge","x"),("b","regions","y")],rule)["a"])

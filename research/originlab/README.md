@@ -29,10 +29,16 @@ Python and SymPy alone.
 python3 -B research/originlab/main.py --finite-controls-only --out /tmp/originlab-controls
 ```
 
-This mode runs the double-cell, moving Hardy carrier, affine polarization
-and affine operator checks without a local Atlas. Original-source and full F1 campaigns require the local Atlas
-program and the matching, hash-checked research inputs. A public checkout
-without those inputs cannot evaluate R113.
+This mode runs the finite controls for the double cell, moving Hardy carrier,
+affine operators and polarization, weak fields and returns, four-mark geometry
+and the family index. The regular search can also run without the local
+Atlas. It reports the missing provenance and keeps available campaigns
+running. Original-source campaigns require their matching, hash-checked
+inputs. An unavailable original file produces a blocked result with its
+path. The native R113 marks remain unset until the original weighted input
+is available. Atlas publication uses the canonical local service.
+The R006 benchmark can replay the compressed original inputs in
+`fixtures/r006`. The checker verifies their original uncompressed hashes.
 
 The finite OriginDSL expresses matrix processes on ordered boundary spaces.
 The commands, their typing, and their denotations are in `language.py`. Its
@@ -197,18 +203,6 @@ binds the bare and prepared word forms to the same source, time and
 reference. The consumer reports the absolute bare comparison separately
 from normalized Ward agreement.
 
-Run `--campaign weak_return_rank` for the six late D8 weak legs. The
-neutral excess return span first reaches rank six at grade two.
-Products of one, two and three returns span cumulative dimensions six,
-24 and 36. The phase-sensitive ordered triple distinguishes two strictly
-positive densities that agree on all shorter words.
-
-Run `--campaign affine_car` for the independent free D8 fermion control.
-It reconstructs the pair current kernel and the weak doublet Casimir.
-Its quadratic currents carry only D8 pair roots. The original marked
-spinor ends and the common weighted P1 reference require their own field
-map and source.
-
 Run `--campaign affine_operators` for the operator-level source. It builds
 the actual mode operators of the level-one E8 lattice construction in the
 fixed D8 chart and applies them to exact Fock vectors. These currents change
@@ -225,45 +219,170 @@ The same campaign searches for the fewest further root currents that
 generate all of E8 together with the marked plane, restricted to a declared
 charge class. The marked charges span one A2 with commutant E6, and their
 currents generate 8 of the 248 grade-one vectors. Six further currents are
-necessary by rank and sufficient in five of the eight tested classes,
-including colour-centre neutral D8 pair currents. Three classes are exact
+necessary by rank and sufficient in five of the eight restricted classes
+and in the unrestricted control. These include colour-centre neutral D8
+pair currents. Three classes are exact
 negatives. Hypercharge neutral currents, and currents neutral under colour
 centre and glue, generate only A1 x E7 with the marked plane. The conserved
 grading is the parity of the pairing with the weak slot root `e4 - e5`. All
 112 missing currents are weak doublets and all carry hypercharge. The
 colour neutral D8 pair currents among them have glue class 2 and
-hypercharge of modulus 1/2. These are statements about the given affine vacuum
-module. They carry no weighted R113 value and no physical source identity.
+hypercharge of modulus 1/2. The restriction applies to individual root
+letters. A word can be neutral overall and still probe these currents.
+The executable example splits the middle root into `e1+e4` and `e6-e4`.
+Both orders preserve the end charges and give normalized mode coefficients
+`1/min(m,n)` and `1/min(m,n)-1` on the tested grid. Read both orders
+independently with the same weighted source, time and absolute reference.
+Run `--campaign weak_return_rank` for the six late D8 weak legs. The
+neutral excess return span first reaches rank six at grade two.
+Products of one, two and three returns span cumulative dimensions six,
+24 and 36. The phase-sensitive ordered triple distinguishes two strictly
+positive densities that agree on all shorter words.
 
-The weak doublet section checks the follow-up of the parallel session on
-the same operators. The parity is conjugation by the centre of the weak
-SU(2), so a neutral word contains an even number of doublet currents. The
-even currents span an index-two sublattice with system A1 x E7, and every
-one of the 112 doublet currents alone completes them to E8. Each doublet
-current splits its weight as 1/4 on the weak root and 3/4 on E7. In the
-affine vacuum, words in even currents equal those of the E7 x SU(2) vacuum
-at level one and cannot show the doublet sector. This does not extend to a
-physical source with a different time evolution. The roots
-`gamma = e1+e6`, `alpha = e4-e6` and `delta = e1+e4` form a triangle with
-the charges of a down quark singlet, a weak doublet with hypercharge 1/2
-and a quark doublet. The neutral word `J^(-delta) J^gamma J^alpha` has the
-same `min(m,n)` kernel as the marked word. The weak Casimir of the zero
-modes gives 3/4 inside the doublet word and 0 on the marked vector, which
-is the reported next original observation. The marked roots with the
-colour and weak roots generate A4 x A1, then E6 with `alpha`, then E7 and
-E8 with `e6-e7` and `e7-e8`. These eight roots are a lattice basis. The six
-intermediate paths to each quark doublet weight span one line on grade one
-and rank four on grade two, namely one common direction and the three
-family coordinates as oscillator polarizations. Two class-one spinor
-currents with equal family weight never close on a current. Equal charges
-of affine currents do not identify them with quark or Higgs fields, a
-Yukawa coupling or three physical families.
+The same campaign compares those six legs with the two half-spinor
+orbits of six legs each. It finds joint excess ranks 14 and 98 at neutral
+grades two and three. On the 14 dimensional grade two support the spans
+from ordered words of lengths up to one, two and three are 18, 108 and
+196. The campaign emits a basis and an example length four holdout in
+`completion_orbits`. The optional `weak_return_grade_two` packet binds
+`source_id`, `time_id`, `charged_modes_and_adjoints_binding`,
+`neutral_grade_and_excess_binding` and `absolute_reference_binding`.
+Copy the order of `roots_doubled` and supply each emitted basis word in
+`basis_words` as a `word` and whole `word_form`. A letter is the normalized
+excess $(E_\alpha^*E_\alpha-I)/3$ at neutral grade two. Supply a fresh
+nonzero path such as the emitted holdout in `held_out_words`, in the same
+format and on the same source. The reader reconstructs the absolute linear
+functional on this declared excess algebra, tests positivity, and tests
+the held-out whole form. The reference and the outer selection are those
+of the surrounding original packet.
+
+Run `--campaign four_mark_geometry` for the shared four-point sphere.
+The family cycle and quarter cannot both act holomorphically there.
+The equianharmonic alternatives carry the family cycle holomorphically
+and the quarter antiholomorphically. On the elliptic cover its square
+is a half-period translation and acts trivially on the differential.
+The even permutations move a reflection fixing two marks through six
+distinct circles. The effective complex Möbius action also limits every
+commuting real family of geometric generators to dimension two.
+
+Run `--campaign affine_car` for the independent free D8 fermion control.
+It reconstructs the pair current kernel and the weak doublet Casimir.
+Its quadratic currents carry only D8 pair roots. The original marked
+spinor ends and the common weighted P1 reference require their own field
+map and source.
+
+These affine vacuum coefficients leave the weighted R113 values and
+physical source identity open.
+
+For a supplied weighted endpoint, `weak_split_returns` binds `source_id`,
+`time_id`, `charged_field_and_mode_binding`, `adjoint_binding` and
+`absolute_reference_binding`. Supply `doubled_middle_roots` in the order
+`e1+e4`, `e6-e4` and the actual `bound_cocycle_sign` (1 or −1).
+Each of at least two `samples` contains mode indices `m` and `n` and
+`bare_form`, `forward_form`, `reverse_form` on the common word basis.
+Build each whole word before applying the single outer selector. The
+reader reports the absolute reference quotients for both orders separately
+from their difference and their ratios to the marked bare word.
+
+Run `--campaign weak_source` to search the 240 roots with the middle
+charge fixed and replay the surviving gauge singlet words. The report
+emits a calibration rectangle and a new time pair for the original test.
+The native `r113_synthesis` campaign independently checks the literal
+96 dimensional Higgs blocks, their polar CAR parity and the separated
+DET16 block. It also reduces the existing coupled W word, with the original
+neutral pair dressing on both ends, to exact reachable time blocks of
+dimensions 4 and 13. Its two interval kernel has separation rank four
+for nonzero coupling. The autonomous runner schedules the affine search
+and watches the native inputs for changes.
+
+For weighted data, `weak_gauge_responses` binds `source_id`, `time_id`,
+`native_three_current_binding`, `same_dressing_and_inserted_actions_binding`,
+`casimir_insertions_binding`, `physical_to_radial_time_binding` and
+`absolute_reference_binding`. The optional `comparison_paths` begins with
+`spinor` and includes one or more of `d8`, `weak_spinor_minus` and
+`weak_spinor_plus`. The default pair is `spinor` and `d8`. Each sample
+supplies `left_radial_factor`, `right_radial_factor`, `held_out` and `words`.
+The calibration rectangle spans at least two widths per interval, and
+one held out sample uses two unseen widths. For each path supply the
+`bare_form`, the four `casimir_forms` and the six `twisted_words` using
+the chronological links returned by `example_networks()`. Optional
+`winding_forms` use the same `original_coweight_binding` on every path.
+
+To check a linear combination of the four fixed middle paths, add
+`joint_early_insertion_binding` and the five `joint_early_forms` to the
+samples in order from power zero to four. Use the diagonal weak element
+with entries $(3+4i)/5,(3-4i)/5$ and the quarter insertion of the coweight
+$-2e_8$ on the first interval. The reader solves for the four absolute
+coefficients and reports the power four residual. These are coefficients
+in the specified affine response model. A zero residual is a check on the
+supplied forms. The original source and these insertions need their own
+derivation to establish a physical match.
+
+Run `--campaign weak_folded_clock` to compare the minus winding half
+spinor with the marked word in both original quarter charts. Two commuting
+D8 root zero modes preserve the middle current and winding. Transporting
+the word co-transports the folded generator. Across all colours the six
+products span the maps from the early colour dual triplet to the weak
+doublet and carry $(3,2)$ with $Y=1/6$. In the literal fixed chart
+the early and late spectra are separated, and the weak lower to upper
+weight ratio is $\sqrt{xy}$ for the interval radial factors $x,y$.
+
+Use `weak_clock_sectors` in a weighted endpoint packet to recover
+independent complex weights for the seven eigenvalues of the same early
+joint action. Bind the packet's `source_id`, `time_id` and the following
+original data.
+
+- `common_fields_and_frames_binding`
+- `fixed_joint_early_action_binding`
+- `same_histories_for_all_powers_binding`
+- `physical_to_radial_time_binding`
+- `absolute_reference_binding`
+
+Each sample supplies `left_radial_factor`, `right_radial_factor`, a
+`held_out` flag and eight entire `power_forms` ordered by powers zero to
+seven. The inputs use the packet's Gaussian rational form convention.
+Use a full rectangle with at least two distinct widths per interval and
+one additional pair with both widths unseen. The reader solves for the
+seven amplitudes at each pair using powers zero to six, checks power
+seven independently, and compares the weak weights with both the fixed
+fold and the W symmetry. With five widths per interval, rank five in a
+resolved half spinor component rules out the fixed W word, including
+separable clock factors. The campaign supplies sample widths that also
+keep the literal fractional clock powers rational.
+
+Run `--campaign p1_field_search` for the charged first variation on both
+original folded charts in the specified two-face collar. The same
+covariance and heat derivative can come from a charged intrinsic field
+or a shared motion of the two frames. The independently anchored
+hypercharge derivative separates the two contributions. The checker
+reconstructs the intrinsic field and verifies all three measured matrices.
+
+With `--p1-field-input FILE` or the optional `p1_charged_jet` field of a
+weighted packet, supply `energies`, `hypercharges`, a rational
+`radial_base` in $(0,1)$ and an integer `exponent_scale`. The scale
+makes the energy exponents integers. Distinct hypercharge sectors must
+have disjoint energies in this class. Give the whole
+`two_face_covariance_tangent`, `two_face_hypercharge_tangent` and
+`two_face_heat_tangent` as exact Hermitian matrices. Each matrix lists the
+same energy basis on the first face followed by its copy on the second
+face. The packet also binds `source_id`, `time_id`,
+`two_face_frame_binding`, `independently_anchored_hypercharge_binding`,
+`covariance_and_heat_tangents_binding` and `absolute_reference_binding`.
+The full charge derivative includes the cross-face blocks.
+
+The `weak_parity_bridge` optionally tests the source parity, the Cartan
+and raising and lowering matrices for the tested root, the charged
+matrix with its adjoint, and the three endpoint projectors. The source
+forms are read on the reflected quotient before selection. The reader
+reports the rank of the charged endpoint and separately measures the
+two orderings. Both readers use the same bound time and reference as the
+whole endpoint record.
 
 - [SymPy](https://github.com/sympy/sympy) executes exact matrix and polynomial arithmetic.
 - [Z3](https://github.com/Z3Prover/z3) provides inverse integer synthesis, with exact witness replay.
 - [Lean](https://lean-lang.org/doc/reference/latest/Axioms/) checks the separate rank lemma and reports its dependencies.
-- [cvc5](https://cvc5.github.io/papers/2022/BarbosaBBKLMMMN-TACAS22.pdf) synthesizes finite Boolean local laws.
-- [egglog](https://egraphs-good.github.io/egglog-tutorial/01-basics.html) replays declared compositional identities.
+- Exact truth tables enumerate the entire binary local rule class admitted by the declared observations.
+- Typed word normalization verifies the declared compositional identities. [egglog](https://egraphs-good.github.io/egglog-tutorial/01-basics.html) can also execute the three checks when installed.
 - [FLINT/Arb](https://python-flint.readthedocs.io/en/latest/general.html) encloses the free regulator tail and the conditional R032 kernels.
 
 Pass `--finite-observations observations.json` to feed a measured finite
@@ -286,7 +405,8 @@ The durable SQLite queue runs independent subprocess workers. A failed job
 gets one retry and its error remains in the run record. An interrupted
 campaign resumes against its stored inputs and job keys. After the first
 two sweeps the runner prioritizes topology and dynamics combinations that
-share their measured return words. Add `--watch-seconds 90` to keep the
+share their measured return words. Increasing `--max-resolution` extends
+the saved search horizon. Add `--watch-seconds 90` to keep the
 process alive and restart the search on a change to the Atlas or R113 input.
 The engine and source version form part of the run identity. The queue is
 local to one supervisor and one machine.
@@ -301,9 +421,10 @@ mathematical candidates. Their topologies and parameters are not derived
 from P1. A finite cell complex and these graph transfers do not imply
 a physical spacetime, Hamiltonian or continuum field theory.
 
-cvc5 synthesizes distinct Boolean local laws and splits on both possible
-answers to an automatically chosen experiment. egglog checks algebraic
-equivalences of composable process expressions. Arb certifies the
+The Boolean lane enumerates all 64 tables compatible with its two uniform
+observations and splits on both answers to the most discriminating probe.
+Typed word normalization checks the declared compositional identities.
+Arb certifies the
 free periodic heat trace and a convergent regulator comparison, with
 the interacting R113 remainder still open. The bridge lane checks the
 tetrahedral dual basis, joint cone, charged quarter response and scoped
@@ -510,6 +631,20 @@ terms. It also checks optional independently supplied `ordered_return_form`,
 same time step. `ordered_return_moments` accepts independently evaluated
 matrix moments and held-out answers on the same source quotient.
 
+An optional `affine_profile_returns` section reads neutral grade-zero words
+and their charged grade-one images of one full root from the same reflected
+Gram before selection. `neutral_indices` and each list in `charged_indices`
+use zero-based word indices in corresponding order. The first charged list
+uses the unit profile. In `products`, supply real coefficients over that
+same profile list for all pairs `(a,b)` with `a <= b`, in lexicographic order.
+Bind `source_id`, `time_id`, `grade_and_full_root_binding`,
+`profile_product_binding`, `adjoint_binding` and `absolute_reference_binding`.
+An optional `neutral_transfer_form` on the ordered neutral words, with a
+`transfer_binding`, measures its commutator with the recovered profile action
+on the supplied quotient. A rank defect gives the minimum number of additional
+neutral return directions under the stated affine Ward hypotheses. A match
+on the supplied forms establishes a consistency check on those words.
+
 `affine_return_anchor` starts with the packet's original empty word at
 `identity_index` and synthesizes the map of the vacuum and its first
 charged current. It checks the metric, outer selection, adjoint return,
@@ -547,11 +682,3 @@ quarter predictions. A stationary mixture of those quarters is determined
 by two entries and tested on the other entries. The clock job also checks the original gauge average
 and whether the marked opposite spinor module can keep the same background.
 See [the marked folded time derivation](FOLDED-TIME-PROOF.txt).
-
-## Four-mark winding and mirror-index control
-
-The finite campaign f1_family_index checks the previously proposed relative
-three-family Hardy shift against the original unit-winding premise and
-conjugate E8 spinor sector. Its exact finite unitary completion shows
-that the doubled index alone does not protect physical chirality.
-See FAMILY-INDEX-20261114.md. This control is not an R113 producer.

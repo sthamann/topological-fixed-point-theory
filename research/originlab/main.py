@@ -16,14 +16,14 @@ import time
 
 from language import Term
 from search import proposal_prompt, proposals, run
-from source import NATIVE, evaluate_original, source_input_key
+from source import NATIVE, evaluate_original, missing_source_result, source_input_key
 from backends import inverse_rank, lean_check
 from verify import car_replay, clock_test, digest, eigenvalue_test, r102
 
 HERE = Path(__file__).resolve().parent
-CAMPAIGNS = ("r113", "r113_synthesis", "source_bridge", "marked_search", "double_cell", "moving_carrier", "affine_polarization", "affine_operators", "affine_car", "weak_return_rank", "f1_family_index", "r102", "bell", "clock", "identifiability", "four_mark_selection",
+CAMPAIGNS = ("r113", "r113_synthesis", "source_bridge", "marked_search", "double_cell", "moving_carrier", "affine_polarization", "affine_operators", "affine_car", "weak_source", "weak_folded_clock", "p1_field_search", "weak_return_rank", "four_mark_geometry", "f1_family_index", "r102", "bell", "clock", "identifiability", "four_mark_selection",
              "spectral_source_controls", "empirical_source_audit", "p0", "f1")
-FINITE_CONTROLS = ("double_cell", "moving_carrier", "affine_polarization", "affine_operators", "affine_car", "weak_return_rank", "f1_family_index")
+FINITE_CONTROLS = ("double_cell", "moving_carrier", "affine_polarization", "affine_operators", "affine_car", "weak_source", "weak_return_rank", "four_mark_geometry", "f1_family_index")
 
 
 def atomic_json(path, payload):
@@ -42,6 +42,7 @@ def atomic_json(path, payload):
 def atlas_inputs(data):
     ids = {"problem:f1-session-synthesis-20261113",
            "problem:originlab-double-cell-parity-20261114",
+           "problem:originlab-affine-neutral-return-20261114",
            "problem:automatic-origin-response-decision",
            "problem:original-joint-short-time-kernel-20261105"}
     return {
@@ -58,14 +59,15 @@ def atlas_inputs(data):
 def current_context(root):
     from hashlib import sha256
     progress = root/"docs/research/fundamental-plan/progress.json"
-    plan = json.loads(progress.read_text())
+    plan = json.loads(progress.read_text()) if progress.is_file() else {}
     atlas = root/"semantic_explorer/research/program.json"
-    raw = atlas.read_bytes()
-    data = json.loads(raw)
-    return dict(plan_revision=plan["revision"],next_task=plan["next_task"],
+    raw = atlas.read_bytes() if atlas.is_file() else None
+    data = json.loads(raw) if raw is not None else {"problems":[]}
+    return dict(plan_revision=plan.get("revision"),next_task=plan.get("next_task"),
                 plan_recorded_atlas_revision=plan.get("current_atlas_revision"),
-                atlas_program_sha256=sha256(raw).hexdigest(),
-                atlas_revision=data["revision"],
+                atlas_program_sha256=sha256(raw).hexdigest() if raw is not None else None,
+                atlas_revision=data.get("revision"),
+                atlas_provenance="canonical_local" if raw is not None else "local_atlas_unavailable",
                 atlas_inputs=atlas_inputs(data),
                 git_head=subprocess.check_output(["git","-C",str(root),"rev-parse","HEAD"],
                                                  text=True).strip(),
@@ -82,16 +84,36 @@ def campaign_context(args):
                     python=platform.python_version(),sympy=version("sympy"))
     context = current_context(args.repo)
     domain = args.domain or args.repo/NATIVE
-    context["domain_sha256"] = digest(domain)
+    context["domain_sha256"] = digest(domain) if domain.is_file() else None
     context["source_input_key"] = source_input_key(domain,args.repo)
     if "source_bridge" in args.campaign:
         context["source_bridge_inputs"] = {
             str(path): digest(args.repo/path) if (args.repo/path).is_file() else None
             for path in (NATIVE, *INPUTS)
         }
+    if "r113_synthesis" in args.campaign and domain.resolve()==(args.repo/NATIVE).resolve():
+        from native_weak_bridge import INPUTS as weak_inputs
+        from native_weak_w import INPUTS as w_inputs
+
+        context["native_weak_source_inputs"] = {
+            str(path):digest(args.repo/path) if (args.repo/path).is_file() else None
+            for path in (*weak_inputs,*w_inputs)
+        }
+    if "weak_folded_clock" in args.campaign:
+        from folded_time import SOURCES as folded_sources
+
+        context["weak_folded_clock_inputs"] = {
+            str(path):digest(args.repo/path) if (args.repo/path).is_file() else None for path in folded_sources
+        }
+    if "p1_field_search" in args.campaign and not args.p1_field_input:
+        from p1_field_search import INPUTS as p1_sources
+
+        context["p1_field_sources"] = {
+            str(path):digest(args.repo/path) if (args.repo/path).is_file() else None for path in p1_sources
+        }
     context["extra_inputs"] = {str(p.resolve()):digest(p)
                                for p in (args.proposal_file,args.finite_observations,args.r113_synthesis_input,
-                                         args.marked_search_input) if p}
+                                         args.marked_search_input,args.p1_field_input) if p}
     return context
 
 
@@ -146,9 +168,15 @@ def execute(campaign, root, args, suggestion_rows, retained_rows, prior_question
     if campaign == "affine_car":
         from affine_car import controls
         return controls()
-    if campaign == "weak_return_rank":
-        from weak_return_rank import controls
-        return controls()
+    if campaign == "weak_source":
+        from weak_source import affine_controls
+        return affine_controls()
+    if campaign == "p1_field_search":
+        from p1_field_search import controls, from_input
+        return from_input(json.loads(args.p1_field_input.read_text())) if args.p1_field_input else controls(root)
+    if campaign in ("weak_return_rank","weak_folded_clock","four_mark_geometry"):
+        from autonomy import execute as execute_job
+        return execute_job({"lane":campaign},root)
     if campaign == "f1_family_index":
         from f1_family_index import controls
         return controls()
@@ -201,7 +229,9 @@ def one_round(args, directory, index, retained, prior_questions, manifest):
         try:
             result = future()
         except Exception as error:
-            result = dict(status="ERROR",error=f"{type(error).__name__}: {error}")
+            result = missing_source_result(args.repo,error) if isinstance(error,FileNotFoundError) else None
+            if result is None:
+                result = dict(status="ERROR",error=f"{type(error).__name__}: {error}")
         outcomes[campaign] = result
         atomic_json(directory/f"{campaign}.json",result)
         print(f"{campaign}: {result['status']}",flush=True)
@@ -235,13 +265,28 @@ def one_round(args, directory, index, retained, prior_questions, manifest):
                         r113_synthesis=outcomes.get("r113_synthesis",{}).get("status","NOT_RUN"),
                         original_source_bridge_status=outcomes.get("source_bridge",{}).get("status","NOT_RUN"),
                         r113_next_original_observation=outcomes.get("r113_synthesis",{}).get("next_original_observation"),
+                        native_weak_higgs_bridge=outcomes.get("r113_synthesis",{}).get("native_weak_higgs_bridge"),
+                        native_w_weak_words=outcomes.get("r113_synthesis",{}).get("native_w_weak_words"),
                         finite_marked_search_status=outcomes.get("marked_search",{}).get("status","NOT_RUN"),
                         double_cell_control_status=outcomes.get("double_cell",{}).get("status","NOT_RUN"),
                         moving_carrier_control_status=outcomes.get("moving_carrier",{}).get("status","NOT_RUN"),
                         affine_polarization_status=(source_result or {}).get("affine_polarization",{}).get("status","NOT_RUN"),
+                        affine_profile_returns=(source_result or {}).get("affine_profile_returns"),
+                        weak_split_returns=(source_result or {}).get("weak_split_returns"),
+                        weak_gauge_responses=(source_result or {}).get("weak_gauge_responses"),
+                        weak_clock_sectors=(source_result or {}).get("weak_clock_sectors"),
+                        p1_charged_jet=(source_result or {}).get("p1_charged_jet"),
+                        p1_field_search=outcomes.get("p1_field_search"),
+                        weak_folded_clock_status=outcomes.get("weak_folded_clock",{}).get("status","NOT_RUN"),
+                        weak_parity_bridge=(source_result or {}).get("weak_parity_bridge"),
+                        weak_return_grade_two=(source_result or {}).get("weak_return_grade_two"),
+                        weak_source_status=outcomes.get("weak_source",{}).get("status","NOT_RUN"),
+                        fixed_middle_search=outcomes.get("weak_source",{}).get("fixed_middle_search"),
+                        weak_source_next_observation=outcomes.get("weak_source",{}).get("next_original_observation"),
+                        joint_weak_return_support=outcomes.get("weak_return_rank",{}).get("completion_orbits",{}).get("support_by_grade"),
+                        four_mark_geometry=outcomes.get("four_mark_geometry"),
                         affine_operator_source_status=outcomes.get("affine_operators",{}).get("status","NOT_RUN"),
                         mark_alphabet_completion=outcomes.get("affine_operators",{}).get("next_original_observation"),
-                        family_index_status=outcomes.get("f1_family_index",{}).get("status","NOT_RUN"),
                         physical_evidence=assess(source_result,outcomes.get("r113_synthesis")),
                         separator_requires_original_field_identification=True,
                         energy_moments=(source_result or {}).get("energy_moments"),
@@ -272,6 +317,7 @@ def main():
     parser.add_argument("--domain",type=Path)
     parser.add_argument("--r113-synthesis-input",type=Path,help="Use a declared finite oracle in the R113 synthesis campaign")
     parser.add_argument("--marked-search-input",type=Path,help="Replay finite phase, clock and cell observations")
+    parser.add_argument("--p1-field-input",type=Path,help="Resolve a supplied two-face charged jet")
     parser.add_argument("--campaign",action="append",choices=(*CAMPAIGNS,"benchmarks"))
     parser.add_argument("--finite-controls-only",action="store_true",
                         help="Run public finite controls without a local Atlas or original source")
@@ -301,6 +347,10 @@ def main():
         parser.error("--r113-synthesis-input requires the r113_synthesis campaign")
     if args.marked_search_input and "marked_search" not in args.campaign:
         parser.error("--marked-search-input requires the marked_search campaign")
+    if args.p1_field_input and "p1_field_search" not in args.campaign:
+        parser.error("--p1-field-input requires the p1_field_search campaign")
+    if args.domain and not args.domain.is_file():
+        parser.error("the supplied original domain does not exist")
     if not (1 <= args.size <= 6 and 0 <= args.mutations <= 10000 and
             1 <= args.jobs <= 16 and 1 <= args.word_depth <= 12 and
             3 <= args.rank_limit <= 1000 and args.rounds >= 1 and

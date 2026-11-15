@@ -4,6 +4,7 @@ from fractions import Fraction
 from itertools import combinations
 from math import gcd, lcm
 from pathlib import Path
+import gzip
 import hashlib
 import json
 import sympy as sp
@@ -11,6 +12,12 @@ import sympy as sp
 from language import positive
 
 CAR = Path("experiments/theory-contracts/seam-positive-kernel-search-20261015/runs/source-clustering")
+CAR_ARCHIVE = Path(__file__).with_name("fixtures")/"r006"
+CAR_ORIGINAL_HASHES = {
+    "moments.json":"7429db68e991b7c5351361f607ac9fb2dfb62e3c99b6945813fdb5160f5bda9c",
+    "min-trace.json":"b713dd585daeb2984a25c9c4bd4bee4f5cef0a06895ea7b54e5f14f5ad0949ed",
+    "max-trace.json":"9809d92e023a3011ef6d418766d2f6b10e37d35430177b1e6f2cdcdc2c81a577",
+}
 
 
 def digest(path):
@@ -56,8 +63,8 @@ def scalar_recovery(value):
     return sp.Rational(rational.numerator, rational.denominator)
 
 
-def car_candidate(path, gap, floor):
-    record = load(path)["exact_matrices"]
+def car_candidate(data, gap, floor):
+    record = data["exact_matrices"]
     state, transfer, quarter = (read_matrix(record[k]) for k in ("Omega", "T", "quarter"))
     letters = [read_matrix(g) for g in record["gammas"]]
     identity = sp.eye(transfer.rows)
@@ -123,10 +130,21 @@ def separator(left, right, max_length, max_questions=20):
 
 def car_replay(root, max_length):
     folder = root/CAR
-    source = load(folder/"moments.json")
+    records,hashes,archives = {},{},[]
+    for name,expected in CAR_ORIGINAL_HASHES.items():
+        path = folder/name
+        if path.is_file():
+            raw = path.read_bytes()
+        else:
+            raw = gzip.decompress((CAR_ARCHIVE/(name+".gz")).read_bytes())
+            if hashlib.sha256(raw).hexdigest()!=expected:
+                raise ValueError(f"altered archived R006 fixture {name}")
+            archives.append(name)
+        records[name] = json.loads(raw)
+        hashes[name] = hashlib.sha256(raw).hexdigest()
+    source = records["moments.json"]
     gap, floor = (scalar_recovery(source[k]) for k in ("cluster_gap", "transfer_floor"))
-    paths = [folder/"min-trace.json", folder/"max-trace.json"]
-    candidates = [car_candidate(path, gap, floor) for path in paths]
+    candidates = [car_candidate(records[name],gap,floor) for name in ("min-trace.json","max-trace.json")]
     for state, ops in candidates:
         cache = {(): state}
 
@@ -140,7 +158,7 @@ def car_replay(root, max_length):
             if (state.H*vector(tuple(row["word"])))[0] != expected:
                 raise ValueError(f"moment mismatch for {row['word']}")
     return dict(status="exact_finite_controls", shared_moments=len(source["moments"]),
-                evidence_inputs={p.name:digest(p) for p in [*paths, folder/"moments.json"]},
+                evidence_inputs=hashes,archived_inputs=archives,
                 discriminator=separator(*candidates, max_length),
                 premises=["declared finite CAR representation", "rational recovery of supplied moments"])
 

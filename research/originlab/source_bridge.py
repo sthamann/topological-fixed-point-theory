@@ -103,6 +103,8 @@ def neutral_return_budget(positive_rank, neutral_rank):
 
 
 def replay(root):
+    from affine_profiles import controls
+
     return {
         "status": "SCOPED_CHECKS",
         "original_source_sha256": {str(path): sha256((root/path).read_bytes()).hexdigest() for path in INPUTS},
@@ -114,5 +116,6 @@ def replay(root):
             "scope": "full Cartan charge gamma, positive grade-one form and metric adjoints "
                      "on a common invariant domain; F*F=I+E*E on that sector",
         },
+        "pointwise_affine_profiles": controls(),
         "physical_solution": False,
     }

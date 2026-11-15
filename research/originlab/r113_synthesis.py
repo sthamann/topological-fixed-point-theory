@@ -154,9 +154,14 @@ def native_synthesis(root, domain, endpoint):
     from original_paths import original_word
     from root_doublet import radial_symmetry_check
     from complex_moments import control as complex_control
+    from native_weak_bridge import replay as native_weak_bridge
+    from native_weak_w import replay as native_weak_w
 
     if domain.resolve()!=(root/NATIVE).resolve():
         return {"status":"CUSTOM_DOMAIN_REQUIRES_OWN_SOURCE_RULES","control":control()}
+    if endpoint.get("reason")=="ORIGINAL_SOURCE_FILE_MISSING":
+        return {**endpoint,"native_w_weak_words":native_weak_w(root),"control":control(),
+                "physical_source_derived":False}
     word = original_word(root)
     refs = word["source_refs"]
     domain_sha = digest(domain)
@@ -189,6 +194,16 @@ def native_synthesis(root, domain, endpoint):
                                                          "hypercharge":leg_data[1]["Y"]}},
             "conditional_original_affine_word":word["vacuum_word"],
             "original_root_string_check":radial_symmetry_check(root),
+            "native_weak_higgs_bridge":native_weak_bridge(root,domain),
+            "native_w_weak_words":native_weak_w(root),
             "weighted_root_doublet":endpoint.get("marked_root_doublet"),
-            "next_original_observation":"Identify the two distinct full Cartan weights in colour 2 and the neutral zero-mode link, or bind the charged horizontal doublet directly on the original reflected quotient. Then test the whole ordered word on a held-out two-time rectangle with the same absolute reference.",
+            "next_original_observation":(
+                "Bind the original charged operation on the reflected quotient before the outer selector. "
+                "The literal native Higgs A2 bridge and its full polar-even CAR version are excluded on their audited fibres. "
+                "Test the actual image of the affine lowering mode, its adjoint leakage, and the full colour-changing blocks. "
+                "Use the two-root minus-winding lift to test the original field insertion with charges (3,2) at Y=1/6. "
+                "Check the folded generator on the same chart. "
+                "The original W dresses a charged word with B_+ and has its own time and parity constraints. "
+                "Measure powers zero to seven of one fixed early action on the whole weighted source. "
+                "Compare its resolved weak weights on an unseen pair and use five widths per interval for the W rank test."),
             "control":control(),"complex_control":complex_control(),"physical_source_derived":False}
