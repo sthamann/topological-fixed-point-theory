@@ -108,6 +108,23 @@ values. The original all-field determinant/Pfaffian/ghost/eta factors,
 charge and source map remain missing. Full proof obligations are in
 [P1-CHARGED-RESIDUAL-ORIGIN-20261115.md](P1-CHARGED-RESIDUAL-ORIGIN-20261115.md),
 with finite regressions in [test_p1_charged_modulus.py](test_p1_charged_modulus.py).
+A further exact finite two-face CAR model packages the two
+determinants into one 8-Majorana antisymmetric Pfaffian. The four
+original source-compatible interface directions/signs have different
+determinants, and only the unit forward/forward choice cancels the
+free charged root pole to a square-maximizing residual. This is **NOT**
+a physical TFPT Pfaffian evaluation, and scalar positivity does not
+establish OS reflection positivity.
+
+The original [9 November R113 contract](../../experiments/theory-contracts/chat-triangulation-20261108/R113-ORIGINAL-UND-REFERENZ-20261109.txt)
+provides a decisive additional source guard: on its actual exterior
+empty state Gamma(R) has vacuum expectation 1. The full Fock trace
+Tr Gamma(R)=det(I+R) is a **different** contraction. Consequently the
+candidate paired determinant cannot be inserted into the native
+zero-Fock reader unless it is *derived from the original scalar
+s[b]* or the complete physical selector/cap, with the same time and
+reference. The campaign checks this distinction explicitly.
+
 These controls do not solve F1.
 
 ## Primitive P1 source falsification gate (15 November 2026)
