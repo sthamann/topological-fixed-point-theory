@@ -157,6 +157,7 @@ def native_synthesis(root, domain, endpoint):
     from original_paths import original_word
     from root_doublet import radial_symmetry_check
     from complex_moments import control as complex_control
+    from higgs_moment_search import native_probe_plan
     from native_weak_bridge import replay as native_weak_bridge
     from native_weak_w import replay as native_weak_w
 
@@ -198,6 +199,7 @@ def native_synthesis(root, domain, endpoint):
             "conditional_original_affine_word":word["vacuum_word"],
             "original_root_string_check":radial_symmetry_check(root),
             "native_weak_higgs_bridge":native_weak_bridge(root,domain),
+            "native_higgs_moment_plan":native_probe_plan(root,domain),
             "native_w_weak_words":native_weak_w(root),
             "weighted_root_doublet":endpoint.get("marked_root_doublet"),
             "next_original_observation":(

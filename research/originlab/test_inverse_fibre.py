@@ -91,3 +91,6 @@ def test_exact_coarse_replay_can_leave_the_fine_source_undetermined():
     result = search(level)
     assert result["candidate_snapshots"][0]["replay"]["status"] == "EXACT_SUPPLIED_MARKED_PUSHFORWARD"
     assert not result["candidate_snapshots"][0]["fine_Z0_fixed_by_full_constraints"]
+    witness = result["candidate_snapshots"][0]["fine_Z0_separating_coordinate"]
+    assert witness["entry"] == [1,1]
+    assert [witness[bound]["value"] for bound in ("minimum","maximum")] == ["1","3"]

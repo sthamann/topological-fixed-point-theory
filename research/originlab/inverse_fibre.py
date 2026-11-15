@@ -154,7 +154,7 @@ def assemble(level, ids):
                         if any(coeff) or value:
                             rows["fit" if mark in fit else "withheld"].append(
                                 ([time["id"],cell,mark,i,j,name],coeff,value))
-    def replay(masses, support, kernel):
+    def replay(masses, support, kernel, equations, target):
         records = [{**atom,"original_measure_mass":[str(masses[ids.index(atom["original_configuration_id"])]),0]}
                    for atom in atoms]
         forms = dict(iter_weighted_fibres(records,size,u_time,y_time))
@@ -162,12 +162,22 @@ def assemble(level, ids):
         if checked["status"] != "EXACT_SUPPLIED_MARKED_PUSHFORWARD":
             raise ArithmeticError("reconstructed masses fail independent fibre replay")
         zero_form = sum((a["Z0"] for a in forms.values()),sp.zeros(size))
-        varies = any(any(sum((w*fine[ids[i]]["Z0"] for i,w in zip(support,direction)),sp.zeros(size)))
-                     for direction in kernel)
+        coordinate = None
+        for direction in kernel:
+            delta = sum((w*fine[ids[i]]["Z0"] for i,w in zip(support,direction)),sp.zeros(size))
+            entry = next(((i,j) for i in range(size) for j in range(size) if delta[i,j]),None)
+            if entry is not None:
+                i,j = entry
+                half = 0 if sp.re(delta[i,j]) else 1
+                coeff = sp.Matrix([[fine[name]["Z0"][i,j].as_real_imag()[half] for name in ids]])
+                coordinate = {"entry":[i,j],"component":("real","imaginary")[half],
+                              **interval(equations,target,coeff)}
+                break
         return {"time_id":time["id"],"candidate_fibre_records":records,"replay":checked,
                 "candidate_fine_Z0_before_outer_contraction":
                     [[[str(x) for x in value.as_real_imag()] for value in row] for row in zero_form.tolist()],
-                "fine_Z0_fixed_by_full_constraints":not varies}
+                "fine_Z0_fixed_by_full_constraints":coordinate is None,
+                "fine_Z0_separating_coordinate":coordinate}
     return rows,replay
 
 
@@ -232,6 +242,7 @@ def run(data):
         scale = next((abs(v) for v in column if v),sp.S.One)
         signatures.setdefault(tuple(column/scale),[]).append({"atom":name,"column_scale":str(scale)})
     result["proportional_atom_classes"] = [group for group in signatures.values() if len(group)>1]
-    result["candidate_snapshots"] = [replay(weights,full["support"],full_kernel) for replay in replays]
+    result["candidate_snapshots"] = [replay(weights,full["support"],full_kernel,validation_a,validation_b)
+                                     for replay in replays]
     return {**result,"status":"UNIQUE_MASSES_IN_DECLARED_ATOM_FAMILY" if full["mass_freedom"]==0
             else "MASSES_UNDERDETERMINED_IN_DECLARED_ATOM_FAMILY"}

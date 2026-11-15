@@ -179,6 +179,21 @@ contraction. Source identity still requires
 proof that the atom family comes from the original operator, a bound
 measure and reference, and control of regulator removal.
 
+The native R113 synthesis now also reports `native_higgs_moment_plan`.
+It computes the complex Fourier coefficients of the gauge-invariant
+Higgs norm in exact arithmetic on the declared native spatial proposals
+and the independently audited eighth-harmonic refinement. Products of
+these coefficients generate the finite evaluation algebra. The plan
+provides a full-rank set of words and an exact inverse from ordered
+integrated moments to class totals. On the native 27 histories the norm
+algebra sees 8 classes. On the audited 81-history refinement it sees
+20. For one fixed nonzero first harmonic, the constant and Fourier
+harmonics 7 and 16 separate the three signs of the eighth harmonic.
+These spatial observables require the original weighted fibre before
+they become source moments. If fine Z0 still varies after all supplied
+constraints, the inverse solver reports a separating raw matrix entry
+with exact attainable bounds and dual certificates.
+
 The same campaign checks a tetrahedral transfer. Supply `transfer.moments`
 as three or four exact 4 by 4 forms on the same ordered mark vectors,
 at steps zero through two or three of the same positive contraction.
