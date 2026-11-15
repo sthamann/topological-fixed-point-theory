@@ -41,6 +41,52 @@ This does NOT establish that physical color and weak SU(3)xSU(2) act
 on these isotypic components. It is a new typed candidate for the
 previously physical/conditional 3+2 identification.
 
+## Stronger geometric theorem: a D4-equivariant exact 3+2 sequence
+
+The order-four geometric rotation r(z)=iz has two **additional fixed points**
+on the Riemann sphere: z=0 and z=infinity. They are not among the four marks.
+Evaluate the original five meromorphic sections at these two points:
+
+  ev_(0,infinity): H0(P1,O(D)) -> C_0 direct_sum C_infinity.
+
+In the f0,...,f4 basis its exact 2x5 matrix is
+
+  [[-1,0,0,0,0],[0,0,0,0,1]].
+
+It is surjective; its kernel is the span of f1,f2,f3. The differential
+eta = dz/z is invariant under r and changes sign under s(z)=1/z.
+For j=1,2,3:
+
+  f_j * eta = z^(j-1)dz/(z^4-1) = omega_j.
+
+Moreover eta has precisely simple poles at 0 and infinity. Thus
+multiplication by eta maps the vanishing-at-0-and-infinity sections
+bijectively onto H0(P1,Omega1(log D)). This realizes the exact sequence
+
+  0 -> H0(Omega1(log D)) tensor L_orientation
+    -> H0(O(D))
+    -> C_0 direct_sum C_infinity -> 0.
+
+This is also the standard sheaf sequence for
+O(D-[0]-[infinity]) included in O(D), since K_P1 is represented by
+the divisor -[0]-[infinity].
+
+**The full D4 equivariance is exact**, not just dimension arithmetic:
+on the 3-dimensional inclusion i, r5 i = i rF and
+s5 i = -i sF; on the 2-dimensional quotient, rotation acts trivially
+and s swaps its two fixed-point evaluations. The sign in the first
+relation comes from eta=dz/z. This precisely upgrades the older
+Riemann--Roch (5,3) number readout to an explicit *geometric* splitting
+of the five modes into the 3-dimensional orientation-twisted kernel
+and the 2-dimensional evaluation quotient.
+
+This theorem still assumes the original square D and its geometric
+rotation as the input; it does not derive their existence, the
+physical E8/SM gauge action, a 3+1D spacetime or the original weighted
+P1 source. It does not force the even weaker *gauge* identification:
+the three C4 characters are distinct and do not themselves commute
+with a full SU3.
+
 ## Negative gauge test and minimal compensating family channel
 
 On the nontrivial C3, rotation has three **distinct** eigenvalues
