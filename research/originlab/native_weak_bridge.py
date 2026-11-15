@@ -131,6 +131,7 @@ def analyze(domain):
     shifted_spectators = [[model.NP+p for pair in quark for p in pair[j]] for j in range(2)]
     exterior_word = _exterior_two_ward(assembler,integer_weights[:,0],sterile,anti_sterile,
                                        lepton,spectators,shifted_spectators,ynu,yd,coupling("MR"))
+    phase_word = _majorana_phase_word(assembler,sterile,anti_sterile,lepton)
     return {
         "status":"NATIVE_HIGGS_ENDS_FOUND_CHARGED_MIDDLE_OPEN",
         "native_inputs_sha256":assembler.domain["_sha256"],
@@ -155,12 +156,53 @@ def analyze(domain):
         "polar_car_parity":polar_checks,
         "neutral_colour_completion":native_carrier_check(integer_weights),
         "native_exterior_two_ward_candidate":exterior_word,
+        "native_majorana_phase_word":phase_word,
         "exact_centre_zero_on_native_generators":True,
         "candidate_split":"the colourless weak leg matches Higgs charge blocks; the full colour-changing leg is absent",
         "missing_middle":"charged maps neutral to right-down and early lepton doublet to late quark doublet, with their adjoints and a common native source binding",
         "physical_source_identity_proved":False,
         "original_values":dict.fromkeys(MARKS),
     }
+
+
+def _majorana_phase_word(assembler, sterile, anti_sterile, lepton):
+    """Independently replay the normalized Fourier word through full96 blocks."""
+    import numpy as np
+
+    from higgs_moment_search import field_coefficients
+    from higgs_orbits import even_word, gram_for_field, majorana_factor
+
+    indices = lepton[0]+lepton[1]
+    majorana = assembler.DM[np.ix_(anti_sterile,sterile)]
+    blocks = [v[np.ix_(indices,anti_sterile)] @ majorana for v in assembler.V]
+    factor = majorana_factor(assembler.domain["couplings"])
+    values = []
+    for genes in ([2,2,0],[2,2,2]):
+        field = assembler.coefficients({"genes":genes})
+        def compare(coeff):
+            actions = {n:sum((x*v for x,v in zip(row,blocks)),np.zeros_like(blocks[0])) for n,row in coeff.items()}
+            raw = {(n,m):np.vdot(a,b) for n,a in actions.items() for m,b in actions.items()}
+            expected = gram_for_field(field_coefficients(assembler.domain["field_proposal"],genes),sorted(field))
+            for key,value in expected.items():
+                np.testing.assert_allclose(raw[key],complex(factor*value),rtol=1e-13,atol=1e-13)
+            return raw
+        unrotated = compare(field)
+        # Basis permutations on both external spaces and a rational spatial
+        # translation co-transport all letters before taking contractions.
+        phase = (3+4j)/5
+        actions = {n:(phase**n*sum((x*v for x,v in zip(row,blocks)),np.zeros_like(blocks[0])))[::-1,::-1]
+                   for n,row in field.items()}
+        moved = {(n,m):np.vdot(a,b) for n,a in actions.items() for m,b in actions.items()}
+        def closed(raw):
+            return (raw[-1,1]*raw[0,2].conjugate()+raw[1,-1]*raw[0,-2].conjugate())/2
+        np.testing.assert_allclose(closed(unrotated),closed(moved),atol=1e-12,rtol=1e-13)
+        exact = even_word(gram_for_field(field_coefficients(assembler.domain["field_proposal"],genes),sorted(field)),
+                          (-1,1),(0,2))
+        np.testing.assert_allclose(closed(unrotated),complex(factor**2*exact),atol=1e-12,rtol=1e-13)
+        values.append(str(exact))
+    return {"genes":[[2,2,0],[2,2,2]],"normalized_values":values,
+            "full96_block_replay":True,"co_transported_chart_control":True,
+            "scope":"spatial charged Higgs followed by its adjoint on the Majorana channel; no physical OS weighting"}
 
 
 def _exterior_two_ward(assembler, charges, sterile, anti_sterile, lepton,

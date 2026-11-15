@@ -10,7 +10,7 @@ from source import NATIVE, rational, source_refs
 from verify import digest
 
 
-def norm_coefficients(proposal, genes):
+def field_coefficients(proposal, genes):
     require(len(genes)==len(proposal["slots"]), "one gene per original Fourier slot required")
     allowed = list(map(rational,proposal["allowed_multipliers"]))
     require(all(type(i) is int and 0<=i<len(allowed) for i in genes), "invalid Fourier gene")
@@ -26,6 +26,11 @@ def norm_coefficients(proposal, genes):
             factor = 1 if slot["kind"]=="cos" else -sp.I
             field.setdefault(harmonic,zero.copy())[component] += amplitude*factor/2
             field.setdefault(-harmonic,zero.copy())[component] += amplitude*sp.conjugate(factor)/2
+    return field
+
+
+def norm_coefficients(proposal, genes):
+    field = field_coefficients(proposal,genes)
     norm = {}
     for a,x in field.items():
         for b,y in field.items():
@@ -92,6 +97,8 @@ def probe_plan(proposal):
 
 
 def native_probe_plan(root, domain):
+    from higgs_orbits import orbit_plan, majorana_factor
+
     require(domain.resolve()==(root/NATIVE).resolve(),"the probe plan needs the original Q domain")
     data = json.loads(domain.read_text())
     refs = source_refs(root,data["source_originals"])
@@ -107,7 +114,11 @@ def native_probe_plan(root, domain):
         selector.append({"gene":j,"U_7":str(coeff[7]),"U_16":str(coeff[16])})
     require(sp.Matrix([[1,sp.Rational(row["U_7"]),sp.Rational(row["U_16"])] for row in selector]).det()!=0,
             "original three-point gauge-invariant selector lost rank")
-    return {"domain_sha256":digest(domain),"source_refs":refs,"native_proposal":probe_plan(proposal),
-            "fine_refinement":[-7,6],"fine_harmonic":8,"fine_proposal":probe_plan(reflected),
+    native,fine = probe_plan(proposal),probe_plan(reflected)
+    native["orbit_audit"] = orbit_plan(proposal,native["norm_signature_classes"])
+    fine["orbit_audit"] = orbit_plan(reflected,fine["norm_signature_classes"])
+    return {"domain_sha256":digest(domain),"source_refs":refs,"native_proposal":native,
+            "fine_refinement":[-7,6],"fine_harmonic":8,"fine_proposal":fine,
+            "majorana_family_return_factor":str(majorana_factor(data["couplings"])),
             "three_point_selector":selector,
             "scope":"exact spatial field probes; weighted moments need the original common fibre and reference"}

@@ -206,6 +206,19 @@ contraction. Source identity still requires
 proof that the atom family comes from the original operator, a bound
 measure and reference, and control of regulator removal.
 
+The native synthesis also classifies the finite Higgs histories in a
+fixed flat transport chart under constant doublet U(2) and spatial
+translations, with an additional table allowing reversal of the circle.
+Equality of Hermitian Fourier Grams after a common translation phase
+character is necessary and sufficient for that restricted equivalence.
+The probe search compares reflection-even quartic Gram words with equal
+mode differences, so it cannot split a class by a chart phase. The
+original full96 Majorana and neutrino Higgs blocks independently replay
+one sign-sensitive word and its transported chart control. This is a
+spatial probe. A local gauge interpretation requires a transported
+connection, and its physical weighted response requires the native
+source and absolute reference.
+
 The native R113 synthesis now also reports `native_higgs_moment_plan`.
 It computes the complex Fourier coefficients of the gauge-invariant
 Higgs norm in exact arithmetic on the declared native spatial proposals
