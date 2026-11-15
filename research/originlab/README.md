@@ -81,6 +81,37 @@ parent. It cannot be used to assign a physical source value. See
 and [independent test cases](test_seam_cohomology.py).
 `--finite-controls-only` includes this control.
 
+## Primitive number of seam marks from first local spinor current extension
+
+The additional OriginLab campaign p1_minimal_spinor_marks studies **all**
+n>=2 distinct points of P1, without assuming four marks or E8. Its
+Riemann–Roch inputs have dimensions (n+1,n-1), i.e. 2n **typed**
+complex geometric modes. If the original physical source realizes
+them as 2n **independent chiral complex CAR fields**, that yields
+4n real Majoranas with c=2n, and a Spin(4n) halfspinor primary
+with conformal weight h=n/4. A local *bosonic* spinor lattice
+extension exists when n is divisible by four. Requiring a
+**new weight-one spinor current** uniquely fixes n=4, hence 16
+Majoranas, c=8, and the standard index-two D8+ lattice with 112
+original D8 roots and 128 weight-one spinor roots (E8=240 roots,
+248 currents including Cartan). For n=8 a local bosonic spinor
+extension exists only at h=2 and adds no new affine weight-one
+root currents. The **weight-one primitivity criterion** is essential;
+bosonic locality alone does not uniquely select n=4.
+
+Run the exact finite search:
+
+    python3 -B research/originlab/main.py --out /tmp/originlab-four-origin \
+      --campaign p1_minimal_spinor_marks
+
+The argument is conditional on the **unproved physical CAR source
+field map and the decision to require primitive weight-one spinor
+currents**; it does not select the special square position of marks,
+original R113 values or a local 3+1D physical TOE. A complete
+proof and independent regression are in
+[P1-MINIMAL-SPINOR-MARKS-20261115.md](P1-MINIMAL-SPINOR-MARKS-20261115.md)
+and [test_p1_minimal_spinor_marks.py](test_p1_minimal_spinor_marks.py).
+
 ## Geometric 5+3 native E8 Weyl proof and one-sided seam source gates
 
 The most important new finite **algebraic** F1 progress of 15 November is
