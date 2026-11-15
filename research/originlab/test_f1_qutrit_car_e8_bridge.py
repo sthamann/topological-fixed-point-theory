@@ -44,6 +44,18 @@ class QutritCARE8BridgeTests(unittest.TestCase):
         self.assertEqual(r["exact_E8_branching"],
                          "248=(8,1)+(1,78)+(3,27)+(3bar,27bar)")
 
+    def test_mixed_E8_roots_split_affine_current_weight_one_exactly(self):
+        r=self.report["E8_native_color_and_E6_backtransport"]
+        self.assertEqual(r["all_162_mixed_E8_roots_have_conformal_weight_split"],
+                         ["SU3=1/3","E6=2/3","total=1"])
+        self.assertEqual(r["E8_colour_E6_root_norm_classes"],
+                         {"SU3_only":6,"E6_only":72,"mixed":162})
+        self.assertEqual(r["affine_level_one_conformal_central_charges"],
+                         {"SU3":2,"E6":6,"E8":8})
+        self.assertEqual(r["E6_coset_central_charge_after_SU3"],
+                         ["(3-2)+5=6"])
+        self.assertFalse(r["physical_E6_coset_identified_by_central_charge_alone"])
+
     def test_geometric_three_mode_source_colour_not_quarter_neutral(self):
         r=self.report["E8_native_color_and_E6_backtransport"]
         self.assertEqual(r["source_F3_complex_mode_axes"],[3,5,7])
