@@ -129,10 +129,98 @@ def paired_determinant_candidate():
     }
 
 
+
+def _pfaffian(antisymmetric):
+    """Recursive exact Pfaffian for a small skew matrix (test only)."""
+    n=antisymmetric.rows
+    require(n==antisymmetric.cols and n%2==0 and
+            antisymmetric == -antisymmetric.T,
+            "Pfaffian needs an even skew symmetric matrix")
+    if n==0:
+        return sp.S.One
+    return sp.expand(sum(
+        (-1)**(j+1)*antisymmetric[0,j]*_pfaffian(
+            antisymmetric.extract([k for k in range(1,n) if k!=j],
+                                  [k for k in range(1,n) if k!=j]))
+        for j in range(1,n)))
+
+
+def two_face_fermion_sewing():
+    """Four exact two-face CAR orientations with a relative unitary U.
+
+    This is a *declared* quadratic fermion comparison, not the actual
+    full TFPT Dirac/Pfaffian source or a proof of OS positivity.
+    """
+    t,g=sp.symbols("t g",positive=True)
+    a=(1-t*t)/(1+t*t)
+    b=2*t/(1+t*t)
+    R=sp.diag(1,-1)
+    X=sp.Matrix([[0,1],[1,0]])
+    U=(a*R+b*X)*R
+    identity=sp.eye(2)
+    sin_delta=2*t/(1+t*t)
+    forward=(1-g*g)**2+4*g*g*sin_delta**2
+    antioriented=(1+g*g)**2-4*g*g*sin_delta**2
+    expected={
+      "same_forward_sign":forward,
+      "same_opposite_sign":antioriented,
+      "reverse_forward_sign":(1-g*g)**2,
+      "reverse_opposite_sign":(1+g*g)**2
+    }
+    results={}
+    for reverse in (False,True):
+        for sign in (-1,1):
+            row_top=identity.row_join(-g*U)
+            second=U.inv() if reverse else U
+            K=row_top.col_join((sign*g*second).row_join(identity))
+            name=("reverse_" if reverse else "same_")+(
+                "forward_sign" if sign==-1 else "opposite_sign")
+            residue=sp.factor(K.det()-expected[name])
+            require(residue==0,
+                    "two-face determinant changed in the orientation/sign class")
+            results[name]=str(sp.factor(K.det().subs(g,1)))
+            if name=="same_forward_sign":
+                for p in (sp.Rational(1,2),sp.S.One):
+                    trial=K.subs({t:p,g:1})
+                    block=sp.zeros(4).row_join(trial).col_join(
+                        (-trial.T).row_join(sp.zeros(4)))
+                    pf=_pfaffian(block)
+                    require(sp.simplify(pf-trial.det())==0,
+                            "eight-Majorana Grassmann Pfaffian failed its determinant identity")
+    require(sp.simplify(forward.subs(g,1)-4*sin_delta**2)==0 and
+            sp.simplify(antioriented.subs(g,1)-4*(1-sin_delta**2))==0 and
+            sp.simplify(expected["reverse_forward_sign"].subs(g,1))==0,
+            "unit-coupling orientation controls do not separate the shapes")
+    # For g<1, the root-pole 1/(4sin delta) is NOT canceled:
+    # W_g = (1-g²)²/(4sin delta)+g² sin delta.
+    square_second=sp.factor((1-g*g)**2/4-g*g)
+    require(sp.factor(square_second.subs(g,sp.sqrt(2)-1))==0 and
+            sp.factor(square_second.subs(g,1))==-1,
+            "finite sewing coupling has the wrong local-max threshold")
+    return {
+      "status":"EXACT_FINITE_TWO_FACE_CAR_PFAFFIAN",
+      "two_face_block":"K=[[I,-g U],[sign*g U_or_inverse,I]]",
+      "unit_coupling_sewing_determinants":results,
+      "same_orientation_forward_det":"(1-g*g)^2+4*g*g*sin(delta)^2",
+      "reverse_orientation_forward_det":"(1-g*g)^2 (delta-independent)",
+      "opposite_sign_same_orientation_det":"(1+g*g)^2-4*g*g*sin(delta)^2",
+      "same_forward_unit_coupling_pfaffian":"Pf([[0,K],[-K.T,0]])=det(K)=4*sin(delta)^2",
+      "fermionic_variables_in_this_control":8,
+      "charged_root_dressed_at_g_one":"sin(delta), unique global maximum square",
+      "g_below_one_pole_uncanceled":True,
+      "local_maximum_square_threshold":"g>sqrt(2)-1 (does not give global maximum if g<1)",
+      "physical_unit_coupling_and_CAR_orientation_proved":False,
+      "actual_original_Dirac_eta_ghost_source_identified":False,
+      "OS_reflection_positivity_proved":False,
+      "original_R113_values_computed":False
+    }
+
+
 def controls():
     return {
         "free_charge_triangle":root_triple_no_max(),
         "paired_relative_determinant":paired_determinant_candidate(),
+        "two_face_fermionic_sewing":two_face_fermion_sewing(),
         "physical_source_identity_proved":False,
         "F1_solved":False
     }
