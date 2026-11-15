@@ -31,6 +31,16 @@ class SeamDiracTests(unittest.TestCase):
         self.assertEqual(self.result["Dirac_mass_determinant"],"-m^2(1+m^2)^3")
         self.assertEqual(self.result["one_selected_endpoint_index"],1)
 
+    def test_one_sided_positive_time_has_unique_vacuum(self):
+        self.assertEqual(self.result["one_sided_positive_time_H_squared_spectrum"],
+                         ["0 (x1)","1 (x6)"])
+        self.assertEqual(self.result["one_sided_vacuum_rank"],1)
+        self.assertEqual(self.result["one_sided_transfer_formula"],
+                         "T(t)=P_vac+exp(-t)*(I-P_vac)")
+        self.assertEqual(self.result["one_sided_two_branch_intertwinement"],
+                         "S P_0 S=P_infinity")
+        self.assertFalse(self.result["one_sided_cap_selection_and_time_scale_derived"])
+
     def test_source_and_time_not_proven(self):
         self.assertFalse(self.result["single_endpoint_selection_from_original_P1_proved"])
         self.assertFalse(self.result["native_Dirac_selfadjoint_identified"])
