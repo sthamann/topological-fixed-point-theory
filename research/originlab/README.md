@@ -81,6 +81,63 @@ parent. It cannot be used to assign a physical source value. See
 and [independent test cases](test_seam_cohomology.py).
 `--finite-controls-only` includes this control.
 
+## F1 source from one algebra: CP, OS, exact sewing, hidden memory and conditional uniqueness
+
+A source-first **constructive mathematical baseline** now exists. It is
+NOT the original weighted TFPT source, nor the original R113 packet,
+and must never be used to promote physical F1 or Atlas claims.
+
+Run the four new finite exact campaigns:
+
+    python3 -B research/originlab/main.py --out /tmp/f1-source-rule \
+      --campaign f1_functorial_source \
+      --campaign f1_covariant_quantum_semigroup \
+      --campaign f1_hidden_history_dilation \
+      --campaign f1_spin2_stieltjes_gate
+
+The quantum algebra M3(C) with the explicit 10-Kraus channel
+Phi_q(A)=qA+(1-q)Tr(A)I/3 has full complete positivity,
+OS-positive source Gram, stationary trace state, exact time sewing,
+and exact weighted coarse-graining for all 9 boundary pairs. Its
+finite diagonal Markov history is reflection positive on ALL
+half-cylinder observables. Operational dimensionless time is
+tau=-log(q), additive under sewing. However **the source choice
+q and physical clock scale are not derived**. Keeping the
+same bare q at a two-step RG fixed point forces q=0 or 1,
+neither of which has nontrivial ordinary decay dynamics.
+
+Under the ADDITIONAL assumption of invariance under ALL inner
+SU3 basis changes, solving 648 exact commutant equations
+gives rank 79 out of 81 unknowns: a unital TP channel has
+one parameter q, with exact Choi CP interval [-1/8,1].
+Continuity and the Markov law then fix the semigroup up to
+clock normalization as q(t)=exp(-kappa*t). The original TFPT
+P1 source has not established full SU3 inner covariance, a
+positive 3-state Hilbert or source star, and this finite
+model has UV spectral dimension ZERO, not 3+1D.
+
+A separate four-mark D4 full-history source provides an exact
+counterexample to inferring a Markov/Lindblad generator from
+an observed projection: global OS positivity, 16 exact
+weighted fine-to-coarse endpoint sums and D4 symmetry all
+hold, while R2-R1² has nonzero entries 1/600 and 1/1800
+after projecting one mark against the other three. This is a
+possible *hidden-memory mechanism*, NOT an embedding of the
+native 20-state TFPT pulse.
+
+An independently checked original 4.5 graviton source error
+remains: positive Stieltjes F(z)=1+1/(z+1) yields an
+additional TT pole at z=-2 of positive residue. Thus
+zero-free off the physical cut does not imply massless-only
+TT poles. No ghost is inferred from this example.
+
+All statements and the physical source requirements are in
+[F1-PREGEOMETRIC-SOURCE-CLOSURE-20261115.md](F1-PREGEOMETRIC-SOURCE-CLOSURE-20261115.md).
+The four modules and **27 locally executed new regression tests**
+are in main and in mandatory core CI. The actual original
+domain retains whole_source_bundle=null and a spatial tangential
+circle that is NOT physical OS time. **F1 remains OPEN.**
+
 ## First priority: ORIGINAL TFPT UV measure-theorem consistency (15 November)
 
 Run the new eight exact original-source theorem guards before interpreting
