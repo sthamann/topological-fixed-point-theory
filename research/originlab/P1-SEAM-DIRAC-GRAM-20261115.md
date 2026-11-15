@@ -58,6 +58,41 @@ A 5-dimensional quotient obtained by identifying *all three* logarithmic modes w
 
 An extra full SU2-invariant spherical structure would force the cross block zero by Schur's lemma because C5=Sym^4(C²) (spin 2) and F3=Sym^2(C²) (spin 1) are inequivalent irreducible SU2 modules. However the marked D=mu4 geometry breaks the full SU2 action. Using SU2 to set z=0 is an additional parent-source hypothesis, not already proven by v512.
 
+## Stronger result: equivariant source normalization and one grading Ward gate
+
+On the whole strictly positive range |z|<1, the unknown mixing coefficient is **not an abstract D4/fermion CAR character parameter**. Let M(z) be the 5x3 cross block, and define the positive 3x3 matrix
+
+    K = sqrt(I3-M* M) = diag(h,1,h),
+    h=sqrt(1-|z|²)>0.
+
+The explicit 8x8 triangular frame transformation
+
+    T = [[I5,-M K^-1],[0,K^-1]]
+
+obeys exactly
+
+    T* G(z) T = I8
+    [T,r8]=[T,s8]=0.
+
+Here * denotes Hermitian adjoint. It follows that **all** |z|<1 yield the same geometric unitary D4 and quarter-clock representations after a D4-equivariant positive Gram normalization. An exact rational and genuinely complex original-symmetry compatible witness and symbolic Schur identity are checked by the executable test. Thus the **source rank condition** |z|<1 suffices for the same abstract CAR representation and the exact algebraic E8 character match, even if the original source does not fix the complex value of z. Physical time, charged sources and absolute reference STILL depend on their actual weighted forms and cannot be transformed away without checking all original observables.
+
+There is a sharper optional **one-line source Ward gate**. The primitive spectral-triple datum already contains some grading Gamma, but its action on these geometric C5 and F3 labels has **not** been identified. If the original physical source produces the form-degree action
+
+    Gamma_form = diag(+I5,-I3)
+
+as a genuine *isometry* of its same reflected positive Gram, then
+
+    Gamma_form* G(z) Gamma_form = G(z)
+    implies M(z)=0 and z=0.
+
+The actual geometric odd operator D anticommutes with Gamma_form and the D4 actions commute with Gamma_form. So this is algebraically self-consistent. **It is not automatic:** the original spectral triple's Gamma may act differently on the physical CAR source and Euclidean time reflection may exchange chirality. One must demonstrate Gamma_orig ∘ field_map = field_map ∘ Gamma_form AND source Ward invariance, not assume them. If both are proven, the full 8-mode positive Gram follows without a free mixing modulus.
+
+A weaker demand that the constructed odd D be self-adjoint in G(z) fixes only Im(z)=0, not z=0: the exact skew Hermiticity residual has diagonal entries ±(z-z*). Hence source Hermiticity cannot replace the missing grading Ward identity.
+
+### BRST/Hodge double-use obstruction
+
+The finite D has six nonzero paired modes and two zero modes. If one identifies its Hodge kernel projector **itself** with the entire physical admissibility projector and insists that the E8 current fields all survive within that kernel, then the resulting physical state space has rank 2, or rank 1 after side selection. Such a finite zero-mode space cannot support 248 independent E8 current operators; the two interpretations would contradict each other. The geometric D should instead be treated as an **auxiliary seam interface**, or the actual physical projector must have a different graded/source action. This is a necessary distinction, not a general no-go for BRST constructions with nonzero excitations and infinite-dimensional Hilbert space.
+
 ## Scope and mandatory original tests
 
 The map i is a meromorphic multiplication by dz/z, not the exterior derivative. The derivative of a general f_k has double poles at D, so it does not preserve the logarithmic differential space without a new projection/connection. Do not call D the original de Rham or APS Dirac operator. Also 5 and 3 holomorphic section degrees give different geometric conformal representations; their realization as eight chiral CAR fermions all with weight 1/2 requires a real source spin/twist dictionary.
