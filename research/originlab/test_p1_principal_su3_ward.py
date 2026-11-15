@@ -33,6 +33,14 @@ class PrincipalSU3WardTests(unittest.TestCase):
         self.assertFalse(self.data["lambda_zero_semidirect_compact_ad_invariant_metric"])
         self.assertFalse(self.data["lambda_negative_split_real_SL3_positive_ad_invariant_metric"])
 
+    def test_geometric_cubic_requires_one_compensating_fourth_mark(self):
+        self.assertEqual(self.data["geometric_D4_cubic_generator_checks"],112)
+        self.assertEqual(self.data["nonzero_original_representation_cubic_sample"],"4")
+        self.assertEqual(self.data["unmarked_geometric_cubic_character"],
+                         "chi(r)=chi(s)=-1 (forbidden in invariant scalar cap)")
+        self.assertTrue(self.data["single_f2_twist_cancels_cubic_character"])
+        self.assertFalse(self.data["physical_original_f2_mark_and_cubic_source_bound"])
+
     def test_cubic_Ward_is_one_missing_original_source_number(self):
         self.assertFalse(self.data["native_original_cubic_source_lambda_computed"])
         self.assertFalse(self.data["native_original_Gram_ratio_b_over_a_computed"])
