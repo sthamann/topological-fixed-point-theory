@@ -8,6 +8,16 @@ The current [plan audit](PLAN-AUDIT.md) covers the original requirements and
 the three later sets of scenario tests. The first priority is the
 [same-source R113 test](R113-R104-RELATIONAL.md).
 
+## 15 November 2026 · Seam flow and source consistency audit
+
+Six finite negative controls now run in [test_seam_source_obstructions.py](test_seam_source_obstructions.py). They distinguish the Calderon spectral polarization from geometric reflection in an exact collar example: P Q P = P/2, and two copies give P2 Q2 P2 = P2/4. A product of anti-commuting involutions C = R sign(B) has C^2 = -I, so its adjoint action has order at most two; it cannot alone realize the nontrivial order-four current action required by the already audited Z12 gluing grading. A separate relative parity lift U^2 = Pi has the required i and -i operator phases in a two-state model, but is not an E8 Ward/source identification.
+
+The reflection-covariant family B(s) = diag(s,2,-2), with R swapping the fixed +/-2 pair, satisfies R B(s) R^-1 = -B(-s), has exactly one positive spectral crossing and an eta jump of two, and forces an unpaired zero mode at the seam. This is a candidate mechanism for the spectral-flow-one P1 interface, not a derivation of the geometric four marks or a Lorentzian parent. The original Calderon/deck relation on D_coll is still unverified.
+
+The source audit further confirms that a block restriction is not a weighted conditional integration (the effective Gaussian quadratic form uses a Schur complement); pointwise positive weights need not preserve reflection positivity; and a globally uniform lower bound K(s,t) >= m > 0 on t in [0,infinity) is incompatible with a finite output measure of the stated K(s,t)dt RG map. These are counterexamples to general inference steps, not counterexamples to every possible admissible TFPT source. In the original source one must explicitly check the finite weighted fiber identity, reflected positivity and normalization on its actual configuration domain.
+
+F1 remains open. The first missing original object remains the weighted null-mark reflected kernel Q0 on the original full source, together with its absolute empty reference and time. The four R113 values Z0, ZU, ZY, ZUY are not produced by these finite tests. The next decisive test must bind the original weighted collar source to the existing marked affine grade-one adjoints and Z12 charge blocks, then evaluate its same-source physical transfer and marked return before any claim of completion.
+
 ## 15 November 2026 · Reflected form in the marked affine chart
 
 The marked charged adjoint fixes the relative reflected form on the
