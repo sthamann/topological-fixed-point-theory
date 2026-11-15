@@ -204,6 +204,52 @@ are in main and in mandatory core CI. The actual original
 domain retains whole_source_bundle=null and a spatial tangential
 circle that is NOT physical OS time. **F1 remains OPEN.**
 
+## Source-type reconciliation: M3 vs CAR8, E8 colour-E6 and the clock
+
+The complete [new origin source gate](F1-QUTRIT-CAR-E8-COLOR-SOURCE-GATE-20261115.md)
+separates the original qutrit M3 **operator multiplication** from the
+eight-CAR one-particle Fock functor used in the newest single-source
+Clifford and Ramond E8 studies. A unital M3 algebra cannot act on
+the irreducible 256-dimensional CAR8 Fock; a simultaneous full
+unital carrier requires at least C3 tensor exterior(C8), dim 768.
+This is conditional, not a new TFPT particle count.
+
+The exact native E8 colour roots pulled backwards through the
+31-reflection source-to-native quarter clock consist of ONE D8
+pair root and TWO spinor roots in their positive A2 basis. The
+E6 centralizer has 72 roots, and the other 162 root currents
+split into six 27-fold colour weights. ALL mixed currents carry
+root conformal weight split h_SU3=1/3 plus h_E6=2/3, with
+c_SU3_1=2, c_E6_1=6 and c_E8_1=8.
+
+A 3-colour fundamental plus 5 singlet complex fermions could
+produce SU3 level one. EIGHT adjoint complex fermions would
+produce level six, and the natural geometric F3 triplet has
+balanced C4 currents (2,2,2,2) instead of pinned native
+colour's (8,0,0,0). More fundamentally the 16-Majorana
+geometric/native vector C4 eigenspectra differ (4,4,4,4)
+versus (10,0,6,0), excluding ANY SO16-only clock rotation
+even though the full E8 current character agrees. A true
+spinor/Weyl current transform and source-derived GSO are needed.
+
+A finite 768 carrier alone also cannot represent affine E8 at
+level one (nonzero central current commutator has zero finite
+trace). The original full96 spatial Fourier return provides an
+unbounded mode tower, not a physical original OS time or
+current algebra. Fixed q at arbitrarily small microscopic step
+collapses to instantaneous depolarization; physical continuum
+time requires scale-dependent q(a) approaching one.
+
+Run the exact finite bridge tests:
+
+    python3 -B research/originlab/main.py --out /tmp/f1-color-bridge \
+      --campaign f1_qutrit_car_e8_bridge
+
+The campaign checks all 240 roots, 49,152 CAR basis
+anticommutators, 55,296 qutrit/CAR tensor actions and the exact
+continuum scaling. It does NOT create physical Q0 or R113,
+3+1D chirality or universal gravity. F1 is OPEN.
+
 ## First priority: ORIGINAL TFPT UV measure-theorem consistency (15 November)
 
 Run the new eight exact original-source theorem guards before interpreting
