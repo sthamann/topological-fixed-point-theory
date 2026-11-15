@@ -97,6 +97,11 @@ class ChargedP1ModulusTests(unittest.TestCase):
         self.assertEqual(gate["status"],"NO_BARE_R113_VACUUM_DETERMINANT")
         self.assertEqual(gate["paired_empty_contraction"],"1")
         self.assertEqual(gate["paired_full_trace"],"16*t*t/(1+t*t)^2")
+        self.assertEqual(gate["same_operator_graded_trace"],
+                         "Str((-1)^F Gamma(U))=det(I-U)")
+        self.assertEqual(gate["ordinary_times_supertrace"],
+                         "16*t*t/(1+t*t)^2")
+        self.assertEqual(gate["same_operator_even_sector_trace"],"2")
         self.assertFalse(gate["source_scalar_s_or_selector_proved_to_contain_pair"])
         self.assertFalse(gate["direct_pfaffian_substitution_in_native_empty_Fock_permitted"])
 
@@ -113,6 +118,11 @@ class ChargedP1ModulusTests(unittest.TestCase):
         self.assertEqual((gu[0,0],gm[0,0]),(1,1))
         self.assertEqual((gu.trace(),gm.trace()),(sp.Rational(16,5),sp.Rational(4,5)))
         self.assertEqual(gu.trace()*gm.trace(),sp.Rational(64,25))
+        parity=sp.diag(1,-1,-1,1)
+        self.assertEqual(sp.trace(parity*gu),sp.Rational(4,5))
+        self.assertEqual(sp.trace(gu)*sp.trace(parity*gu),
+                         sp.Rational(64,25))
+        self.assertEqual((gu[0,0],(parity*gu)[0,0]),(1,1))
 
     def test_no_r113_or_calderon_source_promoted(self):
         self.assertFalse(self.result["F1_solved"])
