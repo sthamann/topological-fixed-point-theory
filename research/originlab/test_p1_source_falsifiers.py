@@ -1,7 +1,7 @@
 """Original-source countermodel and determinant regression checks."""
 import unittest
 import sympy as sp
-from p1_source_falsifiers import controls, four_mark_family, gaussian_arc_determinant, full_gaussian_gluing, calderon_hardy_obstruction
+from p1_source_falsifiers import controls, four_mark_family, gaussian_arc_determinant, full_gaussian_gluing, relative_polarization_clock, calderon_hardy_obstruction
 
 
 class OriginalP1SourceGateTests(unittest.TestCase):
@@ -39,6 +39,15 @@ class OriginalP1SourceGateTests(unittest.TestCase):
         self.assertEqual(result["combined_determinant"],
                          "64*perimeter (128*pi when perimeter=2*pi)")
         self.assertFalse(result["physical_F1_modulus_selected"])
+
+    def test_cross_ratio_as_relative_polarization_trace(self):
+        result=relative_polarization_clock()
+        self.assertEqual(result["cross_ratio_from_trace"],
+                         "lambda=(trace(U)-2)/(trace(U)+2)=-t^2")
+        self.assertEqual(result["square_iff"],
+                         "trace(U)=0 iff t=1 (t>0); then U^2=-I")
+        self.assertFalse(result["microlocal_source_intertwiner_derived"])
+        self.assertFalse(result["physical_R113_values_produced"])
 
     def test_two_fourier_modes_refute_local_calderon_deck_equality(self):
         result=calderon_hardy_obstruction()
