@@ -22,8 +22,8 @@ from verify import car_replay, clock_test, digest, eigenvalue_test, r102
 
 HERE = Path(__file__).resolve().parent
 CAMPAIGNS = ("r113", "r113_synthesis", "source_bridge", "marked_search", "double_cell", "moving_carrier", "affine_polarization", "affine_operators", "affine_car", "colour_ward", "weak_source", "weak_folded_clock", "p1_field_search", "weak_return_rank", "four_mark_geometry", "f1_family_index", "r102", "bell", "clock", "identifiability", "four_mark_selection",
-             "spectral_source_controls", "empirical_source_audit", "composed_search", "seam_cohomology", "p1_source_falsifiers", "p1_charged_modulus", "p0", "f1")
-FINITE_CONTROLS = ("double_cell", "moving_carrier", "affine_polarization", "affine_operators", "affine_car", "colour_ward", "weak_source", "weak_return_rank", "four_mark_geometry", "f1_family_index", "seam_cohomology", "p1_source_falsifiers", "p1_charged_modulus")
+             "spectral_source_controls", "empirical_source_audit", "composed_search", "seam_cohomology", "p1_source_falsifiers", "p1_charged_modulus", "p1_four_current_gate", "p1_e8_geometric_lift", "p1_seam_dirac", "p1_spinor_cover", "p0", "f1")
+FINITE_CONTROLS = ("double_cell", "moving_carrier", "affine_polarization", "affine_operators", "affine_car", "colour_ward", "weak_source", "weak_return_rank", "four_mark_geometry", "f1_family_index", "seam_cohomology", "p1_source_falsifiers", "p1_charged_modulus", "p1_four_current_gate", "p1_e8_geometric_lift", "p1_seam_dirac", "p1_spinor_cover")
 
 
 def atomic_json(path, payload):
@@ -166,6 +166,18 @@ def execute(campaign, root, args, suggestion_rows, retained_rows, prior_question
         return controls()
     if campaign == "p1_charged_modulus":
         from p1_charged_modulus import controls
+        return controls()
+    if campaign == "p1_four_current_gate":
+        from p1_four_current_gate import controls
+        return controls()
+    if campaign == "p1_e8_geometric_lift":
+        from p1_e8_geometric_lift import controls
+        return controls()
+    if campaign == "p1_seam_dirac":
+        from p1_seam_dirac import controls
+        return controls()
+    if campaign == "p1_spinor_cover":
+        from p1_spinor_cover import controls
         return controls()
     if campaign == "double_cell":
         from double_cell import replay
