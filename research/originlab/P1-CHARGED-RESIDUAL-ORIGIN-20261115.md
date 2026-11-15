@@ -151,6 +151,46 @@ the square selector in this class. The actual charge conjugation,
 time reflection, fermion orientation and admissibility projector must
 be evaluated jointly on the original Hilbert space to decide the sign.
 
+## Critical original R113 zero-Fock **source contract**: direct Pfaffian insertion is not allowed
+
+Re-reading the actual [9 November R113 original/reference owning document](../../experiments/theory-contracts/chat-triangulation-20261108/R113-ORIGINAL-UND-REFERENZ-20261109.txt), §1, gives, for each original or reference branch j,
+
+    Q_j[b] = s_j[b] Gamma(R_j[b]),
+    C_{j,t}^{00}(b_out,b_in) = I_{j,t}(w_j[b] s_j[b])(b_out,b_in).
+
+Here Gamma is fermionic exterior second quantization, and the **actual zero-fermion exterior vacuum** obeys
+
+    <Omega_F, Gamma(R) Omega_F> = 1,
+
+for every one-particle R. In sharp contrast the **full fermion Fock trace** is
+
+    Tr_Fock Gamma(R) = det(I+R).
+
+On the two-mode unitary relative-polarization model, the two full traces
+at R=U and R=-U are respectively Dplus and Dminus, and their product
+is the synthetic paired determinant. The two corresponding **empty
+Fock contractions** multiply to **one**, not Dplus*Dminus.
+
+We verified this explicitly on the exact 4-dimensional Fock spaces
+Lambda^0(C²)⊕Lambda^1(C²)⊕Lambda^2(C²), including the nonsquare
+v512 witness t=1/2: full traces 16/5 and 4/5 multiply to 64/25,
+whereas the two empty-state responses are each 1.
+
+**Therefore the finite 8-Majorana Gaussian candidate is NOT the actual
+R113 zero-Fock source** just because both contain two faces. To make it
+a TFPT origin theorem one must derive the **same** determinant as part
+of the actual original scalar s_j[b], or demonstrate that the genuine
+physical endpoint cap/selector and allowed intermediate sectors
+induce precisely that source contraction. Neither assertion follows
+from bare Gamma(R), OS positivity or the geometric four-mark algebra.
+
+The original document explicitly warns that inserting a full fermion
+trace would alter its contraction. This blocks the most tempting
+shortcut. The existing P1 source gate is now sharpened to **derive,
+not posit, the determinant pair from the unnormalized native scalar
+and its original bosonic integration** before comparison to the
+synthetic angle ratios.
+
 ## Mandatory original-source F1 test
 
 On the actual finite blocked original source with its original Higgs, gauge, geometry, fermion, ghost, eta, selector and common reference, compute the charged neutral-root return and all four R113 values at the square and at t=1/3, 1/2 and 2/3. Factor out only the provably source-identical free E8 root component. Determine whether its remaining physical scalar, including its BRST/Pfaffian/eta weight, has the above pair-determinant exponent and angle dependence. Verify at TWO consecutive blocked levels, including the actual weighted fiber pushforward and the same positive-time Gram.
