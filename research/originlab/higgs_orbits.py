@@ -1,10 +1,13 @@
 """Classify native Fourier histories under constant gauge and spatial chart changes."""
 from collections import defaultdict
 from itertools import combinations, combinations_with_replacement
+import json
 
 import sympy as sp
 
-from higgs_moment_search import field_coefficients
+from higgs_moment_search import basis_rows, field_coefficients, probe_plan
+from reconstruction import require
+from source import MARKS, as_form
 
 
 def gram_for_field(field, modes):
@@ -78,6 +81,72 @@ def even_word(gram, first, second):
     return sp.expand((direct+reflected)/2)
 
 
+def support_polynomial(points, labels, basis, constant_coordinates):
+    """Describe a nonnegative polynomial vanishing on the planned signatures."""
+    used = sorted({j for word,_ in basis for j in word})
+    if not used and not constant_coordinates:
+        return None
+    scales = [max(x[j] for x in points)-min(x[j] for x in points) for j in used]
+    return {
+        "coordinates":[labels[j] for j in used],
+        "coordinate_scales":list(map(str,scales)),
+        "zeros":[[str(x[j]) for j in used] for x in points],
+        "constant_coordinates":constant_coordinates,
+        "formula":("sum of squared deviations on constant coordinates plus the product over zeros s "
+                   "of squared scaled distances; omit the product when there are no varying coordinates"),
+        "degree_in_coordinates":max(2 if constant_coordinates else 0,2*len(points) if used else 0),
+        "bounded_equivalent":"P/(1+P)",
+        "required_measurement":"integrate the nonnegative test against the same positive scalar weight",
+        "zero_scope":"support of the pushforward on the listed coordinates only",
+    }
+
+
+def orbit_measurements(grams, orbits, edges):
+    """Build an exact moment inverse, allowing unresolved orbit classes."""
+    generators = []
+    signatures = set()
+    constants = []
+
+    def add(label, values):
+        for half,part in enumerate(("real","imaginary")):
+            values_by_orbit = []
+            for group in orbits:
+                orbit_values = {values[gene].as_real_imag()[half] for gene in group}
+                if len(orbit_values)!=1:
+                    raise ArithmeticError("a probe depends on the spatial or gauge coordinates")
+                values_by_orbit.append(orbit_values.pop())
+            column = tuple(values_by_orbit)
+            if len(set(column))>1 and column not in signatures:
+                signatures.add(column)
+                generators.append(({**label,"component":part},column))
+            elif len(set(column))==1 and label["kind"]=="reflected_diagonal" and part=="real":
+                constants.append({**label,"component":part,"value":str(column[0])})
+
+    for n,m in edges.get(0, []):
+        add({"kind":"reflected_diagonal","mode":n},
+            {genes:(g[n,m]+g[-n,-m])/2 for genes,g in grams.items()})
+    for bucket in edges.values():
+        for first,second in combinations_with_replacement(bucket,2):
+            add({"kind":"reflected_gram_product","first":first,"second":second},
+                {genes:even_word(g,first,second) for genes,g in grams.items()})
+
+    classes = {}
+    for i,orbit in enumerate(orbits):
+        signature = tuple(column[i] for _,column in generators)
+        classes.setdefault(signature,[]).append(orbit)
+    labels = [label for label,_ in generators]
+    basis = basis_rows(list(classes),labels)
+    matrix = sp.Matrix([values for _,values in basis])
+    return {"separates_all_orbits":len(classes)==len(orbits),
+            "probe_classes":list(classes.values()),
+            "independent_moments_including_empty":len(basis),
+            "moments":[{"word":[labels[j] for j in word],"value_per_class":list(map(str,values))}
+                       for word,values in basis],
+            "class_totals_from_ordered_measured_moments":[list(map(str,row)) for row in matrix.inv().tolist()],
+            "positive_support_test":support_polynomial(list(classes),labels,basis,constants),
+            "scope":"each measured moment uses one insertion of the entire product on the same weighted fibre"}
+
+
 def orbit_plan(proposal, norm_classes):
     genes = [tuple(g) for group in norm_classes for g in group]
     fields = {g:field_coefficients(proposal,g) for g in genes}
@@ -117,4 +186,33 @@ def orbit_plan(proposal, norm_classes):
     return {"constant_gauge_and_rotation_orbits":len(oriented),
             "including_spatial_reflection_orbits":len(orbits),"norm_equal_distinct_orbit_pairs":len(ambiguous),
             "best_quartic_word":best,"second_harmonic_sign_witness":sign_word,
+            "weighted_orbit_measurement_plan":orbit_measurements(grams,orbits,edges),
             "scope":"fixed flat transport chart on the spatial Higgs doublet; neither a physical OS weight nor a local gauge quotient"}
+
+
+def reconstruct_marked_forms(data):
+    """Reconstruct the four forms per probe class from jointly supplied moments."""
+    proposal = data["field_proposal"]
+    plan = orbit_plan(proposal,probe_plan(proposal)["norm_signature_classes"])["weighted_orbit_measurement_plan"]
+    measurements = data["measurements"]
+    size = data["word_space_size"]
+    require(type(size) is int and size>0,"positive word-space dimension required")
+    expected = [row["word"] for row in plan["moments"]]
+    require(json.dumps([row["word"] for row in measurements],sort_keys=True)==json.dumps(expected,sort_keys=True),
+            "measurements must identify the exact words in plan order")
+    require(all(set(row["ordered_source_forms"])==set(MARKS) for row in measurements),
+            "each measurement must supply all four marked forms")
+    inverse = sp.Matrix(plan["class_totals_from_ordered_measured_moments"]).applyfunc(sp.Rational)
+    forward = sp.Matrix([row["value_per_class"] for row in plan["moments"]]).applyfunc(sp.Rational)
+    recovered = [dict() for _ in plan["probe_classes"]]
+    for mark in MARKS:
+        observed = [as_form(row["ordered_source_forms"][mark],size) for row in measurements]
+        forms = [sum((weight*item for weight,item in zip(row,observed)),sp.zeros(size))
+                 for row in inverse.tolist()]
+        for row,target in zip(forward.tolist(),observed):
+            if sum((weight*item for weight,item in zip(row,forms)),sp.zeros(size))!=target:
+                raise ArithmeticError("marked form inversion failed replay")
+        for record,form in zip(recovered,forms):
+            record[mark] = [[[str(x) for x in value.as_real_imag()] for value in row] for row in form.tolist()]
+    return {"status":"EXACT_FORMS_ON_DECLARED_PROBE_CLASSES","probe_classes":plan["probe_classes"],
+            "reconstructed_marked_forms":recovered,"physical_source_identity_proved":False}

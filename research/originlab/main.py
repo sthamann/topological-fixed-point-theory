@@ -111,6 +111,8 @@ def campaign_context(args):
         context["p1_field_sources"] = {
             str(path):digest(args.repo/path) if (args.repo/path).is_file() else None for path in p1_sources
         }
+    if args.composed_square_resolution is not None:
+        context["composed_square_resolution"] = args.composed_square_resolution
     context["extra_inputs"] = {str(p.resolve()):digest(p)
                                for p in (args.proposal_file,args.finite_observations,args.r113_synthesis_input,
                                          args.marked_search_input,args.p1_field_input,
@@ -157,7 +159,7 @@ def execute(campaign, root, args, suggestion_rows, retained_rows, prior_question
     if campaign == "composed_search":
         from composed_search import run as search_composed, square_control
         return search_composed(json.loads(args.composed_search_input.read_text()) if args.composed_search_input
-                               else square_control())
+                               else square_control(args.composed_square_resolution or 8))
     if campaign == "seam_cohomology":
         from seam_cohomology import controls
         return controls()
@@ -355,6 +357,7 @@ def main():
     parser.add_argument("--r113-synthesis-input",type=Path,help="Use a declared finite oracle in the R113 synthesis campaign")
     parser.add_argument("--marked-search-input",type=Path,help="Replay finite phase, clock and cell observations")
     parser.add_argument("--composed-search-input",type=Path,help="Search an exact composition of finite operator fragments")
+    parser.add_argument("--composed-square-resolution",type=int,help="Set the rational grid denominator in the built-in composed search")
     parser.add_argument("--p1-field-input",type=Path,help="Resolve a supplied two-face charged jet")
     parser.add_argument("--campaign",action="append",choices=(*CAMPAIGNS,"benchmarks"))
     parser.add_argument("--finite-controls-only",action="store_true",
@@ -387,6 +390,9 @@ def main():
         parser.error("--marked-search-input requires the marked_search campaign")
     if args.composed_search_input and "composed_search" not in args.campaign:
         parser.error("--composed-search-input requires the composed_search campaign")
+    if args.composed_square_resolution is not None and (
+            args.composed_square_resolution<1 or "composed_search" not in args.campaign or args.composed_search_input):
+        parser.error("--composed-square-resolution requires a positive denominator and the built-in composed search")
     if args.p1_field_input and "p1_field_search" not in args.campaign:
         parser.error("--p1-field-input requires the p1_field_search campaign")
     if args.domain and not args.domain.is_file():

@@ -255,8 +255,9 @@ def run(case, gram=None, weight=None, native_observations=None):
             "next_distinguishing_word":next_probe}
 
 
-def square_control():
+def square_control(resolution=8):
     """Reuse the D4 sectors, composing time with a generated quarter and odd field."""
+    require(type(resolution) is int and resolution>0, "positive square-grid resolution required")
     def rows(value):
         return [[str(x) for x in row] for row in value.tolist()]
     one = sp.eye(4)
@@ -264,8 +265,8 @@ def square_control():
     sign = sp.Matrix([1,-1,1,-1])
     alternating = sign*sign.T/4
     doublet = one-stationary-alternating
-    time = [{"id":[a,b],"operators":{"T":rows(stationary+a*alternating/8+b*doublet/8)}}
-            for a,b in product(range(9),repeat=2)]
+    time = [{"id":[a,b],"operators":{"T":rows(stationary+a*alternating/resolution+b*doublet/resolution)}}
+            for a,b in product(range(resolution+1),repeat=2)]
     quarter = rows(one[:, [1,2,3,0]])
     field = [{"id":sign,"operators":{"Y":rows(sp.diag(1,sign,0,-sign))}} for sign in (1,-1)]
     return {"gram":rows(one),"trace_weight":rows(sp.diag(1,0,0,0)),

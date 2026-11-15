@@ -204,9 +204,9 @@ def two_face_fermion_sewing():
     root_chiral=1/(2*(1-u*u))
     paired=(1-u*u)*(1-u**(-2))
     dressed=sp.factor(root_chiral*paired)
+    on_unit_circle=dressed.subs(u,(1+sp.I*t)/(1-sp.I*t))
     require(sp.factor(dressed-(1-u**(-2))/2)==0 and
-            sp.simplify((dressed*sp.conjugate(dressed)).subs(
-                u,(1+sp.I*t)/(1-sp.I*t))-
+            sp.simplify(on_unit_circle*sp.conjugate(on_unit_circle)-
                 4*t*t/(1+t*t)**2)==0,
             "oriented E8 vertex-pole cancellation failed")
 
@@ -298,6 +298,7 @@ def original_r113_exterior_contract_gate():
 
 def controls():
     return {
+        "status":"EXACT_P1_CHARGED_MODULUS_CONTROLS",
         "free_charge_triangle":root_triple_no_max(),
         "paired_relative_determinant":paired_determinant_candidate(),
         "two_face_fermionic_sewing":two_face_fermion_sewing(),

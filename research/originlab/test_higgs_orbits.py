@@ -2,6 +2,8 @@ import sympy as sp
 
 from higgs_moment_search import field_coefficients, norm_coefficients, probe_plan
 from higgs_orbits import even_word, gram_for_field, orbit_plan, phase_compatible
+from r113_synthesis import from_input
+from source import MARKS
 
 
 PROPOSAL = {"base_constant":[0,0,1,0],"allowed_multipliers":[-1,0,1],
@@ -35,3 +37,48 @@ def test_phase_word_is_unchanged_by_rotating_and_reflecting_the_chart():
 def test_unit_modulus_per_difference_is_not_enough_for_one_translation():
     g = {(0,0):1,(0,2):1,(0,3):1}
     assert not phase_compatible(g,{**g,(0,2):-1})
+
+
+def test_quotient_moment_inverse_and_positive_support_witness():
+    fine = {**PROPOSAL,"slots":[*PROPOSAL["slots"],
+                                {"harmonic":8,"kind":"cos","component":0,"unit":"13/100"}]}
+    for proposal,count in ((PROPOSAL,11),(fine,22)):
+        report = orbit_plan(proposal,probe_plan(proposal)["norm_signature_classes"])
+        plan = report["weighted_orbit_measurement_plan"]
+        assert plan["separates_all_orbits"]
+        assert plan["independent_moments_including_empty"] == count
+        assert max(len(row["word"]) for row in plan["moments"]) == 2
+        measurement = sp.Matrix([[sp.Rational(x) for x in row["value_per_class"]] for row in plan["moments"]])
+        inverse = sp.Matrix(plan["class_totals_from_ordered_measured_moments"]).applyfunc(sp.Rational)
+        weights = sp.Matrix([sp.Rational(i+1,count*(count+1)//2) for i in range(count)])
+        assert inverse*measurement*weights == weights
+
+        test = plan["positive_support_test"]
+        assert {"kind":"reflected_diagonal","mode":0,"component":"real","value":"1"} in test["constant_coordinates"]
+        zeros = [list(map(sp.Rational,row)) for row in test["zeros"]]
+        scales = list(map(sp.Rational,test["coordinate_scales"]))
+        def polynomial(point):
+            return sp.prod(sum(((x-y)/scale)**2 for x,y,scale in zip(point,zero,scales)) for zero in zeros)
+        assert len({tuple(row) for row in zeros}) == count
+        assert all(polynomial(point)==0 for point in zeros)
+        outside = zeros[0][:]
+        outside[0] = max(row[0] for row in zeros)+scales[0]
+        assert polynomial(outside)>0
+
+
+def test_original_format_replays_all_four_matrix_valued_moments():
+    report = orbit_plan(PROPOSAL,probe_plan(PROPOSAL)["norm_signature_classes"])
+    plan = report["weighted_orbit_measurement_plan"]
+    truth = [sp.Matrix([[i,sp.I*j],[-sp.I*j,2*i]]) for i,j in zip(range(1,12),range(11))]
+    def pairs(form):
+        return [[[str(x) for x in v.as_real_imag()] for v in row] for row in form.tolist()]
+    measured = []
+    for row in plan["moments"]:
+        form = sum((sp.Rational(a)*m for a,m in zip(row["value_per_class"],truth)),sp.zeros(2))
+        measured.append({"word":row["word"],"ordered_source_forms":{
+            mark:pairs(scale*form) for scale,mark in enumerate(MARKS,1)}})
+    result = from_input({"kind":"orbit_source_moments","input_role":"declared_finite_oracle",
+                         "field_proposal":PROPOSAL,"word_space_size":2,"measurements":measured})
+    assert result["status"] == "EXACT_FORMS_ON_DECLARED_PROBE_CLASSES"
+    assert result["reconstructed_marked_forms"] == [
+        {mark:pairs(scale*form) for scale,mark in enumerate(MARKS,1)} for form in truth]

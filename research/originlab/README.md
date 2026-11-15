@@ -301,6 +301,9 @@ identity with two coefficient/word terms. `fit` and `withheld` observations
 must name distinct ordered words. All-word classification uses an exact
 reachable-space test and emits a separating word for inequivalent
 candidates. An exhausted comparison budget prevents any uniqueness claim.
+Use `--composed-square-resolution 64` with the built-in case to cover
+33,800 combinations of exact transfer, quarter and field operators before
+pruning. The default grid denominator is 8.
 
 The original `whole_source_bundle` can supply `composed_search` with
 its `source_id`, `time_id`, `reference_binding`, all four `mark_words`,
@@ -350,6 +353,46 @@ one sign-sensitive word and its transported chart control. This is a
 spatial probe. A local gauge interpretation requires a transported
 connection, and its physical weighted response requires the native
 source and absolute reference.
+
+The reflection invariant Gram measurements span the finite function
+algebra on all 11 native and 22 refined spatial orbits. The reported
+plans use 11 and 22 independent moments, respectively, including the
+empty word. Each uses at most two probe factors evaluated in the same
+fibre before integration. With the finite input kind
+`orbit_source_moments`, supply `field_proposal`, `word_space_size`, and
+`measurements` in the exact plan order, each with `word` and all four
+`ordered_source_forms`. The inverse works entrywise on the four full
+matrix forms and replays every supplied moment.
+
+The plan also includes a factored nonnegative polynomial on selected
+orbit coordinates. For any positive measure with a finite integral of
+this polynomial, an integral of zero proves that the pushforward is
+supported on the listed signatures. A positive integral refutes that
+finite support claim. The support check concerns the chosen observables.
+Microscopic distinctions within their fibres and the absolute reference
+still require original data.
+The test also checks constant probes such as the squared zero-mode norm,
+which equals one for every supplied history. The bounded test `P/(1+P)`
+has the same zeros and can be integrated against a finite positive
+measure even when polynomial moments diverge. On the audited constant
+radial Higgs sector the zero-mode term is `(R²−1)²`. The Calderón
+volume candidates with a positive radial `R^-2 dR` tail at a fixed cutoff
+therefore fail finite support on these proposals, and the polynomial
+test diverges on that tail. This exclusion uses the audited replacement
+volumes and does not assign a measure to the original physical source.
+
+A factor depending only on the seam angle, positive at the tested angle,
+preserves that radial obstruction. If a positive radial reweighting is
+comparable to `R^-β` on the tail, finiteness of the zero-mode defect
+requires `β > 3`. Even fast decay leaves a nonzero bounded defect if the
+measure still has positive mass away from `R = 1` in this sector.
+In the joint removal of the spatial cutoff and Gaussian regulator, the
+audited replacement volumes have vanishing normalized mass on every
+compact radial interval for every removal sequence covered by the proof.
+The normalized bounded defect therefore tends to one, since it is at
+least `(R²−1)²/(1+(R²−1)²)` and is at most one. The compact-mass bound
+is established in section 3 of `TFPTCALDERONWEIGHTLIMIT20261110`.
+[Atlas source record](https://www.fixpoint-theory.com/results?record=finding%3Af1-native-orbit-support-calderon-radial-exclusion-20261115).
 
 The native R113 synthesis now also reports `native_higgs_moment_plan`.
 It computes the complex Fourier coefficients of the gauge-invariant

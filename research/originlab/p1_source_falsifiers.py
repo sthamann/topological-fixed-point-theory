@@ -224,6 +224,7 @@ def calderon_hardy_obstruction():
 
 def controls():
     return {
+      "status":"EXACT_P1_SOURCE_FALSIFIERS",
       "four_mark_family":four_mark_family(),
       "gaussian_arc_determinant":gaussian_arc_determinant(),
       "relative_polarization_clock":relative_polarization_clock(),

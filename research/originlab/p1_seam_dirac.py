@@ -44,7 +44,7 @@ def controls():
             sp.factor((sp.Symbol("lambda")-m)**2 *
                       (sp.Symbol("lambda")**2-(m*m+1))**3),
             "Dirac spectral flow polynomial changed")
-    require(H.det()==-m*m*(1+m*m)**3 and
+    require(sp.factor(H.det())==-m*m*(1+m*m)**3 and
             S*H*S==-H.subs(m,-m) and R*H==H*R,
             "seam reflection and signed mass flow do not agree")
 

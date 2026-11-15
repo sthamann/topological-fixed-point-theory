@@ -147,6 +147,9 @@ def from_input(data):
     if kind == "inverse_fibres":
         from inverse_fibre import run
         return {"input_role":data["input_role"],**run(data)}
+    if kind == "orbit_source_moments":
+        from higgs_orbits import reconstruct_marked_forms
+        return {"input_role":data["input_role"],**reconstruct_marked_forms(data)}
     require(kind in routes,"unknown R113 synthesis class")
     return {"input_role":data["input_role"],**routes[kind](data)}
 
