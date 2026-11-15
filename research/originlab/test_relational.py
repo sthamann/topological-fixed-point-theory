@@ -1,4 +1,5 @@
 import json
+import os
 from pathlib import Path
 from tempfile import TemporaryDirectory
 import unittest
@@ -16,11 +17,7 @@ from tomography import controls as tomography_controls, solve as tomography_solv
 from verify import digest
 
 HERE = Path(__file__).resolve().parent
-ROOT = HERE.parents[1]
-# The tests also run against an isolated staging copy.
-if not (ROOT/"semantic_explorer").exists():
-    import os
-    ROOT = Path(os.environ["TFPT_REPO_ROOT"])
+ROOT = Path(os.environ.get("TFPT_REPO_ROOT",HERE.parents[1]))
 
 
 class RelationalTests(unittest.TestCase):

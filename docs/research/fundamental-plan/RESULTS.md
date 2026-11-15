@@ -3986,3 +3986,207 @@ Plan153 enthält den Live Nachweis und die jüngste Nutzerpriorität zur gemeins
 TRIANGULATION20261106O: Den tatsächlich unveränderten ursprünglichen markierten Blockkern T_Vn[wout,win;marks] beziehungsweise dessen quellenidentische D_Vn und Basisintegration aus der owning Konstruktion herstellen und auswerten. Die gezielte Rückwärtssuche in QFT004, Metrology005, R113 und tatsächlichen Codeconsumern findet Definitionen und vorausgesetzte Inputs, keinen ausführbaren ganzen Vierwerteproduzenten. Dies ist keine Gesamtkorpusabwesenheit und keine neue freie Maß/Zustandsforderung. Alle Felder, ganzer physischer P, Ref/Eta/Domain und ursprüngliche Grenzen bleiben. Z0,ZU,ZY,ZUY unter demselben Regulator gemeinsam auswerten, verbundenen Wert vor der ursprünglichen Grenze bilden und mit vorhandenem neutralem Zeitwort abgleichen. Optionaler FixedP Vorzeichenweg: wirklicher CAR-Operator statt Graphlift; bei ganzer [P,W_B W_F]=0 genügt tatsächliche Bosonsigninvarianz der ganzen Pi. Weder Tensoridentität noch echte H-Abhängigkeit von P aus seiner früheren Seeddefinition folgern. v365 Energiesumme ist TrH=-logdetT, kein Hessianlogdet; bedingtes M=H liefert log[36log(3/2)log3]. chi729/665 beweist allein keine geometrische Tightness. Alte Teilintegrationen und Source/State/Time/Ref Karten direkt verwenden. Keine Ersatzquelle, neue freie Dichte oder erneute allgemeine Brückenforderung. Kein primitiver Wert und keine fundamentale Gesamtlösung erreicht; F1 in_progress,52 bestehende Abschlüsse und Originalowner erhalten.
 
 Unabhängige drei Originalreviews im bestehenden Quellenvertrag unter triangulation_20261106O/. v365 korrigiert8/8, unabhängige Rechnung am ursprünglichen Dreiertransfer4 Vergleiche bei80 Stellen mit Fehler unter4.3e-79; keine rigorose Rundungseinschließung. Historische Aussagen bleiben datiert erhalten; aktive Paper/Website/Scriptbeschreibungen werden korrekt synchronisiert. Kein neuer Lean oder Fullsuite Lauf, kein ursprünglicher Vierwertecaller und keine physische Promotion.
+
+## ORIGINLABWEAKREGIONAL20261114
+
+14. November 2026. Bei festem Mittelstrom $\gamma=e_1+e_6$ bleiben unter
+den 240 Wurzeln sechs farbneutrale rechte Wurzeln übrig, die schwaches
+Gewicht ±1 und $Y=1/2$ tragen und deren Summe mit $\gamma$ eine Wurzel
+ist. Sie bilden einen $D_8$ Weg und zwei Halbspinorwege. Die vollständigen
+Eichsinguletts haben rechts $(1,2)_{1/2}$ und links $(3,2)_{1/6}$ als
+Zwischenkanäle. Die Variante mit Windung −1 behält auf beiden Intervallen
+die signierte Windung des alten Markierungsworts. Ihre Klebeklassen sind
+$(3,1)$ gegenüber $(1,3)$ der ursprünglichen Ordnung. Die gemeinsame
+frühe schwache und Kogewicht Viertelaktion trennt alle vier Wege. Ihre
+Potenzen null bis drei rekonstruieren die vier Koeffizienten im linearen
+affinen Modell. Potenz vier testet die Vorhersage, auch für zwei zuvor
+ungesehene Zeitbreiten. 756 Modenwerte, 3024 Casimirwerte und 24
+Eichgeneratorprüfungen bestehen. Die physische Zeitzuordnung und die
+physische Eichwirkung benötigen die ursprüngliche Randform und ihren Rahmen.
+[Wurzelsuche und Zeitantwort](../../../research/originlab/weak_source.py).
+
+Die drei schwachen Orbits liefern 18 verschiedene späte Endwurzeln.
+Für jede Wurzel $a$ erhalten die affinen Hebe und Senkmoden
+$d=L_0-H_a/2$. In Ladung $k a$ ist der Oszillatorgrad $d-k^2+k$ und
+das Gewicht der zugehörigen $\mathfrak{sl}_2$ Wirkung $2k-1$.
+Für $d=2,3$ bleiben nur die Gewichte −3, −1, 1 und 3. Somit hat
+$E_a^*E_a$ auf der neutralen Gewichtslinie die Eigenwerte 1 und 4.
+Der gesamte Exzessraum entsteht durch zweimaliges Absteigen vom
+Gewicht 3, also aus Ladung $2a$ mit Oszillatorgrad $d-2$. Auf Grad
+zwei entsteht pro Wurzel eine Linie, auf Grad drei entstehen acht.
+Die exakte Rechnung bestätigt die ganze Rückkehrmatrix auf Grad zwei
+und die acht Exzessvektoren auf Grad drei für eine Wurzel je Orbit.
+
+Auf Grad zwei haben die drei Orbits einzeln Rang 6, paarweise Rang 10
+und gemeinsam Rang 14 von 44. Auf Grad drei lauten die Ränge 47, 74
+und 98 von 192. Auf dem 14 dimensionalen Exzessträger spannen die
+geordneten Produkte bis Länge eins, zwei und drei 18, 108 und 196
+Dimensionen. Damit ist seine volle Matrixalgebra erreicht. Eine stetige
+unitäre Wirkung, die die endliche Menge der markierten Projektoren
+erhält, fixiert jeden Projektor und wirkt auf diesem Träger skalar.
+Der neue Verbraucher nimmt 196 ganze Rückkehrformen vor der äußeren
+Auswahl entgegen, rekonstruiert das absolute Funktional und prüft es
+auf Positivität und gegen ein separat gemessenes Viererwort. Das
+veränderte Viererwort scheitert trotz gleicher positiver Anpassung.
+Der Test setzt aufgelöste Wurzeln und ihre wirklichen Adjungierten voraus.
+[Rückkehrränge und Verbraucher](../../../research/originlab/weak_return_completion.py).
+
+Die vier Punkte $(\infty,0,1,\lambda)$ tragen den nativen Dreierzyklus
+und den markierten Viertelzyklus in keiner gemeinsam holomorphen
+Realisierung. Mit antikonformem Viertelzyklus bleiben genau
+$\lambda=(1\pm i\sqrt3)/2$ mit $j=0$. Auf der hexagonalen
+elliptischen Doppeldeckung hebt der Viertelzyklus im positiven Zweig als
+$z\mapsto\overline z+\lambda/2$. Sein Quadrat verschiebt um eine halbe
+Periode und wirkt auf der Differentiallinie mit +1. Die primitive
+komplexe $i$ Drehung gehört zum harmonischen Zweig mit $j=1728$.
+Die geraden tetraedrischen Permutationen erhalten keinen gemeinsamen
+Spiegelkreis. Eine Spiegelung durch zwei Marken hat einen Orbit aus
+sechs verschiedenen Schnitten. Auch bei mitbewegten Schnitten hat eine
+kommutierende Familie, die vollständig als effektive Möbius Generatoren
+dieser einen Sphäre wirkt, reellen Rang höchstens zwei. Drei räumliche
+Translationen müssen deshalb aus einer Wirkung auf weiteren lokalen
+Quellfreiheitsgraden kommen.
+[Kreuzverhältnis, Lifts und räumliche Ranggrenze](../../../research/originlab/four_mark_geometry.py).
+
+82 OriginLab Tests und die neun Benchmarks bestanden. Zwei Runden mit
+mitlaufender P0 Suche wurden ausgeführt. Die beiden neuen geometrischen
+und affinen Kontrollen liefen auch in der lokalen Arbeitswarteschlange.
+Die fünf Tests der vollständigen Autonomiesuite brauchen hier cvc5 und
+egglog. Der native R113 Aufruf meldet weiterhin die fehlende gewichtete
+Faseroperation. Z0, ZU, ZY und ZUY bleiben unberechnet. Die nächsten
+Originalprüfungen binden die Halbspinorvariante mit erhaltener Windung
+an die gemeinsame gewichtete Form und testen, wie dieselbe Quelle ganze
+lokale Algebren zwischen reflektierten Schnitten bewegt. F1 bleibt offen.
+Fünf Befunde wurden auf Atlasrevision `d3e23155efdc84d7c505fca4`
+zurückgelesen.
+
+## ORIGINLABWEAKCLOCKW20261115 · Schwacher Halbspinorweg und Zeitrang des W Modells
+
+Zwei orthogonale D8 Wurzelnullmoden heben das markierte Wort pro Farbe
+und schwachem Slot zum Halbspinorweg mit Windung $−1$. Sie kommutieren
+mit dem Mittelstrom. In 96 Modenpaaren stimmen der adjungierte Rücklauf
+und der vorzeichenbehaftete Koeffizient $\min(m,n)$. Die drei frühen
+markierten Linien tragen $(\bar3,1)_{1/3}$, die beiden frühen schwachen
+Linien $(1,2)_{1/2}$. Die sechs Produkte bilden auf diesen Trägern die
+Matrixeinheiten für die geladene Einfügung $(3,2)_{1/6}$. Ihr
+Cartangewicht hat Normquadrat vier. Eine äquivariante Einbettung in den
+schwachen Träger mit einem zusätzlichen Tensorfaktor erfordert dort
+$(\bar3,2)_{-1/6}$. [Wurzel und Zeitrechnung](../../../research/originlab/weak_clock.py).
+
+Bei festgehaltenem ursprünglichem Faltgenerator sind die frühen
+Spektralreste modulo eins disjunkt. Die Energielücke auf beiden Beinen
+beträgt $(1-q)/4$, also $3/16$ und $1/16$ in $K$ Einheiten für
+$q=1/4,3/4$. Der natürliche Transport erhält Mittelstrom, Windung und
+Spiegeloperation und bewegt den Cartananteil des Generators mit. Auch
+bei gemeinsamen, nichtkommutierenden Wärmeschritten und horizontalen
+unitären Eichgliedern bleibt eine exponentielle Trennung der
+reflektierten Normquadrate bei gleichem Eingangsgrad und gleicher Norm
+vor der äußeren Auswahl.
+
+Im wörtlichen Faltchart beträgt das untere relativ zum oberen schwachen
+Gewicht $\sqrt{xy}$. Bei $x=y=1/4$ liest die normierte erste Aktion des
+Minuswegs $12/25-3i/5$. Das zeitunabhängig ausgeglichene W Dublett liefert
+$-3i/5$. Der neue Leser `weak_clock_sectors` gewinnt auf jedem
+Zeitpaar sieben komplexe absolute Beiträge aus Potenzen null bis sechs
+derselben frühen Aktion. Potenz sieben erkennt den fremden Charakter
+eins mit Rest $144(1+i)/125$. Ein exaktes $5\times5$ Kontrollgitter
+trennt einen Rang fünf Kern vom festen W Wort. Ein zurückgehaltenes
+Zeitpaar prüft dort Potenz sieben und das vorgegebene Gewichtsverhältnis.
+Alle acht gelieferten Formen verwenden dieselbe äußere Auswahl und
+absolute Leerreferenz. [Quellenleser](../../../research/originlab/source.py).
+
+Die tatsächlichen W und J Tensoren stimmen in der Unterstützung aller
+3840 geladenen Paare mit der affinen Klammer überein. Für 960 aktive
+Paare, die W Paarwirkung und die Gegenwurzelphasen existiert eine
+gemeinsame Vorzeichenwahl. Das lineare System hat 1500 Bedingungen und
+Rang 116. Eine einzelne geänderte J Komponente verletzt das System.
+Vier signierte Symmetrien verbinden alle zwölf schwachen Komponenten.
+Das ursprüngliche $B_+$ an beiden Enden erzeugt einen nichtreduzierenden
+Zeitweg in den erhaltenen Ladungssektoren 5 und 7. Die unter den
+Summanden des Hamiltonoperators erzeugten Blöcke haben Dimension 4 und 13. Das
+unnormierte Zeitmomentminor zu Ableitungsordnungen null bis drei ist
+$22096281600|g|^{12}$, unabhängig von $\Delta$. Das ganze Wort hat für
+$g\ne0$ Zeitrang vier und bei $g=0$ Rang eins. Eine unabhängige Rechnung
+in der nativen Besetzungsbasis reproduzierte das Minor bei $\Delta=7$
+und $g=-2$. [W Rechnung mit exakten Matrizen](../../../research/originlab/native_weak_w.py).
+
+Der signierte affine Cauchykern hat auf Gittern beliebiger Größe
+vollen Rang. Jeder Vergleich aus fest gewählten endlichen W
+Ladungssektoren hat endlichen Zeitrang. Auch der vorgeschriebene
+Cartanzusatz, der die relative schwache Gewichtung herstellt, erhält
+diese Grenze. Auf dem ursprünglichen W Fockraum ist die Klebehalbphase
+genau Fermionparität. Ein bosonischer affiner Spinorstrom mit ungerader
+Klebeklasse braucht deshalb eine andere Feldabbildung. Die
+Koordinatenleerlinie der W Rechnung ist eine ausgewiesene Modellreferenz.
+Der bedingte ursprüngliche R113 Generator vor äußerer Auswahl erhält die
+Fermionzahl, während der kubische W Term sie um zwei ändert.
+
+85 OriginLab Tests, neun Benchmarks und zwei Runden mit P0 Suche
+bestanden. Die zwei nativen Kontrollpfade liefen auch in der lokalen
+Arbeitswarteschlange. Die vollständige Autonomiesuite kann hier wegen
+fehlender cvc5 und egglog Pakete nicht gesammelt werden. Lean, Wolfram
+und die volle numerische Suite wurden in diesem Lauf nicht ausgeführt.
+Der native R113 Aufruf meldet die fehlende ursprüngliche gewichtete
+Randform samt Produzent und Referenz. Z0, ZU, ZY und ZUY bleiben offen.
+Der nächste Quellenaufruf verbindet den geladenen Feldoperator und den
+ursprünglichen Feld und Einbettungsgradienten $\dot C_\Sigma[\Phi]$ mit
+derselben Randform, Zeit und Leerreferenz und prüft die sieben
+Komponenten vor den Rückwegen. Sechs Befunde sind auf Atlasrevision
+`31e3bec901a81d944874d84c` zurückgelesen. F1 bleibt offen.
+
+## ORIGINLABP1CHARGEDJET20261115 · Gemeinsame Ladungsprobe und vollständiger Programmlauf
+
+Die sechs geladenen affinen Feldoperationen wurden in beiden
+ursprünglichen Viertelcharts auf dem bedingten Zweiflächenkragen
+ausgeführt. Für die intrinsische Änderung $X=\dot K$ gilt auf
+verschiedenen Energielinien $A_{ij}=X_{ij}/(k_i-k_j)$. Eine reine
+gemeinsame Rahmendrehung $A\oplus A$ erzeugt exakt dieselben ersten
+Kovarianz und Wärmeableitungen. Eine reine Bewegung zwischen den
+Flächen mit $SZ+ZS=\dot n$ erzeugt dieselbe Projektorableitung.
+Ihr flächenübergreifender Wärmeblock $[U,Z]$ ist in allen zwölf
+geprüften geladenen Fällen von null verschieden.
+
+Für die vollständige beobachtete Projektorableitung und den unabhängig
+verankerten Hyperladungsoperator gilt
+
+$$[Y,\dot P_{\mathrm{obs}}]-[P,\dot Y_{\mathrm{obs}}]
+  =[Y,\dot P_{\mathrm{intr}}].$$
+
+Auf den geladenen Blöcken liefert die Division durch $y_i-y_j$ den
+intrinsischen Projektoranteil. Auf der zweiten Fläche ergibt der
+geteilte Fermiquotient den intrinsischen Feldoperator $\dot K$.
+Unterschiedliche Hyperladungen haben in den geprüften Charts
+disjunkte Energien. Der exakte Verbraucher rekonstruiert auch komplexe
+Feldamplituden bei gleichzeitiger Rahmenbewegung. Ein unabhängiger
+veränderter Wärmejet wird zurückgewiesen. Benötigt werden die ganzen
+Hyperladungsableitungen einschließlich der Flächenquerblöcke.
+Eine skalare Ladungsauslesung genügt dafür nicht.
+[Exakter Sucher und Quellenanschluss](../../../research/originlab/p1_field_search.py).
+
+Die binäre Radius eins Suche enumeriert vollständig die 64 Regeln,
+die die beiden uniformen Beobachtungen erfüllen. Beide Antworten der
+ersten maximal trennenden Abfrage lassen 32 Varianten übrig.
+Die autonome Suche setzte ihren gespeicherten Lauf von Auflösung drei
+auf vier ohne neuen Anfang fort. In Auflösung vier trennen die
+Rückkehrmomente 4938 von 4950 gepaarten endlichen Szenarien. Der Lauf
+erzeugte 6893 endliche Komplexe und meldete null technische Fehler.
+Für die reproduzierbare R006 Prüfung stehen die ursprünglichen
+Messungen und Matrizen komprimiert mit exakten unkomprimierten Hashes
+bereit. Der Standardaufruf läuft bei fehlendem lokalen Atlas weiter und
+weist die Provenienz explizit aus.
+
+97 lokale OriginLab Tests und alle neun Benchmarks bestanden.
+Der separate R102 Rangschluss wurde in Lean 4.29.1 geprüft.
+Die ursprüngliche gewichtete P1 Quelle bleibt am
+`original_blocked_fiber_packet` offen. Die vier Werte von R113
+bleiben unberechnet. Als nächster Originalschritt die drei vollständigen
+geladenen Ableitungen samt unabhängiger Hyperladungsverankerung auf
+demselben reflektierten P1 Raum und der gebundenen Leerreferenz
+auswerten, danach den geprüften Operator in die geordneten
+Halbspinorantworten einsetzen. Beide Befunde wurden auf Atlasrevision
+`b4f054bb036585a8e4d3d237` zurückgelesen. F1 bleibt offen.
+
+Die Reproduktion aus dem öffentlichen Dateisatz ohne lokalen Atlas
+bestand ebenfalls alle 97 Tests und neun Benchmarks. Die geladenen P1
+Kontrollen sind dabei vollständig ausführbar und der native
+R113 Aufruf weist den offenen gewichteten Eingang aus.
