@@ -63,7 +63,7 @@ and backend choices.
 
 ## Equivariant P1 origin control (15 November)
 
-Run \`python3 -B research/originlab/main.py --campaign seam_cohomology --out /tmp/originlab-seam\`
+Run `python3 -B research/originlab/main.py --campaign seam_cohomology --out /tmp/originlab-seam`
 to audit the **actual** four-point meromorphic-section and logarithmic-differential
 character representations. The quarter rotation decomposes the five
 Riemann--Roch sections into two trivial and three distinct nontrivial
@@ -79,7 +79,7 @@ the physical colour/family dictionary, original R113 packet or continuum
 parent. It cannot be used to assign a physical source value. See
 [the derivation and source conditions](P1-EQUIVARIANT-RESIDUE-ORIGIN-20261115.md)
 and [independent test cases](test_seam_cohomology.py).
-\`--finite-controls-only\` includes this control.
+`--finite-controls-only` includes this control.
 
 ## R113 inputs
 
