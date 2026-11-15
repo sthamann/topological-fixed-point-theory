@@ -81,6 +81,43 @@ parent. It cannot be used to assign a physical source value. See
 and [independent test cases](test_seam_cohomology.py).
 `--finite-controls-only` includes this control.
 
+## One internal positive source -> 8 CAR modes -> 16 Majoranas -> candidate E8, exact affine grade blocker
+
+New fifth exact source-first campaign:
+
+    python3 -B research/originlab/main.py --out /tmp/f1-source-clifford \
+      --campaign f1_single_source_clifford_bridge
+
+It starts with the SAME positive qutrit quantum algebra M3(C), not
+eight arbitrarily added P1 fermionic sources. Its canonical traceless
+Hilbert-Schmidt subspace V8 has complex dimension 8 and quarter-phase
+multiset (2,2,2,2). The exterior/CAR functor gives eight complex
+fermions, 16 Majorana generators, Fock dimension 256 and even
+spinor dimension 128. All 49,152 CAR anticommutator samples have
+been checked exactly, and the standard so16(120)+spinor(128)
+algebraic E8 current quarter grades (60,64,60,64) follow.
+This does NOT prove native physical fermionization, E8 level-one
+Ward operators or a 3+1D parent.
+
+Crucial negative result: second-quantizing the SAME source
+transfer q I8 yields Gamma(q I8), with trace (1+q)^8,
+supertrace (1-q)^8 and vacuum amplitude 1, as in the
+original R113 exterior-empty cap contract. The even Fock
+states have occupation energies 0,2,4,6,8, NOT the common
+conformal weight one of E8_1 spinor root currents.
+No nonzero affine rescaling of the finite number generator
+remedies this. A new physical local chiral OPE / conformal
+energy grading is essential. This source-first bridge
+closes a previous algebraic *counting* gap but exposes the
+remaining physical F1 fermionization/current-locality gap.
+
+See [joint source theorem report](F1-PREGEOMETRIC-SOURCE-CLOSURE-20261115.md),
+[exact Clifford candidate and no-go](f1_single_source_clifford_bridge.py)
+and [its six regressions](test_f1_single_source_clifford_bridge.py).
+Together the five new source campaigns have **33 locally passed
+finite tests**, now required by the main Core Verification workflow.
+No full physical F1 solution is claimed.
+
 ## F1 source from one algebra: CP, OS, exact sewing, hidden memory and conditional uniqueness
 
 A source-first **constructive mathematical baseline** now exists. It is
