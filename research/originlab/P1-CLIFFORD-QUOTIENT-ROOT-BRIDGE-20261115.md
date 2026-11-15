@@ -39,6 +39,12 @@ This forms an exact conditional chain:
 
 The two bracketed arrows are **original-source obligations**, not solved origin theorems.
 
+## 3a. Genuine four-step **current** clock from the discriminant, not the naive reflection
+
+The four quotient labels themselves form \`V4\` (every nonidentity element has order two); the *new* lattice invariant is different: \`A3*/A3≅Z4\`. Its generator is \`w=(3,-1,-1,-1)/4\`, with squared norm \`3/4\`; \`w,2w,3w\` are not in \`A3\`, while \`4w\` is. The \`D5+A3\` lattice glue is thus genuinely cyclic of order four. On the full lattice current algebra this additive glue grading permits the character automorphism \`U4 J^r U4^-1 = i^{g(r)}J^r\`, which has order four **on odd-grade currents**, unlike \`Ad_(Rε)\` whose square is always the identity. This is a conditional construction of a correct quarter *operator* action after the physical lattice embedding; it is not the original weighted P1 clock or time map.
+
+The independently audited colour grading \`c mod 3\` combines with \`g mod 4\` to \`d=9g+8c mod 12\`. The map has twelve distinct values and preserves charge addition; the recorded marked steps \`1+2+9=0 mod 12\` are then neutral. Independent exact tests check the weight order, adjoint order four and the Chinese-remainder addition.
+
 ## 4. The same seam still does not determine physical time
 
 On two Clifford cells, \`S_R=R⊗R\` and \`S_ε=ε⊗ε\` commute. They select the unique Bell vector \`(|00>+|11>)/sqrt(2)\` by the positive ground projector \`(I+S_R)(I+S_ε)/4\`. The isotropic minimal penalty \`H=I-(S_R+S_ε)/2\` has spectrum \`{0,1,1,2}\`. These are exact positive dynamics, *not* the original physical Hamiltonian.
@@ -50,6 +56,14 @@ Crucially, even the positive gap normalization, full two-stabilizer invariance, 
 Then \`spec(H_b)={0,1,b,b}\` and every model has the *same* unique vacuum, gap one, symmetry, quarter return and four-label combinatorics. With the one-cell X mark and time \`t=ln 2\`, the ordered positive return is \`2^(-b)\`: \`1/4\` for \`b=2\`, \`1/8\` for \`b=3\`. Hence the finite candidate's invariants do **not** select the physical generator. Both return kernels are Osterwalder–Schrader positive semigroup kernels in the standard finite Hilbert-space sense; they are not the full original interacting source.
 
 A pointwise conditional-expectation twirl also cannot be interpreted as a finite-time reversible or Lindblad evolution: its linear superoperator has rank below the dimension of the full operator space, whereas a finite-dimensional matrix exponential is invertible. A coherent unitary dilation must keep the discarded record, and its coupling/time rule remains to be derived.
+
+### Orientation-preserving tetrahedral symmetry and the minimal mark-time candidate
+
+If the physical P1 four-mark generator is assumed to be **invariant under the full orientation-preserving tetrahedral group A4**, its four-dimensional permutation carrier decomposes as \`1 ⊕ 3\`. A4 is transitive on ordered distinct pairs, so its invariant matrix algebra is exactly \`span{I,J}\`. A nonnegative self-adjoint generator with the uniform state as zero mode must therefore be \`H_mark=μ(I-J/4)\`, \`μ≥0\`. The normalized primitive-gap choice \`μ=1\` yields \`spec H_mark={0,1,1,1}\` and
+
+\`T_mark(t)=J/4+e^{-t}(I-J/4)\`.
+
+Its diagonal and off-diagonal entries are respectively \`(1+3e^{-t})/4\` and \`(1-e^{-t})/4\`. This is a positive reflection-compatible **finite mark-channel** transfer with no relative excitation parameter. Exact permutation constraints on all twelve A4 elements leave two invariant matrix parameters, reduced to one scale by the ground condition. Yet A4 invariance, this specific permutation action, the Laplacian/Markov interpretation and the gap normalization are additional source conditions. The model does not reconstruct any interacting 3+1D transport or original R113 value. The weaker V4/seam symmetry retains the explicit \`H_b\` nonuniqueness shown below.
 
 ## 5. Required original-source gate for F1
 
