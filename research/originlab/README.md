@@ -134,6 +134,31 @@ certifies only the declared process class on its supplied alphabet;
 continuum, chirality, universal gravity coupling and independent physical
 validation remain separate gates.
 
+Use `--campaign r113_synthesis --r113-synthesis-input FILE` with
+`input_role: declared_finite_oracle` and `kind: inverse_fibres` to solve
+for the nonnegative atomic masses of a candidate producer. Each entry
+in `snapshots` supplies `fine_size`, `fine_atoms` without measure masses,
+the fine scalar and reference, `time` (`id`, `t_U`, `t_Y`), and the
+existing `coarse_graining` record with all four independently supplied
+forms. The same atom identities, measure bindings, and reference
+binding are used across snapshots. The default fit uses Z0, ZU and ZY
+per coarse configuration. Optional `independent_probes` give an ID,
+coefficients keyed by atom, and an expected value for a withheld linear
+contrast, such as an independently derived weight ratio. An optional
+`total_mass` must come from the same absolute convention.
+
+The rational solver emits an independently replayed dual for exclusions,
+maximal support and its affine dimension for feasible masses, and exact
+extrema with certificates for the first varying withheld component. The
+second feasibility check uses all withheld components jointly. It emits
+candidate masses only after the existing forward fibre verifier accepts
+every transported form separately. Proportional atom classes describe
+indistinguishability on the supplied forms. The raw candidate fine Z0
+and its constancy on the feasible mass set are reported before outer
+contraction. Source identity still requires
+proof that the atom family comes from the original operator, a bound
+measure and reference, and control of regulator removal.
+
 The same campaign checks a tetrahedral transfer. Supply `transfer.moments`
 as three or four exact 4 by 4 forms on the same ordered mark vectors,
 at steps zero through two or three of the same positive contraction.

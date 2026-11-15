@@ -144,6 +144,9 @@ def from_input(data):
     routes = {"fixed_histories":history_range,"real_charged_spectrum":spectral_pair,
               "complex_charged_spectrum":analyze,"gaussian_source_jet":gaussian_jet}
     kind = data.get("kind")
+    if kind == "inverse_fibres":
+        from inverse_fibre import run
+        return {"input_role":data["input_role"],**run(data)}
     require(kind in routes,"unknown R113 synthesis class")
     return {"input_role":data["input_role"],**routes[kind](data)}
 

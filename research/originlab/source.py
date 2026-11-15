@@ -168,8 +168,8 @@ def iter_weighted_fibres(atoms, size, u_time, y_time):
         yield identifier, {mark:weight*form for mark,form in fibre_forms(atom,size,u_time,y_time).items()}
 
 
-def check_fibre_pushforward(data, fine, fine_size, time_id, u_time, y_time, fine_scale):
-    """Compare the supplied marked forms before the physical endpoint contraction."""
+def fibre_pushforward_data(data, fine_labels, fine_size, time_id, u_time, y_time, fine_scale):
+    """Read the common map, transported coarse forms and absolute scale."""
     rows = data["word_embedding"]
     coarse_size = len(rows[0]) if rows else 0
     if (not coarse_size or len(rows) != fine_size or any(len(row) != coarse_size for row in rows)
@@ -181,7 +181,7 @@ def check_fibre_pushforward(data, fine, fine_size, time_id, u_time, y_time, fine
         raise ValueError("the coarse word embedding must be injective")
     coarse = dict(iter_weighted_fibres(data["coarse_fiber_records"],coarse_size,u_time,y_time))
     assignment = data["fine_to_coarse"]
-    if (not coarse or not isinstance(assignment,dict) or set(assignment) != set(fine)
+    if (not coarse or not isinstance(assignment,dict) or set(assignment) != set(fine_labels)
             or any(not isinstance(name,str) for name in assignment.values())
             or set(assignment.values()) != set(coarse)):
         raise ValueError("the fine configuration map must cover both supplied levels")
@@ -189,7 +189,14 @@ def check_fibre_pushforward(data, fine, fine_size, time_id, u_time, y_time, fine
     scalar = complex_pair(data["coarse_scalar_factor"])
     if not reference or not scalar or not fine_scale:
         raise ValueError("both levels need a nonzero absolute reference and weight scale")
-    coarse_scale = scalar/reference
+    return embedding,coarse,assignment,scalar/reference
+
+
+def check_fibre_pushforward(data, fine, fine_size, time_id, u_time, y_time, fine_scale):
+    """Compare the supplied marked forms before the physical endpoint contraction."""
+    embedding,coarse,assignment,coarse_scale = fibre_pushforward_data(
+        data,fine,fine_size,time_id,u_time,y_time,fine_scale)
+    coarse_size = embedding.cols
     pushed = {name:{k:sp.zeros(coarse_size) for k in MARKS} for name in coarse}
     for name, forms in fine.items():
         for mark, form in forms.items():
