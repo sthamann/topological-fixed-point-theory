@@ -147,6 +147,32 @@ The hypothesis is falsified if the original source requires the literal
 untwisted D4-invariant scalar projection **and** all three independent
 charged channels on this same minimal carrier.
 
+## A decisive original-source time obstruction on the **same** C5
+
+The full square D4 action on the five original meromorphic modes decomposes
+into irreducible summands of dimensions 1+1+1+2. Its complex matrix
+commutant therefore has dimension four; all compatible self-adjoint
+positive generators with a fixed constant-section vacuum have **three**
+independent excited eigenenergies. Neither the canonical 3+2 exact
+sequence nor D4 symmetry removes these parameters.
+
+Exact constructive witnesses (in the same standard positive Gram):
+- H_A has eigenenergies (0,1,2,3,3).
+- H_B has eigenenergies (0,1,2,2,4).
+
+Both preserve the actual D4 generators, have the same unique constant
+vacuum, unit primitive gap and *total energy trace nine*. Nonetheless,
+at the time t=log 2, the return on the original section f2 differs:
+1/4 versus 1/16. These are finite, reflection-positive positive-energy
+semigroup witnesses, **not** weighted physical original R113 values.
+
+Thus the source is underdetermined even after matching geometry, a
+unit gap, the equal-time representation and a first energy trace.
+The earliest discriminating original data are the genuine temporal
+forms in the three inequivalent excited D4 channels, with an actual
+physical carrier map and common reference. Arbitrary extra spectral
+scans cannot derive those missing values.
+
 ## Original F1 gates, before promotion
 
 1. Obtain actual weighted Q0[a,b;t] and the bound absolute empty reference
