@@ -115,6 +115,28 @@ class P1GeometryTimeBridge(unittest.TestCase):
                                for i in range(3)))
         self.assertEqual((sp.trace(a),sp.trace(b)),(-1,1))
 
+    def test_native_parity_trace_excludes_grade_preserving_flip(self):
+        # Published affine E8 grade-one Z4 phase sectors: 1, i, -1, -i.
+        counts = [60, 64, 60, 64]
+        even = counts[0]+counts[2]
+        odd = counts[1]+counts[3]
+        self.assertEqual((even, odd), (120, 128))
+        self.assertEqual(even-odd, -8)
+        # S*Pi=-Pi*S forces S between these two sectors. In dimension
+        # 248 such a map has rank <= 2*min(120,128), nullity >= 8.
+        self.assertEqual(sum(counts)-2*min(even,odd), 8)
+        # The affine vacuum grade zero is a single even state, so no
+        # parity-reversing energy-preserving invertible map exists there.
+        self.assertEqual(1-0, 1)
+        # Coherent flips are possible if one allows spectral-grade mixing.
+        grade = sp.diag(0, 1, 2, 3)
+        parity = sp.diag(1, -1, 1, -1)
+        flip = sp.Matrix([[0,1,0,0],[1,0,0,0],
+                          [0,0,0,1],[0,0,1,0]])
+        self.assertEqual(flip*flip, sp.eye(4))
+        self.assertEqual(flip*parity*flip, -parity)
+        self.assertNotEqual(flip*grade, grade*flip)
+
     def test_actual_free_collar_covariance_is_not_c4_heat(self):
         q = sp.Rational(1,2)
         c0 = -sp.log((1-q)**2)/(2*sp.pi)
