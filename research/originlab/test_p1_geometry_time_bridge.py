@@ -42,6 +42,21 @@ class P1GeometryTimeBridge(unittest.TestCase):
         self.assertEqual(sp.simplify(sp.cosh(sp.pi*delta_odd/2)**(-4)),
                          sp.Rational(256,625))
 
+    def test_weighted_isometry_does_not_select_square(self):
+        # Explicit original v512 non-square witness, rational complex entries.
+        u = (3+4*sp.I)/5
+        pts = [1, -1, u, -u]
+        f = sp.Matrix([[p**k for k in range(4)] for p in pts])/2
+        self.assertEqual(sp.simplify((f*f.H).det()), sp.Rational(256,625))
+        # Every invertible sampling map is an isometry for its pullback
+        # metric. Its existence is therefore not a physical modulus selector.
+        metric = (f*f.H).inv()
+        self.assertEqual((metric-metric.H).applyfunc(sp.simplify), sp.zeros(4))
+        self.assertEqual(metric.eigenvals(), {sp.Rational(5,2):2,
+                                              sp.Rational(5,8):2})
+        self.assertEqual((f.H*metric*f).applyfunc(sp.simplify), sp.eye(4))
+        self.assertNotEqual((f*f.H).applyfunc(sp.simplify), sp.eye(4))
+
     def test_square_laplacian_intertwines_with_bell_clifford(self):
         x = sp.Matrix([[0,1],[1,0]])
         z = sp.diag(1,-1)
