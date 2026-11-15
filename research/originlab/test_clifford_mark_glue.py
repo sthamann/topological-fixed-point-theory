@@ -66,6 +66,33 @@ class CliffordMarkAndGlue(unittest.TestCase):
             character=(-1)**inversions*(sum(i==perm[i] for i in range(4))-1)
             self.assertEqual(sp.trace(action),character)
 
+
+    def test_orientation_preserving_tetrahedral_symmetry_fixes_mark_laplacian(self):
+        perms=[]
+        for perm in itertools.permutations(range(4)):
+            inversion=sum(perm[i]>perm[j] for i in range(4)
+                          for j in range(i+1,4))
+            if inversion%2==0:
+                perms.append(perm)
+        self.assertEqual(len(perms),12)
+        symbols=sp.symbols("h0:16")
+        matrix=sp.Matrix(4,4,symbols)
+        equations=[]
+        for perm in perms:
+            u=sp.zeros(4)
+            for i in range(4):
+                u[perm[i],i]=1
+            equations.extend(list(u*matrix*u.T-matrix))
+        constraints,_=sp.linear_eq_to_matrix(equations,symbols)
+        self.assertEqual(16-constraints.rank(),2)
+        invariant=sp.ones(4)/4
+        generator=sp.eye(4)-invariant
+        self.assertEqual(generator.eigenvals(),{0:1,1:3})
+        q=sp.symbols("q",real=True,positive=True)
+        transfer=invariant+q*generator
+        self.assertEqual(transfer[0,0],(1+3*q)/4)
+        self.assertEqual(transfer[0,1],(1-q)/4)
+
     def test_discriminant_glue_and_240_roots(self):
         self.assertEqual(sp.Rational(5,4)+sp.Rational(3,4),2)
         self.assertEqual((4*4)//(4**2),1)
