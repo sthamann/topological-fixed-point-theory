@@ -46,6 +46,7 @@ CASE_FIELDS = {
     "r113_synthesis_case":({"input"},set()),
     "p1_field_search":(set(),{"input"}),
     "marked_search":(set(),{"input"}),
+    "composed_search":(set(),{"input"}),
     "rectangular_intertwiner":({"input"},set()),
     "relational_transition":({"input"},set()),
     "transport_network":({"input"},set()),
@@ -299,6 +300,9 @@ def execute(spec,root):
     if lane == "stitch":
         from stitch import frontier
         return {"status":"CONDITIONAL_ROUTES",**frontier()}
+    if lane == "composed_search":
+        from composed_search import run, square_control
+        return run(spec["input"] if "input" in spec else square_control())
     if lane == "bridges":
         from bridges import run
         return run()
@@ -373,6 +377,8 @@ def specifications(resolution,domain,toolchain,focus,seed_research=True):
     yield 87,{"lane":"complexes","vertices":min(resolution+1,5),"dimension":min(3,resolution)}
     yield 86,{"lane":"rational_equivalence","dimension":2,"height":1 if resolution==3 else 2}
     yield 85,{"lane":"stitch"}
+    if seed_research:
+        yield 85,{"lane":"composed_search"}
     yield 80,{"lane":"synthesis","limit":64,"split_depth":1}
     yield 70,{"lane":"rewrite"}
     if toolchain:
@@ -511,6 +517,8 @@ def search_round(args,db,out,epoch,resolution,context,domain,focus,extras,dsl):
         "native_endpoint_readout":original.get("native_endpoint_readout"),
         "bridge_edges":bridge.get("edges",[]),
         "same_source_search":results.get("stitch",{}),
+        "composed_search":results.get("composed_search"),
+        "original_composed_search":original.get("composed_search"),
         "coverage":coverage(),
         "custom_cases":[r for r in rows if r["spec"] in extras],
         "reconstruction":results.get("reconstruction",{}),

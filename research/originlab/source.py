@@ -407,6 +407,27 @@ def evaluate(root, path=None):
                 values={k:str(v) for k,v in marks.items()},
                 connected_UY=str(connected) if connected is not None else None,
                 physical_source_identity_proved=False, physical_limits_proved=False)
+    if "composed_search" in bundle:
+        from composed_search import run
+        data = bundle["composed_search"]
+        if (data.get("source_id") != source_id or data.get("time_id") != time["id"] or
+                data.get("reference_binding") != bundle["component_bindings"]["reference_and_eta"]):
+            raise ValueError("composed search must bind the original source, time and reference")
+        labels = data["mark_words"]
+        if set(labels) != set(MARKS):
+            raise ValueError("composed search must account for all four original marks")
+        def observation(word, value):
+            real, imaginary = value.as_real_imag()
+            return {"word":word,"value":[str(real),str(imaginary)]}
+        observations = {"fit":[observation(labels[k],marks[k]) for k in MARKS if k != "ZUY"],
+                        "withheld":[observation(labels["ZUY"],marks["ZUY"])]}
+        for row in data.get("withheld_forms", []):
+            observations["withheld"].append(observation(row["word"],numerator(as_form(row["form"],size))/reference))
+        candidate["composed_search"] = {
+            **run(data["case"],gram.extract(pivots,pivots),(scalar/reference)*selector*cap*selector,observations),
+            "source_id":source_id,"time_id":time["id"],"input_role":role,
+            "original_word_indices":list(pivots),
+        }
     if fibre_audit is not None:
         candidate["fibre_pushforward"] = fibre_audit
     candidate["relational_original"] = {"status":"BLOCKED","values":[],

@@ -99,6 +99,25 @@ class OriginLabTests(unittest.TestCase):
             self.assertEqual(result["connected_UY"],"1")
             self.assertFalse(result["physical_source_identity_proved"])
 
+            bundle["composed_search"] = {
+                "source_id":f"{domain['domain_id']}:{digest(native)}", "time_id":"test", "reference_binding":"test",
+                "mark_words":dict(zip(MARKS,(["B"], ["U"], ["Y"], ["U","Y"]))),
+                "case":{"slots":[{"letters":[key],"choices":[{"id":value,"operators":{key:[[value]]}}
+                                                                for value in values]}
+                                 for key,values in (("B",[4]),("U",[4,8]),("Y",[4,12]))]},
+            }
+            path.write_text(json.dumps(domain))
+            search = evaluate(root,path)["composed_search"]
+            self.assertEqual(search["fit_survivors"],1)
+            self.assertEqual(search["status"],"NO_MATCH_IN_DECLARED_COMPOSITION_CLASS")
+            forms["ZUY"] = form(96)  # absolute native contraction of UY = 8*12 on this control
+            path.write_text(json.dumps(domain))
+            search = evaluate(root,path)["composed_search"]
+            self.assertTrue(search["unique_operational_class"])
+            self.assertEqual(search["input_role"],"arithmetic_control_only")
+            forms["ZUY"] = form(28)
+            del bundle["composed_search"]
+
             bundle.update(representation="original_exact_finite_fiber_sum",
                           configuration_unit={"kind":"whole_original_history_with_both_bosonic_endpoints",
                                               "native_map_binding":"test"},

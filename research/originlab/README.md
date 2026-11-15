@@ -108,6 +108,32 @@ survivors and worst-case probe counts. Input keys `marks.observations.phase`,
 IDs to exact observed values. Use the point order printed in the report.
 These inputs have finite control scope and do not authorize source binding.
 
+`--campaign composed_search` joins libraries of operator fragments on one
+Gram carrier and one trace contraction. Provide a case with
+`--composed-search-input FILE`, or run the default D4 transfer, generated
+quarter action, and odd field control. A finite case can give one `gram`
+and `trace_weight`, or `boundary_choices` with alternative metrics and
+trace weights in the same ordered coordinates. Each slot implements disjoint
+`letters` using `choices` of exact matrices, or generates one letter
+from a bounded `grammar` of OriginDSL endomorphisms. Shared `bindings`,
+adjoints, `positive_steps`, and `identities` constrain the combination
+as soon as their inputs are available. For example, a commutator is an
+identity with two coefficient/word terms. `fit` and `withheld` observations
+must name distinct ordered words. All-word classification uses an exact
+reachable-space test and emits a separating word for inequivalent
+candidates. An exhausted comparison budget prevents any uniqueness claim.
+
+The original `whole_source_bundle` can supply `composed_search` with
+its `source_id`, `time_id`, `reference_binding`, all four `mark_words`,
+and a `case` of operator families on the native Gram quotient. Optional
+`withheld_forms` carry a word and its independently supplied native form.
+The evaluator fixes the Gram, cap, selector, time and absolute reference,
+fits the first three R113 marks, and withholds the mixed mark and extra
+forms. Candidate metadata cannot replace these observations. A result
+certifies only the declared process class on its supplied alphabet;
+continuum, chirality, universal gravity coupling and independent physical
+validation remain separate gates.
+
 The same campaign checks a tetrahedral transfer. Supply `transfer.moments`
 as three or four exact 4 by 4 forms on the same ordered mark vectors,
 at steps zero through two or three of the same positive contraction.

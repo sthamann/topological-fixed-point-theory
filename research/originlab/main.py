@@ -22,7 +22,7 @@ from verify import car_replay, clock_test, digest, eigenvalue_test, r102
 
 HERE = Path(__file__).resolve().parent
 CAMPAIGNS = ("r113", "r113_synthesis", "source_bridge", "marked_search", "double_cell", "moving_carrier", "affine_polarization", "affine_operators", "affine_car", "colour_ward", "weak_source", "weak_folded_clock", "p1_field_search", "weak_return_rank", "four_mark_geometry", "f1_family_index", "r102", "bell", "clock", "identifiability", "four_mark_selection",
-             "spectral_source_controls", "empirical_source_audit", "p0", "f1")
+             "spectral_source_controls", "empirical_source_audit", "composed_search", "p0", "f1")
 FINITE_CONTROLS = ("double_cell", "moving_carrier", "affine_polarization", "affine_operators", "affine_car", "colour_ward", "weak_source", "weak_return_rank", "four_mark_geometry", "f1_family_index")
 
 
@@ -113,7 +113,8 @@ def campaign_context(args):
         }
     context["extra_inputs"] = {str(p.resolve()):digest(p)
                                for p in (args.proposal_file,args.finite_observations,args.r113_synthesis_input,
-                                         args.marked_search_input,args.p1_field_input) if p}
+                                         args.marked_search_input,args.p1_field_input,
+                                         getattr(args,"composed_search_input",None)) if p}
     return context
 
 
@@ -153,6 +154,10 @@ def execute(campaign, root, args, suggestion_rows, retained_rows, prior_question
     if campaign == "marked_search":
         from marked_search import run as marked_run
         return marked_run(json.loads(args.marked_search_input.read_text()) if args.marked_search_input else None)
+    if campaign == "composed_search":
+        from composed_search import run as search_composed, square_control
+        return search_composed(json.loads(args.composed_search_input.read_text()) if args.composed_search_input
+                               else square_control())
     if campaign == "double_cell":
         from double_cell import replay
         return replay()
@@ -270,6 +275,8 @@ def one_round(args, directory, index, retained, prior_questions, manifest):
                         finite_marked_search_status=outcomes.get("marked_search",{}).get("status","NOT_RUN"),
                         finite_mark_transfer=outcomes.get("marked_search",{}).get("transfer"),
                         harmonic_seam_search=outcomes.get("marked_search",{}).get("harmonic_seam"),
+                        composed_search=outcomes.get("composed_search"),
+                        original_composed_search=(source_result or {}).get("composed_search"),
                         double_cell_control_status=outcomes.get("double_cell",{}).get("status","NOT_RUN"),
                         moving_carrier_control_status=outcomes.get("moving_carrier",{}).get("status","NOT_RUN"),
                         affine_polarization_status=(source_result or {}).get("affine_polarization",{}).get("status","NOT_RUN"),
@@ -320,6 +327,7 @@ def main():
     parser.add_argument("--domain",type=Path)
     parser.add_argument("--r113-synthesis-input",type=Path,help="Use a declared finite oracle in the R113 synthesis campaign")
     parser.add_argument("--marked-search-input",type=Path,help="Replay finite phase, clock and cell observations")
+    parser.add_argument("--composed-search-input",type=Path,help="Search an exact composition of finite operator fragments")
     parser.add_argument("--p1-field-input",type=Path,help="Resolve a supplied two-face charged jet")
     parser.add_argument("--campaign",action="append",choices=(*CAMPAIGNS,"benchmarks"))
     parser.add_argument("--finite-controls-only",action="store_true",
@@ -350,6 +358,8 @@ def main():
         parser.error("--r113-synthesis-input requires the r113_synthesis campaign")
     if args.marked_search_input and "marked_search" not in args.campaign:
         parser.error("--marked-search-input requires the marked_search campaign")
+    if args.composed_search_input and "composed_search" not in args.campaign:
+        parser.error("--composed-search-input requires the composed_search campaign")
     if args.p1_field_input and "p1_field_search" not in args.campaign:
         parser.error("--p1-field-input requires the p1_field_search campaign")
     if args.domain and not args.domain.is_file():
