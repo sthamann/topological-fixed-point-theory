@@ -61,6 +61,38 @@ def controls():
              endpoint*s5==endpoint_reflection*endpoint,
              "exact D4-equivariant 3+2 fixed-point evaluation sequence fails")
 
+    # The full D4 commutant on the five original geometric modes has
+    # FOUR primitive central projections of ranks 1,1,1,2.
+    # An invariant positive Hamiltonian with the constant vacuum fixed
+    # therefore retains THREE independent excited energies.
+    standard = [sp.eye(5)[:,k] for k in range(5)]
+    zero = (standard[4]-standard[0])/sp.sqrt(2)
+    weak_odd = (standard[4]+standard[0])/sp.sqrt(2)
+    projections = (
+        zero*zero.H,
+        weak_odd*weak_odd.H,
+        standard[2]*standard[2].H,
+        standard[1]*standard[1].H+standard[3]*standard[3].H
+    )
+    _require(sum(projections,sp.zeros(5))==one5 and
+             [p.rank() for p in projections]==[1,1,1,2] and
+             all(p*r5==r5*p and p*s5==s5*p for p in projections),
+             "D4 geometric Hamiltonian central projections changed")
+    p0,pw,pm,pp = projections
+    h_a = pw+2*pm+3*pp
+    h_b = pw+4*pm+2*pp
+    _require(h_a*zero==sp.zeros(5,1) and h_b*zero==sp.zeros(5,1) and
+             h_a.eigenvals()=={0:1,1:1,2:1,3:2} and
+             h_b.eigenvals()=={0:1,1:1,2:2,4:1} and
+             sp.trace(h_a)==sp.trace(h_b)==9,
+             "same-gap same-trace positive source witnesses changed")
+    t_a = p0+pw/2+pm/4+pp/8
+    t_b = p0+pw/2+pm/16+pp/4
+    selected = standard[2]
+    returns = [(selected.H*t*selected)[0] for t in (t_a,t_b)]
+    _require(returns==[sp.Rational(1,4),sp.Rational(1,16)],
+             "geometric state does not distinguish source times")
+
     # C3 x F3^*, pairing characters +j with -j cancels clock charge.
     rt = sp.kronecker_product(rc,rf.inv().T)
     st = sp.kronecker_product(sc,sf.inv().T)
@@ -104,6 +136,10 @@ def controls():
        "fixed_point_evaluation_kernel_dimension":3,
        "D4_orientation_twisted_three_plus_two_exact_sequence":True,
        "two_fixed_points":"0 and infinity (original quarter rotation)",
+       "D4_irreducible_carrier_dimensions":[1,1,1,2],
+       "D4_invariant_generator_excited_free_parameters":3,
+       "matched_gap_and_trace_witness_spectra":[["0","1","2","3","3"],["0","1","2","2","4"]],
+       "same_gap_trace_distinguishing_return_at_log2":["1/4","1/16"],
        "five_mode_c4_multiplicities":{"1":2,"i":1,"-1":1,"-i":1},
        "log_family_c4_multiplicities":{"1":0,"i":1,"-1":1,"-i":1},
        "functorial_orientation_twist":"C3 == F3 tensor reflection_sign on D4",
