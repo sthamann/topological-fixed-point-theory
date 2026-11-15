@@ -93,6 +93,17 @@ def controls():
     _require(returns==[sp.Rational(1,4),sp.Rational(1,16)],
              "geometric state does not distinguish source times")
 
+    # The SAME canonical differential eta=dz/z carries primitive
+    # unit winding, is quarter-rotation invariant and reflection odd.
+    z = sp.symbols("z")
+    winding = sp.residue(1/z,z,0)
+    _require(winding==1 and
+             sp.simplify(sp.I/(sp.I*z)-1/z)==0 and
+             sp.simplify((-1/z**2)/(1/z)+1/z)==0,
+             "unit dlog winding and orientation response changed")
+    _require(sp.simplify(1/(4*2*sp.pi)-1/(8*sp.pi))==0,
+             "index-four angular normalization arithmetic changed")
+
     # C3 x F3^*, pairing characters +j with -j cancels clock charge.
     rt = sp.kronecker_product(rc,rf.inv().T)
     st = sp.kronecker_product(sc,sf.inv().T)
@@ -132,6 +143,9 @@ def controls():
     return {
        "status":"EXACT_FINITE_SEAM_COHOMOLOGY",
        "source_theorems":["v189","v197","v228","v512","architecture shared c3 P1 P2 origin"],
+       "dlog_winding_around_zero":"1 (geometric, not an original physical P1 response)",
+       "dlog_orientation_under_inversion":"-1",
+       "candidate_index_times_angle_normalization":"1/(8*pi) (physical identification unproved)",
        "fixed_point_evaluation_rank":2,
        "fixed_point_evaluation_kernel_dimension":3,
        "D4_orientation_twisted_three_plus_two_exact_sequence":True,
