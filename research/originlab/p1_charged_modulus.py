@@ -230,11 +230,67 @@ def two_face_fermion_sewing():
     }
 
 
+
+def original_r113_exterior_contract_gate():
+    """Audit the ACTUAL R113 empty exterior state versus a NEW fermion trace.
+
+    Owning text: experiments/theory-contracts/chat-triangulation-20261108/
+    R113-ORIGINAL-UND-REFERENZ-20261109.txt, section 1.
+    Q[b]=s[b] Gamma(R[b]); <Omega_F,Gamma(R)Omega_F>=1.
+    Any determinant of a full Fock trace is therefore a DIFFERENT
+    contraction unless independently bound inside original s[b].
+    """
+    t=sp.symbols("t",positive=True)
+    a=(1-t*t)/(1+t*t)
+    b=2*t/(1+t*t)
+    U=(a*sp.diag(1,-1)+b*sp.Matrix([[0,1],[1,0]]))*sp.diag(1,-1)
+    require(sp.factor(U.det()-1)==0, "relative finite word changed")
+    # Lambda^0, Lambda^1, Lambda^2 of the two-mode carrier.
+    def second_quantize(r):
+        return sp.diag(1,r[0,0],r[0,1],r[1,0],r[1,1],r.det()) if False else (
+            sp.diag(1,sp.S.One).row_join(sp.zeros(2,2)) if False else
+            sp.diag(sp.S.One,sp.S.One).row_join(sp.zeros(2,2))
+        )
+    # Use an explicit 4x4 Fock matrix (0, one-particle 2, full 2-particle).
+    def gamma(r):
+        return sp.diag(sp.S.One,r.det()).extract([0],[0]) if False else (
+            sp.diag(1,r[0,0],r[1,1],r.det()) +
+            sp.Matrix([[0,0,0,0],
+                       [0,0,r[0,1],0],
+                       [0,r[1,0],0,0],
+                       [0,0,0,0]]))
+    vac=sp.Matrix([1,0,0,0])
+    gu=gamma(U)
+    gm=gamma(-U)
+    require((vac.T*gu*vac)[0] == (vac.T*gm*vac)[0] == 1 and
+            sp.factor(sp.trace(gu)-(sp.eye(2)+U).det())==0 and
+            sp.factor(sp.trace(gm)-(sp.eye(2)-U).det())==0,
+            "R113 exterior vacuum and full trace were conflated")
+    full_trace=sp.factor(sp.trace(gu)*sp.trace(gm))
+    require(sp.factor(full_trace-16*t*t/(1+t*t)**2)==0 and
+            (vac.T*gu*vac)[0]*(vac.T*gm*vac)[0]==1,
+            "paired determinant cannot be inferred from empty Fock sources")
+    return {
+      "status":"NO_BARE_R113_VACUUM_DETERMINANT",
+      "original_fermion_word":"Q[b] = s[b] Gamma(R[b])",
+      "native_zero_fock":"<Omega_F,Gamma(R[b])Omega_F>=1",
+      "proposed_full_trace":"Tr Gamma(U)=det(I+U)",
+      "opposite_channel_full_trace":"Tr Gamma(-U)=det(I-U)",
+      "paired_full_trace":"16*t*t/(1+t*t)^2",
+      "paired_empty_contraction":"1",
+      "source_scalar_s_and_selection_could_contain_pair":True,
+      "source_scalar_s_or_selector_proved_to_contain_pair":False,
+      "direct_pfaffian_substitution_in_native_empty_Fock_permitted":False,
+      "original_full_R113_produced":False
+    }
+
+
 def controls():
     return {
         "free_charge_triangle":root_triple_no_max(),
         "paired_relative_determinant":paired_determinant_candidate(),
         "two_face_fermionic_sewing":two_face_fermion_sewing(),
+        "original_R113_exterior_contract_gate":original_r113_exterior_contract_gate(),
         "physical_source_identity_proved":False,
         "F1_solved":False
     }
