@@ -53,6 +53,28 @@ def controls():
     require(S*e0==-einfty and S*einfty==-e0 and
             (e0.H*H*e0)[0]==(einfty.H*H*einfty)[0]==m,
             "two fixed endpoints not exchanged by D4 reflection")
+    # A finite "select one side, then run positive time" construction:
+    # the two fixed endpoint states are the only zero modes of D^2.
+    # Remove ONE endpoint at the cap (still a new physical assumption).
+    # Both one-sided transfers have a unique vacuum, normalized gap 1,
+    # and are exchanged by the original geometric reflection.
+    p0=sp.eye(8)-einfty*einfty.H
+    pinfty=sp.eye(8)-e0*e0.H
+    h2=D*D
+    require(p0*h2==h2*p0 and pinfty*h2==h2*pinfty and
+            S*p0*S==pinfty and S*h2*S==h2,
+            "one-sided finite time does not respect the seam double")
+    keeper0=[0,1,2,3,5,6,7]
+    keeper_infty=[1,2,3,4,5,6,7]
+    h0=h2.extract(keeper0,keeper0)
+    hinfty=h2.extract(keeper_infty,keeper_infty)
+    require(h0.eigenvals()=={0:1,1:6} and
+            hinfty.eigenvals()=={0:1,1:6} and
+            sp.trace(h0)==sp.trace(hinfty)==6,
+            "one-sided positive time lacks the expected unique vacuum")
+    # On each one-sided Hilbert space T_t=P_vac+exp(-t)(I-P_vac).
+    # The parameter t is only a normalized clock variable here:
+    # physical elapsed time and absolute scale are NOT supplied.
     # The full geometric index is +2. Restricting to just one
     # endpoint gives a single line crossing m=0. The one-sided
     # cap selection is NOT derived from the original physical source.
@@ -67,6 +89,11 @@ def controls():
       "Dirac_zero_modes":"two at geometric quarter fixed points 0 and infinity",
       "unreduced_geometric_index":2,
       "one_selected_endpoint_index":1,
+      "one_sided_positive_time_H_squared_spectrum":["0 (x1)","1 (x6)"],
+      "one_sided_transfer_formula":"T(t)=P_vac+exp(-t)*(I-P_vac)",
+      "one_sided_vacuum_rank":1,
+      "one_sided_two_branch_intertwinement":"S P_0 S=P_infinity",
+      "one_sided_cap_selection_and_time_scale_derived":False,
       "Dirac_mass_family_spectrum":"m (x2), plus/minus sqrt(1+m^2) (x3 each)",
       "Dirac_mass_determinant":"-m^2(1+m^2)^3",
       "rotation_invariant":True,
