@@ -47,6 +47,11 @@ jobs:
       - name: Headline check — ./verify (re-derive the core claims)
         run: ./verify
 
+      - name: Original P1 exact source and orientation falsifiers
+        run: |
+          python -m unittest discover -v -s research/originlab -p "test_p1_source_falsifiers.py"
+          python -m unittest discover -v -s research/originlab -p "test_seam_cohomology.py"
+
       - name: Round-4 and Round-7 integration guard regressions
         run: python -m unittest -v verification/test_discipline_check_sites.py verification/test_v1006_round4_document_guard.py verification/test_v1016_round4_document_guard.py verification/test_round7_integration.py
 
