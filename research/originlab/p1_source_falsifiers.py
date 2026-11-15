@@ -95,6 +95,50 @@ def gaussian_arc_determinant():
     }
 
 
+def full_gaussian_gluing():
+    """Check complete free-circle gluing, including all interior arc modes.
+
+    Kirchhoff's theorem for the weighted 4-cycle gives:
+    det'(L)=4*(sum ell_i)/(prod ell_i).
+    The zeta Dirichlet determinant on each arc is 2*ell_i.
+    Their product is 64*(sum ell_i), independent of partition.
+    """
+    lengths=sp.symbols("ell1:5",positive=True)
+    total=sum(lengths)
+    vertex_det=4*total/sp.prod(lengths)
+    interior_det=sp.prod(2*length for length in lengths)
+    require(sp.cancel(vertex_det*interior_det)==64*total,
+            "full free Gaussian gluing retains spurious subdivision dependence")
+    for sample in ((1,2,3,5),(1,1,1,1),(2,3,2,3)):
+        m=sp.zeros(4)
+        for j in range(4):
+            conductance=sp.Rational(1,sample[j])
+            a,b=j,(j+1)%4
+            m[a,a]+=conductance
+            m[b,b]+=conductance
+            m[a,b]-=conductance
+            m[b,a]-=conductance
+        direct=(m+sp.ones(4,4)/4).det()
+        expected=4*sp.Integer(sum(sample))/sp.prod(sp.Integer(x) for x in sample)
+        require(direct==expected, "Kirchhoff pseudodeterminant exact replay failed")
+    delta=sp.symbols("delta",positive=True)
+    arcs=(delta,sp.pi-delta,delta,sp.pi-delta)
+    detprime=sp.simplify(vertex_det.subs(dict(zip(lengths,arcs)),simultaneous=True))
+    complete=sp.cancel(detprime*sp.prod(2*length for length in arcs))
+    require(complete==128*sp.pi and sp.diff(complete,delta)==0,
+            "original circle subdivision leaves an unphysical free-modulus saddle")
+    return {
+      "status":"EXACT_COMPLETE_FREE_CIRCLE_GLUING",
+      "universal_weighted_cycle_identity":"det_prime(L)=4*perimeter/prod(arc_lengths)",
+      "interval_zeta_dirichlet_identity":"det_zeta(-d2/dx2 on interval ell, Dirichlet)=2*ell",
+      "combined_determinant":"64*perimeter (128*pi when perimeter=2*pi)",
+      "physical_free_boson_partition_independent_of_subdivision":True,
+      "vertex_only_square_saddle_canceled_by_interior_modes":True,
+      "actual_interacting_charged_defect_weight_derived":False,
+      "physical_F1_modulus_selected":False,
+    }
+
+
 def calderon_hardy_obstruction():
     """Exact half-cylinder Dirac Fourier modes, before any physical identification."""
     sigma3=sp.diag(1,-1)
@@ -131,6 +175,7 @@ def controls():
     return {
       "four_mark_family":four_mark_family(),
       "gaussian_arc_determinant":gaussian_arc_determinant(),
+      "full_gaussian_gluing":full_gaussian_gluing(),
       "calderon_hardy":calderon_hardy_obstruction(),
       "physical_source_identity_proved":False,
       "F1_solved":False,
