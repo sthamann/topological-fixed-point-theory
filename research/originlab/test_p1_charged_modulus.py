@@ -92,6 +92,28 @@ class ChargedP1ModulusTests(unittest.TestCase):
                          "g>sqrt(2)-1 (does not give global maximum if g<1)")
         self.assertFalse(sewing["physical_unit_coupling_and_CAR_orientation_proved"])
 
+    def test_original_r113_zero_fock_does_not_equal_new_fermion_trace(self):
+        gate=self.result["original_R113_exterior_contract_gate"]
+        self.assertEqual(gate["status"],"NO_BARE_R113_VACUUM_DETERMINANT")
+        self.assertEqual(gate["paired_empty_contraction"],"1")
+        self.assertEqual(gate["paired_full_trace"],"16*t*t/(1+t*t)^2")
+        self.assertFalse(gate["source_scalar_s_or_selector_proved_to_contain_pair"])
+        self.assertFalse(gate["direct_pfaffian_substitution_in_native_empty_Fock_permitted"])
+
+    def test_wedge_vacuum_vs_fock_trace_exact(self):
+        t=sp.Rational(1,2)
+        u=sp.Matrix([[sp.Rational(3,5),-sp.Rational(4,5)],
+                     [sp.Rational(4,5),sp.Rational(3,5)]])
+        def exterior(matrix):
+            return sp.Matrix([[1,0,0,0],
+                              [0,matrix[0,0],matrix[0,1],0],
+                              [0,matrix[1,0],matrix[1,1],0],
+                              [0,0,0,matrix.det()]])
+        gu,gm=exterior(u),exterior(-u)
+        self.assertEqual((gu[0,0],gm[0,0]),(1,1))
+        self.assertEqual((gu.trace(),gm.trace()),(sp.Rational(16,5),sp.Rational(4,5)))
+        self.assertEqual(gu.trace()*gm.trace(),sp.Rational(64,25))
+
     def test_no_r113_or_calderon_source_promoted(self):
         self.assertFalse(self.result["F1_solved"])
         self.assertFalse(self.result["physical_source_identity_proved"])
