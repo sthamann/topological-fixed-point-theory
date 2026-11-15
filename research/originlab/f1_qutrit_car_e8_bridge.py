@@ -221,6 +221,26 @@ def colour_branch():
     require((c3,c6,c8)==(2,6,8) and c3+c6==c8,
             "conformal central charge c(SU3_1)+c(E6_1) != c(E8_1)")
 
+    # The two E8 C4 characters are conjugate at affine-current level
+    # but NOT as actions on the underlying 16 Majorana vector carrier.
+    # This no-go is independent of the choice of Weyl witness:
+    # eigenvalue multiplicities in the vector representation are invariant.
+    def vector_phases(weights):
+        c=Counter([x%4 for x in weights]+[(-x)%4 for x in weights])
+        return [c[k] for k in range(4)]
+    geometric_vector=vector_phases(GEOM_TORUS)
+    native_vector=vector_phases(NATIVE_GLUE_TORUS)
+    require(geometric_vector==[4,4,4,4] and
+            native_vector==[10,0,6,0],
+            "source and native Majorana vector clock spectra unexpectedly identical")
+    geom_currents=Counter(character(z,qg) for z in ROOTS)
+    native_currents=Counter(character(z,qn) for z in ROOTS)
+    geom_currents[0]+=8
+    native_currents[0]+=8
+    require([geom_currents[k] for k in range(4)]==
+            [native_currents[k] for k in range(4)]==[60,64,60,64],
+            "E8 source clock conjugacy spectrum lost")
+
     # IMPORTANT: the grouped GEOM_TORUS ordering interleaves
     # C5 and F3: the three F3 axes are 3,5,7, NOT 5,6,7.
     source_a,source_b=_root_at(3,5),_root_at(5,7)
@@ -282,6 +302,11 @@ def colour_branch():
       "source_F3_complex_mode_quarter_phases":source_phases,
       "natural_F3_fundamental_SU3_quarter_current_profile":[2,2,2,2],
       "native_pinned_color_SU3_quarter_current_profile":[8,0,0,0],
+      "geometric_16_majorana_vector_quarter_character":[4,4,4,4],
+      "native_16_majorana_vector_quarter_character":[10,0,6,0],
+      "both_E8_affine_current_quarter_characters":[60,64,60,64],
+      "any_SO16_rotation_can_conjugate_geometric_to_native_clock":False,
+      "full_E8_spinor_extension_needed_for_any_clock_conjugacy":True,
       "scalar_f2_orientation_character_removes_nontrivial_colour_root_grades":False,
       "natural_F3_SU3_recovered_as_native_colour_by_simultaneous_Weyl_conjugacy":False,
       "index_of_3_fundamental_plus_5_singlets_SU3_complex_fermions":1,
