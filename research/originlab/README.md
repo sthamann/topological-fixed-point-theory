@@ -108,6 +108,27 @@ survivors and worst-case probe counts. Input keys `marks.observations.phase`,
 IDs to exact observed values. Use the point order printed in the report.
 These inputs have finite control scope and do not authorize source binding.
 
+The same campaign checks a tetrahedral transfer. Supply `transfer.moments`
+as three or four exact 4 by 4 forms on the same ordered mark vectors,
+at steps zero through two or three of the same positive contraction.
+Use the Gaussian rational encoding described above. The diagonal and edge
+entries give the singlet and triplet moments as `d+3e` and `d-e`. For moments
+`(a,b,c)` in either sector, the sharp third moment interval is
+`[c²/b, c − (b−c)²/(a−b)]` when `0 < b < a`. Cauchy Schwarz with the
+measures weighted by `x` and `1−x` gives these bounds. Each endpoint is
+attained by a two-point measure, and their mixtures fill the interval.
+The report includes those spectra and the minimum additional dimension
+required by the first three moments. A positive variance in the triplet
+requires three additional directions. The default control requests the
+third triplet return and yields `[25/128, 31/128]`.
+
+Set `transfer.conserved_distinct_weights` only when the four vectors carry
+distinct joint Cartan weights and the transfer conserves those charges.
+In that case all mixed entries must vanish and tetrahedral covariance makes
+the four diagonal entries equal. The bounds allow transfer eigenvalue zero.
+The form check does not supply a native word map, the physical time step,
+the absolute reference, or the R113 values.
+
 The audited plan has an executable benchmark campaign:
 
 ```sh

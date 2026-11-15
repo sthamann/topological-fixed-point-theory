@@ -5,6 +5,7 @@ from itertools import combinations, permutations, product
 
 import sympy as sp
 
+from mark_transfer import analyze as analyze_transfer, control as transfer_control
 from reconstruction import matrix, require, scalar
 from routes import partial_trace
 from selection import BIT_VECTORS, full_face_refinements, index, integer_rows, mod2, perm_matrix
@@ -195,8 +196,10 @@ def cell_search(data):
 
 def run(data=None):
     data = {} if data is None else data
-    require(isinstance(data,dict) and set(data)<={"marks","cells"},"unknown marked search inputs")
+    require(isinstance(data,dict) and set(data)<={"marks","cells","transfer"},"unknown marked search inputs")
     marks = phase_and_clock(data.get("marks",{}))
     cells = cell_search(data.get("cells",{}))
-    return {"status":"REFUTED_SUPPLIED_MARKS" if "REFUTED_SUPPLIED_MARKS" in (marks["status"],cells["status"])
-            else "EXACT_MARKED_SEARCH","physical_source_derived":False,"marks":marks,"cells":cells}
+    transfer = analyze_transfer(data["transfer"]) if "transfer" in data else transfer_control()
+    refuted = any(report["status"].startswith("REFUTED_") for report in (marks, cells, transfer))
+    return {"status": "REFUTED_SUPPLIED_MARKS" if refuted else "EXACT_MARKED_SEARCH",
+            "physical_source_derived": False, "marks": marks, "cells": cells, "transfer": transfer}
