@@ -8,6 +8,40 @@ The current [plan audit](PLAN-AUDIT.md) covers the original requirements and
 the three later sets of scenario tests. The first priority is the
 [same-source R113 test](R113-R104-RELATIONAL.md).
 
+## 15 November 2026 · New exact 5+3 equivariant cohomology test
+
+The [equivariant residue origin check](P1-EQUIVARIANT-RESIDUE-ORIGIN-20261115.md)
+uses the original D=mu4 divisor rather than another chosen Clifford
+carrier. It verifies H0(O(D)) = 2 chi0 + chi1 + chi2 + chi3 and
+H0(Omega1(log D)) = chi1+chi2+chi3: the original five carrier sections
+possess an exact orientation-preserving **three plus two**
+isotypic splitting, while the three family differentials carry the
+nontrivial phases. Under the original reflection z->1/z the functions
+and the differentials have opposite signs, giving a concrete version
+of the sign-twist found between graph cycles and puncture homology.
+
+The exact minimal cyclic-character compensator is the dual family
+representation: C3 tensor F3* has rank **3** under cyclic averaging,
+but only rank **1** under the full untwisted square D4 averaging (rank
+**2** with the orientation sign). The uncompensated 3D sector has
+only diagonal quarter-clock commutant and cannot simultaneously carry
+an irreducible, quarter-commuting SU(3). The proposal is that the original
+P1 orientation/Pfaffian/eta sector supplies the required oriented
+source pairing. This is only a necessary representation mechanism and
+still does **not** give three independent colors and three families:
+one rank-3 neutral channel is not a 3x3 color-family carrier.
+
+The new seam_cohomology OriginLab campaign and finite regression tests
+implement these exact positive and negative checks. They are **not**
+native weighted source producers. The source-first next task remains
+the original whole Q0 with its time and absolute empty reference,
+followed by the genuine charged orientation/adjoint and four R113
+marks at two blocking levels, then 3+1D locality and spin-2 coupling.
+The November 13 Handrack--Salmhofer free-fermion reflection-positivity
+theorem further motivates checking the actual covariance regulator,
+not just positivity of the spectral-action weight; the two objects
+are not identical. F1 remains open.
+
 ## 15 November 2026 · Original square-seam re-audit and independent source-time gate
 
 The [source re-audit](P1-ORIGINAL-REAUDIT-CROSSRATIO-TIME-20261115.md) compares the actual primitive boundary/collar theorem, operational seed, original v512 seam modulus scan, v189/v216/v499 four-mark carrier construction, v239 modular KMS, metrology and the R113 constructor trace. **Correction:** the physical square configuration has projective D4 symmetry and cross ratio -1, NOT tetrahedral A4. The recent abstract K4 graph's S4 and its A4 permutation-invariant laplacian are *not* geometrically inherited from the original square; its three graph cycles differ by the orientation sign from the three punctured-sphere H1 cycles even under the square D4 rotation. Do not treat equal dimensions as a family representation map.
