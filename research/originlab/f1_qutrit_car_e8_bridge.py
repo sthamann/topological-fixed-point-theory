@@ -106,6 +106,18 @@ def matrix_algebra_type_gate():
             fock%qutrit_dim!=0 and (fock//2)%qutrit_dim!=0,
             "unital finite matrix/CAR representation divisibility changed")
 
+    # Even adding arbitrarily many finite complex CAR modes, and taking
+    # their quasi-local C*-inductive limit M_(2^infinity), does NOT add
+    # a unital M3 subalgebra. The unique trace on the CAR UHF algebra
+    # takes projection values only in dyadic rationals Z[1/2];
+    # three equivalent unital M3 diagonal projections would each need
+    # trace 1/3, which is NOT dyadic. This is a K0/trace obstruction,
+    # not a no-go for a larger von Neumann or type III completion.
+    require(all(pow(2,n,3) in (1,2) for n in range(1,65)) and
+            not any(sp.Rational(k,2**n)==sp.Rational(1,3)
+                    for n in range(12) for k in range(2**n+1)),
+            "finite stages of the CAR UHF unexpectedly acquire M3 units")
+
     # A compressed three-dimensional code P in the CAR Fock space is
     # NOT a unital *-homomorphism on the full CAR operator products:
     # C(A* A) != C(A*) C(A) for an operator leaving the code.
@@ -133,6 +145,10 @@ def matrix_algebra_type_gate():
       "exhaustive_commuting_qutrit_CAR8_basis_checks":commuting_checks,
       "unital_M3_inside_irreducible_CAR8_Fock_exists":False,
       "unital_M3_inside_each_CAR8_even_parity_128_block_exists":False,
+      "quasilocal_infinite_CAR_inductive_limit":"M_(2^infinity) UHF algebra",
+      "unital_M3_inside_quasilocal_infinite_CAR_UHF_2infinity_exists":False,
+      "infinite_CAR_UHF_projection_trace_obstruction":"1/3 is not dyadic (Z[1/2])",
+      "distinct_factor_or_non_quasilocal_completion_needed_for_unital_M3":True,
       "minimum_common_finite_unital_representation_dimension":carrier,
       "explicit_minimal_commuting_host":"C3 tensor wedge(C8), dimension 768",
       "exact_full_product_algebra":"M3 tensor M256=M768",
