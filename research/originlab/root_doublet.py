@@ -101,6 +101,7 @@ def checked_doublet(metric, vacuum, create_lower, create_upper, lower_end, upper
 
 def radial_symmetry_check(root):
     from affine_time import original_time
+    from colour_ward import folded_bridge
     from folded_time import marked_clock
 
     radial = original_time(root)
@@ -125,6 +126,7 @@ def radial_symmetry_check(root):
                 "scope":"finite matrices cannot realize the complete positive-level affine mode algebra; compression and the horizontal doublet remain possible"},
             "radial_commutes_with_horizontal_middle_on_doublet":True,
             "quarter_cases":cases,
+            "colour_cyclic_clock":folded_bridge(folded["cases"]),
             "affine_two_time_control":{"transfer_factors":list(map(str,widths)),
                                        "rank":grid.rank(),"mixed_ratio":str(ratio),
                                        "pure_doublet_rank_bound":1,"pure_doublet_refuted_for_full_word":True},

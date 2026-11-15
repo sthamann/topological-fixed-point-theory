@@ -200,7 +200,8 @@ def native_synthesis(root, domain, endpoint):
             "next_original_observation":(
                 "Bind the original charged operation on the reflected quotient before the outer selector. "
                 "The literal native Higgs A2 bridge and its full polar-even CAR version are excluded on their audited fibres. "
-                "Test the actual image of the affine lowering mode, its adjoint leakage, and the full colour-changing blocks. "
+                "Test all 18 charged lowering pairs and the 22 neutral steps. Compare the ordered Y=5/6 return, "
+                "including the Gram form and spectator leakage of the native exterior word. "
                 "Use the two-root minus-winding lift to test the original field insertion with charges (3,2) at Y=1/6. "
                 "Check the folded generator on the same chart. "
                 "The original W dresses a charged word with B_+ and has its own time and parity constraints. "

@@ -7,6 +7,7 @@ import subprocess
 import sys
 
 from coherence import R104_SOURCES, car_word, det_word, inner, r104, thermal
+from colour_ward import native_carrier_check
 from source import MARKS, NATIVE
 from verify import digest
 from weak_source import native_d8_legs
@@ -46,7 +47,8 @@ def analyze(domain):
         return np.diag(np.all(integer_weights==weight,axis=1).astype(int))
 
     p0 = projector((0,0,0,0))
-    anti_sterile = [model.NP+model.IDX[("nu","R",0,g)] for g in range(model.NG)]
+    sterile = [model.IDX[("nu","R",0,g)] for g in range(model.NG)]
+    anti_sterile = [model.NP+p for p in sterile]
     p_sterile = np.diag(np.isin(np.arange(n),anti_sterile).astype(int))
     lepton = [[model.NP+model.IDX[(flavour,"L",0,g)] for g in range(model.NG)]
               for flavour in ("e","nu")]
@@ -125,6 +127,10 @@ def analyze(domain):
         ranks.append(colour_ranks)
     if p0.trace()!=6 or n!=96:
         raise ArithmeticError("native probe only applies to the audited 96 fibre")
+    spectators = [model.NP+p for block in down for p in block]
+    shifted_spectators = [[model.NP+p for pair in quark for p in pair[j]] for j in range(2)]
+    exterior_word = _exterior_two_ward(assembler,integer_weights[:,0],sterile,anti_sterile,
+                                       lepton,spectators,shifted_spectators,ynu,yd,coupling("MR"))
     return {
         "status":"NATIVE_HIGGS_ENDS_FOUND_CHARGED_MIDDLE_OPEN",
         "native_inputs_sha256":assembler.domain["_sha256"],
@@ -147,12 +153,60 @@ def analyze(domain):
             "extension_test":"if the native fibre reduces the alpha operations and the gauge Cartans, enlarging only homogeneous coloured fields leaves the projected obstruction intact",
         },
         "polar_car_parity":polar_checks,
+        "neutral_colour_completion":native_carrier_check(integer_weights),
+        "native_exterior_two_ward_candidate":exterior_word,
         "exact_centre_zero_on_native_generators":True,
         "candidate_split":"the colourless weak leg matches Higgs charge blocks; the full colour-changing leg is absent",
         "missing_middle":"charged maps neutral to right-down and early lepton doublet to late quark doublet, with their adjoints and a common native source binding",
         "physical_source_identity_proved":False,
         "original_values":dict.fromkeys(MARKS),
     }
+
+
+def _exterior_two_ward(assembler, charges, sterile, anti_sterile, lepton,
+                       spectators, shifted_spectators, ynu, yd, mr):
+    """Test the ordered Majorana and Higgs action with an anti-down spectator."""
+    import numpy as np
+    import sympy as sp
+
+    dm = assembler.DM
+    block = dm[np.ix_(anti_sterile,sterile)]
+    if (np.count_nonzero(dm[:,spectators]) or np.count_nonzero(dm[:,sterile])!=np.count_nonzero(block)
+            or not np.array_equal(block,np.asarray(mr.H,dtype=complex))):
+        raise ArithmeticError("native Majorana support does not give the reviewed exterior word")
+    families = [sterile,anti_sterile,*lepton]
+    total_charges = [{int(charges[a]+charges[b]) for a in group for b in spectators} for group in families]
+    if total_charges!=[{2},{2},{5},{5}]:
+        raise ArithmeticError("native exterior endpoints do not have the reviewed hypercharges")
+    weak_components = []
+    for j,target in enumerate(lepton):
+        vertex = (assembler.V[2*j]-1j*assembler.V[2*j+1])/2
+        higgs = (-1 if j==0 else 1)*sp.conjugate(ynu)
+        block = vertex[np.ix_(target,anti_sterile)]
+        if (np.count_nonzero(vertex[:,sterile+spectators]) or
+                np.count_nonzero(vertex[:,anti_sterile])!=np.count_nonzero(block) or
+                not np.array_equal(block,np.asarray(higgs,dtype=complex))):
+            raise ArithmeticError("native Higgs support does not give the reviewed exterior word")
+        # Neither letter acts on the spectator along this path. The exterior
+        # action dGamma is the identity there, times the ordered family map.
+        family = higgs*mr.H
+        gram = (family.H*family).applyfunc(sp.expand)
+        scalar = sp.trace(gram)/gram.rows
+        # The adjoint also acts on the spectator. Its image with the active
+        # sterile unchanged is orthogonal to the active part of the adjoint.
+        spectator_block = vertex.conj().T[np.ix_(shifted_spectators[j],spectators)]
+        expected = sp.kronecker_product(sp.eye(3),sp.conjugate(yd))
+        if not np.array_equal(spectator_block,np.asarray(expected,dtype=complex)):
+            raise ArithmeticError("native Higgs adjoint must move the anti-down spectator")
+        weak_components.append({"forward_rank":len(spectators)*family.rank(),
+                                "reverse_rank":0,"gram_is_scalar":gram==scalar*sp.eye(gram.rows),
+                                "higgs_adjoint_spectator_leak_rank":len(sterile)*expected.rank()})
+    return {"status":"NATIVE_EXTERIOR_ORDERED_CHARGE_PATH",
+            "spectator":"anti_d_R","spectator_dimension":len(spectators),
+            "ordered_action":["dGamma(DM)","dGamma(Higgs_plus)"],
+            "Y_path":["1/3","1/3","5/6"],"colour_path":[2,2,2],
+            "weak_components":weak_components,
+            "scope":"fixed exterior norm on the native diagnostic fibre; the weighted source, its clock and the two individual affine identifications remain open"}
 
 
 def _polar_car_check(model, vertex, weak_weight, yukawas):

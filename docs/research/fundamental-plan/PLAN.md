@@ -2,7 +2,7 @@
 
 ## OriginLab am 15. November 2026
 
-Die aktuelle reproduzierbare Suche und der exakte Test der geladenen P1 Variation stehen im [OriginLab Plan](../../../research/originlab/PLAN.md). OriginLab wertet die beiden ursprünglichen Viertelcharts aus und trennt die geladenen Feldanteile unter der unabhängig verankerten Hyperladung. Der native R113 Aufruf benötigt weiterhin die ursprüngliche gewichtete Randform samt absoluter Referenz. F1 bleibt in Bearbeitung.
+OriginLab prüft nun den neutralen Spinorstrom und die kubische Farbklammer. Zwei neutrale Einfügungen führen zum Endpunkt mit $Y=5/6$. Der ursprüngliche Mehrteilchenweg erreicht die Ladung und hat eine nichtskalare Gramform. Der kleinste neutrale Träger, der die ursprünglichen Farb, schwachen und Hyperladungsdarstellungen aufnehmen kann, hat Dimension 240. Der native R113 Aufruf benötigt den gewichteten ursprünglichen Nullmarkenkern und die absolute Leerreferenz. F1 bleibt in Bearbeitung. [OriginLab](../../../research/originlab/README.md) und [exakte Ergebnisse](RESULTS.md#originlabcolourward20261115--neutraler-spinor-und-ursprünglicher-mehrteilchenträger).
 
 
 ## TRIANGULATION20261106O: Tatsächlicher Selektor und Quellenkonstruktor

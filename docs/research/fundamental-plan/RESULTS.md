@@ -4190,3 +4190,108 @@ Die Reproduktion aus dem öffentlichen Dateisatz ohne lokalen Atlas
 bestand ebenfalls alle 97 Tests und neun Benchmarks. Die geladenen P1
 Kontrollen sind dabei vollständig ausführbar und der native
 R113 Aufruf weist den offenen gewichteten Eingang aus.
+
+## ORIGINLABCOLOURWARD20261115 · Neutraler Spinor und ursprünglicher Mehrteilchenträger
+
+Die beigefügte Sitzungsrechnung wurde im affinen E8 Vakuummodul
+und an den tatsächlichen full96 Matrizen geprüft. Der vorhandene
+Farbzerfall hat auf Grad eins die Dimensionen $(86,81,81)$ und
+enthält $(46,33,33)$ Paarwurzeln und $(32,48,48)$ Spinorwurzeln.
+Ein neutraler Spinor $p_1$ ergänzt die 46 neutralen Paarwurzeln zu
+$A_2\oplus E_6$, ein anschließendes $p_2$ schließt alle 240 Wurzeln.
+Der neutrale Abstieg $J^{-p_1}_0$ hat die Ränge $(22,18,18)$ und
+Casimirspuren $(36,27,27)$. Farbe zwei enthält 15 Abbildungen von
+Spinor zu Paarwurzeln und drei in Gegenrichtung. Der positive
+Partnermodus führt den neutralen Spinorstrom mit Koeffizient eins ins
+Vakuum zurück. Geladene Zustände auf Grad eins werden von den positiven
+neutralen Moden annihiliert. Die gemeinsame Sugawara Zentralzahl acht
+gilt bereits vor der Erweiterung um die 32 neutralen Spinorströme.
+
+Je Farbe liefern 810 ungeordnete Eingabepaare 1.620 orientierte
+Klammerkoeffizienten auf 270 Wurzeldreiecken. Die 252.720 neutralen
+Ward Prüfungen pro geladener Farbe liefern 21.870 nichtverschwindende
+Relationen. Division durch den Referenzkozykel in der Basis mit
+positiver Adjunktion ergibt einen zusammenhängenden Graphen von Rang 809.
+Mit den neutralen Paarwurzeln allein bleiben vier Komponenten der
+Größen $30,60,240,480$. Die Zyklizität der invarianten Paarung führt
+dort zu zwei Komponenten der Größen $90,720$. Mit der vollständigen
+neutralen Wirkung fixieren die positive Adjunktion und die Jacobi
+Identität für $(a,b,-b)$ den Betrag des einen gemeinsamen Faktors auf
+eins. Eine konjugierte Rephasierung der geladenen Sektoren ändert ihn
+um die dritte Potenz der Phase. Bei fester Klammer sind deshalb die
+drei dritten Einheitswurzeln als Rephasierungen erlaubt. Der
+kubische Originalwert kann die konkrete Quelleneinbettung kalibrieren.
+
+Mit $\gamma=p_1-p_2$ lässt sich das markierte Wort in eine horizontale
+Ward Antwort auf $p_2$ umschreiben. Für $m\ge n$ wird die mittlere
+Mode nach links in das Vakuum kommutiert, für $m<n$ nach rechts.
+Die beiden Zweipunktwerte geben $n$ beziehungsweise $m$ mal den
+orientierten Kozykel. Der Tausch der beiden ersten Wurzeln negiert
+ihn. Der Lauf prüft 16 Modenpaare. In den Viertelcharts $1/4$ und
+$3/4$ trägt die Relation $W=-x^d H$ die Exponenten $d=-3/2$ und
+$d=-5/4$ bei identischen vorzeichenbehafteten Radialphasen. Der
+geordnete neutrale Weg mit $-p_1$ und $e_4+e_6$ führt
+$p_2\to-\gamma\to-e_1+e_4$. Er hält Farbe zwei und erreicht
+$Y=5/6$. Sein Normquadrat auf Grad $m$ ist $m$, die Gegenordnung
+verschwindet. Der normierte Endrückweg hat in beiden festen Charts
+den Faktor $\exp(-tm)$ in $K$ Zeit.
+[Affiner Operatorlauf](../../../research/originlab/colour_ward.py).
+
+Die ursprüngliche Einteilchenfaser enthält keine $Y=5/6$ Linie.
+Ihre Farbblöcke haben Hyperladungsspuren $(0,6,-6)$. Hyperladung liegt
+im $E_6$ Cartan. Die Spur verschwindet auf jedem endlichen invarianten
+Farbblock einer Darstellung, weil $E_6$ perfekt ist. Das schließt die
+unveränderte Faser auch bei reinen
+Fourier Kopien aus. Der Außencharakter ergibt für die Spur in Farbe
+eins die erzeugende Funktion $6t(1+t)^{24}(1-t+t^2)^{35}$.
+Eine unabhängige Teilmengenrekursion prüft alle Koeffizienten.
+Die Spuren sind in jedem Grad von 1 bis 95 ungleich null, auf dem
+Außenquadrat $(0,-66,66)$ und auf dem ganzen Außenraum
+$(0,6\cdot2^{24},-6\cdot2^{24})$. Gerade und ungerade Parität
+tragen jeweils die Hälfte der vollen Spur. Diese Ausschlüsse setzen
+den jeweiligen ganzen Träger und die ursprüngliche Hyperladung voraus.
+
+Die kleinste endliche neutrale Ergänzung unter den ursprünglichen
+Farb, schwachen und Hyperladungsdarstellungen hat exakt Dimension
+$78+3\cdot27+3\cdot27=240$. Die Weyl Formel liefert 27 als kleinste
+nichttriviale $E_6$ Dimension und 78 als kleinste solche Dimension
+bei trivialer Zentrumswirkung. Dies beschränkt den Farbsingulettanteil mit
+nichtverschwindender Hyperladung und die beiden Farbtriplets von unten.
+Das adjungierte 78er Modul und die beiden konjugierten 27er Module
+mit ihren Farbfaktoren erreichen die Schranke. Die gemeinsame
+Zählung der schwachen Höchstgewichte für jede Hyperladung weist
+die Einbettung der nativen Eichdarstellungen nach. Die gewichtete
+Form und die physische Zeit erfordern eigene Quellendaten.
+
+Die ursprünglichen Majorana und Higgs Matrizen erzeugen im
+Außenquadrat tatsächlich $\nu_R\to\bar\nu_R\to\bar L_L$ mit
+$\bar d_R$ als Zuschauer. Für jede schwache Komponente ergeben
+die exakten ursprünglichen Familienmatrizen Rang 27, Rang null
+in der Gegenordnung und eine nichtskalare Gramform. Der Higgs
+Adjungierte schiebt den Anti Down Zuschauer in das Anti Quark
+Dublett und verlässt den gewählten Eintrittsraum mit Rang 27.
+Im zusammengesetzten adjungierten Rückweg vernichtet die nachfolgende
+Majorana Wirkung diesen Zweig. Die nichtskalare Gramform bleibt. Der Weg
+liefert die fehlende Ladung und verlangt einen aus der Naht gebundenen
+Träger und eine wirkliche gewichtete Norm. Der separate
+Spiegelindex bleibt eine Aussage über unabhängige konjugierte
+Randsektoren. Die Feldadjunktion allein gibt keine physische
+Spiegelverdopplung.
+[Nativer Matrixlauf](../../../research/originlab/native_weak_bridge.py).
+
+101 OriginLab Tests und neun Benchmarks bestanden. Die autonome
+Suche lief auf Auflösung drei und vier mit null technischen Fehlern.
+Der öffentliche Dateisatz ohne lokalen Atlas bestand ebenfalls alle
+101 OriginLab Tests. Vier geprüfte Befunde wurden auf Atlasrevision
+`e86f90dc6359a0505f9d2223` zurückgelesen.
+Der ursprüngliche Produzent steht bei null Quellatomen. Für die
+vier R113 Marken fehlen das ganze gewichtete Randdatum und die
+absolute Leerreferenz. Die früheste fehlende Matrix ist
+$Q_0[a,b]=I_{\rm orig}((\Theta F_a)\theta_T F_b)$ mit der
+ursprünglichen Basisintegration. Konstruiere aus dieser Naht einen
+gemeinsam gewichteten Träger für die Spinorerweiterung und prüfe
+die 18 geladenen Abbildungen samt Adjungierten und der Endenergie.
+Die zuvor bestimmte gemeinsame Kovarianz, Hyperladungs und
+Wärmeableitung bleibt die nächste Probe des geladenen Feldanschlusses.
+F1 bleibt offen.
+[Ursprüngliche Konstruktorprüfung](../../../experiments/theory-contracts/original-paper-source-reconciliation-20261102/triangulation_20261106O/caller/ACTUAL-PRIMITIVE-REGULATOR-CALLER-TRACE.txt).

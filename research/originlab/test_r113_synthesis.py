@@ -19,6 +19,22 @@ class R113SynthesisTests(unittest.TestCase):
         self.assertEqual(report["det16_spectator"]["odd_ground_return"],"exp(-2*t) * ||B phi||^2")
         self.assertTrue(all(value is None for value in report["original_values"].values()))
 
+    def test_native_exterior_word_reaches_the_missing_charge_with_adjoint_leakage(self):
+        root = Path(os.environ.get("TFPT_REPO_ROOT",Path(__file__).resolve().parents[2]))
+        report = native_weak_bridge(root,root/NATIVE)
+        word = report["native_exterior_two_ward_candidate"]
+        self.assertEqual(word["Y_path"],["1/3","1/3","5/6"])
+        self.assertEqual(word["weak_components"],[{"forward_rank":27,"reverse_rank":0,
+                         "gram_is_scalar":False,"higgs_adjoint_spectator_leak_rank":27}]*2)
+        completion = report["neutral_colour_completion"]
+        self.assertEqual(completion["native_Y_traces_by_colour"],[0,6,-6])
+        self.assertEqual(completion["native_exterior_two_Y_traces_by_colour"],[0,-66,66])
+        self.assertEqual(completion["native_full_exterior_Y_traces_by_colour"],[0,6*2**24,-6*2**24])
+        self.assertEqual(completion["exterior_degrees_with_zero_colour_trace"],[0,96])
+        self.assertEqual(completion["minimum_charge_preserving_neutral_completion_dimension"],240)
+        self.assertIn({"6Y":5,"2T3_highest":1,"multiplicity":1},
+                      completion["completion_weak_highest_weights_per_colour_basis"][2])
+
     def test_synthesizes_and_separates_two_positive_transfers(self):
         result = control()
         self.assertEqual(result["compatible_mixed_spectra"],2)

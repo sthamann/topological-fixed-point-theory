@@ -21,9 +21,9 @@ from backends import inverse_rank, lean_check
 from verify import car_replay, clock_test, digest, eigenvalue_test, r102
 
 HERE = Path(__file__).resolve().parent
-CAMPAIGNS = ("r113", "r113_synthesis", "source_bridge", "marked_search", "double_cell", "moving_carrier", "affine_polarization", "affine_operators", "affine_car", "weak_source", "weak_folded_clock", "p1_field_search", "weak_return_rank", "four_mark_geometry", "f1_family_index", "r102", "bell", "clock", "identifiability", "four_mark_selection",
+CAMPAIGNS = ("r113", "r113_synthesis", "source_bridge", "marked_search", "double_cell", "moving_carrier", "affine_polarization", "affine_operators", "affine_car", "colour_ward", "weak_source", "weak_folded_clock", "p1_field_search", "weak_return_rank", "four_mark_geometry", "f1_family_index", "r102", "bell", "clock", "identifiability", "four_mark_selection",
              "spectral_source_controls", "empirical_source_audit", "p0", "f1")
-FINITE_CONTROLS = ("double_cell", "moving_carrier", "affine_polarization", "affine_operators", "affine_car", "weak_source", "weak_return_rank", "four_mark_geometry", "f1_family_index")
+FINITE_CONTROLS = ("double_cell", "moving_carrier", "affine_polarization", "affine_operators", "affine_car", "colour_ward", "weak_source", "weak_return_rank", "four_mark_geometry", "f1_family_index")
 
 
 def atomic_json(path, payload):
@@ -174,7 +174,7 @@ def execute(campaign, root, args, suggestion_rows, retained_rows, prior_question
     if campaign == "p1_field_search":
         from p1_field_search import controls, from_input
         return from_input(json.loads(args.p1_field_input.read_text())) if args.p1_field_input else controls(root)
-    if campaign in ("weak_return_rank","weak_folded_clock","four_mark_geometry"):
+    if campaign in ("weak_return_rank","weak_folded_clock","four_mark_geometry","colour_ward"):
         from autonomy import execute as execute_job
         return execute_job({"lane":campaign},root)
     if campaign == "f1_family_index":
@@ -285,6 +285,7 @@ def one_round(args, directory, index, retained, prior_questions, manifest):
                         weak_source_next_observation=outcomes.get("weak_source",{}).get("next_original_observation"),
                         joint_weak_return_support=outcomes.get("weak_return_rank",{}).get("completion_orbits",{}).get("support_by_grade"),
                         four_mark_geometry=outcomes.get("four_mark_geometry"),
+                        affine_colour_ward=outcomes.get("colour_ward"),
                         affine_operator_source_status=outcomes.get("affine_operators",{}).get("status","NOT_RUN"),
                         mark_alphabet_completion=outcomes.get("affine_operators",{}).get("next_original_observation"),
                         physical_evidence=assess(source_result,outcomes.get("r113_synthesis")),

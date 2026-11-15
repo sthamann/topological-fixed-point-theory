@@ -370,6 +370,40 @@ face. The packet also binds `source_id`, `time_id`,
 `covariance_and_heat_tangents_binding` and `absolute_reference_binding`.
 The full charge derivative includes the cross-face blocks.
 
+Run `--campaign colour_ward` for the exact colour grading and affine
+Ward relations. The campaign is part of the autonomous search and the
+finite control run. It checks the 1,620 oriented cubic coefficients in
+each charged sector. They belong to 270 unordered root triangles per
+sector. Of 810 independent pair coefficients, the complete neutral
+action fixes 809 relative coefficients. The adjoint and Jacobi identity
+fix the modulus of the remaining common scale. Rephasing the two charged
+sectors changes its phase by a cube. The fixed bracket admits the three
+cube roots of unity as simultaneous sector rephasings.
+
+The neutral spinor zero mode has ranks 22, 18 and 18 on the three
+grade one sectors. In colour two it gives 15 transitions from spinor to
+pair currents and three in the other direction. The positive neutral
+mode paired with the neutral spinor returns the vacuum at level one.
+Positive neutral modes annihilate the charged grade one states. The
+free neutral currents and the spinor extension both give central charge
+eight.
+
+The native `r113_synthesis` comparison uses the same matrices as the
+original finite diagnostic. Two successive neutral colour steps of the
+affine word reach $Y=5/6$. Its native exterior comparison uses the
+Majorana and Higgs matrices with an anti down spectator. Each weak
+component has forward rank 27, reverse rank zero, a nonscalar Gram
+matrix and rank 27 leakage of the Higgs adjoint through the spectator.
+The ordinary exterior space in every degree from 1 to 95 has a nonzero
+hypercharge trace on its charged colour blocks. The full exterior space
+and both parity spaces also have nonzero traces. A finite $E_6$ action
+with the given hypercharge inside its Cartan requires vanishing trace on
+each invariant colour block. The smallest neutral completion matching
+all native colour, weak and hypercharge representations has dimension
+240. Its proof uses the Weyl dimension formula and joint weight counts.
+The original weighted source still needs to bind the neutral currents,
+the charged preparations, their time and their absolute reference.
+
 The `weak_parity_bridge` optionally tests the source parity, the Cartan
 and raising and lowering matrices for the tested root, the charged
 matrix with its adjoint, and the three endpoint projectors. The source

@@ -226,6 +226,9 @@ def execute(spec,root):
     if lane=="weak_source":
         from weak_source import affine_controls
         return affine_controls()
+    if lane=="colour_ward":
+        from colour_ward import controls
+        return controls()
     if lane=="weak_folded_clock":
         from weak_clock import controls
         return controls(root)
@@ -331,6 +334,7 @@ def specifications(resolution,domain,toolchain,focus,seed_research=True):
     yield 100,{"lane":"r113","domain":str(domain)}
     yield 100,{"lane":"r113_synthesis","domain":str(domain)}
     yield 100,{"lane":"source_bridge"}
+    yield 99,{"lane":"colour_ward"}
     yield 99,{"lane":"weak_source"}
     yield 99,{"lane":"weak_folded_clock"}
     yield 99,{"lane":"p1_field_search"}
@@ -525,6 +529,7 @@ def search_round(args,db,out,epoch,resolution,context,domain,focus,extras,dsl):
         "weighted_weak_parity_bridge":original.get("weak_parity_bridge"),
         "weighted_weak_return_grade_two":original.get("weak_return_grade_two"),
         "affine_weak_source":results.get("weak_source"),
+        "affine_colour_ward":results.get("colour_ward"),
         "affine_weak_return_rank":results.get("weak_return_rank"),
         "four_mark_geometry":results.get("four_mark_geometry"),
         "finite_marked_search":results.get("marked_search"),
