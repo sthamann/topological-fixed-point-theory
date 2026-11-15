@@ -43,7 +43,7 @@ exact conditional dictionary, not the original Calderon operator
 or the native affine current-clock lift; no physical theorem
 currently makes the relative trace vanish.
 
-The OriginLab `p1_source_falsifiers` campaign and seven targeted
+The OriginLab `p1_source_falsifiers` campaign and eight targeted
 unittest cases replay the exact scoped controls. New F1 priorities:
 (i) construct actual Calderon and geometric reflection on the
 original weighted null quotient, measure the relative phase;
