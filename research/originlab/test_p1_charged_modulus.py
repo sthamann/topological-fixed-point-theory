@@ -4,6 +4,7 @@ import sympy as sp
 from affine_operators import ROOTS, MARKED_P1, MARKED_P2, MARKED_GAMMA, dot, neg, add
 from p1_charged_modulus import (root_triple_no_max,
                                 paired_determinant_candidate,
+                                two_face_fermion_sewing,
                                 neutral_chord_exponents,
                                 controls)
 
@@ -62,6 +63,25 @@ class ChargedP1ModulusTests(unittest.TestCase):
         self.assertEqual(self.result["paired_relative_determinant"]
                          ["source_net_determinant_exponent_threshold"],
                          "m>1/2 in (det_even*det_odd)^m")
+
+    def test_single_eight_majorana_pfaffian_realizes_paired_determinants(self):
+        sewing=self.result["two_face_fermionic_sewing"]
+        self.assertEqual(sewing["fermionic_variables_in_this_control"],8)
+        self.assertEqual(sewing["same_forward_unit_coupling_pfaffian"],
+                         "Pf([[0,K],[-K.T,0]])=det(K)=4*sin(delta)^2")
+        self.assertEqual(sewing["charged_root_dressed_at_g_one"],
+                         "sin(delta), unique global maximum square")
+        self.assertFalse(sewing["actual_original_Dirac_eta_ghost_source_identified"])
+        self.assertFalse(sewing["OS_reflection_positivity_proved"])
+
+    def test_forward_and_reflection_reverse_sewing_are_not_equivalent(self):
+        sewing=self.result["two_face_fermionic_sewing"]
+        self.assertEqual(sewing["reverse_orientation_forward_det"],
+                         "(1-g*g)^2 (delta-independent)")
+        self.assertTrue(sewing["g_below_one_pole_uncanceled"])
+        self.assertEqual(sewing["local_maximum_square_threshold"],
+                         "g>sqrt(2)-1 (does not give global maximum if g<1)")
+        self.assertFalse(sewing["physical_unit_coupling_and_CAR_orientation_proved"])
 
     def test_no_r113_or_calderon_source_promoted(self):
         self.assertFalse(self.result["F1_solved"])
