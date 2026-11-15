@@ -52,6 +52,15 @@ class SeamCohomologyTests(unittest.TestCase):
                          {"1":0,"i":1,"-1":1,"-i":1})
         self.assertEqual(result["minimal_distinct_character_compensator_dimension"],3)
 
+    def test_D4_geometry_vacuum_gap_and_trace_do_not_fix_time(self):
+        r=self.report
+        self.assertEqual(r["D4_irreducible_carrier_dimensions"],[1,1,1,2])
+        self.assertEqual(r["D4_invariant_generator_excited_free_parameters"],3)
+        self.assertEqual(r["matched_gap_and_trace_witness_spectra"],
+                         [["0","1","2","3","3"],["0","1","2","2","4"]])
+        self.assertEqual(r["same_gap_trace_distinguishing_return_at_log2"],
+                         ["1/4","1/16"])
+
     def test_orientation_is_a_nontrivial_physical_gate(self):
         result=self.report
         self.assertEqual((result["cyclic_neutral_compensated_rank"],
