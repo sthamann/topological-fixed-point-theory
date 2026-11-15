@@ -74,6 +74,15 @@ class ChargedP1ModulusTests(unittest.TestCase):
         self.assertFalse(sewing["actual_original_Dirac_eta_ghost_source_identified"])
         self.assertFalse(sewing["OS_reflection_positivity_proved"])
 
+    def test_exact_oriented_cancellation_of_native_chiral_pole(self):
+        u=sp.symbols("u",nonzero=True)
+        root=1/(2*(1-u*u))
+        paired=(1-u*u)*(1-u**(-2))
+        self.assertEqual(sp.factor(root*paired-(1-u**(-2))/2),0)
+        self.assertEqual(self.result["two_face_fermionic_sewing"]
+                         ["oriented_chiral_pole_cancellation"],
+                         "A_root(u)*Pf(K)=(1-u^(-2))/2 (up to root cocycle)")
+
     def test_forward_and_reflection_reverse_sewing_are_not_equivalent(self):
         sewing=self.result["two_face_fermionic_sewing"]
         self.assertEqual(sewing["reverse_orientation_forward_det"],
