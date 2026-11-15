@@ -72,6 +72,27 @@ class CliffordMarkAndGlue(unittest.TestCase):
         self.assertEqual([40+12,16*4,10*6,16*4],[52,64,60,64])
         self.assertEqual(sum([52,64,60,64]),240)
 
+
+    def test_a3_discriminant_gives_genuine_order_four_clock(self):
+        weight=sp.Matrix([sp.Rational(3,4),-sp.Rational(1,4),
+                          -sp.Rational(1,4),-sp.Rational(1,4)])
+        self.assertEqual((weight.T*weight)[0],sp.Rational(3,4))
+        self.assertTrue(all((4*v).is_Integer for v in weight))
+        self.assertFalse(any(all((k*v).is_Integer for v in weight)
+                             for k in (1,2,3)))
+        u=sp.diag(1,sp.I,-1,-sp.I)
+        shift=sp.Matrix(4,4,lambda i,j:int(i==(j+1)%4))
+        self.assertEqual((u*shift*u.inv()-sp.I*shift).applyfunc(sp.simplify),
+                         sp.zeros(4))
+        self.assertEqual((u*u*shift*(u.inv()**2)+shift).applyfunc(sp.simplify),
+                         sp.zeros(4))
+        degrees=[(9*g+8*c)%12 for g in range(4) for c in range(3)]
+        self.assertEqual(len(set(degrees)),12)
+        for g1,c1,g2,c2 in itertools.product(range(4),range(3),range(4),range(3)):
+            d1,d2=(9*g1+8*c1)%12,(9*g2+8*c2)%12
+            self.assertEqual((d1+d2)%12,
+                             (9*((g1+g2)%4)+8*((c1+c2)%3))%12)
+
     def test_clock_and_vacuum_do_not_fix_transfer(self):
         x,z=sp.Matrix([[0,1],[1,0]]),sp.diag(1,-1)
         sx,sz=sp.kronecker_product(x,x),sp.kronecker_product(z,z)
