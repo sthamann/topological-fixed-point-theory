@@ -246,19 +246,13 @@ def original_r113_exterior_contract_gate():
     U=(a*sp.diag(1,-1)+b*sp.Matrix([[0,1],[1,0]]))*sp.diag(1,-1)
     require(sp.factor(U.det()-1)==0, "relative finite word changed")
     # Lambda^0, Lambda^1, Lambda^2 of the two-mode carrier.
-    def second_quantize(r):
-        return sp.diag(1,r[0,0],r[0,1],r[1,0],r[1,1],r.det()) if False else (
-            sp.diag(1,sp.S.One).row_join(sp.zeros(2,2)) if False else
-            sp.diag(sp.S.One,sp.S.One).row_join(sp.zeros(2,2))
-        )
-    # Use an explicit 4x4 Fock matrix (0, one-particle 2, full 2-particle).
+    # A full trace sums 0, 1, and 2 particle sectors; the original
+    # R113 empty cap reads only the first 1x1 block.
     def gamma(r):
-        return sp.diag(sp.S.One,r.det()).extract([0],[0]) if False else (
-            sp.diag(1,r[0,0],r[1,1],r.det()) +
-            sp.Matrix([[0,0,0,0],
-                       [0,0,r[0,1],0],
-                       [0,r[1,0],0,0],
-                       [0,0,0,0]]))
+        return sp.Matrix([[1,0,0,0],
+                          [0,r[0,0],r[0,1],0],
+                          [0,r[1,0],r[1,1],0],
+                          [0,0,0,r.det()]])
     vac=sp.Matrix([1,0,0,0])
     gu=gamma(U)
     gm=gamma(-U)
