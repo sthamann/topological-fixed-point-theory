@@ -8,6 +8,53 @@ The current [plan audit](PLAN-AUDIT.md) covers the original requirements and
 the three later sets of scenario tests. The first priority is the
 [same-source R113 test](R113-R104-RELATIONAL.md).
 
+## 15 November 2026 · F1 primitive source: full-gluing cancellation and relative polarization
+
+[Original P1 source and exact falsifier report](P1-PRIMITIVE-GLUING-SOURCE-GATE-20261115.md)
+now proves that the recent geometric five-to-three-plus-two exact
+evaluation sequence, orientation line and primitive dlog winding are
+valid across the **whole** original antipodal family D_u, including
+the established nonsquare v512 witness. They do not select mu4.
+The quarter rotation z->iz becomes geometrically admissible exactly
+when u^2=-1; using the rotation to prove the square would be circular.
+
+A proposed positive local Gaussian edge action *appears* to select
+the square from the four endpoint determinant alone, but the
+matrix-tree identity and each interval's zeta Dirichlet determinant
+yield `det_prime(L) prod_i (2 ell_i)=64 perimeter`.
+At fixed circumference the **fully glued free theory is modulus
+independent**. The earlier square extremum is a truncated-source
+artifact. Any genuine square selection must survive the actual
+full-field free/charged/ghost/Pfaffian/eta cancellation, not a
+chosen additional term.
+
+The original primitive boundary theorem also identifies the
+Calderon Cauchy-data projector with the + eigenspace of geometric
+deck reflection without checking the same-domain microlocal
+intertwiner. A product-Dirac Fourier countermodel shows that a
+single frequency-independent geometric boundary matrix cannot
+represent the positive tangential Hardy projector for both
+momentum signs. The strongest new candidate is the **relative**
+unitary `U_rel=(2P_C-I)R_geom`: in a finite two-polarization family
+the geometric cross ratio is exactly
+`lambda=(tr(U_rel)-2)/(tr(U_rel)+2)`.
+At the square `tr(U_rel)=0` and `U_rel^2=-I`. This is an
+exact conditional dictionary, not the original Calderon operator
+or the native affine current-clock lift; no physical theorem
+currently makes the relative trace vanish.
+
+The OriginLab `p1_source_falsifiers` campaign and seven targeted
+unittest cases replay the exact scoped controls. New F1 priorities:
+(i) construct actual Calderon and geometric reflection on the
+original weighted null quotient, measure the relative phase;
+(ii) evaluate the remaining **defect/charged** source after full
+free-gluing cancellation at two original blocking levels;
+(iii) obtain Q0, Z0, ZU, ZY, ZUY, physical time and the same absolute
+reference before regulator limits; (iv) derive the common chiral
+3+1D parent, local stress and spin-2 coupling. Do not promote
+F1, update scientific ledger or conflate geometric dlog with the
+APS eta invariant. F1 remains open.
+
 ## 15 November 2026 · New exact 5+3 equivariant cohomology test
 
 The [equivariant residue origin check](P1-EQUIVARIANT-RESIDUE-ORIGIN-20261115.md)
