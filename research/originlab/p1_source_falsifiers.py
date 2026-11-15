@@ -120,6 +120,12 @@ def relative_polarization_clock():
     trace=sp.factor(sp.trace(U))
     require(sp.simplify(lam-(trace-2)/(trace+2))==0,
             "relative phase trace fails to recover the mark cross ratio")
+    dminus=sp.factor((sp.eye(2)-U).det())
+    dplus=sp.factor((sp.eye(2)+U).det())
+    require(sp.simplify(dminus/dplus + lam)==0 and
+            sp.simplify(dminus-4*t*t/(1+t*t))==0 and
+            sp.simplify(dplus-4/(1+t*t))==0,
+            "relative determinant-line ratio does not equal minus cross ratio")
     require(U.subs(t,1)**2==-sp.eye(2) and
             sp.simplify(U.subs(t,sp.Rational(1,2)).trace()-sp.Rational(6,5))==0 and
             sp.simplify(u.subs(t,sp.Rational(1,2))-(3+4*sp.I)/5)==0,
@@ -129,6 +135,9 @@ def relative_polarization_clock():
       "relative_unitary":"U=(2 P_C-I) R_deck (proposed, not original identified)",
       "eigenphases":"u,u^(-1), u=(1+i*t)/(1-i*t)",
       "cross_ratio_from_trace":"lambda=(trace(U)-2)/(trace(U)+2)=-t^2",
+      "relative_determinant_ratio":"det(I-U)/det(I+U)=t^2=-lambda",
+      "equal_even_odd_determinants_iff_square":True,
+      "original_Pfaffian_line_exchange_derived":False,
       "square_iff":"trace(U)=0 iff t=1 (t>0); then U^2=-I",
       "original_non_square_witness":"t=1/2 -> u=(3+4i)/5, trace(U)=6/5",
       "microlocal_source_intertwiner_derived":False,
