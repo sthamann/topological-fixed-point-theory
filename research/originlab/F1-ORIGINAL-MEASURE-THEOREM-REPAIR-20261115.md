@@ -125,6 +125,18 @@ have **identical first four moments** k=0,1,2,3 (all checked exactly), because t
 
 Hence moment matching of several Einstein/Higgs/R² coefficients cannot by itself identify the full UV profile. An actual fixed physically derived kernel CAN provide further information, but its existence/uniqueness must first be established with correct source law and a proven invariant moment slice. A free choice of a positive RG kernel cannot close the original F1.
 
+### Stronger source nonidentifiability: two uniquely fixed RG kernels with the SAME branch moments
+
+The two explicit positive measures above can be promoted to fully specified, finite, strictly positive, mass-preserving RG transfer kernels on the SAME five-point support, with no numerical fitting:
+
+    K_plus(i,j)=nu_plus(i),    K_minus(i,j)=nu_minus(i).
+
+Every column sums to one; each matrix has strictly positive entries, rank one, and satisfies K²=K. On the normalized positive simplex each map has a UNIQUE stationary probability measure, its own nu_plus or nu_minus, and its Hilbert projective contraction is exactly ZERO after one step (finite diameter 0). Moreover both fixed measures obey the SAME prescribed moments k=0,1,2,3, and each K maps the entire simplex into that same four-moment slice. Thus both kernels satisfy positivity, correct mass normalization, a perfectly invariant moment slice, strongest possible Birkhoff contraction and exact uniqueness of the fixed measure FOR THE CHOSEN K.
+
+Nevertheless the two complete Bernstein profiles differ by (1-exp(-z))^4/30. These give two inequivalent, completely valid mathematical fixed-point solutions obeying identical low-moment constraints. The original TFPT **cannot choose between them from those stated RG properties alone**; a separate microscopic source law that selects K is mathematically indispensable.
+
+This is stronger than simply observing many measures share the same first few moments: **even an impeccably repaired unique-fixed-point proof for each positive RG kernel does not prove physical uniqueness of the kernel.** There is no logically valid path from positive RG existence, low-curvature matching and uniqueness within each candidate to an unconditionally unique UV profile without a physically derived K.
+
 ## F. Minimal original-source repair requirements, NOT new synthetic solutions
 
 1. **Derive an integrable positive kernel from the original microscopic one-sided source**, its exact normalizer psi(s)=int K(s,t)dt, and a well-defined source reference measure on the full noncompact domain. Prove the source's *actual* low-curvature moment slice is invariant.
