@@ -56,3 +56,14 @@ class ColourWardTests(unittest.TestCase):
         self.assertEqual(metric["with_marked_charged_adjoint_hermitian_parameters"], 1)
         self.assertTrue(metric["nonuniform_neutral_metric_rejected_by_charged_adjoint"])
         self.assertFalse(source["physical_source_identity_proved"])
+
+    def test_native_glue_excludes_the_one_cell_and_invariant_two_cell_lifts(self):
+        lift = self.report["marked_source"]["clock_lift"]
+        self.assertEqual(lift["one_cell_adjoint_dimensions"], [2, 1, 0, 1])
+        self.assertEqual(lift["two_cell_adjoint_dimensions"], [6, 4, 2, 4])
+        self.assertEqual(lift["native_grade_one_glue_dimensions"], [60, 64, 60, 64])
+        self.assertEqual(lift["native_affine_grade_parity_traces"], [1, -8, 28, -64])
+        self.assertEqual(lift["minimum_grade_one_nullity_of_parity_reversing_operator"], 8)
+        self.assertEqual(lift["minimal_balanced_grade_one_spectral_cover_dimension"], 256)
+        self.assertEqual(lift["balanced_grade_one_spectral_cover_dimensions"], [64]*4)
+        self.assertEqual(lift["bell_clock_control"]["normalized_additive_energies"], [0, 1, 1, 2])

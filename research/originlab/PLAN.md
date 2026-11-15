@@ -8,6 +8,10 @@ The current [plan audit](PLAN-AUDIT.md) covers the original requirements and
 the three later sets of scenario tests. The first priority is the
 [same-source R113 test](R113-R104-RELATIONAL.md).
 
+## 15 November 2026 · Weighted fibres and the native quarter action
+
+The native grade-one glue action has phase multiplicities 60, 64, 60, 64. The single-cell polarization half-step lacks adjoint phase −1. Two commuting cells predict zero parity trace on a common invariant grade-one space, whereas the native trace is −8. Any parity-reversing map on that space has nullity at least eight. An enlarged 256-dimensional spectral cover is possible, while the native current and orientation intertwiner remains open. The optional R113 two-level comparison checks all supplied marked fibres before final selection. The next original input is still the actual pair of weight-bearing levels, their configuration map, time and absolute references. [Exact checks](P1-FIBRE-AND-CLOCK.md).
+
 ## 15 November 2026 · Seam flow and source consistency audit
 
 Seven finite negative controls now run in [test_seam_source_obstructions.py](test_seam_source_obstructions.py). They distinguish the Calderon spectral polarization from geometric reflection in an exact collar example: P Q P = P/2, and two copies give P2 Q2 P2 = P2/4. A product of anti-commuting involutions C = R sign(B) has C^2 = -I, so its adjoint action has order at most two; it cannot alone realize the nontrivial order-four current action required by the already audited Z12 gluing grading. A separate relative parity lift U^2 = Pi has the required i and -i operator phases in a two-state model, but is not an E8 Ward/source identification.

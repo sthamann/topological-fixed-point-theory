@@ -109,7 +109,39 @@ class OriginLabTests(unittest.TestCase):
                                             ordered_source_forms=forms) for i in range(2)]
             path.write_text(json.dumps(domain))
             self.assertEqual(evaluate(root,path)["values"],result["values"])
-            bundle["fiber_records"][1]["original_configuration_id"] = "atom-0"
+            coarse = []
+            for i,atom in enumerate(bundle["fiber_records"]):
+                coarse.append({**atom,"original_configuration_id":f"coarse-{i}",
+                               "ordered_source_forms":{k:[[[n//2,0]]] for k,n in zip(MARKS,(4,8,12,28))}})
+            bundle["fiber_records"] = [
+                {**atom,"original_configuration_id":f"atom-{i}-{j}","original_measure_mass":["1/4",0]}
+                for i,atom in enumerate(bundle["fiber_records"]) for j in range(2)
+            ]
+            bundle["coarse_graining"] = {
+                "time_id":"test","configuration_map_binding":"test","word_embedding_binding":"test",
+                "reference_binding":"test","word_embedding":[[[1,0]],[[0,0]]],
+                "fine_to_coarse":{f"atom-{i}-{j}":f"coarse-{i}" for i in range(2) for j in range(2)},
+                "coarse_fiber_records":coarse,"coarse_reference_scalar":[2,0],"coarse_scalar_factor":[1,0],
+            }
+            path.write_text(json.dumps(domain))
+            checked = evaluate(root,path)
+            self.assertEqual(checked["values"],result["values"])
+            self.assertEqual(checked["fibre_pushforward"]["fine_fibres"],4)
+            self.assertEqual(checked["fibre_pushforward"]["checked_forms"],8)
+            bundle["coarse_graining"]["coarse_reference_scalar"] = [3,0]
+            path.write_text(json.dumps(domain))
+            self.assertEqual(evaluate(root,path)["fibre_pushforward"]["first_mark"],"Z0")
+            bundle["coarse_graining"]["coarse_reference_scalar"] = [2,0]
+            # Opposite mixed defects cancel in the total and preserve each other mark.
+            coarse[0]["ordered_source_forms"]["ZUY"] = [[[15,0]]]
+            coarse[1]["ordered_source_forms"]["ZUY"] = [[[13,0]]]
+            path.write_text(json.dumps(domain))
+            failed = evaluate(root,path)
+            self.assertEqual(failed["status"],"REFUTED_SUPPLIED_MARKED_PUSHFORWARD")
+            self.assertEqual(failed["fibre_pushforward"]["first_coarse_configuration"],"coarse-0")
+            self.assertEqual(failed["fibre_pushforward"]["first_mark"],"ZUY")
+            self.assertIsNone(failed["original_values"]["Z0"])
+            bundle["fiber_records"][1]["original_configuration_id"] = "atom-0-0"
             path.write_text(json.dumps(domain))
             with self.assertRaises(ValueError):
                 evaluate(root,path)

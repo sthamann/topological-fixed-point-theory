@@ -4343,3 +4343,53 @@ BLOCKED. Z0, ZU, ZY und ZUY blieben leer. Die erste Originaloperation
 bleibt die gewichtete Paarung Q₀ mit derselben Basisintegration,
 dem tatsächlichen Zeittransport und der absoluten Leerreferenz.
 F1 bleibt offen.
+
+## ORIGINLABFIBREQUARTER20261115
+
+Der affine Grad eins enthält 60, 64, 60 und 64 Richtungen nach
+Klebephase, mit den acht Cartanrichtungen in Phase eins. Der
+Polarisationshalbzeitschritt W hat nach Rephasierung nur die
+Eigenwerte eins und −i. Seine Konjugation enthält keine Phase
+−1 und kann die native Stromwirkung nicht realisieren. Das
+Tensorprodukt zweier kommutierender Zellen hat alle vier
+Operatorphasen. Die erste Zellpolarisation konjugiert das
+Quadrat seines Clocks auf das Negative. Auf einem für diese
+Polarisation und den Clock invarianten Grad muss seine Spur
+daher null sein. Die native Spur ist −8. In den affinen
+Graden null bis drei lautet die Spurfolge 1, −8, 28, −64.
+Relative Rephasierung ändert diesen Widerspruch nicht.
+
+Eine paritywechselnde lineare Abbildung auf Grad eins braucht
+mindestens acht Nullrichtungen. Ein rein spektraler Überträger
+mit 64 Zuständen pro Phase und Dimension 256 erreicht die
+untere Schranke innerhalb der balancierten Vergleichsklasse.
+Er kann die native Phase abbilden, liefert aber keine
+ursprüngliche Stromalgebra, Polarisation oder Quelle.
+[Beweis und Scope](../../../research/originlab/P1-FIBRE-AND-CLOCK.md).
+
+Der R113 Verbraucher integriert nun auf Wunsch die gelieferten
+feinen atomaren Formen je Urbildkonfiguration und zieht sie
+mit der gebundenen Worteinbettung auf die grobe Stufe zurück.
+Er vergleicht alle vier Formen jeweils mit den zwei unabhängig
+gebundenen Referenzen. Die exakte Negativprobe enthält zwei
+entgegengesetzte ZUY Defekte, die nach Gesamtsummation verschwinden.
+Der Vergleich meldet vor der physischen Kontraktion die erste
+defekte Konfiguration und die Matrixrangzahl.
+
+Der geprüfte Originalaufruf liefert weiterhin keine gewichteten
+Fasern für zwei Stufen. Z0, ZU, ZY und ZUY bleiben leer.
+Nächster Schritt an der wirklichen Quelle ist die explizite
+endliche Basisintegration auf beiden Stufen samt Zeit und
+gebundener Leerreferenz sowie ein Nachweis, wie die tatsächliche
+Polarisation die Spurabweichung trägt. F1 bleibt offen.
+
+Die parallel veröffentlichten Bell Kontrollrechnungen zeigen einen
+endlichen Erwartungsindex vier. Der Tensorclock vertauscht die
+beiden Bell Stabilisatoren und lässt den gemeinsamen positiven
+Grundzustand fest. Im gleichzeitigen Diagonalraum lautet das
+clockverträgliche Spektrum (0,a,a,b). Nur die additive Klasse erzwingt
+b=2a. Die doppelte Anregung ist daher eine unabhängige Zeitprobe.
+Die Einbettung des Index und des Zeitwortes in die ursprüngliche
+physische Naht bleibt offen. 39 gezielte Tests bestanden. Der
+Faserfall prüft eine echte Vier-zu-zwei Gruppierung und weist auch
+eine isolierte Änderung der groben Leerreferenz zurück.

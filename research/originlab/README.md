@@ -75,6 +75,10 @@ admissibility projection, contracts with the absolute cap, and divides by the
 bound empty reference. It does not supply the physical producer or prove
 continuum limits.
 
+For supplied nested atomic levels, the optional `coarse_graining` record
+checks each marked weighted fibre after the declared word embedding and
+absolute reference normalization. See [the packet and native clock scope](P1-FIBRE-AND-CLOCK.md).
+
 Run the source synthesis and inspect its decision alongside F1 with:
 
 ```sh

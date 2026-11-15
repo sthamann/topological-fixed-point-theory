@@ -93,6 +93,9 @@ def blocked(domain, path, bindings):
                 first_operation="evaluate_original_full_blocked_endpoint_source",
                 missing=["original_blocked_fiber_packet", "physical whole weighted endpoint form",
                          "bound absolute empty reference"],
+                fibre_pushforward={"status":"BLOCKED",
+                    "missing":["two source-bound levels with weighted forms on every fibre",
+                               "the common time, configuration map, word embedding and two absolute references"]},
                 relational_original={"status":"BLOCKED","values":[],
                     "missing":["two physically admissible charged endpoint fields",
                                "two original regional transports with a common endpoint and charge convention",
@@ -148,6 +151,57 @@ def fibre_forms(atom, size, u_time, y_time):
         raise ValueError("original squared Higgs mark must be nonnegative")
     k0,ky = (as_form(kernel[k],size) for k in ("K0","KY"))
     return dict(Z0=k0,ZU=u*k0,ZY=ky,ZUY=u*ky)
+
+
+def iter_weighted_fibres(atoms, size, u_time, y_time):
+    """Integrate supplied oriented atom weights without discarding their identities."""
+    seen = set()
+    for atom in atoms:
+        identifier = atom["original_configuration_id"]
+        if not identifier or identifier in seen or not atom["whole_fiber_binding"] or not atom["original_measure_binding"]:
+            raise ValueError("fibre identities and original bindings must be distinct and complete")
+        seen.add(identifier)
+        mass = complex_pair(atom["original_measure_mass"])
+        if not mass.is_nonnegative:
+            raise ValueError("atomic measure mass must be nonnegative real")
+        weight = mass*complex_pair(atom["unnormalized_scalar_weight"])
+        yield identifier, {mark:weight*form for mark,form in fibre_forms(atom,size,u_time,y_time).items()}
+
+
+def check_fibre_pushforward(data, fine, fine_size, time_id, u_time, y_time, fine_scale):
+    """Compare the supplied marked forms before the physical endpoint contraction."""
+    rows = data["word_embedding"]
+    coarse_size = len(rows[0]) if rows else 0
+    if (not coarse_size or len(rows) != fine_size or any(len(row) != coarse_size for row in rows)
+            or not data["configuration_map_binding"] or not data["word_embedding_binding"]
+            or not data["reference_binding"] or data["time_id"] != time_id):
+        raise ValueError("the fibre comparison requires the bound configuration map, word embedding, time and reference")
+    embedding = sp.Matrix([[complex_pair(entry) for entry in row] for row in rows])
+    if embedding.rank() != coarse_size:
+        raise ValueError("the coarse word embedding must be injective")
+    coarse = dict(iter_weighted_fibres(data["coarse_fiber_records"],coarse_size,u_time,y_time))
+    assignment = data["fine_to_coarse"]
+    if (not coarse or not isinstance(assignment,dict) or set(assignment) != set(fine)
+            or any(not isinstance(name,str) for name in assignment.values())
+            or set(assignment.values()) != set(coarse)):
+        raise ValueError("the fine configuration map must cover both supplied levels")
+    reference = complex_pair(data["coarse_reference_scalar"])
+    scalar = complex_pair(data["coarse_scalar_factor"])
+    if not reference or not scalar or not fine_scale:
+        raise ValueError("both levels need a nonzero absolute reference and weight scale")
+    coarse_scale = scalar/reference
+    pushed = {name:{k:sp.zeros(coarse_size) for k in MARKS} for name in coarse}
+    for name, forms in fine.items():
+        for mark, form in forms.items():
+            pushed[assignment[name]][mark] += embedding.H*form*embedding
+    for name, forms in coarse.items():
+        for mark, form in forms.items():
+            delta = (fine_scale*pushed[name][mark] - coarse_scale*form).applyfunc(sp.simplify)
+            if not delta.is_zero_matrix:
+                return {"status":"REFUTED_SUPPLIED_MARKED_PUSHFORWARD","first_coarse_configuration":name,
+                        "first_mark":mark,"defect_rank":delta.rank()}
+    return {"status":"EXACT_SUPPLIED_MARKED_PUSHFORWARD",
+            "fine_fibres":len(fine),"coarse_fibres":len(coarse),"checked_forms":len(coarse)*len(MARKS)}
 
 
 def path_contraction(data, marks, time, source_id, size, contract):
@@ -302,7 +356,11 @@ def evaluate(root, path=None):
     if reference == 0:
         raise ValueError("empty reference is zero")
     representation = bundle["representation"]
+    pushforward = bundle.get("coarse_graining")
+    if pushforward is not None and representation != "original_exact_finite_fiber_sum":
+        raise ValueError("the two-level comparison needs explicit fine fibre records")
     kernel_atoms = 0
+    fibre_audit = None
     if representation == "original_exact_blocked_endpoint_source":
         forms = {k:as_form(bundle["ordered_source_forms"][k],size) for k in MARKS}
         atoms = None
@@ -316,19 +374,20 @@ def evaluate(root, path=None):
             "original_retained_field_fiber_with_whole_history_endpoint_packet",
         } or measure.get("kind") != "original_finite_atomic_measure" or not measure.get("source_binding")):
             raise ValueError("no original atomic domain, map or measure supplied")
-        seen = set()
-        for atom in atoms:
-            identifier = atom["original_configuration_id"]
-            if not identifier or identifier in seen or not atom["whole_fiber_binding"] or not atom["original_measure_binding"]:
-                raise ValueError("fibre identities and original bindings must be distinct and complete")
-            seen.add(identifier)
-            mass = complex_pair(atom["original_measure_mass"])
-            if not mass.is_nonnegative:
-                raise ValueError("atomic measure mass must be nonnegative real")
-            weight = mass*complex_pair(atom["unnormalized_scalar_weight"])
-            kernel_atoms += int("ordered_window_kernels" in atom)
-            for k,q in fibre_forms(atom,size,u_time,y_time).items():
-                forms[k] += weight*q
+        fibres = {}
+        kernel_atoms = sum("ordered_window_kernels" in atom for atom in atoms)
+        for name,fibre in iter_weighted_fibres(atoms,size,u_time,y_time):
+            if pushforward is not None:
+                fibres[name] = fibre
+            for k,q in fibre.items():
+                forms[k] += q
+        if pushforward is not None:
+            fibre_audit = check_fibre_pushforward(pushforward,fibres,size,time["id"],u_time,y_time,scalar/reference)
+            if fibre_audit["status"] == "REFUTED_SUPPLIED_MARKED_PUSHFORWARD":
+                return {"status":fibre_audit["status"],"input_role":role,
+                        "domain":domain["domain_id"],"source_refs":bindings+refs,
+                        "fibre_pushforward":fibre_audit,"original_values":dict.fromkeys(MARKS),
+                        "physical_source_identity_proved":False,"physical_limits_proved":False}
     else:
         raise ValueError("unsupported endpoint representation")
     def numerator(form):
@@ -348,6 +407,8 @@ def evaluate(root, path=None):
                 values={k:str(v) for k,v in marks.items()},
                 connected_UY=str(connected) if connected is not None else None,
                 physical_source_identity_proved=False, physical_limits_proved=False)
+    if fibre_audit is not None:
+        candidate["fibre_pushforward"] = fibre_audit
     candidate["relational_original"] = {"status":"BLOCKED","values":[],
         "missing":["bound same-source regional endpoint fields, connection and two ordered path forms"]}
     candidate["four_mark_original"] = {"status":"BLOCKED","values":[],
