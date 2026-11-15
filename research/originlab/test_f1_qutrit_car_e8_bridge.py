@@ -66,6 +66,14 @@ class QutritCARE8BridgeTests(unittest.TestCase):
                          [8,0,0,0])
         self.assertFalse(r["scalar_f2_orientation_character_removes_nontrivial_colour_root_grades"])
 
+    def test_any_SO16_rotation_cannot_conjugate_source_and_native_E8_clocks(self):
+        r=self.report["E8_native_color_and_E6_backtransport"]
+        self.assertEqual(r["geometric_16_majorana_vector_quarter_character"],[4,4,4,4])
+        self.assertEqual(r["native_16_majorana_vector_quarter_character"],[10,0,6,0])
+        self.assertEqual(r["both_E8_affine_current_quarter_characters"],[60,64,60,64])
+        self.assertFalse(r["any_SO16_rotation_can_conjugate_geometric_to_native_clock"])
+        self.assertTrue(r["full_E8_spinor_extension_needed_for_any_clock_conjugacy"])
+
     def test_current_level_of_one_fundamental_triplet_vs_eight_adjoint_fermions(self):
         r=self.report["E8_native_color_and_E6_backtransport"]
         self.assertEqual(r["index_of_3_fundamental_plus_5_singlets_SU3_complex_fermions"],1)
