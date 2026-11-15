@@ -58,9 +58,13 @@ def verify_eight_mode_fock_and_qutrit_tensor_host():
                 mixed=_sum_actions(
                     _car_pair((i,False),(j,True),mask),
                     _car_pair((j,True),(i,False),mask))
-                require(aa=={} and mixed==({mask:1} if i==j else {}),
+                creates=_sum_actions(
+                    _car_pair((i,True),(j,True),mask),
+                    _car_pair((j,True),(i,True),mask))
+                require(aa=={} and creates=={} and
+                        mixed==({mask:1} if i==j else {}),
                         "actual 8-mode Fock CAR Clifford relations failed")
-                checks+=2
+                checks+=3
     # Each E_ab acts on a three-state index, and CAR8 on the separate
     # 256-state occupation index. Verify the commutation independently
     # on all 768 product basis states and all 9 matrix units.
@@ -70,15 +74,22 @@ def verify_eight_mode_fock_and_qutrit_tensor_host():
             for mode in range(8):
                 for state in range(3):
                     for mask in range(256):
-                        # Eab*c_mode: acts if state==b and c_mode acts.
-                        car=_car_action(mode,mask,False)
-                        left=None if state!=b or car is None else (car[0],a,car[1])
-                        # c_mode*Eab: the two tensor actions commute.
-                        right=None if state!=b or car is None else (car[0],a,car[1])
-                        require(left==right,
+                        def Eab(label):
+                            if label is None or label[1]!=b:
+                                return None
+                            return (label[0],a,label[2])
+                        def car_operator(label):
+                            if label is None:
+                                return None
+                            new=_car_action(mode,label[2],False)
+                            return None if new is None else (
+                                label[0]*new[0],label[1],new[1])
+                        vector=(1,state,mask)
+                        require(Eab(car_operator(vector))==
+                                car_operator(Eab(vector)),
                                 "separate qutrit and fermion tensor actions do not commute")
                         commuting_checks+=1
-    require(checks==32768 and commuting_checks==55296,
+    require(checks==49152 and commuting_checks==55296,
             "the complete product basis action audit was not exhaustive")
     return checks,commuting_checks
 
