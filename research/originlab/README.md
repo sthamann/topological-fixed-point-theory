@@ -81,6 +81,61 @@ parent. It cannot be used to assign a physical source value. See
 and [independent test cases](test_seam_cohomology.py).
 `--finite-controls-only` includes this control.
 
+## Geometric 5+3 native E8 Weyl proof and one-sided seam source gates
+
+The most important new finite **algebraic** F1 progress of 15 November is
+the exact 31-reflection E8 Weyl conjugacy between the geometric quarter
+action on the original Riemann–Roch section/differential sum (5+3)
+and the repository's native D5+A3 glue C4 action. The eight typed
+geometric modes have Z4 multiplicities 2,2,2,2. **If** they can be
+identified with independent positive chiral CAR modes in the original
+source, their sixteen real Majorana components generate a 120-current
+so16 bilinear sector and a 128-state positive spinor extension, with
+total exact affine E8 current phase counts 60,64,60,64. The 52 fixed
+roots form D5+A3. The explicit Weyl word matches every one of the
+240 root charges, not merely their multiset. It replaces the old
+arbitrary 256-dimensional spectral cover with an exact standard
+248-current Lie-algebra construction **conditional on the CAR/VOA source**.
+
+Run the new focused OriginLab campaigns:
+
+    python3 -B research/originlab/main.py --out /tmp/originlab-p1-e8 \
+      --campaign p1_four_current_gate --campaign p1_e8_geometric_lift \
+      --campaign p1_seam_dirac --campaign p1_geometric_gram
+
+The genuine four-nonzero-root affine current channels have exact same
+frame ratio t^(-4), which equals exp(2pi*Delta_odd) from original
+v512. Ordinary current crossing swaps both operators and points,
+so it does NOT force fixed-frame equality or select the square.
+
+The exact 5+3 inclusion also defines a finite self-adjoint odd
+8-dimensional seam operator with 3 positive, 3 negative and 2
+endpoint zero modes. Selecting ONE endpoint gives a positive
+7-dimensional transfer with unique vacuum and gap, exchanged with
+its partner by geometric reflection. This is NOT the original
+physical OS time or 3+1D Dirac collar; the endpoint cap is unproved.
+
+A sharper source-level Gram test shows that the original D4
+representation allows only one complex mixed coefficient z between
+the five and three typed sectors after canonical marginal
+normalization. The positive combined Gram has determinant
+(1-|z|^2)^2: rank 8 for |z|<1, rank 6 at |z|=1 and is indefinite
+above one. A naive rank-5 identification of all three logarithmic
+fields with three of the five section fields violates these D4
+symmetry and positive-marginal premises. **The physical original
+Q0 must provide z and the actual CAR field map**; the abstract
+geometric theorem does not.
+
+The source tests and complete caveats are recorded in
+[P1-FIVE-PLUS-THREE-WEYL-E8-20261115.md](P1-FIVE-PLUS-THREE-WEYL-E8-20261115.md)
+and [P1-SEAM-DIRAC-GRAM-20261115.md](P1-SEAM-DIRAC-GRAM-20261115.md).
+The finite tests are in test_p1_four_current_gate.py,
+test_p1_e8_geometric_lift.py, test_p1_seam_dirac.py and
+test_p1_geometric_gram.py, all registered in the CI workflow.
+Native original weighted Q0/R113, physical locality, time,
+the interacting chiral Standard Model and universal spin-2 gravity
+are NOT derived. No F1 or ledger promotion follows.
+
 ## Charged E8 root triple and determinant source test
 
 The exact P1 source search also provides the named and finite campaign
