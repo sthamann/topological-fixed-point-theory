@@ -60,6 +60,29 @@ def controls():
         "1":{"rank":6,"positive_semidefinite":True,"positive_definite":False},
         "3/2":{"rank":8,"positive_semidefinite":False,"positive_definite":False},
     }, "D4 Gram source positivity and null witness changed")
+    # Exact Cholesky/Schur-complement normalization on the ENTIRE
+    # physical-positive range |z|<1. This eliminates the apparent
+    # unknown z from the D4 representation, not from source dynamics.
+    h=sp.symbols("h",positive=True)
+    Kinverse=sp.diag(1/h,1,1/h)
+    T=sp.eye(5).row_join(-M*Kinverse).col_join(
+        sp.zeros(3,5).row_join(Kinverse))
+    defect=(T.H*G*T-sp.eye(8))
+    structural=sp.zeros(8)
+    structural[5,5]=-(h*h+z*sp.conjugate(z)-1)/(h*h)
+    structural[7,7]=structural[5,5]
+    require((defect-structural).applyfunc(sp.simplify)==sp.zeros(8)
+            and T*r8==r8*T and T*s8==s8*T,
+            "D4-equivariant physical Gram whitening failed")
+    for signed_complex_z in (sp.Rational(1,2), (3+4*sp.I)/10):
+        positive_h=sp.sqrt(sp.simplify(1-signed_complex_z*
+                                      sp.conjugate(signed_complex_z)))
+        Tsample=T.subs({z:signed_complex_z,h:positive_h})
+        Gsample=G.subs(z,signed_complex_z)
+        require((Tsample.H*Gsample*Tsample-sp.eye(8)).applyfunc(
+                    sp.simplify)==sp.zeros(8),
+                "D4 physical-positive CAR frame cannot be whitened")
+
     return {
       "status":"EXACT_D4_ORIGINAL_5PLUS3_GRAM_SOURCE_GATE",
       "mixed_complex_intertwiner_dimension":len(kernel),
@@ -69,6 +92,11 @@ def controls():
       "full_gram_determinant":"(1-|z|^2)^2",
       "full_gram_spectrum_for_real_z":"1 (x4), 1+|z| (x2), 1-|z| (x2)",
       "full_8_CAR_rank_condition":"|z|<1",
+      "source_D4_equivariant_whitening_exists_for_every_strictly_positive_z":True,
+      "whitening_T":"[[I5,-M*diag(1/h,1,1/h)],[0,diag(1/h,1,1/h)]], h=sqrt(1-|z|^2)",
+      "whitening_preserves_geometric_C4_D4_operators":True,
+      "source_parameter_z_does_not_affect_abstract_D4_CAR_character_within_positive_rank_8":True,
+      "source_parameter_z_still_needed_for_weighted_Q0_and_time":True,
       "saturated_6_mode_null_quotient_condition":"|z|=1",
       "source_positivity_failure":"|z|>1",
       "regression_witnesses":witness,
