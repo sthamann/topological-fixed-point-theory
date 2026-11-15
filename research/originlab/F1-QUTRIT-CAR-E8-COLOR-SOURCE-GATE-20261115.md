@@ -20,6 +20,16 @@ There is an exact minimal compatible realization H=C3 tensor exterior(C8), on wh
 
 This also refines the earlier claim "M3 -> 8 traceless operators -> 16 Majoranas": the vector-space/Fock functor is valid, but one cannot preserve the original full associative M3 multiplication on the original irreducible Fock Hilbert space without an additional factor or an explicitly nonunital code with lost products.
 
+### The obstruction survives the quasilocal INFINITE CAR limit
+
+It is tempting to try to repair the missing qutrit algebra simply by adding further and further free fermion oscillator modes. But the quasilocal **C*-CAR algebra on countably infinitely many complex modes** is the uniformly hyperfinite UHF algebra of type 2^infinity, namely the unital norm closure of the inductive system M2 -> M4 -> M8 -> ...
+
+This UHF algebra has a unique normalized tracial state whose projections have dyadic rational traces (the ordered K0 projection range Z[1/2]). A hypothetical unital M3 embedding would yield three mutually orthogonal Murray-von Neumann equivalent diagonal projections summing to I. Their traces would all equal **1/3**, which is not dyadic. Contradiction.
+
+Therefore even the quasilocal infinite CAR **C*-algebra** cannot contain a unital full M3 matrix algebra without an extra factor. A distinct qutrit factor M3 tensor CAR_infinity changes the type to an allowed 3*2^infinity UHF algebra. An appropriate larger operator-von-Neumann/type-III completion can contain M3 despite the quasilocal obstruction, so this is NOT a universal no-go for physical conformal QFT local algebras. The true physical Hilbert representation and completion must be explicitly source-derived.
+
+The CAR UHF unital embedding criterion is proved independently in the mathematical AF-algebra literature; see [AF algebra matrix embedding criterion](https://pure.au.dk/ws/portalfiles/portal/300092930/firstbook.pdf), Corollary 2.2.11. The source code checks all finite stages through a large regression bound and records the general dyadic-trace proof as the theorem, not as a claim that finite tests alone establish the infinite statement.
+
 ## 2. Which SU3 representation gives the native affine LEVEL ONE?
 
 For three complex chiral free fermions transforming as ONE fundamental SU3 triplet (plus five colour singlet fermions), their bilinear color currents have SU3 affine level k=1. This is the standard fundamental Dynkin index normalization.
