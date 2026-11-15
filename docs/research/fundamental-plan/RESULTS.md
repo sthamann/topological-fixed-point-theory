@@ -4295,3 +4295,51 @@ Die zuvor bestimmte gemeinsame Kovarianz, Hyperladungs und
 Wärmeableitung bleibt die nächste Probe des geladenen Feldanschlusses.
 F1 bleibt offen.
 [Ursprüngliche Konstruktorprüfung](../../../experiments/theory-contracts/original-paper-source-reconciliation-20261102/triangulation_20261106O/caller/ACTUAL-PRIMITIVE-REGULATOR-CALLER-TRACE.txt).
+
+
+## ORIGINLABMARKEDMETRIC20261115
+
+Im festen affinen E₈ Vakuummodul auf Niveau eins zerfällt Grad eins
+unter E₆ und A₂ in die vier irreduziblen Räume mit Dimensionen
+78, 8, 81 und 81. Die neutralen Adjungierten lassen vier unabhängige
+hermitesche Gewichte zu. Der markierte geladene Nullmodus liefert
+fünf gerichtete Wurzelblöcke und drei unabhängige Gleichungen.
+Die relative Form ist skalar, sobald seine fest vorgegebene
+Adjungierung gilt. Die neutrale positive Gegenform (1, 1, 1, 2)
+wird verworfen. Die Niveau eins Vakuumrückkehr bindet die Norm an
+die auf demselben Raum gelieferte Leerreferenz. Diese Folgerung
+betrifft die Form vor Zeit und Auswahl.
+
+Die Zählung der affinen Grade null bis drei für d = 9g + 8c
+modulo zwölf reproduziert die gemeinsamen Spinor und Farbklassen
+modulo sechs. Die neutrale feine Algebra hat Wurzelkomponenten
+A₃, A₂, A₁, A₁ und eine abelsche Cartanrichtung. Die 24 Wurzeln
+der anderen grob neutralen Klasse haben Y = ±1/2 und schwache
+Gewichte ±1. Die beiden feinen Teilräume haben in Grad eins
+Dimensionen 30 und 24, in Grad zwei 382 und 380.
+[Rechnung und Geltungsbereich](../../../research/originlab/P1-MARKED-AFFINE-METRIC.md).
+
+Die Originalquellenprüfung übernimmt die Schranke für die
+Projektoridentifikation aus der parallelen P1 Untersuchung.
+Im Halbzylinder für die Produktgleichung ∂ᵤ + diag(1, −1)
+selektiert die Abklingbedingung die positive spektrale Gerade.
+Die Involution, welche die beiden Komponenten vertauscht, ist
+mit dem Tangentialoperator antikommutierend. Ihre Plusgerade
+ist verschieden, der Differenzoperator der Projektoren hat
+Eigenwerte ±1/√2. Eine konkrete Quellbindung des Randprojektors
+bleibt nötig. Die modellunabhängige Gleichsetzung ist ausgeschlossen.
+
+Die getrennte kinetische Rechnung vom 11. November wurde gegen
+das ursprüngliche Profil und die gespeicherte Ausgabe exakt
+reproduziert. Der vollständige lokale Higgsgradient gibt 5117/5000
+in Einheiten 1/(π R Z_H), die Einzelrichtung 169/40000. Der
+Vergleich des ursprünglichen Operators mit der zeitlichen
+Energiesumme ist an die physische Generatoridentifikation gebunden.
+[Ausführbarer Profiltest](../../../experiments/theory-contracts/chat-triangulation-20261108/check_tfpt_common_kinetic_clock_rule_20261111.py).
+
+18 gezielte OriginLab Tests bestanden. Der normale CLI Lauf lieferte
+EXACT_AFFINE_COLOUR_WARD_CHECKS und für die ursprüngliche Quelle
+BLOCKED. Z0, ZU, ZY und ZUY blieben leer. Die erste Originaloperation
+bleibt die gewichtete Paarung Q₀ mit derselben Basisintegration,
+dem tatsächlichen Zeittransport und der absoluten Leerreferenz.
+F1 bleibt offen.

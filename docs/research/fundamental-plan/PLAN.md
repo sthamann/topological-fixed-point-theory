@@ -2,6 +2,8 @@
 
 ## OriginLab am 15. November 2026
 
+Die markierte affine Prüfung bestimmt die relative reflektierte Form auf Grad eins bis auf einen Skalar, wenn die fest vorgegebenen neutralen und markierten geladenen Adjungierten realisiert sind. Der feinere Charakter modulo zwölf trennt die beiden Teile der groben neutralen Klasse. Im ursprünglichen Lauf fehlen weiter der gewichtete Nullmarkenkern, der physische Zeittransport und die gebundene absolute Leerreferenz. Die allgemeine Identifikation eines Calderón Projektors mit einem Reflexionsprojektor ist kein zulässiger Ersatz. Die exakte Higgs Kinetik liefert auf dem nativen Profil den unabhängigen Energietest für die spätere Originalform. [Neue Ergebnisse](RESULTS.md#originlabmarkedmetric20261115)
+
 OriginLab prüft nun den neutralen Spinorstrom und die kubische Farbklammer. Zwei neutrale Einfügungen führen zum Endpunkt mit $Y=5/6$. Der ursprüngliche Mehrteilchenweg erreicht die Ladung und hat eine nichtskalare Gramform. Der kleinste neutrale Träger, der die ursprünglichen Farb, schwachen und Hyperladungsdarstellungen aufnehmen kann, hat Dimension 240. Der native R113 Aufruf benötigt den gewichteten ursprünglichen Nullmarkenkern und die absolute Leerreferenz. F1 bleibt in Bearbeitung. [OriginLab](../../../research/originlab/README.md) und [exakte Ergebnisse](RESULTS.md#originlabcolourward20261115--neutraler-spinor-und-ursprünglicher-mehrteilchenträger).
 
 
