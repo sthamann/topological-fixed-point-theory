@@ -104,6 +104,21 @@ def bernstein_moment_nonuniqueness():
     diff=sp.factor(sum((plus[k]-minus[k])*sp.exp(-k*t) for k in range(5)))
     require(sp.simplify(diff-(1-sp.exp(-t))**4/30)==0,
             "matching finite moments inadvertently selected full Bernstein profile")
+    # Stronger: BOTH profiles are unique fixed points of strictly
+    # positive rank-one stochastic RG kernels that preserve EXACTLY
+    # the same prescribed k=0,1,2,3 moment slice.
+    Kplus=sp.Matrix(5,5,lambda i,j:plus[i])
+    Kminus=sp.Matrix(5,5,lambda i,j:minus[i])
+    vplus=sp.Matrix(plus)
+    vminus=sp.Matrix(minus)
+    ones=sp.ones(5,1)
+    require(all((ones.T*K)[0,j]==1 for K in (Kplus,Kminus)
+                for j in range(5)) and
+            Kplus*vplus==vplus and Kminus*vminus==vminus and
+            Kplus*Kplus==Kplus and Kminus*Kminus==Kminus and
+            Kplus.rank()==Kminus.rank()==1 and
+            Kplus*vminus==vplus and Kminus*vplus==vminus,
+            "two independent strictly-positive RG fixed kernels missing")
     return {
       "status":"EXACT_FINITE_MOMENTS_DO_NOT_IDENTIFY_ORIGINAL_UV_PROFILE",
       "support":[0,1,2,3,4],
@@ -112,7 +127,12 @@ def bernstein_moment_nonuniqueness():
       "both_strict_positive_and_normalized":True,
       "moments_k0_k1_k2_k3_equal":True,
       "complete_Laplace_profiles_differ":"(1-exp(-t))^4/30",
-      "first_four_moments_derive_unique_UV_profile":False
+      "first_four_moments_derive_unique_UV_profile":False,
+      "two_positive_stochastic_RG_kernels":"K_plus(i,j)=mu_plus(i); K_minus(i,j)=mu_minus(i)",
+      "both_normalize_mass_and_have_unique_stationary_measures":True,
+      "both_preserve_the_same_four_prescribed_moments":True,
+      "both_contract_projectively_to_one_ray_in_one_step":True,
+      "still_distinct_complete_Bernstein_profiles":True
     }
 
 def integrable_kernel_repair():
