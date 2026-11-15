@@ -269,6 +269,7 @@ def one_round(args, directory, index, retained, prior_questions, manifest):
                         native_w_weak_words=outcomes.get("r113_synthesis",{}).get("native_w_weak_words"),
                         finite_marked_search_status=outcomes.get("marked_search",{}).get("status","NOT_RUN"),
                         finite_mark_transfer=outcomes.get("marked_search",{}).get("transfer"),
+                        harmonic_seam_search=outcomes.get("marked_search",{}).get("harmonic_seam"),
                         double_cell_control_status=outcomes.get("double_cell",{}).get("status","NOT_RUN"),
                         moving_carrier_control_status=outcomes.get("moving_carrier",{}).get("status","NOT_RUN"),
                         affine_polarization_status=(source_result or {}).get("affine_polarization",{}).get("status","NOT_RUN"),

@@ -1,4 +1,4 @@
-"""Exact response bounds for four marks under tetrahedral symmetry."""
+"""Exact response bounds for four marks under prescribed permutation symmetry."""
 
 import sympy as sp
 
@@ -41,33 +41,47 @@ def response_bounds(moments):
 
 def analyze(data):
     """Check exact moment forms in the original order of a declared four-mark frame."""
-    require(isinstance(data, dict) and set(data) <= {"moments", "conserved_distinct_weights"},
+    require(isinstance(data, dict) and set(data) <= {"moments", "conserved_distinct_weights", "symmetry"},
             "unknown four-mark transfer inputs")
     moments = data.get("moments")
     require(isinstance(moments, list) and len(moments) in (3, 4),
             "supply moment forms at steps zero, one, two and optionally three")
     conserved = data.get("conserved_distinct_weights", False)
     require(type(conserved) is bool, "conserved_distinct_weights must be Boolean")
+    symmetry = data.get("symmetry", "A4")
+    require(symmetry in ("A4", "D4", "V4"), "symmetry must be A4, D4 or V4")
     scope = {"input_role": "declared_finite_oracle", "physical_source_derived": False,
-             "transfer_spectrum_domain": "[0, 1]", "conserved_distinct_weights": conserved}
-    diagonals, edges = [], []
+             "transfer_spectrum_domain": "[0, 1]", "conserved_distinct_weights": conserved,
+             "symmetry": symmetry}
+    rows0 = []
     for step, rows in enumerate(moments):
         form = matrix(rows)
         require(form.shape == (4, 4), "each moment must use the four-mark basis")
-        diagonal, edge = form[0, 0], form[0, 1]
-        if form != form.H or form != (diagonal-edge)*sp.eye(4)+edge*sp.ones(4):
-            return {**scope, "status": "REFUTED_TETRAHEDRAL_FORM", "first_defect_step": step}
-        if conserved and edge:
+        diagonal, edge, opposite, other_edge = tuple(form[0, :])
+        row = (diagonal, edge, opposite, other_edge)
+        invariant = form == form.H and all(form[i, j] == row[i^j] for i in range(4) for j in range(4))
+        if not invariant or (symmetry != "V4" and edge != other_edge) or (symmetry == "A4" and edge != opposite):
+            names = {"A4": "TETRAHEDRAL", "D4": "SQUARE", "V4": "KLEIN"}
+            return {**scope, "status": f"REFUTED_{names[symmetry]}_FORM", "first_defect_step": step}
+        if conserved and any(row[1:]):
             return {**scope, "status": "REFUTED_CONSERVED_CARTAN_FORM", "first_defect_step": step,
-                    "mixed_entry": str(edge)}
-        diagonals.append(diagonal)
-        edges.append(edge)
+                    "mixed_entry": str(next(v for v in row[1:] if v))}
+        rows0.append(row)
 
     if conserved:
-        sectors = {"four_weight_lines": (4, diagonals)}
+        sectors = {"four_weight_lines": (4, [row[0] for row in rows0])}
+    elif symmetry == "A4":
+        sectors = {"singlet": (1, [sum(row) for row in rows0]),
+                   "triplet": (3, [d-e for d, e, _, _ in rows0])}
+    elif symmetry == "D4":
+        sectors = {"singlet": (1, [sum(row) for row in rows0]),
+                   "alternating": (1, [d-2*e+o for d, e, o, _ in rows0]),
+                   "doublet": (2, [d-o for d, _, o, _ in rows0])}
     else:
-        sectors = {"singlet": (1, [d+3*e for d, e in zip(diagonals, edges)]),
-                   "triplet": (3, [d-e for d, e in zip(diagonals, edges)])}
+        characters = {"singlet": (1, 1, 1, 1), "alternating": (1, -1, 1, -1),
+                      "odd_1": (1, 1, -1, -1), "odd_2": (1, -1, -1, 1)}
+        sectors = {name: (1, [sum(x*y for x, y in zip(row, character)) for row in rows0])
+                   for name, character in characters.items()}
     reports = {name: {"multiplicity": multiplicity, **response_bounds(values)}
                for name, (multiplicity, values) in sectors.items()}
     refuted = any(report["status"] in ("REFUTED_THIRD", "INFEASIBLE_MOMENTS") for report in reports.values())

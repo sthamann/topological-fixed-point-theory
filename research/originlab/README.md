@@ -129,6 +129,12 @@ the four diagonal entries equal. The bounds allow transfer eigenvalue zero.
 The form check does not supply a native word map, the physical time step,
 the absolute reference, or the R113 values.
 
+Set `transfer.symmetry` to `D4` for the square in cyclic mark order, or
+`V4` for its antipodal deformation. `A4` is the tetrahedral control. The
+optional `harmonic_seam` input runs the cross-ratio, transfer, and reciprocal
+function searches. See the [harmonic seam search](P1-HARMONIC-SEARCH.md)
+for a reproducible run and the missing physical comparison.
+
 The audited plan has an executable benchmark campaign:
 
 ```sh

@@ -196,10 +196,14 @@ def cell_search(data):
 
 def run(data=None):
     data = {} if data is None else data
-    require(isinstance(data,dict) and set(data)<={"marks","cells","transfer"},"unknown marked search inputs")
+    require(isinstance(data,dict) and set(data)<={"marks","cells","transfer","harmonic_seam"},"unknown marked search inputs")
     marks = phase_and_clock(data.get("marks",{}))
     cells = cell_search(data.get("cells",{}))
     transfer = analyze_transfer(data["transfer"]) if "transfer" in data else transfer_control()
     refuted = any(report["status"].startswith("REFUTED_") for report in (marks, cells, transfer))
-    return {"status": "REFUTED_SUPPLIED_MARKS" if refuted else "EXACT_MARKED_SEARCH",
-            "physical_source_derived": False, "marks": marks, "cells": cells, "transfer": transfer}
+    result = {"status": "REFUTED_SUPPLIED_MARKS" if refuted else "EXACT_MARKED_SEARCH",
+              "physical_source_derived": False, "marks": marks, "cells": cells, "transfer": transfer}
+    if "harmonic_seam" in data:
+        from square_search import run as run_square_search
+        result["harmonic_seam"] = run_square_search(data["harmonic_seam"])
+    return result
