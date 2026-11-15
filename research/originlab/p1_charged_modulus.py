@@ -197,6 +197,19 @@ def two_face_fermion_sewing():
     require(sp.factor(square_second.subs(g,sp.sqrt(2)-1))==0 and
             sp.factor(square_second.subs(g,1))==-1,
             "finite sewing coupling has the wrong local-max threshold")
+    # Holomorphic root vertex pole and full real paired-determinant
+    # cancel to one oriented inverse-coordinate factor. The charged
+    # cocycle remains an independent phase in the original E8 VOA.
+    u=sp.symbols("u",nonzero=True)
+    root_chiral=1/(2*(1-u*u))
+    paired=(1-u*u)*(1-u**(-2))
+    dressed=sp.factor(root_chiral*paired)
+    require(sp.factor(dressed-(1-u**(-2))/2)==0 and
+            sp.simplify((dressed*sp.conjugate(dressed)).subs(
+                u,(1+sp.I*t)/(1-sp.I*t))-
+                4*t*t/(1+t*t)**2)==0,
+            "oriented E8 vertex-pole cancellation failed")
+
     return {
       "status":"EXACT_FINITE_TWO_FACE_CAR_PFAFFIAN",
       "two_face_block":"K=[[I,-g U],[sign*g U_or_inverse,I]]",
@@ -205,6 +218,7 @@ def two_face_fermion_sewing():
       "reverse_orientation_forward_det":"(1-g*g)^2 (delta-independent)",
       "opposite_sign_same_orientation_det":"(1+g*g)^2-4*g*g*sin(delta)^2",
       "same_forward_unit_coupling_pfaffian":"Pf([[0,K],[-K.T,0]])=det(K)=4*sin(delta)^2",
+      "oriented_chiral_pole_cancellation":"A_root(u)*Pf(K)=(1-u^(-2))/2 (up to root cocycle)",
       "fermionic_variables_in_this_control":8,
       "charged_root_dressed_at_g_one":"sin(delta), unique global maximum square",
       "g_below_one_pole_uncanceled":True,
