@@ -81,6 +81,33 @@ parent. It cannot be used to assign a physical source value. See
 and [independent test cases](test_seam_cohomology.py).
 `--finite-controls-only` includes this control.
 
+## Primitive P1 source falsification gate (15 November 2026)
+
+Run `python3 -B research/originlab/main.py --campaign p1_source_falsifiers
+--out /tmp/originlab-original-p1` to audit three proposed origin links
+**before** any physical F1 claim. The finite campaign proves that the
+3+2 Riemann–Roch evaluation sequence, the logarithmic orientation and
+unit winding occur for every noncolliding antipodal four-mark modulus;
+the extra geometric quarter picks the square and remains an input.
+
+The same controls show that the apparent square preference from the
+**vertex-only** Gaussian determinant cancels after integrating all four
+interior arcs of the **unchanged free circle**. The exact weighted
+cycle identity is `det_prime(L)*prod(2*ell_i)=64*perimeter`.
+They also give a product-Dirac Cauchy-data countermodel to the automatic
+identification of the Calderon projector with a local geometric deck
+reflection. A two-involution **candidate**, not original source
+reconstruction, relates the cross ratio to the trace of their relative
+unitary: `lambda=(tr(U_rel)-2)/(tr(U_rel)+2)`, with square precisely
+at trace zero in the stated two-dimensional family.
+
+These are source-constraint and negative-control results. They supply
+**none** of the original weighted `Q0,Z0,ZU,ZY,ZUY`, the physical
+time Hamiltonian, full fermion/ghost factors, 3+1D locality or gravity.
+See [full source audit](P1-PRIMITIVE-GLUING-SOURCE-GATE-20261115.md)
+and [exact test suite](test_p1_source_falsifiers.py).
+`--finite-controls-only` includes the campaign.
+
 ## R113 inputs
 
 Without a physical packet, the native diagnostic domain produces a structured
