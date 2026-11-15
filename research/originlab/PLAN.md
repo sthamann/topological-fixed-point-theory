@@ -8,6 +8,16 @@ The current [plan audit](PLAN-AUDIT.md) covers the original requirements and
 the three later sets of scenario tests. The first priority is the
 [same-source R113 test](R113-R104-RELATIONAL.md).
 
+## 15 November 2026 · E8 charged residual and native R113 zero-Fock contract
+
+[Exact charged source report](P1-CHARGED-RESIDUAL-ORIGIN-20261115.md) extends the native marked E8 root word p2,gamma,-p1 (Z12 degrees 1,2,9) to all **13,440 ordered E8 root triangles**. Their free chiral vertex amplitudes have modulus 1/(4 sin delta), with a *minimum* at the square. For arbitrary neutral positive-Euclidean-metric four-charge words the exponent sum is A+B=-||q0+q2||², so no single free neutral word has an interior strict *maximum*. This is a scoped charged-free-source no-go, not a claim about the full weighted R113 functional.
+
+A **conditional** relative two-polarization determinant pair supplies 4sin²delta, giving combined modulus sin(delta). An exact finite two-face 4x4 fermionic block K=[[I,-gU],[-gU,I]], embedded into an 8x8 skew Majorana source, has Pfaffian det(I-g²U²). Unit coherent forward coupling g=1 reproduces this pair; a reflected U^{-1} return is angle-blind, and a reversed CAR sign gives the opposite square behavior. For g<1 the collision pole survives. The original source must fix the coupling, orientation/sign and *net determinant exponent* m>1/2, and prove actual OS positivity; positive scalar Pfaffian is insufficient.
+
+**Critical original-source test:** the [9 November R113 original/reference contract](../../experiments/theory-contracts/chat-triangulation-20261108/R113-ORIGINAL-UND-REFERENZ-20261109.txt) states Q[b]=s[b] Gamma(R[b]) and C_t^00=I_orig(w[b] s[b]). The exterior vacuum component of Gamma(R) is **one**, whereas the full Fock trace is det(I+R). Multiplying the two full traces at U and -U produces the synthetic determinant pair, but the two original empty-state contractions remain **one**. The 8-Majorana comparison source CANNOT simply be inserted into the native R113 zero-Fock lane. Only a source-derived identification within the original scalar s[b], or the actual outer cap/selector on the complete source, would promote it.
+
+The named and finite p1_charged_modulus OriginLab campaign and [tests](test_p1_charged_modulus.py) implement the root census, determinant/Pfaffian orientation checks, and this zero-Fock source guard. No physical R113 values or original source producer are claimed. Next original computation: evaluate s[b] and its real bosonic/geometric/gauge/ghost integration on the exact marked source; calculate the common weighted Q0 and the four original R113 marks under the original cap/reference at two blocked levels. Only then compare synthetic held-out ratios at t=1/3,1/2,2/3. Separate gates remain for the interacting 3+1D parent, chirality and universal spin-2 coupling. **F1 remains open.**
+
 ## 15 November 2026 · F1 primitive source: full-gluing cancellation and relative polarization
 
 [Original P1 source and exact falsifier report](P1-PRIMITIVE-GLUING-SOURCE-GATE-20261115.md)
