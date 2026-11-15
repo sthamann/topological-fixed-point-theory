@@ -81,6 +81,54 @@ parent. It cannot be used to assign a physical source value. See
 and [independent test cases](test_seam_cohomology.py).
 `--finite-controls-only` includes this control.
 
+## Independent principal SU3 route from the original regional sl2 and 5+3 source
+
+Two new finite/named OriginLab campaigns check a DIFFERENT fundamental
+use of the SAME 5+3 original geometric modes:
+
+    python3 -B research/originlab/main.py --out /tmp/originlab-principal-su3 \
+      --campaign p1_principal_su3 --campaign p1_principal_su3_ward
+
+The original Möbius regional span is sl2, which has spin 2
+(five meromorphic modes) and spin 1 (three log-differentials)
+representations. The compact SU3 adjoint under its principal SO3
+decomposes as 5+3. A concrete 8x8 Lie model verifies all 28
+commutators, positive compact metric and 56 Jacobi generator triples.
+The original D4 representation differs by an order-two character
+chi(r)=chi(s)=-1, realized by the ORIGINAL middle section
+f2=z²/(z⁴-1). As a result the unmarked SU3 cubic is D4-odd,
+while the formal fourth f2-mode insertion makes it D4-even.
+All 112 cubic/generator comparisons are exact source-side necessary
+controls; none supplies an original physical R113 mark.
+
+Continuous SO3 covariance gives a one-dimensional space of
+alternating 5x5->3 brackets. A positive ad-invariant source Gram
+with norm coefficients a,b forces its coupling lambda=b/a>0
+(512 checked Ward triples), and hence the compact SU3 real form
+within this declared class. The native weighted Q0 has not
+yet produced a,b or lambda and may not implement the assumed
+regional SO3 symmetry on the original marked physical fields.
+
+The full pinned E8 A2 root census contains 1120 regular SU3
+root subalgebras, 480 with the balanced geometric quarter profile.
+NONE of these 480 commutes simultaneously with native colour, weak
+SU2 and hypercharge; only 10 regular A2 copies commute with all
+three (and have other quarter profiles). Thus the geometric eight
+modes cannot simply be renamed an independent gauge SU3 family
+group with all original Standard Model charges preserved in the
+regular E8 source class. A 5+3 gauge-current adjoint (weight one)
+and eight independent chiral complex fermions (weight 1/2)
+are competing physical assignments that dimension counting or
+D4 character counts CANNOT discriminate; the native source OPE,
+cubic response and Ward Gram must decide.
+
+[Proof and source kill tests](P1-PRINCIPAL-SU3-ORIGIN-20261115.md),
+[Lie/source census](p1_principal_su3.py) and
+[positive Ward check](p1_principal_su3_ward.py),
+plus unit tests, are in main and core CI. No original Q0/R113,
+physical time or chiral interacting 3+1D/spin-2 parent follows.
+F1 remains open.
+
 ## Primitive number of seam marks from first local spinor current extension
 
 The additional OriginLab campaign p1_minimal_spinor_marks studies **all**
