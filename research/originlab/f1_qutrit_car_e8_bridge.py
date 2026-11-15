@@ -132,6 +132,98 @@ def colour_branch():
     # the entire triplet by the f2 orientation character.
     source_phases=[GEOM_TORUS[k] for k in (3,5,7)]
     require(source_phases==[1,2,3] and
-            len({(x+shift)%4 for x in source_phases})==3
-            for shift in (0,2)),
-    require(False, "unreachable")
+            all(len({(x+shift)%4 for x in source_phases})==3
+                for shift in (0,2)),
+            "scalar orientation f2 twist unexpectedly neutralizes SU3 roots")
+    # The native Weyl map preserves the C4 multiset if BOTH clock and
+    # currents are conjugated. It cannot turn this balanced source SU3
+    # into the fixed all-grade-zero native SU3 simultaneously.
+    images=tuple(_weyl(z) for z in rawA2)
+    require(all(character(images[k],qn)==character(rawA2[k],qg)
+                for k in range(3)) and
+            [typename(z) for z in images].count("spinor")==2,
+            "geometric F3 current/clock simultaneous Weyl audit changed")
+
+    # For a genuinely physical 3 complex chiral color fundamental plus
+    # five spectators, the free-fermion SU3 current has level 1.
+    # For 8 complex fermions in the SU3 adjoint it has level 6.
+    h=(1,-1,0)
+    trfund=sum(x*x for x in h)
+    tradj=sum((h[i]-h[j])**2 for i in range(3)
+              for j in range(3) if i!=j)
+    require(trfund==2 and tradj==12 and tradj//trfund==6,
+            "fundamental-versus-adjoint SU3 Dynkin index changed")
+    return {
+      "status":"EXACT_NATIVE_E8_COLOR_PREIMAGE_REQUIRES_SPINOR_CURRENTS",
+      "native_color_simple_roots_doubled":[list(a),list(b)],
+      "geometric_E8_inverse_weyl_color_simple_roots":[list(pre[0]),list(pre[1])],
+      "geometric_E8_inverse_weyl_color_positive_roots":[list(z) for z in pre],
+      "geometric_E8_inverse_weyl_colour_positive_types":
+          ["bilinear_D8","spinor","spinor"],
+      "all_six_colour_root_types":{"bilinear_D8":2,"spinor":4},
+      "native_colour_E6_commutant_roots":72,
+      "native_colour_E6_commutant_dimension_including_Cartan":78,
+      "charged_E8_color_weights_each_multiplicity":27,
+      "charged_E8_color_weight_count":6,
+      "exact_E8_branching":"248=(8,1)+(1,78)+(3,27)+(3bar,27bar)",
+      "source_GEOM_TORUS_in_interleaved_C5_and_F3_mode_order":list(GEOM_TORUS),
+      "source_F3_complex_mode_axes":[3,5,7],
+      "source_F3_complex_mode_quarter_phases":source_phases,
+      "natural_F3_fundamental_SU3_quarter_current_profile":[2,2,2,2],
+      "native_pinned_color_SU3_quarter_current_profile":[8,0,0,0],
+      "scalar_f2_orientation_character_removes_nontrivial_colour_root_grades":False,
+      "natural_F3_SU3_recovered_as_native_colour_by_simultaneous_Weyl_conjugacy":False,
+      "index_of_3_fundamental_plus_5_singlets_SU3_complex_fermions":1,
+      "index_of_8_adjoint_SU3_complex_fermions":6,
+      "physical_A2_color_fermion_source_identified":False,
+      "native_original_colour_Weyl_intertwiner_sourced":False,
+    }
+
+
+def continuum_time_gate():
+    # The exact one-step qutrit CP channel from f1_functorial_source
+    # has q fixed. For microscopic a -> 0 and macroscopic t>0,
+    # q^(t/a) -> 0 instantly. The limit is discontinuous at t=0.
+    # A nontrivial strongly continuous limit requires q(a)=1-O(a).
+    a,t,rate=sp.symbols("a t rate",positive=True)
+    fixed=sp.Rational(1,2)
+    require(sp.limit(fixed**(t/a),a,0,dir="+")==0,
+            "scale-independent CP depolarization did not collapse")
+    source_q=sp.exp(-rate*a)
+    recovered=sp.simplify(source_q**(t/a))
+    require(sp.simplify(recovered-sp.exp(-rate*t))==0 and
+            sp.limit(source_q,a,0,dir="+")==1,
+            "critical microscopic q(a) scaling failed")
+    q=sp.symbols("q")
+    require(sp.solve(q*q-q,q)==[0,1],
+            "fixed exact blocked one-step kernel unexpectedly nontrivial")
+    return {
+      "status":"EXACT_CONTINUUM_CLOCK_SCALING_NECESSITY",
+      "fixed_microscopic_q_half_at_any_lattice_spacing":"q(a)=1/2",
+      "fixed_q_at_any_positive_time_continuum_limit":"0 (instant depolarization)",
+      "fixed_q_continuum_lim_t_to_zero_of_Tt":"not identity",
+      "strongly_continuous_nontrivial_time_from_fixed_q":False,
+      "microscopic_scaling_for_finite_continuum_rate":"q(a)=exp(-rate*a)",
+      "emergent_continuum_transfer":"q(t)=exp(-rate*t)",
+      "physical_time_rate_and_absolute_clock_derived":False,
+      "rate_zero_gapless_limit_needed_for_critical_affine_current":"conditional; not sufficient",
+      "emergent_3plus1D_spatial_locality_proved":False
+    }
+
+
+def controls():
+    return {
+      "unital_qutrit_CAR_source_embedding":matrix_algebra_type_gate(),
+      "E8_native_color_and_E6_backtransport":colour_branch(),
+      "continuum_microscopic_clock_gate":continuum_time_gate(),
+      "physical_original_Q0_R113_produced":False,
+      "physical_E8_level_one_VOA_produced":False,
+      "physical_chiral_SM_family_count_produced":False,
+      "physical_3plus1D_gravity_produced":False,
+      "F1_solved":False,
+    }
+
+
+if __name__=="__main__":
+    import json
+    print(json.dumps(controls(),indent=2,sort_keys=True))
