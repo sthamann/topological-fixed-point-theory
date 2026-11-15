@@ -380,6 +380,12 @@ fix the modulus of the remaining common scale. Rephasing the two charged
 sectors changes its phase by a cube. The fixed bracket admits the three
 cube roots of unity as simultaneous sector rephasings.
 
+The same report resolves the joint glue and colour grading modulo twelve
+through affine grade three. It also tests the reflected form on affine
+grade one before transfer and selection. Neutral Ward adjoints allow
+four independent weights. The marked charged zero mode reduces them
+to one common scale. See [the derivation and exact controls](P1-MARKED-AFFINE-METRIC.md).
+
 The neutral spinor zero mode has ranks 22, 18 and 18 on the three
 grade one sectors. In colour two it gives 15 transitions from spinor to
 pair currents and three in the other direction. The positive neutral

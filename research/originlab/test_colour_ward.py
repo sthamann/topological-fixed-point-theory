@@ -41,3 +41,18 @@ class ColourWardTests(unittest.TestCase):
         self.assertEqual(word["reverse_two_current_word_norm_squared"],0)
         self.assertEqual(word["forward_two_current_word_norm_squared_at_mode_m"],"m")
         self.assertIsNone(self.report["original_values"])
+
+    def test_marked_source_character_and_charged_adjoint(self):
+        source = self.report["marked_source"]
+        character = source["character"]
+        self.assertEqual(character["marked_glue_path_mod_12"], [0, 1, 3, 0])
+        self.assertEqual(character["marked_step_degrees_mod_12"], [1, 2, 9])
+        self.assertEqual(character["neutral_algebra_mod_12"], ["A1", "A1", "A2", "A3", "u1"])
+        self.assertEqual(sum(row["multiplicity"] for row in character["class_six_root_weights"]), 24)
+        self.assertEqual(character["affine_grade_counts_mod_6"][2], [762, 720, 657, 608, 657, 720])
+        metric = source["equal_time_grade_one_metric"]
+        self.assertEqual(metric["neutral_covariant_hermitian_parameters"], 4)
+        self.assertEqual(metric["charged_ward_constraint_rank"], 3)
+        self.assertEqual(metric["with_marked_charged_adjoint_hermitian_parameters"], 1)
+        self.assertTrue(metric["nonuniform_neutral_metric_rejected_by_charged_adjoint"])
+        self.assertFalse(source["physical_source_identity_proved"])

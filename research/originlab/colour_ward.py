@@ -350,6 +350,8 @@ def folded_bridge(fold_cases):
 
 
 def controls():
+    from marked_source import controls as marked_source_controls
+
     neutral = SECTORS[0]
     pair_counts = [sum(map(_is_pair_root,roots)) for roots in SECTORS]
     spinor_counts = [len(roots)-n for roots,n in zip(SECTORS,pair_counts)]
@@ -380,4 +382,6 @@ def controls():
             "neutral_marked_lowering":_root_strings(bracket),"marked_ordering":_marked_reordering(bracket,4),
             "E6_fundamental_dimensions":dims,"E6_fundamental_centre_grades":grades,
             "E6_profiles_by_6Y":list(map(_charge_counts,_e6_weight_profiles())),
+            "marked_source":marked_source_controls(
+                tuple(r["neutral_root_orbit_sizes"][0] for r in charged_ward), COLOUR_SIMPLE, bracket),
             "physical_source_identity_proved":False,"original_values":None}

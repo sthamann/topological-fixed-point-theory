@@ -8,6 +8,17 @@ The current [plan audit](PLAN-AUDIT.md) covers the original requirements and
 the three later sets of scenario tests. The first priority is the
 [same-source R113 test](R113-R104-RELATIONAL.md).
 
+## 15 November 2026 · Reflected form in the marked affine chart
+
+The marked charged adjoint fixes the relative reflected form on the
+identified affine grade one space. Its Ward constraints leave one
+common scale, which the level-one vacuum return can bind to the empty
+reference. The character refined modulo twelve distinguishes the two
+parts of the coarse neutral class. The next original input is still
+the weighted reflected pairing with its absolute reference and physical
+time insertion. Compare that pairing and the marked adjoints before the
+outer selection. [Derivation and source checks](P1-MARKED-AFFINE-METRIC.md).
+
 ## 15 November 2026 · Charged P1 field search and execution
 
 The fixed folded chart provides three early marked lines in
