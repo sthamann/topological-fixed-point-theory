@@ -83,6 +83,36 @@ def controls():
                     sp.simplify)==sp.zeros(8),
                 "D4 physical-positive CAR frame cannot be whitened")
 
+    # New sharp **source-level** sufficient condition: the given
+    # spectral triple has a grading Gamma. IF its actual OS/CAR source
+    # realization makes this Gamma act by +1 on the five sections and
+    # -1 on the three logarithmic differentials, and preserves the
+    # positive Hermitian form, the mixed modulus z MUST vanish.
+    # This identification with the original physical Gamma is not
+    # assumed in any prior calculation.
+    gamma=sp.diag(*([1]*5+[-1]*3))
+    ward=gamma.H*G*gamma-G
+    expected_ward=sp.zeros(5).row_join(-2*M).col_join(
+        (-2*M.H).row_join(sp.zeros(3)))
+    require(ward==expected_ward and
+            (ward.subs(z,0)==sp.zeros(8)) and
+            ward.subs(z,sp.Rational(1,2))!=sp.zeros(8),
+            "chiral source-orthogonality Ward gate changed")
+    # Even the additional demand that the candidate geometric
+    # odd operator D be physically G-selfadjoint only fixes Im z=0.
+    # An actual Gamma source isometry is strictly stronger: z=0.
+    embedding=sp.Matrix(5,3,lambda i,j:int(i==j+1))
+    candidateD=sp.zeros(5).row_join(embedding).col_join(
+        embedding.T.row_join(sp.zeros(3)))
+    d_ward=(candidateD.H*G-G*candidateD)
+    real_z=sp.symbols("r",real=True)
+    require(d_ward.subs(z,real_z)==sp.zeros(8) and
+            d_ward.subs(z,(3+4*sp.I)/10)!=sp.zeros(8),
+            "physical Hermiticity not isolated to a real overlap")
+    require(gamma*r8==r8*gamma and gamma*s8==s8*gamma and
+            gamma*candidateD==-candidateD*gamma,
+            "original D4 and geometric form-parity candidate incompatible")
+
     return {
       "status":"EXACT_D4_ORIGINAL_5PLUS3_GRAM_SOURCE_GATE",
       "mixed_complex_intertwiner_dimension":len(kernel),
@@ -97,6 +127,11 @@ def controls():
       "whitening_preserves_geometric_C4_D4_operators":True,
       "source_parameter_z_does_not_affect_abstract_D4_CAR_character_within_positive_rank_8":True,
       "source_parameter_z_still_needed_for_weighted_Q0_and_time":True,
+      "form_parity_ward_orthogonality_forces_z_zero":True,
+      "physical_Gamma_must_act_plus_on_C5_minus_on_F3":"conditional source-map premise",
+      "source_graded_eight_mode_positive_rank_when_Gamma_isometric":8,
+      "candidate_D_physical_G_selfadjoint_only_for_real_z":True,
+      "original_spectral_triple_Gamma_identified_with_form_degree":False,
       "saturated_6_mode_null_quotient_condition":"|z|=1",
       "source_positivity_failure":"|z|>1",
       "regression_witnesses":witness,
