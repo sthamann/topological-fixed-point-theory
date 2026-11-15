@@ -191,6 +191,36 @@ not posit, the determinant pair from the unnormalized native scalar
 and its original bosonic integration** before comparison to the
 synthetic angle ratios.
 
+### Sharper single-operator parity formulation
+
+The same determinant pair requires **only one** relative one-particle U
+if one is allowed both the ordinary and fermion-parity graded full
+Exterior traces of Gamma(U):
+
+    Zordinary = Tr_Fock Gamma(U)          = det(I+U)
+    Zgraded  = Tr_Fock((-1)^F Gamma(U))   = det(I-U).
+
+On the 2-mode Fock space the two fermion-parity partial traces are
+Zeven=1+det(U)=2 and Zodd=tr(U)=2cos(delta). Therefore
+
+    Zordinary*Zgraded = Zeven²-Zodd²
+                       = 4 sin²(delta).
+
+At the square the odd-sector full trace vanishes and the even-sector
+trace is two. This is a more economical **candidate** than
+postulating two unrelated fermion evolutions U and -U. It could
+connect to the original TFPT seam-even selection and oriented
+fermionic signs.
+
+**But an even-sector full trace is NOT the zero-particle vacuum
+matrix element.** The native R113 empty state is one, not two;
+and the original physical selector is placed on the entire source,
+not an assumed interior parity-weighted Fock trace. The exact
+two-mode parity identity is thus a **source-binding target**, not a
+derivation of the physical determinant factor. One must explicitly
+show from the original source that a full trace/supertrace pair
+appears and that its physical reference does not cancel the effect.
+
 ## Mandatory original-source F1 test
 
 On the actual finite blocked original source with its original Higgs, gauge, geometry, fermion, ghost, eta, selector and common reference, compute the charged neutral-root return and all four R113 values at the square and at t=1/3, 1/2 and 2/3. Factor out only the provably source-identical free E8 root component. Determine whether its remaining physical scalar, including its BRST/Pfaffian/eta weight, has the above pair-determinant exponent and angle dependence. Verify at TWO consecutive blocked levels, including the actual weighted fiber pushforward and the same positive-time Gram.
