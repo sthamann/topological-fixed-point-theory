@@ -17,6 +17,10 @@ class QutritCARE8BridgeTests(unittest.TestCase):
         self.assertFalse(r["unital_M3_inside_each_CAR8_even_parity_128_block_exists"])
         self.assertEqual(r["minimum_common_finite_unital_representation_dimension"],768)
         self.assertEqual(r["exact_full_product_algebra"],"M3 tensor M256=M768")
+        self.assertFalse(r["unital_M3_inside_quasilocal_infinite_CAR_UHF_2infinity_exists"])
+        self.assertEqual(r["infinite_CAR_UHF_projection_trace_obstruction"],
+                         "1/3 is not dyadic (Z[1/2])")
+        self.assertTrue(r["distinct_factor_or_non_quasilocal_completion_needed_for_unital_M3"])
 
     def test_exhaustive_CAR8_Clifford_relations_and_independent_M3_action(self):
         r=self.report["unital_qutrit_CAR_source_embedding"]
