@@ -48,8 +48,8 @@ def controls():
     odd_split=(2/sp.pi)*sp.log(1/t)
     require(sp.simplify(sp.exp(2*sp.pi*odd_split)-t**(-4))==0,
             "charged ratio not tied to original v512 odd DtN splitting")
-    require(ratio.subs(u,uparam).subs(t,sp.Rational(1,2))==16 and
-            ratio.subs(u,uparam).subs(t,1)==1,
+    require(sp.simplify(ratio.subs(u,uparam).subs(t,sp.Rational(1,2))-16)==0 and
+            sp.simplify(ratio.subs(u,uparam).subs(t,1)-1)==0,
             "original nonsquare and square charged comparisons changed")
 
     # A single neutral three-current word has no intrinsic four-point
@@ -79,8 +79,8 @@ def controls():
     even_trace=sp.factor(sp.trace(even*gamma))
     odd_trace=sp.factor(sp.trace(odd*gamma))
     product=sp.factor(sp.trace(gamma)*sp.trace(parity*gamma))
-    require(even_trace==2 and odd_trace==2*(1-t*t)/(1+t*t) and
-            product==16*t*t/(1+t*t)**2,
+    require(even_trace==2 and sp.simplify(odd_trace-2*(1-t*t)/(1+t*t))==0 and
+            sp.simplify(product-16*t*t/(1+t*t)**2)==0,
             "fermionic even projection confused with trace/supertrace product")
 
     return {
