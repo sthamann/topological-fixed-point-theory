@@ -87,6 +87,31 @@ P1 source. It does not force the even weaker *gauge* identification:
 the three C4 characters are distinct and do not themselves commute
 with a full SU3.
 
+## One geometric form links the primitive winding and the 3+2 exact sequence
+
+The explicit intertwiner in the sequence is eta_log = dz/z. It satisfies
+r*eta_log = eta_log, s*eta_log = -eta_log, and its residue at the
+quarter-rotation fixed point 0 is +1 (the other at infinity is -1).
+Thus the oriented circle around 0 has normalized period
+
+  (1/2pi i) integral eta_log = 1.
+
+This is exactly the same **integer** primitive winding appearing in the
+P1 boundary contract, and one differential also supplies the extra
+orientation line for the 3-dimensional logarithmic modes. If, and ONLY
+if, the original Quillen/determinant and modular response is established
+to coincide with this logarithmic primitive and the native index-four
+expectation, the arithmetic c3 = 1/(4*2pi) = 1/(8pi) would then follow
+from a shared source.
+
+**Type fence:** eta_log=dz/z is an ordinary meromorphic logarithmic
+one-form on P1 with poles at the two fixed points; it is NOT the
+spectral APS eta-invariant, fermionic Pfaffian orientation or original
+full-source eta factor. This geometrical identity proves no determinant
+variation, thermal modular response or P1 physical normalization by
+itself. The pair of rotation fixed points is part of the given square
+geometry and must first emerge from any fully primitive theory.
+
 ## Negative gauge test and minimal compensating family channel
 
 On the nontrivial C3, rotation has three **distinct** eigenvalues
