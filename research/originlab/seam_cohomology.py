@@ -45,6 +45,22 @@ def controls():
         y*x*y==x.inv() for x,y in ((rc,sc),(rf,sf))),
         "the intrinsic reflection orientation line is missing")
 
+    # The two fixed points of r on P1 are z=0 and z=infinity.
+    # Evaluation on O(D) sends f0 -> (-1,0), f4 -> (0,1), and
+    # annihilates f1,f2,f3. Multiplication by dz/z identifies
+    # f_(j+1) with the original logarithmic omega_j.
+    endpoint = sp.Matrix([[-1,0,0,0,0],[0,0,0,0,1]])
+    inclusion = sp.Matrix(5,3,lambda i,j:int(i==j+1))
+    endpoint_rotation = sp.eye(2)
+    endpoint_reflection = sp.Matrix([[0,1],[1,0]])
+    _require(endpoint.rank()==2 and inclusion.rank()==3 and
+             endpoint*inclusion==sp.zeros(2,3) and
+             r5*inclusion==inclusion*rf and
+             s5*inclusion==-inclusion*sf and
+             endpoint*r5==endpoint_rotation*endpoint and
+             endpoint*s5==endpoint_reflection*endpoint,
+             "exact D4-equivariant 3+2 fixed-point evaluation sequence fails")
+
     # C3 x F3^*, pairing characters +j with -j cancels clock charge.
     rt = sp.kronecker_product(rc,rf.inv().T)
     st = sp.kronecker_product(sc,sf.inv().T)
@@ -84,6 +100,10 @@ def controls():
     return {
        "status":"EXACT_FINITE_SEAM_COHOMOLOGY",
        "source_theorems":["v189","v197","v228","v512","architecture shared c3 P1 P2 origin"],
+       "fixed_point_evaluation_rank":2,
+       "fixed_point_evaluation_kernel_dimension":3,
+       "D4_orientation_twisted_three_plus_two_exact_sequence":True,
+       "two_fixed_points":"0 and infinity (original quarter rotation)",
        "five_mode_c4_multiplicities":{"1":2,"i":1,"-1":1,"-i":1},
        "log_family_c4_multiplicities":{"1":0,"i":1,"-1":1,"-i":1},
        "functorial_orientation_twist":"C3 == F3 tensor reflection_sign on D4",
