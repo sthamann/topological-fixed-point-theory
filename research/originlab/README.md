@@ -81,6 +81,47 @@ parent. It cannot be used to assign a physical source value. See
 and [independent test cases](test_seam_cohomology.py).
 `--finite-controls-only` includes this control.
 
+## F1 P1 modulus: native E8 chiral saddle and actual source-stiffness gate (15 November)
+
+Three new **source-adjacent exact** OriginLab campaigns eliminate a
+large class of false P1 solution claims:
+
+    python3 -B research/originlab/main.py --out /tmp/originlab-modular \
+      --campaign p1_original_j_witness --campaign p1_modular_source_no_go \
+      --campaign p1_modulus_score
+
+The original v512 elliptic invariant at t=tan(delta/2) is exactly
+j(t)=256*(1+t²+t⁴)^3/(t⁴*(1+t²)²). Its log derivative is strictly
+NEGATIVE throughout 0<t<1; j(1)=1728 and the original nonsquare
+v512 witness t=1/2 yields j=148176/25. Since the standard
+chiral E8_1 vacuum character is chi=E4/eta^8=j^(1/3), **the
+square is a global MINIMUM of the bare chiral E8 character modulus
+along this marked family**, not a maximum. At tau=i the character
+is exactly 12 and its two-dimensional modulus Hessian has opposite
+signs, making i a SADDLE. A purely chiral maximum-selector is
+mathematically excluded.
+
+Two explicitly constructed, time-sewing-consistent OS-positive
+V4/reflection symmetric source comparison kernels have the same
+time generator but select OPPOSITE modulus extrema. Thus those
+generic source axioms do not determine the square. The exact
+fixed-domain history identity
+d²log Z/dx²=Var(S')-E(S'') at x=log t shows what the
+actual weighted source must produce: net geometric stiffness must
+beat fluctuation variance. In TFPT the physical moving-domain
+basis measure, P_adm derivatives, eta and absolute reference also
+have to be included before any positive/negative modulus claim.
+A conditional factorization with |chi_E8|² would require rest
+vertical log-curvature less than -19.1570718 at tau=i.
+
+These are **not** evaluations of the original Q0, two blocked
+fiber levels, same-reference R113 Z0/ZU/ZY/ZUY or 3+1D
+parent. See [full source-grounded result](P1-MODULAR-E8-SOURCE-SADDLE-20261115.md),
+[p1_original_j_witness.py](p1_original_j_witness.py),
+[p1_modular_source_no_go.py](p1_modular_source_no_go.py),
+[p1_modulus_score.py](p1_modulus_score.py) and their regression
+tests. They remain in finite controls, NOT a promoted F1 theorem.
+
 ## Important correction: regional SL2 transports the marks; it is NOT an internal fixed-mode unitary
 
 Run these two exact finite campaigns:
