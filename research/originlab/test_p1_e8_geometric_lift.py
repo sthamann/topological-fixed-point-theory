@@ -44,6 +44,17 @@ class P1E8GeometricLiftTests(unittest.TestCase):
                             for root in ROOTS))
         self.assertTrue(self.report["all_240_native_root_phase_equalities_proved"])
 
+    def test_exact_weyl_word_is_not_plain_SO16_bogoliubov(self):
+        r=self.report
+        self.assertEqual(r["Weyl_root_type_conversion"],
+                         {"D8_to_D8":48,"D8_to_spinor":64,
+                          "spinor_to_D8":64,"spinor_to_spinor":64})
+        self.assertEqual(r["bilinear_root_to_spinor_example"],
+                         {"from":[2,0,2,0,0,0,0,0],
+                          "to":[-1,-1,1,-1,1,1,1,-1]})
+        self.assertFalse(r["this_Weyl_transformation_can_be_a_plain_O16_Bogoliubov_rotation"])
+        self.assertTrue(r["full_E8_spinor_extension_required_for_this_Weyl_word"])
+
     def test_geometric_CAR_and_full_source_identification_remain_open(self):
         report=self.report
         self.assertFalse(report["five_plus_three_independent_physical_modes_proved"])
