@@ -22,8 +22,8 @@ from verify import car_replay, clock_test, digest, eigenvalue_test, r102
 
 HERE = Path(__file__).resolve().parent
 CAMPAIGNS = ("r113", "r113_synthesis", "source_bridge", "marked_search", "double_cell", "moving_carrier", "affine_polarization", "affine_operators", "affine_car", "colour_ward", "weak_source", "weak_folded_clock", "p1_field_search", "weak_return_rank", "four_mark_geometry", "f1_family_index", "r102", "bell", "clock", "identifiability", "four_mark_selection",
-             "spectral_source_controls", "empirical_source_audit", "composed_search", "seam_cohomology", "p1_source_falsifiers", "p1_charged_modulus", "p1_four_current_gate", "p1_e8_geometric_lift", "p1_seam_dirac", "p1_spinor_cover", "p1_geometric_gram", "p1_minimal_spinor_marks", "p1_principal_su3", "p1_principal_su3_ward", "p1_moving_divisor_origin", "p1_operator_closure", "p1_modular_source_no_go", "p1_modulus_score", "p1_original_j_witness", "p1_elliptic_determinant_source", "f1_source_theorem_audit", "f1_functorial_source", "f1_hidden_history_dilation", "f1_covariant_quantum_semigroup", "f1_spin2_stieltjes_gate", "f1_single_source_clifford_bridge", "p0", "f1")
-FINITE_CONTROLS = ("double_cell", "moving_carrier", "affine_polarization", "affine_operators", "affine_car", "colour_ward", "weak_source", "weak_return_rank", "four_mark_geometry", "f1_family_index", "seam_cohomology", "p1_source_falsifiers", "p1_charged_modulus", "p1_four_current_gate", "p1_e8_geometric_lift", "p1_seam_dirac", "p1_spinor_cover", "p1_geometric_gram", "p1_minimal_spinor_marks", "p1_principal_su3", "p1_principal_su3_ward", "p1_moving_divisor_origin", "p1_operator_closure", "p1_modular_source_no_go", "p1_modulus_score", "p1_original_j_witness", "p1_elliptic_determinant_source", "f1_source_theorem_audit", "f1_functorial_source", "f1_hidden_history_dilation", "f1_covariant_quantum_semigroup", "f1_spin2_stieltjes_gate", "f1_single_source_clifford_bridge")
+             "spectral_source_controls", "empirical_source_audit", "composed_search", "seam_cohomology", "p1_source_falsifiers", "p1_charged_modulus", "p1_four_current_gate", "p1_e8_geometric_lift", "p1_seam_dirac", "p1_spinor_cover", "p1_geometric_gram", "p1_minimal_spinor_marks", "p1_principal_su3", "p1_principal_su3_ward", "p1_moving_divisor_origin", "p1_operator_closure", "p1_modular_source_no_go", "p1_modulus_score", "p1_original_j_witness", "p1_elliptic_determinant_source", "f1_source_theorem_audit", "f1_functorial_source", "f1_hidden_history_dilation", "f1_covariant_quantum_semigroup", "f1_spin2_stieltjes_gate", "f1_single_source_clifford_bridge", "f1_ramond_e8_grade_bridge", "p0", "f1")
+FINITE_CONTROLS = ("double_cell", "moving_carrier", "affine_polarization", "affine_operators", "affine_car", "colour_ward", "weak_source", "weak_return_rank", "four_mark_geometry", "f1_family_index", "seam_cohomology", "p1_source_falsifiers", "p1_charged_modulus", "p1_four_current_gate", "p1_e8_geometric_lift", "p1_seam_dirac", "p1_spinor_cover", "p1_geometric_gram", "p1_minimal_spinor_marks", "p1_principal_su3", "p1_principal_su3_ward", "p1_moving_divisor_origin", "p1_operator_closure", "p1_modular_source_no_go", "p1_modulus_score", "p1_original_j_witness", "p1_elliptic_determinant_source", "f1_source_theorem_audit", "f1_functorial_source", "f1_hidden_history_dilation", "f1_covariant_quantum_semigroup", "f1_spin2_stieltjes_gate", "f1_single_source_clifford_bridge", "f1_ramond_e8_grade_bridge")
 
 
 def atomic_json(path, payload):
@@ -228,6 +228,9 @@ def execute(campaign, root, args, suggestion_rows, retained_rows, prior_question
         return controls()
     if campaign == "f1_single_source_clifford_bridge":
         from f1_single_source_clifford_bridge import controls
+        return controls()
+    if campaign == "f1_ramond_e8_grade_bridge":
+        from f1_ramond_e8_grade_bridge import controls
         return controls()
     if campaign == "double_cell":
         from double_cell import replay
