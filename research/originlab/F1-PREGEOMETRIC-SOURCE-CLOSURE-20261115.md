@@ -129,7 +129,34 @@ gives TT propagator
 
 There is an ADDITIONAL massive spin-two pole at z=-2. Its residue is positive, so this example does not prove a ghost, but it refutes the claimed massless-only TT spectrum. In general F(z)=a+mu/(z+m), a,m,mu>0, has a negative-axis zero at z=-(m+mu/a), yielding another pole with positive residue mu/[a(a*m+mu)]. The original physical source must control its zero/branch structure to prove the actual graviton spectrum. Stieltjes positivity alone does not.
 
-## 6. What has REALLY been closed; strict gates still separating TFPT from F1
+## 6. A single internal quantum algebra can supply the CAR16 / spinor128 *algebraic* bridge, but not the affine E8 conformal grade
+
+The previous P1 5+3, 16 Majorana and E8 statements were separate candidate identifications. Starting NOW from the exact same **positive M3 Hilbert–Schmidt source**, the traceless subspace
+
+    V8 = {A in M3(C):Tr A=0}
+
+has exactly eight complex dimensions, an explicit positive orthogonal Hermitian basis (metric diagonal 2 repeated seven times, 6 once), and inherits the principal quarter rotation by conjugation with the real SO3 90-degree matrix. The actual 8D matrix has FOUR eigenspaces of multiplicity (2,2,2,2), exactly the previously audited P1 geometric C4 character. The original full geometric D4 intertwiners remain a separate finite twist and must not be conflated with this abstract eigenspace census.
+
+Apply the **canonical fermionic exterior/Clifford functor** to the Hilbert space V8. It has eight complex CAR operators and therefore 16 real Majorana generators. The Fock space has dimension 2^8=256 and its even halfspinor contains 128 states. We tested **all 49,152 source CAR anticommutators** on all 256 occupation masks. The 16-dimensional Majorana vector has phase classes (4,4,4,4), its 120 bilinear so16 generators have classes (28,32,28,32), and the even 128 spinor states (32,32,32,32); the combined 248 vector-space classes (60,64,60,64) agree with the known standard E8=so16+spinor finite Lie algebra construction and native current character. This is the first direct route *from the same positive M3 source* to the 16 Majorana algebra, rather than separately postulating eight independent physical fermion fields from the 5+3 geometry.
+
+The fermionic functor itself is a **CHOICE OF QUANTIZATION**: it is mathematically canonical once CAR is selected but is not forced by the original TFPT source. Nor does counting the E8 character prove that the 248 root current Lie brackets or level-one vertex OPEs occur on the physical reflected Hilbert space.
+
+### A sharp additional obstruction: the lifted microscopic clock does not give E8 weight one
+
+Second quantizing the ORIGINAL chosen M3 depolarizing transfer on the eight traceless modes yields the positive exterior transfer Gamma(q I8). Its action on a k-particle state is **q^k** and its common vacuum matrix element is exactly **1**. The ordinary trace and supertrace differ sharply:
+
+    Tr_Fock Gamma(q I8) = (1+q)^8,
+    Str_Fock Gamma(q I8) = (1-q)^8.
+
+For q=1/2 these are 6561/256 and 1/256, versus the native R113 EMPTY Fock expectation 1. No full trace is licensed by the original zero-fermion cap, consistent with the prior R113 source contract.
+
+The unique normalized source clock on Fock is the occupation operator N, so the 128 even Fock states lie in **different time-energy grades** 0,2,4,6,8. In contrast, the 128 spinor ROOT CURRENTS of the actual affine E8 at level one all have conformal weight ONE. No nonzero affine rescaling H=kappa N+c can assign equal weight one to all even Fock states; the only algebraic solution is kappa=0, c=1, which makes the source time evolution TRIVIAL on that sector. Thus naive second quantization of the uniquely covariant M3 channel does **NOT** produce the local affine E8 current dynamics, even though its CAR dimensions and quarter character match exactly.
+
+The missing primitive is now more precise: a source-derived **chiral conformal energy grading / local operator product and spinor extension** on a continuum one-particle mode space, rather than another 248-dimension match. Finite CAR Fock is only an abstract zero-mode module. An honest E8_1 construction needs infinitely many chiral fermion oscillators, current algebra locality/OPE, spin structure/GSO selection and a physical one-sided reflected source that realizes those fields. This is precisely what the original one-sided TFPT Dirac/BRST source has not supplied.
+
+Executable exact bridge: [f1_single_source_clifford_bridge.py](f1_single_source_clifford_bridge.py) and [six independent tests](test_f1_single_source_clifford_bridge.py). **F1 remains open.**
+
+## 7. What has REALLY been closed; strict gates still separating TFPT from F1
 
 Established in concrete finite mathematics, with reproducible exact tests:
 - A pre-spatial M3 quantum source with explicit Kraus complete positivity, unitality, stationary state and a single common microscopic rule.
