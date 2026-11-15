@@ -36,6 +36,10 @@ At the old v512 counterwitness \`tan(delta/2)=1/2\`, \`Delta_odd=2log2/pi\`, \`I
 
 **Conditional new selection lemma:** If the original weighted P1 source itself demands a lossless isometric identification between exactly these first four Fourier modes and its four bound mark channels (and the physical domain/normalization agree), it selects \`mu4\` without a separately postulated flag bit. This required \`W*W=I\` **is not established by OS positivity, V4 symmetry or E8 Ward data alone**. It may be a new selection assumption; testing it is the actual origin task.
 
+### Critical countermodel: existence of a weighted isometry does not select the square
+
+The determinant maximum above implicitly fixes *both* the mark-channel and the four-mode Hilbert metrics to their flat Euclidean forms. That choice is not part of the original weighted R113 source. For **every** distinct four-mark configuration the normalized square evaluation matrix \`F=V/2\` is invertible. Define \`G=(F F*)^{-1}\`, which is strictly positive. Then the *weighted* isometry \`F* G F=I\` holds identically for **all** moduli; hence existence of some reflection-positive Gram metric with a lossless Fourier frame is **not** a square selector. On the actual original v512 nonsquare witness \`u=(3+4i)/5\`, the exact positive \`G\` has eigenvalues \`5/8\` (twice) and \`5/2\` (twice), and \`F*GF=I\`. The candidate would only constrain the modulus if the **source itself** supplies the channel metrics, normalization and their frame identification independently of the configuration. The existing original source constructor does not yet compute them. Thus one must not promote the finite Fekete selector into the F1 premise without the weighted physical kernel.
+
 ## 4. Original square arc Laplacian = two-cell Clifford stabilizer
 
 v512 defines the arc-weighted cyclic four-mark Laplacian \`L_delta\` with adjacent weights \`1/delta\` and \`1/(pi-delta)\`. At the square \`delta=pi/2\`, its eigenvalues are \`0,4/pi,4/pi,8/pi\`; normalize its first gap by \`H_square=(pi/4)L_square\`.
@@ -61,6 +65,12 @@ On the square at \`t=ln2\`, its finite four-mark matrix has eigenvalues
 \`{log(16/15)/pi, log(3)/pi (twice), log(5/3)/pi}\`.
 
 This is NOT the Markov-semigroup matrix \`exp(-t H_square)\`; the relative eigenvalues and the operator roles differ. It is incorrect to call the arc Laplacian the original physical time just because both share square symmetry. The full R113 source still requires all original fields, insertions, selector, unnormalized reference and limit order.
+
+### Native affine parity obstruction forces additional grades or sectors
+
+The parallel [native fibre/clock audit](P1-FIBRE-AND-CLOCK.md) now reports exact grade-one E8 glue-clock phase multiplicities \`(60,64,60,64)\` at eigenphases \`(1,i,-1,-i)\`. Therefore \`tr(U4²|H1)=60-64+60-64=-8\`; the affine vacuum grade zero has \`tr(U4²|H0)=1\`. If an invertible proposed seam polarization exchanger \`S\` anticommutes with \`Pi=U4²\` **and** preserves the affine energy grading \`L0\`, then on every finite grade \`tr Pi = tr(S Pi S^-1) = -tr Pi\` and hence must vanish, contradictory already at grades zero and one. In grade one any parity-flipping operator has nullity at least \`|120-128|=8\`. The existing report's minimal balanced 256-dimensional spectral *cover* at grade one remains only a clock-spectrum cover; it does not intertwine the original E8 currents or prove a physical seam.
+
+A coherent parity pump can evade this finite-grade no-go by mixing grades: on a toy positive integer energy ladder, the self-adjoint swap \`S|2k>=|2k+1>\`, \`S|2k+1>=|2k>\` reverses parity but fails to commute with the grade operator. This makes a **dynamical sector-changing original P1 source** a concrete candidate, not an established fact. A genuine source-identified operator, full affine mode relations, physical reflected form and mixed R113 marks are necessary. Alternatively extra full graded sectors or non-invertibility can evade the premises; do not conclude that time emergence is mathematically forced by this conditional argument alone.
 
 ## 6. Modular time: a precise extension and a finite obstruction
 
