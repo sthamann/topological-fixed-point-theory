@@ -37,8 +37,12 @@ def _commutant_rank(actions):
     return n*n-co.rank()
 
 def _a2_subsystems():
-    """Full native E8 root chart and its C4 fixed root census."""
-    from affine_operators import ROOTS, charge_signature
+    """Classify all *regular E8 root A2* copies by the NATIVE C4
+    phase and commuting with the pinned physical colour/weak/Y chart.
+    Nonregular SU3 embeddings and other current levels are out of scope.
+    """
+    from affine_operators import ROOTS, charge_signature, WEAK_ROOT
+    from colour_ward import COLOUR_SIMPLE, HYPERCHARGE
     allroots=set(ROOTS)
     sub=set()
     for a in ROOTS:
@@ -53,7 +57,40 @@ def _a2_subsystems():
     nfixed=sum(s<=fixed for s in sub)
     require(len(sub)==1120 and nfixed==44 and len(fixed)==52,
             "E8 A2 gauge embeddings/quarter-fixed embeddings changed")
-    return len(sub),nfixed
+    def profile(s):
+        grades=Counter(charge_signature(root)[0] for root in s)
+        grades[0]+=2  # A2 Cartan currents
+        return tuple(grades[k] for k in range(4))
+    def orthog(root,beta):
+        return sum(x*y for x,y in zip(root,beta))==0
+    def colour_central(s):
+        return all(orthog(root,colour) for root in s
+                   for colour in COLOUR_SIMPLE)
+    def full_sm_central(s):
+        return colour_central(s) and all(
+            orthog(root,WEAK_ROOT) and
+            sum(root[k]*HYPERCHARGE[k] for k in range(8))==0
+            for root in s)
+    allprof=Counter(profile(s) for s in sub)
+    colprof=Counter(profile(s) for s in sub if colour_central(s))
+    smprof=Counter(profile(s) for s in sub if full_sm_central(s))
+    require(allprof=={(2,2,2,2):480,(4,2,0,2):416,
+                      (4,0,4,0):180,(8,0,0,0):44}
+            and colprof=={(2,2,2,2):48,(4,2,0,2):32,
+                          (4,0,4,0):36,(8,0,0,0):4}
+            and smprof=={(4,2,0,2):6,(8,0,0,0):4},
+            "native C4/colour/weak/Y root-subalgebra census changed")
+    return {
+      "total_regular_E8_A2":len(sub),
+      "fixed_A2":nfixed,
+      "all_C4_profiles":{str(k):v for k,v in sorted(allprof.items())},
+      "color_centralizer_A2":sum(colprof.values()),
+      "color_centralizer_balanced_A2":colprof[2,2,2,2],
+      "full_SM_centralizer_A2":sum(smprof.values()),
+      "full_SM_centralizer_balanced_A2":smprof[2,2,2,2],
+      "full_SM_centralizer_profiles":{str(k):v for k,v in sorted(smprof.items())},
+      "only_regular_root_A2_subalgebras_classified":True
+    }
 
 def controls():
     sym,anti=_basis()
@@ -129,7 +166,7 @@ def controls():
             sp.limit(f2*z**2,z,sp.oo)==1,
             "original f2 cannot supply chi twist with double zero at both fixed points")
 
-    all_a2,quarter_a2=_a2_subsystems()
+    a2=_a2_subsystems()
     # Kostant's rank-two principal sl2 exponents from the standard
     # classification: A2=(1,2), B2=(1,3), G2=(1,5).
     # The two original spaces are (n-1,n+1) for n marks.
@@ -158,8 +195,15 @@ def controls():
       "untwisted_geometric_D4_is_an_SU3_bracket_automorphism":False,
       "twisted_geometric_D4_can_act_as_principal_SU3_automorphism":True,
       "principal_rank_two_simple_n_mark_matches":matches,
-      "all_E8_A2_root_subalgebras":all_a2,
-      "quarter_fixed_E8_A2_root_subalgebras":quarter_a2,
+      "all_E8_A2_root_subalgebras":a2["total_regular_E8_A2"],
+      "quarter_fixed_E8_A2_root_subalgebras":a2["fixed_A2"],
+      "E8_A2_quarter_grade_profiles":a2["all_C4_profiles"],
+      "quarter_balanced_E8_A2_subalgebras":a2["all_C4_profiles"]["(2, 2, 2, 2)"],
+      "quarter_balanced_A2_commuting_with_native_colour":a2["color_centralizer_balanced_A2"],
+      "A2_commuting_with_native_full_colour_weak_hypercharge":a2["full_SM_centralizer_A2"],
+      "quarter_balanced_A2_commuting_with_native_full_SM":a2["full_SM_centralizer_balanced_A2"],
+      "native_full_SM_A2_centralizer_quarter_profiles":a2["full_SM_centralizer_profiles"],
+      "full_SM_no_go_scope":"regular E8 root A2 embedding in pinned physical D8 charge chart",
       "source_bracket_and_cubic_OPE_identified":False,
       "physical_colour_SU3_embedding_selected":False,
       "8_complex_free_fermion_interpretation_excluded":False,
