@@ -32,6 +32,14 @@ class GeometricGramSourceTests(unittest.TestCase):
         G=sp.eye(5).row_join(X).col_join(X.H.row_join(sp.eye(3)))
         self.assertEqual(sp.factor(G.det()-(1-z*sp.conjugate(z))**2),0)
 
+    def test_exact_D4_equivariant_gram_whitening_in_positive_phase(self):
+        report=self.result
+        self.assertTrue(report["source_D4_equivariant_whitening_exists_for_every_strictly_positive_z"])
+        self.assertTrue(report["whitening_preserves_geometric_C4_D4_operators"])
+        self.assertTrue(report["source_parameter_z_does_not_affect_abstract_D4_CAR_character_within_positive_rank_8"])
+        self.assertTrue(report["source_parameter_z_still_needed_for_weighted_Q0_and_time"])
+        self.assertEqual(report["full_8_CAR_rank_condition"],"|z|<1")
+
     def test_source_outstanding(self):
         self.assertFalse(self.result["actual_original_weighted_mixed_gram_z_computed"])
         self.assertFalse(self.result["source_actual_fermion_CAR_assignments_proved"])
