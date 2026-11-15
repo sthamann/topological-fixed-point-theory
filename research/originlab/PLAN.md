@@ -1,5 +1,9 @@
 # OriginLab implementation plan
 
+## 15 November 2026 · Native spatial return at every Fourier depth
+
+The native `source_bridge` now eliminates the full96 Fourier tails through block Schur recursions. The retained two modes generate rank `192(k+1)` through return degree `k`. Any fixed finite spatial transfer loses some of those exact returns. The executable proof gives a cutoff error and the regularized relative spatial determinant. The next original operation remains the physical basis integration and absolute empty reference of the same R113 source. [Derivation and replay](F1-NATIVE-SPATIAL-RETURN-20261115.md).
+
 Baseline, 13 November 2026. Fundamental plan revision 354, live Atlas revision
 `dae6e14e742903fb1209dd9e`, F1 in progress. The Atlas added
 `problem:f1-session-synthesis-20261113`. Its regional and charged-word

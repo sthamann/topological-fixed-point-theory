@@ -7,12 +7,13 @@ from pathlib import Path
 import sympy as sp
 
 from source import NATIVE
+import spatial_memory
 
 ORDERED = Path("experiments/theory-contracts/chat-triangulation-20261108/"
                "R113-ORIGINAL-UND-REFERENZ-20261109.txt")
 REGIONAL = Path("docs/research/fundamental-plan/TFPT-REGIONALE-KOMPOSITION-20261112.txt")
 TRANSPORT = Path("docs/research/fundamental-plan/TFPT-TRAEGERTRANSPORT-PICARD-KUBIK-20261111.txt")
-INPUTS = (ORDERED, REGIONAL, TRANSPORT)
+INPUTS = (ORDERED, REGIONAL, TRANSPORT, *spatial_memory.INPUTS)
 
 
 def charged_fibre(root):
@@ -117,5 +118,6 @@ def replay(root):
                      "on a common invariant domain; F*F=I+E*E on that sector",
         },
         "pointwise_affine_profiles": controls(),
+        "native_spatial_memory": spatial_memory.replay(root),
         "physical_solution": False,
     }
