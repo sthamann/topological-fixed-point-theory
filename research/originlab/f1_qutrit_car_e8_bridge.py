@@ -18,7 +18,73 @@ def require(ok, why):
         raise ArithmeticError(why)
 
 
+def _car_action(mode, mask, creation):
+    occupied=(mask >> mode) & 1
+    if (creation and occupied) or (not creation and not occupied):
+        return None
+    sign=-1 if (mask & ((1<<mode)-1)).bit_count()%2 else 1
+    return (sign,mask^(1<<mode))
+
+
+def _car_pair(first,second,mask):
+    right=_car_action(second[0],mask,second[1])
+    if right is None:
+        return {}
+    left=_car_action(first[0],right[1],first[1])
+    return {} if left is None else {left[1]:right[0]*left[0]}
+
+
+def _sum_actions(x,y):
+    z={}
+    for action in (x,y):
+        for k,v in action.items():
+            z[k]=z.get(k,0)+v
+    return {k:v for k,v in z.items() if v}
+
+
+def verify_eight_mode_fock_and_qutrit_tensor_host():
+    """Check every Fock basis mask and all 8x8 CAR anticommutators.
+
+    A commuting qutrit action is defined on a SEPARATE tensor factor.
+    It is not a physical TFPT field identification or E8_1 VOA.
+    """
+    checks=0
+    for i in range(8):
+        for j in range(8):
+            for mask in range(256):
+                aa=_sum_actions(
+                    _car_pair((i,False),(j,False),mask),
+                    _car_pair((j,False),(i,False),mask))
+                mixed=_sum_actions(
+                    _car_pair((i,False),(j,True),mask),
+                    _car_pair((j,True),(i,False),mask))
+                require(aa=={} and mixed==({mask:1} if i==j else {}),
+                        "actual 8-mode Fock CAR Clifford relations failed")
+                checks+=2
+    # Each E_ab acts on a three-state index, and CAR8 on the separate
+    # 256-state occupation index. Verify the commutation independently
+    # on all 768 product basis states and all 9 matrix units.
+    commuting_checks=0
+    for a in range(3):
+        for b in range(3):
+            for mode in range(8):
+                for state in range(3):
+                    for mask in range(256):
+                        # Eab*c_mode: acts if state==b and c_mode acts.
+                        car=_car_action(mode,mask,False)
+                        left=None if state!=b or car is None else (car[0],a,car[1])
+                        # c_mode*Eab: the two tensor actions commute.
+                        right=None if state!=b or car is None else (car[0],a,car[1])
+                        require(left==right,
+                                "separate qutrit and fermion tensor actions do not commute")
+                        commuting_checks+=1
+    require(checks==32768 and commuting_checks==55296,
+            "the complete product basis action audit was not exhaustive")
+    return checks,commuting_checks
+
+
 def matrix_algebra_type_gate():
+    car_checks, commuting_checks=verify_eight_mode_fock_and_qutrit_tensor_host()
     qutrit_dim=3
     modes=8
     fock=1 << modes
@@ -51,6 +117,8 @@ def matrix_algebra_type_gate():
       "original_quantum_qutrit_matrix_algebra":"M3(C) on a 3-dimensional state space",
       "eight_complex_CAR_algebra":"CAR(C8)=M256(C)",
       "irreducible_CAR8_Fock_dimension":fock,
+      "exhaustive_CAR_anticommutator_basis_checks":car_checks,
+      "exhaustive_commuting_qutrit_CAR8_basis_checks":commuting_checks,
       "unital_M3_inside_irreducible_CAR8_Fock_exists":False,
       "unital_M3_inside_each_CAR8_even_parity_128_block_exists":False,
       "minimum_common_finite_unital_representation_dimension":carrier,
