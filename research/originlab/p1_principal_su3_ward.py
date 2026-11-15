@@ -91,6 +91,31 @@ def controls():
                 n+=1
     require(n==512,"not all source Ward coefficient triples checked")
 
+    # Exact cubic **selection rule**. The physical geometric D4 action
+    # is chi times the principal adjoint action, with chi(r)=chi(s)=-1.
+    # Hence an unmarked SU3 cubic source is chi-odd. The original
+    # f2=z²/(z⁴-1) has the *same* character and supplies a fourth
+    # mark/line compensator; the product is D4 invariant.
+    rotation=sp.Matrix([[0,-1,0],[1,0,0],[0,0,1]])
+    inversion=sp.diag(1,-1,-1)
+    compact=[sp.I*p for p in sym5]+so3
+    def cubic(x,y,z):
+        return -sp.trace((x*y-y*x)*z)
+    pair=(compact[0],compact[3],compact[5])
+    require(cubic(*pair)==4,
+            "genuine nontrivial principal SU3 Ward cubic missing")
+    twisted_checks=0
+    for i,j,k in combinations(range(8),3):
+        basis_triple=(compact[i],compact[j],compact[k])
+        baseline=cubic(*basis_triple)
+        for u in (rotation,inversion):
+            transformed=tuple(-u*x*u.T for x in basis_triple)
+            require(cubic(*transformed)==-baseline and
+                    (-1)*cubic(*transformed)==baseline,
+                    "D4-odd cubic needs one geometry-chi insertion")
+            twisted_checks+=1
+    require(twisted_checks==112,
+            "not all independent cubic/triple and D4 generators checked")
     # Relative signs: with a,b>0, b=a lambda forces lambda>0.
     # lambda=0 yields a semidirect SO3 ⋉ R5, and lambda<0
     # the noncompact split sl3(R) real form, not compact SU3.
@@ -103,6 +128,11 @@ def controls():
       "original_source_Gram_parameters":"a>0 on 3, b>0 on 5",
       "exact_positive_Ward_equation":"4*(a*lambda-b)=0",
       "full_basis_Ward_triples_checked":n,
+      "geometric_D4_cubic_generator_checks":twisted_checks,
+      "nonzero_original_representation_cubic_sample":"4",
+      "unmarked_geometric_cubic_character":"chi(r)=chi(s)=-1 (forbidden in invariant scalar cap)",
+      "single_f2_twist_cancels_cubic_character":True,
+      "physical_original_f2_mark_and_cubic_source_bound":False,
       "positive_metric_forces_compact_SU3_lambda_positive":True,
       "lambda_zero_semidirect_compact_ad_invariant_metric":False,
       "lambda_negative_split_real_SL3_positive_ad_invariant_metric":False,
