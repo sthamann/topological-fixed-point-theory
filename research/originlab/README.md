@@ -81,6 +81,39 @@ parent. It cannot be used to assign a physical source value. See
 and [independent test cases](test_seam_cohomology.py).
 `--finite-controls-only` includes this control.
 
+## First priority: ORIGINAL TFPT UV measure-theorem consistency (15 November)
+
+Run the new eight exact original-source theorem guards before interpreting
+any synthetic OriginLab search candidate as physical F1 evidence:
+
+    python3 -B research/originlab/main.py --out /tmp/f1-source-integrity \
+      --campaign f1_source_theorem_audit
+
+The ORIGINAL TFPT4.5 metrology UV fixed-point theorem as written uses
+finite positive measures on unbounded [0,infinity), Lebesgue dt and
+a uniform positive K(s,t)>=m>0. This makes every nonzero output
+INFINITE in mass. Its published uniform-kernel Birkhoff factor is
+also false: K=[[2,1],[1,2]] has true 1/3 contraction versus the
+claimed 3-2sqrt(2). Additional exact controls demonstrate that
+compatible compressed Dirac operators and positive completely
+monotone spectral profiles do NOT guarantee projective consistency
+of the full weighted measure; a pointwise positive reflection-invariant
+spectral weight can be OS INDEFINITE; and four matched positive
+Bernstein moments do not determine one UV profile.
+
+A constructive integrable positive kernel repaired mathematically
+does possess a unique fixed Bernstein measure, but changing its
+microscopic kernel changes its profile. The actual original
+source kernel must be PHYSICALLY derived, its normalization and
+branch-moment invariance proved, and the original source-specific
+OS and weighted fine-to-coarse pushforward checked independently.
+The absent Q0 and four R113 forms cannot be fabricated.
+
+[Original theorem correction and source-first proof requirements](F1-ORIGINAL-MEASURE-THEOREM-REPAIR-20261115.md),
+[exact audit campaign](f1_source_theorem_audit.py),
+[independent regression](test_f1_source_theorem_audit.py).
+The candidate does not prove F1; do NOT promote the prediction ledger.
+
 ## Source candidate: original four-mark elliptic double cover spectral determinant
 
 The **actual v512 four-point invariant** lifts to a rectangular
