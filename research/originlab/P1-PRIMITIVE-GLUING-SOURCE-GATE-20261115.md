@@ -83,6 +83,25 @@ For positive t, `tr U_t=0 iff t=1 iff lambda=-1 iff U_t²=-I`. The original v512
 
 This gives a remarkably small **candidate** bridge from geometric modulus to relative Cauchy/deck polarization. It is NOT a derivation of `P_t` as the actual Calderon projector of the original full TFPT Dirac operator, or a reason why its trace must be zero. Even at `U_t²=-I`, the conjugation action has square identity; the genuine E8 current order-four grading still requires the separate charged-discriminant construction already audited in OriginLab.
 
+### An exact determinant-line version of the same origin test
+
+The two eigenphases `u,u^-1` imply an exact ratio between the
+finite plus/minus relative-polarization secular determinants:
+
+  `det(I-U_t)=4t²/(1+t²)`,
+  `det(I+U_t)=4/(1+t²)`,
+  `det(I-U_t)/det(I+U_t)=t²=-lambda`.
+
+Consequently equality of the two determinant-line amplitudes holds
+exactly at the square. This is a useful **one-scalar physical falsifier**:
+if the original `Ref/Eta/Pfaffian` action proves that its two actual
+paired determinant lines are exchanged with equal norms, and identifies
+them with `det(I±U_t)` using the *same* source, then the square follows.
+But reflection positivity and the observed `V4` alone do **not**
+supply such an exchange. Declaring equal determinants is merely
+another presentation of the still-unproved flag-symmetry bit unless
+that physical source map is explicitly calculated.
+
 ## V. The missing dynamical source is irreducible
 
 The one-sided primitive datum still *assumes* a smooth manifold with boundary, the spectral triple and its Dirac collar; the operational seed includes local net, state and time. It therefore cannot be advertised as a spacetime-independent theorem deriving a Lorentzian 3+1D parent from nothing. The native source still has no complete weighted four-mark tensor or absolute empty reference. Exact finite cohomology, determinant gluing and relative-polarization matching do not supply the interacting Higgs/gauge/fermionic/BRS-T/eta source.
