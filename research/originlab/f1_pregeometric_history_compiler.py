@@ -19,13 +19,14 @@ def permutation_matrix(p):
     return sp.eye(len(p))[:,list(p)]
 
 
-def anchored_clocks():
+def anchored_clocks(anchor_index=4):
     clocks=[p for p in permutations(range(5))
             if sum(int(i==p[i]) for i in range(5))==1
             and all(p[p[p[p[i]]]]==i for i in range(5))
             and any(p[p[i]]!=i for i in range(5))]
     require(len(clocks)==30,"original five-point code has not 30 clocks")
-    anchored=[p for p in clocks if p[0]==0]
+    require(0<=anchor_index<5, "fifth code point anchor index out of range")
+    anchored=[p for p in clocks if p[anchor_index]==anchor_index]
     require(len(anchored)==6,"distinguished anchor no longer selects 6 cycles")
     return clocks,anchored
 
@@ -186,17 +187,27 @@ def controls():
     require(len(five_q0)==5 and base["initial_clocks"]==30
             and len({tuple(p) for p in five_q0})==5,
             "originlab five-point odd quadratic code has changed")
-    clocks,anchored=anchored_clocks()
+    # The original face-label S4 permutation action fixes exactly ONE
+    # vector among the five odd-quadratic null vectors, namely 1111.
+    # This identifies a CANONICAL fifth code point, not yet a physical P1.
+    face_group=list(permutations(range(4)))
+    invariant=[i for i,v in enumerate(five_q0) if all(
+        [v[g[k]] for k in range(4)]==v for g in face_group)]
+    require(invariant==[4] and five_q0[4]==[1,1,1,1] and
+            all([v[g[k]] for k in range(4)] in five_q0
+                for v in five_q0 for g in face_group),
+            "original S4 odd-quadratic code does not intrinsically anchor 1111")
+    clocks,anchored=anchored_clocks(invariant[0])
     pall=sum((permutation_matrix(p) for p in clocks),sp.zeros(5))/30
     require(pall==sp.ones(5)/5 and pall.rank()==1,
             "unanchored source clock sum did not erase nontrivial sector")
 
     pab=sum((permutation_matrix(p) for p in anchored),sp.zeros(5))/6
-    require(pab[0,0]==1 and
-            pab[0,1:5]==sp.zeros(1,4) and
-            pab[1:5,0]==sp.zeros(4,1),
-            "source anchor is not a fixed seam point")
-    Q=pab[1:5,1:5]
+    require(pab[4,4]==1 and
+            pab[4,0:4]==sp.zeros(1,4) and
+            pab[0:4,4]==sp.zeros(4,1),
+            "S4-invariant fifth point is not fixed by the six clocks")
+    Q=pab[0:4,0:4]
     I=sp.eye(4)
     J=sp.ones(4)
     P0=J/4
@@ -257,6 +268,10 @@ def controls():
       "status":"EXACT_ANCHORED_FIVE_POINT_HISTORY_COMPILER_CANDIDATE",
       "original_five_q0_points":five_q0,
       "all_unanchored_quarter_clocks":30,
+      "S4_invariant_fifth_code_point_index":4,
+      "S4_invariant_fifth_code_point_bits":[1,1,1,1],
+      "original_S4_action_fixes_fifth_code_point_uniquely":True,
+      "physical_P1_identity_of_fifth_code_point_proved":False,
       "uniform_unanchored_sum":"J5/5 (rank one, all nontrivial modes lost)",
       "physical_seam_anchor_selected_by_original_Q0":False,
       "one_distinguished_anchor_compatible_clocks":6,
