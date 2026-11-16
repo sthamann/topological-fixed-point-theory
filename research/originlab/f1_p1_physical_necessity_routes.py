@@ -175,10 +175,29 @@ def three_region_quantum_memory_test():
             and p_bc.rank()==4 and (4*p_bc)**2==4*p_bc
             and p_b==sp.eye(4)/4,
             "exact entropy spectra of two indistinguishable marginals changed")
+    # Stronger integration test: the SAME independent matching plus
+    # stationary cyclic-constraint rule on THREE regions uniquely gives
+    # this coherent GHZ state and therefore fixes a nonzero CMI.
+    shift=sp.zeros(4)
+    for j in range(4):
+        shift[(j+1)%4,j]=1
+    triple=sp.kronecker_product(
+        sp.kronecker_product(shift,shift),shift)
+    match3=sp.diag(*[int(i//16==(i//4)%4==i%4)
+                     for i in range(64)])
+    cycle3=sum((triple**k for k in range(4)),sp.zeros(64))/4
+    require(match3.rank()==4 and cycle3.rank()==16
+            and (match3*cycle3).rank()==1
+            and match3*cycle3==cycle3*match3
+            and match3*cycle3==rho_pure,
+            "three-region joint boundary/time constraints must force coherent GHZ")
     # S(AB)=S(BC)=S(B)=2 bits for BOTH states.
     # S(ABC)=0 for GHZ and 2 for the dephased mixture.
     return {
         "same_AB_BC_AC_pair_marginals":True,
+        "three_region_matching_rank":4,
+        "three_region_cyclic_constraint_rank":16,
+        "unique_three_region_joint_constraint_rank":1,
         "GHZ_global_density_rank":1,
         "dephased_global_density_rank":4,
         "conditional_mutual_information_GHZ_bits":2,
