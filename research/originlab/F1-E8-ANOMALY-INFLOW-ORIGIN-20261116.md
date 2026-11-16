@@ -50,6 +50,25 @@ The Abelian Chern–Simons action at the mathematical bulk level is S=(1/4pi)int
 
 **Minimality interpretation:** Under the additional microscopic axioms "bosonic Abelian CS-type invertible topological bulk, positive-definite chiral even unimodular charge lattice, minimal nonzero rank", the lattice rank is a multiple of 8 and the UNIQUE rank-eight example is E8 (Mordell/Griess/Elkies classification). Thus E8 follows from those *declared assumptions*, independently of postulating its 248 Lie generators or 16 Majoranas. This DOES NOT derive these axioms from a pregeometric TFPT quantum-history source or identify the 2+1D bulk with the user's desired interacting 3+1D spacetime.
 
+## 3b. Four primitive branch points from the minimal anomaly-diagnostic torus
+
+A chiral E8 edge needs no torus for its mathematical existence, but a torus is the *smallest compact complex surface* with a nontrivial modular T cycle used to detect the global multiplier. If the ORIGINAL source chooses to generate that minimal genus-one worldsheet as a simply branched DOUBLE COVER of P1, the Riemann–Hurwitz theorem gives
+
+    2g-2 = 2*(2*0-2)+r = -4+r,
+    g=(r-2)/2.
+
+The smallest positive genus is g=1, hence EXACTLY r=4 simple branch marks. Two branch points give genus zero; 4 give genus one; 6 give genus two. This gives a coherent *conditional* joint origin of the two formerly separate structures:
+
+    minimal nontrivial bosonic invertible chiral 2+1D phase
+      -> unique rank-eight even unimodular E8 bulk lattice
+      -> its c=8 anomalous chiral boundary CFT
+      -> minimal elliptic double-cover modular diagnostic
+      -> four simple P1 branch marks.
+
+**Two assumptions remain upstream:** why the physical source chooses a bosonic invertible chiral 2+1D phase and why it chooses a minimal double cover of P1. This is not an unconditional selection rule for all possible fundamental quantum sources.
+
+Furthermore, FOUR MARKS ARE NOT THE SQUARE: the original exact continuous t parameter yields j(1)=1728 but j(1/2)=148176/25. The E8 chiral modular T multiplier is the SAME for both, so topological anomaly cancellation cannot by itself fix the square cross ratio or physical time. This is a genuine source modulus/dynamics obligation.
+
 ## 4. Important traps and 4D chiral families
 
 - Three same-chirality E8 copies give total cL-cR=24 and trivial **scalar modular T multiplier** because exp(-2*pi*i*24/24)=1. Their PERTURBATIVE gravitational anomaly remains nonzero; trivial T on one torus does NOT make a genuinely chiral c24 field theory parity symmetric.
