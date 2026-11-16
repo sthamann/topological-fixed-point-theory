@@ -42,6 +42,9 @@ class P1PhysicalNecessityTests(unittest.TestCase):
     def test_three_region_coherence_cannot_be_inferred_from_pair_marginals(self):
         x=self.r["quantum_three_region_memory"]
         self.assertTrue(x["same_AB_BC_AC_pair_marginals"])
+        self.assertEqual(x["three_region_matching_rank"],4)
+        self.assertEqual(x["three_region_cyclic_constraint_rank"],16)
+        self.assertEqual(x["unique_three_region_joint_constraint_rank"],1)
         self.assertEqual(x["conditional_mutual_information_GHZ_bits"],2)
         self.assertEqual(x["conditional_mutual_information_dephased_bits"],0)
         self.assertFalse(x["global_coherence_recoverable_from_pair_marginals_only"])
