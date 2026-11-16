@@ -39,6 +39,15 @@ class P1PhysicalNecessityTests(unittest.TestCase):
         self.assertFalse(x["cyclic_orientation_selected"])
         self.assertFalse(x["original_six_D4_history_orbit_weight_selected"])
 
+    def test_three_region_coherence_cannot_be_inferred_from_pair_marginals(self):
+        x=self.r["quantum_three_region_memory"]
+        self.assertTrue(x["same_AB_BC_AC_pair_marginals"])
+        self.assertEqual(x["conditional_mutual_information_GHZ_bits"],2)
+        self.assertEqual(x["conditional_mutual_information_dephased_bits"],0)
+        self.assertFalse(x["global_coherence_recoverable_from_pair_marginals_only"])
+        self.assertFalse(x["exact_quantum_Markov_Petz_recovery_for_GHZ"])
+        self.assertTrue(x["exact_quantum_Markov_Petz_recovery_for_dephased"])
+
     def test_topology_leaves_square_vs_hexagonal_modulus_open(self):
         x=self.r["elliptic_modulus"]
         self.assertEqual(x["four_simple_branch_points_genus"],1)
