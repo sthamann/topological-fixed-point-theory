@@ -46,6 +46,17 @@ class PregeometricHistoryCompilerTests(unittest.TestCase):
                          {"1":2,"1/9":12,"0":2})
         self.assertFalse(r["incoherent_quantum_average_has_bounded_continuous_generator"])
 
+    def test_actual_square_D4_splits_six_histories_into_two_orbits(self):
+        d=self.result["geometric_D4_vs_abstract_S4_weight_selection"]
+        self.assertEqual(d["original_geometric_square_D4_group_order"],8)
+        self.assertEqual(d["primitive_four_cycles_class_orbit_sizes"],[2,4])
+        self.assertEqual(d["one_step_eigenvalues"],["1","-x","(x-1)/2 (twice)"])
+        self.assertEqual(d["two_step_eigenvalues"],["1","x^2","(1-x)^2/4 (twice)"])
+        self.assertEqual(d["enhanced_S4_equal_six_cycles_source_weight"],"x=1/3")
+        self.assertEqual(d["distinct_D4_source_witnesses"],["x=1/4","x=1/2"])
+        self.assertFalse(d["D4_only_fixes_unique_source_time"])
+        self.assertFalse(d["physical_original_absolute_weight_x_measured"])
+
     def test_all_1024_coherent_quarter_phase_assignments_require_additional_selection(self):
         c=self.result["coherent_exact_relative_phase_search"]
         self.assertEqual(c["relative_amplitude_assignments_exhaustively_checked"],1024)
