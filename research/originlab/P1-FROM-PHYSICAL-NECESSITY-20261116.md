@@ -191,6 +191,34 @@ source, dissipative/noisy degrees of freedom or an independently
 nontrivial constrained Hamiltonian. A finite repeated check
 is NOT a derivation of irreversible quantum time.
 
+## Route I. Three-region quantum conditional information / Petz recovery
+
+A genuinely coherent seam cannot automatically be represented by local
+Markov gluing. The equality case of strong subadditivity is characterized
+by quantum Markov states and exact Petz recovery (Hayden, Jozsa, Petz,
+Winter, Commun Math Phys 246, 359–374 (2004),
+https://doi.org/10.1007/s00220-004-1049-z).
+
+Exact four-level three-region witness:
+|GHZ4>=(1/2)sum_(j=0)^3 |jjj> and
+rho_mix=(1/4)sum_j |jjj><jjj|.
+
+ALL THREE pairwise density matrices AB, BC and AC are IDENTICAL for
+the coherent GHZ pure state and its dephased mixture; in each case
+S(AB)=S(BC)=S(B)=2 bits. Yet S(ABC)_GHZ=0, while
+S(ABC)_mix=2 bits. The resulting conditional mutual information
+I(A:C|B)=S(AB)+S(BC)-S(B)-S(ABC) is therefore
+**2 bits for GHZ and 0 bits for the dephased mixture**.
+
+Hence ordinary pairwise observations or a two-window Markov
+reconstruction cannot infer the physically relevant GLOBAL source
+coherence. A source retaining GHZ-like information requires a
+genuine history-memory/process-tensor structure, not a free
+replacement with a Markov channel. This is a mathematical
+counterexample to the naive source-type identification, not a
+claim that the original TFPT vacuum is GHZ. It sharpens the R113
+full joint empty Gram and original spatial-return memory gates.
+
 ## F1 integration: what a genuinely source-first P1 must pass
 
 The best composite candidate is NOT "P1=black-hole singularity" or
