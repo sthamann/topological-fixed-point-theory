@@ -93,7 +93,7 @@ def coherent_fourth_root_phase_search(cycles):
       "unitary_coherent_spin_clock_automatically_gives_dissipative_OS_time":False,
       "solutions": [
         {"phases":[str(w) for w in weights],
-         "U":U.tolist(),
+         "U":[[str(v) for v in row] for row in U.tolist()],
          "spectrum":spectra[i],
          "order":2 if U**2==sp.eye(4) else 4}
         for i,(weights,U) in enumerate(retained)],
