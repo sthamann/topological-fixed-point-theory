@@ -51,6 +51,14 @@ class E8InflowSourceGateTests(unittest.TestCase):
         self.assertFalse(anomalies["this_proves_chiral_E8_1_gravitational_I4_zero"])
         self.assertEqual(anomalies["SM_SU2_Witten_number_of_doublets"],4)
 
+    def test_minimal_elliptic_double_cover_has_four_branches_but_not_fixed_square(self):
+        self.assertEqual(self.r["minimal_genus_one_double_cover_branch_marks"],4)
+        self.assertEqual(self.r["simple_branch_points_to_genus"],
+                         {"2":0,"4":1,"6":2,"8":3,"10":4,"12":5})
+        self.assertEqual(self.r["unique_even_positive_unimodular_rank_eight_lattice_by_known_classification"],"E8")
+        self.assertFalse(self.r["physical_double_cover_minimality_axiom_derived"])
+        self.assertFalse(self.r["square_modulus_from_E8_anomaly_inflow_selected"])
+
     def test_native_eta_bulk_topology_and_fourD_remain_unproved(self):
         self.assertFalse(self.r["source_actual_eta_Pfaffian_holonomy_measured"])
         self.assertFalse(self.r["original_2D_chiral_E8_worldsheet_identified"])
