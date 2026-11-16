@@ -96,6 +96,23 @@ The reversed cycle S^-1 yields the SAME projection, so
 this result cannot produce an arrow. It also does NOT select
 the relative 2+4 orbit weight x of the SIX original histories.
 
+### Compatibility result: equal-amplitude seam is locally faithful but modularly flat
+
+For the UNIQUE four-sector matched/cyclic state, the global state
+|Psi> is pure but the restriction to M4 tensor I4 has density
+rho=I4/4. This state is faithful and tracial on that local
+factor, and its modular generator -log rho=log(4) I4 is SCALAR.
+Hence the simultaneously constrained minimal Bell seam is a
+perfect valid local GNS reference but carries no NONTRIVIAL
+Tomita modular motion on the original four labels.
+There is no contradiction with the infinite half-sided
+modular-inclusion theorem: nontrivial relative modular
+translations must live in an enlarged state/algebra (e.g.
+original infinite history modes and genuinely different
+local subalgebras), not in this flat finite label factor.
+This is a direct consistency restriction on the combination
+of Routes B and C, not a physical construction of that enlargement.
+
 ## Route D. Osterwalder-Schrader reflection gives a physical clock,
 but not a source law
 
