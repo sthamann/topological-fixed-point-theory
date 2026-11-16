@@ -1,5 +1,9 @@
 # TFPT: Aufgabenplan zur fundamentalen Herleitung
 
+## 16. November: Universeller D4 Quantenzeit Ausschluss und ursprünglicher sechs Historien Gramkern
+
+[Exakter Gesamtbeweis und neue gemeinsame Quellmatrix](../../../research/originlab/F1-HISTORY-GRAM-AND-ALL-D4-KMS-NO-GO-20261116.md). Der bisher nur bei x=1/2 geprüfte vollständige M4 Choi Ausschluss ist jetzt für ALLE D4 Gewichte 0<=x<=1 bewiesen: x=0,1/3,1 sind singulär; in allen übrigen Bereichen hat der eindeutige spursymmetrische Logarithmus einen explizit negativen bedingten Choi Testvektor. Das schließt genau den vollen zweistufigen Random Unitärkanal als finite tracial KMS Quantenzeit aus, NICHT kohärente oder gedächtnisbehaftete Quellen. Neue gemeinsame Darstellung: sechs unabhängige zulässige Viertelzyklen mit einer hermiteschen 6x6 Gramquellmatrix K; K positiv und spurerhaltend ist zugleich der Choi Test und lässt klassische diagonale sowie kohärente Rang eins Antworten zu. Die wirkliche D4 Wirkung lässt trotz CP/TP VIER freie reelle Parameter, daher ist kein eindeutiges ursprüngliches Gesetz hergeleitet. Unter den neun unitären Viertelphasenlösungen ist nur eine ohne projektive Spinwirkung D4 verträglich und reduziert sich auf eine negative halbe Drehung. Der angegebene 16D Spektralvergleich genügt allein nicht als CP Nachweis. Die Originalquelle muss K aus originalem R113 Q0, vollem P_adm, absolutem Z0, Spinstruktur und OS Reflexion berechnen. F1 offen, keine Ledger Promotion.
+
 
 ## 16. November: F1 Ursprungscompiler aus fünf Punkten und sechs zulässigen Geschichten
 
