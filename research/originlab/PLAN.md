@@ -1,5 +1,9 @@
 # OriginLab implementation plan
 
+## First original R113 block: resolve the joint empty Gram
+
+The first physical source task is still the weighted reflected empty form at one bound block. The native charged window kernel admits two positive reflected completions with the same bare and weighted window marginals, `Z0`, `ZU` and `ZY`, and distinct `ZUY`. The joint empty form determines the latter on this chart, and 15 unmarked two-window quadratic probes recover it on the declared five-radius class. Apply the original source on the two windows before any advance to clock or inflow identification. [Derivation and executable replay](F1-R113-FIRST-EMPTY-GRAM-20261116.md).
+
 ## Native E8 quarter clock and colour twist
 
 The exact scan of all 65,536 toral shifts finds type 2 for every clock with the native current spectrum. The quarter twisted sector has a singlet and a colour triplet at weight 3/8. The half turn gives the sixteen weight-1/2 vector charges. The D5+A3 discriminant forms distinguish the even E8 gluing from the anomalous dual clock. The E8 bulk candidate can carry both relevant responses with the explicit symmetry couplings. The source still has to yield the corresponding physical junction amplitudes and the weighted R113 form. [Proof and executable audit](F1-NATIVE-E8-QUARTER-TWIST-20261116.md).

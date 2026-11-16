@@ -74,4 +74,10 @@ def test_original_fixed_history_keeps_the_scalar_separate_from_the_trace():
     assert all(arb(row["reduced_late_mark_error_over_scan_mean_upper"]) < arb("4e-10")
                for row in phase["reports"])
     assert not phase["physical_regional_rotation_bound"]
+    measure = result["reflected_measure_completion"]
+    assert measure["same_bare_and_weighted_radial_marginals"]
+    assert measure["both_reflected_grams_positive"]
+    assert measure["rank_with_mixed_mark"] == measure["fit_constraint_rank"] + 1
+    assert not arb(measure["nonzero_ZUY_difference"]).contains(0)
+    assert measure["whole_empty_gram_recovers_mixed_mark"]
     assert not result["physical_solution"]
