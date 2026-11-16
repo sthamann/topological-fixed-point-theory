@@ -30,6 +30,15 @@ class P1PhysicalNecessityTests(unittest.TestCase):
         self.assertTrue(x["conditionally_nontrivial_system_evolution"])
         self.assertFalse(x["unique_p1_or_arrow_from_stationarity"])
 
+    def test_independent_matching_and_cyclic_constraints_have_unique_joint_state(self):
+        x=self.r["constraint_intersection"]
+        self.assertEqual(x["matching_projector_rank"],4)
+        self.assertEqual(x["global_cycle_constraint_projector_rank"],4)
+        self.assertEqual(x["commuting_constraint_intersection_rank"],1)
+        self.assertTrue(x["relative_four_amplitudes_unique_under_assumed_constraints"])
+        self.assertFalse(x["cyclic_orientation_selected"])
+        self.assertFalse(x["original_six_D4_history_orbit_weight_selected"])
+
     def test_topology_leaves_square_vs_hexagonal_modulus_open(self):
         x=self.r["elliptic_modulus"]
         self.assertEqual(x["four_simple_branch_points_genus"],1)
