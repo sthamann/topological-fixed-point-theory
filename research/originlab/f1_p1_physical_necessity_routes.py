@@ -105,6 +105,42 @@ def stationary_relational_clock_test():
     }
 
 
+
+def joint_constraint_selection_test():
+    # Conditional physical construction: match four edge sectors across two
+    # sides and impose a single simultaneous cyclic *global* constraint.
+    # Each separately admits rank four. Their intersection has rank ONE.
+    S=sp.zeros(4)
+    for j in range(4):
+        S[(j+1)%4,j]=1
+    G=sp.kronecker_product(S,S)
+    match=sp.diag(*[int(i//4==i%4) for i in range(16)])
+    invariant=sum((G**k for k in range(4)),sp.zeros(16))/4
+    joint=match*invariant
+    psi=sp.zeros(16,1)
+    for j in range(4):
+        psi[5*j]=sp.Rational(1,2)
+    require(match.rank()==4 and invariant.rank()==4
+            and match*invariant==invariant*match
+            and joint.rank()==1 and joint*joint==joint
+            and joint==psi*psi.H,
+            "matched-edge plus cyclic group average must select unique Bell seam")
+    reverse=sum((G**(-k) for k in range(4)),sp.zeros(16))/4
+    require(invariant==reverse,
+            "matched-edge consistency does not choose cyclic time orientation")
+    return {
+        "matching_projector_rank":4,
+        "global_cycle_constraint_projector_rank":4,
+        "commuting_constraint_intersection_rank":1,
+        "unique_normalized_state_up_to_global_phase":
+          "(|00>+|11>+|22>+|33>)/2",
+        "relative_four_amplitudes_unique_under_assumed_constraints":True,
+        "cyclic_orientation_selected":False,
+        "original_six_D4_history_orbit_weight_selected":False,
+        "physical_original_R113_projectors_identified":False
+    }
+
+
 def modular_finite_no_go():
     # Under the half-sided modular inclusion theorem both N and M
     # require the same cyclic + separating vector Omega. In finite
@@ -174,6 +210,7 @@ def controls():
         "finite_modular_translation":modular_finite_no_go(),
         "gauge_interface":gauge_edge_mode_test(),
         "relational_time":stationary_relational_clock_test(),
+        "constraint_intersection":joint_constraint_selection_test(),
         "elliptic_modulus":projective_origin_test(),
         "bounce_and_zeno":gravitational_bounce_and_zeno_test(),
         "original_source":original_source_gate(),
