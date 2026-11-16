@@ -19,6 +19,15 @@ class P1ProjectiveConsistencyTests(unittest.TestCase):
             self.assertFalse(t["ordinary_partial_trace_projective_consistent"])
             self.assertTrue(t["dephased_mixtures_partial_trace_consistent"])
 
+    def test_unique_infinite_source_under_exact_matching_and_Z4_projectivity(self):
+        z=self.r["infinite_projective_uniqueness"]
+        self.assertEqual(z["symbolic_fine_code_density_entries"],16)
+        self.assertEqual(z["offdiagonal_source_coherences_removed_per_extension"],12)
+        self.assertEqual(z["cyclic_diagonal_constraint_rank"],3)
+        self.assertEqual(z["normalized_unique_diagonal_weight"],"1/4")
+        self.assertFalse(z["coherent_GHZ_clock_survives_local_projective_limit"])
+        self.assertFalse(z["physical_R113_projective_map_is_ordinary_trace_proved"])
+
     def test_original_cyclic_invariant_joint_mark_detects_marginal_failure(self):
         z=self.r["ordinary_coarse_graining"]
         self.assertTrue(z["observable_joint_shift_commutes_with_constraint"])
