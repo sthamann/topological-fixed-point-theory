@@ -141,6 +141,55 @@ def joint_constraint_selection_test():
     }
 
 
+
+def three_region_quantum_memory_test():
+    # Strong subadditivity/Petz equality gate on three 4-level regions.
+    # Coherent GHZ and its dephased mixture have identical AB, BC, AC
+    # reduced density operators but different conditional mutual
+    # information: 2 bits versus 0 bits.
+    psi=sp.zeros(64,1)
+    rho_mix=sp.zeros(64)
+    for j in range(4):
+        psi[21*j]=sp.Rational(1,2)  # |j,j,j>
+        rho_mix[21*j,21*j]=sp.Rational(1,4)
+    rho_pure=psi*psi.H
+    def AB(rho):
+        return sp.Matrix(16,16,lambda i,j:
+            sum(rho[4*i+k,4*j+k] for k in range(4)))
+    def BC(rho):
+        return sp.Matrix(16,16,lambda i,j:
+            sum(rho[16*k+i,16*k+j] for k in range(4)))
+    def AC(rho):
+        return sp.Matrix(16,16,lambda i,j:
+            sum(rho[16*(i//4)+4*k+i%4,16*(j//4)+4*k+j%4]
+                for k in range(4)))
+    require(all(f(rho_pure)==f(rho_mix) for f in (AB,BC,AC)),
+            "three-region coherent vs dephased sources distinguish pair marginals")
+    p_ab=AB(rho_pure)
+    p_bc=BC(rho_pure)
+    p_b=sp.Matrix(4,4,lambda i,j:
+        sum(p_ab[4*k+i,4*k+j] for k in range(4)))
+    require(rho_pure.rank()==1 and rho_pure*rho_pure==rho_pure
+            and rho_mix.rank()==4 and (4*rho_mix)**2==4*rho_mix
+            and p_ab.rank()==4 and (4*p_ab)**2==4*p_ab
+            and p_bc.rank()==4 and (4*p_bc)**2==4*p_bc
+            and p_b==sp.eye(4)/4,
+            "exact entropy spectra of two indistinguishable marginals changed")
+    # S(AB)=S(BC)=S(B)=2 bits for BOTH states.
+    # S(ABC)=0 for GHZ and 2 for the dephased mixture.
+    return {
+        "same_AB_BC_AC_pair_marginals":True,
+        "GHZ_global_density_rank":1,
+        "dephased_global_density_rank":4,
+        "conditional_mutual_information_GHZ_bits":2,
+        "conditional_mutual_information_dephased_bits":0,
+        "global_coherence_recoverable_from_pair_marginals_only":False,
+        "exact_quantum_Markov_Petz_recovery_for_GHZ":False,
+        "exact_quantum_Markov_Petz_recovery_for_dephased":True,
+        "physical_R113_source_identified":False
+    }
+
+
 def modular_finite_no_go():
     # Under the half-sided modular inclusion theorem both N and M
     # require the same cyclic + separating vector Omega. In finite
@@ -211,6 +260,7 @@ def controls():
         "gauge_interface":gauge_edge_mode_test(),
         "relational_time":stationary_relational_clock_test(),
         "constraint_intersection":joint_constraint_selection_test(),
+        "quantum_three_region_memory":three_region_quantum_memory_test(),
         "elliptic_modulus":projective_origin_test(),
         "bounce_and_zeno":gravitational_bounce_and_zeno_test(),
         "original_source":original_source_gate(),
