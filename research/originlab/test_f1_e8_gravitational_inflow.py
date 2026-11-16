@@ -30,6 +30,10 @@ class E8InflowSourceGateTests(unittest.TestCase):
         self.assertEqual(sp.simplify(phase*sp.conjugate(phase)),1)
         self.assertEqual(self.r["opposite_chirality_E8_double_chiral_c_minus"],0)
         self.assertEqual(self.r["opposite_chirality_E8_double_partition"],"abs(chi_E8)^2")
+        self.assertEqual(self.r["opposite_chirality_doubled_K_determinant"],1)
+        self.assertEqual(self.r["opposite_chirality_doubled_K_signature"],0)
+        self.assertTrue(self.r["opposite_chirality_doubled_K_has_8_mutually_null_gapping_vectors"])
+        self.assertFalse(self.r["opposite_chirality_doubled_chiral_edge_protected_by_anomaly"])
 
     def test_three_same_chiral_E8_make_T_trivial_but_not_gravitationally_anomaly_free(self):
         self.assertEqual(self.r["three_same_chirality_E8_central_charge"],24)
