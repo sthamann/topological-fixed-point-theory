@@ -69,6 +69,30 @@ The smallest positive genus is g=1, hence EXACTLY r=4 simple branch marks. Two b
 
 Furthermore, FOUR MARKS ARE NOT THE SQUARE: the original exact continuous t parameter yields j(1)=1728 but j(1/2)=148176/25. The E8 chiral modular T multiplier is the SAME for both, so topological anomaly cancellation cannot by itself fix the square cross ratio or physical time. This is a genuine source modulus/dynamics obligation.
 
+## 3c. Four marks also carry a topologically protected index three
+
+The SAME four branch points form an effective divisor D of degree four on P1. The logarithmic differential line is
+
+    K_P1(D)=O(-2+4)=O(2).
+
+By exact Riemann–Roch and Serre duality on P1,
+
+    h0(O(2))=3, h1(O(2))=0,
+    ind(dbar_{K(D)})=3.
+
+On the ordinary spin Riemann sphere the positive spinor line is S+=O(-1). To identify those *mathematical* logarithmic modes with zero modes of a positive-chirality **charged Dirac** operator, choose a twist E=O(3) of Chern number +3:
+
+    S+ tensor E = O(-1) tensor O(3) = O(2),
+    ind(D_E^+)=c1(E)[S2]=3.
+
+Its positive-chirality kernel has three complex zero modes and its opposite-chirality kernel is empty. The opposite flux E*=O(-3) gives S+ tensor E*=O(-4), h0=0 and h1=3, hence Dirac index -3. These are exact topologically stable mathematical indices, unaffected by changing the cross ratio or moving four distinct marks.
+
+A 3+1D chiral family interpretation would require the *ORIGINAL* source to make P1 a genuine internal 2D Dirac/Spin^c carrier (or a rigorously equivalent index mechanism), supply a compatible higher-dimensional Weyl parent, and assign physical flux and chirality separately to the E6 27 and conjugate 27 multiplets. The gauge/index reality conditions must be checked: a real E8 adjoint contains both conjugates, and a 3-dimensional mathematical index on a bare curve is NOT already a 3-family Standard Model spectrum. Neither the physical flux E=O(3) nor an actual 6D/4D source reduction follows merely from the existence of four P1 branch points.
+
+Caution: interpreting the same P1 geometry as an *internal compactification space* and as the *physical 1+1D chiral E8 edge worldsheet* are two different physical roles. The exact index/VOA arithmetic does not identify these roles or prove they coexist in a single interacting 3+1D source.
+
+Reproduction: [f1_p1_chiral_index_gate.py](f1_p1_chiral_index_gate.py) and [test_f1_p1_chiral_index_gate.py](test_f1_p1_chiral_index_gate.py).
+
 ## 4. Important traps and 4D chiral families
 
 - Three same-chirality E8 copies give total cL-cR=24 and trivial **scalar modular T multiplier** because exp(-2*pi*i*24/24)=1. Their PERTURBATIVE gravitational anomaly remains nonzero; trivial T on one torus does NOT make a genuinely chiral c24 field theory parity symmetric.
