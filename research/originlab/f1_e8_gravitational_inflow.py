@@ -59,6 +59,17 @@ def controls():
             and all(entry==2 for entry in matrix.diagonal())
             and all(v.q==1 for v in matrix.inv()),
             "E8 Cartan K-matrix not positive even unimodular")
+    # Taking the mirror E8 current sector cancels c_-, but it also
+    # admits a rank-eight primitive null sublattice. A doubled boundary
+    # CAN be gapped by appropriate interactions; mere orientation
+    # doubling does not protect the desired chiral E8 currents.
+    doubled=sp.diag(matrix,-matrix)
+    null=sp.eye(8).col_join(sp.eye(8))
+    require(doubled.det()==1 and
+            null.rank()==8 and
+            null.T*doubled*null==sp.zeros(8)
+            and null[:8,:]==sp.eye(8),
+            "doubled E8 opposite chirality null gapping lattice changed")
     c_left=8
     c_right=0
     T=sp.exp(-2*sp.pi*sp.I*sp.Rational(c_left-c_right,24))
@@ -92,6 +103,10 @@ def controls():
        "opposite_chirality_E8_double_partition":"abs(chi_E8)^2",
        "opposite_chirality_E8_double_modular_T_phase":"1",
        "opposite_chirality_E8_double_chiral_c_minus":0,
+       "opposite_chirality_doubled_K_determinant":int(doubled.det()),
+       "opposite_chirality_doubled_K_signature":0,
+       "opposite_chirality_doubled_K_has_8_mutually_null_gapping_vectors":True,
+       "opposite_chirality_doubled_chiral_edge_protected_by_anomaly":False,
        "three_same_chirality_E8_central_charge":24,
        "three_same_chirality_E8_modular_T_phase":"1",
        "three_same_chirality_E8_local_gravitational_anomaly_vanishes":False,
