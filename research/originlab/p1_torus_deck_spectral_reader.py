@@ -10,7 +10,12 @@ import math
 
 
 def torus_heat(t: float, aspect: float = 1.0, cutoff: int = 40) -> float:
-    """Scalar Tr exp(-t Delta), unit-area flat rectangular torus of aspect y."""
+    """Finite Fourier sum for the unit-area rectangular torus of aspect y.
+
+    Modes satisfy |m|,|n| <= cutoff.  This approximates the scalar heat trace
+    when the omitted Gaussian tail is small; with cutoff fixed its t->0
+    limit is (2*cutoff+1)^2, not the infinite trace's Weyl asymptotic.
+    """
     if not (t > 0 and aspect > 0 and cutoff >= 0):
         raise ValueError("Need t>0, y>0, cutoff>=0")
     a = 4.0 * math.pi**2 * t
@@ -28,10 +33,44 @@ def branched_even_odd(t: float, aspect: float = 1.0,
     return (z+1.0)/2.0, (z-1.0)/2.0
 
 
+def _gaussian_theta_sum(a: float, relative_tolerance: float = 1e-15) -> float:
+    """Sum exp(-a*n^2) over all integers, with an adaptive Gaussian tail.
+
+    Jacobi transformation keeps the summation exponent at least pi.  After
+    term n, the remaining positive tail is bounded by a geometric series
+    with first term exp(-a*(n+1)^2) and ratio exp(-a*(2*n+3)).
+    The bound controls truncation; ordinary floating-point rounding remains.
+    """
+    if not a > 0:
+        raise ValueError("Need a positive representable Gaussian exponent")
+    prefactor = 1.0
+    if a < math.pi:
+        prefactor = math.sqrt(math.pi) / math.sqrt(a)
+        a = math.pi**2 / a
+    terms = [1.0]
+    n = 0
+    while True:
+        next_term = math.exp(-a * (n+1)**2)
+        tail_bound = 2.0 * next_term / (-math.expm1(-a * (2*n+3)))
+        total = math.fsum(terms)
+        if tail_bound <= relative_tolerance * total:
+            return prefactor * total
+        terms.append(2.0 * next_term)
+        n += 1
+
+
 def heat_residue_estimate(t: float, aspect: float = 1.0) -> float:
-    """t*(Tr_even - 1/2) approaches Area/(8*pi)=1/(8*pi)."""
-    even, _ = branched_even_odd(t, aspect)
-    return t * (even - 0.5)
+    """Infinite-trace t*(Tr_even-1/2), evaluated in the Poisson dual.
+
+    It equals (1/(8*pi))*sum_(p,q) exp(-(p^2/y+y*q^2)/(4*t)).
+    Adaptive theta sums preserve its 1/(8*pi) limit as t->0; a fixed
+    Fourier cutoff would instead drive the computed residue to zero.
+    """
+    if not (math.isfinite(t) and math.isfinite(aspect) and t > 0 and aspect > 0):
+        raise ValueError("Need finite t>0 and aspect>0")
+    theta_p = _gaussian_theta_sum(1.0 / (4.0*t*aspect))
+    theta_q = _gaussian_theta_sum(aspect / (4.0*t))
+    return (theta_p / (8.0*math.pi)) * theta_q
 
 
 def klein_glide_trace(t: float, aspect: float = 1.0,
@@ -84,10 +123,14 @@ def spin_pi_lift() -> complex:
 
 
 def overlapped_elliptic_covers_genus(common_branch_values: int) -> int | None:
-    """Genus of connected (Z2)^2 fiber product of TWO elliptic double
-    covers of P1, each with four simple branch values.
-    For all four shared branch values the fiber product DISCONNECTS
-    into two isomorphic elliptic curves, hence return None.
+    """Genus of the NORMALIZATION of two elliptic double covers' fiber product.
+
+    Each cover of P1 has four simple branch values.  With k<4 common
+    values, the normalized connected (Z2)^2 cover has genus 5-k.
+    The raw fiber product is nodal at the k common branch values and
+    has arithmetic genus 5.  For k=4 its normalization consists of two
+    isomorphic elliptic curves, hence None; before normalization those
+    two components meet at four points, so the raw curve is connected.
     """
     if common_branch_values not in (0, 1, 2, 3, 4):
         raise ValueError("overlap must be between 0 and 4")

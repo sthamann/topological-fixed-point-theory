@@ -1,0 +1,594 @@
+TFPT: Alternative Ursprünge, P1 als Auslese und Transformation
+16. November 2026
+
+STATUS
+
+Vier alternative Szenarien wurden mit fünf neuen ausführbaren Modulen geprüft.
+Beim Abschluss kam ein fünftes Szenario aus einer gleichzeitig arbeitenden
+Sitzung hinzu: der spektrale Toruslesekopf. Seine drei frisch veröffentlichten
+Dateien wurden übernommen, unabhängig geprüft und in die Kampagne integriert.
+Die neue Kampagne heißt f1_origin_scenarios. Sie enthält eine konkrete
+Symmetriekorrektur, einen vollständigen sphärischen Randkern samt radialer
+Dynamik, nichtkommutierende Quantenauslese mit vollständigem Übergangskanal,
+einen größeren lorentzschen Träger und einen Diskriminator für größere positive
+Gitter. Diese Ergebnisse sind bedingte Mathematik und neue TFPT Forschung,
+keine vollständige physikalische F1 Herleitung und keine globale Prioritätsbehauptung.
+
+Die vier Szenarien sind Alternativen mit verschiedenen Voraussetzungen.
+Eine gemeinsame ursprüngliche Quelle wurde nicht hergeleitet. Insbesondere
+dürfen die Zahl vier aus der Kurvensymmetrie, 1/(8 pi) aus einem skalaren
+Kern und E8 aus einem Nullquotienten nicht ohne Operatorabbildung miteinander
+multipliziert oder zu einer einzigen Herleitung erklärt werden.
+
+1. GEPRÜFTER AUSGANGSSTAND
+
+Repository: https://github.com/sthamann/topological-fixed-point-theory
+Basis main: 8a0d2f54ac7dac91778a4d2a8403d61526f760d4
+Zeit dieses Commits: 16. November 2026, 08:35:58 UTC.
+Direkter Remoteabgleich am 16. November, 09:54 UTC: gleicher Commit.
+
+Im Abschlussabgleich zusätzlich eingetroffen und vollständig gelesen:
+5341373, aa6b4a0 und 9511d244f0d2cbc6143145cc6a31c384a0ce771e,
+16. November, 09:55 bis 09:59 UTC. Sie enthalten den neuen Bericht
+F1-P1-TORUS-DECK-SPECTRAL-READER-20261116.md, das Modul
+p1_torus_deck_spectral_reader.py und zwölf zugehörige Tests. Der gemeinsame
+Stand wurde ohne Überschreiben dieser parallelen Arbeit aktualisiert.
+Ein zweiter Abschlussabgleich enthält auch cb5f4b3, 6a67a16 und
+8731e75e80e53488bdf1d0c5eddc3ee4afa05be7 vom 16. November, 10:04 bis
+10:05 UTC. Der neue Genus fünf Elternvergleich wurde mitgelesen und
+mit seinen sechs endlichen Tests in die gemeinsame Prüfung aufgenommen.
+
+Gelesen wurden der kanonische fundamentale Aufgabenplan, OriginLab Plan und
+Quellenmodule, die relevanten Originalabschnitte zu P1 und E8 sowie gezielt
+v216, v483, v519 und v784. Der verfügbare öffentliche Atlasexport
+website/lib/semantic-atlas.json wurde am 9. November 2026 um 07:41:31 UTC
+erzeugt, sourceRevision db0b0e5f2e1ad3db4e3f3541. Er ist ausdrücklich
+kein aktueller Zugriff auf den lokalen kanonischen Atlasdienst.
+
+Die am 16. November abrufbaren Sitzungszusammenfassungen wurden zusätzlich
+abgeglichen. Darunter: vier Polstellen geben fünf Riemann Roch Sektionen,
+aber benötigen den gewählten Divisor; die antipodale 2+1 Zerlegung der
+Homologie hat einen Index zwei und benötigt das fehlende Gluing; Möbius
+und double cover allein erzwingen E8 nicht. Es werden keine vollständige
+Sitzungsinventur und keine nicht zugänglichen lokalen Atlasdaten behauptet.
+
+Die heute bereits vorhandenen neuen Ergebnisse bleiben erhalten:
+
+* Klein Quelle G=F2^2 plus Dualraum ergibt einen vierdimensionalen Phasenraum.
+  Die ungerade quadratische Verfeinerung liefert fünf isotrope Punkte.
+  Volle S5 Symmetrie markiert keinen von ihnen; P1 verlangt ein S5 zu S4 Flag.
+* Reine übereinstimmende GHZ Nahtzustände sind unter gewöhnlicher partieller
+  Spur keine unendliche projektive Familie. Zusätzliche Quellkappe, Gedächtnis
+  oder geänderte Algebrenabbildung sind echte alternative Annahmen.
+* E8 Anomalierand, M3 Prozess, CAR und Ramond Konstruktion wurden bereits
+  untersucht. Sie werden hier nicht erneut als neue Entdeckungen ausgegeben.
+* Der native R113 Verbraucher besitzt weiterhin kein vollständiges
+  whole_source_bundle. Der tangentiale Fourierparameter ist keine OS Zeit.
+  Die ursprüngliche leere Fockkappe vor der vollständigen Projektion ist 1;
+  ein voller Fermionspurwert darf sie nicht ersetzen.
+
+2. EINE KONKRETE KORREKTUR DES GEOMETRISCHEN SUCHRAUMS
+
+Die spezielle Picardkurve lautet C: y^3=x^4-1, homogen
+F(X,Y,Z)=X^4-Y^3 Z-Z^4. Die bisherige Aussage in v784, Aut(C)=C12,
+erfasst nur Automorphismen, welche die gewählte kubische Deckstruktur erhalten.
+
+Ein zusätzlicher globaler Automorphismus ist
+
+  S(x,y)=(sqrt(3) x/(y+1), (2-y)/(y+1)).
+
+Seine projektive Matrix M erfüllt exakt
+
+  F(Mv)=9 F(v),  M^2=3 I,  det M=-3 sqrt(3).
+
+Mit tau(x,y)=(x,omega y), rho(x,y)=(i x,y) erzeugt er eine Gruppe von
+48 Elementen. Die treue zweidimensionale Darstellung wird im neuen Modul
+über Q(i,sqrt(3)) vollständig enumeriert. Das Zentrum hat Ordnung vier;
+Zentralisator und Normalisator des gewählten kubischen Decks haben Ordnung
+zwölf; es gibt vier konjugierte mu3 Deckuntergruppen. Der Kommutator von
+S und tau hat Ordnung vier. Dass diese erzeugte Gruppe bereits die volle
+Automorphismengruppe ist, folgt ergänzend aus der Klassifikation in [1].
+
+Der Unterschied ist materiell: C12 beschreibt eine markierte Auslese,
+G48 beschreibt die unmarkierte Kurve. Eine Bewegung zwischen Auslesen war
+in einer auf diese Markierung beschränkten Suche nicht enthalten.
+
+Die bisherigen konkreten Codehindernisse bleiben trotzdem bestehen.
+Alle acht Elemente der Ordnung drei sind zu tau oder tau^2 konjugiert.
+Auf dem bisherigen abelschen Flächenblock haben sie
+
+  chi_g(t)=(t^2+t+1)^2,  det(g-I)=9.
+
+Modulo zwei ist der Fixraum daher null; die native Codeaktion hat Fixraum
+der Dimension zwei. Eine lineare äquivariante Identifikation bleibt unmöglich.
+Für eine gewählte invariante nichtentartete symplektische Form ist auch die
+invariante quadratische Verfeinerung eindeutig. Ihre Nullstellenzahl muss
+1 modulo 3 sein. Von 6 und 10 bleibt nur 10, also Arf 0 statt des benötigten
+Arf 1. Die Symmetriekorrektur widerlegt keine dieser konkreten Hürden.
+
+Die historische registrierte v784 Aussage und ihre Verweise müssen bei
+einer späteren formalen Quellenpflege in diesem Umfang korrigiert werden.
+Dieser Forschungszweig enthält den Gegenbeweis und erhält die nachgewiesenen
+Teilausschlüsse. Er ändert keine Paper, Ledger oder alten Verifikationsdateien.
+
+3. WAS TORUS UND DOUBLE COVER TATSÄCHLICH BEDEUTEN
+
+Riemann Hurwitz für eine zweifache Überlagerung mit r einfachen
+Verzweigungspunkten lautet 2g(C)-2=2(2g(B)-2)+r.
+
+  Doppelüberlagerung                         Ergebnis
+  Sphäre, vier einfache Verzweigungen        Genus 1
+  Torus, unverzweigt und zusammenhängend     Genus 1
+  Torus, vier einfache Verzweigungen         Genus 3
+
+Die Picardkurve besitzt tatsächlich die dritte Struktur:
+
+  u=x^2,  u^2=y^3+1,  C -> E,  Grad 2.
+
+Der elliptische Quotient E hat j=0. Die vier Fixpunkte der zentralen
+Involution rho^2 sind die Verzweigungspunkte. Damit existiert hier eine
+präzise doppelte Torusüberlagerung, aber ihr natürlicher Basistorus ist
+äquianharmonisch und nicht der quadratische Torus.
+
+Dieselbe Kurve besitzt verschiedene markierte Projektionen:
+
+  x Projektion, Grad 3: 1,i,-1,-i,unendlich als fünf Verzweigungswerte.
+  y Projektion, Grad 4: -1,-omega,-omega^2,unendlich als vier Werte.
+
+Die separate elliptische Doppelüberlagerung der vier ENDLICHEN x Marken
+hat j=1728. Die vier y Marken ergeben j=0. Die Genus drei Kurve, ihr
+bielliptischer Quotient und die Doppelüberlagerung ihrer x Marken sind
+verschiedene Objekte. Gleiche Anzahl von Marken identifiziert sie nicht.
+
+Eine echte lineare Vierteldrehung erhält ein flaches Torusmetrikgitter
+nur bei G=a I, a>0. Eine bloße Translation der Ordnung vier lässt dagegen
+den komplexen Modulus frei. Selbst die metrische Vierteldrehung wählt
+keinen absoluten Maßstab.
+
+Weitere Arten von double cover bleiben getrennt: Orientierungsüberlagerung,
+Spin(n)->SO(n), zwei Ufer einer Naht und Verdopplung eines Quantenzustands
+sind keine automatisch identischen geometrischen Operationen. Ein Faktor
+zwei muss aus der tatsächlich verwendeten Maßform und Quelloperation kommen.
+
+4. P1 ALS WECHSELNDER LESER UND VOLLSTÄNDIGE VERGLEICHSDYNAMIK
+
+Ein ausdrücklich gewählter endlicher Zustandsraum ist H=C[G48] mit der
+regulären unitären Gruppendarstellung. Für ein kubisches Deck definiere
+
+  P=(I+U_tau+U_tau^2)/3,  Q=U_S P U_S^dagger.
+
+Beide Projektoren haben Rang 16. Sie kommutieren nicht:
+
+  rank[P,Q]=28,
+  spec(PQP)={1 x2, (1/3) x8, (1/9) x6, 0 x32}.
+
+Die mittlere bedingte Erfolgswahrscheinlichkeit im Zustand P/16 ist 1/3.
+P1 kann in dieser Deutung die Wahl einer Quotientenabbildung bezeichnen,
+die durch S verändert wird. Das ist ein mathematischer Transformationspunkt.
+
+Die vier konjugierten Projektoren Pa sind überlappend:
+
+  spec(sum Pa)={4 x2, 2 x16, (4/3) x18, 0 x12},
+  Tr(Pa Pb)=16/3 für a!=b.
+
+Sie bilden weder vier disjunkte Sektoren noch unverändert eine vollständige
+POVM. Außerdem wirkt die zentrale Vierteldrehung rho trivial auf den vier
+Deckuntergruppen. Ihre Permutationsgruppe ist A4 und enthält KEINEN
+Vierzyklus. Der Index 48/12=4 ist daher keine Herleitung der nativen mu4 Uhr.
+
+Eine vollständige zulässige Quantendynamik lässt sich dennoch bauen:
+
+  Phi(X)=1/4 sum_a [Pa X Pa+(I-Pa) X (I-Pa)].
+
+Die acht Krausoperatoren Pa/2 und (I-Pa)/2 erfüllen exakt beide
+Vollständigkeitsidentitäten. Phi ist vollständig positiv, spurerhaltend,
+unital und G48 kovariant. Die einzelne Auslese und ihr Komplement werden
+hier beide mitgeführt; die vorherige bedingte Kompression wird nicht als
+vollständige Zeitentwicklung ausgegeben.
+
+Für rho0=P0/16 ist
+
+  Tr rho0^2=1/16,
+  Tr Phi(rho0)^2=55/1296,
+  Reinheitsabnahme=13/648,
+  ||Phi(rho0)-rho0||_HS^2=5/648.
+
+Es findet also eine nachweisbare Zustandsänderung statt. Eine stetige
+offene Vergleichsdynamik ist
+
+  T_s=exp[s(Phi-I)]=exp(-s) sum_n s^n/n! Phi^n,  s>=0.
+
+Die Poissonmischung ist vollständig positiv und spurerhaltend. Sie setzt
+kein Einbetten von Phi als exp(L) und keinen positiven Logarithmus voraus;
+die vorhandenen Ausschlüsse anderer logarithmischer Kanäle werden nicht
+umgangen. Die beiden Zustände (I+U_rho^2)/48 und (I-U_rho^2)/48 sind
+verschiedene stationäre Zustände vom Rang 24. Der Prozess ist nicht primitiv.
+
+Damit ist eine vollständige endliche Vergleichsdynamik konstruiert.
+Die Wahl des regulären Hilbertraums, der Messoperation und einer Ereignisrate
+bleiben zusätzliche physische Annahmen. Eine geschlossene unitäre Evolution,
+native OS/KMS Zeit oder ein ursprünglicher R113 Zustand folgt daraus nicht.
+
+5. P1 ALS HOLOGRAFISCHE RANDANTWORT: ZAHL UND DYNAMIK AUS EINER WIRKUNG
+
+Ausgangspunkt ist diesmal eine angenommene freie reelle Gaußwirkung
+
+  S_kappa[phi]=(kappa/2) integral_R3 |grad phi|^2,  kappa>0.
+
+Auf der Kugel vom Radius R werden das reguläre Innere und das gegen einen
+festen Nullwert abklingende Äußere verklebt. Für die harmonische Mode ell
+sind die Dirichlet zu Neumann Eigenwerte ell/R und (ell+1)/R. Ihre Summe
+liefert den vollständigen Randoperator, mit physischer Flächenform dS_R:
+
+  K_R=(2 kappa/R) Omega,
+  Omega=sqrt(-Delta_S2+1/4),
+  K_R,ell=kappa(2ell+1)/R,  Multiplizität 2ell+1.
+
+Die zugehörige Kovarianz ist
+
+  C(x,y)=1/(4 pi kappa |x-y|),
+  R C(x,-x)=1/(8 pi kappa).
+
+Für kappa=1 entsteht der P1 Zahlenwert als Auslese eines ganzen Kerns.
+Das ist stärker als eine isolierte Flächenzählung: Es gibt alle Moden,
+die Maßnormierung, eine Antwort auf beliebige Randdaten und eine Zeitform.
+
+Setze r=R exp(tau), chi=sqrt(r) phi. Dann wird die gleiche Wirkung zu
+
+  (kappa/2) integral [ (d_tau chi)^2+|grad_S2 chi|^2+chi^2/4 ]
+
+zuzüglich des Randterms -kappa/4 [integral_S2 chi^2] an den Enden.
+Die radiale Frequenz ist ell+1/2. Die vollständige Zylinderkovarianz lautet
+
+  C_chi(s,gamma)=1/[4 pi kappa sqrt(2(cosh s-cos gamma))],
+  C_chi,ell(s)=exp[-(ell+1/2)|s|]/[2 kappa(ell+1/2)].
+
+Die radiale OS Form ist eine Summe absoluter Quadrate und damit positiv.
+Die Kovarianz (2 kappa Omega)^-1 ist nicht selbst der Zeittransfer
+exp(-s Omega). Auf dem Quantenzustandsraum gehört dazu der entsprechende
+Oszillatorturm; eine einzelne Kugelmarke ist nicht die ganze Theorie.
+
+Der Zusammenhang mit Holografie ist präzise: Ein vollständiger Randantwort-
+operator kann unter zusätzlichen Voraussetzungen geometrische Information
+tragen. Literatur [4] gibt entsprechende Rekonstruktionsresultate. Ein
+einziger antipodaler Skalarwert rekonstruiert kein beliebiges Inneres.
+
+Fünf Grenzen sind exakt sichtbar:
+
+1. kappa=1/2,1,2 lässt dieselben Frequenzen zu, verändert aber den Wert zu
+   1/(4pi), 1/(8pi), 1/(16pi). Positivität, Geometrie und radiale Dynamik
+   wählen die native Feldnormierung nicht. Quantisierte Windung allein
+   fixiert die Steifigkeit eines kompakten Skalars ebenfalls nicht.
+2. Die konstante äußere Lösung ist allgemein A+R(f-A)/r. Die Nullmode der
+   Randantwort lautet (f-A)/R. Erst die Vorgabe A=0 bindet die Leerreferenz.
+3. Die antipodale Ablesung ist keine positive antipodale OS Reflexion.
+   Ein zweipunktiger skalarer Gegenzeuge hat den negativen Eigenwert
+   (3-2 sqrt(3))/(24 pi), ungefähr -0.0061553388455. Der allgemeine
+   Unterschied ist bereits in v519 bekannt; neu ist der konkrete Zeuge
+   innerhalb dieses vollständigen sphärischen Vergleichskerns.
+4. Ein harter harmonischer Cutoff alterniert am antipodalen Punkt zwischen
+   0 und 1/(4pi kappa). Eine verträgliche glatte beziehungsweise Abel
+   Regularisierung ergibt den angegebenen Grenzwert. Der native Regulator
+   muss feststehen, bevor man Werte vergleicht.
+5. R3 und sein radialer Zylinder R x S2 sind keine Herleitung einer
+   physikalischen Raumzeit mit 3+1 Dimensionen. Radiale Skala, interne
+   Geometrie und physische Zeit dürfen nicht mehrfach gezählt werden.
+
+Eine besonders scharfe notwendige native Prüfung wäre, nach unabhängig
+hergeleiteter Feldabbildung W, Zeitskala a und Normierung kappa:
+
+  C_nat(s)=W^dagger exp(-a s Omega)/(2 kappa Omega) W.
+
+Allgemein ist -2 kappa C_nat'(0+)=a W^dagger W; eine nichtisometrische
+Feldabbildung darf die fehlende Normierung nicht stillschweigend absorbieren.
+Erst bei unabhängig bewiesener unitärer Identifikation W, a=1 und mit
+Omega_nat=W^dagger Omega W folgt auf dem nativen Einteilchenraum
+
+  C_nat(0)^-1=2 kappa Omega_nat,
+  -2 kappa C_nat'(0+)=I.
+
+Dies prüft ganze Operatoren statt nur einen Zahlenwert. Ein Bestehen würde
+zunächst den Gaußsektor identifizieren, noch nicht die höheren geladenen,
+fermionischen und gemischten R113 Antworten oder die absolute Quelle Z0.
+
+6. WARUM VIER GLEICHE AUSLESEN DIE NORMIERUNG NICHT RETTEN
+
+Die kombinierte Vermutung "vier Quotienten mal Kreiswinkel gibt 1/(8pi)"
+hat eine exakte Gegenfamilie. Sei Ps=J4/4, Pt=I-Ps und
+
+  Q=a Ps+b Pt,  a,b>0.
+
+Alle diese Formen sind A4 invariant. Die normierten Diagonalen sind stets
+1/4. Mit dtheta/(2pi) entsteht stets dieselbe Wahrscheinlichkeitsdichte
+1/(8pi). Für den gemischten Operator |1><2|+|2><1| ist der Erwartungswert
+aber (a-b)/[2(a+3b)]. Die positiven Parameterpaare (1,1),(2,1),(1/2,2)
+geben exakt 0, 1/10 und -3/26. Ein weiterer positiver Gesamtfaktor ändert
+das absolute Q0, ohne den normierten Zustand zu ändern.
+
+Sogar die spiegelpositive Zeitfamilie a Ps+b exp[-mu(t+s)] Pt lässt jedes
+mu>0 zu. Die Viertelgewichte wählen weder die gemischte Antwort noch die
+absolute Quelle oder die physische Rate. Das ist ein direkter Test gegen
+eine vermeintlich automatische Verbindung der neuen Szenarien.
+
+7. GRÖSSER ALS E8: NULLREDUKTION UND VERBORGENE BEWEGUNG
+
+Ein bedingter größerer Träger ist
+
+  L=II_(9,1)=E8 direct_sum U,  U=[[0,1],[1,0]].
+
+Er ist gerade und unimodular, mit Determinante -1 und Signatur (9,1).
+Für eine markierte primitive Nullrichtung e gilt e^perp/Z e=E8.
+Die Voraussetzungen sind gerade Unimodularität, genau eine negative
+Richtung, minimaler nichttrivialer positiver transversaler Rang und eine
+markierte Nullrichtung. Die globale Klassifikation steht in [3]; ihre
+physikalische Auswahl ist nicht aus den endlichen Kontrollen hergeleitet.
+
+Für v in E8 gibt es die ganzzahligen Transvektionen
+
+  T_v(x,a,b)=(x+bv, a-(x,v)-b(v,v)/2, b),
+  Q(x,a,b)=(x,x)+2ab.
+
+Es gelten Q(T_v z)=Q(z) und T_v T_w=T_(v+w). Zehn konkrete Übergänge
+und hundert Kompositionen werden unabhängig exakt geprüft.
+
+Die Gegenprüfung findet eine entscheidende Auslesegrenze: Auf e^perp ist
+b=0. T_v ändert dort nur a, und diese Koordinate verschwindet im Quotienten.
+Jede dieser Transvektionen wirkt auf dem rekonstruierten E8 IDENTISCH.
+Bewegung in der größeren Struktur ist also nicht automatisch beobachtbare
+Dynamik nach P1.
+
+Zudem ist eine nichttriviale T_v in der zehn dimensionalen Darstellung
+unipotent: N=T_v-I besitzt N^3=0, aber N^2!=0. Sie kann für kein positives
+Skalarprodukt unitär sein. Ein unitärer Permutationslift auf l2(L) ist
+möglich, benötigt jedoch einen neuen Hilbertraum, Zustand und Zeitprozess.
+
+Eine zusätzlich gewählte Norm zwei Wurzel alpha=(v,1,0), (v,v)=2, liefert
+dagegen die Spiegelung r_alpha(z)=z-(z,alpha)alpha. Sie erhält e und wirkt
+im Quotienten nichttrivial als x -> x-(x,v)v. Diese Vergleichsoperation
+zeigt, was eine sichtbare Transformation leisten muss. Wurzelwahl,
+Amplituden, Abfolge und physischer Zeitbegriff werden auch dadurch nicht
+selektiert. E8 als Nullquotient und E8 als dynamische Theorie bleiben
+verschiedene Beweisschritte.
+
+8. GRÖSSERE ELTERN SIND AUS TORUSDATEN NICHT EINDEUTIG
+
+E8 direct_sum E8 und D16+ haben jeweils 480 Wurzeln und 496 Ströme vom
+Gewicht eins. Ihre gesamte Torus Thetafunktion stimmt überein [2]. Die
+neue endliche Rechnung prüft die Koeffizienten von q^0 bis q^6:
+
+  1, 480, 61920, 1050240, 7926240, 37500480, 135480960.
+
+Der vollständige Modulformensatz wird nicht aus sieben Zahlen gefolgert.
+Sogar die Skalarproduktverteilung je Wurzel stimmt überein:
+(-2,-1,0,1,2) hat Multiplizitäten (1,56,366,56,1).
+
+Ein feinerer Test verwendet den Graphen mit einer Kante bei |alpha.beta|=1.
+Er erfasst Wurzelverknüpfung einschließlich Adjunktion, nicht sämtliche
+Koeffizienten einer Operatorproduktentwicklung.
+
+  Diagnose                 E8+E8                  D16+
+  Komponenten              240 und 240            480
+  Grad                     112                    112
+  Tr A^3                   3010560                3010560
+  Tr A^4                   319979520              237404160
+
+Der Graph unterscheidet die beiden Quellalgebren, obwohl Torusspuren und
+einfache Paarstatistiken sie verwechseln. Tr A^4 ist ausdrücklich keine
+Vakuumamplitude auf einer Fläche vom Geschlecht vier. Die physischen
+unmarkierten CFT Vakuumamplituden dieses Paares stimmen sogar bis Geschlecht
+vier überein; eine Unterscheidung tritt erst bei Geschlecht fünf auf [2].
+
+Für TFPT lautet die konkrete Konsequenz: Ein Lesekopf muss markierte
+Operatorprodukte, Ladungen oder eine absolute Antwort messen, wenn er
+zwischen diesen größeren Ursprüngen unterscheiden soll. Eine passende
+Zustandszahl oder Toruspartition genügt nicht.
+
+9. ENTSCHEIDUNGEN FÜR DIE WEITERE SUCHE
+
+9a. DIREKT EINGEARBEITETES NEUESTES ERGEBNIS DER ANDEREN SITZUNG
+
+Die neue Torusstudie konkretisiert P1 als Deckprojektion (I+J)/2 mit
+J f(z)=f(-z), auf einem zunächst angenommenen flachen skalaren Torus.
+Es gilt für alle positiven Wärmeparameter exakt
+
+  Z_+(t)=(Z_T(t)+1)/2,  Z_-(t)=(Z_T(t)-1)/2,
+  Z_+(t)-Z_-(t)=1.
+
+Die Spuridentität war bereits in v483 vorhanden. Neu in der heute
+hinzugekommenen Sitzung sind ihre gezielte Ausarbeitung als möglicher
+P1 Lesekopf, die freien Klein Gegenproben, die Überlagerungsvarianten
+und die zugehörigen Quanteninstrumente. Bei Fläche eins ist
+
+  lim_(t->0) t[Z_+(t)-1/2]=1/(8pi).
+
+Der Grenzwert verwendet die volle Spektralsumme. Eine festgehaltene
+Fourierabschneidung bei 40 liefert im Grenzübergang dagegen null. Die
+Beispiele bei t=0.005 waren korrekt, aber die numerische Residuenfunktion
+wurde für kleine t auf eine stabile Poisson/Jacobi Auswertung umgestellt.
+Zwei neue Regressionen prüfen genau diese Grenze und die Übereinstimmung
+mit der direkten Summe im gemeinsamen Gültigkeitsbereich.
+
+Mit Fläche A und physischem Diffusionsoperator D Delta lautet der rohe
+Koeffizient A/(8pi D). A, D und die ursprüngliche c3 Auslese müssen
+deshalb unabhängig festgelegt werden. Dieser Weg liefert die Zahl als
+führende spektrale Residue; der runde sphärische Ansatz liefert sie als
+antipodale Kovarianz. Diese beiden Observablen sind nicht automatisch gleich.
+
+Die neue trennende Signatur ist die Deckspur: Eine freie
+orientierungsumkehrende Involution mit Quotient Kleinsche Flasche besitzt
+im Ultravioletten die Spur null statt eins. Innerhalb der glatten
+hyperelliptischen Doppelüberlagerungen der Sphäre hat die kleine Zeitskala
+Deckspur (g+1)/2, die große Zeitskala eins. Exakte Skalenkonstanz eins
+erzwingt daher in DIESER Klasse notwendig g=1 und vier Verzweigungspunkte.
+Die Skalenkonstanz selbst ist eine zusätzliche physische Forderung.
+
+Die Spinhebung einer Tangentialdrehung um pi kann in einem gewählten
+chiralen Spinsektor U=iJ ergeben: U^2=-I und U^4=I. Das trennt geometrische
+Zweifachüberlagerung und spinorische Viertelphase sinnvoll. Die Wahl von
+Lift, Spinstruktur und einer nichtverschwindenden ursprünglichen leeren
+Fermionquelle bleibt offen. Der inkohärente Kanal Ad_U=Ad_J verliert die
+Viertelphase; kohärente Quellmarker sind zum Nachweis erforderlich.
+U=iJ besitzt selbst nur die beiden Eigenphasen +i und -i und damit noch
+nicht die vollständige native Viersektoruhr. Die geometrische Spinspur
+[1,0,0,0] zählt einen einzelnen flachen Spinliniensektor vor dem Faktor i;
+ein vollständiger zweikomponentiger Diracspinor ist ein anderer Spurtyp.
+
+Zwei verschiedene elliptische Doppelüberlagerungen derselben Sphäre mit
+je vier Verzweigungswerten haben bei k gemeinsamen Werten nach
+NORMALISIERUNG des Faserprodukts Genus 5-k, für k=0,1,2,3. Bei k=4
+entstehen über C zwei getrennte Toruskopien. Zwei überlagerte Tori sind
+also keine eindeutige topologische Operation und im Allgemeinen keine
+neue Genus eins Fläche.
+
+Der Torusquotient ist eine konische Pillowcase Sphäre. Er ist nicht die
+glatte runde Kugel des Gaußkerns aus Abschnitt 5. Ein gemeinsamer
+Randoperator, die Behandlung der Kegelstellen und der Spintransport
+zwischen beiden wurden nicht konstruiert. Genau diese Grenze verhindert
+eine scheinbare Herleitung durch Zusammenfügen passender Zahlen.
+Bereits die Operatorordnungen unterscheiden sich: Der Torusleser verwendet
+einen Laplaceoperator zweiter Ordnung; der sphärische Nahtkern ist ein
+Dirichlet zu Neumann Operator erster Ordnung. Auch eine glatte runde Sphäre
+derselben Fläche hat im skalaren Wärmeoperator den konstanten Term 1/3,
+während der flache Pillowcase Term 1/2 hat. Gleiche führende Residue
+identifiziert somit weder Geometrie noch den vollständigen Operator.
+
+Für größere affine Eltern bringt die andere Sitzung einen weiteren
+notwendigen Test: Die diagonale Summe zweier unabhängiger E8 Niveau eins
+Ströme besitzt Niveau zwei. Ein symmetrischer E8+E8 Ursprung liefert also
+ohne weiteres Interface nicht die native E8 Niveau eins Algebra. Dies
+ergänzt den hier berechneten Wurzelgraphen und die Torusmehrdeutigkeit.
+
+9b. PRIORITÄTEN NACH DEM GEMEINSAMEN ABGLEICH
+
+Der zuletzt veröffentlichte weitere Sitzungsbefund verbindet die doppelte
+Torusüberlagerung mit dem größeren Elternvergleich: Für disjunkte vierfache
+Verzweigungsmengen entsteht die glatte bielliptische Genus fünf Kurve
+y^2=f4(x), z^2=g4(x). Eine gleichzeitige dreifache Abbildung auf die Sphäre
+würde nach Castelnuovo Severi g<=4 verlangen. Die konkrete Genus fünf
+Kurve ist daher nicht trigonal. Sie ist auch nicht hyperelliptisch:
+Unabhängige zweifache Abbildungen auf eine elliptische Kurve und eine
+Sphäre würden g<=3 verlangen; sie können nicht über dieselbe zweifache
+Abbildung faktorisieren, weil ihre Zielkurven verschiedene Genera haben.
+
+Der publizierte Satz von Grushevsky und Salvati Manni [7] über den
+trigonalen Divisor impliziert deshalb für diese Kurve eine nichtverschwindende
+Differenz der Genus fünf Gitterthetas von E8+E8 und D16+. Die konkrete
+Periodenmatrix und der Zahlenwert dieser Differenz wurden weder dort
+im neuen TFPT Modul noch hier numerisch berechnet. Der Schluss benutzt
+den externen Satz und die geprüfte Geometrie. Ein gemeinsamer Branchwert
+reduziert auf Genus vier, wo die entsprechende Differenz auf Jacobischen
+Matrizen verschwindet. Damit gibt es einen präzisen topologischen Wechsel
+der mathematischen Unterscheidbarkeit größerer Eltern, weiterhin ohne
+physikalische Auswahl einer Quelle oder eines der beiden Elternsysteme.
+
+Priorität A: Sphärischer Antwortkern. Er verbindet eine vollständige
+Randantwort und eine positive Zeitform aus derselben angenommenen Wirkung.
+Nächster harter Entscheid ist die native Operatorgleichheit aus Abschnitt 5,
+einschließlich Z0, kappa, Feldtyp, Regulator und tatsächlicher Zeit.
+
+Priorität B: Wechsel der Picard Quotientenauslese. Die zusätzliche Symmetrie
+und der vollständige positive Kanal sind konkret. Nächster Entscheid ist
+ein aus der Quelle abgeleiteter Hilbertraum und Ladungsintertwiner. Die
+vier Quotienten sind bereits als naive native Vierteluhr ausgeschlossen.
+
+Priorität C: Größerer lorentzscher Ursprung. Der Nullquotient ist exakt.
+Nächster Entscheid ist eine positive physische Quelle mit Übergängen, die
+nach dem Quotienten sichtbar bleiben; reine parabolische Verschiebungen
+reichen nicht. Eine negative Gitterrichtung ist keine hergeleitete Uhr.
+
+Priorität D: Größere positive Eltern. Die neue Negativkontrolle schließt
+eine Auswahl allein durch Torusdaten aus. Native markierte Operatorprodukte
+sind erforderlich, bevor E8 als fundamentaler oder abgeleiteter Träger
+eindeutig behauptet werden kann.
+
+Diese Prioritäten ergänzen die heutigen Klein, Projektivitäts und nativen
+R113 Ergebnisse. Sie ersetzen sie nicht. Keine der neuen Konstruktionen
+selektiert aus denselben primitiven Daten zugleich ursprüngliche Quelle,
+P1 Normierung, odd spin/anchor, native Uhr, E8 Algebra, chirale lokale
+Raumzeit mit 3+1 Dimensionen und Gravitation. F1 bleibt deshalb offen.
+Die abgeschlossene Arbeit ist die konkrete Ausarbeitung, Falsifikation
+falscher Verbindungen und ausführbare Integration dieser Alternativen.
+
+10. REPRODUKTION UND QUELLEN
+
+Das vollständige maschinenlesbare Ergebnis mit Quellhashes liegt in
+F1-ORIGIN-SCENARIOS-20261116.json. Der integrierte Lauf der neuen Kampagne,
+des jüngsten Klein Ergebnisses und der F1 Frontieraussage endete erfolgreich.
+Der Lauf der neuen Kampagne unter python -O lieferte identische Ergebnisse.
+36 sphärische symbolische Kontrollen und 22 modellübergreifende Bedingungen
+bestanden; zusätzlich alle exakten Gruppen, Gitter, Kanal und Spektraltests
+in den fünf neuen Modulen. Die drei vorhandenen Klein Regressionstests und
+alle zwölf Tests des gerade hinzugekommenen Torusansatzes bestanden.
+Zusätzlich bestehen die zwei neuen numerischen Grenzfallregressionen;
+Mit den sechs gerade hinzugekommenen Genus fünf Tests wurden insgesamt
+23 gezielte Regressionstests ausgeführt.
+Die neue Mathematik wurde zwischen getrennten Prüfpfaden gegengelesen;
+die Quotientenspektren und Kanalbrüche zusätzlich über rationale Faltung
+in der Gruppenalgebra überprüft. Die gesamte historische Suite wurde für
+diesen experimentellen Zusatz nicht erneut ausgeführt.
+
+Aus dem Repository:
+
+  python3 -B research/originlab/main.py --finite-controls-only \
+    --campaign f1_origin_scenarios --jobs 1 --out /tmp/tfpt-origin-scenarios
+
+Oder direkt:
+
+  python3 -B research/originlab/f1_origin_scenarios.py
+
+Die Prüfung benötigt Python und SymPy wie das vorhandene OriginLab.
+Sie benötigt keinen lokalen Atlasdienst, keine geheimen Quellwerte und
+keine empirischen Zielgrößen. Alle mathematischen Fehlerbedingungen
+verwenden explizite Exceptions und bleiben unter python -O aktiv.
+
+Beim gemeinsamen Lauf mit dem jüngsten Klein Ergebnis wurde außerdem ein
+vorhandener Integrationsfehler behoben: dessen controls() Rückgabe enthielt
+keinen von main.py verlangten status Schlüssel. Ergänzt wurde allein der
+Status EXACT_KLEIN_DOUBLE_CONTROL_P1_SELECTION_OPEN; mathematische Aussagen
+und F1_solved=False bleiben unverändert.
+
+Implementierung:
+  origin_picard.py
+  origin_quotient_switch.py
+  origin_spherical.py
+  origin_parent_lattices.py
+  origin_lorentzian.py
+  f1_origin_scenarios.py
+
+Primärquellen, selbst gelesen:
+
+[1] Bouw, Koutsianas, Sijsling, Wewers: Conductor and discriminant of
+    Picard curves, Journal of the London Mathematical Society 102 (2020),
+    insbesondere Abschnitt 4.1, Lemma 4.1.5.
+    https://d-nb.info/1253140073/34
+    Ergänzend Laga und Shnidman: The geometry and arithmetic of
+    bielliptic Picard curves.
+    https://math.huji.ac.il/~shnidman/BPC.pdf
+
+[2] Gaberdiel, Volpato: Higher genus partition functions of meromorphic
+    conformal field theories, JHEP 06 (2009) 048.
+    https://arxiv.org/abs/0903.4107
+
+[3] Plamadeala, Mulligan, Nayak: Short Range Entangled Bosonic States with
+    Chiral Edge Modes and T Duality of Heterotic Strings, Phys. Rev. B 88,
+    045131 (2013), Abschnitt II.C, Gleichungen 16, 18, 21.
+    https://arxiv.org/abs/1304.0772
+
+[4] Enciso, Uhlmann, Wrochna: The Dirichlet to Neumann map on
+    asymptotically anti de Sitter spaces and holography.
+    https://arxiv.org/abs/2512.03587
+
+[5] Jaffe, Ritter: Reflection Positivity and Monotonicity.
+    https://arxiv.org/abs/0705.0712
+
+[6] Perez Esteva, Uribe, Villegas Blas: Spectral cluster asymptotics of
+    the Dirichlet to Neumann operator on the two sphere.
+    https://arxiv.org/abs/2412.16652
+
+[7] Grushevsky, Salvati Manni: The superstring cosmological constant
+    and the Schottky form in genus 5, korrigierte Fassung v5.
+    https://arxiv.org/abs/0809.1391
+
+Die expliziten Vergleichsrechnungen, Gegenfamilien und Tests stehen in den
+genannten neuen Modulen. Literatur liefert nicht die behauptete physische
+Identifikation mit TFPT; genau diese Identifikation bleibt zu prüfen.

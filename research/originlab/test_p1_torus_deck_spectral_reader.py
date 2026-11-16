@@ -3,7 +3,7 @@ import math
 import unittest
 
 from p1_torus_deck_spectral_reader import (
-    branched_even_odd, branched_double_branch_count,
+    torus_heat, branched_even_odd, branched_double_branch_count,
     branched_scalar_uv_trace, heat_residue_estimate,
     klein_glide_trace, klein_glide_poisson, spin_pi_lift,
     spin_structure_inversion_trace, two_sheet_branch_points, controls, overlapped_elliptic_covers_genus,
@@ -31,6 +31,25 @@ class TorusDeckReaderTests(unittest.TestCase):
         for aspect in (1., 1.7):
             self.assertAlmostEqual(heat_residue_estimate(.005, aspect),
                                    target, delta=2e-11)
+
+    def test_poisson_residue_survives_small_t_beyond_fixed_fourier_cutoff(self):
+        target = 1/(8*math.pi)
+        for t in (1e-8, 1e-10):
+            for aspect in (1., 1.7):
+                self.assertAlmostEqual(heat_residue_estimate(t, aspect),
+                                       target, delta=2e-15)
+                finite_residue = t*torus_heat(t, aspect, cutoff=40)/2
+                self.assertLess(finite_residue, target/100)
+                # Every finite-mode summand is <=1, so this upper bound
+                # goes to zero when t->0 at a fixed Fourier cutoff.
+                self.assertLessEqual(finite_residue, t*(2*40+1)**2/2)
+
+    def test_poisson_residue_matches_resolved_direct_fourier_sums(self):
+        for aspect in (.6, 1.7, 3.):
+            for t in (.002, .02, .2):
+                direct = t*torus_heat(t, aspect, cutoff=100)/2
+                self.assertAlmostEqual(heat_residue_estimate(t, aspect),
+                                       direct, delta=2e-13)
 
     def test_free_klein_cover_has_different_uv_signature(self):
         for t in (.005, .02, .07):

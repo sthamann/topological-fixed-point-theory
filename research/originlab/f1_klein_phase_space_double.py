@@ -48,6 +48,7 @@ def controls():
             and sum(q(v)==0 for v in V)==6,
             "odd O(4,2) isometries or S4 stabilizer census changed")
     return {
+        "status":"EXACT_KLEIN_DOUBLE_CONTROL_P1_SELECTION_OPEN",
         "source_double":"G x G*=F2^4 with alternating symplectic B",
         "new_odd_quadratic_refinement":"q(g,chi)=g.chi+g1+chi1",
         "extra_spin_polarization_derived":False,

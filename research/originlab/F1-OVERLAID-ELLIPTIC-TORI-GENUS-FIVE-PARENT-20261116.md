@@ -63,6 +63,15 @@ g(C) <= 2*g(E_a) + 3*g(P1) + (2-1)*(3-1)
 
 im Widerspruch zum exakt konstruierten `g(C)=5`.
 
+Für den vollständigen Schluss aus dem Brill Noether Divisor ist auch
+Hyperelliptizität auszuschließen: Eine zusätzliche 2:1-Abbildung auf P1
+könnte nicht durch denselben Grad-zwei-Zwischenkörper wie `C->E_a`
+faktorisieren, weil die beiden Zielkurven Genus null beziehungsweise eins
+haben. Beide Abbildungen wären daher unabhängig. Castelnuovo-Severi ergäbe
+`g(C)<=2*1+2*0+(2-1)*(2-1)=3`, erneut ein Widerspruch. Somit hat C auch
+kein Grad-drei-Büschel mit Basispunkt aus einer hyperelliptischen Struktur.
+Der trigonale Abschluss im Nullstellensatz ist damit vollständig ausgeschlossen.
+
 **Konditionales mathematisches Ergebnis:** Wenn die beiden Parentoptionen tatsächlich durch ihre gewöhnlichen Rang-16-Gitter-Thetapartitionen auf der Jacobischen Periodenmatrix des hier konstruierten glatten `C` ausgelesen werden, dann sind sie bei `k=0` unterscheidbar:
 
 ```text

@@ -1,5 +1,43 @@
 # OriginLab implementation plan
 
+## 16 November 2026: Alternative origins and changing P1 readouts
+
+[Full research and executable audit](F1-ORIGIN-SCENARIOS-20261116.txt), campaign
+`f1_origin_scenarios`. New exact findings: the special Picard curve has full
+symmetry of order 48, while the v784 C12 calculation fixes a cubic deck;
+its direct fixed-space and Arf code obstructions survive. The actual central
+double torus quotient has j=0, distinct from the square j=1728 cover of four
+finite x marks. Four conjugate quotient readouts overlap and have A4 action,
+so they are not the native central mu4 clock. A complete covariant CP/TP
+pinching channel gives nontrivial open comparison dynamics, with physical
+state, instrument and rate still assumed.
+
+A scalar R3 sewing action yields a full spherical DtN kernel and radial
+positive transfer, with antipodal response 1/(8 pi kappa). It exposes the
+remaining stiffness, absolute empty reference and native operator mapping.
+The explicit II(9,1) parent gives E8 as a marked null quotient, but its
+transvections act trivially on that quotient; parent motion alone is not
+observable E8 dynamics. E8+E8 and D16+ share torus spectra and root pair
+statistics yet differ in the root interaction graph. The next checks must
+use native full response operators and marked products, not scalar matches.
+
+Public Atlas provenance remains the 9 November export, supplemented by
+the current 16 November repository and available session summaries. No live
+local Atlas access or physical source recovery is claimed. Formal historical
+v784/paper/ledger scope correction remains a separate source maintenance
+task. **F1 OPEN; no scientific ledger promotion.**
+
+Final synchronization additionally includes the three parallel torus reader
+commits through `9511d244`. Their twelve tests, scale independent parity
+trace, Klein comparison, spin lift and normalized elliptic fiber products
+are now cross checked in the same campaign. The torus heat residue and the
+spherical antipodal covariance are different observables; no common native
+operator identification is asserted. The combined campaign has five scenarios.
+The later parallel update through `8731e75` supplies a bielliptic genus-five
+probe: disjoint branch sets exclude trigonal curves by Castelnuovo Severi,
+so the published genus-five theta theorem separates the two rank-sixteen
+parents. The six finite tests are included; no numerical theta value is invented.
+
 
 ## 16 November 2026 · Source-first five-point admissible history compiler and coherent-phase audit
 

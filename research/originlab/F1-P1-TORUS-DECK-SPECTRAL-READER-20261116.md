@@ -76,6 +76,11 @@ Numerische Kontrollen, direkte Fourierreihe mit `|m|,|n|<=40`:
 | 1.7 | 0.005 | 0.03978873577298724 | 1 |
 
 Der Grenzwert ist `1/(8*pi)=0.03978873577297383...`.
+Die angegebenen Fourierkontrollen gelten bei den genannten endlichen t.
+Bei festem Cutoff und anschließend t gegen null würde die numerische
+Residue dagegen gegen null gehen. Die Residuenfunktion verwendet deshalb
+eine stabile Poisson/Jacobi Auswertung; die volle spektrale Grenzaussage
+wird nicht aus einer fest abgeschnittenen Summe gefolgert.
 **Die Quadratlage y=1 wird durch diese Quelle NICHT ausgewählt.**
 Das frühere elliptische Determinantenmodell kann als separater
 Modulus Selektor geprüft werden, darf aber nicht still in das
@@ -137,8 +142,10 @@ entscheiden, ob das akzeptabel ist.
 
 Zwei unabhängige einfach verzweigte **elliptische** Doppelüberlagerungen
 derselben `P¹` mit jeweils vier Zweigwerten `B1,B2` ergeben
-für `k=|B1 intersect B2|<4` einen zusammenhängenden
-Vierfachdeck mit Gruppe `(Z2)²`. Riemann Hurwitz ergibt
+für `k=|B1 intersect B2|<4` nach **Normalisierung des Faserprodukts**
+einen zusammenhängenden Vierfachdeck mit Gruppe `(Z2)²`. Bei gemeinsamen
+Verzweigungswerten ist das rohe Faserprodukt nodal; die folgende Formel
+nennt den geometrischen Genus der Normalisierung. Riemann Hurwitz ergibt
 
 `2g(C)-2=4*(-2)+2*|B1 union B2|`, folglich `g(C)=5-k`.
 
@@ -148,7 +155,7 @@ Vierfachdeck mit Gruppe `(Z2)²`. Riemann Hurwitz ergibt
 | 1 | 4 |
 | 2 | 3 |
 | 3 | 2 |
-| 4 | Nicht verbunden: zwei Kopien desselben Torus |
+| 4 | Normalisierung: zwei getrennte Kopien desselben Torus |
 
 Eine **unverzweigte** doppelte Überlagerung eines Torus hat
 dagegen wieder Genus 1. Die orientierte Doppelüberlagerung einer
@@ -254,7 +261,8 @@ Reproduzierbare Standardbibliothek:
 `p1_torus_deck_spectral_reader.py`,
 `test_p1_torus_deck_spectral_reader.py`.
 Lokaler kontrollierter Lauf am 16. November:
-**12/12 Tests bestanden**, Fourier und Poissonform
+**14/14 Tests bestanden**, einschließlich zweier zusätzlicher
+Kontrollen des kleinen Zeitgrenzwerts. Fourier und Poissonform
 unabhängig gegengeprüft. Status F1 ausdrücklich **OFFEN**.
 
 Externes Fundament:

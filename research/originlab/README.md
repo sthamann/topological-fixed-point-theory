@@ -5,6 +5,40 @@ are neither imported nor executed. Historical certificates supply benchmark
 data. The original-source lane calls the native R113 consumer directly.
 The native domain and canonical Atlas supply original provenance.
 
+## Alternative origin scenarios, 16 November 2026
+
+The new `f1_origin_scenarios` campaign compares five explicit hypotheses:
+a spherical boundary response with radial time, changing quotient readouts
+of the special Picard curve, a Lorentzian parent with E8 null reduction,
+larger positive parents invisible to scalar torus data, and the newest
+parallel session's spectral torus deck reader from commit `9511d244`.
+
+The exact controls distinguish the full Picard symmetry of order 48 from
+its marked cubic deck normalizer of order 12, preserve the native code
+obstructions, separate the natural j=0 double torus cover from the square
+j=1728 cover, and test complete quantum readout dynamics. They also expose
+the scalar normalization freedom and the larger parent ambiguity. These
+are alternative comparison sources; no common physical source or F1
+closure is claimed. See the [full research and source audit](F1-ORIGIN-SCENARIOS-20261116.txt)
+and [exact results with source hashes](F1-ORIGIN-SCENARIOS-20261116.json).
+
+```bash
+python3 -B research/originlab/main.py --finite-controls-only \
+  --campaign f1_origin_scenarios --jobs 1 --out /tmp/tfpt-origin-scenarios
+```
+
+The results are included in the F1 frontier when both campaigns are requested.
+The five component modules and the combined campaign use explicit failure
+checks that remain active under `python -O`.
+The latest torus study is included separately, with its twelve existing
+tests and a clear distinction between the conical pillowcase quotient and
+the smooth spherical scalar interface.
+Two added numerical regressions protect the true small-time limit against
+a fixed Fourier cutoff; elliptic fiber-product genera refer to normalization.
+The final synchronized comparison also includes the six genus-five parent
+tests from commit `8731e75`. Its theta separation uses a published theorem;
+no numerical period matrix or new physical parent selection is claimed.
+
 From the repository root with Python 3.11 or newer:
 
 ```sh
