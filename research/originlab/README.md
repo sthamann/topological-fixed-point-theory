@@ -1,5 +1,7 @@
 # OriginLab
 
+[Autonomous F1 supervisor](AUTONOMOUS-F1.md)
+
 Independent, finite exact research campaigns for TFPT. Previous search engines
 are neither imported nor executed. Historical certificates supply benchmark
 data. The original-source lane calls the native R113 consumer directly.

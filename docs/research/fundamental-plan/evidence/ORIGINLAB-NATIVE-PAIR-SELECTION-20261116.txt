@@ -1,0 +1,124 @@
+OriginLab · Absolute Auswahlkosten des binären P1 Paars · 16. November 2026
+
+1. Eine gemeinsame klassische Auslese erreicht das Viererwort nicht
+
+Seien a,b die beiden Kontraste eines gemeinsamen positiven binären
+Ausleseoperators mit vier Effekten G_{st}. Setze p=G_{++}+G_{--},
+r=(a+b)/2=G_{++}-G_{--}, s=(a-b)/2=G_{+-}-G_{-+}. Dann 0<=p<=I,
+-p<=r<=p und -(I-p)<=s<=I-p. Die positiven Formschranken ergeben
+r=p^(1/2) C p^(1/2) und s=(I-p)^(1/2) D (I-p)^(1/2) mit
+selbstadjungierten Kontraktionen C,D auf den jeweiligen Stützen.
+Für einen normierten Vektor x gilt
+
+ |<x,r s x>| <= ||p^(1/2)x|| ||(p(I-p))^(1/2)|| ||(I-p)^(1/2)x|| <= 1/4.
+
+Der erste und dritte Faktor haben Summe der Quadrate eins, der mittlere
+Faktor ist höchstens 1/2. Somit ||[r,s]||<=1/2 und ||[a,b]||<=1.
+Mit Q=(ab+ba)/2 und D'=(ab-ba)/2 gilt Re((ab)^2)=Q²+D'²>=-I/4.
+Dies gilt dimensionsunabhängig und auch bei unsymmetrischen Effekten.
+Die vier Effekte (I+s X/sqrt(2)+t Z/sqrt(2))/4 saturieren die Schranke.
+Eine gemeinsame positive Kompression klassischer binärer Schnitte fällt
+in diese Klasse. Dies betrifft das Produkt der komprimierten Kontraste,
+keine geordnete Quelleneinfügung mit dazwischenliegenden Transporten.
+Das volle simultane klassische Wort vor irgendeiner Kompression ist +1.
+
+2. Alte v746 und v1033 Operatoren, tatsächliche scharfe Antwort
+
+Auf dem antipodalen Paar (j,j') mit j'=j+N/2 von v746 ist der alte
+hermitesche Strom K=i(c_j†c_j'-c_j'†c_j). Für A=I-2 n_j gilt AK=-KA.
+Sein Quadrat ist P_j=n_j+n_j'-2 n_j n_j', der einfach besetzte Sektor.
+Die Ergänzung B=K+I-P_j macht den Strom zu einer binären Involution.
+Es gelten die vollständigen Operatoridentitäten
+
+  A K A K=-P_j,     A B A B=I-2 P_j.
+
+Die ursprüngliche NS Kovarianz bei N=48,96,192 ist auf dem Paar I/2.
+Daher sind omega(P_j)=1/2, omega(AKAK)=-1/2 und omega(ABAB)=0.
+Der konditionierte einfach besetzte Sektor gibt das exakte Wort -1.
+Das Kürzen durch den Stromnormwert im alten Bericht ist folglich keine
+unbedingte scharfe Antikommutation auf dem ganzen ursprünglichen Zustand.
+
+Der ältere kontinuierliche v1033 Zylinder liefert einen separaten
+Numerikvergleich mit Original h bei 32 mal 8 Plätzen und Masse 1.
+Für die Kante (5,0,0) nach (6,0,0) und die zugehörige scharf ergänzte
+normierte Hermitesche Hopmarke liefern die Quartersektoren r=1,3
+omega(P)=0.38456748332905466 bzw. 0.3723230961651317. Das unbedingte
+Viererwort ist entsprechend 0.23086503334189068 bzw. 0.2553538076697366.
+Beide Grundraumdiagonalisierungen haben leeren Nullraum. Die Einteilchen
+Kopplung des gewählten Paars an den Komplementträger hat maximalen
+Matrixbetrag 1/2. Auf der Einteilchenstufe reduziert der feste Projektor
+die Bewegung also nicht. Es handelt sich um bedingte Originalcharts,
+keine Gleichsetzung mit der R113 Feldkarte oder dessen P_adm.
+
+3. Exakte Kosten für die feste gleichzeitige Auswahl aller Orte
+
+Ein einzelner v746 Projektor P_j wird mit dem primitiven räumlichen
+Shift mitbewegt. Für einen festen Selektor, der alle so verschobenen
+Pauli Blöcke gleichzeitig scharf macht, ist die Stütze höchstens
+P_all=Produkt_j P_j, j über N/2 verschiedene antipodale Paare.
+Die P_j kommutieren untereinander und P_all ist translationsinvariant.
+Setze N=4k und m=2k. Die Halbturn Eigenkanäle +i und -i bilden je eine
+m Plätze Fourierkette. Die NS Füllung besetzt in beiden je k aufeinander
+folgende Moden, bis auf diagonale Ortsphasen. In der Halbturnbasis bleibt
+die Gesamtbesetzung jedes Paars invariant. Genau eine Besetzung in jedem
+Paar bedeutet, dass die in den zwei Kanälen besetzten Platzmengen
+T und T^c komplementär sind. Beide Slater Verteilungen sind identisch.
+Für die folgende Formel gilt p(T^c)=p(T), da die komplementäre Folge
+der k Fouriermoden eine Verschiebung und damit eine Ortsphase ist. Das
+folgt auch direkt aus der komplementären Minoridentität einer Unitären.
+
+Mit m-ten Einheitswurzeln z_j ist p(T)=m^(-k)|Delta(z_T)|².
+Somit omega(P_all)=Summe_{|T|=k} p(T)^2. Die Quartik Vandermonde hat
+pro Variable Laurent Exponenten von -2(k-1) bis 2(k-1), strikt unter m
+im Betrag. Mittelung über die m-ten Wurzeln zieht daher genau den
+konstanten Term. Kollisionen tragen null bei. Dessen Dyson Wert ist
+(2k)!/(2!)^k. Daraus folgt für den unveränderten alten See exakt
+
+  omega(P_all)=(2k)!/[k! (4k)^k] ~ sqrt(2) exp(-k).
+
+Für N=48,96,192 ergeben sich 8.659121980662805e-6,
+5.329586619368984e-11 und 2.013737623661411e-21. Die Werte N=4,8,12,16
+wurden zusätzlich mit vollständiger Fockbesetzungssumme und exakter
+zyklotomischer Reduktion geprüft. Das verschwindende absolute Gewicht betrifft
+diesen See. Eine separate Renormierung oder gekoppelter Referenzlauf könnte
+Verhältnisse verändern, wechselt aber den hier geprüften Quellvertrag.
+Diese Rechnung ist kein No-go für alle nativen R113 Grenzwerte.
+
+4. Positiver bewegter Zweig und eine zweite algebraische Alternative
+
+Die mitbewegten P_j besitzen örtlich stets Gewicht 1/2. Die Pfeile
+P_k Gamma(S^(k-j)) P_j sind exakt unitär zwischen ihren jeweiligen
+Trägern und komponieren dort. Eine halbe Umrundung kehrt zum selben
+antipodalen Träger zurück. Ihr alter NS Halbturn negiert die Paritätsachse
+und lässt den alten Imaginärstrom fest. Sie ist damit nicht die gesuchte
+Vierteldrehung zwischen genau diesen zwei Achsen. Dieser bewegte Vergleich
+identifiziert räumliches Trägertransportieren noch nicht mit OS Zeit.
+
+Eine weitere Alternative sind zwei echte gerade CAR Operationen mit
+einer gemeinsamen Majorana Komponente, A=i gamma1 gamma2 und
+B=i gamma2 gamma3. Sie liefern ABAB=-I auch auf dem geraden Vakuumcap.
+In der üblichen komplexen Polarisation kann B dabei Besetzung um zwei
+ändern. Dagegen liefert die gewöhnliche Exteriorpotenz einer globalen
+antikommutierenden Einteilchenpaarung als Viererwort Gamma(-I)=(-1)^N, also
++I auf dem geraden Sektor. Lokal gerade Gesamtparität schließt den
+v746 Paarsektor nicht aus, denn dieser ist nur lokal ungerade. Die
+neue CAR Alternative ist ein algebraischer Kandidat, keine Zuordnung
+zu einem benannten zulässigen geladenen R113 Operator.
+
+5. Ausführung und physische Fortsetzung
+
+23 OriginLab Kontrollen bestanden. Der integrierte vollständige F1
+Suchpfad meldete fehlenden nativen Zielvertrag, der Ward Satz wurde
+vom Lean Kernel bestätigt. R113 meldet BLOCKED und r113_synthesis
+verlangt weiterhin die originale geladene Quelle. Die absolute
+Referenz und die vier Originalantworten bleiben offen. Ursprüngliche
+Fortsetzung: an der gewichteten Zweifensterform zuerst prüfen, ob der
+echte Auswahloperator ortsmitbewegt ist oder ob ein erlaubter gerader
+Paaroperator die volle Vakuumantwort trägt. Die absolute Normierung,
+P2 Markierung, OS Zeit und physische Vervollständigung bleiben offen.
+
+Quellen: verification/v746_phys_gnet_local_functor.py (NS Kovarianz
+und Shift), verification/v1033_charged_disorder.py (Hamiltonmatrix
+und Halbbesetzung), R113-FULL96-TWO-WINDOWS-20261116.txt (nativer
+Operator und gebundene Referenz), arXiv:1812.05557 (Dyson Identität),
+arXiv:0706.1415 (gemeinsame positive Auslese). Keine Ledgerpromotion.

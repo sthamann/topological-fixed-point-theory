@@ -214,6 +214,67 @@ class RelationalTests(unittest.TestCase):
             atom["ordered_window_kernels"]["K0"] = extend(form(0))
             self.assertEqual(fibre_forms(atom,3,sp.S.Zero,sp.S.One)["ZUY"][0,0],12)
 
+            del atom["ordered_window_kernels"]
+            # A rank two word Gram on three labels, with a redundant word and
+            # a non-unit metric in the second quotient direction.
+            packet["gram_form"] = [[[1,0],[0,0],[0,0]],
+                                   [[0,0],[2,0],[2,0]],[[0,0],[2,0],[2,0]]]
+
+            def leg(value):
+                return {"form":extend(form(value)), "image_norm_form":extend(form(value**2)),
+                        "image_norm_binding":"norm from the full two dimensional control space"}
+
+            history = {"time_id":"clock", "durations":["1/4","1/2","1/4"],
+                       "early":leg(2), "middle":leg(1), "late":leg(1)}
+            atom["ordered_window_legs"] = {**history,"Y":leg(3),"U":2}
+            del packet["reference_scalar"]
+            packet["reference_window_history"] = {
+                **history, "reference_binding":"independent empty control",
+                "selector_form":extend(form(1)),"boundary_pairing_form":extend(form(1)),
+                "scalar_factor":[1,0],
+            }
+            attached.write_text(json.dumps({**domain,"original_domain_binding":binding,"whole_source_bundle":packet}))
+            from_legs = evaluate(root,attached)
+            self.assertEqual(from_legs["quotient_rank"],2)
+            self.assertEqual(from_legs["ordered_primitive_atom_count"],1)
+            self.assertTrue(from_legs["absolute_reference_from_primitive_history"])
+            self.assertEqual(from_legs["values"],result["values"])
+            self.assertEqual(from_legs["original_values"],dict.fromkeys(MARKS))
+
+            # The projected transfer looks identical, but its independent norm
+            # exposes a nonzero component outside the retained quotient.
+            atom["ordered_window_legs"]["Y"]["image_norm_form"] = extend(form(10))
+            attached.write_text(json.dumps({**domain,"original_domain_binding":binding,"whole_source_bundle":packet}))
+            with self.assertRaisesRegex(ValueError,"does not close on the retained reflected word space"):
+                evaluate(root,attached)
+
+            def rows(operator):
+                return [[[int(value),0] for value in row] for row in operator.tolist()]
+
+            packet["primitive_ambient_basis"] = {
+                "source_binding":"three dimensional continuity control",
+                "gram_form":rows(sp.diag(1,2,1)),
+                "word_coordinates":rows(sp.Matrix([[1,0,0],[0,1,1],[0,0,0]])),
+            }
+            swap = {"ambient_operator":rows(sp.Matrix([[0,0,1],[0,1,0],[1,0,0]]))}
+            ambient_history = {**history,"early":swap,"late":swap,
+                               "middle":{"ambient_operator":rows(sp.diag(1,0,2))}}
+            atom["ordered_window_legs"] = {**ambient_history,"U":2,
+                                           "Y":{"ambient_operator":rows(sp.diag(0,0,3))}}
+            packet["reference_window_history"].update(ambient_history)
+            packet["input_role"] = "source_reviewed_original"
+            attached.write_text(json.dumps({**domain,"original_domain_binding":binding,"whole_source_bundle":packet}))
+            result_with_return = evaluate(root,attached)
+            self.assertEqual(result_with_return["values"],result["values"])
+            self.assertEqual(result_with_return["original_values"],result["values"])
+            self.assertFalse(result_with_return["physical_source_identity_proved"])
+            # Replacing even one ambient leg by a quotient leg cannot give a
+            # valid closed-space product for the remaining excursion.
+            atom["ordered_window_legs"]["Y"] = leg(3)
+            attached.write_text(json.dumps({**domain,"original_domain_binding":binding,"whole_source_bundle":packet}))
+            with self.assertRaisesRegex(ValueError,"does not close on the retained reflected word space"):
+                evaluate(root,attached)
+
     def test_default_native_witness_has_no_promoted_source_values(self):
         r = execute({"lane":"r113_orientation"},ROOT)
         self.assertEqual(r["status"],"EXCLUDED_SCOPED")

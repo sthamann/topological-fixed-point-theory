@@ -1,0 +1,155 @@
+R113 · Exakte Ordnung von drei räumlichen Originalfenstern
+
+Eingabe
+
+Es gelten der deklarierte Full96 Fourierchart mit Majorana,
+seine unveränderten 27 Profile und die feste nichtentartete
+Paarform S. Die Koeffizienten des Profils werden als die
+angegebenen rationalen Zahlen zusammen mit den exakten
+dyadischen Einträgen des geladenen v252 Assemblers gelesen.
+Der gemeinsame Fensterparameter w bleibt zunächst symbolisch.
+Der Quellenchart bezeichnet ihn als räumliche Vergleichsbreite.
+
+Pro Profil bleiben der lineare Spiegelungsbeweis aus
+ORIGINLAB-REFLECTED-CAP-20261116.txt und die zwei Fenster
+Originalrechnung anwendbar. Schreiben R(h;w) und R(m(h);w)
+die chronologisch zusammengesetzten Matrixprodukte, so gilt
+  R(h;w) S R(m(h);w)^t = S
+für den profilweisen Spiegel m in derselben Reihenfolge.
+Da jedes exponentielle Bein und S invertierbar sind, ist die
+Suche nach einem weiteren Partner gleich der Suche nach einem
+zweiten Verlauf mit derselben Einteilchenmatrix.
+
+Exakte Berechnung
+
+Die ersten drei Ableitungen von exp(w H_3) exp(w H_2) exp(w H_1)
+bei w=0 werden mit der Leibnizregel gebildet. Ihre ganzzahligen
+Multinomialkoeffizienten erlauben direkte endliche Feldrechnung.
+Das Vorzeichen im ursprünglichen exp(-w H_j) ändert jede Stufe
+nur durch das gemeinsame Vorzeichen (-1)^k. Reduktion bei
+p=65537, i=256 und invertierbaren Nennern bewahrt die Gleichheit.
+Ungleiche Residuen beweisen ungleiche exakte Koordinaten.
+
+Die Suche benutzt nur die auf e_0 angewandte Matrix und daraus
+3, 11 bzw. 23 Zeilen pro Ableitungsordnung. Der Raum aller
+geprüften Profilfolgen und Vergleichspaare lautet:
+
+  Grenze      Signaturen   noch mögliche Paare  groesste Klasse
+  Start                1           387420489            19683
+  Ordnung 1          343             2803221              343
+  Ordnung 2        18695               22355                8
+  Ordnung 3        19683               19683                1
+
+Die letzte Zeile liefert für jeden der 27^3 Verläufe genau einen
+Partner, den gleich geordneten Spiegel. Von den einzeln
+gespiegelten Folgen in umgekehrter Ordnung bleiben 729 Palindrome.
+
+Eine unabhängig wiedergerechnete Gegenprobe an der zweiten
+Ordnung verwendet dieselben ersten beiden Profilkoeffizienten
+und die dritte Folge (-1,1,0) beziehungsweise (0,-1,1).
+Für H_j=H+c_j V hängen die ersten zwei Ableitungen von
+sum c_j und c_1-c_3 ab. Diese Werte sind in beiden Fällen gleich.
+Das folgt direkt aus
+  R''(0) = (sum H_j)^2 + sum_(j>i) [H_j,H_i].
+Die dritte Ableitung unterscheidet sich an Zeile 193, Spalte 0
+mit Residuen 4164 und 27928. Indizes beginnen bei null.
+Dieser neue Zeuge ist ein echtes Gegenbeispiel zur Auswahl
+durch zwei Ableitungen auf dem gesamten Einteilchenraum.
+
+Exakt bei jeder positiven algebraischen Breite
+
+Jede Fenstermatrix ist hermitesch und besitzt algebraische
+Einträge. Ihre verschiedenen Eigenwerte sind algebraisch.
+Spektralprojektoren sind Produkte von (H-lambda I) geteilt
+durch algebraische Spektraldifferenzen. Damit ist jede
+Koordinate eines geordneten Produktes eine endliche Summe
+  sum_lambda a_lambda exp(w lambda)
+mit algebraischen a_lambda und paarweise verschiedenen
+algebraischen lambda. Die Ableitungszertifikate liefern für
+jedes Paar verschiedener Verläufe eine Koordinate, bei der
+mindestens ein zusammengefasster Koeffizient ungleich null ist.
+
+Für algebraisches w != 0 sind die Exponenten w lambda
+algebraisch und bleiben verschieden. Lindemann–Weierstrass
+schließt die Null dieser Koordinate exakt aus. Das gilt in
+der Zwei- und Dreifensterklasse insbesondere bei w=1/10,
+unabhängig von Gleitkommaabständen. Für allgemeines positives
+reelles w folgt aus diesem Argument allein keine ausnahmslose
+Injektivität. Quelle: Vjosa Blakaj, Baker's Results and
+Schanuel's Conjecture, Theorem 3.0.2, Technische Universität
+München, https://mediatum.ub.tum.de/doc/1764825/b720ezxqrg8us8tcn7u3603q7.PhD_Thesis___Vjosa_Blakaj%20%283%29.pdf
+
+Welche Ursprungsregel damit geprüft ist
+
+Auf W=(V_L tensor V_R) entspricht der normierte Kreuzpaarvektor
+dem Skewmatrixkoeffizienten S/sqrt(d). Schreibe
+D=Gamma^2(R_a direct_sum R_b)|_W - I. Dann ist
+  ||D Omega||^2 = ||R_a S R_b^t-S||_F^2/d.
+Zwei Schöpfungsoperatoren wählen den Block mit genau einem
+Index pro Seite; das Skalarprodukt des so markierten Zustands
+mit sich ist ein gemeinsames Moment desselben Verlaufs.
+Die Quadratnorm ist vor jeder Mittelung zu bilden. Unter einem
+positiven gemeinsamen Maß macht Erwartungswert null diesen Test
+genau zum Trägertest. Eine äußere Projektion eines schon
+kontrahierten Ergebnisses liefert diese Information nur, wenn der
+benötigte eingehende Paarvektor und seine ausgehenden Richtungen
+in den geprüften Randformen erhalten sind.
+
+Fable 5.2 Hoch hat den Beweis in Chrome gegengeprüft und
+das erforderliche Moment als D=M2-2 Re M1+1 geschrieben.
+M1 ist der mittlere normierte Paarüberlapp. M2 ist die
+reflektierte Norm desselben geordneten Produkts, also die
+Kontraktion von Gamma(R)^* Gamma(R) auf dieser Eingabe.
+Die Quelle Q=s Gamma(R) gibt den Operator für M1 vor.
+Sie liefert daraus weder den Originalwert von M1 noch den
+quadratischen Originalwert M2. Falls P_adm Omega=Omega gilt,
+zerlegt Pythagoras D in den ausgewählten Defekt und die Norm²
+des durch P_adm entfernten Anteils. Ohne dieses Eingangsaxiom
+ist bereits die Bezugsvakuumprojektion mitzunehmen.
+Der R113 Verbraucher unterscheidet bei einer gebundenen
+positiven Defektform Rang vor P_adm, Rang nach P_adm und
+deren absolute äußere Kontraktion. Alternativ erzeugt er die
+Defektform aus den drei gebundenen Gramblöcken
+G0, G1, G2 durch G0-G1-G1^*+G2. Er verlangt dafür die
+Positivität der gemeinsamen Blockmatrix [[G0,G1],[G1^*,G2]]
+und den Abstieg jedes Blocks auf denselben Nullquotienten.
+Im arithmetischen Test verbirgt der Selektor eine Form von
+Rang eins vollständig. Ein unzulässiger Block wird abgewiesen.
+Chat: [private review]
+
+Bei w=1/10 liefert die Originalmatrix-Gegenprobe für das
+gleich geordnete Spiegelpaar etwa 4.29e-29 und für den in
+Ordnung zwei kollidierenden falschen Partner etwa 1.34108e-4.
+Das sind numerische Replays. Das exakte Null/Nichtnull-Urteil
+folgt aus der Spiegelidentität und dem algebraischen Breitensatz.
+
+Dass ein mittlerer linearer Paarüberlapp von eins nicht genügt,
+zeigt eine exakte positive Zweipunktmischung. Für
+A=diag(2,1/2) und B=[[5,3],[3,5]]/4 haben die falschen
+D2-Produkte A und ABA^-1B^-1 normierte Spuren 5/4 und 47/128.
+Die Massen 81/113 und 32/113 liefern Mittelspur genau eins,
+obwohl der erwartete normierte quadratische Defekt 29889/14464
+beträgt. Das ist eine Gegenprobe mit positiven Einzelfenstern
+und gleicher Determinante. Inaktive Einheitsfenster gleichen
+die Wortlängen an. Die Zahlen sind kein Originalhistorienmaß.
+
+Falls eine positive gemeinsame Verteilung über dieser endlichen
+Menüklasse ausschließlich die exakte Paarerhaltung trägt, liegt
+ihr Träger auf dem Graphen h -> m(h). Sind die beiden Seiten
+unabhängig, können zwei linke Verläufe mit positiver Masse nicht
+auftreten: Das Produkt der Marginalträger enthielte sonst ein
+nicht gepaartes Kreuzpaar. Eine nichttriviale gepaarte Quelle
+dieser Klasse benötigt also Korrelation zwischen den beiden
+Seiten. Der bedingte dyadische Gaußsatz aus der anderen Sitzung
+bleibt für eine separat nachgewiesene primitive Ausleseschicht
+möglich. Die Unabhängigkeitsregel ist für den gesamten
+nichttrivialen gepaarten räumlichen Verlauf ausgeschlossen.
+
+Im endlichen Menü lassen sich die Verlaufsmassen prinzipiell
+auf der tatsächlich gemeinsamen Form bestimmen. Falls dieselbe
+Originalquelle skalare gemischte Momente der Einträge von R
+zulässt, trennt eine geeignete rationale lineare Form die
+endlich vielen Matrizen. Der normierte Lagrange-Polynomindikator
+des jeweiligen Werts liefert ihre Masse nach der Integration.
+Die nötigen gemeinsamen Momente, der volle äußere Abschluss
+und die physische Zeitbindung bleiben zu zeigen.

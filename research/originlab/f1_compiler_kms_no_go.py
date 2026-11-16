@@ -111,7 +111,7 @@ def controls():
       "M4_two_step_eigenspace_counts":{"1":2,"1/4":4,"1/16":10},
       "M4_two_step_transfer_invertible":True,
       "unique_trace_symmetric_log_generator":"log(S)=log(2)*(-2P_1/4-4P_1/16)",
-      "CCP_Choi_tangent_witness_norm":norm,
+      "CCP_Choi_tangent_witness_norm":int(norm),
       "CCP_Choi_tangent_witness_quadratic_over_log2":str(numerator),
       "CCP_Choi_tangent_negative_eigenvalue_over_log2":"-2/3",
       "trace_symmetric_quantum_markov_embedding_exists":False,

@@ -79,7 +79,7 @@ def controls():
     def pairing(m,kind,k):
         if kind=="A" and k<3: return -a*sp.trace(m*basis[k])
         if kind=="S" and k>=3:return b*sp.trace(m*basis[k])
-        return 0
+        return sp.S.Zero
     n=0
     for i in range(8):
         for j in range(8):

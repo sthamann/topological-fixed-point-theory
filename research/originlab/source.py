@@ -87,6 +87,13 @@ def source_refs(root, records):
     return checked
 
 
+def missing_reflected_pair_cap():
+    return {"status":"BLOCKED", "reason":"REFLECTED_PAIR_CAP_PROBE_MISSING",
+            "measured_ordered_numerator":None, "predicted_ordered_numerator":None,
+            "normalized_ABAB":None, "paired_ratio":None,
+            "missing":["bound paired support and independently measured ordered ABAB form on R113"]}
+
+
 def blocked(domain, path, bindings):
     return dict(status="BLOCKED", domain=domain["domain_id"], domain_sha256=digest(path),
                 source_refs=bindings, original_values=dict.fromkeys(MARKS), connected_UY=None,
@@ -103,6 +110,7 @@ def blocked(domain, path, bindings):
                 four_mark_original={"status":"BLOCKED","values":[],
                     "missing":["four original oriented operations with squares and adjoints on one weighted source",
                                "original Cartan and charged loop dictionary on the same domain"]},
+                reflected_pair_cap=missing_reflected_pair_cap(),
                 ordered_return={"status":"BLOCKED","values":[],
                     "missing":["bound original charged insertion and adjoint on the reflected word space",
                                "bound positive time step and outer physical selector on that same space"]},
@@ -347,29 +355,140 @@ def evaluate(root, path=None):
     if not pivots:
         raise ValueError("empty OS quotient")
     null = gram.nullspace()
-    metric = gram.extract(pivots,pivots).inv()
+    quotient_gram = gram.extract(pivots,pivots)
+    metric = quotient_gram.inv()
 
     def quotient(form):
         if any(form*v != sp.zeros(size,1) or v.H*form != sp.zeros(1,size) for v in null):
             raise ValueError("a supplied form does not descend to the original OS quotient")
         return metric*form.extract(pivots,pivots)
 
-    selector_form = as_form(bundle["physical_selector_form"],size)
-    selector = quotient(selector_form)
-    if selector_form != selector_form.H or selector*selector != selector:
-        raise ValueError("physical selector is not an orthogonal projector in the original metric")
+    def projector(value):
+        form = as_form(value,size)
+        operator = quotient(form)
+        if form != form.H or operator*operator != operator:
+            raise ValueError("selector is not an orthogonal projector in the original metric")
+        return operator
+
+    ambient = bundle.get("primitive_ambient_basis")
+    if ambient is not None:
+        if not isinstance(ambient.get("source_binding"),str) or not ambient["source_binding"].strip():
+            raise ValueError("ambient basis needs an original coordinate binding")
+        ambient_size = len(ambient["gram_form"])
+        ambient_gram = as_form(ambient["gram_form"],ambient_size)
+        data = ambient["word_coordinates"]
+        if len(data) != ambient_size or any(len(row) != size for row in data):
+            raise ValueError("ambient word coordinates have the wrong dimensions")
+        coordinates = sp.Matrix([[complex_pair(value) for value in row] for row in data])
+        if not ambient_size or not positive(ambient_gram) or coordinates.H*ambient_gram*coordinates != gram:
+            raise ValueError("ambient coordinates do not reproduce the retained reflected Gram")
+        ambient_null = ambient_gram.nullspace()
+
+    def ambient_operator(data):
+        if ambient is None or "form" in data or "image_norm_form" in data:
+            raise ValueError("ambient operator needs one bound coordinate basis and one representation")
+        operator = as_form(data["ambient_operator"],ambient_size)
+        if any(ambient_gram*operator*word != sp.zeros(ambient_size,1) for word in ambient_null):
+            raise ValueError("primitive operator does not descend to the ambient reflected quotient")
+        return operator
+
+    def ambient_form(operator):
+        return coordinates.H*ambient_gram*operator*coordinates
+
+    def leg_forms(data):
+        if "ambient_operator" in data:
+            image = ambient_operator(data)*coordinates
+            form = coordinates.H*ambient_gram*image
+            image_norm = image.H*ambient_gram*image
+        else:
+            if not isinstance(data.get("image_norm_binding"),str) or not data["image_norm_binding"].strip():
+                raise ValueError("each primitive leg needs an independently sourced image norm")
+            form = as_form(data["form"],size)
+            image_norm = as_form(data["image_norm_form"],size)
+        return form,image_norm
+
+    def closed_leg(data):
+        form,image_norm = leg_forms(data)
+        operator = quotient(form)
+        quotient(image_norm)
+        if operator.H*quotient_gram*operator != image_norm.extract(pivots,pivots):
+            raise ValueError("primitive leg does not close on the retained reflected word space")
+        return operator
+
+    def window_legs(history,reader):
+        if (history.get("time_id") != time["id"]
+                or tuple(map(rational,history["durations"])) != (u_time,y_time-u_time,total-y_time)):
+            raise ValueError("primitive history and original window times differ")
+        return tuple(reader(history[key]) for key in ("early","middle","late"))
+
+    def marked_history(history,lift):
+        if not u_time < y_time or ("U" in history) == ("U_operator" in history):
+            raise ValueError("specify one U insertion and strictly ordered marked windows")
+        keys = ["early","middle","late","Y"]
+        if "U_operator" in history:
+            keys.append("U_operator")
+        use_ambient = all("ambient_operator" in history[key] for key in keys)
+        reader = ambient_operator if use_ambient else closed_leg
+        early,middle,late = window_legs(history,reader)
+        if "U_operator" in history:
+            if role != "arithmetic_control_only":
+                raise ValueError("original U must be the nonnegative scalar insertion of this fibre")
+            u_early = reader(history["U_operator"])*early
+        else:
+            u = rational(history["U"])
+            if u < 0:
+                raise ValueError("original U insertion must be nonnegative")
+            u_early = u*early
+        late_y = late*reader(history["Y"])
+        encode = ambient_form if use_ambient else lift
+        return dict(Z0=encode(late*middle*early),ZU=encode(late*middle*u_early),
+                    ZY=encode(late_y*middle*early),ZUY=encode(late_y*middle*u_early))
+
+    selector = projector(bundle["physical_selector_form"])
     cap = quotient(as_form(bundle["boundary_pairing_form"],size))
-    scalar, reference = (complex_pair(bundle[k]) for k in ("scalar_factor","reference_scalar"))
+    normalization = bundle.get("normalization_scope","absolute")
+    if normalization not in ("absolute","relative_mark_contraction","relative_radial_moment_bound"):
+        raise ValueError("unknown original normalization scope")
+    scalar = complex_pair(bundle["scalar_factor"])
+    radial_only = normalization=="relative_radial_moment_bound"
+    reference_history = bundle.get("reference_window_history")
+    has_reference_scalar = bundle.get("reference_scalar") is not None
+    if normalization!="absolute":
+        if has_reference_scalar or reference_history is not None:
+            raise ValueError("use the absolute path when an absolute reference is supplied")
+        reference = None
+    elif reference_history is not None:
+        reference_binding = reference_history.get("reference_binding")
+        if has_reference_scalar or not isinstance(reference_binding,str) or not reference_binding.strip():
+            raise ValueError("supply one absolute reference with an independent empty history binding")
+        use_ambient = all("ambient_operator" in reference_history[key] for key in ("early","middle","late"))
+        early,middle,late = window_legs(reference_history,ambient_operator if use_ambient else closed_leg)
+        empty_word = late*middle*early
+        if use_ambient:
+            empty_word = quotient(ambient_form(empty_word))
+        ref_selector = projector(reference_history["selector_form"])
+        ref_cap = quotient(as_form(reference_history["boundary_pairing_form"],size))
+        ref_scalar = complex_pair(reference_history["scalar_factor"])
+        reference = sp.simplify(ref_scalar*(ref_cap*ref_selector*empty_word*ref_selector).trace())
+    else:
+        reference = complex_pair(bundle["reference_scalar"])
     if reference == 0:
         raise ValueError("empty reference is zero")
     representation = bundle["representation"]
     pushforward = bundle.get("coarse_graining")
-    if pushforward is not None and representation != "original_exact_finite_fiber_sum":
+    if pushforward is not None and (representation != "original_exact_finite_fiber_sum" or reference is None):
         raise ValueError("the two-level comparison needs explicit fine fibre records")
     kernel_atoms = 0
     fibre_audit = None
+    primitive_atoms = 0
+    derived_defect = None
+    if radial_only and (representation!="original_exact_blocked_endpoint_source"
+                        or "radial_moment_probe" not in bundle
+                        or set(bundle["ordered_source_forms"])!={"Z0","ZU"}):
+        raise ValueError("radial-bound-only scope needs the two radial base forms and the bound moment probe")
     if representation == "original_exact_blocked_endpoint_source":
-        forms = {k:as_form(bundle["ordered_source_forms"][k],size) for k in MARKS}
+        form_keys = ("Z0","ZU") if radial_only else MARKS
+        forms = {k:as_form(bundle["ordered_source_forms"][k],size) for k in form_keys}
         atoms = None
     elif representation == "original_exact_finite_fiber_sum":
         forms = {k:sp.zeros(size) for k in MARKS}
@@ -381,13 +500,48 @@ def evaluate(root, path=None):
             "original_retained_field_fiber_with_whole_history_endpoint_packet",
         } or measure.get("kind") != "original_finite_atomic_measure" or not measure.get("source_binding")):
             raise ValueError("no original atomic domain, map or measure supplied")
+        seen = set()
         fibres = {}
-        kernel_atoms = sum("ordered_window_kernels" in atom for atom in atoms)
-        for name,fibre in iter_weighted_fibres(atoms,size,u_time,y_time):
-            if pushforward is not None:
-                fibres[name] = fibre
-            for k,q in fibre.items():
+        basis_coordinates = metric*gram.extract(pivots,range(size))
+
+        def lift(operator):
+            return basis_coordinates.H*quotient_gram*operator*basis_coordinates
+
+        defect_data = bundle.get("reflected_pair_cap",{}).get("same_history_defect",{})
+        if defect_data.get("from_fiber_transfers") is True:
+            if "form" in defect_data or "moments" in defect_data or reference is None:
+                raise ValueError("derived same-history defect requires its own input and an absolute reference")
+            derived_defect = [sp.zeros(size) for _ in range(3)]
+        for atom in atoms:
+            identifier = atom["original_configuration_id"]
+            if not identifier or identifier in seen or not atom["whole_fiber_binding"] or not atom["original_measure_binding"]:
+                raise ValueError("fibre identities and original bindings must be distinct and complete")
+            seen.add(identifier)
+            mass = complex_pair(atom["original_measure_mass"])
+            if not mass.is_nonnegative:
+                raise ValueError("atomic measure mass must be nonnegative real")
+            weight = mass*complex_pair(atom["unnormalized_scalar_weight"])
+            history = atom.get("ordered_window_legs")
+            if history is not None:
+                if "ordered_source_forms" in atom or "ordered_window_kernels" in atom:
+                    raise ValueError("primitive legs and contracted marks cannot both specify a fibre")
+                atom_forms = marked_history(history,lift)
+                primitive_atoms += 1
+            else:
+                atom_forms = fibre_forms(atom,size,u_time,y_time)
+                kernel_atoms += int("ordered_window_kernels" in atom)
+            if derived_defect is not None:
+                if not weight.is_nonnegative or history is None or "pair_transfer" not in history:
+                    raise ValueError("same-history Gram needs a positive weight and a transfer on every fibre")
+                overlap,image_norm = leg_forms(history["pair_transfer"])
+                delta = (gram,overlap,image_norm)
+                for index,block in enumerate(delta):
+                    derived_defect[index] += weight*block
+            weighted = {mark:weight*form for mark,form in atom_forms.items()}
+            for k,q in weighted.items():
                 forms[k] += q
+            if pushforward is not None:
+                fibres[identifier] = weighted
         if pushforward is not None:
             fibre_audit = check_fibre_pushforward(pushforward,fibres,size,time["id"],u_time,y_time,scalar/reference)
             if fibre_audit["status"] == "REFUTED_SUPPLIED_MARKED_PUSHFORWARD":
@@ -397,23 +551,89 @@ def evaluate(root, path=None):
                         "physical_source_identity_proved":False,"physical_limits_proved":False}
     else:
         raise ValueError("unsupported endpoint representation")
+    def operator_numerator(op):
+        return sp.simplify(scalar*(cap*selector*op*selector).trace())
+
     def numerator(form):
-        return sp.simplify(scalar*(cap*selector*quotient(form)*selector).trace())
+        return operator_numerator(quotient(form))
 
     raw = {k:numerator(q) for k,q in forms.items()}
-    marks = {k:sp.simplify(value/reference) for k,value in raw.items()}
+    marks = {k:sp.simplify(value/reference) for k,value in raw.items()} if reference is not None else {}
     z = raw["Z0"]
-    connected = sp.simplify(raw["ZUY"]/z-raw["ZU"]*raw["ZY"]/z**2) if z else None
+    connected = sp.simplify(raw["ZUY"]/z-raw["ZU"]*raw["ZY"]/z**2) if z and not radial_only else None
     source_id = f"{domain['domain_id']}:{binding['sha256']}"
     candidate = dict(status="EXACT_SUPPLIED_CONTRACTION", input_role=role, domain=domain["domain_id"],
                 domain_sha256=digest(path), native_domain_sha256=binding["sha256"],
                 packet_sha256=packet_hash, source_refs=bindings+refs, quotient_rank=len(pivots),
                 time=time, atom_count=len(atoms) if atoms is not None else None,
                 ordered_two_kernel_atom_count=kernel_atoms,
+                ordered_primitive_atom_count=primitive_atoms,
+                absolute_reference_from_primitive_history=reference_history is not None,
+                absolute_reference=str(reference) if reference is not None else None,
                 unnormalized_numerators={k:str(v) for k,v in raw.items()},
                 values={k:str(v) for k,v in marks.items()},
+                original_values={k:str(marks[k]) for k in MARKS} if marks and role=="source_reviewed_original"
+                else dict.fromkeys(MARKS),
                 connected_UY=str(connected) if connected is not None else None,
                 physical_source_identity_proved=False, physical_limits_proved=False)
+    if "radial_moment_probe" in bundle:
+        from r113_reflected_radial import RADIAL_DATA, RADIAL_PROFILE_SHA256, moment_bound
+
+        probe = bundle["radial_moment_probe"]
+        if (not isinstance(probe,dict) or probe.get("source_id")!=source_id
+                or probe.get("time_id")!=time["id"] or not z.is_positive
+                or probe.get("radial_profile_sha256")!=RADIAL_PROFILE_SHA256
+                or digest(root/RADIAL_DATA)!=RADIAL_PROFILE_SHA256
+                or any(not isinstance(probe.get(key),str) or not probe[key].strip()
+                       for key in ("positive_radial_law_binding","normalized_late_profile_binding",
+                                   "paired_radial_operator_binding"))):
+            raise ValueError("radial moment probe needs the same positive source, time and reviewed profile")
+        probe_forms = ("late_radial_form","early_radial_square_form","late_radial_square_form","cross_radial_form")
+        relative_moments = [sp.simplify(numerator(as_form(probe[key],size))/z) for key in probe_forms]
+        candidate["radial_moment_probe"] = {
+            **moment_bound(sp.simplify(raw["ZU"]/z),*relative_moments,connected=connected),
+            "source_id":source_id,"time_id":time["id"],"normalization":"common_empty",
+            "scope":"conditional on the supplied radial law and normalized Y profile bindings"}
+    if reference is None:
+        status = "EXACT_RADIAL_MOMENT_BOUND" if radial_only else "EXACT_RELATIVE_CONTRACTION"
+        missing = ["bound absolute empty reference"]
+        if radial_only:
+            missing.append("original numeric Y and UY marks")
+        return {**candidate,"status":status if z else "ZERO_EMPTY_CONTRACTION",
+                "original_values":dict.fromkeys(MARKS),"absolute_reference":None,
+                "normalized_by_common_empty":{k:str(sp.simplify(v/z)) for k,v in raw.items()} if z else {},
+                "relative_observables_only":True,"missing":missing}
+    if "q0_rule_probe" in bundle:
+        probe = bundle["q0_rule_probe"]
+        if (probe.get("source_id") != source_id or probe.get("time_id") != time["id"]
+                or any(not isinstance(probe.get(key), str) or not probe[key].strip()
+                       for key in ("operator_dictionary_binding", "two_window_time_binding",
+                                   "absolute_reference_binding"))
+                or not total > 0 or 2*rational(probe["step"]) != total):
+            raise ValueError("Q0 probe requires the same original source, two windows and absolute reference")
+        endpoints = []
+        for side in ("left", "right"):
+            index = probe[f"{side}_index"]
+            word = probe[f"{side}_current_word"]
+            if (type(index) is not int or not 0 <= index < size or not isinstance(word, list)
+                    or any(not isinstance(letter, list) or len(letter) != 2
+                           or letter[0] not in ("H", "E", "F")
+                           or type(letter[1]) is not int or letter[1] >= 0 for letter in word)):
+                raise ValueError("invalid Q0 affine word endpoint")
+            vector = metric*gram.extract(pivots, [index])
+            if selector*vector != vector or gram[index, index] == 0:
+                raise ValueError("Q0 endpoint must survive the original outer selector")
+            endpoints.append((vector, gram[index, index]))
+        (left, left_norm), (right, right_norm) = endpoints
+        reduced_gram = gram.extract(pivots, pivots)
+        value = sp.simplify(scalar*(left.H*reduced_gram*selector*quotient(forms["Z0"])*selector*right)[0])
+        unit = sp.sqrt(left_norm*right_norm)
+        candidate["q0_rule_probe"] = {
+            "input_role": role, "source_id": source_id, "time_id": time["id"],
+            "left": probe["left_current_word"], "right": probe["right_current_word"],
+            "absolute_numerator": str(value), "absolute_reference": str(reference),
+            "unit_word_response": str(sp.simplify(value/reference/unit)),
+        }
     if "composed_search" in bundle:
         from composed_search import run
         data = bundle["composed_search"]
@@ -441,6 +661,101 @@ def evaluate(root, path=None):
         "missing":["bound same-source regional endpoint fields, connection and two ordered path forms"]}
     candidate["four_mark_original"] = {"status":"BLOCKED","values":[],
         "missing":["bound original orientation, state, four ordered operations and integral charge dictionary"]}
+    candidate["reflected_pair_cap"] = missing_reflected_pair_cap()
+    if "reflected_pair_cap" in bundle:
+        data = bundle["reflected_pair_cap"]
+        if (not isinstance(data,dict) or data.get("source_id") != source_id
+                or data.get("time_id") != time["id"] or data.get("ordered_word") != ["A","B","A","B"]
+                or any(not isinstance(data.get(key),str) or not data[key].strip() for key in
+                       ("paired_support_binding","operator_dictionary_binding","two_window_order_binding",
+                        "absolute_reference_binding"))):
+            raise ValueError("reflected pair cap requires the same original source, ordered ABAB, time and reference")
+        paired_form = as_form(data["paired_projector_form"],size)
+        paired = quotient(paired_form)
+        if paired_form != paired_form.H or paired*paired != paired:
+            raise ValueError("reflected pair cap requires a metric-orthogonal paired projector")
+        measured = quotient(as_form(data["ordered_abab_form"],size))
+        bare = quotient(forms["Z0"])
+        commutator = paired*bare-bare*paired
+        measured_numerator = operator_numerator(measured)
+
+        def matrix_rows(op):
+            return [[str(entry) for entry in row] for row in op.tolist()]
+
+        restricted = {}
+        for key in ("ZY","ZUY"):
+            restricted_op = paired*quotient(forms[key])*paired
+            restricted[key] = {"rank":restricted_op.rank(),
+                               "selected_numerator":str(operator_numerator(restricted_op))}
+        probe = {
+            "status":"PAIR_CAP_DOES_NOT_REDUCE_BARE_TRANSFER",
+            "input_role":role, "source_id":source_id, "time_id":time["id"],
+            "quotient_basis_indices":list(pivots),
+            "absolute_reference":str(reference), "bare_numerator":str(z),
+            "paired_projector_rank":paired.rank(), "bare_commutator_rank":commutator.rank(),
+            "measured_ordered_numerator":str(measured_numerator), "predicted_ordered_numerator":None,
+            "measured_ordered_value_over_reference":str(sp.simplify(measured_numerator/reference)),
+            "predicted_ordered_value_over_reference":None,
+            "normalized_ABAB":str(sp.simplify(measured_numerator/z)) if z else None,
+            "paired_ratio":None, "restricted_first_responses":restricted,
+            "measured_operator":matrix_rows(measured), "predicted_operator":None,
+            "matrix_residual":None, "selected_matrix_residual_rank":None,
+            "physical_source_identity_proved":False,
+        }
+        if "same_history_defect" in data:
+            defect = data["same_history_defect"]
+            if (not isinstance(defect,dict)
+                    or not isinstance(defect.get("original_mixed_moment_binding"),str)
+                    or not defect["original_mixed_moment_binding"].strip()):
+                raise ValueError("pairing defect requires the original same-history squared moment")
+            if sum(("form" in defect,"moments" in defect,defect.get("from_fiber_transfers") is True)) != 1:
+                raise ValueError("supply one squared defect form or its same-history Gram blocks")
+            if defect.get("from_fiber_transfers") is True and derived_defect is None:
+                raise ValueError("same-history fibre transfers require a finite atomic representation")
+            if "moments" in defect or derived_defect is not None:
+                blocks = derived_defect if derived_defect is not None else [
+                    as_form(defect["moments"][name],size) for name in
+                    ("input_norm","transfer_overlap","transfer_norm")]
+                initial, overlap, transferred = blocks
+                if not positive(initial.row_join(overlap).col_join(overlap.H.row_join(transferred))):
+                    raise ValueError("same-history input and transfer blocks lack a common positive Gram")
+                for form in blocks:
+                    quotient(form)
+                defect_form = transferred-overlap-overlap.H+initial
+            else:
+                defect_form = as_form(defect["form"],size)
+            if not positive(defect_form):
+                raise ValueError("same-history squared pairing defect must be Hermitian PSD")
+            defect_op = quotient(defect_form)
+            form_rank = defect_op.rank()
+            selected_rank = (selector*defect_op*selector).rank()
+            defect_numerator = operator_numerator(defect_op)
+            probe["same_history_defect"] = {
+                "derived_from_fiber_transfers":derived_defect is not None,
+                "form_rank":form_rank,"selected_rank":selected_rank,
+                "numerator":str(defect_numerator),
+                "value_over_reference":str(sp.simplify(defect_numerator/reference)),
+                "nonzero_hidden_by_selector":bool(form_rank and not selected_rank),
+                "nonzero_selected_hidden_by_contraction":bool(selected_rank and not defect_numerator),
+            }
+        if commutator == sp.zeros(paired.rows):
+            paired_op = paired*bare*paired
+            paired_numerator = operator_numerator(paired_op)
+            predicted = bare-2*paired_op
+            residual = measured-predicted
+            selected_residual = selector*residual*selector
+            predicted_numerator = operator_numerator(predicted)
+            probe.update(status="EXACT_PAIRED_WORD_MATCH" if residual == sp.zeros(paired.rows)
+                         else "PAIRED_WORD_MATRIX_MISMATCH",
+                         paired_numerator=str(paired_numerator),
+                         paired_ratio=str(sp.simplify(paired_numerator/z)) if z else None,
+                         predicted_ordered_numerator=str(predicted_numerator),
+                         predicted_ordered_value_over_reference=str(sp.simplify(predicted_numerator/reference)),
+                         contracted_residual=str(sp.simplify(measured_numerator-predicted_numerator)),
+                         predicted_operator=matrix_rows(predicted),
+                         matrix_residual=matrix_rows(residual),
+                         selected_matrix_residual_rank=selected_residual.rank())
+        candidate["reflected_pair_cap"] = probe
     if "four_mark_selection" in bundle:
         from selection import identify_face_refinement, operator_checks
         data = bundle["four_mark_selection"]
@@ -844,7 +1159,8 @@ def evaluate_original(root,path=None):
         if result is None:
             raise
         return {**result,"first_operation":"load_original_source_inputs",
-                "original_values":dict.fromkeys(MARKS),"connected_UY":None}
+                "original_values":dict.fromkeys(MARKS),"connected_UY":None,
+                "reflected_pair_cap":missing_reflected_pair_cap()}
 
 
 def compression_defect(gram, step, twice):

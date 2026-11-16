@@ -22,7 +22,8 @@ from verify import digest
 
 HERE = Path(__file__).resolve().parent
 ENGINE = {p.name:digest(p) for p in sorted(HERE.glob("*.py"))}
-ENGINE.update({name:digest(HERE/name) for name in ("gates.json","R102.lean")})
+ENGINE.update({p.name:digest(p) for p in [*HERE.glob("*.lean"), HERE/"gates.json",
+                                       HERE/"f1_native_contract.json"]})
 
 CASE_FIELDS = {
     "complete_mark_graphs":(set(),{"maximum"}),
@@ -44,7 +45,13 @@ CASE_FIELDS = {
     "r104_variant":(set(),{"modes","phase_pi","modulus"}),
     "r113_orientation":(set(),{"early_radii","late","momentum","time"}),
     "r113_synthesis_case":({"input"},set()),
+    "r113_pair_search":(set(),set()),
     "p1_field_search":(set(),{"input"}),
+    "q0_rule_search":(set(),{"depth"}),
+    "p1_origin_hypotheses":(set(),{"hypotheses","max_cone_order"}),
+    "coherent_origin":(set(),{"stage"}),
+    "proof_search":(set(),{"first_cost","shells","toolchain"}),
+    "f1_solution":(set(),{"contract","sha256","stage","seconds","toolchain"}),
     "marked_search":(set(),{"input"}),
     "composed_search":(set(),{"input"}),
     "rectangular_intertwiner":({"input"},set()),
@@ -144,8 +151,29 @@ def result_rows(path,phase):
                     "SELECT spec,result,status FROM jobs WHERE phase=? AND result IS NOT NULL ORDER BY priority DESC,id",(phase,))]
 
 
+def registered_origin_campaigns():
+    from main import FINITE_CONTROLS
+
+    already_dispatched = {"p1_origin_hypotheses","f1_solution","f1_native_pair_selection",
+                          "f1_reflected_cap","f1_binary_clifford_origin","f1_spherical_pairing_selection"}
+    return tuple(name for name in FINITE_CONTROLS if name.startswith(("p1_","f1_"))
+                 and name not in already_dispatched)
+
+
 def execute(spec,root):
     lane = spec["lane"]
+    if lane=="registered_origin_campaign":
+        from main import execute as run_campaign
+        campaign = spec["campaign"]
+        if campaign not in registered_origin_campaigns():
+            raise ValueError("unknown registered origin campaign")
+        return run_campaign(campaign,root,None,[],[],[])
+    if lane=="discovered_original_packet":
+        from original_discovery import replay
+        return replay(root,Path(spec["domain"]),spec["entry"])
+    if lane=="discovered_q0_comparison":
+        from q0_rule_search import native_comparison, search
+        return native_comparison(search(spec["depth"]),spec["endpoint"])
     if lane=="complete_mark_graphs":
         from sewing_dynamics import complete_graphs
         return {"status":"EXACT_GRAPH_RANK_SELECTION",**complete_graphs(spec.get("maximum",7))}
@@ -164,6 +192,29 @@ def execute(spec,root):
     if lane=="return_moment_reconstruction":
         from return_moments import from_input
         return from_input(spec["input"])
+    if lane=="q0_rule_search":
+        from q0_rule_search import run
+        return run(root, Path(spec["domain"]) if "domain" in spec else None, spec.get("depth", 3))
+    if lane=="r113_pair_search":
+        from r113_pair_search import search
+        return search(root)
+    if lane=="p1_origin_hypotheses":
+        from p1_origin_hypotheses import search
+        return search(spec.get("hypotheses"), spec.get("max_cone_order", 32))
+    if lane=="coherent_origin":
+        from coherent_origin import search
+        return search(spec.get("stage",2))
+    if lane=="proof_search":
+        from proof_search import DEFAULT_TOOLCHAIN, run
+        return run(spec.get("first_cost",2),spec.get("shells",2),
+                   spec.get("toolchain") or DEFAULT_TOOLCHAIN)
+    if lane=="f1_solution":
+        from f1_solution import search
+        from proof_search import DEFAULT_TOOLCHAIN
+        return search(Path(spec["contract"]) if spec.get("contract") else None,spec.get("sha256"),
+                      spec.get("stage",2),spec.get("toolchain") or DEFAULT_TOOLCHAIN,spec.get("seconds",20),
+                      root=root,domain=Path(spec["domain"]) if "domain" in spec else None,
+                      q0_depth=min(spec.get("stage",2)-1,4))
     if lane=="original_affine_return":
         from source_return import affine_return
         return affine_return(root)
@@ -334,9 +385,14 @@ def execute(spec,root):
     raise ValueError(f"unknown lane: {lane}")
 
 
-def specifications(resolution,domain,toolchain,focus,seed_research=True):
+def specifications(resolution,domain,toolchain,focus,seed_research=True,packets=()):
     yield 100,{"lane":"r113","domain":str(domain)}
+    for entry in packets:
+        yield 100,{"lane":"discovered_original_packet","domain":str(domain),"entry":entry}
     yield 100,{"lane":"r113_synthesis","domain":str(domain)}
+    yield 99,{"lane":"q0_rule_search","domain":str(domain),"depth":min(resolution-1,4)}
+    yield 98,{"lane":"p1_origin_hypotheses"}
+    yield 98,{"lane":"coherent_origin","stage":resolution-1}
     yield 100,{"lane":"source_bridge"}
     yield 99,{"lane":"colour_ward"}
     yield 99,{"lane":"weak_source"}
@@ -346,7 +402,11 @@ def specifications(resolution,domain,toolchain,focus,seed_research=True):
     yield 98,{"lane":"four_mark_geometry"}
     yield 100,{"lane":"original_affine_time"}
     yield 100,{"lane":"original_folded_time"}
+    yield 97,{"lane":"f1_solution","domain":str(domain),"stage":resolution-1,"toolchain":toolchain}
     if seed_research:
+        yield 97,{"lane":"proof_search","toolchain":toolchain}
+        for campaign in registered_origin_campaigns():
+            yield 89,{"lane":"registered_origin_campaign","campaign":campaign}
         yield 98,{"lane":"marked_search"}
         yield 100,{"lane":"original_affine_return"}
         yield 99,{"lane":"complete_mark_graphs"}
@@ -388,7 +448,7 @@ def specifications(resolution,domain,toolchain,focus,seed_research=True):
     pool = focus or product(TOPOLOGIES,DYNAMICS,("unit","alternating"))
     for topology,dynamics,metric in pool:
         yield 40,{"lane":"scenario","topology":topology,"dynamics":dynamics,
-                  "metric":metric,"resolution":resolution}
+                  "metric":metric,"resolution":min(resolution,10)}
 
 
 def extra_specs(path):
@@ -420,9 +480,11 @@ def watched_sources(root, domain):
     from native_weak_w import INPUTS as W_INPUTS
     from p1_field_search import TANGENT
     from source_bridge import INPUTS
+    from f1_reflected_cap import ASSEMBLER
+    from r113_radial_order import RADIAL_DATA
     paths = {root/path for path in SOURCE_FILES}
     paths.update(root/path for path in (*ORIGINAL_FILES,*SOURCES,*FOLDED_SOURCES,NATIVE_GRADE_CHECK,NATIVE,
-                                       *INPUTS,*WEAK_INPUTS,*W_INPUTS,TANGENT))
+                                       *INPUTS,*WEAK_INPUTS,*W_INPUTS,TANGENT,ASSEMBLER,RADIAL_DATA))
     data = json.loads(domain.read_bytes()) if domain.is_file() else {}
     for record in data.get("source_originals",[]):
         paths.add((root/record["path"]).resolve())
@@ -451,6 +513,7 @@ def dsl_spec(args, resolution, previous, observations, proposals):
 
 def research_followups(rows,domain):
     jobs = []
+    depth = next((row["spec"]["depth"] for row in rows if row["spec"]["lane"]=="q0_rule_search"),3)
     for row in rows:
         spec,result = row["spec"],row["result"]
         if row["queue_status"]!="done":
@@ -458,6 +521,11 @@ def research_followups(rows,domain):
         if spec["lane"]=="return_generator_search" and (probe := result.get("next_discriminating_observation")):
             jobs.append((92,{"lane":"return_generator_followup","input":{
                 "gap":result["gap"],"signs":probe["signs"],"witnesses":result["candidates"]}}))
+        if spec["lane"]=="discovered_original_packet" and result.get("status","").startswith("EXACT_"):
+            jobs.append((97,{"lane":"discovered_q0_comparison","depth":depth,"endpoint":{
+                "input_role":result.get("input_role"),"status":result["status"],
+                "discovered_packet":result["discovered_packet"],"original_values":result.get("original_values"),
+                "q0_rule_probe":result.get("q0_rule_probe")}}))
     original = next((r["result"] for r in rows if r["spec"]["lane"]=="r113"),{})
     anchor = next((r["result"] for r in rows if r["spec"]["lane"]=="original_affine_return"),{})
     if original.get("status")=="BLOCKED" and anchor.get("status")=="EXACT_ORIGINAL_AFFINE_RETURN":
@@ -465,19 +533,36 @@ def research_followups(rows,domain):
     return jobs
 
 
+def discovered_source_evidence(original,replays):
+    if original.get("status")!="BLOCKED":
+        return original,None
+    candidates = {row["result"]["discovered_packet"]["sha256"]:row["result"] for row in replays
+                  if row["queue_status"]=="done" and row["result"].get("status") in
+                  ("EXACT_SUPPLIED_CONTRACTION","EXACT_RELATIVE_CONTRACTION","EXACT_RADIAL_MOMENT_BOUND")}
+    if not candidates:
+        return original,None
+    if len(candidates)>1:
+        return original,{"status":"MULTIPLE_SOURCE_PACKETS_REQUIRE_REVIEW","sha256":sorted(candidates)}
+    replay, = candidates.values()
+    return replay,{"status":"REPLAYED_SOURCE_REQUIRES_REVIEW","packet":replay["discovered_packet"]}
+
+
 def search_round(args,db,out,epoch,resolution,context,domain,focus,extras,dsl):
     round_key = token([epoch,resolution,context["atlas_program_sha256"],context["git_head"],source_input_key(domain,args.repo),ENGINE,
-                       context["watched_sources"],focus,args.lean_toolchain,extras,dsl])
+                       context["watched_sources"],context["discovered_original_sources"],
+                       focus,args.lean_toolchain,args.timeout,extras,dsl])
     round_dir = out/round_key
     round_dir.mkdir(exist_ok=True)
     specs = list(specifications(resolution,domain,args.lean_toolchain,focus,
-                                seed_research=resolution==args.start_resolution))
+                                seed_research=resolution==args.start_resolution,
+                                packets=context["discovered_original_sources"]["matching"]))
     enqueue(db,round_key,specs)
     enqueue(db,round_key,[(75,spec) for spec in extras])
     enqueue(db,round_key,[(55,dsl)])
     with ThreadPoolExecutor(max_workers=args.workers) as pool:
         def run_queued():
-            futures = [pool.submit(worker,db,round_key,args.repo,args.timeout) for _ in range(args.workers)]
+            timeout = args.timeout * max(1,resolution-args.start_resolution+1) if args.until_proved else args.timeout
+            futures = [pool.submit(worker,db,round_key,args.repo,timeout) for _ in range(args.workers)]
             for future in futures:
                 future.result()
             return result_rows(db,round_key)
@@ -505,12 +590,29 @@ def search_round(args,db,out,epoch,resolution,context,domain,focus,extras,dsl):
     } if resolution==args.start_resolution else None
     from space import coverage
     from evidence_gates import assess
+    accepted = [r["result"] for r in rows if r["spec"]["lane"]=="f1_solution"
+                and r["queue_status"]=="done" and r["result"].get("status") in
+                ("F1_PROVED","F1_CONTRACT_PROVED")]
+    complete = (max(accepted,key=lambda row:row["status"]=="F1_PROVED")
+                if accepted else results.get("f1_solution",{}))
+    original_replays = [row for row in rows if row["spec"]["lane"]=="discovered_original_packet"]
+    r113_evidence,source_choice = discovered_source_evidence(original,original_replays)
+    physical = assess(r113_evidence,results.get("r113_synthesis"),complete)
     frontier = {
-        "state":{"BLOCKED":"SOURCE_REQUIRED","EXACT_SUPPLIED_CONTRACTION":"OPEN",
-                 "ORIGINAL_NATIVE_VALUES_REQUIRE_REVIEW":"SOURCE_REVIEW_REQUIRED"}.get(original.get("status"),"ERROR"),
+        "state":("F1_PROVED" if physical["physical_solution"] else
+                 "SOURCE_REVIEW_REQUIRED" if source_choice else
+                 {"BLOCKED":"SOURCE_REQUIRED","EXACT_SUPPLIED_CONTRACTION":"OPEN",
+                 "ORIGINAL_NATIVE_VALUES_REQUIRE_REVIEW":"SOURCE_REVIEW_REQUIRED"}.get(original.get("status"),"ERROR")),
         "atlas_revision":context["atlas_revision"],
-        "physical_solution":False,
-        "physical_evidence":assess(original,results.get("r113_synthesis")),
+        "discovered_original_sources":context["discovered_original_sources"],
+        "registered_origin_campaigns":[{"campaign":row["spec"]["campaign"], "result":row["result"],
+                                        "queue_status":row["queue_status"]}
+                                       for row in rows if row["spec"]["lane"]=="registered_origin_campaign"],
+        "discovered_original_replays":original_replays,
+        "discovered_source_selection":source_choice,
+        "discovered_q0_comparisons":[row for row in rows if row["spec"]["lane"]=="discovered_q0_comparison"],
+        "physical_solution":physical["physical_solution"],
+        "physical_evidence":physical,
         "gates":{gate:{"status":"OPEN","required":items}
                  for gate,items in json.loads((HERE/"gates.json").read_text()).items()},
         "primary_original_test":original.get("obligations",{}),
@@ -534,6 +636,10 @@ def search_round(args,db,out,epoch,resolution,context,domain,focus,extras,dsl):
         "original_weak_folded_clock":results.get("weak_folded_clock"),
         "weighted_p1_charged_jet":original.get("p1_charged_jet"),
         "p1_field_search":results.get("p1_field_search"),
+        "q0_rule_search":results.get("q0_rule_search"),
+        "p1_origin_hypotheses":results.get("p1_origin_hypotheses"),
+        "formal_proof_search":results.get("proof_search"),
+        "complete_formal_contract":complete or None,
         "weighted_weak_parity_bridge":original.get("weak_parity_bridge"),
         "weighted_weak_return_grade_two":original.get("weak_return_grade_two"),
         "affine_weak_source":results.get("weak_source"),
@@ -596,6 +702,7 @@ def search_round(args,db,out,epoch,resolution,context,domain,focus,extras,dsl):
               "created_at":datetime.now(timezone.utc).isoformat(),
               "watched_sources_sha256":token(context["watched_sources"]),
               "original_status":original.get("status","ERROR"),"scenarios":len(scenarios),
+              "discovered_source_selection":source_choice,
               "p1_field_status":results.get("p1_field_search",{}).get("status"),
               "binary_rules_found":len(results.get("synthesis",{}).get("rules",[])),
               "r104_status":results.get("r104_variant",{}).get("status"),
@@ -615,7 +722,8 @@ def search_round(args,db,out,epoch,resolution,context,domain,focus,extras,dsl):
               "generated_complexes":results.get("complexes",{}).get("count"),
               "reconstruction_status":results.get("reconstruction",{}).get("status"),
               "failures":len(errors),"best_readout":questions[0] if questions else None,
-              "physical_solution":False,"round":round_key,"resolution":resolution,
+              "physical_solution":physical["physical_solution"],"round":round_key,"resolution":resolution,
+              "complete_contract_status":complete.get("status","NOT_RUN"),
               "tool_versions":installed_versions(("sympy","cvc5","egglog","python-flint"))}
     for name,data in (("results",rows),("frontier",frontier),("summary",report)):
         atomic_json(round_dir/f"{name}.json",data)
@@ -633,7 +741,8 @@ def search_round(args,db,out,epoch,resolution,context,domain,focus,extras,dsl):
                 if "semantic_key" in item}
     feedback = {"retained":[item["term"] for item in dsl_result.get("survivors",[])],
                 "questions":dsl_result.get("questions",[]),"excluded":list(archived.values()),
-                "directed_research_round":new_research or prior_research}
+                "directed_research_round":new_research or prior_research,
+                "physical_solution":physical["physical_solution"]}
     return round_key,refinement_focus(scenarios),feedback
 
 
@@ -656,6 +765,8 @@ def main():
     parser.add_argument("--lean-toolchain")
     parser.add_argument("--watch-seconds",type=int,default=0,
                         help="Monitor original source revisions after bounded search is exhausted")
+    parser.add_argument("--until-proved",action="store_true",
+                        help="Keep increasing proof and model stage until native F1 is proved or interrupted")
     parser.add_argument("--job",help=argparse.SUPPRESS)
     args = parser.parse_args()
     args.repo = args.repo.resolve()
@@ -689,9 +800,11 @@ def main():
         cursor = out/"campaign.json"
         previous = json.loads(cursor.read_text()) if cursor.exists() else None
         epoch = 0 if previous is None else previous["epoch"]
+        from original_discovery import inventory
         while True:
             context = current_context(args.repo)
             context["watched_sources"] = watched_sources(args.repo,domain)
+            context["discovered_original_sources"] = inventory(args.repo,domain)
             extras = extra_specs(args.cases)
             observations = finite_observations(args.finite_observations)
             proposals = json.loads(args.proposal_file.read_text()) if args.proposal_file else []
@@ -701,18 +814,20 @@ def main():
             proposals = [Term.parse(term).data() for term in proposals]
             context_key = token([context["atlas_program_sha256"],source_input_key(domain,args.repo),extras,
                                  context["plan_revision"],ENGINE,
-                                 context["watched_sources"],
+                                 context["watched_sources"],context["discovered_original_sources"],
                                  context["git_head"],str(args.repo),str(domain),
                                  args.start_resolution,args.lean_toolchain,
-                                 args.max_dsl_size,observations,proposals,args.sol_proposals,args.sol_timeout])
+                                 args.max_dsl_size,observations,proposals,args.sol_proposals,args.sol_timeout,args.timeout])
             if previous and previous["context"] != context_key:
                 epoch += 1
                 archives = previous.get("feedback",{}).get("excluded",[]) if previous.get("engine")==ENGINE else []
                 previous = None
             else:
                 archives = []
+            if previous and previous.get("feedback",{}).get("physical_solution"):
+                return
             start = previous["resolution"]+1 if previous else args.start_resolution
-            for resolution in range(start,args.max_resolution+1):
+            for resolution in range(start,start+1 if args.until_proved else args.max_resolution+1):
                 focus = previous.get("focus",[]) if previous and resolution>args.start_resolution+1 else []
                 feedback_input = previous.get("feedback",{}) if previous else {"excluded":archives}
                 dsl = dsl_spec(args,resolution,feedback_input,observations,proposals)
@@ -720,6 +835,10 @@ def main():
                 previous = {"context":context_key,"epoch":epoch,"resolution":resolution,
                             "round":round_key,"focus":next_focus,"feedback":feedback,"engine":ENGINE}
                 atomic_json(cursor,previous)
+                if feedback.get("physical_solution"):
+                    return
+            if args.until_proved:
+                continue
             if not args.watch_seconds:
                 break
             time.sleep(args.watch_seconds)

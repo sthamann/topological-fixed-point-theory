@@ -1,0 +1,382 @@
+{
+  "atlas_revision": "efbe4ec255ede80e51637f6f",
+  "evidence_hashes": {
+    "research/originlab/f1_solution.py": "8e0c4ab6e814e4637ed26b234202288021597c48bbcdb3963c7053f5ba9a3111",
+    "research/originlab/OriginF1Ward.lean": "725d853ae13ff20c0d89f8ea4311193419b3edbcdcf3776572178b091eddf97a",
+    "research/originlab/f1_native_contract.json": "ea564fa514a89272e675b8fae20844e5773877dbf5619972ec550b45de1f5a25",
+    "research/originlab/test_f1_solution.py": "48f2026a2bf1366b4cc14fa896cbfe5d2f71d1dd16ba0dd0803800e3a75c98c6",
+    "research/originlab/f1_spherical_pairing_selection.py": "af7fd55bceeaa714e3e2acbba5c2bcb4d0387866ee54cb7582ba1b3ac6c3eb08",
+    "research/originlab/f1_binary_clifford_origin.py": "a1cd18cf22c253877c0110868d4be4d0b1a7b094ae8e6008592b31868cbd5a14"
+  },
+  "external_contract": {
+    "attempts": 3,
+    "contract_sha256": "d9abeaeced5bd29aa90b45abce0789e78a12d1b6d5ef47556b1cbc2cc4054c4d",
+    "modules": {
+      "CommonGoal.lean": "cd07441df269c27aa139eb6e5f5fc21afa8b2147e8792ad422c4b97fccd27f5c"
+    },
+    "physical_solution": false,
+    "producer": "0",
+    "proof": {
+      "axioms": [],
+      "certificate": "import CommonGoal\ndef originlab_model := 0\ntheorem originlab_certificate : Common.Goal originlab_model ∧ Common.G0 originlab_model ∧ Common.G1 originlab_model ∧ Common.G2 originlab_model ∧ Common.G3 originlab_model ∧ Common.G4 originlab_model ∧ Common.G5 originlab_model ∧ Common.G6 originlab_model ∧ Common.G7 originlab_model := Common.complete\n#print axioms originlab_certificate\n",
+      "certificate_sha256": "12a183da64e8761dfae63c566cd43d7427809f67fe9c5dfa5a121119ea755902",
+      "replay": "replaying ProofCandidate\nreplaying CommonGoal",
+      "statement": "Common.Goal originlab_model ∧ Common.G0 originlab_model ∧ Common.G1 originlab_model ∧ Common.G2 originlab_model ∧ Common.G3 originlab_model ∧ Common.G4 originlab_model ∧ Common.G5 originlab_model ∧ Common.G6 originlab_model ∧ Common.G7 originlab_model",
+      "status": "PROVED",
+      "toolchain": "leanprover/lean4:v4.29.1"
+    },
+    "same_model_gates": {
+      "G0": "Common.G0",
+      "G1": "Common.G1",
+      "G2": "Common.G2",
+      "G3": "Common.G3",
+      "G4": "Common.G4",
+      "G5": "Common.G5",
+      "G6": "Common.G6",
+      "G7": "Common.G7"
+    },
+    "stage": 2,
+    "status": "F1_CONTRACT_PROVED"
+  },
+  "external_contract_input": {
+    "lean_contract": "lean-contract.json",
+    "lean_contract_sha256": "aa6bcce7ba19b8803eafb0c71e68d6efecdd56a5ed70e523a84218bd7267bdc5",
+    "gates": {
+      "G0": "Common.G0",
+      "G1": "Common.G1",
+      "G2": "Common.G2",
+      "G3": "Common.G3",
+      "G4": "Common.G4",
+      "G5": "Common.G5",
+      "G6": "Common.G6",
+      "G7": "Common.G7"
+    }
+  },
+  "external_lean_contract": {
+    "modules": [
+      {
+        "file": "CommonGoal.lean",
+        "sha256": "cd07441df269c27aa139eb6e5f5fc21afa8b2147e8792ad422c4b97fccd27f5c"
+      }
+    ],
+    "goal": "Common.Goal",
+    "producers": {
+      "Nat.zero": 0
+    },
+    "proofs": {
+      "Common.rootOnly": 0,
+      "Common.complete": 0
+    }
+  },
+  "external_lean_source": "import Std\nnamespace Common\ndef Goal (n : Nat) : Prop := ∀ k, n + k = k\ndef G0 (n : Nat) : Prop := n = 0\ndef G1 (n : Nat) : Prop := n + 1 = 1\ndef G2 (n : Nat) : Prop := n * n = n\ndef G3 (n : Nat) : Prop := ∀ a b, (n+a)+b = a+b\ndef G4 (n : Nat) : Prop := n ^ 2 = 0\ndef G5 (n : Nat) : Prop := n + n = 0\ndef G6 (n : Nat) : Prop := 2*n = 0\ndef G7 (n : Nat) : Prop := ∀ a, a+n = a\ntheorem rootOnly : Goal 0 := Nat.zero_add\ntheorem wrongModelGate : G2 1 := rfl\ntheorem complete : Goal 0 ∧ G0 0 ∧ G1 0 ∧ G2 0 ∧ G3 0 ∧ G4 0 ∧ G5 0 ∧ G6 0 ∧ G7 0 :=\n  ⟨Nat.zero_add, rfl, rfl, rfl, fun a _ => congrArg (fun t => t + _) (Nat.zero_add a),\n    rfl, rfl, rfl, Nat.add_zero⟩\nend Common\n",
+  "native_run": {
+    "latest_session_controls": {
+      "binary": {
+        "checks": [
+          "both projections are sharp and have independent binary marginals",
+          "the central angles in the two blocks do not vanish",
+          "one four-letter word detects cancellation of the two angles",
+          "four rays are two antipodal pairs with orthogonal Bloch axes",
+          "real and quaternionic choices have squares +1, -1, +1",
+          "two real, mixed and two quaternionic windows give dimensions nine, five, nine",
+          "antiunitary signs on all sixteen Hermitian Pauli words",
+          "the sign refinement polarizes to the full two-qubit commutator",
+          "five axes carry Clifford products and have common volume +I or -I",
+          "two axes are supported on the second window and three on both",
+          "explicit map to the existing unmarked four-face code",
+          "common local quarter has one fixed projective axis and two swaps",
+          "unitary quaternionic lift with cycle signs (1, 1, 1, 1)",
+          "central spin sign with cycle signs (1, 1, 1, 1)",
+          "unitary quaternionic lift with cycle signs (1, 1, 1, -1)",
+          "noncentral spin fourth power with cycle signs (1, 1, 1, -1)",
+          "unitary quaternionic lift with cycle signs (1, 1, -1, 1)",
+          "noncentral spin fourth power with cycle signs (1, 1, -1, 1)",
+          "unitary quaternionic lift with cycle signs (1, 1, -1, -1)",
+          "central spin sign with cycle signs (1, 1, -1, -1)",
+          "unitary quaternionic lift with cycle signs (1, -1, 1, 1)",
+          "noncentral spin fourth power with cycle signs (1, -1, 1, 1)",
+          "unitary quaternionic lift with cycle signs (1, -1, 1, -1)",
+          "central spin sign with cycle signs (1, -1, 1, -1)",
+          "unitary quaternionic lift with cycle signs (1, -1, -1, 1)",
+          "central spin sign with cycle signs (1, -1, -1, 1)",
+          "unitary quaternionic lift with cycle signs (1, -1, -1, -1)",
+          "noncentral spin fourth power with cycle signs (1, -1, -1, -1)",
+          "unitary quaternionic lift with cycle signs (-1, 1, 1, 1)",
+          "noncentral spin fourth power with cycle signs (-1, 1, 1, 1)",
+          "unitary quaternionic lift with cycle signs (-1, 1, 1, -1)",
+          "central spin sign with cycle signs (-1, 1, 1, -1)",
+          "unitary quaternionic lift with cycle signs (-1, 1, -1, 1)",
+          "central spin sign with cycle signs (-1, 1, -1, 1)",
+          "unitary quaternionic lift with cycle signs (-1, 1, -1, -1)",
+          "noncentral spin fourth power with cycle signs (-1, 1, -1, -1)",
+          "unitary quaternionic lift with cycle signs (-1, -1, 1, 1)",
+          "central spin sign with cycle signs (-1, -1, 1, 1)",
+          "unitary quaternionic lift with cycle signs (-1, -1, 1, -1)",
+          "noncentral spin fourth power with cycle signs (-1, -1, 1, -1)",
+          "unitary quaternionic lift with cycle signs (-1, -1, -1, 1)",
+          "noncentral spin fourth power with cycle signs (-1, -1, -1, 1)",
+          "unitary quaternionic lift with cycle signs (-1, -1, -1, -1)",
+          "central spin sign with cycle signs (-1, -1, -1, -1)",
+          "one real multiplicity doublet cancels the spin sign",
+          "the extra doublet leaves the projective four-cycle unchanged",
+          "a linear single-copy map cannot transport the four independent code directions",
+          "quadratic mark tensors supply four independent directions",
+          "local rotation cycles the four marked rays",
+          "opposite mark effects obey an order bound that the target sharp pair violates",
+          "the product of adjacent sharp effects also has incompatible corner constants"
+        ],
+        "explicit_doubled_real_lift_dimension": 8,
+        "fixed_traceless_dimensions": [
+          9,
+          5,
+          9
+        ],
+        "four_letter_witness": {
+          "anticommuting_target": -1,
+          "global_trace_control": "-7/25"
+        },
+        "local_quarter_permutation": [
+          1,
+          0,
+          3,
+          2,
+          4
+        ],
+        "native_unmarked_quadratic_isometry": [
+          [
+            0,
+            1,
+            0,
+            0
+          ],
+          [
+            1,
+            0,
+            0,
+            0
+          ],
+          [
+            1,
+            1,
+            0,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            0
+          ]
+        ],
+        "physical_solution": false,
+        "same_window_and_bilocal_dimensions": [
+          2,
+          3
+        ],
+        "single_and_quadratic_mark_span_ranks": [
+          3,
+          4
+        ],
+        "single_block_signed_four_cycle": {
+          "fourth_power_minus_identity": 8,
+          "fourth_power_noncentral": 8
+        },
+        "status": "EXACT_SCOPED_CONTROLS_PASSED_F1_OPEN"
+      },
+      "spherical": {
+        "checks": [
+          "boost form on Legendre degree 0",
+          "boost form on Legendre degree 1",
+          "boost form on Legendre degree 2",
+          "boost form on Legendre degree 3",
+          "boost form on Legendre degree 4",
+          "boost form on Legendre degree 5",
+          "boost form on Legendre degree 6",
+          "boost form on Legendre degree 7",
+          "boost form on Legendre degree 8",
+          "all adjacent degrees obey the input and output Ward identity",
+          "reverse Ward identity holds on all nonzero degrees",
+          "antipodal response from the full Ward spectrum",
+          "a deformation preserving the first pair fails on the next pair",
+          "two anti-Mobius cut reflections compose to a real dilation",
+          "conjugating a rotation through the dilation produces a boost direction",
+          "four unit marks in the saturating family",
+          "both within-pair distances reach their Jensen mean",
+          "all cross-pair distances reach their Jensen mean",
+          "global dipole vanishes while the two window dipoles distinguish the minima",
+          "summing all matchings erases the selection along the minimizer family",
+          "strictly increasing first derivative on 0 <= s < 4",
+          "exact threshold at the square endpoint",
+          "without within-window pairing the minimum is tetrahedral",
+          "cross ratio of the actual stereographic marks",
+          "elliptic j along the minimizer family",
+          "distinct endpoint moduli",
+          "local degree-one spherical harmonic intensity measures the pairing term",
+          "two ordered axis anticorrelations select only the singlet",
+          "two axis responses lower-bound the singlet fidelity",
+          "singlet reward is the two-mark dipole penalty up to a constant",
+          "unnormalized conditional singlet readout is half of the antipode",
+          "antipodal state inversion is not a CP replacement",
+          "single and paired quarter lifts have different fourth powers",
+          "the paired quarter preserves the singlet"
+        ],
+        "mark_selection": {
+          "critical_pair_weight": "-1/16 + sqrt(2)/8",
+          "critical_pair_weight_decimal": 0.11427669529663688,
+          "j_of_family": "64*(3 - a**2)**3/(a**2 + 1)**2",
+          "reduced_objective": "2*beta*s + 4/sqrt(s/2 + 2) + 2/sqrt(4 - s)",
+          "square_j": 1728,
+          "unpaired_j": 0
+        },
+        "physical_solution": false,
+        "response": {
+          "antipode": "1/(8*pi)",
+          "input_weights": [
+            "1/2",
+            "3/2"
+          ],
+          "ward_eigenvalue": "2*ell + 1"
+        },
+        "singlet_test": {
+          "conditioned_partner": "(I-P)/2",
+          "pair_quarter_order": 4,
+          "single_quarter_fourth_power": "-I",
+          "two_axis_correlations": [
+            -1,
+            -1
+          ]
+        },
+        "status": "EXACT_SCOPED_CONTROLS_PASSED_F1_OPEN"
+      }
+    },
+    "native_gate_sources": {
+      "G0": {
+        "evidence": [
+          "docs/research/fundamental-plan/TFPT-Ursprungshypothesen-2026-11-12.md"
+        ],
+        "open": "One target independent source law, with its typed composition, generating the shared data of the later gates."
+      },
+      "G1": {
+        "evidence": [
+          "research/originlab/OriginF1Ward.lean",
+          "docs/research/fundamental-plan/evidence/ORIGINLAB-SPHERICAL-PAIRING-20261116.txt"
+        ],
+        "open": "Native positive oriented boundary and windings, a state and time from the source, and its absolute normalization."
+      },
+      "G2": {
+        "evidence": [
+          "docs/research/fundamental-plan/evidence/ORIGINLAB-BINARY-CLIFFORD-ORIGIN-20261116.txt",
+          "research/originlab/affine_operators.py"
+        ],
+        "open": "Two source bound binary operations, ordered ABAB and the marked clock and Clifford dictionary on the same source. Formal carrier and affine charge maps must reach the physical model."
+      },
+      "G3": {
+        "evidence": [
+          "docs/research/fundamental-plan/evidence/R113-FULL96-TWO-WINDOWS-20261116.txt",
+          "research/originlab/source.py"
+        ],
+        "open": "Original weighted boson endpoints, the outer selector, the bound absolute reference, and all ordered and charged forms from a single packet."
+      },
+      "G4": {
+        "evidence": [
+          "research/originlab/PLAN.md",
+          "research/originlab/routes.py"
+        ],
+        "open": "Native independent local translations with the joint spectrum and a controlled common continuum limit."
+      },
+      "G5": {
+        "evidence": [
+          "research/originlab/f1_family_index.py",
+          "research/originlab/native_weak_bridge.py"
+        ],
+        "open": "The physical chiral common limit with the observed generations, gauge structure and no mirror contamination."
+      },
+      "G6": {
+        "evidence": [
+          "research/originlab/PLAN.md",
+          "research/originlab/routes.py"
+        ],
+        "open": "Physical massless spin two and the coupled continuum Ward identities in the same source and localization limit."
+      },
+      "G7": {
+        "evidence": [
+          "verification/predictions_frozen.json",
+          "research/originlab/empirical.py"
+        ],
+        "open": "Independent frozen outputs and an empirical comparison using fixed data, uncertainty and a declared agreement criterion."
+      }
+    },
+    "physical_solution": false,
+    "status": "NATIVE_FORMAL_CONTRACT_INCOMPLETE",
+    "ward_certificate": {
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "certificate": "import OriginF1Ward\n\ntheorem originlab_certificate : (∀ (f : Nat → Rat), OriginF1Ward.Ward f → ∀ n, f n = OriginF1Ward.spectrum (f 0) n) ∧ (∃ f g : Nat → Rat, OriginF1Ward.Ward f ∧ OriginF1Ward.Ward g ∧ f 0 ≠ g 0) := ⟨OriginF1Ward.wardDeterminesRatios, OriginF1Ward.wardLeavesScale⟩\n#print axioms originlab_certificate\n",
+      "certificate_sha256": "cf0a2af3166f76108377bd210b9bdc05cce84d8abeb14f53b981a2a681d09afb",
+      "replay": "replaying ProofCandidate\nreplaying OriginF1Ward",
+      "statement": "(∀ (f : Nat → Rat), OriginF1Ward.Ward f → ∀ n, f n = OriginF1Ward.spectrum (f 0) n) ∧ (∃ f g : Nat → Rat, OriginF1Ward.Ward f ∧ OriginF1Ward.Ward g ∧ f 0 ≠ g 0)",
+      "status": "PROVED",
+      "toolchain": "leanprover/lean4:v4.29.1"
+    }
+  },
+  "frontier_statuses": [
+    "F1_CONTRACT_PROVED",
+    "OPEN"
+  ],
+  "autonomous_summary": {
+    "atlas_revision": "f1e60194c34cb0023fb32329",
+    "best_readout": {
+      "comparable_pairs": 4950,
+      "observable": "return_moments",
+      "pairs_separated": 4933
+    },
+    "binary_rules_found": 64,
+    "compiler_observability_status": "EXACT_ORDERED_ALPHABET_RANK",
+    "complete_contract_status": "F1_CONTRACT_PROVED",
+    "created_at": "2026-11-16T14:17:30.847036+00:00",
+    "custom_cases": 1,
+    "directed_research_round": "22681fbff3401ca12bac81d64e374d4eb86d513c3bac96f66f3fec5a3ff51e2c",
+    "directed_research_status": "UNDERDETERMINED_ON_DECLARED_INTERFACE",
+    "domain_sha256": "7fbe04de691cfedbde4eec25735727e86daf06aaedba9ecd8b314a4e0cc2d9bf",
+    "empirical_source_status": "EMPIRICAL_COMPARISON_SCOPED",
+    "engine_sha256": "021dddad638eca8c67549a0c77420a242c1cbe5d7109d1ba14d695c97cbe8006",
+    "epoch": 0,
+    "failures": 0,
+    "four_mark_selection_status": "EXACT_CONDITIONAL_SELECTION",
+    "generated_complexes": 114,
+    "git_head": "7e7fefa42f0e26cc4229c12b35543fe34ad56f18",
+    "origin_dsl_feedback": {
+      "prior_questions": 0,
+      "rare_response_parents": 0,
+      "reused_negative_certificates": 0
+    },
+    "original_regional_word_status": "EXACT_ORIGINAL_AFFINE_WORD",
+    "original_status": "BLOCKED",
+    "p1_field_status": "EXACT_CHARGED_COLLAR_JET_SEARCH",
+    "physical_solution": false,
+    "r104_status": "EXACT_R104_FACTOR",
+    "r113_orientation_status": "EXCLUDED_SCOPED",
+    "reconstruction_status": "EXACT_RECONSTRUCTION_CONTROLS",
+    "relational_status": "EXACT_RELATIONAL_CONTROLS",
+    "resolution": 3,
+    "round": "22681fbff3401ca12bac81d64e374d4eb86d513c3bac96f66f3fec5a3ff51e2c",
+    "scenarios": 100,
+    "sol_proposal_status": "DISABLED",
+    "spectral_source_status": "FINITE_SPECTRAL_CONTROLS",
+    "tomography_status": "EXACT_TOMOGRAPHY_CONTROLS",
+    "tool_versions": {
+      "cvc5": null,
+      "egglog": null,
+      "python-flint": "0.9.0",
+      "sympy": "1.14.0"
+    },
+    "watched_sources_sha256": "26b59421bc221a3c5e7e57bf04439a7577150352329efaf64faa307f367370c2"
+  },
+  "autonomous_completed_jobs": 154,
+  "originlab_tests_passed": 112,
+  "native_source": "BLOCKED",
+  "physical_solution": false
+}

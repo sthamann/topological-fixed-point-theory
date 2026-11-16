@@ -1,0 +1,70 @@
+TFPT OriginLab: exact broad search of six marked history amplitudes
+ORIGINLABHISTORYGRAMSWEEP20261116
+
+Original class
+Use the six anchored four-cycle permutation histories of
+F1-HISTORY-GRAM-AND-ALL-D4-KMS-NO-GO-20261116, in a fixed order. The
+seven invariant Hermitian coordinates satisfy three independent trace
+preservation constraints. Their exact null space gives four directions
+A,B,C,D. The center is I6/6. The family includes genuinely complex
+interference. Every direction in the channel has zero output partial
+trace and the center has output partial trace I4. Trace of the history
+matrix K itself is not the trace preservation condition.
+
+At integer denominator h, search K=(hI+aA+bB+cC+dD)/(6h) with all four
+numerators between -h and h. The computed characteristic polynomial
+of 6hK has scalar roots h-2a, h+a-b (double), h+a+b-2c and a quadratic
+with trace 2h-a+3b+2c and determinant h*(h-a+3b+2c)-2*(a+c)^2-8d^2.
+Hermiticity gives real roots. Nonnegative scalar roots, quadratic trace
+and determinant are equivalent to PSD, including boundary points.
+All checks run in integer arithmetic. Rank six of the history embedding
+W makes K -> W K W* injective in the fixed marked basis. The four probe
+slopes below are also independent. D4 acts trivially on this invariant
+family. Counts refer to marked operators, with no assumed native
+quotient of observational equivalence.
+
+At denominator 2h the old grid is precisely the all-even quadruples.
+The program reuses their results and only tests the added tuples. The
+observation fingerprint binds the reuse and each round records the grid
+and candidates. The continuous affine system is solved separately to
+distinguish grid absence from an inconsistent or nonpositive solution.
+
+Identifying responses
+With zero-based row-major Choi coordinates and normalized
+(a,b,c,d) divided by the search denominator, the four readings are:
+  Re J[1,1] = (2-a-c)/6
+  Im J[1,2] = d/3
+  Re J[1,4] = (b-c)/6
+  Re J[1,6] = (1-2a)/6
+They recover a from the last, d from the second, c from the first and b
+from the third. This gives four concrete mixed responses to look for
+on a physically bound history block. A complete R113 binding requires
+the same actual marked histories, weighted reflected Q0, outer P_adm
+and absolute empty reference. The history matrices by themselves all
+preserve the scalar and standard sectors and cannot select a unique
+vacuum across them.
+
+Executed native entry point and independent control
+OriginLab CLI, history_gram_search with r113 and f1:
+h=12 checked 390625, positive 30439.
+h=24 checked 5374176 new, 5764801 cumulative, 454845 positive,
+of which 454808 have nonzero interference. The native R113 run is
+BLOCKED with Z0, ZU, ZY, ZUY unset. F1 remains OPEN.
+Control used independently constructed explicit K and direct W K W*.
+h=7 checked 50625. Two fit readings leave 39. Two held-out readings
+reject all 39. The continuous solve identifies denominator 14.
+After actual CLI resume, h=14 checks 656656 new and 707281 cumulative.
+146 fit, 145 fail held-out, one reproduces the independent K.
+Replacing the held-out imaginary reading by 2 yields a nonpositive
+unique affine point, excluding that observation set throughout the
+stated real affine family. Targeted tests: 23 passed.
+
+Consultation
+Claude Opus 4.8 independently reviewed design and verification. It
+recommended exact denotation counts, independently held-out readouts
+and restart without duplicate counts. Its follow-up asked for a
+separate trace-preservation check and an off-grid control. The
+implementation checks the Choi partial trace on each affine basis
+direction. The declared control's target lies outside the initial grid.
+Native source observations remain necessary before comparing physical
+history models. Neither provider suggested a physical completion claim.

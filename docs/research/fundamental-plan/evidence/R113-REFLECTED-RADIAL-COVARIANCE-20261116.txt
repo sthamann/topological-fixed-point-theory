@@ -1,0 +1,122 @@
+R113 · Ein reflektiertes Radialmoment entscheidet das bedingte Vorzeichen
+
+1. Gegebene Originaldaten und Aussagenbereich
+
+R113-FULL96-TWO-WINDOWS-20261116.txt, Abschnitt 3, identifiziert
+im bedingten R032 Vergleich die gemeinsame reflektierte
+Radialindikatorgramform G_ij=W_ij K_ij. K ist der leere Full96
+Zweifenstertransfer mit der vorhandenen Majorana Matrix. Die
+fünf Radien und die zertifizierten leeren und späten Formen K,L
+stammen unverändert aus R113-FULL96-RADIAL-BALLS-20261116.json.
+Der bedingte Wert je Historie ist y_ij=L_ij/K_ij bei festem
+Seefaktor. Schreibe u_i=r_i² und X,Z für die frühe und späte
+Radialmarke. Für reelles eintragsweise nichtnegatives G mit
+positiver Summe ist p_ij=G_ij/sum G eine gemeinsame Verteilung.
+Die relative Antwort ist C_UY=E[(X-E X)y(X,Z)].
+
+2. Uniformes Vorzeichenzertifikat aus wenigen Momenten
+
+Die 20 benachbarten frühen Steigungsvergleiche zeigen bei
+160 Bit, dass y als Funktion der frühen Radialmarke mit
+Steigung höchstens -77/10 fällt. Lineare Interpolation im
+frühen Index erhält diese Schranke. Für einen beliebigen
+frühen Mittelwert mu im geprüften Intervall gilt somit
+
+ E[(X-mu)(y(X,Z)-y(mu,Z))] <= -(77/10) Var(X).
+
+Der verbleibende Anteil ist die Kovarianz von X mit
+g(Z)=y(mu,Z). Interpoliere g linear im späten Argument.
+Für mu in jeweils einer der vier aufeinanderfolgenden
+Zellen existiert das im Programm fest geprüfte b:
+
+ Zelle der Radien           b    Obergrenze für den Sekantenrest
+ [1/4,3/10]                47   5.057
+ [3/10,7/20]               48   5.973
+ [7/20,2/5]                49   6.108
+ [2/5,11/20]               51   6.974
+
+Die Aussage für die gesamte Zelle folgt aus 16
+Endpunktsekanten pro Zelle. Für eine feste frühe Zeile
+ist die Sekante vom späten mu zum Gitterpunkt j ein
+gewichtetes Mittel ihrer Sekanten von den beiden
+Zellendpunkten: Der Sekantenzähler ist die gewichtete
+Summe der beiden Zähler, der Nenner die gewichtete
+Summe der beiden gleichgerichteten Abstände. Ein
+Nullabstand trägt nichts bei. Die Interpolation im
+frühen Argument mischt wiederum nur die beiden
+benachbarten frühen Zeilen. Damit gilt überall
+
+ |g(Z)-g(mu)+b(Z-mu)| <= 7 |Z-mu|.
+
+Cauchy Schwarz und die frühe Steigung ergeben die
+allgemeine obere Schranke
+
+ C_UY <= -(77/10) V_e - b C_e,l
+         + 7 sqrt(V_e (V_l+(mu_l-mu_e)^2)),
+
+mit frühen und späten Varianzen V_e,V_l und der
+Radialkovarianz C_e,l. Bei gleichen radialen Rändern wird
+dies zu
+
+ C_UY <= -(7/10) Var(X) - b Cov(X,Z).
+
+Positive Varianz und nichtnegative Radialkovarianz
+entscheiden somit strikt C_UY<0. Selbst eine
+Radialkovarianz ab -Var(X)/100 reicht: b<=51 lässt
+mindestens 19/100 Var(X) als Abstand zu Null übrig.
+TP2 oder ein skalarer Nachbargenerator sind für dieses
+bedingte Zertifikat nicht vorausgesetzt.
+
+3. Verbindung zur Reflexionspositivität und Gegenproben
+
+Ein symmetrischer, eintragsweise nichtnegativer Gramkern
+G mit G positiv semidefinit hat gleiche Radialränder und
+Cov(X,Z)=u0^t G u0/sum G>=0, u0_i=u_i-E X. Es genügt
+die Positivität dieser einen zentrierten Richtung. Sie
+ist als reflektierte quadratische Form auf demselben
+ausgewählten unnormierten Rand zu prüfen. Eine zuvor
+nachgewiesene Reflexion des unselektierten Ersatzkerns
+beweist sie nicht für das tatsächliche P_adm.
+
+Das exakte Kontrollgram G=11^t+aa^t mit a=(0,2,1,3,2)
+hat 28 negative geordnete Zweierminoren und ist PSD.
+Die zertifizierten Auslesungen sind
+Var(X) etwa 0.00664917, Cov(X,Z) etwa 0.000135893,
+C_UY etwa -0.09259375415. Der frühere TP2 Test hätte
+dieses Modell ausgelassen. Zwei umgekehrte Randpaare
+auf den äußersten Radien geben dagegen Cov(X,Z)=-0.0144
+und C_UY etwa +0.47905070359. Die Kovarianzbedingung ist
+eine echte Einschränkung und benutzt den gemeinsamen Rand.
+
+Zum mathematischen Kontext der Reflexionsform: Neeb und
+Ólafsson, Reflection positive one-parameter groups and
+dilations, arXiv:1312.6161. Die obige endliche Ungleichung
+und die Profileinschließungen stammen aus der hiesigen Rechnung.
+
+4. Ausführung und nächste Originalmessung
+
+Der reguläre F1 Lauf führt r113_reflected_radial auf dem
+an seinen SHA256 gebundenen Profil aus. Im R113 Adapter
+benötigt normalization_scope=relative_radial_moment_bound
+nur Z0, ZU und vier radial_moment_probe Formen. Der
+ursprüngliche Quotient und derselbe äußere Selektor
+kontrahieren frühes und spätes Quadrat, späten Mittelwert
+und frühes mal spätes U. Es gibt keinen äußeren
+Referenzdivisor. Numerische Y und UY Marken werden in diesem
+Modus nicht vorgegeben und nicht als gemessen ausgegeben.
+Der Adapter gibt eine bedingte Schranke aus. Sind die
+gemischten Marken zusätzlich tatsächlich verfügbar,
+kann er im vollen Modus ihren Widerspruch zur Schranke melden.
+Die Kontrollkontraktion ohne Y ergibt exakt -63/6250 als
+obere Schranke. Eine künstliche Mischantwort null wird im
+vollen Kontrollpfad als Widerspruch erkannt.
+
+Der native R113 Aufruf enthält weiterhin kein gebundenes
+ganzes Randpaket. Die fehlende Originalentscheidung liegt
+nun in der tatsächlichen Bindung dieser fünf Momente oder,
+bei gesicherter Randsymmetrie, der Varianz und der
+zentrierten reflektierten Radialrichtung. Zusätzlich muss
+dieselbe physische Zeit und die Übereinstimmung des
+normalisierten Y Profils nach dem ganzen Selektor gezeigt
+werden. Die vorhandene relative positive Rechnung ersetzt
+keine vollständige F1 Herleitung.
