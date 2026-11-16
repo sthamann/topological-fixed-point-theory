@@ -144,13 +144,13 @@ def coherent_fourth_root_phase_search(cycles):
                 sp.Integer(int(amp[i][j].real))+
                 sp.I*sp.Integer(int(amp[i][j].imag)))
             U=A/2
-            require(U.H*U==sp.eye(4) and U**4==sp.eye(4),
+            require((U.H*U).applyfunc(sp.simplify)==sp.eye(4) and (U**4).applyfunc(sp.simplify)==sp.eye(4),
                     "exact Gaussian phase solution is not unitary order <=4")
             retained.append((weights,U))
     require(len(retained)==9 and
             sum(all(w.imag==0 for w in weights)
                 for weights,_ in retained)==3 and
-            sum(U*U==sp.eye(4) for _,U in retained)==3,
+            sum((U*U).applyfunc(sp.simplify)==sp.eye(4) for _,U in retained)==3,
             "anchored coherent fourth-root solutions changed")
     expected_even=(1,-1,1j,-1j)
     spectra=[{str(v):int(n) for v,n in sorted(U.eigenvals().items(),key=lambda z:str(z[0]))}
@@ -250,7 +250,7 @@ def controls():
     # quotient: E(f)=<f,H f>_pi, with pi uniform on four labels.
     x=sp.Matrix([1,-1,0,0])
     energy=sp.simplify((x.T*H*x)[0]/4)
-    require(energy==sp.log(9)/2,
+    require(sp.simplify(energy-sp.log(9)/2)==0,
             "symmetric 3-mode quantum Dirichlet form changed")
 
     # Crucial COMPILER difference: incoherent average of conjugations

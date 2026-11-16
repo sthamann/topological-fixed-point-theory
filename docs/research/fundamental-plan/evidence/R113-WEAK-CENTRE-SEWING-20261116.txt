@@ -1,0 +1,119 @@
+R113 · Gemeinsame schwache Eichprojektion und zwei Fenster
+
+Ausgangslage
+
+PROJECTED-JOINT-SOURCE-GENERATOR-20261103.txt, Abschnitt 3,
+definiert P_adm auf dem gemeinsamen Boson und Fermion Raum.
+Er steht außen, und die bosonische Randwirkung darf mit dem
+Fermionanteil gekoppelt sein. Die Full96 Doppelspiegelrechnung
+liefert S und den einseitigen Ableitungsoperator
+  B(b) = -integral_0^w exp(-u h(b)) V(b) exp(u h(b)) du.
+Die Paarlinie bleibt für die lineare Antwort leer; B(b) S
+erzeugt einen von null verschiedenen Vektor außerhalb der Linie.
+
+Die tatsächliche schwache Zentrumsoperation
+
+Der Lift von -I_2 aus original.rep in v252 ist
+  G = L K conj(L) K.
+Am Originalassembler exakt geprüft: G^2=I, 48 Eigenwerte pro
+Vorzeichen, G M_R G=M_R, G V_i G=-V_i auf allen vier
+Higgsrichtungen und G S G^t=S. Der kinetische Anteil kommutiert
+mit G. Daraus folgen h(-b)=G h(b) G und B(-b)=G B(b) G.
+
+Die Randsektion V(b) Omega transformiert gemeinsam invariant
+unter b -> -b und dem Fermionlift auf beiden Seiten.
+Der gemeinsame Zentrumsprojektor ist
+  P_Z2 = (I + field_sign_flip tensor Gamma(G direct_sum G))/2.
+Er erhält die Randsektion. Die bloße Fermionmittelung an einem
+festen b entfernt ihren Überlapp mit dem ersten Tangentenvektor
+exakt. Die beiden Projektionen liefern unterschiedliche Antworten.
+Der erste Befund betrifft die tatsächliche Untergruppe und trägt
+keine Aussage darüber, was die übrigen Faktoren aus P_adm auswählen.
+
+Eine aus dem Originaloperator gebildete Randsektion liest den
+linearen Anteil explizit aus. Ihr unnormierter relativer Überlapp ist
+  -tr(V B)/d
+  = (w/d) sum_ij |V_ij|^2 sinhc(w(E_i-E_j))
+  >= (w/d) tr(V^2) > 0
+für V != 0. E_i sind die Eigenwerte der hermiteschen Fenstermatrix,
+sinhc(x)=sinh(x)/x. Die Formel folgt durch Paarung von i,j im
+Integral. Der Full96 Lauf auf 384 Koordinaten bei Vergleichsbreite
+1/10 ergibt 0.3898292900 gegen die untere Schranke 0.3855404437.
+Der gerade und der ungerade Anteil von B haben normierte
+Quadratnormen 0.00002669660664 und 0.04010355113.
+
+Wird die genähte See-Norm s=exp(-w tr|h|/2) ebenfalls variiert,
+kommt ein eigener Term d log s/dy = -w tr(sign(h) V)/2 hinzu,
+sofern h invertierbar ist. Entlang h(r)=h_0+r V_hat ist tr|h(r)|
+nach Zentrumssymmetrie gerade und als Kernnorm konvex. Für r>0
+ist der logarithmische Sea-Beitrag nichtpositiv. Im Originalmatrix-
+vergleich ist er etwa -26.39526611 bei einer kleinsten absoluten
+Eigenenergie von etwa 0.25419546. Das ist eine andere Markierung
+als das Einfügen von Y bei ausdrücklich festgehaltener See-Norm.
+
+Gegenbeispiel mit positiver, isospektraler Zeitverklebung
+
+Für einen geladenen Originalpaarblock ist die lokale See-Marke
+y=r^2 sigma/sqrt(p^2+r^2 sigma). Bei p=1/4 und den drei Werten
+u=r^2 sigma=(0,1,9/4) ist y=(0,4/sqrt(17),9/sqrt(37)).
+Der positive Faktor 1/sigma zu U ist hier ausgeklammert.
+Auf der gemeinsamen gleichverteilten Vergleichsbasis seien Q und R
+die orthogonalen Projektoren auf (1,-2,1) und (1,0,-1).
+L_-=Q+2R und L_+=2Q+R sind reversible, irreduzible Markovgeneratoren
+in der Konvention exp(-t L), positiv selbstadjungiert und mit
+gemeinsamem Spektrum {0,1,2}. Dieselbe leere Randfunktion 1 ergibt
+in beiden Fällen absolut den Wert 1. Beide haben die gleichen
+lokalen Marken, dieselben Einpunktantworten und denselben
+gleichzeitigen verbundenen Wert.
+
+Mit A=u^t Q y/3<0, B=u^t R y/3>0 und z=exp(-t) gilt
+  C_-(u,y)=A z + B z^2,    C_+(u,y)=A z^2 + B z.
+Bei z=-A/B liegen exakt C_-=0 und C_+>0 vor. Der letztere Wert
+liegt numerisch bei 0.0063976784 (in der u Koordinate).
+Damit können lokale Marken, Reflexionspositivität, Vakuum,
+Einpunktauslesungen, absolute leere Norm und das ganze
+Transferspektrum den verbundenen Zweifensterwert nicht ersetzen.
+Die beiden Verklebungen sind Gegenmodelle, keine TFPT Quellen.
+
+Konkreter positiver Kurzzeittest ohne zweizeitigen Mischwert
+
+Wenn derselbe physische Generator H>=0 und seine normalisierte
+Vakuumform die zentrierten Marken f=U-<U>, g=Y-<Y> verbindet,
+gilt mit E(f)=||sqrt(H)f||^2
+  Re <f,exp(-tH)g> >= Re <f,g> - t sqrt(E(f) E(g)).
+Beweis: 0 <= I-exp(-tH) <= tH, dann Cauchy Schwarz mit
+I-exp(-tH). Für positive gleichzeitige Kovarianz und endliche
+Energien reicht der so bestimmte Zeitbereich zur strikten
+Nichtnull-Aussage. Auf den Gegenmodellen ist die gemeinsame
+gleichzeitige Kovarianz etwa 0.54844805, die beiden garantierten
+offenen Zeitgrenzen etwa 0.48978513 und 0.95407568. Der spätere
+Nullpunkt verletzt die Schranke nicht. Bei verschiedenen äußeren
+Cap Formen oder ohne denselben Generator ist dieser Test unzulässig.
+
+Abgleich der zweiten Ursprungsspur
+
+Der Forschungsbericht der anderen Sitzung leitet das minimale
+binäre selbstduale K4 Relationsobjekt her und zeigt positive
+selbstreziproke Quellen mit zwei verschiedenen Normierungen.
+Unabhängige exakt dyadische Summe erzwingt für endliche Kovarianz
+die Gaußquelle. Das ist eine neue Kompositionsprämisse. Der
+ursprüngliche R113 Transfer ist geordnet und hat bislang weder
+die dafür nötige Produktfaltung noch die native Zeitkarte.
+Fable 5.2 Hoch wurde in Chrome befragt. Sein Schluss zur
+fermionischen Ungeradheit bei festem Higgs gilt als Gegenprobe
+und kann nicht auf die gemeinsame Eichoperation übertragen
+werden. Seine Kovarianzidee lässt sich als obige Kurzzeitschranke
+aus gleichzeitigen Formen formulieren. Ein positives
+Kompressionsergebnis oder ein einzelnes viertes Moment würde
+die unabhängige Faltung noch nicht beweisen.
+Chat: [private review]
+
+Offener Originalschritt
+
+Die gekoppelte schwache Zentrumsoperation liefert eine zulässige
+Randrichtung für diesen Faktor. Für den ganzen physischen Wert
+fehlen ihre tatsächliche Naht-, Determinanten- und Gapprojektion,
+die ursprüngliche gemeinsame Zweifensterform und ihre Zeitkarte.
+Prüfe am gemeinsamen Originalgenerator den gleichzeitigen
+Mischwert und die beiden Dirichletformen. Die ganze Integration
+und eine F1 Identität wurden nicht hergestellt.

@@ -134,7 +134,7 @@ def controls():
        "four_marks_do_not_select_square_j":"j(t=1)=1728, j(t=1/2)=148176/25",
        "square_modulus_from_E8_anomaly_inflow_selected":False,
        "minimal_known_invertible_bulk":"oriented 2+1D E8 abelian Chern-Simons K theory",
-       "bulk_E8_K_Cartan_matrix":matrix.tolist(),
+       "bulk_E8_K_Cartan_matrix":[list(map(int,row)) for row in matrix.tolist()],
        "bulk_K_principal_minors":[int(n) for n in minors],
        "bulk_K_determinant":int(matrix.det()),
        "bulk_K_rank":matrix.rank(),

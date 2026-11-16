@@ -2,6 +2,7 @@
 from pathlib import Path
 from datetime import datetime, timezone
 from importlib.metadata import version
+from itertools import count
 from tempfile import NamedTemporaryFile
 import fcntl
 import re
@@ -24,6 +25,22 @@ HERE = Path(__file__).resolve().parent
 CAMPAIGNS = ("r113", "r113_synthesis", "source_bridge", "marked_search", "double_cell", "moving_carrier", "affine_polarization", "affine_operators", "affine_car", "colour_ward", "weak_source", "weak_folded_clock", "p1_field_search", "weak_return_rank", "four_mark_geometry", "f1_family_index", "r102", "bell", "clock", "identifiability", "four_mark_selection",
              "spectral_source_controls", "empirical_source_audit", "composed_search", "seam_cohomology", "p1_source_falsifiers", "p1_charged_modulus", "p1_four_current_gate", "p1_e8_geometric_lift", "p1_seam_dirac", "p1_spinor_cover", "p1_geometric_gram", "p1_minimal_spinor_marks", "p1_principal_su3", "p1_principal_su3_ward", "p1_moving_divisor_origin", "p1_operator_closure", "p1_modular_source_no_go", "p1_modulus_score", "p1_original_j_witness", "p1_elliptic_determinant_source", "f1_source_theorem_audit", "f1_functorial_source", "f1_hidden_history_dilation", "f1_covariant_quantum_semigroup", "f1_spin2_stieltjes_gate", "f1_single_source_clifford_bridge", "f1_ramond_e8_grade_bridge", "f1_qutrit_car_e8_bridge", "f1_e8_gravitational_inflow", "f1_p1_chiral_index_gate", "f1_single_original_source_gate", "f1_pregeometric_history_compiler", "f1_compiler_kms_no_go", "f1_history_gram_universal_no_go", "f1_oriented_seam_source", "f1_p1_physical_necessity_routes", "f1_seam_projective_consistency", "f1_p1_cocycle_boundary_gate", "f1_klein_twisted_source", "f1_klein_phase_space_double", "f1_origin_scenarios", "p0", "f1")
 FINITE_CONTROLS = ("double_cell", "moving_carrier", "affine_polarization", "affine_operators", "affine_car", "colour_ward", "weak_source", "weak_return_rank", "four_mark_geometry", "f1_family_index", "seam_cohomology", "p1_source_falsifiers", "p1_charged_modulus", "p1_four_current_gate", "p1_e8_geometric_lift", "p1_seam_dirac", "p1_spinor_cover", "p1_geometric_gram", "p1_minimal_spinor_marks", "p1_principal_su3", "p1_principal_su3_ward", "p1_moving_divisor_origin", "p1_operator_closure", "p1_modular_source_no_go", "p1_modulus_score", "p1_original_j_witness", "p1_elliptic_determinant_source", "f1_source_theorem_audit", "f1_functorial_source", "f1_hidden_history_dilation", "f1_covariant_quantum_semigroup", "f1_spin2_stieltjes_gate", "f1_single_source_clifford_bridge", "f1_ramond_e8_grade_bridge", "f1_qutrit_car_e8_bridge", "f1_e8_gravitational_inflow", "f1_p1_chiral_index_gate", "f1_single_original_source_gate", "f1_pregeometric_history_compiler", "f1_compiler_kms_no_go", "f1_history_gram_universal_no_go", "f1_oriented_seam_source", "f1_p1_physical_necessity_routes", "f1_seam_projective_consistency", "f1_p1_cocycle_boundary_gate", "f1_klein_twisted_source", "f1_klein_phase_space_double", "f1_origin_scenarios")
+FINITE_CONTROLS += ("f1_prephysical_interpretation",)
+CAMPAIGNS += ("f1_prephysical_interpretation",)
+FINITE_CONTROLS += ("q0_rule_search", "p1_origin_hypotheses")
+CAMPAIGNS += ("q0_rule_search", "p1_origin_hypotheses")
+CAMPAIGNS += ("proof_search",)
+FINITE_CONTROLS += ("f1_spherical_pairing_selection",)
+CAMPAIGNS += ("f1_spherical_pairing_selection",)
+FINITE_CONTROLS += ("f1_binary_clifford_origin",)
+CAMPAIGNS += ("f1_binary_clifford_origin",)
+CAMPAIGNS += ("f1_solution",)
+FINITE_CONTROLS += ("f1_native_pair_selection",)
+CAMPAIGNS += ("f1_native_pair_selection",)
+FINITE_CONTROLS += ("f1_reflected_cap",)
+CAMPAIGNS += ("f1_reflected_cap",)
+FINITE_CONTROLS += ("r113_pair_search",)
+CAMPAIGNS += ("r113_pair_search",)
 
 
 def atomic_json(path, payload):
@@ -77,12 +94,42 @@ def current_context(root):
 def campaign_context(args):
     from source_bridge import INPUTS
 
+    research_options = {}
+    if "q0_rule_search" in args.campaign or ("f1_solution" in args.campaign and args.f1_contract is None):
+        research_options["q0_depth"] = args.q0_depth
+    if args.p1_hypothesis_input:
+        research_options["p1_hypothesis_input_sha256"] = digest(args.p1_hypothesis_input)
+    if args.proof_contract:
+        from proof_search import read_contract
+        _, modules = read_contract(args.proof_contract)
+        research_options["proof_contract"] = {
+            "manifest":digest(args.proof_contract),
+            "modules":{file.name:digest(file) for file,_ in modules},
+        }
+    if "f1_solution" in args.campaign:
+        from f1_solution import contract_fingerprints
+        research_options["f1_solution_contract"] = contract_fingerprints(args.f1_contract,args.f1_contract_sha256)
+        if args.f1_contract is None:
+            from r113_radial_order import RADIAL_DATA
+            radial = args.repo/RADIAL_DATA
+            research_options["r113_radial_order_data_sha256"] = digest(radial) if radial.is_file() else None
+    if "f1_native_pair_selection" in args.campaign or ("f1_solution" in args.campaign and args.f1_contract is None):
+        from f1_native_pair_selection import RING_SOURCE
+        source = args.repo/RING_SOURCE
+        research_options["native_pair_ring_sha256"] = digest(source) if source.is_file() else None
+    if {"f1_reflected_cap", "r113_pair_search"}.intersection(args.campaign) or ("f1_solution" in args.campaign and args.f1_contract is None):
+        from f1_reflected_cap import ASSEMBLER
+        research_options["reflected_cap_inputs"] = {
+            str(path): digest(args.repo/path) if (args.repo/path).is_file() else None
+            for path in (ASSEMBLER, NATIVE)
+        }
     if args.finite_controls_only:
         return dict(plan_revision=None,atlas_revision=None,atlas_provenance="not_used_for_finite_controls",
                     git_head=subprocess.check_output(["git","-C",str(args.repo),"rev-parse","HEAD"],
                                                      text=True).strip(),
-                    python=platform.python_version(),sympy=version("sympy"))
+                    python=platform.python_version(),sympy=version("sympy"), **research_options)
     context = current_context(args.repo)
+    context.update(research_options)
     domain = args.domain or args.repo/NATIVE
     context["domain_sha256"] = digest(domain) if domain.is_file() else None
     context["source_input_key"] = source_input_key(domain,args.repo)
@@ -301,6 +348,44 @@ def execute(campaign, root, args, suggestion_rows, retained_rows, prior_question
     if campaign == "f1_family_index":
         from f1_family_index import controls
         return controls()
+    if campaign == "f1_prephysical_interpretation":
+        from f1_prephysical_interpretation import controls
+        return controls()
+    if campaign == "f1_spherical_pairing_selection":
+        from f1_spherical_pairing_selection import controls
+        return controls()
+    if campaign == "f1_binary_clifford_origin":
+        from f1_binary_clifford_origin import controls
+        return controls()
+    if campaign == "f1_native_pair_selection":
+        from f1_native_pair_selection import controls
+        return controls(root)
+    if campaign == "f1_reflected_cap":
+        from f1_reflected_cap import controls
+        return controls(root)
+    if campaign == "r113_pair_search":
+        from r113_pair_search import search
+        return search(root)
+    if campaign == "q0_rule_search":
+        from q0_rule_search import run as q0_search
+        source_root = None if args.finite_controls_only else root
+        return q0_search(source_root, args.domain, args.q0_depth)
+    if campaign == "p1_origin_hypotheses":
+        from p1_origin_hypotheses import search
+        options = json.loads(args.p1_hypothesis_input.read_text()) if args.p1_hypothesis_input else {}
+        return search(**options)
+    if campaign == "proof_search":
+        from proof_search import DEFAULT_TOOLCHAIN, run as proof_control, search_contract
+        options = {"first_cost":getattr(args,"proof_cost",args.proof_first_cost),
+                   "shells":args.proof_shells,"toolchain":args.lean_toolchain or DEFAULT_TOOLCHAIN}
+        return search_contract(args.proof_contract,**options) if args.proof_contract else proof_control(**options)
+    if campaign == "f1_solution":
+        from f1_solution import search
+        from proof_search import DEFAULT_TOOLCHAIN
+        hypotheses = json.loads(args.p1_hypothesis_input.read_text()) if args.p1_hypothesis_input else None
+        return search(args.f1_contract,args.f1_contract_sha256,args.f1_stage,
+                      args.lean_toolchain or DEFAULT_TOOLCHAIN,args.f1_check_seconds, root=root,
+                      domain=args.domain,q0_depth=args.q0_depth,p1_hypotheses=hypotheses)
     if campaign == "r102":
         result = r102(3,args.rank_limit)
         result["inverse_smt"] = inverse_rank(3,args.rank_limit)
@@ -372,9 +457,15 @@ def one_round(args, directory, index, retained, prior_questions, manifest):
                 record(c,future.result)
     if "f1" in args.campaign:
         def f1_frontier():
-            source_result = outcomes.get("r113")
+            complete = outcomes.get("f1_solution",{})
+            source_result = outcomes.get("r113") or complete.get("original_source")
             bell = outcomes.get("bell",{}).get("discriminator",{})
-            return dict(status="OPEN",source_status=(source_result or {}).get("status","NOT_RUN"),
+            proven = complete.get("status") in ("F1_PROVED","F1_CONTRACT_PROVED")
+            evidence = assess(source_result,outcomes.get("r113_synthesis"),complete)
+            return dict(status=complete["status"] if proven else "OPEN",
+                        physical_solution=evidence["physical_solution"],
+                        complete_contract=complete or None,
+                        source_status=(source_result or {}).get("status","NOT_RUN"),
                         atlas_problem="problem:f1-session-synthesis-20261113",
                         next_original_inputs=[
                             "absolute weighted endpoint Gram and bound empty reference",
@@ -412,9 +503,12 @@ def one_round(args, directory, index, retained, prior_questions, manifest):
                         joint_weak_return_support=outcomes.get("weak_return_rank",{}).get("completion_orbits",{}).get("support_by_grade"),
                         four_mark_geometry=outcomes.get("four_mark_geometry"),
                         affine_colour_ward=outcomes.get("colour_ward"),
+                        q0_rule_search=outcomes.get("q0_rule_search"),
+                        formal_proof_search=outcomes.get("proof_search"),
+                        p1_origin_hypothesis_status=outcomes.get("p1_origin_hypotheses",{}).get("status","NOT_RUN"),
                         affine_operator_source_status=outcomes.get("affine_operators",{}).get("status","NOT_RUN"),
                         mark_alphabet_completion=outcomes.get("affine_operators",{}).get("next_original_observation"),
-                        physical_evidence=assess(source_result,outcomes.get("r113_synthesis")),
+                        physical_evidence=evidence,
                         separator_requires_original_field_identification=True,
                         energy_moments=(source_result or {}).get("energy_moments"),
                         regional_motion=((source_result or {}).get("physical_reconstruction",{})
@@ -422,13 +516,18 @@ def one_round(args, directory, index, retained, prior_questions, manifest):
                         source_obligations=(source_result or {}).get("obligations",{}))
         record("f1",f1_frontier)
     p0 = outcomes.get("p0",{})
-    gates = assess(outcomes.get("r113"),outcomes.get("r113_synthesis"))["gates"]
+    complete = outcomes.get("f1_solution",{})
+    evidence = assess(outcomes.get("r113") or complete.get("original_source"),
+                      outcomes.get("r113_synthesis"),complete)
     next_action = ("Review the exact finite controls and their original-source follow-up."
                    if args.finite_controls_only else
                    "Produce the original marked endpoint packet or equivalent weighted "
                    "form before claiming physical transfer or regional time.")
+    if complete.get("status") in ("F1_PROVED","F1_CONTRACT_PROVED"):
+        next_action = "Replay the common-model proof against the pinned contract."
     summary = dict(round=index,created_at=datetime.now(timezone.utc).isoformat(),
-                   context=manifest,gates=gates,physical_solution=False,
+                   context=manifest,gates=evidence["gates"],physical_solution=evidence["physical_solution"],
+                   complete_contract_status=complete.get("status","NOT_RUN"),
                    outcomes={k:v["status"] for k,v in outcomes.items()},
                    pending_experiments=p0.get("questions",[])[:3],
                    next_action=next_action,
@@ -447,6 +546,15 @@ def main():
     parser.add_argument("--composed-search-input",type=Path,help="Search an exact composition of finite operator fragments")
     parser.add_argument("--composed-square-resolution",type=int,help="Set the rational grid denominator in the built-in composed search")
     parser.add_argument("--p1-field-input",type=Path,help="Resolve a supplied two-face charged jet")
+    parser.add_argument("--q0-depth",type=int,default=3,choices=(1,2,3,4))
+    parser.add_argument("--p1-hypothesis-input",type=Path,help="Select registered hypotheses and cone bound from JSON")
+    parser.add_argument("--proof-contract",type=Path,help="Trusted pinned Lean goal and term grammar")
+    parser.add_argument("--proof-first-cost",type=int,default=2)
+    parser.add_argument("--proof-shells",type=int,default=2)
+    parser.add_argument("--f1-contract",type=Path,help="Complete formal goal and its eight gate predicates")
+    parser.add_argument("--f1-contract-sha256",help="Externally fixed SHA256 of the complete contract")
+    parser.add_argument("--f1-check-seconds",type=int,default=20)
+    parser.add_argument("--until-proof",action="store_true",help="Advance the common model search until a proof is accepted")
     parser.add_argument("--campaign",action="append",choices=(*CAMPAIGNS,"benchmarks"))
     parser.add_argument("--finite-controls-only",action="store_true",
                         help="Run public finite controls without a local Atlas or original source")
@@ -461,7 +569,8 @@ def main():
     parser.add_argument("--model",action="append",default=[])
     parser.add_argument("--model-timeout",type=int,default=120)
     parser.add_argument("--jobs",type=int,default=2)
-    parser.add_argument("--rounds",type=int,default=1,help="New rounds this invocation")
+    parser.add_argument("--rounds",type=int,default=1,
+                        help="New rounds this invocation, including native rounds with --until-proof")
     parser.add_argument("--watch-seconds",type=int,default=0,
                         help="Wait for source changes between rounds; 0 runs immediately")
     parser.add_argument("--resume",action="store_true")
@@ -483,6 +592,22 @@ def main():
         parser.error("--composed-square-resolution requires a positive denominator and the built-in composed search")
     if args.p1_field_input and "p1_field_search" not in args.campaign:
         parser.error("--p1-field-input requires the p1_field_search campaign")
+    if args.p1_hypothesis_input and not (
+        "p1_origin_hypotheses" in args.campaign or ("f1_solution" in args.campaign and not args.f1_contract)
+    ):
+        parser.error("--p1-hypothesis-input requires p1_origin_hypotheses or native f1_solution")
+    if args.proof_contract and "proof_search" not in args.campaign:
+        parser.error("--proof-contract requires the proof_search campaign")
+    if args.proof_first_cost < 2 or args.proof_shells < 1:
+        parser.error("proof search starts at cost two and requires at least one shell")
+    if (args.f1_contract is None) != (args.f1_contract_sha256 is None):
+        parser.error("--f1-contract and --f1-contract-sha256 must be supplied together")
+    if args.f1_contract and "f1_solution" not in args.campaign:
+        parser.error("--f1-contract requires the f1_solution campaign")
+    if args.until_proof and (args.watch_seconds or "f1_solution" not in args.campaign):
+        parser.error("--until-proof requires f1_solution and is incompatible with --watch-seconds")
+    if args.f1_check_seconds < 1:
+        parser.error("--f1-check-seconds must be positive")
     if args.domain and not args.domain.is_file():
         parser.error("the supplied original domain does not exist")
     if not (1 <= args.size <= 6 and 0 <= args.mutations <= 10000 and
@@ -508,14 +633,22 @@ def main():
         retained = state["survivors"] if state else []
         prior_questions = state.get("questions",[]) if state else []
         configuration = {k:(str(v.resolve()) if isinstance(v,Path) else v)
-                         for k,v in vars(args).items() if k not in {"resume","rounds","out","jobs","watch_seconds"}}
+                         for k,v in vars(args).items()
+                         if k not in {"resume","rounds","out","jobs","watch_seconds","until_proof"}}
         if not args.finite_controls_only:
             configuration.pop("finite_controls_only")
-        engine = {p.name:digest(p) for p in [*HERE.glob("*.py"), HERE/"gates.json",HERE/"R102.lean"]}
+        engine = {p.name:digest(p) for p in [*HERE.glob("*.py"), *HERE.glob("*.lean"),
+                                            HERE/"gates.json", HERE/"f1_native_contract.json"]}
         if state and (configuration != state["configuration"] or engine != state["engine"]):
             parser.error("configuration or engine changed, start a fresh run")
+        if args.until_proof and state and state.get("complete_contract_status") in {
+            "F1_PROVED","F1_CONTRACT_PROVED",
+        }:
+            print(f"proof already accepted in round {prior}",flush=True)
+            return 0
         had_error = False
-        for i in range(prior+1,prior+args.rounds+1):
+        rounds = count(prior+1) if args.until_proof else range(prior+1,prior+args.rounds+1)
+        for i in rounds:
             context = campaign_context(args)
             if args.watch_seconds and state is not None:
                 while state["context"] == context:
@@ -527,15 +660,24 @@ def main():
                 archive = target.with_name(target.name+f".interrupted-{time.time_ns()}")
                 target.rename(archive)
             args.seed = configuration["seed"]+i-1
+            args.proof_cost = args.proof_first_cost + (i-1)*args.proof_shells
+            args.f1_stage = i+1
             atomic_manifest = dict(context,seed=args.seed,configuration=configuration,engine=engine)
             summary,p0 = one_round(args,target,i,retained,prior_questions,atomic_manifest)
             retained = [x["term"] for x in p0.get("survivors",[])[:128]]
             prior_questions = p0.get("questions",[])[:3]
             had_error |= any(v in {"ERROR","BENCHMARKS_INCOMPLETE"} for v in summary["outcomes"].values())
             state = dict(round=i,survivors=retained,questions=prior_questions,configuration=configuration,
-                         engine=engine,context=context)
+                         engine=engine,context=context,
+                         complete_contract_status=summary["complete_contract_status"])
             atomic_json(state_path,state)
             print(f"saved {target/'summary.json'}",flush=True)
+            verdict = summary["complete_contract_status"]
+            if args.until_proof:
+                if verdict in {"F1_PROVED","F1_CONTRACT_PROVED","PROOF_BACKEND_INCONCLUSIVE","ERROR"}:
+                    break
+                if verdict=="NATIVE_SEARCH_BOUND_REACHED" and i>=prior+args.rounds:
+                    break
         return 1 if had_error else 0
     finally:
         lock.close()

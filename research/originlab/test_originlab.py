@@ -118,6 +118,50 @@ class OriginLabTests(unittest.TestCase):
             forms["ZUY"] = form(28)
             del bundle["composed_search"]
 
+            bundle["normalization_scope"] = "relative_mark_contraction"
+            del bundle["reference_scalar"]
+            path.write_text(json.dumps(domain))
+            relative = evaluate(root,path)
+            self.assertEqual(relative["status"],"EXACT_RELATIVE_CONTRACTION")
+            self.assertEqual(relative["connected_UY"],"1")
+            self.assertEqual(relative["normalized_by_common_empty"],result["values"])
+            self.assertTrue(all(v is None for v in relative["original_values"].values()))
+
+            from r113_reflected_radial import RADIAL_DATA, RADIAL_PROFILE_SHA256
+
+            profile = root/RADIAL_DATA
+            profile.parent.mkdir(parents=True)
+            profile.write_bytes((Path(__file__).resolve().parents[2]/RADIAL_DATA).read_bytes())
+            bundle["ordered_source_forms"] = {**forms,"ZU":form("73/100"),"ZUY":form("211/100")}
+            bundle["radial_moment_probe"] = {
+                "source_id":f"{domain['domain_id']}:{digest(native)}","time_id":"test",
+                "radial_profile_sha256":RADIAL_PROFILE_SHA256,
+                "positive_radial_law_binding":"control","normalized_late_profile_binding":"control",
+                "paired_radial_operator_binding":"control","late_radial_form":form("73/100"),
+                "early_radial_square_form":form("7633/40000"),"late_radial_square_form":form("7633/40000"),
+                "cross_radial_form":form("5329/40000"),
+            }
+            path.write_text(json.dumps(domain))
+            moment = evaluate(root,path)["radial_moment_probe"]
+            self.assertEqual(moment["conditional_connected_UY_upper_bound"],"-63/6250")
+            self.assertTrue(moment["strict_negative_bound"])
+            self.assertFalse(moment["supplied_response_exceeds_bound"])
+            bundle["ordered_source_forms"]["ZUY"] = form("219/100")
+            path.write_text(json.dumps(domain))
+            self.assertTrue(evaluate(root,path)["radial_moment_probe"]["supplied_response_exceeds_bound"])
+            bundle["ordered_source_forms"] = {k:bundle["ordered_source_forms"][k] for k in ("Z0","ZU")}
+            bundle["normalization_scope"] = "relative_radial_moment_bound"
+            path.write_text(json.dumps(domain))
+            bound_only = evaluate(root,path)
+            self.assertEqual(bound_only["status"],"EXACT_RADIAL_MOMENT_BOUND")
+            self.assertIsNone(bound_only["connected_UY"])
+            self.assertTrue(bound_only["radial_moment_probe"]["strict_negative_bound"])
+            del bundle["radial_moment_probe"]
+            bundle["ordered_source_forms"] = forms
+
+            del bundle["normalization_scope"]
+            bundle["reference_scalar"] = [4,0]
+
             bundle.update(representation="original_exact_finite_fiber_sum",
                           configuration_unit={"kind":"whole_original_history_with_both_bosonic_endpoints",
                                               "native_map_binding":"test"},
@@ -164,6 +208,66 @@ class OriginLabTests(unittest.TestCase):
             path.write_text(json.dumps(domain))
             with self.assertRaises(ValueError):
                 evaluate(root,path)
+
+    def test_autonomy_discovers_then_replays_a_domain_bound_packet(self):
+        from autonomy import discovered_source_evidence, execute, research_followups, specifications
+        from evidence_gates import assess
+        from original_discovery import inventory
+
+        with TemporaryDirectory() as folder:
+            root = Path(folder)
+            sources = root/"research/originlab"
+            sources.mkdir(parents=True)
+            evidence = sources/"evidence.txt"
+            evidence.write_text("Synthetic source discovery test")
+            ref = {"path":str(evidence.relative_to(root)),"sha256":digest(evidence)}
+            native = root/"domain.json"
+            native.write_text(json.dumps({"domain_id":"discovery-fixture","source_originals":[ref]}))
+            def form(n):
+                return [[[n,0]]]
+            packet = {
+                "schema":"tfpt.original-blocked-source.v1","domain_id":"discovery-fixture",
+                "native_inputs_sha256":digest(native),"input_role":"source_reviewed_original",
+                "matrix_convention":"sesquilinear_forms_in_original_word_basis",
+                "ensemble_scope":"whole_original_ensemble","representation":"original_exact_blocked_endpoint_source",
+                "component_bindings":dict.fromkeys(COMPONENTS,"synthetic fixture"),
+                "source_refs":[ref],"retained_words":[[]],
+                "time":{"id":"test","kind":"original_euclidean_ordered","T":"1","t_U":"1/4","t_Y":"3/4"},
+                "gram_form":form(1),"physical_selector_form":form(1),"boundary_pairing_form":form(1),
+                "scalar_factor":[1,0],"reference_scalar":[1,0],
+                "ordered_source_forms":{k:form(v) for k,v in zip(MARKS,(1,2,3,7))},
+            }
+            (sources/"reviewed.json").write_text(json.dumps({"whole_source_bundle":packet}))
+            (sources/"control.json").write_text(json.dumps({**packet,"input_role":"arithmetic_control_only"}))
+            detected = inventory(root,native)
+            self.assertEqual(len(detected["matching"]),1)
+            self.assertEqual(detected["rejected"][0]["reason"],"CONTROL_OR_UNREVIEWED_ROLE")
+            specs = [job for _,job in specifications(4,native,None,[],False,detected["matching"])]
+            full_search = next(job for job in specs if job["lane"]=="f1_solution")
+            self.assertEqual(full_search["stage"],3)
+            self.assertEqual(full_search["domain"],str(native))
+            spec = next(job for job in specs if job["lane"]=="discovered_original_packet")
+            result = execute(spec,root)
+            self.assertEqual(result["connected_UY"],"1")
+            self.assertFalse(result["physical_solution"])
+            completed = {"spec":spec,"result":result,"queue_status":"done"}
+            jobs = research_followups([completed],native)
+            self.assertEqual(jobs[0][1]["lane"],"discovered_q0_comparison")
+            original = {"status":"BLOCKED"}
+            received,selection = discovered_source_evidence(original,[completed])
+            self.assertEqual(selection["status"],"REPLAYED_SOURCE_REQUIRES_REVIEW")
+            physical = assess(received)
+            self.assertEqual(physical["gates"]["G3"]["original_values"],result["values"])
+            self.assertFalse(physical["physical_solution"])
+            packet["ordered_source_forms"]["ZUY"] = form(8)
+            (sources/"reviewed-second.json").write_text(json.dumps(packet))
+            other_entry = next(entry for entry in inventory(root,native)["matching"]
+                               if entry["path"].endswith("reviewed-second.json"))
+            other_spec = {**spec,"entry":other_entry}
+            other = {"spec":other_spec,"result":execute(other_spec,root),"queue_status":"done"}
+            received,selection = discovered_source_evidence(original,[completed,other])
+            self.assertEqual(received,original)
+            self.assertEqual(selection["status"],"MULTIPLE_SOURCE_PACKETS_REQUIRE_REVIEW")
 
 
 if __name__ == "__main__":

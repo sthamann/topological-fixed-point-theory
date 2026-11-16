@@ -138,11 +138,13 @@ def control():
 
 def from_input(data):
     from complex_moments import analyze
+    from relative_history import connected_history
     from source_jets import gaussian_jet
 
     require(data.get("input_role")=="declared_finite_oracle","declare the synthesis input as a finite oracle")
     routes = {"fixed_histories":history_range,"real_charged_spectrum":spectral_pair,
-              "complex_charged_spectrum":analyze,"gaussian_source_jet":gaussian_jet}
+              "complex_charged_spectrum":analyze,"gaussian_source_jet":gaussian_jet,
+              "relative_connected_histories":connected_history}
     kind = data.get("kind")
     if kind == "inverse_fibres":
         from inverse_fibre import run

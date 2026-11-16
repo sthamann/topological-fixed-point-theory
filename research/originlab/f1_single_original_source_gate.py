@@ -31,7 +31,7 @@ def original_packet():
             "<Ω_F,Γ(R_j[b])Ω_F>=1" in r113 and
             "P_adm Q_A[B] P_adm" in r113,
             "original vacuum and outer physical selector contract changed")
-    require("centre projected trace" in scan and
+    require("centre projected trace" in " ".join(scan.split()) and
             "whole-source R113 operation" in scan,
             "conditional phase-scan source distinction changed")
     return {
