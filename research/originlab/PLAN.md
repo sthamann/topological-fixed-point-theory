@@ -1,5 +1,9 @@
 # OriginLab implementation plan
 
+## Native E8 quarter clock and colour twist
+
+The exact scan of all 65,536 toral shifts finds type 2 for every clock with the native current spectrum. The quarter twisted sector has a singlet and a colour triplet at weight 3/8. The half turn gives the sixteen weight-1/2 vector charges. The D5+A3 discriminant forms distinguish the even E8 gluing from the anomalous dual clock. The E8 bulk candidate can carry both relevant responses with the explicit symmetry couplings. The source still has to yield the corresponding physical junction amplitudes and the weighted R113 form. [Proof and executable audit](F1-NATIVE-E8-QUARTER-TWIST-20261116.md).
+
 
 ## 16 November 2026 · E8 gravitational anomaly and P1 family-index gate
 
