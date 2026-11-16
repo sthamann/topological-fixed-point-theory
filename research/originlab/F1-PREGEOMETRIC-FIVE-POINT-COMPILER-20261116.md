@@ -62,6 +62,36 @@ Its 16-dimensional superoperator spectrum is
 
 After two steps its spectrum is {1 ×2, 1/9 ×12, 0 ×2}. Its two null directions persist, so Phi² cannot equal exp(-L) for ANY finite bounded, strongly continuous 16-dimensional quantum Markov generator L (every matrix exponential is invertible). This is a **no-go for directly equating the classical coherent four-state time with the full finite quantum mixed-history time**, not a prohibition on a larger physical quantum dilation or on real-time unitary quantum evolution.
 
+### Exact nonembeddability of the full quantum two-step kernel, even away from S4 democracy
+
+One might hope that adjusting the D4 orbit weight x removes the two zero modes of the fully democratic random-unitary channel and therefore restores a nontrivial positive quantum time. An exact test at x=1/2 shows this hope is INSUFFICIENT.
+
+The full M4 quantum random-unitary superoperator at x=1/2 has exact spectrum
+
+    spec(Phi) = {1 (x2), -1/2 (x3), -1/4 (x7), +1/2 (x1), +1/4 (x3)}.
+
+Its positive symmetric paired transfer S=Phi² is INVERTIBLE:
+
+    spec(S) = {1 (x2), 1/4 (x4), 1/16 (x10)}.
+
+For a trace/KMS-symmetric strongly continuous quantum Markov semigroup e^{tL} with e^L=S, the selfadjoint generator L is UNIQUE by the real functional calculus, namely
+
+    L=log(S)=log(2)*(-2 P_(1/4)-4 P_(1/16)).
+
+This explicit exact 16x16 symmetric generator fails the necessary GKLS conditional complete positivity (CCP) tangent criterion. Its Choi matrix, restricted to the orthogonal complement of the maximally entangled identity vector Ω, has a negative exact eigenvalue -2log(2)/3. An explicit integer witness v in the 16-dimensional matrix-unit basis is
+
+    v=(0,1,0,-1, 1,0,-1,0, 0,-1,0,1, -1,0,1,0).
+
+It has norm squared 8, is orthogonal to Ω and obeys
+
+    v* J(L) v / (v*v) = -2 log(2)/3 <0.
+
+Thus no trace-symmetric quantum Markov generator can produce this full quantum transfer at finite positive time. The same original anchored *classical four-state* two-step transfer remains perfectly positive and admits a positive Markov semigroup. This demonstrates a necessary primitive SOURCE TYPING separation between classical probability sewing and quantum coherent CP sewing.
+
+**Scope:** this excludes the unique selfadjoint log, as appropriate to KMS symmetry in the tracial finite comparison. It does NOT exclude non-selfadjoint GKLS logarithms with different branch phases, nontracial physical KMS states, non-Markov reduced dynamics, or a larger quantum source dilation. It is NOT an R113 physical original source evaluation. The declared x=1/2 is a rational held-out D4 source weight, not a physical measurement.
+
+Exact reproducibility: [f1_compiler_kms_no_go.py](f1_compiler_kms_no_go.py) and [test_f1_compiler_kms_no_go.py](test_f1_compiler_kms_no_go.py). Both tests are registered in main OriginLab and Core Verification.
+
 ### Source-typing verdict
 
 "Equal sum of permutations", "equal completely positive mixture of conjugations" and "sum of complex signed amplitudes" are THREE DIFFERENT OPERATIONS. The original physical q0/q1 quadratic refinement, external P_adm, original real source scalar w*s and actual original time must select one physically. Converting a classical reversible chain with spectrum {1,1/9^3} into a physical 3+1D QFT or E8 current algebra cannot be inferred from the matching number three.
