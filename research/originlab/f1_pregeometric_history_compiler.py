@@ -54,8 +54,6 @@ def controls():
             "unanchored source clock sum did not erase nontrivial sector")
 
     pab=sum((permutation_matrix(p) for p in anchored),sp.zeros(5))/6
-    require(pab==sp.diag(1,sp.zeros(4)) if False else True,
-            "unreachable")
     require(pab[0,0]==1 and
             pab[0,1:5]==sp.zeros(1,4) and
             pab[1:5,0]==sp.zeros(4,1),
