@@ -106,6 +106,64 @@ F with eigenvalues (+1,+1,-1,-1). The resulting map on M4 is
 not even Hermiticity preserving. Spectra alone do not certify a
 valid quantum channel or a physical time generator.
 
+## New constructive source test: oriented seam jump, not a fitted D4 two-step clock
+
+The unique S4-invariant scalar projector in the active four-mark
+permutation representation is P0=J4/4; put Q=I-P0. A source with
+three covariant decay jumps from the standard sector Q to P0 has
+
+\[
+{\cal L}_{seam}(\rho)=\gamma\bigl[
+  {\rm Tr}(Q\rho)P0-\{Q,\rho\}/2\bigr].
+\]
+
+The normalized full M4 spectrum is {0:1,-gamma/2:6,-gamma:9}.
+The projected Choi tangent has eigenvalues {1:3,0:13} in units
+gamma, so this is an actual conservative, completely positive
+GKLS generator, not a false-positive classical clock.
+It has the unique **pure** stationary density P0 and exact
+finite-time sewing, for q=exp(-gamma t),
+
+\[
+{\cal T}_q(\rho)=(P0+\sqrt q Q)\rho(P0+\sqrt q Q)
+      +(1-q){\rm Tr}(Q\rho)P0.
+\]
+
+Its full S4 covariance follows from P0=J4/4. The commutant of
+the 24 mark permutations restricted to Q is one-dimensional;
+therefore a covariant positive jump-rate matrix on the three
+standard directions is proportional to I3. Thus, **inside the
+explicitly assumed pure one-way S4-covariant jump class**, just
+one overall decay scale gamma remains. This is a conditional
+selection theorem, NOT a physical derivation of the direction,
+jump operators, original time scale, native projective phases,
+Q0, P_adm or physical OS positivity.
+
+Every original four-cycle P_c leaves both P0 and Q invariant.
+No linear combination or Gram-K coupling of these permutation
+operators alone can transfer population from Q into P0.
+Consequently this oriented dissipative source is a genuinely
+additional primitive source operation, not a new value of x
+inside the excluded original random-unitary family.
+
+An exact process-memory census is also informative. After one
+four-cycle step there are six word operators with Choi/Kraus
+span rank 6. All 36 two-step words produce the 12 even A4
+permutations, whose images span rank 10 in M4; at three steps
+the odd coset also spans rank 10. Thus the minimal independent
+Kraus history dimensions for positive-probability consecutive
+random steps are 6,10,10. This finite ceiling is not the
+original unbounded native full96 **spatial** Fourier Hankel
+rank 192(k+1) and does not imply physical time.
+
+This model has a rank-one, **nonfaithful** stationary state;
+it is not a tracial/KMS-symmetric faithful physical vacuum.
+It makes no claim to be the original TFPT R113 quantum source.
+
+Reproduce with:
+- research/originlab/f1_oriented_seam_source.py
+- research/originlab/test_f1_oriented_seam_source.py
+
 ## Native experiment still required
 
 Derive K_cd from the SAME original all-field R113 source, full
