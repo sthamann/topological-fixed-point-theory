@@ -46,6 +46,19 @@ class PregeometricHistoryCompilerTests(unittest.TestCase):
                          {"1":2,"1/9":12,"0":2})
         self.assertFalse(r["incoherent_quantum_average_has_bounded_continuous_generator"])
 
+    def test_all_1024_coherent_quarter_phase_assignments_require_additional_selection(self):
+        c=self.result["coherent_exact_relative_phase_search"]
+        self.assertEqual(c["relative_amplitude_assignments_exhaustively_checked"],1024)
+        self.assertEqual(c["exact_unitary_amplitude_sum_over_two_solutions"],9)
+        self.assertEqual(c["involutive_real_solutions"],3)
+        self.assertEqual(c["genuine_order_four_complex_solutions"],6)
+        self.assertTrue(c["all_coherent_solutions_unitary"])
+        self.assertTrue(c["all_coherent_solutions_have_U_fourth_identity"])
+        self.assertFalse(c["coherent_solutions_strictly_positive_time_transfer"])
+        self.assertFalse(c["coherent_phase_choice_unique"])
+        self.assertFalse(c["physical_original_quadratic_refinement_selects_one_phase"])
+        self.assertFalse(c["unitary_coherent_spin_clock_automatically_gives_dissipative_OS_time"])
+
     def test_no_unauthorized_P1_clock_phase_or_three_SM_generation_claims(self):
         r=self.result
         self.assertFalse(r["physical_seam_anchor_selected_by_original_Q0"])
