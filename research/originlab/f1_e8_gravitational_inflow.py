@@ -88,6 +88,19 @@ def controls():
     I4_magnitude=Fraction(c_left-c_right,24)
     require(I4_magnitude==Fraction(1,3),
             "local 1+1D gravitational anomaly coefficient changed")
+    # Exact Riemann-Hurwitz for a degree-two cover of genus-zero P1:
+    # 2g-2=2*(-2)+r, g=(r-2)/2 for r simple branch points.
+    # The MINIMAL positive genus is g=1, r=4. This is conditional
+    # on physical source selecting a genus-one double cover as the
+    # minimal modular-anomaly diagnostic worldsheet.
+    covers={r:(r-2)//2 for r in range(2,14,2)}
+    require(covers=={2:0,4:1,6:2,8:3,10:4,12:5},
+            "Riemann Hurwitz two-sheet branch formula changed")
+    t=sp.symbols("t",positive=True)
+    j=sp.factor(256*(1+t*t+t**4)**3/(t**4*(1+t*t)**2))
+    require(j.subs(t,1)==1728 and j.subs(t,sp.Rational(1,2))==
+            sp.Rational(148176,25),
+            "four branch points do not retain distinct elliptic moduli")
     anomaly_sm=standard_model_left_weyl_anomalies()
     return {
        "status":"EXACT_CHIRAL_E8_1_GRAVITATIONAL_ANOMALY_AND_INFLOW_GATE",
@@ -110,6 +123,16 @@ def controls():
        "three_same_chirality_E8_central_charge":24,
        "three_same_chirality_E8_modular_T_phase":"1",
        "three_same_chirality_E8_local_gravitational_anomaly_vanishes":False,
+       "minimum_nontrivial_even_positive_unimodular_rank_by_known_lattice_classification":8,
+       "unique_even_positive_unimodular_rank_eight_lattice_by_known_classification":"E8",
+       "bosonic_chiral_invertible_minimality_axioms_from_original_Q0_derived":False,
+       "riemann_hurwitz_degree_two_cover":"2g-2=-4+r, hence g=(r-2)/2",
+       "simple_branch_points_to_genus":{str(r):g for r,g in covers.items()},
+       "minimal_genus_one_double_cover_branch_marks":4,
+       "modular_torus_cycle_required_for_diagnostic_not_chiral_CFT_existence":True,
+       "physical_double_cover_minimality_axiom_derived":False,
+       "four_marks_do_not_select_square_j":"j(t=1)=1728, j(t=1/2)=148176/25",
+       "square_modulus_from_E8_anomaly_inflow_selected":False,
        "minimal_known_invertible_bulk":"oriented 2+1D E8 abelian Chern-Simons K theory",
        "bulk_E8_K_Cartan_matrix":matrix.tolist(),
        "bulk_K_principal_minors":[int(n) for n in minors],
