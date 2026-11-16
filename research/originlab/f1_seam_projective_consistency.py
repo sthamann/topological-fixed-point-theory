@@ -230,11 +230,64 @@ def overlap_and_clustering_gate():
     }
 
 
+
+def infinite_matched_projective_uniqueness_gate():
+    """General theorem, exhibited exactly for an arbitrary 4x4 code density.
+
+    For EVERY n>=2, projectively consistent rho_n supported on the
+    diagonal code E_n C^d and invariant under S^{tensor n} must equal
+    mu_n=E_n E_n^dagger / d. Marginalizing ANY supported rho_(n+1)
+    kills ALL offdiagonal code coherence. Iterating one extension at
+    every n forces every rho_n diagonal. Cyclic covariance forces
+    its weights equal; trace-one fixes their value to 1/d.
+
+    The symbolic arbitrary density test below checks the full
+    offdiagonal loss (12 coefficients for d=4), not merely GHZ.
+    """
+    d=4
+    M=sp.Matrix(d,d,lambda i,j:sp.symbols("h%d%d"%(i,j)))
+    E2=embedding(d,2)
+    E3=embedding(d,3)
+    rho3=E3*M*E3.H
+    coarse=trace_last(rho3,d,3)
+    diagonal=sp.diag(*[M[j,j] for j in range(d)])
+    require(coarse==E2*diagonal*E2.H,
+            "general code-supported fine source retains forbidden coherence")
+    require(all(not coarse.has(M[i,j])
+                for i in range(d) for j in range(d) if i!=j),
+            "some of the twelve original offdiagonal source words survived")
+    shift=cyclic_shift(d)
+    w=sp.symbols("w0:4",real=True)
+    source=sp.diag(*w)
+    difference=shift*source*shift.T-source
+    A,_=sp.linear_eq_to_matrix(list(difference),w)
+    require(A.rank()==3,"cyclic density symmetry no longer forces uniformity")
+    equations=[difference[i,i] for i in range(d)]
+    solutions=sp.solve(equations+[sum(w)-1],w, dict=True)
+    require(solutions==[dict(zip(w,[sp.Rational(1,d)]*d))],
+            "unique trace-one Z4 invariant diagonal source lost")
+    require(trace_last(mixture_density(d,3),d,3)
+            ==mixture_density(d,2),
+            "unique dephased projective family does not compose")
+    return {
+        "theorem":"for all n>=2: matched-code support + Z4 covariance + ordinary partial-trace projectivity implies rho_n=mu_n",
+        "symbolic_fine_code_density_entries":d*d,
+        "offdiagonal_source_coherences_removed_per_extension":d*d-d,
+        "cyclic_diagonal_constraint_rank":3,
+        "normalized_unique_diagonal_weight":"1/4",
+        "unique_infinite_tower_source":"mu_n=(1/4) sum_j |j>^n<j|^n",
+        "coherent_GHZ_clock_survives_local_projective_limit":False,
+        "physical_R113_projective_map_is_ordinary_trace_proved":False,
+        "physical_original_Padm_and_Q0_selected":False,
+    }
+
+
 def controls():
     return {
         "status":"EXACT_P1_GHZ_PROJECTIVE_SOURCE_NO_GO_AND_REPAIRS",
         "original_candidate":"matched boundary labels plus simultaneous Z4 clock constraint",
         "ordinary_coarse_graining":projective_state_gate(),
+        "infinite_projective_uniqueness":infinite_matched_projective_uniqueness_gate(),
         "time_character_selection":cyclic_characters_gate(),
         "physical_cap_vs_categorical_gluing":cap_and_isometric_coarse_gate(),
         "source_overlap_tradeoff":overlap_and_clustering_gate(),
