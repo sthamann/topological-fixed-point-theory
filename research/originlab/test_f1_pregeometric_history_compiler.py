@@ -16,6 +16,10 @@ class PregeometricHistoryCompilerTests(unittest.TestCase):
         self.assertEqual(len(r["original_five_q0_points"]),5)
         self.assertEqual(r["all_unanchored_quarter_clocks"],30)
         self.assertEqual(len(anchored_clocks()[0]),30)
+        self.assertEqual(r["S4_invariant_fifth_code_point_index"],4)
+        self.assertEqual(r["S4_invariant_fifth_code_point_bits"],[1,1,1,1])
+        self.assertTrue(r["original_S4_action_fixes_fifth_code_point_uniquely"])
+        self.assertFalse(r["physical_P1_identity_of_fifth_code_point_proved"])
 
     def test_unanchored_democratic_compiler_erases_all_nontrivial_states(self):
         self.assertEqual(self.result["uniform_unanchored_sum"],
