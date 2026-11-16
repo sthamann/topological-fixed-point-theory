@@ -134,7 +134,7 @@ def gravitational_bounce_and_zeno_test():
     GR=-4*sp.pi*G*rho*(1+w)
     LQC=-4*sp.pi*G*rho*(1+w)*(1-2*rho/rc)
     require(sp.simplify(LQC.subs(rho,rc) + GR.subs(rho,rc))==0
-            and sp.simplify(LQC.subs({rho:rc,w:sp.Rational(1,3),
+            and sp.simplify(LQC.subs(rho,rc).subs({w:sp.Rational(1,3),
                                        G:1,rc:1}))==sp.Rational(16,3)*sp.pi,
             "effective bounce sign gate changed")
     # Rank-one Zeno projection with H=sigma_x:
