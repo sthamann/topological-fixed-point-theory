@@ -6,6 +6,7 @@ import numpy as np
 
 from source_bridge import neutral_return_budget, regional_transport, replay
 from spatial_memory import spatial_cut
+from r113_phase import mark_phase_scan
 
 
 def test_native_regional_span_has_only_one_commuting_direction():
@@ -32,6 +33,12 @@ def test_spatial_return_applies_the_adjoint_in_opposite_directions():
     direct = np.linalg.inv(z * np.eye(len(full)) - full)[4:8, 4:8]
     result, _, _ = spatial_cut(z, diagonal.__getitem__, edge, 2)
     np.testing.assert_allclose(result, direct, atol=1e-14)
+
+
+def test_phase_scan_handles_a_harmonic_absent_from_both_kernels():
+    response, _, gain = mark_phase_scan([arb(4)]*3, [arb(2),arb(0)], [arb(3),arb(0)], arb("1/7"))
+    assert response.real.contains(6) and response.imag.contains(0)
+    assert gain.contains(arb("3/2"))
     assert neutral_return_budget(3, 1)["status"] == "EXCLUDED_SCOPED"
 
 
@@ -60,4 +67,11 @@ def test_original_fixed_history_keeps_the_scalar_separate_from_the_trace():
     assert spatial["depths"][1]["first_different_return_power"] == 4
     assert not spatial["finite_static_exact_realization_exists"]
     assert not spatial["absolute_weighted_R113_produced"]
+    phase = result["charged_phase_scan"]
+    assert [row["independent_phase_samples"] for row in phase["reports"]] == [85, 169]
+    assert all(row["withheld_late_mark_replayed"] for row in phase["reports"])
+    assert arb(phase["reports"][1]["late_mark_l2_amplification_upper"]) < 222
+    assert all(arb(row["reduced_late_mark_error_over_scan_mean_upper"]) < arb("4e-10")
+               for row in phase["reports"])
+    assert not phase["physical_regional_rotation_bound"]
     assert not result["physical_solution"]

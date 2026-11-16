@@ -1,5 +1,9 @@
 # OriginLab implementation plan
 
+## R113 relative weak phase scan
+
+The native charged R032 window kernel now has a constructive angular inverse and direct reconstruction of the late mark on fixed-radius histories. Reduced scans give quantified aliasing and truncation errors. Equal radii permit a sum-of-squares extension to the native full96 heat trace with Majorana. The source still has to provide the same radial-resolved rotated ensemble, cap, selector and absolute empty reference. [Derivation and replay](F1-R113-PHASE-SCAN-20261115.md).
+
 ## 15 November 2026 · Exact origin typed E8 colour SU3×E6 and finite quantum source limits
 
 [Complete proof and source gates](F1-QUTRIT-CAR-E8-COLOR-SOURCE-GATE-20261115.md) now joins the newest pre-spatial M3 CP/OS source, single-source CAR16/Ramond E8 candidate and NATIVE full96 infinite Fourier return with the exact 31-Weyl P1 clock map. Important new theorem: *M3 operator PRODUCT* and eight independent COMPLEX CAR annihilation operators (CAR8=M256) cannot coexist unitally on the SAME irreducible 256-dimensional Fock carrier, because 3 does not divide 256. A shared exact finite unital product carrier has minimum 3×256=768 states (H=C3 tensor exterior C8), with the two algebras acting on different factors. This does NOT refute the mathematically correct functor from the EIGHT-DIMENSIONAL TRACeless M3 VECTOR SPACE to an eight-mode CAR Fock, but that functor does not preserve the original full M3 matrix product. The source must tell which operator layer remains physically active. 49,152 exact CAR relation actions and 55,296 tensor factor commutations were encoded as exhaustive finite tests.

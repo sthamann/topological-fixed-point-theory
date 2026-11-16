@@ -105,6 +105,7 @@ def neutral_return_budget(positive_rank, neutral_rank):
 
 def replay(root):
     from affine_profiles import controls
+    from r113_phase import replay as replay_phase
 
     return {
         "status": "SCOPED_CHECKS",
@@ -119,5 +120,6 @@ def replay(root):
         },
         "pointwise_affine_profiles": controls(),
         "native_spatial_memory": spatial_memory.replay(root),
+        "charged_phase_scan": replay_phase(root),
         "physical_solution": False,
     }
