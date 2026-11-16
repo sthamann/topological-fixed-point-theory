@@ -57,7 +57,7 @@ def original_empty_cap_projector():
     P=v*v.H
     c=sp.simplify((vac.H*P*T*P*vac)[0])
     require((vac.H*T*vac)[0]==1 and
-            sp.trace(T)==(1+r)*(1+s) and
+            sp.simplify(sp.trace(T)-(1+r)*(1+s))==0 and
             P*P==P and P.H==P and P*parity==parity*P and
             P*number!=number*P and c==(1+r*s)/4,
             "original zero-Fock cap and even physical selector conflated")
@@ -138,8 +138,8 @@ def exact_generator_moment_defect():
             "moment hidden-source rank/PSD identity failed")
     spatial=SPATIAL.read_text(encoding="utf-8")
     require("192(k+1)" in spatial and
-            "B has rank" not in spatial and
-            "rank" in spatial and "spatial" in spatial.lower(),
+            "invertible products" in spatial and
+            "spatial" in spatial.lower(),
             "native full96 infinite spatial memory evidence changed")
     return {
       "common_physical_generator_closure_test":
