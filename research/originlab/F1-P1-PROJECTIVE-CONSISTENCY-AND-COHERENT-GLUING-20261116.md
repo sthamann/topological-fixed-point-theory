@@ -57,6 +57,53 @@ RG map that changes the observable embedding. It excludes the
 specific interpretation as one compatible family under ordinary
 partial traces of added independently accessible tensor factors.
 
+## I-b. Stronger uniqueness theorem: entire infinite tower is classical under these three axioms
+
+Fix four primitive labels and an entire tower of states rho_n on
+(C4)^tensor n for every n>=2. Impose THREE independent premises:
+
+(i) support(rho_n) subset C_n=span{|j>^tensor n : 0<=j<4},
+    i.e. exactly matched sector labels across all n regions;
+(ii) (S^tensor n) rho_n (S^tensor n)^dagger=rho_n, with S
+     a transitive cyclic permutation of the four labels;
+(iii) Tr_last(rho_(n+1))=rho_n with ordinary density-matrix
+      marginalization and a fixed local observable embedding.
+
+THEN the UNIQUE normalized projective family is
+
+    rho_n=mu_n=(1/4)sum_j |j>^tensor n <j|^tensor n.
+
+Proof: every supported fine state is E_(n+1) M E_(n+1)^dagger,
+where E_(n+1)|j>=|j>^tensor(n+1) and M is a positive 4x4
+unit-trace coefficient matrix. Partial trace eliminates all
+offdiagonal entries M_jk, since <k|j>=delta_jk, yielding
+E_n diag(M_jj) E_n^dagger. Because EACH rho_n has a fine
+extension (condition iii), EACH rho_n is diagonal in the
+matched label basis. Under condition ii cyclic covariance
+forces its four weights to coincide. Normalization fixes 1/4.
+Conversely this family obeys all three axioms exactly.
+
+This excludes not only GHZ_n but ANY coherent offdiagonal
+matched-label source, at ANY finite level of an indefinitely
+extendable tower. The symbolic arbitrary 4x4 fine coefficient
+matrix has all 12 offdiagonal entries eliminated, while the
+cyclic weight constraint has rank 3 plus normalization rank 1.
+This is a genuinely CONDitional source uniqueness proof,
+not a physical no-go for arbitrary original TFPT weighted
+projective maps or gauge-invariant nonfactorizing algebras.
+
+Conclusion: demanding exact global matching, full cyclic symmetry
+and ordinary quantum partial-trace projectivity gives exactly
+the incoherent classical mixture, NOT a microscopic quantum
+amplitude law. To retain physical phase information, the
+actual original TFPT source MUST replace at least one premise:
+physical matching can involve nontrivial edge multiplicities;
+observable refinement can use a genuine quantum coding
+isometry/nonlocal decoder; coarse gluing can be a conditioned
+cap with absolute 1/4; or the source can store nonlocal
+history memory in an enlarged algebra. All changes must be
+derived from original R113 Q0 and P_adm, not guessed.
+
 ## II. THREE DISTINCT repairs, none equivalent by assumption
 
 (A) Dephased ordinary source:
