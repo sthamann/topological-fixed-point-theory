@@ -41,6 +41,85 @@ def quantum_random_unitary_channel(permutations4):
     return superop
 
 
+def d4_weighted_clock_gate(cycles):
+    """Physically square D4 geometry has TWO inequivalent 4-cycle orbits.
+
+    A single source parameter x allocates total weight x to the two
+    geometric quarter rotations r,r^-1 and 1-x to the four remaining
+    primitive 4-cycles. No native Q0 supplied this parameter.
+    """
+    r=tuple((i+1)%4 for i in range(4))
+    s=tuple((-i)%4 for i in range(4))
+    multiply=lambda p,q:tuple(p[q[i]] for i in range(4))
+    group={tuple(range(4))}
+    discovered=list(group)
+    for p in discovered:
+        for g in (r,s):
+            new=multiply(p,g)
+            if new not in group:
+                group.add(new)
+                discovered.append(new)
+    require(len(group)==8, "square D4 orientation group changed")
+    inverse=lambda p:tuple(p.index(i) for i in range(4))
+    conjugate=lambda g,p:multiply(multiply(g,p),inverse(g))
+    unclassified=set(cycles)
+    orbits=[]
+    while unclassified:
+        c=next(iter(unclassified))
+        orbit={conjugate(g,c) for g in group}
+        require(orbit<=set(cycles), "D4 rotation class not stable")
+        orbits.append(orbit)
+        unclassified-=orbit
+    require(sorted(len(orbit) for orbit in orbits)==[2,4],
+            "geometric D4 should split six S4 related 4-cycles")
+    shorter=next(orbit for orbit in orbits if len(orbit)==2)
+    longer=next(orbit for orbit in orbits if len(orbit)==4)
+    require(shorter=={r,inverse(r)}, "geometric two-cycle orbit not actual quarter rotations")
+    X=sum((permutation_matrix(p) for p in shorter),sp.zeros(4))/2
+    Y=sum((permutation_matrix(p) for p in longer),sp.zeros(4))/4
+    x=sp.symbols("x",real=True)
+    T=sp.simplify(x*X+(1-x)*Y)
+    P0=sp.ones(4)/4
+    v=sp.Matrix([1,-1,1,-1])
+    Palt=v*v.T/4
+    Pdoublet=sp.eye(4)-P0-Palt
+    require(T==P0-x*Palt-(1-x)*Pdoublet/2
+            and T.eigenvals()=={1:1,-x:1,(x-1)/2:2},
+            "two-rate D4 clock family spectrum or irreducible decomposition changed")
+    assert Palt.rank()==1 and Pdoublet.rank()==2
+    squared=T*T
+    require(sp.simplify(squared-P0-x*x*Palt-
+                        (1-x)**2*Pdoublet/4)==sp.zeros(4),
+            "D4 two-step clock is not a positive two-rate transfer")
+    H=-2*sp.log(x)*Palt-2*sp.log((1-x)/2)*Pdoublet
+    require(sp.simplify(H.subs(x,sp.Rational(1,3))-
+                        sp.log(9)*(sp.eye(4)-P0))==sp.zeros(4),
+            "S4 enhancement at equal six histories not recovered")
+    for value in (sp.Rational(1,4),sp.Rational(1,2)):
+        chosen=T.subs(x,value)
+        require(chosen*sp.ones(4,1)==sp.ones(4,1) and
+                all(z>=0 for z in chosen) and
+                (chosen*chosen).is_positive_definite,
+                "D4 original square symmetric countermodel does not give positive 2-step time")
+    return {
+        "status":"EXACT_D4_TWO_ORBIT_WEIGHTS_NOT_SELECTED_BY_SOURCE",
+        "original_geometric_square_D4_group_order":8,
+        "primitive_four_cycles_class_orbit_sizes":[2,4],
+        "independent_source_weight_parameter":"x in (0,1)",
+        "square_symmetry_preserving_one_step":"x*(r+r^-1)/2+(1-x)*(other_4_cycles)/4",
+        "one_step_eigenvalues":["1","-x","(x-1)/2 (twice)"],
+        "two_step_eigenvalues":["1","x^2","(1-x)^2/4 (twice)"],
+        "two_step_positive_H_generator":
+            "H=-2log(x)P_alternating-2log((1-x)/2)P_doublet",
+        "enhanced_S4_equal_six_cycles_source_weight":"x=1/3",
+        "enhanced_S4_pair_rates_equal_at_x_one_third":True,
+        "distinct_D4_source_witnesses":["x=1/4","x=1/2"],
+        "D4_only_fixes_unique_source_time":False,
+        "physical_original_absolute_weight_x_measured":False,
+        "full_S4_symmetry_before_geometric_P1_seam_derived":False
+    }
+
+
 def coherent_fourth_root_phase_search(cycles):
     """Enumerate ALL 4^5 relative quarter-phase assignments over the six
     anchored 4-cycles, with the first path's phase set to one.
@@ -140,6 +219,7 @@ def controls():
         require(set(conjugate(q) for q in perms4)==set(perms4),
                 "six clocks cease to be one conjugacy class")
 
+    d4_weights=d4_weighted_clock_gate(perms4)
     coherent=coherent_fourth_root_phase_search(perms4)
     B=Q*Q
     require(B==P0+(I-P0)/9 and B==B.T and
@@ -195,6 +275,7 @@ def controls():
       "quantum_random_unitary_two_step_eigenspaces":{"1":2,"1/9":12,"0":2},
       "incoherent_quantum_average_has_bounded_continuous_generator":False,
       "coherent_exact_relative_phase_search":coherent,
+      "geometric_D4_vs_abstract_S4_weight_selection":d4_weights,
       "coherent_average_vs_CP_history_mixture_physically_resolved":False,
       "original_quadratic_refinement_spin_phase_selected":False,
       "physical_R113_Q0_time_and_reference_derived":False,
