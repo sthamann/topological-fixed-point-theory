@@ -203,6 +203,21 @@ Exact four-level three-region witness:
 |GHZ4>=(1/2)sum_(j=0)^3 |jjj> and
 rho_mix=(1/4)sum_j |jjj><jjj|.
 
+There is a stronger exact connection to Route C: on THREE four-level
+regions, the matching projector P_match3=sum_j |jjj><jjj| has rank 4.
+The simultaneous cyclic-average projector
+P_cycle3=(1/4)sum_k (S tensor S tensor S)^k has rank 16.
+They commute, and their intersection is rank ONE:
+P_match3 P_cycle3=|GHZ4><GHZ4|.
+Thus the simplest extension of the *same assumed two constraints*
+to three regions selects a coherent non-Markov state, not the
+dephased Markov history. The precise obstruction is its two bits
+of conditional mutual information. If the physical source also
+requires exact local Markov recovery, these assumptions are
+INCOMPATIBLE; it must preserve higher history data or modify its
+constraint/state rule. None of these alternatives is yet supplied
+by original R113.
+
 ALL THREE pairwise density matrices AB, BC and AC are IDENTICAL for
 the coherent GHZ pure state and its dephased mixture; in each case
 S(AB)=S(BC)=S(B)=2 bits. Yet S(ABC)_GHZ=0, while
