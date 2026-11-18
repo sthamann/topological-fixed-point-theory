@@ -1,0 +1,1452 @@
+{
+ "expected_revision": "61b003fdebf1ad26cc7f9849",
+ "problem": {
+  "id": "problem:four-marks-quartic-and-free-seam-source",
+  "title": {
+   "de": "Vier Marken, Quartik und freie Nahtquelle",
+   "en": "Four marks, quartic and free seam source"
+  },
+  "question": {
+   "de": "Welche aufgezeichneten Objekte der vier Nahtmarken lassen sich exakt verbinden, und liefert eine freie Naht auf zwei Kopien die ursprüngliche gewichtete Form?",
+   "en": "Which recorded objects of the four seam marks can be connected exactly, and does a free seam on two copies supply the original weighted form?"
+  },
+  "topics": [
+   "topic:origin",
+   "topic:e8",
+   "topic:quantum"
+  ],
+  "goals": [],
+  "accepted_premise_ids": [
+   "premise:declared-p1-p2",
+   "premise:four-marks-session-recorded-objects-20261118"
+  ],
+  "findings": [
+   {
+    "id": "finding:v117-closed-form-by-quartic-roots-20261118",
+    "title": {
+     "de": "Geschlossene Lösung des v117 Systems",
+     "en": "Closed form of the v117 system"
+    },
+    "statement": {
+     "de": "Die Wurzeln von X^4 + zX + q = 0 mit q^3 = 27(z^4-1)/256 lösen das A0* System nach einer polynomialen Eichung; die Markenschleife permutiert die Wurzeln, die unitarisierte Permutation ist M0.",
+     "en": "The roots of X^4 + zX + q = 0 with q^3 = 27(z^4-1)/256 solve the A0* system after a polynomial gauge; the mark loop permutes the roots and the unitarised permutation is M0."
+    },
+    "status": "established_scoped",
+    "premise_ids": [
+     "premise:four-marks-session-recorded-objects-20261118"
+    ],
+    "scope": {
+     "de": "Rechnung an aufgezeichneten Objekten; leitet P1 nicht her, F1 bleibt offen.",
+     "en": "Computation on recorded objects; does not derive P1, F1 stays open."
+    },
+    "sources": [
+     {
+      "path": "experiments/theory-contracts/originlab-four-marks-session-20261118/check_original_system_closed_form.py",
+      "sha256": "e1a3cba4897f6903fb88182954cd2657b7548e788e9685fcf345f723a2e67228",
+      "line_start": 1,
+      "line_end": 199
+     }
+    ],
+    "attempt_ids": []
+   },
+   {
+    "id": "finding:recorded-torus-and-mirror-census-20261118",
+    "title": {
+     "de": "Aufgezeichneter Torus und Spiegel",
+     "en": "Recorded torus and mirrors"
+    },
+    "statement": {
+     "de": "Der aufgezeichnete Torus ist die an den vier Marken verzweigte Überlagerung der Markenkugel; der aufgezeichnete OS Spiegel wirkt auf der Basis als x -> i conj(x); der Markenkreis ist die Naht, kein OS Spiegel.",
+     "en": "The recorded torus is the cover of the mark sphere branched at the four marks; the recorded OS mirror acts on the base as x -> i conj(x); the mark circle is the seam, not an OS mirror."
+    },
+    "status": "established_scoped",
+    "premise_ids": [
+     "premise:four-marks-session-recorded-objects-20261118"
+    ],
+    "scope": {
+     "de": "Rechnung an aufgezeichneten Objekten; leitet P1 nicht her, F1 bleibt offen.",
+     "en": "Computation on recorded objects; does not derive P1, F1 stays open."
+    },
+    "sources": [
+     {
+      "path": "experiments/theory-contracts/originlab-four-marks-session-20261118/check_seam_mirror_census.py",
+      "sha256": "ba86bae3e7fac66322a6a32a0fe6794d00738223039725f0e1fed13309d21fba",
+      "line_start": 1,
+      "line_end": 199
+     }
+    ],
+    "attempt_ids": []
+   },
+   {
+    "id": "finding:r066-gaussian-charge-law-unique-20261118",
+    "title": {
+     "de": "R066 Ladungsgesetz und Eindeutigkeit",
+     "en": "R066 charge law and uniqueness"
+    },
+    "statement": {
+     "de": "Das aufgezeichnete Gewicht ist exp(-2 pi[(q-1/4)^2+(r+1/4)^2]); Var(Q) = 1/(8 pi); über alle Versätze und Breiten gilt ein Gaußgesetz nur für (1/4, 3/4) und beta = 4 pi.",
+     "en": "The recorded weight is exp(-2 pi[(q-1/4)^2+(r+1/4)^2]); Var(Q) = 1/(8 pi); over all offsets and widths one Gauss law holds only for (1/4, 3/4) and beta = 4 pi."
+    },
+    "status": "established_scoped",
+    "premise_ids": [
+     "premise:four-marks-session-recorded-objects-20261118"
+    ],
+    "scope": {
+     "de": "Rechnung an aufgezeichneten Objekten; leitet P1 nicht her, F1 bleibt offen.",
+     "en": "Computation on recorded objects; does not derive P1, F1 stays open."
+    },
+    "sources": [
+     {
+      "path": "experiments/theory-contracts/originlab-four-marks-session-20261118/check_recorded_elliptic_source.py",
+      "sha256": "fa33dc982c0261cf52fe5d9552cb1548dd07d0e5971ecfb439e7391825bba4ef",
+      "line_start": 1,
+      "line_end": 199
+     },
+     {
+      "path": "experiments/theory-contracts/originlab-four-marks-session-20261118/check_free_source_at_marks.py",
+      "sha256": "9eb938a5ef0a190a87af8519bbd50b82c6b62fb5f08ed5c58f3da6fbcdaa64cf",
+      "line_start": 1,
+      "line_end": 199
+     }
+    ],
+    "attempt_ids": []
+   },
+   {
+    "id": "finding:mark-matrix-determinants-and-e8-character-20261118",
+    "title": {
+     "de": "Markenmatrix, Determinanten und E8 Charakter",
+     "en": "Mark matrix, determinants and E8 character"
+    },
+    "statement": {
+     "de": "exp(-(pi/2) s^T G s) mit der aufgezeichneten Markenmatrix ist 2^(-8/3)|Disc|^(-1/6)|theta/eta|^8 je Paarung; die Summe der drei Paarungen gibt den E8 Charakter, 12 am Quadrat.",
+     "en": "exp(-(pi/2) s^T G s) with the recorded mark matrix equals 2^(-8/3)|Disc|^(-1/6)|theta/eta|^8 per pairing; the sum of the three pairings gives the E8 character, 12 at the square."
+    },
+    "status": "established_scoped",
+    "premise_ids": [
+     "premise:four-marks-session-recorded-objects-20261118"
+    ],
+    "scope": {
+     "de": "Rechnung an aufgezeichneten Objekten; leitet P1 nicht her, F1 bleibt offen.",
+     "en": "Computation on recorded objects; does not derive P1, F1 stays open."
+    },
+    "sources": [
+     {
+      "path": "experiments/theory-contracts/originlab-four-marks-session-20261118/check_mark_matrix_determinants.py",
+      "sha256": "2268cf9e253646008571a843c1ead7d841a513eef336e11d8187da4f5fc1bb95",
+      "line_start": 1,
+      "line_end": 199
+     },
+     {
+      "path": "experiments/theory-contracts/originlab-four-marks-session-20261118/check_contact_diagonal_bridge.py",
+      "sha256": "f8d7206491f076c99882b23b2ecbbbfe78266c140045a279d9a83f79bc5f8bb9",
+      "line_start": 1,
+      "line_end": 120
+     }
+    ],
+    "attempt_ids": []
+   },
+   {
+    "id": "finding:weight-b-zero-or-one-from-code-axioms-20261118",
+    "title": {
+     "de": "Gewicht b aus den Codeaxiomen",
+     "en": "Weight b from the code axioms"
+    },
+    "statement": {
+     "de": "Unter den aufgezeichneten Axiomen bleiben b = 0 (Paarcodes, theta3^8) und b = 1 (Hamming, E8); A2 wählt b = 1.",
+     "en": "Under the recorded axioms b = 0 (pair codes, theta3^8) and b = 1 (Hamming, E8) remain; A2 selects b = 1."
+    },
+    "status": "established_scoped",
+    "premise_ids": [
+     "premise:four-marks-session-recorded-objects-20261118"
+    ],
+    "scope": {
+     "de": "Rechnung an aufgezeichneten Objekten; leitet P1 nicht her, F1 bleibt offen.",
+     "en": "Computation on recorded objects; does not derive P1, F1 stays open."
+    },
+    "sources": [
+     {
+      "path": "experiments/theory-contracts/originlab-four-marks-session-20261118/check_weight_b_from_record.py",
+      "sha256": "42997ea0dd0d75e1cc7863d406e008f0d4593c54824c839a40da095bf6b32c6e",
+      "line_start": 1,
+      "line_end": 138
+     }
+    ],
+    "attempt_ids": []
+   },
+   {
+    "id": "finding:e8-pair-and-diagonal-d8-coincide-on-mark-circle-20261118",
+    "title": {
+     "de": "E8xE8 und diagonales D8 auf dem Markenkreis",
+     "en": "E8xE8 and diagonal D8 on the mark circle"
+    },
+    "statement": {
+     "de": "Z_D8 - Z_E8 = 2|theta3/eta|^16 (Im lambda)^2; auf dem Markenkreis stimmen beide überein.",
+     "en": "Z_D8 - Z_E8 = 2|theta3/eta|^16 (Im lambda)^2; on the mark circle the two agree."
+    },
+    "status": "established_scoped",
+    "premise_ids": [
+     "premise:four-marks-session-recorded-objects-20261118"
+    ],
+    "scope": {
+     "de": "Rechnung an aufgezeichneten Objekten; leitet P1 nicht her, F1 bleibt offen.",
+     "en": "Computation on recorded objects; does not derive P1, F1 stays open."
+    },
+    "sources": [
+     {
+      "path": "experiments/theory-contracts/originlab-four-marks-session-20261118/check_reflected_seam_couplings.py",
+      "sha256": "732d74413087f17684d56e1e707975cddd7798f4376261a7bd72b75b349dc9ee",
+      "line_start": 1,
+      "line_end": 141
+     }
+    ],
+    "attempt_ids": []
+   },
+   {
+    "id": "finding:marks-are-not-level-four-cusps-20261118",
+    "title": {
+     "de": "Marken sind keine Spitzen der Stufe vier",
+     "en": "Marks are not level-four cusps"
+    },
+    "statement": {
+     "de": "Die Lesart der Markenkugel als Modulkugel der Stufe vier mit den Marken als Spitzen widerspricht der aufgezeichneten Monodromie.",
+     "en": "Reading the mark sphere as the level-four modular sphere with the marks as cusps contradicts the recorded monodromy."
+    },
+    "status": "excluded_scoped",
+    "premise_ids": [
+     "premise:four-marks-session-recorded-objects-20261118"
+    ],
+    "scope": {
+     "de": "Rechnung an aufgezeichneten Objekten; leitet P1 nicht her, F1 bleibt offen.",
+     "en": "Computation on recorded objects; does not derive P1, F1 stays open."
+    },
+    "sources": [
+     {
+      "path": "experiments/theory-contracts/originlab-four-marks-session-20261118/check_level_four_against_original.py",
+      "sha256": "45411b6efc05bccbf997ed117180fc4b2443649d3a6cc707dc083e2f78428d84",
+      "line_start": 1,
+      "line_end": 199
+     }
+    ],
+    "attempt_ids": []
+   },
+   {
+    "id": "finding:pair-channel-weights-zero-one-two-20261118",
+    "title": {
+     "de": "Was ein Markenpaar tauscht",
+     "en": "What a pair of marks exchanges"
+    },
+    "statement": {
+     "de": "Die drei Paarungsantworten tauschen im Kanal eines Paars die Gewichte 2, 0 und 1; die gleichgewichtete Summe enthält keinen Tausch vom Gewicht eins.",
+     "en": "In the channel of a pair the three pairing responses exchange weights 2, 0 and 1; the equal-weight sum contains no exchange of weight one."
+    },
+    "status": "established_scoped",
+    "premise_ids": [
+     "premise:four-marks-session-recorded-objects-20261118"
+    ],
+    "scope": {
+     "de": "Rechnung an aufgezeichneten Objekten; leitet P1 nicht her, F1 bleibt offen.",
+     "en": "Computation on recorded objects; does not derive P1, F1 stays open."
+    },
+    "sources": [
+     {
+      "path": "experiments/theory-contracts/originlab-four-marks-session-20261118/check_pair_channel_blocks.py",
+      "sha256": "89b9d7002ae9dc77b51c6cfcc892d3412b31cdaff65f3763a7ddbbae45d4a22f",
+      "line_start": 1,
+      "line_end": 85
+     }
+    ],
+    "attempt_ids": []
+   },
+   {
+    "id": "finding:sign-ensemble-form-on-the-four-marks-20261118",
+    "title": {
+     "de": "Vorzeichenform auf den vier Marken",
+     "en": "Sign form on the four marks"
+    },
+    "statement": {
+     "de": "Vorzeichen an den Marken mit Gewicht exp(-(pi/2) s^T G s), nur neutrale Belegungen: positive Form vom Rang drei mit eigener Referenz, der E8 Charakter; am Quadrat circ(1,-2/3,1/3,-2/3).",
+     "en": "Signs on the marks with weight exp(-(pi/2) s^T G s), neutral configurations only: a positive form of rank three with its own reference, the E8 character; at the square circ(1,-2/3,1/3,-2/3)."
+    },
+    "status": "conditional",
+    "premise_ids": [
+     "premise:four-marks-session-recorded-objects-20261118",
+     "premise:free-seam-on-two-copies-20261118"
+    ],
+    "scope": {
+     "de": "Gilt unter den genannten Annahmen; nicht aus P1 hergeleitet, F1 bleibt offen.",
+     "en": "Holds under the stated assumptions; not derived from P1, F1 stays open."
+    },
+    "sources": [
+     {
+      "path": "experiments/theory-contracts/originlab-four-marks-session-20261118/check_sign_ensemble_form.py",
+      "sha256": "f6fbfa1cf2caf9ce33bc4952c03eb2e054d4dcdd825b209c40aac19ccf144a4e",
+      "line_start": 1,
+      "line_end": 116
+     }
+    ],
+    "attempt_ids": []
+   },
+   {
+    "id": "finding:source-as-purity-of-two-opposite-arcs-20261118",
+    "title": {
+     "de": "Quelle als Reinheit zweier Bögen",
+     "en": "Source as purity of two arcs"
+    },
+    "statement": {
+     "de": "Der Kopientausch auf zwei gegenüberliegenden Bögen gibt Vierteldrehung, Verschiebungen 1/4 und 3/4, F_alpha, beta = 4 pi und theta3(i)/eta(i) = sqrt 2; freie Naht X = 1/(1-x), E8 X = (1-x+x^2)/(1-x); am Quadrat 2 gegen 3/2; auf einem Gitterring bestätigt.",
+     "en": "The exchange of copies on two opposite arcs yields the quarter turn, twists 1/4 and 3/4, F_alpha, beta = 4 pi and theta3(i)/eta(i) = sqrt 2; free seam X = 1/(1-x), E8 X = (1-x+x^2)/(1-x); at the square 2 against 3/2; confirmed on a lattice ring."
+    },
+    "status": "conditional",
+    "premise_ids": [
+     "premise:four-marks-session-recorded-objects-20261118",
+     "premise:free-seam-on-two-copies-20261118"
+    ],
+    "scope": {
+     "de": "Gilt unter den genannten Annahmen; nicht aus P1 hergeleitet, F1 bleibt offen.",
+     "en": "Holds under the stated assumptions; not derived from P1, F1 stays open."
+    },
+    "sources": [
+     {
+      "path": "experiments/theory-contracts/originlab-four-marks-session-20261118/check_two_arc_purity.py",
+      "sha256": "42589ff6f3431a69e04557bf61a6e11c6db85a731e0ceb5f6dbead132bf30f80",
+      "line_start": 1,
+      "line_end": 199
+     }
+    ],
+    "attempt_ids": []
+   },
+   {
+    "id": "finding:purity-functional-on-native-operator-20261118",
+    "title": {
+     "de": "Reinheit am nativen Operator",
+     "en": "Purity on the native operator"
+    },
+    "statement": {
+     "de": "Ohne Potential je Faser 1/2 an einem Ort, 9/4 für Nachbarn, 1 gegenüber; mit [2,2,2] log-Verhältnis 24,39 für Nachbarn und 2,98 bis 3,02 gegenüber. Kein Ankerwert.",
+     "en": "Without potential per fibre 1/2 at a place, 9/4 for neighbours, 1 for opposite places; with [2,2,2] log ratio 24.39 for neighbours and 2.98 to 3.02 opposite. No anchor value."
+    },
+    "status": "conditional",
+    "premise_ids": [
+     "premise:four-marks-session-recorded-objects-20261118",
+     "premise:native-filled-negative-spectrum-20261118"
+    ],
+    "scope": {
+     "de": "Gilt unter den genannten Annahmen; nicht aus P1 hergeleitet, F1 bleibt offen.",
+     "en": "Holds under the stated assumptions; not derived from P1, F1 stays open."
+    },
+    "sources": [
+     {
+      "path": "experiments/theory-contracts/originlab-four-marks-session-20261118/check_native_sea_purity.py",
+      "sha256": "7899c142dccbe3ad55f5c7dd29e4ed12bbddd90e7a63d5d482941e3126681f82",
+      "line_start": 1,
+      "line_end": 116
+     }
+    ],
+    "attempt_ids": []
+   },
+   {
+    "id": "finding:sign-mark-carries-the-space-of-the-e8-word-20261118",
+    "title": {
+     "de": "Vorzeichenmarke trägt den Raum des E8 Worts",
+     "en": "Sign mark carries the space of the E8 word"
+    },
+    "statement": {
+     "de": "Die Nullmoden von acht Fermionen mit Vorzeichen geben 256 Grundzustände, gerade Hälfte 128; mit Cartan Nullmode und Paarstrom (10,6) folgt die ganze Tabelle von E8WORD20261116 Eintrag für Eintrag. Gleiche Algebra in anderer Schreibweise.",
+     "en": "The zero modes of eight fermions with a sign give 256 ground states, even half 128; with a Cartan zero mode and a pair current (10,6) the whole table of E8WORD20261116 follows entry by entry. Same algebra in another notation."
+    },
+    "status": "established_scoped",
+    "premise_ids": [
+     "premise:four-marks-session-recorded-objects-20261118"
+    ],
+    "scope": {
+     "de": "Rechnung an aufgezeichneten Objekten; leitet P1 nicht her, F1 bleibt offen.",
+     "en": "Computation on recorded objects; does not derive P1, F1 stays open."
+    },
+    "sources": [
+     {
+      "path": "experiments/theory-contracts/originlab-four-marks-session-20261118/check_marks_u_y_dictionary.py",
+      "sha256": "936608486c605c38aa9147087ecd966c7794b36a47c3715d272dcbf679b1a918",
+      "line_start": 1,
+      "line_end": 199
+     }
+    ],
+    "attempt_ids": []
+   },
+   {
+    "id": "finding:exchange-and-sign-on-equal-copies-is-not-group-a1-20261118",
+    "title": {
+     "de": "Tausch und Vorzeichen auf gleichen Kopien",
+     "en": "Exchange and sign on equal copies"
+    },
+    "statement": {
+     "de": "Mit U = Tausch und Y = Vorzeichen auf zwei gleichen Kopien ist Z_U = Z_Y und die verbundene gemischte Antwort nie negativ; aufgezeichnet sind -1/32 und -1/72.",
+     "en": "With U = exchange and Y = sign on two equal copies Z_U = Z_Y and the connected mixed answer is never negative; recorded are -1/32 and -1/72."
+    },
+    "status": "excluded_scoped",
+    "premise_ids": [
+     "premise:four-marks-session-recorded-objects-20261118",
+     "premise:free-seam-on-two-copies-20261118"
+    ],
+    "scope": {
+     "de": "Rechnung an aufgezeichneten Objekten; leitet P1 nicht her, F1 bleibt offen.",
+     "en": "Computation on recorded objects; does not derive P1, F1 stays open."
+    },
+    "sources": [
+     {
+      "path": "experiments/theory-contracts/originlab-four-marks-session-20261118/check_marks_u_y_dictionary.py",
+      "sha256": "936608486c605c38aa9147087ecd966c7794b36a47c3715d272dcbf679b1a918",
+      "line_start": 1,
+      "line_end": 199
+     }
+    ],
+    "attempt_ids": []
+   },
+   {
+    "id": "finding:recorded-canonical-model-is-the-two-copy-algebra-20261118",
+    "title": {
+     "de": "Kanonisches Modell ist die Zweikopienalgebra",
+     "en": "Canonical model is the two-copy algebra"
+    },
+    "statement": {
+     "de": "In coherent_origin.py ist swap der Kopientausch, parity das Vorzeichen, phase = i mal Tausch mal Vorzeichen; die aufgezeichneten Marken gelten genau für eine Linie in einer Kopie; gleiche Kopien geben q = 1, der Vertrag nimmt q = 1 an.",
+     "en": "In coherent_origin.py swap is the exchange of copies, parity the sign, phase = i times exchange times sign; the recorded marks hold exactly for a line in one copy; equal copies give q = 1, which the contract accepts."
+    },
+    "status": "established_scoped",
+    "premise_ids": [
+     "premise:four-marks-session-recorded-objects-20261118"
+    ],
+    "scope": {
+     "de": "Rechnung an aufgezeichneten Objekten; leitet P1 nicht her, F1 bleibt offen.",
+     "en": "Computation on recorded objects; does not derive P1, F1 stays open."
+    },
+    "sources": [
+     {
+      "path": "experiments/theory-contracts/originlab-four-marks-session-20261118/check_shared_line_phase.py",
+      "sha256": "9662b767540fc851a810c428b79b7baa8edb0e98929c52ffa2a270f19233b990",
+      "line_start": 1,
+      "line_end": 123
+     }
+    ],
+    "attempt_ids": []
+   },
+   {
+    "id": "finding:flat-density-forced-by-the-sixty-return-values-20261118",
+    "title": {
+     "de": "Flache Dichte aus den 60 Rückkehrwerten",
+     "en": "Flat density from the 60 return values"
+    },
+    "statement": {
+     "de": "Mit Referenz Tr rho^2 und Rückkehrwert Tr(rho X^+ rho X) erzwingen die Ankerwerte 1/4 (128) und 1/6 (96) rho = 1/128 bzw. 1/96, auch mit Kohärenzen.",
+     "en": "With reference Tr rho^2 and return value Tr(rho X^+ rho X) the anchors 1/4 (128) and 1/6 (96) force rho = 1/128 and 1/96, coherences included."
+    },
+    "status": "established_scoped",
+    "premise_ids": [
+     "premise:four-marks-session-recorded-objects-20261118"
+    ],
+    "scope": {
+     "de": "Rechnung an aufgezeichneten Objekten; leitet P1 nicht her, F1 bleibt offen.",
+     "en": "Computation on recorded objects; does not derive P1, F1 stays open."
+    },
+    "sources": [
+     {
+      "path": "experiments/theory-contracts/originlab-four-marks-session-20261118/check_flat_sector_and_rate.py",
+      "sha256": "29a21c6567685c8de3f85b16b46cad1ef0e4a24c9fdcfb018ed2acb5d2226fed",
+      "line_start": 1,
+      "line_end": 199
+     }
+    ],
+    "attempt_ids": []
+   },
+   {
+    "id": "finding:signed-and-positive-marker-for-electric-charge-20261118",
+    "title": {
+     "de": "Signierter und positiver Marker",
+     "en": "Signed and positive marker"
+    },
+    "statement": {
+     "de": "Q = Y + T3, schwacher Strom an der vierten Trägerkoordinate: signiert -1/24 und -1/36, positives Quadrat +1/48 und +1/72; der signierte Wert ist ein Viertel der Differenz zweier positiver Auslesen.",
+     "en": "Q = Y + T3, weak current at the fourth carrier coordinate: signed -1/24 and -1/36, positive square +1/48 and +1/72; the signed value is a quarter of the difference of two positive readings."
+    },
+    "status": "established_scoped",
+    "premise_ids": [
+     "premise:four-marks-session-recorded-objects-20261118"
+    ],
+    "scope": {
+     "de": "Rechnung an aufgezeichneten Objekten; leitet P1 nicht her, F1 bleibt offen.",
+     "en": "Computation on recorded objects; does not derive P1, F1 stays open."
+    },
+    "sources": [
+     {
+      "path": "experiments/theory-contracts/originlab-four-marks-session-20261118/check_flat_sector_and_rate.py",
+      "sha256": "29a21c6567685c8de3f85b16b46cad1ef0e4a24c9fdcfb018ed2acb5d2226fed",
+      "line_start": 1,
+      "line_end": 199
+     }
+    ],
+    "attempt_ids": []
+   },
+   {
+    "id": "finding:one-charge-function-for-flat-sector-and-quarter-law-20261118",
+    "title": {
+     "de": "Eine Ladungsfunktion für beides",
+     "en": "One charge function for both"
+    },
+    "statement": {
+     "de": "F_alpha mit alpha aus der Markenart: Vierteldrehung 1/4 und 3/4 (R066, eindeutiger Leerzustand); Vorzeichen oder Tausch 0 und 1/2 (je Fermion ein Dublett, für acht 256 gleich gewichtete Grundzustände).",
+     "en": "F_alpha with alpha from the kind of mark: quarter turn 1/4 and 3/4 (R066, unique empty state); sign or exchange 0 and 1/2 (a doublet per fermion, 256 equally weighted ground states for eight)."
+    },
+    "status": "conditional",
+    "premise_ids": [
+     "premise:four-marks-session-recorded-objects-20261118",
+     "premise:free-seam-on-two-copies-20261118"
+    ],
+    "scope": {
+     "de": "Gilt unter den genannten Annahmen; nicht aus P1 hergeleitet, F1 bleibt offen.",
+     "en": "Holds under the stated assumptions; not derived from P1, F1 stays open."
+    },
+    "sources": [
+     {
+      "path": "experiments/theory-contracts/originlab-four-marks-session-20261118/check_flat_sector_and_rate.py",
+      "sha256": "29a21c6567685c8de3f85b16b46cad1ef0e4a24c9fdcfb018ed2acb5d2226fed",
+      "line_start": 1,
+      "line_end": 199
+     }
+    ],
+    "attempt_ids": []
+   },
+   {
+    "id": "finding:quarter-energies-are-no-rate-between-the-copies-20261118",
+    "title": {
+     "de": "Viertelenergien sind keine Rate",
+     "en": "Quarter energies are no rate"
+    },
+    "statement": {
+     "de": "Ein Transfer mit den Energien 1/4 und 3/4 gibt Z_U/Z_0 = tanh(3s/4); die aufgezeichneten Marken gelten nur bei s = 0.",
+     "en": "A transfer with the energies 1/4 and 3/4 gives Z_U/Z_0 = tanh(3s/4); the recorded marks hold only at s = 0."
+    },
+    "status": "excluded_scoped",
+    "premise_ids": [
+     "premise:four-marks-session-recorded-objects-20261118",
+     "premise:free-seam-on-two-copies-20261118"
+    ],
+    "scope": {
+     "de": "Rechnung an aufgezeichneten Objekten; leitet P1 nicht her, F1 bleibt offen.",
+     "en": "Computation on recorded objects; does not derive P1, F1 stays open."
+    },
+    "sources": [
+     {
+      "path": "experiments/theory-contracts/originlab-four-marks-session-20261118/check_flat_sector_and_rate.py",
+      "sha256": "29a21c6567685c8de3f85b16b46cad1ef0e4a24c9fdcfb018ed2acb5d2226fed",
+      "line_start": 1,
+      "line_end": 199
+     }
+    ],
+    "attempt_ids": []
+   },
+   {
+    "id": "finding:recorded-half-phase-is-the-sign-of-the-chart-fermions-20261118",
+    "title": {
+     "de": "Halbphase ist das Vorzeichen der Chartfermionen",
+     "en": "Half phase is the sign of the chart fermions"
+    },
+    "statement": {
+     "de": "g8^4 = (-1)^b ist exp(2 pi i e_k.p) für jedes k und alle 240 Wurzeln; Materiebeine tragen das Vorzeichen, der Mittelstrom nicht; im E8 Netz sieht kein Feld es.",
+     "en": "g8^4 = (-1)^b equals exp(2 pi i e_k.p) for every k and all 240 roots; matter legs carry the sign, the middle current does not; no field of the E8 net sees it."
+    },
+    "status": "established_scoped",
+    "premise_ids": [
+     "premise:four-marks-session-recorded-objects-20261118"
+    ],
+    "scope": {
+     "de": "Rechnung an aufgezeichneten Objekten; leitet P1 nicht her, F1 bleibt offen.",
+     "en": "Computation on recorded objects; does not derive P1, F1 stays open."
+    },
+    "sources": [
+     {
+      "path": "experiments/theory-contracts/originlab-four-marks-session-20261118/check_sign_marks_and_complex_seam.py",
+      "sha256": "a34ee038c043250212ece90d456b4c41ce4dc8b03b7a052ab4bb4b683bf19ad2",
+      "line_start": 1,
+      "line_end": 190
+     }
+    ],
+    "attempt_ids": []
+   },
+   {
+    "id": "finding:native-real-structure-maps-quarter-to-three-quarter-20261118",
+    "title": {
+     "de": "Realstruktur bildet 1/4 auf 3/4 ab",
+     "en": "Real structure maps 1/4 to 3/4"
+    },
+    "statement": {
+     "de": "Konjugation mit der aufgezeichneten Realstruktur bildet den nativen Operator mit Verschiebung 1/4 in allen 27 Konfigurationen exakt auf den mit 3/4 ab.",
+     "en": "Conjugation with the recorded real structure maps the native operator with shift 1/4 exactly to the one with shift 3/4 in all 27 configurations."
+    },
+    "status": "established_scoped",
+    "premise_ids": [
+     "premise:four-marks-session-recorded-objects-20261118"
+    ],
+    "scope": {
+     "de": "Rechnung an aufgezeichneten Objekten; leitet P1 nicht her, F1 bleibt offen.",
+     "en": "Computation on recorded objects; does not derive P1, F1 stays open."
+    },
+    "sources": [
+     {
+      "path": "experiments/theory-contracts/originlab-four-marks-session-20261118/check_sign_marks_and_complex_seam.py",
+      "sha256": "a34ee038c043250212ece90d456b4c41ce4dc8b03b7a052ab4bb4b683bf19ad2",
+      "line_start": 1,
+      "line_end": 190
+     }
+    ],
+    "attempt_ids": []
+   },
+   {
+    "id": "finding:two-copies-are-one-charged-seam-field-20261118",
+    "title": {
+     "de": "Zwei Kopien als ein geladenes Nahtfeld",
+     "en": "Two copies as one charged seam field"
+    },
+    "statement": {
+     "de": "psi_+ = psi_1 + i psi_2: Vierteldrehung = Vierteldrehung der Ladung, Tausch und Vorzeichen = Konjugationen; Reinheit einer Kopie = |<exp(i pi Q_A/2)>|; die Gruppe wirkt auf (1,2,-1,-2) wie die Symmetrien des Quadrats auf die Marken; Viertelwinkel und Gewicht 1/2 geben 16 komplexe Fermionen.",
+     "en": "psi_+ = psi_1 + i psi_2: quarter turn = quarter rotation of the charge, exchange and sign = conjugations; purity of a copy = |<exp(i pi Q_A/2)>|; the group acts on (1,2,-1,-2) as the symmetries of the square act on the marks; quarter angle and weight 1/2 give 16 complex fermions."
+    },
+    "status": "conditional",
+    "premise_ids": [
+     "premise:four-marks-session-recorded-objects-20261118",
+     "premise:free-seam-on-two-copies-20261118"
+    ],
+    "scope": {
+     "de": "Gilt unter den genannten Annahmen; nicht aus P1 hergeleitet, F1 bleibt offen.",
+     "en": "Holds under the stated assumptions; not derived from P1, F1 stays open."
+    },
+    "sources": [
+     {
+      "path": "experiments/theory-contracts/originlab-four-marks-session-20261118/check_sign_marks_and_complex_seam.py",
+      "sha256": "a34ee038c043250212ece90d456b4c41ce4dc8b03b7a052ab4bb4b683bf19ad2",
+      "line_start": 1,
+      "line_end": 190
+     }
+    ],
+    "attempt_ids": []
+   },
+   {
+    "id": "finding:native-frame-field-and-conjugate-20261118",
+    "title": {
+     "de": "Nativer Rahmen: Feld und Konjugiertes",
+     "en": "Native frame: field and conjugate"
+    },
+    "statement": {
+     "de": "K conj(K) = 1; die Gradierung antikommutiert mit K; das native Potential antikommutiert mit der Gradierung; für jede Funktion von h_N ist die Rate zwischen den Kopien q = 1.",
+     "en": "K conj(K) = 1; the grading anticommutes with K; the native potential anticommutes with the grading; for every function of h_N the rate between the copies is q = 1."
+    },
+    "status": "established_scoped",
+    "premise_ids": [
+     "premise:four-marks-session-recorded-objects-20261118"
+    ],
+    "scope": {
+     "de": "Rechnung an aufgezeichneten Objekten; leitet P1 nicht her, F1 bleibt offen.",
+     "en": "Computation on recorded objects; does not derive P1, F1 stays open."
+    },
+    "sources": [
+     {
+      "path": "experiments/theory-contracts/originlab-four-marks-session-20261118/check_native_quarter_count.py",
+      "sha256": "780cbb1a5a20820896f2af32cf727cd118acf880a764bf8759ced545882d5db1",
+      "line_start": 1,
+      "line_end": 191
+     }
+    ],
+    "attempt_ids": []
+   },
+   {
+    "id": "finding:quarter-count-on-the-native-operator-20261118",
+    "title": {
+     "de": "Viertelzählung am nativen Operator",
+     "en": "Quarter count on the native operator"
+    },
+    "statement": {
+     "de": "Verbundene Zählung in allen 27 Konfigurationen: Nachbarn 12,20 bis 12,24, gegenüber 1,47 bis 1,49 (log Betrag); ohne Potential je Faser 1/sqrt 2, 3/2, 1. Kein Ankerwert.",
+     "en": "Connected count in all 27 configurations: neighbours 12.20 to 12.24, opposite 1.47 to 1.49 (log modulus); without potential per fibre 1/sqrt 2, 3/2, 1. No anchor value."
+    },
+    "status": "conditional",
+    "premise_ids": [
+     "premise:four-marks-session-recorded-objects-20261118",
+     "premise:native-filled-negative-spectrum-20261118"
+    ],
+    "scope": {
+     "de": "Gilt unter den genannten Annahmen; nicht aus P1 hergeleitet, F1 bleibt offen.",
+     "en": "Holds under the stated assumptions; not derived from P1, F1 stays open."
+    },
+    "sources": [
+     {
+      "path": "experiments/theory-contracts/originlab-four-marks-session-20261118/check_native_quarter_count.py",
+      "sha256": "780cbb1a5a20820896f2af32cf727cd118acf880a764bf8759ced545882d5db1",
+      "line_start": 1,
+      "line_end": 191
+     }
+    ],
+    "attempt_ids": []
+   },
+   {
+    "id": "finding:native-place-for-the-recorded-binary-cuts-20261118",
+    "title": {
+     "de": "Nativer Platz für die beiden Schnitte",
+     "en": "Native place for the two cuts"
+    },
+    "statement": {
+     "de": "Korrigiert: Der native Potentialterm ist -i gamma D_F. Mit U = Gradierung, Y = Richtung dieses Potentials, einer reellen Linie mit festem Vorzeichen von D_F und geradem Transfer gilt Z_U = Z_Y = 0, Z_UY = i eta Z_0, positiver Lift 1/2, q = 1. Die frühere Fassung nannte sign(D_F) die Richtung des Potentials. Dass P1 so liest, ist nicht gezeigt.",
+     "en": "Corrected: the native potential term is -i gamma D_F. With U = grading, Y = direction of this potential, a real line of definite sign of D_F and an even transfer: Z_U = Z_Y = 0, Z_UY = i eta Z_0, positive lift 1/2, q = 1. The earlier wording called sign(D_F) the direction of the potential. That P1 reads this way is not shown."
+    },
+    "status": "conditional",
+    "premise_ids": [
+     "premise:four-marks-session-recorded-objects-20261118",
+     "premise:native-filled-negative-spectrum-20261118"
+    ],
+    "scope": {
+     "de": "Gilt unter den genannten Annahmen; nicht aus P1 hergeleitet, F1 bleibt offen.",
+     "en": "Holds under the stated assumptions; not derived from P1, F1 stays open."
+    },
+    "sources": [
+     {
+      "path": "experiments/theory-contracts/originlab-four-marks-session-20261118/check_native_quarter_count.py",
+      "sha256": "780cbb1a5a20820896f2af32cf727cd118acf880a764bf8759ced545882d5db1",
+      "line_start": 1,
+      "line_end": 191
+     },
+     {
+      "path": "experiments/theory-contracts/originlab-four-marks-session-20261118/check_native_dirac_cap.py",
+      "sha256": "13e70091abd0f6995d175601618c612436d5648a2d0e2f7991462c47780ce960",
+      "line_start": 1,
+      "line_end": 154
+     }
+    ],
+    "attempt_ids": []
+   },
+   {
+    "id": "finding:real-structure-forces-imaginary-charge-marks-20261118",
+    "title": {
+     "de": "Realstruktur erzwingt imaginäre Ladungsmarken",
+     "en": "Real structure forces imaginary charge marks"
+    },
+    "statement": {
+     "de": "Auf reellen Linien ist die Marke des Higgsquadrats reell, jede Ladungsmarke und die gemischte Marke rein imaginär; flache Dichte: gemischte Hyperladungsmarke etwa -1,4e-6 i bis -2,4e-6 i, elektrisch null.",
+     "en": "On real lines the mark of the Higgs square is real, every charge mark and the mixed mark purely imaginary; flat density: mixed hypercharge mark about -1.4e-6 i to -2.4e-6 i, electric zero."
+    },
+    "status": "conditional",
+    "premise_ids": [
+     "premise:four-marks-session-recorded-objects-20261118",
+     "premise:native-filled-negative-spectrum-20261118"
+    ],
+    "scope": {
+     "de": "Gilt unter den genannten Annahmen; nicht aus P1 hergeleitet, F1 bleibt offen.",
+     "en": "Holds under the stated assumptions; not derived from P1, F1 stays open."
+    },
+    "sources": [
+     {
+      "path": "experiments/theory-contracts/originlab-four-marks-session-20261118/check_native_charge_marks.py",
+      "sha256": "f99dd3b85bdd148f9a54f4f26e61d274ae374ff1bac84c18a182dccbb2374cc9",
+      "line_start": 1,
+      "line_end": 152
+     }
+    ],
+    "attempt_ids": []
+   },
+   {
+    "id": "finding:native-operator-has-real-eigenlines-only-at-shift-zero-20261118",
+    "title": {
+     "de": "Reelle Eigenlinien nur bei Verschiebung null",
+     "en": "Real eigenlines only at shift zero"
+    },
+    "statement": {
+     "de": "Bei der Viertelverschiebung ist in allen 27 Konfigurationen keine Eigenlinie reell. Bei Verschiebung null ist der Modenoperator -i gamma D_F; er hat 12 eindeutige reelle Eigenlinien (Majorana Neutrinolinien) mit fester Richtung des Potentials und Marken (1,0,+-1,0). Korrigiert: die frühere Fassung rechnete mit D_F statt -i gamma D_F; die Aussage gilt für beide.",
+     "en": "At the quarter shift no eigenline is real in all 27 configurations. At shift zero the mode operator is -i gamma D_F; it has 12 unique real eigenlines (Majorana neutrino lines) of definite direction of the potential, with marks (1,0,+-1,0). Corrected: the earlier wording computed with D_F instead of -i gamma D_F; the statement holds for both."
+    },
+    "status": "established_scoped",
+    "premise_ids": [
+     "premise:four-marks-session-recorded-objects-20261118"
+    ],
+    "scope": {
+     "de": "Rechnung an aufgezeichneten Objekten; leitet P1 nicht her, F1 bleibt offen.",
+     "en": "Computation on recorded objects; does not derive P1, F1 stays open."
+    },
+    "sources": [
+     {
+      "path": "experiments/theory-contracts/originlab-four-marks-session-20261118/check_native_real_lines.py",
+      "sha256": "27a65dd4be97cecf54566d6ef1bde6ea3d69b7b3a00df53f3f12e8bd8880f44d",
+      "line_start": 1,
+      "line_end": 130
+     },
+     {
+      "path": "experiments/theory-contracts/originlab-four-marks-session-20261118/check_native_dirac_cap.py",
+      "sha256": "13e70091abd0f6995d175601618c612436d5648a2d0e2f7991462c47780ce960",
+      "line_start": 1,
+      "line_end": 154
+     }
+    ],
+    "attempt_ids": []
+   },
+   {
+    "id": "finding:cap-is-a-mass-eigenline-of-the-original-finite-dirac-operator-20261118",
+    "title": {
+     "de": "Kappe als Masseneigenlinie von D_F",
+     "en": "Cap as mass eigenline of D_F"
+    },
+    "statement": {
+     "de": "Der ursprüngliche endliche Diracoperator D_F (full_D) hat 12 eindeutige Eigenlinien; alle sind reell (Majorana Neutrinolinien, Werte +-0,0852 bis +-5,568). Auf jeder gilt mit U = Gradierung, Y = Richtung des nativen Potentials und geradem Transfer Z_U = Z_Y = 0, Z_UY = i eta Z_0 mit eta = Vorzeichen des Werts von D_F. sign(D_F) = -i Y gamma exakt.",
+     "en": "The original finite Dirac operator D_F (full_D) has 12 unique eigenlines; all are real (Majorana neutrino lines, values +-0.0852 to +-5.568). On each, with U = grading, Y = direction of the native potential and an even transfer, Z_U = Z_Y = 0 and Z_UY = i eta Z_0 with eta = sign of the value of D_F. sign(D_F) = -i Y gamma exactly."
+    },
+    "status": "conditional",
+    "premise_ids": [
+     "premise:four-marks-session-recorded-objects-20261118",
+     "premise:native-filled-negative-spectrum-20261118"
+    ],
+    "scope": {
+     "de": "Gilt unter den genannten Annahmen; nicht aus P1 hergeleitet, F1 bleibt offen.",
+     "en": "Holds under the stated assumptions; not derived from P1, F1 stays open."
+    },
+    "sources": [
+     {
+      "path": "experiments/theory-contracts/originlab-four-marks-session-20261118/check_native_dirac_cap.py",
+      "sha256": "13e70091abd0f6995d175601618c612436d5648a2d0e2f7991462c47780ce960",
+      "line_start": 1,
+      "line_end": 154
+     }
+    ],
+    "attempt_ids": []
+   },
+   {
+    "id": "finding:fermion-determinant-of-native-operator-has-no-negative-mixed-answer-20261118",
+    "title": {
+     "de": "Determinante gibt keine negative gemischte Antwort",
+     "en": "Determinant gives no negative mixed answer"
+    },
+    "statement": {
+     "de": "log det des nativen Operators mit Higgsamplitude und Hyperladung in der Verschiebung als Quellen: alle Ableitungen reell; Grundkonfiguration gemischte Ableitung null, zweite Ableitungen -128,62 und -42,12; über 27 Konfigurationen hat die gemischte Ableitung beide Vorzeichen (bis +-0,65). Kein strikt negativer gemischter Wert.",
+     "en": "log det of the native operator with Higgs amplitude and hypercharge in the shift as sources: all derivatives real; baseline mixed derivative zero, second derivatives -128.62 and -42.12; over 27 configurations the mixed derivative takes both signs (up to +-0.65). No strictly negative mixed value."
+    },
+    "status": "excluded_scoped",
+    "premise_ids": [
+     "premise:four-marks-session-recorded-objects-20261118",
+     "premise:native-filled-negative-spectrum-20261118"
+    ],
+    "scope": {
+     "de": "Rechnung an aufgezeichneten Objekten; leitet P1 nicht her, F1 bleibt offen.",
+     "en": "Computation on recorded objects; does not derive P1, F1 stays open."
+    },
+    "sources": [
+     {
+      "path": "experiments/theory-contracts/originlab-four-marks-session-20261118/check_native_dirac_cap.py",
+      "sha256": "13e70091abd0f6995d175601618c612436d5648a2d0e2f7991462c47780ce960",
+      "line_start": 1,
+      "line_end": 154
+     }
+    ],
+    "attempt_ids": []
+   },
+   {
+    "id": "finding:native-candidate-returns-four-marks-on-all-configurations-20261118",
+    "title": {
+     "de": "Kandidat liefert vier Marken auf allen 27 Konfigurationen",
+     "en": "Candidate returns four marks on all 27 configurations"
+    },
+    "statement": {
+     "de": "Mit Kappe = Mode 0 mal leichteste eindeutige Eigenlinie von D_F, U = Gradierung, Y = Richtung des nativen Potentials und Transfer exp(-|h_N|) in drei gleichen Schritten: Grundkonfiguration (1,0,0,i eta), q = 1, Z_0 = 0,4528; über alle 27 Konfigurationen gemischte Marke i eta q mit q von 0,98842 bis 1, Einzelmarken unter 0,026 und 0,017. q < 1 genau bei nichtkonstantem Profil. Hypothese, kein Originalproduzent; Gruppe A1 wird nicht reproduziert.",
+     "en": "With cap = mode 0 times the lightest unique eigenline of D_F, U = grading, Y = direction of the native potential and transfer exp(-|h_N|) in three equal steps: baseline (1,0,0,i eta), q = 1, Z_0 = 0.4528; over all 27 configurations the mixed mark is i eta q with q from 0.98842 to 1, single marks below 0.026 and 0.017. q < 1 exactly for a non-constant profile. Hypothesis, not an original producer; group A1 is not reproduced."
+    },
+    "status": "conditional",
+    "premise_ids": [
+     "premise:four-marks-session-recorded-objects-20261118",
+     "premise:native-filled-negative-spectrum-20261118"
+    ],
+    "scope": {
+     "de": "Gilt unter den genannten Annahmen; nicht aus P1 hergeleitet, F1 bleibt offen.",
+     "en": "Holds under the stated assumptions; not derived from P1, F1 stays open."
+    },
+    "sources": [
+     {
+      "path": "experiments/theory-contracts/originlab-four-marks-session-20261118/check_native_candidate_marks.py",
+      "sha256": "f5e4d3c9748b90ad639b6eb49cdaba6f821e24993ca49fe3507cb9746bad95e3",
+      "line_start": 1,
+      "line_end": 109
+     }
+    ],
+    "attempt_ids": []
+   },
+   {
+    "id": "finding:candidate-line-is-lowest-level-step-is-not-fixed-20261118",
+    "title": {
+     "de": "Linie = tiefstes Niveau; der Schritt ist nicht festgelegt",
+     "en": "Line = lowest level; the step is not fixed"
+    },
+    "statement": {
+     "de": "Grundkonfiguration: Das tiefste Niveau von |h_N| ist zweifach mit Wert sqrt(1/16 + m^2) = 0,264108 und wird von den beiden Kappenlinien aufgespannt. Bei Schritt null sind die Marken in allen 27 Konfigurationen exakt (1,0,0,i eta). Bei endlichem Schritt fällt die Rate monoton (0,9945 bei 0,25 bis 0,612 bei 40), ohne Plateau; 4 pi gibt 0,9811 oder 0,9335 je nach Lesart. Schwere Linien geben kleine Raten.",
+     "en": "Baseline: the lowest level of |h_N| is two-fold with value sqrt(1/16 + m^2) = 0.264108 and is spanned by the two cap lines. At step zero the marks are exactly (1,0,0,i eta) in all 27 configurations. At finite step the rate falls monotonically (0.9945 at 0.25 to 0.612 at 40) without a plateau; 4 pi gives 0.9811 or 0.9335 depending on the reading. Heavy lines give small rates."
+    },
+    "status": "conditional",
+    "premise_ids": [
+     "premise:four-marks-session-recorded-objects-20261118",
+     "premise:native-filled-negative-spectrum-20261118"
+    ],
+    "scope": {
+     "de": "Gilt unter den genannten Annahmen; nicht aus P1 hergeleitet, F1 bleibt offen.",
+     "en": "Holds under the stated assumptions; not derived from P1, F1 stays open."
+    },
+    "sources": [
+     {
+      "path": "experiments/theory-contracts/originlab-four-marks-session-20261118/check_candidate_line_and_step.py",
+      "sha256": "97d75ec8d66521d1d3dc6aa0799656d3d7fc4dabf8413dc841f4f1ca3432fe00",
+      "line_start": 1,
+      "line_end": 123
+     }
+    ],
+    "attempt_ids": []
+   },
+   {
+    "id": "finding:commutator-rule-covers-groups-a1-and-a9-20261118",
+    "title": {
+     "de": "Eine Kommutatorregel für A1 und A9",
+     "en": "One commutator rule for A1 and A9"
+    },
+    "statement": {
+     "de": "Auf dem flachen Zustand gilt <HXHX> - <H^2><X^2> = -(1/2)<[H,X]^+[H,X]>. Für die 60 Paarströme gibt das -(q^2/2)<X^2>: -1/32 und -1/72 (128), -1/48 und -1/108 (96). Für zwei antikommutierende Schnitte gibt es ABAB = -1. Nativ (flach auf 96 Fasern, Schnitt = Richtung des Potentials): Gradierung -2, elektrische Ladung 0, Hyperladung und Isospin -0,129976. Die Regel sagt nicht, welchen Marker P1 benutzt.",
+     "en": "On the flat state <HXHX> - <H^2><X^2> = -(1/2)<[H,X]^+[H,X]>. For the 60 pair currents this gives -(q^2/2)<X^2>: -1/32 and -1/72 (128), -1/48 and -1/108 (96). For two anticommuting cuts it gives ABAB = -1. Natively (flat on 96 fibres, cut = direction of the potential): grading -2, electric charge 0, hypercharge and isospin -0.129976. The rule does not say which marker P1 uses."
+    },
+    "status": "established_scoped",
+    "premise_ids": [
+     "premise:four-marks-session-recorded-objects-20261118"
+    ],
+    "scope": {
+     "de": "Rechnung an aufgezeichneten Objekten; leitet P1 nicht her, F1 bleibt offen.",
+     "en": "Computation on recorded objects; does not derive P1, F1 stays open."
+    },
+    "sources": [
+     {
+      "path": "experiments/theory-contracts/originlab-four-marks-session-20261118/check_commutator_rule_and_note16.py",
+      "sha256": "8ea268f3e8bc600761ddde8f51b1c428d855cd00786b376c8a433f1abaa3d19e",
+      "line_start": 1,
+      "line_end": 170
+     }
+    ],
+    "attempt_ids": []
+   },
+   {
+    "id": "finding:modular-clock-of-two-opposite-arcs-20261118",
+    "title": {
+     "de": "Modulare Uhr zweier Bögen",
+     "en": "Modular clock of two arcs"
+    },
+    "statement": {
+     "de": "Koordinate log(sin theta/sin(delta - theta)), Geschwindigkeit 2 pi sin(theta) sin(delta - theta)/sin(delta), null an den Marken, in der Bogenmitte pi tan(delta/2): pi am Quadrat, pi/2 am Gegenzeugen. Dass dies die Zeit der Originalquelle ist, ist nicht gezeigt.",
+     "en": "Coordinate log(sin theta/sin(delta - theta)), speed 2 pi sin(theta) sin(delta - theta)/sin(delta), zero at the marks, pi tan(delta/2) at the middle of an arc: pi at the square, pi/2 at the counterwitness. That this is the time of the original source is not shown."
+    },
+    "status": "established_scoped",
+    "premise_ids": [
+     "premise:four-marks-session-recorded-objects-20261118"
+    ],
+    "scope": {
+     "de": "Rechnung an aufgezeichneten Objekten; leitet P1 nicht her, F1 bleibt offen.",
+     "en": "Computation on recorded objects; does not derive P1, F1 stays open."
+    },
+    "sources": [
+     {
+      "path": "experiments/theory-contracts/originlab-four-marks-session-20261118/check_commutator_rule_and_note16.py",
+      "sha256": "8ea268f3e8bc600761ddde8f51b1c428d855cd00786b376c8a433f1abaa3d19e",
+      "line_start": 1,
+      "line_end": 170
+     }
+    ],
+    "attempt_ids": []
+   },
+   {
+    "id": "finding:one-abelian-quarter-rotation-cannot-carry-sign-and-weight-half-20261118",
+    "title": {
+     "de": "Eine abelsche Vierteldrehung trägt nicht beides",
+     "en": "One abelian quarter rotation cannot carry both"
+    },
+    "statement": {
+     "de": "Für ganze m_i haben Summe und Quadratsumme gleiche Parität: vierte Potenz -1 auf den Spinorwurzeln schließt Gewicht 1/2 aus. Die gemeinsame Vierteldrehung von acht Fermionen hat vierte Potenz +1 auf allen 128 Spinorzuständen und Gewicht 1/4.",
+     "en": "For integers m_i sum and sum of squares have the same parity: fourth power -1 on the spinor roots excludes weight 1/2. The common quarter rotation of eight fermions has fourth power +1 on all 128 spinor states and weight 1/4."
+    },
+    "status": "excluded_scoped",
+    "premise_ids": [
+     "premise:four-marks-session-recorded-objects-20261118"
+    ],
+    "scope": {
+     "de": "Rechnung an aufgezeichneten Objekten; leitet P1 nicht her, F1 bleibt offen.",
+     "en": "Computation on recorded objects; does not derive P1, F1 stays open."
+    },
+    "sources": [
+     {
+      "path": "experiments/theory-contracts/originlab-four-marks-session-20261118/check_commutator_rule_and_note16.py",
+      "sha256": "8ea268f3e8bc600761ddde8f51b1c428d855cd00786b376c8a433f1abaa3d19e",
+      "line_start": 1,
+      "line_end": 170
+     }
+    ],
+    "attempt_ids": []
+   },
+   {
+    "id": "finding:glued-source-with-mirror-reproduces-recorded-table-and-sign-20261118",
+    "title": {
+     "de": "Verklebte Quelle mit Spiegel",
+     "en": "Glued source with mirror"
+    },
+    "statement": {
+     "de": "Annahme: verklebter Zustand gleichen Gewichts auf zwei Seiten, Spiegel = Seitentausch mit Konjugation. Dann Q[F,G] = Tr(F^+ G)/d, positiv, Referenz 1. Z_U = Q[H,H], Z_Y = Q[X,X], Z_UY = Q[XH,HX] geben die ganze aufgezeichnete Tabelle (128 und 96). Die verbundene Antwort ist der Überlapp der beiden Reihenfolgen minus deren Norm und nach Cauchy-Schwarz nie positiv. Der Sektor eines Vorzeichens von D_F gibt (1,0,0,i eta). Nicht gezeigt: dass P1 diese Verklebung ist.",
+     "en": "Assumption: equal-weight glued state on two sides, mirror = exchange of the sides with conjugation. Then Q[F,G] = Tr(F^+ G)/d, positive, reference 1. Z_U = Q[H,H], Z_Y = Q[X,X], Z_UY = Q[XH,HX] give the whole recorded table (128 and 96). The connected answer is the overlap of the two orders minus their norm and never positive by Cauchy-Schwarz. The sector of one sign of D_F gives (1,0,0,i eta). Not shown: that P1 is this gluing."
+    },
+    "status": "conditional",
+    "premise_ids": [
+     "premise:four-marks-session-recorded-objects-20261118"
+    ],
+    "scope": {
+     "de": "Gilt unter den genannten Annahmen; nicht aus P1 hergeleitet, F1 bleibt offen.",
+     "en": "Holds under the stated assumptions; not derived from P1, F1 stays open."
+    },
+    "sources": [
+     {
+      "path": "experiments/theory-contracts/originlab-four-marks-session-20261118/check_glued_source.py",
+      "sha256": "3dd6874b4ee668679168a9aa9045f52b5c12e74b5ec1c54c702861815ad7ff76",
+      "line_start": 1,
+      "line_end": 156
+     }
+    ],
+    "attempt_ids": []
+   },
+   {
+    "id": "finding:real-structure-mirror-is-positive-only-on-even-operators-20261118",
+    "title": {
+     "de": "K-Spiegel ist nur auf geraden Operatoren positiv",
+     "en": "K-mirror is positive only on even operators"
+    },
+    "statement": {
+     "de": "Mit dem Spiegel aus Seitentausch und K-Konjugation ist die Form positiv auf unter K geraden Operatoren (1, Higgsquadrat, Richtung des Potentials, sign D_F, D_F) und negativ auf den Ladungen (Gradierung -1, Hyperladung -5/24). Hyperladung durch das native Potential: verbunden -0,129976 mit dem einfachen Spiegel, +0,129976 mit dem K-Spiegel.",
+     "en": "With the mirror of exchange and K-conjugation the form is positive on operators even under K (1, Higgs square, direction of the potential, sign D_F, D_F) and negative on the charges (grading -1, hypercharge -5/24). Hypercharge through the native potential: connected -0.129976 with the plain mirror, +0.129976 with the K-mirror."
+    },
+    "status": "established_scoped",
+    "premise_ids": [
+     "premise:four-marks-session-recorded-objects-20261118"
+    ],
+    "scope": {
+     "de": "Rechnung an aufgezeichneten Objekten; leitet P1 nicht her, F1 bleibt offen.",
+     "en": "Computation on recorded objects; does not derive P1, F1 stays open."
+    },
+    "sources": [
+     {
+      "path": "experiments/theory-contracts/originlab-four-marks-session-20261118/check_glued_source.py",
+      "sha256": "3dd6874b4ee668679168a9aa9045f52b5c12e74b5ec1c54c702861815ad7ff76",
+      "line_start": 1,
+      "line_end": 156
+     }
+    ],
+    "attempt_ids": []
+   },
+   {
+    "id": "finding:native-fibres-are-the-three-family-part-of-the-chart-as-charge-module-20261118",
+    "title": {
+     "de": "Native Fasern = Dreifamilienteil des Charts als Ladungsmodul",
+     "en": "Native fibres = three-family part of the chart as charge module"
+    },
+    "statement": {
+     "de": "Eine Bijektion der 96 Chartzustände (ein Familiengewicht ausgelassen) auf die 96 nativen Fasern trägt Hyperladung und Isospin, die Parität der fünf Trägervorzeichen auf die native Gradierung und die Umkehr aller acht Vorzeichen auf die Realstruktur K. Mit der nativen Hyperladung geben die 60 übertragenen Paarströme die aufgezeichnete Dreifamilientabelle (5/24, 1/6, 1/72, 11/432; -1/48, -1/108). Bijektion von Zustandsräumen mit Ladungen, nicht von Algebren.",
+     "en": "A bijection of the 96 chart states (one family weight omitted) onto the 96 native fibres carries hypercharge and isospin, the parity of the five carrier signs to the native grading and the reversal of all eight signs to the real structure K. With the native hypercharge the 60 carried pair currents give the recorded three-family table (5/24, 1/6, 1/72, 11/432; -1/48, -1/108). A bijection of state spaces with charges, not of algebras."
+    },
+    "status": "established_scoped",
+    "premise_ids": [
+     "premise:four-marks-session-recorded-objects-20261118"
+    ],
+    "scope": {
+     "de": "Rechnung an aufgezeichneten Objekten; leitet P1 nicht her, F1 bleibt offen.",
+     "en": "Computation on recorded objects; does not derive P1, F1 stays open."
+    },
+    "sources": [
+     {
+      "path": "experiments/theory-contracts/originlab-four-marks-session-20261118/check_native_chart_dictionary.py",
+      "sha256": "dc72f0091a2487c397756723d073d031ffd3941f28552ae49d5a2f160f5fcc3a",
+      "line_start": 1,
+      "line_end": 182
+     }
+    ],
+    "attempt_ids": []
+   },
+   {
+    "id": "finding:native-higgs-coupling-is-not-a-combination-of-the-pair-currents-20261118",
+    "title": {
+     "de": "Native Higgskopplung ist keine Kombination der Paarströme",
+     "en": "Native Higgs coupling is not a combination of the pair currents"
+    },
+    "statement": {
+     "de": "Die übertragenen Ströme antikommutieren mit der Gradierung, verbinden nie zwei Fasern derselben Generation; schwache Ströme erhalten die Blöcke 24, 36, 36, Farbströme wechseln sie. Der Majoranateil hat keinen Anteil im Spann der 60 Ströme, der Yukawateil 0,114 seines Normquadrats (D_F 0,103); der Anteil hängt von der Reihenfolge der Generationen ab (0,037 bis 0,103) und ist keine invariante Zahl. In jeder Reihenfolge liegt der größere Teil von D_F außerhalb.",
+     "en": "The carried currents anticommute with the grading and never connect two fibres of the same generation; weak currents keep the blocks 24, 36, 36, colour currents change them. The Majorana part has no share in the span of the 60 currents, the Yukawa part 0.114 of its squared norm (D_F 0.103); the share depends on the order of the generations (0.037 to 0.103) and is no invariant number. In every order the larger part of D_F lies outside."
+    },
+    "status": "excluded_scoped",
+    "premise_ids": [
+     "premise:four-marks-session-recorded-objects-20261118"
+    ],
+    "scope": {
+     "de": "Rechnung an aufgezeichneten Objekten; leitet P1 nicht her, F1 bleibt offen.",
+     "en": "Computation on recorded objects; does not derive P1, F1 stays open."
+    },
+    "sources": [
+     {
+      "path": "experiments/theory-contracts/originlab-four-marks-session-20261118/check_native_chart_dictionary.py",
+      "sha256": "dc72f0091a2487c397756723d073d031ffd3941f28552ae49d5a2f160f5fcc3a",
+      "line_start": 1,
+      "line_end": 182
+     }
+    ],
+    "attempt_ids": []
+   },
+   {
+    "id": "finding:mirror-sign-is-product-of-parities-of-marker-and-cut-20261118",
+    "title": {
+     "de": "Vorzeichen = Produkt der Paritäten von Marker und Schnitt",
+     "en": "Sign = product of the parities of marker and cut"
+    },
+    "statement": {
+     "de": "Flacher verklebter Zustand auf 96 Fasern. Die 60 hermiteschen übertragenen Schnitte haben feste Parität unter K (32 gerade, 28 ungerade). Higgsquadrat durch die Richtung des nativen Potentials: -0,165989 für beide Spiegel. Higgsquadrat durch die Paarströme: einfacher Spiegel überall negativ (-0,131 bis -0,033, abhängig von Strom und Generationenreihenfolge); K-Spiegel negativ nur durch die geraden Schnitte. Hyperladung: einfacher Spiegel -1/48 und -1/108; K-Spiegel negativ durch ungerade, positiv durch gerade Schnitte. Die aufgezeichnete Tabelle ist die des einfachen Spiegels.",
+     "en": "Flat glued state on 96 fibres. The 60 hermitian carried cuts have definite parity under K (32 even, 28 odd). Higgs square through the direction of the native potential: -0.165989 for both mirrors. Higgs square through the pair currents: plain mirror negative everywhere (-0.131 to -0.033, depending on current and order of the generations); K-mirror negative only through the even cuts. Hypercharge: plain mirror -1/48 and -1/108; K-mirror negative through odd, positive through even cuts. The recorded table is that of the plain mirror."
+    },
+    "status": "established_scoped",
+    "premise_ids": [
+     "premise:four-marks-session-recorded-objects-20261118"
+    ],
+    "scope": {
+     "de": "Rechnung an aufgezeichneten Objekten; leitet P1 nicht her, F1 bleibt offen.",
+     "en": "Computation on recorded objects; does not derive P1, F1 stays open."
+    },
+    "sources": [
+     {
+      "path": "experiments/theory-contracts/originlab-four-marks-session-20261118/check_higgs_square_with_native_mirror.py",
+      "sha256": "dae2696d4ce4b10124af26073af8a68ecdf296bafd426bde05cc704e0357cd9d",
+      "line_start": 1,
+      "line_end": 158
+     }
+    ],
+    "attempt_ids": []
+   },
+   {
+    "id": "finding:durations-are-orders-in-the-glued-form-20261118",
+    "title": {
+     "de": "Dauern sind Reihenfolgen in der verklebten Form",
+     "en": "Durations are orders in the glued form"
+    },
+    "statement": {
+     "de": "Annahme: verklebte Form. Ein verklebter Zustand mit Gewichten gibt Tr(rho^(1/2) F^+ rho^(1/2) G); der Transfer rho^(1/2) ist der modulare Fluss bei halber imaginärer Periode. Der flache Zustand hat keinen modularen Fluss. Jedes nichtflache Gewicht exp(-beta E) senkt die Summe der 60 Rückkehrwerte unter 15; mit der aufgezeichneten Tabelle bleibt keine Länge, nur die Reihenfolge. Im aufgezeichneten Kanonmodell gilt Z_UY/Z_0 = i q^(d_b); die Marken sind genau bei q = 1 von den Dauern unabhängig.",
+     "en": "Assumption: glued form. A glued state with weights gives Tr(rho^(1/2) F^+ rho^(1/2) G); the transfer rho^(1/2) is the modular flow at half an imaginary period. The flat state has no modular flow. Every non-flat weight exp(-beta E) lowers the sum of the 60 return values below 15; with the recorded table no length is left, only the order. In the recorded canonical model Z_UY/Z_0 = i q^(d_b); the marks are independent of the durations exactly at q = 1."
+    },
+    "status": "conditional",
+    "premise_ids": [
+     "premise:four-marks-session-recorded-objects-20261118"
+    ],
+    "scope": {
+     "de": "Gilt unter den genannten Annahmen; nicht aus P1 hergeleitet, F1 bleibt offen.",
+     "en": "Holds under the stated assumptions; not derived from P1, F1 stays open."
+    },
+    "sources": [
+     {
+      "path": "experiments/theory-contracts/originlab-four-marks-session-20261118/check_durations_as_orders.py",
+      "sha256": "44dafb19e085821999ef540b88d18d7efcd281791375a40e518c077f9cc03b4d",
+      "line_start": 1,
+      "line_end": 122
+     }
+    ],
+    "attempt_ids": []
+   },
+   {
+    "id": "finding:plain-mirror-maps-native-triple-to-its-cp-image-20261118",
+    "title": {
+     "de": "Einfacher Spiegel bildet das native Tripel auf sein CP-Bild ab",
+     "en": "Plain mirror maps the native triple to its CP image"
+    },
+    "statement": {
+     "de": "Der native endliche Diracoperator ist nicht reell, seine CP-ungeraden Invarianten sind nicht null (Yukawamatrizen der Diagnosedomäne; keine physikalische Aussage über Werte). Der K-Spiegel bildet das Tripel auf sich ab. Der einfache Spiegel gibt das Tripel aus den konjugierten Matrizen: gleiches Spektrum, entgegengesetzte CP-ungerade Invarianten. Ladungen und Gradierung bleiben unter dem einfachen Spiegel, wechseln unter dem K-Spiegel das Vorzeichen. Das Vorzeichen eta der Kappe ist auf beiden Seiten gleich (Massenvorzeichen, nicht CP-Vorzeichen). Dass P1 das Tripel mit seinem CP-Bild verklebt, ist nicht gezeigt.",
+     "en": "The native finite Dirac operator is not real and its CP-odd invariants are non-zero (Yukawa matrices of the diagnostic domain; no physical claim on values). The K-mirror maps the triple to itself. The plain mirror gives the triple built from the conjugate matrices: same spectrum, opposite CP-odd invariants. Charges and grading are unchanged under the plain mirror and change sign under the K-mirror. The sign eta of the cap is the same on both sides (mass sign, not CP sign). That P1 glues the triple to its CP image is not shown."
+    },
+    "status": "established_scoped",
+    "premise_ids": [
+     "premise:four-marks-session-recorded-objects-20261118"
+    ],
+    "scope": {
+     "de": "Rechnung an aufgezeichneten Objekten; leitet P1 nicht her, F1 bleibt offen.",
+     "en": "Computation on recorded objects; does not derive P1, F1 stays open."
+    },
+    "sources": [
+     {
+      "path": "experiments/theory-contracts/originlab-four-marks-session-20261118/check_mirror_and_cp.py",
+      "sha256": "b30cc7f741e99a0bb9a62caa5e74149a2f294d3fd0e4fb9b8b7cffbe5f0570ef",
+      "line_start": 1,
+      "line_end": 102
+     }
+    ],
+    "attempt_ids": []
+   },
+   {
+    "id": "finding:trace-of-p1-and-reflection-positivity-leave-the-plain-mirror-20261118",
+    "title": {
+     "de": "Spur von P1 und Reflexionspositivität lassen den einfachen Spiegel",
+     "en": "Trace of P1 and reflection positivity leave the plain mirror"
+    },
+    "statement": {
+     "de": "Die Standardform der in AX.P1.01 genannten Spur ist der verklebte Zustand; ihre Konjugation gibt Tr(F^+ G)/d. Die Form des K-Spiegels hat auf den hermiteschen Operatoren der 96 Fasern die Signatur (4656, 4560) und ist negativ auf Gradierung, Hyperladung, Isospin und elektrischer Ladung (-1, -5/24, -1/8, -1/3). Enthält die Algebra der reflektierten Form diese Ladungsmarker, bleibt unter der aufgezeichneten Forderung der Reflexionspositivität nur der einfache Spiegel. Nicht gezeigt: dass die Originalalgebra die Ladungsmarker enthält und der Originalzustand die Spur auf dem Materiesektor ist.",
+     "en": "The standard form of the trace named in AX.P1.01 is the glued state; its conjugation gives Tr(F^+ G)/d. The form of the K-mirror has signature (4656, 4560) on the hermitian operators of the 96 fibres and is negative on grading, hypercharge, isospin and electric charge (-1, -5/24, -1/8, -1/3). If the algebra of the reflected form contains these charge markers, only the plain mirror remains under the recorded demand of reflection positivity. Not shown: that the original algebra contains the charge markers and that the original state is the trace on the matter sector."
+    },
+    "status": "conditional",
+    "premise_ids": [
+     "premise:four-marks-session-recorded-objects-20261118",
+     "premise:declared-p1-p2"
+    ],
+    "scope": {
+     "de": "Gilt unter den genannten Annahmen; nicht aus P1 hergeleitet, F1 bleibt offen.",
+     "en": "Holds under the stated assumptions; not derived from P1, F1 stays open."
+    },
+    "sources": [
+     {
+      "path": "experiments/theory-contracts/originlab-four-marks-session-20261118/check_p1_and_mirror.py",
+      "sha256": "1500a9b9f880835735c81a1180ba771a0fab28cbb46909f3ae5e82a4639bc584",
+      "line_start": 1,
+      "line_end": 116
+     }
+    ],
+    "attempt_ids": []
+   },
+   {
+    "id": "finding:plain-conjugation-is-family-d-real-structure-is-family-a-20261118",
+    "title": {
+     "de": "Einfache Konjugation = Familie D, Realstruktur = Familie A",
+     "en": "Plain conjugation = family D, real structure = family A"
+    },
+    "statement": {
+     "de": "Nachgerechnet auf C^2: Familie D invertiert die Uhr rho = diag(i,1) exakt, Familie A gibt -i rho. Auf den 96 Fasern, gelesen als C^2 x C^48 nach der Gradierung mit der Uhr rho x 1: Die einfache Konjugation invertiert die Uhr (Familie D, aufgezeichnete OS Konjugation); die Realstruktur K ist der Tausch der beiden Komponenten und gibt -i mal die Uhr (Familie A, mu = 1, aufgezeichneter Schnitt). Die 12 Kappenlinien sind unter K fest, nicht unter der einfachen Konjugation. Annahme: die Uhr des Bestands wirkt so auf den Fasern.",
+     "en": "Recomputed on C^2: family D inverts the clock rho = diag(i,1) exactly, family A gives -i rho. On the 96 fibres, read as C^2 x C^48 by the grading with the clock rho x 1: plain conjugation inverts the clock (family D, the recorded OS conjugation); the real structure K is the exchange of the two components and gives -i times the clock (family A, mu = 1, the recorded section). The 12 cap lines are fixed by K, not by plain conjugation. Assumption: the recorded clock acts on the fibres in this way."
+    },
+    "status": "conditional",
+    "premise_ids": [
+     "premise:four-marks-session-recorded-objects-20261118"
+    ],
+    "scope": {
+     "de": "Gilt unter den genannten Annahmen; nicht aus P1 hergeleitet, F1 bleibt offen.",
+     "en": "Holds under the stated assumptions; not derived from P1, F1 stays open."
+    },
+    "sources": [
+     {
+      "path": "experiments/theory-contracts/originlab-four-marks-session-20261118/check_v519_families_on_fibres.py",
+      "sha256": "61fd53b0142552eb1ef17e2cf96561b8cce45764dd6916ec9bbb2097693dd772",
+      "line_start": 1,
+      "line_end": 110
+     }
+    ],
+    "attempt_ids": []
+   },
+   {
+    "id": "finding:equal-time-mixed-mark-is-half-the-commutator-20261118",
+    "title": {
+     "de": "Gemischte Marke bei gleicher Zeit = halber Kommutator",
+     "en": "Equal-time mixed mark = half the commutator"
+    },
+    "statement": {
+     "de": "Für jeden unter K reellen Zustand P, jeden geraden Marker U und jeden ungeraden Marker Y gilt Tr(P U Y) = (1/2) Tr(P [U,Y]): rein imaginär, null wenn U und Y vertauschen. Mit U = Higgsquadrat und Y = Hyperladung auf dem Sektor eines Vorzeichens von D_F: Z_U = 0,206814, Z_Y = 0, Z_UY = 0 exakt, auch auf den 12 Kappenlinien. Higgsquadrat und Quadrate der Higgsrichtungen vertauschen mit der Hyperladung; D_F^2 und |D_F| vertauschen mit sign(D_F). Eine von null verschiedene gemischte Marke braucht einen Transfer endlicher Länge oder einen zweiten Marker, der mit dem ersten nicht vertauscht.",
+     "en": "For every state P real under K, every even marker U and every odd marker Y: Tr(P U Y) = (1/2) Tr(P [U,Y]): purely imaginary, zero when U and Y commute. With U = Higgs square and Y = hypercharge on the sector of one sign of D_F: Z_U = 0.206814, Z_Y = 0, Z_UY = 0 exactly, also on the 12 cap lines. The Higgs square and the squares of the Higgs directions commute with the hypercharge; D_F^2 and |D_F| commute with sign(D_F). A non-zero mixed mark needs a transfer of non-zero length or a second marker that does not commute with the first."
+    },
+    "status": "established_scoped",
+    "premise_ids": [
+     "premise:four-marks-session-recorded-objects-20261118"
+    ],
+    "scope": {
+     "de": "Rechnung an aufgezeichneten Objekten; leitet P1 nicht her, F1 bleibt offen.",
+     "en": "Computation on recorded objects; does not derive P1, F1 stays open."
+    },
+    "sources": [
+     {
+      "path": "experiments/theory-contracts/originlab-four-marks-session-20261118/check_original_type_markers_on_mass_sector.py",
+      "sha256": "34a536a26b786fa516360e677a01297f396c7f51deac9413d4d1e6ea6af2b7e8",
+      "line_start": 1,
+      "line_end": 113
+     }
+    ],
+    "attempt_ids": []
+   },
+   {
+    "id": "finding:mixed-mark-through-potential-cut-is-chiral-average-of-marker-20261118",
+    "title": {
+     "de": "Gemischte Marke durch den Potentialschnitt = chiraler Mittelwert",
+     "en": "Mixed mark through the potential cut = chiral average"
+    },
+    "statement": {
+     "de": "Flacher verklebter Zustand auf dem Sektor sign(D_F) = eta, gleiche Zeit, Schnitt X = Richtung des nativen Potentials. Für jeden Marker c, der mit der Gradierung vertauscht: Z_c = <c>, Z_X = 0, Z_cX = i eta <gamma c> (Mittel über die 96 Fasern). Gradierung 1, Lift (1+gamma)/2 gibt 1/2. Hyperladung, ihr Kubus, Isospin, elektrische Ladung, Teilchenzahl, Hyperladungsquadrat: 0 (für Y und Y^3 die Anomaliebedingungen der Ladungstabelle mit rechtshändigem Neutrino). Vorzeichen der Hyperladung 5/16. Mit übertragenen Paarströmen als Schnitt sind die Marken im Sektor klein, nicht null und von Strom und Generationenreihenfolge abhängig.",
+     "en": "Flat glued state on the sector sign(D_F) = eta, equal time, cut X = direction of the native potential. For every marker c commuting with the grading: Z_c = <c>, Z_X = 0, Z_cX = i eta <gamma c> (average over the 96 fibres). Grading 1, lift (1+gamma)/2 gives 1/2. Hypercharge, its cube, isospin, electric charge, particle number, hypercharge squared: 0 (for Y and Y^3 the anomaly conditions of the charge table with a right-handed neutrino). Sign of the hypercharge 5/16. With carried pair currents as cut the marks in the sector are small, non-zero and depend on current and order of the generations."
+    },
+    "status": "established_scoped",
+    "premise_ids": [
+     "premise:four-marks-session-recorded-objects-20261118"
+    ],
+    "scope": {
+     "de": "Rechnung an aufgezeichneten Objekten; leitet P1 nicht her, F1 bleibt offen.",
+     "en": "Computation on recorded objects; does not derive P1, F1 stays open."
+    },
+    "sources": [
+     {
+      "path": "experiments/theory-contracts/originlab-four-marks-session-20261118/check_charge_changing_cut.py",
+      "sha256": "8fd80a7214b898df336c0e9a9894c3f4f4035780a27faac1a9267c5ab934219a",
+      "line_start": 1,
+      "line_end": 132
+     }
+    ],
+    "attempt_ids": []
+   },
+   {
+    "id": "finding:rate-q-as-chiral-asymmetry-of-the-marker-20261118",
+    "title": {
+     "de": "Rate q als chirale Asymmetrie des Markers",
+     "en": "Rate q as chiral asymmetry of the marker"
+    },
+    "statement": {
+     "de": "Annahme: Sektor eines Vorzeichens von D_F, gleiche Zeit, Schnitt = Richtung des nativen Potentials. Für einen nichtnegativen Marker c, der mit der Gradierung vertauscht, gilt Z_cX/Z_c = i eta q mit q = <gamma c>/<c>, |q| <= 1. Higgspaar um eine Chiralität: sum V_a P_L V_a = P_R H^2, q = -1 bzw. +1 exakt; volles Higgsquadrat q = 0. Projektor auf positive Hyperladung: <c> = 15/32, q = 1/3; elektrische Ladung, Isospin, Teilchen: q = 0. In dieser Lesart ist q keine Rate in der Zeit. Nicht gezeigt: dass der ursprüngliche Higgsmarker um eine Chiralität eingefügt ist.",
+     "en": "Assumption: sector of one sign of D_F, equal time, cut = direction of the native potential. For a non-negative marker c commuting with the grading, Z_cX/Z_c = i eta q with q = <gamma c>/<c>, |q| <= 1. Higgs pair around one chirality: sum V_a P_L V_a = P_R H^2, q = -1 resp. +1 exactly; full Higgs square q = 0. Projector on positive hypercharge: <c> = 15/32, q = 1/3; electric charge, isospin, particles: q = 0. In this reading q is no rate in time. Not shown: that the original Higgs marker is inserted around one chirality."
+    },
+    "status": "conditional",
+    "premise_ids": [
+     "premise:four-marks-session-recorded-objects-20261118"
+    ],
+    "scope": {
+     "de": "Gilt unter den genannten Annahmen; nicht aus P1 hergeleitet, F1 bleibt offen.",
+     "en": "Holds under the stated assumptions; not derived from P1, F1 stays open."
+    },
+    "sources": [
+     {
+      "path": "experiments/theory-contracts/originlab-four-marks-session-20261118/check_rate_as_chiral_asymmetry.py",
+      "sha256": "7550fe65bd4fc14e8582d87e1d9df29b3f95dbd380a424bd10a290b8c429aabf",
+      "line_start": 1,
+      "line_end": 109
+     }
+    ],
+    "attempt_ids": []
+   },
+   {
+    "id": "finding:candidate-is-recorded-canonical-bundle-and-passes-the-consumer-20261118",
+    "title": {
+     "de": "Kandidat ist das aufgezeichnete Kanonbündel und besteht den Verbraucher",
+     "en": "Candidate is the recorded canonical bundle and passes the consumer"
+    },
+    "statement": {
+     "de": "Auf der Ebene aus Kappenlinie und ihrem Bild unter der Gradierung sind Gradierung sigma_x, sign(D_F) eta sigma_z, Richtung des Potentials -eta sigma_y, der gerade Transfer ein Vielfaches von 1 (alle 12 Linien). Eine diagonale Unitäre bildet das auf das aufgezeichnete Paar aus coherent_origin.py ab: der native Kandidat ist exakt das Kanonbündel mit q = 1 und Orientierung eta. Der unveränderte R113 Verbraucher liefert darauf Z_0 = 1, Z_U = Z_Y = 0, Z_UY = +-i, ABAB = -1; physical_source_identity_proved bleibt False.",
+     "en": "On the plane of a cap line and its image under the grading: grading sigma_x, sign(D_F) eta sigma_z, direction of the potential -eta sigma_y, the even transfer a multiple of 1 (all 12 lines). A diagonal unitary maps this to the recorded pair of coherent_origin.py: the native candidate is exactly the canonical bundle with q = 1 and orientation eta. The unchanged R113 consumer returns Z_0 = 1, Z_U = Z_Y = 0, Z_UY = +-i, ABAB = -1 on it; physical_source_identity_proved stays False."
+    },
+    "status": "conditional",
+    "premise_ids": [
+     "premise:four-marks-session-recorded-objects-20261118",
+     "premise:native-filled-negative-spectrum-20261118"
+    ],
+    "scope": {
+     "de": "Gilt unter den genannten Annahmen; nicht aus P1 hergeleitet, F1 bleibt offen.",
+     "en": "Holds under the stated assumptions; not derived from P1, F1 stays open."
+    },
+    "sources": [
+     {
+      "path": "experiments/theory-contracts/originlab-four-marks-session-20261118/check_three_steps.py",
+      "sha256": "9762008b2cc89e85f02cf0285bc8786b5f35fbaaf7b1e375db9a3ff91f6b0159",
+      "line_start": 1,
+      "line_end": 152
+     }
+    ],
+    "attempt_ids": []
+   },
+   {
+    "id": "finding:reflected-form-is-unique-under-recorded-conditions-20261118",
+    "title": {
+     "de": "Die reflektierte Form ist unter den aufgezeichneten Bedingungen eindeutig",
+     "en": "The reflected form is unique under the recorded conditions"
+    },
+    "statement": {
+     "de": "Annahme: die Originalform ist ein Vektorzustand auf zwei Seiten der Naht. Ein solcher Vektor ist eine Matrix C mit Form Tr(C^+ G C F^+); auf F = |x><y| ist sie conj(<x|C|x>)<y|C|y>, also genau dann nichtnegativ, wenn C eine Phase mal eine positive Matrix ist. Mit C = rho^(1/2) erzwingen die 60 aufgezeichneten Rückkehrwerte das flache rho. Mit dem einfachen Spiegel folgt: die Form ist Tr(F^+ G)/d mit Referenz 1.",
+     "en": "Assumption: the original form is a vector state on two sides of the seam. Such a vector is a matrix C with form Tr(C^+ G C F^+); on F = |x><y| it is conj(<x|C|x>)<y|C|y>, hence non-negative exactly when C is a phase times a positive matrix. With C = rho^(1/2) the 60 recorded return values force the flat rho. With the plain mirror: the form is Tr(F^+ G)/d with reference 1."
+    },
+    "status": "conditional",
+    "premise_ids": [
+     "premise:four-marks-session-recorded-objects-20261118",
+     "premise:declared-p1-p2"
+    ],
+    "scope": {
+     "de": "Gilt unter den genannten Annahmen; nicht aus P1 hergeleitet, F1 bleibt offen.",
+     "en": "Holds under the stated assumptions; not derived from P1, F1 stays open."
+    },
+    "sources": [
+     {
+      "path": "experiments/theory-contracts/originlab-four-marks-session-20261118/check_three_steps.py",
+      "sha256": "9762008b2cc89e85f02cf0285bc8786b5f35fbaaf7b1e375db9a3ff91f6b0159",
+      "line_start": 1,
+      "line_end": 152
+     }
+    ],
+    "attempt_ids": []
+   },
+   {
+    "id": "finding:candidate-needs-majorana-neutrinos-and-nonzero-lightest-mass-20261118",
+    "title": {
+     "de": "Kandidat braucht Majorana-Neutrinos und eine von null verschiedene leichteste Masse",
+     "en": "Candidate needs Majorana neutrinos and a non-zero lightest mass"
+    },
+    "statement": {
+     "de": "Ohne Majoranaterm hat D_F keine eindeutige Eigenlinie; ohne Neutrino-Yukawaterm hat D_F Nullwerte und eta ist nicht definiert. Für fünf zufällige Wahlen aller Yukawa- und Majoranamatrizen bleiben die Marken (1,0,0,i eta) auf 12 eindeutigen Linien. Die eingefrorene Vorhersage (normale Ordnung, Summe etwa 0,0588 eV) liegt am unteren Rand: mit genäherten gemessenen Aufspaltungen 0,0586 eV bei m_1 = 0, 0,0588 eV bei m_1 = 0,0002 eV.",
+     "en": "Without the Majorana term D_F has no unique eigenline; without the neutrino Yukawa term D_F has zero values and eta is undefined. For five random choices of all Yukawa and Majorana matrices the marks (1,0,0,i eta) persist on 12 unique lines. The frozen prediction (normal ordering, sum about 0.0588 eV) lies at the lower edge: with approximate measured splittings 0.0586 eV at m_1 = 0, 0.0588 eV at m_1 = 0.0002 eV."
+    },
+    "status": "conditional",
+    "premise_ids": [
+     "premise:four-marks-session-recorded-objects-20261118",
+     "premise:native-filled-negative-spectrum-20261118"
+    ],
+    "scope": {
+     "de": "Gilt unter den genannten Annahmen; nicht aus P1 hergeleitet, F1 bleibt offen.",
+     "en": "Holds under the stated assumptions; not derived from P1, F1 stays open."
+    },
+    "sources": [
+     {
+      "path": "experiments/theory-contracts/originlab-four-marks-session-20261118/check_three_steps.py",
+      "sha256": "9762008b2cc89e85f02cf0285bc8786b5f35fbaaf7b1e375db9a3ff91f6b0159",
+      "line_start": 1,
+      "line_end": 152
+     }
+    ],
+    "attempt_ids": []
+   }
+  ],
+  "tasks": [],
+  "strategies": [],
+  "reviewed_attempt_ids": [],
+  "connections": []
+ },
+ "premises": [
+  {
+   "id": "premise:four-marks-session-recorded-objects-20261118",
+   "title": {
+    "de": "Nachrechnung an aufgezeichneten Objekten",
+    "en": "Recomputation on recorded objects"
+   },
+   "statement": {
+    "de": "Exakte oder hochgenaue Rechnung an aufgezeichneten Objekten (v117, R066, v484/v485/v512, v799, E8WORD, coherent_origin, nativer Assembler). Keine Herleitung aus P1; kein Ledgerwechsel.",
+    "en": "Exact or high-precision computation on recorded objects (v117, R066, v484/v485/v512, v799, E8WORD, coherent_origin, native assembler). No derivation from P1; no ledger change."
+   }
+  },
+  {
+   "id": "premise:free-seam-on-two-copies-20261118",
+   "title": {
+    "de": "Freie Naht auf zwei Kopien",
+    "en": "Free seam on two copies"
+   },
+   "statement": {
+    "de": "Annahme: Die Naht ist ein freies Fermionfeld, gelesen auf zwei Kopien (gleichwertig ein geladenes Feld); die gewichtete reflektierte Form auf den Marken ist der Tausch der Kopien auf Bögen. Nicht aus P1 hergeleitet.",
+    "en": "Assumption: the seam is a free fermion field read on two copies (equivalently one charged field); the weighted reflected form on the marks is the exchange of the copies on arcs. Not derived from P1."
+   }
+  },
+  {
+   "id": "premise:native-filled-negative-spectrum-20261118",
+   "title": {
+    "de": "Nativer Zustand als gefülltes negatives Spektrum",
+    "en": "Native state as filled negative spectrum"
+   },
+   "statement": {
+    "de": "Annahme: Der Nahtzustand ist das gefüllte negative Spektrum des unveränderten assemblierten Operators h_N; wo ein Transfer gebraucht wird, ist er eine gerade Funktion des Operators der konstanten Mode. Der Assembler weist h_N nicht als Generator aus.",
+    "en": "Assumption: the seam state is the filled negative spectrum of the unchanged assembled operator h_N; where a transfer is needed it is an even function of the constant-mode operator. The assembler does not label h_N as a generator."
+   }
+  }
+ ],
+ "reason": "Session of 17/18 November 2026: exact recomputation on recorded objects and scoped hypotheses; 55 check scripts with stored outputs; round 33 corrects the native potential term (-i gamma D_F) and adds the cap from D_F; no ledger change, F1 open."
+}

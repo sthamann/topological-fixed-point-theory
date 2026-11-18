@@ -1,0 +1,22 @@
+P1  the form
+  ok   explicit two sides: <B| G x conj(F) |B> = Tr(F^+ G)/d
+  ok   the mirror (exchange of the sides with conjugation) fixes the glued state; the reference Q[1,1] is 1
+  ok   Q[F,F] = Tr(F^+ F)/d > 0 for every non-zero F: the form is positive
+P2  the recorded marks as reflected overlaps
+  ok   128 states: Z_U = Q[H,H], Z_Y = Q[X,X], Z_UY = Q[XH, HX] reproduce the recorded table   {'colour': [(Fraction(5, 24), Fraction(1, 4), Fraction(11, 288), Fraction(-1, 72))], 'weak': [(Fraction(5, 24), Fraction(1, 4), Fraction(1, 48), Fraction(-1, 32))]}
+  ok   128 states: both orders have the same norm Z_U Z_Y; the connected answer is the overlap of the two orders minus that norm, = -(1/2) Q[[H,X],[H,X]]
+  ok   96 states: Z_U = Q[H,H], Z_Y = Q[X,X], Z_UY = Q[XH, HX] reproduce the recorded table   {'colour': [(Fraction(5, 24), Fraction(1, 6), Fraction(11, 432), Fraction(-1, 108))], 'weak': [(Fraction(5, 24), Fraction(1, 6), Fraction(1, 72), Fraction(-1, 48))]}
+  ok   96 states: both orders have the same norm Z_U Z_Y; the connected answer is the overlap of the two orders minus that norm, = -(1/2) Q[[H,X],[H,X]]
+P3  the sign
+  ok   Cauchy-Schwarz for the positive form: |Q[XH, HX]| <= Z_U Z_Y, so the connected answer is never positive and vanishes only when marker and cut commute; the recorded negative sign needs no further input
+P4  one sign of D_F
+  ok   glued state of the sector sign(D_F) = +1 (48 states): single marks (1, 0, 0, i eta), the recorded canonical marks, now for the whole sector and not for one line
+  ok   glued state of the sector sign(D_F) = -1 (48 states): single marks (1, 0, 0, i eta), the recorded canonical marks, now for the whole sector and not for one line
+  ok   on the full glued state of the 96 fibres all three single marks vanish: the phase i eta needs the choice of one sign of D_F
+P5  the recorded real structure as mirror
+      Q_K[A,A] (in units of Tr A^+A/96 for the first five): {'1': 1.0, 'Higgs square': 1.0, 'direction of potential': 1.0, 'sign of D_F': 1.0, 'D_F': 1.0, 'grading': -1.0, 'hypercharge': -0.208333}
+  ok   with the mirror 'exchange and K-conjugation' the form is positive on the operators that are even under K (1, Higgs square, direction of the potential, sign of D_F, D_F)
+  ok   and negative on the charges: grading -1, hypercharge -5/24: the K-mirror is a reflection-positive mirror only for the even operators
+  ok   for the hypercharge through the native potential the connected answer is -0.129976 with the plain mirror and +0.129976 with the K-mirror: the sign of the recorded answer tells the two mirrors apart   (np.float64(-0.129976), np.float64(0.129976))
+
+all checks passed

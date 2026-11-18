@@ -1,0 +1,41 @@
+W1  pairing products and the two-torsion triangle
+  ok   resolvent roots: theta_1 - theta_2 = (x1 - x4)(x3 - x2), and cyclically
+  ok   the theta_k solve theta^3 - 4 q theta + z^2 = 0 up to sign convention (resolvent of the quartic)
+      so r_k is the side of the triangle of the three two-torsion points opposite to the vertex k,
+      and p_k = 1 - 2 (side)/(perimeter).
+W2  closed form of the overlap matrix
+  ok   zero vector sum forces c1 + c2 + c3 = -1; then T has eigenvalue 2 on the symmetric sum
+  ok   and eigenvalue 1 + c_k = 2 p_k on the character of the pairing k
+  ok   trace one: T/4 = (1/2) P_sym + sum_k (p_k/2) P_k with p_1 + p_2 + p_3 = 1
+W3  the canonical frame (vector sum zero), numerically
+  ok   eigenvalues of T in the canonical frame = (2, 2 p_1, 2 p_2, 2 p_3) at four parameter values   8.9e-16
+W4  along the family
+  ok   z = 0, the original square: p = (0, 1/2, 1/2); the pairing of the diagonals carries no weight   [0.  0.5 0.5]
+  ok   z at a parameter mark, tetrahedron: p = (1/3, 1/3, 1/3), T = (2/3) I + (1/3) 11^T (the form G2)   [0.3333 0.3334 0.3334]
+  ok   z -> infinity, two marks collide: p -> (0, 0, 1)   [0. 0. 1.]
+  ok   small real z: the third weight grows like z^4/12   [0.08333 0.08334 0.08339]
+  ok   on the rays between the marks (arg z = 45 degrees) the third weight stays zero: marks on a circle   [0. 0. 0. 0.]
+  ok   general small z: third weight = (Re z^2)^2/12 to leading order   [5.676e-06 1.094e-06]
+      real z from the square to a mark:
+        z = 0.0   p = (0.0000, 0.5000, 0.5000)
+        z = 0.25  p = (0.0003, 0.4998, 0.4998)
+        z = 0.5   p = (0.0054, 0.4973, 0.4973)
+        z = 0.75  p = (0.0308, 0.4846, 0.4846)
+        z = 0.9   p = (0.0815, 0.4592, 0.4592)
+        z = 0.99  p = (0.1998, 0.4001, 0.4001)
+        z = 1.0   p = (0.3333, 0.3334, 0.3334)
+W5  comparison with recorded numbers
+  ok   degree two (the three-dimensional generation space): overlap ((1+c)/2)^2 = 1/9 at the tetrahedron
+  ok   diagonal of a mark cycle in the basis of the quarter turn: (0, +-i/2, -+i/2), the recorded harmonic diagonal   [0, -I/2, I/2]
+  ok   diagonal of the weight operator of the square in the same basis: (0, 1/2, 1/2)   [0, 1/2, 1/2]
+  ok   at the tetrahedron the form equals the Hodge masses: (1/6) per mark + (1/3) on the symmetric sum
+W6  fifth pasted note: averaging over the sheets permuted by a mark loop
+  ok   each E_a is a projector of rank two: the symmetric sum plus one line L_a
+  ok   (1/2) sum_a E_a = (2/3) I + (1/3) 11^T = G2 exactly, with no input from the surface
+  ok   the four lines L_a have squared overlap 1/9 (the recorded value): a second mark measurement gives 1/9
+  ok   the same matrix as four mark pieces of mass 1/4, and as 1/6 per mark plus 1/3 on the symmetric sum
+      -> the value on the symmetric sum does not separate the two measures (correction accepted).
+  ok   q eliminated: 256 X^3 (X^3 + z)^3 + 27 (z^4 - 1) = 0; at each mark four points, each threefold
+  ok   the model of W2 at the tetrahedron is the same matrix
+
+all checks passed

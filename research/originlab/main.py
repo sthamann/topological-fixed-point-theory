@@ -41,6 +41,8 @@ FINITE_CONTROLS += ("f1_reflected_cap",)
 CAMPAIGNS += ("f1_reflected_cap",)
 FINITE_CONTROLS += ("r113_pair_search",)
 CAMPAIGNS += ("r113_pair_search",)
+FINITE_CONTROLS += ("f1_two_arc_purity",)
+CAMPAIGNS += ("f1_two_arc_purity",)
 
 
 def atomic_json(path, payload):
@@ -363,6 +365,9 @@ def execute(campaign, root, args, suggestion_rows, retained_rows, prior_question
     if campaign == "f1_reflected_cap":
         from f1_reflected_cap import controls
         return controls(root)
+    if campaign == "f1_two_arc_purity":
+        from f1_two_arc_purity import controls
+        return controls()
     if campaign == "r113_pair_search":
         from r113_pair_search import search
         return search(root)
