@@ -102,7 +102,9 @@ def candidates(base, cost):
 
 
 def original_session_checks(root):
+    from e8_family_return import controls as family_return
     from f1_binary_clifford_origin import controls as binary
+    from f1_four_family_transport import controls as four_family_transport
     from f1_native_pair_selection import controls as native_pair
     from f1_spherical_pairing_selection import controls as sphere
     from f1_reflected_cap import ASSEMBLER, controls as reflected_cap
@@ -113,6 +115,8 @@ def original_session_checks(root):
     from source import NATIVE
 
     checks = {"binary":binary(),"spherical":sphere(),"native_pair":native_pair(root),
+              "e8_family_return":family_return(),
+              "four_family_transport":four_family_transport(),
               "relative_connected_history":connected_history_control()}
     if (root/ASSEMBLER).is_file() and (root/NATIVE).is_file():
         checks["reflected_cap"] = reflected_cap(root)
