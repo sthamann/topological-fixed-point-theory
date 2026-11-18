@@ -1,0 +1,216 @@
+ISING NORMAL MAJORANA SEWING TEST
+=================================
+
+Stand: 2026-10-28
+Urteil: Die Ising Zerlegung erklaert den nativen Fuenferstrom exakt auf der
+Ebene des A3_1 Stromnetzes. Sie liefert jedoch noch keinen originalen
+Nahtpfeil. Das normale Cliffordzeichen gamma_n des P1 Diracoperators ist
+im vorhandenen Original ein Operator auf geometrischen Cauchydaten. Die
+sechste Majorana chi_6 ist ein lokales CAR Feld im internen A3_1 Netz. Eine
+Identifikation beider Typen ist weder im P1 Randdatum noch in der alten
+Sechzehn Majorana Realisierung angegeben.
+
+
+1. Der exakte positive Stromsatz
+--------------------------------
+
+Das vorhandene Carrier Netz enthaelt
+
+  (A3)_1 = SU(4)_1 = SO(6)_1.
+
+In seiner Darstellung durch sechs reelle NS Majoranafelder chi_A sind die
+horizontalen Stroeme
+
+  J_AB(z) = i :chi_A chi_B:(z),       1 <= A < B <= 6.      (1)
+
+Eine nichtausgeartete alternierende Form Omega auf C^4 bestimmt
+
+  Sp(4) = Spin(5) subset SU(4) = Spin(6).                   (2)
+
+Nach einer zu Omega passenden orthonormalen Majoranabasis zerfaellt die
+Adjungierte Darstellung ohne Dimensionsschluss:
+
+  so(6) = so(5) plus R^5,
+  so(5) = span{J_ab : 1 <= a < b <= 5},
+  R^5   = span{J_a6 : 1 <= a <= 5}.                         (3)
+
+Die zentralen Ladungen stimmen ebenfalls exakt:
+
+  c(SU(4)_1) = 15/(1+4) = 3,
+  c(Sp(4)_1) = c(SO(5)_1) = 10/(1+3) = 5/2,
+  c_coset = 1/2.                                            (4)
+
+Der lokale bosonische Commutant von SO(5)_1 in SO(6)_1 ist damit die gerade
+Ising Virasoro Algebra mit c=1/2. Das einzelne Feld chi_6 gehoert nicht
+automatisch zu diesem bosonischen Vakuumcommutanten. Es ist das ungerade
+Feld der zugehoerigen graduierten fermionischen Erweiterung. Die gemischten
+Stroeme J_a6=i:chi_a chi_6: sind dagegen gerade und wirkliche Felder des
+SO(6)_1 Stromnetzes. Dies ist genau die gesuchte Form eines normalen Index:
+J_a6 koppelt eine der fuenf Spin(5) Richtungen an den komplementaeren
+Majoranamodus, ohne chi_6 allein in die bosonische Algebra einzuschmuggeln.
+
+Die bereits ausgefuehrte native Rechnung ist dieselbe Aussage in der
+vierdimensionalen Schrödingerdarstellung. Fuer
+
+  Omega = I tensor iY,
+  Gamma = {XI,YX,YY,YZ,ZI}                                  (5)
+
+gilt
+
+  Gamma_a^T Omega = Omega Gamma_a,
+  Gamma_a Gamma_b + Gamma_b Gamma_a = 2 delta_ab I.          (6)
+
+Auf Bell10 = Sym^2(C^4) wirkt der halbe horizontale Strom
+
+  D_a(P) = (Gamma_a P + P Gamma_a^T)/2
+         = J_0(Gamma_a/2) P.                                (7)
+
+Die fuenf D_a sind bis zu einer signierten Permutation genau die bereits
+aus dem E8 Hodge Tensor gewonnenen K_a. Insbesondere
+
+  sum_a D_a^* D_a = 3 I_10.                                 (8)
+
+Die inklusive Stromkontraktion besitzt deshalb die kanonische Normierung
+1/3. Sie braucht keinen messbaren C^60 Recordeffekt. Der Recordeffekt ist
+nur eine moegliche Stinespring Operationalisierung derselben Kontraktion.
+
+
+2. Warum der normale P1 Index diesen Satz noch nicht auswaehlt
+----------------------------------------------------------------
+
+Das originale einseitige P1 Randdatum ist
+
+  T_boundary = (A_+, H_+, D_+, J, Gamma, B_Sigma)
+
+und hat im Kragen die Produktform
+
+  D_+ = gamma_n (partial_n + B_Sigma).                       (9)
+
+Hier ist gamma_n Cliffordmultiplikation auf dem geometrischen Spinorbuendel.
+Es ist ein beschraenkter Operator auf den Cauchydaten des Diracproblems. Das
+Original erklaert eine Faktorisierung
+
+  H = L^2(M_tilde,S) tensor H_int                            (10)
+
+ausdruecklich als analytische Realisierungswahl und nicht als Bestandteil
+des Randdatums.
+
+Demgegenueber ist chi_6(z) ein operatorwertiges lokales CAR Feld im
+internen SO(6)_1 Stromnetz. Es besitzt eine Zweipunktfunktion, Moden und
+eine OPE. Die Gleichung
+
+  gamma_n = chi_6                                              (11)
+
+ist daher nicht einmal typgerecht. Ein einzelnes normales Symbol in (9)
+markiert keinen der sechs internen Majoranamodi.
+
+Die alte E8 Architektur stellt das Carrier Netz zwar durch zehn plus sechs,
+also insgesamt sechzehn freie Majoranafelder dar. Sie sagt jedoch nicht,
+welches der sechs A3 Felder die geometrische Normalrichtung sein soll. Der
+alte Compiler Current Descendant verwendet aequivalent vier komplexe NS
+Fermionen und leitet den Stromnullmodus J_0(X) exakt her. Auch dort ist die
+Wahl von Omega und damit die Aufspaltung sechs gleich fuenf plus eins keine
+Folge des P1 Kragens.
+
+Die native Rechnung zeigt dieselbe Grenze von der anderen Seite. Von den
+15 nichttrivialen hermiteschen Pauli Richtungen erfuellen genau die fuenf
+Gamma_a die Plusrelation in (6); die uebrigen zehn erfuellen
+
+  P^T Omega = - Omega P.                                    (12)
+
+Die kompakte Sternoperation beziehungsweise Reflexionspositivitaet allein
+unterscheidet diese beiden Mengen nicht, denn alle 15 Richtungen sind
+hermitesch. Erst die markierte alternierende Linie Omega liefert die
+Spin(5) Zerlegung. Der vorhandene native F20 Vertrag bezeichnet diese
+Omega Linie als mathematisch erzeugte markierte Fortsetzung; er beweist
+nicht, dass P1 gerade sie physisch auswaehlt.
+
+
+3. Die kleinste fehlende Originalrelation
+------------------------------------------
+
+Der Ising Weg wird zu einem originalen Sewing Satz, sobald ein lokaler,
+zustandserhaltender Feldintertwiner vorliegt, der
+
+  * den normalen reflexionsungeraden Quellgenerator auf chi_6,
+  * fuenf tangentiale Quellgeneratoren auf chi_1,...,chi_5,
+  * die Zweipunktfunktion, CAR Relation und OPE,
+  * und die markierte Form Omega
+
+transportiert. Dann folgen die fuenf Stroeme i:chi_a chi_6: aus der
+Feldmultiplikation, und (8) liefert ihre inklusive Normierung ohne weitere
+Messregel.
+
+Keine der gelesenen Originalstellen liefert diesen Intertwiner. Die
+vorhandene Nahtquasifreiheit der sechzehn Majoranafelder bestimmt nach Wahl
+des Feldnetzes alle Wick Korrelationen, aber sie markiert weder chi_6 noch
+die Omega gerade Fuenferkomponente. Damit ist der Ising Coset ein enger,
+quellenkompatibler Kandidat und kein neuer freier Majoranamodellzweig. Der
+erste zusaetzliche Schritt bleibt die konkrete geometrisch interne
+Feldabbildung, nicht ein C^60 Recordprojektor.
+
+
+4. Geltungsbereich
+------------------
+
+Bewiesen sind:
+
+  * die SO(6)_1 nach SO(5)_1 plus gerade Ising Commutantzerlegung,
+  * die Identitaet der fuenf Komplementstroeme mit dem nativen Hodge K5,
+  * die inklusive Norm sum D_a^*D_a=3I und damit der Faktor 1/3,
+  * die Entbehrlichkeit einer physischen Recordmessung fuer diese
+    mathematische Stromkontraktion.
+
+Nicht bewiesen sind:
+
+  * gamma_n gleich chi_6 oder ein typgerechter Ersatz dieser Gleichung,
+  * die Auswahl der markierten Omega Linie durch das originale P1 Randdatum,
+  * eine physische P1 Praeparation des Bell10 Descendantsektors,
+  * die Gleichsetzung des vier komplexen NS Charts mit einer beschrifteten
+    fuenf plus eins Majoranazerlegung ohne Intertwiner.
+
+
+5. Quellen und ausfuehrbarer Beleg
+----------------------------------
+
+Originales P1 Randdatum und Typ der Faktorisierung:
+
+  /Users/stefanhamann/Projekte/tfpt-theoryv4/documents/
+  archive--tfpt-45--source_extracts--01_boundary_kernel_source/sections/
+  001-section-primitive-core-and-carrier-interface-handoff.tex
+  SHA256 7d6e673d99c29d950dc601283cd51c1cc0b113567eeb79c8396fec9c82a02c79
+
+Originale zehn plus sechs Majorana Carrierdarstellung:
+
+  /Users/stefanhamann/Projekte/tfpt-theoryv4/documents/
+  tfpt_1_architecture_e8/sections/004-source.tex
+  SHA256 a064d8bb1c49f7dae14899defaa62ca07ed27e1fa27e01cc482bff64c02a462f
+
+Exakter horizontaler Stromnullmodus auf Bell10:
+
+  /Users/stefanhamann/Projekte/tfpt-theoryv4/experiments/theory-contracts/
+  compiler-current-descendant-20260919/PROOF.txt
+  SHA256 ad45198c44b84365a862b709e8b7e49af708f2e1a58adff67dc55d7cf4fa459b
+
+Markierte Omega Linie und ihre Quellenbegrenzung:
+
+  /Users/stefanhamann/Documents/Codex/2026-10-23/
+  untersuch-nochmal-eie-urwpr-nge-von/research-20261028-source-recursion-search/
+  NATIVE-SPIN5-FUNCTOR-AND-KRAUS-SPACE.txt
+  SHA256 3ffcad772d3f0a8fef31ff000cb716b18668f83d013ebe3a55b055d498080050
+
+  NATIVE-PAULI-F20-UNITARY-BRIDGE.txt
+  SHA256 6ddc3238986183aa3ea4b30890dc5e629be25fc00a0364905ee0479834a6ed33
+
+Exakte Gamma Stromrechnung:
+
+  ../current/check_native_gamma_current.py
+  SHA256 e00ac829026c15d949672601bd5971187a767a23a25424abfbc5defc72be44b8
+
+  ../current/native-gamma-current-results.json
+  SHA256 5b8ee6ccab21c3cdb02c55fe12d42359ce73a623f00336f7e999875e4d22ea4b
+
+Der Checker lief normal und mit python -OO bytegleich. Er prueft die fuenf
+Cliffordrichtungen, ihre Wirkung auf Bell10, den Gain drei und die signierte
+Permutation zum bereits verifizierten Hodge K5. Die Zuordnung gamma_n zu
+chi_6 ist bewusst kein Checkerergebnis.

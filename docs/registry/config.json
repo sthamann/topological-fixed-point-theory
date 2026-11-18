@@ -16,7 +16,14 @@
     "verification_catalog.tex"
   ],
   "module_manifest": "documents/source_manifest.json",
-  "excluded_evidence_roots": ["website", ".cursor", ".codex", ".agents", ".claude", ".github"],
+  "excluded_evidence_roots": [
+    "website",
+    ".cursor",
+    ".codex",
+    ".agents",
+    ".claude",
+    ".github"
+  ],
   "local_authored_roots": [
     ".",
     "articles",
@@ -162,7 +169,10 @@
     }
   ],
   "explicit_public_sources": [
-    "verification_catalog.tex"
+    "verification_catalog.tex",
+    "documents/tfpt_1_architecture_e8/sections/013-c3-p1-p2-origin.tex",
+    "tex-artefacts/toe_field_integration_20261105.tex",
+    "tex-artefacts/toe_source_completion_20261103.tex"
   ],
   "document_titles": {
     "introduction.tex": "TFPT — Introduction and reading guide",
@@ -178,5 +188,23 @@
     "note_e8_gaussian_code.tex": "E8 and the Gaussian code",
     "changelog.tex": "Research changelog",
     "verification_catalog.tex": "Verification reference catalog"
-  }
+  },
+  "retired_navigation_sources": {
+    "verification/build_theory_graph.py": {
+      "replacement": "semantic_explorer/source_inventory.py",
+      "reason": "Legacy theory graph retired; the source-native sole Atlas owns inventory."
+    },
+    "verification/enrich_theory_graph_llm.py": {
+      "replacement": "semantic_explorer/extract.py",
+      "reason": "Legacy graph enrichment retired; the sole Atlas extractor owns source-grounded annotations."
+    },
+    "verification/theorycat.py": {
+      "replacement": "semantic_explorer/server/src/service.rs",
+      "reason": "Legacy query CLI retired; the shared Atlas MCP service owns current theory navigation."
+    }
+  },
+  "local_formal_source_roots": [
+    "experiments/theory-contracts",
+    "tfpt_explorer/runtime"
+  ]
 }

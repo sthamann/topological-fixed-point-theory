@@ -1,0 +1,264 @@
+"""Actual paper import/enrichment boundaries, with no network in regressions."""
+from pathlib import Path
+import json
+import tempfile
+import unittest
+from unittest.mock import patch
+import sys
+sys.path.insert(0,str(Path(__file__).resolve().parents[1]/"verification"))
+import tex_sources  # owning source reader, before injectable fixture roots
+try:
+    from . import papers,refresh
+except ImportError:
+    import papers
+    import refresh
+
+
+def put(root,path,text):
+    file=root/path;file.parent.mkdir(parents=True,exist_ok=True);file.write_text(text);return file
+
+def registry(root,scope="public",text="\\section{Science}\nA source assumption.\nThe trailing result is conditional.\n"):
+    name="private"if scope=="local_private"else"public"
+    path=f"{name}/body.tex";entry=f"{name}/main.tex";put(root,path,text);put(root,entry,r"\input{body}")
+    section_id=f"section:{name}";doc_id=f"document:{name}"
+    sources=[]
+    for p in [path,entry]:
+        b=(root/p).read_bytes();sources.append({"id":"tex:"+p,"path":p,"sha256":papers.sha(b),"role":"module_fragment","section_ids":[section_id]if p==path else[]})
+    evidence_path="evidence.py";put(root,evidence_path,"# source entity, not a proof\n")
+    data={"sources":sources,"sections":[{"id":section_id,"source":path,"title":"Scientific section","kind":"section","labels":[],"owner_documents":[doc_id],"line_start":1,"line_end":len(text.splitlines()),"byte_start":0,"byte_end":len(text.encode()),"relation_ids":[],"summary_excerpt":"opening excerpt must not become an AI summary"}],
+          "documents":[{"id":doc_id,"entry_point":entry,"title":"Paper "+name,"role":"active"if scope=="public"else"support","compile_dir":name,"ordered_section_ids":[section_id],"physical_sources":[path,entry],"expansion_status":"complete_literal_expansion","expansion_error":None}],
+          "evidence":[{"id":"evidence:uncited","type":"python_source","path":evidence_path,"sha256":papers.sha((root/evidence_path).read_bytes()),"line_count":1}],"relations":[]}
+    target="docs/registry/local/registry.json"if scope=="local_private"else"docs/registry/registry.json"
+    put(root,target,json.dumps(data));return data
+
+
+def response_api(path,payload,key):
+    if path=="embeddings":return {"data":[{"index":i,"embedding":[0.1]*256}for i,_ in enumerate(payload["input"])]}
+    packets=json.loads(payload["input"])["chunks"];values=[]
+    for packet in packets:
+        if "source_lines"in packet:
+            lines=packet["source_lines"];text="".join(line["text"]for line in lines)
+            end=next((line["line"]for line in reversed(lines)if line["text"].strip()),1)
+            quote={"line_start":end,"line_end":end}
+        else:
+            text=packet["source_text"];quote=text[-min(30,len(text)):].strip()
+        values.append({"chunk_id":packet["chunk_id"],"kind":"scientific","summary_de":"Ein quellengestuetzter, bedingter Abschnitt.","summary_en":"A source-grounded conditional section.","summary_quotes":[quote]if quote else[],"concepts":[{"text":"Conditional result","quote":quote}]if quote else[],"assumptions":[],"results":[],"limits":[]})
+    return {"status":"completed","output":[{"content":[{"type":"output_text","text":json.dumps({"annotations":values})}]}],"usage":{"input_tokens":10,"output_tokens":10}}
+
+
+def enrich(corpus):
+    for group in papers.batches(corpus.pending()):
+        corpus.checkpoint_records(papers.extract_batch(group,"test-key",api=response_api))
+    return corpus.graph()
+
+
+class PaperTests(unittest.TestCase):
+    def test_complete_pipeline_exact_ids_full_source_quotes_and_uncited_evidence(self):
+        with tempfile.TemporaryDirectory()as directory:
+            root=Path(directory);data=registry(root);corpus=papers.PaperCorpus(root)
+            pending=corpus.graph();self.assertEqual(pending["meta"]["coverage"]["complete"],0)
+            node=corpus.nodes["section:public"]
+            self.assertNotEqual(node["summary"],data["sections"][0]["summary_excerpt"])
+            graph=enrich(corpus);self.assertTrue(graph["meta"]["coverage"]["semantic_complete"])
+            self.assertIn("evidence:uncited",corpus.nodes)
+            self.assertEqual(node["attrs"]["source_text"],(root/"public/body.tex").read_text())
+            for quote in node["attrs"]["semantic"]["quotes"]:
+                self.assertEqual(node["attrs"]["source_text"][quote["char_start"]:quote["char_end"]],quote["text"])
+            self.assertFalse(node["attrs"]["reviewed"])
+            self.assertTrue(corpus.nodes["document:public"]["attrs"]["source_refs"])
+
+    def test_scope_review_keeps_open_step_and_stales_on_changed_evidence(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            registry(root)
+            corpus = papers.PaperCorpus(root)
+            enrich(corpus)
+            packet = corpus.packets["section:public"][0]
+            key = packet["cache_key"]
+            annotation = corpus.records[key]["semantic"]
+            evidence = root / "evidence.py"
+            review = {
+                "section": "section:public",
+                "annotation_key": key,
+                "annotation_sha256": papers.sha(papers.canonical(annotation)),
+                "source": {**corpus.nodes["section:public"]["attrs"]["source"],
+                           "block_first_line": 1, "block_last_line": 3},
+                "focus": "Conditional result",
+                "model": "source review",
+                "annotation_guidance_de": "Die Identifikation bleibt offen.",
+                "points": [{"verdict": "open_derivation", "remaining": "Quelloperator identifizieren"}],
+                "sources": [{"path": "evidence.py", "sha256": papers.sha(evidence.read_bytes()),
+                             "line_start": 1, "line_end": 1}],
+            }
+            put(root, "semantic_explorer/data/paper-scope-reviews.json",
+                json.dumps({packet["chunk_id"]: review}))
+
+            def review_node(graph):
+                return next(n for n in graph["nodes"] if n["id"] == "paper-scope-review:public:0")
+
+            graph = corpus.graph()
+            self.assertEqual(review_node(graph)["label"], "Quelloperator identifizieren")
+            self.assertFalse(review_node(graph)["attrs"]["reviewed"])
+            self.assertEqual(len(review_node(graph)["attrs"]["source_refs"]), 2)
+            self.assertEqual(sum(e["type"] == "has_source_scope_review" for e in graph["edges"]), 1)
+            put(root, "evidence.py", "# changed original")
+            stale = review_node(papers.PaperCorpus(root).graph())
+            self.assertEqual(stale["attrs"]["status_as_recorded"], "review_stale")
+            self.assertEqual(stale["attrs"]["points"], [])
+
+    def test_long_sections_cover_every_contiguous_character_and_resume_without_api(self):
+        with tempfile.TemporaryDirectory()as directory:
+            root=Path(directory);text="\\section{Long}\n"+"body line carries a qualified statement.\n"*80
+            registry(root,text=text);corpus=papers.PaperCorpus(root,max_chars=200)
+            chunks=corpus.packets["section:public"];self.assertGreater(len(chunks),10)
+            self.assertEqual("".join(p["source_text"]for p in chunks),text)
+            graph=enrich(corpus);self.assertEqual(graph["meta"]["coverage"]["current_chunks"],len(chunks))
+            resumed=papers.PaperCorpus(root,max_chars=200);self.assertEqual(resumed.pending(),[])
+            self.assertTrue(resumed.graph()["meta"]["coverage"]["semantic_complete"])
+
+    def test_invalid_quote_repairs_with_full_source_feedback_or_remains_error(self):
+        packet=papers.section_packets({"id":"section:test","source":"test.tex"},{"source_sha256":"a"},"Actual exact evidence text.","public")[0]
+        calls=[]
+        def invalid(path,payload,key):
+            calls.append(json.loads(payload["input"]))
+            result=response_api(path,payload,key);values=json.loads(result["output"][0]["content"][0]["text"])
+            values["annotations"][0]["summary_quotes"]=["invented quote"]
+            result["output"][0]["content"][0]["text"]=json.dumps(values);return result
+        records=papers.extract_batch([packet],"test-key",api=invalid,citation_mode="literal")
+        self.assertEqual(records[packet["cache_key"]]["state"],"error")
+        self.assertEqual(len(calls),2);self.assertIn("repair",calls[1]["chunks"][0])
+        self.assertEqual(calls[1]["chunks"][0]["source_text"],packet["source_text"])
+
+    def test_whitespace_match_is_unique_and_returns_actual_verbatim_span(self):
+        packet=papers.section_packets({"id":"section:test","source":"a.tex"},{"source_sha256":"a"},"Exact\n  source words.","public")[0]
+        value={"chunk_id":packet["chunk_id"],"kind":"scientific","summary_de":"Summary","summary_en":"Summary","summary_quotes":["Exact source words."],"concepts":[],"assumptions":[],"results":[],"limits":[]}
+        result=papers.validate_annotation(value,packet);q=result["quotes"][0]
+        self.assertEqual(q["text"],packet["source_text"])
+        self.assertEqual(q["match_method"],"unique_whitespace_match_anchored_to_verbatim_source")
+        value["summary_quotes"]=["Exact source wordX."]
+        with self.assertRaises(ValueError):papers.validate_annotation(value,packet)
+
+    def test_stale_context_cache_does_not_silently_remain_current(self):
+        with tempfile.TemporaryDirectory()as directory:
+            root=Path(directory);data=registry(root);corpus=papers.PaperCorpus(root);enrich(corpus)
+            wrapper=root/"public/main.tex";wrapper.write_text("% changed context\n"+wrapper.read_text())
+            data["sources"][1]["sha256"]=papers.sha(wrapper.read_bytes());put(root,"docs/registry/registry.json",json.dumps(data))
+            new=papers.PaperCorpus(root)
+            self.assertTrue(new.pending());self.assertEqual(new.graph()["meta"]["coverage"]["stale"],1)
+
+    def test_missing_source_and_missing_include_are_explicit(self):
+        with tempfile.TemporaryDirectory()as directory:
+            root=Path(directory);registry(root);(root/"public/body.tex").unlink()
+            corpus=papers.PaperCorpus(root);self.assertEqual(corpus.graph()["meta"]["coverage"]["source_error"],1)
+            self.assertTrue(corpus.errors)
+        with tempfile.TemporaryDirectory()as directory:
+            root=Path(directory);data=registry(root);wrapper=root/"public/main.tex";wrapper.write_text(r"\input{absent}")
+            data["sources"][1]["sha256"]=papers.sha(wrapper.read_bytes());put(root,"docs/registry/registry.json",json.dumps(data))
+            corpus=papers.PaperCorpus(root)
+            self.assertFalse(corpus.nodes["document:public"]["attrs"]["source_current"])
+            self.assertIn("include/source",corpus.nodes["document:public"]["attrs"]["source_error"])
+
+    def test_explicit_private_scope_dedup_and_public_cache_nonleakage(self):
+        with tempfile.TemporaryDirectory()as directory:
+            root=Path(directory);registry(root);registry(root,"local_private",text="\\section{Private}\nPRIVATE_ONLY_TOKEN\n")
+            private=papers.PaperCorpus(root,True);enrich(private)
+            self.assertEqual(private.graph()["meta"]["coverage"]["private_sections"],1)
+            public=papers.PaperCorpus(root,False);graph=public.graph()
+            self.assertNotIn("PRIVATE_ONLY_TOKEN",json.dumps(graph))
+            self.assertNotIn("section:private",public.nodes)
+            self.assertEqual(sum(n["id"]=="evidence:uncited"for n in private.nodes.values()),1)
+
+    def test_offline_scope_preserves_prior_explicit_private_choice(self):
+        with tempfile.TemporaryDirectory()as directory:
+            output=Path(directory)/"papers.json";papers.atomic(output,{"meta":{"include_local":True}})
+            class Args:include_local=False;public_only=False
+            self.assertTrue(papers.resolve_scope(Args,output));Args.public_only=True
+            self.assertFalse(papers.resolve_scope(Args,output))
+
+    def test_paper_embeddings_have_own_fixed_contract_and_no_old_cache_writes(self):
+        with tempfile.TemporaryDirectory()as directory:
+            root=Path(directory);registry(root);graph=enrich(papers.PaperCorpus(root))
+            target=root/"papers-embeddings.json";papers.embed(graph,"test-key",target,api=response_api)
+            self.assertEqual(graph["meta"]["embedding_coverage"]["embedded_nodes"],2)
+            self.assertTrue(all(len(n["attrs"]["embedding"])==256 for n in papers.embedding_nodes(graph)))
+            self.assertFalse((root/"embeddings-cache.json").exists())
+
+    def test_selected_line_anchor_bounds_and_repeated_line_offsets(self):
+        packet=papers.section_packets({"id":"section:test","source":"a.tex"},{"source_sha256":"a"},"Repeated evidence.\nOther.\nRepeated evidence.\n","public")[0]
+        value={"chunk_id":packet["chunk_id"],"kind":"scientific","summary_de":"Summary","summary_en":"Summary","summary_quotes":[{"line_start":3,"line_end":3}],"concepts":[],"assumptions":[],"results":[],"limits":[]}
+        result=papers.resolve_line_annotation(value,packet);quote=result["quotes"][0]
+        self.assertEqual(quote["char_start"],len("Repeated evidence.\nOther.\n"))
+        self.assertEqual(packet["source_text"][quote["char_start"]:quote["char_end"]],quote["text"])
+        value["summary_quotes"]=[{"line_start":0,"line_end":1}]
+        with self.assertRaises(ValueError):papers.resolve_line_annotation(value,packet)
+
+    def test_offline_publication_preserves_private_scope_and_exact_current_vectors(self):
+        with tempfile.TemporaryDirectory()as directory:
+            root=Path(directory);registry(root);registry(root,"local_private",text="\\section{Private}\nPRIVATE_ONLY_TOKEN\n")
+            corpus=papers.PaperCorpus(root,True);graph=enrich(corpus)
+            data=root/"semantic_explorer/data";output=data/"papers.json";cache=data/"papers-embeddings-cache.json"
+            papers.embed(graph,"test-key",cache,api=response_api);papers.atomic(output,graph)
+            with patch.object(papers.extract,"api",side_effect=AssertionError("offline called API")):
+                self.assertEqual(papers.main(["--repo",str(root),"--offline"]),0)
+            refreshed=papers.read_json(output)
+            self.assertTrue(refreshed["meta"]["include_local"])
+            self.assertEqual(refreshed["meta"]["embedding_coverage"]["embedded_nodes"],4)
+            self.assertEqual(papers.main(["--repo",str(root),"--check"]),0)
+            one=papers.embedding_nodes(refreshed)[0];one["summary"]+=" changed"
+            papers.hydrate_paper_cached_embeddings(refreshed,cache)
+            self.assertNotIn("embedding",one["attrs"])
+            self.assertEqual(refreshed["meta"]["embedding_coverage"]["missing_nodes"],1)
+            self.assertEqual(papers.main(["--repo",str(root),"--offline","--public-only"]),0)
+            public=papers.read_json(output)
+            self.assertNotIn("PRIVATE_ONLY_TOKEN",json.dumps(public));self.assertEqual(public["meta"]["embedding_coverage"]["embedded_nodes"],2)
+
+    def test_corrupt_cached_quotation_cannot_be_reused_as_complete(self):
+        with tempfile.TemporaryDirectory()as directory:
+            root=Path(directory);registry(root);corpus=papers.PaperCorpus(root);enrich(corpus)
+            packet=corpus.packets["section:public"][0];path=corpus.cache_path(packet);record=papers.read_json(path)
+            record["semantic"]["quotes"][0]["char_start"]+=1;papers.atomic(path,record)
+            resumed=papers.PaperCorpus(root);coverage=resumed.graph()["meta"]["coverage"]
+            self.assertEqual(coverage["error"],1);self.assertEqual(coverage["source_error"],0)
+            self.assertFalse(coverage["semantic_complete"]);self.assertEqual(len(resumed.pending()),1)
+
+    def test_refresh_preserves_live_writer_and_reports_stale_lock(self):
+        with tempfile.TemporaryDirectory()as directory:
+            root=Path(directory);here=root/"semantic_explorer";put(here,"data/.papers.lock","1234")
+            with patch.object(refresh,"HERE",here),patch.object(refresh,"REPO",root),patch.object(refresh.os,"kill")as kill,patch.object(refresh.subprocess,"run")as run:
+                self.assertEqual(refresh.refresh_papers(),0);kill.assert_called_once_with(1234,0);run.assert_not_called()
+                kill.side_effect=ProcessLookupError()
+                self.assertEqual(refresh.refresh_papers(),2);run.assert_not_called()
+                self.assertTrue((here/"data/.papers.lock").exists())
+
+    def test_live_include_closure_overrides_false_registry_flag_and_supplies_context_refs(self):
+        with tempfile.TemporaryDirectory()as directory:
+            root=Path(directory);data=registry(root)
+            doc=data["documents"][0];doc["expansion_error"]="obsolete unresolved declared include body"
+            doc["expansion_status"]="unresolved_includes";doc["physical_sources"]=["public/main.tex"]
+            put(root,"docs/registry/registry.json",json.dumps(data));corpus=papers.PaperCorpus(root)
+            attrs=corpus.nodes["document:public"]["attrs"]
+            self.assertTrue(attrs["source_current"]);self.assertEqual(attrs["registry_expansion_error_as_recorded"],doc["expansion_error"])
+            self.assertEqual(attrs["live_expansion_status"],"complete_literal_expansion")
+            self.assertEqual({corpus.sources[s]["path"]for s in attrs["source_refs"]},{"public/main.tex","public/body.tex"})
+            self.assertTrue(enrich(corpus)["meta"]["coverage"]["semantic_complete"])
+
+    def test_missing_registry_membership_is_diagnostic_not_an_invented_section_id(self):
+        with tempfile.TemporaryDirectory()as directory:
+            root=Path(directory);data=registry(root);data["documents"][0]["ordered_section_ids"]=[]
+            put(root,"docs/registry/registry.json",json.dumps(data));corpus=papers.PaperCorpus(root)
+            self.assertEqual(corpus.nodes["document:public"]["attrs"]["registry_membership_missing"],["section:public"])
+            self.assertEqual(corpus.section_ids,["section:public"])
+            self.assertFalse(enrich(corpus)["meta"]["coverage"]["semantic_complete"])
+
+    def test_generated_control_corruption_is_cache_error_not_source_error(self):
+        with tempfile.TemporaryDirectory()as directory:
+            root=Path(directory);registry(root);corpus=papers.PaperCorpus(root);enrich(corpus)
+            packet=corpus.packets["section:public"][0];path=corpus.cache_path(packet);record=papers.read_json(path)
+            record["semantic"]["summary_de"]="Corrupt \x00e4 output";papers.atomic(path,record);old_hash=papers.sha(papers.canonical(record))
+            resumed=papers.PaperCorpus(root);graph=resumed.graph()
+            self.assertTrue(resumed.nodes["section:public"]["attrs"]["source_current"])
+            self.assertEqual(graph["meta"]["coverage"]["error"],1);self.assertEqual(graph["meta"]["coverage"]["source_error"],0)
+            corrected=enrich(resumed);self.assertTrue(corrected["meta"]["coverage"]["semantic_complete"])
+            self.assertEqual(papers.read_json(path)["replaced_record_sha256"],old_hash)
+
+if __name__=="__main__":unittest.main()

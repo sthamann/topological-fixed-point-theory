@@ -1,0 +1,233 @@
+TFPT: Eine Spiegelregel erzeugt den diskreten Clock-Kern
+11. November 2026
+
+1. Prüffrage
+
+EML (Odrzywolek, arXiv:2603.21852v2) erzeugt die deklarierte
+wissenschaftliche Taschenrechnerbasis. Die EML Schreibweise setzt
+keinen physikalischen Zustand, keine Wirkung und keine Relation
+zwischen Umläufen und Uhren fest. Für den komplex fortgesetzten
+Logarithmus ist die Deckgruppe Z; eine umkehrbare Konjugation
+innerhalb dieser Gruppe wirkt nur mit +1 oder -1. Die Abbildung
+1 -> 2 ist nicht surjektiv und kann so kein Clock-Automorphismus
+sein. EML selbst wird daher in diesem natürlichen Monodromiemodell
+als direkte Erklärung ausgeschlossen. Das schließt weder allgemeine
+EML Terme noch mehrblättrige nichtabelsche Darstellungen aus.
+
+2. Ein Operationstyp, zwei Marken, eine Schließbedingung
+
+Wir wählen Spiegelkomposition statt der Eingabe einer Zahl 5.
+Eine Operation x ▷ y bedeutet Spiegelung von x an y. Die Regeln
+sind x ▷ x = x, zweimalige Spiegelung ist die Identität, und
+Spiegelung transportiert jede weitere Spiegelung mit. Das ist das
+involutorische Quandle (Kei), siehe Grier und Nelson, HHA 16 (2014)
+167–177, Def. 2.1. Zwei unterscheidbare, geordnete Ausgangsmarken
+a,b werden vorausgesetzt; keine physische Zeit und kein metrischer
+Abstand.
+
+Die freie Realisierung auf a,b ist genau die ganzzahlige Gerade
+mit a=0, b=1 und x ▷ y=2y-x. Beweis: Die beiden Rechtswirkungen
+r_a,r_b sind Involutionen. Jedes r_{g(x)}=g r_x g^-1. Also wird
+die ganze erzeugte Menge durch die Orbits von a,b unter r_a,r_b
+erreicht. Für T=r_b r_a erhält man die eindeutige normalisierte
+Beschreibung h(2k)=T^k a und h(2k+1)=T^k b. Es gilt r_a h(n)=h(-n)
+und r_b h(n)=h(2-n); daraus folgt h(m) ▷ h(n)=h(2n-m).
+Die ganzzahlige Realisierung unterscheidet alle diese Wörter.
+Somit ist die zyklische Verschiebungsgruppe <T>=Z Ergebnis der
+freien Regel auf zwei Marken. Die Zeichenwahl stammt aus deren
+Reihenfolge. Das ist eine ganzzahlige Geschichte, noch keine
+physikalische Naht. Ihr gewöhnlicher unitärer Charakterraum ist
+ein Kreis, sobald diese Interpretation als unitäre Phase gewählt
+wird.
+
+Aus derselben Operation entstehen D(x)=a ▷ x=2x und R(x)=x ▷ a=-x.
+Schon auf der ganzen Geraden gilt D T=T^2 D; D ist dort injektiv,
+aber nicht surjektiv. Zwei Verdopplungen als dieselbe markierte
+Operation wie die Rückspiegelung am zweiten Anker zu verlangen,
+D^2(b)=R(b), ist die einzige neue Schließrelation. Sie lautet
+4~(-1), nicht die Eingabe einer 5er Menge. Eine mit der Spiegelung
+verträgliche Relation identifiziert dann r_4 und r_-1, somit
+x~x+10, und aus Konjugation mit T folgen alle Relationen
+ungerades x~x+5. Für gerades x benutzt man x+5 ungerade und
+x~x+10. Da Reduktion mod 5 selbst die Relation erfüllt, ist der
+universelle Quotient exakt Z/5. Auf ihm sind D und T invertierbar;
+aus T folgt der eindeutige halbe Schritt C=T^3. Es gilt
+G=D, G C G^-1=C^2, G^2=R und G^4=1 bei G^2 != 1.
+Die schwächere Forderung Ordnung 4 allein lässt 5 und 15 zu:
+ein ungerader Modul muss 2^4-1=15 teilen, und modulo 3 ist die
+Ordnung nur 2. Die fehlende physische Aussage ist, warum die
+ursprüngliche Naht die obige Rückspiegelung nach zwei
+Verdopplungen tatsächlich fordert. Sie ist kein Satz der freien
+Regel und entspricht einem zu erklärenden Teil des Originalclocks.
+
+Die v418 und v419 Matrizen sind exakt getroffen. B schickt das
+fünfstellige Permutationsmodul e_j auf zeta_5^j in Z[zeta_5].
+Der Kern ist die Summe aller e_j. B erhält gleichzeitig die Wirkung von
+C mit der ursprünglichen Phi5 Begleitmatrix und G mit dem
+ursprünglichen Galoisoperator zeta_5 -> zeta_5^2. Damit ist
+der Vergleich auf der ganzen ganzzahligen Darstellung, nicht
+nur bei Periode oder Eigenwerten.
+
+3. Vier Marken ohne zweite Zahlannahme; zwei unterschiedliche Lifts
+
+Auf den vier nichttrivialen Phasen wirkt G als Viererzyklus.
+Als arithmetischer Check liefert der ursprüngliche Ring nach
+Reduktion mod 2 den Körper F16, denn Phi5 ist über F2
+irreduzibel (2 hat Ordnung 4 modulo 5). Dort ist
+z -> 1/(1+z) eine Frobeniusverträgliche Bijektion der
+nichttrivialen fünften Einheitswurzeln auf die relative
+Spur-eins-Menge a+a^4=1. G^2 wirkt auf den Marken als a -> a+1.
+Es gibt keine gewählte F4 Koordinatenmarke; affine semilineare
+Automorphismen des Torsors ergeben alle 24 Permutationen.
+
+Das ist noch nicht das TFPT Quadrat. Im charakteristischen
+Nullkörper hat dieselbe wörtliche cyclotomische Viererposition
+in G Reihenfolge Kreuzverhältnis lambda mit lambda^2+lambda-1=0.
+Die Möbiusabbildung 1/(1+z) ändert es nicht. Die endlichen
+Feldpositionen haben äquianharmonisches Kreuzverhältnis; ein
+harmonisches Quadrat kann nicht als vier verschiedene Punkte
+gut modulo 2 reduzieren, da -1,2,1/2 dort zu 1,0,unendlich
+werden. Beide wörtlichen Geometrieanschlüsse scheitern.
+
+Ein anderer Anschluss funktioniert exakt. Man nimmt die
+natürliche reelle Permutationsdarstellung der vier Marken,
+projiziert mit P=(1-G^2)/2 auf ihre Ebene und nimmt G als
+komplexe Struktur auf dieser Ebene. Die vier projizierten
+Basisvektoren sind orthogonal in Nachbarrichtung, gegenüber
+negiert und von gleicher Norm. Bis auf eine gemeinsame
+Rotation und Skalierung sind sie 1,i,-1,-i; ihr Kreuzverhältnis
+in G Reihenfolge ist 2. Es muss keine erste Marke gewählt
+werden. Dieser Anschluss ist ein expliziter equivarianter
+Konstruktor der harmonischen Konfiguration aus der Clock,
+keine Behauptung der Identität des physisch komplexen
+Nahtzustands. Sein entscheidender zusätzlicher Leseschritt
+ist die lineare Permutationsdarstellung mit ihrem natürlichen
+Skalarprodukt.
+
+4. E8, die ursprüngliche Familienwirkung und der exakte Gegenfall
+
+Aus dem Fünfersatz mit der D5 Gerade-Summe-Regel und dem
+Vierersatz mit dem A3 Nullsummengitter folgt bei den üblichen
+gleichen Koordinatennormen die alte Verklebung. Die
+Gewichte s_D=(1/2)^5 und s_A=(3,-1,-1,-1)/4 haben Normquadrate
+5/4 und 3/4. Die Summe ist 2. Das Gitter ist ganzzahlig, gerade
+und mit Index 4 in der Überlagerung; Determinante 16/4^2=1.
+Die expliziten Wurzelzahlen sind 52,64,60,64. Die signierten
+Wahlen der Diskriminantverknüpfung sind als unmarkierte Gitter
+äquivalent; eine physische Spinororientierung folgt daraus nicht.
+Die D5 Paritätsregel und diese Gittermetrik sind deklarierte
+Brücken, nicht Satz des abstrakten Kei.
+
+Der tatsächliche native unsignierte G auf dem Träger und
+gewöhnliche G auf A3 erhält alle 240 Wurzeln. v117 wirkt
+dagegen vorzeichengetwistet. Das ist exakt die Wirkung auf
+den orientierten zweidimensionalen Produkten der Schleifen:
+Lambda^2 H = H^dual tensor det(H). Der Checker vergleicht
+alle 24 Wirkungen und konstruiert einen exakten Intertwiner
+der v117 Matrizen über C; ein bestimmter markierter 3-Zyklus
+und die physische geladene Abbildung werden nicht gewählt.
+Das ungetwistete Schleifengitter ist die richtige Ebene für
+die ursprüngliche Glueseite, die orientierte Auslese eine
+andere. Würde man stattdessen v117 direkt als Wirkung auf
+dem A3 Glue einsetzen, blieben nur 112 der 240 Wurzeln im
+selben Gitter. Eine gemeinsame Vorzeichenänderung repariert
+die Wurzeln, aber nicht den ursprünglichen Clock: jeder
+ganzzahlige Intertwiner zwischen beiden cyclotomischen
+Paaren hat Determinante 25 k^4 (k ganzzahlig), nie ±1.
+So ist die alternative Reparatur unter der originalen
+integralen Markierung ausgeschlossen.
+
+Die Halfturn R hat tatsächlich reelle Eigenräume 3+2. Doch
+als D5 Wurzelabbildung hält sie nur vier Wurzeln fest. Der
+durch die alten Farb und Schwachplätze deklarierte
+Koordinatensplit diag(+,+,+,-,-) hält zwölf fest. Beide
+Wirkungen können nicht durch eine D5 Wurzelisometrie
+identifiziert werden. Die physische P2 Spaltung wird nicht
+aus einer bloßen Dimensionsübereinstimmung abgeleitet.
+
+5. Grenze für P1 und Attraktor
+
+Reversible Vervollständigung der geraden freien Verdopplung
+liefert Z[1/2] und die Gruppe Z[1/2] ⋊_2 Z, wobei der Clock
+die Translation konjugiert; die Relation ist BS(1,2).
+Für jeden additiven, überall gleichen skalaren Windungsleser
+gilt w(G T G^-1)=w(T)=w(T^2)=2w(T), also w(T)=0. Auch ein
+U(1) Charakter ist auf dem primitiven Schritt trivial.
+Dasselbe Hindernis gilt für jede Realisierung der Relation,
+nicht nur die Spiegelregel. Der exakte unskalare Leser
+w(n,k)=n erfüllt dagegen
+w(gh)=w(g)+2^k w(h).
+Windung bleibt also als mittransportierter Schnittwert
+erhalten, nicht als globaler skalarer Charakter. Würde man
+in der dualen reversiblen Vervollständigung einen
+gewöhnlichen geschlossenen Weg verlangen, müssten seine
+Wegwindungen an jeder Stufe durch alle Zweierpotenzen
+teilbar sein. Die ursprüngliche Einheit muss daher, falls
+der Kandidat stimmt, am Schnitt und mit seiner tatsächlichen
+Identifikation geprüft werden. Bei einem reell-stetigen
+normierten skalaren Zustandswert würde außerdem
+phi(2x)=phi(x) durch Iteration gegen x=0 bereits phi=1
+erzwingen. Hier ist keine allgemeine OS Aussage gemeint.
+
+Die Diagonaliteration des Kei ist identisch. Die Clock
+auf fünf Plätzen ist eine Permutation. Keine davon erzeugt
+einen Attraktor. Das naheliegende positive Falten mit den
+zwei Ankerspiegelungen K=P_a P_b P_a hat im geraden
+Dreierraum Spektrum 1,(3+sqrt(5))/8,(3-sqrt(5))/8. Diese
+positive Kompression liefert nicht die ursprüngliche
+Relaxation 1,64/729,1/729. Die G Mittelung stellt
+Clock Kovarianz her und macht beide nichttrivialen
+Eigenwerte gleich 3/8. Für den positiven Transfer, seinen
+physischen Zustand und räumliche Lokalität ist die Regel
+also unzureichend. Das ist ein Vergleich mit dem
+Originaltransfer, kein neuer Relaxationsfit.
+
+6. Tatsächlich ausgeführter Anschluss an den ursprünglichen Quarterkreis
+
+Die flache Normalnullbranche hat die wirklichen Längsmoden
+p/(2pi)=n+alpha; die zwei Originaltwists sind alpha=1/4
+und 3/4 (TFPT-PIN-REINER-SEE-UND-ALLE-MODEN-20261110).
+Auf den ganzen Modentürmen gilt exakt
+  2(n+1/4)=2n+1/2,
+  2(n+3/4)=(2n+1)+1/2.
+Das ist eine unitäre Modenabbildung aus der direkten Summe
+beider Vierteltürme auf den Halbsektor, mit Kinetikfaktor 2,
+nicht ein unitärer Automorphismus eines festen Quarterraums.
+Die Vorzeichen und damit die freien Hardy Polarisationen
+werden erhalten. Eine ursprüngliche Einheitsverschiebung n+1
+wird auf der Zielseite zu m+2. Auf dem positiven Teil besitzt
+jede einzelne Hardy Verschiebung Defekt eins. Die doppelte
+Verschiebung im ganzen Halbsektor hat Defekt zwei; er zerfällt
+exakt in je eins auf gerader und ungerader Spur.
+Die geometrische Impulsumkehr vertauscht die Quarterzweige
+und die beiden Paritäten. Es ist keine Identifikation dieser
+Impulsumkehr mit voller OS Reflexion oder der ganzen Pin Karte.
+
+Nach zwei Verdopplungen erhält man jedoch
+  4(n+1/4)=4n+1,  4(n+3/4)=4n+3.
+Beides sind ungerade ganzzahlige Moden des Ramondsektors.
+Die gespiegelten ursprünglichen Moden sind dagegen weiterhin
+Viertelmoden. Damit scheitert die direkte geometrische
+Identifikation G^2=R auf den tatsächlichen longitudinalen
+Originalmoden mit den festgehaltenen Domänen und ihrem
+Spektralfluss. Der positive erste Halbschritt ist eine
+echte zweikanalige Abbildung; die endliche Restklasse
+modulo fünf ist keine Gleichheit dieser Hilberträume.
+Weder zusätzliche Normierung noch ein neues Higgsprofil
+kann diese unterschiedliche Twistsignatur aufheben.
+
+Der stärkste verbleibende Originaltest ist damit geschärft:
+Existiert in derselben P1 Quelle ein physisch begründeter
+mittransportierter endlicher Restleser, der die erzwungene
+Fünferclosure trägt, während die unendlichen Moden und
+Einheitswindung des tatsächlichen Schnitts erhalten bleiben?
+Die direkte geometrische Identifikation ist bereits
+ausgeschlossen. Ein Kandidat muss seine Restabbildung
+unabhängig aus der Quelle gewinnen, ohne bei der Clock
+einfach modulo fünf zu erklären. Auf ihr sind der positive
+Kern, die geladene Zeitantwort und Lokalität getrennt zu
+prüfen. Keine F1, keine 3+1D und kein neuer physikalischer
+Zahlenwert behauptet.
+
+Beleg: check_reflection_origin_eml_20261111.py und
+TFPT-EML-SPIEGELREGEL-20261111.log. 29 exakte Checks.

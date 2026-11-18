@@ -1,0 +1,284 @@
+UNABHAENGIGER REVIEW: WARD U5 ERZEUGUNGSKANAL
+=============================================
+
+28. Oktober 2026
+
+Gepruefte Dateien
+-----------------
+
+* WARD-U5-CREATION-CHANNEL.txt
+* check_ward_d5a3_creation_channel.py
+* ward-d5a3-creation-channel-results.json
+* ../original/SOURCE-CHARGE-GLUE-QUARTER-IDENTITY.txt
+* ../source-charge-glue-quarter-results.json
+* ../process/OPERATOR-VALUED-BRANCH-RIGIDITY.txt
+
+
+Urteil
+------
+
+Der neue algebraische Satz ist richtig:
+
+* Im tatsaechlichen gemischten E8 Sektor g2=(10,6) zerlegt die
+  adjungierte U5 Wirkung die 60 Wurzelstroeme exakt in 30 Carrier
+  Erzeugungsstroeme mit Rest3 und 30 Vernichtungsstroeme mit Rest2.
+* Fuer die festgelegte Wardwurzel lambda_A=e3+e6 ist der Orbit unter der
+  neutralen SU5_C mal D3_F Stromalgebra genau der Rest3 Dreissiger (5,6).
+* Die wirklichen Chevalleyklammern auf
+
+      Lambda2 C5 tensor 4  ->  Lambda3 C5 tensor bar4
+
+  faktorisieren nach dem bereits gepinnten gemeinsamen Phasentransport als
+  Carrier Erzeugung mal Familien Cliffordwirkung.
+* Alle 360 nichtverschwindenden Spalten haben die richtigen Vorzeichen und
+
+      sum B_beta^dagger B_beta = 9 I40,
+      sum B_beta B_beta^dagger = 9 I40.
+
+  Die Killing gemittelte inklusive Antwort ist daher CPTP und bistochastisch.
+  Nach der festen Volumendualitaet Lambda3 C5 nach Lambda2(C5)* ist ihr
+  Carrierrand der volle Hodge Kanal Phi, nicht nur dieselbe Petersen
+  Population.
+
+Zwei Formulierungen muessen im weiteren Gebrauch erhalten bleiben:
+
+1. U5 Rest3 waehlt den Dreissiger nur INNERHALB von g2 beziehungsweise nach
+   der vorhandenen internen Z4 Grade 2 Einschraenkung. Auf der gesamten E8
+   Stromalgebra hat Rest3 fuenfzig Wurzelraeume. Fuer den gegebenen E8 Fold
+   ist diese Einschraenkung inzwischen durch die exakte Charge Glue Quarter
+   Identitaet aus denselben Foldoperatoren abgeleitet.
+2. Die Original Wardquelle erzwingt die gemischte (10,6) Klasse, waehlt aber
+   noch keine konkrete signierte Wurzel. Die Entscheidung Erzeugung statt
+   Vernichtung bleibt deshalb an die festgelegte Ward und
+   Reflexionsorientierung gebunden.
+
+Mit diesen Grenzen ist der neue 30er Pfad ein echter kleinerer algebraischer
+Anschluss. Er ist noch keine ausgefuehrte P1 Nahtoperation.
+
+
+1. U5 Typ: S+ Filter und adjungierte Stromwirkung
+-------------------------------------------------
+
+Die originale P2 Stelle definiert auf dem geraden Spintraeger S+
+
+    X=3N2-2N3,
+    U5=exp(2 pi i X/5),
+
+und die Fourierprojektoren fuer die geraden Grade Lambda0, Lambda2 und
+Lambda4. Auf dem hier verwendeten festen Lambda2 Carrierteil ist U5 nur der
+Skalar zeta5. Er mischt keine der fuenf Carrierstellen und ist kein
+Slotfuenferzyklus. Dort kommen nur die Reste0,1,2 vor. Der im neuen Satz benutzte
+Rest3 Projektor ist daher nicht woertlich einer dieser urspruenglichen
+S+ Projektoren.
+
+Nach Annahme der bereits gegebenen E8 Stromdarstellung besitzt X aber eine
+eindeutige Cartanwirkung auf jedem Wurzelstrom:
+
+    Ad(U5) E_beta = zeta5^(X(beta)) E_beta.
+
+Fuer die verdoppelten Wurzelkoordinaten ist
+
+    X(beta)=(-2,-2,-2,3,3).beta_C / 2.
+
+Die Rechnung ergibt im gemischten g2 Sektor exakt
+
+    positive Carrierwurzel: X=-2 [18] oder +3 [12], Rest3,
+    negative Carrierwurzel: X=+2 [18] oder -3 [12], Rest2.
+
+Damit ist die Fortsetzung mathematisch keine frei gewaehlte neue
+Darstellung. Sie ist die adjungierte Wirkung desselben Cartanelements.
+Ihre physische Anwendung als P1 Ereignisfilter ist in der Originalstelle
+jedoch nicht behauptet.
+
+Ein zusaetzlicher direkter Vollraumtest ist wichtig. Auf allen 240 E8
+Wurzelraeumen hat Ad(U5) Rest3 die Multiplizitaet
+
+    50 = 30 alte g2 Wurzeln + 20 alte g3 Halbwurzeln.
+
+Der Satz darf deshalb nicht als
+
+    Pi3 auf allen E8 Stroemen = M30
+
+formuliert werden. Korrekt sind entweder
+
+    Pi_(old internal Z4 grade2) Pi3 = M30
+
+oder der im Checker ebenfalls bewiesene neutrale Orbit der Wardwurzel.
+
+Die inzwischen unabhaengig gepruefte Identitaet
+
+    g_alpha^2 exp(-2 pi i alpha Q_source/4) = C_int^(-1)
+
+schliesst genau die vorher offene algebraische Verbindung. Auf dem bereits
+gegebenen markierten E8 Fold ist die interne Gluegradierung der kompensierte
+geladene Quartercharakter. Gemeinsam mit U5 Rest3 waehlt sein Eigenwert -1
+exakt Creation30 aus den globalen fuenfzig Rest3 Wurzelraeumen. Das ist eine
+Operatoridentitaet auf dem ganzen E8 Gitter VOA, nicht nur ein Rootcensus.
+Sie beweist weiterhin keinen physischen P1 Vollzug dieses gemeinsamen
+Projektors, keine lokale Feldkarte Xi und keine Responsepolicy.
+Der Bericht sagt an seiner ersten entscheidenden Stelle bereits
+`innerhalb von g2`. Spaetere Kurzfassungen muessen diese Einschraenkung
+beibehalten.
+
+
+2. Wardorientierung und Reflexion
+---------------------------------
+
+Der alte Wardbeweis erzwingt aus q/2 eine gemischte Wurzel
+
+    lambda in (10,6),
+
+und prueft den konkreten Vergleichsvertreter lambda_A=e3+e6. Derselbe
+Originaltext sagt ausdruecklich, dass damit keine bestimmte signierte Wurzel
+physisch ausgewaehlt ist. Im Checker besitzt lambda_A positiven
+Carrieranteil und liegt im Erzeugungsdreissiger. Seine Reflexion -lambda_A
+liegt im Vernichtungsdreissiger.
+
+Der vorliegende getypte Kanal braucht auf dem festen Eingang
+Lambda2 C5 nur die vorwaerts gerichteten Erzeugungskrausoperatoren. Eine
+adjungiert abgeschlossene Operation auf dem vollen direkten Summenraum muss
+den dualen Rueckpfeil oder weitere Sektoren mitfuehren. Das zwingt nicht beide
+Haelften in denselben vorwaerts gerichteten Kanal. Es verhindert aber, die
+einseitige Auswahl bereits als aus der rohen P1 Reflexion hergeleitet
+darzustellen.
+
+
+3. CAR Konvention und Chiralitaet
+---------------------------------
+
+Die Maskenkonvention ist konsistent mit dem gepinnten D5 plus A3
+Intertwiner:
+
+* Eingabe: Carrierbesetzung2 und gerade Familienbesetzung0 oder2,
+  insgesamt40 Zustaende.
+* Ausgabe: Carrierbesetzung3 und ungerade Familienbesetzung1 oder3,
+  insgesamt40 Zustaende.
+* Jeder positive Carrierwurzelstrom wirkt als a_m^dagger.
+* Auf jedem der drei Familienmodi wirkt je nach Wurzelvorzeichen b_j oder
+  b_j^dagger. Beide wechseln die Familienchiralitaet.
+
+Fuer jeden Carrier Zweizustand sind drei Erzeuger moeglich. Fuer jeden
+Familien Spinorzustand sind genau drei der sechs Leiter moeglich. Das gibt
+den Gain3 mal3 gleich9. Auf der Ausgabe gilt derselbe Gain.
+
+Die anschliessende Volumendualitaet sendet
+
+    a_m^dagger : Lambda2 -> Lambda3
+
+mit dem Keilvorzeichen genau auf die Hodge Komplementmatrix C_m. Daher folgt
+der volle Kanal
+
+    Phi(rho)=(1/3) sum_m C_m rho C_m^dagger.
+
+Die Petersenpopulation ist nur seine Diagonale.
+
+
+4. Phasen und partielle Spur
+----------------------------
+
+Der Checker benutzt nicht die rohe Chevalleybasis fuer die Tensorpartialspur.
+Er uebernimmt die gepinnten Zustands und Wurzelphasen des vollstaendigen
+E8 Clifford Intertwiners und prueft fuer jede der360 Spalten
+
+    Chevalley Vorzeichen
+      = gemeinsame Phase mal Carrier CAR Vorzeichen mal Familien CAR Vorzeichen.
+
+Diese gemeinsame Phase muss nicht in eine reine Carrier und Familienphase
+zerfallen. Nach dem dadurch definierten gemeinsamen Tensorchart ist die
+Faktorisierung exakt und die Familienpartialspur typisiert. Eine rohe
+Partialspur vor diesem Transport waere weiterhin unzulaessig. Der neue
+Checker begeht diesen Fehler nicht.
+
+
+5. Physischer Scope und kleinere Herkunftsforderung
+---------------------------------------------------
+
+E_lambda ist im vorhandenen E8 Netz ein bosonischer Strom vom konformen
+Gewicht1 und traegt im alten Quellenchart die Ladung4. Seine urspruengliche
+Quellenenergie ist H_source=7 oder9 fuer die beiden Quarter. Weder diese
+Energie noch das konforme Gewicht liefert eine Ereigniszeit. Die Bezeichnung
+a_m^dagger beschreibt seine bereits verifizierte Zielchartwirkung. Sie
+identifiziert ihn nicht mit einem einzelnen alten P1 Fermion, dessen
+Teilchenzahl oder einem rohen Q4 Erzeuger. Diese Grenze ist im Bericht
+korrekt enthalten.
+
+Die gleichgewichteten 30 Krausoperatoren liefern einen kanonischen CPTP
+Zeugen. Fuer den reduzierten Carrierkanal ist diese spezielle Killing
+Gewichtung nicht notwendig. Nach der bereits bewiesenen Marginalrigiditaet
+genuegt jeder vollstaendige CPTP Quellenpfeil mit Kraussupport im ausgewaehlten
+
+    span { a_m^dagger tensor B_p }.
+
+Nach der Volumendualitaet erzwingt seine Spurtreue denselben Carrierrand Phi,
+auch fuer verschraenkte Eingaben. Die koharente Einsatzmetrik und die
+Familienkorrelationen koennen verschieden sein.
+
+Der nun kleinere offene Originalsatz lautet deshalb:
+
+    Die P1 Quelle realisiert einen geschlossenen spurtreuen CP Pfeil vom
+    bezeichneten g1 Eingangssektor in den dualen g3 Ausgangssektor, dessen
+    gesamter Kraussupport im gemeinsamen U5-Rest3 und kompensierten
+    Foldquarter Eigenwert-minus-eins Erzeugungsspan liegt.
+
+Die staerkere Aussage, dass P1 genau die Killing Gleichgewichtung, den
+Wurzelrecord oder eine bestimmte Krauszerlegung ausfuehrt, ist hinreichend,
+aber fuer den Carrier Hodgekanal nicht notwendig. Ereignisrate, Wiederholung
+und physische Zeit bleiben getrennte Herkunftsfragen.
+
+Eine weitere unabhaengige analytische Pruefung bestaetigt diese letzte
+Aussage in operatorwertiger Form. Fuer beliebige
+
+    L_r = sum_m C_m tensor F_rm
+
+erzwingt der skalare Effekt sum_r L_r^dagger L_r=p I wegen der linearen
+Unabhaengigkeit aller 25 Matrizen C_m^dagger C_n die Grammatrix
+
+    sum_r F_rm^dagger F_rn=(p/3) delta_mn I.
+
+Daraus folgt fuer jede, auch verschraenkte, gemeinsame Eingabe direkt
+
+    Tr_Fout E(rho_CF)=p Phi(Tr_Fin rho_CF).
+
+Der Beweis ist typkorrekt fuer verschiedene Familien Ein und
+Ausgangsraeume und benutzt weder Kovarianz noch eine bevorzugte Krausbasis.
+Er setzt den bezeichneten Hodge Support und den skalaren Effekt voraus. Er
+liefert daher keine fehlende Quelloperation. Im vorhandenen 60er Prozess ist
+p=3/5 fuer den Erzeugungsast.
+
+
+6. Neue Quellenverweise
+-----------------------
+
+Geschlossene Charge Glue Quarter Identitaet:
+
+    ../original/SOURCE-CHARGE-GLUE-QUARTER-IDENTITY.txt
+    ../source-charge-glue-quarter-results.json
+
+Operatorwertige Marginalrigiditaet:
+
+    ../process/OPERATOR-VALUED-BRANCH-RIGIDITY.txt
+
+Diese neuen Quellen schliessen die algebraische Quarteridentifikation und
+die Marginalfolgerung. Die lokale P1 Feldkarte Xi und ihre physische
+Responsepolicy bleiben offen.
+
+
+7. Replay
+---------
+
+Der gezielte unabhaengige Replay bestand in normalem und optimiertem Modus.
+Beide stdout Dateien sind bytegleich. Final gepruefte Warddateien sind:
+
+    WARD-U5-CREATION-CHANNEL.txt
+    check_ward_d5a3_creation_channel.py
+    ward-d5a3-creation-channel-results.json
+
+Die Hashreferenzen werden nach der rein mechanischen Pfadstabilisierung des
+finalen Checkers gemeinsam synchronisiert. Der mathematische Replay und das
+Urteil haengen davon nicht ab.
+
+Zusaetzlich wurde die Ad(U5) Restverteilung direkt auf allen240 Wurzeln
+gezaehlt; Rest3 besitzt global50 und im D8 Anteil30 Wurzelraeume.
+
+Keine gepruefte Ownerdatei, Atlasdatei oder Originalquelle wurde inhaltlich
+geaendert.

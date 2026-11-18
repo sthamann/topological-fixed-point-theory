@@ -1,0 +1,281 @@
+MATH.SEAM.ESERIES.JOINTCLOCK.01
+23 October 2026
+Exact joint action of the marked cover clock and the native full E8 lattice fields
+
+Verdict
+
+PASS in the stated mathematical scope.  There is a canonical associated
+lattice-VOA local system carrying the peripheral all-J monodromy, and the
+forced C12 cover carries an exact marked order-twelve compiler action on that
+same object.  The peripheral J and compiler J are not identified as cover
+automorphisms.  They have the same fixed fibre lift Jhat but different base
+components.
+
+For the fixed generator-normalized Jhat there are exactly four character
+representatives chat over c.  They form one orbit under the character gauges
+that preserve Jhat.  Thus there is one cyclic compiler lift up to that gauge.
+The induced sigmahat is necessarily character-corrected.  No representative
+has both Jhat and the separately generator-normalized sigma section fixed.
+
+1. Fixed object and conventions
+
+Let
+
+  B° = P1 minus {1,i,-1,-i,infinity},
+  C_n : u_n^n=x^4-1,
+  Delta_n(x,u_n)=(x,zeta_n u_n),
+  Q_n(x,u_n)=(i x,u_n).
+
+The finite meridians are positively ordered.  The original peripheral C4
+cover is C4, and the forced common cover is C12.  On C12 the marked compiler
+cover clock is
+
+  R12=Q12 Delta12^4,
+  R12^4=Delta12^4,
+  R12^9=Q12,
+  R12^12=1.
+
+Retain the original even E8 lattice L, the literal ordered cocycle epsilon,
+and its lattice VOA
+
+  V_L = M(1) tensor C_epsilon[L].
+
+For an isometry g of L, S_g denotes the existing generator-normalized lift.
+For a character a in A=Hom(L,F2), put
+
+  D_a E_lambda=(-1)^a(lambda) E_lambda.
+
+Every lift over g is S_g D_a.  On a full lattice field it acts by
+
+  S_g D_a [h1(-n1)...hk(-nk) E_lambda]
+    =(g h1)(-n1)...(g hk)(-nk)
+      eta_g(lambda)(-1)^a(lambda) E_(g lambda),
+
+where eta_g is fixed by the unchanged epsilon and ordered basis.  This is the
+existing full lattice-field action, including charged sectors and every
+oscillator descendant.  No new carrier or product is introduced.
+
+The lattice operators are the existing commuting matrices
+
+  J^4=1,  sigma^3=1,  c=J sigma,
+  c^4=sigma,  c^9=J,  c^12=1.
+
+Fix Jhat=S_J, the generator-normalized lift already used by the marked seam
+study.
+
+2. Canonical associated local system
+
+Use C12 as a principal refinement of C4 and let its deck generator act on the
+fibre through Jhat.  Define
+
+  Vper = (C12 times V_L)/equivalence,
+
+with
+
+  (Delta12 p,v) equivalent to (p,Jhat v).                 (2.1)
+
+Equivalently, the diagonal action is
+
+  k.(p,v)=(Delta12^k p,Jhat^(-k)v).
+
+Because Jhat^4=1, this representation of the C12 deck group factors through
+C4 and has kernel <Delta12^4>.  Therefore (2.1) is canonically the same local
+system as
+
+  (C4 times V_L)/((Delta4 p,v) equivalent to (p,Jhat v)).
+
+A positive finite meridian lifts to an endpoint Delta12 p, so its parallel
+transport on the fibre is exactly Jhat.  This realizes the existing
+peripheral all-J monodromy without turning it into a base rotation.
+
+The three roles are now explicit:
+
+  deck:  Delta12 on the marked principal cover;
+  base:  Q12, covering x -> i x;
+  fibre: Jhat, sigmahat and chat on V_L.
+
+Deck and base commute.  A fibre automorphism descends through (2.1) precisely
+when it commutes with Jhat.
+
+3. Complete cyclic field-lift classification
+
+Write every candidate over c as
+
+  chat_a=S_c D_a,  a in A.
+
+Bits below refer, least significant bit first, to the dual of the predecessor's
+ordered integral E8 basis.  In doubled standard coordinates its column matrix
+is
+
+  B = [ 1  2 -2  0  0  0  0  0 ]
+      [-1  2  2 -2  0  0  0  0 ]
+      [-1  0  0  2 -2  0  0  0 ]
+      [-1  0  0  0  2 -2  0  0 ]
+      [-1  0  0  0  0  2 -2  0 ]
+      [-1  0  0  0  0  0  2 -2 ]
+      [-1  0  0  0  0  0  0  2 ]
+      [ 1  0  0  0  0  0  0  0 ].
+
+The ninth-power equation is
+
+  chat_a^9=Jhat
+  iff N9(a)=d,                                      (3.1)
+
+where N9 is the exact character norm induced by the nine successive c actions.
+In the ordered dual basis its eight columns, encoded as byte masks, and its
+affine defect are
+
+  columns(N9)=(1,2,93,128,119,1,215,128),
+  d=169,
+  rank_F2(N9)=6.
+
+Hence (3.1) has exactly 2^(8-6)=4 solutions.  The complete list is
+
+  a mask   a as an F2 tuple                 b mask   b as an F2 tuple
+  31       (1,1,1,1,1,0,0,0)               63       (1,1,1,1,1,1,0,0)
+  62       (0,1,1,1,1,1,0,0)               30       (0,1,1,1,1,0,0,0)
+ 151       (1,1,1,0,1,0,0,1)              183       (1,1,1,0,1,1,0,1)
+ 182       (0,1,1,0,1,1,0,1)              150       (0,1,1,0,1,0,0,1).
+
+Here b is defined by the exact fourth power
+
+  sigmahat_a=chat_a^4=S_sigma D_b.                  (3.2)
+
+For every row the following identities hold on all lattice fields:
+
+  chat_a^12=1,
+  sigmahat_a^3=1,
+  [Jhat,sigmahat_a]=1,
+  chat_a=Jhat sigmahat_a,
+  chat_a^9=Jhat,
+  chat_a^4=sigmahat_a.                               (3.3)
+
+Equality was reduced to the eight lattice generators only after retaining the
+unchanged epsilon and the common lattice action.  The oscillator action then
+extends (3.3) to the complete VOA.  The certificate also evaluates the fourth,
+ninth and twelfth powers directly on all240 roots for every representative.
+
+The character gauges preserving the fixed Jhat are
+
+  A^J={0,1,32,33,86,87,118,119,136,137,168,169,222,223,254,255}.
+
+Conjugation by D_t sends
+
+  a -> a+t+c^*t.
+
+Its stabilizer on a selected chat is
+
+  A^c={0,1,254,255}.
+
+The four solutions have one orbit of size16/4=4.  Therefore the fixed-Jhat
+cyclic compiler lift is unique up to character gauge.  A convenient explicit
+certificate representative is
+
+  chat=S_c D_31,
+  sigmahat=S_sigma D_63.                              (3.4)
+
+The choice of mask31 in (3.4) is only a representative convention.  The
+single gauge orbit is the invariant result.
+
+There is no solution with b=0.  Thus the two separately
+generator-normalized sections S_J and S_sigma do not themselves extend to the
+required normalized cyclic clock.  The character D_63 in (3.4), or one of its
+three gauge-equivalent alternatives, is forced by the original lattice
+cocycle.  It is not a new coupling.
+
+4. The exact joint action
+
+For any of the four representatives define the marked action
+
+  Chat[p,v]=[R12 p,chat v].                           (4.1)
+
+It is well defined on Vper.  Indeed R12 commutes with Delta12, and chat
+commutes with Jhat because Jhat=chat^9.
+
+Using the diagonal relation (2.1), equations (3.3), and the exact cover
+powers gives
+
+  Chat^4[p,v]
+    =[Delta12^4 p,sigmahat v]
+    =[p,sigmahat v],                                  (4.2)
+
+  Chat^9[p,v]
+    =[Q12 p,Jhat v],                                  (4.3)
+
+  Chat^12=1.                                          (4.4)
+
+Equation (4.2) retains the oriented sigma deck motion in the marked C12
+presentation.  It becomes vertical sigmahat on the associated local system
+because Delta12^4 lies in the kernel of its peripheral C4 representation.
+Equation (4.3) is the joint compiler J: it covers the nontrivial base quarter
+rotation and acts by Jhat on the fibre.
+
+The peripheral J is instead
+
+  Jper[p,v]=[Delta12 p,v]=[p,Jhat v].                 (4.5)
+
+It covers the identity on B°.  Therefore
+
+  base(Jper)=0,
+  base(Chat^9)=1 in C4,
+  Chat^9=Q12 Jper.                                    (4.6)
+
+This is the precise resolution of the two roles called J.  They share the
+same fibre lift because the associated local system was built from the
+peripheral J monodromy.  They remain different total automorphisms because
+their base components differ.  No phase or character gauge can remove that
+base-component distinction.
+
+The compiler factorization also holds on the joint object:
+
+  Chat=(Chat^9)(Chat^4)=Jcomp Sigma,
+
+where Jcomp is (4.3) and Sigma is (4.2).  This is the existing c=J sigma
+relation with cover, base and fibre roles all retained.
+
+5. What this decides and what it does not identify
+
+The restriction of the original character-valued lattice-lift extension to
+the cyclic compiler subgroup <c> splits.  Fixing Jhat leaves one character
+gauge class, represented by (3.4).  This does not split the full G31
+extension.  The predecessor's explicit nonsplitting certificate remains
+unchanged.
+
+No Burau lattice is identified with geometric H1 or with the E8 lattice.  The
+existing integral Phi12 intertwiner remains an exact unpolarized comparison
+between its two stated modules.  Its complementary spectra and alternating
+form types remain different.  The present construction instead puts the
+existing cover and the existing V_E8 fibre into their standard associated
+local system, so no carrier identification is needed.
+
+No physical seam, state, time, coupling or field-selection rule is asserted.
+This is a complete mathematical joint action for the supplied marked cover,
+the unchanged lattice cocycle and the cyclic compiler subgroup.
+
+6. Reproducible certificate and references
+
+Run
+
+  python3 -B experiments/theory-contracts/e-series-joint-source-20261023/joint_clock.py
+  python3 -OO experiments/theory-contracts/e-series-joint-source-20261023/joint_clock.py
+
+Both modes return the same affine rank, four representatives, one gauge orbit,
+and zero representatives with separately generator-normalized sigmahat.
+
+The lift formalism is consistent with the standard lattice-VOA fact that a
+lattice isometry lifts with character freedom, while group relations can
+acquire cocycle obstructions:
+
+  Dong and Nagatomo, Automorphism Groups and Twisted Modules for Lattice
+  Vertex Operator Algebras, arXiv:math/9808088.
+
+  Bakalov and Kac, Twisted Modules over Lattice Vertex Algebras,
+  arXiv:math/0402315.
+
+  Okada, On the Symmetry of Odd Leech Lattice CFT,
+  arXiv:2412.19430, especially the lift-extension method.
+
+These general references do not supply the coefficients above.  The masks,
+affine rank, gauge orbit and joint cover relations are computed from the
+actual E8 basis, epsilon, J, sigma and forced C12 cover retained in the cited
+predecessor contracts.

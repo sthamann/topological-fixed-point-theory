@@ -1,0 +1,432 @@
+MATH.SEAM.ESERIES.COVERS.04
+23 October 2026
+
+Question and object class
+
+Fix the marked base
+
+  B° = P1 minus {1,i,-1,-i,infinity},       f(x)=x^4-1,
+
+with the four finite meridians ordered positively and the base quarter
+rotation q(x)=i x.  Infinity is punctured because the existing degree-three
+curve is ramified there.  This puts all covers below in the same unbranched
+marked-cover category.  Their compactifications are used only for genus and
+branch data.
+
+For n in {2,3,4,6,12}, let
+
+  C_n : u_n^n=f(x),                         Delta_n(x,u_n)=(x,zeta_n u_n),
+
+where zeta_n=exp(2 pi i/n).  A morphism is over the fixed x-coordinate,
+preserves the ordered finite marks, and sends the chosen deck generator to
+the chosen deck generator.  Deck inversion is therefore not silently
+quotiented out.  This is the required marking for comparing the existing
+omega sheet with the original compiler sigma.
+
+The supplied predecessors are:
+
+  C_2 : y^2=x^4-1, the parity cover of the given all-J monodromy;
+  C_3 : w^3=x^4-1, the existing native mu3 curve;
+  C_4 : z^4=x^4-1, the kernel cover of the given C4 monodromy J.
+
+No new modulus, metric, coupling, state rule or physical identification is
+introduced.
+
+1. Minimal common covers
+
+The normalization of C_2 times_B C_3 is the connected curve
+
+  C_6 : t^6=f(x),
+  C_6 -> C_2,   y=t^3,
+  C_6 -> C_3,   w=t^2.
+
+It is the minimal common marked cover.  Indeed the two cyclic monodromy
+characters are reduction of the same winding exponent modulo 2 and modulo 3.
+Their kernel intersection is the kernel modulo lcm(2,3)=6.  Equivalently,
+Z/6 -> Z/2 times Z/3 is the Chinese-remainder isomorphism.  Hence any connected
+cover dominating both has degree divisible by 6.  The displayed C_6 attains
+that degree.
+
+C_6 does not dominate the full C_4 kernel cover.  Adding that requirement
+gives the connected normalization
+
+  C_12 : s^12=f(x),
+  C_12 -> C_2,   y=s^6,
+  C_12 -> C_3,   w=s^4,
+  C_12 -> C_4,   z=s^3,
+  C_12 -> C_6,   t=s^2.
+
+This time the kernel intersection is the kernel modulo lcm(4,3)=12, so degree
+12 is minimal.  The degree-six and degree-twelve curves are forced fibre
+products of already supplied marked covers.  They are not freely chosen
+auxiliary models.
+
+2. Peripheral monodromy, branching and genus
+
+With positive meridians (gamma_1,...,gamma_4,gamma_infinity), the C_n deck
+exponents are
+
+  rho_n = (1,1,1,1,-4) mod n.
+
+Their sum is zero modulo n, as required by the sphere relation.  At each
+finite mark there is one point with ramification index n.  Over infinity
+there are gcd(n,4) points, each of ramification index n/gcd(n,4).  Thus
+
+  n    peripheral exponents       infinity                 compact genus
+  2    (1,1,1,1,0)               2 points, e=1             1
+  3    (1,1,1,1,2)               1 point,  e=3             3
+  4    (1,1,1,1,0)               4 points, e=1             3
+  6    (1,1,1,1,2)               2 points, e=3             7
+ 12    (1,1,1,1,8)               4 points, e=3            15
+
+Riemann-Hurwitz gives, uniformly,
+
+  g(C_n)=(3n-gcd(n,4)-2)/2.
+
+Every displayed morphism reduces the peripheral exponent vector modulo its
+target degree.  In particular the nontrivial infinity monodromy of C_3 is
+retained on C_6 and C_12; it is not erased by the fact that C_2 and C_4 are
+unramified at infinity.
+
+3. Plain lifts and the existing mu3 lift
+
+Because f(i x)=f(x), every algebraic lift of q to C_n is
+
+  Q_{n,k}(x,u_n)=(i x,zeta_n^k u_n),        k in Z/n.
+
+The plain lift is Q_n=Q_{n,0}.  On C_2 the two lifts (i x,+/-y) both have
+order 4.  On C_4 all four lifts have order 4.  This is the exact finite
+ambiguity already isolated in the predecessor.  The cover by itself does
+not select a lift.
+
+The existing mu3 rotation is different from the plain lift:
+
+  D_3=Delta_3=(x,omega w),
+  R_3=Q_3 D_3=(i x,omega w).
+
+It satisfies
+
+  R_3^4=D_3,            R_3^9=Q_3,          ord(R_3)=12,
+
+whereas Q_3 has order 4.  This is the algebraic marked-cover realization of
+the existing Burau and covered-seam relation r^4=omega.  The relation uses
+the non-plain lift.  Merely writing x -> i x selects Q_3 and loses the deck
+factor.
+
+4. Exact compiler dictionary
+
+The original lattice chart has commuting operators
+
+  J(x0,x1,...)=(-x1,x0,...),                ord(J)=4,
+  sigma(x)=x[4,5,0,1,2,3,6,7],             ord(sigma)=3,
+  c=J sigma,                                ord(c)=12,
+
+and the actual checked identities
+
+  c^4=sigma,                                c^9=J.
+
+The cover clock has the same marked factorization, not only the same order:
+
+  J       <-> Q_3       plain base-quarter lift,
+  sigma   <-> D_3       oriented mu3 deck,
+  c=J sigma <-> R_3=Q_3 D_3.
+
+This preserves the generator, the distinguished C3 kernel, the C4 quotient,
+the embedded plain C4 splitting, and both power identities.  Hence
+
+  <c; sigma=c^4, J=c^9>  ->  <R_3; D_3=R_3^4, Q_3=R_3^9>
+
+is an isomorphism of marked cyclic clock groups.  Equality of order is only
+one consequence of this stronger dictionary.
+
+On the common covers, let Delta_n remain the chosen deck generator.  The
+compiler-marked lifts are
+
+  R_6  = Q_6  Delta_6^4 = (i x,omega_bar t),
+  R_12 = Q_12 Delta_12^4 = (i x,omega s).
+
+Both have exact order 12, fourth power Delta_n^4 of order 3, and ninth power
+the plain lift Q_n.  Their descents are
+
+  C_12 -> C_6 :  R_12 -> R_6,
+  C_12 -> C_4 :  R_12 -> Q_4,
+  C_12 -> C_3 :  R_12 -> R_3,
+  C_12 -> C_2 :  R_12 -> Q_2,
+  C_6  -> C_3 :  R_6  -> R_3,
+  C_6  -> C_2 :  R_6  -> Q_2.
+
+Here omega_bar on t is not a reversed mu3 marking: squaring t to w sends
+omega_bar^2=omega, so the C_3 deck orientation is the fixed original one.
+
+5. Uniqueness and the no-free-parameter conclusion
+
+A lift of R_3 to C_6 is Q_6 Delta_6^k with k=1 or 4.  A lift to C_12 has
+k=1,4,7 or 10.  These are exactly the solutions of k=1 mod 3.  Requiring the
+existing compiler marking J=c^9 to be the plain base lift adds
+
+  9k=0 mod n.
+
+It selects k=4 uniquely for n=6 and n=12.  Thus the complete data already in
+the program
+
+  finite peripheral weight +1,
+  oriented sigma deck,
+  plain compiler-J lift,
+  c=J sigma,
+
+force the common-cover clock.  There is no continuous parameter and no new
+discrete choice.  If the J=c^9 marking is forgotten, the two or four lifts
+above reappear.  If the conjugate mu3 sheet is chosen, sigma is replaced by
+sigma^{-1} and the marked compiler generator becomes J sigma^{-1}=c^5.  That
+is a different explicit marking, not an unrecorded freedom in this result.
+
+6. Actual carrier characters
+
+The actual matrices give a sharper statement than equality of clock order.
+Write Phi_d for the d-th cyclotomic polynomial and X for the spectral
+variable.  On the original real E8 coordinate chart,
+
+  chi_c,real8 = Phi_4^2 Phi_12,
+  m_c,real8   = Phi_4 Phi_12.                         (6.1)
+
+In the native complex chart V4, z_j=x_(2j)+i x_(2j+1), the same matrix is
+
+  c=i P,   P(z0,z1,z2,z3)=(z2,z0,z1,z3),
+  chi_c,V4=(X-i)^2 (X^2+iX-1),
+  m_c,V4  =(X-i)   (X^2+iX-1).                       (6.2)
+
+Its literal realification is the matrix used in (6.1).  Applying that same
+matrix to the retained native descendants gives
+
+  exterior2 V4, rank6:
+    chi=(X+1)^2 Phi_6^2,       m=(X+1)Phi_6;
+
+  quartic P5, rank5:
+    chi=Phi_1^3 Phi_3,         m=X^3-1.               (6.3)
+
+For P5 the checker acts on the exact five sparse supports of
+process._code_basis: sum z_i^4, the three paired-square sums, and
+z0z1z2z3.  It does not fit a new invariant five-space.  The original twenty
+erasures partial_a P_i are linearly independent and span Sym3 V4.  In the
+existing bar(V4) tensor P5 reading their complex characteristic polynomial is
+
+  chi_c,erasure20=(X+i)^8 (X^2-iX-1)^6,
+  m_c,erasure20  =(X+i)   (X^2-iX-1).                 (6.4)
+
+Its rational realification therefore has characteristic polynomial
+Phi_4^8 Phi_12^6 and minimal polynomial Phi_4 Phi_12.  The multiplicity six
+means the erasure carrier contains Phi_12 copies, but it supplies no preferred
+one of them.
+
+For the curve, use exactly the reduced Burau generators of v597/v610/v613 at
+T=omega and rationalize each Eisenstein coordinate in the integral basis
+(1,omega).  The predecessors identify this rank-three Eisenstein module with
+the H1 character carrier.  The certificate below works in its retained native
+Z[omega]^3 basis; it does not independently construct a geometric integral
+cycle basis.  The matrix r becomes a rank-six integral rational matrix with
+
+  chi_r,H1=Phi_6 Phi_12,
+  m_r,H1  =Phi_6 Phi_12,                               (6.5)
+  r^4=D_omega,                 r^9=Q,                 r^12=1.
+
+Over Q(omega), its characteristic polynomial is
+
+  X^3+omega X^2+omega^2 X+1.
+
+This is the exact H1 realization of the v610 combined character orders
+(12,12,6).  Equations (6.1) and (6.5) show both the common component and the
+full obstruction:
+
+  common:       one rational Phi_12 module, dimension4;
+  E8 remainder: Phi_4^2, dimension4;
+  H1 remainder: Phi_6,   dimension2.                  (6.6)
+
+The coprime factors make both Phi_12 kernels canonical.  No carrier
+isomorphism extending the common component exists because the complementary
+cyclotomic factors and dimensions differ.
+
+The same factor test completely settles the retained descendants.  Quartic
+P5 has no rational irreducible factor in common with H1.  Exterior2 V4 shares
+Phi_6, but carries two copies while H1 carries one; the existing data do not
+select one exterior copy.  Erasure20 shares Phi_12, but carries six copies and
+likewise supplies no selected copy.  Thus only real8 versus H1 has a common
+irreducible of multiplicity one on both sides, which is why it yields the
+canonical single-copy subspaces used below.
+
+7. Explicit maximal Phi12 transport
+
+Let U_E=ker Phi_12(c) in the actual E8 lattice and let
+U_B=ker Phi_12(r) in the rationalized reduced-Burau Z^6 lattice.  In the
+original coordinate orders, take the columns of
+
+  B_E = [ -1  0 -1  0 ]       B_C = [ 0 1 0 0 ]
+        [  0  0  0  1 ]             [ 0 1 0 1 ]
+        [  1  0  0  0 ]             [ 1 0 1 0 ]
+        [  0 -1  0 -1 ]             [ 0 0 1 0 ]
+        [  0  0  1  0 ]             [ 0 1 0 1 ]
+        [  0  1  0  0 ]             [ 0 0 0 1 ]
+        [  0  0  0  0 ]
+        [  0  0  0  0 ].
+
+Both column lattices are saturated: the gcd of their maximal minors is1.
+On the E8 side the Phi_12 subspace has last complex coordinate zero, so the
+half-integral E8 coset does not meet it; all of its integer points have even
+coordinate sum.  Thus B_E spans the actual U_E intersection E8, not merely an
+ambient Z^8 substitute.
+In both bases the order-twelve generator is
+
+  A12 = [0 0 0 -1]
+        [1 0 0  0]
+        [0 1 0  1]
+        [0 0 1  0],                  Phi_12(A12)=0.    (7.1)
+
+Therefore
+
+  T12(B_E a)=B_C a,       a in Z^4,                  (7.2)
+
+is an explicit integral Z[C12]-module isomorphism.  It preserves more than
+the generator.  In the same bases,
+
+  J_E = Q_C = [ 0  1  0  1]          sigma_E = D_C = [-1  0 -1  0]
+                [ 0  0  1  0]                          [ 0 -1  0 -1]
+                [ 0 -1  0  0]                          [ 1  0  0  0]
+                [-1  0 -1  0],                         [ 0  1  0  0].
+
+Thus the actual carrier action satisfies exactly
+
+  T12 c = r T12,
+  T12 J = Q T12,                 J=c^9, Q=r^9,
+  T12 sigma = D_omega T12,       sigma=c^4, D_omega=r^4.       (7.3)
+
+This is the maximal common transport component asked for: Phi_12 occurs once
+on each of real8 and curve H1, and the remaining irreducibles do not match.
+The displayed T12 is a concrete certificate intertwiner.  The source data do
+not choose it uniquely among the automorphisms of the common cyclotomic
+module, so it is not promoted to a new physical identification.
+
+The existing integral forms put a further exact boundary on (7.2).  On U_E,
+the E8 Euclidean form and the existing complex structure give the alternating
+form E_E(u,v)=<u,Jv>.  In the B_E basis,
+
+  E_E = [ 0  1  0  2]
+        [-1  0  1  0]
+        [ 0 -1  0  1]
+        [-2  0 -1  0],       det E_E=9, type (1,3).    (7.4)
+
+On the retained Eisenstein Burau lattice, use the actual invariant Hermitian
+matrix J_B, called J in v597.  The primitive alternating form
+
+  E_C=Tr_(Q(omega)/Q)((1+2omega)J_B)/6
+
+is integral, unimodular on the full retained rank-six lattice and r-invariant.
+Its restriction in the B_C basis is
+
+  E_C|Phi12 = [0 -1 -1 -2]
+               [1  0 -1 -1]
+               [1  1  0 -1]
+               [2  1  1  0],       det=4, type (1,2). (7.5)
+
+The notation in the trace line means the field trace from Q(omega) to Q.
+The different elementary-divisor types prove that no unimodular Phi_12
+intertwiner can also preserve these retained invariant integral alternating
+forms.  This calculation does not identify E_C with the geometric topological
+intersection pairing on an independently constructed cycle lattice.  The
+unpolarized integral clock transport (7.2)-(7.3) remains exact.
+
+8. The two roles called J
+
+The comparison exposes one necessary distinction.  The all-J peripheral
+lattice monodromy defines the C4 kernel cover, where its image is the deck map
+
+  J_peripheral <-> Delta_4=(0,1).
+
+The compiler relation J=c^9, and the actual Phi_12 intertwiner above, give
+
+  J_compiler=c^9 <-> Q_4=(1,0),
+
+the plain lift of x->ix.  These are different automorphisms: Delta_4 covers
+the identity on the base, while Q_4 covers q.  More strongly, every lift
+(1,k) of q has ninth power with base component1, so its ninth power can never
+be a deck transformation with base component0.  Consequently the common
+cover tower and the carrier intertwiner are each exact, but there is no single
+equivariant action that identifies peripheral J and compiler J as the same
+cover automorphism.  This is an exact scoped mismatch, not a missing choice of
+phase.
+
+9. Root and covered-seam permutation characters
+
+The v623 action on its 48 sites consists of four twelve-cycles.  Hence
+
+  chi_L,48=(X^12-1)^4,                 m_L=X^12-1.
+
+The actual compiler on the 240 E8 roots has nineteen twelve-cycles and three
+four-cycles:
+
+  chi_c,roots=(X^12-1)^19 (X^4-1)^3,  m_c,roots=X^12-1.
+
+Thus equal minimal polynomial and the same marked power relations do not make
+the permutation carriers equal.  Their cyclotomic multiplicities for
+d=(1,2,3,4,6,12) are respectively
+
+  E8 roots: (22,22,19,22,19,19),
+  seam48:   ( 4, 4, 4, 4, 4, 4).
+
+As an abstract Q[C12]-module the whole seam48 can be embedded in the root
+permutation module by choosing four of the nineteen regular twelve-orbits.
+No existing mark selects four such root orbits, so that embedding is not a
+source-derived dictionary and is not made here.
+
+10. Exact scope
+
+The result now identifies the complete common-cover tower, the unique marked
+common-cover clock, and the maximal actual real8/Burau-H1-model transport
+component.  It also proves the precise retained-integral-form, complementary-spectrum,
+peripheral-role and permutation-character obstructions.  The quartic,
+exterior and erasure carriers retain their original actions and are not
+silently equated to H1.
+
+Nothing here promotes the older Q/V operator dictionary, selects a physical
+seam, or derives physical time.  The common covers are forced fibre products
+of supplied covers, and all representation comparisons use the supplied
+matrices and bases.
+
+Executable certificate
+
+  python3 experiments/theory-contracts/e-series-compiler-closure-20261023/cover_dictionary.py
+
+The certificate checks the five Riemann-Hurwitz and peripheral records, all
+cover morphisms, both CRT minimality statements, the actual E8 root action of
+J, sigma and c, c^4=sigma, c^9=J, every common-cover lift candidate, unique
+k=4 selection and all descents.  It also reconstructs the actual V4,
+exterior6, quartic5, erasure20 and rationalized Burau matrices; proves every
+displayed characteristic and minimal polynomial; verifies the saturated
+Phi_12 bases and the J/plain and sigma/deck intertwining; retains both
+integral alternating forms; and compares the complete 240-root and 48-site
+permutation characters.
+
+Original sources retained without alteration
+
+  experiments/theory-contracts/e-series-quarter-clock-20261023/PROOF.txt:177-228
+  verification/v597_mu4_cover_model.py:1-19,94-132
+  verification/v617_seam_cover_forcing.py:22-41
+  verification/v623_covered_seam.py:28-34,156-182
+  verification/v634_st31_structure.py:105-126,721-737
+  verification/v610_curve_landscape.py:1-29,154-168
+  verification/v613_canonical_periods.py:1-31,83-102,201-241
+  verification/v654_st31_degree8.py:44,850-894
+  experiments/theory-contracts/marked-seam-monodromy-20261023/THEORY.txt:287-303
+  tfpt_explorer/process.py:242-260
+  experiments/theory-contracts/joint-native-algebra-selection-20261016/
+    ERASURE-AND-JOINT-25-MULTILOCAL-SUPPORT.txt:1-18
+  documents/tfpt_1_architecture_e8/sections/001-source.tex:182-225
+
+Verdict
+
+PASS, established only in the declared pure mathematical marked-cover scope.
+C_6 is the minimal parity/mu3 common cover.  C_12 is the minimal full
+C4-kernel/mu3 common cover.  The original compiler and covered-seam clocks
+have an exact marked generator dictionary.  The actual real8 carrier and the
+retained Burau/H1 model share exactly one canonical rational Phi_12 summand,
+with the explicit integral intertwiner (7.2); their remaining cyclotomic
+components and retained invariant integral forms obstruct a full carrier
+identification.

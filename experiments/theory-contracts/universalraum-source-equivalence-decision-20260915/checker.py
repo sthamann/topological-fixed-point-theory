@@ -43,7 +43,7 @@ def run():
         support=[pairs[j] for j in np.flatnonzero(W[row])]
         need(len(support)==8 and len({i for p in support for i in p})==16,'eight disjoint pairs in channel '+str(row))
     common=HERE/'inputs/native_common.py'
-    need(sha256(common.read_bytes()).hexdigest()=='2cc97522457ecc7e6774d96a25b2581b5d67cd051ae35e28a26f0e98e2adb994','pinned Casimir constructor')
+    need(sha256(common.read_bytes()).hexdigest()=='47d3cc97019892f47985172ada67294fe8686ccc9df4f09ee18d6f5fe6bccfed','pinned Casimir constructor')
     spec=importlib.util.spec_from_file_location('ground_nongaussian_common',common)
     nc=importlib.util.module_from_spec(spec);spec.loader.exec_module(nc)
     need(nc.casimir_identity(W),'entire two-fermion Casimir identity exactly')

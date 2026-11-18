@@ -24,7 +24,7 @@ ROOT = HERE.parents[2]
 PREVIOUS = ROOT / "experiments/theory-contracts/common-engine-threeway"
 PINS = {
     "cell.py": "0a86ae2b150911d461fbdb8d221cb283ce9f52122f75dafd6807c360d26a7862",
-    "source_adapter.py": "348f2e76f28e8686bbfa79f5f0ae1bf944a17d79e493cacd631e56b723137961",
+    "source_adapter.py": "7fb3de6440603c647347c1eee62ebdf6c1d2aa6a15c695937714271df9f18061",
     "reverse.py": "0c9d6dd006319bb521cadb1abe3bd92b40aae0e23e7dbe90342f3d64d56b3c13",
 }
 Z = (1, -1, -1, 1)

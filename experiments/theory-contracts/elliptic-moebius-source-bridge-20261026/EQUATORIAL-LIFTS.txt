@@ -1,0 +1,466 @@
+ORIGINAL EQUATORIAL REAL LIFTS ON THE EXISTING C2 CURVE
+=======================================================
+
+26 October 2026. Exact source and curve audit. No Atlas, paper, ledger, or
+previous report was changed. Atlas revision used for navigation:
+4a17a404b58c05f460121df8.
+
+Question
+========
+
+The previous elliptic calculation used the eight anti-holomorphic maps
+
+  h^a Q^b kappa,
+
+on
+
+  E: y^2=x^4-1,
+  h(x,y)=(x,-y),  Q(x,y)=(i x,y),
+  kappa(x,y)=(bar x,bar y).
+
+It found the dividing pair hQkappa and hQ^3kappa. The original P1 source,
+however, also contains the mark-fixing base mirror x -> 1/x and the pointwise
+fixed equatorial Real form x -> 1/bar x. The decisive question is whether
+their lifts add a missing original seam geometry, and whether the same
+Q-invariant spin line is compatible with it.
+
+Verdict
+=======
+
+[E] There are exactly two deck-related lifts of the equatorial base Real
+form:
+
+  j_+(x,y)=(1/bar x, +i bar y/bar x^2),
+  j_-(x,y)=(1/bar x, -i bar y/bar x^2)=h j_+(x,y).       (1)
+
+Both square to one and both have two ovals. Their quotients are annuli. The
+quarter Q exchanges them. They arise without a new cover or a chosen Real
+form: if
+
+  S(x,y)=(1/x, i y/x^2),                                (2)
+
+then S^2=h and
+
+  j_+=S kappa,  j_-=hS kappa.                           (3)
+
+[E] Adding S completes the old base D4 action on the concrete curve. The
+sixteen anti-holomorphic lifts split exactly into the two old v510/v519 base
+families:
+
+  h^a Q^b kappa       -> x |-> i^b bar x       family D,
+  h^a Q^b S kappa     -> x |-> i^b/bar x       family A. (4)
+
+Among these sixteen maps, twelve are strict Real involutions and four have
+order four. The previous eight-map census was correct inside <h,Q,kappa>,
+but it was not the full marked D4 lift census. In the full census there are
+two different dividing orbits: the old OS midpoint pair
+{hQkappa,hQ^3kappa}, and the new equatorial pair {Skappa,hSkappa}.
+
+[E] This does not identify the two slots. v519 says explicitly that family A
+defines the Euclidean seam section and that its equatorial member fixes the
+seam pointwise, with no OS half-space decomposition. Family D supplies the
+OS reflection and inverts the clock. Thus the old pair remains the correct
+lift of the two mark-swapping family-D midpoint axes. The new pair supplies
+the missing lift of the pointwise fixed family-A equator.
+
+[E] The smallest source-identification test produces a real obstruction to
+calling one new oval the original full seam. If Gamma is the unit circle,
+which contains all four mu4 branch marks, then
+
+  p^{-1}(Gamma)=Fix(j_+) union Fix(j_-),  p(x,y)=x.       (5)
+
+In the square uniformization this is two horizontal plus two vertical
+circles. They meet at the four ramification points. The union is a connected
+graph with V=4, E=8 and b1=5; its complement consists of four disks. Each
+individual oval maps two-to-one only onto one alternating quarter arc of
+Gamma. Therefore the original full pointwise fixed seam does not pull back
+to one ordinary boundary circle or to the boundary of one of the two
+annuli.
+
+[E] As an unlinearized complex flat line class, the existing Q-fixed
+nontrivial elliptic spin class alpha is invariant under the full marked lift
+group. On each of the four equatorial ovals its restriction is NS. At the
+four-valent graph vertices, however, a one
+dimensional boundary Dirac operator needs additional vertex matching data.
+The sources checked here provide no such matching rule and no unitary taking
+the original circle kernel to this graph.
+
+[O] The exact remaining source step is consequently smaller and sharper
+than before: identify whether the original operational seed uses the base
+circle Gamma itself, a chosen family-D OS cut acting on Gamma, or a specified
+smooth push-off of p^{-1}(Gamma), and supply its boundary trace and state
+transport. The curve and its spin line now carry both required Real-form
+slots. They do not by themselves choose the smooth carrier on which the
+original quarter Hardy or NS kernel acts.
+
+1. What the old sources actually contain
+=========================================
+
+1.1 v507: torus origin and the holomorphic D4
+------------------------------------------------
+
+v507 proves that the four marks are the fixed points of the hyperelliptic
+involution, hence the four half-periods of the elliptic double. It proves
+that mark-free collar decks are half-period translations, and that at
+tau=i the stabilizer is D4 with the CM-fixed half-period central. Its
+explicit descent and curve-lift calculations are at
+
+  verification/v507_seam_bit_origin.py:407-477,607-701
+  SHA256 926ea236729dffb3ac531ecd34c9b8efa02afea1632abf9798786e65b40ada1f.
+
+The source-leading paper record is
+
+  paper-source:acdfeae924036b5d7fbf9676
+  documents/changelog/sections/006-source.tex:1-65
+  SHA256 c5024dbed35b13842c60e4cdb0911568f8b94d4bdfa0c438e5aadf12a29c2db5.
+
+It constructs the holomorphic torus and deck source. It does not enumerate
+the anti-holomorphic lifts of x -> 1/bar x on y^2=x^4-1.
+
+1.2 v510: the two base Real-form families
+-------------------------------------------
+
+v510 classifies all deck-normalizing anti-holomorphic maps on the base as
+
+  x -> mu bar x,        x -> mu/bar x.                  (6)
+
+For mu4 it selects x -> 1/bar x as the unique mark-fixing equatorial
+structure. Its fixed circle avoids the base deck poles 0 and infinity, so
+the base deck is free along that circle. See
+
+  verification/v510_seam_bit_freedom.py:747-798,801-858
+  SHA256 5b174a8914b14308621e0be98fc9d44e23b89713400ea5c09e1cae17d3546193,
+
+and the source record
+
+  paper-source:3ff6da26622ba2984cb0e64c
+  documents/changelog/sections/005-source.tex:186-242
+  SHA256 f0f5a3c3add4d0a0ec714e3ef03fd838e4a47708ccc34244c25398da738e6987.
+
+This is a base-sphere statement. It does not say that p^{-1}(Gamma) is a
+smooth circle, nor does it lift both families to the concrete C2 curve.
+
+1.3 v512: the missing base mirror was already present
+------------------------------------------------------
+
+v512 proves that the complete holomorphic base symmetry census consists of
+
+  x -> lambda x,       x -> lambda/x,
+
+and that at mu4 it closes to D4. In particular x -> 1/x is the mark-fixing
+mirror. See
+
+  verification/v512_seam_tau_flag.py:301-388
+  SHA256 78f7b1087e030226ab095ee8b391254f03ec23425e32a8a20d66438414c08782,
+
+and
+
+  paper-source:bea881269e785d645bba31c6
+  documents/changelog/sections/005-source.tex:69-104
+  SHA256 f0f5a3c3add4d0a0ec714e3ef03fd838e4a47708ccc34244c25398da738e6987.
+
+Thus S in (2) is not a newly fitted symmetry. The new step is its exact lift
+to the already existing C2 curve and its composition with the already
+existing kappa.
+
+1.4 v519: decisive role separation
+-----------------------------------
+
+v519 calls x -> mu bar x family D and x -> mu/bar x family A. It proves:
+
+  * family D inverts the clock, acts on Gamma as a reflection with two cut
+    points, and is the OS family;
+  * family A centralizes the clock projectively;
+  * x -> 1/bar x fixes Gamma pointwise and therefore has no OS cut;
+  * family A defines the Euclidean section while family D reflects it.
+
+The decisive executable lines are
+
+  verification/v519_woit_theta_rp_free.py:356-439,442-485,698-724
+  SHA256 e86e3a055b58051c7978d8f10ee527948bac758fd4665ac216e18a71cc8c1ee9.
+
+The same distinction is written into the active source chain at
+
+  paper-source:d4a5d7ca6dd1a9006b1a448f
+  documents/changelog/sections/004-source.tex:75-123
+  SHA256 f1b117a014f2b1397182f975c03881140094d6d9e566fc331696c8b1b6a450e5,
+
+and into the explicit research contract at
+
+  paper-source:fbdc575f08b751529cc80783
+  documents/tfpt_research_contracts/sections/013-source.tex:139-250
+  SHA256 96f670d76ad94d57c496e386fb61cddfa428795ae302024f93933c4d9b0e6dd7.
+
+This corrects the phrase "Original OS seam is x -> 1/bar x". The unit circle
+is the pointwise fixed Euclidean seam. The OS operation along it is family D.
+
+For the two old dividing forms the base actions are
+
+  hQkappa:   x ->  i bar x,
+  hQ^3kappa: x -> -i bar x.                             (7)
+
+These are exactly the two v519 silver-midpoint axes. They swap all four
+marks and their two base cut points lie between marks. Their elliptic fixed
+ovals contain no ramification mark. This is the right slot for the earlier
+OS and Green-kernel comparison.
+
+1.5 v521 and v525 do not add the missing curve lift
+---------------------------------------------------
+
+v521 extends the family-D census through the deformed mark family and proves
+that free RP sees the family but does not select the side. Its exact census
+and verdict are at
+
+  verification/v521_seam_bit_rp_blind.py:405-480,973-1013
+  SHA256 8e46478bfeb77d2052d31901237a2245a7267248205bf584e5357fe6c328b516,
+
+with paper record
+
+  paper-source:584d6e2ab5a25deffb5645c2
+  documents/changelog/sections/004-source.tex:1-31
+  SHA256 f1b117a014f2b1397182f975c03881140094d6d9e566fc331696c8b1b6a450e5.
+
+v525 proves that mark-decorated free states remain side-blind. Its verdict is
+at
+
+  verification/v525_seam_bit_twist_blind.py:1486-1528
+  SHA256 9b31d49fafb6567f231787df04eb95a7637afc1019e415fd7f90286249ae942f,
+
+with paper record
+
+  paper-source:da2365a9cc38790f5b167324
+  documents/changelog/sections/003-source.tex:272-293
+  SHA256 13da54d7b7a65f7aa2dcd92620b4277a0bde6fee8ff8c105857e2e2882ab28b3.
+
+Neither module constructs (1), the pullback graph (5), or a graph boundary
+domain. Their negative selector results remain unchanged.
+
+2. Exact lift and group calculation
+====================================
+
+2.1 The holomorphic mirror lift
+--------------------------------
+
+For S in (2),
+
+  (i y/x^2)^2=(1/x)^4-1
+
+after using y^2=x^4-1. Hence S preserves E. A second application gives
+
+  S^2(x,y)=(x,-y)=h(x,y).                               (8)
+
+Thus S has order four, while its base map x -> 1/x has order two. The two
+possible lifts of that base map are S and hS.
+
+Together with h and Q,
+
+  h^2=1,  Q^4=1,  S^2=h,
+  h central,
+  SQS^-1=hQ^-1.                                         (9)
+
+The holomorphic marked lift group therefore has sixteen elements
+
+  h^a Q^b S^c,   a,c in Z2, b in Z4.                   (10)
+
+2.2 The equatorial anti-holomorphic lifts
+------------------------------------------
+
+For x'=1/bar x, the conjugate curve equation gives
+
+  x'^4-1=-(bar y)^2/(bar x)^4.
+
+Therefore y' must equal either sign of i bar y/bar x^2. This proves both
+existence and completeness of (1). Direct composition gives
+
+  j_+^2=j_-^2=1,       Qj_+Q^-1=j_-.                   (11)
+
+Their fixed sets can be found without uniformization. Put
+
+  x=e^(i theta),  y=e^(i theta) w.
+
+Then the curve gives
+
+  w^2=2i sin(2 theta).                                  (12)
+
+For j_+, fixedness says w=i bar w, hence sin(2 theta)>=0. The two intervals
+[0,pi/2] and [pi,3pi/2], with the two sheets joined at the branch endpoints,
+give two circles. For j_-, fixedness says w=-i bar w, hence
+sin(2 theta)<=0, and the complementary two intervals give two circles.
+Both Real curves are therefore dividing and their quotients are annuli.
+
+2.3 Full anti-holomorphic lift census
+--------------------------------------
+
+Conjugation satisfies
+
+  kappa Q kappa=Q^-1,       kappa S kappa=S^-1.         (13)
+
+The anti-holomorphic coset of the full marked lift group has sixteen maps.
+The first eight are the old family-D lifts
+
+  d_(a,b)=h^a Q^b kappa.
+
+All eight square to one. Their fixed-component census remains
+
+  (1,0,1,0; 1,2,1,2),                                  (14)
+
+with the semicolon separating a=0 and a=1.
+
+The other eight are the family-A lifts
+
+  a_(a,b)=h^a Q^b S kappa.
+
+Their exact squares are
+
+  a_(a,b)^2=h^b Q^(2b).                                 (15)
+
+Consequently b=0,2 gives four further Real involutions. The two b=0 maps
+are j_+ and j_- and each has two ovals. The two b=2 maps project to
+x -> -1/bar x and are fixed-point free. For b=1,3 the square is hQ^2,
+so the four maps have order four and no fixed points. This proves the count
+
+  12 anti-holomorphic involutions + 4 order-four maps.  (16)
+
+It also reproduces v519's family-A square dichotomy on the actual curve:
+mu=+1 is equatorial, mu=-1 is fixed-point free, and mu=+-i is order four.
+
+3. The full equatorial pullback is a graph
+===========================================
+
+This is the smallest decisive source test.
+
+Away from a branch mark, a point over |x|=1 satisfies exactly one of the two
+fixed equations in (1), according to the sign of sin(2 theta). At each of
+the four marks y=0, it satisfies both. Therefore (5) holds exactly.
+
+In the square uniformization E=C/(Z+iZ), use O=(0,i), T=(1+i)/2 and the
+normalization already used by the C2 calculation:
+
+  Qz=iz,
+  hz=-z+T,
+  kappaz=-i bar z+T.
+
+For the lift S in (2), S*z on the holomorphic differential is i and the
+corresponding affine map is
+
+  Sz=iz+1/2.                                             (17)
+
+Hence
+
+  j_+z=bar z+i/2,
+  j_-z=-bar z+1/2.                                      (18)
+
+The fixed sets are
+
+  Fix(j_+): Im z=1/4 or 3/4,
+  Fix(j_-): Re z=1/4 or 3/4.                            (19)
+
+Every horizontal circle meets every vertical circle once. The four
+intersection points solve hz=z and are exactly the four branch marks. Each
+of the four circles is divided into two edges. Thus
+
+  V=4, E=8, connected, b1=E-V+1=5.                     (20)
+
+The four rectangular complementary regions are disks. Equivalently,
+Euler's formula on the torus gives F=E-V=4.
+
+This makes the source issue visible. A fixed oval of j_+ or j_- is smooth,
+but its projection folds two-to-one over one alternating quarter arc. The
+whole original equatorial seam requires all four ovals and the four branch
+vertices. It is not the boundary of either annulus E/j_+ or E/j_-.
+
+A small radial push-off |x|=r with r<1 or r>1 avoids the branch points. Its
+inverse image consists of two unbranched circles because it encloses zero or
+four branch points, hence has even covering monodromy. The original source
+does not choose such a push-off, its side, or the transport back to the
+marked seam. Using it as the physical carrier would therefore be an extra
+source map, not a consequence of (1).
+
+4. Spin compatibility and its exact limit
+==========================================
+
+The existing source calculation identifies the unique Q-fixed nontrivial
+elliptic spin class as
+
+  alpha=O(T-O),  T=(1+i)/2.
+
+See
+
+  experiments/theory-contracts/original-admissible-source-closure-20261025/
+  ORIGINAL-BASES-AND-ELLIPTIC-SPIN.txt:60-65,72-101
+  SHA256 bf6b2336e24a39aef26b9907c24f033a47a8a1318f8f19ae561e4c477680ce67.
+
+As a flat character on the square torus this is
+
+  chi_alpha(1)=chi_alpha(i)=-1.                         (21)
+
+Both Q and S pull the elliptic differential dx/y to i dx/y. Their integral
+H1 action is the quarter rotation, so alpha is invariant under both. It is
+also invariant under h and under the anti-holomorphic maps above as a
+two-torsion class.
+
+By (19), every j_+ boundary oval represents the A cycle and every j_-
+boundary oval represents the B cycle. Equation (21) therefore gives
+
+  hol_alpha(Fix(j_+) component)=-1,
+  hol_alpha(Fix(j_-) component)=-1.                     (22)
+
+Thus all four smooth oval components carry NS spin. Q exchanges the two
+horizontal and vertical presentations without a new spin choice.
+
+This is compatibility, not yet the original kernel theorem. At each branch
+vertex p^{-1}(Gamma) has four incident half-edges. The flat spin line does
+not select a self-adjoint vertex condition, a Calderon graph subspace, or a
+state. Also, v519's OS anti-linear operator is family D, whereas j_+/- are
+family A. Separate Real linearizations are required for the two roles. The
+old source has not supplied their common Fock or boundary-domain transport.
+
+5. Precise correction to the preceding reports
+===============================================
+
+The following results remain valid:
+
+  * the eight-map h^a Q^b kappa census;
+  * the dividing nature of hQkappa and hQ^3kappa;
+  * their annulus quotients, the free translation hQ^2, and the exact spin
+    central commutator already calculated there;
+  * their identification with the v519 mark-swapping midpoint OS axes.
+
+The following earlier wording is too broad and is superseded here:
+
+  * "the complete real-form census has eight members" must read "the
+    complete census inside <h,Q,kappa> has eight members";
+  * "the unique dividing orbit in the full marked group" is false after the
+    already present base mirror x -> 1/x is lifted;
+  * a dividing fixed oval of j_+ or j_- is not by itself the lift of the
+    complete original equatorial seam;
+  * x -> 1/bar x is not the v519 OS reflection. It is the pointwise fixed
+    Euclidean seam structure on which the family-D OS reflections act.
+
+The new positive bridge is exact but bounded: one and the same existing C2
+curve, with no new cover and no fitted spin character, realizes the complete
+two-family v510/v519 base classification and the NS restriction on the new
+equatorial oval components. The missing physical arrow is now the boundary
+domain and state on the ramified seam graph, or an original prescription
+that replaces that graph by a smooth carrier.
+
+6. Replayed finite certificate
+===============================
+
+The smallest exact SymPy replay checked the curve identities for S and both
+j signs, S^2=h, j_+^2=j_-^2=1, formula (15), the 12+4 count, and the NS
+cycle labels. Its observed output was:
+
+  r_curve_residue_mod_curve=0
+  j_sign +1 curve_residue_mod_conj_curve=0
+  j_sign -1 curve_residue_mod_conj_curve=0
+  r2=h, j_plus_square=1, j_minus_square=1
+  typeB b=0: square=1, order=2, base=1/barx, 2 ovals
+  typeB b=1: square=hQ^2, order=4, base=i/barx
+  typeB b=2: square=1, order=2, base=-1/barx, empty
+  typeB b=3: square=hQ^2, order=4, base=-i/barx
+  strict_real_count=12, antiholomorphic_order4_count=4
+  j_plus boundary class=A, chi_alpha(A)=-1
+  j_minus boundary class=B, chi_alpha(B)=-1
+
+No new checker file or auxiliary model was introduced.

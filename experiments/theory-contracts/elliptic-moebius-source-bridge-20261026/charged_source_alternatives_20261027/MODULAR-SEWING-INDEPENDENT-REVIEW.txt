@@ -1,0 +1,215 @@
+INDEPENDENT REVIEW: CHARGE-RESOLVED MODULAR SEWING
+27 October 2026
+
+VERDICT
+
+The proposed finite modular statement is correct.  Inside the already proved
+class of connected local unitary same-conformal extensions of
+
+  U = V_D5 tensor V_A3,
+
+a one-dimensional chiral vacuum block closed under cycle exchange selects
+exactly the two Lagrangian supports Hplus and Hminus.  Both extensions are
+V_E8.  The criterion therefore selects the unmarked E8 endpoint without
+assuming occurrence of the particular local module M_(1,1).
+
+It does not select the fixed-U marked embedding Hplus.  Hminus passes the same
+modular test.  The two become equivalent only after allowing the A3 diagram
+reversal already identified in SIMPLIFICATION.txt.  Thus the modular criterion
+is a less marked source test for the abstract E8 VOA, but not a weaker form of
+holomorphy and not a replacement for the source marking when the labelled
+D5 x A3 embedding matters.
+
+
+1. EXACT FINITE CALCULATION
+
+Let A=C4 x C4 and
+
+  q(a,b) = (5a^2+3b^2)/8 mod 1,
+  B((a,b),(c,d)) = (5ac+3bd)/4 mod 1.
+
+In the charge-resolved conformal-block basis e_x, the finite Fourier matrix is
+
+  S_(x,y) = |A|^(-1/2) exp(-2 pi i B(x,y))
+          = (1/4) exp(-2 pi i (5ac+3bd)/4).
+
+For v_H=sum_(h in H)e_h, character orthogonality gives
+
+  S v_H = (|H|/4) v_(H perp).                         (1)
+
+This is an identity in the abstract 16-dimensional modular representation.  It
+does not rely on numerical values of specialized characters.
+
+The four extension supports from SIMPLIFICATION.txt give:
+
+  H0       |H|=1   |Hperp|=16   S v_H=(1/4)v_A,
+  H2       |H|=2   |Hperp|=8    S v_H=(1/2)v_Hperp,
+  Hplus    |H|=4   Hperp=H      S v_H=v_H,
+  Hminus   |H|=4   Hperp=H      S v_H=v_H.
+
+Hence S fixes the vacuum vector exactly iff H is Lagrangian.  If the premise is
+only invariance of its line, the conclusion is unchanged: equality of supports
+forces H=Hperp, hence |H|^2=|A|=16 and the scalar in (1) is one.
+
+The relative T matrix is exp(2 pi i q).  It fixes every v_H because all four
+supports are isotropic.  For actual VOA characters there is also the common
+central-charge factor exp(-2 pi i c/24); at c=8 the vacuum line is T-stable with
+that common projective phase.  It should not be described as pointwise T-fixed
+unless this standard scalar has first been removed.
+
+The exact checker reproduces these statements, verifies S* S=I, S^2=charge
+conjugation, and provides the rank-16 paired control.  One focused replay was
+byte-identical to the stored result:
+
+  check_modular_sewing.py
+  SHA256 9fec3ac832649d79b13fe5d84f198f15e8b1a8a570aab1be6aa3185f59049d87
+
+  modular-sewing.json
+  SHA256 7c6b99699f1eed64a966a93eca7c4ed4adb988f59baf030cd64f6652a34c7769
+
+
+2. WHAT THE PREMISE MEANS
+
+For an extension algebra B with support H, v_H is the restriction of the
+extended vacuum character to U.  Requiring its span to be closed under the
+torus S move says that the extension has no other chiral sector into which its
+vacuum character can transform.  In this pointed category this is precisely
+the Lagrangian, or holomorphic, condition.
+
+Therefore "a single chiral vacuum line" is substantial global input.  It is not
+ordinary sewing consistency of an arbitrary rational theory.  Non-holomorphic
+extensions have consistent multi-component modular representations, and the
+vacuum component is allowed to mix with the others.
+
+The criterion is also not derivable from a scalar doubled partition function.
+The diagonal matrix M=I obeys
+
+  S^* M S=M,  T^* M T=M
+
+for the whole 16-sector theory.  Its rank is 16, so this invariance supplies no
+rank-one chiral vacuum line.  Likewise tau=i is a fixed point of S; equality of
+one specialized numerical value at tau=i does not establish (1) as a vector
+identity.
+
+Charge resolution is load-bearing for the full support and the marked
+embedding.  The leading vacuum coefficient of an unrefined S-transformed
+character still gives the necessary equation |H|/4=1, because every nonvacuum
+U module has positive lowest weight.  Thus it detects the required cardinality
+four inside the already classified four-extension list.  Coincident unrefined
+q-series can nevertheless hide the rest of the support.  The safe object for
+the complete statement is the labelled modular tensor-category basis e_x, or
+Jacobi characters with independent charge variables.  Scalar specialized
+characters cannot distinguish Hplus from Hminus and need not retain the full
+16-dimensional action faithfully.
+
+
+3. COMPARISON WITH THE MARKED-GENERATOR THEOREM
+
+The two hypotheses are not logically equivalent on the classified set:
+
+  Hom_U(M_(1,1),W) nonzero       holds only for Hplus;
+  one chiral S-stable vacuum line holds for Hplus and Hminus.
+
+Thus modular sewing is strictly less marked.  It is sufficient for the
+unlabelled VOA isomorphism class V_E8, because Hplus and Hminus differ by the A3
+diagram reversal.  It is insufficient for the literal fixed-U extension and
+for every later dictionary that distinguishes (1,1) from (1,-1).
+
+Conversely, the new condition is exactly holomorphy within this classified
+extension class, whereas the local marked-generator theorem starts only from
+occurrence of one charged module and proves saturation.  Calling the modular
+premise weaker would therefore be wrong.  It is less marked as a test for the
+unlabelled endpoint, while making a global statement about all
+superselection sectors.
+
+The local-extension premise remains.  The classification used here begins
+with a connected local unitary extension sharing U's conformal vector.  A
+formal vector satisfying Sv=v does not by itself construct the extension,
+prove locality, or map the primitive P1 source into it.
+
+
+4. CIRCULARITY TEST AGAINST THE ORIGINAL SOURCE
+
+The active original text already names holomorphy as the closing condition:
+
+  documents/tfpt_research_contracts/sections/005-source.tex:60-67
+
+identifies "mu-index 1, single vacuum sector" as the AQFT face selecting E8.
+Lines 78-96 identify the still load-bearing passage as the step from the RP
+bulk to a holomorphic boundary net.  Lines 97-121 reformulate it as det K=1,
+absence of topological degeneracy, or short-range entanglement.
+
+This supports the mathematical relevance of the modular criterion, but it does
+not by itself provide a new primitive derivation.  In particular, the same
+file's lines 45-50 already phrase the keystone as equality of the raw seam with
+the holomorphic E8 net at tau=i.  Using that named equality, or calculating
+det K from the already selected E8 lattice, to justify the S-fixed line would be
+circular for the present selection question.
+
+The existing local theorem is correctly scoped in
+
+  experiments/theory-contracts/e-series-source-reconstruction-20261024/
+  SIMPLIFICATION.txt:8-21, 84-111, 113-147, 162-168.
+
+It proves the marked route after local occurrence of M_(1,1), and explicitly
+states that primitive P1 realization is still an input.  The modular route
+removes that particular occurrence premise only if holomorphy is established
+independently upstream.
+
+
+5. SMALLEST DECISIVE ORIGINAL-SOURCE TEST
+
+Before naming an extension, construct from the primitive source one of the
+following equivalent charge-resolved data:
+
+  (a) its torus chiral conformal-block vector
+      Z_ch=sum_(x in A) n_x chi_x(tau,z),
+      with n_0=1 and n_x nonnegative integers, and prove the source sewing map
+      sends Z_ch to the same one-dimensional line under S;
+
+  (b) the boundary net's mu-index and prove it equals one;
+
+  (c) the torus conformal-block, equivalently topological state, space of the
+      associated modular theory and prove it has dimension one, without using
+      an E8 K matrix or E8 lattice already chosen downstream.
+
+Item (c) never means the ordinary vacuum-energy eigenspace of a chiral CFT.
+D8 also has a unique ordinary vacuum vector; that fact does not make its
+modular category holomorphic.
+
+Within the established extension classification, any one of these tests gives
+H=Hperp and therefore the abstract E8 extension.  To recover the original
+marked embedding as well, one further charge-resolved datum must distinguish
+
+  n_(1,1)=1, n_(1,3)=0
+
+from the reversed choice.  That last bit is exactly the surviving orientation
+or marking information.  It is smaller than constructing the local (16,4)
+generator explicitly, but it cannot be obtained from an unrefined character or
+from modular invariance alone.
+
+
+FINAL ASSESSMENT
+
+The proposed S-vector theorem and the now-written
+CHIRAL-SEWING-SELECTION.txt proof are exact in their stated class.  They give a
+clean global alternative to the local charged-generator test for selecting the
+unmarked E8 endpoint.  Their real source premise is holomorphy, not generic
+modular invariance.  The rank-16 paired example is only a logical control; it
+is not presented as a full P1 countermodel.  The next decisive step is therefore an upstream,
+charge-resolved proof that the primitive boundary source has a one-dimensional
+chiral torus sector.  Without that proof the argument is a correct conditional
+reformulation of the existing Seam-Holomorphy target, not a new derivation of
+the target from P1.
+
+
+REVIEWED CURRENT FILES
+
+  research-20261027-charged-endpoint/CHIRAL-SEWING-SELECTION.txt
+  SHA256 0f5a81219a34a5de0c935a175bdcfcb9232250c2df4e192e7e800715fdef51bd
+
+  research-20261027-charged-endpoint/check_modular_sewing.py
+  SHA256 9fec3ac832649d79b13fe5d84f198f15e8b1a8a570aab1be6aa3185f59049d87
+
+  research-20261027-charged-endpoint/modular-sewing.json
+  SHA256 7c6b99699f1eed64a966a93eca7c4ed4adb988f59baf030cd64f6652a34c7769

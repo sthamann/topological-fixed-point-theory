@@ -1,0 +1,47 @@
+{
+  "verdict": "PARTIAL",
+  "assertions_passed": true,
+  "source": "verification/v1020_spectator_sector_obstruction.py",
+  "source_sha256": "cf62ace61ab774635e89df611336a6db6363e1c249e6d85f79431ec918c20647",
+  "parameters": {
+    "beta": 0.7,
+    "scalar_shift": 0.4,
+    "basis_phase_step": 0.217
+  },
+  "samples": [
+    {
+      "momentum": 0.0,
+      "dimension": 16,
+      "commutant_original_helper": 58,
+      "commutant_original_helper_after_basis_change": 1,
+      "commutant_complex": 58,
+      "commutant_complex_after_basis_change": 58,
+      "commutant_complex_after_scalar_shift": 58,
+      "krylov": 6,
+      "krylov_after_basis_change": 6,
+      "krylov_after_scalar_shift": 6,
+      "normalized_thermal_max_error": 6.703054539416717e-17,
+      "partition_ratio": 0.7557837414557255,
+      "expected_partition_ratio": 0.7557837414557255,
+      "ground_energy_shift": 0.3999999999999999
+    },
+    {
+      "momentum": 0.37,
+      "dimension": 16,
+      "commutant_original_helper": 1,
+      "commutant_original_helper_after_basis_change": 1,
+      "commutant_complex": 1,
+      "commutant_complex_after_basis_change": 1,
+      "commutant_complex_after_scalar_shift": 1,
+      "krylov": 16,
+      "krylov_after_basis_change": 16,
+      "krylov_after_scalar_shift": 16,
+      "normalized_thermal_max_error": 1.9255430583342559e-16,
+      "partition_ratio": 0.7557837414557252,
+      "expected_partition_ratio": 0.7557837414557255,
+      "ground_energy_shift": 0.40000000000000024
+    }
+  ],
+  "scope": "Finite original v1020 one-particle Hamiltonian. Thermal Gibbs normalization at positive beta; no preservation claim for v1020's zero-chemical-potential Fermi projector. Scalar-shift admissibility in the full original TFPT source is not established.",
+  "finding": "Seam cyclicity and joint commutant do not determine absolute normalization, even for the seam-cyclic sample. Original helper's general complex-domain annotation fails under a complex unitary basis change at the exceptional momentum; its original real-input values are not refuted."
+}

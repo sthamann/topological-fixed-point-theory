@@ -1,0 +1,164 @@
+CLAUDE50: UNABHAENGIGER REVIEW VON WORTUMKEHR, P_THETA UND ASYMMETRISCHEM GEWICHT
+===================================================================================
+
+Datum: 2026-10-30
+Status: enger Originalquellen und Typreview, keine Atlas Aenderung
+Gepruefter Kandidat: CLAUDE50-WORTGEWICHTE-UNGEPRUEFT-AX.txt und die im
+Auftrag wiedergegebene Kandidatenformel
+
+Urteil
+-------
+
+Der positive Originalkern
+
+  H_y=D_y^dagger D_y+epsilon^2
+     =(y^2+delta^2+epsilon^2)I-y delta(U6+U6^-1)
+
+ist unter der abstrakten Sechserumkehr R e_m=e_(-m) invariant. Daraus folgt
+aber weder, dass die Osterwalder Schrader Reflexion Theta, die
+Determinantinvolution Q_Theta und R derselbe Operator sind, noch dass zwei
+inverse Worte getrennte Vektoren in Ran(P_adm) bleiben. Diese erste
+Identifikation fehlt in den geprueften Originalstellen.
+
+Der vorgeschlagene diagonale Operator W ist zudem gerade nicht
+R invariant. Wenn man R bedingt als die relevante Reflexion einsetzt,
+verletzt der rohe Kandidat die verlangte Reflexionsstabilitaet und erhaelt
+den R geraden Teilraum nicht. Projiziert man ihn beidseitig auf diesen
+Teilraum, werden inverse Wortpartner wieder gepaart. Der Kandidat liefert
+daher keinen hergeleiteten urspruenglichen orientierungsungeraden
+Gewichtsproducer.
+
+1. Drei verschiedene Originaltypen
+-----------------------------------
+
+QFT2 definiert
+
+  P_Theta=(I+Q_Theta)/2
+
+aus einer selbstadjungierten Determinantinvolution Q_Theta. Der
+Nahtselektor ist dagegen P_Seam,+=(I+iC)/2. Die spaeter verwendete
+Reflexion Theta ist die geometrische beziehungsweise Osterwalder Schrader
+Reflexion auf positiven Zeitobservablen. Die gepruefte Quelle fordert nur
+
+  [Theta,P_Theta]=0,
+  Theta P_adm=P_adm Theta.
+
+Sie definiert weder Theta=Q_Theta noch eine der beiden Wirkungen als
+R e_m=e_(-m) auf der C6 Wortbasis. EM5 definiert U6 und den positiven
+Kosinusoperator (U6+U6^-1)/2, aber keine solche Identitaet mit Q_Theta.
+
+Damit ist die Aussage, P_Theta erzeuge bereits symmetrische inverse
+Wortpaare, aus dem Original nicht ableitbar. Ebenso wenig ist belegt, dass
+beide Partner als getrennte retained basis words in Ran(P_adm) liegen.
+QFT4 arbeitet bereits auf einer CP geraden zulaessigen Basis und nennt
+Transportcounts, Carrierlabels und retained selector weights als
+Trenndaten, ohne die Wirkung von Q_Theta auf einzelne C6 Worte anzugeben.
+
+Die bedingten Folgerungen sind getrennt:
+
+* Falls Q_Theta auf diesem Faktor tatsaechlich R ist, bildet P_Theta die
+  Paare e_m und e_(-m) auf ihre gerade Kombination ab. Die inversen
+  Partner sind dann in Ran(P_Theta) nicht getrennt.
+* Falls nur die geometrische Reflexion Theta auf diesem Faktor R ist,
+  folgt daraus keine Formel fuer P_Theta. Es folgt lediglich, dass ein
+  dort verwendeter reflexionsstabiler Transfer mit R vertraeglich sein
+  muss. Genau diesen separaten Test verfehlt der unten gepruefte rohe W
+  Kandidat.
+* Falls R weder Q_Theta noch die dort wirkende Theta Reflexion ist,
+  braucht man zuerst die wirkliche
+  Q_Theta, Theta und P_adm Wirkung auf der retained Wortbasis. Die
+  blosse R Symmetrie von H_y entscheidet ihre Retention nicht.
+
+2. Der vorgeschlagene W Operator besteht den bedingten Reflexionstest nicht
+----------------------------------------------------------------------------
+
+Claude setzt fuer m=0,...,5
+
+  |w_m|=|y^(5-m) delta^m/(y^6-delta^6)|,
+  W=diag(|w_m|).
+
+Unter R wird m auf 6-m abgebildet. Fuer m=1,2 gilt generisch
+
+  |w_m|/|w_(6-m)|=|y/delta|^(6-2m),
+
+also RWR != W, solange y und delta nicht denselben Betrag haben. Gerade am
+alten exakten Wert y=1, delta=1/2 erhaelt man
+
+  |w_1|=32/63,  |w_5|=2/63,
+  |w_2|=16/63,  |w_4|=4/63.
+
+Das ist ein exakter kleinster Gegenfall. Die Werte stammen aus dem
+einseitigen Resolventenwort und nicht aus dem bereits symmetrischen
+positiven H_y allein.
+
+Sei G=H_y^-1. G ist R invariant und hat auf dem zulaessigen gegapten
+Sechserzyklus strikt positive Matrixeintraege. Fuer den Kandidaten
+
+  T_W=W^(1/2) G W^(1/2)
+
+gilt auf den Diagonaleintraegen
+
+  (T_W)_(m,m)=|w_m| G_(0,0).
+
+Deshalb folgt aus |w_1|!=|w_5| bereits R T_W R != T_W. Positivitaet von W
+und G allein ist keine Reflexionsstabilitaet. Soll R die Originalreflexion
+sein, ist T_W daher nicht der in QFT2 vorausgesetzte reflexionsstabile
+Kernel.
+
+Projiziert man stattdessen P_R=(I+R)/2 beidseitig, so bleibt zwar ein
+positiver gerader Operator P_R T_W P_R. Auf seinem Bild sind e_m und
+e_(-m) aber ein einziges gerades Paar. Diese Projektion kann ihre beiden
+Orientierungen nicht mehr als getrennte retained Worte lesen. Eine
+zweiseitige OS Konstruktion aus verschiedenen Halboperatoren koennte
+anders aussehen, waere aber eine weitere Kompositionsregel, die Claude
+nicht aus QFT2 oder QFT4 hergeleitet hat.
+
+3. Symmetrie ist kein Perron Gegenbeweis
+----------------------------------------
+
+Dass H_y mit R kommutiert, zerlegt den linearen Raum in gerade und ungerade
+R Sektoren. Es zeigt nicht, dass der positive C6 Transfer im Sinne von
+Perron und Frobenius reduzibel oder der positive Vakuum nicht eindeutig
+ist. Der Originalkern G hat strikt positive Eintraege und ist auf der
+Standortbasis primitiv. Der ungerade lineare Sektor enthaelt keinen
+nichttrivialen positiven Kegelstrahl.
+
+QFT4 benoetigt zusaetzliche diagonale Gewichte fuer die staerkere Aussage,
+dass die von Transfer und Gewichten erzeugte Algebra auf der retained
+Basis die volle Matrixalgebra ist. Der bereits bekannte Mangel ist die
+fehlende explizite Gewichts und Kontraktionsformel. Aus der R Symmetrie von
+H_y folgt weder, dass diese Gewichte orientierungsungerade sein muessen,
+noch dass der hier vorgeschlagene W Operator die fehlende Formel ist.
+
+4. Erhaltener positiver Originalumfang
+--------------------------------------
+
+Unveraendert positiv bleiben:
+
+* beide inversen Transportbeine U6 und U6^-1 im tatsaechlichen Gram,
+  Greenkernel und Kstr Funktionalkalkuel;
+* die strikte Positivitaet des endlichen C6 Greenkerns;
+* der explizite zweistufige Auswahloperator P_adm;
+* der QFT4 Aufruf zusaetzlicher labelabhaengiger Gewichte.
+
+Nicht hergeleitet ist nur die Gleichsetzung der drei Reflexionstypen und
+die Identifikation des asymmetrischen W mit einem urspruenglichen QFT4
+Gewichtsproducer. Ein spaeterer echter Wortconsumer darf Orientierung
+lesen, muss aber seine Wirkung auf Q_Theta, P_adm und den OS Doppelvertrag
+gemeinsam angeben.
+
+Gepruefte Quellen
+-----------------
+
+* QFT2: documents/archive--tfpt-45--source_extracts--04_qft_source/
+  sections/002-section-closure-theorems-from-the-admissibility-complex.tex,
+  besonders Zeilen12-117 und267-314, SHA256
+  61ecee7727bdec47936bbffc028d3dbac5260a025b6dbcce30124a60d635fc9c.
+* QFT4: derselbe Ordner, sections/004-source.tex, besonders Zeilen111-155
+  und282-335, SHA256
+  a5d1cc26f80d2f1d5af3d89b94cf8ff8912b572040614d4e1c27f1fe3b747126.
+* EM5: documents/archive--tfpt-45--source_extracts--03_em_flavor_source/
+  sections/005-source.tex, besonders Zeilen114-198, SHA256
+  786d2619e775775d70adf177794138485b261968042a880b2f0f617bb0111814.
+* ORIGINAL-BLOCKED-TV-WEIGHT-PRODUCER-REVIEW.txt fuer den bereits
+  abgegrenzten Producer und Consumer Umfang.

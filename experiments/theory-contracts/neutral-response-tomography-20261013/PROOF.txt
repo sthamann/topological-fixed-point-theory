@@ -1,0 +1,110 @@
+UR.SOURCE.NEUTRAL_RESPONSE_TOMOGRAPHY.01 — 13 October 2026
+Verdict: PARTIAL. Exact response-identifiability result in a named source sector.
+
+Question and source
+-------------------
+The earlier neutral-port counterexample shows that the scalar P0 response loses
+the D5 coefficient. The ORIGINAL source already contains a nonzero cubic local
+response. Does retaining this, or the next local response, repair that loss?
+
+Use tfpt_explorer/neutral_source_response.py, _native_neutral_branch and its
+actual P5,P2,P1 projectors, not newly fitted projectors. They are orthogonal and
+have ranks 5,2,1. Its selected field has matrix R=4P2-8P1 and zero D5 part.
+The normal-ordered field for a real symmetric matrix A is
+    T_A(z) = (1/2) sum_ij A_ij :h_i(z)h_j(z):,
+with native vacuum contraction <h_i(z)h_j(w)>=delta_ij/(z-w)^2.
+For Ginsparg's conventional derivative field this is h=i partial x; section
+2.3, equations (2.16)-(2.17), https://arxiv.org/pdf/hep-th/9108028.
+This is standard free-current/Wick algebra, not new physical dynamics.
+
+1. Exact additional response of the SAME source
+------------------------------------------------
+Wick contraction gives the two-point coefficient (1/2)Tr(A^2), three-point
+coefficient Tr(A^3), and connected four-point function
+    <T_A(z1)T_A(z2)T_A(z3)T_A(z4)>_connected
+      = Tr(A^4) sum_(three unoriented four-cycles C)
+                    product_((i,j) in C) (zi-zj)^(-2).
+Self-contractions are excluded by normal ordering. Connected pairings at four
+quadratic vertices are cycles. Each of the three cycles has 16 socket pairings;
+the factor (1/2)^4 cancels their multiplicity. At three vertices the eight
+pairings cancel (1/2)^3; at two vertices two pairings leave 1/2. The checker
+enumerates all pairings and verifies these counts independently of matrix traces.
+Disconnected two-pair terms must be subtracted before extracting Tr(A^4).
+At (z1,z2,z3,z4)=(0,1,3,7), the cycle sum is 67/127008, nonzero.
+
+The actual native matrix yields
+    Tr R=0, Tr R^2=96, Tr R^3=-384, Tr R^4=4608.
+Only the fourth coefficient and ensuing identifiability argument are new here;
+the source's norm48 and cubic-384 were already implemented.
+
+2. Three-point information still does NOT suffice
+-------------------------------------------------
+The previous witness (16/7,-12/7,-8) has cubic -22656/49, so the cubic separates
+that particular pair. It does not establish uniqueness. The different native
+block-scalar primary A*=2P5-6P2+2P1 has exactly the same trace, norm and cubic:
+    (Tr A*, Tr A*^2, Tr A*^3) = (0,96,-384),
+but D5 coefficient 2 and fourth trace 2688, unlike R's 4608.
+This is an alternative quadratic primary for identifiability, not another
+source-selected 48-root branch. It rules out claiming that adding the existing
+cubic response alone repairs the P0 loss.
+
+3. A complete reconstruction in the specified three-block class
+---------------------------------------------------------------
+Restrict the candidate to A=aP5+bP2+cP1 with fixed native projectors and
+primarity Tr A=0. Thus c=-5a-2b. Match moments two, three and four to R.
+Let Q=5a^2+2b^2+c^2-96, K=5a^3+2b^3+c^3+384,
+and L=5a^4+2b^4+c^4-4608. Exact elimination of b yields
+    Res_b(Q,K)=23040 a(a-2)^2(35a^3+140a^2-180a-864),
+    Res_b(Q,L)=230400 a^2(161a^6-2512a^4+15936a^2-36864).
+Their polynomial gcd is 23040 a. Any common solution therefore has a=0.
+Then Q=0 gives b=+4 or -4, and K=0 selects b=4, hence c=-8.
+Conversely this triple satisfies all equations. The reduced Groebner basis
+over the rationals is [a,b-4], providing a second exact elimination check.
+No sampling or numerical root-search is used in this uniqueness argument.
+
+Thus the existing two-/three-point response supplemented by the connected
+four-point response uniquely identifies the selected R inside THIS class.
+Within the hierarchy of these self-responses up to order four, the third order
+fails and the fourth succeeds. This is not a claim of minimality over all probes.
+
+4. Why source alignment remains a real condition, and a simpler mixed probe
+----------------------------------------------------------------------------
+If arbitrary real symmetric quadratic matrices are allowed, this uniqueness
+does not hold. Orthogonal conjugation preserves every Tr(A^n), hence every
+vacuum self-correlator of the same quadratic field in the current algebra.
+The checker swaps a D5 unit vector with a P2 unit vector by an exact orthogonal
+reflection. The conjugate of R has unchanged spectrum and all self-responses,
+but Tr(P5 A)=4 instead of zero. This is an algebraic Heisenberg-sector witness;
+no claim that the reflection preserves the entire E8 lattice/vertex algebra,
+or is an admissible alternative TFPT source, is required or made.
+
+Native mixed stress responses retain alignment:
+    m5 = coefficient <T_P5 T_A> = Tr(P5 A)/2,
+    m2 = coefficient <T_P2 T_A> = Tr(P2 A)/2.
+In the three-block primary class they reconstruct
+    a=2m5/5, b=m2, c=-2(m5+m2).
+These two probes are already algebraically defined by the original projectors.
+For general symmetric A they recover only block traces, not off-diagonal data.
+The carrier probe also separates the isospectral witness: m5=0 versus 2.
+
+5. Consequence and first open physical bridge
+---------------------------------------------
+There is a concrete source-side repair for this finite information loss:
+retain fourth-order local response in the declared block class, or use mixed
+responses to the native marked stress sectors. The proposed response is not a
+free fitted kernel; its coefficients are computed from the original source.
+It is nevertheless ADDITIONAL information absent from the rank-one P0 port.
+
+What this settles is the inverse identification of a neutral quadratic field
+within fixed source assumptions. It does not create a D5 term in R, derive
+the desired 5/4 physical susceptibility, identify vacuum responses with the
+original defect state, select a branch/state/measurement by P1/P2, or construct
+a physical electromagnetic or gravitational response. The next genuine bridge
+must derive which of these source observables the physical detector reads,
+including its state, normalization and allowed interventions. The negative
+P0 result remains valid. No T1–T8 gate or complete TFPT contract is closed.
+
+Reproduce from repository root:
+    python3 experiments/theory-contracts/neutral-response-tomography-20261013/checker.py
+The checker imports the native source and writes results.json. Ledger and
+verification scripts are unchanged. Source hashes are in source_manifest.json.

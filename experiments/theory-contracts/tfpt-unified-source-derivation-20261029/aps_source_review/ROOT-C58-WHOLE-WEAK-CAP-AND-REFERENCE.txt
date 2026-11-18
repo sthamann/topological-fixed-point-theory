@@ -1,0 +1,99 @@
+WHOLE ACTUAL WEAK CAP AND THE ORIGINAL REFERENCE
+30 October 2026. Independent root proof and original-source review.
+
+1. Same existing source, not a new field choice
+Use h_p=p gamma+V, V=tQ gamma-i gamma D_F, p in Z+alpha,
+alpha=1/4 or3/4, with the existing full96 real weak lift Q.
+V=V* is finite and independent of p. The old source endpoint is
+P0,p=1_(p gamma<0), rank r=48. This is the given source comparison,
+not a deduction that original APSdomprov has selected this endpoint.
+No source parameter, physical time or new state is fitted.
+
+For each mode, the exact finite exterior formula from C57 is
+ E_p=Tr(h_p 1_(h_p<0)),
+ H_exc,p=dGamma(h_p)-E_p I >=0,
+ Z_p(ell)=exp(ell E_p) det_RanP0(P0 exp(-ell h_p)P0).
+It equals the old Slater vector expectation of exp(-ell H_exc,p).
+Consequently 0<Z_p(ell)<=1 for every finite ell>=0. No ground
+overlap or Thouless graph assumption is needed for this finite formula.
+
+2. An explicit whole-circle bound, independently checked
+Write g=|p| and v=||V||. For g>2v the coupled negative projection Ph
+has the same rank r as P0 by the minmax gap bound. For any normalized
+negative eigenvector u with eigenvalue lambda<=-g+v, projection on
+the positive h0 space yields
+ (g-lambda) Pplus u = -Pplus V u,
+ ||Pplus u|| <= v/(2g-v).
+Summing over an orthonormal negative eigenbasis gives
+ d_p=Tr(Ph Pplus)=Tr(P0(I-Ph)) <= r v^2/(2g-v)^2.
+The squared old/coupled ground overlap is
+ w_p=det_RanP0(P0 Ph P0).
+All eigenvalues of this compression lie in[0,1]. The elementary product
+inequality 1-product a_j<=sum(1-a_j) proves
+ 0<=1-w_p<=d_p.
+The spectral resolution of H_exc,p now gives Z_p(ell)>=w_p. Hence
+ 0<=1-Z_p(ell)<=r v^2/(2g-v)^2,
+uniformly in ell>=0 on the high modes.
+
+The right side is summable over the original quarter circle. Outside
+finitely many p it is <1/2, so -log Z_p<=2(1-Z_p). Therefore
+ Z_cap(ell)=product_p Z_p(ell)>0
+exists for every finite ell>0; every finite low-mode factor is positive.
+This closes the previously finite-only weak cap on the given source.
+It does not assert the older scalar C_p matrix formula for noncommuting Q.
+
+At zero modes the negative spectral projection does not choose a unique
+ground vector. Nevertheless E_p is unchanged by adding any subprojection
+of ker h_p, because h_p vanishes there. Thus H_exc,p and the cap above
+with fixed P0 are independent of that zero-mode occupation. No new
+zero-mode state choice is required to evaluate this cap. A particular
+vacuum ray or Thouless chart can require such data; distinguish them.
+A large-ell cap limit can vanish if an old low mode is orthogonal to the
+whole ground space. Strict positivity here is for finite ell.
+
+Constant weak fields preserve Fourier p. What fails is reduction into
+the earlier anticommuting scalar singular pairs, not Fourier factorization.
+
+3. Actual free reference is not coupled normal ordering
+At finite cutoff let E_ref=Tr(h0 P0). The same exterior amplitude A_fixed
+and the actual old free reference amplitude obey
+ A_fixed/A_ref=exp[-ell(E_p-E_ref)] Z_p(ell).
+Dividing by the free reference does not select E_p as energy zero.
+This is exactly the bulk factor already retained in FIXED-CAP-DETERMINANT
+section4, not a new ambiguity. On the full circle its subtraction and
+phase must follow the original prescription. The convergent cap product
+does not supply that prescription.
+
+A numerical control used the existing v252 rep, Kswap, grading, full_D
+on all96 slots, with the same diagnostic inputs as the prior weak moment
+test. At p1/4,t7/10,ell1/8:
+ aligned log cap=-14.174830473420858,
+ aligned log free-relative amplitude=5.096812329424876,
+ their difference=19.271642802845733 is exactly the retained bulk term
+ to floating precision. The old t0 scalar formula agrees within4e-15.
+High-mode p100.25 occupation deficit0.01755337 is below the explicit
+bound0.07501711. These numerical controls do not prove convergence;
+section2 does. C58-ACTUAL-WEAK-CAP-CHECK.json records the full controls.
+
+4. Original identifications remain typed
+Original boundary001:353-377 chooses an adapted boundary operator
+A_partial and a modified APS domain. It does not set A_partial=p gamma.
+Original001:65-135 already defines the whole D_+ Calderon source before
+its D_ref/D_rel split. Degeneracy of a later particular split does not
+remove that whole source. QFT004:111-155 retains the separate given
+T_V/Perron source. QFT008's actual positive-time OS caller also remains.
+No blanket first-order relative-bound-zero claim is used; that original
+error is already excluded in the Atlas.
+
+C58's same-Fock criterion is valid in its CAR representation scope.
+It neither identifies that representation with the original OS source
+nor forces one positive-time polynomial representative or one global
+Thouless chart. Grok59 repeats the OS form and the prior weak moment,
+but computes no original mixed insertion equaling X. These responses
+therefore do not establish the requested shared fundamental origin.
+
+SOURCES
+Actual weak source: ACTUAL-WEAK-CONNECTION-AND-JOINT-SOURCE.txt.
+Original lines and hashes: C58-ORIGINAL-APS-AND-SEWING-REVIEW.txt.
+Independent mathematical review: C58-THOULESS-AND-CAP-REVIEW.txt.
+Existing cap: FIXED-CAP-DETERMINANT.txt and FIXED-CAP-STATE.txt.

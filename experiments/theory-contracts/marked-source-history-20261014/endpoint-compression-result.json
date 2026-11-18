@@ -1,0 +1,99 @@
+{
+  "premise": "identical independently repeated uses of the existing one-step channel Phi",
+  "actual_five_labels": [
+    [
+      0,
+      1,
+      1,
+      1
+    ],
+    [
+      1,
+      0,
+      1,
+      1
+    ],
+    [
+      1,
+      1,
+      0,
+      1
+    ],
+    [
+      1,
+      1,
+      1,
+      0
+    ],
+    [
+      1,
+      1,
+      1,
+      1
+    ]
+  ],
+  "general_endpoint_distribution": {
+    "identity": "(1 + 5*(1/3)^n + 10*(2/3)^n)/16",
+    "each_of_five": "(1 - 3*(1/3)^n + 2*(2/3)^n)/16",
+    "each_of_ten": "(1 + (1/3)^n - 2*(2/3)^n)/16"
+  },
+  "formula_verified_by_exact_convolution_n_1_to_8": true,
+  "q2": {
+    "identity": "3/8",
+    "each_of_five": "7/72",
+    "each_of_ten": "1/72",
+    "normalization": "1"
+  },
+  "choi_ranks_n_1_to_8_from_positive_endpoints": {
+    "1": 6,
+    "2": 16,
+    "3": 16,
+    "4": 16,
+    "5": 16,
+    "6": 16,
+    "7": 16,
+    "8": 16
+  },
+  "choi_ranks_n_1_to_8_direct": {
+    "1": 6,
+    "2": 16,
+    "3": 16,
+    "4": 16,
+    "5": 16,
+    "6": 16,
+    "7": 16,
+    "8": 16
+  },
+  "two_step_projective_history_collapse_exact": true,
+  "two_step_number_of_histories": 36,
+  "two_step_number_of_endpoint_classes": 16,
+  "endpoint_coherent_dilation": "V_n psi = sum_v sqrt(q_n(v)) W_v psi tensor |e_v^(n)>",
+  "endpoint_vector_definition": "|e_v^(n)> = q_n(v)^(-1/2) sum_{h:end(h)=v} sqrt(p_h) omega(h)|h>",
+  "endpoint_vectors_orthogonal_reason": "disjoint history support for distinct v",
+  "mark_transport_identity": "P_v=W_v P W_v^*, hence (sum_v P_v tensor |e_v><e_v|) V_n P = V_n P",
+  "open_slot_witness": {
+    "endpoint_label": [
+      0,
+      1,
+      1,
+      1
+    ],
+    "anticommuting_insert_label": [
+      1,
+      0,
+      1,
+      1
+    ],
+    "A": "(I + i*g_k)/sqrt(2)",
+    "history_0_i_operator": "g_i A",
+    "history_i_0_operator": "A g_i",
+    "normalized_HS_inner_product": "0",
+    "superoperators_distinct": true
+  },
+  "scope": [
+    "Endpoint compression is exact for the terminal, unperturbed composite channel Phi^n.",
+    "It does not retain the open slots of the repeated process and cannot predict arbitrary intermediate interventions by itself.",
+    "Independent repetitions are an explicit extra operational premise, not a P1/P2 derivation of Phi or of source execution.",
+    "The repeated process is Markov under that premise; the correct process object factorizes into one-step channels even though its terminal channel has a 16-dimensional minimal dilation."
+  ]
+}

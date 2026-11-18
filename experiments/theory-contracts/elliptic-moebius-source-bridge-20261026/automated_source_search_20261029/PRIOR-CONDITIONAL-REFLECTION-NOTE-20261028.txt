@@ -1,0 +1,482 @@
+REFLECTION, HALF KINK AND THE ACTUAL FOLDED SOURCE
+Corrected independent source and type review, 2026-10-28
+
+Question
+========
+
+Does the already present Pin and theta reflection transport the established
+half winding sector rho_s and its bounded Weyl transporters on the actual
+folded quarter source?  The test must retain the quarter holonomy, the
+original positive winding convention, and the original K_alpha time.
+
+
+Corrected verdict
+=================
+
+The geometric quarter switch, sector charge, and K_alpha time are mutually
+compatible.  The existing sources do not yet prove that their OS word map
+acts on the bounded current Weyls.  That missing typed intertwiner prevents
+an unconditional reflection formula for T_IJ.  Two corrections and this
+remaining gap are essential.
+
+First, reflection of the eight fold fibres is not the bare permutation
+r -> -r mod 8.  Crossing the quasi periodic seam contributes the quarter
+phase.  With P the bare arc reversal and
+
+  S_alpha = diag(1,e^(-2 pi i alpha),...,e^(-2 pi i alpha)),              (1)
+
+the exact linear quarter switch is S_alpha P, not P.
+
+Second, the actual v519 checker supplies an anti linear, order reversing
+rule on the tested normal ordered disjoint words.  It is not
+
+  A -> Rhat A^* Rhat^-1                                  (false),         (2)
+
+when Rhat is antiunitary.  The map in (2) is linear.  The scalar test already
+separates them:
+
+  Theta_OS(i I) = -i I,
+  Rhat (i I)^* Rhat^-1 = +i I.                            (3)
+
+For a single disjoint even Majorana word, the phase and reversal sign in the
+v519 rule cancel.  This does not prove an operator algebra identity on the
+completed even CAR algebra and does not justify exponentiating to W(phi).
+The candidate current relation that would close the gap is
+
+  Theta_OS(J(phi))=J(phi o r),
+  Theta_OS(W(phi))=W(-phi o r).                         (4, conditional)
+
+Finally, reflection reverses the winding orientation.  For the standard
+positive oriented kink profiles,
+
+  b_IJ^+ o r = -b_(rI,rJ)^+.                              (6)
+
+If the missing current relation (4) is supplied, the established smooth
+transporter obeys
+
+  T_IJ^+ = W(-b_IJ^+ o F),
+  Theta_OS(T_IJ^+) = T_(rI,rJ)^+.                     (7, conditional)
+
+There is no adjoint in (7).  An adjoint appears only if one keeps the raw
+negative oriented reflected profile b_raw=b_IJ^+ o r instead of converting
+back to the standard positive orientation:
+
+  Theta_OS(T_IJ^+) = W(+b_raw o F)
+                    = W(-b_raw o F)^*.                (8, conditional)
+
+The exact sector and time dictionary remains
+
+  alpha -> 1-alpha,
+  q     -> -q,
+  s     -> -s,
+  I     -> rI,
+  t     -> -t.                                            (9)
+
+Here [s]=[-s] in the D8 discriminant group, while s and -s remain distinct
+oriented representatives before passing to the even observable net.
+
+Separately, the local normality conclusion survives unchanged.  It applies
+to every quotient interval I whose closure is compactly contained in the
+complement of the cut mark.  On such I the actual folded covariance is a
+smooth local U(8) gauge transform of eight NS covariances.  No additional
+local normality assumption is needed there.  This supplies no global vacuum,
+time, theta, or primitive P1 identification.
+
+
+1. The three reflection roles
+=============================
+
+The original sources contain three typed operations.
+
+1. The linear Green reflection on the paired orientation cover is
+
+     R_G = sigma_1 R_x,
+     R_G P_i R_G = P_-i.                                  (10)
+
+   It exchanges the two Pin lifts.  The paired cover is essential for the
+   positive full NS Green form.  A single fixed quarter fails its temporal
+   zero mode test.
+
+2. The antiunitary one particle symmetry
+
+     Theta_Pin = K R_x                                    (11)
+
+   preserves each fixed Pin domain.  Complex conjugation compensates the
+   deck eigenvalue inversion.  It commutes with the full Dirac operator and
+   preserves its spectral sea.  It does not perform (10).
+
+3. The v519 OS field reflection is an anti linear, order reversing word
+   operation on the normal ordered, disjoint Majorana monomials used in its
+   RP Gram matrices.  It is implemented there as
+
+     theta(g_i1 ... g_ik)
+       = eta^k s_ik ... s_i1 g_r(ik) ... g_r(i1),
+     eta=i.                                               (12)
+
+   It conjugates scalar coefficients and reverses word order.  The same
+   checker separately constructs the normalized antiunitary Fock real
+   structure Rhat=U_r K and proves clock inversion.  It does not prove that
+   the word operation equals Ad_Rhat on the completed current algebra.
+
+These facts are compatible.  The linear Green map exchanges Pin lifts,
+K R_x preserves a fixed lift, and the OS map acts on field words.
+
+
+2. The quarter holonomy in the folded chart
+===========================================
+
+The exact fold matrix is
+
+  U_alpha(r,k)=exp(2 pi i(k+alpha)r/8)/sqrt(8),
+  r,k in Z/8.                                             (13)
+
+Let P reverse the arc index modulo 8.  Bare P fails at every r other than
+zero:
+
+  (P U_alpha)(r,k)
+    = exp(2 pi i alpha)
+      exp(-2 pi i(k+alpha)r/8)/sqrt(8),  r=1,...,7.       (14)
+
+At alpha=1/4, r=1, k=0, this has the unwanted factor i.  Thus the earlier
+bare permutation formula was false.
+
+The correct map follows directly from the quasi periodic source function
+
+  f(theta+2 pi)=exp(2 pi i alpha) f(theta),
+  (F_alpha f)_r(x)=f((x+2 pi r)/8)/sqrt(8).               (15)
+
+For the linear source reflection R_x f(theta)=f(-theta),
+
+  (F_(1-alpha) R_x F_alpha^-1 eta)_0(x)
+    = eta_0(-x),
+
+  (F_(1-alpha) R_x F_alpha^-1 eta)_r(x)
+    = exp(-2 pi i alpha) eta_(8-r)(-x),
+      r=1,...,7.                                          (16)
+
+Equivalently,
+
+  S_alpha P U_alpha(:,k)=U_(1-alpha)(:,7-k).             (17)
+
+The antiunitary fixed Pin symmetry has the conjugate seam phase:
+
+  (F_alpha K R_x F_alpha^-1 eta)_0(x)
+    = conjugate(eta_0(-x)),
+
+  (F_alpha K R_x F_alpha^-1 eta)_r(x)
+    = exp(+2 pi i alpha) conjugate(eta_(8-r)(-x)),
+      r=1,...,7,                                          (18)
+
+and hence
+
+  S_alpha^* P conjugate(U_alpha(:,k))=U_alpha(:,k).       (19)
+
+Equation (17) is the quarter switch.  Equation (19) is fixed quarter Pin
+invariance.  Both carry the required seam phase.
+
+The existing E8 source chart agrees with the sector part.  With M the fixed
+source to E8 isometry and R the source coordinate reversal,
+
+  g=-M R M^-1,
+  g d_(1/4)=d_(3/4),
+  g s=-s.                                                 (20)
+
+The exact rational vectors are
+
+  s       =(0,0,1,0,0,1,0,0),
+  g s     =(0,0,-1,0,0,-1,0,0),
+  d_(1/4) =(-1/2,0,1/16,-1/2,0,-3/16,-1/4,-1/4),
+  g d_(1/4)
+           =(-1/2,0,3/16,-1/2,0,-1/16,-1/4,-1/4)
+           =d_(3/4).                                     (21)
+
+
+3. Type check of the actual OS map
+===================================
+
+The false formula (2) fails before any dynamics is considered.  For
+antiunitary Rhat,
+
+  A -> Rhat A^* Rhat^-1
+
+is a linear order reversing map because the adjoint and antiunitarity each
+conjugate scalars.  By contrast, v519 R1.3 tests its anti linear, order
+reversing rule on normal ordered monomials with distinct supports and uses
+conjugate(eta) eta=1 in theta^2.
+
+On an even Majorana word of length k=2m, the reversal sign and eta phase in
+(12) cancel:
+
+  eta^(2m) (-1)^((2m)(2m-1)/2)
+    =(-1)^m (-1)^m=1.                                   (22)
+
+Thus on each single disjoint even monomial the displayed phase and reversal
+sign cancel.  This is not an algebra proof.  The v519 helper theta_mono is
+deliberately called only on monomials with distinct indices.  If one tries
+to extend its generator rule to the full Clifford algebra, then
+
+  theta(g_a^2)=theta(g_a)theta(g_a)=-1,
+  theta(1)=1,                                             (23)
+
+because eta=i and g_a^2=1.  The two disagree.  Therefore theta_mono is the
+OS normal ordered word operation used for the RP form, not a demonstrated
+bounded operator anti automorphism of Cl(16).  The separate Rhat=U_r K is a
+genuine antiunitary, but v519 does not identify its adjoint action with
+theta_mono on current exponentials.
+
+The original Green source convention is
+
+  Theta psi=-barpsi o r,
+  Theta barpsi=-psi o r,                                  (24)
+
+with reversed normal ordered word order.  Formally this sends the neutral
+current to
+
+  Theta_OS(J(phi))=J(phi o r).                            (25)
+
+For real phi, anti linearity would then send W(phi) to W(-phi o r), and the
+Weyl cocycle would be compatible because reflection reverses the current
+symplectic form.  The original reports never prove the required passage
+from their Green source word rule to the bounded W(phi) in the folded Hardy
+representation.  Equations (4), (7), and (8) remain conditional on exactly
+this one intertwiner.
+
+
+4. Positive kink orientation and rho_s
+======================================
+
+Choose a_I^+ with the fixed positive half winding convention used in the
+closed half kink report.  Orientation reversal gives, up to a constant that
+cancels in differences,
+
+  a_I^+ o r=-a_(rI)^+ + constant.                         (26)
+
+For b_IJ^+=(a_I^+-a_J^+)/2 this proves (6).  If the source current
+intertwiner (4) holds, combining it with (6) proves (7).  The geometry fixes
+the sign unambiguously; the missing point is whether the actual OS word map
+has been extended to the bounded folded Weyls.
+
+The charge label itself transforms by (20):
+
+  Theta_cov rho_(s,I) Theta_cov^-1
+    is equivalent to rho_(-s,rI).                         (27)
+
+Because 2s lies in D8, [s]=[-s].  Therefore the reflected endomorphism is
+the same D8 sector of the even net.  Equation (27) does not identify the two
+oriented charged field representatives.  That representative change uses
+the existing q=2s vacuum lattice equivalence.
+
+
+5. K_alpha time
+===============
+
+The actual source evolution is
+
+  U_alpha(t)=exp(-it K_alpha),
+  K_alpha=(Lcal_0^alpha-ground)/8.                        (28)
+
+For every charge and every integer mode, the original exact formula
+
+  c_n^alpha(q)
+    =nq/8+n(n-1)/16+alpha n/8                            (29)
+
+satisfies
+
+  c_(-n)^(1-alpha)(-q)=c_n^alpha(q).                     (30)
+
+Consequently the quarter exchanged reflection intertwines the ground
+subtracted generators and reverses source time,
+
+  Rhat K_alpha Rhat^-1=K_(1-alpha),
+  Rhat U_alpha(t) Rhat^-1=U_(1-alpha)(-t),                (31)
+  Theta_OS tau_t^alpha
+    =tau_(-t)^(1-alpha) Theta_OS.                         (32)
+
+This is K_alpha time, not the unrescaled cover Hamiltonian.  It remains
+distinct from the still open primitive P1 OS time.
+
+On the shifted ground rays, up to their irrelevant phases,
+
+  Rhat |d_alpha>=|d_(1-alpha)>,
+  omega_(1-alpha)(Rhat A Rhat^-1)
+    =conjugate(omega_alpha(A)).                           (33)
+
+
+6. Local normality on the actual folded state
+==============================================
+
+This conclusion is independent of the corrected reflection phases and
+follows directly from the existing folded covariance.
+
+In the diagonal fold channels,
+
+  C^-_mu(x-y)
+    =exp(i(mu-1/2)(x-y)) C_NS(x-y),
+  mu_k=(k+alpha)/8.                                      (34)
+
+Set delta_k=mu_k-1/2 and let I be a quotient interval whose closure is
+compactly contained in the complement of the cut mark.  Then
+
+  G_I(x)=U_alpha diag(exp(i delta_k x)) U_alpha^*.        (35)
+
+The exact matrix kernel identity is
+
+  C_fold(x,y)=G_I(x) C_NS^8(x,y) G_I(y)^*.               (36)
+
+The diagonal singularity is therefore the standard Hadamard 1/(x-y)
+singularity in every arc component.  The off diagonal arc kernels are
+smooth because their source arguments remain separated by a nonzero
+multiple of 2 pi/8.  Equivalently,
+
+  [exp(i delta_k(x-y))-1] C_NS(x-y)                       (37)
+
+extends smoothly across x=y.
+
+Because I is proper, G_I has a smooth periodic U(8) extension G that is the
+identity outside a slightly larger interval and has zero winding.  Its
+Fourier coefficients obey
+
+  sum_n |n| ||G_n||_HS^2 < infinity,
+
+so [P_NS,G] is Hilbert Schmidt.                           (38)
+
+The Shale and Araki criterion implements this local Bogoliubov
+transformation.  Hence the actual folded quasifree representation and the
+eight fermion NS vacuum representation are locally quasi equivalent on
+A(I).
+
+The equivalent covariance argument is also direct.  The compactly
+restricted kernel C_fold-C_NS^8 is smooth and therefore trace class.
+Powers Stoermer gives
+
+  ||C_fold^(1/2)-C_NS^(1/2)||_2^2
+    <=||C_fold-C_NS||_1,                                  (39)
+
+and the same estimate for 1-C.  These are the quasifree local quasi
+equivalence hypotheses.
+
+Thus the established rho_s and its smooth bounded Weyl transporters are
+normal in the actual folded GNS representation on such I.  No separate
+local normality assumption is needed.
+
+This is not global.  The unextended G_I retains the quarter holonomy.  Its
+determinant changes by exp(2 pi i(alpha-1/2)) around the full quotient
+circle.  Therefore (36) supplies no global vacuum unitary, no global
+K_alpha intertwiner, and no global theta identification.
+
+
+7. Exact correction checks
+===========================
+
+The following smallest checks were performed.
+
+* Bare arc reversal counterexample:
+
+    alpha=1/4, r=1, k=0
+
+  gives an extra factor exp(2 pi i alpha)=i.  Multiplication by
+  exp(-2 pi i alpha) in S_alpha removes it exactly.
+
+* Antiunitary type counterexample:
+
+    Theta_OS(iI)=-iI,
+    Rhat(iI)^*Rhat^-1=+iI.
+
+  Therefore (2) cannot be the v519 OS map.
+
+* Even word check:
+
+    i^(2m)(-1)^((2m)(2m-1)/2)=1
+
+  for every m.  This proves cancellation on one disjoint even monomial.  It
+  does not prove multiplication or exponentiation.  The control
+  theta(g_a^2)=-1 != theta(1) shows why that extrapolation is invalid.
+
+* Time check:
+
+    c_(-n)^(1-alpha)(-q)-c_n^alpha(q)=0
+
+  identically.
+
+
+8. Scope and surviving obstruction
+===================================
+
+Proved for the given paired Pin cover and actual folded source:
+
+* the holonomy corrected linear quarter switch (16) and (17);
+* fixed quarter antiunitary Pin invariance (18) and (19);
+* the correct OS word map type and its exact limitation in v519;
+* the winding sign required for a positive oriented reflected kink;
+* sector reflection [s] -> [-s]=[s];
+* the exact K_alpha time reversal;
+* local normality of the actual folded state on intervals I whose closure
+  is compactly contained in the complement of the cut.
+
+Not proved or claimed:
+
+* equality of the positive and negative oriented charged representatives;
+* an OS word to bounded current Weyl intertwiner;
+* unconditional reflection covariance of T_IJ in the actual folded Hardy
+  representation;
+* global equivalence to eight independent NS vacua;
+* identification of K_alpha with primitive P1 OS time;
+* a primitive P1 rule selecting rho_s or its response.
+
+
+9. Sources checked
+===================
+
+1. experiments/theory-contracts/original-admissible-source-closure-20261025/
+   P1-LONGITUDINAL-REFLECTION-REVIEW.txt
+   SHA256 135ba18d617bf9a5f88fae3bc9f96a51d3632985a4de9165de5bb0d231a5d8a2
+
+2. experiments/theory-contracts/original-admissible-source-closure-20261025/
+   NS-COVER-FULL-DIRAC-RP.txt
+   SHA256 a18c7589ac87b0ea875af7a2a46790989c80c836369b9ee001b0417dda6ab154
+
+3. verification/v519_woit_theta_rp_free.py
+   SHA256 e86e3a055b58051c7978d8f10ee527948bac758fd4665ac216e18a71cc8c1ee9
+
+4. experiments/theory-contracts/joint-native-algebra-selection-20261016/
+   check_original_time_winding.py
+   SHA256 0eb5ae2cdca5d86f462fcbefae9765253b53bf8318676fa3a90c391d33b485d4
+
+5. experiments/theory-contracts/original-admissible-source-closure-20261025/
+   P1-W8-LOCAL-MAP-AND-TWOPOINT-TEST.txt
+   SHA256 072b6588666504ec4f04024e279030bbdf83b724102bac181ee3696133c1be28
+
+6. experiments/theory-contracts/joint-native-algebra-selection-20261016/
+   ORIGINAL-ORDERED-CURRENT-KERNEL-AND-SEAM-GRADING.txt
+   SHA256 62a9eeb4519b59d4514445f9d4dd5d2059e29179956a4c97ec94b7bae9ae3094
+
+7. experiments/theory-contracts/joint-native-algebra-selection-20261016/
+   FOLD-COVARIANCE-TO-NATIVE-FIELD-RESPONSE.txt
+   SHA256 cd35ac0e65ebf780cc99d3dd8a318255d11251125298d88e88cb676c72b27507
+
+8. research-20261028-local-source-origin/neutral/
+   HALF-WINDING-DHR-SOURCE-ADDENDUM.txt
+   SHA256 75308a38b30782bcedb656788229d2d5db72e21543a171dde78e602b0c7ece97
+
+9. research-20261028-local-source-origin/neutral/
+   CLOSED-HALF-KINK-SOURCE-WEYL-LINE.txt
+   SHA256 b4a2de50c9a56e8e5498827b506a9a303a4350d559c60a6c6152cf97d61a641f
+
+Primary quasifree reference for section 6:
+
+  H. Araki, On Quasifree States of CAR and Bogoliubov Automorphisms,
+  Publications of the Research Institute for Mathematical Sciences 6
+  (1970/71), 385 to 442, DOI 10.2977/PRIMS/1195193913.
+
+
+Final status
+============
+
+CORRECTED WITH ONE PRECISE REMAINING INTERTWINER.  The quarter seam phase,
+anti linear OS word type, winding orientation, sector action, K_alpha time,
+and local normality theorem are proved in their stated scopes.  The previous
+bare permutation, starred antiunitary formula, and positive profile sign were
+false and have been removed.  v519 does not extend its normal ordered OS
+word operation to the bounded folded current Weyls.  Consequently the
+transporter reflection formula is conditional on that single missing typed
+map.  Local normality is valid independently of this gap.

@@ -1,0 +1,194 @@
+TFPT. Der geladene Originalstrom und die neutrale R113 Paarantwort
+12. November 2026. F1/P0. Originale E8 Operatoren und bedingte R113 Verklebung.
+
+1. Der tatsächliche geladene Mittelstrom als gerades Paar
+
+Die Originalmarken sind p1=(1,1,1,1,1,1,1,1)/2,
+p2=(-1,1,1,1,1,-1,1,1)/2 und gamma=p1-p2=e1+e6.
+Im D8 Vektorrahmen des vorhandenen Niveau-eins-Netzes gilt in
+kompatibler Wurzelsektion
+
+    J^gamma(z)=:psi_1^+(z) psi_6^+(z): .
+
+Die zwei komplexen Fermionkoordinaten stammen aus der
+Polarisation der 16 realen Vektor-Majoranas des alten
+(10,1)+(1,6) Rahmens. Die einzelnen Fermionen liegen im
+fermionischen D8 Oberraum. Der paarige Strom ist gerade und
+liegt in der ursprünglichen bosonischen E8 Algebra. Die
+Spinorprimärlinien sind die gewählten Ramond-Endzustände
+der vorhandenen E8 Erweiterung.
+
+Im Ramond-Grundraum lautet der Nullmodus c_1^* c_6^*.
+Mit Besetzungen p_j+1/2 füllt er genau die beiden freien
+Plätze von p2 und liefert p1. Dasselbe gilt für das
+zweite markierte Dublett mit b=-e7-e8: p2+b geht in p1+b.
+Beide CAR Vorzeichen sind +1 bei der festen aufsteigenden
+Reihenfolge. Eine gemeinsame Wurzelphase kann mittransportiert
+werden. Der alte volle Achterrahmen unterscheidet beide
+Endpaare weiterhin. Diese Rechnung trägt die Endlinien des
+tatsächlichen geladenen Wortes und keinen ersetzten Strom.
+
+Im NS Vakuum lautet der erste affine Aufstieg
+    e Omega=psi^+_(1,-1/2) psi^+_(6,-1/2) Omega.
+Der Vektor hat Norm eins, und f=e* führt ihn zu Omega
+zurück. Ein zweiter Aufstieg verschwindet. Das folgt in der
+Gitterdarstellung auch aus
+V_gamma(z)|gamma> = z^2 mal eine Potenzreihe in nichtnegativen
+z-Potenzen. Der z^0 Koeffizient des Gewicht-eins-Modus ist null.
+Im ursprünglichen L0-Transfer gilt
+    f exp(-t L0) e Omega=exp(-t) Omega.
+Dies ist der volle Rückweg in dieser ursprünglichen
+Längszeit. Ein neutraler Anteil orthogonal zu Omega ist null.
+
+Quellen: v113_quasifree_kernel.py; ORIGINAL-MIRROR-EMBEDDING-SEARCH.txt
+§§1,3; TFPT-E8-P1-LADUNGSWINDUNG-20261112.txt §§1,3,4;
+Goddard–Nahm–Olive–Schwimmer zum fermionischen E8 Bau,
+https://www.sciencedirect.com/science/article/pii/0370269385903879.
+
+2. Die direkte rohe Spinorpaar-Zuordnung scheitert am neutralen Wort
+
+Die alten D8 Vektorfermionen und die physischen Spinorplätze
+der nativen R113 Finiteinrichtung sind verschiedene
+Operatordarstellungen. Als kleinsten konkreten Versuch
+verwende die echte E8 Klammer im D5+A3 Gitter. Im ungeraden
+Grad drei gibt es genau acht ungeordnete Zerlegungen
+    gamma=p+q, p,q in g_3,
+mit 16 verschiedenen beteiligten Wurzeln. Dazu gehört
+p=p1, q=-p2. Grad eins ergibt ebenfalls acht disjunkte
+Paare. In jeder Klammer haben die Koeffizienten im
+normierten Chevalleyrahmen Betrag eins. Ein direktes
+Erzeugerpaar auf der leeren Spinor-Fockdarstellung mit
+dieser tatsächlichen Wurzelkarte müsste daher proportional
+zu
+    A = sum_(i=1)^8 epsilon_i c_(p_i)^* c_(q_i)^*
+sein. Alle Paare sind disjunkt. Je zwei Paarerzeuger
+kommutieren, und verschiedene Viererbesetzungen sind orthogonal.
+
+Daher ||A Omega_F||²=8 und ||A² Omega_F||²=4*C(8,2)=112.
+Nach Normierung auf ||e Omega||²=1 ergibt dasselbe neutrale
+Wort (A*)² A² den Wert 7/4. Das Niveau-eins-Original gibt
+null. Sämtliche 256 Vorzeichenmuster je ungeradem Grad
+liefern denselben Wert. Die Zweiform hat Rang 16. Eine
+unitäre Änderung der bloßen Spinorbasis kann sie nicht in
+das einfache D8 Paar verwandeln.
+
+Dieser Test ist neutral abgeschlossen. Wenn der
+Koordinatenleerzustand mit beliebigem Bosonvektor tatsächlich
+der Ausgangszustand ist und der äußere Selektor ihn erhält,
+ändert die bloße äußere Auswahl den Wert des geschlossenen
+Wortes nicht. Eine Projektion zwischen den Erzeugern
+würde eine andere Geschichte auswerten. Ein identifizierter
+Teilchen-Loch-Aufruf, ein echter gewichteter Quellenkontakt
+oder eine nichtleere physische Polarisation fallen nicht
+unter diesen Rohpaar-Ausschluss. Das gleiche gilt für
+Fortsetzungen, die nur die physische kleine Eichgruppe
+verwenden und eine neue tatsächliche Wurzelkarte herleiten.
+
+Die Zahl der ursprünglichen Zerlegungen und die orientierte
+Endmarke stammen aus check_tfpt_cartan_process_20261112.py.
+Der neue Check verwendet dieselben Wurzeln und zählt die
+vollständigen neutralen Viererbesetzungen mit CAR Vorzeichen.
+
+3. Welche R113 Randantwort die Rückkehr tatsächlich trägt
+
+In R113 sei Q_t[b]=s_t[b] Gamma(R_t[b]) die bereits gegebene
+konditionierte Exteriorquelle. Wäre das tatsächliche Paar
+auf dem kompatiblen gemeinsamen R113 Feldraum durch die
+normierte Zweiform eta gegeben, sei B_eta sein Erzeuger.
+Auf zwei offenen Bosonendpunkten ergibt die neutrale
+Paarmarke exakt
+
+    K_gamma,t =
+      <Omega_F| B_eta^* Q_t B_eta |Omega_F>
+      = I_t(w_t s_t <eta, (wedge² R_t) eta>).
+
+Für ein einfaches Paar ist die Einfügung der zugehörige
+2x2 Minor, mit getrennten Ein- und Ausgangsmarken bei
+unterschiedlichen Endformen. Die Einfügung steht innerhalb
+derselben bosonischen Kontraktion. Die gegebene Auswahl
+bleibt beim ganzen neutralen Wort außen. Original und
+gebundene Referenz behalten ihre eigenen angegebenen
+Endpunktformen und ihre gemeinsame feste Paarung.
+
+Der vorhandene Leerfermionkern C_t^{00}=I_t(w_t s_t)
+enthält weder diesen Minor noch den kompensierten
+geladenen Zwischenweg. Seine Kenntnis allein bestimmt
+die markierte Rückkehr daher algebraisch nicht. In der
+bereits vorhandenen bedingten R113 Generatorform gilt
+auf dem tatsächlichen gemeinsamen Kern
+    -d/dt (K_gamma,t - C_t^{00})|_0
+       = <eta, dGamma_2(V) eta>.
+Beim korrekt identifizierten einfachen Paar u,v lautet
+dies <u,V u>+<v,V v>, ein Bosonoperator. Die gemeinsame
+Rand- und Dichteableitung hebt sich in dieser Differenz auf,
+weil beide Formen am Nullschnitt dieselbe normierte
+Paarmasse haben. Für bewegte Endmarken oder veränderte
+äußere Auswahl treten deren tatsächliche Ableitungen hinzu.
+An einem normierten ursprünglichen Bosonvektor ist der
+orthogonal zum Ausgangsvektor projizierte Ausdruck die
+erste neutrale Rückkehrprobe. Ihr longitudinaler Grad ist
+auf derselben Quelle zu bestimmen. Eine Zahl oder ein
+Vakuummatrixeintrag genügt für diese Prüfung nicht.
+
+Diese Identität setzt die tatsächliche Paarabbildung,
+das geordnete gewichtete R113 Maß und seinen Randkern voraus.
+Der vorhandene native R113 Aufruf liefert beides für die
+markierte E8 Geschichte bisher nicht. Die E8 D8
+Paaridentifikation aus Abschnitt 1 liefert eine konkrete
+Wirkung, die ein ursprünglicher Intertwiner erhalten müsste.
+Sie fügt der 96er Quelle keine hypothetischen Modi hinzu.
+
+4. Positiver Originalrückweg bei verändertem Längsgrad
+
+Der alte E8 Raum enthält einen tatsächlichen zusätzlichen
+Rückweg bereits im nächsthöheren longitudinalen Grad.
+Sei J^u_-1 der neutrale Cartan-Oszillator für u in R^8.
+Die geladenen Vektoren
+    psi_u=J^u_-1 e Omega
+haben Impuls gamma, longitudinalen Grad zwei und
+Gramform <u,v>. Sie spannen den ganzen Grad-zwei-Raum
+mit Impuls gamma, da L0=|gamma|²/2+Oszillatorgrad.
+
+Aus [f,J^u_-1]=(u·gamma)E^(-gamma)_0 und
+E^(-gamma)_0 e Omega=-J^gamma_-1 Omega folgt exakt
+    f psi_u=J^(u-(u·gamma)gamma)_-1 Omega.
+Der Rückweg ist die wirkliche Weylspiegelung s_gamma
+auf acht neutralen Cartanrichtungen im Grad eins.
+Er erhält die ganze Gramform. Der gewöhnliche
+Kreistransport L_-1 liefert dagegen nur
+L_-1 e Omega=J^gamma_-1 e Omega, die eine gamma-Richtung.
+Ein zur bekannten Bewegung unabhängiger Anschluss muss
+eine der orthogonalen Antworten durch die Bewegung einer
+ganzen regionalen Algebra realisieren. Die sieben
+orthogonalen Oszillatorantworten liefern dafür exakte
+Kontrollvektoren und für sich keine weiteren Orte.
+
+5. Ergebnis und tatsächlicher Anschluss
+
+Der ursprüngliche geladene Mittelstrom und sein neutraler
+Rückweg sind im D8 E8 Vertrag als Paar ausgeführt. Die
+R113 Zuordnung über nackte ursprüngliche Spinorpaar-Erzeuger
+ist durch das neutrale Nullwort ausgeschlossen. R113
+braucht für die physische Prüfung die geordnete Paarmarke
+auf der gewichteten gemeinsamen Endpunktform. Mit
+erhaltenem longitudinalen Grad eins muss ein zusätzlicher
+Rückweg im Grad null auftreten. Mit verändertem Grad
+steht erstmals der oben berechnete achtfache
+Originalrückweg als Vergleich bereit. Für beide Fälle
+bleiben der physische Intertwiner, die gewichtete Form
+und die neue regionale Inklusion offen.
+
+Originale:
+  docs/research/fundamental-plan/TFPT-E8-P1-LADUNGSWINDUNG-20261112.txt
+  docs/research/fundamental-plan/TFPT-Cartan-Prozess-2026-11-12.md
+  docs/research/fundamental-plan/TFPT-REGIONALE-KOMPOSITION-20261112.txt
+  docs/research/fundamental-plan/TFPT-Coxeter-Cartan-und-Familientransport-2026-11-12.md
+  experiments/theory-contracts/original-local-source-variable-background-20261102/
+    PROJECTED-JOINT-SOURCE-GENERATOR-20261103.txt, §§1–4
+    ORIGINAL-MIRROR-EMBEDDING-SEARCH.txt, §§1,3
+  experiments/theory-contracts/chat-triangulation-20261108/
+    R113-ORIGINAL-UND-REFERENZ-20261109.txt, §§1,5
+
+Ausgeführt: check_tfpt_r113_pair_return_20261112.py, Exit 0.
+Unverändertes v113_quasifree_kernel.py, 6 bestanden, 0 fehlgeschlagen.
+Kein neuer physischer Wert der gewichteten Randform. F1 bleibt offen.

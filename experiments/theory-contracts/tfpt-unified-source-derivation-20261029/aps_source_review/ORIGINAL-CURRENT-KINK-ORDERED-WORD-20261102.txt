@@ -1,0 +1,84 @@
+GEORDNETE ORIGINALSTROMEINFÜGUNG AN DER NEUTRALEN KINKLINIE
+============================================================
+2. November 2026. Ableitung im bereits gegebenen achtfachen CAR
+Quellvertrag. Die primitive P1 OS Zeit und Feldzuordnung werden
+nicht vorausgesetzt.
+
+1. Dasselbe Wort und dieselben Viertelzustände
+
+Auf dem ursprünglichen Cover bezeichne J(h) den originalen CAR
+U1 Gesamtstrom, h ein reelles glattes Profil, W(h)=exp(iJ(h)).
+Im Originalvertrag ist
+
+ J(h)=h_0 Q+sum_(m>0)(h_m J_-m+conjugate(h_m) J_m),
+ [J(h),J(k)]=sum_(m>0) m(conjugate(h_m)k_m-h_m conjugate(k_m)).
+
+Für die ursprünglichen fünf Eingaben P_i^(alpha) ist Q=0 und
+alpha=1/4 oder 3/4. Ihre im Originalvertrag definierten Hallkerne
+K_ij^(alpha) bleiben voneinander getrennt. Setze
+
+ F_ij^(alpha)(x) = <P_i^(alpha),W(x)P_j^(alpha)>
+  = exp[-1/2 sum_(m>0)m|x_m|²] K_ij^(alpha)(i x,i conjugate(x)).
+
+Für die vorhandene glatte neutrale Linie T=W(-b_F),
+ b_F(theta)=b(8 theta), ist U(t)=exp(-it K_alpha) und
+ T(t)=U(t)TU(t)*. Schreibe (b_t)_(8n)=e^(-int)b_n,
+ d=b_F-b_t und C_t=exp[-[J(-b_t),J(b_F)]/2].
+Dann ist in GENAU dieser Reihenfolge T(t)T*=C_t W(d).
+
+Die zusätzliche Stromeinfügung LINKS ergibt exakt
+
+ <P_i,J(h)T(t)T*P_j>
+  = C_t (1/i) (d/d epsilon) {
+        exp[-epsilon [J(h),J(d)]/2]
+        F_ij^(alpha)(d+epsilon h) }_(epsilon=0).             (1)
+
+Denn W(epsilon h)W(d)=exp[-epsilon[J(h),J(d)]/2]
+W(d+epsilon h) und dW(epsilon h)/d epsilon bei 0 ist iJ(h).
+Die Berechnung benutzt den tatsächlichen Quellenkern, die vollständige
+Weylphase und den tatsächlichen Zeittransport. Das Einsetzen rechts von
+T(t)T* kehrt das Vorzeichen der zusätzlichen Kommutatorphase um und
+liefert allgemein eine andere Antwort. Die Ableitung kann zunächst auf
+dem finite-energy Quellenkern verstanden werden; sie postuliert keinen
+ungeschmierten Punktfeldoperator.
+
+2. Unabhängiger elementarer Ordnungscheck
+
+check_kink_current_insertion_20261102.py vergleicht die Ableitung mit
+unabhängigen exakten Oszillator-Matrixelementen im Einquantenzustand
+|1> für einen einzelnen Strommodus mit [J_m,J_-m]=m. Für reelles h und
+komplexes d ergibt die direkte Fockrechnung
+
+ <1|J(h)W(d)|1> = i m h exp(-m|d|²/2)
+                     [conjugate(d)+d(2-m|d|²)].             (2)
+
+Gleichung (1) reproduziert (2) symbolisch, inklusive Kommutatorvorzeichen.
+Für m=8,h=1,d=1+i ist die Antwort
+ (120-104 i) exp(-8). Auch der Unterschied zwischen Links- und
+Rechtsinsertion wird explizit geprüft. Die Wahl |1> und das einzelne d
+sind ein Test der Operatoridentität; |1> wird nicht mit einem der
+originalen fünf TFPT Quellzustände identifiziert.
+
+3. Zusammenhang und Grenzen
+
+Die Rechnung (1) ist für beide quarterabhängigen Zustandskerne gültig.
+Die tatsächlichen Zustände und ihre K_alpha Dynamik müssen in (1)
+eingesetzt werden. Der separate Test
+ORIGINAL-KINK-QUARTER-RESPONSE-20261102.txt ermittelt bereits konkrete,
+unterschiedliche normierte Koeffizienten beider Viertel für T(t)T* aus
+den vollständigen originalen P_0 Koeffizienten. Daraus folgt nicht,
+dass jede Wahl von h diese Viertelzustände unterscheidet.
+
+J(h) ist der vorhandene gesamte U1 Strom. (1) identifiziert ihn nicht mit
+allen acht markierten E8 Cartanrichtungen und legt kein lokales
+E8 Feldwörterbuch fest. Sie liefert keine aus P1 gewählte Quellinsertion,
+keine Abbildung der P1 OS Zeit oder Reflexion und keine physische
+Normierung samt Referenz, Eta, Z0 oder 30er Koeffizienten L_gamma.
+Referenz/Eta/Z0 werden im vollständigen ursprünglichen Wirkungsaufruf
+weiter benötigt. Keine vollständige F1 Lösung wird behauptet.
+
+Quellen: ORIGINAL-ORDERED-CURRENT-KERNEL-AND-SEAM-GRADING.txt Abschnitte
+2–4 (ursprüngliche Zustände, Weyl-CCR und Zeit) und
+CLOSED-HALF-KINK-SOURCE-WEYL-LINE.txt Abschnitte 1–3 (Faltung, T und
+Quellzeit). Beide Referenzen stehen vollständig im zuvor erstellten
+ORIGINAL-KINK-QUARTER-RESPONSE-20261102.txt mit Quellenabdrücken.

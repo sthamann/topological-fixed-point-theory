@@ -1,0 +1,47 @@
+{
+  "checkout": "/Users/stefanhamann/Documents/Codex/2026-11-09/hol/work/tfpt-f1-weight-commit",
+  "commit": "8207dce50d94d32846c3fb733e48d89dc85fdfd3",
+  "git_status_command": ["git", "status", "--porcelain=v1", "--untracked-files=all"],
+  "git_status_before": "",
+  "git_status_after": "",
+  "execution": {
+    "command_template": ["python3", "-B", "-c", "<audit_wrapper>", "<absolute_script>", "<checkout>", "/Users/stefanhamann/Projekte/tfpt-theoryv4"],
+    "audit_wrapper": "Install sys.addaudithook; reject open, os.listdir, os.scandir and os.chdir when the resolved path is under the original repo. Set sys.argv to [absolute_script, checkout] and execute runpy.run_path(absolute_script, run_name='__main__').",
+    "cwd": "checkout",
+    "PYTHONPATH": "removed",
+    "PYTHONDONTWRITEBYTECODE": "1",
+    "OPENBLAS_NUM_THREADS": "1",
+    "OMP_NUM_THREADS": "1",
+    "forbidden_original_repo": "/Users/stefanhamann/Projekte/tfpt-theoryv4",
+    "original_repo_access_attempts_detected": 0
+  },
+  "checks": [
+    {
+      "id": "radial_covariance",
+      "script": "experiments/theory-contracts/chat-triangulation-20261108/check_tfpt_marked_radial_covariance_20261110.py",
+      "expected_stdout": "experiments/theory-contracts/chat-triangulation-20261108/tfpt-marked-radial-covariance-results-20261110.json",
+      "exit": 0,
+      "stderr_empty": true,
+      "stdout_byte_identical": true,
+      "stdout_sha256": "553408bccab59216d6f05f34d4ad71e8f3a893cc4a1806ad1cc6229760dc791e"
+    },
+    {
+      "id": "ramond_endpoint",
+      "script": "experiments/theory-contracts/chat-triangulation-20261108/check_original_p1_ramond_endpoint_20261110.py",
+      "expected_stdout": "experiments/theory-contracts/chat-triangulation-20261108/original-p1-ramond-endpoint-results-20261110.json",
+      "exit": 0,
+      "stderr_empty": true,
+      "stdout_byte_identical": true,
+      "stdout_sha256": "ca0fc443c03d861bfd7d344f7d28dbba124e9c69e316f3ab816e1ce2ef9f666f"
+    },
+    {
+      "id": "transported_J",
+      "script": "experiments/theory-contracts/chat-triangulation-20261108/check_transport_j_original_interface_20261110.py",
+      "expected_stdout": "experiments/theory-contracts/chat-triangulation-20261108/transport-j-original-interface-results-20261110.json",
+      "exit": 0,
+      "stderr_empty": true,
+      "stdout_byte_identical": true,
+      "stdout_sha256": "a35c3a6d2b752ec502068ac63a468da52fb4ebd15938ec45a60328c22c6e8be8"
+    }
+  ]
+}

@@ -1,0 +1,135 @@
+TFPTWEAKEND20261109
+9. November 2026. Anschluss an TFPTOPENEDGE20261109.
+
+1. Transportfaktor und die ganze Antwort sind verschiedene Ableitungen
+
+Die ursprüngliche schwache Verbindungsfamilie liefert nach der
+geometrischen Quarterkorrektur für die zwei festen Enden bei
+theta0=0 und theta1=pi/4 den offenen Faktor
+ W_a=exp(i a L Q), L=pi/4, W'_0=i L Q.
+Q ist der wirkliche reelle v252 schwache Lift, nicht eine
+frei gewählte skalare Ladung.
+
+Ein zweiendiger Kernel X_01 mit der gleichen Transportrichtung
+transformiert zusammen mit W_01 als g_0 X_01 g_1* bzw.
+g_0 W_01 g_1*. Auf einem Ende lautet die kovariante
+Zusammensetzung M_a=W_a* X_a. Ihre Ableitung bei a=0 ist
+ M'_0=X'_0-i L Q X_0.
+Das ist die tatsächliche Produktregel. Den gesamten Endkernel
+durch seine Wilson Ableitung zu ersetzen setzt fälschlich
+seine eigene Änderung gleich dem Transportkontakt.
+Für eine reine Eichumformung g(s) gilt sogar
+ W_s* X_s = g_1(s) (W_0* X_0) g_1(s)*.
+Eine neutrale Spur hat dann exakt keine lineare Antwort.
+Die offene Matrix trägt weiterhin die Endpunktwirkungen.
+Dasselbe gilt für vollständig mitgeführte Zustands- und
+Quellendaten. Diese Kovarianz ist von einer aktiven
+Variation des gegebenen schwachen Hintergrunds zu trennen.
+
+2. Direkte Rechnung auf dem vorhandenen ganzen Zweirandkern
+
+Verwendet werden die unveränderten v252 Felddaten aus
+ACTUAL-WEAK-CONNECTION-AND-JOINT-SOURCE einschließlich
+Ynu=(1,3,5), nichtverschwindendem MR und dem ganzen 96er
+Block, die alte C58 Breite s=1/8 und beide Quarterkarten.
+Der bereits vorhandene beschriftete Kreuzblock lautet
+ X_p(a)=f_s(h_p(a)), f_s(x)=1/(2 cosh(s x)),
+ h_p(a)=(p+aQ) gamma_F-i gamma_F D_F, p=m+alpha.
+Der geometrische Quarterfaktor am offenen Bogen wird mit
+dem ursprünglichen Kernel beibehalten. Bei den zwei festen
+Enden ist
+ X_a=(1/(2 pi)) Sum_m exp[-i (m+alpha)L] X_(m+alpha)(a).
+
+Die tatsächliche Ableitung X'_a am Ursprung wird mit der
+Frechet Ableitung von f_s ausgewertet. In einer Eigenbasis
+von h_p(0) multipliziert die geteilte Differenz
+f_s[lambda_i,lambda_j] den wirklichen Generator Q gamma_F.
+Dies benutzt keine Vertauschbarkeit und kein Ersetzen
+von D_F durch Eigenwertlisten ohne Vektoren. Die
+diagonale geteilte Differenz ist f'_s(lambda_i).
+
+Für beide Quarterwerte ergeben sich in derselben Normierung
+bis auf Rundung dieselben Frobeniusnormen:
+ ||X'_0||_F             = 0.0007668418088283,
+ ||i L Q X_0||_F       = 0.0008012948281264,
+ ||X'_0-i L Q X_0||_F  = 0.0002582371501243.
+Die letzte Abweichung ist von null verschieden. Damit
+ist im tatsächlichen gekoppelten Zweirandkern die Änderung
+des Feldkerns nicht bloß der erwartete offene Transportfaktor.
+
+Geprüft wurden die ursprünglichen Moden |m|<=384 gegen
+|m|<=256 und eine unabhängige symmetrische Differenz an
+einer unveränderten Quartermode. Die Normänderung mit
+Cutoff ist rund 1.3e-14 bzw. 4.2e-15. Für die echten
+unendlichen Modensummen folgt ein geometrischer Rest:
+|lambda| >= |p|-||D_F||, f_s(lambda)<=exp(-s |lambda|).
+Für gleichsignige Paare gilt die Ableitungsabschätzung
+s exp(-s g), für gegensignige Paare mit |lambda|>=g
+die Abschätzung exp(-s g)/g. Dadurch sind die analytischen
+Normreste nach 384 kleiner als 9.8e-20 und 8.7e-21.
+Diese Schranken betreffen die ausgelassenen Moden, nicht
+die numerische Rundung.
+
+3. Warum der skalare Test exakt null ergibt
+
+In der tatsächlichen v252 Teilchenordnung benutze
+R=exp(3 pi i Q_em). Mit den wirklichen Ladungen
+u=2/3, d=-1/3, e=-1, nu=0 hat R nur die Zeichen +/-1.
+Die entgegengesetzten Antiteilchenladungen geben dieselben
+Zeichen für diese Rotation. Direkte Matrixidentitäten auf
+allen 96 Slots liefern
+ R D_F R*=D_F, R gamma_F R*=gamma_F, R Q R*=-Q.
+Daher R h_p(a) R*=h_p(-a), und entsprechend
+ R X_a R*=X_(-a), R W_a R*=W_(-a), R M_a R*=M_(-a).
+Folglich ist M'_0 R ungerade und Tr M'_0=0 exakt.
+Dasselbe gilt für jede R invariante lineare Auslesung.
+Die direkte Rechnung gibt für die Spur Rundungsreste
+kleiner als 3e-16, obwohl die Matrixänderung oben
+nicht null ist. Eine neutrale erste Spur als Kriterium
+für die geladene Endpunktzuordnung wäre damit ungeeignet.
+
+Im ursprünglichen P1 Caller lässt sich dieselbe
+Schlussfolgerung erst anwenden, wenn voller Selektor,
+Zustand und Referenz die betreffende Eichwirkung
+mittragen. Sie ist keine angenommene numerische Null
+des noch nicht identifizierten P1 Calls.
+
+4. Entscheidung über den eigentlichen P1 Test
+
+Die ursprüngliche P1 Definition liefert ihre lokalen
+Felder und invarianten Einschränkungen auf Ran(P_adm).
+Der aktuelle Papierconsumer C_F=P_F C_Sigma P_F und
+der inverse Logit geben eine tatsächliche Leserregel.
+Diese Regel gibt keine Identifikation von C_F mit
+dem hier verwendeten ganzen Fold Zweirandkernel oder
+der beiden Fold Enden mit den 96 physischen Feldbeinen.
+Der ursprüngliche APS Randoperator ist nicht durch
+die Wahl des gegebenen C58 Vergleichszustands bestimmt.
+P_F und der volle P_adm sind ebenfalls unterschiedliche
+Objekte. R113 hält feldabhängige Marken in derselben
+Integration und den vollen P_adm außerhalb.
+
+Deshalb wurde im tatsächlichen P1 Kern keine passende
+erste Antwort bestätigt. Der geschlossene
+Spinorübergang, das relative Minus und das zweite Moment
+um sqrt(2) unter vollem P_adm bleiben unberechnet.
+Das ist weder ein negatives Spinorresultat noch ein
+Ausschluss eines passenden ursprünglichen Feldanschlusses.
+Die bisherige Aussage iLQ ist für den Transportanteil
+exakt; als Gleichheit für die ganze erste schwache
+Endantwort ist sie durch die vorhandene Rechnung widerlegt.
+
+Der kurze nächste Vergleich soll die offenen Feldindizes
+am originalen P1 Caller behalten und die gesamte
+schwache Antwort samt Wilson Kontakt auf diesen
+Enden zuordnen. Eine alternative neutrale Auslesung
+muss die erste geladene Änderung mit einer passend
+transformierenden konjugierten schwachen Einfügung
+kontrahieren. Eine bloße skalare erste Ableitung
+oder der feste Vergleich von zwei getrennten Zuständen
+kann den verlangten Nachweis nicht leisten. Erst
+nach der tatsächlich bestätigten P1 Identifikation
+sind die drei voll projizierten Werte auszurechnen.
+
+Reproduzierbar mit check_weak_endpoint_response.py <TFPT-Repository>.
+Daten in weak-endpoint-response-results.json.

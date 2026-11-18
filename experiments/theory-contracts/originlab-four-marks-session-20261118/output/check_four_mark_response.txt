@@ -1,0 +1,30 @@
+F1  three pairings and their half sum
+  ok   I = half the sum of the squared pairing products
+  ok   I = 1 + 14 u^2 + u^4 for the marks {1, -1, u, -u}
+  ok   Disc = (4 u (1 - u^2)^2)^2
+F2  the table
+      single pairing opposite {1,-1}{u,-u}    moved marks / square = 25/16
+      single pairing {1,u}{-1,-u}             moved marks / square = 1/4
+      single pairing {1,-u}{-1,u}             moved marks / square = 4
+  ok   recorded spin structure (the pairing of opposite marks): 25/16
+  ok   half sum of the three: 7/4   7/4
+  ok   the other two single pairings give 1/4 and 4
+  ok   at the square the half sum has modulus 3/4 of the recorded single pairing
+F3  the phase step on the original circle
+  ok   first outer mode: a quarter of its norm square ends up in the inner modes   0.249999
+  ok   summed over the outer modes the weight grows like (2/pi^2) log K: no bound, the step is not implementable   [np.float64(0.20252), np.float64(0.20208), np.float64(0.2004)]
+F4  overlap with the unmarked circle on N sites
+      log |D_N|: {16: np.float64(-1.08354), 32: np.float64(-1.26349), 64: np.float64(-1.44023), 128: np.float64(-1.61528), 256: np.float64(-1.78945), 512: np.float64(-1.96318)}
+  ok   the overlap falls like N^(-1/4): four steps of a quarter phase, 4 * (1/4)^2   [np.float64(-0.2596), np.float64(-0.255), np.float64(-0.2525), np.float64(-0.2513), np.float64(-0.2506)]
+  ok   both sectors together N^(-1/2) per spinor, N^(-4) for eight spinors: weight 1/2 per mark, as in the sixteenth round
+      at the sixteen sites of v519 the single-sector overlap is |D_16| = 0.338394
+F5  the recorded 4 x 4 seam covariance of v512
+  ok   the four characters of the pairings are eigenvectors (as recorded)
+  ok   moduli of the three single pairing responses: 1/sin^2(delta), cot^2(delta/2)/4, tan^2(delta/2)/4
+  ok   exp(-2 pi (eigenvalue - c)) of the recorded covariance = the three free pairing responses, for every delta
+  ok   on the symmetric vector it is |Disc|^(1/2) = 16 sin^2(delta)
+  ok   recorded odd-doublet split (2/pi) log cot(delta/2) = (1/2 pi) log of the ratio of the two side responses
+  ok   recorded covariance, opposite pairing, counterwitness against square: exactly 25/16   25/16
+      the free diagonal c of the record drops out of every ratio; it is the missing absolute reference.
+
+all checks passed

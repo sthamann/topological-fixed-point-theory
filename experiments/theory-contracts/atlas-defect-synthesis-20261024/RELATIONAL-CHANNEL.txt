@@ -1,0 +1,217 @@
+RELATIONAL CHANNEL ON CONJUGATE(H5) TENSOR H5
+==============================================
+
+Scope and additional contract
+-----------------------------
+
+The doily quartic theorem supplies the original native quartic representation
+H5, its exact positive form, its six ovoid effects, and all sixty marked G31
+actions.  This file adds one explicit kinematic contract:
+
+    the state space contains conjugate(H5) tensor H5,
+
+with diagonal action conjugate(rho_5(g)) tensor rho_5(g).
+
+The presence or dynamical population of this tensor sector is not derived from
+the compiler.  No coupling strength, transition rate, P2 carrier, or D5 carrier
+identification is asserted.  Everything below follows exactly once this
+additional sector contract is accepted.
+
+Isometric use of the existing bridge
+------------------------------------
+
+In the centered ovoid basis the metric is H=I5+J5.  In the native unnormalised
+quartic word basis the primitive positive form is
+
+    G = diag(1,3,3,3,6).
+
+For the existing primitive bridge T, the checker verifies
+
+    T^T (G/12) T = H.
+
+Thus T is an exact isometry after the displayed fixed normalization.  Changing
+the common scale of T and G does not change any ray, projector, probability,
+or channel below.
+
+Invariant vector and singlet Choi construction
+-----------------------------------------------
+
+Let e_1,...,e_5 be a G orthonormal basis and define
+
+    |Omega> = (1/sqrt(5)) sum_i conjugate(e_i) tensor e_i.
+
+In the native word basis the same ray is vec(G^-1).  The checker solves the
+full simultaneous fixed space for all sixty vector actions and obtains
+dimension one.  Therefore |Omega> is the unique invariant vector ray in the
+contracted relational sector.  This vector statement does not make its density
+the unique invariant density operator.
+
+Its projector has rank one, trace one, and both reduced density matrices are
+
+    rho_left = rho_right = I5/5.
+
+If the state is |Omega><Omega|, the unnormalised operator
+5 |Omega><Omega| has input partial trace I5, is positive, and has rank one.
+Under the canonical conjugate input identification it is exactly the Choi
+operator of the identity channel on the native H5.  This is an operational
+construction inside the declared relational sector.  It does not identify H5
+with another five dimensional carrier.
+
+Six ovoid effects and their exact joint law
+-------------------------------------------
+
+The six primitive native ovoid rays q_a obey
+
+    q_a^T G q_a = 10,
+    q_a^T G q_b = -2 for a != b.
+
+The effects
+
+    E_a = q_a q_a^T G / 12
+
+are positive rank one operators for G and sum to I5.  All sixty native quartic
+actions permute them exactly.
+
+Conditional on the state |Omega><Omega|, measuring the conjugate effect on the
+first half and the native effect on the second half gives
+
+    p(a,b) = <Omega| conjugate(E_a) tensor E_b |Omega>
+           = Tr(E_a^dagger E_b)/5.
+
+The complete exact table has
+
+    p(a,a) = 5/36,
+    p(a,b) = 1/180 for a != b,
+    p(a) = p(b) = 1/6.
+
+Consequently
+
+    p(second outcome = a | first outcome = a) = 5/6.
+
+The joint table sums to one.  It is invariant under all sixty marked actions.
+
+Conjugation convention
+----------------------
+
+The first tensor factor is the conjugate representation.  The identity used
+throughout is
+
+    <Omega| conjugate(A) tensor B |Omega> = Tr(A^dagger B)/5.
+
+There is no transpose substitution.  The checker contains a complex control
+with A=i E_00 and B=E_00.  The direct tensor expectation and adjoint formula
+both give -i/5, while Tr(A^T B)/5 gives +i/5.  The wrong convention therefore
+fails explicitly.
+
+Invariant relational operator and exact spectrum
+--------------------------------------------------
+
+Besides the singlet projector, the effects give
+
+    R = sum_a conjugate(E_a) tensor E_a.
+
+R is Hermitian in the real isometric chart, nonzero, non-scalar, and invariant
+under all sixty actions.  The checker proves the annihilating polynomial
+
+    R (R - (5/6) I25) (R - (2/3) I25) = 0
+
+and the three exact nullities.  Hence
+
+    spec(R) = (5/6)^1, (2/3)^5, 0^19.
+
+The one dimensional largest eigenspace is precisely the Omega ray.  Therefore
+Rayleigh Ritz gives a sharp conditional selection statement: if one adds the
+rule that the realized normalized state maximizes Tr(rho R), the unique
+maximizer is |Omega><Omega| and the maximum is 5/6.  Choosing that variational
+rule, or choosing the Hamiltonian -R and a ground-state rule, is an additional
+state postulate.  Neither follows from G31 covariance or from the POVM.
+
+Symmetry alone gives a direct counterexample.  The density I25/25 is invariant
+under all sixty actions and has the same two local marginals I5/5.  For that
+state
+
+    Tr((I25/25) R) = 1/6,
+    p(a,b) = 1/36 for every a,b.
+
+Thus invariant densities need not have the Omega correlations.  The correlated
+law 5/36 on the diagonal and 1/180 off the diagonal belongs specifically to
+the Omega state.
+
+Normalized Lueders channel
+--------------------------
+
+Each existing effect E_a has rank one and sole nonzero eigenvalue 5/6.  Its
+positive square root is therefore
+
+    K_a = sqrt(E_a) = sqrt(6/5) E_a.
+
+The checker verifies
+
+    sum_a K_a^dagger K_a = I5,
+    sum_a K_a K_a^dagger = I5.
+
+Consequently the square-root instrument gives a trace-preserving, unital
+channel.  With column vectorization in the real isometric chart its Liouville
+matrix is
+
+    L = sum_a conjugate(K_a) tensor K_a = (6/5) R,
+
+so its exact spectrum is
+
+    spec(L) = 1^1, (4/5)^5, 0^19.
+
+The fixed operator space is one dimensional and contains I5.  Hence the unique
+normalized stationary density is I5/5.  Here stationary means fixed by this
+specified channel.  The POVM determines the channel only after adopting the
+Lueders square-root instrument; it does not supply a physical time evolution,
+a coupling strength, or a rate.
+
+Liouville and Choi index roles
+------------------------------
+
+R is an operator on conjugate(H5) tensor H5.  After multiplication by 6/5 its
+indices give the Liouville matrix L of the Lueders channel.  The Choi matrix is
+constructed separately as
+
+    J_L = sum_a vec(K_a) vec(K_a)^dagger,
+    vec(K)[input*5 + output] = K[output,input].
+
+The checker verifies all 625 entries of the reshuffle
+
+    J_L[(i,a),(j,b)] = L[(b,a),(j,i)].
+
+Thus R must not be called a Choi matrix merely from its tensor notation.  A
+special algebraic coincidence occurs here: every K_a is a real symmetric rank
+one outer product, so the reshuffle fixes the summed array and J_L and L have
+the same 25 by 25 entries.  Their index meanings remain different.  The Choi
+construction independently has rank six, trace five, is positive, and has both
+partial traces I5.
+
+What is and is not selected
+---------------------------
+
+Within the additional tensor-sector contract, symmetry fixes exactly one
+vector ray.  It does not choose that ray as the state because invariant mixed
+densities also exist.  The identity-channel Choi construction and the displayed
+correlated law follow after specifying the Omega state.  Maximizing the already
+given R selects Omega uniquely, but the maximizing rule remains extra.  The
+Lueders channel follows after specifying the square-root instrument.  None of
+these statements selects a local pure state or one preferred ovoid, and none
+supplies physical dynamics, preparation probability, or interaction strength.
+
+Reproduction
+------------
+
+From the repository root:
+
+    PYTHONDONTWRITEBYTECODE=1 python3 \
+      experiments/theory-contracts/atlas-defect-synthesis-20261024/relational_channel.py \
+      --output /tmp/relational-normal.json
+
+    PYTHONDONTWRITEBYTECODE=1 PYTHONOPTIMIZE=2 python3 \
+      experiments/theory-contracts/atlas-defect-synthesis-20261024/relational_channel.py \
+      --output /tmp/relational-oo.json
+
+    cmp /tmp/relational-normal.json /tmp/relational-oo.json
+
+The checked repository result is relational_channel_results.json.

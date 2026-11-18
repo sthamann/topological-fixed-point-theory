@@ -1,0 +1,63 @@
+{
+  "schema": "tfpt.source-charge-obstruction.v1",
+  "status": "pass",
+  "checks": [
+    "primitive parity and central tag closure",
+    "bosonic spinor current tag excluded in this inventory",
+    "two spinor source fields form neutral tag",
+    "explicit disorder primitive removes this tag obstruction",
+    "neutral source insertions preserve tags",
+    "adjoint has the same Z2 tags",
+    "ten Clifford generators square to identity",
+    "all ten Clifford generators anticommute",
+    "central spin rotation acts as -I on spinors",
+    "same central element conjugates Clifford vector trivially",
+    "original v252 full 96 carrier",
+    "central spin action commutes with full v252 D",
+    "central spin action commutes with antilinear J",
+    "central spin action is not finite chirality gamma_F",
+    "original E8 roots split 112 plus 128",
+    "marked D5 spinor and conjugate each carry 64 roots",
+    "D8 even roots plus Cartan give 120",
+    "explicit invariant state and charge-one operator",
+    "charged one-point zero but neutral two-point positive"
+  ],
+  "source_paths": [
+    {
+      "path": "verification/v252_full_finite_triple.py",
+      "sha256": "820254440e178430422e50605067775656236602996307f67c9e69124ba5d163"
+    },
+    {
+      "path": "verification/v1_e8_glue.py",
+      "sha256": "1978d66a85974e5fa189cf4dec507f9be4c4dcc113e90eb1b33a9aae9259a0d7"
+    }
+  ],
+  "algebraic_argument": "The commuting parity and central involutions have product Pz\u00b2. Every listed primitive is fixed by Pz\u00b2, so all sums, products and adjoints of them are fixed; the fixed algebra is norm closed for a continuous symmetry action. A target of tag (0,1) changes sign and cannot be a nonzero element of that algebra. Equivariant derivations and neutral insertions preserve the conclusion when defined on that algebra.",
+  "tag_class": [
+    [
+      0,
+      0
+    ],
+    [
+      1,
+      1
+    ]
+  ],
+  "target_tag": [
+    0,
+    1
+  ],
+  "explicit_escape_tag": [
+    0,
+    1
+  ],
+  "ward_scope": "Invariant state and nontrivial character force a charged one-point to zero; neutral correlators need not vanish. The finite matrix example illustrates this identity and is not the physical TFPT state.",
+  "source_scope": "Given primitive Grassmann Spin10 spinors and tensorial bosons, plus equivariant operations. A disorder/sector primitive may change this inventory. E8 current is bosonic; 16 internal spinor states are not 16 Majorana generators. The Spin action z\u00b2=-I96 is supplied on the v252 carrier, and commutation with D and J is checked; v252 alone does not derive that representation. z\u00b2 on H_F is distinct from gamma_F and field parity.",
+  "not_proved": [
+    "P1 source has only this inventory",
+    "all possible disorder sectors are absent",
+    "physical 3+1D matter, E8 current source or global P1 no-go"
+  ],
+  "physical_source_identified": false,
+  "fundamental_solution": false
+}

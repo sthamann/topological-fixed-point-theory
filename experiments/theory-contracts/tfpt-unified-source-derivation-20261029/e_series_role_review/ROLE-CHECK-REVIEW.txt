@@ -1,0 +1,97 @@
+INDEPENDENT ANALYTICAL REVIEW OF THE THREE DIRECT ROLE CHECKS
+29 October 2026. Read-only inspection of check_roles.py and its saved result;
+no duplicate execution, no original or Atlas change.
+
+Verdict: the three calculations and their stated narrow scopes are correct.
+The root builder is the existing check_a7_e7_clock.e8_roots; its writing main
+is not called. The checks use exact doubled root coordinates, rational Cartan
+projections and exact SymPy rank, not numerical tolerances.
+
+1. Four D5-compatible E6 corners and six E7 edges
+
+For a tetrahedral axis sigma the condition on the last three coordinates
+is exactly that the root lies in D5 direct-sum R sigma. It gives the intended
+E6 cut. Distinct corner systems intersect in the40 roots of the fixed D5,
+so their union has72+72-40=104 roots. The unique root line perpendicular to
+both is one of the six D3 normal lines; its complement is the corresponding
+D5-containing E7.
+
+The iterative sum closure is complete: it starts with a sign-symmetric set,
+adds every ambient root obtained as a sum with the current frontier, and
+stops only when no further root sum is available. Its equality with the
+126-root complement proves generation of exactly this E7. In the GIVEN
+ambient Chevalley algebra the brackets for root sums are nonzero; brackets
+of opposite roots give the Cartan span. Thus the corresponding embedded E6
+Lie subalgebras generate e7 as well. The common Cartan dimension is5, their
+span has dimension7, and the22 added root spaces complete
+  78+78-45+22=133.
+
+This is the explicit fixed-tetrahedron realization of the old D5-edge/E7
+incidence, not evidence for a newly discovered physical intermediate stage.
+Original sources: e-series-compiler-closure-20261023/CUTS.txt:40-76,114-137;
+e-series-incidence-algebra-20261024/THEOREMS.txt:96-116.
+
+2. The tested orthogonal Lie-algebra projection is not a homomorphism
+
+Specify P as the orthogonal vector-space projection onto the embedded cut
+Lie algebra: it discards removed root spaces and projects Cartans onto that
+cut's root span. It is not merely a projector on the root-label Hilbert space
+with unspecified treatment of Cartans.
+
+For the E6 +++ cut, alpha=e0+e5 is removed, and its retained coroot is
+  e0+(e5+e6+e7)/3, with norm squared4/3.
+For the E7(q/2) cut, alpha=e0+e1 is removed, and its retained coroot is
+  alpha-q/4, with norm squared3/2.
+Both alpha and -alpha root vectors project to zero, whereas
+  P[e_alpha,e_-alpha]=P H_alpha !=0.
+Thus P cannot preserve this bracket. Coroots equal roots in these simply
+laced norm-two conventions. Either opposite-root phase convention leaves
+the nonzero discrepancy unchanged. The code's two rational vectors and
+norms are correct.
+
+This excludes treating this projection itself as a Lie-algebra quotient
+map. It does not exclude subalgebra inclusions, conditional expectations,
+physical coarse graining or symmetry breaking with its actual dynamics.
+Original conventions: e-series-quarter-clock-20261023/PROOF.txt:14-46,81-91;
+e-series-compiler-closure-20261023/FIELDS.txt:18-34.
+
+3. Ordinary horizontal modes commuting with the retained H8
+
+On the common algebraic finite-energy domain,
+  [H8,J_(alpha,n)]
+   =(-8n-rho.alpha+(2a-1)Q(alpha)/2) J_(alpha,n).
+Hence for Q-neutral ordinary n=0 modes the condition is rho.alpha=0.
+No integer root e_i-e_j satisfies it because all eight rho entries differ.
+The neutral half roots have four plus signs, and the four chosen entries
+of (7,5,3,1,-1,-3,-5,-7) must sum to zero. There are exactly eight choices:
+six choose two complete opposite pairs, and two choose the complementary
+balanced selections 7-5-3+1=0 and its negative. Their four root lines are
+mutually orthogonal and span rank4. Thus their root system is4A1.
+
+For both quarters the additional charged-root test is exhaustive. Every
+rho.alpha is integral; Q=+/-2 would require a half-integer cancellation.
+The two Q=+/-4 roots are +/-q/2, have rho pairing0 and have nonzero quarter
+coefficient. Therefore the same eight roots are ALL commuting ordinary
+horizontal root modes among the240 roots, not just within the126 neutral
+ones. The Cartan zero modes also commute. If describing the full finite
+horizontal Lie centralizer, it is4A1+u1^4, not only4A1.
+
+The counterexample alpha=e0-e1 has rho.alpha=1 and gives the saved
+commutator -J_(alpha,0). This checks actual operator action rather than
+equating charge neutrality with energy symmetry.
+
+The result does not classify n!=0 modes or the whole affine commutant.
+In particular the previously known p* operators J_(p*,-1) and J_(-p*,1)
+also commute with H8. Nor does the calculation reopen the old ground-state
+question: the existing color-center selector removes the extra full-field
+p* ground state on its stated center-neutral branch.
+Original sources: dynamic_reconstruction_20261027/
+A7-E7-CLOCK-DECOMPOSITION.txt:19-54,80-112 under the existing
+elliptic-moebius-source-bridge-20261026 contract;
+seam-joint-ward-state-20261014/PROOF.txt:113-143;
+source_recursion_20261028/CLUSTERING-ADMISSIBLE-SECTOR.txt:10-36,80-118.
+
+No calculation derives an E8/E7/E6 physical gauge cascade, an actual P1
+source image, a state-selection rule or physical OS time. The explicit
+false flags and the absence of an all-affine classification claim in the
+saved JSON correctly preserve these boundaries.

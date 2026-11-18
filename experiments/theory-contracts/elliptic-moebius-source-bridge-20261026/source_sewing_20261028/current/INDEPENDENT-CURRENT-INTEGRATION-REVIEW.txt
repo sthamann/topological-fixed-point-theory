@@ -1,0 +1,127 @@
+UNABHAENGIGE PRUEFUNG DER NATIVEN GAMMA STROMINTEGRATION
+=======================================================
+
+28. Oktober 2026
+
+Urteil
+------
+
+Die Erweiterung ist mathematisch korrekt. Ich finde keinen materiellen Fehler
+in `check_native_gamma_current.py` oder im JSON. Die signierte Krausmischung,
+der Mittelkanal der sechs Ovoiden, die Recordtransponierte und p=1/5 stimmen.
+Der Satz bleibt eine exakte Operatoridentitaet plus eine optionale bedingte
+Recordoperation. Er ist keine physische Stromausfuehrung oder P1 Auswahlregel.
+
+1. Signierte Krausmischung
+--------------------------
+
+Mit Zeilen K_0,...,K_4 und Spalten XI,YX,YY,YZ,ZI ist O reell orthogonal.
+Der Checker prueft in der richtigen Richtung
+
+    D_n = sum_m O_(m,n) K_m
+
+und damit woertlich
+
+    D_XI=K_4,  D_YX=-K_1,  D_YY=K_2,  D_YZ=K_3,  D_ZI=K_0.
+
+Der einzige Minusfaktor bleibt also erhalten. Wegen
+
+    O_(m,n)=Tr(K_m^dagger D_n)/6,   O^T O=I
+
+folgt auch die Gleichheit der normierten Kraussummen. Das Original
+`compiler-current-descendant-20260919/PROOF.txt` gibt
+
+    J_0(X) E = E (X tensor I + I tensor X)|Sym2.
+
+D_Gamma=(Gamma P+P Gamma^T)/2 ist daher genau die horizontale A3 Nullmode
+fuer X=Gamma/2 auf Bell10. Die endliche Identitaet ist exakt. Die affine
+Deutung benutzt weiterhin die im Originalvertrag benannte Stromalgebra und
+konforme Einbettung als Voraussetzung.
+
+2. Sechs Ovoiden und Spektrum
+-----------------------------
+
+Jede der sechs Formen IY,XY,YI,YX,YZ,ZY waehlt fuenf Pauli Richtungen, und
+jede der fuenfzehn Richtungen kommt genau zweimal vor. Deshalb
+
+    (1/6) sum_omega Phi_omega
+      = (1/9) sum_(Gamma=1)^15 Ad(D_Gamma)
+      = Psi_current.
+
+Die Normierung ist `sum D_Gamma^dagger D_Gamma=9 I_10`. Unabhaengig davon
+zerfaellt
+
+    End(Sym2 C4) = 1 + 15 + 84.
+
+Mit den Casimireigenwerten 0,8,20 in dieser Pauli Normierung wirkt der Kanal
+als `1-C_R/18`. Sein Spektrum ist daher exakt
+
+    1^1, (5/9)^15, (-1/9)^84.
+
+Das stimmt mit der 100 mal 100 Rechnung des Checkers ueberein. Das Mittel
+zeichnet keine einzelne Ovoidform aus, waehlt aber noch keine physische
+gleichgewichtete Nutzung der Stromrichtungen.
+
+3. Recordeffekte und p=1/5
+--------------------------
+
+Fuer W mit den 60 Quellkrausvektoren und V mit den 15 Stromvektoren prueft
+der Checker
+
+    W W^dagger V=8V,   V^dagger V=6I,
+    X=W^dagger V/8,    X^dagger X=3I/4.
+
+Somit ist `E_15=(4/3)XX^dagger` der Rang 15 Projektor. Die sechs Teilprojektoren
+`E_omega` haben Rang 5 und summieren sich wegen der doppelten Inzidenz zu
+`2E_15`.
+
+Die Transponierte ist erforderlich. Fuer
+
+    V_source=sum_l |l> tensor K_l/sqrt(60)
+
+erzeugt ein Recordeffekt F den Choioperator
+
+    J_F=W F^T W^dagger/60.
+
+Daher liefern die sechs Effekte `F_omega=E_omega^T/2` je
+`J_(Phi_omega)/30`, zusammen `Psi_current/5`; der Fehlerausgang ist
+`I-E_15^T`.
+
+Die Zahl 1/5 ist in diesem kohaerent zugaenglichen 60er Record optimal. Auf
+dem Stromprojektor P_15 gilt
+
+    J_C60=(8/60)P_15,   J_Psi=(2/3)P_15.
+
+Positivitaet von `J_C60-p J_Psi` erzwingt
+
+    p <= (8/60)/(2/3) = 1/5.
+
+E_15 erreicht die Schranke. Die einzelnen Choiidentitaeten sind keine eigenen
+`need` Aufrufe, folgen jedoch direkt aus den bereits geprueften Gleichungen
+`WX=V` und `X^dagger X=3I/4`. Hier fehlt kein mathematischer Schritt.
+
+4. Physischer Umfang und Hyperladung
+------------------------------------
+
+Bewiesen sind der fuenfdimensionale Hodge Raum aus A3 Nullmoden, sein
+sechsfacher Ovoidmittelkanal und die optionale kohaerente Recordfilterung mit
+maximaler inputunabhaengiger Wahrscheinlichkeit 1/5.
+
+Nicht hergeleitet sind physischer Recordzugriff, Messung von E_15, Kopplung,
+lokale Feldinsertion, Zeitentwicklung oder eine P1 Regel. Die Zahl 1/5 ist
+eine bedingte Quellenkapazitaet, keine vorhergesagte Ereignisrate.
+
+Alle Rechnungen bleiben auf dem A3 Bell10 Faktor. Dieser sitzt laut
+Originalvertrag zusammen mit dem D5 Vektor im E8 Gewichtsraum 2. Weder die
+Ovoiden noch E_15 erzeugen eine Y aequivariante Karte zum P2 Traeger im D5
+Spinor. Der separat gepruefte Satz
+
+    Hom_Y(10_D5_vector,Lambda2(5))=0
+
+bleibt unberuehrt. Eine P2 Antwort benoetigt weiterhin einen geladenen Einsatz,
+etwa den getrennt geprueften A4 mal A4 Bracketweg, samt eigener Auswahlregel.
+
+Ein kleiner unabhaengiger Exakttest bestaetigte O^T O=I, die Inzidenz
+6 mal 5 mit Punktmultiplizitaet 2, Spektraldimension 100, Superoperatorspur 0
+und p=1/5. Kein grosser Quelllauf und keine Aenderung am Checker wurden
+vorgenommen.

@@ -1,5 +1,17 @@
 # theory-contracts — pure-math contracts (NOT empirical scorecard rows)
 
+## Actual seam operator reconstruction (2026-10-15)
+
+[Source operator, fields, state and time](seam-source-character-search-20261015/source_reconstruction/README.md): the original minimal-defect argument does not classify its minimal operator fiber. The exact leakage identity tests the first stronger operator requirement. Under explicit hypotheses, Wold reconstruction gives the quarter source and CAR winding acts jointly on fields, charge, sea state and energy. All continuous scalar Hardy symbols with isometric winding one are classified analytically; 55 rational symbols provide exact diagnostics. No P1/P2 source selection or physical completion is claimed.
+
+## Source-generated marking search (2026-10-15)
+
+[Complete source-torus classification](seam-source-character-search-20261015/README.md): 16 four-torsion characters, 12 primitive, 4 D5+A3 candidates with reconstructed P5. Seven Lean-checked algebraic/saturation theorems. The original fields have two copies of each quarter phase, rather than an elementary 5+3 split. Source/state/event obligations remain explicit; the physical quarter phase is retained.
+
+## Joint quarter conjugation (2026-10-15)
+
+[Source-derived transport in the retained realization](seam-joint-conjugation-20261015/README.md): the actual quarter particle-hole map determines the transport of charge, state, time and a supplied marking. The opposite marking follows without another choice; a fixed-time correction cannot restore the old marked subspace. Bilinear/Hermitian and spinor/elementary-field distinctions are checked explicitly. Experiment only; the first physical source and E8 extension are not selected from P1/P2.
+
 Publication integration, 2026-09-07: the archive through Round27 is included
 with the updated Research Contracts and Frontier papers and public website.
 Earlier per-round local-only/no-release statements describe their creation
@@ -44,6 +56,84 @@ It reads only the source prefix before `Aint_f` in the retained
 RH test runner, spectral target or KMS target. The full RH audit remains in
 Prime Front. Historical dependency paths and saved records retain their
 original provenance.
+
+## Clock-linked full quadratic response (2026-10-15)
+
+[Joint clock reconstruction](clock-jordan-response-reconstruction-20261015/README.md)
+combines the actual C/J images of P5 with the native vacuum current OPE.
+Four generator fields yield36 independent symmetric quadratic directions and
+an exact rational mixed-response inverse (35 for prescribed trace). This closes
+the previous off-diagonal algebraic identification task. Detector access, state
+transfer, physical susceptibility and common source are not thereby selected.
+46/46 exact checks; independent matrix/OPE review; experiment-only PARTIAL.
+
+## Joint seam Ward, chirality, state and time criterion (2026-10-14)
+
+[Joint contract](seam-joint-ward-state-20261014/README.md): the record now also
+starts from an actual retained source operator.  On the chosen
+chiral CAR source circle, fourth winding acts as
+`B4(x)=exp(ix/2)P` on folded source-fermion `V16_source`; its Fock implementer has charge four and the
+stated exact `K_alpha` commutator.  The same charge-label action factors as
+`T=tau_s rho`, where `rho` preserves `K,Q` and exchanges `0<->r0` and
+`D8<->D8+s`.  In the separately stipulated unitary E8 level-one
+representation, four orthogonal affine `su2` triples construct a global
+neutral lift `R` with `R^2=I` and `[Q,R]=[K,R]=0`, acting on the full current
+algebra.  An explicit extension of the ordered source cocycle plus the torus
+factor `Z_a` also gives an adjusted `R_c` and proves
+`W4=U_s R_c` globally on the original even `D8` Fock sector relative to the
+stipulated E8.  `R_c` is not automatically the fixed Tits `R`, and the two
+allowed `kappa` lifts are not canonically selected.  No local odd-CAR/E8
+algebra, raw-P1 E8 selection or event law follows.  The source circle is not yet the P1 seam-core circle,
+and source `V16_source` is not the target `V16=(10,1)+(1,6)`, whose
+Clifford/CAR operator transfer remains open.  The finite v988 half-string
+remains charge neutral with unchanged full Wilson loop.
+
+D8-containing even-unimodular extensions and the unchanged fold energy, the
+unique vacuum selects `Lc`, with full-lattice gap
+`min(alpha,1-alpha)/8`.  More strongly, the retained original clock/source
+charge gives more than projection pairs: `lambda=q/2` is an `Ls` norm-two
+root, and every genuine E8 isometry forces its `(1,1)` projections into the
+mixed `(10,6)` class.  Hence `q=2 lambda` and primitive carrier/family norms
+follow in the same frame.  With `Ls=(4,4)` and `Lc=(6,2)`, intrinsic
+integrality excludes determinant-only `Lc` family norm 2, while `Ls` selects
+`|t|=2` and exactly two lift entries `-1`, without unit-clutch or an assumed
+`q=k lambda_m`.  The dressed clock,
+source cocharacter, inherited composition `C=g^2`, packet formula, and common
+`K` remain premises.  The alternative `Ls` pair `(8,0)` is an independent `C`
+comparison.  A conditional level-one `Ls` current extension carries a neutral
+spectrally flowed SU2 doublet; it is not an operator or selected memory of the
+unchanged microscopic CAR source.  Full Cartan Ward values conditionally pick
+`|0><0|` among normal densities on that doublet, without making the Hamiltonian
+ground space unique or deriving the physical state rule.  Exact checks:
+178+149+208; reproduced corrected-event reference: 176; reproduced time/family
+reference: 86 (83 exact/rational, 3 tolerance); earlier raw reference checks:
+104, 84, and 151.  Verdict:
+`EXCLUDED_MARKED_FOLD_COMPLETION` only for the historical
+unique-vacuum/unchanged-`K`/determinant-only comparison; it does not exclude
+the positive even-sector operator factorization.  Experiment only, no physical
+gate or P1/P2/ledger/paper promotion.
+
+The same record now corrects a later event-operator overclaim: an allowed
+Cartan term gives `diag(0,1)`, `cos(4 theta)` folds to alternating channels,
+and stationarity forbids a required direct off-diagonal mixer.  This correction
+does not exclude physical event laws or derive the actual `A_E`/`Phi` data.
+
+The retained fold-time cocharacter has a non-scalar A3 projection for every
+dressing, with squared norm `41/256` or `33/256` and a `1+1+2`
+four-representative.  Its action is representation-dependent, and it commutes
+in the adjoint action with the geometric Cartan residue labels.  No native W
+insertion, h-axis evolution, or necessary bilocal vertex follows.
+
+The prior finite native-clock dictionary now supplies a positive geometric
+weight-label bridge: `L=HX/2` sends the six minimal marks to plus/minus three orthonormal
+`A3` Cartan-residue axes with their exact `M3/U3` action.  The old one-`A(h)`
+single-`C` class retains squared spectrum `(1,1,4)` across these axes, while
+common-axis real clock words remain CP-even.  The metric, marked dictionary
+and one-`A` form are retained premises; native `U3` is not source `g^2` or
+time.  Its rank-three Cartan label map is not a CCR-preserving map of all six
+native boson modes; a source-selected 6-to-3 operator intertwiner is open.  Under the separate extra parallel triplet-plus-singlet premise, the
+determinant family norm is `3 t^2 (2r+1)^2`, hence neither `4` nor `2`; only
+that added comparison class is excluded.
 
 ## Non-RH full-reference control and nonzero summed memory — Round27 (2026-09-07)
 
@@ -763,7 +853,7 @@ nonnegative integral point of `Δ(s) = 2y²`.
 
 Answers the dated question (Zuse/"Rechnender Raum" round) "kann eine lokale Regel die
 **Compiler Closure** `D5 ⊕ A3 + μ4` selektieren — statt nur den E8-Stern zu erreichen?"
-The network chain v298→v299→v327→v395 reaches E8 as a *star* T(2,3,5); the closure is a
+The network chain v298→v299→v327→v486/v487→v395 reaches E8 as a *star* T(2,3,5); the closure is a
 *decomposition*, whose uniqueness was so far **static** (v15 discriminant classification,
 v1 lattice certificate). This contract builds the dynamical layer on the attractor graph
 Ê8 (the endpoint of v299's growth, whose Kac marks are the v298 diffusion fixed point):
@@ -1132,9 +1222,25 @@ Jeder neue Contract-Ordner schreibt eine `contract_index.json` mit:
 }
 ```
 
-Der Aggregator `verification/build_theory_graph.py` liest zuerst dieses File;
-Legacy-Ordner ohne Index werden aus `validation.json` bzw. `RESULTS.md` toleriert.
-`contract_index.json` darf auch via `verification/enrich_theory_graph_llm.py`
-(LLM-Backfill) entstehen — dann sind `source` ("llm_backfill"), `model` und
-`backfill_date` Pflichtfelder, damit die Herkunft im Graphen sichtbar bleibt.
+Der kanonische Atlas wird unter `semantic_explorer/data/knowledge.json`
+geführt. Für eine Offline-Aktualisierung der Ledger-, Skript-, Contract- und
+Kontextquellen:
 
+```bash
+python3 semantic_explorer/refresh.py
+```
+
+Die Aktualisierung erhält vorhandene Annotationen und ruft kein Modell auf;
+`python3 semantic_explorer/refresh.py --check` prüft Ledger- und Quellenfrische.
+`contract_index.json` wird als Quelleninventar übernommen. Sein Verdict ist
+der dokumentierte Status dieses Contracts, kein unabhängiger Beweis. Legacy-
+Ordner werden aus vorhandenen `PROOF.txt`, `RESULTS.md` und Ergebnisdateien
+inventarisiert. Die früheren `verification/build_theory_graph.py`- und
+`verification/enrich_theory_graph_llm.py`-Aufrufe sind nicht mehr der
+Aktualisierungspfad.
+
+
+
+### 2026-10-15: Original carrier partner and quarter-domain conjugation
+
+`seam-partner-original-action-20261015/` constructs the original carrier pair action and cross-sheet conjugation. The prior source-neutral root has hypercharge 1/6; the fixed folded time splits its (3,2) multiplet. Actual chiral particle-hole conjugation preserves excitation energy across the two quarter domains and adds no second vacuum. Carrier labels, affine states and physical source states stay distinct. No P1/P2 source or physical-time selection is claimed; see PROOF.txt and results.json.

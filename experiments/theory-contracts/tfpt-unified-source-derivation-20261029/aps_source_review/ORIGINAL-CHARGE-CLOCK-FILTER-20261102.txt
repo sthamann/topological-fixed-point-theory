@@ -1,0 +1,82 @@
+Original whole Higgs-family charge filter; 2 November 2026
+
+Question and fixed source
+-------------------------
+Which proposed fixed diagonal charge generators commute simultaneously with the
+actual finite grading and the whole constant real Higgs family with its given
+Majorana block?  Use v252_full_finite_triple.py:63-121 and the four original
+real one-form directions constructed in check_dynamical_higgs_source.py:24-56.
+We preserve arbitrary supplied 3x3 Yukawa and Majorana matrices. No value,
+Higgs weight, local algebra, clock mechanism or physical state is selected.
+
+The 96 indices are particles and conjugates, with grading gamma_F = +1 on
+particle L, -1 on particle R, and the opposite on conjugates. A real diagonal
+particle charge is extended with the opposite charge on conjugates, as required
+by the v252 real structure. We use integer-normalized generators 3B, L,
+3Q_em, 6Y, and the two diagonal colour generators diag(1,-1,0), diag(0,1,-1).
+Their exponentials exp(i theta lambda) are 2pi periodic. This normalization
+is a mathematical test convention, not the established TFPT time map.
+
+Exact general conclusion in this stated six-generator real linear span
+-----------------------------------------------------------------------
+Assume at least one Yukawa entry and at least one Majorana entry are nonzero.
+Let lambda = a(3B)+b L+c(3Q_em)+d(6Y)+e C1+f C2. Require [lambda,V(H)]=0
+for every H in the original whole Higgs family, keeping the fixed Majorana
+term, and [lambda,gamma_F]=0. Then b=c=d=0, and the admissible generators
+in this class are exactly a(3B)+e C1+f C2. Their weighted trace is zero:
+
+                   tr_96(lambda gamma_F) = 0.
+
+Proof. On an allowed nonzero neutral Yukawa link the B, L, Q and colour
+charges are identical on the connected L/R entries, whereas 6Y differs.
+Thus d=0. An original charged Higgs direction connects the corresponding
+weak partners; the Q_em eigenvalues differ by one unit, while B, L and each
+colour charge still agree. Thus c=0. The original Majorana block connects
+nu_R to its charge-conjugate nu_R.  Its 3B and colour charges vanish and its
+L charges differ, so b=0 when that block is nonzero. Conversely the explicit
+one-form construction is colour-diagonal and connects equal B charges, and
+the Majorana block is neutral under both. This proves sufficiency for all
+given Yukawa matrices, all four real H components and arbitrary MR.
+
+The weighted trace vanishes by pairing each left particle of a given species,
+colour and generation with the corresponding right particle of the same
+surviving charge; the antiparticle block cancels in the same way. This result
+holds also when Yukawa matrices have kernels: no invertibility assumption is
+used. For any Hermitian odd V and commuting lambda, the kernel-weighted trace
+equals tr(lambda gamma_F), because V pairs nonzero eigenvalues across chirality
+within each lambda eigenspace. Thus in the selected class the weighted kernel
+trace is 0, subject to those joint commutation conditions. An index of any
+particular boundary operator or a relative determinant additionally requires
+its own domain, seam, covariance, orientation and implementability proof.
+
+Key scope distinctions
+----------------------
+L and B-L commute with the Higgs family but not a nonzero fixed Majorana
+block. Electromagnetic charge commutes with a neutral H direction yet not
+with both charged H directions. Hypercharge does not commute even with the
+neutral Yukawa link. These are fixed-H internal commutators: the full gauge
+action simultaneously transforms H, so the Q/Y result is not a claim that
+electroweak gauge invariance is broken by the underlying field theory.
+
+The six-generator span is not the entire commutant. Chiral or flavour
+generators supported on Yukawa/Majorana null spaces, non-diagonal colour,
+field-dependent transformations, and clocks from the seam or E8 are not
+excluded. The matrix theorem does not give a dynamical original clock nor
+physical masses. It does not replace the nonzero selected 18-channel index
+or the full96 unweighted index: those use their own domains and restrictions.
+
+Reproduction and result
+-----------------------
+Run from repository root:
+OPENBLAS_NUM_THREADS=1 python3 -B experiments/theory-contracts/tfpt-unified-source-derivation-20261029/aps_source_review/check_original_charge_filter_20261102.py
+
+PASS. The script calls the actual v252 operator/representation constructors;
+all four original one-form matrices are built from them. Exact comparisons
+are performed with integer/complex-integer constructor-control matrices, not
+floating-point approximations of unknown physical Yukawa parameters. It
+tests all original source blocks and both Cartan generators. For example,
+3Q_em has 288 nonzero commutator entries for each charged Higgs direction and
+zero for neutral directions; L has 14 in this selected Majorana control and
+zero in the Higgs directions. These counts depend on the selected nonzero
+control entries; the charge-difference argument above establishes the stated
+class result generally under its nonzero premises.

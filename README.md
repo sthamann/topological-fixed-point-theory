@@ -1,5 +1,30 @@
 # TFPT — Topological Fixed-Point Theory
 
+## Source and field integration results, 6 November 2026
+
+The finite saddle diagnostic in v365 distinguishes `Tr′H = −log det′T` from
+the conditional Gaussian Hessian log determinant. Its finite susceptibility
+does not establish a whole geometric measure or its tightness.
+
+The shared paper update retains the evaluated C6 and family histories,
+canonical R104 mirror source and whole original field, reference, state and
+time transports. The original finite static product family has an evaluated connected
+Yukawa response and a strict coupling sign in its stated positive weight class.
+The new dynamic tests distinguish the profile action tail from a physical
+return kernel, give conditional quantum bounds and a mixed time contact,
+and identify the scalar stress response missed by tracefree probes.
+Nineteen targeted exact checks passed. The complete primitive field and history
+response, physical time kernel and common interacting spectrum remain unevaluated;
+no physical ledger marker is promoted.
+
+The single authored source is
+[the shared field integration update](tex-artefacts/toe_field_integration_20261105.tex),
+included by the six active source-completion paper views and mirrored on the
+[common-source explanation](https://www.fixpoint-theory.com/explain#source).
+Its original reference, eta, physical selector, domain and limiting conditions
+remain attached to each calculation.
+
+
 TFPT is a research programme connecting a discrete compiler, the E₈ lattice,
 clock and code structures, Standard Model readouts, and conditional physical
 interpretations. Its original assumptions, exact constructions, numerical
@@ -12,6 +37,20 @@ are authoritative; the number of checks is not a proof of a complete theory.
 [Central content registry](docs/registry/INDEX.md) ·
 [Machine-readable registry](docs/registry/registry.json) ·
 [Agent instructions](AGENTS.md)
+
+## Shared origin of c3, P1 and P2
+
+P1 is the primitive oriented reflection-positive seam kernel with unit winding;
+c3 is its normalization. The shared four-mark geometry and parabolic anchor
+(1,1,2) explain the c3 and five-carrier numerical data under their named source
+hypotheses. The actual A0* connection already has analytic finite monodromy and
+an invariant positive Hermitian form. Both W-bridge premises close at finite
+level in v1014/v1015, modulo the external continuum identification. P2's
+interface and the physical source identifications retain their ledger scope.
+
+The [source reconciliation](experiments/theory-contracts/original-paper-source-reconciliation-20261102/C3-P1-P2-SHARED-ORIGIN-20261105.md)
+and the Architecture chapter “Shared origin” give the common explanation and
+the exact remaining determinant-response and source-identification premises.
 
 ## Find a topic or a source
 

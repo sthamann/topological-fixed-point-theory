@@ -1,0 +1,168 @@
+{
+  "atlas_revision": "5fdca6adbb443ae1a1b4373b",
+  "source_hashes": {
+    "research/originlab/proof_search.py": "003eba83496247edb953ad46a2473cba04b420aa06068d3993e205f832bd5811",
+    "research/originlab/OriginProofGoal.lean": "75dcdacdae9d4683a3b545f411a237a55e81ba82408a413429675e176b702a97",
+    "research/originlab/OriginProofRules.lean": "cda90e125783d278f27272cdb545ba113eed5dbf0d0667017bd5583a274d1a7a",
+    "research/originlab/test_proof_search.py": "8c53c93ee3a3a45696d3d9c149b9290065d6ea2d71bb4fb62a74bb0d0d9a97eb"
+  },
+  "fable_review": "https://claude.ai/chat/791d8159-fb91-41aa-8e63-3fa572440e88",
+  "control": {
+    "affine_forecast": {
+      "absolute_r113_reference": null,
+      "empty_charged_form": "6*u**6*v**6",
+      "mode_pair": [
+        4,
+        6
+      ],
+      "native_source_identified": false,
+      "ordered_charged_form": "4*u**6*v**4",
+      "status": "GENERATED_AFFINE_RADIAL_COMPARISON"
+    },
+    "attempts": [
+      {
+        "cost": 2,
+        "level": 1,
+        "status": "REJECTED",
+        "strategy": "finite_decision"
+      },
+      {
+        "cost": 3,
+        "level": 2,
+        "status": "REJECTED",
+        "strategy": "finite_decision"
+      },
+      {
+        "cost": 3,
+        "level": 1,
+        "status": "KERNEL_CHECKED",
+        "strategy": "normal_order"
+      }
+    ],
+    "free_level_refutation": {
+      "axioms": [
+        "propext"
+      ],
+      "certificate": "import OriginProofRules\nopen OriginLabProof\ntheorem originlab_certificate : ¬ FreeLevelUnique := refuteFreeLevel\n#print axioms originlab_certificate\n",
+      "certificate_sha256": "2c3726d67aca41377f15638f2260762fa2d14c2977738979f54934e99f200ba3",
+      "replay": "replaying ProofCandidate\nreplaying OriginProofRules\nreplaying OriginProofGoal",
+      "statement": "¬ FreeLevelUnique",
+      "status": "PROVED",
+      "toolchain": "leanprover/lean4:v4.29.1"
+    },
+    "goal_sha256": "75dcdacdae9d4683a3b545f411a237a55e81ba82408a413429675e176b702a97",
+    "held_out_forms": {
+      "Q0": "4/625",
+      "QU": "0",
+      "QUY": "8/625",
+      "QY": "0"
+    },
+    "physical_solution": false,
+    "producer": {
+      "level": 1
+    },
+    "proof": {
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "certificate": "import OriginProofRules\nopen OriginLabProof\ntheorem originlab_certificate : Goal (gaussian 1) := closeGaussian 1 (by decide)\n#print axioms originlab_certificate\n",
+      "certificate_sha256": "8b598b9504df5f3dfad19c22d4136338222dac565989bbc93266270fb185f8e9",
+      "replay": "replaying ProofCandidate\nreplaying OriginProofRules\nreplaying OriginProofGoal",
+      "statement": "Goal (gaussian 1)",
+      "status": "PROVED",
+      "toolchain": "leanprover/lean4:v4.29.1"
+    },
+    "rejected_certificates": {
+      "assumed_goal": {
+        "axioms": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext",
+          "sorryAx"
+        ],
+        "status": "REJECTED"
+      },
+      "finite_test": {
+        "axioms": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext",
+          "sorryAx"
+        ],
+        "status": "REJECTED"
+      },
+      "injected_axiom": {
+        "axioms": [
+          "Classical.choice",
+          "Quot.sound",
+          "forgedGoal",
+          "propext"
+        ],
+        "status": "REJECTED"
+      },
+      "table_without_rules": {
+        "axioms": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext",
+          "sorryAx"
+        ],
+        "status": "REJECTED"
+      }
+    },
+    "scope": "normal-ordered rank-one oscillator goal",
+    "status": "CONTROL_SOLVED"
+  },
+  "external_goal": {
+    "attempts": 2,
+    "limited_pairs": [],
+    "physical_solution": false,
+    "producer": "0",
+    "proof": {
+      "axioms": [],
+      "certificate": "import IndependentGoal\n\ntheorem originlab_certificate : Independent.Target (0) := Independent.zeroRule\n#print axioms originlab_certificate\n",
+      "certificate_sha256": "191063fb501f5ebd14023f20c78f716092e22213cf8fcf08adf6cc2768881c60",
+      "replay": "replaying ProofCandidate\nreplaying IndependentGoal",
+      "statement": "Independent.Target (0)",
+      "status": "PROVED",
+      "toolchain": "leanprover/lean4:v4.29.1"
+    },
+    "status": "FORMAL_GOAL_PROVED",
+    "trusted_modules": {
+      "IndependentGoal.lean": "75b1f73f512604b0e8cddf58e5be6d60a8d839f51d4c7437fe8a56becdd3dfa2"
+    }
+  },
+  "external_goal_source": "import Std\nnamespace Independent\ndef Target (n : Nat) : Prop := ∀ k : Nat, n + k = k\ntheorem zeroRule : Target 0 := Nat.zero_add\nend Independent\n",
+  "external_goal_contract": {
+    "modules": [
+      {
+        "file": "IndependentGoal.lean",
+        "sha256": "75b1f73f512604b0e8cddf58e5be6d60a8d839f51d4c7437fe8a56becdd3dfa2"
+      }
+    ],
+    "goal": "Independent.Target",
+    "producers": {
+      "Nat.zero": 0
+    },
+    "proofs": {
+      "Independent.zeroRule": 0
+    }
+  },
+  "native_r113": {
+    "status": "BLOCKED",
+    "original_values": {
+      "Z0": null,
+      "ZU": null,
+      "ZUY": null,
+      "ZY": null
+    },
+    "missing": [
+      "original_blocked_fiber_packet",
+      "physical whole weighted endpoint form",
+      "bound absolute empty reference"
+    ]
+  },
+  "originlab_tests_passed": 108
+}

@@ -1,0 +1,35 @@
+U1  two copies of a fermion at a mark
+  ok   passing a mark is a quarter turn: M^2 = -1, M^4 = 1, eigenvalues +i and -i
+  ok   twists k/n with n = 2, k = +-1/2, measured from the antiperiodic value 1/2: 1/4 and 3/4   [1/4, 3/4]
+  ok   lowest energy of charge Q for modes r + alpha is F_alpha(Q) = Q^2/2 + (alpha - 1/2) Q, the recorded function
+  ok   two copies give the inverse temperature 2 * 2 pi = 4 pi, the recorded b
+  ok   trace at 4 pi over both twisted fermions = theta_3(i)/eta(i): one spinor on the recorded torus in the recorded spin structure   1.4142135623731
+U2  ring of lattice fermions (independent of the theta functions)
+      arc fraction, lattice (extrapolated), cos(delta/2)^(-1/2): [('1/4', np.float64(1.18921), np.float64(1.18921)), ('3/20', np.float64(1.0594), np.float64(1.0594)), ('7/20', np.float64(1.48415), np.float64(1.48415))]
+  ok   one lattice fermion: purity ratio = cos(delta/2)^(-1/2) = (1 - x)^(-1/4), x = sin^2(delta/2)
+  ok   eight chiral Dirac fermions of the free seam: (1 - x)^(-1) = |P_12| / sin^2(delta), the weight of the alternating signs times the distance factor of the two arcs
+U3  the sum over the three pairings as a purity
+  ok   half the sum of the three pairing weights times |P_12| is (1 - x + x^2)/(1 - x); it tends to 1 for distant arcs, which fixes the factor 1/2
+  ok   E8: 1 + x^2 + x^3 + ..., no term in x: nothing of weight 1/2 + 1/2 passes between the arcs
+  ok   coefficient of x^2: 248 currents + the total stress of the two copies: (248 + 8)/256 = 1
+  ok   free seam: 1 + x + ..., sixteen real fermions exchanged in pairs: 16/16 = 1
+  ok   cube of the E8 character in x: 256 (1 - x + x^2)^3 / (x^2 (1 - x)^2), the j function of the cover
+  ok   weight of the alternating signs in the sum: 1/(2 (1 - x + x^2)); at the square 2/3 (round twenty-three)
+U4  the current function on the recorded torus
+  ok   sum over the spin structures with weights theta^8: constant = -(pi^2/3) E6/E4 (generic tau)
+  ok   the same constant from the lattice: (pi^2/3) E2 - 4 pi^2 <p_a^2>, <p_a^2> = (1/4) q d/dq log E4
+  ok   square torus: E6(i) = 0, so the E8 current function is the Weierstrass function alone
+  ok   between the marks (differences 1/2, i/2, (1+i)/2): +varpi^2, -varpi^2 and 0; neighbours carry a current with opposite signs, opposite marks none; varpi^2 is the recorded kernel square of round fourteen   6.87518581802
+  ok   the free seam (theta_3 alone) has the same current function at the square, e_3 = 0; off the square the two differ by e_3 + (pi^2/3) E6/E4
+U5  numbers
+      purity ratio: {'E8 square': 3/2, 'free square': 2, 'E8 counterwitness': 21/20, 'free counterwitness': 5/4}
+  ok   square: 3/2 (E8) against 2 (free); counterwitness: 21/20 against 5/4
+  ok   the purity itself, X/x up to a constant, is the same for the arcs and for their complement (x -> 1 - x), for E8 and for the free seam: the seam state is pure
+  ok   theta_3(i)/eta(i) = sqrt(2): one spinor on the recorded torus counts sqrt(2); sixteen of them 16; the E8 character 16 (1 + 1/4 + 1/4)/2 = 12
+U6  the quarter turn as a product of two reflections
+  ok   M = P S, with S the exchange of the copies and P the relative sign; S^2 = P^2 = 1, S P S P = -1
+      weights at a mark for eight chiral Dirac fermions: {'1': 0, 'S': 1, 'P': 1, 'PS': 1/2}
+  ok   weights 0, 1, 1 and 1/2: the two reflections carry weight one (the legs of the recorded E8 vacuum form), their product the recorded mark weight 1/2
+  ok   for the two arcs of the free seam the ratios are (1 - x)^(-2), (1 - x)^(-2) and (1 - x)^(-1): at the square 4, 4 and 2
+
+all checks passed

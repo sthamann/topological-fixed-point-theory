@@ -1,0 +1,120 @@
+B1: Die ursprüngliche gemeinsame Ladungswirkung unterscheidet die Graduierungen
+30. Oktober 2026
+Contract: B1-GRADED-CHARGE-TRANSPORT-20261030
+Aufgaben B1, B2, C3; Fortsetzung von B1-WHOLE-SOURCE-REDUCTION
+
+1. Frage und genaue Voraussetzungen
+
+Die vorherige Rechnung zeigte: Der kleinere v252 Koeffizientensatz allein
+erzwingt gamma nicht, denn gamma'=gamma(2q-I) erfüllt dieselben geprüften
+internen KO6, Gerade/ungerade und Selbstadjungiertheitsbedingungen.
+Jetzt wird eine vorhandene stärkere ursprüngliche Bedingung benutzt:
+der tatsächliche reelle unimodulare Gaugelift mit dem bereits bewiesenen
+P2 Ladungswörterbuch. Gesucht ist ein gemeinsamer unitärer Intertwiner
+der FESTEN Paare (gamma,Y) und (gamma',Y), also
+U* Y U=Y und U* gamma U=gamma'. Keine neuen Felder oder Wirkungen.
+
+Originale:
+verification/v252_full_finite_triple.py:63-168
+graded_boundary_functor/old_source_embedding/REVIEW-CLAUDE-P2.txt:1-115
+Atlas finding:actual-v252-positive-grade-has-global-p2-wedge-dictionary.
+Der Originalreview zeigt bereits die ganze globale Gruppenabbildung,
+nicht nur eine gleiche Dimension. Sie wird hier nicht neu behauptet.
+
+2. Der tatsächliche Aufruf des Hyperladungsoperators
+
+Benutze U(u)=pi(u) J_F pi(u) J_F^-1 auf dem verbundenen Zweig
+lambda det(m)=1, lambda=exp(it/2), m=exp(-it/6)I3, q_weak=I2.
+Schreibe die Ableitung der linken pi als iL. Wegen Antilinearität gilt
+für den ganzen reellen Gaugelift Y=L-Kswap Lbar Kswap.
+L ist in diesem zentralen Zweig reell diagonal. Die Implementation bildet
+6L als Im pi(3i,0,-iI3). Alle Eingaben sind Gaußganze, alle Ausgaben für
+6Y ganze Zahlen. Die Brüche werden danach rational exakt gebildet.
+Das ist der ganze ursprüngliche Lift einschließlich Oppositeaktion.
+
+3. Kleinster entscheidender gemeinsamer Invariantentest
+
+Bei einer gemeinsamen unitären Konjugation bleibt Tr(gamma Y^3) erhalten.
+Denn gamma' Y^3=U* gamma U U*Y^3 U=U* gamma Y^3 U.
+Die Spur bleibt wegen Zyklizität gleich. Ein Unterschied schließt jeden
+solchen gemeinsamen unitären Intertwiner aus, unabhängig von seiner Basis.
+
+Pro Familie liefern die ursprünglichen Partikelladungen:
+Leptonen: 2(-1/2)^3 - 0^3 - (-1)^3 = 3/4.
+Quarks: 6(1/6)^3 - 3(2/3)^3 - 3(-1/3)^3 = -3/4.
+Antiteilchen tragen umgekehrte gamma und umgekehrtes Y. Zum kubischen
+graduierten Ausdruck liefern sie daher denselben Beitrag wie Teilchen.
+Drei Familien ergeben insgesamt
+Tr(q gamma Y^3)=-9/2,
+Tr((I-q) gamma Y^3)=+9/2,
+Tr(gamma Y^3)=0.
+Für gamma'=gamma(2q-I) bleibt der Quarkbeitrag gleich, der Leptonbeitrag
+kehrt sein Vorzeichen um. Daher Tr(gamma' Y^3)=-9.
+Somit existiert kein U mit den beiden in Abschnitt1 verlangten Relationen.
+Zusätzlich sind die gemeinsamen Multiplizitäten von gamma und Y verschieden.
+Die JSON Ausgabe enthält die vollständigen zwölf gemeinsamen Ladungsslots.
+
+4. Was dadurch geschlossen wird und was nicht
+
+Der zunächst aus schwachen Operatorzeichen zulässige Austausch ist keine
+bloße andere Schreibweise des gleichen fest graduierten P2 Ladungsträgers.
+Der schon vorhandene Ladungsanschluss liefert also tatsächlich eine
+stärkere Unterscheidung. Damit ist eine Verbindung zwischen B1/B2 und C3
+an einem tatsächlichen Originalpfad ausgeführt.
+
+Das schließt nur den beschriebenen gemeinsamen Wörterbuchtransport aus.
+Es schließt nicht alle anderen Trägerkarten mit diesem Normalfaserbild aus:
+man kann eine andere intrinsische Graduierung auf einem Bild transportieren,
+statt sie mit Z tensor I zu identifizieren. Zusätzliche Sektoren oder
+Anomalieinflow wurden ebenfalls nicht untersucht. Anomaliefreiheit wäre
+ohnehin keine hinreichende Quelle, Zustandswahl oder Wechselwirkung.
+Eine pauschale neue Anomalieanforderung wurde hier nicht eingeführt.
+Auch die vorhandene gamma bleibt ein gegebenes Originaldatum; der
+Hyperladungstest leitet den physischen P_F nicht aus P1/P2 her.
+
+5. Ausführung und Folge
+
+check_b1_graded_charge_transport.py führt den tatsächlichen v252 Gaugelift
+aus und vergleicht seine Ladungen mit den ursprünglichen Feldslots. Zehn
+Kontrollen bestehen. Ein erster Vergleich stolperte über Sympy Float versus
+Integer trotz gleicher Werte; die Daten sind nun nach überprüfter
+Ganzzahligkeit exakt als Integer übernommen. Der physische Ladungstest
+und alle Spurwerte waren schon im ersten Lauf gleich.
+
+Der Test ist ein vollständiger algebraischer Ausschluss des ausdrücklich
+benannten gemeinsamen Intertwiners, mit dem analytischen Beweis oben.
+Kein weiterer Skalen oder Phasenscan ist dafür nötig. Grok erhielt diese
+abgegrenzte Rechnung zur unabhängigen Gegenprüfung im bestehenden Chat.
+
+Nächste Aktion: Die ursprüngliche Quellenabbildung muss dieses bereits
+festgelegte ganze Ladungs und Graduierungswörterbuch erhalten. Auf dem
+aktuellen Kandidaten die originale normale Realstruktur und Orientierung
+gemeinsam mitführen. Eine Koordinatenphase oder ein reduzibles Bild allein
+erfüllt diese Herkunftsaufgabe weiterhin nicht. Die positive ganze
+Quellenkonstruktion und die vorhandene P2 Abbildung bleiben erhalten.
+
+6. Vollständiger Abschluss der vier benannten Sektorvorzeichen
+
+Die vier Grade gamma_(s_q,s_l)=gamma[s_q q+s_l(I-q)] mit s_q,s_l=±1
+werden am selben tatsächlichen Y gemeinsam geprüft. Ihre Spurpaare
+(Tr(gamma_s Y³),Tr(gamma_s Y^5)) sind exakt
+(+,+): (0,10/3),
+(+,−): (−9,−95/12),
+(−,+): (+9,+95/12),
+(−,−): (0,−10/3).
+Für die fünfte Potenz liefern Leptonen45/8 und Quarks−55/24, zusammen10/3.
+Alle vier Paare sind verschieden. Deshalb ist innerhalb dieser VOLLSTÄNDIG
+benannten Viererklasse nur der ursprüngliche Grad gemeinsam unitär zum
+festen Originaltupel (gamma,Y) äquivalent. Das bestätigt auch der Vergleich
+sämtlicher gemeinsamer Slotmultiplizitäten. Die beiden gemischten
+Vorzeichen scheitern bereits am kubischen Test; der globale Wechsel
+scheitert am fünften oder direkt an den Slotmultiplizitäten.
+
+Dieser endliche Klassenabschluss ist stärker als der Einzelgegenfall in
+Abschnitt3. Die Grenzen in Abschnitt4 bleiben unverändert. Insbesondere
+werden andere intrinsische Graduierungen auf einem Normalbild oder die
+physische Auswahl dieses Bildes damit nicht allgemein ausgeschlossen.
+Die vorhandene ganze P2 Ladungsabbildung schließt einen konkreten
+Wörterbuchvergleich; sie ersetzt nicht den noch offenen Ursprungspfeil.
+Grok bestätigte unabhängig den kubischen Test und dessen engen Umfang.
+Die vollständige Viererklasse wurde lokal exakt geprüft.

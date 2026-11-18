@@ -1,0 +1,234 @@
+UNABHAENGIGER REVIEW DER SOURCE SECTOR RESPONSE
+===============================================
+
+Stand: 28. Oktober 2026
+
+Geprüft wurden
+
+  research-20261028-local-source-origin/check_source_sector_response.py
+  SHA256 3a7f2aff7076395b23e55aef744000747764c4f72c7d56ba9e48a7e90385cd45
+
+  research-20261028-local-source-origin/source-sector-response-results.json
+  SHA256 9ff7a5a2635b81825a1fad5ac5c928c5517a12e33498dac2ec9bd2e983777d8b
+
+
+Urteil
+------
+
+Der Checker ist in seinem angegebenen Umfang mathematisch korrekt. Ich finde
+keinen materiellen Fehler. Er beweist eine neue und nützliche Trennung:
+
+  Die volle Ward30 Antwort und ein positiv gewichteter NS14 Vergleichskanal
+  besitzen auf dem gegebenen gemeinsamen H40 dieselbe vollständige Carrier
+  Marginale Phi. Ihre Wirkung auf den ursprünglichen Quellenindex ist trotzdem
+  verschieden. Daher identifiziert die Carrierantwort allein die Quelle nicht.
+
+Der NS14 Kanal ist kein aus P1 abgeleiteter Prozess. Seine Gewichte sind eine
+zusätzliche positive Lösung der TP Gleichungen. Der Checker kennzeichnet dies
+korrekt. Ebenso folgt aus seiner Existenz keine notwendige Spinorherleitung.
+
+
+1. Tatsächliche Quellbasis und Sektorenzählung
+----------------------------------------------
+
+Der Checker verwendet die wirkliche alte Chevalley Tabelle über
+
+  tfpt_explorer.current_block_geometry._actual_current_source()
+
+und nicht eine neu aufgebaute Ersatzmatrix. Die aktuelle Quelldatei, der
+Chevalley Ursprung, die Foldmatrix und die signierte Cliffordantwort sind mit
+SHA256 Pins versehen.
+
+Der Rücktransport einer gedoppelten E8 Wurzel r ist
+
+  p_i=(1/2) sum_j M_(j i) r_j.
+
+Ganzzahliges p erhält Grad null, einheitlich halbzahlige Ladung Grad eins. Die
+vollständigen Zählungen sind
+
+  Eingang H40:       NS20 plus Spinor20,
+  Ausgang H40:       NS20 plus Spinor20,
+  Creation30:        NS14 plus Spinor16.                    (1)
+
+Für jede der 360 nichtverschwindenden Spalten prüft der Checker zusätzlich
+
+  grade(output)=grade(input)+grade(mediator) mod 2.          (2)
+
+Die Übergangszählung lautet exakt
+
+  NS input, NS mediator, NS output           84,
+  Spinor input, NS mediator, Spinor output   84,
+  NS input, Spinor mediator, Spinor output   96,
+  Spinor input, Spinor mediator, NS output   96.             (3)
+
+Somit erhält NS14 den Rohquellsektor, während die 16 Spinormediatoren ihn
+vertauschen. Die Zahlen 84 und 96 bezeichnen je einen Eingangsgrad. Insgesamt
+sind es 168 sektorbewahrende und 192 sektorwechselnde Spalten.
+
+
+2. Die uniforme NS14 Einschränkung ist nicht spurtreu
+-----------------------------------------------------
+
+Bei gleichen Gewichten besitzt die NS14 Einschränkung je nach Eingangsvektor
+den Effekt 3, 4 oder 5. Für jeden der beiden Eingangsgrade lautet die
+Multiplizität
+
+  Effekt 3:   2 Zustände,
+  Effekt 4:  12 Zustände,
+  Effekt 5:   6 Zustände.                                  (4)
+
+Eine globale Normierung kann diese drei Werte nicht gleichzeitig auf eins
+setzen. Dies ist der richtige kleine Gegenfall gegen die Annahme, man könne
+den bloßen NS14 Support unverändert als Kanal übernehmen.
+
+
+3. Die positive gewichtete Lösung ist wirklich TP
+--------------------------------------------------
+
+Sei A die 40 mal 14 Inzidenzmatrix der nichtverschwindenden
+Wurzelklammern. Der Checker bestimmt exakt
+
+  rank(A)=12.                                               (5)
+
+Die vierzehn Gewichte
+
+  1/6 auf den acht Wurzeln mit Carrierindex m=1,2,
+  1/3 auf den sechs Wurzeln mit Carrierindex m=3,4,5          (6)
+
+sind positiv und erfüllen
+
+  A w=1_40.                                                 (7)
+
+Dies beweist die Spurtreue auf dem ganzen gegebenen H40. Es ist keine
+Beschränkung auf die zwanzig NS Eingänge.
+
+Der stärkere operatorwertige Test wird ebenfalls exakt erfüllt. Für jeden
+Carrierindex m und jeden der vier Familieneingänge ergibt die gewichtete
+Summe der erlaubten Familienoperationen
+
+  sum_(b mit Carrier m) w_b A_b^dagger A_b=I_4/3.           (8)
+
+Die signierten Spalten wurden zuvor gegen die transportierte gemeinsame CAR
+Tensorwirkung geprüft. Daher ist (8) keine Rechnung mit bloßen Supports.
+
+Mit den bereits bewiesenen Hodge Identitäten
+
+  sum_m C_m^dagger C_m=3 I_10
+
+folgt aus (8)
+
+  sum_b L_b^dagger L_b=I_10 tensor I_4.                     (9)
+
+Nach Familientrace gilt für jeden gemeinsamen Eingang rho, auch bei Carrier
+Familien Verschränkung,
+
+  Tr_Fout E_NS14(rho)=Phi(Tr_Fin rho),
+
+  Phi(x)=(1/3) sum_m C_m x C_m^dagger.                      (10)
+
+Damit ist die behauptete volle Carrier Marginale bewiesen. Das Resultat ist
+stärker als eine Übereinstimmung der Petersen Populationen.
+
+
+4. Die 4 plus 6 Einschränkung reiner NS Eingänge
+------------------------------------------------
+
+Der tatsächliche Rücktransport des Sourcegradings ist
+
+  w=M e_1=(1/2,1/2,0,0,0,1/2,1/2,0).                      (11)
+
+Auf dem Produktchart faktorisiert seine Parität als
+
+  P_source=P_C(first two) tensor P_F(first two).            (12)
+
+Im Carrierraum Lambda2 C5 haben die beiden Paritäten die Dimensionen 4 und
+6. Ein reiner NS Eingang muss gleiche Carrier und Familienparität besitzen.
+Nach dem Familientrace verschwinden deshalb die gemischten 4 mal 6 Blöcke.
+Der lineare Raum möglicher Carrierreduktionen besitzt genau
+
+  4^2+6^2=52                                               (13)
+
+statt 10^2=100 Richtungen.
+
+Diese Aussage betrifft reduzierte Carrierzustände aus dem Roh NS20 Raum. Sie
+ist keine Behauptung, dass der ganze physikalische Carrierraum nur 52
+Observablen besitzt, und sie bettet nicht alle vierzig Eingänge in den festen
+NS Vakuumraum ein.
+
+
+5. Fehlende physische Kovarianz des NS14 Zeugen
+-----------------------------------------------
+
+Der Checker gibt einen direkten Wurzelzeugen. Der ausgewählte NS Mediator
+
+  beta=e_2+e_6
+
+wird durch den wirklichen Farbstrom
+
+  color=e_3-e_2
+
+auf
+
+  gamma=e_3+e_6
+
+transportiert. beta liegt in NS14, gamma im Spinoranteil der Ward30. Die
+Chevalley Klammer ist nicht null. Damit ist der minimale Krausspan des NS14
+Kanals bereits unter dieser Farbaktion nicht invariant. Volle physische
+SU3 mal SU2 mal D3 Kovarianz folgt daher nicht und ist für diesen Zeugen
+konkret falsch.
+
+Das beeinträchtigt den mathematischen TP Kanal (6) bis (10) nicht. Es verhindert
+aber, ihn als unveränderte physische P2 oder P1 Auswahl auszugeben.
+
+
+6. Exakte Konsequenz für den Ursprungstest
+------------------------------------------
+
+Bewiesen ist:
+
+  * Der unveränderte Ward30 besitzt die tatsächliche 14 plus 16
+    Quellsektorzerlegung und die Übergänge (3).
+
+  * Es existiert auf demselben H40 eine positive, sektorbewahrende NS14
+    Gewichtung mit derselben vollständigen Carrier Marginale Phi.
+
+  * Reine NS Eingänge tragen nur die reduzierte 4 plus 6 Carriergeometrie.
+
+  * Die NS14 Gewichtung ist nicht unter der vollen vorhandenen Farbaktion
+    abgeschlossen.
+
+Nicht bewiesen ist:
+
+  * dass P1 die Gewichte (6) auswählt,
+
+  * dass der NS14 Vergleichskanal der wirkliche Quellenprozess ist,
+
+  * dass die Carrierantwort Phi einen Spinorursprung notwendig macht,
+
+  * oder dass die Rohgradbezeichnung allein ein lokales NS beziehungsweise
+    Ramond Feld samt OPE, Zustand und Quellenzeit herleitet.
+
+Die letzte negative Aussage ist besonders wichtig. Der Checker zeigt gerade,
+dass die volle Carrierantwort Phi ohne die sechzehn Spinormediatoren als
+mathematischer CPTP Kanal reproduziert werden kann, sofern die zusätzlichen
+Gewichte (6) zugelassen werden. Ein Spinorursprung kann daher nur durch die
+gemeinsame Quellenwirkung, ihre Symmetriekovarianz, OPE und Zeit identifiziert
+werden, nicht durch Phi allein.
+
+
+7. Reproduktion
+---------------
+
+Ich kopierte ausschließlich den Checker in ein temporäres Verzeichnis und
+führte dort aus:
+
+  python3 check_source_sector_response.py
+  python3 -OO check_source_sector_response.py
+
+Normale Ausgabe, optimierte Ausgabe, temporäre Ergebnisdatei und gespeicherte
+Ergebnisdatei waren bytegleich. Ihr gemeinsamer SHA256 ist
+
+  9ff7a5a2635b81825a1fad5ac5c928c5517a12e33498dac2ec9bd2e983777d8b.
+
+Die Originaldateien des Rootcheckers wurden beim Replay nicht verändert. Es
+wurde keine weitere Suite ausgeführt und kein Atlas geändert.

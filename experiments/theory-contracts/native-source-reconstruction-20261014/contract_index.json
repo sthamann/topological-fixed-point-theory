@@ -1,0 +1,104 @@
+{
+  "contract": "native-source-reconstruction-20261014",
+  "research_id": "UR.SOURCE.NATIVE_TIME_RESPONSE.01",
+  "date": "2026-10-14",
+  "verdict": "PARTIAL",
+  "mathematical_verdict": "PASS_CONDITIONAL_FINITE_VOLUME_JOINT_RECONSTRUCTION",
+  "question": "Does the existing signed neutral scalar/charge source generate a common time, state and ordered response law, and what information must an exact marked readout retain?",
+  "scope": "Original Round20–26 g=0 neutral scalar/integer-charge source; fixed finite periodic spatial lattice N=L^3, L>=3, a,m>0, u,nu,J>=0; temporal regulator removed, beta and bounded probes prescribed. No spatial continuum or source-selection theorem.",
+  "summary_de": "Die vorhandene Quelle liefert gemeinsam Hamiltonoperator, unitäre Zeit, Gibbszustände und geordnete Antworten. Der ursprüngliche positive Transfer konvergiert beim Entfernen des Zeitrasters zum gleichen H; Gibbszustände konvergieren in Spurnorm, alle festen endlichen beschränkten Mehrzeitantworten ebenfalls. Zwei benachbarte neutrale Transportalgebren benötigen mindestens 256 Dimensionen für eine verlustfreie endliche Darstellung ihrer Kommutatoren. Gleiche lokale Parität genügt nicht für gleiche Zukunftsantworten. Die physische Auswahl der Quelle und Markierung ist damit noch nicht hergeleitet.",
+  "summary_en": "The existing source jointly determines a Hamiltonian, unitary time, Gibbs family and ordered responses. Removing the temporal regulator recovers the same H, with trace-norm Gibbs-state convergence and convergence of every fixed finite bounded multitime response. Two adjacent neutral bond algebras require at least 256 dimensions for any lossless finite representation of their commutation relations. Equal onsite parity does not imply equal future responses. Physical selection of the source and marking is not derived.",
+  "assumptions": [
+    "The original declared Round20–26 finite periodic spatial lattice, integral E8 Gram/cocycle, neutral charge sector, eight hopping directions, scalar modes and source couplings.",
+    "N=L^3, L>=3, a,m>0 and u,nu,J>=0; the original positive hopping constant 48JN is retained.",
+    "A specified beta>0 and a fixed finite set of bounded native probes or projective instruments; neither physical temperature nor instrument selection is derived.",
+    "For the dimension bound, a finite-dimensional unitary representation preserving all words in both adjacent neutral bond families; partial readouts are outside that exclusion."
+  ],
+  "positive_results": [
+    "The original H has compact resolvent and a finite Gibbs trace for all beta>0, bounded by the original coercive charge theta sum times [2sinh(beta m/2)]^(-N).",
+    "The exact positive injective transfer Q_delta determines H_delta=-log(Q_delta)/delta, its Gibbs state and all-real-time unitary group; H_delta converges strongly resolvent to the original H, with locally uniform strong unitary convergence.",
+    "Exact normalized Gaussian logarithms and charge coercivity supply a fixed Gibbs comparison operator B. Its uniform spectral tail proves trace-norm convergence of exp(-beta H_delta) and the normalized Gibbs states as delta->0.",
+    "All fixed finite bounded ordered responses and full finite decoherence matrices converge using their own regulated Gibbs states; interfering histories are not silently classicalized.",
+    "Two adjacent native neutral bond families have nondegenerate cross-pairing G mod2 of rank8. Any finite unitary word representation has dimension divisible by256; the commutator-only bound is sharp.",
+    "The same-parity configurations n_k=-2kr have distinct exact native response derivatives i(1-4k)[2/N+14nu+u<phi_x^2+phi_y^2>]. Thus parity alone is not future-equivalent for these probes."
+  ],
+  "kills": [
+    "A lossless word identification of both complete adjacent neutral bond algebras with M4 or M16; no claim about partial CP readouts or larger environments.",
+    "Using onsite L/2L labels alone as the complete future state for the specified native transport response across all original integer-charge inputs."
+  ],
+  "leaves_open": [
+    "Derive the original source, spatial lattice, couplings, physical state/temperature and physical marking from the common TFPT origin.",
+    "Identify and derive a physically selected subsystem or response algebra whose reduction preserves the required ordered responses and any retained memory.",
+    "Spatial/thermodynamic continuum, Lorentz structure, chiral interacting 3+1D physics and common T1–T8 closure."
+  ],
+  "not_claimed": [
+    "No complete TFPT solution, physical gate closure or promotion to the original verification ledger.",
+    "No classical event law from signed Euclidean history coefficients or from a decoherence functional without a specified instrument or consistency condition.",
+    "No finite charge truncation, full signed-history simulation, uniform numerical error bound, or operator-norm unitary convergence.",
+    "No new project discovery of the charged L/2L carry obstruction or homogeneous GKLS exclusion: both have older original sources."
+  ],
+  "relations": [
+    {
+      "target": "history-sum-control-round26",
+      "type": "extends"
+    },
+    {
+      "target": "local-charge-transport-round20",
+      "type": "uses"
+    },
+    {
+      "target": "hopping-source-domain-round20",
+      "type": "uses"
+    },
+    {
+      "target": "scalar-charge-energy-round20",
+      "type": "uses"
+    },
+    {
+      "target": "moving-history-memory-round25",
+      "type": "uses"
+    },
+    {
+      "target": "charged-cocycle-lift",
+      "type": "extends"
+    },
+    {
+      "target": "marked-source-history-20261014",
+      "type": "extends"
+    },
+    {
+      "target": "source-continuous-marked-time-search-20260922",
+      "type": "references"
+    }
+  ],
+  "topics": [
+    "topic:origin",
+    "topic:e8",
+    "topic:quantum",
+    "topic:clocks",
+    "topic:universalraum",
+    "topic:process"
+  ],
+  "claims_tested": [],
+  "gates": [],
+  "physical_gates_closed": [],
+  "complete_TFPT_solution": false,
+  "promotion": false,
+  "firewall": "experiments",
+  "proof": "PROOF.md",
+  "checker": "neutral_transport_check.py",
+  "certificate": "neutral-transport-result.json",
+  "source_audit": "TRANSFER-REVIEW.md",
+  "source_manifest": "source_manifest.json",
+  "additional_checks": [
+    {
+      "checker": "reconstruction_check.py",
+      "certificate": "reconstruction-result.json",
+      "scope": "Static neutral Gaussian block normalization and scalar bounds, not full signed hopping dynamics."
+    }
+  ],
+  "independent_reviews": [
+    "TRANSFER-REVIEW.md",
+    "OPERATOR-MAP-REVIEW.md"
+  ]
+}

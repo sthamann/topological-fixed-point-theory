@@ -1,0 +1,127 @@
+Claude hat geantwortet: Neue Erkenntnis zuerst
+20 Befehle ausgeführt, hat eine Datei gelesen
+
+20 Befehle ausgeführt, hat eine Datei gelesen
+Neue Erkenntnis zuerst
+
+Die tragende Identifikation meines Berichts war falsch. Ich hatte die elementaren reellen Feldlabels mit dem komplexen P2-Träger gleichgesetzt (K = L²(S¹, ℝ¹⁶) mit 16 = dim S⁺). Dein Gewichtstest widerlegt das, und ich bestätige ihn exakt und allgemeiner. Die Halbspinorgewichte von D_n sind genau dann unter Negation abgeschlossen, wenn n gerade ist. Für D₅ und D₃ ist der Schnitt mit dem Negativ leer, für D₈ ist die Menge abgeschlossen. S⁺(D₅) und die 4 von A₃ sind also komplex, die 128 von D₈ ist reell.
+
+Der stärkste Herkunftsschritt, den ich nach Lektüre der Originalstellen und des Atlas tatsächlich herleiten kann, ist folgender. Reelle Nahtfelder erzwingen die Paarung beider Viertel. Der λ₁-Block des originalen B_Σ, also derselbe Eigenwert, der im Original χ_seed definiert, ist dann der kanonische endliche Trägerblock. Auf ihm ist die originale Trägerpolarisation ε_car = i_C|_{H_car} keine 3+2-Zerlegung, sondern beweisbar die Fock-Polarisation E ⊕ Ē. Daraus folgen die Feldabbildung (reelle Felder W ≅ ℝ^{2d}), die Gruppenwirkung (vektoriell auf Feldern, spinoriell auf dem Träger) und S^± = Λ^{ev/od}E als Cliffordmodul. Das Original verlangt dagegen, dass ε_car die 3+2-Zerlegung liefert. Das ist unter der Realstruktur unmöglich.
+
+1. Abgleich mit dem echten P1
+
+Das Original setzt T_bound = (A₊, H₊, D₊, J, Γ, B_Σ) mit D₊ = γ_n(∂_n + B_Σ) im Kragen. Daraus werden abgeleitet:
+
+die Calderón-Polarisation i_C = 2P_C − 1,
+χ_seed = λ₁⁺(|B_Σ|)⁻¹,
+die Zulässigkeitsprojektoren P_{Σ,+} = (1+i_C)/2 und P_gap,
+die Trägerpolarisation ε_car := i_C|_{H_car} mit E = E₋ ⊕ E₊.
+
+H_int ist ausdrücklich eine Realisierungswahl und nicht Teil des Datums. Meine frühere Lesart „Randkern = Szegő-Zweipunktkern auf selbstdualer CAR“ war durch den Namen allein nicht gedeckt. Zwei Atlasbefunde sind dafür einschlägig. Erstens sind P_C und 2P_C − 1 nicht schon ein CAR-Zustand. Zweitens ist die einseitige Kompression im Annulus gemischt: C_A = (1+e^{2πB_cov})⁻¹.
+
+2. Satz 1: Realität erzwingt die Viertelpaarung
+
+Auf einer einzelnen Vierteldomäne hat A_{1/4} = −i∂θ + 1/4 das Spektrum ℤ + 1/4. Eine antiunitäre Involution J′ mit J′AJ′⁻¹ = −A würde das Spektrum symmetrisch machen. Es gilt aber −(ℤ+1/4) = ℤ+3/4 ≠ ℤ+1/4, äquivalent η(A{1/4}) = 1/2 ≠ 0. Also existiert dort keine selbstduale CAR, das heißt keine Majoranafelder.
+
+Für die im Atlas schon vorhandene Originalform B_Σ/(2π) = B_cov = 2(A_{1/4} ⊕ A_{3/4}) gilt dagegen η = 1/2 − 1/2 = 0. Explizit leistet das
+
+J′ = M_{e^{−iθ}} ∘ K ∘ S, J′(e_n, 0) = (0, e_{−n−1}),
+
+mit J′² = 1 und J′B_cov J′⁻¹ = −B_cov. Die Positivprojektion ist damit eine Basisprojektion: J′PJ′⁻¹ = 1 − P. Dasselbe gilt für die Annulus-Kovarianz C_A. Exakt geprüft: auf einem Fourierfenster mit internem ℂ⁵, η über Hurwitz-ζ.
+
+Die äquivalente gradierte Verdopplung diag(A, −A) leistet dasselbe. Entscheidend ist die Paarung mit dem Gegenspektrum.
+
+3. Satz 2: Balance, ε_car ist nie 3+2
+
+Sei H_car ein endlicher Block, der unter i_C und J′ invariant ist, mit J′ i_C J′⁻¹ = −i_C. Dann bildet J′ den Raum E₊ antilinear bijektiv auf E₋ ab, also gilt rank E₊ = rank E₋.
+
+Ein 5-dimensionaler Block mit Rängen (3,2) ist damit ausgeschlossen. Ausgeschlossen ist überhaupt jede ungerade Dimension. Die Originaldefinition, nach der E = E₋ ⊕ E₊ die 3+2-Zerlegung liefern soll, ist für jeden realstrukturverträglichen Block unmöglich. Das ist stärker als der vorhandene Atlasbefund zur Plus-Kompression, der nur die wörtliche Einbettung in Ran(P_prim) betraf. Die 3+2-Markierung muss eine Zusatzstruktur auf E₊ sein und kein Eigenraum von i_C. Das passt zu den Atlas-No-Selector-Befunden.
+
+4. Satz 3: Kanonischer Block und Feldabbildung
+
+Sei H_car := ker(|B_Σ| − λ₁⁺). Das ist genau der Block, den die originale Gapdefinition auswählt (Atlas: Mode 0 bei α = 1/4, Mode −1 bei α = 3/4). Er ist unter i_C ≈ sign(B_Σ) und unter J′ invariant. Bei interner Vielfachheit d hat er die Dimension 2d mit E₊ ≅ ℂ^d. Dann gilt:
+
+Reelle Felder. W := Fix(J′) ∩ H_car ≅ ℝ^{2d} mit Majoranafeldern ψ(w), {ψ(v), ψ(w)} = ⟨v, w⟩.
+Komplexe Struktur. I_W := i·ε_car|_W ist eine orthogonale komplexe Struktur auf W (J′-verträglich, I² = −1). Es gilt (W, I_W) ≅ (E₊, h). Die hermitesche P2-Struktur ist also die Polarisation des reellen Feldraums.
+Träger als Modul. Cl(W) wirkt irreduzibel auf ΛE₊, mit Γ = (−1)^N und S^± = Λ^{ev/od}E₊. Spin(W) wirkt vektoriell auf ψ und spinoriell auf S^±. Für d = 5 ist das exakt der P2-Träger, und dein Gewichtstest ist eine notwendige Folge.
+Mit Familie. Für E₊ = ℂ⁵ ⊕ ℂ³, also d = 8, gilt W = (10,1) ⊕ (1,6). Der Γ-gerade Modul ist exakt (16,4) ⊕ (16̄,4̄), je 64-dimensional, verifiziert an der expliziten 256-dimensionalen Cl(16)-Darstellung.
+Eindeutigkeit. Unter allen 9 reellen 16-dimensionalen Darstellungen von so(10) ⊕ so(6) ist (10,1) ⊕ (1,6) die einzige, deren chiraler Cliffordmodul genau (16,4) ⊕ (16̄,4̄) ist. Für andere Dimensionen stimmt schon 2^{m−1} ≠ 128 nicht. Deine Reparatur ist damit nicht nur möglich, sondern innerhalb dieser Klasse erzwungen.
+5. Folgerungen
+
+Zeit. Die originale Zeit wirkt auf den Block als exp(itλ₁(N − d/2)). Exakt gilt [K, a_i†a_j] = 0 und [K, a_i a_j] ≠ 0. Spin(2d) ist daher kinematische Cliffordsymmetrie des Blocks, die Dynamik bricht sie auf U(d). Das erklärt strukturell den Atlasbefund, dass die feste Viertelzeit das Multiplett spaltet, und stützt E₈ als Prüfhülle statt Eichgruppe.
+
+Zustand. Ohne zusätzliches Maß ist der Blockzustand im Halbzylinderlimes der Fockvektor Λ⁰. Er hat das Gewicht −½(1⁸), ist Γ-gerade und ist das ν^c- bzw. Ankerlabel. Im Annulus ist er ein Gibbszustand ∝ e^{−πN} mit Besetzung 1/(1+e^π) ≈ 0,0414. Beides ist U(d)-invariant. Der Projektorsatz selbst ist bekannt; neu ist die typisierte Blockeinschränkung.
+
+Spektralfluss zur Ramond-Lesart. Für B(a) = 2(A_a ⊕ A_{1−a}) bleibt J′ für alle a gültig, und der λ₁-Block hat die Energien ±2a. Für a → 0 wird er genau ker B, die entarteten Ramond-Nullmoden. Deine Reparatur („Träger im Spinorsektor mit Konjugiertem“) ist also der Endpunkt a = 0 derselben Feldtypisierung. Die Viertelquelle a = 1/4 liegt genau in der Mitte zwischen Ramond (a = 0) und NS (a = 1/2). Ihr fehlt nur die Entartung, und diese wäre eine Folge, keine Eingabe.
+
+6. Bilanz
+
+Aus Originalquellen wiedergefunden:
+
+T_bound und χ_seed,
+die Formel B_cov = 2(B_{1/4} ⊕ B_{3/4}) und die Gapmoden,
+η(A) = 1 − 2α,
+(10,1)+(1,6) als bereits gegebene Fermionisierung,
+S^± als Spinfeldzustände,
+die Projektorsätze und der Befund zur Plus-Kompression.
+
+Neu hergeleitet:
+
+das η-Realitätskriterium samt explizitem J′,
+der Balance-Satz,
+die λ₁-Block-Feldabbildung (W, I_W) ≅ E,
+die Eindeutigkeitsenumeration,
+die exakte Brechung SO(2d) → U(d) durch die Originalzeit,
+die Spektralfluss-Identifikation mit dem Ramond-Sektor.
+
+Unnötige oder falsche Anforderungen:
+
+mein K;
+die Erwartung des Originals, ε_car liefere 3+2;
+die Forderung, Spin(10) müsse Symmetrie der Originalzeit sein;
+die Forderung, den Träger als CAR-Koeffizienten herzuleiten;
+Ramond-Entartung als Eingabe.
+
+Verbleibende Annahmen:
+
+A1: Die Vielfachheit d = 5 bzw. 8 des λ₁-Modus in H_int. Hier tritt P2 ein, und zwar genau hier und nicht mehr.
+A2: Das echte J aus T_bound liefert J′ = Jγ_n mit J′² = +1. Das ist ein Vorzeichentest.
+A3: H_car ist der λ₁-Block. Das verlangt das Gapfenster λ₁ < ε_adm/2 ≤ λ₂, mit λ₂ = 3/2 in B_cov-Einheiten.
+A4: Die Herkunft von 3+2 (Y) und des Familienraums ℂ³.
+A5: Der Block ist ein globaler Spektralmodus. Die lokalen reellen Felder existieren auf dem Cover, weil J′ lokal ist; das lokale Netz ist damit aber nicht gezeigt.
+7. Entscheidende Tests
+Vorzeichen (Jγ_n)² aus dem originalen J.
+Die tatsächliche λ₁-Vielfachheit in H_int.
+Die Lage von ε_adm.
+Physisch scharf: Ist der Träger entartet (Ramond, a ∈ ℤ, von der Viertelquelle ausgeschlossen) oder λ₁N-gespalten (Viertel)? Nur die zweite Option folgt aus den Originaldaten.
+Bildlich
+
+Ein einzelnes Viertel ist wie eine Treppe, deren Stufen alle um ein Viertel nach oben verschoben sind. Kein Spiegel kann sie auf sich selbst abbilden, deshalb gibt es dort keine reellen Felder. Erst wenn man die Gegentreppe danebenstellt, die um drei Viertel verschoben ist, wird das Ganze spiegelsymmetrisch.
+
+Die unterste Stufe der Doppeltreppe hat genau d Plätze oben und d Plätze unten. Die reellen Felder sind die Spiegelpaare dieser Plätze. Der P2-Träger ist nicht ein Feld, sondern die Liste aller Arten, die oberen Plätze gerade oft zu besetzen.
+
+Weil jeder obere Platz einen unteren Spiegelpartner hat, kann der Spiegel nie 3 gegen 2 trennen. Die 3+2 muss von woanders kommen.
+
+Presented 4 files
+Presented 4 files
+
+Die vier Prüfskripte reproduzieren alle oben genannten exakten Rechnungen: cover.py (Viertelpaarung, J′, λ₁-Block, Polarisation, η), labels_enum.py (Eindeutigkeit von (10,1)+(1,6)), fock.py (explizite Cl(16)-Fockdarstellung, Zerlegung, Zeitbrechung) und weights.py (Gewichtstest für D_n).
+
+Cover
+PY 
+Herunterladen
+Labels enum
+PY 
+Herunterladen
+Fock
+PY 
+Herunterladen
+Weights
+PY 
+Herunterladen
+
+Alles herunterladen
+
+
+
+vor 8 Minuten

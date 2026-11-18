@@ -1,0 +1,218 @@
+TFPT: Prüfung der Compilerhypothese und exakter Duadanschluss
+12. November 2026
+Contract: compiler-attachment-audit-20261112
+Verdict: PARTIAL. Endlicher Operatoranschluss bewiesen; physischer Ursprung offen.
+
+1. Ergebnis und Geltungsbereich
+
+Der eingereichte Text wird an v774, v809 und dem ursprünglichen Q4
+Rückkanal geprüft. Seine Spektralvermutung lässt sich verstärken:
+Eine explizite Isometrie verbindet den Duadtransfer M mit dem tatsächlichen
+Q4 Operator auf seinem gesamten symmetrischen Sektor. Die tatsächlichen
+Effektgeraden, ihre Vorzeichen und die native Grammetrik werden erhalten.
+Keine Identifikation mit der vollständigen physischen P1 Quelle folgt daraus.
+
+Die Reflexionsuhr des Textes ist als endliche unitäre Konstruktion korrekt.
+Ihr unmittelbarer komprimierter Schritt ist jedoch 2M-I, nicht M. Eine
+Präparations, Auslese oder Umweltregel ist zusätzlich zu begründen.
+
+2. Wiederverwendete Originalergebnisse
+
+v774 (5. August 2026) konstruiert den parity lift iota:F2^4 -> C_even(5),
+den ausgewählten q*, die sechs ungeraden Arf Formen und die Duadidentität
+B=I+A_KG(6,2). Die Auswahl benutzt den bereits erklärten Selektor:
+sigma Invarianz, q(A)=1 und q(F_Sigma)=0. Dies ist keine Herleitung
+aller physischen Eingaben aus einer unstrukturierten P1 Anfangsidee.
+Die 1+5+10 Zerlegung betrifft dort Bahnen und Gewichte. Das Original
+markiert die physische Interpretation ausdrücklich als gesonderte Frage.
+
+v809 (6. August 2026) beweist bereits eintragsweise NN^T=3I+A=B+2I,
+mit N der 15x15 Inzidenz zwischen Duaden und perfekten Paarungen.
+Jede Zeile und Spalte von N summiert sich zu drei. Der bereits bekannte
+Hin und Rückweg M=NN^T/9 hat Eigenwerte 1,4/9,0 mit Multiplizitäten1,9,5.
+Dieses Resultat und die Petersen Lokalisierung werden übernommen.
+
+Die Originalquelle des Q4 Operators ist das eingebettete audit.py aus
+_newest2/TFPT_Gesamtdokumentation2_20260927.md, Abschnitt
+TFPT_Rekursive_Bindung_20260926/audit.py. Der reproduzierte Präfix hat
+99 Prüfungen. Der normalisierte Codehash lautet
+4a19f8145d5ccaef08bfdc5893f64484feae630cf61e49639df52f89f56528c4.
+Seine ursprüngliche Codegrammetrik ist G=diag(4,12,12,12,24).
+Der Rückkanal lautet K(X)=1/2 sum_i Pi_i X Pi_i. Die zehn Pi_i sind
+reelle Rang eins Projektoren mit Summe2I und Überlappungsquadrat1/9.
+Die vorzeichenrichtige Petersen Zuordnung wurde schon am 11. November
+in TFPT-Q4-PICARD-AUSWAHL-20261111.txt bewiesen. Wir benutzen sie.
+
+3. Expliziter vollständiger Operatoranschluss
+
+Sei V={x in R6: sum_a x_a=0}, P=I6-J6/6. Dies ist ein konkreter
+fünfdimensionaler Hilbertraum, keine sechste Materierichtung.
+Für jede balancierte Vorzeichenfolge s mit drei Plus und drei Minus
+nehmen wir eine der beiden Vertreter s und -s. Die zehn Vektoren
+v_s=s/sqrt(6) bilden die Projektoren Pi_s=ss^T/6 und sum_s Pi_s=2P.
+
+Die explizite Zuordnung zur Originalquelle wird ohne Spektralanpassung
+gewonnen. Nummeriere die nativen Effekte von0 bis9 in Originalreihenfolge.
+Nummeriere die balancierten Folgen durch die lexikographischen Paare
+ab aus {0,1,2,3,4}, mit Plus an a,b,5 und Minus sonst. Eine passende
+Permutation und Vorzeichenwahl sind
+  permutation = [0,1,5,2,3,8,7,4,9,6],
+  signs       = [1,1,1,1,1,-1,-1,1,-1,1].
+Die vollständigen signierten Gram Matrizen stimmen exakt überein.
+
+Mit Fnum der ursprünglichen 10x5 Effektmatrix, U_n=G^-1 Fnum^T/4
+und V_m der so permutierten/signierten 6x10 Vorzeichenmatrix ist
+  L=V_m U_n^T G/sqrt(12),
+  L^T L=G,
+  L U_n=V_m/sqrt(12).
+L transportiert also jeden ursprünglichen normierten Effektvektor
+sqrt(2) U_n[:,i] nach V_m[:,i]/sqrt(6). Der Vergleich bestätigt zudem
+  K_balanced (L tensor L)=(L tensor L) K_native
+in allen36x25 Matrixeinträgen. Das respektiert die wirkliche Originalmetrik.
+
+Nun seien die15 Duaden ab die Kanten von K6. Definiere
+  F e_ab=F_ab=(e_a-e_b)(e_a-e_b)^T.
+F bildet C15 auf den symmetrischen Operatorraum auf V ab. Die Gramform ist
+  F*F=3I15+J15-A,
+weil die Skalarprodukte der F_ab für gleiche, sich treffende und disjunkte
+Kanten gleich4,1,0 sind. Ihre Eigenwerte sind12,2,6 auf den1,9,5 Blöcken.
+Sie ist invertierbar; auch direkt bestimmt der ab Eintrag von F(x)
+für a!=b den Koeffizienten -x_ab eindeutig.
+
+Für eine feste Kante ab tragen zu K(F_ab) genau die sechs balancierten
+Schnitte bei, die a und b trennen. Ihre Summe ergibt exakt
+  K(F_ab)=(1/3)F_ab+(1/9) sum_{cd disjoint ab} F_cd.
+Das ist ein Beweis an jeder Basisduade, somit
+  KF=FM,  M=(A+3I)/9=NN^T/9.
+
+Da F*F mit M kommutiert, ist der polare Faktor
+  W=F(F*F)^(-1/2)
+eine unitäre Hilbertraumabbildung C15 -> Sym^2(V_C) mit
+  K|Sym^2(V_C)=W M W*.
+F und W sind für die natürlichen S6 Wirkungen äquivariant. Die konkrete
+physische Realisierung aller S6 Operationen wird damit nicht behauptet.
+Auf den zusätzlichen zehn antisymmetrischen Operatorrichtungen ist K=0.
+Dies beweist genau den Operatoranschluss, der im eingereichten Text
+noch als bloßer Spektralkandidat bezeichnet wird.
+
+4. Was die Isometrie bewahrt und was sie nicht bewahrt
+
+W ist keine Isomorphie von Observablenalgebren und keine Abbildung der
+klassischen positiven Wahrscheinlichkeitskegel auf den positiven Kegel
+von M5. F ist auf nichtnegativen Kantengewichten positiv, aber seine
+Inverse ist nicht positiv: F^-1(Pi_s) hat Koeffizienten -s_a s_b/6,
+also negative Werte für gleichseitige Kanten. Für W verhindert schon
+die Hilbert Schmidt Orthogonalität, dass15 nichtverschwindende positive
+Basisbilder in M5 entstehen; es gibt höchstens fünf paarweise orthogonale
+positive Träger. Ein endlicher Operatorvergleich ersetzt daher kein
+Wörterbuch aller Zustände, geordneten Produkte und physischen Präparationen.
+Die vollständige Positivität von K folgt aus seiner nativen Krausform.
+Sie folgt nicht aus der stochastischen Positivität von M allein.
+
+Der symmetrische Fünferkern ist konkret: x_ab=a_a+a_b mit sum a=0,
+Ax=-3x, und F(x)|V=6P diag(a)P. Die balancierten Projektoren sind für
+diese Richtungen blind. Zusammen mit dem antisymmetrischen Zehner sind
+dies die15 Nullrichtungen. Sie dürfen nicht aus der vollständigen
+Prozessalgebra entfernt werden: geordnete Fortsetzungen können sie
+wieder sichtbar machen, wie der bestehende Q4 Vertrag exakt belegt.
+
+5. Prüfung der vorgeschlagenen Reflexionsuhr
+
+Der Hilbertraum der45 Duad/Paarungsinzidenzen besitzt Isometrien
+D:C15 -> C45 und S:C15 -> C45. Jede Spalte ist die gleichgewichtete
+Summe der drei zugehörigen Inzidenzen mit Amplitude1/sqrt(3).
+D*S=N/3, P_D=DD*, P_S=SS*. Die vorgeschlagene Uhr
+  U=(2P_S-I)(2P_D-I)
+ist exakt unitär. Ihr charakteristisches Polynom ist
+  (x-1)^17 (x+1)^10 (x²+2x/9+1)^9.
+Damit sind die im Text angegebenen Eigenwerte und Multiplizitäten richtig.
+Die Umkehrung der Reflexionsreihenfolge ergibt U^-1.
+Dies ist eine Anwendung der bekannten Konstruktion von Szegedy, keine
+allgemein neue Entstehung physikalischer Zeit.
+
+Eine entscheidende Unterscheidung lautet
+  D* U D=2M-I,
+  D* P_S D=M.
+Die Kompression eines vollen unitären Schritts liefert daher auf dem
+Neunerraum -1/9 und auf dem Fünferkern -1. Sie liefert dort nicht4/9
+und0. M entsteht aus der Projektionskompression beziehungsweise als
+klassischer Hin und Rückweg. Bei projektiver Messung wäre zusätzlich
+die Nichtannahme des Projektionsergebnisses zu behandeln. Ein physischer
+Kanal braucht eine bestimmte Zustandspräparation, Messung/Umwelt und
+Auslese. U und M sind ohne diese Regel nicht derselbe Prozess.
+
+Die beiden Projektoren haben einen eindimensionalen gemeinsamen
+Plusraum. U allein hat aber17 feste Richtungen: zusätzlich liegen16
+in ker D* intersect ker S*, wo beide Reflexionen mit Minus wirken.
+Mit erklärter Präparation im Raum ran D+ran S bleibt der gemeinsame
+Fixvektor eindeutig. Diese Präparation ist eine echte zusätzliche Regel.
+Auch eine festgelegte diskrete unitäre Operation legt ohne weitere
+Bedingungen keinen eindeutigen kontinuierlichen Hamiltonoperator fest:
+Eigenphasen erlauben ganzzahlige2pi Zweige und benötigen eine Zeiteinheit.
+
+6. Weitere Aussagen des eingereichten Textes
+
+Die natürliche vorzeichenlose S5 Permutation der16 geraden Besetzungen
+hat für eine Transposition Spur8. Die äußere Algebraaktion hat Spur0.
+Die beiden Darstellungen sind daher nicht äquivalent. Dieser Test ist
+exakt reproduziert. Er widerlegt eine reine Umbenennung der Basis.
+Er beweist nicht, dass im gesamten TFPT Korpus eine Fermionvorzeichenregel
+fehlt. Schon die benutzte äußere Algebra trägt ihre orientierten Produkte.
+Das physische Problem ist die Herkunft und Transportidentifikation dieses
+Lifts aus der ursprünglichen Quelle. Bei einem behaupteten Spin(10) Lift
+ist außerdem der konkrete Lift der diskreten Gruppe zu benennen; die
+äußere Permutationsaktion allein legt diesen nicht vollständig fest.
+
+Die Polynommatrix T=(-B²+15B+34I)/90 erfüllt exakt T²=M. Nach dem
+nun bewiesenen Transport ist ihre positive Hilbertraumwurzel auf M5
+aber keine völlig positive Quantenabbildung: die bereits bewiesene
+Choi Eigenzahl von sqrt(K) ist -1/10. Ein halber physischer Zeitschritt
+ist damit nicht hergeleitet. Größere kohärente Realisierungen bleiben möglich.
+
+Die60=15x4 und20+40 Zählung passt zur angegebenen endlichen Geometrie.
+Die zusätzliche Identifikation mit sämtlichen gerichteten Ereignissen,
+Krausoperatoren, Gewichten und ihrem Referenzgedächtnis folgt nicht aus
+dieser Zählung. Hier wurde der ursprüngliche geschlossene Q4 Kanal
+verglichen, nicht das volle60 Ereignisinstrument rekonstruiert.
+
+Die Petersen Aussagen stimmen:10 Knoten,15 ungerichtete Kanten,
+Zyklusrang6. Tr H^5=Tr H^6=120 für die nicht rückläufige Matrix H.
+Daraus folgen12 unorientierte Fünferzyklen und10 unorientierte Sechserzyklen.
+Für den Ihara Eulerfaktor zählt man üblicherweise orientierte primitive
+Zyklen modulo zyklischer Verschiebung, also24 bzw20. Der Text sollte
+seine unorientierte Tabellenzählung vom orientierten Produkt unterscheiden.
+Die angegebene Determinante folgt mit dem Petersen Spektrum3,1,-2 und
+Multiplizitäten1,5,4 aus det(I-uH)=(1-u²)^5 det(I-uA+2u²I).
+Dies identifiziert weder arithmetische Primzahlen noch eine RH Dynamik.
+
+7. Konsequenz für die Ursprungshypothese
+
+Der Duadweg ist jetzt eine exakte endliche Darstellung des bekannten
+Rückkanals. Dies beseitigt eine konkrete algebraische Lücke im neuen Text.
+Die neue unitäre Uhr ist weiterhin ein bedingter Kandidat. Der entscheidende
+Vergleich muss die tatsächlich ursprünglichen P1 Operationen, Zustände,
+Phasen, Referenz und Auslese zugleich erhalten. Die bloße Forderung,
+dass beide Prüfungen bestanden werden, schreibt weder ihre wiederholte
+Anwendung noch den physikalischen Takt vor.
+
+Der Gesamtweg der Originalpapers bleibt gemeinsame Quelle S_adm/Z_rel,
+vollständige Schwingerfunktionen, OS Rekonstruktion von Zustand und Zeit.
+Die spezielle Viertelquelle und diese endliche Reflexionsuhr sind keine
+obligatorischen Vorstufen für alle TFPT Realisierungen. Die vorhandenen
+Materie, Flavor und Alpha Bausteine werden durch diese Prüfung weder
+widerrufen noch als physische Gesamtherleitung neu beansprucht.
+
+Interner unabhängiger Review: Der Agent q4_review prüfte den Basisbeweis
+KF=FM, die ursprüngliche Petersen Vorzeichenkonvention, den polaren
+Intertwiner und die Grenzen der Positivitätsidentifikation unabhängig.
+Keine externe Begutachtung. audit.py prüft die vollständigen Matrizen
+mit exakter rationaler/algebraischer Rechnung; Ergebnisse in results.json.
+
+Primärquellen:
+verification/v774_arf_spinor_compiler.py, Zeilen1-170.
+verification/v809_curve_code_doily.py, Zeilen1-130.
+docs/research/fundamental-plan/TFPT-Q4-PICARD-AUSWAHL-20261111.txt,25-63.
+experiments/theory-contracts/q4-physical-selection-and-ordered-continuation-20261112/PROOF.txt,1-180.
+Szegedy, Spectra of Quantized Walks (2004): https://arxiv.org/abs/quant-ph/0401053
+
+physical_P1_source_computed=false; F1_complete=false; ledger_changed=false.

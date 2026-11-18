@@ -1,0 +1,378 @@
+OLD SOURCE MAP AUDIT: P1 CIRCLE, COLLAR, AND SEAM.EQUIV
+========================================================
+
+26 October 2026. Read only source audit. No Atlas, paper, ledger, or prior
+contract was changed. Atlas snapshot used for navigation:
+4a17a404b58c05f460121df8, 327 reviewed findings.
+
+Question
+========
+
+Do the older TFPT papers already contain the missing marked source map from
+the primitive P1 circle kernel to the later collar and elliptic annulus, so
+that B, u, reflection, state, and local support are one original object? The
+relevant chain was checked in its historical order:
+
+  fullv21 A4 / circle gluing
+    -> tfpt-31 closure transfer
+    -> tfpt-42 master / operational seed
+    -> TFPT45 boundary kernel
+    -> SEAM.EQUIV.MMST.01.
+
+Verdict
+=======
+
+No such source map is stated in the checked originals. The sources contain
+two strong but different pieces:
+
+  1. fullv21 installs an explicit one-particle circle pair. After the known
+     orientation correction it is
+
+       H_alpha=L2(S1),
+       B_alpha=-i partial_theta on the alpha-twisted H1 domain,
+       u=M_z,
+       B_alpha u=u(B_alpha+1).
+
+     It has winding and spectral flow one and a canonical Hardy defect line.
+
+  2. tfpt-42 and TFPT45 define a full operational seed and a product collar.
+     Their input already contains the local algebra, Euclidean dynamics,
+     reflection, state, seam class, and collar generator. From an object of
+     that declared category they construct B_Sigma and the one-sided boundary
+     datum.
+
+The missing arrow lies exactly between these two pieces. There is no original
+formula B_Sigma=D_Gamma, no unitary taking u=M_z to the collar seam operator,
+and no intertwiner carrying the fullv21 circle domain, reflection, state, and
+local algebra to the later operational seed. A repository-wide literal search
+for B_Sigma=D_Gamma and its reversed/spaced forms finds the equality only in
+the 25 October audit as a proposed repair, never in the checked paper sources.
+
+This is smaller than a new field model. One marked collared spin/source
+isomorphism would transport the analytic boundary data functorially. It must,
+however, include the clutching operator and the state/local net marks. A bare
+isometry of unmarked manifolds or equality of winding classes does not do so.
+
+1. What each historical layer actually says
+============================================
+
+1.1 fullv21: an explicit circle representative, installed in an assumed A4
+----------------------------------------------------------------------------
+
+The orientable double cover is explicitly labelled a "New assumption" in
+
+  documents/archive--paper-latex--tfpt-theory-fullv21/sections/
+  001-section-introduction-the-problem-of-parameters.tex:165-175.
+
+The cut construction then introduces two seam faces and a unitary matching
+operator, but its decisive operator words are "take" and "modeled by":
+
+  D_Gamma=i d/dtheta,
+  U_Gamma(theta)=exp(i theta).
+
+See the same file:198-255, especially 230-247. Thus the paper really supplies
+a concrete representative and its spectral-flow calculation. It does not
+derive that representative from P1, an OS state, or a later product collar.
+It also simultaneously writes U_Gamma^2=1 and U_Gamma=e^(i theta) in the
+older gluing appendix; those are different operator types unless an extra
+quotient or lift is stated.
+
+The previously audited exact correction and scope are recorded in
+
+  experiments/theory-contracts/older-paper-source-recovery-20261025/
+  ORIGINAL-CIRCLE-REVIEW.txt:10-31,111-157,202-216.
+
+That audit proves the same-space Ward relation, spectral flow, Toeplitz index,
+and defect projector. It explicitly leaves B_Sigma, physical OS time, the
+full CAR source, and spacetime localization unidentified.
+
+1.2 tfpt-31 Closure: a heat transfer using a new B_Sigma symbol
+----------------------------------------------------------------
+
+The v31 paper defines
+
+  U_Sigma=P_adm exp(-ell_Sigma |B_Sigma|) P_adm
+
+and asserts positivity and trace class in
+
+  documents/archive--paper-latex--tfpt-31/sections/
+  014-section-downstream-cosmology-module-on-the-observation-c.tex:4-24,
+  57-75.
+
+That section never identifies this B_Sigma with fullv21 D_Gamma or B_alpha.
+It also does not identify P_adm with the one-dimensional Hardy defect line.
+Consequently the v31 closure formula is an operator expression on already
+retained collar data, not the missing old-circle-to-collar source map.
+
+1.3 tfpt-42 Master: the complete source is already an input
+------------------------------------------------------------
+
+The operational seed is defined as
+
+  S=(A_loc,tau_t,Theta,omega,[u_Sigma],D_coll)
+
+in
+
+  documents/archive--paper-latex--tfpt-42/sections/
+  026-section-intrinsic-closed-branch-and-canonical-rigid-obje.tex:17-34.
+
+The collar-completion theorem at lines 36-58 maps such a supplied seed to a
+spectral bordism and says that D_coll determines B_Sigma. It does not construct
+A_loc, tau_t, Theta, omega, [u_Sigma], or D_coll from the old circle. The
+physical realization is then explicitly an axiom at lines 87-90.
+
+The later minimality argument does not repair this. Its category already
+requires an elliptic Dirac collar, reflection positivity, finite relative
+action, and nonzero spectral flow; see the same file:94-109. Lexicographic
+minimality reduces the integer |SF| to one, but it cannot select an operator
+representative, a twisted spin domain, a state, or a local net. This is why
+the primitive seam theorem in
+
+  .../006-subsection-character-trace-identities-and-the-abelian-in.tex:
+  249-285
+
+returns only [u_Sigma]=1, SF=1, and scalar normalizations. Its proof refers to
+"one elementary relative seam class" and never supplies u_Sigma=M_z on the
+same Hilbert space as B_Sigma. The later rank-one definition
+
+  U_Sigma^min=|psi_Sigma><psi_Sigma|
+
+at 007-subsection-carrier-form-of-the-electromagnetic-closure.tex:20-48 is a
+projector. It is not the winding multiplier u=M_z and cannot serve as its
+operator identification.
+
+The v42 "Master closure roadmap" is likewise downstream. It is explicitly a
+roadmap/corollary from T_bound and canonical doubling, rather than an input
+proof; see 022-section-closure-theorems-from-the-admissibility-complex.tex:
+200-231. It therefore cannot generate the missing source before T_bound.
+
+1.4 TFPT45: internal boundary reconstruction, still no map from the old circle
+-----------------------------------------------------------------------------
+
+TFPT45 starts its boundary theorem from
+
+  T_bound=(A_+,H_+,D_+,J,Gamma,B_Sigma),
+  D_+=gamma_n(partial_n+B_Sigma),
+
+with reflection regularity built in:
+
+  documents/archive--tfpt-45--source_extracts--01_boundary_kernel_source/
+  sections/001-section-primitive-core-and-carrier-interface-handoff.tex:
+  65-80.
+
+It then forms the double and Calderon projector at lines 94-155. This is an
+internal construction from a supplied one-sided boundary problem. It neither
+mentions D_Gamma nor proves an isomorphism to the fullv21 circle.
+
+The displayed identity iota_C=R_tau at lines 130-166 is confined to that
+paper's own boundary Cauchy-data space. The same source immediately warns at
+lines 172-179 that geometric reflection, boundary polarization, and the
+finite carrier involution occupy distinct slots and may only be compared by
+restriction and transport. It therefore cannot be used to replace the
+elliptic Schottky reflection rho or the annulus glide delta_A without the very
+transport map under investigation.
+
+TFPT45's newer operational-seed statement repeats the v42 structure:
+
+  S=(A_loc,tau_t,Theta,omega,[u_Sigma],D_coll)
+
+at sections/002-section-intrinsic-closed-branch-and-canonical-rigid-obje.tex:
+103-143. In particular state and local support occur on the input side of the
+functor. They are not consequences of the boundary circle or of Calderon
+sewing.
+
+1.5 SEAM.EQUIV.MMST.01: a different microscopic collar is chosen
+-----------------------------------------------------------------
+
+The ledger still types primitive P1 as an open axiom:
+
+  documents/introduction/sections/
+  002-section-the-dependency-dag-and-the-proof-ledger.tex:30-40.
+
+The same source defines SEAM.EQUIV.01 as the claim that the raw
+reflection-positive seam state is the holomorphic (E8)_1 net at tau=i and
+keeps the unconditional parent open; see lines 138-147. It also states at
+lines 305-316 that the common parent, microscopic MMST source, and global
+state are not supplied.
+
+The MMST branch does not secretly provide the P1 map:
+
+  * verification/v366_mmst_seam_collar.py:75-90 sets
+    inclass=True after arithmetic checks. It does not construct the local
+    source or an intertwiner from P1.
+
+  * verification/v994_mmst_criteria_battery.py:72-85 defines a QWZ/p+ip strip
+    Hamiltonian, and lines 88 onward extracts its edge covariance. This is a
+    separately specified lattice collar.
+
+  * v994's own header, lines 14-46, says Osborne-Stottmeister covers the free
+    fermion/Virasoro and bilinear limits, while the mu4/GSO spin-field
+    extension and net-level modular step remain outside the executed result.
+
+  * verification/v998_seam_modular_closure.py:24-28 fences its scope to
+    finite QWZ cylinders and finite q-expansions and leaves conformal-net
+    modular covariance open.
+
+Hence SEAM.EQUIV supplies a conditional or separately modeled downstream
+scaling route. It does not identify that QWZ covariance, state, or local net
+with the original P1 boundary kernel.
+
+The similarly numbered software checks are not the bridge either.
+verification/v31_R_dictionary.py searches a D4-fixed monodromy dictionary and
+leaves a Hitchin/Mehta-Seshadri residual. verification/v42_exterior_leg.py
+computes an exterior-area ratio and retains a physical-identification premise.
+Neither acts on the P1 collar or its Cauchy data.
+
+2. Smallest decisive sewing theorem
+====================================
+
+There is one useful compression. The analytic boundary entries B and P_C do
+not need independent guesses once a genuine marked collared spin isomorphism
+has been supplied.
+
+Let
+
+  F:(M_1,S_1,D_1) -> (M_2,S_2,D_2)
+
+be a unitary spin-bundle isomorphism of manifolds with boundary that preserves
+the oriented normal, collar coordinate, boundary trace, and the full Dirac
+operator:
+
+  F D_1 F^(-1)=D_2,
+  Tr_2 F=W Tr_1.
+
+Writing D_j=gamma_n(partial_n+B_j) in the transported product trivialization
+gives
+
+  W B_1 W^(-1)=B_2.                                      (A)
+
+Moreover F maps harmonic interior solutions bijectively, so it maps their
+boundary traces. The orthogonal projections onto those Cauchy-data spaces
+therefore satisfy
+
+  W P_C,1 W^(-1)=P_C,2.                                  (B)
+
+Equations (A) and (B) are direct consequences of intertwining and require no
+new model. They agree with the standard construction of Calderon projectors
+from the product collar, invertible double, and Poisson operator in
+Booss-Bavnbek, Lesch and Zhu, "The Calderon Projection: New Definition and
+Applications", J. Geom. Phys. 59 (2009), arXiv:0803.4160. That paper gives a
+canonical Calderon construction for a supplied elliptic first-order operator;
+it does not identify two previously unrelated physical sources. Guillarmou,
+Moroianu and Park, arXiv:1009.3179, likewise construct the natural orthogonal
+Calderon projector for a supplied spin Dirac operator. Neither theorem creates
+the missing F.
+
+The scope is exact:
+
+  * B and P_C follow from F.
+
+  * The seam multiplier requires the extra marked relation
+
+      W u_1 W^(-1)=u_2.                                  (C)
+
+    Winding one alone does not imply (C). Many inequivalent unitary
+    representatives have the same K1 class.
+
+  * Reflection follows only when F is equivariant for the relevant reflected
+    half and its Pin/Real lift. The Schottky reflection rho, free Moebius deck
+    delta_A, and quarter transport Q are distinct operations.
+
+  * A quasifree covariance or OS state follows only if it is defined from the
+    same transported full Cauchy graph or is separately required to satisfy
+
+      omega_2 = omega_1 o Ad(W^(-1)).                    (D)
+
+    The Calderon projector alone is not a general interacting Schwinger
+    functional.
+
+  * Local support follows only when F maps regions and intertwines the local
+    algebras. A Hilbert-space unitary can satisfy (A) while being nonlocal.
+
+Thus there are not six unrelated gaps, but there is also not a bare
+one-particle shortcut. The minimal sufficient datum is one marked local
+collared spin/source isomorphism
+
+  I_source=(F,W; seam faces, deck, Pin lift, Q, u, local net, state),
+
+whose Dirac part automatically yields (A) and (B), while its marks impose (C)
+and (D).
+
+3. Exact gap dictionary
+=======================
+
+Object          Present in older sources                 Missing equality
+------          ------------------------                 ----------------
+B               fullv21 B_alpha; later B_Sigma          W B_alpha W^-1=B_Sigma
+domain          alpha-twisted H1; later collar domain   W Dom(B_alpha)=Dom(B_Sigma)
+u               fullv21 M_z; later only [u_Sigma]=1     W M_z W^-1=u_Sigma
+P_C             TFPT45 Cauchy projector                 full two-face relation (B)
+reflection      old Moebius/Pin data; later Theta/R_tau equivariant lift under F
+state           supplied omega in Seed_op; QWZ sea      transported equality (D)
+locality        supplied A_loc; separate QWZ support    region-preserving net map
+cover           old annulus; elliptic paired annuli     I_cover with seam traces
+metric          old flat source modulus 1; elliptic 1/2 full operator/conformal transport
+
+The last row is a genuine full two-dimensional obstruction. Boundary spectra
+can be rescaled into the same angular units, but a uniform rescaling cannot
+change the annulus modulus. Therefore the exact boundary tuple found on the
+elliptic annulus does not by itself prove equality of the full old flat source.
+
+4. Relation to the recovered elliptic annulus
+==============================================
+
+The current elliptic work already supplies the target side of I_source:
+
+  E:y^2=x^4-1,
+  {rho_+,rho_-}={hQkappa,hQ^3kappa},
+  delta=hQ^2,
+  chi(A)=chi(B)=-1,
+
+and the exact NS boundary tuple. It also proves that Q exchanges the two
+dividing annulus charts, while rho, delta_A, and Q occupy different operator
+slots. See
+
+  experiments/theory-contracts/elliptic-moebius-source-bridge-20261026/
+  ORIGINAL-RELEVANCE.txt:23-79,113-152,293-307,381-418.
+
+The same audit already isolates I_cover as the first additional premise. The
+present historical continuation adds the negative result that neither the
+v31 closure paper, the v42 master paper, TFPT45, nor the MMST branch supplies
+that premise under another name.
+
+5. Smallest decisive original-source test
+==========================================
+
+No further finite spectrum or character calculation is needed. The first
+decisive test is whether the original P1 construction supplies a marked local
+collar map W satisfying simultaneously
+
+  W Dom(B_P1)=H1_NS,
+  W B_P1 W^-1=2 pi B_cov,
+  (W direct-sum W) P_C,P1 (W direct-sum W)^-1=P_C,ann,
+  W u_P1 W^-1=e^(2 pi i s),
+
+with the original reflected local algebra and state transported as in (D).
+
+Success criterion: these are consequences of the original P1 circle kernel
+and its canonical double, with elliptic annulus modulus 1/2 or an explicit
+operator/conformal transport from the old modulus.
+
+Abort criterion: the source yields only [u]=1, a matching group order, a
+boundary spectral resemblance, or a separately chosen QWZ/Hardy state. Any
+one of those leaves I_source open.
+
+Final classification
+====================
+
+PROVED IN THE ORIGINALS: an explicit old circle B_alpha,u pair; a later
+abstract operational seed; canonical Calderon reconstruction from a supplied
+collared Dirac problem; downstream heat and MMST/QWZ constructions.
+
+PROVED BY THIS AUDIT: the analytic B and P_C entries collapse functorially to
+one supplied marked collared spin isomorphism. The old paper chain contains no
+such isomorphism and does not identify the state or local net.
+
+OPEN: the actual P1-to-elliptic marked local source map I_source. This is the
+single load-bearing original relation. It is more precise than a request for
+a generic "field dictionary" and smaller than adding a new CAR model.

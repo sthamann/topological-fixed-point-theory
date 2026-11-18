@@ -1,0 +1,213 @@
+P1 INSERTIONS: SOURCE JET, MODULAR READER AND ACTUAL E8 SECTOR ACTION
+16 October 2026; continuation of UR.SEAM.COLLAR_MULTIFIELD.01
+Verdict: SOURCE_JET_NOT_DERIVED_CONDITIONAL_ACTION_EXPLICIT
+
+1. Requested conclusion and source boundary
+
+Derive the actual Phi-dependent insertions from the original P1 kernel, their
+fermion-sector action, and the map to existing fields without choosing a coupling.
+This conclusion is NOT established. The calculation below supplies an exact
+necessary interface and the actual current-sector action. It does not replace
+the missing original source family with a constructed Higgs coupling.
+
+Read original sources, not just their graph labels:
+S1 = _archive/tfpt-45/source_extracts/01_boundary_kernel_source.tex:
+  69-82: (A_+,H_+,D_+,J,Gamma,B_Sigma) is a supplied boundary datum;
+  122-130: relative/reference split from D and the geometric reflection;
+  192-268: primitive admissibility uses the positive Calderon sector;
+  302-316: S_prim[chi] is a relative spectral action with declared f;
+           carrier-compatible bosonic fluctuations enter later;
+  319-343: physical local insertions are introduced through a source algebra.
+S2 = _archive/tfpt-45/source_extracts/02_carrier_source.tex:
+  1795-1814: inner fluctuations on the already anchored branch;
+  1990-2023: B_Ea=sigma.nabla^(a)+Phi_a is on already labeled E2/E3 bundles;
+  2104-2117: standard Yukawa terms follow the claimed Higgs selection.
+S4 = _archive/tfpt-45/source_extracts/04_qft_source.tex:
+  461-472: relative Z has a fixed reference denominator;
+  2160-2184,2272-2302: effective action/vertices are written through S_adm[phi]
+  and its derivatives, rather than defining its microscopic Phi insertion.
+
+Naming Phi as Higgs (S1:9) is not a definition of a map Phi -> D_+[Phi].
+Nor is its absent argument permission to set its derivative to zero. To
+differentiate, an actual curve in source data must be supplied or derived.
+
+2. What can be differentiated before assuming a coupling
+
+For a differentiable source curve with fixed reflection R, fixed f and chi,
+V=dot D gives V_rel=(V-RVR)/2 and V_ref=(V+RVR)/2. In a finite regulator,
+  dot S_prim = chi^-1 Tr[f'(D_rel/chi) V_rel]
+             -chi^-1 Tr[f'(D_ref/chi) V_ref] + i*pi*dot Delta_eta/2.
+This uses trace cyclicity, not commutativity of D and V. If the original
+chi=lambda_1^+(|B|)^-1 varies, its derivative also contributes. If R varies,
+dot(RDR)=dot R D R+R dot D R+R D dot R. These terms cannot be dropped while
+claiming an unrestricted source derivation. Spectral crossings, eta jumps
+and changing domains require separate treatment.
+
+The unknown V is precisely the insertion to be derived. Substituting a desired
+matrix into V would beg the question. The one-form mechanism likewise needs
+the ACTUAL represented a,b in A_+: A=sum a[D,b]. Its usual real completion
+requires order one; without it retain the generalized quadratic term, rather
+than importing an SM calculation. Chamseddine/Connes/van Suijlekom,
+arXiv:1304.7583, equations(2),(3) and section III.
+
+3. Follow the existing modular/covariance route without replacing it
+
+verification/v258_dirac_covariance_induction.py:65-76 supplies the actual reader
+  h(C)=log(I-C)-log C,       0<C<I,
+and its inverse f_FD(H)=(I+exp H)^-1. This is the standard faithful quasi-free
+one-particle dictionary (Peschel, cond-mat/0212631); it is not valid for an
+arbitrary interacting current state from its two-point function alone.
+Use the covariance convention C_ij=omega(c_j^* c_i) of this existing collar
+construction; Peschel's opposite index convention has a transpose in eq.(12).
+
+The script:85-128 constructs C from random Dirac/Yukawa matrices and a given
+mass list before inversion. Line150 checks the seam identification with a
+literal True. The inverse identity remains valid; those calculations do not
+derive the physical embedding or its Phi variation. No verification script
+or original ledger status is changed here.
+
+For a differentiable embedded carrier use an isometry Q(Phi):H_F -> H_Sigma,
+not a silent basis identification. Then
+  C_F = Q* C_Sigma Q,
+  dot C_F = Q* dot C_Sigma Q + dot Q* C_Sigma Q + Q* C_Sigma dot Q.
+Even a fixed ambient covariance can have a changing compressed covariance
+when Q moves. Source charge/field maps and their motion must be derived.
+
+For finite faithful C with eigenvalues c_m, diagonalize C, not dot C. The exact
+Frechet derivative is
+  [dot h(C)]_mn = h^[1](c_m,c_n) [dot C]_mn,
+where h^[1](x,y)=(h(x)-h(y))/(x-y) for x!=y and
+  h^[1](x,x)=-1/[x(1-x)].
+Proof: differentiate both matrix logarithms using
+  D log(X)[E]=integral_0^infty (X+t)^-1 E (X+t)^-1 dt.
+For the first logarithm delta X=-E; for the second it is E with a minus sign.
+Every coefficient is strictly negative. Thus the derivative is an invertible
+linear map on finite Hermitian matrices. This is not the commuting shortcut
+-E/[C(I-C)] when E and C do not commute.
+
+If the stated sector projectors commute with the background C, the same
+spectral decomposition can be taken within their sectors. The Frechet map
+restricts invertibly to every sector block. Consequently
+  P_a dot h(C) P_b = 0  iff  P_a dot C P_b = 0.
+It neither creates a missing sector block nor chooses one. Do not apply this
+block claim to arbitrary projectors not commuting with C. Chirality-odd
+projection, a varying chirality, a varying scale and moving readouts are extra
+explicit operations; their source provenance must be retained. In particular
+the result does not exclude preexisting background mixing or nonlinear effects.
+An infinite-dimensional/unbounded extension needs its own domains and bounds.
+
+4. Resolve the projection-versus-occupation distinction on the retained source
+
+The original Calderon Cauchy operator is a PROJECTION. h(P_C) is not a finite
+faithful-covariance logarithm. For finite isometric Q,
+  Q* P_C Q has eigenvalue1 iff Ran Q meets Ran P_C nontrivially,
+  Q* P_C Q has eigenvalue0 iff Ran Q meets ker P_C nontrivially.
+Proof: norm equalities for an orthogonal projection. In particular, restriction
+to its own range is I, not a mixed occupation. Therefore one cannot identify
+the same positive admissibility subspace with a faithful occupation simply by
+using a compression symbol. This is a conditional consistency test, not a
+claim that every compression of a projection is pure.
+
+The previously constructed TWO-FACE collar supplies the correct mixed object.
+For its given selfadjoint B and positive length ell, put R_c=exp(-ell B). Then
+  A=(I+R_c^2)^-1,
+  P_graph=[[A,A R_c],[R_c A,R_c^2 A]],
+  n=I-A=(I+exp(2ell B))^-1.
+The full P_graph is a projection; n is the mixed one-face occupation. Hence
+  h(n)=2ell B,
+  D h(n)[dot n]=2ell dot B+2 dot ell B.
+The last identity holds also for a noncommuting bounded variation on a common
+appropriate finite/regulated domain; it follows by differentiating the exact
+functional inverse, without a freely chosen vertex. It recovers the insertion
+already in B(Phi), and cannot supply a previously unspecified dot B.
+
+Reuse the retained lowest charged particle/hole transfer pair R_c=diag(1/4,1/64).
+The exact graph projection has A=diag(16/17,4096/4097),
+n=diag(1/17,1/4097), h(n)=diag(log16,log4096).
+At ell=8log2 this returns B=diag(1/4,3/4), with the already specified transfer
+and quarter source in its POSITIVE particle/hole excitation chart. It is not
+the signed raw one-particle B before the sea/particle-hole transformation.
+Its own-range covariance is I, exactly as above.
+This preserves the prior positive construction; it is not a new source choice.
+Numerical eigenvalue clipping in v258 is a regulator, not a proof of h(I).
+
+5. Actual E8 insertion action: use the existing reader, no chosen Yukawa tensor
+
+In the retained positive E8_1 lattice dictionary, use root charges p of internal
+quarter grade1, target charges s of grade3, and grade2 roots r. There are64,
+64 and60 respectively. The grade2 roots are exactly +/-e_i +/-e_j with
+i in the first five coordinates and j in the last three, the (10,6) module.
+All are bosonic weight-one currents, including the spinor-labeled currents.
+
+The already fixed cocycle and OPE give the actual zero-mode action on root
+current states, when r+p is a root:
+  J_r,0 |p> = epsilon(r,p) |r+p>.
+The condition is r.p=-1. For these grades there are no r=-p Cartan exceptions.
+Verify it through the original current_response, at positions(3,2,1):
+  2 <V_r(3)V_p(2)V_-(r+p)(1)> / <V_(r+p)(2)V_-(r+p)(1)>
+    = epsilon(r,p).
+
+All3840 pairs were inspected:960 nonzero root actions,15 per incoming current,
+and rank16 for each of the60 root actions. The exact raw-cocycle three-point
+values are +1/2 for480 actions and -1/2 for480. They are basis-convention
+amplitudes at these positions, NOT coupling constants or physical masses.
+
+The last three coordinates of a grade1 current give one of four A3 fundamental
+weights w_i. A target grade3 weight is compared with its conjugate -w_j. A
+grade2 root changes one of the last three coordinates; it never sends w_i to
+-w_i. The960 actions occupy12 ordered distinct-family channels,80 each.
+The1024 same-family pairs of incoming grade1 spinor currents have no grade2
+root that can neutralize their charge. This follows analytically since
+2w_i has three nonzero integer coordinates while the mediator family weight
+has just one. It was checked for every pair against the root set, with direct
+current-reader zero probes as regression. This is the antisymmetric A3 module
+Lambda^2(4)=6; it does NOT by itself assert an antisymmetric physical Yukawa.
+
+Thus this supplied current model has an explicit nontrivial sector action.
+A linear insertion supported on these60 currents has60 complex root-basis
+components before reality constraints; opposite-root adjoint relations reduce
+this to60 real degrees of freedom for selfadjoint insertions. It has the above
+actual action; P1 has not selected those coefficient functions
+or equated this current action with a physical fermion/Higgs vertex. Composite,
+twisted or dressed fields and changed states are not excluded by this result.
+Known dressed-fermion constructions are retained with their own premises.
+
+6. Decisive conclusion and remaining task
+
+The original displayed seed does not determine a Phi -> (D_+,B_Sigma,Q,C_Sigma)
+family. The valid collar and modular constructions explicitly propagate its
+first variation if it is supplied. Their invertibility cannot select it.
+The full current reader supplies exact targets for a proposed charged map,
+including sector transitions, but supplies no original choice of that map.
+
+The next required source data are the ACTUAL charged physical field/readout
+and the source-derived first variation dot C_Sigma with its embedding motion,
+or equivalently the actual dot B/Phi insertion in a proven common chart.
+Testing only uninserted spectra, normalized vacuum numbers or another KMS
+inverse cannot answer this question. One must demonstrate the original
+represented insertion/field product, its state/time and its mixed response.
+
+The full dictionary task stays OPEN;3+2 does not follow from this calculation.
+No P1/P2 countermodel, universal no-go, new selection rule, physical Yukawa,
+4D fermion map, contact completion or T1-T8 closure is claimed.
+
+7. Execution and evidence
+
+python3 p1_insertion_tangent.py results/p1-insertion-tangent.json
+passes on2026-10-16. It calls the original v258 induce and the original E8
+current_response. Distinct/repeated-spectrum noncommuting derivative errors
+are5.465e-11 and1.155e-10; the moving-isometry error is5.451e-12. These are
+numerical derivative controls supporting the analytic formula, not physical
+source evidence. Sixteen Hermitian basis directions preserve exact support.
+The retained collar identities and all root-action response checks use exact
+symbolic arithmetic. No new coupling is used as a physical premise.
+
+Independent read-only review accepted the finite Frechet theorem, its sector
+conditions, the projection/occupation distinction, positive excitation chart,
+and E8 OPE/action calculation. The reviewer independently replayed the checker.
+The review required clarifying the root-basis reality convention above; it did
+not close the original source map or any physical gate.
+
+Primary background, not independent TFPT evidence:
+https://arxiv.org/abs/cond-mat/0212631
+https://arxiv.org/html/1304.7583

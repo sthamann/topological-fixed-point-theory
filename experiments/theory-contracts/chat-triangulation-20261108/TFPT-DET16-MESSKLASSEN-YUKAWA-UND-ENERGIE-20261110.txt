@@ -1,0 +1,183 @@
+TFPTDET16MEASURE20261110
+10. November 2026. Tests zu Anlage 1 Abschnitte 3 und 7 und Anlage 2 Punkt 4.
+
+1. Umfang und ursprüngliche Eingaben
+
+check_det16_occupation_symmetry_20261110.py baut die 16
+Cartan Wedgeadressen aus den ursprünglichen positiven Weylgeneratoren
+von v1002 und rekonstruiert den gemeinsamen z Filter und die beiden
+DET16 Kandidatenauswahlen. Deren Ränge 5464, 5464, 3072 und 7856
+werden gegen die ursprüngliche Rechnung geprüft. Die neue Enumeration
+testet alle 120 möglichen Zweiweglassungen, alle 560 Dreiweglassungen,
+alle 120 Paarbesetzungen und die Symmetrien der tatsächlichen
+Besetzungslabels. Die H Dynamik bleibt H=2(I−Pφ).
+Die Tests behaupten keine neue physische Messoperation.
+
+2. Welche der 60 minimalen Auswahlen gleichwertig sind
+
+Eine minimale Auswahl besteht daraus, genau zwei der 16 n_i
+Besetzungsmarken wegzulassen. Es gibt exakt 60 zulässige
+Weglassungen. Die beiden weggelassenen Marken kommen immer aus
+zwei verschiedenen NICHTNULL Ladungsgruppen des z Filters.
+Die Gruppen haben Größen 6, 6 und 2 für z Ladungen 1, 2, 3.
+Damit ist die Menge der Weglassungen der vollständige dreiteilige
+Graph K_(6,6,2), und 6·6+6·2+6·2=60. Keine Dreierweglassung
+erhält alle Besetzungswörter unterscheidbar. Die Nulladressen
+0 und 3 kommen in jeder minimalen Auswahl vor.
+
+Die tatsächlichen 5 Trägerslot Permutationen erhalten die
+3+2 Zerlegung: S3 wirkt auf Farbe, S2 auf die schwachen Slots.
+Die 12 Permutationen erhalten beide Auswahlprojektoren.
+Bei Bedarf kann eine Phase den Determinantencharakter eines
+permutierten Besetzungsbasislifts ausgleichen, ohne die
+Besetzungsmarken zu verändern. Die 60 Varianten zerfallen
+unter diesen Permutationen in acht Orbits. Die Größen sind
+12, 12 und sechsmal 6. Die Weglassungsrepräsentanten sind
+
+    (5,12) 12   (5,15) 12   (5,24) 6   (5,27) 6
+    (5,29)  6   (5,30)  6   (12,29) 6  (15,29) 6
+
+Auch unter allen signierten nativen W(D5) Slotpermutationen
+gibt es in diesem Quellenvertrag keine zusätzliche Verbindung:
+Beide Projektoren haben als invarianten Einteilchenmodus nur
+Wedgeadresse 0. Das erzwingt Erhalt dieses Bits und schließt
+nichttriviale Cartan Vorzeichenflips aus. Die Adresse 3 ist
+durch die kombinierte Besetzungstabelle separat ausgezeichnet,
+daher bleiben auf den fünf Trägerslots nur 3+2 Permutationen.
+
+Selbst wenn man ALLE reinen Permutationen der 16 Besetzungsmoden
+erlaubt, die nur die Vereinigung der beiden Auswahlen erhalten
+müssen, bleiben sechs Orbits. Deren Größen sind 18, 18, 6, 6, 6, 6.
+Beweis des vollen Permutationskommutanten: Aus der exakten
+Vereinigungs Paarbesetzungstabelle ergeben sich sechs feste
+Zellen. Die Moden z und c bleiben innerhalb der Zellen gleich.
+Für eine solche Permutation erhält der Unterschied der binären
+g Ladung die Vereinigung genau dann, wenn er auf dem gemeinsamen
+z Raum außerhalb des zentralen Projektors verschwindet.
+Dessen F2 Spann hat Rang 15. Der einzige nichttriviale mögliche
+Unterschied ist daher z mod 2. Das liefert unabhängige
+Permutationen der vier Dreiergruppen (6^4), ergänzt um den
+gleichzeitigen schwachen Tausch (Faktor 2). Gesamtordnung 2592.
+Das Fixieren auch der drei namentlichen Ladungsgeneratoren
+ergibt 1296 Relabelings und zwölf Orbits (viermal 9, achtmal 3).
+Ein globales Komplement der Besetzungen lässt die 60 Alphabete
+als Mengen unverändert. Teilweiser Outcome Flip kann H nicht
+erhalten, weil er den Leerzustand aus der Leer/Voll Ebene trägt.
+
+Die flache DET16 Dynamik H allein besitzt einen viel größeren
+Kommutanten. Insbesondere kann jede 16 Mode Permutation mit
+einer Phase zu Determinante eins ergänzt werden; ihr Exteriorlift
+erhält φ und H und ist auf den 60 Weglassungen transitiv, solange
+man die Auswahlprojektoren nicht festhält. Diese Transitivität
+rechtfertigt keine physische Äquivalenz der acht Quellorbits.
+Selbst eine beliebige unitäre Abbildung, die H, die Vereinigung
+und nur die jeweils 14 tatsächlich benannten binären Operationen
+erhält, kann die sechs Besetzungsklassen nicht weiter vereinigen:
+Die sortierten Paarspuren der 14 behaltenen Marken ergeben
+genau sechs verschiedene Multimengen. Das gilt auch, wenn man
+beide Ausgänge vertauschen darf. Die eindeutige Grundlinie φ
+hat in jedem der 14er Alphabete nur die beiden komplementären
+Wörter alle 0 und alle 1. Sie erzwingt daher, dass entweder alle
+oder keine Ausgänge invertiert werden. Das Gesamtkomplement
+erhält wegen gleicher Halbspuren jede Paarspur.
+Abstrakt erzeugt jedes der 60 vollständigen Alphabete dieselbe
+volle diagonale Algebra auf der Vereinigung. Die Unterschiede
+betreffen deren konkrete ursprüngliche Messgeneratoren.
+
+3. Die 14 Paartrenner sind nicht die 15 Up-Yukawa Adressen
+
+Zwei disjunkte Zweier Wedgeadressen können im fünfstelligen
+Top Wedge mit dem verbleibenden Slot kontrahiert werden.
+Es gibt 5·3=15 solche ungeordneten Paare. Genau DREI davon
+sind unter den 14 DET16 Paartrennern:
+(3,12), (3,20), (3,24), mit Rohkontrast +156.
+Die übrigen 12 Top Wedge Paare sind null; Beispiel (5,10).
+Unter den 11 anderen DET16 Paartrennern finden sich sechs
+überlappende Zweier Wedges mit −24 und fünf gemischte Grade
+2/4 mit −52 (dreimal) und +72 (zweimal). Alle 14 haben
+Wedgeadresse 3 als ein Ende. Der numerische Gleichklang
+14 gegen 15 trägt somit keine Identifikation. Bei den drei
+wirklichen Überschneidungen sind die Fermionmarken e^c und
+u^c, und der übrigbleibende fünfte Slot ist in allen drei
+Fällen Farbe. Das kinematisch mögliche 10·10·5 Bein wäre
+hier ein FARBDREIBEIN, nicht das schwache Standardmodell
+Higgsbein. Die sechs disjunkten Q/u^c Paare mit verbleibendem
+schwachen Higgsbein sind ALLE im DET16 Kontrast null. Die
+behauptete Verbindung zum üblichen Up-Yukawa scheitert damit
+schon am Ladungstest. Dichtekorrelationen n_i n_j sind
+überdies neutrale Observable und messen für sich keinen
+Yukawa Vertex zwischen Fermionfeldern und einem Higgsbein.
+
+Warum alle Trenner dieselbe Adresse treffen: Die beiden
+Auswahlen fixieren die e^c Besetzung (Adresse 3) jeweils
+als eine Funktion der übrigen 15 Bits. Dieser Mode hat
+Ladungen z=0, g=1, c=2. Wenn der gemeinsame z Filter
+erfüllt ist, ist die c Summe der übrigen Bits gerade.
+Der Splitzweig wählt e=g(übrige), der Zentralzweig
+e=c(übrige)/2 mod 2. Für jeden zulässigen Satz der übrigen
+Bits ist jeweils genau eine e Belegung erlaubt.
+
+Der bedingte Flip dieses einen Bits, genau wo sich die zwei
+Funktionen unterscheiden, ist ein expliziter involutiver
+Basiswechsel zwischen den beiden Auswahlen. Er vertauscht
+4784 Labels (die symmetrische Differenz), fixiert leer und voll
+und kommutiert somit mit dem tatsächlichen flachen H. Er
+kommutiert mit sämtlichen 15 anderen Besetzungsmarken.
+Unter dieser eindeutigen Zustandskorrespondenz stimmen daher
+nicht nur alle statischen Marginalen ohne e^c bei beliebigem
+Grad überein, sondern auch alle markierten Geschichten mit
+nativer Zeit und den 15 anderen Besetzungsinstrumenten.
+Selbst die mathematische Energiemarke trennt diese beiden
+Kandidaten in diesem reduzierten Alphabet nicht. Der bedingte
+Flip ändert N und e^c und ist kein nummernerhaltender CAR
+Mode Relabeling. Der tatsächlich e^c sensitive Eingriff und
+die fehlende Richtung X im folgenden Abschnitt sind damit
+zwei verschiedene operative Fragen.
+
+4. Die drei Dimensionen und der Test des Energieeingriffs
+
+7856 zählt die statischen Besetzungslabels und ist die
+Dimension der vollständig lesbaren Diagonalen. Auf der
+Leer/Voll Ebene H=I−X. Die native unitäre Zeit dreht die
+Besetzungsrichtung Z in span(Y,Z). Jede Lüders Lesung in Z
+erhält span(I,Y,Z). Damit liefert keine Folge dieser erlaubten
+Operationen einen X Anteil. Die übrigen 7854 Zustände
+tragen Diagonaleffekte. Der reelle Effektspan hat deshalb
+7854+3=7857 Dimensionen, während die komplexe kohärente
+Wortalgebra 7854+4=7858 Dimensionen hat. Die beiden
+Determinantenlinien +X/−X bleiben in den tatsächlichen
+Lüders Zeitgeschichten ununterscheidbar.
+
+Ein zusätzlicher registrierter Energieprojektor oder positiver
+Erfolgsfilter könnte das fehlende X exakt lesen. Die Formel ist
+Pφ=I−H/2, U(π/2)=2Pφ−I. Eine kohärent kontrollierte
+native Wartezeit π/2 gegen Nichtwarten und ein anschließender
+Interferenzreadout liefern die beiden Krausoperatoren
+(I±U(π/2))/2, exakt Pφ und I−Pφ. Alternativ hat der Erfolg
+eines tatsächlich implementierten positiven Filters e^(−tH)
+den Effekt Pφ+e^(−4t)(I−Pφ). Das ist ein expliziter
+Minimaltest mit nur einem phasensensitiven Eingriff, kein
+Nachweis eines tatsächlich gelieferten Originaldetektors.
+
+Gegen eine automatische Clock Ableitung: Die wörtliche
+v1013 Zelltabelle koppelt die Seamclock an die physische
+Randdichte n_Q. Der DET16 Spiegelterm ist lokal und separat.
+Mit den unveränderten deterministischen Spiegelzeiten,
+Besetzungsinstrumenten und beliebigen Operationen nur auf
+dem anderen Faktor bleibt der Spiegel Effektspan auch
+bei adaptiven Zeiten im selben blinden Raum. Für eine
+echte kontrollierte Wartezeit braucht es einen gemeinsamen
+Clock/Spiegel Eingriff oder einen schon als Ereignis gelieferten
+Filter. Der R104 euklidische Wärmekern ist exakt bekannt;
+eine Euclidean Amplitude allein erzeugt keine registrierte
+Erfolgsoperation. Die vorhandene physische R113 Quelle
+liefert diese Identifikation im gelesenen Stand nicht.
+
+Quellen: v1002 positive_weyl_generators:123-152 und
+determinant_projector:252-267; v1013
+documents/articles--2026-08-30--tfpt_thermodynamic_dynamics_en/
+sections/001-section-the-concrete-uniformly-local-class.tex:73-95;
+R104 DET16-WHOLE-SOURCE-REDUCTION:16-27,39-53;
+TFPT-F1-ZUKUNFTSWOERTER-SIEBEN-WEGE-20261109:27-92.
+Reproduktion: check_det16_occupation_symmetry_20261110.py
+mit Repositorypfad als Argument.

@@ -1,0 +1,401 @@
+THE CUBIC CAUCHY RANGE: HARDY CLOSURE AND THE REMAINING OPERATOR DOMAIN
+============================================================================
+27 October 2026. Source audit and exact local branch calculation.
+No Atlas or paper source was changed.
+
+
+QUESTION AND VERDICT
+====================
+
+On
+
+  C: eta^2=1-w^6,
+
+the original marked function
+
+  z=eta/(1-w^3),       w^3=(z^2-1)/(z^2+1)                 (1)
+
+defines a three sheeted map pi:C->P1_z. The chosen spin line S_0 satisfies
+S_0^2=K_C and is the unique c invariant even theta characteristic. Does the
+actual primitive boundary operator have Cauchy range
+
+  H2(pi^(-1)D,S_0)=H2(D) direct-sum H2(D) direct-sum H2(D), (2)
+
+with the old seam shift represented by multiplication by z?
+
+The smallest decisive test has two exact outcomes.
+
+  1. CONDITIONAL ANALYTIC THEOREM. If the supplied operator is the standard
+     chiral spin Dirac on the normalization of pi^(-1)D, with its induced
+     half form norm, then its closed L2 Cauchy range is canonically (2). No
+     sheet metric, U(3) mixing, or boundary profile is selected. The cubic
+     branch exponent is exactly -1/3 and is L2 integrable.
+
+  2. SOURCE AND DOMAIN OBSTRUCTION. The smooth ambient spinor domain is not
+     the direct sum of three unrelated H1 circle domains. At each of the four
+     branch values it retains a six half edge matching condition. That
+     condition disappears only after L2 closure. The original TFPT boundary
+     source supplies an abstract self-adjoint B_Sigma on a smooth product
+     collar, but gives neither its formula nor a domain map to this cubic
+     boundary. The older D_Gamma and U_Gamma supply the circle generator and
+     winding, but not this missing map. Therefore the actual operator arrow
+     is not yet proved by the original source.
+
+This is a type level decision, not a new model. Standard Calderon theory can
+transport the result after a marked collared spin intertwiner is given. It
+cannot construct that intertwiner or replace the missing B_Sigma by a newly
+chosen Dolbeault operator.
+
+
+1. THE OPEN PULLBACK IS THREE DISKS
+===================================
+
+Let D={|z|<1}. The only ramification values of pi are
+
+  z_j in {1,-1,i,-i}.                                      (3)
+
+They lie on the boundary. Hence pi is unramified over D. Formula (1) has
+three holomorphic cubic roots over D, so
+
+  pi^(-1)D = D_0 disjoint-union D_1 disjoint-union D_2,     (4)
+
+and pi restricts to a biholomorphism D_a->D on every component. The centers
+are q_a=-omega^a above z=0. The source symmetries act by
+
+  c:(w,eta,z)->(omega w,eta,z),
+  Q:(w,eta,z)->(1/w,-i eta/w^3,i z).                       (5)
+
+Thus c cyclically permutes the three disks, while Q covers the quarter turn
+z->i z and sends q_a to q_(-a). These are inherited marked actions, not a
+choice of a three channel frame.
+
+On D_a choose the holomorphic half form e with
+
+  e^2=dz.                                                   (6)
+
+It is unique up to sign. For psi=f(z)e the induced spin norm is
+
+  ||psi||^2_boundary = integral_|z|=1 |f(z)|^2 |dz|.       (7)
+
+Therefore the standard chiral spin kernel on the normalized disks has
+orthogonal boundary range H2(D)^3 and orthogonal projector
+
+  P_norm=P_H direct-sum P_H direct-sum P_H.                (8)
+
+The scalar presentation H2(D)^3 is defined up to the three harmless frame
+signs. The norm, closed subspace, and orthogonal projector in (7) and (8) are
+intrinsic. No frame sign creates a metric fit or changes the range.
+
+
+2. THE EXACT CUBIC BRANCH EXPONENT
+==================================
+
+At a branch point over z_j=+/-1 use u=w. At a branch point over z_j=+/-i use
+u=1/w. In either case (1) gives, after choosing the appropriate value z_j,
+
+  z=z_j(1+u^3+(1/2)u^6+O(u^9)),
+  dz=3z_j u^2(1+O(u^3))du.                                (9)
+
+Write the boundary as z=z_j exp(i s). The six incident germs are
+
+  u_(a,+)(s)=omega^a exp(i pi/6)s^(1/3)(1+O(s)),   s>0,
+  u_(a,-)(s)=omega^a exp(-i pi/6)|s|^(1/3)(1+O(s)), s<0.   (10)
+
+Let an ambient smooth spinor germ be
+
+  psi=F(u)(du)^(1/2),
+  F(u)=F_0+F_1u+F_2u^2+O(u^3).                            (11)
+
+In the base frame e=(dz)^(1/2), the coefficient is
+
+  f(z)=F(u)(du/dz)^(1/2)
+      =(3z_j)^(-1/2)u^(-1)(F_0+F_1u+F_2u^2+O(u^3)).       (12)
+
+Consequently
+
+  f_(a,+/-)(s)=kappa_(j,a,+/-)|s|^(-1/3)
+      [F_0+F_1u_(a,+/-)(s)+F_2u_(a,+/-)(s)^2+O(s)].       (13)
+
+Its squared norm has leading behavior
+
+  |f(s)|^2 ds = O(|s|^(-2/3))ds,                          (14)
+
+which is integrable. The four branch values have measure zero. Hence the
+half form trace extends to L2 on all three normalized boundary circles.
+
+This is the cubic analogue of the already proved square root exponent
+-1/4 in TRACE-METRIC-AND-DOMAIN.txt. The change from -1/4 to -1/3 is forced
+by dz approximately u^2du and is not a fitted weight.
+
+
+3. WHY THE CLOSED RANGE IS H2^3
+================================
+
+The smooth ambient core retains equation (13). In particular all six
+half-edge germs at one branch value arise from the same coefficients F_k.
+Its closure in a specified Sobolev or graph norm retains exactly the traces
+controlled by that norm. Ordinary intrinsic H1 on the six edges retains the
+common vertex value F_0; it does not retain the complete Taylor series.
+Higher Sobolev orders retain the corresponding finite jet. None of these
+finite conditions reduces the closed L2 analytic range.
+
+There is a direct density proof at every fixed finite regularity. For m>=1,
+multiplication by
+
+  a_m(z)=(1-z^4)^m                                         (15)
+
+forces as many boundary jets to vanish as required once m is large enough.
+Therefore triples a_m p_a, with p_a polynomials, satisfy the matching needed
+for any one fixed Sobolev order after m is chosen for that order. The
+polynomial 1-z^4 has no zero in D and only boundary zeros, hence it is outer.
+Outer cyclicity implies
+
+  closure{(1-z^4)^m p:p polynomial}=H2(D).                (16)
+
+For a literal C-infinity core one may use one explicit flat outer factor.
+Choose 0<rho<1 and the principal branch
+
+  G(z)=exp(-(1-z^4)^(-rho)).                                (17)
+
+Since Re(1-z^4)>0 in D, this branch is holomorphic and zero-free. Near every
+fourth root z_j of one, log|G| is of order -|s|^(-rho), which is integrable.
+Thus G is outer. It and every derivative tend to zero at each z_j from inside
+the disk. The intrinsic spin coefficients u G(z(u))p_a(z(u)) are therefore
+flat at every vertex. They admit compatible smooth extensions through the
+outside wedges by the ordinary smooth extension and partition construction;
+holomorphy is required only on the inside disks. Polynomial multiples of G
+are dense in H2 by outer cyclicity.
+
+Applying either finite-order construction, or (17) for the smooth core,
+independently on the three disks proves that the L2 closure of the compatible
+analytic core is all of H2(D)^3. This proves (8) even though a chosen strong
+domain remains coupled.
+
+The result is precisely about the closed Cauchy range. It does not identify
+an oblique Plemelj kernel, a finite-temperature covariance, or an interacting
+state with P_norm.
+
+
+4. THE H1 DOMAIN DOES NOT SPLIT ON THE SINGULAR BOUNDARY
+========================================================
+
+There are two different boundary objects.
+
+  * On the normalization, the boundary is three disjoint smooth circles.
+    Its standard first-order domain is H1(S1)^3. This gives (8) directly.
+
+  * In the ambient curve, the same boundary image has four vertices, each
+    with six incident half edges. Its smooth core obeys the common Taylor
+    relations (13). The common vertex value survives in its intrinsic H1
+    closure. Higher jets survive only in correspondingly stronger norms.
+
+The naked constant coefficient circle generator does not preserve the
+natural traced ambient smooth core. Indeed an allowed leading coefficient
+f(s) approximately s^(-1/3) is sent by -i partial_s to a term of order
+s^(-4/3), which is not L2. The intrinsic smooth operator in the u coordinate,
+when expressed through s approximately u^3, necessarily acquires a
+degenerate variable coefficient and the spin connection term. Thus the
+following three claims cannot be combined without another domain theorem:
+
+  (i) the constant generator -i partial_theta,
+  (ii) the ambient smooth six-edge matching,
+  (iii) a self-adjoint graph operator on that singular boundary.           (18)
+
+A self-adjoint six-edge vertex condition may exist, but it has to be stated
+and proved as the graph closure of a named core. It is not automatically the
+abstract B_Sigma of the smooth P1 seam. Choosing the normalization instead is
+mathematically clean, but it deliberately separates the vertices. L2 closure
+alone does not decide between these operator domains. The derivative test
+above therefore rules out only the naive constant-generator identification
+on the natural ambient trace core. It is not a no-go theorem for every
+possible primitive boundary operator.
+
+There is also a framing distinction. In the holomorphic frame e^2=dz, the
+coefficient number operator is N=-i partial_theta with integer modes. In an
+adapted bounding-spin frame the geometric tangential Dirac can be N+1/2, up
+to the boundary orientation, with Neveu-Schwarz spectrum Z+1/2. Both have the
+same Hardy sign range after the corresponding convention is fixed, and both
+satisfy the same one-step commutator with M_z. The original source must say
+which framed operator and domain its B_Sigma denotes.
+
+
+5. THE CONDITIONAL MARKED OPERATOR DICTIONARY
+==============================================
+
+On the normalized three-disk space, the natural candidate dictionary is
+
+  boundary Hilbert space     -> L2(S1)^3,
+  positive Cauchy range      -> H2(D)^3,
+  seam multiplier U_Gamma   -> M_z,
+  cubic symmetry c           -> cyclic sheet permutation,
+  quarter map Q              -> z->i z with its S_0 spin lift.             (19)
+
+In the holomorphic coefficient convention,
+
+  [N,M_z]=M_z,
+  c M_z c^(-1)=M_z,
+  Q^* M_z (Q^*)^(-1)=i M_z,
+  Q^* c (Q^*)^(-1)=c^(-1).                                (20)
+
+The Q lift on S_0 contributes the already proved square-root phase. Equations
+(19) and (20) are exact on the named normalized candidate. They become facts
+about the primitive source only after a unitary domain intertwiner is given.
+
+
+6. WHAT THE ORIGINAL SOURCES ACTUALLY PROVIDE
+==============================================
+
+TFPT45 starts from
+
+  T_bound=(A_+,H_+,D_+,J,Gamma,B_Sigma),
+  D_+=gamma_n(partial_n+B_Sigma),                            (21)
+
+where B_Sigma is assumed self-adjoint on the smooth compact boundary of a
+reflection-regular product collar. It then constructs the Calderon projector
+from that supplied datum. The source gives no explicit B_Sigma formula or
+domain on the cubic curve.
+
+The older fullv21 source separately takes
+
+  D_Gamma=i d/dtheta,
+  U_Gamma(theta)=exp(i theta),                              (22)
+
+and computes spectral flow one. This fixes a circle representative and a
+one-step winding. It does not identify D_Gamma with B_Sigma, identify its
+circle with the normalization of pi^(-1)D, or transport the six-edge domain.
+
+The distinction is decisive because the hypotheses of (21) are a smooth
+boundary and a product collar. The ambient cubic boundary in Section 4 is a
+singular graph. The normalized boundary is smooth, but passing to it discards
+the H1 vertex matching. Neither interpretation follows merely from (21).
+
+Standard results on Calderon projectors are functorial for a supplied smooth
+Dirac operator and its boundary domain. They do not manufacture an
+identification between two source problems. See:
+
+  C. Baer and W. Ballmann, Boundary value problems for elliptic differential
+  operators of first order, arXiv:1101.1196;
+
+  C. Guillarmou, S. Moroianu and J. Park, Bergman and Calderon projectors for
+  Dirac operators, arXiv:1009.3179, for the natural spin Calderon
+  construction used by the earlier source audit.
+
+
+7. THE DIRECT PUSHFORWARD IS NOT THE OLD RANK THREE ANCHOR
+==========================================================
+
+The direct pushforward supplies a useful exclusion without choosing a new
+bundle. Let E=pi_*S_0. Since pi is finite,
+
+  rank E=3,
+  chi(E)=chi(S_0)=deg(S_0)+1-g(C)=1+1-2=0.                (23)
+
+On P1 this gives deg E=-3. The selected even theta characteristic is
+non-effective, so
+
+  H0(P1,E)=H0(C,S_0)=0.                                  (24)
+
+Every Birkhoff-Grothendieck summand therefore has degree at most -1. Their
+sum is -3, hence
+
+  pi_*S_0 isomorphic O(-1) direct-sum O(-1) direct-sum O(-1).              (25)
+
+The original v117/P2 anchor O(-2) direct-sum O(-1)^2 is therefore not the
+direct pushforward of this C3 spin source. An elementary modification at
+z=0 could change (25) to that splitting without choosing one q point, but it
+would be an additional modification at a regular point. No checked original
+source requires it, and it may change the connection by an apparent pole.
+It is not inserted here.
+
+
+8. THE SMALLEST REMAINING PREMISE
+==================================
+
+The actual source arrow would be proved by one of the following two precise
+data sets.
+
+  NORMALIZED OPTION:
+
+    W:H_boundary -> L2(S1)^3,
+    W Dom(B_Sigma)=Dom(B_spin)^3,
+    W B_Sigma W^(-1)=B_spin direct-sum B_spin direct-sum B_spin,
+    W U_Gamma W^(-1)=M_z,                                  (26)
+
+  with W equivariant for c and the marked Q spin lift, together with either
+  an intertwiner of the full one-sided interior Dirac problems and their
+  boundary traces, or an independent proof that W maps the actual harmonic
+  Cauchy data onto the normalized analytic range. A local isometric embedding
+  onto the relevant reducing sector can suffice. Global surjectivity onto all
+  three channels is a stronger sufficient condition, not a necessary one.
+
+  SINGULAR GRAPH OPTION:
+
+    W maps the actual source to a specified six-edge Dirac problem whose
+    vertex relations are the H1 closure of the ambient smooth core in (13),
+    and it intertwines the same seam and symmetry marks. That graph problem
+    must separately be proved self-adjoint and elliptic, and its harmonic
+    Cauchy range must separately be identified.               (27)
+
+A tangential relation in (26) alone does not imply
+
+  W P_C W^(-1)=P_norm.                                      (28)
+
+The Calderon range depends on the full interior operator, not only on its
+adapted tangential operator. Equation (28) follows when the full one-sided
+Dirac problem and boundary trace are intertwined, because W then maps the
+boundary values of harmonic interior solutions. It may also be established
+directly by proving equality of those Cauchy-data ranges.
+
+Standard smooth Calderon functoriality does not apply automatically to the
+singular graph in (27). The H2(D)^3 density theorem in Sections 2 and 3 is a
+theorem about the particular ambient analytic core. It is not a theorem that
+every self-adjoint six-edge vertex condition has that Cauchy range.
+
+No checked original source supplies the strengthened data following (26) or
+the graph theorem in (27). This is now the first missing datum. It is narrower
+than a new field model and stronger than a dimension or winding match.
+
+
+SOURCE ANCHORS
+==============
+
+  * documents/archive--tfpt-45--source_extracts--01_boundary_kernel_source/
+    sections/001-section-primitive-core-and-carrier-interface-handoff.tex,
+    lines 65-110. SHA256
+    7d6e673d99c29d950dc601283cd51c1cc0b113567eeb79c8396fec9c82a02c79.
+
+  * documents/archive--paper-latex--tfpt-theory-fullv21/sections/
+    001-section-introduction-the-problem-of-parameters.tex, lines 220-258.
+    SHA256
+    85bb11511be05385a7cadf6071dbede216b12befeb9d6767bc4460748cbec5d7.
+
+  * experiments/theory-contracts/elliptic-moebius-source-bridge-20261026/
+    TRACE-METRIC-AND-DOMAIN.txt. SHA256
+    fb696ebe6c3e531c0773eab309083dc4407c68011c6a08221abb433bdf39ad45.
+
+  * experiments/theory-contracts/elliptic-moebius-source-bridge-20261026/
+    INDEPENDENT-BOUNDARY-REVIEW.txt. SHA256
+    7fac8804f89364125b2970eed9c937e7eb5dad2edf7253ffa8e9cc25f3d429fc.
+
+  * experiments/theory-contracts/elliptic-moebius-source-bridge-20261026/
+    SOURCE-SELECTED-THETA-SPIN.txt. SHA256
+    cf4478191ccd75d62a2f049a54193541009bed24877df9cbe0ed9f942d07d717.
+
+  * experiments/theory-contracts/elliptic-moebius-source-bridge-20261026/
+    boundary_origin_20261027/originals/ACTUAL-REFERENCE-SPIN-TEST.txt.
+    SHA256
+    df6b3894ee736e3a0d503eb1d90e7b7e4e462af966eb2d6718e82e24516fac72.
+
+
+FINAL SCOPE
+===========
+
+The cubic geometry itself now supplies a canonical three-Hardy closed range
+and the exact branch exponent. It also shows why this L2 fact does not settle
+the source domain: normalization and ambient H1 matching are different
+operator problems. The actual TFPT primitive B_Sigma remains an input with no
+formula tying it to either one. The next proof must construct the marked
+full interior and Cauchy-data intertwiner accompanying (26), an independent
+proof of the actual Cauchy range, or the explicit graph theorem (27).
+Replacing these data by a convenient Dolbeault operator would change the
+source and is not done.

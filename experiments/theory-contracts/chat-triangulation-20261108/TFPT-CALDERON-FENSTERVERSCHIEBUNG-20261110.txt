@@ -1,0 +1,165 @@
+TFPT | Zwei gleich große Fensterverschiebungen am Calderón Schnitt
+10. November 2026, Anschluss an Plan 242.
+
+1. Ergebnis und Geltungsbereich
+
+Der gegebene geometrische Calderón Schnitt liefert eine
+nichtverschwindende Verbindung zwischen beiden Randseiten.
+Für eine gemeinsame Zeitverschiebung der geometrischen
+Halbseiten liefert er exakt keinen Links Rechts Unterschied.
+Auf dem vollständig rekonstruierten admissiblen OS Sektor gilt
+dieselbe Gleichheit für beliebige tatsächliche Halbwortvektoren.
+Die beiden angefragten numerischen Ramond Higgs Werte sind
+unberechnet. Die dokumentierte Implementierung liefert
+weder die beiden markierten Halbwortbilder auf demselben
+physischen Schnitt noch deren gemeinsame Originalintegration.
+
+2. Der Verschiebungstest auf dem vollen physikalischen Sektor
+
+Bezeichne mit r(t) und h(s) die OS Bilder der tatsächlich
+eichkomplettierten Ramond und Higgs Halbwörter auf der
+jeweiligen Seite desselben Schnitts. Die Ramond Seite ist
+bereits reflektiert und adjungiert in der OS Paarung. Der
+Zustand und der Referenznenner werden in beiden Versuchen
+festgehalten. P=P_adm ist der volle Projektor des Papiers
+einschließlich Cauchy, Farbzentrum, Q_Theta und Gap.
+
+Das Originalpapier gibt, unter seinen Rekonstruktionshypothesen,
+einen gemeinsamen selbstadjungierten OS Zeitgenerator H_adm
+auf dem voll zugelassenen Sektor. Falls beide Fensterbewegungen
+die positive Zeittranslation dieses einen Sektors darstellen,
+schreibt T_d=exp(-d H_adm) die Verschiebung. Dann gilt
+
+  X_R(d)=<T_d r(t),h(s)>_OS,
+  X_H(d)=<r(t),T_d h(s)>_OS,
+  X_R(d)-X_H(d)=0.
+
+Hier ist r(t),h(s) in H_OS,adm; eine zusätzliche P Einfügung
+wirkt auf beiden als Identität. Insbesondere kann Q_Theta dort
+keinen Faktor beitragen, weil Q_Theta P=P. Die Gap Auswahl
+entscheidet über die Bilder der Halbwörter, liefert aber auf
+einem behaltenen Bild keinen additiven Zeitgenerator.
+Bei beiden aus gemeinsamen Startvektoren propagierten
+Halbwörtern ist der gemeinsame Wert genau das Laplace
+Integral der gemischten Spektralmaßnahme
+  d mu_RH(E)=<r(0),E_Hadm(dE) h(0)>_OS
+mit dem Faktor exp[-(t+s+d)E]. Diese Maßnahme ist unberechnet.
+Die Gleichheit erzwingt insbesondere keinen Nullwert für die
+einzelnen Antworten. Der Nullblock aus Plan 242 verlangt die
+zusätzlichen unveränderten alten freien Diagonalspektren.
+
+3. Falls eine markierte Naht eine andere Verschiebung trägt
+
+Hat die tatsächlich markierte Quelle zwei Transferkarten
+T_R(t+d,t), T_H(s+d,s) und eine gemeinsame Schnittpaarung S
+mit dem wirklichen P_adm, dann lautet die endliche Differenz
+in einem Chart, der diese Faktorisierung besitzt,
+
+  <r(t),(T_R(t+d,t)^* S - S T_H(s+d,s)) h(s)>.
+
+S ist hier die volle Schnittpaarung im betreffenden Chart,
+keine Gleichsetzung mit dem Einteilchen Calderón Projektor.
+Für eine faserweise Auswertung ist dieselbe gemeinsame
+Integration und dieselbe Referenz hinter beide Terme zu
+setzen. Unabhängige Integrationen der Teilwörter sind nicht
+erlaubt. Diese Formel trennt eine tatsächliche
+Transportdifferenz von einer bloßen Wahl der Orientierung
+der Beschriftung. Eine Differenz ohne nachgewiesenen gleichen
+Transport auf den Außenteilen könnte auch von diesen
+Außenteilen kommen.
+
+Wenn in einem gemeinsamen ambienten Chart die einzige
+Schnitteinfügung ein fester orthogonaler Projektor P und
+der beidseitige unprojizierte Transport derselbe
+selbstadjungierte Operator T ist, reduziert sich die
+Differenz auf [T,P]. Seine beiden Diagonalblöcke relativ
+P und I-P sind exakt null. Der mögliche Filtereffekt
+liest ausschließlich den Übergang zwischen behaltenem und
+verworfenen Raum. Für das leere Wort oder zwei schon
+physische Halbwortbilder fällt er aus. Dies ist eine
+Schnittalgebra, kein berechneter Wert für ein geladenes
+Zwischenwort. Die bloße Definition von P_adm als
+Spektralfilter seines eigenen D_adm^* D_adm identifiziert
+den ambienten Transfer T nicht mit diesem Operator.
+
+4. Der tatsächliche geometrische Originalbeitrag
+
+Auf dem gegebenen homogenen Produktkragen mit
+D=N(partial_r+B), N^*=-N und NB=-BN ist der ursprüngliche
+orthogonale Cauchy Projektor G der Graph von exp(-ell B).
+Die Normal Green Rechnung mit beiden ursprünglichen
+Randspuren liefert dasselbe G. Seine Querkomponente ist
+  G_01=1/(2 cosh(ell B)).
+Jede gemeinsame Funktion von B auf beiden Seiten
+kommutiert mit allen vier Blöcken von G. Auf der
+gemeinsamen Domäne gilt insbesondere exakt
+  exp(-d B) G_01 - G_01 exp(-d B)=0.
+Dies ist eine Aussage für alle ursprünglichen Moden.
+
+Der Rechner verwendet die tatsächlich vorhandene
+gepaarte Quarter Richtung B=+/-1/4 und die ursprüngliche
+Halbbreite ell=2 pi. Für d=1/20 in der geometrischen
+Kragenparametrisierung ist die Querkomponente vor der
+Verschiebung .19926840766919335. Mit der Verschiebung
+auf der linken oder rechten Seite ist sie in beiden
+Fällen .19679305575386005. Die Gleichheit wird exakt
+aus beiden Matrixprodukten geprüft, getrennt von der
+numerischen Ausgabe. Die geometrische Kragenzeit wurde
+nicht als physische OS Zeit eingesetzt.
+
+Auch die nackte orientierte Green Randform liefert
+keinen separaten Beitrag zwischen zwei homogenen
+Cauchy Spuren. Auf den beiden Seiten hat sie
+J_faces=diag(N,-N). Auf dem Graphen hebt sich der
+zweite Term gegen den ersten auf, denn mit U=exp(-ell B)
+folgt aus NB=-BN exakt U^* N U=N auf der gemeinsamen
+Graphdomäne. Daher gilt G J_faces G=0 als Randform.
+Die positive OS Paarung ist eine andere Paarung.
+
+Die alte reelle Energievariation derselben orthogonalen
+Cauchy Projektion ändert die Randrichtung tatsächlich.
+Auf dem genannten Paar beträgt die Norm der Ableitung
+1.8343046713345488. Ihr direkter Matrixeintrag zwischen
+bereits behaltenen Cauchy Spuren ist exakt null, da
+G G' G=0 aus G²=G folgt. Der Prüfer kontrolliert dies
+mit der tatsächlichen alten Ableitung. Diese
+Energievariation ist von den Fensterbewegungen zu trennen.
+
+5. Tatsächlicher Originalaufruf und fehlender Eingang
+
+Der installierte Originaladapter wurde mit den zwei
+Bezeichnungen für die Versuche auf derselben unveränderten
+Domain erreicht. Er nimmt bislang keine verschobenen
+Ramond/Higgs Halbwörter als ausführbare Eingaben entgegen.
+In beiden Aufrufen fehlt
+evaluate_original_full_blocked_endpoint_source. Auf dem
+Faserweg fehlt original_blocked_fiber_packet. Die Domain
+hat whole_source_bundle=null. Null ist hier fehlender
+Eingang und kein ausgewerteter physischer Zahlenwert.
+Die Zahl physisch ausgewerteter verschobener Wörter ist null.
+
+Die kleinste fehlende Operation ist die Darstellung des
+vollständigen q Halbworts und des abgeschlossenen Higgs
+Halbworts auf derselben ursprünglichen Cauchy/OS Domain,
+mit dem wirklichen Q_Theta, Gap und gebundener Referenz.
+Der Reader muss dort entweder den gemischten Spektralblock
+oder die beiden unterschiedlich verschobenen Paarungen
+mit gleichen Diagonalen liefern. Bei gemeinsamer physischer
+Translation misst die Paarung nur den gemeinsamen
+Spektralüberlapp. Bei einer ausdrücklich markierten Naht
+muss der gemeinsame Originalübergang den verbleibenden
+Transportterm liefern. R113, der physische Mischwert und
+F1 bleiben unberechnet.
+
+Originale und Reproduktion
+- QFT2, Closure theorems from the admissibility complex,
+  voller Projektor und Calderón Upgrade der APS Domain.
+- QFT8, Tailored OS/CAR reconstruction, reflektierte
+  Paarung und selbstadjungierter physischer Zeitgenerator.
+- R042/R043 ORIGINAL-ENERGY-SOURCE-PROOF.txt und
+  NORMAL-GREEN-TO-CALDERON-TRACE-REVIEW.txt, originale
+  beiden Randspuren, J_faces und orthogonaler Projektor.
+- Booss-Bavnbek, Lesch und Zhu, The Calderón Projection,
+  arXiv:0803.4160, Poisson und Cauchy Randprojektion.
+- check_tfpt_calderon_shift_balance_20261110.py <Repo>,
+  tfpt-calderon-shift-balance-results-20261110.json.

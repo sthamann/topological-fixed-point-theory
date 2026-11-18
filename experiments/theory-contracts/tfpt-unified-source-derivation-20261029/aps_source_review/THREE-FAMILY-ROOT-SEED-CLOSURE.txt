@@ -1,0 +1,193 @@
+THREE FAMILY C/X ROOT SEED CLOSES TO D8, NOT E8
+Exact restricted-source addendum, 30 October 2026.
+No Atlas mutation and no change to earlier reports.
+
+
+VERDICT
+
+Restrict the INITIAL source seed to
+
+  C_a and X_i,a,  a in F={1,2,3}, i=1,...,5,
+
+and include their compact adjoint roots. This gives 18 positive plus 18
+opposite roots. Its exact recursive Chevalley closure is
+
+  36 -> 92 -> 112 roots,
+
+has rank eight, and is bracket closed. It is the D8 root subsystem of E8,
+not the full 240-root E8 system.
+
+The restricted seed never generates any of the thirty missing positive
+10 tensor F spinor roots, nor any of their thirty adjoints. Their closure
+depth is therefore infinite or unreachable, not two. Depth two applied
+only when the omitted fourth family was present in the initial C4 plus X20
+seed.
+
+Of the sixty roots in the full (10,6) target, exactly thirty occur at
+depth one. The complementary thirty are unreachable. Thus the three
+family seed does not close the carrier factor two found in
+CARRIER-HODGE-SPAN-CORRECTION.txt.
+
+
+1. EXACT SEED AND CLOSURE
+
+The positive seed consists of
+
+  three C roots,
+  fifteen X roots,
+
+with family labels 1,2,3. Adding their compact opposites gives 36 roots.
+At the first recursive bracket step 56 new roots appear. At the second
+step 20 further roots appear. A third step adds none:
+
+  depth 0: 36,
+  depth 1: 56 new, 92 total,
+  depth 2: 20 new, 112 total,
+  depth 3: 0 new.                                          (1)
+
+The 112 roots span rank eight and are closed under every actual Chevalley
+bracket. A simply laced full-rank closed subsystem with this root count is
+the actual D8 subsystem. Its complement in E8 has 128 roots.
+
+The identification is also checked in an explicit Weyl frame. For the
+regular chamber vector
+
+  (1,2,4,8,16,32,64,128)
+
+the eight simple roots are
+
+  (-2, 2, 0, 0, 0, 0, 0, 0),
+  ( 0,-2, 2, 0, 0, 0, 0, 0),
+  ( 0, 0,-2, 2, 0, 0, 0, 0),
+  ( 0, 0, 0,-2, 2, 0, 0, 0),
+  ( 0, 0, 0, 0,-2, 2, 0, 0),
+  ( 0, 0, 0, 0, 0,-2, 2, 0),
+  ( 1,-1,-1,-1,-1,-1,-1, 1),
+  ( 1, 1, 1, 1, 1,-1,-1, 1).                             (1b)
+
+Their Cartan determinant is four. Their Dynkin graph is a D8 chain with
+one trivalent node and degree sequence
+
+  1,1,1,2,2,2,2,3.
+
+This is therefore a nonstandard E8 coordinate frame for the standard D8
+root subsystem, not an E7 or E6 closure.
+
+The twenty depth-two roots have a precise type. They are the ten omitted
+three-minus Spin(10) weights with the excluded O family label, together
+with their ten compact adjoints:
+
+  depth-two sector = 10 tensor O plus dagger.               (1a)
+
+Thus the recursion does generate a new carrier ten, but on the excluded
+family line. It does not move that ten onto any of the three retained F
+labels.
+
+
+2. MINIMAL ESCAPE FROM D8 BACK TO E8
+
+There are six omitted positive currents on family label 0:
+
+  C_0, X_0,0, X_1,0, X_2,0, X_3,0, X_4,0.
+
+Add any ONE of these positive root spaces to the closed D8 algebra. Exact
+recursive closure gives
+
+  113 -> 141 -> 211 -> 239 -> 240 roots.                   (2)
+
+If the compact source convention adds that current together with its
+adjoint, the shorter closure is
+
+  114 -> 170 -> 240 roots.                                 (3)
+
+All six candidates give the same counts. Since the unextended seed stops
+at 112, one omitted positive current is minimal in the complex root-space
+sense, and one root-adjoint pair is minimal in the compact source sense.
+
+Equations (2) and (3) do not make that omitted current a word in the
+three-family seed. They identify the smallest additional current-algebra
+input that leaves the D8 frame. A geometric source must still supply or
+access it.
+
+
+3. THE MISSING SPINOR COMPONENTS REMAIN OUTSIDE
+
+For each retained family label, the odd Spin(10) half-spinor has
+
+  16=1+5+10
+
+weights. C and X provide the first six. The ten three-minus components
+are absent. Across the three family labels this is thirty positive roots,
+plus thirty compact adjoints.
+
+The exact recursive closure contains none of these sixty roots. Hence
+
+  depth(missing 10 tensor F)=unreachable.                  (4)
+
+This differs materially from the full four-family seed. With C4 plus X20
+and all adjoints, the same forty positive missing components over four
+family labels occur at closure depth two and the closure reaches E8. The
+omitted family label is therefore algebraically essential for that
+generation route, while section 2 shows that one current pair from it is
+already sufficient.
+
+
+4. ONLY HALF OF THE (10,6) TARGET IS REACHED
+
+The full E8 root realization contains sixty roots of type (10,6), namely
+one nonzero D5 vector coordinate and one nonzero A3 vector coordinate.
+The restricted seed generates thirty of them. Every generated target root
+appears already at depth one through a direct mixed bracket such as
+
+  [C_1,X_i,2],  [C_2,X_i,3],  [C_3,X_i,1]
+
+and their ordered or adjoint variants. The remaining thirty target roots
+are absent from the final D8 subsystem. Thus
+
+  target depths: 30 at depth one, 30 unreachable.          (5)
+
+The result JSON contains exact nested bracket certificates for three
+generated target roots and two additional depth-two D8 roots. Every leaf
+is one of the 36 stated seed roots, and every internal coefficient is read
+from the actual Chevalley bracket table. The depth-two examples explicitly
+exhibit the 10 tensor O sector in (1a).
+
+
+5. PRECISE SCOPE
+
+This is a zero-mode current-algebra closure. It proves that the restricted
+three-family C/X current seed does not manufacture its missing carrier
+components as Lie words.
+
+It does not contradict the following separately proved statements:
+
+  * the family Hodge reality is exact on the full family six;
+  * the full four-family C4 plus X20 source and its adjoints generate E8;
+  * an actually supplied complete 16 tensor F input brackets onto the full
+    sixty-dimensional compact real (10,6).
+
+Those statements use a larger input than the seed tested here. They do not
+show that the geometric q/p source accesses that larger input.
+
+No affine descendant grade, current mode, state preparation, physical
+time, finite Phi consumer or Standard Model Higgs identification follows
+from (1) through (5). The remaining source question is still an explicit
+arrow from the geometric three-family fields into the additional current
+components. The restricted Lie closure itself does not provide it.
+
+
+REPRODUCTION
+
+  python3 aps_source_review/check_three_family_root_seed.py \
+    aps_source_review/three-family-root-seed-results.json
+
+The normal and optimized Python runs produce byte-identical JSON.
+
+
+FILES
+
+  aps_source_review/check_three_family_root_seed.py
+  aps_source_review/three-family-root-seed-results.json
+  aps_source_review/ROOT-CARRIER-HODGE-SPAN-CHECK.json
+  tfpt_explorer/current_block_geometry.py
+

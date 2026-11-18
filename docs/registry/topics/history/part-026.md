@@ -4,6 +4,36 @@
 
 Exact ledger statuses remain at the linked original rows and in registry.json. Citations are source links, not proof certification.
 
+## Warum ein Logarithmus noch keine Sekunde ist
+
+[experiments/theory-contracts/universalraum-v16-integrated-20260915/main-v1.6/chapters/06_zeit_echo.tex:58-62](../../../../experiments/theory-contracts/universalraum-v16-integrated-20260915/main-v1.6/chapters/06_zeit_echo.tex#L58) · `section:d9cb81021e9bdd93448f` · section
+
+Aus [formula in source] folgt [formula in source] . Die historischen Größen [formula in source] und [formula in source] beschreiben deshalb sechsfach wiederholte Faktoren [formula in source] und [formula in source] . Eine physikalische Rate ist erst [formula in source] für einen festgelegten Schritt [formula in source] .
+
+## Flavor und Massenschemata
+
+[experiments/theory-contracts/universalraum-v16-integrated-20260915/main-v1.6/chapters/09_physik.tex:125-150](../../../../experiments/theory-contracts/universalraum-v16-integrated-20260915/main-v1.6/chapters/09_physik.tex#L125) · `section:974dd665a1d27f23702d` · section
+
+Der historische Quellmassenansatz lautet Die sektorabhängigen [formula in source] sind nicht automatisch eins. Die Restklassenmatrix mit Zeilen [formula in source] , [formula in source] , [formula in source] hat Determinante acht und charakteristisches Polynom [formula in source] . Das sind interne Daten, keine direkte Massenmessung.
+
+## Die übrigen Zweige bleiben Teil des Bildes
+
+[experiments/theory-contracts/universalraum-v16-integrated-20260915/main-v1.6/chapters/09_physik.tex:173-188](../../../../experiments/theory-contracts/universalraum-v16-integrated-20260915/main-v1.6/chapters/09_physik.tex#L173) · `section:8eab23ee8b92a00b03ff` · section
+
+L41mmL46mmL63mm Zweig& Historischer Quellwert& Offener Anteil\\ Starke CP-Phase& [formula in source] im Pfaffian-Zweig&Positives physisches Maß und nichtperturbativer Transfer.\\ Elektrische Dipolmomente&Führend null oder stark unterdrückt&Keine pauschale Null sämtlicher SM-Beiträge.\\ Axion& [formula in source] GeV; [formula in source] eV&Externe Planckskala und QCD-Massenrelation.\\ Neutrinomassen&Summe um [formula
+
+## Verwandte Ideen und mögliche Folgen
+
+[experiments/theory-contracts/universalraum-v16-integrated-20260915/main-v1.6/chapters/10_ausblick.tex:1-4](../../../../experiments/theory-contracts/universalraum-v16-integrated-20260915/main-v1.6/chapters/10_ausblick.tex#L1) · `section:e8f690eae2dbba6f5a74` · chapter
+
+Historischer Forschungsauftrag v1.4 Der folgende Ausblick bleibt als Grundrahmen erhalten. Die sechs inzwischen weiterbearbeiteten Fragen und die neuesten Ergebnisse stehen gesammelt in Kapitel
+
+## Zuse und Wolfram: eine Verwandtschaft ohne Rangordnung
+
+[experiments/theory-contracts/universalraum-v16-integrated-20260915/main-v1.6/chapters/10_ausblick.tex:5-18](../../../../experiments/theory-contracts/universalraum-v16-integrated-20260915/main-v1.6/chapters/10_ausblick.tex#L5) · `section:10bdb8ed130d9a5dbe47` · section
+
+Der eingefügte Gesprächstext vergleicht den Universalraum mit Konrad Zuse und Stephen Wolfram. Zuses Werk heißt Rechnender Raum, nicht „denkender Raum“. In seinem Buch von 1969 untersucht er digitale Beschreibungen physikalischer Felder und Teilchen und die Rolle von Automaten. Das ist ein historischer Bezugspunkt für die Vorstellung von Physik als regelgeleitetem Prozess. https://link.springer.com/book/10.1007/978-3
+
 ## Was noch offen ist und wie es weitergehen sollte
 
 [experiments/theory-contracts/universalraum-v16-integrated-20260915/main-v1.6/chapters/10_ausblick.tex:40-44](../../../../experiments/theory-contracts/universalraum-v16-integrated-20260915/main-v1.6/chapters/10_ausblick.tex#L40) · `section:c5f4b4e6c8bd108a0511` · chapter
@@ -46,7 +76,13 @@ Explicit source references:
 
 Navigation joins (both sources name the same Python identifier; statement equivalence is not inferred):
 
-- [(* ---- (v16/v21) solar angle from the A3 glue-norm q(A3) = 3/4 ---- *) qA3 = 3/4; qD5 = 5/4; checkExact["E8 glue norm q(D5) + q(A3) = 2", qA3 + qD5 == 2]; checkExact["eps leading q(A3)/(6pi) = 1/(8pi) = c3", Simplify[qA3/(6 Pi) - c3] == 0]; s12 = 1/3 - (2/3) qA3 phi0; checkExact["sin^2 theta12 = 1/3 - phi0/2 (exact)", Simplify[s12 - (1/3 - phi0/2)] == 0]; (* ---- (v23) anchor generator a=(1,1,2) ---- *)](../../../../verification/wolfram/tfpt_readouts.wl#L88)
+- [(* ---- (v16/v21) solar angle from the A3 glue-norm q(A3) = 3/4 ---- *)](../../../../verification/wolfram/tfpt_readouts.wl#L89)
+
+## Existing producers and their actual composition
+
+[tex-artefacts/toe_field_integration_20261105.tex:20-36](../../../../tex-artefacts/toe_field_integration_20261105.tex#L20) · `section:aeb101993c6293200085` · subsection
+
+The original C6 whole-word expansion already has exact convolution over all cut positions. Its Green and inverse-square-root amplitudes retain their absolute scale; the calculation at the three original cusps has exact rational remainder bounds below [formula in source] . The existing three-state family transfer likewise gives its complete spectral, stationary and history weights. These are different typed producers.
 
 ## Research consolidation: source fields, dynamics and the remaining bridge (2026-09-09)
 
@@ -97,6 +133,28 @@ Use the sigma- [formula in source] basis [formula in source] , [formula in sourc
 Explicit source references:
 
 - [verification/v1022_telb_round3_certificates.py](../../../../verification/v1022_telb_round3_certificates.py#L1) · explicit_script_identifier
+
+## Dated continuation: the actual residual time form (R111)
+
+[tex-artefacts/toe_source_completion_20261103.tex:431-489](../../../../tex-artefacts/toe_source_completion_20261103.tex#L431) · `section:0f8ee3912de706f173b8` · subsection
+
+The literal original positive-parent clause leaves its residual [formula in source] unspecified. Once the parent and the actual reducing physical/source map have been supplied, the original annihilating admissibility penalties vanish on their admitted range. The remaining binding equation is the whole source-time form minus the represented parent form. If one realization of the printed parent clause exists, its state
+
+## Source and reproducibility route
+
+[tex-artefacts/toe_source_completion_20261103.tex:645-702](../../../../tex-artefacts/toe_source_completion_20261103.tex#L645) · `section:5a9ea639ada21fb1a3c4` · subsection
+
+The dated report labels resolve through docs/research/fundamental-plan/RESULTS.md and the synthesis docs/research/fundamental-plan/CONSOLIDATION-R110-20261103.md. The main proof owners are: A and B: experiments/theory-contracts/puncture-metric-joint-completion-20261102/PROOF.txt and experiments/theory-contracts/joint-source-clock-field-closure-20261102/PROOF.txt. C: experiments/theory-contracts/original-paper-source-
+
+Explicit source references:
+
+- [verification/v1027_signed_det_car_wall.py](../../../../verification/v1027_signed_det_car_wall.py#L1) · explicit_file_citation
+- [verification/v1002_spin10_mirror_projector.py](../../../../verification/v1002_spin10_mirror_projector.py#L1) · explicit_file_citation
+- [verification/v252_full_finite_triple.py](../../../../verification/v252_full_finite_triple.py#L1) · explicit_file_citation
+
+Navigation joins (both sources name the same Python identifier; statement equivalence is not inferred):
+
+- [(* v1027: exact signed-wall determinant and unsquared low branch. *)](../../../../verification/wolfram/tfpt_round4.wl#L29)
 
 ## Scope and evidence, 12 September 2026.
 

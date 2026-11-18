@@ -1,0 +1,642 @@
+HISTORISCHE WIRKUNGS UND QUELLENKETTE VOM KREISOPERATOR ZU S_adm
+=================================================================
+
+Datum: 2026-10-25
+Atlas Stand: 83a57ce00f4418709c838faa
+Status: Originalquellenaudit und exakter Operatortest. Keine Atlas, Index,
+Ledger oder Paper Änderung.
+
+ENTSCHEIDUNG
+------------
+
+Die geprüften Originale enthalten keinen durchgehenden Aufbau
+
+  (B_alpha,u) -> S_adm[varphi] -> exp(W_k[J]) -> volle Schwingermomente.
+
+Sie enthalten drei jeweils echte, aber mathematisch verschiedene Ebenen:
+
+1. fullv21 gibt den konkreten eindimensionalen Kreisoperator und den
+   Clutching Operator an. Nach der notwendigen Orientierungskorrektur sind
+
+     B_alpha=-i partial_theta,             u=M_z,
+     Dom(B_alpha)={f in H1:f(2pi)=exp(2pi i alpha)f(0)}.
+
+2. v31 und v32 geben einen relativen Spektraltrace S_prim beziehungsweise
+   S_rel an. Dieser ist ein Funktional des Spektraldatums und später seiner
+   bosonischen inneren Fluktuationen. Er ist noch kein gemeinsames graduiertes
+   Feldmaß und keine offene Fermionquelle.
+
+3. v42 und die tfpt45 Extraktion geben das formale Elternintegral
+
+     exp(W_k[J]) = integral Dvarphi exp(
+       -S_adm[varphi] - 1/2 <varphi,R_k varphi> + <J,varphi>).
+
+   Die Supertraces erlauben eine kollektive graduierte Lesart. S_adm, sein
+   Feldraum und das gemeinsame Maß werden an dieser Stelle jedoch eingesetzt,
+   nicht aus dem alten Kreisoperator oder dem primitiven Spektraltrace
+   konstruiert.
+
+Der kleinste direkte Identifikationstest entscheidet die Lücke bereits:
+
+* B_alpha kann auf dem positiv reellen bosonischen Gaußzweig nicht der
+  Hessian einer positiven Maßquelle sein, weil sein Spektrum
+  {n+alpha:n in Z} nach unten unbeschränkt ist.
+
+* |B_alpha| ist positiv, aber nicht mehr der Generator der ursprünglichen
+  Ward Wirkung. Sein Kommutator mit u ist modenabhängig.
+
+* B_alpha kann typgerecht als fermionischer quadratischer Block auftreten.
+  Dafür muss das Original aber den Kreis Einteilchenraum in den graduierten
+  Feldraum einbetten, Grassmannfelder und deren Quellen festlegen und dieselbe
+  Reflexion und Zeit angeben. Genau diese Abbildung fehlt.
+
+Die späteren relativen Determinanten schließen die Lücke nicht. Der in v42
+geschriebene Ausdruck det_zeta,Padm(D_xi^2+mu^2) enthält weder die alte
+Polarisation noch das Paar (B_alpha,u); D_xi wird in seinem Quellmodul auch
+nicht definiert. Dieser quadrierte Determinant ist für sich vorzeichenblind.
+Der vollständige Masterausdruck führt daneben ausdrücklich
+(1/2)eta_Sigma,Padm(D_xi) als separates Spektralasymmetriedatum. Dieses kann
+D_xi von -D_xi unterscheiden, liefert aber ohne definiertes D_xi und ohne
+Modenabbildung noch keinen individuellen Polarisationsprojektor oder CAR Kern.
+
+Damit ist der erste unabhängige Input präzise lokalisiert: eine
+zustandsverträgliche graduierte Feldabbildung vom alten Kreisraum in den
+fermionischen Block des vollständigen Originalfunktionals. Eine neue frei
+parametrisierte Wirkung ist dafür weder nötig noch durch die Quellen erlaubt.
+
+
+1. DER ALTE KREISOPERATOR IST EIN ECHTER EINTEILCHENKERN
+--------------------------------------------------------
+
+Original:
+
+  paper-source:1fe2ddfabc74ac0e94a4686d
+  documents/archive--paper-latex--tfpt-theory-fullv21/sections/
+  001-section-introduction-the-problem-of-parameters.tex:198-251
+  SHA256 85bb11511be05385a7cadf6071dbede216b12befeb9d6767bc4460748cbec5d7
+
+Die Quelle schreibt D_Gamma=i partial_theta, U_Gamma(theta)=exp(i theta) und
+lambda_n(phi)=n+phi/(2pi). Die gedruckte Eigenwertorientierung gehört zu
+
+  B_alpha=-D_Gamma=-i partial_theta,
+  psi_n(theta)=exp(i(n+alpha)theta),       0<alpha<1.
+
+Auf der verdrehten H1 Domain ist B_alpha selbstadjungiert und u=M_z unitär.
+Direkt auf dem gemeinsamen invarianten Kern gilt
+
+  B_alpha u = u(B_alpha+1),
+  [B_alpha,u]=u,
+  u* B_alpha u=B_alpha+1,
+  u B_alpha u*=B_alpha-1.                 (1)
+
+Die Adjungierten stimmen:
+
+  [B_alpha,u]*=[u*,B_alpha]=u*.
+
+Mit dem gedruckten D_Gamma statt B_alpha kehren Ward Relation und
+Spektralfluss ihr Vorzeichen um. Die Korrektur ist deshalb mathematisch
+notwendig und keine Konventionskosmetik.
+
+Der Winkel theta ist in dieser Quelle die Nahtkreiskoordinate. Der Twist phi
+parametrisiert Randdomains. Keiner der beiden Parameter wird dort als die
+euklidische OS Zeit des späteren Feldfunktionals definiert.
+
+
+2. DER EXAKTE POLARISATIONSWECHSEL UND SEINE GRENZE
+---------------------------------------------------
+
+Setze auf demselben Kreisraum
+
+  C:=P_-:=1_(-infinity,0)(B_alpha),
+  Pi:=|psi_0><psi_0|.
+
+Da P_- auf psi_n mit n<=-1 projiziert, folgt aus u psi_n=psi_(n+1) exakt
+
+  u C u*=C+Pi,                            (2)
+  rank(uCu*-C)=1.
+
+Das ist die stärkste positive Quellenbrücke, die schon aus den alten Daten
+folgt. In einer CAR Quantisierung wären C und uCu* zwei quasifreie
+Polarisationen, deren Kovarianzen sich genau um die erste Kreislinie
+unterscheiden. Weil [C,u] endlichen Rang hat, ist der Wechsel im zugehörigen
+Fock Darstellungsrahmen implementierbar; relativ zum C Vakuum ist die neue
+Linie die von psi_0 erzeugte Einteilchenanregung, bis auf Phase.
+
+Diese Aussage braucht keinen Wärme Grenzwert und wählt keinen freien Vektor:
+Pi ist durch B_alpha und u festgelegt. Sie ist aber noch keine Aussage über
+das Originalfunktional Z_adm. In keinem geprüften Original steht
+
+  C=P_-(B_alpha) als Fermionkovarianz von Z_adm,
+  uCu*=C+Pi als relativer Quellzustand,
+  oder eine Fock Abbildung dieses Kreisraums in den späteren Feldraum.
+
+Die v42 Polarisation iC=2P_C-1 ist der Calderon Projektor des einseitigen
+Randproblems. Die Originale geben keinen unitären Intertwiner an, der P_C mit
+P_-(B_alpha) oder P_+(B_alpha) identifiziert. Deshalb ist (2) ein exakter
+Kandidat für den fehlenden Anschluss, aber kein bereits vorhandener
+Originalzustand.
+
+
+3. WARUM DER POSITIV REELLE BOSONISCHE HESSIAN TEST SOFORT ABBRICHT
+-------------------------------------------------------------------
+
+Für einen reellen bosonischen Gaußblock
+
+  S_2[phi]=1/2 <phi,K phi>
+
+muss K nach Eichreduktion positiv sein, damit das Gewicht exp(-S_2) eine
+positive Gaußquelle definiert. B_alpha hat unendlich viele negative
+Eigenwerte. Somit kann auf diesem positiv reellen Gaußzweig die Identität
+
+  S_adm^(2)=B_alpha
+
+auf einem bosonischen Block nicht gelten. Diese Aussage ist kein Ausschluss
+komplexer Konturen oder anders definierter bosonischer Funktionale.
+
+Die scheinbar naheliegende Reparatur K=|B_alpha| ändert die Wirkung. Auf
+psi_n gilt
+
+  [|B_alpha|,u]psi_n
+    =(|n+1+alpha|-|n+alpha|)psi_(n+1).     (3)
+
+Der Koeffizient ist +1 für n>=0, -1 für n<=-2 und 2alpha-1 für n=-1.
+Er ist also nicht konstant. Der absolute Operator verliert sowohl die
+orientierte Ward Relation (1) als auch die Unterscheidung der beiden
+Quarterholonomien.
+
+Ein fermionischer Gaußblock barpsi B_alpha psi hat diese
+Positivitätsobstruktion nicht. Er verlangt aber ein Berezinmaß, eine
+Quellenordnung, eine Polarisation und eine gemeinsame Zeitreflexion. Das ist
+genau der zusätzliche Quelltyp, den die späteren Papers benennen, aber nicht
+aus dem Kreisoperator aufbauen.
+
+
+4. V31 UND V32: SPEKTRALAKTION, NICHT VOLLES FELDMASS
+----------------------------------------------------
+
+4.1 Primitive Wirkung
+
+  paper-source:12323340247079857eb23f60
+  documents/archive--paper-latex--tfpt-31/sections/
+  002-subsection-primitive-relative-spectral-dynamics.tex:1-129
+  SHA256 6d8813b95a1ef4d82ee9cd48a25efff3f9c20066a06b85ad121bc26e5dbaae77
+
+v31 definiert D_ref und D_rel aus einem bereits gegebenen Spektraldatum und
+setzt
+
+  S_prim[chi_seed]
+    =Tr f(D_rel/chi_seed)-Tr f(D_ref/chi_seed)
+     +(i pi/2) Delta eta_Sigma.            (4)
+
+Die Bernstein Darstellung betrifft eine positive Superposition von
+Heatkerneln. Der Text sagt ausdrücklich, dass Gaugefixierung, Geister,
+bosonische Fluktuationen und das admissible Netz erst später eingeführt
+werden. Der Lorentz Hamiltonian entsteht ebenfalls erst nach zusätzlichen
+Closure Hypothesen.
+
+Auch das Vorzeichen des Maßes verhindert eine stillschweigende Gleichsetzung.
+Der Heatkernelteil von (4) ist reell, während
+
+  (i pi/2) Delta eta_Sigma
+
+im Allgemeinen rein imaginär ist. Das Gewicht exp(-S_prim) ist daher ohne
+eine getrennte Phasen oder Determinantensektorregel kein positives
+Boltzmanngewicht. Das spätere geometrische Maß (8) verwendet nur
+Tr f_star(D_Vn^2/Lambda^2) und lässt den eta Term aus. Eine Identität
+S_adm=S_prim müsste also zusätzlich erklären, wie diese Phase in der
+gemeinsamen Quelle behandelt wird.
+
+4.2 Feldabhängiger bosonischer Ausbau
+
+  documents/archive--paper-latex--tfpt-31/sections/
+  007-subsection-occupancy-and-boundary-to-bulk-bridge.tex:45-128
+  SHA256 9c441d14de6a6c9586a4d2b077b160a4c5ce020d82243ff832300ff9554e6397
+
+Hier wird nach einer gewählten geometrischen Realisierung
+
+  S_rel[sigma,D]
+    =Tr f((D_sigma,geo+B_rel)/Lambda)
+     -Tr f(D_ref/Lambda)+(i pi/2)Delta eta_Sigma          (5)
+
+geschrieben. Der geometrische Dirac Anker und seine inneren Fluktuationen
+erzeugen die bosonische lokale Expansion. Die Quelle identifiziert weder
+B_rel noch einen Hessian von (5) mit dem alten B_alpha.
+
+v32 bewahrt dieselbe Struktur:
+
+  paper-source:e52f90f8904893bb361eeba3
+  documents/archive--paper-latex--tfpt-32/sections/
+  001-section-reading-guide-and-claim-map.tex:320-375
+  SHA256 86ba822a87b49af6e72df7a188da7e988b1b587782ccb68445b281805ed4dc26
+
+  documents/archive--paper-latex--tfpt-32/sections/
+  007-subsection-occupancy-and-boundary-to-bulk-bridge.tex:32-120
+  SHA256 ee0f3ecd2776f594d9c0cc4ac5c9acae8835b29ae1254414431b234efd4d0e76
+
+Der entscheidende Typunterschied lautet daher:
+
+  Spektraltrace einer Operatorfamilie != Feldfunktional auf einem
+  deklarierten graduierten Konfigurationsraum.
+
+Erst eine festgelegte Abbildung varphi -> D(varphi), ein Grundmaß und die
+Fermionquantisierung machen aus (4) oder (5) eine Quelle. Diese Daten stehen
+in den genannten Stellen nicht.
+
+
+5. V31 QUOTIENT UND CAR KERN BLEIBEN EINGABE
+--------------------------------------------
+
+  paper-source:c108d5aa4300090790075793
+  documents/archive--paper-latex--tfpt-31/sections/
+  011-subsection-transport-side-ingredients-for-the-strong-cp-.tex:232-274
+  SHA256 67f45f9072363128377e9e48735d24fb1748e504b57c0ab44dc136454e1ed144
+
+  documents/archive--paper-latex--tfpt-31/sections/
+  016-subsection-texorpdfstring-e-8-e8-as-downstream-scale-gra.tex:339-368
+  SHA256 b19c7b586864f8ab86013296fb7e07fb2574958fb607d8263dcb56dcf305df46
+
+Diese Stellen definieren
+
+  Z_rel[J,eta,bareta]
+    =Z_adm[J,eta,bareta]/Z_ref[0,0,0].     (6)
+
+Der Nenner ist ein fester Normalisator. Die bosonische RP und der
+fermionische CAR Kern werden auf demselben admissiblen Sektor vorausgesetzt.
+Es gibt dort keine Formel für Z_adm und keine Identifikation seines CAR Kerns
+mit C=P_-(B_alpha). Die Schreibweise (6) ist deshalb eine echte gemeinsame
+Quellensignatur, aber noch kein Aufbau dieser Quelle.
+
+
+6. V42: OPERATIVER SEED SETZT ZUSTAND UND ZEIT BEREITS VORAUS
+-------------------------------------------------------------
+
+  paper-source:df15252a0b6d7f2018e3de7e
+  documents/archive--paper-latex--tfpt-42/sections/
+  026-section-intrinsic-closed-branch-and-canonical-rigid-obje.tex:14-91
+  SHA256 bc28013f261028c560aea6c2fea0dffba47b0a6b95e226afb37b90738fda6f9a
+
+Der operative Seed ist
+
+  S_op=(A_loc,tau_t,Theta,omega,[u_Sigma],D_coll).        (7)
+
+Er enthält das quasilokale Netz, die Zeitwirkung, Reflexion und den
+reflexionspositiven clusternden Zustand bereits als Eingaben. Erst daraus
+sollen der einseitige OS Hilbertraum und B_Sigma gewonnen werden.
+
+Die Richtung dieser Abbildung ist also
+
+  voller Zustand und Zeit -> B_Sigma,
+
+nicht
+
+  alter Kreisoperator -> voller Zustand und Zeit.
+
+Eine Ableitung von Z_adm aus B_alpha über (7) wäre zirkulär, weil (7) genau
+die gesuchten Zustands und Zeitdaten schon enthält.
+
+
+7. V42: DAS GEOMETRISCHE MASS IST NUR EIN MARGINAL
+--------------------------------------------------
+
+  paper-source:3a00e129e3b449e34d82560d
+  documents/archive--paper-latex--tfpt-42/sections/
+  016-section-closure-architecture-b-yukawas-masses-flavor-had.tex:32-150
+  SHA256 87eb0d32b6b0794efc2e27127e8f09839161b97b478c03dbd36557fcad08f729
+
+Nach einem angenommenen positiven RG Kern wird ein fixes Bernstein Profil
+f_star gewählt. Darauf definiert der Text endliche geometrische Maße
+
+  dmu_n proportional
+    exp(-Tr f_star(D_Vn^2/Lambda^2)) dnu_Vn               (8)
+
+auf BRST reduzierten geometrischen Konfigurationsräumen.
+
+Das ist die konkreteste Maßform der geprüften Paper. Sie genügt aber nicht
+für die gemeinsame Quelle:
+
+* dnu_Vn wird nicht aus dem alten Kreisoperator definiert;
+* das Maß lebt auf dem geometrischen, also bosonischen Konfigurationsraum;
+* offene eta und bareta Ableitungen sowie der Kreis CAR Kern fehlen;
+* die behauptete Reflexionspositivität wird aus einer früheren admissiblen
+  OS Struktur geerbt, statt für das gemeinsame gekoppelte Maß aus (8)
+  bewiesen zu werden.
+
+Somit ist (8) ein bosonisches Marginal. Es ist nicht das in (6) benötigte
+volle Z_adm. Diese Aussage betrifft das even profile Maß (8), das den eta Term
+nicht enthält. Sie behauptet nicht, der spätere vollständige Masterausdruck
+(11) lasse die separat geschriebene eta Spektralasymmetrie weg.
+
+
+8. V42 UND TFPT45: S_adm WIRD IN DAS ELTERNINTEGRAL EINGESETZT
+-------------------------------------------------------------
+
+  paper-source:dbb72694526d411ae94e9353
+  documents/archive--paper-latex--tfpt-42/sections/
+  035-subsection-renormalized-physical-and-scheme-readout-laye.tex:1-67,115-145
+  SHA256 2a32bc13e10e2f2c7f7f42890f2065816d3c0289f1b71d23a4797b1bc10ade81
+
+  paper-source:f588a78cad85dd5237213db3
+  documents/archive--tfpt-45--source_extracts--04_qft_source/sections/
+  007-subsection-renormalized-physical-and-scheme-readout-laye.tex:1-145
+  SHA256 9c1c587cbd61fc4034649d778d16f1ee0e8c1e1189885babb3d8148a6fe72d7c
+
+Der Abschnitt definiert exp(W_k[J]), die Legendre Transformation und den
+Propagator
+
+  G_(k,phi)=(S_adm^(2)[phi]+R_k)^(-1).                   (9)
+
+Die STr Schreibweise an den Zeilen 37 und 60 bis 65 ist mit einer
+kollektiven graduierten Superfeldnotation verträglich. Deshalb darf aus dem
+Fehlen getrennter eta Symbole kein bosonischer Ausschluss gefolgert werden.
+
+Die gleichzeitig geschriebene Definition
+
+  Gamma_k[phi]=sup_J {<J,phi>-W_k[J]}-1/2<phi,R_k phi>
+
+ist wörtlich nur auf geordneten bosonischen Quellen ein Supremum. Auf
+Grassmannrichtungen gibt es keine Ordnung und kein Supremum. Bei einer
+Superfeldlesart muss diese Zeile deshalb als gewöhnliche Legendre
+Transformation in den geraden Richtungen und als graduierte algebraische
+Legendre Transformation mit festgelegten Links oder Rechtsableitungen in den
+ungeraden Richtungen präzisiert werden. Der Text legt diese Konvention nicht
+fest. Das widerlegt die mögliche Superfeldlesart nicht, lokalisiert aber eine
+weitere exakt fehlende Definition derselben Quelle.
+
+Der Text definiert aber weder den graduierten Feldraum von varphi noch die
+Berezin Komponente des Maßes, und er gibt keine Gleichung
+
+  S_adm = S_prim
+
+oder
+
+  fermionischer Block von S_adm^(2) = B_alpha.           (10)
+
+Auch die höheren Ableitungen S_adm^(n), welche laut dem 1PI Satz die
+Wechselwirkungsvertices liefern, werden nicht aus dem Spektraltrace
+berechnet. Das Elternintegral ist daher formal vollständig, seine konkrete
+Wirkung bleibt an dieser Stelle ein unabhängiger Input.
+
+Die vollständigen OS Momente müssen aus exp(W-W[0]) gewonnen werden. Die
+späteren Ableitungen von W=log Z sind nur Kumulanten. Diese algebraische
+Reparatur ändert nichts am hier lokalisierten Wirkungsursprung.
+
+
+9. DIE PROJIZIERTE RELATIVE DETERMINANTE IST NICHT DER KREISWECHSEL
+-----------------------------------------------------------------
+
+  documents/archive--paper-latex--tfpt-42/sections/
+  027-subsection-primitive-completion-from-the-boundary-kernel.tex:229-272
+  SHA256 59f89c232f7636919ee049f25e066f2ba7937a0e636333b9c4eab2fef17c5d42
+
+Der spätere Masterausdruck enthält gleichzeitig
+
+  -log Z_rel^Padm[xi]
+  +Re log det_zeta,Padm(D_xi^2+mu^2)
+  +(1/2)eta_Sigma,Padm(D_xi)
+  -log det(1-U_(6,xi))
+  +Gamma_vac(rho_xi).                                   (11)
+
+Eine Literalprüfung des vollständigen v42 Quellbaums findet D_xi nur in den
+beiden Termen der Zeilen 242 und 243 dieses Moduls. Seine Abhängigkeit von xi,
+seine Domain und sein Bezug zu B_alpha werden dort nicht definiert.
+
+Noch entscheidender ist der Operatortyp. Die rank eins Identität (2) ist eine
+Differenz zweier Polarisationen. Der Determinant in (11) verwendet dagegen
+D_xi^2+mu^2 und damit einen positiven spektralen Betrag. Ohne eine separat
+angegebene Polarisation kann dieser Determinant C und uCu* nicht
+unterscheiden. Der daneben stehende Term (1/2)eta_Sigma,Padm(D_xi) bewahrt
+skalare Spektralasymmetrie und kann insbesondere das Vorzeichen unter
+D_xi -> -D_xi erkennen. Ein eta Wert ist aber kein operatorwertiger
+Polarisationskern: Er bestimmt weder P_-(D_xi) noch dessen Matrixelemente,
+lokale Träger oder die Differenz zweier Quellkovarianzen. Zudem bleibt D_xi
+in diesem Quellmodul undefiniert. U_(6,xi) ist der sechsstufige
+Transportoperator, nicht der alte Clutching Operator u=M_z.
+
+Damit enthält (11) keinen stillschweigenden Beweis des Kreis zu CAR
+Anschlusses. Außerdem setzt sein erster Summand Z_rel bereits voraus. Er kann
+die Quelle, deren Logarithmus dort eingesetzt wird, nicht selbst definieren.
+
+
+10. KLEINSTE POSITIVE REPARATUR MIT EINER ANNAHME WENIGER
+--------------------------------------------------------
+
+Die Originale brauchen keinen neuen frei gewählten Rang eins Projektor. Wenn
+eine zukünftige Originalgleichung oder ein belegter bestehender Querverweis
+eine isometrische, grading und reflexionsverträgliche Abbildung
+
+  Iota:H_circle -> H_fermion
+
+mit
+
+  Iota B_alpha Iota*=K_fermion,
+  Iota P_-(B_alpha) Iota*=C_adm,
+  Iota u Iota*=U_source                              (12)
+
+auf dem betreffenden Sektor liefert, folgt aus (2) automatisch
+
+  U_source C_adm U_source*=C_adm+Iota Pi Iota*.        (13)
+
+Dann wäre die überschüssige Quelllinie durch den alten Spektralflusskern
+bestimmt. Eine gesonderte Wahl von psi_Sigma entfiele. Mit der vorhandenen
+Grundzustandsreduktion könnte der quasifreie CAR Zustand anschließend aus
+dem festen gegappten Einteilchengenerator und der positiven Zeit folgen.
+
+Was (12) noch leisten muss, ist konkret und prüfbar:
+
+* dieselbe verdrehte Domain und dasselbe alpha;
+* dieselbe Feldgradierung und CAR Quellenordnung;
+* Intertwining der tatsächlichen euklidischen Zeit und Reflexion, nicht nur
+  der Nahtkreisrotation;
+* Erhaltung des vollständigen Z Funktionals auf reflektierten Feldworten;
+* Einbettung in die graduierte Feldalgebra. Die physische Observable Algebra
+  darf weiterhin ihr eichinvarianter gerader Fixpunkt sein.
+
+Ohne (12) bleiben die drei Zeitparameter verschieden: die Rotation durch
+B_alpha, der Wärmeparameter von exp(-t|B_alpha|) und die OS Zeit tau_t.
+
+
+11. P1 WORTLAUT: KREIS GESETZT, CAR KERN NUR ABSTRAKT GESETZT
+-------------------------------------------------------------
+
+Diese Nachprüfung betrifft genau die mögliche Reduktion der letzten
+Einbettungsannahme. Sie benutzt keine neue Riemannfläche und keinen neuen
+Kragen.
+
+11.1 fullv21 A1 bis A4 und A7 bis A8
+
+  paper-source:1fe2ddfabc74ac0e94a4686d
+  documents/archive--paper-latex--tfpt-theory-fullv21/sections/
+  001-section-introduction-the-problem-of-parameters.tex:155-275
+  SHA256 85bb11511be05385a7cadf6071dbede216b12befeb9d6767bc4460748cbec5d7
+
+  documents/archive--paper-latex--tfpt-theory-fullv21/sections/
+  002-subsection-closure-axioms-a7-a8.tex:4-70
+  SHA256 6a44df43d61d84b026c5ad15a1bdbdcc8822e741b4af8b709f0f3563fa3c0b6a
+
+Der tatsächliche Axiomwortlaut setzt folgende fermionisch relevante Daten:
+
+* A1 sagt, dass axiale Torsion an Spinorfelder koppelt.
+* A2 verlangt für globale chirale Spinoren die orientierbare Doppelüberlagerung.
+* A3 setzt auf der Naht den tangentialen Operator D_Gamma=i partial_theta,
+  die verdrehten Eigenwerte n+varphi/(2pi) und U_Gamma=M_z. Das ist genau der
+  geometrische Einteilchenkreis, aus dem B_alpha in Abschnitt 1 rekonstruiert
+  wurde.
+* A7 setzt den SM Fermioninhalt und die Hyperladungen im quadratischen Index
+  hyperladungsgeladener Randoperatoren eines regulierten Determinanten.
+
+A4 setzt diskrete topologische Korrekturen und A8 die GR
+Renormierungsbedingung. Keine dieser sechs Axiomstellen definiert eine CAR
+Algebra, Erzeuger und Vernichter, eine Kovarianz P_-(B_alpha), einen Fockraum,
+eine Bogoliubovzeit oder eine positive euklidische Zeit auf dem Kreis. Eine
+vollständige Literalsuche über alle fullv21 Module findet keinen der Begriffe
+CAR, Fock, Bogoliubov, quasifree, Grassmann oder Berezin.
+
+A7 ist trotzdem eine echte positive Verengung. Der Kreisoperator ist kein
+später hinzugefügtes SOURCE Hilfsmodell, und geladene fermionische
+Randoperatoren werden im ursprünglichen Axiomsystem verwendet. Seine dortige
+Rolle ist jedoch eine geschlossene Determinantenspur. Es steht keine Gleichung
+
+  D_Y on boundary cycle = D_Gamma on seam = inverse CAR source kernel
+
+und keine offene Modenabbildung im Text. Insbesondere liefert der
+Hyperladungsindex Summe Y_f^2 keine Zustandskovarianz.
+
+11.2 v31 primitives reduziertes Datum
+
+  paper-source:12323340247079857eb23f60
+  documents/archive--paper-latex--tfpt-31/sections/
+  002-subsection-primitive-relative-spectral-dynamics.tex:7-70,80-129
+  SHA256 6d8813b95a1ef4d82ee9cd48a25efff3f9c20066a06b85ad121bc26e5dbaae77
+
+Das primitive Datum
+
+  (A,H,D,J,Gamma,inv,nu),
+  D=gamma_n(partial_n+B_Sigma)
+
+enthält einen Einteilchen Diracoperator, Realstruktur, Gradierung und den
+tangentialen Kragenoperator. Die fastkommutative Identifikation
+H=L2(M_tilde,S) tensor H_int wird ausdrücklich als zusätzliche Annahme
+bezeichnet. Die lokale admissible Algebra A_adm(O) wird erst nach der
+Carrier und Closure Schicht eingeführt. Weder die Definition des reduzierten
+Datums noch sein Rekonstruktionstheorem nennt A eine CAR Feldalgebra oder
+bestimmt eine negative See, eine Quellkovarianz oder eine Zeitentwicklung.
+
+Damit kann man im eindimensionalen fullv21 Spezialfall B_Sigma mit dem schon
+gegebenen B_alpha vergleichen. Der v31 Wortlaut beweist diese Spezialisierung
+aber nicht für sein allgemeines reduziertes Datum und quantisiert sie nicht.
+
+11.3 Was v31 in der Closure Schicht wirklich setzt
+
+  paper-source:c108d5aa4300090790075793
+  documents/archive--paper-latex--tfpt-31/sections/
+  011-subsection-transport-side-ingredients-for-the-strong-cp-.tex:198-274
+  SHA256 67f45f9072363128377e9e48735d24fb1748e504b57c0ab44dc136454e1ed144
+
+  documents/archive--paper-latex--tfpt-31/sections/
+  012-section-particle-and-mass-compiler.tex:38-57
+  SHA256 1951d21a4463c24f764f0e512256405513526ca2902471555316f4b188320585
+
+  paper-source:8a50a3750d947c906a12acd2
+  documents/archive--paper-latex--tfpt-31/sections/
+  016-subsection-texorpdfstring-e-8-e8-as-downstream-scale-gra.tex:339-368
+  SHA256 b19c7b586864f8ab86013296fb7e07fb2574958fb607d8263dcb56dcf305df46
+
+Hier ist der CAR Anschluss bereits als Voraussetzung vorhanden. Das
+Reflexionspositivitätslemma sagt wörtlich: Wenn der admissible fermionische
+CAR Kern auf demselben Sektor reflexionspositiv ist, dann gilt die OS
+Ungleichung für Observablen mit Träger in tau>0. Das folgende
+Rekonstruktionstheorem beruft sich auf die entsprechende CAR Rekonstruktion.
+Der vorhergehende Master Satz bezeichnet die Positivität zwar als auf
+demselben Datum abgeleitet. Sein ausgewiesener Beweispfad ist aber gerade das
+genannte bedingte Lemma; eine Konstruktion des CAR Kerns aus
+(A,H,D,J,Gamma,inv,nu) steht dazwischen nicht.
+
+Das ist mehr als ein bloßes Spinorlabel. Unter den v31 Closure Voraussetzungen
+muss die Existenz eines fermionischen CAR Kerns und seine
+Reflexionspositivität nicht erneut aus B_alpha hergeleitet werden. Es ist aber
+kein im primitiven Datum konstruierter Kern. Die angeführte Lemma verwendet
+ihn als Hypothese, gibt keine Kernelmatrix an und identifiziert weder tau mit
+theta noch seine Kovarianz mit P_-(B_alpha). Der Begriff admissible observable
+zwingt außerdem keine ungeraden CAR Felder in die physische Observable
+Algebra; diese darf der eichinvariante gerade Fixpunkt bleiben. Wörtlich
+gesetzt ist somit ein abstrakter CAR Kern auf dem admissiblen Sektor, keine
+vollständig lokalisierte Modenrealisierung dieses Kerns auf dem P1 Kreis.
+
+11.4 Kleinster noch fehlender Modentest
+
+Nach Anerkennung dieser gesetzten v31 CAR Voraussetzung reduziert sich die
+Restlücke auf eine einzige Einteilchenabbildung. Sei H_source der Testfunktionsraum
+des dort vorausgesetzten CAR Kerns. Gesucht ist eine Isometrie
+
+  T:L2(S1,L_alpha) -> H_source,
+  T psi_n = f_n,                                      (14)
+
+mit den wörtlich prüfbaren Eigenschaften
+
+  <f_m,f_n>=delta_mn,
+  C_adm f_n=1_(n<=-1) f_n,
+  U_source f_n=f_(n+1),                               (15)
+
+und, falls der Einteilchen Quellgenerator K_source denselben Kreisfluss tragen soll,
+
+  K_source f_n=(n+alpha)f_n.                          (16)
+
+Für Lokalität muss T zusätzlich die Trägerstruktur erhalten: Eine auf einem
+Nahtbogen I unterstützte Funktion f(theta)=sum_n fhat_n psi_n muss zu einem
+verschmierten Feld a(Tf) im lokalen Feldsektor desselben Bogens führen. Die
+v31 Bedingung tau>0 muss durch eine angegebene Reflexion und Zeitwirkung auf
+diesen Quellmoden transportiert werden. Eine Gleichheit der bloßen Spektren
+genügt dafür nicht.
+
+Keine geprüfte Stelle gibt die f_n, den lokalen Trägermorphismus oder die
+Zeitverflechtung an. Wenn (14) bis (16) in einer Originalquelle ergänzt oder
+gefunden werden, folgt die negative See aus dem alten Kreis ohne weitere
+Zustandswahl, und (13) liefert die eine überschüssige Quelllinie. Damit ist
+die frühere Lücke SOURCE Kreis gegen P1 Kreis auf Einteilchenebene wesentlich
+kleiner: Der geometrische Kreis ist schon P1 Daten. Offen bleibt seine
+Identifikation mit den Moden des bereits vorausgesetzten lokalen CAR Kerns.
+
+
+ENDURTEIL
+---------
+
+PROVED:
+
+* Das alte (B_alpha,u) liefert einen exakten, adjungiertenverträglichen Ward
+  Kern und den rank eins Kovarianzwechsel uP_-u*=P_-+Pi.
+
+* Der relative Spektraltrace von v31/v32, das geometrische Maß von v42 und
+  das formale S_adm Elternintegral von v42 sind verschiedene mathematische
+  Objekte. Die Originale geben keine Gleichung an, welche sie zu einer
+  gemeinsamen graduierten Quelle zusammensetzt.
+
+* Die direkte Hessian Identifikation auf dem positiv reellen bosonischen
+  Gaußzweig scheitert am zweiseitigen Spektrum von B_alpha. Der Ersatz
+  |B_alpha| verliert die Ward Wirkung.
+
+* Die spätere relative Determinante verwendet weder die alten
+  Kreispolarisationen noch deren rank eins Differenz. Der separate eta Term
+  des vollständigen Masterausdrucks bewahrt skalare Spektralasymmetrie, ist
+  aber kein Ersatz für den fehlenden Polarisationskern und die Modenabbildung.
+
+* fullv21 setzt den geometrischen Nahtkreis und fermionisch geladene
+  Randoperatoren, v31 setzt in der Closure Schicht einen reflexionspositiven
+  admissiblen CAR Kern voraus. Keiner der Wortlaute gibt die
+  Fouriermodus zu Quellmodus Abbildung (14) an oder identifiziert theta mit
+  der positiven OS Zeit tau.
+
+ERSTER ZUSÄTZLICHER INPUT:
+
+Unter den schon gesetzten v31 Closure Voraussetzungen ist kein zweiter frei
+gewählter CAR Kern nötig. Der erste zusätzliche Input ist die zustands,
+reflexions und lokalitätsverträgliche Modenabbildung (14) des alten
+Kreiseinteilchenraums in den bereits vorausgesetzten fermionischen Quellkern.
+Danach ist die rank eins Linie kein weiterer Input mehr.
+
+NICHT BEHAUPTET:
+
+Die geprüften Quellen beweisen weder (12), noch eine P1 Ableitung der Quelle,
+noch die Gleichheit von Kreisrotation, Wärmezeit und OS Zeit. Der exakte
+Polarisationswechsel ist ein bereits in den alten Daten vorhandener
+Anschlusskandidat. Er ist ohne die fehlende Feldabbildung noch nicht die
+physische Originalquelle.

@@ -1,0 +1,467 @@
+TFPT OLDER PAPER SOURCE RECOVERY
+================================
+
+Datum: 2026-10-25
+Atlas Revision beim Start: 43a4702c9b0d0e33066def66
+Geltungsbereich: historische TFPT Quellen von old/paper_v1 und old/theory_root über v2 bis v42, mit einem kontrollierten Vergleich zur v4.5 Extraktion.
+
+FRAGE
+-----
+
+Enthalten die älteren Fassungen bereits
+
+1. ein explizites gemeinsames bosonisch fermionisches Quellfunktional
+   Z[J,eta,bareta],
+2. ein Berezinmaß oder einen inversen Dirackern, der die fermionischen
+   Korrelatoren tatsächlich festlegt,
+3. vollständige Schwingermomente statt nur verbundener Kumulanten und
+4. eine gemeinsame euklidische Zeit und Reflexion, auf der OS Positivität
+   des gekoppelten Funktionals bewiesen ist?
+
+ERGEBNIS
+--------
+
+PROVED, als begrenztes Originalquellenurteil:
+
+* Vor v31 wurde in dem geprüften historischen Korpus kein gemischtes
+  Z[J,eta,bareta], kein Berezinmaß und keine OS Schwingerfamilie definiert.
+  Es gibt dort Determinanten, effektive Aktionen und ab v21 einen expliziten
+  freien tangentialen Randoperator. Diese Daten sind echte Vorläufer, aber
+  noch kein Feldzustand und kein volles Quellfunktional.
+
+* v31 und v32 führen Z_rel[J,eta,bareta] als Quotienten ein. Z_adm selbst,
+  sein Maß und sein fermionischer Zweipunktkern werden an dieser Stelle nicht
+  konstruiert. Die fermionische CAR Reflexionspositivität wird vorausgesetzt.
+
+* v42 enthält erstmals zwei unterschiedliche positive Quellbausteine:
+
+  (a) eine konstruktive geometrische, also bosonische, Maßfamilie und
+
+  (b) das formale regulierte all moment parent
+
+      exp(W_k[J]) = integral Dvarphi exp(
+          -S_adm[varphi] - 1/2 <varphi,R_k varphi> + <J,varphi>).
+
+  Baustein (b) ist das wiedergewonnene formale Elternfunktional für
+  vollständige Momente. Die Supertraces in den Zeilen 37 und 60 bis 65 legen
+  nahe, dass varphi und J als graduierte kollektive Superfeldnotation gemeint
+  sind. Dann kann J auch die zuvor getrennt geschriebenen Komponenten
+  (J,eta,bareta) enthalten; deren Nichtausschreibung allein widerlegt keine
+  gemischte Quelle. Nicht belegt werden jedoch die konkrete Superfeld und
+  Maßkonvention, die graduierte Definition von S_adm, die Abbildung vom
+  ursprünglichen Randoperator auf diese Variablen und die gemeinsame
+  Reflexionspositivität des Integrals.
+
+* v42 bezeichnet die Ableitungen von W_rel = log Z_rel ausdrücklich als
+  "truncated admissible Schwinger distributions" S_n^T und wendet danach die
+  OS Axiome unmittelbar auf {S_n^T} an. Im älteren Korpus wurde keine
+  stillschweigende Definition vollständiger Momente gefunden, die diesen
+  Schritt korrigiert. Die v4.5 Extraktion behält genau diese Definition und
+  diesen Schluss bei; nur das Statuslabel wird von [A] auf [M] geändert.
+
+Das frühere Urteil wird daher in einem Punkt geschärft: Die historischen
+Papers enthalten bereits ein formales Z basiertes all moment parent im v42
+FRG Abschnitt. Bei nachgewiesener Superfeldkonvention kann es auch die
+gemischten Quellen kodieren. Nicht nachgewiesen sind die konkrete gemeinsame
+Wirkung und Maßdefinition, ihre Herkunft aus dem ursprünglichen Randoperator
+und ihre gemeinsame OS Positivität. Der direkte OS Schluss aus den Kumulanten
+bleibt falsch.
+
+KLEINSTER ENTSCHEIDENDER TEST
+----------------------------
+
+Ein behauptetes historisches Vollquellfunktional wurde nur dann als
+vollständig konstruiert gezählt, wenn die Originalkette mindestens die
+folgenden Typen festlegt. Eine echte Superfeldnotation darf mehrere Einträge
+zusammenfassen; getrennte Symbole eta und bareta sind keine Pflicht:
+
+  Felder:      graduierter Feldraum mit bosonischen und fermionischen Teilen
+  Quelle:      graduierte Quelle mit festgelegten Komponenten und Ableitungsordnung
+  Gewicht:     gemeinsame Wirkung oder gemeinsames Maß
+  Kern:        fermionischer quadratischer Teil und Domains; im freien Fall seine Kovarianz
+  OS Struktur: eine gemeinsame euklidische Zeitreflexion
+  Momente:     Ableitungen von Z/Z[0], nicht nur von log Z
+
+Der Test verhindert drei falsche Identifikationen:
+
+* ln det D als Antwort auf eine Hintergrundvariation erzeugt keine offenen
+  fermionischen Korrelatoren.
+* Ein klassischer oder tangentialer Diracoperator bestimmt ohne Quantisierung,
+  Polarisation und Zustand noch keine CAR Kovarianz.
+* Getrennte bosonische und fermionische Positivität beweist keine Positivität
+  des gekoppelten Maßes mit Wechselwirkung.
+
+HISTORISCHE QUELLENKETTE
+------------------------
+
+1. Klassische Wurzeltexte
+
+old/unified_field_equation definiert eine torsionsvolle bosonische Wirkung mit
+Axion und Maxwellterm. Ein Fermionkinetikterm, ein fermionisches Maß und lokale
+Quellen stehen dort nicht. old/theory_root variiert diese klassische Wirkung
+zur UFE. Das lange alte paper_v1 enthält ebenfalls keine Treffer für Berezin,
+Grassmann, Schwinger, Osterwalder oder generating functional.
+
+Urteil: klassische Feldgleichung, kein Quellzustand.
+
+2. v2: Determinantenantwort auf festem Hintergrund
+
+v2 verwendet die Variation von ln det(Dslash) unter einer flachen U(1)
+Verbindung, um den quadratischen Ladungsindex zu lesen. Das ist ein echter
+fermionischer Ein Schleifen Antwortterm. Weder Dslash^{-1} noch Quellen für
+offene Fermionbeine werden definiert.
+
+Urteil: fermionische Determinantenantwort wiedergefunden, keine volle Quelle.
+
+3. v21 bis v28: expliziter freier Nahtoperator und skalare Partitionen
+
+Ab v21 ist der tangentiale Einteilchenoperator tatsächlich explizit:
+
+  D_Gamma = i d/dtheta,
+  psi(theta+2pi) = exp(i phi) psi(theta),
+  lambda_n(phi) = n + phi/(2pi).
+
+v28 wiederholt dies als Seam Gluing Modul. Damit sind Operator, verdrehte
+Domainfamilie und Spektralfluss vorhanden. theta ist dort die Koordinate des
+Nahtkreises; phi interpoliert Randbedingungen. Keine der beiden Variablen wird
+als gemeinsame euklidische Zeit des Feldfunktionals definiert. Es fehlen Fock
+Raum, CAR Darstellung, Vakuum, inverse Kovarianz und Berezinquellen.
+
+Parallel erscheint in v21 die skalare Defektzerlegung
+
+  Z(alpha) = Z_triv(alpha) + Z_def(alpha).
+
+Sie kodiert Sektorgewichte. Sie ist kein lokales Z[J,eta,bareta]. Die v21
+Ein Schleifen Rechnung integriert quadratische Torsionsfluktuationen mit einem
+Laplace Operator aus und produziert 1/2 ln det Delta. Das ist ein bosonischer
+effektiver Beitrag, keine gemeinsame Quelle.
+
+Urteil: Der freie Randoperator ist ein positiver historischer Ursprung für
+eine spätere freie CAR Quantisierung. Die erste zusätzliche Wahl wäre aber
+genau diese Quantisierung samt Polarisation, Zustand und Zeitreflexion. Das
+Paper führt sie nicht aus.
+
+4. v29 und v30: relative Operatoren ohne Quellfunktional
+
+Die Vollkorpussuche findet in v29 und v30 weder Z_rel[J,eta,bareta] noch
+Berezin, OS oder Schwinger. v30 definiert D_rel als Vergleichsoperator und
+S_rel als spektrale Trace Differenz plus eta Term. Es kennzeichnet
+Admissibilität noch als Prädikat, nicht als Maß oder Feldzustand.
+
+Urteil: saubere relative Operatorgrammatik, weiterhin kein Z.
+
+5. v31 und v32: erste gemischte Quellnotation, noch deklarierter Input
+
+v31 definiert
+
+  Z_rel[J,eta,bareta] = Z_adm[J,eta,bareta]/Z_ref[0,0,0]
+
+und erklärt die CAR Reflexionspositivität im selben Sektor zur Voraussetzung.
+Die Stelle gibt keine Formel für Z_adm. v32 bewahrt dieselbe Quotientendefinition
+und sagt ausdrücklich, dass die Aufnahme der letzten Positivitätsinputs in den
+Kern erst ein Upgradepfad ist. Der Lorentzschluss beruft sich anschließend auf
+"usual OS" und "corresponding CAR reconstruction", ohne zuvor eine
+vollständige Momentenfamilie zu definieren.
+
+Urteil: echte Quellensignatur, aber deklarierter Container statt konstruierter
+Quelle.
+
+6. v42: drei verschiedene Maße dürfen nicht zusammengezogen werden
+
+6.1 Geometrisches Maß
+
+v42 definiert endliche geometrische Maße
+
+  dmu_n proportional exp(-tr f_*(D_Vn^2/Lambda^2)) dnu_Vn
+
+auf dem BRST reduzierten geometrischen Konfigurationsraum und daraus Z_grav.
+Das ist ein positives bosonisches Maß. Es enthält keine fermionischen
+Grassmannvariablen. Die Behauptung, seine Reflexionspositivität werde von der
+früheren OS Struktur geerbt, kann die fehlende gemeinsame Quelle nicht ersetzen.
+
+6.2 Topologische Determinantgewichte
+
+v42 zeigt Z_Q >= 0 durch gamma5 Paarung der nichtverschwindenden Spektren der
+D_f und verwendet anschließend ein lokales Boltzmanngewicht
+exp(-S_adm[phi]) dmu(phi). Nach dem Ausintegrieren von Fermionen kann dies eine
+bosonische effektive Marginale sein. Ohne eta,bareta erzeugt sie keine offenen
+fermionischen Korrelatoren. Positivität der einzelnen Z_Q beweist zudem keine
+gemeinsame OS Positivität lokaler gemischter Worte.
+
+6.3 Reguliertes all moment parent
+
+Der FRG Abschnitt definiert wirklich exp(W_k[J]) als Funktionalintegral und
+G_{k,phi} = (S_adm''[phi]+R_k)^{-1}. Die Supertraces zeigen, dass eine
+graduierte kollektive Lesart von phi und J beabsichtigt sein kann. Außerdem
+identifiziert der Text den k gegen null Grenzwert formal mit dem retained
+relative generating functional. Daraus folgt der kleinste korrekte
+Reparaturanschluss im vorhandenen Formalismus:
+
+  Zhat_k[J] := exp(W_k[J]) / exp(W_k[0]),
+
+  S_n(x_1,...,x_n)
+    := delta^n Zhat_k[J] / delta J(x_1)...delta J(x_n) bei J=0.
+
+Äquivalent sind die S_n die vollständigen Bell Kombinationen der verbundenen
+S_m^T. Schon bei Grad zwei gilt
+
+  S_2 = S_2^T + S_1^T S_1^T.
+
+Wenn J eine graduierte Superquelle ist, enthält dieselbe Formel die geordneten
+Grassmannableitungen und CAR Vorzeichen komponentenweise. Das Modul schreibt
+diese Konvention und das zugrunde liegende graduierte Maß nicht aus. Auch
+S_adm ist dort nur ein eingesetztes Funktional und wird nicht aus D_rel,
+D_Gamma oder der primitiven Naht hergeleitet.
+
+Urteil: formales volles Elternfunktional positiv wiedergefunden. Bei einer
+belegten Superfeldkonvention kann es bosonische und fermionische Momente
+gemeinsam erzeugen. Es repariert die Kumulantenverwechslung algebraisch, sobald
+die graduierte Wirkung, das Maß und die gemeinsame RP Eigenschaft gegeben sind.
+Diese Voraussetzungen liefert das Modul nicht selbst.
+
+7. v42 und v4.5: Ort des OS Fehlers
+
+v42 definiert S_n^T als Ableitungen von W_rel=log Z_rel und nennt sie
+ausdrücklich truncated. Der unmittelbar folgende Satz behauptet die OS Axiome
+für genau diese Familie. Der technische Anhang baut die OS Sesquilinearform
+ebenfalls aus der als S_n^T bezeichneten Familie. Eine Suche nach
+moment-cumulant, Bell polynomial, full moments, derivatives of Z, nontruncated
+und untruncated im gesamten v42 Quellbaum liefert keine Reparaturstelle.
+
+Die v4.5 QFT Extraktion hat in den entscheidenden Zeilen denselben Text. Der
+Diff ändert Querverweise und das Statuslabel [A] zu [M], aber nicht die
+Definition oder den Kumulanten OS Schluss.
+
+Urteil: keine verlorene ältere Vollmomentendefinition. Der vorhandene FRG Z
+Baustein muss explizit mit der OS Schwingerfamilie verbunden werden.
+
+WIEDERGEWONNENER QUELLANSCHLUSS UND SEINE GRENZE
+-----------------------------------------------
+
+Die stärkste belegbare historische Kette ist
+
+  D_Gamma und verdrehte Domains       v21 bis v28
+          |
+          | zusätzliche, im Paper nicht ausgeführte CAR Quantisierung
+          v
+  deklarierter CAR Kern und Z_rel     v31 bis v32
+          |
+          | formale kollektive Superfeldpackung; konkrete Wirkung, Maß und RP offen
+          v
+  formales exp(W_k[J]) Integral       v42
+          |
+          | Ableitungen von exp(W), nicht von W
+          v
+  vollständige OS Momente             korrigierter Anschluss
+
+Damit ist ein konkreter Teil wiedergewonnen: v42 besitzt bereits das richtige
+formale algebraische Elternobjekt für volle Momente und kann bei belegter
+Superfeldkonvention auch gekoppelte Komponenten tragen. Nicht wiedergewonnen
+ist seine primitive Konstruktion aus dem ursprünglichen Randdatum. Der erste
+präzise unabhängige Input bleibt eine definierte graduierte Wirkung samt Maß
+und gemeinsamer RP oder, im freien Randsektor, eine festgelegte CAR
+Quantisierung mit Zeitreflexion und Zustand. D_Gamma alleine schließt diese
+Lücke nicht.
+
+Die physische Observable Algebra A_adm muss dabei keine odd CAR Generatoren
+enthalten. Ein korrektes Modell kann die graduierte Feldalgebra F rekonstruieren
+und A_adm als eichinvarianten geraden Fixpunkt F^G nehmen. Die historischen
+Quellen definieren diesen Feld zu Observable Pfad jedoch ebenfalls nicht.
+
+OS REPARATURSATZ IM HISTORISCHEN NOTATIONSRAHMEN
+-----------------------------------------------
+
+Sei ein normalisiertes, graduiertes Funktional, gegeben entweder in
+Komponenten oder in äquivalenter Superfeldnotation,
+
+  Zhat[J,eta,bareta] = Z[J,eta,bareta]/Z[0,0,0]
+
+gegeben. Falls seine vollständigen, mit fester Grassmannordnung gebildeten
+Momente
+
+  S_{p,q,r} = delta_J^p delta_eta^q delta_bareta^r Zhat |0
+
+als ganze Familie die OS Voraussetzungen erfüllen, dann ist dies die Eingabe
+der OS beziehungsweise CAR Rekonstruktion. Benötigt werden insbesondere
+gemeinsame euklidische Kovarianz, graduierte Symmetrie, Reflexionspositivität,
+Clusterung, konsistente graduierte Quellenkontraktionen sowie die über alle
+Grade einheitlichen OS0 Regularitäts und Wachstumsschranken. Einzelne
+Regularität jedes festen S_n genügt nicht. Die
+Ableitungen von W=log Z sind die verbundenen Kumulanten. Sie bestimmen die
+vollen Momente durch die graduierte Moment Kumulanten Formel, sind aber im
+Allgemeinen selbst keine reflexionspositive Momentenfamilie.
+
+Dieser Satz ist genau der minimale Anschluss zwischen v42 §035 und v42 §025.
+Er ist eine Korrektur der Verwendung vorhandener Objekte, keine neue Quelle.
+Der explizite 2 mal 2 Gegenfall und die volle Begründung stehen in
+
+  experiments/theory-contracts/primitive-seam-operator-reconstruction-20261025/
+  OS-SOURCE-REPAIR.txt
+
+SHA256 dieses vorherigen Belegs:
+  50bc771398e8a363a617c677f503f556c9f2adccf6e40cfcb460ca4eb9f55ba6
+
+KORPUSWEITER LITERALBEFUND
+--------------------------
+
+Die folgende Übersicht stammt aus einer Suche über alle tex Dateien der
+jeweiligen Version. Die vertiefte Quellenprüfung ist auf die unten gelisteten
+19 Module begrenzt. Zeta zählt die exakte Z_rel[J,eta,bareta] Signatur,
+Berezin zählt Berezin, Grassmann und explizite Dpsi Maße, OS zählt
+Osterwalder, Schwinger functions und S_n^T, freeop zählt D_Gamma=i d/dtheta,
+FRGZ zählt exp(W_k[J]) und Dvarphi.
+
+  Version   Zeta  Berezin  OS  freeop  FRGZ
+  v2          0      0      0     0      0
+  v21         0      0      0     2      0
+  v24         0      0      0     2      0
+  v25         0      0      0     2      0
+  v26         0      0      0     2      0
+  v27         0      0      0     2      0
+  v27-final   0      0      0     2      0
+  v28         0      0      0     2      0
+  v29         0      0      0     0      0
+  v30         0      0      0     0      0
+  v31         2      0      2     0      0
+  v32         2      0      2     0      0
+  v42         3      0     24     0      2
+
+Die Zahlen sind Navigationsbelege, kein Beweis durch Wortabwesenheit. Die
+Urteile oben beruhen auf den vertieft gelesenen Definitionen und Beweisen.
+
+ORIGINALQUELLEN, ZEILEN UND SHA256
+----------------------------------
+
+1. _archive/paper-latex/old/unified_field_equation.tex
+   Zeilen 80 bis 101: klassische torsionsvolle Wirkung.
+   SHA256 595ce26a80fa1922ac7092bad427c0ac4ef30b2434cda4c6f750647d64f9c9aa
+
+2. _archive/paper-latex/old/theory_root.tex
+   Zeilen 88 bis 102: Variation der torsionsvollen Wirkung zur UFE.
+   SHA256 ff5e09a20f2665ce64e8b9b0155f00d4d7518a7096d490834cf164abc5d87b5a
+
+3. documents/archive--paper-latex--old--paper_v1_06_01_09_2025/sections/001-source.tex
+   Zeilen 1 bis 3056 vollständig nach den Quell und OS Begriffen geprüft.
+   SHA256 0409cbd9fb015a54b2d9d50a36e3cfa178ef406e6f5e809aee0b83d8f6ba7ac1
+
+4. documents/archive--paper-latex--tffpt-theory-fullv2/sections/
+   004-subsection-block-constant-formula-and-derivation.tex
+   Zeilen 4 bis 31: Variation von ln det(Dslash) und APS Indexskizze.
+   SHA256 c771445acdf5ba7c6efbcc0f09112bab9cfcd7b14ebe0d6867978630f16bf6b4
+
+5. documents/archive--paper-latex--tfpt-theory-fullv21/sections/
+   001-section-introduction-the-problem-of-parameters.tex
+   Zeilen 198 bis 255: D_Gamma, verdrehte Domain, Spektrum und Spektralfluss.
+   SHA256 85bb11511be05385a7cadf6071dbede216b12befeb9d6767bc4460748cbec5d7
+
+6. documents/archive--paper-latex--tfpt-theory-fullv21/sections/
+   002-subsection-closure-axioms-a7-a8.tex
+   Zeilen 227 bis 242: skalare Defektsektor Partition.
+   SHA256 6a44df43d61d84b026c5ad15a1bdbdcc8822e741b4af8b709f0f3563fa3c0b6a
+
+7. documents/archive--paper-latex--tfpt-theory-fullv21/sections/
+   007-subsection-m-obius-matching-and-the-minimal-gluing-class.tex
+   Zeilen 242 bis 289: bosonische Torsionsfluktuation, Delta und ln det Delta.
+   SHA256 278c385040ba000fc6577b3ba4630b41b49d4486b069c2034e31c4c9bfb3ae2b
+
+8. documents/archive--paper-latex--tfpt-theory-fullv25/sections/
+   002-subsection-quantum-field-theory-axioms-a5-a6.tex
+   Zeilen 38 bis 78 und 84 bis 134: Fujikawa Verweis, effektive Wirkung und
+   Hintergrunddeterminante, ohne Quellmaß.
+   SHA256 32105d640f80e6b0ccbcf1488388e2e4f0e58e28e91acc9b8d1af3be9a4559bc
+
+9. documents/archive--paper-latex--tfpt-theory-fullv28/sections/
+   013-section-texorpdfstring-seam-gluing-and-the-eta-invariant.tex
+   Zeilen 7 bis 52: expliziter Seam Diracoperator und Domainfamilie.
+   SHA256 69adc16e3ba4106f164611a1104d42e7fa65de47bba8263f4780ba2ac542ce98
+
+10. documents/archive--paper-latex--tfpt-v30/sections/
+    005-subsection-residual-map-and-principal-unresolved-compari.tex
+    Zeilen 134 bis 218: relative Operatoren, spektrale Wirkung und
+    Admissibilitätsprädikat.
+    SHA256 5c9b441f81ed099a4054d460480794386ef38e3ab258bb874cabe460399329eb
+
+11. documents/archive--paper-latex--tfpt-31/sections/
+    011-subsection-transport-side-ingredients-for-the-strong-cp-.tex
+    Zeilen 198 bis 274: Z_rel Definition und vorausgesetzte CAR Positivität.
+    Atlas paper-source:c108d5aa4300090790075793
+    SHA256 67f45f9072363128377e9e48735d24fb1748e504b57c0ab44dc136454e1ed144
+
+12. documents/archive--paper-latex--tfpt-32/sections/
+    011-section-closure-theorems-from-the-admissibility-complex.tex
+    Zeilen 120 bis 195 sowie 352 bis 370: offener Upgradepfad, Z_rel,
+    vorausgesetzte RP und Lorentzrekonstruktion.
+    Atlas paper-source:14e3e2319fda95c9d35f29c7
+    SHA256 971d091d1ad88fae785cf6b0af2a6b74f2a600b19b42e37d3cd00c413cdf672c
+
+13. documents/archive--paper-latex--tfpt-42/sections/
+    022-section-closure-theorems-from-the-admissibility-complex.tex
+    Zeilen 256 bis 316: Z_rel und getrennte bosonische und CAR Positivität.
+    Atlas paper-source:032c510c1e9343d3edda1ae5
+    SHA256 fe626eb8126375f8e0028914a19e045802478f76f0c9b8e6655b8331b70848b2
+
+14. documents/archive--paper-latex--tfpt-42/sections/
+    025-subsection-admissible-schwinger-functions-minkowski-loca.tex
+    Zeilen 144 bis 184: S_n^T aus log Z und direkter OS Schluss.
+    Atlas paper-source:fa04e3d578a375c797109647
+    SHA256 9e774f82fd0b3f4163c4879b169ac5bd88087f8c4f491a5befd83f2561939248
+
+15. documents/archive--paper-latex--tfpt-42/sections/
+    016-section-closure-architecture-b-yukawas-masses-flavor-had.tex
+    Zeilen 108 bis 150: konstruktives geometrisches Maß und Z_grav.
+    SHA256 87eb0d32b6b0794efc2e27127e8f09839161b97b478c03dbd36557fcad08f729
+
+16. documents/archive--paper-latex--tfpt-42/sections/
+    035-subsection-renormalized-physical-and-scheme-readout-laye.tex
+    Zeilen 3 bis 67, 115 bis 170: exp(W_k[J]), formaler Propagator und
+    Identifikation des infraroten Grenzwerts mit dem retained functional.
+    SHA256 2a32bc13e10e2f2c7f7f42890f2065816d3c0289f1b71d23a4797b1bc10ade81
+
+17. documents/archive--paper-latex--tfpt-42/sections/
+    041-section-relative-aps-and-superconnection-setup.tex
+    Zeilen 17 bis 43 und 53 bis 125: Quotienten RP und OS/CAR Konstruktion
+    direkt aus der S_n^T Familie.
+    Atlas paper-source:2c27686c9bff86a1388ac22e für einen Teil dieses Moduls.
+    SHA256 5b7f02f6ba794c8c32b3f74d90a456912a4ab9b78522060d26955179016373e8
+
+18. documents/archive--paper-latex--tfpt-42/sections/023-source.tex
+    Zeilen 307 bis 346: positive Determinantsektorgewichte und bosonisches
+    lokales Boltzmannintegral.
+    SHA256 a08f3b96d2bc497d35591ab2fb35a7e225bbc6106ad1d810e582ec1f7994f235
+
+19. documents/archive--tfpt-45--source_extracts--04_qft_source/sections/
+    005-subsection-admissible-schwinger-functions-minkowski-loca.tex
+    Zeilen 144 bis 184: v4.5 Fortführung derselben S_n^T Definition und des
+    OS Schlusses, nun mit Status [M].
+    Atlas paper-source:972de2429406831890ef4161
+    SHA256 8bf0a37157505ca12b90154dbe41a29c49a503686a8493dffd63945f205e0af6
+
+DUPLIKATE UND ABGRENZUNG
+------------------------
+
+Die Fassungen v24, v25, v26, v27 und v27-final wiederholen den freien
+Nahtoperator aus v21 in redaktionell verschobenen Modulen. v29 und v30 gehen
+zur Carrier und Relativoperator Darstellung über, ohne ein Quellfunktional
+hinzuzufügen. Diese Duplikate wurden korpusweit durchsucht, aber nicht als
+weitere vertiefte Quellmodule gezählt.
+
+Nicht behauptet wird, dass kein mathematisches CAR Funktional aus D_Gamma
+gebaut werden kann. Behauptet wird präzise, dass die geprüften historischen
+Originalstellen diesen Bau nicht durchführen und daher keinen bereits
+festgelegten Zustand oder gemeinsame OS Quelle liefern.
+
+SCHLUSS
+-------
+
+Die ältere Literatur enthält einen echten Operatorursprung und später ein
+echtes formales Z Elternobjekt. Zwischen beiden fehlt die entscheidende
+Abbildung:
+
+  (D_Gamma, Domain, Spektralfluss)
+      -> (graduierte Feldalgebra, Zustand, gemeinsame euklidische Reflexion)
+      -> Z_adm[J,eta,bareta].
+
+Erst nach dieser Abbildung ist die algebraische Reparatur über Ableitungen von
+Z vollständig anwendbar. Bis dahin ist die historische Quelle ein bedingter
+Konstruktionsrahmen, keine aus D_+, B_Sigma oder der Naht allein abgeleitete
+volle fermionisch bosonische Quelle.

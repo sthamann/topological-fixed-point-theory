@@ -1,0 +1,185 @@
+TFPT: Native state, thermal word and the proposed new source bridges
+Date: 2026-11-12. Contract: latest-session-source-tests-20261112.
+Verdict: PARTIAL. No physical P1 source, state or full dynamics derived.
+
+1. Scope and actual source inputs
+
+This continuation compares seven relevant latest TFPT conversations with
+the original files. Chat reports are leads, not proofs. New calculations
+below test particular identifications, not all possible TFPT completions.
+No result is promoted to the verification ledger.
+
+Original inputs reviewed:
+A. docs/research/fundamental-plan/TFPT-R113-GELADENE-PAAR-RUECKKEHR-20261112.txt
+B. docs/research/fundamental-plan/TFPT-P1-PAARABBILDUNG-NULLWORT-20261112.txt
+C. experiments/theory-contracts/doily-native-holonomy-origin-20261112/PROOF.txt
+D. experiments/theory-contracts/compiler-correlated-event-clock-20260919/source_channel.py
+E. experiments/theory-contracts/p1-context-source-interface-20261112/PROOF.txt
+F. experiments/theory-contracts/original-admissible-source-closure-20261025/NS-COVER-FULL-DIRAC-RP.txt
+G. verification/v456_seam_chirality_from_c3.py
+H. verification/v367_seam_s3_lattice.py
+
+The actual root alpha=e1+e6 has squared length two. Use the unitary level
+one E8 vacuum module, (E_alpha,E_-alpha)=1 and vacuum Omega of norm one.
+Define e=E_alpha,-1, f=e*=E_-alpha,1, H=H_alpha,0, h=1-H.
+The affine commutators and grading give
+    [f,e]=h, [h,e]=-2e, [h,f]=2f, [L0,e]=e.
+The supplied original vacuum relation is e^2 Omega=0.
+
+2. The original null word is state-specific
+
+Let v=E_-alpha,-1 Omega. Then ||v||=1, L0 v=v, H v=-2v,
+f v=0, and h v=3v. Induction using the above commutators gives
+    f e^n v = n(4-n)e^(n-1)v.
+Thus squared norms for n=0,1,2,3 are 1,3,12,36; e^4 v=0.
+In particular
+    ||e^2 v||^2=12 > 0, although ||e^2 Omega||^2=0.
+Consequently e^2 is NOT the zero operator. The four by four matrices in
+the checker represent this actual invariant sl2 string and its inherited
+Gram, rather than replacing the E8 source by a freely chosen model.
+
+For beta>0 the canonical Gibbs density on this module is
+rho_beta=exp(-beta L0)/Z_beta. Its positive spectral sum contains v, so
+    omega_beta(f^2 e^2) >= 12 exp(-beta)/Z_beta > 0.
+Fixed current modes obey polynomial energy bounds; the positive-energy
+lattice character converges for beta>0, so these polynomial moments and
+the trace rearrangements below exist. A Casimir shift cancels in rho.
+
+This DOES NOT invalidate the original vacuum-preserving quadratic-pair
+exclusion in A/B. That exclusion explicitly tests the same vacuum word.
+It prevents extending that exclusion to a different state without proving
+that the P1 preparation transports the vacuum null relation. In contrast,
+the previous S V5=0 projector-synthesis result in E is an operator-level
+linear identity and is unaffected by replacing the state.
+
+3. Exact canonical thermal target from the same original algebra
+
+Put q=exp(-beta), 0<q<1. Expectations in this section are ONLY in the
+canonical Gibbs state above, with no Cartan chemical potential or source
+insertions. This state and this dimensionless L0 are not identified with
+the physical P1 state or time.
+
+Weyl invariance gives omega(H)=0, hence omega(h)=1. Trace cyclicity with
+the actual energy shift yields omega(eY)=q omega(Ye). Therefore
+    omega(fe)=1/(1-q), omega(ef)=q/(1-q).
+Write V=omega(H^2), X=omega(efh), A=omega(f^2 e^2).
+Using he=e(h-2), and the fact ef commutes with h, gives
+    X=q[X+V-1-2q/(1-q)].
+Also [f^2,e^2]=4efh+2h(h-1), while omega(e^2 f^2)=q^2 A.
+Since omega(h(h-1))=V, it follows that
+    (1-q^2)A=4X+2V,
+    A=2V/(1-q)^2 - 4q/(1-q)^3.                         (1)
+
+In the lattice realization V_E8, H has eigenvalue (alpha,lambda) on
+momentum lambda; the Heisenberg oscillator factor has H-charge zero.
+Weyl invariance of every lattice shell and irreducibility in rank eight
+give the scalar shell covariance. Since ||alpha||^2=2,
+    V = (1/2) q d/dq log Theta_E8(q).
+The normalized theta series is
+    Theta_E8(q)=E4(q)=1+240 sum_(n>=1) sigma_3(n) q^n.
+Substitution in (1) gives the exact native target
+    A(q)=q E4'(q)/[E4(q)(1-q)^2] - 4q/(1-q)^3.         (2)
+For an amplitude normalized to omega(fe)=1 the corresponding ratio is
+    A(q)/omega(fe)^2 = q E4'(q)/E4(q) - 4q/(1-q).       (3)
+No fitted coefficient enters (2) or (3). The beta and state selection
+remain additional inputs until they are derived from P1.
+
+Independent first-grade check: the 240 roots have H charges
+    {-2:1, -1:56, 0:126, 1:56, 2:1}.
+The root of charge -2 contributes 12 to Tr_(L0=1)(f^2 e^2);
+each of the 56 roots of charge -1 contributes 4. Other roots and all
+eight Cartan states contribute zero. The trace is 12+56*4=236.
+Equation (2) independently expands as 236q+O(q^2).
+The exact checker enumerates the original integer/half-integer E8 roots,
+verifies this charge distribution and checks the rational KMS algebra.
+
+External mathematical ingredients, not claims of TFPT closure:
+Keller, Introduction to Vertex Operator Algebras, version 13 Dec 2017,
+section 8 and equations (9.4)-(9.5): lattice module and character.
+https://archive.math.arizona.edu/cakeller/VertexOperatorAlgebras.pdf
+Zeff, Siegel-Weil examples, section 3: E8 theta and normalized E4.
+https://math.berkeley.edu/~avizeff/notes/SW-examples.pdf
+Equation (2) is the present deduction from those ingredients and the
+original current algebra; it is not attributed to either reference.
+
+4. The proposed virtual ten to matter ten identification
+
+For the original duad/syntheme incidence N, B=N^T N has eigenvalues
+9^1,4^9,0^5. Its image projector is P=(13B-B^2)/36, rank ten.
+The image carries the S6 representation 1+[4,2]. Upon restriction to
+the point stabilizer S5 of the corresponding six-mark chart it is
+    V_return = 1 + [4,1] + [3,2] = 1+4+5.
+The proposed natural five-coordinate permutation space is C5=1+4, so
+    Lambda^2 C5 = [4,1]+[3,1,1] = 4+6.
+A transposition has trace 4 on V_return and trace 2 on Lambda^2 C5.
+The checker tests the entire character inner product over all 120 S5
+elements: Hom dimension is one, consisting of the shared standard four.
+Hence every such intertwiner has rank at most four, never ten.
+A sign twist on just one side makes the Hom dimension zero; twisting
+both sides preserves the rank-four obstruction.
+Scope: the specified natural mark action. This does not disprove all
+Spin(10) matter constructions or the separately proved minimal 25-state
+Doily realization. Its ten hidden directions are not thereby matter.
+
+5. Conjugate C4 pairing and invariant state selection
+
+For the actual native C4 matrices, U tensor conjugate(U) is identified
+with conjugation on M4 through vectorization. The original Pauli average
+is exactly the rank-one projector P_Omega for Omega=vec(I4)/2.
+On the traceless space the 15 Pauli characters are distinct; the Clifford
+quotient acts transitively, so the traceless fifteen is irreducible.
+Thus the representation is 1+15 and its commutant is C direct-sum C.
+The unique invariant pure ray is Omega, but all invariant density
+matrices are
+    rho_p = p P_Omega + (1-p)(I16-P_Omega)/15, 0<=p<=1.
+Both reduced densities equal I4/4 for every p. Symmetry alone does not
+select p, or purity. Even selecting Omega allows the positive invariant
+generators H_lambda=lambda(I16-P_Omega), lambda>0, with arbitrary gap.
+Since the Pauli kernel fixes only one dimension, this paired state space
+cannot contain the native Pauli-trivial quartic five. This statement is
+about this exact paired representation, not its larger observable algebra,
+higher tensor powers, or an as-yet unidentified actual P1 doubling.
+
+6. Discrete return does not determine continuous winding
+
+For an orthogonal complex structure J on R16, J^2=-I, consider the loops
+    u_m(theta)=exp((1+4m) theta J), 0<=theta<=2pi.
+For every integer m they have the same quarter value J and half value
+-I. As complex rank-eight loops, determinant windings are 8(1+4m).
+In particular m=0,1,2 give 8,40,72 with the same discrete return and
+orientation. A specified primitive continuous action could select m=0;
+the quarter data alone do not. These are counterexamples to that one
+inference, not three completions satisfying all TFPT source conditions.
+
+7. Two independently verified legacy inference gaps
+
+v456 tests a C3 arithmetic condition and sign reversal of a selected
+Chern calculation, then sets s3_from_p1=one_sided and two_sided_kills.
+That Boolean step does not calculate, or imply, a nonzero physical
+chiral index for every allowed original source. Absence of a reversing
+symmetry cannot by itself force a nonzero index.
+v367 correctly obtains det(D8)=4, det(E8)=1 but declares an index-four
+simple-current statement with an unconditional check(True). Equal rank
+lattice index is sqrt(det(D8)/det(E8))=2. The different D5+A3 sublattice
+has determinant 16 and index four. These must not be interchanged.
+These are source-audit findings; no ledger status is modified here.
+
+8. The actual unresolved bridge, stated as a testable equality
+
+An algebraic relation survives every representation respecting the
+algebra. A zero-norm word is relative to a positive functional. The
+compiler analogy must preserve both types, rather than treating all
+zeros as one type of check.
+For native words a,b and a proposed source map Phi, the state-preserving
+condition is omega_P1(Phi(a)^* Phi(b))=omega_native(a^* b), for all words
+on a common invariant domain, with the actual source reference/weight.
+If Phi respects products and adjoints, this equality gives an isometry
+of the corresponding GNS quotients; dense range gives a unitary.
+It intertwines dynamics only if the actual translated forms are also
+matched. Finite equalities or matching symmetry dimensions do not prove
+the all-word or translated equality.
+This is a precise sufficiency criterion once the source exists, not a
+construction or uniqueness proof of Phi, omega_P1, its admissible domain,
+its physical time, the native 1+5 transport, or full spacetime dynamics.
+The most concrete new input for that bridge is (2), beside the retained
+vacuum value zero and the operator-level V5 synthesis obstruction.

@@ -174,7 +174,7 @@ need(ok_b, 'Gamma(UV) = Gamma(U)Gamma(V) on the boson lift G_B for all 49 genera
 # clock powers: Gamma(L^k) = Gamma(L)^k on Lambda^2 and on G_B, k = 0..5
 CLOCK_SRC = HERE.parent / 'compiler-involution-types' / 'checker.py'
 import warnings
-CLOCK_PIN = '9bf99de79f224ffcd060359eb146510b6e49973170f9953a0aec26760bd2c1a1'
+CLOCK_PIN = 'a0923ab19e46d784b28783f3b943df032d9de3c08b7ecda017b3d4cd3e5ad1ab'
 need(sha256(CLOCK_SRC.read_bytes()).hexdigest() == CLOCK_PIN, 'clock constructor source pin')
 with warnings.catch_warnings():
     warnings.simplefilter('ignore', ResourceWarning)

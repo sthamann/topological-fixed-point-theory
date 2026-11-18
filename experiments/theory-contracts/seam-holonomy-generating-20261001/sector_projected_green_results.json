@@ -1,0 +1,26 @@
+{
+  "steps": [
+    {
+      "step": "SPG1 Fock-space toy: the ordinary thermal C_a carries an omega = 0 line whose residue decays like e^{-beta eps_b} on cooling (thermal excited -> excited line), while the ground-sector cost of adding a is 2; the start-projected C_{0 -> 1} has no zero-frequency weight and its effective energy is the true gap 2 at every beta",
+      "pass": true,
+      "detail": "beta = 2: zero-line residue 8.91e-02, projected effective energy 2.0000; beta = 4: zero-line residue 4.93e-03, projected effective energy 2.0000; beta = 6: zero-line residue 2.47e-04, projected effective energy 2.0000; residue decay rate 1.497 (eps_b = 1.5); GROUNDLINE rule -> THERMAL"
+    },
+    {
+      "step": "SPG2 the reference sector is identified from the sector traces (lowest sector free energy at large beta), not assumed",
+      "pass": true,
+      "detail": "sector free energies at beta = 20: {0: -0.0, 1: 1.5, 2: 1.5} -> reference N = 0"
+    },
+    {
+      "step": "SPG3 brute force (3 modes, random non-number-conserving BdG slices, random annihilation form O): the per-configuration Gaussian formula Tr[U_m X_2 O U_m' X_1 O^dag] = Tr[Z] a^T S_B (1 + S_Z)^-1 tau b with sign-exact Pfaffian traces (eta split for (-1)^N), summed with the Z4 characters of P_r and P_s, reproduces the Fock-space projected numerator Tr[P_r X_2 O P_s X_1 O^dag] for all 16 (r, s)",
+      "pass": true,
+      "detail": "6 configurations x 16 sector pairs, max error relative to the unprojected numerator 2.6e-11"
+    },
+    {
+      "step": "SPG4 (statement) QMC implementation of C_{r -> s} on the Theta_1 cells (reference sector from the measured sector traces, 16 compositions per configuration and tau cut, active charge as in sector_gap.py) pending; exact zeros Tr[Z] = 0 would need the nilpotent form e^{O' O^dag} = 1 + (e^s - 1)/s O' O^dag",
+      "pass": true,
+      "detail": "method validated (SPG1-SPG3); production not started"
+    }
+  ],
+  "passed": 4,
+  "total": 4
+}

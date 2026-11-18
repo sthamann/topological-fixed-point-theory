@@ -1,0 +1,236 @@
+UNABHAENGIGE PRUEFUNG: ALL-CHARGE GRUNDZUSTAENDE UND CLUSTERING
+27. Oktober 2026
+
+Gepruefte Hauptfassung:
+
+  ALL-CHARGE-GROUND-AND-SOURCE-SELECTION.txt
+  SHA256 cb148bc84d1b1b92eaa44b4f7f5ddda7241698efc108c9bef2f81752c9a8ba60
+
+Verdikt
+
+Die affine Spektralaussage ist richtig. Sie gilt nicht nur fuer die vier
+Grundzustaende, sondern fuer das vollstaendige geladene Fockspektrum, sofern
+R^4 neben den Ladungen auch die acht gleichartigen Oszillatorkanaele
+permutiert. Daraus folgt insbesondere
+
+  Z_v(beta,y)=Z_c(beta,y)
+
+und damit auch die im Auftrag hervorgehobene Gleichheit
+
+  Z_(0+c)(beta,y)=Z_(0+v)(beta,y)
+
+fuer beta>0 und jede endliche Fugazitaet y der Gesamtladung. Die Aussage ist
+eine Gleichheit der H,Q-verfeinerten Spektren. Sie liefert ohne Kokykel- und
+Feldtransport keine Gleichheit lokaler Theorien.
+
+Der vorgeschlagene Clusteringtest ist mathematisch entscheidend, aber nur
+unter zwei bislang nicht hergeleiteten Identifikationen. Wenn erstens die
+Seedzeit tau_t auf der erweiterten E8-Algebra wirklich durch H=8K erzeugt
+wird und zweitens das p*-Wurzelfeld in der admissiblen lokalen
+Observablealgebra liegt, verletzt der Zustand |0> dynamisches
+Euklidisch-Zeit-Clustering. Das ist ein exakter bedingter Ausschluss dieser
+gemeinsamen Wahl. Die Originalquelle setzt tau_t, A_loc und omega als
+Seedbestandteile voraus; sie identifiziert tau_t nicht mit 8K auf einer
+spaeteren E8-Erweiterung. Deshalb entsteht aus dem Test kein unbedingter
+E8-Ausschluss.
+
+
+1. Exakter Beweis der Spektralinvolution
+
+Schreibe A=R^4 fuer die Vertauschung j <-> j+4 und
+
+  p*=(1/2,1/2,1/2,1/2,-1/2,-1/2,-1/2,-1/2).
+
+Aus delta_j=(j+a)/8-1/2 folgt koordinatenweise
+
+  A delta=delta+p*,        A p*=-p*.
+
+Damit gilt fuer T(p)=Ap+p*
+
+  T^2(p)=p,
+  T(p)+delta=A(p+delta).
+
+Nach quadratischer Ergaenzung ist
+
+  K(p,N)=|p+delta|^2/2-|delta|^2/2+N,
+
+also K(Tp,N)=K(p,N). Fuer q=(1,...,1) gelten qA=q und qp*=0,
+also auch Q(Tp)=Q(p). A erhaelt die ganzzahlige Summenparitaet und p*
+verschiebt zwischen den Spinorklassen; dadurch entstehen genau
+
+  0 <-> s,        v <-> c.
+
+Auf dem Fockraum muss A auch die acht Oszillatorspezies permutieren. Diese
+Permutation erhaelt jede Besetzungszahl und den Gesamtlevel N. Alternativ
+genuegt fuer die unaufgeloeste Charaktergleichheit, dass die
+Oszillator-Multiplizitaet nur von N abhaengt. So ist die Behauptung fuer alle
+Ladungen und Oszillatoren bewiesen. Eine Gleichheit mit einzeln markierten
+Oszillatorfugazitaeten gilt nur nach derselben A-Permutation dieser
+Fugazitaeten.
+
+Weil die Energie quadratisch in p waechst, konvergieren die verfeinerten
+Spuren fuer beta>0 und jede endliche chemische Gesamtladungsquelle. Die
+Gleichheit gilt ebenso koeffizientenweise als formale Q-Charakteridentitaet.
+
+
+2. Die vier Minima
+
+Die im Hauptbericht genannten Minima folgen aus strikter koordinatenweiser
+Konvexitaet. Im ganzzahligen geraden Sektor ist p=0 eindeutig. Im
+ganzzahligen ungeraden Sektor kostet die billigste einzelne Aenderung
+min(a,1-a)/8. Im halbganzzahligen Raum ist p* der eindeutige Minimierer und
+liegt wegen seiner vier Minuszeichen in s. Der Wechsel zur anderen
+Spinorparitaet kostet wieder min(a,1-a)/8. N>=0 erzeugt keine weiteren
+Nullzustaende. Fuer a=1/4 oder 3/4 ist die H-Luecke in v und c daher 1/4.
+
+Das stimmt mit dem bereits registrierten Beweis in
+seam-joint-ward-state-20261014/PROOF.txt, Zeilen 55 bis 83, ueberein.
+
+
+3. Der kleinste Clusteringzeuge
+
+Seien Omega=|0>, psi=|p*> und P_0 der Nullspektralprojektor von H. Unter der
+Annahme H>=0 gilt stark
+
+  exp(-tH) -> P_0              fuer t -> unendlich.
+
+Fuer jedes lokale Feld beziehungsweise Observable X mit
+
+  <psi,X Omega> != 0
+
+folgt deshalb
+
+  lim_t [<Omega,X* exp(-tH) X Omega>
+         - |<Omega,X Omega>|^2]
+    = ||P_0 X Omega||^2-|<Omega,X Omega>|^2
+    >= |<psi,X Omega>|^2 > 0.
+
+Im vollstaendigen Ls-Gitter-VOA besitzt das Wurzelfeld zu p* genau diese
+Matrixkomponente: Sein geeigneter Modus erzeugt |p*> aus dem Vakuum. Eine
+lokale Schmierung mit nichtverschwindendem entsprechenden Fourierkoeffizienten
+behaelt die Komponente. Das bereits bewiesene Grunddoppel und die Modi A,B in
+seam-joint-ward-state-20261014/PROOF.txt, Zeilen 113 bis 136, sind dieselbe
+Struktur.
+
+Folglich koennen die folgenden drei Aussagen nicht gemeinsam gelten:
+
+  (i) tau_t wird auf der erweiterten Algebra durch H=8K implementiert;
+  (ii) das p*-Wurzelfeld gehoert zur admissiblen lokalen Observablealgebra;
+  (iii) omega=|0><0| clustert unter dieser tau_t-Dynamik.
+
+Die Cartan-Ward-Auswahl von Omega aendert daran nichts. Sie setzt die Dichte
+auf |0><0|, entfernt aber psi weder aus ker H noch die Matrixkomponente von X.
+
+
+4. Warum dies noch kein unbedingter P1 Ausschluss ist
+
+Die operative Seeddefinition nennt
+
+  (A_loc,tau_t,Theta,omega,[u_Sigma],D_coll)
+
+und verlangt Clustering von omega auf der admissiblen lokalen Algebra.
+Sie sagt nicht, dass tau_t auf einer spaeteren E8-Felderweiterung der
+Quellenrotation H=8K entspricht. Sie sagt ebenfalls nicht, dass jedes
+geladene E8-Wurzelfeld bereits in A_loc oder in A_adm liegt. Siehe die
+Originaldefinition in
+
+  documents/archive--tfpt-45--source_extracts--01_boundary_kernel_source/
+  sections/002-section-intrinsic-closed-branch-and-canonical-rigid-obje.tex,
+  Zeilen 103 bis 119.
+
+Die Definition des physischen admissiblen Netzes nimmt nur diejenigen
+lokalen Operatoren, welche H_adm und ihre Adjungierten erhalten. Ein globales
+Komprimieren ist ausdruecklich nicht die Netzdefinition. Siehe
+
+  documents/archive--tfpt-45--source_extracts--01_boundary_kernel_source/
+  sections/001-section-primitive-core-and-carrier-interface-handoff.tex,
+  Zeilen 319 bis 342.
+
+Damit bleiben drei Faelle streng getrennt:
+
+  * Ist H nur Quellenrotation beziehungsweise Clockgrading, folgt aus seinem
+    zusaetzlichen Nullvektor keine Verletzung raeumlichen Clusterings.
+
+  * Ist das Wurzelfeld ein geladenes Feld ausserhalb der Observablealgebra,
+    ist es kein Testelement fuer das dort geforderte Clustering.
+
+  * Wird H=8K als positive Euklidische Seedzeit auf der vollen lokalen
+    E8-Algebra identifiziert, greift der obige Zeuge und diese Identifikation
+    ist ausgeschlossen.
+
+Insbesondere beweist H psi=0 allein weder verschwindenden Abstandsimpuls noch
+einen Verstoss gegen raeumliches Clustering. Die spaetere QFT-Closure leitet
+exponentielles Abstandsclustering aus dem eigentlichen admissiblen
+Hamiltonoperator H_adm und seinem Gap ab. Eine Gleichsetzung H_adm=8K auf
+dem Viersektorenraum ist gerade nicht bewiesen.
+
+
+5. Wissenschaftlicher Umfang
+
+Der Hauptbericht ist mit einer Praezisierung akzeptiert: Seine Aussage, dass
+die Grundentartung E8 nicht ausschliesst, ist im bisher bewiesenen
+Quellenumfang richtig. Zugleich liefert die Entartung jetzt einen scharfen
+Test fuer jeden kuenftigen lokalen Quellenanschluss. Ein positiver Anschluss
+muss entweder zeigen, dass 8K nicht die clusternde Seedzeit ist, oder die
+admissible Observablealgebra so typisieren, dass das p*-Feld kein
+Clusterzeuge ist. Wer beides behauptet, muss den nichtabklingenden
+Spektralbeitrag beseitigen; die Ward-Auswahl allein reicht dafuer nicht.
+
+Die erste weiterhin tragende Quellenfrage ist daher die gemeinsame
+Identifikation von tau_t, der admissiblen lokalen Algebra und dem markierten
+s-Erzeuger. Das ist enger und entscheidender als die Forderung nach einem
+eindimensionalen Kern von 8K.
+
+
+6. Eine naheliegende Sektorstrafe ist keine lokale stetige Reparatur
+
+Spektral wuerde
+
+  H_epsilon=H+epsilon P_s,       epsilon>0,
+
+den zweiten Nullzustand anheben und H auf dem D8-Vakuumsektor unveraendert
+lassen. P_s ist jedoch der globale Sektorprojektor. Im fest eingebetteten,
+multiplikitaetsfreien lokalen Simple-Current-Netz
+
+  B=A_D8 direct_sum B_s,
+
+ist eine solche kontinuierliche relative Phase keine lokale
+Netzautomorphismengruppe.
+
+Der kleinste Beweis ist algebraisch. Eine unitaere Automorphie von B, die A_D8
+punktweise fixiert, wirkt wegen Irreduzibilitaet und Multiplizitaet eins auf
+dem s-Ladungsraum mit einem Skalar lambda_s. Das Produkt
+
+  B_s B_s subset A_D8
+
+und die Nichttrivialitaet dieses Fusionskanals erzwingen
+
+  lambda_s^2=1.
+
+Damit ist Aut(B|A_D8) die Charaktergruppe des Erweiterungs-Z2, also wieder
+Z2. Fuer zwei stark stetige lokale Zeitentwicklungen alpha_t und
+alpha'_t, die dieselbe Intervallbewegung und exakt dieselbe Wirkung auf dem
+festen D8-Unternetz besitzen, liegt die punktweise Differenz nach Ruecktransport
+in dieser diskreten relativen Gruppe. Sie beginnt bei der Identitaet und ist
+stetig, also ist sie fuer alle t trivial. Die von H_epsilon verlangte Phase
+
+  lambda_s(t)=exp(i t epsilon)
+
+ist daher nur fuer epsilon=0 mit diesen Voraussetzungen vereinbar.
+
+Dieser Ausschluss benoetigt alle folgenden Praemissen:
+
+  * dasselbe irreduzible lokale finite-index Netz B und dasselbe eingebettete
+    D8-Unternetz A_D8;
+  * die multiplikitaetsfreie Ordnung-zwei-Simple-Current-Erweiterung;
+  * stark stetige Automorphismengruppen mit derselben geometrischen
+    Intervallbewegung und derselben Wirkung auf A_D8;
+  * dieselbe Vakuumdarstellung, sodass der globale Sektorprojektor und die
+    Generatoren verglichen werden.
+
+Ohne diese Praemissen ist dies kein Ausschluss anderer P1-Zeiten. Eine
+veraenderte D8-Dynamik, ein groesserer lokaler Feldinhalt, eine andere
+Erweiterung oder eine Zeit, die nicht durch H+epsilon P_s beschrieben wird,
+bleibt offen. Innerhalb des festgehaltenen Netzes zeigt der Test aber konkret:
+Die Grundentartung laesst sich nicht durch eine unsichtbare kontinuierliche
+globale Sektorstrafe reparieren.

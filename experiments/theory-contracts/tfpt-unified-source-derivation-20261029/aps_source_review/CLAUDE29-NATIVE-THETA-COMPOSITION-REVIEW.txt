@@ -1,0 +1,195 @@
+CLAUDE29: COMPOSITION WITH THE EXISTING NATIVE THETA
+Independent exact operator review, 29 October 2026
+
+No Atlas or original source was changed.
+
+VERDICT
+
+The existing native product reflection does not turn the new chiral E0 map
+into a same-Phi symmetry for generic complex Yukawa and Majorana controls.
+The two antiunitary maps compose to a NEW-complex-linear Bogoliubov map, but
+its target is still the transported source:
+
+  raw chiral map:          G(B_Phi) -> G(B_(Phi^K)),
+  torus-compensated map:   G(B_Phi) -> G(B_(bar(Phi))).
+
+The native reflection is a symmetry inside every already fixed graph.  It is
+not an additional coefficientwise conjugation Phi' -> Phi.  Therefore a
+second antilinearity does not cancel the source transport.
+
+The composition also reverses the circle parameter between the two source
+families and squares to minus one on the one-particle selfdual space.  Its
+square is fermion parity on the CAR algebra and the identity only after
+restriction to even observables.  No CPT name is justified by these facts.
+
+1. ORIGINAL THETA, READ IN ITS ACTUAL TYPE
+
+The existing source uses
+
+  F=S_normal tensor gamma_F,
+  R_geo=face_swap tensor F,
+  C_faces=diag(C0,-C0).
+
+On the NEW complex one-particle space R_geo is antiunitary, commutes with
+C_faces and obeys, for every allowed selfadjoint odd Phi,
+
+  F B_Phi F=-B_Phi,
+  R_geo G(B_Phi) R_geo^-1=G(B_Phi).                    (1)
+
+The corresponding cyclic antiunitary in the thermal Hilbert-Schmidt
+representation is
+
+  J_R=Q_Gamma^* J_HS.
+
+It implements the same geometric reflection on the bounded CAR fields and
+fixes the graph state.  It is not J_F and it is not a map which replaces the
+external constructor parameters by their complex conjugates.  In particular,
+(1) remains a same-Phi identity even when Y_f and M_R are generic complex
+matrices.
+
+The GNS formula is source specific: J_R acts in the Hilbert-Schmidt
+representation built from h_Phi.  Thus the clean composition test is first
+performed with R_geo on the common one-particle selfdual chart.  The existing
+graph-to-HS intertwiner then gives the same conclusion for J_R.
+
+2. SMALLEST COEFFICIENT BLOCK TEST
+
+Let Jcal_E be the chiral E0 antiunitary from the preceding review.  In OLD
+complex coordinates it has the form
+
+  Jcal_E=Ical D_K kappa,
+
+with the base pullback understood.  It satisfies
+
+  Jcal_E B_Phi Jcal_E^-1=B_(Phi^K),
+
+where the actual v252 constructor gives
+
+  Y'_f=omega S_f bar(Y_f) S_f,
+  M'_R=omega^2 S_f bar(M_R) S_f.                       (2)
+
+The first decisive block is already enough.  Since the native F in (1)
+changes B to minus B without changing its coefficient,
+
+  (F Jcal_E) B_Phi (F Jcal_E)^-1=-B_(Phi^K).           (3)
+
+Equation (3) is not -B_Phi for generic complex controls.  The native
+reflection has preserved Phi^K exactly as it preserves every other fixed
+coefficient.  It has not applied a second copy of bar(.) to (2).
+
+3. ALL FACES AND THE TORUS-COMPENSATED MAP
+
+Extend Jcal_E diagonally to the two faces and put
+
+  C_raw=R_geo Jcal_E,faces.
+
+Both factors are NEW antiunitary, hence C_raw is NEW complex linear.  Both
+commute with C_faces, so C_raw is a correctly typed selfdual Bogoliubov map.
+Functional calculus and (3) give the complete graph identity
+
+  C_raw G(B_Phi) C_raw^-1=G(B_(Phi^K)).                (4)
+
+This includes both diagonal face blocks and both crossing blocks.
+
+Now reuse the corrected torus result, rather than Claude29's erroneous common
+omega Majorana phase.  Let U_K be the already checked combination of the
+family sign and the lambda_5 plus A3 phase.  On the displayed v252 chart,
+
+  U_K Phi^K U_K^*=bar(Phi).
+
+The compensated antiunitary
+
+  Jhat_E=U_K Jcal_E
+
+is again an involution and transports B_Phi to B_(bar(Phi)).  Its composition
+with the native reflection is
+
+  C_hat=R_geo Jhat_E,faces,
+  C_hat G(B_Phi) C_hat^-1=G(B_(bar(Phi))).             (5)
+
+Thus the new torus absorption is fully retained.  It sharpens the target from
+Phi^K to bar(Phi), but it does not make (5) a same-Phi identity.  Such an
+identity requires Phi=bar(Phi), or a separately allowed equivalence which
+identifies those two fixed backgrounds.  The existence of the native Theta
+does not supply that equivalence.
+
+The same conclusion holds in either order.  Applying the native reflection
+first leaves G(B_Phi) fixed; applying it second leaves the transported target
+fixed.
+
+4. SQUARE AND TIME PARAMETER
+
+Direct matrix multiplication gives for both versions
+
+  C_raw^2=C_hat^2=-I                                  (6)
+
+on the two-face one-particle space.  Therefore the induced CAR map squares to
+the sign automorphism c(u)->c(-u), namely fermion parity.  It becomes an
+involution on the even algebra used by the proven reflection-positive form,
+but not on odd fields.
+
+The two antiunitary time rules must also be kept separate.  The existing J_R
+obeys
+
+  J_R L_HS J_R^-1=-L_HS,
+  J_R exp(i t L_HS) J_R^-1=exp(i t L_HS).
+
+The equality with the same parameter in the second line uses the
+antilinearity of J_R.  The chiral E0 antiunitary transports h_Phi to its
+target and consequently sends its one-particle circle group to the target at
+-t.  Their linear composition therefore obeys
+
+  C_raw U_Phi(t) C_raw^-1=U_(Phi^K)(-t),
+  C_hat U_Phi(t) C_hat^-1=U_(bar(Phi))(-t).            (7)
+
+The composition reverses the parameter as an ordinary complex-linear
+intertwiner.  This is not the same statement as the source-internal native
+Theta relation and does not identify circle time with radial OS time.
+
+5. TARGETED ACTUAL96 REPLAY
+
+A targeted replay imported the original v252 full_D constructor and used
+generic complex Gaussian-integer Yukawa matrices and a generic complex
+symmetric Majorana matrix, seed 2931.  It constructed the full 192 dimensional
+B operator and the complete 384 dimensional two-face graph.  The results were
+
+  ||Phi^K-Phi(equation (2))||                2.35e-14,
+  ||U_K Phi^K U_K^*-bar(Phi)||               2.14e-14,
+  ||F B_Phi F+B_Phi||                        0,
+  ||C_raw B_Phi C_raw^-1+B_(Phi^K)||         1.54e-15,
+  raw same-Phi B failure norm                 81.16,
+  ||C_hat B_Phi C_hat^-1+B_(bar(Phi))||      2.96e-14,
+  compensated same-Phi B failure norm        65.73,
+  ||C_raw G_Phi C_raw^-1-G_(Phi^K)||         3.45e-14,
+  raw same-Phi graph failure norm             9.73,
+  ||C_hat G_Phi C_hat^-1-G_(bar(Phi))||      3.41e-14,
+  compensated same-Phi graph failure norm     7.89.
+
+The NEW-complex-linearity and C_faces commutators vanished exactly.  The
+residuals of (6) against -I were below 6.5e-15.  Normal and Python -O output
+were byte identical, SHA256
+
+  0ed44dc485de745defcf321bc9fc61a33efef9dd8c1113bb69512304f17f64a0.
+
+6. EXACT SCOPE
+
+This calculation proves a complete operator, face, state-graph and circle
+intertwiner between the displayed source family members.  It does not select
+the complex controls, prove that the marked original K action admits U_K,
+identify the cyclic circle with physical OS time, or establish a same-source
+symmetry for the physical CKM background.  Physical Theta, finite J_F, the F5
+real structure C0 and the E0 family antiunitary remain distinct operations.
+
+Sources
+
+* graded_boundary_functor/GRADED-HS-REFLECTION-AND-TIME.txt,
+  SHA256 0d9727a9e167c64ef4a8413736c1555b90a7c5da5392eeea3a3455d0bb037986.
+* graded_boundary_functor/EVEN-REFLECTION-POSITIVITY.txt,
+  SHA256 1d19121c8292a3eba44d231502c75ff8e722fa3d530ee7a06d469ab2858b3769.
+* graded_boundary_functor/FINITE-COUPLED.txt,
+  SHA256 61d3d524801aff0147d393c518ad554e3ab550271165e2000d9efbf613b90234.
+* aps_source_review/CLAUDE29-CHIRAL-FINITE-REVIEW.txt,
+  SHA256 3446a9b90d1cbc7bd558c9b860bf10f8822e56cfce2169cab40423b29f095059.
+* verification/v252_full_finite_triple.py,
+  SHA256 820254440e178430422e50605067775656236602996307f67c9e69124ba5d163.
+

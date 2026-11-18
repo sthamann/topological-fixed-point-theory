@@ -1,0 +1,297 @@
+TWO BRANCH LATTICE VERTEX GROUPOID
+The marked alpha transport is coherent on full vertex fields without splitting G31
+2026-10-27
+
+
+VERDICT
+=======
+
+The required full-field lift exists on the two already constructed objects
+
+  Lambda_0=Lambda,              Lambda_1=zeta_8 Lambda.
+
+The smallest construction does not require a same-object lift of V with
+V^2=1, does not require [V,J]=1 in the lattice central extension, and does not
+split the full G31 extension.
+
+Start with the existing faithful C12 lattice-vertex lift on object zero,
+
+  c_0^12=1,       beta_0=c_0^9,       sigma_0=c_0^4,
+  beta_0^4=1,     sigma_0^3=1,        [beta_0,sigma_0]=1.      (1)
+
+Let
+
+  T: V_(Lambda_0) -> V_(Lambda_1)                              (2)
+
+be any unitary standard-cocycle lift of the actual lattice isometry
+alpha_01=zeta_8 V.  In the branch coordinate frames the underlying integral
+matrix of T is V.  Define
+
+  beta_1  =T beta_0 T^(-1),
+  sigma_1 =T sigma_0^(-1) T^(-1),
+  alpha_01=T,
+  alpha_10=beta_0 T^(-1).                                     (3)
+
+Then on V_(Lambda_0) direct sum V_(Lambda_1),
+
+  alpha^2=diag(beta_0,beta_1),
+  alpha^8=1,
+  alpha sigma alpha^(-1)=sigma^(-1).                          (4)
+
+Both branches carry a faithful C12 action
+
+  c_j=beta_j sigma_j,
+  c_j^12=1,              c_j^4=sigma_j,       c_j^9=beta_j.   (5)
+
+This closes the requested coherent two-object field family.  It does not form
+a single alpha-invariant lattice VOA.  Alpha remains an arrow between the two
+VOAs, exactly as required by the already proved lattice obstruction.
+
+An optional stronger result also holds.  For the fixed standard cocycle there
+are 256 simultaneous sign-character sections for which J,V,sigma themselves
+obey the full same-frame presentation of C4 x S3.  Their lifted group has
+order 24 and c=J sigma has order 12.  That stronger section is unnecessary for
+(2)-(5), and every strict solution changes the zero-on-basis lift of J.  It
+must therefore not replace an already frozen J vertex lift without an explicit
+linearization choice.
+
+
+1. FIXED STANDARD COCYCLE
+=========================
+
+Let B be the integral basis produced by check_theta_lattice.py and let G be its
+even unimodular Gram matrix.  The checker fixes the standard bimultiplicative
+cocycle
+
+  epsilon(m,n)=(-1)^(m^T F n),                                (6)
+
+where
+
+  F_ii=G_ii/2 mod 2,
+  F_ij=G_ij mod 2 for i>j,
+  F_ij=0 for i<j.
+
+Thus
+
+  F+F^T=G mod 2,
+  epsilon(m,m)=(-1)^(<m,m>/2).                                (7)
+
+No cocycle is fitted to the desired group relations.  The same rule is used
+on both branch coordinate frames.
+
+The mod-two calculation is a complete all-charge calculation, not a finite
+shell test.  Both epsilon(m,n) and every sign carry eta_A(m) depend only on the
+classes of m,n in Lambda/2Lambda.  Hence the 256 charge classes and the 65536
+ordered charge pairs exhaust the cocycle identities for every m,n in Lambda.
+The exact integral matrix identities A^T G A=G and the geometric relations of
+J,V,sigma are checked separately over Z by check_theta_lattice.py before this
+parity reduction is used.
+
+For a lattice isometry A define
+
+  D_A=A^T F A+F mod 2,
+  q_A^0(m)=sum_(i<j) (D_A)_ij m_i m_j mod 2.                  (8)
+
+The checker proves exhaustively on Lambda/2Lambda that
+
+  q_A^0(m+n)+q_A^0(m)+q_A^0(n)=m^T D_A n.                    (9)
+
+Consequently
+
+  Ahat(e^m)=(-1)^(q_A^0(m)) e^(A m)                          (10)
+
+is an automorphism of the twisted lattice group algebra.  On the full lattice
+VOA it acts by
+
+  Ahat[h_1(-n_1)...h_r(-n_r)e^m]
+    =(Ah_1)(-n_1)...(Ah_r)(-n_r)(-1)^(q_A^0(m))e^(Am).        (11)
+
+Because A is orthogonal and the phase has modulus one, (11) is unitary.  It
+fixes the vacuum, preserves the conformal vector and intertwines every vertex
+operator.  The calculation on the group algebra together with the ordinary
+isometry relations on the Heisenberg generators therefore proves the
+relations on all vertex fields, not only on the root shell.
+
+Multiplication by a sign character
+
+  (-1)^(t^T m),              t in (F_2)^8                     (12)
+
+changes the lift section but not epsilon, A, the lattice, or the vertex
+algebra.  The optional strict census enumerates exactly these 256 choices per
+marked generator.
+
+
+2. WHY THE TWO OBJECT CONSTRUCTION NEEDS NO SPLITTING
+=====================================================
+
+The identities in (3)-(5) are formal consequences of one existing C12 lift
+and one invertible VOA isomorphism T.
+
+First,
+
+  alpha_10 alpha_01
+    =beta_0 T^(-1)T
+    =beta_0,
+
+  alpha_01 alpha_10
+    =T beta_0 T^(-1)
+    =beta_1.                                                   (13)
+
+Since beta_0 and beta_1 have order four, alpha has exact order eight.
+
+For the cubic mark, the first arrow obeys
+
+  T sigma_0
+    =sigma_1^(-1) T,                                         (14)
+
+because sigma_1^(-1)=T sigma_0 T^(-1).  On the return arrow,
+
+  beta_0 T^(-1) sigma_1
+    =beta_0 sigma_0^(-1) T^(-1)
+    =sigma_0^(-1) beta_0 T^(-1),                             (15)
+
+using only [beta_0,sigma_0]=1.  Equations (14),(15) are precisely the two
+components of alpha sigma alpha^(-1)=sigma^(-1).
+
+Conjugation transports (1) to beta_1.  The inverse in the definition of
+sigma_1 does not change its order, and beta_1 still commutes with sigma_1.
+Equation (5) follows.
+
+The actual geometry also matches.  In branch coordinates T has matrix V.
+The return arrow has matrix
+
+  J V^(-1)=J V=iV,                                           (16)
+
+because the geometric matrix V is an involution.  Likewise
+
+  V sigma^(-1) V^(-1)=sigma,
+
+so the transported branch-one cubic has the same geometric matrix sigma.
+Only its cocycle section has been transported, as it must be.
+
+The exact checker deliberately uses a valid standard-cocycle lift T for which
+
+  T^2 != 1,                 [T,beta_0] != 1.                  (17)
+
+Nevertheless every identity (13)-(15) passes on all 256 residue fields.
+Thus no hidden same-frame split is being used.
+
+The choice of T is unique only up to character gauge.  If T'=chi T, transport
+by chi conjugates all branch-one data beta_1,sigma_1,c_1 and the return arrow.
+It produces an isomorphic two-object vertex groupoid.  Thus the field family
+is canonical only up to this ordinary groupoid equivalence; the proof does not
+promote one character section to a physical observable.
+
+
+3. OPTIONAL STRICT ORDER 24 SECTION
+===================================
+
+For completeness, the checker also asks the stronger question posed in the
+task.  For every A in {J,V,sigma} it enumerates
+
+  eta_A^t(m)=(-1)^(q_A^0(m)+t^T m),       t in (F_2)^8,       (18)
+
+and tests the complete relations on all m mod 2.
+
+Power-normalized candidate counts are
+
+  J^4=1:       256,
+  V^2=1:        16,
+  sigma^3=1:    16.                                          (19)
+
+Exactly 256 triples additionally satisfy
+
+  [V,J]=1,
+  [sigma,J]=1,
+  V sigma V^(-1)=sigma^(-1).                                 (20)
+
+The lexicographically first witness has character masks
+
+  t_J     =0x03,       support {0,1},
+  t_V     =0x35,       support {0,2,4,5},
+  t_sigma =0x2a,       support {1,3,5}.                       (21)
+
+The generated group of vertex automorphisms has exactly 24 elements.  For
+
+  c=J sigma
+
+the checker proves
+
+  order(c)=12,             c^4=sigma,          c^9=J.         (22)
+
+No triple in the complete census has t_J=0.  Therefore the zero-on-basis
+standard J lift does not extend to this strict same-frame C4 x S3 section.
+This is not an obstruction to the groupoid construction in section 2.  It is
+the exact reason the transported two-object construction is the safer result
+when an earlier J or C12 lift must remain fixed.
+
+The number 256 counts raw sign-character sections of the fixed standard
+cocycle.  It is not a count of physical choices or inequivalent theories.
+Character gauge and further marked centralizers can identify sections.  No
+quotient census is needed for the existence theorem proved here.
+
+
+4. SCOPE
+========
+
+PROVED:
+
+  * the actual standard cocycle on the theta E8 basis admits a unitary lift of
+    the lattice isomorphism Lambda -> zeta_8 Lambda;
+
+  * given the existing faithful branch-zero C12 lift, transport along that one
+    arrow produces coherent beta, sigma and C12 actions on branch one;
+
+  * alpha has exact order eight on the direct sum groupoid representation,
+    squares to the branchwise beta and reverses sigma on all vertex fields;
+
+  * the optional same-frame subgroup C4 x S3 also splits after a compatible
+    sign-character choice and has exact order 24.
+
+NOT CLAIMED:
+
+  * no splitting of the full G31 lattice extension;
+
+  * no alteration of the established nonsplitting result for that larger
+    extension;
+
+  * no single alpha-invariant lattice or single local VOA containing both
+    branches;
+
+  * no physical P1 sewing, state or field-measure identification;
+
+  * no claim that the optional masks (21) equal a previously frozen source
+    linearization.  They are a concrete compatible section of the fixed
+    cocycle extension.
+
+The groupoid result needs none of the optional masks.  It preserves any given
+faithful C12 lift on branch zero and defines every branch-one mark by transport.
+The executable certificate instantiates beta_0,sigma_0 with the displayed
+strict witness so that every identity can be replayed entrywise.  The theorem
+it certifies is stronger in the relevant direction: for any already fixed
+faithful c_0, set beta_0=c_0^9 and sigma_0=c_0^4, and equations (2),(3) prove
+the same groupoid identities for every cocycle lift T.  The instantiation is
+not used to replace the original c_0 or J linearization.
+
+Individual lattice-isometry lifts exist by (8)-(11).  Nothing here constructs
+or assumes a simultaneous lift of every element of G31.
+
+
+5. CERTIFICATE
+==============
+
+Input lattice checker:
+
+  research-20261027-fundamental-next/lattice/check_theta_lattice.py
+  SHA256 a45fcf5c66ebd208a050c30b9297dfca6dfccc28a68398d75cd91285f9e18b5e
+
+New exact checker and outputs:
+
+  research-20261027-fundamental-next/fields/check_small_vertex_lifts.py
+  research-20261027-fundamental-next/fields/vertex-lifts.json
+  research-20261027-fundamental-next/fields/vertex-lifts-optimized.json
+
+The checker runs normally and with python3 -OO.  The two JSON outputs are byte
+identical.  It checks the cocycle polarization identity, all lift relations on
+all 256 classes of Lambda/2Lambda, the complete sign-character census, exact
+group order 24, both C12 clocks and the two branch alpha identities.

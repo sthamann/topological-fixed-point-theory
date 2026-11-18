@@ -1,0 +1,158 @@
+SEAM / GRAVITY SOURCE BRIDGE — bounded contract (2026-10-13)
+
+Verdict: PARTIAL. This checker isolates three implications that the cited sources
+do not establish. It adds no physical model and closes no T1–T8 gate. Its results
+are conditional algebraic/source diagnostics, not an alternative derivation of
+TFPT or of semiclassical gravity.
+
+1. What v323's finite calculation establishes
+------------------------------------------------
+For modes n=-12,...,12, v323 defines C_n=(1+exp(|n|))^-1 and computes
+K=log((1-C)/C). The source-native helper therefore returns K_n=|n|. The checked
+commutators with L=diag(n), rho=diag(i^n), and C vanish (up to floating point
+roundoff), and K is diagonal in this basis. This proves the stated finite
+matrix symmetry facts for this chosen covariance.
+
+It does not identify the generator K with a geometric horizon boost. The two
+neighboring bilinears (-1,0) and (0,1) both have mode gap +1, but their K gaps
+are -1 and +1. At modular parameter t=pi/2 their phases are -i and +i, so a
+single scalar quarter-turn phase does not implement this action on these two
+bilinears. Nor is K an affine function aL+b on this symmetric mode set. This
+separates “commutes with the rotation generator” from “is the generator of the
+same geometric rotation.” It does not exclude a doubled/chiral geometric action,
+another representation, or a real local interval Bisognano–Wichmann theorem;
+there is no local net or interval inclusion in the finite helper.
+
+The published Dorau–Much construction makes the missing geometric input
+explicit. In arXiv:2510.24491v3, equation (4) identifies the modular group with
+affine horizon dilations. Equation (12) computes relative entropy as
+S_rel=-2 pi integral U (partial_U phi)^2. Equation (19) introduces a
+linearized induced-metric response with free proportionality alpha, and
+equation (20) obtains delta A=alpha/(2 pi) S_rel. Equation (28) gives the
+semiclassical Einstein equation with arbitrary alpha; alpha=8 pi follows after
+assuming S_rel=delta A/4. The paper supplies a local geometric horizon action
+and a conditional area normalization. The finite v323 commutators alone supply
+neither bridge.
+
+2. Entropy normalization is a separate choice of replica completion
+-------------------------------------------------------------------
+Take a fixed-metric matter functional Z[g,J] and multiply it by exp(lambda Q[g]),
+where Q is independent of J. Then the normalized fixed-background functional
+Z[g,J]/Z[g,0] is unchanged: the common factor cancels. Under the declared conical
+convention Q[g_n]-n Q[g_1]=4 pi (1-n) A, however, the normalized replica entropy
+
+  S = - d_n (log Z[g_n]-n log Z[g_1]) at n=1
+
+shifts by 4 pi lambda A. Thus matter-normalized correlators do not by themselves
+fix this generalized conical coefficient. This is a change to the replica
+completion/counterterm, not a change in the entropy of the same microscopic
+density-matrix trace. No claim is made that every such lambda is allowed by all
+TFPT principles; the diagnostic identifies the additional selection theorem
+that a bridge would need.
+
+In four dimensions lambda and the Einstein-Hilbert coefficient have mass
+dimension two. Setting lambda=z m^2 leaves the chosen matter mass m fixed while
+G m^2 = m^2/[16 pi (k+z m^2)] varies with z. So a unit convention alone does not
+remove the freedom. This is consistent with v68: its heat-kernel normalization
+is K_EH=f2 Lambda^2 d/(192 pi^2), and its scale ratio depends on
+f2 Lambda^2/m^2. v68 itself carries the P1 normalization through the heat-kernel
+calculation; it is not a freestanding derivation of that input.
+
+3. Variation fixes the factor, conditional on the action coefficient
+--------------------------------------------------------------------
+With S_EH=k integral sqrt(g) R and matter convention
+delta S_m=-(1/2) integral sqrt(g) T_ab delta g^ab, stationarity yields
+
+  G_ab = (1/(2k)) T_ab.
+
+The factor 1/2 follows from the variation convention. v73 lines 34–46 set
+c3=1/(8 pi), k=c3/2, and then check the action/EOM relation and the
+Gauss–Bonnet normalization for its compactified S2 seam slice. Substituting
+k=c3/2 gives 1/c3, exactly as its arithmetic checker reports. But the
+variation does not independently select k. v358 lines 61–86 set eta=1/|mu4|,
+assemble the stated first-law and geometric coefficients, and equate them
+under its entropy-density/area-law premises. Those identities are exact once
+their inputs are given; they do not independently derive those inputs.
+
+Additional source controls
+--------------------------
+The finite common-standard inclusion lemma reviewed for this contract says:
+for finite-dimensional unital *-algebras N subset M subset B(H), if one vector
+Omega is cyclic and separating for both N and M, then A -> A Omega is bijective
+for either algebra. Hence dim N=dim H=dim M, N=M, their modular operators agree,
+and the half-sided modular inclusion translation generator is zero. A strict
+finite native realization therefore cannot meet the nontrivial common-standard
+inclusion target; an infinite limit or approximation remains open. This is an
+already-known conditional finite-dimensional obstruction (v438, especially
+lines 20–22, 42–45, 133–140), not a new global no-go.
+
+The original ledger's GRAV.NONCIRCULAR.01 row (line 1146) already types the
+v323/v358/v359 bridge as conditional on a four-dimensional net. Accordingly,
+this contract does not accuse the whole repository of claiming unconditional
+closure. Further relevant IDs are QGEO.BW.01, SEAM.KHALF.01, SEAM.THEOREM.01,
+P1.INDEX.KMS.01, and TFPT.TOE.COMPLETE.01; this probe does not close them or
+GRAV.NONCIRCULAR.01.
+
+Positive conditional Cartan-current bridge
+------------------------------------------
+The finite v323 matrix objection does not rule out the actual local mechanism
+needed by Dorau–Much. Conditionally assume the raw collar really is the level-1
+E8 lattice conformal vacuum net. Its rank-eight Cartan currents form a U(1)^8
+current subnet. In Longo's current convention
+[j_a(x),j_b(y)]=i delta_ab delta'(x-y), a real smooth Cartan profile
+h in C_c^infinity(0,infinity;R^8) gives a local Weyl unitary W(h). Its current
+shift is plus or minus h', depending on Weyl-action convention, and its coherent
+stress-energy difference is Delta<T_00>=1/2 ||h'||^2. For the common geometric
+vacuum modular dilation on the half-line, Longo's Proposition 4.2 gives
+
+  S(omega_h || omega) = pi integral_0^infinity x ||h'(x)||^2 dx
+                      = 2 pi integral_0^infinity x Delta<T_00>(x) dx.
+
+This is positive evidence for the relative-entropy/boost-flux identity on this
+specific localized Cartan Weyl orbit. The full E8 algebra and the Cartan subnet
+have the same conformal vector at affine level one in the standard E8 lattice
+construction: the E8 lattice and rank-eight Heisenberg Sugawara stress tensors
+agree. The TFPT synthesis itself lists level-one lattice quantization as an
+additional origin hypothesis (2026-09-28 synthesis, lines 3381 onward) and the
+affine total Sugawara equality at c=8 (lines 3887–3897). Under that construction,
+their vacuum modular action is common. To infer equality of full-net and
+subnet relative entropies, also require a vacuum-preserving conditional
+expectation from the full E8 half-line algebra to the Cartan subnet; modular
+invariance of the subnet and Takesaki's theorem can supply it under the assumed
+vacuum net. Equality then applies to states preserved by this expectation,
+including the localized Cartan Weyl orbit when its implementation meets that
+condition. This remains conditional on the actual net and expectation; it does
+not extend automatically to arbitrary nonabelian or arbitrary states.
+
+The source-to-source normalization map is explicit: x=-U and
+h(x)=sqrt(2) phi(-x) give
+
+  pi integral_0^infinity x ||h'(x)||^2 dx
+    = -2 pi integral_{-infinity}^0 U ||partial_U phi(U)||^2 dU,
+
+which matches the scalar integrand and coefficient in Dorau–Much equation (12).
+This map contains no transverse dvol_S factor and derives no four-dimensional
+horizon area response. The coherent-state relative entropy is quadratic, so
+there is no automatic nonzero first variation at the vacuum for arbitrary-state
+perturbations. The actual raw collar/local-net identification, its scaling
+limit, and the physical affine-coordinate map are still missing. This paragraph
+is an analytic conditional argument supplied from the cited theorems; the
+checker does not execute or test it.
+
+Run `/opt/homebrew/bin/python3 checker.py` (or the same interpreter with `-OO`).
+The checker imports the original v323 module with its real dependencies and uses
+SymPy differentiation and simplification for the replica and coefficient
+identities. It records raw subprocess exits for v73, v358, and v323, source
+hashes, assignment anchors, numerical residuals, and symbolic outputs. Green
+subprocesses are replays of those verifiers, not new evidence for their physical
+premises. No full suite was run. The theory graph and primer were regenerated
+after this analytic section was added, then checked for freshness; the checker
+remains experiment-only.
+
+Next theorem needed for the bridge: construct the actual metric-dependent raw
+functional and prove that its conical derivative equals the microscopic horizon
+relative entropy for the intended local region, with the same state, algebra,
+normalization, and regulator. Then derive the local geometric modular action
+and fix the metric-response/area coefficient from the original TFPT principles.
+Until those steps are supplied, neither the finite symmetry calculation nor
+coefficient matching closes the Dorau–Much physical bridge.

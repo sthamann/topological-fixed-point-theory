@@ -1,0 +1,438 @@
+**Ich habe einen konkreten Konflikt konstruktiv aufgelöst: Das dokumentierte endliche Bindungsmodell kann seine vollständige Dynamik und die zuletzt geprüfte Clock behalten und trotzdem eine erhaltene Gesamtladung besitzen. Dafür muss die zwischenzeitlich übertragene Ladung im Zustandsraum mitgeführt werden.**
+
+Die neue Konstruktion ist vollständig ausgeschrieben und durch **45 exakte symbolische Prüfungen** abgesichert. Sie löst dieses endliche Kompatibilitätsproblem. **Eine vollständige physikalische TFPT Lösung ist daraus noch nicht hergeleitet.** Die zusätzliche Ladungsstruktur muss weiterhin aus der ursprünglichen P1 Quelle entstehen, statt von uns eingesetzt zu werden.
+
+Der Fortschritt liegt diesmal nicht in einer weiteren passenden Zahl, sondern in einer Abbildung, die die gesamte Zeitentwicklung erhält.
+
+## 1. Der bisherige Konflikt lässt sich ohne Änderung der Antwort lösen
+
+Ich verwende das bereits dokumentierte Bindungsmodell
+
+\[
+h=I_{25}-\mathsf K,
+\]
+
+wobei \(\mathsf K\) die Matrix der tatsächlichen Paarantwort \(\mathcal R_2\mathcal E_2\) ist. Damit gilt
+
+\[
+\operatorname{spec}(h)
+=
+\left\{
+0^{\times1},
+\left(\frac59\right)^{\times9},
+1^{\times15}
+\right\}.
+\]
+
+Dieser Hamiltonoperator wurde in der früheren Dokumentation innerhalb eines ausdrücklich definierten Kopplungsmodells konstruiert. Er ist nicht schon der vollständige primitive P1 Generator. TFPT_Gesamtdokumentation_202609…
+
+Die **ursprüngliche markierte Hyperladung** bleibt unverändert. Ich ersetze sie insbesondere nicht durch die zuvor ausgeschlossene Hyperladung aus der halben Clock. Deren Unterschied zur festen Originalmarkierung war im letzten Bericht nachgewiesen worden. TFPT_Operatorpruefung_2026-11-11
+
+Für ein Paar aus Träger und konjugiertem Träger lautet die Gesamtladung der Materie
+
+\[
+Y_{\mathrm{Paar}}
+=
+Y\otimes I-I\otimes Y^T.
+\]
+
+In ganzzahliger Normierung setzen wir
+
+\[
+Q=\frac65Y_{\mathrm{Paar}}.
+\]
+
+Dieser Operator besitzt drei Ladungssektoren:
+
+\[
+\begin{array}{c|ccc}
+\text{Ladung}&-1&0&+1\\
+\hline
+\text{Dimension}&6&13&6
+\end{array}
+\]
+
+Das Problem ist weiterhin
+
+\[
+[h,Q]\neq0.
+\]
+
+Die Paarbindung allein erhält also diese Materieladung nicht.
+
+**Daraus folgt aber nicht, dass die vollständige Wechselwirkung Ladung verletzen muss. Es kann ein weiterer Teil des Systems die Gegenladung tragen.**
+
+Das ist die Möglichkeit, die ich jetzt an den konkreten Matrizen umgesetzt habe.
+
+## 2. Die exakte Konstruktion: Ein Register trägt die Zwischenladung
+
+Wir ergänzen einen Referenzraum mit drei Zuständen:
+
+\[
+|-1\rangle,\quad |0\rangle,\quad |+1\rangle.
+\]
+
+Sein Ladungsoperator sei
+
+\[
+N|n\rangle=n|n\rangle.
+\]
+
+Die erhaltene Gesamtladung soll jetzt sein:
+
+\[
+\boxed{
+Q_{\mathrm{gesamt}}
+=
+Q\otimes I+I\otimes N.
+}
+\]
+
+Die Regel für die Wechselwirkung ist einfach:
+
+> Jeder ursprüngliche Materieübergang bleibt mit seiner ursprünglichen Amplitude erhalten. Das Referenzregister übernimmt gleichzeitig die entgegengesetzte Ladungsänderung.
+
+Wenn \(|a\rangle\) die Materieladung \(q_a\) besitzt, definieren wir
+
+\[
+\langle a,n|\widehat H|b,m\rangle
+=
+\begin{cases}
+h_{ab},&q_a+n=q_b+m,\\
+0,&\text{sonst}.
+\end{cases}
+\]
+
+Das ergibt einen vollständig bestimmten Operator auf einem 75 dimensionalen Raum.
+
+### Warum das mehr als eine Spektralübereinstimmung ist
+
+Die Einbettung
+
+\[
+\boxed{
+E|a\rangle=|a\rangle\otimes|-q_a\rangle
+}
+\]
+
+ordnet jedem ursprünglichen Zustand einen Zustand mit Gesamtladung null zu.
+
+Die Rechnung bestätigt exakt:
+
+\[
+E^\dagger E=I_{25},
+\]
+
+\[
+Q_{\mathrm{gesamt}}E=0,
+\]
+
+\[
+[\widehat H,Q_{\mathrm{gesamt}}]=0,
+\]
+
+und vor allem
+
+\[
+\boxed{
+\widehat H E=Eh.
+}
+\]
+
+Aus dieser letzten Gleichung folgt für **jede Zeit**, nicht nur für einen ausgewählten Rückkehrpunkt:
+
+\[
+\boxed{
+e^{-it\widehat H}E
+=
+Ee^{-ith}.
+}
+\]
+
+Damit bleibt die gesamte ursprüngliche Dynamik auf dem eingebetteten Zustandsraum erhalten.
+
+Wir müssen weder \(4/9\) verändern noch neue Energien anpassen oder einen passenden Zeitpunkt suchen.
+
+### Auch die Positivität bleibt erhalten
+
+Der erweiterte Operator zerfällt nach seiner Gesamtladung in fünf Blöcke. Jeder Block ist eine Hauptkompression des ursprünglichen positiven Operators \(h\). Deshalb gilt auf dem ganzen Raum
+
+\[
+0\le\widehat H\le I_{75}.
+\]
+
+Im Sektor mit Gesamtladung null besitzt er weiterhin genau den ursprünglichen eindeutigen Grundzustand und die ursprünglichen Anregungsenergien.
+
+**Das endliche Bindungsmodell lässt sich damit ladungserhaltend vervollständigen, ohne seine Bewegung umzuschreiben.**
+
+Die allgemeine Idee, Symmetrien und scheinbar asymmetrische Teilprozesse durch explizite Referenzsysteme zusammenzubringen, gehört zur etablierten Theorie quantenmechanischer Referenzrahmen. Die hier ausgeführte Rechnung setzt dafür die konkreten TFPT Matrizen ein. [arXiv](https://arxiv.org/abs/1312.0680)
+
+## 3. Der wichtigste neue Befund: Frühe Neutralitätsprojektion entfernt vier reale Rückwege
+
+Hier wird die Verbindung zu unseren bisherigen P1 Problemen besonders konkret.
+
+Man könnte versucht sein, die Referenz immer auf Ladung null festzuhalten und gleichzeitig nur den neutralen Materiesektor zuzulassen.
+
+Das wäre aber eine andere Dynamik.
+
+**Gesamtneutralität bedeutet nicht, dass jedes Teilsystem zu jedem Zwischenzeitpunkt neutral sein muss.**
+
+Bezeichne mit \(\Pi_0\) den Projektor auf den neutralen Materiesektor und mit \(\Pi_{\mathrm{ch}}\) den Projektor auf die beiden geladenen Materiesektoren.
+
+Wer die geladenen Zwischenwege entfernt, verwendet
+
+\[
+h_0=\Pi_0h\Pi_0.
+\]
+
+Die vollständige Rückkehr unterscheidet sich davon bereits in zweiter Zeitordnung:
+
+\[
+\Pi_0e^{-ith}\Pi_0-e^{-ith_0}
+=
+-\frac{t^2}{2}D+O(t^3),
+\]
+
+mit
+
+\[
+\boxed{
+D=\Pi_0h\Pi_{\mathrm{ch}}h\Pi_0\ge0.
+}
+\]
+
+Die exakte Rechnung an den rekonstruierten Originalmatrizen ergibt:
+
+\[
+\boxed{\operatorname{rank}D=4}
+\]
+
+und
+
+\[
+\boxed{
+\operatorname{tr}D
+=
+\frac{19912-2432\sqrt6}{140625}
+\approx0{,}0992344.
+}
+\]
+
+Das bedeutet:
+
+**Vier unabhängige neutrale Rückkehrrichtungen verlieren einen Beitrag, wenn wir die geladenen Zwischenzustände vorzeitig aussortieren.**
+
+Das ist nicht bloß eine andere Normierung oder ein gemeinsamer Vorfaktor. Es verändert die Antwort in vier verschiedenen Richtungen.
+
+Damit besitzt die in deinen Berichten wiederkehrende Warnung vor dem vorzeitigen Filtern der Mitte jetzt einen weiteren ausdrücklichen Operatorzeugen. Die Berichte unterscheiden bereits zwischen einem sichtbaren Zwischenbild und den zusätzlich benötigten geordneten Rückwegen samt Vorzeichen. TFPT-Gesamtschau-2026-11-10
+
+Die Identifikation dieses neuen endlichen Defekts \(D\) mit der ursprünglichen gewichteten APS Zwischenfaser ist allerdings noch nicht gezeigt.
+
+## 4. Auch die Clock lässt sich erhalten, aber sie muss gemeinsam wirken
+
+Sei \(U\) die Paarwirkung eines der zuletzt konstruierten Clockoperatoren. Auf dem erweiterten Raum lässt sich definieren:
+
+\[
+\boxed{
+\widehat U
+=
+EUE^\dagger+(I-EE^\dagger).
+}
+\]
+
+Der erste Term transportiert die ursprüngliche Clock auf den eingebetteten Zustandsraum. Außerhalb dieses Raums wird sie hier als Identität fortgesetzt.
+
+Damit gelten
+
+\[
+\widehat U^\dagger\widehat U=I,
+\qquad
+\widehat UE=EU,
+\]
+
+sowie
+
+\[
+[\widehat U,Q_{\mathrm{gesamt}}]=0.
+\]
+
+Die affine Gruppenrelation bleibt ebenfalls erhalten:
+
+\[
+\widehat G\widehat C\widehat G^{-1}
+=
+\widehat C^2.
+\]
+
+Da die ursprünglichen Paarwirkungen mit \(h\) kommutieren, kommutieren ihre gemeinsamen Erweiterungen auch mit \(\widehat H\).
+
+**Clock, Bindung und Gesamtladung passen damit in derselben endlichen Konstruktion zusammen.**
+
+Der Preis ist klar benannt: Die Clock wirkt auf **Materie und Referenz gemeinsam**. Diese neue gemeinsame Wirkung ist noch nicht mit der unveränderten ursprünglichen P1 Quellenwirkung identifiziert.
+
+### Die Referenz ist kein kostenloser Trick
+
+Für einen ursprünglichen Zustand \(\rho\) gilt nach der Einbettung und dem Verwerfen der Referenz
+
+\[
+\operatorname{tr}_{R}(E\rho E^\dagger)
+=
+\sum_q\Pi_q\rho\Pi_q.
+\]
+
+Die Kohärenzen zwischen verschiedenen Materieladungen liegen dann in den gemeinsamen Korrelationen. Sie sind nicht mehr vollständig in der reduzierten Materiedichtematrix enthalten.
+
+Die vollständige ursprüngliche Antwort erhält man mit den gemeinsam transportierten Observablen
+
+\[
+A_{\mathrm{gesamt}}=EAE^\dagger.
+\]
+
+Wir haben also keinen unverändert wiederverwendbaren Hilfsapparat erfunden, der beliebige Operationen ohne Rückwirkung ermöglicht. Solche Einschränkungen durch Korrelationen und Referenzressourcen werden auch in der einschlägigen Forschung ausdrücklich untersucht. [arXiv](https://arxiv.org/abs/2301.09877)
+
+## 5. Eine dynamische Auswahl von 3+2 ist tatsächlich möglich
+
+Parallel habe ich die andere offene Frage untersucht: **Kann eine einfache Wechselwirkung die Aufteilung 3+2 auswählen, statt sie unmittelbar einzusetzen?**
+
+Dazu betrachten wir zunächst eine beliebige spurfreie hermitesche Matrix \(\Phi\) der Größe fünf. Sie beschreibt einen möglichen internen Ordnungsparameter, noch keine bereits hergeleitete physische Feldart.
+
+Bei festgehaltener Norm
+
+\[
+\operatorname{tr}\Phi^2=1
+\]
+
+gilt die scharfe Ungleichung
+
+\[
+\boxed{
+\operatorname{tr}\Phi^4\ge\frac7{30}.
+}
+\]
+
+Gleichheit gilt genau für
+
+\[
+\boxed{
+\Phi
+=
+\pm\frac1{\sqrt{30}}
+U\,
+\operatorname{diag}(-2,-2,-2,3,3)
+\,U^\dagger.
+}
+\]
+
+**Die Aufteilung 3+2 ist also das globale Minimum einer einfachen quartischen Stabilitätsbedingung.**
+
+### Weshalb das ein vollständiges Minimum ist
+
+Die stationäre Eigenwertgleichung ist kubisch. Deshalb kann ein Extremum höchstens drei verschiedene Eigenwerte besitzen.
+
+Die möglichen stationären Quartikwerte sind:
+
+| Eigenwertmultiplizitäten | \(\operatorname{tr}\Phi^4\) bei Norm eins |
+|---|---:|
+| 1+4 | \(13/20\) |
+| 2+3 | **\(7/30\)** |
+| Drei verschiedene Eigenwerte, Multiplizitäten 2+2+1 | \(1/4\) |
+| Drei verschiedene Eigenwerte, Multiplizitäten 3+1+1 | \(1/2\) |
+
+Der kleinste Wert ist eindeutig \(7/30\). Der vollständige Beweis steht im beigefügten Bericht.
+
+Ein entsprechendes Potential ist
+
+\[
+V(\Phi)
+=
+-\mu^2\operatorname{tr}\Phi^2
++
+\lambda(\operatorname{tr}\Phi^2)^2
++
+\kappa\operatorname{tr}\Phi^4.
+\]
+
+Unter den Bedingungen
+
+\[
+\mu^2>0,\qquad
+\kappa>0,\qquad
+\lambda+\frac7{30}\kappa>0
+\]
+
+wählt es eine nichttriviale 3+2 Struktur. Das Eigenwertverhältnis ist \(-2:3\), also nach der üblichen Ladungsnormierung \(-1/3:+1/2\).
+
+Dieser Potentialtyp ist aus adjungierten SU(5) Modellen bekannt. Ich beanspruche ihn nicht als neue fundamentale Entdeckung. Entscheidend ist hier seine überprüfte Rolle als möglicher Auswahlmechanismus für TFPT. [arXiv](https://arxiv.org/html/hep-ph/9702255v2)
+
+**Die Variable \(\Phi\), die Vorzeichen der Kopplungen und das Weglassen eines möglichen kubischen Terms sind dabei zusätzliche Voraussetzungen.** Sie folgen bisher nicht aus P1.
+
+## 6. Die ursprüngliche TFPT Markierung wird dadurch noch nicht ausgewählt
+
+Hier liegt die verbleibende Schwierigkeit sehr präzise.
+
+Das quartische Potential unterscheidet keine unitären Orientierungen derselben Eigenwerte. Es wählt 3+2, aber nicht die konkrete Lage dieser beiden Sektoren relativ zum ursprünglichen Auslesekanal.
+
+Deshalb habe ich die einfache zusätzliche Kopplung
+
+\[
+V_\eta(\Phi)
+=
+V(\Phi)
++
+\eta\,\operatorname{tr}\!\left[\Phi\,\mathcal K(\Phi)\right]
+\]
+
+geprüft.
+
+Sie verwendet unmittelbar die vorhandene Paarantwort als richtungsabhängigen Beitrag.
+
+Damit die ursprüngliche Hyperladung \(Y\) eine stationäre Richtung wäre, müsste gelten:
+
+\[
+[Y,\mathcal K(Y)]=0.
+\]
+
+Die exakte Rechnung liefert jedoch
+
+\[
+\boxed{
+\left\|[Y,\mathcal K(Y)]\right\|_{\mathrm{HS}}^2
+=
+\frac{131-16\sqrt6}{109350}
+>0.
+}
+\]
+
+Daraus folgt:
+
+Für \(\eta\neq0\) ist die ursprüngliche Markierung **kein stationärer Punkt dieses Ansatzes**. Für \(\eta=0\) bleiben hingegen alle Orientierungen entartet.
+
+Damit ist auch dieser Versuch entschieden: **Ein symmetrisches Quartikpotential plus diese einfachste Kopplung an die Paarantwort genügt nicht, um die feste TFPT Markierung herzuleiten.**
+
+Das schließt nicht höhere Quellkorrelationen oder ein dynamisches Markierungsobjekt aus. Es verhindert aber, dass wir die passende Eigenwertliste irrtümlich schon als vollständige Materieherleitung behandeln.
+
+## Was diese Runde für die Gesamtlösung bedeutet
+
+Wir haben jetzt einen konkreten positiven Befund:
+
+\[
+\boxed{
+\begin{gathered}
+\text{Unveränderte endliche Paarbindung}\\
++\ \text{explizit mitgeführte Zwischenladung}\\
+\Longrightarrow\\
+\text{erhaltene Gesamtladung, erhaltene Clock}\\
+\text{und exakt erhaltene vollständige Zeitentwicklung}.
+\end{gathered}
+}
+\]
+
+Das liefert einen mathematisch konsistenten Weg, wie eine gemeinsame Quelle aussehen **könnte**: Die Ladung des sichtbaren Teilsystems muss nicht separat erhalten bleiben, solange die vollständige Prozessgeschichte ihren Ladungsbegleiter enthält.
+
+Aber diese Erweiterung funktioniert grundsätzlich auch für andere endliche Hamiltonoperatoren. Sie beweist daher noch nicht, warum die Natur genau die TFPT Dynamik auswählt.
+
+Für die vollständige Lösung fehlen insbesondere die **Herleitung dieses Ladungsbegleiters samt Zustand und Gewicht aus P1**, die Auswahl der originalen Materiemarkierung und der gemeinsame lokale Feldprozess, aus dem chirale Materie, Raumzeit und Gravitation folgen. Der öffentliche TFPT Forschungsstand unterscheidet ebenfalls ausdrücklich zwischen ladungskompatiblen Konstruktionen in festgelegten Hamiltonklassen und dem noch nicht ausgewerteten primitiven gemischten Feldintegral. [Topological Fixed-Point Theory (TFPT)](https://www.fixpoint-theory.com/papers/research-contracts)
+
+**Mein belastbares Ergebnis ist deshalb eine exakte Erweiterung des endlichen Modells, nicht die vollständige Ursprungslösung.** Sie erhält die ursprünglichen Antworten, statt sie passend zu verändern, und zeigt konkret, welche Information bisherige Projektionen verlieren.
+
+TFPT_Ladungsreferenz_2026-11-11.md[Prüfbericht mit vollständigen Beweisen](sandbox:/mnt/data/TFPT_Ladungsreferenz_2026-11-11.md) · TFPT_Ladungsreferenz_2026-11-11.zip[Ausführbarer Code, Originalmatrizen und Prüfzertifikat](sandbox:/mnt/data/TFPT_Ladungsreferenz_2026-11-11.zip)

@@ -245,6 +245,8 @@ export function OpenGates() {
           description="After the compiler closure the live compiler residual is Rest = v_geo ⊕ G_net ⊕ F_transfer. Beside it sits the strict-physical-TOE accounting Rest_TOE: every T1–T8 gate and TFPT.TOE.COMPLETE.01 remains [O], and the shared 3+1D parent is absent. The one-condition/E₈ reduction applies only to the historical finite seam/compiler and boundary-net/MMST lane. Round 4 (v1026–v1030) closes the fixed-M=1, Ny=8 relaxed TEL-B norm below 2.995906 and adds narrow T3/T4/T6–T8 results; FE-GEN/ALG-EXH and all full gates stay open. Round 7 (v1031–v1035) quantizes the zero-mean target and constructs a free covariant helicity-±2 curvature field, auxiliary charged corners, a factorized mirror bound and prescribed-source Ward propagation. This is not a microscopic TFPT embedding or universal nonlinear coupling."
         />
 
+        <p className="my-7 max-w-3xl leading-relaxed">Source update, 5 November 2026: the complete same-source concatenation is retained. Original C6 and family-history weights, whole canonical mirror words and an entire nonlinear number source are evaluated in their stated classes. The whole circle fermionheat factor alone cannot normalize the previously tested flat Higgs volume; the remaining geometric weight is retained. The primitive common interacting field integral and spectrum remain unevaluated. No physical completion marker changes.</p>
+
         <ClosingCondition />
 
         <ResidualTreemap />

@@ -1,0 +1,144 @@
+TFPT UND DIE PROGRAMMHYPOTHESE
+Quellenvergleich vom 26. Oktober 2026
+
+Auftrag
+Unter der hypothetischen Vorstellung einer computerartigen Grundwelt nach
+gemeinsamen einfachen Prinzipien suchen. Eine Simulation wird weder als
+Tatsache vorausgesetzt noch aus mathematischer Darstellbarkeit gefolgert.
+
+Entscheidende Frage und Abbruchkriterium
+Ist der native TFPT Fuenfer tatsaechlich der symmetrische Teil des in der
+Clifford Literatur beschriebenen vierten Pauli Codes? Verglichen werden die
+Operatoren im unveraenderten Originalframe, nicht nur Dimensionen. Falls die
+Identitaet fehlschlaegt, keine neue Basis oder Anpassung einfuehren.
+
+Quellobjekte
+V=C^4, vier Tensorregister, originaler Gaussian E8/J Wurzelsatz und native
+Codespalten aus tfpt_explorer/process.py:242-258 sowie cartan_source.py:58-98.
+Die symmetrische vierte Potenz ist 35 dimensional. Der Pauli Fixraum im
+vollen vierten Tensorprodukt ist 16 dimensional. Ihr gemeinsamer Teil hat
+Dimension 5. Die drei Zahlen bezeichnen verschiedene Objekte.
+
+Direkter Quellenvergleich
+Q=(1/16)sum_{a,b in F2^2} W_ab^tensor4.
+Im Originalframe gilt wörtlich Pi_native=Q Pi_sym4=Pi_sym4 Q.
+Kein angepasster Intertwiner, keine freie Basis und kein geaendertes Gewicht.
+Alle 64 Matrixeinheitenbedingungen fuer ein beliebiges einzelnes geloeschtes
+Register ergeben Pi_native E_ab^(s) Pi_native=delta_ab Pi_native/4.
+Das ist die vorhandene endliche Erasure Eigenschaft, keine neu ausgewählte
+physische Operation und keine neue Prioritaetsbehauptung.
+
+Die Verbindung zu modernen Quantenalgorithmen
+Die Cliffordgruppe ist ein unitaeres 3 Design, aber kein 4 Design. Ihr vierter
+Kommutant wird von Tensorpermutationen und Q erzeugt. Im symmetrischen
+35 dimensionalen Raum bleiben die irreduziblen Sektoren 5 und 30.
+Dies erklaert dieselbe native Fuenferstruktur aus der bekannten Literatur.
+Der volle Pauli Code und sein symmetrischer Fuenfer bleiben getrennt.
+Quelle: Zhu, Kueng, Grassl, Gross, arXiv:1609.08172v1, Abschnitte 3.1, 3.2,
+Tabelle 1 und Gleichungen 34,67. Der Satz wird hier nicht neu bewiesen.
+
+Projektive Momente sind nicht unitaere Momente
+Fuer die 60 nativen Quelllinien wurden die projektiven Framepotentiale direkt
+aus urspruenglichen Gaußwurzeln neu berechnet:
+Ordnung             1       2       3       4
+Native Quelle       1/4     1/10    1/20    1/32
+Haar Referenz       1/4     1/10    1/20    1/35
+Die ersten drei gleichen der Referenz; der vierte Wert ist um den Faktor
+35/32 groesser. Die quadrierte HS Norm des vierten Momentdefekts ist 3/1120.
+Die bekannte Originalidentitaet lautet 40 M4=Pi_native+Pi_sym4.
+Original: collective-native-marginal-origin-20261026/PROOF.txt, Abschnitte 1,2.
+
+Die Rolle von Viertelphase und Erasure
+J=iI erlaubt homogene Pauli Invarianten erst in durch vier teilbaren Graden.
+Im Grad vier verbleiben genau die fuenf originalen Codespalten. Ihr Verlust
+eines Registers fuehrt zum bestehenden V20=V5 tensor conjugate(V4) mit
+explizitem Intertwiner. Viererphase, Quartik, Fuenfer und Erasure Zwanziger
+sind daher unter den vorhandenen Voraussetzungen ein zusammenhaengender
+Darstellungsmechanismus. Sie sind keine vier unabhaengigen Bestaetigungen.
+Original: joint-native-algebra-selection-20261016/PROOF.md, Abschnitte 1.1,1.2.
+
+Was maximale Symmetrie leisten kann
+Auf Sym^4 V hat jeder mit der gesamten nativen projektiven Cliffordwirkung
+kommutierende hermitesche Generator die Form
+H=a Pi_native+b(Pi_sym4-Pi_native), a,b reell.
+Das folgt aus dem zitierten Kommutantensatz und Schurs Lemma.
+Auf dem Fuenfer ist dieser Generator skalar. Volle Symmetrie allein erzeugt
+daher keine interne nichttriviale logische Clock und keine ausgewaehlte 3+2
+Markierung. Dies gilt fuer diese invariant autonome Generatorklasse. Es
+schliesst Quellzustaende, Aussenkopplungen, groessere Multipletts und andere
+urspruengliche Prozesse nicht aus.
+Auf dem vollen Tensorraum zeigt die Familie
+H_gamma,delta=gamma(Pi_sym4-Pi_native)+delta(I-Pi_sym4), gamma,delta>0,
+dass gleiche Symmetrie und gleicher Codegrundraum das Energieverhaeltnis
+gamma/delta nicht festlegen. Der vorhandene Momentparent setzt 1/2 und 1
+durch seine Definition; seine Auswahl als physischer Generator folgt daraus
+nicht. Es wird kein neuer Hamiltonoperator als TFPT Modell eingefuehrt.
+
+Korrektur und universelle Berechnung sind verschiedene Anforderungen
+Stabilisatoroperationen sind klassisch effizient simulierbar. Die endliche
+Cliffordstruktur belegt deshalb keinen universellen Quantencomputer.
+Eine direkte externe Kontrollrechnung mit dem Standardgate
+U=diag(1,1,exp(i*pi/4),exp(i*pi/4)) ergibt fuer U^tensor4 auf dem originalen
+Fuenfer die Kompression diag(0,0,i,i,i), also zwei leckende Richtungen.
+Dies ist eine Vergleichsoperation aus der Quanteninformatik, keine aus P1
+hergeleitete oder physisch erlaubte Intervention. Ein veraenderter
+Codeprojektor verletzt die direkte Operatoridentitaet ebenfalls.
+
+Zukunftserhaltende Kompression
+Ein kompakter Zustand ist nur ausreichend relativ zu einem begruendeten
+Menue von spaeteren Operationen und beobachtbaren Records. Klassische
+causal states und quantum process tensors liefern die passenden bekannten
+Werkzeuge. Eine kleine Momentbeschreibung ist keine vollstaendige
+Prozessbeschreibung. Die vorhandenen gemischten Zustaende
+rho_C=Pi_native/5 und rho_S=Pi_sym4/35 haben gleiche echte Marginalen.
+Global gilt D(rho_C||rho_S)=log(7), nach jeder echten Teilspur D=0.
+Diese Teilspur ist fuer dieses Paar nicht informationssuffizient. Das ist
+ein quellenbezogenes Korollar des bekannten Marginalbefunds, kein neuer
+universeller Ausschluss oder eine Aussage ueber alle reinen Codezustaende.
+Quellen: Petz 1986; Shalizi/Crutchfield 2001; Pollock et al. 2018.
+
+Weitere belastbare Beziehungen und ihre Voraussetzungen
+1. Hamming [8,4,4] -> Construction A -> E8 ist eine echte Code/Gitterabbildung.
+   Die 240 ersten Wurzeln zaehlen 16+14*16. Die Form ist kein Hinweis auf
+   einen bestimmten externen Prozessor oder eine bestimmte Wortbreite.
+2. E8 ist in Dimension 8 bei gegebener Dichte fuer vollstaendig monotone
+   Funktionen des Abstandsquadrats universell energieoptimal. Der Satz
+   begruendet Robustheit innerhalb dieser Klasse; er leitet die euklidische
+   Metrik, die Dimension und die TFPT Quellenphysik nicht her.
+3. Lokale reversible Quantenautomaten haben mathematisch klassifizierbaren
+   Informationsfluss. GNVW gilt in seinem eindimensionalen Gitterrahmen,
+   nicht schon fuer TFPT oder emergente 3+1D Raumzeit.
+4. Perron Frobenius und Potenziteration erklaeren Annäherung bei gegebenem
+   positivem Transfer und Spektralluecke. Sie waehlen weder diesen Transfer
+   noch seine Luecke oder Zeitskala.
+5. Alpha ist die Wurzel einer festgelegten nichtlinearen Closure Gleichung.
+   Ein Loesungsalgorithmus und die Eindeutigkeit dieser Wurzel liefern
+   keinen allgemein gueltigen Computerparameter 137.
+
+Kandidat fuer eine vereinfachte Forschungsrichtung
+Ein lokaler reversibler Quantenprozess, dessen logische Information in
+kollektiven geschuetzten Korrelationen liegt und dessen reduzierte
+Beschreibung alle physisch erreichbaren zukuenftigen Antworten bewahrt.
+Die vorhandenen TFPT Codeabbildungen stuetzen die mathematische Eignung.
+Weder diese Formulierung noch die Annahme eines Programms selektiert bisher
+die urspruengliche physische Interaktion, Zustand, 3+1D, Markierung oder
+die elektromagnetischen Eingaben. Reversibilitaet allein ist schwach:
+Bennetts Konstruktion erlaubt reversible Ausfuehrung beliebiger klassischer
+Berechnungen mit erhaltenem Input und zusaetzlichem Arbeitsspeicher.
+
+Ergebnisstatus
+Bekannte Strukturen durch direkte Originalrechnung rekonstruiert und mit
+wissenschaftlichen Primaerquellen verknuepft. Keine fundamentale neue
+Naturgesetzgebung entdeckt, keine physische Gatepromotion, keine Aussage
+dass unsere Welt eine Simulation ist. Insbesondere 4 Tensorregister,
+Grad 4, der Seedterm 48*c3^4 und vier Raumzeitdimensionen werden nicht
+stillschweigend miteinander identifiziert.
+
+Kleinster entscheidender Anschluss
+Am vorhandenen nativen lokalen Feldpfad die tatsaechliche Originalabbildung
+F_a -> delta_a D_rel samt Zustand, Reflexion und Domains pruefen. Erst wenn
+sie steht, darf eine aus dem Momentcode berechnete Form als physische
+Kopplung/Hessewirkung interpretiert werden. Erfolg: festgelegte dimensionslose
+Relativeffekte ohne neue Gewichte, Zustand oder Messregel. Abbruch dieses
+Ansatzes: jene Abbildung bleibt eine frei gewaehlte Zusatzstruktur oder
+erfuellt den Quelltransport nicht. Kein weiterer frei gebauter Automat.

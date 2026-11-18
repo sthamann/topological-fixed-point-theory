@@ -1,0 +1,71 @@
+{
+  "schema": "tfpt.genesis-checks.v1",
+  "checks": [
+    {
+      "id": "matter-word-spinor-current",
+      "question": "Can even words made solely of Grassmann Spin10 spinors and tensor bosons produce a bosonic spinor current under the same central action?",
+      "command": [
+        "python3",
+        "-B",
+        "-OO",
+        "experiments/theory-contracts/seam-positive-kernel-search-20261015/source_charge_checks.py",
+        "--check",
+        "matter-word-spinor-current"
+      ],
+      "source_ids": [
+        "script:v252_full_finite_triple",
+        "script:v1_e8_glue",
+        "finding:joint-spinor-not-source-coefficient"
+      ],
+      "premise_ids": [
+        "premise:typed-source-structures",
+        "premise:oriented-p2-exterior-carrier"
+      ],
+      "scope": "Conditional same-action field-inventory test. Given Grassmann spinors and tensorial bosons; original P1 may contain additional disorder or bosonic spinor sectors. Not a global TFPT no-go or physical source identification."
+    },
+    {
+      "id": "charged-one-point",
+      "question": "Can an invariant vacuum have a nonzero one-point function of a field with nontrivial central character?",
+      "command": [
+        "python3",
+        "-B",
+        "-OO",
+        "experiments/theory-contracts/seam-positive-kernel-search-20261015/source_charge_checks.py",
+        "--check",
+        "charged-one-point"
+      ],
+      "source_ids": [
+        "script:v252_full_finite_triple",
+        "script:v1_e8_glue",
+        "finding:joint-spinor-not-source-coefficient"
+      ],
+      "premise_ids": [
+        "premise:typed-source-structures",
+        "premise:oriented-p2-exterior-carrier"
+      ],
+      "scope": "Conditional same-action field-inventory test. Given Grassmann spinors and tensorial bosons; original P1 may contain additional disorder or bosonic spinor sectors. Not a global TFPT no-go or physical source identification."
+    },
+    {
+      "id": "clifford-vector-spinor-typing",
+      "question": "Is Clifford vector multiplication on the spinor module itself a spinor-current insertion under the same Spin action?",
+      "command": [
+        "python3",
+        "-B",
+        "-OO",
+        "experiments/theory-contracts/seam-positive-kernel-search-20261015/source_charge_checks.py",
+        "--check",
+        "clifford-vector-spinor-typing"
+      ],
+      "source_ids": [
+        "script:v252_full_finite_triple",
+        "script:v1_e8_glue",
+        "finding:joint-spinor-not-source-coefficient"
+      ],
+      "premise_ids": [
+        "premise:typed-source-structures",
+        "premise:oriented-p2-exterior-carrier"
+      ],
+      "scope": "Conditional same-action field-inventory test. Given Grassmann spinors and tensorial bosons; original P1 may contain additional disorder or bosonic spinor sectors. Not a global TFPT no-go or physical source identification."
+    }
+  ]
+}

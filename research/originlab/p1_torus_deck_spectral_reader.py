@@ -1,0 +1,198 @@
+"""Conditional P1 origin controls: torus double cover, heat residue and spin lift.
+
+These identities are exact spectral/topological comparisons, NOT original TFPT Q0.
+No physical time, absolute R113 source or 3+1D theory is reconstructed here.
+Only the Python standard library is used.
+"""
+from __future__ import annotations
+import cmath
+import math
+
+
+def torus_heat(t: float, aspect: float = 1.0, cutoff: int = 40) -> float:
+    """Finite Fourier sum for the unit-area rectangular torus of aspect y.
+
+    Modes satisfy |m|,|n| <= cutoff.  This approximates the scalar heat trace
+    when the omitted Gaussian tail is small; with cutoff fixed its t->0
+    limit is (2*cutoff+1)^2, not the infinite trace's Weyl asymptotic.
+    """
+    if not (t > 0 and aspect > 0 and cutoff >= 0):
+        raise ValueError("Need t>0, y>0, cutoff>=0")
+    a = 4.0 * math.pi**2 * t
+    sx = math.fsum(math.exp(-a * aspect * m*m)
+                   for m in range(-cutoff, cutoff + 1))
+    sy = math.fsum(math.exp(-a * n*n / aspect)
+                   for n in range(-cutoff, cutoff + 1))
+    return sx * sy
+
+
+def branched_even_odd(t: float, aspect: float = 1.0,
+                      cutoff: int = 40) -> tuple[float, float]:
+    """Trace over +/- of inversion z->-z; fixed Fourier mode k=0 only."""
+    z = torus_heat(t, aspect, cutoff)
+    return (z+1.0)/2.0, (z-1.0)/2.0
+
+
+def _gaussian_theta_sum(a: float, relative_tolerance: float = 1e-15) -> float:
+    """Sum exp(-a*n^2) over all integers, with an adaptive Gaussian tail.
+
+    Jacobi transformation keeps the summation exponent at least pi.  After
+    term n, the remaining positive tail is bounded by a geometric series
+    with first term exp(-a*(n+1)^2) and ratio exp(-a*(2*n+3)).
+    The bound controls truncation; ordinary floating-point rounding remains.
+    """
+    if not a > 0:
+        raise ValueError("Need a positive representable Gaussian exponent")
+    prefactor = 1.0
+    if a < math.pi:
+        prefactor = math.sqrt(math.pi) / math.sqrt(a)
+        a = math.pi**2 / a
+    terms = [1.0]
+    n = 0
+    while True:
+        next_term = math.exp(-a * (n+1)**2)
+        tail_bound = 2.0 * next_term / (-math.expm1(-a * (2*n+3)))
+        total = math.fsum(terms)
+        if tail_bound <= relative_tolerance * total:
+            return prefactor * total
+        terms.append(2.0 * next_term)
+        n += 1
+
+
+def heat_residue_estimate(t: float, aspect: float = 1.0) -> float:
+    """Infinite-trace t*(Tr_even-1/2), evaluated in the Poisson dual.
+
+    It equals (1/(8*pi))*sum_(p,q) exp(-(p^2/y+y*q^2)/(4*t)).
+    Adaptive theta sums preserve its 1/(8*pi) limit as t->0; a fixed
+    Fourier cutoff would instead drive the computed residue to zero.
+    """
+    if not (math.isfinite(t) and math.isfinite(aspect) and t > 0 and aspect > 0):
+        raise ValueError("Need finite t>0 and aspect>0")
+    theta_p = _gaussian_theta_sum(1.0 / (4.0*t*aspect))
+    theta_q = _gaussian_theta_sum(aspect / (4.0*t))
+    return (theta_p / (8.0*math.pi)) * theta_q
+
+
+def klein_glide_trace(t: float, aspect: float = 1.0,
+                      cutoff: int = 40) -> float:
+    """Equivariant trace for free (x,y)->(x+1/2,-y); Fourier definition."""
+    if not (t > 0 and aspect > 0 and cutoff >= 0):
+        raise ValueError("Need t>0, y>0, cutoff>=0")
+    a = 4.0 * math.pi**2 * t * aspect
+    return math.fsum((-1 if m % 2 else 1) * math.exp(-a*m*m)
+                     for m in range(-cutoff, cutoff + 1))
+
+
+def klein_glide_poisson(t: float, aspect: float = 1.0,
+                        images: int = 8) -> float:
+    """Poisson dual; stable and exponentially suppressed as t->0."""
+    if not (t > 0 and aspect > 0 and images >= 0):
+        raise ValueError("Need t>0, y>0, images>=0")
+    a = 4.0*t*aspect
+    return math.fsum(math.exp(-(k+0.5)**2/a)
+                     for k in range(-images, images+1)) / math.sqrt(math.pi*a)
+
+
+def two_sheet_branch_points() -> tuple[tuple[float, float], ...]:
+    """Fixed points of z -> -z on R²/Z², i.e. torus 2-torsion."""
+    return ((0.0, 0.0), (0.5, 0.0), (0.0, 0.5), (0.5, 0.5))
+
+
+def branched_double_branch_count(genus: int) -> int:
+    """Riemann-Hurwitz for connected degree-two cover of S², simple ramification."""
+    if genus < 0:
+        raise ValueError("genus must be nonnegative")
+    return 2*genus + 2
+
+
+def branched_scalar_uv_trace(genus: int) -> float:
+    """Donnelly fixed-point coefficient: r / det(I - (-I))=r/4."""
+    return branched_double_branch_count(genus) / 4.0
+
+
+def spin_structure_inversion_trace(alpha: float, beta: float) -> int:
+    """Fixed Fourier momentum count for half-characteristic spin shifts."""
+    if alpha not in (0.0, 0.5) or beta not in (0.0, 0.5):
+        raise ValueError("spin shifts must be 0 or 1/2")
+    return int(alpha == 0.0 and beta == 0.0)
+
+
+def spin_pi_lift() -> complex:
+    """Lift of tangent half-turn to one chiral Spin(2) representation."""
+    return cmath.exp(0.5j * math.pi)
+
+
+def overlapped_elliptic_covers_genus(common_branch_values: int) -> int | None:
+    """Genus of the NORMALIZATION of two elliptic double covers' fiber product.
+
+    Each cover of P1 has four simple branch values.  With k<4 common
+    values, the normalized connected (Z2)^2 cover has genus 5-k.
+    The raw fiber product is nodal at the k common branch values and
+    has arithmetic genus 5.  For k=4 its normalization consists of two
+    isomorphic elliptic curves, hence None; before normalization those
+    two components meet at four points, so the raw curve is connected.
+    """
+    if common_branch_values not in (0, 1, 2, 3, 4):
+        raise ValueError("overlap must be between 0 and 4")
+    if common_branch_values == 4:
+        return None
+    return 5-common_branch_values
+
+
+def diagonal_affine_level(unit_levels: tuple[int, ...]) -> int:
+    """Independent affine current central terms add in diagonal sums."""
+    if not unit_levels or any(k<=0 for k in unit_levels):
+        raise ValueError("Require positive levels")
+    return sum(unit_levels)
+
+
+def parity_twirl_qubit(rho: tuple[tuple[complex, complex],
+                                   tuple[complex, complex]]
+                       ) -> tuple[tuple[complex, complex], ...]:
+    """1/2 (rho+Z rho Z), with Z=diag(+1,-1): drops parity coherence."""
+    return ((rho[0][0], 0j), (0j, rho[1][1]))
+
+
+def dephasing_qubit(rho: tuple[tuple[complex, complex],
+                                  tuple[complex, complex]],
+                    t: float, gamma: float
+                    ) -> tuple[tuple[complex, complex], ...]:
+    """GKLS semigroup generated by L(rho)=gamma/2*(Z rho Z-rho)."""
+    if t<0 or gamma<0:
+        raise ValueError("Need t,gamma nonnegative")
+    q=math.exp(-gamma*t)
+    return ((rho[0][0], q*rho[0][1]),
+            (q*rho[1][0], rho[1][1]))
+
+
+def dephasing_plus_state_eigenvalues(t: float, gamma: float
+                                    ) -> tuple[float,float]:
+    """Exact CP test: eigenvalues for |+><+| under deck dephasing."""
+    q=math.exp(-gamma*t)
+    return ((1+q)/2, (1-q)/2)
+
+
+def controls() -> dict:
+    t = 0.005
+    return {
+        "branch_fixed_points": two_sheet_branch_points(),
+        "branch_count": len(two_sheet_branch_points()),
+        "even_parity_heat_residue_target": 1/(8*math.pi),
+        "square_residue": heat_residue_estimate(t, 1.0),
+        "nonsquare_residue": heat_residue_estimate(t, 1.7),
+        "square_and_nonsquare_not_selected": True,
+        "branched_parity_trace": 1.0,
+        "klein_free_parity_trace_uv": klein_glide_poisson(t,1.0),
+        "spin_inversion_traces": {
+            f"{a},{b}": spin_structure_inversion_trace(a,b)
+            for a in (0.,0.5) for b in (0.,0.5)
+        },
+        "original_all_field_Q0_found": False,
+        "physical_OS_time_recovered": False,
+        "F1_solved": False,
+    }
+
+
+if __name__ == "__main__":
+    import json
+    print(json.dumps(controls(), indent=2))

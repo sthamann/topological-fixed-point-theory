@@ -1,0 +1,38 @@
+{
+  "contract": "joint-singlet-pulse-source-20261013",
+  "date": "20261013",
+  "research_id": "UR.JOINT.SINGLET_PULSE.01",
+  "question": "Can the stated singlet pair preparation and native Clifford pulse work together, including a thermal bath or the pair Hamiltonian retained during pulse?",
+  "verdict": "PARTIAL",
+  "verdict_enum": [
+    "PASS",
+    "PARTIAL",
+    "FAIL"
+  ],
+  "claims_tested": [
+    "TFPT.TOE.COMPLETE.01",
+    "DYN.UNITARY.DILATION.01"
+  ],
+  "gates": [
+    "T3",
+    "T8"
+  ],
+  "checker": "checker.py",
+  "firewall": "experiments",
+  "summary_de": "Neue exakte bedingte Verbindung der auf PDF-Seite17 angegebenen Paar- und Pulsmodelle: 7:1-Thermalbad erzeugt den nativen Kanal nie exakt; optimaler Halbdiamantabstand5/132. Reines Singulett und eingeschalteter Paarparent funktionieren nach Retiming genau bei kappa/g>=sqrt(80/7). Parameter-/Nahtursprung bleibt offen.",
+  "kills": [
+    "The thermal Choi weights 7:1 automatically serve as the invariant bath of the displayed native pulse.",
+    "Pulse retiming alone repairs that nonpure invariant bath while the pair Hamiltonian is off."
+  ],
+  "closes": [
+    "Exact conditional native channel with pair parent on, pure singlet and derived reachability threshold.",
+    "Exact optimal thermal-bath approximation for the stated pair-off pulse."
+  ],
+  "leaves_open": [
+    "Microscopic source identification and original encoded matrices.",
+    "Source-derived kappa/g, pure preparation, physical pulse time and repeated bath supply."
+  ],
+  "no_t1_t8_closure": true,
+  "independent_review": "INDEPENDENT_AUDIT.txt",
+  "source_pdf_sha256": "857c23380425fe490d98df65c3ca2d3787497ded49ad681ae878b9f89deac007"
+}

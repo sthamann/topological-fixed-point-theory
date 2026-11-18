@@ -1,0 +1,194 @@
+Gemeinsame Zeit aus den markierten E8 Bewegungen
+13. November 2026. F1, ursprüngliches E8 Netz auf Niveau eins.
+
+1. Die positive Zeitverklebung auf dem gegebenen Rand
+
+Die beiden halbseitigen Inklusionen in TFPT-REGIONALE-KOMPOSITION-20261112
+teilen die Randpunkte 1 und i. Sei P_p der positive parabolische
+Translationsgenerator mit Fixpunkt p, in der ursprünglichen Kreiskarte.
+Wir normieren den Fluss über diesen Fixpunkt, so dass auf dem gemeinsamen
+Möbiuskern P_p = L0 - (p L_-1 + conjugate(p) L_1)/2 gilt. Je nach
+Konvention für die komplexe Koordinate werden p und conjugate(p) gemeinsam
+vertauscht. Der zugehörige Euclidische Transfer hat die Punktwirkung
+
+    M_p(u) = [[1-u/2, p u/2], [-conjugate(p) u/2, 1+u/2]].
+
+Es gilt M_p(0)=I, M_p(u+v)=M_p(u)M_p(v) und det M_p(u)=1.
+Der geometrische Viertelschritt R rotiert p nach ip im gleichen Vakuum.
+Er liefert aus der Translation bei i die Translation bei -1. Hier ist R
+die geometrische Kreisrotation in der Möbiusdarstellung. Der interne
+Klebecharakter D führt diese Konjugation nicht aus.
+
+Für p=1 und p=-1 liefert die Multiplikation der Matrizen für 0<a<1
+
+    M_1(a) M_-1(2a/(1-a²)) M_1(a)
+      = diag((1-a)/(1+a), (1+a)/(1-a)).
+
+Der rechte Ausdruck bewegt z nach exp(-t)z bei a=tanh(t/4). Der mittlere
+Schritt hat dann die Länge b=sinh(t/2). Alle Schritte sind positiv für
+t>0. Das Gleiche gilt für vertauschte Fixpunkte und für das durch R
+gedrehte Paar (i,-i). Die Gewichte ergeben sich aus der Diagonalisierung
+für die gewünschte Breite t. Ein Schritt bei exp(-t)=1/4 verwendet die
+drei Längen 1/3, 3/4 und 1/3.
+
+Das ist eine Operatoridentität auf dem ganzen gegebenen E8 Vakuummodul.
+Die Möbiusgruppe wirkt in dessen integraler positiver Energiedarstellung.
+Die Wirkung auf jedem glatten Energievektor setzt sich in die positive
+Möbiushalbgruppe fort. Äquivalent kann man zuerst auf jedem niedrigsten
+Gewichtsmodul rechnen. Dort wirken die analytischen Möbiusabbildungen
+als Gewicht-h-Komposition mit Multiplikator (c z+d)^(-2h). Die Kettenregel
+gibt die Produktgleichung, der Faktor bleibt auf der positiven Halbgruppe
+in der vom Einselement fortgesetzten Wahl. Die Vereinigung der endlichen
+Energiesektoren ist dicht. Die einzelnen Operatoren exp(-u P_p) und der
+diagonale Operator exp(-t L0) sind Kontraktionen. Daher gilt die Identität
+für alle Vektoren. Referenz für die ursprüngliche Möbiuswirkung und die
+niedrigsten Gewichtsmodule ist Carpi, Kawahigashi, Longo und Weiner,
+https://arxiv.org/abs/1503.01260, Abschnitt 3.2. Die berechnete Identität
+benutzt kein Trotterlimit und keine Verallgemeinerung des inneren Takts.
+
+Für festes antipodales Paar benötigt jede positive endliche Realisierung
+mindestens drei Segmente. Ein einzelnes Segment ist unipotent. Zwei
+verschiedene Segmente mit Längen c,d>0 haben Summe der beiden Nebendiagonalwerte
+cd oder -cd. Bei drei Segmenten müssen die Vorzeichen alternieren, weil
+gleichgerichtete Nachbarn zu einem Segment zusammenfallen. Für eine Folge
+mit Endlängen a,c und Mittellänge b ist die Nebendiagonalsumme b(c-a).
+Diagonale erzwingt a=c und dann b(1-a²)=2a. Damit ist die kürzeste Lösung
+für die gegebene Breite bis auf Umkehr der beiden Fixpunkte bestimmt.
+
+Die zwei tatsächlich benachbarten Fixpunkte 1,i reichen allein nicht.
+In der Koordinate u=-i[((1-i)z-1-i)/(z-1)] sind ihre positiven Matrizen
+reelle Scherungen [[1,r],[0,1]] und [[1,0],[s/2,1]]. Jede Matrix eines
+endlichen Wortes und jeder projektive Grenzwert im invertierbaren Bereich
+hat einen reellen Repräsentanten. Der Radialtransfer mit q=e^(-t/2) hat
+nach demselben Basiswechsel eine reelle Spur q+1/q und im ersten
+Diagonalelement Im=(q-1/q)/2. Bei t>0 kann kein gemeinsamer skalarer Faktor
+die Matrix reell machen, da der Faktor wegen der Spur reell sein müsste.
+Die Viertelwirkung bindet die zusätzliche antipodale Translation an die
+bestehende Markengeometrie. Alle beteiligten Bewegungen bleiben geometrische
+Wirkungen entlang desselben Kreises. Die frühere Schranke für eine zweite
+unabhängige Ortsrichtung auf dieser Regionalfamilie bleibt bestehen.
+
+2. Geordnete geladene Antwort mit zwei unabhängig veränderlichen Zeiten
+
+Im physischen D8 Chart ist p1=(1,1,1,1,1,1,1,1)/2 und
+p2=(-1,1,1,1,1,-1,1,1)/2. Für das geordnete Wort
+
+    J^(-p1) J^gamma J^p2,     gamma=p1-p2=e1+e6,
+
+lauten die inneren D Grade (1,2,1), die D Phasen (i,-1,i), die
+Farbtrialitäten (0,1,2) und die Hyperladungen (0,-1/3,+1/3).
+Die Reihenfolge der Zustandssektoren von rechts nach links ist
+0 -> 2 -> 0 -> 0. Der Mittelstrom ist der bekannte gerade D8 Paarstrom.
+Die primitive Klasse eins gehört zu den orientierten Endfeldern.
+
+Setze x=exp(-s), y=exp(-t) für die beiden positiv radial fortgesetzten
+Abschnitte. Die Originalform benutzt die Punkte 1,i x,-x y. Der neutrale
+Stromkern in der ursprünglichen Winkelnormierung ist
+
+    W(x,y) = -i x y / ((1-i x)(i+y)(1+xy)).
+
+Der Punktwert bei x=y=1 ist -i/4. In der aufeinanderfolgenden
+Zeitfortsetzung sind die beiden ersten Ableitungen nach s,t je -1/8.
+Beide Zeitstrecken lassen sich durch die positive Komposition aus §1
+erzeugen. In Polarkoordinaten der ursprünglichen unverschobenen Felder
+trägt jeder Strom den Gewicht-eins-Jakobifaktor der jeweiligen Bewegung.
+
+Für 0<x,y<1 ergeben geometrische Reihen exakt
+
+    W(x,y) = - Σ_(m,n>=1) i^(m+n-2) min(m,n) x^m y^n .
+
+Für m,n gibt es min(m,n) Beiträge aus der gemeinsamen Fortsetzung.
+Nach Abzug separater Zeilen und Spaltenphasen ist jeder führende
+Koeffizientenblock L L^T mit L_mj=1 für j<=m und sonst 0. Er hat Rang k
+und Determinante 1 für jeden Block der Größe k. Die dimensionslose
+Punktantwort auf beliebigen k verschiedenen positiven Abständen je Achse
+hat ebenfalls Rang k. Nach Abzug nichtverschwindender Zeilen und
+Spaltenfaktoren bleibt 1/(1+x_i y_j). Die Cauchy Determinante lautet
+
+    (-1)^(k(k-1)/2) Vandermonde(x) Vandermonde(y) / Π_(i,j)(1+x_i y_j).
+
+Damit genügt kein endlich separierender vermittelnder Zustandsraum
+fester Dimension für den ganzen kontinuierlichen Zweizeitkern. Schon
+das kleinste 2x2 Rechteck mit x,y in {1/4,1/16} schließt getrennte
+skalare Faktoren aus. Der markierte komplexe Dreipunktkern ist keine
+reflektierte positive Zweipunktform. Der Rangvergleich hängt daher
+nicht von einer unzulässigen Positivitätsannahme über W ab.
+
+Verwendet man im selben markierten Wort dagegen allein P_1 oder P_-1,
+erhält man -1/[4(t-i)] beziehungsweise -1/[4(s-i)]. Die jeweils andere
+Zeitstrecke verschwindet aus der Antwort. Für P_i ergibt sich
+1/[2(s+t+2i)]. Die Anfangsableitungen sind dann +1/8,+1/8. Auch diese
+festgehaltene einzelne Translation passt bei keiner positiven gemeinsamen
+Zeitskalierung zur radialen Antwort. Die Aussagen verwenden unveränderte
+Feldmarken und unterscheiden keine Umbenennung des Koordinatenrahmens.
+
+Die normale positive Zweipunktprobe am Gewicht-eins-Zustand u erfasst
+den Unterschied unabhängig. Für P_1 gilt in der holomorphen
+Gewicht-eins-Darstellung u(z)=1. Der Gewichtsfaktor bei z=0 ist
+1/(1+t/2)^2 und damit <u, exp(-t P_1)u>. Entsprechend hat der positive
+Spektralparameter E die Dichte 4 E exp(-2E). Die Momente folgen auch mit
+L_1 L_-1^n u = n(n+1) L_-1^(n-1)u aus der exakten Jacobi-Rekursion.
+Für den radialen L0 Transfer ist die Antwort exp(-t). Beide haben dieselbe
+erste Ableitung am Ursprung. Die Zeiten 1 und 2 liefern für P_1 die Werte
+4/9 und 1/4 mit der positiven Differenz 1/4-(4/9)^2=17/324. Das ist eine
+ausführbare Gegenprobe für die Identifikation des positiven Zeitschritts
+auf der normierten geladenen Linie nach dem ersten Messwert.
+
+3. Grenze der direkten R113 Darstellung ohne zusätzliche Freiheitsgrade
+
+Der vorhandene tangentiale Q Operator und alle zehn verwendeten nativen
+Generatoren erhalten die alte Farbzentrumszerlegung der 96 Fasern. Die
+exakte Wiederholung hat alle äußeren Blöcke gleich null, auch im
+zusammengesetzten 384er Operator, bestätigt. Ein Mittelstrom mit Trialität
+eins muss in dieser Zerlegung aus dem Sektor zwei in den neutralen Sektor
+führen. Er kann aus diesen blockdiagonalen Operatoren allein nicht entstehen.
+
+Der stärkere Ausschluss betrifft einen einzigen unveränderten 96er CAR
+Fasermodusraum, auch wenn man alle skalaren quadratischen Erzeuger erlaubt.
+Quadratoperatoren in den 192 Majoranaoperatoren, modulo Konstanten, bilden
+so(192,C). Ihr Kommutator mit einem einzelnen Majorana bildet die definierende
+192 dimensionale Darstellung. Eine Abschlussabbildung der vollen E8
+Nullmodenalgebra in diese quadratischen Operatoren gäbe eine nichttriviale
+192 dimensionale Darstellung von e8. Die Wirkung auf Majoranas kann nur
+verschwinden, wenn alle Bildoperatoren skalar sind. Eine einfache perfekte
+Liealgebra hat keine nichttriviale skalare Wirkung. Zentrale Konstanten
+können also die Identifikation nicht retten. Die Weyl Dimensionalformel auf
+dem tatsächlichen D8+ Wurzelsystem gibt minimal 248. Das Minimum über alle
+nichttrivialen höchsten Gewichte genügt, weil jeder Faktor im Weylprodukt
+in jeder dominanten Komponente monoton wächst. Eine einzige skalare
+quadratische CAR Realisierung der ganzen e8 braucht somit mindestens 124
+komplexe Modi. Diese Untergrenze gilt auch für die bloß zahlenerhaltende
+E8 Darstellung auf einer verdoppelten 192 dimensionalen Einteilchenfaser.
+Sie ist keine ausreichende Bedingung für eine affine lokale Realisierung.
+
+Der Ausschluss betrifft die volle Nullmodenalgebra auf der einzelnen
+festgehaltenen Faser. Der einzelne D8 Mittelstrom kann ein quadratisches
+Paar auf dem richtigen Träger sein. Der ganze ursprüngliche Q Operator
+enthält mehrere Fouriermoden und die volle R113 Theorie weitere gewichtet
+integrierte Felder. Transformierte Fouriermoden, ein operatorwertiger
+Körperkontakt und echte höhergradige oder sektorwechselnde Feldoperatoren
+fallen nicht unter die Einzelfaseraussage. Ihr tatsächlicher gemeinsamer
+Quellanschluss muss separat begründet werden. Er darf die signierten
+Enden, das Adjungierte, den gemeinsamen Produktraum und das ursprüngliche
+äußere Auswahlverfahren nicht verlieren.
+
+4. Anschlusspunkt für die ursprüngliche physische Quelle
+
+Im Q Verbraucher wird die ursprüngliche ganze gewichtete Randform samt
+Leerreferenz weiterhin nicht geliefert. Der exakte Rückweg auf dem gegebenen
+E8 Vakuum enthält keine Information über den nativen absoluten Z Wert.
+Die konkrete nächste Rechnung im ursprünglichen Quellenoperator ist
+die gemeinsame reflektierte Form mit den drei signierten Einfügungen
+auf dem ganzen kohärenten Raum. Ihr vermittelnder Transfer soll die zwei
+antipodalen regionalen Bewegungen im selben Rahmen tragen. Auf beiden
+Zeitabschnitten kann erst die gewogene Rechnung zeigen, ob ihre Komposition
+und Zeitabbildung denselben radialen Kern liefern. Das 2x2 Rechteck prüft
+dies auf dem kleinsten nichttrivialen Zeitgitter. Der Referenzfaktor,
+die Zeitkarte und die Ladungsabbildung müssen aus derselben Quelle kommen.
+Eine einzelne E8 Rückkehrnormalisierung legt den gewichteten R113 Zustand
+nicht fest. Aussagen zur Herkunft weiterer Ortsrichtungen, Spin 2 und
+zum vollständigen F1 Abschluss bleiben an diesem physikalischen Anschluss.
+
+Ausführung in OriginLab: original_affine_time. Für die gewichtete Form
+prüft marked_affine_time_grid die vier oder mehr unabhängigen Einträge
+mit demselben absoluten Referenznenner wie die R113 Kernwerte.

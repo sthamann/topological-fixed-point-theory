@@ -1,0 +1,199 @@
+GELADENE SEKTORANTWORT, ALPHA-FAKTOR UND TATSÄCHLICHE CLOCKWIRKUNG
+13. Oktober 2026 — UR.SOURCE.CHARGED_SECTOR_READOUT.01
+Gesamtverdict PARTIAL. Keine vollständige TFPT-Lösung, kein geschlossenes T1–T8.
+
+1. Entscheidende Frage und Bezug zum Vollziel
+
+Die vollständige Herleitung verlangt ein gemeinsames Quellenfunktional mit
+Zustand, Zeit, Ausleseregel und physikalischer Identifikation. Der aktuelle
+Alpha-Ausdruck enthält y(1-y)^(-5/4), y=48 c3^4 exp(-2 alpha). Die Rechnung
+prüft, ob die bereits vorhandene E8-Quelle diesen Faktor zugänglich macht,
+und ob dabei dieselbe Zeit und dieselben Clocks benutzt werden können.
+
+Bekannt: D5-Spinorladung hat Normquadrat 5/4 und h=5/8. Der lokale geklebte
+E8-Strom hat h=1 und Zweipunktexponent 2. Beim normierten JJ-Signal eines
+festen geladenen Paares fällt der fraktionelle Amplitudenfaktor heraus
+(seam-readout-flow-deck-20261005). Das wird hier nicht erneut als Neuheit
+beansprucht. Neuer projektbezogener Schritt: eine explizite normierte
+Sektor-Energieantwort, deren gemeinsame Zeitdiagonale und deren Test gegen
+die tatsächlichen Clockmatrizen werden zusammen berechnet.
+
+Die erste Zusatzannahme bleibt das gewählte E8-Gitter-VOA-Vakuummodell samt
+D5/A3-Markierung. Es ist nicht aus dem mikroskopischen P1-Rand hergeleitet.
+Die zusätzliche Operation ist eine markierte Sektor-Energieauslese an einem
+regularisierten geladenen Zustand. Diese wird NICHT als schon ausgewählte
+physische TFPT-Messung ausgegeben. Es wird kein neuer Hamiltonoperator zur
+Anpassung eingeführt. Erfolg der begrenzten Prüfung: exakte positive Antwort
+und erste nicht gerechtfertigte Identifikation bestimmen. Abbruch der
+Vollherleitungsbehauptung: eine eingesetzte Zeit-, Zustands- oder Portwahl.
+
+2. Ladungen und Normierung aus dem Originalcode
+
+_native_neutral_branch liest die Chevalley-Wurzeln derselben Originalquelle
+und bildet 64=16*4 sowie den markierten 48=16*3-Zweig. Wurzeln werden im Code
+verdoppelt gespeichert; die physische Ladung ist beta=root/2. P5 ist der
+ursprüngliche rank-5-Cartanprojektor, P3=I-P5. Für jede der 48 Ladungen gilt
+
+ beta^t P5 beta=5/4, beta^t P3 beta=3/4, beta^2=2.
+
+P5 bezeichnet einen Projektor im achtkomponentigen STROMINDEXRAUM. Es ist
+kein Projektor auf fünf Zustände im gesamten Hilbertraum. Insbesondere ist
+P5 L0 P5 ohne weitere Typisierung kein korrekter Name des Sektor-Generators.
+Wir benutzen L0,5=(P_charge^t P5 P_charge)/2 + N5, mit
+ N5=sum_(n>0) a_-n^t P5 a_n,
+ [a_i,m,a_j,n]=m delta_ij delta_(m+n,0).
+N5 zählt Oszillator-CONFORMALGRADE (mit Modengewicht n), nicht Teilchenzahl.
+
+3. Ein lokaler Stressprobezugriff behält den Faktor
+
+Im gewählten Vakuum ist T5(z)=1/2 sum_(i<=5):h_i(z)^2: ein lokales
+D5-Sugawara-Feld der vorhandenen Subalgebra. Das volle E_beta bleibt ein
+lokales E8-Feld; kein isoliertes nichtlokales Spinorfeld wird eingeführt.
+Mit h_i(z)E_beta(w)~beta_i E_beta(w)/(z-w) ergibt Wick direkt
+
+ <T5(z) E_beta(w1) E_-beta(w2)> / <E_beta(w1) E_-beta(w2)>
+ = (beta^t P5 beta)/2 * [1/(z-w1)-1/(z-w2)]^2
+ = (5/8)*(w1-w2)^2/[(z-w1)^2(z-w2)^2].                 (1)
+
+Normalordnung entfernt die Vakuum-Selbstkontraktion. Der Nenner ist die
+VOLLE E8-Paarfunktion mit Exponent 2. Gleichung (1) ist eine normierte
+Dreipunktinsertion; sie ändert den Exponenten dieser Paarfunktion nicht.
+Die bekannte normierte JJ-Amplitudenkürzung bleibt daher richtig.
+
+4. Normierte gemeinsame Sektorantwort, ohne singulären Zustand
+
+Für 0<r<1 setze u=r^2 und im festen Ladungssektor
+ |chi_r>=exp(sum_(n>0) r^n beta.a_-n/n)|beta>,
+ |Psi_r>=(1-u)^(beta^2/2)|chi_r>.
+
+Durch die Heisenbergalgebra ist
+ ||chi_r||^2=exp(sum_(n>0) beta^2 u^n/n)=(1-u)^(-2).
+Dies ist endlich; |Psi_r> ist normiert. Es ist der regularisierte geladene
+Vertex-Vektor des gewählten Modells. Seine Präparation aus P1 ist nicht
+bewiesen. N5 und N3 sind stark kommutierende nichtnegative Oszillatorgrade.
+Für 0<=q5,q3<=1 sind q5^N5 und q3^N3 beschränkte Operatoren; 0^N bezeichnet
+hier per Spektralkalkül den Projektor auf Oszillatorgrad null. Auf dem
+üblichen endlichen Energie-Kern und anschließend per Konvergenz folgt
+
+ G_u(q5,q3)=<Psi_r|q5^N5 q3^N3|Psi_r>
+ =[(1-u)/(1-u q5)]^(5/4) * [(1-u)/(1-u q3)]^(3/4).     (2)
+
+Denn jede Mode liefert exp((beta^t Pk beta)*u^n(qk^n-1)/n).
+Die Potenzen wurden also aus tatsächlichen Ladungen und Oszillatormoden
+berechnet, nicht als gewünschte Response eingesetzt. (2) ist auch eine
+positive normierte gemeinsame Wahrscheinlichkeits-Erzeugende. Zum Beispiel
+ P(N5=m)=(1-u)^(5/4) (5/4)_m u^m/m!.
+Der Checker berechnet die ersten Koeffizienten unabhängig durch Faltung der
+Einzelmoden-Normen; die allgemeine Identität folgt aus der konvergenten Reihe.
+Es handelt sich nicht um den thermischen Charakter oder die Zustandszahl
+der gesamten D5-VOA, sondern um die Spektralverteilung dieses Vektors.
+
+Eine alleinige markierte Auslese setzt q3=1 und liefert Exponent 5/4.
+Die gemeinsame Zeitentwicklung setzt q5=q3=q und liefert Exponent 2:
+ G_u(q,q)=[(1-u)/(1-u q)]^2.                           (3)
+Für L0,5 statt N5 kommt q^(5/8) hinzu; für L0 kommt q^1 hinzu.
+Für den früheren bedingten Viertelholonomie-Operator H_delta=L0-delta.P_charge
+ist bei dieser festen beta und t>=0 die tatsächliche Zeitantwort
+ exp[-t(1-delta.beta)] * [(1-u)/(1-u exp(-t))]^2.      (4)
+Die lineare Ladungskorrektur ändert die Nullmodenenergie, nicht den
+Oszillatorexponenten. Dies setzt den dortigen gewählten E8-Zieloperator voraus,
+nicht dessen schon gelöste Übertragung aus dem mikroskopischen Rand.
+
+5. Exakter Anschluss an die ZielFORM und seine erste zusätzliche Wahl
+
+Die Normierung verhindert den fraktionellen Faktor nicht grundsätzlich:
+ G_u(q,1)/G_u(0,1)=(1-u q)^(-5/4).                    (5)
+Der Nenner ist die positive Nullgrade-Wahrscheinlichkeit (1-u)^(5/4), kein
+weggeworfener unendlicher Faktor. Damit ist
+ u q * G_u(q,1)/G_u(0,1)=u q(1-u q)^(-5/4).          (6)
+Ein mathematisch wohldefiniertes, markiertes Referenz-Verhältnis realisiert
+also die FORM des bisher gesuchten Ausdrucks im vorhandenen E8-Modell.
+
+Die Identifikation u=48 c3^4 und q=exp(-2 alpha) ist jedoch eine ZUSÄTZLICHE
+Zustands- und Auslesezuordnung. Der ursprüngliche neutrale Port liefert zwar
+48 c3^4 exp(-2 alpha) P0 unter seiner eigenen bedingten Kopplungs-/Zeitwahl,
+aber seine Quellmatrix R=4P2-8P1 erfüllt P5 R=0. Dieser Port ist nicht der
+hier verwendete geladene D5-Gradmessoperator. Gleiche skalare Argumente sind
+kein Kanalgleichheitsbeweis. Auch der äußere Faktor uq und die additive
+Basis 1/(6pi) müssen aus dem physischen Quellenfunktional folgen.
+
+(6) ersetzt deshalb die offene Frage nach einem überhaupt möglichen Faktor
+durch die engere Frage nach dieser konkreten Zustands-/Instrumentabbildung.
+Es beweist weder deren Auswahl noch Einzigkeit. Ein beliebiges u in (0,1)
+bleibt zulässig. Eine numerische Zielanpassung würde genau diese offene Wahl
+verstecken und wird hier nicht vorgenommen.
+
+6. Tatsächliche Clockprüfung: kovariante Observable, keine invariante Zeit
+
+C und J werden unverändert aus dem certificate.json von
+compiler-integral-triality-20260918 gelesen. Sie sind orthogonal und erhalten
+dieselben 240 E8-Wurzeln. Im gemeinsamen orthonormalen Wurzelkoordinatensystem
+sei D_g=g^t P5 g-P5. Exakt:
+
+ g       Rang(D_g)       Tr(D_g^2)
+ C           4              23/8
+ J           2                 2
+
+Für s=(1/2)^8 gilt s^tP5s=5/4, dagegen (Cs)^tP5(Cs)=1.
+Die markierte D5-Auslese ist unter den gelieferten Uhren nicht invariant.
+Sie ist gleichwohl kovariant, wenn Ladung UND Markierung transportiert werden:
+ (g beta)^t (g P5 g^t) (g beta)=beta^t P5 beta.
+Das verbietet die Messung nicht. Es verhindert nur, sie ohne zusätzliche
+Begründung als unveränderte gemeinsame Clock-symmetrische Zeit auszugeben.
+Kokzyklusphasen der Lifts ändern diesen quadratischen Test nicht.
+
+In der bereits untersuchten Klasse symmetrischer quadratischer
+Stromgeneratoren haben C^t A C=A und J^t A J=A Rang 35 auf den 36
+Koeffizienten. Der Checker zertifiziert diesen Rang mit einer exakten Rang-35-Untergrenze
+modulo 101 und der rationalen Kernrichtung I als passender Obergrenze.
+Die Identität liegt im Kern; mit Tr A=5 ist daher allein A=(5/8)I möglich.
+Jede konvergente Mittelung über die gemeinsame Clockgruppe mit invariantem
+Endwert und erhaltener Spur hat folglich diesen Wert. Dies behauptet keine
+neue mikroskopische Symmetrieannahme: Die Auswahl gilt NUR, falls beide
+Clocks Symmetrien derselben physikalischen Zeit sein sollen.
+
+Auch dieser gemittelte Ausweg liefert nicht den gewünschten Teilfluss:
+ N_A=(5/8)N8 => <q^N_A>=[(1-u)/(1-u q^(5/8))]^2.
+Die erste Ableitung in log q stimmt mit der D5-Antwort überein, die zweite
+verbundene Ableitung jedoch nicht. Ihre Differenz ist
+ [(5/8)^2*2-5/4]*u/(1-u)^2=-(15/32)*u/(1-u)^2 !=0.
+Eine Übereinstimmung der ersten Antwort oder des Ward-Koeffizienten genügt
+also nicht. Das ist ein kleiner konkreter Test der tragenden Identifikation.
+
+7. Was zum verlangten Vollziel tatsächlich gewonnen ist
+
+Positiv gelöst ist die konditionale mathematische Zugänglichkeit der
+fraktionellen Potenz durch eine wohldefinierte normierte markierte Antwort
+und ein endliches Referenz-Verhältnis. Die erste Identifikation mit der
+unveränderten gemeinsamen Quellenzeit ist dagegen widerlegt, innerhalb der
+ausdrücklich geprüften Vakuum-/Quadratik-/Clock-Annahmen. Das schließt keine
+quellenseitig hergeleitete markierte Messung und keine kovariante Zeitregel aus.
+
+Der bestbegründete nächste physische Nachweis ist jetzt konkret: Aus dem
+ursprünglichen P1-Rand muss ein Instrument oder Quellenfunktional folgen,
+das den geladenen regulierten Zustand auswählt, die D5-Gradantwort (5) misst,
+und die Parameter u sowie q aus derselben Naht-/EM-Dynamik bestimmt. Seine
+Clockwirkung muss die Markierung explizit transportieren oder eine physisch
+begründete Symmetriebrechung enthalten. Die derzeitige neutrale R-P0-Abbildung
+leistet dies nicht. Kein Koeffizient M=41, kein Photonwörterbuch, keine
+3+1D-Dynamik und keine Gravitations-Flächennormierung wird dadurch hergeleitet.
+
+Das reicht daher nicht für eine vollständige TFPT-Lösung. Alle physischen
+T1–T8 bleiben in diesem Vertrag ungeändert; der Originalledger bleibt
+unangetastet. Kein neues freies Instrument wird als Ersatz für seine Herkunft
+optimiert. Das Ergebnis ist eine gezielt geprüfte Verbindung und Grenze,
+kein weiterer behaupteter geschlossener Theorieast.
+
+8. Quellen und unabhängige Prüfung
+
+Originale und Hashes: source_manifest.json. Vorarbeiten: charged-source-time-
+audit-20260920, seam-readout-flow-deck-20261005, neutral-response-tomography-
+20261013, source-observation-identifiability-20261013. Es werden deren positive
+bedingte Resultate und Ausschlüsse bewahrt; keiner dieser Verträge wird ersetzt.
+Standardhintergrund: J.-B. Zuber, An Introduction to Conformal Field Theory,
+https://www.lpthe.jussieu.fr/~zuber/MesPapiers/zako.pdf , §§3–5, freie Bosonen,
+Wick-, Ward- und Stromalgebra. Diese Literatur wählt keine TFPT-Quelle aus.
+Die eigenen projektspezifischen Zahlen stammen aus dem Originalcode.
+Unabhängige Gegenprüfung der Ward-/Fock-/Clock-Interpretation: separate
+Agentensession tfpt_orientation; ihre Hinweise zu Grad statt Teilchenzahl,
+Vollpaar-Nenner und Kovarianz statt Invarianz wurden berücksichtigt.

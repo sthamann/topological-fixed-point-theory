@@ -1,0 +1,376 @@
+TFPT PAPER V1.06: HERKUNFT UND NORMALISIERUNG VON c3
+====================================================
+
+Datum: 2026-10-25
+Geltungsbereich: Paper V1.06 vom 01.09.2025, best effort PDF Extrakt,
+verglichen mit der Primärquelle Svrcek und Witten, Axions In String Theory.
+
+FRAGE
+-----
+
+Was wird in Paper V1.06 durch die 11D Reduktion tatsächlich quantisiert?
+Folgt daraus bereits die kanonisch normierte physische Kopplung c3, oder wird
+nach der Quantisierung noch eine Normalisierung beziehungsweise
+Parametrisierung gewählt?
+
+KURZURTEIL
+----------
+
+PROVED unter den gedruckten Konventionen des Papers:
+
+1. Die Groß Eich Invarianz quantisiert den Koeffizienten des Terms
+
+     a F wedge F
+
+   für ein dimensionsloses Axion mit Periode 2 pi und ein integer
+   normalisiertes Eichfeld. Bei der im Paper verwendeten Konvention
+
+     integral F wedge F = 8 pi^2 k
+
+   ist der minimale Koeffizient
+
+     g_top = n/(8 pi^2).
+
+2. Der Schritt
+
+     g_top = 8 c3^2
+
+   ist im Original ausdrücklich eine Parametrisierung. Mit der positiven
+   Wurzel und der zusätzlichen Wahl n=1 ergibt sie
+
+     c3 = 1/(8 pi).
+
+   Die 11D Chern Simons Wirkung enthält c3 selbst nicht.
+
+3. Die Integerquantisierung fixiert nicht automatisch die Kopplung zwischen
+   kanonisch normiertem Axion und kanonisch normiertem vierdimensionalem
+   Eichfeld. Diese lautet bei Standardnormalisierung
+
+     g_phys = n g4^2/(8 pi^2 F_a)
+
+   vor möglichen Spur und Einbettungsfaktoren. Dafür werden der
+   vierdimensionale Eichkopplungsfaktor g4 und die Axionzerfallskonstante F_a
+   benötigt. V1.06 behauptet, die Volumen und kappa Faktoren seien absorbiert,
+   berechnet die beiden kinetischen Normen an dieser Stelle aber nicht.
+
+4. Die gedruckte lokale Reduktion ist für ein dynamisches a unvollständig.
+   Aus G4=dC3 folgt auch da wedge omega3. Mit diesem Term enthält
+   C3 wedge G4 wedge G4 neben a F wedge F zwei gemischte Beiträge. Lokal auf
+   einem trivialisierten Patch ergibt sich eine Form, die bis auf eine
+   Ableitung einen Faktor drei trägt. Daraus wird hier keine globale
+   Faktor drei Revision von c3 abgeleitet, weil A und das periodische a auf
+   nichttrivialen Bündeln nur patchweise beschrieben sein können und das
+   Paper möglicherweise den Spezialhintergrund da=0 benutzt.
+
+Damit ist die präzise historische Aussage:
+
+  V1.06 liefert einen quantisierten topologischen Levelkoeffizienten und
+  definiert daraus die positive Größe c3. Es liefert noch keine vollständige
+  Herleitung der kanonisch normierten physikalischen Axion Eichfeld Kopplung.
+
+TATSÄCHLICH VORHANDENE DATEN IN V1.06
+-------------------------------------
+
+Der Haupttext enthält mehr Struktur als eine bloße numerische Setzung:
+
+* die 11D Wirkung
+
+    S_CS = 1/(12 kappa_11^2) integral C3 wedge G4 wedge G4,
+    G4=dC3;
+
+* die Produktwahl M11=M4 x Y7;
+
+* integer normalisierte Kohomologieformen omega2 und omega3;
+
+* die ganzzahlige Paarung
+
+    n = integral_Y7 omega3 wedge omega2 wedge omega2;
+
+* den Modenansatz
+
+    C3 = a(x) omega3 + A(x) wedge omega2;
+
+* die Axionperiode 2 pi und die Eichfeldkonvention
+
+    integral_M4 F wedge F = 8 pi^2 k;
+
+* die Wahl des minimalen Schnitts n=1;
+
+* die nachträgliche Parametrisierung g_top=8 c3^2 und die positive Wurzel.
+
+Diese Daten erklären, warum 1/(8 pi^2) als topologische Einheit erscheint.
+Sie unterscheiden aber noch nicht sauber zwischen
+
+  topologischem Level,
+  Koeffizient in integer normalisierten Variablen,
+  Koeffizient nach kanonischer Feldnormierung.
+
+Zudem beginnt der Haupttext mit der dimensionsbehafteten
+Supergravitationskonvention 1/(12 kappa_11^2) und wechselt danach zu einem
+periodischen, dimensionslosen Axion und integer normierten Flüssen. Die
+Reskalierung des C Feldes, die diese beiden Konventionen verbindet, wird nicht
+angegeben. Gerade an diesem Übergang liegt die erste Normalisierung nach der
+11D Wirkung.
+
+DER KLEINSTE EXTERIOR ALGEBRA TEST
+---------------------------------
+
+Seien omega2 und omega3 geschlossene Repräsentanten der angegebenen
+Kohomologieklassen und F=dA auf einem lokalen Patch. Aus
+
+  C3 = a omega3 + A wedge omega2
+
+folgt zwingend
+
+  G4=dC3 = da wedge omega3 + F wedge omega2.
+
+Da beide Summanden von G4 geraden Gesamtgrad vier haben, addieren sich die
+beiden Kreuzterme in G4 wedge G4. Der Teil mit äußerem Grad vier und innerem
+Grad sieben ist
+
+  C3 wedge G4 wedge G4
+    = [a F wedge F + 2 A wedge da wedge F]
+      wedge omega3 wedge omega2 wedge omega2.
+
+Die Vorzeichen sind positiv: Das Verschieben der äußeren Zwei Form F über
+innere Formen mit Gesamtgrad fünf erzeugt ein gerades Vorzeichen, ebenso die
+Vertauschung von omega2 und omega3.
+
+Auf einem lokalen trivialisierten Patch gilt dF=0 und
+
+  d(a A wedge F)
+    = da wedge A wedge F + a F wedge F.
+
+Wegen A wedge da = - da wedge A folgt
+
+  A wedge da wedge F
+    = a F wedge F - d(a A wedge F),
+
+also
+
+  C3 wedge G4 wedge G4
+    = [3 a F wedge F - 2 d(a A wedge F)]
+      wedge omega3 wedge omega2 wedge omega2.
+
+Das gedruckte Paper setzt dagegen unmittelbar
+
+  G4 = F wedge omega2
+
+und behält nur a F wedge F. Das ist konsistent, wenn a als konstanter
+Hintergrund mit da=0 behandelt wird. Es ist keine vollständige lokale
+Reduktion für das später im Paper kinetisch behandelte dynamische Axion.
+
+Warum hier keine neue numerische Faktor drei Behauptung folgt:
+
+* Bei da=0 verschwinden die gemischten Terme tatsächlich.
+* Auf einem nichttrivialen U(1) Bündel ist A nicht global definiert.
+* Ein periodisches a kann ebenfalls nur als kreiswertige Größe gegeben sein.
+* Dann ist a A wedge F kein global wohldefinierter Randterm, und Patch sowie
+  Übergangsterme gehören zur Definition der Chern Simons Reduktion.
+* Das Vorzeichen und der Gesamtkoeffizient hängen außerdem von der exakt
+  gewählten globalen C Feld Differentialkohomologie ab.
+
+Der Test beweist daher eine ausgelassene lokale dynamische Komponente, keine
+revidierte universelle Zahl.
+
+TOPOLOGISCHE GEGEN PHYSISCHE NORMALISIERUNG
+-------------------------------------------
+
+Nehmen wir die vom Paper beabsichtigte vierdimensionale Form in integer
+normalisierten Variablen:
+
+  S4 = -1/(2 g4^2) integral tr(F wedge star F)
+       -F_a^2/2 integral da wedge star da
+       +n/(8 pi^2) integral a tr(F wedge F).
+
+Dabei gilt a gleich a plus 2 pi. Setze
+
+  A_can = A/g4,
+  a_can = F_a a.
+
+Dann ist in der kanonischen Beschreibung F(A)=g4 F_can, wobei im
+nichtabelschen Fall g4 entsprechend in der kovarianten Ableitung steht. Der
+topologische Term wird
+
+  S_top = n g4^2/(8 pi^2 F_a)
+          integral a_can tr(F_can wedge F_can).
+
+Die Quantisierung bestimmt n. Die physische Amplitude hängt zusätzlich von
+g4, F_a und der Spur beziehungsweise Einbettungsnorm ab. Schon die Dimension
+zeigt die Trennung: c3=1/(8 pi) ist dimensionslos, während der Koeffizient von
+a_can F_can wedge F_can die Dimension einer inversen Masse besitzt.
+
+Für ein elektromagnetisches Teilfeld kommt ein weiterer Einbettungsfaktor
+hinzu. Svrcek und Witten führen dies explizit vor: Sie beginnen mit einem
+integer normalisierten Eichfeld, bei dem die Eichkopplung vor dem kinetischen
+Term steht, reskalieren anschließend das elektromagnetische Feld kanonisch und
+erhalten einen Faktor e^2. Die kanonische Axionreskalierung bringt zugleich
+1/F_a ein.
+
+Dies ist genau die in V1.06 übersprungene Rechnung. Der Satz in den Zeilen
+407 bis 409, alle dimensionsbehafteten Faktoren aus kappa_11 und dem Volumen
+von Y7 würden absorbiert, ist eine Konventionsdeklaration. Ohne Reduktion der
+kinetischen Terme zeigt er nicht, dass der danach g genannte Koeffizient mit
+einer physikalischen kanonischen Kopplung identisch bleibt.
+
+APPENDIX E SCHLIESST DIE NORMIERUNGSLÜCKE NICHT
+-----------------------------------------------
+
+Appendix E schreibt eine kanonisch aussehende effektive Lagrangedichte
+
+  -1/4 F^2 + 1/2 (partial a_tilde)^2 + g a_tilde F F_tilde
+
+und übernimmt g=8 c3^2 aus dem Haupttext. Es zeigt aber nicht die
+Kaluza Klein Integrale, aus denen der Koeffizient des Eichkinetikterms und
+F_a folgen. Insbesondere fehlen Größen der Form
+
+  integral_Y7 omega2 wedge star omega2,
+  integral_Y7 omega3 wedge star omega3,
+
+sowie deren Verhältnis zu kappa_11 und zum Volumen. Genau diese Größen
+bestimmen g4 und F_a. Der anschließende Ein Schleifen Schluss benutzt daher
+eine bereits gewählte kanonische Kopplung; er leitet ihre Gleichheit mit dem
+topologischen g nicht unabhängig her.
+
+WO DIE ERSTEN ZUSATZWAHLEN AUFTRETEN
+------------------------------------
+
+Die logische Reihenfolge ist:
+
+1. 11D Supergravitation liefert einen Chern Simons Term mit festgelegter
+   Normierung, sobald die globale C Feldkonvention gewählt ist.
+
+2. V1.06 wählt eine Produktkompaktifikation M4 x Y7 und zwei konkrete
+   ganzzahlige Kohomologieklassen. Das ist die erste zusätzliche geometrische
+   Eingabe der abgedruckten c3 Kette.
+
+3. Das Paper wählt den minimalen Schnitt n=1. Die Quantisierung erlaubt
+   allgemein n in Z. Nach Wahl der Orientierung und für n>0 wäre
+
+     g_top=n/(8 pi^2),
+     c3=sqrt(n)/(8 pi)
+
+   auf der positiven reellen Verzweigung. Die Minimalität ist daher eine
+   Auswahl, kein Resultat der bloßen 11D Wirkung.
+
+4. Das Paper definiert g_top=8 c3^2 und nimmt die positive Wurzel. Diese
+   Parametrisierung ist mathematisch konsistent, aber c3 ist damit eine
+   abgeleitete Koordinate auf dem Level, nicht der ursprüngliche lineare
+   Chern Simons Koeffizient.
+
+5. Um c3 als physische Kopplung zu lesen, werden zusätzlich die Metrikmoduli
+   von Y7, die kinetischen Normen, der Eichkopplungsfaktor, F_a und die
+   Einbettungs beziehungsweise Spurnorm benötigt. Diese Daten werden in der
+   betreffenden V1.06 Herleitung nicht bestimmt.
+
+VERGLEICH MIT DER PRIMÄRLITERATUR
+--------------------------------
+
+Primärquelle:
+
+  Peter Svrcek und Edward Witten,
+  Axions In String Theory,
+  arXiv:hep-th/0605206,
+  https://arxiv.org/abs/hep-th/0605206
+
+Die am 2026-10-25 geladene arXiv Quelle hat SHA256
+
+  a1e11b669f85c78bb2f3a61605330c5bfaf0655fb7c75b0b82cce51efbb1594f
+
+und die PDF Datei SHA256
+
+  cf6cfa95896bb707db77eccde5f2cfcd8e13359856362539c7d1512764d6ffac.
+
+Entscheidende Stellen im arXiv TeX Quelltext axionpaper.tex:
+
+* Zeilen 971 bis 994: Instantonzahl, Spurkonvention und integer normalisiertes
+  Eichfeld; die Eichkopplung steht vor dem kinetischen Term.
+
+* Zeilen 997 bis 1022: Axionperiode 2 pi, ganzzahliger Level r, separater
+  kinetischer Faktor F_a und kanonische Reskalierung a_can=F_a a.
+
+* Zeilen 1175 bis 1195: Einbettung in das elektromagnetische Teilfeld und
+  kanonische Reskalierung, die ausdrücklich e^2/F_a erzeugt.
+
+* Zeilen 1285 bis 1304: integer normiertes M Theorie C Feld und vollständige
+  11D Supergravitationswirkung einschließlich kinetischem G Term und
+  C wedge G wedge G.
+
+* Zeilen 1713 bis 1725: periodische modellabhängige Axionen und die Aussage,
+  dass die ganzzahligen topologischen Kopplungen unabhängig von g_s sind.
+
+Die Primärquelle bestätigt genau die benötigte Trennung: Das Level ist
+topologisch und ganzzahlig. Die kanonische physische Kopplung enthält zusätzlich
+die Axion und Eichkinetiknormalisierung.
+
+Sie zeigt außerdem, wie die im V1.06 Text übersprungene 11D
+Konventionsänderung sauber aussieht: Nach der Festlegung, dass C ganzzahlige
+Perioden hat, schreibt sie kinetischen G Term und Chern Simons Term gemeinsam
+in derselben ell_11 Konvention. Erst danach werden vierdimensionale kinetische
+Normen reduziert. V1.06 übernimmt das Quantisierungsergebnis, ohne diese
+Zwischenrechnung für seinen Y7 Ansatz anzugeben.
+
+ORIGINALSTELLEN V1.06
+---------------------
+
+Atlas Quelle:
+
+  paper-source:d1ad6e821832466bddfd56a5
+
+Lokaler best effort PDF Extrakt:
+
+  documents/archive--paper-latex--old--paper_v1_06_01_09_2025/
+  sections/001-source.tex
+
+SHA256:
+
+  0409cbd9fb015a54b2d9d50a36e3cfa178ef406e6f5e809aee0b83d8f6ba7ac1
+
+Inklusive Zeilen:
+
+* 345 bis 430: erste c3 Herleitung, 11D Chern Simons Term, Produktansatz,
+  Intersektionszahl, ausgelassener da Term, Groß Eich Quantisierung,
+  n=1 und Definition g=8 c3^2.
+
+* 531 bis 580: komprimierte Wiederholung der Reduktion und Behauptung, die
+  kanonische Normierung erzeuge direkt g=n/(8 pi^2).
+
+* 2597 bis 2637: Appendix E übernimmt g in eine kanonisch aussehende
+  4D Lagrangedichte und verwendet es in der Vakuumpolarisation, ohne die
+  kinetischen Kaluza Klein Normen auszurechnen.
+
+Im Repository wurde keine zu V1.06 gehörige PDF Datei gefunden. Die Datei
+
+  _archive/paper-latex/old/paper_v1_06_01_09_2025.tex
+
+ist leer. Aussagen über unleserliche Klammern oder typografische Vorzeichen
+stehen deshalb unter den im Extrakt gedruckten Konventionen. Die für das Urteil
+entscheidenden strukturellen Angaben sind im Extrakt dennoch eindeutig:
+C3 Ansatz, G4=dC3, Periodizität, Intersektionszahl, n=1 und g=8 c3^2.
+
+ENDURTEIL
+---------
+
+Die zuvor übersehene positive Herkunft ist der integer quantisierte
+topologische Level aus der 11D Chern Simons Reduktion. V1.06 enthält dafür
+einen konkreten Modenansatz und eine konkrete Intersektionspaarung.
+
+Die erste zusätzliche geometrische Wahl ist Y7 zusammen mit omega2 und
+omega3. Die erste diskrete Auswahl ist n=1. Danach wird c3 durch
+g_top=8 c3^2 parametrisiert. Die erste für eine physische Kopplung noch
+fehlende Eingabe ist die gemeinsame kinetische Normierung, insbesondere g4
+und F_a.
+
+Daher ist die haltbare Aussage:
+
+  c3=1/(8 pi) ist in V1.06 eine exakt definierte positive Parametrisierung des
+  minimalen topologischen Levels unter den gewählten Konventionen.
+
+Nicht belegt ist die stärkere Aussage:
+
+  Die 11D Topologie allein fixiere damit bereits den Koeffizienten des Terms
+  a_can F_can wedge F_can in der physisch kanonisch normierten 4D Theorie.
+
+Es folgt keine numerische Änderung von c3 aus diesem Review. Der Befund trennt
+seine belegte topologische Bedeutung von der zusätzlich benötigten
+physikalischen Normalisierung.

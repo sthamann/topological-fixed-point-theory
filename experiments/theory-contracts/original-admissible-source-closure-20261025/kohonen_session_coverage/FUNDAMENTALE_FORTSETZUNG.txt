@@ -1,0 +1,101 @@
+# Wie die rekursive Maschine zur fundamentalen Herleitung beitragen kann
+
+26. Oktober 2026. Fortsetzung des ausgeführten Experiments. Die neuen Rechnungen stehen in `fundamental_audit.py` und `runs/fundamental_audit.json`.
+
+Die Maschine hilft uns, die Anforderungen an einen kollektiven Ursprung genauer zu bestimmen. Sie zeigt einen funktionierenden Ordnungsmechanismus und trennt zugleich drei Fragen: Warum gerade diese Struktur, warum gerade diese Dynamik und warum gerade dieser beobachtete Zustand? Für eine fundamentale TFPT Lösung müssen diese Fragen aus denselben Ausgangsprinzipien zusammenpassen.
+
+## 1. Die entscheidende neue Prüfung
+
+Die Lernregel besitzt eine exakte Symmetrie. Für jede unitäre Matrix `U` auf dem 35 dimensionalen Signalraum gilt:
+
+`F(X U, W U) = (F_X(X,W) U, F_W(X,W) U)`.
+
+Der kollektive Kern wirkt auf die Zeilen der Zellen. Die Unitarität erhält alle Abstände zwischen Signalen und Speichern. Dadurch bleiben Gewinner und Gewichte gleich. Mittelwerte, Lernen und Normierung vertragen sich ebenfalls mit derselben Drehung. Die Aussage gilt deshalb durch Induktion für beliebig viele Schritte, einschließlich gleicher Regeln zur Behandlung von Gleichständen.
+
+Eine solche globale Drehung wurde im Anfangszustand und in den Speichern vorgenommen. Danach wurden beide Maschinen 5.000 Schritte ausgeführt:
+
+| Auswertung | Anteil im Fünfercode |
+|---|---:|
+| Ursprünglicher Start | 98,09 % |
+| Gedrehter Start, ursprüngliche Auslesung festgehalten | 13,24 % |
+| Gedrehter Start mit entsprechend mitgedrehter Auslesung | 98,09 % |
+
+Die Zustandsfolgen stimmen nach Berücksichtigung der Drehung bis auf einen relativen numerischen Fehler von `1.36e-14` überein. Sie haben denselben effektiven Rang, dieselben Signalüberlappungen und dieselben Gewinner.
+
+Über 128 gedrehte Ausrichtungen lag der mittlere Anteil im festgehaltenen Fünfercode bei 14,18 %. Für eine isotrope Ausrichtung ist der Erwartungswert `5/35 = 14,29 %`.
+
+**Bewiesen für die gewählte Regel:** Die Rekursion allein bevorzugt keine bestimmte Ausrichtung des Fünfercodes im Signalraum. Der hohe ursprüngliche Codeanteil verwendet die Beziehung zwischen ursprünglichem Start, Kopplung und Auslesung. Die Maschine lernt diese Beziehung nicht voraussetzungslos.
+
+Der dritte Tabellenwert ist dabei wesentlich: Bei einem bloßen Koordinatenwechsel müssen wir die Auslesung mitnehmen. Dann bleibt die Physik derselben Darstellung selbstverständlich gleich. Der zweite Wert untersucht einen veränderten Eingang gegenüber einer festgehaltenen Auslesung.
+
+**Geltungsbereich:** Eine allgemeine `U(35)` Drehung erhält gewöhnlich weder die ursprünglichen Tensorpotenzen `z^tensor4` noch die vollständigen nativen Feldprodukte. Sie ist eine Symmetrie dieser Maschine. Der Test ist kein Gegenmodell gegen den gesamten TFPT Ursprung. Er zeigt, welche ursprüngliche Struktur die aktuelle Lernregel nur über ihre Eingaben erhält.
+
+## 2. Die Schwingungen haben eine konkrete Ursache
+
+Lernrate und Rückkopplung wurden jeweils halbiert beziehungsweise verdoppelt. Alle anderen Eingaben blieben gleich. Je Fall wurden 5.000 Schritte ausgeführt. Anschließend wurde die aus dem Zustand rekonstruierte eingefrorene Antwort für weitere 1.000 echte Schritte geprüft.
+
+| Rückkopplung | Lernrate | Effektiver Rang | Beobachtete Antwort |
+|---:|---:|---:|---|
+| 0,125 | 0,075 | 5,000 | Stillstand |
+| 0,125 | 0,150 | 4,852 | Fortlaufende Bewegung |
+| 0,125 | 0,300 | 4,646 | Fortlaufende Bewegung |
+| 0,250 | 0,075 | 3,794 | Fortlaufende Bewegung |
+| 0,250 | 0,150 | 3,794 | Fortlaufende Bewegung |
+| 0,250 | 0,300 | 4,793 | Fortlaufende Bewegung |
+| 0,500 | 0,075 | 3,920 | Stillstand |
+| 0,500 | 0,150 | 3,625 | Langsame fortlaufende Bewegung |
+| 0,500 | 0,300 | 3,920 | Stillstand |
+
+Bei unveränderter Rückkopplung `0,25` verändert die Halbierung der Lernrate die beiden Umlaufwerte der eingefrorenen Antwort von ungefähr 11.201 und 64.540 auf 18.551 und 106.907 Schritte. Diese Werte folgen aus den Eigenwinkeln der beobachteten Antwortmatrix. Sie werden nicht als Parameter eingespeist. Die entsprechende lineare Vorhersage stimmt in allen neun geprüften Fällen für 1.000 Schritte mit einem relativen Fehler unter `8e-14` mit der Maschine überein.
+
+**Endlich getestet:** Die fortlaufende Bewegung entsteht aus der gewählten Lernschleife und ihrer Verzögerung. Sie liefert bislang keine parameterfreie TFPT Clock. Einen Lernwert so anzupassen, dass ein gewünschter Takt erscheint, würde die Herkunftsfrage nicht lösen.
+
+Drei zusätzliche Starts mit generischen komplexen Signalen ergeben weiterhin niedrige effektive Ränge zwischen 3,65 und 4,92. Ihr Anteil im Fünfercode beträgt aber nur 10,53 bis 15,17 %. Die kollektive Verdichtung funktioniert somit auch ohne die ursprüngliche Ausrichtung auf den Code.
+
+## 3. Worin der positive Beitrag besteht
+
+Die Maschine liefert einen konkreten Mechanismus, in dem mehrere Signalrichtungen, Gedächtnis und fortlaufende Bewegung zusammen bestehen können. Sie macht außerdem sichtbar, welche Annahmen für welches Verhalten verantwortlich sind. Dadurch können wir Kandidaten früh verwerfen, die nur wegen einer vorgegebenen Ausrichtung oder eines passenden Lernwerts gut aussehen.
+
+Eine vollständige Theorie muss nicht aus jedem Anfangszustand denselben Weltzustand erzeugen. Ihre Gesetze und strukturellen Beziehungen müssen aus den angegebenen Prinzipien folgen. Unterschiedliche physische Zustände und spontane Auswahl einzelner Zweige sind damit vereinbar. Ein sinnvolles Ziel ist daher auch eine begründet bestimmte Klasse gleicher beobachtbarer Gesetze.
+
+Hier ist die Verbindung zur Renormierung hilfreich: Verschiedene mikroskopische Beschreibungen können dieselben makroskopischen Gesetze ergeben. Das ist ein Untersuchungsprogramm, keine bereits nachgewiesene Eigenschaft unserer Maschine. Primärquelle: [Wilson, The renormalization group: Critical phenomena and the Kondo problem, 1975](https://doi.org/10.1103/RevModPhys.47.773).
+
+## 4. Der am besten begründete nächste Anschluss
+
+Die nächste Aufgabe ist, die frei gewählte Speicherregel mit der Rückwirkung der vollständigen ursprünglichen Quelle zu verbinden. Dafür gibt es bereits einen konkreten TFPT Baustein.
+
+Für die schon untersuchte, ausdrücklich spezifizierte ursprüngliche Einzelfolge liefert die Aufteilung des vollständigen Operators `L` in beobachtete und äußere Anteile exakt:
+
+`x[n+1] = K x[n] + sum(j=0..n-1) B* D^(n-1-j) B x[j]`.
+
+Der Gedächtniskern `B* D^k B` wird aus demselben Operator und demselben Beobachtungsausschnitt berechnet. Er ist kein frei trainierter Speicher. Diese vorhandene Aussage ist auf die betreffende Folge beschränkt und wählt noch keine physisch erlaubte Geschichte aus. Quelle: `joint-native-algebra-selection-20261016/SOURCE-RETURN-MEMORY.txt`, Abschnitte 2 und 3, insbesondere Gleichungen 3 bis 5.
+
+Der allgemeine Zusammenhang zwischen mikroskopischer Entwicklung und effektiver Entwicklung mit Gedächtnis ist in der Projektionsmethode bekannt. Primärquelle: [Mori, Transport, Collective Motion, and Brownian Motion, 1965](https://doi.org/10.1143/PTP.33.423). Die TFPT Rechnung liefert hier bereits die konkrete algebraische Form für ihren angegebenen Quellenoperator.
+
+Der noch fehlende Anschluss ist präzise: **Welche ursprüngliche P1 Randvariation bestimmt den tatsächlichen Feldoperator und dessen geordnete Geschichte mit demselben Zustand, derselben Zeit und derselben Reflexion?** Die vorhandenen lokalen Netze, vollen Zustände und Randdomänen müssen dabei mitgeführt werden. Ein bloßes Gleichsetzen des Kovarianzkerns mit einer Energie liefert diese Abbildung nicht.
+
+## 5. Konkreter Weg zur vollständigen Herleitung
+
+| Schritt | Was daraus folgen muss | Kleinster entscheidender Test | Kriterium zum Verwerfen dieses Ansatzes |
+|---|---|---|---|
+| Ursprünglichen Eingriff festlegen | Ein tatsächlicher Operator aus derselben Randwirkung | Unterstützung, Adjunktion, Zustand, Zeit und Reflexion am ersten Feldpfeil vergleichen | Die Identifikation benötigt eine zusätzliche frei gewählte Einbettung oder einen ersetzten Zustand |
+| Rückkopplung daraus berechnen | Gedächtnis und relative Raten aus derselben Quelle | Erste Antwort und erste Auskehr mit Rückkehr vollständig berechnen und mit dem ursprünglichen Operatorprodukt vergleichen | Eine benötigte Lernrate oder ein Rückkehrterm wird zur Anpassung frei eingesetzt |
+| Native Struktur gemeinsam zurückgewinnen | Quartik, tatsächliche Erasure und Clockwirkung mit denselben Abbildungen | Gruppenwirkung, Ladungen und Produktkomposition auf diesen drei vorhandenen Objekten prüfen | Nur Dimensionen oder Zahlen passen, die Operatoren wirken verschieden |
+| Stabile Auslesung bestimmen | Gleiche beobachtbare Beziehungen für die begründete Klasse von Zuständen und Beschreibungen | Zwei zulässige Darstellungen mit vollständig transportierter Auslesung und mehreren Antwortschritten vergleichen | Das Ergebnis hängt von einem unbegründeten Koordinatenrahmen oder einer verborgenen Kalibrierung ab |
+| Physikalischen Abschluss schließen | Lokale Quantendynamik, Kontinuum, chirales Standardmodell, gemeinsame Kopplungen und Gravitationskanal | Die vorhandenen T1 bis T8 Anforderungen an demselben Konstrukt prüfen | Ein erfolgreicher endlicher Ausschnitt ersetzt die jeweilige fehlende Feldherleitung |
+
+Der erste Schritt ist jetzt die Priorität. Die vollständige ursprüngliche Quelle soll ihre effektive Rückkopplung bestimmen. Die bestehende Maschine bleibt der ausführbare Vergleich, an dem wir sehen, welche ihrer frei gewählten Regeln dadurch ersetzt oder begründet werden.
+
+Die vollständigen nativen Produktdaten gehören dabei zur Beschreibung. Die aktuelle Maschine verwendet überwiegend paarweise Abstände und lineare Mischungen. Die ursprünglichen Tensorprodukte, Ladungen, Feldprodukte und äußeren Zustände enthalten zusätzliche Information. Ein bloßes erneutes Einsetzen des bekannten Fünferprojektors wäre keine Herleitung dieser Information.
+
+## Ausführung und Status
+
+```sh
+OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 python3 fundamental_audit.py
+```
+
+* **Bewiesen unter der angegebenen Regel:** globale `U(35)` Kovarianz und damit fehlende bevorzugte Codeausrichtung der Regel allein.
+* **Endlich getestet:** die beiden direkt verglichenen Folgen, 128 Ausrichtungen, drei generische Starts und neun Kombinationen der Raten.
+* **Vorhandenes exaktes Quellenresultat:** Gedächtnisform der spezifizierten ursprünglichen Operatorfolge.
+* **Vorgeschlagener Anschluss:** die tatsächliche ursprüngliche Randvariation bestimmt Operatorgeschichte und effektive Rückkopplung gemeinsam.
+* **Offen:** vollständiger fundamentaler TFPT Abschluss. Die neue Studie schließt keinen physikalischen Ledgerstatus.

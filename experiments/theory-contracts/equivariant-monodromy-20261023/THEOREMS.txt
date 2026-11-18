@@ -1,0 +1,390 @@
+MATH.SEAM.EQUIVARIANT.02
+Äquivariante Monodromie, zentrale Lifts und integrale Klassifikation
+23. Oktober 2026. Ausschließlich Mathematik.
+
+0. Gegenstand, Quellen und Äquivalenz
+
+G bezeichnet die ursprüngliche Gruppe G31 auf V=C^4. Ihre 60 Reflexionen
+r_l=I-z_l z_l*/2 mit z_l*z_l=4 stammen aus compiler-quartic-carry-20260919/core.py.
+Die vollständige zentrale Erweiterung E wird aus Abschnitt 4 von
+compiler-quartic-holonomy-20260919/PROOF.txt übernommen:
+
+  E=Z/4 x G,  (a,g)(b,h)=(a+b-epsilon(g)epsilon(h),gh),
+  det(g)=(-1)^epsilon(g),  z=(1,I),  s(g)=(0,g).
+
+Diese Gruppe hat Ordnung184320. Das effektive Bild nach dem im Original
+genannten diagonalen Quotienten hat Ordnung46080 und ist eine andere Gruppe.
+Alle Liftzahlen hier betreffen E, also die Erweiterung über G selbst.
+Die nichtzentrale Erweiterung durch Hom(E8,Z/2) bleibt davon getrennt.
+
+U=P^1 minus {1,i,-1,-i}. Die vier positiven Meridiane sind geordnet;
+gamma0 gamma1 gamma2 gamma3=1. Morphismen über id_U entsprechen simultaner
+Konjugation. Eine Clockmarkierung C wird dabei ebenfalls konjugiert.
+Ein Hurwitzquotient ist eine zusätzliche Äquivalenz und wird separat gezählt.
+Der zentrale Generator z ist markiert. Es wird ausschließlich durch innere
+Konjugationen in E quotientiert, nicht durch z invertierende Automorphismen.
+Zahlen von Lifts über einem festen basierten rho sind zunächst basierte
+Homomorphismen. Erst Abschnitt6 begründet hier deren Abstieg zu Isomorphieklassen.
+
+Das aus dem anderen Forschungsbericht heruntergeladene Prüfpaket ist unter
+imported/ unverändert als Eingabeprovenienz erhalten, bis auf seine vom eigenen
+run_checks.py neu geschriebenen Verifikationsausgaben. Downloadquelle:
+ChatGPT Gespräch6ad43ef0-5ce8-83ed-b669-11a8f6d222ee, letzter Abschlussbericht,
+TFPT_Topologie_Pruefpaket_2026_10_23.zip. Seine fünf Programme wurden gelesen
+und lokal ausgeführt. Alle vollständigen Daten stimmen mit seinem Zertifikat
+überein. Das lokale Original bestätigt die beiden oben angegebenen Formeln.
+
+1. Allgemeiner Liftsatz mit präziser Quotientierung
+
+Sei 1->A->E->G->1 zentral, A abelsch mit trivialer G Wirkung, und s eine
+normierte Sektion. Schreibe s(g)s(h)=c(g,h)s(gh) additiv in A.
+Für einen Homomorphismus rho:Pi->G gilt:
+
+  Ein Lift rhohat existiert genau dann, wenn [rho*c]=0 in H^2(Pi,A).
+  Falls er existiert, bilden die basierten Lifts einen Torsor über
+  Hom(Pi,A)=H^1(Pi,A).
+
+Beweis. Jeder Lift ist eindeutig rhohat(x)=b(x)s(rho(x)). Die
+Homomorphiegleichung lautet delta b=-rho*c. Dies ist genau die Behauptung
+zur Existenz. Die Differenz zweier Lösungen hat delta(b-b')=0, ist also
+ein Homomorphismus; jeder solche Unterschied liefert wieder eine Lösung.
+Konjugation durch A wirkt trivial. Bei zusätzlichem Quotientieren durch
+das Urbild von C_G(im rho) ist dessen Wirkung auf diesem Torsor zu bilden.
+Diese Wirkung muss allgemein weder trivial noch linear sein. Daher ist
+der unbasierte Quotient allgemein kein H^1 Torsor. Beweis abgeschlossen.
+
+Peripher vorgeschrieben bedeutet hier: Für Untergruppen P_j<=Pi sind
+konkrete Lifts lambda_j von rho|P_j vorgeschrieben. Wähle dort
+lambda_j=b_j s rho. Eine Lösung ist ein b mit delta b=-rho*c und
+b|P_j=b_j. Dies ist das relative Kokettenproblem. Nach Existenz eines
+absoluten Lifts b0 entsteht eine eindeutige Restklasse
+
+  [(b_j-b0|P_j)_j] in coker[Hom(Pi,A)->prod_j Hom(P_j,A)].
+
+Sie verschwindet genau dann, wenn die vorgeschriebenen Lifts anschließen.
+Die vorhandenen Lösungen bilden einen Torsor über den Kern dieser
+Restriktionsabbildung. Das folgt durch Subtraktion von b0 und beweist
+Existenz und Klassifikation ohne eine ungenannte Randkonjugation.
+Vorgeschriebene Konjugationsklassen statt konkreter lambda_j erfordern
+zusätzliche Quotienten; diese sind kein Bestandteil dieser Aussage.
+
+Eine endliche orientierungserhaltende Wirkung K auf einer markierten
+punktierten Fläche U wird durch die Fundamentalgruppe des Quotientenstapels
+[U/K] beschrieben. Ihre Gruppe Pi sitzt in 1->pi1(U)->Pi->K->1.
+Eine strikte äquivariante G Monodromie ist ein Homomorphismus Pi->G.
+Damit gilt der eben bewiesene Satz mit genau dieser Gruppe Pi.
+Fixpunkte dürfen nicht durch die gewöhnliche Fundamentalgruppe des
+topologischen Quotienten vergessen werden. Bei nicht zentralem A gilt
+stattdessen derselbe Kokettenbeweis mit der zurückgezogenen Modulwirkung;
+H^1 und H^2 sind dann mit diesem Modul zu nehmen.
+
+2. Expliziter Satz für jede orientierte punktierte Quotientenfläche
+
+Die Quotientenfläche habe Genus h, p>=1 Punkturen und konische Punkte
+mit Ordnungen n1,...,nt, ohne Spiegelränder. Dann besitzt Pi die Präsentation
+
+  <a_i,b_i,x_j,y_l | x_j^n_j=1,
+    prod_i[a_i,b_i] prod_j x_j prod_l y_l=1>.
+
+Eliminiere y_p. Dadurch folgt
+  Pi = F_(2h+p-1) * C_n1 * ... * C_nt.
+
+Wähle beliebige Lifts X_j der rho(x_j). Setze omega_j=X_j^n_j in A.
+Ein strikter Lift existiert genau dann, wenn für jedes j
+
+  omega_j=0 in A/n_j A.
+
+Falls ja, ist seine basierte Liftmenge ein Torsor über
+  A^(2h+p-1) x prod_j A[n_j].
+Für endliches A ist dies zugleich die genaue Zahl der Lifts.
+
+Beweis. Ändert man X_j zu a X_j, wird seine n_j te Potenz um n_j a
+geändert. Daher sind genau die angegebenen Klassen wohldefiniert.
+Nach Eliminieren von y_p sind die Potenzrelationen die einzigen
+Relationen. Ihre getrennte Lösbarkeit ist somit hinreichend und notwendig.
+Die freien Generatoren können beliebig geändert werden; bei X_j bleiben
+genau A[n_j] Möglichkeiten. Dies beweist auch die vollständige
+Klassifikation. Äquivalent ist H^2(Pi,A)=directsum_j A/n_j A; die
+Klasse wird durch ihre Einschränkungen auf die zyklischen Faktoren
+bestimmt. Das folgt auch aus den Klassifizierungsräumen der freien Produkte.
+Der Präsentationsbeweis benötigt diese Identifikation nicht als Annahme.
+
+Für U=P^1 minus mu_m und z->exp(2pi i/m)z besitzt U/C_m eine Punktur
+und die beiden konischen Punkte0,unendlich der Ordnung m. Deshalb
+  Pi=C_m*C_m=<a,b | a^m=b^m=1>.
+Wähle a=C, b=r0 C. Dann gamma_j=a^j b a^(-j-1),
+prod_(j=0)^(m-1) gamma_j=b^m a^(-m)=1.
+Dies zeigt die konkrete Verbindung zwischen der Präsentation und den
+geordneten Meridianen. Der Index m Kern zur Abbildung a,b->1 in C_m
+ist pi1(U)=F_(m-1).
+
+3. Determinantenklasse und der allgemeine Teilbarkeitssatz
+
+Für die vorhandene Erweiterung gilt c(g,h)=-epsilon(g)epsilon(h) mod4.
+Die Kokykelidentität folgt aus epsilon(gh)=epsilon(g)+epsilon(h)
+-2epsilon(g)epsilon(h) als Gleichung mit Werten0,1. Es gilt
+2c=delta(-epsilon), also hat [c] höchstens Ordnung2. Über einer
+Reflexion r ergibt s(r)^2=z^-1. Kein anderer Lift z^k s(r) ist eine
+Involution, weil sein Quadrat z^(2k-1) ist. Daher ist [c] nicht null
+und hat genau Ordnung2.
+
+Die Abbildung (a,g)->(g,2a-epsilon(g) mod8) identifiziert E mit
+  {(g,t) in G x Z/8 : t mod2=epsilon(g)}.
+Damit ist [c] der Rückzug der Klasse der Folge
+0->Z/4->Z/8->Z/2->0 entlang epsilon.
+Auf jeder Untergruppe H spaltet E genau dann, wenn epsilon|H einen
+Homomorphismus H->Z/8 mit dieser Restklasse besitzt.
+
+Satz. Sei m gerade und rho:C_m*C_m->G gegeben, wobei die beiden
+Generatorbilder entgegengesetzte epsilon Werte haben. Dann existiert
+ein strikter Lift in genau diese Erweiterung E genau dann, wenn 8|m.
+Wenn er existiert, gibt es genau16 basierte Lifts.
+
+Beweis. Für g^m=1, e=epsilon(g), gilt für jeden zentral veränderten Lift
+  (z^k s(g))^m = z^(mk-(m/2)e).
+Damit ist sein Obstruktionswert -(m/2)e in (Z/4)/m(Z/4).
+Bei entgegengesetzten e Werten ist genau ein Wert -(m/2).
+Für m ungerade gibt es bereits keine solche G Darstellung, da g^m=1
+epsilon(g)=0 erzwingt. Für m=2 mod4 ist m(Z/4)={0,2} und m/2 ungerade;
+für m=4 mod8 ist m(Z/4)=0 und m/2=2 mod4. Beides ist unlösbar.
+Für8|m verschwinden beide Werte und A[m]=A; Abschnitt2 gibt4^2=16.
+Keine neue Erweiterung und keine Änderung der Koeffizienten wurde benutzt.
+
+Ein positives Beispiel liegt bereits in G selbst. Für
+  w=(-1-i,-1-i,0,0), r=I-ww*/2,
+  2Re C=[[0,0,-1,-1],[0,0,-1,-1],[0,0,1,-1],[0,0,-1,1]],
+  2Im C=[[1,-1,0,0],[-1,1,0,0],[1,1,0,0],[1,1,0,0]]
+gilt C in G, C^8=I, C^4!=I und(rC)^8=I. Dies wurde exakt mit
+den Originalmatrizen geprüft. Die Darstellung C8*C8->G mit Bildern
+C,rC besitzt daher16 Lifts in dieselbe Gruppe E. Das Beispiel belegt
+die positive Richtung des allgemeinen Satzes, ohne eine zusätzliche
+Erweiterung oder eine neue vollständige Monodromieklassifikation einzuführen.
+
+4. Vollständige Auswertung an den ursprünglichen62 Clockklassen
+
+Die ursprünglichen Daten werden exakt neu erzeugt:
+14760 geordnete Reflexionsvierer,17 simultane Konjugationsklassen,
+5 Hurwitzorbits,49920 clockmarkierte Paare,62 Konjugationsklassen mit
+C exakter Ordnung4. Nur die Grundklassen0,12,15 sind clockfähig.
+Die IDs sind die unveränderten nullbasierten IDs des Prüfpakets.
+
+Für Pi=C4*C4 werden die Obstruktionskoordinaten in
+H^2(Pi,Z/4)=(Z/4)^2 in der Reihenfolge a=C,b=r0 C genommen:
+  O(rho)=(-2epsilon(C),-2(1-epsilon(C))).
+
+Grundklasse   epsilon(C)=0   epsilon(C)=1   insgesamt
+0, C2                 22             22           44
+12, V4 TypA            7              8           15
+15, V4 TypB            1              2            3
+gesamt                30             32           62
+
+Also haben30 Klassen den Wert(0,2),32 Klassen den Wert(2,0).
+Alle62 Werte sind nicht null. CLOCKS.tsv enthält jede einzelne Zuordnung;
+results.json enthält dazu alle exakten Clockmatrizen und Stabilisatoren.
+Für jeden der beiden Generatoren wurden alle vier zentralen Lifts geprüft.
+
+5. Was die verschiedenen zentralen Lockerungen genau bewirken
+
+Die folgenden Varianten bleiben innerhalb E. Sie werden als verschiedene
+mathematische Objektklassen behandelt und nicht als strikte Lifts ausgegeben.
+Für vier Reflexionen mit Produkt1 ist prod_j s(r_j)=z^2.
+Setze R_j=z^k_j s(r_j), Chat=z^a s(C), e=epsilon(C).
+Dann gilt immer Chat^4=z^(-2e). Die kanonische Sektion ist
+konjugationsverträglich, weil sie im Modell(g,t) von Abschnitt3 den
+konjugationsinvarianten Wert t=-epsilon(g) besitzt.
+
+5a. Nur Chat^4 zentral erlauben, alle anderen Gleichungen strikt erhalten:
+Die Gleichungen R_(j+1)=Chat R_j Chat^-1 erzwingen alle k_j gleich.
+prod R_j=z^(sum k_j+2)=z^2. Es gibt weiterhin0 Lösungen über allen62 Klassen.
+
+5b. Zentral kovarianter Transport mit festem d in Z/4 bedeutet ausdrücklich
+  R_(j+1)=z^d Chat R_j Chat^-1, prod R_j=1, j mod4.
+Dies ist eine definierte zentrale Lockerung der Konjugationsgleichung.
+Es gilt k_j=k0+j d und sum k_j=6d=2d mod4. Die Produktrelation ist
+genau dann erfüllt, wenn d=1 oder3. Die Bedingung nach einem Umlauf
+4d=0 gilt automatisch. Für jedes d bestehen4 Möglichkeiten für k0
+und4 für a, also32 Lösungen über jeder clockmarkierten Klasse.
+Mit zusätzlichem Chat^4=1 bleiben nur die30 Klassen mit e=0:
+  30*32=960 Isomorphieklassen.
+Mit erlaubtem Chat^4=z^(-2e) sind es
+  62*32=1984 Isomorphieklassen.
+Die üblichen strikten äquivarianten lokalen Systeme sind dies nicht,
+denn ihr Transportgesetz enthält ausdrücklich z^d.
+
+5c. Projektive Orbifoldrelationen bedeuten stattdessen ein Paar Ahat,Bhat
+in E über C,r0 C mit Ahat^4=z^(-2e), Bhat^4=z^(-2(1-e)).
+Es gibt4*4=16 solche Paare pro Grundobjekt, insgesamt992 Klassen.
+Ihre Meridiane Ahat^j Bhat Ahat^(-j-1) haben Produkt
+Bhat^4 Ahat^-4=z^2. Somit sind sie kein Lift der flachen F3 Monodromie
+mit Produkt1. Diese992 dürfen nicht mit den1984 aus5b addiert werden.
+
+Allgemeine elementare Form von5b für m zyklische Meridiane:
+Bei konjugationsverträglicher Sektion, prod s(M_j)=omega in A, ist
+zentral kovarianter Transport mit konstantem d genau dann möglich, wenn
+  m d=0 und m k0+binom(m,2)d+omega=0 in A.
+Beweis: k_j=k0+j d einsetzen. Ein zusätzlicher strikter Clocklift
+erfordert unabhängig dessen Potenzobstruktion aus Abschnitt2.
+Für m=4,A=Z/4,omega=2 erhält man exakt d ungerade.
+
+6. Klassifikation und die Rolle der Äquivalenz
+
+Für jeden festen Reflexionsvierer existieren64 basierte zentrale Lifts:
+  sum_j k_j=2 mod4.
+Im Modell E subset G x Z/8 erhält jede Konjugation alle zentralen
+Koordinaten k_j. Also wirkt das Urbild des Zentralisators des Vierers
+trivial auf diesen64 Lösungen. Dies rechtfertigt im vorliegenden Modell
+  17*64=1088 Isomorphieklassen ohne Clock.
+Eine analoge Aussage gilt für die Clockphase a und d in5b; deshalb sind
+die dortigen Zahlen tatsächlich unbasierte Klassen über den62 Grundklassen.
+Das allgemeine H^1 Torsorprinzip allein hätte dies nicht bewiesen.
+
+Ein vollständiges Invariantensystem für die ungeclockten zentralen Lifts
+ist (kanonische Viererklasse, geordnetes k Tupel mit Summe2).
+Für die zentral kovarianten Clockobjekte ist es
+  (kanonische Viererklasse,
+   Zentralisatororbit der Clock innerhalb dieser Viererklasse,
+   k0,a,d), d in {1,3}, k0,a in Z/4.
+Zum Beweis wähle zuerst einen kanonischen Vierervertreter. Die verbleibenden
+Basiswechsel sind genau sein Zentralisator; dessen Orbits der zulässigen
+Clockmatrizen sind die ursprünglichen62 Vertreter. Danach wirken nur die
+gemeinsamen Zentralisatoren, und diese ändern die zentralen Koordinaten
+nicht. Dies beweist Notwendigkeit, Hinlänglichkeit und Vollständigkeit.
+Für strikte E Lifts der62 Clockobjekte ist die Klassifikation leer.
+
+Schwächere Invarianten sind ausdrücklich unvollständig. Beispiel:
+r=diag(-1,1,1,1), viermal derselbe Meridian, und
+  C1=diag(-1,-1) directsum [[0,-1],[1,0]],
+  C2=diag(-1,-1,-i,i).
+Dies sind die ursprünglichen Clockvertreter0/3 und0/5. Beide haben
+epsilon=0, Ordnung4, dasselbe charakteristische Polynom
+(t+1)^2(t^2+1), dieselbe Meridianmonodromie, dieselbe integrale
+U Kohomologie und denselben Obstruktionswert(0,2).
+Ihre gemeinsamen Zentralisatoren mit r haben jedoch Ordnungen64 und128,
+exakt im vollständig erzeugten G berechnet. Sie sind daher nicht als
+clockmarkierte Objekte isomorph. Selbst das gesamte Clockspektrum genügt
+nicht; der Zentralisatororbit der Clock gehört zum vollständigen Invariant.
+
+Auch (k_j)=(2,0,0,0) und(0,2,0,0) über demselben Vierer sind
+nichtisomorphe zentrale Lifts mit identischer zugrundeliegender
+Gitterkohomologie. Sie können durch keine gleichzeitige Konjugation
+identifiziert werden. Geordnete Punkturen werden nicht nachträglich vertauscht.
+
+7. Integrale Kohomologie aller17 Klassen
+
+Die ursprüngliche integrale Gitterbasis B wird aus den240 Gaussian Wurzeln
+durch Hermiteform gewonnen. Ihre Metrik B^t B/2 ist gerade und unimodular.
+Alle60 Reflexionen sind darin integrale Isometrien. Für einen Vierer ist
+  D=vstack(M0-I,M1-I,M2-I): Z^8 -> Z^24.
+Ist seine Smithform diag(d1,...,ds,0,...), gilt
+  H0=Z^(8-s), H1=Z^(24-s) directsum_(d_j>1) Z/d_j,
+  Hk=0 für k>=2.
+Beweis: U zieht sich auf drei Kreise zurück, und dies ist sein vollständiger
+zellulärer Kokettenkomplex mit den angegebenen lokalen Koeffizienten.
+
+ID   Meridianindizes       |Bild|  H0 Rang  H1
+0    (0,0,0,0)                2       6    Z^22
+1    (0,0,1,1)                8       4    Z^20
+2    (0,0,13,13)              6       4    Z^20
+3    (0,0,45,45)              4       4    Z^20 + Z/2
+4    (0,0,46,46)              4       4    Z^20
+5    (0,1,0,12)               8       4    Z^20
+6    (0,1,1,0)                8       4    Z^20
+7    (0,1,12,45)              8       4    Z^20
+8    (0,1,45,1)               8       4    Z^20
+9    (0,13,0,44)              6       4    Z^20
+10   (0,13,13,0)              6       4    Z^20
+11   (0,13,44,13)             6       4    Z^20
+12   (0,45,0,45)              4       4    Z^20 + Z/2
+13   (0,45,1,12)              8       4    Z^20
+14   (0,45,45,0)              4       4    Z^20 + Z/2
+15   (0,46,0,46)              4       4    Z^20
+16   (0,46,46,0)              4       4    Z^20
+
+Es gibt keine weitere Torsion. Im zyklischen Fall ist die nichtverschwindende
+Smithliste(1,1); in TypA(1,1,1,2); sonst(1,1,1,1).
+Diese Ergebnisse wurden zusätzlich direkt aus allen60 integralen Matrizen
+neu berechnet, nicht nur aus den im Bericht genannten beiden Beispielen.
+Die Gitterdarstellung E->G->Aut(L) lässt den ganzen zentralen Kern trivial
+wirken. Daher kann diese Kohomologie grundsätzlich keine unterschiedlichen
+zentralen Lifts desselben rho erkennen. Zusätzliche Wirkungen des Zentrums
+auf neuen Koeffizienten werden hier nicht eingeführt.
+
+8. Tatsächlicher Anschluss an die Vorzeichenliftgruppe
+
+Schreibe Gamma_sign=Hom(L,Z/2) semidirect <J> in den bereits bewiesenen
+Koordinaten(u,v,k), u,v in F2^4, k in Z/4:
+  (u,v,k)(a,b,l)=(u+a,v+b+(k mod2)a,k+l).
+Sie hat Ordnung1024 und Exponent4.
+
+8a. Explizite Gitterisometrie. In den reellen Gaussian Koordinaten ist
+  T=directsum_(j=1)^4 (1/2)[[1,-1],[1,1]].
+Dann T^t T=I/2 und TJ=JT. T bildet die240 ursprünglichen Gaussian Wurzeln
+exakt auf die240 Standardwurzeln von E8 ab. Also identifiziert T die
+integralen Gitter und die tatsächliche Viertelclock. Insbesondere
+g -> T g_real T^-1 ist ein treuer Homomorphismus G->O(E8), und
+  Gamma_sign -> <J> -> G, (u,v,k)->J^k
+ist ein expliziter Homomorphismus mit Kern Hom(L,Z/2).
+Er vergisst die Vorzeichenlifts und ist keine Einbettung.
+
+8b. Keine Einbettung in einer Richtung. G ist größer als Gamma_sign.
+Eine Einbettung Gamma_sign->G müsste eine Sylow2 Untergruppe von G
+treffen, da46080=1024*45. G enthält ein Element der Ordnung8;
+ein exakter Matrixzeuge steht in results.json. Jede Sylow2 Untergruppe
+enthält daher einen solchen Zeugen bis Konjugation. Das widerspricht
+dem Exponenten4 von Gamma_sign. Beide Gruppen sind nicht isomorph.
+
+8c. Gemeinsame Quotienten. Die60 erzeugenden Reflexionen sind eine einzige
+Konjugationsklasse von Involutionen. Deshalb ist G_ab=C2, wobei det
+den nichttrivialen Quotienten liefert. Gamma_sign ist eine2 Gruppe.
+Jeder gemeinsame Quotient Q ist somit eine endliche2 Gruppe, deren
+Abelianisierung zyklisch ist. Eine endliche p Gruppe mit zyklischer
+Abelianisierung ist zyklisch: Q/Phi(Q) ist ein Quotient von Q_ab und
+hat höchstens einen Erzeuger; nach dem Frattinilemma erzeugt dessen
+Lift bereits Q. Das Frattinilemma folgt direkt, weil jede echte
+Untergruppe in einer maximalen Untergruppe liegt und diese Phi(Q)
+enthält. Als Quotient von G wird das zyklische Q durch eine Involution
+erzeugt. Also Q=1 oderC2. Beide Fälle treten auf, etwa durch
+Gamma_sign->C2, (u,v,k)->k mod2, und G->C2 durch det.
+Kein gemeinsamer Quotient erhält eine Clock exakter Ordnung4.
+
+8d. Keine zentrale Umdeutung der vorhandenen Vorzeichenklasse.
+Ein G äquivarianter Homomorphismus A=Hom(L,Z/2)->Z/4 bei trivialer
+Zielwirkung hat Bild in {0,2}. Solche Homomorphismen entsprechen
+G invarianten Elementen von L/2L. Die gestapelten Matrizen(g-I) der
+60 Originalreflexionen haben modulo2 Rang8. Somit ist (L/2L)^G=0.
+Jeder solche Koeffizientenhomomorphismus ist null. Insbesondere lässt
+sich der Determinantenkokykel nicht durch einen nichttrivialen zentralen
+Pushout des Vorzeichenkerns mit derselben G Basiswirkung identifizieren.
+Dies schließt nicht beliebige Gruppenabbildungen mit anderen Daten aus.
+
+Das explizite gemeinsame Darstellungsdiagramm besteht daher aus der
+Isometrie T, der Projektion Gamma_sign-><J><=G und den getrennten
+Erweiterungen über ihren jeweils angegebenen Koeffizientenmoduln.
+Die Determinantenklasse verschwindet bereits auf<J>, da det J=1.
+Der frühere nichttriviale zentrale Kokykel von Gamma_sign/Z(Gamma_sign)
+hat eine andere Basisgruppe. Die Klassen werden nicht gleichgesetzt.
+
+9. Nachprüfbarkeit und Reichweite
+
+checker.py verwendet die lokal neu erzeugten vollständigen G Daten.
+results.json enthält17 Smithrechnungen,62 vollständige Obstruktionswerte,
+alle zentralen Lockerungszahlen, exakte Matrixzeugen und aktive Kontrollen.
+Die importierten fünf Programme wurden zusätzlich mit run_checks.py
+in frischen temporären Verzeichnissen normal und unter -OO ausgeführt.
+Die Prüfung des alten reinen Vorzeichenmodells wurde nicht wiederholt;
+dessen schon bewiesene Normalform wird hier als vorheriger Satz verwendet.
+
+Der allgemeine H2 Liftsatz ist ein Standardresultat. Der vorliegende Ausbau
+besteht aus dem expliziten Teilbarkeitssatz für die vorhandene Klasse,
+der vollständigen62er Obstruktionstabelle, der genauen Klassifikation
+der definierten zentralen Lockerungen, der integralen17er Auswertung
+und dem bewiesenen Vergleich der beiden tatsächlichen Gruppen.
+Eine weltweite Neuheitsbehauptung über das Standardresultat wird nicht erhoben.
+
+Primärliteratur:
+Jain, Joshi, Spallone: Central Extensions and Cohomology,
+https://arxiv.org/abs/2307.14658 (v3,2026), allgemeines Liftkriterium.
+Bonnafé: Une (nouvelle ?) construction du groupe de réflexion complexe G31,
+https://arxiv.org/abs/math/0302042, ursprünglicher Gruppenrahmen.
+Alle speziellen endlichen Zahlen und Identifikationen hier stammen aus
+den angegebenen Originalmatrizen und den eigenen vollständigen Rechnungen.

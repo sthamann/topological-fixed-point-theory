@@ -1,0 +1,428 @@
+ORIGINALQUELLENREVIEW: RANDKOVARIANZ, WEYLTRANSPORT UND DER OFFENE C3 HARDYPFEIL
+================================================================================
+
+27. Oktober 2026
+
+Auftrag
+=======
+
+Die vier gelieferten Sitzungszusammenfassungen werden hier nur als Lesekarte
+benutzt. Entscheidend sind die dort verlinkten Herleitungen. Zu prüfen ist,
+welche Quelle, welcher Spin, welcher Operator und welcher Projektor in den
+Sätzen zur vollständigen Randkovarianz und Weylkonformität wirklich vorkommen,
+und ob diese Sätze den noch fehlenden Pfeil von der ursprünglichen P1 Quelle
+zum S_0 Hardyraum des vorhandenen C3 Covers liefern.
+
+Atlasrahmen: Revision 127f39f089c99a0a981068e2, 395 Findings. Dieser Bericht
+ändert weder Atlas noch Ledger oder kanonische Vertragsdateien.
+
+Urteil
+======
+
+Die Verkettung liefert den fehlenden P1 nach S_0 Hardypfeil nicht. Sie setzt
+ihn an genau der entscheidenden Stelle voraus.
+
+Die vollständige gemeinsame Zweirandkovarianz und der Weyltransport sind auf
+dem schon festgelegten quadratischen elliptischen C2 Träger bewiesen:
+
+  E = C/(Z+iZ),
+  Spinlinie alpha mit NS Holonomie auf beiden Grundzyklen,
+  L = partial_t + B_Sigma,       B_Sigma = -i partial_s,
+  P_A = orthogonaler Calderonprojektor des geschlossenen Cauchygraphen.
+
+Der Weylsatz hält die komplexe Kurve, die Spinstruktur, die Verbindung, die
+Schnitte und den gegebenen freien Zustand fest. Er transportiert P_A unter
+einem konformen Metrikwechsel auf demselben Träger. Er kann deshalb nicht den
+Genus eins Träger (E,alpha) in den Genus zwei Träger (C,S_0) verwandeln.
+
+Der neue C3 Satz betrifft dagegen
+
+  C: eta^2=1-w^6,
+  z=eta/(1-w^3),       div(z)=D_q-D_p,
+  H^2(pi^(-1)D,S_0),
+  M_z gegen M_1 auf demselben Spin Hardyraum.
+
+Er beweist den dreifachen Hardydefekt und die relative Determinantenlinie,
+sobald der dafür relevante markierte P1 Quellsektor isometrisch in diesen
+Hardyraum eingefügt ist und sein zyklisches Bild die benötigte Shiftwirkung
+trägt. Eine Identifikation aller P1 Räume ist dafür nicht nötig. Genau diese
+lokale analytische und physische Einfügung ist in den vier älteren
+Zusammenfassungen nicht enthalten.
+
+1. Die tatsächlichen Eingaben des elliptischen Randquellensatzes
+================================================================
+
+Die tragende Quelle ist BOUNDARY-SOURCE.txt, nicht die spätere
+Sitzungszusammenfassung. Sie nennt den Träger und die Randdaten ausdrücklich:
+
+  Quelle und Träger:
+    quadratische elliptische Kurve E=C/(Z+iZ), dividing Halbannulus
+    A_+={0<=t<=1/2}, Breite W=1/2.
+
+  Spin:
+    die bereits festgelegte Q invariante gerade flache Spinlinie alpha,
+    antiperiodisch auf beiden Zyklen. Auf jedem Randkreis ist daher
+    H_NS=L2_NS(R/Z), Dom(B_Sigma)=H1_NS(R/Z).
+
+  Operator:
+    L=partial_t+B_Sigma mit B_Sigma=-i partial_s. Seine Randmoden sind
+    exp(2 pi i(n+1/2)s) mit Eigenwert 2 pi(n+1/2).
+
+  Projektor und Zustand:
+    Der geschlossene Lösungstransfer f_1=exp(-W B_Sigma)f_0 bestimmt den
+    orthogonalen Calderon Graphprojektor
+
+      P_A = [[I-C_A, X_A], [X_A, C_A]],
+      C_A = (I+exp(2W B_Sigma))^(-1),
+      X_A = (2 cosh(W B_Sigma))^(-1).
+
+    P_A ist der volle reine Zweirandprojektor. Die einzelne Randkompression
+    C_A ist treu, gemischt und kein Projektor.
+
+BOUNDARY-SOURCE.txt, Zeilen 9 bis 78, beweist die exakte longitudinale
+Operatoridentität
+
+  B_Sigma/(2 pi)=B_cov=2(B_(1/4) direct_sum B_(3/4)),
+  V=T_pi,
+  u_ann=exp(2 pi i s)=u_cov.
+
+Zeilen 114 bis 170 prüfen Domänen, NS Moden, Halbverschiebung und
+Quarterzerlegung. Das ist mehr als gleiche Spektren. Zeilen 282 bis 327
+halten zugleich fest, dass C_A nur eine spurklassige Störung des alten
+Hardysees P_- ist und nicht derselbe Zustand. Zeilen 469 bis 499 sagen
+ausdrücklich, dass der ursprüngliche P1 Schnitt noch nicht mit diesem C2
+Annulus identifiziert ist.
+
+ELLIPTIC-GREEN-RP.txt ergänzt auf genau demselben E und derselben Spinlinie
+alpha den freien geladenen Gauß CAR Zustand. Zeilen 7 bis 31 nennen
+L=partial_t+B und die Randkovarianz C=(1+exp(B))^(-1), und begrenzen den Satz
+auf diese ausdrücklich gegebene freie Quelle. Zeilen 125 bis 146 identifizieren
+dieselbe Kovarianz mit der Randkompression des Cauchygraphen. Zeilen 151 bis
+196 erhalten den alten Windungsmultiplikator, unterscheiden die Quarterkarte
+von einer Zeittranslation und transportieren Q zwischen den beiden Schnitten.
+
+Damit lautet der bewiesene Quellensatz genau:
+
+  gegebene freie elliptische Quelle (E,alpha,L)
+       -> voller Cauchygraph P_A
+       -> freie Zweirand CAR Kovarianz und ihre Randmarginale C_A.
+
+Er beginnt nicht bei einem abstrakten P1 Randdatum.
+
+2. Was der Weylsatz tatsächlich transportiert
+==============================================
+
+CONFORMAL-TRACE-AND-WICK.txt, Zeilen 15 bis 20, übernimmt denselben
+quadratischen Träger, denselben Spin, dieselben Marken, denselben masselosen
+Operator und die ausdrücklich freie chiral CAR Quelle. Der allgemeine Satz in
+Zeilen 30 bis 57 setzt eine feste Spinstruktur und eine feste getwistete
+Verbindung voraus. Die kanonische konforme Spinbündelidentifikation erzeugt
+den Randunitären
+
+  V_sigma f = exp((d-1)sigma_boundary/2) f
+
+und damit
+
+  P_sigma = V_sigma^* P_0 V_sigma
+
+für den orthogonalen Calderonprojektor desselben Diracproblems.
+
+Zeilen 94 bis 106 transportieren außerdem die vorhandenen Quarterprojektoren,
+die Träger und den gesamten gegebenen quasifreien Zustand. Zeilen 108 bis 136
+lassen nur den konformen Faktor unter dieser festgehaltenen freien Quelle
+mitteln. Zeilen 139 bis 158 grenzen den Satz ausdrücklich gegen Änderungen
+der komplexen Struktur, des Spins, der Verbindung, der Schnitte, der Zeit,
+des Quellenmaßes und der P1 Identifikation ab.
+
+Der Satz ist daher ein Stabilisator der gegebenen Quelle. Er beweist:
+
+  (E,alpha,L,P_A) bei g_sigma
+       ~= (E,alpha,L,P_A) bei g_0
+
+nach dem kanonischen Randunitären. Er beweist keine Abbildung
+
+  (E,alpha) -> (C,S_0)
+
+und keine Auswahl eines neuen Hardyraums auf C.
+
+3. Was die vollständige Projektorkovarianz voraussetzt
+======================================================
+
+PROJECTOR-STATE-RIGIDITY.txt, Zeilen 33 bis 56, ist ein allgemeiner
+Eindeutigkeitssatz: Ist omega ein tatsächlicher normierter positiver Zustand
+auf einer festgelegten vollen geladenen CAR Algebra und ist seine vollständige
+Besetzungskovarianz ein orthogonaler Projektor P, dann ist omega bereits der
+reine quasifreie Zustand omega_P. Daraus folgen alle geordneten CAR Wörter.
+
+In der elliptischen Anwendung ist P der konkrete Zweirandprojektor P_A.
+Zeilen 58 bis 80 schreiben seine Blöcke aus. Die physische Anwendung verlangt
+aber in Zeilen 73 bis 89 zusätzlich:
+
+  1. eine tatsächliche positive Quelle auf genau dieser gemeinsamen
+     Zweirand CAR Algebra,
+  2. den Nachweis, dass ihre vollständige Kovarianz einschließlich X_A
+     wirklich P_A ist.
+
+Ein geometrischer Calderonprojektor allein wird dort ausdrücklich nicht als
+physische Besetzungskovarianz eingesetzt. Zeilen 140 bis 159 lassen die P1
+Quellgleichung offen.
+
+HALF-PERIOD-GNS-SEWING.txt schließt den Operator X_A innerhalb der schon
+gegebenen freien elliptischen Quelle. Zeilen 23 bis 34 gewinnen ihn als
+Halbperiodenwert des vorhandenen Greenkerns. Zeilen 47 bis 89 konstruieren im
+Hilbert Schmidt GNS Raum mit der tatsächlichen Fermionparität Gamma zwei
+antikommutierende CAR Familien und erhalten genau P_A. Zeilen 91 bis 126
+zeigen aber, dass eine abstrakte positive Verdopplung für einen allgemeinen
+Zustand diesen Projektor nicht erzwingt. Zeilen 147 bis 160 lassen die
+Identifikation der physischen P1 Zweitrandfamilie, der OS Reflexion, des
+Zustands und der Zeit offen.
+
+Die Logik ist somit:
+
+  tatsächliche P1 CAR Quelle mit vollständiger Kovarianz P_A
+       => alle P1 CAR Wörter sind die von omega_(P_A).
+
+Der Vordersatz ist keine Folgerung des Projektorsatzes. Ihn durch den
+geometrischen Projektor zu ersetzen wäre genau die gesuchte Quellabbildung
+als Annahme einzusetzen.
+
+4. Der erste Typenbruch zur C3 Hardyquelle
+==========================================
+
+Die beiden Seiten tragen verschiedene Daten:
+
+  elliptischer C2 Satz                  C3 Hardy und Divisorsatz
+  --------------------                  ------------------------
+  Träger E, Genus eins                  Träger C, Genus zwei
+  flache NS NS Spinlinie alpha          markierte Spinlinie S_0
+  L=partial_t-i partial_s               Blattoperator -i partial_theta
+  orthogonaler Graphprojektor P_A       positiver Hardyraum H^2(pi^-1 D,S_0)
+  freie KMS Randmarginale C_A           M_z gegen M_1 und endlicher Kokern
+  Schottky und OS Daten auf E           c,Q und C3 Deckdaten auf C
+
+Gleiche Quartereigenwerte, derselbe Name M_z und die gemeinsame
+Einteilchenzerlegung beseitigen diesen Typenbruch nicht. Der Weylsatz darf ihn
+nicht beseitigen, weil er komplexe Kurve, Spin und Verbindung festhält.
+
+Der aktuelle C3 Abschluss in AKTUELLER-STAND.md, Zeilen 15 bis 30, beweist
+
+  div(z)=D_q-D_p,
+  delta(E,M_z) tensor delta(E,I)^(-1)
+     = N_q(S_0)^(-1) tensor B_O^(-1),
+
+und erhält die ungerade fermionische Defektlinie. Zeilen 38 bis 44 verlangen
+weiterhin den tatsächlichen Cauchydatenraum, seine Polarisation, den Zustand,
+die Reflexion und die Zeit. ACTUAL-REFERENCE-SPIN-TEST.txt, Zeilen 205 bis
+233, zeigt dazu nur, dass D_ref und D_rel denselben Spinträger haben und dass
+der Calderonprojektor auf den Cauchydaten desselben D_+ wirkt. Daraus folgen
+weder die konkrete Dreiblattkarte noch ihr S_0 Hardyraum oder M_z.
+
+Der erste fehlende Pfeil ist deshalb präzise eine lokale beziehungsweise
+reduzierende Einfügung. Sei H_source^mark der tatsächlich relevante markierte
+Quellsektor und K_C3 sein geschlossenes zyklisches Bild. Gesucht ist eine
+Isometrie
+
+  T : H_source^mark -> H^2(pi^(-1)D,S_0),
+  K_C3=closure(cyclic image of T),                          (1)
+
+mit
+
+  T Dom(B_source) subset Dom(B_C3),
+  T B_source=B_C3 T                         auf Dom(B_source),
+  T U_Gamma=M_z T,
+  T(c,Q,Reflexion)=(vorhandene markierte Lifts) T.          (2)
+
+Hier bezeichnet B_C3 den erst noch aus der tatsächlichen konformen und
+verzweigten C3 Randdomäne herzuleitenden geschlossenen Operator. Er wird in
+diesem Review ausdrücklich nicht frei mit minus i partial_theta gleichgesetzt.
+Für den bekannten lokalen Rekonstruktionssatz genügt, dass K_C3 den benötigten
+reduzierenden beziehungsweise zyklischen Drei Kabel Sektor enthält. Eine
+surjektive unitäre Gleichsetzung des gesamten P1 Hilbertraums mit dem vollen
+C3 Hardyraum ist weder bewiesen noch erforderlich.
+Diese Beschränkung entspricht PRIMITIVE-DIRECT-RECONSTRUCTION.txt, Zeilen 145
+bis 197: Eine zustands, reflexions und zeitverträgliche lokale Einfügung
+erzeugt die Isometrie auf ihrem zyklischen Abschluss; Surjektivität auf den
+ganzen P1 Hilbertraum ist dort ausdrücklich keine Voraussetzung. Der dortige
+Satz konstruiert den C3 Pfeil selbst noch nicht.
+
+Für eine physische Zustandsaussage kommt der Transport der tatsächlichen
+Polarisation beziehungsweise Kovarianz und ihrer fermionischen Orientierung
+hinzu.
+Die Operatorbeziehungen (1) und (2) sind der kleinste hinreichende Quelltest.
+Unter dieser lokalen Einfügung darf der bereits bewiesene dreifache
+Hardydefekt auf dem zyklischen Bild als P1 Randantwort gelesen werden.
+
+5. Die tatsächlich neue gemeinsame Brücke
+==========================================
+
+Es gibt eine engere positive Verbindung, die den offenen Pfeil verkürzt.
+BOUNDARY-SOURCE.txt beweist bereits die exakte Identität des longitudinalen
+C2 Randtupels mit dem alten NS und Quartertupel, einschließlich Domäne,
+Halbverschiebung und Windungsmultiplikator. Der C3 Divisorsatz benutzt genau
+die alte Windung z und keine neue eingepasste Windung.
+
+Damit muss (1) auf der C2 Seite keinen neuen Kreisgenerator und keine neue
+Quarterphase auswählen. Das legt aber weder B_C3 auf der verzweigten C3
+Randdomäne noch eine C3 Zeit oder Längennormierung fest. Offen bleibt, ob der
+relevante tatsächliche P1 Quellsektor den C3 Operator und M_z auf seinem
+zyklischen S_0 Bild realisiert und ob die zugehörigen Polarisation, Zustand und
+Reflexion korrekt transportiert werden.
+
+Das ist ein echter gemeinsamer notwendiger Unterbau, aber noch kein
+Projektorintertwiner. Insbesondere folgt nicht
+
+  P_A auf E = P_H auf C,
+
+denn diese Projektoren wirken auf verschiedenen Trägern. Eine solche Formel
+braucht zuerst den ausdrücklich konstruierten Quelltransport T.
+
+6. Erhaltene Grenzen
+====================
+
+1. C_A ist der endliche elliptische KMS Randzustand und nicht das alte Hardy
+   Vakuum P_-. Beide liegen in derselben Spurklasse, sind aber verschieden.
+
+2. beta_angle=2 pi ist eine dimensionslose geometrische KMS Normierung des
+   C2 Annulus. Sie ist keine Auswahl physischer Zeit.
+
+3. Q transportiert die zwei elliptischen Schnitte und kehrt B sowie die
+   Windung um. Q ist keine innere Zeittranslation eines Annulus.
+
+4. Geometrischer Decklift, physische OS Reflexion und orthogonaler
+   Calderonprojektor bleiben verschiedene Operationen. Der allgemein bereits
+   widerlegte Schluss Deck gleich Calderon wird hier nirgends benutzt.
+
+5. Der C3 Hardydefekt ist ein exakter mathematischer Satz auf dem ausgewählten
+   S_0 Hardyraum. Seine physische P1 Bedeutung auf dem relevanten Quellsektor
+   folgt hinreichend aus der lokalen Einfügung (1) und (2); eine globale
+   Gleichsetzung aller P1 Räume wird nicht verlangt.
+
+6. Der neueste Orientierungsbefund bleibt getrennt: Für die geerbte negative
+   See trägt der verschobene Drei Moden Ket die Linie det(V) mit beta=-i. Die
+   Hardy Fredholmlinie ist die duale Linie det(V)^(-1) mit beta=+i. Volle CAR
+   Kovarianz und alle Zustandswörter wählen zwischen Ket und dualer
+   Randamplitude nicht. Dies ist in
+   review/PROJECTOR-CAR-DEFECT-LINE-REVIEW.txt, Zeilen 12 bis 30 und 91 bis
+   133, bewiesen. Der Befund ergänzt die nötige fermionische Orientierung,
+   ohne den lokalen C3 Quellintertwiner zu ersetzen.
+
+7. Einordnung der vier gelieferten Zusammenfassungen
+====================================================
+
+Die elliptische SESSION-OVERVIEW-20261026-DE.md, Zeilen 23 bis 31, bewahrt
+bereits die Trennung von Cauchykern, positiver CAR Kovarianz, thermischem
+Zustand, Deck, Reflexion und Calderon. Sie nennt die ursprüngliche Randregel
+als offene Operatorfrage.
+
+Die native SESSION-OVERVIEW-DE.md, Zeilen 15 bis 21 und 63 bis 127, beschreibt
+korrekt die Kette erst für die bereits gegebene freie elliptische Quelle und
+nennt die P1 Herkunft als offen. Ihre Sätze zur Weylkonformität und zum vollen
+Projektorkern dürfen daher nicht vor diese Voraussetzung gezogen werden.
+
+KOHONEN-SOURCE-SESSION-COVERAGE.txt ist laut Zeilen 4 bis 12 eine
+Kontinuitätsprüfung, kein neuer Beweis. Zeilen 40 bis 46 registrieren die
+beiden verwendeten Findings; Zeilen 71 bis 75 lassen die gemeinsame P1
+Feldeinfügung und die Zustand Zeit Domänenabbildung offen.
+
+Atlas-Abgleich-2026-10-26.json, Zeilen 95 bis 107, listet die beiden
+Projektorfindings als established_scoped. Diese Statusliste fügt ihnen keine
+neue Träger oder Spinprämisse hinzu. Sie ist deshalb kein Beleg für den
+fehlenden C3 Quellenpfeil.
+
+Schluss
+=======
+
+Die vier Zusammenfassungen lassen sich widerspruchsfrei mit dem neuen C3
+Abschluss verbinden. Es gibt dabei keine universelle vierstufige zeitliche
+oder logische Pflichtreihenfolge. Es gelten drei getrennte hinreichende
+Implikationen mit eigenen Prämissen:
+
+  * Liefert der relevante markierte P1 Quellsektor die lokale Einfügung (1)
+    und (2), dann gilt der bewiesene C3 Hardydefekt auf seinem zyklischen Bild.
+
+  * Ist auf einer festgelegten gemeinsamen Zweirand CAR Algebra die
+    tatsächliche positive volle Kovarianz P_A, dann legt der Projektorsatz alle
+    CAR Wörter fest.
+
+  * Sind komplexer Träger, Spin, Verbindung und gegebener freier Zustand
+    bereits dieselben, dann bewahrt der Weyltransport diese Quelle.
+
+Keine der letzten beiden Implikationen beweist die erste. Der kleinste nächste
+Originalbeweis ist die lokale isometrische Einfügung (1) und (2) auf dem
+relevanten markierten P1 Cauchydatensektor, zunächst mit dem tatsächlich
+hergeleiteten C3 Branchoperator. Für eine physische Zustandsaussage müssen
+zusätzlich Polarisation, Reflexion, Zustand und die Ket Dual Orientierung
+übereinstimmen.
+
+Quellenstände
+=============
+
+Navigation, keine eigenständigen Beweise:
+
+  c6894e89bac1312a062aceee4529b13e1ea0958afe8abfee11765828593e4a5a
+  experiments/theory-contracts/elliptic-moebius-source-bridge-20261026/
+  SESSION-OVERVIEW-20261026-DE.md
+
+  a47f5f4299ff8cd2e0d67df05091bb1933b1f0ae945287a166082f5da565772d
+  experiments/theory-contracts/native-arc-charge-source-interface-20261026/
+  SESSION-OVERVIEW-DE.md
+
+  1e37c995b7d44b60a04cd8f06efb8e0f1970cdcafd650341a8b6fda9c76e6bb7
+  experiments/theory-contracts/original-admissible-source-closure-20261025/
+  KOHONEN-SOURCE-SESSION-COVERAGE.txt
+
+  17653b11fa746f44272af45feceaab72ff59fdd90e955e447756b4dc0657f15c
+  /Users/stefanhamann/Documents/Codex/2026-10-26/
+  wrkl-r-mir-die-wrgwbnisse-der/outputs/Atlas-Abgleich-2026-10-26.json
+
+Tragende Herleitungen:
+
+  a12e7b7566734e26ef9c53c6ee910638a77f20412085943d6cd30b255b7e9251
+  experiments/theory-contracts/elliptic-moebius-source-bridge-20261026/
+  BOUNDARY-SOURCE.txt
+  Atlas: research-source:801b8d7eccc89956a1d1149b, Zeilen 1 bis 190;
+  research-source:1bbcb16092fec5e2bf5afe6d, Zeilen 191 bis 380;
+  research-source:cf9582228ef3c7d7d9dc36e3, Zeilen 381 bis 570;
+  research-source:16aa855809b1b0313a03a068, Zeilen 571 bis 594.
+
+  d8799f04851a9bd539b05b4d013b38eb00de9bec07dddde6438023aaf1facd80
+  experiments/theory-contracts/elliptic-moebius-source-bridge-20261026/
+  ELLIPTIC-GREEN-RP.txt
+  Atlas: research-source:28d5eaa4cb3f3c10938180c9, Zeilen 33 bis 146.
+
+  77a6bffa2192b809f0264406afe7dd57d4718576f7f6632c107a7036de6ff5d1
+  experiments/theory-contracts/native-arc-charge-source-interface-20261026/
+  CONFORMAL-TRACE-AND-WICK.txt
+  Atlas: research-source:a1d32ea509c78e7b29ad8496, Zeilen 1 bis 183.
+
+  2e14e8875c263d71bd6bda61d005461cb718bdf30fdf34a6312db53167cd80c6
+  experiments/theory-contracts/native-arc-charge-source-interface-20261026/
+  PROJECTOR-STATE-RIGIDITY.txt
+  Atlas: research-source:d8cdf210465eadc80591e139, Zeilen 1 bis 173.
+
+  7236ecc67bbae4ff477fe5a761a1b1068b6b75418aa6651b8ee00d2f7d87e3b1
+  experiments/theory-contracts/native-arc-charge-source-interface-20261026/
+  HALF-PERIOD-GNS-SEWING.txt
+  Atlas: research-source:e824212d52da9093d601a78c, Zeilen 1 bis 170.
+
+Aktueller C3 Anschluss:
+
+  374dd640a04cfcfd4eb8edfa57a52d3e8afd89eb4c4388945550856334428db5
+  research-20261027-boundary-origin/AKTUELLER-STAND.md
+
+  df6b3894ee736e3a0d503eb1d90e7b7e4e462af966eb2d6718e82e24516fac72
+  research-20261027-boundary-origin/originals/ACTUAL-REFERENCE-SPIN-TEST.txt
+
+Lokaler zyklischer Rekonstruktionsumfang:
+
+  308e8e741e1999dcedf422ca1b063150b1da00f83ced7221851565c4f49653f9
+  experiments/theory-contracts/elliptic-moebius-source-bridge-20261026/
+  session_coverage/supplements/PRIMITIVE-DIRECT-RECONSTRUCTION.txt
+  maßgebliche Zeilen 145 bis 197.
+
+Neuester Orientierungsreview:
+
+  a74aad8f91c90bcbf26e6afbbe7567bd28a540a29cb71008422e44cdccd7f457
+  research-20261027-source-unification/review/
+  PROJECTOR-CAR-DEFECT-LINE-REVIEW.txt
+

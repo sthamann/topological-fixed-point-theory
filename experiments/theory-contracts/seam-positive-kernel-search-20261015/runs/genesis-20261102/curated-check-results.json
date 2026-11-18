@@ -1,0 +1,174 @@
+{
+  "checks": [
+    {
+      "id": "quillen-relative-normalization",
+      "status": "pass",
+      "facts": {
+        "shape_derivative_log_N_at_zero_source": "0.0",
+        "holonomy_second_derivative_log_N": "-6.2831853071795864769252867665590057683943387987502116419498891846",
+        "analytic_reason": "N(0,t)=1 identically for the co-moving zero-source reference"
+      },
+      "inference_claims": [
+        {
+          "id": "normalized_zero_source_has_shape_response",
+          "holds": false
+        },
+        {
+          "id": "normalized_charge_response_alone_fixes_absolute_replica_entropy",
+          "holds": false
+        }
+      ],
+      "scope": "The given flat elliptic relative function; t variation is not an identified physical replica operation.",
+      "precision_digits": 65,
+      "new_physical_proof": false,
+      "fundamental_solution": false
+    },
+    {
+      "id": "theta-heat-shape-response",
+      "status": "pass",
+      "facts": {
+        "theta_shape_log_derivative": "-0.25",
+        "theta_holonomy_second_derivative_ratio": "-3.1415926535897932384626433832795028841971693993751058209749445923",
+        "analytic_reason": "Poisson Z(t)=t^-1/2 Z(1/t) and theta heat equation"
+      },
+      "inference_claims": [
+        {
+          "id": "charge_curvature_fixes_theta_shape_derivative",
+          "holds": true
+        },
+        {
+          "id": "theta_shape_derivative_is_already_full_master_area_entropy",
+          "holds": false
+        }
+      ],
+      "scope": "Unnormalized theta factor only; eta, metric, reference and sewing terms remain part of the actual determinant.",
+      "precision_digits": 65,
+      "new_physical_proof": false,
+      "fundamental_solution": false
+    },
+    {
+      "id": "doubled-source-counting",
+      "status": "pass",
+      "facts": {
+        "quarter_variances": [
+          "0.039788735772973833942220940843128590508614911435114112186916836015",
+          "0.039788735772973833942220940843128590508614911435114112186916836015"
+        ],
+        "pair_variance": "0.07957747154594766788444188168625718101722982287022822437383367203",
+        "beta_times_each_variance": [
+          "0.5",
+          "0.5"
+        ],
+        "eta_quarter_pair": [
+          "0.5",
+          "-0.5"
+        ],
+        "eta_sum": "0.0",
+        "analytic_reason": "Original quarter pair reduces to exp(-pi p^2); eta_a(0)=1-2a for n+a."
+      },
+      "inference_claims": [
+        {
+          "id": "two_quarter_blocks_are_two_faces",
+          "holds": false
+        },
+        {
+          "id": "nonzero_total_eta_is_needed_for_original_half_susceptibility",
+          "holds": false
+        },
+        {
+          "id": "quarter_pair_variance_equals_one_quarter_variance",
+          "holds": false
+        }
+      ],
+      "scope": "Original independent quarter blocks on one marginal, not the two faces; eta statement is for the unweighted direct sum, not the whole physical master.",
+      "precision_digits": 65,
+      "new_physical_proof": false,
+      "fundamental_solution": false
+    },
+    {
+      "id": "variable-mark-completion",
+      "status": "pass",
+      "facts": {
+        "conditional_class": "standard positive D_(n+1)+A_(n-1), complete even unimodular extension",
+        "all_admissible_mark_counts": "n=4*r^2, integer r>=1",
+        "analytic_necessity": "det(base)=4n must be a square; even unimodular rank 2n is divisible by8",
+        "analytic_sufficiency": "glue generator (spinor_D,r*lambda1_A) has order4r and norm2r^2, yielding index4r and determinant1 for every r",
+        "finite_independent_hnf_replays": [
+          {
+            "marks": 4,
+            "rank": 8,
+            "base": "D5+A3",
+            "glue_order": 4,
+            "generator_squared_norm": "2",
+            "gram_determinant": "1",
+            "integral_even": true
+          },
+          {
+            "marks": 16,
+            "rank": 32,
+            "base": "D17+A15",
+            "glue_order": 8,
+            "generator_squared_norm": "8",
+            "gram_determinant": "1",
+            "integral_even": true
+          },
+          {
+            "marks": 36,
+            "rank": 72,
+            "base": "D37+A35",
+            "glue_order": 12,
+            "generator_squared_norm": "18",
+            "gram_determinant": "1",
+            "integral_even": true
+          }
+        ],
+        "minimal_marks": 4,
+        "minimal_rank": 8,
+        "source_pairing_or_minimality_derived_from_P1": false,
+        "primitive_family_projection_condition": "A local glue element with primitive A_(n-1) discriminant projection has order divisible by n; n divides |H|=4r, while n=4r^2, so r=1.",
+        "primitive_projection_selected_marks": 4,
+        "primitive_local_charge_derived_from_P1": false
+      },
+      "inference_claims": [
+        {
+          "id": "higher_rank_completion_forces_residual_discriminant_sectors",
+          "holds": false
+        },
+        {
+          "id": "local_complete_gluing_alone_selects_four_marks",
+          "holds": false
+        },
+        {
+          "id": "minimal_member_of_this_declared_class_has_four_marks",
+          "holds": true
+        },
+        {
+          "id": "primitive_family_projection_allows_higher_marks",
+          "holds": false
+        }
+      ],
+      "scope": "An explicit candidate family with assumed standard pairing and even selfdual completion. Minimality is additional. No derivation of physical P1, spacetime, or all TFPT outputs.",
+      "precision_digits": 65,
+      "new_physical_proof": false,
+      "fundamental_solution": false
+    }
+  ],
+  "rejected_gemini_balance": [
+    {
+      "beta_over_pi": 2,
+      "delta_over_Zquarter": "0.000013949466717968246163790472203023127453238054507606262159472418465",
+      "correct_dual_residual": "3.0829153855957659583948045713898398338155609210944882052615054131e-67"
+    },
+    {
+      "beta_over_pi": 4,
+      "delta_over_Zquarter": "0.0074977742547215200147080774782148935364444391967029714939099691445",
+      "correct_dual_residual": "8.7166344541154402564695778646369528564137772300808088557646417885e-67"
+    },
+    {
+      "beta_over_pi": 8,
+      "delta_over_Zquarter": "0.18920711500272106671749997056047591529297209246381741301900222472",
+      "correct_dual_residual": "-2.9673649205499371085853882092381116106940518230062328019624312471e-67"
+    }
+  ],
+  "scope": "Independent bounded numeric replay accompanies the analytic identities, not a physical origin proof"
+}

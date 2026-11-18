@@ -1,0 +1,352 @@
+{
+  "schema_version": 1,
+  "title_de": "TFPT Atlas für MCP-Agenten",
+  "title_en": "TFPT Atlas for MCP agents",
+  "connection": {
+    "transport": "stdio",
+    "command": "/Users/stefanhamann/Projekte/tfpt-theoryv4/semantic_explorer/run.sh",
+    "args": [
+      "mcp"
+    ],
+    "web_url": "http://127.0.0.1:8731",
+    "local_vs_remote_de": "Der MCP-Server ist ein lokaler stdio-Prozess. Die Webadresse 127.0.0.1:8731 ist nur auf diesem Rechner erreichbar und stellt keinen Remote-MCP-Endpunkt bereit. Ein Cloud- oder Remote-Agent benötigt eine ausdrücklich eingerichtete Remote-Verbindung; localhost nicht als erreichbar voraussetzen.",
+    "local_vs_remote_en": "The MCP server is a local stdio process. The web address 127.0.0.1:8731 is reachable only on this machine and is not a remote MCP endpoint. A cloud or remote agent needs an explicitly configured remote connection; do not assume it can reach localhost.",
+    "refresh_de": "Die Recherchewerkzeuge lesen den Atlas. record_research_update schreibt einen validierten, versionierten Forschungsstand mit Quellen und Voraussetzungen; es führt keine Experimente aus und ändert keine Originalbeweise. `python3 semantic_explorer/refresh.py --check` prüft lokal Quellen- und Ledger-Aktualität. `python3 semantic_explorer/refresh.py` aktualisiert den Atlas offline; nicht parallel zu einer aktiven Extraktion starten.",
+    "refresh_en": "Research tools read the atlas. record_research_update writes a validated, versioned research state with sources and premises; it does not execute experiments or change original proofs. `python3 semantic_explorer/refresh.py --check` checks local source and ledger freshness. `python3 semantic_explorer/refresh.py` refreshes the atlas offline; do not run it alongside an active extraction.",
+    "mutating_mcp_tools": [
+      "record_research_update"
+    ]
+  },
+  "principles_de": [
+    "Graph, KI-Annotationen und Kanten sind Navigationshilfen; Ledger und Originalquellen bleiben maßgeblich.",
+    "Ein PASS-Versuch schließt keinen verknüpften Claim oder physikalischen Gesamtvertrag.",
+    "Gleiche Bezeichnungen oder Zahlen beweisen keine gemeinsame Objektidentität. Explizite gemeinsame Seeds bedeuten korrelierte, nicht unabhängige Ausgaben.",
+    "Prüfe Scope, Voraussetzungen, ausgelassene Elemente und source IDs. Bei tragenden Aussagen die Originalquelle öffnen."
+  ],
+  "principles_en": [
+    "The graph, AI annotations, and edges aid navigation; the ledger and original sources remain authoritative.",
+    "A passing attempt does not close a linked claim or an overall physical contract.",
+    "Matching labels or numbers do not establish object identity. Explicit shared seeds mean correlated, not independent, outputs.",
+    "Check scope, assumptions, omissions, and source IDs. Open original sources for load-bearing statements."
+  ],
+  "tools": [
+    {
+      "name": "graph_status",
+      "group": "maintenance",
+      "purpose_de": "Zeigt Graphumfang, Annotationen, Quellen- und Cache-Abdeckung sowie bekannte Integritäts- und Aktualitätsinformationen.",
+      "purpose_en": "Shows graph size, annotation coverage, source/cache coverage, and recorded integrity and freshness information.",
+      "example": {
+        "arguments": {}
+      },
+      "mutating": false
+    },
+    {
+      "name": "theory_overview",
+      "group": "start",
+      "purpose_de": "Liefert die kompakte, gespeicherte Theorie-Orientierungskarte mit Stufen, Knoten, Kanten und Mustern.",
+      "purpose_en": "Returns the compact saved theory orientation map with stages, nodes, edges, and patterns.",
+      "example": {
+        "arguments": {}
+      },
+      "mutating": false
+    },
+    {
+      "name": "research_state",
+      "group": "research",
+      "purpose_de": "Der Einstieg für Forschungsentscheidungen: eingeordnete Teilresultate und begrenzte Ausschlüsse, gemeinsam benötigte Voraussetzungen, gelöste und nächste Aufgaben. Freie Fragen sowie exakte Problem-, Themen- oder Ziel-IDs sind möglich. Abdeckung und ausstehende Einordnung bleiben sichtbar.",
+      "purpose_en": "Start here for research decisions: reviewed subresults and scoped exclusions, joint premises, resolved tasks and next tasks. Accepts natural-language questions or exact problem, topic and goal IDs. Coverage and pending review remain visible.",
+      "example": {
+        "arguments": {
+          "query": "topic:universalraum",
+          "lang": "de",
+          "max_chars": 24000
+        }
+      },
+      "mutating": false
+    },
+    {
+      "name": "assess_research_plan",
+      "group": "research",
+      "purpose_de": "Prüft einen bekannten Ansatz gegen die gespeicherten Befunde und exakten Voraussetzungen. Ein neuer Versuch benötigt eine konkrete geänderte Voraussetzung; ähnliche Freitextbeschreibungen liefern nur Kandidaten.",
+      "purpose_en": "Checks a known approach against recorded findings and exact premises. A new attempt needs a concrete changed premise; similar free-text descriptions return candidates only.",
+      "example": {
+        "arguments": {
+          "problem_id": "<problem ID from research_state>",
+          "strategy_id": "<exact strategy ID>",
+          "premise_ids": [
+            "<exact premise ID>"
+          ],
+          "lang": "de"
+        }
+      },
+      "mutating": false
+    },
+    {
+      "name": "record_research_update",
+      "group": "maintenance",
+      "purpose_de": "Schreibt den vollständig aktualisierten Forschungsdatensatz nach Quellenprüfung. expected_revision schützt vor Überschreiben fremder Änderungen; problem enthält den vollständigen zweisprachigen Datensatz, premises nur neu benötigte Definitionen und reason die Begründung. Der Atlas prüft Referenzen und Struktur; das ist keine automatische fachliche Abnahme.",
+      "purpose_en": "Writes the complete updated research record after source review. expected_revision prevents overwriting concurrent changes; problem contains the complete bilingual record, premises contains new definitions only, and reason explains the change. The atlas validates references and structure; this is not automatic scientific review.",
+      "example": {
+        "arguments": {
+          "expected_revision": "<revision from research_state>",
+          "problem": {
+            "id": "<exact problem ID>",
+            "...": "<complete edited bilingual record from research_state with editable=true>"
+          },
+          "premises": [],
+          "reason": "<source-backed reason for this change>"
+        }
+      },
+      "mutating": true
+    },
+    {
+      "name": "list_topics",
+      "group": "start",
+      "purpose_de": "Listet Themen-IDs als Einstieg für thematische Recherche.",
+      "purpose_en": "Lists topic IDs as entry points for topic research.",
+      "example": {
+        "arguments": {}
+      },
+      "mutating": false
+    },
+    {
+      "name": "search_knowledge",
+      "group": "start",
+      "purpose_de": "Sucht bilingual in Graphdatensätzen und kann direkt passende Theorie-Muster mit Quellenbezug finden.",
+      "purpose_en": "Searches graph records bilingually and can return directly matching authored theory patterns with source references.",
+      "example": {
+        "arguments": {
+          "query": "P1 P2 seam normalization",
+          "limit": 5,
+          "type": "claim"
+        }
+      },
+      "mutating": false
+    },
+    {
+      "name": "research_context",
+      "group": "research",
+      "purpose_de": "Erstellt einen begrenzten Recherchekontext für Thema, Claim, Ziel oder Versuch (contract:…): Ergebnisse, Voraussetzungen, Verbindungen, frühere Versuche, Ausschlüsse und Originalquellen.",
+      "purpose_en": "Builds a bounded research context for a topic, claim, goal or attempt (contract:…): findings, assumptions, connections, prior attempts, exclusions and original sources.",
+      "example": {
+        "arguments": {
+          "id": "topic:universalraum",
+          "max_chars": 12000,
+          "offset": 0
+        }
+      },
+      "mutating": false
+    },
+    {
+      "name": "research_brief",
+      "group": "research",
+      "purpose_de": "Fasst Ergebnisse, Versuche, Lücken und Quellen für ein Thema, einen Claim, ein Ziel oder einen einzelnen Versuch zusammen. Ziele behalten ihre explizit verknüpften Ergebnisse.",
+      "purpose_en": "Summarizes findings, attempts, gaps and sources for a topic, claim, goal or individual attempt. Goals retain their explicitly linked findings.",
+      "example": {
+        "arguments": {
+          "id": "goal:universalraum",
+          "max_chars": 12000,
+          "offset": 0
+        }
+      },
+      "mutating": false
+    },
+    {
+      "name": "compare_aspects",
+      "group": "research",
+      "purpose_de": "Vergleicht zwei bis sechs exakte Themen-, Claim- oder Versuchs-IDs anhand expliziter Seeds, vorgelagerter Verbindungen, Status, Geltungsbereichen, Annahmen und Quellen.",
+      "purpose_en": "Compares two to six exact topic, claim or attempt IDs by explicit seeds, upstream links, status, scopes, assumptions, and sources.",
+      "example": {
+        "arguments": {
+          "ids": [
+            "topic:alpha",
+            "topic:flavor"
+          ],
+          "max_chars": 12000
+        }
+      },
+      "mutating": false
+    },
+    {
+      "name": "topic_overview",
+      "group": "research",
+      "purpose_de": "Zeigt Themenzugehörigkeit und bewertete Claim-Gruppen; zugehörige historische Versuche schließen Claims nicht.",
+      "purpose_en": "Shows topic membership and assessed claim groups; linked historical attempts do not close claims.",
+      "example": {
+        "arguments": {
+          "id": "topic:universalraum",
+          "limit": 50,
+          "offset": 0,
+          "include_related": false
+        }
+      },
+      "mutating": false
+    },
+    {
+      "name": "solution_chain",
+      "group": "research",
+      "purpose_de": "Gibt einen begrenzten Graph expliziter Prämissen- und Herleitungskanten zurück; Referenzen bleiben davon getrennt.",
+      "purpose_en": "Returns a bounded graph of explicit premise and derivation edges; references remain separate.",
+      "example": {
+        "arguments": {
+          "id": "claim:EM.FP.01",
+          "depth": 3
+        }
+      },
+      "mutating": false
+    },
+    {
+      "name": "trace_reasoning",
+      "group": "research",
+      "purpose_de": "Durchläuft gespeicherte Kanten in gewählter Richtung; Kanten werden nicht zu Beweisen aufgewertet.",
+      "purpose_en": "Traverses stored edges in the selected direction; edge labels are not upgraded into proofs.",
+      "example": {
+        "arguments": {
+          "id": "claim:EM.FP.01",
+          "direction": "both",
+          "depth": 2
+        }
+      },
+      "mutating": false
+    },
+    {
+      "name": "list_attempts",
+      "group": "research",
+      "purpose_de": "Listet explizit verknüpfte historische Versuche oder Datensätze mit optionaler Status- und Seitenfilterung.",
+      "purpose_en": "Lists explicitly linked historical attempts or records with optional status filtering and pagination.",
+      "example": {
+        "arguments": {
+          "id": "topic:universalraum",
+          "limit": 20,
+          "offset": 0
+        }
+      },
+      "mutating": false
+    },
+    {
+      "name": "get_dossier",
+      "group": "evidence",
+      "purpose_de": "Liefert standardmäßig ein kompaktes Dossier mit Ergebnissen, Voraussetzungen, offenen Punkten und Quellenpfaden. max_chars begrenzt die Antwort; Auslassungen bleiben sichtbar. expanded=true fordert die vollständige Ansicht innerhalb dieser Grenze an.",
+      "purpose_en": "Returns a compact dossier with findings, assumptions, open steps and source paths by default. max_chars bounds the response and omissions remain visible. expanded=true requests the full view within that bound.",
+      "example": {
+        "arguments": {
+          "id": "claim:EM.FP.01",
+          "max_chars": 12000
+        }
+      },
+      "mutating": false
+    },
+    {
+      "name": "audit_inputs",
+      "group": "evidence",
+      "purpose_de": "Prüft erfasste Input-Herkünfte und Lücken eines Claims oder syntaktische Input-Kandidaten eines Scripts.",
+      "purpose_en": "Inspects recorded input origins and gaps for a claim, or syntactic input candidates for a script.",
+      "example": {
+        "arguments": {
+          "id": "claim:EM.FP.01"
+        }
+      },
+      "mutating": false
+    },
+    {
+      "name": "read_source",
+      "group": "evidence",
+      "purpose_de": "Liest ausschließlich registrierte, hashgeprüfte Quellen; optionale Zeilenfenster sind auf 200 Zeilen begrenzt.",
+      "purpose_en": "Reads only registered, hash-checked sources; optional line windows are limited to 200 lines.",
+      "example": {
+        "arguments": {
+          "source_id": "source:7dc986b9f877444d67b0",
+          "line_start": 1810,
+          "line_end": 1850
+        }
+      },
+      "mutating": false
+    }
+  ],
+  "workflow": [
+    {
+      "tool": "graph_status",
+      "arguments": {},
+      "de": "Prüfe zuerst Abdeckung und Integritätshinweise.",
+      "en": "First check coverage and integrity notices."
+    },
+    {
+      "tool": "theory_overview",
+      "arguments": {},
+      "de": "Lies die Systemorientierung, bevor du einen einzelnen Zweig isolierst.",
+      "en": "Read the system orientation before isolating one branch."
+    },
+    {
+      "tool": "research_state",
+      "arguments": {
+        "query": "topic:universalraum",
+        "lang": "de",
+        "max_chars": 24000
+      },
+      "de": "Lies den eingeordneten Forschungsstand. Gelöste Teilaufgaben bleiben geschlossen; scope, Quellenaktualität, Voraussetzungen und noch nicht eingeordnete Versuche beachten.",
+      "en": "Read the reviewed research state. Keep resolved subtasks closed; inspect scope, source freshness, premises and attempts still awaiting review."
+    },
+    {
+      "tool": "assess_research_plan",
+      "arguments": {
+        "problem_id": "<problem ID>",
+        "strategy_id": "<strategy ID>",
+        "premise_ids": [
+          "<premise ID>"
+        ],
+        "lang": "de"
+      },
+      "de": "Vor einem neuen Versuch die exakten IDs aus research_state einsetzen. Einen ausgeschlossenen Ansatz nur mit einer benannten geänderten Voraussetzung erneut bearbeiten.",
+      "en": "Before a new attempt, substitute exact IDs from research_state. Revisit an excluded approach only with a named changed premise."
+    },
+    {
+      "tool": "research_context",
+      "arguments": {
+        "id": "topic:universalraum",
+        "max_chars": 12000
+      },
+      "de": "Wenn die Entscheidungsschicht noch keine passende Frage enthält, den vorhandenen Korpus gezielt erschließen; fehlende Einordnung bedeutet nicht fehlende Forschung.",
+      "en": "If the decision layer has no matching question yet, inspect the existing corpus selectively; absent review does not mean absent research."
+    },
+    {
+      "tool": "compare_aspects",
+      "arguments": {
+        "ids": [
+          "topic:alpha",
+          "topic:flavor"
+        ],
+        "max_chars": 12000
+      },
+      "de": "Vergleiche gezielt ausgewählte Aspekte; gemeinsame Inputs sind keine unabhängige Evidenz.",
+      "en": "Compare selected aspects; shared inputs are not independent evidence."
+    },
+    {
+      "tool": "audit_inputs",
+      "arguments": {
+        "id": "claim:EM.FP.01"
+      },
+      "de": "Prüfe Inputs, bevor du eine Script-Ausgabe als Herleitung behandelst.",
+      "en": "Audit inputs before treating a script output as a derivation."
+    },
+    {
+      "tool": "read_source",
+      "arguments": {
+        "source_id": "source:7dc986b9f877444d67b0",
+        "line_start": 1810,
+        "line_end": 1850
+      },
+      "de": "Öffne die entscheidenden Originalstellen; dieses Beispiel zeigt die D₅/A₃→E₈-Konstruktion im Architektur-Paper.",
+      "en": "Open decisive original passages; this example shows the D₅/A₃→E₈ construction in the architecture paper."
+    },
+    {
+      "tool": "research_state",
+      "arguments": {
+        "query": "<exact problem ID>",
+        "editable": true,
+        "max_chars": 60000
+      },
+      "de": "Für eine begründete Aktualisierung den editierbaren vollständigen Datensatz laden. Nach Originalquellenprüfung aktualisieren und mit derselben revision über record_research_update speichern. Beispiele in spitzen Klammern müssen durch echte Rückgabewerte ersetzt werden.",
+      "en": "For a justified update, load the complete editable record. Revise it after original-source review and save through record_research_update with the same revision. Replace angle-bracket placeholders with actual returned values."
+    }
+  ]
+}

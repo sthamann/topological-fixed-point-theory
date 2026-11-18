@@ -1,0 +1,141 @@
+R113 · Bezugsfreie Mischantwort und radiale Ordnung
+
+1. Ursprüngliche Kontraktion ohne äußeren Referenzskalar
+
+R113-ORIGINAL-UND-REFERENZ-20261109.txt, Abschnitt 2, gibt
+C_UY=N_UY/N_1-N_U N_Y/N_1² auf derselben ursprünglichen Quelle.
+Alle vier Zähler verwenden dieselben offenen Endpunkte, äußeren
+Selektor, Randpaarung und Zeit. Der äußere Skalar N_1^R fällt aus
+diesem Ausdruck heraus. Feldabhängige Referenz, Eta und Restfaktoren
+innerhalb der Zähler bleiben erforderlich. Die Leerform N_1 muss
+von null verschieden sein.
+
+Der Originaladapter nimmt die ausdrücklich relative Variante ohne
+reference_scalar an. Er benutzt den vorhandenen OS Quotienten und
+die äußere Kontraktion unverändert. Er gibt C_UY und die relativ
+zum gemeinsamen N_1 normierten Marken aus. Die vier absolut
+normierten Originalwerte bleiben ungesetzt. Der Test verwendet
+dieselbe singuläre Gramform und liest C_UY=1 mit und ohne die
+äußere Referenz. Dieses Beispiel ist eine arithmetische Kontrolle.
+
+2. Exakte Bestimmtheit im endlichen positiven Historienmenü
+
+Schreibe z_i>0 für den kontrahierten Leerkoeffizienten der
+Historie i und p für ihre unbekannte Wahrscheinlichkeitsverteilung.
+Mit q=p/(z.p) entspricht eine relative Beobachtung a.p/(z.p)=m
+der linearen Gleichung (a-m z).q=0 zusammen mit z.q=1 und q>=0.
+Die Umkehrung ist p=q/sum(q). Das zulässige q Polytop ist kompakt.
+Die Suche enumeriert seine exakten rationalen Ecken für höchstens
+4096 Stützbasen und entscheidet exakt die Bestimmtheit von
+c(q)=l_UY(q)-l_U(q)l_Y(q).
+
+Verschiedene Eckwerte genügen als Gegenzeugen. Sind sie gleich
+und mindestens eine Einzelmarke konstant, ist c affin und somit
+konstant. Sind beide Einzelmarken veränderlich, existieren zwei
+Ecken, an denen beide sich ändern. Sonst würde jede Ecke dieselbe
+U Marke oder jede Ecke dieselbe Y Marke tragen. In der Mitte
+dieses Paars ändert sich der gemeinsame Eckwert um ΔU ΔY / 4.
+In der Kontrolle sind beide Eckwerte null, der Zwischenwert ist
+genau 3/2 bei ursprünglichen Massen (2/3,1/3). Eine andere
+Kontrolle lässt Y variieren und bestimmt C_UY exakt zu eins.
+Wenn U bereits feststeht, gibt der Suchlauf direkt die Koeffizienten
+des geordneten zentrierten Wortes T((U-<U>)Y) aus. Sonst fordert
+er zuerst U und dann dieses Wort im selben Fensterrahmen an.
+Die endliche Kandidatenmenge vergleicht nur die übergebenen Historien.
+
+3. Zertifiziertes Vorzeichen auf dem Original Full96 Vergleich
+
+R113-FULL96-RADIAL-BALLS-20261116.json übernimmt die 50 Arb
+Einschließungen aus dem ausgeführten R032 Full96 Zweifensterlauf
+mit präziser Herkunftsprüfsumme. Der Lauf verwendet die 96
+Komponenten einschließlich der tatsächlichen Majorana Matrix,
+fünf Radien, räumliches p=1/4, zwei Breiten 2/5 und die
+festgehaltene See bei der späten Y Variation. K ist die dort
+berechnete leere bedingte Fermionform, L die späte Form, y=L/K
+der normierte Y Wert pro Verlauf.
+
+Mit 160 Bits wurden alle 100 geordneten 2×2 Minoren von K
+als strikt positiv eingeschlossen. Der kleinste Kreuzquotient
+K_ij K_kl/(K_il K_kj) liegt über 1.02953. Alle 20 benachbarten
+frühen und 20 späten Differenzen von y sind strikt fallend.
+Die kleinsten Abfälle sind größer als 0.38284 und 1.34351.
+
+Sei W die gemeinsame positive bosonische Gewichtsmatrix nach
+dem tatsächlichen Randaufruf in dieser Faktorisierung. Die
+gewichtete Matrix G=W⊙K erhält positive Zweierminoren, wenn W
+TP2 ist. Die 100 Kreuzquotienten von W dürfen sogar bis
+243/250 fallen: Der gemessene K Faktor kompensiert dies strikt.
+Ist G TP2, verschiebt sich die normierte späte Zeile bei
+wachsendem frühem Radius nach oben in der Ordnung der
+Likelihoodverhältnisse. Direkt folgt dies durch Summieren
+der nichtnegativen Zweierminoren gegen die Differenzen jeder
+wachsenden späten Testfunktion. Weil y sowohl in der frühen
+als in der späten Koordinate strikt fällt, fällt sein bedingter
+Erwartungswert nach früher Zeile strikt. Da U=r_early² wächst,
+gibt die Zweikopienformel der Kovarianz strikt C_UY<0, solange
+mindestens zwei verschiedene frühe Radien mit Masse auftreten.
+
+Der unabhängige einheitliche Vergleich liefert -0.011108326750995.
+Auf den beiden äußersten Radien haben zwei strikt positive
+2×2 Gewichtsmatrizen dieselben nackten Ränder (1/2,1/2).
+Die Matrix mit 99/200 auf jeder Diagonale und 1/200 auf den
+Kreuzpaaren liefert etwa -0.0001572826890362. Vertauschte
+Gewichte liefern etwa +0.020042672813721. Diese zweite Matrix
+ist ein Gegenbeispiel für Positivität der Massen und gleiche
+Ränder allein. Reflexionspositivität der Gegenform wird nicht
+behauptet. Die konkrete Sicherung verwendet die Kreuzquotienten.
+
+4. Verbindung zur vorhandenen lokalen vierreellen Higgswirkung
+
+FULL-FOUR-COMPONENT-LOCAL-HIGGS-TRANSFER.txt beschreibt die
+tatsächliche dampfende quartische lokale Wirkung mit vier reellen
+Komponenten in ihrer bedingten Originalklasse. Wenn die tatsächliche
+zeitliche Diskretisierung auf einer offenen Kette skalare
+Nachbarbindungen a h_i·O_i h_(i+1) mit a>0, orthogonalem O_i
+und radialen Standortgewichten besitzt, integrieren die Winkel
+dieser Bindung zu B_a(r,s)=2 I_1(a r s)/(a r s). Der vierdimensionale
+radiale Jacobian und die radialen Potentiale sind positive
+einseitige Faktoren. Orthogonale Transportfaktoren auf einer
+offenen Kette können in die folgenden Winkelvariablen absorbiert
+werden, sofern keine zusätzlichen orientierenden Faktoren wirken.
+
+Der Winkelcosinus zweier unabhängiger Richtungen in S³ hat
+gerade Momente (2k)!/[4^k k!(k+1)!]. Es folgt die Reihe
+B_a(r,s)=sum_k a^(2k) r^(2k) s^(2k)/[4^k k!(k+1)!].
+In jedem geordneten Zweierminor gruppiert Cauchy Binet die
+Terme paarweise: Für k<l sind beide Leistungsdeterminanten
+auf zunehmenden Radien nichtnegativ; das Paar (0,1)
+liefert strikt positiv. Verklebung mehrerer solcher Links
+über ein positives Zwischenmaß erhält TP2 durch dieselbe
+Zweierdeterminantenidentität für Integralkerne.
+Die Besselrechnung prüft 100 strikt positive Minoren bei
+Vergleichssteifigkeit eins, die Ableitung deckt alle a>0 ab.
+
+Die lokale Wirkung liefert damit einen Kandidaten für den
+benötigten geordneten Bosonenteil. Der ursprüngliche Leser muss
+weiterhin zeigen, dass die tatsächliche gewichtete Radialform
+diese Faktorisierung oder direkt die Kreuzquotientenschranke
+erfüllt. Nichtlokale Vertices, Schleifenholonomie, Winkel und
+Randkopplungen, Eta Phasen oder der ganze äußere Selektor können
+die Voraussetzung verletzen. Die räumliche Vergleichsbreite
+braucht eine eigene Bindung an die physische Zeitkarte.
+
+Literaturanschluss: Karlin und McGregor, Coincidence Probabilities,
+1959, Theorem 20 und die kontinuierlichen Übergangskerne; Dümbgen
+und Mösching, On Stochastic Orders and Total Positivity, 2023,
+Theorem 3.3, die Äquivalenz von TP2 und bedingter monotoner
+Likelihoodordnung. Die endliche Rechnung oben prüft die konkrete
+Full96 Datenquelle separat.
+
+5. Nächster Originalaufruf
+
+Den ursprünglichen radialen Zweifensterübergang in derselben
+Zeitkarte und mit dem ganzen Randabschluss lesen. Wenn eine
+positive Faktorisierung vorliegt, genügen zuerst vier Kernwerte
+für einen Kreuzquotienten als Prüfprobe, und bei fünf Radien
+alle 16 benachbarten Kreuze für die vollständige TP2 Entscheidung.
+Wenn die Faktorisierung scheitert, aus demselben unnormierten
+Randwort zuerst U und dann das geordnete zentrierte Y Wort lesen.
+Die absolute Referenz separat für Z_0 und die anderen absolut
+normalisierten Größen gewinnen. Der native Live R113 Aufruf
+blieb BLOCKED. Kein physischer F1 Abschluss und kein Ledgerwechsel.

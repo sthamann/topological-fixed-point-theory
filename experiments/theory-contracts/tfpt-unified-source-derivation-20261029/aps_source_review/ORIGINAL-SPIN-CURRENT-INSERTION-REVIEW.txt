@@ -1,0 +1,217 @@
+R072. Tatsächliche Gegenprüfung und Zugriffsgrenzen,1.November2026
+
+CLI Aufruf1; beobachtete Modelle: claude-opus-4-8
+## Direct answer
+
+No — not as a *point-supported* observable. A neutral balanced `(q,v,-v,-q)` word **cannot** be an element of the original CAR current net realized by sharp charge-transporter products, and the reason is not neutrality but **mutual monodromy**. It *can* be realized as a smooth (cone/string-localized) relative intertwiner, with the thermal trace well-defined on a chosen branch but with its support irreducibly a union of nested strings, not an interval. The decisive quantity is the cross term `q·v`, nothing else.
+
+## The exact identity that forces the action
+
+Take the position-dependent factor of (1),
+
+```
+u = [E_T(x1-x2) E_T(x3-x4)] / [E_T(x1-x3) E_T(x2-x4)],   F_NS ⊃ u^ρ,   ρ = q·v = ±1/2.
+```
+
+**Single-valuedness criterion (exact):**
+
+```
+F_NS is single-valued on configuration space   ⟺   ρ = q·v ∈ Z.
+```
+
+Since `q·v = ±1/2 ∉ Z`, `u^{±1/2}` is genuinely two-valued; braiding a `q`-endpoint around a `v`-endpoint acts by the monodromy
+
+```
+M(q,v) = exp(2πi q·v) = exp(±iπ) = −1 ≠ 1.
+```
+
+Correlation functions of local observables of the CAR net are single-valued (rational in the `E_T`'s with **integer** exponents). Therefore no local CAR observable reproduces `F_NS`. This is exactly R071's "`−1` remains visible, not cured by endpoint neutrality or cocycle choice," now stated as a single-valuedness *theorem on (1)* rather than a remark.
+
+**Counterexample to "neutral ⇒ observable":** the word `(v,−v)` is also neutral, has the single exponent `v·(−v) = −1 ∈ Z`, is single-valued, and **is** a genuine local CAR observable (a fermion bilinear / current). The mixed word is neutral *and* non-local. Neutrality does not separate them; **trivial mutual monodromy** does. Furthermore the obstruction lives **only** in the cross term:
+
+```
+M(q,q) = exp(2πi·2) = +1   (q bosonic, local to itself)
+M(v,v) = exp(2πi·1) = +1   (v fermionic: exchange −1, a permutation sign — fine)
+M(q,v) = −1                 (the sole anyonic locus)
+```
+
+So a pure-color word or a pure-spin word is local/3+1-admissible; the **mixed color-spin word is the unique carrier of the obstruction**. That sharpens exactly what R070/R071 isolated.
+
+## The three distinctions resolved
+
+- **Smooth transporter products:** realizable. The neutral combination is a bounded operator on `H_parent` with a well-defined thermal trace on the ordered branch `x1>x2>x3>x4` (your R071 heat form). But the `q`-pair and `v`-pair transport strings are *nested and linked with relative sign −1*; the operator's genuine localization is the **union of the two strings (cone-localized)**, never a sharp interval. Support is preserved only in the string sense.
+- **Sharp UV point fields:** the delta-limit returns the `Y_p(z)` spin fields — the "individual charged spinors" you want to avoid — which are not in the fixed-point (observable) algebra, and the `u^{±1/2}` branch makes even their neutral product multivalued at the braid locus. Not an observable.
+- **Genuine source production:** the right-to-left path `0→s→c→s→0` with nonzero intermediate R-amplitudes shows the word *must* transit the R (odd/charged) sectors. A genuine sector-changing source therefore cannot coincide with any NS-vacuum point observable. Sector change and point-locality are mutually exclusive here.
+
+## The genuinely new consequence (vs. reused)
+
+**Reused** (from R070/R071, unchanged): `q·v = ±1/2`, the exponent matrix `(ρ,−ρ,−2,−1,−ρ,ρ)`, the `−1` monodromy, nested configuration, correlation (1), partition normalization.
+
+**New** (the step that changes the next action): `M(q,v) = −1 ≠ 1` means the `{q,v}` subcategory of DHR sectors is **not symmetric** — it is a nontrivial braiding (semionic cross-statistics, exchange `exp(iπ·q·v) = ±i`). This upgrades the "2d locality obstruction" to a **direct F1 obstruction**:
+
+> By Doplicher–Roberts, the superselection sectors of a 3+1 local net form a **symmetric** tensor category (only Bose/Fermi ±1 permutation statistics). A pair with mutual monodromy `−1` is non-symmetric. Hence `q` and `v`, as currently assigned, **cannot be relatively-local point-charged fields of any 3+1 local net**. The physical-locality/universal-spin-2 goal cannot route through sharp joint `q,v` fields.
+
+This yields a clean **dichotomy**, which is the decisive new statement:
+
+```
+sector-changing joint source  ⟺  q·v ∉ Z  ⟺  non-symmetric braiding  ⟺  string-localized only
+sharp point-local observable   ⟺  q·v ∈ Z  ⟺  no NS↔R sector change
+```
+
+You cannot have both. A sharp joint source gives no sector change (no physics you need); the needed source is intrinsically cone/string-localized.
+
+## Additional input used (flagged honestly)
+
+- The Doplicher–Roberts symmetric-category reconstruction is an **external theorem**, not a TFPT result; it is the one added input.
+- Caveat: the `−1` is a **chiral** monodromy; its promotion to a spacetime statistic presumes the eventual Lorentz/rotation embedding. The rigorous closed route is the conditional: *if* `q,v` are to be relatively-local point fields of a 3+1 net via DR, *then* symmetry is required and fails. The **escape hatch is precisely string-localized (Mund–Rehren–Schroer-type) fields in 3+1**, which admit weaker-than-point locality — matching "smooth transporter products" as the only survivor.
+- I have not re-queried the TFPT graph in this turn, so I cannot certify this DR-symmetry framing isn't already registered (e.g., alongside PS.SPECACT.02). Treat "new" as new relative to the supplied R070/R071 excerpts; cross-check against the graph before ledger use.
+
+I am **not** asserting any completed source law or TFPT proof — only an exact obstruction identity and its consequence.
+
+## Changed next research action
+
+Stop trying to realize the mixed word as a neutral *point* source. Two concrete, decidable targets replace it:
+
+1. **Symmetrization test (the smallest decisive test):** does there exist a lattice automorphism / charge redefinition that **fixes the center `wF`**, preserves energy, oscillator multiplicities, and (1)/(2), and sends **all** mixed pairings `q·v` into `Z`? Your own `Mr = e1+e4` triality-1 result (R zero-line removed) is evidence this recombination perturbs the sector content — so this is a genuine, bounded obstruction search, not another moment test. If no such symmetrizing redefinition exists, the mixed source is *intrinsically* non-symmetric-braided.
+2. If it does not exist: formulate the primitive joint source at the level of **cone/string-localized charge transporters** (the `C_F = P_F C_Σ P_F` producer acting on transporters, not on point spin fields), and ask whether the `−1` is exactly the datum that a 3+1 spin-statistics promotion must absorb into genuine half-integer spin — i.e., the braiding is the *input* to universal spin-2, not a defect to be removed.
+
+Either branch is a new typed arrow at the source insertion, and the single-valuedness identity above is what selects between them.
+
+CLI Aufruf2; beobachtete Modelle: claude-opus-4-8
+I don't actually have a prior answer in this session to revise — so rather than retroactively defend or "correct" something I can't see, let me verify the claims against the authoritative sources directly, as your framing demands ("correct independently," "verify exact support, adjoint phase, and actual cover source class"). Per the project protocol I'll ground this in the TFPT context and theory graph first.
+
+Let me pull the source material.
+
+user[Request interrupted by user]
+
+CLI Aufruf3; beobachtete Modelle: claude-opus-4-8
+## Tooling note first (being straight with you)
+
+I could **not** reach the TFPT knowledge graph this session. The two pointers in your global `CLAUDE.md` are dead:
+
+- `/Users/stefanhamann/.codex/` does not exist (no `.codex` tree at all)
+- `/Users/stefanhamann/.claude/skills/` is empty
+
+and no `tfpt-knowledge` MCP tools are exposed in this session (no `graph_status`/`theory_overview`/`research_context`). So what follows is a **first-principles** analysis, not grounded against the graph. Treat the graph as the authority and cross-check claims that touch TFPT-specific conventions (especially the exact definition of `U_alpha` and whether the framework *admits* local 8-channel currents at all). With that caveat, your corrected analysis holds, and I can tighten it.
+
+## 1. The double-diagonal obstruction is real and phase-robust
+
+Let `F` be the 8-point DFT core relating the two bases (shift `x ↦ x + 2πr/8` in `η_r(x)=ψ((x+2πr)/8)/√8` ⇔ phase `e^{-2πi kr/8}` in mode space — so the change of basis is genuinely a DFT). Write the *phased* DFT as `U_α = P F Q` with `P,Q` diagonal unitaries.
+
+Take `D = diag(d_r)` diagonal in the **η (geometric) basis**. Since `Q` is diagonal, `Q D Q* = D`, so
+
+```
+U_α D U_α* = P (F D F*) P*.
+```
+
+Conjugation by the diagonal `P` preserves the diagonal/off-diagonal pattern, so `U_α D U_α*` is diagonal **iff** `F D F*` is. And
+
+```
+(F D F*)_{jk} = (1/8) Σ_r e^{-2πi(j-k)r/8} d_r,
+```
+
+which vanishes for all `j≠k` **iff** `(d_r)` is constant in `r`. Hence:
+
+> **Diagonal in both η and χ ⇒ scalar multiple of identity.** The `α`-phasing is irrelevant to the obstruction.
+
+This is the formal backbone: an *original scalar cover* `W(φ)` is diagonal in η (one profile, lifted identically to the branches), so the only way it is simultaneously diagonal in χ is if it is `c·I`.
+
+## 2. q sign-split ⇒ scalar only on a measure-zero set
+
+Your target `diag_j(e^{-i q_j b(x)})` is diagonal in **χ**, with `q=(1,−1,−1,−1,−1,−1,1,−1)/2`. For it to be scalar (the only way it could *also* be a scalar cover, per §1) you need all entries equal:
+
+```
+(q_j − q_k) b(x) ∈ 2πZ  ∀ j,k.
+```
+
+Since `q_j ∈ {±½}`, the differences are `q_j−q_k ∈ {0,±1}`, and any `(+½,−½)` pair forces the binding constraint `b(x) ∈ 2πZ`. So the operator is a genuine scalar **only** on the discrete level set `b∈2πZ`. A smooth, nontrivial `b(x)` spends an open set of `x` strictly off that lattice → genuinely non-scalar there → off-diagonal in η → **not** an original scalar cover. Confirmed: no free scalar profile `b(x)` can "fit" `W(φ)`.
+
+What matters is only that `q` is **not proportional to 𝟙**; the specific pattern (two `+½` at `j=0,6`, trace `= −2`) is inessential to the obstruction.
+
+## 3. Independent corroboration: the half-charges are a double-cover/spinor signature
+
+Here is a point your correction implies but doesn't state outright. For the "smooth **closed** q-transporter" to be single-valued per channel around the arc, you need
+
+```
+q_j · Δb ∈ 2πZ  ∀ j   ⇒  (½)Δb ∈ 2πZ  ⇒  Δb ∈ 4πZ.
+```
+
+So the half-integer charges force **4π closure**, not 2π. That is precisely the hallmark of a **double cover / spinorial** object. A scalar (tensor) cover closes at 2π by definition; anything demanding 4π closure *cannot* be a scalar cover — fully independent of the DFT argument in §1–2, and it converges on the same verdict. The `½`'s are doing genuine spin/double-cover work; that's why no scalar profile exists.
+
+## 4. Support distinction — the crux
+
+- **Single cover interval:** the admissible objects are scalar covers `W(φ)` — one function, lifted identically across branches, i.e. `c·I` in η. By §1–3 these *cannot* carry the `q` sign-split transport. On this support the construction is simply impossible.
+- **Union of 8 arcs with local 8-channel currents accepted:** `diag_j(e^{-i q_j b})` is unitary (bounded), number-conserving per channel (**even** in the CAR grading), and — for smooth `b` closed with `Δb∈4πZ` — Shale–Stinespring implementable. So it lives here as a legitimate bounded even CAR operator. But in η it is off-diagonal (branch-mixing), hence **not** of the form `W(φ)`.
+
+## 5. Verdict on the minimal source-insertion test
+
+Your correction is right, and sharper than the original prompt:
+
+- The desired charge content `q = Mᵀb` is intrinsically **χ-diagonal** (mode-residue).
+- Realizing it is **not** a free scalar-profile assignment. Forcing it into a single scalar cover is overdetermined (double-diagonal ⇒ scalar ⇒ `q ∝ 𝟙`, contradiction), and the half-integer entries independently demand 4π closure.
+- The only honest minimal realization is an **off-diagonal / composite current producer** on the union of 8 arcs, *conditional on the framework admitting local 8-channel currents*. No pointwise-local E8 embedding is needed — this is purely the 8-channel CAR structure plus the DFT relating η↔χ.
+
+## 6. What still needs the graph / your confirmation
+
+1. **Exact `U_α`.** My §1 assumes the core is a true (equal-modulus) DFT with only diagonal `α`-phases. If `U_α` secretly carries non-DFT, unequal-modulus mixing, the "double-diagonal ⇒ scalar" step would need re-examination. From `η_r`'s definition it *should* be a genuine DFT, but confirm against the graph.
+2. **Admissibility of local 8-channel currents** in the TFPT original-source axioms. If the framework only admits scalar covers on the single interval, then the honest conclusion is stronger: the `q`-transport is **not producible by an original source at all** — it requires composite/off-diagonal sources that may be outside the original-cover class entirely.
+3. **The `Δb∈4πZ` closure** — worth checking whether that double-cover requirement is consistent with how `b` is allowed to wind in your source model.
+
+Want me to write this up as a short note once the graph/context paths are restored, so it can be checked against `research_context` for the covers/CAR sector? I'd rather verify (1)–(2) there before you lean on this.
+
+CLI Aufruf4; beobachtete Modelle: claude-opus-4-8
+## Verdict
+
+I reproduced the algebra independently. **The two profile norms are correct (3/2 and 6 sin²(b/2)), the all‑profile diagonality theorem is sound, and I find no true mathematical gap in the stated theorem.** The one genuinely open item is not in the proof — it is the physical identification the document itself defers (which field‑map "call" the original derivation actually uses). The prior‑review errors you listed are all correctly avoided. Details and cross‑checks below.
+
+## 1. The norms (verified two independent ways)
+
+Write $U_\alpha(r,k)=\omega^{(k+\alpha)r}/\sqrt8$, $\omega=e^{2\pi i/8}$, and $\hat q_m=\sum_k q_k\,\omega^{km}$. Then
+$$(A_q)_{rs}=\tfrac18\sum_k q_k\,\omega^{(k+\alpha)(r-s)}=\tfrac18\,\omega^{\alpha(r-s)}\,\hat q_{\,(r-s)\bmod 8}.$$
+
+- **Diagonal:** $r=s\Rightarrow (A_q)_{rr}=\tfrac18\hat q_0=\tfrac18\sum_k q_k=\operatorname{sum}(q)/8=\pm1/4$, independent of $\alpha$. So $\sum_r|(A_q)_{rr}|^2=8\cdot(1/4)^2=1/2$.
+- **Total:** $\|A_q\|_{HS}^2=\operatorname{Tr}A_q^2=\sum_k q_k^2=q\!\cdot\!q=2$ (unitary conjugation preserves both).
+- **Off‑diagonal:** $2-1/2=\mathbf{3/2}$. ✓
+
+Parseval cross‑check: $\sum_{m=0}^{7}|\hat q_m|^2=8\,q\!\cdot\!q=16$, with $|\hat q_0|^2=(\pm2)^2=4$, so $\sum_{m=1}^{7}|\hat q_m|^2=12$, and $\|{\rm offdiag}\,A_q\|_{HS}^2=\tfrac18\cdot12=3/2$. ✓ Both match, and both are **independent of $\alpha$ and identical for all four roots** (each has $q\!\cdot\!q=2$, $|\operatorname{sum}|=2$) — confirming "both quarters obey exactly (4)."
+
+For (4) itself: since every $q_k=\pm1/2$, $A_q^2=U\,\mathrm{diag}(q_k^2)\,U^*=\tfrac14 I$. Hence $V_q(b)=\exp(-ibA_q)=\cos(b/2)\,I-2i\sin(b/2)\,A_q$, giving
+$$\|{\rm offdiag}\,V_q(b)\|_{HS}^2=4\sin^2(b/2)\cdot\tfrac32=\mathbf{6\sin^2(b/2)},\qquad b=\pi\Rightarrow 6.\ \checkmark$$
+
+This identity $A_q^2=\tfrac14 I$ is worth stressing: it makes the **current exponential literally equal the matrix loop** $V_q(b)$ (not merely similar up to phase), so §3's exponentiation claim is self‑consistent with (4). The uniform half‑entries $|q_k|=1/2$ are the sole reason both the $\cos$–$\sin$ closed form and $A_q^2=\tfrac14I$ hold; the theorem would not take this clean form for a non‑half‑integer vector.
+
+## 2. The all‑profile theorem — sound
+
+$U_\alpha=P_\alpha F_8$ with $P_\alpha$ diagonal. $U_\alpha\,\mathrm{diag}(d)\,U_\alpha^*$ is diagonal $\iff F_8\,\mathrm{diag}(d)\,F_8^*$ is diagonal $\iff$ all nonzero Fourier modes of $d$ vanish $\iff d$ constant. So the arc‑diagonal and residue‑diagonal algebras meet in $\mathbb C I$ (rank‑7 system, 1‑dim constant kernel ✓). This is exactly the correct treatment of the prior error: $G_\phi$ is diagonal in the arc chart with **possibly distinct values on the eight arcs**; only *simultaneous* diagonality forces a scalar. For $q_k=\pm1/2$, $\{e^{-iq_kb}\}$ coincide $\iff e^{-ib}=1\iff b\in2\pi\mathbb Z$; a smooth $b$ with that property on a connected cover is constant, and $0$ if it vanishes on any gap. Hence **no scalar cover profile implements a nontrivial smooth closed $q$‑rotation**, while $b=2\pi$ gives the scalar $-I$. Correct.
+
+## 3. Exterior‑commutant test — correct, and actually stronger than stated
+
+The off‑diagonal block of $A_q$ is **circulant** in $\hat q_m$ (up to the $\alpha$ phase): row $r$ carries the entries $\{\tfrac18\hat q_m\}_{m=1}^{7}$ for every $r$. Since $q$ is non‑constant, some $\hat q_m\neq0$ ($m\neq0$), so **every** row's off‑diagonal is nonzero. With $R_r=I-2P_r$ ($P_r$ = projection onto channel $r$; rank‑1 in the 8×8 chart), $[R_r,V_q(b)]=-2\sin(b/2)\cdot(-2i)[P_r,A_q]\neq0$ for all $r$ and generic $b$. Because $R_r$ commutes with each individual even $\mathrm{CAR}(K_s)$ (and hence their generated vN algebra), $V_q\notin$ the additive even join. So the "main new issue" resolves exactly as you stated: the quotient‑local full‑CAR unitary is **not** an additive local observable on the eight separate arcs — and the obstruction holds for every arc, not just a lucky one.
+
+## 4. Scope — each prior correction properly incorporated
+
+- **No $4\pi$ closure:** $b$ is a real bump (zero winding); $D_q(2\pi)=-I$ is an intermediate value, $D_q(0)=I$. No winding map, no $4\pi$ obligation. ✓
+- **$J_q$ Cartan/neutral $\neq Y_q$:** correctly kept distinct; $J_q$ preserves NS/R, no equality with the R071 mixed word from (5). ✓
+- **Endpoint monodromy does not exclude neutral observables:** §4's connecting‑support argument (even bilinear straddling plateau/exterior flips sign) is correct and does not overclaim a $3+1$ DR obstruction. ✓
+- **Implementability:** $V_q(b(x))=f(x)I+g(x)A_q$ with smooth $f,g$; the off‑diagonal block is $g(x)\cdot{\rm offdiag}\,A_q$, so $\sum|n|\,\|V_n\|_{HS}^2<\infty$ (Shale–Stinespring satisfied). ✓
+
+## 5. The one genuinely open point (not a proof gap)
+
+The result is a **conditional/negative** theorem: it closes the scalar‑profile shortcut and exhibits the composite current that would be required, but it does **not** determine whether the actual $S_{\rm TFPT}/Z_{\rm adm}$ (or $C_\Sigma/P_F$) map issues the full composite‑field call or only the scalar‑density call. Two things it leaves genuinely unfinished — correctly flagged rather than hidden:
+1. The **exact central phase** under the quarter grading is asserted finite/existent but not computed; amplitudes must carry it (not a bare Wick Pfaffian).
+2. Whether this insertion is physically *selected* is deferred; no physical F1, Higgs pushforward, or 96‑matter source is established.
+
+## Exact valid scope
+
+Valid as proven: *on the given folded 8‑channel CAR representation with the fixed $M$, $U_\alpha$ and the four half‑integer roots, (i) no scalar cover profile implements the smooth closed $q$‑rotation; (ii) the composite Cartan current $J_q$ does implement it, with $\|{\rm offdiag}\,A_q\|^2=3/2$, $\|{\rm offdiag}\,V_q(b)\|^2=6\sin^2(b/2)$, both quarters, all four roots; (iii) that unitary is quotient‑local but not additive‑local on the separate arcs.* Everything beyond — physical selection, central phase value, F1 completion — remains out of scope, as the document states.
+
+EIGENE AUSWERTUNG
+Drei tatsächliche analytische Antworten(1,3,4),eine unterbrochene Antwort ohne Forschungsprüfung(2). Keine lokale Datei,Atlasabfrage oder Programmausführung durch den Anbieter behauptet. Seine vermeintlichen fehlenden lokalen Pfade in Aufruf3 wurden nicht als Beobachtung übernommen;Tools waren ausdrücklich deaktiviert.
+Aufruf1s universeller neutraler Lokalitäts und3+1 Ausschluss,die behauptete Sektorwechsel/Punktlokalitätsäquivalenz und ein gemeinsamer Isometriescan wurden verworfen. Aufruf2 lieferte keine abgeschlossene Gegenprüfung. Aufruf3 bestätigt den Fourierklassensatz,verwechselt aber allgemeine skalare Coverwerte mit branchunabhängigen Werten und erfindet eine4pi Schließbedingung für reelles periodisches b;beides korrigiert. Die erste eigene glatte Quelle hatte ebenfalls Arc und Residuenkanäle gleichgesetzt;vor einem Resultat wurde diese Identifikation am Original verworfen.
+Aufruf4 bestätigt Norm3/2,6sin²(b/2),ganze Diagonalitätsklasse und den additiven geraden Kommutanttest. Seine Aussage,current exponential literally equal matrix loop,wird nur auf die Einteilchenwirkung bezogen,nie als Identität mit dem Fockoperator übernommen. Die tatsächliche zentrale CCR Phase ist in der Beweisdatei mit erzwungenem Level2 explizit. Die vorgeschlagene stärkere Aussage über jede Zeile folgt zusätzlich aus der Fourierform,wird für den minimalen Gegenzeugen nicht benötigt. Keine Modellzustimmung ersetzt66 eigene Kontrollen und den analytischen Klassenbeweis.
+
+GEMINI
+Direkter Start zunächst durch alte llhttp/simdjson Verknüpfungen defekt. Vorhandene Node24.6.0 Laufzeit mit vorhandener simdjson3.13 Bibliothek nur pro Prozess erfolgreich gestartet;keine globale Installation verändert. Tatsächliche Forschungsanfrage dann Exit41:Authmethode fehlt. Keine aktuelle Gemini Forschungsantwort.
+
+GROK UND BROWSER
+Aktueller CUA Dokumentationsabruf endete nach300s ohne Antwort. Vorhandene Gemini und Grok Tabs konnten über die native Browseranwendung identifiziert werden. JavaScript über Apple Events ist deaktiviert;nativer Bedienzugriff ausdrücklich nicht erlaubt. Kein Schutzschalter geändert. Vorhandener Grok Tab ausgewählt,aber keine aktuelle Forschungsanfrage dort eingegeben oder versandt. Keine aktuelle Grok Antwort oder Bildschirmansicht behauptet. Kein neuer Chat und keine Automation angelegt.

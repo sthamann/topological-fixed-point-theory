@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <title>TFPT · Suche live verstehen</title>
+  <link rel="stylesheet" href="/style.css">
+  <script src="/app.js" defer></script>
+</head>
+<body>
+  <a class="skip" href="#main">Zum Suchprozess</a>
+  <header class="topbar">
+    <a class="brand" href="/" aria-label="TFPT Suchmonitor Startseite">
+      <svg viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="16" r="14"/><path d="M10 19v-6m6 10V9m6 11v-8"/></svg>
+      <strong>TFPT</strong><span>Suchmonitor</span>
+    </a>
+    <div class="connection"><span class="connection-dot" id="connectionDot"></span><span id="connectionText">Verbindung wird aufgebaut</span></div>
+    <button class="quiet-button" id="freezeButton" aria-pressed="false">
+      <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M7 4v12M13 4v12"/></svg>
+      <span>Ansicht einfrieren</span>
+    </button>
+  </header>
+  <main id="main">
+    <div class="page-heading">
+      <div><h1>Die Suche nach der gemeinsamen Quelle</h1><p id="pageDescription">Was wird verändert? Was kommt dabei heraus? Verfolge jeden Rechenversuch live.</p></div>
+      <div class="run-picker"><label for="runSelect">Suchlauf</label><select id="runSelect" aria-label="Suchlauf auswählen"><option>Wird geladen …</option></select></div>
+    </div>
+
+    <div id="errorBanner" class="error-banner" role="alert" hidden><strong>Die Liveverbindung ist unterbrochen.</strong><span>Die zuletzt gelesenen Ergebnisse bleiben sichtbar.</span><button id="retryButton">Erneut verbinden</button></div>
+    <section class="running-line" aria-label="Aktueller Laufstatus">
+      <div class="run-state"><span class="status-dot" id="runDot"></span><strong id="runStatus">Suchlauf wird gelesen</strong><span id="runAge"></span></div>
+      <span class="sync-time" id="syncTime">Noch keine Daten</span>
+    </section>
+
+    <div id="historyNotice" class="history-notice" hidden><strong>Historischer Lauf</strong><span id="historyDescription"></span><button id="liveRunButton" class="text-button">Zum aktuellen Sol Lauf</button></div>
+
+    <div class="overview-grid">
+      <section class="flow-section" aria-labelledby="flowTitle">
+        <div class="section-heading"><h2 id="flowTitle">So arbeitet die Suche</h2><button class="text-button" id="helpButton" aria-expanded="false" aria-controls="flowHelp">Ablauf erklären<svg viewBox="0 0 20 20" aria-hidden="true"><path d="m6 8 4 4 4-4"/></svg></button></div>
+        <p id="actualPhase" class="actual-phase" hidden></p>
+        <div class="pipeline" id="pipeline">
+          <div class="connector" aria-hidden="true"><svg viewBox="0 0 900 80" preserveAspectRatio="none"><path class="connector-base" d="M90 40H810"/><path class="connector-proof" d="M620 40H810"/></svg></div>
+          <button class="flow-node" data-step="0" aria-pressed="true"><span class="node-circle">1</span><strong>Programme erzeugen</strong><span>Rechenregeln kombinieren</span><span class="node-stat" id="flowProposals">…</span></button>
+          <button class="flow-node" data-step="1" aria-pressed="false"><span class="node-circle">2</span><strong>Quelle ausrechnen</strong><span>Vier Antworten gemeinsam</span><span class="node-stat" id="flowCalculated">…</span></button>
+          <button class="flow-node" data-step="2" aria-pressed="false"><span class="node-circle">3</span><strong>Gegenprüfen</strong><span>Widersprüche erkennen</span><span class="node-stat" id="flowChecks">…</span></button>
+          <button class="flow-node proof-node" data-step="3" aria-pressed="false"><span class="node-circle">4</span><strong>Ursprung belegen</strong><span>Mit der Originalquelle verbinden</span><span class="node-stat" id="flowProofs">…</span></button>
+        </div>
+        <div class="step-explanation" id="stepExplanation"><strong>Das Programm sucht jetzt nach Rechenregeln.</strong><p>Ein Versuchsprogramm beschreibt, wie der gemeinsame Quellenkern entsteht. Erst seine Ausführung zeigt, ob sich daraus Antworten berechnen lassen.</p></div>
+        <div id="flowHelp" class="flow-help" hidden>
+          <p id="knowledgeCoverage">Der Wissensstand dieses Laufs wird aus seinem gespeicherten Übergabepaket gelesen.</p>
+          <p id="flowHelpMethod">Ein Versuchsprogramm ist eine ausführbare Rechenanweisung: zum Beispiel einen Wechselwirkungsterm ergänzen, eine Probeeinfügung ändern oder zwei ganze Quellenstücke verbinden. Danach werden die vier Antworten derselben Quelle erneut berechnet.</p>
+          <p id="flowHelpReview">Die Gegenprüfung sucht Fehler. Danach muss belegt werden, dass genau dieses Versuchsprogramm die ursprüngliche TFPT Quelle beschreibt. Ein korrekt ausgerechnetes Modell erfüllt diese letzte Bedingung noch nicht automatisch.</p>
+          <p>Die Verbindungen zeigen den Rechenweg. Sie stellen keine geschätzte Fortschrittsanzeige für die gesamte Theorie dar.</p>
+        </div>
+        <div class="run-facts"><span><b id="countPrograms">…</b> <span id="countProgramsLabel">ganze Programme</span></span><span><b id="countRounds">…</b> <span id="countRoundsLabel">Modellrunden</span></span><span><b id="countNovel">…</b> <span id="countNovelLabel">verschiedene Quellenrechnungen</span></span><span><b id="countRepeats">…</b> <span id="countRepeatsLabel">gleiche Quellenrechnungen</span></span></div>
+      </section>
+
+      <aside class="now-panel" aria-labelledby="nowTitle">
+        <div class="now-top"><span class="live-label" id="liveLabel">Live aus dem Lauf</span><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M3 10h3l2-5 4 10 2-5h3"/></svg></div>
+        <h2 id="nowTitle">Die Ergebnisse werden eingelesen.</h2>
+        <p id="nowDescription">Hier erscheint der zuletzt beobachtete Schritt des tatsächlichen Suchlaufs.</p>
+        <div class="model-line"><span id="modelLabel">Modell</span><strong id="modelName">Wird gelesen</strong></div>
+        <div class="round-line"><span id="roundLabel">Modellrunden</span><strong id="roundValue">…</strong></div>
+      </aside>
+    </div>
+
+    <section id="researchQuestion" class="scale-note research-question" hidden aria-labelledby="questionTitle"><h2 id="questionTitle">Aktuelle Forschungsfrage</h2><p id="questionText"></p><p id="questionOrigin" class="scale-detail"></p><div id="exactResearchQuestion"></div><p id="questionNext" class="scale-detail"></p><div id="activeResearchEvidence"></div></section>
+
+    <section class="scale-note" aria-labelledby="scaleTitle"><h2 id="scaleTitle">Warum jetzt mehr Versuche möglich sind</h2><p id="scaleExplanation">Die direkte Suche erzeugt ganze Programme. Neue Modellvorschläge und systematische Varianten werden getrennt gezählt.</p><p class="scale-detail" id="scaleDetail"></p></section>
+
+    <section class="boundary" aria-labelledby="boundaryTitle"><span class="boundary-icon" aria-hidden="true"><svg viewBox="0 0 20 20"><circle cx="10" cy="10" r="7"/><path d="M10 9v5m0-9v1"/></svg></span><div><strong id="boundaryTitle">Berechneter Kandidat und fundamentale Lösung bleiben getrennt.</strong><p id="boundaryDescription">Die Suche erzeugt auswertbare Quellenhypothesen. Die Herkunft genau dieser Quelle und die vollständige physikalische Herleitung müssen noch bewiesen werden. Die Programmsprache erzeugt diese Beweise bisher nicht selbst.</p></div><span class="boundary-status" id="proofStatus">Herkunft offen</span></section>
+
+    <div class="results-grid">
+      <section class="candidate-section" aria-labelledby="candidateTitle">
+        <div class="section-heading"><h2 id="candidateTitle">Versuche im Vergleich</h2><span class="small-note" id="candidateCount"></span></div>
+        <div class="filters" role="group" aria-label="Versuchsprogramme filtern"><button data-filter="all" aria-pressed="true">Alle</button><button data-filter="calculated" aria-pressed="false">Berechnet</button><button data-filter="failed" aria-pressed="false">Widerlegt</button><button data-filter="open" aria-pressed="false">Noch offen</button></div>
+        <div id="candidateList" class="candidate-list" aria-live="off"><div class="empty-state"><p>Noch keine Versuchsprogramme eingelesen.</p></div></div>
+        <div class="coverage-note"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 5h12M4 10h9M4 15h6"/></svg><span id="coverageText">Der Suchraum wird eingelesen.</span></div>
+      </section>
+
+      <section class="detail-section" aria-labelledby="detailTitle">
+        <div class="section-heading"><h2 id="detailTitle">Was dieser Versuch verändert</h2><button class="text-button" id="followButton" aria-pressed="true">Neuestem folgen</button></div>
+        <div id="candidateDetail" class="candidate-detail"><div class="empty-state"><p>Wähle einen Versuch aus. Hier siehst du seinen Rechenweg und sein Ergebnis.</p></div></div>
+      </section>
+    </div>
+
+    <section class="history-section" aria-labelledby="historyTitle"><div class="section-heading"><h2 id="historyTitle">Was im Lauf passiert</h2><span class="small-note">Neueste Ereignisse zuerst</span></div><ol id="eventList" class="event-list"><li class="empty-state">Noch keine Ereignisse eingelesen.</li></ol></section>
+
+    <footer><span>TFPT · Lokaler Forschungsmonitor</span><span>Nur tatsächliche Laufdaten. Die Ansicht verändert die Suche nicht.</span><button class="text-button" id="downloadButton">Stand herunterladen<svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 3v10m-4-4 4 4 4-4M4 14v3h12v-3"/></svg></button></footer>
+  </main>
+  <div class="sr-only" id="liveAnnounce" aria-live="polite"></div>
+</body>
+</html>

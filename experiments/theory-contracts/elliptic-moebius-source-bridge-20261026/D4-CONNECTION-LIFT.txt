@@ -1,0 +1,259 @@
+EXACT INVERSION TEST FOR THE v117 FUCHSIAN CONNECTION
+=====================================================
+
+26 October 2026. Exact rational-gauge obstruction. No Atlas, paper, ledger
+or verification source was changed.
+
+POSITIVE CONTINUATION AND SCOPE CORRECTION
+==========================================
+
+The negative D4 theorem in this file remains valid.  A subsequently
+recovered original source proves that the same connection already has a
+finite C4 triangle descent.  Therefore the absence of an inversion lift does
+not leave the analytic v117 monodromy open: the C4 quotient proves that its
+extended orbifold image is S4 and identifies the marked representation with
+(U^(-1),M0) up to constant conjugacy.  See
+C4-DESCENT-FINITE-MONODROMY.txt and its exact checker.  Statements below
+that formerly called the analytic identification open are superseded by
+that positive continuation; the rational inversion calculation itself is
+unchanged.
+
+Question and answer
+===================
+
+Consider the actual connection
+
+  Y'(z)=A(z)Y(z),
+  A(z)=sum_(k=0)^3 A_k/(z-i^k),
+  A_k=U^k A0* U^(-k),
+
+with
+
+  U=diag(1,i,-i),
+
+  A0*=[[1/2,sqrt(2)/6,0],
+       [sqrt(2)/6,1/4,sqrt(5)/12],
+       [0,sqrt(5)/12,1/4]].
+
+Does it admit a rational lift of the original inversion s:z->1/z,
+
+  Y(z)=G(z)Y(1/z),
+
+so that
+
+  G'=A(z)G+z^(-2)G A(1/z),                            (1)
+  G(z)G(1/z)=I                                        (2)
+
+up to an allowed constant scalar cocycle?
+
+No. Equation (1) has no nonzero rational matrix solution at all. Therefore
+the concrete A0* differential equation is exactly C4 equivariant but is not
+a genuinely D4 linearized connection for the marked inversion. The cocycle
+condition (2) is never reached.
+
+This closes the proposed D4 route.  It does not obstruct the actual C4
+route.  The existing exact matrix M0 and the finite group <U,M0>=S4 are now
+identified with the analytic monodromy by the recovered C4 triangle proof.
+The D4 orbifold rigidity theorem still cannot be used, because its required
+connection-level D4 premise fails for the displayed ODE.
+
+1. Existing result used and changed premise
+============================================
+
+The Atlas at revision 1511caef8fbd449e2b24c859 records the correct split:
+
+  * v116 makes the residue normal form and the a13=0 infinity resonance
+    cancellation exact inside the C4 equivariant ansatz;
+
+  * v117 makes the candidate matrix M0, its order-three class and the finite
+    group <U,M0>=S4 exact;
+
+  * v117 itself still labels equality with the unitarized ODE monodromy
+    numerical, but the older September source closes the marked local system
+    analytically through its C4 triangle descent.
+
+The new premise tested here is stronger than a13=0: the same A0* connection
+must carry a rational inversion linearization. This is exactly the missing
+connection-level hypothesis needed to apply D4-ORBIFOLD-RIGIDITY.txt.
+
+2. The connection in one exact rational formula
+================================================
+
+Summing the four residues gives
+
+               1                 [ 2z^3       2sqrt(2)z^2/3       0          ]
+  A(z)= -----------------          [ 2sqrt(2)/3 z^3               sqrt(5)z/3 ] .  (3)
+          z^4-1                   [ 0          sqrt(5)z/3         z^3        ]
+
+Equation (3) proves the rotation covariance directly:
+
+  i A(i z)=U A(z)U^(-1).                              (4)
+
+Thus the actual ODE has the advertised C4 lift. The issue is specifically
+the reflection completing C4 to D4.
+
+The residue polynomial is
+
+  det(lambda I-A0*)=lambda(3lambda-1)(3lambda-2)/9,    (5)
+
+so every finite residue has the distinct eigenvalues 0,1/3,2/3. At infinity
+
+  A(z)=B0/z+O(z^(-2)),       B0=diag(2,1,1).           (6)
+
+The vanishing a13 entry is precisely what removes the level-one resonance
+obstruction in v116. Equations (5)-(6) now also give a complete degree bound
+for every possible rational inversion lift.
+
+3. Any rational lift would have to be a tiny polynomial
+========================================================
+
+Let G be a rational solution of (1).
+
+At an ordinary point, a pole of order m>=1 is impossible: G' would have a
+term of order m+1 while both coefficient matrices in (1) are regular there.
+
+At a puncture z=i^k, the residue operator acting on a leading matrix C is
+
+  L_k(C)=A_k C-C A_(-k).                               (7)
+
+Since the two residues in (7) are conjugate Hermitian matrices with spectrum
+(5), the spectrum of L_k consists of their pairwise differences
+
+  {0,+/-1/3,+/-2/3}.
+
+A pole C t^(-m) would require L_k(C)=-m C. No negative integer occurs, so G
+has no pole at any of the four punctures.
+
+Near z=0 the transformed infinity term is
+
+  z^(-2)A(1/z)=B0/z+O(1).                              (8)
+
+The same leading-order argument excludes a pole because B0 has only the
+positive eigenvalues 2,1,1. It also gives G(0)=0. If
+
+  G=sum_(n>=0) G_n z^n,
+
+then the indicial equation is
+
+  n G_n=G_n B0                                       (9)
+
+at the first nonzero order. Consequently the first column begins at order
+z^2, while the second and third columns begin at order z.
+
+Finally, at infinity the leading part of (1) is
+
+  G'=(B0/z)G+O(z^(-2)G).                              (10)
+
+For a polynomial leading term z^d C, equation (10) says dC=B0 C. Hence the
+first row has degree at most two and the second and third rows degree at most
+one. Every rational solution of (1) must therefore have exactly the bounded
+form
+
+         [ a z^2   b z+c z^2   d z+e z^2 ]
+  G(z)= [ 0       f z           g z       ].           (11)
+         [ 0       h z           j z       ]
+
+This is not a guessed truncation. Regularity, (5), the 0-infinity exchange
+and the Birkhoff-Grothendieck exponents (2,1,1) force (11).
+
+4. Nine coefficients, rank nine
+=================================
+
+Insert (11) and (3) into (1), and multiply the result by (z^4-1)/z. A small
+triangular subset of the resulting coefficient equations already gives
+
+  E_11=(2sqrt(2)/3) z^2(b+c z)=0
+       => b=c=0,
+
+  E_13=-d z^3-e-(2sqrt(2)/3)g z^2=0
+       => d=e=g=0,
+
+  E_12=(2sqrt(2)/3)(a z-f z^2)=0
+       => a=f=0,
+
+  E_31=(2sqrt(2)/3)h z^2=0
+       => h=0,
+
+  E_32=(sqrt(5)/3)j z=0
+       => j=0.                                        (12)
+
+Thus G=0. Equivalently, the complete exact linear coefficient matrix has
+rank nine on the nine variables a,b,c,d,e,f,g,h,j. The proof uses no floating
+point monodromy, fitted fundamental matrix or assumed group order.
+
+Since even a nonzero solution of (1) is absent, allowing
+
+  G(z)G(1/z)=xi I
+
+with a constant scalar xi cannot help. Nor can another reflection Q^m s:
+the exact rotation lift (4) would compose any such lift with U^(-m) to give a
+lift of s, contradicting (12).
+
+5. Consequence for the proposed finite bridge
+==============================================
+
+The result separates three statements that were previously close in the
+numerics.
+
+PROVED:
+
+  * the residue system (3) is exactly C4 equivariant;
+  * infinity is apparent in the v116 formal resonance sense when a13=0;
+  * the specific connection has no rational inversion lift preserving its
+    logarithmic extension;
+  * it therefore does not descend as the genuine D4 connection required by
+    the existing orbifold rigidity theorem.
+
+EXACT POSITIVE CONTINUATION:
+
+  * the independently written matrix M0_v117 has finite order three;
+  * <U,M0_v117> is exactly the 24-element S4 representation.
+  * the C4 descent t=z^4 has local orders (4,3,2), hence faithful S4
+    orbifold monodromy;
+  * its marked order-four class is U^(-1), and the unique marked Nielsen
+    class identifies it with (U^(-1),M0_v117) up to constant conjugacy;
+  * the ordinary four-puncture image is A4 of order 12.
+
+A Belyi pullback through the same marked D4 quotient would carry the deck
+linearization back to a rational solution of (1), so that specific direct
+D4/Belyi route is excluded by (12). An unrelated finite cover or a changed
+connection could evade the obstruction, but it would add precisely the new
+geometric or operator input that this test was asked not to choose.
+
+The successful C4 proof adds neither: it uses the original covariance (4)
+and the original quotient t=z^4.  Its normalized finite target coordinate is
+J_actual(z)=1-z^(-4), which is C4 invariant and not D4 invariant.  This is
+why the positive C4 result and the negative inversion result coexist.
+
+The exact lesson is also narrower than “a13=0 fails”. The zero a13 entry
+does its intended job at infinity. It does not imply reflection covariance.
+The remaining nonzero couplings sqrt(2)/6 and sqrt(5)/12 make the inversion
+equations full rank.
+
+6. Reproduction and source record
+==================================
+
+The exact checks performed were:
+
+  1. symbolic summation of the four residues to (3);
+  2. symbolic verification of (4) and (5);
+  3. symbolic substitution of (11) into (1), giving rank nine;
+  4. normal and Python -OO replay of v117, both 5 PASS and 0 FAIL.
+
+Canonical sources read through the Atlas and hash-verified locally:
+
+  source:80af15193155b4dcf60c
+  verification/v116_resonance_uniqueness.py:1-170
+  SHA256 e9cbeb665cf8c1a2bed3f34281be06aee4c661d784e7f13a5bd8e9be37f577ca.
+
+  source:830238c9699fad6ae325
+  verification/v117_monodromy_weyl_a3.py:1-206
+  SHA256 55eca6a64144f6e49789f3f1bbe84e256764e7ce92b207044be693f8684d5df5.
+
+Prior conditional theorem and review reused without modification:
+
+  research-20261026-real-boundary/D4-ORBIFOLD-RIGIDITY.txt
+  SHA256 2f7ec5e5a3e7a39edc3aa232a47a97f9f3a2b8cf289f67ebfd4be71975bdaf33.
+
+  research-20261026-real-boundary/D4-RIGIDITY-INDEPENDENT-REVIEW.txt
+  SHA256 97dbe63dfb00bd6ebecd649e48fca2097709686428acb21d4e53fb73f49cfffd.

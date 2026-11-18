@@ -1,0 +1,58 @@
+Exact source-menu ambiguity test — 2026-10-13
+
+Finding
+=======
+Within the existing 60 projective root operations of UR.COMPILER.PROCESS_RECONSTRUCTION.08, there are two symmetry-covariant, complete instruments with (i) the same outcome effects label by label and (ii) the same unconditioned channel, but different exact two-event statistics. The alternative changes no Hilbert space, operator menu, state space, effect, outcome set, or source root: for each rank-one outcome A_(s,t) proportional to |s><t|, replace its Kraus representative by A'_(s,t)=alpha_t A_(s,t), where alpha_t is the existing marked Pauli-axis operator whose eigenray is t. Keep the 24 unitary-root outcomes unchanged. Since alpha_t is unitary, A'†A'=A†A. Since alpha_t permutes the same six marked Pauli eigenrays s at fixed t, this replacement permutes the 36 existing rank-one rays and leaves their summed CP map unchanged. It is therefore an ambiguity in instrument assignment/post-outcome update, not an extra operator model.
+
+Exact discriminator
+===================
+Use the source-convention alpha_1=Z, alpha_2=Y, alpha_3=X. Start in |0_z>. For the marked outcome (s=|+_x>, t=|0_z>), both instruments give p=1/30, because K=A/sqrt(60) and ||A|0_z>||^2=2. But the normalized conditional state is |+_x> for K and |-_x> for K'=ZK. On the next application, ask for the total probability of any rank-one outcome whose input port is t'=|+_x> (sum over its six allowed output rays s'). This second-event effect is exactly (1/5)|+_x><+_x|. Thus
+
+  p((+x,+z) then any s' at t'=+x) = 1/150   for K,
+  p((+x,+z) then any s' at t'=+x) = 0       for K'.
+
+This compares the same labels and effects, and the instruments also have the same discarded-record channel Phi(X)=Tr(X)I/2; it is a genuine conditional/multitime distinction, not a different POVM or different average channel.
+
+Symmetry/computation scope
+==========================
+A short exact SymPy probe reconstructed all 240 roots from the pinned original construction and reduced them to 60 phase rays, checked the 24 unitary/36 rank-one split, all labeled effects, superoperators on the four matrix units, root-menu preservation by A -> alpha_t A, and covariance under all 24 native unitary roots. The family-cycle representative w lies in that 24-root action, so this also verifies covariance under the native discrete family cycle. The check did not identify a continuous tau_t representation on the root labels. The probe is `work/original_instrument_probe.py`; output is reproducible in about 70 seconds, no repository file was modified.
+
+What this establishes, and what it does not
+===========================================
+It proves that the existing marked root operation algebra, its per-label effects, its unobserved channel, and the discrete native symmetry do not uniquely fix the outcome-conditioned operation law, even when both candidate branch operators remain in the same root menu. It does NOT prove that both are selected by one already-specified full time-ordered global functional: the original source fixes amplitudes for specified operator insertions, but no map states which insertion/update a registered event implements, nor a repeated-event scheduler/clock coupling.
+
+The original source provides direct evidence for this gap:
+* `_archive/tfpt-45/source_extracts/01_boundary_kernel_source.tex:480-509` defines the seed as (A_loc,tau_t,Theta,omega,[u_Sigma],D_coll) and its functorial collar completion; no instrument/record-update is among the tuple entries or conclusion.
+* `_archive/tfpt-45/source_extracts/technical_companion_source.tex:2484-2511` assumes a stable pointer subalgebra and a complete projector family. Its theorem fixes only p_i=tr(rho P_i). The Lüders channel `sum_i(P_i rho P_i) tensor |i><i|` is then written as the measurement channel; it is not entailed by that probability statement. In particular, the theorem does not derive pointer algebra, event coupling, post-event CP maps, or clocked repeated records.
+* `_archive/tfpt-45/source_extracts/01_boundary_kernel_source.tex:500-509` calls the collar completion canonical for the declared seed, but the output is a spectral bordism/boundary datum, not a quantum instrument.
+* Existing root dictionary and simple uniform rule: `experiments/theory-contracts/compiler-process-reconstruction-20260918/PROOF.txt:23-45,143-158`; verdict PARTIAL, physical process not selected.
+* Existing same-source affine-current test `work/current_process_gate_20260919/instrument_source_test.txt` already shows equal effects with absorption vs square-root post-update and different multitime futures; those two do have different unconditioned channels. The result above strengthens that witness to preserve both labeled effects and the unobserved channel, on the native 60-root menu.
+
+Smallest remaining source-theory target
+=======================================
+The first missing derivation is an event/update map from the original local net and time evolution to a CP instrument with a specified record algebra and post-event state rule, covariant under the declared continuous tau_t and seam action. A global ordered correlator supplies numbers once an insertion word is chosen; it does not itself mark which word is a physical event or whether/how an event is iterated. Any claim that the full source selects one of K or K' must exhibit such a source-defined insertion/update map and clock/record action. The discrete covariance check above does not settle that continuous identification.
+
+Reproducibility receipt
+=======================
+The preserved stdout-equivalent JSON is `work/original_instrument_results.json`. The successful probe was run as `python3 work/original_instrument_probe.py` (assertions enabled; no `-O` or `-OO` flag); its result was recorded from that successful execution without rerunning the ~70-second exact covariance check. Original `cone.source()` / `bridge.inherited()` pin validation included the following unchanged checked files (hashes reproduced in the JSON): `compiler-cone-object-audit/checker.py`, `compiler-involution-types/checker.py`, plus `verification/v774_arf_spinor_compiler.py`, `v775_gaussian_class_d5_purity.py`, `v783_two_qubit_clifford.py`, `v975_dimension_selector_4d.py`, `v14_carrier_uniqueness.py`, `v252_full_finite_triple.py`, `v1027_signed_det_car_wall.py`, and `v1028_gauss_d4_cap.py`.
+
+Scope reminder: this is a finite marked 2x2-root operation calculation. It is not an equivalence claim for the full E8 level-one VOA, a continuous c=4 theory, or the full TFPT time-ordered source functional.
+
+Analytical refinement: begin from the common stationary state
+===============================================================
+For either instrument, discarding the outcome gives the same map
+
+  Phi(X)=Tr(X) I/2.
+
+For every normalized density matrix, Phi(rho)=I/2. A stationary density matrix must satisfy rho=Phi(rho)=I/2, so the normalized stationary state is unique. Equivalently, Phi has eigenvalue 1 only on the identity direction and kills every traceless component.
+
+Now begin at this common stationary state rho*=I/2. At the same marked first outcome (s=+X,t=+Z), the effect is E_(s,t)=A†A/60=P_(+Z)/30. Therefore p=Tr(rho* E)=1/60. The canonical branch K_(s,t)=A_(s,t)/sqrt(60) leaves the conditional state |+X><+X|; the alternative K'_(s,t)=Z K_(s,t) leaves |-X><-X|.
+
+At the next step, sum over all six output labels s' with fixed input port t'=+X. The second-step effect is 6 P_(+X)/30=P_(+X)/5. Thus the joint probabilities, including the first event, are
+
+  p(first (+X,+Z), then any s' at t'=+X) = (1/60)(1/5) = 1/300, canonical;
+  p(first (+X,+Z), then any s' at t'=+X) = (1/60)*0 = 0, alternative.
+
+This tightens the witness: the two candidate processes share the unique stationary density, every labeled one-step effect, the entire unobserved one-step channel, and the native discrete unitary-root/family-cycle covariance. Those shared one-step data still cannot fix the conditional event update: applying the next source-marked port tests the post-event state, where the two rules disagree. This establishes nonuniqueness within the finite root-instrument interpretation; it does not assert that either rule is the actual full-source event law, or that the continuous source tau_t action has been identified.
+
+This refinement is an analytic consequence of the already checked exact operators/effects and is not a new probe execution or receipt.

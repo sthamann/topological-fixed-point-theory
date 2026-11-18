@@ -1,0 +1,212 @@
+PAARINDEX, DETERMINANTENKLASSE UND DIE URSPRUENGLICHE NAHTANTWORT
+================================================================
+25. Oktober 2026
+MATH.ORIGINAL-SEAM.PAIR-INDEX.01
+MATH.ORIGINAL-SEAM.CARRIER-CLUTCH-INDEX.01
+
+Ergebnis und genaue Aenderung des bisherigen Anschlusses
+-------------------------------------------------------
+Der gerichtete relative Determinant braucht keine ausgezeichnete Rang1
+Linie. Zwei orthogonale Polarisationen mit spurklassiger Differenz und
+Paarindex eins genuegen. Auch ein indefiniter Defekt beliebigen Ranges kann
+denselben skalaren Faktor 1-z liefern. Das schwaecht die Voraussetzung fuer
+diesen Faktor, ohne eine neue physische Zustandswahl vorzunehmen.
+
+Auf einem Kreis mit r inneren Komponenten zaehlt der Faktor die Windung der
+DETERMINANTE des wirklichen Matrix Clutch, nicht r selbst. Insbesondere kann
+ein Rang2 Buendel mit Determinantenwindung eins den Faktor 1-z tragen. Die
+skalare Fortsetzung u tensor I_r hat dagegen Determinantenwindung r.
+
+Das ist eine Anwendung bekannter Paarindex und Toeplitzmathematik auf die
+bisher getrennten Originalstellen. Keine allgemeine mathematische Neuheit
+wird beansprucht. Die Quellenfunktion, ihre physische Realisierung und das
+EM Wardgesetz werden dadurch nicht automatisch identifiziert.
+
+1. Allgemeiner Satz fuer zwei Polarisationen
+--------------------------------------------
+Seien P,Q orthogonale Projektionen auf demselben Hilbertraum mit
+
+  Q-P in L1,       k=Tr(Q-P).
+
+Der Paarindexsatz besagt k in Z. Mit der Konvention Index(P,Q)=Tr(P-Q)
+von Avron, Seiler und Simon ist unser k=-Index(P,Q). Fuer |z|<1 sei
+
+  A_P=I-zP,   A_Q=I-zQ,   R=A_Q A_P^(-1).
+
+Dann R-I=-z(Q-P)A_P^(-1) in L1 und
+
+  det_F R = (1-z)^k.                                           (1)
+
+Beweis ohne Quotienten undefinierter unendlicher Determinanten:
+Alle A sind invertibel. Weil P,Q Projektionen sind,
+
+  A_P^(-1)P=P/(1-z),   A_Q^(-1)Q=Q/(1-z).
+
+Direkte Differentiation liefert die spurklassige Identitaet
+
+  R' R^(-1)=A_Q [(P-Q)/(1-z)] A_Q^(-1).
+
+Zyklizitaet der Spur eines spurklassigen Operators mit beschraenkten
+Faktoren ergibt
+
+  d_z Log det_F R = -k/(1-z).
+
+Mit det_F R(0)=1 und dem holomorphen Logarithmus Log(1)=0 folgt (1).
+Weder PQ=QP noch Q>=P, endlicher Rang oder ein gewaehlter Defektvektor
+wurden verwendet. Bei k=1 bestimmt (1) keinen solchen Vektor.
+
+2. Jede vorhandene Kovarianz derselben Spurklasse
+------------------------------------------------
+Sei U unitaer, Q=UPU*, Q-P in L1, und sei 0<=C<=I mit C-P in L1.
+Setze A_C=I-zC und A_C'=I-zUCU*. Dann
+
+  A_C' A_C^(-1)
+   = [U(A_C A_P^(-1))U*]
+     [A_Q A_P^(-1)] [A_P A_C^(-1)].
+
+Jede Klammer ist Identitaet plus Spurklasse. Multiplikativitaet und unitaere
+Invarianz des Fredholmdeterminanten lassen die erste und letzte Klammer
+exakt kuerzen. Deshalb
+
+  det_F[(I-zUCU*)(I-zC)^(-1)] = (1-z)^k.                        (2)
+
+Die zuvor bewiesene alte Verschiebung und ihre treuen KMS Kovarianzen sind
+Spezialfaelle. Neu im Anschluss ist, dass U keine uniforme Verschiebung und
+UPU*-P keine positive Rang1 Projektion sein muss. Ein konkreter Zustand C
+wird nicht rekonstruiert: alle C dieser Klasse haben denselben Faktor.
+
+3. Glatter Matrix Clutch auf dem vollstaendigen Originalkreis
+------------------------------------------------------------
+Behalte den alten Kreis mit Basis psi_n, n in Z, und
+
+  H=L2(S1) tensor C^r,   P psi_n=1_(n<0) psi_n.
+
+Sei g:S1 -> U(r) glatt, U=M_g und g(theta)=sum_j g_j exp(ij theta).
+Fuer den bilateralen Shift S gilt ||[P,S^j]||_1=|j|. Daher
+
+  ||[P tensor I_r,M_g]||_1 <= sum_j |j| ||g_j||_1 < infinity.
+
+Q-P ist also spurklassig. Die Fourierdiagonale liefert absolut konvergent
+
+  Tr(Q-P)=sum_j j tr(g_j* g_j)
+    =(1/(2pi i)) integral tr(g(theta)* g'(theta)) dtheta
+    =wind(det g).                                              (3)
+
+Im ersten Ausdruck ist die Matrixspur auf den r inneren Komponenten
+gemeint. Die letzte Gleichheit folgt aus der Jacobi Formel fuer det g.
+Somit fuer jede vorhandene C mit C-P in L1:
+
+  det_rel(g,C;z)=(1-z)^(wind det g).                            (4)
+
+Das gilt auf allen Fouriermoden. Ein endlich zyklisch abgeschnittener
+Shift ist ein anderes Paar mit Index null; sein UV Partner darf nicht
+unbemerkt entfernt werden. Siehe NS-CONTINUUM-WINDING-LIMIT.txt.
+
+Fuer r=1 ergibt (3) wind(u). Auch nichtuniforme glatte unimodulare
+Vertreter mit derselben Windung liefern daher denselben Faktor. Die
+Energieauswahl eines uniformen Vertreters ist fuer (4) nicht noetig.
+
+4. Der Carrier muss seine wirkliche Clutchwirkung behalten
+---------------------------------------------------------
+Folgende Faelle sind verschieden:
+
+  g=u I_r, wind(u)=1:            wind det g=r, Faktor (1-z)^r.
+  g in U(2), wind det g=1:       Faktor 1-z.
+  g=G3 direct_sum G2 in
+     S(U(3) x U(2)):             wind det g=0, Faktor 1.
+
+Der erste Fall ist die in CARRIER-MODULE-FORWARD-MAP.txt berechnete
+triviale innere Fortsetzung. Der zweite benoetigt keinen Rang1 Selektor:
+er ist fuer JEDEN glatten Repraesentanten dieser Determinantenklasse wahr.
+Der dritte ist der volle determinantenerhaltende Carriertransport in
+derselben ungewichteten Hardy Klasse. Er schliesst einen getrennt
+typisierten relativen schwachen oder externen Nahtlinienfaktor nicht aus.
+
+Das Original v42, Sektion012, definiert L2=det E2 und L3=det E3 auf der
+normalen S2 und druckt die Klassen (c1(L2),c1(L3))=(1,0). Fuer eine wirkliche
+U(2) Uebergangsmatrix des E2 bedeutet dies wind det G2=1. WENN dieselbe
+Matrix auf der oben festgehaltenen Kreisquelle mit der Spurklasse aus (2)
+wirkt, folgt der relative Faktor 1-z unabhaengig von Rang und Frame.
+Es wird keine Matrix passend zum gewuenschten Faktor gewaehlt.
+
+Die staerkere Identifikation mit dem VOLLEN Carrier muss zusaetzlich den
+Originalsatz G_car=S(U(3)xU(2)) aus Sektion005 beachten. Ein Uebergang IN
+DIESER GRUPPE erfuellt c1(E3)+c1(E2)=0. Die Quelle bestimmt jedoch einen
+determinantenerhaltenden FASERSTABILISATOR, keine globale Reduktion aller
+Uebergaenge auf G_car. Ein U(3)xU(2) Buendel mit fester aeusserer Linie
+L=det E=L3 tensor L2 und c1(L)=1 hat weiterhin diesen Faserstabilisator.
+Die gedruckte Klasse (1,0) ist daher konsistent. Die alten tfpt31/32
+Stellen zur occupancy-and-boundary-to-bulk-bridge ordnen die Klasse bereits
+dem totalen Seam Twist eins und seinem Half Angle Lift zu. Es muss hier
+keine neue Kompensationslinie erfunden werden.
+
+Fehlend bleibt der OPERATORanschluss dieser vorhandenen Linie. Insbesondere
+ist der Kupplungsaequator der normalen S2 nicht automatisch der tangentiale
+Quellkreis von B_a und C_Sigma. ADMISSIBLE-INDEX-CARRIER-SELECTOR.txt liest
+diese Originalstellen und den Faserstabilisator getrennt. Die Herkunft der
+minimalen Klasse wird hier als vorhandene Zweigaussage verwendet und nicht
+unabhaengig neu bewiesen.
+
+5. Kleine entscheidende Kontrollen
+----------------------------------
+check_pair_index_determinant.py prueft exakt mit rationalen Matrizen:
+
+  * einen nichtkommutierenden Projektionswechsel mit Eigenwerten des
+    Defekts 1,+4/5,-4/5: Rang3, indefinit, Index1, dennoch Faktor1-z;
+  * eine positive nichtprojektive spurklassige Kovarianzaenderung auf dem
+    alten unendlichen Kreis, deren endlich unterstuetzter Relativoperator
+    denselben Faktor hat; U ist dabei der bilaterale Shift mit endlicher
+    unitaerer Mischung, kein zyklisch abgeschlossener Shift;
+  * die Unterscheidung det(diag(z,1))=z,
+    det(z I2)=z^2 und det(diag(z^-1,1,1,z,1))=1;
+  * die exakte logarithmische Ableitungsidentitaet aus Abschnitt1.
+
+Die Matrizen verifizieren algebraische Identitaeten des bewiesenen Satzes.
+Sie sind kein neues physisches Hilfsmodell und kein endlicher Beweis der
+unendlichen Spurklassenannahme. Diese wird in Abschnitt3 analytisch bewiesen.
+
+6. Was dieser Anschluss schliesst und was noch zu zeigen ist
+-----------------------------------------------------------
+Abgeschlossen ist die skalare relative Antwort der ganzen bezeichneten
+Paarindexklasse. Eine zusaetzliche Auswahl eines primitiven Eigenvektors,
+eine einzelne Fouriermode oder eine Division durch die Carrierdimension
+ist dafuer entbehrlich. Das bisherige positive Rang1 Resultat bleibt fuer
+den besonderen alten Repraesentanten richtig, ist aber keine notwendige
+Voraussetzung fuer dieselbe skalare Determinantenform.
+
+Nicht automatisch abgeschlossen ist die Gleichheit mit der ORIGINALEN EM
+Antwort. Dort steht eine gewoehnliche admissible Spur ueber einen positiven
+Seam Transfer beziehungsweise eine gesonderte minimale Linie. Diese ist
+nicht per Definition der relative Indexdeterminant aus (2). Ebenso liefert
+der ganzzahlige Index nicht den separaten Koeffizienten B gamma=5/4.
+
+Setzt der urspruengliche Antwortvertrag wirklich W=-b Log det_rel und
+q(alpha)=delta_top exp(-2alpha), so ergibt (2) ohne weiteren Spektralfit
+
+  W(alpha)=-b k Log(1-q(alpha)),
+  partial_alpha W=-2 b k q(alpha)/(1-q(alpha)).                 (5)
+
+Zu beweisen bleibt, dass gerade diese W Variation aus der gemeinsamen
+urspruenglichen Feldquelle, Zulassigkeit, Referenz und Massregel folgt.
+Der feste Vorfaktor von q benoetigt weiterhin den vorhandenen Residual
+Wardtest R(alpha)=R(0) aus REWEIGHTING-REVIEW.txt. Die jetzt eingesparte
+Rang1 Auswahl darf nicht als Beweis dieser physikalischen Identitaeten
+ausgegeben werden. Interagierende Raumzeit und die weiteren TFPT Ziele
+werden durch diesen Satz ebenfalls nicht hergeleitet.
+
+Quellen und Deduplizierung
+-------------------------
+1. J. Avron, R. Seiler, B. Simon, The Index of a Pair of Projections,
+   J. Funct. Anal.120(1994),220-237, doi:10.1006/jfan.1994.1031.
+   Autorenfassung:
+   https://phsites.technion.ac.il/avron/wp-content/uploads/sites/3/2013/05/J_Func_Anal_120_220_1994_index_pair.pdf
+   Verwendet fuer die Indexinterpretation der spurklassigen Differenz.
+   Gleichungen(1)-(4) werden hier vollstaendig angegeben und bewiesen.
+2. KMS-AND-CARRIER-TRANSPORT.txt:38-159: bisheriger Satz fuer das feste u.
+3. DIRECT-DEFECT-CLOSURE.txt:16-132: besonderer positiver Rang1 Defekt.
+4. Originale v42 Sektionen005,007,012 sowie die jetzigen unabhaengigen
+   Forward Reviews. Genaue Dateipfade und Hashes: pair-index-results.json.
+
+Verdict: ESTABLISHED_SCOPED fuer(1)-(4), CONDITIONAL fuer den Anschluss des
+originalen E2 Clutch an dieselbe physische Kreisquelle und fuer(5) als EM
+Antwort. Gesamtcontract PARTIAL. Keine Ledger oder Paper Promotion.

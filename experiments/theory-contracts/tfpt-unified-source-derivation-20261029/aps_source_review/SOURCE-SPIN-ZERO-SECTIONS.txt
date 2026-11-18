@@ -1,0 +1,95 @@
+ACTUAL SOURCE SPIN SIGN KERNEL: EXPLICIT ZERO SECTIONS
+Independent analytic continuation, 2026-10-29. No new source or enumeration.
+
+Reused source data:
+  elliptic-moebius-source-bridge-20261026/SOURCE-SELECTED-THETA-SPIN.txt;
+  SIGN-LINE-COVER-DICTIONARY.txt:11-31,62-84;
+  CLOCK-Q-PACKET-COMPATIBILITY.txt:61-84,105-170;
+  aps_source_review/SOURCE-SPIN-SIGN-KERNEL-REVIEW.txt:19-69.
+C: eta^2=1-w^6, q_a=(-omega^a,0), omega^3=1, indices modulo3.
+The already selected spin is S0=O(q0+q1+q2-K_C).
+The actual sign line is L_a=O(q_a-q_(a+1)).
+
+1. Divisors and global section
+Let I_+,I_- be the two points at infinity and represent the canonical divisor
+by K_C=I_++I_-. Indeed dw/eta has a simple zero at each infinity and no
+other zero or pole. Also
+  div(w+omega^a)=2q_a-K_C.
+For T_a=S0 tensor L_a use the literal divisor
+  T_a=2q_a+q_(a+2)-K_C.
+The meromorphic function
+  f_a(w)=1/(w+omega^a)
+has div f_a=K_C-2q_a. Therefore
+  div f_a+T_a=q_(a+2).
+It is a global holomorphic T_a section with its single simple zero there.
+This gives a concrete representative of the previously proved
+  H0(C,T_a)=C f_a, h0=h1=1.
+It is not a globally defined ordinary scalar holomorphic function: its poles
+are absorbed by the specified spin-line divisor.
+
+2. One compatible common spin quadratization
+Put H_a=(w+omega^a)/(w+omega^(a+1)).
+The already specified L_a^2 trivialization is represented by H_a, with
+H0 H1 H2=1. A meromorphic differential representing S0^2 -> K is
+  mu0=(w^3+1) dw/eta,
+  div mu0=2(q0+q1+q2-K_C).
+Their tensor product represents T_a^2 -> K by
+  mu_a=mu0 H_a
+      =(w+omega^a)^2(w+omega^(a+2)) dw/eta.
+Thus, for psi_a represented by f_a,
+  psi_a^2=f_a^2 mu_a=(w+omega^(a+2)) dw/eta.
+Equality uses this explicit common algebraic normalization. Without that
+normalization the right side is determined up to a nonzero scalar.
+
+3. Exact differential transport
+For Omega_b=(w+omega^b) dw/eta, direct substitution gives
+  c^*Omega_b=omega^2 Omega_(b-1),
+  Q^*Omega_b=-i omega^b Omega_(-b),
+where c(w,eta)=(omega w,eta) and Q(w,eta)=(1/w,-i eta/w^3).
+The minus i includes the eta factor; dropping that factor changes the result.
+Hence c sends the section line a to a-1 and Q sends it to -a-1,
+as the existing global divisor calculation already requires.
+
+4. Explicit phase boundary and a compatible representative
+For any spin-compatible section transport in the normalization above, write
+  c^*psi_a=u_a psi_(a-1), Q^*psi_a=v_a psi_(-a-1).
+Their squares must satisfy
+  u_a^2=omega^2, v_a^2=-i omega^(a+2).
+These equations alone do not choose the signs or source lift.
+
+For completeness there is a common representative using the old Kummer
+choice epsilon=(1,-1,-1). The meromorphic Q maps on S0 and L_a are
+  xi/w, and epsilon_a omega/H_(-a-1), respectively, xi^2=-i.
+They follow from Q^*mu0=-i w^-2 mu0 and
+Q^*H_a=omega^2/H_(-a-1). Applying them to f_a(1/w) gives
+  Q^*psi_a=epsilon_a xi omega^(1-a) psi_(-a-1).
+Consequently Q^2 has factors (i,-i,i) and Q^4=-I on all three section lines.
+Changing the spin lift xi to -xi multiplies Q by -1, preserving those squares.
+Compatible changes of Kummer frames conjugate the displayed basis phases.
+An order-three c spin representative can similarly be chosen with
+  c^*psi_a=omega psi_(a-1).
+The exact originally adopted lifts must be compared before fixing these
+representatives as the physical phases; pullback versus flat-solution
+monodromy also retains the old inverse convention.
+
+In the column convention Q^*psi_a=v_a psi_(-a-1), set
+  xi=exp(-i pi/4), B=diag(1,1,-omega).
+The resulting section matrix satisfies the exact single-generator identity
+  Q_kernel=(-xi) B A_q B^-1,
+and spec Q_kernel=(-xi){1,i,-i}.
+This is a spin phase times an explicit conjugacy to the old coefficient A_q.
+It is not equality to v117 or native kappa. The SAME basis change must also
+transport c: its new matrix is B^-1 (omega C_cyclic) B, where C_cyclic sends
+index a to a-1. No full c/Q intertwiner follows from the Q spectrum alone.
+
+5. What is now explicitly evaluable
+The three zero sections, their zeros, squares and c/Q transport can now be
+evaluated directly from the existing curve and sign packet.
+The three squared sections lie in the two-dimensional H0(C,K):
+  psi_0^2+omega psi_1^2+omega^2 psi_2^2=0
+in the normalization of section2. This does not identify the three distinct
+spin lines with one ordinary differential bundle.
+No P1 operator insertion, CAR quantization, boundary domain, selected state,
+OS positivity or physical time is inferred from these holomorphic sections.
+The original closed-operator kernel/cokernel count and Seed scope are retained.
+

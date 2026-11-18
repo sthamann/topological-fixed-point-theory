@@ -1,0 +1,51 @@
+Q1. optimal discrimination in the original two-mode space
+    (v,w | v+w,v+iw)     squared strengths 8/9, 1/3 | cosine between the two axes 0
+    (v,v+w | w,v+iw)     squared strengths 1/3, 4/9 | cosine between the two axes -sqrt(3)/3
+    (v,v+iw | w,v+w)     squared strengths 4/9, 1/3 | cosine between the two axes -sqrt(3)/3
+Q2. weighting that makes the two full operators a quarter turn apart
+    diagonal weighting diag(1, g): axes stay orthogonal: True | equal strengths for g = [1/6] | common squared strength 3/4
+    with diag(1, 1/6): norms of v, w, -(v+w): [4/3, 4/3, 4/3] | cosines: [-1/2, -1/2, -1/2]
+    general real weighting [[1,c],[c,g]], (v,w | v+w,v+iw)     nonsingular positive solutions (c, g): [(0, 1/6)]
+    general real weighting [[1,c],[c,g]], (v,v+w | w,v+iw)     nonsingular positive solutions (c, g): [(-2/7 + sqrt(2)/14, -1/14 + sqrt(2)/7)]
+    general real weighting [[1,c],[c,g]], (v,v+iw | w,v+w)     nonsingular positive solutions (c, g): [(2/7 - sqrt(2)/14, -1/14 + sqrt(2)/7)]
+Q3. directed local return  -w* P v / 2
+    recorded selectors P+, P-: -1/2 -1/2 | identity: -1/2 | diag(1, 1/6): 1/3
+    (v,w | v+w,v+iw)     weighting (c, g) = (0, 1/6): return at the largest contraction 1/3  (0.333333)
+    (v,v+w | w,v+iw)     weighting (c, g) = (-2/7 + sqrt(2)/14, -1/14 + sqrt(2)/7): return at the largest contraction 4*(4 - sqrt(2))/(2*sqrt(2) + 13 + sqrt(305 - 92*sqrt(2)))  (0.356008)
+    (v,v+iw | w,v+w)     weighting (c, g) = (2/7 - sqrt(2)/14, -1/14 + sqrt(2)/7): return at the largest contraction 4*(4 - sqrt(2))/(2*sqrt(2) + 13 + sqrt(305 - 92*sqrt(2)))  (0.356008)
+Q4. v and w as level-two parts of root vertex operators
+    S_2(+alpha) = w, S_2(-alpha) = v for alpha^2 = 2 (a root): exact
+    alpha.beta =  2: Gram at levels 1,2,3 = [2, 3, 4] | normalised [1, 1, 1]
+    alpha.beta =  1: Gram at levels 1,2,3 = [1, 1, 1] | normalised [1/2, 1/3, 1/4]
+    alpha.beta =  0: Gram at levels 1,2,3 = [0, 0, 0] | normalised [0, 0, 0]
+    alpha.beta = -1: Gram at levels 1,2,3 = [-1, 0, 0] | normalised [-1/2, 0, 0]
+    alpha.beta = -2: Gram at levels 1,2,3 = [-2, 1, 0] | normalised [-1, 1/3, 0]
+    explicit two-direction Fock check of the level-two values 1, 0, 0, 1 for products 1, 0, -1, -2: passed
+    E8: normalised level-two Gram values over all root pairs: ['0', '1', '1/3']
+    four roots at 60 degrees   level-two Gram = (2/3) I + (1/3) 11^T
+    four orthogonal roots      level-two Gram = I
+    four roots with zero total charge and equal pairwise products need product -2/3: impossible; 
+    recorded three-letter word (p2, gamma, -p1): pairwise products [-1, -1, -1] | level-one normalised ['-1/2', '-1/2', '-1/2'] | level-two ['0', '0', '0']
+Q5. two-point kernels of the free field as weightings of the modes (2) and (1,1)
+    reflected pair (z, 1/conj z), rho = |z|^2: weight ratio (2):(1,1) = 2*rho + 1
+    two points on the mark circle at angle theta: ratio = cos(theta) + 2 = 2 + cos(theta)
+    ratio 1 + 2 eta with 0 <= eta <= 1 (never 6); directed return relative to the (1,1) weight: (2*eta - 1)/2
+    eta = 0 (unweighted, or antipodal marks):  -1/2 | quarter separation (eta = 1/2): 0 | coincidence (eta = 1): 1/2
+Q6. tetrahedron of qubit states
+    Tr(rho_i rho_j) = (2/3) I + (1/3) 11^T (the second form of the earlier note)
+    = (1/2) 11^T + (1/2) Bloch Gram; Bloch Gram = (4/3) I - (1/3) 11^T has rank 3 (cross entry -1/3)
+    weights -> Bloch vector is affine with determinant -16*sqrt(3)/9 (nonzero): one isolated degeneracy at the centre, winding number of the direction map = sign = -1
+    original quartet v, w, v+w, v+iw: pairwise overlaps squared [1/9, 2/3, 5/9, 2/3, 5/9, 2/3] (not equal: not isotropic)
+Q7. maps of the sphere that preserve the four marks
+    group order 16 | reflections 6 | orders of products of two reflections: [1, 2, 4]
+    every product has finite order: no dilation z -> lambda z with |lambda| != 1 arises
+Q8. recorded sphere family: ratio 2 C_u(a, -3a) / C_u(a, -a)
+    undeformed: C(a,-a) = 1/(8 pi |a|), C(a,-3a) = 1/(16 pi |a|) (Coulomb kernel 1/(4 pi distance)): ratio 1
+    ratio at u = 0, 1/100, 1/4, 1, 4, 25: ['1.0', '0.9976061518', '0.953143786', '0.8740175538', '0.7270895237', '0.4161483698']
+    monotone on the sampled values: True (equality with 1 only at u = 0 on this sample; not a proof for all u)
+Q9. returns of the three-family matter space through the omitted family pair (root adjacency only)
+    weak carrier x family (24)     number of returns through the omitted pair per matter root: [2]  -> scalar
+    colour carrier x family (36)   number of returns through the omitted pair per matter root: [3]  -> scalar
+    family x family (12)           number of returns through the omitted pair per matter root: [1]  -> scalar
+    weak pair (4)                  number of returns through the omitted pair per matter root: [0]  -> scalar
+ALL CHECKS PASSED

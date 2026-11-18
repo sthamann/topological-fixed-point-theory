@@ -1,0 +1,49 @@
+{
+  "steps": [
+    {
+      "step": "GD1.exact Gauss law with dynamical truncated U(1) links (E_max = 1) and two-component Weyl hoppings: [H, G_x] = 0 and [G_x, G_y] = 0 for every vertex",
+      "pass": true,
+      "detail": "max |[H, G_x]| = 0.0e+00, max |[G_x, G_y]| = 0.0e+00; Hilbert dimension 20736"
+    },
+    {
+      "step": "GD2.process invariance: every primitive gate (four link hoppings, four electric terms, the plaquette term) commutes with every G_x, so each single gate keeps a physical state physical",
+      "pass": true,
+      "detail": "max |[gate, G_x]| = 0.0e+00; sector with one static charge (one fermion + flux strings), physical dimension 18; max leakage under single gates 0.0e+00"
+    },
+    {
+      "step": "GD3.static charges +-1 at adjacent vs opposite corners (fermion-free physical sector): at strong coupling the extra flux link costs ~ g^2/2 (string), the ratio tends to 1 as g^2 grows",
+      "pass": true,
+      "detail": "E_max=1, g^2=4.0: (opp, adj) = (3.879, 2.000), ratio 0.939; E_max=1, g^2=8.0: (opp, adj) = (7.938, 4.000), ratio 0.984; E_max=2, g^2=4.0: (opp, adj) = (3.878, 1.999), ratio 0.940; E_max=2, g^2=8.0: (opp, adj) = (7.938, 4.000), ratio 0.985"
+    },
+    {
+      "step": "GD4.truncation: E_max = 1 and 2 give the same strong-coupling static potential within O(1/g^4)",
+      "pass": true,
+      "detail": "g^2 = 8: opposite 7.9380 vs 7.9379, adjacent 4.0000 vs 3.9998"
+    },
+    {
+      "step": "GD5.(statement) Gauss law and per-gate invariance are exact for dynamical U(1) links on the bcc plaquette; NOT shown: massless photons in the infinite-volume limit, SU(2)/SU(3), the joint Gate B + C test",
+      "pass": true,
+      "detail": "Gate C: first exact checkpoint only"
+    }
+  ],
+  "passed": 5,
+  "total": 5,
+  "static_potential": {
+    "(1, 4.0)": [
+      3.878904344511741,
+      2.000001901776566
+    ],
+    "(1, 8.0)": [
+      7.937988266349747,
+      4.000000014898432
+    ],
+    "(2, 4.0)": [
+      3.877935648541254,
+      1.9987012542625828
+    ],
+    "(2, 8.0)": [
+      7.937866436316489,
+      3.9998372657248984
+    ]
+  }
+}

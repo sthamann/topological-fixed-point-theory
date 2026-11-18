@@ -1,0 +1,247 @@
+SOURCE GRAM AUDIT FOR THE E8 A4 x A4 RESPONSE
+================================================
+
+28. Oktober 2026
+
+Frage
+-----
+
+Liefert der vorhandene primitive P1 Randkern oder sein bereits gepruefter
+freier elliptischer Zweiflaechenzweig die isotrope Kontraktion
+
+    G_(beta,gamma) = delta_(beta,gamma)/12
+
+fuer die 50 Einsatzstroeme des A4 x A4 Kanals, oder ist diese Leserstruktur
+eine weitere physische Operation?
+
+Urteil
+------
+
+Im vorausgesetzten lokalen E8_1 Vakuummodul ist die Killing Paarung der 50
+Stroeme bereits kanonisch. In der kompakten adjungierten Wurzelbasis ist ihr
+getrennter Zweipunktkern exakt
+
+    <V_beta^dagger(z) V_gamma(w)>
+      = delta_(beta,gamma) (z-w)^(-2).                  (1)
+
+Die 1/12 Normierung ist nicht in P1 verborgen und auch kein Fit. Sie folgt
+erst nach dem bereits bewiesenen Brackettest aus
+
+    sum_beta B_beta^dagger B_beta = 12 I_50.            (2)
+
+Wenn man also die Killing orthogonalen Einsatzrichtungen als eine inklusive
+Krausfamilie liest, ist die einzige spurtreue gemeinsame Skalierung
+B_beta/sqrt(12), und (1) wird algebraisch zu delta/12.
+
+Der wirkliche primitive P1 Randkern liefert diesen 50 dimensionalen Leser
+nicht. Sein bisher hergeleiteter Zweiflaechenzweig besitzt einen U1 Strom je
+Flaeche und eine Fouriermoden Kovarianz. Die gelesenen Originalstellen
+enthalten weder die 50 E8 Wurzelinsertionen noch eine Abbildung des skalaren
+Kerns in diese Einsatzrichtungen noch die Operation, welche den Stromindex
+unbeobachtet ausspurt. Das E8_1 Vakuummodul ist in der bestehenden Quelle
+ausdruecklich eine zusaetzliche Realisierungspraemisse.
+
+Damit ist die genaue Grenze:
+
+* Die Killing Paarung und der Faktor 1/12 folgen im bereits konstruierten
+  E8 A4 x A4 Antwortobjekt, sobald die inklusive Krauslesart gesetzt ist.
+* Die physische Identifikation dieser Paarung mit dem P1 Zweiflaechenkern
+  und das inklusive Vergessen des 50er Registers folgen nicht aus P1.
+* Der tatsaechliche H8 Cartaneinsatz repariert diese Luecke nicht. Er macht
+  die endliche 50er Kovarianz sogar nachweislich anisotrop.
+
+1. Roher Cocyklus, positive Wurzelhaelfte und kompaktes Adjungieren
+------------------------------------------------------------------
+
+Die vorhandene E8 Antwort verwendet den geordneten reellen Gittercocyklus
+
+    epsilon(p,q)=(-1)^(sum_(i>j) m_i n_j G_ij),
+
+wobei p=Bm und q=Bn in der festgelegten unimodularen E8 Basis geschrieben
+werden. Fuer getrennte radialsortierte Punkte gilt
+
+    <V_beta(z) V_gamma(w)>
+      = delta_(beta+gamma,0) epsilon(beta,gamma)
+        (z-w)^(beta.gamma).                             (3)
+
+Da beta eine Wurzel der Norm 2 ist, lautet die rohe Gegenwurzelpaarung
+
+    <V_(-beta)(z) V_gamma(w)>
+      = delta_(beta,gamma) epsilon(-beta,beta)
+        (z-w)^(-2).                                     (4)
+
+Die 50 Einsatzwurzeln S vom Typ (5,10) enthalten keine ihrer Gegenwurzeln.
+Ihre Gegenwurzeln liegen im konjugierten Sektor (bar5,bar10). Deshalb ist
+der unadjungierte Zweipunktkern innerhalb S identisch null. Ein positiver
+Wurzelhalbsektor ist fuer sich kein positiver Gramraum.
+
+Im tatsaechlichen geordneten Cocyklus haben die 50 Vorzeichen in (4) die
+Verteilung
+
+    epsilon(-beta,beta)=+1 fuer 26 Wurzeln,
+    epsilon(-beta,beta)=-1 fuer 24 Wurzeln.              (5)
+
+Das ist keine physische negative Norm. Der kompakte Stern ist
+
+    V_beta^dagger = epsilon(-beta,beta) V_(-beta).
+
+Der zweite gleiche Faktor aus (4) hebt die rohe Phase quadratisch auf und
+liefert (1). Der Checker der bestehenden E8 Quelle prueft diese Positivitaet
+fuer alle 240 Wurzeln. Der vorliegende Audit hat die Unterverteilung (5)
+direkt fuer den wirklichen 50er Einsatzsektor erneut ausgewertet.
+
+Auf der ganzen Stromalgebra lautet der lokale Zweipunktkern entsprechend
+
+    <J^A(z)J^B(w)> = kappa^(AB) (z-w)^(-2),              (6)
+
+mit Cartanblock delta_ab und Gegenwurzelblock beta gegen -beta. Erst in einer
+kompakten adjungierten Basis wird (6) zur positiven Einheitsmatrix. Diese
+Unterscheidung verhindert, dass eine willkuerlich ausgewaehlte positive
+Wurzelhaelfte als bereits vorhandene Wahrscheinlichkeitsbasis gelesen wird.
+
+2. Fuehrender OPE Koeffizient und endliche Uebertragung sind verschieden
+----------------------------------------------------------------------------
+
+Im unverformten E8_1 Vakuum haben alle 248 Stroeme konformes Gewicht eins.
+Darum bleibt die interne Killingmatrix auch bei getrennten Punkten gleich;
+nur der gemeinsame Koordinatenfaktor in (6) aendert sich. Die lokale OPE
+Isotropie ist also echt und nicht bloss ein Dimensionsvergleich.
+
+Ein Cartan oder Quelleneinsatz veraendert jedoch die endliche Paarung. Fuer
+einen Cartanoperator C mit [C,J_beta]=beta(C)J_beta gilt auf den
+Einstromzustaenden
+
+    <beta| exp(-t C) |gamma>
+      = delta_(beta,gamma) exp(-t beta(C)),              (7)
+
+nach dem kompakten Adjungieren. Bei einer unitaeren Einsetzung exp(isC) ist
+derselbe Faktor eine Wurzelphase. Ladungsneutralitaet paart weiterhin beta
+mit -beta; sie erzwingt aber keine gleichen Diagonaleintraege.
+
+Fuer den tatsaechlichen Achtclock Operator
+
+    H8 = 8 L0 - rho_A7.a0 + (2a-1) Q/2
+
+gilt exakt
+
+    [H8,J_(beta,-1)] = h_beta(a) J_(beta,-1),
+    h_beta(a)=8-rho_A7.beta+(2a-1)Q(beta)/2.             (8)
+
+Die 50 Wurzeln S=(5,10) haben folgende vollstaendige Verteilung. In jeder
+Zeile stehen die Basiswerte b, ihre Multiplizitaeten und h=b+aQ:
+
+    Q=-2: b=7,8,9,10,11,12,13; mult=1,2,3,3,3,2,1.
+    Q= 0: b=1,2,3,4,5,6,7;    mult=1,2,3,3,3,2,1,
+           sowie b=12,13,14,15,16 jeweils einmal.
+    Q=+2: b=5,6,7,8,9,10,11;  mult=1,2,3,3,3,2,1.       (9)
+
+Insbesondere liegen bereits bei Q=0 die beiden Einsatzwurzeln
+
+    beta_1=e_1-e_8,   h_(beta_1)=1,
+    beta_2=e_2-e_8,   h_(beta_2)=2.                     (10)
+
+Damit ist fuer jedes a und jedes t>0
+
+    <beta_1|e^(-tH8)|beta_1> = e^(-t),
+    <beta_2|e^(-tH8)|beta_2> = e^(-2t).                 (11)
+
+Der Unterschied ist unabhaengig vom Wilson Parameter. Der H8 Einsatz kann
+also weder delta_(beta,gamma) noch delta_(beta,gamma)/12 bei endlichem t
+erzeugen. Das ist ein kleiner Gegencheck an zwei wirklichen Wurzeln, waehrend
+(9) die vollstaendige 50er Verteilung festhaelt. Er sagt nicht, dass H8 die
+physische OS Zeit ist. Gerade diese Identifikation ist in der Quelle offen.
+
+3. Was der vorhandene Zweiflaechenkern wirklich liefert
+-------------------------------------------------------
+
+Der gepruefte elliptische Collar beginnt mit dem einzelnen Kreisoperator
+
+    B_alpha=-i d/dtheta+alpha
+
+und dem Zweiflaechen Graphprojektor G. Die geladene CAR Algebra und der
+quasifreie Zustand mit Kovarianz G werden dort ausdruecklich als zusaetzliche
+Feld und Statistikpraemisse eingefuehrt. Auf einer bezeichneten Flaeche
+folgt daraus genau ein U1 Strom mit
+
+    [J_m,J_-k]=m delta_(m,k) I
+
+und bei endlicher Collarbreite beta
+
+    <J_m J_-m> = m/(1-exp(-beta m)),
+    <J_-m J_m> = m/(exp(beta m)-1),       m>0.           (12)
+
+Die Moden sind diagonal, ihre Groessen haengen aber von m und beta ab. Eine
+gemeinsame Multiplikation auf beiden Flaechen hat sogar verschwindenden
+zentralen Cocyklus, weil die beiden Flaechenbeitraege entgegengesetzt sind.
+Keine dieser Aussagen besitzt einen Index beta in der 50er E8 Darstellung.
+
+Man koennte (12) nachtraeglich mit dem E8 Killingraum tensoriell erweitern.
+Dann entstuende ein diagonaler Wurzelindex. Genau diese Erweiterung waere
+jedoch die bereits bekannte zusaetzliche lokale E8_1 Realisierung und keine
+Folge des skalaren Randkerns. Ebenso ist ein Zweipunktwert eine bilineare
+Amplitude. Ihn als unbeobachtete Krauskontraktion
+
+    E(rho)=sum_(beta,gamma) G_(beta,gamma)
+             B_beta rho B_gamma^dagger                  (13)
+
+zu verwenden, ist eine Instrumenten beziehungsweise Ausspurregel. P1 nennt
+diese Operation nicht.
+
+Innerhalb der vorausgesetzten E8 Quelle ist die kleinste mathematische Wahl
+in (13) allerdings nicht frei: Invarianz gibt G=c delta, und (2) erzwingt
+c=1/12 fuer Spurtreue. Die noch offene Wahl ist die physische Verwendung
+dieser inklusiven Kontraktion, nicht ihr algebraischer Koeffizient.
+
+4. Originalquellen und genaue Scopegrenze
+-----------------------------------------
+
+Gelesene Originalstellen und bestehende exakte Ableitungen:
+
+* `/Users/stefanhamann/Projekte/tfpt-theoryv4/documents/archive--tfpt-45--source_extracts--01_boundary_kernel_source/sections/001-section-primitive-core-and-carrier-interface-handoff.tex`,
+  Zeilen 302 bis 343, SHA256
+  `7d6e673d99c29d950dc601283cd51c1cc0b113567eeb79c8396fec9c82a02c79`.
+  Die primitive Spektralwirkung und die spaeter deklarierte lokale
+  Einsetzungsalgebra sind getrennte Daten. Die Definition erzeugt keine
+  konkrete E8 Strominsertion.
+
+* `/Users/stefanhamann/Projekte/tfpt-theoryv4/experiments/theory-contracts/seam-collar-multifield-20261016/E8-BOUNDARY-DICTIONARY.txt`,
+  Zeilen 26 bis 121, SHA256
+  `ed4f112b566060bdaffa8f7490405004ac300a0d2a1be33c8bb3eda3f0614362`.
+  Hier sind die E8_1 Realisierungspraemisse, der Cocyklus, der Stern und alle
+  getrennten Stromantworten explizit. Zeilen 103 bis 120 grenzen den
+  fehlenden P1 Einsetzungspullback aus.
+
+* `/Users/stefanhamann/Projekte/tfpt-theoryv4/experiments/theory-contracts/seam-collar-multifield-20261016/e8_boundary_response.py`,
+  Zeilen 50 bis 118 und 192 bis 202, SHA256
+  `8a77bef68666dd18470fce78e04881676862075d216587b291c9e2c3761d5e6b`.
+  Das ist die tatsaechliche Cocyklus und Zweipunktimplementierung, nicht ein
+  neu gebautes Testmodell.
+
+* `/Users/stefanhamann/Projekte/tfpt-theoryv4/experiments/theory-contracts/collar-current-source-bridge-20261021/PROOF.md`,
+  Zeilen 7 bis 113 und 155 bis 187, SHA256
+  `2dae051bb6a3ee77cc96bc0d63470ac4875950b46057865d1177e4ed3322e5ac`.
+  Diese Quelle beweist (12), markiert die CAR Praemisse und laesst die
+  P1 zu E8 Feldidentifikation ausdruecklich offen.
+
+* `/Users/stefanhamann/Projekte/tfpt-theoryv4/experiments/theory-contracts/joint-native-algebra-selection-20261016/ORIGINAL-ORDERED-CURRENT-KERNEL-AND-SEAM-GRADING.txt`,
+  Zeilen 4 bis 99, insbesondere Zeile 17, sowie 108 bis 160, SHA256
+  `62a9eeb4519b59d4514445f9d4dd5d2059e29179956a4c97ec94b7bae9ae3094`.
+  Dort ist der
+  vorhandene Quellenstrom als festes c=1 Unterobjekt und nicht als alle E8
+  Felder typisiert.
+
+* `/Users/stefanhamann/Documents/Codex/2026-10-23/untersuch-nochmal-eie-urwpr-nge-von/research-20261027-source-ground-state/A7-E7-CLOCK-DECOMPOSITION.txt`,
+  Zeilen 77 bis 107, SHA256
+  `62c251a47e1b0b67f034027fec66a5d0ffaab35abf61dcb2e709395c3bc82581`.
+  Daraus stammen (8) und die exakte H8 Typisierung.
+
+* `/Users/stefanhamann/Documents/Codex/2026-10-23/untersuch-nochmal-eie-urwpr-nge-von/research-20261028-hodge-complement-channel/E8-A4-PETERSEN-RESPONSE.txt`,
+  insbesondere Abschnitte 2, 3 und 6, SHA256
+  `8311a51e2f9a0e5e9eb9307fc329cdce77e5d65a599da3fa5692b7460ec63a38`.
+  Dort sind die 50 wirklichen Bracketoperatoren und (2) bewiesen.
+
+Der konkrete neue Schluss dieses Audits ist damit eng: Der fehlende
+Koeffizient 1/12 ist nach Wahl der inklusiven E8 Stromlesart bereits durch
+Killingnorm und Spurtreue fest. Die Originalquelle besitzt aber noch keinen
+Operatorpfeil vom skalaren P1 Zweiflaechenkern zu genau dieser inklusiven
+Lesart. Weder die endliche Collar Kovarianz noch H8 liefern ihn indirekt.

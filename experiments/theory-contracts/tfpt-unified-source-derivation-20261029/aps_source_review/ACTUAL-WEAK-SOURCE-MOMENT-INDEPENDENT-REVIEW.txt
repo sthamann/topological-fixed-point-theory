@@ -1,0 +1,132 @@
+INDEPENDENT REVIEW: ACTUAL WEAK CONNECTION IN THE GIVEN JOINT SOURCE
+30 October 2026. Targeted analytical and exact-checker review.
+Verdict: CORRECT_IN_THE_STATED_FINITE_MODE_SCOPE. No Atlas or original edit.
+
+1. Operator types and signs
+The checker uses the actual v252 representation. With
+
+  T=pi(0,i sigma_x,0)
+
+the particle block is i tx. Since J_F is antiunitary,
+
+  J_F T J_F^-1=-i J_F tx J_F^-1.
+
+Therefore the infinitesimal real gauge lift and its Hermitian coefficient are
+
+  L=T+J_F T J_F^-1=i(tx-J_F tx J_F^-1),
+  Q=-iL=tx-J_F tx J_F^-1.                              (1)
+
+The minus sign on the antiparticle block is correct. The exact checker verifies
+Q=Q* and [Q,gamma_F]=0. For A(t)=pI+tQ,
+
+  h(t)=A(t)gamma_F-i gamma_F D_F
+
+is selfadjoint because A commutes with gamma_F, D_F is selfadjoint and
+{D_F,gamma_F}=0. Direct multiplication gives
+
+  h(t)^2=A(t)^2+D_F^2-i[A(t),D_F].                    (2)
+
+Thus the construction retains the noncommuting weak response. In the code,
+H0+tH1=4h at p=1/4 is exact:
+
+  H0=gamma_F-4i gamma_F D_F,
+  H1=4Q gamma_F.
+
+The polynomial update multiplies these matrices in their actual order and does
+not replace them by commuting symbols.
+
+2. Independent factor check
+Suppress colour and the conjugate block for one moment. On one particle colour
+block order the states as (u_L,d_L,u_R,d_R). Q is sigma_x on the left doublet
+and zero on the right singlets. Exact block multiplication gives for two down
+matrices with the same singular values
+
+  Delta [t^2] Tr h^6
+    =6 Delta Tr((Y_dY_d*) (Y_uY_u*)).                 (3)
+
+The factor6 is the cyclic sixth-word multiplicity. The actual v252 quark sector
+has three identical colours, and its J_F conjugate block gives the same real
+trace. Consequently
+
+  Delta [t^2] Tr_96 h^6
+    =36 Delta Tr((Y_dY_d*) (Y_uY_u*)).                (4)
+
+For the checker's data the family traces are440 and280. Equation(4) yields
+
+  36(440-280)=5760,
+
+which independently reproduces the saved symbolic result. The identical,
+nonzero Ye, Ynu and MR blocks contribute equally to both controls and cancel in
+the difference. They were nevertheless retained in the exact96 construction.
+
+The checker also obtains Delta Tr h^2=Delta Tr h^4=0 and
+
+  Delta Tr h^6=5760 t^2
+
+as a polynomial identity, not at a selected numerical value of t. The down
+singular data agree exactly. I found no sign, order or normalization error in
+this calculation.
+
+3. Cross-face coefficients
+For the actual finite cross block
+
+  X=(2 cosh(ell h))^-1
+
+the exact even expansion is
+
+  X=I/2-ell^2h^2/4+5ell^4h^4/48-61ell^6h^6/1440+O(ell^8).
+
+Using the moment differences above gives
+
+  Delta Tr X
+    =-(61/1440) 5760 ell^6 t^2+O(ell^8)
+    =-244 ell^6 t^2+O(ell^8).                         (5)
+
+Moreover
+
+  log det X=-96 log2-Tr log cosh(ell h),
+  log cosh z=z^2/2-z^4/12+z^6/45+O(z^8),
+
+so
+
+  Delta log det X=-(5760/45)ell^6t^2+O(ell^8)
+                 =-128 ell^6t^2+O(ell^8).             (6)
+
+Both reported coefficients are correct. These are finite p=1/4 asymptotics;
+they do not exchange the ell expansion with an infinite circle-mode sum.
+
+4. Stronger statement for every fixed positive width
+For t nonzero, equation(4) says that the third power sums of the eigenvalues of
+h(t)^2 differ. Hence the two h(t)^2 eigenvalue multisets differ. On u>=0 the map
+
+  u -> 1/(2 cosh(ell sqrt(u)))
+
+is injective for every fixed ell>0. Functional calculus therefore sends the two
+different h^2 multisets to different X eigenvalue multisets for every such ell.
+An individual scalar trace can coincide at an isolated ell, but the complete
+cross-block spectra cannot.
+
+The full unlabelled two-face G remains an orthogonal projection of the same rank
+in both cases, so its spectrum is still only0 and1. The conclusion concerns its
+labelled face and crossing blocks, equivalently the retained logit data. The
+root report states this distinction correctly.
+
+5. Exact scope
+This strengthens the earlier permitted-word observation into a response of the
+already specified finite source operator h(t) and its actual cross-face block.
+The formal t probe records an available weak connection direction. It does not
+select a physical gauge background or coupling. The calculation covers one
+quarter mode p=1/4 and does not supply the all-mode determinant, S_prim,
+S_adm or Gamma_ren coefficient. It also does not turn the fixed diagnostic
+Yukawa inputs into dynamical variables or a mass-selection principle.
+
+FILES REVIEWED
+  aps_source_review/ACTUAL-WEAK-CONNECTION-AND-JOINT-SOURCE.txt
+  aps_source_review/check_actual_weak_source_moment.py
+  aps_source_review/actual-weak-source-moment-results.json
+  verification/v252_full_finite_triple.py
+
+The targeted checker replay passed. Reviewed file hashes at that replay:
+  checker 7731669986a50e583c71de6066d97e8bbd4c5affc0603ca160cb02c02ddb7cd7
+  result  c68d755ca5e32b332d300e0b0f628e3c245ead4ca00490e0f9ae23bdb3e2cdd8
+  report  705850cdc2e54ccb0edffbaf3c6dfd38446bca31c5bfffda0b21d424ab58cad3

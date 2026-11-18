@@ -1,0 +1,91 @@
+Herkunft: Claude bestehender Chat https://claude.ai/chat/23a5a91a-95a2-475c-84ba-1ce29e045339
+Abschluss am2026-10-29 sichtbar; unabhängige Prüfung erforderlich.
+
+Fortsetzung 21: Der Reflexionslift auf dem wirklichen Signlinienpaket
+Kurzfassung
+
+Ich setze nicht mehr bei I-μ₄ an. Ausgangspunkt ist das vorhandene Genus-2-Cover C: η² = 1 − w⁶ mit dem negativen q-Paket L_a = O(q_a − q_{a+1}) und dem gemeinsamen K-Kozykel aus deinem Review (m_A = (0,0,−1,−1), Slots L₀, L₁, D⁻¹L₂, D⁻¹). Ich übernehme ihn unverändert und frage nur: Welche antilineare Feldreflexion lässt dieses Objekt mit Verbindung, Marken und Clock überhaupt zu? Das ergibt vier exakte Ergebnisse (reflection_lift.py).
+
+Basisspiegelung. Sie ist durch den markierten Pass (4,3,2) eindeutig erzwungen: t ↦ t̄.
+Paritätshindernis. Eine Feldreflexion, die die Orientierung der Normalsphäre X umkehrt, existiert auf diesem K-Bündel nicht, für kein m. Der geometrische Träger der Reflexion kann also nicht X sein.
+Eindeutiger Lift. Unter den sechs Lifts von t ↦ t̄ auf C erhält genau einer die m-Marken und die parallele Clock σ₀: τ_E^± = Q^{±1}∘τ₀, über z ↦ ±iz̄. Er fixiert alle drei Linien.
+Doppelungsform. τ_E ist eine maximale reelle Struktur mit drei Ovalen. Damit ist C die Schottky-Verdopplung einer Hose C₊ (Sphäre mit drei Rändern). Jede Familienlinie ist auf genau einem Saumoval periodisch und auf den beiden anderen antiperiodisch.
+
+OS-Positivität, Zustand und Zeit sind damit nicht bewiesen.
+
+1. Übernommene Korrekturen
+Für ∇ = d + a mit Residuum −¼ auf O(1) ist die horizontale Monodromie +i, nicht −i.
+Der Ausschluss des Duals m_F^∨ aus Fortsetzung 20 ist zurückgezogen. Der reine Flavorfaktor bleibt A ∈ sl₃, und das geladene Triplett darf eine U(3)-Wirkung tragen.
+Die Punktabbildung lautet (z, v) ↦ (iz̄, U v̄). Die Fassung mit U⁻¹ ist zurückgezogen.
+I-μ₄ war keine Originalherleitung; ich baue nicht weiter darauf.
+Das C-Cover, die V4-Zerlegung und der K-Kozykel mit paralleler adaptierter Clock werden unverändert wiederverwendet.
+2. Satz R0: Die Basisspiegelung ist erzwungen
+
+Eine antiholomorphe Involution von ℙ¹_t, die das markierte Dreieckscover erhält, muss jeden Verzweigungswert festhalten, weil die Ordnungen 4, 3, 2 verschieden sind. Die einzige antiholomorphe Involution mit Fixpunkten 0, 1, ∞ ist t ↦ t̄.
+
+Ihre Lifts auf C kommen in zwei Familien:
+
+V_a: w ↦ ω^a w̄, über z ↦ ±z̄ (Eckachsen);
+E_a: w ↦ ω^a / w̄, über z ↦ ±iz̄ (Kantenachsen).
+
+Die Linie η ist jeweils durch η = z(1 − w³) festgelegt. Die gelieferte Relation τ₀*L̄_a = L_{−a−1} ist genau V₀ und reproduziert sich in der Rechnung.
+
+3. Lemma P: Kein Reflexionsträger auf der Normalsphäre
+
+Eine antilineare Reflexion des ganzen E8-Feldbündels entspricht einem Isomorphismus σ*P ≅ α(P) mit einem Automorphismus α aus N_{E8}(K). Angenommen, σ kehrt die Orientierung der kompakten Normalsphäre X mit ∫c₁(E) = 1 um.
+
+Dann hat σ*E die Klasse c₁ = −1. Also muss α die Konjugation E ↦ Ē tragen.
+Damit (16,4) in E8 nach (16̄,4̄) geht, muss α auch den Familienfaktor dualisieren: m ↦ −1 − m.
+Der triviale Paket-Slot kann nur auf sich selbst abgebildet werden, weil die drei L_a nichttrivial sind. Das verlangt m₃ = −1 − m₃, also m₃ = −½. Das ist keine ganze Zahl.
+
+Folgerung. Für jeden natürlichen Lift auf diesem Paket ist eine X-umkehrende Feldreflexion unmöglich. Die Reflexion muss auf X orientierungserhaltend wirken, hier als Identität, und ihre Umkehr auf C tragen.
+
+4. Satz R1: Eindeutiger Lift durch Marken und Clock
+
+Ich prüfe alle sechs Labelpermutationen gegen die Slotdaten (m, Linie, R-Phase): (0, L₀, ω), (0, L₁, ω²), (−1, L₂, ω²), (−1, 1, ω).
+
+Lift	Permutation der L_a	m erhalten	σ₀-Eigenräume erhalten
+V₀ = τ₀	(2,1,0)	nein	nein
+V₁	(0,2,1)	nein	ja
+V₂	(1,0,2)	ja	nein
+E₀	id	ja	ja
+E₁	(1,2,0)	nein	nein
+E₂	(2,0,1)	nein	nein
+
+Die Variante Θσ₀Θ⁻¹ = σ₀ ist für jeden Lift ausgeschlossen: Der triviale Slot bleibt fest und trägt die Phase ω, nicht ω̄.
+
+Damit ist Θ = c_kompakt ∘ τ_E mit τ_E⁺(w, η) = (1/w̄, −i η̄/w̄³) eindeutig bis auf die hyperelliptische Involution ι = Q². Es gilt τ_E⁺ = Q∘τ₀ exakt, und τ_E⁺ liegt über z ↦ iz̄. Auf den Kummer-Funktionen gilt (H_a(1/w̄))‾ = ω·H_a(w), also bildet τ_E jede Linie mit einer festen Phase auf sich ab. Die parallelen Clocks κ und σ₀ werden invertiert, die Marken M und R bleiben erhalten.
+
+Einfügungen. Der gemischte Higgs-Kanal (10,6) ist eine reelle Darstellung. Θ-Realität von Φ ist also eine konsistente Bedingung; für das tatsächliche Φ ist sie damit nicht bewiesen. Die gegebene Verbindung A_W bleibt invariant, weil sie von X stammt und auf C flach und reell ist.
+
+5. Satz R2/R3: Doppelung und Saumrandbedingungen
+
+Fixmenge. Die Fixpunkte von τ_E⁺ erfüllen |w| = 1 und |η|² = 2·sin 3θ. Das sind drei Ovale, also g + 1, die maximale Zahl (M-Kurve). Jedes Oval verbindet einen p- mit einem q-Punkt: p₀–q₂, p₁–q₀, p₂–q₁. Eine M-Kurve ist trennend (Klein). Also gilt C ∖ Fix = C₊ ⊔ C₋, wobei C₊ das Geschlecht 0 und drei Ränder hat. Das ist genau die Originalform M̃ = M₊ ∪ M₊^op mit Naht = Fix τ, hier auf dem Koeffizientencover.
+
+Holonomien. Das Oval um p_k und q_{k−1} ist homolog zu einer Schleife um den Schlitz zwischen beiden Punkten. Daraus folgt Hol(L_a, Oval k) = (−1)^{Windung von H_a um diesen Schlitz}, und das ist +1 genau für k = a.
+
+Jede Familienlinie ist auf genau einem Oval periodisch (Ramond) und auf zwei antiperiodisch (NS).
+Konsistenzprüfung: Das Produkt über die drei Ränder der Hose ist (+1)(−1)(−1) = +1, wie für ein flaches Bündel auf C₊ erforderlich.
+Folge: Jedes Saumoval trägt genau eine periodische Familienlinie und damit genau eine eindimensionale Nullmode. Die drei Familien entsprechen den drei Saumovalen. Der triviale Slot ist auf allen Ovalen periodisch.
+6. Bilanz
+
+Wiederverwendet: das C-Cover, das q-Paket, der K-Kozykel mit paralleler Clock, Q und die Relation zu τ₀.
+
+Neu bewiesen (unter den Voraussetzungen: Θ ist antilinear, deckt die passerhaltende Basisspiegelung und ist ein Automorphismus des ganzen E8-Bündels):
+
+Satz R0: Die Basisspiegelung ist eindeutig.
+Lemma P: Keine X-umkehrende Reflexion existiert, für kein m.
+Satz R1: E₀ ist der eindeutige marken- und clockverträgliche Lift.
+Satz R2: Die Fixmenge ist die Doppelung einer Hose.
+Satz R3: Die Holonomietabelle mit „eine Familie periodisch pro Oval“.
+
+Offen und kritisch:
+
+Das Original nennt in P1 eine orientierte Naht; hier gibt es drei Ovale. Ob die Originalnaht diesen drei Komponenten entspricht, ist die erste tragende Identifikation, die zu prüfen ist. Bis dahin baue ich nicht darauf weiter.
+OS-Positivität, Domänen (die natürliche Randbedingung ψ₋ = Θψ₊ auf den Ovalen), Zustand und Zeit sind nicht hergeleitet.
+7. Nächster entscheidender Test
+origin 191 weiterlesen. Der Satz bricht ab mit „(Checked: the Cardy route“. Der Cardy-Verdopplungstrick, also eine Randtheorie auf C₊ als chirale Theorie auf der Schottky-Verdopplung, ist genau die Situation von Satz R2. Wenn das Original diesen Weg mit Ränderzahl oder Randzuständen ausführt, ist der Vergleich mit den drei Ovalen und der Holonomietabelle sofort möglich.
+Positivität prüfen. Für die freie chirale Fermion auf C, getwistet mit L_a, die Θ_E-Paarung von Korrelatoren mit Einsetzungen in C₊ berechnen, mit der Randbedingung ψ₋ = Θψ₊.
+Nahtzahl prüfen. Ob die eine P1-Naht als Vereinigung der drei Ovale oder als ein ausgezeichnetes Oval gelesen werden muss. Davon hängt ab, ob „Einheitswindung“ hier eine Linie pro Oval oder eine Gesamtwindung bedeutet.
+
+Bildlich: Die Spiegelung ist nicht frei gewählt. Sie muss die drei markierten Ecken des Dreiecks festhalten, das Familienpaket unvertauscht lassen und die Uhr umdrehen. Das leistet nur eine Achse. Sie schneidet die Kurve in zwei identische Hosen, und an jedem der drei Hosenbeine läuft genau eine Familie periodisch herum.

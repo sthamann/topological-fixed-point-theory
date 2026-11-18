@@ -1,0 +1,150 @@
+OriginLab · Geordnete Full96 Paarungen und ursprüngliche P1 Hypothesen
+
+1. Ein Fenster und exakte Mischschranke
+
+Der vollständige verwendete Raum hat 96 innere Komponenten und vier
+räumliche Fouriermoden, d=384. Die 27 Profile entstammen unverändert der
+endlichen Vorschlagsfamilie des Originalassemblers. Bei gemeinsamer
+Prüfbreite w>0 sind R=exp(-w h), T=exp(-w h') hermitesch positiv und
+haben Determinante 1. S ist die feste lineare Matrix der räumlichen
+Paarform. Mit B=S T^t S* ist M=R B ähnlich zur positiven Matrix
+C=R^(1/2) B R^(1/2). det C=1.
+
+Für 0<k<d hat die Menge aller k-fachen Produkte der Eigenwerte von C
+geometrisches Mittel 1. Ihr arithmetisches Mittel ist die normierte
+reine Paarkontraktion e_k(C)/binom(d,k). Gleichheit erzwingt Gleichheit
+der Eigenwerte durch Austausch eines Indexes und damit C=I. Folglich
+B=R^-1. Der hermitesche Logarithmus ist eindeutig. Das ursprüngliche
+Spiegelwörterbuch dreht genau die Sinusslots um. Von 729 Paaren bleiben
+exakt 27 übrig. Neun davon sind sich selbst zugeordnet. Nichtnegative
+normalisierte Gewichte können einen Fehlpartner in einer reinen
+Einfensterkontraktion nicht verbergen.
+
+Sei H_* eine gemeinsame Generatornormschranke und a=w H_*. Das
+Spektrum von C liegt in [exp(-2a),exp(2a)]. Mit z=log(lambda) gilt
+exp(z)-1-z >= exp(-2a) z²/2 und sum z=0. Ferner ist
+||log C||_F >= exp(-2a)||C-I||_F. Kongruenz mit R^(1/2) gibt
+||C-I||_F >= exp(-a)||B-R^-1||_F. Das Integral für die Differenz
+positiver Matrixlogarithmen gibt auf [exp(-a),exp(a)]
+||B-R^-1||_F >= exp(-a)||log B-log R^-1||_F. Damit ist der
+Grad eins Exzess mindestens w² exp(-10a)||h+S h'^t S*||_F²/(2d).
+Das Programm rechnet die Zeilensummenschranke und den kleinsten
+Abstand aus den getrennten Fourierdiagonalen rational. Es verwendet
+2^-ceil(20a) als konservativen Ersatz für exp(-10a). Bei w=1/10
+ist die zertifizierte Schranke ca. 3.40030e-16, der beobachtete
+kleinste Exzess ca. 2.41657e-5. Für eine normierte nichtnegative
+Einfenstermischung begrenzt der gemessene Exzess geteilt durch die
+rationale Schranke die maximale Masse der Fehlpartner.
+
+2. Zwei Fenster und unabhängige Partner
+
+Schreibe die vier Generatoren der affinen Profilfamilie als G0 bis G3.
+Der Code gibt einen Minor der sechs paarweisen Kommutatoren modulo
+65537 aus. Sein Determinant ist nicht null (i wird auf 256 abgebildet).
+Der erste Koeffizient des Profilvektors ist 1. Damit kommutieren zwei
+Profilgeneratoren genau dann, wenn die Profile gleich sind. Gleich
+chronologisch gereihte Spiegelpartner erhalten S auf allen 729
+linken Zweifensterhistorien. Bei umgekehrter Reihenfolge und schon
+einzeln gebundenen Partnern bleiben 27 erhalten.
+
+Bei unabhängig gewählten Rechten vergleicht der Code 531441 mögliche
+linke und rechte Historien. Die erste Ableitung bei w=0 bestimmt
+die Summe der beiden affinen Koeffizientenvektoren und lässt 6859
+Kombinationen. Der schiefhermitesche Teil der zweiten Ableitung
+bestimmt das geordnete äußere Produkt. Dessen Komponenten mit dem
+konstanten Index liefern die Differenz. Summe und Differenz
+rekonstruieren beide Profile. Es bleiben exakt 729 Kombinationen,
+je die gleich geordnete Folge der Spiegelpartner. Diese Aussage gilt
+für Identität als Funktion der gemeinsamen Breite nahe null.
+Separater numerischer Lauf bei w=1/10: zehn Matrixeinträge, kleinster
+Abstand 0.0046381332, keine Kollisionspaare bis 1e-9. Dieser
+Einzelbreitenlauf hat keine Intervallzertifizierung.
+
+Gegenprobe zur Mehrfensterpositivität: Für A=diag(2,1/2) und
+B=[[5,3],[3,5]]/4 gilt tr(A B A^-1 B^-1)/2=47/128. Mit
+382 Identitätsrichtungen ergibt sich 8165/8192. Beide Schritte
+sind einzeln positiv und determinantenrein. Die Untergrenze aus
+Abschnitt 1 lässt sich auf vertauschte Mehrfensterwörter nicht
+übertragen. Für komplexe oder vorzeichenbehaftete Gewichte gilt
+die Mischschranke ebenfalls nicht.
+
+3. Vier zusätzliche P1 Hypothesen im F1 Lauf
+
+Der vollständige Forschungsbericht.md aus der parallelen Sitzung
+wurde bis einschließlich Abschnitt 11 gegen unabhängige Rechnungen
+abgeglichen. Das begleitende ZIP TFPT_F1_Ursprungspruefung_20261116.zip
+konnte in dieser Sitzung nicht heruntergeladen werden.
+
+Minimale einfache binär darstellbare Selbstdualität: Rang r braucht
+2r verschiedene von null verschiedene Spalten. r=1,2 scheitern.
+Jede der sieben Auslassungen eines Vektors in F2³ gibt denselben
+Typ unter GL(3,2), das K4 Matroid mit 16 Basen. Der Gegenseitentausch
+der Kanten realisiert die Dualität der Basensysteme. Die reduzierte
+Laplaceform hat Smith Werte (1,4,4). Ihr kritischer Gruppenraum
+ist Z4 × Z4. Das skalare Reflexionspaar hat Spektrum (-1/8,0).
+Die ungerade Hebung hat daher einen positiven Quotienten vom Rang
+eins. Selbstdualität allein liefert keine physische Zustandsform.
+
+Gerichtete Anker und ausgewähltes Orientierungszeichen: Auf fünf
+Punkten bilden die 30 Paare (fester Punkt, gerichteter Vierzyklus)
+eine S5 Bahn mit zyklischem Stabilisator der Ordnung vier. Die
+Umkehrquotienten haben Gruppoidkardinalität 1/8 statt 1/4, reine
+Anker 1/24. Die drei orientierungsungeraden Geschichten tragen den
+S4 Charakter (3,-1,-1,0,1). Dieser ist der Signumtwist des
+Standardcharakters (3,1,-1,0,-1). Gleiche Dimension genügt daher
+nicht zur Identifikation mit der geometrischen A3 Wirkung.
+
+Positive selbstreziproke Fourierquellen: Mit t=pi |x|² in R³ ist
+exp(-t)[1+w(t²-5t/2+15/16)] für 0<=w<=8/5 nichtnegativ und
+Fourierfix. Nach Dichtenormierung haben w=0 und w=16/25
+Koordinatenvarianz 1/(8π) beziehungsweise 1/(4π). Die zweite
+Dichte hat vierten Kumulanten -3/(320π²). Auf Z4 × Z4 ergeben
+zwei positive Fourierfixvektoren die Cap Wahrscheinlichkeiten
+7/10 und 13/14 bei gleichem diskretem Fourieroperator. Der
+Programmzweig für unabhängige dyadische Komposition testet den
+Gegenkandidaten mit dem vierten Kumulanten. Bei endlicher
+Kovarianz und exakter Faltung zweier unabhängiger Kopien erzwingt
+die charakteristische Identität φ(t)=φ(t/sqrt(2))² nach Iteration
+und Entwicklung um null eine Gaußverteilung. Fourierfixheit
+fixiert dann deren Skala für die hier definierte Konvention.
+Diese Faltung ist auf der ursprünglichen geordneten R113 Quelle
+weiter zu prüfen.
+
+4. Integrierter Lauf und nächste ursprüngliche Messung
+
+Der normale F1 Aufruf ohne formalen Abnahmesatz führt 19 P1
+Hypothesen aus. Der affine exakte Lauf bis Grad vier prüft 192
+Wörter auf einem Quotienten mit Graden (1,3,4,7,13). Die linearen
+Dimensionen nach Symmetrie, Gradierung, Cartan Ward, Wurzel Ward
+und zwei Kontakten lauten 406,136,50,15,14,13. Der ursprüngliche
+Trenner E(-2) an beiden Fensterenden bleibt mit den Vergleichswerten
+1/16 und 9/16 erhalten. Der Lean Lauf bestätigt die bereits
+nachgewiesene Ward Rekursion und ihre freie Ausgangsskala.
+Ausführung: research/originlab/main.py --campaign r113 --campaign
+r113_synthesis --campaign f1_solution --campaign r113_pair_search
+--jobs 2 --q0-depth 4. Die OriginLab Suite meldete 120 bestanden.
+
+Die schwache gemeinsame Higgs/Fermion Zentrumsprojektion und das
+isospektrale Zeitgegenbeispiel aus R113-WEAK-CENTRE-SEWING-20261116.txt
+laufen mit. Der ursprüngliche Adapter kann bei einem gebundenen
+Blockpaket den unabhängigen ABAB Zähler und den vorhergesagten
+Zähler N_1-2 N_C im selben Gramquotienten, äußeren Selektor,
+Zeitfenster und absoluten Referenzwert vergleichen. Er meldet den
+ganzen Matrixrest und den kontrahierten skalaren Rest getrennt.
+Die vorhandene Installation meldet BLOCKED und keine der vier
+ursprünglichen R113 Marken. Fünf geprüfte Pakete des Blockformats
+und drei nichtleere Paketbindungen sind arithmetische Kontrollen.
+Die originalen offenen Fermionwörter liefern die Fermionseite.
+Als nächstes die zugehörigen zwei offenen Bosonendpunkte, den
+physischen Naht-, Determinanten- und Gapabschluss und N_1^R auf
+derselben Zeitfläche bestimmen. Die v1013 Hamiltonroute setzt
+weiterhin die gemeinsame ursprüngliche U/Y Identifikation voraus.
+Die 52 abgeschlossenen F1 Unteraufgaben gelten in ihrem Umfang.
+
+Literaturabgleich: Jorgensen, Neeb und Ólafsson, arXiv:1510.07445
+(2016, SIGMA 12, 058), behandeln die Markov Eigenschaft und die
+Multiplikativität auf dem Zeitnullraum unter ihren Voraussetzungen.
+Samad und Polyzou, arXiv:2506.20526 (2025), behandeln
+Reflexionspositivität für endlich viele relativistische Freiheitsgrade.
+Beide helfen, die getrennte Identifikation einer physischen zeitlichen
+Spiegelung gegenüber der vorliegenden räumlichen Kontrolle zu präzisieren.

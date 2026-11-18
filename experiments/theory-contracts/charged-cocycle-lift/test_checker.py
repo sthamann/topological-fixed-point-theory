@@ -26,7 +26,7 @@ class Regression(unittest.TestCase):
     def test_01_six_source_pins(self):
         self.assertEqual(len(r.PINS), 6)
         for name, digest in r.PINS.items():
-            self.assertEqual(hashlib.sha256((r.ROOT/name).read_bytes()).hexdigest(), digest)
+            self.assertEqual(r.source_digest(r.ROOT/name), digest)
 
     def test_02_wrong_source_pin_rejected(self):
         with patch.dict(r.PINS, {next(iter(r.PINS)): "0"*64}):
@@ -163,9 +163,16 @@ class Regression(unittest.TestCase):
         self.assertFalse(self.record["full_lattice_zero_modes"]["physical_spatial_derivatives_derived"])
 
     def test_20_full_replay_and_local_hashes(self):
-        self.assertEqual(json.loads(json.dumps(r.run())), self.record)
-        for name, digest in self.record["sources"].items():
+        actual = json.loads(json.dumps(r.run()))
+        self.assertEqual(actual.pop("source_pins"), r.PINS)
+        for name, digest in actual.pop("sources").items():
             self.assertEqual(hashlib.sha256((HERE/name).read_bytes()).hexdigest(), digest)
+        # Compare the full certificate while keeping the archived provenance intact.
+        expected = dict(self.record)
+        self.assertEqual(expected.pop("sources")["checker.py"],
+                         "4be4fa0ea26e4ce302b59f53f86787953544c7ea355168ccc24501501cc8d1dc")
+        expected.pop("source_pins")
+        self.assertEqual(actual, expected)
 
 
 if __name__ == "__main__":

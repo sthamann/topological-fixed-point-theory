@@ -19,11 +19,11 @@ HERE = Path(__file__).resolve().parent
 ROOT = HERE.parents[2]
 PINS = {
     "verification/v983_simple_current_generator.py": "769a9c5cb5e6518d8d2a445d347150f5ce0d1410c95db263ca2db72466e176c8",
-    "verification/v1033_charged_disorder.py": "01c64748c70784b17cf1c61b7bd2b4c51a69c19c4a2274f09028892eab5cb83f",
+    "verification/v1033_charged_disorder.py": "5053d08ad5448f33f2c6d141f92ed1e06f5dfb9762f92af2bab9816c0ad161b8",
     "verification/v988_psi_lambda_reduction.py": "eae02e79be5703ccec67f1f11470e3ffd99895b17575c9ce1d553720bd1752cd",
     "verification/v469_seam_crossedproduct_route.py": "180a65f5e56dce6cca8c519875ab31e3e0834fb8818175f2a63c896133e72089",
     "articles/2026-08-30/mmst_charged_scaling_limit_en.tex": "ab2802e14a31715be3552ee2a529e88afeb1a59e5d57ffb9cbea8f32e4df0462",
-    "experiments/theory-contracts/charged-cocycle-lift/checker.py": "4be4fa0ea26e4ce302b59f53f86787953544c7ea355168ccc24501501cc8d1dc",
+    "experiments/theory-contracts/charged-cocycle-lift/checker.py": "2df67cda01259c0719a3724d995d0832b0b79878d8f4fa5e6d9aacea71a0aa02",
     "experiments/theory-contracts/charged-cocycle-lift/validation.json": "170bc4f5a63727c8d26265bf87ba5c36a737b8d55de810a7a2ba214dbe2b4ef9",
 }
 SX = sp.Matrix([[0, 1], [1, 0]])
@@ -52,9 +52,23 @@ def load(relative, name, root=ROOT):
     return module
 
 
+
+def source_digest(path):
+    if path.suffix != ".tex":
+        return hashlib.sha256(path.read_bytes()).hexdigest()
+    # The refactor retained the original article as literal includes.
+    old_path = sys.path[:]
+    try:
+        sys.path.insert(0, str(ROOT / "verification"))
+        from tex_sources import read_tex
+    finally:
+        sys.path[:] = old_path
+    return hashlib.sha256(read_tex(path).encode("utf-8")).hexdigest()
+
+
 def inherited(root=ROOT):
     for name, digest in PINS.items():
-        require(hashlib.sha256((Path(root)/name).read_bytes()).hexdigest() == digest,
+        require(source_digest(Path(root)/name) == digest,
                 "source pin: "+name)
     glue = load("verification/v983_simple_current_generator.py", "half_glue", root)
     qwz = load("verification/v1033_charged_disorder.py", "half_qwz", root)

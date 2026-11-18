@@ -1,0 +1,169 @@
+F5, THE ORIGINAL SEAM CLUTCH AND THE ALREADY SOLVED SPIN HARDY SHIFT
+Independent source/operator continuation, 2026-10-29.
+No registered source edits, model scan, suite or Atlas mutation.
+
+1. The old one-copy norm result is retained as SOLVED
+Atlas finding:same-spin-unit-shift-gives-native-module-class-with-odd-determinant-line.
+Read completely:
+  elliptic-moebius-source-bridge-20261026/boundary_origin_20261027/
+  uniqueness/SAME-SPIN-REFERENCE-SIMPLIFICATION.txt:1-191;
+  originals/ACTUAL-REFERENCE-SPIN-TEST.txt:1-259.
+The same-space reference is M_1, not a newly invented scalar reference.
+Its primitive winding has index -1; the actual three-sheet spin cable has
+index -3 and relative line N_q^-1 tensor B_O^-1, with its retained odd parity.
+Neither the exponent nor its finite native module class needs another search.
+
+2. The exact original gluing operation
+Directly read:
+documents/archive--paper-latex--tfpt-theory-fullv21/sections/
+001-section-introduction-the-problem-of-parameters.tex:220-258.
+Lines225-228 cut the orientable double into FOUR boundary pieces
+(C1,C2,Gamma_+,Gamma_-) and explicitly prescribe a unitary gluing U_Gamma
+between the two seam pieces. Lines230-247 give i partial_theta,
+U_Gamma=e^(i theta), and unit winding.
+
+Thus relative boundary matching is an original operation.
+In a GIVEN collar with Gamma_+ assigned to face0 and Gamma_- to faceell,
+it is represented by v1=U v0. That assignment is an actual needed map;
+two F5 faces cannot be identified with two of the four original pieces
+just by counting them. Reversing face order or clutch convention changes
+the index sign. The computations below retain the existing quarter convention
+B e_n=(n+alpha)e_n, U e_n=e_(n+1), alpha=1/4 or3/4.
+The original i partial_theta formula also requires its basis orientation
+when compared with this -i partial_theta convention.
+
+3. Reuse of the whole F5 Cauchy graph and its I/O functor
+Read:
+  pfaff_source_review/NORMAL-KINETIC-PAIRING.txt:13-108;
+  graded_boundary_functor/FINITE-COUPLED.txt:28-69;
+  seam-collar-multifield-20261016/BOUNDARY-OPERATION-PROOF.txt:24-144;
+  seam-collar-multifield-20261016/PROOF.txt:78-123.
+Atlas finding:two-face-noncommuting-geometric-response-calculus is reused.
+The raw-mask null-quotient failure, compressed incoming response
+A^(1/2) M_f A^(1/2), and the oriented exterior ray Gamma(R) are ALREADY known.
+They are not reannounced as a new derivation.
+
+For the given charged h, let R=e^(-ell h) on its maximal spectral domain.
+Its normalized graph map is
+  V_h=(C,R C), C=(I+R^2)^(-1/2).
+It is unitary from H to Ran G. This is the existing full graph, including
+all negative modes and both labeled faces.
+The BOUNDED relative matching map on these actual Cauchy data is
+  F_U=pi_1-U pi_0 : Ran G -> H,
+  F_U V_h=R C-U C.
+Equivalently, using the OLD A=(I+R^2)^-1 and OLD normalized V_h,
+  F_U V_h=[-U,I]V_h=sqrt(I-A)-U sqrt(A).
+Everything in this mismatch formula is bounded; no unbounded product is
+needed to define the boundary consumer.
+This is an actual mismatch between two boundary values, not an operator
+postulated on the minimal Gram quotient and not G diag(U,U) G.
+It retains the original field/adjoint completion through the existing T_faces.
+
+4. Why full diagonal compression cannot supply the Hardy defect
+In the existing scalar block, put r_n=e^(-ell(n+alpha)) and
+  v_n=(1,r_n)/sqrt(1+r_n^2).
+Under the normalized graph chart, compression of U on BOTH endpoints is
+the bilateral weighted shift
+  e_n -> w_n e_(n+1),
+  w_n=(1+e^-ell r_n^2)/
+      sqrt((1+r_n^2)(1+e^(-2ell)r_n^2)).
+For every n,
+  1 >= w_n >= sech(ell/2)>0.
+Hence it has a bounded inverse and index0.
+The one-sided Hardy shift is unilateral, index -1, or -3 on three cables.
+There is no exact invertible operator comparison between those operations.
+This does not restrict the actual oriented I/O sewing to that compression:
+the original gluing operation is the RELATIVE matching map in section3.
+
+The alternative one-face operation of Claude24 H1 is different again.
+For W=diag(I,U), its compression is
+  V* W V=A+sqrt(I-A) U sqrt(I-A).
+It is a compact perturbation of P_+ +U P_-, with index +1 in this fixed
+orientation. The sharp reference has one kernel, from the duplicated e0,
+and no cokernel. W G W*-G is trace class, trace +1, with unchanged (1,1)
+block and trace +1 only in (2,2). Thus Claude24 H2's opposite nonzero
+diagonal traces are NOT this one-face operation; they concern diag(U,U), whose
+two traces are -1 and +1 and total index0. The Hardy unilateral index -1
+occurs on the OTHER face or with the opposite direction. None of these
+operations is silently identified with the relative mismatch R-U.
+
+5. Constructive same-graph Fredholm defect, all modes and closed domain
+For that same scalar source define
+  T=R-U : Dom R -> H.
+It is closed, as a bounded perturbation of the closed selfadjoint R.
+C:H->Dom R is an isometric isomorphism for the R graph norm, since
+  ||C x||^2+||R C x||^2=||x||^2.
+The exact normalized map is
+  T C=diag(r_n/sqrt(1+r_n^2))
+          -U diag(1/sqrt(1+r_n^2)).
+Let P_+ project onto n>=0 and P_-=I-P_+.
+The two diagonal coefficients differ from P_- and P_+, respectively,
+by exponentially decaying sequences. Therefore T C is a TRACE-CLASS
+perturbation of
+  T_inf=P_- -U P_+.
+T_inf maps all negative basis vectors identically and all nonnegative
+ones to minus e_(n+1); its only missing output is e0. Thus
+  index T=index(T C)=index T_inf=-1.
+
+There is no kernel: T x=0 forces
+  x_n=x_0 exp(ell[n(n+1)/2+alpha n]),
+which cannot be in l2 unless x_0=0.
+The adjoint has Dom T*=Dom R and a one-dimensional kernel:
+  y_(n+1)=r_n y_n,
+  y_n=y_0 exp(-ell[n(n-1)/2+alpha n]).
+It decays quadratically at both ends, and R y has the same l2 norm as
+the shifted sequence, so the adjoint domain condition is satisfied.
+This proves a closed Fredholm operator with exactly ONE cokernel mode.
+Three actual copies give three such modes and index -3.
+No finite cutoff, new covariance, new vacuum or new Hardy projector
+is needed for this source-relative Fredholm statement.
+
+The TC=T_inf+trace-class relation is NOT an exact operator intertwiner.
+It supplies the compatible Fredholm class and a concrete Gaussian cokernel.
+It does not yet identify that cokernel with the actual q spin fibers.
+
+6. The concrete remaining domain map
+The spin Hardy construction already supplies an explicit positive local map.
+On each lifted open z disc, write a section as f(z)sqrt(dz).
+At its normalized boundary its coefficient is
+  exp(i theta/2) f(e^(i theta)),
+giving the ordinary NS basis n+1/2 and the exact multiplier z=e^(i theta).
+This is the existing half-form norm and closed Fourier-domain dictionary.
+The old boundary source further gives B_cov=2(A_1/4+A_3/4) as a DIRECT SUM
+and U_cov=[[0,U_base],[I,0]] in those quarter blocks.
+A single quarter multiplier U_base is not silently the primitive U_cov.
+
+To make this the original F5 seam defect, the actual trace map must now
+identify the seam pair, its three-sheet pullback and spin half-form domain.
+At the original boundary ramification points z-z0=a u^3, the L2 measure-zero
+argument suffices for the multiplier defect, but not for an H1 operator
+domain: pulling back d/dtheta has coefficient i z/(3a u^2) d/du.
+The actual transmission/normalization and half-form connection must be
+transported, not assumed from a smooth boundary point count.
+This does not rule out the map; it names its first decisive local test.
+
+For the FULL actual v252 coupling use section3 with
+  h=A gamma_F-i gamma_F Phi
+and its given H1 domain. The scalar calculation in section5 does not
+replace that full source with one selected channel or assign it three
+physical copies. Its actual intertwiner must transport Phi, finite
+grading, charges and the original seam action as well.
+
+For the scalar block, the given circle group exp(i t B) preserves G but
+conjugates U to U_t=exp(i t)U. It therefore transports the clutch domain
+v1=U v0 to v1=U_t v0, rather than preserving the fixed U domain. Exactly
+  F_(U_t) diag(exp(i t B),exp(i t B))=exp(i t B) F_U
+on the actual graph. This is a family covariance with a MOVING seam phase,
+not a fixed-defect physical-time identification. The original rule must
+supply that moving phase/gauge if it is to define the same physical time.
+
+7. Outcome
+The original relative seam operation has an explicit, compatible F5
+Fredholm consumer, with the primitive one-copy defect proved directly
+on the existing complete two-face graph.
+The missing comparison is the original closed trace/cabling map to S0
+Hardy data, with calibrated faces, multiplier and domains. Equality of
+indices, norm characters or normalized operator rays does not supply it.
+The once-derived norm result remains solved. No Seed state/time or
+physical P1 source is chosen anew by this continuation.
+

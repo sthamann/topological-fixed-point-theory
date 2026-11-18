@@ -1,0 +1,124 @@
+OriginLab · Binäre Schnitte, Fünfpunktcode und Vierteldrehung · 16. November 2026
+
+Ausgangsfrage
+
+Die vorige Kampagne erhielt das P1 Quadrat aus zwei gegebenen antipodalen
+Paaren. Vier Marken und der Anschluss an P2 waren vorgegeben. Hier wird
+die Vierzahl aus zwei binären Operationen statt aus vier Punkten erzeugt.
+Die gemischte reell quaternionische Polarisation ergibt anschließend
+eine explizite unmarkierte Isometrie zum vorhandenen P2 Fünfpunktcode.
+Geprüft werden auch der tatsächliche Viertellift und zwei physisch
+verschiedene Bedeutungen einer Transportabbildung zwischen den Marken.
+
+1. Zwei binäre Schnitte und ein trennendes Viererwort
+
+Seien A,B selbstadjungierte Unitäre im selben dargestellten Operatorraum,
+beide mit binären Ausgängen. C=(AB+BA)/2 ist zentral in C*(A,B) und
+C²=(ABAB+BABA+2I)/4. Für eine positive normierte Originalform omega ist
+
+  omega(C²)=(1+Re omega(ABAB))/2.
+
+Der Extremwert Re omega(ABAB)=-1 erzwingt C=0 bei treuer Form und auch
+auf der zyklischen GNS Darstellung der von A,B erzeugten Algebra ohne
+Treue, da C zentral ist und den zyklischen Vektor vernichtet. Die beiden
+Operatoren erzeugen dort M2 als abstrakte unital dargestellte komplexe
+Algebra. Mehrfachheiten im Hilbertraum werden dadurch nicht ausgewählt.
+Bei allgemeinen binären Projektionen ist punktweise Unverzerrtheit der
+übergebenen Schnitte eine ausreichende alternative Annahme: P Q P=P/2
+und (I-P)Q(I-P)=(I-P)/2 implizieren Antikommutation von A=2P-I,B=2Q-I.
+Bloße tracial gemittelte Unabhängigkeit genügt dagegen nicht. Zwei Blöcke
+mit B=±(3/5)Z+(4/5)X und A=Z haben gleiche uniforme Paarstatistik wie
+die antikommutierende Variante, geben aber Re omega(ABAB)=-7/25.
+
+Aus der Antikommutation entstehen vier Rang eins Marken im irreduziblen
+Block als die Projektoren (I±A)/2 und (I±B)/2. Sie sind genau zwei
+orthogonale Blochachsen mit jeweils zwei Gegenpunkten. U=(I+AB)/sqrt(2)
+zyklisiert ihre vier Projektoren bis auf die gewählte Drehrichtung und
+erfüllt U^4=-I. Normierung des ursprünglichen Randkerns und Wahl dieser
+beiden binären Operationen folgen nicht aus diesem endlichen Satz.
+
+2. Operatoridentifikation des Fünfpunktcodes über zwei Fenster
+
+In A=Z,B=X Koordinaten gibt es die von den reellen Achsen bestimmte
+Konjugation K sowie J=XZ K, J²=-I. Die beiden lokalen Rahmen werden
+hier identifiziert. Auf zwei unabhängigen, kommutierenden Fensterblöcken
+setze Theta=(XZ⊗I)K_global. Der erste Faktor ist quaternionisch, der
+zweite reell. Die antiunitären Vorzeichen auf Hermiteschen Pauliwörtern
+mit Bits (a,b,c,d) lauten q=a+b+ab+cd mod 2. Die Polarform ist der
+gesamte symplektische Pauli Kommutator. Die fünf nichttrivialen Nullpunkte
+sind Gamma=(I⊗X,I⊗Z,X⊗Y,Z⊗Y,Y⊗Y). Sie sind quadratisch orthonormal
+bezüglich normalisierter Spurpaarung und antikommutieren paarweise.
+Die Kampagne berechnet direkt eine F2 lineare Isometrie zur q0 Tabelle des
+bestehenden full_face_refinements Consumers. Diese unmarkierte Gleichheit
+behauptet keine Auswahl des primitiven Zustands oder seiner geladenen
+Clifford-, Flavor- oder räumlichen Fortsetzung. Reell/reell und
+quaternionisch/quaternionisch ergeben jeweils neun statt fünf spurfreie
+feste Richtungen. Die bei Theta überlebenden Operatoren teilen sich in
+zwei aus Fenster zwei und drei mit Stütze auf beiden Fenstern. Diese
+Stützzerlegung ist noch kein physisches Hyperladungswörterbuch.
+
+3. Die Vierteldrehung und ihre minimale Zusatzmultiplikität
+
+Die gemeinsame lokale Drehung U⊗U fixiert die Linie Y⊗Y und vertauscht
+die übrigen vier Linien in zwei Paaren. Sie wählt daher eine ausgezeichnete
+Linie, bildet aber eine andere Permutation als der native Vierzyklus ab.
+Jede Implementierung des Vierzyklus auf den vier anderen Gamma Linien
+induziert eine signierte orthogonale Achsenpermutation. Das Produkt aller
+fünf Gamma Matrizen ist skalar, daher muss die Determinante der Achsenaktion
++1 sein. Das fünfte Vorzeichen ist das Negative des Produkts eps der vier
+Umlaufvorzeichen. Das Pin Produkt der Vorzeichenreflexionen und der drei
+benachbarten Vertauschungen liefert für alle 16 Möglichkeiten die
+Theta verträglichen unitären Vertreter. Jeder weitere Vertreter unterscheidet
+sich nur um einen Skalar, weil die Gamma Matrizen M4 irreduzibel erzeugen.
+Theta Verträglichkeit lässt als Skalare nur ±1 zu.
+
+Bei eps=+1 haben alle acht Vertreter die vierte Potenz -I, obgleich ihre
+adjungierte Wirkung Ordnung vier hat. Bei eps=-1 haben die anderen acht
+eine nichtzentrale vierte Potenz, welche die vier wandernden gerichteten
+Achsen negiert. Deshalb existiert für den irreduziblen Viererblock kein
+Theta verträglicher Vertreter echter Ordnung vier. Bei festgehaltener
+fünfter *Linie* und erlaubtem Vorzeichenwechsel dieser Achse kann ein
+reeller Zweierfaktor mit einer pi/4 Drehung das zentrale Minus aufheben.
+Auf einem reellen Multiplikitätsraum sind V^4=-I und damit gerade Dimension
+nötig und ausreichend; dies folgt durch Determinanten und direkte Summen
+der reellen Rotation. Das minimale Produkt hat komplexe Dimension 8.
+Ist die fünfte gerichtete Achse festzuhalten, bleibt nur eps=-1. Ein
+kommutierender Zusatzfaktor ändert dessen nichtzentrale Ad Wirkung nicht.
+
+4. Linearer Transport der Marken ist einen Grad zu niedrig
+
+Die vier P1 Projektoren spannen drei Richtungen. Die Summen beider
+Gegenpunktpaare sind beide I. Die vier zugeordneten Clifford Richtungen
+des P2 Vergleichs sind linear unabhängig. Die Markennamen können daher
+äquivariant zugeordnet werden, die entsprechende lineare Operatorabbildung
+existiert auf einer Kopie nicht. Die diagonalen Zweikopienmarken P⊗P haben
+Gram Spektrum 3/2,1,1,1/2 und liefern exakt die vier benötigten Richtungen.
+Das ermöglicht eine eindeutige lineare Abbildung auf ihrem markierten
+Spann. Als unital positiver Transfer der scharfen Effekte zu (I+Gamma_i)/2
+ist der Anschluss trotzdem ausgeschlossen: Gegenpunktprojektoren summieren
+sich zu höchstens I, während die Summe der entsprechenden Zielprojektionen
+einen Eigenwert 1+1/sqrt(2) hat. Auch die Eckenkonstanten benachbarter
+Projektoren unterscheiden sich: 1/4 statt 1/2. Dieses Ergebnis betrifft
+den scharfen Erwartungsoperatortransport, keine beliebigen Zustandskanäle,
+geladenen Wortprodukte oder nichtlinearen Auswertungen.
+
+5. Ausführung, Übertrag und ursprüngliche Quelle
+
+51 exakte OriginLab Kontrollen bestehen in normalem und optimiertem
+Python mit identischer Ausgabe. Die vorherige sphärische Auswahl und die
+markierte Sphärenklassifikation liefen mit. Die unabhängige Rechnung
+bestätigte die beiden Vorzeichenklassen und die Minimalität der Verdopplung.
+Mathematischer Kontext: Zwei Projektionen nach Halmos und der bekannte
+quaternionische Spin Faktor H2(H); hier neu verbunden mit der vorhandenen
+nativen unmarkierten q0 Tabelle und den Fenster sowie Liftproben.
+
+Der native R113 Lauf bleibt BLOCKED mit vier leeren Ausgaben. Zuerst
+die tatsächlichen bosonischen Endpunktintegrale und die gebundene
+Leerreferenz bestimmen. Ein TFPT Quellkandidat muss dann auf derselben
+positiven Originalform beide involutiven Operationen samt dem geordneten
+ABAB, die reelle und quaternionische Fensterwirkung sowie das Vorzeichen
+des angehobenen Feldes am fünften Punkt identifizieren. Der alte doppelte Kragen
+ist ein möglicher Träger für den reellen Zweierfaktor, dessen Eigenwirkung
+hier nicht aus der Originaldeckung abgelesen wurde. Die sphärische Ward
+und absolute Normierung, ursprüngliche Windung, P2 Ladungsalphabet,
+physische lokale Zeit, E8 Ströme und F1 bleiben offen. Keine Ledgerpromotion.

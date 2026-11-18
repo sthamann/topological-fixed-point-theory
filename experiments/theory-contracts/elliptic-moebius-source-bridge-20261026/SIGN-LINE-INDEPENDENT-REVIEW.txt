@@ -1,0 +1,314 @@
+SIGN-LINE-INDEPENDENT-REVIEW
+============================
+
+Datum: 2026-10-26
+
+Gepruefter Stand
+----------------
+
+Geprueft wurde die Endfassung von
+
+    research-20261026-real-boundary/SIGN-LINE-COVER-DICTIONARY.txt
+
+mit SHA256
+
+    555f75a2d3c67347fa5f8e3c4f7f46e79d94cb4172176c84010224585dc842e7.
+
+Die fruehere antipodale Vermutung O(p_a-q_a) ist dort vollstaendig durch das
+negative Dreierpaket
+
+    C: eta^2=1-w^6,
+    q_a=(-omega^a,0),
+    L_a^q=O_C(q_a-q_(a+1)),
+    h_a^2=(w+omega^a)/(w+omega^(a+1))
+
+ersetzt. Genau diese Korrektur ist mathematisch entscheidend.
+
+Urteil
+------
+
+AKZEPTIERT auf Koeffizientenebene. Das negative Paket liefert den exakten
+markierten (4,3,2) S4 Dreieckscover der v117 Quelle. Nach Pullback auf C
+zerfaellt das determinanteneins Rank 3 Lokalsystem in die drei angegebenen
+unverzweigten Zweitorsionslinien. Der Beweis verwendet weder eine eingepasste
+Zielmatrix noch einen Dimensionsschluss.
+
+Der fruehere antipodale Kandidat ist ausgeschlossen: Er hat den globalen
+Passport (4,3,4) und Geschlecht 3 am Grad 24 Dreieckslevel. Das positive
+Paket O(p_a-p_(a+1)) hat (2,3,4) und vertauscht damit die im Original fest
+markierten Fasern t=0 und t=unendlich.
+
+Die Aussage bleibt exakt auf das Koeffizientenlokalsystem begrenzt. Sie ist
+kein Intertwiner geladener CAR Felder und beweist noch keinen gemeinsamen
+Zustand, keine lokale Unterstuetzung und keine physische Antwortabbildung.
+
+1. Zweitorsionslinien und der unramifizierte Cover
+--------------------------------------------------
+
+An jedem Weierstrasspunkt q_a ist eta ein lokaler Parameter. Deshalb besitzt
+w+omega^a dort Ordnung 2. Es folgt
+
+    div((w+omega^a)/(w+omega^(a+1)))
+      =2q_a-2q_(a+1).
+
+An beiden Punkten ueber w=unendlich geht der Quotient gegen 1. Dort tritt
+weder eine Nullstelle noch ein Pol auf. Jede Linie L_a^q ist daher eine
+unverzweigte Zweitorsionslinie auf C.
+
+Keine dieser Linien ist trivial. Ein Hauptdivisor q_a-q_(a+1) wuerde eine
+meromorphe Funktion vom Grad 1 auf der Geschlecht 2 Kurve liefern. Die drei
+Klassen sind verschieden und erfuellen wegen der teleskopierenden Gleichung
+
+    product_a h_a^2=1,
+    L_0^q tensor L_1^q tensor L_2^q=O_C
+
+genau eine Relation. Sie bilden die drei nichttrivialen Charaktere einer
+V4 Untergruppe von Jac(C)[2]. Der zugehoerige Cover Y_q nach C ist
+zusammenhaengend, unverzweigt vom Grad 4 und hat
+
+    g(Y_q)=1+4(g(C)-1)=5.
+
+Die Drehung c:w->omega w zyklisiert diese drei Klassen. Damit ist bereits
+auf den konkreten Funktionen die Struktur V4 semidirect C3=A4 vorhanden.
+
+2. Der kleinste entscheidende Test ist der markierte Passport
+-------------------------------------------------------------
+
+Vergisst man eta, so entsteht ueber der w Sphaere der Grad 4 Cover
+
+    Z_q=C(w,h_0,h_1).
+
+Er verzweigt genau an q_0,q_1,q_2. Die drei lokalen Traegheiten sind die drei
+nichttrivialen Elemente von V4. Riemann Hurwitz ergibt
+
+    2g(Z_q)-2=4(-2)+3*(4/2)=-2,
+    g(Z_q)=0.
+
+Fuer
+
+    z^2=(1+w^3)/(1-w^3),
+    t=z^4=((1+w^3)/(1-w^3))^2
+
+hat w->t folgende markierten Fasern:
+
+    q_a -> t=0          mit Index 2,
+    w=0,unendlich -> 1  mit Index 3,
+    p_a -> unendlich    mit Index 2.
+
+Nur ueber q_a verzweigt zusaetzlich Z_q->P1_w mit Index 2. Im Turm
+multiplizieren sich die Indizes. Daher besitzt Z_q->P1_t vom Grad 24 exakt
+
+    (e_0,e_1,e_unendlich)=(4,3,2).
+
+Es gibt keine weitere Verzweigung. Der Cover ist zusammenhaengend. Seine
+Monodromie ist damit eine transitive Grad 24 Quotientendarstellung der
+sphaerischen Dreiecksgruppe Delta(4,3,2)=S4. Eine transitive Gruppe auf 24
+Blaettern hat mindestens 24 Elemente, waehrend S4 genau 24 Elemente besitzt.
+Folglich ist der Cover regulaer und seine Deckgruppe ist S4.
+
+Der bereits separat exakt gepruefte Nielsen Satz zeigt, dass geordnete Paare
+aus einem 4 Zyklus und einem 3 Zyklus, deren Produkt eine Transposition ist,
+eine einzige simultane Konjugationsbahn bilden. Dies fixiert den markierten
+v117 Typ bis auf einen gemeinsamen Basiswechsel. Die determinanteneins
+dreidimensionale Darstellung ist die eindeutige treue S4 Darstellung dieses
+Typs. Damit ist auch die Orientierung der positiven t=0 Monodromie als die
+v117 Klasse von U^(-1) korrekt. Eine wortgleiche feste Matrix U^(-1) entsteht
+erst nach Wahl der gemeinsamen v117 Basis; der Lokalsystemisomorphismus
+selbst benoetigt keine zusaetzliche Phase.
+
+3. Exaktes Faserprodukt und Aufspaltung auf C
+---------------------------------------------
+
+Im Feld C(Z_q) liegt bereits
+
+    z^2=(1+w^3)/(1-w^3).
+
+Somit enthaelt C(Z_q) die quadratische Zwischenstufe C(z^2) von
+C(z)/C(t). Der Schnitt kann nicht C(z) sein, denn die regulaere S4 Erweiterung
+besitzt keinen zyklischen Quotienten der Ordnung 4. Also gilt exakt
+
+    C(Z_q) intersect C(z)=C(z^2).
+
+Daraus folgt
+
+    [C(Z_q,z):C(z)]=12.
+
+Die zugehoerige Untergruppe von S4 ist der Kern seines einzigen
+nichttrivialen zyklischen Quotienten, also A4. Zugleich ist
+
+    C(C)=C(w,z),
+    eta=z(1-w^3),
+
+und deshalb
+
+    C(Z_q,z)=C(Y_q).
+
+Y_q ist somit wortgleich der A4 Kernelcover der bereits bewiesenen v117
+Dreiecksquelle. Beim weiteren Pullback von der z Sphaere auf C bleibt als
+Deckgruppe V4. Die determinanteneins S4 Darstellung zerfaellt auf V4 in
+dessen drei nichttriviale Charaktere. Diese Charaktere sind gerade die
+Kummerlinien L_a^q. Damit ist
+
+    pi^* E_v117 ~= L_0^q direct-sum L_1^q direct-sum L_2^q
+
+als unitaeres flaches Koeffizientenlokalsystem bewiesen.
+
+4. Die beiden falschen Pakete
+-----------------------------
+
+Das positive Paket O(p_a-p_(a+1)) ist ebenfalls ein mathematisch gueltiges
+C3 stabiles V4 Paket. Seine Zusatzverzweigung liegt jedoch ueber t=unendlich.
+Sein Passport ist daher (2,3,4). Unmarkiert beschreibt dies dieselbe
+sphaerische Dreiecksordnung, aber es ist nicht dieselbe Quelle: In v117 sind
+t=0 als Viertelfaser und t=unendlich als Zweierfaser fest markiert.
+
+Beim antipodalen Paket O(p_a-q_a) verzweigt der reduzierte V4 Cover an allen
+sechs Weierstrasspunkten. Mit
+
+    v_0=z u_0
+
+erhaelt man bereits
+
+    v_0^2=-(w^2-w+1)/(w^2+w+1).
+
+Die zyklischen Partner zeigen dieselbe Verzweigung an den restlichen Punkten.
+Ueber t ergibt das (4,3,4). Riemann Hurwitz am Grad 24 Cover liefert
+Geschlecht 3. Eine guenstige Wahl einzelner Quadratwurzelzeichen oder ein
+importierter Zieltransport kann diesen globalen Unterschied nicht aendern.
+
+5. Abgrenzung vom gemeinsamen mu_12 Cover
+-----------------------------------------
+
+Im vorhandenen zyklischen Cover gilt relativ zu C
+
+    H^4=w.
+
+Der Divisor von w besitzt auf C zwei einfache Nullstellen und zwei einfache
+Pole. Der C4 Cover ist dort total verzweigt. Seine einzige quadratische
+Zwischenstufe sqrt(w) ist an denselben vier Stellen verzweigt. Alle drei
+L_a^q sind dagegen global unverzweigt. Daher enthaelt der bare mu_12 Cover
+keine der drei Koeffizientenlinien.
+
+Der bekannte Viertellift H->i/H transportiert weiterhin w->w^(-1) und
+g=H^3 nach -i g^(-1). Das ist die Geometrie des zyklischen Covers. Die volle
+v117 Viertelmonodromie des Rank 3 Koeffizientensystems folgt hier aus dem
+markierten (4,3,2) Dreieckscover und seinem eindeutigen Nielsen Typ. Diese
+beiden Aussagen duerfen nicht miteinander gleichgesetzt werden.
+
+6. Checker und Beweisumfang
+---------------------------
+
+Der finale Checker wurde unabhaengig normal und mit Python -OO ausgefuehrt,
+jeweils mit Ausgabe unter /tmp. Beide Laeufe bestanden 25 von 25 Pruefungen
+und erzeugten byteidentische JSON Dateien mit SHA256
+
+    708ac56062c090ad0320d6999736998476246d98ba6a1c757a2bac11d21a945f.
+
+Die im Checker eingetragenen drei Passports sind keine rechnerische Ableitung
+der lokalen Bewertungen. Diese Ableitung steht in Abschnitt 2 dieses Reviews
+und im Hauptbericht. Der Checker zertifiziert die Kummerrelationen, den C3
+Transport, die Geschlechter, die v117 Matrixordnungen sowie die
+Verzweigungsabgrenzung des mu_12 Covers. Diese Trennung ist sachlich sauber.
+
+Gepruefte Dateien
+-----------------
+
+* research-20261026-real-boundary/SIGN-LINE-COVER-DICTIONARY.txt,
+  SHA256 555f75a2d3c67347fa5f8e3c4f7f46e79d94cb4172176c84010224585dc842e7.
+* research-20261026-real-boundary/check_sign_line_cover.py,
+  SHA256 79ceadfaeb6aea66220f316dc6403a850fb48f47cf21d7a3b942568e6b978177.
+* research-20261026-real-boundary/sign-line-cover-results.json,
+  SHA256 708ac56062c090ad0320d6999736998476246d98ba6a1c757a2bac11d21a945f.
+
+7. Nachtrag: tatsaechlicher Viertellift auf dem q Paket
+------------------------------------------------------
+
+Zusaetzlich geprueft wurde
+
+    research-20261026-real-boundary/CLOCK-Q-PACKET-COMPATIBILITY.txt,
+    SHA256 fe37f20bbb2d959dfe678ca1bf435a69067cfcb859a3d36769294bbe9bf61c32.
+
+Der scheinbare Widerspruch zwischen dem Viertellift und dem negativen Paket
+beruhte auf einem Vorzeichenverlust. Fuer
+
+    f(z)=(z^2-1)/(z^2+1),
+    w^3=f(z),
+    eta=z(1-w^3)
+
+gilt
+
+    f(i z)=f(z)^(-1).
+
+Mit der vorhandenen Markierung ist der Lift
+
+    Q:(z,w,eta)->(i z,w^(-1),-i eta/w^3).
+
+Die eta Komponente folgt direkt aus ihrer Definition. Zweimalige Anwendung
+ergibt
+
+    Q^2:(z,w,eta)->(-z,w,-eta),
+
+also die hyperelliptische Involution; Q hat Ordnung 4 auf C.
+
+Entscheidend ist
+
+    1/p_a=p_(-a),
+    1/q_a=q_(-a).
+
+Q erhaelt positive und negative Weierstrassbahn jeweils getrennt. Es
+vertauscht sie nicht. Fuer das ausgewaehlte Paket folgt
+
+    Q^*L_a^q=L_(-a-1)^q
+
+und auf den Kummerfunktionen
+
+    H_a(1/w)=omega^2/H_(-a-1)(w),
+    Q^*h_a=epsilon_a omega/h_(-a-1),
+    epsilon_0 epsilon_1 epsilon_2=1.
+
+Diese Gleichungen allein erlauben sowohl Zweier als auch Viererlifts. Die
+lokale t=0 Geometrie trifft die Auswahl. Bei q_0=-1 mit delta=w+1 gilt
+
+    t=constant*delta^2,
+    delta=constant*s^2
+
+auf Z_q, folglich t=constant*s^4. Die positive lokale Trägheit wirkt als
+s->i s. Ihr Quadrat ist der V4 Verzweigungsoperator ueber q_0. Daher muss
+
+    epsilon_0/epsilon_2=-1,
+    epsilon_1=-1.
+
+Die zwei verbleibenden Vorzeichenwaehlen sind inverse Viertellifts und
+unterscheiden sich durch einen V4 Rahmenwechsel. Sie bilden dieselbe
+markierte Gaugeklasse; die Orientierung des positiven t Umlaufs waehlt Lift
+gegen Inverses.
+
+In den Charakterrahmen kann man den determinanteneins Lift als
+
+    A=[[0,0,-1],
+       [0,1, 0],
+       [1,0, 0]]
+
+schreiben. Dann
+
+    A^2=diag(-1,1,-1),
+    A^4=I,
+    det A=1,
+    spec A={1,i,-i}.
+
+Das feste Vorzeichen auf L_1^q folgt aus der bereits in der Originalquelle
+bewiesenen determinanteneins S4 Darstellung. Es ist keine neue Phase aus dem
+zyklischen mu_12 Cover. Mit den im Bericht angegebenen konstanten Matrizen
+K und R gilt exakt
+
+    K A K^(-1)=R=F^dagger U F.
+
+Da die positive Schleifenmonodromie auf Loesungen kontravariant ist, wirkt
+sie durch A^(-1), also durch die Klasse von U^(-1). Damit sind q Paket,
+geometrischer Viertellift, sein Quadrat, determinanteneins Charakter und die
+alte positive Clockorientierung gleichzeitig kompatibel.
+
+Dieser Nachtrag schliesst die C4 Equivarianz des flachen
+Koeffizientenlokalsystems. Der weiterhin offene Typwechsel zu geladenen CAR
+Feldern, Zustand und lokaler Operatorunterstuetzung wird dadurch nicht
+vorweggenommen.

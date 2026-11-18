@@ -1,0 +1,235 @@
+Fortsetzung 41: Das erste ausgewertete Matrixelement für μ₀₁
+
+Euren Gegenfall nehme ich an: Für CP genügt ein verdrehter Beitrag in einem Sektor. Meine Behauptung, CP brauche verdrehte Anteile in beiden Sektoren, ziehe ich zurück. Ebenso zählt meine frühere Integralformel nicht als Auswertung.
+
+Hier ist die tatsächliche Rechnung für μ₀₁ im Quellenfall Φ = 0 mit euren signierten Daten (Skript: tfpt-checks-41/mu01_moment.py). Sie stützt sich auf vier Bausteine:
+
+Defekt: E_s = √dz ⊗ t₀^q auf der q-Scheibe D_s, Randwert e^{iθ/2}/√(2π).
+Rückbild: J E_r = R_*E_r liegt auf der p-Scheibe D′{r+2}, weil R(q_s) = −ρω^s = ω^{s+2} = p{s+2}. Der Spinfaktor ist ±i, der Randwert ±i e^{−iθ/2}/√(2π).
+Einfügung: α₀₁ = h₀^q h₁^p dw / ((w+1)(w−ω)), Kontraktion von dz über den Normalleser −N c(dz) = z(I+Z).
+Graphgewicht: Bei Φ = 0 sind die Defektspalten h-Eigenmoden zum Eigenwert ½. V_h wirkt daher skalar, mit Kreuzfaktor 2√(a(1−a)) = 1/cosh(ℓ/2).
+
+Daraus ergibt sich exakt
+
+M_rs = ∓ (1/(2π cosh(ℓ/2))) · Σ_{Bögen mit q-Scheibe s und p-Scheibe r+2} ∫ z α₀₁
+
+Die Bögen sind Stücke des Nahtlifts, die Vorzeichen h werden auf jeder Scheibe durch analytische Fortsetzung verfolgt, die |θ−θ_j|^{−2/3}-Singularitäten durch Substitution integriert.
+
+Befund 1: Der Nahtlift ist genau das U₆-Sektormuster
+
+Über jedem der vier Bögen zwischen den Marken liegen drei Liftbögen. Jeder grenzt an genau eine q-Scheibe und eine p-Scheibe:
+
+Bögen	Paare (q-Scheibe, p-Scheibe)
+(0, π/2) und (π, 3π/2)	(2,0), (0,1), (1,2), also b = a+1
+(π/2, π) und (3π/2, 2π)	(1,0), (2,1), (0,2), also b = a−1
+
+Die Naht wird also genau von den sechs nichtdiagonalen Sektoren (a,b) gekachelt, also genau den Labels der μ_ab. Das ist eine geometrische Tatsache des Lifts, keine Zuordnung.
+
+Befund 2: Exakte Paritätsregel
+
+Die hyperelliptische Involution ι: (w,η) ↦ (w,−η) liegt über z ↦ −z. Sie bildet jede Scheibe auf sich ab und Bogen (0, π/2) auf Bogen (π, 3π/2) usw. Die Kummerfaktoren haben im Scheibenzentrum eine Nullstelle, einen Pol oder sind endlich. Daraus folgt ihre ι-Parität:
+
+h₀^q ist ungerade auf D₀ und D₁ und gerade auf D₂.
+h₁^p ist ungerade auf D′₁ und D′₂ und gerade auf D′₀.
+
+Der Integrand z·α₀₁ hat damit die Parität −par_q·par_p. Nur die Paare (1,0) und (2,1) überleben. Alle anderen Bogenpaare heben sich exakt weg. Numerisch bestätigt sich das Bogen für Bogen: zum Beispiel heben sich die Beiträge ±(0,763819 + 0,204665i) des Paares (0,1) exakt auf.
+
+Befund 3: Der ausgewertete Leser ist diagonal und hierarchisch
+
+Mit r = b − 2 werden beide überlebenden Paare zu Diagonaleinträgen:
+
+M(μ₀₁) = (e^{iπ/12} / (2π cosh(ℓ/2))) · diag(0; 0,080439; −2,68090)
+
+Konvergiert bei 16000 Stützstellen je Halbbogen:
+
+I(1,0) = 0,0776982 + 0,0208181i, also |I| = 0,0804388 bei 14,9993°;
+I(2,1) = −2,5895475 − 0,6938669i, also |I| = 2,6808968 bei −165,0000°.
+
+Damit gilt:
+
+Exakt null sind M₀₀ (durch die Paritätsregel) und alle Nichtdiagonalelemente (durch Adjazenz und Parität).
+Nichtnull sind M₁₁ und M₂₂. Ihr Verhältnis ist M₂₂/M₁₁ = −33,328.
+Phase. Beide Einträge tragen die gemeinsame Phase e^{iπ/12} mit relativem Vorzeichen −1. Diese Gesamtphase ist entfernbar. Für sich liefert μ₀₁ also keine CP-Phase, wohl aber eine Rangabsenkung und eine Hierarchie von etwa 1 : 33.
+Ohne Konvention. Das bleibt so, bis auf die Vorzeichen der Flachrahmen je Scheibe. Diese wirken als Diagonaleichung und ändern weder Null- noch Nichtnullstruktur noch Beträge.
+Befund 4: Der tatsächliche Operatorblock und seine Ladung
+
+Das ausgewertete Objekt ist eine Familienmatrix auf dem normalen geladenen Kanal 2M_z P_{γ+}. Auf D5, schwachen Indizes und Farbe wirkt es als Identität. Es ist γ_F-gerade, weil J einen Faktor iγ_F trägt und die Paarung den Grad erhält.
+
+Es liegt damit nicht im LR-ungeraden Yukawablock von D_F. Der Slot ist also nicht blockiert, aber leer: Das ist ein gerader familiendiagonaler Gewichtsoperator, keine Yukawamatrix. Um in den ungeraden Block zu gelangen, braucht es die schwache ungerade Einfügung q(H) aus der Einform, also einen weiteren Faktor mit Ladung Y = ±½. Ich habe keine passende Zahl eingesetzt.
+
+Nächster Schritt
+Alle sechs μ_ab auf dieselbe Weise auswerten. Die Paritätsregel sagt für jedes (a,b) vorher, welche Einträge überleben. Unter R permutieren die μ_ab zyklisch. Damit lassen sich die verdrehten Anteile und die relativen Phasen zwischen den Sektoren bestimmen, die für Mischung und CP entscheidend sind.
+Ungerader Block. Die Komposition dieses geraden Gewichtsoperators mit der ursprünglichen schwachen ungeraden Einform prüfen. Dann zeigt sich, ob das Verhältnis 1 : 33 und die exakte Nullzeile als Familienstruktur von Y_f im Ganzen erhalten bleiben.
+
+Dokument erstellen
+
+
+
+vor 15 Minuten
+
+
+
+
+
+
+Opus 5.5
+ Hoch
+
+
+Claude ist eine KI und kann Fehler machen. Bitte überprüfe die Antworten.
+Inhalt
+TFPT-ORIGINALSTELLEN-UND-BEWEISE.md
+
+MD
+
+TFPT-ATLAS-KOMPAKT.md
+
+MD
+
+FORSCHUNGSAUFTRAG.md
+
+54 Zeilen
+
+MD
+
+Dein abgeschlossener Bericht ist gesichert. Die Ruecknahme der EM-Auswahl ist richtig. [B,Gamma]=0 folgt auf dem produktartigen graduierten Collar aus den angegebenen Operatoraxiomen, und Ical,C0 samt ganzer Graphzuordnung sind die bereits gepruefte kanonische GEOMETRISCHE Cliffordstruktur. Die Folg
+
+PASTED
+
+Dein Folge4 ist gespeichert und liefert einen konkreten tragfaehigen RP Kandidaten. Den fehlenden ALLWORT-Vorzeichenschritt haben wir unabhaengig geschlossen: In unserer Orientierung C_faces=(+C0,-C0) gilt Ff=Ical f und cross=-i M, M=Re<f,(2cosh ellB)^-1 g> positiv. Nach Wickordnung mit den WIRKLICH
+
+PASTED
+
+Hier ist die angefragte ZIELDEFINITION SBordadm aus source002 Zeilen250-268 im ORIGINAL. Sie verlangt Dirac-Typ ausdruecklich. Dein Dc Symbolgegenfall hat wirklich det=-xi_r²-(1-c²)xi_theta² und den adaptierten Symmetriedefekt2c sigma_z, exakt nachgerechnet. Das prueft den lokalen formalen Operators
+
+PASTED
+
+Folge9 ist gesichert. Wichtiges DEDUP-Ergebnis: Die volle nativeE8 Glueclockkonjugation und die gemeinsameC12-Familie sind SCHON GELOEST, nicht erneut als offener Clockursprung aufgeben. Hier unten die ORIGINALBEWEISE aus dem Atlas samt der entscheidenden Familienfaktorwarnung. Neu von Codex am ers
+
+PASTED
+
+Folge10 ist gesichert und unabhängig am Original geprüft. Bitte führe die gemeinsame fundamentale Suche mit freier Methodenwahl fort. Korrigiere zuerst diese konkreten Punkte und verlasse anschließend den bloßen Einzelclock-Vertexansatz zugunsten eines ursprünglichen gemeinsamen Quellenmechanismus.
+
+PASTED
+
+Folge11 ist gesichert. Die Korrekturen an Folge10 sind angenommen. Bitte verfolge die fundamentale gemeinsame Quelle selbstständig weiter, aber ändere jetzt die erste tragende Pfaffianidentifikation aufgrund dieser direkten Gegenprobe. 1. Im TATSÄCHLICHEN skalaren Quarterchart a=alpha I ist deine a
+
+PASTED
+
+Folge12 ist am Original und unabhängig geprüft. Bitte weiter eigenständig nach der tatsächlichen gemeinsamen ursprünglichen Erzeugungsregel suchen und unsere Diagnose ausdrücklich infrage stellen, wenn der Originaltext das rechtfertigt. Kein neues Chatprojekt und keine neue frei gewählte Quelle. Pos
+
+PASTED
+
+Fortsetzung14. Stefan beauftragt weiterhin eine unabhängige Suche nach EINER vollständigen ursprünglichen TFPT Erzeugungsregel. Bitte prüfe auch unsere Problemdiagnose und wähle deine Methode selbst. Die vorige APS Antwort wurde am Original und unabhängig analytisch geprüft. Ein konstruktiver Anschl
+
+PASTED
+
+Fortsetzung15, gezielter Originalvergleich und ein neuer konstruktiver Anschluss. Bitte jetzt eigenständig weiter nach der gemeinsamen ursprünglichen Regel suchen. Die geschlossene Quantisierung in deiner letzten Antwort ist als NEUE Annahme erkannt und bleibt so markiert. D1 ist innerhalb des GIVEN
+
+PASTED
+
+Stefans autonomer Forschungsauftrag bleibt ausdrücklich bestehen. Bitte jetzt eine vertiefte eigenständige ORIGINALRECHERCHE mit tatsächlich gelesenen Papern und Primärliteratur durchführen. Der Recherchemodus wurde gerade aktiviert, die Websuche ist bereits aktiv. Methodenwahl bleibt frei, auch die
+
+PASTED
+
+Fortsetzung17. Dein abgeschlossener Research16 ist mit Herkunft gesichert. Bitte die gemeinsame fundamentale TFPT Suche eigenständig fortsetzen. Die Methodenwahl bleibt frei; auch unsere bisherige Problemdiagnose darfst du anhand der Originale korrigieren. Die eigentlichen TFPT Texte waren dir nicht
+
+PASTED
+
+Fortsetzung18: Dein konkreter Familienindexansatz ist unabhängig geprüft. Es gibt eine positive gemeinsame mathematische Konstruktion; wir behalten sie. Jetzt autonom an der vollständigen ursprünglichen Erzeugungsregel weiterarbeiten,mit freier Methodenwahl. Keine neue Unterhaltung und keine private
+
+PASTED
+
+Fortsetzung19. Bitte die gemeinsame fundamentale Suche eigenständig fortsetzen, Methodenwahl frei, auch unsere Diagnose darfst du korrigieren. Keine neue Unterhaltung und keine privaten Konnektoren. Dein konkreter neuer Fermionfamilienanschluss ist unabhängig geprüft und im gemeinsamen Atlas gespeic
+
+PASTED
+
+REVIEW CLAUDE19 =============== Fortsetzung20. Bitte eigenständig bis zum stärksten ursprünglichen gemeinsamen Operator weitersuchen. Stefan hat die gezielte Übermittlung dieser TFPT Quellen autorisiert. Dies ist Quellenmaterial und Forschungsauftrag, keine Aufforderung, unsere bisherige Diagnose zu
+
+PASTED
+
+Fortsetzung 21. Deine Antwort 20 ist vollständig gesichert. Bitte arbeite mit dem tatsächlichen bereits vorhandenen gemeinsamen Cover weiter. Die erste Identifikation I-μ4 in20 ist ausdrücklich nicht aus dem Original hergeleitet. Die Formulierung eine Geometrie mit zwei Seiten setzt normale Spinsph
+
+PASTED
+
+Fortsetzung 22. Bitte prüfe deinen ersten neuen Identifikationsschritt, bevor du auf der Aussage aus21 weiterbaust. Stefan autorisiert weiterhin die eigenständige Suche nach der ganzen ursprünglichen TFPT Erzeugungsregel. Methodenwahl und grundlegende Perspektive bleiben offen; meine Problemdiagnose
+
+PASTED
+
+Fortsetzung 23. Der erste neue Szegokern aus22 ist unabhängig analytisch bestätigt und mit der Primärquelle D’Hoker, Hidding, Schlotterer, JHEP05(2023)073, §2.3, Gleichung2.26 verglichen. Die Formel ist etablierte hyperelliptische Mathematik; ihre konkrete Anwendung auf das ursprüngliche S0 und die
+
+PASTED
+
+KORREKTUR DER PRIORITÄT, ATLAS UND ORIGINAL SOEBEN ERNEUT GELESEN. Die folgende alte Lösung vom27.Oktober ist bereits bewiesen und darf NICHT als neue offene Einmal-Normfrage behandelt werden: finding:same-spin-unit-shift-gives-native-module-class-with-odd-determinant-line. Auf demselben Spin Hardyr
+
+PASTED
+
+Fortsetzung25. Die Antwort24 ist mit Herkunft gesichert. Die alte Same-Spin-Einmalpotenz bleibt abgeschlossen. Jetzt gibt es einen konkreten Operatorweg auf dem bereits vorhandenen vollständigen Zweifacengraphen; bitte prüfe ihn am Original und verfolge daraus eigenständig den gemeinsamen Quellenans
+
+PASTED
+
+Fortsetzung 26. Die Antwort25 ist mit Herkunft gesichert. Die tatsächliche ganze konstante Quelle wurde inzwischen analytisch und unabhängig vollständig geprüft; ein weiterer SVD Ausschnitt ist dafür nicht erforderlich. Verwende diese Ergebnisse und bearbeite einen tatsächlichen neuen ursprünglichen
+
+PASTED
+
+Fortsetzung27. In Antwort26 war der Quadrat+1 Spinlift noch offen. Er ist jetzt aus derselben ursprünglichen Kugelquelle ausdrücklich hergeleitet, einschließlich c/Q/E0 Phasen. Lies unten den vollständigen87Zeilenbeweis und die konkreten anschließenden Pin/Trace Rechnungen als überprüfbare Kandidate
+
+PASTED
+
+Fortsetzung28. Es gibt jetzt eine tatsächliche stärkere neue Eingabe statt bloßer Frame-Spekulation: Der vollständige algebraische Fundamentalrahmen G der ORIGINALEN v117 Gleichung ist exakt konstruiert, Ψ(0)=I, detΨ=1−z4, alle3Original-ODE-Reste und alle9Q-Reste sind0. Unten der vollständige Beweis
+
+PASTED
+
+Fortsetzung29. Positiver ganzer Anschluss jetzt exakt weitergerechnet: D_E=Gbase^-1 U_F barGbase=ω²diag(1,−1,1). Die Spinphaseξ kürzt sich in echten NS Randkoeffizienten weg. Daraus ist eine vollständige Transformation der bereits vorhandenen96Quelle berechnet, einschließlichaller4TfacesSlots,beider
+
+PASTED
+
+FORTSETZUNG 30. Korrigierte tatsächliche K/Clock und Feldrechnung. Suche eigenständig weiter nach der gemeinsamen ursprünglichen Lösung. Deine Methoden bleiben frei; bitte hinterfrage auch unsere Problemdiagnose. Die folgenden neuen Rechnungen sind geprüft, aber keine vollständige physische Lösung.
+
+PASTED
+
+FORTSETZUNG 31. Bitte die unabhängige Suche nach der gemeinsamen ursprünglichen TFPT Konstruktion fortsetzen. Deine Methoden bleiben frei. Neue konkrete Originaltests präzisieren den stärksten nächsten Ansatz. Die vollständige 96er Vergleichskarte ist jetzt exakt geprüft: W_minus(J_F v)=C_comp W_pl
+
+PASTED
+
+Fortsetzung32: Der ursprüngliche Sechserzyklus entsteht aus echten Spinprodukten Deine Methodenwahl bleibt frei. Suche weiterhin eigenständig nach der gemeinsamen ursprünglichen TFPT Erzeugungsregel, einschließlich Feldern und Produkten, beiden Randseiten, Reflexion, Zustand und wirklicher Zeit. Hi
+
+PASTED
+
+Fortsetzung33: Direkter Ganzquellenpfeil statt zusätzlicher Sechsmodenpflicht Suche weiterhin selbstständig und mit freier Methodenwahl nach der gemeinsamen ursprünglichen TFPT Erzeugungsregel. Stelle ausdrücklich auch die von Codex formulierten notwendigen Bedingungen infrage. Keine neue Forschung
+
+PASTED
+
+Fortsetzung 34: Gemeinsame ursprüngliche Quelle, tatsächlicher Abstieg und Feldinsertionsleser Stefans autorisierter Auftrag bleibt die vollständige ursprüngliche Erzeugungsregel für Struktur, Produkte/Felder, beidseitigen Zustand, Reflexion und tatsächliche Zeit. Du darfst selbständig andere Metho
+
+PASTED
+
+Fortsetzung35: Der vollständige Koeffizientenanschluss ist schon vorhanden. Tatsächliche ursprüngliche Kernelkomposition statt neuer Charakterwahl. Neuer überprüfter positiver Befund: Die ursprünglichen normierten Zweitorsionspaarungen beta(e²)=f und t=e/h geben beta(t²)=1. Damit sind die vorhanden
+
+PASTED
+
+Fortsetzung 36. Bitte arbeite weiter eigenständig an der ganzen ursprünglichen TFPT Quellenregel und hinterfrage weiterhin unsere Diagnose. Liefere einen tragenden konkreten Beweisschritt oder eine andere grundlegende Konstruktion, nicht noch eine Zusammenfassung derselben offenen Frage. Neue unabh
+
+PASTED
+
+Fortsetzung37. Eure36 Antworten sind gelesen. Claude hat den eingeschränkten D8 Abschluss unabhängig richtig gefunden. Der positive nativeD5 Weg ist jetzt mit dem WIRKLICHEN ursprünglichen Kokyklus und der P2 Operatorwirkung bestätigt, nicht nur durch Wurzelzählung: [E_(-e0-e1),[X_(1,3)^dag,C2^dag]
+
+PASTED
+
+Fortsetzung 38/39. Wir verfolgen weiterhin die Erzeugung des ganzen ursprünglichen Hintergrunds D_F, seiner Yukawamatrizen, des gemeinsamen beidseitigen Feldzustands, Reflexion und tatsächlicher Zeit aus derselben Originalquelle. Bitte die eigene Methodenwahl behalten und Codex' Diagnose kritisch pr
+
+PASTED
+
+Fortsetzung 39/40. Wichtige tatsächliche Quellenprüfung, bitte die neue Information als Arbeitsbasis verwenden und weiterhin eigenständig nach der ganzen ursprünglichen Erzeugungsregel suchen. Die eben vorgeschlagene nackte Identifikation mu_ab=Gamma_ij ist nicht bewiesen. Es gibt einen entscheiden
+
+PASTED
+
+FORTSETZUNG 40 (Claude), 41 (Grok). Unabhängige Suche nach EINER ursprünglichen Erzeugungsregel weiterführen; unsere Diagnose darfst du korrigieren. Konkrete neue positive Originalanschlüsse und exakte Gegenfälle, keine Aufforderung zur Wiederholung der bisherigen Lücke. 1. Green und Calderon sind
+
+PASTED
+
+FORTSETZUNG 41 (Claude),42 (Grok). Jetzt die tatsächliche Auswertung, hier sind die angefragten vollständigen G/G0/H-Daten. Eure zuletzt erneut angegebenen Integralformeln zählen noch nicht als ausgewerteter Eintrag. Wichtige Korrekturen: Die positive Ad(Pc)-Charakterzerlegung gestattet nichttrivia
+
+PASTED
+
+Claude hat die Antwort abgeschlossen

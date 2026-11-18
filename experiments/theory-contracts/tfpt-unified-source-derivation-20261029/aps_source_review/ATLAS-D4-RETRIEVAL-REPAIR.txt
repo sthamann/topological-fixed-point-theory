@@ -1,0 +1,87 @@
+Atlas D4 Abruf: Reparatur im bestehenden Aufrufpfad
+Datum: 2026-10-30
+
+Ergebnis
+Die frische, isolierte stdio Verbindung über semantic_explorer/run.sh mcp
+liefert für die Anfrage
+  D4 monodromy vierte Matrix Identität C3xC3 rigid-family
+an erster Stelle den vorhandenen Befund
+  finding:archived-d4-puncture-formula-fails-and-existing-v117-repairs-existence
+bei unveränderter Datenrevision bbd1f7bb9943b7efec8f04d0.
+Der Aufruf endet regulär mit Exitcode 0 und ohne stderr. Die Antwort enthält
+den vollständigen zurückgegebenen ersten Befund einschließlich sieben Quellen,
+Scope und Prämissenverweisen. Sie belegt einen reparierten Abruf vorhandenen
+Wissens, keine neue theoretische Herleitung.
+
+Konkrete Ursache
+Die Anfrage führte bereits zum richtigen großen Problem
+problem:atlas-clock-defect-and-operational-reconstruction. Dessen vollständige
+Darstellung umfasst 1.031.091 Zeichen. Innerhalb dieses Problems wurden
+Detailtreffer zuvor über die ganze JSON Darstellung bewertet. Einträge mit
+vielen Quellenpfaden und verknüpften IDs verdrängten den einschlägigen Befund,
+obwohl dessen mathematischer Inhalt zur Frage passt. Dazu kamen unterschiedliche
+Schreibweisen wie monodromy/Monodromie und Matrix/Matrizen.
+
+Begrenzte Änderung an vorhandener Software
+1. semantic_explorer/server/src/research.rs:590 und 689
+   Die bestehende Tokenisierung vereinheitlicht Monodromie/monodromy,
+   Matrix/Matrizen/matrices und Identität/identity.
+2. semantic_explorer/server/src/research.rs:804
+   detail_records trennt Überschrift und inhaltliche Felder von übrigen Metadaten.
+   Echte ID Treffer bleiben zuerst. Danach zählt die Abdeckung verschiedener
+   inhaltlicher Anfragewörter, gefolgt von ihrer Seltenheit und Gewichtung:
+   Überschrift 20, Inhalt 5, reiner Metadatentreffer 1. Die vorhandene Reihenfolge
+   bleibt stabil für leere Anfragen und den unveränderten Problemabruf.
+3. semantic_explorer/server/src/research.rs:1247
+   Die vorhandene Detailpackung berücksichtigt ihre Fortsetzungsmetadaten bereits
+   vor dem Einfügen. Dadurch verliert eine knappe Antwort ihre Navigationskarte
+   nicht nachträglich durch zu spät eingerechneten Platzbedarf.
+
+Passende Regressionen
+semantic_explorer/server/src/research_tests.rs:1048,1069,1086 enthält drei
+zusätzliche Prüfungen: quellenreicher Ablenkungstreffer gegen einschlägigen
+Inhalt; unveränderter Vorrang einer exakten Befund ID; zweimal identische echte
+D4 Anfrage gegen vorhandenes research/program.json bei 24.000 Zeichen.
+Vor der Reparatur bestanden davon eine Prüfung und zwei scheiterten. Danach
+bestanden alle 19 Tests des vorhandenen research Moduls, null Fehler und
+79 ausgefilterte Tests. Dies ist keine Behauptung einer vollständigen
+Serverprüfung. Die Tests wurden für diese frische Verbindungsprüfung nicht
+nochmals ausgeführt.
+
+Beobachteter echter Aufruf
+Ein zusätzlicher subprocess startete ausschließlich run.sh mcp. Der vorhandene
+Startpfad erledigte seinen erforderlichen Release Build und öffnete eine neue
+stdio Verbindung. Nach initialize, notifications/initialized und tools/call
+research_state wurde stdin geschlossen. Bestehende Clients und Server wurden
+weder beendet noch neu gestartet. Die Verbindung benötigte 9,738 Sekunden.
+Die serverseitig gezählte Antwort hat 22.046 Zeichen bei max_chars=24.000.
+Die gespeicherte kompakte JSON Datei hat mit abschließendem Zeilenumbruch
+22.047 Zeichen. Die Antwort ist ausdrücklich eine Teilseite: drei Befunde,
+korrekte Fortsetzung mit detail_offset=3 und derselben erwarteten Revision.
+Scope und Quellen des D4 Erratums bleiben in der Antwort erhalten.
+
+Abgrenzung zur alten Verbindung
+Die schon laufende MCP Verbindung zeigte nach der Quelländerung, vor dem
+frischen Start, noch finding:matrix-clutch-degree-connects-weak-determinant-class-
+without-ray-selector an erster Stelle. Ihre exakte Befund ID Anfrage fand die
+vorhandene D4 Lösung trotzdem. Beide Aufrufe lesen dieselbe Datenrevision.
+Der neue Quellcode wird im laufenden alten Prozess nicht durch das Ersetzen
+der Release Datei nachgeladen. Eine frische Verbindung verwendet den Fix;
+bestehende Verbindungen können ihn bei ihrem normalen späteren Neustart laden.
+Ein Eingriff in diese fremden Verbindungen war für den Nachweis nicht nötig.
+
+Dauerhafte Belege
+Workspace outputs/multi-model-source-search-20261029/
+  ATLAS-D4-FRESH-MCP-RESPONSE.json
+  ATLAS-D4-FRESH-MCP-CHECK.json
+Die zweite Datei enthält den konkreten Aufruf, Revision, ersten Befund,
+Antwortbudget, Exitcode, Quellhashes und Hash des frisch verwendbaren
+Release Programms. Die erste Datei enthält das vollständige begrenzte
+research_state Ergebnis als kompaktes UTF-8 JSON.
+
+Geltungsbereich
+Es wurden nur die bestehende Rangfolge und Antwortpackung sowie die genannten
+Regressionen geändert. Keine Atlas Graphdaten wurden direkt geändert; API,
+Schema, Gates und Theorieaussagen bleiben unverändert. Der erste Befund sagt
+weiterhin nur das konkrete archivierte D4 Erratum und die bestehende v117
+Existenzkorrektur aus, ohne daraus einen allgemeinen P2 Ausschluss abzuleiten.

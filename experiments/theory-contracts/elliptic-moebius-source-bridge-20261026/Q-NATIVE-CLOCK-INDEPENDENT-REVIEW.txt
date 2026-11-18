@@ -1,0 +1,117 @@
+Q-NATIVE-CLOCK-INDEPENDENT-REVIEW
+=================================
+
+Datum: 2026-10-26
+
+Gepruefter Stand
+----------------
+
+Geprueft wurde
+
+    research-20261026-real-boundary/Q-NATIVE-CLOCK-TEST.txt
+
+mit SHA256
+
+    bf565a83ce5e7d8a70bd24ad77b97ae24610d37180b2e675c866aa6cb3578ce4.
+
+Urteil
+------
+
+AKZEPTIERT im ausdruecklich engen Quotientenscope.
+
+Der geometrische Viertellift Q und der native zentrale Gaussianclock J haben
+auf den beiden verglichenen F2 Quotienten verschiedene Wirkungen. Deshalb
+kann kein invertierbarer linearer oder symplektischer Intertwiner Q wortgleich
+auf J abbilden. Der Satz betrifft nur diese beiden festgelegten Quotienten und
+diese markierte Generatorgleichheit.
+
+1. Q auf Jac(C)[2]
+------------------
+
+Im q Paket gilt
+
+    Q^*L_a^q=L_(-a-1)^q.
+
+Mit e_0=L_0^q, e_1=L_1^q und L_2^q=e_0+e_1 folgt
+
+    Qe_0=e_0+e_1,
+    Qe_1=e_1.
+
+Die Spaltenmatrix ist daher
+
+        [1 0]
+    A = [1 1]
+
+ueber F2. Sie erfuellt A^2=I und rank(A-I)=1. Dieselbe Rechnung gilt im p
+Paket. Wegen
+
+    Jac(C)[2]=V_q direct-sum V_p
+
+ist die volle Wirkung diag(A,A), nicht die Identitaet. Ihr Fixraum hat
+Dimension 2 und rank(Q-I)=2.
+
+Das ist mit Ordnung 4 von Q auf C vereinbar. Q^2 ist die hyperelliptische
+Involution. Sie wirkt als -I auf Jac(C) und daher als I auf Jac(C)[2].
+
+2. J auf dem nativen Gaussianquotienten
+---------------------------------------
+
+Im eingefrorenen nativen Chart ist J die Multiplikation mit i auf dem
+Gaussianlattice L und
+
+    V_E8=L/(1+i)L.
+
+Fuer jedes x in L gilt
+
+    ix-x=(i-1)x=i(1+i)x.
+
+Somit wirkt J auf V_E8 exakt als Identitaet. Dies stimmt mit der nativen
+Gruppenrechnung ueberein: Die zentrale mu4 liegt im Kern der Wirkung auf den
+16 Restklassen und damit im N64 Kern von G31->Sp4(2).
+
+3. Exakter Ausschluss und sein Umfang
+-------------------------------------
+
+Waere phi:Jac(C)[2]->V_E8 invertierbar und erfuellte
+
+    phi Q=J phi,
+
+so gaelte wegen J=I sofort phi Q=phi und damit Q=I. Dies widerspricht
+rank(Q-I)=2. Der Ausschluss ist konjugationsinvariant und kann durch keine
+der 720 symplektischen Markierungen beseitigt werden.
+
+Ausgeschlossen ist genau die wortgleiche markierte Identifikation
+
+    (Jac(C)[2],Q) -> (L/(1+i)L,J).
+
+Nicht ausgeschlossen sind die Abbildung von Q auf ein anderes natives
+Sp4(2) Element derselben Wirkungsklasse oder eine dickere arithmetische
+Reduktion wie L/2L. Der Bericht behauptet keine dieser Alternativen als
+bewiesen. Ebenso bleiben der v117 Rank 3 Clock U, das q Paket und seine C4
+Dreiecksquelle unberuehrt.
+
+4. Ueberlebender Spinlift von Q^2
+---------------------------------
+
+Fuer h=Q^2 gilt auf holomorphen Einsformen
+
+    h^*(dw/eta)=-dw/eta.
+
+Ein lokaler Halbformrahmen s mit s^2=dw/eta kann daher unter einem Spinlift
+nur als
+
+    s -> +i s
+
+oder
+
+    s -> -i s
+
+transformieren. Ein solcher Lift haette Ordnung 4, obwohl h auf der Kurve
+Ordnung 2 besitzt. Dies ist typmaessig ein moeglicher Ursprung einer
+zentralen Viertelphase.
+
+Der Bericht behandelt dies korrekt nur als bedingten Kandidaten. Die
+vorhandenen q und p Linien waehlen weder eine Theta Charakteristik noch ihre
+Linearisierung oder eine Abbildung der entstehenden Zentralphase auf die
+native mu4 in N64. Ohne diese drei Quelldaten ist Spinlift(Q^2)=J nicht
+bewiesen.

@@ -1,0 +1,101 @@
+{
+  "status": "PASS_EXACT_SCALAR_FIRST_ORDER_SOURCE_FIBER",
+  "date": "2026-10-17",
+  "general_operator": "B=-i(a dtheta+a_prime/2)+c, a>0,c real smooth periodic, Dom H1_per",
+  "complete_normal_form": {
+    "T": "integral dtheta/a",
+    "omega": "2pi/T",
+    "beta": "(1/2pi) integral c/a",
+    "x_prime": "omega/a",
+    "eta_prime": "(omega beta-c)/a",
+    "U": "Uf(theta)=sqrt(omega/a(theta)) exp(i eta(theta)) f(x(theta))",
+    "operator_identity": "B=U omega(-i dx+beta) U*",
+    "full_spectrum": "omega(Z+beta)"
+  },
+  "all_function_symbolic_checks": [
+    "formal selfadjointness",
+    "entire operator intertwiner",
+    "fixed Z Ward",
+    "general winding-one Ward",
+    "intrinsic uniform winding",
+    "spectral-flow endpoint"
+  ],
+  "intrinsic_time_seam_construction": "u_B=exp(ix(theta)) is unique up to phase among wind1 scalar symbols with constant positive increment; increment=omega. Q_B=exp(i T B/4)=U[exp(i pi beta/2)Q4_x]U*, Q_B^4=exp(2pi i beta)I. No identity with native/internal/physically frozen mark clock inferred.",
+  "constant_seam_Ward_theorem": "[B,Z]=kappa Z iff a(theta)=kappa. For u=exp(i phi) of wind1, [B,u]=kappa u iff a phi_prime=kappa; then omega=kappa.",
+  "unit_spectral_flow_theorem": "For every positive a, Z* B Z=B+a and B_s=B+s a has E_n(s)=omega(n+beta+s). For0<beta<1 exactly one upward crossing. Unit spectral flow does not imply constant increment Ward.",
+  "fixed_quarter_and_gap": "beta=alpha modZ, alpha1/4 or3/4, gap1/4 force omega1; all unmarked operators one transported unitary source orbit. Does not identify frozen marked fields/state or a physical q/S selector.",
+  "exact_controls": {
+    "1": {
+      "a": "1/(epsilon*cos(theta) + 1)",
+      "c": "alpha",
+      "x": "epsilon*sin(theta) + theta",
+      "eta": "0",
+      "parameter_range": "-1<epsilon<1",
+      "total_travel_time": "2*pi",
+      "beta": "alpha",
+      "arc_times": [
+        "epsilon + pi/2",
+        "-epsilon + pi/2",
+        "-epsilon + pi/2",
+        "epsilon + pi/2"
+      ],
+      "preserves_four_fixed_marks": false,
+      "commutes_fixed_quarter_rotation": false,
+      "constant_original_Z_Ward": "only epsilon=0",
+      "unit_positive_spectral_flow": 1,
+      "full_P1_countermodel_claimed": false
+    },
+    "4": {
+      "a": "1/(epsilon*cos(4*theta) + 1)",
+      "c": "alpha",
+      "x": "epsilon*sin(4*theta)/4 + theta",
+      "eta": "0",
+      "parameter_range": "-1<epsilon<1",
+      "total_travel_time": "2*pi",
+      "beta": "alpha",
+      "arc_times": [
+        "pi/2",
+        "pi/2",
+        "pi/2",
+        "pi/2"
+      ],
+      "preserves_four_fixed_marks": true,
+      "commutes_fixed_quarter_rotation": true,
+      "constant_original_Z_Ward": "only epsilon=0",
+      "unit_positive_spectral_flow": 1,
+      "full_P1_countermodel_claimed": false
+    }
+  },
+  "charged_quarter_and_integer_carry": {
+    "Qalpha": "exp(i pi alpha/2) Q4; Qalpha^4=exp(2pi i alpha)I",
+    "joint_invariant": "exp(i pi B/2) Qalpha*=i^N I for mean(c)=alpha+N",
+    "all_integer_residue_certificates": [
+      {
+        "residue": 0,
+        "all_integer_m": true,
+        "time_quarter_phase": "1",
+        "fixes_mark_frames_and_quarter": true
+      },
+      {
+        "residue": 1,
+        "all_integer_m": true,
+        "time_quarter_phase": "I",
+        "fixes_mark_frames_and_quarter": false
+      },
+      {
+        "residue": 2,
+        "all_integer_m": true,
+        "time_quarter_phase": "-1",
+        "fixes_mark_frames_and_quarter": false
+      },
+      {
+        "residue": 3,
+        "all_integer_m": true,
+        "time_quarter_phase": "-I",
+        "fixes_mark_frames_and_quarter": false
+      }
+    ],
+    "reference_sea_branch": "N=0; do not discard4Z large-gauge carry"
+  },
+  "scope": "Whole given rank1 LOCAL differential first-order circle class, not all originalP1 sources, nonlocal kernels, enlarged internal algebras or fullE8 operations. Original fixed seam/time Ward is a GIVEN-source condition, not inferred from bareP1 winding. Four marks must be transported or their arc times retained. No change of reference sea/normal-order/Schwarzian or full relative action inferred from one-particle unitary equivalence. No physical3+2, event/coupling/metric rule or inequivalent-P1 countermodel claimed."
+}

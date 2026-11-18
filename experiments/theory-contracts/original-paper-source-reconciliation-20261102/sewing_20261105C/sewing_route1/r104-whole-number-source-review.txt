@@ -1,0 +1,53 @@
+R104 ganze N Quelle: unabhängiger analytischer Review
+5. November 2026. Keine numerische Ausführung, keine neue Hamiltonklasse.
+
+Gegebener ursprünglicher Cluster
+m16, P=|phi><phi|, |phi>=(|0>+exp(i phi)|F16>)/sqrt2, H=2(I-P), N=sum_i n_i. Gamma(r)=directsum_n wedge^n r ist die tatsächlich eingesetzte ursprüngliche Boundarywirkung. Sie kann als Operator auf der festen endlichen Fockquelle behandelt werden; der folgende determinant identity Beweis braucht keine Invertibilität von r.
+
+1. Exakte zwei plus Komplement Zerlegung
+S=span{|0>,|F16>} und sein orthogonales Komplement reduzieren H,N und Gamma(r), weil Gamma(r) die Teilchenzahl erhält und die Grade0,16 jeweils eindimensional sind. Auf S gilt
+ H2=[[1,-exp(-i phi)],[-exp(i phi),1]], N2=diag(0,16), Gamma(r)2=diag(1,d), d=det r.
+Auf dem Komplement ist H=2I und N hat seine ursprünglichen Besetzungszahlen1,...,15.
+Für eine integrierbare zeitabhängige skalare Quelle h auf[0,beta] setze chi=int h. Die exakte ganze Quelle ist
+ Z_r[h]=exp(-2beta)[det(I+exp(chi)r)-1-exp(16chi)d]
+       +Tr2{diag(1,d) Texp[-int(H2-h(t)N2)dt]}.
+Der erste Term folgt aus der endlichen Exteriorcharakteridentität Tr Gamma(exp(chi)r)=det(I+exp(chi)r); die Grade0 und16 werden abgezogen, weil sie im zweiten Term bereits vollständig enthalten sind. Keine Doppelzählung und kein Löschung des ursprünglichen konstanten Energieteils.
+Die Formel ist ein Wert der tatsächlich gegebenen R104 Quelle, keine Gleichsetzung ihrer ursprünglichen Feldkarten mit P1 oder S_adm.
+
+2. Quellenzeitordnung
+Für eine Stückquelle h_j auf ZeitintervallenDelta_j gilt im zweiten Term die geordnete endliche Produktform mit späteren Zeiten LINKS. Die verschiedene h_j Generatoren dürfen nicht ungeprüft durch H2-mean(h)N2 ersetzt werden, denn[H2,N2] ist nichtnull. Auf dem Komplement ist diese Zusammenfassung zu chi dagegen exakt zulässig.
+Die Einfügung Gamma(r) bleibt am ursprünglichen Boundaryplatz. Für allgemeines d!=1 kommutiert die2×2 Boundarymatrix nicht mit H2; sie darf nicht als Skalar durch das Produkt gezogen werden. Für canonicaldet r=1 ist sie auf S identisch.
+
+3. Konstante Quelle und komplexe Fortsetzung
+Setze c=1-8h und M=H2-hN2-cI=[[8h,-exp(-i phi)],[-exp(i phi),-8h]], dann M²=(1+64h²)I.
+Mit kappa²=1+64h² folgt für konstantes h
+ Z2_r(h)=exp[-beta(1-8h)]{(1+d)cosh(beta kappa)-8h(1-d)sinh(beta kappa)/kappa}.
+Für canonicaldet r=1 ist dies genau
+ 2 exp[-beta(1-8h)]cosh(beta sqrt(1+64h²)).
+Der Faktor2 ist zwingend.
+Dies ist eine ganze Funktion von komplexem h: cosh(beta kappa) ist gerade in kappa; sinh(beta kappa)/kappa hat den stetigen Wertbeta bei kappa0. Bei h=±i/8 darf keine scheinbare Zweigpolsingularität eingeführt werden. Das direkte2×2 Exponential I-beta M am nilpotenten Punkt liefert denselben Grenzwert. Stückweise komplexe h haben ebenfalls endliche geordnete Matrixexponentiale.
+
+4. Tatsächlicher C4 Boundaryfilter
+P4=(1/4)sum_(q=1,i,-1,-i)q^N ist der gegebene Rechenfilter auf N mod4=0; er wird hier nicht zu P_adm oder einer ganzen physischen Gaussprojektion erklärt.
+Nur die Grade0,4,8,12,16 bleiben. Die ganzen Innenkoeffizienten lauten binom16,4=1820, binom16,8=12870, binom16,12=1820. Deshalb
+ Z_P4[h]=exp(-2beta)[1820exp(4chi)+12870exp(8chi)+1820exp(12chi)]
+          +Tr2 Texp[-int(H2-hN2)dt].
+Die Rangsumme ist16512, die Komplementrangsumme16510. Bei Nullquelle ist Z_P4[0]=1+16511exp(-2beta).
+
+5. Absolute Normierung und Wortableitungen
+Bei h0 und arbitrarycanonicaldet r1 gilt
+ Z_r[0]=exp(-2beta)det(I+r)+1-exp(-2beta).
+Insbesondere untwinedrI: Z_I[0]=1+65535exp(-2beta). Die zentrale q=-1 Quelle ist1-exp(-2beta), nicht die Operatoridentität U_q E=P. Die zentrale q=±i Quelle ist1+255exp(-2beta).
+Diese absoluten Faktoren werden für den gegebenen Caller erhalten. Ein normiertes generating functional ist gegebenenfalls Z_r[h]/dem tatsächlich ursprünglichen festen Nenner, nicht eine neue separate Normierung jedes Gaugeterms. Bei Nullstellen einer twistedTrace wird nicht durch sie dividiert.
+Für0<t1<...<tk<beta liefert die funktionale Ableitung nach h die ursprüngliche zeitgeordnete Quelle
+ Tr Gamma(r) E_(beta-tk) N E_(tk-t(k-1)) ... N E_t1
+bei h0. Das Vorzeichen ist positiv, da der Generator H-hN lautet. Für unterschiedliche geordnete Zeiten entsteht kein zusätzlicher Faktor k!; Ableitung nach einer konstanten Quelle integriert den ganzen Zeitwürfel beziehungsweise k! mal den geordneten Simplex.
+Eine zusätzliche geschlossene Gegenprüfung für die untwined Zweierquelle lautet mit s+t=beta und a_x=exp(-2x):
+ Tr(E_s N E_t N)=4456256 a_beta+64(1+a_s+a_t).
+Sie folgt unabhängig aus dem Komplementtrace sum_n binom16,n n² minus256 sowie dem2×2 Wert64(1+a_s)(1+a_t).
+Die erste normierte untwined N Antwort ist8 für alle beta; dasselbe gilt für P4. Allgemeine r-twisted N Antworten müssen nicht8 sein.
+
+6. Tatsächlicher Umfang
+Die neue Quelle ist GANZ in der zeitabhängigen N Quelle h und trägt den tatsächlichen Boundarycharakter Gamma(r). Sie berechnet alle N Wortderivate, einschließlich zeitabhängiger und nichtgaußscher höherer Antworten. Sie ist nicht die ganze CAR Quellenfamilie mit unabhängigen geladenen eta_i und auch nicht die gemeinsame primitive Geometrie/Materiequelle.
+Die N Familie ist für den gegebenen Cluster phi-phasenblind; die offdiagonale Phase kann in S unitär entfernt werden und die Boundarymatrix bleibt diagonal. Ihre Berechnung ersetzt deshalb nicht die bereits vorhandenen phasensensitiven determinantischen CAR Antworten.
+Gemeinsame Rest/Gaugegewichte und das ursprüngliche absolute Z0 müssen im vollständigen R104/v1013 bedingten Caller weiterhin mitgetragen werden. Die zentrale C4 Berechnung allein identifiziert weder die ganze Spin10 Haarintegration noch einen ursprünglichen P1/Padm Anschluss. Keine neue physische oder Ledgerpromotion.

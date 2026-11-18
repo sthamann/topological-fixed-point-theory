@@ -1,0 +1,158 @@
+C57 CAP TRANSFER: OS UNIT, CAP INSERTION AND THE REAL WEAK CONNECTION
+Independent targeted review, 30 October 2026.
+Verdict: FIRST_IDENTIFICATION_FALSE; GENERAL_CAP_REQUIRES_STATE_AND_SIGNED_COMPRESSION.
+No Atlas, original or existing report edit.
+
+1. The OS unit cannot produce the nontrivial cap determinant
+The original OS construction defines
+
+  (F,G)_OS=<Theta F,G>_rel,
+  T_ell[F]=[tau_ell F].
+
+The algebra unit is translation invariant: tau_ell 1=1. Therefore
+
+  T_ell[1]=[1],
+  ([1],T_ell[1])_OS=||[1]||_OS^2=omega_rel(1).          (1)
+
+For a normalized source, equation(1) is1. If an unnormalized convention is
+kept, it is the fixed vacuum norm. Within ONE fixed reconstructed OS theory it
+is independent of the semigroup time ell. This is the positive OS unit check,
+not a nontrivial transfer amplitude.
+
+This statement must not be extended across a family in which ell changes the
+collar geometry, the functional omega_ell, the admissible projection or the
+theory itself. In such a family ||[1]||_ell may carry an ell-dependent
+unnormalized scalar. A separately supplied identification could then make that
+scalar equal to a cap factor pointwise. The unit calculation neither forbids
+such an extra source identity nor proves it. It blocks C57's inference of the
+cap determinant from translation of the unit inside the SAME OS semigroup.
+
+The fixed-cap determinant is different. FIXED-CAP-STATE.txt proves
+
+  det_F C=<Omega0,exp(-ell H_exc)Omega0>,               (2)
+
+where Omega0 is the old sea vector represented in the coupled-sea Fock space.
+For nonzero coupling and finite ell it is not stationary under H_exc. Hence it
+cannot be the OS vacuum vector [1], which is fixed by the reconstructed
+semigroup. Equating
+
+  Z_rel[0]=([1],T_ell[1])_OS=det_F C
+
+therefore fails at its first identification. It also contradicts the explicit
+ell dependence of det_F C unless the cap is trivial.
+
+The correct OS-shaped insertion is a cap vector [F_cap] representing Omega0:
+
+  ([F_cap],T_ell[F_cap])_OS
+       =<Omega0,exp(-ell H_exc)Omega0>.                 (3)
+
+Equivalently, if U_0h is the already implementable sea-rotation operator with
+Omega0=U_0h Omega_h, then the right-hand side is
+
+  <Omega_h,U_0h* exp(-ell H_exc) U_0h Omega_h>.
+
+This is an inserted relative boundary amplitude. It is not the empty OS word
+and does not determine the absolute original partition scalar, determinant-line
+phase, reference subtraction or Z_adm. This is exactly the distinction retained
+in FIXED-CAP-DETERMINANT.txt and FIXED-CAP-STATE.txt.
+
+2. General finite-dimensional cap formula
+Let h=h* be the coupled one-particle operator, Ph=1_(-infinity,0)(h), and P0
+the fixed old occupied projection. On a finite mode block let Omega_P0 be its
+old Slater vector and set
+
+  E0=Tr(h Ph),
+  H_exc=dGamma(h)-E0.
+
+Then exterior functoriality gives the exact cap amplitude
+
+  Z_cap(P0,h;ell)
+    =<Omega_P0,exp(-ell H_exc)Omega_P0>
+    =exp(ell Tr(h Ph))
+       det_RanP0(P0 exp(-ell h) P0).                    (4)
+
+The whole-circle version is the Fredholm/determinant-line limit already proved
+for the stated fixed-cap source. Formula(4) displays both indispensable data:
+the signed coupled operator h and the fixed occupied subspace P0. It is not a
+class function of the eigenvalues of h^2 alone.
+
+For the earlier constant scalar-quarter class,
+
+  h0=p gamma,  h=h0-i gamma Phi,  {h0,h-h0}=0,
+
+one has h^2=E^2 and the singular blocks canonically identify old and moving
+occupied spaces. Formula(4) then reduces to the previously proved mode factor
+
+  C_p=exp(-ell E) P0 exp(-ell h)P0
+     =(I+|p|E^-1)/2
+       +(I-|p|E^-1)exp(-2ell E)/2.                     (5)
+
+Equation(5) is a special anticommuting reduction of (4), not the general cap
+rule.
+
+3. Why the real weak connection does not obey the old reduction
+For the actual weak source reviewed in
+ACTUAL-WEAK-CONNECTION-AND-JOINT-SOURCE.txt,
+
+  h(t)=(pI+tQ)gamma-i gamma D_F,
+  Q*=Q, [Q,gamma]=0.
+
+Relative to h0=p gamma, the weak term does not anticommute:
+
+  {p gamma,tQ gamma}=2ptQ.                              (6)
+
+Consequently
+
+  h(t)^2=(pI+tQ)^2+D_F^2-it[Q,D_F],
+
+and neither the compression P0 exp(-ell h(t))P0 nor its determinant is fixed by
+the unmarked spectrum of h(t)^2. The exact exponential contains the signed term
+
+  exp(-ell h)=cosh(ell |h|)-h |h|^-1 sinh(ell |h|),    (7)
+
+with the continuous value on ker h. Compression by P0 retains the second term.
+Replacing (7) by a spectral function of h^2 deletes precisely the old/moving
+cap orientation.
+
+The smallest counterexample uses no new source construction. Take one existing
+two-dimensional cap block, P0=P_-(sigma_z), and compare
+
+  h1=E sigma_z,  h2=E sigma_x,  E>0.
+
+Both have h_i^2=E^2 I and therefore identical h^2 spectra. Formula(4) gives
+
+  Z_cap(P0,h1;ell)=1,
+  Z_cap(P0,h2;ell)=exp(-ell E)cosh(ell E)
+                  =(1+exp(-2ell E))/2.                 (8)
+
+Thus even the complete h^2 operator is insufficient without P0 and the signed
+compression. This two-dimensional pair is a general cap-algebra counterexample
+to the proposed h^2-only inference. It is not asserted to be two complete
+original v252 profiles with every source datum held fixed. The actual weak
+connection is more structured; equation(6) proves only that its old
+anticommuting shortcut is unavailable. Its original cap value must be evaluated
+from formula(4) with the actual P0 and h(t).
+
+4. Correct retained conclusion
+The new weak-source moment calculation proves that the labelled source h(t),
+its logit and its cross-face block retain relative family orientation at fixed
+p=1/4. This positive result remains intact. To propagate it into the fixed cap,
+use formula(4) with the actual P0 and h(t), or equivalently the inserted vector
+formula(3). One may obtain a compressed operator function involving h^2 and P0,
+but no uncompressed h^2 spectral class function replaces the cap insertion.
+
+No equality to the original absolute Z_rel[0] follows from the reviewed OS unit
+or cap algebra. This is not a universal no-go against an original whole-source
+identity. Establishing one would additionally require the actual family
+identification, normalization, reference, eta/Pfaffian and field-to-operator
+caller. The fixed-cap determinant is already an exact finite relative boundary
+correction and should retain precisely that scope.
+
+SOURCES REVIEWED
+  documents/archive--tfpt-45--source_extracts--04_qft_source/sections/
+    008-section-relative-reflection-positivity-with-fermions.tex:217-253;
+  aps_source_review/DIRECT-ACTION-TO-WHOLE-TRANSFER-REVIEW.txt:4-18;
+  aps_source_review/FIXED-CAP-STATE.txt;
+  aps_source_review/FIXED-CAP-DETERMINANT.txt;
+  aps_source_review/ACTUAL-WEAK-CONNECTION-AND-JOINT-SOURCE.txt;
+  outputs/multi-model-source-search-20261029/CLAUDE-FOLGE57.txt.

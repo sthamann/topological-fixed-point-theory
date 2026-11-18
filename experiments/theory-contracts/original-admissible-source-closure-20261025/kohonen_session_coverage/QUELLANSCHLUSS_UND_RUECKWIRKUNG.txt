@@ -1,0 +1,139 @@
+# Ursprünglicher Quellanschluss und geometrische Rückwirkung
+
+26. Oktober 2026. Ausgeführte Fortsetzung des Auftrags, die Rückkopplung aus derselben Quelle zu berechnen.
+
+**Ergebnis:** Für den vorhandenen Diracvergleich lässt sich eine konkrete Rückwirkung aus einer Änderung der Geometrie ableiten. Ihre Kopplungsstärken folgen aus dem Operator. Die ursprüngliche Quelle liefert dafür den Kreiszweig, seinen Zustand und seine Zeit. Die Geometrieänderung selbst ist in dieser Rechnung ein kontrollierter Eingriff. Ihre autonome Auswahl durch die primitive TFPT Wirkung bleibt offen.
+
+![Geometrische Quellantwort](runs/source_geometric_response.png)
+
+## 1. Der passende Kreiszweig ist bereits in der ursprünglichen Quelle enthalten
+
+Der vorhandene Vergleichsoperator ist
+
+`D0 = -i (sigma1 partial_x + sigma2 partial_w)`
+
+mit `w in [-1,1]`, der ursprünglichen Pin Bedingung `psi(x+1,-w)=c sigma1 psi(x,w)` und den Randlinien `sigma1 psi=b psi` bei `w=±1`. Dabei gilt `c=±i` und `b=±1`.
+
+Sein normaler Nullzweig ist `phi0(w)=(1,b)/2`. Die Abbildung `V f=phi0 f(x)` ist eine Isometrie, wenn der Kreis und der Pin Raum im selben ursprünglichen Fundamentalbereich normiert werden. Direkt folgt:
+
+`D0 V = V B`, mit `B=b*(-i partial_x)` und `f(x+1)=c*b*f(x)`.
+
+Damit erscheinen die beiden ursprünglichen Viertelphasen. Weil der Zweig reduzierend ist, stimmen auch die negativen Spektralprojektionen auf diesem Zweig überein. Die zugehörige CAR Einbettung erhält alle quasifreien Erwartungswerte und dieselbe Zeit. Die vorhandene longitudinale Reflexion wird ebenfalls transportiert. Für `b=-1` ist die angegebene Orientierung von `B` mitzunehmen.
+
+Die Zeitgleichheit bezieht sich auf den angegebenen Generator im ursprünglichen Längensystem `x in [0,1]`. Bei der Winkelkoordinate `theta=2*pi*x` gilt `B=2*pi*b*(-i partial_theta)`. Diese Einheitenumrechnung wird mitgeführt; sie ist keine neue physische Clock Identifikation.
+
+Das ist der vorhandene reine Dirac Vakuumzustand. Er wird hier vollständig einschließlich seiner äußeren Moden behalten. Die separat untersuchte thermische Green Quantisierung wird damit nicht gleichgesetzt.
+
+Der Zweig erstreckt sich über die ganze normale Breite. Der genaue Zeuge `||Q M_w phi0||²=1/3` zeigt, dass seine Projektion keine automatisch lokale Auswahl in einem beliebig dünnen Kragen ist. Die Identifikation mit dem ursprünglichen P1 Zulässigkeitsraum folgt daraus noch nicht.
+
+## 2. Eine uniforme Änderung liefert noch keine Rückkopplung
+
+Für `D_a=-i(sigma1 partial_x+a sigma2 partial_w)`, `a>0`, bleibt der Kreiszweig exakt reduzierend. Deshalb gilt `Q D_a P0=0`. Eine bloße Änderung der einheitlichen Querbreite erzeugt in diesem Zweig keine Gedächtniswirkung durch äußere Moden.
+
+`P0` bezeichnet hier die Projektion auf den normalen Nullzweig. Sie ist nicht der native quartische Fünferprojektor.
+
+## 3. Eine räumlich veränderliche Geometrie erzeugt die gesuchte Art von Rückwirkung
+
+Für eine glatte, reelle und gerade Profilfunktion `h(w)` wird die vorhandene Metrik kontrolliert verändert:
+
+`g_epsilon = exp(2 epsilon h(w)) g0`.
+
+Nach dem unitären Transport auf dieselbe L2 Dichte lautet der tatsächlich zugehörige Diracoperator
+
+`D_epsilon = exp(-epsilon h/2) D0 exp(-epsilon h/2)`.
+
+Diese Formel ist die übliche konforme Kovarianz des Diracoperators, einschließlich des Dichtetransports. Quelle: [Ginoux, The Dirac Spectrum, Proposition 1.3.10](https://nicolas-ginoux.perso.math.cnrs.fr/spectrumDirac6309.pdf).
+
+Die erste Variation ist daher festgelegt:
+
+`delta D[h] = -(h D0 + D0 h)/2`.
+
+Für den ursprünglichen Kreismodus `phi0 exp(ikx)` lässt sich der äußere Anteil vollständig berechnen. Mit `phi_orth=(1,-b)/2` und dem ursprünglichen Mittel `<h>=(1/2) integral_-1^1 h(w) dw` gilt
+
+`Q delta D[h] phi0 exp(ikx) = b[-k(h-<h>) phi0 + h' phi_orth/2] exp(ikx)`.
+
+Die Stärke der ersten Auskehr mit möglicher Rückkehr ist somit exakt
+
+**`||Q delta D[h] psi||² = k² Var(h) + <(h')²>/4`.**
+
+Die beiden Beiträge sind orthogonal. Diese Aussage gilt für die gesamte genannte Profilklasse. Sie verschwindet genau bei einem konstanten Profil. Es wurde keine Lernrate eingeführt.
+
+Beim einfachen Prüfprofil `h=w²` ergibt sich `4k²/45+1/3`. Die vollständigen äußeren Fourieramplituden sind ebenfalls exakt berechnet. Ihre unendliche Normsumme reproduziert dieselbe Formel. Das Ergebnis stammt daher nicht aus einem gewählten Modenlimit.
+
+## 4. Die vollständige Entwicklung wurde ausgeführt
+
+Für den Lauf wurde zusätzlich ein glattes gerades Profil verwendet, das bei `|w|<1/4` sowie `|w|>3/4` exakt verschwindet. Dadurch bleiben die bekannten ursprünglichen Randkragen und ein Kragen um `w=0` unverändert. Dieses Profil und seine Stärke `epsilon=0.1` sind ausdrücklich gewählte Diagnoseeingaben. Sie sind keine hergeleiteten TFPT Konstanten und noch keine Identifikation eines beliebigen P1 Nahtkragens.
+
+Die Matrixelemente folgen durch direkte Integration des ursprünglichen Differentialoperators. Im tatsächlichen Pin Sektor des Kreiszweigs gilt
+
+`D_mn = b [k + i*pi*(m-n)/2] A_(m+n)`,
+
+`A_j = integral_0^1 exp(-epsilon h(w)) cos(pi*j*w) dw`.
+
+Die Maschine wendet die daraus berechnete unitäre Entwicklung wiederholt an. Sie projiziert nach einem Schritt nicht zurück auf den Kreiszweig. Auch die ursprüngliche reine CAR Kovarianz wird beibehalten und entlang dieser Entwicklung ausgewertet. Das ist eine Änderung gegenüber der früheren frei gewählten Kohonen Rückkopplung.
+
+Zusätzlich wurde die Antwort des Kreiszweigs durch eine ausdrücklich hergeleitete Gedächtnisrekursion berechnet. Für den tatsächlichen unitären Schritt `U` heißen seine vier Blöcke `K=P0 U P0`, `B=Q U P0`, `C=P0 U Q` und `E=Q U Q`. Der Gedächtniskern lautet dann `C E^j B`. Er reproduziert die vollständige Entwicklung über alle 400 Schritte mit einem Fehler von ungefähr `2.1e-13`. Bei diesem unitären Operator ist `C` im Allgemeinen nicht `B*`. Die falsche Ersetzung durch `B*` verfehlt die komplexe Antwort im Kontrolllauf um ungefähr `0.0208`.
+
+Ausgeführt wurden 400 aufeinanderfolgende Schritte mit Schrittweite 0,01 in der vorhandenen Quellzeit. Die kontinuierliche Entwicklung wird durch denselben Operator bestimmt; die Schrittweite legt nur die Abtastung fest.
+
+| Geprüfte Größe | Ergebnis |
+|---|---:|
+| Größter Lauf | 257 normale Moden |
+| Unterschied der Rückkehrkurven zwischen 129 und 257 Moden | kleiner als `3e-10` |
+| Unterschied der berechneten Besetzung zwischen diesen Läufen | kleiner als `2e-10` |
+| Größter Normanteil außerhalb des Kreiszweigs im Lauf | 0,263 % |
+| Größte Besetzung des Testmodus im ursprünglichen Vakuum | 0,0260 % |
+| Wiederholte Schritte gegenüber direkter Entwicklung | Fehler ungefähr `2.1e-13` |
+| Hergeleitete Gedächtnisrekursion gegenüber vollständiger Entwicklung | Fehler ungefähr `2.1e-13` |
+
+Die unendlich vielen Moden werden für die erste Rückwirkungsform analytisch behandelt. Die längeren Kurven sind endlich geprüfte Galerkin Rechnungen. Die äußeren Amplituden wurden vollständig bis zum jeweils angegebenen Limit erhalten. Der Kontrolllauf ohne Geometrieänderung zeigt keine solche Auskehr.
+
+## 5. Die Rückwirkung enthält einen benötigten Bestandteil der nativen Quelle
+
+Eine inzwischen vorliegende ursprüngliche Strukturprüfung zeigt: Die nativen Quartikfelder enthalten Überträge zwischen den acht ursprünglichen Bögen. Eine rein additive skalare Dichte und Stressbeschreibung auf den einzelnen Bögen erzeugt diese Felder nicht. Diese Einschränkung wurde am Original geprüft und hier beibehalten.
+
+Die aus der Geometrie berechnete Rückwirkung wurde deshalb auf genau solche Überträge untersucht. Werden die äußeren normalen Moden in der vollständigen Resolventenantwort berücksichtigt, ergibt sich in zweiter Ordnung ein nichtlokaler Anteil auf dem ursprünglichen Kreis:
+
+`R_h(k) = (k/8) sum_m h_m² (pi*m)² / (k²+(pi*m)²)`.
+
+`h_m` sind die tatsächlichen Kosinuskoeffizienten desselben Geometrieprofils. Für zwei gegenüberliegende, disjunkte ursprüngliche Teilbögen wurde die Übertragungsamplitude auf zwei unabhängigen Wegen berechnet. Beim verwendeten Profil beträgt der Koeffizient der zweiten Ordnung ungefähr `0.00172055*(1-i)`. Die Fourierrechnung stimmt mit der analytischen Randkernrechnung bis auf `7.1e-12` überein.
+
+Für jedes nichtkonstante glatte gerade Profil ist dieser Übertrag zwischen den benannten Bögen ungleich null. Die Beiträge haben in der ursprünglichen Viertelkonvention dieselbe Phase und können sich nicht gegenseitig aufheben. Die Geometrie liefert somit tatsächlich einen Bestandteil, den die native Quelle benötigt.
+
+Dieser Anteil ist eine spektrale Schurantwort bei `z=0`, keine neue physische Zeitentwicklung. Er ist außerdem als Operator kompakt und kann deshalb nicht selbst mit einem nichtverschwindenden lokalen nativen Multiplikationsstrom gleichgesetzt werden. Die ganze Feldantwort mit Produkten und ursprünglichen Domains ist weiterhin erforderlich. [Prüfresultate](runs/geometric_arc_transfer.json).
+
+## 6. Die thermische Zustandsfrage ist davon getrennt geklärt
+
+Für die vorhandene freie Green Quantisierung auf dem ganzen NS Cover ist `C=(1+exp(2H))^-1`. An den beiden Zeitgrenzen des Halbkragens ergibt sich der orthogonale Cauchyprojektor
+
+`P = [[1-C, sqrt(C(1-C))], [sqrt(C(1-C)), C]]`.
+
+Seine Einschränkung auf einen Rand liefert genau `C`. Die andere NS Hälfte liefert den komplementären Projektor. Die reine quasifreie Erweiterung auf dem Raum beider Cauchyspuren und ihre Einschränkung sind damit durch die vorhandene Geometrie bestimmt. Das ist ein konkreter mathematischer Zustandsanschluss innerhalb dieser freien Quelle. Er identifiziert weder die beiden Zeitränder mit dem P1 Nahtbereich noch zusätzliche Rand CAR Generatoren mit unabhängigen physischen Teilchen.
+
+Auch diese Erweiterung macht aus dem thermischen Zustand keinen Grundzustand bezüglich derselben bisherigen positiven Vakuumzeit. Ein ladungsneutrales energieabsenkendes Observable hat im thermischen Zustand eine strikt positive Norm. Für die tatsächlich vorhandenen Moden mit Energien `0` und `pi/2` ist diese Norm `1/[2(1+exp(pi))]`. Eine zustands und zeitgetreue Einbettung in einen positiven Grundzustand wäre damit unmöglich. Das betrifft diese vollständige Observable und dieselbe Zeit; es schließt weder andere P1 Zustände noch eine anders begründete lokale Zeitabbildung aus.
+
+Für die geometrische Maschine wurde deshalb der ursprüngliche reine Dirac Zustand mit seinem Kreiszweig verwendet. Die thermische Konstruktion wurde nicht als Ersatz eingesetzt.
+
+## 7. Was die primitive Wirkung noch auswählen muss
+
+Die ursprüngliche primitive Wirkung ist eine relative spektrale Wirkung mit eigenem Referenzoperator, Bernstein Maß und Eta Anteil. Sie wird nicht mit der eben verwendeten freien Green Wirkung gleichgesetzt.
+
+Die gleiche geometrische Variation liefert dafür bereits einen konkreten Test. Für ein festes skalares `chi`, feste Testfunktion und gerechtfertigte relative Spuren gilt, falls beide ursprünglichen Operatoren durch dieselbe Geometrie transportiert werden:
+
+`delta_h S_prim = (2/chi²) integral t Tr[h(D_rel² exp(-t D_rel²/chi²) - D_ref² exp(-t D_ref²/chi²))] dmu(t) + (i*pi/2) delta_h DeltaEta`.
+
+Wird der ursprüngliche Referenzoperator laut seinem Vertrag festgehalten, entfällt dessen Variation. Der Eta Beitrag und die ursprünglichen Domains bleiben mitzuführen. Diese Formel folgt durch die tatsächliche Diracvariation und die Duhamel Identität. Sie setzt nicht voraus, dass der geometrische Vergleichsoperator bereits `D_rel` ist. Eine klassische Stationaritätsbedingung wäre nur eine entsprechende klassische Näherung; die vollständige Quellmaß beziehungsweise effektive Wirkung ist zusätzlich erforderlich.
+
+**Der nächste entscheidende Anschluss ist damit konkret:** Die tatsächliche ursprüngliche relative Wirkung und ihr Referenzvertrag müssen das Geometrieprofil beziehungsweise seine Verteilung bestimmen. Anschließend muss dieselbe Feldgeschichte die bereits vorhandenen Quartik, Erasure und Clock Beziehungen erhalten. Die frühere Lernrate kann nicht zur Auswahl eines gewünschten Profils verwendet werden.
+
+## Reproduktion und Status
+
+```sh
+OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 python3 check_source_boundary_response.py
+OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 python3 source_geometric_machine.py
+OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 python3 check_geometric_arc_transfer.py
+```
+
+[Exakte Prüfresultate](runs/source_boundary_response.json) · [Ausgeführte Quellentwicklung](runs/source_geometric_machine.json)
+
+Bewiesen sind die genannten Operatoridentitäten, die Rückwirkungsform für die Profilklasse und die abgegrenzten Zustandsaussagen. Endlich getestet ist die längere unitäre Entwicklung mit den ausgewiesenen Grenzen. Die vollständige fundamentale TFPT Lösung und die physische P1 Identifikation sind weiterhin offen.

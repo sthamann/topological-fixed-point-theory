@@ -1,0 +1,863 @@
+# OriginLab
+
+Independent, finite exact research campaigns for TFPT. Previous search engines
+are neither imported nor executed. Historical certificates supply benchmark
+data. The original-source lane calls the native R113 consumer directly.
+The native domain and canonical Atlas supply original provenance.
+
+For unattended search with automatic source discovery and durable progress,
+use the [autonomous F1 supervisor](AUTONOMOUS-F1.md).
+
+From the repository root with Python 3.11 or newer:
+
+```sh
+python3 -m pip install -r research/originlab/requirements.txt
+python3 -B research/originlab/main.py --out research/originlab/runs/first
+python3 -B research/originlab/main.py --out research/originlab/runs/first --resume --rounds 2
+```
+
+The default run executes R113, the calibration and model campaigns, P0
+search and an F1 frontier report. For one lane, use `--campaign`. A run records exact
+witnesses, hypotheses, source hashes, the current local Atlas program
+revision, bounds, versions, and seeds. A blocked source is an ordinary
+scientific outcome. An exception produces an ERROR lane and a nonzero exit.
+An interrupted round can be replayed without replacing its artifacts. Pass
+`--watch-seconds N` with multiple rounds to run subsequent rounds when the
+canonical research program or source configuration changes.
+
+The finite controls are also runnable from a clean public checkout with
+Python and SymPy alone.
+
+```bash
+python3 -B research/originlab/main.py --finite-controls-only --out /tmp/originlab-controls
+```
+
+This mode runs the finite controls for the double cell, moving Hardy carrier,
+affine operators and polarization, weak fields and returns, four-mark geometry
+and the family index. The regular search can also run without the local
+Atlas. It reports the missing provenance and keeps available campaigns
+running. Original-source campaigns require their matching, hash-checked
+inputs. An unavailable original file produces a blocked result with its
+path. The native R113 marks remain unset until the original weighted input
+is available. Atlas publication uses the canonical local service.
+The R006 benchmark can replay the compressed original inputs in
+`fixtures/r006`. The checker verifies their original uncompressed hashes.
+
+The finite OriginDSL expresses matrix processes on ordered boundary spaces.
+The commands, their typing, and their denotations are in `language.py`. Its
+declared binary primitives, finite dimensions, and boundary probes are inputs.
+Six default grammar fragments use these inputs. Named boundaries, supplied
+seams, user primitives, and joint grammar fragments can be added in a case.
+These finite fragments do not constitute general
+topology, arbitrary categories, a complete error correction calculus, or
+general quantum field theory. Candidate matrices are deduplicated by exact
+denotation in the given frames. The P0 planner generates ordered words on the
+declared alphabet and ranks them by separated pairs per declared cost.
+All-word equivalence for coherent models uses an exact reachable subspace.
+The durable search restores informative candidates and negative certificates.
+
+Use `--proposal-file terms.json` to submit JSON terms. An explicitly
+configured `--model NAME` uses the authenticated Codex CLI. Candidates go
+through the same parser and exact checks. A model is never a verifier. Pass
+`--lean-toolchain leanprover/lean4:v4.29.1` to check the rank lemma and audit
+its axioms. Z3 supplies the inverse integer check when installed. SymPy is the
+reference arithmetic backend. See [plan](PLAN.md) for the remaining science
+and backend choices.
+
+## Generative proof search
+
+```sh
+python3 -B research/originlab/main.py --out /tmp/originlab-proof \
+  --campaign proof_search --campaign r113 --campaign f1
+```
+
+The proof campaign generates a source rule and a proof candidate. The
+default target is the pinned `OriginProofGoal.lean`. It quantifies over
+all finite mode words and rational window weights. The kernel checks
+existence, uniqueness at a fixed contact, adding empty modes, orthogonal
+occupations, diagonal positivity and sewing. The separate replay uses
+Lean's kernel and the audit accepts only the standard logical axioms.
+`CONTROL_SOLVED` applies to this statement. The level-one affine E8
+forecast also produces a charged radial two-window form in the existing
+chart. The physical R113 reference is still required for identification.
+
+To run a different reviewed formal goal, pass `--proof-contract FILE`.
+The JSON has an ordered `modules` array, each entry with a sibling Lean
+`file` and its `sha256`, the qualified `goal` predicate, and `producers`
+and `proofs` mappings from qualified Lean constructor names to arities.
+The search generates nested closed applications and numerals in increasing
+combined cost. Each proof is checked at the exact type `goal (producer)`.
+Only trusted modules supplied in the contract are elaborated. A
+successful proof emits `FORMAL_GOAL_PROVED` together with its target,
+program, certificate and source hashes. A local contract does not confer
+the status of a physical TFPT derivation.
+
+`--proof-first-cost` and `--proof-shells` specify the search slice.
+Further rounds and `--resume` advance the slice. Resource limits remain
+explicit. They do not count as exclusions. The native physical gates
+still require a reviewed formal target for the shared source and its
+continuum, matter and gravity consequences.
+
+## Search for a common F1 source
+
+```sh
+python3 -B research/originlab/main.py --out /tmp/originlab-f1 \
+  --campaign f1_solution --campaign f1 --until-proof
+```
+
+The completion target is one theorem about one generated term. Its type
+is the conjunction of the fixed root predicate and G0 through G7 applied
+to that term. The Lean kernel and replay check the conjunction, and the
+axiom audit checks its full dependency chain. A theorem of only the root
+predicate or assembled from different model terms does not inhabit this
+type.
+
+For a formal contract under review, use `--f1-contract FILE` and
+`--f1-contract-sha256 HASH`. The JSON contains `lean_contract` (the
+sibling file in the format above), `lean_contract_sha256`, and `gates`
+(G0 through G7, each mapped to a distinct qualified Lean predicate of one
+model). The nested contract pins the Lean modules and contains the root
+predicate and the constructor grammars. External success is recorded as
+`F1_CONTRACT_PROVED`. The repository's reviewed native registration in
+`f1_native_contract.json` is the route to `F1_PROVED`.
+
+With a registered formal target, each stage expands the syntax budget
+and revisits earlier costs with longer checks. `--resume` continues saved
+stages. Without registration, the native run first searches the affine
+word span at `--q0-depth`, compares its separating word on the original
+R113 consumer and checks the selected P1 origin families. It records the
+original affine return, the all-grade spherical Ward theorem and the
+spherical and binary Clifford comparisons with their distinct scopes.
+`--p1-hypothesis-input` uses the same options as the standalone P1
+campaign. `--until-proof` stops at an accepted proof, the end of the
+configured finite native search, or an unavailable proof backend.
+Reaching the native search bound leaves physical F1 open.
+
+## R113 inputs
+
+Run the two-window rule search and the current P1 origin hypotheses together:
+
+```sh
+python3 -B research/originlab/main.py --out /tmp/originlab-q0-p1 \
+  --campaign r113 --campaign q0_rule_search --campaign p1_origin_hypotheses --campaign f1
+```
+
+The rule search uses the level-one affine root and Cartan word span.
+`--q0-depth` selects grades one through three. It solves the real reflected
+form constraints exactly, adds the grade and zero-mode Ward restrictions,
+checks two declared comparison contacts and constructs positive two-window
+witnesses for surviving directions. An independent set of one-window
+observations determines the finite linear parameters when values on that
+same basis are available. The two-window separator is held out.
+
+An optional `q0_rule_probe` in the supplied R113 packet gives `source_id`,
+`time_id`, `step` (half the total duration), `left_index`, `right_index`,
+`left_current_word`, `right_current_word`, `operator_dictionary_binding`,
+`two_window_time_binding` and `absolute_reference_binding`. Word letters
+are pairs such as `["E", -2]`. Both referenced original endpoint words
+must survive the existing selector. The reader evaluates the actual
+unmarked packet form and records the absolute endpoint numerator and
+empty reference separately. The comparison uses the quotient of that
+numerator by the reference and the product of the word norms, as defined
+by the declared dictionary. It can distinguish the explicit affine pair.
+A match alone carries no native source identity.
+
+The P1 campaign includes the prephysical reconstruction hypotheses,
+cyclic cones, modular responses, Möbius and torus covers, spherical and
+Hopf readers, the Picard quotient switch and larger lattice parents.
+`--p1-hypothesis-input` accepts a JSON object with optional
+`hypotheses` (registered names from `p1_origin_hypotheses.FAMILIES`)
+and `max_cone_order`. The autonomous queue accepts the same options on
+`p1_origin_hypotheses` jobs and `depth` on `q0_rule_search` jobs.
+Finite comparison hypotheses get no physical source status from this run.
+
+Without a physical packet, the native diagnostic domain produces a structured
+BLOCKED result and leaves all four source marks null. A supplied packet must
+bind to a native domain path and SHA256 through `original_domain_binding`.
+The domain may contain the packet inline or point to a JSON file. Original
+input and packet references are hash checked. Exact Gaussian rational scalars
+are pairs of integers or rational strings. Two supported representations are
+complete endpoint forms and a complete finite atomic measure. An atom can
+give the four forms, the two fixed-history kernels `K0` and `KY`, or
+`ordered_window_legs`. A primitive history binds the `time_id` and the three
+`durations` to `[t_U, t_Y - t_U, T - t_Y]`, and gives `early`, `middle`,
+`late`, `Y` and the nonnegative rational `U`. Only arithmetic controls may
+use `U_operator` in place of `U`.
+
+An operator leg gives its `form`, independent `image_norm_form` and
+`image_norm_binding`. The reader certifies exact closure on the retained
+positive quotient before composing these legs. Alternatively, specify
+`primitive_ambient_basis` with `source_binding`, `gram_form` and rectangular
+`word_coordinates` (one column per retained word). If every leg of a history
+gives its `ambient_operator`, the reader composes on that full space before
+restricting the endpoints. This preserves excursions outside the retained
+span. The operator must preserve the null space of any singular ambient Gram.
+
+The absolute `reference_window_history` can replace `reference_scalar`.
+It supplies its own three legs, matching time and durations, a
+`reference_binding`, `selector_form`, `boundary_pairing_form` and
+`scalar_factor`. With `from_fiber_transfers: true` on the same history defect,
+each fibre gives `pair_transfer` and a nonnegative real effective weight.
+The reader derives the overlap and transfer norm from that same fibre.
+The evaluator uses a null quotient, applies one outer
+admissibility projection, contracts with the absolute cap, and divides by the
+bound empty reference. It does not supply the physical producer or prove
+continuum limits.
+
+Run the source synthesis and inspect its decision alongside F1 with:
+
+```sh
+python3 -B research/originlab/main.py --out research/originlab/runs/r113-synthesis \
+  --campaign r113 --campaign r113_synthesis --campaign f1
+```
+
+The native campaign replays the original centre-grading checker and
+checks the charged word against the reviewed generators. It reports the
+first required sector-changing matrix block before any outer selector.
+The original affine vacuum word and the weighted R113 values have
+separate fields in the report.
+
+Run `--campaign source_bridge` to replay the absolute factor on one original
+R032 history, test the full span of the native regional generators, and check
+the neutral rank required by a charged affine Ward return. See
+[source and session results](SOURCE-BRIDGE-2026-11-14.md) for the derivation,
+scope and independent checks from the parallel sessions.
+
+Run `--campaign marked_search` to replay the 14 November four-mark report.
+The campaign enumerates both phase refinements, quarter clocks and the
+four orthogonal symmetric cell sewings. It checks the integral A4 glue,
+the meromorphic clock map and accessible mixed cell correlations. Pass
+`--marked-search-input FILE` to apply observations and recompute exact
+survivors and worst-case probe counts. Input keys `marks.observations.phase`,
+`marks.observations.clock`, and `cells.observations` take mappings from probe
+IDs to exact observed values. Use the point order printed in the report.
+These inputs have finite control scope and do not authorize source binding.
+
+The audited plan has an executable benchmark campaign:
+
+```sh
+python3 -B research/originlab/main.py --out research/originlab/runs/benchmarks \
+  --campaign benchmarks --lean-toolchain leanprover/lean4:v4.29.1
+```
+
+The suite runs B01 through B09 with individually scoped receipts. Its R113
+baseline expects the verified missing-source outcome. A future producer
+requires a new positive acceptance case. The F1 report additionally emits
+the physical gate status and the upstream source blocker. `source_intertwiner`
+in a supplied endpoint can test an adjoint-closed rectangular embedding
+using Cartan, colour, time and charged-middle relations on the reflected
+quotient. Higher-dimensional feasible spaces may remain unresolved.
+To replay the execution gate with a Pawl checkout, run its `tools/run.py`
+with claim `VERIFY.ORIGINLAB.BENCHMARKS.01` and `--config
+research/originlab/pawl/verify.json`. The optional `ORIGINLAB_LEAN_TOOLCHAIN`
+selects the same kernel check as the benchmark CLI. Pawl records execution
+only. The Atlas remains the canonical authority for scientific evidence.
+
+The report also checks the marked affine root string, its cyclic
+same-colour test, and the two-time obstruction to using only the
+lowest root doublet. An optional `marked_root_doublet` in an endpoint
+packet accepts the two creation and adjoint forms, raising and lowering
+forms, root weight, colour, hypercharge, and two positive time step
+forms on the same reflected word basis. The colour form may use exact
+`rational` and `sqrt3` parts. The reader reports Ward and adjoint
+defect ranks, time leakage and the relative ordered returns. Absolute
+values continue to use the endpoint packet's bound common reference.
+
+`--r113-synthesis-input FILE` runs one explicit finite oracle instead.
+Set `input_role` to `declared_finite_oracle` and use one of these `kind`
+values:
+
+- `real_charged_spectrum`: provide `spectrum`, `diagonal_observations`
+  (one row of two values for each step starting at zero, as many rows as
+  levels), and `mixed_observations` (known steps keyed by decimal integers).
+  The search solves for the individual spectral weights, exhausts relative
+  signs and selects the earliest separating mixed word. Positive transfer
+  witnesses are replayed with the existing block Hankel reconstruction.
+- `fixed_histories`: provide `histories`, a fixed positive `reference`,
+  `constraints` including `Z0` (each with `coefficients` and normalized
+  `value`), and `mixed_coefficients`. Coefficients are unnormalized. The
+  history weights are nonnegative and sum to one. The search returns the
+  exact range of the normalized mixed mark and extremizing weights, or
+  reports that the declared class has no solution or exceeds the bound.
+- `complex_charged_spectrum`: use the same moment fields as the real
+  spectrum case, with exact complex mixed values as `[real, imaginary]`.
+  Positive two-mark spectral blocks may have rank two. The search checks
+  the positivity disks and constructs paired witnesses when a feasible
+  seed has a certified free direction. Supply `feasible_seed` if the
+  particular linear solution is outside the disks. Boundary or step
+  failures can leave feasibility or uniqueness unresolved.
+- `gaussian_source_jet`: provide the exact matrices `kinetic`, `U`, `Y`,
+  `UY`, four scalar derivatives `scalar_weight_jet`, and `reference`.
+  Both the determinant coefficients and independent replacement columns
+  must agree. The mixed contact and the singular case are retained.
+
+Oracle results are finite controls. A physical source still requires the
+original field maps, ordered forms, measure, outer selector and absolute
+reference on the same domain.
+
+An optional `energy_moments` block accepts two forms `first` and `second`
+for the same nonnegative shifted generator. Supply the packet's `source_id`
+and `time_id` plus `generator_binding`, `ground_energy_binding`, and
+`word_domain_binding`. The Gram quotient gives the exact compression
+defect and the minimum number of missing directions. For nonzero defect,
+the output includes two positive finite extensions with identical first and
+second moments and a third-moment probe that separates them. This probe
+does not determine the physical generator or the absolute reference.
+
+## Open source components
+
+Run `--campaign double_cell` for the exact Clifford double-cell control.
+It checks the joint five-slot occupation projectors and the full permutation
+action. It also checks native parity, the standard weak slot exchange, the
+minimal parity reference and the joint relative-phase readout. The finite
+control supplies a discriminating word for the physical source search.
+It carries no original R113 value.
+
+Run `--campaign moving_carrier` to compare repeated evolution on the fixed
+regulated Hardy carrier with transport to the moved carrier. The first
+comparison has a rank-four two-step defect at nonzero radius and time.
+Transport between the moving carriers composes, while reproducing all fixed
+carrier moments requires infinite spectral support in each nonconstant
+sector. The original follow-up compares these projection choices on the
+same charged word and absolute empty reference.
+
+Run `--campaign affine_polarization` to compute the normalized connected
+Cartan response of the original affine three-leg word. A single time pair
+sees one outer product. Four pairs span the four matrix directions of the
+two-dimensional charge plane. Its six-dimensional orthogonal complement
+is an exact negative control. Restricting to polarizations orthogonal to
+the middle root leaves just one direction visible to the entire word.
+An optional `affine_polarization` section of the weighted endpoint packet
+binds the bare and prepared word forms to the same source, time and
+reference. The consumer reports the absolute bare comparison separately
+from normalized Ward agreement.
+
+Run `--campaign affine_operators` for the operator-level source. It builds
+the actual mode operators of the level-one E8 lattice construction in the
+fixed D8 chart and applies them to exact Fock vectors. These currents change
+the charge sector and lie outside the excluded free quadratic class. The
+campaign checks the level-one current relations on explicit vectors, with the
+trivial cocycle as failing control. It recomputes the marked word coefficients
+`min(m,n)`, the Ward response of prepared words coefficient by coefficient,
+and the neutral return spectrum on the full grades zero to two. The joint
+return check extends the single root line. Eight mutually orthogonal roots
+give commuting returns with a rank-eight excess on neutral grade two. Two
+returns commute there exactly when the roots pair to 0 or -1.
+
+The same campaign searches for the fewest further root currents that
+generate all of E8 together with the marked plane, restricted to a declared
+charge class. The marked charges span one A2 with commutant E6, and their
+currents generate 8 of the 248 grade-one vectors. Six further currents are
+necessary by rank and sufficient in five of the eight restricted classes
+and in the unrestricted control. These include colour-centre neutral D8
+pair currents. Three classes are exact
+negatives. Hypercharge neutral currents, and currents neutral under colour
+centre and glue, generate only A1 x E7 with the marked plane. The conserved
+grading is the parity of the pairing with the weak slot root `e4 - e5`. All
+112 missing currents are weak doublets and all carry hypercharge. The
+colour neutral D8 pair currents among them have glue class 2 and
+hypercharge of modulus 1/2. The restriction applies to individual root
+letters. A word can be neutral overall and still probe these currents.
+The executable example splits the middle root into `e1+e4` and `e6-e4`.
+Both orders preserve the end charges and give normalized mode coefficients
+`1/min(m,n)` and `1/min(m,n)-1` on the tested grid. Read both orders
+independently with the same weighted source, time and absolute reference.
+Run `--campaign weak_return_rank` for the six late D8 weak legs. The
+neutral excess return span first reaches rank six at grade two.
+Products of one, two and three returns span cumulative dimensions six,
+24 and 36. The phase-sensitive ordered triple distinguishes two strictly
+positive densities that agree on all shorter words.
+
+The same campaign compares those six legs with the two half-spinor
+orbits of six legs each. It finds joint excess ranks 14 and 98 at neutral
+grades two and three. On the 14 dimensional grade two support the spans
+from ordered words of lengths up to one, two and three are 18, 108 and
+196. The campaign emits a basis and an example length four holdout in
+`completion_orbits`. The optional `weak_return_grade_two` packet binds
+`source_id`, `time_id`, `charged_modes_and_adjoints_binding`,
+`neutral_grade_and_excess_binding` and `absolute_reference_binding`.
+Copy the order of `roots_doubled` and supply each emitted basis word in
+`basis_words` as a `word` and whole `word_form`. A letter is the normalized
+excess $(E_\alpha^*E_\alpha-I)/3$ at neutral grade two. Supply a fresh
+nonzero path such as the emitted holdout in `held_out_words`, in the same
+format and on the same source. The reader reconstructs the absolute linear
+functional on this declared excess algebra, tests positivity, and tests
+the held-out whole form. The reference and the outer selection are those
+of the surrounding original packet.
+
+Run `--campaign four_mark_geometry` for the shared four-point sphere.
+The family cycle and quarter cannot both act holomorphically there.
+The equianharmonic alternatives carry the family cycle holomorphically
+and the quarter antiholomorphically. On the elliptic cover its square
+is a half-period translation and acts trivially on the differential.
+The even permutations move a reflection fixing two marks through six
+distinct circles. The effective complex Möbius action also limits every
+commuting real family of geometric generators to dimension two.
+
+Run `--campaign affine_car` for the independent free D8 fermion control.
+It reconstructs the pair current kernel and the weak doublet Casimir.
+Its quadratic currents carry only D8 pair roots. The original marked
+spinor ends and the common weighted P1 reference require their own field
+map and source.
+
+These affine vacuum coefficients leave the weighted R113 values and
+physical source identity open.
+
+For a supplied weighted endpoint, `weak_split_returns` binds `source_id`,
+`time_id`, `charged_field_and_mode_binding`, `adjoint_binding` and
+`absolute_reference_binding`. Supply `doubled_middle_roots` in the order
+`e1+e4`, `e6-e4` and the actual `bound_cocycle_sign` (1 or −1).
+Each of at least two `samples` contains mode indices `m` and `n` and
+`bare_form`, `forward_form`, `reverse_form` on the common word basis.
+Build each whole word before applying the single outer selector. The
+reader reports the absolute reference quotients for both orders separately
+from their difference and their ratios to the marked bare word.
+
+Run `--campaign weak_source` to search the 240 roots with the middle
+charge fixed and replay the surviving gauge singlet words. The report
+emits a calibration rectangle and a new time pair for the original test.
+The native `r113_synthesis` campaign independently checks the literal
+96 dimensional Higgs blocks, their polar CAR parity and the separated
+DET16 block. It also reduces the existing coupled W word, with the original
+neutral pair dressing on both ends, to exact reachable time blocks of
+dimensions 4 and 13. Its two interval kernel has separation rank four
+for nonzero coupling. The autonomous runner schedules the affine search
+and watches the native inputs for changes.
+
+For weighted data, `weak_gauge_responses` binds `source_id`, `time_id`,
+`native_three_current_binding`, `same_dressing_and_inserted_actions_binding`,
+`casimir_insertions_binding`, `physical_to_radial_time_binding` and
+`absolute_reference_binding`. The optional `comparison_paths` begins with
+`spinor` and includes one or more of `d8`, `weak_spinor_minus` and
+`weak_spinor_plus`. The default pair is `spinor` and `d8`. Each sample
+supplies `left_radial_factor`, `right_radial_factor`, `held_out` and `words`.
+The calibration rectangle spans at least two widths per interval, and
+one held out sample uses two unseen widths. For each path supply the
+`bare_form`, the four `casimir_forms` and the six `twisted_words` using
+the chronological links returned by `example_networks()`. Optional
+`winding_forms` use the same `original_coweight_binding` on every path.
+
+To check a linear combination of the four fixed middle paths, add
+`joint_early_insertion_binding` and the five `joint_early_forms` to the
+samples in order from power zero to four. Use the diagonal weak element
+with entries $(3+4i)/5,(3-4i)/5$ and the quarter insertion of the coweight
+$-2e_8$ on the first interval. The reader solves for the four absolute
+coefficients and reports the power four residual. These are coefficients
+in the specified affine response model. A zero residual is a check on the
+supplied forms. The original source and these insertions need their own
+derivation to establish a physical match.
+
+Run `--campaign weak_folded_clock` to compare the minus winding half
+spinor with the marked word in both original quarter charts. Two commuting
+D8 root zero modes preserve the middle current and winding. Transporting
+the word co-transports the folded generator. Across all colours the six
+products span the maps from the early colour dual triplet to the weak
+doublet and carry $(3,2)$ with $Y=1/6$. In the literal fixed chart
+the early and late spectra are separated, and the weak lower to upper
+weight ratio is $\sqrt{xy}$ for the interval radial factors $x,y$.
+
+Use `weak_clock_sectors` in a weighted endpoint packet to recover
+independent complex weights for the seven eigenvalues of the same early
+joint action. Bind the packet's `source_id`, `time_id` and the following
+original data.
+
+- `common_fields_and_frames_binding`
+- `fixed_joint_early_action_binding`
+- `same_histories_for_all_powers_binding`
+- `physical_to_radial_time_binding`
+- `absolute_reference_binding`
+
+Each sample supplies `left_radial_factor`, `right_radial_factor`, a
+`held_out` flag and eight entire `power_forms` ordered by powers zero to
+seven. The inputs use the packet's Gaussian rational form convention.
+Use a full rectangle with at least two distinct widths per interval and
+one additional pair with both widths unseen. The reader solves for the
+seven amplitudes at each pair using powers zero to six, checks power
+seven independently, and compares the weak weights with both the fixed
+fold and the W symmetry. With five widths per interval, rank five in a
+resolved half spinor component rules out the fixed W word, including
+separable clock factors. The campaign supplies sample widths that also
+keep the literal fractional clock powers rational.
+
+Run `--campaign p1_field_search` for the charged first variation on both
+original folded charts in the specified two-face collar. The same
+covariance and heat derivative can come from a charged intrinsic field
+or a shared motion of the two frames. The independently anchored
+hypercharge derivative separates the two contributions. The checker
+reconstructs the intrinsic field and verifies all three measured matrices.
+
+With `--p1-field-input FILE` or the optional `p1_charged_jet` field of a
+weighted packet, supply `energies`, `hypercharges`, a rational
+`radial_base` in $(0,1)$ and an integer `exponent_scale`. The scale
+makes the energy exponents integers. Distinct hypercharge sectors must
+have disjoint energies in this class. Give the whole
+`two_face_covariance_tangent`, `two_face_hypercharge_tangent` and
+`two_face_heat_tangent` as exact Hermitian matrices. Each matrix lists the
+same energy basis on the first face followed by its copy on the second
+face. The packet also binds `source_id`, `time_id`,
+`two_face_frame_binding`, `independently_anchored_hypercharge_binding`,
+`covariance_and_heat_tangents_binding` and `absolute_reference_binding`.
+The full charge derivative includes the cross-face blocks.
+
+Run `--campaign colour_ward` for the exact colour grading and affine
+Ward relations. The campaign is part of the autonomous search and the
+finite control run. It checks the 1,620 oriented cubic coefficients in
+each charged sector. They belong to 270 unordered root triangles per
+sector. Of 810 independent pair coefficients, the complete neutral
+action fixes 809 relative coefficients. The adjoint and Jacobi identity
+fix the modulus of the remaining common scale. Rephasing the two charged
+sectors changes its phase by a cube. The fixed bracket admits the three
+cube roots of unity as simultaneous sector rephasings.
+
+The neutral spinor zero mode has ranks 22, 18 and 18 on the three
+grade one sectors. In colour two it gives 15 transitions from spinor to
+pair currents and three in the other direction. The positive neutral
+mode paired with the neutral spinor returns the vacuum at level one.
+Positive neutral modes annihilate the charged grade one states. The
+free neutral currents and the spinor extension both give central charge
+eight.
+
+The native `r113_synthesis` comparison uses the same matrices as the
+original finite diagnostic. Two successive neutral colour steps of the
+affine word reach $Y=5/6$. Its native exterior comparison uses the
+Majorana and Higgs matrices with an anti down spectator. Each weak
+component has forward rank 27, reverse rank zero, a nonscalar Gram
+matrix and rank 27 leakage of the Higgs adjoint through the spectator.
+The ordinary exterior space in every degree from 1 to 95 has a nonzero
+hypercharge trace on its charged colour blocks. The full exterior space
+and both parity spaces also have nonzero traces. A finite $E_6$ action
+with the given hypercharge inside its Cartan requires vanishing trace on
+each invariant colour block. The smallest neutral completion matching
+all native colour, weak and hypercharge representations has dimension
+240. Its proof uses the Weyl dimension formula and joint weight counts.
+The original weighted source still needs to bind the neutral currents,
+the charged preparations, their time and their absolute reference.
+
+The `weak_parity_bridge` optionally tests the source parity, the Cartan
+and raising and lowering matrices for the tested root, the charged
+matrix with its adjoint, and the three endpoint projectors. The source
+forms are read on the reflected quotient before selection. The reader
+reports the rank of the charged endpoint and separately measures the
+two orderings. Both readers use the same bound time and reference as the
+whole endpoint record.
+
+- [SymPy](https://github.com/sympy/sympy) executes exact matrix and polynomial arithmetic.
+- [Z3](https://github.com/Z3Prover/z3) provides inverse integer synthesis, with exact witness replay.
+- [Lean](https://lean-lang.org/doc/reference/latest/Axioms/) checks the separate rank lemma and reports its dependencies.
+- Exact truth tables enumerate the entire binary local rule class admitted by the declared observations.
+- Typed word normalization verifies the declared compositional identities. [egglog](https://egraphs-good.github.io/egglog-tutorial/01-basics.html) can also execute the three checks when installed.
+- [FLINT/Arb](https://python-flint.readthedocs.io/en/latest/general.html) encloses the free regulator tail and the conditional R032 kernels.
+
+Pass `--finite-observations observations.json` to feed a measured finite
+response back into search. Each item has `dimension`, a `word` of integer
+tokens (0 candidate, 1 boundary reversal), an exact rational string `value`,
+and `evidence_id`. Disagreement records an exact counterexample scoped to the
+declared finite readout. These observations carry no automatic physical status.
+
+## Autonomous scenario campaign
+
+Install the pinned Open Source backends from requirements.txt. Run from the
+TFPT root with the environment's Python:
+
+```sh
+python -B research/originlab/autonomy.py --out /path/to/campaign \
+  --workers 6 --max-resolution 5 --lean-toolchain leanprover/lean4:v4.29.1
+```
+
+The durable SQLite queue runs independent subprocess workers. A failed job
+gets one retry and its error remains in the run record. An interrupted
+campaign resumes against its stored inputs and job keys. After the first
+two sweeps the runner prioritizes topology and dynamics combinations that
+share their measured return words. Increasing `--max-resolution` extends
+the saved search horizon. Add `--watch-seconds 90` to keep the
+process alive and restart the search on a change to the Atlas or R113 input.
+The engine and source version form part of the run identity. The queue is
+local to one supervisor and one machine.
+
+The built-in scenario set compares interval, circle, figure eight, disk,
+sphere, cylinder, Möbius band, torus, Klein bottle and projective plane.
+It evaluates five mechanisms: a primitive local transfer, a boundary
+resolvent, a flat sign local system, an edge history with vertex readout,
+and a filled-face Hodge operator. Unit and alternating conductances are
+explicitly supplied geometries. The transfer families are finite
+mathematical candidates. Their topologies and parameters are not derived
+from P1. A finite cell complex and these graph transfers do not imply
+a physical spacetime, Hamiltonian or continuum field theory.
+
+The Boolean lane enumerates all 64 tables compatible with its two uniform
+observations and splits on both answers to the most discriminating probe.
+Typed word normalization checks the declared compositional identities.
+Arb certifies the
+free periodic heat trace and a convergent regulator comparison, with
+the interacting R113 remainder still open. The bridge lane checks the
+tetrahedral dual basis, joint cone, charged quarter response and scoped
+R102 inputs. It keeps common source identity as an explicit obligation.
+An optional `ordered_bridge_forms` section of an endpoint packet can
+carry `field_binding`, `charged_return`, and `quarter_marked_return`
+on the same basis and absolute reference as the four R113 marks.
+
+A completed round writes a revision-bound review outbox. `publish.py
+--status` reads the canonical live Atlas. `publish.py --review FILE`
+validates the exact outbox and referenced artifact hashes, then submits a
+source-reviewed `record_research_update` request to the canonical service.
+The reviewed envelope has `reviewer`, `outbox_sha256`, `outbox` and
+`update` (the original Atlas tool arguments). The search machine never
+marks a new mathematical or physical claim as reviewed by itself.
+
+The stitch lane builds alternative derivation paths with conjunctive
+premises. Facts from distinct source identities cannot be combined. Its
+current frontier identifies two possible routes to the joint forward
+spectrum and the original source obligations shared by both routes.
+
+## Reconstruction and open scenario space
+
+The reconstruction lane enumerates Pauli readouts by support, computes the
+state dependent Gram rank and constructs exact finite representations from
+coherent word forms. The null space must be respected by every submitted
+operator. The identity is normalized, adjoints can be checked in the induced
+metric, and one and two step time forms test a positive transfer and its
+compression defect. Optional regional forms test unital star algebras,
+conjugation of their entire spans, pairwise commutation and joint cone
+positivity. A supplied regional unitary is not yet identified with an
+exponential of the supplied generators. That and a continuum theorem remain
+explicit physical obligations.
+
+The regional report also computes the rank of first-order commutators
+modulo the regional spans and time, and distinguishes mappings between
+distinct algebra spans from automorphisms of a single span. The rank tests
+movement of the declared algebras and does not establish geometric locality.
+
+The finite all-word equality check closes a reachable subspace on the joint
+alphabet. It returns equality or a distinguishing word, without a heuristic
+word depth cutoff. This is operational equivalence for the matched interface.
+It does not identify unobserved sectors or establish a physical equivalence
+of two continuum theories. On the cyclic spaces it gives a star equivalence
+when adjoints are checked in both descriptions.
+
+The queue also exhausts labelled finite simplicial complexes and rational
+positive transfers at the reported bounds. A custom manifest can describe
+simplices of any finite dimension or compare two exact coherent
+representations. For an executable example use
+`--cases research/originlab/reconstruction-cases.json`. The built-in
+campaign reports which spaces were exhausted, refined, or remain open.
+There is no finite list or decision procedure for every mathematical or
+physical scenario.
+
+For original R113 data use the optional `physical_reconstruction` field
+inside the same endpoint bundle. It contains `identity_index`, `forms`
+and optionally `step`, `twice`, `adjoints` and `regional`. All forms use
+the original word-basis pair convention. The regional record uses
+`translations` in order P0, Px, Py, Pz, `algebras` keyed by region, and
+`transports` with from, to and operator forms. The reconstructed basis is
+the supplied Gram space before any separate outer selection. R113 remains
+blocked unless the original bundle and bound empty reference are supplied.
+
+## Reconstruction and six origin routes
+
+See [Six origin routes](SIX-ROUTES.md) for the six checkers, finite coverage, original input schema, and campaign command.
+
+## Coherent regional sources
+
+The default durable search includes R104, the R032 orientation witness,
+relational transport and finite process tomography. Use
+`--cases research/originlab/relational-cases.json` to add exact custom jobs.
+`CASE_FIELDS` in `autonomy.py` lists the accepted job names and arguments.
+
+- `r104_variant` varies the mode count, phase in units of pi, and number
+  modulus. `det_word` takes explicit ordered CAR letters, nonnegative rational
+  heat intervals, and an optional single outer number projector. Its result
+  is an absolute word of the separated DET factor.
+- `compare_memories` takes two labelled trace models with the same interface.
+  Each has a matrix `cap` and a map `operations`. `cap_constraints` takes
+  operations and a list of exact observed words with values. It returns
+  the affine dimension and the next test when the responses are ambiguous.
+- `transport_network` accepts directed unitary edges, optional pairs of paths
+  and explicit face boundaries. `transported_caps` connects two cap phases
+  to the same declared Abelian network, and `charge_visibility` determines
+  exactly which declared integer charges see the holonomy. `flux_inference`
+  uses Z3 to exhaust a declared grid of loop phases consistent with observed
+  charged words and ranks probes that distinguish the surviving candidates.
+- `process_tomography` takes `dimensions` ordered as
+  `[O_k,I_k,...,O_1,I_1]`, normalized tester effects per slot and word
+  observations. For nontrivial input legs each tester declares its positive
+  `effect` and `input_state`; the effect is bounded by
+  `I_output tensor input_state`. `extension_interventions` may provide
+  a larger measurement alphabet. Reconstruction and nonuniqueness are
+  exact on the supplied finite tensor size of at most 16.
+  `observable_alphabets` computes ordered word ranks for two alphabets
+  on one carrier. The Q4 comparison recovers ranks 26 and 36.
+- `stationary_symmetry` checks finite channel covariance in a charge basis
+  and the fixed operator space. `oriented_shifts` checks declared products
+  of one-dimensional qudit shifts under a labelled reflection.
+  `gaussian_source` evaluates exact connected responses from one Hessian.
+  `joint_source` checks exact connected responses and supplied linear
+  Ward identities from one table of ordered marks.
+- `origin_dsl` accepts a `profile` containing atoms, each with a matrix,
+  input and output boundary and source. A declared seam has two boundaries,
+  a matrix and source. Optional `families`, `parameters` and `probes` control
+  enumeration and test ranking. The durable default search accepts
+  `--proposal-file` and `--finite-observations` as revision inputs.
+  `--sol-proposals` explicitly enables transmission of the default finite
+  grammar to OpenAI Sol. This mode does not send custom profiles or
+  native TFPT source packets.
+
+The R113 exact fibre sum also accepts `ordered_window_kernels` in place of
+the four forms for an individual atom. It declares
+`kind: whole_history_fixed_bosonic_scalar_U`, a bound scalar `U`,
+`original_scalar_mark_binding` and the two Gaussian rational forms
+`K0` and `KY`. The contraction assembles the mixed form before applying
+the common selector and reference.
+
+`relational_path_forms` accepts two distinct ordered regional words and
+their original forms on the same basis. It needs the native source and time
+IDs, endpoint fields, charge and spin dictionary, transport and admissibility
+bindings, and one declared connection path comparison. A supplied
+`reflected_gram` is checked for positivity. The report gives both absolute
+values, the ratios where defined and the ordered holonomy. With a
+`unit_charge_path_comparison_binding` it checks whether the two absolute
+responses satisfy the expected Abelian character relation.
+`coherent_memory` can predict both regional responses as additional held-out
+words. A supplied `process_tensor` binds the same source, time and intervention
+dictionary and uses independently supplied observations.
+`joint_source_checks` binds additional forms and supplied Ward identities
+to the same original contraction, including the empty response.
+
+See the [plan audit](PLAN-AUDIT.md) and
+[R104 and R113 findings](R113-R104-RELATIONAL.md) for the checked scope.
+
+## Four-mark selection and spectral source
+
+The default campaigns enumerate the split and full four-mark models,
+check the native quark obstruction, test a fully specified finite spectral
+alternative and recompute the frozen alpha and lepton comparisons.
+See [the four-mark and source results](FOUR-MARKS-AND-SOURCE.md).
+
+- `four_mark_refinement` takes binary invertible four-dimensional actions,
+  optional `pin_values` as pairs of a four-bit vector and its value, and
+  optional `allowed_vectors`. It returns all compatible nondegenerate
+  quadratic refinements and ranks discriminating evaluations.
+- `clifford_candidate` takes four exact `operators`, with an optional
+  positive `metric`, a column `state`, and `square_phases` of ±1. It tests
+  the relations on the cyclic span generated by the operations and their
+  adjoints. Optional `charged_loops`, `cartan`, and `transport` also enter
+  that span so weight, Clifford and transport tests use the same carrier.
+  The latter takes a positive
+  contractive `step` and four `transported_operations`.
+- `primitive_charge_compatibility` tests a `homogeneous_charge` and its
+  `central_power` in an integral or cyclic charge group.
+- `spectral_source_candidate` takes declared rational half-fields,
+  half-masses, momentum, half-time, cutoff, and spectral strength.
+  It sums all pairs, tests the reflected kernel, and reports four marks
+  and their connected response. The default variant uses the 96-state
+  diagnostic fixture and one real Higgs axis.
+
+A native packet can include `four_mark_selection` with its own source and
+time IDs, orientation, adjoint and state bindings, empty-word
+`identity_index`, and four original `operations` as forms. `square_phases`
+chooses the tested convention. With `face_code_binding`, the measured
+cyclic squares select the compatible full-face refinements. Optional
+`primitive_loop_forms` and `cartan_forms` use the same word basis and
+require a `charge_dictionary_binding`. An independently provided
+`neutral_ordered_return_form` compares the product of the four loop maps
+on the quotient and after the same outer selector, cap and reference. A bound `transport`
+section can additionally provide a time step and its transported marks.
+
+The watcher hashes the selected native sources and the frozen empirical
+register. A changed file starts a new epoch and the review outbox binds
+these source hashes with the results.
+
+## Source rules as purity of two arcs
+
+```bash
+python3 -B research/originlab/main.py --campaign f1_two_arc_purity --finite-controls-only --out research/originlab/runs/purity
+```
+
+`f1_two_arc_purity.py` enumerates non-negative integer multiplicities of
+the three pairings of the four seam marks and reads each rule as the
+purity of two opposite arcs (hypothesis H-R2, round twenty-five of
+`THEORY-BRIEF.md`). Exact guards: distant arcs decouple in both
+channels, the seam state is pure, the number of exchanged fermion pairs
+is an integer. Integer spin leaves the E8 rule, sixteen free fermions
+leave the free seam. The lane needs no model and no source packet. It
+returns `original_r113_values: None`; that the P1 form is this purity is
+the hypothesis, not a result.
+
+## Synthesis from an open source question
+
+The first search round now also runs the [graded sewing and return
+campaign](PLAN-AUDIT.md#dynamic-sewing-and-a-directed-search). It
+reconstructs a positive transfer from ordered return moments, solves the
+inverse two-cell coupling problem, and tests each newly selected observation
+on the actual witness operators in a second queued job. Later rounds retain
+the research round ID and its follow-up results in the frontier.
+
+The custom-case manifest accepts `complete_mark_graphs`, `clifford_sewing`,
+`finite_gauge_link`, `link_sewing`, `return_generator_search` and
+`return_moment_reconstruction`. The link job accepts `order` (2 or 4) and an
+optional list of `graphs` with `name`, `vertices` and oriented `edges`.
+The two-cell input accepts exact `strength`, `reference_weight`, `gap` and
+`parity_signs`. The inverse case takes `projected_return_observations` in
+the four labelled even sectors, the rational complement `gap`, and
+optionally `require_positive_weights` and new independently supplied
+`opposite_parity_observations` with `signs` and `value`. Use
+`input_role: declared_finite_oracle` for both inverse and moment cases.
+
+The R113 packet may supply `ordered_return` with the bound source and time,
+metric-adjoint insertions `first` and `last`, and one positive `step`.
+The checker splits the full return into the selected, complement and mixed
+terms. It also checks optional independently supplied `ordered_return_form`,
+`quarter_action` with `character_power`, and `temporal_modes` on the
+same time step. `ordered_return_moments` accepts independently evaluated
+matrix moments and held-out answers on the same source quotient.
+
+An optional `affine_profile_returns` section reads neutral grade-zero words
+and their charged grade-one images of one full root from the same reflected
+Gram before selection. `neutral_indices` and each list in `charged_indices`
+use zero-based word indices in corresponding order. The first charged list
+uses the unit profile. In `products`, supply real coefficients over that
+same profile list for all pairs `(a,b)` with `a <= b`, in lexicographic order.
+Bind `source_id`, `time_id`, `grade_and_full_root_binding`,
+`profile_product_binding`, `adjoint_binding` and `absolute_reference_binding`.
+An optional `neutral_transfer_form` on the ordered neutral words, with a
+`transfer_binding`, measures its commutator with the recovered profile action
+on the supplied quotient. A rank defect gives the minimum number of additional
+neutral return directions under the stated affine Ward hypotheses. A match
+on the supplied forms establishes a consistency check on those words.
+
+`affine_return_anchor` starts with the packet's original empty word at
+`identity_index` and synthesizes the map of the vacuum and its first
+charged current. It checks the metric, outer selection, adjoint return,
+fourth-root action and supplied independent time calibration
+`expected_charged_step`. Matching a declared anchor does not supply its
+physical calibration or the full source.
+
+The `original_affine_time` job composes the original positive E8 regional
+translations and evaluates the marked three-current word at two independent
+widths. The [derivation](AFFINE-TIME-PROOF.txt) also gives a lower bound on
+the size of a single CAR fibre carrying the full quadratic E8 action. The
+[level test](AFFINE-LEVEL-PROOF.txt) checks the central term of any local
+free Majorana current extending that direct construction.
+
+A native endpoint packet can supply `marked_affine_time_grid` with the
+same `source_id` and `time_id`, and `native_field_and_charge_binding`,
+`physical_to_radial_time_binding` and `absolute_reference_binding`.
+The original `native_circle_marks` are `["1","I","-1"]` and the
+`ordered_fields` are `["J^(-p1)","J^gamma","J^p2"]`. Their
+`internal_glue_classes`, `color_trialities` and `hypercharges` are
+`[1,2,1]`, `[0,1,2]` and `["0","-1/3","1/3"]` in that order.
+Each of `left_axis` and `right_axis` has at least two entries with
+increasing positive `physical_time` and decreasing `radial_factor`
+strictly between zero and one. Both fields are exact rational numbers.
+Supply the corresponding rectangular `ordered_word_forms` on the original
+OS word basis. The checker uses the packet's outer selection and absolute
+reference for every entry and reports mismatches and both matrix ranks.
+A match tests the supplied time calibration on this grid.
+
+The `original_folded_time` job uses the original fold matrix to calculate the
+two marked quarter clocks on this same word. The grid reader reports the
+mixed ratio, tests whether deviations from the radial word are separate end
+factors, and, for a common exponential calibration, compares both original
+quarter predictions. A stationary mixture of those quarters is determined
+by two entries and tested on the other entries. The clock job also checks the original gauge average
+and whether the marked opposite spinor module can keep the same background.
+See [the marked folded time derivation](FOLDED-TIME-PROOF.txt).

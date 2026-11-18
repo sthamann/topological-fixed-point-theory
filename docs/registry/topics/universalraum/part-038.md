@@ -24,6 +24,84 @@ Fünf Programme wurden normal und unter -OO ausgeführt; ihre JSON-Ausgaben ware
 
 ## Front matter / support
 
+[tex-artefacts/toe_field_integration_20261105.tex:1-2](../../../../tex-artefacts/toe_field_integration_20261105.tex#L1) · `section:7009270132c08754f93d` · frontmatter
+
+No opening prose excerpt; see the source.
+
+## Whole source evaluation and field integration: 5 November 2026
+
+[tex-artefacts/toe_field_integration_20261105.tex:3-19](../../../../tex-artefacts/toe_field_integration_20261105.tex#L3) · `section:14f60a30224f215dce27` · section
+
+tocsectionWhole source evaluation and field integration: 5 November 2026
+
+## Existing producers and their actual composition
+
+[tex-artefacts/toe_field_integration_20261105.tex:20-36](../../../../tex-artefacts/toe_field_integration_20261105.tex#L20) · `section:aeb101993c6293200085` · subsection
+
+The original C6 whole-word expansion already has exact convolution over all cut positions. Its Green and inverse-square-root amplitudes retain their absolute scale; the calculation at the three original cusps has exact rational remainder bounds below [formula in source] . The existing three-state family transfer likewise gives its complete spectral, stationary and history weights. These are different typed producers.
+
+## An actually evaluated whole mirror source
+
+[tex-artefacts/toe_field_integration_20261105.tex:37-111](../../../../tex-artefacts/toe_field_integration_20261105.tex#L37) · `section:34f80d7f9e6e35d0d5a2` · subsection
+
+Use exactly the original R104 sixteen-mode CAR factor, [formula in source] Thus [formula in source] . The original cyclic rank-one expansion evaluates an ordered word by its full Fock trace and its rank-one intermediate matrix elements. For an actual canonical boundary action [formula in source] , those matrix elements use the exterior identity [formula in source] Each CAR monomial is a partial signed map on the orig
+
+## What the whole Higgs integration still has to evaluate
+
+[tex-artefacts/toe_field_integration_20261105.tex:112-140](../../../../tex-artefacts/toe_field_integration_20261105.tex#L112) · `section:f463bbe11849aa5cfb65` · subsection
+
+The original common affine Higgs/Yukawa sewing already gives [formula in source] , retaining any further original Higgs-dependent vertices. Its mixed matter coefficient includes [formula in source] . Here [formula in source] is a derivative with the Higgs field integrated. A derivative of a conditional fermion determinant with respect to a prescribed background Higgs value is a different operation. The later complete
+
+## Whole configuration classes and the exact limit of the heat factor
+
+[tex-artefacts/toe_field_integration_20261105.tex:141-184](../../../../tex-artefacts/toe_field_integration_20261105.tex#L141) · `section:a02c216d5b2c9d8cfda2` · subsection
+
+The earlier fixed-rank bounded-profile test excludes absolute normalization over the explicitly tested flat noncompact [formula in source] Higgs volume with any nonzero finite polynomial Pfaffian coefficient. The original constant-circle positive-Laplace-profile result makes its bound uniform in the mode cutoff. These scoped results are reused. They are not exclusions of every original measure or fluctuating field.
+
+## Conditional operator routes for the next evaluation.
+
+[tex-artefacts/toe_field_integration_20261105.tex:185-221](../../../../tex-artefacts/toe_field_integration_20261105.tex#L185) · `section:85421518a2101c3be34d` · paragraph
+
+The follow-up uses the original joint R113 contact branch, rather than another fixed-background evaluation. In that branch let [formula in source] , [formula in source] , and [formula in source] , with all original Yukawa matrices, including the Dirac-neutrino term. The existing full internal Gram identity and CAR give [formula in source] For the Hamiltonian insertion [formula in source] , the whole mixed word is a s
+
+## Evaluated spectral gluing and the next joint calculation.
+
+[tex-artefacts/toe_field_integration_20261105.tex:222-244](../../../../tex-artefacts/toe_field_integration_20261105.tex#L222) · `section:27809cf3c0ed0681274b` · paragraph
+
+The whole spectral parameter dependent Dirichlet to Neumann family now reconstructs the original conditional quarter circle heat source with all 96 internal directions, including its pointwise cross arc matrix kernel. All 12 Schur and 18 quarter circle controls passed. The original profile action also has an explicitly evaluated nonlocal cross kernel with its required contact term. These are operator space heat and a
+
+## Integrated neutral source and the remaining joint value.
+
+[tex-artefacts/toe_field_integration_20261105.tex:245-257](../../../../tex-artefacts/toe_field_integration_20261105.tex#L245) · `section:ca6504ff4287090b2550` · paragraph
+
+The whole neutral Higgs norm source is now integrated exactly within the existing fixed background R048 quadratic radial caller. Its source determinant ratio [formula in source] , regulated [formula in source] contact and original absolute baseline are retained. The original cubic and quartic vertices give a nonzero first Schwinger Dyson remainder when this Gaussian is substituted for the whole radial source on its p
+
+## Recovered proofs and a finite integration route.
+
+[tex-artefacts/toe_field_integration_20261105.tex:258-287](../../../../tex-artefacts/toe_field_integration_20261105.tex#L258) · `section:cefbd644e0307afc11ec` · paragraph
+
+Recovered verification calculations retain their original scope. Current Lean kernel checks distinguish proved consequences from explicit physical hypotheses; they do not turn those hypotheses into calculated joint field values. On the same finite fixed background R048 radial caller, a convergent integration method now retains the original cubic and quartic vertices without expanding their exponential. Its global pol
+
+## An evaluated connected original pair response.
+
+[tex-artefacts/toe_field_integration_20261105.tex:288-328](../../../../tex-artefacts/toe_field_integration_20261105.tex#L288) · `section:3af2d927d144fcfb5d31` · paragraph
+
+For the original free product's 384 dimensional opposite momentum Spin4 pair, let [formula in source] be its given momentum and [formula in source] the original IR insertion [formula in source] . The global Euclidean Yukawa action mark gives [formula in source] [formula in source] All four supplied Yukawa matrices are invertible in this statement; the held fixed remainder is bounded and has the stated nonzero dominat
+
+## Dynamic source tests, 6 November 2026.
+
+[tex-artefacts/toe_field_integration_20261105.tex:329-368](../../../../tex-artefacts/toe_field_integration_20261105.tex#L329) · `section:7500f6b19f9302ce11dc` · paragraph
+
+Nineteen targeted exact symbolic checks passed in the three route assessments. For the original charged sector with [formula in source] , define the actual inverse proper time moment by [formula in source] Under this condition, the bare profile action tail fails the positive Hankel test required of a selfadjoint complementary-sector return kernel. This excludes that direct substitution, while retaining the full integ
+
+## Durable result route.
+
+[tex-artefacts/toe_field_integration_20261105.tex:369-390](../../../../tex-artefacts/toe_field_integration_20261105.tex#L369) · `section:311cda8e2201599f83be` · paragraph
+
+The earlier research records WEIGHTS20261105B, SEWING20261105C, FIELDINT20261105D, HYP20261105E and HYP20261105F retain their stated scope. The followups SHORTTIME20261105G and SHORTTIME20261105H add the calculated source coefficients. The continuation SHORTTIME20261105I records the neutral source integration and its full source boundary. The continuation SHORTTIME20261105J records the recovered proof scopes and conv
+
+## Front matter / support
+
 [tex-artefacts/toe_research_20260909.tex:1-1](../../../../tex-artefacts/toe_research_20260909.tex#L1) · `section:11878df85c133ad412a3` · frontmatter
 
 No opening prose excerpt; see the source.
@@ -196,7 +274,7 @@ Explicit source references:
 
 Navigation joins (both sources name the same Python identifier; statement equivalence is not inferred):
 
-- [(* v1027: exact signed-wall determinant and unsquared low branch. *) {a, delta, lambda, g} = Unique /@ {"a", "delta", "lambda", "g"}; mass = delta + lambda; beta = lambda g^2; eta = lambda g; c = beta - eta^2/mass; h = {{a + beta a^2, eta a}, {eta a, mass}}; check["v1027 signed determinant M a (1+c a)", Together[Det[h] - mass a (1 + c a)] === 0]; check["v1027 physical kernel remains one-dimensional at a=0", NullSpace[h /. a -> 0] === {{1, 0}}]; (* v1028: exact characteristic-five reduction of the full 192-mode one-site character. P^12 == P^2 P(z^5)^2 mod 5 is evaluated by coefficient dictionaries, never by floating group quadrature. *)](../../../../verification/wolfram/tfpt_round4.wl#L28)
+- [(* v1027: exact signed-wall determinant and unsquared low branch. *)](../../../../verification/wolfram/tfpt_round4.wl#L29)
 
 ## T6/T8: full Gauss counts, internal cap and selection rules.
 
@@ -211,8 +289,8 @@ Explicit source references:
 
 Navigation joins (both sources name the same Python identifier; statement equivalence is not inferred):
 
-- [(* v1027: exact signed-wall determinant and unsquared low branch. *) {a, delta, lambda, g} = Unique /@ {"a", "delta", "lambda", "g"}; mass = delta + lambda; beta = lambda g^2; eta = lambda g; c = beta - eta^2/mass; h = {{a + beta a^2, eta a}, {eta a, mass}}; check["v1027 signed determinant M a (1+c a)", Together[Det[h] - mass a (1 + c a)] === 0]; check["v1027 physical kernel remains one-dimensional at a=0", NullSpace[h /. a -> 0] === {{1, 0}}]; (* v1028: exact characteristic-five reduction of the full 192-mode one-site character. P^12 == P^2 P(z^5)^2 mod 5 is evaluated by coefficient dictionaries, never by floating group quadrature. *)](../../../../verification/wolfram/tfpt_round4.wl#L28)
-- [(* v1028: exact ordinary D4 cap on the selected 12D even pair space. *) cs = DiagonalMatrix[{1, -I, -1, I}]; cf = DiagonalMatrix[{-I, -1, I}]; js = SparseArray[Table[{Mod[-kk, 4] + 1, kk + 1} -> 1, {kk, 0, 3}], {4, 4}]; jf = {{0, 0, 1}, {0, 1, 0}, {1, 0, 0}}; rot = KroneckerProduct[cs, cf]; refl = KroneckerProduct[js, jf]; check["v1028 ordinary D4 relations on selected even pair space", zeroQ[MatrixPower[rot, 4] - IdentityMatrix[12]] && zeroQ[refl.refl - IdentityMatrix[12]] && zeroQ[refl.rot.refl - ConjugateTranspose[rot]]]; (* One-based flattened slots for (k,g)=(1,3),(2,2),(3,1). *)](../../../../verification/wolfram/tfpt_round4.wl#L112)
+- [(* v1028: exact characteristic-five reduction of the full 192-mode one-site character. P^12 == P^2 P(z^5)^2 mod 5 is evaluated by coefficient dictionaries, never by floating group quadrature. *)](../../../../verification/wolfram/tfpt_round4.wl#L41)
+- [(* v1028: exact ordinary D4 cap on the selected 12D even pair space. *)](../../../../verification/wolfram/tfpt_round4.wl#L113)
 
 ## T7: local constraints and zero-mode removal.
 
@@ -227,7 +305,7 @@ Explicit source references:
 
 Navigation joins (both sources name the same Python identifier; statement equivalence is not inferred):
 
-- [(* v1029: exact generic local tensor identities and the k=0 instability. *) {x, y, z} = Unique /@ {"x", "y", "z"}; k = {x, y, z}; basis = Join[ Table[Outer[Times, UnitVector[3, ii], UnitVector[3, ii]], {ii, 1, 3}], Table[With[{ii = pair[[1]], jj = pair[[2]]}, (Outer[Times, UnitVector[3, ii], UnitVector[3, jj]] + Outer[Times, UnitVector[3, jj], UnitVector[3, ii]])/Sqrt[2]], {pair, {{2, 3}, {1, 3}, {1, 2}}}] ]; bmat = Transpose[(#.k) & /@ basis]; trace = {1, 1, 1, 0, 0, 0}; k2 = k.k; v = Transpose[bmat].k; scalar = v - k2 trace; kp = IdentityMatrix[6] - Outer[Times, trace, trace]/2; kq = k2 (IdentityMatrix[6] - Outer[Times, trace, trace]) - 2 Transpose[bmat].bmat + Outer[Times, trace, v] + Outer[Times, v, trace]; check["v1029 generic local tensor constraint identities", zeroQ[bmat.Transpose[bmat] - (k2 IdentityMatrix[3] + Outer[Times, k, k])/2] && zeroQ[kq.Transpose[bmat]] && zeroQ[kp.scalar - Transpose[bmat].k] && PossibleZeroQ[scalar.scalar - 2 k2^2]]; r = Unique[]; zeroEnergy = Expand[(r trace).kp.(r trace)/2]; check["v1029 periodic k=0 trace mode has exact energy -3 r^2/4", zeroEnergy === -3 r^2/4]; (* v1030: actual connected-sector words span M4; a disconnected mutant leaves one extra commutant degree. *)](../../../../verification/wolfram/tfpt_round4.wl#L135)
+- [(* v1029: exact generic local tensor identities and the k=0 instability. *)](../../../../verification/wolfram/tfpt_round4.wl#L136)
 
 ## ALG2: sector generation and conditional uniform section.
 
@@ -242,7 +320,7 @@ Explicit source references:
 
 Navigation joins (both sources name the same Python identifier; statement equivalence is not inferred):
 
-- [(* v1029: exact generic local tensor identities and the k=0 instability. *) {x, y, z} = Unique /@ {"x", "y", "z"}; k = {x, y, z}; basis = Join[ Table[Outer[Times, UnitVector[3, ii], UnitVector[3, ii]], {ii, 1, 3}], Table[With[{ii = pair[[1]], jj = pair[[2]]}, (Outer[Times, UnitVector[3, ii], UnitVector[3, jj]] + Outer[Times, UnitVector[3, jj], UnitVector[3, ii]])/Sqrt[2]], {pair, {{2, 3}, {1, 3}, {1, 2}}}] ]; bmat = Transpose[(#.k) & /@ basis]; trace = {1, 1, 1, 0, 0, 0}; k2 = k.k; v = Transpose[bmat].k; scalar = v - k2 trace; kp = IdentityMatrix[6] - Outer[Times, trace, trace]/2; kq = k2 (IdentityMatrix[6] - Outer[Times, trace, trace]) - 2 Transpose[bmat].bmat + Outer[Times, trace, v] + Outer[Times, v, trace]; check["v1029 generic local tensor constraint identities", zeroQ[bmat.Transpose[bmat] - (k2 IdentityMatrix[3] + Outer[Times, k, k])/2] && zeroQ[kq.Transpose[bmat]] && zeroQ[kp.scalar - Transpose[bmat].k] && PossibleZeroQ[scalar.scalar - 2 k2^2]]; r = Unique[]; zeroEnergy = Expand[(r trace).kp.(r trace)/2]; check["v1029 periodic k=0 trace mode has exact energy -3 r^2/4", zeroEnergy === -3 r^2/4]; (* v1030: actual connected-sector words span M4; a disconnected mutant leaves one extra commutant degree. *)](../../../../verification/wolfram/tfpt_round4.wl#L135)
+- [(* v1030: actual connected-sector words span M4; a disconnected mutant leaves one extra commutant degree. *)](../../../../verification/wolfram/tfpt_round4.wl#L163)
 
 ## Front matter / support
 
@@ -262,7 +340,7 @@ Explicit source references:
 
 Navigation joins (both sources name the same Python identifier; statement equivalence is not inferred):
 
-- [(* v1033: exact Z4 deck algebra and the load-bearing weight mismatch. *) z4 = DiagonalMatrix[{1, I, -1, -I}]; x4 = Sum[SparseArray[{{Mod[col, 4] + 1, col} -> 1}, {4, 4}], {col, 1, 4}]; check["v1033 local flux register is an exact Z4 Weyl pair", zeroQ[MatrixPower[z4, 4] - IdentityMatrix[4]] && zeroQ[MatrixPower[x4, 4] - IdentityMatrix[4]] && zeroQ[z4.x4.ConjugateTranspose[z4] - I x4]]; qDeck = ConstantArray[1/4, 8]; check["v1033 common quarter deck charge has norm 1/2 and h=1/4", qDeck.qDeck === 1/2 && qDeck.qDeck/2 === 1/4]; omegaS = ConstantArray[1/2, 5]; omegaF = Join[{3/4}, ConstantArray[-1/4, 3]]; lambdaNorm2 = omegaS.omegaS + omegaF.omegaF; check["v1033 D5+A3 lambda has h=1, distinct from deck h=1/4", omegaS.omegaS === 5/4 && omegaF.omegaF === 3/4 && lambdaNorm2 === 2 && lambdaNorm2/2 === 1 && lambdaNorm2/2 =!= qDeck.qDeck/2]; (* v1034: exact source parent envelope. The source's 3/5 is a dispersion amplitude; a standard symmetric NN bond has half of it. *)](../../../../verification/wolfram/tfpt_round7.wl#L141)
+- [(* v1033: exact Z4 deck algebra and the load-bearing weight mismatch. *)](../../../../verification/wolfram/tfpt_round7.wl#L142)
 
 ## Frozen source and target.
 
@@ -277,7 +355,7 @@ Explicit source references:
 
 Navigation joins (both sources name the same Python identifier; statement equivalence is not inferred):
 
-- [(* ---- (v983) SEAM.SIMPLECURRENT.GENERATOR.01: glue vector lambda = (omega_s, omega_f) ---- *) Module[{omegaS, omegaF, lam, inD5, inA3, inL0, gensD5, gensA3, dots, cosetRoots, census, lamV, omega2, nV, n2, cartanD8}, omegaS = ConstantArray[1/2, 5]; omegaF = {3/4, -1/4, -1/4, -1/4}; lam = Join[omegaS, omegaF]; inD5[x_] := (And @@ (IntegerQ /@ x)) && EvenQ[Total[x]]; inA3[y_] := (And @@ (IntegerQ /@ y)) && Total[y] === 0; inL0[z_] := inD5[Take[z, 5]] && inA3[Take[z, {6, 9}]]; checkExact["v983 NORMS+WEIGHT [E]: |omega_s|^2=5/4, |omega_f|^2=3/4, |lambda|^2=2, h_lambda=1", Total[omegaS^2] === 5/4 && Total[omegaF^2] === 3/4 && Total[lam^2] === 2 && Total[lam^2]/2 === 1]; checkExact["v983 ORDER FOUR [E]: 4*lambda in D5(+)A3, lambda and 2*lambda not -- [lambda] generates the diagonal Z4", inL0[4 lam] && ! inL0[2 lam] && ! inL0[lam]]; gensD5 = {{1, 1, 0, 0, 0}, {1, -1, 0, 0, 0}, {0, 1, 1, 0, 0}, {0, 0, 1, 1, 0}, {0, 0, 0, 1, 1}}; gensA3 = {{1, -1, 0, 0}, {0, 1, -1, 0}, {0, 0, 1, -1}}; dots = Join[omegaS . # & /@ gensD5, omegaF . # & /@ gensA3]; checkExact["v983 ISOTROPY+UNIMODULAR [E]: lambda.L0 subset Z on a generator set; det(D5)*det(A3)=16, index-4 glue => det L=1", (And @@ (IntegerQ /@ dots)) && 16/4^2 === 1]; cosetRoots[k_] := Module[{t = k lam, d5, a3}, d5 = Counts @ Select[ Total[(# + Take[t, 5])^2] & /@ Select[Tuples[Range[-5, 3], 5], EvenQ[Total[#]] &], # <= 2 &]; a3 = Counts @ Select[ Total[(Join[#, {-Total[#]}] + Take[t, {6, 9}])^2] & /@ Tuples[Range[-6, 6], 3], # <= 2 &]; Total[KeyValueMap[#2 Lookup[a3, 2 - #1, 0] &, d5]]]; census = Table[cosetRoots[k], {k, 0, 3}]; checkExact["v983 COSET ROOT CENSUS [E]: norm-2 vectors per fusion power k=0..3 = {52,64,60,64}, total 240; odd powers 64+64=128", census === {52, 64, 60, 64} && Total[census] === 240 && census[[2]] + census[[4]] === 128]; lamV = Join[{1, 0, 0, 0, 0}, omegaF]; omega2 = {1/2, 1/2, -1/2, -1/2}; nV = Total[lamV^2]; n2 = Total[omegaS^2] + Total[omega2^2]; cartanD8 = {{2, -1, 0, 0, 0, 0, 0, 0}, {-1, 2, -1, 0, 0, 0, 0, 0}, {0, -1, 2, -1, 0, 0, 0, 0}, {0, 0, -1, 2, -1, 0, 0, 0}, {0, 0, 0, -1, 2, -1, 0, 0}, {0, 0, 0, 0, -1, 2, -1, -1}, {0, 0, 0, 0, 0, -1, 2, 0}, {0, 0, 0, 0, 0, -1, 0, 2}}; checkExact["v983 KILLS+HOLOMORPHY SHADOW [E]: vector glue (v,omega_f) norm 7/4 and mismatched (omega_s, omega_2) norm 9/4 not in 2Z; det Cartan D8=4 vs glued det=1", nV === 7/4 && n2 === 9/4 && Det[cartanD8] === 4 && 16/4^2 === 1]; ]; (* ---- (v985) ALPHA.QUILLEN.EXACT.01: mu4 circulant spectra + graded channel swap ---- *)](../../../../verification/wolfram/tfpt_readouts.wl#L444)
+- [(* ---- (v983) SEAM.SIMPLECURRENT.GENERATOR.01: glue vector lambda = (omega_s, omega_f) ---- *)](../../../../verification/wolfram/tfpt_readouts.wl#L445)
 
 ## A common microscopic Hilbert tied to the hopping.
 
@@ -316,7 +394,7 @@ Explicit source references:
 
 Navigation joins (both sources name the same Python identifier; statement equivalence is not inferred):
 
-- [(* v1033: exact Z4 deck algebra and the load-bearing weight mismatch. *) z4 = DiagonalMatrix[{1, I, -1, -I}]; x4 = Sum[SparseArray[{{Mod[col, 4] + 1, col} -> 1}, {4, 4}], {col, 1, 4}]; check["v1033 local flux register is an exact Z4 Weyl pair", zeroQ[MatrixPower[z4, 4] - IdentityMatrix[4]] && zeroQ[MatrixPower[x4, 4] - IdentityMatrix[4]] && zeroQ[z4.x4.ConjugateTranspose[z4] - I x4]]; qDeck = ConstantArray[1/4, 8]; check["v1033 common quarter deck charge has norm 1/2 and h=1/4", qDeck.qDeck === 1/2 && qDeck.qDeck/2 === 1/4]; omegaS = ConstantArray[1/2, 5]; omegaF = Join[{3/4}, ConstantArray[-1/4, 3]]; lambdaNorm2 = omegaS.omegaS + omegaF.omegaF; check["v1033 D5+A3 lambda has h=1, distinct from deck h=1/4", omegaS.omegaS === 5/4 && omegaF.omegaF === 3/4 && lambdaNorm2 === 2 && lambdaNorm2/2 === 1 && lambdaNorm2/2 =!= qDeck.qDeck/2]; (* v1034: exact source parent envelope. The source's 3/5 is a dispersion amplitude; a standard symmetric NN bond has half of it. *)](../../../../verification/wolfram/tfpt_round7.wl#L141)
+- [(* v1033: exact Z4 deck algebra and the load-bearing weight mismatch. *)](../../../../verification/wolfram/tfpt_round7.wl#L142)
 
 ## Front matter / support
 
@@ -336,7 +414,7 @@ Explicit source references:
 
 Navigation joins (both sources name the same Python identifier; statement equivalence is not inferred):
 
-- [(* v1031: exact rational-fibre curvature projector and positivity. *) p = {1, 2, 2}; {r2, b, trace, scalar, kp, kq, c} = tensorData[p]; ptt = Simplify[explicitPTT[p, r2]]; check["v1031 C=r^4 PTT with a symmetric rank-two projector", zeroQ[c - r2^2 ptt] && zeroQ[ptt - Transpose[ptt]] && zeroQ[ptt.ptt - ptt] && MatrixRank[ptt] === 2]; cFactor = r2 ptt; check["v1031 exact PSD factorization has spectrum {0^4,r^4,r^4}", zeroQ[c - cFactor.Transpose[cFactor]] && MatrixRank[c] === 2 && Sort[Simplify[Eigenvalues[c]]] === {0, 0, 0, 0, r2^2, r2^2}]; (* v1032: a separate Lorentz-covariant curvature calculation at one exact nonzero null momentum. Pi is the de Donder trace-reversed numerator; positivity is inferred only after the curvature sandwich. *)](../../../../verification/wolfram/tfpt_round7.wl#L79)
+- [(* v1032: a separate Lorentz-covariant curvature calculation at one exact nonzero null momentum. Pi is the de Donder trace-reversed numerator; positivity is inferred only after the curvature sandwich. *)](../../../../verification/wolfram/tfpt_round7.wl#L92)
 
 ## Conventions and the algebraic bridge.
 
@@ -368,7 +446,7 @@ Explicit source references:
 
 Navigation joins (both sources name the same Python identifier; statement equivalence is not inferred):
 
-- [(* v1031: exact rational-fibre curvature projector and positivity. *) p = {1, 2, 2}; {r2, b, trace, scalar, kp, kq, c} = tensorData[p]; ptt = Simplify[explicitPTT[p, r2]]; check["v1031 C=r^4 PTT with a symmetric rank-two projector", zeroQ[c - r2^2 ptt] && zeroQ[ptt - Transpose[ptt]] && zeroQ[ptt.ptt - ptt] && MatrixRank[ptt] === 2]; cFactor = r2 ptt; check["v1031 exact PSD factorization has spectrum {0^4,r^4,r^4}", zeroQ[c - cFactor.Transpose[cFactor]] && MatrixRank[c] === 2 && Sort[Simplify[Eigenvalues[c]]] === {0, 0, 0, 0, r2^2, r2^2}]; (* v1032: a separate Lorentz-covariant curvature calculation at one exact nonzero null momentum. Pi is the de Donder trace-reversed numerator; positivity is inferred only after the curvature sandwich. *)](../../../../verification/wolfram/tfpt_round7.wl#L79)
+- [(* v1032: a separate Lorentz-covariant curvature calculation at one exact nonzero null momentum. Pi is the de Donder trace-reversed numerator; positivity is inferred only after the curvature sandwich. *)](../../../../verification/wolfram/tfpt_round7.wl#L92)
 
 ## Front matter / support
 
@@ -388,7 +466,7 @@ Explicit source references:
 
 Navigation joins (both sources name the same Python identifier; statement equivalence is not inferred):
 
-- [(* v1035: physical-position Fourier convention D -> i k. Retain I: c0=-s.q and c_i=i (B p)_i. The source Ward equations then propagate both affine constraints exactly. *)](../../../../verification/wolfram/tfpt_round7.wl#L181)
+- [(* v1035: physical-position Fourier convention D -> i k. Retain I: c0=-s.q and c_i=i (B p)_i. The source Ward equations then propagate both affine constraints exactly. *)](../../../../verification/wolfram/tfpt_round7.wl#L182)
 
 ## Fixed regulator and conventions.
 
@@ -450,7 +528,7 @@ Explicit source references:
 
 Navigation joins (both sources name the same Python identifier; statement equivalence is not inferred):
 
-- [(* v1035: physical-position Fourier convention D -> i k. Retain I: c0=-s.q and c_i=i (B p)_i. The source Ward equations then propagate both affine constraints exactly. *)](../../../../verification/wolfram/tfpt_round7.wl#L181)
+- [(* v1035: physical-position Fourier convention D -> i k. Retain I: c0=-s.q and c_i=i (B p)_i. The source Ward equations then propagate both affine constraints exactly. *)](../../../../verification/wolfram/tfpt_round7.wl#L182)
 
 ## Front matter / support
 
@@ -473,8 +551,8 @@ Explicit source references:
 
 Navigation joins (both sources name the same Python identifier; statement equivalence is not inferred):
 
-- [(* v1027: exact signed-wall determinant and unsquared low branch. *) {a, delta, lambda, g} = Unique /@ {"a", "delta", "lambda", "g"}; mass = delta + lambda; beta = lambda g^2; eta = lambda g; c = beta - eta^2/mass; h = {{a + beta a^2, eta a}, {eta a, mass}}; check["v1027 signed determinant M a (1+c a)", Together[Det[h] - mass a (1 + c a)] === 0]; check["v1027 physical kernel remains one-dimensional at a=0", NullSpace[h /. a -> 0] === {{1, 0}}]; (* v1028: exact characteristic-five reduction of the full 192-mode one-site character. P^12 == P^2 P(z^5)^2 mod 5 is evaluated by coefficient dictionaries, never by floating group quadrature. *)](../../../../verification/wolfram/tfpt_round4.wl#L28)
-- [(* v1033: exact Z4 deck algebra and the load-bearing weight mismatch. *) z4 = DiagonalMatrix[{1, I, -1, -I}]; x4 = Sum[SparseArray[{{Mod[col, 4] + 1, col} -> 1}, {4, 4}], {col, 1, 4}]; check["v1033 local flux register is an exact Z4 Weyl pair", zeroQ[MatrixPower[z4, 4] - IdentityMatrix[4]] && zeroQ[MatrixPower[x4, 4] - IdentityMatrix[4]] && zeroQ[z4.x4.ConjugateTranspose[z4] - I x4]]; qDeck = ConstantArray[1/4, 8]; check["v1033 common quarter deck charge has norm 1/2 and h=1/4", qDeck.qDeck === 1/2 && qDeck.qDeck/2 === 1/4]; omegaS = ConstantArray[1/2, 5]; omegaF = Join[{3/4}, ConstantArray[-1/4, 3]]; lambdaNorm2 = omegaS.omegaS + omegaF.omegaF; check["v1033 D5+A3 lambda has h=1, distinct from deck h=1/4", omegaS.omegaS === 5/4 && omegaF.omegaF === 3/4 && lambdaNorm2 === 2 && lambdaNorm2/2 === 1 && lambdaNorm2/2 =!= qDeck.qDeck/2]; (* v1034: exact source parent envelope. The source's 3/5 is a dispersion amplitude; a standard symmetric NN bond has half of it. *)](../../../../verification/wolfram/tfpt_round7.wl#L141)
+- [(* v1027: exact signed-wall determinant and unsquared low branch. *)](../../../../verification/wolfram/tfpt_round4.wl#L29)
+- [(* v1034: exact source parent envelope. The source's 3/5 is a dispersion amplitude; a standard symmetric NN bond has half of it. *)](../../../../verification/wolfram/tfpt_round7.wl#L161)
 
 ## Source contract and nomenclature.
 
@@ -491,7 +569,7 @@ Explicit source references:
 
 Navigation joins (both sources name the same Python identifier; statement equivalence is not inferred):
 
-- [(* v1027: exact signed-wall determinant and unsquared low branch. *) {a, delta, lambda, g} = Unique /@ {"a", "delta", "lambda", "g"}; mass = delta + lambda; beta = lambda g^2; eta = lambda g; c = beta - eta^2/mass; h = {{a + beta a^2, eta a}, {eta a, mass}}; check["v1027 signed determinant M a (1+c a)", Together[Det[h] - mass a (1 + c a)] === 0]; check["v1027 physical kernel remains one-dimensional at a=0", NullSpace[h /. a -> 0] === {{1, 0}}]; (* v1028: exact characteristic-five reduction of the full 192-mode one-site character. P^12 == P^2 P(z^5)^2 mod 5 is evaluated by coefficient dictionaries, never by floating group quadrature. *)](../../../../verification/wolfram/tfpt_round4.wl#L28)
+- [(* v1027: exact signed-wall determinant and unsquared low branch. *)](../../../../verification/wolfram/tfpt_round4.wl#L29)
 
 ## Exact theorem for the parent that v1008 actually computes.
 
@@ -586,7 +664,7 @@ Explicit source references:
 
 Navigation joins (both sources name the same Python identifier; statement equivalence is not inferred):
 
-- [(* v1033: exact Z4 deck algebra and the load-bearing weight mismatch. *) z4 = DiagonalMatrix[{1, I, -1, -I}]; x4 = Sum[SparseArray[{{Mod[col, 4] + 1, col} -> 1}, {4, 4}], {col, 1, 4}]; check["v1033 local flux register is an exact Z4 Weyl pair", zeroQ[MatrixPower[z4, 4] - IdentityMatrix[4]] && zeroQ[MatrixPower[x4, 4] - IdentityMatrix[4]] && zeroQ[z4.x4.ConjugateTranspose[z4] - I x4]]; qDeck = ConstantArray[1/4, 8]; check["v1033 common quarter deck charge has norm 1/2 and h=1/4", qDeck.qDeck === 1/2 && qDeck.qDeck/2 === 1/4]; omegaS = ConstantArray[1/2, 5]; omegaF = Join[{3/4}, ConstantArray[-1/4, 3]]; lambdaNorm2 = omegaS.omegaS + omegaF.omegaF; check["v1033 D5+A3 lambda has h=1, distinct from deck h=1/4", omegaS.omegaS === 5/4 && omegaF.omegaF === 3/4 && lambdaNorm2 === 2 && lambdaNorm2/2 === 1 && lambdaNorm2/2 =!= qDeck.qDeck/2]; (* v1034: exact source parent envelope. The source's 3/5 is a dispersion amplitude; a standard symmetric NN bond has half of it. *)](../../../../verification/wolfram/tfpt_round7.wl#L141)
+- [(* v1034: exact source parent envelope. The source's 3/5 is a dispersion amplitude; a standard symmetric NN bond has half of it. *)](../../../../verification/wolfram/tfpt_round7.wl#L161)
 
 ## Front matter / support
 
@@ -611,9 +689,11 @@ Explicit source references:
 
 Navigation joins (both sources name the same Python identifier; statement equivalence is not inferred):
 
-- [(* v1031: exact rational-fibre curvature projector and positivity. *) p = {1, 2, 2}; {r2, b, trace, scalar, kp, kq, c} = tensorData[p]; ptt = Simplify[explicitPTT[p, r2]]; check["v1031 C=r^4 PTT with a symmetric rank-two projector", zeroQ[c - r2^2 ptt] && zeroQ[ptt - Transpose[ptt]] && zeroQ[ptt.ptt - ptt] && MatrixRank[ptt] === 2]; cFactor = r2 ptt; check["v1031 exact PSD factorization has spectrum {0^4,r^4,r^4}", zeroQ[c - cFactor.Transpose[cFactor]] && MatrixRank[c] === 2 && Sort[Simplify[Eigenvalues[c]]] === {0, 0, 0, 0, r2^2, r2^2}]; (* v1032: a separate Lorentz-covariant curvature calculation at one exact nonzero null momentum. Pi is the de Donder trace-reversed numerator; positivity is inferred only after the curvature sandwich. *)](../../../../verification/wolfram/tfpt_round7.wl#L79)
-- [(* v1033: exact Z4 deck algebra and the load-bearing weight mismatch. *) z4 = DiagonalMatrix[{1, I, -1, -I}]; x4 = Sum[SparseArray[{{Mod[col, 4] + 1, col} -> 1}, {4, 4}], {col, 1, 4}]; check["v1033 local flux register is an exact Z4 Weyl pair", zeroQ[MatrixPower[z4, 4] - IdentityMatrix[4]] && zeroQ[MatrixPower[x4, 4] - IdentityMatrix[4]] && zeroQ[z4.x4.ConjugateTranspose[z4] - I x4]]; qDeck = ConstantArray[1/4, 8]; check["v1033 common quarter deck charge has norm 1/2 and h=1/4", qDeck.qDeck === 1/2 && qDeck.qDeck/2 === 1/4]; omegaS = ConstantArray[1/2, 5]; omegaF = Join[{3/4}, ConstantArray[-1/4, 3]]; lambdaNorm2 = omegaS.omegaS + omegaF.omegaF; check["v1033 D5+A3 lambda has h=1, distinct from deck h=1/4", omegaS.omegaS === 5/4 && omegaF.omegaF === 3/4 && lambdaNorm2 === 2 && lambdaNorm2/2 === 1 && lambdaNorm2/2 =!= qDeck.qDeck/2]; (* v1034: exact source parent envelope. The source's 3/5 is a dispersion amplitude; a standard symmetric NN bond has half of it. *)](../../../../verification/wolfram/tfpt_round7.wl#L141)
-- [(* v1035: physical-position Fourier convention D -> i k. Retain I: c0=-s.q and c_i=i (B p)_i. The source Ward equations then propagate both affine constraints exactly. *)](../../../../verification/wolfram/tfpt_round7.wl#L181)
+- [(* v1034: exact source parent envelope. The source's 3/5 is a dispersion amplitude; a standard symmetric NN bond has half of it. *)](../../../../verification/wolfram/tfpt_round7.wl#L161)
+- [(* v1033: exact Z4 deck algebra and the load-bearing weight mismatch. *)](../../../../verification/wolfram/tfpt_round7.wl#L142)
+- [(* v1032: a separate Lorentz-covariant curvature calculation at one exact nonzero null momentum. Pi is the de Donder trace-reversed numerator; positivity is inferred only after the curvature sandwich. *)](../../../../verification/wolfram/tfpt_round7.wl#L92)
+- [(* v1031: exact rational-fibre curvature projector and positivity. *)](../../../../verification/wolfram/tfpt_round7.wl#L80)
+- [(* v1035: physical-position Fourier convention D -> i k. Retain I: c0=-s.q and c_i=i (B p)_i. The source Ward equations then propagate both affine constraints exactly. *)](../../../../verification/wolfram/tfpt_round7.wl#L182)
 
 ## Front matter / support
 
@@ -633,7 +713,7 @@ Explicit source references:
 
 Navigation joins (both sources name the same Python identifier; statement equivalence is not inferred):
 
-- [(* v1031: exact rational-fibre curvature projector and positivity. *) p = {1, 2, 2}; {r2, b, trace, scalar, kp, kq, c} = tensorData[p]; ptt = Simplify[explicitPTT[p, r2]]; check["v1031 C=r^4 PTT with a symmetric rank-two projector", zeroQ[c - r2^2 ptt] && zeroQ[ptt - Transpose[ptt]] && zeroQ[ptt.ptt - ptt] && MatrixRank[ptt] === 2]; cFactor = r2 ptt; check["v1031 exact PSD factorization has spectrum {0^4,r^4,r^4}", zeroQ[c - cFactor.Transpose[cFactor]] && MatrixRank[c] === 2 && Sort[Simplify[Eigenvalues[c]]] === {0, 0, 0, 0, r2^2, r2^2}]; (* v1032: a separate Lorentz-covariant curvature calculation at one exact nonzero null momentum. Pi is the de Donder trace-reversed numerator; positivity is inferred only after the curvature sandwich. *)](../../../../verification/wolfram/tfpt_round7.wl#L79)
+- [(* v1031: exact rational-fibre curvature projector and positivity. *)](../../../../verification/wolfram/tfpt_round7.wl#L80)
 
 ## Assumptions and preregistered obligations.
 
@@ -683,134 +763,48 @@ Explicit source references:
 
 Navigation joins (both sources name the same Python identifier; statement equivalence is not inferred):
 
-- [(* v1031: exact rational-fibre curvature projector and positivity. *) p = {1, 2, 2}; {r2, b, trace, scalar, kp, kq, c} = tensorData[p]; ptt = Simplify[explicitPTT[p, r2]]; check["v1031 C=r^4 PTT with a symmetric rank-two projector", zeroQ[c - r2^2 ptt] && zeroQ[ptt - Transpose[ptt]] && zeroQ[ptt.ptt - ptt] && MatrixRank[ptt] === 2]; cFactor = r2 ptt; check["v1031 exact PSD factorization has spectrum {0^4,r^4,r^4}", zeroQ[c - cFactor.Transpose[cFactor]] && MatrixRank[c] === 2 && Sort[Simplify[Eigenvalues[c]]] === {0, 0, 0, 0, r2^2, r2^2}]; (* v1032: a separate Lorentz-covariant curvature calculation at one exact nonzero null momentum. Pi is the de Donder trace-reversed numerator; positivity is inferred only after the curvature sandwich. *)](../../../../verification/wolfram/tfpt_round7.wl#L79)
+- [(* v1031: exact rational-fibre curvature projector and positivity. *)](../../../../verification/wolfram/tfpt_round7.wl#L80)
 
 ## Front matter / support
 
-[tex-artefacts/toe_universalraum_synthesis_20260912.tex:1-1](../../../../tex-artefacts/toe_universalraum_synthesis_20260912.tex#L1) · `section:210d0b40745aefdcdeaf` · frontmatter
+[tex-artefacts/toe_source_completion_20261103.tex:1-3](../../../../tex-artefacts/toe_source_completion_20261103.tex#L1) · `section:ad2887317a6d5e0bbe05` · frontmatter
 
 No opening prose excerpt; see the source.
 
-## Universalraum synthesis: source selection, reconstruction and accessible dynamics
+## Shared source and transfer update: 3 November 2026
 
-[tex-artefacts/toe_universalraum_synthesis_20260912.tex:2-4](../../../../tex-artefacts/toe_universalraum_synthesis_20260912.tex#L2) · `section:6e1860c8f024840a2d59` · section
+[tex-artefacts/toe_source_completion_20261103.tex:4-27](../../../../tex-artefacts/toe_source_completion_20261103.tex#L4) · `section:5bb11b878db66b765225` · section
 
-No opening prose excerpt; see the source.
+The original structured boundary source, its common action and the [formula in source] chain are retained. Several complete source calls, field maps and transfer kernels have now been evaluated in their stated classes. These results include conditional charge and metric selection, physical Gauss-sector sources, vacuum and ground-source reconstruction, and a complete fixed-background Clifford kernel. The primitive spa
 
-## Scope and evidence, 12 September 2026.
+## The common source and the corrected starting point (C, F, G)
 
-[tex-artefacts/toe_universalraum_synthesis_20260912.tex:5-21](../../../../tex-artefacts/toe_universalraum_synthesis_20260912.tex#L5) · `section:fc47ee16ddf59584c3f6` · paragraph
+[tex-artefacts/toe_source_completion_20261103.tex:28-76](../../../../tex-artefacts/toe_source_completion_20261103.tex#L28) · `section:066fe20f4d09268f3d38` · subsection
 
-This section consolidates the local primitive-transfer investigation and the latest two available answers from each of four ChatGPT research tasks. It is not an independent rerun of all external certificates, an exhaustive conversation archive, or a derivation of a theory of everything. All T1–T8 and TFPT.TOE.COMPLETE.01 remain open. The local checkout base is 66b91e40e245569f06ab440ead80f446c9be0ee5; additional loca
+P1 is a structured reflection-positive boundary kernel, not merely the number [formula in source] . The operational seed already supplies its local algebra, state, time, reflection and collar operator. The original source route is [formula in source] Each arrow retains its actual hypotheses and operator domains. A particular eightfold CAR/native-clock reconstruction is an available conditional route, not a global ext
 
-Explicit source references:
+## Charge geometry and the actual clock completion (A, B)
 
-- [TFPT.TOE.COMPLETE.01](../../../../verification/status_ledger.csv#L764) · explicit_claim_identifier · original status at linked ledger row
+[tex-artefacts/toe_source_completion_20261103.tex:77-128](../../../../tex-artefacts/toe_source_completion_20261103.tex#L77) · `section:5d7a3f5da35a8ba21a7a` · subsection
 
-## Typed objects and prior local results
+For the four-punctured family surface, [formula in source] With the declared root normalization, the meridians form the [formula in source] side, their differences the [formula in source] root side. All four meridians have the same discriminant class. A cyclic permutation of the marked points therefore acts trivially on that discriminant; it is not translation through the four glue classes. The earlier literal fourfo
 
-[tex-artefacts/toe_universalraum_synthesis_20260912.tex:22-69](../../../../tex-artefacts/toe_universalraum_synthesis_20260912.tex#L22) · `section:ba5e47e21501fa900096` · subsection
+## Variable fields, ordered sources and retained reference factors (D, E)
 
-The integral compiler commutant, its positive cone, the sixteen-real-mode quadratic candidate, the seventy-state interacting chain, the filled QWZ strip and the compact-U(1) rotor parent are different objects. In particular, the quadratic candidate has eight complex modes and a 256-dimensional full Fock space. The designated [formula in source] is a fixed-four-particle sector of an open four-site, eight-mode model; i
+[tex-artefacts/toe_source_completion_20261103.tex:129-153](../../../../tex-artefacts/toe_source_completion_20261103.tex#L129) · `section:1f0121fb70d3450e5fe9` · subsection
 
-## Results reported by the four parallel tasks
-
-[tex-artefacts/toe_universalraum_synthesis_20260912.tex:70-129](../../../../tex-artefacts/toe_universalraum_synthesis_20260912.tex#L70) · `section:05986b2011d3791e7ee4` · subsection
-
-The following are attributed task reports; their original finite-field and rank certificates have not all been independently rerun in this consolidation. The archived excerpts retain exact task identifiers and retrieval limitations.
-
-## Reconstruction contracts that must remain distinct
-
-[tex-artefacts/toe_universalraum_synthesis_20260912.tex:130-172](../../../../tex-artefacts/toe_universalraum_synthesis_20260912.tex#L130) · `section:1843ffffee2452937787` · subsection
-
-For a pure eigenstate and a specified Hermitian family [formula in source] , the covariance form obeys [formula in source] A one-dimensional nonconstant kernel identifies one generator direction, not the origin of the family or state. For a faithful mixed state, [formula in source] instead forces [formula in source] to be scalar. Thermal reconstruction therefore needs its own stationarity-response contract. Adding se
-
-## Exact access results in the local quadratic candidate
-
-[tex-artefacts/toe_universalraum_synthesis_20260912.tex:173-215](../../../../tex-artefacts/toe_universalraum_synthesis_20260912.tex#L173) · `section:aa533949572e21b4b89f` · subsection
-
-For the pinned real matrices, [formula in source] the real ranks are ten and six and [formula in source] . The original boundary cyclic space equals [formula in source] . The induced Fock decomposition is [formula in source] ; with the unchanged split dynamics, finite adaptive boundary protocols depend only on the accessible marginal. Hidden occupation cannot be read out by such protocols, even if other initial corre
-
-## A covariant event channel with an actual boundary response
-
-[tex-artefacts/toe_universalraum_synthesis_20260912.tex:216-252](../../../../tex-artefacts/toe_universalraum_synthesis_20260912.tex#L216) · `section:2b3701d613b9b04d510e` · subsection
-
-Let [formula in source] be the Hermitian one-particle lift of the existing edge [formula in source] . It obeys [formula in source] . Define [formula in source] This is a covariant, trace-preserving completely positive map. Averaging the Hamiltonians first instead preserves the [formula in source] split. The two operations must not be confused. For the invariant hidden one-particle state [formula in source] , writing 
-
-## New continuation: transfer succeeds but state selection fails
-
-[tex-artefacts/toe_universalraum_synthesis_20260912.tex:253-286](../../../../tex-artefacts/toe_universalraum_synthesis_20260912.tex#L253) · `section:54b8eeee7af8d44f1fd3` · subsection
-
-A possible, explicitly added continuous event model is [formula in source] The event-only semigroup is the Poisson mixture of [formula in source] ; the rate [formula in source] is unselected. With the Hilbert–Schmidt inner product, [formula in source] The Hamiltonian part has zero real quadratic form. Consequently the fixed space of [formula in source] is the common commutant of all [formula in source] and [formula i
-
-## Arithmetic bridges, acceptance gates and provenance
-
-[tex-artefacts/toe_universalraum_synthesis_20260912.tex:287-335](../../../../tex-artefacts/toe_universalraum_synthesis_20260912.tex#L287) · `section:13353500113bc4f195bc` · subsection
-
-The archived 10 September rotor synthesis reports an exact change to residue/carry coordinates retaining the declared parent dynamics, arithmetic covering operations, conditional logarithmic weights, and finite-energy approximations with explicit error costs. Discarding the carry loses electric dynamics. Norm time, electric time and modular time are not interchangeable. A finite factoring example and static E8 counts
+The original local source reader no longer needs constant Higgs backgrounds in its stated circle class. The smooth bounded variable one-form has the required Hilbert–Schmidt control, entire ordered [formula in source] source, trace correction and all local response orders. The actual Galerkin calls converge to that same source operator. This is an analytic application to the existing coefficient family; it is not a p
 
 Explicit source references:
 
-- [docs/TFPT_UNIVERSALRAUM_SYNTHESIS_2026-09-12.md](../../../../docs/TFPT_UNIVERSALRAUM_SYNTHESIS_2026-09-12.md#L1) · explicit_file_citation
-- [docs/TFPT_UNIVERSALRAUM_EINFACH_2026-09-12.md](../../../../docs/TFPT_UNIVERSALRAUM_EINFACH_2026-09-12.md#L1) · explicit_file_citation
-- [experiments/theory-contracts/primitive-transfer-selection-20260912/source_edge_access.py](../../../../experiments/theory-contracts/primitive-transfer-selection-20260912/source_edge_access.py#L1) · explicit_file_citation
-- [experiments/theory-contracts/primitive-transfer-selection-20260912/covariant_edge_channel.py](../../../../experiments/theory-contracts/primitive-transfer-selection-20260912/covariant_edge_channel.py#L1) · explicit_file_citation
-- [experiments/theory-contracts/primitive-transfer-selection-20260912/edge_channel_stationary.py](../../../../experiments/theory-contracts/primitive-transfer-selection-20260912/edge_channel_stationary.py#L1) · explicit_file_citation
+- [verification/v259_modular_cutoff_kappa.py](../../../../verification/v259_modular_cutoff_kappa.py#L1) · explicit_script_identifier
 
-## Proposed follow-ups and discriminating research directions
+Navigation joins (both sources name the same Python identifier; statement equivalence is not inferred):
 
-[tex-artefacts/toe_universalraum_synthesis_20260912.tex:336-344](../../../../tex-artefacts/toe_universalraum_synthesis_20260912.tex#L336) · `section:7446e557bd8a5894bf08` · subsection
+- [(* ==== v259: the modular/KMS spectral-action cutoff fixes f_2/f_0 = 1 (PS.SPECACT.02) ==== v258 (Dirac as covariance induction) is numerical matrix-log linear algebra -> Python-only. *)](../../../../verification/wolfram/tfpt_readouts_extension.wl#L2014)
 
-These are proposed investigations, not newly completed results or launched worker tasks. Their common acceptance rule is a forward derivation without importing the desired Hamiltonian, its eigenstates or target couplings. A genuinely independently derived primitive action may itself be the Hamiltonian; it need not be artificially required to be a different object.
+## Physical source existence, ground words and common geometry (H, I, J)
 
-## F0: Independent reproduction.
+[tex-artefacts/toe_source_completion_20261103.tex:154-221](../../../../tex-artefacts/toe_source_completion_20261103.tex#L154) · `section:206a9bd3daad77367425` · subsection
 
-[tex-artefacts/toe_universalraum_synthesis_20260912.tex:345-352](../../../../tex-artefacts/toe_universalraum_synthesis_20260912.tex#L345) · `section:9555ea49608875a0d622` · paragraph
-
-Obtain and pin the original 17- and 66-family certificates before using their strongest claims as local premises; then audit the non-Slater and cyclotomic irreducibility certificates. Keep the 133-dimensional product extension separate. Success means the same exact ranks, coefficient fields and class definitions, with numerical conditioning reported separately. Unavailable originals mean ``not reproduced'', not ``fal
-
-## F1: Freeze the elementary grammar.
-
-[tex-artefacts/toe_universalraum_synthesis_20260912.tex:353-360](../../../../tex-artefacts/toe_universalraum_synthesis_20260912.tex#L353) · `section:b7cd6722b6a2986cc80f` · paragraph
-
-For one original finite sector, map each primitive rule to its operator, phase, support, adjoint and composition. Distinguish physical operations from gauge identifications and elementary generators from composite words. A source-derived filtration or equivalent primitive rule must explain why composition does not automatically introduce independently weighted energy terms. Reject a cutoff chosen only to enforce the 
-
-## F2: Derive process type and measure.
-
-[tex-artefacts/toe_universalraum_synthesis_20260912.tex:361-369](../../../../tex-artefacts/toe_universalraum_synthesis_20260912.tex#L361) · `section:fb728a422a27b707299d` · paragraph
-
-Construct one source step or collar without the target generator as input. Declare whether the output is a Hamiltonian, a positive Hilbert-space transfer or a reduced quantum channel. Derive weights, step duration and any traced environment from the stated inputs. Test alternative weights with identical symmetry and fixed vector. A freely chosen metric in [formula in source] , pulse angle or event rate remains an add
-
-## F3: State selection and correlation content.
-
-[tex-artefacts/toe_universalraum_synthesis_20260912.tex:370-378](../../../../tex-artefacts/toe_universalraum_synthesis_20260912.tex#L370) · `section:0fb52de974ef66f9a8dd` · paragraph
-
-Compute the exact fixed algebra or ground space of the F2 candidate. Use eigenstate covariance, thermal stationarity or full two-particle data only under their respective contracts. Test identical one-body data with different four-point responses, and identical ground rays with different energy ratios. Repetition of the current channel and free flow cannot remove their common fixed algebra. Any operation removing tha
-
-## F4: Operational response and costs.
-
-[tex-artefacts/toe_universalraum_synthesis_20260912.tex:379-387](../../../../tex-artefacts/toe_universalraum_synthesis_20260912.tex#L379) · `section:6727615a78ca0e90e90d` · paragraph
-
-For a source-derived intervention, compare admissible preparations with the same initial accessible marginal at the original boundary. Bound the remainder in the conditional [formula in source] signal on an explicit finite time interval, and include preparation energy, precision and sampling costs. Preserve the no-intervention control. Exact cyclic rank alone is not successful physical control, and arbitrarily small 
-
-## F5: Source-to-model maps.
-
-[tex-artefacts/toe_universalraum_synthesis_20260912.tex:388-395](../../../../tex-artefacts/toe_universalraum_synthesis_20260912.tex#L388) · `section:cd1723da0d4006f7214f` · paragraph
-
-An explicit map between the successful candidate and H70, the rotor parent or the charged seam must preserve the relevant adjunction, charge/Clock action, states, dynamics and readouts on named domains. Matching spectra, dimensions or group names alone is insufficient. An open chain must not be identified with a winding rotor, nor a free source with an interacting state without the additional operation being derived.
-
-## Four exploratory hypotheses, not established mechanisms.
-
-[tex-artefacts/toe_universalraum_synthesis_20260912.tex:396-412](../../../../tex-artefacts/toe_universalraum_synthesis_20260912.tex#L396) · `section:8b8d6e0ab5f094a9e541` · paragraph
-
-Positive frustrated selection: derive the unavoidable positive minimum and relative defect weights from the source. The failed equal-weight H70 selector is not revived by adjusting its weights to the target. A genuine collar transfer: derive a positive transfer directly from the actual boundary construction and its composition. Reflection positivity must not be inferred merely from a positive Gram matrix. An internal
-
-## F6: Separate downstream acceptance.
-
-[tex-artefacts/toe_universalraum_synthesis_20260912.tex:413-427](../../../../tex-artefacts/toe_universalraum_synthesis_20260912.tex#L413) · `section:5baa612f347f165009b7` · paragraph
-
-The half-charge, common [formula in source] D parent, chiral, continuum, coupling and gravity obligations remain separate after any finite success. No new RH or factoring mechanism is proposed in this roadmap; future arithmetic work must first consult the existing source-bound proof and counterexample registers. A later Hyl an application could test order-independent consolidation on frozen inputs while preserving di
-
-Explicit source references:
-
-- [docs/TFPT_UNIVERSALRAUM_FOLLOWUPS_2026-09-12.md](../../../../docs/TFPT_UNIVERSALRAUM_FOLLOWUPS_2026-09-12.md#L1) · explicit_file_citation
+The given finite-range uniformly local Hamiltonian class has its thermodynamic real-time norm dynamics and ground/KMS states. Restrictions of one limiting state are compatible. Independently restarted small bare Gibbs weights need not be projective. Exact elimination carries the effective fiber weights, exterior determinants, higher vertices and memory, rather than imposing the original bare ansatz again at each cut.

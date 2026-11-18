@@ -1,0 +1,134 @@
+CLAUDE23 FIRST STEP: GEOMETRIC PFAFFIAN LINE AND ITS PHYSICAL TYPE
+Independent analytic review, 2026-10-29. No original-file or Atlas mutation.
+
+Reviewed response:
+outputs/multi-model-source-search-20261029/
+CLAUDE23-PFAFF-KERNVOLUMLINIE-UNGEPRUEFT.txt:29-61,63-84.
+
+Primary sources actually consulted
+[LS] Yves Laszlo and Christoph Sorger, Ann. Sci. ENS30(1997),499-525:
+  https://www.numdam.org/item/ASENS_1997_4_30_4_499_0.pdf
+  sections6.5,7.1-7.4,7.8-7.10, especially Proposition7.9, pp517-518.
+  The convention-bearing pages513-515 and518 were also visually inspected.
+[At] Michael Atiyah, Ann. Sci. ENS4(1971),47-62:
+  https://www.numdam.org/item/10.24033/asens.1205.pdf
+  sections1-2, especially the real-bundle twist and mod2 index on pp52-53.
+
+Existing source results reused:
+  SOURCE-SPIN-SIGN-KERNEL-REVIEW.txt;
+  SOURCE-ZERO-MODE-ACTUAL-LIFT-NORM.txt;
+  elliptic-moebius-source-bridge-20261026/CLOCK-Q-PACKET-COMPATIBILITY.txt;
+  pfaff_source_review/NORMAL-KINETIC-PAIRING.txt:37-85.
+No reconstruction of the earlier fixed-quarter old-J pairing is asserted.
+
+1. The geometric first step is valid for THIS coefficient operator
+Write V=S0 tensor (L0+L1+L2+O), where plus denotes direct sum.
+The given spin quadratization S0^2 -> K_C and given orthogonal form
+on the flat real coefficient system define a symmetric nondegenerate
+complex-bilinear map
+  B:V tensor V -> K_C.
+The L_a^2 trivializations are the actual H_a, with their corrected flat
+coefficient lifts. The old real orthogonal coefficient matrices preserve
+that form; the spin maps preserve its K_C-valued product. Consequently
+B is c/Q covariant. It is canonical relative to these specified structures,
+not after forgetting the spin quadratization or the orthogonal form.
+
+On the CLOSED compact curve define, in a local holomorphic spin chart,
+  Omega(s,t)=integral b_ij s^i partial_bar(t^j) dz wedge dbarz.
+Holomorphicity of B and Stokes give
+  Omega(s,t)+Omega(t,s)
+    =integral partial_bar(b_ij s^i t^j) dz wedge dbarz=0.
+Thus the Dolbeault operator is skew under B, meaning its bilinear
+transpose, not its Hermitian adjoint or an antilinear Real reflection.
+This can be formulated as a skew elliptic Fredholm map H^(1/2)->H^(-1/2)
+using B to identify the target with the continuous dual of the source.
+No boundary-domain assertion is hidden in this closed-curve statement.
+B is symmetric; Omega itself is skew. Claude's wording must distinguish them.
+
+2. The Pfaffian is a genuine line functor, not an arbitrary scalar root
+For the given omega-valued quadratic bundle the self-dual elliptic complex
+has a Pfaffian superline. The construction in [LS,7.4,7.9] uses local
+skew finite reductions and their transition maps, so it works in families
+and preserves isomorphisms. Taking a dual consistently gives the opposite
+determinant convention. This is stronger than choosing a square root of
+a complex number at one background. It does not select a nonzero
+section, a phase trivialization or a physical fermion functional.
+
+3. Explicit determinant conventions: Claude's notation must be corrected
+Put H=H0(C,V), Delta=det H, dim H=3.
+The B-induced Serre duality gives H1(C,V) ~= H^*.
+With the convention already used in this project,
+  lambda_coh=det R Gamma(V)
+            =det H0 tensor (det H1)^-1
+            ~=Delta^2.
+The Fredholm/fermion-section convention is its DUAL:
+  Det_F(D)=(det ker D)^-1 tensor det coker D
+           ~=Delta^-2.
+Accordingly define
+  Pf_F(D) ~=Delta^-1, Pf_F(D)^2 ~=Det_F(D).
+The cohomological-dual Pfaffian is instead Pf_coh ~=Delta.
+Both are natural dual constructions once their convention is fixed.
+Calling lambda_coh=Delta^-2, as Claude does, mixes these conventions.
+The line construction is canonical as a functor; its subsequent comparison
+with N_q remains the existing equivariant comparison up to scalar.
+
+4. Characters and odd parity
+Reuse the CORRECT source lift, not the superseded Kummer-function lift.
+For xi=exp(-i pi/4), Q on Delta is xi^3. Thus
+  line             Q character        spin central -I
+  Delta            xi^3               -1
+  lambda_coh       +i                 +1
+  Pf_F             -xi                -1
+  Det_F            -i                 +1
+  N_q              -xi                -1
+The cubic and the actual deck-V4 characters on these compared lines are1.
+Therefore Pf_F and N_q have the SAME generated c/Q/deck-V4/spin-center
+line representation. It is the DUAL of Delta ~=N_q^-1, not a derivation
+that P1 uses either line. No Jac[2] translation action on only this
+rank-jumping zero-mode sector is inferred.
+
+The Pfaffian superline has parity dim H mod2=1.
+A scalar -I acts there by (-1)^3=-1; squaring removes that sign.
+The parity is stable under compatible orthogonal skew-Fredholm
+deformations; this is the mod2 index mechanism of [At].
+Odd parity does not destroy the line. At this noninvertible operator
+the unsaturated Pfaffian section vanishes. An odd correlator needs
+actual insertions saturating the kernel and a nonzero complementary
+factor; parity alone does not prove a particular three-point function
+nonzero or require a new physical partner sector. Even total parity
+is not sufficient for nonvanishing of a gluing amplitude.
+
+5. Decisive full charged-source type test
+V above is a spin/flavor COEFFICIENT bundle. The actual E8 charged branch is
+  W=(16,4).
+There is no K-invariant nonzero scalar symmetric B_W:W tensor W->K_C.
+The smallest test is the existing VERTICAL native kappa:
+it acts on W by -i and leaves the base canonical line K_C unchanged.
+Invariance would require
+  B_W(kappa u,kappa v)=(-i)^2 B_W(u,v)
+                     =-B_W(u,v)=B_W(u,v),
+hence B_W=0.
+This excludes that particular invariant-pairing identification on W,
+not the coefficient Pfaffian above and not every possible interaction.
+
+On W+W^* the hyperbolic evaluation form is available. The already
+proved actual F5 charged block is
+  [[0,-K^T],[K,0]], Pf=+/-det K,
+with its stated fields and domains. It is a charged determinant in its
+selfdual presentation; it does not provide half of a different charged
+determinant. A mixed (10,6) Higgs anchor has kappa phase -1 and can
+compensate the W W phase algebraically, but its actual original insertion,
+statistics, contraction and domain must be supplied.
+The same abstract skew type cannot identify F5 with barpartial_V.
+
+6. Final source boundary
+The geometric B/skew/Pfaffian step is sound with the convention correction.
+Its FIRST transfer to physical P1 is not yet supplied:
+one needs the actual charged-field map and the original rule selecting this
+chiral bilinear source or its required insertion. An antilinear curve
+involution alone supplies neither a Pfaffian action nor OS positivity.
+Likewise three complex kernel directions with a Real comparison do not
+by themselves construct three physical Majorana operators.
+No existing Seed state/time is reselected and no original source is closed
+by these character or parity calculations.
+

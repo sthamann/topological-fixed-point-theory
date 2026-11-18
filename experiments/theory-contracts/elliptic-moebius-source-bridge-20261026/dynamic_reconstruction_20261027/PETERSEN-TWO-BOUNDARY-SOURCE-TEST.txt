@@ -1,0 +1,305 @@
+PETERSEN ZWEIRAND QUELLTEST
+===========================
+
+27. Oktober 2026
+
+Frage
+-----
+
+Enthält die bereits vorhandene originale Zweirandquelle oder die native
+Bogenladungsquelle eine konkrete ladungsneutrale Feldoperation, deren
+Kompression auf die zehn Weight 2 Wörter von Lambda^2 C^5 genau den
+Petersen Schritt aus v808 ergibt?
+
+Urteil
+-------
+
+Im geprüften aktuellen Quellpfad gibt es diese Operation noch nicht. Die
+Quelle enthält die nötigen algebraischen Bestandteile, nämlich neutrale
+bilokale Ladungstransfers, ihre quartischen Produkte und die kanonische
+Zweirand CAR Verdopplung. Sie enthält aber weder die Abbildung dieser Felder
+auf die zehn Trägerwörter noch diejenige quartische Linearkombination, die
+genau disjunkte Zweierwörter mit gleichen Petersen Koeffizienten koppelt.
+
+Der kleinste Matrixtest entscheidet bereits den einzigen hier geprüften
+Kandidaten. Der originale bilokale Strom
+
+  B(z,w) = sum_(r,s) a_r^* a_s z^r w^(-s)
+
+ist eine Einteilchenübertragung. Auf einem Zweiteilchenwort |ij> kann ein
+Summand a_r^* a_s höchstens einen besetzten Index ersetzen. Jeder nicht
+verschwindende Ausgangszustand teilt deshalb einen Index mit {i,j}. Für
+disjunkte Paare {k,l} gilt identisch
+
+  <kl| a_r^* a_s |ij> = 0       für alle r,s.
+
+Der Petersen Operator verlangt genau die komplementäre Stütze
+
+  A_Pet[e,f] = 1  genau dann, wenn e cap f leer ist.
+
+Damit kann kein einzelner vorhandener Bilokalstrom den Schritt erzeugen. Ein
+quartischer Paartransfer a_k^* a_l^* a_j a_i hätte die richtige
+Teilchenordnung. Die Originalquelle sagt aber nicht, dass über alle disjunkten
+Paare mit den Petersen Gewichten und Wickzeichen summiert wird, und sie
+liefert keinen Operator, der diese Summe mit dem entgegengesetzt geladenen
+Transfer auf der zweiten Randseite koppelt.
+
+1. Tatsächlicher Petersen Zieloperator
+--------------------------------------
+
+v808 baut die zehn Zustände als Zweiermengen der fünf Trägerslots mit
+
+  X = (-2,-2,-2,3,3).
+
+Disjunktheit gibt den Petersen Graphen. Die Schalen um das WW Wort haben die
+Größen (1,3,6), tragen die Ladungen (6,-4,1), und der radiale Quotient ist
+
+  Q_Pet = [[0,3,0],[1,0,2],[0,1,2]],   P = Q_Pet/3.
+
+Das ist in verification/v808_petersen_sixthroot.py, Zeilen 478 bis 583,
+explizit geprüft. SHA256:
+
+  b92c657934e960f63561fc65804877ef4080194420ce5c3fb0214506ced80efc
+
+Der schmale unabhängige Stütztest über alle zehn Zweierwörter ergibt
+
+  geordnete Petersen Kanten: 30
+  Ladungsänderungen: {-10:3, -5:6, 0:12, 5:6, 10:3}
+  nichtverschwindende Bilokalmatrixelemente auf disjunkten Paaren: 0.
+
+Die Änderung der Ladung ist also kein kleiner Nebenfehler. Achtzehn der
+dreißig gerichteten Schritte tragen auf einem Rand Ladung plus oder minus 5
+oder plus oder minus 10. Eine neutrale Gesamtoperation müsste dieselbe
+Änderung auf dem zweiten Rand mit umgekehrtem Vorzeichen wirklich ausführen.
+
+2. Ein geprüfter Originalkandidat
+---------------------------------
+
+Die stärkste vorhandene Bogenquellenformel ist der bilokale Strom aus
+
+  experiments/theory-contracts/native-arc-charge-source-interface-20261026/
+  BILOCAL-RECONSTRUCTION.txt
+
+Zeilen 15 bis 57 geben B(z,w), die Quarterphase und seine exakte
+Stromvertexdarstellung. Zeilen 103 bis 116 setzen dieselbe Formel in die
+vorhandenen nativen Ströme ein und rekonstruieren daraus deren Quartiken.
+SHA256:
+
+  180dd28ca101e53af9cbb898dd9ed74a076217f359e41347c049bf8e9a16d781
+
+Das zugehörige Quellenresultat stellt ausdrücklich fest, dass die bilokalen
+Produkte eta_r^* eta_s relative Bogenladung übertragen und die Gesamtladung
+erhalten. Ihre Produkte erzeugen die schon vorhandenen nativen Quartikfelder:
+
+  experiments/theory-contracts/native-arc-charge-source-interface-20261026/
+  PROOF.txt, Zeilen 75 bis 85.
+
+Dies ist genau der plausibelste vorhandene Kandidat. Der Matrixtest oben
+zeigt jedoch, dass der Bilokal selbst die falsche Stütze hat. Seine quartischen
+Produkte werden als fünf Feldpolynome auf dem Achtbogen CAR Träger
+rekonstruiert. Sie werden nicht als Operator auf Lambda^2 C^5 komprimiert.
+PROOF.txt, Zeilen 21 bis 39, lokalisiert ihren höchsten CAR Anteil sogar in
+exterior^4 C^8. Eine Gleichsetzung mit dem zehn dimensionalen Trägerraum wäre
+damit eine neue Typabbildung.
+
+Die Quelle selbst hält diese Grenze fest: Weder der Ladungstensor noch die
+modulare Kovarianz wählen die physische Variation, den Koeffizienten oder die
+Ereignisregel. Siehe PROOF.txt, Zeilen 107 bis 120. SHA256:
+
+  17e05220f16d70049c949cfe1b9639fd27defcf196d106869e8b8673ae0903a6
+
+3. Warum die vorhandene Zweirandverdopplung die Lücke nicht heimlich schließt
+----------------------------------------------------------------------------
+
+HALF-PERIOD-GNS-SEWING.txt konstruiert aus derselben gegebenen Quelle zwei
+echte antikommutierende CAR Familien. In der Hilbert Schmidt GNS Darstellung
+sind dies die linken und rechten Felder aus Gleichung (2). Ihre volle
+Zweirandkovarianz ist der Projektor
+
+  [[I-C,X_A],[X_A,C]].
+
+Das beweist den gemeinsamen Zustand und alle Wickwörter. Es definiert keinen
+Hamiltonoperator oder Transfer, der einen rechtsseitigen quartischen
+Paarwechsel mit seinem linksseitigen Gegenwechsel multipliziert und danach
+auf Lambda^2 C^5 projiziert. Die Quelle trennt diese Typen selbst: bare
+Zeitpunkte sind keine zwei unabhängigen CAR Familien, und eine abstrakte
+Verdopplung identifiziert den zweiten geometrischen P1 Rand nicht von selbst.
+Siehe Zeilen 36 bis 45, 47 bis 89 sowie 147 bis 160. SHA256:
+
+  7236ecc67bbae4ff477fe5a761a1b1068b6b75418aa6651b8ee00d2f7d87e3b1
+
+Folglich liefert die GNS Verdopplung die Gegenfelder, aber nicht die
+Petersen Wechselwirkung. Eine Stinespring Dilatation würde nur nachträglich
+eine Ausführung bauen und beantwortet die Quellenfrage nicht.
+
+4. Bereits bekannte endliche Petersen Ausführung
+------------------------------------------------
+
+Der ältere Vertrag compiler-correlated-event-clock-20260919 konstruiert
+tatsächlich eine Petersen Populationstransition. Sein Zwanzig Ereignis
+Instrument hat auf Populationen J20=A_Pet/5. Das ist ein genauer positiver
+endlicher Anschluss, siehe PROOF.txt, Zeilen 70 bis 104.
+
+Er ist hier kein fehlender originaler Feldoperator. Derselbe Vertrag beweist
+in Zeilen 228 bis 242, dass die Bell10 Erinnerung Sym^2(C^4) und der
+Weight 2 Träger Lambda^2 C^5 keine lineare Darstellungsgleichsetzung besitzen.
+Der geteilte Ereignislabel, die i.i.d. Gewichte, die äußere Marke, das Register
+und die adaptive Auslesung sind dort ausdrücklich gesetzte Prämissen, Zeilen
+251 bis 262. SHA256:
+
+  bf1f85c99f5f89a0a15da1af5e3ff321c2756fda132a9f8d644f9ce0e08c2f5c
+
+Dieser ältere Prozess darf daher weder als die gesuchte Zweirand OPE noch als
+Kompression der aktuellen Bogenquelle ausgegeben werden.
+
+5. Kleinste verbleibende Ursprungsdefinition
+---------------------------------------------
+
+Es fehlt genau ein typisierter Pfeil, nicht ein weiterer Hilfsraum:
+
+  originale Zweirand CAR Felder
+      -> konkrete neutrale quartische Operation
+      -> markierte zyklische Kompression auf Lambda^2 C^5
+      -> A_Pet/3.
+
+Die mittlere Operation muss aus der Quelle selbst die disjunkten Paare, ihre
+Wickzeichen, die gleichen Beträge, den gegenläufigen Randtransfer und die
+Zeitnormierung auswählen. Erst ihre tatsächlichen Matrixelemente können mit
+v808 verglichen werden. Die vorhandene Algebra garantiert, dass solche
+Quartiken formulierbar sind. Sie wählt diese besondere Summe noch nicht.
+
+Geltungsbereich
+---------------
+
+Das Urteil betrifft den Atlasstand 4d210a8bebd5c91c7ee7ad75 und die oben
+genannten aktuellen Quellverträge. Es ist kein allgemeiner Ausschluss einer
+später nachgewiesenen OPE oder einer anderen bereits ungesichteten
+Originalstelle. Es widerlegt auch nicht den exakten endlichen Petersen
+Prozess. Es sagt präzise, dass im geprüften originalen Zweirand und
+Bogenladungsweg noch keine Feldoperation mit der geforderten Kompression
+definiert ist.
+
+Verdict:
+
+  BILOCAL_SOURCE_CANDIDATE_EXACTLY_EXCLUDED_BY_SUPPORT;
+  TWO_BOUNDARY_PARTNER_STATE_PRESENT_BUT_PETERSEN_OPERATION_UNDEFINED;
+  ORIGINAL_NEUTRAL_QUARTIC_COMPRESSION_OPEN.
+
+
+ANHANG: NATUERLICHER HODGE QUARTIK KANDIDAT
+===========================================
+
+Zusatzfrage
+-----------
+
+Der orientierte euklidische Fünfträger besitzt nach Wahl der geordneten
+orthonormalen Basis e0,...,e4 und der Volumenform den natürlichen Operator
+
+  C_v : Lambda^2 C^5 -> Lambda^2 C^5,
+  C_v(alpha) = star(v wedge alpha),       v=e0+...+e4.       (A1)
+
+Seine Matrix hat genau dann einen nichtverschwindenden Eintrag zwischen zwei
+Zweierwörtern, wenn diese disjunkt sind. Er ist deshalb der engste natürliche
+epsilon beziehungsweise CAR Quartikkandidat für die zuvor fehlende Operation.
+
+Originalstatus
+--------------
+
+Der Atlas verweist auf GRAV.ENTROPIC.HODGE.01 und die tatsächliche Datei
+
+  verification/v474_entropic_hodge_carrier.py,
+  SHA256 4058bc3b6da2939ca9555804fb36d6044837c036403949e1262ec32d29e23505.
+
+Dort werden drei andere Hodgeoperationen geprüft:
+
+* Zeilen 9 bis 17: die CAR Cliffordoperatoren auf Lambda^* C^5;
+* Zeilen 18 bis 23 und 139 bis 151: das Hodge Dirac Symbol
+  c(xi)=a^dagger(xi)-a(xi);
+* Zeilen 24 bis 29 und 153 bis 169: die Faltung
+  star:Lambda^1 -> Lambda^4.
+
+Die Datei definiert weder den markierten Vektor v=(1,...,1) noch den Operator
+(A1) auf Lambda^2. Auch die gezielte Atlas und Originaltextsuche nach diesem
+Operator, seiner Disjunktheitswirkung und einer Petersen Hodge Identifikation
+ergab keine tatsächliche Originaldefinition. C_v ist daher ein natürlicher
+rein mathematischer Kandidat aus bereits vorhandenen Trägerdaten, kein schon
+konstruierter physischer TFPT Operator.
+
+Exakte 10 mal 10 Wirkung
+------------------------
+
+In der geordneten Basis
+
+  (01,02,03,04,12,13,14,23,24,34)
+
+und mit e_S wedge star(e_S)=e0 wedge...wedge e4 ist
+
+       [0  0  0  0  0  0  0  1 -1  1]
+       [0  0  0  0  0 -1  1  0  0 -1]
+       [0  0  0  0  1  0 -1  0  1  0]
+       [0  0  0  0 -1  1  0 -1  0  0]
+       [0  0  1 -1  0  0  0  0  0  1]
+  C_v= [0 -1  0  1  0  0  0  0 -1  0]
+       [0  1 -1  0  0  0  0  1  0  0]
+       [1  0  0 -1  0  0  1  0  0  0]
+       [-1 0  1  0  0 -1  0  0  0  0]
+       [1 -1  0  0  1  0  0  0  0  0].                 (A2)
+
+Die Matrix ist reell symmetrisch, und ihr absoluter Eintrag ist exakt die
+Petersen Adjazenzmatrix:
+
+  |C_v| = A_Pet.                                         (A3)
+
+Der Vorzeichenunterschied ist jedoch nicht eichtrivial. Exakte symbolische
+Rechnung gibt
+
+  chi_C(lambda) = lambda^4 (lambda^2-5)^3,
+  C_v^3 = 5 C_v,
+  spec(C_v) = {+sqrt(5) mit Multiplizitaet 3,
+               -sqrt(5) mit Multiplizitaet 3,
+               0 mit Multiplizitaet 4},                 (A4)
+
+während
+
+  chi_A(lambda) = (lambda-3)(lambda-1)^5(lambda+2)^4.    (A5)
+
+Eine diagonale unitäre Phaseneichung bewahrt das Spektrum und kann (A4)
+nicht in (A5) verwandeln. Es gibt zusätzlich einen rein kombinatorischen
+Zeugen. Für eine Eichung D=diag(d_e) mit
+
+  D^* C_v D = A_Pet
+
+müsste das Produkt der Kantenvorzeichen auf jedem geschlossenen Zyklus plus
+eins sein. Der Petersen Graph besitzt zwölf ungerichtete Fünfzyklen. Für C_v
+haben sechs Produkt plus eins und sechs Produkt minus eins. Schon der Zyklus
+
+  01 -> 23 -> 04 -> 13 -> 24 -> 01
+
+hat Produkt minus eins. Eine globale Umkehr der Orientierung multipliziert
+C_v mit minus eins und vertauscht nur beide Sechsermengen. Der Widerspruch
+bleibt bestehen.
+
+Folgerung fuer den Quellenpfad
+------------------------------
+
+C_v erklärt ohne frei angepasste Stütze, warum Disjunktheit auf Lambda^2 C^5
+geometrisch natürlich erscheint. Er erzeugt aber eine signierte Hodge
+Amplitude mit Rang sechs und nicht den positiven zeilenstochastischen
+Petersen Schritt. Weder Phaseneichung noch Orientierung entfernen diesen
+Unterschied.
+
+Damit ist die naheliegendste epsilon Quartik eng ausgeschlossen:
+
+  natürliche Hodge Quartik  !=  unsigned A_Pet
+
+als markierter Operator. Aus diesem Ausschluss folgt keine Raumzeitdimension,
+keine Zweirandkopplung und kein physischer Hamiltonoperator. Die vorige offene
+Quellenaufgabe bleibt präzise dieselbe: Eine Originaloperation müsste die
+positiven Petersen Gewichte und die Gegenrandladung tatsächlich herleiten.
+
+Appendix verdict:
+
+  NATURAL_HODGE_SUPPORT_MATCH_EXACT;
+  HODGE_SIGN_FLUX_AND_SPECTRUM_EXCLUDE_DIAGONAL_GAUGE_TO_PETERSEN;
+  C_v_NOT_DEFINED_AS_ORIGINAL_PHYSICAL_OPERATOR.
+

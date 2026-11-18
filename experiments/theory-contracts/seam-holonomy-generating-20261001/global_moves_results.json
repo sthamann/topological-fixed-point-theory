@@ -1,0 +1,36 @@
+{
+  "steps": [
+    {
+      "step": "GM1 toy (D = 20, Gaussian prior, radial weight e^{a |phi|}): the multiplicative amplitude move WITH the Jacobian s^D reproduces the exact <|phi|^2>; without the Jacobian it is biased",
+      "pass": true,
+      "detail": "exact 12.637; with Jacobian 12.670; without 2.264"
+    },
+    {
+      "step": "GM2 toy: pCN on a 3-dimensional subspace (prior exact) with a weight e^{b . c} reproduces the exact shifted subspace mean b sigma^2",
+      "pass": true,
+      "detail": "measured [0.563, -0.344, 0.206], exact [0.56, -0.35, 0.21], pCN acceptance 0.83"
+    },
+    {
+      "step": "GM3 production code path (debug4, g = 1e-4): with amplitude and pCN moves the field norm follows the prior <|phi|^2> = D 2 g dtau and both moves are accepted (bitwise invariance with global_moves = None: sector_envelope.py ES2)",
+      "pass": true,
+      "detail": "<|phi|^2> 0.0161 +- 0.0004 vs prior 0.0160; acceptance {'scale': 0.49166666666666664, 'pcn': 1.0}"
+    },
+    {
+      "step": "GM5 production code path (debug4, g = 1e-4): pCN on the 10 uniform (K = 0, omega = 0) channel modes keeps the prior variance of the uniform coordinates and is accepted",
+      "pass": true,
+      "detail": "uniform-mode variance 4.91e-05 vs prior 5.00e-05; acceptance 1.0"
+    },
+    {
+      "step": "GM6 production code path (debug4, g = 1e-4): the multiplicative move of the 10 uniform coordinates with the Jacobian s^10 keeps their prior distribution, <|c_u|^2> / sigma^2 = 10 (chi^2_10), and is accepted",
+      "pass": true,
+      "detail": "<|c_u|^2>/sigma^2 = 10.67 +- 0.77 (exact 10); acceptance 0.6375"
+    },
+    {
+      "step": "GM4 (statement) benchmark at g = 0.021, beta = 4, lambda = 0.35: plateau of |phi|^2 and G(beta/2) with and without global moves",
+      "pass": true,
+      "detail": "g021b4A (local only): 418 sweeps; G(beta/2) per 50: [0.455, 0.379, 0.311, 0.257, 0.149, 0.12, 0.099, 0.074, 0.069]; |phi|^2 per 50: [27.4, 29.3, 31.4, 34.5, 39.0, 42.3, 45.6, 48.5, 51.2] | g021b4B (local only): 434 sweeps; G(beta/2) per 50: [0.31, 0.225, 0.162, 0.134, 0.097, 0.072, 0.056, 0.047, 0.044]; |phi|^2 per 50: [27.8, 31.1, 35.0, 38.0, 41.9, 46.3, 49.9, 52.7, 54.6] | g021b4GA (global moves): 350 sweeps; G(beta/2) per 50: [0.317, 0.121, 0.038, 0.029, 0.025, 0.021, 0.023]; |phi|^2 per 50: [42.4, 60.3, 62.6, 64.5, 65.2, 66.0, 66.1] | g021b4GB (global moves): 400 sweeps; G(beta/2) per 50: [0.211, 0.053, 0.039, 0.031, 0.028, 0.027, 0.029, 0.03]; |phi|^2 per 50: [35.6, 60.6, 62.8, 64.2, 64.3, 65.4, 65.7, 66.8]"
+    }
+  ],
+  "passed": 6,
+  "total": 6
+}

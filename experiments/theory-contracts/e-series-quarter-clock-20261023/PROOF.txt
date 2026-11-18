@@ -1,0 +1,286 @@
+MATH.SEAM.ESERIES.03
+23 October 2026
+
+Object class and markings
+
+Let L be the existing even unimodular E8 lattice in standard R8, Phi its
+240 norm-two roots, and J the existing Gaussian lattice isometry
+J(x0,x1,...) = (-x1,x0,...), J^2=-I. All slices below are actual root
+subsystems in this fixed lattice chart. No quotient by a change of J is
+taken. A chosen root or A2 subsystem is additional slice marking.
+The standard D5+D3 coordinate split is retained only in the explicit flag.
+No statement about a noncentral lattice-cocycle lift is made here.
+
+1. Root slices and E7
+
+For alpha in Phi define Phi_alpha = Phi intersect alpha-perp. This is E7.
+The root inner-product distribution is {-2:1,-1:56,0:126,1:56,2:1}.
+At Lie-algebra level the associated root grading is
+  e8 = 1[-2] + 56[-1] + (e7 + C)[0] + 56[1] + 1[2].
+This is the standard E7+A1 branching, not a new physical identification.
+The signs alpha and -alpha define the same E7 slice, giving120 slices.
+
+Orthogonality and J^2=-I give (alpha,Jalpha)=0. Hence J interchanges
+Phi_alpha and Phi_Jalpha. They differ since Jalpha belongs to the first
+but not the second. Thus there are60 exchanged pairs and no J-fixed
+root-normal E7 slice. Independently, no J-invariant E7 root subsystem
+can exist: its real span has odd dimension7, while J^2=-I forces every
+invariant real subspace to have even dimension.
+
+Any orthogonal root pair in E8 is Weyl equivalent to e0+e1,e0-e1.
+Indeed Weyl(E8) is transitive on roots, and the Weyl(E7) stabilizer of
+the first root is transitive on the roots perpendicular to it. In this
+chart the common perpendicular roots are exactly +/-ei +/-ej with
+2<=i<j<=7, giving D6 and60 roots. The normal plane contains only
+the four roots +/-alpha,+/-Jalpha, hence A1+A1.
+
+2. Literal bridge to the existing60 Gaussian reflections
+
+For norm-two alpha the real root reflection is
+  s_alpha(v)=v-(v,alpha)alpha.
+Since alpha and Jalpha are perpendicular,
+  r_alpha=s_alpha s_Jalpha
+         =I-alpha alpha^T-(Jalpha)(Jalpha)^T.
+It is -I on the normal real plane and +I on its common perpendicular.
+It commutes with J and is an order-two complex reflection on C4.
+With h(v,alpha)=(v,alpha)+i(v,Jalpha), linear in the first argument,
+  r_alpha(v)=v-2 h(v,alpha)/h(alpha,alpha) alpha.
+This is term by term the original v634 S1 Gaussian reflection formula.
+The identity of operators, rather than equality of group orders, identifies
+the generated group with the existing G31 realization.
+
+The following sets are in explicit bijection:
+  Phi/<J>, the60 Gaussian root lines;
+  the60 pairs {Phi_alpha,Phi_Jalpha};
+  the60 common D6 root subsystems;
+  the60 operators r_alpha.
+Each plane has exactly4 roots, so there is no extra multiplicity. The
+complex-linear reflections recover the plane as their -1 eigenspace;
+the common D6 span recovers the plane by orthogonal complementation.
+All240 root shells and all60 operators are checked in exact doubled
+integer coordinates. Their faithful root permutations generate a group
+of order46080, computed by SymPy stabilizer-chain group algorithms.
+
+3. E6 slices and the quarter-clock obstruction
+
+For alpha,beta with (alpha,beta)=-1, their6 roots form A2. Its orthogonal
+root complement in E8 is E6 with72 roots. All1120 A2 root subsystems
+are enumerated without random sampling. None is J invariant; J forms
+560 pairs. The corresponding E6 intersections have12 roots in640
+subsystem cases and24 roots in480 cases. Those counts alone are not
+used to claim an intersection type or an isometry classification.
+
+A stronger all-root-subsystem obstruction needs no enumeration. If J
+preserved an E6 root subsystem, it would preserve its root lattice K,
+its dual, and its discriminant group K*/K=Z3. Every automorphism of Z3
+squares to identity. But J^2=-I induces nontrivial inversion on Z3, a
+contradiction. The same argument applies to A2. Thus no E6 ROOT subsystem
+can be fixed by this J, including any other root-subsystem embedding.
+This says nothing about arbitrary non-root Lie-subalgebra embeddings.
+
+4. A compatible marked flag still exists
+
+In the standard5+3 chart choose alpha=e5-e6, beta=e6-e7. Then
+  D5 roots on coordinates0..4
+    subset E6=Phi intersect alpha-perp intersect beta-perp
+    subset E7=Phi intersect alpha-perp
+    subset E8.
+Root counts are40,72,126,240. This actual nesting is a mathematical
+unfolding, with the root/A2 flag explicitly chosen. It is not a single
+J-invariant chain. Therefore nesting and clock-compatible transport
+are distinct requirements in the marked-seam category.
+
+5. Origins and normalization audit
+
+The original September2025 V1.06 source already names E8,E7,E6 windows
+at alpha3(mu)=1/(8pi),1/(7pi),1/(6pi). E7 is therefore not a newly
+discovered missing historical stage. These equations specify crossings
+of a running coupling; the labels do not prove root-subsystem transitions.
+
+Current P1 normalization is c3=1/(8pi). The leading seed is
+phi_base=1/(6pi)=(4/3)c3. The full seed is
+phi0=phi_base+48c3^4=1/(6pi)+3/(256pi^4).
+The current carrier dictionary gives
+  Tr_E Y^2=3(1/3)^2+2(1/2)^2=5/6,
+  phi_base=(1-Tr_E Y^2)/pi,
+while the D5+A3 discriminant forms give q=5/4,3/4 and qsum=2.
+In this fixed dictionary c3/phi_base=q(A3)=3/4. An equality of constants
+is not an identification of root actions, operator fields or clocks.
+
+At affine level1, Sugawara c=dim(g)/(1+hdual) gives
+  c(E6)=78/13=6, c(E7)=133/19=7, c(E8)=248/31=8.
+The regular conformal inclusions have complementary charges6+2=8
+and7+1=8. Their even-lattice gluing discriminant norms are
+  E6+A2:4/3+2/3=2, index3;
+  E7+A1:3/2+1/2=2, index2;
+  D5+A3:5/4+3/4=2, index4.
+These are standard lattice/current-algebra structures. They support a
+uniform mathematical interpretation of6,7,8, but do not derive the extra
+normalization prescription coefficient=1/(pi c) from P1. In particular,
+the E6+A2 glue Z3 and E7+A1 glue Z2 are different from the native Z4
+gluing. They are compatible windows in E8, not interchangeable markings.
+
+Provenance and scope
+
+Native functions extracted literally by checker.py:
+  verification/v1_e8_glue.py:e8_roots
+  verification/v634_st31_structure.py:J_vec
+Source digests are retained in results.json. Native reflection formula:
+  verification/v634_st31_structure.py:194-213.
+Historical source:
+  documents/archive--paper-latex--old--paper_v1_06_01_09_2025/sections/001-source.tex:680-690,1719-1727.
+Current normalization source:
+  documents/tfpt_1_architecture_e8/sections/006-source.tex:50-80,136-145.
+Existing E7 shell:
+  documents/tfpt_3_e8_audit_bootstrap/sections/009-section-further-audit-lemmas-machine-verified-this-round.tex:221-225.
+External standard reference: R.Slansky, Physics Reports79(1981), tables
+E6/E7/E8; F.W.Helenius, Journal of Algebra357(2012),116-137, for the
+root-grading/Freudenthal construction. Sugawara formula is standard.
+
+Independent read-only reviewer reconstructed240 roots,60 quarter orbits,
+all126/126/60 intersections and generated group order46080 separately,
+and supplied the discriminant-group proof of the E6 obstruction.
+The new contribution is the explicit synthesis with the marked Gaussian
+clock and its original reflections; no claim of historical mathematical
+novelty, physical origin, new empirical prediction or ledger promotion.
+
+CONTINUATION: full-connection audit requested by the user
+
+6. Two exchanged E7 slices recover the complete ambient E8
+
+For alpha=e0+e1 and beta=e0-e1 their root union contains the60 D6
+integer roots, four roots +/-alpha,+/-beta, and all128 half roots.
+The missing48 are +/-e_p +/-e_j with p=0,1 and2<=j<=7.
+For example e0+e2 is the sum of
+  (1,1,1,1,1,1,1,1)/2 and (1,-1,1,-1,-1,-1,-1,-1)/2.
+Each is an E8 root; they belong to different E7 slices and have inner
+product-1. W(D6) times the two A1 Weyl groups preserve the root union
+and act transitively on the missing48, so every missing root is such
+a cross sum. All240 choices of initial alpha are checked in the script.
+The actual ambient Chevalley bracket of these root spaces is nonzero.
+Thus the two actual E7 subalgebras generate e8. Their linear sum is
+dimension133+133-66=200, and the remaining48 are the(12,2,2) sector of
+D6+A1+A1. Their integral root-lattice sum is already all of E8, index1.
+This uses the GIVEN embeddings and E8 bracket. It is not a reconstruction
+of that bracket from two abstract E7 algebras with unspecified attachment.
+
+7. Full integral glue comparison
+
+Let K=D6+A1+A1 in the pair chart. det K=4*2*2=16, so[E8:K]=4.
+Its discriminant group has exponent2, hence E8/K is C2 times C2.
+The exact Smith forms in the native E8 basis give invariant factors
+  D6+A1+A1:2,2; E7+A1:2; E6+A2:3; D5+A3:4.
+Therefore the index4 of the common E7-pair split is NOT the original
+cyclic index4 glue of D5+A3. The nonsplit holonomy sequence
+1->C2->C4->C2->1 below is another object again, not this lattice quotient.
+
+8. Intrinsic square curves, covers and the precise descent theorem
+
+Each Gaussian root line ell=C alpha has exactly four roots. The function
+  f_ell(v)=(v/alpha)^4-1
+is independent of the root representative alpha, since its replacements
+are i^k alpha. Thus ell with its point at infinity carries an intrinsic
+square four-mark set and the cover w^2=f_ell(v). This construction is
+functorial for actual lattice isometries commuting with J. It gives60
+embedded charts of the SAME marked modulus, not60 different moduli.
+The60 original reflections act transitively on these lines, verified
+from their actual permutations. Therefore the unmarked(E8,J) data do
+not equivariantly select one chart. Retaining the full family is valid
+and needs no added unique-chart axiom.
+
+Now separately SUPPLY the existing base model X=CP1 minus mu4 and its
+rho(gamma_i)=J representation. Its C2 parity character has a connected
+degree2 cover Y:y^2=x^4-1, with the four branch points removed. The
+compactification has genus1 by Riemann-Hurwitz and j1728 from harmonic
+cross ratio. Its restricted fibre holonomy is{I,-I}. Every CHOSEN real
+E7 or E6 root subsystem is invariant under that remaining holonomy.
+On X the chosen E7 descends as the unordered pair of exchanged slices;
+Y orders the pair, and the common D6 already descends individually.
+This repairs any inference that lack of a fixed J-sector forbids a
+transported reduction. It does NOT make real rank7 into a complex subspace.
+
+The removed points matter. A peripheral loop upstairs projects to
+gamma_i^2 and has fibre holonomy-I; this flat bundle does not extend
+across them as an ordinary flat bundle on the compact elliptic curve.
+The full kernel cover z^4=x^4-1 has compact genus3 and trivial restricted
+holonomy. For w^n=x^4-1,
+  g=((n-1)*3-gcd(n,4)+1)/2,
+so n=2,3,4 gives1,3,3. Infinity ramifies for n=3, not n=2 or4.
+The existing TFPT w^3=x^4-1 cover explicitly retains infinity as an
+extra branch point in v617 and its original TeX account. It is not the
+degree4 kernel cover just because both have genus3.
+
+The algebraic deck is d(x,y)=(x,-y). The two lifts of base x->ix are
+R_pm(x,y)=(ix,+/-y), with square(-x,y), not d. Likewise, an odd path
+lift representing fibre J must not be equated to constant deck action:
+canonical deck equivariance on a pullback bundle squares to identity,
+whereas J^2=-I is compensated by the restricted loop holonomy.
+
+The parity cover alone admits eight C4 monodromy lifts on the ordered
+four-punctured base: gamma_i->J^(1+2b_i), with sum b_i even. Requiring
+cyclic invariance of the four peripheral exponents leaves the all-J
+and all-J^-1 choices. Thus the cover does not by itself force the given
+quarter orientation. A loop enclosing all four finite marks has trivial
+monodromy in both the parity and full given C4 representation. Under the
+uniform mu3 monodromy its image is instead omega^4=omega. Any claim that
+these describe the SAME original closed seam must specify and intertwine
+its actual loop and peripheral markings. A cover degree or genus alone
+cannot provide that identification.
+
+9. E7 as a discriminator for normalization prescriptions
+
+The source gives the organizing identity I*beta_angle*c3=1 with I=4
+and beta_angle=2pi, while explicitly retaining the open modular-response
+identification. The rank/central-charge reading c3=1/(pi*8) agrees with
+it in the native E8 case. The present exact lattice indices are
+  E6+A2:m=3, retained exceptional rank r=6;
+  E7+A1:m=2, retained exceptional rank r=7;
+  D5+A3:m=4, resulting E8 rank r=8.
+Consequently the TWO POSSIBLE arithmetic continuation prescriptions
+  a_rank=1/(pi*r), a_index=1/(2pi*m)
+agree at E6(1/6pi) and E8(1/8pi), but disagree at E7(1/7pi vs1/4pi).
+These are diagnostic conditional prescriptions, not two derived source
+laws. In particular, identifying m with the original modular Jones
+index in every new slice is an additional hypothesis. The E6/E8
+endpoint agreement cannot select either prescription, and no E7
+physical coupling or scale has been predicted by this comparison.
+The old E7 window was defined by the rank rule and hence is not an
+independent measurement deciding between these prescriptions.
+
+Furthermore, the supplied conformal embeddings retain complementary
+central charges7+1=8 or6+2=8. Rewriting the SAME complete E8 source in
+these windows keeps its total central charge8. Extracting an E7 or E6
+subtheory and renormalizing its response is a further operation, not a
+consequence of the branching dimensions. A NEW proposed E7 response
+would therefore need its own explicit restriction/extension identity,
+with complementary sectors and actual quarter/peripheral data retained.
+This is a requirement on that additional interpretation, not an open
+P1/P2-to-E8 compiler step. No additional coupling, state rule or
+physical-origin program has been introduced in this investigation.
+
+Additional original sources inspected:
+  documents/tfpt_1_architecture_e8/sections/001-source.tex:70-80
+    (P1 index and modular-response identity),
+  documents/tfpt_3_e8_audit_bootstrap/sections/003-source.tex:326-352
+    (uniform mu3 monodromy and ramification at infinity).
+Independent analytic continuation review proved the192->240 cross-sum
+closure, exponent2 glue obstruction, intrinsic root-line curve functor,
+eight monodromy lifts, and cover/deck distinctions. All finite statements
+are checked in the updated executable; cover descent is proved above.
+
+10. User correction: retain the established compiler direction
+
+The established TFPT construction remains
+  P1/P2 -> D5 carrier and A3 family -> cyclic Z4 glue -> E8.
+Its explicit lattice certificate is E8.GLU.01/v1. The current compiler
+also derives phi_base=(4/3)c3=1/(6pi) and phi0 from its carrier counts;
+these values are not awaiting selection between the two hypothetical
+continuation prescriptions in Section9.
+The E7 pair, G31 and cover identities are DOWNSTREAM consequences that
+connect already constructed objects. Treating their optional new source
+interpretation as a missing original P1/P2-to-E8 connection was a scope
+error in the conversational explanation. The rank/index comparison
+does not reopen the compiler or invalidate its existing seed derivation.
+The relevant continuation is whether the proved E7/cover maps add a
+new forced identity between EXISTING compiler objects or remove an
+independent assumption, retaining the original D5+A3 and native maps.

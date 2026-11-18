@@ -1,0 +1,53 @@
+{
+  "id": "seam-joint-conjugation-20261015",
+  "contract": "UR.SEAM.JOINT_CONJUGATION.01",
+  "research_id": "UR.SEAM.JOINT_CONJUGATION.01",
+  "date": "2026-10-15",
+  "question": "What joint particle-hole, sheet, charge, state and time action follows from the actual retained quarter source, and can its marking be derived covariantly?",
+  "verdict": "EXACT_COVARIANT_QUARTER_TRANSPORT",
+  "verdict_enum": ["EXACT_COVARIANT_QUARTER_TRANSPORT", "CHECK_FAILED"],
+  "summary_de": "Die wirkliche Teilchen-Loch-Wirkung bestimmt O=-MRM^T und transportiert Vierteldomäne, Ladung, Zustand, Zeit und die gegebene Markierung. Die zweite Markierung folgt ohne neue Wahl; die erste Quelle und ihre E8-Erweiterung sind nicht aus P1/P2 hergeleitet. Ein Skalarpaarungs-Typfehler wird korrigiert.",
+  "summary_en": "Actual particle-hole action determines O=-MRM^T and transports quarter domain, charge, state, time and the supplied marking. The second marking needs no new choice; the first source and its E8 extension are not derived from P1/P2. A scalar-pairing type error is corrected.",
+  "scope": "Actual given chiral source and its exact fold; E8 current lift conditional on the existing extension and coordinate dictionary; original P2 representation audit.",
+  "assumptions": [
+    "The previously supplied chiral source with quarter domains and sea covariance.",
+    "The recorded eight-arc fold and exact E8 dictionary M.",
+    "For the vertex/current lift only, the stipulated E8 level-one lattice representation and its full cocycle.",
+    "The first D5+A3 marking and its Z4 character are supplied, not newly selected."
+  ],
+  "positive_results": [
+    "Actual mode conjugation forces branch reversal and O=-MRM^T.",
+    "One field lift gives the correct normal-ordered charge and positive-time signs.",
+    "The opposite marking follows covariantly from the same source transport and neutral-root moment.",
+    "Cocycle-aware E8 current lift preserves vacuum and transports K_alpha to K_(1-alpha) in the stipulated extension.",
+    "Full Spin(10) equivariance of the existing antiunitary carrier conjugation."
+  ],
+  "rules_out": [
+    "Sheet-oddness as a general necessary criterion for an invariant Hermitian scalar pairing.",
+    "Any time-stabilizing orthogonal repair of the fixed D5+A3 marking after this actual quarter conjugation.",
+    "Replacing the c=8 vector-fermion source by 16 complex spinor coefficient species without changing the theory."
+  ],
+  "not_derived": [
+    "Initial physical marking, original source kernel or E8 extension from P1/P2.",
+    "Identification of the linear geometric deck with the antiunitary carrier conjugation.",
+    "Full physical event law or T1-T8 completion."
+  ],
+  "relations": [
+    {"target":"seam-partner-original-action-20261015","type":"extends"},
+    {"target":"v16-operator-pullback-20261014","type":"uses"},
+    {"target":"carrier-module-conjugation","type":"uses"},
+    {"target":"origin-composition-audit","type":"compares"}
+  ],
+  "claims_tested": ["AX.P1.01","AX.P2.01","CAR.PAIR.01","CAR.PAIR.02","SEAM.EQUIV.ONEPARTICLE.01","SEAM.EQUIV.SPINOR.01"],
+  "topics": ["topic:origin","topic:quantum","topic:e8","topic:clocks","topic:flavor"],
+  "gates": [],
+  "kills": [],
+  "proof": "PROOF.txt",
+  "checker": "checker.py",
+  "certificate": "results.json",
+  "source_manifest": "source_manifest.json",
+  "raw_P1P2_derivation": false,
+  "complete_TFPT_solution": false,
+  "promotion": false,
+  "firewall": "experiments"
+}

@@ -1,0 +1,104 @@
+Claude18: loop energy bound and the original determinant cost
+Reviewed 2026-10-29. Mathematical result and source interpretation separated.
+
+Original: documents/archive--paper-latex--tfpt-42/sections/
+012-subsection-bosonic-relative-index-and-higgs-selection.tex:84-94.
+SHA256 8140f7618b51292b8acf79fdc999cac9482842626ed07db4edb54dc91c9499d6.
+The displayed old asymptotic functional is
+  tau2 |wind det Phi2| + tau3 |wind det Phi3| + m3^2 dim ker B_E3,+.
+The remark explicitly assigns structural weight to the determinant-class
+theorem, not this older energetic intuition. No loop Dirichlet energy or
+pointwise metric on U(2) is specified in that formula.
+
+1. Exact loop theorem, requiring no stochastic search
+Let g:S1->U(n) be smooth, k=wind det g, with the unnormalised Hilbert-Schmidt
+matrix norm and the fixed coordinate phi of period2pi. Put
+  E(g)=(1/2pi) integral tr(g'(phi)^*g'(phi)) dphi.
+Write g(phi)=sum_j A_j exp(i j phi). Parseval and unitarity give
+  E=sum_j j^2 ||A_j||_HS^2,
+  k=(1/2pi i) integral tr(g^*g')=sum_j j ||A_j||_HS^2.
+For k>=0 use j^2>=j, and for k<=0 use j^2>=-j. Therefore E>=|k|.
+For 0<k<=n, equality forces A_j=0 except j=0,1. Thus g=A+zB.
+The Fourier coefficients of g^*g=gg^*=I imply
+  A^*B=B^*A=AB^*=BA^*=0,
+  A^*A+B^*B=AA^*+BB^*=I.
+Set h=A+B=g(0), P=h^*B=B^*B. Then h is unitary and P=P^*=P^2,
+  g=h[(I-P)+zP], rank P=k.
+For negative k the correct expression uses z^-1 and rank P=-k.
+For k=0 equality means g is constant. The restriction |k|<=n is needed for
+attaining this bound; the inequality itself holds for every integer k.
+Thus for n=2,k=1, minimisers of THIS metric loop energy modulo h form CP1.
+Claude's displayed equality formula omitted sign(k) for negative winding.
+No Morse existence claim or floating point loop sample is needed.
+
+2. Decisive source counterexample
+For any real epsilon set
+  g_epsilon(phi)=diag(exp(i[phi+epsilon sin phi]),1).
+All these loops have winding1 and the same original cost tau2 (keep the
+colour block and the other original terms fixed). But
+  E(g_epsilon)=average(1+epsilon cos phi)^2=1+epsilon^2/2.
+For epsilon!=0 they are not energy minimisers. A functional depending only
+on winding cannot distinguish these loops from g_0. Its within-class
+minimiser set is the entire winding class, not precisely CP1.
+Consequently equality of a minimum VALUE tau2 with a proposed Dirichlet
+lower bound does not identify the two functionals or their minimisers.
+The additional source rule would be a derivation of this specific loop
+energy, metric, parameter normalisation and minimisation from the original
+primitive operator action. It has not been provided by Claude18.
+
+There is also an explicit gauge test. The ratio g_epsilon g_0^-1 is the
+boundary value of the smooth disk gauge diag(exp(i epsilon y),1). Thus
+the two clutches, with their fully transported connections, define gauge
+isomorphic bundle data. The displayed loop Dirichlet energy changes under
+this allowed change of hemisphere frame. It is not a gauge-invariant
+source functional unless additional physical framing rules are supplied.
+
+3. Framing and the retained positive construction
+The rank1 projector family and its normal family index remain valid under
+their already stated premises. The same projector FORM was present in
+the September30 Bott source; see BOTT-MAP-DEDUP.txt for different variable
+roles. A constant diagonal gauge transformation conjugates P. Whether a
+relative orientation is observable depends on the full gauged source and
+other fields; merely saying one hemisphere is framed is neither a full
+physical selection theorem nor a proof of source uniqueness.
+In fact one fixed hemisphere alone is insufficient under the usual full
+smooth gauge group on the other disk. For any rank1 P,Q let
+  g_P=I+(z-1)P, g_Q=I+(z-1)Q, b=g_Q^-1 g_P.
+Then det b=1, so b:S1->SU2 extends over the other disk, and
+  (a=I) g_P b^-1=g_Q.
+All these projectors remain equivalent while the first hemisphere frame
+is fixed. A boundary restriction, a fixed connection or a physical
+relative field is needed to obstruct this change, and must be derived.
+Original operational D_coll is itself part of the supplied seed. The
+collar-completion theorem derives B_Sigma from that operator, and does not
+specify a unique weak projector from the determinant class alone.
+The older ADMISSIBLE-INDEX-CARRIER-SELECTOR.txt:146-182 already distinguishes
+the degree-one class from an actual common multiplication operator on the
+same source Hilbert space. Preserve that conclusion and its later Spin
+and determinant-line corrections.
+
+4. First exact operator evaluation on the genuine pair reader
+For the closed circle take a supplied selfadjoint elliptic D0 with scalar
+internal principal symbol and its actual twisted H1 domain. The loop g
+acts on that internal factor. A smooth based unitary loop g has g(0)=g(2pi)=I,
+so M_g maps that domain to itself, including a fixed endpoint twist.
+Set D_g=M_g D0 M_g^*. It has bounded zeroth-order difference from D0 and
+  exp(-t D_g^2)=M_g exp(-tD0^2) M_g^*.
+Therefore Tr(exp(-tD_g^2)-exp(-tD0^2))=0 for every t>0, for g_epsilon as
+well as g_0, despite their different Dirichlet energies. This is a direct
+whole-operator calculation, not a spectral cutoff or a choice of vacuum.
+It shows that this particular genuine pair trace alone does not supply
+the new loop energy or select P. It does not settle a P_adm-compressed,
+fixed-marked or inserted source, nor the actual original reflection-pair
+prescription. Nonflat normal curvature is another input. Those actual
+source data must be tested, rather than silently replacing the reader.
+
+5. Verdict and continuation
+Established: exact HS loop-energy bound and complete equality family.
+Excluded: original topological cost alone selects that equality family.
+Preserved: the global conditional normal/weak orbit family, canonical U2
+dual-evaluation diagram, original joint lift and native clock conjugacy.
+Next source step: compute the actual fixed-domain source functional on
+g_epsilon and g_0, retaining connections, reference and insertions. A
+geometric c1 equality or a newly imposed Dirichlet action cannot replace
+that source evaluation. No all-P1 impossibility, no physical completion.

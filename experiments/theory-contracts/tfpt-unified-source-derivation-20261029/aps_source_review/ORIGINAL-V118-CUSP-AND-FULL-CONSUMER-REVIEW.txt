@@ -1,0 +1,133 @@
+Ursprünglicher v118 Consumer, feste Cuspklasse und ganze Quellenverwendung
+2026-10-30. Enger Originalaudit und exakte Rechnung am unveränderten M0.
+
+1. Der wiedergefundene ursprüngliche Caller ist tatsächlich vorhanden
+
+documents/tfpt_research_contracts/sections/006-source.tex:233-241 erklärt
+den früheren diagonalen Dressingversuch ausdrücklich für durch v118
+repariert: Ausgelesen wird die Resolventendeterminante der W(A3) Monodromie.
+Diese Aussage wird nicht auf eine offene Neunpfadsuche zurückgesetzt.
+
+verification/v118_hexagon_family_dictionary.py:1-41,54-108 liefert
+det(I-tM0)=1-t^3, det(I-M0/2)=7/8 und det(I+M0/2)=9/8;
+c_e=4/[2 det-]=16/7, c_mu=3/[2 det+]=4/3,
+c_tau=4 det-/3=7/6. Das Produkt ist32/9.
+Der feste native Parameter t=1/2 ist hier nicht delta_ph des späteren
+stationären C6 Transportdenominators.
+Source source:de3bbb1d9334355b8489.
+
+Die tatsächliche Fuchsverbindung, ihre G Metrik, vier offenen Wege und
+der originale P/Q Fold sind bereits geschlossen. Ihr normalisierter
+Order3-Operator ist genau dieses M0; kein neuer Spektrummatch wird verlangt.
+Reuse: ACTUAL-FUCHS-PATH-C6-HARDY-CONSUMER.txt,
+FLAVOR-PATH-TRANSPORT-G-METRIC-ADDENDUM.txt und
+SPINE-ORIGINAL-PQ-FOLD-KERNEL-ADDENDUM.txt.
+
+Die kurze vollständige Kontrolle der48 schon ursprünglichen Wortbilder
+liegt in workspace outputs/multi-model-source-search-20261029/
+ACTUAL-V118-ALL-CLOSED-WORD-CONSUMER.json. Sie ist nur Wiederverwendung:
+Determinanten sind skalare Klassenleser und ersetzen kein offenes HolK/Y.
+Die vier Cuspmeridiane liefern alle denselben nativen Determinantentyp.
+
+2. Kleinster entscheidender Test der neuen Hardyantwort am festen Cusp
+
+Setze P0=diag(1,0,0) und übernehme die bereits ausgewerteten Koeffizienten
+alpha,beta aus HARDY-BMU-ALL-SIX-INPUT-READER.txt. Im gemeinsamen
+ursprünglichen markierten Rahmen gilt exakt
+
+ Fhat=alpha M0 P0-beta P0 M0,
+ P0+M0P0M0^-1+M0^2 P0 M0^-2=I,
+ d(M^3)_M0[Fhat]=M0^2 Fhat+M0 Fhat M0+Fhat M0^2
+                =(alpha-beta) I.                         (1)
+
+Wegen beta/alpha=-3.34759766402518... ist (1) nichtnull. Fhat ist daher
+KEINE infinitesimale Monodromievariation innerhalb der festgehaltenen
+Cuspklasse M^3=I. Gemeint ist genau diese erste Gleichsetzung, kein
+Ausschluss einer Einfügung in einer Resolventenspur oder im Sadm.
+
+Der positive tatsächlich vorhandene skalare Consumer bleibt auswertbar:
+
+ E_comm(Fhat):=(1/3)sum_k M0^k Fhat M0^-k
+              =((alpha-beta)/3)M0,                        (2)
+ Tr[(I-tM0)^-1 Fhat]=(alpha-beta)t^2/(1-t^3),               (3)
+ d_e det(yI-delta M0-e Fhat)|e0=-delta^2(alpha-beta).       (4)
+
+(2) zeigt, was dieser originale skalare Leser behält: den zentralisierten
+Teil des ganzen Readers. Sein übriger Teil ist ein Konjugationstangent;
+M0 ist unitär mit drei verschiedenen Eigenwerten, und der Kern dieser
+zyklischen Mittelung ist genau der Bildraum von [X,M0].
+Für jede skalare Funktion f(M0) gilt
+Tr[f(M0)Fhat]=((alpha-beta)/3)Tr[f(M0)M0].
+Somit stimmt die lineare skalare Antwort mit (alpha-beta)/3 des vorhandenen
+ganzen delta-Jets überein. Das ist eine Operatoridentität im Originalrahmen.
+Es ist keine Behauptung, der ursprüngliche Caller setze diesen neuen
+Reader bereits als physische Quellenvariation ein.
+
+Direkter exakter Sympycheck importierte nur die unveränderte M0 Definition
+aus v118, nicht run(), Suite oder Ledger. Geprüft wurden alle Einträge in
+(1),(2), sowie (3),(4); sämtlich exakt gleich. Kein Parameterfit.
+
+3. Die spätere ursprüngliche Ganzmatrixregel und ihre wirklichen Inputs
+
+EM4 = documents/archive--tfpt-45--source_extracts--03_em_flavor_source/
+sections/004-source.tex:164-239 definiert
+ Y_ij=<ei,Hol_G(nabla_F*) Kstr ej>.
+EM3 = gleicher Ordner/
+003-subsection-discrete-phase-operator-and-transport-grammar.tex:91-125
+definiert Pstr, Kstr=(Pstr D_f*D_f Pstr)^-1/2 und Ftr.
+EM5 = gleicher Ordner/005-source.tex:42-94 definiert die zugelassene Klasse
+ D_f=D_(2/3)+Vadm, [Pstr,Vadm]=0, ||Vadm||<epsilon_f/2.
+Diese Klasse beweist Gapstabilität des bereits gegebenen D_f. Dort steht
+keine Identität Vadm=Fhat oder Vadm=ganze Hardyantwort.
+Die konkrete gebundene Variation muss aus dem ursprünglichen Aufruf
+kommen; ihre bloße Zulässigkeit als endliche Matrix trifft diese Auswahl
+noch nicht. Die berechneten offenen Wege und der Fold werden dafür
+uneingeschränkt weiterverwendet.
+
+v121/v122 sind keine neun freien Integer:
+v122_margin_theorem.py:run enumeriert die endliche Hexagonklasse mit
+n=(5,-9,6), n^T R=(8,0,0), det R=8 und det(R+Q Sigma)=4 und erhält
+eindeutig R. v39_uwall_selectors.py:43-92 und v71_simple_r_bridge.py:34-64
+sind die dort angegebenen ursprünglichen Selektoranschlüsse. Sie prüfen
+konkrete Bündelgewichte und die festen Integeroperatoren; der tatsächliche
+Einsatz des resultierenden Readouts als Y ist die gesonderte HolK Regel.
+Dieser Audit erklärt die Selektoren nicht erneut zu unabhängigen frei
+zu fittenden Adressen und setzt ihre gespeicherte bedingte Eindeutigkeit
+nicht zurück.
+
+4. Ganze Quellpfade und bereits gelöster81er Anschluss
+
+QFT4 = documents/archive--tfpt-45--source_extracts--04_qft_source/
+sections/004-source.tex:111-155 definiert den blocked T_V Consumer aus
+lokalen positiven C6 Greenkernen, diagonalen Zulässigkeitsgewichten und
+Padm. Der Text nennt seine Primitivität und den Perronvektor. Die
+tatsächliche Einfügung eines Hardybeitrags braucht den dort verwendeten
+Operatoraufruf beziehungsweise seine Herkunft aus diesen Gewichten;
+ein freier besser konvergenter Test wird dafür nicht eingesetzt.
+
+Die bereits vorhandene Quelle liefert weiterhin den vollständigen Seed
+mit Feldern, Zustand, Reflexion und Zeit. Dafür wird kein neues Maß
+verlangt. Auch Kstr muss als Kopplungskoeffizient keine CAR Isometrie sein.
+
+finding:recovered-e6-closed-81-current-module-and-unique-source-cubic
+ist der genaue positive alte81er Anschluss. Wiederverwendete Quellen:
+compiler-e6-seam-readout-20260918/PROOF.txt:140-198 und
+compiler-vacuum-current-cubic-20260918/PROOF.txt:20-105.
+Dort ist im gegebenen affinen Vakuum
+<Omega,J^a_1 J^b_0 J^c_-1 Omega>=kappa(a,[b,c])=d_ABC epsilon_ijk
+vollständig ausgewertet. Die45 Kubikterme bestehen aus40 vomTyp16·16·10
+und5 vomTyp10·10·1. Das erhält den tatsächlichen primitiven Carrierkanal.
+Es liefert ohne weitere Operatorabbildung keine Identität zwischen
+bosonischen Strommoden und dem geladenen fermionischen Y im v252 Builder.
+Der Dateiname v515 bezeichnet dagegen Celestial WP5e, keinen81er Beweis.
+
+5. Tatsächlich nächste ursprüngliche Rechnung
+
+Ein bereits gegebener ursprünglicher Vadm/J Aufruf kann unverändert durch
+den fertigen G/W/Fold Funktor getragen und in der echten HolK Variation
+aus C6-GRAM-PRODUCER-AND-ORIGINAL-SOURCE-RESPONSE.txt ausgewertet werden.
+Die neue Gleichung(1) entscheidet zuerst, dass dafür Fhat nicht einfach
+als native cuspklassenerhaltende deltaHol etikettiert werden darf.
+Gleichungen(2)-(4) erhalten zugleich seine konkrete ursprüngliche
+Resolventenantwort. Der positive finiteReader→Wedge→D_F/Sadm Weg bleibt
+bestehen, ohne Hardy zur gesamten physischen Yukawamatrix zu erklären.

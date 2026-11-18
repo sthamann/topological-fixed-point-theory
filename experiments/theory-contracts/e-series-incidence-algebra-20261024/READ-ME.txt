@@ -1,0 +1,43 @@
+TFPT: vollständige endliche Schnittgeometrie und Originalprüfung
+24. Oktober 2026
+
+Das Paket enthält die ursprünglichen Beweise, die im unabhängigen Bericht
+nicht erreichbar waren. Die Originale wurden unverändert übernommen.
+Es enthält außerdem eine eigene exakte Rekonstruktion der gesamten
+Schnittgeometrie und ihrer Inzidenzalgebra.
+
+Die wichtigste Ergänzung ist die verlustfreie Tetraederrekonstruktion:
+
+  M M^T = N N^T + 24 I.
+
+N summiert ein Signal auf den1120 E6 Schnitten über die120 E7 Ansichten.
+M summiert dasselbe Signal über die7560 Tetraeder. Die E7 Summen verlieren
+1000 Richtungen. Aus den Tetraedersummen lässt sich jedes Signal exakt
+zurückgewinnen. Eine ausgezeichnete Ecke entsteht dadurch nicht.
+
+THEOREMS.txt enthält den vollständigen endlichen Beweis einschließlich der
+fünf irreduziblen Komponenten1,35,84,300,700 und der präzisen D8 Zuordnung.
+CLOCK-COVER.txt nennt die tatsächlichen Liftbedingungen und beweist die
+Faktorisierung der relativen Monodromie auf sämtlichen Grundschleifen.
+Die Bedingungen stimmen mit den beiden im Bericht genannten allgemeinen
+Prüfkriterien überein. Vier eingeschränkte Lifts bilden eine Eichklasse;
+der konkrete minimale relative Cover hat Grad12.
+
+Ausführen im entpackten Hauptordner:
+
+  python3 run_checks.py --optimized
+
+Python benötigt numpy und sympy; die Inzidenzprüfung selbst nur sympy.
+Der Aufruf prüft zuerst sämtliche enthaltenen Quelldateien am Manifest,
+führt die fünf Prüfer normal und mit python -OO aus und vergleicht die
+Ausgaben bytegenau. Ein Fehler führt zu einem Fehlerstatus.
+Alle Daten entstehen lokal; keine Zugangsdaten oder externen Dienste nötig.
+
+Die Ergebnisse stehen im Ordner check-results. geometry.json enthält alle
+Wurzeln, Schnitte, Rahmen, Tetraeder, Zuordnungen und Relationsmatrizen.
+results.json enthält auch sämtliche125 Strukturkonstanten und Charaktere.
+
+Die Aussagen betreffen die definierte endliche Geometrie, die ursprünglichen
+markierten Feldlifts und das ausdrücklich induzierte Burau Decksystem.
+Die physikalische Gesamtherleitung und eine geometrische Gauss-Manin
+Identifikation sind damit nicht bewiesen.

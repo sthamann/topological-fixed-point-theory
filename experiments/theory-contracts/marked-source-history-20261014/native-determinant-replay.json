@@ -1,0 +1,58 @@
+{
+  "status": "PASS",
+  "exact_check_groups": 25,
+  "provenance_checks": 10,
+  "checks": [
+    "noncommuting5: wrap correction reconstructs the dense periodic matrix",
+    "noncommuting5: pivots retain positivity and endpoint diagonal",
+    "noncommuting5: recursive determinant equals the independent dense determinant",
+    "noncommuting5: periodic determinant correction cannot be discarded",
+    "noncommuting5: open solve keeps time ordering of matrix products",
+    "noncommuting5: periodic solve has exactly zero dense residual",
+    "noncommuting5: periodic solve agrees with independent inversion",
+    "noncommuting5: induced quadratic action matches the direct dense action",
+    "physical3: wrap correction reconstructs the dense periodic matrix",
+    "physical3: pivots retain positivity and endpoint diagonal",
+    "physical3: recursive determinant equals the independent dense determinant",
+    "physical3: periodic determinant correction cannot be discarded",
+    "physical3: open solve keeps time ordering of matrix products",
+    "physical3: periodic solve has exactly zero dense residual",
+    "physical3: periodic solve agrees with independent inversion",
+    "physical3: induced quadratic action matches the direct dense action",
+    "original projective hop and its inverse retain their phases",
+    "physical hopping produces a signed energy decrease and increase",
+    "original 81-coordinate scalar action reduces exactly with the neutral compensator",
+    "signed low-rank update retains the actual determinant ratio",
+    "reversing the real charge update reciprocates its determinant",
+    "physical density change never removes the scalar lower bound",
+    "determinant lemma agrees symbolically at all nonnegative strengths",
+    "invalid temporal block inventory [1, 1] is rejected",
+    "invalid temporal block inventory [1, 2, 1] is rejected"
+  ],
+  "witnesses": {
+    "physical_cell_dimension": 8,
+    "physical_time_slices": 3,
+    "physical_signed_stiffness_update": [
+      "-6",
+      "2"
+    ],
+    "signed_determinant_ratio": "94563772615517095391/118236352350868252560",
+    "arithmetic_cost_per_cell": "O(T d^3), d=(ell-1)^3",
+    "storage_per_cell": "O(T d^2)",
+    "bit_complexity_bound": false,
+    "charge_history_sum_solved": false
+  },
+  "pinned_inputs": {
+    "round24_algebra.py": "74ce2b8e7f4b880e383c9d05e864d43bec1d51482b2af7d26c73f002c9ea2d9b",
+    "run_round24.py": "153e1302b883ef3c97e5380d028c4a89eff68737888d2e2169064e822bb39eae",
+    "local-gaussian-elimination-round24/PROOF.md": "7f2fecf8f6aee19baa1bdd0aab812690041bc22d793550fe418ec9d4a46a5b8e",
+    "local-gaussian-elimination-round24/checker.py": "11611f1e3429158b1dcdb6c65807626324709551b5ec69e2b609c264ce57ba3d",
+    "finite-density-background-round24/PROOF.md": "0e1ab3d75772d1a92bd432450b44478216a50245282ed3934d2783532e63d72e",
+    "finite-density-background-round24/checker.py": "72dcb16d3f4c9a256a513d7d41df9cf95064d0b38a708fe60e22d7f7c2d8614d",
+    "round22_algebra.py": "133a11d7d873062960e685e15ce0d55dcf9baf16b59199de5846e2e27711ae5c",
+    "local-charge-transport-round20/PROOF.md": "6d7059cc75108be2b7262f030b83e2c14c774a950d2f1ccd0f9c5c1b3b5afb5c",
+    "free-scalar-3d/free_scalar_ward.py": "6a07fde8b3c5336abac603e1979326784d9a2c451e5a5c68b4f03f9c7aed4d81",
+    "local-parent-round15/PROOF.md": "e5264468f3f3c87ab35f37205cc65370f3639e0c2d34b73399b82cb50b0cccbb"
+  },
+  "scope": "Exact per-history original scalar determinant and solve with periodic closure and signed physical charge updates. Linear-in-T block arithmetic, not bit-cost or floating-point certification; no solution of the full charge sum or real-time TOE."
+}

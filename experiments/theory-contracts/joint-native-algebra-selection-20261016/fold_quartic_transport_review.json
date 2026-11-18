@@ -1,0 +1,158 @@
+{
+  "status": "ACCEPTED_WITH_EXPLICIT_REFERENCE_AND_SOURCE_TYPE_BOUNDARIES",
+  "date": "2026-10-17",
+  "contract_id": "UR.NATIVE.JOINT_OPERATOR.01",
+  "reviewer": "independent native_code_clock_lift agent",
+  "current_file_sha256": {
+    "FOLD-COVARIANCE-TO-NATIVE-FIELD-RESPONSE.txt": "cd35ac0e65ebf780cc99d3dd8a318255d11251125298d88e88cb676c72b27507",
+    "check_fold_state_dictionary.py": "2fd496ed6d20387724146092ee5743dd7e9b858345da9c37cdb58cbf621f9714",
+    "check_fold_quartic_transport.py": "c8a35f8b986eeae9413ea0243c771959ee744b662d6babd5bbe0b2d4fea5f9b7",
+    "check_fold_response_tensors.py": "19722d76dc4f43d318998960e04c159e2a35ff7913e138ca10890a602363df94",
+    "check_fold_primitive_winding.py": "4eef19ce4b467bea38e14d138a29a60974b36a55ae104309db67c31816251e2e"
+  },
+  "replay_coverage": [
+    {
+      "checker": "check_fold_quartic_transport.py",
+      "python_flags": "-B -OO",
+      "extent": "complete main, both quarter cases",
+      "result": "PASS_EXACT_FOLD_CURRENT_TO_QUARTIC_RESPONSE",
+      "version_note": "Complete replay before final scope-only negative-D/QWZ wording edits; those edits subsequently inspected; arithmetic unchanged."
+    },
+    {
+      "checker": "check_fold_response_tensors.py",
+      "python_flags": "-B -OO",
+      "extent": "complete main, both quarter cases",
+      "result": "PASS_EXACT_ALL_POSITION_FOLD_QUARTIC_KERNEL",
+      "version_note": "Complete replay before final scope wording and additional B4 equality assertion; the identical B4 equality was independently evaluated in replay wrappers and passed both cases."
+    },
+    {
+      "checker": "check_fold_state_dictionary.py",
+      "python_flags": "-B -OO",
+      "extent": "complete current main, both quarter cases",
+      "result": "PASS_EXACT_ORIGINAL_FOLD_COVARIANCE_COUNTERTERM_AND_TWIST_DICTIONARY",
+      "version_note": "Current checker replayed after proof and code read-review."
+    },
+    {
+      "checker": "check_fold_primitive_winding.py",
+      "python_flags": "-B -OO",
+      "extent": "complete current main, both quarter cases",
+      "result": "PASS_EXACT_ORIGINAL_WINDING_FULL_STATE_QUARTIC_RESPONSE",
+      "version_note": "Current winding checker replayed read-only; no repeat of the two earlier full quartic/Wick checkers."
+    }
+  ],
+  "write_handling": "All checker Path.write_text calls replaced in-process by memory capture and restored afterwards. Only this authorized review JSON was written.",
+  "analytic_review": [
+    "The exact original fold mode decomposition diagonalizes the same F C F*; diagonalization in the eigenchannel chart introduces no independent arc-source copies. The physical source excitation generator retains factor8.",
+    "The original occupied j>=1 convention gives n>=0 and ell>=0 in the same alpha=1-a orientation; the negative-D convention is explicitly separate and requires charge/current/particle-hole transport.",
+    "Point-splitting produces +delta for the negative-D kernel and -delta for the positive-filled kernel, with charge-current ordering transported.",
+    "The fixed conformal NS current dictionary is a stated condition. M/O alone do not derive its physical selection from P1 or reconstruct the complete original source field-state map.",
+    "Li Delta shifts fields once on the underlying p0 vacuum; its order16 inner twist squares to the retained order8 g2. The original source reference state is not reselected by minimizing E8 extension energies.",
+    "For the actual homogeneous isotropic quartics the full two-point Wick tensors have adjoint conjugate(b)/z and b/w. D0=conjugate(m)m^T must be retained.",
+    "Radial coefficient extraction gives B0=D0 and Bk=sum_r binomial(k+r-1,2r-1)Dr. The first four positive mode Grams recover the four connected tensors through a determinant1 triangular matrix.",
+    "Actual erasure derivative orthonormality forces D3=||b||^2 I; D4=I. Direction-dependent state response starts at order4 in b.",
+    "Both full sparse Fock mode4 matrices agree exactly with 4D1+10D2+6D3+D4 from the separate Wick calculation.",
+    "Original seam-joint-ward-state PROOF sections16,17,21 read independently: global W4 acts p->Pp+a with a=(1,1,1,1,0,0,0,0), permutes every nonzero oscillator by P, and has the stated actual CAR Klein/cocycle factorization on the even D8 sector and stipulated E8 completion.",
+    "All input R_b states have source charge p0. The Klein/cocycle factor is the common phase fixed by W4|0>=|a>; the nonzero-mode state transport is precisely Gamma(G) R_b, G=O.T M P M.T O. No second affine substitution in R_b is appropriate.",
+    "The separate original field response on output charge Ma has b_out=U_positive.T O.T(d+Ma). Its cross matrix with the transported state is a genuine full-state matrix-element comparison, not an executed projection or a closed five-state evolution.",
+    "G maps u0 to i conjugate(u0), u1 to -u1, u2 to u2, u3 to -i conjugate(u3); it preserves oscillator mode number and Hermitian norms, while mixing opposite Cartan polarizations. Opposite polarization here is not creation/annihilation mixing.",
+    "The apparent unshifted rank2 overlap is not the actual source-response rank. Both full shifted cross-response matrices have exact rank5 and the complete W4-output Gram equals the input Gram.",
+    "For neutral p0 inputs the Ward increment is K(a)=3/4+alpha/2, hence original source excitation increments7 and9 after retaining factor8. The outgoing charge and nonperiodic integer carry remain explicit."
+  ],
+  "exact_reproduced_results": {
+    "quarter_cases": [
+      "1/4",
+      "3/4"
+    ],
+    "D3_scalar": "85/256",
+    "D4": "I5",
+    "response_monomial_counts": [
+      20,
+      28,
+      28,
+      28,
+      35
+    ],
+    "partitions": [
+      [
+        4
+      ],
+      [
+        3,
+        1
+      ],
+      [
+        2,
+        2
+      ],
+      [
+        2,
+        1,
+        1
+      ],
+      [
+        1,
+        1,
+        1,
+        1
+      ]
+    ],
+    "onepoint_simplex_matches": [],
+    "D1_rank": 4,
+    "D1_kernel_simplex_matches": [],
+    "D1_commuting_flags": [],
+    "B4_commuting_flags": [],
+    "all_tensor_joint_commuting_flags": [],
+    "twist_order": 16,
+    "twist_square_order": 8,
+    "reference_conformal_weight": "85/256",
+    "zero_excitation_root_each_case": [
+      1,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      0
+    ]
+  },
+  "substantive_corrections_required": [],
+  "precision_notes": [
+    "In the source H_exc formula, original fermionic charges p initially lie in Z8; extending that domain to E8 uses the independently stipulated extension, not the CAR fold alone. These qualifications are now included in the proof.",
+    "Smooth local-profile two-point integrals use the original radial/Wightman i0 boundary prescription; the separated-point expression is not a license to choose new contact terms. These qualifications are now included in the proof."
+  ],
+  "verdict_scope": [
+    "The stated direct mean-ray/kernel-ray and spectral-projector identifications with the 60 actual flags fail for this fixed reference response.",
+    "No requirement is added that every physical projector commute with every source response.",
+    "No no-go is inferred for nonlinear readouts, supplied local profiles, charged histories, source interventions or full P1 selection.",
+    "No odd-CAR-to-E8 local inclusion, physical E8 extension selection, physical time identification or Higgs/fermion assignment is proved."
+  ],
+  "canonical_files_modified": false,
+  "original_winding_review": {
+    "source": "/Users/stefanhamann/Projekte/tfpt-theoryv4/experiments/theory-contracts/seam-joint-ward-state-20261014/PROOF.txt sections16,17,21",
+    "charge_after_winding_in_source_target_chart": [
+      1,
+      0,
+      1,
+      1,
+      0,
+      1,
+      0,
+      0
+    ],
+    "positive_to_positive": "diag(0,-1,1,0)",
+    "positive_to_opposite": "diag(i,0,0,-i)",
+    "unshifted_frame_overlap": "diag(1/2,0,0,1/2,0)",
+    "unshifted_frame_overlap_rank": 2,
+    "actual_cross_ranks": {
+      "1/4": 5,
+      "3/4": 5
+    },
+    "source_time_increments": {
+      "1/4": 7,
+      "3/4": 9
+    },
+    "full_output_gram_equals_input": true,
+    "scope": "Actual retained global source W4 on the even D8 sector and chosen E8 completion, fixed conformal NS field dictionary, no executed projection, local-instrument claim, autonomous finite clock or physical3+2 selection."
+  }
+}

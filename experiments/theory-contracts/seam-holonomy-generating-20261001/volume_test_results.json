@@ -1,0 +1,23 @@
+{
+  "steps": [
+    {
+      "step": "VT1 (statement) pairing-order volume test at g = 0.021, beta = 4, lambda = 0.35 (8 / 16 / 32 sites, global moves): intensive vs extensive maximal time-constant mode power",
+      "pass": true,
+      "detail": "vt32A (N = 32, 200 sweeps, max-mode stationary True): |phi|^2/prior 2.23, max mode 28.3, S_max/N 0.88, median 2.77, max over K of the channel mean 8.33, G(beta/2) 0.054, R 0.81 | vt32B (N = 32, 200 sweeps, max-mode stationary True): |phi|^2/prior 2.30, max mode 40.0, S_max/N 1.25, median 2.37, max over K of the channel mean 9.31, G(beta/2) 0.074, R 0.79 | vt8A (N = 8, 400 sweeps, max-mode stationary True): |phi|^2/prior 2.73, max mode 194.2, S_max/N 24.28, median 1.89, max over K of the channel mean 30.52, G(beta/2) 0.015, R 1.00 | vt8B (N = 8, 400 sweeps, max-mode stationary True): |phi|^2/prior 2.59, max mode 41.4, S_max/N 5.17, median 4.69, max over K of the channel mean 11.89, G(beta/2) 0.015, R 1.00 | vt8C (N = 8, 300 sweeps, max-mode stationary True): |phi|^2/prior 2.69, max mode 116.7, S_max/N 14.58, median 3.44, max over K of the channel mean 37.83, G(beta/2) 0.011, R 1.00 | vt8D (N = 8, 300 sweeps, max-mode stationary True): |phi|^2/prior 2.69, max mode 117.8, S_max/N 14.73, median 4.35, max over K of the channel mean 47.56, G(beta/2) 0.017, R 1.00 | g021b4GA (N = 16, 250 sweeps, max-mode stationary False): |phi|^2/prior 2.42, max mode 50.6, S_max/N 3.16, median 2.65, max over K of the channel mean 14.18, G(beta/2) 0.024, R 1.00 | g021b4GB (N = 16, 300 sweeps, max-mode stationary True): |phi|^2/prior 2.44, max mode 47.7, S_max/N 2.98, median 5.04, max over K of the channel mean 13.41, G(beta/2) 0.026, R 1.00 | max-mode power per cell {8: np.float64(117.5), 16: np.float64(47.7), 32: np.float64(34.1)}, S_max/N per cell {8: np.float64(14.69), 16: np.float64(2.98), 32: np.float64(1.07)}, ratios per doubling [0.41, 0.72] -> SHORT_RANGE"
+    },
+    {
+      "step": "VT2 (statement) channel-resolved G4: uniform pairing S_0/N, finite-momentum pairing S_max/N, Spin(10) channel anisotropy per cell (density channel not monitored)",
+      "pass": true,
+      "detail": "N = 8: S_0/N 24.28/2.13/14.58/14.73, S_max(K != 0)/N 1.83/5.17/5.08/5.90, channel anisotropy 3.94/2.24/1.97/1.57 (stationary True/True/True/True) | N = 16: S_0/N 3.16/2.98, S_max(K != 0)/N 2.21/2.53, channel anisotropy 1.39/1.90 (stationary False/True) | N = 32: S_0/N 0.37/1.25, S_max(K != 0)/N 0.88/0.73, channel anisotropy 1.25/1.73 (stationary True/True)"
+    },
+    {
+      "step": "VT3 (statement) G4 block decision: (A) stationarity, (B) seed consistency, (C) R_eq on the stationary part, S/N falling per doubling",
+      "pass": true,
+      "detail": "N = 8: vt8A: S0/N 23.40, Sf/N 1.52, aniso 3.82, R_eq 1.00 +- 0.00, stationary False; vt8B: S0/N 2.29, Sf/N 5.27, aniso 2.24, R_eq 1.00 +- 0.00, stationary True; vt8C: S0/N 14.20, Sf/N 4.93, aniso 1.93, R_eq 1.00 +- 0.00, stationary True; vt8D: S0/N 15.28, Sf/N 5.89, aniso 1.48, R_eq 1.00 +- 0.00, stationary False -> A False, B False, C True | N = 16: g021b4GA: S0/N 3.41, Sf/N 2.28, aniso 1.40, R_eq 1.00 +- 0.00, stationary False; g021b4GB: S0/N 2.92, Sf/N 2.61, aniso 1.91, R_eq 1.00 +- 0.00, stationary True -> A False, B True, C True | N = 32: vt32A: S0/N 0.38, Sf/N 0.89, aniso 1.26, R_eq 0.81 +- 0.08, stationary True; vt32B: S0/N 1.27, Sf/N 0.76, aniso 1.74, R_eq 0.77 +- 0.04, stationary True -> A True, B False, C True || S_max(K != 0)/N falling > 1.6 per doubling: True -> DECISION CONTINUE"
+    }
+  ],
+  "passed": 3,
+  "total": 3,
+  "verdict": "SHORT_RANGE",
+  "g4_decision": "CONTINUE"
+}

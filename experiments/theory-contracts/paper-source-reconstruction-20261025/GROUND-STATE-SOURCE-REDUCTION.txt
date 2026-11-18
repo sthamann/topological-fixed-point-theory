@@ -1,0 +1,266 @@
+GROUND STATE SOURCE REDUCTION
+=============================
+
+25 October 2026. Direct CAR proof and application to the archived operational
+seed. No Atlas, ledger, index or paper source was changed.
+
+Verdict
+-------
+
+PROVED AS A REDUCTION UNDER THE STATED FULL-CAR AND TIME-IDENTIFICATION
+HYPOTHESES.
+
+Suppose the full graded CAR algebra of a one-particle space h is represented
+on the same reconstructed seed Hilbert space as the original vacuum Omega.
+Suppose the original Lorentzian time restricts to the Bogoliubov dynamics
+
+  alpha_t(a(f)) = a(exp(i t K) f)                         (1)
+
+for one fixed self-adjoint K with a gap at zero, and is implemented by
+
+  alpha_t(A)=exp(i t H) A exp(-i t H),
+  H >= 0,  H Omega=0.                                    (2)
+
+Then the restriction of the original vacuum state to the full CAR algebra is
+not a further independent input. It is the unique pure gauge-invariant
+quasifree ground state with covariance
+
+  P_- = 1_(-infinity,0)(K).                              (3)
+
+In particular, one need not separately assume that omega restricted to CAR is
+quasifree. What remains additional in the TFPT source bridge is the full
+graded local CAR embedding and the identification of its induced time with
+(1) for the same gapped K. The archived papers do not derive that embedding
+from scalar P1.
+
+The statement is false on the even CAR algebra alone. The odd generators are
+what turn positive energy into the two annihilation conditions below.
+
+1. Convention and energy-transfer signs
+---------------------------------------
+
+Use the mathematical CAR convention in which the Hilbert-space scalar product
+is anti-linear in its first entry and a(f) is anti-linear in f:
+
+  {a(f),a(g)^*}=<f,g>,  {a(f),a(g)}=0.                   (4)
+
+If Kf=epsilon f, (1) gives
+
+  alpha_t(a(f))=a(exp(i t epsilon)f)
+               =exp(-i t epsilon)a(f),                  (5)
+
+where anti-linearity supplies the minus sign. Thus a(f) has energy transfer
+-epsilon. Taking adjoints gives
+
+  alpha_t(a(f)^*)=exp(+i t epsilon)a(f)^*,               (6)
+
+so a(f)^* has energy transfer +epsilon.
+
+Let
+
+  P_+=1_(0,infinity)(K),  P_-=1_(-infinity,0)(K).
+
+Because zero is outside the spectrum, these two projections sum to one. From
+(2), no bounded operator with strictly negative energy transfer can create a
+nonzero vector from Omega. Equations (5)--(6) therefore give
+
+  a(f_+) Omega=0       for f_+ in P_+ h,                 (7)
+  a(f_-)^* Omega=0     for f_- in P_- h.                 (8)
+
+For pure point vectors this is immediate: a nonzero vector on the left would
+be an H-eigenvector of energy -epsilon<0. For general K, smear (1) with a
+Schwartz function whose Fourier support lies inside the positive or negative
+spectral half-line. The resulting bounded CAR operator has Arveson spectrum
+strictly below zero. Spectral approximation inside P_+h and P_-h then yields
+(7)--(8). The gap prevents a zero-energy remainder.
+
+The requested signs are therefore exactly the stated ones:
+
+  positive K mode:     a(f_+) annihilates Omega;
+  negative K mode:     a(f_-)^* annihilates Omega.
+
+2. Covariance and Wick rule follow from the CAR
+------------------------------------------------
+
+Define the ground-adapted annihilator
+
+  b(f)=a(P_+ f)+a(P_- f)^*.                              (9)
+
+Equations (7)--(8) say b(f)Omega=0 for every f. The original a and a^*
+operators are linear combinations of b and b^*. Repeatedly move every b to
+the right by the CAR. Every term with a b at the far right vanishes, and every
+commutation step produces only a two-point contraction. Induction on the word
+length gives:
+
+  * all odd moments vanish;
+  * every even moment is the signed Wick/Pfaffian sum of its two-point
+    contractions.
+
+The two basic contractions are, in the convention (4),
+
+  omega(a(f)^* a(g))=<g,P_- f>,                          (10)
+  omega(a(f) a(g)^*)=<f,P_+ g>.                          (11)
+
+The anomalous contractions omega(aa) and omega(a^*a^*) vanish. Hence omega is
+the gauge-invariant quasifree state with one-particle density P_-. Since every
+CAR polynomial has now been fixed and such polynomials are norm dense in the
+CAR algebra, the state is unique.
+
+This is the zero-temperature ground-state form of the standard quasifree CAR
+and Bogoliubov-automorphism framework. Primary source:
+
+  Huzihiro Araki,
+  "On Quasifree States of CAR and Bogoliubov Automorphisms",
+  Publ. RIMS 6 (1970/71), 385--442,
+  DOI 10.2977/prims/1195193913.
+
+Araki supplies the state-symbol and Bogoliubov framework and characterizes
+the corresponding quasifree equilibrium states. The short argument above is
+included so that the present ground-state reduction does not rely on silently
+replacing a finite-temperature KMS statement by its zero-temperature limit.
+
+3. Why the full graded algebra is essential
+-------------------------------------------
+
+Take one CAR mode with {a,a^*}=1 and K=kappa>0. On the full algebra M_2,
+
+  alpha_t(a)=exp(-i kappa t)a.
+
+Positive energy forces a Omega=0, so the full-CAR ground state is the empty
+state.
+
+The even subalgebra is
+
+  CAR_even=C 1 + C n,  n=a^*a,                           (12)
+
+which is isomorphic to C direct-sum C. Its restricted dynamics is trivial,
+because alpha_t(n)=n. Every state
+
+  omega_lambda(n)=lambda,  0<=lambda<=1,                 (13)
+
+is therefore a ground state of the restricted even system. In particular the
+empty state, the filled state and all mixtures have the same even positive
+time. The missing odd operator a is exactly what detects that the filled state
+would allow a negative-energy transition.
+
+Consequently an embedding of only the neutral current algebra, the even CAR
+algebra or the F8 composite does not imply (3). The source bridge must contain
+the odd local CAR fields and both adjoints.
+
+4. What positive time the archived seed actually contains
+---------------------------------------------------------
+
+The bare operational seed is defined in
+
+  documents/archive--tfpt-45--source_extracts--01_boundary_kernel_source/
+  sections/002-section-intrinsic-closed-branch-and-canonical-rigid-obje.tex
+  lines 103--143.
+
+It lists tau_t in
+
+  S=(A_loc,tau_t,Theta,omega,[u_Sigma],D_coll),
+
+requires a quasilocal Euclidean net with positive-time reflection and requires
+omega to be reflection positive and clustering. The completion proof says
+that reflection positivity and the positive-time net reconstruct the
+one-sided OS Hilbert space. These lines do not themselves display a
+Lorentzian H with (2).
+
+The later weakened ambient category makes the time premise clearer:
+
+  documents/archive--tfpt-45--source_extracts--04_qft_source/sections/
+  006-section-internal-reduction-theorem-and-renormalized-obse.tex:13--29.
+
+Its U4 assumption says tau_t is a quasilocal dynamics with reflection
+positivity and an admissible vacuum sector. This is still an ambient
+admissibility assumption, not a derivation of the CAR time law (1).
+
+The required positive generator is supplied by the actual reconstruction
+theorem only after the full OS hypotheses are met:
+
+  documents/archive--tfpt-45--source_extracts--04_qft_source/sections/
+  008-section-relative-reflection-positivity-with-fermions.tex:215--254.
+
+Given the admissible Schwinger family, reflection positivity, temperedness,
+graded Euclidean covariance, graded symmetry and clustering, the theorem
+constructs a vacuum Omega and a strongly continuous semigroup
+
+  T_s=exp(-s H_adm),  H_adm>=0.                          (14)
+
+The class of the constant history is fixed by T_s, hence H_adm Omega=0. Its
+analytic continuation supplies the reconstructed Wightman/CAR time. Thus the
+positive-energy part of (2) is present on the reconstructed admissible theory,
+conditional on the stated OS hypotheses. It is not an extra quasifree-state
+postulate.
+
+For the proposed source reduction one must still verify that the embedded
+full graded CAR subnet lies in this same reconstructed representation and that
+the analytically continued original time restricts to (1). Once that is done,
+(7)--(11) force its state.
+
+5. Corrected primitive-source premise
+-------------------------------------
+
+The previous source audit separated
+
+  S1: the collar's induced one-particle generator intertwines K;
+  S2: omega on CAR is the quasifree state with P=1_(K<0).
+
+Under the present hypotheses S2 is not independent. The sharper dependency is
+
+  full graded local CAR embedding, including a(f) and a(f)^*
+       +
+  original reconstructed time restricts to alpha_t(a(f))=a(e^(itK)f)
+       +
+  K self-adjoint and gapped at zero
+       +
+  H>=0 and H Omega=0 on the same reconstructed representation
+       =>
+  omega|CAR is uniquely quasifree with P=1_(K<0).          (15)
+
+If S1 is meant literally as D_coll|CAR=K, it must also include the proof that
+the seed time generator on this cyclic subsystem is the second quantization
+of that same K. Equality of unbounded symbols without the time intertwiner is
+not enough. Identifying the resulting P_-=1_(K<0) with the geometric Calderon
+projector P_C is a further collar-orientation dictionary unless the chosen
+product-collar theorem already makes that equality explicit.
+
+The types must be kept separate: K acts on the one-particle boundary space;
+the reconstructed positive H acts on the many-body cyclic GNS/OS space.
+The operator comparison is K_seed iota_1=iota_1 K on a one-particle core,
+followed by its CAR-induced many-body time relation. It is not an equation
+identifying a one-particle Dirac operator with a many-body Hamiltonian.
+
+The smallest decisive source test is therefore:
+
+  (i) embed one odd smeared generator a(f), its adjoint and the local CAR
+      relations into the actual operational seed;
+  (ii) verify time covariance with the fixed K on a generating one-particle
+       core;
+  (iii) verify that the image belongs to the same OS quotient carrying
+        H_adm>=0 and Omega.
+
+Passing (i)--(iii) removes the independent state premise automatically by the
+proof above. Failure already at (i) leaves only the even-algebra counterexample
+and cannot select the filled sea.
+
+6. Scope
+--------
+
+PROVED here:
+
+  * the full-CAR ground-state reduction (7)--(11);
+  * the sign dictated by anti-linearity of a(f);
+  * the one-mode even-algebra counterexample;
+  * the archived OS theorem supplies H_adm>=0 on the reconstructed theory
+    under its explicit hypotheses.
+
+STILL TO BE ESTABLISHED FOR THE TFPT/QWZ BRIDGE:
+
+  * the full graded local CAR embedding into the operational seed;
+  * equality of its induced time with the Bogoliubov dynamics of the same K;
+  * its descent to the same OS vacuum representation and collar domain.
+
+No claim is made that scalar P1 derives this embedding. The advance is the
+removal of a redundant state input after the actual operator and time bridge
+has been proved.

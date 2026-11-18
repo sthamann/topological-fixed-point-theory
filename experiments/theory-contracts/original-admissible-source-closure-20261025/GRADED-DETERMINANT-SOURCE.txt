@@ -1,0 +1,794 @@
+GRADED DETERMINANT SOURCE: ORIGINAL MEASURE AUDIT
+=================================================
+
+Date: 2026-10-25
+Atlas revision used for navigation: fc37fe012313a99c2c456cca
+Verdict: PROVED as an assumption and typing audit of the cited originals.
+Scope: v21 A7 -> v31 -> v42 -> TFPT 4.5 -> active determinant-line contract.
+
+Question
+--------
+Which fermionic measure is actually prescribed by the original chain: det(D^+), a
+Pfaffian, det(D), or a relative/graded determinant line? Does the primitive action
+
+  S_prim = Tr f(D_rel/chi) - Tr f(D_ref/chi) + (i pi/2) Delta eta_Sigma
+
+or the later source functional already choose the chiral measure and its line
+connection?
+
+Answer
+------
+No unique fermionic measure of those four types is prescribed by the cited chain.
+The originals contain three differently typed ingredients:
+
+1. a relative, even spectral action with a separately supplied scalar eta term;
+2. a formal mixed source functional Z_adm[J,eta,bar eta], whose admissible CAR
+   kernel and reflection positivity are assumed;
+3. a later master expression containing Re log det_zeta(D_xi^2+mu^2) plus an eta
+   scalar.
+
+They are not joined by a theorem which constructs the Grassmann integral, its
+charged covariance, or a section with connection of a chiral determinant or
+Pfaffian line. The real determinant modulus can still contribute a real
+susceptibility. This audit does not turn chirality into a prerequisite for every
+real electromagnetic response. What remains unselected is the fermionic source
+measure and, separately, its phase/line connection.
+
+The notation D_+ in the one-sided boundary datum is a subscript: it labels the
+operator on M_+. It is not by itself the chiral Fredholm map D^+: H^+ -> H^-.
+The later block D_rel^+ exists, but its appearance does not define det(D_rel^+)
+as the physical Grassmann measure.
+
+Source chain
+------------
+
+A. v21 A7 fixes a charge trace, not a measure.
+
+`documents/archive--paper-latex--tfpt-theory-fullv21/sections/002-subsection-closure-axioms-a7-a8.tex:4-15,37-54`
+SHA-256: 6a44df43d61d84b026c5ad15a1bdbdcc8822e741b4af8b709f0f3563fa3c0b6a
+Atlas source: paper-source:60482538011da95e4c2076f9
+
+The displayed claim is that the regulated hypercharge-coupled determinant has a
+quadratic charge coefficient (5/3) sum_f Y_f^2 = 41/10 in its UV logarithm. The
+text does not define a Berezin measure, a chiral domain/codomain, a real
+skew-adjoint kernel, a determinant/Pfaffian line, or a reference trivialization.
+Thus A7 supplies charge counting for a determinant response. It does not decide
+which determinant is integrated.
+
+The older seam appendix supplies an APS Dirac operator and a matching map, for
+example
+`documents/archive--paper-latex--tfpt-theory-fullv21/sections/006-section-numerical-constants-high-precision.tex:346-367`.
+It gives spectral flow and an eta gluing number. It still does not define the
+charged Grassmann source functional or the determinant-line connection.
+
+B. v31 defines an even relative spectral seed.
+
+`documents/archive--paper-latex--tfpt-31/sections/002-subsection-primitive-relative-spectral-dynamics.tex:7-30,42-70,80-96,118-130`
+SHA-256: 6d8813b95a1ef4d82ee9cd48a25efff3f9c20066a06b85ad121bc26e5dbaae77
+Atlas source: paper-source:12323340247079857eb23f60
+
+The input contains one self-adjoint Dirac operator D together with J, Gamma and a
+geometric involution. It constructs D_ref and D_rel from the even and odd parts
+under that involution. The Bernstein profile is explicitly
+
+  f(x) = integral exp(-t x^2) dnu(t).
+
+Therefore the two trace terms depend on squared spectral data. The additional
+(i pi/2) Delta eta_Sigma retains a scalar spectral-asymmetry datum. The formula
+is not a Grassmann Gaussian and supplies neither an inverse kernel for eta,
+bar eta insertions nor a determinant-line section. The eta term prevents the
+stronger, incorrect statement that the complete primitive expression is blind
+to D -> -D. It does not by itself select each occupied polarization or the
+source covariance.
+
+C. v42 derives a geometric double and later displays chiral blocks, but does not
+construct their fermion determinant.
+
+`documents/archive--paper-latex--tfpt-42/sections/003-subsection-primitive-relative-spectral-dynamics.tex:8-35,37-113,245-260,296-319`
+SHA-256: 8683d7459140a06d5e03a06adefd05bf7e6538356e4e4da4397133aa991b8fe4
+Atlas source: paper-source:543cbb0e445a456e04ec4efc
+
+The one-sided datum is
+
+  T_bound = (A_+, H_+, D_+, J, Gamma, B_Sigma),
+  D_+ = gamma_n(partial_n+B_Sigma).
+
+Here plus means the one-sided manifold M_+. Canonical geometric doubling gives
+D = D_+ union_Sigma D_+^op and then self-adjoint D_ref,D_rel. The optional
+spinor/internal factorization is explicitly an analytic realization choice.
+No equation here types D_+ as H^+ -> H^- or defines a fermion measure from it.
+
+The closure roadmap later writes
+
+  D_b = [[0,D_rel^-],[D_rel^+,0]]
+
+in
+`documents/archive--paper-latex--tfpt-42/sections/022-section-closure-theorems-from-the-admissibility-complex.tex:200-244`.
+SHA-256: fe626eb8126375f8e0028914a19e045802478f76f0c9b8e6655b8331b70848b2
+
+This establishes a graded operator form. It does not specify whether the
+integrated field is complex Weyl, Majorana/real, or full Dirac; it gives no
+Berezin integral, determinant/Pfaffian section, source covariance, or line
+connection. The finite determinant lines L_+,L_- in the defect filtration are
+boundary-polarized finite blocks. The family SU(3) determinant line is likewise
+a family-holonomy object. Neither is identified with the Quillen determinant
+line of the charged four-dimensional chiral operator.
+
+D. Z_rel introduces formal fermionic sources, while the fermionic kernel remains
+an assumption.
+
+`documents/archive--paper-latex--tfpt-42/sections/022-section-closure-theorems-from-the-admissibility-complex.tex:255-316`
+
+The quotient is
+
+  Z_rel[J,eta,bar eta] = Z_adm[J,eta,bar eta] / Z_ref[0,0,0].
+
+The denominator is a fixed, source-independent normalizer. The reflection
+positivity lemma then assumes that the admissible fermionic CAR kernel is
+reflection positive. Its proof invokes the corresponding Pfaffian/determinant
+form without choosing between them or deriving either from D_+.
+
+The TFPT 4.5 version is equally explicit:
+
+`documents/archive--tfpt-45--source_extracts--04_qft_source/sections/008-section-relative-reflection-positivity-with-fermions.tex:143-169`
+SHA-256: 898aa879cf6a3eb6464d3180274bc2fc028408aeec9676af70a862dad9c3f4dc
+Atlas source: paper-source:959b42cad0e8912b4280a093
+
+The wording says the admissible CAR kernel “may be written” as a reflected
+quadratic form and “equivalently” as positivity of an associated Pfaffian
+structure. That proves positivity only after the kernel is supplied. It is not a
+constructor of that kernel.
+
+The source derivatives are recorded in
+`documents/archive--tfpt-45--source_extracts--04_qft_source/sections/005-subsection-admissible-schwinger-functions-minkowski-loca.tex:144-183`.
+SHA-256: 8bf0a37157505ca12b90154dbe41a29c49a503686a8493dffd63945f205e0af6
+Atlas source: paper-source:972de2429406831890ef4161
+
+They define W_rel = log Z_rel and differentiate with respect to
+J,eta,bar eta. This fixes the formal source alphabet. It does not give the
+quadratic fermion kernel K, the propagator K^{-1}, the representation and charge
+map in K, or the common reflection action on those insertions. In particular,
+source symbols do not decide det(D^+), Pf(D_real), or det(D_Dirac).
+
+E. The collective FRG integral is compatible with graded fields but does not fill
+this definition gap.
+
+`documents/archive--tfpt-45--source_extracts--04_qft_source/sections/007-subsection-renormalized-physical-and-scheme-readout-laye.tex:3-67`
+SHA-256: 9c1c587cbd61fc4034649d778d16f1ee0e8c1e1189885babb3d8148a6fe72d7c
+Atlas source: paper-source:f588a78cad85dd5237213db3
+
+The use of STr shows that the collective phi,J notation can be graded. It would
+therefore be wrong to classify the integral as bosonic merely because it is
+written Dphi. Yet S_adm, its Berezin sector and the map from D_+ to the fermionic
+Hessian are not defined in this passage. The Wetterich formula starts after that
+input has been supplied.
+
+The “constructive geometric measure” cited for moment bounds is literally a
+measure on the BRST-reduced geometric configuration space:
+`documents/archive--tfpt-45--source_extracts--05_metrology_source/sections/005-section-absolute-dimensionless-metrology-from-the-bounda.tex:136-175`.
+SHA-256: b19c58deb3ee905c16e659dd26b15ca8d1998bab6f703cd350e04e54129a9a4c
+Atlas source: paper-source:df9f867604caceff6ed2483a
+
+It defines exp[-Tr f_star(D_Vn^2/Lambda^2)] dnu_Vn and Z_grav. It does not
+construct the missing fermionic marginal or a joint boson-fermion measure.
+Consequently it cannot discharge the CAR-kernel assumption used by the OS
+passage.
+
+F. The later master functional is a modulus-like spectral determinant plus a
+separate eta scalar, not a graded determinant-line definition.
+
+`documents/archive--tfpt-45--source_extracts--02_carrier_source/sections/009-source.tex:334-353`
+SHA-256: 27114e2ce775346dac11c53ecb77871453f3ecf226fe40951f8b3099bdea6b05
+Atlas source: paper-source:e200c1f9075e588500860da9
+
+It contains
+
+  -log Z_rel^Padm[xi]
+  + Re log det_{zeta,Padm}(D_xi^2+mu^2)
+  + (1/2) eta_{Sigma,Padm}(D_xi)
+  + ... .
+
+The squared positive operator and Re log select a real modulus-like determinant
+response. The separate eta term can distinguish spectral asymmetry and can
+carry phase information. But D_xi is not defined elsewhere in the cited source
+extract beyond this occurrence, and no theorem identifies this sum with a
+section of det D_xi^+, a Pfaffian line, or a relative graded determinant line.
+No source insertions are coupled to this displayed D_xi. Thus the expression can
+support a real electromagnetic response without already fixing the chiral
+measure or its anomaly connection.
+
+G. The active corpus confirms that the missing identification remains open.
+
+`documents/tfpt_research_contracts/sections/017-source.tex:239-266`
+SHA-256: 492599a0d20043a5589ca610ce7e1ebceffb8de043eae8eb406e4469d3e4be83
+Atlas source: paper-source:58d54f9787c7a7d7af26ba3c
+
+SEAM.DETLINE.UNIFICATION.01 is explicitly typed as a hypothesis, not a result.
+It asks for an isomorphism of the restricted bulk and seam determinant lines as
+line bundles with connection and says the four-dimensional Bismut-Freed step is
+open. Its finite shadows do not close the continuum source map.
+
+Why the eta scalar does not finish the line construction
+---------------------------------------------------------
+Dai and Freed, “Eta-Invariants and Determinant Lines”, arXiv:hep-th/9405012,
+https://arxiv.org/abs/hep-th/9405012, formulate the exponentiated eta invariant
+on a manifold with boundary as an element of an inverse determinant line and
+prove its gluing and variation laws. This is the relevant typing test: an eta
+number in a fixed presentation and a positive determinant modulus do not by
+themselves provide a global determinant-line section, its connection, or its
+holonomy over the space of gauge/source backgrounds. The original TFPT formulas
+would need the missing identification theorem, not merely matching eigenvalues.
+
+Smallest decisive missing interface
+------------------------------------
+No new projector or dynamics is needed for the test. Starting from the already
+displayed graded block, the original chain must provide one theorem with these
+objects and equalities:
+
+1. A charged Fredholm family with actual domains and representations,
+
+     D_A^+ : Dom_A^+ subset H^+ -> H^-
+
+   for complex Weyl fields, or an explicitly real skew family A_A for a
+   Pfaffian. The theorem must state how J, Gamma, the APS/Calderon domain,
+   P_adm and the SM charge representation act. Geometric D_+ cannot substitute
+   for this typing.
+
+2. A relative determinant/Pfaffian line with a chosen reference and connection,
+   for example Det(D_A^+) tensor Det(D_ref^+)^{-1}, together with a section whose
+   logarithmic norm reproduces the stated real zeta-determinant response and
+   whose phase/holonomy reproduces the eta/inflow term.
+
+3. The Grassmann source identity
+
+     Z_ferm[A;eta,bar eta] / Z_ferm[A_ref;0,0]
+
+   with its two-point kernel equal to the declared inverse/Green operator on the
+   same domain and with the same charge action. This decides whether the measure
+   is det(D^+), a Pfaffian, or a full Dirac determinant.
+
+4. Reflection positivity for that constructed kernel under the original
+   Euclidean reflection, including its relation to J and Gamma, rather than the
+   current conditional statement “assume the admissible CAR kernel is reflection
+   positive”.
+
+Success criterion: all four clauses hold for one original operator family and
+its source functional. Abort criterion: if only D_A^*D_A, Re log det, eta as a
+scalar, or a formal eta/bar eta alphabet is available, then the measure type and
+line connection remain unselected.
+
+Relation to the known full-Dirac current finding
+------------------------------------------------
+This report does not recompute
+`finding:full-dirac-cauchy-vector-cocycle-cancels-and-endpoint-domain-distinction`.
+That finding concerns a specified full-Dirac vector cocycle/phase under its CAR
+premises. The present result is earlier in the chain: the originals have not yet
+selected the Grassmann measure and source covariance to which that dichotomy
+would be applied. A real modulus response from the squared determinant is not
+removed by the phase cancellation result.
+
+Final classification
+--------------------
+
+* det(D^+): not constructed as the original physical source measure.
+* Pfaffian: mentioned in the reflection-positivity representation, but its real
+  skew kernel and Pfaffian line are not constructed.
+* det(D): later massive/full-sector determinant language supports modulus and
+  sector-weight statements, but is not connected to the primitive charged
+  eta/bar eta source by a common operator/domain theorem.
+* relative/graded determinant line: named as the correct unifying target in the
+  active research contract; the required four-dimensional line-with-connection
+  identification remains explicitly open.
+
+Therefore the earliest additional input is not a numerical normalization. It is
+the typed charged fermion family plus its determinant/Pfaffian-line section and
+source covariance on the original APS/Calderon domain. Once that exists, the
+real modulus, eta/inflow phase and OS kernel can be tested as projections of one
+source. At present they are separate original ingredients.
+
+Appendix: exact carrier compression test
+========================================
+
+Status: PROVED analytically under the stated operator assumptions.
+
+Duplicate check
+---------------
+The Atlas already contains two nearby but different results:
+
+* `finding:old-quarter-heat-transfer-has-controlled-rank-one-limit-and-odd-product`
+  proves the controlled heat-transfer limit to a rank-one ground-mode factor.
+* `finding:historical-em-rank-one-and-full-heat-traces-have-different-contracts`
+  separates the historical scalar rank-one response from the full finite heat
+  determinant.
+
+Neither finding states the carrier-compression equivalence below or its
+faithfulness consequence. The strict chart used for the active covariance
+calculus is recorded separately in
+`premise:faithful-differentiable-covariance-chart`, with 0<C<I and
+h(C)=log(I-C)-log C. The following test links these scopes without identifying
+them.
+
+Assumptions and compression
+---------------------------
+Let H be a complex Hilbert space. Let C=C*=C^2 be the old projective circle
+covariance. Let psi_0 be a unit vector in its empty complement,
+
+  C psi_0 = 0,
+  Pi = |psi_0><psi_0|,
+  C' = C+Pi.
+
+Let P_F=P_F*=P_F^2 be an orthogonal carrier projection, F=Ran(P_F), and define
+operators on F by
+
+  C_F  = P_F C P_F |_F,
+  C'_F = P_F C' P_F |_F.
+
+Put v=P_F psi_0 and w=||v||^2. Then
+
+  C'_F-C_F = |v><v|.
+
+Consequently its rank is zero when w=0 and one when w>0. For w>0 it is
+
+  |v><v| = w |v/sqrt(w)><v/sqrt(w)|.
+
+Its only nonzero eigenvalue is w. Thus it is a normalized orthogonal projector
+exactly when w=1. Merely knowing “rank one” does not justify replacing the
+compression by a unit rank-one projector.
+
+Relative determinant
+--------------------
+For every z for which I_F-z C_F is invertible,
+
+  (I_F-z C'_F)(I_F-z C_F)^(-1)
+    = I_F-z |v><v|(I_F-z C_F)^(-1).
+
+The difference from the identity has rank one, so its Fredholm determinant is
+well defined even when F is infinite dimensional. The matrix determinant lemma
+gives
+
+  D_F(z)
+   := det_F[(I_F-z C'_F)(I_F-z C_F)^(-1)]
+    = 1-z <v,(I_F-z C_F)^(-1)v>.
+
+No commutation of P_F with C is needed for this identity.
+
+Exact 1-z criterion
+-------------------
+Under the assumptions above, the following are equivalent:
+
+  (i)  D_F(z)=1-z on a nonempty open subset of the resolvent domain which is
+       analytically connected to z=0;
+  (ii) D_F(z)=1-z throughout that connected resolvent domain;
+  (iii) psi_0 lies in Ran(P_F).
+
+For a positive contraction C_F the singular z values lie on the positive real
+axis at reciprocals of nonzero spectral values, so the natural resolvent domain
+containing zero is connected. In finite dimension the same statement follows
+immediately from rational-function identity. Equality on a real open interval
+with an accumulation point also suffices by real analyticity and continuation.
+
+Proof. Set
+
+  m_F(z)=<v,(I_F-z C_F)^(-1)v>.
+
+If D_F(z)=1-z on an open set, then m_F(z)=1 there away from z=0. The identity
+theorem extends this to z=0. Hence
+
+  1=m_F(0)=||v||^2=w.
+
+Because P_F is an orthogonal projection and ||psi_0||=1, equality
+||P_F psi_0||=1 holds exactly when P_F psi_0=psi_0, equivalently
+psi_0 in Ran(P_F).
+
+Conversely, if psi_0 in Ran(P_F), then v=psi_0 and
+
+  C_F psi_0=P_F C psi_0=0.
+
+Therefore (I_F-z C_F)^(-1)psi_0=psi_0, so m_F(z)=1 and D_F(z)=1-z wherever the
+relative determinant is defined. This proves the equivalence.
+
+The projectivity of C ensures that C and C'=C+Pi are pure covariances and makes
+the physical endpoint interpretation immediate. The algebraic equivalence
+itself uses only C psi_0=0, unit normalization of psi_0 and orthogonality of P_F.
+
+Faithfulness and log-odds consequence
+-------------------------------------
+If the exact factor 1-z is retained, the criterion gives P_F psi_0=psi_0. On the
+same vector,
+
+  C_F psi_0=0,
+  C'_F psi_0=(C_F+|psi_0><psi_0|)psi_0=psi_0.
+
+Thus C_F has an eigenvalue 0 and C'_F has an eigenvalue 1. Neither covariance is
+strictly faithful on F. For
+
+  h(C)=log(I-C)-log C,
+
+the psi_0 eigenvalue is +infinity for C_F and -infinity for C'_F. In finite
+regularization this is precisely the divergence of the log odds at occupation
+0 and 1; in the operator formulation the logarithms are singular on that mode.
+
+The other compression regimes are also exact:
+
+* w=0: the carrier erases the added mode, C'_F=C_F and D_F(z)=1.
+* 0<w<1: the perturbation is rank one but not a normalized projector. Its
+  determinant begins D_F(z)=1-w z+O(z^2), and in general contains the full
+  compressed resolvent m_F(z). It cannot equal 1-z on an open z range.
+* w=1: the factor is exactly 1-z, but the two endpoint covariances are
+  nonfaithful as just proved.
+
+Consequent scope separation
+----------------------------
+The pure old-circle update and the active strict KMS covariance cannot be
+literally the same covariance on the same compressed carrier if the exact
+rank-one determinant factor 1-z is demanded. The former has an exactly empty
+mode before the update and an exactly filled mode after it. The latter requires
+0<C<I so that the finite log-odds chart is defined.
+
+This is not a contradiction between the two original results. It identifies the
+missing map between them. A heat or KMS regularization may approach the pure
+rank-one factor, and a different faithful covariance may encode a finite
+response, but then the object is a limit or a changed covariance. It is not the
+same strictly faithful compression of the projective circle state. The present
+test adds no new dynamics, carrier projector or source choice.
+
+Appendix: faithful relative-determinant continuation
+====================================================
+
+Status: PROVED as a sufficient operator theorem. Conditional only at the final
+source-identification step described below.
+
+Purpose
+-------
+The preceding appendix showed that a literal compression of the pure projector
+covariance cannot simultaneously retain the exact factor 1-z and be strictly
+faithful. The following construction resolves that mathematical tension without
+changing the circle operator, the shift, or an existing carrier projection. It
+uses the relative determinant of the full carrier-plus-complement operator.
+
+Circle assumptions and orientation
+----------------------------------
+Let B be the self-adjoint old circle operator and
+
+  P=1_(B<0),
+  u=M_z.
+
+Assume the orientation actually used in the old circle dictionary,
+
+  u P u* = P+Pi,
+  Pi=|psi_0><psi_0|,
+  P psi_0=0.
+
+For B=-i partial_theta on the twisted Fourier domain with spectrum n+a,
+0<a<1, multiplication by z sends n to n+1. Hence uPu* adds exactly the unique
+mode with eigenvalue a in [0,1), proving this orientation. Reversing B or the
+shift reverses the index and gives (1-z)^(-1), so the orientation is an essential
+hypothesis rather than a notation-free fact.
+
+Let C be any covariance satisfying
+
+  0 <= C <= I,
+  C-P in L^1(H),
+
+and for |z|<1 put
+
+  A_C=I-zC,
+  A_P=I-zP,
+  R_C=u A_C u* A_C^(-1).
+
+All inverses exist because ||zC||<1 and ||zP||<1.
+
+Trace-class control
+-------------------
+First,
+
+  uCu*-C
+   = u(C-P)u*-(C-P)+(uPu*-P)
+
+is trace class: the first two terms are trace class by assumption and unitary
+invariance of L^1, while the last term is Pi of rank one. Therefore
+
+  R_C-I = -z(uCu*-C)A_C^(-1)
+
+is trace class and det_F(R_C) is defined.
+
+The factorization
+
+  R_C
+   = (u A_C A_P^(-1) u*)
+     (u A_P u* A_P^(-1))
+     (A_P A_C^(-1))
+
+is an exact multiplication identity. Each factor is I plus trace class. Indeed,
+
+  A_C A_P^(-1)-I = -z(C-P)A_P^(-1),
+  A_P A_C^(-1)-I =  z(C-P)A_C^(-1),
+
+and the middle factor differs from I by rank one.
+
+Exact determinant invariance
+----------------------------
+Fredholm-determinant multiplicativity and unitary invariance give
+
+  det_F(u A_C A_P^(-1)u*) = det_F(A_C A_P^(-1)),
+  det_F(A_P A_C^(-1))     = det_F(A_C A_P^(-1))^(-1).
+
+Thus the first and third determinants cancel. For the middle factor, the old
+orientation gives
+
+  u A_P u* = I-z(P+Pi)=A_P-zPi.
+
+Since Ppsi_0=0, A_P^(-1)psi_0=psi_0, and hence
+
+  u A_P u* A_P^(-1)=I-zPi,
+  det_F(u A_P u* A_P^(-1))=1-z.
+
+Therefore, for every |z|<1,
+
+  det_F R_C = det_F R_P = 1-z.
+
+The exact factor is an index/relative-determinant invariant of the trace-class
+polarization class. It does not require C itself to contain an empty or filled
+eigenvector.
+
+Faithful thermal representative from the same B
+-----------------------------------------------
+For beta>0 define by functional calculus
+
+  C_beta=(I+exp(beta B))^(-1).
+
+Every spectral value lies strictly between zero and one, so C_beta has no 0 or 1
+eigenvectors. Moreover
+
+  log(I-C_beta)-log C_beta = beta B
+
+on Dom(B). The log-odds operator is therefore densely defined and self-adjoint;
+it is unbounded because B is unbounded, but it is not singular through a 0 or 1
+covariance eigenvector.
+
+On the twisted circle, lambda_n=n+a. For lambda_n>0,
+
+  0 <= C_beta(lambda_n) <= exp(-beta lambda_n),
+
+while for lambda_n<0,
+
+  0 <= 1-C_beta(lambda_n) <= exp(-beta |lambda_n|).
+
+These exponential tails are summable over n in Z. Hence
+
+  C_beta-P in L^1(H).
+
+The determinant theorem applies and yields
+
+  det_F[u(I-zC_beta)u*(I-zC_beta)^(-1)] = 1-z
+
+for all |z|<1, while C_beta remains faithful. This resolves the endpoint problem
+of the literal compressed projector calculation.
+
+Carrier-plus-complement Schur identity
+--------------------------------------
+Let F be any existing finite-dimensional orthogonal carrier projection and
+Q=I-F. No commutation of F with C or u is assumed. Set
+
+  A=I-zC,
+  A'=uAu*=I-z uCu*.
+
+For |z|<1, A and A' are invertible. Their Q-compressions
+
+  A_QQ=Q A Q |_Q,
+  A'_QQ=Q A' Q |_Q
+
+are also invertible because QCQ and Q uCu* Q are positive contractions and the
+Neumann bound applies. Define the Feshbach/Schur complements on F,
+
+  S_F =A_FF -A_FQ A_QQ^(-1) A_QF,
+  S'_F=A'_FF-A'_FQ A'_QQ^(-1)A'_QF.
+
+They are invertible because A,A' and their QQ blocks are invertible. Standard
+block Gaussian factorization gives
+
+  A = L diag(S_F,A_QQ) U,
+
+where L and U are triangular unipotent operators. Since F is finite, L-I and
+U-I are finite rank and their Fredholm determinants are one. The same holds for
+A'. Also A'-A is trace class by the calculation above, so
+A'_QQ-A_QQ is trace class. Multiplicativity then gives the exact identity
+
+  det_rel(A',A)
+   = det_F(S'_F S_F^(-1))
+     det_rel(A'_QQ,A_QQ).
+
+Since det_rel(A',A)=det_F R_C=1-z,
+
+  1-z
+   = det_F(S'_F S_F^(-1))
+     det_rel(A'_QQ,A_QQ).
+
+Thus every finite carrier projection admits an exact carrier-plus-complement
+factorization of the old circle index. The factor assigned to F alone is the
+Schur complement, not the naive compression I_F-z FCF. The naive compression
+can lose or attenuate the factor because it discards the complement term
+
+  A_FQ A_QQ^(-1) A_QF.
+
+No new carrier choice appears in this statement; it holds for every existing
+finite orthogonal F for which the displayed block decomposition is taken.
+
+Independent review verdict and remaining source condition
+---------------------------------------------------------
+The proposed continuation is mathematically sufficient:
+
+* every inverse used above exists for |z|<1;
+* every Fredholm determinant is applied to I plus trace class;
+* the first and last factors cancel exactly;
+* C_beta-P is trace class on the actual twisted circle;
+* C_beta is faithful and has h(C_beta)=beta B;
+* the Schur product retains the exact 1-z factor across carrier and complement
+  without assuming [F,C]=0.
+
+It introduces no interaction, coupling, fitted kernel or new carrier projector.
+It does change the pure ground-state covariance P to a thermal covariance
+C_beta. That is a state choice unless beta is already fixed by the source under
+comparison. The active support article
+`documents/articles--2026-08-29--holomorphic_kms_extension_en/sections/002-subsection-the-frozen-car-covariance.tex:1-46`
+(SHA-256 afb3b8aa137042aa4829e06b04c177fbb7f21661493ce2a5dbab66e2669c21ea,
+Atlas paper-source:f7ba3ce74ce4a828b7a83353) explicitly sets beta=1, but for a finite collar
+Hamiltonian h_collar. That passage alone does not identify h_collar with the old
+circle B.
+
+Accordingly there are two precise scopes:
+
+1. Same-circle mathematical continuation: PROVED for any declared beta>0 using
+   only B,u and functional calculus. No new coupling is required, and the exact
+   determinant factor is beta-independent.
+2. Identification with the active physical KMS source: CONDITIONAL on an
+   original map beta B = h_active, including the normalization of beta. If that
+   map is already supplied elsewhere, the theorem is the required sufficient
+   bridge. If it is absent, choosing beta or identifying the two Hamiltonians is
+   the first additional state/time-normalization input.
+
+No electromagnetic response or physical source selection is inferred here.
+
+Independent review of KMS-AND-CARRIER-TRANSPORT
+================================================
+
+Reviewed artifacts
+------------------
+
+* `KMS-AND-CARRIER-TRANSPORT.txt`
+  SHA-256: 9ce5e1b546392a82fe5f0d81bc55c5f41441e8c000ac792f3f15ccb2b1adc8bb
+* `check_kms_carrier_transport.py`
+  SHA-256: fbab52d3f3f93130a9fda6dd5015de5ff863e7ebd11a2283a28175674891bc34
+
+The checker was copied to a temporary directory and run with `python3 -B -OO`,
+so no Root-owned result file was rewritten. Verdict: PASS. The run reported 12
+cover/reverse-winding controls and PASS for finite cyclic compensation, pure
+partial retention and EM reference normalization.
+
+Review verdict
+--------------
+
+PROVED under the operator assumptions stated in Sections 2-7. The physical KMS
+source identification and the positive relative Dirac determinant identity in
+Section 9 remain CONDITIONAL exactly where the report marks them conditional.
+No error was found in the four requested points.
+
+Section 6: universal finite-rank compression loss
+-------------------------------------------------
+For the thermal circle covariance,
+
+  D_beta=u C_beta u*-C_beta
+
+is diagonal in the Fourier basis with strictly positive entries d_n and
+Tr D_beta=1. Thus D_beta is positive, trace class and injective. Let F be any
+finite-rank orthogonal projection and Q=I-F. Since the circle Hilbert space is
+infinite dimensional, Q is nonzero. Trace cyclicity for a trace-class operator
+and the orthogonal decomposition give
+
+  Tr D_beta=Tr(F D_beta F)+Tr(Q D_beta Q).
+
+The second compression is a nonzero positive trace-class operator: for every
+nonzero q in Ran Q,
+
+  <q,D_beta q>>0.
+
+Hence Tr(QD_beta Q)>0 and therefore
+
+  0<=Tr(FD_beta F)<1.
+
+No commutation between F and D_beta is used. If F is nonzero, the lower bound is
+also strict; allowing the zero projection explains the report's weak lower
+bound.
+
+For the finite-dimensional compressed relative determinant,
+
+  D_F(z)=det[(I_F-z F C'_beta F)(I_F-z F C_beta F)^(-1)],
+
+Jacobi's formula at z=0 gives
+
+  D_F'(0)=-Tr(F(C'_beta-C_beta)F)=-Tr(FD_beta F)>-1.
+
+Since (1-z)' at zero is -1, D_F cannot equal 1-z on any open z domain. Moreover
+C_beta and I-C_beta have trivial kernel. On the unit sphere of a finite F this
+implies strictly positive minima for both compressed quadratic forms, so
+
+  0<F C_beta F<I_F,
+  0<F C'_beta F<I_F.
+
+Their relative determinant is therefore finite and nonzero at z=1, whereas
+1-z vanishes. Both arguments in Section 6 are valid. The scope exclusion for an
+infinite-rank spacetime projection with only finite internal rank is necessary
+and correctly stated.
+
+Section 7: exact Schur transport
+--------------------------------
+For |z|<1, A,A' and their QQ compressions are invertible by the Neumann bound.
+Invertibility of the Schur complements follows from the standard block
+factorization. Because F is finite dimensional, every off-diagonal unipotent
+factor differs from I by finite rank, is nilpotent off the diagonal and has
+Fredholm determinant one. Since A'-A is trace class, its QQ compression is trace
+class, so
+
+  det_rel(A'_QQ,A_QQ)
+
+exists. Ordinary Fredholm multiplicativity gives exactly
+
+  det_rel(A',A)
+   =det(S'_F S_F^(-1)) det_rel(A'_QQ,A_QQ).
+
+There is no zeta-determinant multiplicative anomaly in this calculation. The
+covariance formula
+
+  S_F=I_F-zC_F-z^2 C_FQ(I_Q-zC_QQ)^(-1)C_QF
+
+has the correct sign and power of z. Thus carrier Schur factor plus complement
+retains 1-z for every finite orthogonal F, while naive FCF generally does not.
+
+Section 5: full NS cover
+------------------------
+On the antiperiodic cover, modes k+1/2 split by parity as
+
+  2(m+1/4),  2(m+3/4),
+
+which gives
+
+  B_cov=2(B_(1/4) direct_sum B_(3/4)).
+
+Multiplication by the cover coordinate swaps parity sectors and has the stated
+matrix
+
+  u_cov=[[0,u_base],[I,0]],
+  u_cov^2=diag(u_base,u_base).
+
+The primitive cover shift crosses one Fermi level, so its relative determinant
+is 1-z. Its square crosses two and gives (1-z)^2. Functional calculus must be
+applied to the full B_cov before the parity decomposition, as the report says;
+this introduces no selector of one quarter sector. Section 5 is correct.
+
+Section 9: EM reference normalization
+-------------------------------------
+With q(alpha)=delta_top exp(-2alpha),
+
+  q(0)=delta_top !=0.
+
+Therefore normalization at alpha_*=0 divides by 1-delta_top. It cannot be
+replaced by the seam-free reference q_ref=0. The checker's exact example,
+
+  delta_top=1/16,
+  q(alpha)=1/32,
+  (1-q(alpha))/(1-q(0))=31/30,
+
+correctly detects the missing denominator. Section 9 also keeps the needed
+boundaries: b=5/4 and the physical EM identification are not consequences of
+the Fredholm index theorem; the positive Dirac relative determinant, local
+counterterms and complete-sector residual normalization remain required.
+
+Final precision
+---------------
+The combined document proves an exact mathematical transport on the old circle
+and on its full NS cover. It does not yet prove that the active finite collar
+Hamiltonian is beta B_cov, that the active carrier projection is a finite-rank
+circle projection, or that the physical charged Dirac measure satisfies the
+relative determinant identity in equation (13). These are explicit conditions,
+not hidden defects in the operator proof. Under them, the continuation is
+sufficient; without them, the physical source identification remains open.

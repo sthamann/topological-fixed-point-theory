@@ -17,7 +17,7 @@ import numpy as np
 HERE = Path(__file__).resolve().parent
 ROOT = HERE.parents[2]
 PINS = {
-    "experiments/theory-contracts/neutral-pair-composition/checker.py": "95e9c38fd176681160ff5dae5764cf53acee70832a6f4a92ef6fcbf13305bca4",
+    "experiments/theory-contracts/neutral-pair-composition/checker.py": "4d6c2adf65a75795bd00871256abb189dd4b90173bdfb661b0bd9663b29bab4d",
     "experiments/theory-contracts/neutral-pair-composition/diagnostics.json": "7a31d7e62724dafd53f80c0f4a5596831eef9c3299984fcb8332119d799064cb",
 }
 

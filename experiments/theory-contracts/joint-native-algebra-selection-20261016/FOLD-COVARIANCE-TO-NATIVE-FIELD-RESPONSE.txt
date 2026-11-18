@@ -1,0 +1,329 @@
+Original folded covariance to native local quartic response
+17 October 2026 -- UR.NATIVE.JOINT_OPERATOR.01 -- PARTIAL
+
+RESULT
+
+We derive the explicit current and neutral-quartic response of the retained
+chiral fold/sea in a FIXED conformal point-splitting reference, through the
+EXISTING M/O dictionary. No new clock, coupling, field species or q-selection
+is chosen. The reference translation is conditional on this field dictionary;
+M and O alone are not its physical P1 selection theorem.
+
+The original state information reaches the native quartics as a calculable
+affine current shift. Its entire two-point kernel, all positive-frequency
+mode Grams and the actual full level4 Fock response follow without a cutoff.
+The native erasure identity forces the lowest nontrivial state dependence
+to be scalar; directional dependence begins at fourth order in the shift.
+
+Both retained quarter cases: no one-point ray equals a native simplex ray;
+the first new response has rank4 and a unique kernel ray, but that ray is
+also outside the native six. NONE of the60 actual polar flags commutes with
+the full level4 Gram or with the first response Gram. Thus these particular
+source responses do NOT produce the old flag by direct spectral selection.
+This is not a no-go for every nonlinear response, charged history, local
+profile, physical selector or full P1 theory.
+
+1. ORIGINAL SOURCES, RETAINED PREMISES, FIRST IDENTIFICATION
+
+Retain the actual chiral source circle, charged quarter holonomy and its
+filled sea; the already stipulated eightfold quotient/localization; original
+M from v16-operator-pullback/fold-results.json; literal J-compatible
+O=T S^-1/sqrt2; and the actual normalized native quartics f_i=P_i/sqrt(N_i),
+N=(96,8,8,8,1). No arbitrary U5 identification is made. P1 selection of the
+source/quotient/current dictionary remains upstream, as previously recorded.
+
+The native currents are here identified with the FIXED CONFORMAL NS
+point-split currents. State-normal-ordered sea currents are related to those
+by an explicit c-number counterterm. Identifying the two without that term
+would change the questioned fields. Conversely, choosing this reference
+solely to obtain a desired flag would be a new assumption, and is not done.
+Results below are scoped to this literal reference dictionary.
+
+Original source-localized-spinor-20260919/PROOF.txt section3 explicitly uses
+exp(i(j-a)theta), occupied j>=1. At the same coordinate orientation,
+alpha=1-a and n=j-1, so these are exp(i(n+alpha)theta) with n>=0 occupied.
+The negative-D chiral convention used in the existing fold/quarter proofs
+instead fills n<=-1. They must be related by the explicitly transported
+current/particle-hole/orientation dictionary; they are not the same labels.
+We retain both counterterm signs below. Homogeneous quartic response tensors
+are unchanged by b->-b, so this sign issue cannot be used to fit a flag.
+Neither convention silently identifies the full microscopic QWZ source
+with the P1 kernel or the ordinary E8 vacuum representation.
+
+2. EXACT COVARIANCE: DIAGONALIZE THE SAME FOLD, DO NOT ADD COPIES
+
+For the negative-D chiral presentation let
+  f_(n,alpha)(theta)=exp(i(n+alpha)theta)/sqrt(2pi), 0<alpha<1,
+  C_alpha=1_(D_alpha<0), D_alpha=-i partial_theta.
+The already recorded fold is
+  (Ff)_r(x)=f((x+2pi r)/8)/sqrt8, r=0,...,7.
+Write n=8l+k and mu_k=(k+alpha)/8. Then
+  F f_(8l+k,alpha) = U_alpha(:,k) exp(i(l+mu_k)x)/sqrt(2pi),
+  U_alpha(r,k)=exp(2pi i(k+alpha)r/8)/sqrt8.
+U_alpha is unitary: it is a diagonal unitary times the exact 8-point DFT.
+This proves the full spectral diagonalization, not merely a finite check.
+
+Since 8l+k+alpha<0 iff l<=-1 for every k, in this EIGENCHANNEL chart
+  (U_alpha* F C_alpha F* U_alpha)_(jk)
+      =delta_jk C^-_(mu_k),
+  C^-_mu(s)=sum_(l<=-1) exp(i(l+mu)s)/(2pi).
+In the original ARC chart the off-diagonal correlations are retained by
+U_alpha diag(C^-_mu) U_alpha*. No product of eight independent arc vacua has
+been introduced. A diagonal quasifree covariance factorizes in this actual
+eigenmode decomposition; that is a derived property, not extra copies.
+All finite CAR words follow from this same covariance by the quasifree
+determinant rule. The quotient localization remains a stipulated input.
+
+For the original positive-filled presentation, the identical calculation
+gives l>=0 in every eigenchannel. This is explicitly verified against
+j-a=n+alpha and j>=1, with alpha=1-a. No negative-sea reinterpretation is
+silently imposed on that original formula.
+
+3. THE NORMAL-ORDERING TRANSLATION AND TIME ARE FIXED TOGETHER
+
+Off coincidence, suppressing only the common factor1/(2pi),
+  C^-_mu(s)=exp(i delta s)/(2i sin(s/2)), delta=mu-1/2.
+Subtract the SAME NS kernel with delta=0. The finite point-split term is
+  lim_(s->0) [exp(i delta s)-1]/[2i sin(s/2)] = delta.
+For the original positive halfline the off-diagonal kernel is the negative
+of this one and the corresponding difference is -delta. Fermion ordering
+and the charge-current sign must be transported with it.
+
+Let H_sea denote currents normal ordered in the actual sea. In the fixed
+negative-D charge convention the conformal NS currents have the form
+  J_delta(z)=H_sea(z)+delta/z.
+The sign is checked by the actual particle/hole gaps:
+  1/2+delta=mu, 1/2-delta=1-mu.
+It is not a chosen coupling. The counterterm is the difference of two
+specified kernels of the same source. A global periodic gauge equivalence
+is not asserted; the endpoint holonomy is retained.
+
+On source CAR charge p in Z8 and oscillator number N, the physical excitation energy is
+  H_exc=8[N+|p|^2/2+delta.p].
+The factor8 is inherited from the original fold; the additive conformal
+ground energy |delta|^2/2 is subtracted only when defining the source's
+normal-ordered excitation generator. E8 charges enter only with the separately
+stipulated extension. This does not identify L0 with a
+physical second or delete a holonomy from charged states.
+
+After existing M and O, put
+  d=M delta, b=U_+^T O^T d,
+where U_+,a=(e_(2a)-i e_(2a+1))/sqrt2, J U_+=i U_+.
+Explicitly,
+  alpha=1/4: b=((7-9i)/32,(1-i)/4,-i/4,(3-3i)/32),
+  alpha=3/4: b=((5-11i)/32,(1-i)/4,-i/4,(1-i)/32).
+Both have ||b||^2=85/256 and ||d||^2/2=85/256.
+
+4. QUARTIC AND CHARGED FIELD MAPS, WITH THEIR EXACT SCOPE
+
+Because the four J-positive currents are bilinearly isotropic, they have no
+mutual self-contractions. Translation therefore gives the literal field law
+  F_i^(d)(z)=:f_i(h_+(z)+b/z):.
+It is a local field identity on the punctured quotient chart with the
+original twist retained. The current derivative/erasure rule commutes with
+this affine substitution; actual f_i and partial_a f_i are not replaced
+by abstract fields of equal dimension.
+
+For the ALREADY STIPULATED E8 extension this is exactly the restriction of
+Li's Delta construction (arXiv:1004.0864, eq2.4, Proposition2.1):
+  Delta(d,z)=z^(d.h0) exp[sum_(n>0) d.h(n)/(-n) (-z)^(-n)],
+  Y_d(a,z)=Y(Delta(d,z)a,z).
+It extends the current shift to a twisted module and respects the full
+vertex product. Root fields satisfy
+  Y_d(e^beta,z)=z^(d.beta)Y(e^beta,z).
+The conformal modes obey
+  L_n^(d)=L_n+d.h(n)+|d|^2/2 delta_(n,0).
+These are representation consequences of a supplied E8 algebra and d,
+not a derivation of its physical extension from odd CAR fields.
+
+The twist is sigma_d=exp(2pi i d.h0), of order16 on the actual roots.
+It is the original fold g, not the previously tested g^2: M1/2=e3+e6 is
+an E8 root and nu=M(2mu) satisfies nu-2d=M1 in E8, so sigma_d^2 is that
+order8 g^2. All240 phases are checked. The original internal order4
+character v remains a DIFFERENT named datum.
+
+Apply the shift exactly ONCE: either shifted fields on the underlying
+vacuum copy with h0 Omega=0, or ordinary fields on a charge-d Heisenberg
+Fock module. Not both. No assertion d in E8 is made. The concrete p=0
+vacuum copy is inherited from the source sea; energy minimization does not
+select it within the extension. In fact e1+e4 has1+d.(e1+e4)=0 for both
+quarter cases, giving another equal-energy root primary, as already known.
+Li's theorem does not supply a new unique physical vacuum.
+
+5. COMPLETE LOCAL TWO-POINT KERNEL AND ALL MODE RESPONSES
+
+Let m_i=f_i(b) and, for r=0,...,4, define the Hermitian source tensors
+  (D_r)_ij=sum_(|nu|=r) conjugate(partial^nu f_i(b))
+                              partial^nu f_j(b)/nu!.
+Here D0=conjugate(m)m^T includes the disconnected mean term. The Riesz
+vector of the one-point functional is conjugate(m), not m; the six
+comparison rays are real in the literal N-chart, so either ray test agrees.
+
+Wick's theorem for the SAME translated Gaussian current state gives exactly
+  <F_i^(d)#(z) F_j^(d)(w)>
+    =sum_(r=0..4) (D_r)_ij /
+                   [(z-w)^(2r) z^(4-r) w^(4-r)].
+The adjoint uses conjugate(b)/z and b/w respectively. This is the entire
+separated-point kernel, not one leading OPE pole. All Taylor terms and
+smooth local-profile integrals of this two-point distribution are thereby
+specified, with the inherited radial/Wightman-i0 boundary-value prescription,
+not an arbitrarily chosen contact-term extension. A particular physical
+profile/instrument is not selected.
+
+Radial expansion gives the complete oscillator-grade k response Gram:
+  B0=D0,
+  Bk=sum_(r=1..min(k,4)) binomial(k+r-1,2r-1) D_r, k>=1.
+No cutoff or intermediate code projection occurs. The coefficient matrix
+from D1..4 to B1..4 is triangular with determinant1:
+  [[1,0,0,0],[2,1,0,0],[3,4,1,0],[4,10,6,1]].
+Hence these four mode Grams determine all four connected Wick tensors;
+this is not an added tensor-product or dynamical composition assumption.
+
+Actual code/erasure normalization forces
+  D4=I5, D3=||b||^2 I5=85/256 I5.
+The D3 identity follows from the actual20 derivative states' orthonormality;
+it is checked with the literal original polynomials. Thus the second-order
+state perturbation is scalar. D2 begins at fourth order in b, D1 at sixth,
+D0 at eighth. State orientation can be invisible to a lower-order probe
+even though d has no native stabilizer. There is no contradiction.
+
+For the fixed original grade4 input mode,
+  B4=I+6||b||^2 I+10D2+4D1
+     =(383/128)I+10D2+4D1.
+An independent sparse Fock calculation of [z^0]F_i^(d)(z)Omega reproduces
+EVERY entry of this matrix. It retains oscillator partitions4,31,22,211,
+1111, with20,28,28,28,35 monomials in the five unnormalized outputs.
+Nothing is compressed back to the mode1-quartic subspace.
+
+6. THE SMALLEST ACTUAL MARKING TESTS FAIL, WITHOUT A FIT
+
+Use the six previously source-derived simplex rays and all60 P(q,S), with
+their literal original N coordinates only for comparison after response
+construction. Neither old q5, sigma, P2 nor an angle is an input to D_r.
+For BOTH retained alpha values:
+  -- The one-point Riesz ray matches none of the six native rays.
+  -- D1 has rank4; its one-dimensional kernel matches none of those rays.
+  -- No one of60 P(q,S) commutes with D1.
+  -- No one of60 P(q,S) commutes with the complete B4.
+  -- Therefore none reduces the entire D0..4 two-point response family.
+All statements are exact symbolic equality tests, not proximity thresholds.
+
+Any spectral projector of a Hermitian B commutes with B. Consequently no
+P(q,S) can be obtained as a spectral projector of this actual B4 or D1.
+No chosen pair of eigenvalues, minimum/maximum overlap or nearest flag
+repairs the literal mismatch. A generic rank2 spectral subspace is not a
+physical dictionary simply because its dimension is two.
+
+This excludes ONLY those stated direct mean/kernel/spectral identifications.
+A physically relevant projector need not commute with every possible
+source response. We do NOT impose that as a new physical principle, demand
+closed code dynamics, or conclude that the original state cannot select a
+mark through a different source-derived observable or charged history.
+Particular profiles might give special Grams, but must be supplied by the
+original source law rather than tuned after this test.
+
+All D_r are unchanged under b->-b, since partial^nu f_i is homogeneous of
+degree4-r. Complex conjugation conjugates the matrices and transports the
+real candidate flags consistently. The negative/positive current convention
+cannot convert these failed tests into a successful one.
+
+7. THE EXISTING ACTUAL SOURCE WINDING: A FALSE RANK2 SHORTCUT REMOVED
+
+We also evaluate the SPECIFIED original source intervention, not a newly
+fitted field history. Seam-joint-ward-state-20261014 sections16,17,21 derive
+unit winding on the retained chiral source and its fourth power W4:
+  W4: p -> P p+a, a=(1,1,1,1,0,0,0,0), P:k<->k+4.
+It permutes every nonzero current oscillator by P. Its actual Klein/cocycle
+factorization on even D8 and the given E8 extension is already proved there;
+it is not re-derived from raw P1 or called a local instrument here.
+
+Using SAME existing M and O, its native real oscillator action is
+  G=O^T M P M^T O.
+On the positive native directions this acts EXACTLY as
+  u0 -> i conjugate(u0), u1 -> -u1,
+  u2 -> u2,             u3 -> -i conjugate(u3).
+It neither commutes nor anticommutes with J. The positive-to-positive block
+is diag(0,-1,1,0), and the opposite-polarization block diag(i,0,0,-i).
+Thus it is not silently a native four-register U4 clock. Both polarizations
+and all exterior source components are retained in the following test.
+
+If one compares only the unshifted homogeneous quartic frames, their
+oscillator overlap is
+  A0=diag(1/2,0,0,1/2,0), rank2.
+This tempting2+3 count is NOT the full original state response. It is not
+declared to be the original polar mark or a physical sector decomposition.
+
+Let R_b(f)=[z^0]Y_d(F,z)Omega be the COMPLETE grade4 response from section5.
+For the source's actual outgoing charge a use the literal SAME FIELDS on
+that state, hence b_out=U_+^T O^T(d+M a). Define the cross-response matrix
+  C_ji=< R_(b_out)(f_j), Gamma(G) R_b(f_i) >.
+This is a matrix element between complete source states, with the outgoing
+charge a kept. It is not an executed projection or a requirement that the
+five-dimensional observer slice be closed.
+
+For BOTH retained quarter phases C has rank5, not rank2. All source modes
+and opposite-polarization components remain in Gamma(G) R_b. Its full Gram
+equals the incoming Gram exactly, as it must for the actual unitary W4.
+No exterior amplitude is thrown away. The lower-degree terms fixed by the
+source's normal-ordering shift remove the homogeneous-chart rank deficiency.
+
+The physical source time increments are respectively7 and9 (fold units7/8,
+9/8), agreeing with the ORIGINAL Ward law
+  [K_alpha,W4]=W4(Q/2+3/4+alpha/2), Q=0 on the inputs.
+The outgoing actual charge is M a=(1,0,1,1,0,1,0,0), and W4^2 carries p to
+p+(1)^8 in the source chart. No closed finite clock is asserted. A chart
+overlap rank is not a probability, a physical admissibility projector or
+a no-go for every other charged process.
+
+This adds a concrete source/operator check to the neutral state result:
+the original winding is now evaluated on the full state-dependent native
+field response, including charge carry, time and polarization. A static
+2+3 count obtained after suppressing those state terms is not preserved.
+
+8. WHAT IS CLOSED AND WHAT THE NEXT STEP MUST RETAIN
+
+Closed within the stated dictionary: full covariance eigenchannel transport,
+finite normal-ordering counterterm, actual current/quartic state response,
+entire separated two-point kernel/all-mode family, erasure-protected scalar
+lower-order response, exact direct marking tests and the specified original
+W4 full-state cross-response/time/charge test. The state information
+has not been dropped: B4 is nonscalar and depends on which quarter is used.
+
+Still open: physical selection of the native conformal-current dictionary
+and a source-derived readout that chooses q,S. M/O root actions alone did
+not establish this physical identification. The new calculation must not be
+reported as the complete raw P1-to-E8 field/state map or a fermion/Higgs map.
+
+The next candidate must be a PARTICULAR original observable/intervention
+whose coefficients, normal-ordering reference, charged domain and ordered
+history are already supplied by the source, now evaluated with this full
+twisted response. All charged root factors z^(d.beta), counterterms and
+exterior intermediate states must be retained. General eigenvector hunting,
+another neutral vacuum replay, or choosing a profile to match P2 would add
+the missing rule rather than derive it. The original global pair result and
+the internal-vacuum q4/q5 residual symmetry remain valid in their own scopes.
+
+SOURCE ROUTES / REPRODUCTION
+
+Existing repository sources:
+  v16-operator-pullback-20261014/FOLD-AUDIT.md and fold-results.json;
+  source-localized-spinor-20260919/PROOF.txt sections1,3;
+  seam-joint-conjugation-20261015/PROOF.txt sections3,4;
+  seam-joint-ward-state-20261014/PROOF.txt sections16,17,21 (actual W4);
+  source-cocycle / ordinary E8 current realization already retained;
+  tfpt_explorer/cartan_source.py original S/T/J root dictionary;
+  tfpt_explorer/process.py actual five quartics/erasure.
+
+Primary mathematical reference (module extension, not physical selection):
+  Haisheng Li, Twisted modules and pseudo-endomorphisms,
+  https://arxiv.org/pdf/1004.0864, eq2.4 and Proposition2.1, pp4-5.
+The current counterterm and complete polynomial/Wick computations above
+are derived explicitly; Li's theorem is not called a new TFPT proof.
+
+Reproduce with python3 -B -OO, in this order:
+  check_fold_state_dictionary.py
+  check_fold_quartic_transport.py
+  check_fold_response_tensors.py
+  check_fold_primitive_winding.py
+Each uses explicit exceptions, not optimization-removable asserts.
+PARTIAL; no original ledger, physical gate, empirical or T1-T8 promotion.

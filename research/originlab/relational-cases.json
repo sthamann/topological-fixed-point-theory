@@ -1,0 +1,393 @@
+[
+  {
+    "lane": "r104_variant",
+    "modes": 4,
+    "phase_pi": "-1/5",
+    "modulus": 2
+  },
+  {
+    "lane": "det_word",
+    "modes": 16,
+    "phase_pi": "1/7",
+    "word": [
+      [
+        1,
+        "annihilate"
+      ],
+      [
+        1,
+        "create"
+      ]
+    ],
+    "intervals": [
+      "1/7",
+      "2/7",
+      "3/7"
+    ],
+    "number_modulus": 4
+  },
+  {
+    "lane": "compare_memories",
+    "left": {
+      "cap": [
+        [
+          1,
+          0
+        ],
+        [
+          0,
+          0
+        ]
+      ],
+      "interface": {
+        "source": "finite-declared-regional-interface",
+        "clock": "ordered",
+        "reference": "empty"
+      },
+      "operations": {
+        "X": [
+          [
+            0,
+            1
+          ],
+          [
+            1,
+            0
+          ]
+        ]
+      }
+    },
+    "right": {
+      "cap": [
+        [
+          1,
+          "1/2"
+        ],
+        [
+          0,
+          0
+        ]
+      ],
+      "interface": {
+        "source": "finite-declared-regional-interface",
+        "clock": "ordered",
+        "reference": "empty"
+      },
+      "operations": {
+        "X": [
+          [
+            0,
+            1
+          ],
+          [
+            1,
+            0
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "lane": "cap_constraints",
+    "input": {
+      "operations": {
+        "X": [
+          [
+            0,
+            1
+          ],
+          [
+            1,
+            0
+          ]
+        ]
+      },
+      "observations": [
+        {
+          "word": [],
+          "value": 1
+        }
+      ]
+    }
+  },
+  {
+    "lane": "charge_visibility",
+    "input": {
+      "charges": [
+        2,
+        16,
+        24
+      ],
+      "flux_pi": "1/4"
+    }
+  },
+  {
+    "lane": "transport_network",
+    "input": {
+      "vertices": [
+        "A",
+        "B",
+        "C"
+      ],
+      "dimension": 2,
+      "edges": {
+        "ab": {
+          "from": "A",
+          "to": "B",
+          "matrix": [
+            [
+              0,
+              1
+            ],
+            [
+              1,
+              0
+            ]
+          ]
+        },
+        "bc": {
+          "from": "B",
+          "to": "C",
+          "matrix": [
+            [
+              1,
+              0
+            ],
+            [
+              0,
+              -1
+            ]
+          ]
+        },
+        "ac": {
+          "from": "A",
+          "to": "C",
+          "matrix": [
+            [
+              1,
+              0
+            ],
+            [
+              0,
+              1
+            ]
+          ]
+        }
+      },
+      "path_pairs": [
+        {
+          "from": "A",
+          "to": "C",
+          "routes": [
+            [
+              [
+                "ab",
+                1
+              ],
+              [
+                "bc",
+                1
+              ]
+            ],
+            [
+              [
+                "ac",
+                1
+              ]
+            ]
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "lane": "origin_dsl",
+    "size": 4,
+    "seed": 26013,
+    "mutations": 32,
+    "depth": 4,
+    "profile": {
+      "atoms": {
+        "enter": {
+          "matrix": [
+            [
+              1
+            ],
+            [
+              0
+            ]
+          ],
+          "boundary": [
+            "boundary",
+            "east"
+          ],
+          "source": "declared injection"
+        },
+        "leave": {
+          "matrix": [
+            [
+              "1/2",
+              0
+            ]
+          ],
+          "boundary": [
+            "west",
+            "boundary"
+          ],
+          "source": "declared readout"
+        },
+        "retain": {
+          "matrix": [
+            [
+              "1/3"
+            ]
+          ],
+          "boundary": [
+            "boundary",
+            "boundary"
+          ],
+          "source": "declared comparison"
+        },
+        "propagate": {
+          "matrix": [
+            [
+              "1/2",
+              "1/4"
+            ],
+            [
+              "1/4",
+              "1/2"
+            ]
+          ],
+          "boundary": [
+            "east",
+            "east"
+          ],
+          "source": "declared transfer"
+        },
+        "open": {
+          "matrix": [
+            [
+              "1/2",
+              0
+            ],
+            [
+              0,
+              "1/2"
+            ]
+          ],
+          "boundary": [
+            "east",
+            "east"
+          ],
+          "source": "declared transfer"
+        }
+      },
+      "seams": [
+        {
+          "boundary": [
+            "east",
+            "west"
+          ],
+          "matrix": [
+            [
+              1,
+              0
+            ],
+            [
+              0,
+              1
+            ]
+          ],
+          "source": "explicit east to west seam"
+        }
+      ],
+      "families": {
+        "sewing": [
+          "glue",
+          "mirror"
+        ],
+        "evolution": [
+          "compose",
+          "iterate"
+        ],
+        "closure": [
+          "identify",
+          "fix"
+        ]
+      },
+      "parameters": [
+        1,
+        2,
+        4
+      ],
+      "max_dimension": 8,
+      "premises": [
+        "finite declared interfaces"
+      ],
+      "probes": {
+        "east-readout": {
+          "boundary": "east",
+          "state": [
+            [
+              1
+            ],
+            [
+              0
+            ]
+          ],
+          "operations": {
+            "flip": [
+              [
+                0,
+                1
+              ],
+              [
+                1,
+                0
+              ]
+            ],
+            "phase": [
+              [
+                1,
+                0
+              ],
+              [
+                0,
+                -1
+              ]
+            ]
+          },
+          "costs": {
+            "flip": 2,
+            "phase": 3
+          }
+        }
+      }
+    },
+    "suggested": [
+      [
+        "glue",
+        [
+          "atom",
+          "leave"
+        ],
+        [
+          "atom",
+          "enter"
+        ]
+      ],
+      [
+        "compose",
+        [
+          "atom",
+          "leave"
+        ],
+        [
+          "atom",
+          "enter"
+        ]
+      ]
+    ]
+  }
+]

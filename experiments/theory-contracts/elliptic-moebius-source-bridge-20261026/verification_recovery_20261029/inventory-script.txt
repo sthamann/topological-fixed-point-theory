@@ -1,0 +1,76 @@
+"""One-off read-only source inventory after graph discovery.
+
+This records coverage and candidate evidence. Lexical flags are navigation,
+not mathematical verdicts. It does not run or modify verification modules.
+"""
+import ast
+import csv
+import hashlib
+import json
+from pathlib import Path
+import re
+import warnings
+
+ROOT=Path('/Users/stefanhamann/Projekte/tfpt-theoryv4')
+OUT=Path(__file__).parent
+SKIP={'.git','.lake','node_modules','__pycache__','.venv','venv','build','dist','Pyrate3'}
+SOURCE_WORDS=re.compile(r'\bP1\b|primitive|seam|source',re.I)
+BRIDGE_WORDS=re.compile(r'kernel|\bCAR\b|\bGNS\b|\bKMS\b|reflect|\bOS\b|sewing|Wick|gaussian|measure|insertion|fermion|local.net|boundary',re.I)
+TERMS=['P1','source','seam','kernel','covariance','CAR','GNS','KMS','reflection','OS','sewing','Wick','gaussian','locality','physical','conditional','given','assum','hardcod','random','literal True','S3','ALG-EXH','FE-GEN','MMST']
+
+
+def inventory():
+    warnings.simplefilter('ignore', SyntaxWarning)
+    registry=list(csv.DictReader((ROOT/'verification/script_registry.csv').open()))
+    ledger=list(csv.DictReader((ROOT/'verification/status_ledger.csv').open()))
+    registered={x['script'].removesuffix('.py') for x in registry}
+    relevant_ledger=[]
+    for row in ledger:
+        text=' '.join(row.values())
+        if SOURCE_WORDS.search(text) and BRIDGE_WORDS.search(text):
+            relevant_ledger.append(row)
+    files=[]
+    roots=['verification','experiments','lean','proofs']
+    for relroot in roots:
+        directory=ROOT/relroot
+        if not directory.exists():continue
+        for p in directory.rglob('*'):
+            if not p.is_file() or p.suffix not in {'.py','.lean','.wl','.wls'}:continue
+            rel=p.relative_to(ROOT)
+            if any(part in SKIP for part in rel.parts):continue
+            # RH is a separate research branch; it is not used as TFPT evidence.
+            if 'rh' in rel.parts or 'riemann' in rel.parts:continue
+            raw=p.read_bytes()
+            try:text=raw.decode('utf-8')
+            except UnicodeDecodeError:continue
+            row={'path':str(rel),'sha256':hashlib.sha256(raw).hexdigest(),'lines':len(text.splitlines()),'language':p.suffix[1:],'registered':relroot=='verification' and p.stem in registered,'source_bridge_candidate':bool(SOURCE_WORDS.search(text) and BRIDGE_WORDS.search(text)),'term_counts':{t:len(re.findall(re.escape(t),text,re.I)) for t in TERMS}}
+            row['score']=sum(min(v,6) for t,v in row['term_counts'].items() if t in ['P1','source','kernel','CAR','GNS','sewing','physical','conditional','given','assum'])
+            if p.suffix=='.py':
+                try:
+                    tree=ast.parse(text)
+                    row['docstring']=(ast.get_docstring(tree) or '')[:1800]
+                    row['parse_error']=None
+                    row['literal_boolean_check_calls']=[]
+                    for n in ast.walk(tree):
+                        if isinstance(n,ast.Call):
+                            name=ast.unparse(n.func)
+                            if re.search(r'(check|chk|require|assert|record|report|add)$',name,re.I) and any(isinstance(a,ast.Constant) and type(a.value) is bool for a in n.args):
+                                row['literal_boolean_check_calls'].append({'line':n.lineno,'source':ast.get_source_segment(text,n)[:500]})
+                    row['verification_dependencies']=sorted(set(re.findall(r'\bv\d+_[A-Za-z0-9_]+',text)))
+                except SyntaxError as e:row['parse_error']=str(e)
+            else:
+                row['declaration_flags']=[{'line':i,'text':line.strip()[:350]} for i,line in enumerate(text.splitlines(),1) if re.search(r'\b(axiom|sorry|admit)\b',line)]
+            files.append(row)
+    files.sort(key=lambda r:r['path'])
+    top_verification=[f for f in files if Path(f['path']).parent==Path('verification') and re.match(r'v\d+_',Path(f['path']).stem)]
+    actual={Path(f['path']).stem for f in top_verification}
+    summary={'registry_count':len(registry),'registry_unique':len(registered),'ledger_count':len(ledger),'ledger_active':sum(x.get('active','').lower()=='true' for x in ledger),'top_level_verification_modules':len(actual),'registered_missing':sorted(registered-actual),'top_level_unregistered':sorted(actual-registered),'scanned_source_files':len(files),'language_counts':{lang:sum(f['language']==lang for f in files) for lang in ['py','lean','wl','wls']},'source_bridge_candidate_files':sum(f['source_bridge_candidate'] for f in files),'candidate_ledger_rows':len(relevant_ledger),'ast_parse_errors':[f['path'] for f in files if f.get('parse_error')],'coverage_scope':'All Python/Lean/Wolfram source under verification, experiments, lean, proofs; build/vendor/RH excluded. Lexical screening and AST flags are not proof review. No suite executed.'}
+    result={'summary':summary,'files':files,'candidate_ledger':relevant_ledger}
+    (OUT/'verification-source-inventory.json').write_text(json.dumps(result,ensure_ascii=False,indent=2)+'\n')
+    print(json.dumps(summary,ensure_ascii=False,indent=2))
+    ranked=sorted([f for f in top_verification if f['source_bridge_candidate']],key=lambda f:-f['score'])
+    print('Highest ranked original-source candidates:')
+    for f in ranked[:35]:print(f['path'],f['score'])
+
+
+if __name__=='__main__':inventory()

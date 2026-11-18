@@ -1,0 +1,153 @@
+ORIGINAL U6: JOINT TRIALITY/SHEET CHARACTER AND PHYSICAL SECTOR SELECTION
+Independent narrow source/code review, 30 October 2026.
+No original/pinned-file change, Atlas write, new search class or suite run.
+
+VERDICT
+The originals ALREADY DECLARE the quark/lepton leading CP readings rho and
+rho^4, hence the common triality omega^2 and opposite sheet signs. Once
+that readout assignment is assumed, the actual positive product U6 has
+unique rank-one joint projectors. No further Fourier-phase choice is needed.
+
+What v233 does NOT do is derive this assignment as an action on the original
+local fields or on their source insertions. Its code inserts exponents1,4
+and checks their arithmetic. The strongest later 'phase origin' and
+'Galois-forced' checkers inspected also insert the same values. The genuine
+mixed-spin realization of U6 remains positive and is not undone by this
+source-use distinction.
+
+1. THE CODEGRAPH AND ACTUAL v233 DATA FLOW
+
+The graph-first query for verification/v233_cp_triality_phase.py returned
+'project not found or not indexed' for the parent repository. The known
+original files were then read directly; no alternative project was invented.
+
+verification/v233_cp_triality_phase.py:
+ 43: imports only check,summary,reset,N_fam from project constants;
+ 50-52: explicitly defines scalar rho,omega and sheet=-1;
+ 54-64: checks mu6 factorization and the three supplied cusp weights;
+ 66-79: explicitly assigns q_fam,q_sheet=1%3,(-1)^1 and
+        l_fam,l_sheet=4%3,(-1)^4, then checks equal family/opposite sheet;
+ 81-89: checks an order-three factor of the order-thirty arithmetic;
+ 91-97: scalar negative controls and N_fam=3.
+There is NO U6 matrix, v252 input, physical field, source insertion,
+Yukawa/Majorana operator, source state, time or quark/lepton representation
+map in this checker. In particular the q/l variable names at68-69 are
+not obtained from the actual SM source labels.
+Its own status35-39 explicitly retains the physical CP derivation as [C].
+SHA256 43b34998aa882f2207fc1ebaa74b67cf157a5c8de977a62afa363d8f0284b94c.
+
+The first six-cycle matrix in v231_cp_mu6_phases.py:68-72 is the valid
+regular shift. But its quark/lepton phases are already inserted at55-66;
+the only U6 test is its characteristic polynomial. Its scope33-38 retains
+physical CP as conditional. SHA256
+9e3567f184de3b5ec14f21df3c969d89bf3953d69edc288c29a3b564ccad3b26.
+All these arithmetic checks would give the same results if the proposed
+physical source intertwiners were absent or attached to different sectors:
+those intertwiners are not inputs to any checked expression.
+
+2. ACTUAL ORIGINAL PHASE RULE VERSUS OPERATOR INSERTION
+
+The original v29 phase grammar explicitly separates the issues:
+ documents/archive--paper-latex--tfpt-v29/sections/
+ 003-subsection-flavor-and-the-phase-grammar.tex:3-29.
+It proves the global SM quotient but calls the physical realization of the
+six-point CP grammar conjectural. SHA256
+245bd862d8189b6c805964c83b0e56b374f890991d67a10c388da24e3740ccfc.
+
+documents/tfpt_5_redteam/sections/002-section-outcome.tex:234-249 states
+rho^1 for the quark leading phase and rho^4 for the lepton phase, together
+with v231/v233 factorization. It ALSO retains physical derivation as [C].
+These existing recorded readouts must be preserved; they are not missing
+numbers that need rediscovery. The question is their source-operator origin.
+
+The actual later source consumer is different from a Fourier projector:
+ archive--tfpt-45--source_extracts--03_em_flavor_source/sections/
+ 003-subsection-discrete-phase-operator-and-transport-grammar.tex:3-13,61-84,
+ defines U6 and reads CKM as arg tr Pi_triangle(nabla_F^star).
+Its structural kernel at90-124 uses Pstr D_f^*D_f Pstr. Neither place
+equates U6^4 with a universal family-center insertion, or U6^3 with the
+quark/lepton source grading. The checked positive-kernel limitation is
+already finding:original-z6-positive-structural-kernel-does-not-supply-oriented-phase-observable;
+ORIGINAL-HOLONOMY-E0-SOURCE-REVIEW.txt:499-579 is reused, not rederived.
+
+3. THE STRONGER OLD CLOSURE CANDIDATES DO NOT SUPPLY THAT MISSING MAP
+
+v316_galois_readout.py:56-61 explicitly inherits v231/v233's conditional
+physical phases. v320_galois_cp_relation.py:48-63 inserts ckm=pi/3 and
+pmns=4pi/3 before checking their difference and multiple. It establishes
+the exact relation for those specified branches and its falsifiable readout;
+it does not calculate which field receives the two characters.
+
+The strongest apparent alternative was checked rather than overlooked:
+v405_seam_equiv_omega.py:1-12,34-46 calls SEAM.EQUIV.02 a named conditional
+contract, not a closure. Its phase test92-100 inserts delta_pmns=4pi/3.
+v406_pmns_phase_origin.py:53-75 likewise sets delta=4pi/3 and verifies
+delta=4*(pi/3). No CM field-to-insertion intertwiner occurs in that test.
+These are valid conditional CM/readout consistency statements, not the
+desired independently evaluated source rule. In the original text,
+tfpt_2_standard_model/sections/006-section-neutrinos.tex:50-59 states the
+keystone reading conditionally, while112-120 still distinguishes assembled
+phase from an M_nu/D_F operator output. Both passages must be retained.
+
+4. EXACT CONSEQUENCE ON THE NOW GENUINELY REALIZED U6
+
+Reuse MIXED-SPIN-PRODUCT-U6-SOURCE-REVIEW.txt. On V_ab, a!=b, the actual
+product pullback sends (a,b)->(b+1,a+1). Thus its third power exchanges
+(a,b) and(b,a), and its fourth power translates both labels by+1.
+These are actual source-geometric actions. They do not label the sectors
+as quarks or leptons. The q_a point name is not the quark field label.
+
+Put T=U6^4 and S=U6^3. Then T^3=S^2=I, TS=ST and U6=TS.
+The already specified joint character gives, without another phase choice,
+ P_F=(I+omega T+omega^2 T^2)/3,
+ P_q=P_F(I-S)/2, P_l=P_F(I+S)/2.
+On the regular six-cycle these are orthogonal rank-one projections and
+ U6 P_q=rho P_q, U6 P_l=rho^4 P_l.
+This is a correct conditional selection theorem, not an extra hypothesis
+that Fourier eigenvalues exist. The remaining premise is the original
+physical sector assignment to T=omega^2 and S=-1/+1.
+
+The existing SPIN-PRODUCT-CAR-U6-TRANSPORT-REVIEW.txt also matters here:
+raw ordered CAR pairs carry -U6, whereas ordinary geometric products carry
+U6. Their fourth powers agree but their cubes have opposite signs. The
+already proved alternating orbit intertwiner carries this difference
+exactly; it introduces no new fitted phase. Dropping that map would flip
+the sheet labels when passing to the actual ordered pair insertion.
+
+5. THE ACTUAL P2 LABELS GIVE A PRECISE NEXT COMPARISON
+
+The full SM/wedge dictionary is already proved and reused:
+finding:actual-v252-positive-grade-has-global-p2-wedge-dictionary and
+CLAUDE29-CHIRAL-WEIGHT-DICTIONARY.txt:47-116.
+It distinguishes the quark pieces Q,u^c,d^c and lepton pieces L,e^c,nu^c
+by their actual color/weak/hypercharge representations. They are not the
+geometric q/p packet labels. The SAME three generation lines occur for
+both quark and lepton pieces; the q-column map is not a quark-only map.
+
+There is even a concrete color-based grading on this GIVEN matter module.
+With the standard C2(3)=C2(bar3)=4/3 normalization, set
+ S_col=I-(3/2)C2(SU3_color).
+It is -I on every quark piece and +I on every lepton piece. No charge fit
+is needed. IF the supplied family-center action Z_F=omega^2 I3 is used
+on the positive chiral family module, Z_F S_col has exactly rho/rho^4.
+This constructs the possible target reader from already proved labels.
+It does not identify the geometric S,T with these two target operators.
+The conjugate chiral module carries the conjugate family-center character.
+
+The original carrier seam involution is not an automatic replacement:
+tau=diag(-I3,+I2) on E has Lambda_even(tau)=-1 on BOTH Q and L,
+and +1 on BOTH u^c and e^c. This smallest weight test rules out that
+particular substitution for S_col; it excludes no other physical source map.
+Similarly color triality and family triality are different actions.
+A scalar phase on a matter field is also not yet the rephasing-invariant
+CKM or PMNS phase; the original triangle/Yukawa consumer must be retained.
+
+The smallest decisive source test can now be written without unknown
+Fourier phases: for the actual relevant insertion/readout map J require
+ J U6^4=Z_F J, J U6^3=S_col J,
+with the proved signed geometric-to-CAR comparison, all original charge
+labels, and its given source products/state/time. The original sources
+inspected supply no such J. Its construction, not another cyclotomic
+factorization or eigenvalue scan, is the next necessary origin step.
+This is a bounded source-review conclusion, not a universal no-go or a
+request to choose a new state in the already complete operative Seed.

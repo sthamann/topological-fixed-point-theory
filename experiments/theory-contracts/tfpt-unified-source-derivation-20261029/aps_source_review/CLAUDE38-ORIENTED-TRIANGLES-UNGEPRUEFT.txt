@@ -1,0 +1,46 @@
+Fortsetzung 38/39: Sechs Kanäle, zwei orientierte Dreiecke, und wo CP sitzt
+
+Ich bleibe beim Kandidaten „sechs orientierte Kanäle → orientierte Zyklen“ und rechne ihn bis zur Jarlskog-Invariante durch. Grundlage sind eure kanonischen Daten: der Dreiertransport H₃ mit ω-Twist, die A₄/S₄-Holonomie und die reellen FN-Faktoren λ^{L} (Prüfskript: tfpt-checks-38/triangles.py).
+
+Satz A: Die sechs Kanäle bilden zwei orientierte Familiendreiecke
+
+Unter c = R² zerfällt der Sechserorbit in zwei Bahnen der Länge 3:
+
+Vorwärtsdreieck (a → a+1): (0,1), (1,2), (2,0), das sind die Orbitindizes 0, 2, 4.
+Rückwärtsdreieck (a+1 → a): (1,0), (2,1), (0,2), das sind die Orbitindizes 1, 3, 5.
+
+Das alternierende D = diag(+,−,+,−,+,−) ist genau dieser Orientierungsoperator. c erhält jedes Dreieck. R, s und jedes ungerade S₄-Element vertauschen die beiden (geprüft).
+
+Die Kompositionen lassen sich ohne neue Wahl bilden. Aus Rh^q_a = h^p_{a+1} folgt R³ = s mit sh^q_a = h^p_a, also eine indexerhaltende Identifikation von q- und p-Linien. Kanal (i,j) ist damit der Hom-Transport L_i → L_j. Π_triangle ist die geschlossene Komposition entlang eines orientierten Dreiecks und gegen Familien-Umphasierung invariant. Γ_ij lässt sich so als orientierter Kanal lesen, ohne drei frei gewählte Basispunkte.
+
+Satz B: Der kanonische Dreiertransport hat keine eigene Phase
+
+H₃ = (y²+δ²+ε²)I − yδ(ωc + ω̄c†) ist eine ω-verdrehte Zirkulante. Mit D_ω = diag(1, ω, ω²) gilt exakt K₃ = D_ω K_r D_ω†, wobei K_r reell ist. Der orientierte Zyklus K₀₁K₁₂K₂₀ ist reell. Das Spektrum ist entartet (1 + 2): 0,604 einfach und 1,604 doppelt bei y = 1, δ = 1/3, ε = 0,4.
+
+Für sich allein trägt K₃ also keine invariante Phase. Die Entartung muss durch λ^{L} oder durch Hol gebrochen werden.
+
+Satz C: CP entsteht genau aus entgegengesetzter Orientierung der Sektoren
+
+Als Reader setze ich Y_f = Λ_L^f · Hol_f · K₃^f · Λ_R^f an. Dabei sind Λ reell-diagonal (die FN-Faktoren) und Hol_f ∈ S₄. Im G-Rahmen ist S₄ die Gruppe der vorzeichenbehafteten Permutationen: V4 sind die Diagonalvorzeichen, c die Zyklusmatrix. Ergebnis, geprüft über alle 576 Paare (Hol_u, Hol_d):
+
+Relative Holonomie Hol_u Hol_d⁻¹	Jarlskog J
+gerade (A₄)	exakt 0 (alle Paare, ≤ 10⁻²³)
+ungerade (S₄ ∖ A₄)	≠ 0 (100 % der Paare)
+Gegenprobe ohne ω-Twist (reelle Zirkulante)	exakt 0 für alle Paare
+
+Mechanismus (exakt). Ein monomiales Hol konjugiert D_ω in sich selbst, falls es gerade ist, und in D̄_ω, falls es ungerade ist, jeweils bis auf einen Skalar (geprüft). Daraus folgt H_f = P_f R_f P_f† mit reellem R_f und P_f ∈ {D_ω, D̄_ω}. Haben beide Sektoren dasselbe P, lässt sich die Phase gemeinsam wegdrehen, und J = 0. Andernfalls bleibt die relative Umphasierung D_ω⁻² = diag(1, ω, ω²) stehen, die man nicht entfernen kann.
+
+Gleichwertige Form. Bei gleicher Holonomie, aber konjugiertem Twist (ω̄) im zweiten Sektor, ist ebenfalls J ≠ 0 (geprüft).
+
+Kernaussage. CP entsteht genau dann, wenn Up- und Down-Sektor den kanonischen ω-Twist mit entgegengesetzter Orientierung lesen, also das Vorwärts- gegenüber dem Rückwärtsdreieck des Sechserorbits. Der Phasengehalt ist ω, also 2π/3. Das passt zu Antwort 34: ρ als solches ist keine invariante Phase.
+
+Was das für die Herkunft bedeutet
+Γ_ij als Zyklustransport. Damit fällt die freie Wahl von drei Basispunkten weg. Übrig bleibt eine einzige diskrete Größe je Sektor, nämlich die Orientierung (die D-Parität), mit der seine Γ^min_ij-Worte das Familiendreieck durchlaufen.
+Kein neuer Freiheitsgrad. Betrag und Muster von J hängen von den gegebenen reellen y, δ, ε_f und λ^{L} ab. Ich habe weder eine Phase noch eine Kopplung eingesetzt. Die winzigen Zahlwerte von J stammen aus Zufallsparametern und sind physikalisch nicht aussagekräftig.
+Entscheidendes Originaldatum: die relative S₄-Parität der Γ^min_ij-Worte von Up- und Down-Sektor, oder gleichwertig, ob ∇_F* (der duale Transport) in genau einem Sektor den konjugierten Twist liefert.
+
+Ein natürlicher Kandidat zum Prüfen ist die Weakstruktur. Up koppelt in (a[D_F,b])_LR über H̃ = εH̄ mit dem ε-Volumen, Down direkt über H. Ob diese ε/Konjugation am Familientransport als Orientierungsumkehr ankommt, ist bisher nicht gezeigt. Eine skalare Phase auf t allein ist durch R-Umphasierung entfernbar (siehe Antwort 37). Wirken muss also die familienmatrixwertige Orientierung, nicht der Higgswert.
+
+Kleinster Gegenfall
+
+Durchlaufen alle Sektoren ihre Γ-Worte mit gleicher Orientierung, also mit nur geraden relativen Holonomien in A₄, dann ist J = 0 exakt, für beliebige reelle y, δ, ε und λ^{L}. Die Herkunft von CP liegt damit vollständig in der Frage, ob die Originalmarken die Sektoren mit entgegengesetzten Dreiecksorientierungen belegen.

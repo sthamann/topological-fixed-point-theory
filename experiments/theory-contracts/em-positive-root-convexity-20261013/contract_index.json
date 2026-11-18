@@ -1,0 +1,51 @@
+{
+  "contract": "em-positive-root-convexity-20261013",
+  "research_id": "EM.FP.POSITIVE_ROOT.CONVEXITY.01",
+  "date": "2026-10-13",
+  "question": "Can the fixed original EM closure function be proved to have exactly one simple positive root without relying on the numerical derivative scan?",
+  "verdict": "PARTIAL",
+  "mathematical_verdict": "UNIQUE_SIMPLE_POSITIVE_ROOT_PROVED_FOR_FIXED_FORMULA",
+  "summary_de": "Für die festgelegte ursprüngliche EM-Gleichung ist die positive Nullstelle jetzt analytisch eindeutig und einfach nachgewiesen: F bleibt bis 2c^3 negativ; danach ist F wegen der exakt bewiesenen Log-Konvexität der Nahtantwort streng konvex und wächst gegen unendlich. Das ursprüngliche Intervallprogramm lokalisiert diese einzige Nullstelle. Die Wahl von M=41, Exponent−5/4, Nfac=8 und damit c=1/(8π), Nahtantwort und physischer α-Identifikation bleibt vorausgesetzt.",
+  "summary_en": "The fixed original EM equation has exactly one simple positive root by an analytic argument: F is negative up to 2c^3, then strictly convex by exact log-convexity of the seam response and diverges to infinity. The original interval implementation locates that unique root. Selection of M=41, exponent−5/4, Nfac=8 and hence c=1/(8π), the seam response and physical alpha identification remains assumed.",
+  "scope": "All positive alpha for the exact default v3 EM function; mathematical existence, uniqueness and simplicity under fixed inputs, not their physical selection.",
+  "assumptions": [
+    "The original make_F default formula with c=1/(8pi), p=1/(6pi), d=48c^4, exponent−5/4 and M=41.",
+    "Positive real alpha, original real logarithm branch and q in(0,1).",
+    "Physical interpretation of the root and selection of the input function are separate obligations."
+  ],
+  "positive_results": [
+    "Exact log-convexity of the prescribed phi=p+q(1−q)^−5/4.",
+    "F<0 on(0,2c^3] and F strictly convex afterward with limit+infinity prove one simple root on the entire positive half-line.",
+    "Original F_iv gives a strict sign bracket [0.0072973525622097,0.0072973525622100] for that unique root.",
+    "The same argument holds for every M>0; the unique root increases strictly with M. Mathematical uniqueness does not select budget41."
+  ],
+  "kills": [
+    "Need for a numerical first derivative zero or finite sign scan to establish uniqueness of this specified function.",
+    "Inference that one indeterminate interval cell alone proves uniqueness."
+  ],
+  "leaves_open": [
+    "Derive the chosen response functional, Nfac=8 / c=1/(8pi) normalization, M41 budget, exponent5/4 and injection48c3^4 from the common physical source.",
+    "Derive the identification of this mathematical root with the measured fine-structure constant and the physical observable/state dictionary."
+  ],
+  "claims_tested": [
+    "EM.FP.01"
+  ],
+  "gates": [],
+  "physical_gates_closed": [],
+  "complete_TFPT_solution": false,
+  "promotion": false,
+  "firewall": "experiments",
+  "relations": [],
+  "claim_dependencies": [
+    "AX.P1.01",
+    "EM.BUDGET.01"
+  ],
+  "checker": "checker.py",
+  "proof": "PROOF.txt",
+  "certificate": "results.json",
+  "source_manifest": "source_manifest.json",
+  "topics": [
+    "topic:alpha"
+  ],
+  "novelty_scope": "A complete elementary analytic argument for the existing project-specific root lemma, not a new selection of the EM equation or a full derivation of alpha."
+}

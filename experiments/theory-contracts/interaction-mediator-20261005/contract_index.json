@@ -1,0 +1,54 @@
+{
+  "contract": "interaction-mediator-20261005",
+  "date": "20261005",
+  "research_id": "SOURCE.INTERACTION.MEDIATOR.01",
+  "question": "Can the Theta_1 vertex -g sum_A O_A^2 arise by eliminating a heavy source mode, and does the source contain such a mode?",
+  "verdict": "MEDIATOR_SPECIFIED_NOT_IN_ELEMENTARY_SOURCE",
+  "verdict_enum": [
+    "DERIVED",
+    "MEDIATOR_SPECIFIED_NOT_IN_ELEMENTARY_SOURCE",
+    "PARTIAL",
+    "FAIL"
+  ],
+  "verdict_scope": "Elimination mechanism exact at second order (toy check of the operator identity); dictionary exact on V = 16 x 2 under Spin(10) x SU(2) x Z4; inventory at the level of the E8 current algebra (elementary operators), composites not constructed.",
+  "mathematical_verdict": "SECOND_ORDER_ELIMINATION_GIVES_MINUS_LAMBDA2_OVER_DELTA_SUM_O2; B_FORM_NONDEGENERATE_ON_10_AND_120x3_ZERO_ON_126; THETA1_RAY_EQUALS_ONE_REAL_10_MEDIATOR; E8_SPIN10_VECTOR_CURRENTS_ONLY_10x6_FAMILY_VECTOR_MASSLESS",
+  "summary_de": "Eliminierung eines schweren Modus mit Kopplung lambda (b+b^dag) O_A gibt exakt -(lambda^2/Delta) sum O_A^2 (Fehler ~1/Delta). Theta1s Vertex ist genau ein schwerer reeller Spin(10)-Vektor (Spin-Singulett, Z4-ungerade); ein komplexer 10 gibt nur den U(1)-invarianten Teil, ein reeller (120,3) speist zwar Delta N = 4, bringt aber |P_120|^2 mit, 126 nur komplex. Die elementare Quelle hat als bosonische Spin(10)-Vektoren nur die masselosen (10,6)-Stroeme mit Familien-SO(6)-Index, ohne Familiensingulett: kein passender Mediator.",
+  "gates": [
+    "T4",
+    "T6"
+  ],
+  "kills": [
+    "An elementary heavy family-singlet real Spin(10)-vector mode in the current E8 source (only massless (10,6) family-vector currents).",
+    "Theta_1's ray from a complex 10, a real (120,3) or a 126 mediator alone."
+  ],
+  "resolved": [
+    "Exact mediator dictionary: real 10 and real (120,3) feed Delta N = 4 (B nondegenerate), 126 cannot.",
+    "Required quantum numbers of the Gate-B interaction origin: heavy real Spin(10) vector, spin singlet, Z4-odd, on-site coupling to the filtered pair operator."
+  ],
+  "minimal_missing_inputs": [
+    "heavy real (10,1) spin-singlet Z4-odd mode (composite or extended source) with coupling lambda and gap Delta, g = lambda^2/Delta"
+  ],
+  "related_contracts": [
+    "minimal-runtime-reconstruction-20261005",
+    "seam-holonomy-generating-20261001"
+  ],
+  "checker": "mediator.py",
+  "results": "mediator_results.json",
+  "proof": "README.md",
+  "firewall": "experiments",
+  "promotion": false,
+  "complete_TFPT_solution": false,
+  "physical_gates_closed": [],
+  "claims_tested": [],
+  "claims_scoped_not_closed": [
+    "AX.P1.01",
+    "AX.P2.01"
+  ],
+  "acceptance_chain": [
+    "(10,1) bosonic spin-singlet Z4-odd source operator M_A",
+    "spectral pole <M_A(t)M_B(0)> ~ delta_AB Z_Phi exp(-Delta t), Z_Phi>0, 0<Delta<inf, Delta >> E_IR",
+    "nonzero coupling lambda to O_A",
+    "Schrieffer-Wolff residual ||dH|| << lambda^2/Delta (no equally large unwanted operators)"
+  ],
+  "caveat": "The QMC Hubbard-Stratonovich field has the mediator quantum numbers but is a mathematical rewriting, not evidence of a physical mode."
+}

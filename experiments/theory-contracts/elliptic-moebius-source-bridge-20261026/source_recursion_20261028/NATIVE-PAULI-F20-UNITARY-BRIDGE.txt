@@ -1,0 +1,229 @@
+NATIVE PAULI F20 UNITARY BRIDGE
+================================
+
+Stand: 2026-10-28
+Atlas Auditrahmen: Revision 37674cdfb8575b71b5fc0290, nur gelesen
+Urteil: DIE DARSTELLUNGSLUECKE ZWISCHEN DER V419 CYCLOTOMISCHEN VIER UND
+EINER TATSAECHLICHEN NATIVEN PAULI VIER IST EXAKT GESCHLOSSEN.
+DIE AUSWAHL DIESER F20 UNTERGRUPPE ALS DIE URSPRUENGLICHE V419 GALOIS CLOCK
+STEHT JEDOCH NICHT BEREITS IN V783.
+
+1. Was die Originalquellen wirklich geben
+-----------------------------------------
+
+v419 bezeichnet die cyclotomische Darstellung ausdruecklich. Auf
+V=Q(zeta5) mit Basis 1,zeta5,zeta5^2,zeta5^3 wirken
+
+  C_v : Multiplikation mit zeta5,
+  G_v : zeta5 -> zeta5^2,
+
+und es gilt
+
+  C_v^5=1,   G_v^4=1,   G_v C_v G_v^-1=C_v^2.          (1)
+
+Quelle:
+
+  /Users/stefanhamann/Projekte/tfpt-theoryv4/
+  verification/v419_seam_galois_carrier.py:1-35,41-43,80-93
+  SHA256 cc6152ad7ea68c67725020e386e49eec32810ab25bb483c76bae99964399c2fd
+
+v783 friert die native Zwei Qubit Quelle als
+
+  C2=<H tensor I, I tensor H, S tensor I, I tensor S, CNOT>
+
+ein. Sie beweist projektiv den vollen Quotienten Sp4(F2), den Pauli16 Kern,
+die zentrale mu4 im G31 Teil und die volle mu8 Skalargruppe im Clifford
+Normalisator. Genau diese Aussagen erlauben den folgenden Test mit
+Originalgeneratoren und ohne neu gewaehlte 4 mal 4 Matrizen.
+
+Quelle:
+
+  /Users/stefanhamann/Projekte/tfpt-theoryv4/
+  verification/v783_two_qubit_clifford.py:3-35,496-515,581-651,734-810
+  SHA256 8f4851634b83f61671b04f3a6211059c40758d21caaf1f779302c799e1e9d6c4
+
+Die aktuelle Atlas Suche nennt die Verbindung zwischen der konkreten
+cyclotomischen Darstellung und dem bezeichneten G31 Compiler weiterhin als
+einen benoetigten expliziten Operatorpfeil. Weder v783 noch die geprueften
+v634 Symbole bezeichnen einen Singer Normalisator als die v419 Clock. Die
+folgende Untergruppe ist daher aus der Originalquelle konstruiert verfuegbar,
+aber nicht in ihr bereits semantisch als Galoisclock markiert.
+
+2. Die tatsaechlichen Pauli Woerter
+-----------------------------------
+
+Rechts wirkt jeweils zuerst. Setze in der eingefrorenen v783 Quelle
+
+  C_raw=(I tensor H) CNOT (S tensor I) (H tensor I),
+  C_p  =-i C_raw,
+
+  G_raw=CNOT (I tensor S) (S tensor I),
+  G_p  =(Y tensor Z) G_raw.                              (2)
+
+Alle Faktoren gehoeren zum tatsaechlichen v783 Clifford Generatorensatz
+beziehungsweise zu seinem bewiesenen Pauli und zentralen Kern. Exakt gilt
+
+  C_raw^5=iI,
+  C_p^5=I,
+  G_p^4=I,
+  G_p C_p G_p^-1=C_p^2.                                 (3)
+
+Eine vollstaendige Suche ueber Pauli16 mal mu8 findet bei festem C_p genau
+vier Korrekturen von G_raw. Sie sind
+
+  i^k (Y tensor Z) G_raw,   k=0,1,2,3.                  (4)
+
+Sie unterscheiden sich nur durch die bereits vorhandene zentrale mu4.
+Damit ist (C_p,G_p) eine echte F20 Untergruppe der nativen Quelle. Es ist
+kein nachtraeglich passend gebautes abstraktes F20.
+
+Ihr Charakter ist auf allen zwanzig Elementen
+
+  4       am Einselement,
+ -1       auf den vier nichttrivialen C5 Elementen,
+  0       auf allen drei uebrigen C4 Nebenklassen.       (5)
+
+Das ist der eindeutige komplexe irreduzible Vierercharakter von F20.
+
+3. Exakter und metrischer Intertwiner
+-------------------------------------
+
+Die richtige Hermitesche Form auf der cyclotomischen v419 Basis ist die
+Feldspurform
+
+  H=5 I4-J4
+
+mit Diagonale 4 und Nebendiagonale minus 1. Sie ist positiv mit Eigenwerten
+1,5,5,5 und Determinante 125. Beide v419 Generatoren erhalten H exakt.
+
+Der folgende Intertwiner loest gleichzeitig beide Generatorgleichungen:
+
+      [-1-i       i       i       i]
+      [-1+i    -2-i       1       1]
+  T = [ 1-i      -1      -1     2+i]
+      [-1+i       1    -2-i       1].                   (6)
+
+Es gilt
+
+  T C_v=C_p T,
+  T G_v=G_p T,
+  det T=-8+44i,
+  T^dagger T=2H.                                        (7)
+
+Folglich ist
+
+  U=T/sqrt(2)                                            (8)
+
+ein metrischer Isomorphismus von (V_v419,H) auf die native Pauli Vier mit
+Standardmetrik:
+
+  <Ux,Uy>_standard=<x,y>_H.                              (9)
+
+Der Raum aller komplexen Intertwiner in (7) ist eindimensional. Nach der
+Metrikbedingung bleibt genau eine gemeinsame U(1) Phase. Damit wird die
+Darstellung nicht nur ueber gleiche Charaktere erkannt. Sie ist durch einen
+expliziten unitary transport identifiziert.
+
+4. Quarterlift und konforme Sp4 Form
+------------------------------------
+
+In der nativen Pauli Basis sei
+
+  J0=diag(J2,J2),   J2=[[0,1],[-1,0]].
+
+Dann gilt unmittelbar
+
+  C_p^T J0 C_p=J0,
+  G_p^T J0 G_p=i J0.                                    (10)
+
+Der bereits in v783 bewiesene zentrale mu8 Skalar normalisiert daher
+
+  Ghat_p=zeta8^-1 G_p,
+
+mit
+
+  Ghat_p^T J0 Ghat_p=J0,
+  Ghat_p^4=-I,
+  Ghat_p^8=I.                                           (11)
+
+Dies ist genau der Quarterlift des konformen Sp4 Charakters. Der Intertwiner
+transportiert die zuvor auf v419 gefundene Form Omega_+=iA+B zu
+
+  (T^-1)^T Omega_+ T^-1=((1-2i)/10) J0.                 (12)
+
+Die mu8 Phase wird hier nicht neu gewaehlt. Sie ist Teil der nativen v783
+Quelle. Zu unterscheiden sind trotzdem zwei Gruppen:
+
+  * (C_p,G_p) ist das exakte F20 mit G_p von Ordnung 4.
+  * (C_p,Ghat_p) ist seine symplektische zentrale Erweiterung mit Ordnung 8.
+
+5. Was mit dem Zehner geschieht
+-------------------------------
+
+Der fruehere rationale Intertwiner zwischen
+
+  chi^-1 tensor Sym2(V_v419)
+
+und der Hodge Darstellung Lambda2(Perm5) hat Determinante 3i. Er ist ein
+gueltiger algebraischer Intertwiner, aber fuer die korrekte Feldspurmetrik
+nicht bereits unitaer. Der neue Checker prueft diesen Unterschied direkt.
+
+Sei H_sym die von H induzierte Metrik auf Sym2(V), sei A der rationale
+Zehnerintertwiner und die Zielmetrik die Standardmetrik auf Lambda2(C5).
+Dann liegt
+
+  P^2=H_sym^-1 A^dagger A                               (13)
+
+im F20 Kommutanten und ist positiv bezueglich H_sym. Mit der positiven
+Wurzel P liefert
+
+  U10=A P^-1                                             (14)
+
+den metrischen Polartransport. Diese Konstruktion aendert keine
+Gruppenwirkung und ersetzt keinen Cocycle.
+
+Die Zehnerdarstellung zerfaellt exakt als
+
+  2 V4 plus chi_1 plus chi_3.                            (15)
+
+Ihr komplexer Kommutant ist daher
+
+  M2(C) plus C plus C,
+
+von Dimension 6. Algebraische Zehnerintertwiner sind deshalb nicht eindeutig.
+Nach der Metrikbedingung bleibt die erwartete Eichfreiheit
+
+  U(2) mal U(1) mal U(1).                               (16)
+
+Dies erklaert die fruehere sechsdimensionale Loesungsmenge. Die eindeutige
+Viererbruecke (6) bis (9) beseitigt sie nicht kuenstlich.
+
+6. Genaues Ergebnis und Grenze
+------------------------------
+
+Der bisherige Darstellungsengpass ist beseitigt:
+
+  v419 cyclotomische Vier  --U-->  tatsaechliche native Pauli Vier
+
+vertraegt C5, den Ordnung vier Frobeniusoperator, die korrekte Hermitesche
+Metrik und den zentralen Quarterlift gleichzeitig.
+
+Neu gewaehlt wurde nur, welche Singer F20 Untergruppe des bereits bewiesenen
+nativen Clifford Quotienten betrachtet wird. Die Woerter selbst liegen in
+der Originalquelle. Nicht bewiesen ist, dass das urspruengliche physische
+Nahtprinzip gerade diese konjugierte F20 Untergruppe als seine v419
+Galoisclock auszeichnet. Ebenso folgt keine physische vierdimensionale
+Feldinterpretation und keine Gleichheit des alten Bellkanals mit dem
+Hodgekanal. Deren unterschiedliche Choi Raenge bleiben unveraendert.
+
+7. Ausfuehrbarer Beleg
+----------------------
+
+  check_native_pauli_f20_bridge.py
+  native-pauli-f20-results.json
+
+Der Checker pinnt beide Originalquellen und prueft 45 exakte Identitaeten:
+die Quellwoerter und alle zulassigen Pauli mu8 Korrekturen, alle zwanzig
+Charakterwerte, die Feldspurmetrik, den Viererintertwiner und seine
+Eindimensionalitaet, die konforme Sp4 Form, den Ordnung acht Lift sowie
+Zehnerzerlegung, Kommutant und Polarbedingung.

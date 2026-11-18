@@ -1,0 +1,302 @@
+TFPT: normaler Grad-eins-Clutch und tangentiale Kreisquelle
+Datum: 25. Oktober 2026
+Verdict: BEDINGT POSITIVER PUSHFORWARD; DIE ORIGINALABBILDUNG IST NICHT DEFINIERT
+
+Fragestellung
+=============
+
+Kann die im Original vorhandene Determinantenlinie L2 mit c1(L2)=1 auf der
+kompaktifizierten normalen S2 eine kanonische transversale Indexlinie vom Rang
+eins liefern, die den gesamten alten tangentialen Kreisoperator D_Gamma traegt?
+Entscheidend ist eine Operatorabbildung. Die Gleichheit zweier Windungszahlen
+oder zweier Kreisparameter reicht nicht.
+
+Ergebnis
+========
+
+1. BEWIESEN: Auf der Spin-Sphaere S2 ist der mit der DETERMINANTENLINIE
+   L2=O(1) gekoppelte echte Spin-Diracoperator transversal von Index eins und
+   hat genau eine positive Nullmode:
+
+       S_plus = K^(1/2)=O(-1),
+       S_plus tensor L2 = O,
+       ker D_perp_plus = H0(S2,O)=C,
+       coker D_perp_plus = H1(S2,O)=0.
+
+   Die chirale Indexlinie dieses LINIENoperators ist daher kanonisch
+   eindimensional, bis auf die Phase eines normierten Erzeugers.
+
+   Das gilt nicht automatisch fuer den Spin-Diracoperator mit dem ganzen
+   rangzweiten E2 als Twist. Aus det E2=O(1) folgt fuer diesen Operator nur
+   der Index eins. Bereits die Zerlegungen
+
+       E2=O(k) direct_sum O(1-k),  k>=1,
+
+   haben alle dieselbe Determinante, aber
+
+       dim ker D_(S2,E2)_plus=k,
+       dim ker D_(S2,E2)_minus=k-1.
+
+   Der Originaltext fixiert keine holomorphe Zerlegung oder Lueckenbedingung,
+   die daraus den Kernrang eins des vollen E2-Operators machen wuerde.
+
+2. BEWIESEN: Das im spaeteren Original verwendete
+
+       H0(S2,O(1))=C^2
+
+   ist ein anderer Operatortrager. Beim kanonischen komplexen Spin-c-Dolbeault-
+   operator, mit W_plus=Lambda^(0,0) und Twist O(1), ist der Index
+
+       chi(O(1)) = dim H0(O(1))-dim H1(O(1)) = 2.
+
+   Diese zwei Komponenten sind die skalaren holomorphen Abschnitte, die der Text
+   als ein schwaches Dublett liest. Sie sind nicht der eindimensionale Kern des
+   oben gekoppelten Spin-Diracoperators. Die gedruckte Folge
+   H0(O(1))=C^2 und danach Ind(B_E2_plus)=1 zaehlt ein internes Dublett als ein
+   physisches Objekt; sie ist keine Fredholm-Indexgleichung fuer denselben
+   Dolbeaultoperator.
+
+3. BEWIESEN UNTER EINER KLAR BENANNTEN ZUSATZVORAUSSETZUNG: Wenn ein wirklicher
+   originaler Produktoperator mit dem Determinantenlinienoperator aus Punkt 1
+
+       B_prod = B_a tensor gamma_N + I tensor D_N,
+       {gamma_N,D_N}=0,
+
+   auf dem tangentialen Kreis mal der normalen Spin-Sphaere gegeben ist, dann
+   ist seine Domaene die genuine Produktdomaene H1 des gekoppelten
+   Diracoperators. Der skalare Kreisraum ist ungraduiert; eine gamma_Gamma wird
+   weder benoetigt noch vorausgesetzt.
+
+   Sei chi eine normierte positive normale Nullmode,
+
+       gamma_N chi=+chi,  D_N chi=0,
+
+   und V_chi f=f tensor chi. Dann gilt auf Dom(B_a)
+
+       B_prod V_chi = V_chi B_a.                           (1)
+
+   Der Projektor F=V_chi V_chi^*=I tensor |chi><chi| reduziert B_prod.
+   Deshalb gilt fuer jede beschraenkte borelsche Funktion h die staerkere
+   Operatoridentitaet
+
+       F h(B_prod) F = V_chi h(B_a) V_chi^*.              (2)
+
+   Insbesondere transportiert sie die spektrale Projektion beziehungsweise
+   jede beschraenkte Kreis-Kovarianz. Fuer eine negative normale Nullmode
+   gamma_N chi_minus=-chi_minus gilt entsprechend
+
+       B_prod V_chi_minus = -V_chi_minus B_a.
+
+   Es wird also keine tangentiale Fouriermode ausgewaehlt. Der normale Index
+   entfernt genau die innere beziehungsweise transversale Multiplizitaet und
+   laesst den ganzen Kreisraum bestehen. Das ist der gesuchte mathematisch
+   kleinste positive Anschluss.
+
+   Derselbe Schluss kann direkt als Spektralfluss-Pushforward formuliert
+   werden. Fuer eine echte Produktgrenze Gamma times S2 sei
+
+       B_s=(B_a+s) tensor gamma_N + I tensor D_N,
+
+   wobei s ein vollstaendiges tangentiales Windungsintervall durchlaeuft.
+   Zu einer nichtnulligen transversalen Paarung plus/minus lambda und einer
+   Fouriermode n gehoert der Block
+
+       [[n+a+s, lambda],
+        [lambda,  -n-a-s]].
+
+   Seine Eigenwerte sind plus/minus sqrt((n+a+s)^2+lambda^2); er hat keinen
+   Nulldurchgang. Nur ker D_N traegt Spektralfluss. Positive und negative
+   transversale Chiralitaet tragen mit entgegengesetztem Vorzeichen bei, also
+
+       SF(B_s)=dim ker D_N_plus-dim ker D_N_minus
+              =Ind(D_N_plus).                            (3)
+
+   Fuer D_N=D_(S2,L2) ist dies exakt eins. Diese Rechnung ist der natuerliche
+   Thom- beziehungsweise Familienindex-Pushforward. In der nichtkompakten
+   Variante uebernimmt ein sauber definierter Calliasoperator dieselbe Rolle.
+   Sie setzt den normalen Aequator gerade nicht mit Gamma gleich.
+
+4. ORIGINALAUDIT: Das gelesene Original liefert die beiden Seiten, aber nicht
+   den Produktoperator B_prod aus Punkt 3.
+
+   * fullv21 schneidet die orientierbare Doppelueberdeckung entlang der Naht
+     Gamma. Der dortige D_Gamma=i d/dtheta ist tangential zur Naht; der
+     Matchingoperator U_Gamma(theta)=exp(i theta) hat Spektralfluss eins.
+
+   * v31/v32 definiert auf einer orientierten zweidimensionalen NORMALEN Scheibe
+     N_Seam den bosonischen Calliasoperator
+
+         B_Ea=sigma^mu nabla_mu^(a)+Phi_a.
+
+     Der Index eins folgt dort aus wind(det Phi2)=1 zusammen mit eigens
+     vorausgesetzten Positivitaetsluecken. Dieses Resultat betrifft einen
+     bosonischen Massoperator. Es identifiziert weder dessen Kern mit einer
+     fermionischen CAR-Quelle noch B_E2 mit dem normalen Spin-Diracoperator.
+
+   * v42 ersetzt die nichtkompakte Calliaslast durch die kompakte normale S2,
+     setzt L2=O(1), verwendet aber H0(O(1))=C^2. Das ist genau die
+     Spin-c/Dolbeault beziehungsweise skalare Abschnittsrechnung aus Punkt 2.
+     Ein vertikaler Spin-Diracoperator auf O(-1) tensor L2, sein Kernprojektor
+     und ein Produkt B_s mit dem alten B_a werden dort nicht definiert.
+
+   * Das spaetere Randdatum enthaelt zwar den echten lokalen Produktkragen
+
+         D_plus=gamma_n(partial_n+B_Sigma),
+
+     aber hier ist partial_n die eine Kragennormale zu Sigma und B_Sigma der
+     tangentiale Randoperator. Das ist nicht der benoetigte zweite Produkt
+     B_a tensor gamma_N + I tensor D_N ueber der normalen S2. Der Text erklaert
+     sogar die fast-kommutative Faktorisierung L2(M,S) tensor H_int zur
+     analytischen Realisierungswahl und nicht zum Randdatum.
+
+   Damit stehen im Original ein Randprodukt und ein normaler Index nebeneinander.
+   Kein gelesener Satz definiert einen Thom-, Bott-, Callias- oder Familienindex-
+   Pushforward vom normalen S2-Kern in den Hilbertraum des alten D_Gamma.
+   Die Codegraphsuche nach einem B_s-, gamma_N- oder D_N-Produkt fand ebenfalls
+   keinen nativen Konstruktor dieses Operators.
+
+Die beiden Kreise
+=================
+
+Der Unterschied ist geometrisch und nicht nur notational:
+
+  Gamma-Kreis:
+      theta parametrisiert die Naht selbst; D_Gamma differenziert in theta.
+
+  normaler Kupplungsaequator:
+      phi parametrisiert den Aequator in
+      S2=D_N union_(S1) D_S; g2(phi)=exp(i phi) ist die Uebergangsfunktion
+      von L2.
+
+Beide repraesentieren einen Erzeuger von K1(S1), aber ihre Traegerrollen sind
+verschieden. Die fruehere Bott-Klassenpruefung hat bereits gezeigt, dass das
+aeussere Klassenprodukt topologisch Grad eins besitzt. Sie hielt zugleich fest,
+dass keiner der moeglichen Normaloperatoren mit dem wirklichen Nahtoperator
+identifiziert war. Der hier neue kleinste Test waehlt keinen Hilfsoperator als
+Physik aus. Er zeigt nur, dass die vorhandene DETERMINANTENLINIE die benoetigte
+Rang-eins-Indexlinie tragen kann. Der volle E2-Twist ist dadurch nicht auf
+Kernrang eins reduziert.
+
+Erste zusaetzliche Annahme
+=========================
+
+Die erste fehlende Eingabe ist die Operatoridentifikation
+
+    D_N = D_spin(S2) tensor L2.
+
+Das Original nennt L2 und eine bosonische B_E2, setzt aber diesen
+Determinantenlinien-Spinoperator nicht als Quelloperator ein. Danach benoetigt
+man eine spinorientierte tubulare Familie ueber der tangentialen Naht,
+
+    pi: Z -> Gamma,
+
+deren Fasern die normalen S2 tragen, und die Festlegung, dass der volle
+Quelloperator in Produktform beziehungsweise als entsprechender
+Familien-Diracoperator wirkt. Erst dann existiert der analytische Pushforward
+
+    pi_!(L2) = Ind(D_perp_plus)
+
+als Linienbuendel ueber Gamma.
+
+Ist die Familie nicht streng produktfoermig, traegt diese Indexlinie eine
+Berry- beziehungsweise Bismut-Freed-Verbindung. Die effektive tangentiale
+Wirkung ist dann D_Gamma plus dieser Verbindung. Um exakt den alten
+D_Gamma beziehungsweise B_Sigma zu erhalten, muss das Original auch diese
+induzierte Verbindung mit der vorhandenen Kreisverbindung identifizieren.
+Weder die Klasse c1(L2)=1 noch die Eindimensionalitaet des Faserkerns erzwingt
+diese Holonomie.
+
+Diese Zusatzvoraussetzung ist kleiner als die Auswahl eines inneren Rang-eins-
+Projektors oder einer Fouriermode. Sie ist aber echte Geometrie und kann nicht
+aus der blossen Wiederholung exp(i theta)=exp(i phi) ersetzt werden.
+
+Abgrenzung der vier Operatoren
+==============================
+
+  normaler Spin-Dirac:
+      Wirkt auf O(-1) tensor O(1)=O. Kernrang eins. Das ist der geeignete
+      transversale Indextraeger fuer den bedingten Pushforward auf der
+      Determinantenlinie. Der E2-gekoppelte Operator ist damit nicht festgelegt.
+
+  normaler Spin-Dirac mit vollem E2:
+      Sein Index ist c1(E2)=1, aber seine beiden Kerndimensionen folgen nicht
+      aus det E2 allein. Die Familie O(k) direct_sum O(1-k) zeigt die Freiheit
+      explizit. Fuer diesen Operator waere ein zusaetzlicher Vanishing- oder
+      Lueckensatz erforderlich.
+
+  kanonischer Spin-c-Dolbeaultoperator mit O(1):
+      Wirkt auf skalaren (0,q)-Formen mit O(1). H0 hat Dimension zwei,
+      Index zwei. Das ist die tatsaechliche H0(O(1))-Rechnung in v42.
+
+  bosonischer Calliasoperator:
+      Wirkt auf N_Seam mit asymptotisch invertiblem Massfeld Phi. v31/v32
+      erhalten Index und Kernrang eins erst zusammen mit wind(det Phi2)=1
+      und den gedruckten Lueckenannahmen. Dieser Operator ist weder durch
+      seine Zahl eins noch durch das Wort Dirac mit der CAR-Kreisquelle
+      identifiziert.
+
+Kleinster entscheidender Identitaetstest
+========================================
+
+Der gesamte Anschluss reduziert sich auf zwei Gleichungen:
+
+    Ind D_plus_(S2,L2)
+      = chi(K^(1/2) tensor L2)
+      = chi(O)=1,                                        (4)
+
+    B_prod V_chi = V_chi B_a.                            (5)
+
+Gleichung (4) folgt bereits aus der originalen Klasse L2=O(1) und der
+eindeutigen Spinstruktur auf S2. Gleichung (5) folgt aus einem Produkt- oder
+Familienoperator. Genau dieser zweite Ursprungspfeil fehlt in den gelesenen
+Originalstellen. Deshalb ist die Rang-eins-Reduktion eine mathematisch
+ausreichende Fortsetzung derselben Daten, aber noch keine original festgelegte
+physische Quellenabbildung.
+
+Quellen und Deduplikation
+=========================
+
+1. Alter tangentialer Kreis:
+
+   documents/archive--paper-latex--tfpt-theory-fullv21/sections/
+   001-section-introduction-the-problem-of-parameters.tex:198-251
+   SHA256 85bb11511be05385a7cadf6071dbede216b12befeb9d6767bc4460748cbec5d7
+   Atlas paper-source:1fe2ddfabc74ac0e94a4686d
+
+2. Spaeteres originales Randdatum und sein Produktkragen:
+
+   documents/archive--tfpt-45--source_extracts--01_boundary_kernel_source/
+   sections/001-section-primitive-core-and-carrier-interface-handoff.tex:65-91
+   SHA256 7d6e673d99c29d950dc601283cd51c1cc0b113567eeb79c8396fec9c82a02c79
+   Atlas paper-source:8027564739689dd02e02f11c
+
+3. Nichtkompakter normaler Calliaszweig:
+
+   documents/archive--paper-latex--tfpt-32/sections/
+   007-subsection-occupancy-and-boundary-to-bulk-bridge.tex:122-212
+   SHA256 ee0f3ecd2776f594d9c0cc4ac5c9acae8835b29ae1254414431b234efd4d0e76
+   Atlas paper-source:28ede23032223281fa6e77aa
+
+4. Kompakte normale S2 und H0(O(1)):
+
+   documents/archive--paper-latex--tfpt-42/sections/
+   012-subsection-bosonic-relative-index-and-higgs-selection.tex:3-80,96-210
+   SHA256 8140f7618b51292b8acf79fdc999cac9482842626ed07db4edb54dc91c9499d6
+   Atlas paper-source:fa82a1e57f89b9af401c7d9a
+
+5. Bereits reviewed und hier nicht wieder als neuer Befund verkauft:
+
+   finding:higgs-determinant-does-not-discharge-carrier-map
+   experiments/theory-contracts/seam-joint-source-origin-audit-20261016/
+   PROOF.txt:52-82
+   SHA256 f91443b115994302aa3b10d2a6b44131e13c3998b13d47b34aeaa59e25c86315
+
+   experiments/theory-contracts/source-rule-search-20260930/
+   BOTT_CLASS_ORIGIN.md:8-20,86-113
+   SHA256 909b875df080c5cb0d7f690f7218ee50ea596a380ebe2c2cb0277e21461caf5e
+
+Der Atlas wurde vor der Originallekture auf Thom, Bott, Callias, normalen
+Dirac, Produktkragen und H0(O(1)) durchsucht. Gefunden wurden die genannten
+scoped Befunde, aber kein bereits definierter normal-zu-tangentialer
+Operatorpushforward. Es wurden keine Atlas-, Ledger-, Index- oder Paperdateien
+veraendert.

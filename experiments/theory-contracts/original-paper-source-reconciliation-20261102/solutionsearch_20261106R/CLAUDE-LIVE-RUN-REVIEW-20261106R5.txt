@@ -1,0 +1,222 @@
+Härtestes Urteil
+
+Beobachteter Defekt: Der Prozess kommt der ursprünglichen Quelle nicht näher. Er erzeugt bedingte Anschlussalgebra, die immer neu aussieht, und schiebt dieselbe Identifikationsschuld von Chart zu Chart weiter.
+
+Die Belege aus den Runden 1–14:
+
+Ab Runde 6 verschwindet nu_Vn. nu_Vn kommt nur in Runde 1 und 3 vor, D_Vn zuletzt in Runde 4, Metrology005 zuletzt in Runde 5 (in Runde 9 einmal am Rand).
+Seit Runde 7 setzen die Prämissen das Gesuchte voraus. Sie lauten premise:actual-shared-real-higgs-yukawa-consumer-and-given-boson-fiber und …original-constant-higgs-fiber…. Eine Prämisse mit einer gegebenen Bosonfaser setzt genau das Gesetz voraus, das nu_Vn liefern soll. Ergebnisse unter dieser Prämisse können den Engpass logisch nicht verkleinern.
+Die Schuld bleibt dieselbe, nur der Chart wechselt. Neun Runden in Folge (6–14) nennen als first_extra_assumption dieselbe Klasse: „die ursprüngliche J·H-Paarung bzw. Darstellung realisiert dieses interne Chartobjekt“. Die aktive Runde 15 setzt sie fort (QFT007 ⟨J,φ⟩ → H-Testeinbettung). Die Rechnung springt dabei zwischen sieben Charts:
+Blockierungsabbildung (R1–2);
+Fourier-Kreisregulator (R3);
+96er-Spektralsplit (R4);
+radialer SU(2)-Rahmen (R5);
+IR-Zweischrittblock (R6);
+96er-Koeffizientenwörterbuch (R7–R11);
+Kreisquellenchart (R12–R14).
+Jeder neue Chart liefert frische, korrekte bedingte Identitäten.
+Die Auswertung wird jedes Mal aufgeschoben. 13 von 14 next_task enden mit „Danach/Anschließend … auswerten“. Erreicht wird dieser Schritt nie. Die Artefakte melden das selbst ehrlich (original_integrals_evaluated: 0, reflected_words_evaluated: 0; R14: reflected_rp → MISSING_INPUT actual_Q0).
+Die Kritik bestätigt immer. Das Urteil lautet 14 von 14 Mal scoped_result_survives, kein einziges falsified.
+Das Atlaswissen wird nicht genutzt. Keine einzige Runde zitiert eine finding:-ID, obwohl 143 excluded_scoped-Befunde vorliegen. R14s „neue“ Bedingung, dass das Produkt vor der Kompression gebildet werden muss, ist strukturell schon im Atlas (actual-disjoint-local-weyls-acquire-spurious-commutator-under-bare-native-compression: [PAP,PBP] = PBQAP − PAQBP).
+
+Ist der wortgleiche new_information-Abgleich der Hauptfehler? Nein. Der Defekt ist echt, aber er vergleicht das falsche Feld. new_information war in allen 14 Runden auch semantisch verschieden, weil jeder Chartwechsel echte neue Rechnungen erzeugt. Ein perfekter semantischer Detektor hätte deshalb ebenfalls nie gefeuert. Was sich wiederholt, ist die Blockerklasse in first_extra_assumption.
+
+Der Hauptfehler liegt in launch.py:41: next_task wird wörtlich aus review['next_task'] übernommen. Der Kritiker plant also die nächste Runde, und zwar immer als nächsten lokalen Schritt an seinem Chart. Keine Instanz misst den Abstand zum festen Ziel. Das Urteil scoped_result_survives gilt als Fortschritt, auch wenn die Schuld unverändert bleibt.
+
+Bewertung des Prozesses selbst: Mechanisch ist er gesund: Sandbox, Belege, Checkpointing und Ehrlichkeit der Artefakte sind gut. Die Aufgabensteuerung ist dagegen ungeeignet. Eine Reparatur an der Rundengrenze ist begründet.
+
+Die sechs Fragen
+
+(1) Erzwingt der Code Fortschritt?
+Beobachteter Defekt: Nein. followup hat genau zwei Eingriffe. Der eine betrifft candidate_complete_solution, der andere den wortgleichen new_information-Text. Das Kritikurteil wird nie ausgewertet, es gibt keinen Zielanker und kein Eskalationskriterium. Endlose bedingte Anschlussalgebra ist damit der stabile Zustand.
+
+(2) Werden Vorwissen und Ausschlüsse verwendet?
+Originaltexte werden tatsächlich mit Zeilenbelegen gelesen; das ist ein echter Fortschritt gegenüber der alten Suche. Atlasbefunde und Ausschlüsse liegen dagegen nur ablagebereit: null finding:-Zitate.
+
+Das Journal wird nur als Pfad übergeben. Runde 1 meldete es als „nicht vorhanden“ (es war damals leer). Danach erwähnt es keine Runde mehr. Was die vorigen Runden entschieden haben, erfährt eine Runde nur über den einen vererbten next_task.
+
+(3) Ist die Kritik unabhängig genug?
+Getrennter Aufruf und eigenes Scratch-Verzeichnis sind vorhanden, und die Kritik rechnet nach. Das ist gut. Ihre Rolle ist aber strukturell entwertet:
+
+Der Proposer erklärt seine erste physische Identifikation selbst für unbewiesen. Eine offen deklarierte Bedingung kann man nicht falsifizieren, also „überlebt“ das bedingte Ergebnis trivial.
+Die Kritik prüft nie die Relevanz: Verkleinert das Ergebnis den Blocker? Steht es schon im Atlas?
+Sie schreibt zugleich die nächste Aufgabe, ist also Planer und Prüfer in einem.
+
+Gleiches Modell und gleiche RULES sind dabei zweitrangig.
+
+(4) Werden Ergebnisse auf nu_Vn, D_Vn oder IR zurückgeführt?
+Nein. Die Runden 1–5 lieferten echte, begrenzte Negativbefunde zu Abkürzungen für D_Vn:
+
+Der Fourier-Cutoff mit festem Cutoff ist nicht eichkovariant als D_Vn lesbar (R3).
+Ein diagnostischer Spektralsplit ist nicht die V_n-Einbettung (R4).
+Ein allein aus H gebauter Rahmen scheitert am Stabilisator (R5).
+
+Diese Befunde wurden nirgends als Entscheidung festgehalten, und die Suche verließ den Zweig. Runde 6 kam der IR-Route am nächsten: Der ursprüngliche Zweischrittblock wurde mit Zylinderankern (1, 0, 2/3) ausgewertet. Ab Runde 7 wechselte sie trotzdem in den 96er-Chart.
+
+(5) Die wichtigsten Änderungen stehen unten, maximal fünf.
+
+(6) Was aus meinen früheren Empfehlungen umgesetzt ist steht am Ende, zusammen mit Selbstkritik.
+
+Fünf minimale Änderungen am vorhandenen Pfad, priorisiert
+1. followup an Blockerpersistenz koppeln statt an Textgleichheit (launch.py:40–52, prompts.py:93–106)
+
+Das Schema bekommt zwei Pflichtfelder für den Kritiker, beide als feste Aufzählungen:
+
+
+python
+BLOCKERS = ['nu_Vn_base_law', 'D_Vn_map', 'block_embedding_H_readout',
+            'JH_test_pairing_domain', 'R113_time_source_dictionary', 'absolute_reference', 'none']
+# critic schema:
+props['blocker_class'] = {'type': 'string', 'enum': BLOCKERS}
+props['target_progress'] = {'type': 'string', 'enum': ['blocker_removed', 'definition_decided', 'none']}
+
+followup wird so umgebaut:
+
+
+python
+def followup(proposal, review, history):
+    cls, prog = review.get('blocker_class'), review.get('target_progress')
+    prev = [h['review'].get('blocker_class') for h in history[-1:]]
+    if prog == 'none' and cls != 'none' and prev == [cls]:
+        return ESCALATE[cls]                      # siehe Änderung 2
+    if prog == 'none':
+        return ANCHOR + ' Kritikerpflicht: ' + review['next_task']   # Ziel bleibt vorn
+    return review['next_task']
+
+Wirkung. Schon zwei Runden ohne Zielfortschritt in derselben Klasse lösen einen anderen Aufgabentyp aus. Umformulierung hilft nicht mehr, weil die Klasse eine Aufzählung ist.
+
+Entscheidender Test.
+
+Replay des vorhandenen Journals: R6–R14 erhalten die Klasse JH_test_pairing_domain mit target_progress = none. Die neue Logik muss bei R8 eskalieren; die alte Logik feuert null Mal (euer lokaler Befund).
+Gegenprobe: Drei Runden mit blocker_removed dürfen nicht eskalieren.
+
+Verbleibende Annahme. Die Klasse wird vom Modell vergeben. Als Absicherung dient Änderung 4, die nicht vom Modell abhängt.
+
+2. Eskalation als Entscheidungsaufgabe statt weiterer Herleitung (prompts.py, neue Konstante ESCALATE)
+
+Pro Blockerklasse gibt es zwei Stufen.
+
+Stufe A, Definitionsentscheidung. Eine protokollierte, vollständige Durchsuchung der scientific_readonly_roots nach allen Schreibweisen und Synonymen, zum Beispiel für nu_Vn: dnu_Vn, nu_{V_n}, „blocked geometric exhaustion“, dmu_n, Zellmasse, Konfigurationsbasis, Paper42. Jeder Treffer wird klassifiziert.
+
+Die Ausgabe ist ein neues Pflichtfeld definition_decision:
+
+DEFINED mit Datei:Zeile, oder
+NOT_FOUND mit Suchprotokoll.
+
+Euer Integrand-Review hat genau das für die owning-Texte bereits begrenzt festgestellt. Die Entscheidung fehlt nur für den Rest des Korpus.
+
+Stufe B, nur nach NOT_FOUND. Die Aufgabe ist die stromaufwärts liegende Gleichung aus vorhandenen Prinzipien, nicht eine weitere Anschlussbedingung. Für nu_Vn ist das die projektive Verträglichkeit der Exhaustion unter der ursprünglichen Blockierung:
+
+p_*(e^{−S_{n+1}} ν_{n+1}) = e^{−S_n} ν_n
+
+mit S_n = tr f*(D_Vn²/Λ²) aus Metrology005:142–144, zusammen mit RP und den gegebenen Ward-Relationen. Der Scope des Ausschlusses literal-archived-global-rg-kernel-does-not-preserve-finite-measures ist dabei ausdrücklich zu beachten.
+
+Zusätzlich gilt eine Routenbindung: Für die nächsten Runden bleibt die Arbeit entweder auf der geometrischen Route (nu_Vn/D_Vn) oder auf der IR-Route (R6-Block). Ein Chartwechsel ist nur mit benannter Entscheidung zulässig.
+
+Entscheidender Test.
+
+Die erste eskalierte Runde muss DEFINED oder NOT_FOUND liefern.
+Eine spätere Runde derselben Klasse ohne neue, nicht im Protokoll enthaltene Quelle erhält die Stufe-B-Aufgabe, nicht wieder die Identifikationsfrage.
+
+Forschungsannahme. Stufe B ist eine Hypothese über einen möglichen Herleitungsweg. Sie behauptet nicht, dass die Verträglichkeit ν_Vn eindeutig bestimmt.
+
+3. Kritik muss Prämissenvoraussetzung und Relevanz prüfen (prompts.py:76–83 plus Schema)
+
+Die Kritik bekommt zwei neue Pflichtfelder:
+
+premises_presupposing_target (Liste): Welche verwendete Prämisse setzt das Blockerobjekt bereits voraus?
+already_implied_by (Liste von finding:/R-IDs): Folgt das Ergebnis schon aus einem Atlasbefund?
+
+Die Steuerung erzwingt target_progress = 'none', sobald die erste Liste nicht leer ist.
+
+Der Rollentext ändert sich: Statt „falsifiziere die erste Identifikation“ lautet er „prüfe, ob das Ergebnis den Blocker verkleinert und ob es neu gegenüber Atlas und Journal ist“. Die bisherige Formulierung läuft bei selbst deklarierten offenen Annahmen ins Leere.
+
+Entscheidender Test.
+
+R7–R14 müssen ihre given-boson-fiber-Prämissen markieren.
+R14 muss einen Atlasbefund zur Kompression zitieren oder begründet als nicht einschlägig ausweisen.
+Ohne diese Felder ist die Antwort schemawidrig und der Aufruf wird wiederholt.
+4. Vom Host beobachteter Abstand zum Originalcaller (launch.py nach Zeile 139, ein Aufruf, kein Modell)
+
+Nach jeder Runde ruft der Host den installierten Originalstart auf, also denselben, der heute mit Exit 2 ORIGINAL_SOURCE_INTEGRATION_NOT_STARTED endet. Liegt im Scratch des Proposers ein provenienzmarkiertes whole_source_bundle.json, wird es übergeben; Einträge ohne Originalzeile bleiben MISSING_INPUT.
+
+Ins Journal kommen zwei Felder:
+
+original_caller mit Exit und den fünf Prüferstatus;
+rounds_since_original_evaluation.
+
+followup eskaliert bei einem Zählerstand von mindestens 4, unabhängig von den Modelllabels.
+
+Wirkung. Das ist die einzige Zielmetrik, die nicht vom Modell geschrieben wird.
+
+Entscheidender Test.
+
+Replay: Der Zähler steht bei R14 auf 14.
+Ein Bundle mit erfundenen Zahlen ohne Provenienz darf nicht PASS ergeben, sondern muss MISSING_INPUT melden.
+5. Kompakte Routen- und Entscheidungstabelle in den Prompt (launch.py:128–129 an prompt())
+
+Der Host baut aus dem Journal eine kleine Tabelle mit einer Zeile pro Runde: Route/Chart, blocker_class, target_progress, definition_decision, premises_presupposing_target. Diese Tabelle steht im Prompt; der Journalpfad bleibt zusätzlich erhalten.
+
+Wirkung. Bereits entschiedene Fragen werden nicht neu gestellt. Die Chartwechsel werden für beide Rollen sichtbar.
+
+Entscheidender Test. Der Prompt für Runde n enthält n − 1 Zeilen. Die Kritik muss im Feld blocker_first_round die Runde nennen, in der der aktuelle Blocker zuerst auftrat.
+
+Was ich ausdrücklich nicht empfehle
+
+Kein semantischer Ähnlichkeitsrichter, kein Embedding-Vergleich und keine LLM-Jury über new_information, denn das falsche Feld bleibt falsch. Keine Monitorerweiterung und keine Atlas-zu-Prädikat-Plattform (siehe unten).
+
+Betrieb
+
+Begründete Wiederaufnahme: ja, an einer Rundengrenze. Der Controller wird beendet, nachdem eine Zeile ins Journal geschrieben wurde. Die neuen Felder sind in alten Zeilen optional und gelten dort als unknown.
+
+Beim Resume gilt: Existiert für die nächste Runde schon ein round-state.json, bleibt dessen Frage unverändert, damit der Checkpoint gültig bleibt. Andernfalls wird der Task mit der neuen followup-Logik aus der ganzen History neu berechnet, statt history[-1]['next_task'] zu übernehmen (launch.py:93).
+
+Sofortige Brücke ohne Neustart. Den Stufe-A-Text für JH_test_pairing_domain bzw. nu_Vn_base_law in die vorhandene operator-notes.txt schreiben. Beide Rollen lesen sie. Das ist schwächer als Code, weil Notes nur steuern, kostet aber nichts.
+
+Zu euren Zahlen: Meine datenbasierten Aussagen decken R1–R14 ab. Runde 15 setzt laut worker.json dieselbe Klasse fort. Die Runden 16–18 habe ich nicht gesehen.
+
+Frühere Empfehlungen: Stand und Selbstkritik
+
+Umgesetzt und tragfähig:
+
+Die endliche AST-Kampagne ist gestoppt.
+Das Integrand-Vollständigkeitsaudit existiert in sinnvoller Form als Source-Review. Sein Kernbefund trägt: nu_Vn ist in den owning-Texten benannt, aber nicht materialisiert.
+Rahmenfix und Provider-ERROR sind umgesetzt.
+Deduplikation nach Wert × Prüfer ist umgesetzt.
+Das Modell liest Originale mit Zeilenbelegen.
+
+Nicht ausgeführt, und ich korrigiere meine eigene Empfehlung: Den maßagnostischen Identifizierbarkeitstest aus Runde 2 meines Reviews hat R3 hinter die Blockauflösung gestellt („Danach“). In der geometrischen Route lässt er sich vorher gar nicht formulieren: Ohne materialisiertes D_Vn fehlen Koordinaten und Wirkung, an denen Maßscore und Fluss unbekannt bleiben könnten. Diese Voraussetzung hatte ich unterschätzt.
+
+Ausführbar ist er heute nur auf der IR-Route am R6-Block. Dort ist das Ensemble atomar, also gibt es nur Ward- und RP-Bedingungen, keine Schwinger-Dyson-Gleichungen. Die Frage lautet dann: Existiert in dieser endlichen IR-Algebra ein Markenoperator, der alle im Scope gültigen ursprünglichen Ward-, Kontakt- und RP-Bedingungen erfüllt? Möglich sind drei Antworten: genau einer, keiner oder viele. Das ist ein endliches lineares bzw. semidefinites Problem und würde die J·H-Schleife entscheiden, statt sie zu verlängern.
+
+Unerwiesen: Dass die dort benötigten Kontaktbeziehungen im Scope der IR-Algebra gelten. Das muss der erste Prüfschritt sein.
+
+Zurückgestuft: Meine Empfehlung „Atlas als ausführbare Scopeprädikate“ war zu groß. Gegen den beobachteten Fehler genügt Änderung 3: Implikation durch vorhandene Befunde im Einzelfall abfragen, keine Gesamtplattform.
+
+Keine dieser Änderungen garantiert eine fundamentale Lösung. Sie sorgen dafür, dass der Prozess entweder nu_Vn bzw. die IR-Marke wirklich entscheidet oder präzise belegt, dass das Original diese Entscheidung nicht enthält.
+
+
+
+
+jetzt
+
+
+
+
+
+
+Opus 5.5
+ Hoch
+
+
+Claude ist eine KI und kann Fehler machen. Bitte überprüfe die Antworten.
+Inhalt
+Claude_TFPT_Suchprogramm_Pruefpaket_2026-11-06.md
+
+MD
+
+Claude_TFPT_Sol_Laufpruefung_2026-11-06.md
+
+MD
+
+Claude hat die Antwort abgeschlossen

@@ -1,0 +1,134 @@
+FUNDAMENTAL-SEARCH-OBJECTIVE-AUDIT-20261030
+Stand: 30. Oktober 2026. Nutzerkorrektur: ganze Suchstrategie überprüfen.
+Verdict: NON_SELECTIVE_COMPATIBILITY_CLASS; Gesamtziel weiter offen.
+
+1. Die entscheidende Frage
+Kann die bisherige endliche Kompatibilitätsprüfung aus sehr vielen Kopplungen
+die physische ursprüngliche TFPT Quelle auswählen? Antwort in der tatsächlichen
+v252 Familie: nein. Ihre ganze kontinuierliche Familie besteht diese Bedingungen.
+Das beweist keine Unmöglichkeit einer Auswahl durch weitere TFPT Originaldaten.
+
+2. Vollständiger Familiennachweis am Originalaufbau
+Originalimplementierung: verification/v252_full_finite_triple.py.
+Vier freie komplexe 3x3 Matrizen Yu,Yd,Ye,Ynu haben 72 reelle Koordinaten.
+Das komplex symmetrische MR hat weitere 12. Zusammen sind es 84.
+audit_full_candidate_space.py erzeugt jede Originalkoordinate einzeln durch
+full_D und weist die Identität der extrahierten 84x84 Koordinatenmatrix nach.
+Jede der 84 Basisrichtungen ist hermitesch, gamma ungerade und JF reell.
+Diese Bedingungen sind über reellen Koeffizienten linear und gelten daher
+für jede reelle Linearkombination, einschließlich aller komplexen Yukawas.
+
+Die tatsächliche Algebra C + H + M3(C) hat reelle Dimension 24.
+Ihre Originaldarstellung ist generationsdiagonal und auf allen Generationen
+identisch. Alle geordneten Generationsblöcke der 84 Richtungen werden erhalten;
+es entstehen 26 verschiedene nichtverschwindende 32x32 Blocktypen.
+Für jeden werden sämtliche 24x24 linken und gegenüberliegenden Algebraaktionen
+auf die Ordnung eins Relation geprüft. Ordnung null gilt auf allen 24x24 Paaren.
+Bilinearität in den Algebraargumenten und Linearität in D schließen die ganze
+Familie. Kein Modus wird durch die Blockreduktion verworfen.
+
+Die verwendeten Zahlen sind gaußsche ganze Zahlen. Die kleinen endlichen
+Produkte und Summen liegen innerhalb der exakten Ganzzahldarstellung unter 2^53;
+verglichen wird ohne Toleranz. Die Rangrechnung selbst erfolgt rational exakt.
+15 Kontrollen bestehen. Das ist ausgeführte Originalverifikation mit analytischer
+Linearitätsbegründung, kein neuer Lean Satz und keine Ledgerpromotion.
+
+3. Bloße Basisfreiheit wird wirklich abgezogen
+R014 bestimmt die passende konstante Koordinatengruppe U(3)^6 bei festem
+ursprünglichem Eich, Graduierungs und Realwörterbuch. Sie hat Dimension 54.
+Hier werden deren 54 Lie Generatoren auf dem tatsächlichen 96er Modul gebaut.
+Alle Kommutatortangenten liegen nachweislich wieder in der 84er Originalfamilie.
+An einem expliziten komplex ganzzahligen Originalpunkt hat die 84x54 Orbitmatrix
+exakten Rang 53. Ein 53x53 Minor hat Determinante -19829864005632.
+Punkt, Generatorkonstruktion, Minorindizes und ganze Matrix sind gespeichert.
+
+Die gemeinsame Quarkphase wirkt auf jedes Yu/Yd unverändert und lässt
+Leptonen und MR unberührt. Diese baryonische U(1) stabilisiert jeden Punkt.
+Deshalb ist der Orbitrang überall höchstens 53. Der nichtverschwindende Minor
+beweist Rang mindestens 53 auf einer offenen dichten Menge. Folglich hat die
+generische Familie modulo diesen Basiswechseln reelle Dimension 84-53=31.
+Besondere entartete Punkte können größere Stabilisatoren besitzen.
+Weitere festgehaltene Clocks oder Quelldaten werden hier nicht wegquotientiert.
+Eine volle Invarianz eines festen D unter der ungebrochenen Eichgruppe wurde
+weder verlangt noch bewiesen; sie würde die nichttrivialen Yukawas ausschließen.
+
+4. Was gegenüber Milliarden Einzeltests gewonnen wurde
+Allein die binäre Koordinatenunterfamilie enthält 2^84 =
+19342813113834066795298816 Konfigurationen. Sie wurde NICHT einzeln aufgezählt.
+Der exakte Basisnachweis umfasst sie und sogar alle reellen Koeffizienten.
+Mehr Stichproben derselben Bedingungen können keinen einzelnen Kandidaten
+aus dieser ganzen zulässigen Familie auswählen. Das Suchziel muss sich ändern.
+Dies gilt für Kompatibilität in dieser v252 Familie. Es gilt ausdrücklich nicht
+als Klassifikation aller TFPT Quellen, Wirkungen, Zustände oder Kontinuumsmodelle.
+
+5. Bekannter mathematischer Befund, aktuelle Implementierung geprüft
+Chamseddine, Connes, Marcolli, Gravity and the standard model with neutrino
+mixing, hep-th/0610241, Abschnitt 2.7, Proposition 2.24, Lemma 2.27,
+Gleichung 2.46 und Remark 2.28: Quarkmodulraum Dimension 10, Leptonmodulraum
+mit symmetrischer Majoranamatrix Dimension 21, zusammen 31.
+Primärquelle am 30.10.2026 gelesen: https://arxiv.org/pdf/hep-th/0610241
+Die 31 ist keine neue physikalische Entdeckung. Neu ist ihre exakte Prüfung
+an den tatsächlichen v252 Matrizen samt vollständigem Kompatibilitätsnachweis.
+
+6. Der ursprüngliche Quellenweg bleibt maßgeblich
+Die aktuelle Klassenrelation [D_F]=[D_Sigma] tensor [K_car] beschreibt allein
+keinen ausgeführten konkreten Modul und Verbindungsproduzenten.
+Aktuelles Papier: documents/tfpt_2_standard_model/sections/
+010-section-the-explicit-mass-gap-closes-dynamics-and-cluste.tex, Zeilen303-326.
+v258_dirac_covariance_induction.py setzt zunächst Yukawas ein und gewinnt sie
+durch Inversion zurück. Das ist gültige bedingte Rekonstruktion, kein Ursprung;
+die physische Identifikation ist dort bereits als [C] gekennzeichnet.
+
+Die stärkeren ursprünglichen HolK Regeln sind vorhanden und bleiben erhalten:
+archive--tfpt-45--source_extracts--03_em_flavor_source, Abschnitte003 bis005,
+enthält P_str, D_f, K_f und Y_ij=<e_i,Hol_G(nabla_F*)K_f e_j>.
+Der offene Schritt ist die konkrete Herkunft und vollständige Ausführung dieser
+Daten, einschließlich V_adm und des ursprünglichen markierten Consumers.
+Weder eine frei gewählte Störung noch eine beliebige Matrix darf sie ersetzen.
+Die Originalgeometrie D4 ist hier eine dihedrale Symmetrie; eine Dynkin D4
+Trialitätsgeometrie wurde nicht hergeleitet. Bereits berechnete offene Pfade,
+beide Endpunktkarten und der ursprüngliche nichtverschwindende WEDGE Consumer
+werden nicht erneut als fehlend ausgegeben.
+
+Die ursprüngliche Transferbeschreibung gibt positive C6 Greenkerne, P_adm
+und adressierte Gewichte an. Die gelesene Beschreibung nennt Zählungen und
+Trägerlabels, liefert aber noch keinen ausgeführten vollständigen Gewichtsaufruf.
+Siehe ORIGINAL-BLOCKED-TV-WEIGHT-PRODUCER-REVIEW.txt. P_adm selbst ist explizit.
+Seine Strafen verschwinden auf dem behaltenen Unterraum; Funktionen nur dieser
+Strafen können dort die benötigten unterschiedlichen Amplituden nicht auswählen.
+Der primitive Randkern beginnt bereits mit A+,H+,D+,J,Gamma und Randdaten.
+Diese Eingaben dürfen nicht stillschweigend als aus bloßer Konsistenz erzeugt gelten.
+Dies sind wiederverwendete Quellenbefunde, keine neuen allgemeinen Ausschlüsse.
+
+7. Konkrete Konsequenz für den nächsten Lösungsversuch
+F2 wird vorgezogen: genau die unabhängige ursprüngliche Auswahlregel identifizieren
+und an den vorhandenen HolK/S_adm/T_V Aufrufen ausführen. Ihr Output muss ein
+tatsächlicher Quellenoperator oder eine tatsächlich nichtidentische Gleichung sein.
+Wird eine originale Variationsgleichung verwendet, bleiben Variablen, Domain,
+Referenz, Cutoff und Eta unverändert aus derselben Originalwirkung herzuleiten.
+Keine freie Yukawavariation unterstellen, wenn das Original sie nicht zulässt.
+Die erste Probe ist: Schränkt diese Regel mindestens eine der echten, von bloßen
+Basiswechseln verschiedenen Richtungen ein? Rückgewinnung eingesetzter Werte,
+unveränderte Konsistenzidentitäten und Fits an Zielmassen erfüllen dies nicht.
+Erst dann die vorhandenen exakten Eliminations, Intertwiner und Intervallverfahren
+auf diesen konkret geänderten Suchraum anwenden. Keine neue allgemeine Suchmaschine.
+Eine eindeutige lokale Lösung verlangt Isolierung; Vollständigkeit der physischen
+Lösung verlangt außerdem den ursprünglichen Zusammenhang mit Zustand, Clocks,
+E8/3+2, Alpha, Flavor und Raumzeit/Gravitation. Die Zahl31 ist nicht die ganze TFPT.
+
+8. Tatsächliche Gegenuntersuchungen, Sitzung004
+Claude Opus5.5 Hoch prüfte den direkten Stromkubikanschluss; nur die begrenzte
+Austauschsignatur wurde übernommen. Ein zusätzliches CY3 Modell ist kein Original.
+Gemini Argon untersuchte HolK und offene Transporte; die behauptete erschöpfende
+Zweiteilung der Montage, Dynkin Trialität und das fehlerhafte Pauli Beispiel werden
+verworfen. Grok Experte bestätigte die Parameterzählung und korrigierte den
+antisymmetrischen d*epsilon Tensor und die Logarithmusdomain. Seine zusätzliche
+Forderung ungebrochener Eichinvarianz der festen Kompression wird nicht übernommen.
+Die Modellantworten sind Gegenprüfung, keine Beweisquelle. Sichtbare Texte und
+Screenshots liegen im Benutzerexport gegenpruefungen/Sitzung004-*.
+
+9. Abschlussstatus dieses Audits
+Ansatzprüfung abgeschlossen; Kompatibilitätssuche in dieser Familie als alleiniger
+physischer Selektor unzureichend. F2 Quellenherleitung und TFPT Gesamtziel offen.
+Kein Milliardenlauf einzeln ausgeführt, keine neue Hintergrundautomation gestartet,
+keine finale physikalische Lösung behauptet. Bestehende bewiesene Bausteine bleiben.

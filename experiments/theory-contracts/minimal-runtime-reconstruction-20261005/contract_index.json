@@ -1,0 +1,100 @@
+{
+  "contract": "minimal-runtime-reconstruction-20261005",
+  "date": "20261005",
+  "research_id": "UR.MINIMAL_RUNTIME.RECONSTRUCTION.01",
+  "question": "Without inserting AX.MARKCLIFFORD or Theta_1: does the future-equivalence (Hankel/GNS) quotient of the existing P1/P2 source processes yield Cl(4) for the four marks, the bcc filter F, the minimal-doubling kinetic h_W and the quartic -g sum O_A^2 as the minimal executable representation; if not, what is the exact defect and the smallest missing input?",
+  "verdict": "NOT_DERIVED",
+  "verdict_enum": [
+    "DERIVED",
+    "CONDITIONAL",
+    "NOT_DERIVED",
+    "PASS",
+    "PARTIAL",
+    "FAIL"
+  ],
+  "verdict_scope": "Exact within the declared channels and classes: source channels A (family CAR over H_1), B (lifted original v117 Fuchs transport), C (twist zero modes of the sheet-odd species); nearest-bcc filters; nearest-neighbour C3 Weyl kinetics; on-site Spin(10) x SU(2) x Z4 quartics. An extended source or longer range is not excluded.",
+  "mathematical_verdict": "FUTURE_EQUIVALENCE_FINITE_CLOSURE_PROVEN; QUOTIENT_IS_HOMOMORPHISM_REMOVES_NO_SOURCE_RELATION (adds only ker pi_omega); MARK_CLIFFORD_NO_GO_FROM_CURRENT_SOURCE (all contained Clifford structures fermion-odd and family/species-carrying: channel A one-body Cl(3) with defect -v v^T, three-body beta completion odd; channel B no Clifford pair in C(K,M_3); channel C species-singlet bit N mod 2 = 0); FILTER_CONDITIONAL_UNIQUE (f_b, b fixed by reality/Markov premise); MINIMAL_DOUBLING_FORCES_T_BREAKING (T-fixed points Gamma, H, +-P; single mark only under maximal residual symmetry); THETA1_KINETIC_ONE_POINT_OF_TWO_PARAMETER_CLASS (theta_c ~ 34.06 deg); QUARTIC_NOT_SELECTED (pure quasi-free source premise; 4 physical couplings)",
+  "sub_contracts": {
+    "UR.FUTURE_EQUIVALENCE.FINITERANK.01": "PASS_MATHEMATICAL",
+    "UR.CONTINUATION_KERNEL.01": "CONSTRUCTED",
+    "UR.RESIDUAL_RANK.01": "STABLE_INTERNAL; ADDRESS_UNBOUNDED",
+    "SOURCE.MARK_ACTION.01": "CONSTRUCTED",
+    "SOURCE.MARK_CLIFFORD.01": "NO_GO_FROM_CURRENT_SOURCE",
+    "SOURCE.FILTER.UNIQUENESS.01": "CONDITIONAL_UNIQUE",
+    "SOURCE.KINETIC.RECONSTRUCTION.01": "NOT_DERIVED",
+    "SOURCE.QUARTIC.VERTEX.01": "NOT_SELECTED"
+  },
+  "summary_de": "Der Zukunftsquotient entscheidet Zukunftsgleichheit durch endlichen Abschluss; als GNS-Homomorphismus entfernt er keine Quellrelation und fuegt nur ker pi_omega hinzu. AX.MARKCLIFFORD folgt nicht aus der Quelle: alle enthaltenen Clifford-Strukturen (CAR ueber H1 mit Gram I-J/4, Dreikoerper-beta, Einzelspezies-Nullmoden) sind fermion-ungerade und familien-/speziestragend; Transportkanal ohne Clifford-Paar; Spezies-Singulett-Twistkanal Bit N mod 2 = 0. Fehlend: ein Z2-Klassenbit auf innerem Singulett-Coin (AX.MARKSIGN bzw. fuer chirales Theta1 die 2T-Klasse von A4: AX.WEYLCOIN; Gram symmetrie-erzwungen). Filter nur mit Realitaets-/Markov-Praemisse eindeutig. Minimale Verdopplung erzwingt T-Bruch, eine Marke erst mit maximaler Restsymmetrie; h_W ist ein Punkt einer zweiparametrigen Klasse (theta_c ~ 34,06 Grad). Quartic: quasi-freie Quelle waehlt nichts, 4 physikalische Kopplungen.",
+  "claims_tested": [],
+  "claims_scoped_not_closed": [
+    "AX.P1.01",
+    "AX.P2.01"
+  ],
+  "related_research_ids": [
+    "AX.MARKCLIFFORD",
+    "AX.SPINSTEP",
+    "SOURCE.MARK_C3_SELECTION.01",
+    "SOURCE.PROJECTIVE_TRANSPORT.01",
+    "SHEET.PARITY.01",
+    "TFPT.FULL.PROCESS.01"
+  ],
+  "related_contracts": [
+    "seam-holonomy-generating-20261001",
+    "tfpt-full-process-20261002",
+    "universalraum-primitive-source-audit-20260915"
+  ],
+  "gates": [
+    "T1",
+    "T3",
+    "T4"
+  ],
+  "kills": [
+    "Deriving AX.MARKCLIFFORD by any future-equivalence/GNS compression of the current source channels (quotient keeps all source relations; channel-specific obstructions).",
+    "Parity-even, internal-singlet Cl(4) from the family CAR modes over H_1: one-body Gram I - J/4 (beta missing); the three-body beta completion is fermion-odd and family-carrying.",
+    "Clifford pairs from the original lifted Fuchs transport in any quotient (fiber algebra M_3(C), pointwise in C(K, M_3)).",
+    "Parity-even anticommuting species-singlet mark operators from twist zero modes (graded locality); N = 16 gives class bit 0.",
+    "Uniqueness of F from mark symmetry alone: one-parameter family f_b = 1 - ccc + b sss, |b| <= 1.",
+    "A minimally doubled single-chirality Weyl kinetic with the full mark rotation symmetry T (d vanishes at Gamma, H, P, -P).",
+    "Minimal doubling alone selecting one mark (open condition; C3 needs maximal residual symmetry).",
+    "Selection of h_W by IR data: the (theta, gamma) family shares the Gamma cone.",
+    "Selection of -g sum O_A^2 by the source four-point response (pure quasi-free: zero) or by symmetry (4 physical couplings)."
+  ],
+  "resolved": [
+    "Finite-closure criterion for future indistinguishability (<= d^2 - 1 enlargements; kernel-only rank stabilisation).",
+    "Exact defect of the one-body source mark Clifford structure: -v v^T along the surface-relation (beta) direction; beta exists only as a fermion-odd three-body operator.",
+    "AX.MARKCLIFFORD reduced to one Z2 projective class bit on an internal-singlet coin (AX.MARKSIGN; for chiral Theta_1 the 2T class of A4: AX.WEYLCOIN, Gram symmetry-forced).",
+    "Minimal doubling forces T-breaking; maximal residual symmetry gives C3 = one mark.",
+    "F = unique reversible Markov mark-visit walk generator (conditional premise).",
+    "Bcc address is unbounded future information (space survives the quotient)."
+  ],
+  "minimal_missing_inputs": [
+    "one Z2 projective class bit for a T-symmetric Cl(4) coin (AX.MARKSIGN); for chiral Theta_1 only the two-component internal-singlet coin (AX.WEYLCOIN; spin 1/2 then emergent; not in the source: weylcoin-origin-20261005)",
+    "T-breaking (forced) + maximal-residual-symmetry premise (one mark) + fundamental kinetic conditions (ii)-(vi), (viii)",
+    "filter reality / reversible Markov premise",
+    "three quartic coupling ratios + g"
+  ],
+  "checker": "checker.py",
+  "results": "results.json",
+  "proof": "README.md",
+  "firewall": "experiments",
+  "promotion": false,
+  "complete_TFPT_solution": false,
+  "physical_gates_closed": [],
+  "imported_premises": [
+    "Part U6/K9: 16 real sheet-odd species, one zero mode per species and mark, species-singlet mark operators",
+    "Part H: pure quasi-free (Hardy sea) source vacuum",
+    "SG2 (symmetric_gap.py): beta and sheet mass couple chirality blocks (vector-like only)"
+  ],
+  "review": "independent adversarial review 2026-10-05 incorporated (no verdict reversed; wording and premises corrected, checks A5, KR3b, KR5b, QV3b added); user check 2026-10-05: i g1 g2 g3 commutes (central pseudoscalar), the partner product i g'1 g'2 g'3 anticommutes (check A5b)",
+  "tool_status": "UR.FUTURE_EQUIVALENCE.FINITERANK.01 CLOSED (PASS): used as equivalence checker only, not as a generator of missing structure",
+  "superseded_statements": [
+    "AX.WEYLCOIN as 'C^2 plus a postulated 2T class bit' -> once a two-component coin exists, spin 1/2 emerges at an isotropic Weyl node (2pi action = existing fermion parity); remaining input is the coin itself (mark-projective-lift-20261005); no such coin in the source (weylcoin-origin-20261005)"
+  ],
+  "followups": [
+    "mark-projective-lift-20261005",
+    "interaction-mediator-20261005",
+    "theta1-universality-class-20261005",
+    "weylcoin-origin-20261005",
+    "mediator-rep-sieve-20261005"
+  ]
+}

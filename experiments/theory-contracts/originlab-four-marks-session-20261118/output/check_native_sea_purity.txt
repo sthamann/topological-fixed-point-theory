@@ -1,0 +1,26 @@
+N1  the native operator
+      modes: [-2, -1, 0, 1]  quarter shift: 0.25  dimension: 384
+  ok   four modes, 96 fibres, quarter shift 1/4
+  ok   assembled operator is self-adjoint
+  ok   half of the 384 levels are negative, with a gap   (192, 0.254195)
+  ok   the whole circle is in a pure state (purity 1)
+N2  places and pairs of places, coefficients [2,2,2]
+      log purity of one place: [-23.940513 -23.960873 -23.940513 -23.960873]
+      log of the ratio for pairs of places:
+[[ 0.       24.393442  2.979157 24.397739]
+ [24.393442  0.       24.397739  3.019876]
+ [ 2.979157 24.397739  0.       24.393442]
+ [24.397739  3.019876 24.393442  0.      ]]
+  ok   ratios are larger than one for every pair (the places are correlated)
+      neighbours: [24.393442 24.397739 24.393442 24.397739]  opposite: [2.979157 3.019876]
+  ok   complementary pairs have equal purity (pure state): pur{0,2} = pur{1,3}, pur{0,1} = pur{2,3}
+N3  comparisons
+      no potential: one place -66.542129  neighbours 77.849301  opposite 0.0
+      per fibre: [-0.693147  0.81093   0.      ]  exp: [0.5  2.25 1.  ]
+  ok   without potential the 96 fibres contribute equally and the numbers are those of one shifted mode set
+      baseline [1,1,1]: one place [-23.97631 -23.97631 -23.97631 -23.97631]
+      baseline [1,1,1]: neighbours 24.472005  opposite 2.948424
+      [2,2,2] against no potential, neighbours: -53.453711  opposite: 2.999517
+  ok   the native potential changes the table (the functional reads the native couplings)
+
+all checks passed

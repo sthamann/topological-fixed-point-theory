@@ -1,0 +1,89 @@
+Herkunft: https://claude.ai/chat/23a5a91a-95a2-475c-84ba-1ce29e045339
+Antwort31. Sichtbarer Antwortcontainer. Kandidat.
+
+Fortsetzung 31: Der hexagonale Automorphismus T_ρ am Original
+Kurzfassung
+
+Ich habe T_ρ: (w, η) ↦ (ρw, η) mit allen Originaloperationen exakt durchgerechnet (hexagonal.py). Die tragende neue Rechnung führt zu einem scharfen Ergebnis: T_ρ ist ein echter Originaloperator, kann aber für sich keine physische CP-Phase liefern.
+
+Exakte Struktur. T_ρ liegt über der holomorphen Seitenvertauschung z ↦ 1/z, also innen ↔ außen der Naht und q ↔ p. Es zerfällt exakt als T_ρ = θ ∘ c⁻¹ mit θ = T_ρ³ = (−w, η). Auf der kanonischen Hodge-Linie dw/η ist ρ = (−1)·ω̄: Vorzeichen der Seitenvertauschung mal Phase des inversen Familiendecks.
+Relationen mit den Originaloperationen. τ₀ T_ρ τ₀ = T_ρ⁻¹, Q T_ρ Q⁻¹ = ι T_ρ⁻¹, E0 T_ρ E0⁻¹ = ι T_ρ, und T_ρ kommutiert mit c und ι.
+No-Go. Die familienaufgelöste Wirkung von T_ρ ist reell: Kummer-Lifts tragen nur Vorzeichen, und auf den gemischten Linien gibt es keine Fixlinien außer bei T_ρ³ mit Eigenwerten ±1. Die nichtreelle Phase ρ sitzt ausschließlich auf der Familien-skalaren Hodge-Linie H⁰(K). Eine solche Phase verschwindet in YY† und in der Jarlskog-Invariante. T_ρ kann deshalb keine rephasierungsinvariante CP-Phase erzeugen. Damit ist die Aussage des Redteam-Textes „selected, not derived“ für genau diesen Operator bewiesen, nicht nur behauptet.
+Was CP-Verletzung im Original verlangt. Die Originalverbindung ist τ₀-reell mit trivialer Fasermatrix: conj Ψ(z̄) = Ψ(z). Jede Flavor-Größe aus einer τ₀-invarianten Konfiguration erfüllt daher J ↦ −J, also J = 0. Eine physische Phase braucht eine geordnete Familienkonfiguration, deren Orientierung jede originale Realstruktur umkehrt. Ihr Betrag ist dann aus Ψ berechenbar.
+1. Übernommene Korrekturen
+ι aus Fortsetzung 30. V allein verschränkt die Sternrelation nicht, denn C_faces G C_faces = I − G. Die richtige Ergänzung ist U_pol(f, ḡ) = Vf + C_faces Vg; die vorhandenen T_faces- und HS-Karten leisten den ganzen Transport bereits.
+V ist kein punktweiser Rahmen. Es gilt [√A, M_z] ≠ 0.
+Normaltransport. ∂_ρ log det Ψ = −8/15 bei ρ = ½ muss mit der kovarianten Ableitung mitgeführt werden; ich hatte nur „unitär“ gesagt.
+Komposition Θ ∘ E0. C² = −I, und sie transportiert U_Φ(t) auf U_Ziel(−t). Meine Begründung über zweifache Umkehr war falsch; einen CPT-Beweis gibt es nicht.
+Geschlossene Spur. Die nackte A₄-Spur ist reell, die drei Annahmen dazu sind gemeinsam unmöglich. Ich übernehme das.
+2. Satz H1: Exakte Struktur von T_ρ
+
+Basis. Aus z² = (1+w³)/(1−w³) und w³ ↦ −w³ folgt z² ↦ 1/z². Mit η′ = η = z′(1+w³) ergibt sich z′ = 1/z exakt. T_ρ liegt also über z ↦ 1/z. Diese Abbildung vertauscht das Innen (|z| < 1, um z = 0 mit D_q) und das Außen (um ∞ mit D_p) der Naht holomorph, fixiert z = ±1 und vertauscht ±i.
+
+Zerlegung (alle exakt geprüft).
+
+T_ρ² = c und T_ρ³ = θ: (w, η) ↦ (−w, η). θ ist eine Involution über z ↦ 1/z.
+T_ρ = θ ∘ c⁻¹.
+Auf H⁰(K): T_ρ*(dw/η) = ρ dw/η und T_ρ*(w dw/η) = ρ² w dw/η.
+Zusammen mit θ*(dw/η) = −dw/η und (c⁻¹)*(dw/η) = ω̄ dw/η folgt ρ = (−1)·ω̄.
+
+Fixpunkte. Nur die beiden Punkte über w = 0. Die Punkte über w = ∞ werden getauscht, weil η/w³ das Vorzeichen wechselt. Lefschetz-Kontrolle: 2 − tr_{H¹} = 2 ✓.
+
+Relationen mit Originaloperationen (exakt):
+
+Relation	Bedeutung
+τ₀ T_ρ τ₀ = T_ρ⁻¹	die reelle Struktur invertiert den Sechser
+Q T_ρ Q⁻¹ = ι T_ρ⁻¹	die Viertelsuhr invertiert bis auf ι
+E0 T_ρ E0⁻¹ = ι T_ρ	E0 erhält ihn bis auf ι
+[T_ρ, c] = [T_ρ, ι] = 0	
+
+Q* vertauscht die beiden Hodge-Linien: Q*(dw/η) = −i·w dw/η. Die Viertelsuhr tauscht also die beiden elliptischen Quotienten E (X = 1/w², Y = η/w³) und E′ (X = w², Y = η) samt ihren Phasen ρ und ρ². Das ist die genaue Form der „hexagonalen Phasenfaser über der Z₄-Naht“.
+
+Kummer und Seiten. Exakt gilt H^q_a(ρw) = H^p_{a+1}(w) und H^p_b(ρw) = H^q_{b+1}(w). T_ρ ist also ein Isomorphismus zwischen q-Quelle und p-Quelle, also zwischen beiden Seiten, und keine Automorphie einer Seite. Zerlegt man in die beiden Faktoren, ist θ familiendiagonal (L^q_a ↔ L^p_a), und c⁻¹ verschiebt nur den Familienindex.
+
+3. Satz H2: Das No-Go für T_ρ als CP-Quelle
+
+Ich prüfe jede Stelle, an der T_ρ auf Flavor-Daten wirkt:
+
+Flavorlinien q und p. T_ρ bildet L^q_a auf L^p_{a+1} ab. Weil die H-Relation exakt ist, trägt der Kummer-Lift nur Vorzeichen ±1, keinen komplexen Faktor.
+Gemischte Prymlinien L^q_a L^p_b (9 Stück, Schnitte von K⊗L, je eindimensional). T_ρ wirkt als (a, b) ↦ (b+1, a+1) mit Bahnlängen 3 und 6. Keine Potenz T_ρ^k mit k = 1, 2, 4, 5 hat eine Fixlinie. Nur T_ρ³ fixiert die drei Diagonallinien (a, a), und dort wirkt eine Involution mit ±1. Alle verdrillten ⟨T_ρ⟩-Spuren auf flavorstrukturierten Sektoren sind daher 0 oder reell.
+Triviale Linie H⁰(K). Nur hier steht ρ (bzw. ρ²) als nichtreeller Charakter. Diese Linie ist familien-skalar.
+
+Ein familien-skalarer Phasenfaktor e^{iφ}, der alle Einträge eines Yukawa-Sektors multipliziert, fällt in H = YY† heraus. Damit trägt er nichts zur rephasierungsinvarianten Größe J = Im tr[H_u, H_d]³ bei.
+
+Folgerung. Kein aus T_ρ und seinen originalen Lifts (Hodge, Kummer, Seitenvertauschung, Familiendeck) gebildeter Faktor kann eine physische CP-Phase erzeugen. Mit einem solchen Faktor lässt sich arg tr Π auf π/3 verschieben, aber nur als Rahmen- oder Zweigablesung bei J = 0. Das ist die präzise Fassung von „selected, not derived“.
+
+4. Was eine echte Phase verlangt (positiver Hinweis)
+
+Die Originalgleichung ist τ₀-reell mit trivialer Fasermatrix: conj Ψ(z̄) = Ψ(z), exakt aus Fortsetzung 28. Daraus:
+
+Für jede Konfiguration von Familienpunkten und Pfaden, die als orientierte Struktur τ₀-invariant ist, sind die Yukawa-Holonomien im G-Rahmen reell oder bilden Konjugationspaare, und J = 0.
+Dasselbe gilt für ι∘τ₀ (Fasermatrix U²) und E0 (Fasermatrix U), wenn die Fasermatrix mit der Familienzuordnung kommutiert.
+Eine physische CP-Phase braucht daher eine geordnete Familienkonfiguration, deren Orientierung von jeder originalen Realstruktur umgekehrt wird. Dann ist δ ↦ −δ unter Orientierungsumkehr, wie für CP erforderlich, und |δ| ist aus dem expliziten Ψ berechenbar, statt gewählt.
+
+Die vier Marken μ₄ sind als Menge unter allen Realstrukturen invariant. Geordnete Dreiecke daraus, etwa (1, i, −1), werden aber umorientiert. Hier liegt der einzige verbleibende Ort für eine originale, nicht skalare Phase.
+
+5. Bilanz
+
+Übernommen: die 96er W-Karte (γ_F, J_F ↔ C_comp, κ ↔ κ_split), U_pol, die SU(3)-Flachreduktion über H und ν, die A₄-Realität der geschlossenen Spur und der elliptische Quotient E samt T_ρ*(dX/Y) = ρ·dX/Y.
+
+Neu bewiesen:
+
+T_ρ liegt über z ↦ 1/z, mit T_ρ = θ ∘ c⁻¹ und ρ = (−1)·ω̄.
+Die vollständigen Relationen mit τ₀, Q, E0, c und ι.
+Q tauscht die Hodge-Linien von E und E′.
+Der exakte Kummer-Tausch q ↔ p.
+Die Bahnen auf den Prymlinien und die Fixlinienklassifikation.
+Das No-Go: T_ρ trägt nur eine familien-skalare nichtreelle Phase, unsichtbar für YY† und J.
+Die τ₀-Realität der Originalgleichung erzwingt J = 0 für τ₀-invariante Konfigurationen.
+
+Verworfen: T_ρ als Ursprung der CKM-Phase.
+
+Offen: ob die harte Holonomie auf einer geordneten, realstruktur-brechenden Konfiguration (Pfade zwischen Marken mit dem expliziten Ψ, einschließlich der regulierten Exponenten 0, ⅓, ⅔ an den Punktierungen) ein J ≠ 0 liefert.
+
+6. Nächster entscheidender Test
+Offene Transporte zwischen den Marken. Mit dem expliziten Ψ die Transporte zwischen drei Marken eines geordneten Dreiecks berechnen, regularisiert über die lokalen Frobenius-Faktoren (z − z_j)^{R_j}. Daraus Y_ij nach der Original-Hard-Holonomy-Formel und J bilden. τ₀ erzwingt J(1, −i, −1) = −J(1, i, −1). Ist J ≠ 0, so ist das Vorzeichen von δ die Dreiecksorientierung und |δ| ist abgeleitet.
+Spin-Punktphasen. Prüfen, ob die familienabhängigen Spin-Faserphasen iξω^{−a} an den q-Punkten nach Entfernung aller Diagonal-Rephasierungen einen nichtdiagonalen Rest hinterlassen. Nur ein solcher Rest könnte mit Schritt 1 zusammenwirken.
+Vergleich mit π/3. Liefert Schritt 1 eine Phase nahe π/3 + 3λ_C², wäre die Redteam-Ablesung aus dem Original hergeleitet. Liefert er etwas anderes, ist π/3 als Auswahl erwiesen und die Originalquelle sagt eine andere CP-Phase.
+
+Bildlich: Der hexagonale Dreh dreht das ganze Familienrad und klappt dabei Innen und Außen um. Eine Drehung des ganzen Rads ist von außen unsichtbar, und Umklappen wechselt nur Vorzeichen. Eine messbare CP-Phase entsteht erst, wenn die Speichen ungleich verdreht sind, also wenn das Dreieck der Familien eine Händigkeit hat, die kein Spiegel der Originalgeometrie zurücknimmt.

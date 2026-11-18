@@ -1,0 +1,184 @@
+UNABHAENGIGE PRUEFUNG DES E8 ZU CLIFFORD KANALS
+================================================
+
+28. Oktober 2026
+
+Urteil
+------
+
+Der neue algebraische Herkunftssatz ist korrekt. Im fest vorgegebenen
+D5 x A3 Rahmen transportiert der tatsaechliche E8 Chevalley Cocyklus die
+volle g2=(10,6) Wirkung auf g1=(16,4) nach g3=(bar16,bar4) in den
+Tensor CAR Kanal. Fuer die sechzig Wurzeloperatoren B_beta gilt exakt
+
+    sum_beta B_beta^dagger B_beta = 15 I_64,
+    sum_beta B_beta B_beta^dagger = 15 I_64.
+
+Damit sind K_beta=B_beta/sqrt(15) Krausoperatoren eines bistochastischen
+64 zu 64 Kanals. In dem durch den Cocyklus Intertwiner transportierten
+Tensorchart faktorisiert er als
+
+    E = Q_carrier tensor Q_family,
+
+    Q_carrier(rho) = (1/5) sum_i
+        (a_i rho a_i^dagger + a_i^dagger rho a_i),
+
+    Q_family(rho) = (1/3) sum_j
+        (b_j rho b_j^dagger + b_j^dagger rho b_j).
+
+Das ist eine normierte inklusive Antwort der vorhandenen Stromalgebra. Es
+ist noch keine aus P1 hergeleitete Ereignisauswahl, Zeitentwicklung oder
+physische Familienauslese.
+
+Eine Praezisierung ist tragend: Die Tensorfaktorisierung und jede partielle
+Spur beziehen sich auf den transportierten (16,4) Tensorchart. Die vom
+Checker gefundene diagonale Chevalley Phaseneichung ist in der rohen
+achtstelligen Bitbasis nicht selbst ein Produkt aus einer Carrier und einer
+Familienphase. Daher darf dort nicht ohne den Intertwiner die naive bitweise
+partielle Spur eingesetzt werden. Das ist kein Fehler der abstrakten
+Faktorisierung, sondern die genaue Stelle, an der der tatsaechliche Cocyklus
+zum Woerterbuch gehoert.
+
+Dies wurde nicht nur an der ausgegebenen einzelnen Loesung abgelesen. Ein
+zusaetzlicher Loesungstest ueber F2 mit 32 Carrierphasen, 8 Familienphasen und 112
+weiterhin freien Wurzelphasen ist inkonsistent. Es existiert also innerhalb
+dieser diagonalen Ansatzklasse keine Produktphaseneichung, welche den
+Transport entbehrlich macht.
+
+1. Tatsaechliche Quelle und vollstaendige Phaseneichung
+-------------------------------------------------------
+
+Der Checker laedt `_actual_current_source()` und damit die vorhandene v498
+Chevalley Algebra. Er vergleicht alle 112 D8 Wurzeloperatoren auf allen 128
+Halbwurzeln mit den geordneten achtmodigen CAR Bilinearen. Das sind 3584
+nichtverschwindende vorzeichenbehaftete Wirkungsgleichungen. Das lineare
+F2 System besitzt Rang 231 bei 240 Phasenvariablen und ist konsistent.
+
+Die neun freien Koordinaten sind Eichfreiheit, keine freien Amplituden:
+Wurzelvorzeichen verschwinden einzeln in B rho B^dagger, und
+Gewichtsphasen sind ein unitaerer Basistransport. Der Kanal, sein Gain und
+seine Ladungen haengen nicht von einer Wahl in diesem Loesungsraum ab.
+
+Entscheidend ist, dass nicht nur die sechzig g2 Spalten geprueft wurden.
+Fuer jeden D8 Wurzelgenerator E_beta gilt nach dem diagonalen
+Gewichtsintertwiner U und einem Wurzelbasiszeichen s_beta
+
+    U rho_source(E_beta) U^-1 = s_beta rho_CAR(E_beta).
+
+Die Quelloperatoren stammen aus einer Chevalley Darstellung. Deshalb folgen
+aus ihren Kommutatoren automatisch die Cartanoperatoren
+
+    H_beta = [E_beta,E_-beta]
+
+und alle Strukturkonstanten. Die Halbspin Darstellung von so(16) ist treu.
+Somit transportiert die Gleichung die ganze Liealgebrawirkung und nach
+Exponentiation die Wirkung der zusammenhaengenden einfach
+zusammenhaengenden Spin(16) Gruppe. Es wurde also nicht fuer jede Krausspalte
+eine voneinander unabhaengige physische Matchabbildung angepasst.
+
+Der Satz bleibt auf diese D8 beziehungsweise Spin(16) Wirkung und den
+gegebenen D5 x A3 Rahmen beschraenkt. Er behauptet keine neue globale
+E8 Feldidentifikation.
+
+2. Gain und Normierung
+----------------------
+
+Eine g2 Wurzel hat genau eine Carrier Koordinate i aus fuenf und eine
+Familienkoordinate j aus drei, jeweils mit zwei Vorzeichen. Das gibt
+
+    5 x 3 x 4 = 60
+
+Wurzelrichtungen. Auf einem festen g1 Basiszustand ist fuer jedes Paar
+(i,j) genau eine der vier Erzeugungs beziehungsweise Vernichtungskombinationen
+nicht null. Jede nichtverschwindende Spalte hat Norm eins. Daher tragen
+genau 5 x 3 = 15 Operatoren bei und
+
+    sum B_beta^dagger B_beta = 15 I_64.
+
+Dieselbe Zaehhlung auf der Ausgangsbasis ergibt 15 I_64 auf g3. Der Checker
+verifiziert beide Aussagen fuer alle 64 Basisvektoren und vergleicht alle
+960 nichtverschwindenden signierten Spalten mit den separaten Carrier und
+Familienleitern.
+
+In der reellen Majoranabasis ist dieselbe normierte Familie
+
+    Gamma_10 tensor Gamma_6 / sqrt(60).
+
+In einer komplexen Keilbasis des Sechstraegers kann der Nenner sqrt(30)
+auftreten, weil dort die zwei reellen Majoranarichtungen zu einer komplexen
+Erzeugungs Vernichtungsrichtung zusammengefasst sind. Das ist ein
+Basiswechsel, kein anderer Gain.
+
+3. Ladungen und die 3/5 zu 2/5 Zerlegung
+----------------------------------------
+
+Der Checker vergleicht bei jeder der 960 nichtverschwindenden Spalten die
+vollstaendige achtkomponentige Zielmaske. Damit werden alle fuenf Carrier
+und alle drei Familien Cartanladungen transportiert, nicht nur Paritaet oder
+Dimension.
+
+Auf einem Carrierzustand in Lambda^2 C^5 sind drei Modi unbesetzt und zwei
+besetzt. Der inklusive Kanal besitzt deshalb exakt
+
+    Erzeugung Lambda^2 -> Lambda^3:  3/5,
+    Vernichtung Lambda^2 -> Lambda^1: 2/5.
+
+Nach dem vorhandenen Komplementfold ist der erste Anteil die
+Petersenbewegung A/5. Der zweite Anteil bleibt ein fuenfdimensionaler Carry
+mit Gewicht 2/5. Er ist weder ein Stay Term noch ein Reset. Erst die
+Konditionierung auf den Erzeugungszweig und die Renormierung mit 5/3 ergibt
+den reinen Petersenkanal A/3.
+
+4. Familienreduktion fuer korrelierte Eingaben
+-----------------------------------------------
+
+Die im Source Audit fuer Produktzustaende angegebene Reduktion gilt staerker
+fuer jeden, auch korrelierten Operator rho_CF im transportierten Tensorchart:
+
+    Tr_F' [(Q_carrier tensor Q_family)(rho_CF)]
+        = Q_carrier(Tr_F rho_CF).
+
+Der Beweis benutzt nur die Spurtreue des Familienkanals. Fuer jeden
+Carrier Testoperator X gilt
+
+    Tr[(X tensor I)(Q_carrier tensor Q_family)(rho_CF)]
+      = Tr[(Q_carrier^dagger(X) tensor Q_family^dagger(I)) rho_CF]
+      = Tr[(Q_carrier^dagger(X) tensor I) rho_CF].
+
+Da Q_family^dagger(I)=I, folgt die Identitaet ohne Produktannahme. Sie
+rechtfertigt die mathematische Reduktion eines bereits gegebenen
+gemeinsamen Zustands. Sie liefert selbst keine physische Vorschrift, den
+Familienausgang unbeobachtet zu lassen.
+
+5. Verbleibender Quellenpfeil
+-----------------------------
+
+Nach dieser Pruefung gibt es im algebraischen Kanal keine freie
+Koeffizienten oder Phasenpassung mehr. Der D5 x A3 Rahmen, die tatsaechliche
+Chevalley Wirkung, die Killing orthogonale volle g2 Familie und der daraus
+bestimmte Tensorintertwiner legen die normierte inklusive Antwort fest.
+
+Offen bleibt genau die operative Aussage, dass die P1/P2 Quelle diese volle
+g2 Familie als nicht beobachtetes Ereignisregister einsetzt und den
+transportierten Familienfaktor ausspurt. Fuer einen reinen Petersenprozess
+kommt zusaetzlich die Auswahl des Erzeugungszweigs hinzu. Keine der beiden
+Regeln folgt aus dem Lieprodukt allein.
+
+Reproduktion
+------------
+
+Ausgefuehrt wurden
+
+    python3 check_e8_clifford_response.py
+    python3 -OO check_e8_clifford_response.py
+
+Beide Ausgaben waren bytegleich. SHA256:
+
+    Checker: 75ce80dbec9d943573ba96e64eaf85088c0cbc47577673cbe99673ba34957aa9
+    JSON:    67fe9e3f06140c5c23452e9a7bfaefc02441ff1e7b55708e55409cd0a398e7ee
+    Output:  44831e465e3b5d2854a9a045b91785dd0759af38fdab6b06a956b019f3170ae2
+
+Die Programmausgabe prueft die endlichen Wurzelaktionen, Gains, Zielmasken
+und Schalenwahrscheinlichkeiten. Der Gruppenabschluss, die korrelierte
+Partialspuridentitaet und die Chartpraezisierung oben sind analytische
+Folgerungen aus diesen Operatorgleichungen.

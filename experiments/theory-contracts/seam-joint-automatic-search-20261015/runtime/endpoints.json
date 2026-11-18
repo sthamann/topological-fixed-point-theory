@@ -1,0 +1,38 @@
+{
+  "host": "fieldai",
+  "model": "tfpt-qwen3-32b",
+  "source_model": "Qwen/Qwen3-32B",
+  "revision": "9216db5781bf21249d130ec9da846c4624c16137",
+  "context_tokens": 32768,
+  "dtype": "bfloat16",
+  "generator": {
+    "base_url": "http://127.0.0.1:18931/v1",
+    "gpu_index": 1,
+    "gpu_uuid": "GPU-c52ea084-e076-a5f2-5ed3-fede2b2154c8"
+  },
+  "critic": {
+    "base_url": "http://127.0.0.1:18932/v1",
+    "gpu_index": 2,
+    "gpu_uuid": "GPU-80434844-1ead-0410-1db7-f755dd6ce75a"
+  },
+  "thinking_sampling": {
+    "temperature": 0.6,
+    "top_p": 0.95,
+    "top_k": 20,
+    "chat_template_kwargs": {"enable_thinking": true}
+  },
+  "notes": [
+    "Endpoints are loopback on fieldai, not on the client Mac.",
+    "Input tokens and output budget together must fit the context.",
+    "Check finish_reason and require final message content; a reasoning-only truncated response is not a completed candidate.",
+    "Independent replicas of the same model are not independent scientific evidence.",
+    "No external inference API is used. Model weights were fetched from the official public repository."
+  ],
+  "runtime": {
+    "python": "/home/aime/vllm/.venv/bin/python",
+    "vllm": "0.15.1",
+    "torch": "2.9.1+cu130",
+    "transformers": "4.57.6",
+    "model_card": "https://huggingface.co/Qwen/Qwen3-32B"
+  }
+}

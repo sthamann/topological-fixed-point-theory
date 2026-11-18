@@ -1,0 +1,184 @@
+MATH.SEAM.ESERIES.SOURCE-RECONSTRUCTION.06 / original-source audit
+24 October 2026
+
+Question and verdict
+
+Does the established P1/P2 compiler and its now reconstructed canonical E8
+field completion already identify the original operational source, state,
+time, and local observables?
+
+Verdict: NOT DERIVED BY THE CITED ORIGINAL ARGUMENTS. This is an audit of
+specific implications, not a theorem that no stronger P1 reconstruction can
+exist. The mathematical extension theorem in THEOREMS.txt is exact in its
+declared chiral object class. It does not establish that the original source
+belongs to that class. Historical physical-origin tasks remain historical;
+this audit does not reactivate them or alter ledger statuses.
+
+The established compiler is retained throughout:
+
+  P1/P2 -> D5+A3 with marked C4 glue -> L=E8,
+  c3=1/(8*pi), phi_base=(4/3)c3=1/(6*pi).
+
+1. Three different input packages
+
+The current architecture document, documents/tfpt_1_architecture_e8/sections/
+001-source.tex, lines67-80, declares P1 as an oriented seam, a primitive
+reflection-positive boundary kernel, unit winding, and c3 normalization.
+It explicitly treats P1/P2 as axioms. Its conditional compiler result is
+not disputed by the following audit.
+
+The stronger spectral boundary datum is
+
+  T_boundary=(A_+,H_+,D_+,J,Gamma,B_Sigma).
+
+Its definition assumes the algebra and spectral geometry. It specifies a
+smooth compact boundary manifold, a product collar, an adapted self-adjoint
+boundary operator and reflection regularity. It does not explicitly supply
+the region-indexed observable net O -> A(O), a distinguished cyclic state,
+or an action of time translations on that net.
+
+The still stronger operational seed is
+
+  S=(A_loc,tau_t,Theta,omega,[u_Sigma],D_coll).
+
+The original definition includes A_loc, omega and tau_t as inputs. Its
+completion functor C_seed sends this package to a spectral boundary datum.
+The displayed direction is S -> T_boundary. No inverse is constructed.
+
+Original sources: boundary source section001, lines65-80; section002,
+lines103-144. Full paths are in contract_index.json.
+
+2. Correct minimization theorem
+
+Let C:S -> B be any functor and d:B -> N^k an isomorphism-invariant defect,
+with the original lexicographic order on N^k.
+Write d_seed=d o C. The unconditional conclusion is
+
+  s minimizes d_seed iff C(s) minimizes d on im(C).
+
+Proof. Both comparisons are exactly comparisons of values d(C(s')).
+Passing from the image to all B needs an extra condition: at least one
+global minimizer must lie in im(C). Even then, recovering s uniquely needs
+classification of the relevant fiber of C, not just its image.
+
+Consequently well-foundedness proves existence of a minimum defect vector
+in any nonempty allowed image. It does not prove that its fiber has one
+isomorphism class. A nonempty subset of the positive integers has a least
+element k>=1; it need not contain1. Unit spectral flow requires either its
+own axiom or an admissible unit-flow witness.
+
+The manuscript makes the first statement correctly at section002,
+lines194-216: uniqueness is reduced to classification of the last stratum.
+It does not provide that classification in the later proof at269-306.
+The proof at238-243 also replaces minimization over im(C_seed) by all
+admissible bordisms without proving the necessary image condition.
+
+This proof audit makes no independence claim about the full P1 axioms.
+
+3. Conditional spectral-rescaling obstruction
+
+Assume the boundary class is closed under positive constant rescaling of
+its metric, reference pair, finite-block definition and dimensional cutoffs.
+Assume a compact self-adjoint elliptic realization, or a derived B_Sigma
+with a first positive absolute eigenvalue, is part of the object and is
+preserved by its isomorphisms. Then define for lambda>0
+
+  B_lambda=(A_+,H_+,lambda D_+,J,Gamma,lambda B_Sigma).
+
+Using g_lambda=lambda^-2 g and r_lambda=r/lambda gives
+
+  lambda D_+=gamma_n(partial_(r_lambda)+lambda B_Sigma).
+
+The Hilbert spaces for the rescaled constant densities are identified by
+the natural constant unitary. Ellipticity and the collar identities persist.
+Positive rescaling preserves spectral-flow crossing signs, kernels, the
+structural finite ranks, determinant-line degrees and the Calderon Cauchy
+solution space. Under the stated cutoff/reference covariance assumptions,
+all four defect entries and essentialization are therefore unchanged.
+
+Let mu_1>0 be the first positive absolute eigenvalue of the chosen compact
+realization. A unitary isomorphism B_lambda -> B_nu would preserve its
+spectrum and imply lambda*mu_1=nu*mu_1, hence lambda=nu. Thus any minimum
+belongs to a continuum of equal-defect, pairwise nonisomorphic objects.
+
+The original chi_seed does not normalize this family: it is defined by
+chi_seed=(lambda_1^+(|B_Sigma|))^-1 and therefore scales as lambda^-1.
+The dimensionless c3 and winding remain unchanged. The spectral action
+is scale-sensitive, since D_lambda/chi_lambda=lambda^2 D/chi, but the
+boundary category asks only for its finiteness, not a specified value or
+a stationarity equation.
+
+The rescaling conclusion is CONDITIONAL, not an unconditional counterpair
+of complete P1 models. The text does not fully define rank_ess H_prim^fin,
+the action domain, a global external reference, or covariance of the
+freely chosen epsilon_adm spectral window. An absolute fixed cutoff or
+fixed reference could prevent the rescaling, but would have to be declared
+and analyzed. Nor does the proof sketch for C_seed establish that a time-
+rescaled operational seed is mapped to B_lambda. No assertion about that
+operational image is made here.
+
+Original sources: section001 lines42-55,192-261,302-311,353-376;
+section002 lines166-183,252-306; section003-subsection-relative-objects.tex
+lines1-16, all in the same boundary-source directory.
+
+4. What an actual reconstruction theorem can recover
+
+The complete supported graded Schwinger hierarchy, with the hypotheses of
+Osterwalder-Schrader II, reconstructs its Wightman theory up to unitary
+equivalence. It supplies all moments, their support and covariance, not
+only a scalar kernel or a spectral tuple. Complete truncated functions
+determine the moments by the partition expansion with the required graded
+signs. This is the data actually used in the QFT-source sections005 and008.
+
+In this paragraph R denotes linear geometric reflection on the graded word
+algebra, with the prescribed fermionic signs. The antilinear OS reflection
+is j(F)=R(F)^*. This R is distinct from the antilinear VOA PCT operator in
+THEOREMS.txt. On the positive-time word algebra the reflection form is
+
+  (F,G)_OS = omega(j(F) G) = omega(R(F)^* G),
+  N_OS={F:(F,F)_OS=0},
+  H_OS=completion(A_+/N_OS), Omega=[1].
+
+With the translation/regularity/contraction hypotheses of OS reconstruction,
+the induced positive-time translations extend to T_t=exp(-t H), H>=0.
+The remaining OS hypotheses and analytic continuation reconstruct the
+Wightman distributions and their common field domain. Arbitrary positive-
+time multiplication is NOT asserted to act on the quotient: N_OS need not
+be a left ideal for such multiplication.
+
+Alternatively, Schlingemann's algebraic reconstruction starts from a full
+Euclidean net with Euclidean-group action, a regular reflection-positive
+functional, and the time-zero condition. It then constructs a Haag-Kastler
+net using the controlled time-zero representation. A net with only tau_t,
+Theta and omega as listed in Seed_op has not yet supplied these additional
+hypotheses.
+
+Neither reconstruction automatically recovers an arbitrary unreduced
+Euclidean presentation, its collar generator or seam class. It recovers
+the theory generated by the supported correlation data after the OS null
+reduction. Claiming an inverse to C_seed needs a separate faithfulness and
+localization theorem.
+
+5. The exact remaining source identification
+
+THEOREMS.txt completely reconstructs the canonical local chiral extension
+of V_D5 tensor V_A3 with the prescribed four C4 sectors, once each. To
+identify that mathematical completion with the original primitive source,
+one must prove that the source has this supported unitary chiral realization
+and this generated sector content, and intertwines the actual products,
+reflection, state and specified time action. The compiler's lattice result
+alone does not state such an operator/localization map.
+
+This is a single conjunctive identification problem. It cannot be replaced
+by declaring a lattice, a preferred vector, or a convenient Hamiltonian to
+be the source. The canonical conformal L0 also does not fix an absolute
+physical time unit; on a circle of radius R the scale is L0/R.
+
+References checked at the originals
+
+Osterwalder-Schrader I, II (II corrects and strengthens the reconstruction
+hypotheses of I):
+  https://doi.org/10.1007/BF01645738
+  https://projecteuclid.org/journals/communications-in-mathematical-physics/volume-42/issue-3/Axioms-for-Euclidean-Greens-functions-II-with-an-Appendix-by/cmp/1103899050.pdf
+Schlingemann, From euclidean field theory to quantum field theory:
+  https://arxiv.org/html/hep-th/9802035

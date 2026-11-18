@@ -1,0 +1,352 @@
+P1 ETA AND SEWING DUAL LINE TEST
+The dual defect module is canonical; the physical P1 readout is not yet typed as that dual
+2026-10-27
+
+Atlas audit frame: ab02252b5bdcfccd5fb5cf3d
+
+
+VERDICT
+=======
+
+There are two different questions, and the old wording made the second one a
+condition for the first.
+
+1. Abstract module construction.  Once the original negative-sea convention
+
+     C=I-P_H,                 U C U^*=C+Pi_V,
+
+   has produced the three-dimensional charged defect V, the two relative
+   vacuum lines
+
+     K=det(V),                K^*=det(V)^(-1)                 (1)
+
+   and their perfect CAR pairing are functorial.  No eta term and no separately
+   selected physical state are needed to construct K^*.  For the existing
+   marks,
+
+     beta|K=-i,               beta|K^*=+i,
+     c|K=c|K^*=1.                                      (2)
+
+   The Q character includes the already proved q_1,q_2 transposition, or,
+   equivalently, the B_O ordering factor in the family formula.  Thus the
+   dual line required by the native complex module already exists as a
+   consequence of the CAR defect and adjunction.  Asking the P1 eta term to
+   choose it is an unnecessary extra condition for the abstract module
+   reconstruction.
+
+2. Physical source readout.  In the strongest original formulas checked here,
+   the P1 eta and sewing data are scalars, phases, positivity forms, or index
+   data.  None is written as a complex-linear outgoing boundary covector with
+   values in K^*.  Therefore those formulas do not yet prove that the physical
+   P1 response evaluates the charged ket through the dual line.  This is a
+   typing gap for the physical amplitude, not a gap in the construction of the
+   dual representation.
+
+The exact positive conditional statement is small.  If the original outgoing
+seam amplitude is a covector on the shifted negative-sea sector, then it lies
+in K^*, pairs with the charged ket in K to a scalar, and has beta character +i.
+No reversal of the occupied projection is needed.  The sources read in this
+audit do not state that outgoing-covector typing.
+
+
+1. THE CAR ADJOINT CONVENTION AND THE DUAL LINE
+===============================================
+
+Use a complex Hilbert product conjugate-linear in the first variable and
+linear in the second.  Creation a^*(v) is linear in v and annihilation a(v) is
+conjugate-linear in v.  For an orthonormal frame v_1,v_2,v_3 of V,
+
+  Xi=a^*(v_1)a^*(v_2)a^*(v_3)Omega
+
+spans K=det(V).  The Hilbert adjoint gives the bra
+
+  R(Xi): K -> C,             R(Xi)(xi)=<Xi,xi>.                (3)
+
+For fixed Xi, (3) is complex-linear in xi, so R(Xi) belongs to K^*.  The Riesz
+map R:K->K^* is conjugate-linear.  Under a unitary symmetry g,
+
+  g|K=det(g|V),              g|K^*=det(g|V)^(-1).              (4)
+
+This is the precise reason that beta=i I_V gives -i on K and +i on K^*.
+
+The often used annihilation expression
+
+  <Omega,a(w_3)a(w_2)a(w_1)Xi>                               (5)
+
+is conjugate-linear in the vector arguments w_j with the convention above.
+It is the Hermitian adjoint form of the pairing.  It should not silently be
+called a complex-linear element of det(V)^*.  The fully algebraic
+complex-linear statement uses covectors phi_j in V^* and the canonical
+contractions
+
+  det(V)^* tensor det(V) -> C,
+  (phi_1 wedge phi_2 wedge phi_3, v_1 wedge v_2 wedge v_3)
+     |-> det(phi_i(v_j)).                                      (6)
+
+Equations (3) and (6) agree after the anti-linear Riesz identification
+V ~= V^*.  They prove the existence and character of the dual line.  They do
+not select a preferred nonzero section of that line.  A ray or positive state
+also cannot select such a section, because its overall phase is absent from
+all state expectations.  This phase fact is irrelevant to the abstract module,
+which needs the line and its group action rather than a distinguished vector.
+
+The full family version is the already checked identity
+
+  K=B(E)=N_q(S_0) tensor B_O,
+  K^*=B(E)^(-1)=N_q(S_0)^(-1) tensor B_O^(-1).                 (7)
+
+Both are odd superlines.  Dualization reverses the central complex character
+but preserves the odd parity.  Dropping B_O is permitted only in the already
+scoped ungraded module comparison where its effect is the residual alpha sign;
+it is not an equality of graded determinant lines.
+
+
+2. WHAT THE ACTUAL P1 FORMULAS PROVIDE
+======================================
+
+2.1 The old fullv21 seam gives the winding, not a covector
+----------------------------------------------------------------
+
+The old source cuts the double cover, equips the two seam faces with a unitary
+matching operator, and then chooses
+
+  D_Gamma=i d/dtheta,             U_Gamma(theta)=exp(i theta).
+
+The interpolation of the boundary condition from phi=0 to 2pi has spectral
+flow one.  This fixes the directed one-step shift on the same field space.  It
+does not define a Fock boundary ket, an outgoing bra, or a determinant-line
+valued sewing map.
+
+Source:
+
+  Atlas paper-source:1fe2ddfabc74ac0e94a4686d
+  documents/archive--paper-latex--tfpt-theory-fullv21/sections/
+  001-section-introduction-the-problem-of-parameters.tex:198-255
+  SHA256 85bb11511be05385a7cadf6071dbede216b12befeb9d6767bc4460748cbec5d7
+
+2.2 The primitive eta contribution is a scalar action factor
+------------------------------------------------------------
+
+The later primitive action is
+
+  S_prim=Tr f(D_rel/chi)-Tr f(D_ref/chi)+(i pi/2) Delta eta.
+
+Its contribution to exp(-S_prim) is therefore
+
+  a=exp(-i pi Delta eta/2).                                    (8)
+
+With the already checked Dai-Freed conventions and vanishing zero modes,
+
+  a^2=tau_rel^(-1),                                            (9)
+
+not a=tau_rel.  An actual Pfaffian or square-root determinant interpretation
+would additionally need the real structure, gluing orientation and kernel
+correction.  The source writes (8) as a complex scalar in the action.  It does
+not type it as a section of K or K^*, and it contains none of the beta,c,Q
+actions needed to make that identification.
+
+The scalar is compatible with a hidden evaluation pairing K^* tensor K to C,
+as every correctly typed closed sewing amplitude must be.  Compatibility is
+not selection: from the closed scalar alone one cannot reconstruct which cut
+face carries K, which carries K^*, or how either face carries beta,c,Q.  The
+Gamma_+,Gamma_- labels in fullv21 are therefore the right candidate
+incoming-outgoing orientation, but the source does not extend them to a
+line-valued open amplitude.
+
+Source:
+
+  Atlas paper-source:8027564739689dd02e02f11c
+  documents/archive--tfpt-45--source_extracts--01_boundary_kernel_source/
+  sections/001-section-primitive-core-and-carrier-interface-handoff.tex:302-318
+  SHA256 7d6e673d99c29d950dc601283cd51c1cc0b113567eeb79c8396fec9c82a02c79
+
+Convention audit used:
+
+  experiments/theory-contracts/elliptic-moebius-source-bridge-20261026/
+  boundary_origin_20261027/ETA-CONVENTION-AND-BOUNDARY-FACTOR.txt
+  SHA256 198cc720a955d7f6ece859ee324e73fc6e2a2a7fcfc9d51f8eeca22142faeab1
+
+2.3 The relative generating functional is scalar and positivity is phase blind
+-----------------------------------------------------------------------------
+
+The original closure source normalizes
+
+  Z_rel[J,eta,bar eta]=Z_adm[J,eta,bar eta]/Z_ref[0,0,0].       (10)
+
+The denominator is declared to be a fixed positive number.  Fermionic
+reflection positivity is then a nonnegative Pfaffian or determinant quadratic
+form on positive-time test spinors.  Equation (10) is a scalar normalized
+functional.  The positivity statement fixes neither a complex phase nor the
+contravariant orientation of a charged boundary line.  It can coexist with
+the ket K, the dual K^*, and their invariant pairing.
+
+Source:
+
+  Atlas paper-source:032c510c1e9343d3edda1ae5
+  documents/archive--paper-latex--tfpt-42/sections/
+  022-section-closure-theorems-from-the-admissibility-complex.tex:258-315
+  SHA256 fe626eb8126375f8e0028914a19e045802478f76f0c9b8e6655b8331b70848b2
+
+The same section states at 219-245 that the harmonic determinant line is
+parallel and hence has SU(3) family holonomy.  Parallelity does not choose
+between a line and its dual and does not define an outgoing seam covector.
+
+2.4 The named determinant formulas still do not provide the typing
+-----------------------------------------------------------------
+
+The strong-CP source defines
+
+  a_Sigma=arg det_adm U_Sigma in S^1_det.
+
+This is a compact phase variable inherited from the unit winding.  It is not a
+nonzero element of the charged defect line and does not record the beta,c,Q
+character of K or K^*.
+
+Source:
+
+  Atlas paper-source:00b5d3eea8530ff18431ddda
+  documents/archive--tfpt-45--source_extracts--04_qft_source/sections/
+  001-subsection-hadronic-admissibility-as-singlet-selection.tex:64-154
+  SHA256 f377e790ec73b8f5c56e1270b1bcf163022bf86e039af707dbda9fb8017a50df
+
+The primitive seam determinant closure defines only
+
+  log det_adm^prim(1-U_Sigma)=-Tr_adm^prim(U_Sigma)
+
+and then retains -Re log det.  The source itself marks this result
+closed_pending_convention_adoption.  The real scalar has discarded precisely
+the complex orientation that would distinguish K from K^*.
+
+Source:
+
+  Atlas paper-source:79aeb188204547f963615df9
+  documents/archive--tfpt-45--07_cmb_operational_closure_planck_pipeline/
+  sections/007-section-hook-solution-sketches-v4-6-5.tex:250-270
+  SHA256 7b7c7d3fa47cc00ef771818c65f2a5c31c0c705d3890b8128a2d2ebe6e1a16da
+
+2.5 The primitive boundary theorem deliberately stops before determinant data
+-----------------------------------------------------------------------------
+
+The minimal boundary package is
+
+  T_bound=(A_+,H_+,D_+,J,Gamma,B_Sigma)
+
+with |SF(U_Sigma)|=1.  The source explicitly says that carrier ranks and
+determinant classes are recovered later, and that no determinant classes or
+family geometry belong to the core tuple.  This is consistent with the source
+providing the winding and polarization seed while leaving the determinant-line
+readout to a later functor.
+
+The displayed admissible bordism category does not change this conclusion.
+Its objects are boundary tuples and its morphisms are unitary intertwiners.
+The source does not define a symmetric monoidal amplitude functor from those
+bordisms to complex lines.  Such a functor would send orientation reversal to
+dualization and would turn the two seam faces into K and K^*.  That is the
+precise positive construction suggested by the original geometry, but it is
+not part of the stated theorem.
+
+Source:
+
+  Atlas paper-source:d886b99793c68c5e7e90941a
+  documents/archive--tfpt-45--source_extracts--01_boundary_kernel_source/
+  sections/002-section-intrinsic-closed-branch-and-canonical-rigid-obje.tex:250-334
+  SHA256 1de90a4a7379bef804cc7815d72c0f86bb398a5771e9b00997c4bb15e8815f9e
+
+As a separate corroborating limit, the technical companion explicitly leaves
+a determinant-line orientation seed outside its closed theorem stack and
+labels the canonical seam record state and trace word as conjectures.  That
+passage concerns the later record readout, so it is not by itself a proof of
+the present ket-dual gap.
+
+Source:
+
+  Atlas paper-source:3bb91e34cb0042bd09ec82dc
+  documents/archive--tfpt-45--source_extracts--technical_companion_source/
+  sections/002-source.tex:1-35,175-270
+  SHA256 b923aabd635b649ab5282ba9255df4d81ba56c3114e8c1289ad9c728b1b4eef8
+
+
+3. C3 NEED NOT BE A PHYSICAL BULK SOURCE
+========================================
+
+The already proved auxiliary construction uses the existing curve
+
+  C: eta^2=1-w^6,
+  z=eta/(1-w^3),              div(z)=D_q-D_p,
+
+and the selected spin family S_0.  On the three unramified discs over |z|<1,
+multiplication by z has cokernel
+
+  V=direct_sum_a S_0|q_a
+
+and Fredholm line det(V)^(-1).  This construction is a determinant functor on
+the auxiliary marked family.  A determinant functor does not require C to be
+literal physical spacetime or a physical bulk.  For the abstract complex
+module, the C3 curve is allowed to be the functorial coefficient geometry
+which realizes the already fixed line and its c,Q,beta action.
+
+The stronger physical statement needs only a local natural transformation,
+not an identification of all P1 and C3 Hilbert spaces:
+
+  actual cyclic P1 source sector
+      -> three-sheet S_0 Hardy source sector,
+
+intertwining the actual seam shift with M_z and carrying the resulting
+relative determinant functor to K^*.  Equivalently, one can specify directly a
+sewing covector
+
+  A_Sigma in Hom(K,C)=K^*                                     (11)
+
+with the established beta,c,Q marks.  Either construction makes the auxiliary
+curve a coefficient and determinant-line realization.  Neither requires it to
+be a new physical boundary component or bulk field.
+
+What remains absent from the original formulas checked here is exactly this
+natural transformation or the typed covector (11).  Requiring a physical C3
+bulk source would be stronger than necessary.  Claiming the original P1
+amplitude already equals (11) would be stronger than the source.
+
+Sources for the auxiliary construction:
+
+  research-20261027-boundary-origin/source/
+  ORIGINAL-BOUNDARY-NORM-ORIGIN.txt:21-69,73-164,347-386
+  SHA256 2a92d7c75aeed3fb09d85de0f9cf8be3c9fb8757b6686cf0c6724cd7b4a977a6
+
+  research-20261027-boundary-origin/originals/
+  ACTUAL-REFERENCE-SPIN-TEST.txt:14-68,122-151,195-259
+  SHA256 df6b3894ee736e3a0d503eb1d90e7b7e4e462af966eb2d6718e82e24516fac72
+
+
+4. SHARP CONCLUSION
+===================
+
+For module reconstruction the requested inverse line is already canonical:
+
+  negative-sea CAR defect V
+      -> charged ket line det(V)
+      -> CAR dual line det(V)^(-1)
+      -> beta character +i and the established c,Q actions.
+
+The eta term is not needed to select this line.  It must also not be identified
+with tau_rel: its source factor is the square root in (8),(9), subject to the
+actual Pfaffian data.
+
+For a physical P1 transition amplitude, the smallest remaining premise is:
+
+  the outgoing seam response is a complex-linear covector on the charged
+  negative-sea defect, or is naturally carried to that covector by the local
+  cyclic source-sector map.                                      (12)
+
+Under (12), the original shift fills V, the response annihilates those three
+added modes, and the scalar transition is the canonical pairing K^* tensor K
+to C.  This gives the dual orientation without changing the sea convention and
+without promoting C3 to a physical bulk source.  The exact original formulas
+audited above provide the winding, eta scalar, positivity and determinant
+phase, but they do not state (12).
+
+Existing orientation review reused:
+
+  research-20261027-source-unification/review/
+  PROJECTOR-CAR-DEFECT-LINE-REVIEW.txt
+  SHA256 a74aad8f91c90bcbf26e6afbbe7567bd28a540a29cb71008422e44cdccd7f457
+

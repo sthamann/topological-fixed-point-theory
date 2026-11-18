@@ -1,0 +1,221 @@
+P1 ORIGINAL LOCAL KERNEL, NULL CONDITION AND THE PROPOSED 1+5 ORIGIN
+12 November 2026. Verdict PARTIAL. F1 remains in_progress.
+
+Question and decision
+
+Does original P1 force holonomy orbit type 1+5 and the proposed local
+parallel-null rule, thereby selecting the native quartic Xi_q and dynamics?
+
+The original local C6 kernel is evaluated here at its actual algebraic
+transport pole, without fitted weights. Its shifted inverse has an exact
+local parallel-null rule, selecting the constant six-site line. It has no
+zero on the centered five. Its centered spectrum also prevents identifying
+this bare local block with an S5-equivariant marked native quartic transfer.
+This excludes that specific identification, not the complete blocked source.
+Primitive Hodge admissibility and the later Perron parent do not supply the
+missing identity: the former retains a gap subspace, the latter already uses
+the selected vacuum. The complete original marked source is not evaluated.
+
+Original sources and current scope
+
+[B1] documents/archive--tfpt-45--source_extracts--01_boundary_kernel_source/
+sections/001-section-primitive-core-and-carrier-interface-handoff.tex:192-272.
+[E3] documents/archive--tfpt-45--source_extracts--03_em_flavor_source/
+sections/003-subsection-discrete-phase-operator-and-transport-grammar.tex:100-240.
+[E4] same directory, sections/004-source.tex:335-391.
+[E5] same directory, sections/005-source.tex:1-238.
+[Q4] documents/archive--tfpt-45--source_extracts--04_qft_source/
+sections/004-source.tex:112-155,241-277.
+[A774] verification/v774_arf_spinor_compiler.py:1-145,710-745.
+[SD] experiments/theory-contracts/original-local-source-variable-background-20261102/
+SOURCE-DETERMINACY.txt.
+[CALL] experiments/theory-contracts/original-paper-source-reconciliation-20261102/
+triangulation_20261106O/caller/ACTUAL-PRIMITIVE-REGULATOR-CALLER-TRACE.txt.
+[EV] same contract, fieldsearch_20261106P/source/evaluator.py.
+[DOM] same contract, fieldsearch_20261106P/domain/native-diagnostic-v1.json.
+[PREV] experiments/theory-contracts/doily-native-holonomy-origin-20261112/PROOF.txt.
+Source hashes and numerical entries are in results.json. [B1,E3,E4,E5,Q4,A774,
+SD,CALL,EV,DOM] were read directly; current Atlas findings were consulted for
+the existing exclusions. No complete reread of every Atlas entry is claimed.
+
+1. Original primitive Hodge selection, evaluated in its actual sector
+
+On H_+ = Ran(P_Sigma,+), put
+ A = D_prim^dag D_prim,
+ P_g = 1_[epsilon_adm^2/4,infinity)(A),
+ E_g = I_+ - P_g.
+The original penalties obey K_Sigma|H_+=0 and K_g^2=lambda_gap E_g.
+Since E_g is a projector, functional calculus gives exactly
+ exp(-beta Delta_prim)|H_+ = P_g + exp(-beta lambda_gap) E_g.
+Thus its limit is P_g. On the full primitive base the original theorem gives
+ P_prim=P_Sigma,+ P_g.
+This is high-spectrum retention, not a Dirac-zero-mode prescription.
+Every retained vector has zero penalty. A single state requires a proved
+rank-one retained space or the separate original transfer selection.
+The original APS operator/domain has not been identified with the native
+quartic five or a Doily edge differential. There is no such identification
+in the displayed Hodge formula. No extension to an invented seam-minus
+compression convention or a chosen ghost state is used here.
+The earlier Atlas high-gap observation is reused, not presented as novel.
+
+2. Evaluate the actual local transport operator
+
+The original source defines U=U6, a unitary six-site cyclic shift, and
+ D_y = y I - delta U,
+ Y_y^(epsilon) = (D_y^dag D_y + epsilon^2 I)^(-1),
+ y in {1,1/3,2/3}.
+This Y is not the separately defined structural inverse square root
+ K_f^str=(P_str D_f^dag D_f P_str)^(-1/2).
+No physical full D_f or P_str is replaced by the bare D_y.
+
+On the original closed branch epsilon=0, E3 fixes
+ z=delta^6=(794-7 sqrt(9961))/2187,
+ delta=0.5932772801332240013940665454209265681615985433514818204.
+It is the lower critical point of
+ P(z)=(z-1)(z-64/729)(z-1/729), with P'(z)=0.
+This original stationarity equation and the original cubic polynomial
+formula for Y were independently checked; no transport parameter is fitted.
+
+For any epsilon>=0 define
+ b=y delta>0, c=(y-delta)^2+epsilon^2>0,
+ L6=2I-U-U^dag, R_y=c Y_y^(epsilon).
+Direct multiplication yields
+ D_y^dag D_y+epsilon^2 I = c I+b L6,
+ R_y=(I+(b/c)L6)^(-1),
+ R_y^(-1)-I=(b/c)L6.                                      (1)
+R is a scalar normalization for comparison; the absolute original Y is
+preserved in results.json. No replacement of Z0 or Z_ref is made.
+Equation (1) is an identity of the original local operator, not a new model.
+
+For x in C^6,
+ <x,(R_y^(-1)-I)x> = (b/c) sum_(j mod6) |x_(j+1)-x_j|^2.  (2)
+Hence
+ ker(R_y^(-1)-I)=ker L6=C(1,1,1,1,1,1).
+This is the exact local parallel-null condition obtainable from the bare
+source factor. Equivalently it is the top eigenline of Y and eigenvalue1
+of R. Y itself is positive definite and has no nullspace.
+The finite resolvent R is full rank, not a one-step projection. Its powers
+converge to J6/6. That iteration is not identified here with physical OS time.
+
+The original closed Green entries are strictly positive and circulant, so
+R is symmetric stochastic. The full spectrum follows from
+ spec L6={0^1,1^2,3^2,4^1}:
+ spec R={1^1,[c/(c+b)]^2,[c/(c+3b)]^2,[c/(c+4b)]^1}.      (3)
+At epsilon=0 the nonconstant eigenvalues are, respectively:
+ y=1:   0.218035098085365 (x2),0.085039417912193 (x2),0.065164961022552;
+ y=1/3: 0.254667276609120 (x2),0.102248688975141 (x2),0.078698214033766;
+ y=2/3: 0.013434636519328 (x2),0.004518683419299 (x2),0.003392845362996.
+All six-by-six kernels were evaluated from both the inverse matrix and the
+original distance formula at 70 digit precision, agreement better than1e-60.
+The polynomial inverse identity is exact symbolic arithmetic, not rounding.
+
+3. Decisive comparison with the actual marked native five
+
+Let V_cyc={x in C^6:sum_j x_j=0}. Equations (2)-(3) imply
+ ker L6|V_cyc=0,
+ spec R|V_cyc has three distinct levels of multiplicities2,2,1.
+The previously identified native quartic V5 is the standard S6 module.
+For the actual stabilizer S5 of a distinguished Arf mark q it restricts to
+ V5 = C Xi_q direct_sum W4,
+where W4 is irreducible and Xi_q is proportional to e_q-(1/6)1.
+Every complex linear S5-equivariant operator on V5 has the form
+ T=a P_Xi + b'(I-P_Xi).                                  (4)
+Its eigenspaces therefore have multiplicities1+4, or5 if a=b'.
+Equations (3)-(4) are incompatible under any isomorphism intertwining the
+operators, even without imposing a particular basis or unitary metric.
+Thus the bare centered C6 Green block cannot be that marked S5-equivariant
+native transfer. A full-rank structural square-root function of this same
+bare block retains the distinct multiplicities and does not cure the test.
+An actually different physical D_f, P_str, or full blocked T_V is not covered.
+
+If U6 itself is proposed as a generator of the six-Arf-mark transport group,
+its six-cycle is transitive and fixes no vector on V5. A group containing it
+is still transitive. It cannot have orbit type1+5.
+This is a conditional rejection of that identification: U6 is a local clock
+step, not automatically a physical closed-loop holonomy generator. No actual
+P1 holonomy group is inferred from the order of a local step.
+
+4. What the frozen Arf selector and original parent do imply
+
+A774 chooses a unique q* by sigma-invariance, q(A)=1 and q(F_Sigma)=0.
+It proves the algebraic stabilizer Stab(q*)=S5 and its1+5 action on Arf-1
+marks. This computation is not a proof that actual P1 holonomies generate
+that stabilizer or act transitively on the other five. The displayed sigma
+alone acts with type3+1+1+1 on the six marks, as checked previously.
+Even proving that all physical holonomies preserve q* gives only
+ Hol_P1 subset Stab(q*). The remaining five-point transitivity needs proof.
+
+The original Q4 transfer statement uses the full retained word grammar,
+local Y factors, diagonal admissibility weights and two-stage P_adm to
+define T_V. Under its stated primitivity hypotheses T_V has a unique
+positive Perron vector v_V*. These weights/fields are not discarded here.
+Q4:241-277 then constructs a parent from admissibility penalties AND the
+already given Perron line. It cannot independently derive that same line.
+Its prose calls a term a projector onto v* while requiring it to annihilate
+v*; the annihilating projector would be I-P_v. This wording issue is noted
+only to preserve operator type, not promoted to a new general failure.
+
+There is a useful sufficient route: if the actual native V5 is identified
+as an invariant source sector, its actual transfer commutes with this S5,
+and its extremal eigenline is simple, (4) forces that line to be Xi_q.
+Those source identifications have not been supplied by the bare C6 factor.
+This route would select a line, but would still not prove that the actual
+loop group is transitive on the other five. State and orbit claims differ.
+
+5. Distinguish three meanings of zero
+
+(i) Hodge admissibility: the primitive seam and high-gap penalties vanish.
+(ii) Bare clock minimum: shifted inverse (2) vanishes on constant vectors.
+(iii) Proposed native graph consistency: actual endpoint sections obey
+ x_t=U_e x_s along every edge, so their global space is Fix(Hol).
+Only after an original map identifies the actual operators and domains can
+(i) or (ii) prove (iii). Equal dimensions or the word 'zero' are insufficient.
+For actual bounded local L in a positive state, omega(L*L)=||L Omega||^2.
+If that state is faithful on the relevant local algebra, zero implies L=0.
+No local faithfulness theorem is assumed here. OS reflected nullity
+omega(Theta(L)L)=0 is a different sesquilinear form and cannot replace this
+ordinary positive expectation. No generic Reeh-Schlieder premise is added.
+
+6. Actual full-source execution boundary, rechecked at its consumer
+
+The original complete operational seed already contains omega,tau,Theta;
+its valid OS source fixes G_ab=omega(Theta F_a F_b) and
+K_ab(t)=omega(Theta F_a tau_t F_b), hence the reconstructed state/time.
+There is no independent second vacuum or time choice after this whole
+source is given. Current task is its actual marked evaluation/identification.
+
+The read-only call capability_report([DOM]) to the actual [EV] returned:
+ numeric_bundle_ready=false,
+ whole_source_bundle_supplied=false,
+ missing operation=evaluate_original_full_blocked_endpoint_source.
+The same consumer's contribution_capability_report returned the missing
+original_blocked_fiber_packet. The actual domain contains
+ whole_source_bundle:null, physical_source_identity:false,
+ input_role: existing_original_diagnostic_fixture_NOT_physical_Y_selection.
+No fake bundle, random Yukawa trial or fabricated assembled argument was
+supplied to produce a nominal physical result.
+
+The whole Q0_ab=I_orig((Theta F_a) theta_T F_b) needs the original blocked
+word contraction with actual all-field weights, entire P_adm, cap and
+Z_ref[0], together with the same ordered marks. [CALL] traces this to Q4 T_V
+and the original D_Vn/geometric-base integration, not to a new free measure.
+The current codegraph function search and the inspected owning definitions
+do not expose an executable all-field producer for those entries. This is
+a bounded recovery/execution statement, not nonexistence elsewhere.
+Products of the local Y matrices alone would omit precisely those fields,
+weights and reference legs. Such a product is not substituted for Q0.
+
+7. Outcome for the original question
+
+Established: actual local C6 source evaluated; its shifted local null rule,
+uniform line, full-rank weights and centered spectral obstruction derived.
+Reused and clarified: primitive Hodge high-gap selection, frozen q* selector,
+Perron parent direction, actual full-source determinacy and unavailable
+whole-source input at the checked consumer.
+Excluded only: direct identification of this bare clock block/step with
+the proposed marked S5 native transfer or1+5 generator action.
+Open: source-derived map into the native marked sector, actual closed-loop
+group and its1+5 orbits, actual native local-null expectations and the whole
+G/K/Z marked source. No complete fundamental physical solution is claimed.
+Next decisive operation stays the original full marked contraction; the
+new exact local formula is an input to it, not an independent completion.

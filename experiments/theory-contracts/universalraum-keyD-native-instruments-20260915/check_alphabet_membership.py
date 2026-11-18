@@ -25,7 +25,7 @@ from scipy.sparse import csr_matrix
 
 HERE = Path(__file__).resolve().parent
 NS_PIN = '380577f85d2afa8b50f91a0991769eaf8267ee5c09f327d87f17e1b4c0af1672'
-CLOCK_PIN = '9bf99de79f224ffcd060359eb146510b6e49973170f9953a0aec26760bd2c1a1'
+CLOCK_PIN = 'a0923ab19e46d784b28783f3b943df032d9de3c08b7ecda017b3d4cd3e5ad1ab'
 
 T0 = time.time()
 checks = []

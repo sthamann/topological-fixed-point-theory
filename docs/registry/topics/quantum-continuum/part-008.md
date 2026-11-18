@@ -4,6 +4,24 @@
 
 Exact ledger statuses remain at the linked original rows and in registry.json. Citations are source links, not proof certification.
 
+## Allgemeine Kontextblöcke brauchen eine andere Beschreibung
+
+[experiments/theory-contracts/universalraum-five-source-frontier-20260914/baseline-v1.3/chapters/03_prozess.tex:114-147](../../../../experiments/theory-contracts/universalraum-five-source-frontier-20260914/baseline-v1.3/chapters/03_prozess.tex#L114) · `section:9338f49c76995a6c1078` · section
+
+Ein klassisch-quantenmechanischer Zustand, kurz CQ-Zustand, besitzt 15 positive [formula in source] -Blöcke [formula in source] . Zusammen haben sie 240 reelle lineare Koordinaten und Gesamtspur eins. Die feste Regel macht jeden Ausgangsblock in seinem Kontext diagonal. Deshalb gilt Es ist also nicht richtig, 240 Koordinaten pauschal als kleinste dauerhaft autonome Hülle dieser festen Ausführung auszugeben.
+
+## Zwei Zellen: aus Verbindung wird Dynamik
+
+[experiments/theory-contracts/universalraum-five-source-frontier-20260914/baseline-v1.3/chapters/05_kopplung.tex:1-2](../../../../experiments/theory-contracts/universalraum-five-source-frontier-20260914/baseline-v1.3/chapters/05_kopplung.tex#L1) · `section:4358385250c3165a4dd3` · chapter
+
+No opening prose excerpt; see the source.
+
+## Warum viele Zellen noch ein eigener Schritt sind
+
+[experiments/theory-contracts/universalraum-five-source-frontier-20260914/baseline-v1.3/chapters/05_kopplung.tex:112-120](../../../../experiments/theory-contracts/universalraum-five-source-frontier-20260914/baseline-v1.3/chapters/05_kopplung.tex#L112) · `section:c0f2a2dfb49d5566a92d` · section
+
+Ein einzelner eindeutiger Singulettgrundraum besitzt keine logische Zustandsvielfalt. Das Produkt solcher Grundräume bleibt eindimensional. Wer alles auf diese Grundräume projiziert, erhält nur eine skalare Energie. Nichttriviale effektive Dynamik muss Anregungen, Randzustände, Multiplizitäten oder zusätzliche Vakuumsektoren behalten.
+
 ## Drei Bedeutungen des Wortes Clock
 
 [experiments/theory-contracts/universalraum-five-source-frontier-20260914/baseline-v1.3/chapters/06_zeit_echo.tex:3-15](../../../../experiments/theory-contracts/universalraum-five-source-frontier-20260914/baseline-v1.3/chapters/06_zeit_echo.tex#L3) · `section:4d18be97a0f76b18da6a` · section
@@ -535,7 +553,7 @@ Explicit source references:
 Navigation joins (both sources name the same Python identifier; statement equivalence is not inferred):
 
 - [experiments/lean4-carrier-rigidity/TfptCarrier/ArfSpinorCompiler.lean](../../../../experiments/lean4-carrier-rigidity/TfptCarrier/ArfSpinorCompiler.lean#L1)
-- [(* ---- (v2) carrier / Pascal ---- *) checkExact["dim S+ = 2^(g_car-1) = 16", 2^(gcar - 1) == 16]; checkExact["16 = 1 + 5 + 10 = C(5,0)+C(5,1)+C(5,2)", Binomial[5, 0] + Binomial[5, 1] + Binomial[5, 2] == 16]; checkExact["N_fam = 3", Nfam == 3]; checkExact["rank E8 = g_car + N_fam = 8", gcar + Nfam == 8]; (* ---- (v13) M = 41 budget ---- *)](../../../../verification/wolfram/tfpt_readouts.wl#L50)
+- [(* ---- (v2) carrier / Pascal ---- *)](../../../../verification/wolfram/tfpt_readouts.wl#L51)
 
 ## Discriminant action theorem: the ladder reads the hypercharge discriminant
 
@@ -570,12 +588,10 @@ Explicit source references:
 
 Navigation joins (both sources name the same Python identifier; statement equivalence is not inferred):
 
-- [(* ---- (v50) Q geometry (Theorem Q): Sigma-split char polys ---- *) Qp = (Q + Sig.Q.Sig)/2; Qm = (Q - Sig.Q.Sig)/2; checkExact["Q_+ char poly = (t-1)(t-2)(t-3) => Spec(Q_+)={1,2,3}", Sort[Eigenvalues[Qp]] == {1, 2, 3}]; checkExact["Q_- char poly = t(t^2-3) => Q_-^2 eigenvalues {0,3} (3=N_fam)", Sort[Eigenvalues[Qm]] == Sort[{0, Sqrt[3], -Sqrt[3]}] && Sort[Eigenvalues[Qm.Qm]] == {0, 3, 3}]; (* ---- (v49) Readout Rigidity: c_u/c_d constant on the selector stratum ---- *)](../../../../verification/wolfram/tfpt_readouts.wl#L194)
-- [(* v477 (i): Frullani + the moment dictionary at flat weight *) frul = Integrate[(Exp[-aa tt] - Exp[-tt])/tt, {tt, 0, Infinity}, Assumptions -> aa > 0]; eig = Join[{1}, Table[1/4, 4], Table[1/6, 6]]; tr = Total[Exp[-tt (1 - bb # RR)] & /@ eig] - 11 Exp[-tt]; serR = Normal[Series[tr, {RR, 0, 2}]]; mu1f = Integrate[Coefficient[serR, RR, 1]/tt, {tt, 0, Infinity}]; mu2f = Integrate[Coefficient[serR, RR, 2]/tt, {tt, 0, Infinity}]; checkExact["v477 GRAV.ENTROPIC.SCALEFLOW.01 (i): the Frullani/scale-flow identity -Log[a] = Integrate[(e^{-a t}-e^{-t})/t] (symbolic) and the moment dictionary -- at the FLAT weight the maximally-symmetric relative trace integrates to exactly the v475 raw coefficients 3 b R + (17/24) b^2 R^2 (unit moments mu1 = mu2 = 1): the raw entropic action is the unit-moment point of a scale-measure family", frul == -Log[aa] && Simplify[mu1f - 3 bb] == 0 && Simplify[mu2f - (17/24) bb^2] == 0]; (* v477 (ii): the one moment condition + closure + v36 consistency *)](../../../../verification/wolfram/tfpt_readouts_extension.wl#L3071)
-- [(* ---- (v24) quark ratio closure ---- *) checkExact["c_u/c_d = g_car*11/(N_fam^2 Delta_Q) = 55/117", (gcar*11)/(Nfam^2*13) == 55/117]; checkExact["c_c/c_s = p_5(a)/(Omega_adm-1) = 34/47", pn[5]/(48 - 1) == 34/47]; checkExact["c_t/c_b = N_fam/(2 Delta_Q) = 3/26", Nfam/(2*13) == 3/26]; check["m_c/m_s = (34/47)/phi0 = 13.605", (34/47)/phi0, 13.605, 10^-3]; check["m_t/m_b = (3/26)/phi0^2 = 40.81", (3/26)/phi0^2, 40.81, 10^-2]; (* ---- (v36) G2: spectral-action Seeley-DeWitt coefficients -> R + R^2 ---- *)](../../../../verification/wolfram/tfpt_readouts.wl#L105)
+- [(* ---- (v49) Readout Rigidity: c_u/c_d constant on the selector stratum ---- *)](../../../../verification/wolfram/tfpt_readouts.wl#L202)
+- [(* ---- (v36) G2: spectral-action Seeley-DeWitt coefficients -> R + R^2 ---- *)](../../../../verification/wolfram/tfpt_readouts.wl#L113)
 - [experiments/lean4-carrier-rigidity/TfptCarrier/YukawaPrimitive.lean](../../../../experiments/lean4-carrier-rigidity/TfptCarrier/YukawaPrimitive.lean#L1)
-- [(* v475 (iii): the Lorentzian timelike positivity witness *) gL = DiagonalMatrix[{-1, 1, 1, 1}]; mM = Outer[Times, {vv, 0, 0, 0}, {vv, 0, 0, 0}]; evT = Sort[Eigenvalues[(gL + aal mM) . Inverse[gL]]]; evS = Sort[Eigenvalues[(gL + aal Outer[Times, {0, vv, 0, 0}, {0, vv, 0, 0}]) . Inverse[gL]]]; checkExact["v475 GRAV.ENTROPIC.SCALARON.01 (iii): the Lorentzian-positivity witness -- on Minkowski a TIMELIKE gradient gives G g^-1 eigenvalues {1 - alpha v^2, 1, 1, 1} (nonpositive for v^2 >= 1/alpha, ln undefined) while a SPACELIKE gradient gives {1 + alpha v^2, 1, 1, 1} (positive for all v) -- the v473 caveat exhibited, the OS route sturdier", Sort[evT] == Sort[{1 - aal vv^2, 1, 1, 1}] && Sort[evS] == Sort[{1 + aal vv^2, 1, 1, 1}]]; ]; (* ==== v477 round: the scale-flow representation of the entropic action -- the exact content: the Frullani identity Integrate[(e^{-a t}-e^{-t})/t] = -Log[a], the moment dictionary (flat weight = unit moments = the v475 raw coefficients 3 b R + (17/24) b^2 R^2), the ONE moment condition mu2/mu1^2 = (72/17)(8 pi)^9 with the exact closure (4608 pi^2/17)/((72/17)(8 pi)^9) = c3^7, and the v36 consistency f0 = 6 (4 pi)^2/c3^7 <=> M^2 = c3^7 Mbar^2; mirrors v477 (the chi-form quadrature is numerical, Python-only). ==== *)](../../../../verification/wolfram/tfpt_readouts_extension.wl#L3052)
-- [(* ---- (v71) SIMPLE R-bridge: selector stratum derived => ratios are integer Plucker, no monodromy ---- *) checkExact["det ladder (Q,K,R,L)=(3,4,8,20)=(N_fam,|mu4|,rank E8,det L); det R=8=rank E8=g+n; det Q=3=N_fam", {Det[Q], Det[K], Det[R], Det[L]} == {3, 4, 8, 20} && Det[R] == 8 == gcar + Nfam && Det[Q] == Nfam]; checkExact["selector stratum derived => c_u/c_d=55/117 is a pure integer Plucker readout (13=8+5=9+4)", (gcar*11)/(Nfam^2*13) == 55/117 && 13 == 8 + 5 == Nfam^2 + 4]; (* ---- (v72) det Q = N_fam from the cusp class: order = weight denominator = |coker Q| ---- *)](../../../../verification/wolfram/tfpt_readouts.wl#L342)
+- [(* ---- (v71) SIMPLE R-bridge: selector stratum derived => ratios are integer Plucker, no monodromy ---- *)](../../../../verification/wolfram/tfpt_readouts.wl#L343)
 
 ## The Coxeter–cyclotomic compiler and the explicit [formula in source] construction
 
@@ -595,7 +611,8 @@ Explicit source references:
 
 Navigation joins (both sources name the same Python identifier; statement equivalence is not inferred):
 
-- [(* ---- (v79) hypercharge Lucas-Binet D_n + the quark-ratio reading ---- *) checkExact["Lucas-Binet D_n=(3^n-(-2)^n)/5 = {1,1,7,13,55,133}; c_u/c_d = D_5/(N_fam^2 D_4) = 55/117", Module[{D}, D = Table[(3^n - (-2)^n)/5, {n, 1, 6}]; D == {1, 1, 7, 13, 55, 133} && D[[5]]/(Nfam^2 D[[4]]) == 55/117]]; (* ---- (v79) Inverse Anchor Theorem: 1^T M^-1 1 = 1/atom; a^T M^-1 a = 1 for R,K,L ---- *)](../../../../verification/wolfram/tfpt_readouts.wl#L385)
+- [(* ---- (v79) hypercharge Lucas-Binet D_n + the quark-ratio reading ---- *)](../../../../verification/wolfram/tfpt_readouts.wl#L386)
+- [(* ---- (v79) Inverse Anchor Theorem: 1^T M^-1 1 = 1/atom; a^T M^-1 a = 1 for R,K,L ---- *)](../../../../verification/wolfram/tfpt_readouts.wl#L391)
 
 ## Theorem 3 — the Coxeter closure equation selects [formula in source]
 
@@ -626,21 +643,3 @@ Die Matrix [formula in source] summiert die vier Ergebnisgewichte jedes Kontexts
 [experiments/theory-contracts/universalraum-paired-release-20260914/main-v1.3/chapters/03_prozess.tex:114-147](../../../../experiments/theory-contracts/universalraum-paired-release-20260914/main-v1.3/chapters/03_prozess.tex#L114) · `section:560dc1cd2e54859e8ebb` · section
 
 Ein klassisch-quantenmechanischer Zustand, kurz CQ-Zustand, besitzt 15 positive [formula in source] -Blöcke [formula in source] . Zusammen haben sie 240 reelle lineare Koordinaten und Gesamtspur eins. Die feste Regel macht jeden Ausgangsblock in seinem Kontext diagonal. Deshalb gilt Es ist also nicht richtig, 240 Koordinaten pauschal als kleinste dauerhaft autonome Hülle dieser festen Ausführung auszugeben.
-
-## Zwei Zellen: aus Verbindung wird Dynamik
-
-[experiments/theory-contracts/universalraum-paired-release-20260914/main-v1.3/chapters/05_kopplung.tex:1-2](../../../../experiments/theory-contracts/universalraum-paired-release-20260914/main-v1.3/chapters/05_kopplung.tex#L1) · `section:abe4384b96949dfd1c3e` · chapter
-
-No opening prose excerpt; see the source.
-
-## Warum viele Zellen noch ein eigener Schritt sind
-
-[experiments/theory-contracts/universalraum-paired-release-20260914/main-v1.3/chapters/05_kopplung.tex:112-120](../../../../experiments/theory-contracts/universalraum-paired-release-20260914/main-v1.3/chapters/05_kopplung.tex#L112) · `section:4ae6a758379e532bd502` · section
-
-Ein einzelner eindeutiger Singulettgrundraum besitzt keine logische Zustandsvielfalt. Das Produkt solcher Grundräume bleibt eindimensional. Wer alles auf diese Grundräume projiziert, erhält nur eine skalare Energie. Nichttriviale effektive Dynamik muss Anregungen, Randzustände, Multiplizitäten oder zusätzliche Vakuumsektoren behalten.
-
-## Drei Bedeutungen des Wortes Clock
-
-[experiments/theory-contracts/universalraum-paired-release-20260914/main-v1.3/chapters/06_zeit_echo.tex:3-15](../../../../experiments/theory-contracts/universalraum-paired-release-20260914/main-v1.3/chapters/06_zeit_echo.tex#L3) · `section:2454620d644e339ac26b` · section
-
-Eine zyklische Matrix ist zunächst ein Taktmuster. Eine Dynamik sagt, wann welcher Zustand entsteht. Eine Uhr braucht zusätzlich eine beobachtbare Anzeige und eine Kalibrierung. Diese drei Ebenen müssen zusammenpassen.

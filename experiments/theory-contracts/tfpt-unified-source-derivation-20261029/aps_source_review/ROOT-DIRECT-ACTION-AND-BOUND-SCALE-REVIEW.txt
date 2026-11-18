@@ -1,0 +1,133 @@
+URSPRÜNGLICHE WIRKUNG UND GEMEINSAME RANDANTWORT: ROOT VERGLEICH
+30. Oktober 2026. Kein physischer Gesamtabschluss.
+
+Verlangtes Ergebnis
+
+Dieselbe ursprüngliche Feldregel muss beide Seiten des Vergleichs liefern:
+die Wirkung mit ihrer Referenz, geometrischen Spiegelung, Normierung und
+Domäne sowie die gemeinsame Feldantwort beider Ränder. Eine Ableitung
+der bereits gegebenen Randquelle ist nur die rechte Seite dieses Vergleichs.
+Insbesondere ist eine radiale Hintergrundableitung noch keine aus S_prim
+hergeleitete Antwort auf zwei unabhängig lokalisierte Randquellen.
+
+1. Die rechte Seite ist jetzt ausdrücklich ausgeführt
+
+ACTUAL-ONEFORM-COUPLED-SOURCE-RESPONSE.txt verwendet die vorhandene
+ursprüngliche Einform, nicht neu ausgewählte Yukawawerte:
+ Phi_s=(1+s)D_Y+D_MR.
+Für h=p gamma_F-i gamma_F D_F und V=-i gamma_F D_Y ist
+ T=h²=p²+D_F², Q=dot(T)={D_F,D_Y}.
+Die ganze gemeinsame Quelle hat
+ G=[[a,X],[X,1-a]], a=(1+tanh(ell h))/2, X=(2cosh(ell h))^-1.
+Ihre exakte Ableitung lautet
+ dot(a)=(V q(T)+h Dq_T(Q))/2, dot(X)=Dx_T(Q),
+ q(u)=tanh(ell sqrt(u))/sqrt(u), x(u)=1/(2cosh(ell sqrt(u))).
+Hier ist Dq eine Fréchet Ableitung mit dividierten Differenzen. Der
+Majoranablock verbietet die gewöhnliche kommutative Produktabkürzung.
+
+Root hat den tatsächlichen Neutrinoeinblock unabhängig symbolisch geprüft:
+ [T,Q]=M³m [[0,0,0,-1],[0,0,1,0],[0,-1,0,0],[1,0,0,0]],
+ ||[T,Q]||_HS²=4 M^6 m².
+ROOT-COUPLED-YUKAWA-RESPONSE-CHECK.json enthält diese Rechnung.
+Die Fréchet Ableitung von tanh(ell h) ist für endliches selbstadjungiertes h
+und ell>0 injektiv, weil alle dividierten Differenzen strikt positiv sind.
+Also dot(a)!=0 bei D_Y!=0 VOR weiteren Projektoren und Auslesefunktionalen.
+Der unabhängige Review bestätigt die ganze Formel, den summierbaren
+Allmodenumfang und die Ableitung aller endlichen geschmierten CAR Wörter.
+
+Dies wählt keine Yukawawerte, kein bosonisches Maß und keine physische Zeit.
+Die dortige numerische Quelle ist ein unveränderter Konstruktorprüffall.
+Sie wird nicht als gemessene oder physisch vorhergesagte Antwort ausgegeben.
+
+2. Claudes erster neuer Ursprungsschritt besteht den Ortsvergleich nicht
+
+Claude51 setzt den ursprünglichen geometrischen Deckpullback gleich der
+reinen Fasermatrix F=S tensor gamma_F. Original source001:122–129 verwendet
+jedoch tau* auf dem verdoppelten Manifold, einschließlich seines Ortsanteils.
+Ein kompakt getragener ungerader Ortsmultiplikator M_f genügt:
+ F M_f F=M_f, aber U_tau M_f U_tau^-1=-M_f.
+Diese Gleichsetzung ist falsch, schon auf dem gemeinsamen glatten Innenkern.
+Eine neue Randbedingung kann diesen lokalen Widerspruch nicht beheben.
+
+Mit dem fehlenden Ortsanteil P_r gibt der bereits vorhandene Produktlift
+tau_F=F P_r für dieselbe konstante Familie D_s=N partial_r+SA+Z Phi_s
+ tau_F D_s tau_F^-1=D_s, D_rel=0, D_ref=D_s.
+Das ist ausdrücklich Wiederverwendung von DECK-REFERENCE-AND-ACTION.txt §3.
+Es wählt tau_F nicht als ursprünglichen primitiven Lift. Claudes gewünschter
+Split D_rel=N partial_r entsteht nur bei der reinen Faseroperation.
+ACTUAL-DECK-PULLBACK-INSERTION-REVIEW.txt prüft Original und Domänenscope.
+
+3. Die gebundene Normierung liefert einen zusätzlichen konkreten Fehler
+
+Original source001:42–55 bindet chi an den inversen positiven Gap von
+|B_Sigma|. Setze g=1/chi. Selbst wenn ein unskalierter Operator K entlang
+einer Feldvariation konstant bleibt, folgt bei festem Spurvertrag
+ d Tr f(gK)=dot(g) Tr[f'(gK)K].
+Claudes Aussage, Tr f(N partial_r/chi) sei am festen Kragen Phi frei,
+folgt deshalb nicht aus der Feldunabhängigkeit von N partial_r.
+
+Kleinster exakter Gegenfall innerhalb seiner behaupteten Produktkarte:
+ein nichtverschwindender konstanter Dirackoeffizient m_s=(1+s)m bei MR=0
+gibt g_s²=p_min²+(1+s)²m². Für ein festes normales Eigenpaar ±nu und das
+zugelassene Wärmeprofil beträgt der Beitrag 2 exp(-nu²g_s²). Seine Ableitung
+bei s=0 ist -4 nu²m² exp[-nu²(p_min²+m²)], also nicht null für nu*m!=0.
+Das Wärmeprofil wird nur gegen die allgemeine Unabhängigkeitsaussage
+eingesetzt. Es ist keine neue physische Profilauswahl und kein Vergleich
+des ganzen ursprünglichen Spurvertrags. Die Gleichsetzung von g mit dem
+primitiven Gap benötigt weiterhin die tatsächliche B_Sigma Karte.
+
+Für eine schon gegebene differenzierbare gemeinsame Domäne lautet die
+korrekte erste Spurantwort mit A=D_ref und B=D_rel:
+ dS=Tr f'(gB)(g dot(B)+dot(g)B)
+    -Tr f'(gA)(g dot(A)+dot(g)A)+(i pi/2)dot(Delta eta).
+Bei bewegtem R kommen in dot(A),dot(B) zusätzlich dot(R)DR+RD dot(R)
+mit den jeweiligen Vorzeichen vor. Bewegte Domänen und Maße brauchen
+ihren tatsächlichen Transport. Dieser allgemeine Differentialvertrag
+ist bereits im Atlas bewiesen; er wird hier nicht als neue Herleitung gezählt.
+
+4. Groks behaupteter gemischter Term ist nur eine unvollständige Erstvariation
+
+Grok52 lässt die gebundene Gapantwort und Eta/Domainbeiträge weg und nennt
+eine skalare Erstvariation den ersten gemischten Zweirandterm. Es fehlen
+zwei tatsächliche Randquellen, ihre Einfügung und die gemischte Ableitung.
+Aus der formalen Einführung bosonischer Fluktuationen folgt keine gesamte
+Identität mit dem gemeinsamen fermionischen Quellenfunktional.
+Eine gemeinsame Wirkung S_bos+S_ferm ist erlaubt; weder S_bos=-log Pf
+noch eine Gleichsetzung der bosonischen Hesseform mit dem Diracoperator
+wird als zusätzliche Bedingung verlangt.
+
+Die unabhängige Primärliteratur enthält genau diese getrennten Terme:
+Chamseddine, Connes, Marcolli, Gravity and the Standard Model with Neutrino
+Mixing, hep-th/0610241, Gleichung1.4, gedruckte Seite3,
+https://arxiv.org/abs/hep-th/0610241
+https://www.math.fsu.edu/~marcolli/SMpaper.pdf
+Das ist ein gültiger Mechanismus unter den dortigen Produktdaten, keine
+Auswahl dieser Daten durch TFPT P1. Die entsprechende TFPT Gitterwirkung
+steht in research_contracts/017-source.tex:153–191 als Demand/OPEN.
+Ihre späteren positiven Hamiltonianresultate193–235 bleiben erhalten.
+
+5. Claude50 wird eng korrigiert, die positiven Originalkerne bleiben bestehen
+
+Für den dort neu gesetzten W=diag|w_m| gilt bei y=1,delta=1/2
+|w_1|=32/63, |w_5|=2/63. Der positive Kandidat sqrt(W) H^-1 sqrt(W)
+ist nicht stabil unter der abstrakten Wortumkehr R e_m=e_-m.
+Root prüft exakt T_11-T_55=2600/3969. Das ist nur dann der relevante
+Reflexionsfehler, wenn R tatsächlich die hier verlangte Reflexion ist.
+OS Theta, Determinantinvolution Q_Theta und die Nahtpolarisation werden
+nicht gleichgesetzt. Erst Q_Theta=R würde P_Theta=(I+R)/2 implizieren.
+R Symmetrie widerlegt nicht Perron Primitivität des positiven Greenkerns.
+Der unabhängige Claude50 Review enthält diese getrennten Voraussetzungen.
+
+6. Ergebnis und konkrete Fortsetzung
+
+Die ganze nichtkommutierende Hintergrundantwort ist abgeleitet. Der konkret
+vorgeschlagene primitive Ursprungssplit scheitert am Ortsanteil. Die offene
+Gleichheitsprüfung ist daher noch nicht bestanden und wird nicht durch
+Umbenennen der Hintergrundantwort als ursprünglicher Wirkungsterm geschlossen.
+Weiterzuverwenden sind die vorhandenen Originalfelder, beide Randseiten,
+Wortprodukte und die getypten Clock, Spin, Wedge und E8 Abbildungen.
+Die nächste originale Einsetzung muss den tatsächlichen verdoppelten
+Bündelübergang und die gegebene geschlossene Domäne in D_ref/D_rel tragen;
+anschließend ist dessen gemeinsame Quelleninsertion zu vergleichen.
+Ein alternative ursprüngliche direkte OS Quellenherleitung bleibt zulässig.
+Kein allgemeiner Ausschluss von P1 und keine neue freie Quelle werden behauptet.

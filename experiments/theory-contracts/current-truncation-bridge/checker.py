@@ -16,7 +16,7 @@ import numpy as np
 HERE = Path(__file__).resolve().parent
 ROOT = HERE.parents[2]
 TRANSPORT = "experiments/theory-contracts/history-reference-transport/checker.py"
-TRANSPORT_SHA = "17a8a1a3f438a42a4c884e0b93225c8773637a7a2ed8e2e18ddbffb53768d918"
+TRANSPORT_SHA = "519613c6edba4cf4c8c74d575d6bdef37ab9e7f4add4105eebfcbe12e76fb227"
 
 
 def require(ok, message):

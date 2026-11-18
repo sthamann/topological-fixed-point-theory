@@ -1,0 +1,91 @@
+UR.SOURCE.P0_D5_IDENTIFIABILITY.COLD_CHECK.01
+13 October 2026
+
+QUESTION
+
+Can the already declared selected neutral source state R and its rank-one
+mark port P0 retain or identify the D5 carrier factor 5/4?
+
+SCOPED VERDICT
+
+No.  This specific route is excluded exactly.  The selected source state is
+
+  B48 = 12 T_D5 + 16 T_A2 + 4 T_U1 = 12 T_E8 + R,
+  R   =                4 T_A2 - 8 T_U1.
+
+Thus R has D5 coefficient zero.  With the source oscillator Gram form,
+||R||^2 = 48 while ||B48||^2 = 624.  The declared port
+
+  V_R = |R><p0|,       P0 = |p0><p0|
+
+therefore compresses R to V_R^* V_R = 48 P0.  It sees the norm, not the
+sector decomposition.
+
+The loss is explicit.  In the sector-stress basis (T_D5,T_A2,T_U1), the
+distinct primary contrast
+
+  R' = (16/7) T_D5 - (12/7) T_A2 - 8 T_U1
+
+satisfies the same primary condition 5a+2b+c=0 and the same norm
+
+  (5/2)a^2 + b^2 + (1/2)c^2 = 48,
+
+but has nonzero D5 coefficient 16/7.  Nevertheless its rank-one mark-port
+compression is also 48 P0.  Hence the port output does not identify the D5
+coefficient, even within the three-sector primary plane.
+
+WHAT THIS DOES AND DOES NOT REJECT
+
+It rejects routing the D5 exponent 5/4 through the already selected R -> P0
+operator.  It does not reject carrier-resolved charged insertions, another
+source-derived defect observable, or an independently derived quotient.
+R' is an information-loss witness in the primary sector plane; it is not
+claimed to be another selected 48-root branch.  The finite quantities above
+already existed in the implementation.  Their use here is a scoped
+identifiability check, not a new general theorem and not a physical gate.
+
+The remaining inputs are the choice R rather than B48 or another primary,
+the seam injection scale, the propagation exp(-alpha L0), the rank-one mark
+contraction, and the physical response functional.  The susceptibility 5/4
+and the epsilon target match are still not derived by this port.
+
+PINNED ORIGINAL SOURCE
+
+  /Users/stefanhamann/Projekte/tfpt-theoryv4/
+    tfpt_explorer/neutral_source_response.py
+  sha256 a6a21749cba24ae6c50c1f4e1cf95bf283c69ec9b2167a7089380188c5cd8898
+  lines 72-110: native 48-branch, projectors, R and exact Gram states
+  lines 114-132: R, p0 and rank-one port compression
+  lines 149-177: existing exact B48/R/port checks
+  lines 211-225: reported operator identities and primary nonuniqueness
+
+During the initial cold-agent test, the Atlas did not return a direct registered source record for this Python
+file after exact-path, exact-function, and formula searches.  Registered
+context sources used to delimit the claim are:
+
+  source:45d734c654de8fb46a8a
+    seam-two-normalizations-origin README, registered excerpt lines 15-27,
+    sha256 6743c111d510f75a65ea6a100ad4ae825dc90c86686e0600961b180db2320d8f
+  source:ad8a961941e631e265d7
+    seam-readout-flow-deck README, registered excerpt lines 11-21,
+    sha256 62c3fee7d8e34745c2199230f1a8fc04d8d90e77a771d9f0d9b787a801edcc48
+  source:8cbcc53b7f027d3211a6
+    source-observation-identifiability contract index, lines 1-34,
+    sha256 7b1c2e27e20d09c2f9de71aeeca2e66120fd031ef8b4bc565295c16f2a60e590
+
+REPRODUCTION
+
+  python3 experiments/theory-contracts/neutral-port-identifiability-20261013/checker.py
+
+The saved results.json is the exact output of that command.
+
+PROPAGATION AND INPUT BOUNDARY
+
+The original conditional heat propagation is scalar exp(-2 alpha) on
+this oscillator-level-two subspace. With the declared injection scale
+c3^2, both contrasts therefore give the same 48 c3^4 exp(-2 alpha) P0.
+This is equality for arbitrary alpha and c3, not a numerical fit. It
+shows that this compressed datum alone cannot distinguish the two
+sector decompositions. It does not assert that the full original
+operator algebra has lost this information. A D5-resolved insertion
+would require its own source-derived operator and observable dictionary.

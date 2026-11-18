@@ -1,0 +1,171 @@
+TFPTSEAMORDEREDYUKAWA20261111
+11. November 2026
+
+Ergebnis
+
+Die affine E8 Randdarstellung liefert aus derselben Gitterregel
+lokale symmetrische Elektron-, Up- und Down-Familienantworten
+mit vollem Rang. Die Rechnung braucht dafür zwei geeignete
+geordnete neutrale Stromeinfügungen und im Up-Kanal den bereits
+vorhandenen Übergang zur vierten Familienrichtung. Das funktioniert
+mit einem Higgs und seinem wirklichen Gitteradjungierten. Die
+beiden gewählten Richtungen, ihre relative Norm und ihre Positionen
+sind Prüfeingaben. Die physische Nahtwahl und y_e/y_u sind unberechnet.
+
+1. Rechnung am Original
+
+Wir lesen die tatsächlichen 27 Gewichte und d-Koeffizienten aus
+UR.COMPILER.VACUUM_CURRENT_CUBIC.06. Die Ladungen des 16 finden
+genau einen Elektron-, drei Up- und drei Down-Farbkanäle. Wir
+transportieren die Familiengewichte mit den A2 Wurzeloperationen
+im vorhandenen Gitterkozyklus. Alle aktuellen Vergleiche verwenden
+dessen V_p, dessen kompaktes Adjungiertes und die gemeinsamen
+Einheitsnormen der Wurzelströme. Originale: kubischer Quellbeleg
+und e8_boundary_response.py, 95–160. Allgemeine Gitterdarstellung:
+Frenkel und Kac, Invent. Math. 62, 23–66, doi:10.1007/BF01391662.
+
+Mit zwei äußeren Strommarken bei 5 und 4 und Higgs bei 1
+nähern sich die beiden Materieströme am Punkt 2. Wir nehmen den
+unter Vertauschung ihrer vollständigen internen Bezeichner
+symmetrischen regulären Term. Der höchstens einfache Pol
+kürzt sich in dieser Symmetrisierung. Ein unabhängiger naher
+Aufruf des unveränderten Gitterevaluators reproduziert den
+endlichen Grenzwert. Das ist eine lokale chirale VOA Paarung
+im E8 Randmodell. Die materielle 4D Weyl-Realisierung wird darin
+nicht vorausgesetzt.
+
+2. Erste Strategien und ihre Grenzen
+
+Ein elektrischer Cartanstrom auf den ursprünglichen beiden
+holomorphen Slots liefert auf den nichtverschwindenden
+Richtungen e/u=3/2 und u/d=2, Rang zwei. Eine neutrale
+Familien-Cartaneinfügung kann mit drei verschiedenen
+Eigenwerten und generischem h Rang drei haben. Ihre Matrix
+ist symmetrisch mit Nulldiagonale, daher ist der größte
+Singularwert die Summe der anderen beiden. Alle drei
+Flavorsektoren der Originaltabelle liegen strikt jenseits
+dieser Gleichheit.
+
+Zwei ausgewählte adjungiert ergänzte Familienwurzeln
+alpha=e6-e7 und beta=e7-e8 liefern eine symmetrische Matrix
+vollen Rangs auch im regulären lokalen Term. Ein invarianter
+quadratischer SU3_F Stromkontrakt liefert auf denselben Slots
+null. Die Orientierung der Einfügungen trägt daher Information.
+In der gemeinsamen holomorphen Lesart von Up und Down bleibt
+der durch die nackte Affinamplitude geteilte Kern über alle
+Sektoren gleich. Reine Wortlängen davor und danach ändern nur
+das bekannte Produkt der Wortlängenfaktoren. Das exakte
+Verhältnis der Restdeterminanten Up/Down aus den drei
+Quarkverhältnissen ist
+(55/117)(34/47)(3/26)(1-phi0)^2/phi0 = 0.661554178972
+und damit verschieden von eins.
+
+Ein zusätzlicher neutraler elektrischer Strom liefert in dieser
+holomorphen Lesart S+qA mit S symmetrisch und A antisymmetrisch.
+Die Restdeterminante ist ein affines Polynom in q² und erzwingt
+3 det E - 8 det U + 5 det D = 0. Alle vier relativen reellen
+Determinantenvorzeichen scheitern, auch mit der Druckrundung.
+Bei einem glatten, vakuumnormierten abelschen Quellenprofil
+ist der Ward Faktor exp(q(f(z1)-f(z2))). Bei zusammenfallenden
+Materiepunkten überlebt nur der lineare Unterschied am einfachen
+Pol, sodass diese lokale Einschränkung auch die glatte
+Exponentialfortsetzung trifft. Kontaktterme oder komplexe
+Antworten sind hier nicht geprüft.
+
+3. Ein Higgs und sein tatsächliches Konjugiertes
+
+Die zwei neutralen Higgsrichtungen des alten holomorphen
+(27,3) Kubikterms sind im Gitter keine Adjungierten voneinander.
+Die tatsächliche Gitteradjunktion negiert alle acht Gewichte
+und enthält den bestehenden Kozyklus. Nimmt man H_d und
+sein Adjungiertes mit demselben markierten Materietriplet,
+so bleibt in der Up-Auslesung die letzte Koordinatensumme +2
+übrig. Beliebig viele SU3_F und elektromagnetische Ströme
+haben dort null und können diesen Kanal nicht öffnen.
+
+Der fehlende Übergang ist ein vorhandener SM-neutraler
+SU4 Familienwurzelstrom mit Gewicht -e_i-e_j in den letzten
+drei Koordinaten. Er verbindet den markierten Dreier mit dem
+vierten Komplement. In erster Ordnung ergeben die drei
+entsprechenden Wurzeln gemeinsam exakt
+(v h^T + h v^T)/4 und somit höchstens Rang zwei.
+Eine zweite geordnete beta Einfügung öffnet zwei der drei
+Komplementrichtungen mit generischem reellen h vollständig.
+Die Determinanten sind -h1² h2/6144, h1² h3/6144 und 0.
+Mit einer gemeinsamen ersten Stromeinfügung J_alpha+J_gamma
+und derselben zweiten J_beta, jeweils adjungiert ergänzt,
+liest der e/d Kanal den alpha Teil und der Up Kanal den
+gamma Teil aus. Die Rechnung verwendet ein einziges
+Higgsprofil h und sein tatsächliches Gitteradjungiertes.
+Damit sind drei unabhängige Richtungen in allen drei
+Sektoren in derselben affine Randrechnung vorhanden.
+
+4. Nahtwahl und gemeinsame Normierung
+
+Die bereits am alten Ramond Rand getestete gerichtete
+Familienmarke q wird durch die dortige konkrete Fold Matrix
+zu e8-e7 = -beta. Nur diese Orientierung oder nur ihre
+Gegenrichtung als zweite Einfügung ergibt in den getesteten
+Kombinationen Determinante null. Beide zusammen können vollen
+Rang liefern. Eine affine Identifikation der ganzen alten
+markierten Operation mit diesem neuen OPE wurde nicht gesetzt.
+Die zusätzliche Gegenrichtung und das relative Gewicht müssen
+in der originalen reflektierten Paarung ausgewertet werden.
+
+Die Wiederholung derselben Hermiteschen Richtung
+b(J_beta+J_beta*)+g(J_gamma+J_gamma*) an beiden Marken ergibt
+für alle drei einzelnen Komplementwurzeln det Up = 0.
+Im getrennt markierten Fall ergibt der erste reelle Zweig
+mit gleichen Koeffizienten für alpha und gamma für alle
+zulässigen h |det Up/det Down| <= 1/49. Das liegt unter dem
+exakten Restverhältnis 0.661554178972. Reine Familienoperation
+ergibt bei diesem neutralen Higgs E=D, während die alte
+Tabelle nach Entfernung der Wortlängenfaktoren
+|det E/det D|=1.07286868132 verlangt. Dieser letzte
+Vergleich gilt für die alte Tabelle, deren relative Normierung
+weiterhin separat offen ist.
+
+Nächste konkrete Auswertung: die schon vorhandene alte
+Familienmarke und ihre echte reflektierte Gegenrichtung mit
+den komplementären Wurzelübergängen durch denselben Naht-
+selektor transportieren. Die Nullrichtung bei nur einer
+Orientierung, das nichtverschwindende dreifache Produkt bei
+beiden und die exakte Up/Down-Restdeterminante sind getrennte
+Entscheidungstests für diese eine Quellenabbildung. Wenn sie
+den geordneten Übergang trägt, liefert die Gram-normalisierte
+Higgsvariation beider Kanäle den Elektron/Up-Quotienten.
+Weder eine neue Masse noch eine zusätzliche Eichgruppe
+ist dafür Teil dieser Kandidatenrechnung.
+
+Die installierte Q Runtime wurde mit unveränderter
+native-diagnostic-v1 Domain in integrate ausgeführt. Sie
+endet mit Exit 2, ORIGINAL_SOURCE_INTEGRATION_NOT_STARTED,
+fehlendem original_blocked_fiber_packet und null Originalatomen.
+Ihr Assembler liest Y_e/Y_u aus Domain-Eingabematrizen.
+Somit liegt die physische Auswertung dieser Randmarken
+weiterhin vor dem vorhandenen physischen Consumer.
+
+Rechenprobe: check_seam_ordered_yukawa_20261111.py <TFPT-Repo>.
+
+5. Zusätzliche Prüfung an der ursprünglichen Spinmarke
+
+Die alte Xi Wirkung ist exp(2 pi i p_1) auf dem alten
+Gittervektor. Die tatsächliche Fold Matrix liefert für
+alpha, beta und die drei Komplementwurzeln die Zeichen
++, - und (+, -, -). Verlangt man in diesem Transport
+einen einzigen Xi-geraden ersten Einsatz, der den bereits
+benutzten alpha Anteil enthält, bleibt von den drei
+Komplementwurzeln genau der erste Zweig (-1,-1,0).
+Diese Verengung stammt aus der alten Spinwirkung. Die
+Homogenität der physischen Einfügung ist die Bedingung
+und Xi wird nicht mit dem physischen Q_Theta gleichgesetzt.
+
+Für die vorliegenden festen Positionen und reelles h
+multipliziert ein relatives erstes Gewicht g/a den
+Up/Down Restdeterminantenbetrag mit |g/a|^3. Der Grenzwert
+1/49 bei gleichen Gewichten erzwingt
+|g/a| > (49 * 0.661554178972)^(1/3) = 3.188... .
+Die strikte Schranke gilt bei voller Down- und Up-Rangzahl.
+Damit lässt sich an der ursprünglichen normierten Paarung
+zuerst ein einzelnes Gewicht prüfen, bevor drei Matrizen
+oder Yukawawerte ausgewertet werden.

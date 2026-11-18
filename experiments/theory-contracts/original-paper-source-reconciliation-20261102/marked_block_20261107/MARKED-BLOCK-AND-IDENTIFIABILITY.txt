@@ -1,0 +1,175 @@
+MARKEDBLOCK20261107. Originaler Blockaufruf und Eindeutigkeit der gemeinsamen Antwort.
+
+1. Wo die Originalrechnung endet
+
+EM/Flavor005:135–207 gibt den lokalen C6 Greenoperator explizit. QFT004:111–155
+verwendet ihn zusammen mit blockierter Wortgrammatik, diagonalen Zulässigkeitsgewichten
+und zweistufigem P_adm. QFT004:282–335 benutzt die trennende Wirkung der Gewichte und
+die Positivität für den Algebraabschluss. Primitivität wählt den Perronzustand
+des gegebenen T_V. Die trennenden Labels liefern keine markierten Amplituden.
+Metrology005:136–178 gibt den spektralen Faktor auf dnu_Vn und setzt die Kompatibilität
+des Blockings ein. Die geprüften Stellen liefern weder die Masse einer konkreten
+gemeinsamen Konfiguration noch die Matrixelemente aller inneren Feldbeine.
+Die vorgegebene Faserelimination aus FULL-SOURCE-REGULATOR-PROOF:60–92 wäre
+auf die tatsächliche gelieferte Faser anwendbar. Sie produziert deren Eingang nicht.
+
+Die alternative Originalroute bleibt erhalten: v330 hat eine tatsächlich
+ausgewertete Zylinderquelle für die drei Transferlabels und diag(1,-1,0).
+BLOCKING-PATH:34–80 enthält die ganze Gewichtssumme. Es gibt dort keine
+ursprüngliche Zuordnung dieser Labels zu U oder zum geordneten Yukawa Mark.
+Der vorhandene R048 Integrator besitzt die ganze quartische Operation in
+seinem lokalen Zweig, erhält aber aus der geprüften Quelle K_R als Operator,
+keine konkrete endliche Matrix und Zellvolumina. Beide Wege liefern daher
+in der geprüften Form den vollständigen markierten Block nicht.
+
+Neu ausgeführt: der unveränderte installierte Aufruf contribution_20261106Q
+im Modus integrate mit native-diagnostic-v1.json, ohne Suchmodus. Exit 2,
+ORIGINAL_SOURCE_INTEGRATION_NOT_STARTED, 0 Originalatome, W0/WU/WY/WUY null,
+5/5 Prüfungen MISSING_INPUT; die fehlende Operation ist original_blocked_fiber_packet.
+Die Ergebnissumme stimmt bytegenau mit dem archivierten Resultat überein.
+Der erste offene Übergang liegt vor der Aggregation und vor der Wardprüfung.
+Das ist ein Befund der gelesenen Besitzerpfade und des ausgeführten Callers,
+kein Abwesenheitsbeweis für alle TFPT Quellen. Der gestoppte Suchlauf bleibt aus.
+
+2. Analytischer Test am tatsächlichen statischen Yukawa Mark
+
+Wir benutzen die vorhandene unprojizierte statische HYPF/M Exteriorfaser,
+mit h(k)=h0+k K, k=|H|, u=k², K=-i gamma_F L(theta), festem p und t>0.
+h0 enthält den tatsächlichen Majoranablock und gamma_F. Der Mark ist
+Y_ham(H)=dGamma(k K), die originale zeitlich platzierte Yukawa Einfügung.
+Er ist weder die Hyperladung noch der globale euklidische Euler Mark.
+Die bedingte Quelle ist stationär und U=u I. Daher sind für das geordnete
+Wort die bedingten Faktoren (1,u,y(u),u y(u)), wobei
+
+F(k)=Tr log(1+exp(-t(h0+k K))),  y(k²)=-k F'(k)/t.
+
+Der schwache SU(2) Mittelpunkt sendet K auf -K und fixiert h0. Die
+ursprüngliche schwache Orbitwirkung macht y radial. Sei
+B=Tr(-K)_+ = Tr|K|/2. Im ganzen v252 Block gilt explizit
+B=2[3||Yu||_*+3||Yd||_*+||Ye||_*+||Ynu||_*], wobei ||.||_* die
+Summe der Singularwerte ist. Die Faktoren 3 sind Farben, 2 ist die
+Teilchen/Antiteilchen Verdopplung; nur je eine Seite des symmetrischen
+Spektrums zählt. K² hat die Singularwertquadrate des Yukawablocks,
+die schwache Mittelpunktwirkung paart die beiden Vorzeichen. B>0
+sobald eine der gegebenen Yukawamatrizen nicht verschwindet, ohne
+Vollrangvoraussetzung oder Ausschluss eines Majoranablocks.
+
+Für reelles x gilt 0<=log(1+exp(-t x))-t(-x)_+<=log 2. Die
+Eigenwertverschiebung von k K zu h0+k K ist höchstens ||h0||. Daraus
+folgt |F(k)-t k B|<=C=d(t||h0||+log 2), d=dim h0. Das vorhandene
+Konvexitätsresultat für F begrenzt F'(k) zwischen den Sekanten auf
+[k/2,k] und [k,2k]. Also |F'(k)-t B|<=4C/k und
+
+y(u)=-B sqrt(u)+O(1),   u y(u)=-B u^(3/2)+O(u).
+
+Die vier Funktionen 1,u,y,uy sind daher linear unabhängig. Bei einer
+linearen Identität entscheidet nacheinander Division durch u^(3/2),
+u, sqrt(u) und dann der konstante Term. Sie sind auch auf jedem offenen
+Teilintervall unabhängig: F ist auf der reellen Achse analytisch
+(positive Determinante der endlichen Matrix 1+exp(-t h(k))),
+und k=sqrt(u) ist für u>0 analytisch. Damit genügt schon ein Intervall
+im Träger der positiven gegebenen statischen Radialgewichtung. Für einen
+endlichen Träger ist stattdessen der entsprechende Auswerterang der Test.
+
+3. Explizite Mehrdeutigkeit bei gleicher Normierung und gleichen Einzelmarken
+
+Schreibe mu für das unnormierte tatsächliche positive statische Radialgewicht
+dieser Klasse. Darin bleiben alle in dieser Faser gegebenen Skalar, Sea und
+Referenzfaktoren unverändert enthalten. Fordere endliche markierte Momente und
+ein Intervall im Träger. Wähle eine glatte kompakt getragene Funktion chi>=0,
+die auf einem Teil dieses Intervalls strikt positiv ist. In L²(chi dmu)
+sei p die Projektion von uy auf span{1,u,y}. Setze r=chi(uy-p). r ist
+beschränkt und hat kompakten Träger. Für genügend kleines eps>0 sind
+
+  dmu_+ = (1+eps r) dmu,        dmu_- = (1-eps r) dmu
+
+positiv, mit genau demselben Träger und denselben drei unnormierten
+Werten Z0,ZU,ZY wie mu. Der gemeinsame vierte Wert unterscheidet sich um
+
+  ZUY_+ - ZUY_- = 2 eps int chi (uy-p)^2 dmu > 0.
+
+Bei demselben Z0 ändert sich damit auch die verbundene Antwort. Die in M
+bewiesene strikt negative Kovarianz bleibt auf beiden Seiten negativ;
+unbestimmt ist ihr Wert. Die Gewichte sind Zeugen gegen Identifikation aus
+diesen Prüfungen, keine Kandidaten für ein neues primitives Maß. Äquivalent
+multipliziert man nur die Basis vor dem unveränderten konditionalen Skalar.
+Der absolute Referenznenner oder der konditionale Fermionzustand wird nicht
+variiert. Gleichheit der drei skalaren Auslesungen ist keine Gleichheit aller
+unmarkierten Transfermatrixelemente.
+
+4. Genau was Ward, RP und SD entscheiden
+
+Für den tatsächlichen internen Eichoperator X gilt d u_H(XH)=0,
+weil X antihermitesch ist. Für radiale Dilatation E(H)=H gilt E(u)=2u.
+Der reguläre ursprüngliche Gauge/BRST Differentialoperator erfüllt s u=0
+in dieser statischen Higgsfaser. Ist die ganze ursprüngliche Wardregel für
+diese Klasse gegeben und sind die multiplizierten Testwörter admissibel,
+dann I_±(sO)=I(s[(1±eps r(u)) O])=0. Die bekannten Wardtests sehen
+diese radiale Richtung nicht. In der gegebenen statischen Wärmefaser
+ist die Reflexionsform je festem H ein Gram aus den originalen
+Halbwortoperatoren. Eine positive Mischung genau dieser Formen bleibt
+positiv; hier wird kein allgemeiner RP Erhaltungssatz für Punktgewichte
+dynamischer Historien behauptet. Innerhalb der statischen Klasse bleiben
+die bedingten Zeitbeine gleich. Globale dynamische Clusterbedingungen
+werden nicht übertragen: ein statisch konserviertes U mit Var(U)>0
+hat eine nicht abfallende verbundene U Autokorrelation.
+
+Für einen regulären positiven lokalen Chart mit Dichte J zeigt die
+tatsächliche SD Formel von contribution_20261106Q, wo ein wirksamer Test
+ansetzen muss. Für kompakt im Chart getragene Testfunktionen O verschwindet
+der Randterm. Bei gleichem S ist beta_v=div(Jv)/J-v(S).
+Für J'=qJ gilt beta'_v-beta_v=v(log q). Wird beta_v von der Originalquelle
+unabhängig fest vorgegeben und müssen beide Integratoren für alle kompakten
+O dieselbe Identität mit diesem beta_v erfüllen, folgt durch Subtraktion
+der beiden Identitäten für J' der punktweise schwache Satz v(log q)=0.
+In einer verbundenen radialen Faser mit v=E und u>0 zwingt das q zur
+Konstanz; Z0 fixiert die Konstante. Werden J und sein Jacobianterm gemeinsam
+mitgeführt, ist die entsprechende Identität lediglich die Produktregel
+und lässt die gezeigten Änderungen zu. Die Zeugen sind lokal unterstützt;
+eine außen festgehaltene Randflussvorschrift entfernt diese innere Richtung
+nicht ohne einen festen radialen Divergenzterm oder eine äquivalente
+ursprüngliche dynamische Bedingung. J wurde nirgendwo als flach gesetzt.
+
+Der Test überlebt den tatsächlichen isolierten SU(3) Farbprojektor des
+konstanten Produktzweigs. Die originale reale Farbwirkung vertauscht mit
+h0 und K, also reduziert ihr Singletprojektor beide zweiten Quantisierungen
+auf derselben Fockfaser. Wie beim gefüllten See in L ist das äußerste Produkt
+des negativen Eigenraums von K farbneutral: seine Wirkung ist der
+eindimensionale Determinantencharakter von SU(3), also trivial. Diese
+Belegung hat Energie -B für dGamma(K); tiefer kann kein Fockzustand liegen.
+Das Infimum von dGamma(K) im wirklichen Farbsinglet bleibt folglich -B.
+Für die statische Spur nur über die Singlets gibt das Variationsprinzip
+F_singlet(k)=t k B+O(1), mit expliziter Restgrenze
+t||dGamma(h0)||+log(dim Singlet). Die Logspur ist konvex (zweite Ableitung
+ist die positive thermische Kubo Mori Varianz), und der erhaltene
+eingeschränkte Mark ist wieder -k F_singlet'(k)/t. Damit trägt dieselbe
+lineare Unabhängigkeit samt Momentzeug auch nach diesem echten
+Farbprojektor. Die übrigen Teile von P_adm und seine ganze
+Historienplatzierung sind hier weiterhin nicht ausgeführt.
+
+Für die ganze TFPT Quelle können der ursprüngliche Transfer, das
+physische P, die gekoppelte Dynamik oder das Maß selbst die Richtung
+festlegen. Sie wurden durch diese Rechnung weder ersetzt noch widerlegt.
+
+5. Kontrolle und nächste Rechnung
+
+check_mark_identifiability.py benutzt die unveränderten full_D und grading
+mit derselben v252 Strukturfixture einschließlich Majorana. Zwei Wege
+(direkte geordnete thermische Einpunktspur und Ableitung der Logspur)
+stimmen für vier Testradien bis 2.19e-7 absolut überein. Die positiven
+Vierpunktgewichte haben drei Momente bis 5.33e-15 gleich und unterscheiden
+sich im gemischten Moment um 3.724080608. Die aus dem ganzen Operator
+gelesene Steigung und die direkte Singularwertsumme sind beide
+76.80797554618. Das sind Gleitkommakontrollen der analytischen Aussage,
+keine physisch ausgewählten Yukawas, Feldwerte, Zellmassen oder Fehlerintervalle.
+Zwei Kontrollen der wirklichen realen Farbdarstellung prüfen zusätzlich
+Kommutatoren und den Determinantencharakter des negativen Exteriorraums.
+
+Jetzt die unabhängig festgelegte transversale radiale Divergenz samt
+ursprünglicher Masse und Randregel aus demselben tatsächlichen Block oder
+dessen markiertem IR Transfer gewinnen. Falls die Blockdaten zuerst
+vorliegen, direkt in den unveränderten Beitragsrechner einspeisen.
+Der bloße Wechsel von Gauge Ward zu einer formal angefügten SD Identität
+ohne ursprüngliche Dichte bringt keine Auswertung. Keine der vier ganzen
+primitiven Antworten, keine vollständige Dynamik und kein T1 bis T8
+Abschluss. F1 und die bisher 52 begrenzten Abschlüsse bleiben erhalten.

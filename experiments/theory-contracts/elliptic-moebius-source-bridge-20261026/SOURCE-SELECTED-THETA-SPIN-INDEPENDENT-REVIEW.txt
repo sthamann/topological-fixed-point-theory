@@ -1,0 +1,84 @@
+INDEPENDENT REVIEW: SOURCE SELECTED THETA SPIN
+2026-10-26
+
+Reviewed sources
+
+  SOURCE-SELECTED-THETA-SPIN.txt
+  SHA-256 cf4478191ccd75d62a2f049a54193541009bed24877df9cbe0ed9f942d07d717
+
+  HYPERELLIPTIC-SPIN-QUARTER.txt
+  SHA-256 68163e1664b76d9cbd2b28ffe8314acb9fefec78a14a4ce9b557d4e8240138eb
+
+VERDICT
+
+ACCEPTED.  The new result closes the theta-characteristic and half-turn-lift
+choices from the already marked q|p curve data.  It does not close the module
+map to the native Gaussian E8 clock.
+
+1. THETA CHARACTERISTIC AND PARITY
+
+For every Weierstrass point r on C, 2r is a canonical divisor.  Hence
+
+  S_0=O_C(q_0+q_1+q_2-K_C)
+
+has degree one and 2S_0 is isomorphic to K_C.  Moreover
+
+  div((w^3+1)/eta)=q_0+q_1+q_2-p_0-p_1-p_2,
+
+so exchanging the q and p sides leaves S_0 unchanged.
+
+The even-parity argument is valid.  An effective degree-one theta
+characteristic on a genus-two hyperelliptic curve is O_C(r) for a Weierstrass
+point r.  If S_0 were one of these six classes, use the q expression when r is
+a q point and the equivalent p expression when r is a p point.  Cancelling r
+and replacing K_C by twice another point in the same triple would make the
+difference of two distinct points principal.  That would define a degree-one
+map to P1, impossible for a genus-two curve.  Thus h^0(S_0)=0 and S_0 is even.
+
+2. UNIQUENESS FROM THE CUBIC SOURCE SYMMETRY
+
+The automorphism c cycles each of the q and p triples, so it fixes S_0.  On
+
+  Jac(C)[2]=V_q direct-sum V_p
+
+its restriction to either two-dimensional F2 plane has order three and no
+nonzero fixed vector.  Therefore Jac(C)[2]^c=0.  Since theta characteristics
+form an affine Jac(C)[2] torsor, S_0 is the unique c-invariant theta
+characteristic.  This uses the already selected source action rather than an
+additional theta marking.
+
+3. Q LIFT AND PULLBACK CONVENTION
+
+The marked map Q preserves S_0 and fixes q_0.  At q_0, eta is a local
+coordinate and
+
+  Q^*eta=i eta,       Q^*deta=i deta.
+
+For a square-root-compatible map alpha:Q^*S_0->S_0, its fiber scalar lambda at
+q_0 therefore obeys lambda^2=i.  The fourth pullback iterate has value
+lambda^4=-1 at the fixed point and is a global scalar, proving
+
+  alpha^4=-I,         alpha^8=I.
+
+The composition
+
+  beta=alpha composed with Q^*alpha:(Q^2)^*S_0->S_0
+
+is type-correct.  Replacing alpha by -alpha leaves beta unchanged.  In the
+stated pullback convention its fiber value at q_0 is lambda^2=+i, and
+beta^2=alpha^4=-I.  Thus Q selects the sign-independent order-four projective
+spin lift of h=Q^2.  This is not an honest C2-linearization, whose cocycle
+square would be +I.
+
+4. SCOPE
+
+The proof now selects the even spin line S_0, the Q lift up to an overall sign
+that cancels in beta, and the induced local +i phase of beta.  It does not construct an
+equivariant identification of the resulting theta or spin module with the
+native four-dimensional Gaussian E8 module or its central generator J.  The
+separate obstruction to the literal identification with the Gaussian code
+quotient V=L/(1+i)L therefore remains in force.  That quotient labels Pauli
+contexts, not Pauli translations.  It is not an obstruction to the correctly
+typed theta target Jac(C)[2] -> N64/mu4.  For that target the source cubic and
+the frozen native sigma both have zero-dimensional fixed space; the marked
+symplectic and Heisenberg intertwiner remains to be constructed.

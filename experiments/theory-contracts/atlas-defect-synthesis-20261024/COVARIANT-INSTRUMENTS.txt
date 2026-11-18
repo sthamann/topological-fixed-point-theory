@@ -1,0 +1,244 @@
+COMPLETE COVARIANT INSTRUMENTS FOR THE NATIVE SIX-SIMPLEX POVM
+================================================================
+
+Scope
+-----
+
+This theorem stays on the original native H5 and uses the six rank-one ovoid
+effects and the sixty marked G31 actions already reconstructed by
+doily_quartic_bridge.py.  An instrument means six completely positive maps
+
+    I_a : End(H5) -> End(H5)
+
+whose effects are the fixed operators E_a and which obey the actual outcome
+covariance
+
+    I_{pi_g(a)}(rho_g X rho_g^dagger)
+      = rho_g I_a(X) rho_g^dagger.
+
+The result classifies every such finite instrument.  It does not add a new
+carrier, select a physical value of its parameter, or turn the instrument into
+physical time evolution.
+
+Why rank one forces measure and prepare
+---------------------------------------
+
+For one outcome let J_a be the positive Choi matrix of I_a.  Its input
+partial trace is E_a^T.  Since E_a has rank one, positivity forces J_a to have
+support only on
+
+    support(E_a^T) tensor H5.
+
+Indeed, for x in the kernel of E_a^T,
+
+    Tr[(|x><x| tensor I) J_a] = <x|E_a^T|x> = 0.
+
+A positive matrix with zero expectation on that whole subspace has no row or
+column there.  Therefore there is a unique density matrix sigma_a such that
+
+    J_a = E_a^T tensor sigma_a,
+
+or equivalently
+
+    I_a(rho) = Tr(E_a rho) sigma_a.
+
+This is a theorem for every completely positive operation with the fixed
+rank-one effect.  It is not a chosen Kraus ansatz.
+
+Exact stabilizer commutant
+--------------------------
+
+Write
+
+    P_a = (6/5) E_a.
+
+Each P_a is a rank-one orthogonal projector.  The sixty original marked
+actions are transitive on the six labels.  For a fixed label a, forty marked
+reflections fix a; their outcome permutations contain the ten transpositions
+of the other five labels.  Solving the full rational commutator system on
+End(H5) gives rank 23 and hence
+
+    dim_C Comm(Stab(a)) = 2.
+
+Both I5 and P_a lie in this commutant and are independent, so they form its
+complete basis.  Covariance makes sigma_a stabilizer invariant.  Positivity
+and trace one therefore give exactly
+
+    sigma_a(p) = p P_a + (1-p)/4 (I5-P_a),
+    0 <= p <= 1.
+
+Transitivity forces the same p for all six outcomes.  Conversely the checker
+verifies this family against every one of the sixty native actions.  Thus the
+displayed interval is the complete covariant instrument space.
+
+Kraus ranks and the extra minimality rule
+-----------------------------------------
+
+Because J_a=E_a^T tensor sigma_a, the minimal Kraus rank of one outcome is
+rank(sigma_a):
+
+    p=1:       rank 1,
+    p=0:       rank 4,
+    0<p<1:     rank 5.
+
+With the classical outcome retained, the six blocks have total minimal Kraus
+ranks 6, 24, and 30 respectively.  Requiring one Kraus operator per outcome,
+pure prepared output, or minimal tagged environment dimension selects p=1
+uniquely.  Each is an additional instrument principle.  None is implied by
+the word primitive in the P1 source.
+
+Channel after forgetting the outcome
+------------------------------------
+
+Let Phi_p=sum_a I_a and let Phi_L be the square-root Lueders channel of the
+same POVM.  Since E_a=(5/6)P_a and P_a rho P_a=Tr(P_a rho)P_a,
+
+    Phi_L(rho) = sum_a Tr(E_a rho) P_a.
+
+Expanding sigma_a(p) now gives the exact identity
+
+    Phi_p = (5p-1)/4 Phi_L + (1-p)/4 Tr(rho) I5.
+
+The existing Lueders decomposition of End(H5) has dimensions 1+5+19 and
+eigenvalues 1,4/5,0.  The replacement term acts only on the identity line.
+Consequently
+
+    spec(Phi_p) = 1^1, (p-1/5)^5, 0^19.
+
+For 0<=p<=1 the second eigenvalue lies in [-1/5,4/5].  The unique stationary
+density is therefore I5/5 for every member of the classified family.
+
+The Choi matrix of the forgotten-outcome channel is
+
+    J_p = (5p-1)/4 J_L + (1-p)/4 I25.
+
+For this real symmetric rank-one POVM the numeric J_L array equals the
+Lueders Liouville array, although their tensor-index meanings differ.  Its
+exact Choi spectrum is
+
+    p^1, ((15p+1)/20)^5, ((1-p)/4)^19.
+
+Thus the forgotten-outcome channel has Choi rank 6 at p=1, rank 24 at p=0,
+and rank 25 for 0<p<1.  These ranks differ from the tagged instrument ranks
+6,24,30 because forgetting the classical label can merge Kraus spans.
+
+Repeated outcome statistics
+---------------------------
+
+After observing a, the prepared state is sigma_a(p).  A second use of the
+same POVM is therefore the six-state Markov chain
+
+    Pr(b=a | a) = 5p/6,
+    Pr(b!=a | a) = (6-5p)/30.
+
+The transition matrix is doubly stochastic, so its stationary distribution
+is uniform.  The stationary two-step law has
+
+    Pr(a,a) = 5p/36,
+    Pr(a,b) = (6-5p)/180,  a!=b.
+
+At p=1 these numbers are 5/36 and 1/180, the same numbers obtained from the
+Omega state in RELATIONAL-CHANNEL.txt.  Here they arise from a separable
+measure-and-prepare time sequence.  Equality of these two tables is therefore
+not evidence for entanglement or for a common physical preparation.
+
+Exact failure of state tomography
+---------------------------------
+
+The six effects span a six dimensional subspace of the full 25 dimensional
+operator space.  Repeating the instrument does not recover the missing
+coherences.  This is witnessed by two explicit positive states in the real
+isometric H5 chart.
+
+Let
+
+    X = i(|0><1| - |1><0|),
+    rho_+ = I5/5 + X/10,
+    rho_- = I5/5 - X/10.
+
+X is Hermitian and traceless.  Both density matrices have the exact spectrum
+
+    {1/10, 1/5, 1/5, 1/5, 3/10},
+
+so they are distinct strictly positive states.  Every E_a is real symmetric,
+while X is imaginary antisymmetric.  Therefore
+
+    Tr(E_a X) = 0
+
+for all six outcomes and
+
+    Tr(E_a rho_+) = Tr(E_a rho_-) = 1/6.
+
+The measure-and-prepare classification gives the probability of every finite
+outcome word directly:
+
+    Pr(a_1...a_n | rho)
+      = Tr(E_{a_1} rho)
+        product_{k=2}^n T_p[a_{k-1},a_k].
+
+The two states have the same first factor, and the transition matrix is fixed
+by p and the previous outcome.  Induction in n proves that rho_+ and rho_-
+have identical probabilities for every finite outcome word.  Thus this
+instrument family is not informationally complete and cannot reconstruct the
+unmeasured GNS coherences or a complete GNS crossword from its outcome history.
+This is an explicit counterexample, rather than a dimension-only inference.
+
+Rational endpoint Choi certificates
+------------------------------------
+
+The checker also represents the same native H5 as the zero-sum subspace of
+Q^6.  This is a redundant rational frame for the existing six rays, not a new
+Hilbert space.  With
+
+    Q = I6 - (1/6) 11^T,
+    u_a = e_a - (1/6)1,
+
+one has exactly
+
+    Gram(u_a) = Gram(q_a)/12,
+    E_a = u_a u_a^T,
+    P_a = (6/5)u_a u_a^T.
+
+All endpoint Choi entries are consequently rational.  Positivity follows
+from the projector factors in
+
+    J(I_a) = E_a^T tensor sigma_a.
+
+Explicit endpoint Kraus descriptions are
+
+    p=1: M_a = sqrt(6/5) u_a u_a^T,
+
+and, for any orthonormal basis v_{a,1},...,v_{a,4} of the complement of u_a
+inside H5,
+
+    p=0: M_{a,r} = (1/2) v_{a,r} u_a^T.
+
+The checker verifies rationality, ranks, trace five, and both H5 partial
+traces for the total endpoint Choi matrices without floating point arithmetic.
+
+Exact boundary of the result
+----------------------------
+
+The theorem removes all finite instrument freedom except p once the native
+H5, its fixed six effects, and actual G31 outcome covariance are accepted.
+It does not derive p, one-Kraus minimality, physical time, transition rates,
+spacetime propagation, an entanglement source, complete state tomography,
+unmeasured GNS coherences, or any P2 or D5 carrier map.
+
+Reproduction
+------------
+
+From the repository root:
+
+    PYTHONDONTWRITEBYTECODE=1 python3 \
+      experiments/theory-contracts/atlas-defect-synthesis-20261024/covariant_instruments.py \
+      --output /tmp/covariant-instruments-normal.json
+
+    PYTHONDONTWRITEBYTECODE=1 PYTHONOPTIMIZE=2 python3 \
+      experiments/theory-contracts/atlas-defect-synthesis-20261024/covariant_instruments.py \
+      --output /tmp/covariant-instruments-oo.json
+
+    cmp /tmp/covariant-instruments-normal.json \
+        /tmp/covariant-instruments-oo.json
+
+The checked repository result is covariant-instruments-results.json.

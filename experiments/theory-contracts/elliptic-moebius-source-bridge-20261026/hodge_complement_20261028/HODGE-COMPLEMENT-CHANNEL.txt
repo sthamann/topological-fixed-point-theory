@@ -1,0 +1,427 @@
+HODGE KOMPLEMENT KANAL
+======================
+
+28. Oktober 2026
+
+Frage
+-----
+
+Ersetzen die fünf getrennten epsilon Amplituden
+
+  C_m(alpha) = star_epsilon(e_m wedge alpha),   m=0,...,4,
+
+auf H=Lambda^2 C^5 den zuvor untersuchten kohärenten Operator
+C_v=sum_m C_m so, dass ohne Zeitwahl, Postselektion oder Reset ein echter
+Petersen Kanal entsteht? Und ist dieser Kanal bereits der normalisierte
+Zwanzig Ereignis Sprungkanal J20 der ursprünglichen Quelle?
+
+Urteil
+------
+
+Der erste Teil ist exakt positiv. Mit
+
+  K_m = C_m/sqrt(3)
+
+bilden die fünf Amplituden einen kanonischen CPTP Kanal
+
+  Phi(rho) = (1/3) sum_m C_m rho C_m^dagger.
+
+Seine Population ist exakt A_Pet/3. Die vorherige Filterlücke des einzelnen
+C_v ist damit beseitigt. Es braucht weder einen Zeitpunkt noch eine
+Kantenpostselektion noch eine Rücksetzregel.
+
+Der zweite Teil ist exakt negativ, aber mit einer stärkeren gemeinsamen
+Struktur als bisher. Für jede der sechs äußeren Marken besitzt der
+normalisierte alte Sprungkanal
+
+  Psi = (5/3) J20
+
+dieselbe Petersen Population und dieselben fünf groben POVM Effekte
+P_m/3. Die jeweils vier alten Ereignisse, deren äußere Transposition die
+Marke mit m vertauscht, bilden genau diesen Effekt. Ihre vollständigen CP
+Operationen sind dennoch verschieden. Ein neuer Ausgang hat Choi Rang eins.
+Der zugehörige alte Viererblock hat Choi Rang drei und mittelt zusätzliche
+Phasen aus. Insgesamt hat Phi Choi Rang fünf und Psi Choi Rang fünfzehn.
+
+Damit ist die Komplementmarke nicht bloß eine neu erfundene Beschriftung. Sie
+ist schon als natürliche Grobkörnung des alten Ereignisalphabets vorhanden.
+Der alte Pfad führt aber nicht dieselben Quantenamplituden aus.
+
+1. Exakte äußere Algebra
+-----------------------
+
+Die verwendete Abbildung star_epsilon ist die komplex lineare algebraische
+Komplementabbildung der orientierten Volumenform. Sie ist in der geordneten
+Duadenbasis definiert durch
+
+  C_m[e_k wedge e_l, e_i wedge e_j] = epsilon(m,i,j,k,l).
+
+Das ist von der in komplexer Differentialgeometrie oft antilinear
+konventionierten Hodge Stern Operation zu unterscheiden. Für jede Marke gilt
+
+  rank C_m = 6,
+  C_m^dagger = C_m,
+  C_m^2 = P_m,
+
+wobei P_m auf die sechs Duaden projiziert, die m nicht enthalten. Jede Duade
+enthält zwei von fünf Indizes und lässt genau drei aus. Daher
+
+  sum_m C_m^dagger C_m = sum_m P_m = 3 I_10.
+
+Die fünf C_m sind im Hilbert Schmidt Produkt orthogonal und haben Normquadrat
+sechs. Daraus folgen sofort:
+
+  Phi ist spurtreu, unital und Hilbert Schmidt selbstadjungiert;
+  Choi(Phi) hat Eigenwert 2 mit Multiplizität 5 und sonst 0;
+  Choi Rang(Phi)=5.
+
+Der volle Superoperator ist invertierbar und hat das exakte Spektrum
+
+  1^1, (2/3)^10, (1/3)^40, (-1/3)^35, (-2/3)^14.
+
+Für eine Basisduade e tragen genau die drei m außerhalb von e bei. Der
+Ausgang ist jeweils die Komplementduade
+
+  f = {0,1,2,3,4} minus (e vereinigt {m}).
+
+Das sind genau die drei Petersen Nachbarn von e, jeder mit Wahrscheinlichkeit
+1/3. Deshalb ist die Population ohne weitere Ausleseregel A_Pet/3.
+
+2. Die richtige SU5 Kovarianz
+-----------------------------
+
+Setze R(U)=Lambda^2 U. Die epsilon Identität lautet für U in GL(5,C)
+
+  R(U) C_m R(U)^T
+    = det(U) sum_n (U^-1)_[m n] C_n.
+
+Für U in SU(5) wird dies
+
+  R(U) C_m R(U)^T = sum_n conjugate(U_[n m]) C_n.
+
+Der Transponierte ist hier wesentlich. Es handelt sich um die Kongruenz der
+epsilon Paarung und nicht um die gewöhnliche Adjungiertenwirkung auf End(H).
+Der Checker verifiziert die infinitesimale Identität exakt auf allen 24
+Basiselementen von sl5. Für den Kanal folgt
+
+  Phi(conjugate(R) rho conjugate(R)^dagger)
+    = R Phi(rho) R^dagger.
+
+Phi ist daher ein SU5 Intertwiner vom konjugierten Eingangsmodul zum
+Ausgangsmodul. Eine gewöhnliche Endokovarianz
+
+  Phi(R rho R^dagger)=R Phi(rho) R^dagger
+
+folgt nicht. Sie gilt erst nach einer zusätzlich festgelegten Realstruktur
+oder auf einer passenden reellen Untergruppe. Genau diese Typisierung
+verhindert eine neue Gleichsetzung allein über die Dimension zehn.
+
+2a. Die tatsächlichen SU5 Sektoren und der Cusp Transfer
+-------------------------------------------------------
+
+Die Spektralmultiplizitäten sind nicht nur eine Zahlengleichheit. Der Checker
+identifiziert die Unterräume als die tatsächliche SU5 Zerlegung
+
+  End(Lambda^2 C5) = 1 + 24 + 75.
+
+Der 24er ist konkret dGamma(sl5) in End(Lambda^2 C5). Für jeden der 24
+geprüften Generatoren A gilt exakt
+
+  Phi(dGamma(A)) = -(2/3) dGamma(A)^T.
+
+Der Identitätsstrahl ist orthogonal dazu. Der 75er ist der Hilbert Schmidt
+orthogonale Rest zu Identität plus dGamma(sl5), und der Checker weist auf
+diesem ganzen Rest den Eigenwert 1/9 von Phi^2 nach. Damit gilt als echte
+Projektoridentität
+
+  Phi^2 = Pi_1 + (4/9) Pi_24 + (1/9) Pi_75.
+
+Folglich besitzt Phi^6 das Spektrum
+
+  1^1, (64/729)^24, (1/729)^75.
+
+Die drei vorhandenen Beträge 1, 2/3 und 1/3 sind damit bereits die
+Spektralraten eines vollständigen Quantenkanals. Die geraden Potenzen tragen
+die positiven Cusp Raten. Phi^6 realisiert den gesamten sechsten Transfer
+mit den vollständigen Multiplizitäten 1,24,75. Eine zusätzlich eingebaute
+Lazy Matrix ist dafür nicht nötig.
+
+Auch die dreidimensionale radiale Tabelle ist eine wirkliche Restriktion
+dieses Kanals. Auf den Petersen Distanzschalen um eine Duade mit Größen
+
+  1, 3, 6
+
+wirkt die Population A_Pet/3 in der Schalenmassenkonvention durch
+
+  (1/3) [[0,1,0],
+         [3,0,1],
+         [0,2,2]],
+
+mit Spektrum 1,1/3,-2/3. Damit kommt der bisherige radiale P/W/K
+Intertwiner direkt aus einer invarianten Populationsecke von Phi. Weil die
+Kovarianz vom konjugierten Eingangsmodul zum Ausgangsmodul führt, kehrt sich
+der Cartanladungsoperator um. Im Labelrahmen ist daher Q_out=-Y die natürliche
+duale Zielkonvention und erklärt das negative radiale q Vorzeichen. Das ist
+keine Identifikation dieses Vorzeichens mit einem geometrischen Deckoperator
+oder einer physischen Clock.
+
+3. Voller Vergleich mit dem alten J20
+-------------------------------------
+
+Der alte Vertrag definiert
+
+  J20(X) = (1/20) sum_{l in 20}
+             U_l (I-D_l) X (I-D_l) U_l^dagger,
+
+mit J20^dagger(I)=3I/5. Der spurtreue Kanal ist daher
+
+  Psi=(5/3)J20=(1/12) sum_l Ad(U_l(I-D_l)).
+
+Der Checker rekonstruiert alle sechzig ursprünglichen Ereignisse aus der
+gepinnten Quelle und prüft den Vergleich getrennt für alle sechs äußeren
+Marken.
+
+Für eine feste Marke q werden die zwanzig Ereignisse nach dem Ziel m der
+äußeren Transposition q<->m gruppiert. Jede Gruppe enthält genau vier native
+Phasenlifts. Für jede Gruppe gilt nach der Normierung
+
+  sum_{l in Gruppe m} K_l^dagger K_l = P_m/3.
+
+Das stimmt exakt mit dem Hodge Effekt K_m^dagger K_m=P_m/3 überein. Auch die
+Populationsoperation stimmt gruppenweise überein: eine Duade ohne m wird auf
+ihre Komplementduade geschickt.
+
+Die Kohärenzen trennen die Instrumente:
+
+  neuer Hodge Ausgang m:       ein Krausoperator, Choi Rang 1;
+  alter Viererblock m:         vier Lifts, minimaler Choi Rang 3.
+
+Für zwei verschiedene, sich schneidende Duaden e und f besitzt
+Phi(|e><f|) genau zwei nichtverschwindende Matrixeinträge. Psi(|e><f|)=0.
+Das liefert pro Marke sechzig geordnete direkte Gegenbeispiele. Auf
+disjunkten Duaden transportiert Phi die Kohärenz mit festem positiven
+epsilon Produkt, während der alte Kanal seinen bereits dokumentierten
+signierten Phasenfluss trägt.
+
+Die vollständigen Invarianten lauten:
+
+  Phi: Choi Rang 5, Superoperatorrang 100;
+  Psi: Choi Rang 15, Superoperatorrang 40.
+
+Der nichtverschwindende Teil des Choi Spektrums ist
+
+  Phi: 2^5;
+  Psi: (2/3)^15.
+
+Beide Kanäle sind spurtreu, unital und Hilbert Schmidt selbstadjungiert.
+Das Superoperatorspektrum von Psi ist
+
+  1^1, (1/3)^20, (-2/3)^4, (-1/3)^15, 0^60.
+
+Somit gilt exakt
+
+  gleiche Population + gleiche fünf Effekte
+  ungleich gleiches Instrument oder gleicher vergessener Kanal.
+
+3a. Exakte Phasenrecord Faktorisierung des alten Instruments
+------------------------------------------------------------
+
+Die Differenz ist vollständig als bereits vorhandene bedingte
+Phasenmittelung beschreibbar. Schreibe für den Viererblock mit
+Komplementindex m
+
+  R_l = U_l(I-D_l).
+
+Auf der sechs dimensionalen Stütze P_m haben R_l und C_m exakt dieselbe
+Permutation. Für alle sechs Marken, fünf Komplementindizes und vier Lifts
+gilt deshalb elementweise
+
+  R_l = D_l C_m,
+
+wobei D_l diagonal ist und nur mu4 Phasen auf P_m trägt. Wählt man einen
+Basislift D_0 und setzt
+
+  H_l = D_l D_0^dagger,
+
+dann bilden die vier H_l projektiv eine Kleinsche Vierergruppe. Ihre Wirkung
+auf der sechs dimensionalen Stütze enthält genau drei Charaktere mit
+Multiplizität zwei. Der vierte Charakter fehlt. Genau deshalb hat der alte
+Viererblock minimalen Choi Rang drei.
+
+Mit der Hodge Ausgangsoperation
+
+  Phi_m(X)=(1/3) C_m X C_m^dagger
+
+lautet die alte normalisierte Gruppenoperation exakt
+
+  Psi_m
+    =(1/4) sum_l Ad(H_l D_0) o Phi_m.
+
+Also gilt tatsächlich:
+
+  alter Viererblock
+    = Hodge Ausgang
+      gefolgt von der vorhandenen, aus dem Ereignisrecord gelesenen
+        Kleinschen Phasenmittelung.
+
+Das ist eine bedingte Faktorisierung für den aufgezeichneten Ausgang m. Nach
+vorzeitigem Vergessen von m gibt es keinen einzigen ausgangsunabhängigen
+Phasenkanal, der dieselbe Formel trägt.
+
+Jeder einzelne Basislift D_0 C_m hat auf seinen drei Zweizyklen trivialen
+Zyklusfluss und kann durch eine m abhängige Diagonaleichung auf C_m gebracht
+werden. Eine gemeinsame Eichung aller fünf Komplementklassen existiert nicht.
+Der Checker erschöpft pro äußerer Marke alle
+
+  4^5 Basisliftwahlen mal 2^5 Klassenzeichen = 32768
+
+Möglichkeiten. Für jede der sechs Marken ist die Zahl gemeinsamer Lösungen
+null. Der über den Petersen Graphen verteilte Kantenfluss ist daher im festen
+Zehn Labelchart nicht gemeinsam entfernbar. Das beweist weder eine erlaubte
+native SU5 Operation noch eine lineare Identifikation Bell10=Lambda^2 C5. Es
+erklärt nur exakt, welche vorhandenen Phasenrecords den alten Kanal vom neuen
+Hodge Kanal trennen.
+
+4. Bekannter fermionischer Kanal
+--------------------------------
+
+Seien a_m und a_m^dagger die kanonischen fermionischen Vernichtungs und
+Erzeugungsoperatoren. Auf Lambda^2 C^5 führt a_m^dagger nach Lambda^3 C^5.
+Mit der epsilon Komplementisometrie D:Lambda^3 C^5 -> Lambda^2 C^5 gilt in
+den hier verwendeten Basen exakt
+
+  D a_m^dagger = C_m.
+
+Phi ist deshalb der normierte Einteilchen Erzeugungskanal auf dem festen
+Zweiteilchensektor, nach Teilchen Loch Dualität. Äquivalent ist er der
+normierte Einteilchen Verlust beziehungsweise Reduktionskanal von drei auf
+zwei Fermionen. Die Normierung 1/3 ist die feste Teilchenzahl. Amosov und
+Filippov schreiben die fermionische Reduktionsabbildung als Summe der
+Vernichtungsoperationen und verfolgen ihre Wirkung zwischen festen
+Teilchensektoren:
+
+  https://arxiv.org/abs/1512.01828
+
+Lemm und Wilde behandeln dieselbe antisymmetrische Partialspur als
+Teilchenverlust auf fermionischen Sektoren:
+
+  https://arxiv.org/abs/1608.07569
+
+Die Bezeichnung ist damit vorhandene Mathematik. Neu in diesem lokalen
+Vergleich ist die exakte Identität mit dem Petersen Kanal und mit den fünf
+groben Effekten des tatsächlichen J20 Pfades.
+
+Der Krausindex m ist der Umgebungsindex des verlorenen oder ergänzten
+Einteilchenmodus. Ihn als Ereignis zu behalten ist eine kanonische
+Instrumentverfeinerung der äußeren Algebra. Dass eine TFPT Naht diesen Index
+physisch aufzeichnet, folgt daraus noch nicht.
+
+5. Der volle Clifford Pfad und die vorhandene Clebsch16 Struktur
+----------------------------------------------------------------
+
+Auf dem vollständigen fermionischen Fockraum mit 32 Basiszuständen ist
+
+  Q(rho)=(1/5) sum_m [a_m rho a_m^dagger
+                      + a_m^dagger rho a_m]
+
+ein CPTP Kanal mit zehn Krausoperatoren. Seine Populationsmatrix ist der
+gleichmäßige Zufallsschritt Q5/5 auf dem Fünferwürfel.
+
+Auf Lambda^2 zerfällt er orthogonal:
+
+  Erzeugung Lambda^2 -> Lambda^3: Wahrscheinlichkeit 3/5;
+  Vernichtung Lambda^2 -> Lambda^1: Wahrscheinlichkeit 2/5.
+
+Nach Konditionierung auf den Erzeugungszweig und epsilon Komplementtransport
+ist der erste Zweig genau Phi. Der zweite Zweig landet im fünfdimensionalen
+Lambda^1 Raum. Die Zahl 2/5 stimmt daher zwar mit der alten Stay
+Wahrscheinlichkeit überein, die Operation aber nicht. Erst eine zusätzliche
+Rückführung, die den Vernichtungsausgang und den Modusindex wieder als
+ursprüngliche Duade codiert, könnte daraus 2I/5 auf dem Zehner machen.
+
+Der antipodale Quotient des Fünferwürfels besitzt 16 Klassen und ist exakt
+der Clebsch Graph SRG(16,5,0,2). Nimmt man pro Antipodenpaar den geraden
+Vertreter, wird ein einzelner Bitflip zum Gewicht vier Flip. Das ist genau
+die bereits in v810 geprüfte Clebsch16 Struktur. Dieser Zusammenhang ist
+also Wiederverwendung, keine neue physische Identifikation.
+
+6. Verhältnis zum ursprünglichen E8 Strombracket
+-------------------------------------------------
+
+Die vorhandene Z4 Zerlegung von E8 unter D5 x A3 enthält
+
+  g1=(16,4),
+  g2=(10,6),
+  g3=(bar16,bar4).
+
+Das äquivariante Bracket g2 tensor g1 -> g3 trägt bis auf Normierung den
+D5 Clifford Tensor gamma und den A3 epsilon Tensor. Im äußeren Fockchart von
+Spin(10) ist gamma gerade die Summe aus Erzeugung und Vernichtung. Damit ist
+der volle Zehn Kraus Clifford Tensor quellenrelevant: Er ist nicht als frei
+gewählter Matrixterm erfunden.
+
+Das ist zunächst eine Aussage über den Koeffizienten des Strom OPE. Um daraus
+Q oder Phi als ausgeführte CP Operation zu erhalten, braucht man zusätzlich
+einen Eingangssektor, die normierte Stromzustandsmischung oder Partialspur und
+eine Regel für den behaltenen beziehungsweise vergessenen Familienindex. Für
+Phi muss außerdem der Erzeugungszweig beziehungsweise der dazu duale feste
+Dreiteilchensektor gewählt sein. Das E8 Bracket allein summiert nicht von
+sich aus Born Wahrscheinlichkeiten und zeichnet keinen Krausindex auf.
+
+Diese Grenze stimmt mit den vorhandenen Stromverträgen überein. Der Vertrag
+compiler-current-descendant-20260919 beweist eine bedingte Operatorplatzierung
+im E8 Vakuummodul, lässt aber Vorbereitung, Ereignis und Recordgesetz offen.
+compiler-current-product-20260919 beweist konkrete Stromproduktantworten,
+kennzeichnet G ausdrücklich nicht als Energie, Evolution oder
+Präparationsoperator und lässt die physische Instrumentrealisierung offen.
+
+Der stärkste belastbare Satz lautet deshalb:
+
+  Die äußere Algebra liefert ohne Filter einen kanonischen Petersen CPTP
+  Kanal. Sein Kraustensor ist der feste chirale Teil des vorhandenen
+  Clifford epsilon Brackettensors. Der Originalkorpus enthält damit den
+  passenden Amplitudentyp, aber noch keine Regel, die diesen chiralen Zweig
+  als ausgeführtes TFPT Ereignisinstrument auswählt.
+
+7. Reproduktion und Scope
+-------------------------
+
+Checker:
+
+  research-20261028-hodge-complement-channel/
+    hodge_complement_channel.py
+
+Ergebnis:
+
+  research-20261028-hodge-complement-channel/result.json
+
+Replay:
+
+  python3 -B research-20261028-hodge-complement-channel/hodge_complement_channel.py \
+    --out research-20261028-hodge-complement-channel/result.json
+
+  python3 -B -OO research-20261028-hodge-complement-channel/hodge_complement_channel.py \
+    --out /tmp/hodge-complement-result-oo.json
+
+Der Checker enthält keine assert Anweisungen. Normal und OO erzeugen
+bytegleiche JSON Ergebnisse. Er prüft 4833 explizite Identitäten nach der
+abschließenden Adjungiertenprüfung. Die genauen Quellhashes stehen im JSON.
+
+Es wurde keine Atlasdatei und keine Datei im TFPT Repository geändert. Der
+Beweis betrifft die kanonische äußere Algebra und die bereits vorhandenen
+endlichen Quellen. Eine physische P1 Auswahl, eine Nahtpräparation, eine
+Zeitentwicklung oder ein Detektor wird nicht behauptet.
+
+Verdict:
+
+  FIVE_SEPARATED_HODGE_AMPLITUDES_DEFINE_A_CANONICAL_CPTP_CHANNEL;
+  POPULATION_IS_EXACTLY_PETERSEN_ADJACENCY_OVER_THREE;
+  OLD_NORMALIZED_J20_HAS_THE_SAME_FIVE_COARSE_EFFECTS_AND_POPULATIONS;
+  FULL_QUANTUM_CHANNELS_AND_OUTCOME_OPERATIONS_ARE_NOT_EQUAL;
+  OLD_J20_BLOCKS_ARE_HODGE_OUTCOMES_FOLLOWED_BY_CONDITIONAL_KLEIN4_PHASE_TWIRLS;
+  PHI_SQUARED_HAS_THE_EXACT_SU5_PROJECTOR_SPECTRUM_1_PLUS_24_PLUS_75;
+  PETERSEN_POPULATIONS_RESTRICT_TO_THE_ACTUAL_RADIAL_SHELLS_1_3_6;
+  CHANNEL_IS_NORMALIZED_CREATION_OR_DUAL_FERMION_LOSS;
+  FULL_CLIFFORD_CHANNEL_IS_Q5_OVER_FIVE_AND_NOT_OLD_STAY_JUMP;
+  E8_BRACKET_SUPPLIES_THE_AMPLITUDE_TENSOR_NOT_THE_INSTRUMENT_RULE;
+  PHYSICAL_TFPT_SELECTION_REMAINS_OPEN.

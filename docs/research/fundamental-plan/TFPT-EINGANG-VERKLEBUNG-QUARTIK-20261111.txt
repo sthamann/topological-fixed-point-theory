@@ -1,0 +1,502 @@
+## TFPT: Der entscheidende Schritt liegt in der Verklebung selbst
+
+Ich habe die bisherige Konstruktion auf einen fundamentaleren Ausgangspunkt zurückgeführt. Dabei ergibt sich eine konkrete Verbindung, die vorher nur vermutet wurde:
+
+Die fünf Zustände von P2 und ihre vierstufige Clock können direkt aus einer zweiseitigen \\(E_8\\) Verklebung entstehen. Man muss sie dann nicht unabhängig als zwei neue Strukturen postulieren.
+
+Das ist eine exakte mathematische Aussage über das folgende Modell, noch keine bewiesene Ursprungstheorie der Physik.
+
+### 1. P1 könnte die fünf Zustände von P2 selbst erzeugen
+
+Nehmen wir zwei identische vierdimensionale \\(A_4\\) Wurzelgitter als die beiden Seiten einer fundamentalen Naht:
+
+\\[ L=A_4\oplus A_4. \\]
+
+Jedes \\(A_4\\) besitzt eine Diskriminantengruppe \\(\mathbb Z_5\\). Eine gerade, unimodulare Verklebung kann durch die Zuordnung
+
+\\[ (k,2k),\qquad k\in\mathbb Z_5 \\]
+
+beschrieben werden.
+
+Das resultierende Gitter \\(\Gamma\\) ist das \\(E_8\\) Gitter mit 240 Wurzeln. Besonders wichtig ist sein Quotient:
+
+\\[ \boxed{\Gamma/L\cong\mathbb Z_5.} \\]
+
+Es gibt also exakt fünf Verklebungsklassen. Diese können einen natürlichen fünfzuständigen Quantenträger bilden:
+
+\\[ \mathcal H\_{\mathrm{P2}} =\mathbb C[\Gamma/L] \cong\mathbb C^5. \\]
+
+Damit erhalten wir eine neue mögliche Ursprungskette:
+
+\\[ \boxed{ \text{Zwei }A_4\text{ Seiten} \longrightarrow E_8 \longrightarrow \mathbb Z_5 \longrightarrow \text{P2}. } \\]
+
+Anders als die bisherige Interpretation der fünf beliebigen Positionen haben diese fünf Zustände eine eigene Gruppenstruktur. Das neutrale Element \\(0\\) ist durch die Verklebung bereits ausgezeichnet.
+
+### 2. Eine Drehung der beiden Seiten erzeugt exakt die TFPT Clock
+
+Definieren wir auf den beiden Gitterseiten die Vierteldrehung
+
+\\[ R(x,y)=(y,-x). \\]
+
+Sie erfüllt
+
+\\[ R^2=-I,\qquad R^4=I. \\]
+
+Jetzt kommt die entscheidende Rechnung. Ein Verklebungszustand besitzt die Kennzeichnung \\((k,2k)\\). Die Drehung erzeugt
+
+\\[ (k,2k)\xrightarrow{R}(2k,-k). \\]
+
+Da in \\(\mathbb Z_5\\) die Beziehung \\(-1=2^2\\) gilt, ist
+
+\\[ (2k,-k)=(2k,2(2k)). \\]
+
+Die Drehung erhält somit das verklebte Gitter und wirkt auf den fünf Klassen als
+
+\\[ \boxed{G|k\rangle=|2k\bmod5\rangle.} \\]
+
+Das ist genau die Clock Operation aus dem hochgeladenen Dokument, diesmal als induzierte Wirkung einer expliziten Isometrie auf der \\(E_8\\) Verklebung.
+
+Clock auf den fünf Verklebungsklassen
+
+Die Nullklasse bleibt erhalten. Die vier anderen Klassen durchlaufen einen Zyklus der Länge vier.
+
+Die beiden bisher getrennt verwendeten Vorkommen der Zahl zwei werden hier tatsächlich durch dieselbe Gitterisometrie verbunden.
+
+Das ist der bisher stärkste konkrete Kandidat für eine gemeinsame algebraische Quelle von P1, P2, Clock und \\(E_8\\).
+
+### 3. Die Aufteilung 3+2 folgt ohne zusätzliche Auswahl einer Richtung
+
+Die fünf Verklebungsklassen bilden nicht nur eine Menge, sondern die Gruppe \\(\mathbb Z_5\\). Diese besitzt ein ausgezeichnetes neutrales Element und einen eindeutigen Automorphismus der Ordnung zwei:
+
+\\[ k\mapsto-k. \\]
+
+Das ist gerade das Quadrat unserer Clock:
+
+\\[ J=G^2,\qquad J|k\rangle=|-k\rangle. \\]
+
+Damit erhalten wir erneut
+
+\\[ \operatorname{spec}(J)=\\{+1^{\times3},-1^{\times2}\\}. \\]
+
+Der Unterschied zum bisherigen Ansatz ist wesentlich: Wir brauchen keine willkürliche zyklische Anordnung der fünf Plätze mehr. Die Gruppenoperation und ihr neutrales Element gehören bereits zur Verklebung.
+
+Es folgen die kanonischen Projektoren
+
+\\[ P_3=\frac{I+J}{2},\qquad P_2=\frac{I-J}{2} \\]
+
+und als mögliche standardmodellartige Ladungszuordnung
+
+\\[ \boxed{ Y=-\frac13P_3+\frac12P_2. } \\]
+
+Die Eigenwertmultiplizitäten sind drei und zwei. Die konkreten Ladungswerte verwenden zusätzlich die übliche \\(SU(5)\\) Normierung.
+
+Das reduziert eine fundamentale TFPT Unbekannte: Die 3+2 Aufteilung kann aus der algebraischen Struktur von P1 folgen, statt als unabhängige P2 Eigenschaft gesetzt zu werden.
+
+### 4. Ich musste einen wichtigen Fehler der bisherigen Kandidaten korrigieren
+
+Der bisher ausgezeichnete komplexe Zustand
+
+\\[ \Omega\_+=\frac{w_1+iw_2}{\sqrt{20}} \\]
+
+besitzt Clock Phase \\(-i\\). Das wurde im hochgeladenen Dokument korrekt gezeigt.&#x20;
+
+Eingefügter Text(2).txt
+
+
+
+Aber er liegt unter der eben hergeleiteten 3+2 Zerlegung zwingend in einem sechsdimensionalen gemischten Sektor. Sein einzelner Projektor ist daher nicht mit der vollständigen \\(SU(3)\times SU(2)\\) Symmetrie verträglich.
+
+Es gibt eine bessere Konstruktion, die dieses Problem vermeidet.
+
+Der zweidimensionale negative Eigenraum von \\(J\\) hat eine eindeutige oberste antisymmetrische Richtung:
+
+\\[ \Lambda^2(\operatorname{im}P_2) \cong\mathbb C. \\]
+
+Ihr normierter Zustand sei \\(\Omega\_{\mathrm s}\\). Er erfüllt
+
+\\[ G\Omega\_{\mathrm s}=\Omega\_{\mathrm s}. \\]
+
+Dieser Zustand ist unter \\(SU(3)\times SU(2)\\) ein Singulett. Er trägt allerdings Hyperladung \\(+1\\), ist also kein vollständig ungeladener Zustand.
+
+Wir können daraus eine neue Antwort definieren:
+
+\\[ Q_t= tP\_{\Lambda^2V}+(1-t) |\Omega\_{\mathrm s}\rangle \langle\Omega\_{\mathrm s}|. \\]
+
+Für \\(t=4/9\\) ergibt sich wieder exakt
+
+\\[ \boxed{\operatorname{spec}(Q_t)= \\{1^{\times1},(4/9)^{\times9},0^{\times15}\\}.} \\]
+
+Ich habe beide Zustände in der vollständigen 25 dimensionalen Tensorbasis gegengeprüft. Sie sind orthogonal und besitzen verschiedene Eigenwerte unter \\(G^2\\).
+
+Das liefert einen sehr konkreten Test für die originale TFPT Zweierantwort:
+
+- Liegt ihr besonderer Eigenvektor im geraden Clock Sektor, passt die neue kanonische Singulettkonstruktion.
+- Liegt er im ungeraden Sektor, passt eher die bisherige komplexe Windung, die aber nicht dieselbe Eichinvarianz besitzt.
+
+Die bloße Übereinstimmung des Spektrums kann diese Frage nicht entscheiden.
+
+### 5. Noch eine tiefere Verbindung: Die 15 Pauli Operatoren entstehen aus derselben Fünferstruktur
+
+Jetzt lässt sich auch die bisher separat behandelte Zweiqubit Geometrie anschließen.
+
+Zu den fünf Zuständen gehört das Gitter
+
+\\[ A_4=\left\\{(n_0,\ldots,n_4)\in\mathbb Z^5: \sum n_i=0\right\\}. \\]
+
+Reduzieren wir dieses Gitter modulo zwei:
+
+\\[ W=A_4/2A_4\cong\mathbb F_2^4. \\]
+
+Das Skalarprodukt modulo zwei ist auf \\(W\\) eine nicht entartete alternierende Bilinearform. Damit besitzt \\(W\\) exakt die symplektische Struktur des Phasenraums zweier Qubits.
+
+Das liefert:
+
+# 15
+
+Nichttriviale Pauli Labels
+
+# 15
+
+Maximale kommutierende Kontexte
+
+# 10+5
+
+Quadratische Klassen
+
+Die quadratische Form
+
+\\[ q(x)=\frac{\langle x,x\rangle}{2}\pmod2 \\]
+
+zerlegt die 15 von null verschiedenen Elemente exakt in zehn mit \\(q=1\\) und fünf mit \\(q=0\\).
+
+Die zehn Elemente der ersten Sorte entsprechen den zehn unorientierten Wurzelpaaren \\(\pm(e_i-e_j)\\) von \\(A_4\\).
+
+Noch wichtiger: Auf dem verdoppelten \\(A_4\\) Gitter erzeugen sie genau die 15 von null verschiedenen, unter der Vierteldrehung invarianten Klassen modulo zwei. Ihre natürliche halbierte Paarung reproduziert dieselbe symplektische Form.
+
+Damit hängen die bisher unabhängig aufgetretenen Zahlen fünf, zehn und fünfzehn tatsächlich in einer gemeinsamen Konstruktion zusammen.
+
+### 6. Auch die zehn gleichwinkligen Linien lassen sich jetzt rekonstruieren
+
+Nummerieren wir die zehn ungeordneten Paare der fünf Positionen durch \\(e,f\\).
+
+Definieren wir
+
+\\[ C\_{ef}= \begin{cases} 0 & e=f,\\\ +1 & e,f\text{ teilen einen Endpunkt},\\\ -1 & e,f\text{ sind disjunkt}. \end{cases} \\]
+
+Diese \\(10\times10\\) Matrix erfüllt exakt
+
+\\[ \boxed{C^2=9I.} \\]
+
+Ihr Spektrum ist
+
+\\[ \operatorname{spec}(C)= \\{+3^{\times5},-3^{\times5}\\}. \\]
+
+Deshalb ist
+
+\\[ P=\frac{I+C/3}{2} \\]
+
+ein orthogonaler Projektor vom Rang fünf.
+
+Schreiben wir \\(P=WW^T\\) mit fünf orthonormalen Spalten, folgt
+
+\\[ \boxed{C=6WW^T-3I.} \\]
+
+Das ist exakt die bereits bekannte TFPT Gleichung für die zehn gleichwinkligen Linien im fünfdimensionalen Raum. Die normierten Zeilen von \\(W\\) haben paarweise Skalarprodukte vom Betrag \\(1/3\\).
+
+Hier besteht also nicht mehr nur eine numerische Ähnlichkeit: Die gesamte ursprüngliche Konferenzmatrix lässt sich aus den zehn Paaren der fünf Verklebungsklassen rekonstruieren.
+
+### 7. Der erste konkrete dynamische Kandidat für 2/3 und 4/9
+
+Die zehn Paare bilden auch einen bekannten Graphen: Zwei Paare werden verbunden, wenn sie keinen gemeinsamen Endpunkt besitzen. Das ist der Petersen Graph.
+
+Seine Adjazenzmatrix \\(B\\) hat das exakte Spektrum
+
+\\[ \operatorname{spec}(B)= \\{3^{\times1},1^{\times5},-2^{\times4}\\}. \\]
+
+Normieren wir durch den Grad drei und betrachten den positiven Betrag des Operators,
+
+\\[ T=\left|\frac B3\right|, \\]
+
+so entsteht ohne freien Zahlenparameter
+
+\\[ \boxed{ \operatorname{spec}(T)= \\{1^{\times1},(2/3)^{\times4},(1/3)^{\times5}\\}. } \\]
+
+Das sind exakt die drei Relaxationswerte, die im bisherigen TFPT Transfermodell auftreten.&#x20;
+
+TFPT-Gesamtschau-2026-11-10.pdf
+
+
+
+Nach zwei Schritten folgt
+
+\\[ \operatorname{spec}(T^2)= \\{1^{\times1},(4/9)^{\times4},(1/9)^{\times5}\\}. \\]
+
+Wir haben damit einen parameterfreien Kandidaten für den Ursprung der Werte 2/3, 1/3 und 4/9 aus der gleichen Paartopologie.
+
+Allerdings unterscheiden sich die Multiplizitäten vom ursprünglichen TFPT Spektrum \\(1^{\times1},(4/9)^{\times9},0^{\times15}\\). Der Petersen Transfer allein ist daher noch nicht die originale Zweierantwort. Er bietet eine neue Dynamik zum Prüfen, aber keine erwiesene Identität beider Operatoren.
+
+### 8. Der fehlende Rang fünf taucht an der richtigen Stelle wieder auf
+
+Das ist die interessanteste neue Verbindung zur bisherigen Quartikcode Konstruktion.
+
+Für den Petersen Transfer gilt
+
+\\[ T_0=\frac B3 \\]
+
+und
+
+\\[ \operatorname{spec}(T_0^2)= \\{1,\underbrace{4/9,\ldots,4/9}\_{4}, \underbrace{1/9,\ldots,1/9}\_{5}\\}. \\]
+
+Sei \\(P_5\\) der Projektor auf den fünfdimensionalen Eigenraum von \\(B\\) zum Eigenwert \\(+1\\).
+
+Dann gilt die exakte Identität
+
+\\[ \boxed{ T_0^2+\frac13P_5 = \frac49I\_{10}+\frac59P\_{\mathrm{uniform}}. } \\]
+
+Die rechte Seite besitzt exakt
+
+\\[ \operatorname{spec}= \\{1^{\times1},(4/9)^{\times9}\\}. \\]
+
+Ergänzen wir den fünfzehndimensionalen symmetrischen Nullsektor, entsteht das vollständige bekannte TFPT Spektrum.
+
+Die spektrale Ergänzung
+
+| Unterraum            | Vorher | Nachher |
+| -------------------- | ------ | ------- |
+| Rang 1               | 1      | 1       |
+| Rang 4               | 4/9    | 4/9     |
+| Rang 5               | 1/9    | 4/9     |
+| Symmetrisch, Rang 15 | 0      | 0       |
+
+Die Verbindung zur ursprünglichen TFPT ist damit überraschend konkret:
+
+- Die Paartopologie erzeugt einen natürlichen Transfer mit \\(1/3\\) und \\(2/3\\).
+- Sein Quadrat erzeugt \\(1/9\\) und \\(4/9\\).
+- Eine Korrektur auf genau fünf Dimensionen gleicht diese beiden Werte an.
+- Die resultierende Antwort besitzt exakt die TFPT Multiplizitäten \\(1+9+15\\).
+
+Das ist eine exakte algebraische Zerlegung des gesuchten Operatorspektrums, keine bloße Zahlenspielerei.
+
+Aber der letzte Pfeil ist noch nicht physikalisch abgeleitet: Warum soll die ursprüngliche P1 Dynamik gerade den Zusatz \\(\frac13P_5\\) erzeugen?
+
+Der bestehende TFPT Quartikcode besitzt ebenfalls Rang fünf, allerdings auf einem anderen Tensorträger, nämlich innerhalb von \\((\mathbb C^4)^{\otimes4}\\).&#x20;
+
+TFPT-Kernessenz-Deutsch-2026-10-15-v2.pdf
+
+
+
+Deshalb ist die nächste entscheidende Frage präzise formulierbar:
+
+\\[ \boxed{ \text{Ist der Petersen Rang 5 Sektor ein physischer} \atop \text{Intertwiner des ursprünglichen Quartikcodes?} } \\]
+
+Eine beliebige Isometrie zwischen zwei fünfdimensionalen Räumen würde nicht genügen. Sie muss Clock, Ladungen, Operatorprodukte und Zeitantwort erhalten.
+
+Solange dieser Intertwiner fehlt, ist die Rang fünf Korrektur eine konkrete Kandidatenregel, aber keine hergeleitete Dynamik.
+
+### 9. Daraus entsteht sogar ein vollständiges quantisiertes E₈ Modell in 1+1 Dimensionen
+
+Bis hierher hatten wir hauptsächlich endliche Algebra. Die \\(A_4/A_4\\) Verklebung besitzt aber auch eine echte quantenfeldtheoretische Realisierung.
+
+Jedes \\(A_4\\) Gitter definiert die chirale Stromalgebra \\(SU(5)\_1\\) mit zentraler Ladung vier. Zusammen liefern beide Seiten
+
+\\[ c=4+4=8. \\]
+
+Die fünf Darstellungssektoren jeder Seite haben die konformen Gewichte
+
+\\[ h_k=\frac{k(5-k)}{10}, \qquad k=0,\ldots,4. \\]
+
+Insbesondere:
+
+\\[ h_1=\frac25,\qquad h_2=\frac35. \\]
+
+Der durch die Verklebung erlaubte kombinierte Zustand besitzt
+
+\\[ \boxed{h_1+h_2=1.} \\]
+
+Das bedeutet, dass die zusätzlichen verklebten Zustände tatsächlich als ganzzahlige Stromanregungen in der erweiterten Theorie auftreten können.
+
+Die chirale Zustandssummenidentität lautet
+
+\\[ \boxed{ Z\_{E_8}(\tau)= \sum\_{k=0}^{4} \chi_k^{SU(5)\_1}(\tau) \chi\_{2k}^{SU(5)\_1}(\tau). } \\]
+
+Sie besitzt die Entwicklung
+
+\\[ Z\_{E_8}(\tau) =q^{-1/3} \left(1+248q+4124q^2+\cdots\right). \\]
+
+Die 248 Ströme der niedrigsten Anregungsstufe bestehen aus 48 Strömen der beiden ursprünglichen \\(SU(5)\\) Algebren und 200 zusätzlichen Strömen aus den vier nichttrivialen Verklebungsklassen.
+
+Das ist eine konkrete unitäre, quantisierte chirale Feldtheorie. Die bekannte \\(E_8\\) Gittertheorie besitzt tatsächlich \\(c=8\\) und genau diese Charakterentwicklung.&#x20;
+
+[image](https://www.google.com/s2/favicons?domain=https://www.math.ksu.edu\&sz=32)
+
+Department of Mathematics+2
+
+
+
+Der Unterschied zu einer vollständigen TFPT ist entscheidend: Dieses Ergebnis liefert eine mathematisch konsistente Theorie in 1+1 Dimensionen. Es beweist weder die ursprüngliche P1 Reflexionspositivität des vollen Feldfunktionals noch emergente Raumzeit in 3+1 Dimensionen oder Gravitation.
+
+### 10. Die komplexe Orientierung schließt die beiden Paarbeschreibungen exakt zusammen
+
+Es gibt noch einen präzisen Zusammenhang zwischen der Petersen Geometrie und den komplexen Windungszuständen \\(\Omega\_\pm\\).
+
+Die zehn ungeordneten Paare tragen eine natürliche Darstellung der affinen Clock Gruppe. Der antisymmetrische Zehnerträger \\(\Lambda^2\mathbb C^5\\) trägt ebenfalls eine Darstellung, aber mit zusätzlichen Vorzeichen beim Vertauschen der beiden Endpunkte.
+
+Diese Darstellungen sind nicht unmittelbar identisch.
+
+Sie werden jedoch identisch, wenn man die Darstellung der ungeordneten Paare mit einer eindimensionalen komplexen Clock Phase verdreht:
+
+\\[ \boxed{ \Lambda^2\mathbb C^5 \cong \mathbb C^{\binom52}\otimes\chi\_\pm, \qquad \chi\_\pm(G)=\pm i. } \\]
+
+Ich habe einen expliziten unitären Intertwiner \\(D\\) konstruiert und die Gleichungen für Verschiebung \\(T\\) und Clock \\(G\\) geprüft:
+
+\\[ \boxed{ U\_{\wedge^2}(T)D=DU\_{\rm Paar}(T) } \\]
+
+\\[ \boxed{ U\_{\wedge^2}(G)D =-i\\,D U\_{\rm Paar}(G). } \\]
+
+In der üblichen Basis der zehn ungeordneten Paare kann \\(D\\) sogar diagonal mit Einträgen aus \\(\\{1,-1,i,-i\\}\\) gewählt werden.
+
+Besonders wichtig:
+
+\\[ D|{\rm uniform}\rangle=|\Omega\_+\rangle. \\]
+
+Die komplexe Windung ist also genau die orientierte Version des gleichförmigen Zustands der zehn ungeordneten Paare.
+
+Das erklärt, weshalb die komplexe Phase \\(\pm i\\) in der bisherigen Konstruktion überhaupt auftaucht. Sie korrigiert die Vorzeichen, die beim Übergang von ungeordneten relationalen Verbindungen zu antisymmetrischen Quantenzuständen entstehen.
+
+Damit können wir den neuen Petersen Operator exakt auf den bisherigen antisymmetrischen TFPT Kandidaten übertragen:
+
+\\[ \boxed{ Q\_+ = D\left[ \left(\frac B3\right)^2+\frac13P_5 \right]D^\dagger } \\]
+
+auf dem Zehnersektor, ergänzt um null auf den 15 symmetrischen Dimensionen.
+
+Das reproduziert nicht nur das Spektrum, sondern erklärt auch die konkrete Phase und die affine Clock Verträglichkeit des hochgeladenen Kandidaten.
+
+Der bisher fehlende Schritt vom ungeordneten Paar zur komplex orientierten Windung ist damit innerhalb dieses Modells tatsächlich geschlossen.
+
+### 11. Eine mögliche Ursprungsvorschrift, die 4/9 nicht mehr als Parameter einsetzt
+
+Wir können die fehlende Korrektur als ein Extremalproblem formulieren.
+
+Aus der ursprünglichen relationalen Paarbewegung nehmen wir den normierten Petersen Operator
+
+\\[ A=\frac B3. \\]
+
+Eine reflektierte Rückkehr liefert den positiven Operator
+
+\\[ K=A^\dagger A. \\]
+
+Seine positive Quadratwurzel besitzt die Eigenwerte
+
+\\[ \operatorname{spec}(\sqrt K)= \\{1,\ (2/3)^{\times4},\ (1/3)^{\times5}\\}. \\]
+
+Jetzt formulieren wir eine neue, explizite Ursprungshypothese:
+
+> Nach der reflexionspositiven Schließung müssen alle neun nichtstationären Paarmoden dieselbe Retentionsamplitude besitzen. Gewählt wird die kleinste solche positive Antwort, die keine ursprüngliche Mode stärker unterdrückt als \\(\sqrt K\\).
+
+Mathematisch suchen wir
+
+\\[ T\_\lambda=P_0+\lambda(I-P_0), \\]
+
+mit dem gleichförmigen Rang eins Projektor \\(P_0\\), unter den Bedingungen
+
+\\[ T\_\lambda\succeq\sqrt K \\]
+
+und minimalem \\(\lambda\\).
+
+Die Lösung ist eindeutig:
+
+\\[ \boxed{\lambda\_{\min}=\frac23.} \\]
+
+Denn \\(2/3\\) ist der größte nichtstationäre Eigenwert von \\(\sqrt K\\).
+
+Nach zweimaliger Anwendung folgt
+
+\\[ \boxed{ T\_{\min}^2= \frac49 I+\frac59P_0. } \\]
+
+Über den gerade konstruierten komplexen Intertwiner erhalten wir exakt den ursprünglichen \\(Q\_+\\) Kandidaten.
+
+Damit gibt es jetzt eine parameterfreie mathematische Konstruktion des Faktors \\(4/9\\), deren einziger neuer Auswahlgrundsatz eine minimale positive isotrope Schließung ist.
+
+Das ist erheblich besser prüfbar als die bisherige Vermutung \\(2/3=1-1/3\\). Die konkrete Extremalregel lässt sich als eigenständige Hypothese gegen den tatsächlichen P1 Übergang testen.
+
+Allerdings folgt die geforderte Isotropie der neun Moden nicht allein aus Reflexionspositivität oder aus der Gruppensymmetrie. Sie bleibt die zusätzliche physikalische Annahme dieses Kandidaten.
+
+## 12. Der Vergleich mit der ursprünglichen TFPT zeigt noch zwei harte Grenzen
+
+Der erste Punkt betrifft die Clock.
+
+Die neue Vierteldrehung \\(R\\) erhält das \\(A_4\oplus A_4\\) Gitter. Sie kann aber die festgehaltene \\(D_5\oplus A_3\\) Einbettung nicht erhalten. Das entspricht exakt dem Ausschlusssatz aus der Gesamtschau vom 10. November.&#x20;
+
+TFPT-Gesamtschau-2026-11-10.pdf
+
+
+
+In einer expliziten \\(D_5/A_3\\) Einbettung habe ich die Wirkung auf alle 240 Wurzeln verglichen. Unsere Drehung verändert dort bei einem Schritt 184 der vierwertigen Glue Labels und wechselt bei 128 Wurzeln sogar deren Parität.
+
+Die ursprüngliche native Familienclock verändert dagegen 112 Labels und erhält die Parität vollständig.
+
+Damit ist diese unmittelbare Identifikation widerlegt.
+
+Es gibt allerdings 15 alternative \\(D_8\\) Paritätsuntergitter, die unsere Drehung tatsächlich erhält. Das folgt aus dem vierdimensionalen Fixraum von \\(R\\) modulo zwei. Diese 15 Möglichkeiten hängen wiederum mit der oben konstruierten Pauli Geometrie zusammen.
+
+Das macht die Suche nach einer geeigneten mitbewegten Materieeinbettung konkret, löst sie aber noch nicht.
+
+Der zweite Punkt ist physikalisch noch wichtiger.
+
+Fünf Verklebungsklassen sind nicht automatisch fünf fundamentale Materiefreiheitsgrade. In der \\(SU(5)\_1\\) Feldtheorie entsprechen die Klassen unterschiedlichen Darstellungssektoren, nicht den fünf Komponenten einer einzigen fundamentalen Darstellung.
+
+Die formale Aufteilung dieser fünf Klassen in \\(3+2\\) beweist deshalb noch nicht, dass sich die physische Farbdarstellung und schwache Eichdarstellung daraus ergeben.
+
+Genau dafür fehlt eine Abbildung, die nicht nur Dimensionen und Eigenwerte, sondern auch die tatsächlichen Ladungsoperatoren und ihre Wirkung erhält.
+
+### 13. Was für eine physikalische Gesamtlösung weiterhin fehlt
+
+Die \\(E_8\\) Lie Algebra enthält zwar den Halbspinor von \\(Spin(10)\\), ihre Adjungierte zerfällt aber als
+
+\\[ 248=(45,1)\oplus(1,15)\oplus(10,6) \oplus(16,4)\oplus(\overline{16},\overline4). \\]
+
+Sie enthält also sowohl Spinoren als auch deren konjugierte Partner.
+
+Die Existenz dreier physischer chiraler Generationen mit entkoppelten Spiegelpartnern folgt daraus nicht. Dafür ist ein tatsächlich konstruierter chiraler Index oder ein geeigneter Randmechanismus erforderlich. Solche Randmechanismen sind in der Forschung grundsätzlich möglich, unterliegen aber strengen Lokalitäts und Anomaliebedingungen.&#x20;
+
+[image](https://www.google.com/s2/favicons?domain=https://doi.org\&sz=32)
+
+DOI+1
+
+
+
+Auch eine vierdimensionale Raumzeit folgt nicht aus dem Rang des \\(A_4\\) Gitters oder aus dem zweidimensionalen \\(E_8\\) Feldmodell. Insbesondere ist noch kein masseloser Spin 2 Pol mit universeller Kopplung an Materie hergeleitet.
+
+Schließlich fehlt weiterhin die vollständige ursprüngliche P1 Quellenfunktion \\(Z\_{\mathrm{rel}}[J]\\). Im Forschungsbericht vom 10. November konnte der gewichtete Originalübergang nicht ausgewertet werden. Deshalb sind die tatsächliche gemeinsame Dynamik, die Referenznormierung und die vollständigen gemischten Feldantworten noch nicht verfügbar.&#x20;
+
+TFPT-Gesamtschau-2026-11-10.pdf
+
+
+
+## 14. Der präziseste neue Kandidat für F1
+
+Aus dieser Untersuchung ergibt sich folgende mathematisch konkrete Hypothese:
+
+\\[ \boxed{ \begin{gathered} A_4\oplus A_4 \xrightarrow{\text{gerade Verklebung}} E_8\\\ \Downarrow\\\ \mathbb Z_5,\quad G:k\mapsto2k\\\ \Downarrow\\\ \text{Paargeometrie und komplexe Orientierung}\\\ \Downarrow\\\ \text{Petersen Transfer und Reflexionsabschluss}\\\ \Downarrow\\\ \text{minimale isotrope Schließung}\\\ \Downarrow\\\ \operatorname{spec}(Q)= \\{1, (4/9)^{\times9},0^{\times15}\\} \end{gathered} } \\]
+
+Diese Kette lässt sich jetzt bis zum letzten Spektrum vollständig mit expliziten Operatoren ausrechnen. Der neue Auswahlgrundsatz ist klar abgegrenzt und falsifizierbar.
+
+Der härteste unmittelbare Test ist sogar einfacher als eine große dynamische Simulation. Der rangfünf Petersen Korrektursektor besitzt unter der vierstufigen Clock die Charakterwerte
+
+\\[ \boxed{ \operatorname{Tr}(P_5G^k)=(5,-1,1,-1), \quad k=0,1,2,3. } \\]
+
+Das bedeutet, dass seine Clock Eigenwerte
+
+\\[ \\{1,-1,-1,+i,-i\\} \\]
+
+sein müssen. Wenn der ursprüngliche Quartikcode unter der entsprechenden Clock andere Multiplizitäten besitzt, kann der gesuchte symmetrieerhaltende Intertwiner nicht existieren. Stimmen sie überein, ist das eine notwendige, aber noch nicht hinreichende Bedingung für die vollständige Operatoridentität.
+
+## Ergebnis
+
+Wir haben jetzt mehr als eine neue Hypothese: eine zusammenhängende und zum Teil explizit berechnete algebraische Konstruktion, die \\(E_8\\), die Viererclock, fünf Klassen, zehn Paare, die 15 Pauli Labels, die gleichwinklige Liniengeometrie, komplexe Orientierungsphasen und das vollständige \\(1/9/15\\) Antwortspektrum miteinander verbindet.
+
+Eine vollständige fundamentale TFPT ist damit noch nicht bewiesen. Der entscheidende offene Übergang liegt zwischen dieser konsistenten endlichen und chiralen Algebra einerseits und der tatsächlichen physikalischen P1 Quelle mit 3+1 dimensionaler lokaler Dynamik andererseits.
+
+Der nächste Durchbruch ist jetzt schärfer definiert: Es muss gezeigt werden, dass die ursprüngliche P1 Quellenoperation genau diese minimale positive Schließung realisiert und zugleich die richtige Materieeinbettung, Chiralität und Raumzeit erzeugt.
+
+Damit ist der Kreis aus immer neuen Dimensionsübereinstimmungen deutlich enger geworden. Die neue Konstruktion liefert einen konkreten Operator, einen notwendigen Clock Charakter und mehrere harte Ausschlussbedingungen. Sie ist eine ernsthafte Kandidatenroute, aber noch nicht die Theorie von allem.

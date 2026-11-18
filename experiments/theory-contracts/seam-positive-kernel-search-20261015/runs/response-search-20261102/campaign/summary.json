@@ -1,0 +1,151 @@
+{
+  "schema": "tfpt.positive-kernel-campaign.v1",
+  "campaign_identity": "31d67c1d7cbedc017ebbb0b7279693bdc7fdd83ccebc80a65406e2af4144745c",
+  "configuration": {
+    "m": 1,
+    "degree": 2,
+    "seed": 7,
+    "transfer_floor": 0,
+    "cluster_gap": 0,
+    "transfer_ceiling": 1,
+    "transfer_kind": "vacuum_effect",
+    "reference_eigenvalue": 1,
+    "objective": "feasibility",
+    "solver": "SCS",
+    "fixed_moments": [
+      {
+        "word": [
+          0,
+          1
+        ],
+        "re": "0",
+        "im": "1"
+      },
+      {
+        "word": [
+          0,
+          -1,
+          0
+        ],
+        "re": "1/3",
+        "im": "0"
+      }
+    ],
+    "linear_relations": [],
+    "source_observables": {
+      "role": "software_control_only_not_physical_P1",
+      "origin": "exact_two_dimensional_CAR_representation",
+      "full_TFPT_source_identified": false,
+      "input_path": "/Users/stefanhamann/Projekte/tfpt-theoryv4/experiments/theory-contracts/seam-positive-kernel-search-20261015/runs/response-search-20261102/control.json",
+      "input_sha256": "cbe72fb77a978a61a1a74fa136db892cd679bcc9b95cafc56bca6b612af869e7"
+    },
+    "completion_representation": "minimal_fock",
+    "withheld_response": {
+      "terms": [
+        {
+          "word": [
+            1,
+            -1,
+            1
+          ],
+          "re": "1"
+        }
+      ]
+    }
+  },
+  "code_sha256": {
+    "run_search.py": "f5e448f1d64aa0e4edb81127e2a3968ae0962eee8f4ed557017ff5f9a34fe7b2",
+    "kernel_search.py": "d158e991b9ad7f2fa2d8011e228589830d90db06fa4e21c919f546dbcd67c315",
+    "finite_completion.py": "80f5bae4afe92b6784ed4941524066c2fe5593839e0adbbd7af1eb47646a7f8d",
+    "gns_completion.py": "0bd344c70f48fe5b347204890d70ee8f2e166c41a54dec4eebad92d67ecc59df",
+    "exact_certificate.py": "57753a3efff8b0b9de70cec60b0a4afa96b9e8d1343ee01eb0a49809ffac3840",
+    "word_algebra.py": "25964ecf2b718372210ddc669ed402677d61cf180c62839a0f3cc9338b1d5254",
+    "linear_relations.py": "0664ff0b0e021f052f9024cd5fb78de55a14a597bd43a50f2841c612ffa5bb74",
+    "response_search.py": "7566720283a727b7a52bbeee5d65b33003f10be22fc16d00e47eb192cbb7e0d8"
+  },
+  "search_restrictions": {
+    "objective": "feasibility",
+    "objective_role": "feasibility_only_no_state_or_response_optimization",
+    "objective_definition": "Constant zero objective; no occupation or response is optimized.",
+    "global_transfer_floor": 0,
+    "completion_cluster_gap": 0,
+    "global_transfer_ceiling": 1,
+    "transfer_kind": "vacuum_effect",
+    "reference_eigenvalue": 1,
+    "reference_eigenvalue_scope": "Explicit supplied eigenvalue in T Omega=lambda Omega, not a value derived from P1 or an absolute source normalization",
+    "transfer_scope": "Declared bounded positive reference-eigenvector transfer class; ceiling1 is a vacuum/effect restriction, not universal thermal GNS time. A supplied source outside these bounds is a class mismatch, not physical exclusion.",
+    "completion_objectives": "min/max trace explore compatible finite completions; they do not select physical sources",
+    "scope": "Explicit search/calibration restrictions, not a physical source selector or native scale"
+  },
+  "completion_ansatz": {
+    "representation": "minimal irreducible CAR Fock space of dimension2^m",
+    "transfer_type_requirement": "vacuum_effect with ceiling1 and reference_eigenvalue1 only; no scaled-reference or thermal GNS completion claimed",
+    "state_requirement": "all inferred occupations within1e-6 of0 or1 in the given mode basis",
+    "status": "additional realization ansatz, not selected by feasibility or inferred from nonflat moments",
+    "mixed_state_handling": "inconclusive if this completion cannot handle the state; no fallback forcing pure occupations"
+  },
+  "inconclusive_completion_is_not_source_exclusion": true,
+  "conditional_normalized_state": true,
+  "absolute_partition_function_recovered": false,
+  "state_normalization_scope": "omega(1)=1 normalizes the conditional state only; it is not a recovered Z(0)",
+  "solver_status": "optimal",
+  "certified_finite_completions": 0,
+  "completions": [
+    {
+      "objective": "min-trace",
+      "ok": false,
+      "verdict": "INCONCLUSIVE_FINITE_FOCK_COMPLETION",
+      "reason": "Input rational recovery failed at word (0, -1, -1, 0): No rational with denominator <=64 within1e-6 of 0.1579173813782249",
+      "dimension": null,
+      "finite_clustering": null,
+      "finite_unitary_field_time": false
+    },
+    {
+      "objective": "max-trace",
+      "ok": false,
+      "verdict": "INCONCLUSIVE_FINITE_FOCK_COMPLETION",
+      "reason": "Input rational recovery failed at word (0, -1, -1, 0): No rational with denominator <=64 within1e-6 of 0.1579173813782249",
+      "dimension": null,
+      "finite_clustering": null,
+      "finite_unitary_field_time": false
+    }
+  ],
+  "next_question": {
+    "status": "NO_TWO_CERTIFIED_COMPLETIONS"
+  },
+  "original_source_derivation": false,
+  "physical_marking_selected": false,
+  "physical_quarter_holonomy_identified": false,
+  "event_instrument_derived": false,
+  "verdict": "SEARCH_INCONCLUSIVE_NO_CERTIFIED_COMPLETION",
+  "scope": "Finite CAR search and an explicitly additional minimal Fock completion; not a physical seam construction.",
+  "elapsed_seconds": 0.03905345799284987,
+  "withheld_response": {
+    "artifact": "withheld-response.json",
+    "affine_status": "EXACT_IDENTITY_CONDITIONAL_ON_EXISTENCE",
+    "identity_proved": true,
+    "exact_value": "1/3",
+    "numerical_endpoints": [
+      {
+        "sense": "min",
+        "solver_status": "optimal",
+        "estimate": 0.3333333333333424,
+        "max_constraint_violation": 1.2878587085651816e-14
+      },
+      {
+        "sense": "max",
+        "solver_status": "optimal",
+        "estimate": 0.333333333333332,
+        "max_constraint_violation": 1.8096635301390052e-14
+      }
+    ],
+    "source_derivation_or_physical_uniqueness_proved": false
+  },
+  "artifacts": {
+    "moments.json": "f105ce4c0730b961578205e57256a16094d219aa3572736754217d29c434a8a7",
+    "next-source-question.json": "90220034cecd81683564cd9115e169cd5bd1339d7bd3aa8391e9cff2ddf88ecd",
+    "min-trace.json": "d3a7a9995bf8f3a74221a0958d264b580c5cff5c18d4f60382d68315da0810e5",
+    "max-trace.json": "c2c2d1b9430530f947099ee852b43cbc3091c82a26da454b420fcd8447d964ba",
+    "withheld-response.json": "6968811845c290e740aae9737d253c4bc6995d24ef9b81c75b610495dc2c6d60"
+  }
+}

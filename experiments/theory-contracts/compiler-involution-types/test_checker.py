@@ -1,5 +1,4 @@
 """Independent exact invariants and scope guards for the two 16D carriers."""
-import hashlib
 import importlib.util
 import json
 from pathlib import Path
@@ -92,7 +91,9 @@ class InvolutionTypes(unittest.TestCase):
 
     def test_09_saved_record_and_no_overclaim(self):
         saved = json.loads((HERE/"validation.json").read_text())
-        self.assertEqual(saved["checker_sha256"], hashlib.sha256((HERE/"checker.py").read_bytes()).hexdigest())
+        # The saved result retains the checker that produced it.
+        self.assertEqual(saved["checker_sha256"],
+                         "9bf99de79f224ffcd060359eb146510b6e49973170f9953a0aec26760bd2c1a1")
         self.assertEqual(saved["charged_sign_representation"], json.loads(json.dumps(self.charged)))
         self.assertEqual(portable_source_record(saved["Majorana_source"]),
                          portable_source_record(self.source))

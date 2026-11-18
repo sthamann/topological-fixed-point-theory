@@ -1,0 +1,50 @@
+{
+  "contract": "history-determinant-solver-round25",
+  "research_id": "UR.NATIVE.HISTORY_DETERMINANT.25",
+  "date": "2026-09-07",
+  "metadata_review_date": "2026-10-14",
+  "verdict": "PASS",
+  "scope": "Exact per-history scalar determinant and solve with cyclic temporal closure and signed original physical updates; O(T d^3) arithmetic only.",
+  "question": "Exact per-history scalar determinant and solve with cyclic temporal closure and signed original physical updates; O(T d^3) arithmetic only.",
+  "summary_de": "Vorhandener exakter Solver je Ladungsgeschichte: zyklische Blockelimination erhält nichtkommutierende Zeitblöcke, Randabschluss und vorzeichenbehaftete physische Updates. Linear in der Zeitscheibenzahl bei fester Blockgröße; keine Lösung der gesamten Ladungssumme.",
+  "summary_en": "Exact per-history scalar determinant and solve with cyclic temporal closure and signed original physical updates; O(T d^3) arithmetic only.",
+  "positive_results": [
+    "Exact block LDL factorization and periodic low-rank closure compute the determinant and solve for the original finite-regulator history.",
+    "Original signed cocycle hops and physical stiffness updates (-6,+2) are retained.",
+    "Arithmetic cost O(T d^3), storage O(T d^2); 25 original check groups replayed unchanged."
+  ],
+  "kills": [
+    "Discarding the periodic closure while claiming the same determinant.",
+    "Replacing physical signed density updates by positive-only surrogates."
+  ],
+  "leaves_open": [
+    "Infinite charge-history summation, efficient sign-problem solution, bit-complexity bound, real-time or continuum physics."
+  ],
+  "not_claimed": [
+    "PASS applies to the stated mathematical contract, not a T1-T8 physical gate.",
+    "No original P1/P2 source derivation or full TFPT solution."
+  ],
+  "assumptions": [
+    "Original declared g=0 scalar/charge model with finite spatial lattice and finite Euclidean time regulator; retained scalar mass m>0."
+  ],
+  "relations": [
+    {
+      "target": "local-gaussian-elimination-round24",
+      "type": "extends"
+    }
+  ],
+  "topics": [
+    "topic:quantum",
+    "topic:universalraum",
+    "topic:process"
+  ],
+  "claims_tested": [],
+  "gates": [],
+  "physical_gates_closed": [],
+  "complete_TFPT_solution": false,
+  "promotion": false,
+  "firewall": "experiments",
+  "proof": "PROOF.md",
+  "checker": "checker.py",
+  "certificate": "validation.json"
+}

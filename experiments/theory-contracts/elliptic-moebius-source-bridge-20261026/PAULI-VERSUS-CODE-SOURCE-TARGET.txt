@@ -1,0 +1,265 @@
+PAULI TRANSLATIONS VERSUS GAUSSIAN CODE CONTEXTS
+The correctly typed target of the genus two theta source
+2026-10-26
+
+VERDICT
+
+PROVED at the finite symplectic and marked cubic action level.
+
+The previous comparison used the wrong native four bit object.  The source
+
+    Jac(C)[2] = V_q direct_sum V_p
+
+is a translation group with its Weil pairing.  Its native counterpart is
+
+    N64/mu4 = Pauli16,
+
+with the commutator pairing.  It is not the Gaussian code quotient
+
+    V_code = L/(1+i)L.
+
+The nonzero code classes label the fifteen Pauli contexts through the point
+line duality of W(3,2).  They do not label the fifteen Pauli translations.
+Verification v783 proves that the two full Sp(4,2) modules have zero
+intertwiner space.  Thus the earlier code fixed space mismatch remains a true
+statement about contexts, but it is not an obstruction to the theta
+translation map.
+
+On the correct Pauli target the frozen native sigma has no nonzero fixed
+vector, exactly like the source cubic c_src.  More strongly, its four bit
+module has a unique unordered decomposition into two orthogonal, nondegenerate,
+sigma stable planes.  These planes provide an explicit finite symplectic
+carrier for V_q and V_p, up to their exchange.  The actual Q action can also be
+transported, but the present source data do not select one of the nine native
+Q markings in a fixed frame.  The central lift test proves that all nine lie
+in one actual C_G31(sigma) conjugacy orbit.  Hence the fake fixed space obstruction
+is removed and a maximal
+explicit transport component is obtained.  A unique full theta module
+dictionary is not yet obtained.
+
+
+1. THE TWO NATIVE FOUR BIT OBJECTS
+
+In the frozen v783 chart
+
+    z_k = r_(2k) + i r_(2k+1),
+
+the lattice permutation
+
+    PI_SIG=(4,5,0,1,2,3,6,7)
+
+acts on C^4 by
+
+              [0 0 1 0]
+              [1 0 0 0]
+    sigma  =  [0 1 0 0].                                      (1)
+              [0 0 0 1]
+
+It cycles the first three basis vectors and fixes the fourth.  Thus
+tr_C(sigma)=1 and sigma^3=I.  On the code coordinates (F1,F2,F3,A), the same
+matrix over F2 fixes the plane
+
+    span{F1+F2+F3, A}.                                        (2)
+
+This is the rank two fixed space used by the earlier code comparison.
+
+The Pauli translation quotient uses different coordinates.  With v783's bit
+order
+
+    (x1,z1,x2,z2)
+
+and its Hermitian I,X,Z,Y representatives, exact conjugation by (1) gives
+
+    XI |-> +IX,
+    ZI |-> -ZZ,
+    IX |-> +XX,
+    IZ |-> +ZI.                                                (3)
+
+After forgetting the signs, the resulting symplectic matrix is
+
+              [0 0 1 0]
+              [0 1 0 1]
+    M_sigma = [1 0 1 0].                                      (4)
+              [0 1 0 0]
+
+It satisfies
+
+    M_sigma^2+M_sigma+I=0,
+    chi_M(t)=(t^2+t+1)^2,
+    ker(M_sigma-I)=0.                                         (5)
+
+The native compiler is c_comp=i sigma.  The scalar i is invisible under
+Pauli conjugation, so Ad(c_comp)=Ad(sigma).  This is why the order twelve
+compiler lift and the order three source action can be compared at this
+quotient level without identifying their full orders.
+
+The original relative clock source states the same distinction directly:
+sigma fixes three code classes, hence three Pauli contexts under the v783
+duality, and fixes no nonidentity Pauli.  Equation (5) is the explicit four
+bit matrix form of that statement.
+
+
+2. THE UNIQUE ORTHOGONAL TWO PLANE DECOMPOSITION
+
+There are thirty five two dimensional subspaces of F2^4.  Exhaustive exact
+enumeration finds exactly five that are M_sigma stable.  Three are isotropic:
+
+    {0, IX, XI, XX},
+    {0, IZ, ZI, ZZ},
+    {0, XZ, YY, ZX}.                                          (6)
+
+They are precisely the three fixed Pauli contexts from the original source.
+The other two are nondegenerate symplectic planes:
+
+    W_A = {0, ZY, XY, YI},
+    W_B = {0, IY, YX, YZ}.                                    (7)
+
+They are orthogonal complements.  Since (6) and (7) exhaust all stable
+two planes, {W_A,W_B} is the unique unordered orthogonal decomposition into
+nondegenerate sigma stable planes.
+
+Use the ordered bases
+
+    W_A: (ZY,YI),
+    W_B: (IY,YZ).                                              (8)
+
+On both bases (4) restricts to
+
+              [1 1]
+    C_src  =  [1 0].                                          (9)
+
+This is exactly the pullback action of the source cubic on either coefficient
+packet.  Indeed c_src^* L_a=L_(a-1), and in the basis
+e0=L0,e1=L1,L2=e0+e1 one has c_src e0=e0+e1 and c_src e1=e0.
+
+The Weil pairing on V_q and V_p is nondegenerate, and the two source planes
+are orthogonal.  Pauli commutation gives the same symplectic relations on
+(7).  Therefore the displayed assignment
+
+    V_q |-> W_A,       V_p |-> W_B                            (10)
+
+is an explicit c equivariant symplectic isomorphism.  Exchanging W_A and W_B
+gives the other unlabelled assignment.
+
+
+3. THE ACTUAL Q ACTION AND THE RESIDUAL MULTIPLICITY
+
+On each source plane, in the basis used above, the previously derived Q action
+is
+
+              [1 0]
+    A_Q    =  [1 1].                                          (11)
+
+It obeys A_Q^2=I and A_Q C_src A_Q=C_src^2.  Transporting the block diagonal
+action diag(A_Q,A_Q) through (8) gives the concrete native Pauli action
+
+                 [1 0 1 0]
+                 [0 1 1 0]
+    Q_native  = [0 0 1 0],                                   (12)
+                 [1 1 1 1]
+
+which is symplectic, preserves W_A and W_B, and satisfies
+
+    Q_native^2=I,
+    Q_native M_sigma Q_native=M_sigma^2.                       (13)
+
+The multiplicity is exact, rather than a vague basis freedom:
+
+  * there are 18 c equivariant symplectic identifications between the source
+    block and the native Pauli module;
+  * there are 9 symplectic involutions preserving both planes and satisfying
+    (13), three reflections on each irreducible plane;
+  * after one Q_native is fixed, exactly 2 simultaneous (c,Q) equivariant
+    symplectic identifications remain.  They exchange the two planes.
+
+Thus c alone canonically selects the unordered pair of native planes.  The
+source labels q and p do not yet select which native plane receives which
+label, and the inspected native data do not select one of the nine Q_native
+markings.  Equality of dimensions or conjugacy classes is no longer being
+used as a dictionary: equations (8) through (13) give the actual map and its
+complete finite ambiguity.  After the central lift and the actual native
+centralizer are included, these nine frame representatives become one
+conjugacy orbit.  Treating that orbit as gauge requires a separate assertion
+about allowed equivalences.  Additional q versus p, P1, P2, anchor, state, or
+readout markings were not imposed in the orbit statement.
+
+
+4. CENTRAL PHASE AND CURRENT SCOPE
+
+The source selected even spin line supplies the projective lift alpha of Q,
+with
+
+    alpha^2=beta,       beta^2=-I,
+
+and the marked local phase beta=+i.  On Jac(C)[2], beta is invisible because
+it is central.  This is the same mathematical slot in which the native mu4
+center is invisible on Pauli16.  The separate exact central lift census in
+PAULI-SPIN-CENTRAL-LIFT.txt proves that a compatible realization beta maps to
+native J=iI exists, and that alpha then lies in the nontrivial zeta8 G31 coset
+rather than in G31.  Imposing the exact lifted relation
+alpha sigma alpha^(-1)=sigma^(-1) selects a unique lift modulo alpha maps to
+-alpha for every one of the nine Q actions.  The source spin result fixes +i
+on the marked beta fiber, but does not yet prove the global scalar identity
+beta=iI or the cubic spin linearization on a four dimensional theta module.
+Nor does the local phase alone determine its image under
+S0 -> Theta -> H0(2Theta): because the determinant of cohomology has Euler
+characteristic zero, the central phase may cancel there.  The actual functor
+must decide whether beta reaches J on H0(2Theta).
+
+This closes the earlier central square obstruction as an existence question,
+gives the index two coset a precise conditional source interpretation, and
+constructs an order 24 common subgroup candidate generated by the cubic and
+quarter lifts.  It still does not construct
+the complete source theta Heisenberg extension and its four dimensional
+Schrodinger module as the native N64 module.  The nine representatives form
+one native centralizer conjugacy class, while the physical gauge status of
+that conjugacy still depends on the other markings.  Those are the precise
+remaining extension and marking steps.  No identification with V_code is
+required or allowed.
+
+
+5. EXACT CHECK
+
+Run
+
+    python3 research-20261026-real-boundary/check_pauli_source_target.py
+    python3 -OO research-20261026-real-boundary/check_pauli_source_target.py
+
+Both runs pass.  The checker recomputes (3) through (13), enumerates all
+thirty five two planes and all 720 elements of Sp(4,2), and returns the exact
+counts 18, 9, and 2 above.
+
+
+SOURCE ANCHORS
+
+Atlas audit frame: revision 966491c8570e1f00b7db8adf, read only.
+
+  * verification/v783_two_qubit_clifford.py, SHA256
+    8f4851634b83f61671b04f3a6211059c40758d21caaf1f779302c799e1e9d6c4:
+    lines 440--450 define the frozen chart; lines 496--519 define the Pauli
+    bits and symplectic form; lines 588--640 define exact Clifford conjugation;
+    lines 698--743 prove Pauli16 and Sp(4,2); lines 812--936 distinguish the
+    code and Pauli modules and prove zero full module intertwiners.
+  * verification/v774_arf_spinor_compiler.py, SHA256
+    3ef92c17d9f0de62212bab940ac2c017be866645d8a5b276bdcf2d92128bae8c:
+    lines 425--434 and 488--520 give the code family basis, sigma action, and
+    its three nonzero fixed classes.
+  * documents/experiments--theory-contracts--universalraum-fable-kernfragen-20260910--
+    fable-runde3--paper--tfpt_anschluss_zellen_seam_2026-09-14/sections/
+    001-section-evidenzkonvention-und-abgrenzung.tex, SHA256
+    b891a1d339566cc781e2b603c1201f797e9c9e2ce39c1ee62430b231c33efcd2:
+    lines 56--57 state the compiler clock, the three fixed contexts, zero fixed
+    nontrivial Paulis, and the explicit basis three cycle.
+  * research-20261026-real-boundary/SIX-LINE-THETA-COMPLETION.txt, SHA256
+    99676497d1de1769807c1e34208f45e12e95b6e9460618b1d84aa3e51e64675f:
+    lines 107--125 prove Jac(C)[2]=V_q direct_sum V_p with the orthogonal Weil
+    pairing and lines 147--169 fix the cubic transport orientation.
+  * research-20261026-real-boundary/Q-NATIVE-CLOCK-TEST.txt, SHA256
+    bf565a83ce5e7d8a70bd24ad77b97ae24610d37180b2e675c866aa6cb3578ce4:
+    lines 24--65 give A_Q and its block action.  Its lines 88--125 remain valid
+    only for the rejected literal target Q maps to scalar J on V_code.
+  * research-20261026-real-boundary/SOURCE-SELECTED-THETA-SPIN.txt, SHA256
+    cf4478191ccd75d62a2f049a54193541009bed24877df9cbe0ed9f942d07d717:
+    lines 70--94 prove the unique c invariant spin class; lines 97--145 prove
+    alpha^4=-I and beta^2=-I with the marked local phase.
+

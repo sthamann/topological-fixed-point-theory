@@ -1,0 +1,94 @@
+{
+  "contract": "seam-readout-flow-deck-20261005",
+  "research_id": "UR.SEAM.READOUT_FLOW_DECK.01",
+  "verdict": "PARTIAL",
+  "readout": {
+    "native_Y": "Matrix([[-1/3, -1/3, -1/3, 1/2, 1/2, 0, 0, 0]])",
+    "Y_euclidean_norm_squared": "5/6",
+    "T3_relative_embedding_index": "5/3",
+    "one_spinor_dimension": 16,
+    "spinor_sum_Y_squared": "10/3",
+    "charge_multiplicities": {
+      "-2/3": 3,
+      "-1/2": 2,
+      "0": 1,
+      "1/6": 6,
+      "1/3": 3,
+      "1": 1
+    },
+    "carrier_vertex_conformal_weight": "5/8",
+    "carrier_vertex_two_point_exponent": "5/4",
+    "full_glue_current_weight": "1",
+    "affine_current_two_point_exponent": "2",
+    "normalized_JJ_with_fixed_vertex_pair": "(Q**2*(a - b)**2*(w - z)**2 + k*(a - w)*(a - z)*(b - w)*(b - z))/((a - w)*(a - z)*(b - w)*(b - z)*(w - z)**2)",
+    "connected_JJ_with_fixed_vertex_pair": "k/(w - z)**2",
+    "common_fractional_vertex_amplitude_survives_normalization": false,
+    "native_joint_response_gram": "Matrix([[48, 10], [10, 35/3]])",
+    "native_joint_response_gram_determinant": "460",
+    "native_topological_R_current_response": "0",
+    "native_charge_weighted_RY_current_response": "115/36",
+    "native_uniform_scalar_port": "4 P0",
+    "zero_sum_family_projection_annihilates_uniform_scalar_port": true,
+    "native_matching_epsilon": "12*c3**3*exp(-2*alpha)/log(2)",
+    "matching_epsilon_status": "Necessary target-matching equality, explicitly not a source selection of the physical contact strength.",
+    "scope": "Canonical level-one lattice current algebra, fixed charged pair and its free-boson Ward identity. A defect sector sum or a different physical seam response may differ and must be selected by the original source."
+  },
+  "flow": {
+    "native_transfer": "Matrix([[1, 0, 0], [0, 1/2, 1/6], [0, 1/6, 1/2]])",
+    "eigenvalues": {
+      "1": 1,
+      "2/3": 1,
+      "1/3": 1
+    },
+    "unit_eigenspace_dimension": 1,
+    "fixed_vectors": [
+      "Matrix([[1], [0], [0]])"
+    ],
+    "pair_transfer": "Matrix([[1/2, 1/6], [1/6, 1/2]])",
+    "pair_logarithm": "Matrix([[-log(3) + log(2)/2, log(2)/2], [log(2)/2, -log(3) + log(2)/2]])",
+    "pair_transfer_commutes_sheet_swap": true,
+    "coordinate_hop": "1/6",
+    "parity_changes_in_one_transfer_step": false,
+    "phi_base_over_c3": "4/3",
+    "one_loop_QCD_beta_c3": "-7/(128*pi**3)",
+    "one_loop_QCD_beta_phi_base": "-7/(72*pi**3)",
+    "archived_RG_values_are_crossings": true,
+    "scope": "Native finite transfer with rates selected from its target spectrum, not a derived universal RG. The QCD beta test is restricted to the declared SM one-loop coefficient; no two-loop crossing scale was reproduced."
+  },
+  "deck": {
+    "native_one_particle_dimension": 16,
+    "native_spin_lift_terms": 256,
+    "geometric_deck_order": 2,
+    "NS_one_particle_half_shift_square": "-I",
+    "NS_one_particle_quarter_shift_fourth_power": "-I",
+    "fock_lift_square": "fermion parity",
+    "fock_lift_fourth_power": "I",
+    "fock_lift_commutes_fermion_parity": true,
+    "P_minus_U_P_plus": "0",
+    "relative_offset_delta_P_minus_is_forbidden_by_this_lift": false,
+    "scope": "The existing NS/bounding spin lift on Cl16. Geometric sheets, these Fock parity sectors, and D5/A3 chirality modules require separate explicit identifications; no identification is assumed."
+  },
+  "excluded": [
+    "The carrier 5/4 two-point exponent automatically remains in the normalized/connected U(1) current response of one canonical fixed charged sector.",
+    "The native v486 transfer has two independent stationary modes corresponding to c3 and phi_base.",
+    "The archived QCD crossings are zeros of the declared one-loop QCD beta function.",
+    "The native v506 NS Fock deck lift exchanges its two fermion-parity sectors and hence fixes a relative Hamiltonian offset by that exchange."
+  ],
+  "first_missing_original_choice": "A common source-selected charged seam state, observable/defect measure and time action. These must precede interpreting the relative 4/3 factor and carrier 5/4 exponent as physical alpha data.",
+  "sources": {
+    "verification/v1_e8_glue.py": "1978d66a85974e5fa189cf4dec507f9be4c4dcc113e90eb1b33a9aae9259a0d7",
+    "tfpt_explorer/source_charge_response.py": "1d81a25d7adbb833fb6cda74badda0a57542c61180a9b54d54f33aab5a8b5e69",
+    "tfpt_explorer/source_flavor_correlator.py": "30071b32961c74dad1a55b8aba00607df8b117a480d91819d04754024923fd1d",
+    "tfpt_explorer/neutral_source_response.py": "a6a21749cba24ae6c50c1f4e1cf95bf283c69ec9b2167a7089380188c5cd8898",
+    "verification/v486_transfer_full_rule.py": "a8315978fb4ecbb4d178754483b03915c1016995667ac1ab7a0ea6e8dacb5825",
+    "verification/v159_pyrate_gauge_crosscheck.py": "39d356b0e626d1a86c5a0e80fc4f2997f037c1d13058cc8db3052f959c895e5c",
+    "_archive/tfpt-45/technical_companion.tex": "fe31b27d99b7bd5c51c355cd198da505e3f8c5ae0111ea53a5e97b811e43693b",
+    "verification/v506_seam_clock_rigidity.py": "3f8605fb91c96583072913c5f2546cdd491a73f3ad2494c907a0115dcd3d450b"
+  },
+  "firewall": "Internal exact structural tests, not empirical evidence and not promotion of a physical TFPT claim.",
+  "validation": {
+    "normal_and_optimized_identical": true,
+    "unconditional_checks": true,
+    "source_hashes_stable_during_calculation": true
+  }
+}

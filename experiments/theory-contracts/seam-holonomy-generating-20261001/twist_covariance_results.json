@@ -1,0 +1,36 @@
+{
+  "steps": [
+    {
+      "step": "TW1 delta -> 0: the twisted code path converges linearly to the untwisted Theta_1 (Hamiltonian and pairing matrix)",
+      "pass": true,
+      "detail": "deviation at delta = 1e-3 / 1e-5: 2.24e-03 / 2.24e-05"
+    },
+    {
+      "step": "TW2 delta -> -delta: a Spin(10) element (pi rotation in the (Gamma_2, Gamma_3) plane, U Q U^dag = -Q) maps the twisted cell at delta onto the one at -delta, for the kinetic term and for the pairing matrix with an orthogonal channel map -> the two Cartan sectors are exchanged, G_+(delta) = G_-(-delta)",
+      "pass": true,
+      "detail": "U Q U^dag + Q = 0.0e+00; H_w(-delta) vs W H_w(delta) W^dag 0.0e+00; pairing matrix 0.0e+00; channel map orthogonal"
+    },
+    {
+      "step": "TW3 sum_A O_A^2 is holonomy covariant: on the twisted cell the one-loop mean field is site-independent and its spectrum equals, Cartan sector by sector, h_W(k +- delta) + f(k +- delta)^2 Sigma^rho_+- at every allowed momentum",
+      "pass": true,
+      "detail": "site dependence of Sigma^rho 7.5e-14; twisted one-loop spectrum vs momentum-space prediction 1.7e-14"
+    },
+    {
+      "step": "TW4 no channel is renormalised by the twist: ||M_{x,A}||_F is the same for every site, every channel and both twists",
+      "pass": true,
+      "detail": "max deviation 9.8e-15; common norm 6.3640"
+    },
+    {
+      "step": "TW5 flat connection: a twist by a full superlattice period is trivial (identical H_w and pairing matrix, alone and on top of a twist)",
+      "pass": true,
+      "detail": "period twist alone 1.6e-16; period + delta vs delta 1.6e-16"
+    },
+    {
+      "step": "TW6 at delta != 0 (twisted debug4, g = 0.5, and a twisted 16-site configuration with complex weight): the sign-exact Pfaffian weight agrees with the stabilised UDV determinant in modulus and phase, and the analytic HMC force with the twisted pairing matrix agrees with central finite differences of the Pfaffian log W",
+      "pass": true,
+      "detail": "debug4: rel |2 log|W| - UDV| 7.3e-14, phase 2.9e-11 (weights real there, |arg W| 1.4e-11); twisted cubic16 with a genuinely complex weight (|arg W| = 7.25e-02): rel 5.9e-16, phase 9.9e-12; force vs FD 7.0e-07"
+    }
+  ],
+  "passed": 6,
+  "total": 6
+}

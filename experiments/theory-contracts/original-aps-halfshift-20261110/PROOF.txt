@@ -1,0 +1,175 @@
+TFPTAPSHALFSHIFT20261110
+Can the original two-face collar realize the old q/r sector maps as
+signed spectral shifts, possibly followed by the forced charge correction?
+
+1. Inputs and decision criterion
+
+Use the actual R074 product collar, with retained labels and both quarter
+phases alpha in {1/4,3/4}, and the Weyl matrix M in v16 fold-results.json.
+Use the old q, r from the five-packet source, q = M^t(e8-e7),
+r = M^t(e5+e6), q.r = 0. Old q/r operations change the D8 charge coset.
+The proposed identification, tested here, replaces such an operation of
+charge a by the bare signed one-particle mode translation T_a on the
+original scalar cover, optionally using the exact two-face frame lift.
+There is no assumed equality between Calderon G and physical P_adm.
+
+It must carry the original charge action, the adjoint, and the ordered
+endpoint images. A mode product in the same net charge channel must agree
+in both orders when the old q/r current algebra requires it. Equality of
+spectra, graph norms, or traces alone cannot certify this identification.
+
+2. Exact fixed-label composition and its Ward test
+
+Write a scalar cover mode as N=8n+k, 0<=k<8. The original tangential
+frequency is p=N+alpha. Define T_a e_N=e_(N+8a_k) for uniform integral or
+half-integral a. Let Pi act on the labels by k->k+4 mod 8, and let eps(a)
+be 0 in the integral case and 1 in the half-integral case. Then
+  T_a T_d = T_(d+Pi^eps(d) a).
+This follows by reading the residue after the first translation. The
+test is exactly periodic in N, so the eight residue checks suffice.
+
+The pinned data, coordinates in label order 0,...,7, are
+  q = (-1, 1, 1,-1,-1, 1, 1,-1)/2,
+  r = ( 1, 1, 1,-1, 1,-1, 1, 1)/2.
+Pi q=q, Pi r differs from r. Set b=r-q and b_wrong=Pi r-q. Thus
+  T_-q T_r = T_b,  T_r T_-q = T_b_wrong,
+  T_q^-1 = T_-q,   T_r^-1 = T_(-Pi r).
+The old current root generators of weights -q and r commute since their
+inner product is zero and neither sum nor difference is a root. A cocycle
+phase cannot change the resulting Fourier destinations.
+
+M b = e5+e6+e7-e8, with (Y,T3)=(+1/2,-1/2);
+M b_wrong = -e5+e6+e7-e8, with (Y,T3)=(-1/2,+1/2).
+Both are color singlets and electrically neutral. If the original charged
+endpoints carry these Cartan actions, any common hypercharge-invariant
+form makes the wrong branch orthogonal to the intended branch. Indeed a
+constant hypercharge rotation multiplies the cross form by exp(i theta);
+invariance for every theta forces zero. This conditional Ward zero
+concerns the wrong branch, not the physical q/r response.
+
+The individual bare half shifts also fail the source Cartan test before
+any ordered comparison. For the original residue phase D(theta), their
+conjugation permutes the phases by Pi. An implementer transforming by a
+pure scalar character would commute with D(theta) at the CAR
+automorphism level. Changing a scalar Klein phase cannot alter that
+conjugation. In the fixed p<0 sea, the residue occupation differences
+are integer, namely (0,1,1,0,-1,0,0,-1) for T_q and
+(1,0,1,1,0,0,0,-1) for T_r. They are not the old half charges.
+The canonical graph Fock representation has periodic same-face Cartan
+rotations; an intertwiner carrying the required half-charge needs the
+opposite action of a 2pi residue rotation between its source and target
+sectors. The already supplied old AIA has this action, R070/R071.
+This test excludes a same-representation identification, not the
+sector-changing defect intertwiners of that parent.
+
+3. What the original graph can and cannot distinguish
+
+R074 gives beta=4pi, C(p)=1/(1+exp(beta*p)) on the second face, and
+G(p) the orthogonal projection on (1,u), u=exp(-beta*p/2).
+For an integral shift a within the residues the absolutely convergent
+signed trace of C(p)-C(p+8a_k) along the kth ladder is a_k by telescoping.
+In particular it agrees with the signed reference-sea difference.
+From R074 eqs. (7)-(8) applied separately to ladders the full geometric
+Hilbert-Schmidt defect squared of the bare simultaneous two-face shift is
+  sum_k 2 a_k tanh(2 beta a_k).
+Finite shift profiles, including the two half shifts, have finite
+commutator norm by the exponential tails of G(p) in both directions.
+
+Both endpoints have four entries of magnitude 1, so both yield
+8 tanh(2 beta). The exact filled-sea relative energy in each quarter is
+sum_k [4a_k^2+(k+alpha-4)a_k]. For both paths this is 29/2 at alpha=1/4
+and 31/2 at alpha=3/4. Neither scalar test sees the hypercharge sign.
+These are geometric graph and one-face energy computations with the
+stated sea subtraction. They are not R113 measure factors.
+
+The canonical exact graph transport for p->p' is F(p') F(p)^*, where
+F(p) has columns (1,u),(-u,1) normalized by sqrt(1+u^2).
+It intertwines the two G blocks and their complements. Frame products
+telescope, so this graph-preserving lift still obeys the composition
+law of section 2 and permutes the Cartan labels. Its polarization
+preserving Fock lift keeps the doubled G vacuum up to phase. Geometric
+transport therefore supplies neither a pure half-charge operator nor
+the required marked endpoint response.
+
+4. Forced charge correction and old field test
+
+The unique integral residue-diagonal translation closing the bad product
+is kappa=b-b_wrong=r-Pi r=(0,1,0,-1,0,-1,0,1). It has M kappa=2e5,
+Y=1, T3=-1 and squared norm four. Exactly,
+  T_kappa T_r T_-q = T_b = T_(Pi r) T_-q.
+The last expression exhibits the corresponding moving chart rule. Using
+it as a physical field map requires that the charge action and the state
+be carried with the chart. The correction is not a neutral phase.
+
+In the old level-one lattice field algebra r and -Pi r are orthogonal
+roots, both with Y=+1/2, T3=-1/2, and their regular normally ordered
+product has charge kappa up to the fixed cocycle. The integer field
+V_kappa has two creation and two annihilation legs in the folded CAR
+description. In the actual eight-point Fourier unfold its coefficient
+on creation arcs 0,1 and annihilation arcs 2,3 has absolute value 1/32
+from the two Fourier minors. The two quarter phases affect this
+coefficient only by unit modulus. Thus that field has a separated-arc
+term, and cannot be a field supported on just one cover arc.
+
+The permutation equality does not imply a vertex mode equality. Test
+it independently on the existing old Fold with the already fixed five
+q packets x_i, of charge q and oscillator grade three. Compare
+  A_i = (V_b)_0 x_i,
+  C_i = (V_kappa)_0 (V_b_wrong)_0 x_i.
+These are lattice L0 zero modes. The two final momenta agree exactly.
+The intermediate momenta Pi r and r have equal squared length and
+kappa has zero pairing with the original clock drift k+alpha-4.
+The correction thus leaves the original H energy unchanged.
+Neither calculation replaces a CAR permutation by a vertex identity.
+This tests the natural field-level candidate corresponding to the
+charge repair, with no oscillator or cocycle fitted to force equality.
+
+The three modes have zero net oscillator grade shift, since each
+charge a on its input momentum p has a^2/2+a.p=0. Expand the existing
+five packets in orthonormal oscillator coordinates. The vertex
+coefficients use exp(sum_n (a.h_-n) z^n/n) and contract deleted
+creation factors with -a. The Hermitian oscillator form is diagonal in
+the orthonormal monomials with factorial weights. All computations are
+exact in the old coefficient field. The omitted fixed-momentum
+cocycle phases have unit modulus and do not change the tested ranks or
+squared overlaps. The first correct norm divided by the input norm
+agrees with the independent old value 19017/4277 in both quarters.
+
+The correct and corrected images each have rank five; the cross Gram
+has rank five; the union has rank ten in both quarters. Therefore even
+arbitrary mixing of the five corrected outputs cannot yield a nonzero
+correct output. Each corrected packet has strictly positive squared
+normalized overlap with its intended packet, ranging from approximately
+0.218 to 0.692, and all are strictly below one. Charge and time were
+repaired, but the simple ordered correction is not the field transport.
+The Gram and separation are statements about the old Fold, not about
+their possible projections in a physical weighted quotient.
+
+5. Consequence for the common physical source
+
+Use the already supplied NS/R sector-changing fields and their whole
+charge-balanced words, not fixed-label half translations, scalar phase
+repair, or the ordered minimal-charge vertex product as the physical
+insertion. At the actual APS consumer require an intersector transport
+with the central Cartan sign, actual adjoint, and two independently
+specified q/r output images. The existing two-packet neutral probes
+give a first test once the sector-resolved original fibre is supplied.
+Carry them with the same physical state, clock, full selector, and
+reference. A different coupled transport is not excluded.
+
+The existing installed original endpoint/fibre execution is documented
+in ORDERED-RESET-CONTRAST.txt. It supplies no original atoms and reports
+original_blocked_fiber_packet missing before aggregation. The two
+physical endpoint forms, their normalization, and F1 are uncomputed.
+No conclusion about a physical 3+1D source, tensor pole or gravity
+follows from this scoped result.
+
+Original data and independent checks
+R074 CALDERON-OPERATION-SOURCE-PROOF.txt, sections 1-4.
+R070 COLOR-SPIN-SOURCE-INTERFACE-PROOF.txt, sections 2 and 5.
+R071 MIXED-SPIN-WORD-PROOF.txt, sections 1-5.
+v16 fold-results.json and check_ramond_full_return_20261110.py.
+check_tfpt_family_middle_ordered_cut_20261110.py and its old norm anchor.
+TFPT-P1-APS-TRANSPORT-20261110.txt, same collar transport and physical scope.
+check_original_aps_halfshift.py, analytic identity controls and exact checks.
+check_charged_correction.py, both five-packet Gram calculations.

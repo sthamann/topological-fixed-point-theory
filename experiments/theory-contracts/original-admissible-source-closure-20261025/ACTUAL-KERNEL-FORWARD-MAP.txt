@@ -1,0 +1,314 @@
+TATSAECHLICHER RANDKERN: VORWAERTSPFAD ZUR ALTEN POLARISATION
+================================================================
+
+Datum: 2026-10-25
+Atlas Auditrahmen: Revision b97bc83c0fac45ea6bf03cf7
+Arbeitsfrage: Liefert der vorhandene Originalpfad aus den rohen Nahtdaten einen
+konkreten C_Sigma auf demselben Polarisationsraum wie B_a,u, oder beginnt er
+erst mit einem vorgegebenen freien beziehungsweise Transferzustand?
+
+Urteil: PARTIAL, mit einem positiven endlichen Zwischenresultat und einer
+exakten offenen Anschlussstelle.
+
+* v519/v526 konstruieren und benutzen tatsaechlich einen konkreten endlichen
+  freien NS Kreiskern samt CAR Zustand, OS Reflexion, endlicher Kreisdomäne und
+  Zeitskala. Das ist mehr als die spaeteren blossen D_F -> C_F Inversionen.
+* Dieser Kern wird als chiraler NS Vakuumkern, also als Summe ueber NS+, in den
+  Pfad eingesetzt. Der vorherige Pfad v155 bis v210 konstruiert ihn nicht aus
+  den rohen P1 Nahtdaten.
+* Der in v519/v526 wirklich ausgefuehrte Kreiszeitschritt alpha_1 erhaelt den
+  Zustand exakt. Die alte Windung u=M_z erfuellt dagegen u P u*=P+Pi. Diese
+  Operatorwirkungen sind verschieden. Kein vorhandener Aufruf transportiert
+  das alte u in den endlichen NS Standortoperator oder zurueck.
+* v210 liefert ebenfalls einen konkreten endlichen C_N, aber sein Selektor hat
+  unter der festgehaltenen Fourier Einbettung den starken Grenzwert null. Die
+  Abweichung von P=1_(B_a<0) ist daher nicht spurklassig. Der neue direkte Test
+  unten bestaetigt das durch linear wachsende endliche Spurnormen.
+
+Damit ist kein negativer Satz ueber alle moeglichen Nahtquantisierungen
+bewiesen. Bewiesen ist enger: Im tatsaechlich vorhandenen und ausgefuehrten
+Pfad fehlt die eine Abbildung, welche den endlichen freien NS Kern als
+Covarianz auf demselben H=L2(S1) und mit derselben Windung u wie B_a aus den
+urspruenglichen Nahtdaten identifiziert.
+
+
+1. Vergleichskriterium aus dem bereits bewiesenen Anschluss
+------------------------------------------------------------
+
+Der bestehende Contract KMS-AND-CARRIER-TRANSPORT.txt:38-67 setzt
+
+  H=L2(S1),
+  B_a psi_n=(n+a)psi_n,       0<a<1,
+  u psi_n=psi_(n+1),
+  P=1_(B_a<0),
+  u P u*=P+Pi.
+
+Fuer einen positiven Kontraktor C auf genau diesem H genuegt
+
+  C-P in L1(H),                                                   (1)
+
+damit der relative Fredholmfaktor unter derselben Windung exakt 1-z ist.
+Die treue KMS Familie C_beta=(I+exp(beta B_a))^-1 erfuellt (1) fuer jedes
+beta>0; siehe dort:69-138. Gesucht wird hier deshalb keine Gleichheit mit
+einer bestimmten Fermi Funktion. Der kleinste belastbare Test ist:
+
+  (A) gemeinsamer Hilbertraum und gemeinsamer Definitionsbereich,
+  (B) C_Sigma-P spurklassig,
+  (C) ein tatsaechlicher Operatortransport des alten u mit
+      u C_Sigma u* - C_Sigma als Index-eins Defekt.
+
+Gleiche Dimension, Clockinvarianz oder eine endliche KMS Darstellung ersetzen
+diese drei Angaben nicht.
+
+
+2. Graph zuerst: Was die fruehe Kette wirklich aufruft
+------------------------------------------------------
+
+Der Codegraph zeigt keine Aufrufkette v155 -> v160 -> v175 -> v177 -> v210
+-> v239. Jeder run Block ruft nur seine lokalen Hilfsfunktionen auf. Die
+inhaltlichen Verweise sind Voraussetzungen und Ergebnisverweise, keine
+Datenleitung eines gemeinsamen C_Sigma.
+
+v155_quasifree_boundary.py:62-68,71-134
+  _pure_cov erzeugt Q per Zufallsorthogonalmatrix aus einem Seed. run prueft
+  endliche Einschraenkungen und Wick Identitaeten. Die Aussage, der Nahtbulk
+  sei ein reflexionspositives freies Feld, wird als die verbleibende physische
+  Praemisse ausgegeben. Es gibt keine Randdomaene, Reflexion oder u Abbildung.
+
+v160_seam_gaussianity_from_pf.py:84-91,163-268
+  Auch hier stammt die 8 mal 8 Kovarianz aus einer Zufallsorthogonalmatrix.
+  Der dreidimensionale Transfersatz wird als zu klein fuer den vollen
+  Schwingerkegel erkannt. Der primitive RP Transport auf diesem vollen Kegel
+  bleibt ausdruecklich Praemisse.
+
+v175_net_existence_full_cone.py:90-160
+  Das Einteilchenspektrum wird als Liste eingesetzt und zweitquantisiert.
+  Der eigene Schluss nennt genau die offene Identifikation: Der tatsaechliche
+  Naht Calderon Kern muesse der gapped contraction auf P1 minus mu4 sein.
+
+v177_seam_marking_kernel.py:65-138 und
+v178_marks_kernel_attempt.py:74-148
+  v177 formuliert C_Sigma=U^-1 C_mu4 U als offene Operatoridentitaet. v178
+  beweist auf dem dreidimensionalen H1 Block nur die diagonale Schurform und
+  laesst die Reduktion des vollen L2 Randoperators auf diesen Block plus die
+  Rang acht Polarisation offen. Weder U noch C_Sigma wird konstruiert.
+
+v199_seam_state_invariance.py:46-96
+  Fuer ein beliebig erzeugtes, mu4 blockdiagonales H wird die Bedingung
+  [rho,H]=0 getestet. Das ist ein korrektes Symmetriekriterium, liefert aber
+  weder H aus der Naht noch die alte Windung u.
+
+v210_mark_local_dtn.py:58-103,106-187
+  Dies ist der erste konkrete vorwaerts berechnete Operator der Kette:
+
+    Lambda_N=diag(|n|)+Toeplitz(f),
+    C_N=1/2(1+sgn(Lambda_N-mu_N)).
+
+  Das Markenprofil f ist eine gewaehlte Summe von vier von Mises Buckeln und
+  mu_N ist die Mitte des sortierten endlichen Spektrums. Der Aufruf beweist
+  die mu4 Clockinvarianz dieses gewaehlten Profils. Er erklaert selbst die
+  physische mark local Praemisse fuer offen. Er enthaelt weder die gedrehte
+  Domaene von B_a noch eine CAR Spinstruktur noch den Transport von u=M_z.
+
+v239_kms_thermal_time.py:46-116
+  Der Aufruf beginnt mit Lambda=diag(0.4,1.1,2.0), bildet die endliche
+  Gibbsdichte und prueft die KMS Identitaet. Die Identifikation der modularen
+  Zeit mit dem geometrischen Boost bleibt offen. Das ist keine Ausgabe aus
+  v210 und kein Naht Calderon Operator.
+
+v366_mmst_seam_collar.py:52-110
+  Die spaetere MMST Rechnung setzt die Zugehoerigkeit zur freien chiralen
+  Gitterfermionklasse voraus. Ihr eigener Rest S3 ist gerade die wirkliche
+  Gitterrealisierung des Kragens. Sie konstruiert daher keinen fehlenden
+  Vorwaertspfeil zu C_Sigma.
+
+
+3. Positiver Fund: v519/v526 besitzen einen wirklichen endlichen Kern
+--------------------------------------------------------------------
+
+v519_woit_theta_rp_free.py:1-86,97-106,727-766 konstruiert auf N=16
+Majorana Standorten den freien chiralen NS Kern
+
+  c_N(d)=(2/N) sum_(p in NS+) sin(pd)
+        =(2/N)/sin(pi d/N) fuer d ungerade,
+  c_N(d)=0 fuer d gerade.
+
+Der zugehoerige quasifreie Zustand ist rein. Der Code gibt eine konkrete NS
+Antiperiodizitaet, die Standort CAR Algebra, die Reflexion j -> k-j samt
+Spinzeichen, den OS Phasenfaktor eta=+i und den Viertelschritt der Kreisclock.
+Die Tests in v519:844-898 pruefen Zustand, Reflexion und Clockwirkung.
+
+v526_seam_thermal_kms_nariai_bridge.py:61-120,301-330,495-519 fuehrt genau
+diesen Kern fuer N=8 und N=16 weiter. Der ausgefuehrte Pfad rekonstruiert die
+OS Halbseitenalgebra, den treuen endlichen modularen Zustand und die
+Transferzeit. Eine Kreisstufe ist 2 pi/N, beta=N Stufen und daher
+beta_angle=2 pi. Der aktuelle Lauf bestand 22/22 Checks.
+
+Das ist ein tragfaehiger positiver Zwischenanschluss:
+
+  gewaehlter freier chiraler NS Zustand
+    -> expliziter endlicher Zweipunktkern
+    -> explizite OS Reflexion und Halbseitenalgebra
+    -> expliziter modularer Zustand und endliche Zeit.
+
+Er beginnt jedoch bei der Auswahl NS+, also bei der All Right Movers
+Polarisation. v519 nennt sie selbst den freien NS Vakuumkern. Der fruehe
+Originalpfad leitet diese Auswahl nicht aus P1 her. Das stimmt mit dem
+September Audit source-conformal-kernel-selection-20260921/PROOF.md:8-34 und
+:270-289 ueberein: P1 enthaelt orientierte Naht, RP Randkern, Einheitswindung
+und c3, aber keine vollstaendige geladene Feldalgebra mit Zweipunktfunktion
+und Zeitwirkung.
+
+
+4. Der kleinste entscheidende Test: Clockzeit ist nicht die alte Windung
+-----------------------------------------------------------------------
+
+Im alten Kreis verschiebt u=M_z die Fouriermoden und damit die Polarisation:
+
+  u P u*=P+Pi.                                                     (2)
+
+Im tatsaechlich ausgefuehrten v526 Pfad ist der Einzelschritt S1 dagegen die
+antiperiodische Standortverschiebung. v526:495-519 prueft exakt
+
+  S1 c_N S1^T=c_N.                                                (3)
+
+Dasselbe gilt fuer die daraus gebildete quasifreie Kovarianz. Folglich ist
+der relative Defekt des gelieferten Zeitschritts null. Unter (2) ist er Rang
+eins. Die Operatorwirkungen koennen daher nicht unter einer zustandserhaltenden
+Identifikation gleichgesetzt werden.
+
+Das ist keine Forderung, dass die physische Kreiszeit selbst einen Defekt
+erzeugen muesse. Es zeigt praezise, dass v519/v526 zwar Zeit und Zustand
+liefern, aber noch nicht den fuer den alten Faktor benoetigten zweiten
+Operator u transportieren. Ein auf den Standorten diagonaler Phasenoperator
+waere ein moeglicher Fourierdualer Kandidat, kommt in diesem Quellpfad aber
+nicht als hergeleitete Nahtoperation vor und wird hier nicht eingesetzt.
+
+
+5. Direkter Test des einzigen fruehen konkreten C_N
+---------------------------------------------------
+
+Der Originalaufruf
+
+  python3 verification/v210_mark_local_dtn.py
+
+bestand 6/6 Checks. Danach wurde ohne neuen Harness dieselbe importierte
+mark_sum, dtn und covariance Funktion mit dem alten abgeschnittenen
+
+  P_N=diag(1_(n<0)),       n=-N,...,N,
+
+verglichen. Fuer 0<a<1 ist dies genau die Abschneidung von 1_(B_a<0).
+
+  N     ||C_N-P_N||_1     rank(C_N)    ||C_N|| auf |n|<=4
+  16    16.4142744545          17        6.73680243868e-4
+  32    32.4175478264          33        2.82016696226e-11
+  48    47.0001023389          49        8.97688831494e-16
+  64    64.9909238852          65        1.10368288774e-15
+
+Der bereits analytisch bewiesene Grund steht in
+source-conformal-kernel-selection-20260921/PROOF.md:182-244: mu_N wandert wie
+N/2 und C_N verschwindet auf jedem festen Fourierblock. Daraus folgt direkt,
+dass die Spurnormen ||C_N-P_N||_1 nicht gleichmaessig beschraenkt sein koennen:
+auf beliebig vielen festgehaltenen negativen Moden konvergiert C_N gegen null,
+waehrend P_N dort eins bleibt. Die Tabelle ist die kleinste aktuelle
+Gegenprobe am echten Code. v210 liegt damit nicht in der in (1) benoetigten
+Polarisationsklasse.
+
+
+6. Spaetere Konstruktionen schliessen diesen Pfeil nicht
+--------------------------------------------------------
+
+v526 ist positiv relevant, aber beginnt mit dem freien NS Kern. v724 baut
+KMS Kovarianzen aus einem 6 mal 6 Mutteroperator, der aus Compiler und Sheet
+Matrizen definiert wird; derive_internal_objects in
+v724_phys_t3b_modular_flows.py:156-199 wendet danach die Fermi Funktion an.
+Es gibt dort keine Abbildung vom alten Kreis oder vom rohen Calderon Datum.
+Der aktuelle Aufruf endet zudem mit QCD ohne Handsetzung=FAIL, obwohl die
+zwölf mechanischen internen Checks bestehen. v724 ist deshalb kein Anschluss
+des hier gesuchten Randkerns.
+
+Der bekannte v258 Kreis D_F -> C_F -> D_F wurde nicht erneut benutzt. Der
+bereits vorhandene Audit P1-INSERTION-TANGENT.txt:53-74,175-188 bleibt
+massgeblich: Eine Fermi Inversion propagiert eine gelieferte Kovarianz, waehlt
+aber weder C_Sigma noch ihre Einbettung.
+
+
+7. Genau verbleibender Beweisschritt
+------------------------------------
+
+Der kleinste positive Anschluss braucht keinen neuen KMS Fit. Er braucht eine
+urspruengliche lokale oder globale Abbildung T mit folgenden nachpruefbaren
+Wirkungen:
+
+  T : L2(S1,B_a Domaene) -> H_Sigma,
+  C_Sigma - T P T* in L1 auf dem reduzierenden Bild,
+  u_Sigma T = T u,
+  Theta_Sigma T = T Theta_a,
+
+wobei u_Sigma eine bereits vorhandene Nahtoperation sein muss. Fuer den
+endlichen v519 Kern waere zusaetzlich eine kompatible induktive Einbettung
+der N Standort CAR Raeume erforderlich. Erst dann ist die Aussage dieselbe
+Spurklasse nicht bloss endlich dimensional trivial.
+
+Erfolgskriterium: Der tatsaechliche Quellaufruf erzeugt T,C_Sigma,u_Sigma
+und die obigen Relationen, worauf der bewiesene Spurklassensatz sofort den
+Faktor 1-z liefert.
+
+Abbruchkriterium fuer diesen Pfad: Der einzige gelieferte u_Sigma bleibt die
+zustandserhaltende Kreistranslation aus (3), oder C_Sigma wird weiterhin als
+NS+ Vakuum beziehungsweise mark local Profil eingesetzt. Dann ist der freie
+Kern ein konsistenter Kandidat, aber keine aus den rohen Nahtdaten gewonnene
+Quelle des alten relativen Defekts.
+
+
+8. Ausfuehrung und Quellenfingerabdruecke
+-----------------------------------------
+
+Aktuell ausgefuehrt:
+
+* v155, v160, v175, v177, v178, v199, v210, v239 und v366: alle jeweiligen
+  internen Checks bestanden; ihre oben genannten offenen Praemissen blieben
+  in der Ausgabe erhalten.
+* v526: 22/22 bestanden, FINAL VERDICT SUCCESS im eigenen freien Sandboxscope.
+* v724: 12/12 mechanische Checks bestanden; KILL AUDIT QCD ohne Handsetzung
+  blieb FAIL.
+* Direkter v210 Spurklassentest: Werte in Abschnitt 5.
+
+Quellen, inklusive SHA256:
+
+* verification/v155_quasifree_boundary.py
+  83b2fb94b4fc1c577b8a10497c02d2acece8774d75351095265274a9db0da24d
+* verification/v160_seam_gaussianity_from_pf.py
+  b1df030b7f9645e7915490180c20b70c14fa7dfe1c12006edd1018f0e7a19e00
+* verification/v175_net_existence_full_cone.py
+  969ccd9c2a6ba5a4edb46219ff3aeeaa5c3e7c67ff01bed49ccc981dc7960426
+* verification/v177_seam_marking_kernel.py
+  bf6ad1e0d4dd21ca3b66790b004c2d202a67ea1e94a249c4f09437cc4b6a1c09
+* verification/v178_marks_kernel_attempt.py
+  3d98e1d8ab0a9cbd5f1d9e914818baffa506ca1269cd09ddff0a4d01822c8036
+* verification/v199_seam_state_invariance.py
+  566ea460d3d4198e6437c528f96f921d0b857abb167ad37216e9fee9c38dab0e
+* verification/v210_mark_local_dtn.py
+  5a464a7bb8bb23e81d6a91aa7205b3d9000262a0150203fdbc13d0f4696995a3
+* verification/v239_kms_thermal_time.py
+  cac2d121c789de726085f83049cac1d45b251949571a27da9ea8029cba1735c5
+* verification/v366_mmst_seam_collar.py
+  c349773dc520ef36a2084b7cb6ea3e66dd4c787dfab3fa5de435e052f6873837
+* verification/v519_woit_theta_rp_free.py
+  e86e3a055b58051c7978d8f10ee527948bac758fd4665ac216e18a71cc8c1ee9
+* verification/v524_woit_beta2_os_quotient.py
+  ff258cfc01f1014d1e497ef3723c2aa95b7cae786c66c5febbd9af76ee6c2772
+* verification/v526_seam_thermal_kms_nariai_bridge.py
+  250a6c344c028159ac3965abb67ca5717c9e1ad59d5fb6a8304a3d2065820347
+* verification/v724_phys_t3b_modular_flows.py
+  19ee886bab409be09034da299a7d7d8f57099e035f115b9f056823a4987cb6d0
+* experiments/theory-contracts/source-conformal-kernel-selection-20260921/PROOF.md
+  c3c7ec0290e1d710123af7d067905f554c159f9fe0607ac484eb5451e6be6e11
+* experiments/theory-contracts/original-admissible-source-closure-20261025/KMS-AND-CARRIER-TRANSPORT.txt
+  9efcfb0d68e16db842aab97b7171b2d667e7b065cb4c6ab8138102acc4c8fb68
+* experiments/theory-contracts/seam-collar-multifield-20261016/P1-INSERTION-TANGENT.txt
+  b49aa4ec77bc22029545c4f8f2584e80e63fd8bb6b8a0ce8536baf4137d3ea55
+
+Der Atlas Befund finding:old-seam-relative-determinant-is-stable-in-faithful-
+kms-class wurde als bereits bewiesener Rahmen wiederverwendet. Keine Atlas,
+Index, Ledger oder Paperdatei wurde veraendert.

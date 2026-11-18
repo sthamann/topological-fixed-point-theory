@@ -4,6 +4,16 @@
 
 Exact ledger statuses remain at the linked original rows and in registry.json. Citations are source links, not proof certification.
 
+## 7. Die lokale Polnäherung wird präziser, das relativistische Feld bleibt offen
+
+[documents/experiments--theory-contracts--universalraum-singlet-observable-20260915--tmp--pdfs--TFPT_Universalraum_Richtige_Kette_Konsolidierung_2026-09-15_v1.6.7/sections/013-subsubsection-4-5-dieselbe-urspr-ngliche-fermionantwort-.tex:161-204](../../../../documents/experiments--theory-contracts--universalraum-singlet-observable-20260915--tmp--pdfs--TFPT_Universalraum_Richtige_Kette_Konsolidierung_2026-09-15_v1.6.7/sections/013-subsubsection-4-5-dieselbe-urspr-ngliche-fermionantwort-.tex#L161) · `section:f2a2540bf039e794a727` · subsection
+
+Die externe Resolventenabschätzung ist korrekt: Im Kreis mit Radius [formula in source] um den tatsächlichen, unbekannten negativen Pol [formula in source] gilt
+
+Explicit source references:
+
+- [experiments/theory-contracts/universalraum-two-bank-transfer-20260915/LATE_AUDIT.md](../../../../experiments/theory-contracts/universalraum-two-bank-transfer-20260915/LATE_AUDIT.md#L1) · explicit_file_citation
+
 ## 8. Während der Arbeit entdeckte Änderung: „Kommutant 7`` richtig einordnen
 
 [documents/experiments--theory-contracts--universalraum-singlet-observable-20260915--tmp--pdfs--TFPT_Universalraum_Richtige_Kette_Konsolidierung_2026-09-15_v1.6.7/sections/013-subsubsection-4-5-dieselbe-urspr-ngliche-fermionantwort-.tex:205-263](../../../../documents/experiments--theory-contracts--universalraum-singlet-observable-20260915--tmp--pdfs--TFPT_Universalraum_Richtige_Kette_Konsolidierung_2026-09-15_v1.6.7/sections/013-subsubsection-4-5-dieselbe-urspr-ngliche-fermionantwort-.tex#L205) · `section:91c4733af4b09a9f4ebf` · subsection
@@ -609,9 +619,3 @@ Auf der Referenz [formula in source] füllt das lokale CPTP-Instrument mit Kraus
 [documents/experiments--theory-contracts--universalraum-spin-lift-basics-20260915--tmp--pdfs--TFPT_Universalraum_Spinlift_Hauptdokument_2026-09-15_v1.6.10/sections/018-subsection-50-gegen-die-lteren-gepinnten-zertifikate.tex:243-290](../../../../documents/experiments--theory-contracts--universalraum-spin-lift-basics-20260915--tmp--pdfs--TFPT_Universalraum_Spinlift_Hauptdokument_2026-09-15_v1.6.10/sections/018-subsection-50-gegen-die-lteren-gepinnten-zertifikate.tex#L243) · `section:4dba61194e3f14b294c9` · subsubsection
 
 @ > p( - 2 ) * 0.5000 > p( - 2 ) * 0.5000@ Aussage aus den Eingaben & Entscheidung für v1.6.7 \\ Korrigierter Anfangskommutant 3829536 / 1444233216 & Bestätigt; keine neue Größe gegenüber v1.6.6 \\ Nur SU(4) oder nur Spin(10) als zusätzliche Kontrollen & Übernommen; echte Zwischenstufen statt binärer Verfügbarkeit \\ Volle Gruppe plus alle Modenbesetzungen erzeugt volle Sektoralgebra & Unabhängig bestätigt, ausdrückl
-
-## 3.1 Warum vier und nicht eins?
-
-[documents/experiments--theory-contracts--universalraum-spin-lift-basics-20260915--tmp--pdfs--TFPT_Universalraum_Spinlift_Hauptdokument_2026-09-15_v1.6.10/sections/018-subsection-50-gegen-die-lteren-gepinnten-zertifikate.tex:294-360](../../../../documents/experiments--theory-contracts--universalraum-spin-lift-basics-20260915--tmp--pdfs--TFPT_Universalraum_Spinlift_Hauptdokument_2026-09-15_v1.6.10/sections/018-subsection-50-gegen-die-lteren-gepinnten-zertifikate.tex#L294) · `section:5a54e89abf080c1fd62c` · subsubsection
-
-Im Ladungssektor N=64 schreiben wir Zustände relativ zur gefüllten Fermionreferenz [formula in source] . Bei k Bosonen gibt es 2k Löcher. Der Singulettbereich auf dieser Stufe liegt in

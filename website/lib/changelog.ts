@@ -42,6 +42,32 @@ export const CHANGELOG_MACROS: Record<string, string> =
 
 export const CHANGELOG: ChangelogEntry[] = [
   {
+    "date": "2026-11-05",
+    "dateLabel": "2026-11-05",
+    "heading": [
+      {
+        "k": "t",
+        "v": ": shared c3/P1/P2 source reconciliation"
+      }
+    ],
+    "items": [
+      [
+        {
+          "k": "t",
+          "v": "Reconciled the structured P1 kernel, its scalar normalization and P2 interface with the shared four-mark/anchor derivations, recovered analytic monodromy and finite W-bridge closures. Added an Architecture source synthesis and corrected historical residual wording, the common status card, website explanations and the authored Atlas map. Compact Atlas answers now retain explicit qualifications. No verification or axiom marker was promoted. Source audit: "
+        },
+        {
+          "k": "c",
+          "v": "REC20261105C3"
+        },
+        {
+          "k": "t",
+          "v": "."
+        }
+      ]
+    ]
+  },
+  {
     "date": "2026-10-18",
     "dateLabel": "2026-10-18",
     "heading": [
@@ -110778,6 +110804,69 @@ export const CHANGELOG: ChangelogEntry[] = [
         {
           "k": "t",
           "v": ")."
+        }
+      ],
+      [
+        {
+          "k": "b",
+          "c": [
+            {
+              "k": "t",
+              "v": "Correction, 2026-10-27."
+            }
+          ]
+        },
+        {
+          "k": "t",
+          "v": " The original local routine overwrote its network update, while its check used a separate Kronecker matrix. The repaired "
+        },
+        {
+          "k": "c",
+          "v": "v395"
+        },
+        {
+          "k": "t",
+          "v": " checks the actual routine on all "
+        },
+        {
+          "k": "m",
+          "v": "27"
+        },
+        {
+          "k": "t",
+          "v": " basis inputs and uses the full "
+        },
+        {
+          "k": "c",
+          "v": "v486"
+        },
+        {
+          "k": "t",
+          "v": "/"
+        },
+        {
+          "k": "c",
+          "v": "v487"
+        },
+        {
+          "k": "t",
+          "v": " rule. Its even/odd basis gives "
+        },
+        {
+          "k": "m",
+          "v": "O^{\\mathsf T}M^6O=\\operatorname{diag}(1,64/729,1/729)"
+        },
+        {
+          "k": "t",
+          "v": ". One hand is one network step plus six family substeps, not "
+        },
+        {
+          "k": "m",
+          "v": "T_{\\mathrm{micro}}^6"
+        },
+        {
+          "k": "t",
+          "v": ". This corrects the finite recursion and does not identify a physical OS transfer or charged field."
         }
       ]
     ]

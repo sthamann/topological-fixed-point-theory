@@ -1,0 +1,43 @@
+{
+  "contract": "p1-marked-execution-origin-20261112",
+  "date": "20261112",
+  "question": "Does the original P1 source select native marked execution and event weights after joint covariance and full tracked-history constraints?",
+  "verdict": "PARTIAL",
+  "verdict_enum": [
+    "PARTIAL",
+    "REFUTED",
+    "KERNEL_VIOLATION"
+  ],
+  "claims_tested": [
+    "MATH.NATIVE.JOINT.MARK.EVENT.CLASSIFICATION.01",
+    "MATH.NATIVE.TRACKED.WEIGHT.CANCELLATION.01",
+    "MATH.NATIVE.Q4.REFLECTION.TRACE.01",
+    "MATH.NATIVE.MARKED.TWOSTEP.CLOSURE.SELECTION.01"
+  ],
+  "gates": [
+    "T1",
+    "T2",
+    "T8"
+  ],
+  "kills": [
+    "Inferring fixed-mark t=1/3 from simultaneous full G31 covariance and uniform unmarked marginals",
+    "Inferring t from the original tracked stopped quantum channel",
+    "Identifying original Q4 as a one-step mixture of native V5 reflection conjugations"
+  ],
+  "checker": "check_original.py",
+  "firewall": "experiments",
+  "promotion": false,
+  "source_pins": {
+    "experiments/theory-contracts/compiler-correlated-event-clock-20260919/source_channel.py": "3852fabaf10c143fe20238b67406df6396f85c931dfd4834fe91a2d7ef900593",
+    "experiments/theory-contracts/compiler-correlated-event-clock-20260919/PROOF.txt": "bf1f85c99f5f89a0a15da1af5e3ff321c2756fda132a9f8d644f9ce0e08c2f5c",
+    "experiments/theory-contracts/compiler-current-product-20260919/instrument_source_test.txt": "8d06201c7677f24ad702e098bcb2e4eb0da53724b96ac6b425919e0475847188",
+    "experiments/theory-contracts/joint-native-algebra-selection-20261016/PROOF.md": "dd94d9a85e61618bfabbfd462e0fca9f8ecc58e5b961c09a9c8656886793b5e8",
+    "experiments/theory-contracts/joint-native-algebra-selection-20261016/ORIGINAL-P1-VARIATION-GAP-AND-EVENT-SELECTION.txt": "4b794dd141e3a5f0a12c560c1ef51a80e72e962f0a78d245577b1e93f058c672",
+    "experiments/theory-contracts/original-local-source-variable-background-20261102/FULL-SOURCE-CORRECTION.txt": "7d6f7e992b4e1f7290ce418b09e7d00dbd28c71fe8d2e16f8d6eeb7154f6f2e9",
+    "experiments/theory-contracts/original-local-source-variable-background-20261102/SOURCE-DETERMINACY.txt": "41ae757ef457a2f0c580ffea5cc01370ae22c3f95bc6fd18afc764bc3d362d4f",
+    "documents/archive--tfpt-45--source_extracts--01_boundary_kernel_source/sections/002-section-intrinsic-closed-branch-and-canonical-rigid-obje.tex": "1de90a4a7379bef804cc7815d72c0f86bb398a5771e9b00997c4bb15e8815f9e",
+    "docs/research/fundamental-plan/TFPT-P1-PAARABBILDUNG-NULLWORT-20261112.txt": "1791f07875aa9021ddd627efc76acc18c96e3f3fa5146a589cfe4f8f3e16cbd1",
+    "experiments/theory-contracts/original-paper-source-reconciliation-20261102/fieldsearch_20261106P/source/evaluator.py": "2a42bddf5f0d037009fca673ccb2c4ac4b729f6b7c87445a4f9f244d72ed4962"
+  },
+  "scope": "Native finite class and necessary original source reader. No physical P1 value, field map, 3+1D source, or complete TFPT solution."
+}

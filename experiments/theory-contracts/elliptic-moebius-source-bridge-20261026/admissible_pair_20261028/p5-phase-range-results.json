@@ -1,0 +1,42 @@
+{
+  "carrier": "Lambda2(C5) in original PAIRS basis; original E8 Cm and P5",
+  "family": "Phi o Ad(a P_CC + b P_CW + c P_WW), |a|=|b|=|c|=1",
+  "objective": "Tr(P5 J) = |a+4b+c|^2/6 + |a+b|^2",
+  "normalization": "unnormalized Choi trace 10; divide objective by 10 for normalized probability",
+  "exact_min": "2/3",
+  "min_phases": [
+    "-1",
+    "1",
+    "-1"
+  ],
+  "exact_max": "10",
+  "max_phases": [
+    "1",
+    "1",
+    "1"
+  ],
+  "proof": "Gauge b=1. Put t=Re(a), s=|a+4|=sqrt(17+8t), 3<=s<=5. Minimizing over c gives (s-1)^2/6+(s^2-9)/4, strictly increasing for s>=3; hence 2/3 at s=3. Triangle bounds give 10; equal phases attain it. Continuous domain gives full interval.",
+  "legacy_one_sided_control": "8/3 (normalized probability 4/15)",
+  "coverage": "only this phase family, not all SM-covariant channels and not all processes",
+  "source_bridge": "P5 embedding into local P1 A_adm and operational sewing rule remain unproved; none of these phase channels is thereby selected",
+  "clock": "original U5 is scalar on Lambda2 C5 and cannot distinguish this family",
+  "all_petersen_cptp": {
+    "exact_min": "0",
+    "exact_max": "10",
+    "construction": "Dm flips 3 of the 6 nonzero entries of each original Cm, with all other entries unchanged. J0 = (1/3) sum |Dm>><<Dm|.",
+    "controls": "Exact orthogonality to all Cm, every individual Dm effect = Cm effect, TP, unital, every one of 100 populations unchanged.",
+    "interval_proof": "0<=P5<=I and Tr(J)=10. Endpoints J0 and Jphi meet bounds; all convex mixtures preserve the full population and yield the interval.",
+    "scope": "All CPTP channels with full fixed Petersen population; the exhibited zero-construction is not SM-covariant.",
+    "zero_candidate_sm_covariance": "fails: SU3 E01-E10 commutator of M0=3J0 has exact HS norm squared 576"
+  },
+  "same_p5_as_psi": {
+    "phases": [
+      "-1",
+      "1",
+      "(1+2i sqrt(2))/3"
+    ],
+    "P5": "2",
+    "P45": "16/3",
+    "psi_P45": "4 (prior exact six-mark original-source check)"
+  }
+}

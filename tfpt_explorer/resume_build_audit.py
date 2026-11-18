@@ -52,7 +52,7 @@ def main(argv: list[str] | None = None) -> int:
             "== RH semantic catalog ==", [sys.executable, "rh/catalog/build_catalog.py", "--check"]
         )
         theory_ok = _run_check(
-            "== Theory graph ==", [sys.executable, "verification/build_theory_graph.py", "--check"]
+            "== TFPT Wissensatlas ==", [sys.executable, "semantic_explorer/refresh.py", "--check"]
         )
         status = "passed" if rh_ok and catalog_ok and theory_ok else "failed"
         print(
@@ -135,7 +135,7 @@ def main(argv: list[str] | None = None) -> int:
         flush=True,
     )
     catalog_ok = _run_check("== RH semantic catalog ==", [sys.executable, "rh/catalog/build_catalog.py", "--check"])
-    theory_ok = _run_check("== Theory graph ==", [sys.executable, "verification/build_theory_graph.py", "--check"])
+    theory_ok = _run_check("== TFPT Wissensatlas ==", [sys.executable, "semantic_explorer/refresh.py", "--check"])
     status = "passed" if rh_ok and catalog_ok and theory_ok else "failed"
     print(
         "@@TFPT_EXPLORER_AUDIT_RESULT "

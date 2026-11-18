@@ -1,0 +1,26 @@
+G1  the graph
+  ok   the four corners of the cell around z = 0 are the marks x = i, -1, -i, 1
+  ok   the lines Re z = +-1/4 and Im z = +-1/4 lie over the seam |x| = 1
+  ok   cells around 0 and (1+i)/2 lie over |x| < 1, cells around 1/2 and i/2 over |x| > 1: a checkerboard
+      vertices 4, edges 8, cells 4; Euler number 4 - 8 + 4 = 0.  At each mark four half-edges meet;
+      they can be joined in three ways: straight on, turning along the inside cells, turning along the outside cells.
+G2  lifts of the seam circle
+  ok   the boundary of an inside cell, turning by 90 degrees at each mark, covers the seam circle exactly once   ('1.0', '1.0')
+  ok   a straight grid line closes up without winding: it runs over two quarter arcs and back (fixed circle of a seam mirror)   ('0.0', '0.25')
+G3  the frame
+  ok   (dx/dz)^2 = c (x^4 - 1) with one constant c: sqrt(dz) = const (x^4 - 1)^(-1/4) sqrt(dx)   (-4.56463897503e-31 + 13.750371636j)
+  ok   so a regular torus spinor is, on the mark sphere, (x^4-1)^(-1/4) f(x) plus (x^4-1)^(+1/4) g(x): exponents -1/4 and +1/4 at every mark, monodromies -i and +i
+      the function (x^4 - 1)^(1/4) lives on the curve v^4 = x^4 - 1.
+G4  Cauchy reproduction on an inside cell
+  ok   integral of S(w - z) psi(w) dw / (2 pi i) over the cell boundary returns psi(z) inside the cell   2.12e-22
+  ok   and zero in the other inside cell and in both outside cells   1.35e-22
+G5  an outside cell, and transversality
+  ok   the same holds for an outside cell: its own Hardy space is reproduced, the inside sees nothing   1.13e-21
+  ok   no spinor is holomorphic on the whole torus for this spin structure (theta3(0) is not zero): inside and outside boundary spaces meet only in zero   (1.086434811 + 0.0j)
+G6  the corner
+  ok   direction of the boundary turns by +90 degrees at a mark, so sqrt(dz) turns by exp(i pi/4), an eighth
+  ok   four corners give exp(i pi) = -1: the antiperiodic (bounding) frame on the boundary of the cell
+  ok   on the seam: (x^4 - 1)^(1/4) = exp(i theta/2) |2 sin 2 theta|^(1/4) times a phase that is constant on each quarter arc and of modulus one
+  ok   across a mark this phase steps by exp(i pi/4) (ratio of the fourth roots of i and -i)
+
+all checks passed

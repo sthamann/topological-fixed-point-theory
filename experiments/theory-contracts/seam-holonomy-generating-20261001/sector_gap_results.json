@@ -1,0 +1,31 @@
+{
+  "steps": [
+    {
+      "step": "SG1 brute force (3 modes): Tr[Gamma(u) X_0 X_1 X_2] with c_U = det(1 + u)/2^n and T_U from S_U = diag(u, u^*) composed by Pfaffians reproduces the Fock-space trace including phase, also for u with an eigenvalue -1 via the exact split U = Gamma(u e^{i eta}) Gamma(e^{-i eta})",
+      "pass": true,
+      "detail": "30 traces (10 with det(1 + u) = 0), max rel. error 2.7e-13"
+    },
+    {
+      "step": "SG2 brute force: the Z4 sector projector P_q (q = 0..3; Z4 = e^{i pi N/2}; the element Z4^2 = (-1)^N has c = 0 and needs the eta split) and a 3-cycle translation projector P_k inserted into a product of four BdG Gaussians reproduce the Fock-space projected traces",
+      "pass": true,
+      "detail": "Z4 sectors max rel. error 4.0e-14; translation sectors 1.3e-14"
+    },
+    {
+      "step": "SG4 Gamma modes: the Z4 character of the 32 free Gamma modes, (1 + i^m)^32 = [2^32, 2^16, 0, 2^16], vanishes at m = 2, so deconvolving total-charge sector traces afterwards has rank 3 (KILL); the active charge Z_a = e^{i pi (N - N_Gamma)/2} inserted directly as the Gaussian unitary u = diag(1_Gamma, i^m 1_active) reproduces the brute-force active-sector traces",
+      "pass": true,
+      "detail": "chi_Gamma = ['4.29e+09', '6.55e+04', '0', '6.55e+04']; deconvolution rank 3; active-charge projector max rel. error 1.9e-15"
+    },
+    {
+      "step": "SG5 beta plateau in the exactly solvable free limit (cubic16, g = 0, active Z4 charge; 60-digit arithmetic and exact roots of unity, because the symmetry sum cancels to e^{-beta Delta}): the slope estimator -[log(Z_s/Z_r)(2 beta) - log(Z_s/Z_r)(beta)] / beta converges to the exact sector gap (enumerated from up to three quasi-particles), while the naive -log(Z_s/Z_r)/beta is biased by log(degeneracy)/beta; with float phases the cancellation fails beyond e^{-beta Delta} ~ 1e-14, and in QMC the signal-to-noise falls like e^{-beta Delta}: the sector test is limited to moderate beta Delta",
+      "pass": true,
+      "detail": "K#13 q=1: exact 0.0000, naive(beta=16) 0.0000, slope(8->16) 0.0000, slope(4->8) 0.0000; K#2 q=1: exact 2.8284, naive(beta=16) 2.3699, slope(8->16) 2.8286, slope(4->8) 2.8710; K#15 q=1: exact 2.8284, naive(beta=16) 2.4172, slope(8->16) 2.8288, slope(4->8) 2.9345; K#0 q=1: exact 2.8284, naive(beta=16) 2.3699, slope(8->16) 2.8286, slope(4->8) 2.8710; K#2 q=2: exact 0.0000, naive(beta=16) 0.0000, slope(8->16) 0.0000, slope(4->8) 0.0000"
+    },
+    {
+      "step": "SG3 (statement) application plan for Theta_1: zero twist only (the exact Gamma factorisation Z = 2^32 Z_active fails with a twist); the sector is defined by the ACTIVE Z4 charge inserted directly (post-hoc Gamma deconvolution killed, SG4); the HS slice of reweight.py preserves translations and Z4 exactly (symmetric_transfer.py), so no group-averaged integrator is needed; the gap must come from a beta plateau of the slope -d log(Z_s/Z_r)/d beta (degeneracy factor cancels), and be compared with the desired-Weyl multi-particle continuum (SECTOR_EXCESS); per-configuration cost N_cell x 4 Pfaffian compositions: feasible on debug4 / cell8, on 16+ sites only with a faster Pfaffian",
+      "pass": true,
+      "detail": "method validated; physics run pending"
+    }
+  ],
+  "passed": 5,
+  "total": 5
+}

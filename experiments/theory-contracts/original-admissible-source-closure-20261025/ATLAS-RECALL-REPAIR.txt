@@ -1,0 +1,59 @@
+ATLAS RETRIEVAL REPAIR
+======================
+26 October 2026
+
+Observed defect
+----------------
+The real MCP research_state query
+
+  P1 lokaler Operator W8 ursprünglicher Stress Quelle bereits gelöst
+
+with max_chars24000 returned problems:[] at revision
+0fb7f55b89c66142a7f3cd47. It matched18 reviewed problems, but the central
+problem packet required308932 characters. The tool permitted at most60000.
+Consequently a normal consumer could never read that whole record through
+the instructed next-query/budget route. The78 findings were stored, but the
+ordinary answer omitted them all. This is an observed retrieval failure,
+not loss of the canonical findings.
+
+Repair in the existing consumer path
+-------------------------------------
+semantic_explorer/server/src/research.rs now returns explicitly partial,
+query-ranked pages for oversized problems. Each returned finding, task,
+strategy or connection stays whole with its scoped text and premise IDs.
+Compact premise handles, dependency/source handles, totals and omissions
+remain visible. Pagination uses detail_offset and expected_revision;
+revision changes are rejected so pages cannot silently mix research states.
+Editable authoring records remain atomic.
+
+service.rs and main.rs carry the new pagination fields to MCP and HTTP.
+web/research.js displays the partial extent and follows the continuation.
+The README documents the same existing entry point. No second Atlas or
+replacement research database is introduced.
+
+Observed new consumer output before the next content update
+-----------------------------------------------------------
+The same actual query through a fresh RELEASE stdio MCP server gave:
+  budget12000: full scoped original c1 stress finding,10365characters;
+  continuation: next whole record with explicit budget12717;
+  budget24000: three ranked records,22808characters, including the full
+  original c1 stress finding, exact W8 two-point finding and open task
+  derive-original-seam-selection-of-native-observable-process together.
+
+The local full suite passed95/95 Rust tests. JavaScript syntax passed JXA.
+A fresh actual initialize/tools-list/tools-call stdio sequence passed,
+including12k,24k,continuation and deliberately stale-revision rejection.
+The release binary was built. This is consumer behavior, not only a unit
+test that a new helper exists.
+
+Activation boundary
+---------------------
+New connections using semantic_explorer/run.sh mcp use the built repair.
+Already running MCP processes and the HTTP process on port8731 do not hot
+reload Rust code. They were not terminated. Each such client must reconnect
+once to load the repaired executable. Canonical program.json content itself
+is reloaded per query, so new reviewed findings do not need recompilation.
+
+The repair preserves the distinction between a recovered scoped theorem and
+a physical open task. A nonempty retrieval page is not proof of the whole
+research objective and does not change the original ledger.

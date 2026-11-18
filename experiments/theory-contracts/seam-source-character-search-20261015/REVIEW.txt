@@ -1,0 +1,226 @@
+INDEPENDENT REVIEW, 15 October 2026
+
+Reviewed artifact: PROOF.txt for UR.SEAM.SOURCE_CHARACTER_SEARCH.01,
+with a read-only replay of search.py and a fresh local Lean check.
+
+VERDICT
+
+The bounded lattice/character result is mathematically sound, and the proof
+keeps the decisive physical boundary: it does not claim that P1 selects the
+constructed order-four character. Registration should wait for two material
+corrections below: the four successful representatives are labelled in the
+wrong order in PROOF.txt, and the advertised executable replay currently
+fails. Three smaller wording corrections would make the scope unambiguous.
+
+This review does not promote the conditional E8 marking to a common physical
+source, a P2 carrier identification, a state selection, or an event law.
+
+1. CONFIRMED MATHEMATICS
+
+1.1 Saturation and completeness
+
+The saturation argument in section 3 is correct. For h=A d+B r in the E8
+lattice, coordinates 2 and 5 exclude the half-integral coset; coordinates 7
+and 8 give A=4k; coordinate 3 gives B=l-k/4; and even coordinate sum gives
+k even. Hence
+
+  V intersect L = Z lambda1 + Z r,
+  lambda1=8d-r/2=(-4,0,0,-4,0,-2,-2,-2).
+
+It follows that the order-dividing-four characters in the source plane are
+exactly (u lambda1+v r)/4 for u,v modulo 4. The 16-candidate family is therefore
+the full 4-torsion of this stipulated source torus, not a numerical cutoff.
+
+Small notation correction: line 60 should say V/(V intersect L), not V/L,
+because L is not a subgroup of the two-dimensional real vector space V.
+
+1.2 Neutral-root moment
+
+The root counts and moment reconstruction in section 4 are correct. For the
+D5+A3 cases, the neutral-root moment has eigenvalue 16 on the D5 span and 8
+on the orthogonal A3 span, so P5=(M0-8I)/8 is the rank-five orthogonal
+projector. This recovers the subspace from the neutral roots and does not put
+the desired coordinate projector into the candidate definition.
+
+Material correction: with the representative order printed on lines 82-83,
+the character association on line 84 is reversed. The correct association is
+
+  (2,3)=O t,  (2,7)=t,  (6,1)=-O t,  (6,5)=-t.
+
+Equivalently, retain the phrase "t, O t, -t, -O t" and reorder the displayed
+representatives to (2,7),(2,3),(6,5),(6,1).
+
+1.3 Full lattice/oscillator operator
+
+Section 5 correctly evaluates the operator on the full stipulated lattice
+module, including oscillator level. Since N+p.p/2 is integral for p in E8,
+
+  exp(4 pi i K_a)
+
+has torus vector 2d_a. The charge factor has vector -a q/4=-a r/2. Their
+product therefore has vector
+
+  t=2d_a-a r/2,
+
+independent of a for the displayed d_a. Oscillator excitations acquire no
+additional phase. This is a valid conditional operator identity in the given
+lattice representation.
+
+The limitation on lines 119-123 is necessary and correct: [u_Sigma]=1 is a
+winding/index statement, not the operator identity identifying P1's seam
+action with W_a. Positive clock orientation can select t over -t only after
+that missing identification has been supplied. Thus m=2 does not follow from
+P1 as presently recorded.
+
+For precision, line 41 should call q/4 the torus character of the source
+charge-quarter operator Z_q=exp(i pi Q/2) on the E8 extension. Calling it the
+"physical full-circle quarter character" can conflate it with the separately
+recorded fold clock and its a-dependent deformation, which section 2 otherwise
+keeps correctly distinct.
+
+1.4 Sheet transport and pullback to elementary fields
+
+The exact covariance O t=t+r/2=t+q/4 is correct, as is the conclusion that the
+sheet map transports the conditional marking to W_(1-a) Z_q rather than fixing
+one rank-five marked subspace.
+
+The M^T pullback in section 6 is also correct: each successful character gives
+two copies of each phase 1,i,-1,-i on the eight original complex fermions, and
+the neutral bilinear shell has 20 roots and semisimple rank 7. Because section
+4 classifies nonorthogonality-connected components, line 145 should describe
+these as
+
+  A3 plus four A1 components, with the four A1 components groupable into two
+  coordinate D2=A1+A1 blocks,
+
+rather than simply "two D2 blocks". The latter is isomorphic as a root system
+but is not the connected-component decomposition used by the classifier.
+The conclusion remains correct: the elementary bilinears do not yield the
+E8 neutral system D5+A3; the additional roots use the stipulated spinor
+extension.
+
+2. EXECUTABLE AND FORMAL CHECKS
+
+The fresh Lean command succeeds with Lean 4.29.1. Its printed dependencies are
+only the standard Mathlib quotient/classical axioms propext, Classical.choice,
+and Quot.sound for the listed theorems; the check produced no error.
+
+The result replay does not currently succeed:
+
+  python3 search.py verify --output results.json
+  ValueError: Result replay mismatch: source_generated_group
+
+The recomputed values agree, but source_generated_group.order_counts is built
+with integer dictionary keys, while JSON reloads those keys as strings. The
+canonical encoder sorts integer keys numerically before serialization and
+string keys lexicographically after reload, so the byte encodings differ
+(notably 1,2,4,8,16 versus 1,16,2,4,8). Normalize these keys to strings before
+hashing/comparison, or compare recursively normalized JSON values, then
+regenerate results.json and its source manifest. Until that is done, the
+executable receipt is not replay-clean even though this mismatch does not
+change the mathematical enumeration.
+
+3. BOUNDARY OF THE PROPOSED OPERATOR COVARIANCE
+
+The proposed next datum U* B U=B+I is a useful exact target only when its
+operator core and domain transport are part of the statement. By itself it
+does not force B to be the scalar Fourier generator or make the source unique.
+
+The smallest valid scalar-circle theorem needs all of the following extra
+hypotheses: the rank-one Hilbert space L2(S1); U acting by multiplication by
+exp(i theta); B a local selfadjoint first-order differential operator with
+normalized principal symbol +1; and the appropriate periodic selfadjoint
+domain. Then B has the form
+
+  B=-i d/dtheta + A(theta),
+
+with real scalar A. A periodic scalar gauge removes the nonconstant part of A,
+leaving a constant equal to its holonomy average modulo an integer. Thus the
+conclusion is gauge equivalence to a constant connection, not literal equality
+or selection of its holonomy. With multiplicity, matrix-valued connections
+retain nonabelian holonomy and the shift covariance is even less selective.
+
+PROOF.txt currently avoids the stronger claim: lines 175-182 call the
+covariance a missing operator target and explicitly require multiplicity and
+domain control. That wording should remain. Deriving this datum from the actual
+P1 collar/source, rather than appending it as an axiom, is still the first
+source-selection obligation.
+
+FINAL BOUND
+
+After correcting the representative labels, the quotient/root-component
+wording, and the replay normalization, the artifact supports the following
+bounded statement: within the stipulated E8 lattice realization, the full
+4-torsion of the source-generated two-torus has exactly four D5+A3 characters,
+and the displayed time-charge composition realizes one inverse pair while the
+sheet map exchanges the two rank-five placements. It does not establish that
+the original P1/P2 source chooses that composition or supplies the remaining
+field, state, and event map.
+
+
+ADDENDUM: BOUNDED FIX REVIEW, 15 October 2026
+
+This addendum preserves the review history above and supersedes its provisional
+request to delay registration. It checks only the requested corrections and
+the new source-frame control; it is not a second full audit.
+
+1. All four textual corrections are present and correct.
+
+  - PROOF.txt lines 83-85 now associate the representatives in the printed
+    order as (2,3)=O t, (2,7)=t, (6,1)=-O t, (6,5)=-t.
+  - Line 61 now uses the well-defined quotient V/(V intersect L).
+  - Lines 41-46 identify q/4 specifically as the character of the charge-
+    quarter operator Z_q on the E8 extension and retain the distinction from
+    the original odd-CAR quarter phase and the separate fold clock.
+  - Lines 159-161 now state the nonorthogonality-connected decomposition as
+    A3 plus four A1 components, with the latter only grouped into two
+    D2=A1+A1 phase blocks.
+
+2. The JSON replay defect is fixed.
+
+order_counts is now emitted with string keys before serialization. A fresh
+local command
+
+  python3 search.py verify --output results.json
+
+succeeds and returns four candidates with payload SHA-256
+
+  085722e34b24db26b3859e6e7d8b5990e0ce96d02195fb2004119fe649a90711.
+
+This closes the executable defect reported above; it does not enlarge the
+mathematical or physical claim.
+
+3. The new section 4a is a valid blind source-frame control in its declared
+sense.
+
+blind_source_classification() has no M argument, reads no file, and contains no
+fixed coordinate P5 or target projector. It constructs delta, r_source and
+lambda1_source directly in the original source coordinates, enumerates all 16
+4-torsion characters, classifies their neutral root systems, and only then
+forms the neutral-root moment projector. An independent invocation returns 12
+primitive order-four characters and exactly four D5+A3 cases at
+
+  (u,v)=(1,0),(1,2),(3,0),(3,2),
+
+all with reconstructed projector rank five. calculate() calls this function
+before reading the fold file or M. Only after both classifications have
+finished does it apply M and compare M P_source M^T with the separately
+reconstructed target-frame moment projector; all four comparisons pass.
+
+The fixed coordinate P5 is likewise used only in that post-classification
+audit, to record which transported placement equals the standard coordinate
+choice. It does not affect candidate generation, root-type acceptance, or the
+reconstructed projector. The control is therefore blind to the target frame
+and target projector, though deliberately not blind to the stated abstract
+success criterion D5+A3. PROOF.txt correctly retains the stipulated E8 source
+extension as an input and does not present this control as its derivation.
+
+FINAL VERDICT AFTER FIXES
+
+PASS for the bounded conditional claim and executable receipt. The five
+reported defects are resolved, and the new source-frame control supports the
+specific non-circularity claim that M and a coordinate P5 did not manufacture
+the four D5+A3 candidates. The physical boundary from the original review is
+unchanged: neither P1 winding orientation nor the blind enumeration selects
+W_a as the actual seam marking, and no common field/state/event construction
+has thereby been derived.

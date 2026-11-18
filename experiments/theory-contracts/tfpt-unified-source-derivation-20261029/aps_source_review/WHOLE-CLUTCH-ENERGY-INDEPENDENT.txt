@@ -1,0 +1,158 @@
+WHOLE CLUTCH: INDEPENDENT ENERGY AND ADJOINT-DOMAIN CHECK
+2026-10-29. Bounded analytic review of the given constant-coefficient case.
+No numerical census, new model, Atlas mutation or old-source changes.
+
+VERDICT
+The claimed mass-difference energy identities and kernel/cokernel
+intersections are correct on the actual unitary H1 clutch domain under
+the precise hypotheses below. Noncommutation of A with U leaves a real
+boundary term in the MASSLESS energy. It does not invalidate the claimed
+difference between massive and massless energies. Whole balanced finite
+grading gives index zero. Invertible Phi removes all kernels and cokernels
+for this closed realization. No normal Majorana-mode statement follows.
+
+1. EXACT OPERATORS AND DOMAIN
+
+Let F be the whole finite coefficient Hilbert space, gamma=gamma*=gamma^-1,
+Phi=Phi* bounded on F, {gamma,Phi}=0. In this note Phi is independent of
+BOTH r and theta. Let ell>0,
+
+ A=-i partial_theta+alpha, alpha real scalar, Dom(A)=H1_per(S1,F),
+ U=M_exp(i theta), U e_n=e_(n+1),
+ V=-i gamma Phi=V*, V^2=Phi^2,
+ L0=partial_r+A gamma, LPhi=L0+V.
+
+The shared closed-domain candidate is exactly
+
+ D_U={psi in H1([0,ell] x S1,F): psi(ell,theta)=U psi(0,theta)}.
+
+The equality is an equality of H1/2 traces. It is not a boundary condition
+imposed independently on a Fourier mode, and U does not preserve individual
+Fourier modes. The Hilbert space for the codomain is L2 on the cylinder,
+equivalently L2 sections of the bundle obtained by this unitary clutch.
+
+More general smooth even A and bounded V are possible only if the actual
+commutator, domain and clutch conditions used below are retained. They are
+not being inferred from the scalar calculation.
+
+2. CLOSEDNESS, FREDHOLM PROPERTY AND THE ACTUAL ADJOINT
+
+U*AU=A+I, U gamma=gamma U. The comparison expression
+
+ Lb=partial_r+(A-r/ell)gamma
+
+defines a smooth elliptic first-order operator on the compact clutched
+torus bundle: at the seam (A-1)U=UA. Its principal symbol is
+i xi_r+gamma xi_theta, invertible away from the zero covector. Consequently
+its closed elliptic domain and its adjoint domain are H1 sections, which
+are precisely D_U in the cut chart. This is a comparison for the domain
+proof, not a replacement of the given L0 or its spectrum.
+
+In the cut chart L0=Lb+(r/ell)gamma. The latter multiplication is bounded
+on L2 (it is allowed to have a bounded jump at the seam), so closedness,
+the H1 adjoint domain and Fredholmness remain valid. Adding the bounded V
+has the same properties. The formal Green boundary expression is
+
+ <LPhi psi,chi>-<psi,(-partial_r+A gamma+V)chi>
+   =<psi(ell),chi(ell)>-<psi(0),chi(0)>,
+
+up to conjugation according to which Hermitian argument is linear. Since
+U is unitary, it vanishes for both traces in D_U. Conversely the pairing
+with every clutched trace forces chi(ell)=U chi(0). Elliptic regularity
+supplies H1 for the maximal adjoint domain as above. Thus
+
+ Dom(LPhi*)=D_U,
+ LPhi*=-partial_r+A gamma+V.
+
+Neither U^-1 on the outgoing trace nor an extra independent domain for the
+conjugate coefficient slot is inserted here.
+
+3. THE TWO EXACT ENERGY IDENTITIES
+
+The finite algebra is
+
+ {A gamma,V}=0, V^2=Phi^2, partial_r V=0, U*VU=V.
+
+The anticommutator uses [A,Phi]=0 and [A,gamma]=0. For smooth clutched
+fields, integration in theta gives
+
+ 2 Re <A gamma psi,V psi>=0.
+
+Integration in r gives
+
+ 2 Re <partial_r psi,V psi>
+   =<psi(ell),V psi(ell)>-<psi(0),V psi(0)>
+   =<psi(0),(U*VU-V)psi(0)>=0.
+
+Density and boundedness of V extend the result to every psi in D_U:
+
+ ||LPhi psi||^2=||L0 psi||^2+||Phi psi||^2.
+
+Replacing partial_r by -partial_r changes the sign of the boundary
+term, still zero, and gives the corresponding adjoint identity
+
+ ||LPhi* psi||^2=||L0* psi||^2+||Phi psi||^2.
+
+No commutation of U with A was used or is true. In fact the massless
+identity, initially on smooth clutched fields and then in form sense, is
+
+ ||L0 psi||^2=||partial_r psi||^2+||A psi||^2
+                 +<psi(0),gamma psi(0)>.
+
+For L0* the last term has a minus sign. This follows from U*AU=A+1.
+Discarding that boundary term would be an error. Keeping the complete
+||L0 psi||^2 in the mass-difference identity is exactly what avoids it.
+
+4. KERNELS, COKERNELS AND THE BALANCED INDEX
+
+Since both right-hand summands in the mass-difference identity are
+nonnegative,
+
+ ker LPhi=ker L0 intersect ker Phi,
+ ker LPhi*=ker L0* intersect ker Phi.
+
+The ranges are closed by Fredholmness, so coker LPhi is identified with
+ker LPhi*. These are identities for the actual common clutch domains.
+For invertible finite Phi they give zero kernel and zero cokernel.
+
+The massless scalar Fourier recurrence independently checks the index.
+In a gamma eigenspace sigma=+1 or -1, homogeneous solutions have
+
+ psi_n(r)=exp(-r sigma(n+alpha))a_n,
+ a_n=exp(ell sigma(n+alpha))a_(n-1).
+
+Hence a_n=C exp(ell sigma[n(n+1)/2+alpha n]). Square summability for
+all integer n forces C=0 for sigma=+1, and gives one smooth Gaussian
+Fourier solution for sigma=-1. For the adjoint the roles are reversed.
+Thus, writing dplus/dminus for the full grading dimensions,
+
+ dim ker L0=dminus, dim ker L0*=dplus,
+ index LPhi=index L0=dminus-dplus.
+
+The full v252 grading under review has dplus=dminus=48, so its index is
+zero. The finite mass homotopy is bounded and preserves Fredholmness.
+For constant odd Phi the surviving kernels are respectively the negative
+and positive grading parts of ker Phi; no bare right-channel reduction
+has been made. A claim that a particular supplied numerical Phi is
+invertible still requires that actual coefficient's rank, rather than
+an assumption that all Yukawa inputs are nonzero or physical.
+
+5. THIS CONSTANT CASE WAS ALREADY DECLARED; THE EXTENSION WAS NOT
+
+graded_boundary_functor/FINITE-COUPLED.txt:11-14 allows smooth bounded
+Phi(theta) and an even connection. Its exact square at43 is
+
+ hPhi^2=A^2+Phi^2-i[A,Phi].
+
+Lines45-48 EXPLICITLY single out constant Phi and internally scalar A,
+where hPhi^2=A^2+Phi^2. Thus the present commutative constant case is an
+existing declared subcase of the given full coefficient, not a new fitted
+matrix class. It is not the assertion for every permitted variable Phi.
+
+For variable Phi(theta), the extra interior term -i[A,Phi] remains; for
+r-dependent V the energy cross term also contains -<psi,(partial_r V)psi>.
+If U*VU differs from V there is an extra boundary form. The exact positive
+intersection theorem above may not be transported to those cases without
+controlling these terms. Nor does the older open Cauchy graph by itself
+choose this closed clutch realization: that realization is an explicit
+premise of the present test, and has been retained unchanged throughout.

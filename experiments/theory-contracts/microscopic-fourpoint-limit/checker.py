@@ -16,9 +16,9 @@ HERE = Path(__file__).resolve().parent
 ROOT = HERE.parents[2]
 PINS = {
     "experiments/theory-contracts/microscopic-neutral-limit/checker.py":
-    "7c32ef6e67ad5e30ed9e706e23ae081b23cb19c356ed2adb38b9d963742c87c2",
+    "b9dc0207dcfbaca457abb886b6841f02f9a77b349154d9afe6ab33a35bd0dadc",
     "experiments/theory-contracts/current-fourpoint-limit/checker.py":
-    "be54f2cb7eaa05b419d4a8f1e4c4cdee733dee399bcd40278d493439fca746c3",
+    "e5a36bad7b0a38be0d06f52d43aa8a7964881b3921b6f283f7764127f92aaec5",
     "experiments/theory-contracts/current-fourpoint-limit/README.md":
     "272c12e6794845dd6b269380610b69431198628eede0d3eb9a5793057f623b6c",
 }

@@ -1,0 +1,29 @@
+Ich habe THEOREMS.txt vollständig auditiert und die tragenden Beweise selbst nachgerechnet; results.json/checker-Struktur und imported/-Provenienz habe ich gelesen (nicht ausgeführt). Hier das Verdikt.
+
+# Round 15 — Audit `MATH.SEAM.EQUIVARIANT.02`
+
+## Gesamturteil: mathematisch korrekt. Keine Fehler in den Beweisen, Zählungen oder Quotientierungen gefunden; Scope sauber. Nur Quellenreview-Caveats, keine substanzielle Korrektur.
+
+## Verifizierte Kernaussagen (per Hand)
+
+**Zentrale Erweiterung / Kozykel (§0,§3).** $c(g,h)=-\varepsilon(g)\varepsilon(h)$: Kozykelidentität via $\varepsilon(gh)=\varepsilon(g)+\varepsilon(h)-2\varepsilon(g)\varepsilon(h)$ nachgerechnet (LHS=RHS). $2c=\delta(-\varepsilon)\Rightarrow\mathrm{ord}[c]\le2$; $s(r)^2=(-\varepsilon(r)^2,I)=z^{-1}$, $(z^ks(r))^2=z^{2k-1}\neq1\Rightarrow[c]$ **exakt Ordnung 2**. ✓ Modell $\varphi(a,g)=(g,2a-\varepsilon(g))$: Homomorphismus nachgeprüft, $E\cong\{(g,t):t\equiv\varepsilon(g)\bmod2\}$, Rückzug von $0\to\Z/4\to\Z/8\to\Z/2\to0$. ✓
+
+**$8\mid m$-Satz (§3).** $s(g)^m=(-(m/2)e,I)$ (akkumuliert $e\cdot\#\{j\text{ ungerade}\}=e\cdot m/2$); $(z^ks(g))^m=z^{mk-(m/2)e}$. Fallanalyse: $m\equiv2\ (4)$: $m(\Z/4)=\{0,2\}$, $-(m/2)$ ungerade $\Rightarrow$ unlösbar; $m\equiv4\ (8)$: $m(\Z/4)=0$, $-(m/2)\equiv2$ $\Rightarrow$ unlösbar; $8\mid m$: beide Werte $0$, $A[m]=\Z/4\Rightarrow 4^2=16$. ✓ Entgegengesetzte $\varepsilon$ durch $b=r_0C$ ($\varepsilon(r_0)=1$) korrekt; $m$ ungerade schließt $\varepsilon\neq0$ aus. ✓
+
+**Orbifold-Präsentation/Meridiane (§2).** $\Pi=C_m*C_m$, $a=C$, $b=r_0C$, $\gamma_j=a^jba^{-j-1}=C^jr_0C^{-j}$; Teleskop $\prod_{j=0}^{m-1}\gamma_j=b^ma^{-m}=1$ per Hand bestätigt (Exponent $a^{-j-1}$ korrekt). Die äquivarianten Meridiane sind **Reflexionen** — konsistent mit §5 „vier Reflexionen, Produkt 1", **nicht** im Widerspruch zum $\rho(\gamma_i)=J$ der nicht-äquivarianten MONODROMY.01-Referenz. ✓
+
+**Die fünf Kontrakte 0,0,960,1984,992.** (1) strikter $E$-Lift der 62 ($8\nmid4$): **0**. (2) §5a ($k_j$ gleich erzwungen, $\prod R_j=z^{4k+2}=z^2\neq1$): **0**. (3) §5b mit $\widehat C^4=1$: $k_j=k_0+jd$, $\sum k_j=6d\equiv2d$, $\prod=z^{2d+2}=1\Leftrightarrow d\in\{1,3\}$; $\widehat C^4=1\Rightarrow e=0$ (30 Klassen), $30\cdot(2\cdot4\cdot4)=$ **960**. (4) §5b relaxiert: $62\cdot32=$ **1984**. (5) §5c projektiv: $\prod=\widehat B^4\widehat A^{-4}=z^{-2(1-e)}z^{2e}=z^2\neq1$, $62\cdot16=$ **992**, korrekt **nicht** zu 1984 addiert. ✓ Alle Telescoping-Produkte per Hand bestätigt.
+
+**Konjugation/unbasiert=basiert (§6).** Im $(g,t)$-Modell ist die $\Z/8$-Koordinate additiv und konjugationsinvariant ($(h,u)(g,s)(h,u)^{-1}=(hgh^{-1},s)$) $\Rightarrow$ Zentralisator fixiert jedes $k_j$ (geordnet!) $\Rightarrow$ $17\cdot64=1088$ und die 5b-Zahlen sind echte Isomorphieklassen. ✓ §1 warnt korrekt, dass der unbasierte Quotient i.A. **kein** $H^1$-Torsor ist (nichtlineare Zentralisatorwirkung); §6 liefert das modellspezifische Zusatzargument. Richtig und nicht übersprungen.
+
+**Gruppenvergleich (§8).** $T^tT=I/2$, $TJ=JT$ (Block nachgerechnet); $\Gamma_{\rm sign}\to\langle J\rangle\le G$ mit Kern $\mathrm{Hom}(L,\F2)$, keine Einbettung. 8b: $|\Gamma_{\rm sign}|=1024=$ Sylow-2 von $G$; $G$ hat Ordnung-8-Element $\Rightarrow$ jede Sylow-2 Exponent $\ge8>4$ $\Rightarrow$ keine Einbettung. 8c: $G_{\rm ab}=C_2$, $\Gamma_{\rm sign}$ 2-Gruppe $\Rightarrow$ gemeinsamer Quotient zyklische 2-Gruppe mit $Q_{\rm ab}\mid C_2$ $\Rightarrow Q\in\{1,C_2\}$ (Frattini/Burnside korrekt). 8d: $(L/2L)^G=0$ (gestapelte $(g-I)$ Rang 8 mod 2) $\Rightarrow$ jeder äquivariante Koeffizient-Hom $A\to\Z/4$ null. Alle vier Teile korrekt. ✓
+
+**§7 Integralkohomologie.** $H^0=\Z^{8-s}$, $H^1=\Z^{24-s}\oplus\bigoplus_{d_j>1}\Z/d_j$; Euler $8(1-3)=-16=(8-s)-(24-s)$ ✓; zyklisch Smith $(1,1)$→$\Z^{22}$, TypA $(1,1,1,2)$→$+\Z/2$, sonst $\Z^{20}$. Konsistent.
+
+## Caveats (Quellenreview, keine Korrektur)
+
+1. **Review ≠ Ausführung.** Verifiziert sind die Beweise/Formeln. Die konkreten endlichen **Enumerationen** — Untersplits 22/7/1, 14760 Vierer, 49920 clockmarkierte Paare, 62→30/32, die 17 Smith-Formen, der Ordnung-8-Matrixzeuge (§8b) — sind Checker-/`imported/`-berechnet; ich habe sie **gelesen, nicht ausgeführt**. Das 8b-Argument ist logisch korrekt, **hängt aber** am gültigen Ordnung-8-Zeugen (Maschinendatum).
+2. **Zwei Nummerierungen nicht vermengen.** Die 17 „ID"-Viererklassen in §7 und die Clock-Grundklassen $0/12/15$ in §4 sind dasselbe nullbasierte ID-Schema des Pakets, aber „TypA/TypB" in §7 ist der $V_4$-**Bildtyp** (↔$\Z/2$-Torsion), verschieden von der **Clockfähigkeit** in §4 (Zentralisatorbedingung). ID 12=TypA=clockfähig ist konsistent; IDs 3,14 sind TypA ohne clockbase-Rolle. Rein präsentationell, kein Widerspruch.
+3. **Scope korrekt begrenzt.** Alles betrifft die **zentrale** Erweiterung $E$ (Kozykel $-\varepsilon\varepsilon$, Ordnung 184320) und das Viertel-Clock-/Reflexions-Stratum — **nicht** die volle $G_{31}$-/$W(E_8)$-Charaktervarietät, keine Hurwitz-/Mapping-Class-Quotienten (außer explizit separat). Die nichtzentrale $\mathrm{Hom}(E_8,\Z/2)$-Erweiterung bleibt getrennt (§0,§8), und die beiden $H^2$-Klassen (dort Ordnung 2, früher zentral-nichtnull) werden korrekt **nicht** gleichgesetzt.
+
+**Fazit:** Der allgemeine Liftsatz, der $8\mid m$-Teilbarkeitssatz, die exakte 62er-Obstruktionsstruktur (30/32, alle $\neq0$), die fünf Kontraktzählungen $0/0/960/1984/992$ (inkl. der korrekten Nicht-Addition der 992), die unbasiert=basiert-Begründung und der vollständige Gruppenvergleich (§8a–d) sind **beweislogisch korrekt** und per Hand bestätigt. Keine falsche Quotientierung, keine Konjugationsfehler, keine Überdehnung. Einzige Vorbehalte sind die genannten maschinell berechneten Endlichzahlen (reviewt, nicht ausgeführt) und die präsentationelle ID-Trennung.

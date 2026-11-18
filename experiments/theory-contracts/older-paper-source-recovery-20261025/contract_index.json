@@ -1,0 +1,81 @@
+{
+  "contract": "older-paper-source-recovery-20261025",
+  "date": "2026-10-25",
+  "research_id": "MATH.OLDER-PAPER.SOURCE-RECOVERY.01",
+  "question": "Do older TFPT versions already contain the concrete seam operators, full source functional and rank-one transfer construction hidden by later compressed proofs, and can the old heat transfer recover the later single-mode factor without a freely chosen vector?",
+  "verdict": "PARTIAL",
+  "verdict_enum": [
+    "PASS",
+    "PARTIAL",
+    "FAIL"
+  ],
+  "mathematical_verdict": "RECOVERED_ORIGINAL_CIRCLE_AND_FORMAL_FULL_SOURCE; PROVED_QUARTER_CIRCLE_TRACE_NORM_IR_LIMIT_AND_COMPLETE_ODD_HEAT_PRODUCT; ORIGINAL_ADMISSIBLE_SOURCE_IDENTIFICATION_OPEN; CANONICAL_POSITIVE_HALF_IR_AND_Q6_CORRECTION",
+  "claims_tested": [
+    "MATH.OLDER-PAPER.SOURCE-RECOVERY.01",
+    "MATH.OLDER-PAPER.HEAT-IR-CLOSURE.01",
+    "MATH.OLDER-PAPER.C3-NORMALIZATION.01",
+    "AX.P1.01",
+    "MATH.OLDER-PAPER.POSITIVE-HEAT.01"
+  ],
+  "gates": [
+    "T1",
+    "T2",
+    "T3"
+  ],
+  "physical_gates_closed": [],
+  "complete_TFPT_solution": false,
+  "checker": "check_older_circle_heat.py",
+  "proof": "HEAT-TRANSFER-IR-CLOSURE.txt",
+  "additional_proofs": [
+    "ORIGINAL-CIRCLE-REVIEW.txt",
+    "EM-HISTORY.txt",
+    "SOURCE-AND-OS-HISTORY.txt",
+    "C3-ORIGIN-REVIEW.txt",
+    "POSITIVE-HALF-REVIEW.txt"
+  ],
+  "reader_document": "ERGEBNIS_EINFACH.txt",
+  "results": "older-circle-heat-results.json",
+  "firewall": "experiments",
+  "promotion": false,
+  "relations": [
+    {
+      "type": "references",
+      "target": "primitive-seam-operator-reconstruction-20261025"
+    },
+    {
+      "type": "references",
+      "target": "paper-source-reconstruction-20261025"
+    },
+    {
+      "type": "references",
+      "target": "native-octic-seam-origin-20261025"
+    }
+  ],
+  "scope": "Historical original modules from Paper V1.06 and fullv2/fullv21 through v42, plus comparison with archived v4.5. Exact operator results concern the supplied scalar quarter-circle representation; they do not identify that space with the later original admissible source by definition.",
+  "assumptions": [
+    "The old fullv21 circle ansatz D_Gamma=i partial_theta and u=exp(i theta), with its displayed twisted H1 domains; the printed positive spectral convention requires the explicit orientation repair B=-D_Gamma.",
+    "Quarter-circle heat comparison fixes the already used twists a=1/4 or 3/4. Their selection is not derived from winding one.",
+    "The full heat determinant is the ordinary Fredholm determinant of exp(-t|B_a|), and the original susceptibility exponent 5/4 is retained as an independent existing input.",
+    "A physical EM application additionally requires the actual admissible sector/trace intertwiner, the heat to EM parameter map and the original limiting prescription.",
+    "The older formal exp(W_k[J]) may be collective superfield notation; concrete graded measure/action, original boundary transport and joint reflection positivity must still be established.",
+    "The V1.06 normalization review is conditional on the printed period and flux conventions of its best-effort PDF extraction."
+  ],
+  "leaves_open": [
+    "Same-source comparison of old B_Gamma with later B_Sigma, actual admissible restrictions and physical time/reflection.",
+    "Choice of the physical quarter monodromy and identification of the positive Toeplitz defect with the actual gap or EM line.",
+    "Identification of q_heat with delta_top exp(-2 alpha_EM), original ground-energy normalization, and whether the original physical source uses the full heat product or an exact one-mode projection.",
+    "Construction of the full original graded source measure/action and its joint reflection positivity from the seam rather than only a formal generating integral.",
+    "Kinetic compactification norms and the physical gauge/axion coupling dictionary in the historical 11D origin route.",
+    "Complete interacting spacetime dynamics and the remaining TFPT physical completion gates."
+  ],
+  "not_claimed": [
+    "That the old concrete circle ansatz is absent or must be invented anew.",
+    "That a finite full heat operator is rank one, or that its inverse determinant is automatically the CAR Fock partition function.",
+    "That the conditional fourth-order heat correction is already a physical prediction for alpha.",
+    "That absence of separate eta and bareta symbols excludes a graded collective-source notation.",
+    "That the local omitted da term proves a global factor-three change in c3.",
+    "That the quantized topological level alone fixes a canonically normalized physical coupling.",
+    "A full fundamental solution, publication change or original ledger promotion."
+  ],
+  "summary_de": "Ältere Fassungen enthalten bereits den konkreten Kreisoperator und ein formales volles Quellfunktional. Nach Orientierungsreparatur trägt die Einteilchen Ward Beziehung. Der alte Viertelkreis Wärmeübertrag liefert einen kanonischen Rang1 Grundmodengrenzwert in Spurnorm; sein vollständiger endlicher Determinant ist dagegen das Produkt über ungerade Moden. Die erste Abweichung der Öffnung von der späteren Einmodenformel ist 5q^4/4; alle Koeffizienten folgen einer exakten Rekurrenz. Die historische C3 Herleitung quantisiert einen Level unter gewählten Konventionen, während kinetische physische Normen zusätzlich benötigt werden. Die tatsächliche zulässige Quelle und physische Parameteridentifikation bleiben offen. Die kanonische positive Spektralhälfte hat für jeden inneren Twist denselben Toeplitz Defekt als normierten Wärmegrenzwert. Beim Viertelkreis zerfällt das volle Produkt in die Klassen1 und3 modulo4; die positive Hälfte weicht erstmals mit5q^6/4 ab. Die tatsächliche admissible Projektion entscheidet, welcher Vergleich physisch anwendbar ist."
+}

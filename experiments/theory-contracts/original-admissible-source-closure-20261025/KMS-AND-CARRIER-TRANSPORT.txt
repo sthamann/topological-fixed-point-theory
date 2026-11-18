@@ -1,0 +1,306 @@
+ORIGINAL SEAM: FAITHFUL KMS AND EXACT CARRIER TRANSPORT
+=====================================================
+
+Date: 2026-10-25
+Research IDs: MATH.ORIGINAL-SEAM.FAITHFUL-TRANSPORT.01;
+              MATH.ORIGINAL-SEAM.CARRIER-SCHUR.01.
+Verdict: PROVED operator continuation on the existing circle source.
+Physical source identification and complete TFPT solution remain OPEN.
+
+1. The actual question, and what is already known
+------------------------------------------------
+
+The old circle B_a and its actual winding u already give the relative
+polarization factor 1-z. The active paper instead invokes a faithful KMS
+covariance and a finite carrier compression C_F=P_F C_Sigma P_F. Can the
+SAME original defect be transported through these operations without choosing
+a replacement kernel, a new carrier, or a fitted thermal parameter?
+
+Success means an exact operator identity using that same B_a,u and any
+actually supplied carrier map. A matching scalar series or an inversion of
+a covariance rebuilt from an already supplied D_F is insufficient.
+
+The original data and source audit are in these existing files:
+
+* DIRECT-DEFECT-CLOSURE.txt: the actual B_a,u and pure relative determinant.
+* ../collar-current-source-bridge-20261021/PROOF.md:11-32,80-125:
+  the original two-face graph, its labeled marginal C_beta, and the already
+  known complete thermal current function. That current function is REUSED.
+* ../canonical-seam-fermionization-20261025/PROOF.txt:
+  the actual A4 spin lift, full NS cover and retained winding.
+* EM-MEASURE-AND-QUILLEN.txt: original EM and v258 source audit.
+* GRADED-DETERMINANT-SOURCE.txt: independent compression and Schur review.
+* RELATIVE-PAIRING-REVIEW.txt: independent KMS and full-pair review.
+
+The source CAR quantization of the graph, a physical OS time, and the
+identification with the active finite carrier are not silently derived here.
+
+2. Fixed orientation and domains
+--------------------------------
+
+On H=L^2(S^1) with the original twisted domain, use
+
+  B_a psi_n=(n+a)psi_n,    0<a<1,
+  u psi_n=psi_(n+1),
+  P=1_(B_a<0),
+  u P u*=P+Pi,            Pi=|psi_0><psi_0|.
+
+This includes a=1/4,3/4 and the full A4-induced NS cover a=1/2. The sign
+is the previously repaired B_a=-i partial_theta convention. Reversing the
+winding reverses the power of 1-z. The twist a is not alpha_EM.
+
+Let C be any positive contraction on this SAME H such that
+
+  C-P is trace class.
+
+For |z|<1 define A_C=I-zC, A_P=I-zP and
+
+  R_C(z)=u A_C u* A_C^(-1)
+        =(I-z uCu*)(I-zC)^(-1).
+
+The inverses exist by the Neumann bound. Moreover
+
+  uCu*-C=u(C-P)u*-(C-P)+Pi
+
+is trace class. Thus R_C-I is trace class, and its ordinary Fredholm
+determinant is well defined. Neither separate infinite determinant det A_C
+nor det A_P is introduced.
+
+3. Exact stability theorem
+--------------------------
+
+The following is an exact multiplication identity:
+
+  R_C=(u A_C A_P^(-1)u*)
+      (u A_P u* A_P^(-1))
+      (A_P A_C^(-1)).
+
+Every factor is I plus trace class. By unitary invariance and
+multiplicativity of the Fredholm determinant, the first and last determinants
+cancel. The middle factor is I-zPi because P psi_0=0. Therefore
+
+  det_F R_C(z)=1-z.                                      (1)
+
+This is a relative-determinant invariant of the SAME trace-class polarization
+class. No empty or filled eigenvector of C itself is required. For winding
+u^m, m in Z, the same proof gives
+
+  det_F[u^m A_C u^(-m) A_C^(-1)]=(1-z)^m.                (2)
+
+For m>0 the reference adds m orthogonal modes; for m<0 it removes them.
+Unitary transport of the entire tuple C,P,u preserves (1). This permits the
+already established change to the actual D8 CAR frame; it does not turn the
+interacting E8 extension into an unproved quasifree state.
+
+4. The faithful original KMS representative
+-------------------------------------------
+
+Use the EXISTING circle functional calculus,
+
+  C_beta=(I+exp(beta B_a))^(-1),    beta>0.
+
+For the labeled marginal of the supplied product collar beta=2 ell. No
+identification of beta or ell with alpha_EM is made. The occupations are
+
+  n_n=(1+exp(beta(n+a)))^(-1).
+
+Both C_beta and I-C_beta have trivial kernel. Their spectra accumulate at
+0 and 1, but neither endpoint is an eigenvalue. Functional calculus gives
+
+  log(I-C_beta)-log C_beta=beta B_a on Dom(B_a).           (3)
+
+This is a densely defined selfadjoint log odds operator, rather than the
+endpoint singularity of a pure projector. The exponential Fourier tails
+give the explicit trace norm bound
+
+  ||C_beta-P||_1
+   <= [exp(-beta a)+exp(-beta(1-a))]/[1-exp(-beta)].       (4)
+
+Consequently (1) holds for EVERY finite beta>0. It is not a large-beta
+approximation and needs no clipping at eigenvalues zero or one.
+
+Directly, D_beta=uC_beta u*-C_beta is diagonal with
+
+  d_n=n_(n-1)-n_n>0,       sum_n d_n=1.                  (5)
+
+It is positive trace class and has infinite rank. Its relative determinant
+telescopes on the actual open window [-L,L]:
+
+  product_(n=-L)^L (1-z n_(n-1))/(1-z n_n)
+   =(1-z n_(-L-1))/(1-z n_L) ->1-z.                     (6)
+
+The difference R_Cbeta-I is trace class, so trace norm convergence of its
+diagonal restrictions justifies the Fredholm limit. As beta tends to
+infinity, (4) also implies ||D_beta-Pi||_1->0.
+
+This closes the mathematical gap between the old pure defect and a faithful
+thermal source ON THE SAME CIRCLE. It does not identify that source with the
+active finite collar Hamiltonian or with the full physical EM measure.
+
+5. The full NS cover does not require a single quarter selector
+----------------------------------------------------------------
+
+The already proved NS-cover unitary has
+
+  B_cov=2(B_(1/4) direct_sum B_(3/4)),
+  u_cov=[[0,u_base],[I,0]],
+  u_cov^2=diag(u_base,u_base).
+
+The faithful covariance must be the functional calculus of this full B_cov.
+It is not two arbitrarily adjusted independent sources. Applying (1)-(2)
+before the unitary decomposition gives
+
+  det_rel(u_cov C_beta u_cov*,C_beta;z)=1-z,
+  det_rel(u_cov^2 C_beta u_cov^(-2),C_beta;z)=(1-z)^2.     (7)
+
+Here det_rel(X,Y;z) means det_F[(I-zX)(I-zY)^(-1)]. The first winding swaps
+the quarter sectors; its square is the two base windings. Thus the faithful
+thermal continuation respects the exact cover/quarter operator dictionary
+without imposing an extra choice of one quarter.
+
+6. Why ordinary finite compression loses the factor
+----------------------------------------------------
+
+First reuse the pure test independently proved in GRADED-DETERMINANT-SOURCE:
+for any orthogonal F, v=F psi_0,
+
+  C'_F-C_F=|v><v|,
+  det_rel(C'_F,C_F;z)=1-z<v,(I-zC_F)^(-1)v>.             (8)
+
+This equals 1-z on an open z range exactly when psi_0 lies in Ran F. Then
+C_F has eigenvalue zero and C'_F has eigenvalue one. Mere rank one does not
+imply a normalized projector: its nonzero eigenvalue is ||F psi_0||^2.
+
+For the faithful thermal source there is a stronger finite-carrier test.
+Let F be any finite-rank orthogonal projection on the SAME circle H and
+C'_beta=uC_beta u*. Because D_beta is strictly positive on every nonzero
+vector, Q=I-F is nonzero and
+
+  0 <= Tr(F D_beta F)<Tr D_beta=1.
+
+The derivative at z=0 of the naively compressed relative determinant is
+
+  d/dz det_rel(F C'_beta F,F C_beta F;z)|_(z=0)
+   =-Tr(F D_beta F)>-1.                                (9)
+
+It cannot equal 1-z on an open range. Both finite compressions are faithful,
+so the same conclusion follows from their nonzero relative value at z=1.
+
+This is specifically a finite-rank compression of the circle source. It
+does not apply to an infinite-rank projection onto a finite INTERNAL factor
+with the spacetime modes retained. The active P_F requires an actual map
+before either interpretation can be assigned to it.
+
+7. An exact sufficient repair using the same source
+---------------------------------------------------
+
+Do not discard the complement. For ANY actually supplied finite-rank F,
+let Q=I-F, A=I-zC, A'=I-z uCu*. In the decomposition F H direct_sum Q H,
+the QQ blocks are invertible for |z|<1. Define
+
+  S_F=A_FF-A_FQ A_QQ^(-1) A_QF,
+  S'_F=A'_FF-A'_FQ A'_QQ^(-1) A'_QF.
+
+These finite Schur complements are invertible because A,A' and their QQ
+blocks are invertible. Block Gaussian factorization uses upper and lower
+unipotent finite-rank factors with Fredholm determinant one. It gives
+
+  1-z=det(S'_F S_F^(-1))
+      det_F[A'_QQ A_QQ^(-1)].                           (10)
+
+The second relative determinant exists because A'-A is trace class. No
+commutation [F,C]=0 is assumed. In terms of the covariance,
+
+  S_F=I_F-z C_F
+      -z^2 C_FQ(I_Q-z C_QQ)^(-1) C_QF.                 (11)
+
+The last term and the QQ determinant are both determined by the SAME
+original C, once F is actually supplied. They add no fitted kernel or new
+state. Equations (10)-(11) are the exact sufficient transport of the old
+factor through a finite carrier. Keeping only C_F is a different operation.
+
+8. What the existing v258 test actually supplies
+------------------------------------------------
+
+The independent source audit follows the executed path:
+
+  existing Yukawa/Majorana data -> D_F -> C_F -> log odds -> same D_F.
+
+The statement C_F=P_F C_Sigma P_F is recorded there with check(...,True).
+Neither a concrete P_F nor C_Sigma enters that calculation. Therefore it
+checks inversion of the Fermi function, not derivation of D_F from the seam.
+This reuses the earlier September forward-provenance audit rather than
+announcing a new absence theorem.
+
+The sufficient source input is a local map T from the old circle to the
+actual seam space and a carrier isometry V_F. Only then is the compression
+V_F* T C T* V_F and the image of Pi typed. Alternatively an actual given
+global source may provide those maps directly. Equal dimensions, a common
+clock, or a formal Kasparov product do not specify the maps by themselves.
+
+9. Real EM response, phases, and the reference sector
+-----------------------------------------------------
+
+For the literal reflected covariance I-C, the same winding gives the inverse
+factor (1-z)^(-1). The ordinary full relative pair, and the norm of THAT
+inverse pair, are therefore one. Taking a square root of that norm cannot
+produce 1-z. A positive pair with determinant (1-z)^2 would be a different
+operator and needs an original source identity.
+
+This does not say that a full Dirac field has zero real EM susceptibility.
+Its actual D_A*D_A determinant is a different object. The even spectral
+action, eta phase, and the chiral determinant line must remain typed.
+
+The inverse-pair result is a scoped control, not an imposed physical source:
+v42 starts with the labeled one-sided datum (A_+,H_+,D_+,B_Sigma), and its
+minimal EM transfer contains no reflected inverse partner. Nevertheless
+tr_adm lives on Ran(P_adm) inside H_OS; the source does not identify it with
+the labeled graph marginal used in section4. Neither P_C nor Gamma supplies
+that face selection. A new chiral measure is therefore not imposed as a
+prerequisite for the real EM response. The required equality is the actual
+state/time-preserving one-sided source map and its response functional.
+
+Let b=B gamma=5/4 and q(alpha)=delta_top exp(-2 alpha), as in the originals.
+The current operator theorem proves the candidate
+
+  -b Log det_F R_C(q(alpha))=-b Log(1-q(alpha)).          (12)
+
+The exponent b and the identification with the physical EM effective action
+are not derived by (1). A sufficient actual Dirac-source comparison is
+
+  Re[Gamma_F(alpha)-Gamma_F(alpha_*)]
+   =-(1/2)log det_rel^+(D_alpha^*D_alpha,D_*^*D_*)
+   =-b log[(1-q(alpha))/(1-q(alpha_*))].                 (13)
+
+Here D_*=D_(alpha_*).
+The symbol det_rel^+ denotes a properly defined positive RELATIVE
+determinant with the original local counterterms/regularization retained;
+no multiplicativity of arbitrary separate zeta determinants is assumed.
+The reference alpha_* must be stated. In particular q(0)=delta_top is NOT
+zero. A seam-free reference q_ref=0 is a different reference, and must be
+named as such. The holomorphic branch is Log(1)=0 on |z|<1.
+
+The old complete-sector criterion R(alpha)=R(alpha_*) remains necessary
+when the rest of the source is integrated out. The Schur-complement identity
+does not prove that residual ratio constant or remove a genuine source
+normalization term.
+
+10. Result for the original fundamental task
+---------------------------------------------
+
+The seam topology, actual spin cover, pure CAR defect and faithful thermal
+defect now share the SAME exact directed relative factor. A canonical
+carrier-plus-complement transport is available without changing the source.
+The naive finite-compression shortcut is ruled out in its precise scope.
+
+This is a sufficient mathematical bridge rather than a new model. The next
+physical theorem is the forward map from the original charged source to
+that operator and equation (13), including its actual admissible domain,
+coupling and reference normalization. The broader source/state/time and
+interacting spacetime completion remain tasks of the original problem.
+
+Independent analytic reviews: GRADED-DETERMINANT-SOURCE.txt and
+RELATIVE-PAIRING-REVIEW.txt. Exact rational controls, including finite
+compensating edges, Schur terms and normalization, are in
+check_kms_carrier_transport.py. Those finite controls supplement the proofs;
+they are not the proof of the infinite-source or physical claims.

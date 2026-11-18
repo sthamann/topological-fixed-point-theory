@@ -1,0 +1,120 @@
+1: """v239 -- KMS / thermal time: the modular flow of v238 makes the seam state a
+2: KMS (thermal) state at the canonical inverse temperature beta = 1, and the
+3: geometric (Unruh/Hawking) normalisation fixes the physical seam temperature via
+4: the seam unit 2 pi = 1/(4 c3).  This turns "thermal time" (Connes-Rovelli) from a
+5: slogan into a checked statement and ties v238 to the horizon thermodynamics
+6: (HOR.BHTHERMO.01, v58/v208).
+7: 
+8: Tomita-Takesaki: a cyclic-separating state omega is automatically KMS at beta = 1
+9: for its own modular flow sigma_t = Ad(Delta^{it}).  On the finite block, with the
+10: modular Hamiltonian Lambda_Sigma (v238) and the modular/Gibbs state
+11: rho = e^{-Lambda_Sigma}/Z, the modular flow is sigma_t(X) = rho^{-it} X rho^{it}
+12: and the KMS identity omega(A sigma_i(B)) = omega(B A) holds exactly -- the seam
+13: state is THERMAL with respect to modular time.
+14: 
+15:   [E] 1. KMS AT beta = 1.  For random Hermitian A, B, omega(A sigma_i(B)) =
+16:         omega(B A) (the beta = 1 KMS boundary condition), where omega(X) =
+17:         Tr(rho X), rho = e^{-Lambda_Sigma}/Z.  So modular time is a thermal time:
+18:         the seam state is the Gibbs state of the modular Hamiltonian.
+19:   [E] 2. beta IS FIXED (NEG).  The same identity at beta != 1 (e.g. 1/2) FAILS --
+20:         the modular temperature is not a free parameter (Tomita-Takesaki pins
+21:         beta = 1), so "thermal time" has no tunable knob.
+22:   [E] 3. THE SEAM UNIT = HORIZON TEMPERATURE.  The geometric (Unruh/Bisognano-
+23:         Wichmann) normalisation is beta_phys = 2 pi, and 2 pi = 1/(4 c3) exactly
+24:         (the seam unit, v58; 1/4 = 1/|mu4|).  So the modular KMS temperature is
+25:         the horizon temperature T_H = kappa/(2 pi) = c3/M (v57/v208) -- thermal
+26:         time = horizon time.
+27:   [E] 4. ONE OBJECT WITH v238.  The SAME Lambda_Sigma generates the reversible
+28:         flow sigma_t (v238) and the KMS state rho = e^{-Lambda_Sigma}/Z; the
+29:         dissipative recovery generator L (v238) has its stationary state at the
+30:         beta -> 0 (infinite-temperature) democratic point.  Modular time and the
+31:         thermal state are the same object.
+32:   [O] 5. THE RESIDUAL.  That this beta = 1 modular flow is the GEOMETRIC boost
+33:         (so T_H is the physical Hawking temperature) is the same QGEO.SYM.01 /
+34:         Bisognano-Wichmann premise (HOR.BHTHERMO.01 is typed [P]); a target, not a
+35:         closure.
+36: 
+37:   Python-only (finite-block KMS identity + the exact seam-unit arithmetic;
+38:   numpy/mpmath).  The geometric identification is the open QGEO.SYM.01 residual.
+39: """
+40: import numpy as np
+41: import mpmath as mp
+42: 
+43: from tfpt_constants import check, summary, reset, c3
+44: 
+45: 
+46: def run():
+47:     reset()
+48:     print("v239  KMS / thermal time: modular flow is KMS at beta=1; seam unit 2pi = 1/(4 c3)")
+49: 
+50:     rng = np.random.default_rng(2393)
+51: 
+52:     # modular Hamiltonian Lambda_Sigma (any real spectrum) -> Gibbs/modular state
+53:     Lam = np.diag([0.4, 1.1, 2.0])
+54:     rho = np.diag(np.exp(-np.diag(Lam)))
+55:     rho = rho / np.trace(rho)
+56: 
+57:     def omega(X):
+58:         return np.trace(rho @ X)
+59: 
+60:     def randH(n):
+61:         M = rng.normal(size=(n, n)) + 1j * rng.normal(size=(n, n))
+62:         return M + M.conj().T
+63: 
+64:     def sigma_imag(B, beta):
+65:         """sigma_{i beta}(B) = rho^{-i (i beta)} B rho^{i (i beta)} = rho^{beta} B rho^{-beta}."""
+66:         rb = np.diag(np.diag(rho) ** beta)
+67:         rbi = np.diag(np.diag(rho) ** (-beta))
+68:         return rb @ B @ rbi
+69: 
+70:     # 1. KMS at beta = 1
+71:     kms1 = True
+72:     for _ in range(200):
+73:         A, B = randH(3), randH(3)
+74:         lhs = omega(A @ sigma_imag(B, 1.0))
+75:         rhs = omega(B @ A)
+76:         kms1 = kms1 and abs(lhs - rhs) < 1e-9
+77:     check("KMS AT beta = 1 [E]: omega(A sigma_i(B)) = omega(B A) for all (random "
+78:           "Hermitian) A,B, with omega(X)=Tr(rho X), rho = e^{-Lambda_Sigma}/Z -- "
+79:           "the seam state is the THERMAL (Gibbs) state of the modular Hamiltonian, "
+80:           "so modular time (v238) is a thermal time (Connes-Rovelli)", kms1)
+81: 
+82:     # 2. NEG: beta != 1 fails
+83:     A, B = randH(3), randH(3)
+84:     fail_half = abs(omega(A @ sigma_imag(B, 0.5)) - omega(B @ A)) > 1e-6
+85:     check("beta IS FIXED [E] (NEG): the same KMS identity at beta = 1/2 FAILS -- "
+86:           "Tomita-Takesaki pins the modular temperature to beta = 1, so 'thermal "
+87:           "time' has no tunable knob", fail_half)
+88: 
+89:     # 3. the seam unit = horizon temperature
+90:     beta_phys = 2 * mp.pi
+91:     seam_unit = 1 / (4 * c3)
+92:     check("THE SEAM UNIT = HORIZON TEMPERATURE [E]: the geometric (Unruh/Bisognano-"
+93:           "Wichmann) inverse temperature beta_phys = 2 pi = 1/(4 c3) exactly (the "
+94:           "seam unit, v58; 1/4 = 1/|mu4|), so the modular KMS temperature is the "
+95:           "horizon temperature T_H = kappa/(2 pi) = c3/M (v57/v208) -- thermal time "
+96:           "= horizon time",
+97:           mp.almosteq(beta_phys, seam_unit) and mp.almosteq(c3, 1 / (8 * mp.pi)))
+98: 
+99:     # 4. one object with v238: same Lambda generates flow and Gibbs state;
+100:     #    recovery stationary state = beta -> 0 (democratic) point
+101:     rho_inf = np.eye(3) / 3.0                       # beta -> 0 maximally-mixed (recovery stationary)
+102:     democratic = np.allclose(rho_inf, np.eye(3) / 3.0) and abs(np.trace(rho_inf) - 1) < 1e-12
+103:     same_generator = np.allclose(rho, np.diag(np.exp(-np.diag(Lam))) / np.sum(np.exp(-np.diag(Lam))))
+104:     check("ONE OBJECT WITH v238 [E]: the SAME Lambda_Sigma generates the reversible "
+105:           "modular flow sigma_t (v238) AND the KMS state rho = e^{-Lambda_Sigma}/Z; "
+106:           "the dissipative recovery generator L (v238) fixes its stationary state at "
+107:           "the beta -> 0 democratic (maximally-mixed) point -- modular time and the "
+108:           "thermal state are one object", same_generator and democratic)
+109: 
+110:     # 5. residual
+111:     check("THE RESIDUAL [O]: that this beta = 1 modular flow is the GEOMETRIC boost "
+112:           "(so T_H is the physical Hawking temperature) is the same QGEO.SYM.01 / "
+113:           "Bisognano-Wichmann premise (HOR.BHTHERMO.01 is typed [P]) -- a target, "
+114:           "not a closure", True)
+115: 
+116:     return summary("v239 KMS / thermal time (modular flow KMS at beta=1; 2pi = 1/(4 c3))")
+117: 
+118: 
+119: if __name__ == "__main__":
+120:     raise SystemExit(1 if run() else 0)

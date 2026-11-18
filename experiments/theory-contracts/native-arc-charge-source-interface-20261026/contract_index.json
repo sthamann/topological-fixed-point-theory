@@ -1,0 +1,128 @@
+{
+  "contract": "UR.NATIVE.ARCCHARGE.01",
+  "date": "20261026",
+  "question": "Can the actual native quartic insertions be generated from the additive original scalar density/stress algebra on their eight preimage arcs, and does the retained joint source supply the missing transfers?",
+  "verdict": "EXACT_SCOPED_RELATIVE_ARC_CHARGE_OBSTRUCTION; FINITE_MODULAR_DIAGNOSTIC; PHYSICAL_SOURCE_SELECTION_OPEN",
+  "verdict_enum": "PARTIAL",
+  "claims_tested": [
+    "UR.NATIVE.ARCCHARGE.PRINCIPAL.01",
+    "UR.NATIVE.ARCCHARGE.ADDITIVE.01",
+    "UR.NATIVE.ARCCHARGE.MODULAR.FINITE.01"
+  ],
+  "gates": [
+    "T1",
+    "T8"
+  ],
+  "kills": [
+    "Native nonzero quartic field as an insertion generated solely by the additive original scalar density/stress net on the same eight proper disjoint preimage arcs"
+  ],
+  "checker": "check_arc_current_completion.py",
+  "proof": "PROOF.txt",
+  "results": "results.json",
+  "firewall": "experiments",
+  "premises": [
+    "Actual displayed native M/O/positive Cartan map and five quartic constructors",
+    "Original quarter CAR source and original normal ordering",
+    "Eight proper disjoint preimage arcs and additive scalar density/stress net"
+  ],
+  "not_derived": [
+    "Original P1 field-to-operator variation map",
+    "Physical state/time/event selection",
+    "Continuum modular flow from two finite regulators",
+    "Local quartic-field invariance from conserved integrated channel matrices"
+  ],
+  "literature_reference": "https://arxiv.org/html/0912.1106v2",
+  "promotion": false,
+  "validation": {
+    "normal": "pass",
+    "optimized": "pass",
+    "results_byte_identical": true,
+    "independent_review": "highest CAR tensor, charge Gram, relative phases and algebraic scope reviewed; stated corrections applied"
+  },
+  "bilocal_current_continuation": {
+    "date": "20261026",
+    "claim": "UR.NATIVE.ARCCHARGE.BILOCAL.01",
+    "proof": "BILOCAL-RECONSTRUCTION.txt",
+    "checker": "check_original_bilocal_current.py",
+    "results": "bilocal_current_results.json",
+    "verdict": "EXACT_SCOPED_NEUTRAL_CURRENT_VERTEX_RECONSTRUCTION; PHYSICAL_P1_CURRENT_SOURCE_IMAGE_OPEN",
+    "verdict_enum": "PARTIAL",
+    "normal_optimized_byte_identical": true,
+    "independent_review": "Original bilocal formula/signs and connected current-net scope independently checked. Quarter-factor test is only consistency;analytic derivation stated.",
+    "new_physical_coupling": false,
+    "promotion": false
+  },
+  "elliptic_current_continuation": {
+    "date": "20261026",
+    "claim": "UR.NATIVE.ARCCHARGE.ELLIPTIC-CURRENT.01",
+    "proof": "ELLIPTIC-CURRENT-SOURCE.txt",
+    "checker": "check_elliptic_current_source.py",
+    "results": "elliptic_current_source_results.json",
+    "verdict": "EXACT_SCOPED_ELLIPTIC_CURRENT_FUNCTIONAL; NEUTRAL_STATE_DIFFERS_FROM_HARDY; ORIGINAL_P1_MEASURE_OPEN",
+    "verdict_enum": "PARTIAL",
+    "normal_optimized_byte_identical": true,
+    "independent_review": "Current functional, generator scales, ordered word signs and neutral state witness independently replayed and reviewed",
+    "new_physical_model": false,
+    "free_gaussian_quantization_premise_retained": true,
+    "promotion": false
+  },
+  "conformal_trace_continuation": {
+    "date": "20261026",
+    "claim": "UR.NATIVE.ARCCHARGE.CONFORMAL-TRACE.01",
+    "proof": "CONFORMAL-TRACE-AND-WICK.txt",
+    "checker": "check_conformal_trace_wick.py",
+    "results": "conformal_trace_wick_results.json",
+    "verdict": "EXACT_SCOPED_CONFORMAL_CAUCHY_INVARIANCE; CONFORMAL_AVERAGING_PRESERVES_GIVEN_FREE_BOUNDARY_WICK_WORDS; ORIGINAL_P1_SOURCE_OPEN",
+    "verdict_enum": "PARTIAL",
+    "normal_optimized_byte_identical": true,
+    "independent_review": "Full analytic source and independent normal/-OO checker replay accepted; three reviewed hashes in CONFORMAL-TRACE-REVIEW.txt",
+    "new_physical_model": false,
+    "free_conditional_quantization_premise_retained": true,
+    "promotion": false,
+    "review": "CONFORMAL-TRACE-REVIEW.txt"
+  },
+  "projector_state_continuation": {
+    "date": "20261026",
+    "claim": "UR.NATIVE.ARCCHARGE.PROJECTOR-STATE.01",
+    "proof": "PROJECTOR-STATE-RIGIDITY.txt",
+    "checker": "check_projector_state_rigidity.py",
+    "results": "projector_state_rigidity_results.json",
+    "verdict": "EXACT_SCOPED_FULL_PROJECTOR_COVARIANCE_FORCES_ALL_CAR_WORDS; MARGINALS_DO_NOT_FIX_CROSS_FACE_COHERENCE; ORIGINAL_P1_JOINT_SOURCE_OPEN",
+    "verdict_enum": "PARTIAL",
+    "normal_optimized_byte_identical": true,
+    "independent_review": "Full source, original annulus graph and Araki Lemma4.3 reviewed; independent normal/-OO replay and all256 ordered four-field controls accepted",
+    "additional_gaussian_premise_for_projector_uniqueness": false,
+    "actual_p1_joint_covariance_derived": false,
+    "promotion": false,
+    "review": "PROJECTOR-STATE-REVIEW.txt"
+  },
+  "half_period_gns_continuation": {
+    "date": "20261026",
+    "claim": "UR.NATIVE.ARCCHARGE.HALF-PERIOD-SEWING.01",
+    "proof": "HALF-PERIOD-GNS-SEWING.txt",
+    "checker": "check_half_period_gns_sewing.py",
+    "results": "half_period_gns_sewing_results.json",
+    "verdict": "EXACT_SCOPED_HALF_PERIOD_TO_GRADED_GNS_INTERTWINER; MAXIMAL_COHERENCE_IFF_LINEAR_HALF_MODULAR_CAR_TRANSPORT_IN_STATED_CLASS; ORIGINAL_P1_SEWING_OPEN",
+    "verdict_enum": "PARTIAL",
+    "normal_optimized_byte_identical": true,
+    "independent_review": "Full source, canonical parity/adjoint, all-mode GNS intertwiner, finite and stated normal all-mode saturation route reviewed; independent normal/-OO replay accepted",
+    "actual_p1_sewing_derived": false,
+    "new_physical_model": false,
+    "promotion": false,
+    "review": "HALF-PERIOD-GNS-REVIEW.txt"
+  },
+  "session_consolidation": {
+    "date": "20261026",
+    "overview": "SESSION-OVERVIEW-DE.md",
+    "manifest": "SESSION-ATLAS-MANIFEST.json",
+    "review": "SESSION-CONSOLIDATION-REVIEW.txt",
+    "algorithmic_source_note": "ALGORITHMIC-ATLAS-NOTE.txt",
+    "previous_own_findings_checked": 11,
+    "new_finding_ids": [
+      "finding:chat-algorithmic-comparison-native-pauli-code-and-scoped-information-loss",
+      "finding:chat-20261026-results-consolidated-with-corrected-assumptions"
+    ],
+    "figures": 7,
+    "promotion": false
+  }
+}

@@ -4,6 +4,38 @@ Scientific findings, their original scope and dated publication history remain
 in the modular `changelog.tex` document. This file records repository structure,
 navigation and maintenance changes that make no new scientific claim.
 
+## 2026-11-10 — Verification and formal evidence in the Atlas
+
+The Atlas imports the Python inventory and clusters from the verification
+registry. Paper evidence follows exact source identities from a Python script
+or Lean declaration and exposes source handles for the linked records. Formal
+files named in the ledger have a separate reference type. Wolfram headings end
+at their own closing comment and only their leading identifiers drive joins.
+Search shows the current ledger statement when a cached claim annotation cites
+changed source. Its historical annotation remains available with freshness metadata.
+
+## 2026-11-02 — Current research routing and source-bound Atlas repairs
+
+The shared Atlas and skills now read the live fundamental plan before historical
+research tasks. Exact result identifiers keep their complete scoped findings and
+premise dependencies; historical tasks retain their authored status and carry an
+explicit historical execution priority. The canonical plan documents have source
+handles without becoming mathematical findings.
+
+Source reading now checks and returns the actual original text, reports its extent
+and gives executable bounded continuations. Paper navigation follows the actual
+section and evidence identities. The registry records all local Lean source roles
+without claiming a fresh kernel check, and explicitly retires three removed legacy
+navigation tools. Checker and contract relations retain repository path identity.
+
+Complete unchanged source windows can be relocated only by an exact unique match;
+changed or ambiguous annotation sources require renewed extraction. Damaged control
+characters are rejected, external historical RH references preserve their unresolved
+scope, and the E8 glue execution note is reconciled only against its hash-verified
+historical receipt. R096's three different branches now expose their distinct
+conjunctive premises. Source freshness, AI review status and proof validation remain
+separate; this maintenance makes no new mathematical or physical claim.
+
 ## 2026-10-18 — Paper navigation in the shared Atlas
 
 The maintained local Atlas now imports the registry's exact document/section

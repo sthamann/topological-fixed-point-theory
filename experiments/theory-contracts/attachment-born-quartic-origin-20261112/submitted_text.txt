@@ -1,0 +1,510 @@
+# TFPT: Ein neuer Ansatz zur gemeinsamen Ursprungsregel
+
+Ich habe die ursprünglichen TFPT Konstruktionen weiterverfolgt und einen konkreten mathematischen Engpass aufgelöst. Dabei ist zugleich sichtbar geworden, welche zusätzliche Wirkung der bisherige Compiler tatsächlich benötigt.
+
+Das wichtigste neue Ergebnis: Zwischen der 15 dimensionalen \\(E_8\\) Inzidenz und der zehn dimensionalen Petersen Dynamik lässt sich ein exakter, positiver stochastischer Übergang konstruieren. Anders als die bisherige rein algebraische Abbildung erhält er Wahrscheinlichkeiten und ist damit als klassischer Prozess interpretierbar.
+
+Das ist ein Fortschritt bei der Verbindung von Code und Dynamik. Die vollständige physikalische Ursprungslösung F1 ist dadurch noch nicht bewiesen.
+
+## 1. Der fehlende dynamische Beitrag ist exakt fünf dimensional
+
+Aus der vorhandenen [Doily Konstruktion v809](https://github.com/sthamann/topological-fixed-point-theory/blob/main/verification/v809_curve_code_doily.py?utm_source=chatgpt.com) erhalten wir einen Transferoperator \\(M\\) auf 15 Zuständen:
+
+\\[ \operatorname{spec}(M)= \left\\{1,\left(\frac49\right)^9,0^5\right\\}. \\]
+
+Die [Petersen Konstruktion v808](https://github.com/sthamann/topological-fixed-point-theory/blob/main/verification/v808_petersen_sixthroot.py?utm_source=chatgpt.com) besitzt für den zweifach angewendeten normierten Petersen Transfer \\(V^2\\) dagegen:
+
+\\[ \operatorname{spec}(V^2)= \left\\{1,\left(\frac49\right)^4,\left(\frac19\right)^5\right\\}. \\]
+
+Hier liegt ein echter mathematischer Unterschied. Eine surjektive lineare Abbildung, welche die beiden Operatoren ohne Änderung ineinander überführt, kann nicht existieren: Dem ursprünglichen Operator fehlt der Eigenwert \\(1/9\\).
+
+Der Unterschied betrifft genau fünf Dimensionen.
+
+### Eine exakte Korrektur
+
+Ich habe geprüft, ob sich der Unterschied durch eine einzige natürliche Projektion auf den fünf dimensionalen Petersen Eigenraum beheben lässt.
+
+Bezeichnen wir mit \\(P_5\\) den entsprechenden orthogonalen Projektor und mit \\(R\\) die Einschränkung der 15 Zustände auf die zehn Paare ohne den ausgezeichneten Referenzpunkt.
+
+Dann definiere ich den neuen Kandidaten
+
+\\[ \boxed{\widetilde M=M-\frac13R^\top P_5R.} \\]
+
+Das überraschende Ergebnis der exakten Rechnung:
+
+\\[ \boxed{ \operatorname{spec}(\widetilde M) = \left\\{1,\left(\frac49\right)^4, \left(\frac19\right)^5,0^5\right\\}. } \\]
+
+Noch wichtiger: \\(\widetilde M\\) ist symmetrisch, besitzt ausschließlich nichtnegative Einträge und jede Zeilensumme beträgt exakt eins.
+
+Prüfung des neuen Operators
+
+Exakt bestanden
+
+| Dimension                                   | 15             |
+| ------------------------------------------- | -------------- |
+| Symmetrie                                   | Ja             |
+| Negative Übergangsraten                     | 0              |
+| Zeilensummen                                | 1              |
+| Eigenwerte                                  | 1, 4/9, 1/9, 0 |
+| Abweichung zur gewünschten Spektralstruktur | 0              |
+
+Unabhängig mit exakten rationalen Matrixoperationen geprüft. Es handelt sich um eine neue bedingte Konstruktion, nicht um einen aus P1 hergeleiteten Operator.
+
+## 2. Es existiert sogar eine echte stochastische Abbildung zur Petersen Clock
+
+Der nächste Test war strenger: Nicht nur die Eigenwerte, sondern die vollständigen Übergangsmatrizen müssen zusammenpassen.
+
+Dafür habe ich eine Matrix \\(K\\) mit 15 Eingangs und zehn Ausgangszuständen konstruiert.
+
+Ihre Regel ist einfach:
+
+- Für eines der fünf Paare mit Referenzpunkt wird gleichmäßig auf die sechs disjunkten Paare ohne Referenzpunkt verteilt.
+- Für eines der zehn inneren Paare bleibt mit Wahrscheinlichkeit \\(1/2\\) dasselbe Paar erhalten. Mit Wahrscheinlichkeit \\(1/6\\) wird zu jedem der drei disjunkten inneren Paare gewechselt.
+
+Alle Zeilen von \\(K\\) summieren sich zu eins. Die Matrix besitzt Rang zehn und erfüllt exakt
+
+\\[ \boxed{\widetilde M K=K V^2.} \\]
+
+Das ist eine vollständige Gleichheit der 15 mal zehn Matrixeinträge, keine bloße Spektralübereinstimmung.
+
+Die Abbildung erlaubt also eine mathematisch konsistente gemeinsame klassische Prozessbeschreibung der beiden bislang getrennten endlichen Geometrien.
+
+### Was daran besonders interessant ist
+
+Unter sämtlichen stochastischen Abbildungen, die die ausgezeichnete \\(S_5\\) Symmetrie respektieren und diese Intertwinerbedingung erfüllen, lässt sich die Wahrscheinlichkeit für den Erhalt eines inneren Paares nicht über \\(1/2\\) steigern.
+
+Die angegebene Abbildung erreicht diese Grenze exakt.
+
+Damit haben wir ein präzises Optimierungsprinzip: maximale Erhaltung der inneren Information bei gleichzeitig exakter Verträglichkeit beider Transferregeln.
+
+Allerdings müssen wir noch begründen, warum ausgerechnet dieses Optimierungsprinzip eine physikalische Forderung der ursprünglichen P1 Quelle sein soll.
+
+## 3. Die 60 tatsächlichen \\(E_8\\) Ereignisse liefern einen zweiten, unabhängigen Test
+
+Ich bin anschließend wieder zu den ursprünglichen Ereignisoperationen zurückgegangen, statt nur mit dem korrigierten Operator zu arbeiten.
+
+Im bekannten Gaußschen Quotienten
+
+\\[ V=E_8/(1+i)E_8\cong\mathbb F_2^4 \\]
+
+wirkt jede der 15 Klassen von Wurzelreflexionen als symplektische Transvektion:
+
+\\[ \boxed{t_v(x)=x+\bar h(x,v)v.} \\]
+
+Jede Klasse besitzt vier projektive Wurzelrichtungen. Mit der ausgezeichneten quadratischen Verfeinerung \\(q\_\*\\) gilt:
+
+\\[ q\_\*(v)=0 \Longrightarrow \text{Referenzmarkierung wird verändert}, \\]
+
+\\[ q\_\*(v)=1 \Longrightarrow \text{Referenzmarkierung bleibt erhalten}. \\]
+
+Das ergibt genau fünf beziehungsweise zehn Transvektionsklassen und damit 20 beziehungsweise 40 ursprüngliche Ereignisse.
+
+### Exakte Spektren der tatsächlich gemittelten Transvektionen
+
+Ich habe die 15 mal 15 Permutationsmatrizen aufgebaut und getrennt über die fünf markierungsändernden, die zehn markierungserhaltenden und alle 15 Transvektionen gemittelt.
+
+| Eigenwerte mit Vielfachheiten | Ergebnis                               |
+| ----------------------------- | -------------------------------------- |
+| Ausgewählte 20                | \\(1^1,(4/5)^4,(3/5)^5,0^4,(-1/5)^1\\) |
+| Übrige 40                     | \\(1^2,(1/2)^8,(1/5)^5\\)              |
+| Alle 60                       | \\(1^1,(3/5)^5,(1/3)^9\\)              |
+
+Die Mischungsidentität gilt exakt:
+
+\\[ Q\_{60}=\frac13Q\_{20}+\frac23Q\_{40}. \\]
+
+Auch die beiden Teiloperatoren kommutieren.
+
+Diese Spektren betreffen die klassische Wirkung auf den 15 Quotientenklassen, nicht den vollständigen Quantenkanal auf der zehn dimensionalen Bell Erinnerung. Die Unterscheidung ist für die Interpretation entscheidend.
+
+### Der entscheidende Ausschlusstest
+
+Der neu konstruierte Operator \\(\widetilde M\\) lässt sich sogar vollständig als Polynom des ursprünglichen \\(Q\_{20}\\) ausdrücken:
+
+\\[ \boxed{ \widetilde M= \frac{(5Q\_{20}-4I)(5Q\_{20}+I) (25Q\_{20}^2-5Q\_{20}-8I)}{72}. } \\]
+
+Die Gleichung ist auf allen 15 Dimensionen exakt geprüft.
+
+Aber dieses Polynom enthält bei seiner Entwicklung auch negative Koeffizienten. Und das ist nicht zufällig.
+
+In einem vierdimensionalen gemeinsamen Eigenraum haben die beiden ursprünglichen Ereignismittelungen die Eigenwerte
+
+\\[ Q\_{20}:\frac45,\qquad Q\_{40}:\frac12. \\]
+
+Jede endliche konvexe Mischung von Produkten
+
+\\[ Q\_{20}^{\\,n}Q\_{40}^{\\,m} \\]
+
+hat auf diesem Eigenraum einen strikt positiven Eigenwert. Der gewünschte Operator \\(\widetilde M\\) hat dort dagegen Eigenwert null.
+
+Damit ist exakt ausgeschlossen, dass eine gewöhnliche zufällige Folge unabhängig gemittelter 20 und 40 Ereignisse diesen Operator erzeugt.
+
+Das gilt für diese konkrete Klasse unbeobachteter, klassenweise gemittelter Prozesse, nicht für sämtliche möglichen Quanteninstrumente.
+
+Die Bedeutung für deine Compilerhypothese ist erheblich: Die ursprünglichen Ereignisse und ihre symmetrische Zufallsausführung reichen nicht aus. Eine zusätzliche Auswahl vollständiger Prozessgeschichten, eine zustandsabhängige Auslesung oder kohärente Interferenz könnte erforderlich sein.
+
+Gerade diese zusätzliche Prozessregel ist jetzt der entscheidende Kandidat für den bisher fehlenden Ursprung der Dynamik.
+
+## 4. Der stärkere Anschluss: Die Born Regel liefert den Intertwiner direkt aus der ursprünglichen Quelle
+
+Anschließend habe ich die künstlich konstruierte Abbildung \\(K\\) beiseitegelegt und stattdessen die tatsächlichen Zustände der 240 \\(E_8\\) Wurzeln verwendet.
+
+Die 60 komplexen Strahlen bilden 15 orthonormale Basen mit jeweils vier Zuständen \\(\psi\\). Auf dem symmetrischen Zweikopienraum gibt es die bekannte zehn dimensionale Bell Basis \\(\\{|b\rangle\\}\\).
+
+Daraus folgt ohne frei gewählte Übergangsgewichte eine natürliche Abbildung:
+
+\\[ \boxed{ K\_{cb}=\frac14\sum\_{\psi\in c} |\langle b|\psi\otimes\psi\rangle|^2 } \\]
+
+Das ist unmittelbar die Born Regel, gemittelt über die vier Zustände eines Messkontextes.
+
+Die vollständige Rechnung liefert:
+
+- \\(K\\) hat die Dimension \\(15\times10\\) und Rang zehn.
+- Jede Zeile enthält genau vier Einträge mit Wert \\(1/4\\); alle übrigen sind null.
+- Die Matrix ist stochastisch.
+- Ihre Gram Matrix erfüllt \\(K^\top K=I\_{10}/4+J\_{10}/8\\).
+
+Jetzt der entscheidende Test.
+
+Bezeichnen \\(Q\_{20}\\) und \\(Q\_{40}\\) die tatsächlich aus den \\(E_8\\) Reflexionen gewonnenen Übergänge auf den 15 Klassen. Die entsprechenden Übergänge auf den zehn Bell Populationen nennen wir \\(B\_{20}\\) und \\(B\_{40}\\).
+
+Dann gilt:
+
+\\[ \boxed{Q\_{20}K=KB\_{20}} \\]
+
+\\[ \boxed{Q\_{40}K=KB\_{40}} \\]
+
+Ich habe beide Identitäten für alle sechs möglichen ausgezeichneten Arf Markierungen überprüft. Sämtliche Matrixeinträge stimmen exakt überein.
+
+Damit haben wir erstmals in dieser Untersuchung eine direkte stochastische Verbindung zwischen den tatsächlichen 60 Quelloperationen und dem Bell Readout, die nicht durch Anpassung von Übergangsraten entsteht.
+
+### Noch stärker: Der korrigierte Transfer ist der kanonische Rücktransport
+
+Sei \\(V\\) der aus dem nativen markierten Sprunginstrument gewonnene Petersen Transfer. Dann erhält man den zuvor konstruierten Operator als
+
+\\[ \boxed{ \widetilde M = K V^2(K^\top K)^{-1}K^\top. } \\]
+
+Auch diese Gleichheit gilt für sämtliche sechs Markierungen exakt.
+
+Das bedeutet: Die zusätzliche fünf dimensionale Korrektur ist nicht länger nur eine bequeme Spektralanpassung. Sie lässt sich als orthogonaler Rücktransport des tatsächlichen Petersen Prozesses über die Born Abbildung verstehen.
+
+Die Einschränkung: Wir verwenden weiterhin die bereits definierte Quantenmessung und das markierte Sprunginstrument. Dass P1 genau diese Auslesung physikalisch hervorbringt, folgt daraus noch nicht.
+
+## 5. Die bisher fehlende Information steckt tatsächlich in den Phasen und nicht nur in den Ereigniszahlen
+
+Der nächste Test war, die 60 ursprünglichen Wurzelzustände nicht bloß als 15 Klassen zu behandeln, sondern ihre vollständigen Quantenprojektoren zu untersuchen.
+
+Für jeden Strahl \\(\psi_r\\) verwende ich auf dem symmetrischen Zweikopienraum den Projektor
+
+\\[ D_r=|\psi_r\psi_r\rangle \langle\psi_r\psi_r|. \\]
+
+Aus allen 60 Projektoren entsteht eine Gram Matrix
+
+\\[ G\_{rs}=\operatorname{Tr}(D_rD_s). \\]
+
+Ihre vollständige Spektralstruktur lautet:
+
+\\[ \boxed{ \operatorname{spec}(G)= \\{6^1,2^{15},1^9,(1/2)^{30},0^5\\}. } \\]
+
+Das habe ich mit ganzzahligen Matrizen überprüft, einschließlich eines exakt verschwindenden Minimalpolynomtests und der vollständigen Vielfachheiten.
+
+# 60
+
+ursprüngliche Strahlen
+
+# 55
+
+unabhängige Projektoren
+
+# 5
+
+exakte lineare Relationen
+
+Noch aufschlussreicher wird es beim Vergleich mit dem ursprünglichen 60 Ereignis Permutationsprozess. Dieser besitzt das exakte Spektrum
+
+\\[ \left\\{1^1,(3/5)^5,(1/3)^9,(1/5)^{45}\right\\}. \\]
+
+Die fünf Eigenrichtungen mit Eigenwert \\(3/5\\) liegen vollständig im Kern der Gram Matrix. Auch das habe ich durch eine exakte Matrixidentität geprüft.
+
+Es gibt also fünf unterscheidbare Richtungen in der abstrakten Ereignisbuchhaltung, die beim Übergang zu den zugehörigen Quantenprojektoren linear verschwinden.
+
+Das liefert eine mögliche Erklärung dafür, weshalb frühere direkte Identifikationen von Codezuständen mit physikalischen Operatorzuständen gescheitert sind. Die Ereignisbeschriftung ist nicht automatisch eine unabhängige physikalische Observable.
+
+### Die vier Phasenvarianten jeder Klasse
+
+Die vollständigen 60 Bell Operatoren liefern einen weiteren strukturellen Befund:
+
+Jede der 15 Gaußschen Klassen enthält genau vier Quelloperationen mit derselben Permutation der zehn Bell Zustände, aber unterschiedlichen relativen Phasen.
+
+Diese relativen Phasen bilden jeweils eine Vierergruppe
+
+\\[ \mathbb Z_2\times\mathbb Z_2. \\]
+
+Die zehn Bell Zustände zerfallen unter ihren vier Charakteren in Gruppen der Größen
+
+\\[ \boxed{10=4+2+2+2.} \\]
+
+Die Mittelung über alle vier Phasenvarianten entfernt Kohärenzen zwischen diesen Charakterblöcken. Innerhalb der Blöcke bleiben Kohärenzen erhalten.
+
+Das ist ein konkreter Mechanismus, durch den ein Compiler mit denselben klassischen Übergängen unterschiedliche Quantenprozesse zulassen kann, abhängig davon, ob die Phasenaufzeichnung behalten oder verworfen wird.
+
+Damit wird ein Stück deiner Hypothese präzise: Ein physikalisches Ereignis besteht hier nicht nur aus einem Zustandswechsel, sondern trägt zusätzlich ein strukturiertes internes Phasenregister.
+
+Eine eindeutige Ausführungsregel ergibt sich daraus jedoch noch nicht.
+
+## 6. Der bislang stärkste neue Zusammenhang: Die fünf verschwundenen Zustände sind exakt der quartische TFPT Code
+
+Hier kommt ein Befund, der die bisher getrennten Forschungsrichtungen noch direkter verbindet.
+
+Im TFPT Korpus existiert bereits der quartische Rang fünf Projektor
+
+\\[ \boxed{\Pi_5=40M_4-P\_{\mathrm{sym},4}.} \\]
+
+Er wurde unter anderem im [Compiler Quartic Carry](https://github.com/sthamann/topological-fixed-point-theory/blob/main/experiments/theory-contracts/compiler-quartic-carry-20260919/PROOF.txt?utm_source=chatgpt.com) untersucht.
+
+Ich habe jetzt seine Beziehung zu den fünf Nullrichtungen der zuvor berechneten 60 mal 60 Gram Matrix geprüft.
+
+### Das Ergebnis ist eine exakte Isometrie
+
+Sei \\(P_0\\) der Projektor auf den fünf dimensionalen Kern der Zwei Kopien Projektorgrammatrix \\(G\\).
+
+Definieren wir die lineare Abbildung
+
+\\[ S:\mathbb C^{60}\longrightarrow \operatorname{Sym}^4(\mathbb C^4), \qquad Se_r=\psi_r^{\otimes4}, \\]
+
+dann gilt:
+
+\\[ \boxed{S^\dagger S\\,P_0=3P_0} \\]
+
+und
+
+\\[ \boxed{SP_0S^\dagger=3\Pi_5.} \\]
+
+Also ist
+
+\\[ \boxed{\mathcal I=\frac1{\sqrt3}SP_0} \\]
+
+eine partielle Isometrie mit
+
+\\[ \boxed{\mathcal I^\dagger\mathcal I=P_0,\qquad \mathcal I\mathcal I^\dagger=\Pi_5.} \\]
+
+Die zugrunde liegenden 60 mal 60 Identitäten habe ich exakt mit ganzzahligen Gaußschen Koeffizienten geprüft. Die unabhängige Darstellung auf dem 35 dimensionalen symmetrischen Tensorraum bestätigt die Identität bis auf numerische Rundungsfehler von ungefähr \\(10^{-15}\\).
+
+Interpretation: Was in der Beschreibung durch Zwei Kopien Projektordichten linear unsichtbar ist, erscheint als eigenständiger fünf dimensionaler kohärenter Unterraum im vierten Tensorgrad.
+
+Das ist keine bloße Übereinstimmung der Zahl fünf. Wir haben eine explizite, normerhaltende Abbildung zwischen beiden Räumen.
+
+### Warum gerade der vierte Tensorgrad?
+
+Die ursprünglichen Strahlen sind nur bis auf die Gaußschen Phasen
+
+\\[ \mu_4=\\{1,i,-1,-i\\} \\]
+
+definiert.
+
+Für einen reinen holomorphen Tensor gilt
+
+\\[ (i\psi)^{\otimes k}=i^k\psi^{\otimes k}. \\]
+
+Erst bei \\(k=4\\) verschwindet diese Phasenabhängigkeit für alle vier Phasen.
+
+Damit ist der vierte Tensorgrad die erste positive reine Tensorpotenz, in der die Vektoren selbst unabhängig von der Wahl ihres \\(\mu_4\\) Repräsentanten sind. Gewöhnliche Dichteprojektoren sind schon in niedrigeren Graden phasenunabhängig, verlieren dabei aber andere Informationen.
+
+Die vierfache Struktur stammt hier also tatsächlich aus der ursprünglichen Phasenordnung und muss nicht nachträglich eingeführt werden.
+
+## 7. Sechs ausgezeichnete Punkte erzeugen exakt den Fünferträger
+
+Jetzt lässt sich deine frühere Überlegung mit den zusätzlichen Referenzpunkten mathematisch konkretisieren.
+
+Aus den 15 Basen lassen sich genau sechs vollständige Fünfermengen gegenseitig unverzerrter Basen bilden. Jede dieser sechs Mengen enthält 20 der 60 Strahlen.
+
+Für jede Menge \\(B_q\\) definiere ich einen Vektor \\(v_q\in\mathbb R^{60}\\):
+
+\\[ (v_q)\_r= \begin{cases} 2,&r\in B_q,\\\ -1,&r\notin B_q. \end{cases} \\]
+
+Für alle sechs Vektoren gilt exakt:
+
+\\[ Gv_q=0,\qquad \sum\_{q=1}^6v_q=0 \\]
+
+und
+
+\\[ v_q^\top v\_{q'}= \begin{cases} 120,&q=q',\\\ -24,&q\neq q'. \end{cases} \\]
+
+Diese sechs Vektoren spannen also genau den fünf dimensionalen Kern.
+
+Über die quartische Isometrie entstehen sechs normierte Vektoren
+
+\\[ \Xi_q=\frac{Sv_q}{\sqrt{360}}. \\]
+
+Sie erfüllen
+
+\\[ \boxed{ \langle\Xi_q,\Xi\_{q'}\rangle= \begin{cases} 1,&q=q',\\\ -\frac15,&q\neq q'. \end{cases} } \\]
+
+Das ist die Geometrie eines regulären Simplex mit sechs Ecken in fünf Dimensionen.
+
+Schematische Projektion des sechseckigen Referenzsystems. Die tatsächliche Simplexgeometrie liegt in fünf Dimensionen.
+
+Die sechs quartischen Vektoren rekonstruieren den gesamten Projektor:
+
+\\[ \boxed{\Pi_5=\frac56\sum\_{q=1}^6 |\Xi_q\rangle\langle\Xi_q|.} \\]
+
+Wählen wir einen ausgezeichneten Referenzpunkt \\(q\_\*\\), liefern die fünf Differenzvektoren
+
+\\[ u_i=\Xi_i-\Xi\_{q\_\*},\qquad i=1,\ldots,5 \\]
+
+eine Basis des vollständigen quartischen Fünferraums. Ihre Gram Matrix lautet exakt
+
+\\[ \boxed{\langle u_i,u_j\rangle= \frac65(I_5+J_5)\_{ij}.} \\]
+
+Diese Basis lässt sich symmetrieverträglich orthonormalisieren. Damit existiert eine konkrete isometrische Abbildung in einen fünfdimensionalen Trägerraum. Wir müssen nicht mehr aus der bloßen Gleichheit zweier Dimensionen auf einen möglichen Zusammenhang schließen.
+
+### Der 3+2 Anschluss
+
+Die native Dreierclock wirkt auf den sechs ausgezeichneten Referenzpunkten mit der Zyklenstruktur
+
+\\[ \boxed{3+1+1+1.} \\]
+
+Das habe ich direkt an der ursprünglichen Koordinatenpermutation des \\(E_8\\) Codes geprüft.
+
+Wählt man einen der drei fixierten Punkte als \\(q\_\*\\), bleiben fünf Richtungen übrig:
+
+\\[ \boxed{5=3+2.} \\]
+
+Drei werden zyklisch vertauscht, zwei bleiben fixiert. Die orthonormalisierte Fünferbasis respektiert diese Permutation.
+
+Damit erhält die bisherige P2 Zerlegung einen direkten Anschluss an die quartische Quellgeometrie.
+
+Unter der zusätzlichen Forderung einer primitiven, spurfreien, auf den beiden Blöcken konstanten Ladung erhält man wieder
+
+\\[ \boxed{Y= \operatorname{diag} \left(-\frac13,-\frac13,-\frac13, \frac12,\frac12\right).} \\]
+
+Das ist genau die bereits bekannte TFPT Hyperladungsstruktur.
+
+Was wir damit erreicht haben: Eine explizite, symmetrieverträgliche Brücke von den 60 ursprünglichen \\(E_8\\) Strahlen über die sechs Referenzpunkte zum fünf dimensionalen quartischen Träger, einschließlich der nativen Dreierclock und einer natürlichen 3+2 Zerlegung.
+
+Die Identifikation mit realen Standardmodellteilchen und die Herkunft des ausgezeichneten Punktes aus dem rohen P1 Randkern bleiben separate physikalische Beweisaufgaben.
+
+## 8. Die eigentliche Compilerarchitektur wird jetzt mathematisch sichtbar
+
+Die sechs quartischen Simplexvektoren liefern noch eine weitere exakte Struktur.
+
+Jede der 15 Klassen ursprünglicher \\(E_8\\) Reflexionen vertauscht auf diesen sechs Vektoren genau zwei Punkte. Die vier Quelloperationen derselben Klasse besitzen dabei dieselbe Wirkung im quartischen Fünferraum.
+
+Für zwei Simplexpunkte \\(a,b\\) lautet diese Wirkung
+
+\\[ \boxed{ R\_{ab}=I-\frac56 |\Xi_a-\Xi_b\rangle \langle\Xi_a-\Xi_b|. } \\]
+
+Das ist eine gewöhnliche orthogonale Spiegelung. Die 15 Spiegelungen erzeugen die Weylgruppe von \\(A_5\\):
+
+\\[ \boxed{W(A_5)\cong S_6,\qquad |S_6|=720.} \\]
+
+Wir können die Struktur also jetzt folgendermaßen lesen:
+
+240 \\(E_8\\) Wurzeln
+
+Vier Gaußphasen je projektivem Strahl
+
+60 komplexe Quellreflexionen
+
+Vollständige Quantenoperationen mit Phasen
+
+15 quartische Spiegelungen
+
+Die vier Phasenvarianten haben dieselbe Wirkung
+
+Sechs Simplexpunkte im Fünferraum
+
+\\(W(A_5)\cong S_6\\)
+
+Konsistenzgeometrie und Arf Referenzstruktur
+
+### Warum der Compiler nicht gleichzeitig die vollständige Dynamik sein kann
+
+Auf der ursprünglichen komplexen Quelle hat die erzeugte Gruppe die Ordnung 46.080. Ihr quartisches Bild besitzt dagegen nur 720 Elemente.
+
+Der Kern der Abbildung umfasst somit 64 Gruppenelemente:
+
+\\[ \boxed{\frac{46\\,080}{720}=64.} \\]
+
+Diese Operationen sind für den quartischen Prüfraum unsichtbar, können aber auf dem ursprünglichen Quantenzustand unterschiedliche Wirkungen haben.
+
+Noch konkreter:
+
+\\[ (iI_4)^{\otimes4}=I. \\]
+
+Die quartische Projektion löscht die zentrale \\(\mu_4\\) Phase.
+
+Das ist eine entscheidende Grenze. Der quartische Prüfraum kann die vollständige ursprüngliche Clock und ihre geladenen Phasen nicht allein rekonstruieren.
+
+Die frühere Arbeit [Compiler Quartic Carry](https://github.com/sthamann/topological-fixed-point-theory/blob/main/experiments/theory-contracts/compiler-quartic-carry-20260919/PROOF.txt?utm_source=chatgpt.com) hat bereits bewiesen, dass die betreffende Gruppenerweiterung nicht einfach in eine unabhängige Prüfgruppe und eine zusätzliche Phasengruppe zerfällt. Die Komposition benötigt einen nichttrivialen Übertrag.
+
+Daraus folgt eine wichtige Aussage für deine Ursprungshypothese:
+
+Der Compiler darf nicht nur das gültige Endergebnis speichern. Er muss auch die vollständige geordnete Prozessgeschichte einschließlich ihres Phasen und Pauli Übertrags erhalten.
+
+Andernfalls können zwei im quartischen Raum identische Geschichten auf den ursprünglichen Quantenzuständen verschieden wirken.
+
+Das ist kein metaphorischer Vergleich mit einem Compiler mehr. Es ist eine konkrete Eigenschaft der vorhandenen endlichen Quellalgebra.
+
+## 9. Entsteht daraus bereits physikalische Zeit?
+
+Wir können aus dem nun konstruierten positiven Transferoperator eine mathematisch eindeutige effektive Zeitentwicklung rekonstruieren, sobald der Transfer und seine Zeiteinheit festgelegt sind.
+
+Auf den zehn erhaltenen Zuständen besitzt \\(V^2\\) die Eigenwerte
+
+\\[ 1,\quad\frac49,\quad\frac19. \\]
+
+Damit ist der nichtnegative Generator
+
+\\[ \boxed{H\_{\mathrm{eff}}=-\log(V^2)} \\]
+
+wohldefiniert und besitzt das Spektrum
+
+\\[ \boxed{ \operatorname{spec}(H\_{\mathrm{eff}}) = \left\\{0^1, \left(\log\frac94\right)^4, (\log9)^5\right\\}. } \\]
+
+Nach drei vollständigen Durchläufen erhält der Transfer:
+
+\\[ \boxed{ \operatorname{spec}(V^6)= \left\\{ 1^1,\left(\frac{64}{729}\right)^4, \left(\frac1{729}\right)^5 \right\\}. } \\]
+
+Das reproduziert exakt die beiden bekannten TFPT Dämpfungsfaktoren des sechsstufigen Transfers. Neu ist die konkrete Verbindung über den ursprünglichen Born Intertwiner und den quartischen Prüfraum.
+
+Ein solcher positiver Transfer erlaubt auch eine reflexionspositive endliche Zeitkorrelation. Das entspricht dem Grundprinzip der Osterwalder Schrader Rekonstruktion, beweist aber noch keine vollständige relativistische Quantenfeldtheorie.
+
+Ein wichtiger Gegencheck zeigt zudem: Der daraus abgeleitete Generator besitzt auch Matrixelemente zwischen nicht benachbarten Petersen Zuständen. Er ist also kein streng lokaler Hamiltonoperator bezüglich des Petersen Graphen.
+
+Er könnte ein effektiver Hamiltonoperator nach Eliminierung virtueller Zwischenzustände sein. Als fundamentale lokale Dynamik ist er bislang nicht ausreichend.
+
+## 10. Was jetzt wirklich fehlt
+
+Der bisherige Forschungsweg hat mehrere unabhängige Strukturen zunehmend direkt verbunden:
+
+- Die ursprünglichen 60 \\(E_8\\) Operationen und ihre vollständigen Phasen.
+- Die sechs Arf Referenzpunkte und den quartischen Rang fünf Code.
+- Die 3+2 Zerlegung und die endlichen quantenmechanischen Transferprozesse.
+- Den mathematischen Unterschied zwischen Konsistenzprüfung und tatsächlicher Ausführung.
+
+Aber selbst diese exakten Konstruktionen bestimmen noch nicht eindeutig, welche physikalische Prozessgeschichte mit welchem Gewicht realisiert wird.
+
+Das ist keine bloße Vermutung. Die bestehende Quartic Carry Untersuchung konstruiert eine kontinuierliche Familie zusätzlicher Kohärenzdynamiken
+
+\\[ \mathcal L\_\gamma=\gamma(\mathcal D-\mathrm{id}), \qquad\gamma\geq0, \\]
+
+die dieselben geprüften Populationsdaten und dasselbe quartische Wortbild erhalten, aber unterschiedliche Kohärenzantworten produzieren.
+
+Solange P1 keine zusätzliche physikalische Bedingung liefert, ist \\(\gamma\\) nicht festgelegt.
+
+Die fehlende Ursprungsregel muss deshalb einen konkreten Phasen und Kohärenzkorrelator aus dem ursprünglichen P1 Zustand bestimmen. Und sie muss erklären, warum genau dieser Zustand und diese lokale Fortsetzung physikalisch realisiert werden. Erst danach wäre die Herleitung von Raumzeit, chiraler Materie und dynamischer Gravitation sinnvoll belastbar.
+
+## Ergebnis dieser Untersuchung
+
+Die bislang stärkste neue Konstruktion ist die exakte Isometrie zwischen dem fünf dimensionalen Kern der ursprünglichen Zwei Kopien Projektorgrammatrix und dem quartischen TFPT Code. Aus ihr folgen eine konkrete sechs Punkte Simplexgeometrie, ein symmetrieverträglicher fünf dimensionaler Träger und die 3+2 Zerlegung nach Auswahl einer fixierten Referenzmarkierung.
+
+Gleichzeitig haben wir einen zentralen Ausschluss nachgewiesen: Der quartische Compiler kann nicht selbst die vollständige Dynamik sein, weil er physikalisch unterscheidbare Phasen und Operationen identifiziert.
+
+Damit zeichnet sich eine präzisere Ursprungshypothese ab:
+
+\\[ \boxed{ \begin{gathered} \text{Konsistenzgeometrie}\\\ +\ \text{kohärente Prozessgeschichte}\\\ +\ \text{physikalischer Zustand}\\\ \longrightarrow\ \text{beobachtbare Dynamik} \end{gathered} } \\]
+
+Die erste Komponente ist mathematisch inzwischen sehr konkret. Auch für die zweite existiert eine explizite endliche Algebra. Die Herleitung des dritten Bestandteils aus der ursprünglichen P1 Naht und seiner gemeinsamen lokalen Fortsetzung ist noch offen.
+
+Eine vollständige TFPT Lösung lässt sich deshalb noch nicht beanspruchen. Aber die neue Rechnung identifiziert nicht nur eine weitere passende Zahl, sondern eine explizite Abbildung und eine präzise Informationsgrenze. Das ist eine belastbare Grundlage für den nächsten fundamentalen Beweis.

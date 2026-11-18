@@ -1,0 +1,255 @@
+INDEPENDENT ANALYTIC REVIEW: HALF KINK DHR SOURCE AND WEYL LINE
+================================================================
+
+Date: 2026-10-28
+Verdict: ACCEPTED ON THE STIPULATED QUOTIENT NET, WITH ONE MATERIAL
+         CORRECTION TO THE SHARP BILOCAL CLAIM
+
+Initially reviewed revisions
+----------------------------
+
+1. ../neutral/HALF-WINDING-DHR-SOURCE-ADDENDUM.txt
+   SHA256 6b99616285de46a3494bfc8ecd4bcef4c5960702e0a8f6060810d8b371593697
+
+2. ../neutral/CLOSED-HALF-KINK-SOURCE-WEYL-LINE.txt
+   SHA256 49ad6d35add5ec0523d428fc610506810b3eea69412c4875d2ac31d87275ef3d
+
+Original source contracts used for the review
+---------------------------------------------
+
+3. /Users/stefanhamann/Projekte/tfpt-theoryv4/experiments/theory-contracts/
+   joint-native-algebra-selection-20261016/
+   ORIGINAL-ORDERED-CURRENT-KERNEL-AND-SEAM-GRADING.txt
+   SHA256 62a9eeb4519b59d4514445f9d4dd5d2059e29179956a4c97ec94b7bae9ae3094
+
+4. /Users/stefanhamann/Projekte/tfpt-theoryv4/experiments/theory-contracts/
+   joint-native-algebra-selection-20261016/
+   ORIGINAL-DENSITY-GEOMETRY-AND-TIME-HISTORIES.txt
+   SHA256 2abf4b44f4cb4ca713d4e520676ef8db0849e5142962521a9592550f1c16ddbe
+
+5. J. Böckenhauer,
+   An Algebraic Formulation of Level One Wess Zumino Witten Models,
+   especially the section Localized Endomorphisms:
+   https://arxiv.org/html/hep-th/9507047v1
+
+
+1. Exact positive result
+------------------------
+
+On the stipulated quotient net
+
+    A_8(I) = CAR(L^2(I,C^8))^even
+
+the smooth half kink is a genuine localized automorphism.  Let a_I be a
+smooth real phase which is 0 on one component of I' and 2 pi on the other,
+and let
+
+    g_I = exp(i a_I/2)
+
+act simultaneously in the eight complex fermion planes.  Outside I this is
++1 on one component and -1 on the other.  The sign -1 acts as fermion parity,
+hence trivially on the even algebra.  Changing the square root branch changes
+g_I globally by -1 and therefore gives the same automorphism of A_8.  This is
+exactly the odd pseudolocalization mechanism used by Böckenhauer for the even
+selfdual CAR net.
+
+The sector label requires the stipulated D8 bosonization chart in addition to
+odd pseudolocality.  In that chart the charge is
+
+    s = q/2 = (1/2,...,1/2),
+    s^2 = 2,
+    h_s = s^2/2 = 1.
+
+Thus the report has a correctly typed spinor sector once the fixed q and its
+chirality convention are retained.  Böckenhauer's theorem by itself proves the
+specific spinor endomorphism constructed from his odd pseudolocalized
+Bogoliubov operator.  Odd pseudolocality alone does not choose between the two
+spinor labels.  Here that remaining choice is supplied by the explicit D8
+charge chart, not by a new fermion gauge interaction.
+
+
+2. Current normalization, Weyl line, and cocycle
+------------------------------------------------
+
+The folded current definition is consistent:
+
+    J_tot,n = J_cover,8n,
+    [J_tot,n,J_tot,m] = 8 n delta_(n+m,0).
+
+Multiplying the diagonal current charge by 1/2 gives effective squared charge
+
+    8 (1/2)^2 = 2,
+
+which is the same s^2 as above.  For two smooth kinks the difference
+
+    b_IJ = (a_I-a_J)/2
+
+has a pullback b_F with modes only at multiples of 8.  If
+
+    sum_(n>0) 8 n |b_n|^2 < infinity,
+
+then W(-b_F) is a bounded Weyl unitary in the given current Fock
+representation and intertwines the two localized automorphisms.  This is a
+real transporter, not a formal exponential.
+
+The cocycle factor is also correct.  The level 8 diagonal current combined
+with the half coefficient produces the factor 2 in the symplectic form.  It
+therefore reproduces the charge s cocycle rather than the level 8 cocycle
+without the half factor.
+
+The zero mode must remain part of the Weyl operator.  It commutes with the
+source Hamiltonian and creates no oscillator time phase.  It is invisible in
+the displayed charge zero Hall kernel matrix elements, but it still acts on
+charged fields.  The reviewed report does not need to set it to zero and
+should not do so in a later compression.
+
+The strongest algebra statement directly established by these sources is:
+
+* W(-b_F) is a bounded implementer in the source current representation;
+* its adjoint action is localized on the quotient net;
+* in the Haag dual vacuum net, Böckenhauer's argument places the transporter
+  in the corresponding local von Neumann algebra.
+
+Calling it an element of the norm quasilocal even C star algebra would require
+a separate norm inclusion argument.  The current kernel alone proves the
+bounded representation operator and localized adjoint action, which is enough
+for the DHR transporter statement used here.
+
+
+3. Time variable: accepted, with an essential name attached
+-----------------------------------------------------------
+
+The formula
+
+    U(t) J_tot,-n U(t)^* = exp(-i t n) J_tot,-n
+
+is correct for the actual original source evolution.  The original contract
+defines
+
+    U(t) = exp(-i t K_alpha),
+    [K_alpha,J_cover,-m] = (m/8) J_cover,-m,
+    Lcal_0^alpha - ground = 8 K_alpha.
+
+Putting m=8n gives the displayed quotient frequency n.  If one instead used
+the unrescaled cover conformal Hamiltonian Lcal_0^alpha-ground, the frequency
+would be 8n.  Therefore the result is not a free rescaling, but it is always a
+statement about the original K_alpha source time.  It must not be silently
+renamed as cover conformal time or as primitive P1 OS time.
+
+The reviewed Weyl line states this K_alpha origin explicitly.  Its later
+scope paragraph also keeps the primitive P1 state, reflection, and time map
+open.  On this point no correction is needed.
+
+
+4. Locality scope
+-----------------
+
+A proper interval I of the quotient circle pulls back under F(theta)=8 theta
+to eight disjoint cover arcs.  The half kink is localized in I for the
+quotient net.  This does not yet produce a single primitive P1 proper interval
+operator.  Both reviewed reports state this eight arc pullback and leave the
+primitive P1 net embedding open.  This is the correct scope.
+
+In particular, neither the bounded Weyl transporter nor the DHR localization
+theorem supplies the missing P1 CAR state, reflection, or source response
+policy.  The positive result is a fully derived transporter on the already
+given quotient current and even CAR structure.
+
+
+5. Material correction: the sharp bilocal
+------------------------------------------
+
+For a sharp step, the Fourier coefficients behave as 1/n, hence
+
+    sum_(n>0) n |b_n|^2
+
+diverges logarithmically.  Consequently there is no bounded Weyl operator
+limit.  The reviewed report states this correctly.  The same calculation,
+together with the level 8 and half charge, fixes the standard current vertex
+short distance exponent 2.
+
+Those facts do not yet prove the stronger sentences in
+CLOSED-HALF-KINK-SOURCE-WEYL-LINE.txt which assert an unqualified unique
+renormalized form limit on the full finite energy domain and a closable
+smeared bilocal operator.  The original ordered current contract proves exact
+matrix elements for smooth Weyl operators and controls the already defined
+native normal ordered products.  It explicitly does not establish arbitrary
+new coincident composite distributions.  Böckenhauer's localized
+endomorphism theorem also does not supply the missing vertex operator energy
+bounds.
+
+What is established from the present sources is the narrower statement:
+
+1. smooth approximants have an exact Gaussian self energy divergence;
+2. after removing that scalar divergence, their matrix elements between the
+   controlled finite degree source states have the standard vertex limit;
+3. the exponent, cocycle, i0 ordering, and relative normalization convention
+   are fixed by the current kernel and the condition T_II=1;
+4. no bounded sharp Weyl transporter exists.
+
+To promote this to a unique closable operator valued distribution one still
+needs either a cited lattice or current VOA vertex operator construction with
+the relevant energy bounds, or a direct proof of smoothing independence,
+dense domain invariance, and closability in this representation.  Until then,
+the sharp bilocal paragraph should be marked conditional or restricted to the
+controlled renormalized matrix elements.  This correction does not weaken the
+smooth DHR transporter theorem.
+
+
+6. Final scope
+--------------
+
+The two reports close a real source level gap on the stipulated quotient:
+
+* the half winding is an even CAR localized spinor automorphism;
+* smooth differences have bounded Weyl transporters;
+* level, conformal weight, cocycle, zero mode treatment, and K_alpha time agree
+  with the original ordered current source.
+
+They do not yet derive a primitive P1 single interval operation, a P1 OS time
+identification, or a physical response policy.  The only material overclaim is
+the unconditional existence and closability of the sharp bilocal field.  The
+positive smooth transporter result survives unchanged after narrowing that
+paragraph.
+
+
+7. Final rereview after the scope corrections
+----------------------------------------------
+
+The three final neutral reports were read again after the authors incorporated
+the preceding scope corrections.  Their checked final revisions are:
+
+1. ../neutral/NEUTRAL-DHR-BILOCAL-SOURCE-TEST.txt
+   SHA256 7e3e28f36db089457e3fa92f918e48f1f487965cf1fb2be558284322c3f92142
+
+2. ../neutral/HALF-WINDING-DHR-SOURCE-ADDENDUM.txt
+   SHA256 75308a38b30782bcedb656788229d2d5db72e21543a171dde78e602b0c7ece97
+
+3. ../neutral/CLOSED-HALF-KINK-SOURCE-WEYL-LINE.txt
+   SHA256 b4a2de50c9a56e8e5498827b506a9a303a4350d559c60a6c6152cf97d61a641f
+
+The initial file hashes above are retained as review history.  The final
+revisions now implement every material boundary found in this review:
+
+* K_alpha is explicitly the source evolution
+  (Lcal_0^alpha-ground)/8.  The frequency n is not attributed to the
+  unscaled cover Hamiltonian, and primitive P1 OS time remains open.
+* quotient localization is explicitly distinguished from a primitive P1
+  proper interval.  Its cover support is the union of eight arcs.
+* the smooth transporters are called bounded Weyl implementers.  Local von
+  Neumann algebra placement in the Haag dual vacuum net is distinguished from
+  unproved membership in the norm closed quasilocal C star algebra.
+* the fixed D8 q chart, rather than odd pseudolocality alone, chooses the label
+  s rather than c.
+* the sharp bilocal claim is now restricted to the UV exponent and controlled
+  renormalized matrix elements.  The reports explicitly state that a closable
+  smeared operator on a common full finite energy core still requires an
+  energy bound and a domain proof.  They also refrain from fixing an absolute
+  charged endpoint normalization.
+
+Accordingly, the final three reports are accepted within their stated scope.
+The earlier material objection has been resolved.  The surviving open step is
+the normal local map from the eight arc quotient sector into one primitive P1
+region, together with state, OS reflection, time, and the physical response
+rule.  This is an origin question and does not reopen the completed quotient
+DHR and smooth Weyl construction.

@@ -1,0 +1,168 @@
+INDEPENDENT FINAL REVIEW: GLOBAL SPIN KERNEL AND MODULAR C3 SOURCE TEST
+=====================================================================
+
+26 October 2026
+
+Verdict
+-------
+
+ACCEPTED within the stated mathematical scope. I found no material algebraic,
+analytic or source-typing error in GLOBAL-SPIN-KERNEL.txt,
+MODULAR-C3-SOURCE-TEST.txt or check_spin_transport_and_cusp.py.
+
+The two reports establish two positive results which must remain separate:
+
+  1. The already fixed elliptic spin structure supplies the complete global
+     holomorphic rank-two Szego kernel and not merely its local principal
+     part.
+
+  2. The theta-square modular representation is exactly equivalent to the
+     v117 pair after the displayed phase normalization, while the original
+     geometric quarter turn Q is the modular S marker and is not v117-U.
+
+Neither result proves a positive equal-time CAR covariance, identifies the
+ramified carrier with the old smooth quarter circle, or derives the missing
+modular T path from the original source.
+
+
+1. Global divisor and full-kernel proof
+---------------------------------------
+
+The divisor calculation is correct. On
+
+  E:y^2=x^4-1
+
+the two points at infinity are simple poles of x. Hence
+
+  2D_A=div(x^2-1),
+  D_A=R_1+R_-1-infinity_+-infinity_-.
+
+Riemann--Roch gives
+
+  H0(E,O(infinity_++infinity_-))=span(1,x).
+
+No nonzero affine function vanishes at both x=1 and x=-1, so D_A is not
+principal. It is therefore a nontrivial two-torsion class. The partition
+{1,-1}|{i,-i} is the unique nontrivial partition fixed by Q as an unordered
+partition. This proves uniqueness of the underlying Q-fixed spin-line class.
+It does not by itself choose a Q-linearization phase on that line, and the
+reports do not use it as if it did.
+
+The full-kernel argument is also valid. The displayed formula has unit
+diagonal residue; the apparent pole at the deck-conjugate point cancels; and
+the difference from the normalized alpha Szego kernel is a holomorphic
+alpha section. Since H0(E,alpha)=0, the difference vanishes globally.
+
+Writing
+
+  g^4=(x^2-1)/(x^2+1)
+
+then gives the complete two-sheet matrix, and the constant unitary J
+diagonalizes that entire matrix to
+
+  sqrt(dx dz)/(x-z) diag(g(x)/g(z),g(z)/g(x)).
+
+This is a full holomorphic identity. The four peripheral residues
+
+  1/4,-1/4,1/4,-1/4
+
+give the stated alternating quarter monodromies with product I, and Q sends
+g^4 to its reciprocal, so it exchanges the two character lines.
+
+The report types the functional-analytic boundary correctly. A bilinear
+holomorphic half-form and its determinant Wick expressions do not alone
+give a self-adjoint positive equal-time CAR covariance. The required real
+slice, one-particle inner product, closed trace operator and inequalities
+0<=C<=I remain explicitly open.
+
+
+2. Modular group and exact v117 dictionary
+------------------------------------------
+
+The theta-square matrices A_S and A_T are consistent with the standard
+theta transformation laws. Exact finite enumeration gives
+
+  |<A_S,A_T>|=96,
+
+with scalar kernel {I,iI,-I,-iI}; hence the projective image has order 24.
+Its quotient action on the three spin labels is S3 and its normal kernel is
+V4, giving the expected projective S4 structure.
+
+After the stated normalization
+
+  U_Theta=-i A_T,
+  M_Theta= i A_S A_T,
+
+the generated linear group has order 24 and satisfies all v117 relations.
+The single displayed unitary X verifies both generator equations, not only
+characters or one selected element:
+
+  X U_Theta X^(-1)=U_v117,
+  X M_Theta X^(-1)=M0_v117.
+
+Thus the abstract marked pair equivalence is exact.
+
+The geometric marker test is also decisive. At tau=i, Q:z->iz acts on
+homology as the modular S generator. On the three nontrivial two-torsion
+spin classes it has one fixed class and one transposed pair, so every scalar
+normalization has eigenvalue multiplicities 1+2. The v117 marker U has the
+three distinct eigenvalues 1,i,-i. Therefore Q=S cannot be linearly or
+projectively conjugate to U. The report correctly identifies modular T,
+rather than geometric Q, as the generator transported to v117-U by X.
+
+
+3. Archived versus active TFPT source scope
+--------------------------------------------
+
+The literal D/P cusp error belongs to archived TFPT45 and the corresponding
+archived TFPT42 section. It must not be transferred to the active theory.
+
+The active source
+
+  documents/tfpt_2_standard_model/sections/
+  008-section-the-setup-parabolic-data-on-the-family-curve.tex:87-114
+
+explicitly computes positive character-variety dimensions, says that the
+bare Z4 system is not cohomologically rigid, and names full D4 plus the
+determinant-trivial branch as additional input. Lines 115-172 separately
+require global parabolic and holomorphic data. This is consistent with the
+independent C3 paper review and with the modular report's conditional source
+status.
+
+The v117 existence correction remains exact:
+
+  M_k=U^k M U^(-k),  k=0,1,2,3,
+
+and, because U^4=I,
+
+  product_k M_k=(MU)^4=I.
+
+It repairs the archived explicit monodromy package. It does not reinstate
+the archived bare-rigidity claim and does not identify geometric Q with U.
+
+
+4. Independent optimized replay
+--------------------------------
+
+Executed once as requested:
+
+  python3 -B -OO
+    research-20261026-spin-transport/check_spin_transport_and_cusp.py
+
+Result:
+
+  PASS_SCOPED
+  exact_checks=19
+  theta diagnostic errors=
+    3.6222716e-71,
+    1.4489087e-70,
+    6.8344884e-70.
+
+The exact checks include the full two-sheet diagonalization, local ramified
+Cauchy identity, all four residues and spin monodromies, the archived cusp
+failure, all four corrected v117 cusp spectra and product, the raw group of
+order 96, the normalized group of order 24, both X intertwining identities,
+and the Q versus U spectral distinction.
+
+No Atlas, original paper, verification or canonical project file was
+changed.

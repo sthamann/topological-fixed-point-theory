@@ -26,7 +26,7 @@ class Regression(unittest.TestCase):
     def test_01_seven_direct_and_transitive_source_pins(self):
         self.assertEqual(len(r.PINS), 7)
         for name, digest in r.PINS.items():
-            self.assertEqual(hashlib.sha256((r.ROOT/name).read_bytes()).hexdigest(), digest)
+            self.assertEqual(r.source_digest(r.ROOT/name), digest)
         self.charged.inherited()
 
     def test_02_changed_source_rejected(self):
@@ -179,7 +179,13 @@ class Regression(unittest.TestCase):
         self.assertFalse(self.record["edge_scaling"]["true_finite_width_eigenvector_claimed"])
 
     def test_22_complete_deterministic_certificate_replay(self):
-        self.assertEqual(r.run(), self.record)
+        actual, expected = r.run(), dict(self.record)
+        self.assertEqual(actual.pop("source_pins"), r.PINS)
+        expected.pop("source_pins")
+        self.assertEqual(actual.pop("checker_sha256"), hashlib.sha256((HERE/"checker.py").read_bytes()).hexdigest())
+        self.assertEqual(expected.pop("checker_sha256"),
+                         "1336ef54c776794f2a587fbd9c7250f069394ae9e509e2e32dc91a357fa8ab47")
+        self.assertEqual(actual, expected)
 
     def test_23_vacuum_diagnostic_remains_separate_and_reproducible(self):
         spec = importlib.util.spec_from_file_location("half_vacuum_test", HERE/"vacuum_diagnostic.py")
@@ -188,6 +194,9 @@ class Regression(unittest.TestCase):
         actual = module.run()
         saved = json.loads((HERE/"vacuum_diagnostic.json").read_text())
         self.assertFalse(actual["one_particle_low_mode_bounds_imply_vacuum_control"])
+        self.assertEqual(actual.pop("checker_sha256"), hashlib.sha256((HERE/"checker.py").read_bytes()).hexdigest())
+        self.assertEqual(saved.pop("checker_sha256"),
+                         "1336ef54c776794f2a587fbd9c7250f069394ae9e509e2e32dc91a357fa8ab47")
         self.assertEqual(actual.keys(), saved.keys())
         self.assertEqual({k: v for k, v in actual.items() if k != "rows"},
                          {k: v for k, v in saved.items() if k != "rows"})

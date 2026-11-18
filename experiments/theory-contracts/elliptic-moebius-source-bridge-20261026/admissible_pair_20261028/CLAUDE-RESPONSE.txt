@@ -1,0 +1,64 @@
+# Independent review of the TFPT "root proposal" (claims 1–5)
+
+I separate **(A) proved identities**, **(B) conditional implications**, **(C) physical/source selection**, then name the first non‑rigorous step and give one next test. I verified the representation theory and the Choi/diamond algebra line‑by‑line; the group theory in (4) is valid but rests on an unproven identification; one number in (5) does not reproduce.
+
+---
+
+## A. Proved identities (claims 1–3 are correct)
+
+**Claim (1) — commutant characterization.** For a channel $T:\mathrm{End}(H)\to\mathrm{End}(\bar H)$, $H=\Lambda^2\mathbb C^5=\mathbf{10}$, covariance $T(R\rho R^*)=\bar R\,T(\rho)\bar R^*$, $R=\Lambda^2U$, forces the Choi operator into the commutant of $\bar R\otimes\bar R$. The branching
+$$\mathbf{10}\otimes\mathbf{10}=\overline{\mathbf 5}\oplus\mathbf{45}\oplus\mathbf{50},\qquad 5+45+50=100,$$
+with $\mathrm{Sym}^2\mathbf{10}=\overline{\mathbf 5}\oplus\mathbf{50}$ (dim $55$) and $\Lambda^2\mathbf{10}=\mathbf{45}$, is **multiplicity‑free**, so the commutant is the abelian algebra $\{P_5,P_{45},P_{50}\}$. Conjugation gives $\overline{\mathbf{10}}\otimes\overline{\mathbf{10}}=\mathbf 5\oplus\overline{\mathbf{45}}\oplus\overline{\mathbf{50}}$ — **conjugation labels confirmed**. With $F$ the swap, $\Lambda^2$ is the $-1$ eigenspace so $P_{45}=(I-F)/2$; $\mathrm{Sym}^2$ is $+1$ so $P_{50}=(I+F)/2-P_5$. I checked $P_5$: $\langle\mathrm{vec}\,C_m,\mathrm{vec}\,C_m\rangle=\sum_{kl,ij}\varepsilon(m,ijkl)^2=6$ (the complementary 4‑set splits into an ordered duad pair in $\binom 42=6$ ways), orthogonal in $m$, so $P_5=\tfrac16\sum_m\mathrm{vec}(C_m)\mathrm{vec}(C_m)^*$ is the correct **rank‑5** projector, normalization $1/6$ correct. TP forces $\mathrm{Tr}_{\mathrm{out}}P_i=(d_i/10)I$, hence $J=\sum_i(10p_i/d_i)P_i$ with $p_i\ge0,\sum p_i=1$. **Claim (1) is proved.**
+
+**Claim (2) — population support ⇒ full $\Phi$.** On the stay element $|e,e\rangle$: $P_5$ vanishes ($\varepsilon(m,klkl)=0$), $P_{45}=(I-F)/2$ vanishes ($F|e,e\rangle=|e,e\rangle$), and $P_{50}$ gives $1$. So the diagonal is $p_{50}/5\ge0$, and zero‑stay $\Rightarrow p_{50}=0$ **by positivity alone**. On an intersecting pair $|e,f\rangle$, $|e\cap f|=1$: $P_5$ vanishes ($\varepsilon$ repeats an index), $P_{45}$ and $P_{50}$ each give $1/2$ ($\langle e,f|F|e,f\rangle=0$). With $p_{50}=0$ already, the diagonal is $p_{45}/9\ge0$, so zero‑intersecting $\Rightarrow p_{45}=0$. Then $p_5=1$, $J=2P_5=\Phi$, phases included. The role of CP is exactly right: each targeted diagonal is a **single nonnegative term**, so "population $=0$" rigorously forces the coefficient to $0$; without $p_i\ge0$ cancellations could hide weight. **Claim (2) is proved, conditional on full covariance.**
+
+**Claim (3) — leakage/diamond formulas are correct, including exactness.** Per‑duad stay $=p_{50}/5=s\Rightarrow p_{50}=5s$. Each duad has 6 intersecting partners; summed intersecting leakage
+$$o=6\big(\tfrac19p_{45}+\tfrac1{10}p_{50}\big)=\tfrac23p_{45}+\tfrac35p_{50},$$
+giving $p_{45}=\tfrac32o-\tfrac92 s$, $p_{50}=5s$ — matches. For the **diamond distance**, write $T=\sum_ip_i\Phi_i$ with $\Phi_i$ the extreme covariant channels (Choi $(10/d_i)P_i$), $\Phi=\Phi_5$. Upper bound by convexity/triangle: $\|T-\Phi\|_\diamond\le2(p_{45}+p_{50})$. Lower bound by the maximally entangled probe $\rho=|\Omega\rangle\langle\Omega|/10$:
+$$J_T-J_\Phi=-2(p_{45}+p_{50})P_5+\tfrac29p_{45}P_{45}+\tfrac15p_{50}P_{50},$$
+three **orthogonal supports**, so $\|J_T-J_\Phi\|_1=10(p_{45}+p_{50})+10p_{45}+10p_{50}=20(p_{45}+p_{50})$ and $\tfrac1{10}\|J_T-J_\Phi\|_1=2(p_{45}+p_{50})$. Upper $=$ lower, so
+$$\boxed{\;\|T-\Phi\|_\diamond=2(p_{45}+p_{50})=3o+s\;}$$
+is **exact**, not just a bound. The orthogonality of the Choi components is precisely what makes the entangled probe simultaneously optimal. **Claim (3) is proved.**
+
+---
+
+## B. Conditional implication (claim 4): valid group theory, unproven premise
+
+The algebra is correct. In $\mathfrak{su}(5)$, $S(U(3)\times U(2))$ supplies $E_{01},E_{12}$ (in the 3‑block) and $E_{34}$. Conjugation by $c=(01234)$ shifts indices $i\mapsto i+1\!\!\mod 5$, so $cE_{01}c^{-1}=E_{12}$, $cE_{12}c^{-1}=E_{23}$, etc. Thus $\{E_{01},E_{12}\}$ plus iterated $\mathrm{Ad}(c)$ generate **all** consecutive simple‑root vectors $E_{i,i+1}$, which generate $\mathfrak{su}(5)$. Hence $G$‑covariance **and** $c$‑covariance $\Rightarrow$ full $SU(5)$ covariance $\Rightarrow$ (by A) the entire $\Phi$ with phases. **The generation statement is proved.**
+
+What is **not** proved is the premise: that the physical clock is realized as this index 5‑cycle $c\in SU(5)$ acting on $H$ by $\Lambda^2(\text{permutation})$, on the correct source sector, as a symmetry of the **channel including records**, not only of the Lie algebra/Killing form. Your own caveat is the live one: the $C_5$/Galois/Coxeter clocks, the center $Z_5$, and the permutation matrix are **distinct objects**. Only the matrix 5‑cycle acting by wedge produces $\mathrm{Ad}(c)E_{i,i+1}=E_{i+1,i+2}$; a $Z_5$ center element acts by a scalar and generates nothing, and a Galois/Coxeter element need not implement the required outer shift of the $A_4$ simple roots at all. So (4) is a correct **conditional** implication whose antecedent is a physical/source identification, not an identity.
+
+---
+
+## C. Physical selection, and claim (5)
+
+**Qualitatively (5) is right and necessary.** Under $S(U(3)\times U(2))$, $\Lambda^2(\mathbf 3\oplus\mathbf 2)=\mathbf{\bar3}_{CC}\oplus(\mathbf 3,\mathbf 2)_{CW}\oplus\mathbf 1_{WW}$, populations $3,6,1$. A phase constant on each irreducible sector is a scalar on each irrep, hence commutes with $G$ (Schur), is diagonal in the duad basis (preserves all populations), yet shifts $CC$–$CW$–$WW$ relative phases. So $U_\theta=\mathrm{diag}(e^{i\theta_{CC}},e^{i\theta_{CW}},e^{i\theta_{WW}})$ gives a **2‑parameter** family $T=\Phi\circ\mathrm{Ad}(U_\theta)$ with identical rank‑5 Choi support and identical populations but different coherence. **Therefore $G$‑covariance + minimal rank + exact populations is genuinely insufficient; the $c$ in (4) is required.** This correctly identifies what (2) alone cannot deliver.
+
+**The number $5/9$ does not reproduce.** The $P_5$‑overlap witness is sound in principle ($P_5$ is a legitimate gauge‑invariant Choi functional; $p(P_5\mid\Phi)=\mathrm{Tr}(P_5J_\Phi)/\mathrm{Tr}(P_5J_\Phi)=1$). But computing the normalized overlap for a $CC$ phase‑flip $W=\mathrm{diag}(-1_{CC},+1_{CW},+1_{WW})$, the $P_5$ weight is $\propto\sum_m\sum_{\text{6 pairings}}w_{ij}w_{kl}$. By sector I get: for $m\in\{3,4\}$ each 6‑sum $=-6$; for $m\in\{0,1,2\}$ each $=+2$; total $-12+6=-6$ against $+30$ for $W=I$, i.e. a ratio $-1/5$ (two‑leg action), or $12/30=2/5$ (single‑leg action). **Neither equals $5/9$.** So the stated $5/9$ needs its precise operational definition pinned down (which leg(s) carry the phase, and whether $p$ is the overlap, its square, or a fidelity $\tfrac12(1+\mathrm{Re})$); as written the numeric sub‑claim is **unverified and likely incorrect**. The *existence* of a gauge‑invariant witness distinguishing the $U_\theta$ family stands; its calibrated value does not.
+
+---
+
+## First non‑rigorous step
+
+Steps **(1)–(3)** are proved identities. **(4)**'s generation lemma is proved; its **premise** — that the actual source symmetry contains the wedge 5‑cycle $c$ acting as $\Lambda^2(\text{perm})$ *as a covariance of the instrument/record*, not merely of the algebra or state — is the **first step that is assumed rather than established**. **(5)** is qualitatively correct but its quantitative witness value ($5/9$) is erroneous/underdefined. So the architecture is: (1)–(3) rigorous; closure hinges entirely on the antecedent of (4); (5) proves the antecedent is indispensable.
+
+---
+
+## ONE strongest next source‑level test (non‑duplicative)
+
+**Test the clock as a covariance of the instrument, via the Ward/sewing kernel's root‑weight invariance.**
+
+Everything reduces to: *does the physical clock $c$ lift to a $*$-automorphism of the actual OS operator net on $A_{\mathrm{adm}}$ that intertwines the channel together with its records, implementing $T\mapsto \bar R T(\,\cdot\,)\bar R^*$ with $R=\Lambda^2c$?* The leading affine‑current OPE uses the isotropic Killing metric, which trivially respects any $SU(5)$ element; but you flag that the finite‑separation, Cartan‑twisted $H_8$ kernel carries **root‑dependent weights** $w_\alpha$. The clock acts on roots by the cyclic shift $\sigma:\alpha\mapsto c\cdot\alpha$ of the $A_4$ simple roots. Hence $c$ is an automorphism of the *finite‑separation* net — and of the record sector — **iff**
+$$w_{\sigma(\alpha)}=w_\alpha\quad\text{for all roots }\alpha,$$
+a finite, explicitly checkable linear condition on the kernel weights (not implied by equal root lengths or by Lie‑algebra invariance, exactly the point you raise).
+
+Concretely:
+1. Extract the root‑weight profile $w_\alpha$ of the Cartan‑twisted sewing kernel on $A_4+A_4$ at the relevant finite separation.
+2. Verify the cyclic invariance $w_{\sigma(\alpha)}=w_\alpha$ under the matrix 5‑cycle $c=(01234)$ (not $Z_5$‑center, not Galois). This is a few‑line check once the weights are tabulated.
+3. If invariant, confirm that the implementing unitary $U(c)$ maps $A_{\mathrm{adm}}$ into itself **and** acts on the pointer/record sector as $\bar R\otimes\bar R$ — i.e. test *image membership and the output‑conjugate transformation law of the instrument*, since (as you note) commutation with charge or $P_{\mathrm{adm}}$ alone does not establish it.
+
+If all three hold, then gauge $G$‑covariance (already available) **plus** this clock covariance gives full $SU(5)$ covariance by (4), and (1)–(2) then fix the entire $\Phi$ including phases — closing the original‑source implication. If the weights fail $\sigma$‑invariance, the finite‑separation kernel is anisotropic in exactly the direction that admits the $U_\theta$ family of (5), and no covariance argument can select the phase; one would then need a genuinely different selection principle for the record sector.
+
+**Why this is the right single test.** It is not a repeat of the bracket‑cocycle / Killing‑sum checks (those establish Lie‑algebra and state data). It targets the one unproven antecedent — the discrete clock as an *instrument‑level* covariance with invariant root weights — and it is a finite computation whose outcome is decisive either way. It also respects the boundaries you set: it does not identify $\mathbf{50}$ with the old $\mathbf{64}$, does not equate recurrence count with physical time, and does not claim a complete physical theory; it only asks whether the sewing data is $\sigma$‑rigid.
+
+*Secondary correction to fold in:* restate the (5) witness with a fixed operational definition and recompute; my sector bookkeeping gives ratio $-1/5$ (two‑leg) or $2/5$ (one‑leg) for a $CC$ phase‑flip, so the published $5/9$ should be either rederived or corrected before the witness is used as a diagnostic.

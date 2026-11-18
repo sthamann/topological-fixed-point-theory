@@ -1,0 +1,63 @@
+Fortsetzung 39/40: Der Bμ-Pfeil ist die verschmierte Zweipunkt-Schwingerfunktion
+
+Die Korrekturen übernehme ich. Die nackte Gleichsetzung μ_ab = Γ_ij ist zurückgezogen. Die Hol_u/Hol_d-Klasse aus Antwort 38 setzt einen gemeinsamen G-Rahmen für die FN-Leser voraus und gilt nur bedingt. ε wirkt auf schwache Indizes, nicht auf die Familienorientierung.
+
+Jetzt der gesuchte Anschluss. Ich zeige, dass der positive Pfeil T(u,v) = B(u,v)μ(v) genau dem entspricht, was das gedruckte Originalfunktional mit einer bilinearen Einfügung macht. Dabei wird nichts gewählt (Prüfskript: tfpt-checks-39/variation_pairing.py).
+
+Satz 1: Die Kontraktion ist die Zweipunkt-Schwingerfunktion
+
+Das Original definiert W_rel = log Z_rel und S_n^T über Ableitungen nach den lokalen Quellen (005:144-183). Für die gegebene quasifreie Quelle ist die verbundene Zweipunktfunktion
+
+S₂^T(u,v) = δ²W_rel / δη̄(u) δη(v) = G_q(u,v).
+
+Auf dem Ladungschart gilt das unmittelbar. Im selbstdualen Fall kommt der Pfaff-Faktor ½ samt dualem Chart hinzu.
+
+Eine Distribution wertet man aus, indem man sie gegen eine Testfunktion verschmiert. Als Testkern dient hier der vorhandene geometrische Bilokalkern K_μ = J* M_μ, der auf dem R-Graphen sitzt. Das ergibt
+
+⟨S₂^T, K_μ⟩ = Tr(G_q J* M_μ) = Tr(B M_μ).
+
+Das ist exakt die Bμ-Paarung. Gleichwertig ist es die erste Variation des relativen log-det bzw. log-Pf unter der bilinearen Quelle η̄ K_μ η, numerisch bestätigt: d log Z/ds = Tr(G K) = −1,750 + 2,361i. Kontraktion und Limes sind damit keine neue Regel. Es ist die gedruckte Schwinger-Ableitung, verschmiert mit dem geometrischen Kern. Bei D_F = 0 gilt alles unverändert, also Y-frei.
+
+Satz 2: Der Koinzidenzlimes ist endlich, und zwar wegen des Flächentauschs
+
+Die Einfügung liegt auf der Diagonalen u = v. Welcher Block von G dort ausgewertet wird, entscheidet über Endlichkeit:
+
+Block	Diagonale bis Mode N = 10 / 100 / 1000
+gleiche Fläche, A = (1+e^{−2ℓh})⁻¹	10,75 / 100,75 / 1000,75, divergiert linear
+Kreuzblock X = (2cosh ℓh)⁻¹	1,5707418 / 1,5707963 / 1,5707963, konvergiert
+
+(Werte bei ℓ = 1.)
+
+Der flächentauschende Spin(2)-Transport J ist es, der die Einfügung auf X legt. Ein Pfeil ohne Flächentausch, etwa Ucal ⊕ Ucal, paart mit A. Dort bräuchte man eine Punktaufspaltung, also eine zusätzliche Renormierungswahl. Die geometrische Inversion z ↦ 1/z wählt damit die einzige UV-endliche Komposition aus.
+
+Nebenbefund: Am Quarter α = ¼ ist die Kreuzspurdichte π/(2ℓ) bis auf O(e^{−2π²/ℓ}). Der erste Poisson-Korrekturterm ist proportional zu cos(2πα) und verschwindet hier exakt.
+
+Satz 3: Echte Zeit nur mit dem Minus-Zeit-Transport
+
+Die physische Zeit auf der p-Seite ist J U_q(t) J* = U_p(−t). Mit ihr ist die Antwort stationär, numerisch exakt konstant für t = 0; 0,7; 1,9. Benutzt man naiv U_p(+t), oszilliert sie mit der doppelten Frequenz. Die Zeitumkehr im Spin(2)-Pfeil ist also notwendig, damit die Einfügung eine zeitunabhängige Kopplung liefert. Sie ist kein Nebeneffekt. Zustand (G stationär), Produkte, beide Flächen (über J) und die echte Zeit werden damit gemeinsam getragen.
+
+Satz 4: Die endlichen Moden sind festgelegt, nicht ausgewählt
+
+Am skalaren Kragen bei Φ = 0, im Fuchs-Clutch mit Kanälen α + κ_a, trägt Kanal a mit Mode n das Kreuzgewicht
+
+c_{a,n} = (2cosh ℓ(n + α + κ_a))⁻¹.
+
+Die Summe über alle n ist spurklasse; abgeschnitten wird nichts. Dominant ist je Kanal der Abstand x_a = dist(α + κ_a, ℤ):
+
+angenommene Kanalshifts κ_a	Abstände x_a	Gewichte
+{0, ⅓, ⅔} (Frobeniusexponenten)	{3, 5, 1}/12	e^{−ℓ/12}, e^{−3ℓ/12}, e^{−5ℓ/12}, Hierarchie 1 : 3 : 5
+{0, ½, 0} (V4-Vorzeichen)	{3, 3, 3}/12	entartet
+
+Entscheidender Test 1: Welche κ_a trägt der tatsächliche α+κ_a-Clutch über π*E_v117 = L^q₀ + L^q₁ + L^q₂? Ich setze keine Werte ein.
+
+Vom Antwortabschnitt zum Yukawagenerator
+
+Die erste Variation ergibt einen Antwortabschnitt in K ⊗ F, also einen Vektor nach Skew-Projektion und Hodge, noch keine 3×3-Matrix. Ein F⊗F-Objekt entsteht erst in der zweiten verschmierten Variation, der verbundenen Zweifacheinfügung. Für eine quasifreie Quelle ist sie durch G vollständig bestimmt. Ihre Kanalstruktur multipliziert die Kreuzgewichte zweier Kanäle, c_a · c_b ≈ e^{−ℓ(x_a + x_b)}.
+
+Das hat genau die Produktform des gedruckten Readers, λ_Y^{L_Li + L_Rj}. Daraus folgt eine konkrete, prüfbare Identifikation (Kandidat, nicht bewiesen):
+
+λ_Y^{L_a} ↔ e^{−ℓ x_a}, also FN-Ladungen L_a ∝ dist(α + κ_a, ℤ).
+
+Entscheidender Test 2: Die gedruckten L_Li, L_Rj und λ_Y gegen {1, 3, 5}/12 · ℓ / ln(1/λ_Y) vergleichen, oder gegen das Muster, das die tatsächlichen κ_a liefern. Stimmt es, sind die FN-Ladungen aus Quarter und Kanalshift abgeleitet. Stimmt es nicht, ist diese Identifikation widerlegt, und die Hierarchie muss anders entstehen.
+
+Offen bleibt die Auswertung der zweiten Variation mit vollem W und dem tatsächlichen Normal-/D5-Faktor. Sie entscheidet, ob ein vollständiger Yukawaoperator entsteht.

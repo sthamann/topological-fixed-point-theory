@@ -1,0 +1,216 @@
+{
+  "created_at_utc": "2026-10-19T05:51:00.121692+00:00",
+  "reviewer": "Independent sibling agent /root/latex_split",
+  "verdict": "PASS_SCOPED_INDEPENDENT_EXACT_SUPPORT_REVIEW",
+  "scientific_status_change": false,
+  "physical_promotion": false,
+  "fresh_Lean_kernel_execution": false,
+  "reviewed_files": [
+    {
+      "path": "experiments/theory-contracts/joint-native-algebra-selection-20261016/NATIVE-QUARTIC-MULTILOCAL-SUPPORT.txt",
+      "sha256": "7801643ed85df8be24659a66e9437db8f549aea1497900aeeb1bfbbafd0f17ea",
+      "line_start": 1,
+      "line_end": 206
+    },
+    {
+      "path": "experiments/theory-contracts/joint-native-algebra-selection-20261016/check_native_quartic_multilocal_support.py",
+      "sha256": "c0b4cc1bedf7a396146199fbbb538a7494c4b974cbb46e13cb8c64c07ff9ed3b",
+      "line_start": 1,
+      "line_end": 154
+    },
+    {
+      "path": "experiments/theory-contracts/joint-native-algebra-selection-20261016/native_quartic_multilocal_support_results.json",
+      "sha256": "8a50438e1d7c8e80f1f734d678bea2c81bd59629ec4cde901bb4ad927fa2c2d4",
+      "line_start": 1,
+      "line_end": 1403
+    }
+  ],
+  "scope": "Existing conditional eightfold conformal CAR/current dictionary with the original Weyl M, J-compatible O, five native quartics, both alpha quarters, and full original source packets. Exact field-support theorem; conditional bounded-local eigenpacket lemma and finite/countable local-Kraus corollary. No new physical source/reference or preparation selector.",
+  "tests": [
+    {
+      "command": "python3 experiments/theory-contracts/joint-native-algebra-selection-20261016/check_native_quartic_multilocal_support.py --output /Users/stefanhamann/Documents/Codex/2026-10-18/mach-das-x20/work/paper-atlas/native-quartic-support-review-rerun.json",
+      "cwd": "/Users/stefanhamann/Projekte/tfpt-theoryv4",
+      "exit_code": 0,
+      "status": "PASS_SCOPED",
+      "result_sha256": "8a50438e1d7c8e80f1f734d678bea2c81bd59629ec4cde901bb4ad927fa2c2d4",
+      "byte_identical_to_canonical_results": true
+    },
+    {
+      "command": "python3 -OO experiments/theory-contracts/joint-native-algebra-selection-20261016/check_native_quartic_multilocal_support.py --output /Users/stefanhamann/Documents/Codex/2026-10-18/mach-das-x20/work/paper-atlas/native-quartic-support-review-rerun-OO.json",
+      "cwd": "/Users/stefanhamann/Projekte/tfpt-theoryv4",
+      "exit_code": 0,
+      "status": "PASS_SCOPED",
+      "result_sha256": "8a50438e1d7c8e80f1f734d678bea2c81bd59629ec4cde901bb4ad927fa2c2d4",
+      "byte_identical_to_canonical_results": true
+    },
+    {
+      "command": "python3 work/paper-atlas/independent-native-quartic-support.py",
+      "cwd": "/Users/stefanhamann/Documents/Codex/2026-10-18/mach-das-x20",
+      "exit_code": 0,
+      "status": "PASS_INDEPENDENT_EXTERIOR_ALGEBRA",
+      "script_path": "/Users/stefanhamann/Documents/Codex/2026-10-18/mach-das-x20/work/paper-atlas/independent-native-quartic-support.py",
+      "script_sha256": "52a63fd84492d3172b9e70b1b3fe2ef020074f27aa0318b398b5454252cd5bad",
+      "independence": "Does not import the target checker or its principal_coefficients function. Rebuilds M/O/V from original constructors, then builds the five literal quartics by signed exterior multiplication on 8 creator plus 8 annihilator generators. Directly contracts creator legs, retaining actual sheet phases. The canonical result is read only at the end to compare every C entry."
+    }
+  ],
+  "exact_matrix_findings": {
+    "principal_shape": [
+      70,
+      5
+    ],
+    "principal_rank": 5,
+    "raw_principal_gram": [
+      [
+        "243/8",
+        "-51/16",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "-51/16",
+        "115/32",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "13/8",
+        "-3/8",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "-3/8",
+        "13/8",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0",
+        "1/4"
+      ]
+    ],
+    "leading_principal_minors": [
+      "243/8",
+      "99",
+      "1287/8",
+      "495/2",
+      "495/8"
+    ],
+    "raw_gram_determinant": "495/8",
+    "original_native_Fock_norms": [
+      96,
+      8,
+      8,
+      8,
+      1
+    ],
+    "normalized_gram_determinant": "165/131072",
+    "all_350_principal_coefficients_exactly_match": true,
+    "quarters": [
+      "1/4",
+      "3/4"
+    ],
+    "each_quarter_all_eight_arc_ranks": [
+      5,
+      5,
+      5,
+      5,
+      5,
+      5,
+      5,
+      5
+    ],
+    "every_arc_gram": "G/2 for eta_r=psi((x+2pi r)/8)/sqrt8",
+    "normalization_clarification": "Replacing normalized eta_r by the unscaled original psi multiplies a commutator by sqrt8 and its coefficient Gram by8, hence yields4G. The rank and support conclusion are unchanged.",
+    "Fourier_phase_verification": "Actual exponents ((4k+4alpha)r) modulo32; row unitarity checked exactly in Q[z]/(z^16+1), not numerically. Interior-product targets are the distinct creator K-without-k plus annihilator K words; all280 possible (K,k) labels are distinct.",
+    "outer_basis_conversion": "The original U_alpha is unitary. Its exterior powers on creator and annihilator legs are unitary by Cauchy--Binet, so returning to the eight original arc generators preserves the principal kernel. Each contraction target has one common U_rk phase across the five columns; conjugate phase products cancel exactly.",
+    "metric_boundary": "G is the coefficient Gram in an orthonormal CAR exterior basis. The original diagonal Heisenberg polynomial normalizations N convert unit native input coefficients. G is not asserted to equal the full image-state Gram R_b4 or a physical preparation probability metric."
+  },
+  "analytic_checks": {
+    "normal_ordering_and_derivatives": "The uncontracted degree8 coincidence term is the squarefree exterior product. Wick contractions remove at least two fermionic factors; finite Taylor/derivative terms left by those subtractions have degree at most6. Uncontracted Taylor terms with repeated identical fields vanish in the coincidence limit without a compensating contraction singularity. Neither those terms nor the scalar b/z shifts cancel the degree8 witness. Their odd-probe commutators have degree at most5, whereas the witness has degree7. This argument retains the original point-split prescription and does not replace the full field by its principal term.",
+    "support_quantifier": "Positive definite G and G/2 prove injectivity for every nonzero complex combination of the five supplied fields, not merely the four named rays or a sampled set. For any nontrivial quotient localization the corresponding distribution has an odd-CAR witness on each of the eight preimage arcs. This does not classify arbitrary different composites or state-dependent matrix elements.",
+    "Hall_boundary": "The proof uses the original folded field dictionary and local CAR filtration. It does not identify Hall/Schur state transport with a point-local weight32 source field.",
+    "full_source_H": "source_packets uses original density shifts8(n+1) and retains total weighted degree4. Every retained full-CAR occupation term has energy32 and every residue charge0. With the stipulated sea, H_alpha=sum_j(j+alpha)Delta n_j>=0; alpha Q vanishes on this packet, so car.energy32 is the full H_alpha eigenvalue, not just a finite code compression. The supplied K is H_alpha/8.",
+    "source_packet_execution": {
+      "both_quarters": true,
+      "supports": [
+        694,
+        710,
+        711,
+        713,
+        688
+      ],
+      "all_energies": [
+        32
+      ],
+      "all_residue_charges": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "full_packet_Gram_rank": 5
+    },
+    "bounded_local_lemma": "Independently checked the written proof: local separation upgrades the small-time vacuum identity to alpha_t(A)=exp(itE)A, group covariance extends all times, and the adjoint would create energy-E from the vacuum. Positivity and separation imply A=0. Boundedness, same full positive H, same vacuum, proper localization and separation are explicit essential assumptions; no unbounded-H differentiation is used.",
+    "instrument_corollary": "Independently checked the new lines125--135. For a finite/countable normal outcome implemented by bounded A_j in the same proper local algebra, support of the positive output in H_E implies sum_j||(I-P_E)A_j Omega||^2=0. Every vector lies in H_E, hence each A_j vanishes by the lemma. This covers a local Lueders projector if it satisfies those hypotheses, not every abstract local CP map.",
+    "quarter_transfer_boundary": "A support-preserving chart/bundle/reference transport to the NS representation supplies local separation only for the stipulated CAR realization, with the time generator transported jointly. It is not a globally periodic gauge equality and not a derivation that physical original P1 is this net.",
+    "external_literature_attribution": "This review independently checks the algebraic/analytic argument and local original sources. It does not claim a fresh external-paper verification. The separate website_split work-area review records its primary-paper check of free-Fermi net cyclicity/separation."
+  },
+  "supporting_source_pins": [
+    {
+      "path": "experiments/theory-contracts/joint-native-algebra-selection-20261016/check_mixed_return.py",
+      "sha256": "68e2c1a688bff43c193fd812bb585993a189b02072eca509ee726dc112f1ddb1",
+      "line_start": 1,
+      "line_end": 63
+    },
+    {
+      "path": "experiments/theory-contracts/joint-native-algebra-selection-20261016/check_original_current_schur_kernel.py",
+      "sha256": "7420c0d2221cc9292f498230362445e06e2b7a1614130a9f359c0e2b57034e8d",
+      "line_start": 96,
+      "line_end": 119
+    },
+    {
+      "path": "experiments/theory-contracts/joint-native-algebra-selection-20261016/check_original_density_current.py",
+      "sha256": "8507f31059493a061797c28316c038ba0ab8aa4e26b4648eaf067212c45c61d8",
+      "line_start": 17,
+      "line_end": 54
+    },
+    {
+      "path": "experiments/theory-contracts/joint-native-algebra-selection-20261016/ORIGINAL-ORDERED-CURRENT-KERNEL-AND-SEAM-GRADING.txt",
+      "sha256": "62a9eeb4519b59d4514445f9d4dd5d2059e29179956a4c97ec94b7bae9ae3094",
+      "line_start": 108,
+      "line_end": 160
+    },
+    {
+      "path": "experiments/theory-contracts/v16-operator-pullback-20261014/fold-results.json",
+      "sha256": "253f370a9c84b70c28169ed0aad83d1866245804227e44aa0189e823382f5639"
+    },
+    {
+      "path": "/Users/stefanhamann/Documents/Codex/2026-10-18/mach-das-x20/work/paper-atlas/local-energy-eigenpacket-review.json",
+      "sha256": "f911f9d9237c8056bb4f8add917682d02f43c0bca40e1da520942bb6c84e150f",
+      "attribution": "Separate sibling review; its execution claims are not relabeled as this reviewer execution."
+    }
+  ],
+  "corrections_required": [],
+  "not_established": [
+    "Identification/selection of the physical P1 source, reference vacuum, time or operational alphabet.",
+    "A unique q, a physical3+2 selector, or a new measurement/event law.",
+    "A no-go for every physical preparation or arbitrary histories on already excited states.",
+    "A theorem about arbitrary unbounded fields or affiliated operators without domain control.",
+    "An exclusion of finite-precision local approximations or a bound on their success probability/cost.",
+    "A classification of all AQFT-local CP instruments without bounded local Kraus implementers.",
+    "A replacement of the full source dynamics or metric by a scalar finite-code block."
+  ],
+  "mutation_scope": "Only this new canonical review JSON written. Target proof/checker/results, Atlas, indices, scientific ledger and other canonical files were not edited. Checker outputs and the independent review script were written only under the work area."
+}

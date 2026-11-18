@@ -1,0 +1,224 @@
+C58: SHALE EQUIVALENCE, THOULESS PATCHES AND THE ACTUAL WEAK CAP
+Independent targeted review, 30 October 2026.
+Verdict: SAME_FOCK_VECTOR_SCOPED_TRUE; ORIGINAL_POSITIVE_TIME_OS_IDENTIFICATION_AND_UNIQUE_THOULESS_CLAIMS_FALSE.
+No Atlas or original edit.
+
+1. What Hilbert-Schmidt equivalence actually proves
+For two pure CAR polarizations P0 and Ph, the Shale-Stinespring/Araki
+criterion
+
+  P0-Ph is Hilbert-Schmidt                               (1)
+
+puts their quasifree representations in the same Fock equivalence class. In a
+fixed irreducible common representation the P0 quasifree vacuum ray therefore
+exists and is unique up to phase. This is the precise positive part of C58.
+
+Equation(1) does not by itself identify a single Gaussian boundary insertion
+F_cap in the original positive-time OS algebra. The OS Hilbert space is a
+completion of equivalence classes of positive-time admissible observables. A
+vector in that completion need not be represented by one bounded, local or
+polynomial observable in the original OS algebra. Nor is a Gaussian
+implementer automatically localized on the declared boundary interval or
+preserved by P_adm.
+
+Reflection positivity says, once an admissible F has been supplied,
+
+  ([F],T_ell[F])_OS>=0
+
+It does not establish the positive-time membership of a proposed insertion.
+An original identification still needs an explicit map from the common CAR
+Fock vector to the QFT8 positive-time admissible algebra. This is the precise
+gap in C58's Gaussian boundary-insertion claim; no operator-positivity claim is
+attributed to C58 here.
+
+2. Smallest counterexample to the universal Thouless claim
+Take a two-dimensional one-particle space and
+
+  Ph=|e1><e1|,  P0=|e2><e2|.
+
+Then P0-Ph has finite rank and is Hilbert-Schmidt. Both projections have the
+same rank and relative index zero. The P0 Slater vector is present in the Ph
+Fock space, but it is orthogonal to the Ph vacuum. In particle-hole language it
+is a complete finite particle-hole excitation.
+
+A standard Thouless chart
+
+  Omega0=c exp(pair creation by Z) Omega_h              (2)
+
+has nonzero vacuum coefficient c and requires Ran P0 to be a graph over
+Ran Ph. No finite graph operator Z represents the orthogonal example. It is a
+boundary point of that chart, often written informally as Z=infinity. Therefore
+Hilbert-Schmidt equivalence does not imply one universal Thouless exponential.
+
+The correct alternatives are:
+
+  * Big cell: P_h P0:Ran P0->Ran Ph is invertible, the vacuum overlap is
+    nonzero, and a Hilbert-Schmidt graph kernel Z gives (2).
+  * Zero-overlap but index zero: extract finitely many orthogonal
+    particle-hole creators, then use a Thouless exponential on the transverse
+    complement.
+  * Nonzero relative index: additional unpaired finite creators or holes carry
+    the relative charge; a pair-only exponential cannot represent the state.
+
+The P0 vacuum ray is unique up to phase once the representation and zero-mode
+occupation are fixed. The implementing unitary and an OS observable
+representative are not unique: stabilizer factors, OS null vectors and dense
+approximations remain.
+
+3. Conditions for the actual weak family
+For the already given constant finite coefficient and weak direction set
+
+  h_p(t)=(pI+tQ)gamma_F-i gamma_F D_F,
+  p in Z+alpha, alpha=1/4 or3/4,
+  P0,p=1_(-infinity,0)(p gamma_F),
+  Ph,p(t)=1_(-infinity,0)(h_p(t)).                      (3)
+
+Here Q and D_F are fixed finite matrices. Write h_p(t)=p gamma_F+B(t), with
+B(t) bounded independently of p. Since Q and D_F are constant along the
+circle, h remains diagonal in the Fourier label p. What is lost for generic Q
+is only the older reduction to independent anticommuting singular-value pairs,
+not the mode-by-mode decomposition. For fixed finite t and sufficiently large
+|p|, the gap of p gamma_F dominates B(t). Standard resolvent estimates give
+
+  ||Ph,p(t)-P0,p||_HS=O(1/|p|).
+
+Since the internal dimension is finite and sum_p |p|^-2 converges, the direct
+sum difference is Hilbert-Schmidt. This reuses the previously recorded
+one-dimensional whole-sea mechanism; it is not a new source theorem.
+
+Only finitely many p can cross zero at fixed bounded t. Away from the critical
+values satisfying
+
+  0 in spec h_p(t),                                      (4)
+
+Ph(t) is continuous, its relative Fredholm index is constant, and the old sea
+is a well-defined ray in the common Fock representation. Starting in the
+known no-crossing scalar-quarter component gives index zero until the first
+crossing.
+
+At a crossing, the coupled ground space is degenerate. The negative projection
+alone does not fix the coupled vacuum ray or its relative charge. A spectral
+section or the original modified-APS Lagrangian is needed only for that vacuum
+and Thouless-chart description. The cap formula below is independent of the
+occupation of ker h: both dGamma(h) and E0=Tr(h 1_(h<0)) are unchanged there.
+Crossing may change the relative charge by a finite integer. This is a finite
+event, not failure of Hilbert-Schmidt equivalence.
+
+Even without a zero-energy crossing, a principal angle can reach pi/2 and make
+the old/new vacuum overlap zero. The big-cell Thouless formula then fails while
+the Fock vector and finite-time cap remain. The precise nonzero-overlap
+condition is
+
+  ker(Ph P0|Ran P0)=0
+
+together with relative index zero. Under (1), absence of exact orthogonal
+angles makes the corresponding Fredholm overlap product positive and supplies
+the Hilbert-Schmidt graph patch.
+
+4. The general cap survives every Thouless patch
+For a finite set of modes, define Ph=1_(h<0) and the coupled ground energy
+
+  E0=Tr(h Ph).
+
+For the fixed old Slater vector Omega_P0, exterior functoriality gives
+
+  Z_cap(P0,h;ell)
+    =<Omega_P0,exp[-ell(dGamma(h)-E0)]Omega_P0>
+    =exp(ell Tr(hPh))
+       det_RanP0(P0 exp(-ell h) P0).                    (5)
+
+Formula(5) remains valid when the ground-state overlap is zero. At finite
+ell, exp(-ell h) is strictly positive and its compression to Ran P0 is
+positive definite. A zero overlap only changes the large-ell leading sector.
+
+For the whole circle, the ground-energy exponential and determinant must be
+combined before the limit. They need not exist as two separate absolute
+factors. The previously proved fixed-cap Fredholm limit supplies this
+combination in its scalar-quarter scope. For the weak family, (1), the fixed
+old P0 and coupled normal ordering give more than a merely formal candidate.
+Let
+
+  Z_p(ell)=<Omega_P0,p,exp(-ell H_exc,p)Omega_P0,p>.
+
+Every finite-dimensional H_exc,p is nonnegative, hence 0<Z_p(ell)<=1 for
+finite ell. For |p|>2||B(t)||, the projection estimate gives
+
+  ||Ph,p-P0,p||_HS^2=O(p^-2).
+
+More explicitly, put g=|p|, v=||B(t)|| and let r=48 be the rank of the
+opposite unperturbed chirality in the actual 96-dimensional block. For p>0, a
+negative normalized eigenvector u of h_p with eigenvalue lambda has wrong
+chirality component
+
+  ||P_plus u|| <= v/(g-lambda) <= v/(2g-v).
+
+For p<0 the same estimate holds with the two chiralities exchanged.
+
+Consequently
+
+  Tr(Ph,p P_plus) <= r v^2/(2g-v)^2,                  (6a)
+
+and the elementary product bound for the principal angles gives the same
+upper bound for one minus the squared many-body ground overlap.
+
+The squared ground overlap is therefore 1-O(p^-2). Resolving Omega_P0,p into
+the coupled ground component and its excited components yields uniformly in
+ell>=0
+
+  0<=1-Z_p(ell)
+    <=1-|<Omega_h,p,Omega_P0,p>|^2
+    =O(p^-2).                                           (6)
+
+Thus sum_p(1-Z_p)<infinity and the product of the positive Z_p converges to a
+strictly positive whole-circle cap for every finite ell>0. Any zero overlap or
+relative-charge change occurs in only finitely many low modes and contributes
+a finite positive factor at finite ell. A zero mode does not require an
+occupation choice for Z_p itself. This proves the
+weak-family cap in the already given coupled-normal-energy convention without
+using the old scalar C_p shortcut.
+
+This does not yet identify that product with the original relative partition
+functional. If the original denominator subtracts the free reference energy
+instead of the coupled ground energy, the result contains the additional
+factor exp[-ell(E_h-E_ref)] with its prescribed regularization. Shale
+equivalence does not choose or cancel that factor. The original reference and
+domain caller therefore remain necessary for a Z_rel identity.
+
+The fixed-domain theorem in the original primitive source does provide a real
+mathematical distinction: a bounded relative perturbation is realized on the
+same modified-APS domain. In that family P0 remains the declared old boundary
+datum and (5) is nontrivial. A moving choice P0=Ph makes the cap vacuum
+trivial. This choice determines which polarizations are compared. It still
+does not by itself prove that their Fock vector is one original QFT8 observable.
+
+5. Constructive conclusion
+For the actual weak h_p(t), no new source state needs to be selected. Use the
+already fixed P0 and evaluate (5) on intervals of t between the finitely many
+zero crossings. In a big-cell interval one may use the normalized Thouless
+graph for efficient Wick calculations. At an overlap zero, switch charts by
+extracting the finite particle-hole factor. At an h zero mode, retain the
+original modified-APS zero-mode choice only when a definite coupled vacuum ray
+or Thouless chart is needed; the cap itself is already unambiguous. This covers
+the full common-Fock cap without declaring a new Gaussian source.
+
+What remains open is narrower and original: exhibit the positive-time
+admissible boundary insertion or limiting sequence whose OS class is this
+already existing cap vector, and verify its reflection/support/domain labels.
+Neither the Shale criterion nor the fixed-domain theorem alone supplies that
+identification.
+
+SOURCES REVIEWED
+  Atlas finding:whole-constant-coupled-source-is-implementable-despite-
+    isolated-insertion-domain;
+  Atlas finding:fixed-aps-source-has-whole-inverse-and-finite-boundary-
+    correction;
+  documents/archive--tfpt-45--source_extracts--01_boundary_kernel_source/
+    sections/001-section-primitive-core-and-carrier-interface-handoff.tex:
+    353-376;
+  documents/archive--tfpt-45--source_extracts--04_qft_source/sections/
+    008-section-relative-reflection-positivity-with-fermions.tex:217-253;
+  aps_source_review/FIXED-CAP-STATE.txt;
+  aps_source_review/FIXED-CAP-DETERMINANT.txt;
+  aps_source_review/C57-CAP-TRANSFER-INDEPENDENT-REVIEW.txt;
+  outputs/multi-model-source-search-20261029/
+    CLAUDE58-ORIGINAL-INSERTION-UNGEPRUEFT-AX.txt.

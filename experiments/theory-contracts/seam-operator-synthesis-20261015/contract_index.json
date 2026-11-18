@@ -1,0 +1,56 @@
+{
+  "contract": "seam-operator-synthesis-20261015",
+  "research_id": "UR.SEAM.OPERATOR_SYNTHESIS.01",
+  "date": "2026-10-15",
+  "question": "Can typed operator programs and simultaneous inverse intertwiner synthesis generate and exactly check shared operator maps without supplying the desired map?",
+  "verdict": "PARTIAL",
+  "verdict_enum": "PARTIAL",
+  "scope": "Executable search infrastructure; known five-mode CAR recovery control and synthetic inverse control. No physical source selection.",
+  "summary_de": "Neue automatische Operatorwortsuche mit gelernten Gegenbeispielen und inverse lineare/antilineare Abbildungssuche. 2048 Wort-/Typ-Klassen reproduzieren eine bekannte CAR-Abbildung; dies ist Werkzeugkalibrierung, keine neue physische Herleitung.",
+  "summary_en": "New operator-word CEGIS and inverse simultaneous linear/antilinear intertwiner synthesis. 2048 word/type classes recover a known CAR map; this calibrates tools, not physical origin.",
+  "claims_tested": [],
+  "gates": [
+    "T1",
+    "T2",
+    "T8"
+  ],
+  "physical_gates_closed": [],
+  "kills": [],
+  "topics": [
+    "origin",
+    "quantum",
+    "process"
+  ],
+  "assumptions": [
+    "Given finite charged CAR representation for the recovery control",
+    "Declared operator pairs and star closure for the inverse solver",
+    "Finite dimensions; physical interpretation must be established separately"
+  ],
+  "positive_results": [
+    "Candidate structures and linearity types are generated, not seeded with the target map",
+    "Exact counterexamples update constraints and invalidate stale evaluations",
+    "Twelve generic operator-transport theorems checked by Lean; specific matrix candidates checked separately"
+  ],
+  "leaves_open": [
+    "Synthesis of the original full positive source kernel",
+    "Source-derived carrier marking, physical state, time and event law",
+    "Automatic free noncommutative polynomial and continuum search"
+  ],
+  "complete_TFPT_solution": false,
+  "raw_P1P2_derivation": false,
+  "new_physics_claim": false,
+  "firewall": "experiments; search tooling only; no ledger/paper/verification promotion",
+  "proof": "experiments/theory-contracts/seam-constructive-search-20261015/operator_synthesis/README.md",
+  "checker": "experiments/theory-contracts/seam-constructive-search-20261015/operator_synthesis/clifford_search.py",
+  "source_manifest": "source_manifest.json",
+  "relations": [
+    {
+      "target": "seam-constructive-search-20261015",
+      "type": "extends"
+    },
+    {
+      "target": "seam-full-collar-reconstruction-20261015",
+      "type": "uses"
+    }
+  ]
+}

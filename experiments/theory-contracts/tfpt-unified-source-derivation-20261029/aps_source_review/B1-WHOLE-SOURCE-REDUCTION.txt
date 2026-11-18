@@ -1,0 +1,183 @@
+B1: Gemeinsame Quelle, reduzierende Träger und tatsächliche Auswahl
+30. Oktober 2026
+Contract: B1-WHOLE-SOURCE-REDUCTION-20261030
+Plan: docs/research/fundamental-plan/PLAN.md, B1, C1, C2, D2
+
+1. Verlangtes Ergebnis und vorhandene Grundlage
+
+Gesucht bleibt die ursprünglich begründete physische Trägerabbildung im
+gedruckten Aufruf C_F=P_F C_Sigma P_F. Die bekannte Faserkarte E und der
+verlustfreie ungerade Leser sind vorhandene bedingte Resultate. Ihre erneute
+Inversion würde keine Herkunft herleiten. Dieser Anschluss ergänzt einen
+entscheidenden Test für Kandidaten, eine genaue Klassifikation unter klarer
+Algebravoraussetzung und einen Gegenfall am tatsächlichen 96er Konstruktor.
+
+Originalquellen:
+documents/tfpt_2_standard_model/sections/010-section-the-explicit-mass-gap-closes-dynamics-and-cluste.tex:273-318
+aps_source_review/CURRENT-CARRIER-ODD-READER-WHOLE-SOURCE.txt
+aps_source_review/LOSSLESS-CARRIER-ODD-READER-DICTIONARY-REVIEW.txt
+verification/v252_full_finite_triple.py:68-170
+
+2. Vollständige Reduktionsklasse unter der vollen graduierten Koeffizientenklasse
+
+Voraussetzungen: F=F_+ direct_sum F_-, beide Summanden nichtnull, dimF=n.
+gamma=P_+-P_-. A durchläuft ALLE selbstadjungierten geraden Matrizen,
+Phi ALLE selbstadjungierten ungeraden Matrizen. B=Z tensor A-S tensor Phi.
+Die Variationen von A und Phi sind unabhängig. Dies ist stärker als die
+konkrete Standardmodellalgebra. Keine Aussage, diese volle Klasse sei schon
+aus TFPT ursprünglich hergeleitet.
+
+Satz: Der gemeinsame komplexe Kommutant ist span{I,Gamma}, Gamma=Z tensor gamma.
+Die einzigen nichttrivialen gemeinsamen orthogonalen Projektoren sind
+Pi_+=(I+Gamma)/2 und Pi_-=(I-Gamma)/2. Beide haben Rang n, auch wenn
+dimF_+ und dimF_- verschieden sind.
+
+Beweis: A=I erzwingt für einen Kommutanten X die Normalblockform diag(X0,X1).
+Kommutation mit allen geraden A erzwingt X0=a P_+ + b P_-,
+X1=c P_+ + d P_-. Kommutation mit allen ungeraden Phi liefert a=d und b=c.
+Damit X=a Pi_+ + b Pi_-. Orthogonalität und Idempotenz verlangen a,b in{0,1}.
+
+Eine feste Bildprojektion bestimmt die Isometrie nicht: alle Karten auf
+Pi_+ haben die Form E0 U mit U in U(n). Bei festem graduierten Wörterbuch
+bleibt die gerade Untergruppe U(F_+) x U(F_-); weitere ursprüngliche
+Intertwinerbedingungen können sie einschränken. Die Familie
+E_theta=[P_+;exp(i theta) P_-] hat für ALLE theta dasselbe Bild und
+h_theta=E_theta* B E_theta=A gamma-cos(theta) Phi-i sin(theta) gamma Phi.
+Ein theta=pi/2 aus einer gewünschten Koordinatenform abzulesen, leitet
+keine physische Clock oder ursprüngliche Quellenwahl her.
+
+3. Intrinsischer ungerader Leser und Bedeutung der Kartenfreiheit
+
+Auf Ran Pi_+ ist die innere Graduierung gamma_+=(Z tensor I)|RanPi_+.
+Der ungerade Anteil von B ist dort -(S tensor Phi)|RanPi_+.
+Folglich gilt der vorhandene Leser ohne Wahl einer Karte:
+Pi_odd logodds(C)=-2ell (S tensor Phi)|RanPi_+.
+Hier C ist die zweite Face von G, eingeschränkt auf den B-reduzierenden
+Gamma-Sektor; sein logarithmischer Generator hat die vorhandene H1-Domain.
+Der Kreis bleibt erhalten. Rang n der Faser ist kein endlicher Hilbertraumrang.
+Die ganze Quelle enthält zusätzlich den geraden Anteil A. Der ungerade
+Leser allein erhält diesen Anteil nicht. Der physische Vergleich muss alle
+ursprünglichen Felder und die feste Bedeutung ihrer Ladungen mittransportieren.
+
+4. Einzelrandgleichheit reicht selbst bei allen Skalen nicht
+
+Setze f_ell(x)=(1+exp(2ell x))^-1, H=diag(a,-a), a>0,
+v=(1,1)/sqrt2. Dann v*Hv=0 und wegen f_ell(a)+f_ell(-a)=1 gilt
+v* f_ell(H) v=1/2=f_ell(v*Hv) für JEDES ell>0.
+Trotzdem kommutiert p=vv* nicht mit H. H ist invertierbar.
+Auch Skalen ell und -ell liefern wegen derselben Identität keine
+unabhängige Bedingung. Die zunächst von Claude und Gemini vorgeschlagenen
+Notwendigkeitsbehauptungen sind damit in ihrer benannten Form widerlegt.
+
+5. Scharfer Test mit der ganzen gegebenen Zweirandprojektion
+
+Endliche Voraussetzungen: H selbstadjungiert, ell>0, V Isometrie,
+P=VV*, W=diag(V,V), Qw=I-WW*.
+G(H)=[[I-f_ell(H),X_ell(H)],[X_ell(H),f_ell(H)]],
+X_ell(H)=(2cosh(ell H))^-1. Diese ganze Matrix ist ein Projektor.
+
+Satz: Folgende Aussagen sind äquivalent:
+(i) W*G(H)W=G(V*HV), mit allen vier Blöcken bei EINEM ell>0;
+(ii) K=W*G(H)W ist ein Projektor;
+(iii) P reduziert H.
+
+Beweis: (i) impliziert (ii). Aus G²=G und W*W=I folgt
+K-K²=W*G Qw G W=(Qw G W)*(Qw G W).
+Verschwindet der Defekt, ist Qw G W=0. Selbstadjungiertheit liefert
+[WW*,G]=0, insbesondere [P,f_ell(H)]=0. Die injektive monotone Funktion
+f_ell hat eine Borel-Inverse; somit reduziert P auch H. Das liefert (iii).
+Umgekehrt liefert die Funktionalrechnung auf einem reduzierenden Teilraum (i).
+
+Die Projektor-Defektidentität gilt auch für beschränkte G und Isometrien auf
+unendlichen Hilberträumen. Aus der Borel-Inversen folgt spektrale Reduktion
+von selbstadjungiertem H. Die Schreibweise V*HV benötigt dort die passende
+Domain. Der endliche Test ersetzt diesen Domainnachweis nicht.
+
+Exakter Gegenfall a=log2, ell=1:
+f(H)=diag(1/5,4/5), X(H)=(2/5)I,
+K=[[1/2,2/5],[2/5,1/2]], G(v*Hv)=[[1/2,1/2],[1/2,1/2]].
+K hat Eigenwerte 1/10 und 9/10; K-K²=(9/100)I.
+Die Einzelränder stimmen überein. Ihre Verbindung unterscheidet die Quellen.
+
+Geltung: Dies ist ein Kriterium für eine geschlossene, verlustfreie
+Ganzquellenreduktion des angegebenen Typs. Eine physische offene Teilquelle
+darf einen nichtnull Defekt haben. Der Satz macht Reduktion nicht zu einer
+neuen universellen Voraussetzung an jeden physischen P_F.
+
+6. Kleinster tatsächlicher 96er Gegenfall gegen volle Irreduzibilität
+
+Im originalen v252 indexiert P die Felder nu,e,u,d mit Familie und Farbe.
+q ist auf u,d eins und auf nu,e null, auf Teilchen und Antiteilchen gleich.
+Rangq=72, Rang(I-q)=24. Die Originalkonstruktoren erhalten diese Zerlegung:
+dirac_block koppelt nur gleiche Feldnamen zwischen links und rechts und
+Familien; full_D ergänzt Majorana nur auf nu_R. rep koppelt schwach nu/e
+beziehungsweise u/d innerhalb ihrer Arten und Farbe nur innerhalb Quarks.
+Daher [q,Phi]=[q,rep(A_F)]=[q,gamma]=0 für die ganze benannte Klasse,
+und q kommutiert auch mit dem ursprünglichen internen J_F.
+
+Mit Omega=2q-I ist gamma'=gamma Omega eine weitere selbstadjungierte
+Involution. Sie ist gerade für A_F, ungerade für Phi und erfüllt
+J_F gamma'=-gamma' J_F. Sie ist verschieden von gamma und -gamma.
+Falls A ebenfalls q erhält, ist Gamma'=Z tensor gamma' eine weitere
+Gesamtgraduierung, die D ungerade macht und B reduziert.
+Die vier Entscheidungen der Sektorvorzeichen auf Quarks und Leptonen
+liefern dann mindestens vier Rang96-Faserbilder. Weitere ursprüngliche
+Orientierungsdaten können sie unterscheiden; diese sind hier nicht ersetzt.
+
+Geltung: Dies ändert die vorhandene ursprüngliche gamma nicht. Es widerlegt
+nur ihre Herleitung aus den schwächeren genannten Algebra/KO/Operatorzeichen
+allein. Die vollständige normale Realstruktur, Hochschildorientierung und
+ein möglicher ursprünglicher größerer Quelloperator sind nicht getestet.
+Ein neues Leptoquarkfeld zur Entfernung des Gegenfalls einzusetzen wäre
+eine zusätzliche Annahme und wurde nicht vorgenommen.
+
+7. Tatsächliche Ausführung und unabhängige Gegenprüfung
+
+check_b1_whole_source_reduction.py benutzt equation/restrict des bestehenden
+exakten Intertwinerlösers. Die vollständigen endlichen Hermitegeneratoren
+für Graduierungsränge(1,1),(1,2),(2,2) ergeben jeweils Kommutantendimension2.
+Symbolisches theta bestätigt Isometrie, Bild, Reduktion und Leserformel.
+Die Ganzquellenrechnung ist rational exakt. Am tatsächlichen v252 werden
+ganzzahlige nichtdiagonale Yukawas, symmetrisches Majorana und alle24 reellen
+Basisgeneratoren der Algebra C+H+M3 geprüft. Die Zahlen dienen der
+Strukturkontrolle und werden nicht als physische Kopplungen ausgegeben.
+Der allgemeine Blockbeweis steht in Abschnitt6.
+
+Das JSON dokumentiert alle25 bestandenen Kontrollen. Keine neue Lean
+Formalisierung, kein vollständiger neuer Physikbeweis. Ein eigener
+vertauschungsbedingter Vorzeichenfehler bei NZ wurde vom exakten Test und
+Claude zurückgewiesen und vor dem Schlusslauf korrigiert: NZ=S, NS=-Z.
+
+Tatsächliche Dienste: Claude Opus5.5 Hoch, Gemini Argon und Grok Experte.
+Alle erhielten denselben Stand und getrennte Fragen. Unbelegte Phasen,
+Clock und Skalenbehauptungen wurden mit exakten Gegenfällen konfrontiert.
+Gesprächszustimmung ersetzt keinen Beweis. Rohgespräche und ein eigener
+Auswertungsbericht werden im Chatoutput gesichert. Literaturangaben der
+Modelle sind für diese selbstständigen Beweise nicht als geprüfte Sätze
+übernommen. Direkte Abrufe von Davis/Choi beim Verlag waren nicht zugänglich.
+
+8. Gemeinsamer Fortschritt und nächster tatsächlicher Ursprungsschritt
+
+Die aktuelle B1 Herkunftsfrage bleibt offen. Der bekannte mathematische
+Kandidat wird präziser: Bild, Kartenfreiheit, orientierte ursprüngliche
+Graduierung und physischer Ursprung sind vier verschiedene Aussagen.
+Die geschlossene ganze Reduktion ist nun direkt entscheidbar, sobald
+ein ursprünglich begründeter Kandidat vorliegt. Für eine offen gedachte
+Teilquelle werden stattdessen ihr Defekt und äußere Erinnerung mitgeführt.
+
+Verbindung zu C1: Einzelränder können gemeinsame Information verlieren.
+Verbindung zu C2: Derselbe Verlust erklärt, warum einmaliges Wegprojizieren
+und ununterbrochene Weiterentwicklung nicht gleichgesetzt werden dürfen.
+Verbindung zu D2: Gemeinsame Antworten können unterschiedliche relative
+Orientierungen erkennen, auch wenn getrennte Spektren gleich sind.
+Dies sind konkrete Beziehungen zwischen den bestehenden Resultaten;
+sie wählen noch keine Kopplungen oder physische Zeit aus.
+
+Nächster Schritt: Das ursprüngliche K_car/P_F mit seiner tatsächlichen
+Algebra, Orientierung, internen und normalen Realstruktur am vorhandenen
+gemeinsamen Quellenaufruf ausführen. Den schon im Atlas bestimmten
+ursprünglichen Strom/Wirkungsconsumer mitführen. Nicht die freie volle
+M96 Klasse zum Original erklären, nicht eine Phase als Clock fitten,
+nicht erneut einen reduzierenden Kandidaten durch gewünschte Ausgaben
+definieren. Ein tatsächlicher Zweig muss ganze Quelle oder ihre ausdrücklich
+offene Erinnerung sowie Produkte, Ladungen und Domain transportieren.

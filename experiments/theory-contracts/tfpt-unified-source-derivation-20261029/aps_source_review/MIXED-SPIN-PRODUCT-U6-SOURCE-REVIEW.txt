@@ -1,0 +1,173 @@
+THE EXISTING MIXED SPIN PRODUCTS REALIZE THE ORIGINAL SIX-CYCLE
+Independent constructive analytic review, 2026-10-30.
+Continuation of CLAUDE31-HEXAGONAL-RELATIONS-REVIEW.txt; no previous file changed.
+
+VERDICT
+
+YES. The six offdiagonal mixed sectors are a genuine sixfold product
+alphabet formed from the already given odd spin sections. Their product
+maps are global, nonzero and equivariant with the ACTUAL paired Kummer
+and spin lifts. On the existing joint unramified cover, the Hodge inner
+product gives a positive invariant metric and makes the six sectors
+orthogonal. In an orbit basis the resulting operator is exactly the
+concrete U6 of verification/v231_cp_mu6_phases.py, including its shift
+orientation. This supplies a geometric source realization of that matrix,
+beyond a comparison of dimension or characteristic polynomial.
+
+It selects no eigenprojector, no physical CP insertion and no field/state
+interpretation of this six-dimensional space. In particular neither an
+invariant cohomology metric nor this product map is a physical sewing rule.
+
+1. ACTUAL ODD SPIN SECTIONS AND THEIR NONZERO PRODUCTS
+
+Retain C: eta^2=1-w^6, S0=O(Dq-Kinf), S0^2=K_C and the existing sign lines
+
+ Laq=O(q_a-q_(a+1)), Lbp=O(p_b-p_(b+1)).
+
+All indices are modulo three. The SAME spin line is represented by either
+Dq-Kinf or Dp-Kinf. The earlier exact divisor calculation therefore gives
+
+ Tqa=S0 tensor Laq isomorphic O(q_(a+2)),
+ Tpb=S0 tensor Lbp isomorphic O(p_(b+2)).
+
+Each space Aqa=H^0(C,Tqa), Apb=H^0(C,Tpb) has dimension one. Multiplication
+and the fixed spin square define the genuine global map
+
+ mu_ab: Aqa tensor Apb -> V_ab,
+ V_ab=H^0(C,K_C tensor Laq tensor Lbp).
+
+For nonzero input sections the product is nonzero: at a point outside the
+two finite zero sets both factors are nonzero. Its zero divisor is exactly
+
+ q_(a+2)+p_(b+2).
+
+These are distinct points, also when a=b. Since Vq and Vp are disjoint
+nontrivial two-torsion planes, Laq tensor Lbp is nontrivial for ALL nine
+pairs. Riemann-Roch gives dim V_ab=1. Thus every mu_ab is an isomorphism
+between one-dimensional spaces. No additional section or coupling is
+chosen to make multiplication nonzero.
+
+The output is a TWISTED canonical section. It is not an ordinary section
+of K_C with the sign line silently omitted. The zero divisor above is
+also not a doubled branch point.
+
+2. SPIN AND KUMMER SIGNS, WITH BOTH HALF-FORMS PRESENT
+
+Use the already constructed positive rotation R=sc^2, covering w->rho w,
+with the normalized joint lift
+
+ R^*h_a^q=h_(a+1)^p, R^*h_b^p=h_(b+1)^q.
+
+Together with the fixed compatible spin lift, this transports Tqa to
+Tp_(a+1) and Tpb to Tq_(b+1). The divisor check agrees exactly:
+
+ R^-1(q_(a+2))=p_a=p_((a+1)+2),
+ R^-1(p_(b+2))=q_b=q_((b+1)+2).
+
+Multiplication of holomorphic sections commutes with pullback. Therefore
+
+ R_V mu_ab(x tensor y)
+    =mu_(b+1,a+1)(R_p y tensor R_q x).
+
+The interchange here is ordinary multiplication of sections of complex
+line bundles. It is NOT a chosen exchange of Grassmann generators and
+introduces no fermionic Koszul sign. A later physical fermion contraction
+must retain its own grading and ordering.
+
+For the normalized half-form representative Phi^2=u dw, u=(w^3+1)/eta,
+the existing spin calculation is Rhat Phi=lambda Chi,
+Rhat Chi=lambda Phi, lambda^2=rho and Rhat^6=-I. The two half-forms in
+mu_ab each acquire that central minus sign after six iterations. Their
+product acquires +I, exactly as the natural action on K_C does. Changing
+the overall spin lift sign also cancels from the product. Thus
+
+ R_V^6=I.
+
+No unspecified spin phase was dropped. The coherent normalized Kummer
+lift used above is the EXISTING one; selecting a different deck lift can
+alter other marked intertwiners and is not silently identified with it.
+
+3. SIXFOLD ORBIT AND THE EXACT MATRIX, INCLUDING ORIENTATION
+
+Set Voff=direct_sum_(a!=b) V_ab. The permutation is
+
+ (a,b)->(b+1,a+1),
+
+and its single orbit is
+
+ (0,1),(2,1),(2,0),(1,0),(1,2),(0,2).
+
+Consequently Voff is an actual cyclic system of six one-dimensional
+product spaces, not merely an arbitrary six-dimensional carrier. All
+transition maps are invertible. Their product is one by R_V^6=I.
+For any nonzero v0 in V_01, define e_j=R_V^(-j) v0, 0<=j<6. Then
+
+ R_V e_j=e_(j-1), indices modulo six.
+
+Hence its matrix has entries
+
+ (R_V)_ij=1 if j-i=1 mod6, and zero otherwise.
+
+This is EXACTLY the concrete U6 constructed in
+verification/v231_cp_mu6_phases.py. Choosing e_j=R_V^j v0 would instead
+give U6^-1; this orientation choice must be stated. The ordered source
+labels provide the named starting summand. A common phase of v0 remains
+and does not change the intertwining matrix. Thus this is an explicit
+operator realization up to the stated orbit frame, not a claim of a
+canonically chosen physical vector in V_01.
+
+4. POSITIVITY FROM THE ALREADY EXISTING JOINT COVER
+
+The six-line completion supplies the connected degree-sixteen unramified
+Kummer cover pi:Y->C, genus seventeen, with deck group G=(C2)^4. Its
+canonical differential space decomposes into G characters:
+
+ H^0(Y,K_Y)=H^0(C,K_C) direct_sum_(chi!=1) H^0(C,K_C tensor L_chi).
+
+The trivial component has dimension two; each of the fifteen nontrivial
+components has dimension one. The nine V_ab are exactly the mixed
+characters in this decomposition. The standard canonical positive form
+
+ <alpha,beta>=(i/2) integral_Y alpha wedge bar(beta)
+
+is intrinsic to the compact complex curve and requires no additional
+Riemannian metric. Every holomorphic deck transformation and the actual
+lift R preserve it by change of variables. Different G-character spaces
+are orthogonal: averaging their inner product over G multiplies it by
+a nontrivial character and hence gives zero.
+
+Thus Voff inherits a positive definite metric and R_V is unitary. Choose
+v0 of unit norm; the six orbit vectors e_j then have unit norm and lie in
+different orthogonal character sectors. The displayed intertwiner with
+U6 is therefore UNITARY. This proves the metric statement from the
+existing curve and cover, rather than assuming orthogonality because
+there happen to be six labels.
+
+This Hodge metric does not assert that mu_ab is an isometry for arbitrary
+separately chosen norms on the individual odd-spin section lines. It
+provides the actual positive target metric needed for the six-cycle.
+Normalizing products or a physical sewing amplitude requires their actual
+norm, determinant, reference and contraction data.
+
+5. SOURCE CONSEQUENCE AND PRECISE LIMIT
+
+The earlier v231 script supplied U6 as a six-cycle and checked its spectrum.
+The original q+p geometry, selected S0 and their holomorphic multiplication
+now realize that same operator in six genuine mixed product sectors with
+a natural positive metric. No new C6 action, cover or phase scalar was
+introduced. The rho eigenline is its usual Fourier eigenspace, and its
+existence is exact; no reason to choose that eigenline as a physical
+preparation, output or CP reader has been added.
+
+This is a concrete candidate geometric origin of the sixfold operator
+template. Identifying it with a particular complete K/E8/Clock field
+object still requires the actual labelled source map, products and
+remaining clock transports. It does not follow from U6 equality alone.
+The existing source-selected spin norm, determinant and sewing results
+remain separate and unchanged.
+
+Sources reused: SOURCE-SPIN-SIGN-KERNEL-REVIEW.txt, exact a+2 divisor
+formula and its p analogue; SIX-LINE-THETA-COMPLETION.txt, joint cover,
+deck characters and normalized c/s lifts; SOURCE-SELECTED-THETA-SPIN.txt;
+HEXAGONAL-OPEN-SOURCE-PHASE-REVIEW.txt; and actual matrix definition in
+verification/v231_cp_mu6_phases.py. No original/hash-pinned file changed.

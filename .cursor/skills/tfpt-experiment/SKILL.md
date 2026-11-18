@@ -113,6 +113,7 @@ Confirm numbers here first; promote via **`promote-to-verification`** when load-
 Neuer Contract-Ordner ⇒ immer eine `contract_index.json` nach dem Schema in
 `experiments/theory-contracts/README.md` mitschreiben (contract, date, question,
 verdict + verdict_enum, claims_tested, gates, kills, checker, firewall).
-`build_theory_graph.py --check` (läuft in `bash build.sh audit`) wird ohne das
-File nicht rot — aber der Contract erscheint ohne Verdict im Theorie-Graphen
-(`theorycat.py tried <name>` zeigt dann `unknown`).
+Der TFPT-Wissensatlas übernimmt registrierte Contract-Metadaten als
+Navigationsverweise. Der Original-Contract und sein begrenztes Verdict bleiben
+maßgeblich; ein Atlas-Eintrag ist keine erneute Prüfung oder unabhängige
+Bestätigung.

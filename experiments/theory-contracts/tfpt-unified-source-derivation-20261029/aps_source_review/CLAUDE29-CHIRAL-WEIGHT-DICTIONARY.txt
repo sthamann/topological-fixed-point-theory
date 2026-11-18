@@ -1,0 +1,207 @@
+CLAUDE29: ACTUAL 96-COMPONENT CHIRAL WEIGHT AND REAL-STRUCTURE DICTIONARY
+Independent source reuse, explicit basis construction and small exact check.
+29 October 2026. No original edit, Atlas mutation, source-state selection,
+new model or original verification run().
+
+VERDICT
+The actual v252 positive internal grade is already proved to be the ORIGINAL
+P2 even exterior module under the full global SM group. Reusing that result,
+the opposite grade can be assigned explicitly to the odd exterior module,
+with real signs. The resulting whole96 unitary intertwines the actual SM
+action, hypercharge, gamma_F and J_F. Crucially, componentwise conjugation
+becomes split coefficient conjugation, whereas J_F becomes compact spinor
+charge conjugation. These two antiunitaries are different.
+
+Thus Claude29's chiral rather than particlewise D_K assignment has a genuine
+representation dictionary. Its printed q-family diagonal still has the old
+L1/L2 slot error. The corrected dictionary does not derive a P1 physical
+frame or identify the actual CAR source with the E8 affine current algebra.
+
+1. PREVIOUS POSITIVE RESULT AND EXACT ORIGINAL INPUTS
+
+Reuse finding:actual-v252-positive-grade-has-global-p2-wedge-dictionary.
+The complete previous proof, including the REAL gauge lift and its global
+SM-group normalization, is
+ graded_boundary_functor/old_source_embedding/REVIEW-CLAUDE-P2.txt:1-191,
+ research-source:a6c008124c2f24a9d53061da,
+ SHA256 274bb0ff37dfd8362568de0d6851a1807449f2c2870efe0f0739922a51b4e9d5.
+It is not merely a 16-dimensional or hypercharge-multiplicity match.
+
+Actual original verification/v252_full_finite_triple.py:
+ 63-83: labels and three generations; 86-116: actual full_D(Y,MR);
+ 119-121: gamma_F=+ on particle L/antiparticle R, - on the other slots;
+ 124-132: J_F=Kswap kappa, with kappa ordinary component conjugation;
+ 139-168: actual left bimodule representation pi.
+Original SHA256:
+ 820254440e178430422e50605067775656236602996307f67c9e69124ba5d163.
+The physical SM action compared is U(u)=pi(u) J_F pi(u) J_F^-1,
+on the connected unimodular branch, not pi(u) alone.
+
+Original P2 source:
+ documents/archive--paper-latex--tfpt-v29/sections/
+ 001-section-overview-and-claim-map.tex:166-197,200-223,236-282.
+It gives Y5=diag(-1/3,-1/3,-1/3,1/2,1/2), the global group
+S(U3 x U2), and its complete exterior-even decomposition. Its SHA256 is
+ 4869b6ba74ae2ecd5c316d99f97c63140f67090b52b79032c16962f1e7fab8e5.
+
+2. REUSE THE POSITIVE-GRADE BASIS, WITH ITS ACTUAL SM ACTION
+
+Use ordered orthonormal basis (c1,c2,c3,w1,w2) of the carrier E.
+Write vc=c1 c2 c3, vw=w1 w2 and
+ eta_c=(1/2) sum_jk epsilon_cjk c_j c_k,
+where juxtaposition denotes exterior multiplication. In particular
+eta_2=c3 c1, with its minus sign in increasing-index order.
+At every fixed original generation the existing map W_+ is:
+
+ actual positive slot     exterior image                 hypercharge
+ nu_R^c                   1                                  0
+ u_L,c, d_L,c             c_c w1, c_c w2                    1/6
+ u_R,c^c                  eta_c                            -2/3
+ e_R^c                    vw                                 1
+ d_R,c^c                  eta_c vw                          1/3
+ nu_L, e_L                vc w1, vc w2                     -1/2
+
+For (x,z) in S(U3 x U2), the corresponding six complete actions are
+ 1; x tensor z; det(x) conjugate(x); det(z);
+ conjugate(x); det(x) z.
+These are exactly the original real SM bimodule action and wedge actions.
+Thus nonabelian generators, conjugate color, weak doublets and charges
+all intertwine. They are not inferred from dimension or equal spectra.
+
+3. EXPLICIT NEGATIVE GRADE AND THE TWO DIFFERENT CONJUGATIONS
+
+Let e_S be the increasing-index exterior basis of Lambda C5. Define the
+antilinear Hodge complement by
+ star e_S=epsilon(S,S^c) e_(S^c),
+where epsilon(S,S^c) is the sign of the concatenated permutation to
+(1,2,3,4,5). Let P act on degree k by (-1)^(k(k-1)/2), and set
+ C_comp=P star.
+The degree signs of P are (+,+,-,-,+,+). The operators obey
+ C_comp^2=1, C_comp (-1)^N=-(-1)^N C_comp.
+Define the missing basis by the actual original J_F:
+ W_-(J_F v)=C_comp W_+(v), for every positive-grade v.
+Both sides are antilinear in v, so this defines a LINEAR W_-.
+Its explicit values are:
+
+ actual negative slot     exterior image                 hypercharge
+ nu_R                     vc vw                              0
+ u_R,c                    -c_c vw                           2/3
+ e_R                      -vc                                -1
+ u_L,c^c                  -eta_c w2                         -1/6
+ d_L,c^c                  +eta_c w1                         -1/6
+ d_R,c                    c_c                               -1/3
+ nu_L^c                   w2                                 1/2
+ e_L^c                    -w1                                1/2
+
+These are sixteen distinct signed odd basis vectors. Put W=W_+ directsum
+W_- at each of the three original generation labels. Then W is a real
+signed unitary 96x96 matrix and exactly
+ W gamma_F W^-1=(-1)^N,
+ W J_F W^-1=C_comp tensor I_generation,
+ W kappa W^-1=kappa_split,
+where kappa_split conjugates coefficients of these real exterior vectors.
+The sign convention is explicitly specified. The original SM action on
+the negative grade is the conjugate action, since J_F commutes with U(u).
+The table therefore also intertwines the complete negative SM action.
+
+For an exact Lie-algebra type test let c_i be exterior creators, a_i=c_i^*,
+H_i=c_i a_i-1/2, E_ij=c_i a_j for i!=j, and F_ij=c_i c_j for i<j.
+All these matrices are real in the specified exterior basis. Directly,
+ C_comp H_i C_comp^-1=-H_i,
+ C_comp E_ij C_comp^-1=-E_ij^*,
+ C_comp F_ij C_comp^-1=-F_ij^*.
+Thus C_comp gives the compact conjugation H->-H, E_alpha->-E_-alpha,
+while kappa_split fixes the real Chevalley root matrices and H_i.
+They must not be substituted for each other. In particular the actual
+J_F swap is NOT the split coefficient conjugation used by Claude29.
+
+4. SIGNED E8 WEIGHTS AND GLOBAL DETERMINANT FACTORS
+
+The already established signed root dictionary is
+ original-admissible-source-closure-20261025/
+ JOINT-LIFT-NATIVE-CLOCK-CONNECTION.txt:37-86.
+For S even, epsilon_i=+ on S and - off S. Hence the D5 weight
+ epsilon_S/2 has ODD minus parity. Its actual family4 weight is
+ -sigma_j/2, sigma_j=(+++),(+--),(-+-),(--+).
+The corresponding E8 half root (epsilon_S/2,-sigma_j/2) has even TOTAL
+minus parity. Complementing S gives the conjugate half-spinor; the full
+compact root conjugation also conjugates the family4. Hypercharge is
+ epsilon_S dot Y5/2=sum_(i in S)Y5_i because tr(Y5)=0.
+This fixes the same charge and chirality orientation as the previous map.
+
+The displayed real signed table is a FIBRE dictionary in a specified
+unitary carrier frame. It is not a new global trivialization. In the
+original full U5/K lift let D=det E and retain every supplied power:
+ W_m=Lambda_even E tensor directsum_j D^m_j,
+ W_m^*=Lambda_odd E tensor directsum_j D^(-1-m_j).
+The latter identity follows from the wedge pairing to det E. It is
+essential whenever D is nontrivial. The Spin and family half-determinant
+factors cancel exactly as in the September22 K construction; they are not
+discarded by a local real matrix. A global source identification must
+also carry the given connection, line cocycles and base-reflection map.
+The S(U3 x U2) comparison above has det=1 and needs no extra D power.
+
+5. ACTUAL ALL96 D_K RESTRICTION, WITH THE CORRECT FAMILY ORDER
+
+The differential frame fixes G order (L0,L2,L1), since its three columns
+have V4 characters (epsilon0,epsilon2,epsilon1). See
+ ORIGINAL-FUCHS-ALGEBRAIC-FRAME.txt:81-84,116-138.
+Thus the derived D_E,G is omega^2 S_G with S_G=diag(1,-1,1).
+In the original q order (L0,L1,L2), it is
+ D_E,q=omega^2 diag(1,1,-1).
+Reordering these lines must simultaneously reorder all given marks.
+
+In the G generation order, the proposed CHIRAL restriction is exactly:
+ particle nu_L,e_L,u_L,d_L: D_E,G;
+ particle nu_R,e_R,u_R,d_R: conjugate(D_E,G);
+ antiparticle nu_L^c,e_L^c,u_L^c,d_L^c: conjugate(D_E,G);
+ antiparticle nu_R^c,e_R^c,u_R^c,d_R^c: D_E,G.
+Equivalently it is D_E on gamma_F=+ and its conjugate on gamma_F=-.
+Under W these are the even/odd spinor family and conjugate-family actions.
+This differs from the OLD PARTICLEWISE extension on both L and R particles.
+
+The determinant-one q4 extension restricting to the actual D_E is
+ diag(omega^2,omega^2,-omega^2,-1).
+Claude29 printed diag(omega^2,-omega^2,omega^2,-1), which has a different
+triplet restriction. Reuse CLAUDE29-FIRST-K-MARK-REVIEW.txt:23-98:
+the corrected element is global in the existing K bundle but changes the
+quarter coefficient by conjugation; it does not commute with that quarter.
+This basis correction is unaffected by the new chiral assignment.
+The actual v252 coefficient transport is independently checked in
+ CLAUDE29-CHIRAL-FINITE-REVIEW.txt:
+ Y'=omega S_G conjugate(Y) S_G,
+ MR'=omega^2 S_G conjugate(MR) S_G.
+The second phase is omega^2, not the omega printed by Claude29.
+
+6. EXACT CHECK PERFORMED AND THE PRECISE GAIN
+
+A single small direct check imported the actual original labels, grading
+and Kswap, without calling its run() or the ledger. It constructed the
+specified W and the 32-dimensional exterior creators with integer signs.
+All equalities held exactly: orthogonality of W; full96 grading; full96
+JF; C_comp^2=1; all five Cartan conjugations; all forty D5 root conjugations;
+and reality of all forty root matrices. The displayed tables specify the
+same computation without a new search or auxiliary physical source.
+The unchanged matrix construction is retained reproducibly in
+ check_actual_chiral_dictionary.py.
+Its durable exact identities and full signed96 basis replay are saved in
+ CLAUDE29-CHIRAL-WEIGHT-REPLAY.json.
+The generation-to-line labels in that replay mean the specified comparison
+assignment (L0,L2,L1); they do not assert an original P1 selection.
+
+This supplies the missing whole96 charge/grade/real-basis COMPARISON and
+therefore the stated chiral restriction of a given K family action. The
+unitary W induces the usual CAR star-isomorphism on this same internal
+one-particle space and preserves every CAR product. Transporting the given
+operator/state through that map introduces no new state or time choice.
+
+It does not alone certify all E8 Lie products of the physical source:
+v252 implements the SM bimodule, not all E8 generators. The full E8 bundle
+has a fourth family slot and the other K branches with their fixed bracket
+normalizations. Their genuine global K action remains the existing joint
+lift, not a Lie closure of only the retained three spinor families.
+An induced finite-CAR map is also not a current-algebra identification with
+E8_1. Reuse finding:joint-spinor-not-source-coefficient and the existing
+CURRENT-LEVEL-CHECK.txt for that already established distinction.
+No physical P1 frame selection, complete source origin, CP self-symmetry,
+or OS/state identification follows merely from this representation map.

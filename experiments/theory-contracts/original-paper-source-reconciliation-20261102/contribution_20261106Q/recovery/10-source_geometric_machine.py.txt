@@ -1,0 +1,65 @@
+1: """Evolve the ACTUAL conformally varied comparison Dirac operator.
+2: 
+3: Probe metric g_eps=exp(2 eps h(w))(dx^2+dw^2). After unitary density transport,
+4: D_eps=exp(-eps h/2) D_0 exp(-eps h/2), on the original fixed Pin domain.
+5: The profile and eps are controlled inputs, not a law selected by P1.
+6: No projection/reset occurs between steps. Finite normal-mode Galerkin runs
+7: are compared with an analytic all-mode first-response formula.
+8: """
+9: import argparse
+10: import json
+11: from pathlib import Path
+12: 
+13: import numpy as np
+14: 
+15: HERE=Path(__file__).resolve().parent
+16: 
+17: 
+18: def require(condition,message):
+19:     if not condition:
+20:         raise RuntimeError(message)
+21: 
+22: 
+23: def profile_values(w,profile):
+24:     if profile=='quadratic':return w*w,2*w
+25:     # A smooth even bump, zero near w=0 and both original physical boundaries.
+26:     # Its location/width are diagnostic inputs, not TFPT predictions.
+27:     r=(w-.5)/.25
+28:     f=np.zeros_like(w);derivative=np.zeros_like(w)
+29:     inside=abs(r)<1
+30:     rr=r[inside]
+31:     f[inside]=np.exp(1-1/(1-rr*rr))
+32:     derivative[inside]=f[inside]*(-2*rr/(1-rr*rr)**2)/.25
+33:     return f,derivative
+34: 
+35: 
+36: def dirac_block(nmax, epsilon, k, b=1,profile='collar_bump'):
+37:     # In the original Pin sector containing the normal zero branch, the
+38:     # allowed transverse H indices are even: E_m=pi*m, J=b.
+39:     modes=np.arange(-nmax,nmax+1)
+40:     nodes,weights=np.polynomial.legendre.leggauss(max(512,8*nmax))
+41:     w=(nodes+1)/2; weights=weights/2
+42:     orders=np.arange(-2*nmax,2*nmax+1)
+43:     f,_=profile_values(w,profile)
+44:     moments=np.cos(np.pi*orders[:,None]*w[None,:])@(weights*np.exp(-epsilon*f))
+45:     hankel=moments[(modes[:,None]+modes[None,:])+2*nmax]
+46:     d=b*(k+0.5j*np.pi*(modes[:,None]-modes[None,:]))*hankel
+47:     require(np.max(abs(d-d.conj().T))<1e-12,'Hermitian original Dirac block')
+48:     return modes,d,w,weights
+49: 
+50: 
+51: def old_covariance(modes,k,b=1):
+52:     nmax=len(modes)//2
+53:     c=np.zeros((len(modes),len(modes)),complex)
+54:     c[nmax,nmax]=float(b*k<0)
+55:     for m in range(1,nmax+1):
+56:         indices=[nmax+m,nmax-m]
+57:         d=b*np.array([[0,k+1j*np.pi*m],[k-1j*np.pi*m,0]])
+58:         c[np.ix_(indices,indices)]=(np.eye(2)-d/np.sqrt(k*k+np.pi*np.pi*m*m))/2
+59:     require(np.linalg.norm(c@c-c)<1e-12,'Original pure D sea')
+60:     return c
+61: 
+62: 
+63: def run(nmax,epsilon,k,times,profile='collar_bump'):
+64:     modes,d,w,weights=dirac_block(nmax,epsilon,k,profile=profile)
+65:     c0=old_covariance(modes,k)
