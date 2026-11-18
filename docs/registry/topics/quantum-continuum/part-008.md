@@ -4,6 +4,12 @@
 
 Exact ledger statuses remain at the linked original rows and in registry.json. Citations are source links, not proof certification.
 
+## Kontext und Quantenzustand als zwei Auslesungen
+
+[experiments/theory-contracts/universalraum-five-source-frontier-20260914/baseline-v1.3/chapters/03_prozess.tex:20-55](../../../../experiments/theory-contracts/universalraum-five-source-frontier-20260914/baseline-v1.3/chapters/03_prozess.tex#L20) · `section:07562212c420bc603ab7` · section
+
+Die Matrix [formula in source] summiert die vier Ergebnisgewichte jedes Kontexts. Die Matrix [formula in source] liest die 15 nichttrivialen Pauli-Erwartungswerte aus. Mit [formula in source] lauten ihre Einträge Für [formula in source] und [formula in source] ergibt sich exakt Der Systemschatten entwickelt sich somit als depolarisierender Kanal Die Dämpfung [formula in source] entsteht aus der Kontextkombinatorik. B
+
 ## Allgemeine Kontextblöcke brauchen eine andere Beschreibung
 
 [experiments/theory-contracts/universalraum-five-source-frontier-20260914/baseline-v1.3/chapters/03_prozess.tex:114-147](../../../../experiments/theory-contracts/universalraum-five-source-frontier-20260914/baseline-v1.3/chapters/03_prozess.tex#L114) · `section:9338f49c76995a6c1078` · section
@@ -637,9 +643,3 @@ Die älteren, in S09 zusammengefassten Untersuchungen fanden mehrere Räume, die
 [experiments/theory-contracts/universalraum-paired-release-20260914/main-v1.3/chapters/03_prozess.tex:20-55](../../../../experiments/theory-contracts/universalraum-paired-release-20260914/main-v1.3/chapters/03_prozess.tex#L20) · `section:f1e113cb6191e4b25610` · section
 
 Die Matrix [formula in source] summiert die vier Ergebnisgewichte jedes Kontexts. Die Matrix [formula in source] liest die 15 nichttrivialen Pauli-Erwartungswerte aus. Mit [formula in source] lauten ihre Einträge Für [formula in source] und [formula in source] ergibt sich exakt Der Systemschatten entwickelt sich somit als depolarisierender Kanal Die Dämpfung [formula in source] entsteht aus der Kontextkombinatorik. B
-
-## Allgemeine Kontextblöcke brauchen eine andere Beschreibung
-
-[experiments/theory-contracts/universalraum-paired-release-20260914/main-v1.3/chapters/03_prozess.tex:114-147](../../../../experiments/theory-contracts/universalraum-paired-release-20260914/main-v1.3/chapters/03_prozess.tex#L114) · `section:560dc1cd2e54859e8ebb` · section
-
-Ein klassisch-quantenmechanischer Zustand, kurz CQ-Zustand, besitzt 15 positive [formula in source] -Blöcke [formula in source] . Zusammen haben sie 240 reelle lineare Koordinaten und Gesamtspur eins. Die feste Regel macht jeden Ausgangsblock in seinem Kontext diagonal. Deshalb gilt Es ist also nicht richtig, 240 Koordinaten pauschal als kleinste dauerhaft autonome Hülle dieser festen Ausführung auszugeben.

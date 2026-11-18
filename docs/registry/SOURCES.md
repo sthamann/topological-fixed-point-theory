@@ -4,6 +4,7 @@
 
 | Source | Role | Physical sections | Document views |
 |---|---|---:|---:|
+| [TFPT-Kernessenz-Deutsch-2026-10-15-v2.tex](../../TFPT-Kernessenz-Deutsch-2026-10-15-v2.tex) | support | 0 | 0 |
 | [TFPT_Universalraum_Sitzungsdokumentation_2026-09-20.tex](../../TFPT_Universalraum_Sitzungsdokumentation_2026-09-20.tex) | support | 0 | 1 |
 | [TFPT_Universalraum_Sitzungsdokumentation_2026-09-20_v2.tex](../../TFPT_Universalraum_Sitzungsdokumentation_2026-09-20_v2.tex) | support | 0 | 1 |
 | [_archive/paper-latex/muon-g2.tex](../../_archive/paper-latex/muon-g2.tex) | archive | 0 | 1 |
@@ -747,6 +748,9 @@
 | [documents/universal_room--new-3--TFPT_Universalraum_Forschungspaper_2026-09-15--TFPT_Universalraum_Forschungspaper_2026-09-15/sections/006-section-16-t1-t8-aktueller.tex](../../documents/universal_room--new-3--TFPT_Universalraum_Forschungspaper_2026-09-15--TFPT_Universalraum_Forschungspaper_2026-09-15/sections/006-section-16-t1-t8-aktueller.tex) | module_fragment | 6 | 1 |
 | [experiments/ftransfer-clocks/ftransfer_clocks_contract.tex](../../experiments/ftransfer-clocks/ftransfer_clocks_contract.tex) | exploration | 7 | 1 |
 | [experiments/lean4-carrier-rigidity/note_carrier_rigidity_lean4.tex](../../experiments/lean4-carrier-rigidity/note_carrier_rigidity_lean4.tex) | exploration | 0 | 1 |
+| [experiments/theory-contracts/chat-triangulation-20261108/TFPT-W-R-SPEKTRALTEST-20261110.tex](../../experiments/theory-contracts/chat-triangulation-20261108/TFPT-W-R-SPEKTRALTEST-20261110.tex) | exploration | 6 | 1 |
+| [experiments/theory-contracts/recursive-mirrored-source-20261103/TFPT-CALDERON-FELDGEWICHT-20261110.tex](../../experiments/theory-contracts/recursive-mirrored-source-20261103/TFPT-CALDERON-FELDGEWICHT-20261110.tex) | exploration | 7 | 1 |
+| [experiments/theory-contracts/recursive-mirrored-source-20261103/TFPT-R113-LEERES-GEWICHT-20261110.tex](../../experiments/theory-contracts/recursive-mirrored-source-20261103/TFPT-R113-LEERES-GEWICHT-20261110.tex) | exploration | 8 | 1 |
 | [experiments/theory-contracts/universalraum-common-process-20260915/pdf-header.tex](../../experiments/theory-contracts/universalraum-common-process-20260915/pdf-header.tex) | exploration | 1 | 0 |
 | [experiments/theory-contracts/universalraum-common-process-20260915/tmp/pdfs/TFPT_Universalraum_Gemeinsamer_Prozess_Einfach_2026-09-15_v1.6.8.tex](../../experiments/theory-contracts/universalraum-common-process-20260915/tmp/pdfs/TFPT_Universalraum_Gemeinsamer_Prozess_Einfach_2026-09-15_v1.6.8.tex) | exploration | 12 | 1 |
 | [experiments/theory-contracts/universalraum-common-process-20260915/tmp/pdfs/TFPT_Universalraum_Gemeinsamer_Prozess_Konsolidierung_2026-09-15_v1.6.8.tex](../../experiments/theory-contracts/universalraum-common-process-20260915/tmp/pdfs/TFPT_Universalraum_Gemeinsamer_Prozess_Konsolidierung_2026-09-15_v1.6.8.tex) | exploration | 0 | 1 |
@@ -981,6 +985,7 @@
 | [tfpt_4_frontier.tex](../../tfpt_4_frontier.tex) | active_wrapper | 0 | 1 |
 | [tfpt_5_redteam.tex](../../tfpt_5_redteam.tex) | active_wrapper | 0 | 1 |
 | [tfpt_explorer/docs/session-2026-09-28/TFPT_Gesamtsynthese_2026-09-28.tex](../../tfpt_explorer/docs/session-2026-09-28/TFPT_Gesamtsynthese_2026-09-28.tex) | support | 0 | 1 |
+| [tfpt_explorer/docs/session-2026-10-01/TFPT_Sitzungsbericht_2026-10-01.tex](../../tfpt_explorer/docs/session-2026-10-01/TFPT_Sitzungsbericht_2026-10-01.tex) | support | 0 | 0 |
 | [tfpt_horizon_readouts.tex](../../tfpt_horizon_readouts.tex) | active_wrapper | 0 | 1 |
 | [tfpt_research_contracts.tex](../../tfpt_research_contracts.tex) | active_wrapper | 0 | 1 |
 | [tfpt_safeguards.tex](../../tfpt_safeguards.tex) | active_wrapper | 0 | 1 |

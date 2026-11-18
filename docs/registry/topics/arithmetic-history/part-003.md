@@ -67,6 +67,7 @@ Navigation joins (both sources name the same Python identifier; statement equiva
 - [(* ==== v470 round: the alpha^3 level / embedding-index rigidity -- the exact k_Y = 5/3 arithmetic (tr Y^2 / tr T3^2 over the 5bar), the b1 conversion (3/5)(41/6) = 41/10, and the carrier decomposition 41/6 = 20/3 + 1/6; mirrors v470 (the FHS Chern and the alpha^-1 root re-verification are numerical, Python-only). ==== *)](../../../../verification/wolfram/tfpt_readouts_extension.wl#L2943)
 - [experiments/lean4-carrier-rigidity/TfptCarrier/SeamApplicabilityLedger.lean](../../../../experiments/lean4-carrier-rigidity/TfptCarrier/SeamApplicabilityLedger.lean#L1)
 - [experiments/lean4-carrier-rigidity/TfptCarrier/SeamScalingLimit.lean](../../../../experiments/lean4-carrier-rigidity/TfptCarrier/SeamScalingLimit.lean#L1)
+- [experiments/theory-contracts/original-paper-source-reconciliation-20261102/shorttime_20261105J/shorttime20261105J_lean/SeamScalingLimitCurrent.lean](../../../../experiments/theory-contracts/original-paper-source-reconciliation-20261102/shorttime_20261105J/shorttime20261105J_lean/SeamScalingLimitCurrent.lean#L1)
 - [(* ==== v260: one Kummer/K3 carries seam + carrier-16 + E8 (ARCH.K3.01) ==== *)](../../../../verification/wolfram/tfpt_readouts_extension.wl#L2033)
 - [experiments/lean4-carrier-rigidity/TfptCarrier/SeamResidualAxiom.lean](../../../../experiments/lean4-carrier-rigidity/TfptCarrier/SeamResidualAxiom.lean#L1)
 
@@ -196,6 +197,7 @@ Navigation joins (both sources name the same Python identifier; statement equiva
 - [(* ---- (v118) hexagon-family dictionary ---- *)](../../../../verification/wolfram/tfpt_readouts_extension.wl#L750)
 - [experiments/lean4-carrier-rigidity/TfptCarrier.lean](../../../../experiments/lean4-carrier-rigidity/TfptCarrier.lean#L1)
 - [(* ---- (v175) net existence + full-cone RP: E8 Cartan even unimodular, character order 5, Gamma(t) functoriality integers ---- *)](../../../../verification/wolfram/tfpt_readouts_extension.wl#L1523)
+- [experiments/theory-contracts/original-paper-source-reconciliation-20261102/shorttime_20261105J/shorttime20261105J_lean/BWKeystoneCurrent.lean](../../../../experiments/theory-contracts/original-paper-source-reconciliation-20261102/shorttime_20261105J/shorttime20261105J_lean/BWKeystoneCurrent.lean#L1)
 - [experiments/lean4-carrier-rigidity/TfptCarrier/AxiomCheck.lean](../../../../experiments/lean4-carrier-rigidity/TfptCarrier/AxiomCheck.lean#L1)
 - [(* ---- (v154) Simple-Current Extension Theorem ---- *)](../../../../verification/wolfram/tfpt_readouts_extension.wl#L1381)
 - [experiments/lean4-carrier-rigidity/TfptCarrier/SeamEdgeChern.lean](../../../../experiments/lean4-carrier-rigidity/TfptCarrier/SeamEdgeChern.lean#L1)
@@ -221,6 +223,7 @@ Navigation joins (both sources name the same Python identifier; statement equiva
 - [experiments/lean4-carrier-rigidity/TfptCarrier/SeamScalingLimit.lean](../../../../experiments/lean4-carrier-rigidity/TfptCarrier/SeamScalingLimit.lean#L1)
 - [(* ---- (v116) resonance theorem ---- The [N] falsification control (scipy ODE) is Python-only by convention; the exact statements are mirrored here. *)](../../../../verification/wolfram/tfpt_readouts_extension.wl#L688)
 - [(* v469 (i): the LR locality integers of both extension routes *)](../../../../verification/wolfram/tfpt_readouts_extension.wl#L2930)
+- [experiments/theory-contracts/original-paper-source-reconciliation-20261102/shorttime_20261105J/shorttime20261105J_lean/SeamScalingLimitCurrent.lean](../../../../experiments/theory-contracts/original-paper-source-reconciliation-20261102/shorttime_20261105J/shorttime20261105J_lean/SeamScalingLimitCurrent.lean#L1)
 - [experiments/lean4-carrier-rigidity/TfptCarrier/SeamApplicabilityLedger.lean](../../../../experiments/lean4-carrier-rigidity/TfptCarrier/SeamApplicabilityLedger.lean#L1)
 - [(* ==== v469 round: the net-level crossed-product certification -- the LR locality integers (h_s(SO(16)_1) = 16/16 = 1 in Z; the mu4 glue h(J^k) = {1,1,1} all integer), the KLM mu-index arithmetic (4/2^2 = 1 and 16/4^2 = 1, both holomorphic) and the Kitaev 16-fold-way pin (nu = 16 x |C| = 16 = 0 mod 16, c_- = nu/2 = 8 = g_car+N_fam); mirrors v469 (the FHS Chern itself is numerical, Python-only). ==== *)](../../../../verification/wolfram/tfpt_readouts_extension.wl#L2924)
 - [(* ==== v237: closing step as physics -- no topological degeneracy <=> det K=1 <=> SRE ==== *)](../../../../verification/wolfram/tfpt_readouts_extension.wl#L1992)
@@ -325,6 +328,36 @@ Ein Hamiltonspektrum, ein endlicher Markovoperator und eine arithmetische expliz
 [documents/universal_room--new-3--TFPT_Universalraum_Forschungspaper_2026-09-15--TFPT_Universalraum_Forschungspaper_2026-09-15/sections/006-section-16-t1-t8-aktueller.tex:222-290](../../../../documents/universal_room--new-3--TFPT_Universalraum_Forschungspaper_2026-09-15--TFPT_Universalraum_Forschungspaper_2026-09-15/sections/006-section-16-t1-t8-aktueller.tex#L222) · `section:c8b55651ea0f190499c8` · section
 
 Die folgenden Arbeiten liefern etablierte Methoden oder datierte Vergleichsdaten. Sie beweisen nicht die TFPT-spezifische Herkunft der jeweiligen Eingaben. URLs wurden während dieser Synthese geprüft; bei einzelnen Arbeiten wurde nur die offizielle bibliographische Seite beziehungsweise Zusammenfassung konsultiert, soweit der Haupttext keine weitergehende Behauptung daraus übernimmt.
+
+## Zweiter Grenzwert: Der ganze Modenturm
+
+[experiments/theory-contracts/recursive-mirrored-source-20261103/TFPT-CALDERON-FELDGEWICHT-20261110.tex:64-82](../../../../experiments/theory-contracts/recursive-mirrored-source-20261103/TFPT-CALDERON-FELDGEWICHT-20261110.tex#L64) · `section:c94be1253fdb87970bbb` · section
+
+Schreibe [formula in source] . Dann [formula in source] . Der spektrale Abstand von null ist für große [formula in source] gleichmäßig mindestens eine positive Konstante mal [formula in source] . Aus der Resolventendarstellung der Vorzeichenmatrix folgen die Ableitungsgrenzen [formula in source] und [formula in source] . Die Modensumme konvergiert lokal gleichmäßig. Für die ganzen Moden ergibt die Riemannsumme [formu
+
+## 3. Gleicher Rand, verschiedenes Gewicht
+
+[experiments/theory-contracts/recursive-mirrored-source-20261103/TFPT-R113-LEERES-GEWICHT-20261110.tex:137-146](../../../../experiments/theory-contracts/recursive-mirrored-source-20261103/TFPT-R113-LEERES-GEWICHT-20261110.tex#L137) · `section:1c4aa292431b282c53f9` · section
+
+Bei gegebenen homogenen zeitabhängigen Verläufen setzt die ursprüngliche Verklebung den Anregungsskalar aus den kleinen Teilstreifen zusammen. Für beschränkte [formula in source] konvergiert die abgezogene Modensumme gleichmäßig, weil die Reste bei großem [formula in source] durch eine gemeinsame Konstante mal [formula in source] beschränkt sind. Der nicht abgezogene Logquotient zweier gegebener Geschichten [formula
+
+## Originale und Rechenbeleg
+
+[experiments/theory-contracts/recursive-mirrored-source-20261103/TFPT-R113-LEERES-GEWICHT-20261110.tex:153-162](../../../../experiments/theory-contracts/recursive-mirrored-source-20261103/TFPT-R113-LEERES-GEWICHT-20261110.tex#L153) · `section:881219ebb763df7fcc44` · section
+
+R113/R032 R113-ORIGINAL-UND-REFERENZ-20261109.txt, Abschnitte 1 und 3. WHOLE-STRATEGY-CAP-AND-CONTACTS-20261109.txt, Abschnitt 1. Beide im Vertrag chat-triangulation-20261108. v252 Diagnoseparameter und Originalbuilder in check_quarter_reference.py desselben Vertrags. Der ergänzende Checker check_r113_empty_sea.py importiert diese Parameter, prüft die Paarenergien der Originalmatrix, summiert die Moden mit expliziter
+
+Explicit source references:
+
+- [experiments/theory-contracts/first-weighted-spectral-block-20261110/PROOF.txt](../../../../experiments/theory-contracts/first-weighted-spectral-block-20261110/PROOF.txt#L1) · explicit_file_citation
+- [experiments/theory-contracts/chat-triangulation-20261108/R113-ORIGINAL-UND-REFERENZ-20261109.txt](../../../../experiments/theory-contracts/chat-triangulation-20261108/R113-ORIGINAL-UND-REFERENZ-20261109.txt#L1) · explicit_file_citation
+- [experiments/theory-contracts/chat-triangulation-20261108/WHOLE-STRATEGY-CAP-AND-CONTACTS-20261109.txt](../../../../experiments/theory-contracts/chat-triangulation-20261108/WHOLE-STRATEGY-CAP-AND-CONTACTS-20261109.txt#L1) · explicit_file_citation
+- [experiments/theory-contracts/chat-triangulation-20261108/check_quarter_reference.py](../../../../experiments/theory-contracts/chat-triangulation-20261108/check_quarter_reference.py#L1) · explicit_file_citation
+- [experiments/theory-contracts/original-paper-source-reconciliation-20261102/shorttime_20261105K/fullprofile/WHOLE-PROFILE-TO-QUARTIC-TRANSFER-AND-DOMAIN-20261105.txt](../../../../experiments/theory-contracts/original-paper-source-reconciliation-20261102/shorttime_20261105K/fullprofile/WHOLE-PROFILE-TO-QUARTIC-TRANSFER-AND-DOMAIN-20261105.txt#L1) · explicit_file_citation
+- [experiments/theory-contracts/chat-triangulation-20261108/TFPT-C58-ENDLICHER-ABZUG-ORIGINALREFERENZ-20261110.txt](../../../../experiments/theory-contracts/chat-triangulation-20261108/TFPT-C58-ENDLICHER-ABZUG-ORIGINALREFERENZ-20261110.txt#L1) · explicit_file_citation
+- [experiments/theory-contracts/original-local-source-variable-background-20261102/WEIGHT.txt](../../../../experiments/theory-contracts/original-local-source-variable-background-20261102/WEIGHT.txt#L1) · explicit_file_citation
+- [experiments/theory-contracts/recursive-mirrored-source-20261103/check_r113_empty_sea.py](../../../../experiments/theory-contracts/recursive-mirrored-source-20261103/check_r113_empty_sea.py#L1) · explicit_file_citation
+- [verification/v252_full_finite_triple.py](../../../../verification/v252_full_finite_triple.py#L1) · explicit_script_identifier
 
 ## Interpretation : the self-reproducing cosmic cycle
 
@@ -966,21 +999,3 @@ Navigation joins (both sources name the same Python identifier; statement equiva
 [experiments/theory-contracts/universalraum-paired-release-20260914/main-v1.3/chapters/20_release_v13.tex:8-18](../../../../experiments/theory-contracts/universalraum-paired-release-20260914/main-v1.3/chapters/20_release_v13.tex#L8) · `section:66b81bc9da48f9704414` · section
 
 Die alten IDs S01–S11 bleiben unverändert. N1–N6 bezeichnen die sechs bereits archivierten Konsolidierungen: Fable-Konsolidierung, Sol-Rekonstruktion, kurze Universalraum-Konsolidierung, Q-Audit/U-Regel, TFPT-Rekonstruktion und Sechs-Prüfpunkte-Analyse, jeweils vom 14. September 2026. Originaltexte und Hashes stehen im Sechs-Quellen-Auditpaket.
-
-## Eine relationale Viereruhr ist konstruierbar
-
-[experiments/theory-contracts/universalraum-paired-release-20260914/source-v1.1/TFPT_Universalraum_LaTeX_2026-09-14/chapters/06_zeit_echo.tex:39-57](../../../../experiments/theory-contracts/universalraum-paired-release-20260914/source-v1.1/TFPT_Universalraum_LaTeX_2026-09-14/chapters/06_zeit_echo.tex#L39) · `section:3c0dda8310b6dbec48dc` · section
-
-Zerlege [formula in source] . Die vier [formula in source] sind orthonormal. Wähle zusätzlich Weil jedes Wort von [formula in source] jedes Energielabel einmal enthält, gilt [formula in source] . Für erhält man [formula in source] . Die Zeiten [formula in source] liefern vier orthogonale Anzeigen. Global ist der Zustand stationär, bedingt auf die Uhranzeige entwickelt sich das System. Das ist eine konkrete Page-Woott
-
-## Spektrale Geometrie hilft, ersetzt aber keine fehlenden Daten
-
-[experiments/theory-contracts/universalraum-paired-release-20260914/source-v1.1/TFPT_Universalraum_LaTeX_2026-09-14/chapters/09_physik.tex:59-67](../../../../experiments/theory-contracts/universalraum-paired-release-20260914/source-v1.1/TFPT_Universalraum_LaTeX_2026-09-14/chapters/09_physik.tex#L59) · `section:2fdb32ba1abae907040a` · section
-
-Eine Algebra mit Darstellung und geeignetem Diracoperator kann Geometrie kodieren. Beispielsweise macht die Distanzformel sichtbar, warum nicht nur Eigenwerte, sondern die Relation zwischen [formula in source] und den Observablen zählt. Connes' kommutativer Rekonstruktionssatz benötigt starke Spektralaxiome und liefert eine kompakte glatte Riemannsche Mannigfaltigkeit. Er erzeugt keine lorentzsche 3+1D-Welt aus einer
-
-## Die elf Eingabedokumente
-
-[experiments/theory-contracts/universalraum-paired-release-20260914/source-v1.1/TFPT_Universalraum_LaTeX_2026-09-14/chapters/11_anhang.tex:76-79](../../../../experiments/theory-contracts/universalraum-paired-release-20260914/source-v1.1/TFPT_Universalraum_LaTeX_2026-09-14/chapters/11_anhang.tex#L76) · `section:dc396e4ac3e45d09a2bc` · section
-
-Die Quellenkürzel S01 bis S11 gelten durchgängig für dieses Buch und sind von den jeweils eigenen Kürzeln der Anhänge zu unterscheiden. Die vollständigen Originalpfade und SHA-256-Werte stehen im beiliegenden Manifest. Hier werden die Dateinamen und inhaltlichen Rollen aufgeführt.
