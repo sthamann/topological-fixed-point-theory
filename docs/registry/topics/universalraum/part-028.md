@@ -751,6 +751,7 @@ Navigation joins (both sources name the same Python identifier; statement equiva
 - [experiments/lean4-carrier-rigidity/TfptCarrier/PascalLadder.lean](../../../../experiments/lean4-carrier-rigidity/TfptCarrier/PascalLadder.lean#L1)
 - [experiments/lean4-carrier-rigidity/TfptCarrier/AuditContract.lean](../../../../experiments/lean4-carrier-rigidity/TfptCarrier/AuditContract.lean#L1)
 - [(* ==== v528 round: SEAM.BIT.TWISTCLASS.01 -- bit = twist-class choice. Exact mirrors: (i) cardinality lemma; (ii) 224-axis flip census; (iii) O-values. Pfaffian spectra Python-only. ==== *)](../../../../verification/wolfram/tfpt_readouts_extension.wl#L8214)
+- [experiments/theory-contracts/original-paper-source-reconciliation-20261102/shorttime_20261105J/shorttime20261105J_lean/BoundaryYukawaKernelInterfaceCurrent.lean](../../../../experiments/theory-contracts/original-paper-source-reconciliation-20261102/shorttime_20261105J/shorttime20261105J_lean/BoundaryYukawaKernelInterfaceCurrent.lean#L1)
 - [experiments/lean4-carrier-rigidity/TfptCarrier/SeamResidualAxiom.lean](../../../../experiments/lean4-carrier-rigidity/TfptCarrier/SeamResidualAxiom.lean#L1)
 - [experiments/lean4-carrier-rigidity/TfptCarrier/SeamWindingInterface.lean](../../../../experiments/lean4-carrier-rigidity/TfptCarrier/SeamWindingInterface.lean#L1)
 - [experiments/lean4-carrier-rigidity/TfptCarrier/GaussianCodeBridge.lean](../../../../experiments/lean4-carrier-rigidity/TfptCarrier/GaussianCodeBridge.lean#L1)

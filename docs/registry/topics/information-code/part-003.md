@@ -256,6 +256,7 @@ Explicit source references:
 Navigation joins (both sources name the same Python identifier; statement equivalence is not inferred):
 
 - [experiments/lean4-carrier-rigidity/TfptCarrier/ProjectiveHamming.lean](../../../../experiments/lean4-carrier-rigidity/TfptCarrier/ProjectiveHamming.lean#L1)
+- [experiments/theory-contracts/original-paper-source-reconciliation-20261102/shorttime_20261105J/shorttime20261105J_lean/SeamScalingLimitCurrent.lean](../../../../experiments/theory-contracts/original-paper-source-reconciliation-20261102/shorttime_20261105J/shorttime20261105J_lean/SeamScalingLimitCurrent.lean#L1)
 - [(* ==== v277: seam-Calderon -> (E8)_1 matching certificate (QGAMB.TIERB.01) ==== v276 (flat-pillowcase commutator, numerical) is Python-only; v277's exact lattice discriminator (det E8 vs det D8) + the (E8)_1 character 248 are mirrored. *)](../../../../verification/wolfram/tfpt_readouts_extension.wl#L2120)
 - [experiments/lean4-carrier-rigidity/TfptCarrier/AxiomCheck.lean](../../../../experiments/lean4-carrier-rigidity/TfptCarrier/AxiomCheck.lean#L1)
 - [(* ==== v469 round: the net-level crossed-product certification -- the LR locality integers (h_s(SO(16)_1) = 16/16 = 1 in Z; the mu4 glue h(J^k) = {1,1,1} all integer), the KLM mu-index arithmetic (4/2^2 = 1 and 16/4^2 = 1, both holomorphic) and the Kitaev 16-fold-way pin (nu = 16 x |C| = 16 = 0 mod 16, c_- = nu/2 = 8 = g_car+N_fam); mirrors v469 (the FHS Chern itself is numerical, Python-only). ==== *)](../../../../verification/wolfram/tfpt_readouts_extension.wl#L2924)
@@ -703,12 +704,6 @@ Explicit source references:
 Navigation joins (both sources name the same Python identifier; statement equivalence is not inferred):
 
 - [(* v1032: a separate Lorentz-covariant curvature calculation at one exact nonzero null momentum. Pi is the de Donder trace-reversed numerator; positivity is inferred only after the curvature sandwich. *)](../../../../verification/wolfram/tfpt_round7.wl#L92)
-
-## Physical source existence, ground words and common geometry (H, I, J)
-
-[tex-artefacts/toe_source_completion_20261103.tex:154-221](../../../../tex-artefacts/toe_source_completion_20261103.tex#L154) · `section:206a9bd3daad77367425` · subsection
-
-The given finite-range uniformly local Hamiltonian class has its thermodynamic real-time norm dynamics and ground/KMS states. Restrictions of one limiting state are compatible. Independently restarted small bare Gibbs weights need not be projective. Exact elimination carries the effective fiber weights, exterior determinants, higher vertices and memory, rather than imposing the original bare ansatz again at each cut.
 
 ## Physical source existence, ground words and common geometry (H, I, J)
 

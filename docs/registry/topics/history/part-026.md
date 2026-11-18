@@ -88,7 +88,7 @@ Explicit source references:
 
 Navigation joins (both sources name the same Python identifier; statement equivalence is not inferred):
 
-- [(* ---- (v16/v21) solar angle from the A3 glue-norm q(A3) = 3/4 ---- *) qA3 = 3/4; qD5 = 5/4; checkExact["E8 glue norm q(D5) + q(A3) = 2", qA3 + qD5 == 2]; checkExact["eps leading q(A3)/(6pi) = 1/(8pi) = c3", Simplify[qA3/(6 Pi) - c3] == 0]; s12 = 1/3 - (2/3) qA3 phi0; checkExact["sin^2 theta12 = 1/3 - phi0/2 (exact)", Simplify[s12 - (1/3 - phi0/2)] == 0]; (* ---- (v23) anchor generator a=(1,1,2) ---- *)](../../../../verification/wolfram/tfpt_readouts.wl#L88)
+- [(* ---- (v16/v21) solar angle from the A3 glue-norm q(A3) = 3/4 ---- *)](../../../../verification/wolfram/tfpt_readouts.wl#L89)
 
 ## Existing producers and their actual composition
 
@@ -190,7 +190,7 @@ Explicit source references:
 
 Navigation joins (both sources name the same Python identifier; statement equivalence is not inferred):
 
-- [(* v1027: exact signed-wall determinant and unsquared low branch. *) {a, delta, lambda, g} = Unique /@ {"a", "delta", "lambda", "g"}; mass = delta + lambda; beta = lambda g^2; eta = lambda g; c = beta - eta^2/mass; h = {{a + beta a^2, eta a}, {eta a, mass}}; check["v1027 signed determinant M a (1+c a)", Together[Det[h] - mass a (1 + c a)] === 0]; check["v1027 physical kernel remains one-dimensional at a=0", NullSpace[h /. a -> 0] === {{1, 0}}]; (* v1028: exact characteristic-five reduction of the full 192-mode one-site character. P^12 == P^2 P(z^5)^2 mod 5 is evaluated by coefficient dictionaries, never by floating group quadrature. *)](../../../../verification/wolfram/tfpt_round4.wl#L28)
+- [(* v1027: exact signed-wall determinant and unsquared low branch. *)](../../../../verification/wolfram/tfpt_round4.wl#L29)
 
 ## Scope and evidence, 12 September 2026.
 

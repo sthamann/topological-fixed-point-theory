@@ -280,7 +280,7 @@ Explicit source references:
 
 Navigation joins (both sources name the same Python identifier; statement equivalence is not inferred):
 
-- [(* v1027: exact signed-wall determinant and unsquared low branch. *) {a, delta, lambda, g} = Unique /@ {"a", "delta", "lambda", "g"}; mass = delta + lambda; beta = lambda g^2; eta = lambda g; c = beta - eta^2/mass; h = {{a + beta a^2, eta a}, {eta a, mass}}; check["v1027 signed determinant M a (1+c a)", Together[Det[h] - mass a (1 + c a)] === 0]; check["v1027 physical kernel remains one-dimensional at a=0", NullSpace[h /. a -> 0] === {{1, 0}}]; (* v1028: exact characteristic-five reduction of the full 192-mode one-site character. P^12 == P^2 P(z^5)^2 mod 5 is evaluated by coefficient dictionaries, never by floating group quadrature. *)](../../../../verification/wolfram/tfpt_round4.wl#L28)
+- [(* v1027: exact signed-wall determinant and unsquared low branch. *)](../../../../verification/wolfram/tfpt_round4.wl#L29)
 
 ## T6/T8: full Gauss counts, internal cap and selection rules.
 
@@ -295,8 +295,8 @@ Explicit source references:
 
 Navigation joins (both sources name the same Python identifier; statement equivalence is not inferred):
 
-- [(* v1027: exact signed-wall determinant and unsquared low branch. *) {a, delta, lambda, g} = Unique /@ {"a", "delta", "lambda", "g"}; mass = delta + lambda; beta = lambda g^2; eta = lambda g; c = beta - eta^2/mass; h = {{a + beta a^2, eta a}, {eta a, mass}}; check["v1027 signed determinant M a (1+c a)", Together[Det[h] - mass a (1 + c a)] === 0]; check["v1027 physical kernel remains one-dimensional at a=0", NullSpace[h /. a -> 0] === {{1, 0}}]; (* v1028: exact characteristic-five reduction of the full 192-mode one-site character. P^12 == P^2 P(z^5)^2 mod 5 is evaluated by coefficient dictionaries, never by floating group quadrature. *)](../../../../verification/wolfram/tfpt_round4.wl#L28)
-- [(* v1028: exact ordinary D4 cap on the selected 12D even pair space. *) cs = DiagonalMatrix[{1, -I, -1, I}]; cf = DiagonalMatrix[{-I, -1, I}]; js = SparseArray[Table[{Mod[-kk, 4] + 1, kk + 1} -> 1, {kk, 0, 3}], {4, 4}]; jf = {{0, 0, 1}, {0, 1, 0}, {1, 0, 0}}; rot = KroneckerProduct[cs, cf]; refl = KroneckerProduct[js, jf]; check["v1028 ordinary D4 relations on selected even pair space", zeroQ[MatrixPower[rot, 4] - IdentityMatrix[12]] && zeroQ[refl.refl - IdentityMatrix[12]] && zeroQ[refl.rot.refl - ConjugateTranspose[rot]]]; (* One-based flattened slots for (k,g)=(1,3),(2,2),(3,1). *)](../../../../verification/wolfram/tfpt_round4.wl#L112)
+- [(* v1028: exact characteristic-five reduction of the full 192-mode one-site character. P^12 == P^2 P(z^5)^2 mod 5 is evaluated by coefficient dictionaries, never by floating group quadrature. *)](../../../../verification/wolfram/tfpt_round4.wl#L41)
+- [(* v1028: exact ordinary D4 cap on the selected 12D even pair space. *)](../../../../verification/wolfram/tfpt_round4.wl#L113)
 
 ## T7: local constraints and zero-mode removal.
 
@@ -311,7 +311,7 @@ Explicit source references:
 
 Navigation joins (both sources name the same Python identifier; statement equivalence is not inferred):
 
-- [(* v1029: exact generic local tensor identities and the k=0 instability. *) {x, y, z} = Unique /@ {"x", "y", "z"}; k = {x, y, z}; basis = Join[ Table[Outer[Times, UnitVector[3, ii], UnitVector[3, ii]], {ii, 1, 3}], Table[With[{ii = pair[[1]], jj = pair[[2]]}, (Outer[Times, UnitVector[3, ii], UnitVector[3, jj]] + Outer[Times, UnitVector[3, jj], UnitVector[3, ii]])/Sqrt[2]], {pair, {{2, 3}, {1, 3}, {1, 2}}}] ]; bmat = Transpose[(#.k) & /@ basis]; trace = {1, 1, 1, 0, 0, 0}; k2 = k.k; v = Transpose[bmat].k; scalar = v - k2 trace; kp = IdentityMatrix[6] - Outer[Times, trace, trace]/2; kq = k2 (IdentityMatrix[6] - Outer[Times, trace, trace]) - 2 Transpose[bmat].bmat + Outer[Times, trace, v] + Outer[Times, v, trace]; check["v1029 generic local tensor constraint identities", zeroQ[bmat.Transpose[bmat] - (k2 IdentityMatrix[3] + Outer[Times, k, k])/2] && zeroQ[kq.Transpose[bmat]] && zeroQ[kp.scalar - Transpose[bmat].k] && PossibleZeroQ[scalar.scalar - 2 k2^2]]; r = Unique[]; zeroEnergy = Expand[(r trace).kp.(r trace)/2]; check["v1029 periodic k=0 trace mode has exact energy -3 r^2/4", zeroEnergy === -3 r^2/4]; (* v1030: actual connected-sector words span M4; a disconnected mutant leaves one extra commutant degree. *)](../../../../verification/wolfram/tfpt_round4.wl#L135)
+- [(* v1029: exact generic local tensor identities and the k=0 instability. *)](../../../../verification/wolfram/tfpt_round4.wl#L136)
 
 ## ALG2: sector generation and conditional uniform section.
 
@@ -326,7 +326,7 @@ Explicit source references:
 
 Navigation joins (both sources name the same Python identifier; statement equivalence is not inferred):
 
-- [(* v1029: exact generic local tensor identities and the k=0 instability. *) {x, y, z} = Unique /@ {"x", "y", "z"}; k = {x, y, z}; basis = Join[ Table[Outer[Times, UnitVector[3, ii], UnitVector[3, ii]], {ii, 1, 3}], Table[With[{ii = pair[[1]], jj = pair[[2]]}, (Outer[Times, UnitVector[3, ii], UnitVector[3, jj]] + Outer[Times, UnitVector[3, jj], UnitVector[3, ii]])/Sqrt[2]], {pair, {{2, 3}, {1, 3}, {1, 2}}}] ]; bmat = Transpose[(#.k) & /@ basis]; trace = {1, 1, 1, 0, 0, 0}; k2 = k.k; v = Transpose[bmat].k; scalar = v - k2 trace; kp = IdentityMatrix[6] - Outer[Times, trace, trace]/2; kq = k2 (IdentityMatrix[6] - Outer[Times, trace, trace]) - 2 Transpose[bmat].bmat + Outer[Times, trace, v] + Outer[Times, v, trace]; check["v1029 generic local tensor constraint identities", zeroQ[bmat.Transpose[bmat] - (k2 IdentityMatrix[3] + Outer[Times, k, k])/2] && zeroQ[kq.Transpose[bmat]] && zeroQ[kp.scalar - Transpose[bmat].k] && PossibleZeroQ[scalar.scalar - 2 k2^2]]; r = Unique[]; zeroEnergy = Expand[(r trace).kp.(r trace)/2]; check["v1029 periodic k=0 trace mode has exact energy -3 r^2/4", zeroEnergy === -3 r^2/4]; (* v1030: actual connected-sector words span M4; a disconnected mutant leaves one extra commutant degree. *)](../../../../verification/wolfram/tfpt_round4.wl#L135)
+- [(* v1030: actual connected-sector words span M4; a disconnected mutant leaves one extra commutant degree. *)](../../../../verification/wolfram/tfpt_round4.wl#L163)
 
 ## Front matter / support
 
@@ -346,7 +346,7 @@ Explicit source references:
 
 Navigation joins (both sources name the same Python identifier; statement equivalence is not inferred):
 
-- [(* v1033: exact Z4 deck algebra and the load-bearing weight mismatch. *) z4 = DiagonalMatrix[{1, I, -1, -I}]; x4 = Sum[SparseArray[{{Mod[col, 4] + 1, col} -> 1}, {4, 4}], {col, 1, 4}]; check["v1033 local flux register is an exact Z4 Weyl pair", zeroQ[MatrixPower[z4, 4] - IdentityMatrix[4]] && zeroQ[MatrixPower[x4, 4] - IdentityMatrix[4]] && zeroQ[z4.x4.ConjugateTranspose[z4] - I x4]]; qDeck = ConstantArray[1/4, 8]; check["v1033 common quarter deck charge has norm 1/2 and h=1/4", qDeck.qDeck === 1/2 && qDeck.qDeck/2 === 1/4]; omegaS = ConstantArray[1/2, 5]; omegaF = Join[{3/4}, ConstantArray[-1/4, 3]]; lambdaNorm2 = omegaS.omegaS + omegaF.omegaF; check["v1033 D5+A3 lambda has h=1, distinct from deck h=1/4", omegaS.omegaS === 5/4 && omegaF.omegaF === 3/4 && lambdaNorm2 === 2 && lambdaNorm2/2 === 1 && lambdaNorm2/2 =!= qDeck.qDeck/2]; (* v1034: exact source parent envelope. The source's 3/5 is a dispersion amplitude; a standard symmetric NN bond has half of it. *)](../../../../verification/wolfram/tfpt_round7.wl#L141)
+- [(* v1033: exact Z4 deck algebra and the load-bearing weight mismatch. *)](../../../../verification/wolfram/tfpt_round7.wl#L142)
 
 ## Frozen source and target.
 
@@ -361,7 +361,7 @@ Explicit source references:
 
 Navigation joins (both sources name the same Python identifier; statement equivalence is not inferred):
 
-- [(* ---- (v983) SEAM.SIMPLECURRENT.GENERATOR.01: glue vector lambda = (omega_s, omega_f) ---- *) Module[{omegaS, omegaF, lam, inD5, inA3, inL0, gensD5, gensA3, dots, cosetRoots, census, lamV, omega2, nV, n2, cartanD8}, omegaS = ConstantArray[1/2, 5]; omegaF = {3/4, -1/4, -1/4, -1/4}; lam = Join[omegaS, omegaF]; inD5[x_] := (And @@ (IntegerQ /@ x)) && EvenQ[Total[x]]; inA3[y_] := (And @@ (IntegerQ /@ y)) && Total[y] === 0; inL0[z_] := inD5[Take[z, 5]] && inA3[Take[z, {6, 9}]]; checkExact["v983 NORMS+WEIGHT [E]: |omega_s|^2=5/4, |omega_f|^2=3/4, |lambda|^2=2, h_lambda=1", Total[omegaS^2] === 5/4 && Total[omegaF^2] === 3/4 && Total[lam^2] === 2 && Total[lam^2]/2 === 1]; checkExact["v983 ORDER FOUR [E]: 4*lambda in D5(+)A3, lambda and 2*lambda not -- [lambda] generates the diagonal Z4", inL0[4 lam] && ! inL0[2 lam] && ! inL0[lam]]; gensD5 = {{1, 1, 0, 0, 0}, {1, -1, 0, 0, 0}, {0, 1, 1, 0, 0}, {0, 0, 1, 1, 0}, {0, 0, 0, 1, 1}}; gensA3 = {{1, -1, 0, 0}, {0, 1, -1, 0}, {0, 0, 1, -1}}; dots = Join[omegaS . # & /@ gensD5, omegaF . # & /@ gensA3]; checkExact["v983 ISOTROPY+UNIMODULAR [E]: lambda.L0 subset Z on a generator set; det(D5)*det(A3)=16, index-4 glue => det L=1", (And @@ (IntegerQ /@ dots)) && 16/4^2 === 1]; cosetRoots[k_] := Module[{t = k lam, d5, a3}, d5 = Counts @ Select[ Total[(# + Take[t, 5])^2] & /@ Select[Tuples[Range[-5, 3], 5], EvenQ[Total[#]] &], # <= 2 &]; a3 = Counts @ Select[ Total[(Join[#, {-Total[#]}] + Take[t, {6, 9}])^2] & /@ Tuples[Range[-6, 6], 3], # <= 2 &]; Total[KeyValueMap[#2 Lookup[a3, 2 - #1, 0] &, d5]]]; census = Table[cosetRoots[k], {k, 0, 3}]; checkExact["v983 COSET ROOT CENSUS [E]: norm-2 vectors per fusion power k=0..3 = {52,64,60,64}, total 240; odd powers 64+64=128", census === {52, 64, 60, 64} && Total[census] === 240 && census[[2]] + census[[4]] === 128]; lamV = Join[{1, 0, 0, 0, 0}, omegaF]; omega2 = {1/2, 1/2, -1/2, -1/2}; nV = Total[lamV^2]; n2 = Total[omegaS^2] + Total[omega2^2]; cartanD8 = {{2, -1, 0, 0, 0, 0, 0, 0}, {-1, 2, -1, 0, 0, 0, 0, 0}, {0, -1, 2, -1, 0, 0, 0, 0}, {0, 0, -1, 2, -1, 0, 0, 0}, {0, 0, 0, -1, 2, -1, 0, 0}, {0, 0, 0, 0, -1, 2, -1, -1}, {0, 0, 0, 0, 0, -1, 2, 0}, {0, 0, 0, 0, 0, -1, 0, 2}}; checkExact["v983 KILLS+HOLOMORPHY SHADOW [E]: vector glue (v,omega_f) norm 7/4 and mismatched (omega_s, omega_2) norm 9/4 not in 2Z; det Cartan D8=4 vs glued det=1", nV === 7/4 && n2 === 9/4 && Det[cartanD8] === 4 && 16/4^2 === 1]; ]; (* ---- (v985) ALPHA.QUILLEN.EXACT.01: mu4 circulant spectra + graded channel swap ---- *)](../../../../verification/wolfram/tfpt_readouts.wl#L444)
+- [(* ---- (v983) SEAM.SIMPLECURRENT.GENERATOR.01: glue vector lambda = (omega_s, omega_f) ---- *)](../../../../verification/wolfram/tfpt_readouts.wl#L445)
 
 ## A common microscopic Hilbert tied to the hopping.
 
@@ -400,7 +400,7 @@ Explicit source references:
 
 Navigation joins (both sources name the same Python identifier; statement equivalence is not inferred):
 
-- [(* v1033: exact Z4 deck algebra and the load-bearing weight mismatch. *) z4 = DiagonalMatrix[{1, I, -1, -I}]; x4 = Sum[SparseArray[{{Mod[col, 4] + 1, col} -> 1}, {4, 4}], {col, 1, 4}]; check["v1033 local flux register is an exact Z4 Weyl pair", zeroQ[MatrixPower[z4, 4] - IdentityMatrix[4]] && zeroQ[MatrixPower[x4, 4] - IdentityMatrix[4]] && zeroQ[z4.x4.ConjugateTranspose[z4] - I x4]]; qDeck = ConstantArray[1/4, 8]; check["v1033 common quarter deck charge has norm 1/2 and h=1/4", qDeck.qDeck === 1/2 && qDeck.qDeck/2 === 1/4]; omegaS = ConstantArray[1/2, 5]; omegaF = Join[{3/4}, ConstantArray[-1/4, 3]]; lambdaNorm2 = omegaS.omegaS + omegaF.omegaF; check["v1033 D5+A3 lambda has h=1, distinct from deck h=1/4", omegaS.omegaS === 5/4 && omegaF.omegaF === 3/4 && lambdaNorm2 === 2 && lambdaNorm2/2 === 1 && lambdaNorm2/2 =!= qDeck.qDeck/2]; (* v1034: exact source parent envelope. The source's 3/5 is a dispersion amplitude; a standard symmetric NN bond has half of it. *)](../../../../verification/wolfram/tfpt_round7.wl#L141)
+- [(* v1033: exact Z4 deck algebra and the load-bearing weight mismatch. *)](../../../../verification/wolfram/tfpt_round7.wl#L142)
 
 ## Front matter / support
 
@@ -420,7 +420,7 @@ Explicit source references:
 
 Navigation joins (both sources name the same Python identifier; statement equivalence is not inferred):
 
-- [(* v1031: exact rational-fibre curvature projector and positivity. *) p = {1, 2, 2}; {r2, b, trace, scalar, kp, kq, c} = tensorData[p]; ptt = Simplify[explicitPTT[p, r2]]; check["v1031 C=r^4 PTT with a symmetric rank-two projector", zeroQ[c - r2^2 ptt] && zeroQ[ptt - Transpose[ptt]] && zeroQ[ptt.ptt - ptt] && MatrixRank[ptt] === 2]; cFactor = r2 ptt; check["v1031 exact PSD factorization has spectrum {0^4,r^4,r^4}", zeroQ[c - cFactor.Transpose[cFactor]] && MatrixRank[c] === 2 && Sort[Simplify[Eigenvalues[c]]] === {0, 0, 0, 0, r2^2, r2^2}]; (* v1032: a separate Lorentz-covariant curvature calculation at one exact nonzero null momentum. Pi is the de Donder trace-reversed numerator; positivity is inferred only after the curvature sandwich. *)](../../../../verification/wolfram/tfpt_round7.wl#L79)
+- [(* v1032: a separate Lorentz-covariant curvature calculation at one exact nonzero null momentum. Pi is the de Donder trace-reversed numerator; positivity is inferred only after the curvature sandwich. *)](../../../../verification/wolfram/tfpt_round7.wl#L92)
 
 ## Conventions and the algebraic bridge.
 
@@ -452,7 +452,7 @@ Explicit source references:
 
 Navigation joins (both sources name the same Python identifier; statement equivalence is not inferred):
 
-- [(* v1031: exact rational-fibre curvature projector and positivity. *) p = {1, 2, 2}; {r2, b, trace, scalar, kp, kq, c} = tensorData[p]; ptt = Simplify[explicitPTT[p, r2]]; check["v1031 C=r^4 PTT with a symmetric rank-two projector", zeroQ[c - r2^2 ptt] && zeroQ[ptt - Transpose[ptt]] && zeroQ[ptt.ptt - ptt] && MatrixRank[ptt] === 2]; cFactor = r2 ptt; check["v1031 exact PSD factorization has spectrum {0^4,r^4,r^4}", zeroQ[c - cFactor.Transpose[cFactor]] && MatrixRank[c] === 2 && Sort[Simplify[Eigenvalues[c]]] === {0, 0, 0, 0, r2^2, r2^2}]; (* v1032: a separate Lorentz-covariant curvature calculation at one exact nonzero null momentum. Pi is the de Donder trace-reversed numerator; positivity is inferred only after the curvature sandwich. *)](../../../../verification/wolfram/tfpt_round7.wl#L79)
+- [(* v1032: a separate Lorentz-covariant curvature calculation at one exact nonzero null momentum. Pi is the de Donder trace-reversed numerator; positivity is inferred only after the curvature sandwich. *)](../../../../verification/wolfram/tfpt_round7.wl#L92)
 
 ## Front matter / support
 
@@ -472,7 +472,7 @@ Explicit source references:
 
 Navigation joins (both sources name the same Python identifier; statement equivalence is not inferred):
 
-- [(* v1035: physical-position Fourier convention D -> i k. Retain I: c0=-s.q and c_i=i (B p)_i. The source Ward equations then propagate both affine constraints exactly. *)](../../../../verification/wolfram/tfpt_round7.wl#L181)
+- [(* v1035: physical-position Fourier convention D -> i k. Retain I: c0=-s.q and c_i=i (B p)_i. The source Ward equations then propagate both affine constraints exactly. *)](../../../../verification/wolfram/tfpt_round7.wl#L182)
 
 ## Fixed regulator and conventions.
 
@@ -534,7 +534,7 @@ Explicit source references:
 
 Navigation joins (both sources name the same Python identifier; statement equivalence is not inferred):
 
-- [(* v1035: physical-position Fourier convention D -> i k. Retain I: c0=-s.q and c_i=i (B p)_i. The source Ward equations then propagate both affine constraints exactly. *)](../../../../verification/wolfram/tfpt_round7.wl#L181)
+- [(* v1035: physical-position Fourier convention D -> i k. Retain I: c0=-s.q and c_i=i (B p)_i. The source Ward equations then propagate both affine constraints exactly. *)](../../../../verification/wolfram/tfpt_round7.wl#L182)
 
 ## Front matter / support
 
@@ -557,8 +557,8 @@ Explicit source references:
 
 Navigation joins (both sources name the same Python identifier; statement equivalence is not inferred):
 
-- [(* v1027: exact signed-wall determinant and unsquared low branch. *) {a, delta, lambda, g} = Unique /@ {"a", "delta", "lambda", "g"}; mass = delta + lambda; beta = lambda g^2; eta = lambda g; c = beta - eta^2/mass; h = {{a + beta a^2, eta a}, {eta a, mass}}; check["v1027 signed determinant M a (1+c a)", Together[Det[h] - mass a (1 + c a)] === 0]; check["v1027 physical kernel remains one-dimensional at a=0", NullSpace[h /. a -> 0] === {{1, 0}}]; (* v1028: exact characteristic-five reduction of the full 192-mode one-site character. P^12 == P^2 P(z^5)^2 mod 5 is evaluated by coefficient dictionaries, never by floating group quadrature. *)](../../../../verification/wolfram/tfpt_round4.wl#L28)
-- [(* v1033: exact Z4 deck algebra and the load-bearing weight mismatch. *) z4 = DiagonalMatrix[{1, I, -1, -I}]; x4 = Sum[SparseArray[{{Mod[col, 4] + 1, col} -> 1}, {4, 4}], {col, 1, 4}]; check["v1033 local flux register is an exact Z4 Weyl pair", zeroQ[MatrixPower[z4, 4] - IdentityMatrix[4]] && zeroQ[MatrixPower[x4, 4] - IdentityMatrix[4]] && zeroQ[z4.x4.ConjugateTranspose[z4] - I x4]]; qDeck = ConstantArray[1/4, 8]; check["v1033 common quarter deck charge has norm 1/2 and h=1/4", qDeck.qDeck === 1/2 && qDeck.qDeck/2 === 1/4]; omegaS = ConstantArray[1/2, 5]; omegaF = Join[{3/4}, ConstantArray[-1/4, 3]]; lambdaNorm2 = omegaS.omegaS + omegaF.omegaF; check["v1033 D5+A3 lambda has h=1, distinct from deck h=1/4", omegaS.omegaS === 5/4 && omegaF.omegaF === 3/4 && lambdaNorm2 === 2 && lambdaNorm2/2 === 1 && lambdaNorm2/2 =!= qDeck.qDeck/2]; (* v1034: exact source parent envelope. The source's 3/5 is a dispersion amplitude; a standard symmetric NN bond has half of it. *)](../../../../verification/wolfram/tfpt_round7.wl#L141)
+- [(* v1027: exact signed-wall determinant and unsquared low branch. *)](../../../../verification/wolfram/tfpt_round4.wl#L29)
+- [(* v1034: exact source parent envelope. The source's 3/5 is a dispersion amplitude; a standard symmetric NN bond has half of it. *)](../../../../verification/wolfram/tfpt_round7.wl#L161)
 
 ## Source contract and nomenclature.
 
@@ -575,7 +575,7 @@ Explicit source references:
 
 Navigation joins (both sources name the same Python identifier; statement equivalence is not inferred):
 
-- [(* v1027: exact signed-wall determinant and unsquared low branch. *) {a, delta, lambda, g} = Unique /@ {"a", "delta", "lambda", "g"}; mass = delta + lambda; beta = lambda g^2; eta = lambda g; c = beta - eta^2/mass; h = {{a + beta a^2, eta a}, {eta a, mass}}; check["v1027 signed determinant M a (1+c a)", Together[Det[h] - mass a (1 + c a)] === 0]; check["v1027 physical kernel remains one-dimensional at a=0", NullSpace[h /. a -> 0] === {{1, 0}}]; (* v1028: exact characteristic-five reduction of the full 192-mode one-site character. P^12 == P^2 P(z^5)^2 mod 5 is evaluated by coefficient dictionaries, never by floating group quadrature. *)](../../../../verification/wolfram/tfpt_round4.wl#L28)
+- [(* v1027: exact signed-wall determinant and unsquared low branch. *)](../../../../verification/wolfram/tfpt_round4.wl#L29)
 
 ## Exact theorem for the parent that v1008 actually computes.
 
@@ -670,7 +670,7 @@ Explicit source references:
 
 Navigation joins (both sources name the same Python identifier; statement equivalence is not inferred):
 
-- [(* v1033: exact Z4 deck algebra and the load-bearing weight mismatch. *) z4 = DiagonalMatrix[{1, I, -1, -I}]; x4 = Sum[SparseArray[{{Mod[col, 4] + 1, col} -> 1}, {4, 4}], {col, 1, 4}]; check["v1033 local flux register is an exact Z4 Weyl pair", zeroQ[MatrixPower[z4, 4] - IdentityMatrix[4]] && zeroQ[MatrixPower[x4, 4] - IdentityMatrix[4]] && zeroQ[z4.x4.ConjugateTranspose[z4] - I x4]]; qDeck = ConstantArray[1/4, 8]; check["v1033 common quarter deck charge has norm 1/2 and h=1/4", qDeck.qDeck === 1/2 && qDeck.qDeck/2 === 1/4]; omegaS = ConstantArray[1/2, 5]; omegaF = Join[{3/4}, ConstantArray[-1/4, 3]]; lambdaNorm2 = omegaS.omegaS + omegaF.omegaF; check["v1033 D5+A3 lambda has h=1, distinct from deck h=1/4", omegaS.omegaS === 5/4 && omegaF.omegaF === 3/4 && lambdaNorm2 === 2 && lambdaNorm2/2 === 1 && lambdaNorm2/2 =!= qDeck.qDeck/2]; (* v1034: exact source parent envelope. The source's 3/5 is a dispersion amplitude; a standard symmetric NN bond has half of it. *)](../../../../verification/wolfram/tfpt_round7.wl#L141)
+- [(* v1034: exact source parent envelope. The source's 3/5 is a dispersion amplitude; a standard symmetric NN bond has half of it. *)](../../../../verification/wolfram/tfpt_round7.wl#L161)
 
 ## Front matter / support
 
@@ -695,9 +695,11 @@ Explicit source references:
 
 Navigation joins (both sources name the same Python identifier; statement equivalence is not inferred):
 
-- [(* v1031: exact rational-fibre curvature projector and positivity. *) p = {1, 2, 2}; {r2, b, trace, scalar, kp, kq, c} = tensorData[p]; ptt = Simplify[explicitPTT[p, r2]]; check["v1031 C=r^4 PTT with a symmetric rank-two projector", zeroQ[c - r2^2 ptt] && zeroQ[ptt - Transpose[ptt]] && zeroQ[ptt.ptt - ptt] && MatrixRank[ptt] === 2]; cFactor = r2 ptt; check["v1031 exact PSD factorization has spectrum {0^4,r^4,r^4}", zeroQ[c - cFactor.Transpose[cFactor]] && MatrixRank[c] === 2 && Sort[Simplify[Eigenvalues[c]]] === {0, 0, 0, 0, r2^2, r2^2}]; (* v1032: a separate Lorentz-covariant curvature calculation at one exact nonzero null momentum. Pi is the de Donder trace-reversed numerator; positivity is inferred only after the curvature sandwich. *)](../../../../verification/wolfram/tfpt_round7.wl#L79)
-- [(* v1033: exact Z4 deck algebra and the load-bearing weight mismatch. *) z4 = DiagonalMatrix[{1, I, -1, -I}]; x4 = Sum[SparseArray[{{Mod[col, 4] + 1, col} -> 1}, {4, 4}], {col, 1, 4}]; check["v1033 local flux register is an exact Z4 Weyl pair", zeroQ[MatrixPower[z4, 4] - IdentityMatrix[4]] && zeroQ[MatrixPower[x4, 4] - IdentityMatrix[4]] && zeroQ[z4.x4.ConjugateTranspose[z4] - I x4]]; qDeck = ConstantArray[1/4, 8]; check["v1033 common quarter deck charge has norm 1/2 and h=1/4", qDeck.qDeck === 1/2 && qDeck.qDeck/2 === 1/4]; omegaS = ConstantArray[1/2, 5]; omegaF = Join[{3/4}, ConstantArray[-1/4, 3]]; lambdaNorm2 = omegaS.omegaS + omegaF.omegaF; check["v1033 D5+A3 lambda has h=1, distinct from deck h=1/4", omegaS.omegaS === 5/4 && omegaF.omegaF === 3/4 && lambdaNorm2 === 2 && lambdaNorm2/2 === 1 && lambdaNorm2/2 =!= qDeck.qDeck/2]; (* v1034: exact source parent envelope. The source's 3/5 is a dispersion amplitude; a standard symmetric NN bond has half of it. *)](../../../../verification/wolfram/tfpt_round7.wl#L141)
-- [(* v1035: physical-position Fourier convention D -> i k. Retain I: c0=-s.q and c_i=i (B p)_i. The source Ward equations then propagate both affine constraints exactly. *)](../../../../verification/wolfram/tfpt_round7.wl#L181)
+- [(* v1034: exact source parent envelope. The source's 3/5 is a dispersion amplitude; a standard symmetric NN bond has half of it. *)](../../../../verification/wolfram/tfpt_round7.wl#L161)
+- [(* v1033: exact Z4 deck algebra and the load-bearing weight mismatch. *)](../../../../verification/wolfram/tfpt_round7.wl#L142)
+- [(* v1032: a separate Lorentz-covariant curvature calculation at one exact nonzero null momentum. Pi is the de Donder trace-reversed numerator; positivity is inferred only after the curvature sandwich. *)](../../../../verification/wolfram/tfpt_round7.wl#L92)
+- [(* v1031: exact rational-fibre curvature projector and positivity. *)](../../../../verification/wolfram/tfpt_round7.wl#L80)
+- [(* v1035: physical-position Fourier convention D -> i k. Retain I: c0=-s.q and c_i=i (B p)_i. The source Ward equations then propagate both affine constraints exactly. *)](../../../../verification/wolfram/tfpt_round7.wl#L182)
 
 ## Front matter / support
 
@@ -717,7 +719,7 @@ Explicit source references:
 
 Navigation joins (both sources name the same Python identifier; statement equivalence is not inferred):
 
-- [(* v1031: exact rational-fibre curvature projector and positivity. *) p = {1, 2, 2}; {r2, b, trace, scalar, kp, kq, c} = tensorData[p]; ptt = Simplify[explicitPTT[p, r2]]; check["v1031 C=r^4 PTT with a symmetric rank-two projector", zeroQ[c - r2^2 ptt] && zeroQ[ptt - Transpose[ptt]] && zeroQ[ptt.ptt - ptt] && MatrixRank[ptt] === 2]; cFactor = r2 ptt; check["v1031 exact PSD factorization has spectrum {0^4,r^4,r^4}", zeroQ[c - cFactor.Transpose[cFactor]] && MatrixRank[c] === 2 && Sort[Simplify[Eigenvalues[c]]] === {0, 0, 0, 0, r2^2, r2^2}]; (* v1032: a separate Lorentz-covariant curvature calculation at one exact nonzero null momentum. Pi is the de Donder trace-reversed numerator; positivity is inferred only after the curvature sandwich. *)](../../../../verification/wolfram/tfpt_round7.wl#L79)
+- [(* v1031: exact rational-fibre curvature projector and positivity. *)](../../../../verification/wolfram/tfpt_round7.wl#L80)
 
 ## Assumptions and preregistered obligations.
 
@@ -767,7 +769,7 @@ Explicit source references:
 
 Navigation joins (both sources name the same Python identifier; statement equivalence is not inferred):
 
-- [(* v1031: exact rational-fibre curvature projector and positivity. *) p = {1, 2, 2}; {r2, b, trace, scalar, kp, kq, c} = tensorData[p]; ptt = Simplify[explicitPTT[p, r2]]; check["v1031 C=r^4 PTT with a symmetric rank-two projector", zeroQ[c - r2^2 ptt] && zeroQ[ptt - Transpose[ptt]] && zeroQ[ptt.ptt - ptt] && MatrixRank[ptt] === 2]; cFactor = r2 ptt; check["v1031 exact PSD factorization has spectrum {0^4,r^4,r^4}", zeroQ[c - cFactor.Transpose[cFactor]] && MatrixRank[c] === 2 && Sort[Simplify[Eigenvalues[c]]] === {0, 0, 0, 0, r2^2, r2^2}]; (* v1032: a separate Lorentz-covariant curvature calculation at one exact nonzero null momentum. Pi is the de Donder trace-reversed numerator; positivity is inferred only after the curvature sandwich. *)](../../../../verification/wolfram/tfpt_round7.wl#L79)
+- [(* v1031: exact rational-fibre curvature projector and positivity. *)](../../../../verification/wolfram/tfpt_round7.wl#L80)
 
 ## Front matter / support
 
@@ -805,4 +807,4 @@ Explicit source references:
 
 Navigation joins (both sources name the same Python identifier; statement equivalence is not inferred):
 
-- [(* ==== v237: closing step as physics -- no topological degeneracy <=> det K=1 <=> SRE ==== *) Module[{cartanA, cartanD, e8edges, E8, D8, A3, D5, carrier, gsd}, cartanA[n_] := SparseArray[{{i_, i_} -> 2, {i_, j_} /; Abs[i - j] == 1 -> -1}, {n, n}] // Normal; cartanD[n_] := Module[{K}, K = 2 IdentityMatrix[n]; Do[K[[i, i + 1]] = K[[i + 1, i]] = -1, {i, n - 2}]; K[[n - 2, n]] = K[[n, n - 2]] = -1; K]; e8edges = {{1, 2}, {2, 3}, {3, 4}, {4, 5}, {5, 6}, {6, 7}, {5, 8}}; E8 = 2 IdentityMatrix[8] - Table[If[i != j && MemberQ[e8edges, Sort[{i, j}]], 1, 0], {i, 8}, {j, 8}]; A3 = cartanA[3]; D5 = cartanD[5]; D8 = cartanD[8]; carrier = ArrayFlatten[{{D5, 0}, {0, A3}}]; gsd[K_, g_] := Abs[Det[K]]^g; checkExact["v237 GATE.HOLO.03: the closing step as a physical condition -- the abelian K-matrix " <> "ground-state degeneracy on a genus-g surface is |det K|^g (torus: carrier D5(+)A3 -> 16, D8 -> 4, " <> "E8 -> 1), so 'no topological ground-state degeneracy on any closed surface' <=> det K = 1 <=> the " <> "seam bulk is short-range-entangled (the unique bosonic SRE c=8 phase = the Kitaev E8 state, edge " <> "holomorphic). A unique vacuum on the plane (genus 0, always 1) is necessary but not sufficient; the " <> "torus sees |det K|. NEG: an LRE bulk (D8, det 4) has 4-fold torus degeneracy + non-holomorphic edge.", gsd[carrier, 1] == 16 && gsd[D8, 1] == 4 && gsd[E8, 1] == 1 && gsd[carrier, 2] == 256 && gsd[E8, 2] == 1 && gsd[carrier, 0] == 1 && gsd[E8, 0] == 1 && Det[E8] == 1 && (5 + 3 == 8)]; ]; (* ==== v259: the modular/KMS spectral-action cutoff fixes f_2/f_0 = 1 (PS.SPECACT.02) ==== v258 (Dirac as covariance induction) is numerical matrix-log linear algebra -> Python-only. *)](../../../../verification/wolfram/tfpt_readouts_extension.wl#L1991)
+- [(* ==== v259: the modular/KMS spectral-action cutoff fixes f_2/f_0 = 1 (PS.SPECACT.02) ==== v258 (Dirac as covariance induction) is numerical matrix-log linear algebra -> Python-only. *)](../../../../verification/wolfram/tfpt_readouts_extension.wl#L2014)
