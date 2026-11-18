@@ -1,0 +1,155 @@
+INDEPENDENT REVIEW: INDEX ONE VERSUS THE THREE-POINT q DIVISOR
+2026-10-27
+
+VERDICT
+
+The rank obstruction is correct for a claimed invertible Fredholm
+identification of the old one-mode seam defect with the full D_q evaluation
+defect.  The full defect changes the index by -3, while the old directed
+Fourier seam shift changes it by -1.  An invertible Fredholm intertwiner
+cannot identify those two operators.
+
+There is a precise one-dimensional escape: at a c-linearized fiber, the
+three evaluation fibers form the regular C3 representation and its invariant
+character line has dimension one.  Imposing only that character condition
+changes the index by -1.  This removes the rank obstruction, but it does not
+produce the already required inverse norm line.  Its directed determinant
+has the opposite beta phase.  Thus the invariant-character route is allowed
+as a new typed test, not yet an identification with N_q^(-1).
+
+
+1. THE FULL DOMAIN DEFECT HAS INDEX MINUS THREE
+
+Let
+
+  E=S_0 tensor L,
+  D_q=q_0+q_1+q_2.
+
+For genus two, deg(E)=1 and therefore
+
+  chi(E)=deg(E)+1-g=0.
+
+After imposing vanishing at all three q points,
+
+  deg(E(-D_q))=-2,
+  chi(E(-D_q))=-3.                                             (1)
+
+The evaluation sequence
+
+  0 -> E(-D_q) -> E -> E|D_q -> 0                             (2)
+
+accordingly changes the Fredholm index by -3.  Equivalently,
+
+  lambda(E(-D_q)) tensor lambda(E)^(-1)
+    =det H^0(D_q,E|D_q)^(-1)                                  (3)
+
+is the inverse determinant of a rank-three quotient.
+
+If the recovered Fourier seam operation is a directed index-minus-one
+Fredholm defect, no bounded invertible intertwiner can turn it into (2):
+Fredholm index is invariant under such an intertwining.  This conclusion is
+limited to an asserted identity of the two full operators.  It does not
+exclude a projection, an equivariant summand, a noninvertible pushforward, or
+additional kernel and cokernel data.
+
+
+2. THE CUBIC CHARACTER DECOMPOSITION CONTAINS AN INDEX-ONE SUMMAND
+
+At a fiber carrying a c linearization, c cyclically permutes the three q
+fibers.  Hence
+
+  H^0(D_q,E|D_q)=F_1 direct_sum F_omega direct_sum F_omega2,   (4)
+
+with each character line one-dimensional.  Composing evaluation with the
+projection to F_1 and requiring only this invariant component to vanish gives
+a codimension-one domain condition.  Its index change is -1.
+
+This construction is not available fiberwise for generic L in Jac(C).
+Generally c sends E_L to E_(cL), rather than acting on one fixed E_L.  A
+single-fiber invariant line requires a c-fixed L together with a
+linearization, or an explicitly constructed equivariant family over a c
+orbit.  The source-selected L=O fiber satisfies this requirement, but it
+does not justify the same reduction for the generic theta family.
+
+The nontrivial character lines are exchanged by Q because Q conjugates c to
+c^(-1).  The invariant line is the only one-dimensional character summand
+stable under that relation.  Thus it is the correct smallest equivariant
+rank test, but equivariance alone does not determine its determinant
+orientation.
+
+
+3. THE BETA PHASE EXCLUDES THE NAIVE IDENTIFICATION
+
+On the marked q fiber, beta acts by +i on every evaluation fiber.  It
+therefore acts as follows:
+
+  beta|F_1=+i,
+  beta|F_1^(-1)=-i,                                           (5)
+
+whereas on the full permutation-free norm,
+
+  beta|N_q=i^3=-i,
+  beta|N_q^(-1)=+i.                                           (6)
+
+The directed index-minus-one relative determinant obtained by imposing the
+invariant condition is F_1^(-1), by the same convention as (3).  Its beta
+phase is -i, opposite to the +i phase of N_q^(-1).  In spin notation, its
+alpha square is likewise -i rather than +i.
+
+The undualized invariant quotient F_1 has the desired +i scalar, but it is
+the opposite determinant orientation.  Identifying it with the old directed
+defect would reverse the relative line or the index convention.  Such a
+reversal must come from the original operator orientation; it cannot be made
+solely to match the phase.
+
+The full norm product succeeds because it multiplies all three character
+lines before dualizing:
+
+  det(F_1 direct_sum F_omega direct_sum F_omega2)^(-1)
+    has phase (i^3)^(-1)=+i.                                  (7)
+
+One character line and the product of all three are therefore not
+interchangeable, even though both can be one-dimensional determinant lines.
+
+
+4. EXACT SCOPE
+
+The test proves:
+
+  * the old one-mode index-minus-one shift is not invertibly identical to the
+    full three-point D_q domain restriction;
+
+  * a c-invariant rank-one restriction is possible at a c-linearized fiber;
+
+  * its naturally directed inverse determinant has the wrong beta and alpha
+    square for N_q^(-1);
+
+  * the full product of three character lines has the correct phase but the
+    index-minus-three domain defect.
+
+It does not prove that no original boundary construction can produce
+N_q^(-1).  A valid construction may retain the full three-point determinant,
+use a noninvertible index pushforward, or contain a separately justified
+orientation or duality.  What is excluded is the simple claim that the old
+single Fourier defect is already the full q evaluation defect, or that its
+c-invariant part is automatically the inverse q norm.
+
+The next required identity remains operator-typed: the original source must
+specify which evaluation character or full determinant enters, with which
+relative orientation, on a c and Q compatible domain.  No phase-only
+identification supplies that information.
+
+
+FILES CHECKED
+
+  * research-20261027-boundary-origin/source/
+    ORIGINAL-BOUNDARY-NORM-ORIGIN.txt
+
+  * research-20261027-boundary-origin/originals/
+    INVERSE-Q-POINT-NORM-ORIGIN.txt
+
+  * research-20261026-real-boundary/
+    MARKED-Q-DIVISOR-CENTRAL-TWIST.txt
+
+  * research-20261026-real-boundary/
+    SPIN-RIGIDIFIED-THETA-MODULE.txt

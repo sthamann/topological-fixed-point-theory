@@ -1,0 +1,205 @@
+UNABHAENGIGE V395 CODE- UND QUELLENSYNCHRONISIERUNG
+27. Oktober 2026
+
+Geprueft:
+
+  v395-before.py
+  v395-after.py
+  HYPERGRAPH-RECURSION-SOURCE-AUDIT.txt
+
+Gezielter Nachlauf der lokalen Nachherfassung:
+
+  normal: 6/6 PASS
+  python -OO: 6/6 PASS
+  Ausgabe bytegleich
+  Ausgabe-SHA256 755601f013e74c3be4febae03a77510d72b58869588eb7575c8905bbe0b5d8f9
+
+
+Verdikt
+
+Die lokale Nachherfassung repariert den echten Funktionspfad und ist in ihrem
+endlichen mathematischen Umfang akzeptiert. Der alte `_micro_step` ueberschrieb
+den zuvor berechneten Netzschritt. Seine Rueckgabe war nur `m @ M.T`. Der alte
+Test pruefte eine separat konstruierte Kronecker-Matrix und rief die fehlerhafte
+Funktion nicht auf. Die neue Fassung berechnet direkt
+
+  T_net @ m @ M.T
+
+und rekonstruiert den daraus entstehenden 27 mal 27 Operator auf der
+vollstaendigen Standardbasis. Damit wird genau die implementierte Funktion
+gegen `T_net tensor M` geprueft.
+
+Der Austausch des alten v327-Operators gegen die bereits hergeleitete
+v486/v487-Regel
+
+          [1    0    0  ]
+  M_lazy=[0   1/2  1/6 ]
+          [0   1/6  1/2 ]
+
+ist ebenfalls notwendig. Die Eigenwerte sind 1, 2/3 und 1/3. Im orthogonalen
+Even/Odd-Rahmen gilt mathematisch exakt
+
+  O^T M_lazy^6 O=diag(1,64/729,1/729).
+
+Der Checker deckt alle drei Modi und die gesamte 27er Basis ab. Seine
+Matrixvergleiche verwenden Gleitkommazahlen und `allclose`; die algebraische
+Exaktheit folgt aus der obigen rationalen 3 mal 3 Identitaet und den
+v486/v487-Herleitungen, nicht allein aus dem numerischen Nachlauf.
+
+Die Zeitstruktur ist korrekt als Scheduler formuliert:
+
+  N=T_net tensor I,
+  C=I tensor M_lazy,
+  T_hand=N C^6=T_net tensor M_lazy^6.
+
+Sie ist nicht die sechste Potenz des gekoppelten Mikroschritts:
+
+  (N C)^6=T_net^6 tensor M_lazy^6 != T_hand.
+
+Damit existieren eine lokale gekoppelte Regel und ein quellengestuetzter
+1:6-Zeitplan. Die Formulierung als eine einzige autonome, sechsmal iterierte
+Regel waere weiterhin falsch. Der Code prueft diese Ungleichheit ausdruecklich.
+
+Keine physikalische Hochstufung folgt daraus. Der Operator ist eine endliche
+positive Rekursion. Er ist weder als geladenes lokales Quantenfeld noch als
+OS-Transferoperator identifiziert. P2 und phi0 bleiben Eingaben. Der signierte
+Petersen-zu-Family-Intertwiner vor der sechsten Potenz bleibt offen.
+
+
+Beobachteter Repositorystand waehrend dieses Reviews
+
+Zum Pruefzeitpunkt lag im Hauptrepository noch die alte Fassung:
+
+  verification/v395_hypergraph_coupled.py
+  SHA256 570ca541b86086e3bdbe5d4bcab2251b4167fd81eadc92b864ca84dedaec2996
+
+Die lokale korrigierte Fassung hatte:
+
+  research-20261027-dynamic-reconstruction/v395-after.py
+  SHA256 0025f7252fa63f267881b4fb16ddd3ba6afa9ff42ebc0874f69d494048aa41a1
+
+Der alte Repository-Checker meldet weiterhin 6/6 PASS, weil er den defekten
+`_micro_step` nicht prueft und beim dritten Familienmodus nur die zwei alten
+Invarianten kontrolliert. Sein gruener Lauf ist daher kein Gegenbeleg gegen
+den gefundenen Fehler.
+
+
+Minimale Synchronisierung der Quellen
+
+1. Ausfuehrbarer Ursprung
+
+  verification/v395_hypergraph_coupled.py
+
+Die lokale Nachherfassung landen. Das ist die primaere technische Korrektur.
+Die Abhaengigkeitsbeschreibung soll v327 als historischen Ursprung des
+2/3-Modus behalten, fuer die volle Regel aber v486/v487 nennen.
+
+2. Hauptbeweisquelle des Origin-Papers
+
+  experiments/theory-contracts/universalraum-spin-lift-basics-20260915/
+  sources/input_4_origin_theory.tex:315-324
+
+Stale sind `v327 rule M`, die nur spektrale Lesart des cusp readout und die
+fehlende Trennung von Mikroschritt und Hand. Minimaler Ersatz:
+
+  * `v486/v487 full lazy rule M_lazy` statt `v327 rule M`;
+  * `O^T M_lazy^6 O=T_cusp` statt nur `same substrate`;
+  * `one hand = one network step plus six family substeps, not
+    T_micro^6`.
+
+3. Einfuehrungspaper
+
+  documents/introduction/sections/
+  003-section-the-compiler-why-30-2-cdot3-cdot5.tex:56-62
+
+Dieselbe Dreifachkorrektur. Die Ueberschrift `one coupled local rule` ist nur
+mit dem Zusatz `plus a 1:6 clock scheduler` praezise. Ohne diesen Zusatz klingt
+der Text wie eine autonome Iteration derselben Regel.
+
+4. Changelog als Websitequelle
+
+  documents/changelog/sections/013-source.tex:230-233
+
+`v327 branching rule M` durch die volle v486/v487-Regel ersetzen und die
+exakte drei-Moden-Konjugacy sowie den Scheduler ergaenzen. Der datierte
+Originalbefund darf als historisch bezeichnet werden; die aktuelle
+Korrektur sollte sichtbar als spaetere Schaerfung angehaengt werden.
+
+5. Statusledger
+
+  verification/status_ledger.csv:462
+
+Der Eintrag HYP.COUPLED.01 ist fachlich stale. Zu aendern sind:
+
+  * Abhaengigkeiten um HYP.REWRITE.02/HYP.REWRITE.03 beziehungsweise
+    v486/v487 erweitern;
+  * `v327 M` als volle Matrix entfernen;
+  * `shares the same invariants` durch die volle orthogonale Konjugacy
+    einschliesslich 1/729 ersetzen;
+  * den 1:6-Scheduler gegen `T_micro^6` abgrenzen;
+  * im Scope den endlichen Rekursionsstatus und die fehlende
+    OS/Feldidentifikation beibehalten.
+
+Der spaetere Ledger-Eintrag HYP.REWRITE.02 in Zeile 547 enthaelt die
+Supersession des alten v327-Nullmodus bereits. Er ist die passende Quelle fuer
+die Korrektur und soll nicht zurueckgesetzt werden.
+
+6. README und Next
+
+  experiments/theory-contracts/README.md:854-859
+  experiments/next.txt:9025-9033
+
+Beide nennen noch die Kette `v298 -> v299 -> v327 -> v395`. Fuer die aktuelle
+volle Dynamik ist `v486/v487 -> v395` einzufuegen. In `experiments/next.txt`
+ist die Passage ein datierter historischer Bericht. Dort genuegt eine knappe
+Korrekturanmerkung: Der damalige v395-Lauf pruefte den lokalen Funktionspfad
+nicht; die volle Drei-Moden-Regel und der Scheduler wurden erst mit
+v486/v487 und der jetzigen Reparatur geschlossen. Die nachfolgende
+GLUE.DYN.01-Aussage ueber die statische beziehungsweise dynamische
+Glue-Selektion muss nicht neu geschrieben werden.
+
+Im Root-README, verification/README, documents/README, docs/README und
+website/README wurde kein eigener v395-Aussagetext gefunden.
+
+
+Abgeleitete Website- und Artefaktdateien
+
+Nach Aktualisierung der obigen Quellen muessen folgende generierte Dateien
+erneuert werden:
+
+  website/components/ScriptIndex.tsx:463
+  website/lib/changelog.ts:110562-110783
+  website/public/verification/v395_hypergraph_coupled.py
+  tex-artefacts/verification.tex:419
+  verification/docs_map.csv
+  verification/website_map.csv
+  docs/registry/topics/universalraum/part-033.md
+
+Der aktuelle `website/public`-Checker besitzt denselben alten SHA256 wie die
+Repositoryfassung. ScriptIndex sagt weiterhin `v327 M` und `shares the same
+invariants`; der Website-Changelog wird aus dem stale Changelogtext erzeugt.
+
+Der laufende `build.sh gen` scheiterte an einem bereits bestehenden
+Content-Registry-Fehler: Als Research-Evidence-Quellen werden die abgeloesten
+Werkzeuge
+
+  verification/build_theory_graph.py
+  verification/enrich_theory_graph_llm.py
+  verification/theorycat.py
+
+verlangt. Diese retired Atlaswerkzeuge sollen nicht wiederhergestellt werden,
+nur um das Gate zu gruenen. Bis die Registry beziehungsweise der Generator
+auf den aktuellen Atlas umgestellt ist, bleiben `docs_map.csv` und
+`website_map.csv` potentiell stale. Das ist eine Publikationssynchronisierungs-
+luecke und kein Fehler der reparierten v395-Mathematik.
+
+
+Kompakter Zielwortlaut fuer alle Oberflaechen
+
+  The local map is F(m)=T_net m M_lazy^T with the full v486/v487 spectrum
+  {1,2/3,1/3}. One clock hand is the scheduled operator
+  (T_net tensor I)(I tensor M_lazy)^6=T_net tensor M_lazy^6, not
+  T_micro^6. In the even/odd family basis,
+  O^T M_lazy^6 O=diag(1,64/729,1/729). This is a finite carrier-family
+  recursion; no local charged-field or OS-transfer identification is claimed.
+

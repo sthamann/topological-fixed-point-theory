@@ -1,0 +1,353 @@
+THE REAL TRACE METRIC AND DOMAIN OF THE ELLIPTIC SPIN KERNEL
+============================================================
+26 October 2026. Exact L2 trace, branch weights and positivity test.
+Atlas audit frame: revision 2f83bc6069621370a387b663. No Atlas write.
+
+Question and verdict
+====================
+
+The preceding global calculation gives the complete holomorphic rank two
+kernel on
+
+  E: y^2=x^4-1,
+
+diagonalized on the punctured base as
+
+  C_+=g P_H g^(-1),       C_-=g^(-1) P_H g,
+  g(x)^4=(x^2-1)/(x^2+1).                              (1)
+
+Does the flat NS--NS Spin metric turn (1), on Gamma: |x|=1 or its radial push
+offs, into the positive equal time covariance of the already proved elliptic
+Gaussian state?
+
+The exact answer has two parts.
+
+  1. POSITIVE RANGE RESULT. The flat metric gives a closed unitary two sheet
+     half density trace with no chosen U(2). Both operators in (1) are bounded
+     idempotents. Their closed ranges are exactly the ordinary Hardy space,
+     because g and g^(-1) are outer. Hence the orthogonal projection onto the
+     actual inside analytic L2 trace range is canonically
+
+       P_orth=P_H direct-sum P_H.                       (2)
+
+     The exterior result is the corresponding P_- direct sum P_-.
+
+  2. NEGATIVE STATE IDENTIFICATION. Under the same induced metric, the
+     operators C_+ and C_- themselves are not selfadjoint. Thus the bilinear
+     closed surface Szego restriction is an oblique Cauchy jump projector,
+     not the positive covariance (2). The alternative diagonal weights that
+     make (1) orthogonal are not the metric produced by the unitary two sheet
+     half density trace. Using them would change the trace/state.
+
+The old Hardy RANGE therefore reappears without a free channel choice, but
+the old Hardy STATE and the previously proved finite annulus KMS state do not
+follow from this fact. The latter lives on the smooth dividing annulus cut.
+No original unitary propagation map from that cut to the ramified equator
+graph is present. Consequently an identity
+
+  C_base=T C_E T^*,       0<=C_base<=I,                 (3)
+
+is proved for the orthogonal radial analytic range projector if C_E denotes
+that radial Calderon projector. It is not proved for the already existing
+elliptic KMS covariance. Defining C_E anew to make (3) true would be a state
+change and is not done here.
+
+1. The metric fixed by the actual square torus
+================================================
+
+Use the period-one square uniformization
+
+  E=C/(Z+iZ),
+  x(z)=sn(c z|-1),       c=2 K(-1)(1+i),
+  dx/dz=-i c y.                                          (4)
+
+Thus the flat metric is
+
+  ds_E=|dz|=|dx|/(|c| |y|),       |c|=2 sqrt(2) K(-1).  (5)
+
+For the radial circle Gamma_r, x=r exp(i theta), r different from 1, each of
+the two lifted components has exact arclength measure
+
+  dnu_r(theta)
+   =r dtheta/[|c| |r^4 exp(4i theta)-1|^(1/2)].         (6)
+
+This is the L2 measure for coefficients in a unit flat Spin frame upstairs.
+It is not selected to repair (1); it is the restriction of (5).
+
+Let a chiral half density on sheet epsilon be
+
+  psi_epsilon=f_epsilon(z)(dz)^(1/2).
+
+Define its base trace by the actual Jacobian
+
+  (T_r psi)_epsilon(x)
+    =f_epsilon(z_epsilon(x))
+       (dz_epsilon/dx)^(1/2) (dx)^(1/2).                (7)
+
+Then change of variables gives exactly
+
+  sum_epsilon integral_Gamma_r |(T_r psi)_epsilon|^2 |dx|
+   =sum_epsilon integral_p^-1(Gamma_r)
+       |f_epsilon(z)|^2 |dz|.                           (8)
+
+Therefore T_r extends uniquely to a closed unitary
+
+  T_r:L2(p^-1 Gamma_r,alpha;|dz|)
+        ->L2(Gamma_r,C^2;|dx|).                         (9)
+
+The sheet character transform J from GLOBAL-SPIN-KERNEL.txt is constant and
+unitary. Hence the Hermitian metric after diagonalization remains the identity
+matrix in the standard half density measure |dx|. No channel dependent weight
+appears in (9).
+
+Equivalently, if the Jacobian in (7) is left out, the same Hilbert space has
+the raw weighted measure (6). These two descriptions are unitarily identical;
+one may not use the Jacobian and the weight simultaneously.
+
+2. The ramified limit and the actual branch domain
+===================================================
+
+At a mark a_j=i^j write theta=theta_j+s. Since
+
+  y^2=exp(4is)-1=4 i s+O(s^2),
+
+equation (6) has the integrable singularity
+
+  dnu_1(s)=[1/(2|c|)] |s|^(-1/2)(1+O(s)) ds.           (10)
+
+The half density trace factor in (7) has modulus
+
+  |dz/dx|^(1/2)
+    =[1/sqrt(2|c|)] |s|^(-1/4)(1+O(s)).                (11)
+
+Thus T_1 remains an L2 isometry in the graph limit. The vertices have measure
+zero and do not obstruct the closed L2 map.
+
+They do matter for the operator domain. In the Q compatible local coordinate
+
+  (x-a_j)/a_j=z_j^2,
+
+the four seam germs are
+
+  z_j=+/- exp(+i pi/4) sqrt(s)       for s>0,
+  z_j=+/- exp(-i pi/4) sqrt(|s|)     for s<0.           (12)
+
+If one smooth upstairs Spin coefficient is
+
+  f(z_j)=f_0+f_1 z_j+O(z_j^2),
+
+its four traced half edge coefficients have the forced form
+
+  F_e(s)=kappa_e |s|^(-1/4)
+          [f_0+f_1 z_e(s)+O(|s|)],                     (13)
+
+where kappa_e are the fixed square root Jacobian phases. Formula (13), with
+one common f_0 and one common f_1 before inserting the four roots (12), is the
+actual smooth branch matching. A free U(2) vertex matrix does not occur.
+
+The closed L2 trace range forgets this point matching because values at four
+points have zero L2 measure. The H1 or graph operator domain retains it. In
+particular, the pulled back base generator has
+
+  p^*(-i partial_theta)
+    =(1+z_j^2)/(2z_j) partial_(z_j),                    (14)
+
+so it does not preserve all smooth germs (13). The natural L2 trace therefore
+does not by itself produce the old smooth circle domain or one selfadjoint
+four edge Dirac vertex domain.
+
+3. The smallest selfadjointness countertest
+============================================
+
+On |x|=1,
+
+  |g(exp(i theta))|^2=|tan(theta)|^(1/2)=:w(theta),
+  |g|^(-2)=w^(-1).                                     (15)
+
+Both w and w^(-1) are Muckenhoupt A2 weights: at each of the four marks their
+power is +1/2 or -1/2, strictly between -1 and 1. Hence the weighted Hardy
+theorem makes both similarities in (1) bounded on standard L2. They obey
+
+  C_+^2=C_+,       C_-^2=C_-.                           (16)
+
+Bounded idempotence is insufficient for a CAR covariance. Positivity would
+require selfadjointness.
+
+The failure is exact. Multiplication by g is unitary from L2(w dtheta) to
+standard L2, and transports the weighted Riesz projection P_H to C_+. If C_+
+were selfadjoint, H2 and H2_- would be orthogonal in L2(w dtheta). But
+
+  <1,exp(-2i theta)>_w
+    =(1/(2pi)) integral_0^(2pi)
+        |tan theta|^(1/2) exp(-2i theta) dtheta
+    =-1/sqrt(2),                                        (17)
+
+while 1 lies in H2 and exp(-2i theta) lies in H2_-. The imaginary part
+vanishes by symmetry. The real integral follows from
+
+  integral_0^(pi/2) tan(theta)^(1/2) cos(2theta)dtheta
+    =-pi sqrt(2)/4.
+
+Therefore
+
+  C_+^* != C_+.
+
+Replacing w by w^(-1) changes the sign in (17), so C_- is not selfadjoint
+either. Consequently neither C_+ nor C_- satisfies 0<=C<=I in the actual
+standard trace Hilbert space (9).
+
+One can make C_+ orthogonal by declaring the target weight |g|^(-2), and C_-
+by declaring |g|^2. But after (7)-(9) the actual induced metric is the identity
+in both character channels. The diagonal replacement
+
+  diag(|g|^(-2),|g|^2)                                  (18)
+
+is therefore an additional nonunitary metric change. It is not supplied by
+the flat NS--NS Spin metric and cannot be used to identify the state.
+
+This is also the conceptual distinction between the three kernels:
+
+  * The algebraic Szego half form gives the bilinear two point function.
+
+  * Its boundary Plemelj operator gives the oblique Cauchy idempotents (1).
+
+  * The orthogonal Szego or Calderon projection uses the Hermitian boundary
+    metric and projects orthogonally onto the closed analytic trace range.
+
+Only the third object is automatically a positive one particle covariance.
+
+4. Why the Hardy range nevertheless returns canonically
+========================================================
+
+The function g is analytic and nonzero in |x|<1. Its boundary logarithm is
+integrable and it has no inner factor. Both g and g^(-1) lie in H2 because
+their four boundary powers are only +/-1/4. Hence both are outer.
+
+Outer cyclicity gives the domain-safe statements
+
+  closure{g p:p a polynomial}=H2,
+  closure{g^(-1) p:p a polynomial}=H2.                 (19)
+
+Every displayed polynomial vector is fixed by the corresponding idempotent:
+C_+(g p)=g p and C_-(g^(-1)p)=g^(-1)p. Conversely every vector in either
+range is the L2 boundary value of an analytic Smirnov function and hence,
+because that boundary value is in L2, belongs to H2. Since bounded
+idempotents have closed ranges, (19) therefore sharpens to
+
+  Ran(C_+)=Ran(C_-)=H2.                                 (20)
+
+For r<1 the statement is even simpler: g and g^(-1) are bounded analytic and
+boundedly invertible on the closed radial disk, so equality in (20) holds
+before taking a closure. At r=1, outer cyclicity supplies the exact limit.
+
+Therefore the orthogonal projection onto the complete two channel inside
+trace range, using the actual metric (9), is exactly (2). No U(2), profile or
+new metric is selected. For r>1 the same argument in the exterior chart gives
+
+  P_orth,out=P_- direct-sum P_-.                        (21)
+
+This is the precise positive recovery of the Hardy object. It is a statement
+about the closed L2 analytic RANGE. It does not retain the pointwise branch
+matching (13), and it does not say that the oblique correlator (1) equals the
+orthogonal projection (2).
+
+5. Comparison with the proved elliptic Gaussian state
+======================================================
+
+The existing positive theorem uses the dividing Real form rho(z)=-bar(z), the
+smooth half annulus 0<t<1/2 and
+
+  L=partial_t+B,       B=-i partial_s.
+
+On its two smooth boundary circles the orthogonal Cauchy graph has marginal
+
+  C_A=(1+exp(B))^(-1),                                 (22)
+
+and the full free Gaussian functional is reflection positive for all charged
+CAR words. This is a proved positive state on that named cut.
+
+The unitary T_1 in (9) has a different source: it maps the two sheet trace on
+p^-1(|x|=1) to the ramified base graph. It does not map the two smooth annulus
+boundary circles of (22) to that graph, and it does not intertwine their
+normal evolutions. Restricting the holomorphic bilinear Green kernel to the
+graph produces (1), whose failed selfadjointness is the concrete witness that
+such an equal time identification has not occurred.
+
+The old full collar result says exactly what would be sufficient: retain both
+labeled endpoint Hilbert spaces, their actual fiber comparison, the positive
+normal length and the complete orthogonal graph projector. Those data recover
+the signed B and its KMS marginal. The ramified equator restriction presently
+supplies none of that normal product structure.
+
+This also fixes the notation issue. The earlier source uses P_C or G_ell for
+the orthogonal L2 projection onto a closed Cauchy graph. In the present radial
+problem that role is played by P_orth in (2), after the side and analytic range
+have been specified. The oblique operator C_+ direct-sum C_- in (1) cannot be
+substituted for that P_C merely because both have the same closed range.
+
+Thus there are two valid positive operators with different scopes:
+
+  [E] P_H direct-sum P_H is the orthogonal projector onto the inside radial
+      analytic L2 range fixed by the actual trace metric.
+
+  [E] (1+exp(B))^(-1) is the positive mixed covariance of the existing smooth
+      elliptic OS annulus.
+
+There is currently no original unitary intertwiner identifying these states.
+The global holomorphic kernel alone is not that intertwiner.
+
+6. Exact status
+===============
+
+PROVED:
+
+  [E] Exact radial measures (6), ramified weight (10), closed unitary trace
+      (7)-(9) and forced smooth branch asymptotics (12)-(13).
+
+  [E] The full global Spin kernel yields bounded Cauchy idempotents in the
+      actual standard trace metric, but they are not selfadjoint by (17).
+
+  [E] The induced Hermitian metric cannot repair this without the additional
+      nonunitary channel weights (18).
+
+  [E] The two channel inside analytic L2 range has the canonical orthogonal
+      projector P_H direct-sum P_H; the exterior has (21).
+
+OPEN:
+
+  [O] A source supplied product collar or propagation unitary from the smooth
+      dividing annulus state to the ramified equator graph.
+
+  [O] Equality of the resulting positive covariance with either the old Hardy
+      vacuum or the finite KMS covariance (22).
+
+  [O] A selfadjoint graph operator retaining the H1 branch matching (13).
+
+No state was defined by the desired conclusion. No free U(2), Hardy channel,
+Hermitian weight or normal evolution was added.
+
+Source record
+=============
+
+Atlas source reviewed at revision 2f83bc6069621370a387b663:
+
+  experiments/theory-contracts/elliptic-moebius-source-bridge-20261026/
+  ELLIPTIC-GREEN-RP.txt:1-238
+  SHA256 d8799f04851a9bd539b05b4d013b38eb00de9bec07dddde6438023aaf1facd80.
+
+  experiments/theory-contracts/elliptic-moebius-source-bridge-20261026/
+  BOUNDARY-SOURCE.txt:1-190
+  SHA256 a12e7b7566734e26ef9c53c6ee910638a77f20412085943d6cd30b255b7e9251.
+
+  experiments/theory-contracts/seam-full-collar-reconstruction-20261015/
+  PROOF.txt:63-94,145-175
+  SHA256 9f4effed34316798c6a35e1ac0ec2832cd3720180f476cb8747bb32359b56e6a.
+
+Current local inputs:
+
+  research-20261026-spin-transport/GLOBAL-SPIN-KERNEL.txt
+  SHA256 2f8a165804067b7522b2689239e2bcef8b58d925e3db2d09b2d8e50caabdecc8.
+
+  research-20261026-spin-transport/SOURCE-INDUCED-SEAM-TRANSPORT.txt
+  SHA256 1474792f0edfc9f0fc34e354b73cfc8c0a8591d0ccc78312bcf8e57f68058e05.
+

@@ -1,0 +1,71 @@
+{
+  "steps": [
+    {
+      "step": "RS1 centre selection rule: all 240 E8 roots satisfy q10 + q4 = 0 mod 4 (diagonal centre trivial, UR.SOURCE.OPERATOR_ORIGIN.01), NS fermions have q10 + q4 = 2 -> every bosonic composite has q10 + q4 = 0; the target (10, SU(4)-singlet) = (2, 0) never occurs (exhaustive enumeration of all block multisets up to degree 6)",
+      "pass": true,
+      "detail": "E8 charge pairs [(0, 0), (1, 3), (2, 2), (3, 1)]; spinor blocks [(1, 3), (3, 1)]"
+    },
+    {
+      "step": "RS2 (16,4)(16,4)(1,6): with chi the product is fermionic; a bosonic (1,6) has q10 + q4 = 2 and does not exist in the source (RS1) -> candidate excluded",
+      "pass": true,
+      "detail": "centre charges of (16,4)(16,4)chi: (2, 0)"
+    },
+    {
+      "step": "RS3 Spin(10) multiplicities of the vector 10: S^2 16 -> 1, Lambda^2 16 -> 0, 16 x 16bar -> 0, 10 x 10 -> 0, 10 x 45 -> 1",
+      "pass": true,
+      "detail": "Casimir(10) = 9.000, Casimir(16) = 11.250"
+    },
+    {
+      "step": "RS4 degree-2 family-singlet counts: SU(4) none (consistent with RS1); SU(3), SO(3), A4 admit (10, H-singlet) composites [J(16,4)J(16,4)] in (10, S^2 4) and [J(10,6)J(1,15)]; fermion bilinears (psi chi in (10,6)) never; under SU(3) the singlet of S^2 4 is the omitted-family-line component (|000> is SU(3)-invariant)",
+      "pass": true,
+      "detail": "SU(4): {'J(16,4)^2 in (10,S^2 4)': 0, 'J(16b,4b)^2': 0, 'J(10,6)J(45,1)': 0, 'J(10,6)J(1,15)': 0, 'psi chi': 0}; SU(3): {'J(16,4)^2 in (10,S^2 4)': 1, 'J(16b,4b)^2': 1, 'J(10,6)J(45,1)': 0, 'J(10,6)J(1,15)': 2, 'psi chi': 0}; SO(3): {'J(16,4)^2 in (10,S^2 4)': 2, 'J(16b,4b)^2': 2, 'J(10,6)J(45,1)': 0, 'J(10,6)J(1,15)': 6, 'psi chi': 0}; A4: {'J(16,4)^2 in (10,S^2 4)': 2, 'J(16b,4b)^2': 2, 'J(10,6)J(45,1)': 0, 'J(10,6)J(1,15)': 8, 'psi chi': 0}"
+    },
+    {
+      "step": "RS5 (statement) SOURCE.MEDIATOR.REP_SIEVE.01: minimal composite degree of a bosonic (10, family-singlet) mediator = none for SU(4) neutrality (all degrees forbidden), 2 for SU(3)/SO(3)/A4 neutrality; bulk Z4 charge, gap Delta, residue Z_Phi, coupling lambda and the Schrieffer-Wolff residual ||dH|| << lambda^2/Delta are not decided by representation theory (next gates)",
+      "pass": true,
+      "detail": ""
+    }
+  ],
+  "passed": 5,
+  "total": 5,
+  "research_id": "SOURCE.MEDIATOR.REP_SIEVE.01",
+  "verdict": "SU4_FORBIDDEN_ALL_DEGREES; SUBGROUP_MIN_DEGREE_2",
+  "pins": {
+    "degree2_counts": {
+      "SU(4)": {
+        "J(16,4)^2 in (10,S^2 4)": 0,
+        "J(16b,4b)^2": 0,
+        "J(10,6)J(45,1)": 0,
+        "J(10,6)J(1,15)": 0,
+        "psi chi": 0
+      },
+      "SU(3)": {
+        "J(16,4)^2 in (10,S^2 4)": 1,
+        "J(16b,4b)^2": 1,
+        "J(10,6)J(45,1)": 0,
+        "J(10,6)J(1,15)": 2,
+        "psi chi": 0
+      },
+      "SO(3)": {
+        "J(16,4)^2 in (10,S^2 4)": 2,
+        "J(16b,4b)^2": 2,
+        "J(10,6)J(45,1)": 0,
+        "J(10,6)J(1,15)": 6,
+        "psi chi": 0
+      },
+      "A4": {
+        "J(16,4)^2 in (10,S^2 4)": 2,
+        "J(16b,4b)^2": 2,
+        "J(10,6)J(45,1)": 0,
+        "J(10,6)J(1,15)": 8,
+        "psi chi": 0
+      }
+    },
+    "min_degree": {
+      "SU(4)": null,
+      "SU(3)": 2,
+      "SO(3)": 2,
+      "A4": 2
+    }
+  }
+}

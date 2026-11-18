@@ -1,0 +1,184 @@
+W8 IN THE FULL ORIGINAL STRESS CYCLE
+==================================
+26 October 2026
+Claim: MATH.ORIGINAL-SEAM.W8-ORIGINAL-STRESS-RECONSTRUCTION.01
+       MATH.ORIGINAL-SEAM.W8-TANGENTIAL-RESPONSE.01
+Verdict: exact source reconstruction; actual local P1 image remains OPEN.
+
+1. The original generator is larger than its folded subalgebra
+-------------------------------------------------------------
+Retain the actual one-channel negative sea CAR source, quarter alpha=1/4 or
+3/4, all adjoints, and the old positive excitation generator H0. Its stress
+raising modes on the finite-energy core are
+
+ Lcal_-n = sum_r (r+alpha+n/2) :a*_(r+n) a_r: .           (1)
+
+For n=8 this is exactly the old CAR Ward formula. The c=1 ground momentum
+and conformal weight in the fixed NS subtraction are
+
+ p=alpha-1/2=plus or minus1/4,       h=p^2/2=1/32.        (2)
+
+The eightfold current presentation instead has
+
+ Lhat_n=Lcal_(8n)/8+(21/64)delta_(n,0),
+ N=Lhat_0-85/256=H0/8.                                  (3)
+
+Only the multiples of eight of the original modes appear in (3). These are
+not all original stress operations. A failure to span a state using Lhat
+does not exclude a reconstruction with all Lcal modes.
+
+2. Positive theorem at every original source grade
+--------------------------------------------------
+The fixed relative-charge-zero CAR sector is the one-current Heisenberg
+Fock sector F_p. Its excitation character is product_(n>=1)(1-t^n)^(-1),
+equivalently the Maya-diagram/partition count. On this SAME source the
+Sugawara modes have c=1, lowest weight (2), and the given adjoints.
+
+The c=1 Kac determinant has zeros only at
+
+ h_(r,s)=(r-s)^2/4,       r,s positive integers.          (4)
+
+The actual weight1/32 is not a zero. The natural Verma-to-Fock map is
+therefore injective at every grade. Both sides have dimension p(k) at
+grade k, so this map is onto at each grade. Hence
+
+ span{Lcal_-lambda Omega_alpha : |lambda|=k}=(F_p)_k,
+ closure span{all Lcal_-lambda Omega_alpha}=F_p.          (5)
+
+This uses the original state and current algebra, not a new bosonic state.
+The classification is standard Feigin-Fuchs theory, not claimed as new.
+A primary account is Bouwknegt, McCarthy and Pilch, hep-th/9108023, section2:
+the type-I Verma/Fock modules are isomorphic and irreducible. At c=1, Q=0,
+the exceptional momentum condition is sqrt2 p integral; p=plus or minus1/4
+is nonexceptional. This is also the elementary specialization (4).
+
+3. An explicit exact CAR certificate on the first W8 response
+------------------------------------------------------------
+The earlier complete two-point calculation gives
+
+ z^8 Y_d(W8,z)|d> = sum_(ell>=0) v_ell z^ell,
+
+where v_ell has folded N level ell and original H0 grade8ell. In particular
+v_1 has original grade8, not original grade1. There are22 partitions of8.
+
+The new checker constructs the ACTUAL22 states
+
+ Lcal_-lambda Omega_alpha,       |lambda|=8,
+
+by the CAR bilinear (1), on modes -8,...,7 with the original filled sea.
+This finite window is exact for grade at most8: any particle at r>=8 or
+hole at r<=-9 already forces neutral excitation energy at least9. No finite
+CCR representation, cyclic UV identification, or continuum cutoff is used.
+Intermediate words retain the whole original neutral CAR sector. They are
+not projected back into the smaller residue-preserving folded-current sector.
+
+The target is also built literally in CAR. In the old standard E8 chart,
+the eight coefficients of v_1 are in the previous two-point JSON. With the
+SAME old orthogonal M, source-channel coefficients are M^T v_1. The target
+is their sum of a*_k a_(k-8)Omega, including the exact fermionic signs.
+
+For BOTH original quarters the22 by22 coefficient matrix is invertible,
+with exact determinant
+
+ 210367012400956593540483748829474773276980423821618625375
+ /87112285931760246646623899502532662132736.
+
+All22 coefficients of the actual W8 target in this stress-word basis are
+given in w8-stress-cyclic-results.json. Direct substitution has residual0.
+This is a reconstruction of the target, not a dimension-only argument.
+
+An independent one-current bosonic Sugawara calculation gives the same
+FULL22 by22 Gram matrix. Separate exact rank certificates modulo65537,
+65539 and1000003 all give rank22. The normal and python -OO outputs agree
+byte for byte. The independent reviewer obtained the same full ranks
+without using this CAR construction.
+
+4. What the smaller folded stress space misses
+----------------------------------------------
+At N level1, the closed Lhat-generated Virasoro space has only the ray
+
+ span{Lhat_-1|d>}=span{d.h_-1|d>}.
+
+The true W8 first response has
+
+ v_perp=v_1-d(d.v_1)/d^2,
+ ||v_perp||^2=51311452775625/9345848836096 >0.              (6)
+
+This excludes v_1 only from that smaller ray and excludes the full smoothed
+response only from the smaller CLOSED Lhat cycle. Equation(5) and the exact
+22-word CAR reconstruction show that the original Lcal cycle contains it.
+The corrected statement does not impose a new nonstress-source requirement.
+
+There is a simple intrinsic source formula for the missed direction. For
+
+ H8(x)=sum_(a in Phi(E8))(a.x)^8-30(x.x)^4,
+
+the actual coefficient is
+
+ v_perp=grad H8(d)-d[d.grad H8(d)]/d^2.                  (7)
+
+All16 quantum contraction monomials Q_ab are O8 invariant. Their level1
+coefficient at the charge background is radial, so they cannot change(7).
+The checker reconstructs the constant and the entire first response from
+all17 old coefficients and the independently enumerated240 standard roots.
+Both match the old sparse PBW answer exactly. There is no new fitted vector.
+
+The old nonzero eighth stress-jet overlap with the native F8 remains valid.
+A nonzero overlap, the present span statement, and a specified single
+implemented intervention are three different claims.
+
+5. Full separated response and source-state reconstruction
+----------------------------------------------------------
+Equation(5) applies separately to EVERY v_ell, since each is neutral and
+has original grade8ell. Therefore the existing positive-semigroup smoothing
+
+ Psi_epsilon=sum_ell exp(-epsilon ell)v_ell, epsilon>0,
+
+belongs to the closed ORIGINAL stress cycle. Its norm is finite by the
+already proved full W8 two-point function. It lies outside the smaller
+folded cycle by(6), and inside the original cycle by(5). These are compatible.
+
+This is an all-level theorem. The grade8 computation is its smallest direct
+W8 certificate, not a claim that finitely many levels prove all the others.
+The weight8 homogeneous W8 source state is at original grade64; it too lies
+in the original stress span, by(5), without a million-dimensional scan.
+No finite approximation is presented as the whole infinite source.
+
+6. Consequence for the actual P1 problem
+---------------------------------------
+The existing original source already has the global neutral state space
+needed by W8. A new oscillator, source, ground-state choice, or additional
+nonstress generator is not forced by the folded obstruction. This removes
+an artificial extra requirement from the route.
+
+A second, conditional economy follows. If the original P1 data yield the
+SAME c1 Virasoro representation with h1/32, state, adjoints and positive
+time, their cyclic stress-sector isometry is fixed on every descendant.
+It then transports these state vectors and their time exactly on that
+cyclic image. This sufficient conditional map has not been derived from
+the original P1 boundary kernel by this theorem.
+
+GLOBAL cyclicity does not identify the proper-interval local algebras.
+It does not prove that a transported operator is the actual P1 W8 insertion
+with the original eight-arc supports, point splitting and collar/reflection
+domains. It does not provide a single unitary pulse preparing a pure W8
+state. The local P1 image, charged seam map and full source action/measure
+remain separate obligations. In particular, P1 is not redefined as this
+already available CAR representative.
+
+The next original calculation should use the already existing full stress
+and geometric source jet, with the phase/current part retained, to construct
+the local field image. Repeating the folded-only selection scan or the old
+microscopic neutral-field construction is unnecessary. The charged E8
+spinor extension is not a prerequisite for this neutral current composite.
+
+Sources
+-------
+paper-source-reconstruction-20261025/ORIGINAL-CAR-WARD-IDENTIFICATION.txt:9-100.
+native-octic-seam-origin-20261025/native_folded_octic_origin.py:115-133.
+v16-operator-pullback-20261014/fold-results.json: actual M.
+original-admissible-source-closure-20261025/quantum-octic-completion-results.json.
+original-admissible-source-closure-20261025/w8-source-twopoint-results.json.
+https://arxiv.org/abs/hep-th/9108023, section2, equations2.2-2.8.
+
+All local source paths above are under experiments/theory-contracts/.

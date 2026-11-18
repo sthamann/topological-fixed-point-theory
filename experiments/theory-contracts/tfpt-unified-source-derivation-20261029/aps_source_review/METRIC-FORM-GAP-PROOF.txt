@@ -1,0 +1,69 @@
+R082, 2 November 2026: the quoted metric form bound and the transfer gap
+
+SOURCE AND QUESTION
+TFPT2 sections/010-section-the-explicit-mass-gap-closes-dynamics-and-cluste.tex
+lines 328-361 give a graph-norm bound relative to the DtN operator N0 and
+infer Delta_eff >= Delta-2v by Kato--Rellich. Here v=31/(8 pi^2),
+Delta=6 log(3/2). The source also treats RP and reconstruction; neither is
+established by the calculation below. Atlas claim GATE.METRIC.02 already
+identifies missing operator and measure proofs: this note supplies the
+specific counterexample and a sufficient bridge, not a new general discovery
+that the measure is open. The v76/v29 arithmetic is correct as arithmetic.
+Delta-2v=1.6475514754, so the strict printed inequality >1.648 is also false.
+
+EXACT DIAGNOSTIC ON THE ACTUAL v311 TRANSFER REPRESENTATIVE
+The code in verification/v311_gap_decoupled_measure.py defines a 3x3 T with
+eigenvalues 1, (2/3)^6, (1/3)^6. Set H0=-log T, with eigenprojectors P0,P1,P2.
+Then H0=Delta P1+6 log(3) P2. These are that finite representative's data;
+they do not establish its equivalence to the full source or physical OS space.
+
+Choose, for diagnosis only, N0=H0 and V=v P0-v(1+Delta)P1. Then
+(N0+1)^(-1/2)V(N0+1)^(-1/2)=v(P0-P1), so the required weighted norm is v.
+H0+V has eigenvalues v, Delta-v(1+Delta), 6 log 3, in that order. Its gap is
+Delta-v(Delta+2)=0.6923902166, less than Delta-2v=1.6475514754.
+The prescribed N0 and V are NOT identified with the actual original DtN
+operator or geometric variation: this refutes the inference from the stated
+bound alone, not the physical TFPT model.
+
+Even the existence of a positive uniform lower bound does not follow from
+those two norms without an additional relationship. For 0<epsilon<Delta-v,
+let N0=tP1, t=(Delta-epsilon)/v-1 >=0, and V=-(Delta-epsilon)P1.
+The same graph norm equals v, while the simple-ground gap equals epsilon.
+This is an abstract allowed diagnostic, not an original geometric producer.
+
+For comparison, the different assumption ||V||<=v on the actual H0 Hilbert
+space gives gap>=Delta-2v by minmax. V=v(P0-P1) attains that inequality in
+the displayed finite representative. A weighted graph norm is not that norm.
+
+CONSTRUCTIVE SUFFICIENT BRIDGE
+Let H0>=0 be selfadjoint, with simple eigenvalue 0 and spectral gap Delta.
+Suppose the actual symmetric form perturbation v is bounded by N0+1, and
+on the SAME Hilbert and compatible form domains Q(H0) subset Q(N0),
+  N0+1 <= a H0+b I,  a,b>=0, va<1.
+Assume the conditions of the minmax principle; e.g. compact resolvent.
+The perturbation defines a semibounded selfadjoint form sum by KLMN and
+  (1-va)H0-vb I <= H0+V <= (1+va)H0+vb I.
+Ground-state trial gives E0<=vb. Monotone minmax gives
+E1 >= (1-va)Delta-vb. Thus, if the right side is positive,
+  gap(H0+V) >= (1-va)Delta-2vb.
+For N0=H0, a=b=1, the first diagnostic attains this bound. This is a
+sufficient route, not a claim that the original N0=H0 or that this comparison
+is necessary. One may instead establish an independent genuine norm bound or
+another actual source-specific theorem.
+
+NEXT ORIGINAL STEP
+Trace the original DtN boundary Hilbert space, actual metric derivative,
+Pi_phys/Padm and transport to the actual original transfer Hamiltonian,
+including domain, normalization and form constants. Calculate a,b or establish
+an alternative source-specific estimate. Independently trace the complete
+original common measure, genuine field and metric variations, Z0, reference
+and eta. A comparison for v311's representative alone does not construct
+the original common source, full RP, 3+1D locality, Einstein dynamics or
+physical graviton. Preserve all established E8, clocks, Yukawa, flavor and
+alpha results in their original scopes.
+
+Reproducible native diagnostic: check_metric_form_gap.py, 18 checks; full
+numerical values and typed scope in metric-form-gap-results.json. No new Lean,
+original-ledger promotion or experimental validation. Claude Opus 5.5,
+Gemini Argon and Grok Experte were queried in Chrome; their analyses are not
+local executions or substitutes for this proof.

@@ -1,0 +1,429 @@
+P1 SPIN STRUCTURE, GSO, AND LOCAL E8 SOURCE AUDIT
+27 October 2026
+
+Scope
+
+This note asks one narrow question. Does the original P1 source already contain
+an operation that selects the local bosonic E8 extension of the D8 current net?
+The qualifying operation could be either
+
+  (a) a sum over spin structures, equivalently fermion parity gauging with its
+      twisted sectors and relative Arf phases, or
+  (b) a source derived local maximality or multi interval Haag duality rule
+      that forces the holomorphic extension.
+
+The audit keeps the known marked D5+A3 lattice and its C4 glue, the finite CAR
+collar, and the compiler maps as established inputs. It does not ask whether an
+E8 extension can be constructed once its sector support is chosen. That
+conditional extension theorem is already available.
+
+DECISION
+
+SCOPED NEGATIVE.
+
+The original P1 operational seed does not specify a spin structure functor, a
+sum over the four torus spin structures, a fermion parity orbifold including
+its twisted sector, an Arf phase, a localized Ramond spin field, or a source
+rule of bosonic maximality. It also does not prove the continuum local net
+hypotheses from which multi interval Haag duality with mu=1 would follow.
+Therefore it does not force
+
+  (A+B+C+D)/2 = chi_0 + chi_s
+
+or
+
+  (A+B+C-D)/2 = chi_0 + chi_c
+
+for the four spin torus blocks in the standard D8 convention.
+
+There is, however, a genuine positive P1 descendant that should be retained.
+The v522 analysis derives the only reflection compatible subgroup of the
+finite NS clock tower: its two torsion {1,(-1)^F}. It also proves reflection
+positivity after restriction to the even observable algebra. This derives the
+fermion parity gauge datum and the D8 or even CAR side. It does not perform the
+full gauging operation that adds twisted sectors and chooses their relative
+phase. Calling both operations “GSO” hides the remaining step.
+
+The precise remaining datum is small and constructive. One must derive from
+P1 either
+
+  1. four compatible source amplitudes on a common spin torus together with
+     the parity gauging and Arf weight, or
+  2. one normalized local spin or simple current field satisfying the energy,
+     relative locality, braiding, and Q system closure conditions, or
+  3. the actual P1 scaling limit as a completely rational local net with a
+     source derived holomorphic completion, mu=1.
+
+Any one of these closes the already classified extension to one of the two
+labelled E8 embeddings. The original h=(1,1) marking selects the plus embedding
+only after the marked field identification is transported into that local
+extension.
+
+1. WHAT A FULL SPIN SUM DOES
+
+Let the four fermionic torus blocks be written, in one standard convention, as
+
+  A = Z_NS^NS = chi_0 + chi_v,
+  B = Z_NS^R  = chi_0 - chi_v,
+  C = Z_R^NS  = chi_s + chi_c,
+  D = Z_R^R   = chi_s - chi_c.
+
+Then
+
+  (A+B+C+D)/2 = chi_0 + chi_s,
+  (A+B+C-D)/2 = chi_0 + chi_c.
+
+These are the two labelled E8 extensions of D8. The sign is the Arf or spin
+SPT choice, equivalently the labelled s versus c chirality after all field
+labels are retained. The unrefined q series cannot distinguish chi_s and
+chi_c.
+
+This formula contains two logically separate operations:
+
+  i. projection in an untwisted sector, for example (A+B)/2=chi_0;
+  ii. addition of the twisted Ramond sector with a specified relative phase.
+
+The first operation alone produces the parity invariant observable algebra.
+It does not produce chi_0+chi_s or chi_0+chi_c.
+
+This distinction is explicit in the primary literature. Smith, Lin,
+Tachikawa, and Zheng state that a bosonic theory is obtained by summing spin
+structures, T_B=T_F/(-1)^F, and that the inverse fermionization carries an
+Arf quadratic refinement. Their torus formula (5.1) displays all four defect
+blocks and the independent Arf sign. In their E8 example the untwisted blocks
+are chi_0 plus or minus chi_s and the twisted blocks are chi_c plus or minus
+chi_v. Thus the existence or parity of four sectors is necessary input. It is
+not itself the gauging map.
+
+Primary source:
+
+  Philip Boyle Smith, Ying-Hsuan Lin, Yuji Tachikawa, Yunqin Zheng,
+  Classification of chiral fermionic CFTs of central charge <=16,
+  arXiv:2303.16917v2.
+  https://arxiv.org/html/2303.16917v2
+  Relevant passages: equations (2.1), (2.2), and (5.1), plus equations
+  (5.3) and (5.4) for the E8 to D8 decomposition.
+
+2. THE STRONGEST POSITIVE RESULT ALREADY IN THE ORIGINAL DEVELOPMENT
+
+The v522 result is stronger than a generic claim that parity exists. It proves
+on the finite seam system that
+
+  alpha^4 = full wrap = 2 pi rotation = (-1)^F,
+
+and that the only reflection compatible, hence gaugeable, part of the Z8 NS
+clock tower is its two torsion {1,(-1)^F}. On the parity projected bond cut
+algebra it finds an exactly positive even block; odd rows and columns vanish.
+It also records that the Ramond control with the alternative wrap fails state
+invariance and that the verdict of the enclosing OS twistor contract remains
+UNDECIDED.
+
+Exact original location:
+
+  Atlas section: section:e8fb60dc4323384272d7
+  Atlas source: paper-source:545334c7ca9708d2eba823bf
+  documents/changelog/sections/003-source.tex:352-375
+
+What this establishes:
+
+  * the distinguished Z2 is not freely chosen;
+  * parity projection is compatible with the actual reflection;
+  * the finite even observable algebra has the required reflection positive
+    form in the tested bond cut realization.
+
+What it does not establish:
+
+  * a family of amplitudes functorial in all four spin structures;
+  * a sum over spin structures;
+  * the Arf sign;
+  * a local Ramond spin field in the continuum net;
+  * a holomorphic E8 vacuum net.
+
+The correct reading is therefore “P1 descendants derive the parity gauge
+datum” rather than “P1 already performs the E8 GSO extension.”
+
+3. THE FOUR SPIN STRUCTURE CENSUS DOES NOT SUPPLY THE SUM
+
+The v490 calculation resolves the ground state parity in the four torus spin
+structures (AA,AP,PA,PP). Per Majorana layer it obtains (+,+,+,-). For sixteen
+layers all four parities become positive. The resulting gauged torus ground
+state degeneracy is four, matching mu(SO(16)_1)=det(D8)=4. The same source says
+that the later mu:4 to 1 condensation is a cited conditional theorem, that the
+condensed model is interacting, and that SEAM.EQUIV.01 remains open.
+
+Exact original location:
+
+  Atlas section: section:67f92d5b57079948ad55
+  Atlas source: paper-source:627e6e199139a9f83ce2c7a2
+  documents/changelog/sections/008-source.tex:208-224
+
+This census proves anomaly compatibility of the sixteen layer system and
+identifies the pre condensation sector count. It supplies no linear functional
+(A,B,C,D) -> (A+B+C+/-D)/2 and no relative phase. In fact its directly measured
+endpoint is mu_pre=4, the D8 side, rather than mu=1.
+
+4. WHY v469 DOES NOT TURN ADMISSIBILITY INTO SELECTION
+
+The v469 crossed product route is mathematically useful and remains valid in
+its stated scope. For the chosen D8 spinor simple current s,
+
+  h_s = 16/16 = 1,
+
+so the statistics phase is +1. Longo and Rehren locality and the simple current
+extension package then give a local index two extension
+
+  SO(16)_1 crossed with {1,s},
+
+and KLM gives mu=4/2^2=1. The analogous marked C4 glue has integer weights and
+mu=16/4^2=1.
+
+Exact original location:
+
+  Atlas section: section:ce5afee193d0ce1ea07e
+  Atlas source: paper-source:83382c35e5fa2102c0c2845d
+  documents/changelog/sections/010-source.tex:108-129
+
+This proves that the selected current is condensable and that the resulting
+local extension is E8. It does not prove that P1 selects or inserts that
+current. The source itself leaves SEAM.EQUIV.01 open. Its statement that the
+class D edge “admits” a bosonic E8 description is an existence or phase
+classification statement. It is not a local field and state intertwiner from
+the primitive seed.
+
+Primary mathematical machinery:
+
+  Roberto Longo and Karl Henning Rehren, Nets of Subfactors,
+  arXiv:hep-th/9411077,
+  https://arxiv.org/abs/hep-th/9411077
+
+  Jens Boeckenhauer, An Algebraic Formulation of Level One
+  Wess-Zumino-Witten Models,
+  arXiv:hep-th/9507047,
+  https://arxiv.org/abs/hep-th/9507047
+
+  Yasuyuki Kawahigashi, Roberto Longo, Michael Mueger,
+  Multi-interval Subfactors and Modularity of Representations in Conformal
+  Field Theory,
+  arXiv:math/9903104,
+  https://arxiv.org/abs/math/9903104
+
+These theorems classify or control extensions after the local net, sectors,
+and canonical endomorphism are given. They do not manufacture those inputs
+from a scalar determinant or a finite parity census.
+
+5. HAAG DUALITY IS NOT A HIDDEN MAXIMALITY RULE
+
+There are three different statements that must not be merged.
+
+First, ordinary interval Haag duality is a locality completeness property of a
+net in a specified representation. A completely rational net can satisfy it
+and still have nontrivial DHR sectors. D8 at level one is such a sectorful
+net. Thus ordinary Haag duality does not imply mu=1 and does not force E8.
+
+Second, KLM identify the multi interval inclusion index with the global sector
+index under substantive hypotheses: a local irreducible net, split property,
+Haag duality, conformal covariance or the stated replacement, and finite
+index. Under complete rationality, mu=1 means that only the vacuum sector
+remains. That is a theorem about a net already satisfying these hypotheses.
+
+Third, one may impose “take a maximal local bosonic extension” as a new rule.
+For D8 this leaves the two labelled E8 extensions 0+s and 0+c. It gives E8 up
+to labelled chirality, but the rule and its label transport are extra source
+data. No such rule occurs in the audited P1 seed definition.
+
+The v501 calculation is a finite lattice witness for the two interval index.
+It measures mu_gauged=4 and verifies the conditional condensation arithmetic
+16 to 4 to 1. The same passage explicitly leaves continuum Haag duality, local
+normality, and split for the quotient net open. It therefore cannot be used as
+the missing maximality theorem.
+
+Exact original location:
+
+  Atlas section: section:b18b388084f449438cbb
+  Atlas source: paper-source:f749b6366952d4f4f6da9013
+  documents/changelog/sections/006-source.tex:331-372
+
+Primary KLM hypothesis statement:
+
+  https://arxiv.org/abs/math/9903104
+  Abstract and main setup: the multi interval result starts from a local
+  irreducible net satisfying split and Haag duality, with finite index in the
+  conformal case.
+
+6. THE OPERATIONAL P1 SEED DOES NOT CONTAIN THE MISSING DATA
+
+The archived operational seed is the tuple
+
+  (A_loc, tau_t, Theta, omega, [u_Sigma], D_coll),
+
+where A_loc is a quasilocal Euclidean observable net, omega is reflection
+positive and clustering, [u_Sigma] is a nontrivial seam class, and D_coll is a
+reflection regular first order elliptic collar generator. Morphisms preserve
+these displayed structures. The collar completion constructs the one sided OS
+Hilbert space and boundary operator.
+
+Exact original locations:
+
+  Atlas section: section:da5a8d451e469c6cb1f5
+  Atlas source: paper-source:92324c2bfff42fe248080ffe
+  documents/archive--tfpt-45--source_extracts--01_boundary_kernel_source/
+  sections/002-section-intrinsic-closed-branch-and-canonical-rigid-obje.tex:
+  100-144
+
+  Earlier archive copy:
+  Atlas section: section:a06af9918677fc215e09
+  Atlas source: paper-source:df15252a0b6d7f2018e3de7e
+  documents/archive--paper-latex--tfpt-42/sections/
+  026-section-intrinsic-closed-branch-and-canonical-rigid-obje.tex:14-55
+
+None of the displayed seed entries is a spin structure family, a parity
+orbifold functor, a choice of Arf quadratic refinement, a Ramond field, or a
+local extension Q system. Reflection positivity of omega controls the given
+observable algebra. It does not add the missing charged sectors.
+
+A bounded search of the original architecture, the tfpt42 archive, and the
+tfpt45 operational seed sources found no separate definition of a spin
+structure sum or fermion parity gauging. Later changelog and research contract
+texts do contain the terms GSO, Ramond, crossed product, and holomorphy, but the
+exact passages above mark their source identification or continuum
+realization as conditional or open.
+
+7. THE ACTIVE CONTRACT ALREADY STATES THE SAME RESIDUE
+
+The active externalization contract separates the free bilinear current limit
+from four uncovered items:
+
+  N1  the GSO extension SO(16)_1 to E8 as a net statement,
+  N2  the twist or spin field sector,
+  N3  the one sided chiral edge net,
+  N4  the OS or holomorphy selector.
+
+It further says that commuting the crossed product with the scaling limit is
+open and that the reconstructed net has not been proved to satisfy the
+holomorphic c=8 classification hypotheses.
+
+Exact original location:
+
+  Atlas section: section:f97072f658fe6bcec8d8
+  Atlas source: paper-source:67ce0c0c0856e9caaefdeadb
+  documents/tfpt_research_contracts/sections/020-source.tex:14-58, 87-92
+
+The compressed local field contract names the same missing mathematical
+object. One normalized simple current field must satisfy convergence with
+energy bounds, locality relative to the D8 current net, correct braiding, and
+Q system closure. Its lattice vector and character shadow are known, while the
+net statements remain open.
+
+Exact original location:
+
+  Atlas section: section:aeb16d254373e2e88a13
+  Atlas source: paper-source:4c76025b97bcb46ca36b8c34
+  documents/tfpt_research_contracts/sections/017-source.tex:1-48, 112-135
+
+8. MODULAR SEWING, THE HOLOMORPHIC KMS THEOREM, AND THE SINGLE VACUUM LINE
+
+The newer finite modular sewing result is exact: in the already classified
+extension class of U=V_D5 tensor V_A3, a one dimensional chiral vacuum line
+fixed by cycle exchange forces a Lagrangian support of order four, hence one
+of the two E8 extensions. This is an efficient sufficient test.
+
+It does not follow from a unique Hilbert space vacuum vector. It requires an
+actual labelled torus conformal block and its cycle exchange action. A scalar
+paired partition function, a determinant line, or a state at one fixed torus
+does not supply that datum.
+
+The holomorphic KMS theorem likewise starts by assuming an inclusion
+
+  A = B^Z4 subset B,
+  [B:A]=4,
+  A(I)' intersect B(I)=C,
+  mu_B=1,
+  c_B=8.
+
+It then proves uniqueness of the KMS state extension. It cannot be reversed to
+construct B or to infer mu_B=1 from the finite CAR KMS state. Its own final
+section says that the concrete TFPT scaling limit, nonbilinear spin fields,
+relative locality, and commutative Q system remain to be constructed.
+
+Exact original location:
+
+  Atlas source: paper-source:5fb763e4d65ef02e182c8a67
+  documents/articles--2026-08-29--holomorphic_kms_extension_en/
+  sections/001-section-setting-and-correction-of-terminology.tex:4-36, 43-77
+  sections/002-subsection-the-frozen-car-covariance.tex:68-103
+  sections/003-section-what-this-closes-and-does-not-close.tex:1-92
+
+Thus neither the v490 census, the conditional modular sewing test, nor the KMS
+uniqueness theorem adds the missing spin sum.
+
+9. SMALLEST DECISIVE COMPLETION TEST
+
+A future claim that P1 itself selects E8 should pass the following test before
+any character or dimension comparison is used.
+
+Input constructed from P1:
+
+  * four source amplitudes A,B,C,D on the same torus, with explicit spatial
+    and temporal spin labels;
+  * a common state and time normalization;
+  * the action of fermion parity on each amplitude;
+  * the Arf or quadratic refinement phase;
+  * the retained D8 charge marking.
+
+Required identity:
+
+  * prove that the P1 operation is exactly the normalized sum
+    (A+B+C+/-D)/2;
+  * prove that its output has the refined character chi_0+chi_s or
+    chi_0+chi_c;
+  * prove sewing under S and T, locality of the added spin fields, and
+    compatibility with the original reflection and adjoint.
+
+Kill controls:
+
+  * parity projection only must stop at the even D8 observable algebra;
+  * changing the Arf sign must exchange the labelled s and c completions;
+  * deleting the Ramond blocks must not yield E8;
+  * a scalar determinant or unrefined character match must not count as a
+    labelled field identification.
+
+Equivalent local net completion:
+
+  Construct one normalized spin or simple current field in the P1 scaling
+  limit and prove the four G1 to G4 properties in the active contract. The
+  existing extension uniqueness then supplies all 128 spinor currents and the
+  holomorphic E8 net. This route avoids adding a separate arbitrary GSO rule,
+  but it still requires a source derived local field.
+
+FINAL STATUS
+
+PROVED OR SOURCE VERIFIED:
+
+  * P1 descendants canonically identify fermion parity as the reflection
+    compatible two torsion of the NS clock tower.
+  * The even finite observable algebra passes the stated reflection positivity
+    test.
+  * The sixteen layer torus census is anomaly compatible in all four spin
+    structures and has mu_pre=4.
+  * Once a D8 spinor current or the marked C4 glue extension is chosen, the
+    local extension is holomorphic E8.
+  * Within the fixed extension class, an S stable single chiral vacuum line
+    selects the two E8 supports, and the marked field map selects the label.
+
+NOT DERIVED FROM ORIGINAL P1:
+
+  * the sum over spin structures;
+  * the Arf sign or s versus c labelled completion;
+  * a localized Ramond spin field in the P1 scaling limit;
+  * crossed product continuity and Q system locality in that limit;
+  * a source derived mu=1 or maximal local extension rule.
+
+The exact obstruction is therefore not “no source map at all.” The even CAR
+source, parity datum, reflection positive state, and D8 current side are
+present. The missing arrow is the source derived passage from parity invariant
+D8 observables to one labelled local spinor extension. Without that arrow, the
+formula (A+B+C+/-D)/2 and the E8 vacuum line remain a mathematically valid
+completion, not an original P1 consequence.
+
+Atlas snapshot used for navigation: revision
+6ea658c42dff04026620177c. No Atlas record or ledger status was changed.

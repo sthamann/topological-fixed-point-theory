@@ -1,0 +1,281 @@
+UNABHÄNGIGER REVIEW DES E8_1 OCTIC SCREENING PROBE
+===================================================
+
+Urteil
+------
+
+Der mathematische Kern trägt. Die in
+
+  /tmp/tfpt_octic_screening_probe.py
+  /tmp/tfpt-octic-screening-probe.json
+
+angegebene Linearkombination ist ein nicht verschwindender Zustand vom
+Gewicht 8, der von allen horizontalen e8 Nullmoden annihiliert wird und
+Virasoro primär ist. Die Eindeutigkeit ist exakt im deklarierten
+17 dimensionalen Ansatz bewiesen. Norm und Überlappung mit dem bereits
+normierten nativen F8 stimmen. Daraus folgt ein kanonisches internes
+K Skalar im zugehörigen E8_1 VOA Bündel, ohne globale Wahl eines
+Cartanvierers. Daraus folgt noch keine Identifikation mit einem
+ursprünglichen P1 Quellenoperator.
+
+1. Der 17 dimensionale Ansatz und seine Reichweite
+--------------------------------------------------
+
+Die Zeilen 10 bis 16 des Probes bauen exakt
+
+  p8(h1) = sum_(alpha in Phi(E8)) (alpha.h1)^8
+
+aus den 112 ganzzahligen und 128 halbzahligen E8 Wurzeln auf. Daher ist
+
+  H8 = p8(h1) - 30 (h1.h1)^4
+
+W(E8) invariant. Die übrigen 16 Zustände sind Produkte der orthogonalen
+Kontraktionen
+
+  Q_ab = sum_j h_j(-a) h_j(-b),   a+b <= 8,
+
+und damit sogar O(8) invariant. Alle 17 Ansatzvektoren sind folglich unter
+demselben Weyltransport invariant. Das ist für die Screening Aussage
+tragend: Verschwindet die Nullmode eines Wurzeloperators für eine Wurzel,
+verschwindet sie wegen der Transitivität der Weylgruppe auf allen 240
+Wurzeln. Die Cartan Nullmoden verschwinden auf dem neutralen Heisenberg
+Vakuummodul ohnehin.
+
+Die gefundene eindimensionale Nullspace Zeile bedeutet deshalb tatsächlich
+eine eindeutige simultane Lösung innerhalb dieses Ansatzes. Sie beweist ohne
+einen zusätzlichen Charakter oder Vollraumcensus keine Eindeutigkeit unter
+allen Gewicht 8 Zuständen des gesamten E8_1 VOA. Der gespeicherte Wortlaut
+"im 17er Ansatz" ist genau richtig.
+
+Ein eigener normaler Wiederholungslauf erzeugte 1600 exakte
+Koeffizientengleichungen und die Nullspace Matrixform (1,17). Er reproduzierte
+alle 17 rationalen Koeffizienten und 1539 Monome.
+
+2. Unabhängiger Halbroot Test
+-----------------------------
+
+Ich habe den Zustand aus den 17 gespeicherten rationalen Koeffizienten neu
+aufgebaut und nicht den bereits gespeicherten Screeningwert wiederverwendet.
+Für die halbzahlige E8 Wurzel
+
+  alpha = (1/2,1/2,1/2,1/2,1/2,1/2,1/2,1/2)
+
+wurde der tatsächliche Lattice VOA Nullmodenoperator eingesetzt. Seine beiden
+Faktoren haben die gegenläufigen Vorzeichen
+
+  h_j(-n) -> h_j(-n) - alpha_j w^n,
+  exp(sum_(n>=1) alpha.h(-n) w^n/n).
+
+Das Ergebnis ist als vollständiges Polynom in allen h_j(-n) exakt null:
+
+  halfroot_screen_zero = True,
+  Anzahl verbleibender Monome = 0.
+
+Damit ist insbesondere ausgeschlossen, dass der Ganzroot Test nur die
+D8 Koordinatenuntergruppe gesehen hat. Die Vorzeichenkonvention stimmt mit
+Zeilen 26 bis 31 des Probes überein: Dort ist die getestete Wurzel
+alpha=e0-e1, die Oszillatorverschiebung ist -alpha und der exponentielle
+Erzeugungsfaktor trägt +alpha. Ein Wurzelkokykel multipliziert die gesamte
+Ladung alpha nur mit einem von null verschiedenen Skalar und kann das
+Verschwinden nicht ändern.
+
+3. Virasoro Bedingung und Norm
+------------------------------
+
+Die in Zeilen 32 bis 35 benutzte Differentialwirkung ist die korrekte
+Heisenbergwirkung
+
+  [L_k,h_j(-r)] = r h_j(k-r)
+
+auf dem ladungsfreien Fockraum. Der zweite Ableitungsterm hat korrekt den
+Faktor m(k-m)/2. Mit den gespeicherten Koeffizienten erhielt ich unabhängig
+
+  L1 W8 = 0,
+  L2 W8 = 0.
+
+Für einen homogenen Zustand genügt das: Die positiven Virasoromoden werden
+von L1 und L2 erzeugt, und Moden oberhalb des Gewichts wirken ohnehin null.
+Der Zustand ist daher Virasoro primär, nicht nur quasiprimär.
+
+Die Normrechnung verwendet für jedes Besetzungsmonom exakt
+
+  || product_(n,j) h_j(-n)^(a_nj) Omega ||^2
+    = product_(n,j) n^(a_nj) a_nj!.
+
+Alle Koeffizienten sind reell, sodass das im Code stehende c*c hier der
+Hilbertraumkonjugation entspricht. Die unabhängige Auswertung reproduziert
+
+  ||W8||^2 = 65028096000/43.
+
+Es gibt an dieser Stelle keinen versteckten Wechsel der CAR Polarisation.
+Für die ursprüngliche positive Polarisation
+
+  x_(2k)=z_k/sqrt(2),
+  x_(2k+1)=-i z_k/sqrt(2)
+
+habe ich zusätzlich als vollständige Polynome geprüft:
+
+  sum_j x_j^2 = 0,
+  p8(x) = (15/2) I8(z).
+
+Damit haben sowohl der radiale Subtraktionsterm als auch alle Q_ab Produkte
+keinen rein positiven Anteil. Nur H8 trägt zur Überlappung mit F8hat bei,
+und wegen
+
+  F8hat = I8/(96 sqrt(140))
+
+gilt
+
+  <F8hat,W8> = 720 sqrt(140),
+  |<F8hat,W8>|^2/(||F8hat||^2 ||W8||^2) = 43/896.
+
+Der gespeicherte Wert ist somit keine bloß eingesetzte Zahl, sondern folgt
+aus der originalen isotropen Polarisation und der Rootmoment Identität.
+
+4. Was global folgt
+-------------------
+
+Der Zustand liegt im neutralen Heisenbergteil des bereits verwendeten
+E8_1 VOA. Die Root Screenings zeigen zusammen mit den Cartan Nullmoden
+
+  x(0) W8 = 0   für jedes x in e8.
+
+Da die kompakte E8 Gruppe zusammenhängend ist, ist W8 unter ihrer ganzen
+inneren Wirkung invariant. Insbesondere ist es unter dem vorhandenen
+
+  K = (Spin(10) x SU(4))/mu4
+
+invariant. Für jedes K Hauptbündel, dessen Übergänge durch genau diese
+E8_1 Automorphismen wirken, ist daher die Linie
+
+  P_K x_K C W8
+
+kanonisch trivial. Eine lokale Cartanwahl, ein globaler Cartanvierer oder
+eine Reduktion auf seinen endlichen Normalisator ist dafür nicht nötig. Auch
+eine K Verbindung wirkt auf dieser Linie trivial. In diesem klaren internen
+Sinn ist Y(W8,z) ein global assoziiertes skalares Quellenfeld.
+
+"Skalar" bezeichnet hier die interne K Darstellung. Konform transformiert
+Y(W8,z) als Primärfeld vom Gewicht 8. Auf einer gekrümmten oder nur lokal
+koordinierten Basis braucht es daher weiterhin die passende konforme
+Gewichtslinie und den vorhandenen State Field Transport. Die Nullmodenrechnung
+allein macht daraus keine gewöhnliche skalare Funktion auf P1 und keine
+physikalisch ausgewählte Kopplung.
+
+5. Verhältnis zum vorhandenen CAR Operator und zu S8
+----------------------------------------------------
+
+Jeder Summand von W8 ist ein endliches normalgeordnetes Differentialpolynom
+in den acht Cartanströmen. Über die bereits festgelegte Stromnormalordnung
+kann er daher auf dem gemeinsamen endlichen Energiecore als gerades neutrales
+CAR Composite realisiert werden. Das benutzt dieselben acht ursprünglichen
+Kanäle und keine neue Quelle.
+
+Der bisher tatsächlich an die gefaltete Quelle angeschlossene Operator ist
+jedoch
+
+  F8^(d)(z)=:I8(A(j(z)+delta/z))/(96 sqrt(140)):.
+
+Die Überlappung 43/896 zeigt nur eine nicht verschwindende F8 Komponente von
+W8. Sie zeigt weder W8=F8 noch, dass die bekannte Stresshistorie den ganzen
+Zustand W8 mit seinen 16 Kontraktionskorrekturen präpariert.
+
+Ebenso ist der frühere Zustand
+
+  S8 = [z^6] sum_beta epsilon(beta,-beta)^(-1)
+                  Y(e^beta,z)e^(-beta)
+
+nicht mit W8 gleichgesetzt. S8 enthält alle 22 Oszillatorpartitionen und für
+ihn waren ||S8||^2=15600 sowie nur seine F8 Komponente bewiesen. Der neue
+Probe berechnet weder die Virasoroprojektion von S8 noch eine Identität dieser
+Projektion mit W8. Diese zusätzliche Gleichheit darf aus den jetzigen Daten
+nicht abgeleitet werden.
+
+6. Die erste noch fehlende P1 Operatoridentifikation
+----------------------------------------------------
+
+Vor jeder weitergehenden physikalischen Aussage fehlt eine konkrete lokale
+Operatorabbildung. Benötigt wird auf einem gemeinsamen invarianten Core eine
+zustands und zeitverträgliche lokale Einbettung iota mit
+
+  iota(Y_CAR(W8,f)) = O_P1,8(f_P1),
+
+einschließlich derselben Punktteilung, Adjungierten, Domänen und positiven
+Seitenlokalisierung. In den geprüften Quellen ist kein P1 Operator O_P1,8
+definiert, für den diese Gleichung schon bewiesen wäre. Der vorhandene
+F8 Stressmatrixeintrag ersetzt diese Operatorgleichung wegen der nur
+43/896 großen normierten Überlappung nicht.
+
+Für einen vollständigen Seedop Anschluss muss dieselbe Einbettung außerdem
+die bereits isolierten Vergleiche erfüllen:
+
+  W Theta_CAR W* = Theta_P1,
+  W_coll D_coll,CAR W_coll* = D_coll,P1,
+  W_coll D_ref,CAR W_coll* = D_ref,P1,
+
+jeweils mit Gleichheit der Domänen, und sie muss das lokale Netz, die
+euklidische Zeit, Omega_d und den Nahtoperator Z transportieren. Das ist genau
+der offene Test in P1-SOURCE-EMBEDDING-AUDIT.txt, Abschnitt 7. Insbesondere
+ist der vorhandene diagnostische Zeta Referenzoperator nicht bereits D_ref,P1.
+
+Endgültiger Geltungsbereich
+---------------------------
+
+Bewiesen ist ein exakter, Cartanwahl unabhängiger, horizontal E8 invarianter
+Virasoro Primärzustand und damit ein internes globales K Skalarfeld im
+vorhandenen E8_1 Bündel. Ebenfalls bewiesen ist sein nicht verschwindender,
+exakt normierter Anteil in der ursprünglichen positiven F8 Polarisation.
+Offen bleibt die Auswahl oder Präparation dieses ganzen Zustands durch die
+ursprüngliche Quelle und vor allem seine lokale Operatoridentifikation mit
+P1 samt Reflexion, Collar und Referenzsektor. Diese Grenze ist die erste
+noch fehlende Originalidentifikation, keine mathematische Lücke im neuen
+Screening Resultat.
+
+7. Abgleich mit QUANTUM-OCTIC-COMPLETION.txt
+--------------------------------------------
+
+Der inzwischen vorliegende Projektbericht
+
+  experiments/theory-contracts/original-admissible-source-closure-20261025/
+  QUANTUM-OCTIC-COMPLETION.txt
+
+setzt den geprüften Satz korrekt um.
+
+Die entscheidende globale Formulierung in Zeilen 206 bis 213 ist tragfähig:
+Die Unterlinie C W8 ist genau in einem assoziierten VOA Bündel kanonisch
+trivial, dessen Übergänge durch die geprüfte horizontale E8 Nullmodenwirkung
+gegeben sind. Das ist eine Aussage über den internen Symmetrietransport. Sie
+trivialisiert weder das Cartanbündel noch liefert sie lokale E8 Gaugephysik.
+Die ausdrückliche Begrenzung in Zeilen 215 bis 218 ist deshalb notwendig und
+richtig.
+
+Auch die CAR Aussage in Zeilen 174 bis 190 ist korrekt typisiert. Für die
+Realisierung von W8 werden nur die bereits vorhandenen neutralen Ströme und
+ihre Ableitungen benötigt. Die alten Punktspaltgegenkonter und dieselbe
+bosonische Stromnormalordnung bestimmen den Operator. Geladene E8 Rootfelder
+werden nur benutzt, um die horizontale E8 Invarianz zu charakterisieren. Sie
+werden nicht als neue Felder zum physischen CAR Netz hinzugefügt.
+
+Die neue Abgrenzung des vorhandenen S8 in Zeilen 158 bis 171 ist ebenfalls
+sauber. Der Bericht berechnet nun seine konkrete orthogonale W8 Komponente,
+
+  proj_(C W8) S8 = W8/41664,
+
+und sagt ausdrücklich nicht S8=W8. Das schließt die zuvor offene begriffliche
+Verwechslung, ohne eine physische Projektion einzuführen.
+
+Eine kleine Scope Präzisierung empfehle ich für Zeile 217. Der Satz
+
+  "an E8-invariant scalar cannot retain a nontrivial C12 phase by itself"
+
+ist für den inneren E8 C12 Clock korrekt. Als Primärfeld vom Gewicht 8 kann
+W8 unter einer geometrischen Koordinatenrotation oder unter exp(i theta L0)
+weiterhin eine konforme Phase tragen. Präzise wäre daher
+
+  "cannot retain a nontrivial internal C12 eigenphase under the inner
+   E8 clock by itself".
+
+Ebenso sollte "connected finite E8 group" in Zeile 208 als "connected compact
+finite-dimensional E8 group" gelesen werden. Das vermeidet die irreführende
+Lesart einer endlichen Gruppe. Beide Punkte sind Formulierungspräzisierungen;
+sie ändern weder die Nullmodenrechnung noch die globale C W8 Unterlinie.

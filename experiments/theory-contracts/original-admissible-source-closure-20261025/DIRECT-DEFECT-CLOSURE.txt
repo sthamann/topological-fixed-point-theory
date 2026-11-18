@@ -1,0 +1,226 @@
+DIRECT CLOSURE OF THE OLD SEAM DEFECT
+=====================================
+25 October 2026
+
+Question and outcome
+---------------------
+Can the supplied older circle determine the later primitive line directly,
+instead of fitting a vector or requiring a heat to EM parameter map?
+
+YES on that circle: its polarization change is exactly one rank-one line.
+With the already specified full CAR/time interface, that line is the excess
+covariance of the original source winding. A directed relative Fredholm
+determinant gives the exact single-line factor, without a heat limit.
+The physical use of this determinant remains a source/response contract.
+
+The earlier SOURCE W1 implementer is REUSED, not claimed as a new result.
+What is connected here is its actual mode action to the older fullv21 A3
+operator and to the later minimal EM formula. Original papers are unchanged.
+
+1. The original pair, with its explicit orientation repair
+-----------------------------------------------------------
+fullv21, section001:230-251 supplies the twisted circle, i partial_theta,
+u=exp(i theta), and displayed eigenvalues n+a. Those eigenvalues belong to
+B=-i partial_theta, so fix B=-D_Gamma rather than mixing the printed signs.
+For 0<a<1 set
+
+  B_a psi_n=(n+a)psi_n,     u psi_n=psi_(n+1),
+  C=1_(-infinity,0)(B_a),   P_+=I-C,
+  Pi=|psi_0><psi_0|.
+
+The complete Fourier basis, twisted H1 domain and strong covariance were
+checked in the preceding older-paper contract. Directly on that basis,
+
+  u C u*=C+Pi,               P_+-uP_+u*=Pi,
+  [u,C]=|psi_0><psi_(-1)|,   ||[u,C]||_2=1.             (1)
+
+Thus Pi is a consequence of the old operator pair. This is stronger than
+inferring a positive rank-one defect from the index alone, which is invalid.
+
+2. Connection to the already retained CAR source
+-------------------------------------------------
+Under the existing full-CAR/same-positive-time interface, the ground state
+has covariance C. This is the ground-state reduction already proved in
+paper-source-reconstruction-20261025/GROUND-STATE-SOURCE-REDUCTION.txt;
+no additional independent quasifree state is chosen.
+
+The Hilbert-Schmidt condition in (1) permits a Fock implementer. With
+U c_n U*=c_(n+1), its phase-independent action is
+
+  U Omega ~ c_0*Omega=:Xi,    Q Xi=Xi,    H Xi=a Xi.    (2)
+
+The inverse shift gives the hole c_(-1)Omega, charge-1 and energy1-a.
+The displayed one-particle M_z is precisely the mode shift of the existing
+SOURCE W1. The physical identification of the old geometric circle and the
+original field/time image is still required; equality of Fourier formulas
+does not by itself make that physical identification.
+
+For the state of Xi, the exact neutral two-point response is
+
+  omega_Xi(c(f)*c(g))-omega_C(c(f)*c(g))=<g,Pi f>.     (3)
+
+Pi acts on the ONE-PARTICLE space. The Fock density Pi_F=|Xi><Xi| is a
+different operator. There is an explicit isometry on the particle sector,
+
+  V:H_+ -> Fock,       V f=c(f)*Omega,
+  V*V=I_(H_+),         V Pi V*=Pi_F,                  (4)
+
+with e^(itH)V=V e^(itB) on H_+. In particular V Dom(B|H_+) lies in Dom(H)
+and HVf=VBf there. Thus the two rank-one traces can be transported when
+this is the actual source map.
+They are not literally identical operators on the same Hilbert space.
+
+The charged U need not be an observable preserving the vacuum sector.
+For a gauge-invariant A, the full word U*A U is gauge invariant and maps
+charge-zero back to charge-zero. Therefore no demand that U itself be a
+neutral preparation follows from using (3). Its physical permission and
+localization still have to be checked on the full word in the original net.
+
+3. All equal-time CAR moments of this defect, without a new source model
+------------------------------------------------------------------------
+Both C and C+Pi are projections, so the known Wick rule applies. For any
+finite normal-ordered word with k creators followed by k annihilators put
+
+  M_ij=omega_C(c(f_i)*c(g_j)),
+  v_i w_j=omega_Xi(c(f_i)*c(g_j))-M_ij.
+
+The matrix change v w^T has rank at most one. Hence
+
+  omega_Xi(c(f_1)*...c(f_k)*c(g_k)...c(g_1))
+    =det(M+v w^T)
+    =det(M)+sum_(i,j)cof_ij(M) v_i w_j.               (5)
+
+The cofactor formula also holds if M is singular; no inverse is needed.
+Adjunction and CAR reduce other finite words to these. The entire finite
+word response is fixed by the existing source and the line in (1). This
+does not identify it with every field or interaction of S_adm.
+
+4. The exact relative determinant
+----------------------------------
+C has infinite rank, so det_F(I-zC) alone is not defined. For z!=1 define
+
+  A(z)=I-zC,        A_u(z)=I-z(C+Pi).
+
+Because C Pi=0,
+
+  A_u A^(-1)=I-zPi,
+  A A_u^(-1)=I+[z/(1-z)]Pi.                           (6)
+
+Both right sides are identity plus trace class. Their Fredholm determinants
+are respectively
+
+  D_rel(z)=1-z,         D_rel(z)^(-1)=(1-z)^(-1).     (7)
+
+This is an exact finite-rank RELATIVE change of infinite polarizations,
+not a quotient of two separately defined ordinary Fredholm determinants.
+The ordered pair fixes the sign of the logarithm. With the already supplied
+carrier susceptibility b=5/4, the chosen inverse response is
+
+  D_rel(z)^(-b)=(1-z)^(-5/4).                          (8)
+
+For |z|<1 choose the holomorphic logarithm with Log(1)=0; for real
+0<=z<1 this gives the positive branch in (8).
+No heat time, ground-energy subtraction or isolated-mode approximation
+enters (6)--(8). The minimal line of the later definition can be realized
+canonically as Pi on this old representative.
+
+The original EM response must still be shown to be this ordered relative
+response on its actual admissible image. A fermion occupancy partition has
+Tr(z^N)=1+z, its supertrace is1-z, and a boson partition has1/(1-z). A
+Berezin inverse-kernel deformation can give1-z with z as coupling instead.
+These meanings cannot be substituted for one another merely by matching
+the scalar factor. No claim of a new physical alpha prediction is made.
+
+5. The older weight already has a topological contract
+------------------------------------------------------
+fullv21 uses a defect-sector action shift alpha*J and minimal per-sheet J1=1.
+fullv27 section003:285-325 and fullv28 section004:17-59 explicitly identify
+
+  J1=SF,      J=d SF.
+
+With d=2 and primitive SF=1, their declared topological reweighting gives
+
+  z=q(alpha_EM)=delta_top exp(-2alpha_EM).             (9)
+
+Thus the DIRECT DEFECT route does not require q_heat=q_EM. The heat route
+is a different comparison; the q4/q6 heat corrections remain correctly scoped
+there. They do not automatically modify the minimal relative response (8).
+
+What the source sets is an index coupling, not a coupling to B energy,
+particle number or net CAR charge. A neutral opposite pump would have
+total charge0, excitation count2 and energy1 at the same twist. The original
+adds two identical positively oriented SF contributions. A physical sheet
+map must preserve the specified orientation rather than identify all these
+quantities because they equal1 on a single forward transition.
+
+For a COMPLETE deformed functional an additional normalization issue is
+explicit. Writing the two sectors as
+
+  Z_s(alpha)=exp(-alpha*d*s) Z_s^0(alpha),
+  Z_0(alpha)=Z_0^0(alpha),
+
+gives the exact identity
+
+  Z_s(alpha)/Z_0(alpha)=exp(-alpha*d*s) R(alpha),
+  R(alpha)=Z_s^0(alpha)/Z_0^0(alpha).                  (10)
+
+The original fixed-prefactor rule follows if R(alpha)=R(0). This holds for
+the intended fixed-background, defect-only reweighting prescription. It is
+not a consequence of SF alone when the rest of the full source also varies.
+For a fixed measure, the decisive identity is
+
+  partial_alpha log R
+    =-<partial_alpha S_s^0>_s+<partial_alpha S_0^0>_0=0. (11)
+
+An alpha-dependent measure adds its corresponding logarithmic score terms.
+The elementary test Z_s=exp(-2alpha),Z_0=exp(-alpha) violates the unqualified
+prefactor conclusion, but is not a counterexample to TFPT or to the intended
+relative-action prescription. See REWEIGHTING-REVIEW.txt for its scope.
+
+6. The smallest actual source test and its success criterion
+------------------------------------------------------------
+Reuse the original circle and the existing full CAR source. Produce an
+isometry on the originally specified LOCAL/REDUCING image, not a demanded
+global equivalence of all Hilbert spaces, such that
+
+  T psi_n=f_n,
+  C_source f_n=1_(n<0) f_n,
+  u_source f_n=f_(n+1),
+  actual time, adjoints, reflection and local supports are intertwined.    (12)
+
+Then Pi_source=T Pi T* is already fixed. If the minimal line is required
+to lie in the physical admissible space, the test is
+
+  P_adm Pi_source=Pi_source.                            (13)
+
+Commutation alone is insufficient: a line in ker(P_adm) commutes too.
+If Pi_source acts in a larger field sector, compare the actual gauge-invariant
+response word before applying the observable restriction. Do not require
+every charged field to preserve the observable Hilbert space.
+
+Finally compare the ORIGINAL EM logarithmic response with
+
+  -b log det_F[A_u(q) A(q)^(-1)].                     (14)
+
+Equation (14), the actual SF coupling and (when the rest varies) (11) would
+complete this particular seam-to-EM interface. They do not by themselves
+derive the full interacting spacetime theory, geometry, instruments or all
+other TFPT completion goals. Keep those goals and the E8 compiler intact.
+
+The older S_prim, its eta phase, the positive geometric marginal and the
+formal exp(W_k[J]) are not already the same graded source functional. Their
+actual relation is reviewed in FULL-SOURCE-ACTION-HISTORY.txt; no new generic
+partition functional is introduced here to stand in for that derivation.
+
+Verification
+--------------
+Independent analytic review: FOCK-DEFECT-REVIEW.txt. Primary mathematical
+reference: Carey and Langmann, Loop groups, anyons and the Calogero-Sutherland
+model, sections3.2-3.3, https://arxiv.org/html/math-ph/9805010v1 .
+These standard source-Fock facts are reused; the historical operator and
+response comparison is the contribution of this contract.
+
+check_direct_seam_defect.py controls exact mode signs, the relative determinant,
+CAR word responses, energies and the reweighting normalization condition.
+Its finite cyclic-shift countercontrol retains the compensating other edge,
+so a finite determinant is never mistaken for a single chiral infinite sea.

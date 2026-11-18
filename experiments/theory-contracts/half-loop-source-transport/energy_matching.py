@@ -44,7 +44,7 @@ def centered_pair_energy(matrix, linear, offset, charge, reference=None):
 
 def sourced_pair_check():
     relative = "experiments/theory-contracts/half-charge-energy-bridge/checker.py"
-    digest = "6848080313c0c9478519d8fb4e725acd421646b4582f817f401dd25c9b5e1389"
+    digest = "edbb8ed7da2eedbcf77244db7b143f7072262834f792e69944fabc91a654a0f5"
     source = ROOT / relative
     require(hashlib.sha256(source.read_bytes()).hexdigest() == digest, "actual holonomy-energy pin")
     spec = importlib.util.spec_from_file_location("half_loop_energy_source", source)

@@ -1,0 +1,115 @@
+INDEPENDENT REVIEW: PAULI SPIN CENTRAL LIFT
+2026-10-26
+
+Reviewed sources
+
+  PAULI-SPIN-CENTRAL-LIFT.txt
+  SHA-256 e5ef50c899eba80dca03e1b7023edf816df3b45a669534fccf2fef215b0ae8e6
+
+  check_pauli_spin_central_lift.py
+  SHA-256 984143297e98ebcc91185f642fb3946c31f53da7035fb6e5c8b4dc589d3d832b
+
+VERDICT
+
+ACCEPTED AT THE FINITE CLIFFORD LEVEL, WITH THE CENTRAL SOURCE MAP
+CONDITIONAL AS STATED IN THE REVIEWED REPORT.
+
+1. FIBER AND CENTRAL-SQUARE CENSUS
+
+The checker uses the exact v783 Clifford generators and enumerates all 720
+symplectic actions.  It finds the nine involutions preserving both native
+source-matched symplectic planes and conjugating the frozen cubic action to
+its inverse.  Each chosen Q(i)-rational representative has the full 64-element
+G31 fiber mu4 times Pauli16.
+
+For every one of the nine fibers the square census is
+
+  +I: 8,  -I: 8,  nonscalar: 48.
+
+After multiplication by zeta8 it becomes
+
+  +iI: 8,  -iI: 8,  nonscalar: 48.
+
+If the sought global theta-extension dictionary maps beta to J=+iI, then a
+corresponding alpha cannot lie in G31 and does lie in the odd zeta8 G31
+Clifford coset.  The selected local +i phase at q0 makes this identification a
+compatible candidate, but does not prove it globally on H0(2Theta).  The
+actual theta functor must still decide whether the fiber phase survives or
+cancels in cohomology.
+
+2. FULL CUBIC-QUARTER RELATION
+
+The square condition alone leaves four Pauli factors modulo overall sign.
+The corrected checker additionally applies the exact matrix filter
+
+  alpha sigma alpha^(-1)=sigma^(-1).
+
+In every one of the nine Q fibers exactly two elements survive.  They are
+alpha and -alpha, so the lift is unique modulo the source sign once the
+quotient Q action is fixed.
+
+For the displayed Q action the square-only factors are ZI, ZZ, XI and XZ.
+Only XI satisfies the cubic conjugation relation.  The explicit matrix
+
+  alpha=zeta8 (XI) U
+
+obeys alpha^2=iI, alpha^4=-I, alpha^8=I and
+alpha sigma alpha^(-1)=sigma^(-1).  This corrects the earlier square-only ZI
+candidate.
+
+The generated group has order 24.  Indeed alpha has order eight, sigma has
+order three, their cyclic subgroups have trivial intersection, and conjugation
+by alpha acts on <sigma> by inversion.  It is C3 semidirect C8, with the C8
+action factoring through C2 and alpha^2 generating the central C4.
+
+3. CENTRALIZER ORBIT
+
+The exact Sp(4,2) enumeration gives a centralizer of order 18 for the frozen
+Pauli action of sigma, and conjugation by this centralizer is transitive on all
+nine quotient Q actions.
+
+The independent v634 group census gives |C_G31(J sigma)|=72.  Since J is
+central, this is also |C_G31(sigma)|.  Its kernel over the symplectic
+centralizer is exactly mu4: a kernel element commuting with sigma would define
+a sigma-fixed Pauli translation, and the fixed space on N64/mu4 is zero.
+Thus
+
+  C_G31(sigma)/mu4 = C_Sp4(2)(Sigma),
+
+and every quotient conjugator has an actual lift commuting with sigma and J.
+Conjugation transports the unique sign class over one Q action to the unique
+sign class over the conjugate action.  Hence the nine alpha sign classes form
+one conjugacy orbit under the actual native centralizer.  Calling that orbit a
+physical gauge class would additionally require the full centralizer to be an
+allowed gauge group.
+
+4. REPLAY
+
+Both commands pass:
+
+  python3 check_pauli_spin_central_lift.py
+  python3 -OO check_pauli_spin_central_lift.py
+
+Their complete standard outputs are byte-identical with SHA-256
+
+  823edd5914789f231ebb765f0f7e685ba55c09a96b3629176897e5c857532977.
+
+5. PRECISE SCOPE
+
+The result constructs a finite four-dimensional Clifford candidate for the
+central phase and the joint cubic-quarter relations after beta->J and the
+lifted cubic relation are imposed.  It removes the
+fourfold Pauli-factor ambiguity for each fixed quotient Q action.  The nine
+quotient representatives are one native centralizer conjugacy orbit when only
+sigma, J and the Pauli translation structure are held fixed.
+
+This orbit statement does not identify a preferred representative after adding
+P1, P2, ordered q-versus-p, anchor, state, or readout data.  Those markings are
+outside the centralizer contract checked here.
+
+This is not yet the geometric isomorphism from the source theta or
+Schrodinger module to the native Gaussian lattice module.  That conclusion
+still requires a marked isomorphism of the complete theta and N64 central
+extensions and the induced four-dimensional representations.  No physical
+state, local field, or P1 source identification follows from the finite lift
+census alone.

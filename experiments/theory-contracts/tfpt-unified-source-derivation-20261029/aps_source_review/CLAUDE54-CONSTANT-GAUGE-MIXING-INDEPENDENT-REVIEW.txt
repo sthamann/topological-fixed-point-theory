@@ -1,0 +1,157 @@
+CLAUDE54: CONSTANT FINITE SPECTRUM VERSUS THE INTERACTING WEAK OPERATOR
+Independent source and operator review, 30 October 2026.
+Verdict: SCOPED_FINITE_CLAIM_TRUE; FULL_GAMMA_AND_MASS_SELECTION_CLAIMS_NOT_DERIVED.
+No Atlas, ledger or original edit.
+
+CORE RESULT
+Claude54 correctly identifies the blindness of the frozen pure finite operator
+at zero gauge insertion.  That statement does not extend to the full interacting
+effective functional.  The actual v252 weak representation already supplies a
+neutral closed charged word which distinguishes two constant Yukawa backgrounds
+having exactly the same separate up and down singular spectra:
+
+  Tr(W+ D_F^2 W- D_F^2)
+    =3 Tr((Y_d Y_d*) (Y_u Y_u*)).                       (1)
+
+The factor 3 is colour.  Equation (1) is invariant under a common family-frame
+change and detects the relative left orientation.  It needs no seam derivative.
+It is an exact possible coefficient of an interacting charged-current expansion,
+not a proof that the unfinished full Gamma_ren caller assigns it a nonzero
+coefficient.
+
+There is a second, independent type error in the proposed conclusion.  The
+original v252/v254 geometry takes the Yukawa matrices as supplied coefficients
+of D_F.  Its dynamical finite one-form is the common Higgs quaternion built from
+that fixed D_F; the continuum connection supplies gauge fields.  The already
+proved radial witness is
+
+  Phi_s=(1+s) D_Y+D_MR.                                 (2)
+
+Thus the original displayed variation gives one contracted radial equation.  It
+does not give independent Euler equations delta Gamma/delta Y_u=0 and
+delta Gamma/delta Y_d=0.  “Stationarity selects the fermion singular values” is
+therefore not an original consequence.
+
+1. What is true in the frozen finite sector
+With no gauge or other charged insertion, the quark part of D_F^2 restricted to
+the left doublet is
+
+  diag(H_u,H_d),  H_u=Y_uY_u*, H_d=Y_dY_d*.
+
+Any spectral function of this block alone is a sum of separate class functions
+of H_u and H_d.  It cannot detect the relative left diagonalisation.  The v255
+heat-kernel summary is precisely of this frozen kind: its displayed Yukawa inputs
+are Tr(Y*Y) and Tr((Y*Y)^2), verification/v255_spectral_action_expansion.py:
+1-27.  Claude54's blindness statement is valid in this scope.
+
+This scope is smaller than the proposed Gamma_ren.  The original relative action
+retains A_Sigma inside Tr f((D_rel+A_Sigma)/chi);
+documents/tfpt_research_contracts/sections/007-source.tex:4-13.  QFT7 defines
+Gamma_k from the full S_adm[varphi] functional integral, rather than from the
+frozen finite spectrum alone; documents/archive--tfpt-45--source_extracts--
+04_qft_source/sections/007-subsection-renormalized-physical-and-scheme-readout-
+laye.tex:3-27.  The finite
+v254 one-forms are scalars, while gauge bosons come from the continuum
+[D_M,a]; verification/v254_inner_fluctuations.py:6-20.  Dropping the charged
+connection before taking the spectrum does not establish a theorem about the
+interacting functional after that connection is included or integrated.
+
+2. Smallest actual v252 countertest
+In the actual v252 representation, q acts on every (u_L,d_L) pair;
+verification/v252_full_finite_triple.py:139-168.  Let sigma_x,sigma_y be the
+ordinary Pauli matrices and define, through that same rep,
+
+  W+=(pi(0,sigma_x,0)+i pi(0,sigma_y,0))/2,
+  W-=W+*.
+
+Then W+ maps d_L to u_L with coefficient one for all three colours and all
+three generations.  Since D_F is the actual full_D of lines102-116, block
+multiplication gives equation (1).  The KO6 completion W+ + J_F W+ J_F^-1
+acts on the disjoint antiparticle block and doubles this real trace.
+
+Use the exact integer matrices
+
+  Y_u=diag(1,2,3),
+  Y_d=diag(4,5,6),
+  Y'_d=P_13 diag(4,5,6).
+
+Y_d and Y'_d have the same singular values, as do the unchanged up matrices.
+Nevertheless
+
+  Tr(H_d H_u)       =440,       Tr(H'_d H_u)       =280,
+  Tr(W+H W-H)       =1320,      Tr(W+H'W-H')       =840,
+  KO6-completed word=2640,      KO6-completed word =1680.
+
+The exact difference on the particle quark block is480.  This is the requested
+first decisive counterexample: separate spectra agree, while an operator word
+formed only from the original D_F and original weak action differs.
+
+The word is gauge neutral because the charged insertions close as W+...W-.  It
+also survives a common family basis change.  It tests relative orientation, not
+an arbitrary chart.  No new physical coupling was chosen; an eventual action
+coefficient remains a separate caller calculation.
+
+3. Consequence for the full effective functional
+The universal statement
+
+  “constant H implies Gamma depends only on the two separate singular spectra”
+
+is not proved and is false as an operator-algebra assertion once the existing
+charged weak connection is retained.  Terms proportional to Tr(H_u H_d) are
+allowed at constant H.  They can arise from charged-current insertions without
+any derivative along the seam.  At quadratic order in the simplest covariant
+Higgs kinetic term the orientation may still cancel; equation (1) identifies a
+higher mixed word.  The checker does not assign it to a particular heat-kernel
+coefficient or loop order.
+
+The stronger CP question requires a higher invariant, for example a word that
+contains the commutator of H_u and H_d.  This review does not claim that the
+original Gamma_ren supplies its coefficient.  It establishes only that seam
+derivatives are not the unique possible carrier of mixing information and that
+the frozen-spectrum argument cannot exclude gauge-mediated constant-background
+terms.
+
+4. What the original variation can actually constrain
+The actual inner fluctuation is
+
+  D_A=D_F+A+epsilon' J_F A J_F^-1,
+  A=sum pi(a_i)[D_F,pi(b_i)],
+
+with fixed D_F; verification/v254_inner_fluctuations.py:6-12.  The existing
+whole-source calculation identifies its real radial direction as equation (2),
+with all four Yukawa matrices retained as supplied coefficient inputs;
+ACTUAL-ONEFORM-COUPLED-SOURCE-RESPONSE.txt:5-22.
+
+For a frozen spectral functional schematically written as
+
+  Gamma_0(r)=Tr f(r^2 H_u)+Tr f(r^2 H_d)+other fixed sectors,
+
+the allowed radial derivative is one scalar condition
+
+  d Gamma_0/dr
+    =2r[Tr(H_u f'(r^2H_u))+Tr(H_d f'(r^2H_d))+...] =0.    (3)
+
+Equation (3) neither gives one equation per singular value nor varies Y_u and
+Y_d independently.  The full Higgs quaternion adds its gauge orbit and common
+amplitude, not independent family matrices.  A true mass-selection theorem would
+therefore need an original integration or variation rule for D_F/Y itself, or a
+different source equation which determines those fixed coefficients.  None is
+present in the reviewed v252/v254 path.  QFT7's generic integration variable
+varphi does not by itself identify D_F/Y_u/Y_d as independently varied fields.
+
+5. Reproducible control and exact scope
+Checker:
+  aps_source_review/check_constant_weak_mixing_word.py
+Result:
+  aps_source_review/constant-weak-mixing-word-results.json
+
+All nine exact structural checks pass.  Normal and python -OO output are byte
+identical.  SHA256:
+  checker 64b078154918124ce7542c86a7c10e976906f4d16a2cb16c5998e8970b658ae1
+  result  ed1bc8d7096df8ff625d77c53a11bf440006237870306a166f6898cb36b195af
+
+The gained result is the precise scope correction: the zero-connection finite
+spectrum is mixing blind, while the actual interacting operator is not forced to
+be.  The existing original variation supplies a common Higgs direction, not an
+independent Yukawa minimisation.  The missing calculation is the coefficient of
+the allowed mixed weak word in the actual full Gamma_ren caller.

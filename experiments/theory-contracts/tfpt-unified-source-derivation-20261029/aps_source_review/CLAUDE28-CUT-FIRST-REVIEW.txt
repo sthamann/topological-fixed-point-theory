@@ -1,0 +1,138 @@
+CLAUDE28: COMPLETE FOUR-MARK CIRCLE CLASS AND THE FIRST CUT TEST
+Independent bounded analytic review, 2026-10-29.
+No new model, gauge calibration, Atlas mutation or old-source changes.
+The claim reviewed is the exact operator/cut statement supplied by the
+parent task; a new CLAUDE28 raw file was not yet present in the stated
+workspace output directory at the time of this check.
+
+VERDICT
+The anti-inversion formula is correct. The claimed uniqueness of the
+q-compatible mark-avoiding E0 cut is false: BOTH z->i bar(z) and
+z->-i bar(z) qualify at the original Fuchs/curve level, and the supplied
+quarter rotation conjugates them. Thus those premises select neither
+one cut nor a physical sewing/Pin phase. For the explicitly named point
+map z->i^k bar(z), the constant coefficient map is U^k conjugation;
+U^-k is wrong for odd k in that convention.
+
+1. COMPLETE FINITE CLASS, NOT JUST THE k=1 EXAMPLE
+
+Let M={1,i,-1,-i}, and retain its original circle |z|=1. All holomorphic
+Mobius maps preserving M are precisely
+
+ r_k(z)=i^k z, s_k(z)=i^k/z, k=0,1,2,3.
+
+Their restrictions have the eight D4 permutations of the marked circle.
+A circle-preserving Mobius map preserves or reverses cyclic order, hence
+has at most these eight possible permutations; three points determine
+the map uniquely, and the displayed maps realize all eight.
+
+Composing with ordinary conjugation gives every anti-Mobius map:
+
+ sigma_k(z)=i^k bar(z), rho_k(z)=i^k/bar(z).
+
+There are sixteen sphere maps in total, with only eight distinct circle
+restrictions: the central equatorial involution rho_0 acts identically
+on the circle. Equivalently the full sphere stabilizer is D4 x C2.
+Every map taking the four marks to themselves already preserves their
+unique generalized circle. Thus no further anti-Mobius maps are omitted.
+
+All four sigma_k are antiinvolutions. Their fixed line is
+arg z=k pi/4 modulo pi. For k=0,2 this line hits two marks. For k=1,3
+its circle intersection consists of two unmarked points. In particular
+
+ sigma_1=i bar(z), sigma_3=-i bar(z)
+
+are TWO distinct mark-avoiding real cuts. Rotation r_1 conjugates
+sigma_1 to sigma_3. In particular they are equivalent under the already
+supplied original quarter symmetry if no further marking breaks it.
+
+For completeness rho_k^2=r_(2k). The only antiinvolutions of this form
+are rho_0 (fixed circle containing all marks) and rho_2 (no fixed points).
+rho_1,rho_3 have order4, so they are not real involutions defining cuts.
+The holomorphic s_1,s_3 have the same unmarked fixed-point pairs on the
+circle, but are not antiinvolutions of the sphere.
+
+2. q COMPATIBILITY AND WHETHER ZERO MUST BE FIXED
+
+The original curve has div z=Dq-Dp. Maps r_k and sigma_k fix 0 and
+infinity separately and preserve the q/p packets; maps s_k and rho_k
+exchange 0 and infinity and exchange the packets. Consequently retention
+of the selected q packet leaves four holomorphic rotations and four
+antiinvolutions sigma_k. Of their real cuts exactly sigma_1 AND sigma_3
+avoid the marks. There is no surviving unique candidate.
+
+Fixing0 is not forced by the four marks or the circle alone: s_k,rho_k
+are explicit counterexamples. It follows here from the ADDITIONAL
+retained q-versus-p marking. This is legitimate when that ordered packet
+is part of the original source data; it must not be advertised as a
+consequence of the unlabelled four-point set.
+
+On C the two anti maps are Q tau0 and Q^3 tau0. They differ by the
+hyperelliptic involution Q^2, which fixes all branch points. Both fix
+each q_a and preserve the divisor classes S0 and L_a. Mere preservation
+of these classes, even with the flat coefficient lifts below, still
+does not identify a graded Pin or physical CAR reflection.
+
+3. DIRECT ORIGINAL ODE TEST, INCLUDING THE CONSTANT-MATRIX SIGN
+
+Retain the real rational original A from ORIGINAL-FUCHS-ALGEBRAIC-FRAME:
+
+ A=1/(z^4-1)[[2z^3,a z^2,0],[a,z^3,b z],[0,b z,z^3]],
+ a=2sqrt(2)/3,b=sqrt(5)/3,U=diag(1,i,-i), Psi'=+A Psi.
+
+For rho_0(z)=1/bar(z) the anti-pulled coefficient is
+
+ -z^-2 A(1/z)=A(z)^t-diag(2,1,1)/z.
+
+Every entry of this identity was checked exactly. This is a dual-type
+identity with a degree term, not the statement that rho_0 preserves the
+same holomorphic flat connection. It agrees with the old q/p exchange
+and does not evade the existing rational inversion obstruction in
+D4-CONNECTION-LIFT.txt.
+
+Now specify the convention rather than infer a sign from a label. For
+the bundle POINT map
+
+ j_k:(z,v)->(i^k bar(z), U^k bar(v)),
+
+the covariance i^k A(i^k z)=U^k A(z)U^-k proves that horizontal
+solutions map to horizontal solutions. Also j_k^2=I since
+U^k overline(U^k)=I. Thus all four sigma_k carry actual constant flat
+Real structures. For k=1 and3 BOTH are available at this operator level.
+
+Equivalently, on sections the anti-pulled coefficient before multiplication
+by the fiber matrix is B_k=i^-k A(i^-k z)=U^-k A(z)U^k.
+Conjugating B_k by U^k returns A. Conjugating by U^-k does not for odd k.
+The exact four-case check returned true for U^k for all k, and false for
+U^-k at k=1,3. U^-k can describe the oppositely indexed base reflection
+or an explicitly changed transport convention; it is not the above map.
+
+The known algebraic fundamental matrix G supplies an independent
+differential trivialization, so this test is not based merely on equal
+monodromy orders. The two anti maps are conjugate by the actual flat
+rotation (z,v)->(iz,Uv), just as their base maps are.
+
+4. WHAT WOULD REALLY BE NEEDED TO SELECT A PHYSICAL CUT
+
+This finite/operator classification supplies a decisive counterexample
+to uniqueness from the reported premises. An original ordered-face map,
+Pin lift, full charged Phi coupling, actual boundary domain or state could
+break the remaining symmetry. Such a datum must be read and intertwined;
+it does not follow from flat holomorphic coefficients or cut avoidance.
+No such extra selection is supplied by the asserted uniqueness argument.
+
+The prior source-selected spin quarter phase and its overall sign are
+retained. They have their existing spin-lift derivation; this report does
+not refute that derivation. The failed cut-uniqueness claim cannot serve
+as a new derivation of a physical xi sewing phase. Geometric Real maps,
+coefficient conjugations, Pin lifts, Phi, oriented faces Gamma+/Gamma-
+and the selfdual CAR C0 remain different typed operations until the
+actual source map is exhibited. No assertion that the full Seed lacks
+its original reflection, state or time is made.
+
+Sources reused: September28 original Fuchs/curve section203-340;
+C4-DESCENT-FINITE-MONODROMY.txt; D4-CONNECTION-LIFT.txt;
+ORIGINAL-FUCHS-ALGEBRAIC-FRAME.txt; C3-REAL-QUARTER-COMPATIBILITY-REVIEW.txt.
+Targeted Atlas lookup also retained premise
+full-original-four-mark-inversion-and-equatorial-real-slots and the old
+reviewed distinction between linear duality and Real reflection.

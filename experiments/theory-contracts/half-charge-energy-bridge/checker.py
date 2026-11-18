@@ -11,7 +11,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[3]
 PINS = {
     "experiments/theory-contracts/microscopic-charged-car-limit/checker.py":
-        "2259bd7d6ab890c8cca562774b1b5cdc574e60fb72a04a8c8c8f6ed8292f113a",
+        "1194dd1e38d6e9bc9849defc6a07d27d68f5ea4981359218773e60054f23564d",
     "experiments/theory-contracts/half-twist-grade-carry/README.md":
         "b90ac8cb7b06d900927c3779788a2751e81890fbed549a41a02398ee82d89b2a",
 }

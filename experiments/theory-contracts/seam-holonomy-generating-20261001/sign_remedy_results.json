@@ -1,0 +1,63 @@
+{
+  "steps": [
+    {
+      "step": "SR1.method: W^2 = det(1 + prod e^{K_l}) and the continuous square-root tracking from t = 0 reproduce the exact Fock trace including its phase (random 3-mode hopping + pairing products)",
+      "pass": true,
+      "detail": "exact 85.9293+17.2225j, tracked 85.9293+17.2225j"
+    },
+    {
+      "step": "SR2.measured phases (stabilised UDV determinant, tracked along t, beta = 1, 16-site cell with P): the weights carry nonzero phases for Theta_1 and for the time-reversal-symmetric walk -- a phase problem exists, mild at this size",
+      "pass": true,
+      "detail": "Theta_1 BDT, g = 0.02: max |phase| 6.62e-03, <cos> 1.0000; Theta_1 BDT, g = 0.1: max |phase| 6.15e-02, <cos> 0.9991; TR-symmetric walk, g = 0.02: max |phase| 7.06e-05, <cos> 1.0000; TR-symmetric walk, g = 0.1: max |phase| 1.76e-03, <cos> 1.0000"
+    },
+    {
+      "step": "SR3.a time-reversal-symmetric walk exists: h_eps = i b_eps.sigma with b_eps = (eps + eps1 eps2 eps3 n)/8 is Hermitian and odd, light node isotropic (d = k + O(k^3)), nodal lines lifted, all zeros isolated, every zero off the k = 0 class has f >= 1/2, chiralities sum to zero; the walk alone is invariant under on-site T = i sigma_y K",
+      "pass": true,
+      "detail": "48 zeros in the cubic zone, min f off the k = 0 class 0.779"
+    },
+    {
+      "step": "SR4.structural no-go: a Kramers argument needs an ON-SITE antiunitary keeping every HS term O_A(x) (lattice maps send phi(x) to phi(gx)); number-preserving Theta fails because conjugation acts on the ten channels of the complex 16 with determinant -1 (not in Spin(10) x U(1)); particle-hole Theta needs b with s^* b = -b s^* for all three Pauli directions, which has no solution -> no Kramers sign-free decoupling for ANY two-component Weyl walk with the Spin(10) 10-channel pairing",
+      "pass": true,
+      "detail": "conjugation pattern on B_A [1, -1, 1, -1, 1, -1, 1, -1, 1, -1] (det -1); T acts on the ten channels as [1, -1, 1, -1, 1, -1, 1, -1, 1, -1] (= conjugation pattern); particle-hole spin solutions: 0; inversion-type Theta keeps the walk but sends O_A(x) to O_A(-x): True"
+    },
+    {
+      "step": "SR5.(statement) the sign problem of Gate B is structural for this class, not an artefact of the BDT ordering; QMC needs reweighting (only while the phase stays mild), a different channel / representation (Majorana-class criteria), or tensor networks; Theta_1 stays the candidate, no walk is swapped",
+      "pass": true,
+      "detail": "QMC not started"
+    }
+  ],
+  "passed": 5,
+  "total": 5,
+  "measured_phases": {
+    "('Theta_1 BDT', 0.02)": [
+      0.006619061100110457,
+      0.9999896406160594
+    ],
+    "('Theta_1 BDT', 0.1)": [
+      0.061506558612981266,
+      0.9991327512300469
+    ],
+    "('TR-symmetric walk', 0.02)": [
+      7.059753439442318e-05,
+      0.9999999988839648
+    ],
+    "('TR-symmetric walk', 0.1)": [
+      0.0017558516099871468,
+      0.9999993278921439
+    ]
+  },
+  "tr_walk_zeros": 48,
+  "tr_walk_fmin": 0.7785545085655192,
+  "conjugation_pattern": [
+    1,
+    -1,
+    1,
+    -1,
+    1,
+    -1,
+    1,
+    -1,
+    1,
+    -1
+  ]
+}

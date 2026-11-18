@@ -179,7 +179,7 @@ need(abs(abs(U[1,0])**2-4/29)<1e-14,'numerical end-to-end pulse probability','nu
 # permutation of our choosing. Its action on native WEIGHT coordinates is an
 # explicitly stated frame identification, not a proof of Hilbert-space origin.
 clock_path=ROOT/'experiments/theory-contracts/compiler-involution-types/checker.py'
-clock_pin='9bf99de79f224ffcd060359eb146510b6e49973170f9953a0aec26760bd2c1a1'
+clock_pin='a0923ab19e46d784b28783f3b943df032d9de3c08b7ecda017b3d4cd3e5ad1ab'
 need(sha256(clock_path.read_bytes()).hexdigest()==clock_pin,'live finite Clock constructor pin')
 module=runpy.run_path(str(clock_path))
 q=module['exact_source_prefix']()

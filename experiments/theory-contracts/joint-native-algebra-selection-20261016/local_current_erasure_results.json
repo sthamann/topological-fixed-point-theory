@@ -1,0 +1,60 @@
+{
+  "status": "PASS_EXACT_LOCAL_CURRENT_ERASURE",
+  "contract_id": "UR.NATIVE.JOINT_OPERATOR.01",
+  "source": "Original neutral Cartan current sector in given J-positive native Fock embedding",
+  "source_ope": "j_ubar_a(z)F_i(0)=G_ia(0)/z^2+sum_(k>=0) z^k/k! :partial^k j_ubar_a F_i:(0)",
+  "regular_primary": "r_ia=t_ia-7/85 L_-2 g_ia+3/170 L_-1^2 g_ia; Gram78/85 I20",
+  "singular_coefficient_checks": 120,
+  "original_current_nonlocal_mode_checks": 80,
+  "locality_test": "[ubar_a(1),j_u_b(w)]=delta_ab I; nonzero outside every proper interval",
+  "profile_convention": "J(V)=sum_n h_Vhat_n(n); Vhat_n=int V(theta)e^(-in theta)dtheta/(2pi); Vhat_-n=conj(Vhat_n)",
+  "exact_all_profile_gram": "P J(V)^2 P=(3||q||^2+||p||^2+sum_(m>=2)m||Vhat_m||^2) I5, Vhat1=p.u+q.ubar",
+  "exact_erasure_gram": "P J(V) P_grade3 J(V) P=||q||^2 I5; P_grade3 is analysis, not execution",
+  "general_real_vector_profile_erasure_fraction_bound": "<=1/3; strict for smooth proper local support and q!=0",
+  "fixed_real_polarization_bound": "<=1/4; strictly local nonzero erasure gives strict inequality",
+  "fixtures_are_global_trigonometric_polynomials_not_local_support": true,
+  "fixtures": [
+    {
+      "modes": [
+        -1,
+        1
+      ],
+      "p2": "0",
+      "q2": "1",
+      "tail": "0",
+      "full_gram_factor": "3",
+      "erasure_fraction": "1/3"
+    },
+    {
+      "modes": [
+        -5,
+        -2,
+        -1,
+        1,
+        2,
+        5
+      ],
+      "p2": "7",
+      "q2": "14",
+      "tail": "21",
+      "full_gram_factor": "70",
+      "erasure_fraction": "1/5"
+    },
+    {
+      "modes": [
+        -1,
+        1
+      ],
+      "p2": "1",
+      "q2": "1",
+      "tail": "0",
+      "full_gram_factor": "4",
+      "erasure_fraction": "1/4"
+    }
+  ],
+  "response_gram_checks": 150,
+  "central_commutator_checks": 45,
+  "ordered_product": "[J(V),J(W)]=i sigma(V,W) I; exp(iJ(V))exp(iJ(W))=exp(-i sigma/2)exp(iJ(V+W))",
+  "all_finite_weyl_history_theorem": "In neutral source sector, every finite ordered Cartan-current Weyl history is phase times one displacement. A nonzero displacement maps no nonzero finite Fock polynomial to a finite Fock polynomial. Every code-preserving endpoint is scalar.",
+  "scope": "Exact OPE/locality and all-smooth-profile response; finite fixtures only validate coefficients. Weyl theorem is analytic, no truncated exponential. Cartan-current-only ordered unitary histories, not arbitrary products of fields, root currents, stress-current mixtures, general E8/P1 histories. Native code is NOT identified with P1 H_adm. Neither current choice/profile, P1-to-source local-net map, invariant H_adm, physical clock, measurement nor3+2 is selected."
+}

@@ -1,0 +1,188 @@
+NATIVE SPIN5 SOURCE RECORD
+==========================
+
+Stand: 2026-10-28
+Urteil: DER VOLLE NATIVE SPIN5 FUNKTOR FIXIERT EINEN BASISUNABHAENGIGEN
+HODGE KRAUSRAUM DIREKT AUF DER TATSAECHLICHEN BELL10 BASIS. DIESER
+FUENFDIMENSIONALE RAUM LIEGT BEREITS VOLLSTAENDIG IM ECHTEN EINRECORD
+QUELLRAUM. EIN KOHERENTER RECORDKONTRAKTOR REALISIERT EXAKT
+
+  (1/15) Phi_native
+
+IN EINEM SCHRITT. FUER ZWEI TATSAECHLICHE RECORDS IST DAS EXAKTE OPTIMUM
+
+  (4/75) Phi_native.
+
+DIE ZIELKANAL WAHL IST DAMIT NICHT MEHR VON EINEM DUAD LABELCHART
+ABHAENGIG. DIE QUELLE WAEHLT DEN NOETIGEN RECORDKONTRAKTOR WEITERHIN NICHT.
+
+1. Erster Typ und Normierungstest
+---------------------------------
+
+Die tatsaechliche Bell10 Basis in source_channel.py besteht aus den zehn
+symmetrischen Pauli Matrizen P_b. Jede hat
+
+  tr(P_b^dagger P_b)=4.
+
+Die Standardbasis von Sym2(C4) verwendet Diagonaltensoren mit Normquadrat 1
+und gemischte Tensoren mit Normquadrat 2. Deshalb ist die metrisch richtige
+Abbildung von Bell Koeffizienten in diese Sym2 Basis
+
+  N_b = P_b/2.                                             (1)
+
+Der Faktor 1/2 ist notwendig. Ohne ihn waere die Abbildung um den Faktor 4
+in der Metrik falsch.
+
+Der vorige Funktorchecker beschreibt die kompakte reelle Struktur durch
+
+  j(w)=q conjugate(w),
+
+schreibt die Hodge Matrizen am Ende jedoch in der Standardkoordinatenbasis.
+Diese Basis ist fuer das dort ausgegebene q nicht punktweise j reell. Der
+neue Checker setzt deshalb explizit eine Hermitesch orthonormale reelle
+Basis R ein und prueft
+
+  R^dagger R=I,
+  q conjugate(R)=R.                                      (2)
+
+Mit dem metrischen Spin5 Funktor F ist damit die wirkliche native Abbildung
+
+  U = Lambda2(R)^dagger F N.                             (3)
+
+Sie ist exakt unitaer.
+
+2. Entscheidender Generatortest
+-------------------------------
+
+Fuer die tatsaechlichen nativen Vierergeneratoren C und G gilt exakt
+
+  U Bell(C)       = Lambda2(W(C)) U,
+  U [-i Bell(G)]  = Lambda2(W(G)) U.                     (4)
+
+Der Faktor -i ist der bereits im Spin5 Funktor enthaltene chi^-1 Twist.
+Damit ist U nicht aus einem beschrifteten Fuenferslotraum geraten. Es ist
+direkt aus der nativen Vierermetrik, Omega, der primitiven Exteriorpotenz,
+der kompakten reellen Form und der tatsaechlichen Bellbasis gebaut.
+
+Ein Wechsel der orientierten orthonormalen Basis von Fix(j) mischt die
+fuenf Hodge Krausoperatoren orthogonal. Der Kanal bleibt gleich. Die
+gemeinsame verbleibende Phase oder ein Orientierungszeichen verschwindet
+ebenfalls aus der Kraussumme. Die fruehere F20 Slotfreiheit tritt hier
+nicht auf.
+
+3. Kanonischer nativer Hodge Kanal
+----------------------------------
+
+Seien C_m die fuenf Hodge Matrizen auf Lambda2(R5). Auf Bell10 setzt der
+Checker
+
+  K_m = U^dagger C_m U.
+
+Exakt gelten
+
+  tr(K_m^dagger K_n)=6 delta_mn,
+  sum_m K_m^dagger K_m=3 I10.                            (5)
+
+Damit ist
+
+  Phi_native(rho)=(1/3) sum_m K_m rho K_m^dagger        (6)
+
+spurtreu, vollstaendig positiv und ohne Labelchart definiert.
+
+4. Ein tatsaechlicher Source Record
+-----------------------------------
+
+Die 60 originalen Bellmatrizen aus source_channel.py spannen einen Raum vom
+Rang 55 in End(Bell10). Der gemeinsame Rang mit dem nativen Hodge Raum
+bleibt 55. Der Schnitt hat Dimension 5. Somit ist der gesamte native Hodge
+Krausraum bereits in einem echten Source Record enthalten.
+
+Sei W1 die 100 mal 60 Matrix der vektorisierten Source Matrizen und V die
+100 mal 5 Matrix der vektorisierten K_m. Fuer die minimale exakte Loesung
+
+  W1 X1=V,
+  X1 orthogonal zu ker(W1),
+
+findet der Checker
+
+  X1^dagger X1=(3/4) I5.                                 (7)
+
+Jedes Source Ereignis traegt die Amplitude 1/sqrt(60). Fuer einen
+Erfolgskanal p Phi_native hat der Recordkontraktor deshalb die Gram Matrix
+
+  20 p X1^dagger X1 = 15 p I5.                          (8)
+
+Die Kontraktionsbedingung ist genau dann erfuellt, wenn p<=1/15. Am Rand
+ist die Gram Matrix I5. Das exakte Einrecord Optimum lautet daher
+
+  pmax(1 Record)=1/15.                                   (9)
+
+5. Zwei tatsaechliche Source Records
+------------------------------------
+
+Die 3600 geordneten Produkte U_second U_first spannen ganz End(Bell10),
+also Rang 100. Fuer ihre Frame Matrix S2 und die minimale exakte Loesung
+ist die Koeffizientengrammatrix
+
+  V^dagger S2^-1 V=(1/64) I5.                           (10)
+
+Ein Zweirecord Wort traegt die Source Amplitude 1/60. Daher lautet die
+Gram Matrix des Recordkontraktors
+
+  1200 p V^dagger S2^-1 V = (75/4) p I5.                (11)
+
+Das exakte Zweirecord Optimum ist
+
+  pmax(2 Records)=4/75.                                  (12)
+
+Auch hier ist die Kontraktorgrammatrix am Optimum I5. Dass der
+Zweirecord Wert kleiner als der Einrecord Wert ist, ist kein Widerspruch:
+der zweite nichttriviale Source Schritt wird wirklich ausgefuehrt. Er ist
+kein identischer oder frei verwerfbarer Systemschritt.
+
+6. Was damit geklaert ist und was offen bleibt
+----------------------------------------------
+
+Geklaert ist die zuvor offene Zielidentifikation. Die native Metrik und
+volle Spin5 Funktorialitaet bestimmen Phi_native, und die tatsaechlichen
+Source Records tragen diesen Kanal bereits exakt. Es ist weder eine
+Bell10 zu Duad Zuordnung noch ein frei gewaehlter F20 Slotintertwiner
+noetig.
+
+Nicht hergeleitet ist die Auswahl des koharenten Recordkontraktors X1 oder
+seines Zweirecord Analogons durch P1, eine Messvorschrift oder eine
+physische Umgebung. Die Rechnung beweist einen vorhandenen exakten
+Quellsubkanal und sein groesstmoegliches Gewicht innerhalb der jeweils
+gegebenen Recorddilatation. Sie beweist keine automatische Ausfuehrung oder
+Heralding Regel.
+
+7. Ausfuehrbarer Beleg
+----------------------
+
+  check_native_spin5_source_record.py
+  native-spin5-source-record-results.json
+
+Der Checker verwendet ausschliesslich die gepinnten Originalmatrizen und
+die fertige native Spin5 Konstruktion. Er prueft nach der unabhaengigen Verstaerkung 27 exakte Aussagen.
+
+8. Unabhaengige exakte Verstaerkung
+------------------------------------
+
+Der Hauptreview hat die Eigenwertentscheidungen durch die expliziten
+rationalen Identitaeten Gram1=3I/4 und Gram2=I/64 ersetzt. Keine
+Fliesskommatoleranz entscheidet Kontraktivitaet oder Optimalitaet.
+
+Zusaetzlich gilt exakt S1 V=8V und
+
+  spec(S1)={96^1,16^9,8^45,0^45}.
+
+Der native Hodge Fuenfer liegt also in einem 45 dimensionalen Eigenraum.
+Die Frame Eigenwerte allein zeichnen ihn nicht aus.
+
+Pi_coeff=(4/3)X1X1^dagger ist ein orthogonaler Rang5 Projektor. Bei
+Vsrc=sum_l |l> tensor U_l/sqrt60 ist der physische Recordeffekt
+
+  E=Pi_coeff^T,    J_E=W1 E^T W1^dagger/60=V V^dagger/45.
+
+Pi_coeff ist im hier markierten Chart tatsaechlich reell. Die
+Transpositionskonvention bleibt bei Basiswechseln dennoch erforderlich.

@@ -1,0 +1,112 @@
+Independent review: existing two-face source and typed reflections
+29 October 2026
+
+Verdict: ACCEPTED IN THE STATED GIVEN-SOURCE SCOPE.
+
+Read check_two_face_source.py in full, then executed it directly with
+python3 and independently with python3 -B -OO. Both exited 0 and produced
+the same result. The source test uses two positive NS modes pi and 3pi,
+with z=exp(-pi/12), W=1/2 and beta=1. Its four-dimensional exterior Fock
+space must not be described as four distinct one-particle source modes.
+
+The checker correctly reuses the old source lift, graph projection and
+graded double implementations. The two sewing null relations, all four
+covariance blocks, midpoint Green values, graded odd partner, occupation
+hole image, neutral current orientation, noncommuting neutral insertions,
+bounded cross Gram and ordered reflected histories are checked on the
+same thermal source. Finite matrices are expressly not claimed to realize
+a nonzero central current CCR. The +/- mode graph-reflection control is
+separate from the two positive-mode thermal control.
+
+Independent analytic sign review
+
+For J_HS X=X*, J_HS L_A J_HS=R_(A*) is conjugate-linear multiplicative.
+With W_L(f)=R_(W(f)*), right multiplication reverses products, so W_L has
+the opposite Weyl cocycle. Neutral even partners need no Klein factor.
+The odd CAR partner retains the original whole-GNS parity Gamma. For a
+Hermitian finite-mode quadratic current with the displayed subtraction,
+j_L(A)=-R_(j(A)) and J n_R J=I-n_L are correct, including complex
+Hermitian off-diagonal A such as sigma_y.
+
+For any normal density rho, not necessarily Gaussian,
+Tr(sqrt(rho) W_i* sqrt(rho) W_j)
+is the Hilbert-Schmidt Gram of rho^(1/4) W_i rho^(1/4).
+Boundedness of W_i and Schatten Holder make these vectors Hilbert-Schmidt.
+This establishes positivity of the joint bounded pairing without asserting
+that an arbitrary density has the free projector occupation covariance.
+
+For H>=0 and Z_beta=Tr exp(-beta H)<infinity, W=beta/2, and
+0<t_1<...<t_n<W, the full heat history is
+ K_F=exp(-(W-t_n)H) A_n exp(-(t_n-t_(n-1))H) ...
+       A_1 exp(-t_1 H).
+All intervening heat factors are essential. Their durations sum to W.
+Schatten Holder with p_j=beta/duration_j gives
+ ||K_F||_2 <= sqrt(Z_beta) product_j ||A_j||.
+Hence Tr(K_F* K_G)/Z_beta is a positive kernel for all bounded insertions.
+For the neutral even histories considered here it is the time-ordered
+reflected Gibbs Schwinger word. It is not an unordered product of imaginary
+time-conjugated operators. No claim that every such imaginary-time
+conjugate is itself everywhere bounded is needed. Extension to arbitrary
+odd fermionic words requires their separate graded ordering conventions.
+
+The actual Schottky reflection is (t,s)->(-t,s). Its ordinary spatial
+profile map is -I on reflected neutral Weyls, not minus spatial reflection.
+The previous single-chiral spatial-reflection obstruction therefore does
+not exclude this already existing elliptic OS source. The independently
+derived right-current orientation does not identify a geometric P1 second
+face with the modular partner.
+
+This review accepts the analytic theorem supplied with the review request.
+At this stage PROOF.txt was not yet present in the output directory; no
+claim is made to have reviewed a later saved exposition. No physical P1
+measure, field coupling, source map, physical time or full TFPT completion
+is proved by the finite checks or by these general HS identities.
+
+SHA256:
+check_two_face_source.py
+c5075473da6daeb5284cb7d4f16fa4f6c82d53a88945b856c2a8fa348c1549ce
+two-face-source-results.json
+e862327f829aa1721e505865ee785657c4c8a4bf08a07a0c89ca9453cf284f98
+
+Only this review was added. No original source or ledger was changed.
+
+Completed saved-text review
+
+Subsequently read the now saved PROOF.txt and STAND-EINFACH-DE.md in full.
+This completed review supersedes the earlier interim note about PROOF.txt
+not yet being present. No additional checker run was needed or performed.
+
+The bounded extension in PROOF.txt is valid under its explicit premise
+that the neutral current Weyls already belong to the given source von
+Neumann algebra. Kaplansky density supplies uniformly bounded strong-star
+approximating nets from the generating even CAR star algebra. All heat
+durations in a strictly interior history are positive. Each corresponding
+heat operator lies in its stated finite Schatten class. Approximate these
+heat operators by finite-rank operators in those Schatten norms. With
+finite-rank factors, bounded strong-star convergence of the insertions
+gives norm convergence of the history; Schatten Holder bounds the remaining
+tails uniformly. Thus K_F converges in Hilbert-Schmidt norm and
+Tr(K_F* K_G)/Z converges. The same reasoning with rho^(1/4) in Schatten4
+gives Hilbert-Schmidt convergence of the bounded joint-pairing vectors.
+No norm approximation of a von Neumann Weyl by CAR polynomials is asserted.
+
+The saved proof retains every intermediate heat factor, distinguishes
+time ordering from an ordinary unordered opposite-time product, and
+explicitly does not assume bounded imaginary-time conjugates. It limits
+the bounded operator theorem to neutral even insertions and does not
+extend it to odd Schwinger words without their graded conventions.
+
+The geometric Schottky time reflection and the antiunitary modular
+conjugation have distinct stated product types. The particle-hole formula
+belongs to the latter partner construction. A small ambiguity in the
+simple-language text was pointed out: wording about a particle-hole change
+in a generic reflection could blend these two types. Read back the corrected
+text: it now explicitly refers to the correspondence of the representation
+sides and distinguishes it from geometric time reflection. This is
+consistent with the accepted proof.
+
+No scientific overclaim was found in PROOF.txt. Its P1 field/sewing map,
+primitive source measure and physical time identification remain open.
+The saved all-mode conclusions concern the given source representation;
+the two-mode computation is not used as their proof. Final review verdict:
+ACCEPTED WITH THE STATED GIVEN-SOURCE AND NORMAL-REPRESENTATION PREMISES.

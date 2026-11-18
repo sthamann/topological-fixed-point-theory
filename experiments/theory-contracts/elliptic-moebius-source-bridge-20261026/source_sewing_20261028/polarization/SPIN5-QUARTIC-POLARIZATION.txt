@@ -1,0 +1,160 @@
+SPIN5 QUARTIC POLARIZATION
+==========================
+
+Stand: 2026-10-28
+Urteil: DER KANONISCHE SPIN5 HODGE FUENFER IST KEIN FUENFER
+GEWOEHNLICHER QUARTISCHER POLYNOME AUF DER NATIVEN VIER. ER IST EIN
+FUENFDIMENSIONALER PLUECKER RELATIONSRAUM IM SCHUR22 KERN VON
+
+  Sym2(Sym2 V4) -> Sym4 V4.
+
+ALLE FUENF KONGRUENZEN VERSCHWINDEN AUF S=zz^T IDENTISCH. DER RAUM HAT
+MIT DEN TATSAECHLICHEN FUENF ORIGINALEN QUARTIK HESSEMATRIZEN SCHNITT
+NULL. DIE UNVERAENDERTE HOLOMORPHE CAR PUNKTSPALTUNG HEBT DIESE
+NULLRELATION NICHT AN, WEIL DIE VIER POSITIVEN ORIGINALSTROEME
+GEGENSEITIG KEINE SINGULAEREN KONTRAKTIONEN HABEN.
+
+1. Tatsaechliche urspruengliche Quartiken
+-----------------------------------------
+
+Der Checker liest die gepinnte Funktion process._code_basis. Ihre fuenf
+Wortmengen haben die Groessen
+
+  4, 12, 12, 12, 24
+
+und geben nach Kommutativierung genau
+
+  P0 = z0^4+z1^4+z2^4+z3^4,
+  P1 = z0^2 z1^2+z2^2 z3^2,
+  P2 = z0^2 z2^2+z1^2 z3^2,
+  P3 = z0^2 z3^2+z1^2 z2^2,
+  P4 = z0 z1 z2 z3.
+
+Die vorhandene positive Focknorm verwendet
+
+  f_i=P_i/sqrt(N_i),   N=(96,8,8,8,1).
+
+Damit sind die verglichenen Quartiken die wirklichen Prozessfelder und
+kein nachtraeglich passend gebauter Fuenfer.
+
+2. Richtig typisierte Spin5 Kongruenz
+-------------------------------------
+
+Der vorige Kanal verwendet Endomorphismen U^dagger C_m U auf Bell10.
+Eine quartische Polarisation ist ein anderer Typ. Hier muss die
+symmetrische Kongruenz verwendet werden:
+
+  D_m = F_R^T C_m F_R,                                 (1)
+
+wobei F_R die Spin5 Abbildung in einer expliziten orthonormalen Basis der
+kompakten reellen Form ist. Der Checker prueft
+
+  R^dagger R=I,
+  q conjugate(R)=R
+
+und benutzt in (1) die Transposition, nicht die Hermitesche
+Endomorphismenkonjugation.
+
+Alle D_m sind symmetrische Bilinearformen auf Sym2 V4. Ihr gemeinsamer
+Rang als Formenfamilie ist fuenf.
+
+3. Die entscheidende Nullidentitaet
+-----------------------------------
+
+Setze S=zz^T und schreibe s fuer seine zehn Sym2 Koordinaten. Dann gilt
+fuer jedes m exakt
+
+  s^T D_m s = 0.                                       (2)
+
+Der Checker expandiert alle fuenf Ausdruecke in den 35 Quartikmonomen.
+Jeder einzelne Koeffizient ist null. Das ist die Plueckerrelation fuer
+den durch F(S) erzeugten zerlegbaren Bivektor.
+
+Die Multiplikation
+
+  mu: Sym2(Sym2 V4) -> Sym4 V4
+
+hat exakt Rang35 und Kern20. Die fuenf D_m liegen vollstaendig in diesem
+Kern. Zusaetzlich liegt dort die Sp4 skalare Relation
+
+  tr((S Omega)^2).
+
+Der Checker beweist, dass diese Linie Sp4 invariant ist, dass der
+D_m Raum unter allen zehn sp4 Generatoren invariant ist und dass beide
+zusammen Dimension6 haben. Im verbleibenden Kernquotienten bleiben
+14 Dimensionen. Dies realisiert die erwarteten Dimensionen
+
+  20 = 1 + 5 + 14,
+
+ohne aus der Dimension allein eine Feldidentifikation abzuleiten.
+
+4. Vergleich mit den originalen 2+2 Hesseformen
+------------------------------------------------
+
+In der vorhandenen normierten Paarbasis
+
+  q_A=z^A/sqrt(A!),  |A|=2,
+
+lauten die tatsaechlichen Flattenings
+
+  H_i(A,B)=partial_(A+B) f_i(0)/sqrt(6 A! B!).           (3)
+
+Die fuenf H_i sind unabhaengig. Ihre Bilder unter mu haben gemeinsam
+Rang5. Der kombinierte Raum von D_m und H_i hat Dimension10. Daher gilt
+
+  span(D_0,...,D_4) intersect span(H_0,...,H_4) = 0.    (4)
+
+Die urspruenglichen Quartiken liefern den kanonischen Hodge Fuenfer also
+weder als gewoehnliche vollstaendige Polarisation noch als ihre bereits
+vorhandenen 2+2 Hesseformen.
+
+5. Warum die vorhandene holomorphe Punktspaltung nichts hinzufuegt
+-----------------------------------------------------------------
+
+Der Originaltransport aus native_folded_octic_origin.py gibt fuer die
+vier positiven Stroeme die Matrix A mit
+
+  A A^dagger=I4,
+  A A^T=0.                                               (5)
+
+Die zweite Identitaet bedeutet woertlich, dass ihre gegenseitigen
+holomorphen Strom OPEs keinen singulaeren Anteil haben. Deshalb ist das
+koinzidente normale Produkt ihrer positiven Polynome die gewoehnliche
+kommutative Multiplikation. Die Originalquelle selbst verwendet genau
+diese Tatsache fuer die lokalen Felder F_i=:f_i(H_+):.
+
+Die fermionische Punktspaltung und ihre bereits festgelegten endlichen
+Ableitungsgegenterme realisieren dieselbe bosonische Stromidentitaet.
+Eine identisch verschwindende Linearkombination positiver Strompolynome
+bleibt daher das Nullfeld. Auch gleichartig auf alle Faktoren angewandte
+Ableitungen aendern dies nicht, weil Ableitungen der verschwindenden
+gegenseitigen Kontraktion ebenfalls verschwinden.
+
+6. Enge Grenze des Ausschlusses
+-------------------------------
+
+Die vorhandene gemischte OPE F_i(z) F_j#(w) ist nicht null. Sie besitzt
+die bereits geprueften Kontraktionsklassen r0 bis r4, alle Taylorterme
+und die tatsaechliche Erasure20 Wirkung. Sie ist jedoch sesquilinear und
+lebt nicht in der holomorphen Kongruenz (1).
+
+Ein gemischtes adjungiertes Bein oder eine ungleich verteilte Ableitung
+kann die Multiplikationsnullrelation verlassen. Um daraus K5 zu machen,
+muessten Polordnung, Taylorgrad, Ableitungsverteilung und das konjugierte
+Bein festgelegt werden. In den geprueften Originalstellen gibt es keine
+Identitaet, die genau eine solche Komponente mit dem kanonischen Spin5 K5
+gleichsetzt. Diese Festlegung waere daher die erste zusaetzliche Wahl.
+
+Das Resultat ist ein Ausschluss fuer gewoehnliche Quartikpolarisation,
+die vorhandene 2+2 Hessefamilie und die unveraenderte rein holomorphe
+CAR Punktspaltung. Es ist kein allgemeines Verbot gemischter,
+separierter oder asymmetrisch derivierter OPE Komponenten.
+
+7. Ausfuehrbarer Beleg
+----------------------
+
+  check_spin5_quartic_polarization.py
+  spin5-quartic-polarization-results.json
+
+Der Checker prueft 86 exakte Aussagen und pinnt die Originalpolynome,
+die Spin5 Konstruktion sowie die vorhandenen CAR und OPE Quellen.

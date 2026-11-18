@@ -1,0 +1,52 @@
+{
+  "contract": "family-symmetry-gateb-20261005",
+  "date": "20261005",
+  "research_id": "SOURCE.FAMILY.SYMMETRY.AT_GATEB.01",
+  "question": "Which family group can be an exact symmetry of the common source process at the moment the Gate-B interaction acts?",
+  "verdict": "REAL_FAMILY_GROUP_REQUIRED",
+  "verdict_enum": [
+    "SU4",
+    "U3_OR_SU3",
+    "REAL_FAMILY_GROUP_REQUIRED",
+    "UNDECIDED"
+  ],
+  "verdict_scope": "Conditional on Theta_1 keeping its Delta N = +-4 (U(1) -> Z4) vertex for three light families; family groups acting linearly on the light families; source layers as declared (seam SU(4), matter selection, v117 transport).",
+  "mathematical_verdict": "CENTRE_CRITERION_G_CAP_SCALARS_IN_MU4; INVARIANTS_3x4: U3 0, SU3 0, SO3 3, A4 7, B3 4, Z4^3xS3 1; MATTER_SELECTION_STABILISER_U3; TRANSPORT_CENTRALISER_U1_REAL_TYPE_A4_MONOMIAL_BASIS; DECK_INTERTWINER_REAL_UP_TO_PHASE",
+  "summary_de": "Behaelt Theta1 fuer drei leichte Familien seinen Delta-N=4-Term (U(1) -> Z4, noetig, da ein 16 U(1)-Anomalien 16 hat), dann kann eine exakte Familiengruppe nur Skalare in mu4 enthalten: U(3) und SU(3) (Zentrum Z3) verbieten jeden Delta-N=4-Term (Invarianten in 3^{x4}: 0), SO(3), A4, signierte Permutationen und Z4^3 x S3 erlauben ihn. Quellenschichten: Naht SU(4) -> Materieauswahl u(3) (inkl. U(1)) -> Flavor-Transport (Zentralisator nur U(1), reeller Typ, A4-monomiale Basis, Deck reell bis auf Phase). Reihenfolge: SU(4) -> U(3) -> reelle Flavorstruktur -> Gate B -> Flavor/Yukawa. Der SU(3)-Singulett-Kandidat (weggelassene Linie) bezieht sich auf eine Gruppe, die bei Gate B nicht exakt sein kann.",
+  "gates": [
+    "T4",
+    "T6"
+  ],
+  "kills": [
+    "Exact SU(4), U(3) or SU(3) family symmetry at the Gate-B stage (no Delta N = 4 invariant / scalars outside mu_4).",
+    "Classifying the Gate-B mediator under SU(3) (omitted-line singlet) or SU(4) neutrality."
+  ],
+  "resolved": [
+    "Centre criterion for the family group at Gate B.",
+    "A4-monomial basis of the v117 transport (a4_monomial_basis.npy).",
+    "Ordering of the family reduction relative to Gate B."
+  ],
+  "imported_premises": [
+    "one 16 has U(1) anomaly sums 16 (symmetric mirror gap needs U(1) -> Z4)",
+    "QV3b unique Delta N = 4 invariant",
+    "SG5 Z4 index"
+  ],
+  "related_contracts": [
+    "mediator-covariance-20261005",
+    "mediator-rep-sieve-20261005",
+    "interaction-mediator-20261005",
+    "tfpt-full-process-20261002"
+  ],
+  "checker": "family_symmetry.py",
+  "results": "family_symmetry_results.json",
+  "proof": "README.md",
+  "firewall": "experiments",
+  "promotion": false,
+  "complete_TFPT_solution": false,
+  "physical_gates_closed": [],
+  "claims_tested": [],
+  "claims_scoped_not_closed": [
+    "AX.P1.01",
+    "AX.P2.01"
+  ]
+}

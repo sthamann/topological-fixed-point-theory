@@ -1,0 +1,63 @@
+{
+  "status": "Q_RUNTIME_WIRED_NO_PHYSICAL_COMPLETION",
+  "copy_unit_directories": [
+    "runtime",
+    "domain",
+    "checks"
+  ],
+  "original_P_unchanged": true,
+  "portable_P_unchanged": true,
+  "P_source_consumer_copied_byte_identically": true,
+  "checks": {
+    "controls": 23,
+    "passed": 23,
+    "log": "checks/control-run.log",
+    "actual_runtime_binding_positive_and_negative": true
+  },
+  "executed_runtime_paths": [
+    {
+      "domain": "native-diagnostic-v1.json",
+      "exit_code": 2,
+      "out": "runs/native-original-start",
+      "status": "ORIGINAL_SOURCE_INTEGRATION_NOT_STARTED",
+      "missing": "original_blocked_fiber_packet; five check inputs MISSING_INPUT"
+    },
+    {
+      "domain": "arithmetic-control-domain-v2.json",
+      "exit_code": 0,
+      "out": "runs/arithmetic-required-coverage",
+      "status": "SOURCE_AGGREGATED_REQUIRED_CHECKS_PASSED"
+    },
+    {
+      "domain": "arithmetic-required-five-domain.json",
+      "exit_code": 2,
+      "out": "runs/arithmetic-required-five",
+      "status": "SOURCE_AGGREGATED_REQUIRED_CHECKS_NOT_PASSED",
+      "four_values_still_computed": true
+    }
+  ],
+  "whole_physical_search_completed": false,
+  "files": {
+    "runtime/assemble.py": "86d8563fb39be6293b47bac9ad528e5ae5e1210e9d4e193cc1ed0ebadcda0dbe",
+    "runtime/check_assembly.py": "f53275615c8933cc78e076784db379d156f3fc9c42b0958ad5fba6369d130060",
+    "runtime/field_problem.py": "e1f4240836c906c5a0a7a39d379fe65e4f5474f4750d3aaf6423fde2625dd0bc",
+    "runtime/launch.py": "7cec5f0c33dee39ea341485b947c7e14538cd05e08d3e0035d5e5e1d8ac8ec91",
+    "runtime/original_source_adapter.py": "2a42bddf5f0d037009fca673ccb2c4ac4b729f6b7c87445a4f9f244d72ed4962",
+    "runtime/repo_paths.py": "e240a2ade4a0e9a978f91be29bff52686cd8c6de454602decbbff1483cf59b3d",
+    "runtime/source_adapter.py": "a4f7cf0b5924b6e487b573ef3e2a7fd45e890cd16e9f8811142c463e4cf21a73",
+    "domain/arithmetic-control-bound-v2.json": "d4a7574a605bf7879b8e098023c42e447c512c9814cc75a4ddf5af8c44b5cf58",
+    "domain/arithmetic-control-domain-v2.json": "fd34eb2f186cda616cd24c0c0d8aaef39a0aac971d9b412840927235dd01ab29",
+    "domain/arithmetic-required-five-bound.json": "32cea56e1602739c9187a66535a7b3e05802a99491d4b1ce7e52024f3c083d33",
+    "domain/arithmetic-required-five-domain.json": "22d8861dd3608fb453840d9c869073ba6be0fe3643ee4203c747d2ac2baafa80",
+    "domain/make_diagnostic_inputs.py": "9c2e8d435f309e8896a7a4e29df8f67b728cf5a47365b320bb63c2ae31dc56d2",
+    "domain/native-diagnostic-v1.json": "7fbe04de691cfedbde4eec25735727e86daf06aaedba9ecd8b314a4e0cc2d9bf",
+    "checks/ORIGINAL-CHECKS-AND-SCOPE.md": "81bbb240ddae517a349dfea5a462c7c76e69a4b946d21c3cbda334c36160e29f",
+    "checks/arithmetic-control-bundle.json": "7dc363e5394723845711bdeb1b5399bef243a893b48da59c769eac081a92d2ef",
+    "checks/check_original_checks.py": "b23bec2e89fe7ba2ac3876cf6fb54f99a5c6f08b1ea6245e7e015b55f0674d90",
+    "checks/control-run.log": "5cdb7afdf6662611c4a780ff00b6ea10d2d50c08a54bcac1c1c0e89229b0c28b",
+    "checks/controls.json": "5cdb7afdf6662611c4a780ff00b6ea10d2d50c08a54bcac1c1c0e89229b0c28b",
+    "checks/original_checks.py": "bd572e2a3cc4b82dbb139e6797bf0a39d5ce4863315dcb698784619c1e331a3d",
+    "checks/source-provenance.json": "a2afd5b3f0a604497f1a961f25457b6c9c431b6673249f805c924214dd36d1ac",
+    "checks/symbolic-hermiticity-guard.json": "9989845991a30f169da7873a1c7ab5a827cc33ec93031ccd1b4193ed4adc16a4"
+  }
+}

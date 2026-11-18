@@ -1,0 +1,42 @@
+{
+  "steps": [
+    {
+      "step": "F1.frame = vierbein: with unit vectors n_i the controlled partial shifts stay unitary and the IR dispersion is omega^2 = k^T G k, G_ij = n_i.n_j (inverse spatial metric), for random frames",
+      "pass": true,
+      "detail": "max relative IR deviation 3.7e-04->1.8e-04, 5.9e-04->2.9e-04, 2.3e-04->1.2e-04, 5.0e-04->2.5e-04"
+    },
+    {
+      "step": "F2.class restriction: G_ii = 1 for every unit frame, so det G <= 1 (Hadamard), equality only for orthonormal frames: angles are free, a conformal factor or lapse is not representable in this class",
+      "pass": true,
+      "detail": "det G = 0.151, 0.703, 0.771, 0.319"
+    },
+    {
+      "step": "F3.sheet identity: every step flips the sheet, so s U s = -U for ARBITRARY on-site coins (position space, random coins); with the +-omega pairing of the mass-coin walks the Floquet Dirac sea has quasi-energy exactly -pi per cell for every frame, uniform mass and sheet-odd mass",
+      "pass": true,
+      "detail": "E_vac over 3 frames x 3 coin choices: max |E + pi| = 1.2e-14"
+    },
+    {
+      "step": "F4.CORRECTED: the full Floquet-sea energy is -pi per cell for every frame, coin AND magnetic field (Landau chain, three fluxes) although a continuum Dirac sea responds to B: the measure is blind (temporal-doubler pairing) and does not decide induced frame or gauge dynamics; the IR-restricted measure (|omega| < pi/2) does respond to B",
+      "pass": true,
+      "detail": "full sea per site at B = 2 pi p/240, p = 3, 6, 12: [np.float64(-3.1415926536), np.float64(-3.1415926536), np.float64(-3.1415926536)]; IR-restricted: [np.float64(-1.10511), np.float64(-1.10073), np.float64(-1.08531)]"
+    },
+    {
+      "step": "F5.(statement) Weinberg-Witten / spin 2: the IR walk is a free Dirac field with covariant conserved T_munu, so massless spin 2 cannot be a composite of walk fields; the graviton candidate is the frame field itself (fundamental: the evaded premise); whether the walk induces its dynamics is undecided (F4); curvature response and GRAV.SPIN2.EMERGENCE.01 acceptance tests not performed; T7 open",
+      "pass": true,
+      "detail": "no spin-2 or TOE marker moves"
+    }
+  ],
+  "passed": 5,
+  "total": 5,
+  "E_vac": [
+    -3.1415926535897807,
+    -3.1415926535897807,
+    -3.1415926535897807,
+    -3.1415926535897807,
+    -3.1415926535897807,
+    -3.1415926535897807,
+    -3.1415926535897807,
+    -3.1415926535897807,
+    -3.1415926535897807
+  ]
+}

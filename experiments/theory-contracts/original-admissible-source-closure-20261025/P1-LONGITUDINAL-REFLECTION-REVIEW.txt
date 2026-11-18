@@ -1,0 +1,210 @@
+UNABHÄNGIGE PRÜFUNG DER LONGITUDINALEN P1 REFLEXION
+===================================================
+26. Oktober 2026
+
+Urteil
+------
+
+Der Kandidat
+
+  Theta_x = K R_x,        (R_x psi)(x,w)=psi(-x,w)
+
+ist auf demselben flachen Möbius Diracraum eine echte Verbesserung gegenüber
+A=e^(i pi x) sigma_1 K. Er erhält für c=+i oder -i und b=+1 oder -1 exakt
+dieselbe H1 Domäne, kommutiert mit dem vollständigen selbstadjungierten
+Diracoperator und erhält daher dessen ganze positive und negative
+Spektralpolarisation. Die zugehörige freie quasifreie Dirac See besitzt eine
+antiunitäre Fockimplementierung ohne Teilchen Loch Mischung und ohne
+Shale Stinespring Rest.
+
+Dies schließt den bisher gescheiterten Zustand und Zeit Test auf dem
+vorliegenden Möbius Operator. Es identifiziert Theta_x noch nicht mit der im
+operationalen P1 Seed bereits vorausgesetzten Reflexion. Dafür fehlt in den
+gelesenen Originalen die Abbildung, welche die longitudinale x Translation,
+die beiden x Halbregionen und die volle Möbius CAR Kovarianz auf
+(tau_t, A_loc^+, omega) desselben Seedobjekts abbildet. Reflexionsinvarianz
+allein beweist außerdem keine Osterwalder Schrader Positivität des vollen
+zweidimensionalen CAR Kerns.
+
+1. Exakte Rechnung auf der festen Pin Domäne
+---------------------------------------------
+
+Die Primärquelle verwendet
+
+  tau(x,w)=(x+1,-w),
+  psi(x+1,-w)=c sigma_1 psi(x,w),
+  D=-i(sigma_1 partial_x+sigma_2 partial_w),
+  sigma_1 psi(x,+/-1)=b psi(x,+/-1).
+
+Hier gilt r_x tau=tau^(-1) r_x. Für eine äquivariante Funktion folgt
+
+  (Theta_x psi)(x+1,-w)
+    = overline{psi(-x-1,-w)}
+    = bar(c)^(-1) sigma_1 overline{psi(-x,w)}
+    = c sigma_1 (Theta_x psi)(x,w).
+
+Der letzte Schritt benutzt |c|=1. Gerade für c=+/-i kompensiert die
+Umkehrung des Deckgenerators die komplexe Konjugation. Die reelle Matrix
+sigma_1 erhält zugleich die Randbedingung mit demselben b. R_x und K sind
+isometrisch auf H1, und Theta_x^2=1.
+
+Auf glatten Domänenvektoren ist
+
+  D Theta_x psi
+    = i sigma_1 overline{partial_x psi(-x,w)}
+      - i sigma_2 overline{partial_w psi(-x,w)}
+    = Theta_x D psi,
+
+weil bar(sigma_2)=-sigma_2. Die geschlossene Operatorgleichung folgt aus der
+Domäneninvarianz und dem glatten Core. Für jede reelle beschränkte
+Borelfunktion f gilt deshalb
+
+  Theta_x f(D) Theta_x = f(D).
+
+Insbesondere bleiben P_-(D), P_+(D), |D| und exp(-t|D|) erhalten. Für die
+unitäre D Entwicklung kehrt die Antiunitarität die Zeit um:
+
+  Theta_x exp(i t D) Theta_x = exp(-i t D).
+
+Dasselbe gilt für die longitudinale Translationsgruppe. Da c=+/-i und b
+reell ist, hat die Primärquelle keinen Nullmodus, so dass keine Konvention am
+Spektralendpunkt benötigt wird.
+
+Folge für die freie CAR Darstellung: Theta_x ist blockdiagonal bezüglich der
+gesamten Polarisation. Seine antiunitäre zweite Quantisierung existiert
+kanonisch auf der polarisierten Fockdarstellung und lässt den Vakuumstrahl
+fest. Anders als bei A gibt es weder einen pi sigma_1 Korrekturterm noch eine
+nicht Hilbert Schmidt Teilchen Loch Abweichung.
+
+2. Welche Reflexion damit getroffen wird
+-----------------------------------------
+
+Die archivierte Seeddefinition führt
+
+  (A_loc, tau_t, Theta, omega, [u_Sigma], D_coll)
+
+als sechs gemeinsam zu liefernde Daten. Theta ist dort die positive Zeit
+Reflexion des euklidischen lokalen Netzes. D_coll ist ein eigener
+erstordentlicher elliptischer Kragengenerator. Erst aus dem einseitigen
+Kragendatum werden durch Verdopplung die geometrische Deckinvolution
+tau_dbl und auf den Cauchydaten die Polarisation iota_C=2P_C-1 abgeleitet.
+Die Quelle warnt ausdrücklich vor einer Gleichsetzung dieser Rollen.
+
+Damit ist die longitudinale Spiegelung x -> -x ein typgerechter Kandidat für
+das operative Theta. Sie muss nicht die normale Kragenspiegelung in w sein.
+Sie ist auch nicht ohne weitere Abbildung tau_dbl oder iota_C. Falls derselbe
+Möbius Operator tatsächlich D_coll des Seedobjekts ist und die gewählte
+positive x Halbregion dessen positive Zeitregion ist, liefert die obige
+Rechnung den verlangten Zustand und Zeit Intertwiner. Diese beiden
+Identifikationen stehen in den gelesenen Originalstellen nicht.
+
+Eine weitere geometrische Feinheit bleibt relevant. Auf dem kompakten
+Möbiusband besitzt r_x zwar eine echte fixierte Querstrecke, am zweiten Schnitt
+wirkt aber die Möbius Identifikation mit w -> -w. Der übliche statische
+Dirac Reflexionspositivitätssatz kann daher nicht ohne Prüfung seiner
+Halbraum und Randannahmen eingesetzt werden. Jaffe und Ritter beweisen
+Dirac Reflexionspositivität für einen statischen Raum mit einer spezifizierten
+Zeitnullfläche und passender Clifford Reflexion. Ihre Voraussetzungen sind
+kein automatischer Satz über diese kompakte Pin Randrealisierung.
+
+3. Zustandssymmetrie ist noch nicht die volle fermionische OS Positivität
+--------------------------------------------------------------------------
+
+Die Operatorrechnung beweist
+
+  omega o Theta_x = conjugate(omega)
+
+für die freie quasifreie See und erhält die Lokalisation durch
+supp(Theta_x f)=r_x supp(f). Sie beweist für sich allein nicht
+
+  omega(Theta_x(F) F) >= 0
+
+für alle positiven Zeitwörter F.
+
+Der vorhandene Checker verification/v519_woit_theta_rp_free.py zeigt den
+zusätzlichen fermionischen Inhalt deutlich. Seine Reflexion kehrt die
+Reihenfolge eines CAR Wortes um und trägt den durch Hermitizität und
+Positivität ausgewählten Faktor eta=+/-i. Er beweist die vollständige freie
+Halbalgebra bei N=8 und die Positivität des reduzierten kontinuierlichen
+chiralen Kerns. Das ist starke kompatible Evidenz für den bereits vorhandenen
+NS Quellenpfad. Es ist kein Beweis, dass der volle zweidimensionale Möbius
+Dirackern mit seiner Randdomäne dieselbe positive Form besitzt. Für den
+beobachtbaren geraden Teil muss die induzierte gradierte Reflexion ebenfalls
+explizit verwendet werden; die bloße zweite Quantisierung von K R_x ersetzt
+diesen OS Form Test nicht.
+
+4. Kleinster verbleibender Originaltest
+----------------------------------------
+
+Der nächste Test braucht keine neue Quelle. Auf dem tatsächlich behaupteten
+P1 Bild sind genau diese drei Gleichungen zu zeigen:
+
+  iota(tau_x,t(A)) = tau_t(iota(A)),
+  iota(Theta_x(A)) = Theta(iota(A)),
+  omega_P1(iota(Theta_x(F) F)) >= 0
+
+für alle F in einer dichten positiven x Halbalgebra des bereits vorhandenen
+geraden CAR Netzes. Dazu muss iota die reale Möbius Unterstützung erhalten.
+Für das gefaltete Stromnetz bedeutet dies weiterhin die acht Bogen
+Unterstützung, nicht eine stillschweigende punktlokale c1 gleich c8
+Identifikation. Der letzte Ausdruck ist der entscheidende Positivitätstest.
+Besteht er zusammen mit der vorhandenen D Domänengleichheit, ist Theta_x der
+fehlende operative Reflexionspfeil. Ohne die ersten beiden Abbildungen bleibt
+der Operatorbefund eine positive lokale Quellenprüfung und noch keine
+vollständige P1 Rekonstruktion.
+
+Der Calderónrange braucht nicht aus einem Bulk Gegenbeispiel ausgeschlossen
+zu werden. Hier liegt sogar ein echter Bulk Intertwiner vor. Eine Aussage über
+P_C folgt dennoch erst, wenn derselbe Operator als ursprünglicher
+einseitiger Kragen und dieselbe Randspur identifiziert sind.
+
+5. Quellen
+----------
+
+Atlasrahmen: Revision 33b9a0d8fee1fb0907a5cb87, nur lesend. Die gezielte
+Suche fand den vorhandenen freien WOIT Reflexionspfad und die getrennte
+operative Seeddefinition, aber keine bereits geprüfte Gleichsetzung der
+longitudinalen Möbius Halbregionen mit dem ursprünglichen P1 positiven
+Zeitnetz.
+
+* Primärgeometrie und feste Domäne:
+  A. Chakraborty, Pin Equivariance and Local Dirac Boundary Problems on the
+  Flat Möbius Band, arXiv:2610.03745v1, insbesondere Gleichungen 1, 9, 14,
+  15 und Proposition 8.3:
+  https://arxiv.org/html/2610.03745v1
+
+* Operativer Seed und Vorwärtsfunktor:
+  documents/archive--tfpt-45--source_extracts--01_boundary_kernel_source/
+  sections/002-section-intrinsic-closed-branch-and-canonical-rigid-obje.tex,
+  Zeilen 103 bis 143.
+
+* Getrennte Kragenverdopplung, Deckinvolution und Calderónpolarisation:
+  documents/archive--tfpt-45--source_extracts--01_boundary_kernel_source/
+  sections/001-section-primitive-core-and-carrier-interface-handoff.tex,
+  Zeilen 65 bis 80 und 94 bis 174.
+
+* Vorhandener freier fermionischer Reflexionspositivitätstest:
+  verification/v519_woit_theta_rp_free.py, Zeilen 730 bis 870 und 1016 bis
+  1075.
+
+* Vergleichssatz für statische Diracfelder:
+  A. Jaffe und G. Ritter, Reflection Positivity and Monotonicity,
+  J. Math. Phys. 49 (2008) 052301, Abschnitt 4.2:
+  https://arxiv.org/html/0705.0712v2
+
+Endstatus
+---------
+
+PROVED: feste Pin und Randdomäne, H1, voller Diracoperator, gesamte
+Polarisation, freie Zustandsinvarianz, Zeitumkehr und Fockimplementierung.
+
+TYPE RESOLVED: Theta_x gehört in den operativen Theta Slot. Es muss nicht mit
+der normalen Deckinvolution oder der Calderónpolarisation gleichgesetzt
+werden.
+
+CONDITIONAL: Identifikation mit dem ursprünglichen P1 Theta nach Nachweis der
+gleichen positiven Zeitregion, lokalen Netzeinbettung und desselben
+zweidimensionalen CAR OS Kerns.
+
+OPEN: volle fermionische Reflexionspositivität dieser Möbius Randrealisierung,
+der ursprüngliche P1 Lokalitätspfeil und die geladenen Nahtsektoren.

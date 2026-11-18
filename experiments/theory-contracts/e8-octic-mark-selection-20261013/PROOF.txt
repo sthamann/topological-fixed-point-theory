@@ -1,0 +1,50 @@
+E8 octic invariant: smallest decisive mark-selection probe
+Date: 2026-10-13
+
+Question
+Can the first non-isotropic Weyl invariant S8(z)=sum_{beta in Phi(E8)}(beta·z)^8 select a 5+3 / D5+A3 or internal 3+2 marking by constrained extremization alone?
+
+Prior-route check
+The TFPT theory-graph query `tried 'degree.?8|octic|3+2 marking|D5.*A3 direction|Weyl invariant'` returned zero relevant attempts; `kills` returned only unrelated quartic/RH entries. The currently generated graph was valid (5983 nodes, 64202 edges). The graph says this specific root-moment selection route is untried; that is not a novelty guarantee outside the queried record.
+
+Source and method
+Used the codegraph to locate and read the existing, unchanged `e8_roots()` in `/Users/stefanhamann/Projekte/tfpt-theoryv4/verification/v1_e8_glue.py:25`. It returns the 240 roots (112 integer D8 roots and 128 half-integer roots). The workspace probe imports that exact function, doubles root coordinates to integers, and evaluates moments/derivatives with exact rationals. No source Hamiltonian, fitted coefficient, or random optimizer was added. Files: `e8_octic_probe.py`, `e8_octic_results.json` in this workspace `work/` folder. The probe also computes exact S10, S12, and S14 as orbit-separation diagnostics only; no higher-degree potential or optimization was introduced.
+
+Exact calculation on the unit sphere S7
+For both explicit zero-sum marking representatives
+  z_53 = (3,3,3,3,3,-5,-5,-5)/sqrt(120),
+  z_32 = (2,2,2,-3,-3,0,0,0)/sqrt(30),
+exact root sums give
+  S2=60, S4=36, S6=30, S8=2197/75 ≈ 29.2933333333. The additional exact orbit-diagnostic moments also agree: S10=311/10, S12=259489/7500, S14=16020911/405000.
+The first three are constant across tested unit directions, as expected from E8's lower-degree isotropy. Both proposed marks satisfy the exact critical-point equation on S7: tangent-gradient norm squared is exactly zero, with Lagrange multiplier z·grad(S8)=17576/75.
+
+The constrained Hessian (Hess(S8)−λI)|T_z S7 has exact eigenvalues
+  −256/15 (multiplicity 2), −48/5 (multiplicity 1), +768/25 (multiplicity 4).
+Thus both marks are saddles on the full sphere, not maxima or minima. Their orthogonal E8 root sets each have 28 roots, split into connected components of sizes 20+6+2, i.e. A4+A2+A1. They therefore do not have the D5+A3 root centralizer (40+12=52 roots) that would identify that marking through the stabilizer of a single direction. This does not rule out a tensor/subgroup marking that is not the stabilizer of one vector.
+
+There is an exact collision: these two coordinate encodings of 5+3 and 3+2 receive the same moments through degree 14, tangent Hessian spectrum, and root-centralizer type. The proposed irrationality argument for separating their W(E8) orbits does not apply: the first vector has norm squared 120 (not 150), so both unit-coordinate vectors are rational multiples of 1/sqrt(120). Equality of these tested invariants does not prove orbit equivalence or inequivalence. In either case, S8 fails to distinguish the encodings.
+
+Competing extrema
+Two explicit full-sphere competitors from the same exact calculation:
+* z=e1: S8=57/2; tangent Hessian eigenvalues 24 (multiplicity 7), a strict local minimum; 84 perpendicular roots (D7).
+* z=(1,...,1)/sqrt(8), a root direction: S8=39; tangent Hessian eigenvalues −144 (multiplicity 7), a strict local maximum; 126 perpendicular roots (E7).
+The target marks lie between these values and are saddles. Hence the simplest rule “choose the S8 extremum on the unit sphere” selects the local root-ray extrema above, not either requested mark.
+
+Even if one first imposes the 5+3 permutation-fixed stratum z=(1^5,t^3)/sqrt(5+3t^2), its stationarity numerator factors exactly as
+  1080 t(t−5)(t−1)(t+1)(t+3)(3t+1)(3t+5).
+The zero-sum 5+3 ratio t=−5/3 is a stationary point with S8=2197/75 and second derivative −81/100 along this stratum. It is not the stratum's maximizing direction: t=1 gives S8=39 (a larger maximum). It is also not the minimum (e.g. t=−1 gives S8=933/32 < 2197/75). Imposing the 5+3 stratum already supplies the marking, so it cannot be counted as an invariant-derived selection.
+
+Verdict and scope
+This is a decisive negative for the specific proposal “use the unmodified E8 root S8 as a scalar extremum selector for these natural 5+3 and 3+2 vectors”: both natural representatives are full-sphere saddles, score-identical, and have the wrong vector centralizer. It does not rule out a different orbit/tensor observable, a constrained problem whose constraints are independently derived, or another mechanism. Crucially it does not claim that TFPT/source principles select S8 as a potential. It is an exact structural diagnostic only; no ledger or paper status changed.
+
+Additional exact finite-holonomy dictionary:
+No nonzero continuous Cartan direction can have a rank-eight root centralizer:
+all its commuting roots lie in its rank-seven perpendicular hyperplane.
+A group-valued finite holonomy is different: roots commute if their phase is1,
+allowing nonzero integral pairings. t=(0^5,1/2,1/2,1/2) in turns yields
+root grade counts 52,64,60,64 at phases1,i,-1,-i; adding eight Cartan directions
+reproduces the 60+64+60+64 E8 Lie decomposition. Phase1 roots are D5+D3.
+The infinitesimal direction alone has only46 orthogonal roots (D5+A2).
+Thus the full-rank glue centralizer has the correct finite clock dictionary;
+it cannot be selected as the stabilizer of a single nonzero continuous direction.
+The 5+3 split in t is still chosen; this does not derive its physical selection.

@@ -1,0 +1,56 @@
+{
+  "source": "verification/v330_qgamb_admissible_measure.py:symmetric_transfer,correlator",
+  "scope": "Entire existing three-state symmetric seam source. Not the primitive S_adm, its field map or 3+1D dynamics.",
+  "checks": {
+    "projectors_sum_identity": true,
+    "projectors_are_orthogonal": true,
+    "spectral_weights_exact_all_diagonal_insertions": true,
+    "actual_v330_constructor_matches_exact_matrix": true,
+    "actual_v330_perron_vector_matches": true,
+    "actual_v330_rates_match": true,
+    "strictly_positive_transition_entries": true,
+    "rows_sum_one": true,
+    "stationary_label_weights_one_third": true,
+    "all_moments_symbolic_0_to_7": true,
+    "empty_mean_subtraction_keeps_two_connected_weights": true,
+    "original_correlator_matches_closed_connected_formula": true,
+    "identity_shift_leaves_connected_weights": true,
+    "coordinate_diagonals_separate_original_three_basis_states": true,
+    "whole_two_step_label_law": true
+  },
+  "passed": 15,
+  "total": 15,
+  "T_exact": [
+    [
+      "1651/4374",
+      "1267/4374",
+      "728/2187"
+    ],
+    [
+      "1267/4374",
+      "1651/4374",
+      "728/2187"
+    ],
+    [
+      "728/2187",
+      "728/2187",
+      "731/2187"
+    ]
+  ],
+  "weights_spectral_A_B_C": [
+    "(a + b + c)**2/9",
+    "(a - b)**2/6",
+    "(a + b - 2*c)**2/18"
+  ],
+  "stationary_coordinate_weights": [
+    "1/3",
+    "1/3",
+    "1/3"
+  ],
+  "whole_history_law": "omega(E_i0 T^n1 E_i1 ... T^nk E_ik)=(1/3) product_j (T^nj)[i_(j-1),i_j]",
+  "not_derived": [
+    "No identity with primitive S_adm",
+    "No independently chosen new state or measure",
+    "No arbitrary diagonal label weight interpreted as an interaction coefficient"
+  ]
+}

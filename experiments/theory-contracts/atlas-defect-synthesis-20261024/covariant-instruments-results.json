@@ -1,0 +1,313 @@
+{
+  "arithmetic": "exact rationals and algebraic numbers; no floating point",
+  "channel": {
+    "exact_spectrum_on_End_H5": {
+      "0": 19,
+      "1": 1,
+      "p-1/5": 5
+    },
+    "forgotten_outcome_choi_formula": "J_p = ((5p-1)/4) J_Lueders + ((1-p)/4) I25",
+    "forgotten_outcome_choi_rank": {
+      "0<p<1": 25,
+      "p=0": 24,
+      "p=1": 6
+    },
+    "forgotten_outcome_choi_spectrum": {
+      "(1-p)/4": 19,
+      "(15p+1)/20": 5,
+      "p": 1
+    },
+    "formula": "Phi_p = ((5p-1)/4) Phi_Lueders + ((1-p)/4) Tr(rho) I5",
+    "p=1_is_Lueders": true,
+    "spectral_subspace_ranks": {
+      "identity": 1,
+      "residual": 19,
+      "standard": 5
+    },
+    "stationarity_reason": "p-1/5 lies in [-1/5,4/5], so eigenvalue 1 is simple",
+    "tagged_and_forgotten_kraus_ranks_are_distinct_notions": true,
+    "unique_stationary_density_for_0_le_p_le_1": [
+      [
+        "1/5",
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        "1/5",
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        "1/5",
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        "1/5",
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        "1/5"
+      ]
+    ]
+  },
+  "claim": "complete finite G31-covariant instrument classification for the native rank-one six-simplex POVM",
+  "classification": {
+    "commutant_basis": [
+      "I5",
+      "P_a"
+    ],
+    "complete_positive_parameter_interval": "0 <= p <= 1",
+    "instrument_formula": "I_a(rho) = Tr(E_a rho) sigma_a",
+    "minimal_kraus_rank": {
+      "0<p<1": 5,
+      "p=0": 4,
+      "p=1": 1
+    },
+    "minimal_tagged_environment_is_additional_assumption": true,
+    "minimal_tagged_environment_selects": "p=1",
+    "one_kraus_or_pure_output_is_additional_assumption": true,
+    "one_kraus_or_pure_output_selects": "p=1",
+    "primitive_P1_implies_one_kraus": false,
+    "projector_formula": "P_a = (6/5) E_a",
+    "rank_one_effect_implication": "every CP instrument operation with effect E_a is measure-and-prepare",
+    "stabilizer_commutant_dimension_over_Q": 2,
+    "stabilizer_distinct_transpositions": 10,
+    "stabilizer_marked_reflections": 40,
+    "state_block_eigenvalues": {
+      "P_a_rank_1": "p",
+      "orthogonal_rank_4": "(1-p)/4"
+    },
+    "state_formula": "sigma_a(p) = p P_a + (1-p)(I5-P_a)/4",
+    "tagged_instrument_total_kraus_rank": {
+      "0<p<1": 30,
+      "p=0": 24,
+      "p=1": 6
+    }
+  },
+  "native_input": {
+    "all_60_effect_covariances": true,
+    "effect_rank": 1,
+    "effect_trace": "5/6",
+    "hilbert_dimension": 5,
+    "outcome_count": 6,
+    "transitive_outcome_action": true
+  },
+  "rational_endpoint_choi": {
+    "choi_formula": "J(I_a) = E_a^T tensor sigma_a",
+    "endpoints": {
+      "0": {
+        "all_six_outcome_choi_entries_rational": true,
+        "input_partial_trace_is_H5_identity": true,
+        "outcome_choi_rank": 4,
+        "output_partial_trace_is_H5_identity": true,
+        "total_choi_rank": 24,
+        "total_choi_sha256": "0cd78eb8b248730c2b3e2e31df1ec88a17712a714392ffe20e4e99d2516786f3",
+        "total_choi_trace": 5
+      },
+      "1": {
+        "all_six_outcome_choi_entries_rational": true,
+        "input_partial_trace_is_H5_identity": true,
+        "outcome_choi_rank": 1,
+        "output_partial_trace_is_H5_identity": true,
+        "total_choi_rank": 6,
+        "total_choi_sha256": "196ec0adb3df0202312cd9aea4375aec8375457fa11b439892574e7ec57eb7ba",
+        "total_choi_trace": 5
+      }
+    },
+    "frame": "the same native H5 represented as the zero-sum subspace of Q^6",
+    "kraus_formulas": {
+      "p=0": "M_{a,r} = (1/2) v_{a,r} u_a^T for any orthonormal basis v_{a,r} of u_a^perp intersect H5",
+      "p=1": "M_a = sqrt(6/5) u_a u_a^T"
+    },
+    "native_to_frame_gram_identity": "Gram(u_a) = Gram(q_a)/12",
+    "positivity_certificate": "E_a, P_a, and Q-P_a are positive orthogonal projectors up to positive rational scale"
+  },
+  "repeated_outcomes": {
+    "markov_state_count": 6,
+    "p=1_joint_diagonal": "5/36",
+    "p=1_joint_off_diagonal": "1/180",
+    "p=1_matches_Omega_two_site_numbers": true,
+    "stationary_joint_diagonal": "5p/36",
+    "stationary_joint_off_diagonal": "(6-5p)/180",
+    "temporal_match_proves_entanglement": false,
+    "transition_diagonal": "5p/6",
+    "transition_off_diagonal": "(6-5p)/30",
+    "uniform_stationary_distribution": [
+      "1/6",
+      "1/6",
+      "1/6",
+      "1/6",
+      "1/6",
+      "1/6"
+    ]
+  },
+  "scope": {
+    "complete_within": "CP instruments on the native H5 with the fixed six effects and their actual G31 outcome covariance",
+    "does_not_derive": [
+      "which value of p is physically realized",
+      "a one-Kraus or pure-output principle from P1 primitiveness",
+      "physical time, rates, spacetime, or an entanglement source",
+      "complete state tomography or reconstruction of unmeasured GNS coherences"
+    ]
+  },
+  "sources": {
+    "doily_quartic_bridge.py": "b99af5f633f10e779454a3f8957b126b0aebf36e07ea24dcba1205bcf1ac8584",
+    "tfpt_explorer/process.py": "e8db5fcd999c9d4c34fbee548aa2c85e1a515cf03663a62355533439ae0f1c94",
+    "tfpt_explorer/twisted_source.py": "4f7b809593085aa499a1914a3bc5b29ebbf8c4131bf7e99deb3cb89df49788ad"
+  },
+  "status": "PASS",
+  "tomography_counterexample": {
+    "all_finite_outcome_word_laws_equal_for_rho_plus_minus": true,
+    "all_six_Tr_Ea_X": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "blind_coherence": [
+      [
+        0,
+        "I",
+        0,
+        0,
+        0
+      ],
+      [
+        "-I",
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    ],
+    "both_density_spectra": {
+      "1/10": 1,
+      "1/5": 3,
+      "3/10": 1
+    },
+    "both_first_outcome_distributions": [
+      "1/6",
+      "1/6",
+      "1/6",
+      "1/6",
+      "1/6",
+      "1/6"
+    ],
+    "complete_GNS_crossword_reconstruction": false,
+    "complete_state_tomography": false,
+    "effect_operator_span_dimension": 6,
+    "finite_word_probability_formula": "Pr(a1...an|rho) = Tr(E_a1 rho) product_{k=2}^n T[a_{k-1},a_k]",
+    "full_operator_space_dimension": 25,
+    "rho_minus": [
+      [
+        "1/5",
+        "-I/10",
+        0,
+        0,
+        0
+      ],
+      [
+        "I/10",
+        "1/5",
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        "1/5",
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        "1/5",
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        "1/5"
+      ]
+    ],
+    "rho_plus": [
+      [
+        "1/5",
+        "I/10",
+        0,
+        0,
+        0
+      ],
+      [
+        "-I/10",
+        "1/5",
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        "1/5",
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        "1/5",
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        "1/5"
+      ]
+    ]
+  }
+}

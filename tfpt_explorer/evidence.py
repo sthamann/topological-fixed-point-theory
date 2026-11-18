@@ -24,6 +24,8 @@ from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any, Iterable
 
+from semantic_explorer.atlas_client import load_atlas_export, project_evidence_graph
+
 
 STAGE_IDS = (
     "origin",
@@ -102,7 +104,7 @@ def _sha256(path: Path) -> str:
 
 
 def _directory_listing_sha256(path: Path) -> str:
-    """Match ``build_theory_graph.py``'s immediate directory fingerprint."""
+    """Match the Atlas-backed Explorer's immediate directory fingerprint."""
     entries = []
     for entry in sorted(path.iterdir(), key=lambda item: item.name):
         if entry.name == "__pycache__":
@@ -220,9 +222,8 @@ def _contract_source_bundle(
     elif parse_source == "next_txt":
         verdict_path = root / "experiments/next.txt"
     elif parse_source == "run_json":
-        # The graph used the first candidate carrying a scalar verdict.  Keep
-        # all candidates linkable and use the first existing one as the primary
-        # run artifact; the graph snapshot remains the source of the raw text.
+        # Keep all candidates linkable and use the first existing run artifact
+        # as primary; Atlas remains the source for the normalized attempt record.
         verdict_path = next(iter(_contract_json_candidates(folder)), None)
 
     checker = attrs.get("checker")
@@ -241,7 +242,7 @@ def _contract_source_bundle(
     primary = (
         str(verdict_path.relative_to(root))
         if verdict_path and verdict_path.is_file()
-        else (sources[0]["path"] if sources else "verification/theory_graph.json")
+        else (sources[0]["path"] if sources else "semantic_explorer/data/knowledge.json")
     )
     verdict_source = primary if parse_source != "none" and verdict_path and verdict_path.is_file() else None
     return primary, sources, verdict_source
@@ -274,6 +275,15 @@ def _experiment_source_bundle(
     sources = _dedupe_sources(
         _existing_source(root, path) if isinstance(path, Path) else None for path in candidates
     )
+    if not sources and folder.is_dir():
+        # Some legacy experiment inventories point at a directory that only
+        # contains numbered source findings (for example older_tests/) rather
+        # than a README/results bundle. Keep those original files linkable.
+        inventory = (
+            path for path in sorted(folder.iterdir())
+            if path.is_file() and path.suffix.lower() in {".md", ".pdf", ".tex", ".json"}
+        )
+        sources = _dedupe_sources(_existing_source(root, path) for path in inventory)
     verdict_raw = str(attrs.get("verdict_raw") or "").strip()
     if verdict_raw and result_file.is_file():
         verdict_source = str(result_file.relative_to(root))
@@ -281,7 +291,7 @@ def _experiment_source_bundle(
         verdict_source = str(gate_files[0].relative_to(root))
     else:
         verdict_source = None
-    primary = verdict_source or (sources[0]["path"] if sources else "verification/theory_graph.json")
+    primary = verdict_source or (sources[0]["path"] if sources else "semantic_explorer/data/knowledge.json")
     return primary, sources, verdict_source
 
 
@@ -850,123 +860,32 @@ def _experiment_units(root: Path) -> list[Path]:
 
 def _graph_source_integrity(root: Path, graph: dict[str, Any]) -> list[dict[str, Any]]:
     errors: list[dict[str, Any]] = []
-    for source in (graph.get("meta") or {}).get("sources", []):
+    checked: set[tuple[str, str]] = set()
+    for source in graph.get("sources", []):
         rel = source.get("path")
         expected = source.get("sha256")
         if not rel or not expected:
             continue
+        key = (str(rel), str(expected))
+        if key in checked:
+            continue
+        checked.add(key)
         path = root / rel
         if not path.exists():
-            errors.append({"kind": "graph_source_missing", "path": rel, "message": "source missing"})
-        elif (rel.rstrip("/") == "experiments" and _experiments_shallow_sha256(root) != expected) or (
-            path.is_dir() and rel.rstrip("/") != "experiments" and _directory_listing_sha256(path) != expected
-        ) or (
-            path.is_file() and _sha256(path) != expected
-        ):
-            errors.append({"kind": "graph_source_hash", "path": rel, "message": "hash differs from graph"})
+            errors.append({"kind": "atlas_source_missing", "path": rel, "message": "source missing"})
+        elif path.is_file() and _sha256(path) != expected:
+            errors.append({"kind": "atlas_source_hash", "path": rel, "message": "hash differs from Atlas"})
     return errors
 
 
-def _generic_graph_item(
-    root: Path,
-    node: dict[str, Any],
-    graph_claims: dict[str, set[str]],
-    graph_scripts: dict[str, set[str]],
-    contract_indexes: dict[str, dict[str, Any]],
-) -> dict[str, Any]:
-    node_id = str(node.get("id") or "")
-    label = str(node.get("label") or node_id)
-    kind = str(node.get("type") or "unclassified")
-    attrs = node.get("attrs") if isinstance(node.get("attrs"), dict) else {}
-
-    path = "verification/theory_graph.json"
-    sources = [_source(path)]
-    verdict_source: str | None = None
-    if kind == "script":
-        path = f"verification/{label}.py"
-        sources.insert(0, _source(path))
-    elif kind == "claim":
-        path = "verification/status_ledger.csv"
-        sources.insert(0, _source(path))
-    elif kind == "contract":
-        record = contract_indexes.get(label)
-        path, original_sources, verdict_source = _contract_source_bundle(root, label, attrs, record)
-        sources = _dedupe_sources([*original_sources, *sources])
-    elif kind == "experiment":
-        path, original_sources, verdict_source = _experiment_source_bundle(root, label, attrs)
-        sources = _dedupe_sources([*original_sources, *sources])
-    elif kind == "lean" and label.endswith(".lean"):
-        path = label
-        sources.insert(0, _source(path))
-    elif kind == "scorecard":
-        path = "experiments/evidence_scorecard.json"
-        sources.insert(0, _source(path))
-    elif kind == "section":
-        doc = attrs.get("doc")
-        if doc:
-            path = f"{doc}.tex"
-            sources.insert(0, _source(path, attrs.get("line_start")))
-    elif kind == "rh":
-        path = label
-        sources.insert(0, _source(path))
-
-    original_status = (
-        attrs.get("status_raw")
-        or attrs.get("verdict_raw")
-        or attrs.get("status")
-        or attrs.get("outcome")
-        or attrs.get("marker")
-        or "unclassified"
-    )
-    verdict = attrs.get("verdict_raw") or attrs.get("verdict_class") or attrs.get("outcome") or "unclassified"
-    title = attrs.get("title") or attrs.get("question") or attrs.get("observable") or label
-    description = (
-        attrs.get("what_web")
-        or attrs.get("summary_de")
-        or attrs.get("statement")
-        or attrs.get("mechanism")
-        or attrs.get("header_comment")
-        or attrs.get("canonical_status")
-        or ""
-    )
-    scope = attrs.get("scope") or attrs.get("canonical_status") or attrs.get("firewall") or ""
-    claims = sorted(graph_claims.get(node_id, set()))
-    scripts = sorted(graph_scripts.get(node_id, set()))
-    if kind == "claim":
-        claims = [label]
-    if kind == "script":
-        scripts = [label]
-
-    return {
-        "id": node_id,
-        "type": kind,
-        "title": _compact(title, 500),
-        "status": _compact(original_status, 1200),
-        "verdict": _compact(verdict, 500),
-        "scope": _compact(scope, 1400),
-        "description": _compact(description, 2400),
-        "path": path,
-        "claims": claims,
-        "scripts": scripts,
-        "sources": sources,
-        "stage_ids": _stage_ids(kind, label, title, description, attrs),
-        "last_run": None,
-        "original_status": _compact(original_status, 1200),
-        "status_origin": "repository_source",
-        "verdict_source": verdict_source,
-        "execution_status": "not_run_in_explorer" if kind in {"contract", "experiment"} else None,
-        "attributes": attrs,
-    }
-
-
-def build_catalog(repo_root: Path | None = None) -> dict[str, Any]:
+def build_catalog(repo_root: Path | None = None, *, atlas_snapshot: dict[str, Any] | None = None) -> dict[str, Any]:
     """Build the complete read-only evidence catalog from repository sources."""
     root = _repo_root(repo_root)
     verification = root / "verification"
-    graph_path = verification / "theory_graph.json"
-    graph = _read_json(graph_path, {"nodes": [], "edges": [], "meta": {}})
+    atlas_snapshot = atlas_snapshot or load_atlas_export(root)
+    graph = project_evidence_graph(atlas_snapshot, root)
     graph_nodes = graph.get("nodes") if isinstance(graph.get("nodes"), list) else []
-    graph_edges = graph.get("edges") if isinstance(graph.get("edges"), list) else []
+    graph_edges = atlas_snapshot.get("edges") if isinstance(atlas_snapshot.get("edges"), list) else []
     registry = _read_csv(verification / "script_registry.csv")
     ledger = _read_csv(verification / "status_ledger.csv")
     docs_map = _read_csv(verification / "docs_map.csv")
@@ -977,29 +896,28 @@ def build_catalog(repo_root: Path | None = None) -> dict[str, Any]:
     individual_runs = _load_individual_runs(root)
     rh_audit_runs = _load_rh_audit_runs(root)
 
-    node_type_by_id = {str(n.get("id")): str(n.get("type")) for n in graph_nodes}
-    graph_claims: dict[str, set[str]] = defaultdict(set)
-    graph_scripts: dict[str, set[str]] = defaultdict(set)
-    for edge in graph_edges:
-        src, dst = str(edge.get("src") or ""), str(edge.get("dst") or "")
-        if node_type_by_id.get(src) == "claim":
-            graph_claims[dst].add(src.removeprefix("claim:"))
-        if node_type_by_id.get(dst) == "claim":
-            graph_claims[src].add(dst.removeprefix("claim:"))
-        if node_type_by_id.get(src) == "script":
-            graph_scripts[dst].add(src.removeprefix("script:"))
-        if node_type_by_id.get(dst) == "script":
-            graph_scripts[src].add(dst.removeprefix("script:"))
-
     items_by_id: dict[str, dict[str, Any]] = {}
-    for node in graph_nodes:
-        item = _generic_graph_item(root, node, graph_claims, graph_scripts, contract_indexes)
+    for item in graph_nodes:
+        item = dict(item)
+        attrs = item.get("attributes") if isinstance(item.get("attributes"), dict) else {}
+        label = str(item.get("label") or item.get("title") or "")
+        if item.get("type") == "contract":
+            record = contract_indexes.get(label)
+            primary, local_sources, verdict_source = _contract_source_bundle(root, label, attrs, record)
+            item["path"] = primary
+            item["sources"] = _dedupe_sources([*local_sources, *(item.get("sources") or [])])
+            item["verdict_source"] = verdict_source or (record.get("path") if record else None)
+        elif item.get("type") == "experiment":
+            primary, local_sources, verdict_source = _experiment_source_bundle(root, label, attrs)
+            item["path"] = primary
+            item["sources"] = _dedupe_sources([*local_sources, *(item.get("sources") or [])])
+            item["verdict_source"] = verdict_source
         if item["type"] == "rh" and item.get("path") in rh_audit_runs:
             item["last_run"] = rh_audit_runs[item["path"]]
         items_by_id[item["id"]] = item
 
-    # Current CSV rows override the graph snapshot for claims and scripts.  This
-    # keeps post-graph ledger edits visible while retaining graph relationships.
+    # Current CSV rows override the Atlas snapshot for claims and scripts. This
+    # keeps post-snapshot ledger edits visible while preserving Atlas links.
     ledger_claims_by_script: dict[str, set[str]] = defaultdict(set)
     ledger_scripts_by_claim: dict[str, list[str]] = {}
     for line, row in enumerate(ledger, 2):
@@ -1068,12 +986,12 @@ def build_catalog(repo_root: Path | None = None) -> dict[str, Any]:
             "cluster": row.get("cluster") or "unclassified",
         }
 
-    # Contract indexes newer than the theory graph remain visible immediately.
+    # Contract indexes not yet present in the Atlas snapshot remain visible.
     for contract_id, record in contract_indexes.items():
         item_id = f"contract:{contract_id}"
         if item_id in items_by_id:
             # The explicit current index is the best source locator, but the
-            # graph retains merged legacy fields and relations.
+            # Atlas retains the merged attempt record and its relations.
             if _source(record["path"], 1) not in items_by_id[item_id]["sources"]:
                 items_by_id[item_id]["sources"].insert(0, _source(record["path"], 1))
             items_by_id[item_id]["path"] = record["path"]
@@ -1102,7 +1020,7 @@ def build_catalog(repo_root: Path | None = None) -> dict[str, Any]:
             "attributes": data,
         }
 
-    # The six post-graph consolidation documents are first-class searchable
+    # The six post-snapshot consolidation documents are first-class searchable
     # sources.  They carry no inferred proof status.
     newest = root / "_newest2"
     if newest.exists():
@@ -1116,7 +1034,7 @@ def build_catalog(repo_root: Path | None = None) -> dict[str, Any]:
                 "status": "unclassified",
                 "verdict": "unclassified",
                 "scope": "post-graph source document",
-                "description": "Source added outside the September 22 theory-graph snapshot.",
+                "description": "Source added outside the current Atlas snapshot.",
                 "path": rel,
                 "claims": [],
                 "scripts": [],
@@ -1195,11 +1113,11 @@ def build_catalog(repo_root: Path | None = None) -> dict[str, Any]:
             "status": "unclassified",
             "verdict": "unclassified",
             "scope": "inventory only",
-            "description": "Experiment directory with no current theory-graph or contract-index item.",
+            "description": "Experiment directory with no current Atlas or contract-index item.",
             "path": primary,
             "claims": [],
             "scripts": [],
-            "sources": _dedupe_sources([*original_sources, _source("verification/theory_graph.json")]),
+            "sources": _dedupe_sources([*original_sources, _source("semantic_explorer/data/knowledge.json")]),
             "stage_ids": _stage_ids(name),
             "last_run": None,
             "original_status": "unclassified",
@@ -1268,14 +1186,15 @@ def build_catalog(repo_root: Path | None = None) -> dict[str, Any]:
         for item in experiment_evidence
         if not any((root / str(source.get("path", ""))).is_file() for source in item.get("sources", []))
     ]
-    graph_counts = (graph.get("meta") or {}).get("counts", {})
+    graph_meta = graph.get("meta") or {}
     lean_graph_items = [item for item in items if item["type"] == "lean"]
     lean_build_files = sum(Path(str(item.get("path", ""))).name.startswith("lakefile.") for item in lean_graph_items)
     sources = [
         "verification/script_registry.csv",
         "verification/status_ledger.csv",
         "verification/docs_map.csv",
-        "verification/theory_graph.json",
+        "semantic_explorer/data/knowledge.json",
+        "semantic_explorer/data/context.json",
         "experiments/evidence_scorecard.json",
         "experiments/theory-contracts/*/contract_index.json",
         "_newest2/*",
@@ -1292,14 +1211,15 @@ def build_catalog(repo_root: Path | None = None) -> dict[str, Any]:
                 "run_all_modules": len(run_all_modules),
                 "ledger_claims": len(ledger),
                 "docs_map_rows": len(docs_map),
-                "graph_nodes": len(graph_nodes),
+                "graph_nodes": graph_meta.get("atlas_node_count", len(graph_nodes)),
                 "graph_edges": len(graph_edges),
-                "graph_contracts": graph_counts.get("contracts_total", 0),
+                "projected_evidence_items": len(graph_nodes),
+                "graph_contracts": (graph_meta.get("attempt_counts") or {}).get("contract", 0),
                 "contract_index_files": len(contract_indexes),
                 "scorecard_rows": len(score_rows),
                 "experiment_units": len(experiment_units),
-                "lean_files_graph": (graph_counts.get("nodes_by_type") or {}).get("lean", 0),
-                "lean_source_files": len(lean_graph_items) - lean_build_files,
+                "lean_files_graph": len(lean_graph_items),
+                "lean_source_files": graph_meta.get("lean_source_files", len(lean_graph_items) - lean_build_files),
                 "lean_build_files": lean_build_files,
                 "post_graph_documents": len(list(newest.glob("*"))) if newest.exists() else 0,
                 "requested_root_pdfs": len(REQUESTED_ROOT_PDFS),
@@ -1310,9 +1230,9 @@ def build_catalog(repo_root: Path | None = None) -> dict[str, Any]:
                 "registered_files_present": all((verification / f"{s}.py").is_file() for s in registry_set),
                 "experiment_units_catalogued": len(experiment_units),
                 "experiment_units_uncovered_added": len(uncovered_units),
-                "graph_generated_at": (graph.get("meta") or {}).get("generated"),
+                "graph_generated_at": graph_meta.get("generated_at"),
                 "graph_sources_hash_current": not any(
-                    item["kind"].startswith("graph_source_") for item in inconsistencies
+                    item["kind"].startswith("atlas_source_") for item in inconsistencies
                 ),
                 "runtime_status": runtime.get("status", "not_started"),
                 "fresh_modules": fresh_count,

@@ -1,0 +1,90 @@
+OPERATORWERTIGE RIGIDITAET DES MARKIERTEN ERZEUGUNGSASTS
+=======================================================
+
+28. Oktober 2026
+
+Dieser kurze Beweis wendet den bereits vorhandenen TP Eindeutigkeitssatz
+auf den kleineren Ward Dreissiger an. Er setzt keine neue Symmetrie,
+gleichgewichtete Krauszerlegung oder unkorrelierte Familie voraus.
+
+Sei C_m: Lambda2 C5 -> Lambda2(C5)*, m=1,...,5, der bereits signiert
+verifizierte Hodge Intertwiner. Es gelten
+
+  sum_m C_m^dagger C_m = 3 I10,
+
+und die 25 Matrizen C_m^dagger C_n sind linear unabhaengig.
+Der alte SINGLE-PROCESS-WARD-CRITERION.txt beweist beide Aussagen, sein
+Checker prueft die Injektivitaet exakt. Keine neue Zahlensuche ist noetig.
+
+Betrachte nun eine tatsaechliche CP Quellenkomponente mit Krausoperatoren
+
+  L_r = sum_m C_m tensor F_rm
+
+zwischen den gemeinsamen Carrier und Familienraeumen. Die Familienraeume
+duerfen beliebige endliche Dimension haben. Fuer den Ward Dreissiger sind
+sie 4 und bar4; F_rm darf innerhalb des gegebenen Familien Cliffordspans
+liegen. Die folgende Aussage verlangt nicht einmal diese letzte
+Einschraenkung, sondern nur den bezeichneten Carrier Kraussupport.
+
+Angenommen, ihr Effekt ist ein vorgegebenes Skalarvielfaches des Einers:
+
+  sum_r L_r^dagger L_r = p I10 tensor I_F,  p>0.          (1)
+
+Definiere die operatorwertige Grammatrix
+
+  G_mn = sum_r F_rm^dagger F_rn.
+
+Dann lautet (1)
+
+  sum_mn C_m^dagger C_n tensor G_mn = p I10 tensor I_F.
+
+Wegen der linearen Unabhaengigkeit der 25 Carriermatrizen und der bekannten
+Darstellung I10=(1/3)sum_m C_m^dagger C_m folgt koeffizientenweise
+
+  G_mn = (p/3) delta_mn I_F.                            (2)
+
+Fuer jede Carrierobservable A ist damit die adjungierte Antwort
+
+  E^*(A tensor I_Fout)
+    = sum_mn C_m^dagger A C_n tensor G_mn
+    = p Phi^*(A) tensor I_Fin,
+
+  Phi(rho)=(1/3)sum_m C_m rho C_m^dagger.
+
+Durch Dualitaet folgt fuer jeden gemeinsamen Eingang, einschliesslich
+beliebiger Carrier Familien Verschraenkung,
+
+  Tr_Fout E(rho_CF) = p Phi(Tr_Fin rho_CF).              (3)
+
+Die normierte Antwort E/p ist deshalb CPTP und besitzt exakt dieselbe
+Carriermarginale Phi. Fuer einen ganzen spurtreuen Kanal ist p=1.
+Fuer den Erzeugungsast des alten normierten sechziger Prozesses ist
+p=3/5. Seine direkte dreissiger Normierung 1/9 und die bedingte
+sechziger Normierung (5/3)(1/15) stimmen exakt ueberein.
+
+Das ist keine neue behauptete P1 Auswahlregel. Es entfernt eine zu starke
+Forderung an deren Herleitung: Die Quelle braucht weder alle dreissig
+Richtungen gleich zu gewichten noch eine spezielle Krausbasis oder eine
+volle physische SU5 Kovarianz. Fuer ihre sektoraufgeloeste Antwort genuegen
+der tatsaechliche bezeichnete Support und der skalare Effekt (1). Ein
+einzelner Wardstrom ist rangdefizient und erfuellt (1) nicht automatisch.
+Die Existenz der Felder oder eines Zustandsprojektors ersetzt (1) ebenfalls
+nicht. Die konkrete lokale P1 Feldkarte und ihr wirklicher Prozess bleiben
+am Original nachzuweisen.
+
+Quellen:
+
+  experiments/theory-contracts/elliptic-moebius-source-bridge-20261026/
+  admissible_pair_20261028/single_ward_refinement/
+  SINGLE-PROCESS-WARD-CRITERION.txt
+  SHA256 4af9dd295fae970d03e90c224183d7ea635cc6e02f1c46587418e41eefa87a36
+
+  gleicher Vertrag, source_sewing_20261028/current/
+  CARRIER-MARGINAL-RIGIDITY.txt
+
+  ../closure/WARD-U5-CREATION-CHANNEL.txt
+  STATE-INDEPENDENT-CREATION-BRANCH.txt
+
+Dies ist eine analytische operatorwertige Kurzform des bestehenden
+Marginalsatzes, angewandt auf den nun kleineren Quellenzweig. Kein neuer
+numerischer Rangtest und kein genetischer Fit werden dafuer vorausgesetzt.

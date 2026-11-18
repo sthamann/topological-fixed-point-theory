@@ -1,0 +1,401 @@
+INDEPENDENT REVIEW: THE RECOVERED ORIGINAL CIRCLE OPERATOR
+==========================================================
+
+25 October 2026. Read-only source review and exact analytic check. No Atlas,
+index, paper or original source was changed.
+
+Verdict
+-------
+
+The older fullv21 paper contains a concrete one-particle circle model, not
+only an abstract winding number. After one necessary orientation correction,
+it supplies an exact same-space pair
+
+  B_alpha=-i partial_theta on D_alpha,
+  D_alpha={f in H1([0,2pi]):f(2pi)=exp(2pi i alpha)f(0)},
+  u=M_z,                         0<alpha<1,              (1)
+
+with the strong Ward relation, Toeplitz index -1 and canonical line
+
+  Pi_alpha=|psi_0><psi_0|,
+  psi_n(theta)=exp(i(n+alpha)theta).                     (2)
+
+This closes the existence and internal compatibility of the one-particle
+circle/shift construction inside the older declared gluing model. It does not
+show that the later operational seed's B_Sigma and u_Sigma are this pair. The
+paper also does not select a fixed alpha, identify B_alpha with physical OS
+time, or identify (2) with the later electromagnetic transfer projector.
+
+The quarter value alpha=1/4 follows only after the actual monodromy
+exp(2 pi i B)=i I is supplied. Winding one and spectral flow one do not choose
+that value.
+
+1. The necessary sign correction
+---------------------------------
+
+The older source prints
+
+  D_Gamma=i partial_theta,
+  U_Gamma(theta)=exp(i theta),
+  lambda_n(phi)=n+phi/(2pi).                             (3)
+
+The three formulas do not have a common sign. On the twisted domain with
+alpha=phi/(2pi),
+
+  i partial_theta psi_n=-(n+alpha)psi_n.                 (4)
+
+Thus the displayed positive spectrum in (3) belongs to
+
+  B_alpha=-D_Gamma=-i partial_theta,                     (5)
+
+or equivalently to the opposite orientation of the printed D_Gamma. This is
+not cosmetic: retaining i partial_theta reverses the Ward and spectral-flow
+signs.
+
+The domain in (1) is self-adjoint. Multiplication by exp(-i alpha theta)
+maps it unitarily to periodic H1, under which B_alpha becomes
+-i partial_theta+alpha. Hence
+
+  B_alpha psi_n=(n+alpha)psi_n,
+  sigma(B_alpha)={n+alpha:n in Z}.                       (6)
+
+Multiplication by z=exp(i theta) preserves D_alpha and gives
+
+  B_alpha u psi=u(B_alpha+1)psi,
+  exp(itB_alpha)u exp(-itB_alpha)=exp(it)u.              (7)
+
+This is the exact one-particle Ward relation on a common invariant operator
+domain, rather than a match of dimensions or winding numbers.
+
+2. Toeplitz defect and the zero endpoint
+---------------------------------------
+
+For 0<alpha<1,
+
+  P_+=1_(0,infinity)(B_alpha)
+
+projects onto psi_n with n>=0. The compression P_+uP_+ is the unilateral
+shift psi_n -> psi_(n+1), so
+
+  ind(P_+uP_+)=-1,
+  P_+-uP_+u*=|psi_0><psi_0|.                            (8)
+
+Here the isometry is proved by (7); the rank-one conclusion is not inferred
+from the index alone.
+
+At alpha=0, zero belongs to the spectrum and the invertible spectral theorem
+does not apply. Two common conventions select different defect lines:
+
+  P_(>0):  span{psi_n:n>=1},  defect line span{psi_1};
+  P_(>=0): span{psi_n:n>=0},  defect line span{psi_0}.   (9)
+
+The source's interpolation alpha in [0,1] therefore has noninvertible
+endpoints. Its phrase "exactly one eigenvalue crosses zero" needs an endpoint
+convention. A domain-safe version starts at any fixed 0<alpha<1 and uses
+
+  B_t=B_alpha+t,       0<=t<=1,
+  B_1=u*B_alpha u.                                     (10)
+
+Exactly psi_(-1) crosses upward at t=1-alpha, so
+
+  SF(B_t)=+1,
+  ind(P_+uP_+)=-SF(B_t)=-1.                             (11)
+
+Equivalently one may regularize the original endpoint path or state an APS
+half-endpoint convention. Without that convention the closed-interval wording
+in fullv21 is incomplete.
+
+3. What is genuinely recovered
+-------------------------------
+
+The old source really supplies the following concrete data:
+
+  * the Hilbert space L2(S1);
+  * the twisted self-adjoint domains D_alpha;
+  * the circle generator B_alpha after the sign correction;
+  * the multiplication operator M_z on the same space;
+  * the Ward relation (7), same-pair spectral flow (11), index and defect
+    projector (8).
+
+Thus the missing one-particle operator construction was present as an
+explicit A3 circle ansatz. It was obscured by the sign mismatch and by later
+texts retaining only its abstract K1/spectral-flow summary.
+
+What the old source does not prove is equally concrete. Its wording "take"
+and "modeled by" installs the circle and gluing function. It does not derive
+them from the later operational tuple, collar domain, reflection or full
+source functional. It also varies alpha through a loop but never declares
+which interior alpha is the physical seam sector. Therefore it proves a
+one-particle representative, not uniqueness or recovery of the original
+physical source.
+
+4. Quarter phase, electromagnetic transfer and OS time
+------------------------------------------------------
+
+On D_alpha,
+
+  exp(2 pi i B_alpha)=exp(2 pi i alpha) I.               (12)
+
+Hence an actual monodromy i selects alpha=1/4 and an actual monodromy -i
+selects alpha=3/4. Neither choice follows from U_Gamma=M_z, whose winding is
+one for every alpha, or from the index in (8).
+
+At a fixed interior alpha, equation (8) supplies a canonical projector which
+could replace the later freely named
+
+  U_Sigma^min=|psi_Sigma><psi_Sigma|.                    (13)
+
+The existing papers do not make that identification. To recover the original
+electromagnetic transfer, they must state that its trace is taken on this same
+H, with psi_Sigma=psi_0 up to phase, and with the same chosen alpha and
+admissible restriction. The scalar equality det(1-q Pi)=1-q cannot supply
+those operator identifications.
+
+Likewise B_alpha generates rotations of the installed seam circle. Nothing
+in the cited fullv21 passage proves that it is the reconstructed positive OS
+time generator, the later collar B_Sigma, or the time acting on the full
+graded source. Those remain separate source maps.
+
+5. U_Gamma squared and operator typing
+--------------------------------------
+
+The appendix states both
+
+  U_Gamma^2=I,
+  U_Gamma(theta)=exp(i theta).                           (14)
+
+If both symbols mean multiplication on L2(S1), (14) is false because
+
+  M_z^2=M_(z^2) !=I.                                    (15)
+
+This need not invalidate the winding-one gluing model. It shows that two
+operator types were written with one symbol. A genuine two-sheet involution
+can be built from the clutching map as
+
+  R=[[0,M_z*],[M_z,0]],          R^2=I,                  (16)
+
+and a multiplication-plus-reflection operator can also square to I. Neither
+construction is defined in the cited appendix, so it cannot be silently
+identified with its U_Gamma. The source must distinguish the winding-one
+clutching map M_z from the Z2 sheet-exchange involution.
+
+6. The Toeplitz line is not always the gap line
+------------------------------------------------
+
+For every 0<alpha<1, the positive-band defect in (8) is span{psi_0}. The
+smallest positive eigenvalue of |B_alpha| instead selects
+
+  span{psi_0},    0<alpha<1/2;
+  span{psi_(-1)}, 1/2<alpha<1,                            (17)
+
+and is twofold degenerate at alpha=1/2. In particular,
+
+  alpha=1/4:  Pi_alpha=P_gap=|psi_0><psi_0|;
+  alpha=3/4:  Pi_alpha=|psi_0><psi_0|,
+              P_gap=|psi_(-1)><psi_(-1)|.                (18)
+
+Thus a later rule based on lambda_min^+(|B|) is not generally the same as the
+Toeplitz defect projector. Their equality at the quarter phase is a useful
+compatibility check after alpha=1/4 has been independently established; it is
+not a derivation of that quarter phase.
+
+7. Decision-relevant result
+---------------------------
+
+PROVED: fullv21 already contains a concrete circle representative which,
+after B=-D_Gamma, realizes the exact one-particle Ward relation, spectral flow
++1, Toeplitz index -1 and a canonical seam line for each fixed 0<alpha<1.
+
+NOT PROVED THERE: selection of alpha=1/4, equality with the later original
+B_Sigma/u_Sigma pair, equality with the electromagnetic projector, physical
+OS time, full CAR/source reconstruction, or spacetime localization.
+
+FIRST REQUIRED REPAIR: state the operator types and orientation explicitly,
+choose or derive the actual twisted sector, and give the map from this older
+circle pair to the later operational boundary pair. Without that map the old
+construction is a concrete representative, not the recovered physical seed.
+
+Sources reviewed
+----------------
+
+1. documents/archive--paper-latex--tfpt-theory-fullv21/sections/
+   001-section-introduction-the-problem-of-parameters.tex:220--251.
+
+2. documents/archive--paper-latex--tfpt-theory-fullv21/sections/
+   007-subsection-m-obius-matching-and-the-minimal-gluing-class.tex:1--23.
+
+3. documents/archive--tfpt-45--source_extracts--03_em_flavor_source/sections/
+   001-section-kernel-numerics-and-electromagnetic-closure.tex:9--45,94--122.
+
+4. experiments/theory-contracts/primitive-seam-operator-reconstruction-20261025/
+   SPECTRAL-SEAM-RECONSTRUCTION.txt.
+
+
+INDEPENDENT IR CHECK: FULL HEAT TRANSFER TO THE RANK-ONE FACTOR
+================================================================
+
+Additional verdict
+------------------
+
+On either already chosen quarter circle, the later rank-one determinant is a
+controlled ground-mode infrared limit of the full circle heat transfer. It is
+not the exact Fredholm determinant at finite heat time.
+
+This result introduces no new geometry or auxiliary source. It uses only the
+circle operator B_alpha already reviewed above. It still does not identify
+that circle Hilbert space with Ran(P_adm), the circle heat parameter with the
+electromagnetic response variable, or |B_alpha| evolution with charged CAR or
+physical OS time.
+
+8. Exact heat spectrum and trace-norm limit
+------------------------------------------
+
+For alpha=1/4 and alpha=3/4, the eigenvalues of |B_alpha| are simple and,
+listed increasingly, are
+
+  lambda_m=(2m+1)/4,             m=0,1,2,... .           (19)
+
+The ground vector is psi_0 for alpha=1/4 and psi_(-1) for alpha=3/4. Let
+
+  P_gap=1_{1/4}(|B_alpha|),
+  T_t=exp(-t|B_alpha|),                 t>0,
+  R_t=exp(t/4)T_t,
+  r=exp(-t/2).                                           (20)
+
+In the increasing-|B| eigenbasis, R_t has the exact eigenvalues
+
+  1,r,r^2,r^3,... .                                     (21)
+
+It follows immediately that
+
+  ||R_t-P_gap||_1=sum_(m>=1) r^m=r/(1-r),               (22)
+
+and therefore R_t converges to P_gap in trace norm as t tends to infinity.
+The corresponding operator-norm error is r. This proves more than a weak or
+matrix-element ground-state approximation.
+
+The same heat spectrum occurs for alpha=1/4 and 3/4. Thus the positive heat
+transfer alone cannot distinguish monodromy i from -i; that orientation is
+lost when B is replaced by |B|.
+
+9. Fredholm determinant and explicit logarithmic error
+------------------------------------------------------
+
+For every complex Q with |Q|<1, R_t is trace class and
+
+  det(I-Q R_t)=product_(m>=0)(1-Q r^m)
+       ->1-Q                                                (23)
+
+as t tends to infinity. For real 0<=Q<1 the error has the fixed sign and the
+exact elementary bound
+
+  |log det(I-Q R_t)-log(1-Q)|
+    =sum_(m>=1) -log(1-Q r^m)
+    <=sum_(m>=1) Q r^m/(1-Q r)
+    =Q r/[(1-r)(1-Q r)].                                (24)
+
+The first inequality uses -log(1-x)<=x/(1-x) and
+1-Qr^m>=1-Qr. Hence the rank-one logarithm is uniformly controlled away from
+Q=1, rather than being inferred only from the leading eigenvalue.
+
+For the unnormalized heat transfer set
+
+  q=exp(-t/4),             r=q^2.
+
+Then T_t=q R_t and its exact full determinant is
+
+  D(q):=det(I-T_t)
+       =product_(m>=0)(1-q^(2m+1)).                     (25)
+
+The rank-one truncation keeps only the m=0 factor 1-q. Every finite t has
+q>0 and all higher factors are nontrivial, so D(q) is never exactly 1-q.
+
+10. Exact infrared series and the first correction
+--------------------------------------------------
+
+Let b=5/4 and form the full heat expression
+
+  Phi_heat(q)=q D(q)^(-b).                              (26)
+
+Its rank-one infrared truncation is
+
+  Phi_1(q)=q(1-q)^(-b).                                (27)
+
+Since the first omitted heat factor is (1-q^3), their difference begins at
+order q^4:
+
+  Phi_heat(q)
+    =q+(5/4)q^2+(45/32)q^3+(355/128)q^4+O(q^5),
+
+  Phi_1(q)
+    =q+(5/4)q^2+(45/32)q^3+(195/128)q^4+O(q^5),
+
+  Phi_heat(q)-Phi_1(q)=(5/4)q^4+O(q^5).                 (28)
+
+The agreement through q^3 and the first positive correction are therefore
+structural consequences of the odd-quarter heat spectrum, not a numerical
+fit.
+
+There is also an exact all-order recurrence. Write
+
+  D(q)^(-b)=sum_(n>=0) t_n q^n,          t_0=1,
+
+and define
+
+  sigma_odd(k)=sum_{d divides k, d odd} d.
+
+Logarithmic differentiation of (25) gives
+
+  q d/dq log D(q)^(-b)
+    =b sum_(k>=1) sigma_odd(k) q^k.
+
+Equating coefficients yields
+
+  n t_n=b sum_(k=1)^n sigma_odd(k)t_(n-k).               (29)
+
+Equation (29) reproduces exactly
+
+  t_0=1,  t_1=5/4,  t_2=45/32,  t_3=355/128.
+
+11. Exact scope of the positive historical connection
+------------------------------------------------------
+
+PROVED MATHEMATICALLY ON THE ORIGINAL CIRCLE CHOICE:
+
+  * the full positive heat transfer has the complete determinant (25);
+  * its ground-energy-normalized operator converges in trace norm to the
+    canonical P_gap with the exact error (22);
+  * the Fredholm determinant converges to the rank-one factor with (24);
+  * the full finite-time correction to the scalar series is (28), with all
+    coefficients fixed by (29).
+
+FIRST ADDITIONAL PHYSICAL IDENTIFICATION:
+
+To call this the original admissible electromagnetic transfer, one must give
+an isometry from this quarter-circle sector into Ran(P_adm) which intertwines
+|B_alpha|, P_gap and the trace used in the EM determinant. No such
+intertwiner is supplied by the circle heat calculation. After that, one must
+also identify the heat weight
+
+  q_heat=exp(-t/4)
+
+with the separately defined EM response variable
+
+  q_EM=delta_top exp(-2 alpha_EM).                       (30)
+
+The equality in (30), the exponent b=5/4 and its physical normalization are
+not consequences of the heat spectrum.
+
+Finally, exp(-t|B|) is a positive Euclidean heat evolution. It is not the
+oriented unitary evolution generated by B, and it does not by itself provide
+charged CAR time, the full OS source, an E8 field identification or infrared
+physics. The positive result is exactly a controlled ground-mode completion
+of the old heat determinant inside the already chosen circle model.
+
+Additional historical source for this appendix
+----------------------------------------------
+
+5. documents/archive--paper-latex--tfpt-31/sections/
+   014-section-downstream-cosmology-module-on-the-observation-c.tex:4--24,
+   57--68, where the positive heat transfer is first written. The equality of
+   its B_Sigma/P_adm data with the quarter circle is not stated there.

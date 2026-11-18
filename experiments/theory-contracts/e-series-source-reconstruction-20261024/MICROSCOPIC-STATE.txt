@@ -1,0 +1,82 @@
+MATH.SEAM.ESERIES.SOURCE-RECONSTRUCTION.06 / finite microscopic state
+24 October 2026
+
+Question. In the ORIGINAL finite v988 collar, do its particle-hole
+symmetric covariance and its half-filled occupied frame define the same
+state? This is a necessary bookkeeping check for a proposed state-preserving
+microscopic map, not a substitute for constructing that map.
+
+Object and scope. Use the unchanged qwz_cylinder, occ_frame and fermi_cov
+functions at Nx=16, Ny=6, M=1 and twists r=0,1,2,3. The algebra is the
+finite complex matrix CAR algebra on192 one-particle modes. No P1 origin,
+continuum vacuum, edge-sector selection or physical time is inferred.
+
+1. Exactly two periodic zero modes
+
+For r=0, on vectors constant in x, the x hoppings cancel the on-site
+term: M*SZ+TX+TX*=0. The two y-boundary vectors are
+
+    lower boundary: (1,-1),     upper boundary: (1,1),
+
+constant in x, zero on every other y. They obey TY (1,-1)^T=0 and
+adjoint(TY) (1,1)^T=0.
+The checker uses the unambiguous matrix equations and verifies both
+real and imaginary parts over integers, with Gram32*I2.
+
+The doubled matrix2H has entries in Z[i]. Reduction modulo65537 with
+i mapped to256 is a ring homomorphism, because256^2=-1 modulo65537.
+Its modular rank190 proves rank over Q(i) at least190. The explicit
+two-dimensional kernel proves rank at most190. Thus rank(H)=190 and
+nullity(H)=2 exactly. For each r=1,2,3 modular rank192 proves exact
+invertibility. These are exact rank certificates, not eigenvalue tolerances.
+
+For periodic H, S=(I tensor sigma_x) obeys S conjugate(H) S=-H.
+More generally, for EVERY twist the real orthogonal matrix
+R=I_x tensor(reflection_y tensor i*sigma_y) obeys R H R^T=-H.
+The checker verifies these identities separately over Gaussian integers.
+Thus the periodic190 nonzero eigenvalues pair in opposite signs, giving
+95 negative,95 positive and2 zero eigenvalues; each other twist has
+96 negative and96 positive eigenvalues exactly.
+
+2. Two distinct state prescriptions
+
+The original fermi_cov uses
+
+    C=1_(H<0)+(1/2)1_(H=0).
+
+The original occ_frame instead chooses the96 lowest orthonormal
+eigenvectors and gives a projection P. At r=0 it occupies all95 negative
+modes and one of the two zero modes. Let Pi0 be the rank2 zero projection
+and Q a rank1 projection in it. Then exactly
+
+    C-P=(1/2)Pi0-Q,
+    ||C-P||_HS^2=1/2,
+    ||C-P||_op=1/2,
+    C-C^2=(1/4)Pi0,
+    ||C-C^2||_HS^2=1/8.
+
+Thus C and P define different finite gauge-invariant quasifree states.
+C uses the maximally mixed zero-mode occupations, whereas P makes a pure
+Slater choice. There is no numerical eigenbasis convention that makes
+these two covariances equal. At the three nonperiodic twists, the exact
+negative count96 and exact absence of zero modes make these prescriptions
+agree. The numerical diagnostics match the displayed exact periodic
+formulas within1e-10.
+
+3. Consequence for the current source task
+
+The original code ALREADY distinguishes these functions. This result is
+not a bug claim against fermi_cov or occ_frame. It rules out silently
+replacing the stipulated periodic half-zero-mode covariance by an occupied
+half-filled frame in a purported state-preserving dictionary.
+
+The earlier energy diagnostic used the r=1 Slater state, where both
+prescriptions agree; its result remains unchanged. A continuum construction
+can retain the mixed state, choose and justify a sector, or derive another
+appropriate representation. Which procedure the original B_N uses is part
+of its required state/sector identification. This finite distinction is
+not a nonexistence theorem for B_N and not a disproof of the mathematical
+E8 extension.
+
+Verdict: PASS for this exact finite state comparison; fundamental source
+identification remains open. No original source, paper or ledger is changed.

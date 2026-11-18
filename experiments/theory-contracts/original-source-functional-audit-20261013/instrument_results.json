@@ -1,0 +1,56 @@
+{
+  "source_pins_validated_by_original_checker": true,
+  "root_count": 240,
+  "projective_rays": 60,
+  "unitary_rays": 24,
+  "rank_one_rays": 36,
+  "per_labeled_effects_identical": true,
+  "unconditional_channels_identical_on_matrix_units": true,
+  "common_channel": "Tr(X) I/2",
+  "alternative_projective_root_menu_preserved": true,
+  "same_t_output_permutations": true,
+  "full_24_unitary_root_covariance": true,
+  "sigma_w_in_native_unitary_set": true,
+  "example": {
+    "first_label": "s=+X, t=+Z",
+    "first_event_probability": "1/30",
+    "second_fixed_input_port": "t2=+X",
+    "second_outputs_summed": "six original s labels at t2=+X",
+    "canonical_joint_probability": "1/150",
+    "alternative_joint_probability": "0"
+  },
+  "caveat": "The 60-root source specifies an algebra and family permutation; the full continuous tau_t action on these outcome branches is not identified in the original source. Covariance is proven only for the native 24-root unitary action, including its family cycle w.",
+  "execution": {
+    "command": "python3 work/original_instrument_probe.py",
+    "assertions_enabled": true,
+    "optimization_flag": null,
+    "result_preserved_from_successful_run_without_rerun": true
+  },
+  "validated_source_hashes": {
+    "experiments/theory-contracts/compiler-cone-object-audit/checker.py": "1a23ba58f9f8fd2839c3b9ea1c02e98862e3f3821ba4b5a5792442b11c45b085",
+    "experiments/theory-contracts/compiler-involution-types/checker.py": "9bf99de79f224ffcd060359eb146510b6e49973170f9953a0aec26760bd2c1a1",
+    "verification/v774_arf_spinor_compiler.py": "3ef92c17d9f0de62212bab940ac2c017be866645d8a5b276bdcf2d92128bae8c",
+    "verification/v775_gaussian_class_d5_purity.py": "f6d503b943d202465e69cd40606572d42eedde7c06af4201db65be539817d2f6",
+    "verification/v783_two_qubit_clifford.py": "8f4851634b83f61671b04f3a6211059c40758d21caaf1f779302c799e1e9d6c4",
+    "verification/v975_dimension_selector_4d.py": "e9e31593b4a2eb4c15384f83a936aeee1474fcce5f2702a6df37147800407673",
+    "verification/v14_carrier_uniqueness.py": "68bcdb41dc122a548cb1d3e304c25b2cf4e3a82ae3c9eb47e3d99d772ef1b1e4",
+    "verification/v252_full_finite_triple.py": "820254440e178430422e50605067775656236602996307f67c9e69124ba5d163",
+    "verification/v1027_signed_det_car_wall.py": "6679297c3c53a86f4ef7d40c169caab64708885e891e68db365acfadfe9f0f4d",
+    "verification/v1028_gauss_d4_cap.py": "6884f4bc116c15920a6d7d1669a438a2c7b232f5334ef3156c9585bd93cc6b98"
+  },
+  "scope_exclusion": "This finite 2x2 marked-root calculation makes no claim of equivalence to the full E8 level-one VOA, a c=4 continuous theory, or the complete TFPT time-ordered source functional.",
+  "analytic_following_not_executed": {
+    "common_channel_stationary_density": "I/2",
+    "stationary_density_unique": true,
+    "proof": "For every normalized rho, Phi(rho)=Tr(rho) I/2=I/2; stationarity forces rho=I/2.",
+    "first_marked_outcome": "s=+X, t=+Z, from rho=I/2",
+    "first_effect": "P_(+Z)/30",
+    "first_probability": "1/60",
+    "canonical_conditional_state": "|+X><+X|",
+    "alternative_conditional_state": "|-X><-X|",
+    "second_effect": "P_(+X)/5 (sum over six output labels at fixed input port +X)",
+    "canonical_joint_probability": "1/300",
+    "alternative_joint_probability": "0",
+    "status": "Derived analytically from the exact previously recorded source-root formulas; not newly executed and not an additional receipt."
+  }
+}

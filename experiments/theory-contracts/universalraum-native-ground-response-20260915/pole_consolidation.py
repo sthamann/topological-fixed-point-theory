@@ -17,7 +17,7 @@ need(manifest['status']=='PASS','supplied pole theorem freshly replayed')
 external=json.loads((HERE/'external_pole_normal.json').read_text())
 ours=json.loads((HERE/'charged_response_normal.json').read_text())
 need(ours['status']=='PASS','native equation-of-motion and density audit complete')
-need(external['source_script_sha256']=='38695f9b7992a0fce6a69321d288b3c9ba6ca76fca861fe106055ebc0dd85939','both routes use the same original finite source checker')
+need(external['source_script_sha256']=='67b0135d1090979b67a95dc9e5e9959c32c1c952adede6c67aa26ddb69ed6953','both routes use the same original finite source checker')
 need(external['native_ground_response']['Hamiltonian']=='mu=0, g/Delta=1/20','identical Hamiltonian and test point')
 pole=external['isolated_native_removal_pole']
 need(pole['native_N63_low_level_degeneracy']==64 and pole['status']=='CERTIFIED_WITH_INTERVALS','low level is one irreducible dual64')

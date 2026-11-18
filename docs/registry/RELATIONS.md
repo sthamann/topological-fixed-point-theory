@@ -16,8 +16,9 @@ correct. It runs neither Python verification nor Lean nor Wolfram.
 | `explicit_script_identifier` | A short `vN` resolves uniquely to the canonical local verification registry entry. | That an experiment snapshot with the same basename owns the registry status. |
 | `explicit_claim_identifier` | The exact claim identifier occurs in the local ledger. | A new or stronger status. `status_as_recorded` and `canonical_status_as_recorded` are copied unchanged. |
 | `explicit_lean_symbol` | An exact named declaration occurs as a code token under Lean/theorem context; a cited module may disambiguate it. | A match between the manuscript's mathematical statement and the declaration type. |
-| `explicit_source_identifier` | Lean source/comments or a Wolfram section heading explicitly name a Python identifier. | A full independent mirror, proof equivalence or successful execution. |
+| `explicit_source_identifier` | Lean source/comments name a Python identifier, or a Wolfram section starts with that identifier in its heading. | A full independent mirror, proof equivalence or successful execution. |
 | `cross_reference_join` | A TeX section and a Lean module/Wolfram section name the same Python identifier. | A direct manuscript citation to that theorem or an equivalence of statements. |
+| `ledger_evidence_reference` | The original ledger's script field names a uniquely resolved Lean or Wolfram file. | A link to an individual theorem or a new execution result. |
 | `contains_declaration` | The literal named Lean declaration is in the named module. | A manuscript-to-theorem proof link. Containment does not count as a TeX citation. |
 | `includes_source` | A literal TeX include is recorded in a source's `includes` list. | TeX macro/conditional execution. Both literal branches can remain visible to the static reader. |
 | `lexical_topic_suggestion` | A curated expression matches the path, heading or opening excerpt. | Reviewed thematic ownership or proof relevance. |

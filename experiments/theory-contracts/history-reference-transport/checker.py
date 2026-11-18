@@ -14,7 +14,7 @@ import numpy as np
 HERE = Path(__file__).resolve().parent
 ROOT = HERE.parents[2]
 SOURCE = "experiments/theory-contracts/neutral-current-limit/checker.py"
-SOURCE_SHA = "2e4a03cbacc3bc0ed4835facd85e8abce2f2585d717abc56fc2dc57f6b67c136"
+SOURCE_SHA = "8894d8758a1511941f498095ad5916cb651665792c761a78472d7013c5c39495"
 
 
 def require(ok, message):

@@ -1,0 +1,56 @@
+{
+  "steps": [
+    {
+      "step": "V1.no two different mark visits commute (M_a M_b != M_b M_a): single-walker histories are chains (acyclic, transitive order, no invisible reordering)",
+      "pass": true,
+      "detail": "min |[M_a, M_b]| = 1.414"
+    },
+    {
+      "step": "V2.combinatorial cone: (1/T) R_T -> convex hull of +-w_a (cube): linear maximal speed, but polytope (axis 1/2 vs body diagonal sqrt3/2)",
+      "pass": true,
+      "detail": "axis 0.5000, diagonal 0.8660"
+    },
+    {
+      "step": "V3.path-sum generator over the 8 primitive events: H(0) = 0 (triple degeneracy) and LINEAR splitting -> z_dyn = 1",
+      "pass": true,
+      "detail": "z_dyn = 1.0001"
+    },
+    {
+      "step": "V4.ballistic spreading under e^{-itH}: position variance ~ t^2 (mean squared group velocity > 0), not ~ t (diffusion)",
+      "pass": true,
+      "detail": "<|v|^2> = 1.155, growth exponent 2.0"
+    },
+    {
+      "step": "V5.CORRECTED: det L = 0 (flat middle band) and v_max^2 = n^T V n EXACTLY: the cone IS ellipsoidal, but V has eigenvalues (0, 4, 4) -- a degenerate (rank-2) cone, isotropic in a plane with c = 2",
+      "pass": true,
+      "detail": "max|det L| 5.1e-32, fit residual 3.1e-15, eig V [0.0, 4.0, 4.0]"
+    },
+    {
+      "step": "V6.the null direction of V is the axis of the deck rotation's spatial action; the WHOLE axis is a nodal line: H(t axis) = 0 for every t (triple degeneracy), with identical linear cones (c = 2) transverse to it all along the line",
+      "pass": true,
+      "detail": "|axis . null| = 1.000000, max |H| on the axis 0.0e+00, transverse speed along the line [2.0, 2.0, 2.0, 2.0, 2.0, 2.0, 2.0]"
+    },
+    {
+      "step": "V7.(statement) emergent time from ordered composition gives z_dyn = 1 and ballistic propagation, but the IR manifold is a nodal LINE (stacked 2+1 cones along the deck axis), not an isotropic point node: not 3+1 Lorentz",
+      "pass": true,
+      "detail": "strictly stronger than L0 (z = 2), but a 3+1 point node needs a sector that lifts the nodal line along the deck axis"
+    }
+  ],
+  "passed": 7,
+  "total": 7,
+  "z_dyn": 1.0001026217977556,
+  "velocity_tensor_eig": [
+    2.498001805406602e-16,
+    3.9999999999999987,
+    4.000000000000003
+  ],
+  "transverse_speed_along_line": [
+    1.999999999164892,
+    1.999999999164405,
+    1.9999999991650919,
+    1.9999999991676083,
+    1.9999999991688835,
+    1.9999999991729838,
+    1.9999999991704431
+  ]
+}

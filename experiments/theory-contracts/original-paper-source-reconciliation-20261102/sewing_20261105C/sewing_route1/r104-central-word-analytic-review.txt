@@ -1,0 +1,40 @@
+R104: unabhängige analytische Prüfung der zentral markierten ganzen Wortquelle
+5. November 2026. Keine neue numerische Ausführung und kein neues Modell.
+
+Gegebener ursprünglicher Cluster
+m=16, P=|phi><phi|, phi=(|0>+exp(i*pi/7)|F>)/sqrt2, H=2(I-P).
+U_q=q^N für q aus{1,i,-1,-i}. Weil q^16=1, gilt U_q phi=phi, U_q P=P=P U_q und [U_q,H]=0. Schreibe E_s=exp(-sH)=a_s I+b_s P mit a_s=exp(-2s), b_s=1-a_s.
+
+1. Exakte Einsetzung in die vorhandene Renewalquelle
+Gesucht ist Tr(U_q E_t0 A1 E_t1 ... Ak E_tk).
+Tracezyklik ergibt Tr(E_t0 A1 E_t1 ... Ak E_tk U_q). Daher sind die erweiterten Buchstaben [A1,...,Ak,U_q] mit Intervallen[t0,...,tk,0] genau derselbe Caller. U_q wird nicht durch die einzelnen A_j kommutiert. Insbesondere ist kein q-Faktor beim bloßen zyklischen Umsetzen des GANZEN Traceworts erforderlich.
+Die zyklisch zusammengefassten Intervalle der erweiterten Routine sind delta0=t0+0=t0, delta_j=t_j. Der zusätzliche Nullabschnitt erzeugt keine neue Wärmeentwicklung.
+
+2. Präfixphase in jedem rank1-Renewalblock
+Für ein CAR Wort B definiere Q(B)=Anzahl Erzeuger minus Anzahl Vernichter. Aus U_q B U_q^*=q^Q(B) B folgt
+ B U_q=U_q (U_q^* B U_q)=q^(-Q(B)) U_q B.
+Somit <phi|B U_q C|phi>=q^(-Q(B))<phi|BC|phi>.
+U_q ist gerade; es entsteht kein zusätzliches Grassmann/Koszulzeichen.
+Die Phase bezieht sich auf den tatsächlichen Präfix B IM zyklisch geschnittenen Block. Für den ursprünglichen Gesamtkreis einmal festgeschriebene Ladung genügt nicht. Blöcke ohne U_q verwenden den bisherigen word_phi Reader. Ein nichtverschwindender phi-Matrixeintrag hat Gesamtladung0 oder±16; deshalb ist die äquivalente Suffixphase q^Q(C) konsistent.
+
+3. Null-P Spur ohne jede Division
+Für ein geschriebenes CAR Wort W erzwingt der erste rechts wirkende Buchstabe je besuchtem Modus dessen anfängliches Bit: bei Erzeugung0, bei Vernichtung1. Ist dieser Bitpfad verboten oder endet er nicht beim Anfangszustand, ist die Spur0. Andernfalls seien v die Zahl besuchter Modi, p die Anzahl ihrer erzwungenen besetzten Anfangsbits und sign das native Jordan-Wigner Vorzeichen. Dann gilt exakt
+ Tr(U_q W)=sign q^p (1+q)^(16-v).
+Die unbesuchten Bits tragen das Produkt(1+q). Das Jordan-Wigner Vorzeichen ist unabhängig von diesen Bits, weil bei geschlossenem Pfad jeder besuchte Modus eine gerade Anzahl Buchstaben besitzt. Es wird NICHT durch(1+q), det(I+qI) oder ähnliche verschwindende Faktoren dividiert. Bei q=-1,v<16 ist der Wert0; bei v16 ist das leere Produkt(1+q)^0=1.
+Bei k0 gibt der ganze Caller Z_q(beta)=a_beta(1+q)^16+b_beta. Bei Gesamtdauer0 reduziert er auf die entsprechende ursprüngliche markierte CAR Spur.
+
+4. Allwortbeweis
+Expandiere jeden ursprünglichen E_t als a_t I+b_t P. Der Teil ohne P ist die Spur aus Abschnitt3. Jeder nichtleere ausgewählte P-Teil zerfällt durch P B P=<phi|B|phi>P in zyklische Wortblöcke. Der einzige U_q liegt in genau einem solchen Block und wird dort durch Abschnitt2 ausgewertet. Die ursprüngliche Renewal-DP wählt den kleinsten Index der P-Auswahl als anchor und zählt jeden nichtleeren Teil genau einmal. Damit gilt die neue Routine für jede endliche Wortlänge k und alle ursprünglichen nichtnegativen Intervalle. Dies ist dieselbe rank1-Renewalstruktur; keine neue Hamiltonklasse oder Markovannahme.
+
+5. Unabhängige tatsächliche Quellkoeffizienten zum Gegenvergleich
+Für denselben nativen Modus i und s,t>=0:
+ Tr(U_q E_s c_i^dagger E_t c_i)
+ =a_s a_t q(1+q)^15+(b_s a_t+q a_s b_t)/2.
+Der Term mit zwei P verschwindet, da <phi|c_i|phi>=0. Der zweite Einzel-P Beitrag trägt q und ist genau die empfindliche Präfixphasenprobe. Für q=-1 ist die ganze Antwort(a_t-a_s)/2. Eine fälschliche Ersetzung U_q E durch P würde diese Zeitantwort verlieren.
+Für i!=j und n_i=c_i^dagger c_i:
+ Tr(U_q E_s n_i E_t n_j)
+ =a_s a_t q^2(1+q)^14+(b_s a_t+a_s b_t)/2+b_s b_t/4.
+Hier kommutieren die Einfügungen selbst mit U_q, doch die innere Projektion auf phi bleibt zeitgeordnet erhalten. Beide Gleichungen liefern echte zentral markierte Mehrzeiteinfügungen der vorhandenen R104 Quelle, keine bloße Z0 Formel.
+
+6. Scope und Erfolgskriterium
+Erfolg ist die tatsächliche gesamte zentral markierte R104 CAR Wortquelle auf derselben gegebenen nativen16 Quelle, gegen den ursprünglichen Operatorcaller geprüft. U_q ist als Boundaryeinfügung mit konkreter Originalwirkung einzusetzen. Die zentrale C4 Untergruppe allein ist keine vollständige Spin10 Haarintegration und keine Identifikation mit P1/P_adm/Q_Theta oder der v1013 physischen Gaussquelle. Originalrestfaktoren, absolute Z0 und Quellengewichte bleiben mitzuführen. Der analytische Beweis bestätigt die Erweiterung im genau angegebenen rank1 Cluster; er behauptet weder die primitive S_adm Identität noch die gesamte physische Lösung.

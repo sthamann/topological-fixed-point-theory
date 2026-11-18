@@ -796,7 +796,7 @@ need(alg3_S1 == 4 * (2880**2 + 576**2 + 320**2) + 64**2 + 11200**2 + 24000**2 + 
 # sectors: wedge2/wedge3 on fermions, GB on bosons, GB kron GF on b+f.
 ROOT = HERE.parents[2]
 CLOCK_SRC = ROOT / 'experiments/theory-contracts/compiler-involution-types/checker.py'
-CLOCK_PIN = '9bf99de79f224ffcd060359eb146510b6e49973170f9953a0aec26760bd2c1a1'
+CLOCK_PIN = 'a0923ab19e46d784b28783f3b943df032d9de3c08b7ecda017b3d4cd3e5ad1ab'
 need(sha256(CLOCK_SRC.read_bytes()).hexdigest() == CLOCK_PIN, 'Clock constructor source pin')
 with contextlib.redirect_stdout(io.StringIO()):
     clock_mod = runpy.run_path(str(CLOCK_SRC))

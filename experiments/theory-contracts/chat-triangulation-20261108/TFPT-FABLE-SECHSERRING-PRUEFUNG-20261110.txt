@@ -1,0 +1,219 @@
+TFPTSLOTCLOCK20261110 | Fables Sechserring an den ursprünglichen Operatoren
+10. November 2026
+
+1. Native Clock und vollständiger Weyl Census
+
+Der native v634 Vierteldreher J_vec ist exakt J0 der Gesamtschau,
+Seite 17. Das native SIGMA_IDX ist eine Zeilenpermutation; auf den
+Basisvektoren ist sie (1 3 5)(2 4 6). Somit ist c = J0 sigma der
+signierte Sechserzyklus (1 -4 5 -2 3 -6) und die Vierteldrehung
+(7 -8). Das reelle charakteristische Polynom ist
+(x^2+1)^2 (x^4-x^2+1). v634 unterscheidet diese native Klasse
+bereits von der regulären Springer Klasse der Ordnung 12.
+
+Der unabhängige Checker erzeugt die acht einfachen E8 Spiegelungen
+in einer Gitterbasis und die ganze Bahn der Klebemarke g(alpha)
+= 2 sum_(i<=5) alpha_i mod 4. Aus 15120 Bahnmarken und der
+Weylgruppenordnung 696729600 folgt Stabilisatorordnung 46080.
+Schreier Erzeuger erreichen genau diese Ordnung. Ihre ganze
+Zielnebenklasse für g nach Spiegelung an e4-e6 wird enumeriert.
+Die punktweise Bedingung ist g(sigma alpha) = g(s_beta alpha)
+für alle 240 Wurzeln, stärker als dieselbe Übergangstabelle.
+Genau 204 Elemente darin haben Ordnung 3. 12 haben Fixraum 6
+und Typ A2, 192 Fixraum 4 und Typ 2A2. Die Carter Klassifikation
+unterscheidet diese Ordnung 3 Klassen über die bewegte Dimension.
+Die vollständige J0 Konjugiertenbahn enthält 15120 Elemente.
+Jedes J^2=-I in W(E8) ist i-regulär: Ein reeller Wurzelnormalvektor
+kann nicht auf dem i-Eigenraum und seinem Konjugierten orthogonal
+sein. Springers Konjugationssatz bei festem i macht die Bahn
+vollständig. Die 12 Kandidaten kommutieren mit keinem J, die 192
+mit je 36. Mit festem J0 bleiben vier. Für die fest markierte
+schwache Wurzel e4-e5 und Y=(-2,-2,-2,3,3,0,0,0)/6
+sind (Y nach sigma, Zahl verschiedener DeltaY auf den Klebewechseln)
+(1/3,8), (1/3,12), (-1/3,14), (-1/3,14).
+Das Paar (1/3,8) selektiert genau die native Matrix. Bei variabler
+schwacher Platzierung sind für dieselbe Matrix und passend
+orientierter schwacher Wurzel (1,4),(3,4),(4,5) möglich.
+Ein weiterer signierter Kandidat funktioniert bei (1,4).
+Die Eindeutigkeit setzt die tatsächlich feste schwache Marke voraus.
+
+Quellen: v634_st31_structure.py, J_vec und SIGMA_IDX; Gesamtschau
+2026-11-10, S. 17; Carter, Compositio Math. 25 (1972), Tabelle 11,
+https://www.numdam.org/item/CM_1972__25_1_1_0/; Springer,
+Invent. Math. 25 (1974), Theorem 4.2,
+https://math.ucsd.edu/~nwallach/Springer-reg.pdf.
+
+2. Sechs Trägerteilungen, zwölf gerichtete Marken und die Zählung
+
+Der bewegte Familienplatz läuft 6,1,4,5,2,3; 7 und 8 bleiben
+immer im Familienblock. Die sechs D5+A3 Wurzelsysteme haben je 52
+Wurzeln. Je zwei teilen 28 und ihre symmetrische Differenz hat 48.
+Die sechs zugehörigen gerichteten Glueetikettierungen ändern sich
+paarweise auf je 112 der 240 E8 Wurzeln. c^6=-I gibt denselben
+unorientierten Schnitt mit invertierter Glueorientierung; 128
+ungerade Klassen ändern sich. Damit sind sechs Trägerteilungen und
+zwölf gerichtete Marken zu unterscheiden. Bei c^1 bis c^12 lautet
+die Zählfolge 112,112,112,112,112,128,112,112,112,112,112,0.
+Die zwölf monomialen J, die mit der nativen sigma kommutieren,
+haben dieselbe Folge. Die anderen 24 liefern auf allen ungeraden
+Potenzen 184, sonst 112 außer 128 bei 6 und 0 bei 12.
+
+D6 auf dem Ring und D2 auf der Achse bilden 60+4 Wurzeln und
+bleiben als Menge unter c stabil. Der gemeinsame Wurzelschnitt
+aller sechs D5+A3 Systeme ist nur D2. D6+D2 bezeichnet hier die
+Lie-Algebra so(12)+so(4); es folgt keine physische Eichgruppe.
+
+Jede D5+A3 Einbettung ist Weyl konjugiert zur Standardteilung:
+Die beiden Diskriminantengruppen sind Z4, mit quadratischen Formen
+5a^2/4 und 3b^2/4 modulo 2. Die isotropen Untergruppen der für
+den E8 Überverband nötigen Ordnung 4 sind die Graphen b=±a.
+Ein Vorzeichenwechsel in einem Faktor tauscht sie. In beiden
+Fällen ist das Zwischenstück aus der eindeutigen Ordnung 2
+Untergruppe derselben Verklebung genau D8. Somit gibt es 135
+D8 Systeme (696729600/(2^7*8!)) mit je C(8,3)=56 Schnitten.
+Äquivalent: Eine Teilung bestimmt genau das Paar {g,-g}.
+Daraus folgen 7560 Teilungen und ebenso viele Paare {J,-J}.
+Die Paarmengen sind nicht W(E8) äquivariant gleich: Ein
+Teilstabilisator erhält den reellen 5er Unterraum. Der Stabilisator
+von {J,-J} enthält den reell irreduziblen Zentralisator G31
+(J macht jeden invarianten reellen Raum komplex; die gaußschen
+Paarpermutationen und geraden Paarzeichen wirken irreduzibel).
+Auch v634 weist die Gruppengleichsetzung über die Ordnung zurück.
+Die Zahl bestimmt keine Trägerstelle oder physische P2 Auswahl.
+
+3. Was die fünf ursprünglichen Ramond Pakete tun
+
+5,4,3 ist der Rang der Kompression auf die fünf reellen
+Trägerkoordinaten für I,J0,sigma. Die fünf ursprünglichen
+Ramond Pakete sind stattdessen volle Oszillatorwörter auf einer
+Impulsfaser. Im v16 Fold M wurde der exakte q-Stromconsumer
+vertex_zero aus check_ramond_full_return_20261110.py verwendet.
+Für die fünf vollständigen Ausgangspakete w_i liefert die Matrix
+< w_i, U_sigma w_j > in beiden Originalquartern 1/4 und 3/4
+Rang 5; alle fünf Diagonaleinträge sind ungleich null.
+U_sigma wirkt auf den ganzen Oszillatoren als M^T sigma M
+und hält den Impuls q. Eine gemeinsame Cocycle Phase auf diesem
+q ändert weder Rang noch Nullstellen. Der direkte J-Lift
+schickt q auf das orthogonale Jq; die Projektion auf die
+unveränderte q-Faser liefert Rang 0 für alle fünf. Nimmt man
+die Zielfaser Jq mit, bleibt das Bild fünfdimensional.
+Der alte Halbtausch hatte Minus-Rang 4 mit Ausfall des ersten
+Pakets. Der passende Wurzelreflexionslift hatte Minus-Rang 3
+mit Ausfall des ersten und vierten Pakets. Das sind andere
+Operatoren und andere Leser. Der Platztest ersetzt keines
+der ursprünglichen Ramond Wörter und berechnet kein P_adm.
+
+4. Rahmenkovarianz ist eine Konsistenzbedingung
+
+Gemeinsamer Transport durch U erhält alle mittransportierten
+Paarungen. Dazu gehören Split, gerichtete Glue-Marke, Y, q,
+Quarterdrift, Feldoperatoren, Referenz, Zustand und Domain.
+Bei unitärer Äquivalenz transformiert der spektrale Gapfilter
+durch denselben U. Darin liegt keine Auswahlgleichung:
+Jede Ausgangsauswahl liefert durch Konjugation eine ganze
+kovariante Familie. Eine aktive Symmetrie bei festem Y scheitert
+bereits am neutralen e4-e5: Y(sigma(e4-e5))=1/3 und
+Y(c(e4-e5))=-1/6. Im Quellenrahmen ist sigma zudem keine
+Platzpermutation: M^T sigma M(e1+e3)=(1,1,-1,1,-1,1,1,1)/2.
+Der v16 Fold, der tatsächliche Drift und der originale Zustand
+sind deshalb beim Test mitzunehmen. Bestehende Kovarianz und
+Ladungsprüfung: TFPT-NATIVER-CLOCK-KLEBUNG-HYPERLADUNG-20261110.txt,
+Abschnitt 3; TFPT-ORIGINALSCHNITT-KOVARIANZ-UND-MARKEN-20261110.txt,
+Abschnitte 4 und 5.
+
+Der kleinste noch physische Test ist die unnormierte gemeinsame
+Ramond Kreuzform für zwei tatsächliche Pakete mit einer geladenen
+Gegenmarke und derselben gebundenen leeren Referenz. Originalen
+D_adm samt Domain, Q_Theta, Struktur und Gap auf dem verschobenen
+Hintergrund unabhängig auswerten und mit dem transportierten
+Originalwert vergleichen. Alle Objekte per Definition zu
+konjugieren würde nur die obige Identität wiederholen.
+R113 Körpergewicht, gemeinsame F1 Quelle und T1 bis T8 werden
+durch diese Rechnung nicht vervollständigt.
+
+5. Der 96er Vorschlag scheitert im festen Hyperladungsrahmen
+
+Der tatsächliche v252 Realbimodul Lift hat Y96 und -Y96
+J-konjugiert, also Tr(Y96^5)=0. Die ursprünglichen 72 reellen
+Yukawa und 12 Majorana Richtungen sind bereits am wirklichen
+D_F geprüft (Y-DIRAC-JOINT-RESPONSE-ATTEMPT-20261106.txt).
+Für jeweils einen D5 Halbspinor auf jeder der sechs Teilungen
+mit dem festen ursprünglichen Y enthält die Einschränkung auf
+fünf der sechs Träger die Nullachse 6. Dann paart ein
+Vorzeichenwechsel der übrigen vier Achsen die Ladungen als ±Y
+innerhalb jeder Chiralität. Der fünfte Moment ist null. Nur
+der anfängliche Träger hat alle fünf nichtnullen Koeffizienten:
+je nach Halbspinor ist sein fünfter Moment +5/9 oder -5/9.
+Somit hat der ganze 96er Vorschlag immer +5/9 oder -5/9,
+unabhängig davon, welchen Halbspinor die fünf anderen Rahmen
+tragen. Es existiert kein linearer Y-Intertwiner für diesen
+festen Y Ansatz, noch bevor man die 84 D_F Richtungen verlangt.
+Eine andere, ausdrücklich mittransportierte Y Familie wäre
+ein anderer Ansatz und müsste Gamma_F, J_F und die tatsächlichen
+Kopplungsoperatoren mit identifizieren.
+
+6. Die 48 gemischten Wurzeln und der originale Coverlift
+
+Die gemischten Wurzeln ±e_i±e_j, i im Ring und j auf der Achse,
+haben exakt vier c-Bahnen der Länge 12. Auch der v623 Lift L
+des echten Covers hat vier solche Bahnen: Im 48er Umlauf
+schreitet L jeweils vier Orte weiter. Der Checker konstruiert
+eine explizite bijektive Zuordnung, Bahn für Bahn ab gewählten
+Startpunkten; sie erfüllt f c = L f und f sigma = deck f.
+Das ist eine positive Identifikation als unmarkierte C12 Mengen.
+Es gibt 4!*12^4 solcher Zuordnungen ohne weitere Struktur.
+Die ausgezeichneten Markstellen, der Einzelschritt und der
+NS Feldkern sind dadurch nicht ausgewählt. Der nackte
+Wurzellift hat c^12=I. Im ursprünglichen fermionischen NS
+Modenraum gilt deck^3=-I, also L^12=-I; ein unveränderter
+linearer Intertwiner auf diesen signierten Operatoren
+ist ausgeschlossen. Ein eigener Spinlift wäre nötig.
+Quelle: verification/v623_covered_seam.py, V2 bis V6.
+
+7. Dreiertransfer, Ortsleser und nativer Clifford Kanal
+
+In der Reihenfolge {1,2},{4,5},{0,3} verschränkt die Einbettung
+V der drei normierten Paarsummen den vorgeschlagenen Ringschritt
+K mit der tatsächlichen Matrix B in v987. Dadurch passt auch B^6
+des v330 Transfers. Allgemein haben die Koeffizienten für
+Abstand 0,1,2,3 die Form (1/2+t, 2/9-t, t, 1/18-t);
+für nichtnegative Gewichte ist 0<=t<=1/18. Der fehlende
+alternierende Modus hat Eigenwert 6t, die anderen Eigenwerte
+sind 1,2/3,2/3,1/3,1/3. Beim vorgeschlagenen t=0 ist die
+alternierende Re/Im Mode exakt null. Der andere Halbteil
+in K=(I+Flip_ReIm tensor F)/2 hat F mit Diagonale 1/9 und
+außerdiagonal 4/9, also Spektrum 1,-1/3,-1/3.
+
+Der tatsächliche ursprüngliche v17/R111 C6 Ortsleser erhält
+genau diese alternierende Mode. Im Perron normierten Green
+hat sie Eigenwert (1+4r)^(-1)>0, r=y*delta/(y-delta)^2.
+Die ursprüngliche inverse Quadratwurzel erhält sie ebenfalls.
+Bei Anpassung der langsamsten Rate bleibt das Verhältnis
+der schnellsten zur langsamsten unter 2 in allen drei
+Originalcusps. Die Zielraten aus 2/3 und 1/3 haben Verhältnis
+log(3)/log(3/2)>2. Also passt auch kein anderer t Wert zu
+diesem ursprünglichen Sechseroperator bei gemeinsamer Zeit.
+Die bestehende Ortswortprüfung vergleicht zusätzlich ganze
+Zeitantworten und weitere positive Klassen:
+TFPT-SECHSER-DREIER-GEMEINSAME-DYNAMIK-20261109.txt.
+
+Der native Viererkanal auf M4 ist (7 id + sum_a Ad_Gamma_a)/12.
+Auf Cliffordgraden 0,1,2 ergibt die exakte Rechnung
+1 (einmal), 1/3 (fünfmal), 2/3 (zehnmal). Tatsächlich lässt
+er sich als halb Identität plus halb Psi schreiben, mit
+Psi=(id+sum_a Ad_Gamma_a)/6 und den Eigenwerten nach Abzug des Bleibeanteils
+1, -1/3, +1/3. Seine nichtprojektiven Effekte realisieren die
+bekannte B Populationsauslesung. Die gleichen Zahlen belegen
+keinen gemeinsamen Operator mit dem Ringschritt oder dem
+einseitigen reflektierten schwachen Einsatz. Im ganzen
+Clifford Kanal existiert kein Nullmodus. Quelle: Kernessenz
+Deutsch 2026-10-15 v2, S. 11; v987_os_dilation_package.py;
+v330_qgamb_admissible_measure.py; v17_hexagonal_resolvent.py.
+
+Reproduktion:
+python3 -B experiments/theory-contracts/chat-triangulation-20261108/check_fable_slot_clock_20261110.py
+Die Rechnung importiert die tatsächlichen Originaldefinitionen,
+enumeriert in ganzzahligen Koordinaten und prüft symbolisch die
+Wortkompressionen. Kein neuer Ledgerstatus und keine physische
+Gewichtsberechnung. Der Nutzer lieferte Fables Antwort als
+Transkript; das darin erwähnte Fable Skript lag lokal nicht vor.

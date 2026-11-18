@@ -1,0 +1,7 @@
+5 November 2026. Independent implementation control of the new bounded R048 formula family.
+
+These are algorithm test inputs, not supplied physical/native TFPT data and not additional physical source choices. The purpose is to check that the executable method, its analytic error expressions and denominator guard behave as stated.
+
+Six controls passed: one-dimensional Z and u numerators compared to independent45-digit mpmath integration; a correlated two-dimensional whole covariance compared to independent Hermite48/80 quadrature; an exact zero denominator retained unnormalized; and adaptive u tolerance with unchanged test parameters; and rejection of a requested but missing UY insertion before integration. The adaptive call used4 refinements and295532 final cells, actual error8.63e-7 against independent integration, below its analytic pre-rounding bound0.003019. Full selected error data and explicit nonphysical scope are in integrator-math-controls.json.
+
+The method is implemented and executed on mathematical control inputs. It has not evaluated the missing native primitive TFPT kernel. All numeric end points retain rounding_enclosed=false; no directed floating point/CDF/eigenvalue interval certificate is claimed. The polynomial floor alone, not the entire integration algorithm, is newly Lean kernel-proved.

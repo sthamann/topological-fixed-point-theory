@@ -1,0 +1,167 @@
+ACTUAL ORIGINAL RADIAL HESSIAN OF THE UNTRUNCATED SPECTRAL TRACE
+3 November 2026. Original v252/v254 family; no new field model or profile.
+
+Result and scope
+----------------
+The actual full96 radial source family Phi(r)=r D_Y+D_M has an explicitly
+evaluated spectral Hessian at r=0 for EVERY compatible C2 spectral profile.
+It preserves all original complex Yukawas and symmetric Majorana entries.
+On the existing original quarter-product circle its entire mode sum is
+also explicit. This is a bosonic spectral-action coefficient before field
+integration; it does not substitute the low-curvature Gamma coefficient,
+select a physical profile, or identify the entire primitive S_adm strip.
+
+This reuses, and does not recount as new, R028's exact full96 radial
+determinant and its first u logdet coefficient. The extension here is its
+untruncated arbitrary-profile radial Hessian and whole-circle evaluation.
+R112's gauge-orbit trace defects are different variations. CARRIER-SOURCE
+already gives the radial Cauchy-graph jet; that is not this spectral-action
+Hessian. The scoped original source searches found no previously printed
+formula for this arbitrary-profile radial Hessian.
+
+1. Original family and exact coefficient
+---------------------------------------
+Use unchanged verification/v252_full_finite_triple.py:dirac_block,full_D
+and the v254 common Higgs doublet direction established in R028:
+ Phi(r)=full_D(r Yu,r Yd,r Ye,r Ynu,MR)=r D_Y+D_M,
+ MR=MR^T, r real, u=r^2.
+The Majorana term is NOT scaled with the SM Higgs radius. Define
+ A_ch=Tr_3(3 Yu*Yu+3 Yd*Yd+Ye*Ye),
+ M2=MR MR*, Qnu=Ynu*Ynu.
+Stars denote adjoints. For any scalar profile g C2 near the nonnegative
+finite spectrum (holomorphic profiles suffice for the proof below),
+
+ d/du Tr_96 g(Phi(r)^2)|_(u=0)
+   =4 g'(0) A_ch+4 Tr_3[g'(M2) Qnu],                     (1)
+ d^2/dr^2 Tr_96 g(Phi(r)^2)|_(r=0)
+   =8 g'(0) A_ch+8 Tr_3[g'(M2) Qnu].                     (2)
+
+No simultaneous diagonalization of MR and Ynu is assumed. Singular MR
+is included by continuous functional calculus. The unsuppressed g'(0)
+neutrino contribution cancels against the original linear Majorana cross
+term; the remaining neutrino response is filtered at the actual M2.
+
+Proof using the actual whole determinant already evaluated in R028.
+That result is, for z>0,
+ d/du log det_96(z+Phi(r)^2)|_0
+  =4 A_ch/z+4 Tr_3[(z+M2)^-1 Qnu].                       (3)
+For charged sectors this follows directly from the exact multiplicities
+of the original up/down quarks (three colors, particle and antiparticle)
+and charged leptons. The Majorana-coupled neutrino block in R028 supplies
+the second term including its cross-term cancellation. Differentiating
+(3) with respect to z gives the resolvent trace response. Holomorphic
+functional calculus and its Cauchy formula then give (1). The derivative
+with respect to r is twice the u coefficient, giving (2). Smooth finite
+matrix profiles follow by the corresponding divided-difference calculus.
+
+This is an exact source identity for arbitrary original matrices, not a
+claim that diagnostic fixture entries are physical Yukawa values.
+
+2. Entire untruncated profile and actual circle modes
+----------------------------------------------------
+For the ACTUAL original squared spectral convention
+ Tr f((p^2+Phi(r)^2)/chi^2),
+with its original chi and p, put g_p(x)=f((p^2+x)/chi^2). Then (2) gives
+
+ Hess_r(p)=8/chi^2 [
+   f'(p^2/chi^2) A_ch
+   +Tr_3[f'((p^2+M2)/chi^2) Qnu] ].                     (4)
+
+For the already supplied original quarter-product circle p=n+alpha,
+sum (4) over ALL original modes, on the actual trace/domain convention.
+The formula is untruncated in p and f. Where f has the actual Bernstein
+representation f(x)=int exp(-s x) dnu(s), it becomes
+
+ Hess_r= -8/chi^2 int s Theta_alpha(s/chi^2)
+       [A_ch+Tr_3(exp(-s M2/chi^2) Qnu)] dnu(s),          (5)
+ Theta_alpha(t)=sum_(n in Z) exp[-t(n+alpha)^2].
+
+Convergence and passage of derivatives under the original profile/mode
+integrals require their actual trace-class bounds; (5) is not asserted
+when those bounds fail. At a finite original regulator this is ordinary
+finite functional calculus. For a nonzero positive Bernstein profile with
+finite required integrals, the NUMERATOR squared spectral trace Hessian
+in this chart is nonpositive, and strictly negative when the surviving
+Yukawa response is nonzero. This sign is not the sign of the entire
+physical boson Hessian: actual reference, eta, domain and other terms
+remain to be subtracted/added as their original caller specifies.
+
+For the UNSQUARED primitive convention Tr f(D/chi), use that actual f
+and its own divided differences. If an actual symmetric-spectrum product
+chart is proved, one can use the even profile
+ g(x)=[f(sqrt(x)/chi)+f(-sqrt(x)/chi)]/2;
+no automatic squared/unsquared or residue/profile identification is made.
+
+3. General full radial Hessian away from zero
+--------------------------------------------
+For the actual finite operator D(r)=D_M+r D_Y, let D(r)=U diag(lambda) U*
+and E=U* D_Y U. For F(x)=f(x/chi),
+ d^2/dr^2 Tr F(D(r))
+ =sum_(a,b) F'^[1](lambda_a,lambda_b) |E_ab|^2,           (6)
+where F'^[1](x,y)=(F'(x)-F'(y))/(x-y) for x!=y and F''(x)
+on the diagonal. Degenerate eigenspaces are included exactly.
+For a squared profile use F(x)=f(x^2/chi^2). This retains every original
+noncommuting Yukawa/Majorana matrix entry; the finite radial family is
+affine, so there is no additional D'' term. For a nonlinear original
+field path add Tr F'(D) D'' as usual. (6) is the full profile Hessian,
+not its low-curvature moment or an assumed inverse boson covariance.
+
+4. Bound reference, eta and the actual primitive comparison
+----------------------------------------------------------
+For a genuine fixed-domain original relative spectral source with its
+original radial variation, the corresponding coefficient is
+ Hess_r S_prim=Hess_r Tr f(D_rel(r)/chi)
+              -Hess_r Tr f(D_ref(r)/chi)
+              +(i pi/2) d_r^2 Delta eta_Sigma.            (7)
+The reference derivative vanishes ONLY if that actual reference is fixed
+in this variation. If it carries the same radial response, use its own
+whole version of (2), (4), or (6). No new reference or zero eta derivative
+is chosen. Moving domains, changing scales/marks and actual boundary
+terms add their original derivatives. A time-dependent field variation
+also has the actual spacetime operator response, beyond the constant
+internal family evaluated here.
+
+Equation (7) can be supplied to the original strip comparison as a
+concrete radial matrix/action coefficient. It does not itself give the
+short-time strip generator: the original field integration, full source
+weights and time sewing must still implement that coefficient. In
+particular it must not be exponentiated anew if already integrated in
+the actual omega caller.
+
+5. Direct independent numerical identity check on unchanged builder
+------------------------------------------------------------------
+Used the literal v252 rng252 fixture: its four complex Yukawas generated
+in original order and its original real symmetric MR. Let D0=D_M and
+E=D_Y. Evaluated the full96 divided-difference Hessian (6) for
+F_t(x)=exp(-t x^2), independently of the 3x3 closed formula (2).
+Profiles t=.1,.4,1 are diagnostic functional-calculus probes, not a
+physical profile selection or fit. Observed results:
+
+ t=.1: full96 -68.20789868823312; closed -68.20789868823309;
+       relative error 4.1669234761673105e-16.
+ t=.4: full96 -258.94726594687614; closed -258.9472659468761;
+       relative error 2.1951735482879988e-16.
+ t=1:  full96 -616.8705924102873; closed -616.8705924102874;
+       relative error 1.842960891966166e-16.
+
+No eigenvalue finite differences, altered original code, new model,
+fullsuite, physical profile/Yukawa selection, or ledger promotion.
+
+6. Source-type finding retained
+-------------------------------
+QFT source45 section007:5-29 defines S_adm as the BARE INPUT to exp W_k;
+:115-142 explicitly distinguishes it from Gamma_k and its loop terms.
+Boundary source001:302-317 explicitly defines S_prim as the relative
+spectral seed, with subsequent gauge/ghost/boson fluctuation introduction.
+Metrology002:135-228 prints a profile-free residue functional Gamma_D^(4)
+and its Z_H=1/(16pi^2); Metrology004:47-80 labels the displayed common
+field Lagrangian a low-curvature effective action. The text does not
+provide an evaluated equality that substitutes those truncated/retained
+coefficients for the full original bare strip kernel.
+
+The first unjustified shortcut would therefore be to use Z_H alone to
+set the primitive exact strip diffusion while discarding the original
+full profile, reference, higher field response and domain data. This
+does not deny the existing geometric residue or effective-action result;
+the actual full-profile coefficient (1)-(7) is the constructive alternative
+within the already supplied original radial chart.

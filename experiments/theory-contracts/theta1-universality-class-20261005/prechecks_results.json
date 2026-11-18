@@ -1,0 +1,220 @@
+{
+  "steps": [
+    {
+      "step": "UC1 all five design points are minimally doubled: exactly Gamma (+1) and P (-1)",
+      "pass": true,
+      "detail": "P0: [('Gamma', 1), ('P', -1)]; P_b+: [('Gamma', 1), ('P', -1)]; P_b-: [('Gamma', 1), ('P', -1)]; P_th-: [('Gamma', 1), ('P', -1)]; P_th+: [('Gamma', 1), ('P', -1)]"
+    },
+    {
+      "step": "UC2 the mirror stays at P = (pi/2)(1,1,1) for every point (p-coordinates); primitive cells with side divisible by 4 contain P, so the existing P-compatible cells remain valid",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "step": "UC3 filter f_b: f(Gamma) = 0 with Hessian I/2 for every point; f(+P) = 1 + b, f(-P) = 1 - b (PSD for |b| <= 1, SOURCE.FILTER.UNIQUENESS.01)",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "step": "UC4 canonical normalisation diag(F F^dag) = 9/8 + b^2/8: g* = g (9/8 + b^2/8)^2 (81/64 at b = 0); the exact one-site so(11) spectrum (ground state unique, gaps 144/232 g*) holds at every point up to this rescaling",
+      "pass": true,
+      "detail": "P0: g*/g = 1.2656; P_b+: g*/g = 1.2833; P_b-: g*/g = 1.2833; P_th-: g*/g = 1.2656; P_th+: g*/g = 1.2656"
+    },
+    {
+      "step": "UC5 the mirror sees the filtered quartic with weight (1 + b)^4: P_b+ 2.441, P_b- 0.316 at fixed g -- report g_mirror = g (1 + b)^4 next to g; theta changes only the mirror frame",
+      "pass": true,
+      "detail": "P0: 1.000; P_b+: 2.441; P_b-: 0.316; P_th-: 1.000; P_th+: 1.000"
+    },
+    {
+      "step": "UC6 IR identity: unit isotropic Gamma cone at every point (V_Gamma = I, |E - |k|| = O(k^2)) and f(Gamma) = 0 quadratically -> IR protection Sigma = f^2 Sigma^ unchanged; differences are confined to the mirror sector",
+      "pass": true,
+      "detail": "max |E - |k|| at |k| = 6.7e-04: 2.4e-07"
+    },
+    {
+      "step": "UC7 free reference energies (primitive L = 4, 8 cells, Gamma excluded) recorded as pins for the free-limit validation of any future run",
+      "pass": true,
+      "detail": "P0: {'L4': 1.414214, 'L8': 0.717439}; P_b+: {'L4': 1.414214, 'L8': 0.717439}; P_b-: {'L4': 1.414214, 'L8': 0.717439}; P_th-: {'L4': 1.250945, 'L8': 0.704036}; P_th+: {'L4': 1.282682, 'L8': 0.715766}"
+    },
+    {
+      "step": "UC9 amendment 1 (before any data): control arm B with matched mirror coupling g(b) = g0/(1+b)^4 (P_b+ 0.4096 g0, P_b- 3.1605 g0) next to arm A (fixed g); Weyl velocities need no renormalisation: unit isotropic speed at Gamma and at P for every design point",
+      "pass": true,
+      "detail": "P0: g/g0 = 1.0000; P_b+: g/g0 = 0.4096; P_b-: g/g0 = 3.1605; P_th-: g/g0 = 1.0000; P_th+: g/g0 = 1.0000"
+    },
+    {
+      "step": "UC8 (statement) THETA1.UNIVERSALITY.CLASS.01 = PREREGISTERED_NOT_RUN: run condition (Gate B CONDITIONAL at P0) not met; no QMC launched",
+      "pass": true,
+      "detail": ""
+    }
+  ],
+  "passed": 9,
+  "total": 9,
+  "research_id": "THETA1.UNIVERSALITY.CLASS.01",
+  "verdict": "PREREGISTERED_NOT_RUN",
+  "design": {
+    "P0": {
+      "b": 0.0,
+      "theta": 120.0,
+      "gamma": 0.0,
+      "nodes": [
+        [
+          "Gamma",
+          1
+        ],
+        [
+          "P",
+          -1
+        ]
+      ],
+      "f_P": 1.0,
+      "f_minusP": 1.0,
+      "diag_FFdag": 1.125,
+      "g_star_over_g": 1.265625,
+      "mirror_weight_(1+b)^4": 1.0,
+      "free_lowest_positive": {
+        "L4": 1.414214,
+        "L8": 0.717439
+      },
+      "armB_g_over_g0": 1.0,
+      "velocity_Gamma_max_min": [
+        1.0,
+        1.0
+      ],
+      "velocity_P_max_min": [
+        1.0,
+        0.9999999999999999
+      ]
+    },
+    "P_b+": {
+      "b": 0.25,
+      "theta": 120.0,
+      "gamma": 0.0,
+      "nodes": [
+        [
+          "Gamma",
+          1
+        ],
+        [
+          "P",
+          -1
+        ]
+      ],
+      "f_P": 1.25,
+      "f_minusP": 0.75,
+      "diag_FFdag": 1.1328125,
+      "g_star_over_g": 1.28326416015625,
+      "mirror_weight_(1+b)^4": 2.44140625,
+      "free_lowest_positive": {
+        "L4": 1.414214,
+        "L8": 0.717439
+      },
+      "armB_g_over_g0": 0.4096,
+      "velocity_Gamma_max_min": [
+        1.0,
+        1.0
+      ],
+      "velocity_P_max_min": [
+        1.0,
+        0.9999999999999999
+      ]
+    },
+    "P_b-": {
+      "b": -0.25,
+      "theta": 120.0,
+      "gamma": 0.0,
+      "nodes": [
+        [
+          "Gamma",
+          1
+        ],
+        [
+          "P",
+          -1
+        ]
+      ],
+      "f_P": 0.75,
+      "f_minusP": 1.25,
+      "diag_FFdag": 1.1328125,
+      "g_star_over_g": 1.28326416015625,
+      "mirror_weight_(1+b)^4": 0.31640625,
+      "free_lowest_positive": {
+        "L4": 1.414214,
+        "L8": 0.717439
+      },
+      "armB_g_over_g0": 3.1604938271604937,
+      "velocity_Gamma_max_min": [
+        1.0,
+        1.0
+      ],
+      "velocity_P_max_min": [
+        1.0,
+        0.9999999999999999
+      ]
+    },
+    "P_th-": {
+      "b": 0.0,
+      "theta": 100.0,
+      "gamma": 0.0,
+      "nodes": [
+        [
+          "Gamma",
+          1
+        ],
+        [
+          "P",
+          -1
+        ]
+      ],
+      "f_P": 1.0,
+      "f_minusP": 1.0,
+      "diag_FFdag": 1.125,
+      "g_star_over_g": 1.265625,
+      "mirror_weight_(1+b)^4": 1.0,
+      "free_lowest_positive": {
+        "L4": 1.250945,
+        "L8": 0.704036
+      },
+      "armB_g_over_g0": 1.0,
+      "velocity_Gamma_max_min": [
+        1.0,
+        1.0
+      ],
+      "velocity_P_max_min": [
+        1.0,
+        0.9999999999999999
+      ]
+    },
+    "P_th+": {
+      "b": 0.0,
+      "theta": 140.0,
+      "gamma": 0.0,
+      "nodes": [
+        [
+          "Gamma",
+          1
+        ],
+        [
+          "P",
+          -1
+        ]
+      ],
+      "f_P": 1.0,
+      "f_minusP": 1.0,
+      "diag_FFdag": 1.125,
+      "g_star_over_g": 1.265625,
+      "mirror_weight_(1+b)^4": 1.0,
+      "free_lowest_positive": {
+        "L4": 1.282682,
+        "L8": 0.715766
+      },
+      "armB_g_over_g0": 1.0,
+      "velocity_Gamma_max_min": [
+        1.0,
+        1.0
+      ],
+      "velocity_P_max_min": [
+        1.0,
+        0.9999999999999997
+      ]
+    }
+  }
+}

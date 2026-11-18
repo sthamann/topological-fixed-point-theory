@@ -1,0 +1,237 @@
+{
+  "schema": "tfpt.positive-kernel-campaign.v1",
+  "campaign_identity": "b40abb1563fce72244e6ee8359478e10dc660a28176eebbea9e9b7749ce68790",
+  "configuration": {
+    "m": 5,
+    "degree": 2,
+    "seed": 7,
+    "transfer_floor": 0.25,
+    "cluster_gap": 0.25,
+    "objective": "diversity",
+    "solver": "SCS"
+  },
+  "code_sha256": {
+    "run_search.py": "5099f3d55346efd6705850eec80df1cb5cc77193e3b5f69f72121c0132f40a22",
+    "kernel_search.py": "eff70fa67991dc17b84e5d906cab022f4ad293299d065d45c160b00c39215261",
+    "finite_completion.py": "0d26f7a9d3e1a90b6adfe0b445f7f1b5135da0f2ab58296ffb80333449afc15a",
+    "exact_certificate.py": "57753a3efff8b0b9de70cec60b0a4afa96b9e8d1343ee01eb0a49809ffac3840",
+    "word_algebra.py": "25964ecf2b718372210ddc669ed402677d61cf180c62839a0f3cc9338b1d5254"
+  },
+  "solver_status": "optimal",
+  "certified_finite_completions": 2,
+  "completions": [
+    {
+      "objective": "min-trace",
+      "ok": true,
+      "verdict": "EXACT_FINITE_KERNEL_COMPLETION",
+      "reason": null,
+      "dimension": 32,
+      "finite_clustering": true,
+      "finite_unitary_field_time": true
+    },
+    {
+      "objective": "max-trace",
+      "ok": true,
+      "verdict": "EXACT_FINITE_KERNEL_COMPLETION",
+      "reason": null,
+      "dimension": 32,
+      "finite_clustering": true,
+      "finite_unitary_field_time": true
+    }
+  ],
+  "next_question": {
+    "status": "EXACT_DISTINGUISHING_WORDS_FOUND",
+    "same_input_moments_replayed": 2245,
+    "all_words_through_degree_replayed": 4,
+    "shortest_found_degree": 5,
+    "shortest_certified": true,
+    "differences": [
+      {
+        "word": [
+          0,
+          2,
+          -1,
+          2,
+          0
+        ],
+        "first": {
+          "re": "1/4",
+          "im": "0"
+        },
+        "second": {
+          "re": "3/4",
+          "im": "0"
+        }
+      },
+      {
+        "word": [
+          0,
+          4,
+          -1,
+          4,
+          0
+        ],
+        "first": {
+          "re": "1/4",
+          "im": "0"
+        },
+        "second": {
+          "re": "3/4",
+          "im": "0"
+        }
+      },
+      {
+        "word": [
+          0,
+          6,
+          -1,
+          6,
+          0
+        ],
+        "first": {
+          "re": "1/4",
+          "im": "0"
+        },
+        "second": {
+          "re": "3/4",
+          "im": "0"
+        }
+      },
+      {
+        "word": [
+          0,
+          8,
+          -1,
+          8,
+          0
+        ],
+        "first": {
+          "re": "1/4",
+          "im": "0"
+        },
+        "second": {
+          "re": "3/4",
+          "im": "0"
+        }
+      },
+      {
+        "word": [
+          2,
+          4,
+          -1,
+          4,
+          2
+        ],
+        "first": {
+          "re": "1/4",
+          "im": "0"
+        },
+        "second": {
+          "re": "3/4",
+          "im": "0"
+        }
+      },
+      {
+        "word": [
+          2,
+          6,
+          -1,
+          6,
+          2
+        ],
+        "first": {
+          "re": "1/4",
+          "im": "0"
+        },
+        "second": {
+          "re": "3/4",
+          "im": "0"
+        }
+      },
+      {
+        "word": [
+          2,
+          8,
+          -1,
+          8,
+          2
+        ],
+        "first": {
+          "re": "1/4",
+          "im": "0"
+        },
+        "second": {
+          "re": "3/4",
+          "im": "0"
+        }
+      },
+      {
+        "word": [
+          4,
+          6,
+          -1,
+          6,
+          4
+        ],
+        "first": {
+          "re": "1/4",
+          "im": "0"
+        },
+        "second": {
+          "re": "3/4",
+          "im": "0"
+        }
+      },
+      {
+        "word": [
+          4,
+          8,
+          -1,
+          8,
+          4
+        ],
+        "first": {
+          "re": "1/4",
+          "im": "0"
+        },
+        "second": {
+          "re": "3/4",
+          "im": "0"
+        }
+      },
+      {
+        "word": [
+          6,
+          8,
+          -1,
+          8,
+          6
+        ],
+        "first": {
+          "re": "1/4",
+          "im": "0"
+        },
+        "second": {
+          "re": "3/4",
+          "im": "0"
+        }
+      }
+    ],
+    "question_de": "Welche originale Nahtrelation legt die Transferantwort nach zwei Feldoperationen fest und koppelt sie an die Einfeld-Antwort?",
+    "question_en": "Which original seam relation fixes transfer after two field operations and couples it to the single-field response?",
+    "action": "Check a source-derived composite-field/transfer relation. Neither prediction becomes a new premise merely because a solver produced it."
+  },
+  "original_source_derivation": false,
+  "physical_marking_selected": false,
+  "physical_quarter_holonomy_identified": false,
+  "event_instrument_derived": false,
+  "verdict": "CONSTRUCTIVE_FINITE_KERNEL_SEARCH_WITH_EXACT_DISCRIMINATOR",
+  "scope": "Finite CAR search and an explicitly additional minimal Fock completion; not a physical seam construction.",
+  "elapsed_seconds": 11.692896082997322,
+  "artifacts": {
+    "moments.json": "7429db68e991b7c5351361f607ac9fb2dfb62e3c99b6945813fdb5160f5bda9c",
+    "next-source-question.json": "c99e15c79ae87eb26a49220a6a78ddb2dc937356e87e4000081f7cc66f49bd2e",
+    "min-trace.json": "b713dd585daeb2984a25c9c4bd4bee4f5cef0a06895ea7b54e5f14f5ad0949ed",
+    "max-trace.json": "9809d92e023a3011ef6d418766d2f6b10e37d35430177b1e6f2cdcdc2c81a577"
+  }
+}

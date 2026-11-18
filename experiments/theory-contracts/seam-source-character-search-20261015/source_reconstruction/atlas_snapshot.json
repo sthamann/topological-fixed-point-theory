@@ -1,0 +1,794 @@
+{
+  "schema": "tfpt.source-reconstruction.atlas-input.v1",
+  "retrieved_problem": "problem:common-source-state-event-selection",
+  "revision": "2cc331270a66ec0f4f81d763",
+  "notice": "Actual MCP research_state editable response at start of this source-reconstruction run. Review packet, not proof.",
+  "premises": [
+    {
+      "id": "premise:declared-p1-p2",
+      "statement": {
+        "de": "Dieses Programm prüft, welche zusätzlichen Quell-, Zustands-, Ereignis- und Observablenstrukturen aus den akzeptierten TFPT-Prinzipien folgen; es widerruft oder ersetzt P1/P2 nicht.",
+        "en": "This program checks which additional source, state, event, and observable structures follow from accepted TFPT principles; it does not revoke or replace P1/P2."
+      },
+      "title": {
+        "de": "P1/P2 bleiben erklärte Ausgangsaxiome",
+        "en": "P1/P2 remain declared starting axioms"
+      }
+    },
+    {
+      "id": "premise:quarter-phase-retained",
+      "statement": {
+        "de": "Vergleiche behalten die ursprüngliche geladene Viertelphase bei; ein Wechsel zu einem anderen Phasenzweig ist keine zulässige Lösung des Auswahlproblems.",
+        "en": "Comparisons retain the original charged quarter phase; switching to another phase branch is not an admissible solution to the selection problem."
+      },
+      "title": {
+        "de": "Viertelphase bleibt fest",
+        "en": "Quarter phase is retained"
+      }
+    },
+    {
+      "id": "premise:typed-source-structures",
+      "statement": {
+        "de": "Observable-Algebra, OS-Reflexion, Zustand, Collaroperator, Zeitfluss, Trägerverbindung, Familienholonomie und Readout sind getrennte Daten, bis eine ursprüngliche Abbildung sie verbindet.",
+        "en": "Observable algebra, OS reflection, state, collar operator, time evolution, carrier connection, family holonomy, and readout are distinct data until an original map relates them."
+      },
+      "title": {
+        "de": "Quelltypen nicht gleichsetzen",
+        "en": "Do not identify source types"
+      }
+    },
+    {
+      "id": "premise:fixed-input-models-scoped",
+      "statement": {
+        "de": "Rechnungen in einem fest gewählten E8-Netz, Quotienten, Familienpaket oder Readout gelten nur unter den dort genannten Inputs und wählen diese Inputs nicht selbst.",
+        "en": "Calculations in a fixed E8 net, quotient, family packet, or readout apply only under their stated inputs and do not select those inputs."
+      },
+      "title": {
+        "de": "Modellresultate bleiben bedingt",
+        "en": "Model results remain conditional"
+      }
+    },
+    {
+      "id": "premise:future-answer-functional",
+      "statement": {
+        "de": "Eine feste Menge zulässiger Versuche und die Antwortfunktion r für jede endliche Versuchsfolge sind zusätzliche operationale Eingaben; sie legen den Zukunftsquotienten nur relativ zu diesem Versuchsalphabet fest.",
+        "en": "A fixed set of allowed experiments and the answer functional r for every finite experiment sequence are additional operational inputs; they define the future quotient only relative to that experiment alphabet."
+      },
+      "title": {
+        "de": "Festgelegte vollständige Antwortfunktion",
+        "en": "Declared complete answer functional"
+      }
+    },
+    {
+      "id": "premise:positive-word-kernel-null-stability",
+      "statement": {
+        "de": "Die GNS/Gram-Rekonstruktion setzt einen hermiteschen positiven Kernel K, normierte Referenz, festgelegte Komposition und Adjungierung sowie Stabilität der Nullrelationen unter jeder erlaubten Fortsetzung voraus; das sind Bedingungen an eine gelieferte K-Quelle, keine aus nackten Zukunftsantworten bewiesenen TFPT-Axiome.",
+        "en": "The GNS/Gram reconstruction requires a Hermitian positive kernel K, normalized reference, declared composition and adjunction, and stability of null relations under every allowed continuation; these are conditions on a supplied K source, not TFPT axioms proved from bare future answers."
+      },
+      "title": {
+        "de": "Positiver Wortkern mit Nullstabilität",
+        "en": "Positive word kernel with null stability"
+      }
+    },
+    {
+      "id": "premise:parallel-irreducible-family-connection",
+      "statement": {
+        "de": "Nur für den Kommutantenschluss wird zusätzlich angenommen, dass die markierte SU(3)-Familienverbindung irreduzibel ist und beta sie in demselben markierten Frame parallel erhält. Diese Bedingung ist kein akzeptiertes P1/P2-Axiom und muss aus der Quelle hergeleitet werden.",
+        "en": "Only for the commutant conclusion, assume additionally that the marked SU(3) family connection is irreducible and beta preserves it in the same marked frame. This is not an accepted P1/P2 axiom and must be derived from the source."
+      },
+      "title": {
+        "de": "Gemeinsame Parallelität zur irreduziblen Familienverbindung",
+        "en": "Common parallelity to irreducible family connection"
+      }
+    },
+    {
+      "id": "premise:sign-covariance-only",
+      "statement": {
+        "de": "Die bedingte Gegenprobe setzt C=(I+sgn H)/2 und [rho,C]=0 voraus, ohne positive Magnitude |H| oder vollständigen Transfer zu kennen.",
+        "en": "The conditional counterexample assumes C=(I+sgn H)/2 and [rho,C]=0, without knowing positive magnitude |H| or a complete transfer."
+      },
+      "title": {
+        "de": "Nur Sign-Kovarianz gegeben",
+        "en": "Only sign covariance is given"
+      }
+    },
+    {
+      "id": "premise:known-faithful-kms-or-full-transfer",
+      "statement": {
+        "de": "Positive Dynamikrekonstruktion setzt entweder bekanntes beta ungleich null plus treue endliche Kovarianz 0<C_beta<I voraus, oder denselben vollständigen Transferoperator T=exp(-tau |H|), bekanntes tau und Kommutation mit der Signatur; ein bloßes Spektrum oder die physische Identifikation des TFPT-Kanals reicht nicht.",
+        "en": "Positive dynamics reconstruction assumes either known nonzero beta and faithful finite covariance 0<C_beta<I, or the same full transfer operator T=exp(-tau |H|), known tau, and commutation with the sign; a spectrum alone or physical identification of the TFPT channel is insufficient."
+      },
+      "title": {
+        "de": "Bekannte KMS-Skala oder vollständiger Transfer",
+        "en": "Known KMS scale or full transfer"
+      }
+    },
+    {
+      "id": "premise:fixed-em-seam-function",
+      "statement": {
+        "de": "F(x)=x³−2c³x²+(4/5)c⁶M log(p+q(1−q)^(−5/4)), c=1/(8π), p=1/(6π), q=48c⁴exp(−2x), M>0; Originalbudget M=41. Die Funktion und ihre Inputs sind hier Voraussetzungen.",
+        "en": "F(x)=x³−2c³x²+(4/5)c⁶M log(p+q(1−q)^(−5/4)), c=1/(8π), p=1/(6π), q=48c⁴exp(−2x), M>0; original budget M=41. The function and inputs are premises here."
+      },
+      "title": {
+        "de": "Festgelegte EM-Funktion mit positiver Nahtantwort",
+        "en": "Specified EM function with positive seam response"
+      }
+    },
+    {
+      "id": "premise:native-current-clock-ope-access",
+      "statement": {
+        "de": "Festes freies Achtstrom-Vakuum, originale C/J/P5 in derselben E8-Indexbasis und reell-symmetrische quadratische Felder; Zugriff auf gemischte Zweipunktantworten der iterierten Gewicht-2-Doppelpol-OPE wird vorausgesetzt. Vier einzelne Messwerte oder ein physischer Detektor aus P1/P2 sind damit nicht gegeben.",
+        "en": "Fixed free eight-current vacuum, original C/J/P5 in the same E8 index basis and real-symmetric quadratic fields; access to mixed two-point responses of iterated weight-two double-pole OPE coefficients is assumed. Four individual measurements or a physical detector from P1/P2 are not thereby supplied."
+      },
+      "title": {
+        "de": "Native Clockfelder und gemischter OPE-Zugriff",
+        "en": "Native clock fields and mixed OPE access"
+      }
+    },
+    {
+      "id": "premise:declared-native-round20-source",
+      "statement": {
+        "de": "Feste endliche periodische Raumgitterquelle der Runden20–26 mit originalem G, Cocycle, neutralen Z8-Ladungen, Skalarfeld und H=Hdiag+Hhop; a,m,beta>0 und ursprüngliche Kopplungen sind vorgegeben. Für nichttriviales Gedächtnis J>0. Der originale Grad k ist zusätzlich beibehalten, seine Auswahl aus P1/P2 nicht vorausbewiesen.",
+        "en": "Fixed finite periodic spatial lattice source of rounds20–26 with original G, cocycle, neutral Z8 charges, scalar field and H=Hdiag+Hhop; a,m,beta>0 and original couplings are supplied. Nontrivial memory requires J>0. The original grade k is additionally retained, without presuming its selection from P1/P2."
+      },
+      "title": {
+        "de": "Deklarierte native Ladungs-/Skalarquelle",
+        "en": "Declared native charge/scalar source"
+      }
+    },
+    {
+      "id": "premise:stipulated-even-e8-seam-lift",
+      "statement": {
+        "de": "Vorausgesetzt ist die in seam-joint-ward-state konstruierte E8-Erweiterung des geraden D8-CAR-Sektors mit originalem geordneten Cocycle, beibehaltener Vierteltransition und expliziter Wahl des P-Lifts. Eine gewöhnlich lokale Einbettung der ungeraden CAR-Felder wird nicht angenommen.",
+        "en": "Assume the E8 extension of the even D8 CAR sector constructed in seam-joint-ward-state, with original ordered cocycle, retained quarter transition and explicit P-lift convention. An ordinary-local inclusion of odd CAR fields is not assumed."
+      },
+      "title": {
+        "de": "Stipulierter gerader E8-Abschluss mit tatsächlichen Kleinzeichen",
+        "en": "Stipulated even E8 completion with actual Klein signs"
+      }
+    },
+    {
+      "id": "premise:stipulated-e8-clock-tuple",
+      "statement": {
+        "de": "Gegeben sind der ursprüngliche geordnete CAR/E8-Cocycle, die E8-Fockdarstellung, Kδ(p,N)=|p|²/2+δ·p+N, originales q und die volle unkompensierte Vierteltransition. J ist der tatsächliche Gaussian-Gitteroperator, nicht der cyclotomische Galoisoperator. Ein kovarianter Vergleich transportiert δ,q,τ gemeinsam; eine feste markierte Quelle hält sie fest.",
+        "en": "Given the original ordered CAR/E8 cocycle, E8 Fock representation, Kδ(p,N)=|p|²/2+δ·p+N, original q and full uncompensated quarter transition. J is the actual Gaussian lattice operator, not the cyclotomic Galois operator. A covariant comparison transports δ,q,τ together; a fixed marked source holds them fixed."
+      },
+      "title": {
+        "de": "Stipulierter E8-Fockraum mit markiertem Clocktupel",
+        "en": "Stipulated E8 Fock space with marked clock tuple"
+      }
+    },
+    {
+      "id": "premise:neutral-current-vacuum-insertions",
+      "statement": {
+        "de": "Im selben vorgegebenen E8-Fockraum beginnt jedes Wort im Vakuum. Jede einzelne Insertion gehört zur festen Heisenberg-/quadratischen Jordan-OPE-Algebra und kommutiert mit allen acht Cartan-Nullmoden; Normalordnung, Operatorlabels und Anfangszustand werden nicht mit δ geändert. Nur insgesamt neutral oder nur Qq-neutral reicht nicht.",
+        "en": "In the same given E8 Fock space every word starts in the vacuum. Each individual insertion belongs to the fixed Heisenberg/quadratic Jordan OPE algebra and commutes with all eight Cartan zero modes; normal ordering, operator labels and initial state do not change with δ. Overall neutrality or Qq neutrality alone is insufficient."
+      },
+      "title": {
+        "de": "Jede Insertion erhält alle acht Cartan-Ladungen",
+        "en": "Every insertion preserves all eight Cartan charges"
+      }
+    },
+    {
+      "id": "premise:normalized-charged-primary-time-access",
+      "statement": {
+        "de": "Im vorgegebenen Kδ sind normierte primäre Ladungszustände ±bi für acht unabhängige ursprüngliche E8-Basisladungen und ihre positiven e^(−tKδ)-Rückkehramplituden bei bekanntem gemeinsamem t>0 gegeben. Die globalen Ladungsverschiebungen sind keine damit hergeleiteten lokalen physikalischen Instrumente.",
+        "en": "For the given Kδ, normalized primary charge states ±bi for eight independent original E8 basis charges and their positive e^(−tKδ) return amplitudes at known common t>0 are supplied. Global charge shifts are not thereby derived local physical instruments."
+      },
+      "title": {
+        "de": "Normierte geladene Primärantworten mit bekanntem Zeitmaß",
+        "en": "Normalized charged primary responses with known time scale"
+      }
+    },
+    {
+      "id": "premise:fixed-nonzero-quarter-twist-comparison",
+      "statement": {
+        "de": "Vergleichsziel ist der stipulierte Kδ-Fockraum mit ursprünglichem nichttrivialen Vierteltwist, normierten ±Bp-Primärzuständen, festgehaltener Ladungsmarkierung und gleicher positiver Zeit. Es wird Gleichheit aller dieser Antworten verlangt.",
+        "en": "The comparison target is the stipulated Kδ Fock space with original nonzero quarter twist, normalized ±Bp primary states, fixed charge marking and the same positive time. Equality of all these responses is required."
+      },
+      "title": {
+        "de": "Fester nichttrivialer chiraler Vierteltwist",
+        "en": "Fixed nonzero chiral quarter twist"
+      }
+    },
+    {
+      "id": "premise:native-full-charge-field-source",
+      "statement": {
+        "de": "Endlicher Round20-Gitter-/Skalarraum mit originalem bilinearen E8-Cocycle, vollständigen ganzzahligen Ladungen, onsite T und balancierten W, koerzivem quadratischem Hdiag und vorgegebenem Hopping. Keine P1/P2-Auswahl oder lokale chirale Feldidentifikation wird vorausbewiesen.",
+        "en": "Finite Round20 lattice/scalar space with the original bilinear E8 cocycle, complete integer charges, onsite T and balanced W, coercive quadratic Hdiag and supplied hopping. No P1/P2 selection or local chiral field identification is presumed."
+      },
+      "title": {
+        "de": "Volle originale Ladungsfeldquelle",
+        "en": "Full original charge-field source"
+      }
+    },
+    {
+      "id": "premise:native-c-invariant-start",
+      "statement": {
+        "de": "Die Startdichte ist invariant unter dem linearen C:n→−n; dies umfasst volle und C0-Gibbsstarts des unveränderten H. Verglichen werden tatsächliche adjungiert-gepaarte, entgegengesetzt markierte T-Antworten bei derselben Zeit.",
+        "en": "The initial density is invariant under linear C:n→−n, including full and C0 Gibbs starts of unchanged H. Compare actual adjoint-paired, opposite marked T responses at the same time."
+      },
+      "title": {
+        "de": "Ladungskonjugationsinvarianter Start",
+        "en": "Charge-conjugation-invariant start"
+      }
+    },
+    {
+      "id": "premise:native-zero-sector-chemical-comparison",
+      "statement": {
+        "de": "Zusätzlich vorgegebenes Hη=H+η·Qtot, C-invariante Startdichte in C0 und volle Propagation nach onsite T aus C0 nach Cp. η ist ein Vergleichsinput, kein hergeleiteter Nahtparameter.",
+        "en": "Additionally supplied Hη=H+η·Qtot, C-invariant initial density in C0 and full propagation after onsite T moves C0 into Cp. η is comparison input, not a derived seam parameter."
+      },
+      "title": {
+        "de": "Chemischer Vergleich mit geladenen Zwischenzuständen",
+        "en": "Chemical comparison with charged intermediate sectors"
+      }
+    },
+    {
+      "id": "premise:native-fixed-link-phase-a-invariance",
+      "statement": {
+        "de": "Beliebige feste unitäre Linkphasen im selben Hopping, reelles ursprüngliches Hdiag/Cocycle und unter A=C mal Komplexkonjugation invariante Startdichte. Betrachtet werden positive euklidische T-Rückkehrantworten; keine allgemeine Echtzeitgleichheit wird angenommen.",
+        "en": "Arbitrary fixed unitary link phases in the same hopping, real original Hdiag/cocycle and initial density invariant under A=C times complex conjugation. Positive Euclidean T return responses are considered; no general real-time equality is assumed."
+      },
+      "title": {
+        "de": "Feste Linkphasen und A-invarianter Start",
+        "en": "Fixed link phases and A-invariant start"
+      }
+    },
+    {
+      "id": "premise:fixed-car-crossed-half-charge-search",
+      "statement": {
+        "de": "Geordneter Achtkanal-Cocycle, s=(1/2)^8, Q, Viertelphase und K_alpha=N+|p|²/2+delta_alpha.p sind vorgegeben; alpha=1/4,3/4. Paritätsäquivalenz gilt im globalen Operatorrahmen ohne zusätzlich fest markiertes X. Diese Quelle und Erweiterung werden nicht aus P1/P2 abgeleitet.",
+        "en": "Ordered eight-channel cocycle, s=(1/2)^8, Q, quarter phase and K_alpha=N+|p|²/2+delta_alpha.p are supplied; alpha=1/4,3/4. Parity equivalence is in the global operator envelope without a separately marked physical X. Neither source nor extension is derived from P1/P2."
+      },
+      "title": {
+        "de": "Feste CAR-Quelle und ergänzter Halbsektor",
+        "en": "Fixed CAR source and adjoined half sector"
+      }
+    },
+    {
+      "id": "premise:fixed-positive-crossed-state",
+      "statement": {
+        "de": "Für endliche gekreuzte Wörter ist omega0 positiv; duale Z2-Invarianz ist für die eindeutige algebraische Fortsetzung zusätzlich verlangt. Ein Vergleich physischer Dichten muss die tatsächlichen Cartanobservablen und den gemeinsamen normalen Grundraum des gegebenen K erhalten.",
+        "en": "For finite crossed words omega0 is positive; dual Z2 invariance is additionally required for unique algebraic extension. Comparing physical densities must retain the actual Cartan observables and the common normal ground space of supplied K."
+      },
+      "title": {
+        "de": "Positiver Basisfunktional und explizite Observablenalgebra",
+        "en": "Positive base functional and explicit observable algebra"
+      }
+    },
+    {
+      "id": "premise:unchanged-quarter-car-qwz-source-comparison",
+      "statement": {
+        "de": "Verglichen wird die bekannte Viertel-CAR-Quelle beziehungsweise der volle mass=1, ny=8 QWZ-Operator mit identischer Hilbertraumdarstellung, Cartanwirkung und physischer Zeit. Der frühere eindeutige Grundzustand und die Gap-Aussage werden erhalten. Kein Vergleich aller P1/P2-Realisierungen.",
+        "en": "Compare the known quarter-CAR source or full mass=1, ny=8 QWZ operator with the identical Hilbert representation, Cartan action and physical time. Preserve its previously proved unique ground state and spectral gap. This does not compare all P1/P2 realizations."
+      },
+      "title": {
+        "de": "Unveränderte konkrete CAR/QWZ-Quelle",
+        "en": "Unchanged specified CAR/QWZ source"
+      }
+    },
+    {
+      "id": "premise:oriented-p2-exterior-carrier",
+      "statement": {
+        "de": "Gegeben sind E=C5=E3⊕E2, hermitesche Metrik, Volumenorientierung, S± und Y=(-1/3)^3⊕(1/2)^2. Innere Trägerlabels sind keine physischen Vakuumzustände; die geometrische Nahtreflexion wird nicht mit der Trägerkonjugation gleichgesetzt.",
+        "en": "Given E=C5=E3⊕E2, a Hermitian metric, volume orientation, S± and Y=(-1/3)^3⊕(1/2)^2. Internal carrier labels are not physical vacua; geometric seam reflection is not identified with carrier conjugation."
+      },
+      "title": {
+        "de": "Originaler orientierter Außenalgebra-Träger",
+        "en": "Original oriented exterior carrier"
+      }
+    },
+    {
+      "id": "premise:fixed-e8-fold-quarter-dictionary",
+      "statement": {
+        "de": "Der vorhandene Weyl-Lift M, der affine E8-Modul, Q'=2(H3+H6) und K_alpha=L0+delta_alpha.H0 mit alpha=1/4,3/4 werden für den Vergleich festgehalten. Diese Darstellung wird nicht aus P1/P2 hergeleitet; eine ungebrochene SM-Zeitwirkung wird nicht vorausgesetzt.",
+        "en": "The existing Weyl lift M, affine E8 module, Q'=2(H3+H6) and K_alpha=L0+delta_alpha.H0 with alpha=1/4,3/4 are held fixed for comparison. This representation is not derived from P1/P2; an unbroken SM time action is not assumed."
+      },
+      "title": {
+        "de": "Stipuliertes E8-Wörterbuch der Viertelfaltung",
+        "en": "Stipulated E8 quarter-fold dictionary"
+      }
+    },
+    {
+      "id": "premise:actual-chiral-opposite-quarter-domains",
+      "statement": {
+        "de": "D_alpha=-i∂theta auf f(theta+2pi)=exp(2pi i alpha)f(theta), gefülltes negatives Spektrum und relativ dazu normale Teilchen-/Lochzeit; alpha=1/4,3/4. Verglichen werden zwei konjugierte Domänen, nicht Gegenladungen in einer festen Domäne oder alle P1-Quellen.",
+        "en": "D_alpha=-i∂theta on f(theta+2pi)=exp(2pi i alpha)f(theta), filled negative spectrum and relative particle/hole excitation time; alpha=1/4,3/4. This compares two conjugate domains, not opposite charges in one fixed domain or all P1 sources."
+      },
+      "title": {
+        "de": "Gegebene chirale Quelle in beiden Vierteldomänen",
+        "en": "Given chiral source in both quarter domains"
+      }
+    },
+    {
+      "id": "premise:given-first-marked-quarter-character",
+      "statement": {
+        "de": "Im gegebenen E8-Wörterbuch sind D5 auf den ersten fünf Koordinaten, D3 auf den letzten drei und k=2sum(p1..p5) mod4 für die erste Vierteldomäne vorgegeben. Die andere Domäne darf diese Daten kovariant transportieren; ihre ursprüngliche physische Auswahl wird nicht vorausbewiesen.",
+        "en": "In the supplied E8 dictionary, D5 on the first five coordinates, D3 on the last three and k=2sum(p1..p5) mod4 are given for the first quarter domain. The other domain may transport these data covariantly; their original physical selection is not presumed."
+      },
+      "title": {
+        "de": "Erste 5+3-Markierung und Z4-Charakter gegeben",
+        "en": "First 5+3 marking and Z4 character supplied"
+      }
+    },
+    {
+      "id": "premise:given-d5-a3-free-fermion-realization",
+      "statement": {
+        "de": "Verglichen wird die dokumentierte freie D5_1+A3_1-Realisierung mit fünf plus drei komplexen Fermionen und Spin-Feldsektoren; ihre Realisierung durch die rohe P1-Quelle ist nicht vorausgesetzt.",
+        "en": "Compare the documented free D5_1+A3_1 realization with five plus three complex fermions and spin-field sectors; realization by the raw P1 source is not presumed."
+      },
+      "title": {
+        "de": "Gegebene freie D5+A3-Realisierung",
+        "en": "Supplied free D5+A3 realization"
+      }
+    },
+    {
+      "id": "premise:full-normalized-charge-time-character-family",
+      "statement": {
+        "de": "Die gegebene chirale Viertelquelle, ihre Achtfachfaltung und der stipulierte gerade E8-Abschluss liefern K_alpha und den vollständig additiven U1-Generator Q. Untersucht werden ausschließlich Charaktere im reellen Spann ihrer Torusvektoren modulo E8; kein P5 wird als Suchvariable oder Vorgabe verwendet. Die physische Identifikation dieses Abschlusses und einer zusammengesetzten Markierung wird nicht angenommen.",
+        "en": "The given chiral quarter source, its eightfold pushforward and stipulated even E8 completion supply K_alpha and the full additive U1 generator Q. Only characters in the real span of their torus vectors modulo E8 are searched; no P5 is supplied as a search variable or target projector. Physical identification of this completion and of a composed marking is not assumed."
+      },
+      "title": {
+        "de": "Vollständig normierte Zeit/Ladungs-Familie im gegebenen E8-Abschluss",
+        "en": "Fully normalized time/charge family in the given E8 completion"
+      }
+    }
+  ],
+  "problem": {
+    "accepted_premise_ids": [
+      "premise:declared-p1-p2",
+      "premise:quarter-phase-retained",
+      "premise:typed-source-structures"
+    ],
+    "connections": [],
+    "findings": [
+      {
+        "attempt_ids": [
+          "contract:source-graded-gns-matter-gate-20260922"
+        ],
+        "id": "finding:operational-seed-is-input",
+        "premise_ids": [
+          "premise:declared-p1-p2",
+          "premise:typed-source-structures"
+        ],
+        "scope": {
+          "de": "Gilt für die zitierte operative Seed-Kategorie und deren Collar-Vervollständigung; es ist keine Aussage, dass kein anderer ursprünglicher Selektor existiert.",
+          "en": "Applies to the cited operational seed category and its collar completion; it does not claim that no other original selector exists."
+        },
+        "sources": [
+          {
+            "line_end": 520,
+            "line_start": 480,
+            "path": "_archive/tfpt-45/source_extracts/01_boundary_kernel_source.tex",
+            "sha256": "53a8c2854c26c086a73198842d7985981444028c22ba6bef160f176869d5e6f1"
+          }
+        ],
+        "statement": {
+          "de": "Die Originaldefinition setzt bereits (A_loc, tau_t, Theta, omega, [u_Sigma], D_coll) voraus; der Collar-Vervollständigungssatz leitet daraus B_Sigma und Spektraldaten ab, wählt aber diese Eingaben nicht.",
+          "en": "The original definition already assumes (A_loc, tau_t, Theta, omega, [u_Sigma], D_coll); its collar-completion theorem derives B_Sigma and spectral data from them, but does not select those inputs."
+        },
+        "status": "established_scoped",
+        "title": {
+          "de": "Die operative Startkategorie nimmt die zentralen Daten als Objekt ein",
+          "en": "The operational seed category takes the central data as an input object"
+        }
+      },
+      {
+        "attempt_ids": [
+          "contract:native-source-reconstruction-20261014"
+        ],
+        "id": "finding:native-source-common-time-thermal-family",
+        "premise_ids": [
+          "premise:declared-native-round20-source"
+        ],
+        "scope": {
+          "de": "Endliches Raumvolumen, ursprüngliche neutrale Skalar-/Ladungsquelle; keine Raumkontinuums- oder P1/P2-Auswahlbehauptung.",
+          "en": "Finite spatial volume and original neutral scalar/charge source; no spatial continuum or P1/P2 selection claim."
+        },
+        "sources": [
+          {
+            "line_end": 102,
+            "line_start": 7,
+            "path": "experiments/theory-contracts/native-source-reconstruction-20261014/PROOF.md",
+            "sha256": "d16b6af2c90491ac94eeb4ab04a8c96b072d37bb6bc5015b3db85c023f8a96e2"
+          }
+        ],
+        "statement": {
+          "de": "Der ursprüngliche H ist positiv selbstadjungiert und besitzt für jedes vorgegebene beta einen treuen Gibbszustand. Der tatsächliche Transfer rekonstruiert Hδ=−log Qδ/δ; beim Entfernen des Zeitregulators konvergiert seine unitäre Dynamik zum selben H. Raumgitter, Kopplungen und beta bleiben deklarierte Inputs.",
+          "en": "The original H is positive self-adjoint and has a faithful Gibbs state for every prescribed beta. The actual transfer reconstructs Hδ=−log Qδ/δ; removing the temporal regulator makes its unitary dynamics converge to the same H. Spatial lattice, couplings and beta remain declared inputs."
+        },
+        "status": "established_scoped",
+        "title": {
+          "de": "Dieselbe Quelle liefert Hamiltonoperator, Zeit und thermischen Zustand",
+          "en": "The same source supplies Hamiltonian, time and thermal state"
+        }
+      },
+      {
+        "attempt_ids": [
+          "contract:native-mark-memory-20261014"
+        ],
+        "id": "finding:native-grade-carry-and-memory",
+        "premise_ids": [
+          "premise:declared-native-round20-source"
+        ],
+        "scope": {
+          "de": "Gegebene Quelle samt Grad und J>0; Zweizeitkern ist kein physisches Messinstrument und keine universelle dreidimensionale Gedächtnisrealisierung.",
+          "en": "Given source, grade and J>0; the two-time kernel is neither a physical measuring instrument nor a universal three-dimensional memory realization."
+        },
+        "sources": [
+          {
+            "line_end": 151,
+            "line_start": 31,
+            "path": "experiments/theory-contracts/native-mark-memory-20261014/PROOF.md",
+            "sha256": "10492f2d34e93ffb8db2593b120ef120401e26bd5acc34db0cd9c7e8f15ec364"
+          }
+        ],
+        "statement": {
+          "de": "Aus ursprünglichem Grad und Transport entsteht M4(C(S1)) mit ganzzahligem Carry. Der vollständige H koppelt Grad und Carry. Die GNS-Projektion hat K(t)=B*exp(itLQ)B, rank K(0)=3; die minimale zeitliche Realisation kann unendlichdimensional sein. Es wird kein externer Speicher ergänzt.",
+          "en": "Original grade and transport generate M4(C(S1)) with integer carry. Full H couples grade and carry. The GNS projection has K(t)=B*exp(itLQ)B with rank K(0)=3; its minimal temporal realization may be infinite-dimensional. No external memory is appended."
+        },
+        "status": "established_scoped",
+        "title": {
+          "de": "Markierung und nötiges Gedächtnis sind in der gegebenen Quelle verbunden",
+          "en": "Marking and necessary memory are connected within the given source"
+        }
+      },
+      {
+        "attempt_ids": [
+          "contract:seam-joint-ward-state-20261014"
+        ],
+        "id": "finding:even-seam-global-operator-factorization",
+        "premise_ids": [
+          "premise:stipulated-even-e8-seam-lift"
+        ],
+        "scope": {
+          "de": "Globale Ladungstransporte im stipulierten geraden Abschluss; keine lokalen Vertexinsertionen, gewöhnlich lokale ungerade CAR/E8-Einbettung oder Ereignisdynamik.",
+          "en": "Global charge transports in the stipulated even completion; not local vertex insertions, an ordinary-local odd CAR/E8 inclusion or event dynamics."
+        },
+        "sources": [
+          {
+            "line_end": 1087,
+            "line_start": 1003,
+            "path": "experiments/theory-contracts/seam-joint-ward-state-20261014/PROOF.txt",
+            "sha256": "7c0cd92dfc5eca88260baae0af9edad66f958a27ce0d15d7965414b3971f8da0"
+          }
+        ],
+        "statement": {
+          "de": "Auf dem geraden D8-Focksektor gilt W4=Us Rc mit tatsächlichem geordneten CAR/E8-Cocycle, Kleinzeichen, allen Oszillatoren und Current-Zentralterm; Rc erhält Q,K und die Vierteltransition. Die E8-Erweiterung und Liftkonvention sind ausdrücklich gegeben.",
+          "en": "On the even D8 Fock sector W4=Us Rc holds with the actual ordered CAR/E8 cocycle, Klein signs, all oscillators and current central term; Rc preserves Q,K and the quarter transition. The E8 extension and lift convention are explicitly given."
+        },
+        "status": "established_scoped",
+        "title": {
+          "de": "Gemeinsame globale Nahtoperatorfaktorisierung ist vorhanden",
+          "en": "A common global seam-operator factorization exists"
+        }
+      },
+      {
+        "attempt_ids": [
+          "contract:seam-source-character-search-20261015"
+        ],
+        "id": "finding:source-generated-marking-classification",
+        "premise_ids": [
+          "premise:full-normalized-charge-time-character-family",
+          "premise:fixed-e8-fold-quarter-dictionary",
+          "premise:actual-chiral-opposite-quarter-domains"
+        ],
+        "scope": {
+          "de": "Gegebene chirale Quelle samt Faltung, voller normierter Ladung und stipuliertem E8-Abschluss. Algebraische Konstruktion und Lean-Gittersatz; keine physische Auswahl von W oder Quelle aus P1/P2.",
+          "en": "Given chiral source, fold, full normalized charge and stipulated E8 completion. Algebraic construction and Lean lattice theorem; no physical selection of W or source from P1/P2."
+        },
+        "sources": [
+          {
+            "line_end": 144,
+            "line_start": 21,
+            "path": "experiments/theory-contracts/seam-source-character-search-20261015/PROOF.txt",
+            "sha256": "b0c7f7a36eb394c9aa44babac821221201c4baa5640d6acb11669a7b94b281d9"
+          }
+        ],
+        "statement": {
+          "de": "Der vollständige Gitterschnitt reduziert den kontinuierlichen Quelltorus auf 16 Vierertorsionscharaktere, zwölf primitive und genau vier D5+A3-Markierungen. P5 wird aus neutralen Wurzelmomenten rekonstruiert; eine Kontrolle ohne M/Zielprojektor findet dieselben vier. W=exp(4πiK)exp(-iπαQ/2) realisiert einen davon bei erhaltener Viertelzeit; Blatttransport liefert W Zq. Die Kompensationsidee war vorhanden, die vollständige Klassifikation und Kontrolle werden hier ergänzt.",
+          "en": "Full lattice saturation reduces the continuous source torus to sixteen four-torsion characters, twelve primitive and exactly four D5+A3 markings. P5 is reconstructed from neutral root moments; a control without M or a target projector finds the same four. W=exp(4πiK)exp(-iπαQ/2) realizes one while preserving quarter time; sheet transport gives W Zq. Compensation was previously known; complete classification and control are added here."
+        },
+        "status": "established_scoped",
+        "title": {
+          "de": "Vier interne Markierungen vollständig aus Zeit und Ladung klassifiziert",
+          "en": "Four internal markings completely classified from time and charge"
+        }
+      },
+      {
+        "attempt_ids": [
+          "contract:seam-source-character-search-20261015"
+        ],
+        "id": "finding:source-marking-field-realization-boundary",
+        "premise_ids": [
+          "premise:full-normalized-charge-time-character-family",
+          "premise:fixed-e8-fold-quarter-dictionary",
+          "premise:actual-chiral-opposite-quarter-domains"
+        ],
+        "scope": {
+          "de": "Exakter Feldtypvergleich in derselben gegebenen Quelle. Keine allgemeine Widerlegung von E8 oder zukünftigen Quellen-/Sektorerweiterungen.",
+          "en": "Exact field-type comparison in the same given source. No universal exclusion of E8 or future source/sector extensions."
+        },
+        "sources": [
+          {
+            "line_end": 180,
+            "line_start": 146,
+            "path": "experiments/theory-contracts/seam-source-character-search-20261015/PROOF.txt",
+            "sha256": "b0c7f7a36eb394c9aa44babac821221201c4baa5640d6acb11669a7b94b281d9"
+          }
+        ],
+        "statement": {
+          "de": "Jeder der vier Treffer wirkt auf die acht ursprünglichen komplexen Felder mit zwei Exemplaren jeder Viertelphase. Deren neutrale Bilineare bilden A3+4A1 mit 20 Wurzeln und Rang7, nicht D5+A3 mit 52 Wurzeln. Letzteres nutzt den vorausgesetzten Spinorabschluss. Die neue Markierung ändert K und den bekannten Grundzustandsvergleich nicht und liefert kein Ereignisinstrument.",
+          "en": "Each of the four candidates acts on the eight original complex fields with two copies of every quarter phase. Their neutral bilinears form A3+4A1 with twenty roots and rank seven, rather than D5+A3 with fifty-two roots. The latter uses the stipulated spinor completion. The new marking changes neither K nor the known ground-state comparison and supplies no event instrument."
+        },
+        "status": "established_scoped",
+        "title": {
+          "de": "Passende E8-Markierung ist noch kein elementarer P2-Träger",
+          "en": "A matching E8 marking is not yet an elementary P2 carrier"
+        }
+      }
+    ],
+    "goals": [
+      "goal:T1",
+      "goal:T2",
+      "goal:T8"
+    ],
+    "id": "problem:common-source-state-event-selection",
+    "question": {
+      "de": "Leiten die ursprünglichen Prinzipien eine gemeinsame physische Quelle samt Zustand, dynamischen Ereignissen und tatsächlich beobachtbaren Feldern ab?",
+      "en": "Do the original principles derive a common physical source together with its state, dynamical events, and physically observed fields?"
+    },
+    "reviewed_attempt_ids": [
+      "contract:native-mark-memory-20261014",
+      "contract:native-source-reconstruction-20261014",
+      "contract:seam-joint-ward-state-20261014",
+      "contract:source-graded-gns-matter-gate-20260922",
+      "contract:seam-constructive-search-20261015",
+      "contract:quotient-locality-e8-20261014",
+      "contract:seam-source-character-search-20261015"
+    ],
+    "strategies": [
+      {
+        "aliases": [
+          "degree selector",
+          "Gradselektion"
+        ],
+        "changes_required": {
+          "de": "Eine explizite, aus der Originalquelle folgende Grad-zu-Quell-Auswahlregel vorlegen, bevor die Strategie als Selektor bewertet wird.",
+          "en": "Provide an explicit original-source rule mapping degree to source selection before assessing the strategy as a selector."
+        },
+        "explanation": {
+          "de": "Die zitierte Original-Seed-Definition nimmt A_loc, tau_t, Theta, omega, [u_Sigma] und D_coll als Daten an und zeigt nur ihre Collar-Vervollständigung. Sie gibt in diesem Beleg keine Regel an, die aus einem Polynomgrad die gemeinsame physische Quelle auswählt.",
+          "en": "The cited original seed definition assumes A_loc, tau_t, Theta, omega, [u_Sigma], and D_coll as data and shows only their collar completion. This cited evidence supplies no rule selecting the common physical source from a polynomial degree."
+        },
+        "finding_ids": [
+          "finding:operational-seed-is-input"
+        ],
+        "id": "strategy:polynomial-degree-selects-source",
+        "outcome": "insufficient_for_goal",
+        "premise_ids": [
+          "premise:declared-p1-p2",
+          "premise:typed-source-structures"
+        ],
+        "title": {
+          "de": "Polynomgrad als physischer Quellenselektor",
+          "en": "Polynomial degree as a physical source selector"
+        }
+      },
+      {
+        "aliases": [
+          "source torus search",
+          "Quelltorus-Suche"
+        ],
+        "changes_required": {
+          "de": "Für neue Erkenntnis eine begründete Änderung des ursprünglichen Quelloperators oder seiner Feld-/Sektorabbildung liefern; weitere Phasen derselben Familie sind erfasst.",
+          "en": "New knowledge requires a justified change to the original source operator or its field/sector map; further phases of the same family are already covered."
+        },
+        "explanation": {
+          "de": "Die ganze Familie ist durch Gittersättigung und exakte Klassifikation abgeschlossen, einschließlich Kontrolle im ursprünglichen Frame.",
+          "en": "The whole family is completed by lattice saturation and exact classification, including an original-frame control."
+        },
+        "finding_ids": [
+          "finding:source-generated-marking-classification"
+        ],
+        "id": "strategy:source-time-character-closure-search",
+        "outcome": "reuse_result",
+        "premise_ids": [
+          "premise:full-normalized-charge-time-character-family",
+          "premise:fixed-e8-fold-quarter-dictionary",
+          "premise:actual-chiral-opposite-quarter-domains"
+        ],
+        "title": {
+          "de": "Vierermarkierungen aus vorhandener Zeit und vollständiger Ladung",
+          "en": "Order-four markings from given time and full charge"
+        }
+      },
+      {
+        "aliases": [],
+        "changes_required": {
+          "de": "Tatsächliche ursprüngliche Nahtwirkung auf demselben Collar-/Feldcore mit Definitionsbereich, Zustand und voller Zeit identifizieren.",
+          "en": "Identify the actual original seam action on the same collar/field core, including domain, state and full time."
+        },
+        "explanation": {
+          "de": "Alle Treffer besitzen dieselbe fehlende ursprüngliche Feld-/Zustandsidentifikation. Die komponierte Markierung beweist diese Identifikation nicht.",
+          "en": "All candidates retain the missing original field/state identification. The composed marking does not prove that identification."
+        },
+        "finding_ids": [
+          "finding:source-marking-field-realization-boundary",
+          "finding:source-generated-marking-classification"
+        ],
+        "id": "strategy:internal-character-hit-selects-physical-source",
+        "outcome": "insufficient_for_goal",
+        "premise_ids": [
+          "premise:full-normalized-charge-time-character-family",
+          "premise:fixed-e8-fold-quarter-dictionary",
+          "premise:actual-chiral-opposite-quarter-domains"
+        ],
+        "title": {
+          "de": "Internen Charaktertreffer als physische Quellenauswahl verwenden",
+          "en": "Use an internal character hit as physical source selection"
+        }
+      }
+    ],
+    "tasks": [
+      {
+        "depends_on": [],
+        "id": "task:read-operational-inputs",
+        "kind": "assessment",
+        "next_action": {
+          "de": "Als festgehalten behandeln; keine spätere GNS-Konstruktion als Quellenselektor verbuchen.",
+          "en": "Treat as established; do not count a later GNS construction as a source selector."
+        },
+        "required_premise_ids": [
+          "premise:declared-p1-p2",
+          "premise:typed-source-structures"
+        ],
+        "resolution_ids": [
+          "finding:operational-seed-is-input"
+        ],
+        "status": "resolved",
+        "success_criterion": {
+          "de": "Die definierten Seed-Daten und die daraus induzierten Ausgaben sind getrennt dokumentiert.",
+          "en": "The defined seed data and the outputs induced from them are documented separately."
+        },
+        "title": {
+          "de": "Inputstatus des operativen Seeds festhalten",
+          "en": "Record the input status of the operational seed"
+        }
+      },
+      {
+        "depends_on": [
+          "task:read-operational-inputs"
+        ],
+        "id": "task:derive-physical-source-selector",
+        "kind": "construction",
+        "next_action": {
+          "de": "Die interne Vierercharakter-Suche ist vollständig erledigt (finding:source-generated-marking-classification); P5 nicht erneut raten. Jetzt den tatsächlichen P1-Nahtvertreter U_Sigma auf demselben geladenen Collar-/Feldcore und seine Wirkung auf B_Sigma bestimmen. Eine orientierte Shift-Kovarianz samt Domänen- und Calderón-Zustandstransport muss hergeleitet werden, nicht aus [u_Sigma]=1 eingesetzt. Danach physische Feld-/Sektorwirkung gegen die schon vorhandenen vier Kandidaten prüfen. Weder passende E8-Wurzelzahlen noch ein nachgewählter Zustand schließen die ursprüngliche Quelle oder das Ereignisgesetz.",
+          "en": "Internal four-character search is complete (finding:source-generated-marking-classification); do not guess P5 again. Now determine the actual P1 seam representative U_Sigma on the same charged collar/field core and its action on B_Sigma. Oriented shift covariance with domain and Calderon-state transport must be derived, not inserted from [u_Sigma]=1. Then check physical field/sector action against the four existing candidates. Neither matching E8 root counts nor a subsequently chosen state closes the original source or event law."
+        },
+        "required_premise_ids": [
+          "premise:declared-p1-p2",
+          "premise:typed-source-structures"
+        ],
+        "resolution_ids": [],
+        "status": "open",
+        "success_criterion": {
+          "de": "Eine aus P1/P2 und Originaldefinitionen hergeleitete Regel bestimmt A_loc, omega, tau_t, Ereignisse und deren Feld-Readout gemeinsam.",
+          "en": "A rule derived from P1/P2 and original definitions jointly determines A_loc, omega, tau_t, events, and their field readout."
+        },
+        "title": {
+          "de": "Ursprünglichen Selektor für Quelle/Zustand/Ereignis finden",
+          "en": "Find the original selector for source/state/event"
+        }
+      },
+      {
+        "depends_on": [],
+        "id": "task:reuse-native-source-common-time-thermal-family",
+        "kind": "construction",
+        "next_action": {
+          "de": "Vorhandenen Beweis in seinem Geltungsbereich wiederverwenden.",
+          "en": "Reuse the existing proof within its scope."
+        },
+        "required_premise_ids": [
+          "premise:declared-native-round20-source"
+        ],
+        "resolution_ids": [
+          "finding:native-source-common-time-thermal-family"
+        ],
+        "status": "resolved",
+        "success_criterion": {
+          "de": "Endliches Raumvolumen, ursprüngliche neutrale Skalar-/Ladungsquelle; keine Raumkontinuums- oder P1/P2-Auswahlbehauptung.",
+          "en": "Finite spatial volume and original neutral scalar/charge source; no spatial continuum or P1/P2 selection claim."
+        },
+        "title": {
+          "de": "Dieselbe Quelle liefert Hamiltonoperator, Zeit und thermischen Zustand",
+          "en": "The same source supplies Hamiltonian, time and thermal state"
+        }
+      },
+      {
+        "depends_on": [],
+        "id": "task:reuse-native-grade-carry-and-memory",
+        "kind": "construction",
+        "next_action": {
+          "de": "Vorhandenen Beweis in seinem Geltungsbereich wiederverwenden.",
+          "en": "Reuse the existing proof within its scope."
+        },
+        "required_premise_ids": [
+          "premise:declared-native-round20-source"
+        ],
+        "resolution_ids": [
+          "finding:native-grade-carry-and-memory"
+        ],
+        "status": "resolved",
+        "success_criterion": {
+          "de": "Gegebene Quelle samt Grad und J>0; Zweizeitkern ist kein physisches Messinstrument und keine universelle dreidimensionale Gedächtnisrealisierung.",
+          "en": "Given source, grade and J>0; the two-time kernel is neither a physical measuring instrument nor a universal three-dimensional memory realization."
+        },
+        "title": {
+          "de": "Markierung und nötiges Gedächtnis sind in der gegebenen Quelle verbunden",
+          "en": "Marking and necessary memory are connected within the given source"
+        }
+      },
+      {
+        "depends_on": [],
+        "id": "task:reuse-even-seam-global-operator-factorization",
+        "kind": "construction",
+        "next_action": {
+          "de": "Vorhandenen Beweis in seinem Geltungsbereich wiederverwenden.",
+          "en": "Reuse the existing proof within its scope."
+        },
+        "required_premise_ids": [
+          "premise:stipulated-even-e8-seam-lift"
+        ],
+        "resolution_ids": [
+          "finding:even-seam-global-operator-factorization"
+        ],
+        "status": "resolved",
+        "success_criterion": {
+          "de": "Globale Ladungstransporte im stipulierten geraden Abschluss; keine lokalen Vertexinsertionen, gewöhnlich lokale ungerade CAR/E8-Einbettung oder Ereignisdynamik.",
+          "en": "Global charge transports in the stipulated even completion; not local vertex insertions, an ordinary-local odd CAR/E8 inclusion or event dynamics."
+        },
+        "title": {
+          "de": "Gemeinsame globale Nahtoperatorfaktorisierung ist vorhanden",
+          "en": "A common global seam-operator factorization exists"
+        }
+      },
+      {
+        "depends_on": [],
+        "id": "task:reuse-source-generated-marking-classification",
+        "kind": "construction",
+        "next_action": {
+          "de": "Ergebnis wiederverwenden; dieselbe endliche Familie nicht erneut als neue Suche starten.",
+          "en": "Reuse the result; do not restart the same finite family as a new search."
+        },
+        "required_premise_ids": [
+          "premise:full-normalized-charge-time-character-family",
+          "premise:fixed-e8-fold-quarter-dictionary",
+          "premise:actual-chiral-opposite-quarter-domains"
+        ],
+        "resolution_ids": [
+          "finding:source-generated-marking-classification"
+        ],
+        "status": "resolved",
+        "success_criterion": {
+          "de": "Alle Vierertorsionscharaktere der vorgegebenen Quelle vollständig klassifiziert und ihre Projektoren ohne Zielvorgabe rekonstruiert.",
+          "en": "All four-torsion characters of the given source completely classified and their projectors reconstructed without target insertion."
+        },
+        "title": {
+          "de": "Vollständige Quellencharakter-Klassifikation wiederverwenden",
+          "en": "Reuse complete source-character classification"
+        }
+      }
+    ],
+    "title": {
+      "de": "Gemeinsame Auswahl von Quelle, Zustand und Ereignissen",
+      "en": "Selecting a common source, state, and events"
+    },
+    "topics": [
+      "topic:origin",
+      "topic:quantum",
+      "topic:clocks"
+    ]
+  }
+}

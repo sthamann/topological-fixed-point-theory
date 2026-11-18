@@ -1,0 +1,85 @@
+{
+  "schema": "tfpt.genesis-checks.v1",
+  "checks": [
+    {
+      "id": "quillen-relative-normalization",
+      "question": "Can the normalized holonomy Quillen function alone retain the geometric zero-source derivative?",
+      "command": [
+        "python3",
+        "-B",
+        "-OO",
+        "experiments/theory-contracts/seam-positive-kernel-search-20261015/genesis_checks.py",
+        "--check",
+        "quillen-relative-normalization"
+      ],
+      "source_ids": [
+        "finding:original-quarter-pair-fixes-square-charge-law-half-response-and-real-quillen-norm"
+      ],
+      "premise_ids": [
+        "premise:typed-source-structures",
+        "premise:given-original-elliptic-quarter-source-and-supported-scalar-current-insertion"
+      ],
+      "scope": "Given original elliptic free source, specified unit-charge probe and same co-moving reference; not a universal physical TFPT origin or replica theorem."
+    },
+    {
+      "id": "theta-heat-shape-response",
+      "question": "Does Poisson self-duality and the theta heat equation connect charge curvature to the theta modulus derivative?",
+      "command": [
+        "python3",
+        "-B",
+        "-OO",
+        "experiments/theory-contracts/seam-positive-kernel-search-20261015/genesis_checks.py",
+        "--check",
+        "theta-heat-shape-response"
+      ],
+      "source_ids": [
+        "finding:original-quarter-pair-fixes-square-charge-law-half-response-and-real-quillen-norm"
+      ],
+      "premise_ids": [
+        "premise:typed-source-structures",
+        "premise:given-original-elliptic-quarter-source-and-supported-scalar-current-insertion"
+      ],
+      "scope": "Given original elliptic free source, specified unit-charge probe and same co-moving reference; not a universal physical TFPT origin or replica theorem."
+    },
+    {
+      "id": "doubled-source-counting",
+      "question": "Are the two independent quarter blocks the two faces, and does their total eta control their half susceptibility?",
+      "command": [
+        "python3",
+        "-B",
+        "-OO",
+        "experiments/theory-contracts/seam-positive-kernel-search-20261015/genesis_checks.py",
+        "--check",
+        "doubled-source-counting"
+      ],
+      "source_ids": [
+        "finding:original-quarter-pair-fixes-square-charge-law-half-response-and-real-quillen-norm"
+      ],
+      "premise_ids": [
+        "premise:typed-source-structures",
+        "premise:given-original-elliptic-quarter-source-and-supported-scalar-current-insertion"
+      ],
+      "scope": "Given original elliptic free source, specified unit-charge probe and same co-moving reference; not a universal physical TFPT origin or replica theorem."
+    },
+    {
+      "id": "variable-mark-completion",
+      "question": "In the explicit standard D_(n+1)+A_(n-1) class, do complete even unimodular gluing and an actually local primitive family-discriminant charge allow higher n than4?",
+      "command": [
+        "python3",
+        "-B",
+        "-OO",
+        "experiments/theory-contracts/seam-positive-kernel-search-20261015/genesis_checks.py",
+        "--check",
+        "variable-mark-completion"
+      ],
+      "source_ids": [
+        "script:v1_e8_glue",
+        "script:v189_riemann_roch_carrier"
+      ],
+      "premise_ids": [
+        "premise:typed-source-structures"
+      ],
+      "scope": "Conditional candidate family: standard positive D/A pairing is assumed; actually local primitive family charge is additional, not inferred from topological winding. Not all possible quantum or TFPT sources."
+    }
+  ]
+}

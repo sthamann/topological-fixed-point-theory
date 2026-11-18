@@ -28,7 +28,7 @@ ROOT = HERE.parents[2]
 TENSOR_PATH = ROOT / 'experiments/theory-contracts/universalraum-v16-integrated-20260915/sources/native_tensor.npz'
 TENSOR_SHA256 = '3f00a0892157a691e4ef26920c3702772c7bf76a250fad98ff04a079bb64b763'
 CLOCK_PATH = ROOT / 'experiments/theory-contracts/compiler-involution-types/checker.py'
-CLOCK_SHA256 = '9bf99de79f224ffcd060359eb146510b6e49973170f9953a0aec26760bd2c1a1'
+CLOCK_SHA256 = 'a0923ab19e46d784b28783f3b943df032d9de3c08b7ecda017b3d4cd3e5ad1ab'
 
 N_MODES = 64
 N_BOSONS = 60

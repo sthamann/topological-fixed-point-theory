@@ -1,0 +1,209 @@
+CLOCK AND NEGATIVE SIGN PACKET
+Exact compatibility of the geometric quarter lift with the v117 coefficient clock
+2026-10-26
+
+VERDICT
+
+PROVED at the flat coefficient level.  The geometric quarter map preserves the
+selected negative Weierstrass orbit.  It does not exchange that orbit with the
+positive one.  Its unique order-four lift at the t=0 branch acts on the three
+negative sign lines with square (+,-,-), up to their ordering, and is conjugate
+to the original v117 clock U.  With the old source convention, the positive
+t=0 monodromy is U^(-1).
+
+This proves actual C4 equivariance of the coefficient local system.  It does
+not yet construct the action on charged CAR fields, their state, or local
+operator support.
+
+
+1. THE CORRECT GEOMETRIC LIFT
+
+Set
+
+    f(z)=(z^2-1)/(z^2+1),
+    w^3=f(z),
+    eta=z(1-w^3),
+    C: eta^2=1-w^6.                                                (1)
+
+A direct calculation gives
+
+    f(i z)=1/f(z).                                                  (2)
+
+Therefore a lift of the quarter map z->i z has w' equal to a cube root of
+w^(-3).  The marking used in the September source is
+
+    Q:(z,w,eta) |-> (i z, 1/w, -i eta/w^3).                       (3)
+
+The eta factor is not optional.  It follows from eta=z(1-w^3):
+
+    eta' = i z(1-w^(-3)) = -i eta/w^3.                             (4)
+
+For q_a=-omega^a one has
+
+    1/q_a = -omega^(-a) = q_(-a).                                 (5)
+
+Thus Q preserves the negative orbit {q_0,q_1,q_2}.  It also preserves the
+positive orbit separately.  The apparent q to p exchange came from dropping
+the minus sign in the reciprocal of q_a.
+
+Applying (3) twice gives
+
+    Q^2:(z,w,eta) |-> (-z,w,-eta),                                 (6)
+
+which is the hyperelliptic involution of C over the w-sphere.  In particular
+Q has order four on C.
+
+
+2. ACTION ON THE SELECTED TWO-TORSION LINES
+
+The exact coefficient packet is
+
+    L_a^q=O_C(q_a-q_(a+1)),
+    h_a^2=H_a(w):=(w+omega^a)/(w+omega^(a+1)),
+    h_0 h_1 h_2=1.                                                 (7)
+
+Pullback of the divisor gives
+
+    Q^* L_a^q
+      = O_C(q_(-a)-q_(-a-1))
+      = (L_(-a-1)^q)^(-1)
+      = L_(-a-1)^q.                                                (8)
+
+The last equality uses two-torsion.  Hence Q fixes L_1^q and exchanges
+L_0^q with L_2^q.  This already proves invariance of the unordered coefficient
+packet.
+
+The Kummer functions give the sharper lift.  From (7),
+
+    H_a(1/w) = omega^2 / H_(-a-1)(w).                              (9)
+
+Consequently every lift has the form
+
+    Q^* h_a = epsilon_a omega / h_(-a-1),
+    epsilon_0 epsilon_1 epsilon_2=1.                               (10)
+
+The product condition is forced by h_0 h_1 h_2=1.  Formula (10) also shows why
+the bare permutation of the three line classes does not yet distinguish the
+order-two and order-four lifts.
+
+
+3. LOCAL t=0 INERTIA SELECTS THE ORDER-FOUR LIFT
+
+The quotient coordinate is
+
+    t=z^4=((1+w^3)/(1-w^3))^2.                                    (11)
+
+At q_0=-1, write delta=w+1.  Then t is a nonzero constant times delta^2.
+The cover Z_q -> P1_w defined by (7) is ramified at q_0, so delta is a nonzero
+constant times a local square s^2 on Z_q.  Therefore
+
+    t = constant times s^4.                                       (12)
+
+The positive t=0 inertia must act by s->i s.  Its square acts by s->-s and is
+the nontrivial V4 inertia above q_0.
+
+For a=0, equation (10) gives
+
+    Q^2 h_0 = (epsilon_0/epsilon_2) h_0.                           (13)
+
+The local condition (12) therefore forces
+
+    epsilon_0/epsilon_2=-1.                                       (14)
+
+Together with the product condition, this gives epsilon_1=-1.  Up to the
+single diagonal V4 change of the exchanged h_0,h_2 frames, take
+
+    (epsilon_0,epsilon_1,epsilon_2)=(1,-1,-1).                     (15)
+
+The alternative with epsilon_0=epsilon_2 has order two above q_0 and cannot
+be the inertia of the marked degree-four branch.  Thus the order-four lift is
+selected by the actual local geometry, without importing a target matrix.
+
+
+4. EXACT COEFFICIENT CLOCK
+
+Choose flat character frames e_a for L_a^q after the canonical identifications
+with their duals.  With the order-four lift (15), one may take
+
+    Q e_0=e_2,
+    Q e_1=e_1,
+    Q e_2=-e_0.                                                    (16)
+
+Its matrix is
+
+    A = [[0,0,-1],
+         [0,1, 0],
+         [1,0, 0]],
+
+    A^2=diag(-1,1,-1),
+    A^4=I,
+    det(A)=1,
+    spec(A)={1,i,-i}.                                              (17)
+
+The fixed-line sign in (16) is selected by the determinant-one coefficient
+representation already proved in the original triangle source.  The other
+choice is the ordinary standard S4 representation with determinant equal to
+the sign character; the old source excludes it.
+
+In the F basis printed in the September source,
+
+    R=F^dagger U F
+     = [[1,0,0],
+        [0,0,1],
+        [0,-1,0]].                                                 (18)
+
+The constant signed permutation
+
+    K = [[0,1,0],
+         [1,0,0],
+         [0,0,-1]]                                                 (19)
+
+satisfies
+
+    K A K^(-1)=R.                                                  (20)
+
+This is a comparison after the lift has already been selected by (12), not a
+definition of A from R.  Since pullback transports monodromy contravariantly,
+the positive loop around t=0 acts on flat solutions by A^(-1).  Equation (20)
+therefore gives exactly
+
+    K A^(-1) K^(-1)=R^(-1)=F^dagger U^(-1) F,                     (21)
+
+which is the positive-loop convention stated in the old source.
+
+On C, Q^2 is the hyperelliptic involution (6).  On the coefficient cover Z_q,
+which lies over the w-sphere, the same square is the nontrivial V4 deck element
+shown in (17).  On their fiber product Y_q it carries both pieces.  This is why
+Q^2 can be geometrically nontrivial even though each two-torsion line class is
+fixed after two applications.
+
+
+5. SCOPE
+
+The q packet is therefore not merely compatible with the four A4 puncture
+monodromies.  It descends equivariantly through the original C4 clock, and the
+order-four action, its square, determinant, spectrum, and positive-loop
+orientation all agree with the source U.
+
+What is now exact:
+
+  * Q preserves the selected negative line packet;
+  * its local t=0 lift has order four;
+  * Q^2 gives the required nontrivial V4 sign pattern;
+  * the determinant-one character sum is the original v117 coefficient
+    clock, with positive monodromy U^(-1).
+
+What remains open is the next type change.  No source yet identifies these
+flat coefficient frames with charged CAR field operators, their state, or
+local support.  The present result supplies the coefficient clock that such a
+field intertwiner must respect; it does not assume that intertwiner.
+
+
+SOURCE ANCHORS
+
+  * documents/tfpt_explorer--docs--session-2026-09-28--TFPT_Gesamtsynthese_2026-09-28/
+    sections/004-subsection-auch-die-skalen-besitzen-einen-gemeinsamen-va.tex,
+    lines 203--327: exact (4,3,2) triangle proof, F basis, U marking, genus-two
+    curve, and the distinction between point and field intertwiners.
+  * research-20261026-real-boundary/SIGN-LINE-COVER-DICTIONARY.txt: selection
+    of the negative packet by the exact passport and A4 fiber product.

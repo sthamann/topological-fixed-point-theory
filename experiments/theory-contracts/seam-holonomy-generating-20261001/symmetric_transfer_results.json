@@ -1,0 +1,27 @@
+{
+  "steps": [
+    {
+      "step": "ST1 solvable ring (3 sites, pairing composites, hopping): one HS slice W_h <exp(sum_x phi_x O_x)>_phi W_h (Gauss-Hermite, invariant Gaussian prior) commutes with the translation and with the Z4 rotation to quadrature precision, and approximates e^{-dtau H} to O(dtau^2)",
+      "pass": true,
+      "detail": "[T, translation] 1.4e-15; [T, Z4] 1.6e-17; |T - e^(-dtau H)| / |e^(-dtau H)| = 6.16e-02"
+    },
+    {
+      "step": "ST2 counter-check with non-commuting composites (pairing + hopping + density; the pure pairing squares of this tiny ring commute): the ordered local-gate product W_h e^{dtau g O_1^2} e^{dtau g O_2^2} e^{dtau g O_3^2} W_h does NOT commute with the translation (the leak class), while the single-exponential HS slice of the same composites still does",
+      "pass": true,
+      "detail": "pure pairing squares commute: 0.0e+00; [ordered gates, translation] 1.5e-02; [HS slice, translation] 5.8e-15"
+    },
+    {
+      "step": "ST4 production operator (reweight.py, frozen Theta_1 at g = 0.1, integrator hash recorded): W_h commutes with the cell translations, the HS bilinear is covariant (T K(phi) T^dag = K(phi translated)) and Z4 maps K(phi) to K(-phi); with the translation- and sign-invariant Gaussian prior the HS-averaged slice of the production code commutes with P_k and P_q^a for every g -- the release of the existing integrator for sector traces is tied to this hash",
+      "pass": true,
+      "detail": "integrator hash f0f2d58fada5669b; max covariance residual 2.5e-16, Z4 residual 0.0e+00 on debug4 and cubic16"
+    },
+    {
+      "step": "ST3 (statement) the reweight.py slice W_h e^{K(phi)} W_h with K(phi) = sum over all sites and channels and the invariant prior N(0, 2 g dtau) is of the ST1 type: translations, Z4 and Spin(10) are exact symmetries of every HS-averaged slice; no group-averaged integrator is needed; per configuration the slice is not invariant, only its average, which is what a sector trace measures",
+      "pass": true,
+      "detail": "SECTOR_GAP may use the existing integrator; the dtau -> 0 control remains necessary for the gap value itself"
+    }
+  ],
+  "passed": 4,
+  "total": 4,
+  "integrator_hash": "f0f2d58fada5669b"
+}

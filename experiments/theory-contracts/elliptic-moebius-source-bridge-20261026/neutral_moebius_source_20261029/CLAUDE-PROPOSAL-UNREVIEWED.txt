@@ -1,0 +1,53 @@
+Actual model: claude-opus-4-8[1m]
+UNREVIEWED PROPOSAL; use CLAUDE-REVIEW.txt for rejected inferences.
+
+## Summary judgment
+
+The requested arrow — "boundary spectral triple $\mathfrak T_\partial=(\mathcal A_+,\mathcal H_+,D_+,J,\Gamma,B_\Sigma)$ (plus collar) selects $\iota$" — does **not** close, and the failure is demonstrable rather than merely unproven. There is exactly one route that the supplied data make available, and it breaks at a single explicit identity. I give that route, its premises mapped to the originals, and the first decisive obstacle.
+
+## The one available route
+
+Everything carried past $\Cseed$ into the boundary kernel $\Tker^\partial=(\mathcal A,\mathcal H,D,J,\Gamma,\taudbl,\iC,\Pprim,[u_\Sigma],\cthree)$ is a **bilinear (one‑particle) package**: the Calderón polarization $\iC=2P_C-1$ on the Cauchy‑data space $\mathcal H_\partial$, compatible with $J,\Gamma$ by Def. `def:reduced-theorem-datum`(ii),(iv) and the collar product form $D_+=\gamma_n(\partial_n+B_\Sigma)$ (iii). A polarization of a one‑particle space determines a quasi‑free state and nothing more (Shale–Stinespring/Araki). So the only canonically induced boundary word map is the **Bogoliubov second quantization of $\iC$**:
+$$
+\iota:=\Gamma_{\mathrm{Bog}}(j),\qquad j:\mathcal H_\partial^{+}\hookrightarrow \text{(one-particle space of }\mathcal H_{\mathrm{OS}}),
+$$
+with $j$ the isometry delivered by the one‑sided OS Hilbert space that $\Cseed$ builds from reflection positivity (proof architecture of `thm:operational-collar-completion`). On this route (B1) and (B3) of `OS-SOURCE-REPAIR` are inherited from $J,\Gamma$ and the positive‑time semigroup; the new quarter‑CAR construction (positive, gapless $P=\mathrm d\Gamma(x/2)$, true HSMI + Borchers) supplies exactly such a quasi‑free boundary current net on the same sea vacuum. So the HSMI datum is indeed no longer the gap.
+
+## Premises this route requires
+
+- **(H1)** $P_C^2=P_C$ on $\mathcal H_\partial$, $J$‑ and $\Gamma$‑compatible — **holds** (Def. (iv), `thm:primitive-datum-from-reduced-datum`).
+- **(H2)** $\Cseed$ delivers a reflection‑ and translation‑intertwining one‑particle isometry $j$ at the **two‑point level** — **holds** (proof architecture: RP + positive‑time net reconstruct the one‑sided OS space; the bilinear seed/Gram is preserved).
+- **(H3)** The target functional $\omega_{\mathrm{adm}}$ restricted to $\iota(P_{\mathrm{boundary},+})$ is **quasi‑free with two‑point function equal to the $j$‑pullback of $\iC$**. — This is the load‑bearing hypothesis.
+
+## The exact first missing identity
+
+(B2) must hold for **all** reflected words, and the first nontrivial OS Gram entry (two two‑fermion words $F=\psi(f_1)\psi(f_2)$, $G=\psi(g_1)\psi(g_2)$) already probes the **four‑field** correlator of $\omega_{\mathrm{adm}}$. With the two‑point functions fixed by $\iC$ via (H2), (B2) at this degree is equivalent to the Pfaffian/Wick reduction
+
+$$
+\boxed{\;
+\begin{aligned}
+\omega_{\mathrm{adm}}\!\big(\Theta\psi(f_1)\,\Theta\psi(f_2)\,\psi(g_1)\,\psi(g_2)\big)
+=\;&\omega_{\mathrm{adm}}(\Theta\psi(f_1)\Theta\psi(f_2))\,\omega_{\mathrm{adm}}(\psi(g_1)\psi(g_2))\\
+-\;&\omega_{\mathrm{adm}}(\Theta\psi(f_1)\psi(g_1))\,\omega_{\mathrm{adm}}(\Theta\psi(f_2)\psi(g_2))\\
++\;&\omega_{\mathrm{adm}}(\Theta\psi(f_1)\psi(g_2))\,\omega_{\mathrm{adm}}(\Theta\psi(f_2)\psi(g_1)).
+\end{aligned}\;}
+$$
+
+Equivalently: the **connected (Ursell) four‑point function of $\omega_{\mathrm{adm}}$ vanishes on $\mathrm{Ran}\,\iota$.**
+
+This identity is the first missing arrow, for two source‑grounded reasons:
+
+1. **It cannot be carried by $\Tker^\partial$.** The boundary kernel is bilinear and `def:post-carrier-primitive-kernel` states outright that **no vacuum datum** is part of it. A polarization/Calderón package $\iC$ is a quadratic form; it contains no quartic (connected) invariant. Hence $\Cseed$ factors through the quasi‑free quotient: it preserves the Gram seed (two‑point) but **projects out** all Ursell functions of order $\ge 4$. This is the precise, demonstrable loss of source information in $\Cseed$ — located exactly at connected order $\ge 4$, not at the 2‑point level.
+
+2. **It is explicitly flagged as false in general for the target.** `OS-SOURCE-REPAIR` (final paragraph): preservation of the two‑point function is "insufficient outside a proven quasi‑free sector," and after integrating a fluctuating bosonic background "a mixture of Gaussian fermion states need not remain Gaussian, so its full four‑point function is not fixed by the averaged two‑point kernel." That is precisely the statement that the connected four‑point of $\omega_{\mathrm{adm}}$ need not vanish, i.e. (★) fails.
+
+The new quarter‑CAR result does not rescue this: that current net is itself quasi‑free ($\mathrm d\Gamma$ of multiplication by $x/2$), so it supplies a **Gaussian LHS/boundary side**. The obstruction lives entirely on the **target** side — the non‑Gaussianity of $\omega_{\mathrm{adm}}$ after background integration. Supplying a quasi‑free boundary source cannot create a Pfaffian factorization that $\omega_{\mathrm{adm}}$ does not possess.
+
+## Verdict
+
+There is a precisely demonstrable loss of source information in $\Cseed$: it is a two‑point (polarization‑level), vacuum‑free functor, so no reconstruction theorem of the form "$(\mathcal A_+,D_+,J,B_\Sigma,\text{collar})\Rightarrow\iota$" can exist on the carried data alone. A valid $\iota$ requires, as independent input beyond $\Tker^\partial$, **exactly one** of:
+
+- (a) a proof that $Z_{\mathrm{adm}}$ is quasi‑free on the neutral boundary‑current subnet (then (★) holds and $\iota=\Gamma_{\mathrm{Bog}}(j)$ closes), or
+- (b) the connected $\ge 4$‑point functions of $\omega_{\mathrm{adm}}$ on $\mathrm{Ran}\,\iota$ — i.e. the very vacuum/higher‑moment datum that `def:post-carrier-primitive-kernel` excludes.
+
+Until (a) is proved for the strong‑Seedop functional, the decisive first obstacle is identity (★). That is the single quartic equality to establish (or refute by one explicit nonzero Ursell term) — the physical $P1$ image/state/reflection cannot be fixed before it.

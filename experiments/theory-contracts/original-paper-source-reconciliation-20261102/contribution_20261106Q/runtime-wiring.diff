@@ -1,0 +1,80 @@
+--- P/runtime/field_problem.py
++++ Q/runtime/field_problem.py
+@@ -9,8 +9,8 @@
+ A=Assembler(DOMAIN_PATH);DOMAIN=A.domain
+ SCHEMA='tfpt.field-configuration.v1'
+ RUN_LABEL='full96_spatial_field_candidates_NOT_complete_physical_source'
+-SOURCE_PATH=HERE.parent/'source/evaluator.py'
+-SOURCE_FILES=[str(DOMAIN_PATH),str(HERE/'assemble.py'),str(HERE/'launch.py'),str(HERE/'repo_paths.py'),*DOMAIN['_resolved_source_originals']]
++SOURCE_PATH=HERE/'source_adapter.py'
++SOURCE_FILES=[str(DOMAIN_PATH),str(HERE/'assemble.py'),str(HERE/'launch.py'),str(HERE/'repo_paths.py'),str(HERE/'original_source_adapter.py'),str(HERE.parent/'checks/original_checks.py'),*DOMAIN['_resolved_source_originals']]
+ if SOURCE_PATH.exists():SOURCE_FILES.append(str(SOURCE_PATH))
+ if isinstance(DOMAIN.get('whole_source_bundle'),str):
+     bundle=Path(DOMAIN['whole_source_bundle'])
+--- P/runtime/launch.py
++++ Q/runtime/launch.py
+@@ -27,6 +27,11 @@
+                      actual_contribution_attempt=attempt,integration_plan={key:value for key,value in plan.items() if key!='items'},
+                      original_atom_count=len(plan.get('items',[])),
+                      GA_selection_used_for_integration=False)
++    if not ready and adapter is not None:
++        # These are actual callable results with absent source data, never
++        # substituted PASS values or per-configuration ensemble requirements.
++        preflight['unavailable_source_check_inputs']=adapter.run_ensemble_checks({},[],plugin.DOMAIN,
++            required_ids=registration['required_ids'])
+     write_json(args.out/'preflight.json',preflight)
+     if not ready:
+         result={'status':'ORIGINAL_SOURCE_INTEGRATION_NOT_STARTED','preflight':preflight,
+@@ -61,11 +66,15 @@
+                   GA_selection_used_for_integration=False,unique_only_mean_used=False,
+                   whole_physical_search_completed=False,
+                   primitive_source_identity_proved=False)
++    values_ready=all(result.get(k)is not None for k in ('Z0','ZU','ZY','ZUY'))
++    execution_status=('SOURCE_AGGREGATED_REQUIRED_CHECKS_PASSED'if values_ready and complete else
++                      'SOURCE_AGGREGATED_REQUIRED_CHECKS_NOT_PASSED')
++    result['execution_status']=execution_status
+     write_json(args.out/'contributions.json',entries);write_json(args.out/'result.json',result)
+-    print(json.dumps({'status':'SUPPLIED_ORIGINAL_ATOMS_NUMERICALLY_AGGREGATED',
++    print(json.dumps({'status':execution_status,
+                       'input_role':cap.get('input_role'),'result':result,
+                       'whole_physical_search_completed':False},indent=2))
+-    return 0 if all(result.get(k)is not None for k in ('Z0','ZU','ZY','ZUY')) else 2
++    return 0 if values_ready and complete else 2
+ 
+ def main():
+     p=argparse.ArgumentParser(description=__doc__)
+--- /dev/null
++++ Q/runtime/source_adapter.py
+@@ -0,0 +1,32 @@
++"""P numeric source consumer with the independently reviewed Q math checks.
++
++No primitive contribution producer is supplied by this registry wiring.
++"""
++from pathlib import Path
++import importlib.util
++from original_source_adapter import (
++    evaluate_contribution, integration_plan, aggregate_contributions,
++    evaluate_source, capability_report as whole_capability_report,
++    contribution_capability_report as _contribution_capability,
++    ensemble_test_registry as _p_registry,
++)
++
++CHECKS_PATH=Path(__file__).resolve().parents[1]/'checks/original_checks.py'
++_spec=importlib.util.spec_from_file_location('tfpt_q_original_mathematical_checks',CHECKS_PATH)
++CHECKS=importlib.util.module_from_spec(_spec)
++_spec.loader.exec_module(CHECKS)
++
++def ensemble_test_registry(domain):
++    return {**_p_registry(domain),**CHECKS.ensemble_test_registry(domain)}
++
++def contribution_capability_report(domain):
++    report=_contribution_capability(domain)
++    report['registered_ensemble_test_ids']=list(ensemble_test_registry(domain))
++    report['primitive_producer_added_by_Q_registry']=False
++    return report
++
++def run_ensemble_checks(result,entries,domain,required_ids=None):
++    registry=ensemble_test_registry(domain)
++    ids=list(registry) if required_ids is None else required_ids
++    return [registry[cid](result,entries,domain) if cid in registry else
++            {'id':cid,'status':'MISSING_IMPLEMENTATION'} for cid in ids]

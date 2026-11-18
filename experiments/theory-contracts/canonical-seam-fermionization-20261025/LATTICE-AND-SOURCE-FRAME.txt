@@ -1,0 +1,452 @@
+CANONICAL SEAM FERMIONIZATION: LATTICE AND SOURCE FRAME
+=======================================================
+
+Question
+--------
+
+The marked compiler lattice is
+
+  K=D5+A3 subset E8,
+  E8/K=<g+K> isomorphic to Z4.
+
+Its unique order-two subgroup determines one canonical intermediate even
+lattice.  Is that marked intermediate lattice, in the already fixed O/M
+dictionary and without another Weyl rotation, exactly the D8 charge lattice
+of the eight folded components of the one CAR source?
+
+Verdict
+-------
+
+SCOPED FALSE.
+
+The order-two intermediate of the marked D5+A3 glue is exactly a D8.  The
+folded CAR even lattice is also exactly a D8.  In the common target frame
+fixed by the existing O and M, however, they are different embedded D8
+sublattices of E8:
+
+  canonical marked D8 root set:       112 roots,
+  M(folded CAR D8) root set:          112 roots,
+  intersection:                        48 roots,
+  canonical only:                      64 roots,
+  folded only:                         64 roots.
+
+Their Cartan defect characters and their actions of the actual quarter-time
+vector also differ.  Equality of Dynkin type, determinant and root count is
+therefore insufficient in the simultaneously fixed O/M marking.
+
+This is not a coordinate-invariant TFPT no-go.  A Weyl transformation is a
+legitimate change of coordinates if it transports every marked datum at
+once: the D5+A3 flag, the O frame, the time vector, the source embedding,
+the field words and their cocycle/locality data.  What fails here is the
+identity comparison after the two existing dictionaries O and M have both
+been fixed.  Rotating only one D8 to align it with the other while leaving
+the remaining data fixed would introduce a new dictionary.  No such fitted
+Weyl rotation is made here.
+
+Because this first equality gate fails, the proposed common identification
+of the nonisotropic vector coset, the odd neighbour Z8 and the E8 defect
+sector called v+c is not performed.  Those names belong to the discriminant
+group of a specified D8 embedding and cannot be carried across these two
+frames by identity.
+
+Status split
+------------
+
+PROVED:
+
+  * the unique order-two glue intermediate is the canonical target D8;
+  * O maps the original Gaussian E8 roots bijectively to the fixed target
+    E8 frame and maps that intermediate to the standard target D8;
+  * M is the already supplied orthogonal E8 root automorphism;
+  * M maps the folded CAR D8 to a different target D8 with the exact
+    48/64/64 root intersection stated above;
+  * the two Z2 characters on charged root fields differ;
+  * d_alpha=M delta_alpha transports the actual folded quarter time, and
+    its root-phase multiset on M(D8_CAR) differs from its phase multiset on
+    the canonical marked D8 for alpha=1/4 and 3/4;
+  * p=(+,+,+,+,-,-,-,-)/2 is an E8 spinor root in the standard even-parity
+    spinor coset, M p=e_1+e_4 in one-based target notation, and both actual
+    quarter shifts give p^2/2+delta.p=0;
+  * this is the exact source preimage of the equal-energy target root line
+    already recorded in FOLD-COVARIANCE-TO-NATIVE-FIELD-RESPONSE.txt.
+
+SCOPED FALSE:
+
+  O(D8_halfway)=M(D8_CAR)
+
+in the existing marked O/M dictionary.
+
+CONDITIONAL ABSTRACT FACT, NOT A CROSS-FRAME IDENTIFICATION:
+
+  For any fixed copy of D8, D8*/D8 has one nonisotropic vector class and
+  two isotropic spinor classes.  Adjoining the vector class gives the odd
+  unimodular neighbour Z8; adjoining either spinor class gives an E8
+  neighbour.  This standard discriminant-form fact does not say which class
+  of one embedded D8 is the named class of another embedded D8.
+
+OPEN AND NOT TESTED AFTER THE FAILED GATE:
+
+  * a primitive source reason selecting a common Weyl presentation in which
+    the D5+A3 flag, O, M, time, source and fields are transported together,
+    or selecting a new E8 automorphism which aligns the two D8s while the
+    other markings are retained;
+  * a common microscopic identification of the CAR odd vector coset with a
+    canonical compiler spinor or defect sector;
+  * a local odd-sector field construction.  The known global re-fielding
+    does not supply this locality statement.
+
+1. The canonical order-two intermediate
+-----------------------------------------
+
+Use the fixed standard target coordinates in which A3 is the usual D3 root
+lattice on the last three coordinates.  Then
+
+  K={z in Z8:
+       sum_(i=0)^4 z_i is even,
+       sum_(i=5)^7 z_i is even}.
+
+Choose the marked Z4 glue generator
+
+  g=(1/2,1/2,1/2,1/2,1/2,1/2,1/2,1/2).
+
+It has order four modulo K: 2g=(1,...,1) is not in K, whereas
+4g=(2,...,2) is in K.  A cyclic group of order four has one subgroup of
+order two, namely <2g>.  Its intermediate lattice is
+
+  L_2=K union (K+2g).
+
+For an integral vector z, membership in K means that the first-five and
+last-three coordinate sums are both even.  Membership in K+2g means that
+both sums are odd.  Their union is therefore
+
+  L_2={z in Z8: sum_i z_i is even}=D8.                    (1)
+
+Equation (1) proves the full lattice identity.  It is not inferred from the
+number of roots.
+
+On roots, use doubled coordinates as in the original programs.  The marked
+glue degree is
+
+  deg(r)=sum_(i=0)^4 r_i mod 4.
+
+The exact E8 root counts in degrees 0,1,2,3 are
+
+  52,64,60,64.
+
+The roots in the order-two subgroup are degrees 0 and 2.  Their total is
+52+60=112, and their set is exactly
+
+  R_can={+/-e_i +/-e_j: i<j},                             (2)
+
+the standard D8 root set in physical target coordinates.
+
+The original map in tfpt_explorer/cartan_source.py is
+
+  O=T S^(-1)/sqrt(2),                                     (3)
+
+where S is the original Gaussian simple-root matrix and T is the displayed
+target simple-root matrix.  Exactly O^T O=I.  If r is an original norm-four
+Gaussian root and n=S^(-1)r is its integral simple-root coordinate, then
+
+  O(r/sqrt(2))=Tn/2.                                      (4)
+
+The checker verifies that (4) maps all 240 original roots bijectively to the
+fixed standard target E8 roots.  Applying the marked even glue grades gives
+precisely (2).  Thus no unmarked classification is being substituted for the
+actual O dictionary.
+
+2. The folded CAR D8 in the same target frame
+----------------------------------------------
+
+The eight folded CAR charge components have integer charge lattice Z8.  Its
+even part is
+
+  D8_CAR={p in Z8: sum_i p_i is even},
+
+with the same standard root set R_can in the folded component frame.
+
+The existing fold dictionary does not identify that component frame with
+the target axes.  It uses the fixed matrix M stored in
+
+  v16-operator-pullback-20261014/fold-results.json.
+
+M is orthogonal, has determinant one and permutes all 240 E8 roots.  The
+actual folded even root set in the target frame is therefore
+
+  R_fold=M R_can.                                         (5)
+
+Exact set comparison gives
+
+  |R_can|=|R_fold|=112,
+  |R_can intersect R_fold|=48,
+  |R_can minus R_fold|=|R_fold minus R_can|=64.            (6)
+
+A smallest witness in the fixed coordinates is
+
+  r_can=(-1,0,-1,0,0,0,0,0) in R_can minus R_fold.
+
+Its M^T preimage is
+
+  (-1/2,-1/2,-1/2,-1/2,1/2,-1/2,1/2,-1/2),
+
+an E8 spinor root and not a CAR D8 root.  Conversely,
+
+  r_fold=(-1/2,-1/2,-1/2,-1/2,-1/2,-1/2,-1/2,-1/2)
+
+lies in R_fold minus R_can, and
+
+  M^T r_fold=(-1,-1,0,0,0,0,0,0)
+
+is an actual CAR D8 root.  This is a direct charge-vector mismatch.  It is
+stronger than comparing root-system types.
+
+The earlier fold audit already stated the same structure in a coarser form:
+the M-transported deck-fixed D8 contains 48 roots which are integer in the
+old target frame and 64 which are spinor roots in that frame.  Equation (6)
+now identifies those 48 as the exact intersection with the marked
+order-two intermediate.
+
+3. Cartan action
+----------------
+
+Both D8s have full rank, so both use the same eight-dimensional target
+Cartan vector space.  This does not make their charged root actions equal.
+
+The canonical marked D8 is the +1 root sector of
+
+  h_can=e_0,
+  sigma_can(E_r)=exp(2 pi i h_can.r) E_r.                 (7)
+
+Integer D8 roots have phase +1 and the 128 spinor roots have phase -1.
+
+The folded D8 transported by M is the +1 root sector of
+
+  h_fold=M e_0=(1/2,1/2,0,0,0,1/2,1/2,0),
+  sigma_fold(E_r)=exp(2 pi i h_fold.r) E_r.               (8)
+
+Both (7) and (8) fix all eight Heisenberg Cartan currents, as every torus
+character does.  On the 240 charged root currents their joint sign counts
+are
+
+  (sigma_can,sigma_fold)   root count
+        (+1,+1)                48
+        (+1,-1)                64
+        (-1,+1)                64
+        (-1,-1)                64.                        (9)
+
+Thus the charged action differs on 128 roots.  The two character vectors
+are not congruent modulo the self-dual E8 lattice.  Their difference has
+mixed integral and half-integral coordinates and is not an E8 vector.
+
+At the current level the actual dictionaries are correspondingly
+
+  H_target=O H_Gaussian,
+  H_target=M j_fold.
+
+M is a half-integral Hadamard-type E8 automorphism, not a signed permutation
+of the eight elementary CAR charges.  Replacing M by a new rotation which
+makes (5) equal (2) would change the marked dictionary being tested.
+
+3a. Coordinate equivalence versus a simultaneous marking
+----------------------------------------------------------
+
+Let W be an E8 Weyl automorphism.  If one replaces every target datum by its
+W transport,
+
+  R_can -> W R_can,       R_fold -> W R_fold,
+  O -> W O,               M -> W M,
+  d -> W d,
+
+and transports the D5+A3 flag, charged field labels, cocycle choices and
+local source inclusion by the same W, then all inner products, OPEs and time
+pairings are unchanged.  This is a passive coordinate change.  In
+particular, the statement R_can=R_fold is invariant under such a common
+transport: if it is false before W, it remains false after W.
+
+A different operation chooses W so that W R_fold=R_can while O, the marked
+D5+A3 flag or d is kept at its old value.  That changes the relative
+position of source and compiler data.  Such a map certainly exists here:
+W=M^T sends R_fold=M R_can back to R_can when it is applied to the source
+side alone.  This does not prove that the original O/M dictionary contains
+that re-marking or that the source fields and time intertwine after it.  The
+negative result in (6) is exactly this relative, simultaneously marked
+statement.  It is independent of the common global coordinate convention
+and it does not exclude TFPT as a whole.
+
+4. The actual quarter-time vector
+---------------------------------
+
+In the folded CAR component frame the source shift is
+
+  delta_(alpha,k)=(k+alpha)/8-1/2.
+
+The existing dictionary transports it, without a fit, to
+
+  d_alpha=M delta_alpha.                                  (10)
+
+For the two actual quarters this gives
+
+  alpha=1/4:
+    delta=(-15,-11,-7,-3,1,5,9,13)/32,
+    d=(-1/2,0,1/16,-1/2,0,-3/16,-1/4,-1/4);
+
+  alpha=3/4:
+    delta=(-13,-9,-5,-1,3,7,11,15)/32,
+    d=(-1/2,0,3/16,-1/2,0,-1/16,-1/4,-1/4).              (11)
+
+Orthogonality of M gives, for every CAR root beta,
+
+  d_alpha.(M beta)=delta_alpha.beta.                      (12)
+
+The checker verifies (12) root by root.  Hence the phase multiset on
+R_fold is exactly the original folded-source time multiset.
+
+The same d_alpha has a different phase multiset on R_can.  A short part of
+the exact mod-one census, identical in these displayed multiplicities for
+both quarter choices, is
+
+  phase       on R_can       on R_fold
+    0             10              0
+    1/2           18              8
+    1/4           17              8
+    3/4           17              8
+    3/8            0              8
+    5/8            0              8.                     (13)
+
+The full phase tables are emitted by the checker.  On the two witness roots,
+
+  alpha        d.r_can        d.r_fold
+   1/4            7/16           13/16
+   3/4            5/16           11/16.                  (14)
+
+Equations (11)-(14) rule out rescuing the equality by retaining only the
+same eight-dimensional Cartan space or the same abstract D8 type.  The
+actual source time sees the embedding difference.
+
+There is also a precise zero-energy spinor line which must be retained in
+any state/time comparison.  In the folded source coordinates set
+
+  p=(1/2,1/2,1/2,1/2,-1/2,-1/2,-1/2,-1/2).             (15)
+
+It is an E8 root: p^2=2 and it has four minus signs.  With
+s=(1/2,...,1/2),
+
+  p-s=(0,0,0,0,-1,-1,-1,-1) in D8,
+
+so p lies in the standard even-parity spinor neighbour D8+s.  It is not an
+integer CAR charge.  It is also not in the coset called c in
+ODD-SECTOR-REFIELDING-AND-NAHT.txt, where c was deliberately represented as
+m+s with sum m odd.  That file uses the other spinor convention.
+
+For either alpha=1/4 or 3/4, the relation
+
+  delta_(k+4)=delta_k+1/2
+
+gives
+
+  delta.p=(1/2)[sum_(k=0)^3 delta_k-sum_(k=4)^7 delta_k]
+         =-1,
+  p^2/2+delta.p=1-1=0.                                  (16)
+
+The fixed dictionary M sends this vector to
+
+  q=M p=(1,0,0,1,0,0,0,0)=e_1+e_4                     (17)
+
+in one-based target notation.  By orthogonality and d=M delta,
+
+  q^2/2+d.q=p^2/2+delta.p=0.                             (18)
+
+The root q belongs to R_can but not to R_fold=M(D8_CAR).  Thus this same
+vector simultaneously exhibits the frame distinction and the extra sector
+introduced by extending the integer CAR charge lattice to E8.
+
+Thus the M-transported zero-time-ground line is the lattice charge line
+
+  C e^(e_1+e_4).
+
+This is the same equal-energy target root primary already recorded in
+FOLD-COVARIANCE-TO-NATIVE-FIELD-RESPONSE.txt, not a newly discovered
+degeneracy.  Equation (15) supplies its exact source-spinor preimage.  The
+bare folded CAR integer charge lattice does not contain p, whereas the full
+E8 extension does.  Consequently an E8 extension adds a zero-energy charge
+line at the actual quarter background.  A claim that the extended theory
+has the same source state and time therefore needs an explicit sector or
+ground-state selection rule.  This is a state/time compatibility condition,
+not a rejection of the E8 extension.
+
+5. Why the odd-sector continuation stops here
+----------------------------------------------
+
+For one fixed D8, write its four discriminant classes as
+
+  0, v, c, v+c.
+
+The quadratic form makes v the unique nonisotropic class and c,v+c the two
+isotropic spinor classes.  The usual neighbour statements are
+
+  D8 union (D8+v) is the odd unimodular lattice Z8,
+  D8 union (D8+c) and D8 union (D8+v+c) are E8 neighbours.
+
+This is the standard discriminant-form/overlattice correspondence.  Nikulin's
+classification of integral symmetric bilinear forms supplies the general
+theorem that even overlattices correspond to isotropic discriminant
+subgroups.  Here equations (1) and (2) prove the required special case
+directly.
+
+The known ODD-SECTOR-REFIELDING-AND-NAHT result starts with the CAR D8 and
+defines a global unitary which is the identity on that even module and is
+parity-dependent on its odd vector coset.  It already proves that the pulled
+back target Cartan observable is not local in the unchanged CAR inclusion.
+The new comparison adds an earlier obstruction: the even module fixed by
+that construction is M(D8_CAR), not the canonical compiler intermediate
+O(D8_halfway).  Therefore its labels v,c,v+c cannot be read as canonical
+compiler labels by identity.
+
+An E8 Weyl automorphism can of course conjugate isomorphic D8 subsystems.
+Existence of such a conjugacy is not the requested marked equality and does
+not preserve the O/M dictionary automatically.  Selecting one from P1 or
+from the original seam data remains open.
+
+6. Reproduction and sources
+----------------------------
+
+Run
+
+  python3 -B -OO \
+    experiments/theory-contracts/canonical-seam-fermionization-20261025/check_lattice_source_frame.py
+
+The checker uses Fraction and SymPy exact arithmetic.  It reconstructs O
+from the original simple-root matrices, reads the existing M without
+modification, compares all roots and both quarter vectors, and writes
+nothing.
+
+Original repository sources:
+
+  tfpt_explorer/cartan_source.py:58-83,157-184,560-587,651-743
+    original Gaussian roots, O frame and marked halfway character;
+
+  experiments/theory-contracts/v16-operator-pullback-20261014/
+    fold-results.json, field explicit_Weyl_matrix
+    FOLD-AUDIT.md:88-122,125-207;
+
+  experiments/theory-contracts/mixed-current-origin-20261014/
+    checker.py:80-122
+    ODD-SECTOR-REFIELDING-AND-NAHT.txt:1-167
+    Atlas source research-source:580a1d0a402fe8b1b494ffd7.
+
+  experiments/theory-contracts/joint-native-algebra-selection-20261016/
+    FOLD-COVARIANCE-TO-NATIVE-FIELD-RESPONSE.txt:53-152
+    Atlas source research-source:1a8c7c3f539e779301a7377d
+    previous statement of the equal-energy e1+e4 target root.
+
+Literature used for the abstract lattice step:
+
+  V. V. Nikulin, Integral symmetric bilinear forms and some applications,
+  Mathematics of the USSR-Izvestiya 14 (1980), 103-167, especially the
+  discriminant-form description of finite-index even overlattices.
+
+The literature theorem classifies possible overlattices.  The negative
+marked-frame result (6), the character table (9) and the time comparison
+(13) are exact calculations with the repository's actual O and M.
+
+No Atlas, ledger, contract index or existing source was changed.

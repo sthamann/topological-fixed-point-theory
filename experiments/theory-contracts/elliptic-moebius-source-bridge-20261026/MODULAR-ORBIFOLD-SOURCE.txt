@@ -1,0 +1,534 @@
+CURRENT MARKED SOURCE CORRECTION, 26 OCTOBER 2026
+================================================
+The constructions and scoped theorems below remain valid in their stated
+D4 or finite-target class. They are NOT the marked descent of the actual
+A0* connection. The recovered28September C4 triangle proof is authoritative
+for that connection: orders(4,3,2), positive quotient generator U inverse,
+and J_actual(z)=1-z^-4. The D4/Phi pullback has orders(4,3,4) and a different
+marking. A rational z->1/z lift of the actual connection does not exist.
+The analytic A0* to v117 group identification is already proved, not open.
+See C4-DESCENT-FINITE-MONODROMY.txt and its independent review. Reusing an
+abstract S4 generator class alone does not identify these base paths.
+
+MODULAR-ORBIFOLD-SOURCE
+========================
+
+Datum: 2026-10-26
+
+Frage
+-----
+
+Kann das exakte v117-Paar
+
+    U^4 = M^3 = (MU)^4 = I,
+    product_{k=0}^3 U^k M U^{-k} = I
+
+als wirklicher Pullback eines modularen Dreipunktlokalsystems auf den festen
+vierpunktierten Raum P1_x minus mu4 entstehen? Gesucht ist eine konkrete
+Karte, ihr vollständiges Ramifikationsgesetz und eine klare Trennung der
+Ortsdrehung Q:x -> i x von den modularen S und T Wegen.
+
+Kurzes Ergebnis
+---------------
+
+Ja, für die endliche Level-4-Darstellung gibt es einen vollständig
+expliziten Pullback:
+
+    t = x^4,
+    J = -(t-1)^2/(4t),
+
+also
+
+    J(x) = -(x^4-1)^2/(4x^4).
+
+Diese Karte ist jedoch keine zusätzlich gewählte modulare Familienkarte. Mit
+
+    Q:x -> i x,
+    s:x -> 1/x
+
+ist C(x)^{<Q,s>}=C(J), denn J ist Q und s invariant und hat Grad 8=|D4|.
+Außerdem gilt auf dem Einheitskreis
+
+    J(e^{i theta}) = sin^2(2 theta).
+
+Damit ist J bis auf eine Möbiusnormierung des Ziels bereits die kanonische
+Quotientenkarte der ursprünglichen markierten D4-Geometrie. Der modulare
+Vergleich betrifft die Wahl einer Darstellung der Zielorbifoldgruppe, nicht
+die Herkunft der Basiskarte.
+
+Mit J=j/1728 liegen J=0,1,infinity über den modularen Punkten der Ordnungen
+3, 2 und der Spitze. Die endliche Thetaquadratdarstellung macht aus der
+Spitzenmonodromie eine Ordnung-4-Monodromie. Der Pullback entfernt exakt die
+zusätzlichen Punkte x=0, infinity und x^4=-1 und lässt genau die vier Punkte
+x in mu4 mit
+
+    M_k = U^k M U^{-k}
+
+zurück. Damit wird die gesamte v117-Flachheitsrelation geometrisch sichtbar.
+
+Dieser positive Satz hat drei scharfe Grenzen.
+
+1. Er gilt für das endliche Level-4-Bild PSL(2,Z/4)=S4. Für das volle
+   modulare Lokalsystem ist die Spitzenmonodromie T von unendlicher Ordnung.
+   Dann bleiben bei x=0 und x=infinity die Monodromien T^4 übrig. Die Basis
+   ist anschließend P1 minus (mu4 vereinigt {0,infinity}), nicht der
+   ursprüngliche vierpunktierte Raum.
+
+2. Der Punkt t=1, das Bild der vier ursprünglichen Peripherien, wird auf den
+   elliptischen Punkt J=0 der Ordnung 3 geschickt. Die im v117-Text
+   verwendete Bezeichnung von M als kubische Cuspklasse wird durch diese
+   Karte also nicht als modulare Spitze erhalten. Die Karte rekonstruiert
+   die Operatorrelationen, aber nicht diese Benennung.
+
+3. Q ist die Decktransformation des ersten Schritts x -> t. Sie ist nicht
+   der modulare S Weg auf dem Ziel. Nach Wahl der S4-Zieldarstellung ist die
+   Decklinearisierung des Pullbacks kanonisch. Offen ist, ob P1/P2 genau diese
+   Zieldarstellung und ihre Phasensektion auswählt. Der ergänzende
+   D4-Orbifold-Starrheitssatz zeigt inzwischen, dass diese Auswahl innerhalb
+   eines genuin D4-linearisierten stabilen parabolischen P2-Zweigs ohne einen
+   zusätzlichen modularen Ansatz folgt.
+
+Eine zweite, unmittelbar repräsentationstheoretische Quelle existiert
+ebenfalls: eine elliptische Grad-4-Belyiüberlagerung mit Passport
+
+    [4], [3,1], [4].
+
+Sie realisiert die echte Vierblattpermutationsdarstellung von S4, deren
+spurfreier Anteil nach Vorzeichentwist genau die v117-Darstellung ist. Ihre
+elliptische Quelle hat jedoch
+
+    j = 2*47^3/3^8 = 207646/6561,
+
+und daher nicht j=1728. Sie ist nicht die vorhandene quadratische
+TFPT-Ellipse E_i. Auch diese Route liefert somit eine exakte mathematische
+Quelle, aber keine Identität mit der ursprünglichen P1-Geometrie.
+
+1. Das endliche modulare Dreipunktlokalsystem
+------------------------------------------------
+
+Im vorherigen Bericht
+
+    research-20261026-spin-transport/MODULAR-C3-SOURCE-TEST.txt
+
+wurden die Standardmatrizen der Thetaquadrate bestimmt. Nach der dort
+angegebenen Phasennormierung gilt
+
+    U = -i A_T,
+    M =  i A_S A_T.
+
+Setze
+
+    a = M^2,
+    b = M U^{-1},
+    c = U.
+
+Dann ist b=-A_S und es gilt exakt
+
+    a^3 = I,
+    b^2 = I,
+    c^4 = I,
+    a b c = I.
+
+Dies ist die Dreiecksdarstellung vom Typ (3,2,4), äquivalent zu (2,3,4).
+Wir ordnen a, b, c den positiven Schleifen um J=0, J=1, J=infinity zu.
+Sie faktorisiert durch PSL(2,Z/4)=S4. Das ist die präzise Bedeutung von
+"modulare Spitze der Ordnung 4": Es handelt sich um das endliche Bild der
+vollen Spitzenmonodromie, nicht um eine Spitze endlicher Orbifoldordnung im
+vollen PSL(2,Z).
+
+2. Die minimale Karte auf der Quotientensphäre
+------------------------------------------------
+
+Definiere
+
+    Phi(t) = -(t-1)^2/(4t).
+
+Direkte Faktorisierung gibt
+
+    Phi(t)       = -(t-1)^2/(4t),
+    Phi(t)-1     = -(t+1)^2/(4t),
+    dPhi/dt      = -(t-1)(t+1)/(4t^2).
+
+Damit besitzt Phi Grad 2 und das vollständige Belyi-Passport
+
+    über J=0:         t=1       mit e=2,
+    über J=1:         t=-1      mit e=2,
+    über J=infinity:  t=0,inf   jeweils mit e=1.
+
+Die Karte ist unter dem festgehaltenen Zwischenschritt t=x^4 und den
+verlangten Markierungen minimal. Beide verschiedenen Punkte t=0 und t=infinity
+sollen zur modularen Spitze gehen. Eine rationale Karte vom Grad 1 kann das
+nicht. Phi hat Grad 2 und erreicht die Schranke. Dies ist keine globale
+Minimalitätsaussage über alle unmarkierten Realisierungen oder über Basen ohne
+den fest gewählten C4-Quotienten.
+
+Das Ramifikationsgesetz für die Monodromie lautet:
+
+    t=0:        c = U,
+    t=1:        a^2 = M,
+    t=-1:       b^2 = I,
+    t=infinity: d = b c b^{-1} = (U M)^{-1}.
+
+Die letzte Gleichung ist ein echtes Hurwitzwort. Für
+
+    b = M U^{-1} = -A_S,
+    c = U
+
+trägt der unverzweigte zweite Punkt über J=infinity die konjugierte
+Spitzenmonodromie d=b c b^{-1}. Mit b^2=I und a b c=I, a=M^2, folgt direkt
+
+    b c b^{-1} = (U M)^{-1}.
+
+Die vier Pullbackmonodromien sind damit unabhängig von einer nachträglichen
+Definition nur über ihre Produktrelation festgelegt. Weil UM zu MU konjugiert
+ist, gilt d^4=I.
+Nach Entfernen des scheinbaren Punkts t=-1 hat das Quotientenlokalsystem
+somit den Typ
+
+    (4,3,4),
+
+nicht den Typ (2,3,4). Phi ist ein verzweigter Belyi-Pullback. Sie ist keine
+unverzweigte Orbifoldüberlagerung zwischen diesen beiden Dreieckorbifolds.
+Das sieht man bereits an den Orbifold-Eulerzahlen
+
+    chi_orb(2,3,4) = 1/12,
+    chi_orb(4,3,4) = -1/6.
+
+Die gleichen drei Zahlen in einer Gruppenpräsentation dürfen daher nicht als
+dieselbe Orbifoldgeometrie gelesen werden.
+
+3. Pullback mit t=x^4
+---------------------
+
+Die Komposition
+
+    J(x) = -(x^4-1)^2/(4x^4)
+
+hat Grad 8. Ihr Passport ist
+
+    über J=0:         [2,2,2,2]  bei x^4=1,
+    über J=1:         [2,2,2,2]  bei x^4=-1,
+    über J=infinity:  [4,4]      bei x=0,infinity.
+
+Die Riemann-Hurwitz-Summe ist
+
+    4*(2-1) + 4*(2-1) + 2*(4-1) = 14 = 2*8-2,
+
+also vollständig. Es gibt keine versteckte weitere Verzweigung.
+
+Auf der Monodromieseite geschieht nun genau das Benötigte:
+
+    x=0:             U^4 = I,
+    x=infinity:      d^4 = I,
+    x^4=-1:          I,
+    x=i^k:           M_k = U^k M U^{-k},  k=0,1,2,3.
+
+Die Formel für M_k ist die Reidemeister-Schreier-Formel für die zyklische
+Überlagerung t=x^4. Eine Schleife von einem Blatt zum nächsten läuft einmal
+um t=0 und trägt daher U. Die Peripherieschleife um t=1 wird auf Blatt k mit
+U^k konjugiert. Nach dem Schließen der scheinbaren Punkte bleibt die
+Fundamentalgruppenrelation
+
+    product_{k=0}^3 U^k M U^{-k} = I.
+
+Das ist wortgleich die exakte v117-Flachheitsrelation.
+
+Die geometrische Decktransformation
+
+    Q:x -> i x
+
+permutiert die vier Punkte und die vier Schreiergeneratoren. Als Abbildung
+des Pullbacks ist sie zunächst eine Decktransformation zwischen Fasern über
+demselben t. Nach Wahl der konkreten S4-Zieldarstellung ist ihre Linearisierung
+auf dem Pullback kanonisch transportiert. Die zusätzliche Quellfrage liegt
+bereits in der Auswahl dieser Zieldarstellung und ihrer Phasensektion aus
+P1/P2, nicht in einer weiteren freien Linearisierung nach dem Pullback. Damit
+sind Q und der modulare Zielgenerator b=-A_S sauber getrennt. Der spektrale
+Gegencheck aus dem vorherigen Bericht bleibt gültig:
+modulares S hat Ordnung 2, während die markierte Deckrückführung U Ordnung 4
+hat.
+
+Das widerspricht dem Q-Test des vorherigen Berichts nicht. Dort wurde die
+angehobene Wirkung von Q auf der Homologie der festen quadratischen Ellipse
+E_i betrachtet und als modularer S-Operator erkannt. Hier ist Q zunächst nur
+die Ortsdecktransformation der x-Basis. Eine Identifikation ihres Lifts mit
+dem Ziel-Lokalsystem ist genau die zusätzliche Markierung, die der reine
+Belyi-Pullback nicht aus P1/P2 ableitet.
+
+4. Warum die volle modulare Spitze nicht schließt
+-------------------------------------------------
+
+Ersetzt man das endliche Level-4-Bild durch das volle modulare Lokalsystem,
+hat die Schleife um J=infinity die Monodromie T von unendlicher Ordnung.
+Die Komposition besitzt bei x=0 und x=infinity Ramifikationsindex 4. Dort
+steht deshalb
+
+    T^4,
+
+nicht I. Diese beiden Punkte sind nicht scheinbar und dürfen nicht gefüllt
+werden. Das ist der kleinste entscheidende Gegencheck gegen einen zu starken
+Ursprungsanspruch.
+
+Die Konstruktion ist somit exakt ein Pullback eines Lokalsystems, dessen
+Monodromie durch die endliche Level-4-Gruppe faktorisiert. Sie ist kein
+Pullback des treuen vollen PSL(2,Z)-Lokalsystems auf genau P1 minus mu4.
+Eine skalare Phase ändert diesen topologischen Unterschied nicht.
+
+5. Direkte elliptische Vierblattquelle
+--------------------------------------
+
+v117 stellt selbst fest, dass seine dreidimensionale Darstellung die mit dem
+Vorzeichencharakter getwistete Standarddarstellung von S4 ist. Die
+ungezwungene Quelle der Standarddarstellung ist eine Grad-4-Überlagerung mit
+vier Blättern. Für die Zykeltypen
+
+    sigma_0:        (4),
+    sigma_1:        (3,1),
+    sigma_infinity: (4),
+
+ergibt Riemann-Hurwitz
+
+    2g-2 = -2*4 + 3 + 2 + 3 = 0,
+
+also g=1. Ein explizites Belyi-Paar folgt aus der Tate-Normalform für einen
+Punkt P der Ordnung 4:
+
+    E_b: y^2 + x y + b y = x^3 + b x^2,
+    P=(0,0),
+    2P=(-b,0).
+
+Die Funktion
+
+    f = y^2/(x+b)
+
+hat
+
+    div(f) = 4P - 4O.
+
+Die übrigen kritischen Punkte erfüllen
+
+    y = 4x(x+b),
+    16x^2 + (16b+3)x + 4b = 0.
+
+Eine dreifache Faser entsteht genau dann, wenn diese beiden kritischen Punkte
+zusammenfallen. Die Diskriminante ist
+
+    (16b-9)(16b-1).
+
+Der Zweig b=1/16 ist singulär. Der glatte Zweig ist b=9/16. Dort liegt der
+dreifache Punkt bei
+
+    x=-3/8, y=-9/32,
+
+und f=27/64. Folglich ist
+
+    beta = (64/27) y^2/(x+9/16)
+
+eine Belyifunktion mit Passport [4], [3,1], [4]. Eine konkrete Wahl der
+Branchzyklen ist
+
+    sigma_0=(1 2 3 4),
+    sigma_1=(2 3 4),
+    sigma_infinity=(1 3 4 2),
+
+mit sigma_0 sigma_1 sigma_infinity=1 nach konsistenter
+Kompositionskonvention. Sie erzeugen S4.
+
+Die geordnete Nielsenklasse ist eindeutig. Eine vollständige Enumeration in
+S4 liefert 24 transitive geordnete Tripel mit diesen drei Zykeltypen. Sie
+bilden genau eine Bahn der simultanen Konjugation, ebenfalls von Größe 24.
+Die obige Kurve ist daher kein zufälliger Vertreter einer großen freien
+Familie.
+
+Für E_b gilt
+
+    c4 = 1-16b+16b^2,
+    Delta = b^4(1-16b).
+
+Bei b=9/16 folgt
+
+    j(E_b) = c4^3/Delta
+           = 2*47^3/3^8
+           = 207646/6561
+           != 1728.
+
+Die Trennung von der ursprünglichen quadratischen Ellipse ist stärker als ein
+bloßer j-Vergleich. Der rationale Wert 207646/6561 ist nicht ganzalgebraisch.
+Eine CM-Ellipse besitzt dagegen einen singulären Modul, und singuläre Moduln
+sind algebraische ganze Zahlen. Also hat E_b keine komplexe Multiplikation.
+Die ursprüngliche Ellipse E_i hat End^0(E_i)=Q(i). Da eine Isogenie über C die
+rationalen Endomorphismenalgebren identifiziert, sind E_i und E_b nicht
+isogen. Jede nichtkonstante holomorphe Abbildung zwischen elliptischen Kurven
+wird nach Translation des Zielnullpunkts zu einer Isogenie. Folglich gibt es
+in keiner Richtung eine nichtkonstante holomorphe Abbildung zwischen E_i und
+E_b.
+
+Dies schließt gemeinsame höhergeschlechtige Überlagerungen und algebraische
+Korrespondenzen nicht aus. Es schließt genau die Reparatur aus, die beide
+elliptischen Quellen durch ein weiteres endliches elliptisches Cover oder
+eine direkte holomorphe Ellipsenabbildung identifizieren möchte.
+
+Als unabhängige Gegenrechnung lässt sich dieselbe Kurve in die Form
+
+    Y^2 = X^3 - (14/9) X^2 + X
+
+bringen. Dort lautet dieselbe Belyifunktion
+
+    beta = (3Y-2X)^2/(12X).
+
+Am dreifachen Punkt X=1/3, Y=-4/9 ist mit h=X-1/3
+
+    beta = 1 + (27/16) h^3 + O(h^4),
+
+was den Index 3 ohne Resultantenartefakt bestätigt.
+
+Die Galoisnormalhülle hat Gruppe S4 und Grad 24. Für Inertien 4,3,4 gibt
+Riemann-Hurwitz
+
+    2g_normal-2 = 24*(-2+3/4+2/3+3/4) = 4,
+
+also g_normal=3.
+
+Der spurfreie Teil der Vierblattpermutationsdarstellung hat auf einer
+4-Zykelklasse Spur -1. v117 hat dort Spur +1. Der Vorzeichentwist ändert bei
+ungeraden 4-Zykeln das Vorzeichen und lässt die gerade 3-Zykelklasse
+unverändert. So entsteht exakt der v117-Charakter. Der Cover allein liefert
+jedoch zunächst die ungetwistete Standarddarstellung. Die Auswahl des
+Vorzeichentwists und die simultane Identifikation der Branchzyklen mit den
+konkreten Matrizen U und M bleiben Teil des gesuchten Quellfunktors.
+
+Kubert führt die verwendete Tate-Normalform als Primärquelle ein:
+
+    Daniel S. Kubert, Universal Bounds on the Torsion of Elliptic Curves,
+    Proc. London Math. Soc. s3-33 (1976), 193-237,
+    https://doi.org/10.1112/plms/s3-33.2.193
+
+Für die Ganzheit singulärer Moduln und die CM-Arithmetik wird die klassische
+Primärquelle verwendet:
+
+    Benedict H. Gross und Don B. Zagier, On singular moduli,
+    J. reine angew. Math. 355 (1985), 191-220,
+    https://doi.org/10.1515/crll.1985.355.191
+
+Die Spezialisierung, Kritikalitätsgleichung, Nielsenklassenzählung und der
+j-Vergleich oben sind direkte Rechnungen dieses Audits.
+
+6. Vergleich mit den vorhandenen TFPT-Quellen
+----------------------------------------------
+
+verification/v117_monodromy_weyl_a3.py, Zeilen 1 bis 43, benennt U als
+mu4-Decktwist, M als kubische Cusp- oder Familienrotation und die Darstellung
+als Standarddarstellung mal Vorzeichen. Zeilen 52 bis 56 geben die exakten
+Matrizen. Zeilen 78 bis 126 integrieren hingegen unmittelbar das
+vierpunktierte A0*-System. Dort steht weder die obige Belyikarte noch eine
+modulare Dreipunktquelle. Zeilen 148 bis 182 beweisen genau die Relationen,
+die der Pullback nun geometrisch reproduziert. Die Identifikation mit der
+analytischen A0*-Monodromie bleibt in Zeilen 184 bis 200 numerisch.
+
+verification/v146_moebius_d4.py ist kein älterer modularer Pullback. Seine
+Funktion pullback in Zeilen 56 bis 63 berechnet den Rückzug der expliziten
+Differentialformen unter z -> iz und z -> 1/z. Der bewiesene geometrische
+Operatorverband ist D4 von Ordnung 8, Zeilen 66 bis 115. Aus genau diesen
+beiden Transformationen folgt nun der Invariantengenerator J. v146 formuliert
+jedoch weder die Quotientenkarte noch die Ordnung-3-Halbmeridianrelation.
+
+Die graphbasierte Suche in den älteren Hypergeometrie-, Dreiecks- und
+Modulizweigen fand keine bereits vorhandene Formulierung der Quotientenkarte
+mit ihrem vollständigen Ramifikationsgesetz und keine elliptische
+Grad-4-Quelle. v139 behandelt einen arithmetischen
+Selektordreieckssatz, v19 numerische Massenmoduli. Beide sind für diese
+Quellenfrage namensähnlich, aber strukturell nicht einschlägig.
+
+Der aktuelle Atlasbefund
+
+    finding:theta-square-modular-pair-reconstructs-v117-with-distinct-geometric-q
+
+enthält bereits die exakte Thetaquadratdarstellung und den unterschiedlichen
+Q-Marker. Der vorliegende Bericht ergänzt dazu erstmals die konkrete
+zweistufige Basiskarte und ihr Ramifikationsgesetz. Er verändert den Atlas
+nicht.
+
+7. Präzises Verdict
+-------------------
+
+[E] Exakt bewiesen:
+
+* Die minimale Grad-2-Karte Phi(t)=-(t-1)^2/(4t) zieht das endliche modulare
+  (3,2,4)-Lokalsystem auf ein (4,3,4)-Lokalsystem mit Monodromien U, M und
+  (UM)^{-1} zurück.
+* Die weitere Karte t=x^4 liefert exakt die vier Peripherien
+  U^k M U^{-k} und ihre v117-Produktrelation.
+* Die zusammengesetzte Grad-8-Karte hat Passport
+  [2,2,2,2], [2,2,2,2], [4,4].
+* Dieselbe Grad-8-Karte erzeugt C(x)^{D4}. Sie ist daher bis auf
+  Zielnormierung die kanonische Quotientenkarte der ursprünglichen markierten
+  D4-Basis.
+* Das zweite Spitzenwort ist wirklich b c b^{-1}=(UM)^{-1}. Die vier
+  Pullbackmonodromien werden nicht nachträglich nur durch ihre Produktrelation
+  definiert.
+* Q:x->ix ist der Quelldeckoperator. Modular S ist der getrennte
+  Zieloperator b=MU^{-1}=-A_S.
+* Es existiert eine eindeutige geordnete S4-Nielsenklasse vom Passport
+  [4],[3,1],[4] und das oben angegebene glatte elliptische Belyi-Paar
+  realisiert sie.
+* Seine Quelle hat j=207646/6561 und ist daher nicht die vorhandene
+  j=1728-Ellipse. Der nichtganzzahlige rationale j-Wert schließt CM aus. Die
+  beiden Ellipsen sind nicht isogen und besitzen keine nichtkonstante
+  holomorphe Abbildung in einer der beiden Richtungen.
+
+[C] Bedingte Herkunftsaussage:
+
+* Wenn das ursprüngliche P1/P2-Sewing die endliche Level-4-Zieldarstellung
+  und ihre Phasensektion liefert, ist v117 der Pullback dieses modularen
+  Dreipunktlokalsystems. Die Matrixwerte müssen dann nicht separat gewählt
+  werden.
+* Der ergänzende Bericht D4-ORBIFOLD-RIGIDITY.txt zeigt eine engere
+  Originalroute: Für den in TFPT2 section008 ausdrücklich fixierten genuin
+  D4-linearisierten stabilen parabolischen Zweig erzwingen Funktorialität,
+  Determinantennormierung und Irreduzibilität dieselbe v117-Darstellung. Dann
+  ist keine separate modulare Zielauswahl nötig.
+* Alternativ liefert das elliptische Vierblattcover die abstrakte
+  S4-Quelle. Für v117 muss zusätzlich der Vorzeichentwist und die konkrete
+  Matrixidentifikation transportiert werden.
+
+[X] Exakt ausgeschlossen:
+
+* Derselbe Grad-8-Pullback eines treuen vollen modularen Lokalsystems schließt
+  nicht auf P1 minus mu4, weil bei 0 und infinity T^4 verbleibt.
+* Die elliptische Vierblattquelle ist nicht die ursprüngliche quadratische
+  j=1728-Kurve und kann mit ihr auch nicht durch eine nichtkonstante
+  holomorphe Abbildung elliptischer Kurven verbunden werden.
+* Eine Identifikation Q=modulares S=U ist spektral und geometrisch falsch.
+
+[O] Im Original offen:
+
+* Für die eigenständige modulare Deutung fehlt weiterhin ein P1/P2-Satz, der
+  gerade diese Level-4-Zieldarstellung auswählt. Der D4-Orbifoldweg macht
+  diese Zusatzwahl auf dem stabilen Zweig überflüssig.
+* Im aktiven TFPT2-Text muss der in section008 fixierte stabile Zweig mit dem
+  in section011 beschriebenen strikt polystabilen Wallpunkt vereinbart
+  werden. Nur der stabile Zweig liefert die für die Starrheit benötigte
+  Irreduzibilität.
+* Die semantische Identifikation der ursprünglichen kubischen Cuspklasse mit
+  dem elliptischen Ordnung-3-Punkt des modularen Ziels bleibt allein für die
+  modulare Interpretation offen.
+
+Ausgeführte Gegenprüfungen
+--------------------------
+
+Die exakte Sympy-Rechnung bestätigte
+
+    a^3=b^2=c^4=abc=I,
+    dPhi/dt=-(t-1)(t+1)/(4t^2),
+    Riemann-Hurwitz 14=2*8-2,
+    beta-1 mit einer dreifachen und einer einfachen echten Nullstelle,
+    j(E)=207646/6561,
+    genau eine geordnete transitive S4-Nielsenklasse.
+
+Das bestehende Zertifikat wurde unverändert neu ausgeführt:
+
+    python3 verification/v117_monodromy_weyl_a3.py
+        5 passed, 0 failed
+
+Es wurde kein neues Prüfskript angelegt, keine Originalquelle verändert und
+kein Atlas-Eintrag geschrieben.

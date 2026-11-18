@@ -1,0 +1,360 @@
+INDEPENDENT REVIEW OF THE ELLIPTIC MOEBIUS AND SPIN LIFT BRIDGE
+26 October 2026
+
+Reviewed source
+===============
+
+  research-20261026-fundamental-rethink/geometry/
+  DIVIDING-REAL-FORMS.txt
+  reviewed corrected SHA256
+  be6dca12fe366f6aeba7953dd7ba1c100ddfe40d5faca43d8ea1a883fe85c4ce
+
+  research-20261026-fundamental-rethink/primitive/
+  ANNULUS-TO-ORIGINAL-SEAM-SOURCE.txt
+  reviewed corrected SHA256
+  a12e7b7566734e26ef9c53c6ee910638a77f20412085943d6cd30b255b7e9251
+
+Verdict
+=======
+
+The corrected proof is accepted in its stated free geometric and one-particle
+scope. The affine uniformization, all eight real forms, the two dividing
+members, the free annulus glide, the NS spin character and the finite-width
+Calderon graph are consistent. Equations (23b)-(23e) now make the operator
+types precise: U_g is a complex-linear pullback, while j_g is an anti-linear
+Real lift. With that distinction the square and eigenspace claims are correct.
+
+The boundary continuation is also correct after fixing the labeled face and
+product orientation. It recovers the old NS cover operator, half shift,
+quarter decomposition and winding carry exactly, and it fixes the geometric
+Fermi covariance C_A=(1+exp(2pi B_cov))^-1. This is a dimensionless KMS
+normalization for the chosen boundary dynamics. Calling it physical time or a
+physical EM determinant would exceed the proof.
+
+No adjustable scalar phase is needed. In the displayed flat automorphy
+trivialization the raw pullbacks already obey
+
+  U_delta^2=+I,
+  U_rho U_delta=-U_delta U_rho,
+  U_g^2=-I.
+
+The signs come from the fixed NS character on the actual A and B lattice
+cycles. Multiplying a lift afterwards by an arbitrary scalar would define a
+different equivariant linearization. It is not part of this proof.
+
+One scope distinction must be retained. The elliptic glide contains the
+tangential half translation. It is not literally the block swap R_cut used in
+the earlier flat x-cover calculation. The two covariance calculations can
+have the same reduced matrix form because the half translation commutes with
+the boundary Hamiltonian, but no geometric identification between the two
+covers follows from that algebraic coincidence.
+
+1. Affine uniformization and the eight real forms
+=================================================
+
+With O=(0,i), T=(1+i)/2 and the square lattice, the formulas
+
+  Qz=iz,
+  hz=-z+T,
+  kappaz=-i bar(z)+T
+
+give the stated curve automorphisms. Exact affine composition produces
+
+  rho_(a,b)=h^a Q^b kappa,  a in Z2, b in Z4,
+
+and every rho_(a,b) squares to a lattice translation. Thus all eight maps are
+anti-holomorphic involutions of E.
+
+The fixed-locus substitution
+
+  x=e^(i b pi/4)t,  y=i^a v
+
+gives
+
+  v^2=(-1)^a[(-1)^b t^4-1].
+
+Together with the action on the two infinity points, this gives component
+counts
+
+  (1,0,1,0; 1,2,1,2).
+
+Hence precisely hQkappa and hQ^3kappa have two ovals. For a real elliptic
+curve these are precisely the dividing forms. Their halves have width 1/2
+and circumference 1, so the modulus is 1/2 and the Schottky double has tau=i.
+Q rotates the two cut charts. It is not the half translation along one
+boundary circle.
+
+On the base x coordinate the two dividing forms act as x -> +/-i bar(x).
+Their mark permutations agree exactly with the midpoint family in the cited
+v519 code. The v519 result remains a free finite-carrier reflection test; it
+does not identify its state with the annulus Calderon state.
+
+2. Schottky reflection, elliptic translation and annulus glide
+================================================================
+
+The holomorphic involution
+
+  delta_E=hQ^2,  delta_E z=z+T
+
+is fixed-point free and has order two on E. It commutes on E with both
+dividing real forms. On the chosen annulus half it descends to
+
+  delta_A(t,s)=(1/2-t,s+1/2).
+
+This map exchanges the boundary components and is free. Its square shifts s
+by one, hence is the identity on the annulus base. The quotient is a Moebius
+band.
+
+The following three operations are distinct:
+
+  rho is the fixed-boundary Schottky and OS reflection;
+  delta_E is the free holomorphic two-torsion translation on E;
+  delta_A is the orientation-reversing annulus deck represented upstairs by
+  the glide g=delta_E rho.
+
+The tangential half translation in delta_A is geometrically real. It cannot
+be deleted when computing spin or Pin squares.
+
+3. The fixed NS pullback and the central sign
+================================================
+
+The selected nontrivial flat spin line has character
+
+  chi(A)=chi(B)=-1,  chi(A+B)=+1.
+
+It is the unique nontrivial Q-invariant spin character. It has no constant
+zero mode and restricts to NS spin structure on both boundary components.
+
+Use literal precomposition in the displayed automorphy trivialization. The
+universal affine maps rho delta_E and delta_E rho differ by the A-cycle.
+Therefore
+
+  U_rho U_delta=chi(A) U_delta U_rho
+                     =-U_delta U_rho.
+
+Also 2T=A+B, so
+
+  U_delta^2=chi(A+B)=+I.
+
+For g(z)=-bar(z)+T one has g^2(z)=z+B, hence
+
+  U_g^2=chi(B)=-I.
+
+This is the exact projective commutator mechanism. It uses both NS
+holonomies. A single number called core holonomy would not determine it.
+
+The spin character is also selected internally by these requirements. Q
+invariance permits the trivial character (+,+) and the NS character (-,-).
+The first has the constant zero mode and gives U_g^2=+I. The second is
+zero-mode free and gives U_g^2=-I. Thus the order-four glide uses the unique
+Q-invariant nontrivial spin line. This concerns the fixed raw pullback
+realization. It does not authorize an added scalar phase.
+
+4. Complex-linear Pin operator and anti-linear Real lift
+=========================================================
+
+Let
+
+  D=sigma_t partial_t+sigma_s partial_s,
+  sigma_t=[[0,1],[1,0]],
+  sigma_s=[[0,-i],[i,0]].
+
+The derivative of g changes the t sign and preserves the s sign. For the
+complex-linear pullback U_g, coefficient comparison gives
+
+  D sigma_s U_g=sigma_s U_g D.
+
+Since sigma_s^2=I and U_g^2=-I,
+
+  A=sigma_s U_g,  A^2=-I.
+
+A is complex linear, so its minimal polynomial divides x^2+1 and it has the
+ordinary c=+i and c=-i eigenspaces. On either eigenspace the quotient operator
+c^-1 A squares to +I. This proves the claimed order-four Pin descent at the
+level stated in the source.
+
+The Real lift j_g is anti-linear and is a different operator. Because
+bar(sigma_s)=-sigma_s and j_g^2=-I,
+
+  (sigma_s j_g)^2=+I.
+
+An anti-linear operator has no ordinary complex +/-i eigenspace
+decomposition. The corrected source now states this explicitly, so the
+earlier type ambiguity is resolved.
+
+5. Calderon graph and the limit of the conclusion
+==================================================
+
+For boundary eigenvalue lambda_n=2pi(n+1/2) and width W=1/2, the Cauchy
+relation is f_1=exp(-W lambda_n)f_0. The displayed matrix
+
+  C_n = 1/[2 cosh(W lambda_n)]
+        [[exp(W lambda_n),1],[1,exp(-W lambda_n)]]
+
+is exactly the orthogonal projection onto this graph. Direct multiplication
+gives C_n^2=C_n=C_n*, and its off-diagonal entry is nonzero. Therefore the
+existing geometry supplies a canonical pure two-boundary one-particle
+polarization with finite-width coupling. It does not equal the one-circle
+Hardy projection at W=1/2.
+
+This conclusion is stronger than the former nondividing-kappa audit because
+it finds an actual bordered half inside the original h,Q,kappa group. It is
+still a one-particle/free geometric statement. It does not identify the v519
+finite state, the interacting measure, the old quarter Hardy source or the W8
+field map with this graph.
+
+6. Relation to the earlier flat cut calculation
+=================================================
+
+The earlier state-time note uses a flat orientation cover with a reflection
+in x and a boundary operator R_cut that swaps the two cut faces at the same
+transverse coordinate. The elliptic annulus uses delta_A, which swaps the
+faces and shifts s by 1/2. They are different geometric realizations.
+
+After Fourier transform, the half translation is diagonal and commutes with
+the boundary Hamiltonian. It therefore cancels from the elementary graph
+covariance test. This explains why both calculations reduce to a block swap
+plus lambda -> -lambda. It does not supply an intertwiner between the two
+source geometries. Any later boundary-fold synthesis must retain the half
+translation and prove that intertwiner separately.
+
+The source-accurate conclusion here is:
+
+  rho supplies the Schottky and OS reflection on the elliptic double;
+  delta_A supplies the Moebius face exchange with half translation;
+  sigma_s U_g supplies the complex-linear order-four Pin descent.
+
+7. Independent checker
+=======================
+
+check_elliptic_moebius_review.py verifies thirteen exact statements:
+
+* all eight affine formulas and involution squares modulo the lattice;
+* the two dividing entries and the algebraic component census;
+* freeness and order of delta_E and delta_A;
+* Q is not the boundary half translation;
+* the NS character and the raw central pullback relations;
+* uniqueness of the Q-invariant, zero-mode-free, order-four spin character;
+* complex-linear Pin covariance and square;
+* involutivity after restriction to either c=+/-i quotient sector;
+* the different square of the anti-linear Real operator;
+* the reduced two-face graph covariance.
+
+Normal and python -OO executions produce the same result digest.
+
+8. Review of the boundary continuation
+=======================================
+
+The coordinate change theta=2pi s is unitary from L2(ds) to
+L2(dtheta/(2pi)) and carries H1_NS to H1_NS. On that domain,
+
+  R B_Sigma R^-1=2pi B_cov.
+
+The half translation s -> s+1/2 becomes T_pi, and its even and odd NS modes
+have eigenvalues +i and -i. Writing the two mode classes with the periodic
+base coordinate x=2theta gives exactly
+
+  B_cov=2(B_1/4 direct_sum B_3/4).
+
+Multiplication by exp(i theta) maps the 1/4 block to the 3/4 block and maps
+the 3/4 block to the 1/4 block with one base winding. Thus the factor two and
+the carry matrix in the boundary report are exact operator statements, not a
+spectral analogy.
+
+For D_+=partial_t+B_Sigma on a strip of width W, the solution graph has
+transfer T=exp(-W B_Sigma). The compression to its second labeled face is
+
+  T^2(1+T^2)^-1=(1+exp(2W B_Sigma))^-1.
+
+At W=1/2 this becomes
+
+  C_A=(1+exp(2pi B_cov))^-1.
+
+The opposite face has I-C_A. Therefore the sign in the report is correct for
+the stated second-face orientation. Reversing the face or boundary
+orientation replaces C_A by its complement and reverses the winding factor.
+This label must remain part of any later P1 identification.
+
+The trace norm calculation is also correct:
+
+  ||C_A-P_-||_1
+    =2 sum_(k>=0) 1/(1+exp(2pi(k+1/2)))
+    =0.0830093523...,
+
+and
+
+  ||C_A-P_-||_1
+    <2 exp(-pi)/(1-exp(-2pi))
+    =0.0865895375... <0.086590.
+
+For positive winding u_cov e_n=e_(n+1), the occupations shift as
+c_n -> c_(n-1). Finite relative products telescope with orientation
+
+  product_(n=-L)^L (1-z c_(n-1))/(1-z c_n)
+   =(1-z c_(-L-1))/(1-z c_L) -> 1-z.
+
+The squared winding gives (1-z)^2. This agrees with the previously proved
+pair-index theorem and with the fold carry. The result is an ordinary
+relative Fredholm determinant of covariances. It is not by itself the
+original EM, Quillen or susceptibility functional.
+
+The corrected boundary report now also uses the precise scope language:
+
+  * beta_s is the geometric KMS parameter. It is not identified with OS real
+    time.
+
+  * C_A is a faithful mixed covariance, not a polarization. C_A-P_- being
+    trace class makes it a trace-class perturbation of the Hardy sea and gives
+    the quasifree quasi-equivalence statement. It does not produce a
+    one-particle unitary with C_A=U P_- U*.
+
+The report already preserves the main source boundary: the old fullv21
+circle tuple is recovered inside the existing C2 annulus, but the primitive
+P1 data have not yet been identified with this particular dividing annulus,
+spin line, labeled face and winding. Equation (27) is the correct missing
+intertwiner contract.
+
+Sources checked
+===============
+
+Original elliptic curve and spin computation:
+
+  /Users/stefanhamann/Projekte/tfpt-theoryv4/experiments/theory-contracts/
+  original-admissible-source-closure-20261025/
+  ORIGINAL-BASES-AND-ELLIPTIC-SPIN.txt:34-107
+  SHA256 bf6b2336e24a39aef26b9907c24f033a47a8a1318f8f19ae561e4c477680ce67
+
+Original finite free reflection test:
+
+  /Users/stefanhamann/Projekte/tfpt-theoryv4/verification/
+  v519_woit_theta_rp_free.py:386-439,545-610,850-930,1134-1186
+  SHA256 e86e3a055b58051c7978d8f10ee527948bac758fd4665ac216e18a71cc8c1ee9
+
+Final status
+============
+
+PROVED: exactly two of the eight old real forms are dividing and their halves
+are the Q-paired modulus-1/2 annuli.
+
+PROVED: the existing hQ^2 involution descends to the free Moebius glide with
+the indispensable boundary half translation.
+
+PROVED: the fixed raw NS pullbacks have U_delta^2=+I, projective commutator
+-1 and U_g^2=-I. The NS character is uniquely selected among Q-invariant spin
+characters by nontriviality and the order-four glide.
+
+PROVED: the corrected complex-linear operator A=sigma_s U_g is Dirac
+covariant, has square -I and has c=+/-i sectors with involutive descent. The
+anti-linear Real lift remains a separate operator with square +I after the
+same Clifford factor.
+
+PROVED: on the labeled second boundary the old NS cover tuple is recovered
+with its exact quarter factor two and carry, and the annulus fixes the
+dimensionless covariance (1+exp(2pi B_cov))^-1. Its trace distance from the
+Hardy sea and the relative factors 1-z and (1-z)^2 are correct.
+
+OPEN: an operator, state and local field intertwiner from this annulus graph
+to the actual v519 or old quarter W8 source. The previous flat R_cut and the
+elliptic glide are not identified by the common reduced covariance matrix.
+The same missing primitive P1 intertwiner also prevents calling the relative
+Fredholm determinant the original physical response.

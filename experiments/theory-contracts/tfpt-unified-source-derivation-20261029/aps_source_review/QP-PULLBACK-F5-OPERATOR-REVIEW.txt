@@ -1,0 +1,215 @@
+Q TO P PULLBACK ON THE ACTUAL F5 SOURCE
+Independent narrow operator review, 30 October 2026.
+No Atlas, original or prior-report mutation.
+
+VERDICT
+
+The proposed formula is correctly typed and exact as a covariance between a
+q source and its explicitly transformed p source. In the actual v252 chart,
+
+  K_F=J_F kappa_split=Kswap
+
+is a real complex-linear unitary involution. It reverses gamma_F and sends
+the complete full_D coefficient, including its symmetric Majorana block, to
+its entrywise conjugate. If the old-linear spatial pullback R_x satisfies
+
+  R_x A_q R_x^-1=-A_p,
+
+then T=K_F R_x obeys
+
+  T h(A_q,Phi_q) T^-1=h(A_p,-bar(Phi_q) composed with inv).       (1)
+
+The F5 lift
+
+  Ucal=(i N) tensor T                                             (2)
+
+intertwines the actual charged chart, preserves Gamma, Ical and C0, carries
+the complete boundary operator and therefore carries its whole two-face
+graph state. Since T and Ucal are linear, circle evolution uses the SAME
+parameter t. This is not the old E0/C_raw transport in another frame: its
+finite factor, coefficient target and time rule are different.
+
+The result is a source-family covariance. It neither proves that the p tuple
+is the same source as the q tuple nor derives either tuple as the operational
+P1 source. In a periodic quarter chart the pullback sends alpha to -alpha
+modulo one and the holonomy to its inverse. Thus 1/4 is carried to 3/4; there
+is no fixed-quarter conclusion.
+
+1. ACTUAL FINITE COEFFICIENT
+
+In verification/v252_full_finite_triple.py the finite Real structure is
+
+  J_F=Kswap kappa_split,
+
+where kappa_split is ordinary coefficient conjugation in the real signed
+wedge chart and Kswap exchanges the particle and antiparticle 48-blocks.
+Consequently composition with the same kappa_split gives the linear matrix
+
+  K_F=J_F kappa_split=Kswap,  K_F^2=I.                         (3)
+
+The actual grading has opposite signs on the two 48-blocks, hence
+
+  K_F gamma_F K_F^-1=-gamma_F.                                (4)
+
+Write the complete allowed coefficient as
+
+  Phi=[[S,T_M],[T_M^*,bar(S)]],
+
+where T_M is the symmetric nu_R Majorana block. Direct block exchange gives
+
+  K_F Phi K_F^-1=[[bar(S),T_M^*],[T_M,S]]=bar(Phi).             (5)
+
+The last equality uses the original physical condition T_M^T=T_M. It is not
+an arbitrary-matrix identity after dropping Majorana symmetry. Equations
+(3)-(5) were also replayed with generic complex Yukawas and a generic complex
+symmetric Majorana input through the actual full_D constructor; both matrix
+residuals vanished exactly in floating arithmetic.
+
+K_F is not a symmetry of the displayed finite algebra representation in
+general. The actual rep() uses the weak/quaternion action on the particle
+block and the colour action on the antiparticle block. Kswap exchanges those
+two bimodule actions. The precise family statement therefore also transports
+
+  pi_q(a) -> pi_p(a)=K_F pi_q(a) K_F^-1.                    (5a)
+
+Calling the map a symmetry of one marked SM source would additionally require
+an original algebra automorphism identifying these two actions. No such
+identification is used below; the proved statement concerns the operator,
+selfdual chart, state graph and time of the transported source family.
+
+2. CHARGED OPERATOR AND THE FIRST DECISIVE IDENTITY
+
+Use the already established charged generator
+
+  h(A,Phi)=A gamma_F-i gamma_F Phi.                            (6)
+
+The spatial pullback R_x acts on the base/domain and commutes with the finite
+gamma_F and K_F. Let Phi_q composed with inv denote its coefficient pullback.
+Combining the two sign reversals in A and gamma_F with (5) yields
+
+  T(A_q gamma_F)T^-1=A_p gamma_F,
+  T(-i gamma_F Phi_q)T^-1=+i gamma_F bar(Phi_q composed inv).
+
+This is exactly (1), with target data
+
+  Phi_p=-bar(Phi_q) composed with inv.                         (7)
+
+The minus sign in (7) is part of the transported source. Omitting it would
+break (1); inserting it as an independently chosen p coupling would reverse
+the logical direction of the result.
+
+3. F5 LIFT, CHARGED CHART AND WHOLE GRAPH
+
+Retain the actual matrices
+
+  Z=diag(1,-1),  N=[[0,-1],[1,0]],  S=N Z,
+  Gamma=Z tensor gamma_F,
+  Ical=i Gamma,  C0=i N tensor I,
+  B(A,Phi)=Z tensor A-S tensor Phi.                            (8)
+
+Let P_plus/minus=(I plus/minus gamma_F)/2 and
+
+  E v=(P_plus v, i P_minus v).                                (9)
+
+Because T reverses gamma_F, while iN exchanges the two normal components,
+direct multiplication gives
+
+  Ucal E=E T.                                                  (10)
+
+The normal factor iN reverses both Z and S. Together with the A sign and
+(5), it gives
+
+  Ucal B(A_q,Phi_q) Ucal^-1=B(A_p,Phi_p).                     (11)
+
+The two sign reversals also imply
+
+  [Ucal,Gamma]=[Ucal,Ical]=[Ucal,C0]=0.                       (12)
+
+Thus Ucal is NEW-complex-linear and respects the existing selfdual real
+form. On both faces use Ucal, and on the charged T_faces chart use T on the
+two field entries and bar(T) on the two conjugate entries. Equations
+(10)-(12) include the adjoint slots and preserve their fixed relative minus.
+Functional calculus then gives the complete result, including crossing
+blocks,
+
+  (Ucal direct-sum Ucal) G(B_q) (Ucal direct-sum Ucal)^-1=G(B_p). (13)
+
+Therefore the pure graph covariance and every CAR word defined from it are
+transported to the p-family member. No new Gaussian covariance is selected.
+
+A targeted actual96 replay used two spatial source points, generic distinct
+complex full_D coefficients and a nonfixed A_q. It obtained zero residuals
+for (3)-(5) and (10)-(12), zero residual for (1) and (11), graph residual
+4.82e-14, and same-parameter time residual 3.21e-16.
+
+4. DOMAIN, QUARTER AND TIME
+
+For old-linear reflection/inversion R_x f(x)=f(-x),
+
+  R_x(-i partial_x+alpha)R_x^-1
+    =-(-i partial_x-alpha).                                  (14)
+
+The domain holonomy is simultaneously inverted. Hence the transported
+periodic chart is
+
+  alpha_p=-alpha_q mod 1,  U_p=U_q^-1.                       (15)
+
+In particular alpha_q=1/4 goes to alpha_p=3/4. A statement that the same
+quarter is fixed would require a separate gauge carry and its action on all
+other marked data. It does not follow from R_x.
+
+Because T is complex linear, (1) gives
+
+  T exp(i t h_q) T^-1=exp(i t h_p).                          (16)
+
+The parameter is not reversed. The graph covariance (13) is therefore a
+whole state/time family transport. It becomes a symmetry of one fixed source
+only if the original source data separately identify the p target with the q
+object, including their domains, coefficients and marks.
+
+5. COMPARISON WITH THE OLD E0 AND C_RAW MAPS
+
+The normal factor iN also occurs when earlier geometric reflections are
+composed, but that does not identify the operations. The old E0 map uses an
+antiunitary finite coefficient D_E kappa P_E, sends Phi to Phi^E and reverses
+the circle parameter. Its C_raw composition remains targeted at Phi^K or,
+after the stated compensator, bar(Phi), and has the previously checked
+minus-time rule.
+
+The present map instead uses the linear Kswap R_x, reverses gamma_F, sends
+the source to (7), and obeys the plus-time rule (16). Equality with an old
+E0/C_raw map would require an additional explicit intertwiner equating these
+finite factors, base maps and coefficient targets. None is present in the
+reviewed source. They are distinct covariances with a shared normal Clifford
+matrix, not one operator written in two frames.
+
+FINAL SCOPE
+
+The algebraic bridge requested in the preceding CAR/U6 review is positive at
+the whole F5 operator level: a q-to-p pullback can carry the full finite
+coefficient, E chart, selfdual structure, two-face graph state and actual
+circle evolution without embedding q and p as six independent modes in one
+fixed 96-space.
+
+What remains is the original source identification: the geometric spinframe
+pullback must be shown to induce this exact R_x on the given charged domain,
+and the target tuple (A_p,Phi_p,U_p) must be located as an already supplied
+source-family member. The present covariance does not create that p source,
+choose it as P1, or turn quarter holonomy into a fixed mark.
+
+Sources reviewed
+
+* verification/v252_full_finite_triple.py, SHA256
+  820254440e178430422e50605067775656236602996307f67c9e69124ba5d163;
+* graded_boundary_functor/check_finite_typing.py, SHA256
+  404cd24e04ae86ca95b981c5fc6a728930bbc2579aaefdd22e2bf2da9113f06e,
+  and PROOF.txt, SHA256
+  708dad21942cc00dd56d3348eacee3f0d90ccfc53e3f4987e39ded00ddc70841;
+* aps_source_review/SPIN-ZERO-MODE-C12-CLOCK-TYPE-REVIEW.txt, SHA256
+  5d5f6bfb960f20d004bf5442920e09826fe9f963b5ac888f3f45c3a4a568edbf;
+* aps_source_review/E0-SPIN-PIN-SEAM-FAMILY.txt, SHA256
+  c96bdf169e3ecf7e8202ff90f0ab25a1f60ab0f5bb68e2e0456b376527ee470e;
+* aps_source_review/E0-WHOLE-FINITE-SOURCE-TYPE-REVIEW.txt, SHA256
+  495da7fc1f9eb2e78e28834885b0ba1c89158923e121a13c53ac037fdb69e957;
+* aps_source_review/CLAUDE29-NATIVE-THETA-COMPOSITION-REVIEW.txt, SHA256
+  da497fe88766278e77cebfbd4c344a9f91b8664f4a5811500450bdd449e10bc3.

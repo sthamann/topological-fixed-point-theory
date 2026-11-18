@@ -1,0 +1,347 @@
+Gemeinsame Compilerkonsistenz, Zustand und Zeit
+12. November 2026
+Contract: joint-compiler-state-time-rigidity-20261112
+Gesamtverdict: PARTIAL. Kein vollständiger P1/P2/E8 Eindeutigkeitsbeweis.
+
+1. Der verlangte Schluss
+
+Gesucht ist eine Herleitung von Zustand und physischer Dynamik aus der
+gemeinsamen Konsistenz von P1, vier Markierungen, P2 und E8. Eine lediglich
+passende Realisierung genügt nicht. Die Prüfung muss unterscheiden zwischen
+der Auswahl des algebraischen Kerns, seiner lokalen Stromrealisierung und
+der Identifikation ihres geometrischen Flusses mit dem ursprünglichen
+positiven P1 Transfer. Die vorhandenen Konstruktionen bleiben erhalten.
+
+Das positive Ergebnis hier ist ein präziser bedingter Schließungssatz:
+Auf dem identifizierten E8 Vakuummodul genügt eine normierte geometrische
+Transferrelation auf ALLEN fortgesetzten Zuständen, um den vollständigen
+Zeitgenerator zu bestimmen. Die Originalquellen beweisen den entscheidenden
+physischen Intertwiner bisher nicht. Drei Gegenentwicklungen auf demselben
+Modul zeigen exakt, warum diskrete Clock und erster Rückkehrwert allein
+diesen Intertwiner nicht liefern. Sie sind keine vollständigen P1 Modelle.
+
+2. Was die Originalschleife bereits leistet
+
+Der Vierpunktdivisor D=mu4 auf P1 liefert h0(O(D))=5 und rang H1(P1\D)=3.
+Diese gemeinsame geometrische Herkunft ist bereits in v189 und Origin
+Theory bewiesen. Die physische Identifikation des Funktionenraums mit dem
+Träger bleibt dort ausdrücklich bedingt. P1 als Randaxiom ist außerdem
+nicht mit der projektiven Geraden P1 zu verwechseln.
+
+Die E8 Rückkopplung beschränkt den Träger: In der ursprünglichen Klasse
+rangfüllender D_g+A_m Paare mit Familiensektor und passender gerader
+unimodularer Verklebung bleibt D5+A3. Dies sind algebraische Bedingungen.
+Der Schluss verwendet eine benannte Klasse und ist kein Satz über alle
+denkbaren physikalischen Systeme. Weder ein abstraktes Gitter noch seine
+endliche Weylgruppe ist bereits eine lokale Stromalgebra.
+
+Der nächste vorhandene Schritt ist stärker als ein Dimensionsvergleich.
+In der gegebenen vollständigen E8 Stromquelle liefert die ursprüngliche
+240-Wurzel-Summe sum_alpha alpha tensor alpha=60 I8. Mit dem Niveau eins
+folgt der bereits hergeleitete Sugawara Stress
+
+  T_Sug=(1/62) sum_(A=1)^248 :J^A J_A:=(1/2)sum_(a=1)^8 :h_a^2:,
+  c=248/(1+30)=8.
+
+FULL-SOURCE-HULL-AND-QUARTIC-OPE.txt:267–296 belegt diese Identität und
+die vollständige äußere Ward Aufhebung. Die dortige Quelle sagt zugleich,
+dass daraus kein neues physisches Zeitgesetz folgt. Die Niveau-eins-
+Stromrealisierung und ihre Identifikation bleiben Voraussetzungen.
+
+3. Positiver Schließungssatz auf der vollständigen Stromquelle
+
+Festgehalten sei das unitäre integrable affine E8 Vakuummodul auf Niveau
+eins, mit den tatsächlichen Adjungierten (J_n^a)*=J_-n^a, seinem normierten
+Vakuum Omega und dem dichten endlichen Energiekern D_fin. Die Stromrelation
+ist [J_m^a,J_n^b]=J_(m+n)^[a,b]+m(a,b)delta_(m,-n)I in Liealgebranotation.
+L0 ist der kanonische Sugawara Gradoperator; L0 Omega=0.
+
+Wenn ein selbstadjungierter positiver H auf diesem Kern die normierte
+geometrische Ward Relation
+
+  [H,J_n^a]=-n J_n^a,    H Omega=0
+
+erfüllt, dann H=L0. Das gilt bei gemeinsamer invariant erhaltener Domäne;
+die Gleichheit der selbstadjungierten Operatoren folgt aus der wesentlichen
+Selbstadjungiertheit von L0 auf D_fin.
+
+Beweis: Für jeden Vektor J_-r1^a1 ... J_-rk^ak Omega folgt durch wiederholte
+Anwendung der Kommutatorrelation die Energie r1+...+rk. Dieselbe Gleichung
+gilt für L0. Die Monome spannen den vollständigen Vakuummodul auf, auch
+nach Quotientierung seiner Nullrelationen. Somit stimmen H und L0 auf
+D_fin überein; die genannte Selbstadjungiertheit schließt den Beweis.
+
+Der Zustand ist dann ebenfalls fest: Der L0 Nullraum ist eindimensional,
+also ist sein normierter Grundzustand eindeutig bis auf Phase. Unter der
+üblichen integrablen positiven Energieklassifikation gibt es auf E8
+Niveau eins ohnehin nur das Vakuummodul: Für die höchste endliche Last
+lambda=sum_i l_i omega_i müssen l_i>=0 und sum_i a_i^vee l_i<=1 gelten.
+Alle acht endlichen E8 Komarken sind mindestens zwei. Also l_i=0 für alle i.
+Dies ist eine Anwendung der bekannten Darstellungstheorie, kein neuer
+allgemeiner Klassifikationssatz. Zyklizität schließt zusätzliche unzugängliche
+Vielfachheitsräume aus. Ein thermischer Zustand benötigt weiterhin eine
+festgelegte inverse Temperatur; er wird nicht mit dem Vakuum verwechselt.
+
+Die Vakuumform selbst lässt sich auf sämtlichen Stromworten rekonstruieren:
+Normierung <Omega,Omega>=1, J_n Omega=0 für n>=0, Adjungiertenrelation und
+die vollständigen affinen Kommutatoren bestimmen durch Normalordnung
+jede Wortpaarung. Die bekannte positive Gitterrealisierung liefert die
+Existenz dieser Form. Auf der Sphäre ist das äquivalent zur Rekursion
+der Stromkorrelatoren aus den einfachen und doppelten OPE Polen plus
+der Vakuumbedingung am unendlichen Punkt. Eine frei eingesetzte zusätzliche
+Zustandsmatrix ist innerhalb dieser Vakuumklasse nicht mehr nötig.
+
+4. Schärfer: Ein positiver Zeitschritt auf allen Geschichten genügt
+
+Sei tau>0 die tatsächlich normierte ursprüngliche Zeitstufe. Sei T_tau
+der auf demselben Modul identifizierte beschränkte positive P1 Transfer,
+mit T_tau Omega=Omega. Es genügt, auf D_fin für alle a nachzuweisen:
+
+  T_tau J_-1^a = exp(-tau) J_-1^a T_tau.                 (W)
+
+Diese Aussage muss auf jedem fortgesetzten Stromwort gelten, nicht nur
+auf Omega. Die -1 Moden erzeugen alle negativen Moden: E8 ist perfekt,
+also ist jedes a eine Summe von [b,c], und
+  [J_-1^b,J_-r^c]=J_(-r-1)^[b,c].
+Induktion gibt die Relation mit Faktor exp(-r tau) für alle -r Moden.
+Eine weitere Induktion auf Wortlänge ergibt
+
+  T_tau J_-r1^a1 ... J_-rk^ak Omega
+    = exp[-tau(r1+...+rk)] J_-r1^a1 ... J_-rk^ak Omega.
+
+Dichte und Beschränktheit liefern T_tau=exp(-tau L0) auf dem ganzen Raum.
+Der positive Logarithmus ist eindeutig; falls T_tau=exp(-tau H) mit H
+selbstadjungiert, folgt H=L0. Ein bekannter positiver Schritt bestimmt
+somit den vollständigen Generator. Eine unitäre Vierteldrehung hat wegen
+ihrer logarithmischen Zweige diese Eigenschaft nicht.
+
+In der ursprünglichen positiven Randform B lautet der gleiche Nachweis:
+  B(A,T_tau J_-1^a Bword)
+    = exp(-tau) B(A,J_-1^a T_tau Bword)
+für alle zulässigen Testwörter A,Bword, bei identischer Referenz und
+nach wohldefinierter Quotientierung. Das ist die konkrete Brücke, die
+aus der ursprünglichen Quelle hergeleitet werden muss. Die tatsächliche
+E8 Feldabbildung darf dabei nicht durch passende Spektren ersetzt werden.
+
+5. Drei Entwicklungen bestehen die diskreten Prüfungen trotzdem
+
+Auf DEMSELBEN V_E8, mit derselben Algebra, demselben inneren D5+A3,
+demselben Vakuum und denselben internen Markierungen, setze
+
+  H_m=L0+2m L0(L0-1),    m=0,1,2.
+
+Dies ist Funktionalkalkül am vorhandenen Gradoperator, kein neuer
+Hilbertraum. Für jedes ganzzahlige Niveau n>=0 ist die Energie
+  E_m(n)=n+2m n(n-1).
+Alle H_m sind nichtnegativ, haben denselben eindimensionalen Nullraum
+und die erste Energielücke eins. Sie kommutieren mit den E8 Nullmoden
+und jeder inneren gradbewahrenden Markierung. Wegen n(n-1) gerade gilt
+  exp(i pi H_m/2)=exp(i pi L0/2).
+Damit stimmt sogar die gesamte geometrische Vierteldrehung als Operator.
+
+Die drei Entwicklungen sind bei festgehaltenem Zeitmaß verschieden. Für
+einen normierten Cartanstrom a mit [a_1,a_-1]=1 gilt
+  ||a_-1 Omega||^2=1,    ||a_-1^2 Omega||^2=2.
+Die normierten positiven Rückkehrantworten sind
+  erste Antwort: exp(-t) für alle drei;
+  zweite Antwort: exp(-2t), exp(-6t), exp(-10t).
+Die dimensionslosen Verhältnisse E2/E1 sind 2,6,10; eine bloße Änderung
+der Zeiteinheit beseitigt die Differenz nicht. Der zweite Zustand ist ein
+neutraler Cartan-Nachfahre, nicht das nilpotente Quadrat eines Wurzelaufsteigers.
+Der vorhandene geladene Nullworttest wird nicht umgedeutet.
+
+Der exakte Defekt von (W) auf Niveau n ist durch
+  E_m(n+1)-E_m(n)=1+4mn
+sichtbar. Auf dem Vakuum n=0 ist er unsichtbar; nach der ersten Anregung
+verschwindet er nur bei m=0. Diese Prüfung zeigt, weshalb die Relation
+auf allen fortgesetzten Wörtern verlangt wird.
+
+Alle drei liefern abstrakte positive Semigruppen und positive reflektierte
+Kerne <v,exp[-(s+t)H_m]w>. Daraus folgt KEINE ursprüngliche lokale euklidische
+P1 Quelle. Für m>0 wird die geometrische Strom-Ward-Relation verletzt;
+insbesondere darf keine konforme Lokalzeit oder vollständige Raumzeit-
+Lokalität behauptet werden. Dies sind drei Gegenbeispiele gegen den
+Schluss aus den benannten diskreten Tests, keine drei vollständigen
+Gegenmodelle zu allen P1/P2 Voraussetzungen. Deren globale Eindeutigkeit
+ist damit weder bewiesen noch widerlegt.
+
+6. Warum die Zustand-Zeit-Schleife allein nichts auswählt
+
+Der Originalsatz v995 bestimmt bei VORGEGEBENEM Hamiltonoperator und
+vorgegebener Temperatur den endlichen KMS Zustand. Er setzt unter anderem
+die Exponenten 1,...,8 und q=(2/3)^6 ein. Die Rückübersetzung
+H=-beta^-1 log rho+Konstante wählt diese Eingaben nicht aus.
+
+Das zeigt auch die bereits hergeleitete gemeinsame native Algebra
+M4 directsum M5 directsum M20. Ihre gruppeninvarianten Zustände sind
+rho_w=directsum (w_d/d)I_d. Für jedes positive w mit Summe eins löst
+H_w=-beta^-1 log rho_w zusammen mit rho_w beide Gibbs/Log-Gleichungen.
+Die drei Gewichte (1/3,1/3,1/3), (1/2,1/3,1/6), (1/6,1/3,1/2) liefern
+verschiedene Zustände. Diese H_w sind zentral; ihre innere Heisenberg-
+Dynamik auf der Blockalgebra ist sogar identisch trivial. Das ist eine
+Gegenprüfung der Schlussregel, keine ursprüngliche Quellenrealisierung.
+
+Eine treue Zustandsform bestimmt ihren modularen Fluss. Dieser ist aber
+nicht automatisch der positive physische P1 Generator. Der Originaltest
+TFPT-E8-VERKLEBUNG-GEMEINSAME-ZEIT-20261111.txt zeigt für die dort festgelegte
+lokale Vakuumdarstellung das zweiseitige modulare Spektrum. Der direkte
+Ersatz H=log Delta scheidet dort aus. Dies korrigiert eine zu schnelle
+Anwendung des Thermalzeitgedankens, nicht die Modularrekonstruktion selbst.
+
+7. Prüfung am wirklichen Ursprungspfad
+
+Die aktuellen Architekturseiten erklären P1 als primitive positive
+Randquelle und P2 als Trägerinterface. Der operative Quellkeim enthält
+bereits (A_loc,tau_t,Theta,omega,[u_Sigma],D_coll). Die gemeinsame
+algebraische Rückwärtsauswahl begründet den Übergang von diesem Keim
+zur tatsächlichen affinen Vakuumquelle nicht automatisch.
+
+Der Codepfad original_source_adapter.py:280–305 nimmt einen explizit
+gelieferten vollständigen Quellaufruf entgegen. Ohne dessen Bundle gibt
+er original_full_source_operation_not_supplied zurück; die vier Formen
+bleiben None. Der laufende Quellenbefund P0-ORIGINALQUELLE-20261111.md
+benennt die unberechnete gewichtete Randform und ihre Leerreferenz. Es
+wurde hier keine neue physische Auswertung dieses fehlenden Producers
+behauptet und keine Null als Antwort eingesetzt.
+
+Außerdem ist die tatsächliche ursprüngliche Viertelquelle nicht ohne
+weiteres das unverschobene E8 Vakuum: ORIGINAL-DENSITY-GEOMETRY-AND-TIME-
+HISTORIES.txt:138–247 hält die c1 Quellenergie, den getwisteten c8 Stress
+und den Achtfachfold auseinander. Ihr Transport muss die Ladungs- und
+Grundgewichtsterme mitführen. Der Satz aus Abschnitt 4 ist erst nach
+einem echten Intertwiner auf diese Quelle übertragbar. Bei anderem
+Sektor sind die richtige Vakuum-/Grundzustandsbedingung und die tatsächliche
+Zeitkalibrierung mitzuübertragen. Derselbe Name E8 genügt dafür nicht.
+
+8. Direkter Schließungssatz für die tatsächliche Viertelquelle
+
+Der Umweg über ein unverschobenes E8 Vakuum ist nicht nötig, wenn die
+ursprüngliche globale Quarterquelle selbst identifiziert werden kann.
+Festgehalten sei die ursprüngliche geladene negative-sea CAR Darstellung,
+mit alpha=1/4 oder 3/4, relativem Q, Windung R, den tatsächlichen c1
+Stressmoden Lcal_n und dem gemeinsamen endlichen Energiekern D_fin.
+Diese Darstellung samt Adjungierten ist eine Voraussetzung des Satzes,
+keine Herleitung der CAR Statistik oder des Zustands aus bloßer P1 Positivität.
+
+Die Originalquellen liefern
+
+  H_src=8 K_alpha=F_alpha(Q)+N_osc,
+  F_alpha(q)=q(q-1)/2+alpha q,
+  Omega_q=R^q Omega_0,  R* Q R=Q+1,
+  R* H_src R=H_src+Q+alpha.
+
+Der Sektor vom relativen Q=q hat c1 Grundgewicht
+  h_q=(q+alpha-1/2)^2/2.
+Seine tatsächliche Grundenergie ist F_alpha(q)=h_q-h_0, nicht h_q selbst;
+h_0=1/32. Die neutrale Anregung N_osc hat nichtnegative ganzzahlige Grade.
+
+Satz: Sei T ein beschränkter positiver Operator, der D_fin erhält und
+mit Q auf diesem Kern kommutiert; T Omega_0=Omega_0. Für bekanntes tau>0
+gelten auf dem GESAMTEN Kern die drei Beziehungen
+
+  T Lcal_-1 = exp(-tau)   Lcal_-1 T,                    (S1)
+  T Lcal_-2 = exp(-2tau)  Lcal_-2 T,                    (S2)
+  T R = R exp[-tau(Q+alpha)] T.                         (R)
+
+Insbesondere müssen die Produkte mit dem unbeschränkten Ladungsfaktor
+in (R) auf diesem gemeinsamen Kern definiert sein. Dann gilt eindeutig
+
+  T=exp(-tau H_src).
+
+Beweis der Ladungsgewichte: F_alpha(q+1)-F_alpha(q)=q+alpha.
+Aus (R) und T Omega_0=Omega_0 folgt für q>=0 durch Induktion
+T Omega_q=exp[-tau F_alpha(q)] Omega_q. Rückwärts folgt dieselbe Formel:
+Wegen Ladungserhaltung wirkt exp[-tau(Q+alpha)] auf T Omega_q als der
+endliche, von null verschiedene Skalar exp[-tau(q+alpha)]. (R) kann
+deshalb in jedem einzelnen Sektor rückwärts aufgelöst werden. Es wird
+kein global beschränkter inverser Ladungsexponentialoperator behauptet.
+
+Beweis der vollständigen Anregungen: Der schon vorhandene W8 Beweis zeigt
+die Virasoro Zyklizität des neutralen Originalsektors. Er erweitert sich
+auf jedes q: Für alpha=1/4 oder 3/4 ist h_q=(4q plus/minus 1)^2/32.
+Ein c1 Kac Nullgewicht hätte die Form m^2/4. Gleichheit würde ein ungerades
+Quadrat gleich 8m^2 setzen, also ist sie ausgeschlossen. Der Verma Modul
+ist irreduzibel; seine natürliche Abbildung in den vorhandenen Heisenberg
+Focksektor ist injektiv. Auf beiden Seiten ist die Graddimension p(N),
+also ist diese Abbildung auf jedem Grad surjektiv. Sämtliche Zustände
+jedes Ladungssektors sind somit Stressnachkommen von Omega_q.
+
+Weiter gilt [Lcal_-1,Lcal_-r]=(r-1)Lcal_(-r-1), r>=2.
+Daher erzeugen die zwei Moden in (S1),(S2) sämtliche negativen Moden.
+Die Intertwiner Relation überträgt sich induktiv auf sie und anschließend
+auf jedes Wort vom Gesamtgrad N. T wirkt dort mit
+
+  exp[-tau(F_alpha(q)+N)].
+
+Dies ist exakt die Wirkung von exp(-tau H_src) auf dem dichten gesamten
+geladenen Energiekern. Beschränktheit liefert die Operatorgleichheit auf
+dem ganzen Hilbertraum. Ihr positiver injektiver Logarithmus bestimmt den
+selbstadjungierten Generator eindeutig. F_alpha(q)+N ist genau bei q=N=0
+null; somit ist der normierte Grundzustand innerhalb dieser Darstellung
+eindeutig bis auf Phase. Die globale Lücke ist 1/4, die neutrale Lücke 1.
+In der originalen K_alpha Zeiteinheit exp(-t K_alpha) gilt tau=t/8.
+
+Jede Beziehung hat eine eigene Aufgabe. Ohne (R) lassen (S1),(S2) den
+Multiplikator t_q jedes Ladungssektors frei, mit T=t_q exp(-tau N_osc).
+Die Windung fixiert genau diese restlichen Gewichte. Verwendet man nur
+gerade CAR Observablen, darf R nicht stillschweigend eingefügt werden.
+R^2 genügt auf der geraden Ladungsbahn; bleiben gerade und ungerade Bahn
+beide erhalten, braucht die ungerade Bahn einen eigenen Anker. Der hier
+bewiesene Satz verwendet die ausdrücklich bezeichnete volle geladene Quelle.
+
+Der Nachweis ist global. Er identifiziert weder die lokalen P1 Algebren
+auf echten Intervallen noch die Einsetzung ihrer Felder oder das volle
+gewichtete Quellmaß. Die drei Gleichungen sind ein hinreichendes,
+präzises Ziel für die ursprüngliche Quellenherleitung. Sie sind in der
+vorhandenen CAR Realisierung erfüllt, weil deren H_src bereits so
+definiert wurde. Das ist Existenz und bedingte Eindeutigkeit in dieser
+Klasse. Es beweist noch nicht, dass jede zulässige P1/P2/E8 Quelle diese
+Klasse und diese drei Beziehungen realisiert.
+
+Quellen dieses Abschnitts:
+experiments/theory-contracts/seam-source-character-search-20261015/source_reconstruction/PROOF.txt:130–215;
+experiments/theory-contracts/original-admissible-source-closure-20261025/W8-ORIGINAL-STRESS-RECONSTRUCTION.txt:9–56,147–174;
+experiments/theory-contracts/joint-native-algebra-selection-20261016/ORIGINAL-DENSITY-GEOMETRY-AND-TIME-HISTORIES.txt:138–247;
+Bouwknegt, McCarthy, Pilch, Fock space resolutions of the Virasoro highest
+weight modules with c<=1, Lett. Math. Phys. 23 (1991), section 2,
+https://arxiv.org/abs/hep-th/9108023.
+
+9. Ergebnis und nächste tragende Herleitung
+
+Die geometrischen Transferrelationen erzwingen Generator und Grundzustand
+innerhalb der identifizierten E8 Vakuumklasse und, direkt mit (S1),(S2),(R),
+innerhalb der ursprünglichen geladenen Viertelquelle. Dies ist eine
+bedingte Schließung, kein Abschluss der physischen TFPT Quelle.
+Die bisher geprüften ursprünglichen Bedingungen liefern die fehlende
+Identifikation und (W) noch nicht. Ein globales Nicht-Eindeutigkeitsurteil
+über vollständige P1/P2/E8 Realisierungen wäre ebenso unbelegt.
+
+Der nächste konkrete Beweis muss daher die ursprüngliche Randform auf
+den identifizierten Quellworten konstruieren und die drei Relationen
+(S1),(S2),(R) aus ihrer echten Verklebung und Gewichtung herleiten,
+einschließlich Referenz, Domänen und Nullquotient. Die unverschobene E8
+Relation (W) darf erst nach einem wirklichen Intertwiner verwendet werden.
+Erster trennender Test im E8 Vergleich ist neben dem bekannten ersten
+Rückweg die neutrale doppelte Cartanantwort. Deren Bestehen ist notwendig,
+aber nicht der universelle Beweis von (W). Die vorhandene geladene
+Paar/Nullwortprüfung bleibt eine zusätzliche Originalbedingung.
+
+Prüfung: audit.py verifiziert die drei Gegenentwicklungen und ihre
+Korrelationswerte exakt. Der all-history Schließungssatz ist analytisch
+bewiesen und separat intern geprüft. Die Gitterdaten werden aus der
+unveränderten ursprünglichen v1 Konstruktion gelesen. Keine neue
+Lean Abnahme, keine physische Quellenzahl, keine 3+1D Herleitung.
+
+Quellen: die oben benannten Originaldateien; zusätzlich
+documents/tfpt_1_architecture_e8/sections/001-source.tex:68–98;
+documents/origin_theory/sections/001-section-the-whole-integer-skeleton-from-one-pair-gcar-nf.tex:38–80;
+documents/tfpt_3_e8_audit_bootstrap/sections/010-section-three-views-of-one-spine.tex:157–254;
+experiments/theory-contracts/joint-native-algebra-selection-20261016/PROOF.md:58–83;
+verification/v995_kms_subnet_rigidity.py:1–150.
+Primärliteratur zur verwendeten affinen Klasse: Frenkel/Kac,
+Basic representations of affine Lie algebras and dual resonance models,
+Invent. Math. 62 (1980/81), https://doi.org/10.1007/BF01391662;
+Boyle Smith et al., Classification of chiral fermionic CFTs of central
+charge <=16, v2 vom 28. Februar 2024, https://arxiv.org/abs/2303.16917v2.
+
+F1_complete=false; primitive_P1_source_computed=false; ledger_changed=false.

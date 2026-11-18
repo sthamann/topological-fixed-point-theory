@@ -17,13 +17,13 @@ import mpmath as mp
 ROOT = Path(__file__).resolve().parents[3]
 PINS = {
     "experiments/theory-contracts/source-half-sector-bridge/checker.py":
-        "43d682889f84f83b8a7ba7c5d7bf0ce92913d6310d6ba7243d07c827e6a2218d",
+        "effed6ccb62245785f9685fa10979c734483479aae369ed0df414d2208c683b7",
     "experiments/theory-contracts/source-half-sector-bridge/README.md":
         "5fc767e148bff3381f27459df28412fa1b17b604b19c0b34353e7c6314a5403d",
     "experiments/theory-contracts/current-truncation-bridge/README.md":
         "73a74a0c0a433f465ed9bc948296338b8573e0b05423dfcd19f9ee17e74d34cb",
     "experiments/theory-contracts/neutral-current-limit/checker.py":
-        "2e4a03cbacc3bc0ed4835facd85e8abce2f2585d717abc56fc2dc57f6b67c136",
+        "8894d8758a1511941f498095ad5916cb651665792c761a78472d7013c5c39495",
 }
 
 

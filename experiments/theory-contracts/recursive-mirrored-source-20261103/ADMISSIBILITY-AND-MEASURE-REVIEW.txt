@@ -1,0 +1,211 @@
+INDEPENDENT ADMISSIBILITY AND MEASURE REVIEW
+3 November 2026. Original sources read; no new code runs or repository edits.
+
+Summary
+-------
+The Grassmannian Kahler form vanishes on the actual selfadjoint graph
+R=exp(-ell h), whenever the finite/trace-class formula is defined. This
+does not make the metric zero, furnish a normalized measure, or extend
+to arbitrary ordered normal-dependent transfers. The original high gap
+also cannot bound the Higgs radius in the actual invertible-Yukawa smooth
+circle branch: an explicit full-operator lower bound shows the entire
+radial tail eventually satisfies the gap, uniformly on coupled field
+tubes. Compact normal-base index, state-space coercivity and background
+stationarity do not by themselves give compact offshell Higgs amplitudes.
+The known bounded-rank normalization result is reused, not rediscovered.
+No whole primitive source or TFPT NoGo is claimed.
+
+1. Independent Kahler-zero check
+--------------------------------
+On a finite original regulator, let h=h* and ell>0. Then R=exp(-ell h)
+is positive selfadjoint. Any differentiable real physical variation of
+h within this chart has a selfadjoint transfer tangent X=delta R. Indeed
+ delta R=-int_0^ell exp[-(ell-s)h] delta h exp[-s h] ds;
+taking its adjoint and changing s->ell-s gives the same operator.
+The statement also holds for a real ell variation.
+
+For the Grassmannian graph chart, use the actual standard potential
+ K(R)=log det(I+R*R).
+The ambient form on real tangent vectors is, up to the chosen overall
+positive normalization,
+ omega_R(X,Y)=2 Im Tr[(I+R*R)^-1 X* (I+RR*)^-1 Y].
+For R=R* and X=X*,Y=Y*, both inverse factors equal A=(I+R^2)^-1, so
+ omega_R(X,Y)=2 Im Tr(A X A Y)=0.                        (1)
+Proof: conjugating the trace gives Tr(Y A X A), which by cyclicity is
+Tr(A X A Y). Thus the trace is real. No commutation between X,Y,A is
+assumed. The displayed zero proof is correct.
+
+Important scope:
+* The induced metric is generally nonzero: Tr(A X A X)=
+  Tr[(A^(1/2) X A^(1/2))^2]>=0, strictly positive for nonzero finite X.
+  Zero symplectic pullback does not mean a constant potential or zero
+  Riemannian volume.
+* The original map R(H,Hbar) is not holomorphic merely because H uses
+  complex coordinates. Computing partial_H partial_Hbar K(R(H,Hbar))
+  is not the pullback of the ambient Kahler form without the required
+  holomorphic-map hypothesis. These two operations cannot be substituted.
+* The given original h has both spectral signs in its unbounded circle
+  version. R=exp(-ell h) may then be unbounded, and logdet(I+R*R) need
+  not exist. The finite proof extends only with actual domains, traces
+  and cyclicity justified. The bounded Cauchy graph remains meaningful
+  in the original source; that fact alone does not justify this logdet.
+* A genuinely normal-dependent ordered transfer need not be selfadjoint
+  even when each instantaneous h is. Equation(1) is not asserted for
+  that broader original dynamical-boson source.
+
+Actual source bindings for h and graph:
+/Users/stefanhamann/Projekte/tfpt-theoryv4/experiments/theory-contracts/tfpt-unified-source-derivation-20261029/graded_boundary_functor/FINITE-COUPLED.txt:10-48
+ gives actual Phi=Phi*, odd grading, smooth connection A, h=A gamma_F-
+ i gamma_F Phi, its selfadjoint H1 realization, and h^2=A^2+Phi^2-i[A,Phi].
+Same file:58-69 gives the full two-face graph and conditional physical
+quantization scope; :5-8 explicitly fixes normal independence.
+/Users/stefanhamann/Projekte/tfpt-theoryv4/experiments/theory-contracts/original-local-source-variable-background-20261102/CARRIER-SOURCE.txt:50-72
+ preserves the whole graph, bounded spectral functions, and R=exp(-ell h)
+ on its actual graph domain. It expressly avoids arbitrary L2 Cauchy
+ well-posedness. The finite Kahler calculation does not erase that domain.
+
+2. Original radial field, with all coefficients and angular directions
+---------------------------------------------------------------------
+The original full96 constructor is
+ D_F=full_D(Yu,Yd,Ye,Ynu,MR)=D_Y+D_M,
+ D_Y=full_D(Yu,Yd,Ye,Ynu,0),
+ D_M=full_D(0,0,0,0,MR).
+For the actual common Higgs field H in C2, r=|H|, its exact source identity
+is Phi(H)=V(q(H)/r)[r D_Y+D_M]V(q(H)/r)* for r>0.
+The full quaternion acts on every left weak doublet and conjugately on
+antiparticles; Majorana right-singlet entries are unchanged. Thus the
+source contains a whole noncompact coefficient space, not just a radial
+ray chosen as a substitute for the original field.
+
+Exact original paths/lines:
+/Users/stefanhamann/Projekte/tfpt-theoryv4/verification/v252_full_finite_triple.py:63-116
+ contains actual field slots, all generations/colors, Dirac builder and
+ whole96 Majorana completion.
+/Users/stefanhamann/Projekte/tfpt-theoryv4/experiments/theory-contracts/tfpt-unified-source-derivation-20261029/aps_source_review/ACTUAL-ONEFORM-COUPLED-SOURCE-RESPONSE.txt:13-18
+ proves the actual radial one-form D_Y and fixed original Majorana term.
+/Users/stefanhamann/Projekte/tfpt-theoryv4/experiments/theory-contracts/tfpt-unified-source-derivation-20261029/aps_source_review/ORIGINAL-HIGGS-FIBER-PROOF.txt:17-36
+ proves the entire H quaternion/unitary identity, for all original Yukawa
+ matrices and symmetric Majorana entries, not only a diagnostic fixture.
+
+3. High-gap selector preserves the coupled radial tail
+------------------------------------------------------
+The printed gap selector is HIGH spectral:
+ P_gap=1_[epsilon_adm^2/4,infinity)(P_str D_adm*D_adm P_str).
+It is not an ultraviolet cutoff on field amplitudes or an upper spectral
+bound. Its exact original definition and domain role are at
+/Users/stefanhamann/Projekte/tfpt-theoryv4/documents/archive--tfpt-45--source_extracts--04_qft_source/sections/002-section-closure-theorems-from-the-admissibility-complex.tex:42-54,78-100
+ in particular :94-96. D_adm has its own actual sector/domain role; this
+ review does not identify it with a different source operator by name.
+
+Finite coefficient theorem. Suppose the actual supplied four Yukawas
+are invertible, and put y_min=min_f s_min(Y_f)>0. The actual original
+full96 D_Y has s_min(D_Y)=y_min. For any bounded other coefficient A(b),
+ ||A(b)||<=M, and any original Higgs angular direction n,
+ s_min(r D_Y(n)+A(b))>=r y_min-M.                        (2)
+Here D_Y(n) is the actual unitary quaternion orbit, not a new matrix.
+Equation(2) is the triangle inequality applied to every unit vector.
+Thus the high gap is identity in this coefficient chart for every
+r>(M+epsilon_adm/2)/y_min, uniformly over the entire allowed angular
+family and bounded nonradial backgrounds. Singular supplied Yukawas
+are not silently perturbed to make this theorem apply.
+
+Stronger original smooth-circle theorem, with all modes and couplings.
+Use exactly FINITE-COUPLED.txt:10-48:
+ A=-i partial_theta+a(theta),
+ Phi_r(theta)=r L(H0(theta))+D_M,
+ h_r=A gamma_F-i gamma_F Phi_r,
+ h_r^2=A^2+Phi_r^2-i[A,Phi_r].
+Take any actual C1-bounded field tube of H0 and a for which
+inf_theta |H0(theta)|>=kappa>0. This can be an OPEN neighborhood of a
+nonvanishing field in any actual finite smooth coefficient regulator;
+nonconstant field directions and nonzero gauge connections are retained.
+No constant-field, zero-connection or zero-measure slice is used.
+The quaternion identity gives pointwise s_min L(H0)>=kappa y_min.
+Let ||D_M||<=M on the actual fixed or bounded Majorana inputs. Then for
+r kappa y_min>=M,
+ Phi_r^2 >= (r kappa y_min-M)^2 I.
+The whole commutator is a bounded multiplication operator,
+ [A,Phi_r]=-i r partial_theta L(H0)
+           +r[a,L(H0)]+[a,D_M].
+On that same tube there are finite constants C1,C0 with
+ ||[A,Phi_r]||<=r C1+C0.
+Since A^2>=0, the ORIGINAL full operator satisfies, as a quadratic form,
+ h_r^2 >= [(r kappa y_min-M)^2-r C1-C0] I.                (3)
+The right side tends+infinity uniformly on the entire tube. This retains
+ALL circle frequencies and the actual gauge/Higgs/Majorana coupling.
+Therefore a high-gap selector applied to this actual h_r^2 becomes
+identity beyond a finite radius. It cannot supply compact radial support
+in this declared whole source class.
+
+Scope: (2)-(3) are exact original-branch operator estimates. Using them
+for the primitive P_gap requires the actual D_adm-to-this-chart map,
+with its original P_str and domain. No such universal identity is
+asserted. Structural topological factors are not replaced by Fock parity,
+nor is P_adm set to identity globally. Positive rescaling preserves the
+original seam parity and determinant bundle class; the concrete action
+of any additional whole selector must still be carried by its real map.
+
+4. The other original conditions do not make a compact amplitude fiber
+---------------------------------------------------------------------
+/Users/stefanhamann/Projekte/tfpt-theoryv4/documents/archive--tfpt-45--source_extracts--02_carrier_source/sections/007-subsection-bosonic-relative-index-and-higgs-selection.tex:96-130
+ compactifies the NORMAL BASE to S2 and obtains H0(O1)=C2, H1(O1)=0,
+ the one doublet and seam-evenness. A compact base and finite-dimensional
+ vector space C2 do not bound its coefficient norm. Normalizing a basis
+ zero-mode section likewise does not normalize its dynamical coefficient.
+
+/Users/stefanhamann/Projekte/tfpt-theoryv4/documents/archive--tfpt-45--source_extracts--04_qft_source/sections/004-source.tex:92-108
+ assumes weak-* compactness of V_adm and coercivity of P_adm H_rel P_adm,
+ then minimizes Tr(rho H_rel) on STATES. It supplies no evaluated field
+ density or inequality growing with the offshell Higgs radius. If that
+ Hamiltonian is actually identified in a noncompact field representation,
+ its conditional boson distribution may be constructive; that connection
+ is not furnished by treating state compactness as compact field support.
+
+/Users/stefanhamann/Projekte/tfpt-theoryv4/documents/archive--tfpt-45--source_extracts--02_carrier_source/sections/009-source.tex:334-377
+ fixes discrete datum/P_adm, uses xi=(alpha,chi_geo,delta_ph,rho_vac),
+ and defines its barrier on the minimal bordism stratum. Its displayed
+ barrier is not a delta constraint placing every integrated offshell
+ Higgs fluctuation at a stationary background amplitude.
+
+/Users/stefanhamann/Projekte/tfpt-theoryv4/documents/archive--tfpt-45--source_extracts--05_metrology_source/sections/005-section-absolute-dimensionless-metrology-from-the-bounda.tex:137-178
+ prints a geometric field measure using dnu_Vn and invokes coercivity.
+That declared measure may already contain a nontrivial conditional Higgs
+density; the displayed passage does not evaluate it by (1)-(3) or by
+normalizing Lebesgue coefficients. No universal absence of such a density
+is inferred from the separate gap result.
+
+5. Reuse the bounded-rank result, preserving the whole-source boundary
+--------------------------------------------------------------------
+Known result R055 is explicitly at
+/Users/stefanhamann/Projekte/tfpt-theoryv4/docs/research/fundamental-plan/RESULTS.md:653-675
+ including its ordinary linear Higgs-volume premise and exclusions.
+It already says a bounded finite-rank spectral seed alone does not
+normalize that noncompact volume. This is REUSE, not a fresh discovery
+or R080 replay.
+
+In that SAME declared class the boundedness is uniform even when all
+geometry/A/reference coefficients vary: rank<=N and bounded f imply
+ |Tr f(D)-Tr f(D_ref)|<=2N ||f||_infinity,
+ e^(-2N||f||)<=|exp(-S_spectral)|<=e^(2N||f||)
+for a real eta phase. The actual bounded-rank spectral reference alone
+does not create radial damping. Its entire field dependence is retained
+in this uniform inequality, not frozen.
+
+The actual finite affine fermion Pfaffian and ordinary Grassmann ghost
+determinant, where that original source prescription holds, are finite
+polynomials. If their joint leading coefficient is nonzero on an actual
+open angular/nonradial tube, continuity gives a uniform polynomial lower
+bound there at large radius. If the actual original base element has
+the stipulated nondecaying linear Higgs volume on that positive-volume
+tube, the coupled absolute integral diverges. All those interactions
+are retained; no zero-measure slice proves this statement.
+
+But this does NOT decide a source whose actual base/conditional density,
+bosonic auxiliary integration, extra original action, physical selector,
+or joint rank limit changes those hypotheses. Gaussian/Hermitian graph
+geometry alone and the named gap/index constraints do not supply a new
+measure by themselves. An actual supplied full omega already fixes its
+commutative field laws; it is to be evaluated, not replaced with linear
+volume or an arbitrarily chosen Riemannian measure. The full primitive
+source/integration equality and its normalizing conditional density are
+not declared computed by this review.

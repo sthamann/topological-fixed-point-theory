@@ -14,7 +14,7 @@ COMMON = REPO / 'experiments/theory-contracts/universalraum-native-operations-gr
 FAMILY = REPO / 'experiments/theory-contracts/source-three-route-closure-20260922/family_checker.py'
 PAPER = REPO / 'tfpt_2_standard_model.tex'
 EXPECTED_HASHES = {
-    str(COMMON): '2cc97522457ecc7e6774d96a25b2581b5d67cd051ae35e28a26f0e98e2adb994',
+    str(COMMON): '47d3cc97019892f47985172ada67294fe8686ccc9df4f09ee18d6f5fe6bccfed',
     str(FAMILY): 'faa7731845abbf7793ded43d642232431fb0057163847faf4b3b2a6f1c070e7a',
     str(PAPER): 'bc80e9bb7a37c2cac5e2b0c1bb593adfbf2bcf4bea682fa6d5879d1d37719a75',
 }

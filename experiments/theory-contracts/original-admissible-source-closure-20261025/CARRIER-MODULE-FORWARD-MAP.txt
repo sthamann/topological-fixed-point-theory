@@ -1,0 +1,379 @@
+# Tatsächliche Carrier und Morita Vorwärtsabbildung
+
+Stand: 2026-10-25
+
+## Fragestellung und Ergebnis
+
+Geprüft wurde, ob die jetzt geschlossene treue Kreisquelle und ihr exakter
+Schurtransport bereits durch eine ursprüngliche TFPT Abbildung in den
+fünfteiligen Carrier, das Familienpaket oder das endliche Spektraltriple
+weiterlaufen. Maßgeblich sind dabei nicht gleiche Dimensionen, sondern der
+Hilbertraumtyp, die Operatorwirkung und die gemeinsame Zeit.
+
+Das Ergebnis ist zweigeteilt.
+
+1. **PROVED, Typfrage.** In der einzigen ausdrücklich formulierten
+   fastkommutativen Realisierung ist der Carrier ein endlicher innerer Faktor
+   über einem weiterhin unendlichdimensionalen Raumzeit beziehungsweise
+   Kreisfaktor. Eine Projektion auf einen nichttrivialen endlichen inneren
+   Carrier hat daher die Form `I_circle tensor p` und unendlichen Rang. Sie ist
+   keine endlichrangige Fourierprojektion im Kreisraum.
+
+2. **SOURCE AUDIT, weiterhin offen.** Die untersuchten Originale bestimmen
+   weder ein Hilbertmodul `K_car` noch eine Isometrie, welche dieselbe
+   Kreiskovarianz `C_Sigma` in das 96 dimensionale `H_F` von v252 transportiert.
+   Der Ausdruck
+
+       [D_F] = [D_Sigma] tensor_(E8)_1 [K_car]
+
+   wird als Deutung beziehungsweise bedingte physische Identifikation
+   verwendet. In den geprüften Stellen fehlen die Daten eines wirklichen
+   Kasparov oder Morita Produkts: Rechts und Linksdarstellungen, inneres
+   Produkt, Abschluss, Operatorconnection und die unitäre Identifikation des
+   Produktraums. Die fünf Slots, der Schnitt `3+2`, die drei
+   Kohomologiecharaktere und eine positive holomorphe Determinantensektion
+   liefern jeweils andere Daten und ersetzen diese Abbildung nicht.
+
+Die neue Kreisschließung beseitigt damit den Zustands und
+Komplementtransport auf dem vollständigen Kreis. Sie beseitigt die davon
+getrennte P2 Schnittstelle zum inneren Carrier nicht. Dies ist keine erneute
+Meldung der bekannten v258 Rückinversionslücke, sondern die vorwärts gerichtete
+Typbestimmung dieser Schnittstelle.
+
+## 1. Deduplizierung
+
+Der bekannte Befund zu v258 wurde nur als Ausgangspunkt verwendet:
+
+* `verification/v258_dirac_covariance_induction.py:24,47-58,149-155` schreibt
+  `C_F=P_F C_Sigma P_F`, konstruiert aber `P_F` und `C_Sigma` nicht. Der letzte
+  Schritt ist `check(..., True)`.
+* `experiments/theory-contracts/source-yukawa-forward-gate-20260921/
+  yukawa_source_provenance_20260921.md:44-55,129-150` hat genau diese
+  Vorwärtslücke bereits dokumentiert.
+* Der aktuelle Atlasbefund
+  `finding:v258-forward-source-gap-is-reused-not-solved-by-inversion` bewahrt
+  dieses Urteil ausdrücklich.
+
+Neu geprüft wurde daher ausschließlich, ob die älteren Konstruktoren v175,
+v177, v210 und v252 oder die P2, Markierungs, Sektions und `K_car` Stellen die
+fehlende Abbildung tatsächlich schon enthalten. Die neue Voraussetzung ist,
+dass der originale Kreiszustand samt Komplement über den Schurtransport als
+geschlossen gilt.
+
+## 2. Der Hilbertraumtyp im Original
+
+Die historische fastkommutative Stelle ist eindeutig:
+
+* `documents/archive--paper-latex--tfpt-31/sections/
+  002-subsection-primitive-relative-spectral-dynamics.tex:32-40` führt
+
+      H = L^2(M_tilde,S) tensor H_int
+
+  mit endlichem `H_int` ein.
+* Dieselbe Quelle sagt in Zeilen 65-70 ausdrücklich, dass diese Faktorisierung
+  zusätzlich gewählt wird und `S` sowie `H_int` keine Rekonstruktionsoutputs
+  des dortigen Satzes sind.
+* Die spätere Fassung wiederholt die Typgrenze in
+  `documents/archive--paper-latex--tfpt-42/sections/
+  003-subsection-primitive-relative-spectral-dynamics.tex:26-35,94-96`:
+  Die fastkommutative Realisierung ist eine analytische Wahl und kein Teil des
+  einseitigen Randdatums.
+
+Damit leben die Faktoren in verschiedenen Rollen:
+
+    H_circle = L^2(S^1, spin line or spinor fibre),       dim = infinity,
+    E = E_3 direct-sum E_2,                               dim = 5,
+    S^+ = Lambda^even E,                                  dim = 16,
+    S^+ tensor F_family,                                  dim = 48,
+    H_F = particles direct-sum antiparticles,             dim = 96.
+
+Die letzten vier Räume sind innere endliche Module. Sie sind keine Menge von
+fünf, sechzehn, achtundvierzig oder sechsundneunzig Fouriermoden des ersten
+Raums.
+
+Dies ist auch direkt an v252 sichtbar. In
+`verification/v252_full_finite_triple.py:1-24,63-83` wird `H_F` durch eine
+endliche Liste von Feld, Chiralitäts, Farb und Generationenlabels gebaut. Die
+Yukawamatrizen werden in Zeilen 86-116 als Eingaben in `D_F` eingesetzt. Weder
+ein Fourierindex noch `B_Sigma`, ein Calderonprojektor oder eine
+Kreisfunktionsbasis tritt in diesem Konstruktor auf.
+
+## 3. Was v175, v177 und v210 tatsächlich abbilden
+
+### v175
+
+`verification/v175_net_existence_full_cone.py:10-23,94-120` prüft die
+Exteriorpotenzen einer Liste von sechzehn Einteilcheneigenwerten und deren
+endliche Fockdimension `2^16`. Derselbe Text beruft sich in Zeilen 24-35 auf
+das konforme Netz von sechzehn freien Majoranafeldern auf `S^1`.
+
+Diese zwei Ebenen dürfen nicht identifiziert werden. Sechzehn Majoranaarten
+bilden einen endlichen **Speziesfaktor**. Das Einteilchenfeld auf dem Kreis hat
+zusätzlich unendlich viele Fouriermoden. Der im Skript vollständig
+enumerierte Raum `2^16` ist daher kein vollständiger Kreis Fockraum und liefert
+keine endlichrangige Carrierprojektion aus diesem Kreisraum. v175 beweist die
+Exterioralgebra Identität für sein endliches Einteilchenmodell und reduziert
+die physische Identifikation selbst auf `QGEO.REALIZE.01` beziehungsweise in
+Zeilen 36-50 auf den offenen tatsächlichen Seam Operator.
+
+### v177
+
+`verification/v177_seam_marking_kernel.py:26-34,85-112` konstruiert die
+eindeutige `mu4` äquivariante Abbildung
+
+    H^1(P^1 minus mu4)  ->  generation space,
+
+mit den drei Charakteren `i,-1,-i`. Das ist eine Rang drei Abbildung zum
+**Generationenraum**. Sie ist keine Abbildung in den Rang fünf Carrier `E`,
+keine Abbildung nach `S^+` und keine Projektion auf `H_F`.
+
+Außerdem lässt v177 in Zeilen 35-42 und 130-136 gerade die Operatorgleichheit
+
+    C_Sigma = U^(-1) C_mu4 U
+
+als `QGEO.KERNEL.01` offen. Die jetzt vorgegebene Schließung des historischen
+Kreises kann dieses Operatorproblem auf der Kreisseite ersetzen. Sie erzeugt
+aber weiterhin kein `U` vom Kreis oder Seam Hilbertraum zum inneren Carrier.
+
+### v210
+
+`verification/v210_mark_local_dtn.py:83-103,110-140` arbeitet auf der
+Fouriertrunkierung `n=-48,...,48`, also auf einem 97 dimensionalen
+Kreisnäherungsraum. Die vier Marken erzwingen Fourierunterstützung in den
+Klassen `0 mod 4`; die Kovarianz wird als Spektralprojektor
+
+    C = 1/2 (I + sgn(Lambda-mu))
+
+gebildet. Das ist eine Kreis beziehungsweise DtN Aussage. Es gibt dort keinen
+fünfdimensionalen Unterraum, kein `E_3 direct-sum E_2`, kein `S^+`, kein
+`H_F` und keine Carrierisometrie. Die Dimension 97 ist außerdem
+trunkierungsabhängig. v210 kann deshalb nicht der gesuchte Forward Map sein.
+
+## 4. Was P2 und die Markmoden tatsächlich festlegen
+
+Die aktuelle Originalformulierung ist besonders klar:
+
+* `documents/tfpt_1_architecture_e8/sections/001-source.tex:81-92` nennt die
+  Aussage, dass die Naht durch einen fünfteiligen Carrier ausgelesen wird,
+  ausdrücklich `P2_interface` und Axiom. Nur die algebraischen Konsequenzen
+  des gegebenen Carriers sind Theoreme.
+* `documents/tfpt_1_architecture_e8/sections/004-source.tex:31-73` sagt, dass
+  die vier Marken zusammen mit der Deligne und
+  Birkhoff Grothendieck Typisierung die Zahl fünf schärfen, dass die
+  Modulidentifikation und die dynamische Realisierung jedoch bedingt bleiben.
+* `verification/v499_p2_weights_deligne_bg.py:10-29` beginnt mit einem bereits
+  identifizierten dreidimensionalen Generationenmodul. Seine Zeilen 50-58
+  trennen ausdrücklich drei verschiedene Kohomologien. Zeilen 70-89 lassen
+  die Identifikation des Generationenraums mit genau diesem `H^1` samt
+  Connection als bedingten Rest stehen.
+* v499 Zeilen 176-182 berechnen
+
+      h^1(O(-4)) = 3,
+      h^0(Omega^1(log D)) = 3,
+      h^0(O(4)) = 5.
+
+  Dies ist eine Dimensions und Bündelrechnung. Sie gibt keine isometrische
+  Einbettung von `H^0(O(4))` in `L^2(S^1)` und keine Wirkung von `C_Sigma` auf
+  diesem Fünferraum an.
+
+Die fünf Markmoden sind somit nicht als fünf ausgewählte Kreis Fouriermoden
+definiert. Die Zahl fünf entsteht als `h^0(O(4))` beziehungsweise als
+elementarsymmetrische Zahl der Splittingexponenten. Der `3+2` Schnitt entsteht
+später als innere Ladungs beziehungsweise Carrierzerlegung. Eine Gleichsetzung
+dieser Objekte wäre genau der noch fehlende Schnittstellenpfeil.
+
+Die stärkste scheinbar positive Gegenstelle wurde ebenfalls geprüft.
+`documents/archive--paper-latex--tfpt-42/sections/
+027-subsection-primitive-completion-from-the-boundary-kernel.tex:23-66`
+formuliert den kompatiblen diskreten Datensatz des Boundary Kernel als
+Singleton und listet `E_3 direct-sum E_2`, `Y` und `S^+` auf. Der Beweis
+bestimmt in Zeilen 121-139 die Ränge jedoch über einen bereits geschlossenen
+bosonischen Index und den „actual branch Yukawa tensor“. Selbst wenn man diese
+diskrete Eindeutigkeit vollständig akzeptiert, bestimmt sie die
+**Isomorphieklasse** des inneren Pakets. Sie schreibt keine Einbettung dieses
+Pakets in den Boundary Hilbertraum hin, keine Darstellung von `B_Sigma` darauf
+und keine Fortsetzung von `C_Sigma`. Der Satz beantwortet daher die
+algebraische Carrierselektion, aber nicht den hier gesuchten Operatorpfeil.
+
+Auch die im Suchraum auftretende positive holomorphe Sektion schließt ihn
+nicht. `documents/tfpt_research_contracts/sections/012-source.tex:102-116`
+behandelt die eindeutige reell positive Quillen Sektion des verdrehten
+Faserdeterminanten und den festen Gewichtsfaktor `1/det_j`. Sie liefert einen
+Skalar in einer Determinantenlinie, keinen fünfdimensionalen Carrierraum und
+keinen Intertwiner der Kreiskovarianz.
+
+## 5. Exakter Vorwärtstest in der vorhandenen Faktorform
+
+Die fastkommutative Faktorform erlaubt einen kleinen entscheidenden Test, ohne
+einen neuen Carrier oder neue Dynamik zu wählen.
+
+Sei
+
+    H = H_circle tensor K,
+    B = B_circle tensor I_K,
+    C = C_beta(B_circle) tensor I_K,
+
+und sei `p` ein bereits vorhandener innerer Carrierprojektor von endlichem Rang
+`r>0`. Der zugehörige Projektor auf dem vollen Hilbertraum ist
+
+    P = I_circle tensor p.
+
+Dann gilt exakt:
+
+    rank(P) = infinity,
+    P H = H_circle tensor pK,
+    P C P |_(PH) = C_beta(B_circle) tensor I_r,
+    exp(it B)|_(PH) = exp(it B_circle) tensor I_r.
+
+Die erste Kovarianz und die Zeitwirkung sind also vollständig berechenbar.
+Sie bewahren jede Kreisfrequenz und vervielfachen sie lediglich mit der
+inneren Multiplizität `r`. Sie erzeugen weder einen endlichen 96 mal 96
+Zustand noch einen chiralen Yukawa oder Majoranablock. Insbesondere enthält
+die eingeschränkte Zeit keine nichttriviale innere Dynamik.
+
+Für den bereits bewiesenen gerichteten Kreisfaktor folgt ebenso unmittelbar:
+Wenn
+
+    det[(I-z u C_beta u*) (I-z C_beta)^(-1)] = 1-z,
+
+dann ist auf `H_circle tensor pK`
+
+    det[(I-z (u tensor I_r)(C_beta tensor I_r)(u* tensor I_r))
+        (I-z C_beta tensor I_r)^(-1)]
+    = (1-z)^r.
+
+Der Grund ist, dass der relative Operator die direkte Summe von `r`
+identischen Kreisoperatoren ist. Für die im Original vorkommenden inneren
+Ränge ergibt die triviale Faktorwirkung deshalb beispielsweise
+
+    r=5    -> (1-z)^5      auf dem fünfteiligen Carrier,
+    r=16   -> (1-z)^16     auf einem Familienpaket S^+,
+    r=48   -> (1-z)^48     auf drei Familien,
+    r=96   -> (1-z)^96     nach Teilchen Antiteilchen Verdopplung.
+
+Dieser Test widerlegt keine dieser inneren Strukturen. Er zeigt präzise, dass
+die geschlossene Kreisquelle allein nur eine identische Speziesmultiplikation
+liefert. Ein einzelner Faktor `1-z`, ein endlicher `C_F` oder die nichttriviale
+innere Matrix von v252 benötigen zusätzlich eine definierte Carrierconnection
+beziehungsweise einen nichttrivialen inneren Operator.
+
+Der Test korrigiert auch eine zu enge frühere Formulierung der Lücke. Im
+fastkommutativen Produkt ist die gesuchte physische Abbildung im Allgemeinen
+nicht zuerst eine endlichrangige Isometrie `V_F:H_F -> H_circle`. Zuerst muss
+die innere Modulstruktur des Produktes angegeben werden. Erst ein danach
+definierter effektiver Nullmoden, Energiefenster oder Schurreadout könnte einen
+endlichen `C_F` erzeugen. Keine solche zusätzliche Reduktion darf aus der Zahl
+fünf allein eingesetzt werden.
+
+## 6. Warum das symbolische `K_car` noch kein Morita Produkt ist
+
+Die einzigen direkten aktiven Verwendungen wurden gefunden in
+
+* `documents/tfpt_2_standard_model/sections/
+  010-section-the-explicit-mass-gap-closes-dynamics-and-cluste.tex:304-315`,
+* `documents/tfpt_research_contracts/sections/002-source.tex:228-236`,
+* `verification/v258_dirac_covariance_induction.py:47-58,149-155`.
+
+Alle drei verweisen auf dieselbe Formel und auf v258. Keine Stelle definiert
+`K_car` als Hilbertbimodul oder schreibt den Produktoperator hin. Für eine
+tatsächliche Vorwärtsabbildung wären mindestens folgende schon aus dem
+Original zu bestimmende Daten nötig:
+
+1. eine linke Darstellung der Seam oder `(E8)_1` Algebra und eine rechte
+   Darstellung der endlichen Carrieralgebra auf `K_car`;
+2. das Hilbertmodulinnere Produkt und sein Abschluss;
+3. eine unitäre Identifikation des balancierten Produktraums mit dem
+   tatsächlichen Feldraum, nicht nur eine Gleichheit von K Klassen;
+4. eine Operatorconnection, welche `D_Sigma` beziehungsweise `B_Sigma` in den
+   Produktoperator überführt;
+5. die Wirkung von `J`, `Gamma`, Ladung und Zeit auf diesem Produkt;
+6. eine Zustandsabbildung, die festlegt, ob `C_Sigma` als
+   `C_Sigma tensor I`, als nichttriviale Matrixkovarianz oder über einen
+   effektiven Schurreadout fortgesetzt wird.
+
+Ohne diese Daten ist `P_F C_Sigma P_F` in der endlichen v252 Lesart weiterhin
+untypisiert. Mit der trivialen Tensorfortsetzung ist es wohldefiniert, bleibt
+aber unendlichdimensional und liefert gerade die oben berechnete
+Speziesmultiplizität.
+
+## 7. Präzises verbleibendes Problem
+
+Die erste zusätzliche Wahl liegt nicht mehr beim Kreiszustand. Sie liegt bei
+der **Carrier Modul und Operatorconnection**:
+
+    faithful circle source
+      -> boundary representation with B_Sigma, J, Gamma and C_Sigma
+      -> specified K_car correspondence plus connection
+      -> full spacetime tensor internal field Hilbert space
+      -> only then an original finite effective readout C_F.
+
+Ein erfolgreicher Originalsbeleg muss auf der dritten Stufe eine konkrete
+Abbildung samt Domain und Adjungierter angeben und wenigstens eine der
+folgenden Identitäten auf echten Operatoren prüfen:
+
+    W (B_Sigma tensor 1 + Gamma_Sigma tensor D_int) W* = B_field,
+    W (Gamma_Sigma tensor gamma_F) W* = Gamma_field,
+    W (C_Sigma tensor C_int) W* = C_field,
+
+oder die entsprechende nichttriviale Schurform einschließlich des
+Komplements. Der geschlossene Kreisschurtransport kann dann unverändert als
+erster Faktor verwendet werden. Er bestimmt `C_int`, `D_int` und `W` nicht.
+
+## 8. Urteil im verlangten Scope
+
+**PROVED:** Der historische Kreis und der endliche Carrier sind in den
+Originalen verschiedene Faktoren. Eine innere Carrierprojektion ist auf dem
+vollen Feldhilbertraum unendlich rangig. Bei trivialer Fortsetzung der
+Kreiskovarianz sind die exakte komprimierte Kovarianz, Zeit und der relative
+Determinantenfaktor
+
+    C_beta tensor I_r,
+    exp(itB) tensor I_r,
+    (1-z)^r.
+
+**SOURCE REVIEWED NEGATIVE:** v175, v177, v210 und v252 enthalten keine
+gemeinsame Vorwärtsabbildung vom treuen Kreiszustand zum endlichen
+Carrierzustand. v177 schließt nur die Rang drei Generationenmodulabbildung;
+v210 bleibt im Kreis Fourier Typ; v252 baut den endlichen Feldraum aus
+Feldlabels und eingegebenen Yukawas.
+
+**OPEN PRECISELY:** Das ursprüngliche `K_car` ist in den geprüften Quellen kein
+definiertes Hilbertbimodul mit Operatorconnection. P2 nennt die
+Seam zu Carrier Lesung ausdrücklich als Interfaceaxiom. Die erste noch nötige
+Eingabe ist daher die konkrete äquivariante Modulconnection, nicht ein neuer
+Kreiszustand und nicht eine willkürliche Auswahl von fünf Fouriermoden.
+
+Keine Flavor, Carrier oder Kreisaussage wird dadurch zurückgenommen. Der neue
+Kreis und Schursatz bleibt eine vollständige Quelle für seinen tatsächlichen
+Hilbertraum. Er kann sofort durch einen später tatsächlich definierten
+`K_car` Correspondence transportiert werden.
+
+## Quellenstände
+
+* `verification/v175_net_existence_full_cone.py`, SHA256
+  `969ccd9c2a6ba5a4edb46219ff3aeeaa5c3e7c67ff01bed49ccc981dc7960426`
+* `verification/v177_seam_marking_kernel.py`, SHA256
+  `bf6ad1e0d4dd21ca3b66790b004c2d202a67ea1e94a249c4f09437cc4b6a1c09`
+* `verification/v210_mark_local_dtn.py`, SHA256
+  `5a464a7bb8bb23e81d6a91aa7205b3d9000262a0150203fdbc13d0f4696995a3`
+* `verification/v252_full_finite_triple.py`, SHA256
+  `820254440e178430422e50605067775656236602996307f67c9e69124ba5d163`
+* `verification/v258_dirac_covariance_induction.py`, SHA256
+  `16c60e831dceba773f3629466895f1009654827286e5b760ae01bd755fd5c0b1`
+* `verification/v499_p2_weights_deligne_bg.py`, SHA256
+  `73098e62b3148d1cddb31e60c16a424159f985b874aa0dee1737260fb81017b9`
+* `documents/archive--paper-latex--tfpt-31/sections/
+  002-subsection-primitive-relative-spectral-dynamics.tex`, SHA256
+  `6d8813b95a1ef4d82ee9cd48a25efff3f9c20066a06b85ad121bc26e5dbaae77`
+* `documents/tfpt_1_architecture_e8/sections/001-source.tex`, SHA256
+  `9be3cc887aa227c779cc4b4c52c8ad54282aa74bf4620ac55a87cd8cb1f5871b`
+* `documents/tfpt_1_architecture_e8/sections/004-source.tex`, SHA256
+  `a064d8bb1c49f7dae14899defaa62ca07ed27e1fa27e01cc482bff64c02a462f`
+* `documents/tfpt_research_contracts/sections/012-source.tex`, SHA256
+  `08fb8dfbbb3c7685e7733872b8858e0761ab04b72094b672e3ec2a3bc5e35771`
+* `documents/archive--paper-latex--tfpt-42/sections/
+  027-subsection-primitive-completion-from-the-boundary-kernel.tex`, SHA256
+  `59f89c232f7636919ee049f25e066f2ba7937a0e636333b9c4eab2fef17c5d42`
+* `experiments/theory-contracts/source-yukawa-forward-gate-20260921/
+  yukawa_source_provenance_20260921.md`, SHA256
+  `631b122c6c8269f2be29850dcc903dd2ffd909fe9222c3377a32387390e5c86c`

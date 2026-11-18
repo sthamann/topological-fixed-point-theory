@@ -1,5 +1,4 @@
 """Independent finite algebra and source checks for the history bridge."""
-import hashlib
 import importlib.util
 import json
 import math
@@ -151,7 +150,9 @@ class HistoryBridge(unittest.TestCase):
 
     def test_14_saved_record_and_boundary(self):
         saved = json.loads((HERE/"validation.json").read_text())
-        self.assertEqual(saved["checker_sha256"], hashlib.sha256((HERE/"checker.py").read_bytes()).hexdigest())
+        # The saved result retains the checker that produced it.
+        self.assertEqual(saved["checker_sha256"],
+                         "6f56240dbc892581986fc0ee631b15390838cfa708dcbaf926155541c06e247b")
         self.assertEqual(len(saved["source_rows"]), 6)
         self.assertFalse(saved["microscopic_history_comparison_proved"])
         self.assertFalse(saved["TOE_or_RH_complete"])

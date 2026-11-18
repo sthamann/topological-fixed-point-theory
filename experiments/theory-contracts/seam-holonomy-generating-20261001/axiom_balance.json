@@ -1,0 +1,138 @@
+{
+  "note": "Axiom balance of UR.SOURCE.HOLONOMY_GENERATOR.01 (first theory half). Categories: DERIVED (exact in this contract), ASSUMED (axiom/identification), IMPORTED (existing [E] corpus result), NUMERICALLY VERIFIED (machine-precision or convergent numerics), EXTERNALLY PROVEN (cited theorem, not rerun), OPEN.",
+  "items": [
+    {
+      "item": "P1: c3=1/(8pi), Z2 sheet, seam circle, chi=2",
+      "status": "ASSUMED",
+      "source": "AX.P1.01 (ledger axiom)"
+    },
+    {
+      "item": "P2: carrier g=5 with 3+2 split",
+      "status": "ASSUMED",
+      "source": "AX.P2.01 (ledger axiom)"
+    },
+    {
+      "item": "E8 root system / D5+A3 glue",
+      "status": "IMPORTED",
+      "source": "compiler [E]; rebuilt from scratch in end_to_end.py B0, glue n=4 unique B1"
+    },
+    {
+      "item": "State axioms: pure quasi-free gauge-invariant (K-), homogeneous K0, half filling K1, reflection K2",
+      "status": "ASSUMED",
+      "source": "kernel_reconstruction.py; quasi-freeness as in v155/v160 [C]"
+    },
+    {
+      "item": "K3: purely chiral seam (one Fermi pair per species)",
+      "status": "ASSUMED",
+      "source": "redteam_k3_norm.py I3: not derivable from c=8 without circularity; not selected by the port (H3)"
+    },
+    {
+      "item": "16 Majorana species, c = 8",
+      "status": "DERIVED",
+      "source": "I1/I2 from P2 (dim Lambda^even C^5), c=8 an output"
+    },
+    {
+      "item": "NS seam kernel C(d) = sin(pi d/2)/(N sin(pi d/N)), unique up to local gauge",
+      "status": "DERIVED",
+      "source": "kernel_reconstruction.py H1/H2 exhaustive census N=12,16,20 (finite); general N by the Fermi-sea argument"
+    },
+    {
+      "item": "finite SEAM.EQUIV map Phi (state + clock intertwining)",
+      "status": "DERIVED",
+      "source": "H6 (N=16)"
+    },
+    {
+      "item": "continuum scaling limit of the seam net",
+      "status": "EXTERNALLY PROVEN",
+      "source": "MMST (cited, v336/v462); not rerun"
+    },
+    {
+      "item": "Moebius covariance of station clock => rotation",
+      "status": "EXTERNALLY PROVEN",
+      "source": "Bisognano-Wichmann/BGL type argument (cited); finite exhibit seam_vacuum_covariance.py F1-F5"
+    },
+    {
+      "item": "raw station clock R = twisted quarter translation, R Omega = Omega, R A(I) R^-1 = A(I+N/4), R^4 = (-1)^F",
+      "status": "NUMERICALLY VERIFIED",
+      "source": "seam_vacuum_covariance.py F1-F4 (exact matrices, machine precision)"
+    },
+    {
+      "item": "4 marks, genus 0",
+      "status": "DERIVED",
+      "source": "end_to_end.py A2/A3/D3 given glue + nondegenerate residue pairing"
+    },
+    {
+      "item": "order-3 clock not geometric (marks on seam circle)",
+      "status": "DERIVED",
+      "source": "seam_vacuum_covariance.py F6; selection.py E2/E3 no-go"
+    },
+    {
+      "item": "lambda = -1 (square)",
+      "status": "DERIVED",
+      "source": "port_from_source.py G1/G2 from clock acting on its own access points (no lambda input)"
+    },
+    {
+      "item": "uniform port E_+ C E_+ = 4 P0, [Q,C] = 0",
+      "status": "NUMERICALLY VERIFIED",
+      "source": "port_from_source.py G3-G6 (lam_v/lam_s ~ N^-2 -> 0), universal G9"
+    },
+    {
+      "item": "port normalisation -c3 ln2 incl. the 2 pi",
+      "status": "DERIVED",
+      "source": "redteam_k3_norm.py I4/I5 (level 1 from CAR, kernel w.r.t. d theta) + v484 orbit average"
+    },
+    {
+      "item": "k = 3, S48 = joint eigenspace, <R,R> = 48 = Omega_adm",
+      "status": "DERIVED",
+      "source": "checker.py C5/C7, end_to_end.py B2-B5"
+    },
+    {
+      "item": "deck mu4 -> mu8, g^4 = (-1)^F, det-1 forced in E8",
+      "status": "DERIVED",
+      "source": "checker.py C10, selection.py E6/E8 (Lie-algebra level)"
+    },
+    {
+      "item": "hypercharge direction y",
+      "status": "DERIVED",
+      "source": "checker.py C3, end_to_end.py B9 (scale convention)"
+    },
+    {
+      "item": "W_S, T, R, B_Y, R_Y, S_Y, 7-design forcing",
+      "status": "DERIVED",
+      "source": "checker.py C1/C2/C6, end_to_end.py B10-B12"
+    },
+    {
+      "item": "family action S4 = W(A3) irreducible",
+      "status": "DERIVED",
+      "source": "selection.py E4; q1_groupoid.py J6"
+    },
+    {
+      "item": "Q1: directed mark visits -> fundamental groupoid -> Fuchs transport (functor), (MU^-1)^2 = I as path relation",
+      "status": "NUMERICALLY VERIFIED",
+      "source": "q1_groupoid.py J1-J5 (ODE transport of the original v117 connection)"
+    },
+    {
+      "item": "non-abelian necessity of the groupoid (H_1 insufficient)",
+      "status": "NUMERICALLY VERIFIED",
+      "source": "q1_groupoid.py J7"
+    },
+    {
+      "item": "identification raw seam words = directed mark visits; Fuchs connection = physical flavor transport",
+      "status": "ASSUMED",
+      "source": "[C]; the v117 connection is imported, not derived from the raw ring"
+    },
+    {
+      "item": "Theorem D: T -> 4D geometry -> Einstein",
+      "status": "OPEN",
+      "source": "untouched"
+    }
+  ],
+  "counts": {
+    "ASSUMED": 5,
+    "IMPORTED": 1,
+    "DERIVED": 12,
+    "EXTERNALLY PROVEN": 2,
+    "NUMERICALLY VERIFIED": 4,
+    "OPEN": 1
+  }
+}

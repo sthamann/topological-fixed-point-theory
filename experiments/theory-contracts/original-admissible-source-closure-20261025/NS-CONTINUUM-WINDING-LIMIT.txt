@@ -1,0 +1,304 @@
+NS CONTINUUM WINDING LIMIT
+==========================
+
+Question
+--------
+
+Does the positive finite NS CAR source of v519/v524/v526 carry the original
+fullv21 winding operator u=M_z, and can its finite ordinary determinant converge
+to the old polarized factor 1-z without deleting a UV contribution by hand?
+
+Verdict
+-------
+
+There is an exact, parameter free one-particle map. At NS twist a=1/2, sample
+the old twisted Fourier basis on the N=2M sites theta_j=2 pi j/N. The original
+operator u=M_z becomes the diagonal site phase
+
+  (u_N f)_j=exp(i theta_j) f_j.                              (1)
+
+In the sampled Fourier basis it is the cyclic mode shift. The v519 covariance
+Q_N=(I+i C_N)/2 is exactly the projection onto the M modes n=0,...,M-1.
+Thus the same finite CAR space contains both the v519 state and the sampled old
+u. No identification of the Euclidean site translation S_1 with u is used.
+
+The exact finite pair has two crossings. For the negative-sea convention
+C_N^-=I-Q_N, which matches the old C=1_{(-infinity,0)}(B_{1/2}),
+
+  u_N C_N^- u_N^* - C_N^-
+    = |psi_0><psi_0| - |psi_{-M}><psi_{-M}|.                (2)
+
+The first term is the old spectral-flow defect. The second is its UV alias at
+the cyclic cutoff. Hence, for every finite N and z != 1,
+
+  det[(I-z u_N C_N^- u_N^*)(I-z C_N^-)^{-1}]
+    = (1-z)_IR (1-z)_UV^{-1}=1.                            (3)
+
+Under the canonical embedding of the sampled modes into the old infinite
+twisted circle, the UV vector psi_{-M} escapes every fixed Fourier core. The
+defect in (2) therefore converges strongly to Pi_0, but it does not converge in
+trace norm:
+
+  D_N -> Pi_0 strongly,       Tr D_N=0,
+  ||D_N-Pi_0||_1=1.                                         (4)
+
+Consequently the finite determinants in (3) cannot be passed to the limit by
+Fredholm determinant continuity. On the original infinite polarized circle the
+ordered relative operator is defined directly and has determinant 1-z. This is
+a different limit topology and a different operator category from ordinary
+finite determinants. The UV factor may not be removed from the finite OS model.
+It is absent only after returning first to the original infinite polarization,
+where there is no cyclic alias and the relative perturbation is trace class.
+
+The existing v519/v524/v526 OS prescription does not select that relative
+Fredholm limit. It retains the complete finite circle, including the wrap mode,
+and defines no normal ordering, spectral cut determinant, or UV subtraction for
+(3). If one forms the natural ordinary finite determinant from its supplied
+covariance and the sampled u_N, the result is the finite cancellation 1. The
+factor 1-z is selected by the separately supplied fullv21 polarized continuum
+pair (B_{1/2},u) and its directed relative Fredholm determinant. Combining the
+two sources gives a canonical local strong-limit map, but not an OS derivation
+of the continuum determinant prescription.
+
+Status: PROVED for the one-particle sampling map, the two finite crossings, the
+determinants and the limit topology. SOURCE NEGATIVE for an OS rule choosing the
+continuum relative determinant. No free kernel, state, generator or cutoff
+counterterm is introduced.
+
+Atlas and reviewed sources
+--------------------------
+
+Atlas audit frame: revision b97bc83c0fac45ea6bf03cf7, read only.
+
+1. Original circle and winding pair
+
+  paper-source:1fe2ddfabc74ac0e94a4686d
+  documents/archive--paper-latex--tfpt-theory-fullv21/sections/
+  001-section-introduction-the-problem-of-parameters.tex:198-251
+  sha256 85bb11511be05385a7cadf6071dbede216b12befeb9d6767bc4460748cbec5d7
+
+The source gives the seam circle, D_Gamma=i d/dtheta, the multiplication
+operator U_Gamma(theta)=e^{i theta}, the twisted family and one spectral-flow
+crossing. With the already documented common sign repair B=-D_Gamma, the
+displayed eigenvalues are B_a psi_n=(n+a)psi_n and u psi_n=psi_{n+1}.
+DIRECT-DEFECT-CLOSURE.txt:20-35 records the repaired convention and proves
+u C u^*=C+Pi_0 for 0<a<1.
+
+  experiments/theory-contracts/original-admissible-source-closure-20261025/
+  DIRECT-DEFECT-CLOSURE.txt:20-38,98-125,223-226
+  sha256 84a79c74da8b18387a3d2d8a9928e4a437a608120b52a46c7ede6392cf1128ff
+
+2. Actual finite NS state and OS reconstruction
+
+  verification/v519_woit_theta_rp_free.py:727-742,844-878,1032-1052
+  sha256 e86e3a055b58051c7978d8f10ee527948bac758fd4665ac216e18a71cc8c1ee9
+
+v519 defines the exact antiperiodic kernel
+
+  C_N(a-b)=0                                      for a-b even,
+  C_N(a-b)=(2/N)/sin(pi(a-b)/N)                  for a-b odd,
+
+and proves C_N^2=-I, so Q_N=(I+iC_N)/2 is the pure all-right-movers
+polarization. Its clock S is the NS quarter site shift. Equation (1) is instead
+the sampled original multiplication operator and is Fourier dual to that site
+shift.
+
+  verification/v524_woit_beta2_os_quotient.py:194-268,1486-1512
+  sha256 ff258cfc01f1014d1e497ef3723c2aa95b7cae786c66c5febbd9af76ee6c2772
+
+v524 reconstructs the finite OS quotient from the full finite half algebra. It
+keeps the wrap-overlap entries explicitly and reports the clock as a transfer
+step on its domain. It supplies no relative determinant or UV prescription.
+
+  verification/v526_seam_thermal_kms_nariai_bridge.py:1-53,61-133,254-264,
+  301-335
+  sha256 250a6c344c028159ac3965abb67ca5717c9e1ad59d5fb6a8304a3d2065820347
+
+v526 reuses the same finite kernel and reconstructs a faithful finite reduced
+KMS state on the half algebra. Its finite detailed-balance and modular
+determinants do not define the directed relative covariance determinant in
+(3). The noncompact control at lines186-190 tests loss of thermal return; it is
+not a rule for deleting the cyclic UV crossing.
+
+3. Existing determinant comparisons
+
+  experiments/theory-contracts/original-admissible-source-closure-20261025/
+  KMS-AND-CARRIER-TRANSPORT.txt:161-220
+  sha256 9efcfb0d68e16db842aab97b7171b2d667e7b065cb4c6ab8138102acc4c8fb68
+
+  experiments/theory-contracts/original-admissible-source-closure-20261025/
+  RELATIVE-PAIRING-REVIEW.txt:25-56,66-115,430-475
+  sha256 ef280950f70a108ecff5dde9f57c67d097494e3824fdd65aea2ca176b5b83a34
+
+The Atlas finding
+finding:finite-circle-compression-cannot-retain-whole-thermal-winding-factor
+was checked before this calculation. It concerns a finite compression of the
+already infinite thermal circle and the trace omitted by that compression. The
+present finite NS lattice is different: u_N is cyclic and supplies an explicit
+second crossing. The results agree because neither ordinary finite operation
+retains the full directed infinite response by itself.
+
+Exact sampling dictionary
+-------------------------
+
+Let N=2M and
+
+  H_N=span{psi_n : n=-M,...,M-1},
+  psi_n(theta_j)=N^{-1/2} exp(i(n+1/2)theta_j),
+  theta_j=2 pi j/N.                                      (5)
+
+The sampling matrix in (5) is unitary. A finite geometric sum gives
+
+  sum_{n=0}^{M-1} psi_n(theta_a) conjugate(psi_n(theta_b))
+    = 1/2                                                if a=b,
+    = i/[N sin(pi(a-b)/N)]                              if a-b odd,
+    = 0                                                  otherwise. (6)
+
+By the v519 definition, the right side is precisely
+
+  Q_N(a,b)=[delta_ab+i C_N(a-b)]/2.                      (7)
+
+This proves, for every even N rather than only N=8 or16,
+
+  Q_N=sum_{n=0}^{M-1}|psi_n><psi_n|,
+  C_N^-=I-Q_N=sum_{n=-M}^{-1}|psi_n><psi_n|.              (8)
+
+Sampling the original u=M_z gives
+
+  u_N psi_n=psi_{n+1},                    -M<=n<M-1,
+  u_N psi_{M-1}=psi_{-M}.                                (9)
+
+The last equality is aliasing: the ratio of the two sampled functions is
+exp(iN theta_j)=1. Equations (8) and (9) immediately give (2).
+
+For the v519 covariance itself, rather than its negative-sea complement,
+
+  u_N Q_N u_N^*-Q_N
+    = |psi_{-M}><psi_{-M}|-|psi_0><psi_0|,                (10)
+
+and its same ordered determinant is again 1. After the strong limit its
+directed continuum determinant is (1-z)^{-1}; reversing the ordered pair gives
+1-z. This is only the occupation and orientation convention. The finite UV
+cancellation is invariant under that convention.
+
+No exact finite equivariant embedding
+-------------------------------------
+
+There is no nonzero isometry J_N:H_N -> L^2(S^1) satisfying simultaneously
+
+  J_N u_N = u J_N                                      (11)
+
+with u=M_z. Indeed, the finite unitary u_N has an eigenvector. Equation (11)
+would map it to an L^2 eigenvector of multiplication by z. Multiplication by z
+has no nonzero L^2 eigenvector, because each level set z=lambda has measure
+zero. Thus an exact finite cyclic subsystem of the bilateral winding shift does
+not exist.
+
+There is nevertheless a canonical asymptotic embedding. Map every sampled
+psi_n in (5) to the old continuum psi_n. It intertwines the covariance exactly
+on H_N. The sampled u_N differs from the compressed old u only on the top mode:
+
+  J_N u_N J_N^* - P_{H_N} u P_{H_N}
+    = |psi_{-M}><psi_{M-1}|.                             (12)
+
+This rank-one wrap has operator norm one for every N, but annihilates every
+fixed finite Fourier core once N is large. Hence the map is locally exact and
+converges strongly, while it cannot converge in norm as a full finite cyclic
+representation.
+
+The same distinction controls the determinant. Under the continuum embedding,
+
+  |psi_{-M}><psi_{-M}| -> 0 strongly,
+
+but every such projector has trace norm one. Therefore (4) is exact. The trace
+cannot jump from zero to one under trace-norm convergence, so no theorem about
+Fredholm determinant continuity can turn (3) into 1-z. The continuum factor is
+obtained by the old directed relative pair
+
+  (I-z u C u^*)(I-zC)^{-1}=I-zPi_0,
+  det_F=1-z,                                             (13)
+
+not by taking the numerical limit of the finite ordinary determinant.
+
+Three cancellations that must remain distinct
+---------------------------------------------
+
+1. Finite NS cyclic cancellation
+
+The two factors in (3) live on one finite chiral circle. The second factor is
+the Fourier alias at the cutoff. It escapes strongly as N grows, but it is
+present with unit trace weight for every finite N.
+
+2. Finite carrier compression of an infinite source
+
+KMS-AND-CARRIER-TRANSPORT.txt:194-220 begins with the infinite source. A naive
+finite compression loses part of its trace-class response. The exact Schur
+complement plus the unchanged complement restores the original factor 1-z.
+This is not the cyclic determinant (3), whose winding has index zero at every
+finite N.
+
+3. Reflected face or full Dirac cancellation
+
+RELATIVE-PAIRING-REVIEW.txt:66-115,466-475 has two continuum faces with inverse
+directed factors (1-z) and (1-z)^{-1}. That cancellation survives the continuum
+limit and the Quillen norm. Its partner is a reflected physical sector, not the
+UV alias in (2). Removing the finite alias therefore does not remove the
+full-Dirac partner.
+
+Small decisive certificate
+---------------------------
+
+The following is the executed Fourier form of the actual sampled v519 data. It
+uses no fitted matrix. The geometric-sum identity (6) identifies P with the
+v519 Q_N before this finite calculation.
+
+  import numpy as np
+  for N in (8,16,32):
+      M=N//2
+      modes=np.arange(-M,M)
+      P=np.diag((modes>=0).astype(complex))
+      U=np.zeros((N,N),complex)
+      for j,n in enumerate(modes):
+          target=n+1 if n<M-1 else -M
+          U[np.where(modes==target)[0][0],j]=1
+      D=U@P@U.conj().T-P
+      z=1/3
+      ratio=(np.linalg.det(np.eye(N)-z*U@P@U.conj().T)
+             /np.linalg.det(np.eye(N)-z*P))
+      print(N, [(int(modes[j]),int(round(D[j,j].real)))
+                for j in range(N) if abs(D[j,j])>1e-12],
+            np.linalg.matrix_rank(D), np.trace(D), ratio)
+
+Executed output:
+
+  8  [(-4,+1),(0,-1)]   rank2 trace0  ratio1
+  16 [(-8,+1),(0,-1)]   rank2 trace0  ratio1
+  32 [(-16,+1),(0,-1)]  rank2 trace0  ratio1
+
+The actual v519 kernel was also evaluated directly before Fourier replacement:
+for N=8 and16, Q_N^2-Q_N had numerical norms 1.19e-16 and6.87e-16, and its
+Fourier occupation list was exactly 0 on -M,...,-1 and1 on0,...,M-1 to twelve
+decimal places. v519 proves the N=8 projector identity exactly; equation (6)
+proves the general even-N statement analytically.
+
+Consequence for the requested forward map
+-----------------------------------------
+
+The old and new sources now have an explicit common operator dictionary:
+
+  old twisted circle at a=1/2
+       --sample at theta_j=2 pi j/N-->
+  v519 finite NS one-particle space,
+
+  old spectral polarization               -> Q_N or I-Q_N by convention,
+  old u=M_z                                -> diagonal site phase u_N,
+  old Fourier shift n->n+1                 -> cyclic shift plus one UV alias,
+  old rank-one spectral-flow defect        -> IR defect plus inverse UV defect.
+
+This map does not require P1 to select another free state. It uses the v519
+state already supplied and the fullv21 operation already supplied. What it does
+not provide is a finite OS prescription whose ordinary determinant equals the
+infinite directed determinant. The smallest remaining source question is
+therefore sharply typed: does an original continuum OS or admissible functional
+explicitly invoke the fullv21 polarized relative Fredholm pair (13)? The finite
+v519/v524/v526 construction itself answers no.

@@ -1,0 +1,134 @@
+ORIGINAL QUARTIC SOURCE, CLOCK OVOIDS AND THREE-REGISTER RESPONSE
+================================================================
+
+Claim MATH.NATIVE.COHERENT-QUARTIC-DERIVATIVE.01
+Status: exact in the declared native tensor category; experiment only.
+
+Question and decisive criterion
+------------------------------
+Do the six directions obtained from the actual E8/J quotient also occur
+in the original source product, and does the existing erasure operator
+give their coherent response without an independently fitted coupling?
+Success requires equality of the marked rays and actual operator maps,
+including conjugation and normalization. A dimension or count match would
+not suffice. Physical preparation is a separate question.
+
+1. The original data and the three views of the same six directions
+-----------------------------------------------------------------
+Use precisely process._code_basis, with its five symmetric word supports
+S_i of sizes s_i=(4,12,12,12,24), and the original October 16 erasure map.
+The normalized code columns are V_i=sum_{w in S_i}|w>/sqrt(s_i).
+The October 24 doily calculation gives the following oriented rays in
+the common unnormalized chart with metric G=diag(1,3,3,3,6):
+
+  (1,-1,-1,-1,0), (1,1,-1,1,0), (1,1,1,-1,0),
+  (-2,0,0,0,1), (1,-1,1,1,0), (-2,0,0,0,-1).
+
+Their squared G norms are10 and their distinct pairings are-2.
+
+Independently, the October 16 source multiplication M:Sym²H5 -> E8[8]
+has Gram spectrum28^1,10^5,18^9. Its Pi9(v tensor v)=0 locus, writing
+v=(a,sqrt3 b,sqrt3 c,sqrt3 d,sqrt6 e), is defined by
+
+  a²-d²-4e²=b²-d²=c²-d²=0,
+  ab+cd=ac+bd=ad+bc=0,
+  be=ce=de=0.
+
+If e is nonzero, b=c=d=0 and a=+/-2e: exactly two projective rays.
+If e=0, a cannot vanish and normalization a=1 gives b,c,d=+/-1 with
+bcd=-1: exactly four rays. This argument is over C, not only over R.
+These are literally the six displayed doily rays, with permutation only.
+The checker substitutes every marked ray into all nine source quadrics.
+Thus the source-product configuration, the old quartic W6 configuration,
+and the actual clock doily ovoid configuration are the same marked object.
+The old source-product and Igusa results are not claimed as new results.
+
+2. The decoder is the derivative, with no fitted source map
+---------------------------------------------------------
+For x in C4 define the original coherent quartic response
+
+  phi_i(x) = <V_i,x^tensor4>
+           = sum_{w in S_i} product_{k=0}^3 x_{w_k}/sqrt(s_i).
+
+The first-slot erasure decoder in gauge-first order has entries
+
+  W[row(w1,w2,w3),5a+i] = 2/sqrt(s_i), if (a,w1,w2,w3) lies in S_i,
+
+with zero entries otherwise. The checker compares all20 columns directly
+with erasure_isometry from the original October 16 operator_checker.py;
+only its old logical-first column order4i+a is changed to5a+i.
+
+Because each S_i is invariant under all four slot permutations,
+
+  (W* x^tensor3)_{5a+i} = (1/2) partial_a phi_i(x).
+
+This is an identity of cubic polynomials. In the usual convention Jac(phi)
+is5x4; the gauge-first4x5 reshape is (1/2)Jac(phi)^T. No untransposed
+matrix identification is intended. The bar V4 gauge action in
+Sym³V4 = bar V4 tensor H5 is the contragredient derivative action:
+for unitary g, inverse transpose is bar g. It is not an arbitrary
+assignment made from dimensions20=4*5.
+
+3. Six marked quartics and their exact Born response
+--------------------------------------------------
+Put D=diag(1,sqrt3,sqrt3,sqrt3,sqrt6), and let q_A be the displayed rays.
+The actual normalized H5 effect is E_A=(Dq_A)(Dq_A)^T/12. Define
+
+  R_A(x) = q_A^T D phi(x)
+         = (1/2) sum_i q_Ai sum_{w in S_i} product_k x_{w_k}.
+
+Then the already known Igusa relation holds in these precise marked
+coordinates, rather than after a fitted rotation:
+
+  sum_A R_A=0,
+  (sum_A R_A²)²=4 sum_A R_A^4.
+
+For the original three-register input x^tensor3 the erasure readout is
+
+  p_A(x) = <x^tensor3,W(I4 tensor E_A)W* x^tensor3>
+         = (1/48) sum_{a=0}^3 |partial_a R_A(x)|².
+
+The factor48 is4 from the two half derivatives times12 from the effect.
+The six probabilities satisfy the complete norm identity
+
+  sum_A p_A(x) = (sum_a |x_a|²)^3.
+
+For normalized x this is a POVM distribution. The checker proves every
+equality coefficient by coefficient, first with independent conjugate
+variables y and then on the physical slice y=bar x. This treats arbitrary
+complex inputs and does not replace conjugation by transposition.
+
+For x=(1,0,0,0), the six probabilities are
+
+  (1/12,1/12,1/12,1/3,1/12,1/3).
+
+For x=(1,i,-1,i)/2 they are
+
+  (1/12,1/3,1/12,1/12,1/12,1/3).
+
+The independent review checked that the erroneous substitution y=x in
+the latter example instead produces six zeros. This is a useful specific
+control on the operator adjoint and phase convention.
+
+4. What this removes, and the remaining source obligation
+--------------------------------------------------------
+There is no need to postulate another five-dimensional carrier or a
+separately chosen coupling to compare these responses: the original
+quartic source, its actual derivative/erasure, and the actual clock
+incidence geometry already give the same six directions and normalization.
+The companion arity theorem determines why an informative readout with
+these labels first occurs on three native registers.
+
+The coherent input x^tensor3 is a specified family of inputs. Its existence
+does not construct copies of an unknown state or explain their physical
+preparation. The source-product Pi9 null condition reconstructs a geometric
+configuration; it does not select one of its rays as the physical state.
+Neither the Igusa relation nor differentiation chooses the instrument,
+physical clock rate, P1 insertion rule or spacetime dimensions. The entire
+native construction still starts from the retained E8/J representation.
+
+Primary literature context only: Krasnov, Real Kummer quartics and their
+Heisenberg invariance, Izvestiya Mathematics84(2020),95-145, section4.1,
+describes the Heisenberg invariant quartic quotient as the Igusa quartic.
+https://doi.org/10.1070/IM8734
+This conventional identification is not used in the polynomial proof.

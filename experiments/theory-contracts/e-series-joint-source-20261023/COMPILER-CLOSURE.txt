@@ -1,0 +1,242 @@
+MATH.SEAM.ESERIES.JOINT.05
+23 October 2026
+
+Minimal joint closure of the native D5+A3 compiler cuts
+
+1. Result
+
+Let Phi be the existing E8 root system in the standard real eight coordinate
+chart. Let
+
+  H = W(D5) x W(D3),
+
+where D5 uses coordinates 0,...,4 and D3=A3 uses coordinates 5,6,7. Retain the
+actual native quarter rotation
+
+  J(x0,x1,...,x7)=(-x1,x0,-x3,x2,-x5,x4,-x7,x6).
+
+The two exact transition group closures are
+
+  <H,J> = W(D8),                         |W(D8)| = 5,160,960,
+
+and, for the original 60 G31 pair reflections,
+
+  <H,G31> = W(E8),                       |W(E8)| = 696,729,600.       (1.1)
+
+The first equality closes the four original D5 compatible E6 cuts to exactly
+224 integer A2 normal E6 cuts. They form 56 coordinate three block frames,
+with four tetrahedral cuts in every frame. On the entire 128 dimensional half
+root current module, every frame gives four literal orthogonal projectors of
+rank 32 whose sum is the identity. For each projector P,
+
+  rank P = 32,       rank(1-P) = 96,
+  Tr(I128)/Tr(1-P) = 128/96 = 4/3.                              (1.2)
+
+This is the chirality free form of the previous rank 16 plus rank 48 result.
+It uses both native chiral blocks together and therefore introduces no chosen
+64 dimensional block.
+
+The second equality enlarges the orbit to all 1120 regular A2 normal E6 cuts.
+The fixed 128 dimensional half root sector is not invariant under this larger
+group. The W(E8) covariant replacement is the complete unordered family of
+1120 E6 projectors on the full E8 root or adjoint carrier.
+
+These are transition groups on transported compiler flags. They are not
+stabilizers of one fixed object carrying the original D5+A3 split and J.
+
+2. Why H and J close to W(D8)
+
+Every element of H is an even signed coordinate permutation. J is also an
+even signed coordinate permutation, so <H,J> is contained in W(D8).
+
+The coordinate permutation of J is
+
+  (01)(23)(45)(67).
+
+The product (01)(23)(67) already lies in S5 x S3 inside H. Therefore the
+permutation image of <H,J> contains the crossing transposition (45). Together
+with the adjacent transpositions internal to the two original blocks, this
+generates all of S8.
+
+H already contains a sign reversal on any pair within either original block.
+Conjugating one such pair reversal by the now available S8 image gives every
+two coordinate sign reversal. These vectors span the seven dimensional even
+sign space. Hence the kernel is the complete group 2^7 of even sign changes.
+Thus
+
+  <H,J> = 2^7 : S8 = W(D8).
+
+The checker verifies the crossing transposition explicitly, verifies rank 7
+of the pair sign span over F2, and verifies that the resulting action has the
+two expected root orbits: 112 integer D8 roots and 128 half roots.
+
+3. The 224 cut closure and the 56 projector frames
+
+A regular A2 inside D8 is supported on exactly three coordinate axes. A fixed
+triple carries a D3=A3 root system, and that D3 contains four A2 subsystems.
+Therefore
+
+  number of integer A2 subsystems = binomial(8,3) times 4 = 56 times 4 = 224.
+
+The checker constructs these subsystems from the exact root relation
+
+  A(alpha,beta)={plus or minus alpha, plus or minus beta,
+                 plus or minus(alpha+beta)},
+  (alpha,beta)=-1,
+
+and proves that one W(D8) orbit contains all 224. This is exactly the union of
+the four integer normal orbit rows in the previous H classification:
+
+  40 + 120 + 60 + 4 = 224.
+
+For an integer A2 subsystem A, define a diagonal operator on the literal half
+root basis M128 by
+
+  P_A e_lambda = e_lambda  if (lambda,A)=0,
+                 0         otherwise.                            (3.1)
+
+Every P_A has rank 32. If A1,...,A4 are the four A2 faces in one coordinate
+D3 frame, then
+
+  P_Ai P_Aj = delta_ij P_Ai,
+  P_A1 + P_A2 + P_A3 + P_A4 = I128.                              (3.2)
+
+The reason is literal. Restrict a half root sign vector to the selected three
+coordinates. Its projective sign axis is exactly one of the four tetrahedral
+axes. Equation (3.2) follows without a fitted embedding.
+
+The complement of one face is the sum of the other three projectors, so it
+has rank 96. Equation (1.2) is therefore structural and is independent of a
+chosen face. Relative to each transported five plus three coordinate split,
+every half root also has the unchanged squared projection norms
+
+  ||lambda_D5||^2 = 5/4,       ||lambda_A3||^2 = 3/4.            (3.3)
+
+Thus the projector ranks, the ratio 4/3, and the glue norms 5/4 and 3/4 belong
+to one common carrier dictionary.
+
+J acts by exact conjugation,
+
+  J P_A J^-1 = P_(JA).
+
+It permutes the 56 frames and their four faces. In particular it sends the
+original coordinate frame {5,6,7} to {4,6,7}. It sends all four original
+D5 compatible cuts outside the originally fixed family. The closure retains
+the entire transported dictionary and supplies no preferred face.
+
+4. Why the original G31 pair operations force W(E8)
+
+The preceding E7 pair certificate proves that every original G31 reflection
+is literally
+
+  g_alpha = s_alpha s_(J alpha),                                (4.1)
+
+where alpha and J alpha are orthogonal E8 roots. Hence every g_alpha belongs
+to W(E8). The native v634 certificate also proves that J itself belongs to the
+group generated by the 60 reflections. Consequently it is enough to determine
+what one actual pair reflection does to the two W(D8) root orbits.
+
+In doubled integral coordinates, take
+
+  2 alpha = (-1,-1,-1,-1,-1,-1,-1,-1),
+  2 beta  = (-2,-2,0,0,0,0,0,0).
+
+The exact original operation (4.1) gives
+
+  2 g_alpha(beta) = (-1,-1,1,1,1,1,1,1).                       (4.2)
+
+Thus an actual G31 pair reflection maps an integer D8 root to an E8 half root.
+Since W(D8) is transitive on each of the 112 and 128 root sectors, adding this
+one operation makes the joint group transitive on all 240 E8 roots.
+
+Now W(D8) already contains the root reflection s_delta for every integer D8
+root delta. For any E8 root gamma, choose a joint group element k with
+k delta=gamma. Then
+
+  k s_delta k^-1 = s_gamma.
+
+The joint group therefore contains all 240 E8 root reflections. Those
+reflections generate W(E8). Conversely H, J, and every operation (4.1) lie in
+W(E8). This proves both inclusions and hence the second equality in (1.1).
+No enumeration of the 696,729,600 group elements is used.
+
+5. The larger closure scope
+
+W(E8) is transitive on the 1120 regular A2 subsystems. Therefore the minimal
+full closure of any original E6 cut is the complete family
+
+  { C_A = Phi intersect span(A)^perp : A is a regular A2 in E8 },
+  |{C_A}| = 1120.                                                (5.1)
+
+On the 240 root current basis, the literal cut projector has rank 72. Adding
+the six dimensional Cartan complement of the normal A2 plane gives the usual
+rank 78 E6 adjoint projector. This complete 1120 member family is exactly
+W(E8) covariant.
+
+The coordinate tetrahedra also enlarge. The 56 disjoint D3 frames close to
+7560 regular A3=D3 root subsystems. Each contains four A2 faces. The incidence
+identity is
+
+  7560 times 4 = 1120 times 27 = 30240.                          (5.2)
+
+Thus every E6 cut belongs to 27 transported A3 tetrahedra. Unlike the 56
+coordinate frames, the 7560 full frames overlap and do not partition the cut
+family.
+
+The witness (4.2) proves at the same time that the integer plus half root
+polarization is not W(E8) invariant. Therefore the uniform rank 32 projector
+description on a fixed M128 is the exact intermediate W(D8) structure. It
+must not be advertised as a fixed W(E8) module. Full W(E8) covariance uses
+the 240 root current or 248 adjoint carrier and transports the complete flag.
+
+6. Canonical content and retained mark
+
+The mathematical canonical objects are:
+
+  * under W(D8), the unordered 224 cuts, their 56 four projector resolutions,
+    and the transported five plus three polarizations;
+  * under W(E8), the unordered 1120 E6 cuts and 7560 overlapping A3 frames.
+
+An individual E6 cut, one tetrahedral vertex, one chiral 64 block, and the
+original fixed D5+A3 chart are marks. They are not selected by either closure.
+In particular H does not centralize J. Equations (1.1) describe allowed
+mathematical transitions between transported marked flags, not an assertion
+that every group element preserves the original fully marked compiler object.
+
+No physical preparation, P1 event rule, state, or measurement is derived.
+The result removes the arbitrary chiral choice from the ratio identity and
+classifies the exact finite closure. It does not choose which transported mark
+is physically instantiated.
+
+7. Reproducibility and sources
+
+Run
+
+  python3 -B experiments/theory-contracts/e-series-joint-source-20261023/compiler_closure.py
+
+Expected first line
+
+  MATH.SEAM.ESERIES.JOINT.05 PASS
+
+The checker performs only root, cut, frame, and projector sized orbit closures.
+It does not enumerate W(D8) or W(E8).
+
+Native sources extracted literally:
+
+  verification/v1_e8_glue.py
+  SHA256 1978d66a85974e5fa189cf4dec507f9be4c4dcc113e90eb1b33a9aae9259a0d7
+
+  verification/v634_st31_structure.py
+  SHA256 5ff53ed031ca03103187ac22edf723aabce88bee3df1085c52486ecb0044d37c
+
+Prior exact contracts used as established inputs:
+
+  experiments/theory-contracts/e-series-compiler-closure-20261023/CUTS.txt
+  SHA256 e4eb9b53f944d411e887deb1783ff2d12e6a949e7550f9e6ebdd0cf77cd1ef21
+
+  experiments/theory-contracts/e-series-quarter-clock-20261023/PROOF.txt
+  SHA256 ac3e95975adb14c82815731b3d8aa0f6e1caf72d25fb749250a5b1bbcd269884
+
+The script independently reconstructs the native 240 roots and J, the 224 and
+1120 A2 counts, all projector ranks and covariance, the exact G31 mixing
+witness, the 1120 cut orbit, the 7560 frame orbit, and the incidence 27.

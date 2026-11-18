@@ -1,0 +1,347 @@
+UR.NATIVE.JOINT_OPERATOR.01 — Full local source hull and native quartic OPE
+2026-10-17. Experiments. Exact scoped mathematical results; physical selection OPEN.
+
+1. User target, source and input firewall
+
+The 2026-10-17 instruction e28bfd8f supersedes a search restricted to closed
+five-state dynamics. Treat C5 as an observation/input subspace; retain the
+actual erasure20, weight5 primary20 and every exterior source state. Find
+the smallest full field closure, its products/returns and symmetries, and
+test whether an independently specified TFPT structure follows.
+
+Use the ALREADY existing E8 level1 lattice current representation, its fixed
+root cocycle/metric and literal original J-positive quartic Fock embedding.
+This is the accepted source-side realization, NOT a new proof that primitive
+P1's boundary kernel realizes this net. Original P1 defines supported fields
+and A/A*-invariant physical restriction, not a global code compression:
+_archive/tfpt-45/source_extracts/01_boundary_kernel_source.tex:302–343.
+verification/v459_seam_lattice_voa_route.py:1–46 itself retains the source
+realization input and SEAM.EQUIV.01 OPEN. Do not erase that distinction.
+
+The original quartet basis is independently explicit in
+tfpt_explorer/process.py:242–258; it uses its word supports, not W6.
+Let P_i be the unnormalized polynomials
+ P0=sum_a x_a^4,
+ P1=x0²x1²+x2²x3², P2=x0²x2²+x1²x3²,
+ P3=x0²x3²+x1²x2², P4=x0x1x2x3,
+with squared Fock norms N=(96,8,8,8,1); f_i=P_i/sqrt(N_i).
+The original erasure basis g_ia=partial_a f_i is ON20. The prior weight5
+primary r_ia, its exact coefficients and actual rho5 tensor bar4 action
+remain unchanged. W6, its mark, physical clocks, Flavor/Yukawa values and
+target coupling coefficients are NOT inputs to the reconstructions below.
+
+2. Exact minimal source closure; no finite five/twenty/ten-dimensional hull
+
+The source vector space and its energy grading are
+ V_E8=direct_sum_(lambda in E8) M(1)e^lambda,
+ h(h_v1(-m1)...h_vk(-mk)e^lambda)=sum m_i+lambda²/2.
+Its complete finite weight spaces are V_n; its Hilbert completion is H_E8.
+The eight Cartan currents and ALL240 root currents generate this algebra.
+
+A suitable four-annihilator monomial maps any nonzero homogeneous quartic
+to a nonzero scalar vacuum. In particular the whole C5 generates vacuum.
+For a root alpha and any lattice lambda the leading coefficient
+ E_alpha(z)e^lambda=epsilon(alpha,lambda)z^(alpha.lambda)
+   [e^(lambda+alpha)+higher powers of z]
+generates e^(lambda+alpha) by a current mode. All roots together generate
+the original lattice; no root is selected as a physical interaction.
+Negative Cartan modes then generate every oscillator state over each charge.
+Thus the exact smallest algebraic CURRENT-MODE-invariant hull of C5 is V_E8.
+Both twenties and all their descendants are included automatically.
+
+For actual local smooth smearings, use a closed Hilbert (or compatible
+smooth-vector) hull, because a smooth field typically has infinitely many
+energy components. Partition a global Fourier profile into finitely many
+locally supported smooth pieces. Hence invariance under all supported
+currents implies invariance under their global modes, without making an
+individual global mode local. The closed hull is H_E8. It is irreducible
+for the full represented field algebra; its bounded commutant is C I.
+This is not the physical H_adm derivation, a particle count, or a claim
+that the earlier Hankel lower bound10 was an exact complete source size.
+
+3. Full operator product algorithm and controlled finite grading
+
+For a source state p(h_-m)e^mu and ANY lattice lambda,
+ Y(e^lambda,z)[p(h_-m)e^mu]
+ =epsilon(lambda,mu) z^(lambda.mu)
+  exp(sum_(m>=1)lambda(-m)z^m/m)
+  p(h_v(-m)-(v.lambda)z^-m)e^(lambda+mu).
+For a descendant field, take normal ordered derivatives of the currents
+times this vertex field. This determines every OPE coefficient and every
+finite ordered mode word in the full source, including all charged and
+higher-mode intermediates. It is not only a dimension or graph argument.
+
+For a word J_(n1)...J_(nk) acting on weight h, its successive weights are
+ h, h-nk, h-nk-n(k-1),...,h-sum n_j.
+A cutoff above their maximum, retaining ALL charges and oscillator PBW
+states at those weights, computes that word exactly. No state is projected
+back into C5 after any step. Enlarging the cutoff cannot change the result.
+The same rule includes weight shifts h_field-1-n for general VOA modes.
+
+A finite Fourier truncation is NOT an exactly local field. For each real
+orthonormal current, Sugawara positivity gives on the finite-energy core
+ ||J_n psi|| <=sqrt(62)sqrt(1+|n|)||(L0+1)^(1/2)psi||.
+The negative-mode bound follows from the positive one and its level1 CCR.
+Thus the tail of a smooth smeared current is bounded by that graph norm
+times sqrt(62)sum_(|n|>M)|fhat_n|sqrt(1+|n|), which tends to zero faster
+than any fixed power for smooth profiles. Stronger energy graph norms
+control successive products; current-generated descendant fields have
+polynomial energy bounds. This justifies convergence, not exact locality
+of a truncated matrix. No claim that arbitrary infinite histories are
+already numerically controlled follows from a finite test.
+
+The complete character, including its horizontal weight variables, is
+ ch V_E8(q,z)=prod_(m>=1)(1-q^m)^(-8)
+              sum_(lambda in E8)q^(lambda²/2)e^lambda(z).
+It determines every finite horizontal E8 decomposition by Weyl characters.
+Direct full-lattice counting gives weights0...6 dimensions
+ 1,248,4124,34752,213126,1057504,4530744.
+The neutral weight4 dimension is only726, not213126. Its use for a single
+neutral return is exact; it is not the full coherent multi-charge source.
+
+4. The complete local QUARTIC product, not only single current pulses
+
+Set F_i(z)=:f_i(u(z)):. Let F_j# be the conjugate local field
+:bar(f_j)(bar(u)):, with the usual unitary radial-coordinate convention
+when interpreted as an adjoint. Then Wick's identity gives EXACTLY
+
+ F_i(z) F_j#(w)
+  =sum_(r=0)^4 (z-w)^(-2r)
+    sum_(|alpha|=r) :partial_alpha f_i(u(z))
+                      partial_alpha bar(f_j)(bar(u(w))): /alpha!.
+
+Retain the FULL Taylor expansion in z-w. Denote the leading state of
+each r-contraction component by C^r_ij. Its weights and source Gram are
+ r0: weight8, Gram I25;
+ r1: weight6, Gram4 I25;
+ r2: weight4, Gram spectrum18^1,8^9,0^15;
+ r3: weight2, C^3_ij=delta_ij T_E8;
+ r4: weight0, C^4_ij=delta_ij vacuum.
+
+In particular C^1_ij=sum_a g_ia(u)bar(g_ja)(bar(u)). The actual erasure20
+gives its Gram4 I25, with no independently chosen carrier coupling. Its
+three-creator/three-annihilator MODE COMPONENT acts on grade3 as
+ sum_a |g_ia><g_ja|=Eij tensor I4 on the actual native20.
+This is not the full local field zero mode, a selected physical execution,
+or a simultaneous chosen clock on every source grade. The new primary20
+is already in the current/quartic OPE from the prior addendum.
+
+The r2 leading state S_ij=C^2_ij is NOT alone the whole pole-four
+coefficient: the r3 Taylor term at second order also contributes there.
+Its all-mode1 two-u/two-bar-u component is an intrinsic oscillator
+decomposition of the given source, not an executed projection. The full
+identity above keeps the other terms and every regular contribution.
+
+5. Nontrivial logical action exists in the full source algebra
+
+Let A_i=P_i(u(-1)), D_j=bar(P_j)(bar(u)(1))=A_j*.
+On the ENTIRE weight4 space define the existing mode-word operator
+ Eij=A_i D_j/sqrt(N_i N_j).
+Four annihilators first pass through weights3,2,1,0; only then four
+creators return to weight4. No vacuum/code projection is inserted.
+Exactly Eij=|f_i><f_j| plus0 on the orthogonal weight4 complement.
+Higher modes, opposite polarization or a nonzero lattice charge at
+weight4 leave fewer than four matching mode1 positive-polarization quanta
+and are killed. The neutral726 check validates the full neutral block;
+the charged-block assertion follows from this energy/occupation argument.
+
+Therefore all25 matrix units, and hence the full M5(C) logical algebra,
+are AVAILABLE in the source-generated mode algebra. It is irreducible5,
+with centerC, not an intrinsically selected M3+M2 block algebra.
+The matrixunit identities do NOT hold as identities on all higher grades.
+These are products of global modes of local fields, not themselves a
+newly proved locally supported instrument. They do not contradict the
+older theorem about finite Cartan-Weyl unitary histories, a different class.
+Expanding an already specified R5 in these units would implement its
+chosen coefficients mathematically, not derive or select R5 from P1.
+
+6. First nontrivial local pair component and its intrinsic geometry
+
+Use the normalized Sym²V4 Fock monomials q_A=x^A/sqrt(A!), |A|=2.
+The actual quartic2+2 flattening matrices are
+ (H_i)_(AB)=partial_(A+B) f_i(0)/sqrt(6 A! B!).
+They are symmetric, real in the literal original code coordinates,
+HS-orthonormal and mutually commuting. Their ten joint eigenlines are
+distinct. More intrinsically the C^2 pair operators6H_i H_j* form a
+commuting pair-space algebra; that statement is covariant under changes
+of the pair basis. The computation introduces no diagonalizing physical
+coupling or field identification.
+
+Let h_t=(h_t0,...,h_t4) be the joint eigenvalue rows, t=1...10.
+They obey sum_t h_t h_t^T=I5, ||h_t||²=1/2 and
+ |h_t.h_s|=1/6 (t!=s). In an ON source basis B_t=q_t(u)bar(q_t)(bar(u)),
+ S_ij=6sum_t h_ti h_tj B_t.
+This is checked as a literal equality of original Fock polynomials.
+Its nonzero Gram is36(h_t.h_s)²=8I10+ones10, hence18^1,8^9.
+The logical rank-one projectors P_t=v_t v_t^T, v_t=sqrt2 h_t, satisfy
+ sum_t P_t=2I5, Tr(P_t P_s)=1/9 for t!=s.
+They give a source-derived TEN-RAY geometry. This pair-space10 and the
+earlier moment-Hankel rank10 concern different objects; no identification
+of them by dimension is made.
+
+The ten projectors span C5 through their ranges and all overlaps are
+nonzero. An antiunitary conjugation fixing each ray exists (all coordinates
+above are real). Any two such antiunitaries differ by a unitary fixing
+each ray; nonorthogonal eigenrays force that unitary to be scalar.
+Thus the configuration itself determines a projective real structure,
+unique up to a common phase. This is a geometric consequence of the
+source tensor, not a new restriction of physical states to real vectors.
+
+7. Reconstruct the ORIGINAL unmarked W6 simplex, with no W6 input
+
+On the intrinsic projective REAL locus, for unit w define only as an
+algebraic diagnostic M(w)=sum_t(v_t.w)^4. Tightness and Cauchy imply
+ M(w)>= (sum_t(v_t.w)²)²/10=2/5,
+with equality precisely when every (v_t.w)²=1/5.
+No physical potential, energy-minimization or state-selection rule is
+postulated here. We determine a distinguished geometry of the tensor.
+
+Write H for the10x5 row matrix h_t. Since H^T H=I5, equality is equivalent
+to H w=s/sqrt10, s in{+1,-1}^10, HH^T s=s.
+The matrix6HH^T has diagonal3 and off-diagonal entries+/-1. Exhaustion of
+all1024 sign vectors gives exactly12 solutions; quotient by overall sign
+gives six rays w=H^T s/sqrt10. One orientation makes their Gram
+ (6/5)I6-(1/5)ones6 and their sum0: a regular6-vertex simplex in real5.
+The overall antipode and permutation are not selected.
+
+ONLY AFTER this reconstruction, introduce the original existing matrix
+ N=diag(sqrt(4,12,12,12,24)) R/sqrt48,
+ R rows=(2,2,-1,-1,-1,-1),(0,0,-1,-1,1,1),
+        (0,0,-1,1,-1,1),(0,0,1,-1,-1,1),(1,-1,0,0,0,0).
+For all six reconstructed rays, EXACTLY
+ w_j w_j^T=(6/5)N_(pi(j))N_(pi(j))^T,
+with only a permutation pi, no fitted rotation or matching metric.
+N is the original W6 simplex chart used in the previous native contracts.
+It is absent from the derivation of H, its rays, the real structure and
+the12 equality points. The literal quartic constructor also has no N input.
+
+This meets the structural success target: a previously separately
+supplied unmarked native W6 geometry is recovered from the full local
+quartic OPE. It does NOT derive the positive polar transport or marked P2.
+
+Essential complex control: on the full complex code the function
+ M_C(w)=sum_t |v_t* w|^4 has additional minima. For two different real
+simplex vectors w1,w2, w_theta=cos(theta)w1+i sin(theta)w2 has norm1 and
+all squared overlaps1/5. The checker retains a nonreal example. Thus
+the six-ray theorem concerns the source's intrinsic projective real
+geometry; it is not a claim of six unique complex states or physical vacua.
+
+8. Original3+2 comparison, source symmetries and exterior memory
+
+The six axes give fifteen rank2 planes by pairing simplex vertices. No
+pair is selected. Compare ALL15 with the actual original polar P2 only
+after reconstruction. None is that P2; exact minimum squared HS distance
+ min ||P2-P_pair||²=(21-6sqrt6)/25>0.
+The earlier marked-plane exclusion is thereby recovered from the actual
+local OPE geometry, not discarded. Simply calling one of these planes
+the physical two-sector would replace the original mark.
+
+The full current algebra is affine E8 at level1, with irreducible vacuum
+module V_E8. Its horizontal E8 is a covariance/VOA-automorphism symmetry,
+not the commutant of every field or a derived physical gauge group.
+The first horizontal grades are1,248,1+248+3875. The grade2 remainder
+has lattice weight multiplicities1 at all2160 norm4 vectors,7 at240
+roots and35 at0; all2400 nonhighest Freudenthal recurrences are checked.
+The character in section3 determines the higher finite decompositions.
+The code's full endpoint algebra M5 has no intrinsic3+2 superselection.
+
+For invariant complete exterior data and fully contracted LINEAR
+code-to-code response/memory kernels K, native covariance implies
+ K rho5(g)=rho5(g)K, hence K=k I5 by the actual irreducible native action.
+Keeping every exterior state does not evade this statement. It is NOT
+a claim that all covariant density-matrix channels, open outcome tensors,
+noninvariant source preparations or spontaneous branches are trivial.
+The uncontracted OPE tensors above contain precisely such nontrivial
+relational information. Their scalar full contraction loses it.
+
+For a specified full operator L and observer split P,Q only used in
+analysis, K=PLP,B=QLP,D=QLQ give the existing exact exterior memory
+ M_(n+1)=K M_n+sum_(j=0)^(n-1)B*D^(n-1-j)B M_j.
+Where the selfadjoint resolvent is defined, the equivalent Feshbach form is
+ P(z-L)^(-1)P=[z-K-B*(z-D)^(-1)B]^(-1).
+Neither formula selects L, a physical history or a state. The prior
+35/44 leakage and rank10 Hankel statements remain for their exact
+single-beta source process, not every E8 history. Do not insert P as
+a measurement after each step and do not build a new free10D model.
+
+9. Complete invariant current returns and the recovered canonical stress
+
+In the dual original root basis, E_alpha(-1)E_-alpha vacuum multiplied
+by epsilon(alpha,-alpha)^(-1) is
+ (1/2)alpha(-1)²+(1/2)alpha(-2).
+The complete240-root sum cancels the linear terms. Its root moment is
+ sum_alpha alpha tensor alpha=60I8, so h_dual=30.
+The resulting fixed Sugawara field is
+ T_Sug=(1/62)sum_(A=1)^248:J^A J_A:
+      =(31/62)sum_(a=1)^8:h_a²:
+      =(1/2)sum_a:h_a²:=T_E8, c=248/31=8.
+It is the SAME field obtained from r3 in the quartic OPE, without
+assuming an independent geometric field. The grade2 singlet is unique;
+requiring the source current Ward law fixes its coefficient.
+
+Define T_n=sum_A J^A(-n)J_A(n) in a real Hermitian orthonormal basis.
+The full actual source calculations on C5, including every charged
+intermediate and the entire neutral final vector, give
+ n:                       0       1        2       3
+ P T_n P:               134I    103/2 I    5I     1/2 I
+ (Q T_n P)*(Q T_n P):   100I    225/4 I    9I     1/4 I.
+Modes n>=4 annihilate C5; negative-mode endpoint factors obey
+kappa_-m=kappa_m+248m by the exact current CCR.
+Most importantly, the full source vectors satisfy
+ (T0/2+T1+T2+T3) f_i=124 f_i.
+Their exterior terms cancel in this invariant Ward combination; this
+is NOT inferred from compression alone. It equals31 L0 at weight4.
+Individual returns retain exterior feedback even though their endpoint
+Grams are scalar. This supplies an explicit complete symmetric reference
+process, not a new physical event law or arbitrary root reweighting.
+
+10. Outcome, next discriminating work and sources
+
+Established within the accepted source: infinite full hull; exact
+all-field product prescription; nontrivial M5 mode returns and actual
+erasure tensor action; full local contraction ladder; intrinsic10-ray
+tensor and unmarked W6 simplex in the original coordinates; canonical
+stress recovered from BOTH full E8 currents and native quartic products.
+The common operator origin now relates more than matching dimensions.
+
+Still open: primitive P1-to-source realization and physical admissible
+restriction; positive polar/3+2 marking; selected joint state, event
+history and physical time; physical spinors/Flavor/Yukawa normalization.
+The unmarked simplex does not erase these. Full source vacuum products
+are local meromorphic fields with integer lattice exponents; a physical
+clock cannot be identified just from a graded dimension or source braid.
+
+Next examine whether the ORIGINAL seam/state/event data select an
+orientation/transport or a symmetry-breaking joint readout of the NOW
+derived source tensors. Retain uncontracted complex exterior/outcome
+indices; completely invariant linear contraction is already scalar.
+Use the actual original P2/clock as comparison targets only. Do not
+invent a real-state potential from M(w), fit simplex axes, select one
+of15planes, return to pure Cartan/stress schedules or equate algebraic
+availability of arbitrary M5 coefficients with physical selection.
+
+Primary mathematics: Frenkel–Kac basic level1 lattice realization;
+Tuite–Zuevsky arXiv:1106.6149 (Heisenberg fields/normal ordering/lattice
+vertex formula); Carpi–Kawahigashi–Longo–Weiner arXiv:1503.01260
+(supported smearings, energy bounds and strong locality of affine VOAs);
+Chu–Zheng arXiv:0808.1458 (level1 affine/lattice and Sugawara realization);
+Griess–Hoehn arXiv:math/0101054 (E8 lattice VOA and its automorphisms).
+Adamo–Giorgetti–Tanimoto arXiv:2506.01008 supplies the existing lattice-net
+lineage cited by v459, not a new proof of the TFPT realization input.
+These results are standard mathematical infrastructure; no priority claim.
+
+check_full_source_hull.py implements the original current vertex formula,
+full uncompressed invariant returns, matrixunit actions, full lattice
+counting and grade2 character recurrence. check_full_quartic_ope.py
+implements every Wick contraction component, pair-field decomposition,
+intrinsic real-geometry reconstruction, complex countercontrol and only
+then original simplex/mark comparison. Independent review covers the
+new derivations and the critical complex-state/Taylor qualifications.
+
+Verdict: EXACT_SCOPED_FULL_SOURCE_HULL_AND_LOCAL_OPE_SIMPLEX_BRIDGE.
+Unmarked structural success, not physical3+2/P1/P2/full-TFPT completion.
+
+Readout qualification: availability of all endpoint matrices does NOT make
+A -> P_code A P_code a multiplicative representation of the full field
+algebra on C5. Only the stated weight4 code-preserving matrixunit family
+has that restricted action; general source operations retain the exterior.

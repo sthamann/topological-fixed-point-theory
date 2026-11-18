@@ -77,7 +77,7 @@ Explicit source references:
 
 Navigation joins (both sources name the same Python identifier; statement equivalence is not inferred):
 
-- [(* ---- (v16/v21) solar angle from the A3 glue-norm q(A3) = 3/4 ---- *) qA3 = 3/4; qD5 = 5/4; checkExact["E8 glue norm q(D5) + q(A3) = 2", qA3 + qD5 == 2]; checkExact["eps leading q(A3)/(6pi) = 1/(8pi) = c3", Simplify[qA3/(6 Pi) - c3] == 0]; s12 = 1/3 - (2/3) qA3 phi0; checkExact["sin^2 theta12 = 1/3 - phi0/2 (exact)", Simplify[s12 - (1/3 - phi0/2)] == 0]; (* ---- (v23) anchor generator a=(1,1,2) ---- *)](../../../../verification/wolfram/tfpt_readouts.wl#L88)
+- [(* ---- (v16/v21) solar angle from the A3 glue-norm q(A3) = 3/4 ---- *)](../../../../verification/wolfram/tfpt_readouts.wl#L89)
 
 ## Zwei Präzisierungen bei der Übernahme
 
@@ -157,8 +157,8 @@ Explicit source references:
 
 Navigation joins (both sources name the same Python identifier; statement equivalence is not inferred):
 
+- [(* ---- (v2) carrier / Pascal ---- *)](../../../../verification/wolfram/tfpt_readouts.wl#L51)
 - [experiments/lean4-carrier-rigidity/TfptCarrier/ArfSpinorCompiler.lean](../../../../experiments/lean4-carrier-rigidity/TfptCarrier/ArfSpinorCompiler.lean#L1)
-- [(* ---- (v2) carrier / Pascal ---- *) checkExact["dim S+ = 2^(g_car-1) = 16", 2^(gcar - 1) == 16]; checkExact["16 = 1 + 5 + 10 = C(5,0)+C(5,1)+C(5,2)", Binomial[5, 0] + Binomial[5, 1] + Binomial[5, 2] == 16]; checkExact["N_fam = 3", Nfam == 3]; checkExact["rank E8 = g_car + N_fam = 8", gcar + Nfam == 8]; (* ---- (v13) M = 41 budget ---- *)](../../../../verification/wolfram/tfpt_readouts.wl#L50)
 
 ## 3.3 Der vollständig bestimmte Sechszustands-Ausschnitt
 

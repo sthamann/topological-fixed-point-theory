@@ -1,0 +1,327 @@
+TFPT. Gewichtete regionale Ladungsantwort und gemeinsames E8 Schleifenprodukt
+11. November 2026
+
+1. Originalquelle und genaue Fragestellung
+
+Die ursprüngliche Round20–26 Ladungsquelle besitzt tatsächlich lokale
+Ladungsoperationen, einen gekoppelten Skalar und einen gemeinsamen
+positiven Transfer. In native-source-reconstruction-20261014 wurde
+aus genau diesem Transfer der allmodige selbstadjungierte H und
+sein Gibbszustand hergeleitet. Wir behalten seine originalen
+ganzzahligen Ladungen, Kokzykelphasen, räumlichen Kopplungen,
+das Skalarintegral und die Zeit. Der gegebene periodische Raum
+hat L>=3, N=L³, sechs Nachbarn pro Site.
+Die Gittergraphik und Koeffizienten sind Eingaben dieses Originals.
+Die primitive gewichtete P1 Zustandsform bleibt ein eigenes Ziel.
+
+Im ladungsneutralen Gesamtsektor ist
+  H=Hdiag+sum_(e,p) J_p(2I−W_(e,p)−W_(e,p)*),
+  W_(xy,p)=T_(y,p) T_(x,p)*, p einer der acht eingefrorenen Basisvektoren.
+Hdiag enthält D(n)=sum_x e(n_x)/N+nu sum_(xy) e(n_x−n_y)
+und den vollen gekoppelten Skalaroszillator mit
+  A(n)=−Delta_a+m² I+2u diag(e(n_x)), e(p)=p^T G p/2.
+Der tatsächliche Fall ist J_p=J. Die nach Kanal getrennte
+Schreibweise dient nur der Ableitung am selben ursprünglichen
+Koeffizienten, keine neue physische Gewichtsregel.
+Der Round26 Beleg liefert einen treuen Gibbszustand rho_beta für
+jedes gegebene beta>0 und den gemeinsamen Zeitgenerator auf
+dem vollen unendlichen Ladungs- und Skalarraum.
+
+2. Exakte gewichtete Zweiregionenantwort
+
+Die lokale Zahl N_x^a hat [N_x^a,W_(xy,p)]=−p^a W_(xy,p)
+und [N_y^b,W_(xy,p)]=+p^b W_(xy,p). Hdiag kommutiert mit
+allen Zahlen. Daher gilt für x!=y auf dem ursprünglichen Kern
+  [[H,N_x^a],N_y^b]
+     = 1_{xy Kante} sum_p J_p p^a p^b(W_(xy,p)+W_(xy,p)*).
+Der rechte Term ist beschränkt. Die Identität kann genauso
+als Ableitung beschränkter Phasen e^(itN_x^a) verifiziert werden,
+womit keine ungesicherte Domäne eines Heisenbergprodukts benötigt
+wird. Alle Phasen in W bleiben stehen. Für einen Kanal i
+in der eingefrorenen ganzzahligen Basis ist nur p=e_i wirksam.
+
+Sei B_i=sum_e(W_(e,i)+W_(e,i)*), ein beschränkter
+selbstadjungierter Nichtskalar. Betrachte die tatsächliche
+Zustandsableitung in der vorhandenen Kanalstärke s=J_i.
+Der additive Skalar 2s|E| ändert den normierten Gibbszustand
+nicht. Schreibe H_i(s)=H_i(0)−s B_i und
+Phi_i(s)=log Tr exp(−beta H_i(s)). Dann
+  Phi_i'(s)=beta omega_s(B_i),
+  Phi_i''(s)=beta² integral_0^1 Tr[rho_s^(1−t) Bc rho_s^t Bc] dt,
+  Bc=B_i−omega_s(B_i) I.
+Die Ableitungen folgen aus der Duhamel Formel für beschränkte
+Störung. Die Spurklassenaussage des Originals gilt weiter;
+treues rho und Nichtskalarität machen die zweite Ableitung
+strikt positiv. Dieser Beweis verwendet keine positive
+klassische Darstellung der einzelnen signierten Pfade.
+
+Bei s=0 erhält H_i(0) jede einzelne Sitezahl N_x^i.
+Alle anderen Kanäle ändern diese Koordinate nie; auch
+die Skalarenergie ist diagonal in ihr. Eine Phase e^(itN_x^i)
+macht den Erwartungswert jedes fehlenden i-Kanal-Hops null.
+Somit Phi_i'(0)=0 und omega_s(B_i)>0 für s>0.
+Die unveränderte kubische Translations- und Achsensymmetrie
+vertauscht alle unorientierten Kanten. W+W* ist von ihrer
+Orientierung unabhängig. Auf jeder Kante folgt also
+  kappa_i = J omega_beta(W_(xy,i)+W_(xy,i)*) > 0.
+Das ist die tatsächlich gewichtete lokale Antwort in der
+vorhandenen Quelle, für alle beta>0,J>0 im angegebenen
+endlichen Volumen, ohne Vorzeichenmittelung oder Auswahl
+eines Produktzustands. Für jede Nichtkante ist sie null.
+Die genaue Zahl ist eine Gibbsfunktion der ursprünglichen
+Parameter. Die Positivität und der Träger sind exakt.
+
+Mit dem positiven f-Summen-Vorzeichen ergibt der führende
+Antwortoperator in Kanal i die Graph-Laplacematrix
+  M_i(k)=2 kappa_i sum_(j=1)^3 (1−cos(k_j a)).
+Bei formaler kleiner k Entwicklung ist der Hauptkoeffizient
+kappa_i a² mal |k|² und hat auf der vorhandenen kubischen
+Karte Rang drei. Das ist ein spektrales erstes Moment,
+kein Nachweis eines einzelnen masselosen Pols und keine
+Herleitung des Graphen aus der primitiven P1 Verklebung.
+Zur allgemeinen thermischen Antwort und f-Summe siehe Kubo,
+https://doi.org/10.1143/JPSJ.12.570.
+
+3. Der Skalar ändert dieselbe Antwort und ihre Maßstabsabhängigkeit
+
+Auf demselben ursprünglichen H ist bei J=0 und endlichem
+N die eindeutige tiefste Ladung n=0. Der Skalar dort hat
+A0=−Delta_a+m² I und den Vakuumvektor Omega0.
+Jede nichtnull neutrale Ladung besitzt positive D(n),
+und A(n)>=A0. Der freie Vakuumabstand ist deshalb positiv.
+Beschränkte Störung durch die originalen Hops liefert
+gewöhnliche isolierte Eigenwertstörung für J nahe null.
+
+Ein Hop an xy erzeugt genau die zwei gegenüberliegenden
+Dipole ±p aus dem Vakuum. Ihre Kokzykelphase kann negativ
+sein; das Produkt mit dem Rückweg ist genau eins. Verschiedene
+Kanten und Kanäle geben verschiedene Ladungsvektoren.
+Der ungeänderte Skalarzustand unmittelbar nach dem Hop
+propagiert mit
+  Ap=A0+2u e(p)(P_x+P_y).
+Die Diagonalenergiedifferenz ist
+  Delta_p=(2/N+14 nu)e(p).
+Auf der gemeinsamen Kante gilt e(2p)=4e(p); die je
+fünf anderen berührten Kanten geben weitere zehn e(p).
+Der konkrete n=0 Vakuumzweig liefert daher bei kleinem J
+  kappa_p^(vac) = 4 J² R_p(a,u) + O(J³),
+  R_p = <Omega0|(Delta_p+Hosc(Ap)−E0)^−1|Omega0>.
+Dies ist ein voller N-dimensionaler Skalarresolvent
+im tatsächlich erzeugten Dipolblock, kein Ersatzmassenterm.
+Seine Laplacedarstellung mit dem ursprünglichen Mehlerkern
+ist positiv und hat für die Integration hinter T die
+analytische Restsumme höchstens exp(−Delta_p T)/Delta_p,
+da Hosc(Ap)>=Hosc(A0).
+In der Raumvariable a ändert sich nur der vorhandene
+Skalarlaplacian. Bei u=0 ist R_p=1/Delta_p und die
+Ladungsantwort unabhängig von a. Am selben Grundzweig
+ergibt die einseitige u-Ableitung des J² Koeffizienten
+  partial_u(4 R_p)|_0 = −8 e(p) v(a)/Delta_p²,
+  v(a)= (1/(2N)) sum_k (m²+ell_k/a²)^−1/2.
+Für die ungewichteten räumlichen Laplace-Eigenwerte ell_k
+gilt v'(a)=sum_k ell_k/[2N a³ (m²+ell_k/a²)^(3/2)]>0.
+Die gemischte a/u Ableitung des J² Koeffizienten ist somit
+strikt negativ. Die Ableitung betrifft den Koeffizienten
+und behauptet keine Ableitung eines unkontrollierten Restes.
+
+Auf dem vorhandenen L=3 Diagnosechart mit a=m=1, nu=0,
+u=1/3 und p=e8 ist Delta_p=2/27. Die Auswertung des
+ganzen ursprünglichen Gaußresolventen ergibt
+  4R_p(a,0) = 54,
+  4R_p(a,1/3) = 19.3262170904.
+Die numerische Quadratur verwendet den analytischen
+Rest kleiner 2e-20. Die zugehörige Fehlerschätzung im
+endlichen Integral ist eine Fließkomma-Diagnose.
+Analytische gemischte Ableitung am u=0 Rand ist −227.190811;
+unabhängige Differenzenprobe ergibt −227.164990.
+Der vorhandene frühere Diagnosetest hatte auf demselben
+Skalarchart beta=1 und eine statische Normalisierung geprüft.
+Hier ist der neue Zahlenwert ausdrücklich der schwache
+Hoppingkoeffizient des Grundzustandes, kein beta=1 Zahlenwert
+und kein volles beliebig großes J. Abschnitt 2 bleibt der
+exakte Gibbsbefund.
+
+Die alte lokale Energiegleichung enthält tatsächlich die
+Skalar-Ladungs-Austauschterme und die nichtkommutierenden
+überlappenden Hopenergien. Die nun berechnete a-Abhängigkeit
+prüft auf demselben H eine gemeinsame räumliche und
+Ladungsantwort. a variiert eine gegebene Skalargradienten-
+geometrie. H enthält in dieser Quelle keinen daraus
+hergeleiteten dynamischen metrischen Tensor. Der Rang
+des Ladungsmoments und die Skalarantwort liefern keinen
+Spin-2 Pol und keine universelle Gravitationskopplung.
+
+4. Welche Nachbarschaft in den vollständigen Wörtern steckt
+
+Die Round20 Kokzykelgleichungen geben für zwei verschiedene
+Bonds genau dann einen nichttrivialen Gruppenkommutator
+zwischen mindestens zwei ihrer acht Kanäle, wenn die Bonds
+ein Ende teilen. Bei disjunkten Enden kommutieren alle
+Kanäle. Auf demselben Bond kommutieren sie ebenfalls.
+Weil die tatsächliche Gramform modulo zwei invertierbar
+ist, existiert für ein einzelnes gemeinsames Ende immer
+ein ungerade gepaartes Kanalpaar. Dies liest den
+Line-Graphen aus den vollständigen Bondfamilien.
+
+Für das vorhandene sechswertige einfache kubische Netz
+sind die maximalen Cliquen dieses Line-Graphen der Größe
+sechs genau die Site-Sterne. Vier oder mehr paarweise
+schneidende verschiedene Kanten müssen einen gemeinsamen
+Endpunkt haben; der andere Möglichkeitstyp ist ein Dreieck
+aus nur drei Kanten. Daher kann man aus den unbenannten
+Bondfamilien die Sites und die Inzidenz eindeutig
+rekonstruieren. Der tatsächliche L=3 Prüfgraph ergibt
+27 unbenannte Sechsersterne aus 81 Bonds.
+Für einen festen Kanal liefert das Produkt
+entlang eines geschlossenen Pfades exakt I durch Aufhebung
+der benachbarten T und T*. Allgemeiner ist ein ganzzahliges
+orientiertes Produkt in diesem Kanal genau dann I, wenn
+seine Inzidenzsumme an jeder Site null ist. Damit sind auch
+die Zyklen im ursprünglichen Produkt erkennbar.
+Dieser Rückschluss gibt eine konkrete Forderung an P1:
+Die primitiven gewichteten Wörter müssten diese Art
+regionaler Bondfamilien und ihre Überschneidungen erzeugen.
+In Round20 stehen die zu rekonstruierenden Bondfamilien
+bereits zur Verfügung. Der Beweis gewinnt aus dem bloßen
+E8 Gitter noch keine neuen räumlichen Bonds.
+
+5. Dieselbe Ladungsalgebra hat einen konkreten Lift auf den E8 Rand
+
+Im vollständigen E8 Kreisnetz werden jetzt nicht nur
+entgegengesetzte Ladungen, sondern die wirklichen
+Round20 Produktzeichen gemeinsam realisiert.
+Für ein kleines Intervall I wähle eine glatte reelle
+Rampe r mit Anfang 0, Ende 1 und Ableitung innerhalb I.
+Die Torusschleife exp(2pi i p r) ist außerhalb I die
+Identität und hat Windung p. In der zentralen Erweiterung
+nach Dong–Xu Definition 3.1 setze f=p r und g=q r.
+Der zusätzliche Exponent ist exakt
+  (p.q)(integral r' r − 1 + 1/2)=0.
+Der übrig bleibende Faktor ist genau epsilon(p,q).
+Wir wählen die eingefrorene bilineare Round20 Kokzykel-
+repräsentation in denselben Gitterkoordinaten. Gleichwertige
+Darstellungen unterscheiden sich nur durch die zugehörigen
+Sektionsphasen. Somit gilt in jedem I exakt
+  U_I(p) U_I(q)=epsilon(p,q) U_I(p+q).
+Bei disjunkten Intervallen kommutieren die U nach der
+vollständigen Schleifenlokalität. Auf einer endlichen
+Familie paarweise disjunkter I_x reproduziert
+  U_(I_y)(p) U_(I_x)(p)*
+damit die vollständige ursprüngliche Bondwortalgebra
+samt Rückläufen, Minuszeichen und Pfadprodukten.
+Primärquelle https://arxiv.org/abs/math/0411499,
+Definition 3.1, Proposition 3.4, Lemma 3.5, Definition 3.7.
+Es ist eine wirkliche gemeinsame Algebraabbildung,
+keine Gleichsetzung zweier Zeitgeneratoren.
+
+Man kann auch die ganzzahlige kinematische Darstellung
+in diesem Kreisnetz realisieren. In einem etwas größeren
+disjunkten Kragen um I_x wähle einen glatten Cartantest,
+der auf der ganzen Windungsrampe gleich einem Element
+der Dualbasis ist. Seine Weylgruppe zählt die lokale
+Windung exakt durch die Wardphase; ihr Generator Q_x^a
+verschiebt sich unter U_(I_x)(e_a) um eine Einheit.
+Die Q_x^a kommutieren für gleiche skalare Testprofile
+und für disjunkte Kragen. Ihre gemeinsame Vakuumverteilung
+ist eine nichtdegenerierte Gaußform, wenn außerhalb der
+Kragen ein offener Bogen verbleibt. Das folgt aus der
+positiven Dirichlet Norm modulo Konstanten.
+Die gerundeten N_x^a=floor(Q_x^a) transformieren daher
+ebenfalls exakt um ganze Einheiten. Die Projektion des
+E8 Vakuums auf 0<=Q_x^a<1 für alle x,a ist nichtnull.
+Normiert man sie, so erzeugen die lokalen U alle
+orthogonalen Integerzustände mit den tatsächlichen
+Kokzykelzeichen. Im Teilsektor mit sum_x n_x=0 bleibt
+auch die globale E8 Ladung des Anfangsvektors null.
+Das liefert eine explizite isometrische Kopie der
+nativen Integerkinematik, konditional auf gewählten
+Kragen, lokaler Zahlablesung und präpariertem Zustand.
+Der unveränderte Cartanvakuumzustand hat dagegen eine
+kontinuierliche lokale Zahlverteilung. Die Projektion
+wird nicht als physische P1 Präparation ausgegeben.
+
+6. Zwei entscheidende Unterschiede am gleichen Ladungswort
+
+Erstens bewegen die tatsächliche E8 Rotationszeit und
+ihre parabolischen Möbiusoperationen die Kragen entlang
+des Kreises. Bei zwei getrennten kompakten Kragen
+kommutiert der ganze zeitverschobene lokale Operator
+zunächst auf einem offenen Zeitintervall mit der
+anderen Algebra. Das gilt als Operator und daher in
+jedem darauf ausgewerteten Zustand. Auf einer
+Round26 Kante ist der erste zeitgeordnete Term dagegen
+nach Abschnitt 2 strikt nichtnull. Das gilt auch
+für geeignete beschränkte Ladungsphasen durch Ableitung
+in den Phasenparametern. Die gemeinsame Schleifenalgebra
+kann folglich die Kreiszeit und die kubische Hoppingzeit
+bei Erhaltung der getrennten lokalen Regionen nicht
+ineinander überführen. Eine neue ursprüngliche
+Zeitwirkung wäre nötig. Gewichtung allein bei
+festgehaltener Kreiszeit ändert diese Operatorlokalität nicht.
+
+Zweitens hat die tatsächliche Charge-Site pro E8 Vektor
+genau eine Basisrichtung. Die volle lokale kompakte
+Wurzel-SU(2) mit demselben Cartan und einem Wurzelschritt
+alpha kann auf dieser Charge-Site nicht wirken.
+Denn die Ladungslinie Z alpha bleibt invariant, wenn
+die sieben dazu transversalen Cartanladungen erhalten
+bleiben. Auf dieser Linie sind die ganzzahligen geraden
+SU(2) Gewichte unbeschränkt und jedes hat Multiplizität
+eins. Eine unitäre kompakte SU(2) Darstellung zerfällt
+in endlichdimensionale Irreduzible. Um alle diese
+Gewichte zu enthalten, braucht sie unendlich viele
+gerade höchste Gewichte; jedes enthält die Nullgewichtslinie.
+Das widerspricht Multiplizität eins bei Gewicht null.
+Der ursprüngliche Skalar ist unter diesen lokalen
+Ladungsoperationen neutral. Ihn als Multiplikitätsraum
+der Eichwirkung zu benutzen wäre eine andere Eingabe.
+Das volle E8 Kreisnetz enthält dagegen zusätzliche
+Oszillatormultiplizitäten und echte Wurzelströme.
+Der Gittertest betrifft den unveränderten lokalen
+Round20 Charge-Träger und seinen gegebenen Cartan.
+
+Sogar die diskrete Symmetrie der eingefrorenen
+Hoppingrichtungen ist begrenzt. In euklidischen
+Koordinaten sind sie 2e0, e0+e_i (i=1,...,6)
+und (1,...,1)/2. Die einzigartige Norm-vier-Richtung
+muss bis auf Vorzeichen festbleiben. Ihre Skalarprodukte
+mit den anderen Basisvektoren sind 2 oder 1, deshalb
+ist nur eine gemeinsame Vorzeichenumkehr möglich und
+der Halbvektor bleibt bis auf dieses Vorzeichen fest.
+Sechs gleichartige Richtungen lassen sich permutieren.
+Der exakte 240-Wurzel-Test findet 30 erhaltende
+Wurzelrichtungen vom Typ A5, nicht die ganze E8 Wirkung.
+Im gegebenen D5 Vergleich erhält die schwache
+Vertauschung e3−e4 zwar die Hoppingstützen, die
+Farbvertauschung e0−e1 bereits nicht. Keine
+bloße Kokzykeländerung kann unterschiedliche
+verschobene Ladungsvektoren gleich machen.
+Dies liefert einen konkreten Grund, warum dieselbe
+gewichtete Hoppingantwort noch keine physische
+Standardmodellmarkierung trägt.
+
+7. Was der ursprüngliche Prozess damit liefern muss
+
+Der neu ausgeführte Vergleich verwendet zwei
+vorhandene Originalquellen. Die vollständige
+gekreuzte Ladungsantwort der kubischen Quelle
+ist im echten gewichteten Zustand vorhanden, und
+ihre Abhängigkeit vom Skalarmaßstab wurde berechnet.
+Das eigentliche E8 Schleifenprodukt trägt dieselbe
+Ladungskinematik. Die gemeinsame Markierung und
+Zeitwirkung passen aber auf den unveränderten
+Quellen nachweislich nicht zusammen.
+Die primitive gewichtete P1 Form muss die
+lokalen Wurzelwirkungen des vollständigen Randes
+und eine regionale Zeitwirkung zugleich erzeugen.
+Der erste unterscheidende Wert ist der gekreuzte
+Ladungsdoppelkommutator auf diesem gemeinsamen
+vollen Raum, unter derselben gewichteten Quelle
+und mit den tatsächlichen lokalen Ladungsträgern.
+Sein Träger muss von den vorgegebenen Kreis-
+beziehungsweise Gitterbildern unabhängig erklärt
+werden. Die neue gewichtete Zahl stammt aus dem
+tatsächlichen deklarierten Round26 Zweig, nicht aus
+dem fehlenden primitiven markierten Faserpaket.
+Ein dynamischer Tensorpol und eine universelle
+Kopplung sind weiterhin unberechnet. F1 bleibt offen.

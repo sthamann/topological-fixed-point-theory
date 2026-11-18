@@ -1,0 +1,520 @@
+TRANSVERSALER INDEX, EINSEITIGE QUELLE UND EM ANTWORT
+====================================================
+
+Datum: 2026-10-25
+Scope: begrenzter Originalquellenaudit und analytischer Typentest.
+Keine Atlas, Index, Ledger oder Paper Aenderung.
+
+
+ERGEBNIS
+--------
+
+Der transversale schwache Index ist ein echter positiver Anschluss, aber er
+schliesst nur die topologische Haelfte der benoetigten Abbildung.
+
+Das Original besitzt
+
+  * die Grad eins Kupplung g_2 auf dem Aequator der kompakten normalen S2,
+  * einen kompakten schwachen Operator B_{E_2} auf dieser normalen S2,
+  * das einseitige physische Randdatum mit D_+=gamma_n(partial_n+B_Sigma),
+  * den alten Kreisoperator D_Gamma und den Windungsoperator U_Gamma,
+  * sowie einen spaeteren projizierten Masterdeterminanten.
+
+Es konstruiert daraus jedoch keine Familie der normalen Operatoren ueber dem
+alten Quellkreis, keine horizontale Verbindung auf ihrem Indexbuendel und
+keinen Pushforward auf denselben Hilbertraum wie die Hardy beziehungsweise
+KMS Kovarianz. Insbesondere sind die normale Verbindung nabla^(2), die
+tangentiale Verbindung in B_Sigma und die alpha Variation von D_xi nirgends
+durch eine Operatorgleichung verbunden.
+
+Die genaue positive Folgerung lautet deshalb:
+
+  Wenn der transversale Pushforward eine glatte Kreiswirkung G mit
+  wind(det G)=1 auf DEMSELBEN Quellenraum wie C_Sigma liefert, dann folgt aus
+  dem bereits bewiesenen Paarindexsatz fuer jede C_Sigma-P_Hardy in L1 exakt
+
+    det_F[(I-z M_G C_Sigma M_G*)(I-z C_Sigma)^(-1)] = 1-z.       (1)
+
+  Massive oder indefinite Quellenanteile stoeren (1) nicht. Dafuer ist weder
+  eine Nullmodeprojektion noch eine Abtrennung des Komplements erforderlich.
+
+Diese Aussage ist aber eine Aussage ueber den gerichteten relativen
+Kovarianzdeterminanten. Sie ist nicht automatisch eine Aussage ueber
+
+    Re log det_{zeta,P_adm}(D_xi^2+mu^2)                         (2)
+
+im Masterfunktional. Bei einem echten spektralen beziehungsweise Quillen
+Pushforward antwortet das massive Komplement im Allgemeinen selbst auf eine
+U(1) Holonomie. Eine reine Nullmodenreduktion erhaelt die volle Quelle daher
+nur, wenn entweder der Komplementdeterminant samt Quillen Verbindung
+mitgefuehrt wird oder seine alpha Ableitung im selben relativen
+Renormierungsvertrag nachweislich verschwindet. Das Original beweist keine
+dieser beiden Alternativen.
+
+
+1. DIE DREI OPERATORARTEN SIND IM ORIGINAL VERSCHIEDEN
+------------------------------------------------------
+
+1.1 Transversaler schwacher Block
+
+`documents/archive--paper-latex--tfpt-42/sections/
+012-subsection-bosonic-relative-index-and-higgs-selection.tex:3-31,96-180`
+definiert auf der kompakten normalen Sphaere
+
+  S2_N = D_N union_{S1_N} D_S,
+  L_2=det E_2,
+  g_2(phi)=exp(i phi),
+  B_{E_2}=sigma^mu nabla_mu^(2)+Phi_2.
+
+Der Text setzt c1(L_2)=1 und Ind(B_{E_2}^+)=1. Der angegebene Aequator
+S1_N ist der Kupplungsaequator der NORMALEN Sphaere. Der Text schreibt keine
+Familie B_{E_2,theta} mit theta auf dem alten Quellkreis hin. Auch der
+angefuehrte Raum H0(S2,O(1))=C2 ist kein konstruierter Spektralprojektor des
+Operators B_{E_2}; der Originalbeweis benutzt ihn als Zaehler fuer ein
+schwaches Dublett. Fuer einen analytischen Pushforward fehlen weiterhin
+Domain, Kernprojektion und Familienverbindung.
+
+1.2 Einseitiger physischer Randoperator
+
+`documents/archive--tfpt-45--source_extracts--01_boundary_kernel_source/
+sections/001-section-primitive-core-and-carrier-interface-handoff.tex:65-110`
+definiert dagegen
+
+  T_boundary=(A_+,H_+,D_+,J,Gamma,B_Sigma),
+  D_+=gamma_n(partial_n+B_Sigma).
+
+P_C ist dort der Calderon Projektor der Cauchydaten von D_+ auf Sigma. Weder
+B_{E_2} noch nabla^(2) oder g_2 kommt in dieser Definition vor. Die
+fakultative fastkommutative Faktorisierung H=L2(M~,S) tensor H_int wird in
+Zeilen 83 bis 91 ausdruecklich als analytische Realisierungswahl und nicht als
+Teil des Randdatums bezeichnet.
+
+1.3 Alter Kreisoperator
+
+`documents/archive--paper-latex--tfpt-theory-fullv21/sections/
+001-section-introduction-the-problem-of-parameters.tex:225-251` schreibt
+
+  D_Gamma=i partial_theta,
+  U_Gamma(theta)=exp(i theta)
+
+auf dem alten Kreis. Nach der bereits geprueften Orientierungskorrektur ist
+B_a=-D_Gamma der Kreisgenerator, dessen negative Seepolarisation mit M_z den
+Paarindex eins besitzt. Das liefert den richtigen K1 Vertreter. Das Original
+gibt aber keine Isometrie
+
+  V: L2(S1_N,L_2|S1_N) -> H_Gamma
+
+und keine Gleichung V M_{g_2} V*=U_Gamma. Gleiche Windungszahl ist die
+notwendige K Klasse, noch keine gemeinsame Operatorwirkung, Domain oder
+Verbindung.
+
+
+2. WAS EIN TRANSVERSALER PUSHFORWARD ZUSAETZLICH BRAUCHT
+--------------------------------------------------------
+
+Ein wirklicher Familienindexanschluss muesste eine normale Faserung ueber dem
+Quellkreis und eine Fredholmfamilie liefern, schematisch
+
+  pi:N -> Gamma,
+  theta -> B_{E_2,theta}^+.
+
+Dann ist
+
+  Ind(B_{E_2}^+) = [ker B^+] - [ker B^-]
+
+ein K0 Buendel ueber Gamma. Der Zahlenindex eins fixiert nur den virtuellen
+Rang. Er fixiert weder die Parallelverschiebung des Indexbuendels noch die
+Holonomie seiner Determinantenlinie. Fuer den benoetigten Quellenoperator
+muessen zusaetzlich festliegen:
+
+  * eine horizontale Verbindung der normalen Familie;
+  * glatte Kern beziehungsweise Spektralprojektionen;
+  * die Bismut Freed beziehungsweise Quillen Verbindung einschliesslich des
+    massiven Spektralanteils;
+  * eine Identifikation ihres Kreisparalleltransports mit M_{g_2};
+  * die Wirkung dieses Operators auf demselben H wie C_Sigma.
+
+Die einzelne normale S2 in Abschnitt 012 liefert keine solche Familie. Auch
+eine Linie vom virtuellen Rang eins ueber S1 ist topologisch trivial; ihr
+relevantes Kreisdatum ist die Verbindungsholonomie. Diese folgt nicht allein
+aus dem Zahlenindex der normalen Faser.
+
+Der positive topologische Zusammenhang bleibt bestehen: g_2 selbst ist ein
+expliziter Grad eins Loop und damit genau die richtige K1 Klasse fuer (1).
+Was fehlt, ist nicht eine neue Klasse, sondern ihr originaler
+Darstellungs beziehungsweise Pushforwardpfeil.
+
+Eine hinreichende natuerliche Realisierung waere ein im Original
+bereitgestelltes Produktkollar Gamma x S2_N mit Produktverbindung. Schreibe
+B_a=-i partial_theta+a auf Gamma, D_N fuer den chiralen normalen Operator und
+
+  mathcal D_s=(B_a+s) gamma_N + D_N,             0<=s<=1.       (2a)
+
+Auf einem normalen Nichtnullpaar mit Eigenwerten +/-lambda besitzt dieser
+Operator die symmetrischen Eigenwerte
+
+  +/-sqrt((n+a+s)^2+lambda^2).
+
+Diese Bloecke tragen keinen Spektralfluss durch null. Die normalen Nullmoden
+tragen dagegen jeweils den Kreisfluss, mit dem orientierten Saldo
+
+  SF(mathcal D_s) = dim ker D_N^+ - dim ker D_N^-
+                  = Ind(D_N^+).                              (2b)
+
+Damit wuerde ein normaler Index eins den tangentialen Paarindex eins liefern,
+ohne den normalen Aequator mit Gamma gleichzusetzen. Das ist das kleinste
+positive Produkttheorem hinter der Pushforwardidee. Es ist im Original nicht
+instanziiert: Gamma x S2_N, die Produktconnection, die gemeinsame Domain und
+die Familie (2a) werden dort nicht angegeben.
+
+Aus (2b) folgt ausserdem keine eindeutige Nullmode. Ein Rang zwei Buendel vom
+Grad eins kann auf CP1 beispielsweise als
+
+  E_2=O(k) direct_sum O(1-k),                  k>=1,
+
+splitten. Fuer den spinverschobenen Dolbeaultoperator auf
+E_2 tensor O(-1) sind dann
+
+  dim ker D_N^+=k,       dim ker D_N^-=k-1,
+
+also stets Index eins, aber nur bei k=1 eine einzelne positive Nullmode ohne
+negative Partner. Die originale Determinantenklasse fixiert Grad und Index,
+nicht diese Splittingklasse oder die beiden Kerndimensionen.
+
+Schliesslich ist (2b) eine Spektralfluss beziehungsweise Indexaussage, noch
+keine gewoehnliche Fredholmdeterminantenformel auf dem dreidimensionalen
+Produkt. Fuer die vollen Spektralprojektionen muss zuerst die relevante
+Schattenklasse geprueft werden. Auf einem dreidimensionalen kompakten Produkt
+ist eine generische Differenz von Dirac Spektralprojektionen der Ordnung -1
+nicht automatisch spurklassig. Der eindimensionale Paarindexdeterminant (1)
+darf daher erst nach einem bewiesenen Pushforward auf den Kreis oder mit einer
+explizit angegebenen hoeherdimensionalen Regularisierung verwendet werden.
+
+Fuer die Produktfamilie (2a) sieht man das Hindernis bereits blockweise. Auf
+einem normalen Paar +/-lambda ist bis auf eine feste Wahl der Pauli Matrizen
+
+  H_x^lambda=x sigma_3+lambda sigma_1,
+  E_x=sqrt(x^2+lambda^2),
+  P_x=(I-H_x^lambda/E_x)/2.
+
+Sind Delta theta die Winkel zwischen den Einheitsvektoren von H_x^lambda und
+H_(x+1)^lambda, dann hat P_(x+1)-P_x die beiden gleichen Singulaerwerte
+sin(Delta theta/2), und
+
+  ||P_(x+1)-P_x||_1
+     =2 sin(Delta theta/2)
+     >= sin(Delta theta)
+     =lambda/(E_x E_(x+1)).                                  (2c)
+
+Fixiert man einen Fourierindex, so gilt fuer alle hinreichend grossen lambda
+auch E_x E_(x+1)<=2 lambda^2 und damit die untere Schranke 1/(2 lambda).
+Die positiven Eigenwerte eines zweidimensionalen normalen Diracoperators
+erfuellen, mit Vielfachheiten gezaehlt, lambda_j asymptotisch proportional zu
+sqrt(j). Daher divergiert schon die Summe der Blockspurnormen in (2c). Die
+volle Projektordifferenz der natuerlichen dreidimensionalen Produktfamilie
+ist somit im Allgemeinen nicht spurklassig. Der auf die normalen Nullmoden
+reduzierte Kreisfaktor kann dagegen ein gewoehnlicher relativer
+Fredholmfaktor sein. Diese Reduktion muss den massiven Anteil der vollen
+Quellenantwort weiterhin getrennt mitfuehren.
+
+
+3. P_adm STELLT DIESEN PFEIL NICHT HER
+--------------------------------------
+
+`documents/archive--paper-latex--tfpt-42/sections/
+022-section-closure-theorems-from-the-admissibility-complex.tex:12-100`
+setzt
+
+  P_adm=P_prim P_sing P_Theta=P_str P_gap,
+  P_Theta=(I+Q_Theta)/2,
+
+wobei fuer Q_Theta nur Selbstadjungiertheit und Q_Theta^2=I angegeben werden.
+P_gap wird aus dem abstrakten D_adm gebildet. Es gibt dort keine Gleichung
+
+  P_Theta = Pi_{ker B_{E_2}^+},
+  P_adm M_{g_2}=M_{g_2}P_adm,
+
+und keinen Pushforward von nabla^(2) auf B_Sigma oder D_Gamma. P_adm ist ein
+nach der Carrierwahl definierter Selektor auf dem schon vorhandenen
+Quellenraum. Er ist nicht die analytische Familienindexabbildung, die den
+normalen Operator erst auf diesen Raum uebertraegt.
+
+Das ist auch kategorial sichtbar. In der originalen SBord^adm Kategorie sind
+Morphismen unitaere Intertwiner der angezeigten einseitigen Daten. Ein
+nichtkonstanter Multiplikationsloop verschiebt den Kreisgenerator und ist
+deshalb kein Automorphismus eines festgehaltenen D_+. Er kann eine legitime
+Quellenvariation zwischen verbundenen Operatoren definieren, aber dafuer muss
+die entsprechende Operatorfamilie samt Gauge Descent angegeben werden.
+
+
+4. DER MASTERDETERMINANT ENTHAELT KEINE VERDECKTE FAMILIE
+--------------------------------------------------------
+
+`documents/archive--paper-latex--tfpt-42/sections/
+027-subsection-primitive-completion-from-the-boundary-kernel.tex:229-355`
+definiert fuer
+
+  xi=(alpha,chi_geo,delta_ph,rho_vac)
+
+das Masterfunktional mit den Termen
+
+  -log Z_rel^{P_adm}[xi]
+  +Re log det_{zeta,P_adm}(D_xi^2+mu^2)
+  +(1/2) eta_{Sigma,P_adm}(D_xi)
+  -log det(1-U_{6,xi})
+  +Gamma_vac.
+
+In tfpt-42 kommt D_xi nur an diesen beiden Stellen des Ausdrucks vor. Es wird
+weder als Differentialoperator noch durch seine Domain, Verbindung oder
+alpha Ableitung definiert. Der anschliessende Beweis behauptet in Zeilen
+326 bis 336 die orthogonale Blockzerlegung und identifiziert den U(1) Block
+mit der schon definierten EM Wirkung. Er leitet diese Zerlegung nicht aus
+D_+, B_{E_2} oder einer transversalen Familie her.
+
+Damit ist die dortige Faktorisierung ein Paketierungsvertrag. Sie ist keine
+Operatorfaktorisierung, aus der die Konstanz des massiven Komplements unter
+alpha folgt. Insbesondere fehlen Gleichungen der Form
+
+  D_xi = D_{zero,alpha} direct_sum D_{mass,alpha},
+  partial_alpha log det_rel(D_{mass,alpha}^2+mu^2)=0.           (3)
+
+
+5. EXAKTER TEST DES MASSIVEN KOMPLEMENTS
+----------------------------------------
+
+Der staerkste natuerliche Produktansatz zeigt, warum Massivitaet allein (3)
+nicht begruendet. Dieser Test fuehrt kein neues TFPT Modell ein; er prueft die
+behauptete Konsequenz einer Produktfaktorisierung.
+
+Sei
+
+  A_a=-i partial_theta+a
+
+der Kreisoperator mit U(1) Holonomie a und sei lambda>0 ein Eigenwert des
+transversalen massiven Operators. Im antikommutierenden Produktblock ist der
+positive Operator
+
+  A_a^2+lambda^2.
+
+Nach relativer Zeta Normalisierung gegen a_0 ist sein Determinantenquotient,
+bis auf den im Quotienten wegfallenden a unabhaengigen Faktor,
+
+  det_zeta(A_a^2+lambda^2)
+  ---------------------------------
+  det_zeta(A_a0^2+lambda^2)
+
+    = [cosh(2 pi lambda)-cos(2 pi a)]
+      /[cosh(2 pi lambda)-cos(2 pi a_0)].                     (4)
+
+Folglich
+
+  partial_a log det_zeta(A_a^2+lambda^2)
+    = 2 pi sin(2 pi a)
+      /[cosh(2 pi lambda)-cos(2 pi a)].                       (5)
+
+(5) ist fuer generisches a nicht null. Ein groesserer Massengap macht den
+Beitrag klein, aber nicht exakt konstant. Gepaarte positive Eigenwerte
+multiplizieren den Quillen Normbeitrag; sie heben ihn nicht wie eine
+gerichtete chirale Phase automatisch auf.
+
+Genau das trennt (2a) in zwei Antworten. Seine nichtnull +/-lambda Bloecke
+haben Spektralfluss null, tragen aber die nichtkonstante positive
+Determinantennorm (4). Die Gleichheit SF=Ind D_N^+ entfernt sie daher aus dem
+Index, nicht aus der Quillen Antwort.
+
+Deshalb gilt:
+
+  * Falls alpha eine Holonomie beziehungsweise Verbindungskomponente a
+    veraendert, muss das massive Komplement in der vollen Antwort berechnet
+    oder durch einen bewiesenen relativen Ward beziehungsweise
+    Renormierungssatz aufgehoben werden.
+
+  * Falls alpha nur den skalar eingesetzten Parameter
+    z=q(alpha)=delta_top exp(-2 alpha) veraendert und alle Operatoren des
+    Komplements fest bleiben, ist dessen alpha Konstanz eine zusaetzliche
+    Quellenannahme. Genau diese Annahme wird im Original nicht als
+    D_xi Familie formuliert.
+
+Der Test ist kein allgemeiner No Go Satz. Spezielle supersymmetrische,
+graduierte oder relativ normalisierte Familien koennen eine Aufhebung
+besitzen. Eine solche Aufhebung braucht jedoch eine angegebene gemeinsame
+Familie und dieselbe Spur beziehungsweise Determinantennorm wie das EM
+Funktional.
+
+
+6. NULLMODENREDUKTION UND VOLLE QUELLE
+--------------------------------------
+
+Sei K die transversale Nullmode und Q=I-K. Fuer einen invertierbaren positiven
+Gesamtoperator A_alpha lautet in endlicher Dimension beziehungsweise bei
+einem gemeinsamen endlichen Cutoff, vorausgesetzt A_QQ,alpha ist invertierbar,
+die exakte gewoehnliche Determinantenidentitaet
+
+  det A_alpha
+    = det(A_QQ,alpha)
+      det(A_KK,alpha
+          -A_KQ,alpha A_QQ,alpha^(-1) A_QK,alpha).             (6)
+
+In unendlicher Dimension gilt dieselbe Form nur fuer eine entsprechend
+definierte RELATIVE Fredholmdeterminantenfaktorisierung: Die verglichenen
+Faktoren muessen Identitaet plus Spurklasse sein, die benoetigten Bloecke
+invertierbar und die Produkte der Nebenbloecke in den passenden
+Schattenklassen liegen. Alle Faktoren muessen dabei dieselbe relative
+Normierung verwenden. Aus (6) folgt insbesondere keine Identitaet
+
+  det_zeta A_alpha
+    = det_zeta(A_QQ,alpha) det_zeta(Schur_alpha).
+
+Separat zeta regularisierte unendliche Produkte koennen eine multiplikative
+Anomalie sowie lokale Gluing beziehungsweise Gegenfaktoren besitzen. Eine
+solche Formel braucht einen eigenen Beweis in einer gemeinsamen
+Regularisierung.
+
+Eine wirksame Nullmodenreduktion bewahrt die volle Quelle deshalb nur, wenn sie
+
+  * den Komplementdeterminanten det(A_QQ,alpha) und
+  * die induzierte Selbstenergie im zweiten Faktor
+
+in der jeweils tatsaechlich definierten endlichen, relativen Fredholm oder
+gemeinsam regularisierten Form mitfuehrt. Das blosse Ersetzen von A_alpha
+durch den Kernblock A_KK,alpha verliert im Allgemeinen beide Terme. Im
+determinant-line Sprachgebrauch muessen entsprechend die Quillen Metrik,
+Verbindung, Eta Form und gegebenenfalls lokale Gluingdaten des Pushforwards
+erhalten bleiben. Hier wird keine exakte zeta Determinantenfaktorisierung
+behauptet.
+
+Die bereits bewiesene Schuridentitaet in
+`KMS-AND-CARRIER-TRANSPORT.txt` ist damit vereinbar: Sie verteilt den vollen
+relativen Determinanten auf einen effektiven Carrierblock und den
+Quellenkomplementfaktor. Sie sagt nicht, dass der Komplementfaktor einzeln
+eins ist.
+
+Anders ist (1). Dort wird der VOLLE Kovarianzoperator C_Sigma unprojiziert
+transportiert. Die algebraische Dreifaktorkuerzung des Paarindexsatzes
+enthaelt das Komplement bereits und ergibt 1-z ohne Nullmodenapproximation.
+Das ist die engste derzeit bewiesene Erhaltung der vollen Quelle.
+
+
+7. WAS DIE ORIGINALQUELLEN POSITIV LIEFERN
+------------------------------------------
+
+Die Originale liefern zusammen vier notwendige Bestandteile:
+
+  1. g_2(phi)=exp(i phi) und damit die richtige Grad eins K1 Klasse;
+  2. den Zahlenindex eins des transversalen schwachen Blocks;
+  3. die einseitige Orientierung und den Calderon polarisierten Quellenraum;
+  4. den alten Kreisvertreter mit Paarindex eins.
+
+Das ist mehr als eine bloss passende Zahl: normale Kupplung und alter Kreis
+tragen denselben orientierten Generator. Es erlaubt den klaren bedingten
+Pushforward in (1). Es beweist aber noch nicht, dass beide Generatoren durch
+dieselbe Verbindung auf demselben Hilbertraum realisiert werden.
+
+Die aktive Quillen Quelle
+`documents/tfpt_research_contracts/sections/020-source.tex:187-231`
+benennt genau die dazu fehlenden Daten: eine elliptische Fredholmfamilie mit
+Domains und Gauge Descent, Quillen Metrik, Bismut Freed Verbindung sowie
+Kontrolle der hochfrequenten Beitraege und ihrer Parametervariationen. Sie
+warnt ausdruecklich, dass gleiche Chernzahlen die Verbindung nicht bestimmen.
+Zeilen 232 bis 255 lassen die Identifikation der Determinantenvariation mit
+der EM Stationaritaet offen. Die neue Pushforwardidee faellt damit in das
+bereits benannte offene Kontinuumsproblem, gibt ihm aber einen kleineren
+konkreten Operatorpfeil.
+
+
+8. KLEINSTER ENTSCHEIDENDER ABSCHLUSS
+-------------------------------------
+
+Fuer den schwachen skalaren Faktor genuegt die folgende Originalidentitaet:
+
+  V M_{g_2} V*=U_source,
+  U_source P_Hardy U_source* - P_Hardy in L1,
+  C_Sigma-P_Hardy in L1,                                   (7)
+
+mit V als verbindungs und domainvertraeglicher Abbildung vom normalen
+Kupplungsaequator auf den alten Quellkreis. Dann folgt (1) sofort und ohne
+Nullmodenselektion.
+
+Fuer die staerkere Behauptung, derselbe Anschluss erzeuge die volle EM Ward
+Antwort des Masterfunktionals, ist zusaetzlich genau eine der folgenden
+Operatoraussagen erforderlich:
+
+  A. Der originale EM Readout IST der gerichtete relative
+     Kovarianzdeterminant aus (1), mit dem vorhandenen aeusseren Faktor
+     B gamma=5/4 und der vorhandenen Reweighting Identitaet fuer q(alpha).
+
+  B. Der transversale Familienpushforward liefert (2) samt (6), und der
+     massive relative Quillenfaktor hat im selben Referenzvertrag
+     verschwindende alpha Ableitung beziehungsweise den genau benoetigten
+     bereits mitgefuehrten lokalen Wardterm.
+
+Erfolg ist eine dieser beiden Gleichheiten, nicht nur eine weitere
+Indexgleichheit. Abbruch fuer die Nullmodenroute ist ein einziger massiver
+Eigenkanal mit der nichtverschwindenden Ableitung (5), sofern kein
+Originalterm ihn im selben Funktional aufhebt.
+
+
+URTEIL
+------
+
+PROVED: Eine auf der treuen Kreisquelle dargestellte transversale Grad eins
+Kupplung liefert ueber den Paarindexsatz exakt den schwachen Faktor 1-z und
+erhaelt dabei die volle Kovarianzquelle. Massive und indefinite Defekte sind
+in dieser Fredholm Aussage bereits enthalten.
+
+SOURCE REVIEWED POSITIVE: Das Original besitzt sowohl den transversalen Grad
+eins Generator g_2 als auch den alten Kreisgenerator mit Index eins. Damit ist
+der gesuchte Pushforward topologisch richtig orientiert und minimal.
+
+SOURCE REVIEWED MISSING MAP: Es gibt keine Familie B_{E_2,theta}, keine
+horizontale Indexverbindung und keinen Intertwiner vom normalen Aequator auf
+H_Gamma beziehungsweise den C_Sigma Raum. P_adm konstruiert diesen Pfeil
+nicht.
+
+EXACT CONDITIONAL OBSTRUCTION: Bei einer U(1) Holonomievariation ist der
+massive Quillenfaktor bereits fuer einen einzigen Produktkanal durch (4)-(5)
+alpha abhaengig. Eine reine Nullmodenlinie ist daher kein vollstaendiger
+Pushforward des Masterdeterminanten.
+
+OPEN: Die Originalgleichheit zwischen dem gerichteten Paarindexdeterminanten
+und dem EM Readout oder alternativ die volle Quillen Pushforwardidentitaet mit
+Komplement und Wardterm. Keine neue Chiralprojektion, kein neues physisches
+Modell und keine Gleichsetzung des normalen mit dem tangentialen Kreis wurde
+eingefuehrt.
+
+CONDITIONAL SUFFICIENT CRITERION: Ein originales Produktkollar mit (2a)
+transportiert den normalen Index exakt in den tangentialen Spektralfluss.
+Vor einem gewoehnlichen Fredholmdeterminanten auf dem vollen Produkt bleibt
+die Schattenklasse zu beweisen. Eine graduierte Supertrace darf dabei nicht
+an die Stelle der originalen ungraduierten tr_adm gesetzt werden.
+
+
+QUELLEN
+-------
+
+1. `documents/archive--paper-latex--tfpt-42/sections/
+   012-subsection-bosonic-relative-index-and-higgs-selection.tex:3-180`
+   Normale S2, g_2, B_{E_2}, kompakter Index.
+
+2. `documents/archive--tfpt-45--source_extracts--01_boundary_kernel_source/
+   sections/001-section-primitive-core-and-carrier-interface-handoff.tex:65-145`
+   Einseitiges D_+, B_Sigma und Calderon Polarisation.
+
+3. `documents/archive--paper-latex--tfpt-theory-fullv21/sections/
+   001-section-introduction-the-problem-of-parameters.tex:225-251`
+   Alter Kreisoperator und Windungsvertreter.
+
+4. `documents/archive--paper-latex--tfpt-42/sections/
+   022-section-closure-theorems-from-the-admissibility-complex.tex:12-100`
+   P_adm und abstrakter Determinantenselektor.
+
+5. `documents/archive--paper-latex--tfpt-42/sections/
+   027-subsection-primitive-completion-from-the-boundary-kernel.tex:229-355`
+   Projiziertes Masterfunktional und behauptete Blockfaktorisierung.
+
+6. `documents/tfpt_research_contracts/sections/020-source.tex:180-255,296-318`
+   Offener Quillen und Bismut Freed Vergleich samt Hochfrequenzkontrolle.
+
+7. `experiments/theory-contracts/original-admissible-source-closure-20261025/
+   PAIR-INDEX-DETERMINANT.txt`
+   Bereits geschlossener Paarindexsatz; hier nicht neu bewiesen.

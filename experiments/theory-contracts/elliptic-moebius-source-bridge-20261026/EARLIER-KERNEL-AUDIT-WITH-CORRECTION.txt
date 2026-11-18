@@ -1,0 +1,288 @@
+ELLIPTIC C2 TO SEAM KERNEL TEST
+26 October 2026
+
+SUPERSESSION NOTE, 26 October 2026
+==================================
+
+Sections 2 and 4 below tested kappa alone.  The subsequent complete real-form
+census in DIVIDING-REAL-FORMS.txt proves that the existing group words
+hQkappa and hQ^3kappa are dividing and supply a Q-paired pair of annulus
+channels.  Statements below that no bordered channel is present in the
+given group are therefore superseded.  What remains valid is that kappa
+alone is nondividing, Q is not translation around one chosen boundary
+circle, the finite theta correction is nonzero and the physical field/state
+map remains open.
+
+Question
+========
+
+Does the already fixed elliptic curve
+
+  E: y^2=x^4-1,       tau=i,
+
+with quarter automorphism q(x,y)=(ix,y), real structure
+kappa(x,y)=(bar x,bar y), the fixed mu4 marking and the previously selected
+q-invariant nontrivial spin class already provide the original quarter
+Hardy/NS seam kernel?
+
+Verdict
+=======
+
+It provides a canonical nullmode-free ELLIPTIC Szego kernel for the bare
+degree-zero spin line.  It recovers the local NS singularity and the
+half-integer NS spectrum on a chosen circle.  It does not recover the
+original quarter Hardy kernel or its one-circle positive polarization.
+
+Three exact obstructions occur before any physical field measure is chosen:
+
+  1. a spin line has cycle holonomy plus or minus one, whereas the original
+     quarter sectors have multiplier plus or minus i;
+  2. at tau=i the Szego kernel has a nonzero elliptic theta correction and is
+     not the flat circle csc kernel;
+  3. kappa alone does not supply a q-invariant separating seam cut.  Its fixed
+     real oval is nonseparating.  The full existing h,Q,kappa group does
+     supply two dividing annulus cuts, which q exchanges.
+
+The actual normally twisted bundle from the earlier elliptic calculation is
+even less suitable as an inverse kernel: it has two holomorphic zero modes.
+Removing them requires an extra projector, and q and the deck lift have no
+common invariant rank-one zero-mode line.
+
+No flat Moebius comparison is needed to establish these statements.  That
+comparison remains a separate positive realization of a different supplied
+operator.
+
+1. Which elliptic spin structure is actually fixed
+===================================================
+
+Write E=C/(Z+iZ), with a and b the two primitive cycles.  A spin structure
+has signs (epsilon_a,epsilon_b) in {plus or minus 1}^2.  The quarter rotation
+z->iz exchanges the two cycle signs.  Its fixed spin structures are
+
+  (+,+), the trivial odd spin with one holomorphic zero mode;
+  (-,-), the nontrivial even spin with no holomorphic zero mode.
+
+The earlier exact divisor calculation identifies the second class as
+
+  alpha=O(T-O),       O=(0,i), T=(0,-i).
+
+It is also kappa-real because kappa exchanges O and T and alpha has order
+two.  Thus q, kappa and the demand of a nontrivial fixed spin class do select
+one bare spin line.  No additional theta characteristic is chosen here.
+
+For this nonsingular characteristic the normalized genus-one Szego kernel is
+
+  S_alpha(z,w)
+    = theta_3(z-w|i)/theta_3(0|i)
+      * theta_1'(0|i)/theta_1(z-w|i).                  (1)
+
+It is the unique meromorphic section with the alpha multipliers, unit residue
+on the diagonal and no spin zero-mode ambiguity.
+
+This is a complex geometric Cauchy kernel.  Its existence does not by itself
+declare H1(E) to be the original one-particle Hilbert space or choose a CAR
+measure.
+
+2. First decisive test: monodromy and boundary spectrum
+========================================================
+
+From the theta transformation laws, (1) obeys
+
+  S_alpha(z+1,w)=-S_alpha(z,w),
+  S_alpha(z+i,w)=-S_alpha(z,w).                        (2)
+
+Consequently a circle cut along either primitive cycle has
+
+  spec B_alpha={n+1/2:n in Z},
+  ker B_alpha=0.                                       (3)
+
+This agrees exactly with the LOCAL A4-selected bounding NS spectrum.  It
+does not agree with either original quarter multiplier:
+
+  K_1/4(t+1)= i K_1/4(t),
+  K_3/4(t+1)=-i K_3/4(t).                              (4)
+
+The finite automorphism q cannot be substituted for translation around the
+cut.  It rotates the a cycle into the b cycle.  The later full-group census
+does find existing bordered channels: hQkappa and hQ^3kappa define two
+annuli, and q exchanges them.  This supersedes the prior absence statement,
+but it does not turn q into translation around either boundary circle.  An
+actual field transport from the original seam into the annulus pair remains
+absent.
+
+Therefore the elliptic spin fixes NS, while the quarter phase remains a
+separate lift/marking action.  This is the same operator distinction already
+visible in the original A3/A4 audit.
+
+3. Second decisive test: the theta correction is nonzero at tau=i
+=================================================================
+
+The local diagonal behavior of (1) is universal:
+
+  S_alpha(z,w)=1/(z-w)+regular terms.
+
+It therefore has the same short-distance singularity as a flat Hardy
+kernel.  That local fact does not identify the global kernels.  At finite
+tau=i,
+
+  S_alpha(t,0)
+    = pi/sin(pi t)
+      * [1+2 exp(-pi)(cos(2pi t)-1)+O(exp(-2pi))].      (5)
+
+An exact value at t=1/2 makes the mismatch normalization independent:
+
+  S_alpha(1/2,0)=pi theta_4(0|i)^2,                    (6)
+  pi csc(pi/2)=pi.
+
+The Jacobi series gives
+
+  theta_4(0|i)=1+2 sum_(n>=1)(-1)^n exp(-pi n^2)
+               =0.9135791381561168...,
+
+so
+
+  S_alpha(1/2,0)=2.6220575542921198... != pi.          (7)
+
+The correction is not a fitted parameter.  It is forced by the fixed square
+modulus.  The trigonometric NS kernel appears only in a long-cylinder/nodal
+degeneration Im(tau)->infinity.  The original curve has tau=i, and no source
+operation sends it to that degeneration.  Taking the limit would discard
+the fixed j=1728 geometry rather than derive the original kernel from it.
+
+4. Reflection and the absence of a canonical positive half
+============================================================
+
+The real structure kappa preserves alpha and gives the usual reality law for
+(1).  This is not yet Osterwalder-Schrader positivity on the original seam.
+
+The fixed locus of kappa on y^2=x^4-1 has x,y real and x^4>=1.  Since the
+quartic has only the two real branch points plus or minus 1, this real locus
+is one oval.  For a real elliptic curve one oval is the nondividing case:
+E minus Fix(kappa) is connected.  Thus kappa does not split E into a positive
+half and its reflected copy whose boundary Szego projector could be read as
+the original Hardy space.
+
+For kappa itself there is no simultaneous q-invariant cut:
+
+  kappa q kappa=q^{-1},
+
+and q sends a point with real x to one with imaginary x.  It moves the
+kappa-fixed oval to the fixed oval of a conjugate reflection.
+
+The stronger old conclusion is superseded.  The conjugate real structures
+hQkappa and hQ^3kappa are already words in the given group, not new fitted
+data, and each is dividing.  Their positive halves are annuli exchanged by
+q.  What the group still does not supply is one q-invariant half or the
+physical P1 field/state map into this paired bordered channel.
+
+5. The actual normal twist has zero modes
+===========================================
+
+The earlier exact normal pullback did not use alpha alone.  It used
+
+  alpha tensor L,        L=p*O(1),
+  H0(alpha tensor L)=span(1,u),
+  u=(y+i)/x^2.                                           (8)
+
+Hence the corresponding dbar/Dirac operator has a two-dimensional
+holomorphic kernel.  A Green or Szego inverse requires a zero-mode
+subtraction or a complementary projector.  Such a projector is not selected
+by the curve alone.
+
+Moreover the genuine deck and quarter lifts on (8) satisfy
+
+  D=[[0,-1],[1,0]],       D^2=-I,
+  Q=a diag(1,-1),
+  QD=-DQ.                                                (9)
+
+There is no common invariant one-dimensional kernel line.  Selecting one
+zero mode would break either the deck or quarter action.  This excludes the
+normally twisted two-mode kernel as a canonical source of the rank-one
+quarter Hardy polarization.
+
+6. What survives positively
+============================
+
+The elliptic geometry supplies three useful and exact facts:
+
+  * a unique q-fixed nontrivial even spin class alpha;
+  * its nullmode-free global elliptic Szego kernel (1);
+  * the local A4 NS spectrum (3), with no zero mode.
+
+It therefore gives a canonical finite-modulus NS comparison kernel.  It does
+not supply the original quarter channel, a one-sided Hardy projector, the
+original seam time, or the charged Gaussian measure.  The existing full NS
+cover Green construction remains a valid positive free realization under
+its stated field premise, but it cannot be replaced by (1) without an actual
+field, support, time and cut map.
+
+The smallest remaining positive test is now precise: an original source map
+would have to send the original seam circle into a specified bordered
+channel of E, transport its CAR field and reflection, and explain why either
+the finite theta correction in (5) is physically retained or why a
+source-derived degeneration removes it.  It must also transport q as the
+quarter marking without turning q into circle translation by declaration.
+
+7. Source chain
+===============
+
+Existing exact elliptic spin calculation:
+
+  experiments/theory-contracts/original-admissible-source-closure-20261025/
+  ORIGINAL-BASES-AND-ELLIPTIC-SPIN.txt:34-107
+  SHA256 bf6b2336e24a39aef26b9907c24f033a47a8a1318f8f19ae561e4c477680ce67
+
+Its lines 25-28 repeat the old Calderon equals deck source claim.  That claim
+is superseded by:
+
+  experiments/theory-contracts/seam-full-collar-reconstruction-20261015/
+  PROOF.txt:21-61,162-177
+  SHA256 9f4effed34316798c6a35e1ac0ec2832cd3720180f476cb8747bb32359b56e6a
+
+Original A4 spin and A3 operator audit:
+
+  experiments/theory-contracts/canonical-seam-fermionization-20261025/
+  ORIGINAL-SPIN-AND-SEAM-DICTIONARY.txt:520-655,740-766,791-799
+  SHA256 dfaef864428375b018d0eddcb77a4a5ccd085e996eb1c1b3f1d8db526991cf24
+
+Existing full free NS cover Green realization:
+
+  research-20261026-p1-reflection/NS-COVER-FULL-DIRAC-RP.txt:14-31,52-160
+  SHA256 a18c7589ac87b0ea875af7a2a46790989c80c836369b9ee001b0417dda6ab154
+
+Primary spin classification:
+
+  M. F. Atiyah, Riemann surfaces and spin structures,
+  Ann. Sci. ENS 4 (1971), 47-62.
+  https://numdam.org/articles/10.24033/asens.1205/
+
+Primary explicit Szego framework used for the standard theta formula and
+its sewing/degeneration meaning:
+
+  M. P. Tuite and A. Zuevsky, The Szego Kernel on a Sewn Riemann Surface,
+  arXiv:1002.4114.
+  https://arxiv.org/abs/1002.4114
+
+Atlas audit frame: revision a58dccfc183f59137dcac420.  No Atlas record was
+changed.
+
+Final status
+============
+
+PROVED: the bare q-fixed nontrivial elliptic spin determines a unique
+nullmode-free theta-corrected Szego kernel and the local half-integer NS
+spectrum.
+
+EXCLUDED for the fixed tau=i curve and stated cut data: exact equality with
+the original quarter Hardy kernel or the flat one-circle NS Hardy kernel.
+
+EXCLUDED: the normally twisted two-zero-mode kernel as a canonical rank-one
+quarter polarization compatible with both q and deck.
+
+OPEN: the source-derived field/state/time map into the existing paired
+bordered channel.  No new channel, degeneration, spin characteristic or
+measure was introduced.
+
+SUPERSEDED: the earlier claim that the existing h,Q,kappa group contains no
+bordered half.  It contains the Q-paired dividing halves of hQkappa and
+hQ^3kappa; only their physical field/state identification remains open.

@@ -1,0 +1,123 @@
+TFPTTWOROUTES20261111
+11. November 2026
+
+1. Dieselben Randwerte in beiden Rechenreihenfolgen
+
+Benutzt wurde die vorhandene variable R080 Kreisquelle aus dem
+unveränderten check_variable_background.py, alpha=1/4, mit den
+vorhandenen beiden geordneten zeitverschobenen Higgsproben. Es
+wurden N=4 und N=8 (288 und 576 Dimensionen) auf dieselben vier
+sichtbaren Fourierplätze -2,-1,0,1 reduziert. Der gegebene
+zustandsbezogene Besetzungsoperator ist C, die zwei Probeoperatoren
+U=exp(iA) und V=exp(iB). Die ursprüngliche zentrierte Quelle ist
+
+ chi = det(I-C+C U V) exp(-i Tr C(A+B)).
+
+Die Blockmatrix [[I-C,-CU],[V,I]] hat nach Eliminieren des
+zweiten Zeitfaktors das Schurkomplement I-C+CUV. Alternativ
+werden zuerst die verborgenen Fourierplätze beider Faktoren
+durch ein Schurkomplement integriert. Dann wird der zweite
+Zeitfaktor auf dem verbleibenden Rand beseitigt. Beide Wege
+behalten den Determinantenfaktor jeder Elimination und den
+vollen Zentrierungsfaktor. Nach der Schuridentität liefert
+beides dieselbe Randmatrix, wenn die verwendeten Pivots
+invertierbar sind. Auswertung und unabhängiger Vergleich
+mit dem ursprünglichen Leser bestanden an beiden Cutoffs.
+Wertabweichung relativ maximal 1,7e-14, effektive Matrix
+maximal 1,0e-15. Der Logarithmusjet unter Variation der ersten
+vorhandenen Higgsmarke stimmt gegen die analytische Spur bis
+5,7e-11. Dieses Resultat betrifft die geordnete, normierte
+R080 Kreisquelle in reeller Zeit, nicht die primitive OS Quelle.
+
+Der Gegenversuch behielt die Determinanten beider Diagonalblöcke
+und die Zentrierung und ließ nur die Übergänge zwischen den
+sichtbaren und verborgenen Fourierplätzen weg. Der Fehler in chi
+beträgt 0,00542230430 bei N=4 und 0,00542132230 bei N=8.
+Der Fehler im markierten Logarithmusjet beträgt 0,00054154918
+und 0,00054158056. Die Erhöhung von N vergrößert nur den
+verborgenen Raum, der sichtbare Rand bleibt gleich. Das ist
+eine persistente Abweichung in zwei Läufen, kein Nachweis eines
+nichtverschwindenden Grenzwerts für alle N.
+
+Die unabhängige reflektierte R032 Geschichte prüft auch den
+absoluten Faktor relativ zur gebundenen S Referenz, bei
+festgehaltener bedingter Feldgeschichte. Mit den beiden
+originalen Halbtransfermatrizen E,L und einem e^j Einsatz auf
+den drei rechten geladenen Leptonen ersetzt man die Blockmatrix
+durch [[I,-exp(jP_R)L],[E,I]]. Die beiden Eliminationsreihenfolgen
+für die drei behaltenen inneren Richtungen stimmen bei j=0
+und j=+/-0,01 bis 4,3e-14 überein. Die leere S relative
+Fermionamplitude samt See ist 6,088338720414977e-8; der
+unnormierte markierte Wert auf derselben Geschichte ist
+1,0032355297723582e-7. Diese zweite Probe eliminiert innere
+Fermionrichtungen, keine räumlichen Moden oder Bosonhistorien.
+Sie liefert keinen physischen absoluten Z0 Wert.
+
+Quellen: original-local-source-variable-background-20261102/
+check_variable_background.py; chat-triangulation-20261108/
+check_original_whole_two_strips_20261109.py.
+Ausführung: check_original_two_routes_20261111.py.
+
+2. Welche gemeinsame Photon und Higgsantwort festgelegt ist
+
+Die lokale Scherkarte ist die im bisherigen Originalvergleich
+gewählte inverse Metrik diag(exp(2s f), exp(-2s f),1,1),
+mit f=cos(q x4), q=2m. Verwendet wurden impulsangepasste
+Probeprofile cos(p x1) cos(m x4) für neutrales Higgsbein und
+transversales Photon A3. Das räumliche Mittel von
+p² sin²(p x1) cos²(m x4) f ist p²/8 für p,m>0.
+So ist die gemischte Variation auch nach Integration messbar.
+
+Die unabhängigen lokalen kovarianten Beiträge
+lambda_gamma R_mu_nu F^{mu rho} F^{nu}{}_rho und
+lambda_H R_mu_nu (D^mu H)^* D^nu H verschwinden auf jeder
+flachen Metrik und im leeren Feldvakuum. Sie ändern keine
+flachen Feldantworten und keine reinen Metrikantworten bei
+A=H=0. Linearisiert ist Ricci=diag(f'',-f'',0,0) und
+Skalarkrümmung null. Durch exakte symbolische Ableitungen
+sowie Impulsmittel ergibt sich nach Abzug des gemeinsamen
+p²/8 Faktors das Antwortpaar
+
+ (2 K_gamma - 2 lambda_gamma q², 4 Z_H - 2 lambda_H q²).
+
+Der Koeffizientenrang ist zwei für q>0 und null für q=0.
+Für |lambda_i|<=L ist die maximale Abweichung pro Kanal
+vom minimalen Scherwert 2 L q², und die Spannweite zwischen
+zwei Fortsetzungen höchstens 4 L q². Für die genau
+getestete lokale Klasse gewinnt die Interpolation in q² aus
+zwei positiven Impulsen den Achsenabschnitt exakt zurück.
+Drei Impulse liefern auf der Originalquelle eine zusätzliche
+Prüfung auf einen Rest außerhalb der getesteten Klasse.
+K_gamma und Z_H müssen auf derselben physischen Quelle und
+in derselben Ladungs, Feld und Zeitnormierung bestimmt sein.
+
+Das ist ein Unabhängigkeitsbeweis unter den angegebenen
+flachen Daten, der Kovarianz und der Eichinvarianz. Die zwei
+Terme sind Prüfvariationen des lokalen Funktionals; es
+wurde weder ein zulässiges vollständiges TFPT Modell mit
+diesen Termen konstruiert noch RP oder ihre Zulässigkeit
+unter der vollen Auswahl behauptet. Gleichmäßige
+Koeffizientenschranken, mögliche nichtlokale Beiträge und
+der tatsächliche gemeinsame Quellenwert bleiben offen.
+Die Scherantwort ist keine Gravitonpolmessung.
+Ausführung: check_joint_shear_20261111.py.
+Vorläufer: TFPT-Gemeinsame-Quelle-fuer-Higgs-Photon-und-Gravitation-2026-11-11.md.
+
+3. Unveränderter physischer Q Aufruf
+
+Native Domain und launch.py --mode integrate gaben Exit 2,
+ORIGINAL_SOURCE_INTEGRATION_NOT_STARTED, null Originalatome
+und fehlendes original_blocked_fiber_packet. Separat ausgeführt
+meldete evaluate_source auf [2,2,2] die fehlende Operation
+evaluate_original_full_blocked_endpoint_source und fehlende
+Z0, ZU, ZY, ZUY. Die verwendeten Kontrollen ersetzen die
+fehlende unnormierte P1 Randfamilie nicht.
+
+Nächster überprüfbarer Anschluss: dieselbe unnormierte
+Originalrandfamilie samt Leerreferenz und markierter
+Scherantwort bei drei Metrikimpulsen q, q/2, q/4 auf zwei
+tatsächlich kompatiblen räumlichen Auflösungen auswerten.
+Zeit und Raumelimination unter Mitnahme der Rückwege prüfen.
+Die Impulsextrapolation muss separat von der
+Auflösungsverfeinerung und vom Thomson/IR Feldgrenzwert
+laufen. F1 und der volle physische gemeinsame Prozess offen.

@@ -1,0 +1,227 @@
+INDEPENDENT REVIEW: CLOSED DOUBLE, ANTIPERIODIC WALLS AND NORMAL MODES
+29 October 2026
+
+Verdict
+
+The homogeneous antiperiodic Green-function formula is correct once that
+closed source and its spin/domain data are GIVEN. The local face reality
+operator C_faces=(C0,-C0) does not by itself select this global closure or
+identify those Green functions with the original Schwinger functional.
+
+In the actual finite antiperiodic scalar-wall class described by Claude,
+the proposed EXACT eigenvalues +/-p do not occur. The normal transfer gives
+an immediate exact countercheck. A near value such as 0.2501 is compatible
+with a nonzero finite-size splitting. The infinite single-wall index is a
+separate valid conditional result. It does not classify all TFPT normal
+geometries or imply a universal Yukawa/chirality obstruction.
+
+No original source or registered file is changed. No numerical run or new
+wall model was used for this review.
+
+1. Sources actually compared
+
+Claude's answer is saved in the workspace at
+
+  outputs/multi-model-source-search-20261029/
+  CLAUDE-DOPPEL-WAND-UNGEPRUEFT.txt
+
+Relevant accessibility-text items are 642-645 (new source assumption and
+asserted antiperiodicity), 648-656 (homogeneous D1), 659-670 (wall D2 and
+claimed exact modes), and 676-680/726 (claimed physical consequences).
+The attached numerical script was not independently inspected or run.
+
+Existing local source calculations reused here:
+
+  graded_boundary_functor/normal_dependent_transport/PROOF.txt, sections1-3:
+  the SAME constant Clifford chart transports the full variable-coefficient
+  Cauchy graph, with C0 K C0=(K*)^-1, not generally K^-1.
+
+  graded_boundary_functor/EVEN-REFLECTION-POSITIVITY.txt, geometric setup:
+  C_faces=(C0,-C0), F=S gamma_F and the actual product reflection.
+
+  original_insertions/PROOF.txt, section7, reusing
+  ../original-admissible-source-closure-20261025/
+  NORMAL-INDEX-TRANSPORT.txt, sections1-2:
+  the genuine spin Dirac on S2 twisted by L2=O(1) has a one-dimensional
+  positive kernel and zero negative kernel under the stated operator choice.
+
+The last normal operator is NOT the finite Yukawa matrix Phi. Its original
+operator/family identification remains subject to that existing contract.
+
+2. What D1 proves, and its first additional input
+
+Let h be the actual given selfadjoint charged boundary generator. Impose
+the homogeneous closed operator L=partial_r+h with antiperiodic condition
+on a circle of length beta=2ell. In each spectral component of h its Green
+kernel for -beta<tau=r-s<beta, tau!=0, is
+
+  G(tau)=exp(-tau h)[(1-n)1_(tau>0)-n1_(tau<0)],
+  n=(1+exp(beta h))^-1.
+
+The jump is I and G(tau+beta)=-G(tau). Functional calculus therefore gives
+
+  G(ell)=exp(-ell h)/(1+exp(-2ell h))
+         =(2 cosh(ell h))^-1.
+
+These are the familiar occupation and crossing blocks of the already
+constructed homogeneous graph. They supply a correct closed-source
+realization under the given assumptions. They do not remove the additional
+assertion, explicitly introduced by Claude, that the actual original
+Schwinger functions equal these particular closed Green functions.
+
+Local face orientation/reality and global spin holonomy are distinct data.
+For example, any linear clutch U satisfying the local compatibility
+condition C1 U=U C0 has -U satisfying the SAME condition. This homogeneous
+compatibility equation cannot select the gluing sign. A theorem with a
+specified global spin bundle, lift and clutch can select a closure, but
+those data and their induced domain must be tracked. They are not encoded
+in the displayed formula C_faces alone.
+
+An ordinary fermionic trace has antiperiodic coherent-state closure; the
+corresponding supertrace has periodic closure. Using that familiar rule
+presupposes the relevant trace/source realization. It is not a derivation
+of that realization from local face orientation. In particular an arbitrary
+periodic spin structure on a geometric double is not ruled out merely by
+naming the supertrace of a different chosen quantization.
+
+3. The smallest exact finite-wall test
+
+Use precisely the stated normal matrices
+
+  N=[[0,-1],[1,0]], Z=diag(1,-1), S=NZ=[[0,1],[1,0]].
+
+Thus N^2=-I, Z^2=S^2=I, NZ=S, ZN=-S, and S anticommutes with N and Z.
+At one actual tangential Fourier value p, take finite-dimensional constant
+Phi=Phi*, a smooth real periodic scalar sigma(r), and the scalar
+antiperiodic domain on the circle of length 2ell. Set
+
+  Q=N partial_r+Z sigma(r)Phi,
+  D=Q+pS.
+
+Internal tensor identities are implicit; Phi commutes with N,Z,S. Q and D
+are selfadjoint on H1_antiperiodic by bounded perturbation of N partial_r.
+They have compact resolvent. On H2_antiperiodic, with the corresponding
+first-derivative boundary trace, direct multiplication gives
+
+  {S,Q}=0,
+  Q^2=-partial_r^2+sigma(r)^2 Phi^2+S sigma'(r)Phi,
+  D^2=Q^2+p^2 I.                                      (1)
+
+In particular the derivative term has the PLUS sign. To test an exact
+lambda_D=+/-p it suffices to solve Q psi=0. Multiplying this equation by N
+gives
+
+  partial_r psi=sigma(r)(S Phi)psi,
+  psi(r)=exp(S Phi F(r))psi(0),
+  F(r)=integral_0^r sigma(u)du.                         (2)
+
+For the claimed odd periodic wall profile, including a profile of the
+displayed tanh(sin) type, the integral around the circle is zero. Its normal
+transfer in (2) is consequently I. The antiperiodic boundary condition
+requires that transfer to act as -I on the initial value. Hence psi(0)=0,
+and there is NO nonzero normal zero mode.
+
+In fact the conclusion is stronger within this restricted commuting class:
+for any real sigma and constant Hermitian Phi, exp(S Phi integral sigma)
+is positive definite, so it has no eigenvalue -1. No scalar antiperiodic
+normal zero mode exists even without the zero-mean premise. This statement
+does not cover noncommuting background transport or a different clutch.
+
+Compact resolvent now gives mu0=min |spec Q|>0 for each fixed such source.
+By (1), every spectral value of D satisfies
+
+  |lambda_D| >= sqrt(p^2+mu0^2) > |p|.                 (3)
+
+The anticommutation pairs Q-eigenvalues mu and -mu, and the corresponding
+two-dimensional block has D-eigenvalues +/-sqrt(p^2+mu^2). Thus exact
+eigenvalues +/-p are absent. mu0 can become very small in a separation or
+large-mass limit; (3) is not a uniform lower bound over such limits.
+
+The statement that the modes are exact at |p| and the later allowance for
+exponentially small coupling are different statements. Only the latter can
+describe approximate isolated-wall modes on this finite circle. The number
+0.2501 reported for p=0.25 already fails equality at the printed precision;
+the analytic argument, rather than that rounding, decides the exact claim.
+
+There is also an explicit inverse in this SAME zero-mean, constant-Phi,
+scalar-antiperiodic class. Write L=2ell, K=S Phi and
+Fmat(r)=exp(K integral_0^r sigma), so Fmat(L)=I. Since
+Q=N(partial_r-K sigma), variation of constants and the anti-I closure give
+
+  Q^-1(r,s)=Fmat(r)[1_(r>s)-1/2]Fmat(s)^-1(-N).         (4)
+
+The derivative of the bracket is delta(r-s); the endpoint values are
+opposites. Thus (4) maps L2 to the actual H1 antiperiodic domain and is the
+unique inverse, not just an exclusion of one trial zero mode. It requires
+exactly the fixed commuting coefficient and zero-mean premises displayed
+here; it is not an arbitrary normally varying background Green formula.
+
+4. What the infinite single-wall calculation does prove
+
+Retain constant Hermitian Phi but put r on R. Suppose sigma approaches -1
+at -infinity and +1 at +infinity. Then F(r) in (2) grows as |r| at both ends.
+For a Phi-eigenvector of eigenvalue m!=0 and an S-eigenvector of eigenvalue
+s=+/-1, a normal solution is square integrable exactly when s m<0. Thus
+
+  s=-sign(m),
+  D|_(ker Q)=p S,
+  dim ker(Q)|_(S=+1)-dim ker(Q)|_(S=-1)
+       =n_-(Phi)-n_+(Phi)=-signature(Phi).              (5)
+
+The opposite kink reverses the sign. A zero eigenvalue of Phi gives a
+constant normal solution, not a localized L2 mode on this infinite line.
+
+For finite Hermitian Phi satisfying {gamma_F,Phi}=0, gamma_F pairs each
+nonzero eigenvalue m with -m. Therefore signature(Phi)=0. Equation (5) then
+has zero net index in THIS infinite, one-dimensional, real scalar wall
+ansatz. The finite double has no exact zero mode by section3; assigning
+exact chiralities separately to its two coupled walls is not justified.
+
+5. The local deck relation is not a smooth global wall prescription
+
+The earlier exact deck calculation with S R_r does change the displayed
+Yukawa coefficient to -Phi on the reflected coordinate chart, under its
+stated common-domain and coefficient-transport assumptions. A physical
+global mass field additionally requires the actual spinor trivialization,
+clutch and internal lift. A sign in two local descriptions alone does not
+prove a gauge-independent domain wall in a globally identified bundle.
+
+If one DOES choose a single trivialization and an ordinary scalar odd
+periodic sigma, smoothness requires sigma to vanish at reflection-fixed
+seams. Extending a nonzero constant mass with the opposite sign produces a
+jump unless the coefficient is changed near the seams. The tanh(sin)
+profile supplies precisely such a new smooth interpolation. It is not
+derived by the local matrix S alone.
+
+For a specified smooth profile and a fixed closed invertible domain the
+resolvent identity delta(D^-1)=-D^-1(delta D)D^-1 is valid. It does not imply
+that finite-wall eigenvalues stay exactly at |p|. Their normal splittings
+in (3) can respond to the mass profile. Nor can the homogeneous KMS formula
+of section2 be applied to an arbitrary normally varying coefficient: the
+existing normal_dependent_transport result carries its actual ordered
+transfer and full crossing blocks without making that substitution.
+
+6. Preserve the older positive normal-index result and the target scope
+
+The existing spin normal geometry is not classified by (5). On the stated
+Spin S2=CP1, K^(1/2)=O(-1), and the actual twist L2=O(1) gives
+
+  ker D_(N,L2)^+ =H0(O(-1) tensor O(1))=H0(O)=C,
+  ker D_(N,L2)^- =H1(O)=0.
+
+This operator has index one. That topological index is not the signature
+of a finite Yukawa matrix. The old result remains a positive conditional
+TFPT normal attachment under its explicit operator and family premises.
+
+Consequently the proposed inference that unit winding generally requires
+a gamma_F-even mass of nonzero signature does not follow from the real
+one-dimensional wall calculation. Neither the finite-wall correction nor
+the odd-Phi signature identity is a no-go theorem for full P1, physical
+chirality, or other already present normal geometries.
+
+The useful retained result is precise: a given homogeneous antiperiodic
+closed source reproduces the known graph blocks, and a chosen normally
+varying source is already carried by the full fixed Clifford chart. The
+new asserted origin and exact finite-wall modes are not established by
+those facts. The finite normal-zero calculation above directly disproves
+the latter assertion in its stated antiperiodic script class.

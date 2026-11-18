@@ -1,0 +1,134 @@
+# Kandidat „Selbstinduzierte Relativquelle“ (SIR)
+
+## 1. Grundgedanke: die Logik umkehren
+
+Bisher lief die Kette so: Randdatum P1 → geometrischer Dirac-Leser D_rel → spektrale Wirkung S_prim → (später) Eichfixierung, Ghosts, Bosonfluktuationen → S_adm → Z → OS → H_adm. Dabei sind S_prim und das Fermionintegral **zwei** Objekte über **demselben** Leser. Das ist eine Doppelzählung. R112 zeigt bereits, dass die passende Fermionintegration genau einmal −log Pf M liefert.
+
+Der Kandidat kehrt die Rangfolge um. **Primär ist der fermionische Relativprozess.** S_prim ist keine zusätzliche Wirkung, sondern der Logarithmus dieses Prozesses. Der geometrische Leser ist nur seine spektrale Parametrisierung. Bosonen sind Hilfs- bzw. Kollektivfelder der Quelle und haben keine eigene klassische Dynamik. Ihre Dynamik wird von der Quelle induziert.
+
+Das passt zu drei bereits vorhandenen Befunden:
+- R078: Der Higgs ist ein Kollektivfeld, und ein klassischer positiver Weyl-H-Mix ist ausgeschlossen.
+- Die Wärmekernanalyse: kein unabhängiges R², der Skalaron läuft nur über den Higgs.
+- Die Struktur der Master-Terme als Logarithmen von Determinanten.
+
+## 2. Erste zusätzliche Annahme A1: Determinantenidentität
+
+**A1.** Für jede Hintergrundkonfiguration B und jede fermionische Quelle J_F gilt
+
+  S_prim[B; J_F] = −log [ Pf(M_χ[B] + J_F) / Pf(M_χ,ref) ].
+
+Dabei ist M_χ die schiefe Euler-Form des vorhandenen Clifford-Lesers (L = −ND = ∂_r + B, Green-Paarung, R112) auf dem kanonischen Zwei-Gesichter-Partnerdouble, mit demselben Regulator χ wie in S_prim.
+
+**Begründung, warum gerade diese Annahme:**
+- **Nicht-Doppelzählung.** Ohne A1 werden dieselben Fermionen einmal über Tr f(D) und einmal über das Integral gezählt.
+- **Sparsamkeit.** A1 entfernt den einzigen freien Funktionaldatenpunkt der Originaldefinition, die Funktion f.
+- **Struktur.** Die Originalform von S_prim (spektraler Betrag plus iπΔη/2) ist bereits die Polarzerlegung einer Determinante (Satz unten).
+
+Das letzte ist eine Strukturbeobachtung, kein Beweis. Deshalb bleibt A1 ausdrücklich eine Annahme.
+
+## 3. Herleitung I: S_prim ist genau die relative Determinante
+
+**Satz.** Für selbstadjungiertes D_rel und D_ref auf demselben Raum (mit relativer Spurklasse oder ζ-Regularisierung) gilt
+
+  −log[ Det(D_rel + iχ) / Det(D_ref + iχ) ] = Tr f(D_rel/χ) − Tr f(D_ref/χ) + (iπ/2)·Δη_χ,
+
+mit f(u) = −½·log(1 + u²) und η_χ(D) = Σ_λ (2/π)·arctan(λ/χ).
+
+**Beweis.** Es gilt log(λ + iχ) = ½·log(λ² + χ²) + i·(π/2 − arctan(λ/χ)). Die Konstanten −½·log χ² und −iπ/2 heben sich relativ weg. Der Realteil liefert f(λ/χ), der Imaginärteil +i·Σ_rel arctan(λ/χ) = (iπ/2)·Δη_χ. ∎
+
+**Eindeutigkeit.** Verlangt man die Identität für alle Spektren, legt die Variation eines einzelnen Eigenwerts f bis auf eine Konstante fest, die sich relativ weghebt, und legt die Phase eindeutig fest.
+
+**Grenzfall.** Für χ → 0 geht η_χ gegen das scharfe η, und Nullmoden zählen mit 0, wie in der APS-Konvention.
+
+**Zwei-Gesichter-Prüfung.** Pf auf dem reellen Partnerdouble ist gleich Det auf einem komplexen Gesicht. Daraus folgt genau der Koeffizient π/2. Eine einseitige Majorana-Lesart gäbe f/2 und π/4. Der Originalkoeffizient iπΔη/2 passt also strukturell zum vorhandenen kanonischen HS/GNS-Partnerdouble.
+
+## 4. Herleitung II: Der off-shell-Euleroperator ist eindeutig bestimmt
+
+R112 war bedingt: Gleiche klassische Lösungen legen den off-shell-Operator nicht fest. Unter A1 mit Fermionquellen ist das anders. Es gilt
+
+  ∂_J log Pf(M + J)|_{J=0} = ½·Tr(M^{−1}·J),
+
+also ist M^{−1} und damit M dort festgelegt, wo Pf M ≠ 0. Auf entarteten Teilen leisten das die höheren Ableitungen.
+
+S_F = ½·Ψᵀ·M·Ψ ist damit **die** Fermionwirkung der Quelle, und zwar eindeutig bis auf Feldwechsel mit Determinante 1. Die fermionischen Kontaktterme sind durch Pf festgelegt; das von R112 notierte BRST-Problem tritt hier nicht auf, weil die Fermionen exakt Gaußisch integriert werden.
+
+## 5. Zweite Annahme A2 und die Wirkung S_adm
+
+**A2 (minimale Bosonik).** Bosonische Felder tragen nur die von BRST verlangten Terme (Eichfixierung, Ghosts) und, für Kollektivfelder außerhalb der Eichung, die quadratische Normierung, die die Quelle selbst schon enthält. Ein Beispiel ist Δ·N_b in der W-Quelle aus R109. Einen klassischen Term F², eine klassische Higgs-Kinetik oder eine klassische Einstein-Hilbert-Wirkung gibt es nicht.
+
+**Begründung:** Diese Operatoren erzeugt −log Pf bereits (Abschnitt 6). Ein zusätzlicher klassischer Term würde denselben Operator doppelt zählen.
+
+Damit ist
+
+  **S_adm[B, Ψ] = ½·Ψᵀ·M_χ[B]·Ψ + S_BRST[B] + S_coll[B],**
+
+  **Z_phys[J] = ∫_{H_adm} DB·Dc·Dc̄ · e^{−S_BRST − S_coll + ⟨J_B, B⟩} · Pf_P(M_χ[B] + J_F)/Pf(M_χ,ref).**
+
+**Projektion.** Für den Zentrumsprojektor P_sing = (I + Z_c + Z_c²)/3 gilt Tr(Z_c^k·Γ(R)) = Det(1 + z^k·R). Die projizierte Quelle ist deshalb **exakt das Mittel dreier getwisteter Relativdeterminanten**:
+
+  Pf_P = ⅓·Σ_k Det_rel(D + iχ; z^k).
+
+S_prim ist davon nur der ungetwistete Summand. −log Z^P_rel und S_prim sind also verschiedene Stufen, wie es die Originale verlangen.
+
+## 6. Herleitung III: die induzierte bosonische Dynamik
+
+Mit ζ-Regularisierung hat −½·log det_ζ(D² + χ²) eine Wärmekern-Entwicklung, deren Koeffizienten **nur** χ und die ζ-Skala μ enthalten. Die Terme a₄ kommen mit einem gemeinsamen Faktor log(χ²/μ²), die Terme a₂ mit χ²·(log(χ²/μ²) − 1). Die Momente f₀, f₂, f₄ der üblichen spektralen Wirkung sind damit keine freien Daten mehr.
+
+Mit den vorhandenen Koeffizienten (a₂H = −A·u/(4π²), a₄H = [A·kin + B·u² + 4C·u]/(8π²) + A·R·u/(48π²), mit A = 4Y₂, B = 4Y₄, C ≥ 0) folgt:
+
+- **Higgs.** Kinetik und Quartik tragen denselben Logarithmus. Nach kanonischer Normierung hängt das Verhältnis Quartik/Kinetik² nur noch von B/A² und vom Logarithmus ab. Eliminiert man den Logarithmus über die ebenfalls induzierte Eichkopplung, wird das Verhältnis λ/g² eine reine Spurrelation in den gegebenen Yukawas. Der Massenterm ∝ −A·χ²·(1 − L) legt das Verhältnis v²/χ² als Funktion von L und A/B fest, ohne freie Zahl.
+- **Eichkopplungen.** Es gilt 1/g_i² ∝ Σ T_i(R)·L. Vollständige SO(10)- bzw. E8-kompilierte Familien haben gleiche Dynkin-Spuren. Daraus folgt eine Vereinigungsrelation **an der Induktionsskala**. Hier greift der E8- und Trägerinhalt direkt in die Dynamik ein.
+- **Gravitation.** Das gravitative a₄ ist N·(11E₄ − 18W²), ohne unabhängiges R². Das ist genau der frühere Befund. SIR **erklärt** ihn. Ein unabhängiges R², etwa der v475-Skalaron, müsste dann aus Γ_vac stammen und selbst eine Determinante bzw. Entropie derselben Quelle sein. Das ist ein Prüfpunkt.
+
+## 7. Auswahl der Quelle: Reduktion aus Lokalität und Zeit
+
+Die Originale verlangen, dass A und A* Ran P_adm erhalten. Damit die Zeitentwicklung dieses Netz in sich abbildet, muss α_t(A_adm) ⊆ A_adm gelten. Wirkt A_adm irreduzibel auf Ran P_adm, ist das äquivalent zu
+
+  **Q_adm · H_SIR · P_adm = 0,**
+
+d.h. P_adm reduziert den OS-Generator der induzierten Quelle. Das ist **keine neue Annahme**, sondern die ursprüngliche Lokalitätsforderung, angewandt auf zeitverschobene Observablen.
+
+**Folgerung für H_tr,pos.**
+- Reduziert P_adm den Generator, dann ist H_adm = P·H_SIR·P, und H_tr,pos := H_adm − H_par − Σ K ist **numerisch durch die Quelle festgelegt**.
+- Reduziert P_adm nicht, dann ist der einzige statische Generator auf Ran P das Schur-Komplement H_eff(E₀) = P(H − E₀)P − PHQ·[Q(H − E₀)Q]^{−1}·QHP. Für es gilt variationell H_eff(E₀) ≥ 0, mit Gleichheit genau auf der Perron-Linie. Das ist **exakt** die Positivitätsstruktur des Parent-Ansatzes. Die Dynamik trägt dann aber Rückkehrgedächtnis, wie in R113, und wird von der Lokalität ausgeschlossen.
+
+Damit erklärt SIR, **warum** der Parent-Ansatz positiv und auf der Perron-Linie null ist, und **wählt** die Quelle durch die Reduktionsgleichung aus.
+
+**Das gemeinsame physikalische Spektralproblem** lautet: Gesucht ist ξ* = (α, χ_geo, δ_ph, ρ_vac) zusammen mit den Kollektivfeldern B*, so dass
+1. die Gap-Gleichungen δΓ_P/δB = 0 der induzierten Quelle gelten, also die NJL-artige Gleichung H/G = Σ_f n_f·Tr[Y_f†·S_f(H)];
+2. die Reduktion Q·H·P = 0 gilt;
+3. der Perron-Zustand von P·H·P eindeutig und RP-positiv ist.
+
+Die Unbekannten sind χ/μ, die Kollektivnormierungen und der Hintergrund. Über die Lösbarkeit behaupte ich nichts.
+
+## 8. Wo SIR erstmals mit Originaldaten etwas festlegt
+
+**(F1) Die Definition von S_prim (Boundary001:302–316).** SIR verlangt f(u) = −½·log(1 + u²) und das mit **demselben** χ geglättete η_χ. Ist in den Originalen eine Abschneidefunktion mit endlichen Momenten vorgegeben, ist SIR widerlegt: Der Unterschied Tr f₁ − Tr f₂ ist im Allgemeinen nicht rein lokal, also kein bloßer Gegenterm.
+
+**(F2) Θ und Ladung.** Antikommutiert Q_Θ mit D_rel, dann bildet es Det(D + iχ) auf ein Objekt mit gespiegelter Phase ab, also η_χ ↦ −η_χ. Reduktion durch P_Θ erzwingt dann **Δη_χ = 0** auf Ran P_adm.
+
+Nachgerechnet am Original: D_a = −i∂ + a hat das Spektrum n + a. Das Spektrum von D_{1−a} ist exakt das Negative davon. Also ist η_χ(D_{1−a}) = −η_χ(D_a) für **jedes** χ, und das Viertelpaar a = 1/4, 3/4 hebt sich exakt auf. Das ist konsistent damit, dass im Original das Gesamt-η null ist. SIR sagt zusätzlich voraus, dass eine ungepaarte einzelne Viertelkomponente auf Ran P_adm ausgeschlossen ist.
+
+**(F3) Windung und Zeit.** Unter der P1-Einheitswindung ändert sich η_χ stetig um den Spektralfluss mal 2. Die Quelle bekommt dann das Vorzeichen (−1)^{SF}, wobei SF pro Dirac-Gesicht zu zählen ist. Das ist mit der originalen Orientierung bzw. dem Deck-Vorzeichen zu vergleichen. Eine Identifikation mit c₃ behaupte ich nicht; die Normierungsfrage k = c₃/2 bleibt beim Original.
+
+**(F4) Symmetrie von P_sing.** Integriert man ein Eichfeld ohne Kinetik über die volle Haar-Holonomie, entsteht der **volle** Singulettprojektor. Das Original hat nur den Zentrumsprojektor (Trialität null). Zwei Ausgänge sind möglich:
+- Ran P_adm im Original enthält Zustände mit Trialität 0, die keine Singuletts sind. Dann sind die Gluonen nicht rein hilfsweise, und A2 ist für SU(3) widerlegt.
+- Andernfalls ist P_sing der korrekte Rest einer Holonomieintegration über das Zentrum.
+
+**(F5) Ultralokalität des Bosonbeins.** Unter A2 muss das bosonische Randbein ⟨Ω_F|Q_t[1]|Ω_F⟩ = e^{−tH_B} aus R113 auf der nackten Ebene **ohne räumliches Hopping** sein. Die gesamte räumliche Bosondynamik muss aus Fermionschleifen stammen. Das ist direkt an den vorhandenen R113-Daten prüfbar.
+
+## 9. Stand
+
+SIR führt **genau zwei** neue Annahmen ein: A1 (Determinantenidentität) und A2 (minimale Bosonik). Beide sind durch Nicht-Doppelzählung begründet.
+
+Aus ihnen folgen:
+- die eindeutige Form von S_prim,
+- der eindeutige off-shell-Fermionoperator,
+- S_adm,
+- die projizierte Quelle als Mittel getwisteter Determinanten,
+- die induzierten Higgs-, Eich- und Gravitationsterme ohne freie Momente,
+- die Positivitätsstruktur von H_tr,pos sowie die Auswahl der Quelle über die Reduktionsgleichung, die aus der Originallokalität kommt.
+
+**Nicht hergeleitet** sind E8, die Flavor-Struktur und die Clocks. Sie gehen als Inhalt des Lesers ein, prägen aber über Spurrelationen die induzierte Dynamik. Ebenfalls nicht berechnet sind die Werte von χ/μ und die Lösung des Spektralproblems.
+
+Die schärfsten unmittelbaren Prüfungen sind F1 und F5.

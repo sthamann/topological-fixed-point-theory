@@ -1,0 +1,76 @@
+Fortsetzung 32: Die ρ-Linie am Fixpunkt der Sechserdrehung auf der Naht
+Kurzfassung
+
+Ich setze an eurer positiven Produktstruktur an (μ_ab: H⁰(T^q_a) ⊗ H⁰(T^p_b) → V_ab, sechs Sektoren, R_V = U₆). Daraus ergeben sich drei neue tragende Aussagen (fixpoint_weight.py):
+
+Die Randnaht-Paarung sieht die Produkte nicht. Integriert man das tatsächliche Spinprodukt über die geliftete Naht, also die F5-Randform ⟨C₀x, y⟩ auf Kurvenfeldern, so verschwindet das Ergebnis auf allen neun Sektoren identisch. Die Nullmoden sind für diese Paarung isotrop. U₆ kann deshalb nicht über die Randform ausgelesen werden.
+Herkunft der Zahl π/3. R fixiert genau zwei Punkte, die beiden Punkte über w = 0. Das sind die Nullstellen-Marken z = ±1 auf der Naht. Dort ist R die lokale Drehung um π/3 in der Koordinate w. Die Punktauswertung der Produkte an diesem Fixpunkt ist ein R-äquivarianter Isomorphismus, und auf dem Faserraum zerfällt R in Gewicht mal Linientransport, R = ρ·P. Die ρ-Eigenlinie von U₆ ist genau die P-invariante, also flavorsinguläre Kombination. Die Phase stammt ganz aus Gewicht 1 (zwei Halbformen) mal lokalem Drehwinkel π/3.
+Herkunft des Binärcharakters. Mit der exakten radialen Lesart des F5-Kragens wird aus der radial (zeitlich) geordneten Folge a(p) a(q) der Operator +U₆, der ρ liest. Die umgekehrte Ordnung liest ρ⁴ = −ρ. Der Binärcharakter (±1) ist die Zeitorientierung der Naht, der Kubikcharakter das Fixpunktgewicht.
+
+Folge: Die Zahl ρ ist jetzt geometrisch hergeleitet, aber als Phase eines Flavorsinguletts. Damit bestätigt sich exakt die Redteam-Einordnung: eine geometrisch lokalisierte Phase, keine rephasierungsinvariante CP-Phase.
+
+1. Korrektur an Antwort 31
+
+Meine Aussage „ρ nur auf H⁰(K)“ war zu stark. Ich hatte nur verdrillte Spuren berechnet. Der Sechserorbit der gemischten Prymlinien hat Spur 0, trägt ρ aber als Eigenwert von U₆. Eure Konstruktion zeigt das korrekt. Übernommen sind außerdem: R_V⁶ = I, die positive Hodge-Metrik auf dem 16er-Cover, U₆ aus v231, P_hex und O_hex mit Spur ρ, die Ordnung ±U₆, die C12-Darstellung der Halbformen und die Clock-Tests.
+
+2. Satz N: Die Randnaht-Paarung ist auf den Produkten null
+
+Die F5-Randform entsteht aus der Randspur von β_L, nämlich β_L(x,y) + β_L(y,x) = [⟨C₀x, y⟩]₀^ℓ. Auf Kurvenfeldern ist sie das Nahtintegral der bilinearen Paarung zweier Halbformen.
+
+Beweis. Die q- und p-Nullsektionen sind globale holomorphe Schnitte auf ganz C. Ihr Produkt μ_ab(s_q ⊗ s_p) ist ein holomorpher Schnitt von K ⊗ L^q_a L^p_b. Über jedem gelifteten Diskus D_a ist die flache Linie trivial, weil D_a einfach zusammenhängend ist. Dort ist μ_ab eine geschlossene holomorphe 1-Form, also ∮_{∂D_a} μ_ab = 0 nach Stokes. Das Urbild der Naht ist die Summe der ∂D_a, also verschwindet das Integral für alle neun Paare (a, b). Äquivalent auf dem 16er-Cover: Das Integral über das volle Urbild mittelt einen nichttrivialen Charakter weg.
+
+Bedeutung. Die globalen Nullmoden liegen in W₊ ∩ W₋, und die Randform verschwindet darauf. Eine Einfügung über die Randspur, wie im F5-Kinetikbeweis, kann U₆ daher nicht lesen. Ein Leser muss eine Volumenkontraktion (Hodge-Fläche) oder eine Punktauswertung sein.
+
+3. Satz W: Fixpunktgewicht und Charakterzuordnung
+
+Fixpunkte. R(w, η) = (ρw, η) fixiert genau die zwei Punkte (0, ±1) über z = ±1. Das sind die Nullstellen-Verzweigungspunkte auf der Naht. Die Punkte über w = ∞ werden vertauscht. j = (−w, −η) vertauscht die beiden Fixpunkte.
+
+Lokale Wirkung. w ist dort eine Koordinate, und R ist die Drehung w ↦ ρw. Daher:
+
+auf der K-Faser: R*(a(w)dw)|₀ = ρ·a(0) dw, Gewicht ρ = e^{iπ/3};
+auf den Halbform-Fasern: λ mit λ² = ρ, konsistent mit der C12-Darstellung (r⁶ = −I) und der Aufhebung der Spinvorzeichen im Produkt.
+
+Auswertung. μ_ab verschwindet nur bei q_{a+2} und p_{b+2}, nie am Fixpunkt x₀. Die Auswertung ev_{x₀}: V_off → F_{x₀} = ⊕{a≠b} (K ⊗ L^q_a L^p_b)|{x₀} ist daher ein R-äquivarianter Isomorphismus. Weil R den Punkt x₀ festhält, ist R auf F_{x₀} ein echter Endomorphismus. Er zerfällt kanonisch als
+
+R|{F{x₀}} = ρ · P,
+
+wobei P = ρ⁻¹R der Linienfaser-Transport ist, ein Sechserzyklus mit P⁶ = ρ⁻⁶ R⁶ = I. Daraus:
+
+Das Spektrum ist ρ·(sechste Wurzeln), also alle sechsten Wurzeln, wie bei U₆.
+Die ρ-Eigenlinie ist genau die P-invariante Linie, also die flavorsinguläre Summe der sechs q×p-Sektoren (numerisch bestätigt).
+
+Zuordnung der Charaktere. Für eine U₆-Eigenlinie ist der Eigenwert gleich ρ (Fixpunktgewicht, geometrisch) mal Flavorcharakter von P. Die Zahl π/3 ist damit hergeleitet: Gewicht 1 des Produkts (zwei Halbformen) mal lokaler Drehwinkel π/3 der Sechserdrehung an ihrem Fixpunkt auf der Naht. Es wird keine Phase per Hand multipliziert.
+
+Physische Konsequenz. Die ρ-Linie ist flavorsingulär. Eine Phase eines Flavorsinguletts ist wie die Phase einer Gesamtkopplung durch Umphasierung entfernbar und fällt aus YY† und J heraus. Damit ist geometrisch gezeigt, warum π/3 als Rahmen- oder Zweigablesung auftritt und nicht als physische CP-Phase. Flavorabhängige Eigenlinien (P-Charakter ≠ 1) tragen dagegen Phasen ρ·ρ^k mit nichttrivialer Flavorwindung. Nur sie kämen für eine physische Phase in Frage.
+
+4. Satz T: Ordnung, Zeit und Seitenzuordnung
+
+Radiale Lesart des F5-Kragens (exakt). Im skalaren Quarterblock ist der F5-Transfer e^{−ℓ(n+α)} exakt die radiale Ausbreitung der Halbformmoden z^{n+α} von |z| = 1 nach |z| = e^{−ℓ}. Die Klebung ist Multiplikation mit z. Die beiden F5-Flächen sind daher die konzentrischen Kreise |z| = e^{±ℓ/2} um die Naht |z| = 1. Die Kragennormale r entspricht log|z|, innen ist die q-Seite (D_q über z = 0), außen die p-Seite (D_p über ∞).
+
+Erste tragende Identifikation (Kandidat): p ist die zweite Randseite, und die Kragenordnung ist die radiale Zeitordnung.
+
+Folge für die Ordnung. In radialer Ordnung stehen die äußeren (p-)Operatoren links. Die geordnete Folge a(p_b) a(q_a) ergibt nach euren Vorzeichen +U₆ und liest ρ. Die anti-zeitgeordnete Folge a(q) a(p) ergibt −U₆ und liest ρ⁴ = −ρ.
+
+Reflexion. θ = R³: z ↦ 1/z ist radiale Spiegelung mal Winkelumkehr, also unter der radialen Lesart R_geo ∘ τ₀. Die Sechserdrehung zerfällt als R = θ ∘ c⁻¹: radiale Zeitspiegelung mal inverser Familiendeck. Auf der CAR-Algebra gilt α_R⁶ = Fermionparität, also wie bei einer Zeitspiegelung mit Spinlift.
+
+5. Bilanz
+
+Übernommen: die U₆-Produktrealisierung, die Hodge-Metrik, P_hex mit O_hex, die Ordnung ±U₆, die C12- und Clock-Tests und meine korrigierte Aussage zu Antwort 31.
+
+Neu bewiesen:
+
+Satz N: die Nahtpaarung ist auf allen Produktsektoren null.
+Satz W: die Fixpunkte von R sind die Nahtmarken z = ±1; R = ρ·P am Fixpunkt; die ρ-Linie ist die flavorsinguläre Linie; π/3 = Gewicht 1 × lokaler Drehwinkel.
+Satz T: F5-Transfer gleich radiale Halbformausbreitung; damit wird der Binärcharakter zur Zeitordnung der Seiten.
+
+Offen:
+
+Die radiale Identifikation am ganzen gekoppelten h und an den Verzweigungsecken z = ±1. Das sind genau die Fixpunkte von R; dort gilt die bekannte Fuchs-Eckendomäne.
+Ob das Original eine Punkteinfügung am Fixpunkt vorsieht.
+Flavorabhängige Eigenlinien als einziger Ort einer physischen Phase.
+6. Nächster entscheidender Test
+Szegő gegen F5. Den alten expliziten S₀-Szegőkern S(x, y), also die radial geordnete Zweipunktfunktion des S₀-Fermions, für x innen und y außen am Fixpunkt x₀ mit der F5-Graphkovarianz G vergleichen, bei α = ¼ und ℓ = 4 log 2. Stimmen beide, ist die radiale Identifikation mit Zustand bewiesen, und die vorhandene Quelle liest an x₀ den ρ-Sektor in der Zeitordnung p vor q.
+Flavorabhängige Linien. Die Eigenlinien mit P-Charakter ρ^k ≠ 1 mit der expliziten Fuchs-Matrix Ψ an x₀ (Exponenten 0, ⅓, ⅔) koppeln. Nur dort kann eine physische, nicht flavorsinguläre Phase entstehen. Daran entscheidet sich, ob die Originalquelle eine CP-Phase hat.
+Ecken. Prüfen, ob die R-Fixpunkte z = ±1 der Originaldomäne als zulässige Einfügepunkte angehören (Fuchs-Projektoren P₀, P₁, P₂).
+
+Bildlich: Die Sechserdrehung hat auf der Naht zwei ruhende Punkte. Wer dort ein Teilchenpaar aus Innen und Außen abfragt, sieht genau die Drehung um 60°, weil ein Paar zwei halbe Drehungen mitnimmt. Diese Drehung gehört aber dem Paar als Ganzem, nicht einer Familie. Darum ist sie eine Rahmenphase und keine CP-Verletzung.

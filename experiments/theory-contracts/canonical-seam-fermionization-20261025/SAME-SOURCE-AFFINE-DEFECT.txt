@@ -1,0 +1,565 @@
+SAME SOURCE AFFINE DEFECT ON ALL FOUR D8 MODULES
+================================================
+
+Date: 2026-10-25
+
+Verdict
+-------
+
+PROVED, for the exact mathematical object specified below:
+
+The original cyclic CAR operator W1 extends from the integer charge Fock
+space to a unitary finite-energy operator W_ext on the standard abelian
+intertwining algebra formed by all four D8 Heisenberg modules.  It maps the
+E8 vacuum representation 0+s to the
+corresponding g-twisted representation v+c, preserves the full fermionic NS
+sum 0+v, preserves the Ramond sum s+c, and satisfies the original charge and
+quarter-time Ward identities on integer and half-integer charges.  Its
+restriction to the NS space is the old ordered-CAR W1, including its Klein
+phases.  No global odd Phi map and no identification with the separately
+marked compiler D8 are used.
+
+This closes the mathematical affine W1 defect construction in the actual
+fold frame D8_F=M(D8_CAR), uniquely up to intertwiner basis.  It does not
+select that four-module extension from primitive P1 data, does not identify
+the geometric Cartan operator with the distinct standard defect lift on the
+twisted module, and does not identify the resulting defect with a local 3+1
+dimensional source.
+
+
+1. Fixed inputs and exact object
+--------------------------------
+
+Let
+
+  D8 = { n in Z^8 : Q(n)=sum_j n_j is even },
+  s  = (1/2,...,1/2),
+  v  = e0 + D8,
+  c  = e0+s+D8.
+
+Every charge in D8* has a unique expression
+
+  p = n + c0 s,       n in Z^8, c0 in {0,1}.
+
+The four D8 sectors are therefore
+
+  0 : c0=0 and Q(n) even,
+  v : c0=0 and Q(n) odd,
+  s : c0=1 and Q(n) even,
+  c : c0=1 and Q(n) odd.
+
+The finite-energy core and its Hilbert completion are
+
+  H_fin = direct_sum_(mu=0,v,s,c)
+          M(1)_fin tensor C[D8+mu],
+
+  H_*   = completion(H_fin).
+
+Here M(1) is the rank-eight Heisenberg Fock representation with the standard
+positive Hermitian form.  This is one source Fock system with four charge
+sectors.  It is not an eight-copy construction.
+
+The full sum H_* is the standard abelian intertwining algebra attached to
+the discriminant form of D8.  It is not an ordinary lattice VOA because D8*
+is not integral.  Its discriminant quadratic form is
+
+  q(0)=0, q(v)=1/2, q(s)=q(c)=1 modulo Z.
+
+This nontrivial quadratic form supplies the abelian 3-cocycle and the
+fractional monodromy.  The two local subextensions used here are
+
+  H_0+H_s, the bosonic E8 lattice VOA,
+  H_0+H_v, the odd-lattice vertex superalgebra or complex CAR NS theory.
+
+The E8 vacuum representation is the even extension
+
+  V_E8 = H_0 direct_sum H_s.
+
+The integer fermionic NS space and the Ramond space are
+
+  H_NS = H_0 direct_sum H_v,
+  H_R  = H_s direct_sum H_c.
+
+The inputs R, e0, M and delta are the already fixed source fold, charge carry,
+source-to-target dictionary and quarter-time vector.  No new Weyl rotation is
+chosen here.
+
+
+2. Exact common charge cocycle
+------------------------------
+
+On Z^8 retain the original ordered-CAR cocycle
+
+  eps_Z(n,m) = (-1)^(sum_(i>j) n_i m_j).
+
+Adjoin X=E_s to its charge algebra with relations
+
+  X E_n X^(-1) = i^Q(n) E_n,
+  X^2            = -E_1,
+
+where 1=(1,...,1)=2s.  These relations are consistent because conjugation by
+X^2 gives (-1)^Q(n), and conjugation by E_1 in the ordered-CAR charge algebra
+gives the same sign.
+
+Use the section
+
+  E_(n+c0 s) = E_n X^c0.
+
+Its normalized cocycle is
+
+  eps_*(n+c0 s,m+d0 s)
+    = i^(c0 Q(m)) eps_Z(n,m)                         if c0 d0=0,
+
+  eps_*(n+s,m+s)
+    = -i^Q(m) eps_Z(n,m) eps_Z(n+m,1).
+
+Associativity of this charge multiplication follows directly from the
+presented associative charge algebra.  The checker also verifies its
+2-cocycle identity on a generating set and all generator products.  This
+ordinary charge 2-cocycle does not trivialize the abelian 3-cocycle of the
+four-sector intertwining algebra.  The latter remains fixed by q and is the
+categorical source of the fractional field monodromy.
+
+Two restrictions are exact, rather than merely cohomologous:
+
+  (a) On Z^8, eps_* is eps_Z.
+
+  (b) If Q(n) and Q(m) are even, eps_* equals the previously fixed E8
+      cocycle
+
+      eps_E8(n+c0 s,m+d0 s)
+        = (-1)^(c0 Q(m)/2+c0 d0)
+          eps_Z(n,m) eps_Z(n+m,c0 d0 1).
+
+Thus the construction simultaneously retains the original CAR Klein factors
+and the already fixed even E8 lattice cocycle.  Fields from the E8 spinor
+coset and the odd integer vector coset are not thereby made mutually ordinary
+local.  Their joint use belongs to the sector-changing or twisted
+intertwining system described below.
+
+
+3. The cyclic lift and its forced mu4 phase
+-------------------------------------------
+
+Let R be the cyclic permutation
+
+  R(n0,n1,...,n7)=(n7,n0,...,n6).
+
+The exact ordered-CAR phase is
+
+  eta_R(n)=(-1)^(n7 sum_(j<7) n_j).
+
+It obeys
+
+  eta_R(n+m) eps_Z(n,m)
+   = eta_R(n) eta_R(m) eps_Z(Rn,Rm).
+
+To extend the lift to X one must set
+
+  R_hat X R_hat^(-1) = kappa X.
+
+Since eta_R(1)=-1 and X^2=-E_1, covariance of X^2 forces
+
+  kappa^2=-1,
+  kappa in {+i,-i}.
+
+These are the two mu4 representatives of the cyclic lift on the Ramond
+sectors.  They will be shown below to differ only by an intertwiner-basis
+gauge.  They do not constitute an additional physical choice.  This basis
+gauge must still be distinguished from the two genuinely different
+operators obtained by choosing the geometric Cartan lift or the standard
+g-defect lift, and from any finite compiler Arf word.
+
+For either kappa define
+
+  eta_*(n+c0 s)=eta_R(n) kappa^c0.
+
+Then
+
+  eta_*(p+q) eps_*(p,q)
+   = eta_*(p) eta_*(q) eps_*(Rp,Rq)
+
+for all p,q in D8*.  Hence R_hat is a unitary cocycle-compatible lift on the
+whole four-sector charge algebra.
+
+Define the diagonal basis change
+
+  U_tau |n+c0 s> = (-1)^(c0 Q(n)) |n+c0 s>.
+
+It is pointwise the identity on both already supplied local subtheories:
+
+  * c0=0 on the whole CAR NS theory 0+v;
+  * c0=1 and Q(n) even on the E8 spinor sector s, so it is also the identity
+    on the whole E8 vacuum theory 0+s.
+
+Since T1 changes Q(n) by one,
+
+  U_tau W_kappa U_tau^* = W_(-kappa).
+
+Thus kappa=+i and kappa=-i are isomorphic descriptions of the same extension
+up to the normalization of the remaining v-to-c intertwiner.  In particular,
+they cannot be counted as an independent physical phase after intertwiner
+bases are quotiented out.
+
+For the marked spinor intertwiner X=E_s, conjugation by U_tau changes the
+sign only on the v<->c channel.  Therefore every mixed word is unchanged if
+W and X are transported together.  If X is instead held fixed as an extra
+marking, then
+
+  W_kappa X W_kappa^* X^* = -i kappa I.
+
+This scalar distinguishes the two representatives only relative to that
+additional fixed action of X.  It is not an invariant of the unmarked
+four-sector extension.
+
+
+4. Explicit affine defect operator
+----------------------------------
+
+Define the affine charge map
+
+  T1(p)=Rp+e0.
+
+On the finite-energy basis set
+
+  W_ext [ a1(-m1)...ar(-mr) |n+c0 s> ]
+
+    = eta_R(n) kappa^c0
+      (Ra1)(-m1)...(Rar)(-mr)
+      |Rn+e0+c0 s>.
+
+The translation factor eps_*(e0,Rp) is identically one in this chosen ordered
+section, so this is exactly E_e0 R_hat, not an abbreviation which drops a
+Klein phase.
+
+The map of charge labels is bijective, R is orthogonal on every oscillator
+mode, and all displayed coefficients have absolute value one.  W_ext is
+therefore an isometry of H_fin with dense inverse, and extends uniquely to a
+unitary on H_*.
+
+For c0=0 the formula is precisely the old ordered-CAR W1 action.  In
+particular it retains the actual CAR phase eta_R(n); the extension has not
+replaced W1 by a charge-only permutation.
+
+The sector action is
+
+  0 <-> v,
+  s <-> c.
+
+Consequently
+
+  0+s  -> v+c,     E8 vacuum representation to g-twisted representation,
+  0+v  -> 0+v,     fermionic NS sum preserved,
+  s+c  -> s+c.     Ramond sum preserved.
+
+Eight iterations give the actual integer carry, including its cocycle action:
+
+  W_ext^8 = E_1.
+
+On a charge state |p>, the right hand side acts as
+
+  E_1 |p> = eps_*(1,p) |p+1>.
+
+This is an infinite-lattice statement.  It is not a replacement by a finite
+eight-state register.
+
+
+5. Exact charge and quarter-time Ward identities
+------------------------------------------------
+
+Let
+
+  delta_k=(k+alpha)/8-1/2,
+  K_delta=N+p^2/2+delta.p,
+  H=8 K_delta,
+
+with alpha=1/4 or alpha=3/4.  A direct polynomial calculation gives, for
+every real p and hence for every integer or half-integer charge,
+
+  K_delta(Rp+e0)-K_delta(p)=(Q(p)+alpha)/8.
+
+Therefore on H_fin,
+
+  W_ext^* Q W_ext = Q+1,
+  W_ext^* K_delta W_ext = K_delta+(Q+alpha)/8,
+  W_ext^* H W_ext = H+Q+alpha.
+
+The half-charge sectors require no new energy prescription.  As the smallest
+quarter-state check, for
+
+  p_*=(1,1,1,1,-1,-1,-1,-1)/2
+
+one has
+
+  K_delta(p_*)=0,
+  K_delta(T1 p_*)=alpha/8,
+
+exactly as for p=0 and T1p=e0.  Thus the extra E8 half-charge zero-energy line
+is transported by the same Ward law.  This calculation does not decide which
+zero-energy line the physical state selects.
+
+
+6. Vertex transport and the twist
+----------------------------------
+
+For beta=m+d0 s define
+
+  lambda_kappa(beta)=eta_R(m) kappa^d0,
+  C_*(u,v)=eps_*(u,v)/eps_*(v,u).
+
+On the common algebraic domain, conjugation of the lattice exponential field
+is
+
+  W_ext Y(e^beta,z) W_ext^(-1)
+
+    = lambda_kappa(beta) C_*(e0,R beta)
+      z^(-(R beta).e0) Y(e^(R beta),z),
+
+with the Heisenberg oscillators transported by R.  If gamma=R beta, the
+monomial is exactly z^(-gamma.e0).
+
+For D8 roots the exponent is integral.  For E8 spinor roots it is
+half-integral.  The latter branch is the required sector change from 0+s to
+v+c.  It is the lattice realization of the Li Delta(-e0,z) twist.  Reading
+this formula as an ordinary local automorphism of V_E8 would erase the
+half-integral monodromy and is false.
+
+The construction is therefore a global defect or representation
+intertwiner.  It is not itself a point-local vertex insertion.  On a simply
+connected punctured chart the chosen branch has the standard formal twisted
+locality.  If a smeared field has independently been constructed, multiplying
+its test function by the displayed analytic monomial preserves support.
+Li's formal Delta theorem alone does not prove strong convergence on a common
+operator core or produce a bounded localized conformal-net defect.
+
+
+7. Two different lifts of the same untwisted E8 character
+---------------------------------------------------------
+
+There are two relevant involutions on the four sector labels.
+
+The direct Cartan lift is
+
+  G_Cartan(n+c0 s)=(-1)^c0.
+
+In sector order (0,v,s,c) its signs are
+
+  (+,+,-,-).
+
+It equals exp(2 pi i e0.p).  It is +I on the entire integer NS charge space
+0+v and commutes with W_ext.  Therefore the original retained Cartan
+four-word stays
+
+  W1^* U_k W1 U_k^* = +I.
+
+The standard spin-sector lift is
+
+  G_std(n+c0 s)=(-1)^(Q(n)+c0).
+
+Its signs are
+
+  (+,-,-,+)
+
+in sector order (0,v,s,c), equivalently (0+,s-,v-,c+) in the order often used
+for the four D8 modules.  It anticommutes with W_ext, so its corresponding
+four-word is -I.
+
+This is the lift convention encoded by equation (5.3) of Smith, Lin,
+Tachikawa and Zheng:
+
+  Z[E8]^a   = chi_0-chi_s,
+  Z[E8]_a^a = chi_c-chi_v.
+
+The accompanying fermionization convention also fixes a spin invertible
+theory and an Arf sign.  Those are extra defect-junction data; they are not
+contained in the original NS winding operator.
+
+Both lifts restrict to the same E8 g-character on the untwisted E8 vacuum
+representation 0+s: sector 0 has sign + and sector s has sign -.  They differ
+by the discriminant or Klein character
+
+  chi_v=(+,-,+,-),
+
+which is invisible on the choice of untwisted E8 character but changes the
+lift on the twisted module v+c.  Hence the E8 character alone does not fix the
+twisted-module phase.  The original Cartan word and the standard spin-sector
+word are both mathematically valid, but they are different operators once W1
+and the source Klein factors are fixed.
+
+The following data must therefore remain typed separately:
+
+  1. eta_R, the fixed ordered-CAR Klein lift;
+  2. kappa=+i or -i, the two gauge-equivalent mu4 representatives of the
+     cyclic R lift on X=E_s;
+  3. chi_v, the Z2 choice of lift on the g-twisted E8 module;
+  4. any finite compiler Gaussian or Arf word.
+
+The kappa representatives are identified by U_tau, while no equality between
+the remaining typed operators follows from the present construction.  In
+particular the old Cartan +I word must not be replaced by the -I word of
+G_std merely because both extend the same untwisted E8 character.
+
+
+8. Transport to the actual fixed M frame
+----------------------------------------
+
+The source result is transported by the already fixed orthogonal dictionary
+M.  Set
+
+  D8_F = M(D8_CAR),
+  R_F  = M R M^(-1),
+  h_F  = M e0
+       = (1/2,1/2,0,0,0,1/2,1/2,0),
+  d    = M delta.
+
+Then the actual target-frame affine map is
+
+  q -> R_F q+h_F,
+
+and the transported charge is
+
+  Q_F(q)=(M 1).q.
+
+For
+
+  K_F(q)=N+q^2/2+d.q
+
+one has identically
+
+  K_F(R_F q+h_F)-K_F(q)=(Q_F(q)+alpha)/8.
+
+All charge, oscillator, cocycle and sector words above transport together by
+M.  This is a simultaneous coordinate transport of the actual source frame.
+It does not assert
+
+  D8_F = canonical compiler D8.
+
+The canonical compiler D8 remains a distinct marked audit frame.  Its
+previously proved fixed-frame inequality with D8_F is neither used nor turned
+into a physical obstruction here.
+
+
+9. What is closed and what remains open
+---------------------------------------
+
+Closed mathematically:
+
+  A. A unitary W_ext exists on the full four-module D8 abelian intertwining
+     algebra and its Hilbert completion.
+
+  B. It restricts exactly to the old CAR W1 on NS states, including phases.
+
+  C. Its eighth power, sector exchange, E8 twist, cocycle transport and Ward
+     identities are exact.
+
+  D. The construction lives in the actual fixed M frame and needs no global
+     odd Phi map.
+
+  E. The Cartan and standard spin-sector lifts and their four-word signs are
+     explicitly separated, while the apparent kappa freedom is removed by
+     the intertwiner-basis gauge U_tau.
+
+  F. Consequently the finite-energy four-sector continuation in the actual
+     M frame is unique up to intertwiner basis, with no remaining kappa
+     choice in the unmarked mathematical object.
+
+Still required for a physical TFPT source statement:
+
+  1. Primitive P1 or the original seam data must select the four-module
+     extension H_* and identify its local observable net with the physical
+     source.  The present theorem starts once H_* is admitted.
+
+  2. The physical construction must select the geometric Cartan operator or
+     the standard defect lift on v+c if a compiler Gaussian or Arf word is to
+     be compared with it.  NS data and the untwisted E8 character do not make
+     those two operators equal.  No separate physical selection of kappa is
+     required unless a particular v-to-c action of X is additionally marked
+     and held fixed.
+
+  3. A local defect field, if required, needs a localization theorem beyond
+     this global finite-energy intertwiner.
+
+  4. The physical state must decide how the additional E8 half-charge
+     zero-energy line participates.  Ward covariance alone does not select a
+     state.
+
+  5. The earlier P1-to-QWZ and QWZ-to-this-specific-CAR-fold selection remains
+     the upstream source question.  The present result proves the affine
+     completion after that specific CAR fold has been selected.
+
+Thus the smallest precise conclusion is:
+
+  The full affine W1 defect is mathematically closed on the stipulated
+  same-source four-module D8 system.  Physical P1 selection and the operational
+  choice of geometric versus standard twist lift remain separate inputs.
+
+
+10. Verification and sources
+----------------------------
+
+Exact checker:
+
+  experiments/theory-contracts/canonical-seam-fermionization-20261025/
+  check_same_source_affine_defect.py
+
+The checker verifies:
+
+  * ordered-CAR cyclic cocycle covariance;
+  * associativity of the four-sector extension on generators;
+  * exact restriction to the old Z8 cocycle;
+  * exact restriction to the fixed E8 cocycle;
+  * both forced kappa choices;
+  * their exact conjugacy by U_tau, pointwise identity on 0+v and 0+s;
+  * invariance of fully transported mixed words and the fixed-X scalar
+    W_kappa X W_kappa^* X^*=-i kappa I;
+  * the four-sector affine action;
+  * W_ext^8=E_1 with its charge-dependent cocycle phase;
+  * Cartan and standard lift signs and their W1 commutation laws;
+  * arbitrary-charge quarter Ward identities, including p_*;
+  * the transported Ward identity in the actual M frame.
+
+Observed checker verdict:
+
+  FULL_FOUR_MODULE_AFFINE_DEFECT_UNIQUE_UP_TO_INTERTWINER_BASIS
+
+Existing project inputs:
+
+  experiments/theory-contracts/seam-joint-ward-state-20261014/PROOF.txt
+  experiments/theory-contracts/seam-joint-ward-state-20261014/
+    operator_transport_check.py
+  experiments/theory-contracts/mixed-current-origin-20261014/
+    ATLAS-KMS-LOCALITY-AND-SOURCE-WINDING.txt
+  experiments/theory-contracts/mixed-current-origin-20261014/
+    ODD-SECTOR-REFIELDING-AND-NAHT.txt
+  experiments/theory-contracts/v16-operator-pullback-20261014/
+    fold-results.json
+  experiments/theory-contracts/canonical-seam-fermionization-20261025/
+    LATTICE-AND-SOURCE-FRAME.txt
+
+Relevant primary references for the formal interpretation:
+
+  H. Li, Twisted modules and pseudo-endomorphisms,
+  https://arxiv.org/abs/1004.0864
+
+  H. Li, Local systems of twisted vertex operators, vertex operator
+  superalgebras and twisted modules,
+  https://arxiv.org/abs/q-alg/9504022
+
+  C. H. Lam and H. Shimakura, Orbifold construction of holomorphic vertex
+  operator algebras associated to inner automorphisms, Proposition 3.1,
+  https://arxiv.org/abs/1501.05094
+
+  B. Bakalov and V. Kac, Twisted modules over lattice vertex algebras,
+  https://arxiv.org/abs/math/0402315
+
+  A. Carey and E. Langmann, Loop groups, anyons and the Calogero-Sutherland
+  model,
+  https://arxiv.org/abs/math-ph/9805010
+
+  J. Smith, Z. Lin, Y. Tachikawa and Y. Zheng, Classification of chiral
+  fermionic CFTs of central charge less than or equal to 16,
+  https://arxiv.org/abs/2303.16917
+
+  C. Dong and J. Lepowsky, Generalized Vertex Algebras and Relative Vertex
+  Operators, Theorem 12.24.
+

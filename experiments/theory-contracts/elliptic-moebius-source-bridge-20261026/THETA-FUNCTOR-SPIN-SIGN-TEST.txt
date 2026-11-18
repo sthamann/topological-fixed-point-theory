@@ -1,0 +1,212 @@
+THE THETA FUNCTOR FORGETS THE SELECTED SPIN CENTRAL SIGN
+Smallest decisive test for the geometric theta to native Pauli bridge
+2026-10-26
+
+VERDICT
+
+PROVED FOR THE STANDARD DETERMINANT-OF-COHOMOLOGY THETA FUNCTOR.  The
+source-selected spin line S_0 and its projective hyperelliptic lift beta obey
+
+    beta^2=-I on S_0.
+
+Nevertheless, the induced lift on the theta determinant line squares to
++I.  The reason is exact and does not depend on a basis: the relevant Euler
+characteristic is zero.  Passing to O(2 Theta) cannot recover the lost sign.
+With the standard symmetric linearization, inversion acts as +I on all four
+second-order theta functions.
+
+Thus the existing geometric theta functor does not derive
+
+    beta  |->  J=i I_4.
+
+The already verified Pauli quotient and finite lift remain compatible.  To
+obtain the native central phase one still needs a marked mu_4 theta-group or
+metaplectic linearization whose central character is specified separately.
+Projectively this distinction disappears; linearly it is exactly the
+missing datum.
+
+
+1. THE DETERMINANT LINE AND ITS SCALAR WEIGHT
+
+Let A=Jac(C), and let S_0 be the unique source-selected even theta
+characteristic from SOURCE-SELECTED-THETA-SPIN.  Over L in A consider
+
+    E_L=S_0 tensor L,
+
+and the determinant-of-cohomology line, in one standard convention,
+
+    D_L=det R Gamma(C,E_L)
+       =det H^0(C,E_L) tensor det H^1(C,E_L)^(-1).              (1)
+
+Changing to the dual convention reverses every exponent below and changes
+nothing because that exponent is zero.  Since deg(S_0)=g-1=1 and g=2,
+
+    chi(E_L)=deg(E_L)+1-g=0.                                  (2)
+
+A scalar lambda I on E_L acts functorially on (1) by
+
+    lambda^(h^0(E_L)-h^1(E_L))=lambda^chi(E_L)=1.              (3)
+
+This also holds on the theta divisor, where both cohomology groups can be
+nonzero: Riemann-Roch still gives h^0=h^1.  Formula (3) is therefore a
+fiberwise identity on the determinant line, not a generic-point argument.
+
+Use the Poincare bundle on C x A, normalized along {q_0} x A at the marked
+fixed point q_0, to form this family over A.  The normalization does not hide
+another central character.  An isomorphism between the relevant normalized
+Poincare pullbacks is unique after its value on the rigidifying fiber is
+fixed.  Dropping that rigidification would allow one to multiply the lift by
+an arbitrary scalar, but doing so is precisely the additional phase choice
+at issue, not part of the canonical functor.
+
+The determinant line is O(-Theta) in convention (1), or O(Theta) after
+dualizing.  This sign convention has no bearing on (3).
+
+
+2. APPLYING THE TEST TO THE SELECTED SPIN LIFT
+
+Let h=Q^2 be the hyperelliptic involution.  It induces inversion [-1] on A.
+The already proved source-selected lift
+
+    beta:h^*S_0 -> S_0
+
+satisfies beta^2=-I.  Functoriality of determinant of cohomology produces a
+lift beta_D of [-1] to D.  Its square is the determinant action of beta^2:
+
+    beta_D^2
+      =det R Gamma(beta^2)
+      =det R Gamma(-I)
+      =(-1)^chi(E_L)
+      =+I.                                                       (4)
+
+Equivalently, if alpha_D is the determinant lift induced from the selected
+order-eight Q lift alpha, then
+
+    alpha_D^4=det R Gamma(alpha^4)=det R Gamma(-I)=+I.           (5)
+
+This cannot equal the already constructed native linear candidate, whose
+fourth power is -I.
+
+So the order-four spin lift becomes an involution on the theta determinant
+line.  The selected local +i phase at q_0 is real information on S_0, but
+the ordinary determinant functor cancels it between H^0 and H^1.
+
+This is the decisive functorial obstruction.  It is stronger than observing
+that projectivization forgets scalars: the scalar has already disappeared
+on the determinant line before taking projective sections.
+
+
+3. O(2 THETA) DOES NOT RESTORE THE PHASE
+
+Squaring or dualizing beta_D still gives a lift whose square is +I.  In the
+standard analytic theta structure, a basis of H^0(A,O(2 Theta)) consists of
+the four second-order theta functions
+
+    Theta[epsilon](tau,z),       epsilon in (Z/2)^2.
+
+Each is even in z.  Hence the standard symmetric lift of [-1] acts by +I on
+the whole four-dimensional space, and the associated Kummer map factors
+through A/{+1,-1}.  This agrees with (4) and (5).
+
+One may multiply this linear lift by i and thereby make it square to -I and
+act as i I_4.  That multiplication is a new choice of mu_4 central
+character.  It is not selected by determinant of cohomology, by S_0 alone,
+or by beta after (3).  In projective space +I and iI have the same image, so
+the Kummer representation cannot decide this choice.
+
+Mumford's theta group supplies exactly the correct general home for such a
+linear phase: its central G_m acts with its chosen central character in the
+Schrodinger representation.  The existence of that theta group does not
+identify its mu_4 with the native G31 center.  Such an identification is
+additional marked theta-structure or metaplectic data.
+
+
+4. WHAT THE OLDER NATIVE SOURCES DO AND DO NOT SUPPLY
+
+The targeted source audit gives no hidden sign-preserving functor.
+
+  * verification/v783_two_qubit_clifford.py, especially P4.1--P4.4,
+    constructs the native extension
+
+        mu_4 . Pauli_16 . Sp(4,2)
+
+    and separates the Pauli translation module from the duality-twisted
+    Gaussian code-label module.  It fixes the native central mu_4, but it
+    contains no determinant-of-cohomology construction from (C,S_0,beta).
+
+  * verification/v784_curve_code_2torsion.py concerns the separate genus
+    three curve y^3=x^4-1 and a finite A[2] refinement for a type (1,3)
+    polarization.  Its own statement is explicitly a two-torsion comparison.
+    It neither constructs H^0(Jac(C),O(2 Theta)) for the present genus two
+    curve nor transports the spin scalar beta^2=-I.
+
+  * SIX-LINE-THETA-COMPLETION already records that the general theta-group
+    construction exists only after the corresponding theta data are chosen.
+    Equation (4) now identifies the exact missing datum: it is the linear
+    central phase, not the Pauli quotient.
+
+
+5. EXACT STATUS OF THE BRIDGE
+
+The current source chain therefore reaches the following sharp boundary.
+
+PROVED FROM THE ORIGINAL CURVE SOURCE:
+
+  * S_0 is the unique c-invariant even theta characteristic;
+  * Q selects beta with beta^2=-I;
+  * Jac(C)[2] with c matches the correctly typed native Pauli translation
+    module at the finite symplectic level;
+  * compatible native matrix lifts with the desired finite relations exist.
+
+PROVED FAILURE OF THE CANONICAL NEXT FUNCTOR:
+
+  * determinant of cohomology sends beta^2=-I to +I because chi=0;
+  * the canonical |2 Theta| representation is even and hence cannot recover
+    the lost mu_4 phase.
+
+STILL REQUIRED FOR A LINEAR NATIVE IDENTIFICATION:
+
+  * a source-selected theta structure, metaplectic refinement, or other
+    phase-sensitive construction that maps the geometric central lift to
+    the native J=iI_4 and intertwines the four-dimensional modules.
+
+A Pfaffian or spin-refined determinant could in principle retain square-root
+phase data, but no such source construction has been identified in the
+original material inspected here.  Introducing one would be a new premise
+and would need its own functorial comparison.  The present result does not
+exclude such a refinement; it proves that the ordinary theta determinant and
+Kummer module do not perform the required central-phase transport.
+
+
+PRIMARY REFERENCES
+
+  * Pierre Deligne, Le determinant de la cohomologie, Contemporary
+    Mathematics 67 (1987), 93--177.  The determinant functor used in (1)--(4):
+    https://publications.ias.edu/book/export/html/404
+
+  * The Stacks Project, Tags 0FJ9 and 0FJW, gives the determinant functor for
+    finite projective modules and perfect complexes, including pullback
+    compatibility used above:
+    https://stacks.math.columbia.edu/tag/0FJ9
+    https://stacks.math.columbia.edu/tag/0FJW
+
+  * David Mumford, On the Equations Defining Abelian Varieties I,
+    Inventiones Mathematicae 1 (1966), 287--354, DOI
+    10.1007/BF01389737.  Section 1 introduces the theta group and its linear
+    action on theta functions:
+    https://dash.harvard.edu/entities/publication/73120378-82a4-6bd4-e053-0100007fdf3b
+
+  * Bert van Geemen, Some Equations for the Universal Kummer Variety,
+    Transactions of the AMS 368 (2016), 209--225, DOI 10.1090/tran/6309,
+    Sections 1.1--1.2 for the even second-order theta basis and Kummer map:
+    https://sites.unimi.it/vangeemen/1307.2463v2.pdf
+
+
+LOCAL SOURCE ANCHORS
+
+  * research-20261026-real-boundary/SOURCE-SELECTED-THETA-SPIN.txt
+  * research-20261026-real-boundary/SIX-LINE-THETA-COMPLETION.txt
+  * research-20261026-real-boundary/CUBIC-NATIVE-MARKING-TEST.txt
+  * research-20261026-real-boundary/PAULI-SPIN-CENTRAL-LIFT.txt
+  * verification/v783_two_qubit_clifford.py
+  * verification/v784_curve_code_2torsion.py

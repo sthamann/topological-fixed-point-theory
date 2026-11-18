@@ -1,0 +1,263 @@
+AKTUELLE STATUSKORREKTUR, 26.10.2026
+====================================
+Der im folgenden Arbeitsstand noch als numerisch/offen bezeichnete Anschluss
+der konkreten A0* ODE ist inzwischen durch den wiedergefundenen exakten
+C4 Dreiecksbeweis vom 28. September geschlossen. Maßgeblich sind jetzt
+C4-DESCENT-FINITE-MONODROMY.txt und C4-TRIANGLE-INDEPENDENT-REVIEW.txt.
+Die Identifikation gilt bis zum gemeinsamen konstanten Basiswechsel und der
+verbleibenden diagonalen Basiszeichenkonvention. Die tatsächliche Verbindung
+ist C4 äquivariant, hat aber keinen rationalen z->1/z Lift. Der bedingte echte
+D4 Satz beschreibt eine andere markierte Verbindung. Die Stabilitäts und
+Wandargumente unten behalten ihren jeweils ausdrücklich angegebenen Scope.
+Die frühere Offen Kennzeichnung ist überholt; keine neue ODE Suche nötig.
+
+STABILITY-INDEPENDENT-REVIEW
+============================
+
+Datum: 2026-10-26
+
+Geprüfte Frage
+--------------
+
+Beschreiben der stabile Zweig aus TFPT2 section008 und der strikt
+polystabile Wandpunkt aus section011 dasselbe markierte parabolische Bündel?
+Außerdem war zu prüfen, ob für die exakte v117 Darstellung der wirkliche
+Birkhoff Grothendieck Typ ohne numerischen ODE Vergleich folgt.
+
+Urteil
+------
+
+Nein, die beiden Textstellen beschreiben nicht dasselbe parabolische Objekt.
+
+Für die exakte v117 Darstellung folgt der Typ
+
+    E = O(-2) + O(-1) + O(-1)
+
+streng aus endlicher Monodromie, äquivarianten holomorphen Sektionen,
+Deligne Grad und Birkhoff Grothendieck. Die Darstellung ist irreduzibel und
+unitär, daher ist ihr Mehta Seshadri Objekt stabil.
+
+Die Matrix W_wall aus section011 setzt dagegen voraus, dass die drei
+Birkhoff Grothendieck Summanden an allen vier Marken die vollen Flags
+spalten. Ihre drei Zeilen haben parabolischen Grad null. Sie beschreibt somit
+eine parabolische direkte Summe und folglich einen reduzierbaren strikt
+polystabilen Zweig. Sie besitzt dieselben lokalen Gewichtsmengen
+(0,1/3,2/3), aber nicht dieselben relativen Flags wie das stabile v117
+Objekt.
+
+Damit ist die Aussage in section008, Zeilen 124 bis 127, als ausdrücklich
+fixierte stabile D4 linearisierte Prämisse mit v117 vereinbar. Die spätere
+Identifikation derselben Verbindung mit W_wall in section011, Zeilen 262 bis
+297, ist nicht vereinbar. Die analytische Identifikation der konkreten A0*
+ODE mit der abstrakten v117 Verbindung bleibt davon getrennt und in v117 nur
+numerisch geprüft.
+
+1. Exakte endliche Darstellung
+------------------------------
+
+Die vorhandenen Matrizen sind
+
+    U = diag(1,i,-i),
+    M_k = U^k M_0 U^(-k),       k=0,1,2,3.
+
+verification/v117_monodromy_weyl_a3.py beweist exakt
+
+    M_0^3=I,
+    spec(M_0)={1,omega,omega^2},
+    product_k M_k=I,
+    |<U,M_0>|=24,
+
+und identifiziert <U,M_0> mit der vorzeichengetwisteten
+Standarddarstellung von S4.
+
+Für den Coverbeweis ist eine Typpräzisierung wichtig. Die vier wirklichen
+Peripherien M_k erzeugen nur A4, Ordnung 12. U ist die zusätzliche
+Vierteldrehungs Kovarianz und erweitert A4 zu S4. Eine unabhängige exakte
+Gruppenschließung ergab für <M_0,M_1,M_2,M_3>
+
+    Ordnung 12,
+    Charakterverteilung 3^1, (-1)^3, 0^8,
+    Summe der Charakterwerte 3-3=0.
+
+Die Einschränkung auf A4 ist also weiterhin irreduzibel und besitzt keinen
+invarianten Vektor. Man darf den eigentlichen Monodromiecover deshalb nicht
+als 24 fachen S4 Cover bezeichnen.
+
+2. Der endliche Cover bestimmt h0 und den BG Typ
+------------------------------------------------
+
+Sei Y der kompaktierte Kerncover der Monodromiedarstellung
+
+    pi_1(P1 minus mu4) -> A4.
+
+Er hat Grad 12. An jeder der vier Marken ist die Trägheitsgruppe zyklisch von
+Ordnung 3. Riemann Hurwitz liefert
+
+    2g(Y)-2 = 12*(-2) + 4*12*(1-1/3) = 8,
+
+also g(Y)=5.
+
+Auf Y trivialisiert sich das endliche unitäre Lokalsystem. Sein
+äquivariantes holomorphes Bündel ist O_Y tensor V mit der irreduziblen
+A4 Wirkung auf V=C^3. Unter der rationalen parabolischen beziehungsweise
+orbifold Korrespondenz gilt für den zugrunde liegenden Deligne Zweig
+
+    H0(P1,E) = H0(Y,O_Y tensor V)^A4.
+
+Da Y kompakt ist, sind holomorphe V wertige Funktionen konstant. Daher
+
+    H0(P1,E) = V^A4 = 0.
+
+Dies ist der verlangte äquivariante Sektionstest. Er verwendet weder die
+numerische A0* Monodromie noch einen ODE Fit.
+
+An jeder Marke ist die Summe der kanonischen Deligne Exponenten
+
+    0+1/3+2/3=1.
+
+Vier Marken und parabolischer Grad null ergeben deshalb
+
+    deg E = -4.
+
+Nach Birkhoff Grothendieck schreibe
+
+    E = O(d_1)+O(d_2)+O(d_3),       d_1+d_2+d_3=-4.
+
+Aus H0(E)=0 folgt d_j<=-1 für alle j. Drei negative ganze Zahlen mit Summe
+-4 sind bis auf Reihenfolge eindeutig
+
+    (d_1,d_2,d_3)=(-2,-1,-1).
+
+Damit ist der erwartete BG Typ exakt bewiesen.
+
+Der Z3 Biswas Cover in verification/v499_p2_weights_deligne_bg.py ist ein
+anderer Cover. Dort liefert der zerlegte reguläre Charakter
+O_Y tensor (1+chi+chi^2) das Gegenbeispiel
+
+    O + O(-2) + O(-2),       h0=1.
+
+Das ist ein nützlicher reduzierbarer Kontrollzweig. Er darf weder mit dem
+Grad 12 Monodromiecover noch mit dem irreduziblen v117 Objekt gleichgesetzt
+werden.
+
+3. Stabilität folgt aus der Darstellung
+---------------------------------------
+
+Die unabhängige exakte Schließung der Peripheriegruppe gibt
+
+    (1/|A4|) sum_g |tr_V(g)|^2 = 1.
+
+Dieselbe Irreduzibilität wird durch die S4 Charakterrechnung in v117 und
+v499 nach Erweiterung um U bestätigt. Damit ist V irreduzibel. Die unitäre
+Darstellung mit den festgelegten
+regulären Peripheriespektren entspricht nach Mehta Seshadri einem stabilen
+parabolischen Bündel vom parabolischen Grad null. Ein strikt polystabiles
+Objekt würde einer vollständig reduzierbaren Darstellung entsprechen. Es
+kann daher nicht dasselbe markierte Objekt sein.
+
+Für den neuen D4 Starrheitssatz ist dies genau die benötigte
+Irreduzibilitätsprämisse. Wenn die in section008 fixierte D4 Linearisierung
+wirklich gegeben ist, macht die Eindeutigkeit der angepassten Metrik den
+Mehta Seshadri Anschluss funktoriell; der Koprimalitätsschritt
+H^2(D4,mu_3)=0 beseitigt die projektive Restklasse. Der Starrheitssatz wählt
+dann abstrakt die v117 Bahn. Dieser Schluss identifiziert noch nicht die
+hingeschriebene A0* Differentialgleichung mit dieser Bahn.
+
+4. Wo das Wandargument zu viel annimmt
+--------------------------------------
+
+Section011 benutzt für die drei festen holomorphen Summanden Gesamtgewichte
+w_1,w_2,w_3 und setzt
+
+    w_1+w_2+w_3=4.
+
+Diese Additivität gilt, wenn an jeder Marke die drei Summandenfasern die
+volle Flagge spalten. Für drei beliebige unabhängige Linien in einer
+gefilterten dreidimensionalen Faser sind ihre induzierten Gewichte dagegen
+keine Permutation von (0,1/3,2/3). Die relative Lage jeder Linie zur Flagge
+wird einzeln durch Schnitt mit der Flagge bestimmt.
+
+W_wall macht die zusätzliche Spaltungsannahme ausdrücklich:
+
+    W_wall = (1/3) [[2,1,2,1],
+                    [1,0,0,2],
+                    [0,2,1,0]].
+
+Die Zeilensummen sind (2,1,1). Zusammen mit den gewöhnlichen Graden
+(-2,-1,-1) besitzt daher jede der drei parabolischen Linien Grad null. Das
+Objekt ist definitionsgemäß die direkte Summe dreier parabolischer Linien.
+Seine Polystabilität ist korrekt, aber sie ist eine Eigenschaft dieses
+besonderen gespaltenen Flagzweigs.
+
+Die natürlichen v117 Daten fixieren an jeder Marke wegen des einfachen
+Spektrums eindeutig die drei Eigenlinien und ihre Ordnung durch die
+Exponenten 0,1/3,2/3. Sie fixieren damit volle lokale Flags. Die relative
+Lage dieser vier Flags ist durch die irreduzible Monodromiedarstellung
+gekoppelt und kann nicht gleichzeitig in drei globale parabolische
+Liniensummanden zerfallen. Gleich sind also die lokalen Gewichtsmengen.
+Verschieden ist die globale Flagkonfiguration.
+
+5. Quellenabgleich
+------------------
+
+* TFPT2 section008, Zeilen 52 bis 60, bestimmt deg E=-4 und nennt den
+  stabilen BG Typ. Der Typ folgt erst mit dem Irreduzibilitäts beziehungsweise
+  h0 Argument oben, nicht allein aus dem Grad.
+* Section008, Zeilen 124 bis 127, fixiert ausdrücklich den D4 äquivarianten
+  stabilen parabolischen Zweig. Unter dieser Prämisse trägt der neue
+  D4 Starrheitssatz.
+* Section008, Zeilen 152 bis 170, warnt selbst davor, globale
+  Unterbündelgewichte aus einem einzelnen Faservergleich abzulesen. Das
+  widerspricht der späteren universellen Zeilensummenannahme.
+* TFPT2 section011, Zeilen 202 bis 210, fordert weiterhin den stabilen,
+  irreduziblen Mehta Seshadri Zweig.
+* Section011, Zeilen 262 bis 268, beweist nur unter zusätzlicher vollständiger
+  Flagspaltung einen Wandzwang.
+* Section011, Zeilen 278 bis 297, gibt mit W_wall tatsächlich einen anderen,
+  reduzierbaren Wandpunkt an. Seine Bezeichnung als dieselbe physische
+  Verbindung nabla_F^star ist nicht hergeleitet.
+
+6. Präziser Stand
+-----------------
+
+[E] Bewiesen:
+
+* Die v117 Peripheriemonodromie hat Bild A4 und ist irreduzibel; die markierte
+  D4 Kovarianz erweitert sie zur vollen S4 Darstellung.
+* Der endliche Monodromiecover hat Grad 12 und Geschlecht 5.
+* Äquivariante holomorphe Sektionen verschwinden, also h0(E)=0.
+* Zusammen mit deg E=-4 folgt eindeutig
+  E=O(-2)+O(-1)^2.
+* Das zu v117 gehörige Mehta Seshadri Objekt ist stabil.
+* W_wall ist ein anderer, vollständig gesplitteter und reduzierbarer
+  polystabiler Zweig.
+
+[C] Bedingt, aber mathematisch sauber:
+
+* Eine genuine D4 Linearisierung des stabilen section008 Objekts macht den
+  Mehta Seshadri Anschluss und den Orbifoldabstieg funktoriell. Unter dieser
+  Originalprämisse greift der neue D4 Starrheitssatz.
+
+[O] Offen:
+
+* Die konkrete A0* ODE ist noch nicht algebraisch als genau diese kanonische
+  angepasste Verbindung identifiziert. v117 prüft ihre Monodromiegleichheit
+  numerisch.
+* Soll W_wall statt des stabilen Zweigs physisch gewählt werden, braucht diese
+  andere Auswahl eine eigene Quelle. Sie kann nicht zugleich die
+  irreduzible v117 Verbindung sein.
+
+Primärsatz
+----------
+
+V. B. Mehta und C. S. Seshadri, Moduli of vector bundles on curves with
+parabolic structures, Math. Ann. 248 (1980), 205 bis 239. Für rationale
+Gewichte identifiziert der Satz stabile parabolische Grad null Bündel mit
+irreduziblen unitären Darstellungen und polystabile Objekte mit vollständig
+reduzierbaren unitären Darstellungen.
+
+DOI: https://doi.org/10.1007/BF01420526
+
+Es wurden keine Originaldateien und keine Atlasdaten verändert. Die einzige
+unabhängige Rechnung war die exakte Gruppenschließung der vier vorhandenen
+Peripheriematrizen; es wurde kein numerischer ODE Fit ausgeführt.

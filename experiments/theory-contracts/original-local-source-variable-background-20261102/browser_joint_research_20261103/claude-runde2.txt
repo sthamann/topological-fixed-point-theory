@@ -1,0 +1,87 @@
+# Korrigierter Gesamtkandidat: Skalen-Sewing-Auswahl (SSA)
+
+## 0. Korrekturen, alle übernommen
+
+1. **Doppelzählung.** Ein nackter Bosonterm und das Fermionintegral zählen nur dann doppelt, wenn der Bosonterm schon dieselben integrierten Fermionbeiträge enthält. R112 beweist A1 nicht. R078 schließt keinen klassischen Bosonterm aus, und die a₄-Aussage für Spin 4 schließt keinen Skalaron aus anderen Quellen aus. Diese Begründungen ziehe ich zurück.
+2. **Profil und η.** −log Det(D + iχ) verlangt ein neues, nicht abfallendes Profil und ein geglättetes η_χ. Beides ist von den originalen Profilspuren, den Res/FP-Versionen und dem gedruckten relativen APS-η verschieden. Eine Identifikation wäre nur mit einer bewiesenen Abbildung von Funktion, Domäne und Referenz möglich. Den Grenzwert η_χ → η habe ich für ein unendliches Spektrum gliedweise begründet; das ist ungültig. **A1 ist als Ursprungsprinzip zurückgenommen.**
+3. **Quellen.** Lineare Grassmann-Quellen sind keine Matrixquelle J in M + J. Die volle Quelle ist Pf M mal der tatsächliche quadratische Quellenexponent. Die Verdopplung Pf = Det verlangt eine Abbildung von Feldraum und Orientierung; der Koeffizient π/2 allein reicht nicht.
+4. **Farbmittel.** Korrekt ist Tr(Γ(Z_c)^k·Γ(R)) = det(1 + Z_c^k·R) mit der vollen geladenen Darstellung Z_c, kein skalares z^k. Der originale Projektor P enthält weitere Selektoren und ist durch dieses Mittel nicht ersetzbar.
+5. **Reduktion.** Reduktion durch P wählt kein bestimmtes H. Positivität des Schur-Komplements zeigt weder H_adm ≥ H_par noch Positivität der Differenz. Rückkehrgedächtnis ist nicht allgemein unvereinbar mit Lokalität. Die globale Netzzeit darf ohne Quellidentität nicht mit dem H_SIR-Fluss gleichgesetzt werden.
+6. **Maßanomalie.** Dieser Weg ist geprüft (ROOT-CURRENT-READER-AND-CANDIDATE-REVIEW.txt:67–75; Andrianov–Lizzi). Er erzeugt einen integrierten Spektraltrace aus gegebener Kinetik und gegebenem Regulator, wählt diese aber nicht. Ich nutze ihn unten nur für das Laufen der Kopplungen, nicht als Auswahl.
+
+Ab hier arbeite ich mit den **originalen** Profilen und der **vollen** APS-Phase.
+
+## 1. Was Sewing allein auswählen kann: nichts Lokales
+
+**Satz 1 (Sewing-Neutralität).** Für jede lokale Dichte 𝓛 der Felder und jede glatte Konfiguration auf M = M₁ ∪_Σ M₂ gilt exakt ∫_M 𝓛 = ∫_{M₁} 𝓛 + ∫_{M₂} 𝓛. Ein zusätzlicher Nahtterm entsteht nicht. Ist 𝓛 Θ-invariant, enthält höchstens zwei Zeitableitungen und hat eine positive kinetische Form, bleibt auch RP erhalten.
+
+**Folgerung.** Zu jeder Quelle, die die Sewing-Gesetze des Funktors Seed → Bordism und RP erfüllt, gibt es eine kontinuierliche Familie gleich zulässiger Quellen: Man addiert lokale nackte Dichten. **Keine Sewing-Regel, auch nicht zusammen mit RP, wählt nackte lokale Kopplungen.**
+
+Das ist die erste Entscheidung: Die gesuchte Auswahl kann nicht aus Sewing allein kommen. Sie braucht eine Bedingung, die lokale Dichten **nicht** neutral behandelt. Dafür kommen nur zwei Strukturen in Frage: Skalenkovarianz und die globale η-Phase.
+
+## 2. Erste neue Annahme B1: χ transformiert mit der originalen Skalenkarte
+
+Die Originale haben die konforme Skalenkarte D_σ = f·D·f mit f = e^{−σ/2}. Sie **erzwingt** H̃ = e^{−σ}·H und D̃_M = e^{−σ}·D_M und hält den Calderón-Projektor fest (P_σ = P₀). Damit transformieren alle dimensionsbehafteten Daten der Quelle mit, **außer χ**.
+
+**B1.** χ ist kein unabhängiger Parameter, sondern transformiert als χ_σ = e^{−σ}·χ.
+
+**Begründung:** Ein festgehaltenes χ wäre das einzige Datum, das die vom Original bereits auferlegte Kovarianz bricht. B1 setzt diese Kovarianz konsistent fort und führt **keinen** neuen Cutoff ein; im Gegenteil, χ verliert seinen Status als freie Skala.
+
+**Satz 2 (Profilabsorption).**
+- Für konstantes σ ist D_σ/χ_σ = D/χ, also ist Tr f(D_σ/χ_σ) exakt invariant, für **jedes** originale Profil.
+- Für lokales σ ist die Änderung eine Summe lokaler σ-Ableitungsdichten aus den konformen Variationen der Koeffizienten a_k. Nach Satz 1 sind diese sewing-neutral.
+- Jeder nackte Term vom Typ a_k, der unter der Skalenkarte kovariant ist, ist von einer Verschiebung des entsprechenden Profilmoments nicht zu unterscheiden.
+
+**Folgerung.** Die Trennung zwischen „nackter Wirkung“ und „Spektraltrace“ ist unter B1 nicht invariant. Invariant sind nur die **effektiven Momente**
+
+  f_eff,k = f_k^{orig} + (nackte Verschiebung),  k = 4, 2, 0,
+
+dazu das Maß und die η-Phase. Die Frage „welche nackte Wirkung?“ wird damit präzise zur Frage: **Welche endlich vielen effektiven Momente?**
+
+## 3. Volle APS-Phase und Maß
+
+**Spektralfluss.** Weil f > 0 invertierbar ist, gilt ker(f·D·f) = f^{−1}·ker D. Die Zahl der Nullmoden ist entlang jedes σ-Wegs konstant, also gibt es keinen Spektralfluss. Die **scharfe** APS-Phase iπΔη/2 ändert sich unter der Skalenkarte nur über ihre lokale Variationsform. Ob diese unter D_σ = f·D·f verschwindet, ist am Original zu prüfen und wird hier nicht behauptet.
+
+**η-Gluing.** Das η-Gluing hat einen Maslov- bzw. Kashiwara-Korrekturterm. Konsistentes Sewing der vollen Phase verlangt, dass dieser Term in der Randnormierung absorbiert wird. Das geht genau dann, wenn die Referenz-Lagrangesche der Naht die Calderón-Lagrangesche ist. Wegen P_σ = P₀ ist sie skaleninvariant. Das ist eine **diskrete** Auswahl der Referenz Ref, keine kontinuierliche.
+
+**Maß.** Mit B1 bricht nur noch das Maß die Skalenkovarianz, über ζ(0) des **vollen** Feldinhalts (Fermionen, propagierende Bosonen, Ghosts). Diese Anomalie lässt sich für Euler- und c-Anteile nicht wegheben, weil alle Felder mit gleichem Vorzeichen beitragen. Die Skala entsteht also durch dimensionale Transmutation. Die marginalen effektiven Momente laufen mit den Maßkoeffizienten. Übrig bleibt **ein Randwert pro marginaler Kopplung**.
+
+## 4. Entscheidung zu A2: bedingt widerlegt
+
+Die originale α-Gleichung enthält den Term (4/5)·41·c₃⁶·log(1/φ_s), also 8·(41/10)·c₃⁶·log. Ist 41/10 die U(1)-Laufzahl b₁ = (4/3)·n_g + 1/10, dann ist der Beitrag 1/10 die **Higgs-Skalarfluktuation im Maß**. Ein Higgs als Hilfsfeld ohne Kinetik, wie A2 ihn verlangt, gäbe b₁ = 4.
+
+**Entscheidung:** Unter der Lesart „41 = 10·b₁“ ist A2 für den Higgs durch Originaldaten widerlegt. Die Bosonen sind dann propagierende Felder des Maßes. Diese Lesart ist zu bestätigen; sonst bleibt die Entscheidung offen.
+
+## 5. Der korrigierte Gesamtkandidat SSA
+
+Die physische Quelle ist der Wert des Funktors Seed → Bordism, für den gilt:
+1. Sewing und RP der ganzen Quelle, samt Ref, Gewichten und Einfügungen;
+2. Kovarianz unter der originalen Skalenkarte mit B1;
+3. die volle APS-Phase mit Calderón-Ref;
+4. das volle Maß.
+
+Daraus folgt:
+
+  **S_adm ≅ Tr f_eff(D/χ_σ) − Tr f_eff(D_ref/χ_σ) + iπΔη/2 + S_gf + S_gh + (sewing-neutrale σ-Dichten),**
+
+mit endlich vielen freien Daten f_eff,4, f_eff,2, f_eff,0, und den marginalen Randwerten an der Nahtskala.
+
+Das ist keine bedingte Standardformel mit freiem Cutoff. χ ist eliminiert, und die nackte Wirkung ist auf **endlich viele invariante Zahlen** reduziert.
+
+**H_tr,pos** wird dadurch noch nicht numerisch festgelegt. Es ist der Transfergenerator der ausgewählten Quelle, und zwar erst, wenn diese Zahlen und die Quellidentität stehen. Über Reduktion durch P, die Schur-Positivität oder eine Gleichsetzung mit der Netzzeit treffe ich keine Aussage mehr.
+
+## 6. Erste tragende Auswahl und wo SSA sie festlegen muss
+
+Die Randwerte können nur aus P1 bzw. dem Seed kommen, also aus Naht, Winkel 2π, Einheitswindung und c₃, samt Orientierung. SSA sagt eine **Zerlegung** voraus: Jede marginale Gleichung muss die Form
+
+  (Randterm an der Naht aus η-Sewing und Windung) = (Maßkoeffizient) × log(Skalenverhältnis)
+
+haben. Die α-Gleichung F(α) = α³ − 2c₃³α² − 8·b₁·c₃⁶·log(1/φ_s) hat genau diese Gestalt, mit α³ − 2c₃³α² als Kandidat für den Randterm.
+
+**Die erste tragende Festlegung ist also f_eff,0, die U(1)-Normierung an der Naht.** Entschieden wird sie durch zwei Prüfungen:
+- **(i)** Bestätigen, dass 41 = 10·b₁ aus dem tatsächlichen Maßinhalt kommt. Das entscheidet zugleich über A2.
+- **(ii)** Den Randterm α³ − 2c₃³α² unabhängig aus dem Calderón-Sewing der vollen η-Phase unter Einheitswindung herleiten, statt ihn aus der Wurzel abzulesen.
+
+Gelingt (ii), dann ist die erste nackte marginale Zahl aus P1 ausgewählt, nicht eingesetzt. Scheitert (ii), dann wählt SSA die marginalen Daten **nicht**, und Satz 1 zeigt, dass dann keine Kombination aus Sewing, RP und Lokalität sie wählen kann.
+
+**Zählung als Kontrolle.** Der Kandidat braucht drei effektive Momente plus einen Randwert pro marginaler Kopplung. Stehen im Original weniger unabhängige Randdaten zur Verfügung (c₃, der Seed φ₀, Orientierung bzw. Windung), bleibt eine benennbare Restfreiheit. Das wäre dann kein verstecktes Defizit, sondern eine genau gezählte Lücke.

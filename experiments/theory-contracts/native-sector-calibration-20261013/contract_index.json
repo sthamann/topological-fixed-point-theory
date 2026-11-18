@@ -1,0 +1,80 @@
+{
+  "contract": "native-sector-calibration-20261013",
+  "research_id": "UR.SOURCE.NATIVE_SECTOR_CALIBRATION.01",
+  "date": "2026-10-13",
+  "question": "Which energy-calibration ambiguities of the existing four-sector source are determined by its native disorder operator, and which remain invisible?",
+  "verdict": "PARTIAL",
+  "verdict_enum": [
+    "PASS",
+    "PARTIAL",
+    "FAIL"
+  ],
+  "mathematical_verdict": "RELATIVE_SECTOR_OFFSETS_IDENTIFIABLE_MODULO_ONE_COMMON_SCALAR_WITH_NATIVE_D_RESPONSE",
+  "summary_de": "Im vorhandenen bedingten v1033-Fock-Lift lässt die sektorinterne CAR-Dynamik vier Energieoffsets unbestimmt. Der originale Disorder-Operator D verbindet die vier C-Sektoren: seine sektoraufgelöste Zeitantwort bestimmt drei relative Offsets eindeutig; der gemeinsame Offset bleibt unsichtbar. Vier D-übersetzte Präparationen liefern ein konkretes Antwortprotokoll. D² allein lässt zusätzlich den geraden/ungeraden Unterschied offen. Keine P1/P2-, absolute Quellen- oder Gravitationseinordnung hergeleitet.",
+  "summary_en": "In the existing conditional v1033 Fock lift, sector-internal CAR dynamics leaves four energy offsets undetermined. The original disorder D connects all four C sectors: its sector-resolved time response fixes three relative offsets, with one common offset invisible. Four D-translated preparations provide a concrete response protocol. D squared alone also leaves the even/odd difference undetermined. No P1/P2, absolute source or gravitational normalization is derived.",
+  "assumptions": [
+    "Existing conditional C4 tensor Fock(V) lift and completed charged CAR dictionary; not selected by P1/P2.",
+    "Same Hamiltonian action on full completed CAR algebra and C, with common time convention.",
+    "Native D and all four sectors retained; complex time response or its first derivative is available.",
+    "Known native H baseline response is subtracted from the shifted response; the response of an unspecified source alone does not identify its offsets.",
+    "Constructive protocol additionally permits fixed D^k-translated preparations; no replacement ground is selected after shifting H.",
+    "Fixed background; no inference that sectors are geometries, families or spacetime dimensions."
+  ],
+  "positive_results": [
+    "The ambiguity preserving the specified internal Heisenberg action is exactly sum_s c_s P_s.",
+    "Native D response fixes c_(s+1)-c_s; C4 incidence rank3 leaves only one common scalar.",
+    "D squared alone has rank2; full native D removes the additional parity-component ambiguity.",
+    "The original finite 256-dimensional source and its unique ground reproduce the four-response reconstruction."
+  ],
+  "kills": [
+    "Treat four independent sector energy shifts as invisible after retaining the full original D response.",
+    "Replace native D by D squared while claiming unchanged calibration information.",
+    "Infer absolute geometric normalization from relative sector calibration."
+  ],
+  "leaves_open": [
+    "P1/P2 selection of the conditional parent, observable algebra and preparation menu.",
+    "Physical measurement and time dictionary for native D insertions.",
+    "One common energy shift at each background and the source-dependent geometric functional Q[g].",
+    "Joint local physical source, metric/continuum dynamics and T1–T8 completion."
+  ],
+  "claims_tested": [],
+  "gates": [],
+  "physical_gates_closed": [],
+  "complete_TFPT_solution": false,
+  "promotion": false,
+  "relations": [
+    {
+      "target": "source-charged-register-20260920",
+      "type": "uses"
+    },
+    {
+      "target": "source-register-response-20260920",
+      "type": "extends"
+    },
+    {
+      "target": "spectator-normalization-separation-20261013",
+      "type": "refines"
+    },
+    {
+      "target": "source-observation-identifiability-20261013",
+      "type": "references"
+    },
+    {
+      "target": "original-source-functional-audit-20261013",
+      "type": "references"
+    }
+  ],
+  "checker": "checker.py",
+  "proof": "PROOF.txt",
+  "certificate": "results.json",
+  "source_manifest": "source_manifest.json",
+  "firewall": "experiments",
+  "novelty_scope": "Project-specific synthesis and constructive calibration inverse using standard finite-dimensional operator algebra, not a new general theorem or source-derived physical model.",
+  "original_source_scope_correction": "Algebraic invisibility of c(g)I does not show admissibility of arbitrary c(g) or lambdaQ[g] in the specified original profile-free zeta/residue functional. Its actual off-shell source family must be derived and compared.",
+  "topics": [
+    "topic:quantum",
+    "topic:clocks",
+    "topic:universalraum"
+  ],
+  "scope": "Existing conditional v1033 C4 tensor Fock lift, full completed CAR+C action, native D and known baseline response at fixed background; relative energy calibration only, no P1/P2 selection or physical/gravity closure."
+}

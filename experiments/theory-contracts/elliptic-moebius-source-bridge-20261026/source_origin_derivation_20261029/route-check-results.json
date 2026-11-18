@@ -1,0 +1,39 @@
+{
+  "spectral_hessian": {
+    "verdict": "EXCLUDED_PROPOSED_GENERIC_HESSIAN_FORMULA",
+    "actual_second_derivative": "-exp(-3) + exp(-1)",
+    "trace_f_second_times_V_squared": "exp(-3) + exp(-1)",
+    "proposed_anticommutator_formula": "2*exp(-3) + 2*exp(-1)",
+    "nonzero_residual": "-2*exp(-3)",
+    "scope": "Exact e^(-u) trace variation in a two-dimensional noncommuting direction; not a full TFPT model or a chosen original insertion."
+  },
+  "modular_roles": {
+    "verdict": "EXCLUDED_GAPPED_ROTATION_AS_NONTRIVIAL_BORCHERS_TRANSLATION",
+    "cases": [
+      {
+        "alpha": "1/4",
+        "actual_positive_gap": "1/4",
+        "required_gap_after_unitary_scaling": "1/8"
+      },
+      {
+        "alpha": "3/4",
+        "actual_positive_gap": "1/4",
+        "required_gap_after_unitary_scaling": "1/8"
+      }
+    ],
+    "analytic_argument": "For the full all-parameter dilation law, Stone uniqueness gives V H V*=H/2. Unitary conjugacy preserves spectrum and its least positive point. Scaling H halves that point, a contradiction. The spectral-set implication is separately kernel-checked in Lean.",
+    "scope": "The proposed use of the SAME actual gapped source H. Other gapless translation generators and correctly supplied continuum standard pairs remain allowed."
+  },
+  "cutoff_role": {
+    "verdict": "MISSING_MODULAR_TO_SPECTRAL_OPERATOR_IDENTIFICATION",
+    "cutoff_moment_ratios": [
+      "1",
+      "1/2"
+    ],
+    "argument": "KMS beta1 normalizes the given modular flow. It does not, by itself, equate its generator/weight with a separately declared spectral-action cutoff. Both positive Laplace profiles above exist mathematically. Their admissibility as complete P1 models is not asserted.",
+    "source_check": "v259 sets exp(-u) before integrating and records the decisive identification via check(..., True). Correct moment integrals are retained as conditional results.",
+    "scope": "Only the KMS-normalization-alone inference; no refutation of a correctly proved original modular/spectral dictionary."
+  },
+  "full_tfpt_solution": false,
+  "next_target": "Derive the actual odd field Hessian from original S_adm and its local insertion map; then derive the full source identity, including allowed interactions, rather than input target moments."
+}

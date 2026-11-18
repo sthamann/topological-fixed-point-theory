@@ -1,0 +1,53 @@
+{
+  "steps": [
+    {
+      "step": "FU1 the mark group T_d (24 signed permutations with even sign flips, -I absent) has two orbits on the eight bcc steps: W = {2 w_a} (product -1) and -W",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "step": "FU2 T_d-symmetric class = one-parameter family f_b = 1 - cx cy cz + b sx sy sz (b = -8 Im c_W); PSD iff |b| <= 1 (1 - ccc - |sss| >= 0, equality on the Gamma class and at -+P, which fixes the bound); for |b| < 1 the only zeros lie in the Gamma class",
+      "pass": true,
+      "detail": "closed-form error 4.4e-16; grid margin 0.00e+00; minimiser |sin k| = [1. 1. 1.]"
+    },
+    {
+      "step": "FU3 (algebra) uniqueness: a real kernel (spinless time reversal), or F = I - P with P a reversible Markov kernel (unbiased mark-visit walk on the process graph: weights p_W = p_{-W} = 1/8), forces Im c = 0 -> F = I - (1/8) sum T_eps",
+      "pass": true,
+      "detail": "reality: c_W real; Markov: 4p + 4q = 1 with p = q (Hermitian) -> 1/8"
+    },
+    {
+      "step": "FU4 the C3[111] class (Theta_1's symmetry) with f(Gamma) = 0, no linear term and isotropic Hessian is the SAME one-parameter family f_b; without isotropy one extra (anisotropy) parameter",
+      "pass": true,
+      "detail": "real parameters 4; free: isotropic 1, without isotropy 2"
+    },
+    {
+      "step": "FU5 spinor-valued filters f I + (mu V1 + nu V2).sigma (T-covariant): PSD with f(Gamma) = 0 kills the linear mu-term; nu survives in a finite window; spinful time reversal (k -> -k, sigma -> -sigma) forces b = nu = 0",
+      "pass": true,
+      "detail": "nu window at b = 0: |nu| <= 0.8684 (grid)"
+    },
+    {
+      "step": "FU6 Theta_1's h_W breaks spinful time reversal and inversion (nodes Gamma(+), P(-), P != -P mod fcc): the reality premise that fixes F is not a symmetry of Theta_1's kinetic sector",
+      "pass": true,
+      "detail": "|d(k) + d(-k)| up to 5.80"
+    },
+    {
+      "step": "FU7 IR versus fundamental: all f_b = |k|^2/2 + b kx ky kz + O(k^4) near Gamma, but f_b(+-P) = 1 +- b: the filtered quartic at the mirror scales by (1 + b)^4 -- a physical knob invisible in the IR window",
+      "pass": true,
+      "detail": "IR remainder 9.5e-10 at |k| = 1e-2; mirror weight ratio (1.3/1)^4 = 2.856"
+    },
+    {
+      "step": "FU8 shortest range is load-bearing: with the six next-nearest steps +-2 e_i a real, T_d-symmetric, isotropic family 1 - ccc + d (3 - sum cos 2k_i)/4 stays PSD with zeros only at Gamma for small d",
+      "pass": true,
+      "detail": "d = 0.2: min symbol 6.57e-03"
+    }
+  ],
+  "passed": 8,
+  "total": 8,
+  "research_id": "SOURCE.FILTER.UNIQUENESS.01",
+  "verdict": "CONDITIONAL_UNIQUE",
+  "statement": "Within shortest-range scalar Hermitian PSD bcc filters with f(Gamma) = 0, c_0 = 1, mark symmetry (T_d or C3 + isotropy) leaves exactly f_b = 1 - ccc + b sss, |b| <= 1; reality / reversible Markov averaging (unbiased mark-visit walk) forces b = 0 = the frozen F.  That premise is not a symmetry of Theta_1's kinetic.",
+  "pins": {
+    "b_max": 1.0,
+    "nu_max_grid": 0.8684
+  }
+}

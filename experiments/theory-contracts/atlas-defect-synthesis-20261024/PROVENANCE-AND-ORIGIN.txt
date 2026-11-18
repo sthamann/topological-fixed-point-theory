@@ -1,0 +1,265 @@
+PROVENANCE AND ORIGIN DECIDERS
+==============================
+
+Scope
+-----
+
+This note records three small comparison results.  It does not replace the
+original verdicts cited below and makes no Atlas or contract-index change.
+
+  1. the six doily effects versus the original one-register erasure/recovery;
+  2. the P1/P2 feedback loop as an origin argument;
+  3. the Prym quotient of the historical genus-three seam cover.
+
+
+1. The doily POVM is an additional logical measurement channel
+---------------------------------------------------------------
+
+Let
+
+    V : H5 -> (C^4)^(tensor 4)
+
+be the original normalized quartic-code isometry and let
+
+    A_a = (<a| tensor I_64) V,       a=0,1,2,3,
+
+be the four Kraus operators obtained by losing the first register in the
+stored computational basis.  Direct reconstruction from the five original
+word supports gives the exact Knill-Laflamme identity
+
+    A_a^* A_b = delta_ab I5/4.                              (1.1)
+
+The same identity holds for any of the four tensor slots.  Consequently the
+four effects of the original labelled erasure instrument are
+
+    F_a = A_a^* A_a = I5/4.                                (1.2)
+
+An exact trace-preserving recovery with branch Kraus operators R_(a,mu) does
+not change branch probabilities, because its composed logical effect is
+
+    sum_mu A_a^* R_(a,mu)^* R_(a,mu) A_a = A_a^* A_a = I5/4.
+
+Thus the recovered effects are still F_a.  Equivalently, in the existing
+decoded coordinates the erased state is
+
+    E(rho) = rho tensor I4/4,
+
+and every measurement {M_b} confined to the erased/gauge factor induces the
+logical effect Tr(M_b) I5/4.  Thus even changing the four-outcome basis or
+coarse-graining the outcomes keeps the whole logical effect space scalar.
+
+Exact signature of the original effects:
+
+    number of displayed branches             4
+    rank(F_a)                                 5
+    trace(F_a)                                5/4
+    linear span dimension                     1
+    common commutant dimension in End(H5)    25
+    action of all native G31 words             each F_a is fixed
+
+The doily-quartic theorem instead gives, in the original unnormalised quartic
+word basis,
+
+    G = diag(1,3,3,3,6),
+    E_r = q_r q_r^T G / 12,                  r=1,...,6,       (1.3)
+
+for the six displayed primitive rays q_r.  Reconstructing these exact
+rational matrices from the current checker gives
+
+    sum_r E_r = I5,
+    rank(E_r) = 1,
+    trace(E_r) = 5/6,
+    E_r^2 = (5/6) E_r,
+    trace(E_r E_s) = 1/36                    for r != s.      (1.4)
+
+The six effects are linearly independent, so their span has dimension six.
+No distinct pair commutes.  Solving X E_r = E_r X for all six r gives the
+one-dimensional commutant C I5.  All sixty native quartic reflections permute
+the six effects by the standard six-point action.
+
+Therefore (1.2) and (1.3) are not two presentations of one instrument.  Their
+ranks, effect-space dimensions, commutants and marked group actions differ.
+The new doily POVM is a concrete covariant measurement on the already existing
+H5.  To realize it after erasure one must additionally measure or couple to
+the logical H5 factor; the original erasure/recovery map does not contain that
+measurement.
+
+Original paths for this comparison:
+
+* tfpt_explorer/process.py:242-258 constructs the normalized five codewords.
+* _newest2/TFPT_Gesamtdokumentation2_20260927.md:8506-8568 reconstructs the
+  code and checks (1.1), including observation ranks 1,10,25.
+* experiments/theory-contracts/joint-native-algebra-selection-20261016/
+  PROOF.md:42-54 states the actual erasure intertwiner and
+  E(rho)=rho tensor I4/4, R(X)=Tr_4 X.
+* experiments/theory-contracts/joint-native-algebra-selection-20261016/
+  operator_audit.md:72-90 states W^*W=I20 and the physical preparation
+  W(rho tensor I4/4)W^*.
+* experiments/theory-contracts/atlas-defect-synthesis-20261024/
+  doily_quartic_bridge.py:638-669 constructs G and the six native effects;
+  lines 671-693 check all sixty covariances.
+* experiments/theory-contracts/atlas-defect-synthesis-20261024/
+  DOILY-QUARTIC.txt:141-180 states the representation-level POVM verdict.
+
+
+2. The P1/P2 loop is a closure check, not a P1-only selection of five
+---------------------------------------------------------------------
+
+The current split original source says explicitly that
+
+    P1: c3 = 1/(8 pi),        P2: g_car = 5
+
+are the two operational inputs.  Once the degree-four divisor D=mu4 is
+present, two standard functors give
+
+    rank H1(P1 minus D) = 3,
+    h0(P1,O(D)) = 5.                                      (2.1)
+
+The arithmetic in (2.1) is exact.  The same source retains the physical
+carrier identification as conditional and states that AX.P2.01 remains a
+declared axiom.  The later seam-forcing result derives y^3=x^4-1 only inside
+the conformal four-equivalent-mark model and explicitly imports the cyclic-3
+choice from the E8 glue.  It leaves both that cyclic-3 choice and the
+physical-seam/conformal-seam identification as the named residue.
+
+Hence the loop
+
+    E8/J -> Pauli16 and quartic5 -> Pascal/glue -> E8
+
+checks a highly rigid common fixed point after the rank-four symplectic/code
+and degree-four divisor data are present.  The displayed feedback loop
+presupposes the rank-four input and does not establish its P1-only derivation.
+In particular, it does not make five follow from the cited P1 statement
+without reusing P2/E8/G31/rank-four information.
+
+The finite-symplectic alternative makes the first extra choice visible.  For
+a nondegenerate F2 space of dimension 2g the numbers of odd and even quadratic
+refinements are
+
+    n_odd(g)  = 2^(g-1) (2^g - 1),
+    n_even(g) = 2^(g-1) (2^g + 1).                        (2.2)
+
+Thus the minimal nondegenerate space, g=1, gives 1 odd and 3 even forms.  It
+does not give a six-object family or a standard five.  The next possibilities
+are
+
+    g=2:  6 odd, 10 even, standard dimension 6-1 = 5;
+    g=3: 28 odd, 36 even, corresponding standard dimensions 27 or 35.
+
+Selecting g=2, equivalently A=F2^4 or the two-qubit Pauli rank, is exactly the
+additional rank choice needed for the six-to-five construction.  The cited
+original P1 statement does not specify g=2.  The numerical five is unique only
+after this rank-four finite symplectic premise or after the degree-four
+divisor/P2 typing has been supplied.  This is an assumption audit of the cited
+derivation chain, not a metamathematical non-derivability theorem for every
+possible strengthening of P1.
+
+Original verdict-preserving references:
+
+* documents/origin_theory/sections/
+  001-section-the-whole-integer-skeleton-from-one-pair-gcar-nf.tex:36-56
+  declares P1/P2 and gives the conditional divisor reading; lines 72-80 say
+  AX.P2.01 remains declared.
+* The same file, lines 163-174, states that the Riemann-Roch P2 reading is
+  conditional on QGEO.SYM.01 and that the later E8 geometric model still
+  presupposes E8.
+* documents/origin_theory/sections/
+  002-section-the-8-is-triply-forced-geometry-lattice-gravity-.tex:12-20
+  retains the symmetry-lift bit and AX.P2.01 and leaves the raw-seam
+  realization open.
+* documents/tfpt_3_e8_audit_bootstrap/sections/003-source.tex:327-354 and
+  verification/v617_seam_cover_forcing.py:2-66 retain the verdict
+  SEAM-FORCES-COVER only within the stated seam axioms and leave cyclic 3 plus
+  physical/conformal seam identification unresolved.
+* documents/tfpt_3_e8_audit_bootstrap/sections/
+  013-section-honest-status-bootstrap-not-creation-from-nothin.tex:330-345
+  explicitly says the self-consistency loop is not a derivation from zero and
+  AX.P2.01 stays declared.
+* verification/v2_carrier_pascal.py:19-35 proves the arithmetic uniqueness of
+  g=5 under the Pascal rule.  It does not derive that rule from P1.
+* verification/status_ledger.csv:3 preserves AX.P2.01 as a declared,
+  over-determined bootstrap input and records the later finite closures without
+  changing its axiom typing.
+
+
+3. The historical Prym produces four clock-quotient labels, not sixteen
+------------------------------------------------------------------------
+
+Take the curve supplied by the conditional seam-cover result,
+
+    C: y^3 = x^4 - 1,
+    rho(x,y) = (i x,y),
+    iota = rho^2: (x,y) -> (-x,y).
+
+The quotient by iota is the elliptic curve y^3=u^2-1 with u=x^2.  The four
+fixed points of iota are the three points over x=0 and the single point at
+infinity.  Riemann-Hurwitz therefore gives genus one for the quotient and a
+two-dimensional Prym P.  Its integral homology lattice Lambda has rank four,
+and J=rho|Lambda satisfies J^2=-I.
+
+In the actual CM basis (1,z,z^2,z^3) of verification v784,
+
+    J = [[ 0, 1, 0, 1],
+         [ 0, 0, 1, 0],
+         [ 0,-1, 0, 0],
+         [-1, 0,-1, 0]].
+
+Exact integer reduction gives
+
+    SNF(I-J) = diag(1,1,2,2),
+    Lambda/(1-J)Lambda = (Z/2)^2.                         (3.1)
+
+Thus the intrinsic clock quotient has four labels.  This is also forced by
+the eigenvalues i,i,-i,-i, since det(I-J)=4.
+
+The full two-torsion P[2]=Lambda/2Lambda is F2^4 and has sixteen points, but
+it is a different quotient functor.  The natural Prym polarization has type
+(1,2); its mod-two form has rank two and is degenerate.  Replacing it by the
+stored odd type-(1,3) polarization makes the mod-two form nondegenerate, but
+that form is an additional frozen convention.  Under it the original v784
+comparison still has zero marked inner transporters: deck tau has fixed-space
+dimension zero and cycle type [3,3] on the six odd theta characteristics,
+whereas code sigma has fixed-space dimension two and cycle type [3,1,1,1];
+the deck-fixed theta refinement is Arf zero while the code selector is Arf
+one.
+
+A rank-eight doubling such as Lambda direct-sum Lambda^dual would make the
+order of the (1-J) quotient sixteen.  No such Prym doubling is an original
+TFPT constructor in the cited chain.  Dualization alone retains type (1,2).
+The later outer S6 duad/syntheme bridge transports already existing finite
+objects and does not change (3.1).
+
+Original paths and preserved verdicts:
+
+* verification/v617_seam_cover_forcing.py:145-188 gives the uniform cover,
+  the ramified point at infinity and genus three.  Its verdict remains
+  SEAM-FORCES-COVER with the stated conditional residue.
+* verification/v784_curve_code_2torsion.py:34-67 defines the certified CM
+  lattice, J, A[2], and the polarization conventions.
+* The same file, lines 669-818, reconstructs J and tau, finds natural type
+  (1,2), chosen odd type (1,3), and proves mod-two ranks 2 and 4 respectively.
+* The same file, lines 840-888 and 940-981, performs the full finite transport
+  census.  Lines 1108-1154 preserve the verdict CURVE-CODE-PARTIAL and name
+  the two failed layers exactly.
+* claim QGEO.SEAMFORCE.01 is currently source-stale at its old monolithic TeX
+  wrappers.  The statements above therefore cite current v617 and the current
+  split modular-paper path rather than treating the stale wrapper annotation
+  as a fresh proof.
+
+
+Final classification
+--------------------
+
+PROVED within the stated finite constructors:
+
+* original recovered-erasure effects span C I5;
+* doily effects span a six-dimensional space and have scalar commutant;
+* the two instruments are different;
+* the displayed E8/J feedback loop presupposes the rank-four finite symplectic
+  input and does not establish its P1-only derivation;
+* the Prym clock quotient is F2^2, while its full two-torsion is F2^4 only
+  with a degenerate natural mod-two pairing.
+
+The six-effect POVM is therefore new observable structure on the original H5,
+but it is an additional measurement channel rather than the original erasure
+observable.

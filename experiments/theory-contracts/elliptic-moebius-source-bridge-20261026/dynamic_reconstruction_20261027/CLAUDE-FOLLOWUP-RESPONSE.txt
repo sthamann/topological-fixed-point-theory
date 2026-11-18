@@ -1,0 +1,108 @@
+Treating this as live mathematics. I verified the attached arithmetic independently where I could; results are categorized as **[IDENTITY]** (proved), **[SOURCE]** (backed by the supplied text), or **[PROPOSAL]**.
+
+---
+
+## (A) Corrected verdict on the five items
+
+**Item 1 — my Route 2 is WRONG; retract it.** [IDENTITY]
+The folded generator at fixed μ=−δ is `L0 + δ·a0`. On a charge-`w` state the minimal conformal weight is `|w|²/2`, so
+```
+min_sector(w) (L0 + δ·a0) = |w|²/2 + δ·w = ½|w+δ|² − ½|δ|².
+```
+For `w=0`: value 0. For `w=p*` (`|p*|²=2`, `δ·p*=−1`): value `1 + (−1) = 0`. **Both Ω and `J_{p*}Ω` sit at the same bottom value 0.** Hence the degeneracy is *at the ground level*, not a finite‑β artifact. The normalized `β→∞` Gibbs state
+```
+exp[−β(L0+δ·a0)] / Z  →  P_ground = |Ω⟩⟨Ω| + |ψ⟩⟨ψ| + …
+```
+projects onto the ≥2‑dimensional δ‑tuned ground space containing **both** `Ω` and `p*`. It is a non‑extremal mixture; clustering fails. δ is *retained*, exactly as you state. To reach a unique vacuum one must *additionally* send μ→0 (δ→0) — a second, independent limit I illegitimately smuggled in. My claim "the `β→∞` limit of `H_fold` is the unfolded `dΓ(|B_Σ|)` with unique vacuum" is false. **Retract Route 2 in full.**
+
+**Item 2 — correct; retract the factorization claim.** [SOURCE/IDENTITY]
+`T_net = (A+2I)/4` is the 9‑node extended‑(affine‑)E8 adjacency recursion. Its Perron value is `(2+2)/4 = 1` (affine Dynkin graphs are exactly those with top adjacency eigenvalue 2), and its subleading eigenvalue is the golden value from the `(2,3,5)` spectrum, so its **diffusion gap is golden, not 1**. This is a *finite* graph operator, categorically different from the infinite‑dimensional `(E8)_1` VOA `L0` (integer conformal gap, weight‑1 currents at gap 1) and from `exp(−L0)`. Therefore `T_net ⊗ M` is a finite 9×3 substrate recursion; it does **not** establish an `L0 ⊕ family` OS factorization, and the "carrier gap = 1" in my clustering‑rate list was unfounded. **Retract the product‑substrate factorization and the derived rate `{1, 6ln(3/2), 6ln3}` as consequences** (the two family numbers survive only as the `M_lazy` spectrum, not as OS clustering rates).
+
+**Item 3 — correct; both inferences retracted.** [SOURCE]
+Def. 65–81(ii): `B_Σ` is "a self-adjoint tangential boundary operator … compatible with the boundary restrictions of `J` and `Γ`." That is *abstract*: `B_Σ` may already encode a connection/holonomy whose Cartan part equals δ. **The absence of the literal symbol δ in `Tbound` proves nothing about whether `B_Σ` is unshifted** — this was a syntactic fallacy on my part. Separately, `dΓ(|B_Σ|)` is the correct OS generator *only under a free/quasifree reconstruction premise*; for a general interacting P1 field measure the OS Hamiltonian need not be a second quantization of `|B_Σ|`. **Retract both "no δ ⇒ unfolded" and "OS generator `= dΓ(|B_Σ|)` automatically."** Each now needs an explicit theorem (trivial Cartan holonomy of the reconstructed boundary connection; quasifree reconstruction of the measure).
+
+**Item 4 — correct; the frame is A7, not D8/E8.** [IDENTITY]
+With `ρ_A7 = (7/2,5/2,…,−7/2)` and `p* = (½,½,½,½,−½,−½,−½,−½)`:
+```
+ρ_A7·p* = ½(7/2+5/2+3/2+1/2) − ½(−1/2−3/2−5/2−7/2) = 4 + 4 = 8 = h(A7),
+|p*|² = 2,   p* = (e1+e2+e3+e4) − ½Σe = ω4  (the middle A7 fundamental weight, the 70=Λ⁴C⁸).
+```
+With `δ = −ρ_A7/8 + (2a−1)q/16` and `Σp*_j = 0` the q‑Wilson line drops, giving `δ·p* = −8/8 = −1`. So the arithmetic `δ·p*=−1` survives, but the denominator **8 is the A7 Coxeter number**, the staircase is the **A7 Weyl vector**, and `p*` is **A7 ω4** — not `ρ(D8)` (`h=14`) and not the E8 principal grading (`h=30`). **Retract the "D8/E8 principal‑gradation" identification.** This precise A7 frame is load‑bearing for (B).
+
+**Item 5 — correct; keep C² and P1 distinct.** [SOURCE]
+GNS reconstructs a state from a *supplied kernel* (the full reflection‑positive amplitudes). Thm. 94–138 supplies the **polarization** `i_C = 2P_C − 1 = R_τ` — the reflection — not the amplitudes. The double‑cover topology forces OS *positivity structure*, it does not force a unique vacuum or "the" state. **Retract "the double cover is/forces the vacuum `ω_Σ`."** The genuinely derived object is the free C² boundary result; the physical P1 kernel (all amplitudes) remains unidentified. These stay separate.
+
+---
+
+## (B) One new derivation: the signed step is the double‑cover reflection on the A7 ω4 line
+
+I verified the attachments' internal arithmetic first:
+
+- `|P|` interpolation checks out: `(4/5)P²−(1/15)P+(4/15)I` gives `1, 2/3, 1/3` on `{1,−2/3,1/3}`. [IDENTITY]
+- `J_P = P/|P|` eigenvalues `{+1,−1,+1}` on `{f0, q=hypercharge, r}`. [IDENTITY]
+- `K = ZΔ = σΔ` eigenvalues `{+1,−1,+1}`, so `K·M_lazy` has spectrum `{1,−2/3,1/3} = spec P`. **Self‑consistent.** [IDENTITY]
+
+**The strongest proved simplification.** In the marked family frame the entire signed correspondence collapses to one three‑factor identity in *pairwise‑commuting* operators:
+```
+W P W^{-1} = σ · Δ · M_lazy ,     [σ, Δ] = [σ, M_lazy] = [Δ, M_lazy] = 0.      [IDENTITY]
+```
+`σ = Z = 2|f0⟩⟨f0|_π − I` (v409 seam involution / Perron reflection), `Δ` = v487 family deck, `M_lazy` = v486 transfer. Consequence: `W P^{2n} W^{-1} = M_lazy^{2n}` **exactly for every n** — the old v324 "sixth‑power match" is merely `n=3` of an all‑even‑time theorem. This is the honest strengthening you proved: infinitely many matches from one order‑2 twist, with the odd‑step defect carried by `σΔ`.
+
+**First actual operator identification (not a spectral analogy).** [PROPOSAL, with one explicit missing computation]
+The missing sign `σ = Z = 2P_Perron − I` has the *exact algebraic form* of the supplied double‑cover polarization
+```
+i_C = 2P_C − 1 = R_τ        (source lines 108–136).
+```
+Both are "twice a canonical projector minus identity" = a deck reflection. I identify them:
+```
+σ  =  R_τ|_shell ,      P_Perron  =  P_C|_shell  =  |f0⟩⟨f0|_π .
+```
+Reading the eigenspaces through this identification:
+
+- `+1`‑eigenline of `σ` = stationary shell `f0` = `ran(P_C) = ker(R_τ−1)` = reflection‑**symmetric** vacuum Cauchy data.
+- `−1`‑eigenplane `{q, r}` = `ker(R_τ+1)` = reflection‑**antisymmetric** data; it contains the hypercharge mode `q`.
+
+Now the A7 link closes it. The hypercharge mode `q` is the Petersen obstruction (`J_P = −1` there) and it is **the same line as A7 `ω4 = p*`, which carries `δ·p* = −1`.** So the Petersen deck obstruction sign and the A7 folding eigenvalue `−1` are *one operator* `R_τ = i_C` acting odd on the charged ω4 spinor line:
+```
+R_τ · (ω4 line) = −(ω4 line) ,    δ·ω4 = −1 ,    J_P|_hypercharge = −1.      [IDENTITY of signs, PROPOSED as one operator]
+```
+
+The oriented sewing supplies the two remaining structural facts, both already proved in `SEWING-FUNCTOR-COCYCLE-TEST`:
+
+1. **Architecture.** The two‑object even/odd groupoid with `α_01=T`, `α_10=β_0 T^{-1}` and step‑twist `β_0` is *exactly* the Petersen period‑two frame `W_n = K^n W`, `W_{n+1} P W_n^{-1} = M_lazy`. The sewing's "next step is not the inverse of the first" (eq. 1, 6) is the categorical version of Petersen's "odd steps differ by `K`." [SOURCE ↔ SOURCE match]
+2. **Order.** The sewing lattice shift `V_Λ → V_{ζ8 Λ}` and `a^8 = 1` carry `ζ8 = exp(2πi/8)` with **8 = h(A7)**. The central spin holonomy `β` has order 4 (`β²=−1`); its order‑2 reduction is the determinant‑line conjugation `β↦β̄` (`β|K = −i`, `β|K* = +i`, eq. 16) — a genuine involution. **That involution is the candidate for `σ`:** `σ` = the parity/real‑part of the sewing's central character on the family determinant line. [SOURCE, PROPOSED identification]
+
+Putting it together, the signed step factors as
+```
+K = σΔ = R_τ · Δ     (double‑cover reflection ∘ family deck),
+```
+and the whole signed Petersen transfer is `W P W^{-1} = R_τ · Δ · M_lazy` with the three factors the double cover, the sewing two‑object deck, and the lazy walk. This is the "independently derived reason the OS/clock lift includes the Perron reflection Z" that `PETERSEN §10` asked for — not invented, but read off the supplied `i_C=R_τ`.
+
+**The one missing computation (the exact extra source operation).** Everything above is a theorem *except* the single equality
+```
+P_C|_shell  =  P_Perron  =  |f0⟩⟨f0|_π ,
+```
+i.e. that the Calderón projector of `B_Σ`, restricted to the 3‑dimensional shell sector, is rank‑1 onto the stationary mode. The source gives `i_C=R_τ` abstractly but does not compute `P_C` on the finite shell sector. **That diagonalization is the exact extra source operation.** It is a bounded, finite, falsifiable computation — not a new environment, Hamiltonian, or fitting basis.
+
+**Can the two‑boundary source or spin sewing supply the signed step and the charge compensation?**
+
+- **Signed step: YES in architecture, exact sign pending the one Calderón computation.** The double cover supplies `R_τ` (right form); the oriented sewing supplies the period‑two groupoid and the order (`ζ8=h(A7)=8`). The precise `K=ZΔ` follows *iff* `P_C|_shell=P_Perron`.
+
+- **Charge compensation: NO — the supplied sources do not suffice.** [IDENTITY of the obstruction] You proved `[Y_shell,P]` has rank 2, Frobenius² `= 700/9`, and the alternating frame does not fix it (`Y_{n+1}M_lazy − M_lazy Y_n = W_{n+1}[Y_shell,P]W_n^{-1} ≠ 0`). I checked the naive doublings too: on `P̂=[[0,P],[P,0]]`, charge `diag(Y,−Y)` gives `[Ŷ,P̂]=[[0,{Y,P}],[−{Y,P},0]]` (anticommutator, nonzero) and `diag(Y,Y)` gives `[[0,[Y,P]],[[Y,P],0]]` (nonzero). **So the bipartite double cover makes the *transfer* static but does NOT conserve the shell charge.** I will not invent a compensating environment. The exact extra operation required is the one object already flagged as genuinely open in my prior reply and in both attachments: **the charged DHR intertwiner `Φ_Σ` (`report.md §9`) — a source‑derived coupled sector whose transported current cancels `[Y_shell,P]`.** Charge compensation = the still‑missing `Φ_Σ`, not the double cover.
+
+---
+
+## (C) Claims that must be retracted
+
+1. **Route 2** (modular/KMS re‑derivation): the `β→∞` limit of `H_fold` does *not* give the unfolded unique vacuum; the ground space is δ‑degenerate `{Ω,p*}`. *Fully retracted.* (Item 1)
+2. **The v395 product‑substrate factorization** `T_net⊗M ⇒ L0 ⊕ family`, and **"carrier gap = 1,"** and the OS **clustering rates `{1, 6ln(3/2), 6ln3}`** as derived consequences. `T_net` is a finite affine‑E8 recursion with golden gap. *Retracted;* the two family numbers survive only as `spec M_lazy`. (Item 2)
+3. **"`Tbound` contains `B_Σ` not δ ⇒ unfolded generator,"** and **"OS generator `= dΓ(|B_Σ|)` automatically."** *Both retracted;* each needs an explicit premise. (Item 3)
+4. **"Staircase = `ρ(D8)` / E8 principal gradation, `h=30` gearbox."** *Retracted,* corrected to A7: `δ ∝ ρ_A7`, denominator `8 = h(A7)`, `p* = ω4`. (Item 4)
+5. **"The double cover is/forces the vacuum `ω_Σ` (GNS cyclic vector)."** *Retracted;* it supplies `R_τ` polarization, not the full kernel. (Item 5)
+6. Consequently, the **"third branch (Ls + unfolded `L0`) resolves the no‑go"** claim is downgraded from "satisfies C1,C3,C4" to **open**: I cannot establish the generator is unshifted (Item 3) and the folded degeneracy is intrinsic (Item 1).
+
+**What stands.** The arithmetic `δ·p*=−1` (now in the correct A7 frame); the attachments' identities (`P=σΔM_lazy`, the exact even‑time theorem, `K=σΔ`, the rank‑2 charge defect `700/9`, `σ=v409` involution, the sewing cocycle `β_1=Tβ_0T^{-1}` with `β²=−1`, `a^8=1`, `ζ8`); the free C² boundary result; and the `v395` `_micro_step`/`_family_M`/`run()` code defects (housekeeping, unaffected by the physics retractions).
+
+**One‑sentence picture (corrected):** the folded "8" was never a wall‑clock and its `β→∞` limit does not become one — it is the **A7 Coxeter grading** (`8=h(A7)`, `p*=ω4`), and the one genuinely new, source‑anchored object is the signed step `K = R_τ·Δ`, where the missing Perron sign is the *existing* double‑cover reflection `i_C=R_τ` acting `−1` on the ω4 charged line; the only thing between this and a theorem is computing `P_C` on the shell sector, and the only thing it still cannot do alone is conserve the shell charge, which remains the charged `Φ_Σ`.
+
+I have not written to memory, as this is a single research exchange rather than a durable project fact; say the word if you want the corrected A7 frame and the `K=R_τΔ` identification saved.

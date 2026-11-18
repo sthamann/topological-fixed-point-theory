@@ -20,7 +20,7 @@ SOURCES = {
     "experiments/theory-contracts/microscopic-charged-car-limit/README.md":
         "39c613b80a1fe64200d269b782f6fb86c98f92c78058891a6144605e09c4532b",
     "experiments/theory-contracts/microscopic-charged-car-limit/checker.py":
-        "2259bd7d6ab890c8cca562774b1b5cdc574e60fb72a04a8c8c8f6ed8292f113a",
+        "1194dd1e38d6e9bc9849defc6a07d27d68f5ea4981359218773e60054f23564d",
     "experiments/theory-contracts/microscopic-charged-car-limit/test_checker.py":
         "fc8b16ae937cef9139e65f7316126c05f070265e3afe9548ab3b8a26335ca00d",
     "experiments/theory-contracts/charged-source-time-audit-20260920/HOLONOMY_REVIEW.txt":

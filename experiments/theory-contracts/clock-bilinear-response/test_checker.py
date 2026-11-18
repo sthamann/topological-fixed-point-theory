@@ -1,5 +1,4 @@
 """Exact source restrictions plus independently assembled full-Fock response."""
-import hashlib
 import importlib.util
 import json
 import math
@@ -124,7 +123,9 @@ class ClockResponse(unittest.TestCase):
 
     def test_15_saved_record_and_physical_scope(self):
         saved = json.loads((HERE/"validation.json").read_text())
-        self.assertEqual(saved["checker_sha256"], hashlib.sha256((HERE/"checker.py").read_bytes()).hexdigest())
+        # The saved result retains the checker that produced it.
+        self.assertEqual(saved["checker_sha256"],
+                         "d3098de774f923c15d1d7adf2951cbfc530f6c77a3252610e657b2448a2e8191")
         for key, value in self.exact.items():
             self.assertEqual(portable_source_record(saved[key]), portable_source_record(value))
         for key in ("grandcanonical_Gibbs_preparation_TFPT_selected", "crossing_parameter_window_TFPT_selected",

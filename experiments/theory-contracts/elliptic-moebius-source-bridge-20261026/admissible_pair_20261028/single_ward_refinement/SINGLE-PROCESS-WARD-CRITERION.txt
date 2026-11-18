@@ -1,0 +1,126 @@
+EIN EINZIGES QUELLENKRITERIUM WAEHLT DIE VOLLSTAENDIGE ANTWORT
+=============================================================
+
+28. Oktober 2026
+
+Der staerkere Satz
+------------------
+
+Sei T:End(Lambda2 C5)->End((Lambda2 C5)*) ein beliebiger CPTP Kanal im
+festen, dual typisierten Quellenwoerterbuch. Volle SU5 Kovarianz wird NICHT
+vorausgesetzt. Sei J_T sein Choi Operator mit Tr J_T=10 und
+
+ P5=(1/6) sum_m |C_m>><<C_m|,
+ C_m[kl,ij]=epsilon(m,i,j,k,l).
+
+Dann gilt die vollstaendige Aequivalenz
+
+ T=Phi  <=>  Tr(P5 J_T/10)=1,
+ Phi(rho)=(1/3) sum_m C_m rho C_m*.
+
+Damit genuegt eine einzige gemeinsame positive Prozesssaettigung, um den
+vollen ungelesenen Quantenkanal zu bestimmen. Nicht nur seine Population,
+sondern alle100 Eingabeoperatorrichtungen und ihre Phasen werden fixiert.
+Eine eigens vorausgesetzte Petersen Populationsmatrix ist ebenfalls nicht
+noetig; sie folgt aus dem bestimmten Kanal.
+
+1. Positivitaet macht Saettigung zu einer Traegeraussage
+-------------------------------------------------------
+
+Tr((I-P5)J_T)=0 und J_T>=0 ergeben
+
+ (I-P5)J_T=0=J_T(I-P5).
+
+Zum Beispiel ist die Hilbert Schmidt Norm von
+J_T^(1/2)(I-P5) null. Daher liegt der ganze positive Choi Operator im
+fuenfdimensionalen Bild von P5. Mit V=[vecC0,...,vecC4] und V*V=6I5 gibt es
+ein eindeutiges K>=0 mit
+
+ J_T=V K V*.
+
+Alle Krausamplituden liegen also im vorhandenen Epsilon Intertwinerraum.
+Es wird keine Wahl einer Krausbasis oder eines beobachteten Registers
+vorausgesetzt.
+
+2. Spurtreue fixiert auch alle verbleibenden Koeffizienten
+----------------------------------------------------------
+
+Fuer die tatsaechlichen C_m gilt exakt
+
+ C_m* C_n = delta_mn I10 - dGamma(E_nm).
+
+dGamma ist die wirkliche infinitesimale Exteriorquadratwirkung auf Lambda2.
+Somit lautet die TP Bedingung fuer K
+
+ A(K):=Tr_out(V K V*)=sum_mn K_mn C_m* C_n
+      =tr(K)I10-dGamma(K^T)=I10.                           (1)
+
+Alle25 Matrizen C_m*C_n sind linear unabhaengig. Der Checker bestimmt ihren
+Rang exakt als25 und loest (1) ohne Rangtoleranz mit dem einzigen Ergebnis
+
+ K=I5/3.
+
+Auch der kurze analytische Beweis ist direkt: K ist Hermitesch und besitzt
+Eigenwerte k_i. K^T ist ebenfalls positiv Hermitesch und besitzt dieselben Eigenwerte.
+Die Eigenwerte von dGamma(K^T) sind k_i+k_j fuer i<j. (1)
+verlangt, dass alle diese Paarsummen gleich sind. Bei fuenf Slots folgt
+daraus k_i=c fuer alle i. Dann ist tr(K)I-dGamma(K)=3c I, also c=1/3.
+Es bleibt J_T=(1/3)VV*=2P5, genau der Hodge Kanal. Bei dieser
+Choi Konvention ist A(K) die partielle Spur; der adjungierte Effekt T*(I)
+ist deren Transponierte tr(K)I-dGamma(K). Beide Spurtreubedingungen sind
+aequivalent. Ein komplex Hermitesches K mit imaginaerem Nebendiagonaleintrag
+prueft im Checker ausdruecklich die richtige Zuordnung. Der Rueckschluss ist
+offensichtlich, weil J_Phi im Bild von P5 liegt.
+
+3. Warum das den Quellenweg wirklich verkuerzt
+-----------------------------------------------
+
+Der groessere SU5 Eindeutigkeitssatz bleibt richtig. Fuer die konkrete
+Herkunftsableitung ist die neue Variante jedoch kuerzer: Die Quelle muss
+nicht zuerst eine noch unbewiesene grosse Symmetrie des physischen
+Ereignisprozesses liefern. Es genuegt eine positive Prozessidentitaet
+
+ Tr((I-P5)J_source)=0                                    (2)
+
+zusammen mit der tatsaechlichen Spurtreue des festgelegten Quelleneingriffs.
+Gleichwertig muessen die Quellenamplituden nach Zusammenfuehrung ihrer vier
+Carrierindizes voll im Epsilon Vierformraum liegen. (2) ist daher ein
+konkretes moegliches Sewing oder Ward Ziel am Original. Nach (2) folgt der
+vollstaendige Kanal ohne weitere Phasensuche, volle SU5 Kovarianz oder
+Populationsfit. Die algebraischen E8 Brackets liefern diesen Epsilonraum
+bereits; ihre physische Einsetzungsabbildung ist der zu pruefende Pfeil.
+
+Die saemtlichen alten Zwanzig Ereignisse erfuellen (2) nicht: ihre
+normierte P5 Wahrscheinlichkeit ist1/5. Die anderen markenkovarianten
+Gegenfaelle liefern4/15 und7/15. Der neue Test entscheidet also eine
+wirkliche Alternative, statt bekannte passende Zahlen nochmals zu pruefen.
+
+4. Was die Originalquelle dafuer liefern muss
+----------------------------------------------
+
+Ein Erwartungswert omega(P5) im vorhandenen freien Zweirandzustand ist
+NICHT automatisch Tr(P5 J_source/10). Fuer den Schluss braucht es den
+wirklichen Prozess mit bezeichnetem Eingabe und Referenzraum oder eine
+bewiesene aequivalente Quellenamplitudengleichung. Die volle CAR
+Projektorkovarianz allein wird hier nicht zur Choi Prozesspraeparation
+umgedeutet. Die lokale, zeit und reflexionsvertraegliche Einbettung der
+konkreten Carrierworte sowie die Ereignis und Registerdeutung bleiben
+physische Herkunftsbedingungen.
+
+Der Satz waehlt zudem den ungelesenen Kanal, nicht eine eindeutig
+beobachtete Instrumentzerlegung mit festem Pointerlabel. Verschiedene
+Krausdarstellungen desselben Kanals unterscheiden sich durch eine
+Umsetzung des Umgebungsregisters. Ein im Original beobachtetes Label muss
+weiterhin durch dessen Feld und Clockabbildung transportiert werden.
+
+Dieses Ergebnis ist ein vollstaendiger mathematischer Auswahlsatz fuer
+den genannten Kanal. Es ist keine Behauptung, (2) sei schon aus P1
+bewiesen, und kein Beweis einer vollstaendigen fundamentalen TFPT Physik.
+
+Reproduzierbarkeit
+------------------
+
+check_covariant_rigidity.py prueft zusaetzlich alle25 Koeffizientenidentitaeten,
+die Injektivitaet des TP Koeffizientenoperators und seine eindeutige rationale
+Loesung. Der Beweis beruht auf Positivitaet und dem wirklichen Epsilon
+Intertwinerraum, nicht auf einer weiteren Modellannahme oder Simulation.

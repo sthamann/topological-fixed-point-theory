@@ -1,0 +1,143 @@
+CLAUDE49: UNABHAENGIGE PRUEFUNG DER ZENTRALISIERUNG UND DER KOMPLEXEN DELTA RICHTUNG
+====================================================================================
+
+Datum: 2026-10-30
+Status: enger unabhaengiger Quellen und Algebra Review
+Geprueft: CLAUDE49-SPEKTRALE-LESUNG-UNGEPRUEFT.txt
+
+Urteil
+-------
+
+Die Zentralprojektionen
+
+  Ecomm(Fhat)=c M0,
+  Ecomm(Nhat)=i c M0^-1,
+  c=(alpha-beta)/3,
+
+sind richtig. Sie bestimmen die lineare Antwort jedes skalaren Consumers
+Tr[f(M0) X]. Sie rechtfertigen aber keine Ersetzung der voll markierten
+Einsetzungen durch einen ganzen zweiseitigen Transportoperator. Die exakte
+Determinante stimmt nur bis zur ersten Ordnung in den neuen Einsetzungen.
+
+Auch die Beziehung Nhat=rhobar Fhat^dagger gilt nur nach dieser
+Zentralprojektion. Im voll markierten Reader ist sie falsch. Die komplexe
+delta Richtung ist schliesslich keine zulaessige Richtung des gedruckten
+Originalvertrags: Dort ist delta reell, positiv und auf (1/3,2/3) beschraenkt.
+Der komplexe Sattel ist eine analytische Fortsetzung, keine Instabilitaet der
+urspruenglichen Transportwirkung.
+
+1. Die Zentralisierung ist ein linearer Quotient
+------------------------------------------------
+
+Im tatsaechlichen festen Bstar Rahmen gelten
+
+  Fhat=alpha M0 P0-beta P0 M0,
+  Nhat=-Dsign Fhat Dsign,
+
+mit M0^3=I. Weil M0 drei verschiedene Eigenwerte hat, zerfaellt jede
+Matrixrichtung in einen zentralen Anteil und eine Kommutatortangente. Fuer
+konjugationsinvariante skalare Funktionen verschwindet die
+Kommutatortangente in erster Ordnung. Genau daraus folgt
+
+  Tr[f(M0)Fhat]=Tr[f(M0)cM0],
+  Tr[f(M0)Nhat]=Tr[f(M0)icM0^-1].
+
+Diese Aussage vergisst jedoch die markierten linken und rechten P0 Beine.
+Ein separater infinitesimaler Rahmenwechsel fuer eine einzelne Richtung
+liefert keine gemeinsame endliche Konjugation, die Fhat und Nhat in allen
+Ordnungen gleichzeitig durch ihre Zentralteile ersetzt.
+
+2. Exakter kleinster Gegenfall: die ganze Determinante
+-----------------------------------------------------
+
+Direkte symbolische Auswertung mit den unveraenderten Originalmatrizen gibt
+
+ det(yI-delta M0-uFhat-vNhat)
+ = y^3-delta^3
+   -(alpha-beta)delta^2 u
+   -i(alpha-beta)delta y v
+   +alpha beta delta u^2
+   +2i alpha beta y u v.                                  (1)
+
+Der zentralisierte Ersatz waere
+
+ det(yI-(delta+cu)M0-icv M0^-1)
+ = y^3-(delta+cu)^3-(icv)^3
+   -3y(delta+cu)(icv).                                    (2)
+
+Die linearen Koeffizienten von (1) und (2) stimmen genau ueberein. Die
+Differenz beginnt aber schon quadratisch:
+
+ full-central
+ = delta u^2 (alpha^2+alpha beta+beta^2)/3
+   + i y u v (alpha^2+4alpha beta+beta^2)/3
+   + u^3 (alpha-beta)^3/27
+   - i v^3 (alpha-beta)^3/27.                             (3)
+
+Bereits fuer v=0 ist (3) beim tatsaechlichen reellen Verhaeltnis
+beta/alpha=-3.34759766402518... nicht null. Damit ist die von Claude49
+angegebene zweiseitige Determinante als Determinante des vollen markierten
+Readers widerlegt. Sie bleibt die korrekte Determinante des separat
+zentralisierten Quotientenmodells.
+
+3. Die Adjungiertenphase gilt nur im Zentralquotienten
+------------------------------------------------------
+
+Im gemeinsamen Readerrahmen lauten die voll markierten Einsetzungen
+
+  F=alpha E02+beta E21,
+  N=-i(alpha E12+beta E20).
+
+Mit der tatsaechlichen Phase rhobar conjugate(alpha)=i alpha und ebenso fuer
+beta folgt direkt
+
+  N-rhobar F^dagger=-i(alpha+beta)(E12+E20),               (4)
+
+also ein nicht verschwindender markierter Rest. Eine unitaere Uebertragung
+in den Bstar Rahmen kann diesen Rest nicht beseitigen.
+
+Nach Zentralprojektion gilt dagegen exakt
+
+  ic M0^-1=rhobar (cM0)^dagger.
+
+Die Phase rhobar ist daher eine wahre spektrale Aussage des Zentralquotienten.
+Sie ist keine Matrixidentitaet des ganzen Vorwaerts und Rueckwaerts Readers.
+
+4. Der Originalvertrag hat nur eine reale delta Richtung
+--------------------------------------------------------
+
+Die Originalquelle EM3 definiert
+
+  D_(y,delta)=yI-delta U6,
+  delta_ph in (1/3,2/3),
+
+auf der positiven reellen Achse. Die Stationaritaet und die positive
+Transportkrummung werden fuer diesen reellen Parameter und fuer
+D^dagger D+epsilon^2 bewiesen. Eine komplexe analytische Fortsetzung von
+-2 sum_y log|y^6-delta^6| kann als reelle Funktion auf der komplexen Ebene
+einen Sattel besitzen. Das erzeugt aber keine zulaessige Variation des
+gedruckten Originalvertrags und keinen bewiesenen Hardy Abstiegspfad.
+
+Zudem ist die volle Hardy Richtung Fhat nur nach Zentralprojektion eine
+komplexe delta Richtung. Ihr markierter Kommutatoranteil bleibt im ganzen
+Reader vorhanden. Die Fourierentwicklung des alten U6 Resolventen enthaelt
+zwar Potenzen U6^m, darunter U6^-1. Das ist keine unabhaengige Einsetzung
+eines U6^-1 Koeffizienten in den Nenner yI-delta U6.
+
+Quellen und Geltungsbereich
+---------------------------
+
+* paper-source:8c374b792c3f7ed5c3c4211f, Original EM3, besonders die
+  Definition von D_(y,delta), die positive reelle Achse und
+  delta_ph in (1/3,2/3).
+* WHOLE-ALPHABET-ORIGINAL-MARKED-JET-REVIEW.txt fuer Fhat, Nhat und die
+  beiden linearen Resolventenspuren.
+* ORIGINAL-V118-CUSP-AND-FULL-CONSUMER-REVIEW.txt fuer Ecomm und die
+  Grenze zwischen linearem skalarem Consumer und voller markierter Matrix.
+* verification/v118_hexagon_family_dictionary.py fuer M0^3=I und den
+  einseitigen Originalresolventen.
+
+Das Ergebnis schliesst keinen spaeter ausdruecklich hergeleiteten
+zweiseitigen Quellenoperator aus. Es zeigt genau, dass weder die lineare
+Zentralisierung noch die analytische komplexe delta Fortsetzung einen
+solchen Operator aus den gegenwaertigen Originaldaten liefert.

@@ -1,0 +1,176 @@
+LADUNGSTYP DES NATIVEN GAMMA HODGE KANALS
+=========================================
+
+28. Oktober 2026
+
+Frage
+-----
+
+Die fünf exakt gefundenen Operatoren
+
+    D_Gamma(P) = (Gamma P + P Gamma^T)/2,
+    Gamma = XI, YX, YY, YZ, ZI,
+
+spannen im alten Bell10 Chart genau den kanonischen Hodge Krausraum auf. Sind
+sie damit auch der physikalische Hodgekanal auf dem unveränderten P2 Träger
+Lambda2(C5)?
+
+Urteil
+------
+
+Nein. Bewiesen ist eine exakte Operatorgleichheit auf dem alten
+A3 Nachkommen Bell10. Eine ladungsgetreue Identifikation mit dem vorhandenen
+P2 Träger ist ausgeschlossen. Bereits der kleinste Hyperladungstest ergibt
+
+    Hom_Y(10_D5_vector, Lambda2(5)_SU5) = 0.
+
+Die beiden Räume besitzen keinen einzigen gemeinsamen Y Eigenwert. Auch ihr
+Spin(10) Zentrumstyp und ihre ursprüngliche affine Stufe unterscheiden sich.
+Die Familienströme Gamma sind A3 Nullmoden. Sie können keine dieser drei
+D5 Daten ändern.
+
+Das ist kein Ausschluss des Hodgekanals in der vollen E8 Quelle. Der schon
+verifizierte geladene A4 mal A4 Bracketweg transportiert genau die fehlende
+Ladung und liefert den Hodgekanal als reduzierte inklusive Antwort. Offen
+bleibt dort die physische Auswahl dieses Einsatzregisters.
+
+1. Wo die Gamma Operatoren tatsächlich wirken
+----------------------------------------------
+
+Der Checker `check_native_gamma_current.py` identifiziert die fünf Hodge
+Krausoperatoren exakt mit kollektiven Pauliwirkungen auf
+
+    Bell10 = Sym2(C4_A3).
+
+Der ursprüngliche Stromvertrag gibt für jedes traceless X
+
+    J_0(X) E = E (X tensor I + I tensor X)|Sym2.
+
+Damit sind die Gamma Operatoren horizontale A3 Stromnullmoden. Die
+ursprüngliche E8 Einbettung dieses Bellraums ist
+
+    10_D5_vector tensor 10_A3_descendant
+
+bei konformem Gewicht
+
+    1/2 + 3/2 = 2.
+
+Der diagonale Z4 Glue ist Klasse 2 plus Klasse 2. Sein Zentrumcharakter ist
+(-1) mal (-1), also insgesamt trivial. Ein Gamma Nullmode wirkt nur auf dem
+A3 Faktor. Auf dem vollen alten Eckoperator lautet seine Wirkung
+
+    I_10_D5 tensor D_Gamma.
+
+Sie kommutiert deshalb mit der D5 Hyperladung, lässt die D5 Zentrumsklasse
+unverändert und erhält als Nullmode L0.
+
+2. Der entscheidende Y Test
+---------------------------
+
+Die vorhandene P2 Polarisation benutzt auf dem SU5 Fünfer
+
+    Y = diag(-1/3,-1/3,-1/3,1/2,1/2).
+
+Der D5 Vektor besitzt die Gewichte plus oder minus e_i. Sein Spektrum ist
+
+    -1/3 mit Multiplizität 3,
+    +1/3 mit Multiplizität 3,
+    -1/2 mit Multiplizität 2,
+    +1/2 mit Multiplizität 2.
+
+Der gewünschte Träger Lambda2(5) besitzt die Paarladungen Y_i+Y_j:
+
+    -2/3 mit Multiplizität 3,
+    +1/6 mit Multiplizität 6,
+    +1   mit Multiplizität 1.
+
+Die Spektren sind disjunkt. Für eine ladungstreue lineare Karte T müsste
+
+    Y_Lambda2 T = T Y_vector
+
+gelten. Jede Matrixkomponente verbindet dann gleiche Eigenwerte. Da es keine
+gleichen Eigenwerte gibt, ist T=0. Dies ist stärker als ein bloßer Unterschied
+von Charakteren oder Dimensionen. Es existiert keine invertierbare
+Y äquivariante Bell10 zu P2 Karte.
+
+3. Zentrum und affine Stufe bestätigen denselben Typfehler
+---------------------------------------------------------
+
+Unter Spin(10) hat der Vektor die Z4 Klasse 2. Die beiden Halbspinoren haben
+Klasse 1 beziehungsweise 3. Der SU5 Zehner Lambda2(5) ist ein Summand eines
+solchen Halbspinors und trägt dessen Zentrumcharakter. Im E8 Glue gehört er
+daher zu einer der gemischten Klassen
+
+    (1,3) oder (3,1),
+
+während der alte Bellraum in (2,2) liegt. Ein neutraler A3 Strom hat Klasse
+null und kann (2,2) nicht in eine gemischte Klasse verschieben.
+
+Auch die Stufe ist verschieden. Der alte Bellraum liegt bei E8 Gewicht 2.
+Der horizontale D5 Halbspinor hat Gewicht 5/8 und sein gepaarter A3
+Fundamentalraum Gewicht 3/8, zusammen also E8 Gewicht 1. Eine horizontale
+Nullmode erhält L0. Sie verbindet diese Räume nicht.
+
+Damit lautet die genaue Aussage der Gamma Rechnung:
+
+    Der Hodgekanal besitzt im alten Bell10 Chart eine exakte Darstellung
+    durch fünf vorhandene A3 Stromnullmoden.
+
+Sie lautet nicht:
+
+    Diese Nullmoden sind unter dem unveränderten P2 Ladungswörterbuch die
+    physikalischen Krausoperatoren auf Lambda2(5).
+
+Für die zweite Aussage wäre ein geladener Einsatz oder ein explizit
+ladungsausgleichender weiterer Sektor nötig. Ein solcher Sektor darf nicht
+stillschweigend als neutrales Hilfsregister ergänzt werden.
+
+4. Der bereits vorhandene positive geladene Weg
+-----------------------------------------------
+
+Die volle E8 Stromquelle enthält im durch den gegebenen Carrier SU5
+bestimmten A4 mal A4 Schnitt die drei tatsächlichen Sektoren
+
+    Eingabe  (10,bar5),
+    Einsatz  (5,10),
+    Ausgabe  (bar10,5).
+
+Der verifizierte Bracket faktorisiert auf allen 600 nichtverschwindenden
+Kanten als
+
+    B_(m,ab) = C_m tensor A_ab.
+
+Hier trägt C_m die fehlende Carrierladung. Der vorhandene Test prüft auf
+allen Kanten
+
+    q_output + q_environment = q_input.
+
+Nach der fest angegebenen inklusiven Spur über den Familienausgang ist die
+reduzierte Carrierantwort exakt der Hodge Petersen Kanal. Dieser Weg bewahrt
+die A4 mal A4 Bedingung und benutzt vorhandene gemischte E8 Ströme. Er ist
+deshalb der positive algebraische Anschluss, den die neutralen Gamma Nullmoden
+nicht liefern.
+
+Dieser Anschluss benutzt den durch das Carrier SU5 bestimmten A4 mal A4
+Schnitt der vollen E8 Wurzelquelle. Seine Fünfzigersektoren mischen unter dem
+alten D5 mal A3 Schnitt mehrere Grade. Er ist daher keine nachträgliche
+Identifikation des alten D5 Vektors mit Lambda2(5), sondern ein eigener
+ladungstragender Bracketpfeil in derselben E8 Algebra.
+
+Aus der Bracketidentität folgt weiterhin keine physische Regel, welche die
+50 Einsatzrichtungen gleichgewichtet aktiviert und den Familienausgang
+unbeobachtet lässt. Genau diese Auswahl bleibt offen. Der jetzige Test fügt
+keine Gegenladung, kein neutrales Ancilla und keine neue Dynamik hinzu.
+
+Reproduktion
+------------
+
+    python3 check_charge_typed_hodge_bridge.py
+    python3 -OO check_charge_typed_hodge_bridge.py
+
+Beide Läufe erzeugen bytegleich
+`charge-typed-hodge-bridge-results.json`. Der Checker pinnt die tatsächliche
+Gamma Identität, den ursprünglichen Bell10 Stromvertrag, den P2 Ladungstest
+und den vorhandenen E8 A4 mal A4 Antwortvertrag per SHA256. Er prüft die
+beiden Y Spektren, den verschwindenden Y Hom Raum, die Z4 Klassen und die
+beiden Affingrade mit exakter rationaler Arithmetik.

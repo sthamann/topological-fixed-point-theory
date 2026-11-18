@@ -1,0 +1,34 @@
+{
+  "contract": "e-series-incidence-algebra-20261024",
+  "research_id": "MATH.SEAM.ESERIES.INCIDENCE.07",
+  "date": "2026-10-24",
+  "question": "Close the supplied independent E6/E7/E8 finite incidence classification against the original marked field lifts and global cover monodromies, and identify whether the tetrahedral incidence retains all E6 information.",
+  "verdict": "PASS",
+  "verdict_enum": ["PASS", "PARTIAL", "FAIL"],
+  "mathematical_verdict": "COMPLETE_FINITE_ORBITAL_ALGEBRA_AND_LOSSLESS_TETRAHEDRAL_RECONSTRUCTION_WITH_ORIGINAL_CLOCK_COVER_RECONCILIATION",
+  "scope": "Standard E8 roots, regular A2-normal E6 and root-normal E7 systems, actual Weyl action on transported full D5+A3 compiler flags; original cocycle and fixed Jhat sign-lift equivalence; original induced Burau deck local system. No physical-origin or corner-selection claim.",
+  "claims_tested": [],
+  "gates": [],
+  "kills": [
+    "The E6/E7 incidence transform retains all 1120 E6 directions.",
+    "A bare A3 subsystem belongs to only one D8 frame; the unique frame needs its full D5+A3 flag.",
+    "Unrestricted sign-lift classes contradict the fixed-Jhat cyclic-lift classification.",
+    "The original relative cover minimality was based only on one local order.",
+    "Lossless tetrahedral reconstruction by itself selects one E6 corner."
+  ],
+  "checker": "checker.py",
+  "additional_checkers": ["clock_cover_audit.py"],
+  "proof": "THEOREMS.txt",
+  "additional_proofs": ["CLOCK-COVER.txt"],
+  "results": "results.json",
+  "firewall": "experiments",
+  "promotion": false,
+  "new_results_in_this_investigation": [
+    "Five complete Weyl orbitals on 1120 E6 systems, all125 structure constants, primitive irreducible dimensions1,35,84,300,700.",
+    "All135 D8 compiler frames and7560 tetrahedra with unique full-flag incidence; bare A3 containment instead has616 per D8 and11 D8 per A3.",
+    "NNt=A_D5+3I, MMt=A_D5+27I and MMt=NNt+24I. All E6 signals are exactly recoverable from tetrahedron sums, with lower singular bound sqrt24.",
+    "Explicit exact inverse and the300/700 splitting of the E7-invisible1000-dimensional kernel.",
+    "Original constrained lift classes reconciled with unrestricted J and c sign classes; original global C12 factorization checked against the user's degree144 negative control."
+  ],
+  "review": "Independent read-only analytical and code review and separate exact incidence execution passed. The portable runner performs normal and optimized replay with byte comparisons."
+}

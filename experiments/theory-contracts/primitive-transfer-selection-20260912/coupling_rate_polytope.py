@@ -8,7 +8,7 @@ from pathlib import Path
 import sympy as S
 
 HERE=Path(__file__).resolve().parent
-PIN='1c853b49041aaa61e772ad331e22d9e5400c3192c81d69fead873396db6a9109'
+PIN='b5f9d1543a68bec1ef6624be115dc1fc7ecb7ddf97683f67f2b72b9486eb2f12'
 checks=0
 def require(ok,label):
     global checks

@@ -1,0 +1,37 @@
+# Independent audit: what the original spectral source fixes
+
+## Decision
+
+The broad transformation `W[g] -> W[g] + λ Q[g]` is **not** an admissible ambiguity of one already-fixed original spectral functional. In source02 the gravitational functional is defined as
+`Γgrav = -6 χgeo² E_D + Γ_D^(4)`, with `E_D = Res_{s=1} Zrel(s;σ)` and `Γ_D^(4) = FP_{s=0} Zrel(s;σ)`. For a fixed metric-indexed operator family, reference pair, APS domain, and zeta convention, adding a nonconstant `Q[g]` changes that very residue/finite-part functional. A Polyakov anomaly or BFK gluing formula computes the variation/gluing law of this fixed determinant; it does not authorize an extra term while keeping the determinant fixed. In particular, a replica-sensitive Euler term changes the branch-point response and is not invisible merely because it is topological on a smooth fixed topology.
+
+## What is fixed, and the remaining source gap
+
+The original source does fix more than a bare seam kernel: source01 fixes `[uΣ]=1`, `c3=1/(8π)` and defines the primitive action for “any declared spectral test profile f” as a relative trace. Source02 separately declares the profile-free gravitational residue pair and introduces
+`Zrel(s;σ) = Tr_rel(|D_{σ,geo}+B_rel|^{-2s} - |Dref|^{-2s}) + iπ ΔηΣ/2`, with `χgeo=Λe^σ`. Its metric reconstruction statement is conditional on a given Dirac anchor whose principal symbol squares to `g^{μν}ξμξν`.
+
+This makes the **evaluation rule** for the geometric response exact once its inputs are fixed; it does not, on the cited definitions alone, derive the required off-shell family from P1/P2. P1’s boundary datum is one-sided operator data and a boundary operator/polarization; `[uΣ]` and `c3` are one discrete class and one seam norm. The missing first source datum is the map on replica/glued geometries
+`g (and replica angle) ↦ (D_{σ,geo}[g], σ[g], Dref[g], APS/domain data, determinant-line norm)`
+including the relative-zeta scale/reference and the local BFK gluing factor. A single-background kernel or its normalization does not state the first metric/replica derivative of this family. The v471 finite collar computation verifies the Schur/BFK identity for its chosen matrices, but its scale intercept drifts; it does not supply this continuum family or an absolute cross-topology normalization.
+
+Thus the defensible claim is narrower than the old lambda-Q proposal: **no cocycle freedom on the same fully specified determinant**, but the P1-to-geometric-response derivation remains incomplete unless the source-family map above is derived from the original boundary data. If TFPT instead takes the profile-free `Zrel` family and its absolute normalization as additional axioms, the response is fixed by definition, not derived from P1.
+
+## Independent profile check
+
+The primitive action has an explicit profile choice `Sprim[f]=Tr f(Drel/χseed)-Tr f(Dref/χseed)+iπΔηΣ/2`; source01 calls a Bernstein or other profile an analytic-realization choice, not boundary data. For two allowed profiles `f` and `f+h`,
+`ΔSprim = Tr_rel h(Drel/χseed)`.
+This is a pure normalization only if this relative trace is metric-independent (in particular, zero after the declared reference subtraction). No such identity is stated in the extracted definitions. If it varies with the metric, then `Zadm` and hence the `-log Zrel` term in the stratified master functional vary. This is a genuine profile-level underdetermination of the full generating functional unless the claimed “same transfer channel” is backed by an equivalence theorem/cancellation; it does **not** alter the separately declared profile-free `Γgrav` by itself. The first decisive proof is to show that all admissible `h` lie in the null space of the relative source map, or exhibit one admissible `h` for which the relative trace’s metric derivative is nonzero.
+
+## Smallest decisive check
+
+Use the original source’s own replica family, without a new model. Compute at the reference geometry the first variation
+`δ_g Tr_rel h(Drel[g]/χseed[g])`
+for a nontrivial allowed profile difference `h`, alongside
+`δ_g Γgrav[g] = -6 δ_g(χgeo² Res_1 Zrel) + δ_g(FP_0 Zrel)`.
+Then check the BFK local factor under the same cut/glue operation and one replica-angle variation. If the source supplies a fixed family and absolute determinant-line/gluing normalization, these values are unique and there is no independent `λQ`; if it supplies only the base kernel/normalization, the derivative is not implied. Report the first missing item as the family map, not as an arbitrary counterterm.
+
+Primary references for the mathematical distinction: Burghelea–Friedlander–Kappeler, “Meyer–Vietoris type formula for determinants of elliptic differential operators,” [J. Funct. Anal. 107 (1992), DOI](https://doi.org/10.1016/0022-1236(92)90099-5); Y. Lee, “Burghelea-Friedlander-Kappeler’s gluing formula for the zeta-determinant,” [arXiv:math/0304250](https://arxiv.org/abs/math/0304250); Polyakov, “Quantum Geometry of Bosonic Strings,” [Phys. Lett. B 103 (1981), DOI](https://doi.org/10.1016/0370-2693(81)90743-7); Alvarez, “Theory of strings with boundaries: fluctuations, topology and quantum geometry,” [Nucl. Phys. B 216 (1983), DOI](https://doi.org/10.1016/0550-3213(83)90490-X).
+
+## Scope / source check
+
+Read the requested original extracts: `.../_archive/tfpt-45/source_extracts/01_boundary_kernel_source.tex` (boundary primitive kernel, primitive action/profile) and `.../02_carrier_source.tex` (profile-free relative residues, metric reconstruction, relative generating functional/master functional). This audit did not independently inspect the source-premise PDF text or re-run v471; the cited premise remains source-defined. No repository files changed and no suite was run.

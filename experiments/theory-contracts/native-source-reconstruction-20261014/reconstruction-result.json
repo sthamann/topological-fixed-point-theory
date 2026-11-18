@@ -1,0 +1,66 @@
+{
+  "status": "PASS",
+  "scope": "Gaussian log and normalization in one original static neutral charge block; analytical operator proof handles moving charges and nonzero signed hopping. No full charge history simulation.",
+  "declared_diagnostic_inputs": {
+    "L": 3,
+    "a": 1,
+    "m": 1,
+    "u": "1/3",
+    "beta": 1,
+    "nu": 0,
+    "D": 0.07407407407407407,
+    "charge_profile": "p=e8 at (0,0,0), -p at (1,0,0), zero elsewhere"
+  },
+  "gaussian_checks": [
+    {
+      "T": 3,
+      "delta": 0.3333333333333333,
+      "logZ_gaussian_integral": -31.426288759579933,
+      "logZ_reconstructed_spectrum": -31.426288759579915,
+      "absolute_residual": 1.7763568394002505e-14,
+      "effective_frequencies_max_error": 0.1366933400892707
+    },
+    {
+      "T": 4,
+      "delta": 0.25,
+      "logZ_gaussian_integral": -31.958419350162742,
+      "logZ_reconstructed_spectrum": -31.958419350162767,
+      "absolute_residual": 2.4868995751603507e-14,
+      "effective_frequencies_max_error": 0.08071906616408109
+    },
+    {
+      "T": 8,
+      "delta": 0.125,
+      "logZ_gaussian_integral": -32.5100894412941,
+      "logZ_reconstructed_spectrum": -32.510089441294156,
+      "absolute_residual": 5.684341886080802e-14,
+      "effective_frequencies_max_error": 0.02123027593408766
+    },
+    {
+      "T": 16,
+      "delta": 0.0625,
+      "logZ_gaussian_integral": -32.654684930787084,
+      "logZ_reconstructed_spectrum": -32.65468493078755,
+      "absolute_residual": 4.689582056016661e-13,
+      "effective_frequencies_max_error": 0.005379004795370346
+    }
+  ],
+  "resolvent_bound_samples": [
+    {
+      "delta_times_z": 0.01,
+      "min_ratio": 4.999378688808065e-11,
+      "max_ratio": 0.9900989099009901
+    },
+    {
+      "delta_times_z": 1.0,
+      "min_ratio": 5.10702591327572e-15,
+      "max_ratio": 0.49999990000001
+    },
+    {
+      "delta_times_z": 100.0,
+      "min_ratio": 0.0,
+      "max_ratio": 0.009900890100009892
+    }
+  ],
+  "max_normalization_residual": 4.689582056016661e-13
+}

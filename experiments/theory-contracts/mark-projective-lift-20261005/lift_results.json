@@ -1,0 +1,113 @@
+{
+  "steps": [
+    {
+      "step": "PL1 invariant c = U(x)U(y)U(x)^-1U(y)^-1 (rephasing-invariant): std rep +1, regular rep +1, SU(2) doublet (2T) -1",
+      "pass": true,
+      "detail": "c = [ 1.  1. -1.]"
+    },
+    {
+      "step": "PL2 Fock-implementation lemma: for genuine orthogonal one-particle actions the implementers satisfy all A4 relations up to scalars, c = (-1)^{m_3} (w2 of the real representation), never the fermion parity; number-conserving family modes c = +1; gamma-only c = -1 on BOTH parity sectors (no spin-statistics); twist zero modes c = (-1)^N",
+      "pass": true,
+      "detail": "family modes, number-conserving (R + R on gamma, gamma'): m3=2, c=+1; gamma-only rotation (R + 1 + 1 + 1): m3=1, c=-1; twist zero modes N = 1 (N x permutation rep): m3=1, c=-1; twist zero modes N = 2 (N x permutation rep): m3=2, c=+1; twist zero modes N = 3 (N x permutation rep): m3=3, c=-1; twist zero modes N = 4 (N x permutation rep): m3=4, c=+1; random real rep 1^1 3perm^2 3^1 (rotated): m3=1, c=-1; random real rep 1^2 3perm^0 3^2 (rotated): m3=2, c=+1; random real rep 1^1 3perm^0 3^1 (rotated): m3=1, c=-1"
+    },
+    {
+      "step": "PL3 positive control: a one-particle 2T doublet (the Weyl coin) second-quantised gives c = (-1)^F (odd sector -1, even +1): spin-statistics comes from a projective ONE-PARTICLE action",
+      "pass": true,
+      "detail": "diag(c) = [ 1. -1. -1.  1.]"
+    },
+    {
+      "step": "PL4 seam geometry: Moebius stabiliser of the square marks = 8 permutations (D4); circle-orientation-preserving ones = the four rotations (deck Z4); intersection with A4 = {e, (02)(13)}; no 3-cycle; square cross-ratio real (concyclic), the A4-symmetric equianharmonic value e^{+-i pi/3} is not real (not concyclic)",
+      "pass": true,
+      "detail": "|stab| = 8, rotations 4, A4 part [(0, 1, 2, 3), (2, 3, 0, 1)]; cross-ratio square 2.000+0.000j, tetrahedral 0.500-0.866j with stabiliser of order 12 = A4"
+    },
+    {
+      "step": "PL5 seam rotation lift is conditional: one-particle rotation by 2 pi = -I on NS modes (second quantisation (-1)^F), +I on R modes, with identical permutation structure (20260921: the geometric half-turn alone does not fix the lift); even under the S^2 spinor-section premise only <(02)(13)> of A4 is reached and no V4 commutator exists on the seam",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "step": "PL6 source inventory: flavor fiber (genuine A4 3-dim, not fermionic modes), windings (T_d, genuine), family modes (number-conserving, m_3 = 2, c = +1), twist zero modes N = 16 (m_3 = 16, c = +1); the only nontrivial class (gamma-only, m_3 = 1) breaks fermion number, mixes families (Part G) and is spinorial on the even sector -> no source sector realises A4 with center (-1)^F",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "step": "PL7 emergent spin 1/2: at the isotropic Weyl node of h_W the emergent rotations act on a two-component coin through SU(2) (covariance error O(k^2): ratio ~4 under k -> k/2) and the 2 pi loop lifts to -I, consistent with the fermion parity already present in the CAR structure (no IR derivation of spin-statistics, no derivation of the coin itself); the P1 sheet doublet is no coin (all marks act by the same swap, Gram rank 1)",
+      "pass": true,
+      "detail": "O(k^2) ratios [4. 4. 4. 4.]; loop end [-1. -1.]"
+    },
+    {
+      "step": "PL8 (statement) SOURCE.MARK_PROJECTIVE_LIFT.01 = NOT_FORCED_IN_SOURCE (all source mark actions trivial class; the Fock implementation cannot create spin-statistics; the seam is spinorial only on <(02)(13)> and conditionally) and SPIN_HALF_EMERGENT_GIVEN_TWO_COMPONENT_COIN: spin 1/2 emerges at an isotropic Weyl node once a two-component coin exists; the remaining microscopic input is that coin itself (AX.WEYLCOIN), not a cocycle choice",
+      "pass": true,
+      "detail": ""
+    }
+  ],
+  "passed": 8,
+  "total": 8,
+  "research_id": "SOURCE.MARK_PROJECTIVE_LIFT.01",
+  "verdict": "NOT_FORCED_IN_SOURCE",
+  "pins": {
+    "fock_cases": [
+      [
+        "family modes, number-conserving (R + R on gamma, gamma')",
+        2,
+        1.0
+      ],
+      [
+        "gamma-only rotation (R + 1 + 1 + 1)",
+        1,
+        -1.0
+      ],
+      [
+        "twist zero modes N = 1 (N x permutation rep)",
+        1,
+        -1.0
+      ],
+      [
+        "twist zero modes N = 2 (N x permutation rep)",
+        2,
+        1.0
+      ],
+      [
+        "twist zero modes N = 3 (N x permutation rep)",
+        3,
+        -1.0
+      ],
+      [
+        "twist zero modes N = 4 (N x permutation rep)",
+        4,
+        1.0
+      ],
+      [
+        "random real rep 1^1 3perm^2 3^1 (rotated)",
+        1,
+        -1.0
+      ],
+      [
+        "random real rep 1^2 3perm^0 3^2 (rotated)",
+        2,
+        1.0
+      ],
+      [
+        "random real rep 1^1 3perm^0 3^1 (rotated)",
+        1,
+        -1.0
+      ]
+    ],
+    "moebius_stabiliser": 8,
+    "seam_rotations": 4,
+    "A4_seam_part": [
+      [
+        0,
+        1,
+        2,
+        3
+      ],
+      [
+        2,
+        3,
+        0,
+        1
+      ]
+    ]
+  }
+}

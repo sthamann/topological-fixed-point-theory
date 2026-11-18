@@ -1,0 +1,291 @@
+INDEPENDENT REVIEW OF THE OLD DEFECT REWEIGHTING LEMMA
+======================================================
+
+25 October 2026. Narrow source and algebra review. No Atlas, index, paper or
+archived source was changed. This note does not identify the reweighting
+parameter with heat time, one-particle energy, charge or occupation number.
+
+Verdict
+-------
+
+The old formula
+
+  q(alpha)=q(0) exp(-alpha d s),                         (1)
+
+is exact as a RELATIVE action statement if all of the following are part of
+the sector contract:
+
+  * the topological insertion d s is constant on the defect sector;
+  * it is absent from the trivial sector;
+  * after removing this insertion, the defect-to-trivial partition ratio is
+    independent of alpha, including the measure and normalization factors.
+
+The archived lemma states the first two ingredients in its intended
+spectral-flow normalization, but its displayed hypotheses do not state the
+third one. Indeed it writes both Z_triv(alpha) and Z_def(alpha), then infers
+their ratio from an additive term in S_def alone. As written, that inference
+is incomplete. It is valid if "defect sector reweighting" means that alpha
+changes only the displayed relative topological action, or that every other
+alpha dependence is common and cancels in the ratio.
+
+The old choices
+
+  d=2,       s=SF=1                                    (2)
+
+are retained here as the existing original normalization contract. This
+review neither derives nor rejects them and does not require identifying s
+with energy, charge or a number operator. Its only question is what follows
+from that contract for the complete sector ratio.
+
+1. The exact complete-source identity
+---------------------------------------
+
+Let X_s and X_0 be the defect and trivial configuration spaces. After putting
+both sectors over fixed reference descriptions, suppose
+
+  S_s[x;alpha]=S_s^0[x;alpha]+alpha d s,                (3)
+  S_0[x;alpha]=S_0^0[x;alpha],                          (4)
+
+where d s is independent of x. Allow the residual measures to depend on
+alpha. Define
+
+  Z_s^0(alpha)=integral_(X_s) exp(-S_s^0[x;alpha])
+                              d mu_(s,alpha)(x),
+  Z_0^0(alpha)=integral_(X_0) exp(-S_0^0[x;alpha])
+                              d mu_(0,alpha)(x),
+  R(alpha)=Z_s^0(alpha)/Z_0^0(alpha).                   (5)
+
+Then direct factorization gives
+
+  Z_s(alpha)=exp(-alpha d s) Z_s^0(alpha),
+  Z_0(alpha)=Z_0^0(alpha),
+
+and therefore
+
+  q(alpha):=Z_s(alpha)/Z_0(alpha)
+           =exp(-alpha d s) R(alpha).                  (6)
+
+At alpha=0 one has q(0)=R(0). Consequently the archived form (1) is exact on
+an interval precisely when
+
+  R(alpha)=R(0)                                         (7)
+
+throughout that interval. If R is positive and differentiable, (7) is
+equivalent to the relative Ward identity
+
+  partial_alpha log R(alpha)=0                          (8)
+
+throughout the interval. At only one value of alpha, equation (8) proves
+first-order stationarity there, not global constancy.
+
+Equivalently,
+
+  partial_alpha log q(alpha)
+     =-d s+partial_alpha log R(alpha).                  (9)
+
+Thus -d s is the complete logarithmic slope exactly when the residual sector
+ratio contributes no slope.
+
+If the supposed insertion is instead a field-dependent functional J[x], the
+factorization in (6) generally fails already within the defect sector:
+
+  Z_s(alpha)=Z_s^0(alpha)
+      <exp(-alpha J)>_(s,alpha;0).                      (10)
+
+Its logarithm contains the cumulants of J. The old single exponential is
+therefore exact only when the identified spectral-flow insertion is
+sectorwise constant, or when an equivalent zero-fluctuation theorem is
+provided. The intended identification J=d SF treats it as the constant
+topological label and satisfies this requirement.
+
+2. Fixed-measure Ward test
+--------------------------
+
+Suppose first that mu_s and mu_0 do not depend on alpha and differentiation
+under both integrals is justified. Normalize expectations with the residual
+weights exp(-S_s^0) and exp(-S_0^0). Then
+
+  partial_alpha log Z_s^0
+     =-<partial_alpha S_s^0>_s,
+  partial_alpha log Z_0^0
+     =-<partial_alpha S_0^0>_0.                         (11)
+
+Hence
+
+  partial_alpha log R
+     =-<partial_alpha S_s^0>_s
+      +<partial_alpha S_0^0>_0.                         (12)
+
+The old reweighting follows exactly if and only if these two residual response
+expectations agree for every alpha in the claimed interval. A sufficient
+special case is that the residual actions are alpha independent. Another is
+a common alpha deformation whose normalized expectations agree in the two
+sectors. Neither conclusion follows merely from additivity of alpha d s in
+the defect action.
+
+3. Alpha-dependent measures
+----------------------------
+
+If the measures vary with alpha, first transport each sector to a fixed
+reference space and write
+
+  d mu_(r,alpha)=w_r(alpha,x) d mu_(r,*),       r=s,0.
+
+Let
+
+  sigma_r(alpha,x)=partial_alpha log w_r(alpha,x)       (13)
+
+be the measure score. Under the usual differentiation and integrability
+hypotheses,
+
+  partial_alpha log R
+    =-<partial_alpha S_s^0>_s+<sigma_s>_s
+     +<partial_alpha S_0^0>_0-<sigma_0>_0.              (14)
+
+Equation (14), rather than (12), is the complete Ward test. Moving domains,
+gauge-fixing Jacobians and determinant normalizations must be included in the
+scores after pullback. The archived exponential remains exact if the right
+side of (14) vanishes. Measure compatibility alone means the ratio is
+well-defined; cancellation still has to be stated or proved.
+
+4. Smallest decisive countercheck of the omitted condition
+-----------------------------------------------------------
+
+Take one configuration in each sector, with unit counting measure, and set
+
+  Z_s(alpha)=exp(-2 alpha),
+  Z_0(alpha)=exp(-alpha).                               (15)
+
+The defect action has the exact additive term 2 alpha. Nevertheless
+
+  q(alpha)=Z_s(alpha)/Z_0(alpha)=exp(-alpha),            (16)
+
+not exp(-2 alpha). In the notation above,
+
+  d s=2,
+  Z_s^0(alpha)=1,
+  Z_0^0(alpha)=exp(-alpha),
+  R(alpha)=exp(alpha).                                  (17)
+
+Thus (6) gives exp(-2 alpha)exp(alpha)=exp(-alpha), as it
+must. This is only an algebraic diagnostic of the missing hypothesis. It is
+not a second P1 source, a physical countermodel or a refutation of the
+intended relative normalization.
+
+If instead both sectors carry a common baseline alpha and the defect sector
+has the additional topological shift 2 alpha,
+
+  Z_0(alpha)=exp(-alpha),
+  Z_s(alpha)=exp(-3 alpha),                             (18)
+
+then their ratio is exactly exp(-2 alpha). Equation (18) is the intended
+relative-action situation in its smallest form.
+
+5. Exact reading of the archived lemma
+---------------------------------------
+
+The relevant statements are:
+
+  documents/archive--paper-latex--tfpt-theory-fullv27/sections/
+  003-subsection-the-cubic-fixed-point-equation-cfe.tex:285-327
+
+and
+
+  documents/archive--paper-latex--tfpt-theory-fullv28/sections/
+  004-subsection-geometric-self-consistency-backreaction.tex:17-59.
+
+They define
+
+  Z(alpha)=Z_triv(alpha)+Z_def(alpha),
+  delta_top(alpha)=Z_def(alpha)/Z_triv(alpha),           (19)
+
+state
+
+  S_def(alpha)=S_def(0)+alpha J,                        (20)
+
+and infer
+
+  delta_top(alpha)=delta_top exp(-alpha J).             (21)
+
+The texts then impose J=d J_1, J_1=SF, d=2 and SF=1. The cover-degree
+statement supports the coefficient d once J is an integrated deck-invariant
+constant response. It does not by itself freeze Z_triv(alpha) or the residual
+determinant and measure ratio.
+
+There are therefore two source-faithful readings:
+
+  1. If (20) is intended to mean that the ONLY relative alpha deformation is
+     the constant topological term, then (21) is exact. This is the natural
+     intended reading of the words "defect sector reweighting". Equation (7)
+     should be part of the hypothesis or of the definition of the normalized
+     defect weight.
+
+  2. If (19) denotes complete sector partition functions with otherwise
+     unrestricted alpha-dependent actions or measures, the correct theorem is
+     (6). Equation (21) then additionally requires the Ward identity (8), in
+     the concrete form (12) or (14).
+
+This is a missing hypothesis in the written lemma, not evidence that its
+chosen spectral-flow normalization is wrong.
+
+6. Relation to the recovered rank-one covariance determinant
+-------------------------------------------------------------
+
+FOCK-DEFECT-REVIEW.txt proves the directed algebraic identities
+
+  det_F[(I-zC)(I-z(C+Pi))^(-1)]=(1-z)^(-1),
+  det_F[(I-z(C+Pi))(I-zC)^(-1)]=1-z.                    (22)
+
+Neither identity proves (8). For example, setting
+
+  z=1-exp(-alpha d s)
+
+makes the second factor in (22) equal exp(-alpha d s), but this is a parameter
+substitution, not a derivation of the original action response. To use (22)
+inside the old partition ratio, the original source must specify z as its
+kernel or source deformation and show that every residual action, measure and
+determinant contribution has the ratio R(alpha)=R(0). That last assertion is
+exactly the Ward identity under review.
+
+Conversely, the old reweighting argument does not need an identification of
+alpha with heat time. If the same original source supplies the relative
+action law (3), the constant d s and the cancellation (7), the exponential
+follows immediately from its Euclidean sector weights. No equality with the
+circle energy, charge, occupation number or positive heat semigroup is
+required.
+
+7. Scope and repaired statement
+--------------------------------
+
+The strongest statement supported by the displayed general hypotheses is:
+
+  For measure-compatible sectors with a sectorwise constant topological
+  insertion d s,
+
+    q(alpha)=exp(-alpha d s) R(alpha).
+
+  The original formula q(alpha)=q(0)exp(-alpha d s) holds exactly on a given
+  interval if and only if the normalized residual sector ratio R is constant
+  on that interval.
+
+For the existing original contract d=2 and s=SF=1, this becomes
+
+  q(alpha)=exp(-2 alpha)R(alpha),                        (23)
+
+and reduces to the archived exp(-2 alpha) law when R(alpha)=R(0).
+
+This review removes an unnecessary proposed heat-time identification. It
+does not complete the fundamental source claim. That claim still requires
+showing that (3), the sectorwise constant spectral-flow insertion and (7)
+hold for the two sectors and measures of the SAME original source whose
+response enters the electromagnetic closure.
+
+Source hashes at review time
+----------------------------
+
+  fullv27 CFE section:
+  8ae0867de9ddbd50e3684aa9b9b023d58791252c3fa146da7fc7b8ddf9cc1dd4
+
+  fullv28 geometric self-consistency section:
+  e2aa38f61b269e4c907559084ac6df3bf811961516c0cc72dd70d3285fd59081
+

@@ -1,0 +1,318 @@
+ACTUAL SOURCE OPERATOR RECONSTRUCTION — 15 October 2026
+Research ID: UR.SEAM.SOURCE_OPERATOR_RECONSTRUCTION.01
+
+1. Target and result type
+
+The target is the actual common P1/P2 source, its charged field action,
+state and time, with quarter phase retained. The preceding E8-character
+classification is complete in its scope and is not repeated here.
+We examine the first inference from a seam winding CLASS to an actual
+operator acting on the same Calderon data. A constructive reconstruction
+theorem is proved under explicit operator hypotheses, and its first tests
+are automated in a rational-symbol class. Those hypotheses are not derived
+from P1/P2. No full physical source or event law is claimed.
+
+The rational diagnostic class assumes scalar Hardy data and CAR when fields
+are discussed. It is not a classification or countermodel of every admissible
+TFPT bordism. The abstract reconstruction in section 5 does not initially
+assume a circle; that representation follows from its stronger hypotheses.
+
+2. Original-source inference audit
+
+tfpt_1_architecture_e8.tex:163-188 declares P1 as an oriented primitive
+reflection-positive kernel, unit winding and c3=1/(8pi); P2 supplies a
+five-slot 3+2 carrier interface. It does not specify the seam representative
+on a charged Hilbert space or the kernel's complete correlation functions.
+
+_archive/tfpt-45/source_extracts/01_boundary_kernel_source.tex:
+65-80: B_Sigma is already part of the one-sided datum and D_+ has product
+form gamma_n(partial_n+B_Sigma). 94-170 constructs the double and Calderon
+projection from that supplied boundary problem.
+480-520: the operational seed already contains A_loc, tau_t, Theta, omega,
+[u_Sigma], D_coll. Its completion reconstructs B from D_coll, not from
+the integer winding alone. In particular state and time are inputs here.
+543-560: the proposed selector has four integer defect coordinates.
+571-594: invariance preserves the set of minimizers; the proof explicitly
+reduces uniqueness to a separate classification of the minimized stratum.
+646-683: uniqueness is then asserted without that classification. A least
+value in N^4 does not imply a single operator tuple in its fiber. Nor does
+nonzero spectral flow by itself ensure that value one is attained. P1 may
+stipulate unit winding, but that is a separate premise from nontriviality.
+
+This is a failure of the displayed uniqueness argument, not a proof that
+no stronger source-selection theorem is possible. The present note does
+not silently replace the original category with a new one or promote this
+audit to a no-go for all TFPT sources.
+
+experiments/lean4-carrier-rigidity/TfptCarrier/SeamWindingInterface.lean:33-44
+explicitly formalizes SeamWindingData -> determinant carrier, not the
+physical seam class -> SeamWindingData. It cannot fill the operator step.
+
+3. The first operator identity, before any spectrum fitting
+
+Let C be an orthogonal projection, U a unitary on the same Hilbert space,
+and S=C U C restricted to C H. Direct multiplication gives
+
+ C-S* S = C U* (1-C) U C = ((1-C) U C)* ((1-C) U C).
+
+Thus S is an isometry precisely when (1-C) U C=0. This says that the
+actual seam action leaves the positive Cauchy-data subspace invariant.
+It is a relation between two operators, stronger than a winding number.
+Lean proves the algebraic corner identity and the equivalence S*S=C iff
+the leakage expression vanishes. Hilbert positivity and the norm-zero
+implication are the elementary analytic argument above, not Lean output.
+
+Fredholm index -1 determines dim ker S - dim ker S* = -1 only. Once S is
+known to be an isometry, it implies dim ker S*=1. It does not itself prove
+isometry or exclude a unitary summand in the Wold decomposition.
+
+4. Exact diagnostic and full continuous scalar-symbol classification
+
+Use periodic trivialization H=L2(S1), B_alpha=N+alpha, N=-i d/dtheta,
+alpha=1/4 or 3/4, and C e_n=e_n for n>=0, zero for n<0. This is equivalent
+to the usual alpha-twisted boundary domain. The quarter transition is
+exp(2pi i B_alpha)=exp(2pi i alpha) I and is kept throughout.
+
+For |a|<1 write b_a(z)=(z-a)/(1-conj(a)z). A finite rational unimodular
+symbol is a phase times a quotient of finite products of these factors.
+Cancel common factors first. Its winding is numerator degree minus
+denominator degree. For S=C M_u C, zero leakage implies M_u 1=u belongs to
+H2. Conversely analyticity and boundedness of u preserve H2 and, since
+|u|=1, multiplication is an isometry there. A noncancelled denominator
+factor has a pole in the disk. Hence in this rational class:
+
+ zero leakage <=> no denominator after cancellation.
+
+Together with winding one this forces exactly ONE Blaschke factor, times
+a constant phase. This classifies the full finite-rational-symbol family,
+not just a finite root grid. Real rational roots in the executable are
+exact diagnostics; the argument also covers complex roots in the disk.
+
+In fact this classification extends to EVERY continuous scalar unimodular
+symbol u on the circle. Zero leakage implies that its negative Fourier
+coefficients vanish. Analytic Fejer sums then converge uniformly to u,
+so u extends to the disk algebra A(D). Since |u|=1 on the boundary,
+continuity gives a zero-free collar of that boundary; all zeros are in a
+compact interior subset and there are finitely many. Divide out their
+Blaschke factors. The quotient v and 1/v are both in A(D), with unit
+boundary modulus. The maximum principle applied to each forces |v|=1
+inside; hence v is constant. By the argument principle, winding one gives
+one Blaschke factor. This is an analytic theorem about the whole scalar
+Hardy class; a finite executable grid is only its diagnostic check.
+
+An exact orientation-preserving control is u_a=z^2/b_a for real 0<a<1/3.
+It is smooth, unimodular and has winding one. Its phase derivative is
+2-(1-a^2)/(1-2a cos(theta)+a^2), with positive lower bound
+2-(1+a)/(1-a). At a=1/4 that bound is 1/3.
+For m>=1 its negative Laurent coefficient is
+
+ [z^(-m)]u_a=(1-a^2) a^(m+1).
+
+Consequently ||(1-C)u_a e_0||^2=a^4(1-a^2), exactly 15/4096 at a=1/4.
+The same quarter domain, C and B are retained. Therefore even a smooth,
+strictly oriented winding-one representative need not satisfy the first
+operator condition. This tests the inference winding -> isometry; it is
+not a demonstration of all TFPT postulates in this diagnostic source.
+
+For a single b_a, isometry holds and its defect is one-dimensional with
+normalized vector k_a(z)=sqrt(1-|a|^2)/(1-conj(a)z). Indeed b_a H2 is the
+kernel of evaluation at a, whose orthogonal complement is span{k_a}.
+Purity follows because a function in every b_a^n H2 has a zero of every
+order at a and is identically zero.
+
+Nevertheless for the GIVEN original B_alpha=N+alpha,
+
+ M_ba* B_alpha M_ba = B_alpha + (1-|a|^2)/|e^(i theta)-a|^2.
+
+The increment is the constant one only when a=0. A matching Wold shift
+does not identify its reconstructed time with the supplied source time.
+
+5. Constructive reconstruction without initially inserting a circle
+
+Assume all of the following about the ACTUAL source pair on one Hilbert space:
+(i) C orthogonal, U unitary and (1-C) U C=0;
+(ii) S=U|CH is Fredholm with index -1;
+(iii) S is pure: intersection_n S^n CH={0};
+(iv) U is its minimal unitary dilation, span{U^n CH:n in Z} dense in H.
+
+Set W=CH orthogonally minus U CH. By (i),(ii), dim W=1. Wold decomposition gives
+CH=orthogonal_sum_(n>=0) U^n W. Minimality supplies the negative powers,
+so H=orthogonal_sum_(n in Z) U^n W. Choosing a unit vector w in W gives
+e_n=U^n w. Only a common scalar phase depends on this choice. Therefore
+(C,U) is unitarily equivalent to (Hardy projection, bilateral shift).
+This derivation uses Wold, not an assumed equality of dimensions.
+
+Now require the ACTUAL selfadjoint B on the common invariant finite-span
+core to satisfy U* B U=B+1 and B w=alpha w. These domain statements are
+part of the premise, not inferred from bounded matrices. Iteration in both
+directions gives B e_n=(n+alpha)e_n. The diagonal operator is essentially
+selfadjoint on this core, so its selfadjoint closure is fixed. Thus
+
+ B=N+alpha, C=1_[0,infinity)(B), exp(2pi i B)=exp(2pi i alpha) I.
+
+Lean certifies the integer-index recurrence at the scalar level. The
+infinite-domain and spectral statements are analytic parts of this proof.
+The positive spectral projection follows for 0<alpha<1; it is not a
+separate choice after these hypotheses.
+
+For the diagnostic b_a family the bilateral basis is k_a b_a^n, n in Z.
+It is complete and orthonormal: change variables by the circle diffeomorphism
+b_a, with |k_a|^2 equal to its positive phase derivative. Its nonnegative
+span is H2, so the resulting unitary F_a commutes with C. The operator
+B_a=F_a(N+alpha)F_a* has the required covariance and quarter transition.
+For a!=0 it is not the supplied B_alpha in section 4. Replacing B_alpha
+by B_a proves a conditional reconstruction, not an original-source match.
+
+6. Actual conditional field, sea-state and time action
+
+If the physical field algebra is CAR(H), unitarity of the derived map
+F:delta_n -> U^n w from the reference orthonormal basis induces its CAR
+isomorphism: products, adjoints and all
+anticommutators are preserved, not just spectra. CAR is an additional
+field-statistics premise; neither P1 reflection positivity nor Wold alone
+implies it. With negative sea occupation Q_occ=1-C, the pure gauge-invariant
+quasifree state is fixed by omega(c_m* c_n)=delta_mn 1_(n<0) and Wick's rule.
+The physical identification with this quasifree state is also a premise.
+Do not use the symbol Q_occ for the relative charge operator below.
+
+On the algebraic finite-excitation sea core define
+
+ Q = sum_n :c_n* c_n:,
+ H_alpha = sum_n (n+alpha) :c_n* c_n:.
+
+Each particle at n>=0 costs n+alpha; each hole at n<0 costs -(n+alpha).
+Thus H_alpha is positive with a unique zero-energy sea vector. Its closure
+is the positive free-Fock excitation Hamiltonian. The field time satisfies
+exp(i t H_alpha)c_n exp(-i t H_alpha)=exp(-i t(n+alpha)) c_n.
+
+The unit winding action is beta_U(c_n)=c_(n+1), not a four-periodic mode
+permutation. Its change of polarization has rank one. In the charged sea
+Fock representation it is implementable, up to scalar phase, by a unitary R,
+with convention beta_U(A)=R A R*: R c_n R*=c_(n+1), equivalently
+R* c_n R=c_(n-1).
+Equivalently R shifts each occupation configuration, including the whole sea;
+the CAR ordering fixes relative fermionic signs. Hence on the common core
+
+ R* Q R=Q+1,       R* H_alpha R=H_alpha+Q+alpha.
+
+The additive constant is the newly occupied n=0 sea mode. In particular
+R Omega is a charge-one state of energy alpha; R^(-1) Omega has charge -1
+and energy 1-alpha. Generally the charge-k shifted sea has energy
+k(k-1)/2+alpha k, for every integer k. These formulas follow by summing
+the finite occupation differences and hold beyond any numerical cutoff.
+
+On every finite-excitation vector H_alpha-alpha Q is an integer. Therefore
+exp(2pi i H_alpha)=exp(2pi i alpha Q): the quarter phase survives on charged
+fields and states. The charged winding R, the representation equivalence F,
+and the quarter transition are three distinct operators. R changes the sea
+charge; requiring it to preserve the vacuum would contradict this unit flow.
+No event rate, stochastic instrument or preferred measurement is inferred
+from the existence of R.
+
+The rank-one wandering space counts a primitive charged shift channel.
+It is not the five-slot P2 interface, a spacetime dimension, or a D5
+spinor. Mapping this reconstructed channel to the actual P2 carrier and
+the earlier E8 extension remains a separate physical identification.
+
+6a. A same-source variational selection, without changing B
+
+Nonzero leakage does NOT make a seam transformation physically invalid.
+It prevents the pure-isometric Wold route just examined. In the given CAR
+source any unitary multiplication U=M_u still defines the quasifree state
+with occupation U Q_occ U*. For smooth u its off-diagonal polarization
+blocks are Hilbert-Schmidt, so it is also implementable in the sea Fock
+representation. Thus non-inner candidates must not be discarded as impossible
+physics merely because they fail the isometry test.
+
+There is a stronger constructive comparison using the SAME B_alpha and
+the same original sea representation and reference vector Omega. The
+transformed state is R_u Omega with covariance U Q_occ U*, not Omega.
+Let u(theta)=exp(i phi(theta)) have winding w and
+square-integrable phase derivative p=phi'. Write u_k for its Fourier
+coefficients. The transformed diagonal occupation is
+
+ occupation_u(n)=sum_(m<0) |u_(n-m)|^2.
+
+Subtract the original sea occupation. A single Fourier shift k has charge
+k and relative energy E_k=k(k-1)/2+alpha k by section 6. Therefore
+
+ <Q>_u=sum_k k |u_k|^2=w,
+ <H_alpha>_u=sum_k [k(k-1)/2+alpha k] |u_k|^2
+            =1/2 <p^2> + (alpha-1/2) w,
+
+where <.> denotes normalized integration over the circle. These identities
+follow directly from the CAR covariance, not from an inserted cost function.
+The charge sum is absolutely convergent when sum k^2|u_k|^2 is finite.
+For energy, all E_k are nonnegative for 0<alpha<1, allowing the positive
+particle/hole sums to be interchanged; the same H1 condition gives finiteness.
+Parseval and u* (-i partial_theta)u=p give the displayed integral expressions.
+For H1 u the implementability condition is also visible explicitly:
+||[C,U]||_HS^2=sum_k |k| |u_k|^2 < infinity.
+
+At w=1 this reduces to the exact nonnegative remainder
+
+ <H_alpha>_u = alpha + 1/2 <(p-1)^2>.
+
+Equality holds precisely when p=1 almost everywhere, hence
+u=e^(i chi) z. Thus the original time and sea select a UNIQUE lowest-energy
+representative of winding one, up to scalar phase, among all smooth scalar
+symbols (and the stated H1 class). This uniqueness is within scalar
+multiplication operators, not the full restricted unitary group: additional
+block-diagonal vacuum symmetries can produce the same minimal state energy.
+This is stronger than selecting a winner
+among the finite diagnostic grid and does not change B to fit U.
+
+For real Blaschke parameters, <P_a P_b>=(1+ab)/(1-ab), from the absolutely
+convergent Fourier series P_a=sum_(k in Z) a^|k| exp(i k theta).
+Hence the program computes <p^2> exactly for every signed factor list.
+Both b_a and z^2/b_a have energy excess a^2/(1-a^2). At a=1/4 it is 1/15,
+and their alpha=1/4 energy is 19/60, compared with 1/4 for z. They differ
+in leakage despite having the same energy. A noncentered Blaschke isometry
+creates a charge-one wavepacket, not the lowest original-time charge-one
+state; choosing its adapted B_a would hide this excess.
+
+The variational THEOREM is established in the given source. The SELECTION
+RULE that the actual P1 seam must minimize this charge-one excitation energy
+is not stated or derived in the original postulates. Moreover the theorem
+does not select the original B, field algebra or state used to define that
+energy. Jointly conjugating (U,B,C) preserves the comparison; minimizing
+inside one chosen source is not a proof that it is the physical source.
+
+7. What the automation establishes and does not establish
+
+The program classifies and compares operator representatives, reconstructs
+the conditional source, and checks exact charge/state/time identities. It
+must distinguish a given B from B newly conjugated to fit U. It records
+unproved provenance obligations, rather than granting them from passing
+operator diagnostics or a user-supplied Boolean. The original source remains
+unidentified until these obligations are derived on the same actual fields.
+
+The complete continuous scalar-symbol result removes an infinite
+representative search: admissible inner degree-one symbols are one
+Wold-equivalence class.
+For a fixed original D_alpha, covariance selects its centered representative.
+Neither fact proves that the original TFPT Calderon pair belongs to this
+class. On the Wold route the first original-source obligation is the leakage
+identity, followed by pure/minimal generation, actual B covariance and the
+field/state premises. The variational route in section 6a does not require
+zero leakage: it compares all stated scalar symbols in one fixed source.
+Its additional selection obligation is to derive the minimum-energy rule
+from P1, as well as the original field, state and time used in that rule.
+The finite diagnostic grid is not advertised as exhaustion of P1/P2 sources.
+
+The original minimal-defect proof must therefore be supplemented by a
+classification that separates the actual operator tuples in its minimal
+fiber. Existence of a minimal integer vector cannot substitute for that work.
+
+Reference used for the reconstruction theorem: Jaydeb Sarkar,
+Wold decomposition for doubly commuting isometries, section 2, Theorem 2.1,
+https://www.isibang.ac.in/~jay/papers/wold_n_var.pdf
+This theorem concerns isometries; it does not derive the P1 hypotheses.
+
+Reference for CAR implementability: Huzihiro Araki, On Quasifree States
+of CAR and Bogoliubov Automorphisms, Publ. RIMS 6 (1970), 385-442,
+Lemma 9.4 and Theorem 7 (pp. 430 and 432),
+https://ems.press/content/serial-article-files/41673
+Apply the self-dual formulation to the charged CAR space and its conjugate.
+The Hilbert-Schmidt condition is a representation criterion, not a physical
+source-selection principle.

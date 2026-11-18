@@ -1,0 +1,306 @@
+VOLLSTAENDIGE LADUNGSGRUNDKLASSIFIKATION UND QUELLENAUSWAHL
+27. Oktober 2026
+
+Atlasstand: 6ea658c42dff04026620177c
+
+Verdikt
+
+Die Spektralrechnung ist bereits vollstaendig im Vertrag
+UR.SEAM.JOINT_WARD_STATE.01 enthalten. Der zusaetzliche Nullvektor im
+s Sektor ist daher keine neue Entdeckung. Die hier fehlende Praezisierung ist
+eine Quellenfrage: Weder die primitive operative P1 Definition noch der spaetere
+Perron Satz verlangen, dass der verschobene Operator H=8K auf einer erst
+nachtraeglich erweiterten E8 Hilbertstruktur einen eindimensionalen Kern hat.
+
+Die vier D8 Ladungssektoren haben fuer 0<a<1 exakt die folgenden Minima:
+
+  Sektor       min K                 min H=8 min K       Multiplizitaet
+  0            0                     0                   1
+  v            min(a,1-a)/8          min(a,1-a)          1, bei a=1/2: 2
+  s            0                     0                   1
+  c            min(a,1-a)/8          min(a,1-a)          1, bei a=1/2: 2
+
+Damit hat die lokale Erweiterung 0+s zwei H Nullvektoren, waehrend 0+c
+nur den neutralen H Nullvektor besitzt. Das schliesst 0+s beziehungsweise E8
+nicht aus. Der zweite H Nullvektor ist ein konformer Gewicht eins Wurzelzustand,
+kein zweites VOA Vakuum. Die bereits vorgegebene neutrale Zustandslinie Omega0
+kann auf der Erweiterung erhalten bleiben. Volle Cartan Ward Daten waehlen sie
+im H Grunddoppel sogar eindeutig aus. Sie waehlen aber nicht von selbst die
+Erweiterung 0+s statt 0+c.
+
+
+1. Exakte Viersektorenrechnung
+
+Es gilt
+
+  K(p,N)=|p|^2/2 + delta.p + N,
+  delta_k=(k+a)/8-1/2,   k=0,...,7,
+  0<a<1,                 N in Z_>=0.
+
+Wir benutzen die vier Klassen von D8*/D8:
+
+  0=D8,
+  v=e0+D8,
+  s=(1/2,...,1/2)+D8,
+  c=e0+s+D8.
+
+Da |delta_k|<1/2 ist, hat jede ganzzahlige Koordinate den eindeutigen
+unkonditionierten Minimierer p_k=0. Im geraden ganzzahligen Sektor 0 folgt
+daher eindeutig p=0 und K=0.
+
+Im ungeraden ganzzahligen Sektor v muss mindestens eine Koordinate den Wert
++1 oder -1 annehmen. Die billigste solche Aenderung kostet
+
+  min_k (1/2-|delta_k|)
+  =min(a,1-a)/8.
+
+Fuer a ungleich 1/2 liegt das Minimum eindeutig an einem der beiden Enden der
+geordneten delta Folge. Bei a=1/2 binden beide Enden. Jede weitere
+ganzzahlige Aenderung kostet strikt mehr.
+
+Auf dem gesamten halbganzzahligen Gitter liefert die strikte konvexe
+Koordinatenminimierung
+
+  p*= (1/2,1/2,1/2,1/2,-1/2,-1/2,-1/2,-1/2).
+
+Direkt gilt
+
+  |p*|^2=2,       delta.p*=-1,       K(p*,0)=0.
+
+Vier Minuszeichen bedeuten p* in s. Dies ist der eindeutige Minimierer des
+s Sektors.
+
+Um aus p* in den entgegengesetzten halbganzzahligen Sektor c zu gelangen,
+muss die Vorzeichenparitaet einer ungeraden Zahl von Koordinaten geaendert
+werden. Ein einzelner Vorzeichenwechsel kostet |delta_k|. Eine Aenderung des
+Betrags von 1/2 auf 3/2 kostet mindestens
+
+  1-|delta_k|>|delta_k|.
+
+Damit ist
+
+  min_(p in c) K(p,0)=min_k |delta_k|=min(a,1-a)/8.
+
+Auch hier ist das Minimum ausser bei a=1/2 eindeutig. Da N nichtnegativ und
+ganzzahlig ist, erzeugen Oszillatoren keine weiteren Nullzustaende. Fuer die
+physischen Viertelfaelle a=1/4 oder 3/4 haben v und c die H Luecke 1/4.
+
+Das ist eine Klassifikation des unbeschraenkten Ladungsgitters. Sie beruht
+nicht auf einer endlichen Zustandsliste.
+
+Die vier Antworten sind sogar durch eine einzige exakte Spektralinvolution
+verbunden. Sei A=R^4 die Vertauschung der Koordinaten k und k+4. Dann gilt
+
+  delta+p*=A delta,       A p*=-p*.
+
+Definiere auf Ladungen
+
+  T(p)=A p+p*.
+
+Dann ist T^2=1 und
+
+  T(p)+delta=A(p+delta).
+
+Nach quadratischer Ergaenzung folgt fuer jedes p und jedes N
+
+  K(T(p),N)=K(p,N).
+
+Aus q.p*=0 und q.A=q folgt ausserdem q.T(p)=q.p. T vertauscht die
+Sektoren
+
+  0 <-> s,       v <-> c.
+
+Somit stimmen die vollstaendigen nach H und Gesamtladung q verfeinerten
+Spektren paarweise ueberein:
+
+  Z_0(H,Q)=Z_s(H,Q),       Z_v(H,Q)=Z_c(H,Q).
+
+Dies ist eine affine Bijektion der Spektrallabel. Ohne die noch fehlende
+globale Cocyclephase und Feldvertraeglichkeit ist T kein behaupteter
+physischer Defekt und kein VOA Automorphismus. Insbesondere erhaelt T nicht
+die konforme L0 Graduierung, sondern gerade die verschobene Quellenenergie.
+
+
+2. Drei verschiedene Eindeutigkeitsaussagen
+
+Die bisherige Diskussion vermischte drei logisch verschiedene Fragen.
+
+Erstens besitzt das Gitter VOA V_(0+s) genau den ueblichen konformen
+Vakuumvektor bei L0=0. Fuer p* gilt
+
+  L0(p*)=|p*|^2/2=1.
+
+Dass H(p*)=8(L0+delta.p*)=0 ist, entsteht durch die Hintergrundverschiebung
+delta.p*=-1. Es ist keine zweite Vakuumlinie des VOA.
+
+Zweitens kann der verschobene Quellenoperator H einen mehrdimensionalen Kern
+haben, obwohl ein Zustand Omega0 bereits als Teil der Quelle markiert ist.
+Eine Zeitentwicklung, die auf beiden Vektoren trivial ist, waehlt allein
+keine Mischung aus. Sie zwingt aber auch keine Mischung.
+
+Drittens ist die Wahl der lokalen Erweiterung eine Algebrafrage. Der neutrale
+D8 Zustand Omega0 liegt sowohl in 0+s als auch in 0+c. Er entscheidet deshalb
+nicht, welches der beiden geladenen lokalen Felder zugelassen wird. Dafuer
+braucht man den markierten Erzeuger, die markierte Ladungsabbildung oder eine
+gleichwertige Sewing Aussage.
+
+Im bereits festgelegten 0+s Gitterstrommodell ist die Zustandsauswahl trotzdem
+streng moeglich. Auf dem H Grunddoppel {|0>,|p*>} wirkt der
+quellennormalgeordnete Cartanstrom H_(p*),0 als diag(0,2). Fuer eine positive
+Dichte
+
+  rho=[[A,C],[C*,B]],  A,B>=0, A+B=1,
+
+erzwingt die Erhaltung aller neutralen Quellenwerte
+
+  tr(rho H_(p*),0)=2B=0.
+
+Also B=0 und durch Positivitaet C=0. Innerhalb dieser Darstellung und unter
+diesen Ward Voraussetzungen ist Omega0 die eindeutige ausgewaehlte Dichte.
+Der zweite H Nullvektor bleibt als Vektor erhalten. Dieser bereits vorhandene
+Satz ist eine Zustandsauswahl, kein Beweis fuer einen einfachen H Kern.
+
+Dies macht die Rolle der Spektralinvolution besonders klar. T vertauscht zwar
+Omega0 und |p*> als H und Q Spektrallabel, doch der urspruengliche
+quellennormalgeordnete Cartanstrom unterscheidet die beiden mit Eigenwerten
+0 und 2. Seine vorgegebene Erwartung ist daher keine Funktion nur von H und
+Gesamtladung. Die positive Zustandsbedingung waehlt Omega0 trotz der exakten
+H und Q Spektralsymmetrie aus.
+
+
+3. Was die operative Originalquelle wirklich verlangt
+
+Die registrierte operative P1 Quelle definiert einen Seed als
+
+  (A_loc,tau_t,Theta,omega,[u_Sigma],D_coll)
+
+und verlangt von omega Reflexionspositivitaet, Clustering und endliche relative
+Wirkung. In dieser Definition steht keine Bedingung
+
+  ker(8K)=C Omega0
+
+auf dem vollen viersektorigen D8* Raum oder auf einer spaeteren E8 Erweiterung.
+Insbesondere wird 8K dort nicht als Hamiltonoperator des vollstaendigen
+erweiterten Feldraums identifiziert.
+
+Der spaetere QFT Satz hat eine echte Eindeutigkeitsaussage, aber fuer einen
+anderen typisierten Gegenstand. Er minimiert tr(rho H_rel) auf V_adm und
+erhaelt Eindeutigkeit aus der Primitivitaet eines blockierten positiven
+Transferoperators T_V auf dem beibehaltenen CP geraden Kegel. Die vorhandenen
+Quellen beweisen nicht
+
+  H_rel=8K auf 0 direct_sum v direct_sum s direct_sum c,
+
+und sie beweisen nicht, dass |p*> als zweite zulaessige Perron Richtung im
+beibehaltenen Kegel liegt. Der Perron Satz kann daher nicht rueckwaerts als
+Forderung nach einem eindimensionalen Kern von 8K gelesen werden.
+
+Die Formulierung im Vertrag vom 14. Oktober, nach der ein eindeutiges
+urspruengliches Vakuum unter K die c Erweiterung verlange, ist korrekt nur
+unter der dort zusaetzlich getesteten Praemisse
+
+  dim ker K=1 auf der gesamten gewaehlten Erweiterung.
+
+Diese Praemisse ist keine nachgewiesene P1 Forderung. Das daraus abgeleitete
+scheinbare Auswahlargument gegen 0+s traegt deshalb nicht als
+Ursprungsfolgerung.
+
+
+4. Source chirality und kanonische Plus Minus Markierung
+
+Im Quellenrahmen bedeuten
+
+  Ls=D8 union(s+D8),
+  Lc=D8 union(c+D8)
+
+die beiden Spin(16) Halbspinorerweiterungen. Im fest markierten
+D5+A3 Diskriminantenrahmen bedeuten dagegen
+
+  Hplus={(r,r):r in C4},
+  Hminus={(r,-r):r in C4}
+
+zwei verschiedene Einbettungen ueber demselben U=D5+A3. Diese Namen duerfen
+ohne eine transportierte Abbildung nicht gleichgesetzt werden.
+
+Die vorhandene bedingte Abbildung M liefert den benoetigten Transport fuer
+die bereits gepruefte Markierung. Im Ls Fall gilt
+
+  M q=(0,0,2,0,0;2,0,0)
+
+mit geordneten D5 und A3 Projektionsnormen (4,4), und q/2 ist eine E8
+Wurzel. Im Lc Fall liefert der notwendige Vortransport R0
+
+  M R0 q=(-1,-1,2,0,0;1,-1,0)
+
+mit Normen (6,2); ausserdem liegt q/2 nicht in Lc. Im kanonischen
+Diskriminantenrahmen waehlt der markierte lokale Erzeuger h=(1,1) Hplus und
+liegt nicht in Hminus. Unter dem beibehaltenen M Woerterbuch ist dies die
+bereits verwendete Plus Markierung von Ls.
+
+Der letzte Satz bleibt bedingt: M und das Auftreten des lokalen Erzeugers sind
+ein vorhandenes geprueftes Woerterbuch, keine Herleitung aus dem rohen P1
+Randkern. Ohne dieses Woerterbuch sind Ls gegen Lc und Hplus gegen Hminus
+jeweils sinnvolle markierte Paare, aber nicht dieselbe Notation.
+
+
+5. Tragende Folgerung
+
+Die all charge Rechnung liefert keinen neuen Ausschluss von E8. Sie beseitigt
+vielmehr eine unnoetige Auswahlbedingung:
+
+  * Das zusaetzliche H Null im s Sektor ist echt und bereits bekannt.
+  * Es ist ein Gewicht eins Wurzelzustand und kein zweites konformes Vakuum.
+  * Die gesamten H und Gesamtladungsspektren von 0 und s sowie von v und c
+    sind durch T paarweise identisch; dies allein ist keine Feldsymmetrie.
+  * P1 gibt omega als Zustandsdatum vor, ohne Einfachheit von ker(8K) auf der
+    spaeteren Erweiterung zu fordern.
+  * Volle Cartan Ward Daten waehlen Omega0 im Grunddoppel bedingt eindeutig.
+  * Omega0 allein waehlt die Erweiterung nicht.
+  * Die vorhandene markierte M beziehungsweise M_h Struktur waehlt Ls/Hplus,
+    sobald ihre lokale Quellenrealisierung geliefert ist.
+
+Der erste weiterhin fehlende Herkunftsschritt ist deshalb nicht die
+Beseitigung der Grundentartung. Er ist die Herleitung des lokalen markierten
+s Erzeugers oder der aequivalenten einzelnen chiralen Sewing Amplitude aus P1,
+einschliesslich des Transports von omega und der tatsaechlichen Quellenzeit.
+
+
+6. Quellen und abgegrenzte Wiederverwendung
+
+1. experiments/theory-contracts/seam-joint-ward-state-20261014/PROOF.txt
+   SHA256 7c0cd92dfc5eca88260baae0af9edad66f958a27ce0d15d7965414b3971f8da0
+   Zeilen 17 bis 94: K, volle s/c Klassifikation und bedingte Markierung.
+   Zeilen 113 bis 171: Grunddoppel und Cartan Ward Zustandsauswahl.
+   Zeilen 226 bis 287: tatsaechlicher Clock Transport, M und (4,4)/(6,2).
+
+2. experiments/theory-contracts/canonical-seam-fermionization-20261025/
+   SAME-SOURCE-AFFINE-DEFECT.txt
+   SHA256 514356e9ca01f8aa02399020a503f6cd782c879b00220274b7c4377cbbad7255
+   Dort ist die zusaetzliche Nullinie bereits als Teil des gemeinsamen
+   Viersektorenraums behandelt. Sie wird hier nicht als neue Entdeckung
+   ausgegeben.
+
+3. documents/archive--tfpt-45--source_extracts--01_boundary_kernel_source/
+   sections/002-section-intrinsic-closed-branch-and-canonical-rigid-obje.tex
+   SHA256 1de90a4a7379bef804cc7815d72c0f86bb398a5771e9b00997c4bb15e8815f9e
+   Zeilen 103 bis 119: operative Seed Definition und Anforderungen an omega.
+   Atlasquelle paper-source:575dd43392a0abd5fa5c93ab.
+
+4. documents/archive--tfpt-45--source_extracts--04_qft_source/
+   sections/004-source.tex
+   SHA256 a5d1cc26f80d2f1d5af3d89b94cf8ff8912b572040614d4e1c27f1fe3b747126
+   Zeilen 92 bis 156: H_rel Variationsproblem und Perron Eindeutigkeit unter
+   zusaetzlichen Transferpraemissen.
+   Atlasquelle paper-source:87d8d6e4c79b70b432a7cb68.
+
+5. experiments/theory-contracts/e-series-source-reconstruction-20261024/
+   SIMPLIFICATION.txt
+   SHA256 51bb029fdaa33e327d2d24d98b47972a19bacf6a5987452a1ea3010be7130dab
+   Zeilen 84 bis 111 und 113 bis 145: ein markierter Erzeuger erzwingt Hplus;
+   lokale P1 Realisierung bleibt Voraussetzung.
+
+6. experiments/theory-contracts/elliptic-moebius-source-bridge-20261026/
+   charged_source_alternatives_20261027/CHIRAL-SEWING-SELECTION.txt
+   SHA256 f46ba6a9c8ccf9a55aa130be9220c272109b00415f5709512118be228afe65c4
+   Vollstaendige Viererklassifikation und globale Sewing Alternative. Die
+   tatsaechliche Quellenabbildung bleibt dort ausdruecklich offen.

@@ -1,0 +1,212 @@
+INDEPENDENT REVIEW OF THE CHECKERBOARD REFLECTION WITNESS
+=========================================================
+
+26 October 2026. Exact CAR sign, gauge scope and intrinsic Ward test.
+No Atlas, original source or canonical contract was changed.
+
+Verdict
+=======
+
+The negative neutral witness in GRAPH-CUT-REFLECTION-TEST.txt is valid for
+the declared free theta_3 Gaussian functional and either one fixed global
+reflection S or hS. The decisive point is relative and therefore insensitive
+to an overall Wick or Spin convention: the already proved same-half all-word
+formula fixes the sign of the normal-ordered bilocal word. Moving only its
+psi test function to the opposite Schottky half changes exactly one reflected
+one-particle block from positive to negative. The charged Clifford minus,
+word reversal and normal-ordering prescription remain unchanged.
+
+The witness is neutral under the one global U(1) present in the source. It is
+not invariant under a separately postulated U(1) on each disconnected face,
+and it is odd on each face although globally even. Thus an independent-face
+gauge rule or facewise-even observable algebra removes the witness, but
+neither rule is part of the tested source. The report scopes this exception
+correctly.
+
+The exact intrinsic boundary metric supplies an additional narrow negative
+test. On one checkerboard face the four edge lengths add to L=2, and the
+pushforward of its uniform arclength generator is
+
+  B_push=-i[a(theta) partial_theta+a'(theta)/2],
+  a(theta)=4 K(-1) sqrt(|sin(2 theta)|).
+
+Consequently
+
+  [B_push,exp(i theta)]=a(theta) exp(i theta),
+
+which is not a constant spectral shift. This excludes the literal base
+winding exp(i theta) as the uniform intrinsic winding operator. It does not
+exclude an intrinsic uniform multiplier transported through an actual source
+unitary.
+
+1. Geometry and localization
+============================
+
+For rho=hS, recentering t by tau=t-1/4 makes rho(tau,s)=(-tau,s). Its two
+Schottky halves are A_+={0<tau<1/2} and A_-={-1/2<tau<0}. The set
+
+  Omega=p^(-1)({|x|<1})
+
+has two disk components, one in each half. Smooth bumps may therefore be
+chosen with
+
+  supp(f_+) compactly contained in Omega intersect A_+,
+  supp(g_-) compactly contained in Omega intersect A_-.
+
+Their supports avoid the equator graph and all four branch vertices. Hence
+the sign test is independent of the graph trace metric, a vertex domain or a
+choice of radial push-off. Quarter rotation transports the same geometry and
+witness to S.
+
+2. The fixed Clifford sign and the relative Wick argument
+==========================================================
+
+Keep exactly the source convention
+
+  Theta psi(t,s)=-barpsi(-t,s),
+  Theta barpsi(t,s)=-psi(-t,s),
+
+with antilinearity and reversal of word order. On A_+ the two reflected
+charge kernels are the positive Gram forms
+
+  K_bar(t,u)=-S_E(-t-u)=X_t^*X_u,
+  K_psi(t,u)= S_E( t+u)=Y_t^*Y_u.
+
+For tau=-r and u=-v in A_-, 0<r,v<1/2, the same global reflection gives
+
+  K_psi(-r,-v)=S_E(-r-v)
+               =-X_r^*X_v.                            (1)
+
+No field phase has been changed between these formulas. In particular, the
+two minus signs in Theta occur once in the reflected neutral bilocal and
+cancel each other. They cannot cancel the branch sign in (1).
+
+Choose the normal-ordered word
+
+  F=:barpsi(f_+) psi(g_-): .                           (2)
+
+Normal ordering removes the contractions internal to F and internal to
+Theta(F). Gauge invariance separates the remaining cross contractions into
+one bar charge determinant depending only on f_+ and one psi charge
+determinant depending only on g_-. For one test function in each block these
+are one-by-one determinants.
+
+An absolute sign calculation is unnecessary and would depend on where one
+writes the common source-order phase. The existing same-half theorem fixes
+that convention: if both tests lie in A_+, the expectation of the word (2)
+is the product of the two positive Gram forms. Moving only g to A_- leaves
+the Wick permutation, the Clifford minus and the f block unchanged, while
+(1) reverses the g block. Therefore
+
+  omega(Theta(F)F)=q_bar(f_+) q_psi(g_-)<0,             (3)
+
+provided the two Gram vectors are nonzero. Such bumps exist: take a product
+bump in a small rectangle in each checker face. A nonzero spatial bump has a
+nonzero NS Fourier coefficient, and a nonnegative time bump makes its real
+exponential Laplace coefficient nonzero.
+
+This relative proof also shows why a constant Real-spin linearization phase
+cannot repair (3). It multiplies the same-half and opposite-half calculations
+identically, and neutral words cancel the two charge phases.
+
+3. Global charge versus independent face rules
+===============================================
+
+Under the source's single global gauge action
+
+  psi -> exp(i lambda) psi,
+  barpsi -> exp(-i lambda) barpsi,
+
+the word (2) has charge zero. It therefore belongs to the global even,
+gauge-invariant CAR algebra on Omega.
+
+If one instead declared a product gauge group for the two components, with
+parameters lambda_+ and lambda_-, then (2) would acquire
+
+  exp[-i lambda_+ + i lambda_-]
+
+and would be removed. The same happens if observables are required to be
+even on each face separately: (2) contains one odd field on each face. These
+are genuine ways to avoid the counterexample, but they change the observable
+algebra. Disconnected support alone does not create either rule, and the
+sources used by the tested Gaussian functional specify only the global
+charged field and its global reflection.
+
+4. Intrinsic length and the narrow Ward obstruction
+====================================================
+
+From the actual square-torus uniformization
+
+  dx/dz=-i c y,       |c|=2 sqrt(2) K(-1),
+
+and x=exp(i theta), y^2=exp(4i theta)-1, the flat arclength on every open
+equatorial edge is
+
+  d ell/d theta
+    =1/(|c| |y|)
+    =1/[4 K(-1) sqrt(|sin(2 theta)|)].                 (4)
+
+The integral of (4) between two adjacent marks is 1/2. The boundary of one
+inside checker face consists of four such edges, so its intrinsic perimeter
+is exactly L=2.
+
+Let B_ell=-i partial_ell on the uniform intrinsic half-density space. On the
+core of smooth functions compactly supported away from the four vertices,
+the unitary change from d ell to d theta multiplies coefficients by
+sqrt(d ell/d theta). Setting
+
+  a(theta)=d theta/d ell
+          =4 K(-1) sqrt(|sin(2 theta)|),
+
+gives
+
+  B_push=-i[a(theta) partial_theta+a'(theta)/2].        (5)
+
+The half-density connection term commutes with multiplication, so
+
+  [B_push,M_exp(i theta)]
+    =M_{a(theta) exp(i theta)}.                         (6)
+
+Because a vanishes at the marks and varies along every edge, (6) is not a
+constant ladder relation. It excludes only the word-for-word identification
+of the original base multiplier exp(i theta) with a uniform intrinsic
+winding for this face boundary. A multiplier exp(2 pi i ell/L), after an
+actual source identification of the cyclic intrinsic coordinate and its
+Spin domain, would obey a constant relation. Equation (6) neither supplies
+nor excludes that transported operator.
+
+5. Status of the reviewed claim
+================================
+
+PROVED for the named free theta_3 Gaussian functional:
+
+  * one fixed S or hS is not reflection positive on the full global even CAR
+    algebra of both inside checker faces;
+  * the compactly supported neutral word (2) is a strict negative witness;
+  * graph vertex conditions and boundary metric choices cannot affect it;
+  * literal base winding is not the uniform intrinsic boundary ladder.
+
+NOT proved, and not claimed by this review:
+
+  * failure after imposing independent face gauge invariance or facewise
+    parity;
+  * failure for a source-supplied piecewise reflection;
+  * failure of a transported intrinsic uniform winding;
+  * a no-go theorem for another graph state or for the primitive P1 source.
+
+Files independently checked
+===========================
+
+  research-20261026-real-boundary/GRAPH-CUT-REFLECTION-TEST.txt
+
+  research-20261026-elliptic-source-continuation/ELLIPTIC-GREEN-RP.txt
+
+  research-20261026-p1-reflection/NS-COVER-FULL-DIRAC-RP.txt
+
+  research-20261026-p1-reflection/
+  NS-COVER-GREEN-RP-INDEPENDENT-REVIEW.txt
+
+  research-20261026-elliptic-source-continuation/
+  INDEPENDENT-SEAM-GRAPH-REVIEW.txt
+
+  research-20261026-real-boundary/TRACE-METRIC-AND-DOMAIN.txt

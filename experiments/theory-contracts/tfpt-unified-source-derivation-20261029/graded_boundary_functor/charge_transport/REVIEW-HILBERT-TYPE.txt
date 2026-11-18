@@ -1,0 +1,48 @@
+INDEPENDENT REVIEW: HILBERT-TYPE-TEST.txt
+2026-10-29. Analytical and original-source review; no test run or original edit.
+
+VERDICT: Correct in its explicitly stated operator-identification scope.
+
+1. Actual source and labels
+tex-artefacts/toe_research_20260909.tex:67-78 defines the already existing
+limiting Fock source, not a new model:
+  a_j=b_j (j<=0), a_j=d_j^* (j>=1),
+  H=sum |j-1/4| n_j^exc,
+  Q=sum_(j<=0)n_j^b-sum_(j>=1)n_j^d.
+The proposed r-th pair uses b_-r^* and d_(r+1)^*, with disjoint modes for
+distinct r. Its charges +1 and -1 cancel, its relative parity is even, and
+its energy is (r+1/4)+(r+3/4)=2r+1. In terms of the original a fields it is
+a_-r^* a_(r+1), so it is a neutral bilinear in that same source.
+
+2. Count and trace
+Applying any subset of m such pairs to the target vacuum gives 2^m distinct
+normalized occupation vectors. They are orthogonal exact energy eigenvectors,
+have Q=0, and have energies <=m^2. The positive trace therefore satisfies
+  Tr_(Q=0)(1+H)^(-p) >= 2^m/(1+m^2)^p
+for every m and p>0. The right side is unbounded for every finite p.
+The conclusion already holds on the neutral/even sector. It survives a
+positive affine change of energy. This is an infinite limiting-source result;
+it does not assert divergence on any fixed finite microscopic Fock space.
+
+3. Exact original geometric comparison
+documents/archive--tfpt-45--source_extracts--01_boundary_kernel_source/sections/
+001-section-primitive-core-and-carrier-interface-handoff.tex:65-91 defines
+the primitive tuple and then explicitly calls L2 spinors tensor finite H_int
+an analytic realization choice. The displayed primitive definition does not
+itself impose the full finite p-summability package used in the comparison.
+sections/002-section-intrinsic-closed-branch-and-canonical-rigid-obje.tex:
+103-143 instead starts with the full operational local net, state, reflection
+and time and describes its OS Hilbert reconstruction. It does not state
+D_coll=H for the QWZ limiting source.
+
+4. Scope
+A usual elliptic first-order Dirac on a compact finite-dimensional manifold
+with finite-rank coefficient and standard elliptic selfadjoint realization
+has (1+|D|)^(-p) trace class for sufficiently large finite p. It consequently
+cannot be unitarily identified with THIS full H while preserving the stated
+time generator. This says nothing against a one-particle extraction, a
+different D_coll, an abstract Hilbert-space unitary, or all possible P1 seeds.
+In particular compact resolvent or heat trace finiteness are not excluded by
+the argument; the old finite-temperature source construction is preserved.
+The report correctly retains these distinctions and does not infer a universal
+positive-generator requirement for a thermal GNS Liouvillian.

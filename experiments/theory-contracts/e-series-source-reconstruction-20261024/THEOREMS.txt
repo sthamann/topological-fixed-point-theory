@@ -1,0 +1,517 @@
+MATH.SEAM.ESERIES.SOURCE-RECONSTRUCTION.06
+24 October 2026
+
+Canonical reconstruction from the fixed marked C4 glue
+
+0. Verdict and exact scope
+
+Retain as proved input, without changing or rederiving it, the native compiler
+
+  K = D5 + A3 subset L,
+  H = <(s,f)> subset K*/K,
+  L = union_(a in H) (K+a) = E8,
+
+the fixed sector labels, the original epsilon convention, the compiler and
+cover actions, and
+
+  phi_base = (4/3)c3 = 1/(6 pi).
+
+The reconstruction class considered here is the following precise one. Put
+
+  U = V_D5 tensor V_A3 = V_K.
+
+An object of Ext_H(U) is a connected local unitary VOA extension W of U,
+with the same conformal vector, whose underlying labelled U-module is
+
+  W = direct_sum_(a in H) M_a                              (0.1)
+
+with every M_a occurring exactly once. An isomorphism in Ext_H(U) restricts
+to the identity on U and preserves each labelled summand M_a. It may multiply
+a simple summand by a scalar.
+
+THEOREM. Ext_H(U) has exactly one isomorphism class. It is represented by
+V_E8. The corresponding normalized connected commutative Q-system has
+exactly one unitary equivalence class. Its residual automorphisms over U are
+
+  Hom(H,U(1)) = Hom(C4,U(1)) = C4.                         (0.2)
+
+Thus the four residual choices are character gauge, not four extensions.
+Within this exact class the vacuum, conformal vector, L0, unitary structure,
+local products and vacuum correlation functions are fixed up to the stated
+cocycle and character gauges. No spectator is left, and the extension is
+generated over U by the sector M_(s,f), equivalently by its weight-one space.
+
+This is a mathematical reconstruction theorem from the already established
+marked C4 glue. It does not prove that primitive P1 data furnish U, its
+positive-energy representation, its local fields, or this reconstruction
+class. No 3+1 dimensional or physical source identification is asserted.
+
+
+1. The pointed category and the fixed Lagrangian subgroup
+
+The irreducible modules of the positive definite lattice VOA V_K are indexed
+by the discriminant group
+
+  A = K*/K = (D5*/D5) x (A3*/A3) = C4 x C4.
+
+All sixteen modules are simple currents and have categorical dimension one.
+Choose the spinor generator s of D5*/D5 and the fundamental generator f of
+A3*/A3. Their discriminant quadratic forms, written as lowest conformal
+weights modulo Z, are
+
+  q_D5(0)=0, q_D5(s)=5/8, q_D5(2s)=1/2, q_D5(3s)=5/8,
+  q_A3(0)=0, q_A3(f)=3/8, q_A3(2f)=1/2, q_A3(3f)=3/8.       (1.1)
+
+Let h=(s,f). The fixed diagonal subgroup is
+
+  H = {0,h,2h,3h} = C4.
+
+Equation (1.1) gives actual lowest weights, not only residues,
+
+  Delta(M_0)=0,
+  Delta(M_h)=5/8+3/8=1,
+  Delta(M_2h)=1/2+1/2=1,
+  Delta(M_3h)=5/8+3/8=1.                                  (1.2)
+
+Consequently q restricted to H is zero modulo one. The pointed modular
+category is nondegenerate, |A|=16 and |H|=4. Hence
+
+  |H-perp|=|A|/|H|=4,
+
+and isotropy H subset H-perp implies H=H-perp. Thus H is Lagrangian. This is
+also the lattice statement that the index-four overlattice associated with H
+is even and unimodular. The fixed input identifies it with E8.
+
+
+2. Exact sector content and the 248 weight-one states
+
+Use the standard level-one labels for D5 and A3. The four H sectors and their
+lowest finite-dimensional representations are
+
+  sector   U-module                              Delta   dimension at Delta
+  0        (1,1)                                  0      1
+  h        (16,4)                                 1      64
+  2h       (10,6)                                 1      60
+  3h       (bar(16),bar(4))                       1      64.              (2.1)
+
+The vacuum sector contributes at weight one
+
+  (M_0)_1 = (45,1) + (1,15),
+
+of dimension 45+15=60. Combining this with (2.1) gives the exact branching
+
+  (V_E8)_1 restricted to so(10) + sl(4)
+    = (45,1) + (1,15) + (16,4) + (10,6)
+      + (bar(16),bar(4)),
+
+  248 = 60 + 64 + 60 + 64.                                (2.2)
+
+This is sector by sector. It is not an inference from the number 248.
+
+
+3. The associator obstruction and why it vanishes on H
+
+First note that every multiplication channel in an object of Ext_H(U) is
+nonzero. The invariant Frobenius pairing of a connected unitary extension is
+nondegenerate, so the component M_a tensor M_(-a) -> M_0 is nonzero for every
+a. If some component M_a tensor M_b -> M_(a+b) vanished, associativity after
+multiplication by M_(-b) would give zero in the bracketing (M_a M_b)M_(-b),
+whereas the bracketing M_a(M_b M_(-b)) contains the nonzero unit action on
+M_a. This is a contradiction. Hence each one-dimensional fusion space below
+is used by a nonzero intertwiner.
+
+For a,b in H choose a unit-norm fusion isomorphism in the unitary pointed
+category (hence a unitary basis intertwiner)
+
+  I_(a,b): M_a tensor M_b -> M_(a+b).
+
+Every relevant fusion space is one dimensional. Comparing the two triple
+products and comparing exchanged products gives scalars
+
+  F(a,b,c) in U(1),  Omega(a,b) in U(1).
+
+The pentagon and the two hexagons say precisely that (F,Omega) is a normalized
+abelian 3-cocycle. This datum must not be discarded. The full pointed category
+on A has nontrivial quadratic trace, for example
+
+  Q(s,0) = exp(2 pi i 5/8) != 1,
+
+so its associator and braiding cannot be made globally trivial.
+
+The Eilenberg-Mac Lane trace theorem sends an abelian 3-cocycle class to
+
+  Q(a)=Omega(a,a).
+
+For a VOA module category this trace is the conformal spin
+
+  Q(a)=exp(2 pi i q(a))                                    (3.1)
+
+in the standard convention. Using the inverse convention changes no
+conclusion below. The trace map is a bijection from abelian 3-cohomology to
+quadratic forms. By (1.2), Q(a)=1 for every a in H. Therefore the restriction
+of the abelian class [(F,Omega)] to H is zero. This conclusion uses the full
+abelian trace theorem. It is not the false statement that ordinary
+H^3(C4,U(1)) vanishes; in fact
+
+  H^3(C4,U(1)) = C4.                                      (3.2)
+
+Because the restricted abelian class is zero, there is a normalized
+2-cochain mu:H x H -> U(1) such that replacing
+
+  I_(a,b) by mu(a,b) I_(a,b)
+
+makes both F and Omega equal to one on H. Thus associativity and locality are
+obtained simultaneously. The explicit E8 lattice vertex operators furnish
+one such trivialization, so existence does not depend on an abstract
+obstruction calculation alone.
+
+Suppose mu and mu' are two coherent trivializations. Their quotient eta is a
+normalized ordinary 2-cocycle. Two quotients differing by a coboundary give
+isomorphic algebra objects, by rescaling M_a with a 1-cochain. For arbitrary
+nonzero VOA multiplication constants use C* coefficients; for unitary
+normalized trivializations use U(1). In both cases
+
+  H^2(C4,C*) = H^2(C4,U(1)) = 0.                         (3.3)
+
+An elementary proof of (3.3) is useful. A projective lift T of a generator
+has T^4=zeta for some zeta in U(1). Choose rho with rho^4=zeta^(-1). Then
+(rho T)^4=1, and the projective cyclic action linearizes. Hence every
+2-cocycle is a coboundary. The same proof works for C*, since a nonzero
+complex number also has a fourth root. Thus algebraic uniqueness does not
+assume that an arbitrary VOA multiplication was already normalized to unit
+modulus. Section 4 supplies the unitary equivalence of normalized Q-systems.
+
+These scalar coefficients concern only the local C4 extension algebra.
+They do not replace Hom(L,Z2), its nontrivial group action, or the fixed
+character-valued G31 lift extension. No global sign-extension splitting
+follows from (3.3).
+
+It follows that there is one algebra isomorphism class. The 1-cocycles that
+stabilize its multiplication are the four characters of H. They act by
+
+  v in M_(kh) |-> chi(kh) v,
+
+and give precisely (0.2).
+
+
+4. VOA and Q-system classification
+
+The hypotheses of Huang, Kirillov and Lepowsky apply to U=V_K:
+
+  * U is simple and of CFT type, with U_0=C1.
+  * Positive definite lattice VOAs are regular, hence their modules are
+    completely reducible, and their module category has the required vertex
+    tensor category structure.
+  * All irreducible module weights are nonnegative, and only U has weight
+    zero.
+  * The object direct_sum_(a in H) M_a is haploid because M_0 occurs once.
+  * Its twist is trivial because all four conformal weights are integral.
+
+HKL Theorem 3.2 therefore identifies the required VOA extensions with
+haploid commutative associative algebra objects of trivial twist. Section 3
+proves that there is exactly one such algebra on the fixed labelled object.
+
+Existence and identification are concrete. For the even overlattice L=E8,
+the standard lattice decomposition is
+
+  V_L = direct_sum_(a in H) V_(K+a)                       (4.1)
+
+as a V_K-module, and the lattice vertex operators give the multiplication.
+Thus the unique extension is V_E8, as an extension of the marked U.
+
+The unitary statement is equally exact. The unitary representation category
+of a positive definite lattice VOA is a C*-tensor category. The algebra in
+(4.1) is rigid, connected and commutative. Carpi, Gaudio, Giorgetti and
+Hillier, Theorem 3.9, proves that algebra equivalence classes of rigid haploid
+algebras correspond one to one to unitary equivalence classes of normalized
+haploid Q-systems, and that an equivalence between normalized haploid
+Q-systems is automatically unitary. Hence the single algebra class above is
+also exactly one normalized local Q-system class.
+
+For the isomorphism over the fixed base U, use their Theorem 4.7 directly.
+Positive definite lattice VOAs and their tensor products are regular and
+completely unitary (their Table 1 and Corollary 4.11). Theorem 4.7 says that
+a VOA isomorphism of simple unitary extensions restricting to the identity
+on such a base is unitary; the extending scalar product is unique. Thus the
+algebraic isomorphism fixing U obtained above really is an isomorphism in
+the stated unitary extension class. Their Theorem 4.10 and Corollary 4.11
+also identify these normalized local Q-systems with the corresponding
+irreducible local conformal-net extensions over A_U.
+
+
+5. No spectator, generation and holomorphicity
+
+No spectator is an automatic conclusion only inside Ext_H(U). Equation
+(0.1) fixes the entire underlying U-module and its multiplicities. An extra
+tensor factor, extra sector or repeated sector would change that object and
+leave the stated class.
+
+The Q-system multiplication has nonzero components
+
+  M_(ah) tensor M_(bh) -> M_((a+b)h).
+
+In the explicit lattice representative these are the nonzero lattice
+intertwiners. Uniqueness transports this property to every object of the
+class. Therefore U together with M_h generates M_2h, M_3h and M_0 and hence
+the whole extension. Since U is generated by its weight-one currents and the
+three nontrivial sector tops all have weight one, V_E8 is generated by
+(V_E8)_1.
+
+There is also a categorical completeness check. The pointed category has
+global dimension 16 and the algebra has categorical dimension 4. The local
+module category has
+
+  Dim(C_A^local) = 16/4^2 = 1.                            (5.1)
+
+Thus the extension is holomorphic. Neither (5.1) nor the no-spectator
+statement follows if one merely asks for an extension containing the four
+sectors without fixing the whole module object and multiplicities.
+
+
+6. Canonical state space, vacuum, conformal vector and L0
+
+For the now forced lattice L=E8, the standard state space is
+
+  V_L = M(1) tensor C_epsilon[L],                          (6.1)
+
+where M(1) is the rank-eight Heisenberg Fock space and C_epsilon[L] is the
+twisted group algebra
+
+  e^alpha e^beta = epsilon(alpha,beta)e^(alpha+beta).
+
+The normalized lattice cocycle satisfies
+
+  epsilon(0,alpha)=epsilon(alpha,0)=1,
+  epsilon(alpha,beta)/epsilon(beta,alpha)
+    = (-1)^(<alpha,beta>).                                (6.2)
+
+Two normalized cocycles with the same commutator (6.2) differ by a
+coboundary. Rescaling e^alpha by the corresponding 1-cochain gives a VOA
+isomorphism. Thus epsilon is gauge data, not another extension choice. The
+original supplied epsilon is one fixed representative and remains unchanged.
+
+The unit of the connected algebra forces the vacuum
+
+  1 = 1_M(1) tensor e^0.                                  (6.3)
+
+For an orthonormal basis u_1,...,u_8 of L tensor R, the full-rank inclusion
+K subset L forces the same Heisenberg conformal vector on U and V_L:
+
+  omega = (1/2) sum_(j=1)^8 u_j(-1)u_j(-1)1.              (6.4)
+
+It has central charge 8. On a monomial state
+
+  u_(i1)(-n1)...u_(ir)(-nr)e^alpha,
+
+the conformal Hamiltonian is
+
+  L0 = n1+...+nr + <alpha,alpha>/2.                       (6.5)
+
+Equations (6.3)-(6.5) leave no independent vacuum, conformal vector or L0
+choice in the marked lattice reconstruction class.
+
+
+7. Exact vacuum n-point functions
+
+Let alpha_1,...,alpha_n be lattice charges in L and take the radial domain
+
+  |z_1| > |z_2| > ... > |z_n| > 0.
+
+For the exponential ground fields the vacuum function is
+
+  <1, Y(e^alpha_1,z_1)...Y(e^alpha_n,z_n)1>
+    = delta_(alpha_1+...+alpha_n,0)
+      C_epsilon(alpha_1,...,alpha_n)
+      product_(i<j) (z_i-z_j)^(<alpha_i,alpha_j>),         (7.1)
+
+where the ordered cocycle factor is
+
+  C_epsilon(alpha_1,...,alpha_n)
+    = product_(r=1)^(n-1)
+        epsilon(alpha_r,alpha_(r+1)+...+alpha_n).          (7.2)
+
+If a bimultiplicative representative is used, (7.2) becomes
+
+  product_(i<j) epsilon(alpha_i,alpha_j).
+
+Charge conservation in (7.1) is exact. Since L is integral, all exponents
+are integers and mutual locality has no branch ambiguity. All ground fields
+in all four H sectors are covered by taking alpha_i in the corresponding
+cosets K+kh. Linear combinations follow by linearity. Correlators with
+Heisenberg oscillator descendants follow uniquely by Wick contractions and
+derivatives. Therefore (7.1), the Heisenberg two-point function and the VOA
+identities determine every vacuum n-point function; there is no additional
+state functional in this class.
+
+
+8. Unitarity, radial reflection and the strong-local net
+
+The positive definite lattice construction has its normalized invariant
+Hermitian form and PCT operator Theta. In a compatible cocycle gauge
+
+  Theta(e^alpha)=kappa(alpha)e^(-alpha),  |kappa(alpha)|=1.
+
+For a primary lattice vector e^alpha of weight
+
+  d=<alpha,alpha>/2,
+
+the radial adjoint relation is
+
+  Y(e^alpha,z)^dagger
+    = (-1)^d conjugate(z)^(-2d) kappa(alpha)
+      Y(e^(-alpha),1/conjugate(z)).                       (8.1)
+
+The gauge-independent general identity is the invariant adjoint formula
+
+  Y(a,z)^dagger
+    = Y(exp(conjugate(z)L1)
+        (-conjugate(z)^(-2))^L0 Theta(a),
+        1/conjugate(z)),                                  (8.2)
+
+interpreted on the finite-energy domain. For any radially ordered product F
+of fields supported in the unit disk,
+
+  <1,F^dagger F 1> = ||F1||^2 >= 0.                       (8.3)
+
+This is the precise radial-reflection condition. Raw complex correlator
+values are not individually required to be positive.
+
+V_E8 is generated by its weight-one currents, as proved in Section 5.
+Carpi, Kawahigashi, Longo and Weiner, Theorem 8.3, states that a simple
+unitary VOA generated by weight-one fields, with the allowed Virasoro
+generators, is strongly local. Hence V_E8 produces its canonical irreducible
+strongly local conformal net A_(V_E8). This is a chiral conformal net result;
+it is not a 3+1 dimensional field theory statement.
+
+
+9. Naturality for the original sign-extension lifts
+
+Let ghat be any of the original epsilon-preserving lattice-field lifts. Its
+action has the defining form
+
+  ghat[h_1(-n_1)...h_r(-n_r)e^alpha]
+    =(gh_1)(-n_1)...(gh_r)(-n_r)
+      eta_g(alpha)e^(g alpha),                            (9.1)
+
+with eta_g(0)=1 and with the original character carry retained under
+composition. Formula (9.1) fixes the vacuum (6.3). Since g is a lattice
+isometry, it fixes the quadratic tensor in (6.4), hence
+
+  ghat omega=omega,
+  [ghat,L_n]=0 for every n,
+  [ghat,L0]=0.                                             (9.2)
+
+Every character correction D_chi fixes the neutral Heisenberg sector,
+the vacuum and omega, so (9.2) also holds for every corrected lift. Therefore
+the transition functors and the associated-source construction of
+MATH.SEAM.ESERIES.JOINTSOURCE.05 remain functorial after adjoining the now
+canonical vacuum, conformal vector and L0. No new cocycle or section is
+needed.
+
+The earlier E6 nonselection also survives. The existing involutive lifts of
+
+  d=diag(1,1,1,1,1,1,-1,-1)
+
+with masks 126 and 127 are lattice VOA automorphisms commuting with the fixed
+Jhat and chat. By (9.2) they also fix the newly explicit vacuum and conformal
+vector and commute with L0. Their action on the four E6 vertices remains
+fixed-point-free. Thus adding the canonical state and conformal dynamics does
+not manufacture a preferred E6 corner.
+
+
+10. The compiler clock is not conformal time rotation
+
+On the complexified weight-one Cartan space
+
+  H_C = {h(-1)1 : h in L tensor C},
+
+the fixed Gaussian lattice operator Jhat acts through J. Its spectrum is
+
+  Spec(Jhat|H_C) = {+i with multiplicity 4,
+                    -i with multiplicity 4}.              (10.1)
+
+By contrast, conformal rotation acts on every homogeneous weight-m space as
+
+  exp(i theta L0)|V_m = exp(i theta m) I.                 (10.2)
+
+In particular its restriction to H_C is the single scalar exp(i theta), for
+every theta. Equations (10.1) and (10.2) prove
+
+  Jhat != exp(i theta L0) for every theta.                 (10.3)
+
+Both operators preserve conformal grade, and Jhat commutes with L0, but they
+have different actions within weight one. A base or peripheral quarter turn
+must therefore not be identified with conformal time evolution merely from
+its order. This is an exact mathematical distinction, not a physical no-go
+claim.
+
+
+11. Independent c=8 uniqueness route and its hypotheses
+
+There is a second, less marked route to the same abstract VOA. Dong and Mason
+prove that a strongly rational holomorphic VOA of CFT type with central
+charge 8 is isomorphic to V_E8. Here strongly rational includes simplicity,
+rationality, C2-cofiniteness and the usual CFT-type/self-contragredient
+hypotheses, while holomorphic means that the VOA itself is the only
+irreducible module.
+
+This theorem is a useful cross-check after holomorphicity and c=8 have been
+established. It does not follow from central charge 8 alone. It also does not
+recover the fixed embedding U=V_D5 tensor V_A3, the marked sector labels or
+the character gauge. The C4 proof above is therefore the direct uniqueness
+theorem for the supplied compiler object.
+
+
+12. Primary sources
+
+Frenkel, Lepowsky and Meurman, Vertex Operator Algebras and the Monster,
+the standard lattice VOA construction:
+  https://lup.lub.lu.se/record/637991
+
+Borcherds, Vertex algebras, Kac-Moody algebras, and the Monster, the original
+Fock-space vertex-algebra construction:
+  https://doi.org/10.1073/pnas.83.10.3068
+  https://math.berkeley.edu/~reb/papers/va/va.pdf
+
+Huang, Kirillov and Lepowsky, Braided tensor categories and extensions of
+vertex operator algebras, especially Theorem 3.2 and the twist formula:
+  https://arxiv.org/abs/1406.3420
+  https://arxiv.org/html/1406.3420
+
+Carnahan, Building vertex algebras from parts, especially the Eilenberg-
+Mac Lane trace discussion and Theorem 2.2.13:
+  https://arxiv.org/abs/1408.5215
+  https://arxiv.org/html/1408.5215
+
+Carpi, Gaudio, Giorgetti and Hillier, Haploid Algebras in C*-Tensor
+Categories and the Schellekens List, especially Theorems 3.9 and 4.7:
+  https://doi.org/10.1007/s00220-023-04722-9
+  https://link.springer.com/article/10.1007/s00220-023-04722-9
+
+Carpi, Kawahigashi, Longo and Weiner, From Vertex Operator Algebras to
+Conformal Nets and Back, especially the invariant adjoint formulas,
+unitarity results and Theorem 8.3:
+  https://arxiv.org/abs/1503.01260
+  https://arxiv.org/html/1503.01260
+
+Dong and Mason, Holomorphic Vertex Operator Algebras of Small Central
+Charges, especially Theorem 1:
+  https://arxiv.org/abs/math/0203005
+  https://doi.org/10.2140/pjm.2004.213.253
+
+
+13. Final boundary
+
+The established D5+A3 compiler plus its fixed diagonal C4 glue removes the
+lattice VOA, vacuum, conformal vector, L0, local product, normalized unitary
+Q-system and vacuum-state functional as independent mathematical choices
+inside Ext_H(U). It leaves only cocycle representative gauge and the four
+sector characters.
+
+The earliest additional premise remains the choice of Ext_H(U) itself: a
+positive-energy local unitary chiral VOA realization of the compiler with
+exactly the four marked sectors and multiplicity one. The primitive P1
+boundary kernel has not been proved to supply that premise. The result is
+therefore a complete conditional reconstruction from the already derived C4
+glue, while the derivation of that chiral realization from primitive P1
+remains a separate origin problem.

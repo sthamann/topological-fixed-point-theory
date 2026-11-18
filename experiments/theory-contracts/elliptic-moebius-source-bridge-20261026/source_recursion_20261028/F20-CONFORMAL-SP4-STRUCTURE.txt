@@ -1,0 +1,136 @@
+F20 CONFORMAL SP4 STRUCTURE
+==========================
+
+Stand: 2026-10-28
+Urteil: EXAKTER STRUKTURELLER SATZ AUF DER V419 CYCLOTOMISCHEN VIER.
+DER MU8 SKALAR IST IN DER SPAETER GESCHLOSSENEN MARKIERTEN QUARTERQUELLE
+VORHANDEN, ABER SEIN TRANSPORT AUF DIE V419 VIER IST NICHT ORIGINAL BEWIESEN.
+
+1. Alle alternierenden Formen
+-----------------------------
+
+Fuer die unveraenderten v419 Matrizen
+
+  C=C5,   G C G^-1=C^2
+
+ist der Raum der C invarianten alternierenden Formen genau zweidimensional.
+Eine ganzzahlige Basis ist
+
+  A = [ 0  0  1 -1]       B = [ 0  1  0  0]
+      [ 0  0  0  1]           [-1  0  1  0]
+      [-1  0  0  0]           [ 0 -1  0  1]
+      [ 1 -1  0  0],          [ 0  0 -1  0].
+
+Auf diesem Formenraum wirkt G durch
+
+  G*(A)=B,   G*(B)=-A,
+
+also mit Matrix [[0,-1],[1,0]]. Die beiden Eigenformen sind
+
+  Omega_+ = i A+B,       G^T Omega_+ G = +i Omega_+,
+  Omega_- =-i A+B,       G^T Omega_- G = -i Omega_- .       (1)
+
+Beide sind nicht ausgeartet:
+
+  rank Omega_+=rank Omega_-=4,
+  det Omega_+=3-4i=(2-i)^2,
+  det Omega_-=3+4i=(2+i)^2.                               (2)
+
+Damit liegt das originale F20 nicht nur in GL4. Es liegt exakt in CSp4 mit
+Similitudencharakter
+
+  chi(C)=1,   chi(G)=i                                  (3)
+
+fuer Omega_+; Omega_- liefert den konjugierten Charakter.
+
+2. Der zentrale mu8 Lift
+------------------------
+
+Setze zeta8=exp(pi i/4) und
+
+  Ghat=zeta8^(-1) G.
+
+Dann gilt exakt
+
+  Ghat^T Omega_+ Ghat=Omega_+,
+  Ghat C Ghat^-1=C^2,
+  Ghat^4=-I,   Ghat^8=I.                                 (4)
+
+Der notwendige zentrale Faktor ist also kein frei optimierter Parameter.
+Er ist die Quadratwurzel des inversen Similitudencharakters:
+
+  zeta8^(-2)=chi(G)^(-1)=-i.
+
+Dies ist die Spin5 gleich Sp4 Hebung der cyclotomischen F20 Wirkung. Die
+Rohwirkung G hatte Ordnung4; die symplektisch normalisierte Wirkung hat
+notwendig Ordnung8.
+
+3. Der Fuenfer und der Zehner folgen funktoriell
+------------------------------------------------
+
+In Lambda2(V) spannt der inverse symplektische Bivektor eine Linie mit
+Charakter chi. Nach Quotient und Normalisierung entsteht
+
+  W5=(Lambda2(V)/<Omega_+^(-1)>) tensor chi^(-1).        (5)
+
+Der Checker prueft auf allen 20 F20 Elementen
+
+  W5 isomorphic sign tensor Perm5.                       (6)
+
+Hier ist sign(C)=1 und sign(G)=-1. Das erklaert das zuvor isolierte
+Vorzeichen auf der Involutionsklasse G^2. Fuer die adjungierte Darstellung
+folgt ebenso elementweise
+
+  Sym2(V) tensor chi^(-1) isomorphic Lambda2(W5).         (7)
+
+Da Lambda2(sign tensor Perm5)=Lambda2(Perm5), ist (7) genau die
+Spin5 beziehungsweise SO5 Erklaerung des vorher gefundenen Bell Hodge
+Intertwiners. Die beiden Viertelcharaktere chi und chi^(-1) geben auf dem
+Zehner isomorphe F20 Darstellungen; deshalb konnte der erste Checker den
+gleichen Zehner auch mit chi statt chi^(-1) schreiben. Die Sp4 Normierung
+fixiert die saubere strukturelle Konvention (7).
+
+4. Originaler Status der Viertelphase
+-------------------------------------
+
+v419 selbst konstruiert nur C und G mit G^4=I. Dort steht weder Omega_+
+noch der zentrale zeta8 Faktor. Der mu8 Lift folgt daher neu und exakt aus
+den bereits gegebenen v419 Matrizen, ist aber keine woertliche alte Formel.
+
+Die spaeter geschlossene markierte Quarterquelle besitzt genau die passende
+zentrale Phase:
+
+  alpha^2=+i I,   alpha^4=-I,   alpha^8=I.
+
+Belege:
+
+* experiments/theory-contracts/elliptic-moebius-source-bridge-20261026/
+  MARKED-Q-DIVISOR-CENTRAL-TWIST.txt:20-34,92-104
+  SHA256 da1f75831a46a0c0662f931486b77e6e2085126df452b009d1a90351d413d904
+
+* experiments/theory-contracts/elliptic-moebius-source-bridge-20261026/
+  PAULI-SPIN-CENTRAL-LIFT.txt:23-45,88-105,180-193
+  SHA256 e5ef50c899eba80dca03e1b7023edf816df3b45a669534fccf2fef215b0ae8e6
+
+Diese Quelle waehlt den positiven +i Zweig auf ihrem markierten Spin Theta
+Modul. Sie identifiziert dieses Modul jedoch weiterhin nicht mit der v419
+cyclotomischen Vier. Daher lautet die genaue Aussage:
+
+  * der gleiche mu8 Charakter ist original markiert vorhanden;
+  * seine Wirkung auf der v419 Vier ist durch (1) bis (4) eindeutig
+    kompatibel;
+  * der Funktor zwischen den beiden Vierern bleibt der erste ungepruefte
+    physische Pfeil.
+
+Eine Gleichsetzung mit der NS oder Pauli Vier wird hier nicht vorgenommen.
+
+5. Ausfuehrbarer Beleg
+----------------------
+
+  check_f20_conformal_symplectic.py
+  f20-conformal-symplectic-results.json
+
+Der Checker pinnt v419 und prueft 49 exakte Identitaeten: den ganzen
+alternierenden Formenraum, beide Eigenformen, Rang und Determinanten, den
+symplektischen Ordnung8 Lift sowie die W5 und adjungierten Charaktere auf
+allen 20 Gruppenelementen.

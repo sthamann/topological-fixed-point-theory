@@ -1,0 +1,208 @@
+FINITE ORIGINAL SOURCE: CONSTRUCTIVE BEREZIN INVERSE AND ADMISSIBLE TESTS
+3 November 2026. Readonly source review, workspace proof note.
+
+Result
+
+On an actually supplied finite Grassmann field chart, complementary source
+insertions reconstruct every coefficient of the original unnormalized
+density. A single saturated insertion extracts its zero fermion body,
+including at zeros of the Pfaffian. Compact group invariance lets this
+inverse use invariant composites without requiring individual charged
+letters to be physical observables. Applicability to the full original
+Padm source still requires the saturated composite's actual field/contact
+representation and admissibility. Neither is inferred from its degree.
+
+1. Exact coefficient inverse, including the sign
+
+Use the ORIGINAL finite regulator, ordered independent odd coordinates
+theta_1,...,theta_N with N even, base integration dnu(b), and its given
+orientation. Put tau=theta_1...theta_N and int Dtheta tau=1. Here b denotes
+every remaining original variable, not a newly chosen boson background.
+Let
+
+ w(b,theta)=sum_(I subset {1,...,N}) w_I(b) theta^I,
+ L[A]=int dnu(b) int Dtheta A(b,theta) w(b,theta).        (1)
+
+All words theta^I have increasing indices. If J=I^c, define
+
+ sigma(I)=(-1)^(#{(j,i):j in J, i in I, j>i}).
+
+Thus theta^J theta^I=sigma(I)tau. Every other coefficient either has
+a repeated index or fails to saturate all indices, so
+
+ L[f(b) theta^(I^c)]=sigma(I) int dnu(b) f(b) w_I(b).     (2)
+
+Since sigma(I)^2=1, the same sign inverts the formula. This identifies
+the coefficient distributions against every actually allowed test f.
+For an even density, only even I occur and all complementary insertions
+are even. No odd observable access is required by this inverse.
+
+In particular
+
+ tau w=tau w_empty,
+ L[f tau]=int dnu f w_empty.                            (3)
+
+This is an explicit inverse operation on the source. It does not infer
+an unknown value of L[f tau] from lower moments or from reflection positivity.
+
+2. The bare body and Pfaffian zeros
+
+On an actual chart with w=exp(-S_B) exp(-theta^T M_b theta/2),
+
+ L[f]=int dnu f exp(-S_B) Pf(-M_b),
+ L[f tau]=int dnu f exp(-S_B).                          (4)
+
+The sign in the Pfaffian is fixed here by the displayed exponent and
+orientation. A convention absorbing that sign into its M gives Pf(M).
+Equation(3), and therefore body extraction, is unchanged. It requires
+neither an inverse of M nor division by Pf(M), so it survives singular
+fermion fibers. Higher even fermion interactions also leave(3) unchanged.
+
+If N counts only matter fermions, w_empty still contains the original
+ghost and other odd variables. A pure boson density requires saturation
+of every integrated odd direction at that integration stage. This is
+not automatic in a physical BRST quotient. Conversely, ghosts already
+eliminated in the original caller are not integrated a second time.
+
+On a fixed nonzero body branch, all coefficients from(2) give the action
+by a finite algebraic logarithm. Write w=w_empty(1+n), with n nilpotent:
+
+ S=-log(w_empty)-sum_(k=1)^N (-1)^(k+1)n^k/k.            (5)
+
+Terms vanish once their Grassmann degree exceeds N; for an even n the
+sum terminates already at k<=N/2. The chosen branch and every original
+boundary, determinant, eta and reference factor remain part of this
+same caller. On a zero body stratum retain w itself. No logarithmic
+representation is asserted there.
+
+If only normalized omega=L/L[1] is known, (2) reconstructs w/L[1]. In
+particular omega(f tau)/omega(tau), when its denominator is nonzero,
+is the normalized body functional. The missing absolute scalar is not
+free: the original Z_rel[0] and reference caller fix it when supplied.
+No normalization is reset in these statements.
+
+3. Compact invariant quotients require fewer probes
+
+Let the ACTUAL compact structural group G act by even automorphisms on
+this chart, preserve the COMPLETE original joint pairing
+B(A,w)=int dnu(b) Dtheta A w, and leave the joint density w invariant.
+At fixed b a purely Berezin pairing is valid only for actions fixing b.
+If gauge transformations move b, all its original density/Jacobian data
+are transported in the joint pairing. Its normalized Haar average R_G obeys
+
+ B(R_G A,w)=int_G B(g A,w)dg=B(A,w).                    (6)
+
+Thus the averaged complementary insertions R_G(theta^(I^c)) reproduce
+the same coefficient functionals. More intrinsically, the restricted
+pairing separates all invariant densities: if invariant delta w pairs
+to zero with all invariant A, then it pairs to zero with every A by(6),
+and Berezin nondegeneracy implies delta w=0. This separates invariant joint densities; it does not assert invariance
+of a conditional density at each fixed b. It applies to the even
+subalgebra as well when N is even. It does not require every individual
+charged field to preserve the physical Hilbert space.
+
+For an original paired complex chart transforming by
+
+ psi -> U psi,       barpsi -> barpsi U^(-1),
+
+the determinant character of the combined odd representation is
+det(U)det(U^(-1))=1. Its saturated top monomial is therefore invariant
+under this action, for any invertible U. Gauge and color center neutrality
+of this particular paired top probe follows directly. A genuine Majorana
+chart instead has its actual determinant/orientation character, which
+must be checked; it is not replaced by the paired formula.
+
+4. Exact restriction criterion and determinant line bookkeeping
+
+At a fixed b, let D be the permitted linear density class and A_adm the
+linear space of actual admissible composite tests. Define
+
+ N_adm={delta w in D: B(A,delta w)=0 for every A in A_adm}.
+
+The body is identifiable from admissible source data if and only if
+
+ N_adm is contained in ker(delta w -> delta w_empty).   (7)
+
+Proof: two densities with identical data differ by N_adm; their body
+values agree exactly when(7) holds. In finite dimension the equivalent
+dual criterion is that the body probe tau belongs to A_adm+D^perp.
+Here D^perp denotes the annihilator of D under B. The invariant theorem
+above verifies this criterion when the actual reduction is precisely
+the stated compact invariant class. It is not a theorem for every
+unrelated spectral restriction.
+
+Under a variable dependent chart theta'=R(b)theta,
+
+ Dtheta'=det(R)^(-1)Dtheta,
+ w'(b,theta')=det(R)w(b,R^(-1)theta').
+
+Hence w'_empty=det(R)w_empty. A global top test has the local form
+T=kappa(b)tau, with kappa'=det(R)^(-1)kappa. The reconstructed
+kappa w_empty is then invariant. These are density and determinant
+line transformations, not an extra phase or measure choice. Use the
+original trivialization/eta/orientation when it exists; do not choose
+a new frame to make the extracted body take a desired value.
+
+5. Applicability to the original physical source
+
+The original complete source and its given field/contact dictionary must
+realize L[f theta^(I^c)] as the relevant ordered source derivatives.
+In particular the represented saturated word must preserve Ran(Padm)
+together with its adjoint. It cannot be declared physical merely because
+it is even or gauge invariant. A top Grassmann insertion is not in general
+a CAR occupation projector: coherent symbol, time ordering and coincident
+contacts belong to the original map.
+
+The original whole Padm includes a spectral P_gap as well as seam, color
+and determinant selectors. Gauge neutrality from section3 supplies no
+commutator with P_gap. If the original caller instead supplies an actual
+independent reduced Grassmann chart on its physical field domain, apply
+the inverse directly in that chart. No ambient CAR saturation is required.
+The notation integral_Hadm alone does not construct such a chart.
+
+A nonmultiplicative selector kernel must remain in the full original
+kernel. Equation(3) then extracts the body of that kernel. Calling it the
+unselected exp(-S_B) would require the selector's actual field action.
+
+First remaining original premise: a concrete admissible composite or
+source coefficient that realizes this top probe on the actual common
+field chart, with its prescribed contact, determinant and reference data.
+The inspected original passages do not compute that source value or
+prove its full Padm admissibility. No primitive omega value, actual bare
+boson weight, or full source equality has been obtained by this note.
+
+6. Original passages inspected
+
+Repository root: /Users/stefanhamann/Projekte/tfpt-theoryv4/
+
+documents/archive--tfpt-45--source_extracts--01_boundary_kernel_source/sections/
+001-section-primitive-core-and-carrier-interface-handoff.tex:319-343:
+physical local net requires both A and A* to preserve Ran(Padm).
+
+documents/archive--tfpt-45--source_extracts--04_qft_source/sections/
+002-section-closure-theorems-from-the-admissibility-complex.tex:12-104:
+actual structural selectors, Hodge projector and spectral P_gap.
+The parallel harmonic determinant line at:240-244 concerns SU(3)_F;
+it does not by itself trivialize every regulated fermion determinant line.
+
+documents/archive--tfpt-45--source_extracts--04_qft_source/sections/
+007-subsection-renormalized-physical-and-scheme-readout-laye.tex:3-29:
+original S_adm field integration and its source arguments.
+
+experiments/theory-contracts/original-local-source-variable-background-20261102/
+ADMISSIBLE-ACTION-DERIVATION-20261103.txt:175-218:
+original bare body distinguished from integrated logZ; conditional
+Berezin nondegeneracy and full contact law already established there.
+The coefficient inverse here needs no new translation/contact law,
+but does need the stated actual insertion/source pairing.
+
+REFERENCE-SOURCE-COMPLETION.txt:71-89 in the same contract:
+paired Jacobian1; Majorana Pfaffian, orientation, reference and eta transport.
+
+PROJECTED-JOINT-SOURCE-GENERATOR-20261103.txt:98-159 in the same contract:
+whole selector contacts and actual allowed composite words; no extra
+selector between the charged letters of a single original word.
+
+No repository edits, new model, numerical spectrum, Lean run, ledger
+promotion or physical closure. Formulae(1)-(7) are elementary finite
+exterior algebra and linear duality, with their applicability stated above.

@@ -1,0 +1,151 @@
+INDEPENDENT SCOPED REVIEW OF PROOF.txt
+14 October 2026
+
+VERDICT
+
+PASS, with the scope qualifications already stated in PROOF.txt and sharpened
+below.  The operator, common-time, Weyl-transport, and microscopic gap
+obstructions are mutually consistent.  They rule out the proposed E8
+completion on the unchanged charged-CAR/QWZ source Hilbert space while
+preserving its state and time.  They do not prove a universal P1/P2 or TFPT
+no-go.
+
+1. KLM REFERENCE NET VERSUS THE ACTUAL QUARTER SOURCE
+
+The KLM statement is correctly restricted to the vacuum-reference rational
+net A0=V_(2Z).  In that setting the sector group is Z4, the eight-interval
+canonical-endomorphism labels obey sum r_i=0 modulo 4, and the count/index is
+4^7=16384.  The example r=(1,3,0,...,0) has spin 1/4 modulo 1 and correctly
+shows that the full dual label set is not itself a bosonic local extension.
+The uniform-parity intersection has 128 even plus 128 odd labels and gives the
+abstract D8 union (s+D8)=E8 candidate.
+
+No proof in the supplied material transports that index or canonical
+endomorphism to the actual quarter-twisted source representation.  The phase
+G_a can remove the twist on a proper interval after choosing a cut, so local
+CAR relations and individual interval algebras away from that cut can be
+identified.  This is the exact positive local correction.  It does not give
+one periodic global gauge/unitary compatible with the whole complement, its
+commutant, the vacuum modular data, and the transported source state.  Since
+the multi-interval dual uses A(E')', those missing global data are precisely
+what would be needed to identify the actual quarter-source index.  PROOF.txt
+therefore correctly presents 4^7 only as a vacuum-reference theorem.
+
+2. ACTUAL CARTAN CHARACTER OBSTRUCTION
+
+After diagonalizing the cyclic fold, each actual component number generator
+has integer spectral differences; a normal-ordering offset only multiplies
+exp(2 pi i N_k) by a scalar and hence leaves its adjoint action equal to the
+identity.  A spinor field with the required Ward charge p_k=+/-1/2 would obey
+
+    Ad exp(2 pi i N_k)(S_p)=exp(2 pi i p_k) S_p=-S_p.
+
+On the original Hilbert space the left side is S_p, so a nonzero such operator
+cannot exist there.  This argument is valid for bounded operators directly and
+for charged fields on the invariant finite-energy domain stipulated in the
+proof.  A multi-interval intertwiner with total source charge zero is not thereby
+an operator with the eight half-Cartan Ward characters.  This is the correct
+operator-level distinction.
+
+3. COMMON-CURRENT TIME AND THE EXTRA GROUND STATE
+
+For alpha=1/4 and 3/4 the listed delta vectors are correct, every
+|delta_k|<1/2, and sum |delta_k|=2.  For
+
+    E(p,N)=||p||^2/2 + delta.p + N,   N>=0,
+
+each nonzero integer coordinate contributes strictly positively.  Thus the
+D8 integer coset has the unique zero p=0.  In the even spinor coset,
+coordinatewise strict convexity uniquely selects
+
+    p_*=(1/2,1/2,1/2,1/2,-1/2,-1/2,-1/2,-1/2).
+
+It has ||p_*||^2=2, sum p_*=0, delta.p_*=-1 and zero energy.  Hence the
+stipulated multiplicity-one lattice E8 extension has exactly two ground states,
+whereas the original even CAR module has one.  The factor of 8 between the
+folded conformal normalization and the physical source normalization is
+positive and does not affect this ground-space conclusion.  Simultaneously
+reversing the charge and delta conventions sends p to -p and leaves the
+spectrum, neutrality and degeneracy unchanged; no signed Q/H_a dictionary is
+being inferred beyond that convention-invariant statement.
+
+Since sum p_*=0, delta.p_*=mu.p_*=-1 for both alpha values.  Therefore its
+cyclic clock character is exp(2 pi i mu.p_*)=1.  A uniform holonomy shift also
+has zero pairing with p_*.  It cannot lift the partner.  A sector-dependent
+constant could lift it only by changing the common spinor-current time law.
+
+4. WEYL IMAGE
+
+The exact rational matrix in fold-results.json gives
+
+    M p_*=e1+e4.
+
+This vector has norm squared 2, lies in the first five carrier coordinates,
+and is an ordinary D5 root in the stipulated embedding.  Its dot product with
+the transported source U1 charge 2(e3+e6) is exactly zero.  This result is
+conditional on the previously stipulated E8 Weyl map; it does not construct
+the missing spinor operator or derive the extension from P1/P2.
+
+5. MICROSCOPIC QWZ GAP
+
+For the stated free QWZ cylinder, mass 1 and width 8, the transverse Fourier
+block satisfies exactly
+
+    H(k)^2=diag(sin(k)^2 I+B*B, sin(k)^2 I+BB*)
+          >= sin(k)^2 I.
+
+At quarter-twisted momenta k=2 pi (j +/- 1/4)/N, the minimum absolute sine is
+sin(pi/(2N)).  With the recorded physical scaling,
+
+    g_N >= N sin(pi/(2N))/(2 pi) >= 1/(2 pi),
+    liminf g_N >= 1/4.
+
+Thus every finite-N one-particle operator is invertible, and its normal-ordered
+Gaussian Fock sea is unique.  The six recorded calls to the original builder
+(sectors 1 and 3; N=8,16,32; full dimensions 128,256,512) have no numerical
+zero modes and scaled gaps
+
+    0.24839671278605,
+    0.24959859825891,
+    0.24989961328741,
+
+up to the displayed sector-symmetric roundoff.  These runs agree with the
+analytic bound; the analytic block inequality, rather than the tolerance,
+establishes absence of zeros.
+
+The limit statement is valid for a common-Hilbert, source-state/time preserving
+limit in which the same second-quantized positive-energy form, or equivalently
+the uniform spectral inequality with the transported vacuum projection, passes
+to the limiting generator.  Under that condition a composite/nonlinear word
+cannot create an additional orthogonal zero-energy state.  Local field
+convergence without preservation of this generator inequality would not by
+itself prove the claim.  A different representation, interaction, source,
+scaling, added sector, or sector-specific time is outside the obstruction.
+
+6. GEOMETRY AND TEST ARTIFACTS
+
+The original one-sided reflection double and a free half-period deck action
+remain distinct geometric inputs.  Even after granting the free deck,
+f(theta)=cos(2 theta)+2 sin(2 theta) obeys f(theta+pi)=f(theta) but
+f(0)=1 and f(pi/4)=2.  This proves only that deck invariance does not make the
+eight quarter-mark images into one scalar quotient observable.  The fold
+pushforward remains valid.  A scalar physical quotient could still be obtained
+from an additional observable restriction or gauging rule; P1/P2 do not select
+such a rule in the cited passages.
+
+The three exact checker blocks pass.  In particular the corrected global
+integer-coset lower bound is 0, attained only by p=0; no erroneous value 16 is
+used.  The finite root enumeration is used only as a consistency check, while
+the full lattice minimum follows from the coordinatewise analytic argument.
+The six microscopic data records are internally consistent with the original
+builder and the exact gap inequality.  No further matrix run was needed for
+this review.
+
+FINAL SCOPE
+
+The proved negative is precise: the proposed multilocal E8 completion cannot
+be realized on the unchanged known charged-CAR/QWZ source while retaining its
+actual Cartan action, Hilbert space, quarter state, normal ordering, and common
+physical time.  The result neither excludes a separately derived primitive
+source with the required neutral carrier partner nor establishes a universal
+P1/P2/TFPT impossibility.

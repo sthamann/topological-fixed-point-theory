@@ -1,0 +1,49 @@
+{
+  "scope": "Algorithm controls only, NOT supplied native TFPT field data and NOT physical predictions",
+  "rounding_enclosed": false,
+  "checks": [
+    {
+      "case": "one-dimensional original-formula algorithm control",
+      "insertion": "Z",
+      "evaluations": 32824,
+      "absolute_error_vs_independent_45digit_quad": 6.568582993671246e-05,
+      "analytic_quadrature_bound_before_rounding": 0.001034683743885306,
+      "passed": true
+    },
+    {
+      "case": "one-dimensional original-formula algorithm control",
+      "insertion": "u[0]",
+      "evaluations": 32824,
+      "absolute_error_vs_independent_45digit_quad": 2.967422809341258e-05,
+      "analytic_quadrature_bound_before_rounding": 0.0199999599099198,
+      "passed": true
+    },
+    {
+      "case": "correlated two-dimensional algorithm control",
+      "evaluations": 13924,
+      "absolute_error_vs_independent_Hermite80": 0.009702971187712683,
+      "Hermite48_80_difference": 1.1102230246251565e-16,
+      "analytic_quadrature_bound_before_rounding": 0.1997931447046865,
+      "passed": true
+    },
+    {
+      "case": "exact zero denominator preserved, no division",
+      "passed": true
+    },
+    {
+      "case": "adaptive neutral moment tolerance, unchanged algorithm-control inputs",
+      "rungs": 4,
+      "final_evaluations": 295532,
+      "absolute_error_vs_independent_quad": 8.632553356036077e-07,
+      "analytic_ratio_error_before_rounding": 0.0030188808495645136,
+      "passed": true
+    },
+    {
+      "case": "requested but missing UY insertion rejected before integration",
+      "passed": true
+    }
+  ],
+  "passed": 6,
+  "total": 6,
+  "native_primitive_source_value_evaluated": false
+}

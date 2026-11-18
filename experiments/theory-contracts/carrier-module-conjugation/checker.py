@@ -12,9 +12,9 @@ import sympy as sp
 HERE = Path(__file__).resolve().parent
 ROOT = HERE.parents[2]
 PINS = {
-    "experiments/theory-contracts/charged-cocycle-lift/checker.py": "4be4fa0ea26e4ce302b59f53f86787953544c7ea355168ccc24501501cc8d1dc",
-    "experiments/theory-contracts/half-twist-grade-carry/checker.py": "1336ef54c776794f2a587fbd9c7250f069394ae9e509e2e32dc91a357fa8ab47",
-    "experiments/theory-contracts/gaussian-vacuum-filter/checker.py": "4a319e059d25be9f0aace0fbc994c0a1201ac8846a6910962c9379d48248e9fa",
+    "experiments/theory-contracts/charged-cocycle-lift/checker.py": "2df67cda01259c0719a3724d995d0832b0b79878d8f4fa5e6d9aacea71a0aa02",
+    "experiments/theory-contracts/half-twist-grade-carry/checker.py": "0109b5f8ca4cea8fa1d78a9fea904ee958ff31381eef423e482e65fee873afb7",
+    "experiments/theory-contracts/gaussian-vacuum-filter/checker.py": "2f7fcb6a1cc4935ef8f54d9c64b93b08ee04c10e1d5a091ecdbc75892a6849fb",
 }
 
 

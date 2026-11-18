@@ -29,12 +29,16 @@ CONFIG = OUT / "config.json"
 HEADINGS = re.compile(r"\\(part|chapter|section|subsection|subsubsection|paragraph|subparagraph)\*?\s*(?:\[[^\]\n]*\]\s*)?\{")
 FILE_TOKEN = re.compile(r"(?<![\w])(?:[\w.+-]+/)*[\w.+-]+\.(?:py|lean|wl|wls|md|json|csv|txt)(?![\w])")
 SHORT_V = re.compile(r"(?<![\w])v(\d{1,5})(?![\w.])")
-DECL = re.compile(r"^\s*(?:(?:private|protected|noncomputable|unsafe|partial)\s+)*(theorem|lemma|def|abbrev|axiom|opaque|structure|class|inductive|instance)\s+([\w'.]+)", re.M)
-WL_HEADING = re.compile(r"^\s*\(\*\s*(?:[-=]+\s*)?\(?v\d+[^\n]*(?:\n(?:(?!\*\)).)*?)*?\*\)", re.M)
+DECL = re.compile(r"^\s*(?:@\[[^]]*\]\s*)*(?:(?:private|protected|noncomputable|unsafe|partial)\s+)*(theorem|lemma|def|abbrev|axiom|opaque|structure|class|inductive|instance)\s+([\w'.]+)", re.M)
+WL_HEADING = re.compile(
+    r"^[ \t]*\(\*[ \t]*(?:[-=]+[ \t]*)?\(?(v\d+(?:[ \t]*/[ \t]*v\d+)*)\b"
+    r"(?:(?!\*\))[\s\S])*\*\)",
+    re.M,
+)
 RELATION_KINDS = {
     "explicit_file_citation", "explicit_script_identifier", "explicit_claim_identifier",
     "explicit_lean_symbol", "explicit_source_identifier", "cross_reference_join",
-    "tex_label_reference", "includes_source", "contains_declaration",
+    "tex_label_reference", "includes_source", "contains_declaration", "ledger_evidence_reference",
 }
 
 
@@ -84,14 +88,45 @@ def research_evidence_paths(paths, config, local_deleted_paths=(), registered_sc
     """Use the same research scope in Git and exports; missing sources fail."""
     excluded=config.get("excluded_evidence_roots",["website"])
     selected=sorted({p for p in paths if allowed(p,config)and not any(p==root or p.startswith(root+"/")for root in excluded)})
-    missing=[p for p in selected if not(ROOT/p).is_file()]
     canonical={"verification/"+name+".py"for name in registered_scripts}
+    retired=config.get("retired_navigation_sources",{})
+    for path in sorted(set(selected)&set(retired)):
+        entry=retired[path]
+        if path in canonical or not path.endswith(".py"):
+            raise ValueError("cannot retire a canonical verification or formal source: "+path)
+        replacement=entry.get("replacement","")
+        if not entry.get("reason") or not allowed(replacement,config) or not(ROOT/replacement).is_file():
+            raise ValueError("retired navigation source needs an existing replacement and reason: "+path)
+        if omissions is not None:
+            omissions.append({"kind":"retired_navigation_source","source":path,
+                              "replacement":replacement,"reason":entry["reason"],
+                              "current_proof_coverage":False})
+    selected=[p for p in selected if p not in retired]
+    missing=[p for p in selected if not(ROOT/p).is_file()]
     local_omissions=[p for p in missing if p in local_deleted_paths and p not in canonical and not p.endswith((".lean",".wl",".wls",".tex")) and p not in {"verification/script_registry.csv","verification/status_ledger.csv"}]
     if omissions is not None:
         omissions.extend({"kind":"local_missing_noncanonical_evidence","source":p,"reason":"Git-declared working-tree deletion; omitted only from the local supplement, never the public registry or Gitless export","current_proof_coverage":False}for p in local_omissions)
     missing=[p for p in missing if p not in local_omissions]
     if missing:raise ValueError("Missing declared research evidence sources: "+", ".join(missing))
     return [p for p in selected if p not in local_omissions]
+
+
+def discover_local_formal_sources(config):
+    """Inventory local Lean sources only for the explicitly private supplement."""
+    paths=set()
+    for rel_root in config.get("local_formal_source_roots",[]):
+        if not allowed(rel_root,config):
+            raise ValueError("unsafe local formal source root: "+rel_root)
+        base=ROOT/rel_root
+        if not base.is_dir():
+            continue
+        for path in base.rglob("*.lean"):
+            if not path.is_file() or not path.resolve().is_relative_to(ROOT.resolve()):
+                continue
+            relpath=path.relative_to(ROOT).as_posix()
+            if allowed(relpath,config):
+                paths.add(relpath)
+    return sorted(paths)
 
 
 def historical_snapshot_info(path, provenance=None):
@@ -329,7 +364,8 @@ def parse_lean(path):
     for i,m in enumerate(matches):
         end=matches[i+1].start()if i+1<len(matches)else len(clean)
         body=clean[m.start():end];head=re.split(r":=|\bwhere\b",body,maxsplit=1)[0].strip()
-        prefix=ns_at[m.start()];name=m[2] if "."in m[2]or not prefix else prefix+"."+m[2]
+        prefix=ns_at[m.start()]
+        name=m[2].removeprefix("_root_.") if m[2].startswith("_root_.") else ".".join(filter(None, (prefix, m[2])))
         symbols.append({"id":"lean-symbol:"+path+":"+name,"type":"lean_declaration","path":path,"name":m[2],"qualified_name":name,"declaration_kind":m[1],"line_start":clean.count("\n",0,m.start())+1,"line_end":clean.count("\n",0,end),"statement_as_written":head[:12000],"statement_truncated":len(head)>12000,"module_context_as_written":context,"contains_sorry_or_admit":bool(re.search(r"\b(?:sorry|admit)\b",body)),"checked_by_registry":False,"status_basis":"source declaration only; registry does not run Lean or certify assumptions"})
     return symbols,text
 
@@ -339,7 +375,8 @@ def parse_wolfram(path):
     for i,m in enumerate(marks):
         end=marks[i+1].start()if i+1<len(marks)else len(text)
         body=text[m.start():end];line=text.count("\n",0,m.start())+1
-        sections.append({"id":"wolfram-section:"+path+":"+str(line),"type":"wolfram_section","path":path,"line_start":line,"line_end":text.count("\n",0,end),"heading_as_written":" ".join(m[0].split()),"check_labels_as_written":re.findall(r'\bcheck(?:Exact)?\[\s*"([^"\n]+)"',body),"python_identifiers_in_heading":sorted(set("v"+x for x in re.findall(r"\bv(\d+)\b",m[0]))),"checked_by_registry":False,"status_basis":"source section and check labels only; no execution or equivalence assertion"})
+        last = text.count("\n", 0, end) + int(text[end-1] != "\n")
+        sections.append({"id":"wolfram-section:"+path+":"+str(line),"type":"wolfram_section","path":path,"line_start":line,"line_end":last,"heading_as_written":" ".join(m[0].split()),"check_labels_as_written":re.findall(r'\bcheck(?:Exact)?\[\s*"([^"\n]+)"',body),"python_identifiers_in_heading":sorted(set(re.findall(r"v\d+",m[1]))),"checked_by_registry":False,"status_basis":"source section and check labels only; no execution or equivalence assertion"})
     return sections,text
 
 
@@ -445,6 +482,9 @@ def build(config, paths, public_paths, include_local=False):
     if is_git_root():
         cited_aux={Path(token).name for body in raw_sources.values() for token,_ in file_citations(body) if not token.endswith((".py",".lean",".wl",".wls"))}
         evidence_paths+= [p for p in (git_files("*.md","*.json","*.csv","*.txt")or[])if Path(p).name in cited_aux and not p.startswith("docs/registry/")]
+    if include_local:
+        # Untracked research remains local/private; public discovery stays Git owned.
+        evidence_paths=list(evidence_paths or [])+discover_local_formal_sources(config)
     historical_manifest=ROOT/"verification/historical_replay/manifest.json"
     historical_inputs={}
     if historical_manifest.exists():
@@ -478,6 +518,11 @@ def build(config, paths, public_paths, include_local=False):
         evidence.append(row);filemap[path]=eid;basenames[Path(path).name].append(eid)
         if typ=="python_verification":shorts[re.match(r"v\d+",Path(path).stem)[0]].append(eid)
         if typ=="lean_module":
+            row["source_role"]=("generated_run"if "runs"in Path(path).parts else
+                                "runtime_tooling"if path.startswith("tfpt_explorer/runtime/")else
+                                "registered_formal_source"if path.startswith("experiments/lean4-carrier-rigidity/")else
+                                "exploratory_formal_source")
+            row["kernel_checked"]=False
             symbols,text=parse_lean(path);filetext[eid]=text;row["declaration_ids"]=[r["id"]for r in symbols];lean_records.extend(symbols)
             for symbol in symbols:
                 for k in {symbol["name"],symbol["qualified_name"]}:lean_symbols[k].append(symbol["id"])
@@ -506,6 +551,14 @@ def build(config, paths, public_paths, include_local=False):
         if "/"not in token and "verification/"+token in filemap:return[filemap["verification/"+token]]
         suffix=[eid for p,eid in filemap.items()if p.endswith("/"+token)]
         return suffix or basenames.get(Path(token).name,[])
+    for row_number, row in enumerate(ledger, 2):
+        for token, _ in file_citations(row.get("script", "")):
+            if not token.endswith((".lean", ".wl", ".wls")):
+                continue
+            targets = [eid for path, eid in filemap.items() if path == token or path.endswith("/" + token)]
+            if len(targets) == 1:
+                link("claim:" + row["claim_id"], targets[0], "ledger_evidence_reference",
+                     "literal formal source in the original ledger script field", row_number, token)
     for symbol in lean_records:link(filemap[symbol["path"]],symbol["id"],"contains_declaration","literal Lean declaration")
     for part in wolfram_records:
         for token in part["python_identifiers_in_heading"]:

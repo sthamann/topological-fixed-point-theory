@@ -1,0 +1,1116 @@
+Second targeted TFPT research exchange. Please scrutinize, correct, and extend your previous reply. The user explicitly authorized sending these TFPT materials to Anthropic. No tools or external files are available. We need a valid source mechanism, not a conditional model relabelled derived.
+
+Your previous reply is included below. Several load-bearing statements need correction:
+1. For fixed chemical potential mu=-delta, beta->infinity in exp[-beta(L0+delta.a0)] does NOT remove delta. Since its ground space contains Omega and p*, the normalized low-temperature limit retains both. Prove or correct this; do not silently also send mu->0.
+2. T_net in v395 is a 9-dimensional affine-E8 adjacency recursion (A+2I)/4, not the infinite-dimensional E8 VOA L0 or exp(-L0). Thus the product T_net tensor M does not prove L0 plus family OS factorization. Its network gap is golden, not 1.
+3. An abstract boundary operator B_Sigma can already contain connection or holonomy data even if the symbol delta is absent. Absence of that symbol cannot prove B is unshifted. Likewise dGamma(|B|) needs a free/quasifree reconstruction premise; it is not automatic for all P1 field measures.
+4. The staircase has a more precise identity: with q=(1,...,1), j=0,...,7 and rho_A7=(7/2,5/2,...,-7/2), delta=-rho_A7/8+(2a-1)q/16. The p*=(++++----)/2 root is the A7 fundamental weight omega4; rho_A7.p*=8, norm(p*)^2=2. It is therefore A7 Coxeter denominator 8, not D8 h=14 or E8 h=30. Investigate whether this precise A7 intermediate frame gives a new source mechanism instead of simply replacing the time.
+5. GNS reconstruction selects a state from a supplied kernel; double-cover topology alone does not supply all amplitudes of that kernel. Keep the already derived free C2 source result and the missing physical P1 identification distinct.
+
+While you worked, we independently proved a genuinely new finite signed-step correspondence from actual v808 and v486/v487. It is attached in full, with the negative charge-conservation test and the old v409 sheet involution recovered. Can the original two-boundary source or spin sewing supply the required signed step and its charge compensation? Do NOT invent an arbitrary Stinespring environment, Hamiltonian, or fitting basis. If the supplied sources do not suffice, state exactly the extra source operation and give the strongest proved simplification instead.
+
+Requested response: (A) Explicit corrected verdict on the five items. (B) At most ONE strongest new derivation, ideally using the A7 omega4 relation, the actual double-cover sign, and original oriented sewing. Give the first actual operator identification, not a symbolic spectral analogy. (C) Which earlier claims must be retracted. Keep under 3500 words and distinguish mathematical identities, source-backed facts, and proposals. We will independently verify all statements.
+
+
+
+=== CLAUDE-RESPONSE.txt ===
+## Verdict
+
+The recent no‑go is correct **inside its stipulated class** but the class contains one non‑primitive premise doing all the work: it fixes the *folded* clock `H = 8(L0 + δ·a0)` as "the source time" (C2) and then asks all 248 E8 currents to be physical observables (C3). Both are flagged *in the no‑go's own §1* as **not established from P1**. When you drop the folding and keep everything else, the marked lattice **`Ls`**, the charge dictionary **`q/2 ∈ Ls`**, and **clustering** coexist. The no‑go only ever compared two branches that *both* keep the folded clock (`Ls`+folded fails clustering; `Lc`+folded loses the charge). The **third branch — `Ls` + the unfolded OS generator — was never in the comparison class**, and it is exactly the overlooked route. Below I prove the load‑bearing arithmetic, show the folding is the Coxeter/principal (internal) clock rather than Euclidean time, connect this to the hypergraph product substrate and to `GEOMETRIC-SOURCE-RETURN §4`, fix the `v395` bug, and name the one source operation that would turn the proposal into a theorem.
+
+---
+
+## (a) Strongest overlooked content and the one mistaken overrestriction
+
+**The pathology is manufactured by the folding, and I can show this exactly.** Take `p* = (½,½,½,½,−½,−½,−½,−½)`, `|p*|²=2`, `L0(ψ)=1`. Write `δ_j = (j+a)/8 − ½ = j/8 + (a/8 − ½)`. Because `p*` is traceless (`Σ p*_j = 0`) the constant part and the free modulus `a` drop out, and
+
+```
+δ·p* = (1/8) Σ_j j·p*_j = (1/8)[(0+1+2+3)·½ + (4+5+6+7)·(−½)] = (1/8)(3 − 11) = −1.   [PROVED, a-independent]
+```
+
+The `j/8` ramp is the **D8 Weyl‑vector / principal‑grading direction** (the staircase `(0,…,7)`); the `a`‑modulus is a pure U(1) Wilson line that cannot touch `δ·p*`. Now the decisive commutator:
+
+```
+[H_fold, J_{p*,−1}] = 8·(1 + δ·p*)·J_{p*,−1} = 8·(1 − 1)·J_{p*,−1} = 0,
+[ L0 ,  J_{p*,−1}] = (+1)·J_{p*,−1} ≠ 0.                                  [PROVED]
+```
+
+So the folding is *tuned* to convert a genuine weight‑raising spinor current into a zero mode. Under the **unfolded** conformal Hamiltonian `L0` of the holomorphic `(E8)_1` net, `ker L0 = span{Ω}` is one‑dimensional (holomorphic VOA, `c=8`), `ψ` sits at weight 1, `exp(−tL0) → |Ω⟩⟨Ω|` with gap 1, and clustering holds for **all** 248 currents including `J_{p*}`. Meanwhile `q=(1,…,1)`, `q/2=(½,…,½) ∈ Ls`, so the charge dictionary (C3) survives. **The unfolded `Ls` branch satisfies C1, C3, C4 and fails only C2** — the premise the no‑go itself does not derive from P1 (`LOCAL-TIME-COMPATIBILITY.txt §1`: "The complete source bridge has not established C2 and the full observable part of C3").
+
+**Why C2 is non‑primitive, from the source.** The primitive datum is `Tbound = (A₊, H₊, D₊, J, Γ, B_Σ)` with the collar form `D₊ = γ_n(∂_n + B_Σ)` (`001-section-primitive-core…tex:65–81`). The OS/physical generator reconstructed from the Calderón projector of this datum (`:94–138`) is built from `B_Σ`, the **bare** boundary Dirac operator — there is **no Cartan holonomy `δ` in `Tbound`**. The folded `H` requires `B_Σ → B_Σ + δ`, a modification of the datum. The staircase `δ ∝ ρ(D8)` identifies the folded clock with the **principal/Coxeter gradation** (`h(E8)=30` gearbox, `tfpt-gesamtkontext §5.1`), i.e. an *internal sector clock*, precisely the object §5.6 warns against equating with physical positive time. The no‑go is then the concrete realization of that warning — not an obstruction to the primitive dynamics.
+
+**Overlooked structure #2 — the product substrate is the clustering‑safe combination.** `v324/v395` give `T = T_net ⊗ T_cusp` (`origin_theory.tex:254–269, 315–324`). This keeps the carrier energy `L0` and the family transfer as **commuting factors**; it never writes the additive cross‑term `δ·a0`. The joint top mode `Ω_carrier ⊗ (w=0)` is unique; the next modes are the weight‑1 currents and the family rates. **The overlooked route is literally the hypergraph product the user flagged** — it evades the no‑go because it does not fold.
+
+**Overlooked structure #3 — the double cover already *is* the state.** The Calderón double `M̃ = M₊ ∪_Σ M₊^{op}`, deck `τ`, polarization `i_C = 2P_C − 1 = R_τ` (`:94–138`) is the geometric GNS/Stinespring purification of the reflection‑positive one‑sided kernel. The vacuum `ω_Σ` is therefore **forced** (the GNS cyclic vector), not a free choice — answering the "which quantum state" question for the neutral net without any thermofield analogy. The admissible net is defined by `H_adm`‑**preservation**, not global compression (`:319–343`), so it need not contain the charged spinor intertwiners at all.
+
+---
+
+## (b) Three concrete routes, ranked
+
+### Route 1 — Unfolded product OS dynamics (strongest)
+**Operators.** Carrier: holomorphic `(E8)_1` seam net, `H_carrier = dΓ(|B_Σ|)` (proposed `≈ L0`), unique vacuum `Ω_c`, 248 currents at weight 1. Family: the **lazy** cusp rule `M_lazy = [[1,0,0],[0,½,⅙],[0,⅙,½]]`, spectrum `{1,⅔,⅓}`, one hand `M_lazy⁶ → {1,(2/3)⁶,(1/3)⁶}` (`v486`). Joint vacuum `Ω_c ⊗ (w=0)`.
+**First decisive test.** Reconstruct the OS Hamiltonian from `Tbound` and check (i) it is *unfolded* (no `δ·a0`), (ii) it factorizes as `L0 ⊗ 1 ⊕ 1 ⊗ (family)`, (iii) the connected two‑point function decays with **no zero‑energy tail** at the rates in (c).
+
+### Route 2 — Modular re‑derivation of the folded clock (removes the assumption)
+**Operators.** `H_fold = 8(L0 + δ·a0) = β(L0 − μ·a0)` with `β=8, μ=−δ`. This is exactly a **grand‑canonical KMS modular Hamiltonian**; `ψ` is the charge‑`p*` **Fermi‑surface** mode where `μ·p*` cancels `L0`. The same structure is visible in `GEOMETRIC-SOURCE-RETURN §4`: the thermal Cauchy state has `C_H = (1+e^{2H})^{-1}` — a Fermi–Dirac factor — and its stated obstruction (`⟨A*A⟩ = C_m(1−C_0) > 0` for `A = a0*a_m`) is *the same* "finite‑β state mistaken for the vacuum." Both no‑gos are **one error**: a KMS/principal‑grading Hamiltonian used as the `β→∞` vacuum generator.
+**First decisive test.** Verify `H_fold` generates Tomita–Takesaki flow of the `(β=8, μ=−δ)` state, and that its `β→∞` limit is the unfolded `dΓ(|B_Σ|)` with unique vacuum (= Route 1). Note this escapes the no‑go's §4 objection, which only excludes bounded `+εP_s` perturbations, **not** the zero‑temperature limit.
+
+### Route 3 — Crystalline cut for 3+1D (lower; honest gap)
+**Operators.** Elser–Sloane cut‑and‑project `P_∥: ℝ⁸(E8) → ℝ⁴` along the **icosahedral/golden eigenspace of the E8 Coxeter element** (already canonical via `2I`, `(2,3,5)` Brieskorn, Poincaré sphere, `φ = 2cos(π/5)`; `origin_theory.tex:216–252`), acceptance window = perp‑projection of the E8 Voronoi cell.
+**First decisive test.** Does the icosahedral cut give exactly **4** non‑compact directions (not 3 or 5), and can a Lorentzian signature arise? **First unavailable step (stated honestly):** Euclidean cut‑and‑project yields a Riemannian 4D quasicrystal; the `3+1` signature / Wick rotation is *not* supplied by the cut. This is where `T3`/`T5` (Lorentz, continuum) genuinely remain open.
+
+---
+
+## (c) Strongest route worked out → new checkable consequence, removed assumption, and the exact missing operation
+
+**Removed assumption (C2).** Using `Tbound` (no `δ`) and the exact facts above, "physical time = folded `H`" is replaced by the **derived** "physical time = unfolded OS generator from `B_Σ`." The folded clock is re‑identified as the principal/Coxeter = grand‑canonical KMS Hamiltonian (Route 2), so it is accounted for, not merely set aside.
+
+**New checkable consequence.** In the product OS dynamics the full physical spectrum is `{spec L0} × {spec of the family transfer}`. Its clustering rates are therefore **exactly the frozen TFPT transfer gaps**, with *no* zero‑energy plateau:
+
+```
+carrier gap  = 1  (lowest E8 current weight; the 128 spinor currents sit here, gapped)
+family gaps  = 6 ln(3/2)   [recovery, v76]   and   6 ln 3   [subdominant, v486]
+```
+
+This is falsifiable structurally: any genuine OS correlation of the derived theory must cluster at these rates; a surviving zero‑energy tail would falsify the product/unfolded picture and vindicate the folded one. It also fixes the hypergraph layer — **the `(2/3)⁶,(1/3)⁶` dynamics lives on the neutral family labels, never on the charged fields**, which is why it is clustering‑safe.
+
+**Exact `v395` repair (necessary, not fundamental).** Two concrete defects, both verified from the script:
+
+1. `_micro_step` discards the network action — the second loop overwrites `out` using the **original** `m`:
+```python
+for k in range(3):   out[:, k] = T_net @ m[:, k]   # network diffusion into out …
+for i in range(9):   out[i, :] = M @ m[i, :]       # … then clobbered by (I⊗M) on m
+```
+Correct chaining (so `vec(step) = kron(T_net, M)·vec(m)` under row‑major `vec`):
+```python
+def _micro_step(m, T_net, M):
+    tmp = np.empty_like(m)
+    for k in range(3):        tmp[:, k] = T_net @ m[:, k]   # (A) network lazy diffusion
+    out = np.empty_like(m)
+    for i in range(m.shape[0]): out[i, :] = M
+
+```python
+def _micro_step(m, T_net, M):
+    tmp = np.empty_like(m)
+    for k in range(3):          tmp[:, k] = T_net @ m[:, k]   # (A) network diffusion
+    out = np.empty_like(m)
+    for i in range(m.shape[0]): out[i, :] = M @ tmp[i, :]     # (B) family rule on DIFFUSED state
+    return out
+```
+And `run()` never calls `_micro_step` — it only iterates `np.kron(T_net, M)`, so the "one local rule" is dead code. Add an actual execution check:
+```python
+probe = rng.random((9, 3))
+check("LOCAL RULE EXECUTES [E]: vec(_micro_step)==kron(T_net,M)·vec",
+      np.allclose(_micro_step(probe, T_net, M).reshape(-1),
+                  T_micro @ probe.reshape(-1), atol=1e-12))
+```
+
+2. The family block is the wrong generator for the *full* cusp. Verified spectra:
+
+```
+v327  M       = [[1,0,0],[0,⅓,⅓],[0,⅓,⅓]]   → {1, ⅔, 0}      → M⁶  = {1,(2/3)⁶, 0}      ✗ no (1/3)⁶
+v486  M_lazy  = [[1,0,0],[0,½,⅙],[0,⅙,½]]    → {1, ⅔, ⅓}      → M_lazy⁶={1,(2/3)⁶,(1/3)⁶} ✓ = spec T_cusp
+```
+
+So `v395`'s check 4 ("v324 EMERGES / same substrate") is only true on `{1,(2/3)⁶}`; the `(1/3)⁶` mode is absent from `M⁶` and present in `T_cusp`, so `T_hand ≠ T_full` as operators. The fix is a one‑line upgrade `_family_M → M_lazy`; then `M_lazy⁶` and `T_cusp` share the full spectrum and are related exactly by the `v317` Galois/cusp basis change — making the claim *true* rather than overstated. **This is housekeeping, not an origin proof** — the seed `P2` and `φ0` stay irreducible inputs (`v486/v487 [O]`).
+
+**Exact first unavailable source operation.** To upgrade Route 1 from proposal to theorem you need the one computation the provided corpus defines but does not carry out: **the explicit boundary spectrum `spec(B_Σ)` and the second‑quantized OS Hamiltonian `dΓ(|B_Σ|)` on the `(E8)_1` seam current net**, together with a proof that it (i) carries no `δ·a0` term and (ii) factorizes carrier `×` family. Everything upstream (`Tbound`, Calderón doubling, `i_C=R_τ`, `S_prim` with the `(iπ/2)Δη_Σ` term, `001-…tex:302–317`) is present; the missing step is diagonalizing it. In parallel, `report.md §9`'s map `Φ_Σ: charged histories → local seam operators` is needed **only for the charged sectors** — in Route 1 those are DHR‑charged intertwiners relative to the even D8 net (`SECTOR-TRANSPORT-CORRECTION §3`), not vacuum observables, so the neutral `Φ_Σ` is supplied by the family factor and the charged one remains the genuine open object.
+
+---
+
+## Proof vs proposal, and what stays open
+
+**Proved (arithmetic / source / code reading):**
+- `δ·p* = −1`, `a`‑independent, from the staircase = `ρ(D8)` part only.
+- `[H_fold, J_{p*,−1}] = 0` but `[L0, J_{p*,−1}] = J_{p*,−1}`: the second zero mode is a folding artifact.
+- `Ls` + unfolded `L0` satisfies C1, C3 (`q/2∈Ls`), C4 — the branch outside the no‑go's two‑member class.
+- `Tbound` contains `B_Σ`, not `δ`; the no‑go scopes C2/C3‑obs as not‑from‑P1.
+- The `v327`/`v486` block spectra and the `v395` `_micro_step`/`_family_M`/`run()` defects.
+
+**Proposal (well‑grounded, needs the missing diagonalization):**
+- Primitive OS `H = dΓ(|B_Σ|)` is the unfolded generator and factorizes carrier `×` family.
+- `H_fold` = `(β=8, μ=−δ)` KMS/principal‑grading Hamiltonian; same phenomenon as the `C_H=(1+e^{2H})^{-1}` thermal‑Cauchy obstruction — both are finite‑β states misread as the vacuum.
+- Clustering rates `{1, 6ln(3/2), 6ln3}` as a structural prediction.
+
+**Still open (not touched by this):** `P2` and `φ0` as inputs; the Lorentzian `3+1` signature (Route 3's Euclidean‑cut gap); chiral SM / mirror decoupling; the explicit charged `Φ_Σ`. The earlier valid results — complete‑source mode closure, exterior‑memory propagation (`GEOMETRIC-SOURCE-RETURN §3`), the 60 native Weyl actions `real(r_a)=s_a s_{Ja}` (`report.md §3`) — stand in their scopes and are consistent with, not erased by, this picture.
+
+**One‑sentence picture:** the elegance did not fail — the clock did; the folded `H` is the *inner gear* (Coxeter/thermal) of the machine, and someone read the gear as the wall‑clock, which created a phantom second vacuum; run the real wall‑clock (the unfolded reflection generator from the double cover) on the same marked `E8` lattice and the phantom is just an ordinary weight‑1 current, the family transfer ticks beside it, and everything clusters.
+
+Primary literature used, all already cited in the sources (no new references invented): Carpi–Kawahigashi–Longo–Weiner, arXiv:1503.01260 (nets↔VOA); Booß‑Bavnbek–Lesch–Zhu, arXiv:0803.4160 (Calderón); Araki, PRIMS (quasifree); Dong–Xu, math/0411499 (lattice nets); Ginoux, *The Dirac Spectrum* (conformal covariance).
+
+=== PETERSEN-POLAR-DECK-INTERTWINER.txt ===
+PETERSEN POLAR DECK INTERTWINER
+================================
+
+27 October 2026
+
+Question
+--------
+
+Does the signed Petersen radial transfer from v808 admit a natural marked
+intertwiner with the actual lazy family operator from v486/v487 when the shell
+charges and the existing deck involution are carried along?
+
+Answer
+------
+
+Yes for the positive transfer, and no for the literal v487 deck marking.
+
+The reversible Petersen operator has a canonical polar decomposition
+
+      P = J_P |P|.
+
+There is an explicit isometry W with
+
+      W |P| W^{-1} = M_lazy.
+
+It maps the stationary shell mark to the family vacuum, the hypercharge mode
+to the 2/3 even family mode, and the third v808 mode to the 1/3 odd family
+mode.  But under this same forced spectral mapping,
+
+      W J_P W^{-1} = K = Z Delta,
+
+where Delta is the v487 deck swap and
+
+      Z = diag(1,-1,-1)
+
+is the canonical reflection across the Perron line.  Consequently no static
+or time dependent isometric intertwiner can carry both the positive transfer
+and the literal deck marking Delta.  The obstruction already occurs on the
+one dimensional 2/3 eigenspace.
+
+There are two exact surviving constructions:
+
+1. a signed static correspondence
+
+      W P W^{-1} = K M_lazy;
+
+2. a period two correspondence to the positive lazy walk,
+
+      W_n = K^n W,
+      W_{n+1} P W_n^{-1} = M_lazy.
+
+The period two frame transports the hypercharge sign rather than discarding
+it.  Equivalently, the canonical bipartite double cover turns P into the
+positive lazy walk by a fixed six dimensional isometry.  Its deck exchange is
+transported to a K twisted exchange, not to the plain v487 deck.
+
+This is stronger than the old equality after six powers.  The two transfers
+are exactly equivalent at every even time.  Their odd steps differ by K.
+The transported shell multiplication operator is not conserved: its exact
+one step defect has rank two.  Also, Z has an older source candidate: v409
+sets the same matrix as the seam sheet involution.  What remains absent is a
+source intertwiner proving that this involution and the v487 deck use the same
+marked basis.
+
+1. Atlas and source boundary
+----------------------------
+
+The active Atlas at revision 4d210a8bebd5c91c7ee7ad75 records
+`CARRIER.PETERSEN.RADIAL.01` as exact only for the finite Petersen geometry and
+the sixth power spectrum.  It explicitly says that the corpus freezes the
+spectrum rather than a common basis and contains no deployed ten dimensional
+operator or shells to cusp intertwiner.  No reviewed finding already solves
+the signed one step problem.
+
+The concrete sources used here are the existing finite machinery:
+
+* `verification/v808_petersen_sixthroot.py`, lines 478 to 583, for the
+  charge pure shells, the quotient and its three marked eigenvectors;
+* `verification/v487_transfer_clock_rungs.py`, lines 73 to 119, for the
+  actual lazy operator and the even/odd deck assignment;
+* `verification/v409_coxeter_prime2_lemma.py`, lines 10 to 40 and 61 to 76,
+  for the named sheet involution `diag(1,-1,-1)` and its prime two parity
+  scope;
+* `verification/v97_sheet_conjugation_bridge.py`, lines 48 to 53 and 61 to
+  110, for the distinct generation coordinate basis, cusp eigenvectors and
+  the still proposed lattice grading dictionary.
+
+No field quantization or new state is introduced.
+
+2. Reversible radial Hilbert space
+----------------------------------
+
+The shell sizes are 1, 3 and 6.  The radial Markov operator is
+
+          [ 0    1    0  ]
+      P = [1/3   0   2/3 ],
+          [ 0   1/3  2/3 ]
+
+with stationary measure
+
+      pi = (1,3,6)/10.
+
+Detailed balance holds entry by entry:
+
+      pi_i P_ij = pi_j P_ji.
+
+Thus P is selfadjoint on H_pi = R^3 with scalar product
+
+      <f,g>_pi = sum_i pi_i f_i g_i.
+
+The three source marked eigenfunctions from v808 are
+
+      f0 = (1,1,1),                 eigenvalue  1,
+      q  = (6,-4,1),                eigenvalue -2/3,
+      r  = (3,1,-1),                eigenvalue  1/3.
+
+The second vector is literally the shell hypercharge observable evaluated on
+the charge pure classes e^c, u^c and Q.  Their squared H_pi norms are 1, 9 and
+9/5 respectively.  Hence
+
+      b0 = f0,
+      bY = q/3,
+      br = sqrt(5) r/3
+
+is an orthonormal marked basis.
+
+Conjugating by D^(1/2), D = diag(pi), gives the ordinary symmetric matrix
+
+               [ 0       1/sqrt(3)       0       ]
+      P_sym =  [1/sqrt(3)    0         sqrt(2)/3 ],
+               [ 0        sqrt(2)/3       2/3     ]
+
+with the same marked spectrum.
+
+3. Canonical polar decomposition
+--------------------------------
+
+Since P is invertible and selfadjoint on H_pi, its polar factors are unique.
+Interpolation on the three simple eigenvalues gives coordinate free formulas
+
+      |P| = (4/5)P^2 - (1/15)P + (4/15)I,
+      J_P = -(6/5)P^2 + (8/5)P + (3/5)I.
+
+In the original shell coordinates these are
+
+            [ 8/15  -1/15   8/15]
+      |P| = [-1/45  32/45  14/45],
+            [ 4/45   7/45  34/45]
+
+and
+
+            [ 1/5    8/5   -4/5]
+      J_P = [ 8/15  -1/15   8/15].
+            [-2/15   4/15  13/15]
+
+Direct multiplication gives
+
+      J_P^2 = I,       J_P |P| = |P| J_P,       P = J_P |P|.
+
+Both factors are selfadjoint for the pi weighted scalar product.  Their action
+on the marked basis is
+
+             b0    bY    br
+      |P|     1    2/3   1/3,
+      J_P     1     -1    1.
+
+The negative sign is therefore attached canonically to the hypercharge mode.
+
+4. Concrete intertwiner to M_lazy
+---------------------------------
+
+Write the target family basis as
+
+      e0 = (1,0,0),
+      e+ = (0,1,1)/sqrt(2),
+      e- = (0,1,-1)/sqrt(2).
+
+Then
+
+      M_lazy e0 = e0,
+      M_lazy e+ = (2/3)e+,
+      M_lazy e- = (1/3)e-.
+
+Define the isometry W by
+
+      W b0 = e0,       W bY = e+,       W br = e-.
+
+This definition transports all three v808 markings and fixes W up to the
+irrelevant simultaneous sign conventions of the one dimensional marked
+lines.  It proves immediately that
+
+      W |P| W^{-1} = M_lazy.
+
+For a literal matrix, first send H_pi to the standard Euclidean shell frame by
+D^(1/2).  In that frame the orthogonal matrix U of W is
+
+      [ 1/sqrt(10),       sqrt(30)/10,                sqrt(15)/5              ]
+      [ 1/2+sqrt(5)/5,   -2sqrt(15)/15+sqrt(3)/6,   -sqrt(6)/6+sqrt(30)/30 ]
+      [-1/2+sqrt(5)/5,   -2sqrt(15)/15-sqrt(3)/6,    sqrt(30)/30+sqrt(6)/6 ].
+
+It satisfies U U^T = I and the claimed conjugation exactly.
+
+The shell charge multiplication operator is
+
+      Y_shell = diag(6,-4,1).
+
+It is not discarded.  In the target frame it becomes
+
+                  [0,          3sqrt(2)/2,             3sqrt(2)/2          ]
+      Y_target =  [3sqrt(2)/2,  3/2+5sqrt(5)/3,        -7/6                ].
+                  [3sqrt(2)/2, -7/6,                    3/2-5sqrt(5)/3    ]
+
+This matrix has the original eigenvalues 6, -4 and 1.  The marked hypercharge
+function itself maps more simply as W(q/3) = e+.
+
+5. Exact deck obstruction
+--------------------------
+
+The v487 deck operator swaps the surviving pair:
+
+                  [1  0  0]
+      Delta =     [0  0  1].
+                  [0  1  0]
+
+Its spectral marks are
+
+      Delta e0 =  e0,
+      Delta e+ =  e+,
+      Delta e- = -e-.
+
+The transported Petersen polar sign is instead
+
+                   [1  0   0]
+      K = W J_P W^-1 = [0  0  -1]
+                       [0 -1   0],
+
+so that
+
+      K e0 =  e0,
+      K e+ = -e+,
+      K e- =  e-.
+
+Equivalently,
+
+      K = Z Delta,       Z = diag(1,-1,-1) = 2|e0><e0| - I.
+
+The extra Z is not fitted.  It is the canonical reflection across the unique
+Perron line of M_lazy.
+
+This proves the minimal contradiction.  Any isometry V satisfying
+
+      V |P| V^-1 = M_lazy
+
+must map the simple 2/3 eigenspace span(bY) to span(e+).  J_P is -1 on the
+first line, while Delta is +1 on the second.  Therefore
+
+      V J_P V^-1 != Delta
+
+for every such V.  Rephasing one dimensional eigenspaces cannot change an
+involution eigenvalue.
+
+The same obstruction holds for a time dependent sequence of isometries V_n
+with
+
+      V_(n+1) P V_n^-1 = M_lazy.
+
+Indeed, taking adjoint products forces
+
+      V_n |P|^2 V_n^-1 = M_lazy^2.
+
+Positivity and the simple spectrum then force
+
+      V_n |P| V_n^-1 = M_lazy
+
+at every n, so the preceding deck contradiction applies at every time.
+
+6. Signed and time dependent correspondences
+---------------------------------------------
+
+Although the literal deck marking fails, the transport itself has an exact
+one step dictionary:
+
+      W P W^-1 = K M_lazy = M_lazy K.
+
+Hence for every n >= 0,
+
+      W P^(2n) W^-1     = M_lazy^(2n),
+      W P^(2n+1) W^-1   = K M_lazy^(2n+1).
+
+The old sixth power match is the n=3 member of an exact even time theorem.
+
+Define alternating frames
+
+      W_n = K^n W.
+
+Then
+
+      W_(n+1) P W_n^-1 = M_lazy
+
+for every n.  The hypercharge mark is carried as
+
+      W_n(q/3) = (-1)^n e+.
+
+Thus the sign of the Petersen hypercharge mode becomes orientation data of the
+time frame.  The full charge multiplication operator is transported as
+
+      Y_n = K^n Y_target K^n,
+
+which has period two.  A fixed positive family transfer and a fixed charge
+matrix cannot both be obtained from this dictionary without retaining that
+orientation bit.
+
+7. Canonical bipartite double cover
+-----------------------------------
+
+The same result can be made static by retaining the orientation sheet.  On
+H_pi direct sum H_pi define
+
+                 [0  P]
+      P_hat =    [P  0].
+
+This is the radial action induced by the canonical bipartite double cover:
+every step exchanges the two orientation sheets.  Let
+
+                 [I   0 ]
+      G =        [0  J_P].
+
+Using P J_P = J_P P = |P| gives
+
+                 [ 0   |P|]
+      G P_hat G = [|P|  0  ].
+
+Therefore
+
+      W_hat = diag(W,W) G
+
+is a fixed isometry with
+
+                              [ 0       M_lazy]
+      W_hat P_hat W_hat^-1 = [M_lazy    0     ].
+
+So the orientable double cover does remove the signed one step obstruction to
+positive transport.  It does not preserve the plain deck mark.  If tau is the
+sheet exchange, then
+
+      W_hat tau W_hat^-1 = [0 K; K 0],
+
+while a plain target sheet exchange would contain I, and the v487 internal
+deck would contain Delta.  The exact transported deck is the product of sheet
+exchange, native deck and Perron reflection:
+
+      tau tensor K = tau tensor (Z Delta).
+
+8. Scope and consequence
+-------------------------
+
+The strongest source based conclusion is positive and precise:
+
+* signed Petersen transport and the lazy walk are the same reversible
+  contraction after retaining a canonical period two orientation frame;
+* all even powers agree under one fixed marked isometry;
+* the bipartite double cover makes the equivalence static;
+* the shell charge and all three marked modes are explicitly transported.
+
+The literal identification of the Petersen polar sign with the v487 deck is
+excluded.  Their nontrivial parity assignments are opposite.  The smallest
+additional source statement that would close the natural route is therefore:
+
+      geometric deck = orientation-sheet exchange times Z Delta,
+
+or an independently derived reason that the OS or clock lift includes the
+Perron-complement reflection Z.  The inspected source supplies Delta but does
+not supply this extra reflection as part of the deck action.  Interpreting the
+period two frame as physical time or promoting Y_target to a charged local
+field remains a separate identification.
+
+9. Operator test: the shell charge is transported but not conserved
+--------------------------------------------------------------------
+
+The preceding formula transports the multiplication operator attached to the
+literal shell hypercharge
+
+      Y_shell = diag(6,-4,1).
+
+It does not turn that observable into a conserved charge of the Markov step.
+Directly,
+
+                         [  0      10       0   ]
+      [Y_shell,P] =      [-10/3     0     -10/3 ]
+                         [  0      5/3      0   ],
+
+which has rank two.  In the alternating target frames let
+
+      Y_n = K^n W Y_shell W^-1 K^n.
+
+Using W_(n+1) P W_n^-1 = M_lazy gives the exact defect identity
+
+      Y_(n+1) M_lazy - M_lazy Y_n
+        = W_(n+1) [Y_shell,P] W_n^-1.
+
+For even n the right hand side is
+
+                [    0        -5 sqrt(2)/2   -5 sqrt(2)/2 ]
+                [ -5 sqrt(2)/2  -5 sqrt(5)/3       0       ],
+                [ -5 sqrt(2)/2       0         5 sqrt(5)/3 ],
+
+and for odd n it is its negative.  In either case its rank is two and its
+squared Frobenius norm is 700/9.  Therefore the period two charge frame does
+not satisfy
+
+      Y_(n+1) M_lazy = M_lazy Y_n.
+
+This is a deliberately narrow conclusion.  v808 describes carrier
+representation geometry, not an isolated particle dynamics.  The calculation
+only says that one Petersen Markov walk, even with the exact alternating
+frame, is not by itself a charge conserving physical time transport.  A
+compensating sector or interaction would have to come from an actual source
+operation; this calculation supplies none.
+
+10. The Perron reflection already has a named source candidate
+---------------------------------------------------------------
+
+The matrix Z was not first invented by the polar decomposition.  The original
+v409 lemma RES.COXETER.SYMMETRY.01 explicitly sets
+
+      sigma = diag(1,-1,-1)
+
+and calls it the seam sheet involution and the universal prime two parity
+factor.  In the common target slot convention used above, this is exactly Z,
+and hence
+
+      K = sigma Delta.
+
+Moreover sigma, Delta and M_lazy commute pairwise.  Algebraically, the missing
+sign is therefore precisely the older marked prime two parity multiplied by
+the v487 family deck, rather than an arbitrary new reflection.
+
+The checked source does not yet identify their bases.  v409 sets sigma as a
+three dimensional sheet involution but imports neither the v487 family space
+nor M_lazy.  The earlier v97 bridge places the same numerical matrix SIG in
+the generation coordinate basis.  Its actual cusp eigenvectors are
+
+      e_0=(0,0,1),  e_(1/3)=(0,1,2),  e_(2/3)=(1,0,0),
+
+and cusp conjugation in that basis is
+
+      T_A = [[0,1,0],[1,0,0],[2,-2,1]],
+
+not SIG.  v97 also labels the identification between the generation grading
+and the A3 discriminant grading as the remaining proposed dictionary.  Thus
+the exact equality K=sigma Delta is source backed only after choosing the
+common slot convention; the original chain still lacks the intertwiner that
+proves v409 sigma and v487 Delta act on that same marked three dimensional
+space.
+
+No stronger identification was found in the inspected classical Z3 or SU3
+transfer lifts.  A pure Z3 clock has no nontrivial element of order two, and
+the reviewed quantum lifts establish the transfer or unistochastic data but
+do not name 2 Pi_Perron-I as a half period.  In their uniform basis the
+canonical Perron reflection is
+
+      2 Pi_uniform - I = (2/3) 11^T - I,
+
+which becomes diag(1,-1,-1) only after an orthogonal eigenbasis choice.  This
+is consistent with v808's explicit spectrum-not-basis scope and cannot supply
+the missing source intertwiner by itself.
+
+No repository or Atlas file was changed.
+
+
+=== SEWING-FUNCTOR-COCYCLE-TEST.txt ===
+ORIENTIERTER SEAM TRANSPORT, RUECKWEG UND DER ZENTRALE BETA KOKYKLUS
+=====================================================================
+
+27. Oktober 2026
+
+Atlas Auditrahmen: Revision 4d210a8bebd5c91c7ee7ad75
+
+
+URTEIL
+=======
+
+Der bisherige Zweiobjektpfeil ist mit echter Nahtumkehr vertraeglich, sobald
+zwei verschiedene Pfeile nicht mehr gleich benannt werden:
+
+  erster orientierter Viertelschritt       alpha_01=T,
+  geometrisch umgekehrter Weg              alpha_01^(-1)=T^(-1),
+  naechster Schritt in gleicher Orientierung
+                                           alpha_10=beta_0 T^(-1).
+
+Der dritte Pfeil ist nicht die Umkehr des ersten. Ihre Komposition ist der
+geschlossene orientierte Halbturn:
+
+  alpha_10 alpha_01=beta_0,
+  alpha_01 alpha_10=beta_1.                              (1)
+
+Damit verschwindet der scheinbare Konflikt mit der realen beziehungsweise
+unitaren Adjunktion. Ein Hinweg gefolgt vom wirklichen Rueckweg hat Holonomie
+eins. Zwei fortgesetzte Schritte haben die Spinholonomie beta. Auf dem
+markierten Spintransport Gruppoid ist dies ein ehrlicher Funktor, nicht erst
+eine verletzte Funktorialitaet.
+
+Die zusaetzliche beta Wirkung ist auf beiden mathematischen Seiten bereits
+bestimmt. In der Originalgeometrie hebt sich die positiv orientierte
+Vierteldrehung des normalen Zweiplans zu exp(i pi/4); ihr Quadrat ist +i und
+ihre vierte Potenz ist -1. Auf der vorhandenen Genus zwei Quelle hebt Q die
+gleiche markierte Basisdrehung z -> i z, und der ausgewaehlte Spinlift erfuellt
+alpha^2=beta sowie beta^2=-1. Der inverse q Normfaktor traegt beta=+i. In
+diesem eng gefassten markierten Transport ist beta daher keine neu gewaehlte
+Phase.
+
+Der positive Satz endet genau an einer bekannten Typgrenze. Die alten Quellen
+definieren keinen offenen, determinantlinienwertigen Amplitudenfunktor auf der
+ganzen spektralen Bordismuskategorie. Sie beweisen auch nicht, dass der dort
+genannte unitare Matchingoperator U_Gamma selbst der normale Spintransport
+ist. Deshalb ist der folgende vollstaendige physische Pfeil noch nicht
+bewiesen:
+
+  tatsaechlicher offener P1 Seam Transport
+      -> markierter Spin und Determinantentransport auf W_q
+      -> Zweiobjekt Vertextransport.                            (2)
+
+Was jetzt bewiesen ist, ist staerker als eine gleiche Ordnungszahl: Die
+Kompositionsrelation, der Kokyklus, die Umkehr und die markierte lokale
+Spinphase stimmen exakt. Offen ist die natuerliche Transformation (2), nicht
+eine weitere Wahl von beta.
+
+Eine Notationsgrenze ist dabei tragend. Im tatsaechlichen originalen D4 Satz
+bezeichnet
+
+  r(z)=i z,       s(z)=1/z,
+
+also ist s eine Spiegelung mit s^2=1. Ein ehrlicher Funktor aus diesem
+unverlaengerten D4 kann s nicht auf alpha mit alpha^2=beta != 1 schicken.
+Die Schreibweise s -> alpha ist nur in einer von zwei praezisen Lesarten
+richtig:
+
+  * s meint einen generischen positiv orientierten Sewing Schritt und wird
+    unten zur Vermeidung der Kollision a genannt; oder
+  * das originale Spiegelungsgruppoid wurde vorher durch den zentralen
+    spin gerahmten Gruppoid mit a^2=b erweitert.
+
+Die erste Lesart benutzt die vorhandene Vierteldrehung r. Die zweite ist eine
+projektive beziehungsweise zentral erweiterte Lesart der Spiegelung. Ohne
+diese Typisierung waere s -> alpha bereits an der Quadrat relation falsch.
+
+
+1. DER KLEINSTE QUELLENNAHE GRUPPOID SATZ
+==========================================
+
+Die Originalquelle besitzt auf der kompakten Nahtflaeche die markierte
+positive Vierteldrehung
+
+  r(z)=i z
+
+und die Spiegelung s(z)=1/z. Sie sagt zugleich, dass die Ecken Vierteldrehungen
+des Spinlifts auf dem orientierten normalen Zweiplan tragen. Fuer Spin(2)=U(1)
+ist die Ueberlagerung nach SO(2) die Quadratabbildung. Daher hat die positive
+Vierteldrehung genau die beiden Lifts
+
+  a=+exp(i pi/4)  oder  -exp(i pi/4),
+
+und beide erfuellen
+
+  a^2=+i=:b,       b^2=-1,       a^8=1.                 (3)
+
+Der verbleibende Vorzeichenwechsel a -> -a aendert (3) nicht. Die negative
+Vierteldrehung hat den inversen Lift a^(-1) und damit das inverse Quadrat -i.
+Die markierte Orientierung r(z)=iz entscheidet also zwischen b und b^(-1).
+
+Teile die Bahn nur nach gerader und ungerader Schrittzahl in zwei Objekte 0
+und 1. Bezeichne die beiden fortgesetzten positiven Schritte mit
+
+  a_01:0->1,       a_10:1->0.
+
+Dann sind die geschlossenen geraden Schritte
+
+  b_0=a_10 a_01,       b_1=a_01 a_10,                   (4)
+
+und der Transport erfuellt
+
+  a_01 b_0=b_1 a_01.                                    (5)
+
+Der wirklich rueckwaerts durchlaufene erste Weg ist dagegen
+
+  a_01^(-1)=b_0^(-1) a_10.                              (6)
+
+Die Gleichungen (3) bis (6) definieren den kleinsten spinmarkierten
+Pfadgruppoid. Es wurde kein neuer Kanal und kein neues Buendel eingefuehrt.
+Man behaelt lediglich die Orientierung eines bereits vorhandenen
+Vierteltransports, statt jeden Pfeil 1->0 automatisch als den inversen Pfeil
+zu lesen.
+
+
+2. EXAKTER TRANSPORT AUF DIE ZWEI VERTEXOBJEKTE
+================================================
+
+Der vorhandene volle Feldlift beginnt mit
+
+  F_0=V_Lambda,       F_1=V_(zeta_8 Lambda),
+  beta_0^4=1,
+  beta_1=T beta_0 T^(-1).
+
+Setze
+
+  F(a_01)=T,
+  F(a_10)=beta_0 T^(-1),
+  F(b_j)=beta_j.                                         (7)
+
+Dann folgen (4) und (5) wortwoertlich:
+
+  F(a_10)F(a_01)=beta_0,
+  F(a_01)F(a_10)=beta_1,
+  T beta_0=beta_1 T.                                     (8)
+
+Damit sind auch die beiden nichttrivialen Dreifachkompositionen assoziativ:
+
+  (a_10 a_01)a_10=b_0 a_10=a_10 b_1
+                  =a_10(a_01 a_10),
+
+  (a_01 a_10)a_01=b_1 a_01=a_01 b_0
+                  =a_01(a_10 a_01).                      (9)
+
+Gleichung (9) ist der vollstaendige lokale 2 Kokyklustest. Auf allen
+Gitterladungen ist seine einzige Voraussetzung die bereits gepruefte
+Transportidentitaet beta_1=T beta_0 T^(-1). Der vorhandene Vertexchecker hat
+diese Identitaet fuer den festen Standardkokyklus auf allen 256 Restklassen
+und allen 65536 Paaren geprueft. Ein neuer endlicher Test wuerde dieselbe
+Rechnung nur wiederholen.
+
+Vergisst man b und betrachtet nur den Objektwechsel von Ordnung zwei, erscheint
+(4) als normalisierter Kokyklus
+
+  omega(1,1)=b,       omega(0,g)=omega(g,0)=1.            (10)
+
+Er beschreibt die nicht gespaltene Erweiterung
+
+  1 -> C4=<b> -> C8=<a> -> C2 -> 1.                      (11)
+
+Mit markierten mu4 Koeffizienten ist die Klasse nicht durch einen
+mu4 Abschnitt entfernbar: Ein Abschnittswechsel veraendert omega(1,1) nur um
+ein Quadrat, also um 1 oder b^2, waehrend b ein Generator von C4 ist. Auf der
+einzelnen skalaren W_q Darstellung koennte eine beliebige U(1) Rephasierung
+die projektive C2 Darstellung streng machen. Sie wuerde jedoch den markierten
+Q Spinlift a und seine Orientierung aendern. Auf den vollen Vertexfeldern ist
+beta zudem eine Gitterautomorphie und keine frei entfernbare skalare Phase.
+
+
+3. ECHTE UMKEHR, DAGGER UND DETERMINANTENLINIE
+==============================================
+
+T ist unitaer. Daher ist der geometrisch umgekehrte erste Weg
+
+  F(a_01)^dagger=T^(-1).                                  (12)
+
+Der fortgesetzte Pfeil aus (7) erfuellt stattdessen die beta verdrehte Formel
+
+  F(a_10)=beta_0 F(a_01)^dagger,                          (13)
+
+und folglich
+
+  F(a_10)^dagger=F(a_01) beta_0^(-1)
+                 =beta_1^(-1)F(a_01).                    (14)
+
+Das Dagger kehrt die geschlossene Spinholonomie korrekt um:
+
+  F(b_j)^dagger=beta_j^(-1).                              (15)
+
+Es gibt daher keine beta Anomalie auf dem kontraktilen Hin und Rueckweg. Beta
+ist die Holonomie des fortgesetzten orientierten Weges. Eine Formulierung, die
+alpha_10 gleichzeitig als beta T^(-1) und als geometrische Nahtumkehr
+bezeichnet, ist typwidrig und muss durch (6), (12) ersetzt werden.
+
+Die determinantlinienwertige Orientierung ist eine weitere, vertraegliche
+Operation. Auf dem negativen See Defekt gilt
+
+  K=det(V),       K^*=det(V)^(-1),
+  beta|K=-i,      beta|K^*=+i.                            (16)
+
+Orientierungsumkehr dualisiert die Linie und invertiert damit den zentralen
+Charakter. Dies ist die reale beziehungsweise Hermitesche Adjunktion. Sie
+identifiziert nicht F_1 mit F_0^* und ersetzt nicht den objektwechselnden
+Pfeil T. Der Zweiobjekt Vertextransport und die eingehend beziehungsweise
+ausgehend dualen Determinantenlinien sind zwei verschiedene Funktorslots.
+
+
+4. WO BETA TATSAECHLICH HERKOMMT
+================================
+
+4.1 Originaler lokaler Spintransport
+------------------------------------
+
+Die alte A4 Quelle gibt fuer die Moebius Z2 Identifikation einen Spinlift rho_spin
+von Ordnung vier. Auf dem orientierbaren Doppel gilt
+
+  rho_spin^2=-I,
+
+also die lokale NS Holonomie. Der spaetere Quellenvertrag trennt dabei
+ausdruecklich drei Operatoren:
+
+  tau       geometrische Deckwirkung,
+  rho_spin  ihr Pin beziehungsweise Spinlift,
+  U_Gamma   windender Matchingkoeffizient fuer den Spektralfluss.
+
+Diese Trennung ist entscheidend. Die Formel U_Gamma(theta)=exp(i theta) darf
+nicht fuer sich als rho_spin gelesen werden. Der Originaltext druckt daneben sogar
+U_Gamma^2=1; punktweise ist das fuer exp(i theta) falsch, solange der
+orientierungsumkehrende Pullback und der Clifford Faktor fehlen.
+
+Die kompakte Familienquelle ergaenzt die positiv orientierte Vierteldrehung
+r(z)=iz. In demselben orientierten normalen Zweiplan liefert die
+Spin Ueberlagerung deshalb genau (3). Somit ist der zentrale Faktor zwischen
+zwei fortgesetzten Viertelschritten lokal geometrisch hergeleitet. Er ist kein
+frei eingefuegter Gluingfaktor.
+
+4.2 Vorhandene markierte Genus zwei Quelle
+------------------------------------------
+
+Auf
+
+  C: eta^2=1-w^6,
+  z=eta/(1-w^3)
+
+wirkt der vorhandene Viertellift Q durch z -> i z. Der negative Dreierdivisor
+D_q waehlt die eindeutige c invariante gerade Spinlinie S_0. Am fixen Punkt
+q_0=-1 wirkt Q auf dem lokalen Parameter eta durch eta -> i eta. Der
+kompatible Spinlift alpha hat daher
+
+  alpha^2=beta,       beta^2=-I,
+
+und beta wirkt auf jeder q Faser durch +i. Der inverse Normfaktor
+N_q(S_0)^(-1) behaelt auf W_q genau +i. Damit stimmen Basisdrehung,
+Spinquadrat, Orientierung und zentraler Charakter ueberein. Die Identifikation
+beruht nicht allein auf Ordnung acht oder vier.
+
+4.3 Was die Eta Formel nicht zusaetzlich beweist
+------------------------------------------------
+
+Die primitive Quelle schreibt
+
+  S_prim=Tr f(D_rel/chi)-Tr f(D_ref/chi)+(i pi/2) Delta eta.
+
+Der zugehoerige Faktor ist a=exp(-i pi Delta eta/2). Mit den geprueften
+Dai Freed Konventionen gilt, unter den dort genannten Nullmodenbedingungen,
+
+  a^2=tau_rel^(-1).
+
+Diese geschlossene skalare Formel ist weder als offener Pfeil noch als
+Holonomie auf N_q(S_0)^(-1) typisiert. Sie liefert daher keinen zweiten Beweis
+von beta und keinen zusaetzlichen Gluingkokyklus. Ein solcher Beitrag muesste
+auf dem tatsaechlichen zuruecklaufenden beziehungsweise fortgesetzten Pfad
+ausgewertet und mit (15), (16) verglichen werden. Spektralfluss eins allein
+entscheidet diese Viertelphase nicht.
+
+
+5. EXAKTE REICHWEITE DES POSITIVEN PFEILS
+=========================================
+
+Aus den vorhandenen Konstruktionen folgt jetzt der folgende markierte
+Transportfunktor auf der spin gerahmten zentralen Erweiterung:
+
+  Spin gerahmtes Viertel Pfadgruppoid der vorhandenen P1 D4 Wirkung
+      -> Spin Pfadgruppoid von (C,S_0,D_q,Q)
+      -> Zweiobjekt Gittervertex Gruppoid,
+
+mit
+
+  positive Vierteldrehung -> Q Lift alpha -> (T,beta T^(-1)),
+  positive Halbdrehung    -> beta         -> (beta_0,beta_1),
+  inverse Vierteldrehung  -> alpha^(-1)   -> (T^(-1),T beta_0^(-1)).
+
+Der erste Pfeil verwendet die bereits gemeinsame markierte Basiskarte
+z -> i z und die Spin(2) Ueberlagerung. Der zweite Pfeil ist der bewiesene
+W_q Modul und Vertextransport. Komposition, Kokyklus und Dagger stimmen. Fuer
+das unverlaengerte originale Spiegelungsgruppoid ist dieselbe Zuordnung nur
+projektiv; Gleichung (10) ist exakt dessen Faktorensystem.
+
+Nicht aus dem Original bewiesen ist, dass dieser endliche markierte
+Spintransport bereits der Amplitudenfunktor der gesamten P1
+Spektralbordismuskategorie ist. Deren Morphismen sind nur als unitare
+Intertwiner der einseitigen Randdaten definiert. Eine monoidale
+Determinanten oder Pfaffian Zuordnung, offene eingehende und ausgehende
+Linien sowie ihre Gluingkomposition werden dort nicht konstruiert. Ebenso
+bleibt der bereits widerlegte allgemeine Satz Deck gleich Calderon ausserhalb
+dieses Arguments.
+
+Der kleinste noch benoetigte physische Satz ist nun eng:
+
+  Der tatsaechliche offene P1 Seam Schritt ist der positiv orientierte
+  spin gerahmte Vierteltransport der markierten Familienflaeche, und sein
+  Determinantenfunktor ist die bereits konstruierte duale Defektlinie K^*.
+
+Dann folgt alpha_10=beta T^(-1) ohne neue Phase, waehrend die wirkliche
+Nahtumkehr T^(-1) bleibt. Ohne diesen Satz ist die Gruppen und Feldseite
+geschlossen, die physische offene Sewingamplitude jedoch noch nicht
+identifiziert.
+
+
+6. QUELLEN
+==========
+
+Originale:
+
+  1. Alte Schnitt, Matching und Spektralflussformeln
+     Atlas paper-source:1fe2ddfabc74ac0e94a4686d
+     documents/archive--paper-latex--tfpt-theory-fullv21/sections/
+     001-section-introduction-the-problem-of-parameters.tex:198-276
+     SHA256 85bb11511be05385a7cadf6071dbede216b12befeb9d6767bc4460748cbec5d7
+
+  2. Moebius Matching, Spinlift und Viersektorzaehlung
+     documents/archive--paper-latex--tfpt-theory-fullv21/sections/
+     007-subsection-m-obius-matching-and-the-minimal-gluing-class.tex:1-23,75-108
+     SHA256 278c385040ba000fc6577b3ba4630b41b49d4486b069c2034e31c4c9bfb3ae2b
+
+  3. Markierte Vierteldrehung auf der kompakten Familienflaeche
+     documents/archive--tfpt-45--source_extracts--02_carrier_source/sections/
+     006-subsection-family-monodromy-and-occupancy.tex:74-125
+     SHA256 179b2d568e897e059c2d1ef804bb9b06ee053483d366fc9d24189f1df44253b2
+
+  4. Spektrale Bordismuskategorie mit unitaeren Intertwinern
+     documents/archive--tfpt-45--source_extracts--01_boundary_kernel_source/
+     sections/002-section-intrinsic-closed-branch-and-canonical-rigid-obje.tex:250-306
+     SHA256 1de90a4a7379bef804cc7815d72c0f86bb398a5771e9b00997c4bb15e8815f9e
+
+  5. Primitive Eta Wirkung
+     Atlas paper-source:8027564739689dd02e02f11c
+     documents/archive--tfpt-45--source_extracts--01_boundary_kernel_source/
+     sections/001-section-primitive-core-and-carrier-interface-handoff.tex:302-318
+     SHA256 7d6e673d99c29d950dc601283cd51c1cc0b113567eeb79c8396fec9c82a02c79
+
+Bereits gepruefte Anschlussresultate:
+
+  research-20261026-real-boundary/SOURCE-SELECTED-THETA-SPIN.txt
+  SHA256 cf4478191ccd75d62a2f049a54193541009bed24877df9cbe0ed9f942d07d717
+
+  research-20261026-real-boundary/MARKED-Q-DIVISOR-CENTRAL-TWIST.txt
+  SHA256 da1f75831a46a0c0662f931486b77e6e2085126df452b009d1a90351d413d904
+
+  research-20261027-fundamental-next/eta/P1-ETA-SEWING-DUAL-LINE-TEST.txt
+  SHA256 350063b81d790219be7d19b1f13d0b3b76a6513930b82f45d5bb97cafc10711a
+
+  research-20261027-fundamental-next/fields/TWO-BRANCH-VERTEX-GROUPOID.txt
+  SHA256 fe9459880a659895813853671b5959855d32826cc52c244ca167ff2453b6f8dc
+
+  experiments/theory-contracts/canonical-seam-fermionization-20261025/
+  ORIGINAL-SPIN-AND-SEAM-DICTIONARY.txt:517-670,714-765
+  SHA256 dfaef864428375b018d0eddcb77a4a5ccd085e996eb1c1b3f1d8db526991cf24
+
+Kein Atlas Eintrag und keine kanonische Quelldatei wurden veraendert.
+
+
+=== original Tbound and source definitions, lines65-145,302-343 ===
+65: \begin{definition}[One-sided boundary admissibility datum]
+66: \label{def:reduced-theorem-datum}
+67: The one-sided boundary admissibility datum is
+68: \[
+69: \Tbound:=(\mathcal A_+,\mathcal H_+,D_+,J,\Gamma,B_\Sigma)
+70: \]
+71: with the following built-in admissibility conditions:
+72: \begin{enumerate}[label=(\roman*), leftmargin=1.5em, topsep=3pt, itemsep=2pt]
+73:     \item $Z(\mathcal A_+)$ is spectrally regular and its Gelfand spectrum is a smooth compact oriented manifold with boundary $M_+$;
+74:     \item $B_\Sigma$ is a self-adjoint tangential boundary operator on $\Sigma:=\partial M_+$ compatible with the boundary restrictions of $J$ and $\Gamma$;
+75:     \item in a collar neighborhood of $\Sigma$, the Dirac operator has canonical product form
+76:     \[
+77:     D_+=\gamma_n(\partial_n+B_\Sigma);
+78:     \]
+79:     \item the boundary collar is reflection-regular so that canonical doubling, the Calder\'on projector, and the admissibility complex are well posed on the same datum.
+80: \end{enumerate}
+81: \end{definition}
+82: 
+83: \begin{remark}[Almost-commutative realizations]
+84: \label{ass:almost-commutative-factorization}
+85: When a factorized realization is useful, one may choose
+86: \[
+87: \mathcal H\cong L^2(\widetilde M,S)\otimes \Hint,
+88: \]
+89: with $S\to\widetilde M$ the spinor bundle on the oriented double cover and $\Hint$ a finite
+90: internal Hilbert space. This is an analytic realization choice rather than part of the boundary
+91: datum.
+92: \end{remark}
+93: 
+94: \begin{theorem}[Doubling, deck involution, and boundary polarization]
+95: \label{thm:primitive-datum-from-reduced-datum}
+96: \label{thm:primitive-scaffold-from-reduced-datum}
+97: Let $\Tbound$ be as above. Let
+98: \[
+99: \widetilde M:=M_+\cup_{\Sigma} M_+^{\mathrm{op}}
+100: \]
+101: be the doubled manifold and let
+102: \[
+103: \taudbl:\widetilde M\to\widetilde M
+104: \]
+105: be its deck involution. Let $P_C$ be the Calder\'on projector of the APS-realized boundary problem
+106: for $D_+$ on $\Sigma$, and define the boundary polarization operator
+107: \[
+108: \iC:=2P_C-1
+109: \]
+110: on the Cauchy-data Hilbert space $\mathcal H_{\partial}$.
+111: 
+112: Then:
+113: \begin{enumerate}[label=(\roman*), leftmargin=1.8em, topsep=3pt, itemsep=2pt]
+114:     \item the geometric objects are
+115:     \[
+116:     M=\widetilde M/\taudbl,
+117:     \qquad
+118:     \Seam=\mathrm{Fix}(\taudbl),
+119:     \qquad
+120:     \Xbulk=\widetilde M\setminus\Seam;
+121:     \]
+122:     \item the doubled operator and its even and odd parts are
+123:     \[
+124:     D=D_+\cup_{\Sigma}D_+^{\mathrm{op}},
+125:     \qquad
+126:     D_{\mathrm{ref}}:=\frac12\bigl(D+\taudbl^{\ast}D\taudbl^{\ast}\bigr),
+127:     \qquad
+128:     D_{\mathrm{rel}}:=\frac12\bigl(D-\taudbl^{\ast}D\taudbl^{\ast}\bigr);
+129:     \]
+130:     \item on boundary Cauchy data the induced reflection $R_{\taudbl}$ satisfies
+131:     \[
+132:     \operatorname{Ran}(P_C)=\ker(R_{\taudbl}-1),
+133:     \qquad
+134:     \ker(P_C)=\ker(R_{\taudbl}+1),
+135:     \qquad
+136:     \iC=R_{\taudbl}.
+137:     \]
+138: \end{enumerate}
+139: Hence the primitive scaffold
+140: \[
+141: \Tprim^{\mathrm{kin}}
+142: :=
+143: (\Xbulk,\widetilde M,M,\Seam,\taudbl,\iC,D_{\mathrm{ref}},D_{\mathrm{rel}},\chiseed)
+144: \]
+145: is derived, not assumed. The derived doubled datum may be recorded as
+302: \begin{definition}[Primitive Euclidean action]
+303: For any declared spectral test profile $f$, the primitive Euclidean action is the relative
+304: spectral seed
+305: \[
+306: S_{\mathrm{prim}}[\chiseed]
+307: :=
+308: \tr f\!\left(\frac{D_{\mathrm{rel}}}{\chiseed}\right)
+309: -
+310: \tr f\!\left(\frac{D_{\mathrm{ref}}}{\chiseed}\right)
+311: +\frac{i\pi}{2}\Delta\eta_\Sigma.
+312: \]
+313: Gauge fixing, ghosts, and carrier-compatible bosonic fluctuations are introduced only after the
+314: hard carrier theorem and the canonical admissibility projector are in place. Whenever convenient,
+315: the compressed expression $\Padm A\Padm$ may be used as shorthand for matrix elements on the
+316: physical admissible sector, but it is not the definition of a local operator net.
+317: \end{definition}
+318: 
+319: \begin{definition}[Physical admissible local net]
+320: \label{def:physical-admissible-local-net}
+321: Let $\mathfrak A_E(\mathcal O)$ be the Euclidean source algebra generated by local field insertions
+322: with test-function support in $\mathcal O$. After the later Osterwalder--Schrader reconstruction,
+323: let $\mathfrak A_M(\mathcal O)$ denote the corresponding Minkowski local algebra and let
+324: $\mathcal H_{\mathrm{OS}}$ be the reconstructed Hilbert space. Define the physical admissible
+325: Hilbert space by
+326: \[
+327: \mathcal H_{\mathrm{adm}}:=\operatorname{Ran}(\Padm)\subset \mathcal H_{\mathrm{OS}}.
+328: \]
+329: Define the physical admissible local net by
+330: \[
+331: \mathfrak A_{\mathrm{adm}}(\mathcal O)
+332: :=
+333: \left\{
+334: A|_{\mathcal H_{\mathrm{adm}}}\;:\;
+335: A\in\mathfrak A_M(\mathcal O),\;
+336: A\mathcal H_{\mathrm{adm}}\subset \mathcal H_{\mathrm{adm}},\;
+337: A^\ast\mathcal H_{\mathrm{adm}}\subset \mathcal H_{\mathrm{adm}}
+338: \right\}.
+339: \]
+340: Thus $\Padm$ acts as the selector of the physical state space, while the local net is defined by
+341: restriction to the invariant admissible subspace rather than by compression with a global
+342: projector.
+343: \end{definition}

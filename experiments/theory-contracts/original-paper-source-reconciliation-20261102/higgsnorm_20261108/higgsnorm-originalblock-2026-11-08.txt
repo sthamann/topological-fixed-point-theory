@@ -1,0 +1,210 @@
+HIGGSNORM20261108. Radialgewicht, Nullrand und Identität des markierten Transfers.
+
+1. Auswertung des Originalblocks
+
+Metrology005:136–178 gibt den Faktor W_n=exp[-Tr f_star(D_Vn²/Lambda²)]
+auf der BRST reduzierten Basis nu_Vn. Dessen Laplace Profilmasse gehört zum
+Funktionskalkül von D_Vn, die Konfigurationsmasse nu_Vn zum Feldintegral.
+QFT007:3–26 behält entsprechend die ganze Feldintegration Dphi. QFT004
+fixiert die Perronrichtung des vorgegebenen geblockten Operators.
+Im vorhandenen Originalaufruf tragen die Faserpakete die ursprüngliche
+Masse, den unnormierten Skalar und die vier ganzen Wortformen getrennt.
+Der Aufruf kontrahiert die Summe mit dem ganzen P, dem Randzustand und der
+Referenz. Die Originaldomäne liefert dort whole_source_bundle=null. Im
+gesichteten Quellweg ist somit sowohl die tatsächliche Masse der
+Normfasern als auch der dynamische Kontraktionswert offen. Der Befund
+beruht auf dem vorhandenen Aufruf und seinem gespeicherten Ausführungsergebnis.
+
+Der absolute Pushforward lässt sich ohne Maßwahl als genaue Wertoperation
+formulieren. Mit derselben Referenz sei I die unnormierte Originalkontraktion,
+so dass I(1)=Z0. Auf einer tatsächlichen gemeinsamen Normkarte ist
+mu_abs(B)=I(1_B(U)), bei atomarer Darstellung die Summe genau der ursprünglichen
+Konfigurationen mit Norm in B und allen zugehörigen originalen Randfaktoren.
+Im dynamischen Fall ist 1_B(U) ein ursprünglicher Zeitnullmark. Die
+vorhandene Regel P um das ganze Wort bleibt erhalten. Eine Identifikation
+von P mit einem punktweisen Faktor ist dafür nicht vorausgesetzt.
+
+2. Der reguläre Rand bei Higgsnorm null
+
+Im vorhandenen Vierkomponentenbild der Einform ist U=u=|x|². Angenommen,
+die tatsächliche unnormierte Kontraktion bei festgehaltenem x an genau
+diesem Zeitschnitt besitzt eine reguläre kartesische Dichte F(x) d⁴x.
+F umfasst bereits alle übrigen Felder, Historien und die gleiche
+ursprüngliche absolute Referenz. Dies ist die Anwendungsbedingung der
+folgenden Rechnung und keine Wahl von F.
+
+Mit gewöhnlichem Flächenelement dOmega auf S³ ergibt der Jacobi Faktor
+
+  w(u) = (u/2) int_{S³} F(sqrt(u) theta) dOmega,
+  Z0 = int w(u) du + ursprüngliche singuläre Masse, soweit vorhanden.
+
+Die zweite Gleichung bezieht sich auf alle Charts und ursprünglichen
+Trägerstücke. Für einen einzigen vollständigen regulären Chart ist die
+zusätzliche Masse null. Bei stetiger regulärer Faser am Ursprung gilt
+w(u)/u -> pi² F(0). Bei C² Regularität gilt w(u)=pi² F(0) u + O(u²),
+da der lineare Winkelterm verschwindet. Der reguläre Anteil hat kein Atom
+bei u=0 und sein Fluss mit dem normierten Radialfeld x/(2u) verschwindet
+dort für beschränkte glatte Tests. Ein separat vorhandener singulärer
+Quellanteil oder eine Randfläche des wirklichen Feldraums muss aus der
+Originaldomäne übernommen werden. Die BRST Angabe allein entscheidet ihn
+nicht. Bei einer festen positiven Gramform anstelle von |x|² trägt die
+entsprechende kartesische Kontraktion zusätzlich det(G)^(-1/2) beim
+Wechsel x -> G^(1/2)x, bei einem restabhängigen G innerhalb der Restintegration.
+
+Auf u>0 ist div(x/(2u))=1/u. Die ursprüngliche gewichtete Stokes Formel
+für g(u) mit kompakter Stütze ergibt distributionell
+
+  w' = U_*(div(F v) d⁴x) - U_*(F v.n dSigma),  v=x/(2u).
+
+Der zweite Term verwendet die wirkliche Originalrandfläche, soweit sie
+existiert. Ohne äußeren Rand in diesem Chart lautet der reguläre
+Innenausdruck w'(u)=w(u)/u+(u/2) int_{S³} (v F)(sqrt(u)theta) dOmega.
+Wo w>0 und die Ableitung existiert ist damit die gewichtete radiale
+Logableitung die Summe aus 1/u und dem konditionalen ursprünglichen
+Dichtederivat, gegebenenfalls ergänzt um den tatsächlichen Randterm.
+Diese Aussage setzt im Original weder einen positiven ganzen
+Pfaffian Integranden noch verschwindenden BRST Randfluss.
+
+F(0) ist die unnormierte Endpunktkontraktion mit x=0 am markierten Schnitt.
+Sie enthält die Rückkehrpfade durch von null verschiedene innere
+Higgsnormen. Beim Zusammennähen zweier Streifen wird über die ganze
+Zwischenkonfiguration integriert, auch wenn beide äußeren Werte null sind.
+Die bekannte statische Viertelkreis Referenz bei überall festgehaltenem
+H=0 wertet diesen Endpunktwert daher nicht aus. Die genaue Randmasse
+pi² F(0) und die ganze absolute Masse Z0 bleiben im ursprünglichen
+Block offen. Die Koarea und die gewichtete Ableitung entsprechen der
+Standardrechnung bei Legoll und Lelievre, arXiv:0906.4865, Gleichungen 9–12.
+
+3. Kinetischer Rand und Rekonstruktion aus dem ursprünglichen Transfer
+
+Der bereits identifizierte lokale Zweig von DYN20261106N besitzt
+H_kin=-a Delta_x mit a=4 pi² N/v>0 im tatsächlich blockdiagonalen
+festen Geometriebild. Wir verwenden diesen Zweig nur dort, wo er der
+ganze tatsächliche lokale Hauptteil auf dem ursprünglichen gemeinsamen
+Core ist und die wirklichen unteren Terme höchstens erster Ordnung sind.
+Sein radiales Hauptstück im S³ Kanal ell ist
+
+  -4a (u d²/du² + 2 d/du) + a ell(ell+2)/u.
+
+Im radialen Hilbertraum mit u du sind die indiziellen Lösungen
+u^(ell/2) und u^(-ell/2-1). Die zweite ist selbst bei ell=0
+logarithmisch nicht quadratintegrierbar. Der reguläre lokale
+Laplacian Zweig hat dort keinen wählbaren Randparameter. Dies ist
+der Grenzpunkt am regulären Ursprung der vier reellen Koordinaten,
+äquivalent zum inversquadratischen Koeffizienten
+(ell+1)²-1/4 in der Schrödingerform in r=sqrt(u).
+Der Befund betrifft diese Kinetik mit regulären unteren Termen
+(insbesondere lokalen beschränkten Matrixpotentialen) und setzt
+keine Randbedingung an einem anderen Rand oder auf dem vollen
+geometrischen Quotienten. Er liefert auch keine Zustandsdichte.
+Zur Grenzpunkt Schwelle siehe Nenciu und Nenciu, arXiv:0811.2982.
+
+Die alte Kontaktformel [U,[H,U]]=8a U wird auf die ganze Familie
+beschränkter Normmarken fortgesetzt. Auf dem gleichen Core gilt
+
+  [f(U),[H,g(U)]]=8 a U f'(U) g'(U),
+  [f(U),[H,Y_ham]]=4 a f'(U) Y_ham,
+
+weil Y_ham=sum x_i K_i ist. Der Multiplikationsrest vertauscht im
+äußeren Kommutator mit der skalaren Normmarke. Die ursprüngliche
+Ordnung, Rückkehrkontakte und ganze äußere physische Restriktion
+bleiben Voraussetzung. Eine getrennte Kompression kann die Gleichung
+verändern. Bei einer anderen oder dynamischen kinetischen Metrik
+steht das tatsächliche Gradientenpaar mit der ganzen inversen Metrik
+in der Energieform, im Allgemeinen kein festes a.
+
+Im tatsächlich passenden stationären OS Grundzustand mit H Omega=0
+und vorhandenen Formmomenten setze f_s=1-exp(-s U/2) und
+C_s(t)=<delta f_s Omega, exp(-t H) delta f_s Omega>. Die stationäre
+Formidentität liefert für s>0
+
+  -C_s'(0+) = a s² omega(U exp(-sU)).
+
+Für L(s)=omega(exp(-sU)) ist damit
+L(s)=1-int_0^s [-C_q'(0+)/(a q²)] dq. Der Integrand ist nichtnegativ
+und im uneigentlichen Sinn integrierbar, auch wenn der rohe erste
+Normmoment unendlich ist, solange die genannten Formidentitäten
+für q>0 gelten. Der ganze erste Zeitjet in dieser Markfamilie
+rekonstruiert die normierte radiale Spektralverteilung durch
+Laplace Eindeutigkeit, mitsamt Masse bei null als lim_{s->infty} L(s).
+Für eine reguläre Dichte p(u)~c u an null ohne Atom gilt
+s[-C_s'(0+)]->2 a c, per Laplace Skalierung.
+Das absolute Radialgewicht ist Z0 mal diese Verteilung. Die
+normierte Zeitquelle liefert den absoluten Faktor erst zusammen
+mit der ursprünglichen unnormierten Nullquellenkontraktion.
+
+Für g_s=1-exp(-sU) liefert derselbe echte lokale Zweig außerdem
+
+  -Re C'_(g_s,Y)(0+) = 2 a s omega(exp(-sU) Y_ham).
+
+Dies liest die radiale gleichzeitige Yukawa Antwort aus einem
+originalen gemischten Zeitjet. Es ersetzt keinen endlichen
+zeitgeordneten UY Wert. Die Vorzeichen und Faktoren wurden
+symbolisch auf den vier ursprünglichen Koordinaten geprüft.
+
+4. Auswertung des vorhandenen v330 Transfers als Identitätstest
+
+Das unveränderte v330 baut T=P0+(64/729)P2+(1/729)P3 mit
+demokratischer Grundrichtung und den Vektoren (1,-1,0), (1,1,-2).
+Der tatsächliche positive Loggenerator ist
+H330=6 log(3/2) P2+6 log(3) P3 pro Originalschritt. Die offdiagonalen
+Einträge sind H12=log(8/9), H13=H23=-2 log(3). Für die tatsächlich
+angegebene Markierung D=diag(1,-1,0) ist die normierte Antwort
+C_D(n)=2/3 (64/729)^n und ihr negativer Zeitableitungskontakt unter
+dem Loggenerator 4 log(3/2). Diese Werte wurden mit dem vorhandenen
+Aufruf für n=1,2 und mit dem exakten Generator verglichen.
+
+Der Identitätstest mit der obigen lokalen Normdynamik scheitert
+sogar auf Zustandsebene für jede nichttriviale positive 3x3 Markierung
+U, auch wenn U in der v330 Basis nicht diagonal ist. Sei
+psi_s=exp(-sU/2) Omega. Die linke Seite des Normkontakts wäre
+<psi_s,H330 psi_s>, da H330 Omega=0.
+
+Ist die Normverteilung von Omega auf strikt positive Eigenwerte
+gestützt, habe sie Minimum m>0. Dann ist die linke Seite höchstens
+||H330|| L(s), die erforderliche rechte mindestens a s² m L(s).
+Gleichheit für alle s ist unmöglich. Hat die Normverteilung sowohl
+ein Nullatom als auch positiven Anteil, konvergiert psi_s gegen
+P_{U=0} Omega. Dessen H330 Energie ist strikt positiv, da H330
+einen eindimensionalen Grundraum hat und dieser Vektor kein
+Vielfaches von Omega ist. Die rechte Seite konvergiert gegen null.
+Der verbleibende reine Nullfall U Omega=0 enthält keine Higgsnorm
+im Zustand. Auch auf Operatorebene widerspricht für U>=0 und a>0
+die Spur der endlichen doppelten Kommutatorgleichung 8a U.
+
+Damit ist der v330 Originaltransfer kein identischer Ersatz für
+den angegebenen regulären lokalen Higgszweig mit nichttrivialer Norm
+und derselben Zeitmarkfamilie. Der Ausschluss benötigt keinen
+Vergleich mit einem anderen kalibrierten Wert, keine Behauptung
+über den gesamten nichtlokalen Spektralzweig und keine Annahme
+einer bestimmten unbekannten v330 Higgsmarkierung. Der dokumentierte
+finite-range Gauss Transfer liefert ganze Wörter seiner eigenen
+Algebra, bislang ohne die nachgewiesene gemeinsame Einbettung der
+hier verlangten U,Y und des Zeit und Referenzcharts. Der R113
+Streifen selbst setzt den ursprünglichen Operator C_t^00 und die
+ganzen markierten Faserpakete ein. Es liegt in den geprüften Quellen
+kein Wert des identischen vollen UY Transfers vor.
+
+5. Belege und verbleibende Wertoperation
+
+Originale: archive Source45 Metrology005:136–178, QFT004:111–155,
+QFT007:3–26. Originale Norm und Yukawamarkierung: ORIGINAL-NEUTRAL-
+COMPOSITE-IDENTITY-20261105.md, Abschnitte 1–4. Lokaler Hauptteil und
+alter linearer Kontakt: DYNAMIC-ORIGINAL-MIXED-RESPONSE-BOUNDS.txt:30–43.
+Ursprüngliche Streifenbasis: PROJECTED-JOINT-SOURCE-GENERATOR-20261103.txt:81–128.
+Tatsächliche bisherige Transferdaten: verification/v330_qgamb_admissible_measure.py:42–76.
+Die Quelle zur bedingten vollständigen Gauss Familie ist
+PHYSICAL-THERMAL-SOURCE.txt:14–36,88–120.
+Prüfung: check_higgsnorm_transfer_20261108.py und
+higgsnorm-transfer-check-2026-11-08.json. Symbolische Kontaktprüfung,
+exakter Generator und zwei Punktvergleiche am vorhandenen Transfer,
+maximale Gleitkommaabweichung der Transfermatrix 1,11e-16.
+
+Zur absoluten Auswertung braucht es die ursprüngliche Kontraktion mit
+festgehaltenem Normschnitt einschließlich übriger Feldhistorien,
+insbesondere ihren Nullwert beziehungsweise die markierten Zeitjets
+des identischen Transfers zusammen mit derselben absoluten
+Nullquellenkontraktion. Beide Lesarten führen zum selben originalen
+Wertproblem. Das lokale Randgesetz und der v330 Ausschluss sind
+begrenzte Ergebnisse. Primitive Z0/ZU/ZY/ZUY bleiben unberechnet.
+Der automatische Suchlauf blieb gestoppt.

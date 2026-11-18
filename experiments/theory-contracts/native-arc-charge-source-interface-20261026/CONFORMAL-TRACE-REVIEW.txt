@@ -1,0 +1,62 @@
+Independent scoped mathematical review
+26 October 2026
+
+Reviewed claim: UR.NATIVE.ARCCHARGE.CONFORMAL-TRACE.01
+Verdict: ACCEPT_EXACT_STATED_SCOPE. No material correction required.
+
+Read CONFORMAL-TRACE-AND-WICK.txt and check_conformal_trace_wick.py fully.
+Checked the orthogonal Cauchy-data definition and conformal Dirac law against
+Guillarmou/Moroianu/Park, arXiv:1009.3179, Section3.1 and Proposition7.
+The original BOUNDARY-SOURCE.txt and ELLIPTIC-GREEN-RP.txt were also read.
+
+1. Analytic theorem
+With the canonical conformal spin-bundle identification understood, the
+harmonic solution factor exp(-(d-1)sigma/2) is exactly canceled by the
+boundary L2 unitary exp((d-1)sigma_boundary/2). Thus the unitary maps the
+smooth Cauchy-data spaces onto one another, and by closure maps their
+orthogonal Calderon projections onto one another. The argument is not a
+finite-regulator extrapolation. Fixed geometric boundary components and
+regional supports are preserved by this scalar multiplication.
+In the common bulk L2 picture, exp(-sigma/2) D exp(-sigma/2) and the corrected
+trace exp(-sigma_boundary/2)Tr are consistent with that same theorem.
+
+2. Source and operator scope
+The original quarter/fold map is correctly applied AFTER boundary transport.
+No commutation of the boundary multiplier with Fourier/quarter projections
+is assumed. Wick and current-functional invariance refer to the retained
+free conditional CAR source and correctly transported observables. Native
+composites retain their original subtraction, domains and smearing; a stress
+tensor defined anew by each metric is explicitly outside this identification.
+This does not prove invariance of spectra, APS data, spectral actions,
+physical time, or a primitive P1 measure/source map.
+
+3. Geometry averaging
+For an identical normalized conditional source functional, arbitrary
+source-independent weights, including determinants and anomalies, factor
+from normalized correlators when the stated integrals exist and their
+denominator is nonzero. The four-field determinant and all higher Wick
+words therefore remain fixed. The conclusion does not follow for a varying
+conformal class, connection, mass, cut, source covariance, primitive higher
+vertex, or untransported metric-dependent observable. The text preserves
+these distinctions, including possible effective-weight changes when other
+geometric data are integrated as well.
+
+4. Independent replay
+Ran both python3 -B check_conformal_trace_wick.py and python3 -B -OO
+check_conformal_trace_wick.py without an output path. Both exited0 and
+returned the same result as conformal_trace_wick_results.json. RuntimeError
+checks remain active. The raw-trace compression defect is nonzero for
+different positive face factors; the varying-covariance control is -v^2/4.
+These symbolic and finite graph checks are diagnostics of the analytic
+closed-space proof, not a replacement for it. No other files were changed.
+
+Reviewed SHA256:
+CONFORMAL-TRACE-AND-WICK.txt
+77a6bffa2192b809f0264406afe7dd57d4718576f7f6632c107a7036de6ff5d1
+check_conformal_trace_wick.py
+c30f3058a971b28d17ba3af73f6cbb63fbac43d94a4640ad58d8c64fe613271d
+conformal_trace_wick_results.json
+84cbf70dba2439348d6f450a57b6852ea1779bcc0882b718e7abc2feabee8238
+
+Experiment-only review. No ledger, empirical, interaction or physical-source
+promotion is implied.

@@ -1,0 +1,67 @@
+INDEPENDENT REVIEW OF THE FOUR FINITE PARTICLE-HOLE QUADRATURES
+30 October 2026. No original source, Atlas entry or earlier report changed.
+
+VERDICT
+
+The four-dimensional real covariance in
+ROOT-PH-CORRELATIONS-ADJOINTS-AND-CALLER-REVIEW.txt is algebraically correct
+and agrees with ROOT-ACTUAL-PH-CAR-AND-ADJOINT-REPLAY.json.
+
+Let
+
+  h=|I02|^2+|I21|^2,
+  z=-2i I02 I21,
+  g=16(2/pi)^2 tanh^2(ell_NS/2).
+
+The finite canonical Pi/Pi_h corner has
+
+  C(F*,F)=C(N*,N)=g h,
+  C(F*,N)=C(F,N*)=0,
+  C(F,N)=g z,
+  C(F*,N*)=g conjugate(z).
+
+For the selfadjoint quadratures, each normalized by 1/sqrt(2),
+
+  ReF=(F+F*)/sqrt(2),      ImF=(F-F*)/(i sqrt(2)),
+  ReN=(N+N*)/sqrt(2),      ImN=(N-N*)/(i sqrt(2)),
+
+direct expansion gives the real symmetric covariance
+
+  g [[h,0,Re z,Im z],
+     [0,h,Im z,-Re z],
+     [Re z,Im z,h,0],
+     [Im z,-Re z,0,h]].
+
+Its characteristic polynomial is
+
+  [lambda-g(h+|z|)]^2 [lambda-g(h-|z|)]^2.
+
+Since |z|=2|I02||I21|, the eigenvalues are
+
+  g(|I02|+|I21|)^2, multiplicity 2,
+  g(|I02|-|I21|)^2, multiplicity 2.
+
+They are strictly positive because |I21|/|I02|=3.347597664... is not one.
+This also confirms why C(F,F)=C(N,N)=0 does not imply absence of ordinary
+selfadjoint fluctuations.
+
+The 64-dimensional CAR replay reports all eleven relevant identities,
+including the Pauli compression, the directed pairings, both positive
+adjoint norms, the zero adjoint cross term, the quadrature matrix and its
+positive spectrum. Its symbolic sech/tanh parameters match the analytic
+face calculation before any physical value of ell_NS is chosen.
+
+SCOPE
+
+This is the covariance of the canonical finite E/Eh particle-hole corner,
+including the actual rank-16 P_gamma,+ carrier trace per family. It is not
+the full unsmoothed source response, the complete J_F/KO-real field, a CP or
+CKM observable, or a proof that the original Z caller selects this corner.
+
+SOURCES CHECKED
+
+  ROOT-PH-CORRELATIONS-ADJOINTS-AND-CALLER-REVIEW.txt:15-53;
+  ROOT-ACTUAL-PH-CAR-AND-ADJOINT-REPLAY.json;
+  CLAUDE48-PAULI-PH-FACE-BLOCK-REVIEW.txt;
+  HARDY-BMU-FULL-MU01-READER.txt:104-118;
+  verification/v252_full_finite_triple.py:72-78,119-132.

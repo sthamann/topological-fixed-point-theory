@@ -1,0 +1,54 @@
+{
+  "contract": "mediator-rep-sieve-20261005",
+  "date": "20261005",
+  "research_id": "SOURCE.MEDIATOR.REP_SIEVE.01",
+  "question": "From how many and which existing source modes can a bosonic, family-singlet Spin(10)-vector (10,1) mediator be built at all (before any spectral search)?",
+  "verdict": "SU4_NEUTRAL_FORBIDDEN_ALL_DEGREES; SU3_SO3_A4_NEUTRAL_MIN_DEGREE_2",
+  "verdict_enum": [
+    "FORBIDDEN",
+    "MIN_DEGREE_n",
+    "PARTIAL"
+  ],
+  "verdict_scope": "Representation theory and centre charges only. Building blocks: NS fermions psi (10,1), chi (1,6) and the E8 currents. Bulk Z4 charge, gap, residue, coupling and Schrieffer-Wolff residual are not decided.",
+  "mathematical_verdict": "BOSONIC_COMPOSITES_HAVE_Q10_PLUS_Q4_ZERO_MOD_4 (diagonal centre trivial, UR.SOURCE.OPERATOR_ORIGIN.01); (10,SU4_SINGLET)_EXCLUDED_ALL_DEGREES; (16,4)(16,4)(1,6)_EXCLUDED_BY_STATISTICS; DEGREE2_CANDIDATES_J164xJ164_IN_(10,S2_4)_AND_J106xJ115_FOR_SU3_SO3_A4; SU3_SINGLET_OF_S2_4_IS_OMITTED_LINE",
+  "summary_de": "Zentrumsregel: alle bosonischen Komposita der Quelle haben q10 + q4 = 0 mod 4 (diagonales Zentrum trivial, wie in UR.SOURCE.OPERATOR_ORIGIN.01); (10, SU(4)-Singulett) hat 2 -> in jedem Kompositgrad verboten. (16,4)(16,4)(1,6) ist mit chi fermionisch, ein bosonisches (1,6) existiert nicht. Fuer SU(3)/SO(3)/A4-Familienneutralitaet gibt es Grad-2-Kandidaten: [J(16,4)J(16,4)] in (10, S^2 4) und [J(10,6)J(1,15)]; unter SU(3) ist das Singulett in S^2 4 die Komponente der weggelassenen Familienlinie. Z4, Luecke, Residuum, Kopplung und SW-Rest sind die naechsten Gates.",
+  "gates": [
+    "T4",
+    "T6"
+  ],
+  "kills": [
+    "A bosonic Spin(10)-vector SU(4)-family-singlet composite of source modes at any degree.",
+    "The composite (16,4)(16,4)(1,6) as a bosonic mediator.",
+    "Fermion bilinears (psi psi, psi chi, chi chi) as (10, family-singlet) mediators."
+  ],
+  "resolved": [
+    "Minimal composite degree table per family-neutrality group.",
+    "Degree-2 candidates and their H-singlet counts: SU(3) 1+2, SO(3) 2+6, A4 2+8 ([J(16,4)^2] + [J(10,6)J(1,15)])."
+  ],
+  "next_gates": [
+    "bulk Z4 charge of the candidate (requires the source->bulk map)",
+    "gap and residue: <M_A(t)M_B(0)> ~ delta_AB Z_Phi exp(-Delta t)",
+    "coupling lambda to O_A",
+    "Schrieffer-Wolff residual ||dH|| << lambda^2/Delta"
+  ],
+  "imported_premises": [
+    "UR.SOURCE.OPERATOR_ORIGIN.01 diagonal-centre theorem",
+    "E8 branching D5 x A3 and NS fermions of U"
+  ],
+  "related_contracts": [
+    "interaction-mediator-20261005",
+    "source-operator-origin-20260920"
+  ],
+  "checker": "sieve.py",
+  "results": "sieve_results.json",
+  "proof": "README.md",
+  "firewall": "experiments",
+  "promotion": false,
+  "complete_TFPT_solution": false,
+  "physical_gates_closed": [],
+  "claims_tested": [],
+  "claims_scoped_not_closed": [
+    "AX.P1.01",
+    "AX.P2.01"
+  ]
+}

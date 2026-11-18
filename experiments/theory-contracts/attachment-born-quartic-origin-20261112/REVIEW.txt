@@ -1,0 +1,119 @@
+Unabhängige Prüfung der markierten Duadenwörter und des 3+2 Anschlusses
+12. November 2026
+
+1. Positives Wortgesetz auf den ursprünglichen äußeren Labels
+
+Fixiere die äußere Marke q. Innere Duaden liegen auf den übrigen fünf
+Punkten, äußere Duaden enthalten q. A ist die Petersen Adjazenz der
+inneren Duaden. B(i,e)=1 genau dann, wenn i kein Endpunkt der inneren
+Duade e ist. Der Petersen Projektor auf dem Eigenwert 1 von A lautet
+P5=(A+2I)/3-J/6. Im Blockformat innere, äußere Duaden ist der korrigierte
+Transfer damit
+
+  Mtilde = [ I/9+J/18   B^T/9 ].
+           [ B/9        I/3   ]
+
+Schreibe rho(g) für die Zeilenübergangsmatrix e -> g(e) auf den Duaden.
+Für jedes j != q gibt es sechs Viererzyklen h auf den übrigen vier
+Punkten. Dann gilt
+
+  Mtilde = rho(id)/6 + sum_(j,h) rho((q j)h)/36.
+
+Die Wortbilder stammen aus der ursprünglichen äußeren S6 Wirkung der
+60 Reflexionen in compiler-correlated-event-clock-20260919/
+source_channel.py, outer_mark_action. Jede der angegebenen Permutationen
+ist als Produkt einer Transposition (q j) und dreier Transpositionen
+für h darstellbar.
+
+Eintragsbeweis. Die äußere Duade qi bleibt unter der Identität und
+unter den sechs Wörtern mit j=i fest. Ihr Diagonaleintrag beträgt
+1/6+6/36=1/3. Eine innere Zielduade ab ohne i wird mit j=a oder j=b
+erreicht, jeweils durch zwei Viererzyklen, insgesamt also mit 4/36=1/9.
+Die restlichen Übergänge dieser Zeile sind null. Die Wortmenge ist
+inversenstabil, daher gilt auch die transponierte Aussage für Übergänge
+von inneren zu äußeren Duaden. Eine innere Duade bleibt allein unter
+der Identität fest. Teilen zwei verschiedene innere Duaden einen
+Punkt, gibt es zwei Möglichkeiten für j außerhalb ihrer Vereinigung
+und je einen passenden Viererzyklus. Sind sie disjunkt, gibt es genau
+ein j außerhalb ihrer Vereinigung und für jede der zwei Bijektionen
+zwischen den Duaden einen passenden Viererzyklus. Beide Fälle geben
+2/36=1/18.
+
+2. Erzwungener Träger und eindeutige Gewichte auf dem Quotienten
+
+Betrachte eine beliebige positive Mischung der 720 Permutationen.
+Jede Permutation mit positivem Gewicht muss alle Nulleinträge von
+Mtilde respektieren. Fixiert g die Marke q, so muss g jede äußere Duade
+fixieren, weil der äußere Block diagonal ist. Dann ist g die Identität.
+Gilt g(q)=j != q, wird die äußere Duade {q,g^(-1)(q)} auf {q,j}
+abgebildet. Wegen desselben Diagonalblocks ist g^(-1)(q)=j.
+Damit zerfällt g als (q j)h und fixiert genau eine äußere Duade.
+
+Die Summe der fünf äußeren Diagonaleinträge ist 5/3. Sie beträgt bei
+Identitätsgewicht p zugleich 5p+1(1-p). Somit ist p=1/6. Dies füllt
+bereits die gesamte innere Diagonale aus. Jede andere verwendete
+Permutation muss daher frei von fixierten inneren Duaden sein. Auch h
+darf keinen der vier verbleibenden Punkte i fixieren, weil sonst qi
+auf die verbotene innere Duade ij ginge. Eine fixpunktfreie Permutation
+von vier Punkten ist ein Viererzyklus oder eine Doppeltransposition.
+Die Doppeltransposition fixiert ihre zwei inneren Paare und scheidet aus.
+Damit bleiben nur die Identität und die 30 angegebenen Wörter.
+
+Der beigefügte rationale Test enumeriert alle 720 Permutationen,
+prüft den Nulleintragsausschluss, die Diagonalbedingungen und die
+Eintragsidentität. Die 31 zugelassenen Permutationsmatrizen werden als
+Spalten einer 225-mal-31-Matrix geschrieben. Ihr exakter Rang ist 31.
+Das Wortgesetz ist daher eindeutig auf den Gruppenelementen des
+äußeren S6 Quotienten, auch ohne zusätzlich verlangte S5 Kovarianz.
+Die einzelnen Reflexionsfaktorisierungen, ihre G31 Hebungen, eine
+zeitliche Präparation und eine ursprüngliche physische P1 Auswahl
+sind damit offen.
+
+3. Dreierwirkung, 3+2 und Ladungsnormierung
+
+Auf den fünf Differenzrichtungen nach Wahl einer fixierten Marke wirkt
+die angegebene Dreierpermutation mit einem Dreierzyklus und zwei
+Fixpunkten. Über C ist ihr Spektrum daher 1^3, omega, omega^2. Die beiden
+nichttrivialen Eigenlinien bilden zusammen den zweidimensionalen
+nichttrivialen Teil. Die Eigenrichtung mit Eigenwert 1 aus dem
+Dreierzyklus kann mit den anderen beiden Fixrichtungen gemischt werden.
+Bei gegebener unitärer Metrik kann jede Linie im dreidimensionalen
+Fixraum den nichttrivialen Teil zu einem Dreierblock ergänzen. Ihr
+orthogonales Komplement im Fixraum ist dann der Zweierblock. Die
+Permutation der ausdrücklich markierten Basis benennt einen solchen
+Block, doch der abstrakte C3 Operator legt diese Basis nicht fest.
+
+Bei vorausgesetzten Blöcken und blockkonstanten Ladungen a und b ist
+die Spurbedingung 3a+2b=0. Sie bestimmt das Verhältnis -2:3. Fordert
+man zusätzlich primitive ganzzahlige Eigenwerte, erhält man (-2,3)
+oder das gemeinsame Negativ. Das Vorzeichen und die physikalische
+Einheit müssen durch die identifizierte Ladungsdarstellung getragen
+werden. Insbesondere folgt die Skalierung um 1/6 weder aus der
+Dreierwirkung noch aus der Spurbedingung oder der Ganzzahlprimitivität.
+
+4. Abschließende Prüfung der kohärenten Hebungen und P1 Reichweite
+
+Der Born Leser intertwiniert jedes tatsächliche native Wort, nicht nur
+Q20 und Q40: Sym2(g) sendet die vier korrelierten Zustände des Kontextes c
+in den Kontext gc und permutiert Bell Labels bis auf Phasen. Damit
+rho_duad(g)K=K rho_Bell,pop(g). Der volle Spaltenrang von K erzwingt
+V² als gemeinsamen Populationskanal der erklärten Hebungsfamilie.
+Uniforme Pauli Nebenraumhebungen sind unter gleichzeitigem Transport
+von Marke und Wörtern kovariant. Für eine Born Zeile p gilt
+  R_alpha=p V² p^T+(1-alpha)/8.
+Der erste Term ist1/6 im äußeren und1/8 im inneren Kontext. Die drei
+angegebenen Rückwertmengen stimmen. Identische primitive Zeiten oder
+Wortaufzeichnungen werden damit nicht nachgewiesen.
+
+Die Zweikopienmittel beider Präparationsklassen sind I10/10, während
+die Vierkopienmittel Abstand²63/1280 haben. Der lineare Ausschluss
+betrifft unbeschriftete Dichten und lässt die tatsächliche kohärente
+Isometrie im Labelraum unangetastet. Das Produktargument liefert M10;
+die Fixierung aller60 Projektoren durch eine CP Karte erzwingt ihre
+Identität. Dies ist kein P1 Zustandsauswahlsatz.
+
+Die volle geordnete mu4 Hebung gehört zum angestrebten phasenaufgelösten
+Quellenanschluss. Zentrale Phasen fallen aus reduzierten Dichtekanälen
+heraus; die hier verwendeten Dichtemessungen wählen diese Phasen nicht.
+Die primitive P1 Wirkung auf geliefertem Datum ist nicht bereits die
+hergeleitete konkrete Wechselwirkungsoperation dieser60 Ereignisse.

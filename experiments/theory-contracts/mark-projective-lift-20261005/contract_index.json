@@ -1,0 +1,55 @@
+{
+  "contract": "mark-projective-lift-20261005",
+  "date": "20261005",
+  "research_id": "SOURCE.MARK_PROJECTIVE_LIFT.01",
+  "question": "Without inserting a spin structure: do fermionic grading and the oriented marks force the nontrivial projective lift A4 -> 2T (central element = (-1)^F) instead of the trivial linear action?",
+  "verdict": "NOT_FORCED_IN_SOURCE",
+  "verdict_enum": [
+    "DERIVED",
+    "NOT_FORCED_IN_SOURCE",
+    "CONDITIONAL",
+    "FAIL"
+  ],
+  "verdict_scope": "Source channels: flavor fiber, windings, three family CAR modes, twist zero modes (N = 16, species-singlet), seam rotation (NS/R). Statement about the microscopic mark-rotation class; the IR statement holds for a two-component coin at an isotropic Weyl node.",
+  "mathematical_verdict": "FOCK_IMPLEMENTATION_OF_GENUINE_ACTION_HAS_SCALAR_CENTER_CLASS_W2_EQUALS_M3_MOD_2; NUMBER_CONSERVING_ACTIONS_TRIVIAL; SPIN_STATISTICS_REQUIRES_PROJECTIVE_ONE_PARTICLE_ACTION; SQUARE_MARKED_SEAM_SYMMETRY_D4_ROTATIONS_Z4_A4_PART_Z2_NO_C3; SEAM_ROTATION_LIFT_CONDITIONAL_NS; SPIN_HALF_EMERGENT_GIVEN_TWO_COMPONENT_COIN (2pi action coincides with the existing fermion parity; not an IR derivation of spin-statistics; not usable to derive the coin)",
+  "summary_de": "Die Quelle erzwingt den 2T-Lift nicht: Fock-Implementierungen genuiner Einteilchenwirkungen haben skalare Zentrumselemente (Klasse w2 = m3 mod 2), teilchenzahlerhaltende Wirkungen sind trivial, Spin-Statistik braucht eine projektive Einteilchenwirkung. Die quadratisch markierte Naht hat nur D4 (Rotationen Z4), mit A4 gemeinsam nur <(02)(13)>, keine C3. Der NS-Lift der Nahtdrehung ist bedingt (Spinorschnitt-Praemisse). Spin 1/2 emergiert am isotropen Weyl-Knoten, sobald ein zweikomponentiger Coin existiert; seine 2pi-Wirkung stimmt mit der bereits vorhandenen Fermionparitaet ueberein (keine IR-Herleitung der Spin-Statistik, keine Herleitung des Coins). Verbleibender Input: der Coin selbst (AX.WEYLCOIN).",
+  "gates": [
+    "T1",
+    "T3"
+  ],
+  "kills": [
+    "Fock/Clifford implementation of a genuine one-particle mark action producing spin-statistics (center is scalar, never (-1)^F).",
+    "Nontrivial A4 class from number-conserving family modes (m_3 even).",
+    "2T class from the twist zero modes with N = 16 species-singlet operators.",
+    "C3 / A4 as a geometric symmetry of the square-marked chiral seam (Moebius stabiliser D4, orientation-preserving Z4)."
+  ],
+  "resolved": [
+    "Class formula w2 = m_3 mod 2 for genuine real one-particle A4 actions; spin-statistics <=> projective one-particle action.",
+    "Spin 1/2 emerges at an isotropic Weyl node once a two-component coin exists; its 2pi action coincides with the fermion parity already present (no IR derivation of spin-statistics; the coin itself is presupposed)."
+  ],
+  "imported_premises": [
+    "source-oriented-polarization-20260921: geometric half-turn does not fix the spin lift; U^2 = parity needs O^2 = -I",
+    "Part U6/K9 species count N = 16",
+    "S^2 spinor-section premise for the NS seam lift (conditional P1 hardening)"
+  ],
+  "minimal_missing_inputs": [
+    "two-component internal-singlet one-particle coin coupled to the three H_1 directions (AX.WEYLCOIN)"
+  ],
+  "related_contracts": [
+    "minimal-runtime-reconstruction-20261005",
+    "seam-holonomy-generating-20261001",
+    "source-oriented-polarization-20260921"
+  ],
+  "checker": "lift.py",
+  "results": "lift_results.json",
+  "proof": "README.md",
+  "firewall": "experiments",
+  "promotion": false,
+  "complete_TFPT_solution": false,
+  "physical_gates_closed": [],
+  "claims_tested": [],
+  "claims_scoped_not_closed": [
+    "AX.P1.01",
+    "AX.P2.01"
+  ]
+}

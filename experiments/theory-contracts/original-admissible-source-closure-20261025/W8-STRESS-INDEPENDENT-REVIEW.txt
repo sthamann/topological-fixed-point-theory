@@ -1,0 +1,287 @@
+UNABHÄNGIGE PRÜFUNG DER W8 ANTWORT IM GEFALTETEN UND ORIGINALEN STRESSZYKLUS
+============================================================================
+
+26. Oktober 2026
+
+Urteil
+------
+
+Die gemeldete Nichtzyklizität ist exakt, aber nur für den gefalteten c=8
+Virasororaum, der von den Moden Lhat_n erzeugt wird. Sie darf nicht auf alle
+Stresshistorien der ursprünglichen c=1 Quarterquelle übertragen werden.
+
+Für die ursprüngliche Quelle ergibt die erste Typprüfung sogar die positive
+Folgerung. Ihr U(1) Impuls ist p=alpha-1/2=plus oder minus 1/4 und ihr c=1
+Grundgewicht ist h=p^2/2=1/32. Dieses Gewicht ist kein degeneriertes c=1
+Kacgewicht. Der Virasororaum auf dem Ladungsgrundzustand ist deshalb der ganze
+feste Heisenberg beziehungsweise CAR Ladungssektor. Insbesondere liegt der
+scheinbar fehlende gefaltete Level eins Vektor auf ursprünglichem Grad acht im
+Span der 22 c=1 Virasorowörter dieses Grades. Die geglättete volle W8 Antwort
+liegt in der Abschließung des ursprünglichen c=1 Stresszyklus.
+
+Der senkrechte Vektor und seine Gradientendarstellung bleiben wertvoll. Sie
+zeigen genau, welche Richtung der kleinere gefaltete c=8 Stressunterraum
+verfehlt. Sie begründen keinen P1 Ausschluss und keinen Ausschluss des
+ursprünglichen Stresspfads.
+
+1. Level eins des gefalteten c=8 Virasorozyklus
+-----------------------------------------------
+
+Im gefalteten reellen Achtstrommodul gilt
+
+  h_j(n)^*=h_j(-n),
+  Lhat_n^*=Lhat_-n,
+  N=Lhat_0-d^2/2 >=0.
+
+Der normierte Ladungsgrundzustand |d> ist ein Virasoro Höchstgewichtszustand
+mit Gewicht h_d=d^2/2. Die algebraische Virasoromodulbasis wird nach dem
+N Level durch Partitionen graduiert. Auf Level eins gibt es nur die Partition
+(1). Daher ist
+
+  P_1 H_d^(Vir,hat)
+    =span{Lhat_-1|d>}
+    =span{(d.h_-1)|d>}.                                   (1)
+
+Die zweite Gleichheit ist die gewöhnliche Heisenberg Sugawara Wirkung auf dem
+Ladungsgrundzustand. Hier ist d^2=85/128, also ist der Vektor nicht null.
+
+Die Abschließung vergrößert (1) nicht. Der Spektralprojektor P_1 von N ist
+beschränkt. Er bildet die Abschließung des algebraischen Virasororaums in die
+Abschließung seines Level eins Anteils ab. Dieser Anteil ist bereits der
+eindimensionale abgeschlossene Raum in (1). Dass in einer Stresshistorie
+positive, negative und Nullmoden in beliebiger Reihenfolge vorkommen dürfen,
+ändert daran nichts: PBW und die Höchstgewichtsrelationen reduzieren sie wieder
+auf Nachfahren der gefalteten Lhat Moden.
+
+Tragend ist hier die Generatorwahl. Aus der bereits bewiesenen Foldrelation
+
+  Lhat_n=Lcal_(8n)^alpha/8+21/64 delta_(n,0),
+  N=(Lcal_0^alpha-1/32)/8
+
+folgt, dass gefaltetes N Level eins dem ursprünglichen c=1 Grad acht
+entspricht. Gleichung (1) beschreibt daher nur den Lhat Unterraum. Sie sagt
+nichts über den vollen Span aller ursprünglichen Wörter aus Lcal_-m mit
+Gesamtgrad acht.
+
+2. Exakte orthogonale Komponente der wirklichen W8 Antwort
+----------------------------------------------------------
+
+Die gespeicherte Expansion ist
+
+  z^8 Y_d(W8,z)|d> = sum_(ell>=0) v_ell z^ell.
+
+Auf Level eins schreibt man
+
+  v_1=sum_j (v_1)_j h_j(-1)|d>.
+
+Wegen [h_i(1),h_j(-1)]=delta_ij ist die Fockmetrik auf diesen
+Koeffizienten die gewöhnliche euklidische Metrik. Der Orthogonalprojektor auf
+den Virasorostrahl (1) gibt deshalb
+
+  v_parallel=(d.v_1/d^2)d,
+  v_perp=v_1-v_parallel.                                  (2)
+
+Die primäre Wardidentität im Checker lautet
+
+  d.v_1=8 <W8>_d.
+
+Damit ist
+
+  ||v_parallel||^2=64 <W8>_d^2/d^2.
+
+Direkte exakte Auswertung der beiden gespeicherten Level eins Vektoren ergibt
+für alpha=1/4 und alpha=3/4 jeweils
+
+  d.v_perp=0,
+
+  ||v_perp||^2
+    =51311452775625/9345848836096 >0,                     (3)
+
+  ||v_perp||^2/||v_1||^2
+    =2940380138425680/3194827970344921.                   (4)
+
+Der letzte Anteil ist ungefähr 0.920356. Der Befund ist also weder eine
+Rundungsabweichung noch nur die bereits bekannte radiale Wardkomponente.
+
+Ich habe (2) bis (4) unabhängig aus den rationalen Vektoren in
+w8-source-twopoint-results.json nachgerechnet. Beide Quarterfälle geben exakt
+dieselben Werte.
+
+3. Rootsumme und Gradientenkonvention
+-------------------------------------
+
+Im verwendeten Standardchart ist
+
+  H8(x)=sum_(alpha in Phi(E8))(alpha.x)^8-30(x.x)^4.
+
+Mit der euklidischen Fockmetrik ist
+
+  grad H8(d)
+    =8 sum_alpha (alpha.d)^7 alpha-240(d.d)^3 d.           (5)
+
+Der tangentiale Gradient auf der Sphäre durch d ist
+
+  grad_tan H8(d)
+    =grad H8(d)-d[d.grad H8(d)]/d^2.                       (6)
+
+Die Level eins Komponente eines Heisenberg Zustands P entsteht durch
+Ableitung nach h_j(-1) und anschließendes Einsetzen
+
+  h_j(-n) -> (-1)^(n-1)d_j.
+
+Für jedes Q_ab=sum_j h_j(-a)h_j(-b) ist eine Ableitung nach h_j(-1)
+entweder null oder proportional zu h_j(-b). Am Hintergrund ist dieser Vektor
+gleich plus oder minus d. Daher ist die Level eins Ableitung jedes der sechzehn
+Q_ab Kontraktionsmonome rein radial. Ihre Koeffizienten und auch der eine
+verschwindende Ansatzkoeffizient ändern diese Aussage nicht.
+
+Folglich stammt die ganze tangentiale Komponente aus H8:
+
+  v_perp=grad_tan H8(d).                                  (7)
+
+Ich habe (7) unabhängig mit allen 240 E8 Wurzeln und beiden gespeicherten
+Quarterladungen exakt geprüft. Beide Seiten stimmen komponentenweise. Die Norm
+ist jeweils genau (3). Die Konvention in (5) stimmt damit zugleich mit dem
+Vorzeichen der gespeicherten Feldsubstitution überein: Für n=1 wird h(-1)
+durch +d ersetzt.
+
+4. Semigruppenglättung und der geschlossene Raum
+------------------------------------------------
+
+Der unbeschränkte Punktfeldvektor bei Radius eins muss für diese Aussage nicht
+als Hilbertvektor vorausgesetzt werden. Für epsilon>0 setze auf der vorhandenen
+positiven radialen Quelle
+
+  Psi_epsilon
+    =sum_(ell>=0) exp(-epsilon ell)v_ell
+    =exp(-epsilon N)[z^8Y_d(W8,z)|d>]_(z=1)               (8)
+
+im durch die Spektralentwicklung definierten Sinn. Aus dem bereits bewiesenen
+rationalen Zweipunkt folgt
+
+  ||Psi_epsilon||^2
+    =sum_(ell>=0) exp(-2epsilon ell)||v_ell||^2 < infinity.
+
+Der positive selbstadjungierte Semigroupoperator exp(-epsilon N) erhält den
+abgeschlossenen gefalteten Virasorozyklus, weil N=Lhat_0-h_d zu dieser
+Virasorodarstellung gehört. Der Level eins Anteil von (8) ist
+
+  P_1 Psi_epsilon=exp(-epsilon)v_1.
+
+Seine zu (1) senkrechte Komponente ist exp(-epsilon)v_perp und bleibt nach
+(3) für jedes endliche epsilon strikt von null verschieden. Daher
+
+  Psi_epsilon notin H_d^(Vir,hat)   für jedes epsilon>0.    (9)
+
+Gleichung (9) schließt die Abschließung und beliebig lange Wörter aus den
+gefalteten Lhat Moden ein. Sie beruht nicht auf einer endlichen PBW
+Abschneidung. Allgemeiner gilt dieselbe Folgerung für jede Spektralglättung,
+deren Multiplikator auf gefaltetem Level eins nicht verschwindet. Sie enthält
+keine Aussage über den größeren ursprünglichen c=1 Virasororaum.
+
+5. Der ursprüngliche c=1 Stresszyklus ist der ganze Ladungssektor
+-----------------------------------------------------------------
+
+Die ursprüngliche alpha Quarterquelle hat einen einzelnen U(1) Strom mit
+
+  p=alpha-1/2=plus oder minus 1/4,
+  c=1,
+  h=p^2/2=1/32.
+
+Unter der Boson Fermion Korrespondenz ist jeder feste Ladungssektor genau der
+Heisenberg Fockraum F_p mit Charakter
+
+  q^h/product_(n>=1)(1-q^n).
+
+Die c=1 Kacdeterminante kann nur bei Gewichten
+
+  h_(r,s)=(r-s)^2/4
+
+verschwinden. Das Gewicht 1/32 gehört nicht zu dieser Menge. Der vom
+Ladungsgrundzustand erzeugte Virasoro Verma Modul hat deshalb keine Nullvektoren.
+Sein graduierter Charakter stimmt mit dem Heisenberg Fockcharakter überein.
+Die natürliche Virasoroabbildung ist damit auf jedem Grad ein Isomorphismus:
+
+  closure span{Lcal_-lambda |alpha>}
+    =F_p
+    =der feste ursprüngliche CAR Ladungssektor.              (10)
+
+Am für v_1 relevanten ursprünglichen Grad acht haben beide Seiten Dimension
+
+  p(8)=22.
+
+Als unabhängigen kleinen Test habe ich die 22 Vektoren
+Lcal_-lambda|alpha>, lambda Partition von acht, in der 22 dimensionalen
+Heisenberg PBW Basis aufgebaut. Für p=plus 1/4 und p=minus 1/4 hat die rationale
+Koeffizientenmatrix modulo jedem der drei Primzahlen 65537, 65539 und 1000003
+Rang 22. Damit ist ihre rationale Determinante insbesondere nicht null. Dieser
+Test bestätigt die Kacdeterminantenfolgerung genau auf der ersten hier
+entscheidenden Stufe.
+
+Der gefaltete Vektor v_ell liegt auf ursprünglichem Grad 8 ell. Gleichung (10)
+zeigt daher für jedes ell einzeln
+
+  v_ell in span{Lcal_-lambda|alpha>: |lambda|=8 ell}.       (11)
+
+Für epsilon>0 ist die semigruppengeglättete Summe normkonvergent. Aus (11) und
+der Abgeschlossenheit folgt nun positiv
+
+  Psi_epsilon in H_alpha^(Vir,c=1).                         (12)
+
+Die senkrechte Komponente (3) steht dazu nicht im Widerspruch. Sie ist nur
+senkrecht zum eindimensionalen gefalteten Lhat_-1 Strahl innerhalb des
+22 dimensionalen ursprünglichen Grad acht Raums.
+
+6. Quellenzustand, Adjungierung und genaue Reichweite
+-----------------------------------------------------
+
+W8 hat im gewählten reellen Stromchart reelle Koeffizienten. Zusammen mit der
+radialen Adjungierung erklärt dies die gespeicherte positive Identität
+
+  ||v_ell||^2=[q^ell]
+    z^8w^8 <d|Y(W8,z)Y(W8,w)|d>.
+
+Es wird kein fremder Zustand und keine neue Zeit eingeführt. Der Generator N
+ist derselbe relative radiale Generator wie im vollständigen Zweipunktsatz;
+auf dem alten Foldsektor gilt H0=8N. Eine Aussage über absolute physikalische
+Sekunden folgt daraus weiterhin nicht.
+
+Der verbleibende Ausschluss lautet präzise:
+
+  Die vollständige semigruppengeglättete W8 Einfügungsantwort der gegebenen
+  Quarterquelle kann nicht allein aus den gefalteten c=8 Lhat
+  Stresshistorien auf |d> erzeugt werden.
+
+Für die ursprünglichen c=1 Lcal Stresshistorien gilt dagegen die positive
+Zyklizität (12).
+
+Er lautet nicht:
+
+* P1 könne W8 grundsätzlich nicht enthalten;
+* eine größere lokale P1 Algebra könne die fehlende tangentiale Richtung nicht
+  tragen;
+* das alte F8 Stressmatrixelement müsse verschwinden;
+* die ursprüngliche c=1 Stressalgebra könne den W8 Antwortvektor nicht tragen.
+
+Insbesondere ist der alte F8 Befund ein nicht verschwindender Überlapp. Der
+neue Level eins Test zeigt eine Richtung außerhalb des gefalteten
+Virasoromoduls. Die ursprüngliche c=1 Stressalgebra trägt diese Richtung auf
+Grad acht vollständig. Beide Aussagen sind gleichzeitig konsistent.
+
+Zyklizität ist eine Zustandserreichbarkeitsaussage. Sie konstruiert noch keine
+lokale P1 Operatorabbildung, keine bestimmte einzelne Stressintervention und
+keine Gleichheit aller lokalen W8 OPE Daten. Sie beseitigt aber die künstliche
+Annahme, dass die alte Quelle für diesen Antwortvektor zwingend einen
+zusätzlichen Nichtstressgenerator benötige.
+
+Geprüfte Dateien
+----------------
+
+* experiments/theory-contracts/original-admissible-source-closure-20261025/
+  w8-source-twopoint-results.json
+* experiments/theory-contracts/original-admissible-source-closure-20261025/
+  quantum-octic-completion-results.json
+* experiments/theory-contracts/original-admissible-source-closure-20261025/
+  P1-W8-LOCAL-MAP-AND-TWOPOINT-TEST.txt
+* experiments/theory-contracts/original-admissible-source-closure-20261025/
+  check_w8_source_twopoint.py:75-140,218-305

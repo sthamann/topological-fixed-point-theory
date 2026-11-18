@@ -1,0 +1,119 @@
+1: """Exact joint source integration for the supplied charged collar.
+2: 
+3: This is a conditional complex-fermion quantization, not a P1/P2 selection proof.
+4: The primitive kinetic operator, source coupling and Berezin orientation are
+5: explicit inputs. No determinant of the archival D_rel comparison part is used.
+6: """
+7: from __future__ import annotations
+8: 
+9: import argparse
+10: import json
+11: from pathlib import Path
+12: 
+13: import sympy as s
+14: 
+15: 
+16: def clean(poly):
+17:     return {m: s.simplify(c) for m, c in poly.items() if s.simplify(c) != 0}
+18: 
+19: 
+20: def add(a, b):
+21:     result = dict(a)
+22:     for mask, value in b.items():
+23:         result[mask] = result.get(mask, 0) + value
+24:     return clean(result)
+25: 
+26: 
+27: def scale(a, value):
+28:     return clean({m: c * value for m, c in a.items()})
+29: 
+30: 
+31: def multiply(a, b):
+32:     result = {}
+33:     for left, ca in a.items():
+34:         for right, cb in b.items():
+35:             if left & right:
+36:                 continue
+37:             inversions = sum((right & ((1 << i) - 1)).bit_count()
+38:                              for i in range(left.bit_length()) if left >> i & 1)
+39:             mask = left | right
+40:             result[mask] = result.get(mask, 0) + (-1) ** inversions * ca * cb
+41:     return clean(result)
+42: 
+43: 
+44: def variable(index):
+45:     return {1 << index: s.Integer(1)}
+46: 
+47: 
+48: def exponential(poly, dimension):
+49:     if poly.get(0, 0) != 0:
+50:         raise ValueError("use an explicit scalar weight for the constant action")
+51:     result, term = {0: s.Integer(1)}, {0: s.Integer(1)}
+52:     for k in range(1, dimension + 1):
+53:         term = scale(multiply(term, poly), s.Rational(1, k))
+54:         if not term:
+55:             break
+56:         result = add(result, term)
+57:     return result
+58: 
+59: 
+60: def bilinear(matrix, bar_start=0, field_start=None):
+61:     n = matrix.rows
+62:     field_start = n if field_start is None else field_start
+63:     out = {}
+64:     for i in range(n):
+65:         for j in range(n):
+66:             out = add(out, scale(multiply(variable(bar_start + i),
+67:                                           variable(field_start + j)), matrix[i, j]))
+68:     return out
+69: 
+70: 
+71: def berezin_source(kinetic):
+72:     """Integrate exp(-barpsi K psi + bareta psi + barpsi eta) exactly.
+73: 
+74:     Internal order is all barpsi then all psi. The orientation is explicitly
+75:     chosen so integral exp(-sum barpsi_j psi_j)=1. External order is bareta,eta.
+76:     """
+77:     kinetic = s.Matrix(kinetic)
+78:     n = kinetic.rows
+79:     if kinetic.cols != n or not 1 <= n <= 3:
+80:         raise ValueError("bounded exact checker accepts square size 1..3")
+81:     action = scale(bilinear(kinetic), -1)
+82:     for j in range(n):
+83:         action = add(action, multiply(variable(2*n + j), variable(n + j)))
+84:         action = add(action, multiply(variable(j), variable(3*n + j)))
+85:     integrand = exponential(action, 4*n)
+86:     internal = (1 << (2*n)) - 1
+87:     orientation = (-1) ** (n * (n+1) // 2)
+88:     return clean({mask >> (2*n): orientation * value
+89:                   for mask, value in integrand.items() if mask & internal == internal})
+90: 
+91: 
+92: def determinant_source(kinetic):
+93:     kinetic = s.Matrix(kinetic)
+94:     if kinetic.det() == 0:
+95:         raise ValueError("inverse chart requires a separate zero-mode treatment")
+96:     return scale(exponential(bilinear(kinetic.inv()), 2*kinetic.rows), kinetic.det())
+97: 
+98: 
+99: def schur_source(kinetic, retained):
+100:     """Return both the effective boundary action and the interior scalar."""
+101:     kinetic = s.Matrix(kinetic)
+102:     retained = list(retained)
+103:     if len(set(retained)) != len(retained) or any(i not in range(kinetic.rows) for i in retained):
+104:         raise ValueError("retained indices must be unique valid field indices")
+105:     inner = [i for i in range(kinetic.rows) if i not in retained]
+106:     if not inner:
+107:         return kinetic.extract(retained, retained), s.Integer(1)
+108:     ii = kinetic.extract(inner, inner)
+109:     if ii.det() == 0:
+110:         raise ValueError("interior chart contains zero modes")
+111:     eff = (kinetic.extract(retained, retained)
+112:            - kinetic.extract(retained, inner)*ii.inv()*kinetic.extract(inner, retained))
+113:     return eff.applyfunc(s.simplify), s.factor(ii.det())
+114: 
+115: 
+116: def profile_obstruction(profile, x):
+117:     """Necessary commuting-sector test for S_f=-logdet K+constant.
+118: 
+119:     K must first be the actual fermionic kinetic operator. It is not identified

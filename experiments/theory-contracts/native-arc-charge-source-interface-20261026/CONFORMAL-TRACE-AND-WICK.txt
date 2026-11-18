@@ -1,0 +1,183 @@
+UR.NATIVE.ARCCHARGE.CONFORMAL-TRACE.01
+26 October 2026. Conformal Cauchy data and normalized boundary words.
+
+1. Question, original inputs, and decisive test
+The preceding continuation retained the free chiral CAR quantization of the
+actual same-E midpoint annulus. Does averaging its conformal metric factor
+necessarily produce a non-Wick four-point function? Test the actual trace
+map BEFORE assuming that a fluctuating metric means a fluctuating covariance.
+Success: derive the boundary Hilbert-space identification from the metric
+and the original massless Dirac equation, including both labelled faces.
+Abort equality if the transported Cauchy subspace or its orthogonal projector
+changes. No new geometry, mass, connection, state rule or time is selected.
+
+Original inputs retained:
+ - BOUNDARY-SOURCE.txt, elliptic-moebius-source-bridge-20261026, Sections1/4:
+   the same square conformal curve, annulus0<=t<=1/2, fixed spin and marks,
+   L=partial_t-i partial_s, and its closed Cauchy graph on both boundary faces.
+ - ELLIPTIC-GREEN-RP.txt in that folder: free chiral CAR functor is EXPLICIT.
+ - ELLIPTIC-CURRENT-SOURCE.txt in this folder: quarter covariance and current
+   functional in that state, without replacing it by the old Hardy vacuum.
+ - The original v45 constructive geometric measure integrates geometric
+   data; source_extracts--05_metrology_source/sections/005-section-absolute-
+   dimensionless-metrology-from-the-bounda.tex, lines136-178. Its general
+   support is NOT proved to be this conformal family here.
+ - Original v45 relative generating functional divides by Z_ref[0],
+   source_extracts--04_qft_source/sections/008-section-relative-reflection-
+   positivity-with-fermions.tex, lines139-169. No primitive Gaussian measure
+   is inferred from this source-independent denominator or from RP alone.
+
+2. General exact conformal trace theorem
+Let M be a smooth compact spin manifold of bulk dimension d with smooth
+boundary, fixed spin structure, and g_sigma=exp(2sigma)g for smooth real
+sigma. Use the canonical conformal spin-bundle identification. With this
+identification the physical massless spin Dirac operator satisfies
+ D_sigma=exp(-(d+1)sigma/2) D exp((d-1)sigma/2).             (1)
+This is the usual conformal Dirac law. A fixed twisted connection is allowed
+when it obeys this law; varying a connection or adding a mass is NOT covered.
+Smooth harmonic spinors therefore correspond bijectively by
+ psi_sigma=exp(-(d-1)sigma/2) psi_0.                       (2)
+The induced boundary density is
+ dSigma_sigma=exp((d-1)sigma_boundary)dSigma_0.
+Consequently the geometrically specified boundary L2 unitary is
+ V_sigma: H_boundary,sigma -> H_boundary,0,
+ V_sigma f=exp((d-1)sigma_boundary/2) f.                  (3)
+It is the positive scalar density correction for the canonical spin lift;
+no additional phase or fitted field redefinition is introduced. In particular
+ V_sigma Tr psi_sigma=Tr psi_0.                          (4)
+Thus V_sigma sends the smooth Cauchy-data spaces EXACTLY onto each other.
+Since it is unitary, the same holds for their L2 closures. Uniqueness of
+orthogonal projection onto a closed subspace proves
+ V_sigma P_sigma V_sigma^*=P_0.                          (5)
+Here P means the ORTHOGONAL Calderon projector. This proof is about its
+range, not an arbitrarily chosen nonorthogonal Seeley projection.
+Positive smooth multiplication and its inverse preserve the relevant
+Sobolev spaces on compact M. The smooth harmonic-space argument and the
+unitary closure avoid extrapolating a finite Fourier regulator to(5).
+No product collar is required after the conformal change.
+Chirality is preserved, so the same argument applies to the original
+chiral Cauchy space. No APS or other self-adjoint boundary condition is
+imposed before computing that space.
+
+3. Correct trace in the common bulk Hilbert space
+The bulk L2 unitary is U_sigma=exp(d sigma/2). Accordingly
+ D_tilde_sigma=U_sigma D_sigma U_sigma^*
+              =exp(-sigma/2) D exp(-sigma/2).             (6)
+For u_sigma=U_sigma psi_sigma, equation(2) becomes
+ u_sigma=exp(sigma/2)u_0.
+The actual fixed-boundary-space trace is NOT the unweighted raw trace:
+ T_sigma=V_sigma Tr U_sigma^*=exp(-sigma_boundary/2)Tr.   (7)
+Therefore T_sigma u_sigma=Tr u_0 on both faces. This is the missing
+normalization that an unweighted common-bulk-space restriction would lose.
+In particular, different positive scale factors on the two faces would
+change the raw graph slope and its raw orthogonal compression. Equation(7)
+compensates those factors exactly. This is not evidence for a new coupling.
+For arbitrary sigma(t,s), the original NS mode
+ u_n=exp(-lambda_n t)exp(i lambda_n s), lambda_n=2pi(n+1/2),
+satisfies L u_n=0 and
+ exp(-sigma/2)L[exp(-sigma/2)exp(sigma/2)u_n]=0.
+Its two weighted traces are the original two traces, without any assumed
+normal homogeneity or tangential mode decoupling of sigma.
+
+4. Actual labelled marginal and its quarter/current consequences
+V_sigma is componentwise multiplication on the same labelled faces. It
+therefore intertwines each face projection, as well as each regional support
+projection. Compress(5) to the ORIGINAL second face:
+ V_sigma,1 C_sigma V_sigma,1^*=C_0.                      (8)
+The fixed flat-representative covariance is still
+ C_0=(1+exp(2W B_Sigma))^-1, W=1/2,
+     =(1+exp(2pi B_cov))^-1,
+and still c_r=(1+exp(4pi(r+alpha)))^-1 for alpha=1/4,3/4
+after the existing NS-cover/quarter map. This is equality under the derived
+boundary unitary, not equality of coordinate kernels with different measures.
+The old quarter/fold map is applied AFTER that transport. V_sigma need not
+commute with old Fourier or quarter projectors; their physical images must
+also be transported. No new quarter sectors of a variable intrinsic boundary
+Dirac operator are silently substituted for the original ones.
+The covariance equality transports the bounded CAR algebra, its star
+operation, supports and the entire given quasifree state. All bounded CAR
+words, and the current Weyl functional already constructed, agree exactly.
+Native point-split composites agree when defined as images of the OLD
+operator distributions with the OLD subtraction, domains and smearing.
+The canonical local stress tensor defined anew from each metric can carry
+a conformal anomaly; it is not equated to that fixed transported composite.
+For an unchanged original reflection or clock symmetry, restrict sigma to
+profiles invariant under it; otherwise transport the geometric symmetry
+too. Neither convention proves that original P1 admits those variations.
+
+5. Averaging conformal geometries: exact all-order factorization
+Retain the existing explicit FREE conditional CAR source from Sections1/4.
+For every sigma, transport sources/test spinors by the dual of(3), so they
+represent the same bounded CAR insertions. The normalized conditional
+Grassmann functional is the SAME formal expression
+ Z_psi,sigma[eta]/Z_psi,sigma[0]=exp(bar_eta C_0 eta).     (9)
+Equivalently, every conditional word has the same expectation by(8).
+Let w(sigma) include all geometric weights, the source-free fermion
+determinant, reference effects, Jacobians and anomalies. If the integrals
+exist and their denominator is nonzero, source independence gives
+ [integral w(sigma)exp(bar_eta C_0 eta)]/[integral w(sigma)]
+        =exp(bar_eta C_0 eta).                          (10)
+No specific probability law for sigma, saddle approximation or neglect of
+determinant factors is needed. Even a complex weight factors algebraically
+under these existence conditions. Reflection positivity is not being used
+as a replacement for them.
+In particular, for the grouped four-field word with the previous convention,
+ <a_i^* a_k^* a_l a_j>=C_ij C_kl-C_il C_kj,
+so its connected fermionic four-point defect stays ZERO. All higher Wick
+words also remain fixed. Connected correlations of bilinear currents need
+not vanish; those are different observables from connected fermion four-point.
+For the ORIGINAL relative functional use
+ Zhat_rel[J]=Z_rel[J]/Z_rel[0]. A source-independent Z_ref[0] cancels
+in THIS normalization. It can still enter the effective geometry weight
+and its metric derivative; neither is asserted to be constant.
+If other geometric data xi vary as well, the same argument conditionally
+integrates out sigma at each fixed xi. The remaining effective weight may
+change the distribution of C_xi, and hence its non-Wick correlations.
+This corollary does not assert such a disintegration exists for full P1.
+
+6. What is simplified, and what is not identified
+The boundary Cauchy covariance only retains the conformal class in this
+massless fixed-spin/fixed-connection setting. It cannot reconstruct the
+Weyl factor. On the fixed complex curve E, every Hermitian Riemannian metric
+is conformal to its fixed representative: at each point a J-compatible
+positive form on a complex line has only one positive scalar coefficient.
+Thus this covers all such compatible metrics on the same marked curve,
+not just a specially chosen normal profile. Arbitrary metrics that change
+its complex structure, moving cuts or varying spin/connection are distinct.
+Bulk Dirac spectra, bulk resolvents, spectral actions, geometric
+forces and proper times can change along the same family. Existing nonzero
+conformal Schur/sea responses concern those other objects and are preserved.
+The constant-sigma identity D_tilde_sigma=exp(-sigma)D already shows why
+spectrum invariance would be false while(5) is true.
+The current result applies to the already given smooth midpoint annulus.
+It does not construct the unresolved closed real trace on the full ramified
+marked equator graph, identify its carrier with original P1, or select its
+spin/domain, clock, physical time, source measure or admissible algebra.
+It does not derive conditional free fermion quantization from S_prim.
+It excludes an automatic interacting four-point correction caused SOLELY
+by averaging this conformal factor with the correct trace and free premise.
+The next four-point comparison must isolate an original variation that
+actually changes the transported covariance, or an original higher fermion
+vertex. Geometry variance alone is not that criterion.
+
+7. Validation and literature
+The checker proves the density exponents and differential product rules
+symbolically, uses the actual NS harmonic mode, and verifies a two-mode
+closed-graph projector exactly with independent face scale factors. The
+wrong raw-trace compression is a strict nonzero countercontrol for all
+positive mode slopes when the face factors differ. This finite check is
+diagnostic; Sections2-4 prove the full closed-space statement.
+It also checks the general symbolic four-field and normalized source-weight
+factorizations, and detects a nonzero defect for an explicitly changing
+covariance. That control is an algebraic check, not a proposed physical model.
+Primary source: Guillarmou/Moroianu/Park, Bergman and Calderon projectors
+for Dirac operators, arxiv:1009.3179, Section3.1 (conformal Dirac law,
+orthogonal closed Cauchy space and Theorem11). Proposition7 and the paragraph
+after(12) independently give the boundary conformal conjugation law.
+ https://arxiv.org/abs/1009.3179
+ https://www.imar.ro/~sergium/fisiere/calderon.pdf
+The averaging conclusion(10) is the present elementary consequence under
+the retained free conditional premise, not a claimed quotation of that paper.
+Verdict: EXACT_SCOPED_CONFORMAL_CAUCHY_INVARIANCE;
+CONFORMAL_AVERAGING_PRESERVES_GIVEN_FREE_BOUNDARY_WICK_WORDS;
+ORIGINAL_P1_SOURCE_AND_INTERACTION_IDENTIFICATION_OPEN. No ledger promotion.

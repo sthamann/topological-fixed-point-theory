@@ -1,0 +1,612 @@
+# Was `P_adm` tatsächlich projiziert und wo die alte Kreislinie endet
+
+Datum: 2026-10-25  
+Atlas Stand: `83a57ce00f4418709c838faa`  
+Status: Originalquellenaudit. Keine Atlas, Index, Ledger oder Paper Änderung.
+
+## Entscheidung
+
+`P_adm` ist in den Originalpapers weder der positive Spektralprojektor des alten Kreisoperators noch ein Rang eins Projektor. Seine präziseste Fassung in v42 ist ein mehrstufiger Hodge und Constraint Projektor:
+
+\[
+P_{\rm adm}
+=P_{\rm prim}P_{\rm sing}P_\Theta
+=P_{\Sigma,+}P_{\rm gap}P_{\rm sing}P_\Theta,
+\qquad
+P_{\Sigma,+}=P_C.
+\]
+
+Hier ist `P_C` der Calderón Projektor auf Rand Cauchydaten, `P_gap` entfernt den niedrigen Spektralbereich eines admissiblen Sektoroperators, `P_sing` wählt Farbsinguletts und `P_Theta` den Determinantensektor. Erst nach der Osterwalder Schrader Rekonstruktion wird dasselbe Symbol als Selektor des physischen Raums
+
+\[
+\mathcal H_{\rm adm}=\operatorname{Ran}(P_{\rm adm})\subset\mathcal H_{\rm OS}
+\]
+
+verwendet. Die Quellen geben keine explizite Transportabbildung an, welche den Randprojektor auf dem einteilchigen Cauchydatenraum in diesen rekonstruierten Hilbertraum oder dessen CAR Fockraum überführt.
+
+Das alte `u=M_z` ist in den älteren Papers ein unitärer Matching beziehungsweise Clutching Operator zwischen den beiden Randkopien. Es ist dort kein Element der späteren lokalen Observablenalgebra. Deshalb widerlegt die fehlende `u*` Invarianz des positiven Hardy Raums nicht die alte Gluing Konstruktion. Sie widerlegt nur die stärkere Identifikation, `u` sei bereits ein zulässiger Operator der späteren Sternalgebra auf `H_adm`.
+
+Die vorhandene positive Abbildung reicht weiter als bisher festgehalten:
+
+\[
+(\mathcal A_+,\mathcal H_+,D_+,B_\Sigma)
+\longmapsto P_C
+\longmapsto P_{\Sigma,+}=P_C
+\longmapsto P_{\rm prim}=P_CP_{\rm gap}
+\longmapsto P_{\rm adm}.
+\]
+
+Sie liefert einen kanonischen admissiblen Sektor aus dem einseitigen Randproblem. Sie liefert jedoch noch keine Abbildung
+
+\[
+\text{erste Kreislinie}\longmapsto
+|\psi_\Sigma\rangle\langle\psi_\Sigma|
+\]
+
+und keine Identität zwischen diesem Rang eins Projektor und dem späteren minimalen EM Transfer.
+
+Es gibt allerdings einen stärkeren kanonischen Anschluss, der weder `H_adm=P_+` noch einen Wärmegrenzwert voraussetzt. Auf dem alten Kreis sei `C=P_-` die negative Spektralpolarisation und `u=M_z`. Dann gilt bei der in Abschnitt 5 verwendeten Orientierung exakt
+
+\[
+uCu^*=C+\Pi_0,
+\qquad
+\Pi_0=|e_0\rangle\langle e_0|.
+\]
+
+Der relative Kovarianzdefekt ist also die kanonische erste Kreislinie. Weil er Rang eins und damit Hilbert Schmidt ist, sind die beiden CAR Polarisierungen Fock äquivalent; der ladungseins Implementer erzeugt relativ zum `C` Vakuum die Linie von `c_0^*\Omega_C`. Das beseitigt die freie Wahl von `psi_Sigma` mathematisch. Die Originale identifizieren ihren EM Operator jedoch nirgends mit dieser Kovarianzdifferenz und typisieren `psi_Sigma` nicht als Einteilchenvektor oder Fockzustand. Der Anschluss ist deshalb eine direkte Rekonstruktion aus den alten Operatoren, noch keine in den Papers ausgesprochene EM Identität.
+
+## 1. v31: `P_adm` beginnt als abstrakter Hodge Projektor
+
+Quelle: `paper-source:12323340247079857eb23f60`  
+Pfad: `documents/archive--paper-latex--tfpt-31/sections/002-subsection-primitive-relative-spectral-dynamics.tex`  
+Zeilen: 1 bis 109  
+SHA256: `6d8813b95a1ef4d82ee9cd48a25efff3f9c20066a06b85ad121bc26e5dbaae77`
+
+v31 startet mit
+
+\[
+\mathcal T_{\min}^{\rm adm}=(\mathcal A,\mathcal H,D,J,\Gamma,\iota,\nu),
+\qquad
+D=\gamma_n(\partial_n+B_\Sigma)
+\]
+
+und nimmt bei Bedarf die Realisierung
+
+\[
+\mathcal H\cong L^2(\widetilde M,S)\otimes\mathcal H_{\rm int}
+\]
+
+an. Der tangentiale Operator `B_Sigma` gehört damit zum Randdatum. Er wird nicht mit dem älteren `D_Gamma` identifiziert.
+
+Quelle: `paper-source:c108d5aa4300090790075793`  
+Pfad: `documents/archive--paper-latex--tfpt-31/sections/011-subsection-transport-side-ingredients-for-the-strong-cp-.tex`  
+Zeilen: 67 bis 236  
+SHA256: `67f45f9072363128377e9e48735d24fb1748e504b57c0ab44dc136454e1ed144`
+
+Der damalige admissible Raum wird als Faktorraum
+
+\[
+\mathcal H=\mathcal H_\Sigma\otimes\mathcal H_c
+\otimes\mathcal H_\Theta\otimes\mathcal H_t
+\]
+
+geschrieben. Die vier positiven Strafoperatoren testen Nahtgeradheit, Farbneutralität, Determinantensektor und Transportgap. Dann
+
+\[
+P_{\rm adm}=\Pi_{\ker\Delta_{\rm adm}}
+=\operatorname*{s-lim}_{\beta\to\infty}e^{-\beta K_{\rm adm}}
+\]
+
+und auf dem kommutierenden Zweig
+
+\[
+P_{\rm adm}=P_{\Sigma,+}P_{\rm sing}P_\Theta P_{\rm gap}.
+\]
+
+In v31 ist `P_{Sigma,+}=(1+iota)/2`, also ein Geradheitsprojektor der Deckinvolution. Es gibt dort noch keine Formel `P_{Sigma,+}=1_{(0,infty)}(B_Sigma)` und keinen Bezug zu `u=M_z`.
+
+## 2. v42: der positive Fortschritt ist `P_{Sigma,+}=P_C`
+
+Quelle: `paper-source:543cbb0e445a456e04ec4efc`  
+Pfad: `documents/archive--paper-latex--tfpt-42/sections/003-subsection-primitive-relative-spectral-dynamics.tex`  
+Zeilen: 1 bis 214 und 256 bis 292  
+SHA256: `8683d7459140a06d5e03a06adefd05bf7e6538356e4e4da4397133aa991b8fe4`
+
+v42 beginnt konkreter mit dem einseitigen Randdatum
+
+\[
+\mathcal T_\partial=(\mathcal A_+,\mathcal H_+,D_+,J,\Gamma,B_\Sigma),
+\qquad D_+=\gamma_n(\partial_n+B_\Sigma).
+\]
+
+Nach Verdopplung wird der Calderón Projektor `P_C` auf dem Cauchydatenraum `H_partial` gebildet und
+
+\[
+\iota_C=2P_C-1
+\]
+
+gesetzt. Der primitive Nahtselektor ist anschließend
+
+\[
+P_{\Sigma,+}=\frac{1+\iota_C}{2}=P_C.
+\]
+
+Der primitive Projektor ist
+
+\[
+P_{\rm prim}=P_C P_{\rm prim,gap}
+=\Pi_{\ker\Delta_{\rm prim}}.
+\]
+
+Dies ist die stärkste in den Quellen vorhandene positive Abbildung vom ursprünglichen Randproblem in die admissible Architektur. Sie ist mehr als ein bloß gleicher Name. Der Projektor wird wirklich aus dem einseitigen Dirac Randproblem über dessen Cauchydatenraum konstruiert.
+
+Die Quelle sagt aber nicht, dass dieser Calderón Projektor gleich dem positiven Spektralprojektor des alten Viertelkreisoperators ist. Es fehlt bereits eine lokale isometrische Einbettung des ursprünglichen reduzierenden Quellsektors, welche die erste Kreislinie in den admissiblen Bildraum trägt. Eine unitäre Identifikation des gesamten Kreisraums,
+
+\[
+W:L^2(S^1,L_a)\longrightarrow\mathcal H_\partial,
+\qquad
+WB_aW^*=B_\Sigma,
+\qquad
+WP_+(B_a)W^*=P_C,
+\]
+
+wäre eine hinreichende, aber deutlich stärkere Alternative. Sie ist für den lokalen Bildnachweis nicht notwendig. Auch diese globale Alternative und die Verträglichkeit der ersten Kreislinie mit `P_prim,gap` werden nicht angegeben.
+
+Die tfpt45 Quellenextraktion wiederholt dieselbe Konstruktion, ohne die fehlende Kreisabbildung zu ergänzen:
+
+Quelle: `paper-source:8027564739689dd02e02f11c`  
+Pfad: `documents/archive--tfpt-45--source_extracts--01_boundary_kernel_source/sections/001-section-primitive-core-and-carrier-interface-handoff.tex`  
+Zeilen: 58 bis 314  
+SHA256: `7d6e673d99c29d950dc601283cd51c1cc0b113567eeb79c8396fec9c82a02c79`
+
+## 3. Der volle Projektor und sein Raum
+
+Quelle: `paper-source:032c510c1e9343d3edda1ae5`  
+Pfad: `documents/archive--paper-latex--tfpt-42/sections/022-section-closure-theorems-from-the-admissibility-complex.tex`  
+Zeilen: 1 bis 123  
+SHA256: `fe626eb8126375f8e0028914a19e045802478f76f0c9b8e6655b8331b70848b2`
+
+Nach Carrier und Determinantenclosure lautet der volle Projektor
+
+\[
+P_{\rm adm}=P_{\rm prim}P_{\rm sing}P_\Theta
+=P_CP_{\rm gap}P_{\rm sing}P_\Theta.
+\]
+
+Die Faktoren wirken laut Quelle auf den kommutierenden Sektoren
+`H_Sigma`, `H_c`, `H_Theta`, `H_t`. `P_adm` ist deshalb ein Sektorprojektor auf einem großen Hilbertraum. Seine Definition sagt weder Rang eins noch Einteilchenraum.
+
+Quelle: `paper-source:dc394ac2febb4ca550f4989b`  
+Pfad: `documents/archive--paper-latex--tfpt-42/sections/039-subsection-residual-readout-and-interface-refinements.tex`  
+Zeilen: 153 bis 250  
+SHA256: `0ceca3e9ae667adc17e9d6c44541f7f4b59a49fc68fcefc1b16b7d164c8bd990`
+
+Der Symbolführer bestätigt dieselbe Bedeutung. `Adm(X)=1` heißt `P_adm X=X`; die Kriterien umfassen Domäne, endliche relative Wirkung, Nahtgeradheit, bei Bedarf Farbneutralität sowie Gap und Transportpositivität. Das ist eine physische Sektorauswahl, keine einzelne Nahtmode.
+
+Quelle: `paper-source:543cbb0e445a456e04ec4efc`  
+Pfad wie oben  
+Zeilen: 256 bis 292
+
+Erst nach der späteren OS Rekonstruktion definiert der Text
+
+\[
+\mathcal H_{\rm adm}:=\operatorname{Ran}(P_{\rm adm})
+\subset\mathcal H_{\rm OS}.
+\]
+
+Die lokale admissible Algebra besteht aus Einschränkungen jener Minkowski Operatoren `A`, für die sowohl
+
+\[
+A\mathcal H_{\rm adm}\subset\mathcal H_{\rm adm},
+\qquad
+A^*\mathcal H_{\rm adm}\subset\mathcal H_{\rm adm}
+\]
+
+gilt. Der Text betont ausdrücklich, dass die lokale Algebra durch Einschränkung auf einen invarianten Raum und nicht durch globale Kompression `P_adm A P_adm` definiert ist.
+
+Quelle: `paper-source:85f53177bd297144a924b0c3`  
+Pfad: `documents/archive--paper-latex--tfpt-42/sections/041-section-relative-aps-and-superconnection-setup.tex`  
+Zeilen: 89 bis 129  
+SHA256: `5b7f02f6ba794c8c32b3f74d90a456912a4ab9b78522060d26955179016373e8`
+
+Der OS/CAR Satz konstruiert unter Reflexionspositivität, Temperiertheit, Kovarianz, graduierter Symmetrie und Clustering einen neuen Hilbertraum `H_OS` aus einem Quotienten positiver Zeitobservablen. Er sagt, die Rekonstruktion bleibe auf dem `P_adm` Sektor. Eine konkrete Isometrie oder Zweitquantisierung
+
+\[
+\mathcal H_\partial\longrightarrow\mathcal H_{\rm OS}
+\]
+
+für `P_C`, `B_Sigma` oder die erste Kreislinie wird nicht angegeben. Die Verwendung desselben Projektorsymbols über Rand Cauchydaten, Faktorraum und OS Raum ist daher eine erklärte Architektur, aber noch kein ausgeschriebener Operatorintertwiner.
+
+## 4. Rolle des alten `u`: Übergang, nicht admissible Observable
+
+Quelle: `paper-source:1fe2ddfabc74ac0e94a4686d`  
+Pfad: `documents/archive--paper-latex--tfpt-theory-fullv21/sections/001-section-introduction-the-problem-of-parameters.tex`  
+Zeilen: 198 bis 251  
+SHA256: `85bb11511be05385a7cadf6071dbede216b12befeb9d6767bc4460748cbec5d7`
+
+Die alte Quelle nennt `U_Gamma` einen unitären Matching Operator zwischen `Gamma_+` und `Gamma_-`. `U_Gamma(theta)=e^{itheta}` parametrisiert die Gluing Familie und ihren Spektralfluss. Das ist die Rolle eines Clutching Operators zwischen Randdaten. Die Quelle setzt ihn nicht in eine lokale Observablenalgebra ein.
+
+Quelle: `paper-source:bbbd320d16f44d87bc9e99e5`  
+Pfad: `documents/archive--paper-latex--tfpt-42/sections/006-subsection-character-trace-identities-and-the-abelian-in.tex`  
+Zeilen: 245 bis 285  
+SHA256: `341f53fab64f6f2cca53e505d497cdc7087285c95e8e0f44f616ac6754afa810`
+
+Auch der spätere Satz vom primitiven Nahtgenerator enthält nur
+
+\[
+[u_\Sigma]=1\in K^1(S^1),
+\qquad SF(U_\Sigma)=1.
+\]
+
+Sein Beweissketch schließt von einer elementaren relativen Nahtklasse auf einen positiven Umlauf. Er konstruiert weder einen Eigenvektor noch `P_CuP_C`, einen Toeplitz Defektraum oder einen Rang eins Spektralprojektor.
+
+Eine gezielte Literalprüfung der v31, v42, tfpt45 und aktiven Paper 1/2 Quellen fand keine Formel `P_CuP_C`, kein `M_z` und keine behauptete Gleichheit von `P_C` mit einem Hardy Projektor.
+
+## 5. Kleinster Invarianztest
+
+Auf dem bereits verifizierten Viertelkreis sei
+
+\[
+B_a e_n=(n+a)e_n,
+\qquad 0<a<1,
+\qquad ue_n=e_{n+1},
+\qquad P_+=\mathbf1_{(0,\infty)}(B_a).
+\]
+
+Dann ist `Ran(P_+)=span{e_n:n>=0}`. Es gilt
+
+\[
+u\operatorname{Ran}(P_+)\subset\operatorname{Ran}(P_+),
+\qquad
+u^*e_0=e_{-1}\notin\operatorname{Ran}(P_+).
+\]
+
+Also ist der positive Kreisraum unter `u`, aber nicht unter `u*` invariant. Daraus folgt exakt:
+
+* Wenn `u` als Element derselben lokalen Sternalgebra gelten soll, kann `H_adm=Ran(P_+)` die v42 Invarianzdefinition nicht erfüllen.
+* Die Originale verlangen diese Zuordnung nicht. Sie behandeln `u` als Matching und K1 Generator. Als Übergangsoperator darf es verschiedene Polarisierungen oder Randkopien verbinden.
+* Die Toeplitz Kompression `P_+uP_+` ist ein einseitiger Shift auf dem positiven Raum. Sie ist nicht die Einschränkung eines Operators, der den Raum gemeinsam mit seinem Adjungierten reduziert. Deshalb kann eine spätere Toeplitz Defektlinie nicht ohne weitere Abbildung als lokales admissibles Observable ausgegeben werden.
+
+Dieser Test entscheidet die engste mögliche Fehlidentifikation und lässt die historisch tatsächliche Clutching Rolle intakt.
+
+## 6. Minimaler EM Transfer ist ein anderer Projektor
+
+Quelle: `paper-source:c6aa05563c9c859fbbda7bed`  
+Pfad: `documents/archive--paper-latex--tfpt-42/sections/007-subsection-carrier-form-of-the-electromagnetic-closure.tex`  
+Zeilen: 13 bis 47  
+SHA256: `6f98cfb7404f415e4a511712c1fa144c85bb662c36386cc32d1ebb3537a9fb6b`
+
+Die EM Quelle definiert
+
+\[
+U_\Sigma^{\min}=|\psi_\Sigma\rangle\langle\psi_\Sigma|
+\]
+
+als Rang eins Projektor. Sie sagt nicht, dass `P_adm=U_Sigma^min`. `tr_adm` kann einen Rang eins Operator auf einem viel größeren admissiblen Raum auswerten. Der Modus wird lediglich durch Verweis auf den K1 Satz als singled out bezeichnet; der K1 Satz selbst liefert keine Linie.
+
+Quelle: `paper-source:482df41c92cd8cfa9d57ed45`  
+Pfad: `documents/archive--paper-latex--tfpt-42/sections/029-section-frw-reduction-seam-transfer-and-the-scalaron-bra.tex`  
+Zeilen: 10 bis 135  
+SHA256: `0d89ad0434fe7c373ea190a4e116cad32e1b362516b7aeec9b163931115ab97f`
+
+Der volle Wärmeübertrag
+
+\[
+P_{\rm adm}e^{-\ell|B_\Sigma|}P_{\rm adm}
+\]
+
+bleibt wiederum ein allgemeiner spurklassiger Operator. Der Rang eins Fall steht dort hinter `If, moreover`. Damit sind drei Projektoren zu unterscheiden:
+
+1. `P_C`: einteilchige Rand Cauchydatenpolarisation,
+2. `P_adm`: voller physischer Sektorprojektor,
+3. `U_Sigma^min`: zusätzlich definierter Rang eins EM Transfer.
+
+Keine geprüfte Quelle setzt zwei dieser drei Operatoren gleich.
+
+## 7. Die tfpt45 primitive Orbitformel schließt die Abbildung ebenfalls nicht
+
+Quelle: `paper-source:79aeb188204547f963615df9`  
+Pfad: `documents/archive--tfpt-45--07_cmb_operational_closure_planck_pipeline/sections/007-section-hook-solution-sketches-v4-6-5.tex`  
+Zeilen: 250 bis 270  
+SHA256: `7b7c7d3fa47cc00ef771818c65f2a5c31c0c705d3890b8128a2d2ebe6e1a16da`
+
+Diese Quelle erklärt, `P_adm`, `theta_eff=0` und Closed Branch Selection ließen nur die minimale primitive Nahtklasse in einer Orbitspur übrig. Sie definiert dabei jedoch
+
+\[
+\log\det^{\rm prim}_{\rm adm}(1-U_\Sigma)
+:=-\operatorname{Tr}^{\rm prim}_{\rm adm}(U_\Sigma),
+\]
+
+also nur den linearen ersten Spurterm und nicht den gewöhnlichen Fredholm Logarithmus. Die Multiplizität wird mit zwei Blättern gesetzt. Es gibt weder eine Hilbertraumrealisierung dieses `U_Sigma` noch eine Abbildung zur späteren Linie `psi_Sigma`. Diese historische Formel ist daher kein übersehener Beweis des Rang eins EM Transfers.
+
+## 8. Aktive Paper 1 und 2: eine reale CAR Kandidatenroute, noch keine EM Identität
+
+Quelle: `paper-source:7b58a2b8767cacd98fa2feb4`  
+Pfad: `documents/tfpt_1_architecture_e8/sections/004-source.tex`  
+Zeilen: 100 bis 207  
+SHA256: `a064d8bb1c49f7dae14899defaa62ca07ed27e1fa27e01cc482bff64c02a462f`
+
+Paper 1 enthält den stärksten weiteren positiven Kandidaten. Eine Calderón Polarisation des freien Majorana Modells wird durch einen Projektor `P=M/2` beschrieben. Sein Rang ist im Carrierblock fünf und in der Naht Hülle acht. Der zugehörige gemeinsame Annihilatorkern bestimmt eine eindeutige Fock Vakuumlinie.
+
+Das ist eine konkrete mathematische Route
+
+\[
+\text{einteilchige Calderón Polarisation}
+\longmapsto
+\text{quasifreier CAR Zustand}
+\longmapsto
+\text{eindeutige Vakuumlinie}.
+\]
+
+Sie ist für die aktuelle Lücke relevant, aber sie identifiziert keine Rang eins Einteilchenmode. Der Calderón Projektor selbst hat Rang fünf beziehungsweise acht; Rang eins ist erst die Vakuumlinie im zugehörigen Fockraum. Die Quelle markiert außerdem die notwendige Premise Merge und die Aussage, dass die physische Naht genau diesen sheet odd Calderón Kern liefert, als `recorded, not claimed` beziehungsweise konditional.
+
+Quelle: `paper-source:3f317fe584ec4f10d994c6ae`  
+Pfad: `documents/tfpt_2_standard_model/sections/007-subsection-2-gravity-the-classical-covariant-field-equat.tex`  
+Zeilen: 180 bis 230  
+SHA256: `d110376a2d97decdaa06d3f6c90375ec242e63a26ea7af299d45945f9658f91b`
+
+Paper 2 bestätigt den Status: P1, einschließlich Randkernel, Calderón und Seam Winding, ist nur als typisierte Schnittstelle formalisiert; die analytischen Voraussetzungen sind importiert.
+
+Quelle: `paper-source:c38e82c9a06f5aeed1d3e1ad` und `paper-source:2f8a823f065f3d3a1c82d4dc`  
+Pfad: `documents/tfpt_2_standard_model/sections/010-section-the-explicit-mass-gap-closes-dynamics-and-cluste.tex`  
+Zeilen: 1 bis 100 und 273 bis 380  
+SHA256: `3a31f272d999f1e0b027f25a877068576c6cbdc83150c7b5c0f8a6e17bed1904`
+
+Das finite `C6` Transfermodell besitzt dort eine einfache Perron Vakuumlinie und einen expliziten Gap. Es ist aber ein separater endlicher Transportoperator mit Spektrum `{1,(2/3)^6,(1/3)^6}`. Derselbe Text markiert die physische Projektion über `P_adm` als `claimed` und konditional. Weder der Perron Vektor noch die CAR Vakuumlinie werden mit `psi_Sigma` des EM Transfers gleichgesetzt.
+
+## 9. Direkter CAR Defektanschluss aus dem alten Kreis
+
+Für
+
+\[
+B_a e_n=(n+a)e_n,
+\qquad 0<a<1,
+\qquad ue_n=e_{n+1}
+\]
+
+ist die negative Polarisation
+
+\[
+C=P_-(B_a)=\sum_{n\le -1}|e_n\rangle\langle e_n|.
+\]
+
+Eine Basiskontrolle genügt:
+
+\[
+uCu^*e_k=
+\begin{cases}
+e_k,&k\le 0,\\
+0,&k\ge 1,
+\end{cases}
+\]
+
+und daher
+
+\[
+uCu^*-C=|e_0\rangle\langle e_0|=:\Pi_0.
+\]
+
+Bei umgekehrter Orientierung steht entsprechend `u*` anstelle von `u`. Diese Formel ist stärker als die bloße Indexaussage. Sie bestimmt die Defektrichtung selbst. Da `uCu*-C` Rang eins hat, erfüllt `u` das Hilbert Schmidt Kriterium für die Implementierbarkeit zwischen den quasifreien CAR Darstellungen der Polarisierungen `C` und `uCu*`. In der üblichen geladenen Fockrealisierung ist die neue Vakuumlinie relativ zur alten die Linie von
+
+\[
+c_0^*\Omega_C,
+\]
+
+und ihre überschüssige Einteilchenkovarianz ist exakt `Pi_0`. Damit entstehen ohne freie Wahl zwei zusammengehörige, aber verschieden typisierte Rang eins Objekte:
+
+\[
+\Pi_0=|e_0\rangle\langle e_0|
+\quad\text{auf dem Einteilchenraum},
+\]
+
+\[
+|c_0^*\Omega_C\rangle\langle c_0^*\Omega_C|
+\quad\text{auf dem Fockraum}.
+\]
+
+Diese Unterscheidung ist für die EM Formel entscheidend. Der v42 Text nennt `psi_Sigma` nur eine normalisierte primitive Nahtmode und schreibt anschließend ihren Rang eins Projektor hin. Er sagt nicht, auf welchem der beiden Räume dieser Projektor wirkt.
+
+Die unmittelbar vorausgehende Quelle enthält zwar die Formulierung eines minimalen relativen Defektzustands:
+
+Quelle: `paper-source:bbbd320d16f44d87bc9e99e5`  
+Pfad: `documents/archive--paper-latex--tfpt-42/sections/006-subsection-character-trace-identities-and-the-abelian-in.tex`  
+Zeilen: 249 bis 289  
+SHA256: `341f53fab64f6f2cca53e505d497cdc7087285c95e8e0f44f616ac6754afa810`
+
+Der Satz beweist nur die K1 Klasse und den Spektralfluss. Die anschließende Bemerkung deutet den primitiven Startzustand als minimalen relativen Defektzustand mit zwei Blättern und einer Windung, bezeichnet dieses Bild aber ausdrücklich als heuristisch und nicht als neues Theorem. Weder `C`, `uCu*-C`, ein CAR Implementer noch eine relative Zwei Punkt Funktion erscheinen dort.
+
+Die EM Definition selbst ist ebenfalls eindeutig begrenzt:
+
+Quelle: `paper-source:c6aa05563c9c859fbbda7bed`  
+Pfad: `documents/archive--paper-latex--tfpt-42/sections/007-subsection-carrier-form-of-the-electromagnetic-closure.tex`  
+Zeilen: 20 bis 48 und 145 bis 151  
+SHA256: `6f98cfb7404f415e4a511712c1fa144c85bb662c36386cc32d1ebb3537a9fb6b`
+
+Sie definiert `U_Sigma^min` als Projektor auf `psi_Sigma` und benutzt nur die Rang eins Determinantenidentität. Eine gezielte Atlas und Literalprüfung der v42 und tfpt45 Originalmodule fand keine Bezeichnung von `U_Sigma^min` als überschüssige Kovarianz, relative Korrelationsfunktion oder Fock Defektantwort. `tr_adm` wird hier als gewöhnliche Spur des rank eins Operators verwendet, nicht als relative Zustandserwartung hergeleitet.
+
+Damit ist der Status präzise:
+
+* **Bewiesen aus dem alten Kreispaar:** Der relative Einteilchenkovarianzdefekt ist die kanonische Linie `Pi_0`; die entsprechende geladene Focklinie ist kanonisch und braucht kein frei gewähltes `psi`.
+* **Mit der historischen Sprache kompatibel:** Primitive relative Windung und minimaler relativer Defektzustand passen genau zu dieser Konstruktion.
+* **In den Originalen nicht vollzogen:** `U_Sigma^min=Pi_0`, die Implementierung desselben `u_Sigma` in der physisch admissiblen CAR Darstellung und die Lesart von `tr_adm` als Spur des relativen Kovarianzdefekts.
+
+Dieser Anschluss umgeht den Invarianzeinwand aus Abschnitt 5: `u` muss dabei kein lokales Observable auf `H_adm` sein. Es implementiert den Übergang zwischen zwei quasifreien Polarisierungen. Er benötigt auch keine Identifikation des EM Gewichts mit einer Wärmevariablen. Die historischen Quellen liefern bereits bedingt
+
+\[
+q(\alpha)=\delta_{\rm top}e^{-\alpha d\,\mathrm{SF}}
+=\delta_{\rm top}e^{-2\alpha}
+\]
+
+aus der deklarierten Defektwirkung auf dem Grad zwei Cover mit `SF=1`. Offen ist die physische Identität, dass gerade der rekonstruierte CAR Kovarianzdefekt diese primitive Quelle in der EM Spur realisiert. Sobald diese Identität gezeigt ist, folgt das Gewicht aus der vorhandenen Quellenwirkung; es braucht keine zusätzliche Gleichsetzung mit Energie, Ladung oder Teilchenzahl.
+
+## 10. Was die alte Doppelüberdeckungsantwort tatsächlich zählt
+
+Der direkte CAR Anschluss aus Abschnitt 9 bestimmt eine Defektlinie. Er erklärt für sich allein noch nicht den Exponenten `2` in `exp(-2 alpha)`. Die älteren Quellen führen diesen Exponenten auf eine andere Operation zurück.
+
+Quelle: `paper-source:1fe2ddfabc74ac0e94a4686d`  
+Pfad: `documents/archive--paper-latex--tfpt-theory-fullv21/sections/001-section-introduction-the-problem-of-parameters.tex`  
+Zeilen: 165 bis 190  
+SHA256: `85bb11511be05385a7cadf6071dbede216b12befeb9d6767bc4460748cbec5d7`
+
+Die orientierbare Doppelüberdeckung ist dort ein neues Axiom. Als Konsequenz setzt der Text zwei identische Randbeiträge plus Naht an und ordnet diesen beiden Beiträgen den Faktor zwei der Rückwirkung zu. Es wird keine gegenläufige Randpumpe und keine CAR Ladung definiert.
+
+Quelle: `paper-source:c0087bb39f24847f7e0a02a2`  
+Pfad: `documents/archive--paper-latex--tfpt-theory-fullv21/sections/002-subsection-closure-axioms-a7-a8.tex`  
+Zeilen: 227 bis 264  
+SHA256: `6a44df43d61d84b026c5ad15a1bdbdcc8822e741b4af8b709f0f3563fa3c0b6a`
+
+Hier wird die Defektantwort als Sektorengewicht definiert:
+
+\[
+S_{\rm def}(\alpha)=S_{\rm def}(0)+\alpha\mathcal J,
+\qquad
+\delta_{\rm top}(\alpha)=\delta_{\rm top}e^{-\alpha\mathcal J}.
+\]
+
+Für einen Grad `d` Cover mit identischen Blattbeiträgen setzt die Quelle
+
+\[
+\mathcal J=d\mathcal J_1
+\]
+
+und wählt anschließend die minimale deckinvariante Normierung `J_1=1`. Zusätzlich wird `J` als deckinvariantes Quellfunktional bezeichnet, dessen Integral über dem Cover das `d` Fache des Basisintegrals ist. In dieser Version ist `J_1` weder als Operator noch als Dichte definiert. Die Zahl eins ist eine Normierungswahl.
+
+Eine spätere Fassung verschärft genau diesen Punkt:
+
+Quelle: `paper-source:9b4c68c76ce528733b40f829`  
+Pfad: `documents/archive--paper-latex--tfpt-theory-fullv27/sections/003-subsection-the-cubic-fixed-point-equation-cfe.tex`  
+Zeilen: 285 bis 325  
+SHA256: `8ae0867de9ddbd50e3684aa9b9b023d58791252c3fa146da7fc7b8ddf9cc1dd4`
+
+Quelle: `paper-source:98e6667091fb1774109f5f2a`  
+Pfad: `documents/archive--paper-latex--tfpt-theory-fullv28/sections/004-subsection-geometric-self-consistency-backreaction.tex`  
+Zeilen: 17 bis 59  
+SHA256: `e2aa38f61b269e4c907559084ac6df3bf811961516c0cc72dd70d3285fd59081`
+
+v27 und unverändert v28 identifizieren die Normierung pro Blatt mit der Spektralflusseinheit,
+
+\[
+\mathcal J_1=\mathrm{SF},
+\qquad
+\mathcal J=d\,\mathrm{SF}.
+\]
+
+Für `d=2` und `SF=1` entsteht `J=2`. Das ist die vorhandene positive Quellenantwort: `J_1` wird später als ganzzahliger Spektralfluss, also als Indexzahl, gelesen. Der Text gibt jedoch keine lokale Indexdichte an und setzt `J_1` nirgends mit einem Teilchenzahloperator `N_exc`, einer CAR Ladung `Q` oder `Q^2` gleich.
+
+Der kleinste Test trennt diese Kandidaten. Für die verschobene negative See aus Abschnitt 9 gilt bei der dort fixierten Orientierung
+
+\[
+W_u\Omega_C\sim c_0^*\Omega_C,
+\qquad
+Q_{\rm rel}=+1,
+\qquad
+E_{\rm rel}=a.
+\]
+
+Für den inversen Übergang wird die besetzte Mode `e_{-1}` entfernt:
+
+\[
+W_{u^*}\Omega_C\sim c_{-1}\Omega_C,
+\qquad
+Q_{\rm rel}=-1,
+\qquad
+E_{\rm rel}=1-a.
+\]
+
+Beim Vorwärtsübergang haben `SF`, `Q`, `N_exc` und `Q^2` alle den Zahlenwert eins. Erst der inverse Übergang unterscheidet sie: `SF` und `Q` wechseln das Vorzeichen, `N_exc` und `Q^2` bleiben positiv. Eine gegenläufige Zweirandpumpe hätte daher
+
+\[
+Q_{\rm tot}=0,
+\qquad
+N_{\rm exc,tot}=2,
+\qquad
+E_{\rm tot}=a+(1-a)=1
+\]
+
+unter derselben Kreisorientierung. Keine dieser drei Größen liefert automatisch den Koeffizienten zwei vor `alpha`. Zwei gleichgerichtete Übergänge hätten dagegen `Q_tot=2` und Energie `2a`. Welche dieser Wirkungen die Decktransformation physisch koppelt, wird in den geprüften Quellen nicht angegeben.
+
+Die Originalantwort verwendet ausdrücklich identische Blattbeiträge und addiert zwei positive Spektralflusseinheiten. Sie konstruiert keinen gegengerichteten neutralen Zyklus. Wollte man die beiden Beiträge trotz inverser globaler CAR Ladung jeweils als lokal positiven Spektralfluss zählen, wäre eine blattabhängige Orientierungsregel nötig. Eine solche Regel und die zugehörige Wirkung auf `B_a`, `u`, die Fockräume und die physische Zeit stehen nicht im Text.
+
+Auch die spätere Zweidefektformel schließt diese Lücke nicht. In derselben v28 Quelle, Zeilen 71 bis 102, ist
+
+\[
+\delta_2 e^{-4\alpha}
+=\frac54(\delta_{\rm top})^2e^{-4\alpha}
+\]
+
+ein separater zweiter Term einer Cluster und Holonomiebelegung mit Paarsymmetriefaktor, Blattpaarungsfaktor und `g=5`. Er realisiert den ersten Term `delta_top exp(-2 alpha)` nicht als neutrales Teilchen Loch Paar.
+
+Damit ist die Antwort auf die Kopplungsfrage eng:
+
+* **Historisch zunächst gesetzt:** `J_1=1` als minimale deckinvariante Normierung.
+* **Historisch später identifiziert:** `J_1=SF` als Spektralfluss beziehungsweise Indexzahl pro identischem Blatt.
+* **Nicht definiert:** `J_1=N_exc`, `J_1=Q^2`, eine lokale Indexdichte oder ein Hamiltonian beziehungsweise Energieoperator.
+* **Numerisch nur im Vorwärtssektor kompatibel:** Für den einzelnen Seeübergang ist `SF=Q=N_exc=Q^2=1`. Der inverse Übergang trennt die Lesarten.
+* **Keine vorhandene neutrale Realisierung:** Die Quellen enthalten keine konkrete paarweise Nahtoperation `u` auf einem Blatt und `u*` auf dem anderen, die Gesamtladung null mit der admissiblen EM Antwort verbindet.
+
+Der Faktor zwei in `exp(-2 alpha)` folgt im Original somit aus Covergrad mal identischem, spektralflussnormalisiertem Quellbeitrag. Er folgt nicht aus der Energie, der Nettoladung oder der absoluten Teilchenzahl des nun rekonstruierten CAR Defekts. Für eine vollständige Verbindung müsste die ursprüngliche Nahtphysik zusätzlich zeigen, wie der deckinvariante Quellterm auf die beiden relativen CAR Übergänge wirkt und warum seine Kopplung an `alpha` beide Beiträge mit gleichem positiven Vorzeichen zählt.
+
+## 11. Maximaler vorhandener Transport und verbleibender Beweisschritt
+
+Die Originale tragen bereits folgende Kette:
+
+\[
+\boxed{
+\mathcal T_\partial
+\to P_C
+\to P_{\rm prim}
+\to P_{\rm adm}
+\to \text{admissible OS/CAR Theorie}
+}
+\]
+
+Zusätzlich existieren drei Darstellungen einer kanonischen Linie:
+
+* die einfache erste Energielinie des konkret gegebenen Viertelkreisoperators im normierten Infrarotgrenzwert,
+* der exakte relative Kovarianzdefekt `uP_-u*-P_-`, der dieselbe erste Kreislinie ohne Grenzwert auswählt,
+* die dazugehörige geladene Focklinie sowie, allgemeiner, die eindeutige quasifreie CAR Vakuumlinie einer Calderón Polarisation.
+
+Diese Linien liegen auf zwei Ebenen. Die erste Energielinie und der zweite Kovarianzdefekt sind dieselbe Rang eins Linie auf dem Einteilchenraum, einmal als Spektralprojektor und einmal als relative Kovarianzdifferenz beschrieben. Erst die dritte Linie ist eine Vielteilchen Vakuum beziehungsweise Ladungslinie im Fockraum. Der spätere Text nennt `psi_Sigma` eine primitive seam mode, typisiert aber nicht, auf welcher dieser Ebenen sie liegt.
+
+Der kleinste belastbare verbleibende Schritt ist deshalb kein weiterer Modusscan, sondern ein typisierter Intertwiner:
+
+1. Konstruiere auf einem ursprünglichen reduzierenden oder lokalen Quellsektor `K_0`, der die Defektlinie enthält, eine isometrische Einbettung
+   \[
+   W_0:\mathcal K_0\to\mathcal H_\partial
+   \]
+   welche die dort eingeschränkten Wirkungen von `B_a` und `u` mit den ursprünglichen Randoperatoren verschränkt. Als stärkere hinreichende Alternative kann man eine unitäre Karte `W:L^2(S^1,L_a) -> H_partial` mit `WB_aW*=B_Sigma` und `WP_+(B_a)W*=P_C` konstruieren. Eine solche globale Hilbertraumäquivalenz ist nicht notwendig.
+2. Prüfe für die erste Kreislinie `Pi_0` exakt
+   \[
+   R_0:=W_0\Pi_0W_0^*\le P_{\rm prim},
+   \qquad
+   P_{\rm sing}R_0=R_0,
+   \qquad
+   P_\Theta R_0=R_0.
+   \]
+   Äquivalent genügt der direkte Bildtest `P_adm R_0=R_0`. Bloße Kommutation mit `P_sing` und `P_Theta` reicht nicht, weil eine kommutierende Rang eins Linie in deren Kern liegen kann.
+3. Entscheide explizit, ob `U_Sigma^min` diese Einteilchenlinie oder die durch CAR Zweitquantisierung daraus entstehende Vakuumlinie bezeichnet. Im zweiten Fall ist die Fock Abbildung `Gamma(W)` und die Lage der Vakuumprojektion in `H_OS` anzugeben.
+4. Prüfe alternativ direkt, ob die physische Naht dasselbe `u` in derselben CAR Darstellung implementiert und ob `tr_adm` auf dem relativen Einteilchenkovarianzdefekt ausgewertet wird. Dann folgt `U_Sigma^min=Pi_0` ohne Wärmegrenzwert. Mit der bereits deklarierten Defektwirkung folgt anschließend bedingt `q(alpha)=delta_top exp(-alpha d SF)=delta_top exp(-2 alpha)`. Für eine eigenständige Wärmeroute wäre nur noch zu zeigen, dass deren Wärmeparameter dieselbe historische Defektwirkung parametrisiert.
+
+Der kleinste entscheidende Beweis ist nun die Typ und Darstellungsidentität in Schritt 4. Sie ist schwächer als eine vollständige Gleichheit des Kreisprojektors mit `P_C`: Es genügt zu zeigen, dass der originale physische Nahtzyklus in der admissiblen CAR Darstellung durch dasselbe `u` wirkt und dass die EM Spur seinen relativen Kovarianzdefekt liest. Scheitert diese Identität, bleibt der lokale Bildtest aus Schritt 1 und 2 als Calderón Route. Gelingt sie, sind die Linie und ihr Gewicht aus der bereits deklarierten Quellenwirkung bestimmt. Offen bleibt dann die physische Herleitung, warum die EM Antwort genau diese Quelle koppelt, nicht die mathematische Formel des Gewichts innerhalb dieser Quelle.
+
+## 12. Verifikation
+
+Der vorhandene Kreis und Wärmechecker wurde unverändert ausgeführt:
+
+```text
+python3 experiments/theory-contracts/older-paper-source-recovery-20261025/check_older_circle_heat.py
+python3 -OO experiments/theory-contracts/older-paper-source-recovery-20261025/check_older_circle_heat.py
+```
+
+Beide Läufe endeten mit `verdict: PASS`. Sie bestätigen die Spektralzeichen, die einfachen Viertelkreis Gaplinien, die positive und negative Faktorisierung sowie die bekannten ersten Serienabweichungen. Der Checker markiert die Identifikation des ursprünglichen admissiblen Sektors mit dem EM Parameter weiterhin als `OPEN`. Er prüft nicht den hier fehlenden Intertwiner `W`.
+
+## Urteil
+
+* **Aus den Originalen bewiesen:** In v42 ist der primitive Nahtselektor algebraisch exakt der Calderón Projektor `P_C`. `P_adm` ist dessen Gap, Farb und Determinantenupgrade. Die admissible lokale Sternalgebra verlangt gemeinsame `A` und `A*` Invarianz.
+* **Exakt ausgeschlossen:** `P_adm` ist nicht der Rang eins EM Projektor. Der positive Kreisraum kann nicht zugleich als reduzierender Raum des Matching Operators `u` gelten, weil `u*` die erste positive Mode verlässt.
+* **Quellengetreu kompatibel:** Das alte `u` ist Clutching beziehungsweise Matching und muss deshalb kein lokales admissibles Observable sein.
+* **Konstruktiver Kandidat:** Die Calderón Polarisation besitzt in der aktiven Paper 1 Route nach CAR Zweitquantisierung eine eindeutige Vakuumlinie. Diese Linie ist kanonisch und braucht keinen frei gewählten Vektor.
+* **Direkt aus dem alten Kreispaar bewiesen:** `uP_-u*-P_-` ist exakt die erste Kreislinie `Pi_0`; die zugehörige geladene Focklinie ist ebenfalls kanonisch. Das ist die stärkste Reparatur der freien `psi_Sigma` Wahl und benötigt weder `H_adm=P_+` noch einen Wärmegrenzwert.
+* **Quellenstatus des Exponenten:** v21 setzt `J_1=1` minimal deckinvariant; v27 und v28 identifizieren `J_1` mit der Spektralflusseinheit und summieren zwei identische Blattbeiträge. Keine Quelle setzt `J_1` mit Energie, Teilchenzahl oder Ladungsquadrat gleich oder konstruiert eine neutrale gegenläufige Zweirandpumpe.
+* **Bedingt aus der historischen Quellenwirkung:** Ist der rekonstruierte CAR Defekt dieselbe primitive Quelle, dann ist `q(alpha)=delta_top exp(-alpha d SF)=delta_top exp(-2 alpha)` bereits festgelegt. Dafür ist keine Gleichsetzung von Spektralfluss, Energie, Ladung und Teilchenzahl nötig.
+* **Nicht in den Originalen bewiesen:** Dass der physische Nahtzyklus dasselbe `u` in der admissiblen CAR Darstellung implementiert, dass `U_Sigma^min` die überschüssige Einteilchenkovarianz und nicht einen Fock Dichteprojektor bezeichnet, und dass `tr_adm` genau diesen relativen Defekt auswertet. Ebenfalls offen bleiben der lokale admissible Bildtest, die stärkere Gleichheit des alten Kreisprojektors mit `P_C` und seine Einbettung in `H_OS`.

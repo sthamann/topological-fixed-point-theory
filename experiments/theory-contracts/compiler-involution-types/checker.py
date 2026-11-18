@@ -15,8 +15,7 @@ import sympy as sp
 HERE = Path(__file__).resolve().parent
 ROOT = HERE.parents[2]
 PINS = {
-    "experiments/theory-contracts/carrier-module-conjugation/checker.py": "87cd67ca2588a41aec5b1237250e45cca69f40ff7701c9a38206c6a0d29af1e7",
-    "experiments/double-cover-rh-audit-2026-09-08/seam_source.py": "5012826dffdc90775f71b6b3a908dffde441f50ae1f455de5a532a3734349a1d",
+    "experiments/theory-contracts/carrier-module-conjugation/checker.py": "19d1e320742a831b41b2dc933b8ad28f64185e99bf015220d1b69e61c92c5ca9",
     "experiments/tfpt-discovery/seam_state_derivation_probe.py": "5e54c416be72a125a8ce6e235b4300f9f9c2344b3ada796d2dc4c7e2ea01482b",
 }
 
@@ -56,7 +55,7 @@ def exact_source_prefix():
     with optimize=0; do not mutate the upstream loader or its source file.
     """
     verify_pins()
-    path = ROOT/list(PINS)[2]
+    path = ROOT / "experiments/tfpt-discovery/seam_state_derivation_probe.py"
     source = path.read_text()
     tree = ast.parse(source)
     namespace = {"__name__": "involution_original_source", "__file__": str(path)}

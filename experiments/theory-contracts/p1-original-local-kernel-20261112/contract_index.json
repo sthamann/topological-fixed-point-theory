@@ -1,0 +1,41 @@
+{
+  "contract": "p1-original-local-kernel-20261112",
+  "date": "20261112",
+  "question": "Does original P1 force native holonomy type 1+5 and local parallel nullity? Evaluate its actual local source kernel and full-source execution path.",
+  "verdict": "PARTIAL",
+  "verdict_enum": [
+    "PARTIAL",
+    "REFUTED",
+    "KERNEL_VIOLATION"
+  ],
+  "claims_tested": [
+    "MATH.ORIGINAL.C6.SHIFTED.INVERSE.NULL.01",
+    "MATH.ORIGINAL.C6.MARKED.S5.SPECTRAL.OBSTRUCTION.01",
+    "AUDIT.ORIGINAL.P1.HODGE.PERRON.DIRECTION.01"
+  ],
+  "gates": [
+    "T1",
+    "T2",
+    "T8"
+  ],
+  "kills": [
+    "Bare local C6 step treated as a physical closed-loop holonomy without an original map",
+    "Centered C6 Green identified with an S5-equivariant native marked five despite multiplicities2,2,1",
+    "Parent already using the Perron line counted as an independent state derivation",
+    "Diagnostic empty bundle or local C6 product counted as full P1 integral"
+  ],
+  "checker": "evaluate_original_kernel.py",
+  "firewall": "experiments",
+  "promotion": false,
+  "source_pins": {
+    "documents/archive--tfpt-45--source_extracts--01_boundary_kernel_source/sections/001-section-primitive-core-and-carrier-interface-handoff.tex": "7d6e673d99c29d950dc601283cd51c1cc0b113567eeb79c8396fec9c82a02c79",
+    "documents/archive--tfpt-45--source_extracts--03_em_flavor_source/sections/003-subsection-discrete-phase-operator-and-transport-grammar.tex": "00a2cf1b249b77280dbbf6dfb41c91c77e08aa63e0f30b682d1a8a621f3dd7ec",
+    "documents/archive--tfpt-45--source_extracts--03_em_flavor_source/sections/004-source.tex": "107d525221eb816043dbf4fb1a3c7e8244d3e24a5a5bcbfe1c2c34d8ee192f4a",
+    "documents/archive--tfpt-45--source_extracts--03_em_flavor_source/sections/005-source.tex": "786d2619e775775d70adf177794138485b261968042a880b2f0f617bb0111814",
+    "documents/archive--tfpt-45--source_extracts--04_qft_source/sections/004-source.tex": "a5d1cc26f80d2f1d5af3d89b94cf8ff8912b572040614d4e1c27f1fe3b747126",
+    "verification/v774_arf_spinor_compiler.py": "3ef92c17d9f0de62212bab940ac2c017be866645d8a5b276bdcf2d92128bae8c",
+    "experiments/theory-contracts/original-paper-source-reconciliation-20261102/fieldsearch_20261106P/source/evaluator.py": "2a42bddf5f0d037009fca673ccb2c4ac4b729f6b7c87445a4f9f244d72ed4962",
+    "experiments/theory-contracts/original-paper-source-reconciliation-20261102/fieldsearch_20261106P/domain/native-diagnostic-v1.json": "7fbe04de691cfedbde4eec25735727e86daf06aaedba9ecd8b314a4e0cc2d9bf"
+  },
+  "scope": "Exact original local kernel and restricted source audit; no full original P1 Q0/Z values, no full physical completion."
+}

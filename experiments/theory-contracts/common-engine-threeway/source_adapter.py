@@ -13,7 +13,7 @@ GLUE = "experiments/theory-contracts/half-twist-grade-carry/checker.py"
 LATTICE = "verification/v774_arf_spinor_compiler.py"
 PINS = {
     PARENT: "559afdf7c50a27f8f921b0e7087541962cec02986779d23dbcb52f6b1e073e52",
-    GLUE: "1336ef54c776794f2a587fbd9c7250f069394ae9e509e2e32dc91a357fa8ab47",
+    GLUE: "0109b5f8ca4cea8fa1d78a9fea904ee958ff31381eef423e482e65fee873afb7",
     LATTICE: "3ef92c17d9f0de62212bab940ac2c017be866645d8a5b276bdcf2d92128bae8c",
 }
 

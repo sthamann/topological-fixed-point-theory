@@ -1,0 +1,139 @@
+{
+  "schema": "tfpt.positive-kernel-campaign.v1",
+  "campaign_identity": "e70fb29b12569b27b288a497de7ab235a6cd31da184cc7ff817e4d4bda294c06",
+  "configuration": {
+    "m": 2,
+    "degree": 2,
+    "seed": 7,
+    "transfer_floor": 0.0,
+    "cluster_gap": 0.0,
+    "transfer_ceiling": 1.0,
+    "transfer_kind": "vacuum_effect",
+    "reference_eigenvalue": 1.0,
+    "objective": "feasibility",
+    "solver": "SCS",
+    "fixed_moments": [
+      {
+        "word": [
+          0,
+          1
+        ],
+        "re": "0",
+        "im": "1"
+      },
+      {
+        "word": [
+          2,
+          3
+        ],
+        "re": "0",
+        "im": "1"
+      }
+    ],
+    "linear_relations": [
+      {
+        "terms": [
+          {
+            "word": [
+              0,
+              -1,
+              0
+            ],
+            "re": "1",
+            "im": "0"
+          },
+          {
+            "word": [
+              2,
+              -1,
+              2
+            ],
+            "re": "-16",
+            "im": "0"
+          }
+        ],
+        "re": "0",
+        "im": "0"
+      }
+    ],
+    "source_observables": {
+      "scope": "Conditional single-chiral charged pair, alpha=1/4, declared ell=4log4, relative transfer and vacuum CAR state; not the full physical TFPT source",
+      "source_path": "experiments/theory-contracts/seam-collar-multifield-20261016/results/charged-pair-control.json",
+      "input_path": "/Users/stefanhamann/Projekte/tfpt-theoryv4/experiments/theory-contracts/seam-positive-kernel-search-20261015/charged-clock-relation-control-20261102/source-control.json",
+      "input_sha256": "5bdd51dbcf0c9f75a9ca8330c75e2c851f6fcfcbfd3177722df213727af3a396"
+    },
+    "completion_representation": "minimal_fock"
+  },
+  "code_sha256": {
+    "run_search.py": "ea212b5f5edfc4473e044e9ed08255d804d6272b8e3e77a3c7cbe190ae642915",
+    "kernel_search.py": "d158e991b9ad7f2fa2d8011e228589830d90db06fa4e21c919f546dbcd67c315",
+    "finite_completion.py": "80f5bae4afe92b6784ed4941524066c2fe5593839e0adbbd7af1eb47646a7f8d",
+    "gns_completion.py": "0bd344c70f48fe5b347204890d70ee8f2e166c41a54dec4eebad92d67ecc59df",
+    "exact_certificate.py": "57753a3efff8b0b9de70cec60b0a4afa96b9e8d1343ee01eb0a49809ffac3840",
+    "word_algebra.py": "25964ecf2b718372210ddc669ed402677d61cf180c62839a0f3cc9338b1d5254",
+    "linear_relations.py": "0664ff0b0e021f052f9024cd5fb78de55a14a597bd43a50f2841c612ffa5bb74"
+  },
+  "search_restrictions": {
+    "objective": "feasibility",
+    "objective_role": "feasibility_only_no_state_or_response_optimization",
+    "objective_definition": "Constant zero objective; no occupation or response is optimized.",
+    "global_transfer_floor": 0.0,
+    "completion_cluster_gap": 0.0,
+    "global_transfer_ceiling": 1.0,
+    "transfer_kind": "vacuum_effect",
+    "reference_eigenvalue": 1.0,
+    "reference_eigenvalue_scope": "Explicit supplied eigenvalue in T Omega=lambda Omega, not a value derived from P1 or an absolute source normalization",
+    "transfer_scope": "Declared bounded positive reference-eigenvector transfer class; ceiling1 is a vacuum/effect restriction, not universal thermal GNS time. A supplied source outside these bounds is a class mismatch, not physical exclusion.",
+    "completion_objectives": "min/max trace explore compatible finite completions; they do not select physical sources",
+    "scope": "Explicit search/calibration restrictions, not a physical source selector or native scale"
+  },
+  "completion_ansatz": {
+    "representation": "minimal irreducible CAR Fock space of dimension2^m",
+    "transfer_type_requirement": "vacuum_effect with ceiling1 and reference_eigenvalue1 only; no scaled-reference or thermal GNS completion claimed",
+    "state_requirement": "all inferred occupations within1e-6 of0 or1 in the given mode basis",
+    "status": "additional realization ansatz, not selected by feasibility or inferred from nonflat moments",
+    "mixed_state_handling": "inconclusive if this completion cannot handle the state; no fallback forcing pure occupations"
+  },
+  "inconclusive_completion_is_not_source_exclusion": true,
+  "conditional_normalized_state": true,
+  "absolute_partition_function_recovered": false,
+  "state_normalization_scope": "omega(1)=1 normalizes the conditional state only; it is not a recovered Z(0)",
+  "solver_status": "optimal",
+  "certified_finite_completions": 0,
+  "completions": [
+    {
+      "objective": "min-trace",
+      "ok": false,
+      "verdict": "INCONCLUSIVE_FINITE_FOCK_COMPLETION",
+      "reason": "Input rational recovery failed at word (0, -1, 0): No rational with denominator <=64 within1e-6 of 0.14476725063965443",
+      "dimension": null,
+      "finite_clustering": null,
+      "finite_unitary_field_time": false
+    },
+    {
+      "objective": "max-trace",
+      "ok": false,
+      "verdict": "INCONCLUSIVE_FINITE_FOCK_COMPLETION",
+      "reason": "Input rational recovery failed at word (0, -1, 0): No rational with denominator <=64 within1e-6 of 0.14476725063965443",
+      "dimension": null,
+      "finite_clustering": null,
+      "finite_unitary_field_time": false
+    }
+  ],
+  "next_question": {
+    "status": "NO_TWO_CERTIFIED_COMPLETIONS"
+  },
+  "original_source_derivation": false,
+  "physical_marking_selected": false,
+  "physical_quarter_holonomy_identified": false,
+  "event_instrument_derived": false,
+  "verdict": "SEARCH_INCONCLUSIVE_NO_CERTIFIED_COMPLETION",
+  "scope": "Finite CAR search and an explicitly additional minimal Fock completion; not a physical seam construction.",
+  "elapsed_seconds": 0.07480220799334347,
+  "artifacts": {
+    "moments.json": "247557b42c003690fcf0d74f89075e05b80384d263fbd8fb88bbcf8d3c1c5210",
+    "next-source-question.json": "90220034cecd81683564cd9115e169cd5bd1339d7bd3aa8391e9cff2ddf88ecd",
+    "min-trace.json": "a5dbb333bec8b13a2d9aa668b78c1397421a4bda4f030db3a43d62026b89ccb2",
+    "max-trace.json": "0d414af742394834b9a0f4ca04ddc5ceffae6a39a4bfa8052dbc674e150d3f78"
+  }
+}

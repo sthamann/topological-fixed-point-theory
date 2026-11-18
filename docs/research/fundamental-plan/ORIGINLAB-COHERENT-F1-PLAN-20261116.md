@@ -3,7 +3,7 @@
 Der Anhang legt eine kohärente Zweikopienquelle, eine reine Fourierreferenz,
 die rohe relative Auslese auf dem K4 Block, geordnete Marker, einen
 additiven Generator und einen kohärenten Viererdecoder vor. Die
-[Gegenprüfung mit Fable 5.2]([private review])
+[Gegenprüfung mit Fable 5.2](https://claude.ai/chat/791d8159-fb91-41aa-8e63-3fa572440e88)
 priorisiert eine ausführbare gemeinsame Quelle, Energiefalsifikationen,
 einen wiederaufnehmbaren Suchlauf und unabhängige formale Abnahme.
 

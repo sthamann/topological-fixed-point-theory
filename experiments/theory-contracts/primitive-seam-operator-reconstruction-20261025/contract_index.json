@@ -1,0 +1,72 @@
+{
+  "contract": "primitive-seam-operator-reconstruction-20261025",
+  "date": "2026-10-25",
+  "research_id": "MATH.PRIMITIVE.SEAM.OPERATOR-RECONSTRUCTION.01",
+  "question": "Do the original TFPT boundary and QFT papers construct the primitive seam line, its original time, and the full graded source; can their first unsupported identifications be repaired from the existing operators rather than a new source model?",
+  "verdict": "PARTIAL",
+  "verdict_enum": ["PASS", "PARTIAL", "FAIL"],
+  "mathematical_verdict": "PROVED_CONDITIONAL_COMPLETE_B_U_SPECTRAL_RECONSTRUCTION; PROVED_FULL_MOMENT_OS_CORRECTION; ORIGINAL_SOURCE_APPLICATION_OPEN",
+  "claims_tested": [
+    "MATH.PRIMITIVE.SEAM.OPERATOR-RECONSTRUCTION.01",
+    "MATH.PAPER.FULL-MOMENT-OS-REPAIR.01",
+    "MATH.PAPER.FIELD-OBSERVABLE-TYPING.01",
+    "AX.P1.01"
+  ],
+  "gates": ["T1", "T2", "T3"],
+  "physical_gates_closed": [],
+  "complete_TFPT_solution": false,
+  "checker": "check_first_identifications.py",
+  "proof": "SPECTRAL-SEAM-RECONSTRUCTION.txt",
+  "additional_proofs": [
+    "TOEPLITZ-SEAM-RECONSTRUCTION.txt",
+    "OS-SOURCE-REPAIR.txt",
+    "REVIEW.txt"
+  ],
+  "results": "identification-results.json",
+  "firewall": "experiments",
+  "promotion": false,
+  "relations": [
+    {"type": "references", "target": "paper-source-reconstruction-20261025"},
+    {"type": "references", "target": "native-octic-seam-origin-20261025"}
+  ],
+  "assumptions": [
+    "Conditional spectral theorem: original self-adjoint B and original unitary u on the same H satisfy strong covariance exp(itB)u exp(-itB)=exp(it)u, zero is outside sigma(B), and the same-pair positive spectral compression has Fredholm index -1.",
+    "The optional quarter conclusion additionally requires actual exp(2 pi i B)=i I on the reconstructed original sector, not only a four-step clock or normal spin lift.",
+    "Conditional Calderon version: (1-P_C)uP_C=0 and index(P_CuP_C)=-1; purity is unnecessary for its canonical embedded circle sector.",
+    "The corrected OS construction uses the FULL graded normalized source moments, the actual reflection convention, and complete positive-time regularity/growth assumptions.",
+    "Physical boundary transport requires a local graded word map preserving the original full reflected source functional and original time. Odd fields need not themselves lie in the physical observable algebra."
+  ],
+  "leaves_open": [
+    "Derivation of the strong B_Sigma/u_Sigma relation and actual same-pair index from the original TFPT boundary source.",
+    "Actual quarter monodromy, original spacetime localization, reflection, elliptic collar domains and finite relative action on the source image.",
+    "Construction of the original full mixed source Z_adm and the compatible graded word map, or a sufficient state-compatible neutral image.",
+    "Coupled interacting spacetime source, generation/mirror selection, controlled infrared universality, physical instruments and remaining full TFPT completion requirements."
+  ],
+  "not_claimed": [
+    "The original papers prove the hypotheses of the new positive operator theorem.",
+    "Index one alone chooses a vector, an isometric shift, a physical covariance or a quarter offset.",
+    "Calderon P_C must equal a quantum CAR polarization, or odd CAR fields must preserve the admissible observable subspace.",
+    "A finite cyclic transfer spectrum alone constructs a full interacting spacetime measure.",
+    "An exact continuum OS limit is a universal completion prerequisite when the original consistent local lattice/IR route is used.",
+    "A complete fundamental TFPT solution or a promoted original ledger verdict."
+  ],
+  "summary_de": "Die Originalkette überspringt den Übergang von Windung eins zu einer bestimmten Nahtlinie und verwendet verbundene Schwingerfunktionen als volle OS Momente. Ein positiver Satz rekonstruiert den gesamten ursprünglichen Kanal aus dem selben B,u Paar bei starker Kovarianz, Gap und Index -1. Der kanonische Projektor ist 1_(0,1](B), eine Viertelphase fixiert optional epsilon=1/4. Die volle Momentrekonstruktion und korrekte Trennung von graduierten Feldern und zulässigen Observablen sind angegeben. Die tatsächlichen ursprünglichen Operatorbeziehungen und Z_adm bleiben herzuleiten.",
+  "scope": "Original archived TFPT 4.5 primitive boundary, carrier, EM and QFT passages, compared with the active P1/P2, Paper2 conditional QFT closure, and explicit lattice completion contracts. Infinite-dimensional analytic operator theorem and exact first-identification countercontrols, not a new physical model.",
+  "original_sources": [
+    "documents/archive--tfpt-45--source_extracts--01_boundary_kernel_source/sections/001-section-primitive-core-and-carrier-interface-handoff.tex",
+    "documents/archive--tfpt-45--source_extracts--01_boundary_kernel_source/sections/002-section-intrinsic-closed-branch-and-canonical-rigid-obje.tex",
+    "documents/archive--tfpt-45--source_extracts--02_carrier_source/sections/007-subsection-bosonic-relative-index-and-higgs-selection.tex",
+    "documents/archive--tfpt-45--source_extracts--03_em_flavor_source/sections/001-section-kernel-numerics-and-electromagnetic-closure.tex",
+    "documents/archive--tfpt-45--source_extracts--04_qft_source/sections/002-section-closure-theorems-from-the-admissibility-complex.tex",
+    "documents/archive--tfpt-45--source_extracts--04_qft_source/sections/005-subsection-admissible-schwinger-functions-minkowski-loca.tex",
+    "documents/archive--tfpt-45--source_extracts--04_qft_source/sections/008-section-relative-reflection-positivity-with-fermions.tex",
+    "documents/tfpt_2_standard_model/sections/007-subsection-2-gravity-the-classical-covariant-field-equat.tex",
+    "documents/tfpt_2_standard_model/sections/010-section-the-explicit-mass-gap-closes-dynamics-and-cluste.tex",
+    "documents/tfpt_research_contracts/sections/017-source.tex"
+  ],
+  "kills": [
+    "Abstract winding or index one by itself implies a canonical rank-one ordinary seam transfer.",
+    "Connected cumulants can be substituted directly for complete moments in an OS Gram matrix.",
+    "A charged field algebra must be wholly embedded in the physical observable algebra before its positive-time source can be reconstructed."
+  ]
+}

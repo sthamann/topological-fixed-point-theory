@@ -1,0 +1,55 @@
+{
+  "steps": [
+    {
+      "step": "W1.exact: charged D_{1/4}(-2,-1)_ii = -24/(35 pi), geometric = -1/(2 pi), difference -13/(70 pi)",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "step": "W2.microscopic charged [K_N(-2)-K_N(-1)]_ii (all 16 bands) reproduces the external table and approaches -24/(35 pi), not -1/(2 pi)",
+      "pass": true,
+      "detail": "N=128: -0.2220908092, N=512: -0.2196902728, N=2048: -0.2186719860; limit -0.2182696362"
+    },
+    {
+      "step": "W3.neutral top-edge density channel: the low-energy weight S(n) -> |n|, concentrated at energy |n| (holonomy cancels); bulk interband weight sits at E ~ N gap",
+      "pass": true,
+      "detail": "n=1: S/n=1.0000, at E=n 1.0000; n=2: S/n=1.0000, at E=n 1.0000; n=4: S/n=1.0000, at E=n 1.0000; n=8: S/n=1.0000, at E=n 1.0000"
+    },
+    {
+      "step": "W4.neutral Weyl function from the microscopic source: K(-2)-K(-1) -> geometric (-1/2pi diagonal, cosine kernel at pi/2, pi), real; deviation shrinks with N",
+      "pass": true,
+      "detail": "max dev N=128: 1.2e-03, N=512: 9.1e-04, N=2048: 3.5e-04; N=2048 th=0.000: -0.159500 vs -0.159153; th=1.571: 0.019496 vs 0.019473; th=3.142: 0.036239 vs 0.036194"
+    },
+    {
+      "step": "W5.||J_{-n}Omega||^2 = n at energy exactly n; the isometry e_n -> J_{-n}Omega/sqrt n needs |a_n|^2 = 1/n; no local d^k phi (weights n^(2k-1)) has weight 1",
+      "pass": true,
+      "detail": "the geometric seam access = H^{1/2} boundary trace / Newton-Wigner localisation (canonical, non-local in the current algebra)"
+    }
+  ],
+  "passed": 5,
+  "total": 5,
+  "charged": {
+    "128": -0.22209080921972493,
+    "512": -0.21969027281609166,
+    "2048": -0.21867198604022706
+  },
+  "neutral_weyl": {
+    "0.000000": [
+      -0.15949991401560504,
+      -0.15915335155042024
+    ],
+    "1.570796": [
+      0.019495924309475055,
+      0.019472743172200407
+    ],
+    "3.141593": [
+      0.036239461650617116,
+      0.03619362897436226
+    ]
+  },
+  "neutral_weyl_convergence": {
+    "128": 0.0012031782802761903,
+    "512": 0.000912146343951814,
+    "2048": 0.00034656246518480205
+  }
+}

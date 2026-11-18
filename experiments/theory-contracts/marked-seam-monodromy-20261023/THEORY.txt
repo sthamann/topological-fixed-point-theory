@@ -1,0 +1,349 @@
+MATH.SEAM.MONODROMY.01 — Marked seam geometry and quarter-clock lifts
+23 October 2026. Purely mathematical definitions, theorems and certificates.
+
+0. Scope and notation
+
+This starts a mathematical program from existing lattice, clock and quartic
+structures. Definitions below are declared definitions of this program.
+They are not asserted to have been primitive axioms of an earlier theory.
+The complete finite classification in Section4 is for the full SIGN-LIFT
+preimage of the existing cyclic quarter-clock subgroup. It does not
+classify every reflection quadruple in G31 or W(E8), and does not quotient
+by mapping classes, permutations of punctures or outer automorphisms.
+Nor does it impose a separate equivariant lift of a spatial reflection.
+
+1. Category of marked seam geometries
+
+Work with compact finite-CW pairs (Y,Sigma), and U=Y minus Sigma. For the
+surface subcategory Sigma is a finite ordered set of punctures. A reflected
+pair includes an involution tau of Y preserving Sigma. Additional clock
+actions, such as a C4 action, are optional explicitly marked automorphisms.
+
+A lattice transport datum is a functor H:Pi_1(U)->Lat_q. The target has
+free finite-rank integral lattices with an even integral symmetric form;
+arrows are lattice isometries. Its finite quadratic datum is
+  q_L(x mod2L)=(x,x)/2 mod2.
+It is well defined since replacing x by x+2y changes this by
+2(x,y)+2(y,y). Transport preserves q_L. An independently chosen finite
+quadratic module may instead be an additional marking, stated separately.
+
+The local system L and, after choosing a basepoint and fiber chart, the
+representation rho are descriptions of H, not independent arbitrary
+inputs. Changing the fiber chart conjugates rho. For a reflected object
+include an isometric natural transformation T:H -> tau*H with
+T_(tau x) T_x=1. This reflection marking is real/integral; in a complex
+chart it may be semilinear and must not be called a complex reflection.
+
+A morphism consists of a map of marked pairs f, avoiding Sigma' on U,
+and a natural fiberwise isometry H -> f*H'. It respects reflections and
+any clock/peripheral markings that were declared. Composition uses pullback
+and composition of natural transformations. Isomorphisms have f a marked
+homeomorphism and invertible fiber maps. Allowed homotopies are homotopies
+of such maps through the same pair/reflection constraints, together with
+the induced compatible transport identifications.
+
+The direct-sum product uses
+  (Y,Sigma) times (Z,Lambda)
+   =(Y times Z, (Sigma times Z) union (Y times Lambda)),
+  H_product=pr_Y*H direct_sum pr_Z*K, q_product=q_H orthogonal_sum q_K.
+Its complement is U times V. The unit is a point with rank0 lattice.
+Ranks add, so the rank8 subcategory alone is not product-closed. Tensor
+products are a different optional operation and are not substituted here.
+
+For seam gluing of oriented punctured surfaces replace punctures by boundary
+circles with collars. Supply an orientation-reversing boundary gluing and
+a fiber isometry F. If M,N are the corresponding positive peripheral
+holonomies, the descent condition is F M F^-1=N^-1. Under this condition
+the functors glue; necessity is the common loop relation and sufficiency
+follows by the fundamental-groupoid pushout/van Kampen presentation.
+Reflection markings must agree on the gluing collars. The gluing map and
+fiber identification are data, not a presumed unique composition.
+
+Thus transport is a groupoid. Conjugacy classes alone do not have a
+single-valued multiplication: for example in S3 the product of two
+transpositions can be identity or a3cycle. Defect composition on classes
+is instead the correspondence {(a,b):a in C,b in D,ab in E}/G. This does
+not by itself define a semisimple fusion category or a higher category.
+
+A concrete reflected base object uses tau(z)=conjugate(z) on CP1 and
+T0(x0,x1,...)=(x0,-x1,x2,-x3,...). T0 preserves E8 and its quadratic
+datum; T0 J T0=J^-1 matches the reversal/permutation of positive meridians.
+Thus the all-J base local system below admits this reflection marking.
+An extra reflection lift on its SIGN extension is additional mathematical
+marking and is not imposed in the finite classification of Section4.
+T0 is distinct from the complex-linear reflection R of Section5.
+
+2. Existing lattice and the actual factor set
+
+Let L be the standard even unimodular E8 lattice in R8. Retain the actual
+native quarter-clock J(x0,x1,...)=(-x1,x0,-x3,x2,...). It preserves L,
+J^2=-1 and J^4=1. Let epsilon be the existing ordered lattice cocycle,
+retained literally by the source extraction in checker.py. Define
+  E_x E_y=epsilon(x,y) E_(x+y),
+  [E_x,E_y]=(-1)^((x,y)).
+This central extension of L is denoted Lhat. All sign automorphisms below
+fix its central generator. The sign-lift kernel is
+  A=Hom(L,{+1,-1})=Hom(L,F2).
+
+For any isometry g fix an integral ordered basis b_i and define a lift
+S_g by E_(b_i) -> E_(g b_i). Inner-product invariance preserves all
+generator commutators; freeness of L gives an invertible automorphism.
+For x=sum n_i b_i let
+  product_i E_(b_i)^n_i=c_B(n) E_x,
+  product_i E_(g b_i)^n_i=c_(gB)(n) E_(g x),
+  eta_g(x)=c_(gB)(n)/c_B(n).
+Negative powers use E_b^-1=epsilon(b,-b) E_-b. This is an all-integral-
+vector definition, not just an evaluation on roots.
+
+The COMPLETE factor formula is
+  d(g,h)(x)=eta_h(x) eta_g(hx)/eta_(gh)(x),
+  c(g,h)(y)=d(g,h)((gh)^-1 y),
+  S_g S_h=D_(c(g,h)) S_(gh),                            (2.1)
+where D_a(E_y)=a(y) E_y. The product projects to gh; the ratio projects
+to identity and hence is a character. Equivalently divide the two
+cocycle identities for eta to prove d(x+y)=d(x)d(y).
+
+With left action (g.a)(y)=a(g^-1 y), associativity gives
+  c(g,h)+c(gh,k)=g.c(h,k)+c(g,hk)                        (2.2)
+in additive F2 notation. Formula(2.1) computes any requested pair in
+any specified lattice-isometry subgroup. This is a MODULE-valued group
+2cocycle; the extension need not be central. Indeed S_g D_a S_g^-1=D_(g.a).
+The complete preimage of a subgroup is central over A only if its action
+on A is trivial. A character-valued factor is not a scalar multiplier.
+These statements are standard lattice-extension algebra, recalled with
+the actual cocycle conventions; see Okada§3 and AppendixA, arXiv2412.19430.
+The new classifications below are not attributed to that paper.
+
+3. Quarter-clock lift group and a genuine central class
+
+The chosen existing J lift j has j^4=1: its fourth power is a character,
+so checking it on the eight integral generators proves the claim on L.
+The generator phases and their products are retained in the certificate.
+Consequently the FULL preimage of <J> in the sign-lift group is
+  Gamma=A semidirect <j>, |Gamma|=256*4=1024.            (3.1)
+This extension splits; it is not central.
+
+Here is an intrinsic normal form. The pair(L,J) is a torsion-free module
+of rank4 over Z[i], a PID, and hence is free. Reduction modulo2 makes
+J=1+N with N^2=0, rank N=4. The same holds on the dual A. Choose Jordan
+coordinates A=F2^m direct_sum F2^m, m=4, so
+  J.(u,v)=(u,v+u).
+Then Gamma consists of (u,v,k), k in Z4, with multiplication
+  (u,v,k)(a,b,l)=(u+a,v+b+(k mod2)a,k+l mod4).           (3.2)
+This is an explicit presentation, so its associativity also follows
+directly from the action law. Inverses are
+  (u,v,k)^-1=(u,v+(k mod2)u,-k).
+Its center is Z={(0,v,2e)}, order2^(m+1)=32; its derived group is
+{(0,v,0)}, order2^m=16. These follow by taking commutators with j and
+with the u-coordinate basis elements. In particular j and a nonzero u
+do not commute: the extension over A is not central despite splitting.
+
+THEOREM A (central class and every subgroup restriction).
+Let V=Gamma/Z, written (u,e) in F2^m direct_sum F2. With center coordinates
+(v,t) for (0,v,2t), the section s(u,e)=(u,0,e) has full central cocycle
+  kappa((u,e),(a,f))=(e a,e f).                         (3.3)
+Its quadratic square invariant and alternating commutator are
+  Q(u,e)=(e u,e),
+  B((u,e),(a,f))=(e a+f u,0).
+The class [kappa] in H2(V,Z), with trivial V action, restricts to zero on
+a subgroup W<=V if and only if W is contained in U={(u,0)}.
+
+PROOF. Multiply the sections using(3.2): the v term is ea; the carry of
+e+f in Z4 is2ef. This proves(3.3); bilinearity proves the cocycle law.
+On U the displayed section is a homomorphism. If W contains (u,1),
+every preimage of this order2 element has square (0,u,2), nonidentity.
+Multiplication by a central element cannot change that square since Z
+has exponent2. Therefore even that cyclic subgroup has no section;
+neither does W. This proves necessity, sufficiency and nontriviality.
+
+COROLLARY (which scalar phases are removable).
+For a central character chi_(ell,t)(v,e)=(-1)^(ell.v+t e), the scalar
+multiplier is (-1)^(e ell.a+t e f). As a U1-valued cohomology class its
+t term is the coboundary of beta(u,e)=i^(t e). Its ell term is nontrivial
+iff ell!=0: its commutator with (a,0) and (0,1) is(-1)^(ell.a), which
+no scalar coboundary changes. Different ell give distinct commutators.
+Thus the32central characters give16distinct marked U1 classes,15nonzero,
+each occurring twice. A nontrivial Z2 extension of a cyclic subgroup
+must not therefore automatically be called a nontrivial U1 multiplier.
+
+4. Complete four-puncture classification for the quarter-clock stratum
+
+Use Y=CP1, Sigma=(1,i,-1,-i), X=Y minus Sigma. Ordered positive meridians
+gamma0,...,gamma3 have product1 and give pi1(X)=F3. Fix
+  rho(gamma_i)=J for all i.
+This is valid because J^4=1. We classify ALL lifts rhohat:F3->Gamma of
+this fixed rho, modulo simultaneous conjugation by the full Gamma.
+No puncture permutation or extra spatial-reflection equivariance is imposed.
+
+THEOREM B (classification, obstruction, orbit and stabilizer).
+The conjugacy classes over J are C_u={(u,v,1):v in F2^m}, indexed by u.
+For four prescribed peripheral classes C_(u0),...,C_(u3):
+  (i) a lifted representation exists iff u0+u1+u2+u3=0;
+  (ii) if all four u_i agree, there are2^(2m) isomorphism classes;
+  (iii) otherwise there are2^(2m-1) classes.
+The corresponding ordered-tuple orbit sizes are2^m and2^(m+1);
+the stabilizer orders are2^(m+2) and2^(m+1), respectively.
+As groups these stabilizers are C4 times(C2)^m in the diagonal case and
+the center Z(Gamma)=(C2)^(m+1) in the nondiagonal case.
+
+PROOF WITH NORMAL FORMS. Write M_i=(u_i,v_i,1). The product relation is
+  sum u_i=0, sum v_i=u1+u3.                            (4.1)
+Conjugation by (w,z,k) fixes all u_i and changes
+  v_i -> v_i+w+(k mod2)u_i.                            (4.2)
+Hence C_u is exactly one class. For any zero-sum profile choose v0=0
+using w, put x=v1,y=v2, and v3=x+y+u1+u3. Thus all solutions have been
+constructed. The only remaining action on (x,y) is translation by
+  d=(u1+u0,u2+u0).                                    (4.3)
+If d=0, (4.1) makes the whole profile diagonal; all2^(2m) pairs remain.
+If d!=0, the translation pairs them freely. Formula(4.2) also gives the
+orbit sizes; divide |Gamma|=2^(2m+2) by these to obtain stabilizers.
+More explicitly a stabilizer element(w,z,k) must have
+w=(k mod2)u_i for every i. For a nondiagonal profile this forces w=0
+and even k, giving precisely Z. For u_i=t it gives arbitrary z and k,
+generated by(t,0,1) of order4 and the independent central v basis.
+Every isomorphism in the marked problem is precisely a simultaneous
+conjugation. The normal forms therefore establish completeness.
+
+For m=4 there are4096admissible ordered profiles,16diagonal and4080other.
+Their complete coarse moduli has
+  16*256+4080*128=526336points.
+There are4096orbits of size16 with stabilizer64, and522240orbits of size32
+with stabilizer32. There are2^24=16777216based tuples in total; the
+orbit-size mass agrees exactly. All counts concern the specified finite
+group and peripheral projection; they are not a G31 census.
+
+EXAMPLES AND COUNTEREXAMPLES. The profile(1,0,0,0) has no solution by(4.1).
+The profile(0,0,0,0) has256classes, not one. Choosing(x,y)=(0,0),(1,0),
+(1,2) in that profile gives monodromy images of orders4,8,16, so equal
+peripheral conjugacy classes need not determine a marked representation.
+For profile(0,1,0,1), (x,y) and(x+1,y) are equivalent; the moduli has128
+points. Bit labels1,2 denote independent vectors in F2^4.
+
+THEOREM C (complete monodromy-image order invariant).
+For the normal form above set a=u1+u0,b=u2+u0, and
+  r=dim span{(a,x),(b,y),(0,a),(0,b)} in F2^(2m).
+Then |im rhohat|=4*2^r, with r<=4. For m=4 the class counts are
+  image order4:16;8:720;16:14880;32:80640;64:430080.
+In particular none of these representations surjects onto Gamma.
+
+PROOF. The first three meridians generate the image. Using M0 as the
+order4 lift, their ratios M1 M0^-1 and M2 M0^-1 are the two A elements
+(a,x),(b,y). Their conjugates under M0 add (0,a),(0,b); further
+conjugation adds nothing because N^2=0. These span exactly the kernel
+of the image projection to C4. Its intersection with <M0> is trivial,
+so the order formula follows.
+For the census, rank(a,b) is0,1or2. Rank0 gives16profiles; the pair(x,y)
+has ranks0,1,2 in counts1,45,210 per profile. Rank1 gives720profiles.
+After replacing the two kernel generators by an invertible pair, one
+has u parts(a,0), a!=0. There are16quotient pairs with y in<a> and112
+with y outside<a>, giving image16or32. Rank2 gives3360profiles,128classes
+each, all with r=4. The stated totals follow and sum to526336.
+
+The coarse finite moduli is discrete, so each point is a connected
+component in this finite topology. The groupoid additionally retains the
+computed isotropy groups. No algebraic scheme or analytic singularity
+structure is being inferred merely from a finite orbit set.
+
+Every M_i has exact order4: its square is (0,u_i,2). Thus these
+representations also factor through the four-cone orbifold presentation
+<gamma_i | gamma_i^4=1, product gamma_i=1>. They do not extend as ordinary
+local systems across a filled puncture, where its meridian must become1.
+
+5. Actual clock/reflection subgroup: full factor table and its class
+
+Let R on C4 be diag(-1,1,1,1), the native complex reflection in the E8
+root line(1+i)e0. Its real8matrix is diag(-1,-1,1,1,1,1,1,1). It is NOT a
+real codimension1 Weyl reflection. It preserves L, commutes with J, and
+G0=<J,R> is C4 times C2 of order8. Formula(2.1) evaluated in the actual
+ordered integral basis gives the complete character-valued factor table
+in results.json. Its class in H2(G0,A) is ZERO, although its normalized
+generator section has nonzero factors.
+
+For a self-contained certificate, list the elements as
+(1,R,J,JR,J^2,J^2R,J^3,J^3R). Characters use binary coefficients in the
+original integral basis, least significant bit first. The table c is
+  0 0 0 0 0 0 0 0
+  0 1 1 0 1 0 0 1
+  0 0 1 0 0 0 1 0
+  0 1 1 1 1 0 0 0
+  0 1 0 1 0 1 0 1
+  0 0 1 1 1 1 0 0
+  0 1 1 1 0 1 1 1
+  0 0 1 0 1 1 0 1.
+An explicit trivializing cochain in the same order is
+  b=(0,86,6,80,136,223,142,217).
+Direct integer-bit multiplication gives
+  b(g)+g.b(h)+c(g,h)=b(gh)                             (5.1)
+on all64pairs, and the twisted cocycle law on all512triples. Alternatively
+correcting the J generator by character6 and R by86 gives commuting
+generators of orders4and2; their powers construct b. Thus(5.1) proves
+triviality of the whole G0 class, not just separate cyclic restrictions.
+This does not decide splitting on the full G31 or W(E8). The genuinely
+nonzero CENTRAL class in TheoremA has a different quotient and coefficient
+module; zero of this G0 class does not contradict it.
+
+6. Native 4/5/6 diagram and local-coefficient invariants
+
+Let V=C4 be the native Gaussian coordinate space, W=exterior2 V, and let
+P be the EXISTING five-dimensional symmetric quartic code subspace of
+Sym4 V. Its exact sparse basis is extracted from process._code_basis:
+sum z_i^4; the three paired-square sums; and z0z1z2z3, with the existing
+normalizations. The inclusion P->Sym4 V and antisymmetrizer W->V tensor V
+are G0-equivariant. They define a common associated-bundle diagram on X.
+They are not proposed isomorphisms between spaces of different dimensions.
+
+The actual J actions are i I4 on V, -I6 on W, and I5 on P. For R the P
+action is diag(1,1,1,1,-1); its W action has three eigenvalues-1 and three+1.
+Consequently the two valid order4 monodromies J and JR yield
+  representation       H0(J) H1(J)   H0(JR) H1(JR)
+  V, rank4                 0     8        0      8
+  exterior2 V, rank6        0    12        3     15
+  quartic P, rank5          5    15        4     14.
+Thus equal clock order and even the same V cohomology do not identify
+the marked quartic/exterior transport systems. These invariants separate
+the examples without changing any native representation.
+
+PROOF OF THE COHOMOLOGY FORMULAS. X retracts onto a bouquet of3circles.
+For a rank r local system F, its cellular complex is
+  C0=F -> C1=F^3,
+  delta(v)=((M0-1)v,(M1-1)v,(M2-1)v).
+Over a field H0 is the common fixed space and dimH1=2r+dimH0;
+all higher groups vanish. The displayed eigenvalues give the table.
+For the integral E8 local system with all meridians J,
+  H0=0, H1=Z^16 direct_sum (Z/2)^4, Hk=0(k>=2).         (6.1)
+Indeed a unimodular change of the three cochain components takes delta
+to((J-1)v,0,0); its cokernel is L^2 direct_sum L/(J-1)L. The Gaussian
+free-module description gives L/(1-i)L=F2^4. Independently, the exact
+integral matrix has Smith entries1,1,1,1,2,2,2,2.
+
+All complex vector bundles on this graph homotopy type are topologically
+trivial; ordinary positive-degree Chern classes cannot detect these flat
+monodromies. Their local-system cohomology and the lift classes can.
+Likewise H2(X,A_rho)=0 does not force a group class in H2(V,Z) to vanish:
+these are different cohomology groups. The peripheral-class obstruction
+in(4.1) is a relative constraint, despite existence of unrestricted lifts.
+
+7. Reproducibility and exact boundary of the result
+
+Run python3 -B -OO checker.py in this directory. It checks literal
+existing J/basis/cocycle/code data, exact Smith form, the full G0 factor
+and coboundary tables, the central cocycle, the complete normal-form
+enumeration, image-order census and independent full1024-element
+conjugation checks on representative tuples. Small ranks m1,m2 give20
+and544classes. Need-checks remain active under -OO. Source hashes and
+machine-readable output are in source_manifest.json and results.json.
+Analytic completeness is proved above; check counts are not its substitute.
+
+The general extension and graph-cohomology tools are standard. The scoped
+classification TheoremsB/C, their E8-quarter specialization and their
+explicit relation to the retained code diagram are the new results of
+this continuation; no claim of worldwide first discovery is made.
+Remaining mathematical tasks include the unrestricted G31 reflection
+character variety, a global splitting analysis beyond G0, and classification
+with additional spatial reflection/clock-equivariance and mapping-class
+quotients. They are not silently included in the completed model case.
+
+Primary reference for the standard lift-extension framework:
+Masaki Okada, arXiv:2412.19430, Section3 and AppendixA,
+https://arxiv.org/abs/2412.19430 . Only its algebraic extension framework
+is used; our finite classifications are derived explicitly above.

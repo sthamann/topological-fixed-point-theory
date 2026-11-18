@@ -16,9 +16,9 @@ HERE = Path(__file__).resolve().parent
 ROOT = HERE.parents[2]
 PINS = {
     "experiments/theory-contracts/source-half-sector-bridge/checker.py":
-        "43d682889f84f83b8a7ba7c5d7bf0ce92913d6310d6ba7243d07c827e6a2218d",
+        "effed6ccb62245785f9685fa10979c734483479aae369ed0df414d2208c683b7",
     "experiments/theory-contracts/microscopic-charged-car-limit/checker.py":
-        "2259bd7d6ab890c8cca562774b1b5cdc574e60fb72a04a8c8c8f6ed8292f113a",
+        "1194dd1e38d6e9bc9849defc6a07d27d68f5ea4981359218773e60054f23564d",
 }
 
 

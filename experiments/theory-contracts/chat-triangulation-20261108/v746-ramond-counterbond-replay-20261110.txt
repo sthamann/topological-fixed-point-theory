@@ -1,0 +1,79 @@
+phys_gnet_local_functor_probe -- net axioms for the mu4 seam net
+
+PASS F1a isotony: E_J|A(I-hat) == E_I exactly, base I = [0, 1] in J = [0, 1, 2, 3]  -- max dev = 6.33e-15
+PASS F1a isotony: E_J|A(I-hat) == E_I exactly, base I = [1, 2] in J = [0, 1, 2, 3]  -- max dev = 1.16e-14
+PASS F1a isotony: E_J|A(I-hat) == E_I exactly, base I = [0, 1, 2] in J = [0, 1, 2, 3]  -- max dev = 3.33e-15
+PASS F1b graded locality: a b = (-1)^{|a||b|} b a exactly for disjoint base intervals {0,1}, {3,4}  -- max dev = 0.00e+00
+PASS MF1 fires: UNGRADED commutator of odd x odd does NOT vanish (fermionic grading is load-bearing)  -- max |[odd,odd]| = 2.000
+PASS F1c clock covariance: [L,H] = 0, [L,C] = 0, L(window(I)) = window(I + N/12), and L V_I L^-1 = V_{I+N/12} exactly (one-particle/Bogoliubov level, N = 48/96/192)  -- max intertwining dev = 0.00e+00
+
+-- F2: local index over N x length x position --
+   N  l   p        sector dims       lambda*   [rho,U]     Ind
+  48  1   0       [2, 1, 0, 1]  0.3333333333   1.7e-15     3*1
+  48  1   7       [2, 1, 0, 1]  0.3333333333   1.5e-15     3*1
+  48  1  23       [2, 1, 0, 1]  0.3333333333   1.8e-15     3*1
+  48  2   0       [6, 4, 2, 4]  0.2500000000   1.1e-15     4*1
+  48  2   7       [6, 4, 2, 4]  0.2500000000   1.1e-15     4*1
+  48  2  23       [6, 4, 2, 4]  0.2500000000   1.0e-15     4*1
+  48  3   0   [20, 16, 12, 16]  0.2500000000   6.2e-16     4*1
+  48  3   7   [20, 16, 12, 16]  0.2500000000   6.1e-16     4*1
+  48  3  23   [20, 16, 12, 16]  0.2500000000   4.1e-16     4*1
+  48  4   0   [72, 64, 56, 64]  0.2500000000   4.0e-16       -
+  48  4   7   [72, 64, 56, 64]  0.2500000000   4.2e-16       -
+  48  4  23   [72, 64, 56, 64]  0.2500000000   2.6e-16       -
+  96  1   0       [2, 1, 0, 1]  0.3333333333   1.8e-15     3*1
+  96  1   7       [2, 1, 0, 1]  0.3333333333   2.3e-15     3*1
+  96  1  47       [2, 1, 0, 1]  0.3333333333   2.8e-16     3*1
+  96  2   0       [6, 4, 2, 4]  0.2500000000   8.1e-16     4*1
+  96  2   7       [6, 4, 2, 4]  0.2500000000   7.6e-16     4*1
+  96  2  47       [6, 4, 2, 4]  0.2500000000   1.7e-15     4*1
+  96  3   0   [20, 16, 12, 16]  0.2500000000   5.5e-16     4*1
+  96  3   7   [20, 16, 12, 16]  0.2500000000   5.9e-16     4*1
+  96  3  47   [20, 16, 12, 16]  0.2500000000   6.6e-16     4*1
+  96  4   0   [72, 64, 56, 64]  0.2500000000   2.3e-16       -
+  96  4   7   [72, 64, 56, 64]  0.2500000000   2.2e-16       -
+  96  4  47   [72, 64, 56, 64]  0.2500000000   5.8e-16       -
+ 192  1   0       [2, 1, 0, 1]  0.3333333333   1.1e-14     3*1
+ 192  1   7       [2, 1, 0, 1]  0.3333333333   1.2e-14     3*1
+ 192  1  95       [2, 1, 0, 1]  0.3333333333   9.5e-15     3*1
+ 192  2   0       [6, 4, 2, 4]  0.2500000000   5.8e-15     4*1
+ 192  2   7       [6, 4, 2, 4]  0.2500000000   6.3e-15     4*1
+ 192  2  95       [6, 4, 2, 4]  0.2500000000   3.6e-15     4*1
+ 192  3   0   [20, 16, 12, 16]  0.2500000000   2.2e-15     4*1
+ 192  3   7   [20, 16, 12, 16]  0.2500000000   2.4e-15     4*1
+ 192  3  95   [20, 16, 12, 16]  0.2500000000   2.1e-15     4*1
+ 192  4   0   [72, 64, 56, 64]  0.2500000000   1.2e-15       -
+ 192  4   7   [72, 64, 56, 64]  0.2500000000   1.3e-15       -
+ 192  4  95   [72, 64, 56, 64]  0.2500000000   1.1e-15       -
+PASS F2 local index: lambda* == 1/4 and 4 sectors for EVERY interval l >= 2, every position (incl. wrap), every N
+PASS F2 local index: Watatani quasi-basis Ind == m*1 scalar for every tested interval (4 for l >= 2)
+PASS F2 l = 1 anomaly stable at all positions/N: 3 sectors, lambda = 1/3 (single-site window cannot see |mu4| = 4)
+PASS F2 local Takesaki: [rho_W, U] = 0 on every interval
+PASS MF4 fires: Z2-only average gives lambda = 1/2 != 1/4 (the probe measures mu4, not mu2)  -- lambda_Z2 = 0.5000000000
+PASS MF2 fires: the deck mu3 average does NOT preserve the doubled window (Dk support leaves I-hat: mu3 would need triple windows)  -- Dk(window) = [np.int64(16), np.int64(17), np.int64(40), np.int64(41)]
+PASS MF3 fires: a misaligned window I u (I + N/2 + shift) is not H-stable (the exact doubling is forced)  -- H(bad) = [np.int64(0), np.int64(2), np.int64(24), np.int64(25)]
+
+-- F2R: Ramond/Klein dressing locality --
+PASS F2R strict-locality NO-GO: dressing leakage delta(N) = sqrt(2/N) sqrt(1 - 2l/N) > 0 exactly (closed form verified)  -- delta = 0.195434/0.141299/0.100993
+PASS F2R leakage rate == N^{-1/2} on the ladder (local footprint of the R defect vanishes)  -- rates = 0.4679, 0.4845
+PASS F2R bond-defect identity: the HALF-LINE string sigma conjugates the NS shift exactly into the R shift with ONE bond defect (v679 'twist = bond defect' reproduced; the dressing is boundary-anchored, solitonic -- not interval-local)
+
+16/16 checks pass -- VERDICT: GNET-LOCAL-FUNCTOR-ALIVE
+
+typed consequence if ALIVE: I |-> (A(I-hat), E_I) is a genuine net of
+CAR algebras with clock-covariant index-4 expectations on the mu4
+quotient circle; the R sector is a SOLITONIC (half-line/bond) defect
+with N^{-1/2} local footprint, not an interval-local operator --
+exactly the DHR/solitonic structure the seam-Calderon identification
+needs.  MISSING CONTINUUM THEOREMS (named, not claimed):
+  (1) uniform bounds + tightness => GNS limit net (the v679 formal
+      residual);
+  (2) index continuity along the inductive limit (Pimsner-Popa /
+      Longo heredity) => Jones index 4 of the limit inclusion;
+  (3) identification of the limit fixed-point net with the Longo
+      Q-system extension of GATE.METRIC.11 (simple-current direction);
+  (4) solitonic sector construction from the bond defect (twisted
+      DHR/Longo-Roberts) for the R sectors;
+  (5) Haag duality/split for the quotient-circle net (index =
+      statistical dimension reading).
+No marker moves; exploration only.

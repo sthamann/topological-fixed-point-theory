@@ -1,0 +1,226 @@
+{
+  "steps": [
+    {
+      "step": "MN1 brute force (3 modes, random BdG ground state, three random BdG quadratics): <Q^2> = 1/4 Tr(AC)^2 + 1/2 Tr(ACAC^T) is exact, and 1/2 Psi^dag Sigma_K Psi (Sigma_K = tau_x B) is the exact first-order mean-field operator: d<H_int>/ds = d<1/2 Psi^dag Sigma_K Psi>/ds along a family of Gaussian ground states",
+      "pass": true,
+      "detail": "<Q^2> error 2.7e-15; relative derivative mismatch 4.6e-10 (d<H_int>/ds = -0.34098)"
+    },
+    {
+      "step": "MN2 Theta_1 one-loop structure (T = 0, BZ grids 24^3 / 36^3 / 48^3): Sigma^(1)(k) = f(k)^2 Sigma^rho with Sigma^rho = alpha 1 + b.sigma (x) 1_16, no anomalous part, alpha = 0 (particle-hole), b along [111] (C3); hence Sigma^(1)(Gamma) = O(k^4) and Sigma^(1)(P) = b.sigma (f(P) = 1)",
+      "pass": true,
+      "detail": "b / g = [22.8528, 22.8528, 22.8528] (|b|/g = 39.5822, along [111]: True); alpha/g = 1.8e-15; non-(alpha,b) rest 7.1e-15; anomalous 0.0e+00; grid change 36 -> 48: 3.5e-07; local <{rho,rho^dag}> = 1.1250 (9/8)"
+    },
+    {
+      "step": "MN3 the mirror node is SHIFTED, not gapped: the one-loop Hamiltonian h_W + f^2 b.sigma has an exact zero at P + dk with dk linear in g along [111], the old P is no longer a zero (|E(P)| = |b| g), the Weyl charge of the moved node stays -1 (Gamma: +1); Spin(10) x Z4 forbid every Majorana bilinear of one 16, so no translation-invariant bilinear can gap it",
+      "pass": true,
+      "detail": "|dk|/g = [39.144, 38.36, 36.72] for g = 0.001 / 0.003 / 0.01 (linear prediction 39.582/t, approached for g -> 0; external estimate 80/t is a factor 2.02 larger -- normalisation here fixed by MN1 and by the frozen O_A of reweight.py); direction [0.5774, 0.5774, 0.5774]; |E(old P)| = 39.582 g; Weyl charges P -1.000, shifted node -1.000, Gamma +1.000"
+    },
+    {
+      "step": "MN4 QMC comparison (16 sites, beta = 2): the one-loop Hamiltonian h_W + g f^2 Sigma^rho(cell, beta) -- a pure node shift, no mass -- explains the major part (70-115 %) of the measured depletion 1/2 - G_P(beta/2) at g = 0.003, 0.01, 0.03; the remainder (beyond one loop, multiplet splitting or a genuine gap) cannot be resolved at the old P -> node tracking needed",
+      "pass": true,
+      "detail": "g = 0.003: one-loop 0.4969 vs QMC 0.4965+-0.0001 (one-loop share 89 %); g = 0.01: one-loop 0.4671 vs QMC 0.4582+-0.0008 (one-loop share 79 %); g = 0.03: one-loop 0.2952 vs QMC 0.2441+-0.0071 (one-loop share 80 %); cell/beta Sigma^rho: b/g = [21.529, 21.529, 21.529], alpha/g = 8.9e-15"
+    },
+    {
+      "step": "MN6 flavour-twisted boundary conditions (Spin(10) Cartan Sigma_12 = 1/2 - n_0, the only continuous twist compatible with H_int, which conserves charge only mod 4): a reciprocal-superlattice twist reproduces the untwisted Hamiltonian and pairing matrix exactly; the ten channels rotate real-orthogonally (sum O_A^2 invariant); the free twisted spectrum of the Q = +-1/2 flavours is h_W(k +- delta); the filtered local correlators of the twisted cell are site-independent (translation covariance of the twisted interaction)",
+      "pass": true,
+      "detail": "trivial-twist deviation 1.6e-16; channel rotation residual 1.1e-16 (R real orthogonal: True); twisted spectrum error 1.2e-14; local correlator site dependence 2.8e-15"
+    },
+    {
+      "step": "MN7 32-site points: the pure finite-size multiplet picture (G_P depends only on g/N; test 32 sites, beta = 2, g = 0.02 vs 16 sites, g = 0.01) is excluded, and the one-loop node shift explains the 32-site depletion almost completely, i.e. the beyond-one-loop residual of the 16-site cell shrinks with volume (16 and 32 are not homothetic: indication, not a scaling law)",
+      "pass": true,
+      "detail": "32 sites beta = 2.0, g = 0.02: QMC 0.3817+-0.0010, one-loop 0.3838, share 98 %; 32 sites beta = 2.5, g = 0.01: QMC 0.4473+-0.0002, one-loop 0.4465, share 101 %; 32 sites beta = 2.5, g = 0.03: QMC 0.2192+-0.0060, one-loop 0.2216, share 99 %; 16 sites beta = 2, g = 0.01: QMC 0.4582 (multiplet prediction for 32/0.02: equal), one-loop share 79 %"
+    },
+    {
+      "step": "MN8 one-loop node trajectory along [111] (the C3 axis; total charge of the one-loop band structure is 0): Gamma stays a fixed +1 node for every g; a -1 mirror node exists for every g; it moves continuously up to g ~ 0.020, then a +-1 pair is created on the axis, the new +1 annihilates the old mirror and the new -1 carries the mirror charge on (pair window g ~ 0.0205 ... 0.0235) -> the linear regime ends near g ~ 0.02 and the mirror charge is never removed at first order (off-axis pairs appear around g = 0.05, global census)",
+      "pass": true,
+      "detail": "g = 0.0: (-1.571, +1), (+0.000, -1); g = 0.01: (-1.571, +1), (+0.212, -1); g = 0.02: (-1.571, +1), (+0.451, -1); g = 0.021: (-1.571, +1), (+0.486, -1), (+1.194, +1), (+1.463, -1); g = 0.022: (-1.571, +1), (+0.527, -1), (+1.043, +1), (+1.582, -1); g = 0.023: (-1.571, +1), (+0.583, -1), (+0.923, +1), (+1.655, -1); g = 0.024: (-1.571, +1), (+1.711, -1); g = 0.03: (-1.571, +1), (+1.925, -1); g = 0.05: (-1.571, +1), (+2.267, -1); g = 0.1: (-1.571, +1), (+3.901, -1)"
+    },
+    {
+      "step": "MN5 (statement) Gate B criterion corrected: Delta(P) > 0 at the old P does not show a mirror gap (it is reproduced by node motion); required is min_{k != Gamma} Delta_odd(k) > 0 with node tracking (twisted boundary conditions, k_star(g, V), Delta(k_star)), plus Gamma Weyl intact, all independent mirror composites gapped, Spin(10) x Z4 x translations unbroken; a genuine mirror removal must be non-perturbative (no bilinear can gap a single Weyl node; Green-function zeros are the candidate mechanism)",
+      "pass": true,
+      "detail": "next contract: CHIRAL4D.MIRROR.NODE_TRACK.01, then CHIRAL4D.GREEN_TOPOLOGY.01"
+    }
+  ],
+  "passed": 8,
+  "total": 8,
+  "b_over_g": [
+    22.8528182972013,
+    22.852818297201413,
+    22.852818297202113
+  ],
+  "dk_per_g": [
+    22.85281829527568,
+    22.85281829527638,
+    22.85281830034991
+  ],
+  "V_P": [
+    [
+      0.0,
+      -0.9999999999732445,
+      -1.1102230246251565e-10
+    ],
+    [
+      0.0,
+      -1.1102230246251565e-10,
+      -0.9999999999732445
+    ],
+    [
+      -0.9999999998622222,
+      0.0,
+      0.0
+    ]
+  ],
+  "one_loop_vs_qmc": {
+    "0.003": [
+      0.4968876996655971,
+      0.4964961329213114,
+      8.442135011383484e-05
+    ],
+    "0.01": [
+      0.4671446790676068,
+      0.4582001840042614,
+      0.0008149979642043339
+    ],
+    "0.03": [
+      0.2952045155806372,
+      0.2440688134700235,
+      0.007124614520209683
+    ]
+  },
+  "axis_trajectory": {
+    "0.0": [
+      [
+        -1.571,
+        1
+      ],
+      [
+        0.0,
+        -1
+      ]
+    ],
+    "0.01": [
+      [
+        -1.571,
+        1
+      ],
+      [
+        0.212,
+        -1
+      ]
+    ],
+    "0.02": [
+      [
+        -1.571,
+        1
+      ],
+      [
+        0.451,
+        -1
+      ]
+    ],
+    "0.021": [
+      [
+        -1.571,
+        1
+      ],
+      [
+        0.486,
+        -1
+      ],
+      [
+        1.194,
+        1
+      ],
+      [
+        1.463,
+        -1
+      ]
+    ],
+    "0.022": [
+      [
+        -1.571,
+        1
+      ],
+      [
+        0.527,
+        -1
+      ],
+      [
+        1.043,
+        1
+      ],
+      [
+        1.582,
+        -1
+      ]
+    ],
+    "0.023": [
+      [
+        -1.571,
+        1
+      ],
+      [
+        0.583,
+        -1
+      ],
+      [
+        0.923,
+        1
+      ],
+      [
+        1.655,
+        -1
+      ]
+    ],
+    "0.024": [
+      [
+        -1.571,
+        1
+      ],
+      [
+        1.711,
+        -1
+      ]
+    ],
+    "0.03": [
+      [
+        -1.571,
+        1
+      ],
+      [
+        1.925,
+        -1
+      ]
+    ],
+    "0.05": [
+      [
+        -1.571,
+        1
+      ],
+      [
+        2.267,
+        -1
+      ]
+    ],
+    "0.1": [
+      [
+        -1.571,
+        1
+      ],
+      [
+        3.901,
+        -1
+      ]
+    ]
+  },
+  "one_loop_share": {
+    "0.003": 0.8882472606717003,
+    "0.01": 0.7860159225519724,
+    "0.03": 0.8001974561836984
+  },
+  "b16_over_g": [
+    21.528725256764464,
+    21.528725256764464,
+    21.528725256764474
+  ]
+}

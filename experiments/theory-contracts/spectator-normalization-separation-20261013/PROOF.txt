@@ -1,0 +1,69 @@
+Seam-generatedness and source normalization are distinct requirements
+2026-10-13. Verdict PARTIAL; finite diagnostic and exact linear algebra.
+
+Question and prior work
+The Atlas connects BULK.PRIME_COMPLETION.01 (v1020) to the source-observation
+and original-source-functional audits of 2026-10-13. v1020 already establishes
+a finite spectator obstruction and a repair distinguishing B from B plus C.
+The observation audit already explains loss of absolute source normalization.
+The additional test here asks whether imposing the proposed no-spectator
+repair can itself eliminate this normalization freedom. This is a new scoped
+cross-check of those recorded results, not a claim of a new general theorem.
+Atlas searches used: "spectator commutant basis covariance" and "seam
+cyclicity reconstruction observability". Search coverage is not exhaustive
+evidence of priority. The original sources, not the graph path, support this.
+
+Exact finite result
+Let H be a finite Hermitian operator, S the declared seam seed subspace,
+P its projector, and H_c=H+cI for real c. The binomial identity and its inverse
+show span{H^n S:n>=0}=span{H_c^n S:n>=0}. Also [X,H_c]=[X,H], so the joint
+commutant of H and P is identical. Thus both seam-generatedness and the
+relative-commutant criterion are insensitive to c. Meanwhile
+Z_c(beta)=exp(-beta*c) Z(beta), rho_c(beta)=rho(beta), and
+exp(-it H_c)=exp(-it c)exp(-it H). Hence all instrument histories built from
+the same fixed instruments and normalized thermal state are unchanged:
+scalar phases cancel at each density-matrix update. Absolute energy and
+unnormalized partition response remain different. These identities hold for
+every finite H, not just the two numerical samples.
+
+The checker imports the actual v1020 strip Hamiltonian, without replacing its
+couplings or changing its verification file. At p=0.37 the seam Krylov space
+is all 16 dimensions and the joint commutant is scalar, yet the shift remains
+undetermined by those two criteria. p=0 is the original documented exceptional
+point, with Krylov dimension6 and complex commutant dimension58. Positive-beta
+normalized Gibbs states are used only for the normalization diagnostic.
+This is NOT an equality claim for v1020's fixed-Fermi-level covariance:
+holding a chemical potential fixed while shifting all energies can change
+the occupied subspace. A declared external energy reference adds information.
+
+Additional implementation boundary
+v1020:279-289 describes a complex commutant but replaces the complex linear
+system A vec(X)=0 with [Re A; Im A] vec(X)=0. The latter permits real unknowns
+only. It is valid for the original real Hamiltonians, not a general complex
+basis. Conjugating the p=0 original by diag(exp(i*0.217*j)) preserves P and
+the spectrum but changes the helper output58->1. Computing complex rank
+directly gives58 before and after; the Krylov dimension stays6. This is a
+failure of the helper's advertised basis-general domain, not a refutation
+of its original real-basis witness. checker.py supplies the corrected complex
+nullity calculation for this experiment. The load-bearing module and ledger
+are unchanged; no general theorem is promoted by this diagnostic.
+
+Connection and next derivation
+The no-spectator condition addresses additional inaccessible operator sectors.
+The scalar-normalization condition addresses absolute response of the same
+operator sector. They cannot be substituted for one another. A reconstruction
+route must prove both minimality/cyclicity and its source-defined absolute
+geometric normalization. Adding more normalized future observations alone
+does not supply the latter. Before any geometric use, derive the common
+off-shell operator/reference/domain family from the original source and check
+whether an actual source principle fixes its reference. An arbitrary scalar
+or metric-only term is not proposed as an allowed TFPT deformation.
+
+Source boundaries
+verification/v1020_spectator_sector_obstruction.py:3-75,99-120,241-289.
+source-observation-identifiability-20261013/PROOF.txt:4-30,54-55.
+original-source-functional-audit-20261013/PROOF.txt sections C-E.
+The last audit specifies that the original profile-free zeta/residue source
+is fixed once the full geometric operator/reference/domain family is fixed.
+No pair of fully admissible original TFPT sources is constructed here; no
+four-dimensional gravity, universal event law, or T1-T8 completion is proved.

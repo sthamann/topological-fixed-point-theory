@@ -1,0 +1,229 @@
+EXACT GAUSSIAN REFLECTION TESTS OF THE DERIVED NUMERATOR KERNELS
+3 November 2026. Analytical proof, no new physical parameter or profile.
+
+Verdicts and scope
+------------------
+1. The standalone Gaussian phase covariance with inverse K(x)=x F(x),
+F(x)=int_0^1 exp[-a(1-a)x]da, fails scalar time reflection positivity.
+There is an analytic negative one-pulse reflection test. No spectral
+representation assumption or finite numerical witness is needed.
+2. The actual radial numerator coefficient proposed by root is correct.
+For the stable single-heat class mu>1/2 it is positive for all momenta,
+yet its standalone Gaussian covariance also fails time reflection
+positivity. The negative remainder survives subtraction of the entire
+allowed polynomial contact. The radial coordinate is gauge invariant
+near the nonzero original Higgs background.
+3. Positive Laplace mixtures inherit these obstructions under the precise
+inverse-moment/coefficient-integrability assumptions below. No claim is
+made for profiles outside those assumptions, original unsquared f,
+signed relative weights, or a fully coupled primitive source.
+
+The phase at fixed connection is gauge variant. Its Gaussian failure is
+not a physical TFPT exclusion: physical RP is required on the actual
+admissible algebra. The radial norm is gauge invariant, but the inverse
+of its isolated quadratic block is not the physical marginal covariance
+of a joint system with nonzero mixed blocks. Nor must an arbitrary
+Gaussian expansion about a background inherit RP of an interacting
+measure. The calculations exclude the declared standalone Gaussian
+numerator candidates; reference, eta, full matrix Majorana terms,
+geometry/scalaron mixing, selector and actual interacting integration
+remain to be included before a whole-source statement.
+
+1. Reflection form with all contacts removed exactly
+---------------------------------------------------
+Use dimensionless four-momentum q=p/chi and fix spatial |k|. For any
+scalar covariance C(q0^2+|k|^2), a polynomial P(q0^2+|k|^2) Fourier
+transforms to derivatives of delta(time). Its time-reflected quadratic
+form is zero for tests with support strictly inside positive time,
+because reflected separation is t+s>0. Thus these contact polynomials
+can be removed for such tests WITHOUT an arbitrary physical subtraction.
+
+Suppose R_k(q0)=C(q0^2+|k|^2)-P(q0^2+|k|^2) is integrable. Define
+ g_k(tau)=int_R dq0/(2pi) exp(i q0 tau) R_k(q0).
+If R_k<0 for all real q0, then g_k is continuous and g_k(0)<0.
+Consequently g_k(2epsilon)<0 for every sufficiently small epsilon>0.
+The single positive-time pulse delta(t-epsilon) has reflection form
+g_k(2epsilon)<0. Smooth compactly supported approximants, with support
+remaining strictly positive, preserve this strict negativity. A plane
+spatial wave is replaced by a smooth Fourier packet in a sufficiently
+small neighborhood of k, again preserving the strict sign. Thus this
+is a legitimate negative scalar RP test, not just a formal plane wave
+or a source touching the reflection plane.
+
+This elementary test supplies the needed counterexample whenever the
+subtracted covariance is eventually negative as a function of its
+nonnegative argument: choose |k|^2 beyond that threshold.
+
+2. Exact one-pulse obstruction for K=xF
+--------------------------------------
+The exact form factor satisfies
+ 4x F'(x)+(x+2)F(x)=2,                                  (1)
+with F(0)=1 and F'(x)<0. This follows by integration by parts after
+writing F=exp(-x/4) int_(-1/2)^(1/2) exp(x u^2)du.
+For K=xF, (1) is
+ K'=1/2-K/4+K/(2x).                                    (2)
+Jensen gives
+ K(4)=4 int_0^1 exp[-4a(1-a)]da
+      >=4 exp(-2/3)>2.
+The last inequality is exact: log2>2/3 follows, for example, from the
+strictly positive remaining terms of the atanh series for log2.
+At any point x>0 where K=2, (2) gives K'=1/x>0. Therefore K cannot
+cross downward through2 after x=4. Hence
+ K(x)>2 and C(x)=1/K(x)<1/2 for EVERY x>=4.               (3)
+
+The exact large-x endpoint expansion is
+ F(x)=2/x+4/x^2+24/x^3+240/x^4+O(x^-5),
+ K(x)=2+4/x+24/x^2+240/x^3+O(x^-4),
+ C(x)=1/2-1/x-4/x^2-40/x^3+O(x^-4).                    (4)
+It follows either by endpoint Laplace asymptotics or from
+ F(x)=2 int_0^(1/4) exp(-x u)(1-4u)^(-1/2)du.
+
+Choose the FIXED dimensionless spatial momentum |k|=2, not a physical
+parameter choice. Then R_k(q0)=C(q0^2+4)-1/2 is strictly negative for
+all q0 by (3), and integrable by (4). Section1 gives a negative ONE-PULSE
+reflection test at sufficiently small positive epsilon. The removed1/2
+is only the actual contact part of this covariance; it makes no
+contribution to a strictly positive-time reflection form. This proves
+Gaussian RP failure directly, including the contact issue.
+
+A positive Stieltjes spectral representation plus a bounded contact
+would also be contradicted by approach to1/2 from below, as root noted.
+The direct proof here avoids extra assumptions about subtraction or
+growth of a proposed spectral measure.
+
+For the entire ordinary charged single-heat phase trace, all original
+mass/color/conjugate multiplicities multiply this same K by a positive
+constant: m_i^2 exp(-m_i^2/chi^2) times multiplicities6,6,2.
+Thus the same failure applies to that isolated whole charged phase
+Gaussian candidate whenever its coefficient is nonzero. It does not
+dispose of the original Majorana/mixed/reference/source requirements.
+
+3. Positive Laplace phase mixtures: exact moment conditions
+----------------------------------------------------------
+Let w be the ACTUAL nonzero positive profile weight, including any actual
+positive charged coefficients and exp(-s m_i^2/chi^2) factors. Let
+ K_w(x)=x int_(s>0) F(sx) dw(s),
+ M_j=int s^(-j)dw(s).
+Assume 0<M_1<infinity and M_2<infinity, and the original finite-x
+kernel exists. Then
+ K_w(x)=2M_1+4M_2/x+o(1/x),
+ C_w(x)=1/(2M_1)-M_2/(M_1^2 x)+o(1/x).                 (5)
+
+Proof: yF(y) is bounded on y>=0 and tends2. Also
+h(y)=y^2F(y)-2y is bounded and tends4. Apply dominated convergence with
+the actual weights s^-1dw and s^-2dw respectively. No third inverse
+moment is needed for the stated first correction. Because w is positive
+and nonzero, M_2>0. The remainder C_w-C_w(infinity) is therefore
+negative for all sufficiently large x and is O(1/x).
+Choosing spatial |k|^2 beyond this threshold gives the same integrable
+negative remainder and the same negative one-pulse RP form. These
+assumptions exclude a nonzero atom at s=0 and profiles with divergent
+required inverse moments; no conclusion for those classes is supplied
+by this asymptotic argument.
+
+4. Original radial coefficient: independent sign/factor calculation
+------------------------------------------------------------------
+Use the ACTUAL charged singular pair at the nonzero original background,
+ Phi_h=(m+h(x))sigma1,
+ D_h=i gamma.partial+gamma5 Phi_h,
+ P_h=-partial^2+m^2+V1+V2,
+ V1=2mh I2+i gamma^mu gamma5 sigma1 partial_mu h,
+ V2=h^2 I2.
+The full spin/internal trace of the scalar linear vertex square is
+32m^2; the derivative linear vertex gives8p^2; their mixed spin trace
+vanishes. The first quadratic contact has trace8. The original full
+Duhamel calculation therefore gives the h^2 coefficient
+
+ S_h[2]= exp(-t m^2)/(4pi^2) int d4p/(2pi)^4 |h(p)|^2
+                [(p^2+4m^2)F(tp^2)-2/t].                (6)
+
+The sign and coefficient -2/t are fixed by the original h^2 contact;
+discarding them would change the source. No extra1/2 is present in this
+quadratic-coefficient convention; the Hessian is twice (6).
+For a common original Higgs radius fluctuation, h_i=y_i h per charged
+singular value. Sum (6) with the ORIGINAL squared Yukawa factors and
+color/particle-conjugate multiplicities. No independent radial mass or
+Yukawa value is selected by this calculation.
+
+5. Exact stable radial Gaussian and its RP failure
+--------------------------------------------------
+Set x=tp^2 and mu=tm^2, retaining the positive overall factors in (6).
+The dimensionless radial inverse covariance block is
+ R_mu(x)=(x+4mu)F(x)-2.
+Equation (1) gives the EXACT positivity identity
+ R_mu(x)=-4x F'(x)+(4mu-2)F(x).                           (7)
+Therefore, for every actual mu>1/2, R_mu(x)>0 for all x>=0. This proves
+stability of the declared standalone Gaussian class without a guessed
+stabilizing term. At mu<1/2 its zero-momentum coefficient is negative;
+mu=1/2 has a zero mode and requires its separate original IR handling.
+
+The entire large-momentum expansion is
+ R_mu(x)=A/x+B/x^2+C/x^3+O(x^-4),
+ A=4+8mu, B=24+16mu, C=240+96mu.
+Consequently
+ 1/R_mu(x)=x/A-B/A^2+(B^2-A C)/(A^3 x)+O(x^-2),          (8)
+ B^2-A C=-384-1536mu-512mu^2<0 for mu>=0.
+The leading two terms are the WHOLE polynomial contact
+ P_mu(x)=x/A-B/A^2. Its reflection form vanishes for positive-time
+tests. The remaining covariance is strictly negative for sufficiently
+large x and O(1/x). Section1 therefore gives a negative one-pulse RP
+test after fixing sufficiently large spatial momentum. This proves
+that the POSITIVE stable radial Gaussian class mu>1/2 fails RP.
+
+This is stronger than the phase-coordinate test in its observable type:
+the local radial perturbation of |H| at a nonzero H background is gauge
+invariant. It remains a test of the isolated squared-heat numerator
+Gaussian, not of the whole physical admissible source or its interacting
+radial marginal. The latter is not furnished by an inverse isolated
+block if the original joint source has nonzero mixed blocks.
+
+6. Positive Laplace/charged mixtures of radial numerators
+--------------------------------------------------------
+The obstruction survives positive mixtures whenever the required exact
+asymptotic coefficients are finite. Use x=p^2/chi^2 and mu=m^2/chi^2.
+For each actual proper time s>0 the dimensionless radial contribution is
+ exp(-s mu)[(x+4mu)F(sx)-2/s].
+After its actual positive weights, including squared Yukawas and charged
+multiplicities, its asymptotic coefficients are
+ A_s=4/s^2+8mu/s,
+ B_s=24/s^3+16mu/s^2,
+ C_s=240/s^4+96mu/s^3.                                  (9)
+The exp(-s mu) factor belongs to the positive original mixing weight.
+Assume the original kernel exists, A=int A_s dw>0, B=int B_s dw and
+C=int C_s dw are finite, with the needed DCT remainder control (finite
+inverse moments through4 suffice for a fixed mass and finite charged
+sum). Then the whole kernel has
+ R_w(x)=A/x+B/x^2+C/x^3+o(x^-3).
+For each individual heat/mass contribution,
+ B_s^2-A_s C_s
+ =[-384-1536mu s-512mu^2s^2]/s^6<0.
+Because all weights are positive,
+ B=int B_s dw < int sqrt(A_s C_s)dw
+              <=sqrt[(int A_s dw)(int C_s dw)]=sqrt(A C),
+where the second inequality is Cauchy--Schwarz. The strict first
+inequality holds for a nonzero genuine positive mixture. Thus
+ B^2-A C<0.                                            (10)
+
+If the actual mixed radial kernel defines a stable standalone Gaussian,
+its inverse after its complete polynomial contact x/A-B/A^2 has the
+same negative1/x remainder and therefore the same RP obstruction.
+If it is not stable, a real positive standalone Gaussian with that
+quadratic weight already fails at the covariance-definition stage.
+This argument includes positive mixtures over actual charged masses;
+it does not replace the neutrino/Majorana block by such a mixture.
+
+7. Primary mathematical context and preserved exclusions
+--------------------------------------------------------
+Arthur Jaffe, Stochastic PDE, Reflection Positivity, and Quantum Fields,
+https://www.arthurjaffe.net/Assets/pdf/SPDE-QFT-v3.pdf , sectionIII,
+states the equivalence of Gaussian RP with covariance RP and constructs
+countertests using positive-time distributions followed by legitimate
+test-function limits. The explicit one-pulse negative kernels above are
+derived directly, not attributed to that paper.
+The exact numerator heat kernels used here were independently derived in
+PHASE-FORM-FACTOR-REVIEW.txt. The original unsquared primitive f(D/chi),
+its actual bound reference, eta/domain variations, physical selector,
+full Majorana response, coupled bosonic sectors and complete interacting
+weight are NOT replaced or disposed of by these Gaussian calculations.
+No universal TFPT RP failure, primitive-action solution, common physical
+spectrum or ledger promotion is claimed.

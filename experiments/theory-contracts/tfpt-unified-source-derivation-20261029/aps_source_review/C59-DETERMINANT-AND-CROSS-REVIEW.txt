@@ -1,0 +1,212 @@
+C59: AP DETERMINANT, CROSS KERNEL AND THE ACTUAL WEAK SOURCE
+Independent targeted review, 30 October 2026.
+Verdict: SCALAR_AP_SPLIT_CORRECT; SAME_OBJECT_AND_ORIGINAL_SELECTION_NOT_PROVED.
+No Atlas or original edit.
+
+1. Exact conditional determinant formula
+
+Let the normal double be an antiperiodic circle of length 2 ell, let the
+tangential coefficient be constant, and put
+
+  T=h^2+mu^2 >=0,  E=sqrt(T).
+
+For the scalar second order operator -partial_n^2+T, with all finite internal
+multiplicities retained in Tr, zeta functional calculus gives, up to a
+T-independent normalization,
+
+  F_AP(T)=log det_zeta,AP(-partial_n^2+T)
+         =Tr[2 ell E+2 log(1+exp(-2 ell E))]
+         =Tr[2 log(2 cosh(ell E))].                    (1)
+
+For an arbitrary selfadjoint matrix direction Q=dot(T), including
+[T,Q]!=0, trace cyclicity and the Frechet trace identity give
+
+  dot(F_AP)=ell Tr[E^-1 tanh(ell E) Q].                 (2)
+
+The split in C59 is therefore algebraically correct:
+
+  dot(F_bulk)=ell Tr(E^-1 Q),
+
+  dot(F_glue)
+    =-2 ell Tr[E^-1 exp(-ell E) X_E Q],                (3)
+
+  X_E=(2 cosh(ell E))^-1.
+
+No commuting approximation is used in (2) or (3). Operator level derivatives
+still require divided differences; only after the trace may they be written
+with f'(T)Q. Equations (2) and the sum of the two split terms have their
+continuous limit at E=0. The bulk and gluing pieces separately contain E^-1
+and require a gap or a common limiting prescription; their singular parts
+cancel in the total AP determinant derivative.
+
+The full Clifford typing remains necessary. The original normal operator is
+
+  D=N(partial_n+B),
+
+and the complex linear charged leg is obtained by the already fixed
+multiplication -ND=partial_n+B. Formula (1) is the second order determinant.
+It does not by itself fix the phase and multiplicity of the first order
+determinant or Pfaffian on the complete selfdual source.
+
+2. The gluing derivative is not the cross operator X
+
+Equation (3) contains X_E as one factor. It is not X_E itself. It is a scalar
+pairing of Q with
+
+  K_glue=-2 ell E^-1 exp(-ell E) X_E.                  (4)
+
+The distinction is already decisive in dimension two. Take
+
+  T=diag(a,b),  0<a!=b,
+  Q=[[0,1],[1,0]].
+
+For every scalar spectral function f,
+
+  d Tr f(T)[Q]=Tr(f'(T)Q)=0,                            (5)
+
+because f'(T) is diagonal. But for
+
+  x(u)=(2 cosh(ell sqrt(u)))^-1
+
+the actual boundary variation is
+
+  D x_T[Q]=x[1](a,b) Q !=0,                            (6)
+
+since x is strictly decreasing on u>0. Thus one determinant derivative can
+vanish while the mixed matrix source response is nonzero. The scalar master
+consumer cannot be identified with the whole two face operator response.
+
+There is a second exact boundary. The existing source has
+
+  X_h=(2 cosh(ell h))^-1=(2 cosh(ell |h|))^-1.
+
+At mu=0 this is X_E. For the master regulator mu!=0, (3) instead contains
+
+  X_mu=(2 cosh(ell sqrt(h^2+mu^2)))^-1,
+
+which is a different kernel unless the source covariance is changed by the
+same regulator. C59's phrase that the master gluing term and the source cross
+block are exactly the same object is therefore valid only after the explicit
+conditions mu=0 and common AP source have been imposed, and even then only X
+as a factor of the scalar weight (4).
+
+3. The exact positive cross identity is first order
+
+For the antiperiodic first order operator partial_n+h on the circle of length
+2 ell, its Green branch from one boundary to the opposite boundary is
+
+  S_AP(ell,0)
+    =exp(-ell h)(1+exp(-2 ell h))^-1
+    =(2 cosh(ell h))^-1
+    =X_h.                                               (7)
+
+This is an operator identity by functional calculus. It remains true for the
+actual constant full96 weak coefficient h_p(t), without anticommutation or a
+singular pair reduction. Its source derivative is the existing Frechet
+response
+
+  dot(X)=D x_(h^2)[dot(h^2)]                            (8)
+
+in the unregulated mu=0 source chart. Equation (7), rather than the scalar
+determinant derivative, is the direct Green to mixed face map.
+
+The AP determinant remains compatible with it: its gluing derivative is the
+trace pairing of the already supplied direction Q with the weighted cross
+kernel (4). If the original source provides enough independent Q directions,
+the family of all such pairings can recover that weight by trace duality. The
+single actual radial D_Y direction supplies one genuine scalar response, not a
+reconstruction of the full matrix kernel.
+
+4. AP is source data, not a consequence of matching
+
+The original homogeneous collar fixes the Poisson range
+graph(exp(-ell h)). Together with the positive boundary metric it fixes the
+orthogonal Calderon graph
+
+  G=[[A,X_h],[X_h,1-A]].
+
+This does not select a closed normal spin structure. An invertible periodic
+Green realization has the same Poisson range and the same orthogonal graph,
+while its raw midpoint kernel uses sinh rather than cosh. The statement
+
+  demand that master and source agree, therefore choose AP
+
+is a consistency condition added to the two formulas. It is not a derivation
+of AP from either formula.
+
+AP is already genuine data in the named elliptic NS source and period two NS
+cover. Within that scoped source, (7) is original and no target kernel has
+been inserted by hand. The primitive doubled manifold in the original
+theorem at lines 94 to 170 supplies the deck involution and Calderon data, but
+does not state an AP clutch on the closed normal circle. The normal coordinate
+also does not by itself identify its Euclidean translation with reconstructed
+physical time.
+
+The projected master term at paper tfpt-42 section 027 lines 229 to 248 is a
+definition on Ran(P_adm). Applying (1) to it additionally requires:
+
+  * an exact homogeneous product collar of normal length 2 ell;
+  * the AP normal clutch;
+  * reduction of the operator by P_adm;
+  * the same charge legs, multiplicities and determinant line;
+  * a stated treatment of mu matching the boundary covariance.
+
+Those bindings are not printed in that master definition.
+
+5. The claimed moving domain does not follow from the reused symbol
+
+The first primitive theorem defines D_ref and D_rel as the even and odd parts
+of a doubled D under tau. The later selfadjointness theorem starts with a
+Dirac anchor D_geo, chooses a modified APS condition from an adapted boundary
+operator A_partial, and proves that a bounded symmetric D_rel perturbation is
+selfadjoint on that same domain.
+
+The repeated symbol D_rel does not prove D_geo=D_ref as a family identity,
+nor that A_partial moves with every constant Phi. C59 also needs an explicit
+tau action to show that the full constant Phi coefficient is even. Therefore
+the original text does not select the moving APS(h) sea and does not exclude
+the already reviewed fixed reference APS source. Fixed and moving domains
+remain distinct source contracts until an original family map binds them.
+
+6. Strongest actual conclusion and continuation
+
+For the named AP NS source, the full constant weak h_p(t) has an exact mixed
+face operator X by (7), and the existing actual inner fluctuation has the
+noncommuting response (8). This is the strongest operator result.
+
+For an AP product realization of the projected master with mu=0, its existing
+zeta determinant has the exact scalar mixed response (3) along the same
+source direction. It can therefore serve as a real scalar consumer of the
+already given weak source without adding a new kernel. It neither chooses the
+weak coefficient nor reconstructs dot(X).
+
+The next decisive original check is small: identify the actual closed normal
+spin clutch and P_adm reduction used by D_xi in the master determinant. If it
+is the already named AP NS double and the same unregulated h source, (3) is an
+original master response. If it is periodic, differently regulated or only an
+abstract doubled Dirac operator, the equality to the existing source cross
+kernel does not follow. No new state or source family is needed for this
+check.
+
+SOURCES REVIEWED
+
+  outputs/multi-model-source-search-20261029/
+    CLAUDE59-ORIGINAL-QUELLE-UNGEPRUEFT-AX.txt;
+
+  experiments/theory-contracts/tfpt-unified-source-derivation-20261029/
+    aps_source_review/CLAUDE52-NORMAL-SPECTRUM-DETERMINANT-INDEPENDENT-REVIEW.txt;
+    aps_source_review/NORMAL-GREEN-TO-CALDERON-TRACE-REVIEW.txt;
+    aps_source_review/ACTUAL-ONEFORM-COUPLED-SOURCE-RESPONSE.txt;
+    aps_source_review/ACTUAL-ONEFORM-COUPLED-SOURCE-INDEPENDENT-REVIEW.txt;
+
+  documents/archive--tfpt-45--source_extracts--01_boundary_kernel_source/
+    sections/001-section-primitive-core-and-carrier-interface-handoff.tex:
+    94-170,353-376;
+
+  documents/archive--paper-latex--tfpt-42/sections/
+    027-subsection-primitive-completion-from-the-boundary-kernel.tex:229-248;
+
+  Atlas findings:
+    finding:ap-spectral-formulas-do-not-force-normal-domain-or-complete-source;
+    finding:original-poisson-normal-trace-fixes-whole-calderon-graph;
+    finding:actual-original-inner-fluctuation-has-whole-noncommuting-two-face-response.

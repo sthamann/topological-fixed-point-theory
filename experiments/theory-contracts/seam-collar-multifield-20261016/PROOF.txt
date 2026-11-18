@@ -1,0 +1,698 @@
+TFPT collar source, corrected search types and multi-field sewing
+2026-10-16 -- UR.SEAM.COLLAR_MULTIFIELD.01
+
+VERDICT: exact finite controls and conditional source-to-field constructions.
+No unconditional P1/P2 source selection, physical field identification or T1-T8
+closure. The distinction between actual source data and a quantization choice is
+part of the result, not an omitted hypothesis.
+
+1. The corrected search question
+
+The old diversity objective drove single-field responses to a chosen global
+floor a. With a>0, a free two-field response a^2 is smaller than that floor.
+Consequently this extreme probe could exclude a known free completion while
+reporting endpoints a and 1-gap as attractive candidates. Those endpoints are
+not physically selected constants. In the recorded five-mode example every
+diagonal completion T_b=P0+(1/4)P1+b P_(>=2), 1/4<=b<=3/4, agrees on every
+word through degree4. A T insertion can first act on a two-excitation intermediate
+state and return to the reference in a word of length5.
+
+The implemented default is now feasibility, with no objective on occupation or
+responses. Bounds are explicit search premises. For a finite positive transfer
+aI<=T<=MI the localizers are T-aI, MI-T, and
+(T-aI)(MI-T)=(M+a)T-T^2-aMI. They are not assumptions that every physical time
+representation is a vacuum contraction. Thermal GNS time needs its own type.
+The minimal pure-occupation Fock completion remains optional and cannot be used
+to reject mixed states or thermal GNS representations.
+The search now also accepts a supplied reference eigenvalue lambda>0:
+T Omega=lambda Omega. The normalized case lambda=1 remains the default.
+State normalization omega(1)=1 is not the unnormalized source value Z[0].
+Changing lambda is a changed input, not a physical selection or recovered Z.
+Both campaign and direct finite-completion entry points reject the unsupported
+pure-Fock ansatz for other source classes, reference amplitudes or ceilings.
+
+2. The original source data and what they do not assert
+
+The known product collar gives (partial_r+B)psi=0, R_l=exp(-l B) and its full
+two-face orthogonal Cauchy graph projection G_l. The previous contract proves
+that R_l and signed B are recoverable from the labeled full graph and known l.
+In infinite dimension this includes the closure of the spectral quotient.
+These are one-particle/classical boundary data.
+
+Original source references:
+  01_boundary_kernel_source.tex:302-316: S_prim is a relative spectral trace
+  for a DECLARED test profile f, plus the eta phase. It is not an explicitly
+  supplied quadratic Grassmann action on the whole physical field algebra.
+  01_boundary_kernel_source.tex:319-343: local insertions are introduced as a
+  separate source algebra. Lines480-520: the operational seed tuple already
+  includes its algebra, time, reflection and state.
+  02_carrier_source.tex:8-39: S+=Lambda_even(E) is an INTERNAL half-spinor
+  carrier, not automatically the physical many-particle Fock representation.
+  04_qft_source.tex:2270-2301: higher derivatives S_adm^(n), n>=3, are retained
+  as interaction vertices. Therefore free dynamics cannot be imposed as a
+  general consequence of the original action.
+
+GATE.METRIC.17/v161 and QFT.NETRP.01/v175 already supply second-quantization
+functoriality under an actual Bogoliubov field identification. The construction
+below reuses that mathematics; it does not rediscover a physical selection rule.
+
+3. A projection CAR covariance forces all state moments
+
+Let c(f) obey CAR on a finite-dimensional one-particle space, and suppose the
+ACTUAL state has covariance C_ij=omega(c_j^* c_i)=G_ij with G=G*=G^2.
+For f in Ker G, positivity gives ||c(f)Omega||^2=0. For g in Ran G, CAR gives
+||c^*(g)Omega||^2=0. These annihilation conditions and CAR determine all moments
+by normal ordering. In finite Fock space their common solution space is one
+dimension, the occupied Slater state for Ran G. Thus an independent assumption
+that this SAME state is quasifree is redundant.
+
+state_from_projection implements these linear annihilation constraints and
+checks every entry of the supplied covariance. It does not start with a Wick
+formula or choose a vacuum occupation by minimizing a function.
+
+IMPORTANT: the classical Cauchy projector being G does not prove that the
+physical state's CAR covariance is G. That identification remains a substantive
+source/field premise. A mixed subface covariance alone also does not satisfy
+this projection argument.
+
+4. Oriented boundary-state pairing determines the full operator ray
+
+On two labeled m-dimensional faces (input first, output second), let V=[I;R] and
+G=V(V*V)^(-1)V*. Its forced boundary state ray is
+  wedge_j (e_in,j + sum_i R_ij e_out,i).
+Use the fixed ordered exterior input dual: an input subset J-complement is
+paired with input index J, with sign (-1)^inv(J), where inv(J) counts pairs
+j in J, k not in J, k>j. Expanding the wedge gives
+  Q_(I,J) / Q_(empty,empty) = det R_(I,J)   if |I|=|J|,
+and zero otherwise. Therefore Q is proportional to direct_sum_n Lambda^n R.
+boundary_amplitude reconstructs the state from G, performs this oriented
+unvectorization, and independently agrees with the creator-covariance recurrence.
+Complex nondiagonal controls verify the signs and avoid an unnoticed transpose
+or conjugation. Independent frame changes U_in,V_out give exactly
+Q'=Gamma(V_out) Q Gamma(U_in^*). An internal quarter iI gives phases i^n on
+n-field products. Projection of G alone does not imply positivity of Q:
+R=-1 gives Q=diag(1,-1). A positive amplitude additionally uses the actual
+selfadjoint collar transfer R=exp(-lB)>0.
+
+The oriented operator-state identification is part of this specified fermionic
+quantization. It is not deduced just by observing that a matrix has matching
+dimension. This construction does not equate the internal CAR rotation with
+the physical chiral quarter domain, which remains separately labeled.
+
+Only an OPERATOR RAY is determined by normalized G. Its overall complex factor,
+vacuum determinant and unnormalized source partition function are not recovered.
+The chart Q_(empty,empty)=1 is a normalization of that ray, not a physical
+derivation of the scalar, its seam phase, or a gravitational area coefficient.
+
+5. Complete multi-field covariance and chronological sewing
+
+Equivalently suppose Q Omega=Omega and the FULL operator relations hold:
+  Q c_j^* = sum_i R_ij c_i^* Q.
+Pushing Q past a word of creators determines its value on every Fock basis
+vector. These vectors span, so the result is unique and equals the exterior
+lift above. It follows for all words, not only vacuum matrix elements. For two
+successive source maps,
+  Q(R2 R1)=Q(R2)Q(R1).
+This is verified for noncommuting R1,R2 so chronological order is actually tested.
+For a source semigroup R_(s+t)=R_s R_t this gives the normalized free multi-field
+sewing rule at every particle number; amplitudes are minors, not fitted factors.
+
+For positive Euclidean R, this is NOT a CAR *-automorphism. The adjoint relation
+is c_j Q = Q sum_i conjugate(R_ij)c_i, not Q c_j=sum_i conjugate(R_ij)c_i Q.
+For unitary real-time source maps the exterior lift is unitary and conjugation
+does define the corresponding CAR *-automorphism.
+
+An interaction can have the same reference and one-particle sector while
+violating this full covariance. For instance a different two-particle diagonal
+entry in diag(1,r,r,b) passes the vacuum creator relation but fails the full
+relation unless b=r^2. This is the adversarial test, not a proposed new TFPT model.
+
+6. The positive collar control and correct thermal representation
+
+For the repeated-mode calibration use TWO DECLARED IDENTICAL COPIES of the
+lowest alpha=1/4 source mode, B=(1/4)I2, and DECLARED length l=4 log4.
+This is not the particle/hole pair of the full chiral source. Then R_l=(1/4)I2 and
+  G=(1/17)[[16I,4I],[4I,I]].
+The boundary CAR has four modes. Its pure state is a vector in dimension16;
+the source amplitude Q acts on TWO modes, dimension4. These are different
+spaces. The reconstructed Q has diagonal (1,1/4,1/4,1/16), and the restricted
+thermal state is Q^2/Tr Q^2. Its one-particle occupation is 1/17, so
+  log((1-n)/n)=log16=2 l B.
+This is state and heat amplitude from the same full graph in this canonical
+fermionic realization; no many-body H, density matrix or target Q is supplied.
+
+A separate one-mode thermal GNS implementation uses left CAR on HS operators,
+Omega_rho=vec(sqrt rho) and L=H tensor I-I tensor H^T. It has both signs.
+For the same ratio r=1/4, exp(-l L) has eigenvalues {1,1,1/4,4} and fixes
+Omega_rho. It is positive but not a contraction. The repaired search accepts
+this source control with the source-derived finite ceiling4; ceiling1 is a
+different declared class. We do NOT replace this actual thermal generator by a
+chosen positive pure-state parent for the boundary purification.
+
+The actual lowest particle/hole pair of the single chiral A_alpha component has
+energies
+(alpha,1-alpha)=(1/4,3/4). At the same given length its response is
+R=diag(1/4,1/64). The same boundary-projection and oriented-pairing construction
+therefore gives Q=diag(1,1/4,1/64,1/256) and the thermal density
+diag(65536,4096,16,1)/69649. Here the input-dual CAR covariance is
+diag(16/17,4096/4097); the output covariance is diag(1/17,1/4097).
+This is not an insertion of |D| as a new time operator: the signed source pair
+has D=diag(1/4,-3/4), R_raw=diag(1/4,64), Q_raw=diag(1,1/4,64,16).
+The second-mode CAR particle-hole conjugation, followed by division by the
+filled-sea eigenvalue 64, gives precisely the positive relative Q above.
+Explicitly C=c_-+c_-^* is unitary in this finite sector. With N=N_++N_-,
+C N C^*-I=N_+-N_- and
+C[(1/4)N_+-(3/4)N_-]C^*+(3/4)I=(1/4)N_++(3/4)N_-.
+The same conjugation applied to the original quarter Gamma(iI), divided by the
+filled-reference phase i, gives the charged relative W below. Thus charge,
+energy and quarter action use the same source map and the same filled reference.
+These subtracted reference scalars do not recover an absolute partition factor.
+The charged quarter is W=diag(1,i,-i,1), with opposite creator phases i and -i,
+and equals exp(2pi i H) for H=diag(0,1/4,3/4,1). It is not the i^N rotation
+of two equally charged creation operators. The actual source-pair control and
+the duplicated-mode calibration are stored separately.
+The actual-pair SCS run returns optimal_inaccurate at floor0 and infeasible at
+floor1/4. The exact reconstructed matrix independently proves feasibility;
+the solver warning is retained and is not a clean numerical optimality proof.
+
+7. General interacting sewing from the original Schwinger family
+
+The original 04_qft_source.tex:1499-1514 defines connected S_n^T by functional
+derivatives of W_rel=log Z_rel. Its reconstruction theorem at2746-2782 is
+conditional on the full OS/CAR hypotheses. Under those hypotheses, define
+  K_OS(F,G)=<Theta F,G>_rel,   T_t[F]=[tau_t F].
+Time translation and the OS null-space quotient give T_(s+t)=T_s T_t on ALL
+positive-time polynomial histories. For a complete orthonormal OS basis {e_a},
+  K_OS(F,tau_(s+t) G)
+    = sum_a <[F],T_s e_a><e_a,T_t[G]>.
+This is the general multi-field sewing rule. It includes interaction vertices
+and any required memory in the full reconstructed state space. It cannot in
+general be replaced by determinants of a two-point kernel, a truncated basis,
+or by a boundary-configurations-only Markov assumption.
+
+This theorem gives a reconstruction from an ACTUAL complete source family; it
+does not calculate that family from a lone numerical c3, an index, or a spectral
+list. In particular, the original source has not supplied the physical
+identification of its full Schwinger functional with the finite graph-state
+quantization used in sections3-6. No unconditional physical completion follows.
+
+8. Full known chiral quarter source: no finite-window promotion
+
+For the existing DECLARED charged chiral CAR source with D_alpha=-i partial_theta
+and boundary condition f(theta+2pi)=exp(2pi i alpha)f(theta), keep alpha=1/4.
+Relative to its supplied filled negative sea, positive particle/hole energies are
+  epsilon_(+,n)=n+alpha, epsilon_(-,n)=n+1-alpha, n=0,1,... .
+This is the original source model, not a derivation of its physical identity
+from P1/P2. The original signed graph transfer exp(-l D_alpha) is unbounded,
+not a contraction. At every finite cutoff, change the negative modes to holes and
+divide by the heat eigenvalue of the filled sea. This produces the relative
+excitation transfer exp(-l|D_alpha|), with the sea scalar kept separate. The
+infinite construction below is directly in the given sea-relative CAR
+representation; no unitary particle-hole transform of infinitely many modes
+in the empty-vacuum representation is claimed.
+At cutoff n=0,...,N the divided sea factor is
+exp(l (N+1)(N/2+1-alpha)); it diverges as the cutoff is removed. The Z_p below
+are relative excitation partition sums and do not restore that absolute factor.
+Fix the supplied positive collar length l and put q=exp(-l).
+The one-particle excitation transfer has eigenvalues q^(n+alpha) and
+q^(n+1-alpha). Its full multi-field lift is defined explicitly on the countable
+occupation basis of finite subsets S of these modes by
+  E(S)=sum_(sigma,n in S) epsilon_(sigma,n),
+  H|S>=E(S)|S>,  Q_l|S>=exp(-l E(S))|S>.
+The domain sum_S E(S)^2 |psi_S|^2<infinity makes H selfadjoint and positive.
+Finite linear combinations are a core. Real time exp(-itH) is unitary and
+strongly continuous; Q_l obeys the semigroup law on the entire Fock space.
+Creator covariance and the determinant multi-field rule hold on the invariant
+finite-particle core and extend for bounded creators/transfers.
+
+There is explicit cutoff control, not just numerical stability. R=exp(-l h)
+satisfies
+  Tr R^p = (q^(p alpha)+q^(p(1-alpha)))/(1-q^p), p>0.
+After retaining n=0,...,N in both sectors, the omitted trace equals
+  q^(p(N+1)) (q^(p alpha)+q^(p(1-alpha)))/(1-q^p).
+Hence Q_l is trace class, Z_p=Tr Q_l^p=det(I+R^p) is finite and
+  0 <= log Z_p-log Z_(p,N) <= omitted Tr R^p.
+With the truncated operator extended by the tail vacuum projector,
+  ||Q_l-Q_(l,N)|| = q^(N+1+min(alpha,1-alpha)).
+The normalized Choi vectors vec(Q_(l,N))/||Q_(l,N)||_HS converge in the COMMON
+Hilbert-Schmidt/Choi space of the full source Fock space. Their squared distance
+is at most the omitted Tr R^2. This follows from their overlap sqrt(Z_2,N/Z_2)
+and 2(1-exp(-x/2))<=x. The equivalent graph-state interpretation uses a separately
+declared filled INPUT-face reference in the doubled boundary CAR representation.
+Raw finite Slater graph vectors embedded into the EMPTY doubled Fock space have
+increasing particle number and do not converge there. No infinite particle-hole
+unitary or normalizable maximally entangled identity vector is invoked.
+The complete state and transfer therefore exist beyond every finite window in
+this specified representation. Thermal state Q_l^2/Z_2 has the same beta=2l
+relation; no trace-class claim is made for an arbitrary continuum.
+
+The actual retained charged quarter transport acts as i on particle source
+modes and its conjugate -i on hole source modes. Its lift is
+  W|S>=i^(N_+(S)-N_-(S))|S>.
+It commutes with this source H and retains the charged quarter rule on every
+field word. Indeed W=exp(2pi i H) in this declared model; with real-time
+U_t=exp(-itH), this is the positively oriented loop U_(-2pi).
+This typed charged-source statement is not an identification of
+the unrelated internal i^N rotation or of all 16 carrier components with the
+same quarter eigenvalue. Nor does the single chiral construction identify all
+components of the doubled graded collar with this same time/loop generator.
+Overall determinant-line/partition phases still need
+the original unnormalized source data.
+
+9. Reproducible contribution
+
+The contribution is a corrected executable search path, a mandatory positive
+collar control, exact graph-state-to-operator reconstruction, and explicit
+operator/thermal-type checks. General exterior functoriality is known and
+reused. Original field/source identification, the unnormalized scalar source,
+interacting source evaluation and physical event instrument remain unresolved.
+They are not silently replaced by optimization objectives.
+
+10. Joint unnormalized source integration: the original identification test
+
+10.1 What the complete original source contains
+
+The full source is more than a normalized Cauchy graph or the number c3.
+It supplies one-sided operator data, domains, reference/comparison operators and
+an eta contribution. In 01_boundary_kernel_source.tex:122-130,
+D_ref=(D+tau*D tau*)/2 and D_rel=(D-tau*D tau*)/2 are EVEN/ODD PARTS of D.
+Thus D_rel is not automatically the full physical fermionic kinetic operator K.
+It must not be inserted in a Gaussian determinant without that identification.
+The canonical P1/P2 statement in tfpt_1_architecture_e8.tex:163-189 gives a
+primitive reflection-positive unit-winding seam kernel and the five-slot 3+2
+interface. Neither postulate states a Berezin measure or its source coupling.
+
+Suppose a complex fermion kinetic operator K, reference, local source coupling
+and ordered Berezin measure really ARE given by that same source. On an
+invertible finite regulator, direct nilpotent integration gives, with orientation
+integral exp(-sum_j barpsi_j psi_j)=1,
+  Z_F[bareta,eta] = exp(-S0) det K exp(bareta K^(-1) eta).
+This includes its scalar rather than fitting it after a normalized correlation.
+For retained modes b and integrated modes i with invertible K_ii,
+  S_b=K_bb-K_bi K_ii^(-1)K_ib,
+  det K=det K_ii det S_b,  (K^(-1))_bb=S_b^(-1).
+Thus the source response and determinant factor come from the SAME integration.
+In a genuinely geometric cut this supplies a boundary reduction; a generic mode
+partition alone does not derive the physical geometric boundary pairing.
+Joint_source uses direct Grassmann integration independent of the determinant
+formula and checks both formulas and their signs. It keeps det K_ii explicitly.
+
+For the actual lowest particle/hole pair of section6, close two copies of the
+given collar under the DECLARED ordinary fermionic trace. Then
+  K=I+R_ell^2=diag(17/16,4097/4096),
+  det K=69649/65536,
+  K^(-1)=diag(16/17,4096/4097),
+  n=I-K^(-1)=diag(1/17,1/4097).
+K^(-1) is the coherent source contraction, whereas n is the normal-ordered CAR
+occupation. They are not interchangeable. Eliminating the hole MODE produces
+the retained kinetic17/16 AND scalar4097/4096. This example is not an integration
+of a geometric collar interior. Its CAR/Berezin and trace-closure assumptions
+remain explicit; it does not supply a new physical field assignment from P1.
+
+10.2 A decisive test against the original primitive spectral action
+
+For a direct identification of the real primitive action with the integrated
+complex-fermion action -log det K, vary a positive commuting kinetic eigenvalue
+x=K/chi. The necessary identity is x f'(x)+1=0. Hence on that spectral interval
+  f(x)=-log x+constant.
+A generic declared spectral test profile does not satisfy it: f(x)=exp(-x^2)
+gives residual1-2x^2 exp(-x^2). Rewriting exp(-Tr f(K)) as det(exp(-f(K)))
+changes the kinetic operator and therefore does not prove covariance K^(-1).
+This only tests the proposed DIRECT identification. It is not a no-go against a
+theory containing a separate bosonic spectral action AND fermionic determinant.
+The original04:463-471 normalizes Z_adm by a reference; 04:2160-2173 introduces
+a formal measure and S_adm; 04:2270-2301 retains higher interaction vertices.
+Those definitions do not prove that the full source is this quadratic model.
+
+10.3 Absolute spectral normalization of the same given angular quarter source
+
+There is a concrete absolute normalizer for the already GIVEN circle operator,
+once complex-fermion zeta quantization and spectral cut are specified. This is
+angular theta, not the normal collar parameter or a positive thermal state.
+Let D_alpha=-i partial_theta on f(2pi)=exp(2pi i alpha)f(0),0<alpha<1,
+with negative eigenvalue argument +pi. Its spectrum is n+alpha,n in Z. Then
+  zeta_D(s)=zeta_H(s,alpha)+exp(-i pi s) zeta_H(s,1-alpha),
+  eta_D(0)=1-2alpha,  zeta_(D^2)(0)=0,
+  det_zeta D_alpha=2sin(pi alpha) exp(-i pi(1-2alpha)/2)
+                  =1-exp(2pi i alpha).
+The last equality follows from the Hurwitz derivative at0 and Gamma reflection.
+At alpha1/4 the absolute complex scalar is1-i, including modulus sqrt2 and the
+eta phase exp(-i pi/4). The diagnostically conjugate domain alpha_ref3/4 gives
+det1+i and ratio-i. This diagnostic reference is NOT the archived D_ref.
+The conjugate determinant pairing has squared norm2. It is not a proof that the
+physical doubled TFPT source uses exactly this pair and no other contribution.
+
+The same source operator has the Green kernel, away from its insertion,
+  G_-=i/(h-1), G_+=ih/(h-1), h=exp(2pi i alpha),
+  G_+-G_-=i, G_+=h G_-.
+Hence -i partial_theta G=delta and the actual charged quarter holonomy is kept.
+For smooth finite Grassmann sources the conditional angular functional is
+  Z_alpha[bareta,eta]=det_zeta D_alpha exp(bareta D_alpha^(-1)eta).
+This is a fermionic Green propagator, not a positive CAR occupation covariance.
+For alpha variations use the fixed periodic frame -i partial_theta+alpha;
+the displayed piecewise Green kernel uses the twisted frame. Their coincident
+values agree; the field/source frames must be transported together.
+The alpha variation contains a contact/regularization term:
+  partial_alpha log det_zeta D=pi cot(pi alpha)+i pi,
+whereas symmetric PV Tr D^(-1)=pi cot(pi alpha). The missing i pi would be the
+eta-phase derivative, so discarding it breaks the joint source comparison.
+
+For a general invertible selfadjoint K with the same spectral cut,
+  log det_zeta K=-zeta_(K^2)'(0)/2
+                +i pi [zeta_(K^2)(0)-eta_K(0)]/2.
+The primitive real trace plus eta expression therefore matches a relative
+fermionic determinant ONLY after compatible actual K/K_ref, logarithmic profile,
+zeta trace prescription and the relative zeta(K^2;0) term are accounted for.
+The last term vanishes in this circle control, not on every geometry.
+
+10.4 The thermal absolute factor and its central phase are separately typed
+
+For the given sea-relative chiral source, an exponential Abel prescription
+has E_epsilon=d/depsilon[exp(-(1-alpha)epsilon)/(1-exp(-epsilon))].
+Its expansion is -1/epsilon^2+B2(1-alpha)/2+O(epsilon). Removing that specified
+divergence gives E_sea^zeta=B2(1-alpha)/2=-1/96 at alpha1/4.
+This is a REGULARIZATION CHOICE, not recovered from normalized G or P1/P2.
+For beta=2ell=8log4 put q_beta=exp(-beta)=1/65536 (not q_ell=1/256).
+  Z_beta^zeta[0]=exp(-beta E_sea^zeta)
+     product_(n>=0)(1+q_beta^(n+alpha))(1+q_beta^(n+1-alpha)).
+For finite mode sources S the full functional is this scalar times
+exp(bareta_S (I+R_beta)^(-1)_SS eta_S). Existing section8 trace-tail bounds
+control the omitted product at this SAME beta. Keeping only n=0 gives
+  exp(-beta E_sea^zeta)=2^(1/6),
+  Z_beta,0^zeta[0]=2^(1/6) 69649/65536.
+The source-field conjugation still has phases i/-i. But exp(2pi i H_absolute)
+additionally has central phase exp(2pi i E_sea^zeta)=exp(-i pi/48).
+It must not be silently equated to the old relative quarter implementer.
+Cancellation by an original eta/bulk determinant line is NOT proved here.
+This is why the search must retain reference eigenvalue and central data rather
+than fixing absolute vacuum amplitude to1 and then claiming a recovered source.
+
+Within this SAME stipulated Hurwitz scheme, the angular and thermal quantities
+are not independent fit parameters. On the zero-free chart0<alpha<1,
+  E_sea=-zeta_H(-1,1-alpha)=eta_D(0)^2/8-1/24,
+  partial_alpha E_sea=-eta_D(0)/2.
+For the finite N-pair product with the full prescribed sea counterterm,
+  -(1/beta) partial_alpha log Z_(beta,N)
+    =-eta_D(0)/2 + sum_(n=0)^(N-1)
+        [f_beta(n+alpha)-f_beta(n+1-alpha)],
+where f_beta(e)=1/(1+exp(beta e)). Thus the derivative of the SAME unnormalized
+functional equals its state/occupation response including the sea term.
+For alpha1/4,beta8log4,N1 it is exactly
+  -1/4+1/17-1/4097=-53329/278596=-3137/16388.
+An independent four-state Fock trace checks this identity and its conjugate
+and alpha1/2 controls. The full-mode limit uses the same positive-beta trace
+tails: the omitted charge response is bounded in absolute value by
+  exp(-beta N) [exp(-beta alpha)+exp(-beta(1-alpha))]/[1-exp(-beta)].
+This also gives locally uniform convergence of the derivative in this chart.
+These are source-coordinate spectral/thermal Ward identities, not the
+angular i pi contact response itself or a P1/P2-derived physical event law.
+Other counterterms can change them; matching the prescribed spectral scheme
+is a premise. Across integer alpha the zero-mode chart and spectral flow must
+be treated anew. The quarter branch is retained throughout this calculation.
+
+10.5 Literature and remaining original identification
+
+Scott-Wojciechowski relates boundary-condition determinant changes to a
+Fredholm determinant while retaining the base Dirac determinant. Dai-Freed's
+reduced-eta invariant is a unit-Quillen-norm vector in an inverse determinant
+line with graded gluing; it does not choose the whole fermionic field measure.
+These results can control a specified complete operator/reference quantization;
+they cannot identify it with an unrelated comparison part or arbitrary f.
+Primary references: Kirk-Lesch, https://arxiv.org/abs/math/0012123, section4;
+Dai-Freed, https://arxiv.org/abs/hep-th/9405012; and NIST DLMF25.11.13,18.
+
+The joint free source functional and its scalar/Green/pairing rules are thus
+constructed under explicit compatible inputs. What is not supplied is the
+P1/P2 implication selecting the actual full K, field/measure coupling, geometric
+pairing and scalar regularization of the interacting original S_adm. This is
+not a claim that the full specified original source inevitably lacks a scalar.
+No physical P1/P2 gate or complete-TFPT claim is promoted by this construction.
+
+10.6 Actual absolute quarter source in the corrected search
+
+The same prescribed sea energy gives lambda=exp(-ell E_sea)=2^(1/12) at
+ell=4log4. The known lowest particle/hole excitation transfer is
+  T_absolute=lambda diag(1,1/4,1/64,1/256).
+Its 206 canonical moments through degree4 were generated from that algebraic
+matrix and fed, as float64 controls, to the existing search CLI at m2,degree2,
+bounded_positive, ceiling=lambda, floor0 and feasibility objective.
+With reference_eigenvalue=lambda the SCS status is optimal. With the SAME 206
+source moments but reference_eigenvalue1 the status is infeasible. Both actual
+CLI outputs and the reusable source-control packet are saved under results/.
+This is a numerical positive/negative software control for the supplied
+regularized source, not exact SDP optimality or a new P1/P2 quantization proof.
+The hole field still has the opposite charged quarter phase; the finite moment
+solver's internal CAR rotation is not itself a proof of that physical dictionary.
+
+11. Original physical-operator, measure and boundary-pairing audit
+
+11.1 The actual direction of the original reconstruction
+
+The stated P1/P2 in tfpt_1_architecture_e8.tex:163-189 name an oriented seam,
+primitive RP kernel, unit winding, c3 and the five-slot3+2 interface. They do not
+specify the field arguments or complete Schwinger family of that kernel. It is
+therefore also unjustified to decree that P1 is ONLY a two-point function.
+The stronger operational seed in01:480-496 supplies A_loc,tau_t,Theta,omega,
+winding and D_coll. Its construction runs from that seed to a spectral datum,
+not from the two numerical inputs to the whole field/source functional.
+Physical operationality is separately an axiom at01:622-625.
+The actual QFT positivity lemma assumes a fermionic CAR RP kernel at04:476-484;
+the source-symmetry argument uses anticommuting fermionic source derivatives
+at04:2735-2739. The conditional OS reconstruction at04:2746-2782 is a positive
+result for that full graded source family, not a derivation of its statistics.
+The geometric-measure construction at05:1695-1737 starts with a geometric
+reference measure and inherited OS positivity. It is not a preceding derivation
+of a fermionic Berezin measure. The v155/v715 Gaussian/CAR constructions also
+retain those physical inputs rather than generating them from P1/P2.
+
+For a GIVEN formally selfadjoint product Dirac source D=J_n(partial_r+B),
+J_n*=-J_n, J_n^2=-I, B*=B and {J_n,B}=0, integration by parts gives
+  <D psi,phi>-<psi,D phi>
+    = psi(0)* J_n phi(0)-psi(ell)* J_n phi(ell).
+Thus its classical Green boundary form is fixed by the normal symbol and the
+boundary Hilbert metric; it is not an additional freely fitted matrix. This
+positive geometric statement and the Cauchy-Lagrangian identity were already
+retained in seam-full-collar-reconstruction section2. They do NOT identify that
+classical pairing with the actual quantum CAR state/operator amplitude.
+Primary source: Baer-Ballmann, arXiv:1307.3021, proposition2.1 and section4.
+Likewise Connes' real-spectral-triple antisymmetric pairing and Pfaffian use a
+specified KO-dimension2 triple and anticommuting fields (Seminaire Poincare2007,
+section7); those hypotheses cannot be inferred merely from an internal16.
+
+11.2 Repair of an invalid original order-one perturbation inference
+
+The implication at01:397-405 from an H1 graph estimate to an arbitrarily small
+relative bound is invalid. A bounded-coefficient first-order perturbation need
+not be infinitesimally bounded relative to a first-order anchor.
+Already P=aA on any unbounded selfadjoint anchor has best relative bound|a|.
+The estimate |a lambda_n|<=eps|lambda_n|+C_eps fails at large eigenvalues for
+eps<|a|. For P=-A, the sum restricted to Dom(A) is the zero operator on that
+proper dense domain. It is not closed or selfadjoint, though its closure is the
+bounded zero operator on the whole Hilbert space; compact resolvent is lost.
+
+A diagnostic retains the quarter domain AND the even/odd reflection types.
+On the compact product torus, psi(theta+2pi,r)=i psi(theta,r), periodic r, let
+  A=sigma_x(-i partial_theta)+sigma_y(-i partial_r),
+  P=a I(-i partial_r).
+In periodic theta coordinates k=n+1/4. Reflection r->-r with fiber lift sigma_x
+makes A even and P odd. At fixed k=1/4 and r-frequency m->infinity,
+  ||P psi_m||/||A psi_m||=|a|m/sqrt(m^2+1/16)->|a|.
+At a1 one eigenvalue of A+P is m-sqrt(m^2+1/16)->0. Choose its unit eigenvectors
+v_m. The partial sums of sum_m v_m/m are graph-Cauchy for A+P, with L2 limit
+outside H1. Hence the realization on Dom(A)=H1 is not closed.
+
+Correct constructive sufficient conditions include:
+  (i) a symmetric bounded order-zero perturbation on the anchor domain;
+  (ii) an actually established relative bound<1 on that same domain; or
+  (iii) an independent elliptic-total-operator theorem with a compatible
+        selfadjoint elliptic boundary condition, not automatically the old one.
+For the displayed torus family |a|<1 gives the relative-bound theorem. Requiring
+the SAME original Dirac/Clifford principal metric in this family is stronger:
+  (sigma_y+a I)^2-I = a^2 I+2a sigma_y,
+so it forces a0. General order-one perturbations cannot be treated as canonical
+inner fluctuations: on a smooth compact spectral triple a[D,b] is bounded,
+whereas a change of the principal symbol must be checked separately.
+The diagnostic is NOT an exclusion of the actual P1/P2 source. At a1 it is not
+an admissible elliptic Dirac source; that is exactly what the false general
+perturbation inference failed to test. No historical source is overwritten.
+
+11.3 The new joint identity is not a fixed-field reconstruction theorem
+
+This is an inverse-data test in the actual first TWO particle/hole excitation
+pairs of the already supplied single chiral source. It is not a new source
+ansatz, a locality proof or the P2 five-slot internal carrier. Keep
+  epsilon=(alpha,1+alpha,1-alpha,2-alpha),
+  Q=N_p0+N_p1-N_h0-N_h1,
+  H_alpha=E_sea(alpha)I+sum_j epsilon_j N_j,
+with the very SAME full prescribed Hurwitz sea term as in section10.
+In this four-mode Fock space rotate ONLY the neutral two-particle states
+|p0 h0> (excitation energy1) and |p1 h1> (energy3) by the real unitary block
+  U=[[3/5,-4/5],[4/5,3/5]],
+and take U=I on the other states. Define H'_alpha=U H_alpha U*.
+
+This gives exact identities for ALL alpha in the chart and beta>0:
+  UQ=QU,  U W_quarter=W_quarter U,
+  Tr exp(-beta H'_alpha)=Tr exp(-beta H_alpha),
+  partial_alpha H'_alpha=Q+partial_alpha E_sea(alpha).
+Thus the full thermal partition and new eta/sea/thermal Ward identity agree,
+including the absolute central phase; none has been renormalized away.
+U fixes the vacuum AND the entire one-particle sector, so all vacuum TWO-field
+time functions of the original fixed creators/annihilators also agree.
+
+The four-field response distinguishes the fixed field dictionary. At t=log2,
+remove only the COMMON factor exp(-t E_sea), and let A*=c_p0* c_h0*.
+  <0|A exp(-t H_rel) A*|0> = 1/2,
+  <0|A exp(-t H'_rel) A*|0> = (9/25)(1/2)+(16/25)(1/8)=13/50.
+The difference is6/25. The original linear creator equation [H,c_p0*]=alpha c_p0*
+fails for H' with the same creator. This is not a failure of positivity:
+both positive-time evolution operators are positive and have identical spectra.
+
+The assertion is about reconstruction with FIXED field/source labels. Under a
+simultaneous conjugation of every field these two executions are equivalent.
+Nor is this mode-space U proved local in the seam coordinate. Consequently this
+is NOT a countermodel to the full geometrically local P1/P2 theory and does not
+show the original source can contain arbitrary such deformations. It DOES show
+that even the strengthened traced/one-particle comparison cannot select the
+original fixed-field amplitude without its field/source identification.
+
+11.4 Consequence for the actual constructive target
+
+Preserve the coupled eta/sea/thermal identity as a consistency check in its given
+source class. Do not use it to infer an entire physical measure or field map.
+The next source equation must retain actual insertions, for example the same
+neutral four-field response, or the appropriate full Schwinger-Dyson identities
+of the ORIGINAL interacting S_adm. Do not simply impose a free creator equation
+on that interacting action: its higher vertices are explicitly retained there.
+The search must also use an actual selfadjoint total operator/domain and the
+Green-compatible geometric source pairing, not the false perturbative shortcut.
+These corrections make a proposed derivation falsifiable at a concrete missing
+response. They do not establish the requested complete physical P1/P2 solution.
+
+12. Exact non-Gaussian functional reconstruction from a complete CAR kernel
+
+12.1 What is an input, and what is reconstructed
+
+P1 postulates a structured boundary kernel, not merely the number c3. We do not
+replace that object by its normalization. Its active declaration at architecture
+lines163-189 does not, however, define its arguments as the physical charged
+CAR field variables used below. This field dictionary is an explicit premise.
+The first field-dependent integral at original04:2160-2183 writes Dphi and
+S_adm[phi] symbolically; its second and higher variations at2272-2302 are inputs
+to the vertex expansion, not an explicit construction of that action.
+
+The following is standard finite coherent-state reconstruction, implemented on
+the existing search/source path. It is not a new fundamental principle. Given
+an n-mode CAR dictionary and the COMPLETE parity-even matrix T in its labeled
+Fock basis (n=1..5 here), it produces an exact finite polynomial field kernel,
+its gluing pairing and, where defined, its full non-Gaussian link action. No
+independent Gaussian/Wick or linear creator-covariance equation is imposed.
+Spatial locality, Lorentz covariance and identification with the geometric P1
+kernel are NOT inferred from this matrix representation.
+
+12.2 Kernel, inverse and the unique CAR gluing functional
+
+Order all Grassmann bars before the unbarred variables. For occupation subsets
+I,J define B_I=(-1)^(|I|(|I|-1)/2) barz_I and Z_J=z_J, with increasing indices.
+Then
+  K_T(barz,z)=sum_(I,J) B_I T_IJ Z_J,
+  K_identity=exp(sum_j barz_j z_j).
+Every coefficient recovers precisely one matrix entry, so the map is invertible.
+For parity-even operators, direct Grassmann integration gives
+  K_(T2 T1)(barx,y)
+    = integral K_T2(barx,w) exp(-barw w) K_T1(barw,y) d(barw,w).
+Our orientation is integral exp(-barw w)=1. Equivalently the Gaussian-weighted
+gluing functional L obeys L(Z_J B_I)=delta_JI. The4^n products Z_J B_I are
+nonzero signed distinct monomials and span the entire2n-generator Grassmann
+algebra. Thus these equations uniquely determine L. This is a derivation of
+the finite gluing functional from the CAR dictionary and identity/composition
+requirement, NOT a derivation of the physical CAR dictionary from P1/P2.
+
+Ordinary closure is
+  Tr T=integral exp(-barz z) K_T(-barz,z) d(barz,z).
+The minus sign is essential: omitting it gives the graded trace. An inserted
+operator W is kept explicitly as K_(T W), rather than replaced by a different
+commuting matrix. Unnormalized traces and scalar factors are retained.
+
+12.3 One complete link action, including higher vertices
+
+Let lambda0=K_T(0,0)=T00 be nonzero. Set N=K_T/lambda0-1. The finite nilpotent
+series
+  S_nil=-log(1+N)=-sum_(k>=1) (-1)^(k+1) N^k/k
+terminates and satisfies K_T=lambda0 exp(-S_nil) EXACTLY. This reconstructs all
+vertices, including degrees4,6,...,2n. Lambda0 remains an explicit scalar; no
+logarithm branch for it is selected. Importantly lambda0 is the EMPTY coherent
+vacuum entry, not generally the reference eigenvalue in T Omega=lambda_ref Omega.
+If T00=0 this logarithm chart fails; the kernel polynomial can still be used.
+Conversely T can be singular with T00 nonzero, so this finite polynomial log
+can exist even when a finite Hamiltonian -log(T)/ell does not exist.
+The Grassmann link log and the matrix operator log are distinct operations.
+
+For a specified closed sequence of links T_l, the product of their K_Tl kernels
+with the above Gaussian gluing weights is an exact finite field functional for
+Tr(T_L...T_1). Every matrix field insertion and chronological product is then
+computed in the same fixed CAR dictionary. The chosen trace/initial boundary
+condition remains part of the problem; an arbitrary physical initial state is
+not inferred from T alone. A family T[Phi] gives a family S_nil[Phi] by the same
+procedure, but the actual original Phi-dependence is not generated by a change
+of representation. No interacting 1PI inverse is equated to a bare kinetic term.
+
+12.4 Interacting control retains actual quarter time and the absolute sea term
+
+Reuse the supplied lowest charged particle/hole pair and ell=8log2. Its free
+transfer is diag(1,1/4,1/64,1/256). For an explicitly supplied interacting control
+replace only the pair entry by1/65536. This yields
+  H_int=diag(0,1/4,3/4,2)=H_free+N_p N_h,
+  exp(2pi i H_int)=diag(1,i,-i,1).
+Thus this control verifies the actual time-loop equation, not merely [T,W]=0.
+Its reconstructed S_nil has quartic coefficient -255/65536 in bars-first order;
+ordinary trace is82945/65536. Its vacuum and one-particle columns coincide with
+the free source; their full kernels and pair responses do not coincide.
+The entire prescribed sea factor lambda_sea=2^(1/12) is retained in the kernel
+body. It leaves S_nil unchanged but changes the absolute amplitude. With
+H_tot=H_int-I/96 the full loop is exp(-i pi/48) diag(1,i,-i,1).
+The separate angular zeta determinant1-i is not identified with this transfer.
+This finite control is NOT a spatially local source selection or a P1/P2 model.
+
+12.5 Existing search outputs now expose their actual full field actions
+
+The CLI consumes the existing source-clustering min/max finite-completion files.
+It safely parses rational entries, independently checks diagonal Hermitian PSD,
+matches the stored full matrix, and verifies exact kernel/action roundtrips.
+It does not trust the stored success flags alone. The adapter is deliberately
+limited to these diagonal five-mode certificates; other matrices are not
+silently certified. Reference occupations and realization assumptions persist.
+
+Both have Omega=|31>, lambda_ref=1, and action degree10, but T00 is1/4 versus3/4.
+Ordinary traces are35/4 and87/4. Their ACTUAL internal W=i^N has traces
+  min: -1-i/4, max: -11/2-11i/4.
+The normalized GNS R=i^(N-N_Omega) instead has traces
+  min: -1/4+i, max: -11/4+11i/2.
+They are not replaced by alternating particle/hole charges just because the
+diagonal matrices commute with both. Neither internal action proves a physical
+quarter-time equation for these search outputs, which supply no physical ell.
+
+The min-trace certificate simplifies exactly. Put B=sum barz_j z_j and let M
+be the product of all five bars followed by all five fields. Then
+  T_min=(I+3|31><31|)/4,
+  K_min=exp(B)/4+3M/4,
+  lambda0=1/4, S_nil=-B-3M.
+The degree10 term exposes the historical extremal-search construction. It is
+not an independently selected TFPT interaction, nor evidence that degree10 or
+five-body support is physically required. Current feasibility defaults remain.
+
+12.6 Consequence and independent verification
+
+This removes an unnecessary separation between kernel, finite CAR gluing and
+full link vertices: a COMPLETE kernel in the actual field dictionary supplies
+them together. The physical dictionary and original field-dependent kernel
+must still be derived; P2's internal16 is not silently replaced by this5-mode
+Fock space. Bare Berezin orientation is a representation convention, not a
+separate physical probability measure generated by numerical dimension matching.
+No new physical gate is closed. The existing scalar/profile, geometry and CAR
+identification conditions in sections9-11 remain in force.
+
+Independent review checked all1364 duality values for n=1..5,83 random even
+matrix-pair roundtrips/compositions/traces and the10 targeted kernel tests.
+The combined new/existing source run passed20 targeted tests. Primary coherent
+state background: Ohnuki/Kashiwa, Progress of Theoretical Physics60(1978)548,
+https://doi.org/10.1143/PTP.60.548; the finite identities above are proved directly.

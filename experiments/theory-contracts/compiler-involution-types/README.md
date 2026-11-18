@@ -77,8 +77,7 @@ would not establish this invariant.
 
 The separate source is the unchanged construction prefix of
 `experiments/tfpt-discovery/seam_state_derivation_probe.py`. The local
-adapter follows the pinned `double-cover-rh-audit-2026-09-08/seam_source.py`
-extraction boundary, before Aint_f. It compiles the unmodified source with
+adapter pins that source directly and extracts the same boundary before Aint_f. It compiles the unmodified source with
 `optimize=0`, even when our test process uses `-OO`: the upstream module
 hashes its own docstring during import, so an ordinary `-OO` import fails
 before construction. This adapter retains the docstring and all upstream

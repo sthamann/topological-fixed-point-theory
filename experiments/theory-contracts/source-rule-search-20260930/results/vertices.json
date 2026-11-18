@@ -1,0 +1,162 @@
+{
+  "status": "PASS_SCOPED_SINGLE_DIRECTION_EXCLUSION_AND_TWO_DIRECTION_SOURCE_CANDIDATE",
+  "scope": "Only one neutral Grade-2 vertex F=aR+bRY with fixed family component 1 and norm 48; not an all-source or all-TFPT no-go.",
+  "source_calls": [
+    "tfpt_explorer.source_charge_response.exact_charge_response()",
+    "tfpt_explorer.source_majorana_pairs._native_pairs()",
+    "tfpt_explorer.source_majorana_pairs._joint_neutral_pair(native_pairs)"
+  ],
+  "native_48_root_outputs": {
+    "count": 48,
+    "relative_coefficient": "5/24",
+    "Gram_R_RY": [
+      [
+        "48",
+        "10"
+      ],
+      [
+        "10",
+        "35/3"
+      ]
+    ],
+    "norm_R": "48",
+    "norm_RY": "35/3",
+    "inner_R_RY": "10",
+    "SY_definition": "SY=RY-(5/24)R",
+    "Gram_R_SY": [
+      [
+        "48",
+        "0"
+      ],
+      [
+        "0",
+        "115/12"
+      ]
+    ],
+    "family_response_SY_relative_to_R": "0",
+    "R_JY_JY": "0",
+    "RY_JY_JY": "115/36",
+    "SY_JY_JY": "115/36",
+    "chiral_current_level": "5/6"
+  },
+  "single_vertex_F_aR_bRY": {
+    "family_component": "(24*a + 5*b)/24",
+    "norm_squared_expanded": "(144*a**2 + 60*a*b + 35*b**2)/3",
+    "norm_squared_orthogonal_frame": "(144*a**2 + 60*a*b + 35*b**2)/3",
+    "with_family_component_1_norm_squared": "(115*b**2 + 576)/12",
+    "norm_excess_over_48": "115*b**2/12",
+    "chiral_hypercharge_ward": "115*b/36",
+    "ward_with_family_component_1": "115*b/36",
+    "bounded_rational_grid": {
+      "numerators": [
+        -12,
+        12
+      ],
+      "denominators": [
+        1,
+        2,
+        3,
+        4,
+        6,
+        12,
+        24
+      ],
+      "unique_coefficients_each": 93,
+      "tested_pairs": 8649,
+      "passing_candidates": []
+    },
+    "global_real_coefficients_proof": "For real a,b, family=1 and norm²=48 imply 48+115 b²/12=48, hence b=0; then the J_Y,J_Y Ward is 0. Thus no real pair passes all conditions."
+  },
+  "two_direction_candidate": {
+    "directions": [
+      "R",
+      "SY"
+    ],
+    "Gram": [
+      [
+        "48",
+        "0"
+      ],
+      [
+        "0",
+        "115/12"
+      ]
+    ],
+    "determinant": "460",
+    "ward_vector": [
+      "0",
+      "115/36"
+    ],
+    "RY_reconstruction": "RY=(5/24)R+SY",
+    "coefficient_5over24": "5/24",
+    "source_derived_not_fit": true
+  },
+  "Gamma_pair_responses_direct_source": {
+    "family_pairs": [
+      [
+        [
+          1,
+          1
+        ],
+        "4"
+      ],
+      [
+        [
+          1,
+          2
+        ],
+        "4"
+      ],
+      [
+        [
+          1,
+          3
+        ],
+        "4"
+      ],
+      [
+        [
+          2,
+          2
+        ],
+        "4"
+      ],
+      [
+        [
+          2,
+          3
+        ],
+        "4"
+      ],
+      [
+        [
+          3,
+          3
+        ],
+        "4"
+      ]
+    ],
+    "R": [
+      "4"
+    ],
+    "RY": [
+      "-5/3"
+    ],
+    "SY": [
+      "-5/2"
+    ]
+  },
+  "checks": {
+    "same_original_48_root_set_used": true,
+    "RY_equals_5over24_R_plus_SY": true,
+    "R_SY_orthogonal": true,
+    "exact_gram_R_SY": true,
+    "exact_gram_R_RY": true,
+    "single_vertex_norm_identity": true,
+    "single_vertex_constraints_force_b_zero": true,
+    "single_vertex_ward_zero_under_constraints": true,
+    "bounded_grid_has_no_counterexample": true,
+    "source_R_and_RY_pair_responses": true,
+    "SY_pair_response_minus_5over2": true
+  }
+}

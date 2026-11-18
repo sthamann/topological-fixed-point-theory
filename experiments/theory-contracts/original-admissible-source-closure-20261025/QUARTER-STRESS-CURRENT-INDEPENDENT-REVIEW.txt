@@ -1,0 +1,295 @@
+UNABHÄNGIGER REVIEW: QUARTER STRESS UND ORIGINALSTROM
+=====================================================
+
+26. Oktober 2026. Lesender Quellen und Strukturreview. Keine Änderung am
+TFPT Repository, Atlas oder Ledger.
+
+Urteil
+------
+
+Die neue Identität ist exakt, aber ihr Typ ist entscheidend:
+
+  J_n = 2 (L_n^(3/4) - L_n^(1/4))                     (1)
+
+gilt für alle n auf dem bereits vorhandenen gemeinsamen periodischen CAR
+Rahmen, mit demselben Strom J, derselben Ladung Q, derselben negativen See und
+demselben endlichen Energiekern. Sie gilt auch für n=0. Damit ist der
+Originalstrom aus der echten Quarter Stressfamilie rekonstruiert, ohne eine
+neue Kopplung oder ein neues Feld einzuführen.
+
+Die alte P1 Quelle liefert dagegen noch keine lokale Identifizierung, welche
+die beiden Quarter Stressdarstellungen auf genau diese gemeinsamen CAR
+Generatoren zieht. Die A4 Geometrie liefert den vollständigen NS Cover und
+seine beiden Quarter Charakterräume. In der tatsächlichen Cover CAR Theorie
+sind diese zunächst zwei unabhängige Faktoren. Ihre direkte Stressdifferenz
+ist nicht der Heisenbergstrom. Dies ist ein exakter negativer Kontrolltest und
+lokalisiert den verbleibenden Pfeil präzise.
+
+1. Exakter gemeinsamer CAR Satz
+-------------------------------
+
+Die Originalformel steht in
+
+  experiments/theory-contracts/joint-native-algebra-selection-20261016/
+  ORIGINAL-ORDERED-CURRENT-KERNEL-AND-SEAM-GRADING.txt:55-62
+
+mit delta=alpha-1/2:
+
+  L_m^alpha = Sugawara_m + (Q+delta) J_m,  m>0,
+  L_0^alpha = degree + Q^2/2 + delta Q + delta^2/2.
+
+Für alpha=3/4 und alpha=1/4 sind delta_+=1/4 und delta_-=-1/4.
+Die Sugawaraanteile sind gleich. Daher ist ihre Differenz für m>0 genau
+J_m/2. Die negativen Moden folgen durch Adjungieren. Für m=0 heben sich die
+quadratischen Grundterme auf, weil delta_+^2=delta_-^2, und
+
+  2 (L_0^(3/4)-L_0^(1/4)) = Q = J_0.
+
+Die Identität ist somit eine Operatoridentität auf dem gemeinsamen
+algebraischen endlichen Energiekern. Der in
+
+  research-20261026/check_quarter_stress_current.py:42-51,73-117
+
+gespeicherte symbolische und endliche CAR Test implementiert genau diese
+Rechnung. Die ausgegebenen Modentests sind eine Kontrolle der bereits
+analytisch bewiesenen Formel und keine endliche CCR Darstellung.
+
+Für chi in C_c^infinity(I) folgt auf demselben lokalen CAR Netz unmittelbar
+
+  2 (T_(3/4)(chi)-T_(1/4)(chi)) = J(chi).               (2)
+
+Die Stromnormalisierung kann lokal geprüft werden. Setze
+
+  kappa_chi=(1/(2 pi)) integral (chi')^2 > 0,
+  g=-2 chi'/kappa_chi.
+
+Mit der vorhandenen Fourierkonvention ist
+
+  c(chi,g)=sum_(k>0) k(conj(chi_k)g_k-chi_k conj(g_k))=-2i,
+
+weil Parseval kappa_chi=2 sum_(k>0) k^2 |chi_k|^2 ergibt. Folglich ist das
+Weyl Rechteck exp(2 i s t). Dieser Test prüft zugleich Level, Vorzeichen und
+echte Unterstützung in einem proper interval I.
+
+2. Entscheidender negativer Kontrolltest für zwei Cover Faktoren
+----------------------------------------------------------------
+
+Man darf (1) nicht auf zwei unabhängige Cover CAR Faktoren übertragen. Setze
+
+  D_n=2(L_n^+ tensor I - I tensor L_n^-),
+
+mit c_+=c_-=1 und h_+=h_-=1/32. Auf dem Tensorvakuum liefert die
+Virasoro Relation
+
+  <[D_n,D_-n]>
+    =4 [2n(h_++h_-)+2 n(n^2-1)/12]
+    =n(4n^2-1)/6.                                      (3)
+
+Damit sind die ersten beiden Werte 1/2 und 5. Ein Level eins Heisenbergstrom
+hat dagegen die Werte 1 und 2. Kein gemeinsamer Skalenfaktor kann beide
+angleichen.
+
+Mehr noch: Für jede reelle selbstadjungierte Linearkombination
+
+  A_n=a L_n^+ tensor I + b I tensor L_n^-
+
+ist der kubische Koeffizient ihres Vakuumkommutators
+
+  (a^2+b^2)/12.
+
+Er verschwindet über den reellen Zahlen nur für a=b=0. Daher erzeugt keine
+nichttriviale selbstadjungierte lineare Kombination der beiden unabhängigen
+Stressfaktoren eine Heisenbergalgebra. Diese Aussage betrifft genau den
+unzulässigen Ersatz des fehlenden gemeinsamen CAR Pfeils durch eine direkte
+Subtraktion im Cover Tensorprodukt. Sie ist keine Aussage gegen die
+Originalquelle oder gegen andere lokale Einbettungen.
+
+3. Was die A4 und Möbius Quellen wirklich liefern
+--------------------------------------------------
+
+Der registrierte alte Quellenanker ist
+
+  paper-source:1fe2ddfabc74ac0e94a4686d
+  documents/archive--paper-latex--tfpt-theory-fullv21/sections/
+  001-section-introduction-the-problem-of-parameters.tex
+  SHA256 85bb11511be05385a7cadf6071dbede216b12befeb9d6767bc4460748cbec5d7
+
+Die Zeilen 165-221 postulieren den orientierbaren Doppelcover und den
+Nahtoperator. Die Zeilen 225-277 geben D_Gamma, U_Gamma=e^(i theta) und den
+Holonomiepfad. Sie konstruieren weder eine CAR Lokalfamilie noch einen
+gemeinsamen Quarter Stressvergleich.
+
+Die spätere exakte Operatoraufarbeitung ist
+
+  experiments/theory-contracts/canonical-seam-fermionization-20261025/
+  MOBIUS-QUARTER-OPERATOR-DICTIONARY.txt
+  SHA256 0b5f5cb8a4e47bedc3c6febb00666893da1797335644d0fb058072379589bd59
+
+Ihre Zeilen 84-118 verankern die alte Quelle. Die Zeilen 123-150 formulieren
+die volle Pin minus Monodromie. Die Zeilen 171-229 beweisen
+
+  H_cov = W_0 K direct sum W_1 K,
+  B_cov = 2(B_(1/4) direct sum B_(3/4)).
+
+Die Zeilen 245-276 zeigen zugleich die Grenze:
+
+  u_cov W_0=W_1,
+  u_cov W_1=W_0 u_base.
+
+Der Cover Multiplikator vertauscht also die Quarter Charakterräume. Auf dem
+vollständigen Möbius Pinor ändert er die Liftbezeichnung und ist allein kein
+Endomorphismus eines fest abgestiegenen Pin Sektors. Die gemeinsame periodische
+Koeffizientenbasis ist deshalb ein korrektes Rechenchart, aber noch keine
+Gleichheit der beiden Faktoren als ein und dieselbe P1 Feldalgebra.
+
+Die vorhandene Teilchen Loch Konjugation in
+
+  experiments/theory-contracts/seam-partner-original-action-20261015/
+  PROOF.txt:154-203
+
+schließt diese Lücke ebenfalls nicht. Sie bildet alpha auf 1-alpha ab,
+kehrt Ladung und das Vorzeichen des einteilchen Diracoperators um und ist ein
+unitärer Intertwiner zwischen zwei polarisierten Darstellungen. Sie ist kein
+innerer Implementer in einer festen Darstellung. Außerdem ist ihre
+Identifikation mit der geometrischen P1 Reflexion ausdrücklich unbewiesen.
+
+4. Abgleich mit dem alten P1 Vertrag
+------------------------------------
+
+Die Operational Seed Definition in
+
+  documents/archive--tfpt-45--source_extracts--01_boundary_kernel_source/
+  sections/002-section-intrinsic-closed-branch-and-canonical-rigid-obje.tex:
+  103-143
+
+nimmt das lokale Netz, Zeit, Reflexion, Zustand, Nahtklasse und den
+Collargenerator als Seed Daten und bildet sie vorwärts auf ein einseitiges
+Randdatum ab. Sie liefert keine inverse Rekonstruktion der Quarter CAR
+Generatoren aus dem Randtupel.
+
+Der aktuelle Externalization Contract bestätigt denselben Punkt in
+
+  documents/tfpt_research_contracts/sections/020-source.tex:14-58.
+
+Dort bleiben die Konvergenz lokaler Algebren, die mu4 verträgliche
+Fortsetzung und die OS Rekonstruktion als Teile von SEAM.EQUIV.01 offen. Der
+alte Kreisoperator und der A4 Quarterpair lösen somit die Einteilchen und
+Domainseite. Sie liefern nicht die verlangte lokale, zustands und
+reflexionsverträgliche P1 Feldidentifikation.
+
+5. Der Cover Austausch liefert den fehlenden Pfeil auf dem vorhandenen Cover
+--------------------------------------------------------------------------
+
+Auf dem bereits vorhandenen vollen Cover CAR Raum ist die notwendige
+Faktoridentifizierung nicht frei zu wählen. Sie wird durch u_cov geliefert.
+Schreibe
+
+  H_cov=H_0 direct sum H_1,
+  P=P_- direct sum P_-,
+  U=u_cov=[[0,u_base],[I,0]].                            (4)
+
+Dann ist [P,U] von Rang eins. Der Shale Stinespring Satz liefert daher einen
+CAR Fock Implementer Gamma(U), eindeutig bis auf eine Phase. Seine adjungierte
+Wirkung ist von dieser Phase unabhängig.
+
+Für den hier gebrauchten Pfeil H_0 nach H_1 ist U genau die Identität im
+gemeinsamen periodischen K Chart. Insbesondere
+
+  U P_0 U*=P_1.
+
+Auf dieser Teilalgebra transportiert Ad Gamma(U) somit die Wickordnung und den
+Quartervakuumzustand ohne Zusatzkonstante. Zieht man den physischen
+alpha=3/4 Stress des zweiten Faktors zurück, erhält man auf dem ersten Faktor
+
+  2(Ad Gamma(U)^(-1)(T_(3/4)(f))-T_(1/4)(f))=J_0(f).     (5)
+
+Der andere Pfeil H_1 nach H_0 enthält u_base und erzeugt den globalen
+Rang eins See Defekt. Deshalb ist der volle Implementervektor Gamma(U)Omega
+nicht vakuuminvariant. Das widerspricht (5) nicht: Die in (5) benutzte
+Faktorrestriktion ist zustandserhaltend, die volle gemischte Coveralgebra ist
+es nicht.
+
+Auch der Support ist präzise. U ist auf dem Cover die Multiplikation mit
+exp(i theta) und verändert daher keinen Coversupport. Die Charakterräume H_0
+und H_1 entstehen jedoch durch Deckprojektion. Ein Basisintervall I im x Kreis
+entspricht dem Zweipreimage Gebiet p^(-1)(I) auf dem Cover. Gleichung (5) ist
+lokal auf diesem Gebiet. Sie behauptet weder Lokalität auf nur einem seiner
+beiden Coverintervalle noch bereits den Abstieg in einen festen Pin Sektor.
+
+6. Lokale Stromnetz Rekonstruktion auf dem transportierten Faktor
+-----------------------------------------------------------------
+
+Für ein echtes Basisintervall I setze auf Faktor null
+
+  M_pair(I)=vN{ exp(i t T_-(f)),
+                 Ad Gamma(U)^(-1)(exp(i t T_+(f))):
+                 f reell, supp f subset I, t reell }.
+
+Hier sind T_+=T_(3/4) und T_-=T_(1/4). Auf dem gemeinsamen endlichen
+Energiekern gilt
+
+  T_+(f)=T_0(f)+(1/4)J(f)+s(f)I,
+  T_-(f)=T_0(f)-(1/4)J(f)+s(f)I,                        (6)
+
+mit demselben skalaren Grundterm s(f). Strom und Sugawara Stress erfüllen die
+üblichen linearen Energieabschätzungen. Ihre reell verschmierten Operatoren
+sind auf dem gemeinsamen endlichen Energiekern wesentlich selbstadjungiert.
+
+Diese Voraussetzungen sind für den U(1) Strom und seine Sugawara Energie in
+Yoh Tanimoto, Ground state representations of some non-rational conformal
+nets, arXiv:1807.11723v2, Abschnitte 3.1 und 3.2, explizit festgehalten. Dort
+steht auch die lokale Formel
+
+  Ad W(q s_I)(T(f))
+    =T(f)+qJ(f)+(q^2/2) integral f
+
+für s_I'=1 auf dem Träger von f. Somit liegen die beiden Stress
+Exponentialgruppen im lokalen U(1) Stromnetz und
+
+  M_pair(I) subset A_J0(I).                              (7)
+
+Umgekehrt ist der Abschluss der Kerndifferenz in (5) der wesentlich
+selbstadjungierte Operator J_0(f). Die Faktoren der folgenden Produktfolge
+sind unitär. Die Trotter beziehungsweise Chernoff Produktformel gibt stark
+
+  exp(i t J_0(f))
+    =lim_(N to infinity)
+       [Ad Gamma(U)^(-1)(exp(i 2t T_+(f)/N))
+        exp(-i 2t T_-(f)/N)]^N.                         (8)
+
+Eine von Neumann Algebra ist stark abgeschlossen. Daher folgt die umgekehrte
+Inklusion und insgesamt
+
+  M_pair(I)=A_J0(I).                                    (9)
+
+Dieser Satz benutzt keine Interpretation der Stress Exponentialgruppen als
+physische Zeit. Er rekonstruiert das lokale Stromnetz auf dem vorhandenen
+transportierten Coverfaktor. Die vorhandenen Strom Point Splitting und Energy
+Bounds stehen damit für das neutrale W8 Feld auf diesem Zweipreimage Covernetz
+zur Verfügung.
+
+Offen bleibt die Identifikation dieses Basisintervalls mit einem lokalen P1
+Intervall, einschließlich P1 Reflexion, Collar und Referenzdaten. Ebenso ist
+der spätere achtfache Foldsupport gesondert zu transportieren. Eine neutrale
+Strom GNS Isometrie transportiert den geladenen Nahtimplementer nicht
+automatisch über alle Ladungssektoren.
+
+Status
+------
+
+PROVED: Gleichung (1) im vorhandenen gemeinsamen periodischen CAR Rahmen,
+einschließlich Nullmode und lokaler Testfunktionen.
+
+PROVED: Der vorhandene Cover Austausch u_cov zieht den zweiten Quarter Stress
+zustandserhaltend auf den ersten Faktor zurück und realisiert Gleichung (5).
+
+PROVED: Dieses transportierte Quarter Stresspaar erzeugt genau das lokale
+U(1) Stromnetz auf dem zugehörigen Zweipreimage Covergebiet, Gleichung (9).
+
+PROVED: Der direkte Zweifaktoren Ersatz (3) ist keine Heisenbergalgebra.
+
+PROVED: A4 liefert das ungeordnete Quarterpaar und seinen Cover Austausch.
+
+OPEN: Der Abstieg dieses Covernetzsatzes auf den ursprünglichen lokalen P1
+Pfeil mit Reflexion, Collar, Referenz und achtbogen Support.
+

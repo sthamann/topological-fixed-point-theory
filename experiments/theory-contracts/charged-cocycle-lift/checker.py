@@ -13,13 +13,14 @@ import importlib.util
 import itertools
 import json
 from pathlib import Path
+import sys
 
 HERE = Path(__file__).resolve().parent
 ROOT = HERE.parents[2]
 PINS = {
     "verification/v774_arf_spinor_compiler.py": "3ef92c17d9f0de62212bab940ac2c017be866645d8a5b276bdcf2d92128bae8c",
     "verification/v983_simple_current_generator.py": "769a9c5cb5e6518d8d2a445d347150f5ce0d1410c95db263ca2db72466e176c8",
-    "verification/v1033_charged_disorder.py": "01c64748c70784b17cf1c61b7bd2b4c51a69c19c4a2274f09028892eab5cb83f",
+    "verification/v1033_charged_disorder.py": "5053d08ad5448f33f2c6d141f92ed1e06f5dfb9762f92af2bab9816c0ad161b8",
     "articles/2026-08-30/mmst_charged_scaling_limit_en.tex": "ab2802e14a31715be3552ee2a529e88afeb1a59e5d57ffb9cbea8f32e4df0462",
     "experiments/theory-contracts/compiler-clifford-bridge/checker.py": "bf566c57f8f9fd2839c3b9ea6fe9c8ce65cc66c310fb6a4ee3119a8c9329d22d",
     "experiments/theory-contracts/compiler-clifford-bridge/validation.json": "a40b338e99cb0bb0e09d63861621d6b228e4ad5afeed7ea0335352ad043d4e0c",
@@ -91,9 +92,23 @@ def affine_solutions(rows, width):
     return tuple(solutions)
 
 
+
+def source_digest(path):
+    if path.suffix != ".tex":
+        return hashlib.sha256(path.read_bytes()).hexdigest()
+    # The refactor retained the original article as literal includes.
+    old_path = sys.path[:]
+    try:
+        sys.path.insert(0, str(ROOT / "verification"))
+        from tex_sources import read_tex
+    finally:
+        sys.path[:] = old_path
+    return hashlib.sha256(read_tex(path).encode("utf-8")).hexdigest()
+
+
 def inherited(root=ROOT):
     for name, digest in PINS.items():
-        require(hashlib.sha256((Path(root)/name).read_bytes()).hexdigest() == digest,
+        require(source_digest(Path(root)/name) == digest,
                 "source pin: " + name)
     source = Path(root)/"verification/v774_arf_spinor_compiler.py"
     spec = importlib.util.spec_from_file_location("charged_lift_arf", source)

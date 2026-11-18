@@ -1,0 +1,313 @@
+MATH.SEAM.G31.LATTICE.03
+Die ursprüngliche globale Gitterliftklasse und ihre Monodromien
+23. Oktober2026. Ausschließlich Mathematik.
+
+1. Genaues Problem und Ergebnis
+
+L ist das ursprüngliche E8 Gitter, epsilon der unveränderte Kokykel aus
+seam-joint-ward-state-20261014/operator_transport_check.py. Es gilt
+  E_x E_y=epsilon(x,y)E_(x+y), epsilon in {+1,-1}.
+G=G31 ist die von den60 ursprünglichen komplexen Reflexionen erzeugte
+Gruppe der Ordnung46080. Untersucht wird genau die volle Urbildgruppe
+  1 -> A=Hom(L,Z/2) -> Gtilde -> G -> 1.
+Die Koeffizientenwirkung ist g.a=a composed g^-1, im Allgemeinen nicht trivial.
+Dies ist nicht die zuvor untersuchte zentrale Z/4 Erweiterung mit dem
+Determinantenkokykel. Alle unten genannten Zeichen sind Vorzeichen.
+
+SatzI. Diese ursprüngliche charakterwertige Erweiterung spaltet über G31
+nicht. Ihre Klasse in H^2(G31,A) ist nicht null und hat Ordnung2.
+Ein explizites Zeugnis liegt schon in einer Untergruppe H der Ordnung16.
+Die Einschränkung auf jede echte Untergruppe dieses H spaltet dagegen.
+
+SatzII. Für sämtliche62 ursprünglichen Clockmarkierungen auf der vierfach
+punktierten Kugel existieren strikte Monodromielifts in Gtilde. Ihr vollständiger
+Isomorphiezensus ist11356. Die44 Clockklassen über Grundklasse0 liefern6856,
+die15 über Grundklasse12 liefern4272 und die3 über Grundklasse15 liefern228.
+
+SatzIII. Über den17 ursprünglichen ungeclockten Reflexionsviererklassen
+existieren zusammen835456 Isomorphieklassen von Monodromielifts in Gtilde.
+Die feste Strukturgruppe und die geordneten Punkturen werden erhalten.
+
+Die globale Gruppenliftfrage und die Monodromieliftfrage unterscheiden sich:
+Ein Gruppenlift müsste ALLE Relationen von G31 erhalten. Ein Lift einer
+Darstellung rho:Pi->G31 muss die Relationen von Pi erhalten. Seine Bildgruppe
+kann eine größere Gruppe über im rho sein. Daher sind SatzI und SatzII
+miteinander vereinbar. Bei SatzII wird r_j^2=1 nicht als zusätzliche
+Relation der angehobenen Meridiane gefordert; Pi=C4*C4 hat nur die beiden
+konischen Potenzrelationen. Genau derselbe Monodromievertrag lag bereits
+der früheren zentralen Liftfrage zugrunde.
+
+2. Endlicher Quotient als exakte Beschreibung derselben Liftfrage
+
+Der Originalkokykel erfüllt
+  epsilon(x,y)/epsilon(y,x)=(-1)^(x.y),
+  epsilon(x,x)=(-1)^(x.x/2), epsilon(2x,2y)=1.
+Diese Identitäten folgen direkt aus seiner Formel. Zur letzten Identität:
+2x,2y haben in den Standardkoordinaten jeweils nur gerade oder nur ungerade
+Einträge. Bei zwei ungeraden Vektoren trägt die Dreieckssumme28 bei,
+sonst ist sie gerade. Die anderen beiden Identitäten folgen durch Einsetzen
+von x=d+c(1/2)^8 mit c=0,1 und sum d gerade.
+
+K={E_(2x):x in L} ist damit eine zentrale Untergruppe, isomorph zu2L.
+Jeder ursprüngliche Lift eines g erhält K und wirkt darauf ohne zusätzliches
+Vorzeichen: Aus E_x^2=epsilon(x,x)E_(2x) und Normerhaltung folgt
+  ghat(E_(2x))=E_(2gx).
+Der Quotient Q=Lhat/K hat Ordnung512. Er wird durch die acht Basisbilder
+X_i und das zentrale Zeichen -1 mit den Relationen
+  X_i^2=(-1)^q_i, [X_i,X_j]=(-1)^G_ij
+beschrieben, q_i=(b_i.b_i)/2 mod2, G_ij=b_i.b_j.
+
+In der geordneten Normalform X_1^x1...X_8^x8 lautet die Multiplikation
+  (x,t)(y,u)=(x+y,t+u+f(x,y)), x,y in F2^8,
+  f(x,y)=x^t F y,
+  F_ii=q_i, F_ij=G_ij fuer i>j, F_ij=0 fuer i<j.
+Die quadratische Form f(x,x)=x.x/2 mod2 ist die ursprüngliche Normverfeinerung.
+Sie hat136 Nullwerte und120 Einswerte; die Polarform ist nicht entartet.
+Insbesondere Z(Q)={+1,-1}. Es wird kein zusätzlicher Sektor eingeführt.
+
+Zu jedem g gehört M_g in O(L/2L,q). Setze
+  D_g=M_g^t F M_g+F,
+  h_g(x)=sum_(i<j)(D_g)_ij x_i x_j.
+Normerhaltung bedeutet, dass D_g symmetrisch mit Null auf der Diagonale ist.
+Die Abbildung
+  phi_(g,l)(x,t)=(M_g x,t+h_g(x)+l.x), l in F2^8,
+ist daher ein Automorphismus von Q. Dies folgt durch Einsetzen in die
+Multiplikation: delta h_g=f+f composed(M_g,M_g).
+
+Dieser endliche Quotient verliert keine für die Liftfrage relevante Wahl.
+Jeder g hat genau256 ursprüngliche Lifts, bestimmt durch seine acht freien
+Basisvorzeichen. Jeder der256 Automorphismen phi_(g,l) bestimmt ebenfalls
+genau solche Basisbilder. Zwei ursprüngliche Lifts über demselben g sind
+genau dann gleich, wenn ihre acht Basisvorzeichen und damit ihre endlichen
+Quotienten übereinstimmen. Somit ist Gtilde exakt der Rückzug von Aut(Q)
+entlang G31->O(L/2L,q). Eine endliche Sektion ist äquivalent zu einer
+ursprünglichen Sektion auf dem ganzen Gitter.
+
+Die ursprüngliche Sektion E_bj->E_gbj und die endliche Normierung h_g(e_j)=0
+unterscheiden sich durch einen expliziten Basischarakter. Schreibe
+  product_i E_bi^n_i = c_B(n) E_(Bn), m_j=B^-1 g b_j.
+Dann besitzt E_gbj in der endlichen Normalform die Phase
+  k_g,j = exponent(c_B(m_j)) + sum_i floor(m_ij/2) q_i mod2.
+Ein endlicher Vorzeichenvektor l entspricht also den ursprünglichen
+Basisvorzeichen l_j+k_g,j. Auch negative Potenzen benutzen das tatsächliche
+Inverse epsilon(b,-b)E_-b. checker.py vollzieht diesen Vergleich mit den
+Originalfunktionen und prüft das Widerspruchszertifikat zusätzlich direkt.
+
+Die vollständige binäre Darstellung hat Bildordnung23040 und Kern{+I,-I}.
+Dies wird an allen46080 tatsächlichen Matrizen exakt nachgerechnet.
+Die volle Gitterliftergruppe hat folglich Ordnung256*46080=11796480.
+
+3. Das kurze ursprüngliche Widerspruchszertifikat
+
+In den ursprünglichen komplexen vier Koordinaten verwende
+  r0=diag(-1,1,1,1),
+  r1=[[0,-1],[-1,0]] directsum I2,
+  r2=[[0,-i],[i,0]] directsum I2.
+Alle drei sind ursprüngliche Reflexionen, mit ursprünglichen Linienvertretern
+(-2,0,0,0),(-1-i,-1-i,0,0),(-1-i,-1+i,0,0).
+Ihre Gruppe H hat16 Elemente. q=r0 r1 r2=diag(i,i,1,1) ist zentral in H,
+q^4=1 und[r0,r1]=q^2. Es ist die Pauli Gruppe der Ordnung16 mit
+  H=<q,r0,r1 | q^4=1, q zentral, r0^2=r1^2=1, [r0,r1]=q^2>.
+q ist von der globalen ursprünglichen Clock J=iI4 verschieden.
+
+Für das Zertifikat ist die Gaussian Gitterbasis BG durch ihre Zeilen festgelegt:
+  (2,0,0,1,0,1,1,0)
+  (0,2,0,1,0,1,0,1)
+  (0,0,2,1,0,0,1,1)
+  (0,0,0,1,0,0,0,0)
+  (0,0,0,0,2,1,1,1)
+  (0,0,0,0,0,1,0,0)
+  (0,0,0,0,0,0,1,0)
+  (0,0,0,0,0,0,0,1).
+Die Standardkoordinaten des Originalkokykels erhält man durch
+T=directsum_4 (1/2)[[1,-1],[1,1]], also b_j=T BG e_j.
+
+Seien a_j,b_j',c_j die acht frei gewählten ursprünglichen Basisvorzeichen
+der Lifts von r0,r1,r2 relativ zu E_bj->E_rbj. Im folgenden Gleichungssystem
+bezeichnet b_j' nur die Vorzeichenvariable; das Gitterbasiszeichen b_j
+wird nicht verwendet. Sämtliche Gleichungen liegen in F2:
+
+  a1+a2=0                                      (r0^2, Basis4)
+  a1=1                                         (r0^2, Basis7)
+  b1'+b3'=0                                    (r1^2, Basis1)
+  b4'=1                                        (r1^2, Basis6)
+  c1+c2+c3+c4=0                                (r2^2, Basis6)
+  a4+b3'+b4'+c1+c2+c4=0                        (r2r0r1=r1r2r0, Basis6)
+  a2+a4+b1'+c3=1                               (r0r2r1=r2r1r0, Basis7).
+
+Diese sieben Zeilen wurden durch Komposition der tatsächlichen Lifts mit
+dem unveränderten eps_e8 berechnet. Ihre Summe hat auf der linken Seite
+jede Variable genau zweimal und rechts den Wert1. Es folgt0=1.
+Die24 ursprünglichen Vorzeichen sind vollständig frei berücksichtigt.
+Somit existiert keine Sektion über H und daher keine über G31. Da A ein
+F2 Modul ist, hat die nichtverschwindende H2 Klasse genau Ordnung2.
+Dies beweist SatzI ohne numerische Extrapolation oder Skalarannahme.
+
+4. Alle echten Untergruppen dieses Hindernisses sind dagegen hebbar
+
+H/[H,H]=C2^3. Daher besitzt H genau sieben maximale Untergruppen,
+jeweils der Ordnung8. Sie lauten
+  <r0,r1>, <r0,r2>, <r1,r2>                       (jeweils D8),
+  <q,r0>, <q,r1>, <q,r2>                         (jeweils C4 x C2),
+  <r0r1,r0r2>                                   (Q8).
+Jede echte Untergruppe liegt in einer dieser sieben.
+
+Explizite endliche Basisvorzeichen l in der oben definierten Normierung
+(Bytebit i steht für Basis i+1) liefern Sektionen:
+  Generatorpaar          korrigierende Bytes
+  r0,r1                  3,8
+  r0,r2                  3,8
+  r1,r2                  8,8
+  q,r0                   2,11
+  q,r1                   0,8
+  q,r2                   0,8
+  r0r1,r0r2              2,14.
+
+Die angehobenen Erzeuger erfüllen ihre vollständige endliche Gruppentabelle;
+es entsteht jeweils eine Gruppe der Ordnung8. Dadurch spaltet jede maximale
+und damit jede echte Untergruppe. Zusätzlich enumeriert checker.py alle23
+Untergruppen von H und prüft auf jeder der22 echten Untergruppen eine
+vollständige Sektion an allen256 Argumenten des endlichen Quotienten.
+Die Zahl der Sektionen ist2^12 für D8,2^11 für C4 x C2 und2^10 für Q8.
+Modulo Konjugation durch A entstehen jeweils2^8,2^7 und2^6 Klassen.
+Das Hindernis ist damit unter Einschränkung auf echte Untergruppen unsichtbar.
+
+5. Genaues Klassifikationsproblem der62 Clockobjekte
+
+Die62 ursprünglichen Objekte sind Paare(r,C) modulo G Konjugation mit
+C exakter Ordnung4 und(rC)^4=1. Sie entsprechen Darstellungen
+Pi=C4*C4=<a,b | a^4=b^4=1> durch a->C,b->rC.
+Die vier Meridiane sind gamma_j=a^j b a^(-j-1); ihr Produkt ist1.
+Gehoben wird in die ursprüngliche Gruppe Gtilde, nicht in die zentrale
+Determinantenerweiterung. Zwei Lifts sind äquivalent durch gleichzeitige
+Konjugation in Gtilde über einer zulässigen G Konjugation des Grundobjekts.
+
+Jeder der beiden angehobenen Generatoren besitzt einen8 Bit Vektor l_s.
+Für seinen Matrixteil M und seine kanonische Phase h lautet die vierte
+Potenz auf einem Argument x
+  sum_(j=0)^3 h(M^j x) + l.(I+M+M^2+M^3)x.
+Der Matrixteil ist I; diese Potenzphase ist ein Charakter. Es genügt
+daher, die acht Basisargumente einzusetzen. So entsteht ein vollständiges
+affines Gleichungssystem in16 Variablen. Sämtliche Lösungen werden berechnet.
+
+Ergebnis für jede ursprüngliche Grundklasse:
+  Grundklasse    Clockklassen   basierte Lifts je Clockklasse
+  0              44             65536
+  12             15             65536
+  15              3             16384.
+Alle62 Systeme sind lösbar. Im dritten Fall hat das Potenzsystem Rang2,
+in den übrigen Fällen Rang0. Jede Lösung definiert tatsächlich einen
+Homomorphismus aus C4*C4, denn dies sind dessen einzigen Relationen.
+Damit ist die Existenzbehauptung von SatzII konstruktiv bewiesen.
+
+6. Vollständige Normalformen und unbasierte Klassifikation
+
+Die folgende Rechnung gilt zugleich für zwei konische Generatoren und
+für drei freie Generatoren. Sei v=(l_1,...,l_k) in F2^(8k).
+Konjugation durch einen Kernelcharakter alpha übersetzt v um
+  d(alpha)_s=(I+M_s^t)alpha.
+Dies ist der übliche Raum der1 Koränder. Sei T dessen Bild.
+Eine festgelegte binäre Zeilenreduktion liefert eine eindeutige Reduktion
+red_T(v) jedes T Nebenraums, auch auf dem affinen Potenzlösungsraum S.
+
+Nach Festlegen des ursprünglichen Monodromievertreters bleiben genau die
+h in Z_G(g_1,...,g_k) als Basiswechsel. Sei P=M_h. Ein beliebiger Lift
+von h mit Kernelkoordinate alpha wirkt durch
+  l_s' = P^(-t)[l_s+(I+M_s^t)alpha+t(h,g_s)],
+  t(h,g_s)_i=h_h(M_s e_i)+h_s(P e_i).
+Beweis: phi_h phi_s=phi_s' phi_h auf jedem Basisargument auswerten.
+Nach Quotientieren durch T entfällt alpha. Die verbleibende affine
+Zentralisatorwirkung ist dadurch vollständig und explizit angegeben.
+
+Eine vollständige kanonische Normalform ist
+  (ursprünglicher Monodromievertreter,
+   min_lex {red_T(h.v): h im gemeinsamen Zentralisator}).
+Für Clockobjekte wird der kanonische Clockvertreter mitgeführt.
+Notwendigkeit folgt aus der eben berechneten Wirkung. Hinlänglichkeit
+folgt daraus, dass jede verwendete Translation oder Zentralisatorwirkung
+von einer tatsächlichen Konjugation in Gtilde stammt. Damit klassifizieren
+die Normalformen genau die verlangten Isomorphismen.
+
+quarter_lifts.py enumeriert diese Normalformen für alle62 ursprünglichen
+Clockklassen vollständig. quarter-lifts.json enthält jede einzelne der
+11356 Normalformen und ihre Automorphismenordnung. Die Summen lauten
+  6856 +4272 +228 =11356.
+Vor dem letzten Zentralisatorquotienten liegt für jede Clockklasse ein
+Torsor über H1(Pi,A) vor. Seine Größen und alle weiteren Quotienten stehen
+in CLOCK_LIFTS.tsv. Die vorhandene nichttriviale Modulwirkung bleibt erhalten.
+
+Die Stabilisatorordnung eines Clocklifts ist exakt
+  256*|Z_G(r,C)| / (|T|*|Orbit in S/T|).
+Auch diese Ordnungen sind für sämtliche Normalformen ausgegeben.
+
+7. Zweiter unabhängiger Zählweg und alle17 freien Monodromien
+
+Für Burnside kann die Summe über die256 Kernelcharaktere zusammengefasst
+werden. Fixiere h im gemeinsamen Zentralisator und schreibe P=M_h.
+Ein Lift v wird von einem Lift(h,alpha) fixiert genau dann, wenn
+  (I+P^t)l_s+(I+M_s^t)alpha=t(h,g_s)
+für alle s gilt. Hinzu kommen gegebenenfalls die konischen Potenzgleichungen.
+Dies ist ein affines binäres System in8(k+1) Variablen(v,alpha).
+Es besitzt entweder0 oder2^(8(k+1)-Rang) Lösungen. Also lautet die
+Isomorphieklassenzahl
+  [sum_(h im Zentralisator) Anzahl Lösungen(v,alpha)]
+      / [256*|Zentralisator|].
+Dies ist Burnside für das volle Urbild des Zentralisators; kein Kernelquotient
+wird dabei vergessen. Der Ausdruck gilt für affine und nicht nur lineare
+Wirkungen. audit_lifts.py berechnet alle62 Zahlen unabhängig von der
+Orbitzerlegung erneut. Jede einzelne stimmt überein. Die Konjugationsformel
+wird außerdem durch direkte Komposition und Inversion der vollständigen
+256 Argumente umfassenden Phasenfunktionen an den Basisgeneratoren geprüft.
+
+Für ungeclockte Monodromien ist Pi=F3. Es gibt keine Potenzgleichungen,
+also pro festem basierten rho genau256^3=16777216 Lifts. Derselbe vollständige
+Zentralisatorquotient ergibt für die17 ursprünglichen Vertreter:
+  ID0:16752
+  ID1:41024   ID2:91864   ID3:26128   ID4:42240
+  ID5:41024   ID6:41024   ID7:41024   ID8:41024
+  ID9:91864   ID10:91864  ID11:91864  ID12:26128
+  ID13:41024  ID14:26128  ID15:42240  ID16:42240.
+Die Summe ist835456. ORDINARY_LIFTS.tsv enthält die17 Zeilen samt
+ursprünglichen Reflexionsindizes und Zentralisatoren. Die Normalform aus
+Abschnitt6 gilt auch hier und liefert ein vollständiges Isomorphiekriterium,
+ohne Millionen basierter Lifts als unbasierte Klassen auszugeben.
+
+8. Verbindung mit den bisherigen Invarianten
+
+Die beiden ursprünglichen V4 Einbettungen besitzen in der integralen
+Kohomologie H1=Z20+Z/2 beziehungsweise Z20. Die neue Liftklassenzahl über
+jedem ihrer drei geordneten Monodromieorbits beträgt26128 beziehungsweise
+42240. Hier wirkt dieselbe originale integrale Gitterdarstellung in der
+Kohomologie und über ihr Vorzeichenmodul, ohne angepasste Einbettung.
+
+Die zuvor untersuchten Clockmarkierungen0/3 und0/5 haben dieselbe
+Meridianmonodromie, dasselbe Clockspektrum und dieselbe Gitterkohomologie.
+Die neue Gitterliftklassifikation liefert212 beziehungsweise176 Klassen.
+Sie unterscheidet diese beiden markierten Objekte damit ebenfalls.
+
+Die bereits abgeschlossenen verschiedenen Erweiterungsverträge bleiben:
+  Vorzeichenurbild von<J>, alle vier Projektionen J:526336 Klassen.
+  Zentrale Z4 Erweiterung über Reflexionsvierern:1088 ungeclockte Klassen,
+    keine strikten Clocklifts.
+  Ursprüngliche charakterwertige Erweiterung über denselben Reflexionsvierern:
+    835456 ungeclockte Klassen und11356 strikte Clockliftklassen.
+Die zugrunde liegende Gruppe, die Koeffizientenwirkung und die Markierungen
+sind jeweils Bestandteil der Aussage. Gleiche Basismonodromie bedeutet
+keine Gleichheit dieser drei Erweiterungsprobleme.
+
+9. Nachweise und wissenschaftliche Einordnung
+
+checker.py prüft den kurzen Ausschluss mit dem unveränderten Originalkokykel,
+die Vergleichsabbildung zum endlichen Quotienten, alle22 positiven echten
+Untergruppen und die vollständige binäre G31 Darstellung. quarter_lifts.py
+berechnet alle11356 Normalformen; audit_lifts.py prüft die62 Zahlen per
+Burnside unabhängig und berechnet die17 freien Monodromiequotienten.
+Alle Prüfbedingungen bleiben unter Python -OO aktiv.
+
+Grundlagen: geordnete Gitterlifts und charakterwertige Faktoren wie in
+Masaki Okada, Abschnitt3 und AnhangA, https://arxiv.org/abs/2412.19430.
+Die konkrete G31 Einschränkung, das ursprüngliche siebenzeilige Zertifikat,
+die vollständigen endlichen Normalformen und die angegebenen Liftzahlen
+werden hier aus den tatsächlichen Originaldaten berechnet und bewiesen.
+Keine Neuheitsbehauptung über allgemeine Gruppenkohomologie oder Burnside.
+Keine Veröffentlichung oder Änderung des wissenschaftlichen Ledgers.

@@ -1,0 +1,276 @@
+RECOVERED C4 TRIANGLE SOURCE FOR THE ACTUAL v117 CONNECTION
+===========================================================
+
+26 October 2026. Exact source recovery and independent replay. No Atlas,
+paper, ledger, or canonical verification file was changed.
+
+Verdict
+=======
+
+PROVED, BUT NOT NEW: the exact analytic closure of the v117 monodromy was
+already present in the 28 September Gesamtsynthese.  The actual four point
+connection descends by t=z^4 to a three point Fuchsian system with local
+orders (4,3,2).  Its orbifold monodromy is therefore the faithful
+three dimensional S4 representation.  With the original orientation the
+order four generator is U^(-1), and the marked representation is conjugate
+to the exact v117 pair (U^(-1),M0).  The numerical ODE comparison in v117 is
+only a basis calibration, not the proof of finiteness.
+
+The shorter gauge used below makes the residue at infinity semisimple with
+no integral resonance.  It is meromorphically equivalent to the older
+printed gauge, whose one possible resonance was explicitly cancelled.  The
+two arguments prove the same result.
+
+This positive C4 descent does not contradict the separately proved absence
+of a rational inversion lift.  C4 is sufficient.  The connection is not a
+D4 linearized connection.
+
+1. Recovered primary source
+===========================
+
+The result is printed in:
+
+  paper-source:10bdafe2930b29584f91db06
+  documents/tfpt_explorer--docs--session-2026-09-28--
+    TFPT_Gesamtsynthese_2026-09-28/sections/
+    004-subsection-auch-die-skalen-besitzen-einen-gemeinsamen-va.tex
+  lines 203-327
+  SHA256 574058876ebe23d693a9fce061f68da6fdec63419af78243ac9d457d7858f74b.
+
+Those lines contain the substitution t=z^4, the old gauge
+diag(1,z,z^3), the three residue spectra, the infinity resonance check,
+the triangle group argument, the marking U^(-1), the exact diagonal of M,
+and the distinction between the A4 four puncture image and the extended S4
+image.  They also continue to the signed permutation basis and the genus
+two curve.  The present report only restores the part needed for the v117
+analytic monodromy claim and checks it independently.
+
+The active source modules against which it is reconciled are:
+
+  source:80af15193155b4dcf60c
+  verification/v116_resonance_uniqueness.py:1-170
+  SHA256 e9cbeb665cf8c1a2bed3f34281be06aee4c661d784e7f13a5bd8e9be37f577ca;
+
+  source:830238c9699fad6ae325
+  verification/v117_monodromy_weyl_a3.py:1-206
+  SHA256 55eca6a64144f6e49789f3f1bbe84e256764e7ce92b207044be693f8684d5df5.
+
+The [N] status of the analytic identification still printed in v117 is
+therefore stale relative to the older source.  The exact matrix properties
+in v117 remain correct.
+
+2. Exact C4 descent in the short gauge
+======================================
+
+Start with the actual connection
+
+  Y'(z)=A(z)Y(z),
+  A(z)=sum_(k=0)^3 U^k A0 U^(-k)/(z-i^k),
+
+  U=diag(1,i,-i),
+
+     [ 1/2       sqrt(2)/6       0          ]
+  A0=[ sqrt(2)/6 1/4             sqrt(5)/12 ],
+     [ 0         sqrt(5)/12      1/4        ]
+
+whose exact rational form is
+
+             1          [ 2z^3        2sqrt(2)z^2/3   0          ]
+  A(z)=-------------     [ 2sqrt(2)/3 z^3               sqrt(5)z/3 ].
+          z^4-1          [ 0           sqrt(5)z/3       z^3        ]
+
+It obeys i A(iz)=U A(z)U^(-1).  Put
+
+  t=z^4,       Y=diag(1,z,z^(-1)) X.
+
+Then
+
+  dX/dt=B(t)X,       B(t)=B0/t+B1/(t-1),
+
+       [ 0          0       0          ]
+  B0 = [ -sqrt(2)/6 -1/4   -sqrt(5)/12 ],
+       [ 0          0       1/4        ]
+
+  B1=A0,
+
+          [ -1/2 -sqrt(2)/6  0          ]
+  Binf = [  0     0           0          ].
+          [  0    -sqrt(5)/12 -1/2       ]
+
+The exact characteristic polynomials are
+
+  det(lambda-B0)   = lambda(4lambda-1)(4lambda+1)/16,
+  det(lambda-B1)   = lambda(3lambda-1)(3lambda-2)/9,
+  det(lambda-Binf) = lambda(2lambda+1)^2/4.              (1)
+
+Moreover
+
+  Binf(Binf+I/2)=0.                                      (2)
+
+Equation (2) proves that Binf is semisimple, despite the repeated
+eigenvalue -1/2.  At all three singularities every nonzero exponent
+difference has absolute value below one.  In the Frobenius recursion
+n-ad(Bj), n>=1, no eigenvalue can vanish.  Thus a holomorphic gauge reduces
+each local connection to its residue, with no logarithmic term.  The local
+monodromies consequently have exact orders 4, 3, and 2.
+
+The older source uses
+
+  Y=diag(1,z,z^3)v.
+
+Its residues are the printed B0_old, A0, Binf_old with spectra
+(0,-1/4,-3/4), (0,1/3,2/3), and (-1/2,0,1/2).  The two quotient frames are
+related by
+
+  X=diag(1,1,t)v.                                        (3)
+
+This shifts one exponent by an integer.  In the old frame the only possible
+infinity resonance is cancelled by the printed coefficient
+(Cinf)_(3,1)=0.  In the short frame the same cancellation has already been
+absorbed by (3), leaving the semisimple identity (2).  Hence the new replay
+is a compact alternative proof, not a different connection.
+
+3. The marked monodromy is exactly S4
+======================================
+
+A positive loop about t=0 lifts from z to iz.  Returning the lifted fiber to
+the chosen quotient fiber uses the inverse deck identification.  Therefore
+
+  c0 is conjugate to U^(-1)=diag(1,-i,i),                (4)
+
+not to U.  Let m1 be the positive local monodromy about t=1 and use the
+oriented convention
+
+  m1 c0 binf=I.
+
+The local calculation gives
+
+  c0^4=m1^3=binf^2=I.
+
+Thus the image is a quotient of the spherical triangle group
+
+  Delta(4,3,2)=<c,m | c^4=m^3=(mc)^2=1> congruent S4.   (5)
+
+The image contains c0 of exact order four.  Every proper quotient of S4 is
+a quotient by V4 or A4, or is trivial, and none contains an element of order
+four.  The representation in (5) is therefore faithful, so its image has
+24 elements.  A reducible three dimensional faithful S4 representation is
+impossible because the two dimensional irreducible representation kills
+V4.  The determinant one and trace(c0)=1 select the sign twist of the
+standard representation.
+
+The exact v117 matrices satisfy
+
+  c0=U^(-1),       m1=M0,       binf=M0 U^(-1),
+  c0^4=m1^3=binf^2=I.                                  (6)
+
+There is one simultaneous conjugacy orbit of ordered S4 pairs consisting
+of a 4-cycle and a 3-cycle whose product is an involution.  The finite
+certificate enumerates its 24 representatives.  Equations (4)-(6) hence
+identify the analytic marked representation with the exact v117 pair up to
+one constant global basis change.  Choosing the printed v117 basis gives
+
+  M0=[[0,        -(1+i)/2, (1-i)/2],
+      [-(1+i)/2, -i/2,     -1/2    ],
+      [(1-i)/2,  -1/2,      i/2    ]].                  (7)
+
+This is the precise closure.  It proves the exact local system and all
+basis invariant statements.  Literal equality with a numerically produced
+harmonic frame still depends on that frame's constant basis convention.
+
+The four ordinary z-plane peripheral matrices are
+
+  Mk=U^k M0 U^(-k),       k=0,1,2,3.
+
+They multiply to I and generate a group of order 12, namely A4.  Adding the
+C4 deck fiber action U^(-1) extends this to S4 of order 24.  Cover degree,
+ordinary puncture monodromy, and extended orbifold monodromy are therefore
+three distinct quantities.
+
+4. The actual quotient coordinate is C4, not D4
+=================================================
+
+In t=z^4 the three orbifold points have orders
+
+  t=0: 4,       t=1: 3,       t=infinity: 2.
+
+Normalize the finite S4 target coordinate J so that its orders 3, 2, 4 lie
+at J=0,1,infinity.  The unique required Mobius relabeling is
+
+  J=1-1/t,
+
+and consequently the actual degree four source map is
+
+  J_actual(z)=1-z^(-4).                                 (8)
+
+It sends the four points mu4 to J=0, sends z=0 to J=infinity with
+ramification four, and sends z=infinity to J=1 with ramification four.
+Equation (8) is invariant under z->iz and is not invariant under z->1/z.
+It uses the C4 quotient already present in the connection.  No additional
+degree two map Phi is required in this analytic class.
+
+The target in this argument is the finite spherical (3,2,4) quotient.  If
+one instead retains the full modular cusp of PSL(2,Z), its monodromy is
+infinite and fourth power ramification does not make it trivial.  Thus (8)
+does not prove that the full modular connection has finite monodromy.  It
+identifies the already finite level four image carried by the actual ODE.
+
+The previously studied D4 invariant map
+
+  -(z^4-1)^2/(4z^4)
+
+belongs to a different marked pullback.  Its inversion symmetry cannot be
+promoted to this connection, in agreement with the exact rank nine
+obstruction below.
+
+5. Relation to the negative inversion result
+=============================================
+
+D4-CONNECTION-LIFT.txt proves that the rational equation
+
+  G'=A(z)G+z^(-2)G A(1/z)
+
+has no nonzero solution.  Its local and degree analysis reduces every
+possible rational solution to nine coefficients, and the exact coefficient
+system has rank nine.  The new certificate replays this rank computation.
+
+There is no conflict:
+
+  * the C4 descent uses only the symmetry already visible in A(z);
+  * the finite triangle proof needs no inversion linearization;
+  * the absent D4 lift excludes the stronger marked D4 connection, while
+    the actual C4 orbifold monodromy is finite S4.
+
+The older report's negative theorem stands.  Only its former statement that
+the analytic v117 identification remained open is superseded by the
+recovered September proof.
+
+6. Executable certificate
+==========================
+
+  research-20261026-real-boundary/check_c4_triangle_source.py
+  research-20261026-real-boundary/c4-triangle-results.json
+
+The checker performs 19 exact symbolic and finite checks:
+
+  * the four-residue sum and C4 covariance;
+  * both quotient gauges and their meromorphic equivalence;
+  * all residue characteristic and minimal polynomial identities;
+  * the local marked orders and oriented product;
+  * exact orders 24 and 12 for the extended and ordinary images;
+  * the unique marked Nielsen orbit;
+  * the C4 properties and labels of (8);
+  * the rank nine rational inversion obstruction.
+
+Normal Python and Python -OO produce byte identical JSON.  The finite
+checker certifies the algebra.  The regular singular Frobenius step and the
+faithfulness argument are the analytic proof given in Sections 2 and 3.
+
+Status for the larger TFPT program
+==================================
+
+This closes the exact analytic ODE to finite monodromy link that v117 still
+labels numerical.  It does not identify the S4 fiber representation with a
+physical seam state, field measure, or Calderon projector.  The older source
+itself keeps that field action as the next open bridge.  No such physical
+identification is inferred here from the finite group result.

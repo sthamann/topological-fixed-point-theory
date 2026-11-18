@@ -1,0 +1,113 @@
+R071 actual analytic counterpart review
+Model metadata claude-opus-4-8;tools disabled,no local code run by provider.
+
+## Analytic review
+
+I checked the four load‑bearing pieces independently. Summary: **I find no outright mathematical error.** The construction is internally consistent, including the two places you flagged (the prime‑form exponential and the fractional branch). Below are the verifications and the one assumption that genuinely deserves the next test.
+
+### 1. Prefactor, signs, Jacobian — correct; no extra exponential
+
+The prime‑form exponents are exactly the pairings $p_i\cdot p_j$ for charges $(q,v,-v,-q)$:
+- $(1,4)$: $q\cdot(-q)=-q^2=-2\Rightarrow E_T(x_{14})^{-2}$ ✓
+- $(2,3)$: $v\cdot(-v)=-1\Rightarrow E_T(x_{23})^{-1}$ ✓
+- $(1,2),(3,4):+\rho$; $(1,3),(2,4):-\rho\Rightarrow[E_{12}E_{34}/(E_{13}E_{24})]^{\rho}$ ✓
+
+The source is $X=\sum_i p_i x_i=q(x_1-x_4)+v(x_2-x_3)$ ✓, and $\Theta_{NS}(X)$ is the standard zero‑mode theta.
+
+**The $\exp(\delta\cdot X)$ is genuine, not spurious.** It is precisely the product of the explicit field prefactors $\prod_i e^{\delta\cdot p_i x_i}=e^{\delta\cdot X}$. Crucially, the *other* exponential — the conformal Jacobian $\prod_i e^{h_{p_i}x_i}$ with $h_p=p^2/2$ — cancels identically against the cylinder conversion of the plane result:
+$$(z_i-z_j)^{p_i p_j}=e^{\tfrac{p_i p_j}{2}(x_i+x_j)}\,(2\sinh\tfrac{x_{ij}}2)^{p_i p_j},\quad \sum_{i<j}\tfrac{p_i p_j}{2}(x_i+x_j)=-\tfrac12\sum_i p_i^2 x_i=-\sum_i h_{p_i}x_i,$$
+using **total neutrality** $\sum p_i=0$. So $\prod e^{h_{p_i}x_i}$ and the conversion exponential cancel, leaving only $e^{\delta\cdot X}\prod E_T(x_{ij})^{p_i p_j}$. This is the standard split: $L_0$ → Jacobian (cancels), $\delta\!\cdot\!p$ → surviving prefactor, zero‑mode energy → $\Theta$. **There is no residual prime‑form exponential.** This is the error you worried about and it is not present. (The cancellation does require neutrality and $h_p=p^2/2$ with no $\delta$ piece in $h$; both hold.)
+
+$E_T(x)=2\sinh(x/2)\prod_{n\ge1}(1-q^n e^x)(1-q^n e^{-x})/(1-q^n)^2$ is the correct thermal prime form, and your domain $x_1-x_4<T$ is exactly its positivity/convergence domain (for $0<x_{ij}<T$ every factor is $>0$).
+
+### 2. Fractional $\rho$ branch and $\Gamma=1$ — consistent, and self‑curing
+
+On the stated real radial branch all $E_T(x_{ij})>0$, so $[\cdots]^{\rho}$ with $\rho=\pm1/2$ is an unambiguous positive real — no branch pathology there.
+
+The sharper worry is the operator/monodromy branch, i.e. whether $(-1)^{1/2}$‑type phases leak in. They do not, **because of your charge ordering**. The half‑charge $q$ has semilocal pairs with opposite exponents: $(1,2)\!\to\!+\rho$, $(1,3)\!\to\!-\rho$. Any quasi‑periodicity/braiding factor of the form $(-e^{\ast})^{\rho}(-e^{\ast})^{-\rho}$ has its $(-1)^{\pm1/2}=\pm i$ cancel exactly (inverse powers, same branch), leaving a real factor. Had the arrangement given the same sign $\rho$ on both of field‑1's semilocal legs, you would get a leftover $i$ and an inconsistent cocycle. The word $(q,v,-v,-q)$ is precisely the arrangement that forces $\Gamma$ real. So $\Gamma=1$ is defensible — but it is the *one* assumption fixed by hand from the cocycle rather than re‑derived here. See the test in §6.
+
+### 3. Affine identity — verified exactly
+
+$\varepsilon(f(k))=\varepsilon(k)$ for all $k$ under $f(k)=Pk+r$ reduces to **exactly** your two conditions:
+$$P^{\mathsf T}(r+\delta)=\delta\quad\text{and}\quad \tfrac12 r^2+\delta\cdot r=0.$$
+These are consistent and realized concretely: $P$ an involution ($P^{\mathsf T}=P$) gives $r=(P-I)\delta$; with $\delta=(-\tfrac12^{\,4},0^{\,4})$ one gets $r=(\tfrac12^{\,4},-\tfrac12^{\,4})$, $r^2/2=1$, $\delta\cdot r=-1$, sum $=0$ ✓. Since $Pk\in\mathbb Z^8$ and $r\equiv s\ (\mathrm{mod}\ \mathbb Z^8)$, $f:\mathbb Z^8\xrightarrow{\sim}\mathbb Z^8+s$ is an energy‑preserving bijection $NS\to R$. The oscillator factor is common, so $\Theta_R(0)=\Theta_{NS}(0)$ termwise and $Z_R=Z_{NS}$. Correct.
+
+### 4. Center filter and the inequality — correct, numerics consistent
+
+$\Theta_{\mu,0}(X)=\tfrac13\sum_{l}\Theta_\mu(X+2\pi i l\,w_F/3)$ is the correct projector: the shift multiplies term $k$ by $e^{2\pi i l(w_F\cdot k)/3}$, averaging to $\mathbf 1[t_k\equiv0]$ ✓.
+
+$f$ does not commute with this filter. I verified the key claim directly: the $R$ zero line $r$ has
+$$t=w_F\cdot r=(\tfrac12-\tfrac12-\tfrac12)+(\tfrac12+\tfrac12+\tfrac12)=1\not\equiv0,$$
+so the weight‑$1$, energy‑$0$ $R$ state is removed. Hence
+$$Z_{R,0}\le Z_R-1=Z_{NS}-1,\qquad Z_{NS,0}\ge1\ (\text{vacuum }k{=}0,\ t{=}0,\ \varepsilon{=}0).$$
+The bound $(x{+}x^3)/(1{-}x^4)=x/(1{-}x^2)=0.0433<0.051$ at $x=e^{-\pi}$ gives $Z_{NS}<1.06$, so $Z_{R,0}<0.06<1\le Z_{NS,0}$ — strict. The numerics are self‑consistent: $x=e^{-\pi}=e^{-T/32}$ (with $T=32\pi$) is the natural variable, and indeed $Z_{R,0}^{1/4}\approx e^{-\pi}=0.04321$, $Z_{R,0}^{3/4}\approx e^{-3\pi}=8.0\times10^{-5}$ match the quoted values (leading $R$‑color‑$0$ gaps $1/32$ and $3/32$). $Z_{NS,0}-1\sim e^{-18.8}\sim x^6$ reflects the much larger NS color‑0 gap ($\sim3/16$), so the $(x+x^3)$ envelope is valid though very loose. **The NS/R equality is broken by the center restriction — established.** Your caveat "center‑neutral ≠ SU(3) singlet" is the correct honest qualifier.
+
+### 5. KMS conditional scope — sound and properly hedged
+
+On $B(\mathcal H^*)$ (type I, $e^{-\beta H}$ trace‑class) the Gibbs state is the unique $\beta$‑KMS state; the NS‑projected density, having no cross‑sector matrix elements, fails the KMS analyticity the moving half‑charge demands. The logic is correct, and you are right to mark it **conditional on the full $B(\mathcal H^*)$ extension** rather than a forced physical axiom. No overreach.
+
+### 6. Strongest next original‑source test
+
+**Thermal KMS / periodicity closure of the 4‑point mixed word** — purely analytic, uses only the existing source producer, invents no 3+1 / measure / Yukawa structure.
+
+Circulate field 1 around the thermal trace, $x_1\to x_1-T$, and check that $F$ maps to the **$R$‑sector** reordered correlator with a definite real $\Gamma$. The mechanism is already in hand:
+$$E_T(x+T)=-e^{\,x+T/2}\,E_T(x),\qquad \Theta_{NS}(X-Tq)\xrightarrow{k\to k+q}\Theta_{R}(X)\ \ (q\in\mathbb Z^8+s=\text{R coset}).$$
+This is a sharp test precisely because it stresses the only hand‑fixed input ($\Gamma=1$, the fractional branch): the $-e^{x+T/2}$ factors on field‑1's semilocal legs enter as $(-1)^{+\rho}(-1)^{-\rho}$ and must cancel to a **real** sign; if the trace closes onto $\Theta_{NS}\to\Theta_R$ with $\Gamma=+1$, the branch and cocycle are *forced by the producer itself* rather than assumed — and it simultaneously re‑derives the "half‑charge → R coset" statement you use in §5. If it fails to close to a real factor, that is exactly where a hidden sign would live. This beats a mere higher‑point check, which would not touch the fractional‑branch assumption.
+
+**Bottom line (analytic only):** prefactor/signs/$\Theta$/Jacobian correct with no extra exponential; fractional $\rho$ branch consistent and self‑curing under the chosen ordering; affine identity and color‑filter inequality rigorous and numerically consistent; KMS statement correctly conditional. The single unverified‑from‑first‑principles input is $\Gamma=1$, and the KMS‑closure test above is the clean way to close it.
+
+AUTHOR ADJUDICATION ROUND1
+Accepted are the prefactor/Jacobian derivation,pairings,affine identity,center filter and scoped typeI KMS result. The cocycle scalar was NOT fixed by hand: our checker imports the original eps_ext/add_labels and explicitly computes it on both orders. Individual q/v monodromy remains minus1; no general self-curing or mutual-locality theorem is accepted. The illustrative delta in review section3 is not our actual delta and is not used; both actual quarter vectors satisfy the displayed identities exactly. Numerical gap estimates were not used as proofs. The full real ordered-strip thermal cyclic test suggested by the reviewer has now been analytically derived and executed for ALL4 color roots/8odd channels/2quarters,including center restriction with absolute weights. New final run598 controls. No physical source,measure or3+1 closure claimed.
+
+
+ROUND2 actual analytic review;model metadata claude-opus-4-8
+
+No tools used — pure analytic check, as you asked.
+
+## Cyclic derivation: verified
+
+**Theta transform.** Taking `k_R = n_NS − q`, `Y = X − Tq`, I get independently:
+
+- `k²/2 = n²/2 − n·q + q²/2`
+- `δ·k = δ·n − δ·q`
+- `k·Y = n·X − T n·q − q·X + T q²`
+
+The `±T n·q` cross-terms cancel, and collecting constants leaves exactly
+
+```
+Θ_R(Y) = exp[ T(q²/2 + δ·q) − q·X ] · Θ_NS(X)    ✓
+```
+
+exactly your factor. Note this used **no** specific form of `δ` — only `δ·q` appears. That's why the identity is alpha-/quarter-agnostic and genuinely not hand-picked: the `δ`-dependence is forced to enter as `+Tδ·q` here and `−Tδ·q` in the time factor, so it must cancel for *every* channel. The "598 controls, not 598 proofs" framing is the honest one.
+
+**Three-factor closure.** Summing the exponents of the three stated ratios:
+
+| ratio | exponent |
+|---|---|
+| Θ (R,Y)/(NS,X) | `+T q²/2 + Tδ·q − q·X` |
+| prime-product rotated/orig | `+q·X − T q²/2` |
+| original-time factor | `−Tδ·q` |
+
+Sum `= 0`. Hence `G_NS(word) = G_R(rotated word)` **unnormalized**. ✓ Internally exact.
+
+**Prime-product — the one convention to keep nailed.** The moved point `x1 → x1−T` becomes the *smallest* (since `x1−x4 < T`), so after re-sorting the rotated list `(x2,x3,x4,x1−T)` each affected pair has positive separation `T−d_j`, and `E_T(T−d)=exp(T/2−d)E_T(d)` is applied with no reflection. If instead you keep the unsorted argument `d−T=−(T−d)`, the odd prime form injects a sign per pair. Net result is robust (it's pinned by the Θ-factor it must invert), but confirm you're using the re-sorted branch consistently across all 3 pairs so no stray `(−1)` sneaks in. That's the only place a sign could hide.
+
+**Qualifications — all correct as stated:**
+- Equality is `Z_NS0 F_NS0 = Z_R0 F_R0(rot)`, i.e. unnormalized. Normalized `F` are **not** equal post-center-projection because `Z_NS0 ≠ Z_R0`. Right.
+- "Charge-0, same identity after root-of-unity center filter" — fine for center-neutral combinations.
+- **Guardrail preserved:** total cyclic phase cancelling does *not* imply mutual locality; individual `q`, `v` keep monodromy `−1`. Do not upgrade this. Agreed and reaffirmed.
+
+## Thermal / KMS state: verified
+
+- `ω_NS(B)=Tr[e^{−βH}P_NS B P_NS]/Z_NS`: normalized (`[H,P_NS]=0`), and positive since `P_NS B*B P_NS=(BP_NS)*(BP_NS)≥0` traced against `e^{−βH}≥0`. ✓
+- **Midpoint form.** Expanding `⟨e^{−βH/4}A e^{−βH/4}P_NS , e^{−βH/4}B e^{−βH/4}P_NS⟩_HS`, using `P_NS²=P_NS` and `[e^{−βH/4},P_NS]=0`, cyclicity collapses it to `Tr[P_NS e^{−βH/2}A* e^{−βH/2}B]`. ✓ So the bounded symmetric form is a genuine HS inner product → positivity is automatic.
+- Caveats correct: this is **not** global faithfulness/KMS on the whole parent (compression kills sector-off-diagonal content), **not** the full OS reflection-positivity theorem, and the whole-parent KMS demand (→ unique Gibbs) is optional, *not* imposed on P1 or the physical observable algebra. NS/R block cycling is a spin-seam/disorder intertwiner move and does **not** force a sum over spin structures.
+
+## Verdict
+
+Yes — the cyclic identity is algebraically exact at the unnormalized level, and with the stated qualifications (unnormalized-only, individual monodromy preserved, compression-state not global KMS, no spin-structure sum) the specific cocycle/thermal concern is removed. No error found beyond the single prime-form branch-consistency point to confirm.
+
+I make no claim that primitive source / PF / 96-map / 3+1 / gravity is supplied by any of this.
+
+AUTHOR ADJUDICATION ROUND2
+Accepted explicit theta,prime and original-time cancellation and the positive bounded midpoint form. The final checker uses the RE-SORTED positive real strip for all three affected pairs,as required. The normal typeI KMS qualifier is explicit in the proof. A single off-diagonal state expectation vanishes under NS support,but whole products retain the R intermediate content;compression must NEVER be inserted after each factor. Neither positivity nor block cyclicity requires a physical sum over spin structures. Both current CLI rounds were read and checked;the provider did not execute local programs. Gemini/Grok have no currently verified answer and no new request is claimed. No physical origin closure is claimed.

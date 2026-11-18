@@ -240,8 +240,14 @@ class SpacetimeFieldTests(unittest.TestCase):
     def test_scope_and_saved_record(self):
         result = c.record()
         saved = json.loads((Path(__file__).parent/"validation.json").read_text())
+        self.assertEqual(result.pop("pins"), c.PINS)
+        archived_pins = saved.pop("pins")
+        expected_pins = dict(c.PINS)
+        expected_pins["experiments/theory-contracts/source-half-sector-bridge/checker.py"] = "43d682889f84f83b8a7ba7c5d7bf0ce92913d6310d6ba7243d07c827e6a2218d"
+        expected_pins["experiments/theory-contracts/neutral-current-limit/checker.py"] = "2e4a03cbacc3bc0ed4835facd85e8abce2f2585d717abc56fc2dc57f6b67c136"
+        self.assertEqual(archived_pins, expected_pins)
         # Only these named diagnostics admit last-bit platform variation.
-        # Pins, rational identities, labels and scope flags remain exact.
+        # Rational identities, labels and scope flags remain exact.
         for group, fields in (("diagonal_partial_sums", ("hilbert", "critical_quarter", "energy_form")),
                               ("gaussian_time_diagnostics", ("squared_graph_norm",))):
             self.assertEqual(len(result[group]), len(saved[group]))

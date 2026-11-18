@@ -1,0 +1,74 @@
+TFPT | Kreuztest der Sessionbefunde vom 10. November 2026
+Ergebniskennung TFPTSESSIONCROSSCHECK20261110
+
+1. Clock und die beiden tatsächlich eingesetzten Stromwurzeln
+
+Wir verwenden exakt die v634 Zeilenpermutation und den Vierteldreher
+(x,y) -> (-y,x) je Nachbarpaar. In der D8 Karte mit 1-basierten
+Koordinaten nennt TFPTDESCENDANTSOURCE20261110 die gefalteten
+Wurzeln q=e8-e7 und r=e5+e6. Der Compiler c=J sigma sendet
+q auf -e7-e8 und r auf e2-e1. Beide Bilder sind zum ursprünglichen
+Paar orthogonal. Eine kovariante Darstellung von c, die allein
+den ursprünglichen q/r Wurzelträger erhält, ist daher ausgeschlossen,
+sofern sie die tatsächliche markierte Wurzelwirkung darstellen soll.
+Der lokale q/r Test selbst braucht keine volle Clockkovarianz.
+
+Der c Orbit von q hat vier, der von r zwölf orientierte Wurzeln.
+Ohne Vorzeichen entstehen genau die acht paarweise orthogonalen
+Wurzelachsen e_(2j-1) ± e_(2j), j=1..4. Sie erzeugen A1^8 mit
+Gramdeterminante 2^8 und Index 16 im unimodularen E8. Jeder
+c-stabile Wurzelträger des ursprünglichen Paares muss diese Achsen
+enthalten. Das D6 des Sechserrings und das zu q und r orthogonale
+D6 des ursprünglichen Fold haben in derselben Karte nur 26
+gemeinsame Wurzeln (D4 auf den ersten vier Plätzen und die zwei
+Wurzeln ±(e5-e6)). Insbesondere darf der gleiche Typ D6 die
+markierte Einbettung nicht ersetzen.
+
+Kontrolle über alle 240 Wurzeln: c hat 19 Bahnen der Länge 12 und
+3 der Länge 4. Die Gluewechsel gegen die Anfangsklasse für n=1..12
+lauten 112,112,112,112,112,128,112,112,112,112,112,0. Dies
+reproduziert die Slotzählung im tatsächlich benutzten Originalchart.
+Weder Achsenabschluss noch Wurzelzählung bestimmt die APS Domäne,
+den Selektor, die Zeit oder das physische Gewicht.
+
+2. Der Ringschritt kann den Cliffordkanal mit Platzmarken nicht darstellen
+
+Der vorgeschlagene symmetrische klassische C6 Schritt K hat Gewichte
+1/2 (bleiben), 2/9 (jeder Nachbar), 1/18 (gegenüber). Sein Quotient
+auf {1,2},{4,5},{0,3} ist exakt das ursprüngliche B von v987.
+Der volle K hat den nichttrivialen Kernvektor z=(1,-1,1,-1,1,-1).
+Die drei Paarmittel löschen z bereits bei der Kompression.
+
+Der in der Kernessenz definierte Cliffordkanal Phi auf M4 hat
+auf den Skalar-, Vektor- und Bivektorräumen die Eigenwerte
+1, 1/3 und 2/3, also keinen Kern. Sei L eine lineare Abbildung,
+die LK=Phi L und die sechs einzelnen Platzprojektionen E_j
+verflicht. Dann ist Phi Lz=0, also Lz=0. Jede Platzmarke liefert
+E_j z=±e_j; die Verflechtung gibt L e_j=0 und damit L=0.
+Eine einzige Platzmarke genügt, wenn L zusätzlich den zyklischen
+Ortswechsel verflicht. Schon im klassischen Quotienten ist die
+Paarmittel-Identifikation mit einer einzelnen Platzmarke unverträglich.
+Damit erklärt die Übereinstimmung der unmarkierten B Matrix und
+der Überlebensraten nicht die platzmarkierte Dynamik. Der Ausschluss
+gilt für den angegebenen Ringschritt mit Nullmode, nicht für alle
+Lifts, andere Gewichte oder einen anders typisierten offenen Prozess.
+
+3. Konsequenz für die physische Strategie
+
+Den q/r Stromansatz zuerst lokal testen: im selben ursprünglichen
+Cauchy/APS Schnitt die geordneten Gegenmoden mit Adjungierten
+und Zentralterm auswerten. Den leeren Block, die gebundene Referenz
+und dieselbe tatsächliche Auswahl (Determinante, Struktur, Gap) mitführen.
+Paket P1 ist der zweite alte Präparationszustand, nicht das P1 Postulat.
+Kontrollen sind der alte geordnete Null/Nichtnull Vergleich und die
+Auswahlkorrektur der Wardnorm. Die alte Norm nach Zeitverschiebung,
+eine unmarkierte Gitterzählung oder der Clifford Fixpunkt sind keine
+Ersatzwerte. Erst bei einem Treffer kann ein Vergleich mit voller
+Clockkovarianz über die acht Wurzelachsen etwas über den Anschluss sagen.
+
+Evidenz: check_tfpt_session_crosscheck.py (exakte Ganzzahl- und
+Bruchrechnung); verification/v634_st31_structure.py:91-124;
+verification/v987_os_dilation_package.py:5-15;
+documents/local/tfpt-kernessenz-deutsch-2026-10-15-v2/sections/001-subsection-zusammenfassung.tex:352-364;
+experiments/theory-contracts/chat-triangulation-20261108/TFPT-DESCENDANT-UND-GEMEINSAME-QUELLE-20261110.txt:12-51.
+Experiment: keine Ledgerpromotion, keine physischen R113 Werte.

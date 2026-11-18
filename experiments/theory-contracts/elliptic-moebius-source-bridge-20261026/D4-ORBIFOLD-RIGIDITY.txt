@@ -1,0 +1,504 @@
+AKTUELLE STATUSKORREKTUR, 26.10.2026
+====================================
+Der im folgenden Arbeitsstand noch als numerisch/offen bezeichnete Anschluss
+der konkreten A0* ODE ist inzwischen durch den wiedergefundenen exakten
+C4 Dreiecksbeweis vom 28. September geschlossen. Maßgeblich sind jetzt
+C4-DESCENT-FINITE-MONODROMY.txt und C4-TRIANGLE-INDEPENDENT-REVIEW.txt.
+Die Identifikation gilt bis zum gemeinsamen konstanten Basiswechsel und der
+verbleibenden diagonalen Basiszeichenkonvention. Die tatsächliche Verbindung
+ist C4 äquivariant, hat aber keinen rationalen z->1/z Lift. Der bedingte echte
+D4 Satz beschreibt eine andere markierte Verbindung. Die Stabilitäts und
+Wandargumente unten behalten ihren jeweils ausdrücklich angegebenen Scope.
+Die frühere Offen Kennzeichnung ist überholt; keine neue ODE Suche nötig.
+
+D4-ORBIFOLD-RIGIDITY
+====================
+
+Datum: 2026-10-26
+
+Nachtrag nach dem exakten Stabilitaetstest
+------------------------------------------
+
+Die unten noch als offener Widerspruch beschriebene stable versus polystable
+Frage ist durch STABILITY-SOURCE-RECONCILIATION.txt aufgeloest. Section008 und
+section011 beschreiben zwei verschiedene parabolische Objekte. Der stabile
+Zweig hat gemischte Flags auf dem zugrunde liegenden
+O(-2)+O(-1)^2. W_wall setzt dagegen voraus, dass die drei globalen
+Birkhoff Grothendieck Summanden die Flags an allen vier Punkten simultan
+splitten; seine drei Zeilen haben jeweils Parabolgrad null. W_wall ist damit
+ein anderer, reduzierbarer, strikt polystabiler Charakterzweig und kein
+Gegenargument gegen den stabilen v117 Mehta Seshadri Zweig.
+
+Die vier v117 Peripherien erzeugen A4 von Ordnung 12 und sind bereits
+irreduzibel. U erweitert diese Monodromiedarstellung zur signgetwisteten
+Standarddarstellung von S4. S4 ist hier die Kovarianzerweiterung, nicht die
+vierpunktige Monodromiegruppe.
+
+Die aktuelle Restgrenze betrifft A0*: Seine rotierten Rohflags sind auf dem
+algebraisch deklarierten splitten Buendel exakt stabil und C4 kovariant. Die
+reine diagonale Infinity Scherung g=diag(w^2,w,w) laesst jedoch den resonanten
+Residuenpol -(2 sqrt(2)/3)E_12 uebrig. Die Identitaet dieses Rohflagobjekts mit
+der Deligne Erweiterung der A0* ODE und seine D4 Reflexionslinearisierung sind
+daher weiterhin getrennt offen. Die nachfolgenden Passagen zum angeblichen
+stable polystable Konflikt sind durch diesen Nachtrag ersetzt.
+
+Frage
+-----
+
+Folgt die endliche v117-Auswahl bereits aus der ursprünglichen markierten
+D4-Geometrie, sobald das Familienlokalsystem wirklich auf den D4-Quotienten
+absteigt? Entscheidend ist die bisher fehlende Wahl zwischen den vier
+SU(3)-Quadratwurzeln des regulären kubischen Monodromieblocks M.
+
+Kurzes Ergebnis
+---------------
+
+Ja, als exakter bedingter Starrheitssatz. Die Basiskarte
+
+    J(x) = 1/2 - (x^4+x^{-4})/4
+         = -(x^4-1)^2/(4x^4)
+
+ist der Invariantengenerator C(x)^{D4}. Nach Entfernung der vier Punkte mu4
+hat der Quotient die Orbifoldsignatur
+
+    (infinity,2,4).
+
+Für positiv orientierte Generatoren a,b,c mit
+
+    a b c = I,
+    b^2 = I,
+    c^4 = I
+
+ist a die Schleife um das Bild der vier entfernten Marken, b der
+Ordnung-2-Punkt und c der Ordnung-4-Punkt. Die lokale Verzweigung an jeder
+Marke hat Index 2. Daher ist die ursprüngliche Peripheriemonodromie exakt
+
+    M = a^2.
+
+Nimmt man nun einen ehrlichen unitären, determinantentrivialen Rang-3-Abstieg
+mit
+
+    spec(M) = {1,omega,omega^2},
+    c = U = diag(1,i,-i)
+
+und irreduzibler Wirkung an, dann ist die Darstellung bis auf den diagonalen
+SU(3)-Zentralisator von c eindeutig. Die drei Ordnung-6-Wurzeln von M werden
+exakt ausgeschlossen. Übrig bleibt
+
+    a^3 = I,
+    a = M^2,
+    b = M U^{-1},
+
+also genau das v117-Paar und die endliche S4-Darstellung.
+
+Damit ist die frühere modulare Level-4-Auswahl mathematisch nicht mehr nötig,
+wenn der im aktiven TFPT2-Text ausdrücklich fixierte D4-äquivariante stabile
+parabolische Rang-3-Bündelzweig wörtlich als Prämisse gilt. Für ein solches
+genuin linearisiertes stabiles Objekt erzeugt Mehta-Seshadri die eindeutige
+irreduzible unitäre Verbindung funktoriell; ihre D4-Äquivarianz und ihr
+Orbifoldabstieg folgen aus der Eindeutigkeit der angepassten Metrik. Es wird
+also keine weitere freie flache Verbindung benötigt.
+
+Historischer, inzwischen aufgeloester Quellenbefund: Die aktuelle Quelle
+verwendet zwei verschiedene Statusaussagen. In
+TFPT2, section008, Zeilen 124 bis 127 wird der stabile, bereits abgestiegene
+D4-Zweig fixiert. TFPT2, section011, Zeilen 257 bis 268 erklärt dieselben
+Gewichte und dieselbe Spaltung dagegen zum strikt polystabilen Wallpunkt mit
+positivdimensionalem D4-Fixort. Auf einem strikt polystabilen Punkt folgt
+Irreduzibilität nicht aus Mehta-Seshadri. STABILITY-SOURCE-RECONCILIATION.txt
+zeigt inzwischen, dass W_wall ein anderer flaggespaltener Zweig ist und daher
+nicht mit der irreduziblen v117-Verbindung vereinbart werden muss. Die
+explizite A0*-ODE ist weiterhin nur numerisch mit dieser
+kanonischen Verbindung identifiziert.
+
+1. Die Quotientenkarte ist bereits original
+--------------------------------------------
+
+Setze
+
+    Q(x)=i x,
+    s(x)=1/x.
+
+Dann gilt unmittelbar
+
+    J(Qx)=J(x),
+    J(sx)=J(x).
+
+Als rationale Abbildung P1_x -> P1_J hat J Grad 8. Die von Q und s erzeugte
+Gruppe hat ebenfalls Ordnung 8. Deshalb ist
+
+    C(x)^{<Q,s>} = C(J).
+
+Dies beweist mehr als eine zufällige Invarianz: J ist bis auf eine
+Möbiustransformation des Ziels die Quotientenkarte P1 -> P1/D4.
+
+Das vollständige Ramifikationsgesetz ist
+
+    J=0:        x^4=1,   vier Punkte mit e=2,
+    J=1:        x^4=-1,  vier Punkte mit e=2,
+    J=infinity: x=0,inf, zwei Punkte mit e=4.
+
+Die Riemann-Hurwitz-Summe lautet
+
+    4(2-1)+4(2-1)+2(4-1)=14=2*8-2.
+
+Der kompakte Quotient hat daher Signatur (2,2,4). Nach Entfernung der
+ursprünglichen Marken x in mu4 wird der erste Ordnung-2-Punkt zur Spitze. Der
+für das Familienlokalsystem relevante Quotient hat Signatur
+(infinity,2,4).
+
+Auf dem ursprünglichen Einheitskreis x=e^{i theta} gilt außerdem
+
+    J(e^{i theta})
+      = 1/2 - cos(4 theta)/2
+      = sin^2(2 theta).
+
+Damit ist auch die reelle Nahtabbildung dieselbe kanonische Quotientenfunktion.
+Es wurde keine neue Moduligeometrie gewählt.
+
+2. Warum die Peripherie M=a^2 ist
+---------------------------------
+
+Sei a eine positive Schleife um J=0. In einer lokalen Koordinate z=x-zeta an
+einer Marke zeta in mu4 hat J die Form
+
+    J = lambda z^2 + O(z^3), lambda != 0.
+
+Eine positive Schleife um z=0 läuft deshalb zweimal um J=0. Für den Pullback
+eines Orbifoldlokalsystems ist die Monodromie der ursprünglichen
+Peripherieschleife daher
+
+    M = a^2.
+
+Die beiden anderen Zielschleifen b,c haben die echten isotropen Relationen
+
+    b^2=I,
+    c^4=I.
+
+Mit der üblichen positiven Orientierung gilt a b c=I, also
+
+    a=(bc)^{-1}.
+
+Das ist die präzise Halbmeridianrelation, die im früheren modularen Vergleich
+als zusätzliche endliche Auswahl erschien. P2 liefert M^3=I und damit zunächst
+nur a^6=I. Ob a selbst Ordnung 3 oder 6 hat, wird im nächsten Abschnitt
+entschieden.
+
+3. Exakter SU(3)-Starrheitssatz
+-------------------------------
+
+Satz.
+
+Seien a,b,c in SU(3) unitär und erfüllten
+
+    a b c=I,
+    b^2=I,
+    c^4=I,
+    spec(c)={1,i,-i},
+    spec(a^2)={1,omega,omega^2}.
+
+Sei b nicht die Identität und die Darstellung <b,c> irreduzibel. Dann ist das
+markierte Paar bis auf Konjugation durch den SU(3)-Zentralisator von c
+eindeutig. In einer passenden markierten Basis gilt
+
+    c=U=diag(1,i,-i),
+    a^3=I,
+    M:=a^2,
+    b=M U^{-1}.
+
+Dieses Paar ist das exakte v117-Paar.
+
+Beweis.
+
+Da b unitär, b^2=I und det(b)=1 ist, besitzt das nichttriviale b die Eigenwerte
+{1,-1,-1}. Es gibt daher einen Einheitsvektor v mit
+
+    b = 2 v v^* - I.
+
+Schreibe
+
+    p_j=|v_j|^2,
+    p_1+p_2+p_3=1.
+
+Wegen c=diag(1,i,-i) ist
+
+    tr(bc)=2[p_1+i(p_2-p_3)]-1.
+
+Da a=(bc)^{-1} und bc unitär ist, folgt
+
+    tr(a)=conj(tr(bc))
+         =2p_1-1-2i(p_2-p_3).                    (1)
+
+Nun ist a eine SU(3)-Quadratwurzel von M=a^2. In einer Eigenbasis von M
+kommutiert a mit M. Für M=diag(1,omega,omega^2) gibt es unter der
+Determinantenbedingung genau vier Quadratwurzelzweige:
+
+    Eigenwerte von a                 tr(a)
+    ------------------------------------------------
+    (1, omega^2, omega)              0
+    (1,-omega^2,-omega)              2
+    (-1,-omega^2, omega)             2 omega
+    (-1, omega^2,-omega)             2 omega^2.
+
+Der Zweig tr(a)=2 ist unmöglich. Der Realteil von (1) ergäbe p_1=3/2.
+
+Für tr(a)=2omega oder 2omega^2 hat der Realteil den Wert -1. Gleichung (1)
+ergibt dann p_1=0. Somit ist v orthogonal zur c-Eigenlinie C e_1. Folglich
+
+    b e_1=-e_1,
+    c e_1=e_1.
+
+Die Linie C e_1 ist unter b und c invariant. Das widerspricht der angenommenen
+Irreduzibilität.
+
+Es bleibt nur tr(a)=0. Gleichung (1) liefert exakt
+
+    p_1=1/2,
+    p_2=p_3=1/4.
+
+Dieser Quadratwurzelzweig ist
+
+    spec(a)={1,omega,omega^2},
+    a^3=I.
+
+Alle drei Komponenten von v sind ungleich null. Der diagonale
+SU(3)-Zentralisator von c entfernt die beiden relativen Phasen von v; eine
+globale Phase ändert vv^* nicht. Damit liegt genau eine Zentralisatorbahn vor.
+Aus a b c=I und a^{-1}=a^2=M folgt schließlich
+
+    b=a^{-1}c^{-1}=M U^{-1}.
+
+Für die v117-Matrix M0 ist der +1-Eigenvektor von b=M0 U^{-1} beispielsweise
+
+    v=(1+i,-i,1)^T/2,
+
+mit den gerade erzwungenen Betragsquadraten (1/2,1/4,1/4). Damit ist die
+eindeutige Bahn nicht nur abstrakt, sondern exakt die vorhandene Matrixbahn.
+QED.
+
+Als Konsequenz gelten
+
+    b^2=I,
+    c^4=I,
+    (bc)^3=I.
+
+Die Dreiecksgruppe (2,4,3) ist S4. Das exakte v117-Zertifikat bestätigt für
+diese konkrete Darstellung Ordnung 24, die Elementordnungen 1,2,3,4 und den
+Charakter der vorzeichengetwisteten Standarddarstellung.
+
+4. Was dieser Beweis am alten Starrheitssatz repariert
+------------------------------------------------------
+
+Der archivierte Satz
+
+    documents/archive--tfpt-45--source_extracts--03_em_flavor_source/
+    sections/004-source.tex, Zeilen 2 bis 111
+
+setzt einen lokalen Block D mit regulärem kubischem Spektrum an. In Zeilen 80
+bis 90 wird anschließend aus D4-Äquivarianz gefolgert, die Vierteldrehung
+müsse die drei Eigenlinien durch die konkrete Matrix P zyklisch permutieren.
+Diese Folgerung ist ohne eine markierte lineare Faserhebung nicht bewiesen.
+Eine Basissymmetrie permutiert die vier Punktlagen; sie bestimmt dadurch noch
+keinen einzigartigen Operator auf einer unabhängigen Rang-3-Faser.
+
+Der neue Satz ersetzt diesen Schritt durch eine überprüfbare Struktur:
+
+    ehrlicher Abstieg auf (P1 minus mu4)/D4,
+    b^2=c^4=I,
+    M=a^2,
+    markiertes c-Spektrum,
+    Unitarität, Determinante 1 und Irreduzibilität.
+
+Unter genau diesen Prämissen folgt die v117-Matrixbahn. Es wird keine
+zyklische Eigenlinienpermutation vorausgesetzt.
+
+5. Der stabile D4-Zweig steigt funktoriell ab
+------------------------------------------------
+
+Dieser Punkt lässt sich gegenüber der ersten Fassung des Audits schließen.
+Sei E_* eine stabile parabolische Struktur vom parabolischen Grad null mit
+einer genuinen D4-Linearisierung, welche Marken, Gewichte und volle Flags
+erhält. Nach Mehta-Seshadri beziehungsweise der metrischen Fassung von
+Biquard besitzt E_* eine angepasste irreduzible unitäre Verbindung. Die
+zugehörige Hermite-Einstein-Metrik h ist im stabilen Fall bis auf einen
+positiven Skalar eindeutig.
+
+Für g in D4 ist g^*h wieder eine angepasste Hermite-Einstein-Metrik auf
+demselben linearisierten parabolischen Bündel. Also gilt
+
+    g^*h = lambda_g h,   lambda_g>0.
+
+Da g endliche Ordnung besitzt, folgt lambda_g^{ord(g)}=1 und damit
+lambda_g=1. Die Metrik, ihre Chern-Verbindung und die zugehörige flache
+Mehta-Seshadri-Verbindung sind D4-invariant. Sie steigen deshalb auf den
+Orbifoldquotienten ab. Dieser Schluss ist kanonisch und führt keine zweite
+Verbindungswahl ein.
+
+Die passende Primärquelle für die angepasste metrische Konstruktion ist
+
+    Olivier Biquard,
+    Fibres paraboliques stables et connexions singulieres plates,
+    Bull. Soc. Math. France 119 (1991), 231-257,
+    https://doi.org/10.24033/bsmf.2166
+
+Falls der Ausgangspunkt nur ein D4-fester Modulpunkt ist, liefert Stabilität
+zunächst Isomorphismen g^*E_* -> E_* bis auf Skalare. Nach Fixierung der
+Determinante liegt der Projektivitätsobstruktor in
+
+    H^2(D4,mu3).
+
+Diese Gruppe verschwindet: Gruppenkohomologie in positivem Grad wird von
+|D4|=8 vernichtet, während die Koeffizienten Exponent 3 haben. Wegen
+gcd(8,3)=1 bleibt nur null. Ebenso ist
+
+    H^1(D4,mu3)=Hom(D4,mu3)=0.
+
+Damit existiert der determinantentriviale genuine Lift und ist bis auf
+Äquivalenz eindeutig. Ist die projektive Ordnung-4-Wirkung die im Original
+angegebene A3-Coxeterklasse mit Spektrum {i,-1,-i}, dann erzwingen
+
+    det(c)=1,
+    c^4=I
+
+den eindeutigen skalaren Lift c=-delta. Sein Spektrum ist
+
+    {-i,1,i}={1,i,-i},
+
+also genau die v117-Klasse U. Der bislang als zusätzliche Phasensektion
+beschriebene Vorzeichentwist ist unter diesen Voraussetzungen die eindeutige
+SU(3)-Hebung.
+
+Dieser Schluss gilt für den stabilen Zweig. Bei einem strikt polystabilen
+Bündel ist die angepasste Metrik nur modulo eines größeren
+Automorphismenkommutanten eindeutig. Dann liefert dieselbe Argumentation
+weder Irreduzibilität noch automatisch den eindeutigen v117-Punkt.
+
+6. Abgleich mit den tatsächlichen Originalquellen
+--------------------------------------------------
+
+Die folgenden Bestandteile sind in den vorhandenen Quellen getrennt belegt.
+
+[E] Basisgeometrie.
+
+* Der Trägertext, sections/006-subsection-family-monodromy-and-occupancy.tex,
+  Zeilen 74 bis 126, gibt P1 minus mu4 und die treue D4-Wirkung
+  x->ix, x->1/x an.
+* verification/v168_qgeo_rigidity.py, Zeilen 62 bis 126, prüft die markierte
+  D4-Basis und die drei nichttrivialen C4-Charaktere exakt.
+* verification/v146_moebius_d4.py, Zeilen 70 bis 115, prüft die volle D4-Wirkung
+  auf den expliziten Kohomologieformen. Der Rotationsoperator dort hat
+  Spektrum {i,-1,-i} und Determinante -1.
+* Aus genau diesen Originalgeneratoren folgt die hier berechnete
+  Quotientenfunktion J. Dieser Schluss brauchte keine neue Geometrie.
+
+[C] Determinantentrivialer unitärer Zweig.
+
+* Der Trägertext, dieselbe Datei, Zeilen 211 bis 235, beweist
+  Hol(nabla_F) subset SU(3), ausdrücklich unter der Annahme einer flach
+  trivialen Determinantenlinie und einer sie erhaltenden Verbindung.
+* Für eine ehrliche determinantentriviale Hebung des geometrischen
+  Rotationsoperators ist der Vorzeichentwist natürlich: Aus dem geometrischen
+  Spektrum {i,-1,-i} wird {-i,1,i}={1,i,-i}. Dies ist die v117-Klasse U.
+  verification/v141_deck_selection.py, Zeilen 78 bis 147, findet denselben
+  getwisteten Charakterzweig im Integerdeck. Das Skript hält die
+  Realisierungsprämisse jedoch ausdrücklich offen.
+
+[E innerhalb der gewählten Matrixbahn] Kubische Klasse und Irreduzibilität.
+
+* verification/v117_monodromy_weyl_a3.py, Zeilen 52 bis 182, beweist für die
+  konkrete Matrix M0 exakt Unitarität, det(M0)=1, spec(M0)={1,omega,omega^2},
+  die Torsionsrelationen und die S4-Gruppe.
+* verification/v512_seam_tau_flag.py, Zeilen 741 bis 772, beweist für diese
+  gewählte Bahn einen skalaren gemeinsamen Kommutanten, also
+  Irreduzibilität. Zeilen 774 bis 780 sagen zugleich klar, dass die
+  geometrische Realisierung des Viertelzyklus eine zusätzliche Prämisse ist.
+
+[C/E] Der lineare Abstieg im ausdrücklich stabilen P2-Zweig.
+
+TFPT2, section008, Zeilen 124 bis 127, fixiert ausdrücklich die
+D4-äquivariante stabile parabolische Struktur und nennt sie bereits das
+abgestiegene Drei-Orbifoldpunkt-Bündel. Wird dies als genuine Linearisierung
+mit den angegebenen Coxeterfaserexponenten gelesen, schließt der
+Funktorialitätsbeweis aus Abschnitt 5 den ehrlichen SU(3)-Abstieg und erzwingt
+c=U. Unter dieser benannten P2-Prämisse ist die Faserhebung kein weiterer
+freier Ansatz.
+
+[O/C] Stabilität versus späterer Polystabilitätswall.
+
+Mehta-Seshadri identifiziert stabile parabolische Bündel passenden Grades mit
+irreduziblen unitären Darstellungen. Die Primärquelle ist
+
+    V. B. Mehta und C. S. Seshadri,
+    Moduli of vector bundles on curves with parabolic structures,
+    Math. Ann. 248 (1980), 205-239,
+    https://doi.org/10.1007/BF01420526
+
+Der Architekturtext documents/tfpt_1_architecture_e8/sections/009-source.tex,
+Zeilen 154 bis 159, markiert den TFPT-spezifischen Schritt
+"stable = transport-minimal" als bedingt auf Unitarität und das
+parabolische Wörterbuch. Noch schärfer ist der Konflikt im aktiven TFPT2:
+section008, Zeilen 124 bis 127, fixiert ein stabiles abgestiegenes Objekt,
+während section011, Zeilen 257 bis 268, die konfigurierte Spaltung als
+strikt polystabilen Wallpunkt beschreibt. Strikte Polystabilität entspricht
+im Mehta-Seshadri-Wörterbuch einer vollständig reduzierbaren, im Allgemeinen
+reduziblen unitären Darstellung. Sie liefert daher nicht die in Abschnitt 3
+benötigte Irreduzibilität.
+
+Die explizite A0*-ODE ist ein dritter, getrennter Typ. v117 beweist ihre
+Übereinstimmung mit M0 nur numerisch. Um sie ohne numerischen
+Monodromievergleich mit der kanonischen Mehta-Seshadri-Verbindung zu
+identifizieren, müsste gezeigt werden, dass A0* dieselbe parabolische
+holomorphe Struktur und deren angepasste unitäre Verbindung realisiert.
+
+7. Präzises Verdict
+-------------------
+
+[E] Exakt bewiesen:
+
+* J ist der kanonische D4-Invariantengenerator und nicht eine neue modulare
+  Ansatzkarte.
+* Der punktierte Quotient hat Signatur (infinity,2,4), und die ursprüngliche
+  Peripherie erfüllt M=a^2.
+* Unter ehrlichem SU(3)-Abstieg, markiertem c-Spektrum und Irreduzibilität
+  besitzt M genau eine zulässige Quadratwurzelbahn.
+* Diese Bahn erfüllt a^3=I und ergibt exakt b=M U^{-1}, also v117 und S4.
+* Die drei alternativen SU(3)-Wurzeln sind ausgeschlossen: eine durch
+  p_1=3/2, zwei durch eine gemeinsame invariante Linie.
+
+[C/E] Neue Herkunftskompression:
+
+* Für den in TFPT2 section008 ausdrücklich fixierten genuin D4-linearisierten
+  stabilen parabolischen Zweig folgt der ehrliche Orbifoldabstieg
+  funktoriell. Determinantennormierung und die Coxeterprojektivklasse erzwingen
+  c=U. Dann folgt durch den neuen Starrheitssatz die endliche
+  Ordnung-3-Halbmeridianwahl. Eine zusätzliche modulare Level-4-Auswahl ist
+  überflüssig.
+
+[E] Aufgeloeste Quellenunterscheidung und [O] verbleibende Bruecke:
+
+* Der stabile Zweig aus section008 und W_wall aus section011 sind verschiedene
+  Objekte. W_wall ist der vollstaendig flaggesplittete polystabile Zweig; der
+  v117 Mehta Seshadri Zweig ist stabil und irreduzibel.
+* Die explizite A0*-ODE muss noch als genau diese kanonische angepasste
+  Verbindung identifiziert werden. Ihr bloß numerischer Monodromievergleich in v117
+  reicht für eine reine Herkunftsherleitung noch nicht.
+
+Gegenprüfung
+------------
+
+Eine kleine exakte Sympy-Rechnung bestätigte die vier SU(3)-Wurzelspuren
+
+    {0,2,2omega,2omega^2},
+
+die v117-Identitäten
+
+    b=M0 U^{-1},
+    b^2=I,
+    a=(bU)^{-1},
+    a^2=M0,
+    a^3=I,
+    a b U=I,
+
+und den +1-Eigenvektor von b mit Betragsquadraten (1/2,1/4,1/4). Es wurde
+kein neues Prüfskript angelegt, keine Originalquelle verändert und kein
+Atlas-Eintrag geschrieben.

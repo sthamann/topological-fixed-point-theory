@@ -1,0 +1,57 @@
+{
+  "contract": "spectator-normalization-separation-20261013",
+  "date": "20261013",
+  "research_id": "UR.SOURCE.SPECTATOR_NORMALIZATION.01",
+  "question": "Does the finite seam-generated/no-spectator repair also fix absolute source normalization, and is its commutant helper invariant under equivalent complex bases?",
+  "verdict": "PARTIAL",
+  "verdict_enum": [
+    "PASS",
+    "PARTIAL",
+    "FAIL"
+  ],
+  "claims_tested": [
+    "BULK.PRIME_COMPLETION.01",
+    "SEAM.BULK4D.RECON.01",
+    "GRAV.NONCIRCULAR.01"
+  ],
+  "gates": [
+    "T6",
+    "T7",
+    "T8"
+  ],
+  "kills": [
+    "Finite seam cyclicity and a scalar joint commutant alone determine the absolute scalar Hamiltonian/source normalization.",
+    "The original v1020 real-stacked commutant helper correctly computes complex commutant dimension in every equivalent complex basis."
+  ],
+  "checker": "checker.py",
+  "firewall": "experiments",
+  "summary_de": "Querverbindung am Originalmodell v1020: Naht-Zyklizität und Kommutant bleiben unter H+cI gleich, die unnormierte Zustandssumme ändert sich. No-Spectator-Auswahl ersetzt daher keine absolute Quellen-Normierung. Zusätzlich Basisfehler der Kommutanten-Hilfsfunktion nachgewiesen: am Ausnahmeimpuls nach komplexem Basiswechsel 1 statt 58; korrekte komplexe Rechnung bleibt 58. Die ursprünglichen reellen Prüfdaten bleiben gültig.",
+  "summary_en": "Cross-check of original v1020: seam cyclicity and joint commutant are invariant under H+cI while the unnormalized partition function changes. No-spectator selection therefore does not supply absolute source normalization. A helper-domain bug is also witnessed: at the exceptional momentum a complex basis change produces 1 instead of 58; complex-rank computation preserves 58. Original real-input checks remain valid.",
+  "scope": "Finite linear-algebra cross-check of the existing model and abstract normalization criterion; no proof that scalar shifts are admissible original TFPT source deformations, no fixed-Fermi-level covariance equivalence, no 4D reconstruction.",
+  "prior_contracts": [
+    "source-observation-identifiability-20261013",
+    "original-source-functional-audit-20261013"
+  ],
+  "analytic_results": "PROOF.txt",
+  "no_t1_t8_closure": true,
+  "positive_results": [
+    "Finite seam Krylov span and joint commutant are invariant under scalar Hamiltonian shifts.",
+    "Original real-basis v1020 witness reproduced: 9 checks pass.",
+    "Complex-rank calculation preserves commutant dimension under the tested diagonal unitary basis change."
+  ],
+  "leaves_open": [
+    "Derive the original source-defined off-shell operator/reference/domain family and its absolute geometric normalization.",
+    "Establish whether any nontrivial normalization change is actually admissible under the original TFPT source; the finite shift test does not establish this."
+  ],
+  "assumptions": [
+    "Finite Hermitian one-particle Hamiltonian and the exact seam seed projector from v1020.",
+    "Same positive-beta normalized Gibbs state prescription and same instruments for the scalar-shift comparison.",
+    "Diagnostic basis transformation is unitary; it is not a proposed new physical interaction."
+  ],
+  "next_discriminating_test": "Before claiming no-spectator closure fixes gravity, identify the source-derived absolute normalization observable and show that its value is fixed by the original geometric operator/reference/domain family. Further normalized matter-only checks do not distinguish the tested scalar freedom.",
+  "not_claimed": [
+    "No invariant fixed-chemical-potential Fermi covariance under H+cI.",
+    "No fully admissible pair of alternative original TFPT sources.",
+    "No T1-T8 or 3+1D gravity closure."
+  ]
+}

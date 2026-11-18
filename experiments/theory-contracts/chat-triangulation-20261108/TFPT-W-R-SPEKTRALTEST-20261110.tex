@@ -1,0 +1,110 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[T1]{fontenc}
+\usepackage[ngerman]{babel}
+\usepackage{lmodern,tgpagella,tgheros,amsmath,amssymb,booktabs}
+\usepackage[margin=22mm]{geometry}
+\usepackage{xcolor,fancyhdr,xurl}
+\usepackage[colorlinks,linkcolor=teal!70!black,urlcolor=teal!70!black]{hyperref}
+\definecolor{pine}{HTML}{17675C}
+\definecolor{ink}{HTML}{142B3B}
+\color{ink}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{5.5pt}
+\setlength{\headheight}{15pt}
+\pagestyle{fancy}\fancyhf{}
+\fancyhead[L]{\sffamily\small\color{pine} TFPT \quad / \quad FORTSETZUNG}
+\fancyhead[R]{\sffamily\small 10. NOVEMBER 2026}
+\fancyfoot[R]{\sffamily\small\thepage}
+\newcommand{\E}{E_+}
+\newcommand{\norm}[1]{\left\|#1\right\|}
+\begin{document}
+{\sffamily\bfseries\color{pine} EIN TEST AN DER URSPRÜNGLICHEN DYNAMIK\par}
+\vspace{4mm}
+{\sffamily\bfseries\fontsize{26}{30}\selectfont Trägt der gekoppelte Kanal\\ die alte Stromalgebra?\par}
+\vspace{4mm}
+Im vorhandenen $W$ Modell kann man die erste Anregung so aus der wirklichen Zeitentwicklung lesen, dass die alte Nullprobe exakt stimmt. Der nächste geordnete Schritt verlangt jedoch eine Energie, die im gesamten passenden nativen Sektor fehlt. Der Unterschied bleibt bei jeder gemeinsamen positiven Zeitskalierung und bei jedem linearen Ladungsoffset bestehen.
+
+\section*{Die kleinste entscheidende Probe}
+Der alte Strom $R=V_r$ hat eine Wurzel mit $r^2=2$. Der ursprüngliche Fold liest $r$ als $e_5+e_6$ bei Einszählung. Auf dem alten Vakuum $\Omega$ ergeben die tatsächlichen Vertexmoden
+\[
+ \|R_{-1}\Omega\|^2=1,\qquad R_{-1}^2\Omega=0,\qquad
+ \|R_{-3}R_{-1}\Omega\|^2=1.
+\]
+Die letzte Probe liegt bei Ladung $2r$ und Konformalgewicht vier. Die erste Anregung hat Gewicht eins. Die alte Zeit enthält $8L_0$ und einen linearen Ladungsterm. Deshalb kostet die zweite Ladung in der letzten Probe gegenüber zwei einzelnen Anregungen genau $8(4-2)=16$ zusätzliche Energieeinheiten. Der lineare Term fällt dabei heraus.
+
+Im nativen Modell steht derselbe Wurzelvektor in Zeile 56 des gepinnten $W$ Tensors bei Nullzählung. Die Zeile verbindet acht disjunkte Fermionpaare mit einem Boson. Definiere $Q=N_f+2N_b$. Das ist die native Belegungszahl. Für jede native Fermionmode ist das Skalarprodukt ihrer Ladung mit $r$ höchstens eins. Für die Bosonen ist das Maximum zwei und wird nur vom $r$ Boson erreicht. Deshalb müssen im Sektor $Q=2k$ mit Ladung $kr$ alle beteiligten Moden ihre jeweilige Grenze erreichen. Das bindet die Rechnung an genau diese ursprüngliche Zeile.
+
+\begin{center}
+\begin{tabular}{@{}lrrr@{}}
+\toprule
+Native Teilräume & zwei Bosonen & ein Boson & keine Bosonen\\
+\midrule
+$Q=4$, Ladung $2r$ & 1 & 8 & $28+12$\\
+\bottomrule
+\end{tabular}
+\end{center}
+Von den 40 reinen Fermionzuständen enthalten 28 zwei vollständige Paare. Die übrigen zwölf sind vom betrachteten Wechselwirkungskanal entkoppelt. Der ganze Sektor hat 49 Zustände. Der Rechencheck hat alle aus den Originalgewichten und den ursprünglichen Fermionvorzeichen aufgebaut.
+
+\section*{Warum die erste Probe stimmt und die zweite scheitert}
+Der Hamiltonoperator ist der vorgegebene $H=\Delta N_b+g(T+T^*)$ mit $T=\sum_A b_A^*P_A$, ohne zusätzliche Kopplung. Im Sektor $Q=2,r$ koppeln das Boson und die symmetrische Paarsumme mit $\sqrt{8}g$. Die einzige positive Energie über dem nackten Vakuum ist
+\[
+ E_+=\frac{\Delta+\sqrt{\Delta^2+32g^2}}2 .
+\]
+Im Sektor $Q=4,2r$ enthält die symmetrische Paarsumme den Block
+\[
+ H_{4,\mathrm{sym}}=
+ \begin{pmatrix}
+ 2\Delta & 4g & 0\\
+ 4g & \Delta & \sqrt{14}g\\
+ 0 & \sqrt{14}g & 0
+ \end{pmatrix}.
+\]
+Die Matrix zwischen den acht Einzelpaaren und 28 Doppelpaaren ist nach Vorzeichentransport die Inzidenzmatrix $C$ der Paare von acht Labels. Es gilt $CC^*=6I+\mathbf 1\mathbf 1^*$. Außerhalb des symmetrischen Blocks gibt es sieben Zweierblöcke mit Kopplung $\sqrt 6 g$ und 32 Nullrichtungen. Der symmetrische Block hat die größte Eigenenergie. Das folgt nach der Vorzeichenwahl $g\ge0$ aus dem Vergleich der Rayleigh Quotienten. Sein Hauptunterblock auf den letzten beiden Koordinaten hat bereits die größere Kopplung $\sqrt{14}|g|$.
+
+Ersetze im symmetrischen Block $\sqrt{14}|g|$ durch $4|g|$. Man erhält die symmetrische Zweiteilchenwirkung des Zweierblocks mit Kopplung $\sqrt{8}|g|$. Ihr größter Eigenwert ist $2E_+$. Der zugehörige Eigenvektor des kleineren tatsächlichen Blocks hat für $g\ne0$ drei positive Komponenten. Daher ist die Ungleichung strikt,
+\[
+ E_{\max}(Q=4,2r)<2E_+ .
+\]
+Beim bereits verwendeten Rechenpunkt $\Delta=1$, $g=1/20$ ergibt die vollständige 49 dimensionale Matrix $2{,}0391398711$ gegenüber $2E_+=2{,}0392304845$.
+
+Die Fourierkomponente des nativen $r$ Bosonoperators bei der exakten Energiedifferenz $E_+$ erzeugt auf dem Vakuum einen nichtverschwindenden Eigenvektor. Beim zweiten gleichen Schritt wäre die Zielenergie $2E_+$. Sie fehlt. Damit stimmt die alte Nullprobe. Diese Auswahl ist eine Spektralkomponente der gegebenen Zeitentwicklung. Eine lokale Ausführung folgt daraus noch nicht.
+
+Für die alte nichtverschwindende Folge $R_{-3}R_{-1}$ muss der relative Abstand von der doppelten Einzelenergie positiv sein. Im nativen Sektor ist er für jeden Zustand negativ. Eine Auswahl aus dem Sektor kann seine obere Energiekante nur senken. Eine gemeinsame Referenz hebt den Unterschied ebenfalls nicht auf. Für normierte Testvektoren liest der euklidische Quotient $A_{2r}(t) A_0(t)/A_r(t)^2$ genau diese Differenz. Im alten Fall ist er $e^{-16t}<1$. Für jeden nichtverschwindenden normierten nativen $2r$ Testvektor liegt er bei $t>0$ über eins, wenn $A_r$ die positive Eigenanregung liest. Die Aussage setzt dieselbe Vakuumreferenz für die drei Übergänge voraus.
+
+\section*{Welche zusammengesetzten Felder ebenfalls ausscheiden}
+Im alten Randmodell liefert die ursprüngliche Vertexformel den nichtverschwindenden Weg zur Ladung $kr$ mit den Moden $-1,-3,\ldots,-(2k-1)$. Die Energie über dem Vakuum beträgt $8k^2$ plus einen linearen Term in $k$.
+
+Im gesamten nativen $W$ Modell gilt auf jedem Sektor mit festem $Q$
+\[
+ \sup\operatorname{spec}H_Q
+ \;\le\; \frac{\Delta Q}{2}+2|g|\sqrt{8064Q}
+ \qquad(\Delta\ge0).
+\]
+Dazu verwende $WW^*=8I$ und
+$\sum_{i<j}\|f_jf_i v\|^2=\langle v,\binom{N_f}{2}v\rangle$.
+Die Abbildung $v\mapsto(P_Av)_A$ hat Norm höchstens
+$\sqrt{8\binom{64}{2}}$. Die nachfolgende Abbildung
+$(u_A)_A\mapsto\sum_A b_A^*u_A$ hat im Ausgangssektor Norm höchstens
+$\sqrt{Q/2}$, weil ihr Produkt mit dem Adjungierten $N_b$ ist.
+Für $T+T^*$ folgt die angegebene Schranke.
+
+Startet der native Referenzzustand in einem endlichen Bereich von $Q$ und erhöht jeder Stromschritt $Q$ um höchstens eine gemeinsame Konstante, erreicht das Wort höchstens $Q_0+O(k)$. Das reicht energetisch für $O(k)$ und kann den alten $k^2$ Verlauf nicht tragen. Das umfasst jede Familie von Polynomoperatoren in den nativen Feldern mit gleichmäßig beschränktem Grad. Ein Anschluss im unveränderten $W$ Modell müsste entweder den zugrunde liegenden Zeitvertrag ändern oder einen Strom erzeugen, dessen mögliche Änderung von $Q$ mit der Mode wächst. Der Satz setzt keinen solchen Anschluss voraus.
+
+\section*{Am vorhandenen Rechenpunkt scheitert selbst ein freier Sektorwechsel}
+Für $\Delta=1$ und $g=1/20$ ist $20H$ in jedem endlichen nativen $Q$ Block eine ganzzahlige Matrix in der unnormierten Bosonbasis $(b^*)^n\Omega$. Erzeugung hat dort Koeffizient eins, Vernichtung Koeffizient $n$. Die Fermionvorzeichen und $W$ Einträge sind ganzzahlig. Jede Eigenenergie $20E$ ist also eine algebraische ganze Zahl, in jedem $Q$ Sektor.
+
+Fixiert man am unveränderten Hamiltonoperator den ersten alten $r$ Schritt auf $E_+$, ist die gemeinsame Zeitskala bestimmt. Die alten Energien über dem Vakuum sind $6+2\alpha$ und $28+4\alpha$ für die beiden geprüften Schritte. Der zweite Schritt müsste folglich bei $\frac{28+4\alpha}{6+2\alpha}E_+$ liegen. Am gegebenen Rechenpunkt ist $20E_+=10+6\sqrt3$. Die Spur über den beiden algebraischen Konjugierten des gesuchten Werts $20E$ wäre
+\[
+ \frac{1160}{13}\quad (\alpha=1/4),\qquad
+ \frac{248}{3}\quad (\alpha=3/4).
+\]
+Beide Werte sind nicht ganzzahlig. Daher liegt die benötigte Energie in keinem nativen $Q$ Sektor. Das schließt an diesem Rechenpunkt auch eine Zuordnung mit beliebigem $Q$ Sprung aus. Der Schluss verwendet die unveränderte native Energie relativ zum $Q=0$ Vakuum und die Kalibrierung am positiven ersten $r$ Schritt.
+
+\section*{Die verbleibende Originalrechnung}
+Der zuletzt gelesene Plan 264 und Live Atlas \nolinkurl{e1dc9d5e69ef6bd9c7cace57} führen weiterhin den gemeinsamen relativen $q/r$ Strom auf der wirklichen APS Domain. Der endliche $W$ Weg erklärt ein einzelnes Nullsignal. Er liefert keinen zeitgetreuen Träger des alten Stroms in der geprüften Klasse. Der andere Weg muss denselben gemischten Kontakt mit den geordneten $q$ und $r$ Einfügungen auf der ursprünglichen Quelle auswerten, einschließlich echter Determinanten und Gapauswahl.
+
+Der erneut ausgeführte Originalaufruf hält mit Exit 2 vor der Integration. Für den nativen Aufruf fehlt \nolinkurl{original_blocked_fiber_packet}. Es sind null Originalatome integriert, die vier Formen $W_0,W_U,W_Y,W_{UY}$ und ihre ursprüngliche Maßmasse sind unausgewertet. Metrology005 gibt das Spektralgewicht auf $d\nu_{V_n}$ an. Für diese tatsächliche Domain fehlt die materialisierte Maß und Feldfaser. Die vollständige physische Lösung und F1 bleiben offen.
+
+\small
+\textbf{Originale und Ausführung.} Der gepinnte Tensor und die Hamiltonkonventionen stehen in \nolinkurl{universalraum-native-operations-ground-response-20260915/common.py}. Die alten Vertexmoden und der Fold stehen im Vertrag \nolinkurl{chat-triangulation-20261108}, insbesondere \nolinkurl{TFPT-DESCENDANT-UND-GEMEINSAME-QUELLE-20261110.txt} und \nolinkurl{check_tfpt_family_middle_ordered_cut_20261110.py}. Die Belegungsprüfung verwendet 9 und 49 native Zustände und die tatsächlichen CAR Vorzeichen. Die drei alten Testwörter und der Weg bis $8r$ wurden exakt erneut ausgewertet. Die Kollektivblockmethode hat ihre klassische Entsprechung bei Tavis und Cummings. \href{https://doi.org/10.1103/PhysRev.170.379}{Originalpaper von 1968}.
+\end{document}

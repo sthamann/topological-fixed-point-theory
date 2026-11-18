@@ -1,0 +1,238 @@
+ELLIPTIC NS GREEN REFLECTION POSITIVITY AND THE ANNULUS GAUSSIAN STATE
+26 October 2026
+
+Question and verdict
+====================
+
+Take the actual square elliptic curve E=C/(Z+iZ), its Q-invariant NS--NS spin
+line alpha and the dividing real form
+
+  rho(z)=-bar(z).
+
+On the half 0<t<1/2, z=t+i s, use
+
+  L=partial_t+B,  B=-i partial_s,
+
+with antiperiodic conditions in t and s. The full free charged Gaussian Green
+functional of L is reflection positive for both charge blocks and hence for
+all polynomial CAR words supported in the open half. Its time-zero covariance
+is exactly the second-face compression
+
+  C=(1+exp(B))^-1
+
+of the Calderon graph already derived on this same elliptic annulus. Thus the
+Green KMS state is the labeled boundary marginal of that graph, while the
+full two-face graph is its canonical purification. They are one free Gaussian
+source construction rather than two one-particle formulas with matching
+spectra.
+
+This is a theorem for the explicitly named free Gaussian CAR functional. It
+does not turn a two-point identity into an interacting field theorem and does
+not identify this state with the primitive physical P1 kernel.
+
+1. The actual elliptic Green kernel
+===================================
+
+Let
+
+  e_n(s)=exp(2pi i(n+1/2)s),
+  B e_n=lambda_n e_n,
+  lambda_n=2pi(n+1/2).
+
+There is no zero mode. For 0<t<1 the inverse of L is
+
+  S(t)=exp(-tB)(1+exp(-B))^-1,                           (1)
+
+and for -1<t<0 it is
+
+  S(t)=-exp(-(t+1)B)(1+exp(-B))^-1.                     (2)
+
+The two branches have jump I at zero and obey S(t+1)=-S(t). They therefore
+give the inverse on the actual temporal NS domain. Although B has both signs,
+each displayed product is bounded on its stated open interval.
+
+This spectral Green operator is exactly the elliptic Szego kernel, including
+normalization. Put w=(s-s')+i t and use Jacobi theta functions with periods
+1 and i. For 0<t<1,
+
+  S_E(w)=i/(2pi)
+         theta_3(w|i) theta_1'(0|i)
+         /[theta_3(0|i) theta_1(w|i)].                  (3)
+
+Indeed, (3) has residue i/(2pi w), the fundamental singularity for
+
+  L=-2i partial_bar_w,
+
+and is antiperiodic under w->w+1 and w->w+i. The difference between (3) and
+the Fourier kernel of (1) is a holomorphic section of alpha. Since
+H0(E,alpha)=0, the difference vanishes. This proves the theta identity
+without fitting a coefficient or a thermal parameter.
+
+2. Reflection positivity for both charges
+==========================================
+
+The Schottky reflection is
+
+  rho(t,s)=(-t,s).
+
+For 0<t,u<1/2, set a=t+u. The first reflected charged kernel is
+
+  K_bar(t,u)=-S(-a)
+            =exp(aB)(1+exp(B))^-1
+            =X_t^* X_u,                                (4)
+
+  X_t=exp(tB)(1+exp(B))^-1/2.
+
+The conjugate charge block is
+
+  K_psi(t,u)=S(a)
+            =exp(-aB)(1+exp(-B))^-1
+            =Y_t^* Y_u,                                (5)
+
+  Y_t=exp(-tB)(1+exp(-B))^-1/2.
+
+Both X_t and Y_t are bounded for 0<t<1/2. Spectral calculus therefore gives
+
+  integral <f(t),K_bar(t,u)f(u)> dt du
+     =||integral X_u f(u)du||^2 >=0,
+
+and the analogous identity with Y for the second charge. The statement holds
+for every spatial mode and arbitrary superpositions, not only for a finite
+mode sample.
+
+In the charged field convention used in the previous full-cover proof, define
+the anti-linear order-reversing reflection first on unsmeared generators by
+
+  Theta psi(t,s)    =-barpsi(-t,s),
+  Theta barpsi(t,s)=-psi(-t,s).                         (6)
+
+The constant minus is the reduced normal-Clifford and source-order phase. It
+is essential for the first sign in (4), and Theta^2=1. Moving this minus into
+the opposite source-order convention is equivalent; omitting it while
+keeping the displayed contractions is not.
+
+For a gauge-invariant free Gaussian functional, Wick expansion of reflected
+normal-ordered words gives exterior Gram determinants of (4) and (5).
+Consequently every finite polynomial F in the positive-half CAR algebra
+satisfies
+
+  omega(Theta(F)F)>=0.                                  (7)
+
+Equation (7) is the requested all-word result for this free Gaussian source.
+It makes no claim for an interacting deformation with the same two-point
+function.
+
+3. The same state as the annulus Cauchy graph
+==============================================
+
+For the strip 0<=t<=W with W=1/2, the Cauchy relation for L is
+
+  f_1=exp(-WB)f_0.
+
+Its graph projector has second-face compression
+
+  C_A=(1+exp(2WB))^-1=(1+exp(B))^-1.                    (8)
+
+This is precisely the covariance in (4). The first-face compression is
+I-C_A, precisely the covariance in (5). The off-diagonal graph block gives
+the canonical purification of these two charge and face marginals.
+
+Thus, after applying the ordinary CAR quasifree functor, the torus Green
+functional has exactly the labeled boundary marginal of the annulus Cauchy
+graph and the same reflected word functional on that marginal algebra. The
+full graph is the canonical two-face purification fixed by the same solution
+operator. No additional Araki-Wyss purification or chosen temperature is
+inserted. The inverse temperature is the geometric beta_s=1 for B,
+equivalently beta_angle=2pi for B_cov=B/(2pi).
+
+4. Winding domains and the relative source
+===========================================
+
+The original winding multiplier
+
+  u(s)=exp(2pi i s)
+
+preserves H1_NS and obeys on that domain
+
+  B u=u(B+2pi).                                         (9)
+
+Because Theta is anti-linear and rho leaves s fixed,
+
+  Theta u Theta^-1=u^-1.                                (10)
+
+Thus the actual OS word reflection reverses the winding, as required. The
+state is not claimed to be invariant under u. Rather, (9) gives its spectral
+flow and the already proved relative covariance determinant
+
+  det_F[(1-z u C_A u^*)(1-z C_A)^-1]=1-z,
+
+for |z|<1. This determinant remains a relative Gaussian source response. It
+is not automatically the physical EM or Quillen functional.
+
+5. Quarter clock transport between the two cuts
+================================================
+
+The geometric quarter map Qz=iz does not translate one chosen boundary. It
+maps the vertical half A_+ to the horizontal half A_-. In their natural
+coordinates,
+
+  z=t+i s  on A_+,
+  z=s'+i t' on A_-,
+
+one has
+
+  t'=t,  s'=-s.                                         (11)
+
+Therefore its fixed spin lift U_Q satisfies
+
+  B_- U_Q=-U_Q B_+,
+  U_Q C_+ U_Q^-1=I-C_-,
+  U_Q u_+=u_-^-1 U_Q.                                  (12)
+
+The constant spin-lift phase of U_Q cancels in (12) and in every neutral
+Gaussian expectation. It is the already fixed alpha lift, not a new fitted
+phase. Equations (11)-(12) show exactly how Q transports the two OS halves:
+it exchanges the charge covariances and reverses winding. It is not an
+internal time translation of either annulus.
+
+6. What has and has not been closed
+====================================
+
+PROVED: the actual NS--NS elliptic Szego kernel equals the spectral Green
+kernel of partial_t+B with the normalization (3).
+
+PROVED: the Schottky reflection rho=-bar(z), together with the fixed constant
+field phase in (6), is positive for both charged blocks and all free Gaussian
+CAR words supported in 0<t<1/2.
+
+PROVED: the full free Gaussian Green state has the labeled marginal of the
+same finite-width Calderon graph already found on this elliptic annulus, and
+that graph supplies its canonical two-face purification.
+
+PROVED: winding preserves the actual Sobolev domain, is inverted by Theta,
+and Q transports the paired cuts by B->-B, C->1-C and u->u^-1.
+
+OPEN: identification of this elliptic free Gaussian source with the primitive
+P1 kernel, the interacting measure, the old Hardy W8 state or physical OS
+time. The theorem supplies a concrete same-E candidate for that remaining
+map; it does not assume the map.
+
+Sources reused
+==============
+
+  research-20261026-fundamental-rethink/geometry/
+  DIVIDING-REAL-FORMS.txt
+
+  research-20261026-fundamental-rethink/primitive/
+  ANNULUS-TO-ORIGINAL-SEAM-SOURCE.txt
+
+  research-20261026-p1-reflection/
+  NS-COVER-FULL-DIRAC-RP.txt
+  NS-COVER-GREEN-RP-INDEPENDENT-REVIEW.txt
+
+Method comparison only:
+
+  A. Jaffe and G. Ritter, Reflection Positivity and Monotonicity,
+  arXiv:0705.0712v2, section 4.2.
+
+No Atlas record or canonical project source was changed.

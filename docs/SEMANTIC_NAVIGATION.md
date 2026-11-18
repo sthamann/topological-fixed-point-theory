@@ -50,6 +50,16 @@ publication registry untouched.
 
 ## Route for the next session
 
+For fundamental research, first read the live shared
+[PLAN.md](research/fundamental-plan/PLAN.md),
+[progress.json](research/fundamental-plan/progress.json), newest
+[RESULTS.md](research/fundamental-plan/RESULTS.md) entries and
+[SEARCH-METHODS.md](research/fundamental-plan/SEARCH-METHODS.md). Preserve the
+established continuation basis, completed subtasks and active owner. Reconcile
+this state with `research_state` for the actual scientific question. Historical
+handoffs and unresolved tasks are scoped evidence, not a competing priority.
+For an Atlas maintenance task follow that request without starting new research.
+
 1. Start with `graph_status` and `theory_overview`, then `paper_coverage`.
    For a whole-theory status request use the evidence areas and their scope
    first. `research_state` with a broad status question or an empty query
@@ -61,13 +71,17 @@ publication registry untouched.
    from the reviewed records by the existing source-checked export.
 2. Use `search_papers(query, scope="public", limit=5)` or `list_papers` to find
    the document or phrase. For example, search `carrier_rank_pascal_unique`.
-3. Copy the returned exact `document:` ID into `paper_outline(document_id)`.
-   Copy the relevant exact `section:` ID into `paper_section(section_id)`.
-   Read its summary state, source freshness, parent context and every premise.
+3. `search_papers` can return an exact `section:` ID. Open it directly with
+   `paper_section(section_id)`, then copy one of its `document_ids` into
+   `paper_outline(document_id)` for the parent context. `list_papers` returns
+   document IDs directly. Never pass a section ID to `paper_outline`. Use an
+   outline's exact section IDs and read summary state, freshness and premises.
 4. Use `paper_evidence(id)` to follow typed evidence links, then `read_source`
    with the returned `source_id` and bounded inclusive line ranges. Original
    source reads are hash checked and limited to 200 lines per call. Continue
    across ranges when the complete section or prerequisites require it.
+   Inspect any preview, returned extent, continuation and freshness metadata;
+   a stored excerpt or bounded response is not the full original source.
 5. Use `research_state` for the exact topic/problem or actual scientific
    question. Preserve its findings, strategies and conjunctive premise IDs;
    follow the existing plan/update discipline before retrying a strategy or

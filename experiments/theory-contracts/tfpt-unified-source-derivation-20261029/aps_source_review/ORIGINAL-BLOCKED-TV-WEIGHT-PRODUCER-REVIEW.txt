@@ -1,0 +1,118 @@
+Ursprünglicher blocked T_V Aufruf: Producer, Gewichtstyp und Consumer
+2026-10-30. Gezielter Quellenpfad, keine Atlasänderung und kein neuer Lauf.
+
+1. Der tatsächlich vorhandene Aufruf
+
+QFT4 bezeichnet documents/archive--tfpt-45--source_extracts--04_qft_source/
+sections/004-source.tex, SHA256
+a5d1cc26f80d2f1d5af3d89b94cf8ff8912b572040614d4e1c27f1fe3b747126
+(paper-source:87d8d6e4c79b70b432a7cb68).
+Zeilen111-155: T_V wird aus lokalen C6 Greenkernen, diagonalen
+Zulässigkeitsgewichten und dem zweistufigen Padm erhalten. Der Consumer
+ist der positive Perronvektor; dessen nachfolgende Zustandsverwendung
+beginnt dort, nicht bei einem neuen Hardyoperator.
+Zeilen282-299 präzisieren den behaupteten Gewichtsproducer: verschiedene
+Basisworte unterscheiden sich durch lokalen Transportcount, Carrierlabel
+oder retained selector weight; die Gewichte seien aus diesen Daten
+konstruiert. Hier steht weder eine numerische Gewichtsformel d_r(w) noch
+eine geordnete Tensor-/Kontraktionsformel für T_V.
+Zeilen302-335 verwenden danach die Separierung dieser diagonalen Familie
+zur Vollmatrixalgebra. Das setzt die Gewichte bereits als Operatoren ein.
+
+Der ältere Originaltext documents/archive--paper-latex--tfpt-42/sections/
+024-source.tex:111-155,282-335 enthält dieselbe Konstruktion und dieselben
+drei Gewichtsdatentypen, keine zusätzliche ausgewertete Gewichtsregel.
+SHA256 17571245dcaaa273129e05d9ed04abbcf33a337e051c94a7019d263f3eadad77.
+
+2. Der positive Padm Producer ist tatsächlich explizit
+
+QFT2 = gleicher Source45 Ordner/
+002-section-closure-theorems-from-the-admissibility-complex.tex,
+SHA256 61ecee7727bdec47936bbffc028d3dbac5260a025b6dbcce30124a60d635fc9c.
+Zeilen31-53 definieren Pstr und die vier positiven Penalties;
+Zeilen70-117 liefern
+ Deltaadm=KΣ²+Kc²+KΘ²+Kg²,
+ Padm=Pi_kerDeltaadm=Pprim Psing PΘ=Pstr Pgap.
+Die tatsächlichen Eingaben sind iC, Zc, QΘ und der admissible
+Dadm samt Gap. Ihre ursprünglichen Typen bleiben erhalten.
+Zeilen318-333 übersetzen den Compilerpredicate ausdrücklich in
+ Adm(X)=1 genau dann, wenn Padm X=X.
+Das ist ein vorhandener ausführbarer Auswahlcontract für gegebene Daten.
+Es wird hier keine zusätzliche Auswahl des bereits gegebenen vollständigen
+Seedzustands verlangt.
+
+Kleinster entscheidender Typentest am möglichen Gewichtsproducer:
+Aus x in RanPadm folgt
+ sum_r ||K_r x||²=<x,Deltaadm x>=0,
+also K_r Padm=0 für jedes der vier Penalties. Daher gilt auf diesem Raum
+ p(KΣ,Kc,KΘ,Kg)Padm=p(0,0,0,0)Padm
+für jedes unital gebildete Polynom; im ursprünglichen kommutierenden
+Contract gilt dasselbe für beschränkten gemeinsamen Funktionalkalkül.
+Insbesondere ist exp(-beta Deltaadm)|RanPadm=I für jedes beta.
+Die eigentlichen Selektorpenalties allein können also bei retained
+Dimension>=2 die in QFT4:282-299 verlangten Basisworte nicht trennen.
+Das widerlegt nicht die QFT4 Gewichte mit zusätzlichen Counts/Carrierlabels.
+Es identifiziert, welcher der dort genannten Inputs wirklich noch
+verarbeitet werden muss; Padm ist kein Amplitudenleser innerhalb seines
+eigenen Bildes. Bei Rang1 ist die Separierungsforderung trivial.
+
+3. Bereits vorhandene native Verifikationen sind andere konkrete Aufrufe
+
+Codegraph zuerst gelesen, dann tatsächliche Funktionen:
+verification/v330_qgamb_admissible_measure.py:42-57 erzeugt den expliziten
+symmetrischen Dreiertransfer mit Spektrum1,(2/3)^6,(1/3)^6 und konstantem
+Perronvektor. correlator nimmt den Diagonaloperator D bereits als Argument.
+Das ist ein berechenbarer gegebener Quellencontract; dort entsteht weder
+die ganze QFT4 Gewichtsmenge noch eine Karte vom neuen Hardyalphabet zu D.
+Source source:f15dfc8c547c01da89f1.
+verification/v175_net_existence_full_cone.py:94-121 quantisiert eine
+gegebene16er Einteilchenkontraktion auf der ganzen CAR Fockquelle.
+Das bewahrt sämtliche Produkte der gegebenen Quelle; es ist nicht der
+Compiler von lokalen Counts und Carrierlabels in QFT4 Gewichte.
+tfpt_explorer/origin_transfer.py:161-756 ist der vorhandene125er
+Fortsetzungscontract der Überlebensclock. Seine drei zusätzlichen
+Identifikationen und die unabhängige45er Freiheit sind dort ausdrücklich
+benannt. Auch das ist nicht ungeprüft der QFT4 blocked T_V.
+Diese früheren Resultate werden wiederverwendet, nicht neu ausgeschlossen.
+
+Die graphische Suche nach T_V/Padm/Kadm/D_V Gewichtssymbolen in nativen
+Pythonquellen lieferte keine passende Definition; die begrenzte wörtliche
+Nachsuche nach den tatsächlichen blocked/diagonal admissibility Begriffen
+in verification/ und tfpt_explorer/ lieferte keinen anderen Gewichtscompiler.
+Das ist eine gezielte Abdeckung dieses Aufrufpfads, keine Behauptung einer
+vollständigen Corpusprüfung oder eines universellen Nichtvorhandenseins.
+
+4. Inverse Transportbeine sind ausdrücklich schon im Original vorhanden
+
+EM3 = documents/archive--tfpt-45--source_extracts--03_em_flavor_source/
+sections/003-subsection-discrete-phase-operator-and-transport-grammar.tex:
+3-12 definiert den unitären Sechsertransport und D_y=yI-delta U6;
+91-108 definiert Kstr aus dem tatsächlichen Gram.
+EM5 = derselbe Ordner/005-source.tex:114-198 setzt
+ D_y*D_y+eps²=(y²+delta²+eps²)I-y delta(U6+U6^-1).
+Damit sind inverse Worte bereits im ursprünglichen Gram, Greenkernel und
+dessen inverser Quadratwurzel vorhanden, nicht erst eine neue Ergänzung.
+Im bereits bewiesenen positiven Order3 Foldbranch gilt sogar
+ K_plus=r(-1/2)I+
+        [r(1)-r(-1/2)](I+M0+M0^-1)/3.
+v118 det(I-tM0)=det(I-tM0^-1)=1-t³ erklärt allein die Blindheit des
+skalaren Determinantenreaders gegenüber dieser Orientierung. Es entfernt
+das inverse Bein nicht aus dem tatsächlichen ganzen Operator.
+
+5. Die erste konkrete Verarbeitung für diesen Caller
+
+Der ursprüngliche Compiler liefert den Auswahloperator und die C6 Quelle.
+QFT4 nennt zusätzlich labelabhängige Gewichte, liefert an den geprüften
+Producerstellen aber nicht ihren tatsächlichen d_r(w) Aufruf oder ihre
+Kontraktion zum whole T_V. Unsere fertige endliche Antwort und der
+primitive Wedgeconsumer liefern eine getypte Einfügung; noch nicht
+nachgewiesen ist genau die Verarbeitung dieser Einfügung in eines jener
+labelabhängigen Gewichte beziehungsweise in einen anderen ursprünglichen
+Sewingsummanden des T_V. Hardy=ganzeY ist dafür keine Voraussetzung.
+
+Sobald der tatsächliche d_r oder whole blocked tensor aus einer originalen
+weiteren Quelle vorliegt, sind Padm, Greenfaktoren und Quellenfunktor bereits
+vorhanden und können ohne neue Modellwahl durch denselben Caller getragen
+werden. Seine Perronfunktion darf nicht vorab als frei gewählte Quelle
+eingesetzt werden. Der bestehende gegebene operative Seed behält seinen
+vollständigen Zustand, beide Ränder, Reflexion und Zeit.

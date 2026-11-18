@@ -1,0 +1,76 @@
+{
+  "id": "seam-source-operator-reconstruction-20261015",
+  "contract": "UR.SEAM.SOURCE_OPERATOR_RECONSTRUCTION.01",
+  "research_id": "UR.SEAM.SOURCE_OPERATOR_RECONSTRUCTION.01",
+  "date": "2026-10-15",
+  "question": "Does the actual P1/P2 seam determine a common field, state and time map with the quarter phase retained, and what exact operator conditions permit reconstruction?",
+  "verdict": "CONDITIONAL_SOURCE_RECONSTRUCTION_NO_P1_DERIVATION",
+  "verdict_enum": [
+    "CONDITIONAL_SOURCE_RECONSTRUCTION_NO_P1_DERIVATION",
+    "CHECK_FAILED"
+  ],
+  "summary_de": "Im gegebenen skalaren CAR-Quellenmodell folgt die gemeinsame Feld-, Zustands- und Zeitwirkung bei erhaltener Viertelphase. Die erzeugte Energie E=alpha+Var(phi′)/2 waehlt unter allen H1-Windung-eins-Symbolen eindeutig die gleichmaessige Windung, bis auf Gesamtphase. Keine passend geaenderte Zeit und kein endlicher Suchbeweis. Die Auswahl dieser Quelle und der Minimum-Energie-Regel aus P1/P2 ist noch nicht hergeleitet. Der Originalbeweis minimaler Defekte klassifiziert seine minimale Operatorfaser nicht.",
+  "summary_en": "In the given scalar CAR source, the joint field, state and time action retains the quarter phase. The excitation energy E=alpha+Var(phi prime)/2 uniquely minimizes at the uniform winding among all H1 winding-one symbols, modulo phase, without changing the time generator. This is an analytic result, not a finite search proof. Selection of this source and the minimum-energy rule from P1/P2 is not derived. The original minimal-defect argument does not classify its minimal operator fiber.",
+  "scope": "Original-source proof audit; abstract operator reconstruction under stated isometry, purity, minimal dilation and actual-time hypotheses; complete continuous scalar Hardy-symbol classification, exact rational diagnostics and conditional CAR sea transport. Same-source CAR excitation-energy identity and global minimizer in the H1 scalar-multiplier class; not uniqueness in the full restricted unitary group.",
+  "assumptions": [
+    "For the abstract reconstruction: actual projection C, unitary U, zero leakage, Fredholm index -1, purity and minimal unitary dilation.",
+    "Actual selfadjoint B on a common invariant core obeys U*BU=B+1 with wandering eigenvalue alpha=1/4 or 3/4.",
+    "For field/state conclusions: the actual algebra is charged CAR and the physical state is the pure quasifree negative sea.",
+    "The executable symbol diagnosis assumes the scalar Hardy realization; it does not derive this realization from P1/P2.",
+    "For energy comparison: fixed scalar B_alpha=N+alpha, fixed CAR sea representation and reference state, unimodular H1 multiplication candidates. No zero-leakage assumption. Derivation of the rule that P1 selects the least excited charge-one state is outstanding."
+  ],
+  "positive_results": [
+    "Exact compression identity C-S*S=CU*(1-C)UC and algebraic Lean certificate.",
+    "All continuous scalar unimodular Hardy symbols of winding one that compress isometrically are single Blaschke factors; this is an analytic classification, not finite enumeration.",
+    "Conditional abstract reconstruction of modes and B=N+alpha from the same operator pair and actual-time covariance.",
+    "Conditional CAR field action and exact R*QR=Q+1, R*H_alpha R=H_alpha+Q+alpha with quarter transition retained.",
+    "Original-source audit identifies the unsupported step from minimal integer defect value to unique operator tuple.",
+    "For every unimodular H1 scalar symbol of winding one, E=alpha+mean((phi prime-1)^2)/2. Unique minimizer u=phase*z in this class. Blaschke b_(1/4) and non-inner z^2/b_(1/4) both have exact excess 1/15.",
+    "Source audit of 02_carrier_source.tex:3020-3063: the stratified master functional fixes the unique discrete datum and sets a zero/infinity barrier using B_min. It does not independently select B_min or derive the charge-one least-excitation rule; its electromagnetic alpha is not the quarter-domain parameter."
+  ],
+  "not_derived": [
+    "On the Wold route only: the actual P1/P2 operator pair has zero leakage, purity and minimal generation. Nonzero leakage is not physical exclusion.",
+    "The original time, CAR field algebra, quasifree state, P2 carrier and E8 extension are identified with the reconstructed objects.",
+    "The actual P1 seam obeys the minimum-energy selection rule in the original CAR source; scalar uniqueness does not establish full operator-source uniqueness.",
+    "Physical event law or complete T1-T8 solution."
+  ],
+  "relations": [
+    {
+      "target": "seam-source-character-search-20261015",
+      "type": "extends"
+    },
+    {
+      "target": "seam-joint-conjugation-20261015",
+      "type": "uses"
+    },
+    {
+      "target": "primitive-charged-source-response-20260921",
+      "type": "compares"
+    },
+    {
+      "target": "source-graded-gns-matter-gate-20260922",
+      "type": "uses"
+    }
+  ],
+  "claims_tested": [
+    "AX.P1.01",
+    "AX.P2.01",
+    "QGEO.KERNEL.01"
+  ],
+  "topics": [
+    "topic:origin",
+    "topic:quantum",
+    "topic:clocks"
+  ],
+  "gates": [],
+  "kills": [],
+  "proof": "experiments/theory-contracts/seam-source-character-search-20261015/source_reconstruction/PROOF.txt",
+  "checker": "experiments/theory-contracts/seam-source-character-search-20261015/source_reconstruction/search.py",
+  "certificate": "experiments/theory-contracts/seam-source-character-search-20261015/source_reconstruction/results.json",
+  "lean_certificate": "experiments/theory-contracts/seam-source-character-search-20261015/source_reconstruction/lean/SourceReconstruction.lean",
+  "raw_P1P2_derivation": false,
+  "complete_TFPT_solution": false,
+  "promotion": false,
+  "firewall": "experiments",
+  "artifact_directory": "experiments/theory-contracts/seam-source-character-search-20261015/source_reconstruction"
+}

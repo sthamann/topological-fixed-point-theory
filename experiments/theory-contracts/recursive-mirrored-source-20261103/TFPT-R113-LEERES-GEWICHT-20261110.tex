@@ -1,0 +1,162 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[ngerman]{babel}
+\usepackage{lmodern,microtype,mathtools,amssymb,booktabs}
+\usepackage[margin=22mm]{geometry}
+\usepackage{tikz,pgfplots}
+\pgfplotsset{compat=1.18}
+\definecolor{ink}{HTML}{17313E}
+\definecolor{muted}{HTML}{526D78}
+\definecolor{sea}{HTML}{176D74}
+\definecolor{redclay}{HTML}{A3442C}
+\definecolor{pale}{HTML}{EAF4F3}
+\usepackage{xurl}
+\usepackage[colorlinks=true,urlcolor=sea,linkcolor=sea]{hyperref}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\lhead{\small\color{muted} TFPT \quad Gemeinsame Quelle}
+\rhead{\small\color{muted} 10. November 2026}
+\lfoot{\small\color{muted} R113 \quad Leerer Randübergang}
+\rfoot{\small\color{muted}\thepage}
+\setlength{\headheight}{14pt}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{.58em}
+\newcommand{\panel}[1]{\noindent\colorbox{pale}{\parbox{\dimexpr\linewidth-2\fboxsep}{\vspace{4pt}\color{ink}#1\vspace{4pt}}}}
+\newcommand{\Tr}{\operatorname{Tr}}
+\newcommand{\src}[1]{\texttt{#1}}
+\begin{document}
+\color{ink}
+{\small\bfseries\color{sea} TFPT \quad FORSCHUNGSFORTSETZUNG \quad 10.11.2026}
+
+{\Huge\bfseries Was den leeren Übergang\par zusammenhalten muss\par}
+\vspace{2mm}
+{\large Der ursprüngliche R113 Fermionfaktor gibt eine quantitative Bedingung für das gemeinsame Feldgewicht.}
+
+\panel{\textbf{Ergebnis.} Nach Entfernung des logarithmischen Modenabzugs verstärkt der bekannte verklebte leere Fermionfaktor große Higgsfelder. Sein Logarithmus wächst wie \(T r A R^2\log R\). Hier ist \(R\) die Higgsamplitude, \(r\) der Kreisradius und \(A\) eine direkt aus der vorhandenen Yukawamatrix gelesene Zahl. Das vollständige begrenzte Spektralprofil bei fester Skala liefert keine Dämpfung dieser Stärke. Auch ein fester quadratischer Abzug oder Gaußfaktor reicht dafür nicht.}
+
+\section*{Wo das in die Gesamtlösung gehört}
+
+Der leere Übergang verbindet zwei offene bosonische Ränder, bevor die geladenen Strommarken und die äußere physische Auswahl eingesetzt werden. Für festgehaltene Feldgeschichten ist der Fermionteil bekannt. Der ursprüngliche Aufruf muss diese Geschichten gewichten und zusammenführen. Ein Verhältnis der Fermionen allein kann diese Gewichtung offenlassen.
+
+\begin{center}
+\begin{tikzpicture}[every node/.style={font=\small},>=stealth]
+\node[draw=sea,rounded corners=3pt,fill=pale,text width=4.3cm,align=center,minimum height=1.15cm] (p) at (0,0) {Vorhandene 96er Matrix und\ verklebter Fermionfaktor};
+\node[draw=redclay,rounded corners=3pt,text width=4.0cm,align=center,minimum height=1.15cm] (m) at (5.4,0) {Ursprüngliches Gewicht\ der inneren Feldwege};
+\node[draw=sea,rounded corners=3pt,fill=pale,text width=4.0cm,align=center,minimum height=1.15cm] (q) at (10.75,0) {Leerer Rand und beide\ geordneten Stromantworten};
+\draw[->,very thick,sea] (p)--(m);
+\draw[->,very thick,sea] (m)--(q);
+\node[text=redclay,align=center] at (5.4,-.96) {Die Rechnung bestimmt die\ erforderliche Dämpfung hier.};
+\end{tikzpicture}
+\end{center}
+
+Die Messgröße im Diagramm unten ist der Logarithmus des leeren Faktors geteilt durch \(R^2\). Bei großen Feldern steigt sie um rund \(1595\) pro Verdopplung von \(R\). Der alte C58 Randterm hat im selben Modenvergleich das umgekehrte Vorzeichen. Dieser Unterschied entscheidet darüber, ob der jeweilige Faktor große Felder dämpft oder verstärkt.
+
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[width=.92\linewidth,height=5.55cm,
+xlabel={Higgsamplitude \(R\) (logarithmisch)},ylabel={\(\log(S_\infty(R)/S_\infty(0))/R^2\)},
+xmin=-1.4,xmax=11.5,ymin=3000,ymax=24300,grid=major,grid style={pale},
+xtick={-1,1,3,5,7,9,11},xticklabels={$1/2$,$2$,$8$,$32$,$128$,$512$,$2048$},
+ytick={5000,10000,15000,20000},scaled y ticks=false,
+yticklabel style={/pgf/number format/1000 sep={\,}},tick label style={font=\small},
+label style={font=\small},axis line style={muted}]
+\addplot[sea,very thick,mark=*,mark size=2pt] coordinates {(-.8625,4538.67) (1,7275.89) (3,10407.67) (5,13589.71) (7,16778.96) (9,19968.94) (11,23158.98)};
+\end{axis}
+\end{tikzpicture}
+\end{center}
+\small
+Originaler R032/v252 Diagnosesatz mit \(r=1\), \(T=4\pi\) und festem \(H=0\) Vergleich für die feldabhängige Form. Der Atlasstand vor der Eintragung dieses Ergebnisses war \src{6c45d7828dfe8dd56f69d0ef}, Planrevision 270. F1 blieb dort in Bearbeitung.
+
+\clearpage
+\section*{1. Rechnung an der vorhandenen Matrix}
+
+Wir verwenden den ursprünglichen homogenen R032 Zweig mit festem Kreis und radialem Higgsfeld \(H=R e_2\). Die v252 Matrix \(\Phi(R)=M+R Y\) enthält den vorhandenen Majoranablock \(M\) und die vorhandene Higgsrichtung \(Y\). Beide antikommutieren mit der Graduierung \(\Gamma\). Die Originalmatrix
+\[
+ h_p=p\Gamma-i\Gamma\Phi(R)
+ \qquad\text{hat}\qquad h_p^2=p^2+\Phi(R)^2 .
+\]
+Die Energien kommen in Paaren \(\pm E_p(m_j)\), wobei \(E_p(m)=\sqrt{p^2+m^2}\) und die \(48\) Werte \(m_j\) jeweils einen Vertreter eines Paares zählen. Nullwerte werden mitgeführt. Für \(p_k=(k+1/2)/(2r)\) und Streifenzeit \(T\) ist der bekannte verklebte Anregungsskalar in der leeren Exteriorpotenz \(\exp(-T\sum_{k,j}E_{p_k}(m_j))\). Der gemeinsame Restfaktor gehört weiter zur ursprünglichen Quelle.
+
+Im bekannten Skalar wird nach dem feldunabhängigen freien Term der lineare Term in \(m^2\) pro Mode abgezogen. Setze
+\[
+ D(m)=\sum_{k\ge0}\left[p_k+\frac{m^2}{2p_k}-\sqrt{p_k^2+m^2}\right]
+     =\sum_{k\ge0}\frac{m^4}{2p_k(\sqrt{p_k^2+m^2}+p_k)^2}.
+\]
+Die Summanden sind positiv und die Reihe konvergiert. Ab Modenzahl \(N\ge1\) ist ihr Rest höchstens \(m^4(2r)^3/(16N^2)\), weil \(\sum_{k\ge N}(k+1/2)^{-3}\le 1/(2N^2)\). Der renormierte bekannte Skalar hat
+\[
+ \log\frac{S_\infty(R)}{S_\infty(0)}
+   =T\sum_{j=1}^{48}\bigl[D(m_j(R))-D(m_j(0))\bigr].
+\]
+Ein Vergleich mit der masselosen S Referenz verschiebt diese Darstellung der Feldform nur um eine vom betrachteten Originalfeld unabhängige Konstante, sofern die Referenz auf der freien Matrix festgehalten wird. Der wirkliche ursprüngliche Referenzwert einschließlich der Bosonen bleibt separat.
+
+\subsection*{Geschlossene Abschätzung für jede Masse}
+Setze \(a=2rm\) und \(f_a(x)=\sqrt{x^2+a^2}-x\). Die Rechnung vergleicht \(\sum_{k<N} f_a(k+1/2)\) mit \(\int_0^N f_a(x)\,dx\). Der Mittelpunktfehler jedes Intervalls ist nichtnegativ und höchstens ein Achtel des Integrals von \(f_a''\) auf diesem Intervall. Insgesamt ist \(\int_0^\infty f_a''=1\) für \(a>0\). Außerdem gilt
+\[
+ \int_0^N f_a(x)\,dx
+ =\frac{N\sqrt{N^2+a^2}-N^2+a^2\operatorname{arsinh}(N/a)}2
+ =\frac{a^2}{2}\log\frac{2N}{a}+\frac{a^2}{4}+o(1).
+\]
+Die halbe harmonische Summe hat \(\sum_{k<N}(k+1/2)^{-1}=\log N+\gamma_E+2\log 2+o(1)\). Einsetzen gibt mit der stetigen Fortsetzung bei \(m=0\)
+\[
+ \boxed{D(m)=r m^2[\log(4rm)+\gamma_E-1/2]+\delta_m,
+          \qquad 0\le\delta_m\le (16r)^{-1}.}
+\]
+Die Matrixspur liefert exakt \(\sum_j m_j(R)^2-\sum_j m_j(0)^2=A R^2\) mit \(A=\Tr(Y^2)/2\), weil \(\Tr(MY)=0\). Die Eigenwerte von \(M+RY\) unterscheiden sich von denen von \(RY\) höchstens um \(\|M\|\). Damit folgt
+\[
+ \log(S_\infty(R)/S_\infty(0))=T r A R^2\log R+O(R^2).
+\]
+Der direkte Test der unveränderten Matrizen ergibt \(A=183.1183583725\) und bei \(r=1\), \(T=4\pi\) den Koeffizienten \(T r A=2301.1331576023\). Das sind Einheiten des ursprünglichen Diagnosesatzes. Der alte C58 Seeterm hat unter derselben Modensubtraktion den Beitrag \(-\ell\sum_j D(m_j)\) mit seiner eigenen Zeit \(\ell\).
+
+\clearpage
+\section*{2. Was eine gemeinsame Quelle liefern muss}
+
+\textbf{Ein anderer endlicher quadratischer Abzug ändert den Befund nicht.}
+Er multipliziert das Gewicht mit \(\exp(-cR^2)\). Das Wachstum aus \(R^2\log R\) setzt sich für jedes feste \(c\) durch. Auf dem homogenen v252 Kreis gilt \(E_p(m)\ge p\). Darum liegt die volle Spur eines positiven fallenden Profils bei fester Skala zwischen null und ihrer endlichen freien Spur. Ihr Exponentialfaktor bleibt zwischen zwei positiven Konstanten. Das gilt auch für das ganze positive Laplaceprofil mit endlicher freier Spur, das in der früheren Untersuchung der ersten räumlichen Mode verwendet wurde. Die Formel für die Spektralwirkung ist bei Chamseddine und Connes beschrieben. Die Schranke hier folgt direkt aus dem konkreten Kreisspektrum. \href{https://arxiv.org/abs/hep-th/9606001}{Spektralwirkung von Chamseddine und Connes}
+
+\textbf{Die Stabilitätsbedingung gilt auch mit der lokalen Kinetik.}
+Im bereits betrachteten festen skalaren Higgszweig mit Hauptteil \(-a\Delta_H\), \(a>0\), wirkt der bekannte Faktor bei einem konstanten Verlauf wie das Potential
+\[
+ V_{\rm See}(R)=-r A R^2\log R+O(R^2).
+\]
+Unter der zusätzlichen Annahme, dass der verbleibende lokale Potentialterm höchstens quadratisch wächst, kann der resultierende Generator nach unten keine Schranke haben. Ein normierter glatter Testzustand mit festem Trägerradius wird auf Entfernung \(R\) verschoben. Seine kinetische Energie bleibt fest, sein Potentialwert geht gegen minus unendlich. Die Rechnung gilt ebenso bei einem Divergenzformoperator mit den zuvor getesteten radialen Graphdichten, weil das Verhältnis der Dichte innerhalb eines solchen verschobenen Trägers gegen eins geht. Damit reicht in diesem Zweig auch die lokale Dynamik alleine nicht aus, um einen beschränkten euklidischen Übergang zu erhalten. Auf der Ebene eines positiven homogenen Integrals mit polynomiellem Volumen gilt die entsprechende Aussage für die Dämpfung. Schreibt man den verbleibenden Faktor als \(\exp(-B(R))\), trennt der führende Koeffizient \(T r A\) beide Fälle. Liegt \(\liminf_{R\to\infty} B(R)/(R^2\log R)\) strikt darüber, ist der Schwanz integrierbar. Liegt der entsprechende \(\limsup\) strikt darunter, divergiert er. Wenn beide Grenzwerte gleich der Schwelle sind, entscheiden kleinere Terme.
+
+\textbf{Der quadratische Regulator bei festem Modenschnitt hat eine genaue Schwelle.}
+Für \(N\) beibehaltene Moden steht bei großen \(R\)
+\[
+ \log(S_N(R)/S_N(0))
+ = \kappa_N^* R^2 - T N R\sum_j m_j(Y)+O_N(1),\qquad
+ \kappa_N^*=\frac{T A}{2}\sum_{k<N}\frac1{p_k}.
+\]
+Ein Faktor \(\exp(-\kappa R^2)\) genügt für die getesteten polynomiellen Dichten genau bei \(\kappa\ge\kappa_N^*\). Bei Gleichheit bleibt die lineare Dämpfung erhalten. Die Schwelle steigt wie \(T r A\log N\). Ein fester Gaußfaktor stabilisiert daher den leeren Skalar nach der Subtraktion nicht bei beliebig feiner Auflösung. Der bereits bewiesene Gaußtest für die andere, beschränkte Spektralspur bleibt gültig. Hier wird er auf den renormierten leeren Anregungsskalar angewandt, der einen anderen großen Feldbereich hat.
+
+\panel{\textbf{Konkrete Anforderung.} Für einen unbeschränkten homogenen Higgszweig mit den geprüften Dichten muss die ursprüngliche Bosonen und Restwirkung den negativen Beitrag im Generator ausgleichen. Alternativ muss die wirkliche Randform eine andere wirksame Stütze oder die tatsächliche gemeinsame Quelle einen abgeleiteten Ausgleichsfaktor liefern. Die ältere lokale Quartik ist als bedingte Dämpfung bekannt. Die Originalquellen liefern bisher keine globale Übertragung ihrer Schranke auf den ganzen ungekürzten Profilaufruf.}
+
+\clearpage
+\section*{3. Gleicher Rand, verschiedenes Gewicht}
+
+Bei gegebenen homogenen zeitabhängigen Verläufen setzt die ursprüngliche Verklebung den Anregungsskalar aus den kleinen Teilstreifen zusammen. Für beschränkte \(H(s)=x(s)e_2\) konvergiert die abgezogene Modensumme gleichmäßig, weil die Reste bei großem \(p\) durch eine gemeinsame Konstante mal \(p^{-3}\) beschränkt sind. Der nicht abgezogene Logquotient zweier gegebener Geschichten \(x,z\) bei gleichem Kreis und Majoranablock hat den genauen divergenten Anteil
+\[
+ -r A \log N\int_0^T (x(s)^2-z(s)^2)\,ds .
+\]
+Das folgt aus \(E_p(m)-p=m^2/(2p)+O(p^{-3})\), der exakten Spuridentität und der harmonischen Summe. Die Forderung betrifft die Gewichte \emph{innerer} Feldwege. Eine gemeinsame Konstante für dieselben beiden äußeren Endpunkte fällt im Quotienten heraus.
+
+Im Originaldiagnosesatz wurden zwei glatte, spiegelgerade Wege mit denselben Endpunkten \(H=0\) und derselben Geometrie geprüft. Der erste bleibt bei null, der zweite ist \(x(s)=0.55\sin(\pi s/T)\). Der Koeffizient vor \(\log N\) ist \(-348.0463901\). Die unabhängige Auswertung der tatsächlichen 96er Eigenenergien bei \(p=10^4\) gibt nach derselben Hochimpulsskalierung \(-348.0463860\). Die gegenläufige Behandlung der Geschichte in einem tatsächlich identischen T Zweig kann den gemeinsamen Fermionterm kürzen. Dafür muss die Referenz den ganzen jeweiligen Verlauf mitführen. Für den physisch gebundenen Referenzaufruf ist genau diese Gleichheit zu prüfen, bevor sie zur Normierung verwendet wird.
+
+\section*{Stand der gemeinsamen Lösung}
+
+Der konkrete vorhandene Kandidat für die Dämpfung ist \(R_{\rm geo}=\exp(6\chi_0^2\mathcal E_D-\Gamma_D^{(4)})\). Im gedruckten konstanten Geometriezweig trägt \(\Gamma_D^{(4)}\) den Bulkterm \(\int\sqrt g\,(\Phi^*\Phi)^2/(16\pi^2)\). Bei einer feldfreien Referenz und festem positivem Volumen dominiert diese positive Quartik das berechnete Wachstum, sofern sie im übrigen Beitrag erhalten bleibt. Bei derselben geraden Feldgeschichte in der Referenz kürzt der gemeinsame Bulkterm.
+
+Für F1 fehlt die Zuordnung dieses Terms zur ursprünglichen leeren R113 Randform mit ihren tatsächlichen Randbeiträgen, ihrer Integration und ihrer Referenz. Auf diesem gemeinsamen Übergang sind die leere Randmatrix und beide geordneten \(q/r\) Antworten auszuwerten. Plan 270 liefert dafür das geschlossene neutrale Ramond Wort und seinen alten Farbtest. Ihre Übertragung auf den physischen Schnitt ist offen.
+
+\section*{Originale und Rechenbeleg}
+\footnotesize
+\begin{itemize}\setlength{\itemsep}{1pt}\setlength{\parsep}{0pt}
+\item R113/R032 \nolinkurl{R113-ORIGINAL-UND-REFERENZ-20261109.txt}, Abschnitte 1 und 3. \nolinkurl{WHOLE-STRATEGY-CAP-AND-CONTACTS-20261109.txt}, Abschnitt 1. Beide im Vertrag \nolinkurl{chat-triangulation-20261108}.
+\item v252 Diagnoseparameter und Originalbuilder in \nolinkurl{check_quarter_reference.py} desselben Vertrags. Der ergänzende Checker \nolinkurl{check_r113_empty_sea.py} importiert diese Parameter, prüft die Paarenergien der Originalmatrix, summiert die Moden mit expliziter Restschranke und rechnet das Beispiel mit denselben Endpunkten nach.
+\item C58 \nolinkurl{TFPT-C58-ENDLICHER-ABZUG-ORIGINALREFERENZ-20261110.txt}, Abschnitte 1 und 3. Zum Profil \nolinkurl{first-weighted-spectral-block-20261110/PROOF.txt} und \nolinkurl{WHOLE-PROFILE-TO-QUARTIC-TRANSFER-AND-DOMAIN-20261105.txt} im Vertrag \nolinkurl{original-paper-source-reconciliation-20261102}.
+\item Geometrischer Rest \nolinkurl{original-local-source-variable-background-20261102/WEIGHT.txt}, Abschnitte 2 und 3, mit Metrology001 und Metrology002.
+\item Für die Summenidentität siehe die \href{https://dlmf.nist.gov/5.4}{Spezialwerte der Digammafunktion im NIST DLMF}. Die Mittelpunktabschätzung steht auf Seite 2.
+\end{itemize}
+\end{document}

@@ -1,0 +1,12 @@
+'TFPT.DeterminantHiggsLift.centralInvolutionDetOne' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TFPT.DeterminantHiggsLift.signLiftSquare' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TFPT.DeterminantHiggsLift.positiveSectorFraction' depends on axioms: [propext, Classical.choice, Quot.sound]
+TFPT.Carrier.BoundaryYukawaKernelInterface.BoundaryYukawaKernel.finrank_E_eq_three.{u_1, u_2} {K : Type u_1} [Field K]
+  {E : Type u_2} [AddCommGroup E] [Module K E] [FiniteDimensional K E]
+  (b : Carrier.BoundaryYukawaKernelInterface.BoundaryYukawaKernel K E) : Module.finrank K E = 3
+TfptCarrier.PositiveDescentMaster.tail_bound {m : ℕ} (p : ℕ → Fin m → ℝ) (δ : ℕ → ℝ) {q : Fin m → ℝ}
+  (hδ : ∀ (n : ℕ), dist (p n) (p (n + 1)) ≤ δ n) (hs : Summable δ) (hq : Filter.Tendsto p Filter.atTop (nhds q))
+  (n : ℕ) : dist (p n) q ≤ ∑' (k : ℕ), δ (n + k)
+TfptCarrier.BWKeystone.qgeoFromSeam :
+  TfptCarrier.SeamEquivChain.SeamIsE8 →
+    TfptCarrier.BWKeystone.RotationInvariantVacuum → TfptCarrier.BWKeystone.StateInvariance

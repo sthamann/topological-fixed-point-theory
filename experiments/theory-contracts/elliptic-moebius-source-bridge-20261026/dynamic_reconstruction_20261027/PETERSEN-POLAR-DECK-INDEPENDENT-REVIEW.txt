@@ -1,0 +1,173 @@
+UNABHAENGIGE REVIEW: PETERSEN POLAR DECK INTERTWINER
+===================================================
+
+27 October 2026
+
+Gepruefte Datei
+---------------
+
+  PETERSEN-POLAR-DECK-INTERTWINER.txt
+
+Urteil
+------
+
+Die endliche mathematische Aussage ist korrekt. Der positive Anteil des
+reversiblen Petersen Radialoperators ist markiert isometrisch zum lazy
+Familienoperator. Der polare Vorzeichenoperator geht dabei zwingend in
+
+  K = Z Delta,   Z = diag(1,-1,-1),
+
+ueber und nicht in den nackten v487 Decktausch Delta. Der statische Satz, der
+alternierende Rahmen und die sechs dimensionale Blockkonjugation wurden exakt
+reproduziert.
+
+Die Aussage bleibt eine Identitaet zwischen den angegebenen endlichen
+Operatoren. Sie bestimmt keine physische Zeit, kein Feld und keine geometrische
+Deckwirkung.
+
+1. Isometrie und markierte Basis
+--------------------------------
+
+Mit
+
+  D = diag(1,3,6)/10,
+  b0=(1,1,1), bY=(6,-4,1)/3, br=sqrt(5)(3,1,-1)/3
+
+gilt exakt B^T D B=I. Die im Bericht angegebene Matrix U ist die orthogonale
+Matrix zwischen den euklidischen Frames. Die eigentliche Isometrie
+
+  W : H_pi -> R^3
+
+ist in den urspruenglichen Schalenkoordinaten
+
+  W = U sqrt(D),
+
+und erfuellt W^T W=D. In diesem praezisen Sinn ist der Ausdruck Isometrie
+korrekt. Insbesondere W(q/3)=e+.
+
+2. Positive und signierte Wirkung
+----------------------------------
+
+Die Polynome
+
+  |P| = 4/5 P^2 - 1/15 P + 4/15 I,
+  J_P = -6/5 P^2 + 8/5 P + 3/5 I
+
+geben exakt P=J_P|P|, J_P^2=I. Direkte symbolische Konjugation liefert
+
+  W|P|W^-1 = M_lazy,
+  WJ_PW^-1 = K = Z Delta,
+  WPW^-1 = K M_lazy.
+
+Der kleinste Deckgegenfall ist bereits eindimensional: Auf dem einfachen
+2/3 Eigenraum wirkt J_P mit -1, Delta nach Transport mit +1. Keine Rephasierung
+einer eindimensionalen Eigenlinie aendert dieses Vorzeichen.
+
+Der zeitabhaengige Ausschluss ist ebenfalls korrekt, sofern mit carry both
+gemeint ist, dass jeder Rahmen zugleich den positiven Anteil und die nackte
+Deckmarke transportieren soll. Aus
+
+  V_(n+1) P V_n^-1 = M_lazy
+
+und der adjungierten Gleichung folgt
+
+  V_n P^2 V_n^-1 = M_lazy^2.
+
+Die eindeutige positive Quadratwurzel erzwingt daher
+V_n|P|V_n^-1=M_lazy in jedem Rahmen. Damit bleibt derselbe 2/3
+Deckwiderspruch bestehen. Ohne die zusaetzliche Forderung an die nackte
+Deckmarke existiert dagegen gerade der im Bericht angegebene alternierende
+Rahmen W_n=K^nW.
+
+3. Ladungsoperator
+------------------
+
+Die Konjugation des Multiplikationsoperators
+
+  Y_shell=diag(6,-4,1)
+
+ergibt exakt die gedruckte Matrix Y_target. Ihr charakteristisches Polynom ist
+
+  (lambda-6)(lambda-1)(lambda+4).
+
+Damit bleiben die drei Ladungseigenwerte erhalten. Dies ist eine endliche
+Operatoraussage. Sie macht Y_target noch nicht zu einem lokalen geladenen Feld.
+
+Der neue Ladungsnachtrag ist ebenfalls exakt. Direkt gilt
+
+  [Y_shell,P] = [[0,10,0],[-10/3,0,-10/3],[0,5/3,0]],
+
+und diese Matrix hat Rang zwei. Fuer den alternierenden Rahmen ist der Defekt
+
+  Y_(n+1) M_lazy - M_lazy Y_n
+
+bei geradem n genau die im Hauptbericht gedruckte Matrix und bei ungeradem n
+ihr Negatives. In beiden Faellen hat er Rang zwei und
+
+  ||Y_(n+1) M_lazy - M_lazy Y_n||_F^2 = 700/9.
+
+Die periodisch bewegte Ladung ist daher nicht konserviert. Das ist die
+entscheidende physische Grenze der endlichen Konjugation: Der Intertwiner
+transportiert das Ladungsobservable und sein Spektrum, liefert aber fuer sich
+keine ladungserhaltende Zeitentwicklung. Eine Kompensation durch weitere
+Sektoren oder eine Wechselwirkung waere neue Quellenstruktur.
+
+4. Doppelcover
+---------------
+
+Fuer
+
+  P_hat = [[0,P],[P,0]],
+  G = diag(I,J_P),
+  W_hat = diag(W,W)G
+
+gilt exakt
+
+  W_hat P_hat W_hat^-1 = [[0,M_lazy],[M_lazy,0]].
+
+Der nackte Blatttausch tau wird dabei zu
+
+  W_hat tau W_hat^-1 = [[0,K],[K,0]],
+
+also zum K verdrehten Tausch. Der Bericht trennt diese Aussage korrekt von
+einer physikalischen Identifikation des Doppelcovers.
+
+5. Quellenpraezisierung zu Z
+----------------------------
+
+Eine Formulierung sollte bei der weiteren Verwendung enger sein. v409 und der
+Ledger Eintrag RES.COXETER.SYMMETRY.01 kennen bereits
+
+  Z=diag(1,-1,-1)
+
+als sheet involution beziehungsweise prime-2 generator. Die Matrix Z und ihre
+Paritaetswirkung sind daher nicht neu. Neu bewiesen ist hier, dass genau dieses
+Z algebraisch als Mismatchfaktor zwischen dem transportierten Petersen
+Polarzeichen und dem v487 Decktausch auftritt.
+
+Aus der blossen Matrizengleichheit folgt noch nicht, dass das v409 Sheet, die
+Orientierungsschicht des neuen bipartiten Doppelcovers und der v487 Decktausch
+bereits als dieselbe geometrische Quellenwirkung identifiziert sind. Der Satz
+
+  geometric deck = orientation exchange times Z Delta
+
+bleibt genau diese weitere Quellenidentifikation. Daher sollte der Schluss
+nicht sagen, die Quelle liefere Z ueberhaupt nicht. Korrekt ist: Die Quelle
+liefert Z bereits als Involution, aber noch nicht die benoetigte gemeinsame
+geometrische Komposition in diesem markierten Intertwiner.
+
+6. Reproducer
+-------------
+
+  check_petersen_polar_deck_intertwiner.py
+
+Der schmale SymPy Lauf prueft ohne Python assert:
+
+  * H_pi Orthonormalitaet und W^T W=D;
+  * beide Polarfaktoren und die drei Konjugationen;
+  * Ladungsspektrum und W(q/3)=e+;
+  * Rang zwei des Ladungskommutators und Defektnorm 700/9;
+  * die sechs dimensionale Blockkonjugation;
+  * den K verdrehten Blatttausch.
+
+Keine Repository- oder Atlasdatei wurde geaendert.

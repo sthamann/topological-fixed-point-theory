@@ -1,0 +1,135 @@
+REFMETRIC20261109. Der ursprüngliche R032 Fermionanker bei wachsendem Kreis
+9. November 2026. F1. Geprüfter bedingter Originalzweig.
+
+1. Tatsächliche Quelle und Variation
+
+Verwendet werden der gegebene deckgerade R032 Produktchart, die dortige
+Teilchen/Loch beziehungsweise See-Normierung, beide gebundenen S/T Lifts
+und v252s unveränderte diagnostische Eingaben (rng252). Die Referenzformeln
+stehen in REFERENCE-FIBER-EVALUATION.txt:36–56,114–188. Die beiden echten
+Viertelholonomien haben jeweils dieselbe Folge absoluter Frequenzen. Der
+räumliche Kreisfaktor r multipliziert die Kreislinie, also g_theta_theta
+mit r². Die Verbindungsholonomie bleibt fest und die ganze Modenfolge ist
+p_k(r)=(2k+1)/(4r), k>=0, je Vierteldomäne. Es wird eine räumliche Richtung
+variiert. Die Collarzeit t bleibt fest, im Kontrolllauf t=4π wie in
+MANUAL-SOURCE-20261107, und wird nicht mit r identifiziert. Beide
+Vierteldomänen werden separat verglichen; es gibt keine Doppelzählung.
+
+H ist ein konstanter äußerer Hintergrund dieser gegebenen Fermionfaser.
+Entlang der vorhandenen reellen Richtung H=(0,h) ist u=h² und
+Phi(h)=M+hY, mit dem gesamten ursprünglichen Majoranaoperator M und
+allen vier Yukawablöcken in Y. Keine Auslesung eines dynamisch integrierten
+Higgsfelds, keine Änderung der gewählten Basis, keine neue Referenzwahl.
+In den ganzen Z_A/Z_R bleiben Restkörper a_A/a_R, physischer Selektor,
+Eta und übrige Feldintegration an ihrem tatsächlichen Platz.
+
+2. Leerer Fermionquotient, Metrik und Vakuumgrenze
+
+Für H=0 gibt es drei positive Majorana-Singulärwerte m_j. Setze
+g_t(E)=log(1+exp(-t E)), f_t(E)=1/(1+exp(t E)),
+E_j(p)=sqrt(p²+m_j²). Aus der ganzen ursprünglichen Exteriorformel folgt
+
+ L_S(r,t)=log Q_F,S=2 sum_(k>=0,j)[g_t(E_j(p_k))-g_t(p_k)].
+ d_logr L_S=2t sum_(k>=0,j)[(p_k²/E_j) f_t(E_j)-p_k f_t(p_k)].
+
+Jeder Beitrag zum Score ist strikt negativ für m_j>0. Beide Reihen
+konvergieren absolut. Die Schranken der Summenschwänze sind geometrisch,
+mit e^(-t p_k) beziehungsweise t p_k e^(-t p_k). Bei r=1 und t=4π erhält
+man Q_F,S=0.777345176168879, L_S=-0.251870785087240 und den metrischen
+Score -0.781606856883638. Die ganze 96er Diagonalisierung reproduziert
+den Logquotienten bis 2.7e-15. In T stimmen die bedingten ganzen
+Fermionoperatoren bei geradem H mit ihren mittransportierten Referenzen
+überein, daher Quotient 1 und Score 0 für diesen Fermionanteil.
+
+Bei festem t ist die Modenweite 1/(2r). Die Riemannsumme liefert
+
+ lim_(r->infty) L_S/r = 4 sum_j int_0^infty [g_t(E_j(p))-g_t(p)] dp.
+
+Bei t=4π ist das -0.782675693317796 pro r. Der Score pro r hat denselben
+Grenzwert, durch partielle Integration der Riemannsumme für -p d_p.
+Die massive Reihe aus int exp(-jt sqrt(p²+m²)) dp=m K_1(jtm)
+und die numerische Integration stimmen für die eingesetzten numerischen
+Singulärwerte bis 1.9e-59 überein. Das ist keine 59-stellige Genauigkeit
+der Eingabematrizen.
+
+Für jede Kreisgröße und alle t>0 gilt zusätzlich exakt
+
+ 0 <= -L_S <= 6 sum_k exp(-t p_k)
+             = 3/sinh(t/(4r)) <= 12r/t.
+
+Damit verschwindet -(rt)^(-1)L_S im t->infty Grenzwert sogar gleichmäßig
+in r. Die seitliche Extensivität bei fester t ist die Antwort von
+Anregungen. Dieser bereits see-korrigierte Teil kann keine bleibende
+Vakuumenergiedichte für den fehlenden absoluten Rest liefern. Eine
+Vakuumgröße eines anderen Terms wird dadurch nicht ausgeschlossen.
+
+3. Die Higgsantwort ist im selben Raumgrenzwert nicht gleichmäßig
+
+Schreibe G_t(x)=g_t(sqrt(x)), A=M², C={M,Y}, B=Y² und q=p².
+Die Schwachzentrum-Wirkung erhält M und negiert Y, so dass der
+Fermiontrace gerade in h ist. Die Ableitung nach u bei 0 pro Mode ist
+
+ D(q)=tr(G_t'(q+A) B)
+      +(1/2) sum_ij G_t'^[1](q+A_i,q+A_j) |C_ij|².
+
+Der zweite Ausdruck enthält die Rückwirkung der ganzen gegebenen
+Majorana und Yukawamischung. G_t'^[1] ist die dividierte Differenz mit
+Ableitungswert auf der Diagonale. Formel aus der zweiten Traceableitung
+von G_t(q+A+hC+h²B). Der unmassive S Referenztrace ist h-unabhängig.
+Der gemischte metrische Koeffizient ist sum_k -2p_k² D'(p_k²).
+Bei r=1 im unveränderten Seed sind die beiden Koeffizienten
+-302.24779986218 und -1213.44759303035. Unabhängige Differenzen der
+direkten ganzen v252 96er Diagonalisierung ergeben nach Extrapolation
+-302.24779971766 und -1213.44795493231. Analytische Abschätzungen des
+Modenschwanzes bei r=1 sind 3.51e-65 und 5.45e-63; Gleitkommafehler
+der Eingabe und Differenzen sind davon getrennt.
+
+Sei P_0 der Projektor auf ker M und P_lambda der auf A=lambda>0.
+P_0 C P_0=0 und
+||P_0 C P_lambda||_HS²=lambda ||P_0 Y P_lambda||_HS².
+Für jedes lambda>0 löscht daher sein gemischter Summand genau den
+entsprechenden Anteil aus tr(P_0 Y²) vor G_t'(q). Der einzige
+singuläre Koeffizient ist
+
+ B_0=tr[(P_0 Y P_0)²],     D(p²)= -t B_0/(4p) + O(1)  (p->0).
+
+Die O(1)-Reste auf einem festen kleinen p-Intervall tragen O(r) zur
+Summe. Oberhalb dieses Intervalls sind die Ableitungen glatt und
+exponentiell abfallend, also ebenfalls O(r). Die harmonische Summe
+über 1/(2k+1) bis k=O(r) liefert den exakten führenden Term
+
+ (1/r) partial_u L_S(r,t,u)|_(u=0) = -(t B_0/2) log r + O(1).
+
+Die Nullraumprojektion im bestehenden Seed gibt B_0=290.01646901275.
+Die vorhergesagte Logsteigung -1822.22721694103 und die direkt aus den
+Modensummen r=512,1024 ausgelesene Steigung stimmen auf etwa 1.1e-11
+absolut überein. Die Identität für B_0 ist analytisch, die Zahlen
+benutzen Diagnosedaten und sind keine physikalischen Messwerte.
+
+4. Konsequenz für F1 und den nächsten gemeinsamen Grenztest
+
+Eine stabile unmarkierte Dichte erlaubt im gegebenen räumlichen Zweig
+keinen gleichmäßigen Austausch von Higgs-Ableitung und Volumengrenze.
+Der konkrete Infrarotterm entsteht im Kern des Majoranablocks über
+die dort tatsächlich wirkenden Yukawas. Für den gemeinsamen Prozess
+müssen die ursprüngliche physische Projektion, dynamische Higgswege
+und die tatsächliche Referenz diesen Term im selben integrierten
+Caller kontrollieren. Der kanonische Modenaufbau kann dafür sofort
+verwendet werden; kein Fit einer Vakuumnormierung. Das betrifft eine
+räumliche Richtung bei festem t und konstantem äußerem H. Es ist keine
+Aussage über Konvergenz oder Divergenz des ganzen wechselwirkenden 3+1D
+Übergangs und kein Beweis der Wahl von S oder T.
+
+Z0, F(0) am echten Einzelzeitschnitt und die integrierte geordnete UY
+Antwort bleiben offen. Der bisherige F1 Owner, die 52 begrenzten
+Erledigungen und der dokumentierte Stopp des automatischen Suchlaufs
+bleiben erhalten. Fortsetzung am ganzen gemeinsamen Originalübergang,
+mit expliziter Infrarotkontrolle der Higgsmarken beim selben räumlichen
+Grenzübergang und mit vollständigem absolutem Referenzanker.
+
+Originale
+experiments/theory-contracts/recursive-mirrored-source-20261103/REFERENCE-FIBER-EVALUATION.txt:36–56,96–188
+experiments/theory-contracts/original-paper-source-reconciliation-20261102/manual_20261107/SOURCE-REVIEW.txt:10–14
+experiments/theory-contracts/chat-triangulation-20261108/TRIANGULATION.txt:88–145
+verification/v252_full_finite_triple.py:86–121,198–214
+Ausführung: check_quarter_reference.py, quarter-reference-result.json.

@@ -1,0 +1,71 @@
+{
+  "research_id": "UR.SOURCE.NATIVE_SECTOR_CALIBRATION.01",
+  "scope": "Existing v1033 nx=3 ny=1 mass=+1; previously declared conditional C4 tensor Fock lift and completed CAR dictionary; no new dynamics or physical-source selection.",
+  "source_path": "verification/v1033_charged_disorder.py",
+  "source_sha256": "01c64748c70784b17cf1c61b7bd2b4c51a69c19c4a2274f09028892eab5cb83f",
+  "dimension": 256,
+  "offsets": [
+    0.0,
+    0.5,
+    1.75,
+    -1.5
+  ],
+  "measured_adjacent_differences": [
+    0.5,
+    1.25,
+    -3.25,
+    1.5
+  ],
+  "centered_reconstruction": [
+    -0.1875,
+    0.3125,
+    1.5625,
+    -1.6875
+  ],
+  "native_cycle_rank": 3,
+  "native_cycle_nullspace": [
+    [
+      "1",
+      "1",
+      "1",
+      "1"
+    ]
+  ],
+  "D_squared_rank": 2,
+  "max_CAR_commutator_error": 0.0,
+  "native_D_commutator_max": 3.25,
+  "checks": {
+    "source_H_preserves_C": true,
+    "source_D_shifts_C": true,
+    "sector_offsets_preserve_C": true,
+    "sector_offsets_preserve_all_completed_CAR_generators": true,
+    "native_D_detects_nonconstant_offsets": true,
+    "source_operator_recovers_exact_adjacent_differences": true,
+    "four_cycle_consistency_sum_zero": true,
+    "exact_offset_reconstruction_mod_global_scalar": true,
+    "native_D_rank_three_kernel_dimension_one": true,
+    "keeping_D_squared_only_leaves_two_constants": true,
+    "native_D_translated_ground_protocol_recovers_all_offsets": true,
+    "ground_is_in_reported_C_sector": true,
+    "ground_source_matches_prior_E_minus4_unique": true,
+    "global_scalar_stays_invisible_to_full_source": true
+  },
+  "passed": 14,
+  "failed": 0,
+  "physical_goals_closed": [],
+  "native_response_protocol": {
+    "initial_state": "unique ground of original H; same fixed preparations compared, not reselected shifted ground",
+    "initial_C_sector": 1,
+    "ground_energy": -4.000000000000002,
+    "ground_sector_leakage": 1.3409561315389421e-15,
+    "four_preparations": "D^k psi for k=0,1,2,3",
+    "required_readout": "baseline-subtracted complex first derivative [G_prime(0;H_c)-G_prime(0;H)]/i in each fixed translated preparation; known native H response is required",
+    "difference_by_sector": {
+      "1": 1.2500000000000002,
+      "2": -3.250000000000001,
+      "3": 1.5,
+      "0": 0.5
+    },
+    "max_error": 8.881784197001252e-16
+  }
+}

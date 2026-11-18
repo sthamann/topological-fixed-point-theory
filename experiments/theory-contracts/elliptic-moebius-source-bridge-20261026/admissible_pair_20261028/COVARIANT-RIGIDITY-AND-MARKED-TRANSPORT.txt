@@ -1,0 +1,263 @@
+QUANTENANTWORT AUS SYMMETRIE UND PETERSEN STUETZE
+================================================
+
+28. Oktober 2026
+
+Ergebnis
+--------
+
+Die volle Quantenantwort ist unter einer klar benannten Symmetrie eindeutig.
+Sei V=C5, H=Lambda2 V, Ausgabe H*=bar10 und R=Lambda2 U fuer U in SU5.
+Jeder vollstaendig positive spurtreue Kanal T mit
+
+ T(R rho R*) = barR T(rho) barR*
+
+und mit Petersen Stuetzung seiner Basisuebergaenge ist notwendig
+
+ T = Phi,   Phi(rho)=(1/3) sum_m C_m rho C_m*,
+ C_m[kl,ij]=epsilon(m,i,j,k,l).
+
+Die Phasen werden damit mitbestimmt. Eine gesonderte Phasenannahme ist in
+DIESEM Satz unnoetig. Die Herkunft des C_m aus dem vorhandenen E8 A4+A4
+Bracket ist bereits im vorherigen Vertrag bewiesen und wird wiederverwendet.
+Der neue Satz waehlt keinen P1 Prozess, solange dessen volle Kovarianz auf
+dem richtigen Eingabe und Ausgabemodul nicht aus der Quelle folgt.
+
+1. Vollstaendige Klassifikation der kovarianten Kanaele
+-------------------------------------------------------
+
+Der Choi Operator wirkt auf barH tensor barH. In dieser tatsaechlichen
+dualen Darstellung zerfaellt der Raum multiplikationsfrei in drei
+irreduzible Summanden der Dimensionen 5,45,50. Um konventionsabhaengige
+Balkennamen der 45er Darstellung zu vermeiden, bezeichnen P_d ausschliesslich
+die expliziten Projektoren. Mit F als Vertauschung beider Choi Faktoren gilt
+
+ P5=(1/6) sum_m vec(C_m) vec(C_m)*,
+ P45=(I-F)/2,
+ P50=(I+F)/2-P5.
+
+Die C_m sind reell symmetrisch, HS orthogonal und haben Normquadrat6.
+Alle drei Projektoren sind orthogonal, summieren sich zur Identitaet und
+haben partielle Spur d I10/10. Die tatsaechlichen 25 gl5 Erzeuger kommutieren
+mit ihnen. Die quadratische su5 Casimirwirkung hat Eigenwerte24/5,64/5,84/5.
+Der gemeinsame Kern der vier Hebeoperatoren besitzt genau eine hoechste
+Gewichtslinie pro Summand. Dies prueft die Irreduzibilitaet am wirklichen
+Wirkungsraum, statt drei passende Dimensionszahlen nur zu benennen.
+
+Nach Schur ist jeder kovariante positive Choi Operator und genau jeder
+kovariante TP Choi Operator von der Form
+
+ J_T = p5*(10/5)P5 + p45*(10/45)P45 + p50*(10/50)P50,
+ p5,p45,p50>=0,  p5+p45+p50=1.
+
+Die allgemeine Kommutantenmethode ist bekannte Mathematik. Verwendete
+wissenschaftliche Primaerquelle: Gschwendtner, Bluhm, Winter,
+Programmability of covariant quantum channels, Quantum5,488(2021),
+https://arxiv.org/html/2012.00717v2, Lemma11 und Lemma16. Diese begruenden
+Choi Kovarianz und den Simplex fuer einen kommutativen Kommutanten. Die
+konkreten drei Projektoren und die folgende Petersen Eindeutigkeit sind hier
+am vorhandenen TFPT Traeger ausgerechnet, keine Herleitung der Physik aus
+der externen Literatur.
+
+2. Zwei Nullbedingungen waehlen die einzige Ecke
+------------------------------------------------
+
+Die drei Ecken T_d mit J_d=(10/d)P_d haben folgende Uebergangswerte PRO ZIEL:
+
+ Ziel relativ zur Eingabeduade       T5        T45        T50
+ dieselbe Duade                     0          0          1/5
+ verschiedene, schneidende Duade     0          1/9        1/10
+ disjunkte Duade                    1/3         1/9        1/15
+
+Es gibt je Eingang eine Selbstduade, sechs schneidende und drei disjunkte.
+Damit ist jede Tabellenzeile zusammen mit ihrer Zielzahl konsistent mit
+Spurtreue aller drei Kanaele.
+
+Petersen besitzt keine Selbstuebergaenge. Also muss p50/5=0 und p50=0 sein.
+Petersen besitzt keine schneidenden Uebergaenge. Danach muss p45/9=0 und
+p45=0 sein. Positivitaet verbietet eine Aufhebung durch negative Gewichte.
+Es bleibt p5=1, J_T=2P5=J_Phi. Es genuegen sogar diese Nullbedingungen;
+die gleichmaessigen1/3 folgen dann mit dem vollstaendigen Kanal.
+
+3. Exakte Stabilitaetsformel
+-----------------------------
+
+Sei s die gesamte Selbstuebergangswahrscheinlichkeit pro Eingang, und o die
+ueber alle sechs schneidenden Ziele summierte Wahrscheinlichkeit. In der
+kovarianten Klasse sind beide vom Eingang unabhaengig. Dann
+
+ p50=5s,
+ p45=3o/2-9s/2,
+ p5=1-3o/2-s/2.
+
+Innerhalb DIESER exakt kovarianten Klasse gilt auch
+
+ ||T-Phi||_diamond = 2(p45+p50) = 3o+s.
+
+Beweis der Normgleichheit: Schreibe T-Phi als
+p45(T45-Phi)+p50(T50-Phi). Der maximale Abstand zweier CPTP Kanaele ist2;
+Dreiecksungleichung gibt also die obere Schranke2(p45+p50). Ein maximal
+verschraenkter Eingang liefert die Differenz der normierten Choi Zustaende.
+Deren drei Traeger sind orthogonal; ihre Spurnorm ist genau2(p45+p50).
+Dies ist die passende untere Schranke. Beide Schranken stimmen ueberein.
+Die Formel gilt nicht fuer einen beliebigen nichtkovarianten Prozess.
+
+4. Welche Clock den Satz tatsaechlich ermoeglichen wuerde
+---------------------------------------------------------
+
+Die Standardmodell Untergruppe G=S(U3xU2) zusammen mit dem LITERALEN
+fuenfstelligen Permutationsoperator c=(01234) erzeugt SU5. Bereits die
+su3 Wurzeln E01,E12 und ihre c Konjugierten geben alle benachbarten
+Wurzelrichtungen; deren Kommutatoren ergeben alle20 sl5 Wurzeln.
+Hat derselbe Kanal daher G Kovarianz UND Kovarianz unter Lambda2 c auf
+dem Eingang und dessen dualer Wirkung am Ausgang, greift der Satz.
+
+Der Originaltext definiert aber
+
+ X=3N2-2N3,   U5=exp(2pi i X/5).
+
+Auf V haben alle fuenf Eigenwerte denselben Rest3 modulo5. Auf Lambda2 V
+haben alle zehn denselben Rest1. Daher
+
+ U5|V=zeta5^3 I5,   U5|H=zeta5 I10.
+
+Dieser Operator liefert nur einen Gradphasenfilter. Seine Konjugation auf
+End(H) ist die Identitaet und erzeugt keine weitere Liealgebrarichtung.
+Eine rein zentrale Phasenliftung oder ein zentraler Phasencover aendert
+hieran nichts: Multiplikation des implementierenden Operators mit einem
+Skalar aendert seine adjungierte Wirkung nicht. Ein nichtzentraler
+Monodromietransport ist eine andere Aussage und hiermit nicht ausgeschlossen.
+Bereits bewiesene C12, C48 und Gitterliftresultate bleiben in ihrem eigenen
+Vertrag erhalten.
+
+Originalpassage:
+ documents/archive--tfpt-45--source_extracts--02_carrier_source/sections/
+ 003-subsection-character-trace-identities-and-the-abelian-in.tex:175-228.
+Weitere originale Code und Markierungsquellen stehen im zugehoerigen Bericht
+P5-OBSERVABLE-IMAGE-AND-INSTRUMENT.txt, Abschnitt7.
+
+Ein wirklicher Slotzyklus bewegt dagegen den Farbprojektor
+P0=diag(1,1,1,0,0): cP0c*=diag(0,1,1,1,0), also auch X und Y.
+Er transportiert die Markierung und ist keine Symmetrie desselben festen
+3+2 Split. Eine U5 Eigenwertuebereinstimmung ersetzt diesen Test nicht.
+
+5. Auch Transport ueber alle Markierungen genuegt nicht
+-------------------------------------------------------
+
+Hier ist ein expliziter Gegenfall zur vermeintlichen Abkuerzung durch eine
+vollstaendig kovariante Instrumentfamilie.
+
+Fuer jeden Rang3 Farbprojektor P setze auf H=Lambda2 V
+
+ U(P)=-I auf Lambda2(PV),
+ U(P)=+I auf PV wedge (I-P)V und Lambda2((I-P)V).
+
+U(P) ist eine Hermitesche Unitaere und kommutiert mit dem Stabilisator G_P.
+Sie ist koordinatenfrei aus P definiert. Fuer P'=gPg* gilt exakt
+
+ U(P') = R U(P) R*,   R=Lambda2 g.
+
+Die Familie
+
+ T_P=Phi o Ad(U(P))
+
+erfuellt deshalb ueber ALLE Markierungen in Gr(3,5)=SU5/G die volle
+Transportgleichung
+
+ T_(gPg*)(R rho R*) = barR T_P(rho) barR*.
+
+Trotzdem ist T_P bei festem P von Phi verschieden, hat dieselben Petersen
+Populationen und Choi Rang5, ist G_P kovariant und respektiert den skalaren
+Original U5. In der festen realen Duadenbasis ist die neutrale P5
+Prozesswahrscheinlichkeit
+
+ Tr(P5 J_(T_P)/10) = (3*4^2+2*0^2)/180 = 4/15,
+
+anstelle von1 bei Phi. Die Nenner folgen aus6*3*10, also aus Projektor,
+Kraus und Choi Normierung.
+
+Der Phasenwechsel ist keine reine Carrier Toruseichung: Auf vier
+verschiedenen Slots muessten Exteriorquadratphasen u01*u34=u03*u14 erfuellen.
+Hier ist die linke Seite-1 und die rechte+1. Eine diagonale Wirkung, die
+alle Duadenlinien erhaelt, kann deshalb nicht von einer fundamentalen
+Carrier Toruswirkung stammen. Die Eingabe und Ausgabereferenzen werden im
+Vergleich festgehalten; bei einer gleichzeitigen Umdefinition aller
+Feldoperatoren und Observablen waere auch das Woerterbuch zu transformieren.
+
+Damit ist Familienkovarianz SCHWAECHER als volle Kovarianz am festen Punkt.
+Eine aus dem Original gewonnene Transportgleichung zwischen verschiedenen
+3+2 Markierungen alleine wuerde den Eindeutigkeitssatz nicht aktivieren.
+Zusaetzlich braucht es eine am selben Quellenobjekt wirkende Symmetrie,
+eine aus der Quelle bewiesene Markierungsunabhaengigkeit oder eine direkte
+Amplituden und Sewing Identitaet.
+
+6. Reelle, selbstadjungierte und isospektrale Gegenkontrolle
+-----------------------------------------------------------
+
+Auch mehrere sonst starke Auswahlkriterien genuegen noch nicht. Setze
+
+ S_P=Ad(barU(P)) o Phi o Ad(U(P)).
+
+Die Ausgabe ist ausdruecklich dual; barU(P) ist das komplex konjugierte U(P).
+In einer reellen, an P angepassten Duadenbasis sind seine Krausoperatoren
+U C_m U/sqrt3. Sie sind reell symmetrisch. S_P ist CPTP, unital, HS
+selbstadjungiert, besitzt dieselben fuenf Effekte und dieselbe Petersen
+Populationsmatrix. Im festgehaltenen reellen Koordinatenchart ist der
+Superoperator genau zu Phi durch Ad(U) aehnlich. Sein gesamtes Spektrum, die Spektren seiner Potenzen und der einzige
+stationaere Zustand I10/10 bleiben daher gleich. Die Potenzen sind
+aehnlich; sie sind im festen Chart nicht als Operatoren identisch. Das ist keine neue physische Zeitauswahl aus einem Spektrum.
+
+Trotzdem ist S_P!=Phi im festen Quellenwoerterbuch. Hier ergibt der neutrale
+Zeuge
+
+ Tr(P5 J_(S_P)/10)=(3*2^2+2*(-6)^2)/180=7/15.
+
+Auch S_P transportiert natuerlich ueber alle Markierungen und ist unter
+G_P sowie den zentralen Gradphasen kovariant. Dieser Gegenfall ist kein
+behaupteter Automorphismus der vollen E8 Klammer und keine Gleichsetzung
+seiner Reellheit mit der geometrischen OS Reflexion. Er beweist genau:
+Population, Effekte, Selbstadjungiertheit, reelle Kraus, stationaere Dichte,
+volles Antwortspektrum, zentrale Phasencover und natuerlicher
+Markierungstransport waehlen ohne den vollstaendigen Quellensatz die
+Hodge Amplituden noch nicht aus.
+
+7. Konkreter Quellenvergleich und Folgerung
+-------------------------------------------
+
+Die reale alte20 Ereignisquelle liefert fuer alle sechs Marken
+
+ Tr(P5 J_Psi/10)=1/5,
+ (p5,p45,p50)=(1/5,2/5,2/5).
+
+Das SU5 Twirl behaelt diese drei Gewichte und erzeugt Selbstmasse2/25 sowie
+schneidende Masse38/75. Es ist deshalb keine Wiederherstellung der Hodge
+Antwort. Eine unitare Umbenennung seiner Ein und Ausgabe aendert Choi
+Rang15 nicht zu5.
+
+Der Quellen Gram Audit ergaenzt: Im vorausgesetzten E8_1 Vakuum liefert der
+kompakte Stern bereits den isotropen Strom Gram delta_beta,gamma. Zusammen
+mit dem bewiesenen Gain12 folgt fuer die inklusive TP Lesart exakt1/12.
+Bei endlicher H8 Einsetzung erhalten dagegen schon die beiden wirklichen
+Einsatzwurzeln e1-e8 und e2-e8 die verschiedenen Gewichte1 und2. Dieser
+Finiteinsatz ist keine isotrope Quelle und H8 wird damit nicht zur
+physischen OS Zeit erklaert.
+
+Der nun entscheidende Quellensatz ist eine konkrete operative Identitaet:
+Auf dem aus P1 tatsaechlich abgebildeten markierten lokalen Feldsektor muss
+die Sewing beziehungsweise Ereignisamplitude mit dem schon vorhandenen
+E8 Epsilon Intertwiner uebereinstimmen, mit dualer Ausgabe und deklariertem
+Register. Die neue Eindeutigkeit erlaubt alternativ einen Beweis voller
+Kovarianz an DIESEM SELBEN Quellenobjekt plus Petersen Stuetzung. Ein
+weiterer Spektralfit oder bloss markierungskovarianter Transport ersetzt
+diese Aussage nach den exakten Gegenfaellen nicht.
+
+Reproduzierbarkeit
+------------------
+
+check_covariant_rigidity.py prueft alle Projektoren, Partialspuren,
+Generatorwirkungen, Casimirs, hoechsten Gewichtslinien, alle300
+Populationswerte, Markentransport und beide Phasengegenfaelle exakt mit
+Ganzzahlen und rationaler Algebra. Kein numerischer Rangschwellwert.
+Die allgemeine mathematische Methode ist bekannt; neue TFPT Folgerung ist
+die konkrete Eindeutigkeits und Transportausschlusskette am gegebenen
+E8 Traeger. Der Bericht ist kein Beweis einer vollstaendigen TFPT Physik.

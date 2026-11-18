@@ -1,0 +1,182 @@
+{
+  "scope": "Finite experiment of the declared feedback rule",
+  "measured_checks": [
+    "Original signed Gram spectrum: 0^25, 1.5^30, 3^5",
+    "Save, cold load, random perturbation and continuation reproduce the exact state",
+    "With feedback=0, learning cannot affect the signal trajectory",
+    "All 60 signal vectors retain unit norm after perturbation and recursion"
+  ],
+  "comparisons": [
+    {
+      "name": "recursive",
+      "final": {
+        "step": 10000,
+        "effective_rank": 3.7940762025033217,
+        "code_weight": 0.9806737795936463,
+        "alignment": 0.2634741047779246,
+        "change": 0.00037711895812589933,
+        "memory_change": 0.0002329415562764602,
+        "quantization_error": 0.1676125339559536,
+        "winners": 15,
+        "zero_cells": 0
+      }
+    },
+    {
+      "name": "no_feedback",
+      "final": {
+        "step": 10000,
+        "effective_rank": 4.999820042582891,
+        "code_weight": 0.9992813498585194,
+        "alignment": 0.18645531840953053,
+        "change": 5.2435628447247467e-17,
+        "memory_change": 5.014657074483576e-19,
+        "quantization_error": 0.2043938732598812,
+        "winners": 15,
+        "zero_cells": 0
+      }
+    },
+    {
+      "name": "frozen_memory",
+      "final": {
+        "step": 10000,
+        "effective_rank": 18.335829143490262,
+        "code_weight": 0.6388766374037488,
+        "alignment": 0.0706271281985856,
+        "change": 4.372440768516162e-17,
+        "memory_change": 0.0,
+        "quantization_error": 0.5287124927527781,
+        "winners": 60,
+        "zero_cells": 0
+      }
+    },
+    {
+      "name": "no_interaction",
+      "final": {
+        "step": 10000,
+        "effective_rank": 1.0000000000000022,
+        "code_weight": 0.07348412994425568,
+        "alignment": 1.0000000000000004,
+        "change": 3.241118760016279e-17,
+        "memory_change": 1.6781801300352304e-20,
+        "quantization_error": 0.0,
+        "winners": 5,
+        "zero_cells": 0
+      }
+    },
+    {
+      "name": "absolute",
+      "final": {
+        "step": 10000,
+        "effective_rank": 1.0000000000000022,
+        "code_weight": 0.10458306653218692,
+        "alignment": 1.0000000000000002,
+        "change": 2.7192923802309162e-17,
+        "memory_change": 5.5221273786586294e-18,
+        "quantization_error": 0.0,
+        "winners": 3,
+        "zero_cells": 0
+      }
+    },
+    {
+      "name": "exact_start",
+      "final": {
+        "step": 10000,
+        "effective_rank": 3.794195251245249,
+        "code_weight": 0.9813609040874441,
+        "alignment": 0.2634596552062414,
+        "change": 0.0003771189581258943,
+        "memory_change": 0.00023294155627646005,
+        "quantization_error": 0.16761253395595205,
+        "winners": 15,
+        "zero_cells": 0
+      }
+    }
+  ],
+  "twenty_seeds": {
+    "count": 20,
+    "steps_each": 5000,
+    "effective_rank_min": 3.4581579403625318,
+    "effective_rank_max": 4.999946251896949,
+    "code_weight_min": 0.9795156979549231,
+    "code_weight_max": 0.9845365614969399
+  },
+  "perturbation": [
+    {
+      "after_perturbation": 0,
+      "population_distance": 0.017589667747062193,
+      "signal_rms_distance": 0.09890548995915659,
+      "code_weight": 0.9719220012201802,
+      "effective_rank": 4.037918480010311
+    },
+    {
+      "after_perturbation": 1,
+      "population_distance": 0.013908849310872972,
+      "signal_rms_distance": 0.05333597748361822,
+      "code_weight": 0.9778964330710925,
+      "effective_rank": 3.866465587421961
+    },
+    {
+      "after_perturbation": 10,
+      "population_distance": 0.007692243184470427,
+      "signal_rms_distance": 0.011822426395662868,
+      "code_weight": 0.9803539006807452,
+      "effective_rank": 3.7936259397009815
+    },
+    {
+      "after_perturbation": 100,
+      "population_distance": 0.007528529485056072,
+      "signal_rms_distance": 0.010766726516451254,
+      "code_weight": 0.980345106289443,
+      "effective_rank": 3.7939830290446834
+    },
+    {
+      "after_perturbation": 1000,
+      "population_distance": 0.007583753425663033,
+      "signal_rms_distance": 0.010822546686800742,
+      "code_weight": 0.9799130001532791,
+      "effective_rank": 3.79406383823064
+    },
+    {
+      "after_perturbation": 5000,
+      "population_distance": 0.007922276557786498,
+      "signal_rms_distance": 0.01101183878763258,
+      "code_weight": 0.9800612886171503,
+      "effective_rank": 3.794051791540228
+    }
+  ],
+  "long_run_final": {
+    "step": 100000,
+    "effective_rank": 3.7940773260773026,
+    "code_weight": 0.9810936913359994,
+    "alignment": 0.26347370758240835,
+    "change": 0.0003771189581258982,
+    "memory_change": 0.00023294155627645824,
+    "quantization_error": 0.16761253395594197,
+    "winners": 15,
+    "zero_cells": 0,
+    "probe_a": -0.07531524746495692,
+    "probe_b": 0.0856568633779492,
+    "signal_distance_from_start": 1.4287988399286902
+  },
+  "frozen_response_modes": [
+    {
+      "real": 0.9999998426743006,
+      "imag": 0.0005609379408078401,
+      "modulus": 0.9999999999999997,
+      "frozen_response_period_steps": 11201.212327746307
+    },
+    {
+      "real": 0.999999995261218,
+      "imag": 9.735277492163257e-05,
+      "modulus": 0.9999999999999993,
+      "frozen_response_period_steps": 64540.38215461825
+    }
+  ],
+  "frozen_1000_step_error": 5.475872692108719e-14,
+  "audit": {
+    "stored_checkpoints_match_measurements": true,
+    "cold_restore_perturb_continue_rechecked": true,
+    "long_runs_reexecuted_this_audit": false
+  },
+  "physical_gates_closed": []
+}

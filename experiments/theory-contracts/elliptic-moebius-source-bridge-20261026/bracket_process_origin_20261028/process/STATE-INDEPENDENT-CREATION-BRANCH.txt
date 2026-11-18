@@ -1,0 +1,256 @@
+ZUSTANDSUNABHAENGIGER ERZEUGUNGSAST DES ALTEN 60ER PROZESSES
+============================================================
+
+28. Oktober 2026
+
+
+Frage
+-----
+
+Muss ein physischer Hodge Carrierkanal als ungelesener Gesamtprozess mit
+ausschliesslichem C5 Kraussupport hergeleitet werden? Oder liefert bereits
+der alte vollstaendige gemischte E8 Prozess einen legitimen, normierten
+Erzeugungskanal, sobald seine beiden orthogonalen Ausgangsgrade erhalten
+bleiben?
+
+
+Urteil
+------
+
+Der alte sechziger D5 mal A3 Prozess besitzt auf einer Carrier Eingabe vom
+Grad N_C=2 zwei kanonische CP Instrumentkomponenten:
+
+    E_+ : Lambda2 C5 tensor 4  ->  Lambda3 C5 tensor bar4,
+    E_- : Lambda2 C5 tensor 4  ->  Lambda1 C5 tensor bar4.
+
+Ihre Effekte sind exakt
+
+    E_+^*(I) = (3/5) I40,
+    E_-^*(I) = (2/5) I40.                              (1)
+
+Die Zweige haben daher fuer jede Eingabedichte, auch fuer Carrier Familien
+Korrelationen und Verschraenkung, die zustandsunabhaengigen
+Wahrscheinlichkeiten
+
+    p_+=3/5,    p_-=2/5.                                (2)
+
+Folglich ist
+
+    Q_+ = (5/3) E_+                                    (3)
+
+ein regulaerer CPTP Kanal. Nach der vorhandenen Volumendualitaet
+Lambda3 C5 nach Lambda2(C5)* ist sein reduzierter Carrierrand exakt der
+Hodge Kanal Phi. Die Bezeichnung als bedingte Antwort aendert daran nichts:
+Die Bedingungswahrscheinlichkeit ist ein Skalar und erzeugt keine
+zustandsabhaengige Nichtlinearitaet.
+
+Die fruehere Forderung nach einem einzigen ungelesenen Quellprozess, dessen
+gesamter Kraussupport bereits nur den C5 Hodge Span enthaelt, ist deshalb
+nicht die allgemeine Ursprungsvoraussetzung fuer eine physisch
+sektoraufgeloeste Antwort. Sie wird erst gebraucht, wenn der reine Phi Kanal
+ohne erhaltenes Ausgangsgradlabel als unbedingte Gesamtantwort verlangt
+wird.
+
+
+1. Exakter Beweis
+-----------------
+
+Im gepinnten gemeinsamen Chevalley CAR Chart faktorisiert der vollstaendige
+sechziger Stromprozess als Carrier Cliffordkanal mal spurtreuen
+Familienkanal. Schreibe seine dreissig Erzeugungskrausoperatoren als
+
+    B_mp^+ = a_m^dagger tensor F_p,
+
+und die dreissig Vernichtungskrausoperatoren als
+
+    B_mp^- = a_m tensor F_p,
+
+mit m=1,...,5 und den sechs reellen beziehungsweise drei komplexen
+Familienrichtungen p. In der komplexen Konvention gilt auf dem bezeichneten
+Eingangsraum
+
+    sum_m a_m a_m^dagger = 3 I_Lambda2,
+    sum_m a_m^dagger a_m = 2 I_Lambda2,
+    sum_p F_p^dagger F_p = 3 I4.                        (4)
+
+Der vollstaendige Quellengain ist damit
+
+    3 mal 3 + 2 mal 3 = 15,
+
+und die normierte inklusive Antwort verwendet den Faktor 1/15. Aus (4)
+folgt unmittelbar
+
+    E_+^*(I) = (1/15)(3 I10) tensor (3 I4) = (3/5) I40,
+    E_-^*(I) = (1/15)(2 I10) tensor (3 I4) = (2/5) I40.
+
+Das beweist (1) und zugleich
+
+    (E_+ + E_-)^*(I)=I40.
+
+Die Ausgaben liegen in den orthogonalen Fockgraden N_C=3 und N_C=1. Daher
+sind E_+ und E_- bereits mathematisch bestimmte Instrumentkomponenten des
+gegebenen Gesamtkanals. Ihre Definition verlangt keine zusaetzliche
+Hardwaremessung und keinen frei erfundenen Filter. Eine tatsaechliche
+Postselektion oder Nutzung des Resultats als getrennte Speziesantwort setzt
+nur voraus, dass dieses vorhandene Gradlabel im Prozess erhalten und fuer
+die nachfolgende Operation verfuegbar ist.
+
+Nach Multiplikation des ersten Zweigs mit 5/3 ergibt sich
+
+    Q_+(rho_CF)
+      = [(1/3) sum_m Ad(a_m^dagger)]
+        tensor [(1/3) sum_p Ad(F_p)] (rho_CF).           (5)
+
+Der Familienfaktor ist spurtreu. Deshalb gilt fuer jeden gemeinsamen
+Operator, ohne Produktzustandsannahme,
+
+    Tr_Fout Q_+(rho_CF)
+      = Phi(Tr_Fin rho_CF),                              (6)
+
+nach dem festen Hodge Transport des Dreiergrads. Damit bleibt auch die
+korrelierte Familienantwort vollstaendig kontrolliert.
+
+
+2. Zwei gleichwertige Normalisierungen
+--------------------------------------
+
+Der neue Ward U5 Checker konstruiert denselben normierten Kanal direkt aus
+dem ausgewaehlten Dreissiger. Dort ist der unnormierte Gain 9 I40 und die
+Killing Normalisierung lautet 1/9:
+
+    Q_+ = (1/9) sum_(beta in creation30) Ad(B_beta).
+
+Im alten sechziger Prozess besitzt derselbe Summand den Gesamtfaktor 1/15.
+Die Konditionierung mit 5/3 liefert
+
+    (5/3)(1/15) = 1/9.
+
+Direkte Ward Normalisierung und Konditionierung des alten inklusiven
+Prozesses sind daher zwei Herleitungen derselben CP Abbildung. Die
+Formulierung, der Dreissiger sei grundsaetzlich keine konditionierte Antwort,
+waere zu stark. Richtig ist nur, dass der Ward U5 Pfad ihn auch eigenstaendig
+als geschlossenen Krausraum charakterisiert.
+
+
+3. Genaue Prozessgrenze
+-----------------------
+
+Der vollstaendige alte Prozess behaelt beide Aeste:
+
+    Q_60 = E_+ + E_-.
+
+Der Anteil E_- ist ein wirklicher Transfer nach Lambda1 C5 mit Gewicht 2/5.
+Er ist kein Stay Term und kein Reset auf den zehn Carrierlabels. Wer das
+Ausgangsgradlabel vergisst und trotzdem eine einzige unbedingte Antwort auf
+dem Hodge Zehner fordert, erhaelt aus Q_60 allein deshalb nicht Phi. Dafuer
+waere entweder ein Quellenpfeil mit ausschliesslichem C5 Kraussupport oder
+eine weitere typisierte Behandlung des Lambda1 Ausgangs noetig.
+
+Fuer eine sektoraufgeloeste Antwort ist diese staerkere Forderung
+ueberfluessig. Das mathematische Instrument ist bereits vorhanden, und sein
+Erzeugungsast hat einen eingabeunabhaengigen Gain. Ein physischer Record in
+einem zusaetzlichen Hilfsgeraet ist dafuer keine notwendige Annahme. Die
+orthogonalen Ausgangsgrade selbst tragen das Zweiglabel.
+
+Der neue gemeinsame Ward, alte interne Z4 Gradierung und U5 Rest bestimmen
+den Erzeugungskanal im Zielchart algebraisch. Dabei gilt weiterhin die
+vorherige Domainkorrektur: U5 Rest3 allein hat auf dem ganzen E8 fuenfzig
+Wurzelraeume. Der Dreissiger entsteht erst innerhalb des alten g2 Sektors
+beziehungsweise durch den gemeinsamen Gradfilter.
+
+Die algebraische Quarteridentifikation ist fuer den gegebenen markierten E8
+Fold inzwischen geschlossen. Es gilt auf dem ganzen Gitter VOA
+
+    g_alpha^2 exp(-2 pi i alpha Q_source/4) = C_int^(-1).
+
+Damit ist die alte interne Z4 Gluegradierung exakt der aus vorhandener
+geladener Foldholonomie und vorhandener Quellladung gebildete kompensierte
+Quartercharakter. Sein Eigenwert -1 schneidet gemeinsam mit U5 Rest3 genau
+Creation30 aus den fuenfzig globalen Rest3 Wurzelraeumen heraus. Diese
+Identitaet ist keine neue Filterwahl. Sie beweist aber weiterhin nicht, dass
+die rohe P1 Naht den bezeichneten Sektor als Ereignisregel projiziert oder
+seine CP Antwort physisch verwendet.
+
+Offen bleibt damit genau die Quellenfrage:
+
+    Realisiert die tatsaechliche P1 Quellenkarte Xi beziehungsweise ihre
+    Responsepolicy den vollen alten sechziger Prozess oder den gemeinsam
+    markierten Erzeugungsast mit seinem erhaltenen Ausgangsgrad?
+
+Die Algebra liefert bereits beide normierten Antworten und ihre
+zustandsunabhaengigen Gewichte. Sie waehlt noch nicht, welche dieser
+Antworten die P1 Naht physisch ausfuehrt oder weiterverwendet. Insbesondere
+folgen weder Ereigniszeit noch Wiederholungsrate oder Resetregel.
+
+
+4. Operatorwertige Verstaerkung
+-------------------------------
+
+Die vorige Folgerung benoetigt keine Produktform und keine gleichgewichtete
+Krausbasis. Sei allgemeiner
+
+    L_r = sum_m C_m tensor F_rm
+
+eine CP Quellenkomponente mit Hodge Carriersupport und skalarem Effekt
+
+    sum_r L_r^dagger L_r = p I.
+
+Die 25 Matrizen C_m^dagger C_n sind linear unabhaengig. Aus
+
+    sum_mn C_m^dagger C_n tensor
+      [sum_r F_rm^dagger F_rn] = p I
+
+und I=(1/3)sum_m C_m^dagger C_m folgt daher koeffizientenweise
+
+    sum_r F_rm^dagger F_rn=(p/3) delta_mn I.
+
+Somit gilt fuer jede gemeinsame Eingabe
+
+    Tr_Fout E(rho_CF)=p Phi(Tr_Fin rho_CF).
+
+Der analytische Beweis in OPERATOR-VALUED-BRANCH-RIGIDITY.txt ist damit
+typkorrekt. Er erlaubt verschiedene Familien Ein und Ausgangsraeume und
+setzt keine Kovarianz voraus. Seine Voraussetzung ist eine tatsaechliche CP
+Komponente mit bezeichnetem Support und skalarem Effekt. Die Existenz der
+Felder allein liefert diese Prozesskomponente nicht. Im alten sechziger
+Prozess ist die Voraussetzung mit p=3/5 bereits algebraisch erfuellt.
+
+
+5. Quellen
+----------
+
+Atlasstand der Pruefung:
+
+    63fab31610450cc88e168232
+
+Originalvertraege:
+
+* experiments/theory-contracts/elliptic-moebius-source-bridge-20261026/
+  hodge_complement_20261028/E8-CLIFFORD-RESPONSE.txt
+  SHA256 7275087d997d689db69c360d96a37452743e096caae187b30a371c974123a771
+
+* experiments/theory-contracts/elliptic-moebius-source-bridge-20261026/
+  hodge_complement_20261028/check_e8_clifford_response.py
+  SHA256 75ce80dbec9d943573ba96e64eaf85088c0cbc47577673cbe99673ba34957aa9
+
+* experiments/theory-contracts/elliptic-moebius-source-bridge-20261026/
+  hodge_complement_20261028/hodge_complement_channel.py
+  SHA256 72b04a5bf8b3bd805568af49dec76bd97926fcff4009a830137e2d318807522b
+
+Lokaler Ward U5 Anschluss in seiner finalen Fassung:
+
+* research-20261028-bracket-process-origin/closure/
+  WARD-U5-CREATION-CHANNEL.txt
+
+* research-20261028-bracket-process-origin/closure/
+  check_ward_d5a3_creation_channel.py
+
+Geschlossene Quarteridentitaet und operatorwertige Rigiditaet:
+
+* research-20261028-bracket-process-origin/original/
+  SOURCE-CHARGE-GLUE-QUARTER-IDENTITY.txt
+
+* research-20261028-bracket-process-origin/process/
+  OPERATOR-VALUED-BRANCH-RIGIDITY.txt
+
+Keine Atlasdatei oder fremde Vertragsdatei wurde veraendert.

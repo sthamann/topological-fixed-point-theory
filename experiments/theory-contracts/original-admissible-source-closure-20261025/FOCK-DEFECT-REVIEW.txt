@@ -1,0 +1,306 @@
+FOCK DEFECT OF THE RECOVERED CIRCLE SOURCE
+===========================================
+
+25 October 2026. Independent analytic review. This note changes no Atlas,
+index, paper or archived source. It uses the already recovered circle pair and
+the already stated conditional full-CAR/time interface. It does not choose a
+new covariance, twist, one-particle vector or heat operator.
+
+Verdict
+-------
+
+For the old circle pair
+
+  B_a psi_n=(n+a)psi_n,       0<a<1,
+  u psi_n=psi_(n+1),
+
+put
+
+  P_+=1_(0,infinity)(B_a),    C=P_-=1_(-infinity,0)(B_a),
+  Pi=|psi_0><psi_0|.
+
+Then the shifted filled sea has the exact one-particle covariance
+
+  u C u*=C+Pi.                                           (1)
+
+Moreover [u,C] has rank one and Hilbert-Schmidt norm one. The Bogoliubov
+automorphism induced by u is therefore implementable in the Fock
+representation of the given sea. With the explicit convention
+
+  U c_n U*=c_(n+1),                                      (2)
+
+its implementer is unique up to phase and satisfies
+
+  U Omega=phase c_0* Omega.                              (3)
+
+Thus Pi is not a freely inserted rank-one model. It is the exact excess
+two-point covariance of the u-shifted original sea, conditional precisely on
+the already isolated original full-CAR and time identification. This does not
+identify the full later P_adm with P_+, and it does not make U a neutral
+observable.
+
+The charged implementer itself is not a new result of this note. The actual
+source unit winding W1, its mode action and its Fock implementation were
+already established in
+
+  experiments/theory-contracts/mixed-current-origin-20261014/
+  ATLAS-KMS-LOCALITY-AND-SOURCE-WINDING.txt:75-164
+
+and
+
+  experiments/theory-contracts/seam-joint-ward-state-20261014/
+  PROOF.txt:742-850,1003-1087.
+
+Those proofs explicitly warned that their SOURCE circle had not been
+identified with the primitive P1 core circle. The contribution checked here
+is the direct operator match with the now recovered fullv21 pair: on the
+common basis exp(i(n+a)theta), its M_z is precisely the one-particle shift
+implemented by the earlier source W1. This is an equality of the displayed
+circle/CAR operators at their stated one-particle and Fock types. A physical map
+from the fullv21 gluing representative into the primitive P1 source remains
+an additional source identification.
+
+1. Exact projection and commutator calculation
+-----------------------------------------------
+
+Since 0<a<1,
+
+  C H=closed span{psi_n:n<0},
+  P_+ H=closed span{psi_n:n>=0}.
+
+The range of u C u* is the closed span of psi_m with m<=0. Hence
+
+  u C u*=C+Pi,       C Pi=Pi C=0.                        (4)
+
+Since P_+=I-C, the same identity is exactly the previously reconstructed
+Toeplitz defect formula
+
+  P_+-u P_+ u*=Pi.
+
+Equivalently, on the complete mode basis,
+
+  (u C-C u)psi_n = psi_0  if n=-1,
+                    0      otherwise,
+
+so that
+
+  [u,C]=|psi_0><psi_(-1)|,
+  rank[u,C]=1,
+  ||[u,C]||_2=1.                                        (5)
+
+The Shale-Stinespring criterion for CAR therefore applies: the one-particle
+unitary u gives an implementable Bogoliubov automorphism in the pure
+quasifree representation with covariance C. The implementation is projective,
+so its only ambiguity here is an overall phase.
+
+The reverse shift is genuinely different:
+
+  u* C u=C-Pi_(-1),       Pi_(-1)=|psi_(-1)><psi_(-1)|,  (6)
+  [u*,C]=-|psi_(-1)><psi_0|.
+
+It removes one occupied negative mode instead of adding psi_0. Equations
+(4)--(6) also fix the direction of every later charge and energy statement.
+
+2. Fock convention, charge and the shifted vacuum
+--------------------------------------------------
+
+Use the CAR convention of GROUND-STATE-SOURCE-REDUCTION.txt. The filled-sea
+vacuum obeys
+
+  c_n Omega=0       for n>=0,
+  c_n* Omega=0      for n<0.                            (7)
+
+Let U satisfy (2), and put Xi=U Omega. From
+
+  U* c_m U=c_(m-1)
+
+one obtains
+
+  c_m Xi=0          for m>=1,
+  c_m* Xi=0         for m<=0.                           (8)
+
+These are exactly the annihilation relations of the sea in which all n<0
+modes and the additional n=0 mode are occupied. Since the quasifree Fock
+vacuum for a fixed polarization is unique up to phase,
+
+  Xi=phase c_0* Omega.                                  (9)
+
+The norm is one because {c_0,c_0*}=1 and c_0 Omega=0.
+Relative to the original sea, Xi has charge +1. With u* and the oppositely
+oriented implementer, the state is the hole
+
+  phase c_(-1) Omega,
+
+of relative charge -1. This is the Fock counterpart of the minus sign in
+(6).
+
+The same result follows directly at the level of two-point functions. With
+
+  omega_C(c(f)*c(g))=<g,Cf>,
+
+the vector state of U Omega has
+
+  <U Omega,c(f)*c(g)U Omega>
+      =<g,u C u* f>
+      =<g,Cf>+<g,Pi f>.                                 (10)
+
+Thus Pi is an excess one-particle covariance. It is not the rank-one Fock
+projection |Xi><Xi|; the two objects act on different Hilbert spaces.
+
+3. Exact positive-energy line, with no heat limit
+-------------------------------------------------
+
+Assume the already stated source interface: the original positive-energy
+Fock time restricts to
+
+  alpha_t(c(f))=c(exp(i t B_a)f),
+  alpha_t(A)=exp(i t H) A exp(-i t H),
+  H>=0,       H Omega=0.                                (11)
+
+This assumption is the existing full-CAR/time bridge. Under it the ground
+state is forced to have C=P_-; no second quasifree state is chosen here.
+
+Since B_a psi_0=a psi_0, anti-linearity of c and (11) give
+
+  exp(i t H)c_0*Omega=exp(i t a)c_0*Omega,
+  H c_0*Omega=a c_0*Omega.                              (12)
+
+Consequently the Euclidean positive semigroup acts exactly by
+
+  exp(-tH)c_0*Omega=exp(-ta)c_0*Omega.                  (13)
+
+If
+
+  Pi_F=|c_0*Omega><c_0*Omega|,
+
+then
+
+  Pi_F exp(-tH) Pi_F=exp(-ta)Pi_F.                      (14)
+
+This is an exact reduced transition line, not an infrared or large-t heat
+limit. For the reversed shift the hole c_(-1)Omega has energy
+
+  -(a-1)=1-a.                                           (15)
+
+Equations (12)--(15) use the Fock Hamiltonian H and its original time. They
+do not identify the one-particle B_a with H, and they do not identify the
+later electromagnetic response operator with Pi_F or Pi.
+
+4. Relative Fredholm determinant and its orientation
+-----------------------------------------------------
+
+The ordinary determinants det(I-zC) and det(I-z(C+Pi)) are not defined as
+Fredholm determinants: C has infinite rank, so the individual perturbations
+of the identity are not trace class. Their directed quotient is well-defined.
+For z different from 1, set
+
+  A(z)=I-zC,
+  A_u(z)=I-z(C+Pi).
+
+Using C Pi=0 and Pi^2=Pi gives
+
+  A(z) A_u(z)^(-1)
+      =I+[z/(1-z)]Pi.                                   (16)
+
+The right side differs from the identity by rank one. With the explicit
+orientation
+
+  det_rel(A,A_u):=det_F(A A_u^(-1)),
+
+one obtains
+
+  det_rel(A,A_u)=(1-z)^(-1).                            (17)
+
+Reversing the ordered pair gives
+
+  det_rel(A_u,A)=1-z.                                   (18)
+
+For |z|<1 both are analytic at z=0, and (17)--(18) require no regularization
+beyond the ordinary rank-one Fredholm determinant. At z=1 the inverse in
+(16) is singular.
+
+This exact factor is not by itself a CAR state sum. For one ordinary fermion
+mode, the number-graded trace is
+
+  Tr(z^N)=1+z,
+
+while the supertrace is 1-z. A Berezin Gaussian with an inverse-kernel
+deformation can also produce 1-z, with z acting as a source or kernel
+coupling rather than a fugacity. The inverse factor in (17) is fixed by the
+chosen direction of the relative covariance quotient. Therefore none of
+(17), (18), 1+z or their powers may be substituted for another without the
+original response, trace or Berezin contract. In particular, (17) does not
+derive the later electromagnetic factor merely because it equals a familiar
+rank-one expression.
+
+5. Observable and superselection scope
+---------------------------------------
+
+If the physical Hilbert space is restricted to total charge zero, U Omega
+lies in a different charge sector. A neutral observable cannot prepare it
+from Omega. The seam implementer U is then a charged field or sector
+intertwiner, not automatically an observable intervention.
+
+The covariance difference remains visible to neutral observables. For every
+f,g, the bilinear c(f)*c(g) is gauge invariant, and (10) gives the exact
+neutral response
+
+  omega_U(c(f)*c(g))-omega_C(c(f)*c(g))=<g,Pi f>.        (19)
+
+Thus the rank-one defect survives as a gauge-invariant two-point response
+even when the vector U Omega itself is not in the vacuum charge sector. This
+does not show that the source permits U as a physical operation.
+
+6. What this closes and what remains typed separately
+------------------------------------------------------
+
+PROVED from the recovered circle pair and the conditional original CAR/time
+interface:
+
+  * u shifts the sea covariance by exactly +Pi;
+  * [u,C] is rank one and hence CAR-implementable;
+  * the stated implementer sends the vacuum to the unique charge +1 state
+    c_0*Omega up to phase;
+  * that state has exact positive energy a;
+  * the reversed shift creates the charge -1 hole of energy 1-a;
+  * the directed relative covariance determinants are (1-z)^(-1) and 1-z.
+
+The first source condition is still the same one already isolated in
+GROUND-STATE-SOURCE-REDUCTION.txt: the full graded CAR algebra and its
+adjoints must be embedded in the original positive-energy representation,
+and its time must be the Bogoliubov time of this same B_a. Once that condition
+is met, C=P_- follows and is not an independently chosen sea.
+
+NOT PROVED by this calculation:
+
+  * P_adm=P_+ or any identification of their Hilbert spaces;
+  * that U is an admissible neutral observable;
+  * that z is an electromagnetic fugacity, source coupling or kernel
+    deformation;
+  * equality of the relative determinant with the original electromagnetic
+    answer functional;
+  * a complete P1 source reconstruction.
+
+The new direct connection is narrower and exact: the recovered old
+circle representative has the same displayed one-particle mode shift that the
+previously constructed source W1 implements, and its old rank-one line is the
+excess covariance of that shifted sea rather than a freely selected
+one-particle ray. The physical P1 source map and answer map remain the next
+typed interfaces.
+
+Sources used
+------------
+
+  * experiments/theory-contracts/older-paper-source-recovery-20261025/
+    ORIGINAL-CIRCLE-REVIEW.txt
+  * experiments/theory-contracts/primitive-seam-operator-reconstruction-20261025/
+    SPECTRAL-SEAM-RECONSTRUCTION.txt
+  * experiments/theory-contracts/paper-source-reconstruction-20261025/
+    GROUND-STATE-SOURCE-REDUCTION.txt
+  * experiments/theory-contracts/mixed-current-origin-20261014/
+    ATLAS-KMS-LOCALITY-AND-SOURCE-WINDING.txt:75-164
+  * experiments/theory-contracts/seam-joint-ward-state-20261014/
+    PROOF.txt:742-850,1003-1087
+  * documents/archive--paper-latex--tfpt-theory-fullv21/sections/
+    001-section-introduction-the-problem-of-parameters.tex:230-251
+

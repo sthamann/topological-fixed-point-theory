@@ -1,0 +1,34 @@
+Ich habe ausschließlich diese Datei gelesen und ihre Argumente selbst nachgerechnet (keine Ausführung, keine anderen Dateien). Hier das Verdikt.
+
+# Round 16 — Audit `MATH.SEAM.G31.LATTICE.03`
+
+## Gesamturteil: Beweise korrekt. Keine substanzielle Korrektur; Scope sauber. Nur Review-vs-Ausführung-Caveats.
+
+## Q1 — Repräsentiert der endliche Quotient $Q$ die Liftfrage exakt? **Ja.**
+
+$\hat L$ unendlich; $K=\{E_{2x}\}\cong 2L$ ist zentral (da $[E_{2x},E_y]=(-1)^{2x\cdot y}=1$ und $\varepsilon(2x,2y)=1$). $Q=\hat L/K$ hat Ordnung $|L/2L|\cdot|\{\pm1\}|=256\cdot2=512$. Die Form $f(x,x)=x\cdot x/2\bmod2$ ist nichtentartet mit $2^7+2^3=136$ Nullen, $120$ Einsen (Arf $0$) $\Rightarrow Q$ ist extraspeziell $2^{1+8}_+$, $Z(Q)=\{\pm1\}$. ✓ Inn$(Q)=Q/Z=\F2^8=A$, Out$(Q)=O(L/2L,q)$; $\tilde G=$ Pullback von Aut$(Q)$ entlang $G_{31}\to$ Out$(Q)$. Die Bijektion {$256$ Original-Lifts von $g$}$\leftrightarrow\{\phi_{g,l}\}$ (beides $A$-Torsoren über die 8 freien Basisvorzeichen) ist korrekt; die $H^2$-Klasse ist der Pullback der Aut$(Q)$-Klasse. $|\tilde G|=256\cdot46080$. Der Kern von $G_{31}\to O(L/2L,q)$ ist $\{\pm I\}$ (da $-I\equiv I\bmod2$), Bildordnung $23040$ — bricht den Pullback nicht. **Exakt.**
+
+## Q2 — Schließt das 7-Gleichungs-Zertifikat alle 24 Vorzeichen aus? **Ja (selbst verifiziert).**
+
+F2-Summe der sieben Zeilen, Variablenzählung nachgerechnet: $a_1$(1,2), $a_2$(1,7), $a_4$(6,7), $b_1'$(3,7), $b_3'$(3,6), $b_4'$(4,6), $c_1$(5,6), $c_2$(5,6), $c_3$(5,7), $c_4$(5,6) — **jede genau zweimal $\Rightarrow$ LHS$=0$**. RHS $=1+1+1=1$. Also $0=1$. ✓ Die sieben Zeilen sind **notwendige** Relationsbedingungen (aus $r_0^2=r_1^2=r_2^2=1$ und zwei Flechtrelationen); ihre Inkonsistenz gilt für **jede** Belegung der 24 freien Signaturen (die restlichen 14 Variablen sind irrelevant, da das 10-Variablen-Teilsystem schon inkonsistent ist). Keine Sektion über $H$ $\Rightarrow$ keine über $G_{31}\supseteq H$; $A$ ein $\F2$-Modul $\Rightarrow$ Klasse **genau Ordnung 2**. Korrekt.
+
+## Q3 — Nichtspaltung über $G_{31}$ verträglich mit allen 62 Monodromielifts? **Ja.**
+
+Das Zertifikat nutzt die **Gruppenrelationen** $r_j^2=1$. Ein Monodromielift von $\rho:\Pi=C_4*C_4\to G_{31}$ muss nur die **Konusrelationen** $\hat a^4=\hat b^4=1$ ($a=C$, $b=rC$) erfüllen — **nicht** $\hat\gamma_j^2=1$. Da $\gamma_j=a^jba^{-j-1}$ in $\Pi$ keine Quadratrelation hat, darf $\hat\gamma_j^2=-1$ sein; genau dadurch entgeht der Lift dem Hindernis. §5 löst die Potenzsysteme ($\hat a^4=1$: Potenzphase ein Charakter, affines System in 16 Variablen) für **alle 62**, Rang $0$ (gk 0/12, $2^{16}$) bzw. Rang $2$ (gk 15, $2^{14}$). SatzI und SatzII sind daher widerspruchsfrei — korrekt und sauber begründet (§1:31–38).
+
+## Q4 — Konjugationsformel, Kernquotient, Burnside, Äquivalenz? **Strukturell korrekt.**
+
+- **Kernkorand** $d(\alpha)_s=(I+M_s^t)\alpha$ $=\delta\alpha$ (1-Koränder $T=B^1$). ✓
+- **Affine Zentralisatorwirkung** $l_s'=P^{-t}[l_s+(I+M_s^t)\alpha+t(h,g_s)]$, $P=M_h$: linearer Teil $P^{-t}$ (Basiswechsel), Korand + inhomogener $h_g$-Term — die Form (affin, nicht nur linear) ist korrekt; „$\phi_h\phi_s=\phi_{s'}\phi_h$ auf Basisargumenten" ist die richtige Beweismethode.
+- **Burnside** über dem **vollen Urbild** des Zentralisators (Ordnung $256\cdot|Z_G|$), Fixpunktzahl $0$ oder $2^{8(k+1)-\text{Rang}}$, Summe$/[256\,|Z_G|]$: korrekt, kein Kernquotient vergessen, affin zulässig. ✓
+- **Äquivalenz** = simultane Konjugation in $\tilde G$ über zulässiger $G$-Konjugation des Grundobjekts, geordnete Punkturen erhalten. Konsistent mit der Urbild-Burnside-Gruppe. ✓
+
+## Interne Konsistenz (nachgerechnet)
+
+$11356=6856+4272+228$ ✓. $835456=16752+6\cdot41024+4\cdot91864+3\cdot26128+3\cdot42240$ — Summe selbst addiert $=835456$ ✓. $H_{\rm ab}=H/\langle q^2\rangle=C_2^3\Rightarrow$ genau $7$ maximale Untergruppen; $\langle r_0,r_1\rangle$: $(r_0r_1)^2=q^2\neq1\Rightarrow$ Ordnung $4\Rightarrow D_8$ ✓. Querverträge konsistent: zentrale $\Z_4$ $1088$ (vorheriger Vertrag), $\langle J\rangle$-Vorzeichen $526336$ (MONODROMY.01) — getrennt nach Basisgruppe/Koeffizientenwirkung/Markierung.
+
+## Caveat: Quellenreview ≠ Ausführung
+
+Verifiziert ist die **Beweislogik**: das $0=1$-Zertifikat, die $Q$-Struktur ($2^{1+8}_+$, $136/120$), der Pullback, die SatzI-vs-SatzII-Relationstrennung, die affine Burnside-Form und die Summenkonsistenz. **Nicht** ausgeführt (parent-berechnet, reviewt): die Herleitung der sieben Zeilen aus dem tatsächlichen `eps_e8`/den Matrizen, die 17 per-ID-Zahlen ($16752,41024,\dots$), die per-Untergruppe-Sektionszahlen ($2^{12}/2^{11}/2^{10}$) und die unterscheidenden $212/176$. Die Logik des Zertifikats hängt daran, dass diese sieben Zeilen die Relationen korrekt kodieren — das ist die eine maschinelle Abhängigkeit des sonst handverifizierten Nichtspaltungsbeweises.
+
+**Fazit:** SatzI (Nichtspaltung über $G_{31}$, Klasse Ordnung 2, Zeuge in $H_{16}$, alle echten Untergruppen hebbar), SatzII (alle 62 Clocklifts existieren, $11356$ Klassen) und SatzIII ($835456$ ungeclockte Klassen) sind **beweislogisch korrekt und untereinander verträglich**; der endliche Quotient $Q$ bildet die Liftfrage exakt ab, das 7-Zeilen-Zertifikat ist gültig (per Hand $0=1$), und Konjugations-/Kern-/Burnside-/Äquivalenzkonventionen sind richtig. Keine falsche Quotientierung, keine Überdehnung — nur die genannten maschinell berechneten Endlichzahlen stehen unter Quellenreview-Vorbehalt.

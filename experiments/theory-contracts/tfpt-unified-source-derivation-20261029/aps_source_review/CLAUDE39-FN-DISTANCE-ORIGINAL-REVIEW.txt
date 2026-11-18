@@ -1,0 +1,139 @@
+CLAUDE39 FN DISTANCE CANDIDATE AGAINST THE ORIGINAL LENGTH DATA
+================================================================
+
+Independent narrow source review, 30 October 2026.  No Atlas or registered
+source was changed.
+
+VERDICT
+-------
+
+Claude39's proposed identification
+
+  L_a proportional to dist(alpha+kappa_a,Z)               (1)
+
+fails the first original arithmetic test.  With the proposed
+
+  alpha=1/4,  kappa={0,1/3,2/3},
+
+the three distances are
+
+  x={1,3,5}/12.                                           (2)
+
+Every common positive scaling and offset of (2) is an arithmetic
+progression.  None of the three original diagonal rows is one:
+
+  sorted L_u={0,3,7}, differences 3,4;
+  sorted L_d={2,5,7}, differences 3,2;
+  sorted L_e={3,5,8}, differences 2,3.                    (3)
+
+The mismatch remains if the candidate is read in its two-leg form.  The
+original matrix exponent is L^L_(f,i)+L^R_(f,j).  If both legs use the same
+three distances (2), with the common collar scale ell and arbitrary
+permutations, the centered diagonal sums can only have one of the forms
+
+  (-4,0,4), (-2,0,2), (-4,2,2), (-2,-2,4), (0,0,0)
+
+up to a common positive scale.  The centered original triples are
+
+  L_u: (-10,-1,11)/3,
+  L_d: (-8,1,7)/3,
+  L_e: (-7,-1,8)/3,                                      (4)
+
+so none matches.  Separate leg scales, sector-dependent channel weights or
+non-affine readouts could evade (3)-(4), but they are extra data and are not
+the Claude39 distance candidate.
+
+
+1. WHAT THE ORIGINAL LENGTHS MEAN
+---------------------------------
+
+The original hard-holonomy formula is
+
+  (Y_f)_ij=lambda_Y^(L^L_(f,i)+L^R_(f,j))
+             <e_i,Hol_(Gamma_ij^min)(nabla_F^star)e_j>.   (5)
+
+It defines D_L,f and D_R,f as diagonal word-length factors, but the displayed
+source does not give a separate numerical decomposition of the diagonal
+totals into L^L and L^R.  What it fixes numerically is
+
+  L_u^diag=(7,3,0),
+  L_d^diag=(7,5,2),
+  L_e^diag=(8,5,3).                                      (6)
+
+These totals come from the sector-dependent residue packets
+
+  R_u={0,1,3}, R_d={1,2,5}, R_e={2,3,5},                 (7)
+
+plus one complete winding of length six in each first-generation direction.
+The same source explicitly interprets them as graph distances on C6.  Thus
+the original already carries channel information that is not contained in a
+single universal distance triple (2).
+
+The missing separate L/R split cannot rescue (1): under the candidate's own
+common x_a and ell assumptions the complete permutation calculation gives
+the obstruction (4).  Treating L^L and L^R as independently fitted triples
+would abandon the claimed derivation from alpha and kappa.
+
+
+2. THE KAPPA VALUES ARE NOT YET THE ORIGINAL CIRCLE CLUTCH
+---------------------------------------------------------
+
+The actual source fixes three different objects that must not be collapsed:
+
+* the scalar charged CAR quarter alpha=1/4 or 3/4;
+* the order-three coefficient/deck action Pc, whose Fourier eigenvalues are
+  1,omega,omega^2;
+* the v117 quarter coefficient matrix KQ with eigenvalues 1,i,-i.
+
+The local Fuchs exponents 0,1/3,2/3 describe puncture monodromy.  They do not
+by themselves prove that the tangential collar operator has spectrum
+
+  n+alpha+kappa_a,
+
+or that Pc is its clutch.  The existing source review states the correct
+conditional form: a nontrivial family clutch MAY produce such shifts, in
+which case the full covariant cross kernel must be used.  No checked original
+identity currently equates the Fuchs exponents with the scalar circle clutch.
+
+Therefore (2) is an assumed diagnostic case, not an already fixed original
+boundary spectrum.  Even under that favorable assumption, (3)-(4) reject the
+proposed FN identification.
+
+
+3. SCOPE
+--------
+
+The exact mode formula
+
+  c_(a,n)=1/[2 cosh ell(n+alpha+kappa_a)]                 (8)
+
+is valid for a collar operator that actually has the displayed shifted
+spectrum.  Its large-ell leading term is exp[-ell dist(alpha+kappa_a,Z)].
+The full sum over n is not this leading exponential, and the original exact
+FN powers are not derived by a leading-mode approximation.
+
+This review rejects only the identification (1), including its common
+two-leg version.  It does not reject the already established cover
+pi:C->X_f, the global sign-line dictionary, the whole B_mu endpoint kernel,
+or a future response using the actual full clutch and all modes.  Such a
+response would be a different calculation and must reproduce the
+sector-dependent data (6)-(7), rather than relabel the Frobenius exponents as
+the original word lengths.
+
+
+SOURCES CHECKED
+---------------
+
+* outputs/multi-model-source-search-20261029/
+  CLAUDE39-SCHWINGER-UNGEPRUEFT.txt,
+  SHA256 deb609d80dd93ec6029d02016a0a436b55e40214e636fdfd6e2cc7980ebeb22b.
+* archive--tfpt-45--source_extracts--03_em_flavor_source/sections/
+  004-source.tex:164-217,241-315,
+  SHA256 107d525221eb816043dbf4fb1a3c7e8244d3e24a5a5bcbfe1c2c34d8ee192f4a.
+* the same archive, sections/005-source.tex:245-267,
+  SHA256 786d2619e775775d70adf177794138485b261968042a880b2f0f617bb0111814.
+* REVERSE-HOM-COMPOSED-Q-HODGE-REVIEW.txt,
+  SHA256 fc5ba082329a6c2c44ac4021d4434b9ac952f32776fd9004cc091bf6d746a2ec.
+* ORIGINAL-FUCHS-ALGEBRAIC-FRAME.txt,
+  SHA256 3a57907902631b58e0abee61e9a424c3ac03ff7a8fa074cc4d27e3379b406cf3.
+

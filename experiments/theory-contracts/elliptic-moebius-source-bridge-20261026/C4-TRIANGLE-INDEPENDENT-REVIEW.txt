@@ -1,0 +1,411 @@
+C4-TRIANGLE-INDEPENDENT-REVIEW
+==============================
+
+Datum: 2026-10-26
+
+Geprüfte Frage
+--------------
+
+Schließt der direkte C4 Quotient der tatsächlich in v115 verwendeten
+Differentialgleichung die bisher nur numerische Identifikation ihrer
+Monodromie mit der exakten v117 Darstellung? Zu prüfen waren die Residuen,
+Logarithmen, Clockorientierung, markierte Paaridentifikation und die
+Abgrenzung vom älteren modularen Phi Pullback.
+
+Urteil
+------
+
+Ja. Die konkrete v115 Gleichung steigt exakt zu einem starren sphärischen
+Dreipunktsystem vom Typ (4,3,2) ab. In der kurzen R=(0,1,-1) Gauge sind alle
+drei Residuen semisimpel; es gibt keine positive ganzzahlige Resonanz. In der
+älteren R=(0,1,3) Gauge verschwindet der einzige resonante
+Rekursionskoeffizient exakt. Die lokalen
+Monodromien haben deshalb exakt die Ordnungen
+4,3,2 und erzeugen treu S4 in dessen determinantentrivialer
+dreidimensionaler Darstellung. Nach Fixierung der Clockmarkierung ist das
+geordnete Monodromiepaar bis auf den diagonalen Zentralisator eindeutig die
+v117 Bahn.
+
+Dieser Schluss ist bereits in einer Originalarchivquelle vom 28. September
+2026 vollständig bewiesen:
+
+    documents/tfpt_explorer--docs--session-2026-09-28--
+    TFPT_Gesamtsynthese_2026-09-28/sections/
+    004-subsection-auch-die-skalen-besitzen-einen-gemeinsamen-va.tex,
+    Zeilen 203 bis 327,
+    SHA256 574058876ebe23d693a9fce061f68da6fdec63419af78243ac9d457d7858f74b.
+
+Der heutige direkte Quotient ist daher als wiederverwendeter und unabhängig
+validierter Beweis zu führen. Die in v115/v117 noch stehende Kennzeichnung
+des ODE Anschlusses als nur numerisch ist gegenüber dieser späteren Quelle
+veraltet.
+
+Die Clockorientierung ist dabei wesentlich:
+
+    geometrische Deckwirkung auf Y:       U,
+    positive t-Monodromie auf X=z^(-R)Y:  U^(-1).
+
+Das ältere Phi Pullback aus MODULAR-ORBIFOLD-SOURCE.txt hat dagegen am
+zweiten Spitzenpunkt Ordnung 4. Die tatsächliche v115 C4 Verbindung hat dort
+Ordnung 2. Beide besitzen zwar dasselbe unmarkierte endliche Gruppenbild S4,
+sind aber nicht dieselbe markierte flache Verbindung.
+
+1. Die ursprüngliche Gleichung
+------------------------------
+
+Setze
+
+    alpha = 2 sqrt(2)/3,
+    beta  = sqrt(5)/3,
+
+und
+
+                [ 2z^3   alpha z^2      0    ]
+    A(z)=1/(z^4-1) [ alpha      z^3      beta z ].
+                [   0        beta z      z^3  ]
+
+Dies ist exakt die Fuchsform aus v115. Mit
+
+    A0 = [[1/2, sqrt(2)/6, 0],
+          [sqrt(2)/6, 1/4, sqrt(5)/12],
+          [0, sqrt(5)/12, 1/4]],
+    U  = diag(1,i,-i)
+
+ergibt eine direkte Partialbruchrechnung
+
+    A(z)=sum_(k=0)^3 U^k A0 U^(-k)/(z-i^k).
+
+Die oben ausgeschriebene Zählermatrix wurde unabhängig symbolisch aus dieser
+Summe zurückgewonnen. Es wird also dieselbe konkrete v115 Quelle geprüft und
+kein neues Fuchsmodell eingeführt.
+
+2. Zwei äquivalente exakte C4 Gauges
+-----------------------------------
+
+Setze
+
+    R=diag(0,1,-1),       t=z^4,       Y=z^R X(t).
+
+Aus
+
+    dY/dz=A(z)Y
+
+folgt
+
+    dX/dt=B(t)X,
+    B(t)=1/(4z^3) z^(-R) A(z) z^R - R/(4t).
+
+Alle z Potenzen heben sich zu rationalen Funktionen von t. In Partialbrüchen
+ist
+
+    B(t)=B0/t+B1/(t-1)
+
+mit
+
+         [ 0             0              0          ]
+    B0 = [ -sqrt(2)/6   -1/4          -sqrt(5)/12 ],
+         [ 0             0              1/4        ]
+
+und
+
+         [ 1/2          sqrt(2)/6       0          ]
+    B1 = [ sqrt(2)/6    1/4             sqrt(5)/12 ],
+         [ 0            sqrt(5)/12      1/4        ]
+
+also B1=A0. Das Residuum am unendlichen Punkt ist
+
+    Binf=-B0-B1
+
+         [ -1/2        -sqrt(2)/6       0          ]
+       = [  0            0              0          ].
+         [  0          -sqrt(5)/12     -1/2        ]
+
+Eine direkte Rückaddition gibt B0+B1+Binf=0.
+
+Die Archivquelle benutzt stattdessen
+
+    Psi=diag(1,z,z^3)v(t).
+
+Ihre Residuen sind
+
+    B0_old = [[0,0,0],
+              [-sqrt(2)/6,-1/4,0],
+              [0,-sqrt(5)/12,-3/4]],
+
+    B1_old = A0,
+
+    Binf_old = [[-1/2,-sqrt(2)/6,0],
+                [0,0,-sqrt(5)/12],
+                [0,0,1/2]].
+
+Beide Fassungen sind durch die meromorphe ganzzahlige Gauge
+
+    X=diag(1,1,t)v
+
+verbunden, denn z^(-1)X_3=z^3v_3. Sie besitzen daher exakt dieselbe
+Monodromie. Die kürzere heutige Gauge verschiebt lediglich einen lokalen
+Exponenten um eine ganze Zahl.
+
+3. Spektren, Semisimplizität und fehlende Logarithmen
+----------------------------------------------------
+
+Die charakteristischen Polynome sind exakt
+
+    chi_B0(lambda)   = lambda(lambda-1/4)(lambda+1/4),
+    chi_B1(lambda)   = lambda(lambda-1/3)(lambda-2/3),
+    chi_Binf(lambda) = lambda(lambda+1/2)^2.
+
+B0 und B1 haben einfache Spektren. Für Binf gilt sogar die quadratische
+Identität
+
+    Binf(Binf+I/2)=0.
+
+Das Minimalpolynom ist damit quadratfrei und Binf besitzt einen
+zweidimensionalen Eigenraum zum Eigenwert -1/2. Es gibt keinen Jordanblock.
+
+Die nicht verschwindenden Exponentendifferenzen sind
+
+    bei 0:        1/4,1/2,
+    bei 1:        1/3,2/3,
+    bei infinity: 1/2.
+
+Keine davon ist eine ganze Zahl. In der Frobenius beziehungsweise Levelt
+Rekursion tritt deshalb keine positive ganzzahlige Resonanz auf. Die
+wiederholte Differenz null bei infinity erzeugt wegen der semisimplen
+Residuenmatrix keinen logarithmischen Nilpotententeil. Alle lokalen
+Monodromien sind zu exp(2 pi i Bp) konjugiert.
+
+Auch der anspruchsvollere Resonanztest der Archivgauge ist korrekt. Dort
+lauten die Spektren bei 0 und infinity
+
+    (0,-1/4,-3/4),       (-1/2,0,1/2).
+
+Die Differenz eins bei infinity ist resonant. Mit der dort angegebenen
+Matrix S_inf ergibt die unabhängige exakte Rechnung
+
+    S_inf^(-1) Binf_old S_inf=diag(-1/2,0,1/2),
+    (C_inf)_(3,1)=0.
+
+Genau der einzige resonante Rekursionseintrag verschwindet. Somit entsteht
+auch in dieser Gauge kein logarithmischer Anteil. Die neue Gauge ist also
+eine Kompression des alten Beweises und keine Umgehung einer offenen
+Resonanzfrage.
+
+Ihre Spektren und Ordnungen lauten somit
+
+    C0:   {1,-i,i},          Ordnung 4,
+    C1:   {1,omega,omega^2}, Ordnung 3,
+    Cinf: {1,-1,-1},         Ordnung 2.
+
+Auch die Determinanten sind eins, denn die Residuenspuren sind 0,1,-1.
+
+4. Das Gruppenbild ist exakt S4
+--------------------------------
+
+Für passend orientierte Dreipunktschleifen gilt bis zur üblichen Wahl der
+Produktreihenfolge
+
+    C0^4=C1^3=Cinf^2=I,       C0 C1 Cinf=I.
+
+Damit ist das Bild ein Quotient der sphärischen Dreiecksgruppe
+
+    Delta(4,3,2) = S4.
+
+Die Bilder von C0 und C1 haben weiterhin die exakten Ordnungen 4 und 3.
+Kein echter Quotient von S4 besitzt gleichzeitig solche Bilder: der Quotient
+durch V4 verliert Ordnung 4, der Quotient durch A4 verliert Ordnung 3.
+Folglich ist die Darstellung treu.
+
+Eine reduzible dreidimensionale S4 Darstellung wäre vom Typ 2+1 oder eine
+Summe eindimensionaler Charaktere. Die zweidimensionale irreduzible
+Darstellung hat bereits V4 im Kern, und eindimensionale Charaktere entfernen
+diesen Kern nicht. Die treue Darstellung ist daher irreduzibel.
+
+S4 besitzt zwei irreduzible dreidimensionale Standarddarstellungen. Die
+gewöhnliche Standarddarstellung hat Determinante sign. Ihr Signaltwist hat
+Determinante eins. Da unsere drei lokalen Determinanten eins sind, ist die
+vorliegende Darstellung exakt die vorzeichengetwistete Standarddarstellung
+aus v117. Dieser Schluss benutzt keine numerische Integration.
+
+5. Die Clock ist U invers orientiert
+------------------------------------
+
+Der Gaugefaktor erklärt die scheinbare Vorzeichenfrage vollständig. Unter
+der positiven Deckdrehung z nach iz gilt
+
+    (iz)^R=i^R z^R=U z^R.
+
+Für die Quotientenvariable X=z^(-R)Y erscheint daher am Punkt t=0 der
+inverse Faktor. Eine explizite Eigenbasis P von B0 erfüllt
+
+    P^(-1) B0 P = diag(0,-1/4,1/4),
+
+also
+
+    P^(-1) C0 P = diag(1,-i,i)=U^(-1).
+
+Dies ist kein freies Umphasen. U ist die Wirkung auf dem hochgezogenen
+Y Feld, während C0 die positive Schleifenmonodromie des abgestiegenen X
+Feldes ist. Der bereits positive geometrische Deckmarker bleibt U.
+
+Gerade mit C0=U^(-1) stimmt die v117 Schreierorientierung:
+
+    C0^(-k) C1 C0^k = U^k C1 U^(-k).
+
+Sie erzeugt die vier ursprünglichen Peripherien in der vorhandenen Reihenfolge.
+
+6. Exakte markierte Identifikation mit M0
+----------------------------------------
+
+Fixiere nach der obigen Diagonalisierung C0=U^(-1). In S4 gibt es für einen
+festen Vierzyklus genau vier Dreizyklen y, für die das Produkt mit diesem
+Vierzyklus Ordnung 2 hat. Der Zentralisator des Vierzyklus ist zyklisch von
+Ordnung 4 und wirkt transitiv auf diesen vier Möglichkeiten. Daher gibt es
+genau eine Bahn unter dem Zentralisator von U.
+
+Die vorhandene exakte v117 Matrix M0 erfüllt
+
+    M0^3=I,
+    spec(M0)={1,omega,omega^2},
+    (M0 U^(-1))^2=I.
+
+Sie ist somit ein Vertreter genau dieser einzigen Bahn. Es existiert daher
+eine invertierbare Matrix D, die mit U kommutiert und für die, nach konsistenter
+Basisrichtung,
+
+    D^(-1) C0 D = U^(-1),
+    D^(-1) C1 D = M0.
+
+Da das Spektrum von U einfach ist, ist D diagonal. Die Identifikation erhält
+also die vollständige Clockmarkierung und ist stärker als eine bloße
+unmarkierte S4 Isomorphie.
+
+Mit der in den vorhandenen v117 Dateien benutzten Schleifenreihenfolge ist
+die Monodromie am unendlichen Punkt der involutive Generator
+
+    b=M0 U^(-1).
+
+Bei der entgegengesetzten Standardreihenfolge erscheint sein konjugierter
+Ordnung 2 Vertreter. Diese Pfadkonvention ändert weder die lokale Klasse noch
+die markierte Paarbahn.
+
+Damit ist die in v115 und v117 noch nur numerisch klassifizierte Aussage
+
+    konkrete A0* ODE Monodromie = exakte v117 Bahn
+
+algebraisch geschlossen. Der algebraische Schluss steht bereits in der
+späteren Synthesequelle vom 28. September und muss im aktuellen Quellenstand
+als wiederverwendet markiert werden.
+
+7. Abgrenzung vom modularen Phi Pullback
+----------------------------------------
+
+MODULAR-ORBIFOLD-SOURCE.txt untersucht eine andere Verbindung auf derselben
+t Sphäre. Dort lauten die markierten lokalen Wörter
+
+    t=0:        U,
+    t=1:        M,
+    t=infinity: (UM)^(-1),
+
+und der letzte Operator hat Ordnung 4. Der Typ ist (4,3,4).
+
+Für den direkten Abstieg der tatsächlichen v115 ODE gilt dagegen
+
+    t=0:        U^(-1),
+    t=1:        M0,
+    t=infinity: Ordnung 2,
+
+also Typ (4,3,2). Lokale Monodromieordnung ist unter Eichtransformationen und
+Konjugation invariant. Deshalb können diese beiden flachen Verbindungen nicht
+gleichgesetzt werden. Insbesondere darf die frühere Aussage "Q Faser gleich
+U" nicht unverändert auf den neuen Quotientenanschluss übertragen werden:
+der geometrische Y Deckoperator ist U, die X Quotientenmonodromie ist U^(-1).
+
+Beide Systeme können dasselbe unmarkierte endliche Gruppenbild S4 besitzen.
+Das ist kein Widerspruch und keine Verbindungsgleichheit. Der direkte C4
+Abstieg ersetzt daher nicht die geometrische Phi Pullbackkonstruktion. Er ist
+der bereits vorhandene exakte Anschluss der konkreten v115 ODE.
+
+8. Weitere bereits vorhandene Konsequenzen
+------------------------------------------
+
+Die Archivquelle zieht aus derselben markierten endlichen Darstellung noch
+zwei korrekte, enger typisierte Folgerungen.
+
+Erstens erzeugen die vier ursprünglichen Punkturmonodromien A4 mit Ordnung
+12. U erweitert dieses Paket zu S4 mit Ordnung 24. Das bestätigt unabhängig
+die notwendige Trennung von Monodromiecover und zusätzlicher C4 Kovarianz.
+
+Zweitens liefert der Permutationsanteil die dreiblättrige Kurve
+
+    w^3=(z^2-1)/(z^2+1).
+
+Sie ist an den vier Punkten 1,i,-1,-i vollständig vom Index 3 verzweigt.
+Riemann Hurwitz gibt
+
+    2g-2=3*(-2)+4*(3-1)=2,
+
+also g=2. Mit eta=z(1-w^3) gilt direkt
+
+    eta^2=1-w^6.
+
+Der angegebene Lift
+
+    r(w,eta)=(1/w,-i eta/w^3)
+
+erfüllt r^2(w,eta)=(w,-eta) und r^4=I. Der ausgeschriebene Sechspunkt
+Intertwiner transportiert M plus minus M als markierten Punktoperator. Wie
+die Originalquelle selbst festhält, ist dies noch kein Feldintertwiner und
+keine Ableitung des ursprünglichen Nahtprojektors.
+
+9. Präziser Status
+------------------
+
+[E/REUSED] Exakt bewiesen und bereits am 28. September vorhanden:
+
+* Die ausgeschriebene A(z) ist genau die v115 Fuchsverbindung.
+* Ihr C4 Abstieg besitzt nur die drei Pole 0,1,infinity mit den oben
+  angegebenen exakten Residuen.
+* Alle Residuen sind semisimpel; es gibt keine logarithmischen lokalen
+  Lösungen.
+* Die lokalen Ordnungen sind exakt 4,3,2 und das Gruppenbild ist treu S4.
+* Die determinantentriviale Rang 3 Darstellung ist der v117 Signaltwist.
+* Nach Fixierung C0=U^(-1) ist C1 bis auf den diagonalen Zentralisator exakt
+  die M0 Bahn.
+* Der in den älteren Einzelcheckern noch numerisch markierte A0*
+  Monodromieanschluss ist in der späteren Synthese algebraisch geschlossen.
+* Der A4 Monodromiecover, die Geschlecht 2 Dreiblattkurve und der markierte
+  Sechspunktintertwiner sind dort bereits ebenfalls hergeleitet.
+
+[E] Notwendige Korrektur der Markierung:
+
+* U ist der geometrische Deckoperator auf Y.
+* U^(-1) ist die positive lokale Monodromie des abgestiegenen X Systems am
+  C4 Punkt.
+* Das ältere Phi Pullback hat dort U und am anderen Spitzenpunkt Ordnung 4;
+  es ist eine andere markierte Verbindung.
+
+[O] Nicht aus diesem Satz abgeleitet:
+
+* Die physische Auswahl der A0* Quelle aus P1.
+* Eine Gleichsetzung des Quotientenwinkels mit physischer Zeit.
+* Die Gleichheit mit dem modularen Phi Pullback oder dessen globaler
+  elliptischer Quelleninterpretation.
+
+[Korrektur des aktuellen Forschungsstands]
+
+* Die Aussage in D4-ORBIFOLD-RIGIDITY.txt und im vorherigen
+  STABILITY-INDEPENDENT-REVIEW.txt, der A0* ODE Anschluss sei weiterhin nur
+  numerisch, ist durch die wiedergefundene Quelle überholt.
+* Offen bleibt die Auswahl der konkreten Quelle und ihrer Feldwirkung, nicht
+  die endliche Monodromieidentifikation dieser bereits geschriebenen ODE.
+
+Unabhängige Kontrolle
+---------------------
+
+Eine kleine exakte Sympy Rechnung bestätigte die Partialbruchidentität, alle
+drei charakteristischen Polynome, die Minimalpolynomidentität von Binf,
+die Diagonalisierung von B0 und (M0 U^(-1))^2=I. Eine separate endliche
+S4 Zählung bestätigte, dass die vier zulässigen Dreizyklen eine einzige Bahn
+unter dem Zentralisator des fixierten Vierzyklus bilden. Es wurde keine ODE
+numerisch integriert, keine Originaldatei und kein Atlasdatum verändert.

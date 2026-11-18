@@ -36,7 +36,13 @@ class Regression(unittest.TestCase):
                 r.inherited()
 
     def test_03_exact_certificate_replay(self):
-        self.assertEqual(r.exact_record(), self.saved)
+        actual, saved = r.exact_record(), dict(self.saved)
+        self.assertEqual(actual.pop("pins"), r.PINS)
+        saved.pop("pins")
+        self.assertEqual(actual.pop("checker_sha256"), hashlib.sha256((HERE/"checker.py").read_bytes()).hexdigest())
+        self.assertEqual(saved.pop("checker_sha256"),
+                         "4a319e059d25be9f0aace0fbc994c0a1201ac8846a6910962c9379d48248e9fa")
+        self.assertEqual(actual, saved)
 
     def test_04_invalid_filter_width(self):
         for delta in (0, -1, float("inf"), float("nan")):
@@ -192,6 +198,9 @@ class Regression(unittest.TestCase):
     def test_20_floating_report_replay_with_explicit_tolerance(self):
         saved = json.loads((HERE/"diagnostics.json").read_text())
         actual = r.diagnostics()
+        self.assertEqual(actual.pop("checker_sha256"), hashlib.sha256((HERE/"checker.py").read_bytes()).hexdigest())
+        self.assertEqual(saved.pop("checker_sha256"),
+                         "4a319e059d25be9f0aace0fbc994c0a1201ac8846a6910962c9379d48248e9fa")
         def compare(a, b):
             if isinstance(a, dict):
                 self.assertEqual(a.keys(), b.keys())

@@ -1,0 +1,139 @@
+COMPOSITION ROBUSTNESS FORCES ACYCLICITY IN FINITE DETERMINISTIC PROCESSES
+2026-10-16. Direct elementary theorem; no physical/quantum/TFPT identification.
+Independent mathematical review accepted the proof below. No novelty priority claim.
+
+1. Inputs and exact consistency condition
+
+There are N named interfaces, with finite nonempty input/output sets I_k,O_k,
+and a total deterministic function w:product_k O_k -> product_k I_k.
+These types, definite local values and deterministic semantics are INPUTS.
+No global causal order, spacetime, complex amplitude or Hilbert space is given.
+
+For M independent copies, w acts coordinatewise. At interface k allow EVERY
+joint total deterministic map F_k:I_k^M -> O_k^M, including encoders,
+decoders and constant-output coordinates. Different interfaces cannot jointly
+act, but each can jointly manipulate its own wires across copies.
+This full-control and replication assumption is a NEW explicit model premise.
+It is not entailed by one-shot consistency or by associative composition.
+Product-only independent controls on separate copies are a weaker condition.
+
+Call the class composition-robust when, for every M>=1 and every tuple F_k,
+the equations x=w^(M)(F(x)) have at least one solution. Uniqueness is NOT
+part of this definition; it will follow. We classify logical processes, not
+prove that such arbitrary controls are physically achievable in a closed world.
+
+Define the static influence graph on named interfaces: j->k iff there are
+two output tuples differing only at j for which w_k changes. Self-edges
+are allowed in this initial definition. This is counterfactual dependence
+over all output contexts, not an assumed physical signal or metric edge.
+
+THEOREM. The following are equivalent:
+ (i) The process is composition-robust in the existence sense above.
+ (ii) Every finite-copy experiment with joint local deterministic maps has
+      exactly one solution.
+ (iii) The static influence graph is acyclic.
+ (iv) w is compatible with at least one fixed topological total order.
+If a directed simple cycle of length m exists, at most m copies exhibit a
+failure of (i). The general construction may erase information; it is NOT
+a reversible-control theorem for arbitrary alphabets.
+
+2. Acyclicity gives all-copy existence and uniqueness
+
+Take a topological order pi. Functional independence from non-predecessor
+outputs means w_(pi0) is constant. In M copies its input vector is therefore
+fixed, so the arbitrary joint map F_(pi0) determines its output vector.
+The input vector of pi1 depends only on outputs already determined; apply
+F_(pi1). Continue recursively. Each step has exactly one value because w
+and every F are total functions. This constructs exactly one global solution
+for every finite M. No sampling or limiting argument is involved.
+
+Acyclicity and existence of a topological order are equivalent for finite
+graphs, and functional dependence then makes w triangular in that order.
+There may be MANY compatible total orders, including a completely parallel
+constant w. Neither a unique order nor physical time is being selected.
+
+3. Any directed cycle fails under a finite-copy experiment
+
+Let the cycle be k_1->k_2->...->k_m->k_1 (indices modulo m).
+For each edge r:k_r->k_(r+1), dependence supplies:
+ - a context q_r for the outputs of all interfaces except k_r;
+ - two distinct symbols a_r^0,a_r^1 in O_(k_r);
+ - distinct target inputs u_r^b=w_(k_(r+1))(q_r,a_r^b), b=0,1.
+Choose a total decoder d_r:I_(k_(r+1))->{0,1} with d_r(u_r^b)=b.
+Its values on other symbols are arbitrary and cannot affect a fixed point.
+
+Use m independent copies, one copy r for each cycle edge. In copy r all
+outputs except at k_r are fixed by the local maps to the context q_r.
+At interface k_r, output coordinate r is
+ a_r^[ d_(r-1)(x_(k_r)^(r-1)) XOR epsilon_r ].
+Other output coordinates at that interface are the context constants.
+This is one permitted total joint LOCAL map. Distinct copies make the
+independently chosen edge-witness contexts compatible; there is no requirement
+that different edges be simultaneously active inside one copy.
+
+If a solution exists, let y_r label its chosen output a_r^y_r in copy r.
+The environment then forces x_(k_(r+1))^r=u_r^y_r, so decoding yields
+ y_(r+1)=y_r XOR epsilon_(r+1).
+Choose the epsilons with odd XOR parity. Going around the cycle gives
+y_1=1-y_1, impossible. Thus the composed experiment has NO solution.
+All remaining inputs are simply w(outputs); they do not feed nonconstant
+output coordinates and cannot repair the contradiction. For even parity,
+the same construction has exactly two solutions, one for each initial bit.
+A self-loop is the m=1 case and already fails one-copy consistency.
+This proves (i)->(iii), completing the equivalence.
+
+4. What has actually been explained jointly
+
+For this class, a single global demand -- existence under all replicated
+local interventions -- forces:
+ - no cyclic counterfactual influence;
+ - global uniqueness of all finite-copy outcomes without imposing it;
+ - a precedence partial order, the reachability order of the influence DAG.
+From that partial order one canonically obtains a lattice of dependency ideals
+and topological evaluation schedules. The nodes are supplied interfaces,
+not derived event occurrences. Interpreting each interface as a single event
+is an ADDITIONAL premise before these can be called cumulative occurrence
+states and histories in the sense of Class A. No material memory is proved.
+
+Assumed local input/output typing remains a local orientation. This is not
+time emerging from literally untyped relations. Physical duration, an entropy
+arrow, a continuum, probabilities, quantum theory and observer memory remain
+unselected. Strong composition robustness excludes also context-controlled
+orders that are consistent one shot. Whether free regrouping of copies is
+a physically appropriate axiom must be assessed separately, not declared
+necessary for reality by this mathematical theorem.
+
+5. Exact finite sharpening and literature relation
+
+For three binary interfaces the separate exhaustive classification finds744
+single-copy process functions.488 have an acyclic dependency graph. Every
+one of the remaining256 already fails with TWO copies and reversible joint
+local maps; this is stronger on controls/copy count, but limited to this class.
+The general proof above covers arbitrary finite alphabets/interfaces with
+arbitrary joint maps, not that sharper reversible-only claim.
+
+Simple two-copy reversible witness for the Lugano w(a,b,c)=
+((1-b)c,a(1-c),(1-a)b): group each interface's two bits as copy0+2copy1.
+At A and B use SWAP=(0,2,1,3); at C flip copy0=(1,0,3,2).
+Checking all64 input tuples gives no fixed point. This requires neither
+complex numbers nor quantum operations. All256 saved negative certificates
+have been independently checked, as have all744 single-copy maps and orders.
+
+The product/composition issue has prior literature, including classical
+processes: Jia--Sakharwade, https://arxiv.org/html/1706.05532 (2018).
+Their process-matrix setting treats grouped same-named parties and joint
+operations, and invalid products can activate loops. Our argument above is
+a direct finite deterministic influence-cycle proof, with no quantum premise;
+it does not transfer their Hilbert-space theorem as a physical TFPT result.
+The known one-copy class is Baumeler--Wolf, arXiv:1507.01714.
+We make no claim that this elementary deterministic statement is new literature.
+
+6. Research consequence
+
+This is the best-supported independent starting result of the reset: global
+counterfactual-dependence architecture and outcome uniqueness follow from explicit
+control/composition assumptions, without installing a global time order.
+It neither produces nor selects our physical world. The next independent
+test concerns actual record-bearing subprocesses and the appropriateness of
+composition/control freedom, not fitting a carrier dimension or resuming L_f.
+If progress requires a new axiom, label and compare it as a new premise.

@@ -1,0 +1,123 @@
+## Verdict
+
+The recent no‑go is correct **inside its stipulated class** but the class contains one non‑primitive premise doing all the work: it fixes the *folded* clock `H = 8(L0 + δ·a0)` as "the source time" (C2) and then asks all 248 E8 currents to be physical observables (C3). Both are flagged *in the no‑go's own §1* as **not established from P1**. When you drop the folding and keep everything else, the marked lattice **`Ls`**, the charge dictionary **`q/2 ∈ Ls`**, and **clustering** coexist. The no‑go only ever compared two branches that *both* keep the folded clock (`Ls`+folded fails clustering; `Lc`+folded loses the charge). The **third branch — `Ls` + the unfolded OS generator — was never in the comparison class**, and it is exactly the overlooked route. Below I prove the load‑bearing arithmetic, show the folding is the Coxeter/principal (internal) clock rather than Euclidean time, connect this to the hypergraph product substrate and to `GEOMETRIC-SOURCE-RETURN §4`, fix the `v395` bug, and name the one source operation that would turn the proposal into a theorem.
+
+---
+
+## (a) Strongest overlooked content and the one mistaken overrestriction
+
+**The pathology is manufactured by the folding, and I can show this exactly.** Take `p* = (½,½,½,½,−½,−½,−½,−½)`, `|p*|²=2`, `L0(ψ)=1`. Write `δ_j = (j+a)/8 − ½ = j/8 + (a/8 − ½)`. Because `p*` is traceless (`Σ p*_j = 0`) the constant part and the free modulus `a` drop out, and
+
+```
+δ·p* = (1/8) Σ_j j·p*_j = (1/8)[(0+1+2+3)·½ + (4+5+6+7)·(−½)] = (1/8)(3 − 11) = −1.   [PROVED, a-independent]
+```
+
+The `j/8` ramp is the **D8 Weyl‑vector / principal‑grading direction** (the staircase `(0,…,7)`); the `a`‑modulus is a pure U(1) Wilson line that cannot touch `δ·p*`. Now the decisive commutator:
+
+```
+[H_fold, J_{p*,−1}] = 8·(1 + δ·p*)·J_{p*,−1} = 8·(1 − 1)·J_{p*,−1} = 0,
+[ L0 ,  J_{p*,−1}] = (+1)·J_{p*,−1} ≠ 0.                                  [PROVED]
+```
+
+So the folding is *tuned* to convert a genuine weight‑raising spinor current into a zero mode. Under the **unfolded** conformal Hamiltonian `L0` of the holomorphic `(E8)_1` net, `ker L0 = span{Ω}` is one‑dimensional (holomorphic VOA, `c=8`), `ψ` sits at weight 1, `exp(−tL0) → |Ω⟩⟨Ω|` with gap 1, and clustering holds for **all** 248 currents including `J_{p*}`. Meanwhile `q=(1,…,1)`, `q/2=(½,…,½) ∈ Ls`, so the charge dictionary (C3) survives. **The unfolded `Ls` branch satisfies C1, C3, C4 and fails only C2** — the premise the no‑go itself does not derive from P1 (`LOCAL-TIME-COMPATIBILITY.txt §1`: "The complete source bridge has not established C2 and the full observable part of C3").
+
+**Why C2 is non‑primitive, from the source.** The primitive datum is `Tbound = (A₊, H₊, D₊, J, Γ, B_Σ)` with the collar form `D₊ = γ_n(∂_n + B_Σ)` (`001-section-primitive-core…tex:65–81`). The OS/physical generator reconstructed from the Calderón projector of this datum (`:94–138`) is built from `B_Σ`, the **bare** boundary Dirac operator — there is **no Cartan holonomy `δ` in `Tbound`**. The folded `H` requires `B_Σ → B_Σ + δ`, a modification of the datum. The staircase `δ ∝ ρ(D8)` identifies the folded clock with the **principal/Coxeter gradation** (`h(E8)=30` gearbox, `tfpt-gesamtkontext §5.1`), i.e. an *internal sector clock*, precisely the object §5.6 warns against equating with physical positive time. The no‑go is then the concrete realization of that warning — not an obstruction to the primitive dynamics.
+
+**Overlooked structure #2 — the product substrate is the clustering‑safe combination.** `v324/v395` give `T = T_net ⊗ T_cusp` (`origin_theory.tex:254–269, 315–324`). This keeps the carrier energy `L0` and the family transfer as **commuting factors**; it never writes the additive cross‑term `δ·a0`. The joint top mode `Ω_carrier ⊗ (w=0)` is unique; the next modes are the weight‑1 currents and the family rates. **The overlooked route is literally the hypergraph product the user flagged** — it evades the no‑go because it does not fold.
+
+**Overlooked structure #3 — the double cover already *is* the state.** The Calderón double `M̃ = M₊ ∪_Σ M₊^{op}`, deck `τ`, polarization `i_C = 2P_C − 1 = R_τ` (`:94–138`) is the geometric GNS/Stinespring purification of the reflection‑positive one‑sided kernel. The vacuum `ω_Σ` is therefore **forced** (the GNS cyclic vector), not a free choice — answering the "which quantum state" question for the neutral net without any thermofield analogy. The admissible net is defined by `H_adm`‑**preservation**, not global compression (`:319–343`), so it need not contain the charged spinor intertwiners at all.
+
+---
+
+## (b) Three concrete routes, ranked
+
+### Route 1 — Unfolded product OS dynamics (strongest)
+**Operators.** Carrier: holomorphic `(E8)_1` seam net, `H_carrier = dΓ(|B_Σ|)` (proposed `≈ L0`), unique vacuum `Ω_c`, 248 currents at weight 1. Family: the **lazy** cusp rule `M_lazy = [[1,0,0],[0,½,⅙],[0,⅙,½]]`, spectrum `{1,⅔,⅓}`, one hand `M_lazy⁶ → {1,(2/3)⁶,(1/3)⁶}` (`v486`). Joint vacuum `Ω_c ⊗ (w=0)`.
+**First decisive test.** Reconstruct the OS Hamiltonian from `Tbound` and check (i) it is *unfolded* (no `δ·a0`), (ii) it factorizes as `L0 ⊗ 1 ⊕ 1 ⊗ (family)`, (iii) the connected two‑point function decays with **no zero‑energy tail** at the rates in (c).
+
+### Route 2 — Modular re‑derivation of the folded clock (removes the assumption)
+**Operators.** `H_fold = 8(L0 + δ·a0) = β(L0 − μ·a0)` with `β=8, μ=−δ`. This is exactly a **grand‑canonical KMS modular Hamiltonian**; `ψ` is the charge‑`p*` **Fermi‑surface** mode where `μ·p*` cancels `L0`. The same structure is visible in `GEOMETRIC-SOURCE-RETURN §4`: the thermal Cauchy state has `C_H = (1+e^{2H})^{-1}` — a Fermi–Dirac factor — and its stated obstruction (`⟨A*A⟩ = C_m(1−C_0) > 0` for `A = a0*a_m`) is *the same* "finite‑β state mistaken for the vacuum." Both no‑gos are **one error**: a KMS/principal‑grading Hamiltonian used as the `β→∞` vacuum generator.
+**First decisive test.** Verify `H_fold` generates Tomita–Takesaki flow of the `(β=8, μ=−δ)` state, and that its `β→∞` limit is the unfolded `dΓ(|B_Σ|)` with unique vacuum (= Route 1). Note this escapes the no‑go's §4 objection, which only excludes bounded `+εP_s` perturbations, **not** the zero‑temperature limit.
+
+### Route 3 — Crystalline cut for 3+1D (lower; honest gap)
+**Operators.** Elser–Sloane cut‑and‑project `P_∥: ℝ⁸(E8) → ℝ⁴` along the **icosahedral/golden eigenspace of the E8 Coxeter element** (already canonical via `2I`, `(2,3,5)` Brieskorn, Poincaré sphere, `φ = 2cos(π/5)`; `origin_theory.tex:216–252`), acceptance window = perp‑projection of the E8 Voronoi cell.
+**First decisive test.** Does the icosahedral cut give exactly **4** non‑compact directions (not 3 or 5), and can a Lorentzian signature arise? **First unavailable step (stated honestly):** Euclidean cut‑and‑project yields a Riemannian 4D quasicrystal; the `3+1` signature / Wick rotation is *not* supplied by the cut. This is where `T3`/`T5` (Lorentz, continuum) genuinely remain open.
+
+---
+
+## (c) Strongest route worked out → new checkable consequence, removed assumption, and the exact missing operation
+
+**Removed assumption (C2).** Using `Tbound` (no `δ`) and the exact facts above, "physical time = folded `H`" is replaced by the **derived** "physical time = unfolded OS generator from `B_Σ`." The folded clock is re‑identified as the principal/Coxeter = grand‑canonical KMS Hamiltonian (Route 2), so it is accounted for, not merely set aside.
+
+**New checkable consequence.** In the product OS dynamics the full physical spectrum is `{spec L0} × {spec of the family transfer}`. Its clustering rates are therefore **exactly the frozen TFPT transfer gaps**, with *no* zero‑energy plateau:
+
+```
+carrier gap  = 1  (lowest E8 current weight; the 128 spinor currents sit here, gapped)
+family gaps  = 6 ln(3/2)   [recovery, v76]   and   6 ln 3   [subdominant, v486]
+```
+
+This is falsifiable structurally: any genuine OS correlation of the derived theory must cluster at these rates; a surviving zero‑energy tail would falsify the product/unfolded picture and vindicate the folded one. It also fixes the hypergraph layer — **the `(2/3)⁶,(1/3)⁶` dynamics lives on the neutral family labels, never on the charged fields**, which is why it is clustering‑safe.
+
+**Exact `v395` repair (necessary, not fundamental).** Two concrete defects, both verified from the script:
+
+1. `_micro_step` discards the network action — the second loop overwrites `out` using the **original** `m`:
+```python
+for k in range(3):   out[:, k] = T_net @ m[:, k]   # network diffusion into out …
+for i in range(9):   out[i, :] = M @ m[i, :]       # … then clobbered by (I⊗M) on m
+```
+Correct chaining (so `vec(step) = kron(T_net, M)·vec(m)` under row‑major `vec`):
+```python
+def _micro_step(m, T_net, M):
+    tmp = np.empty_like(m)
+    for k in range(3):        tmp[:, k] = T_net @ m[:, k]   # (A) network lazy diffusion
+    out = np.empty_like(m)
+    for i in range(m.shape[0]): out[i, :] = M
+
+```python
+def _micro_step(m, T_net, M):
+    tmp = np.empty_like(m)
+    for k in range(3):          tmp[:, k] = T_net @ m[:, k]   # (A) network diffusion
+    out = np.empty_like(m)
+    for i in range(m.shape[0]): out[i, :] = M @ tmp[i, :]     # (B) family rule on DIFFUSED state
+    return out
+```
+And `run()` never calls `_micro_step` — it only iterates `np.kron(T_net, M)`, so the "one local rule" is dead code. Add an actual execution check:
+```python
+probe = rng.random((9, 3))
+check("LOCAL RULE EXECUTES [E]: vec(_micro_step)==kron(T_net,M)·vec",
+      np.allclose(_micro_step(probe, T_net, M).reshape(-1),
+                  T_micro @ probe.reshape(-1), atol=1e-12))
+```
+
+2. The family block is the wrong generator for the *full* cusp. Verified spectra:
+
+```
+v327  M       = [[1,0,0],[0,⅓,⅓],[0,⅓,⅓]]   → {1, ⅔, 0}      → M⁶  = {1,(2/3)⁶, 0}      ✗ no (1/3)⁶
+v486  M_lazy  = [[1,0,0],[0,½,⅙],[0,⅙,½]]    → {1, ⅔, ⅓}      → M_lazy⁶={1,(2/3)⁶,(1/3)⁶} ✓ = spec T_cusp
+```
+
+So `v395`'s check 4 ("v324 EMERGES / same substrate") is only true on `{1,(2/3)⁶}`; the `(1/3)⁶` mode is absent from `M⁶` and present in `T_cusp`, so `T_hand ≠ T_full` as operators. The fix is a one‑line upgrade `_family_M → M_lazy`; then `M_lazy⁶` and `T_cusp` share the full spectrum and are related exactly by the `v317` Galois/cusp basis change — making the claim *true* rather than overstated. **This is housekeeping, not an origin proof** — the seed `P2` and `φ0` stay irreducible inputs (`v486/v487 [O]`).
+
+**Exact first unavailable source operation.** To upgrade Route 1 from proposal to theorem you need the one computation the provided corpus defines but does not carry out: **the explicit boundary spectrum `spec(B_Σ)` and the second‑quantized OS Hamiltonian `dΓ(|B_Σ|)` on the `(E8)_1` seam current net**, together with a proof that it (i) carries no `δ·a0` term and (ii) factorizes carrier `×` family. Everything upstream (`Tbound`, Calderón doubling, `i_C=R_τ`, `S_prim` with the `(iπ/2)Δη_Σ` term, `001-…tex:302–317`) is present; the missing step is diagonalizing it. In parallel, `report.md §9`'s map `Φ_Σ: charged histories → local seam operators` is needed **only for the charged sectors** — in Route 1 those are DHR‑charged intertwiners relative to the even D8 net (`SECTOR-TRANSPORT-CORRECTION §3`), not vacuum observables, so the neutral `Φ_Σ` is supplied by the family factor and the charged one remains the genuine open object.
+
+---
+
+## Proof vs proposal, and what stays open
+
+**Proved (arithmetic / source / code reading):**
+- `δ·p* = −1`, `a`‑independent, from the staircase = `ρ(D8)` part only.
+- `[H_fold, J_{p*,−1}] = 0` but `[L0, J_{p*,−1}] = J_{p*,−1}`: the second zero mode is a folding artifact.
+- `Ls` + unfolded `L0` satisfies C1, C3 (`q/2∈Ls`), C4 — the branch outside the no‑go's two‑member class.
+- `Tbound` contains `B_Σ`, not `δ`; the no‑go scopes C2/C3‑obs as not‑from‑P1.
+- The `v327`/`v486` block spectra and the `v395` `_micro_step`/`_family_M`/`run()` defects.
+
+**Proposal (well‑grounded, needs the missing diagonalization):**
+- Primitive OS `H = dΓ(|B_Σ|)` is the unfolded generator and factorizes carrier `×` family.
+- `H_fold` = `(β=8, μ=−δ)` KMS/principal‑grading Hamiltonian; same phenomenon as the `C_H=(1+e^{2H})^{-1}` thermal‑Cauchy obstruction — both are finite‑β states misread as the vacuum.
+- Clustering rates `{1, 6ln(3/2), 6ln3}` as a structural prediction.
+
+**Still open (not touched by this):** `P2` and `φ0` as inputs; the Lorentzian `3+1` signature (Route 3's Euclidean‑cut gap); chiral SM / mirror decoupling; the explicit charged `Φ_Σ`. The earlier valid results — complete‑source mode closure, exterior‑memory propagation (`GEOMETRIC-SOURCE-RETURN §3`), the 60 native Weyl actions `real(r_a)=s_a s_{Ja}` (`report.md §3`) — stand in their scopes and are consistent with, not erased by, this picture.
+
+**One‑sentence picture:** the elegance did not fail — the clock did; the folded `H` is the *inner gear* (Coxeter/thermal) of the machine, and someone read the gear as the wall‑clock, which created a phantom second vacuum; run the real wall‑clock (the unfolded reflection generator from the double cover) on the same marked `E8` lattice and the phantom is just an ordinary weight‑1 current, the family transfer ticks beside it, and everything clusters.
+
+Primary literature used, all already cited in the sources (no new references invented): Carpi–Kawahigashi–Longo–Weiner, arXiv:1503.01260 (nets↔VOA); Booß‑Bavnbek–Lesch–Zhu, arXiv:0803.4160 (Calderón); Araki, PRIMS (quasifree); Dong–Xu, math/0411499 (lattice nets); Ginoux, *The Dirac Spectrum* (conformal covariance).

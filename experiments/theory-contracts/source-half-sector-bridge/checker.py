@@ -12,11 +12,11 @@ import numpy as np
 ROOT = Path(__file__).resolve().parents[3]
 PINS = {
     "experiments/theory-contracts/microscopic-charged-car-limit/checker.py":
-        "2259bd7d6ab890c8cca562774b1b5cdc574e60fb72a04a8c8c8f6ed8292f113a",
+        "1194dd1e38d6e9bc9849defc6a07d27d68f5ea4981359218773e60054f23564d",
     "experiments/theory-contracts/half-charge-energy-bridge/README.md":
         "bba81e4db69e6b63f2213f8f360ecda7ec26e2de02653be476fc7325638f47fe",
     "verification/v1033_charged_disorder.py":
-        "01c64748c70784b17cf1c61b7bd2b4c51a69c19c4a2274f09028892eab5cb83f",
+        "5053d08ad5448f33f2c6d141f92ed1e06f5dfb9762f92af2bab9816c0ad161b8",
 }
 
 

@@ -1,0 +1,108 @@
+R113STRATEGYTEST20261109
+Stand 9. November 2026. Ausführung von R113STRATEGY20261109 am tatsächlich
+auswertbaren Originalzweig. Die Rechnung verwendet den gegebenen R032
+Einteilchenoperator, die gebundenen S/T Referenzen im reflexionsgeraden
+Chart, den v252 Diagnosesatz und das globale Farbzentrum. Kein frei
+gewähltes Maß über Higgsverläufe. Alle Zahlen gelten für den geladenen
+84er Exteriorblock. Der physische Gesamtübergang bleibt offen.
+
+1. Offener Schnitt und zurückgehaltenes spätes Wort
+
+Ein Impuls p=.25 und Streifenzeit T=.8. Die äußeren Abschnitte sind
+[0,.13] und [.67,.8], der Mittelabschnitt ist [.30,.50]. H=(0,h2).
+In beiden Verläufen ist h2=.43 im Mittelabschnitt. In den beiden äußeren
+Abschnitten ist h2=.43 bzw. .43i. Dazwischen ist H=0. U(t) ist für
+beide Verläufe identisch. Die Relation der Orientierungen ändert sich
+bei unveränderten Verbindungen an den Übergängen. Die Y Marke ist
+in beiden Rechnungen dieselbe Multiplikation des lokalen Yukawateils
+im getrennten späten Fenster [.36,.44] bei eingefrorenem Seeskalar.
+Bei U am frühen Schnitt
+gilt in beiden Verläufen U=.1849.
+
+Direktentwicklung per DOP853 und Verklebung per Matrixexponential an
+vier zusätzlichen Schnitten reproduzieren die offene Matrix bis 1.1e-14.
+Die ganze späte Fensterantwort aus der Frechet-Einfügung ist
+-5.991776093716 bzw. -2.745808986973, durch unabhängig gestörte
+Direktentwicklung bis 5e-10 reproduziert. Werden nur die äußeren
+Feldrahmen per ursprünglicher schwacher Rotation geändert und die
+Anschlussabbildungen mitgeführt, bleibt die Kontraktion bis 2e-12
+gleich. Die gedrehte offene Matrix stimmt bis 1.2e-15 überein.
+
+Die Z3-kontrahierten unmarkierten log-Fermionquotienten A/S mitsamt
+gegebenem Seeskalar sind -7.996945835955 und -8.665643738505.
+Der unmarkierte Fermionquotient A/T ist im selben bedingten Zweig
+innerhalb 3e-14 gleich eins. Die Formel für T hält die übrigen
+Originalfaktoren getrennt. In jeder vorgegebenen Geschichte ist
+U ein Skalar und C_UY verschwindet bis 3e-16. Die Differenz der Y
+Antworten bei gleicher U-Bahn belegt, dass die relative schwache
+Orientierung zum offenen Übergang gehört. Sie misst keine Korrelation
+der gewichtet integrierten physischen Geschichte.
+Quellen: TFPT-R113-DIREKTE-FELDALGEBRA-20261109.txt, R113-ORIGINAL-UND-
+REFERENZ-20261109.txt und die in check_quarter_reference.py verwendete
+unveränderte endliche v252 Algebra.
+
+2. Gemeinsame Radius- und Zeitprofilvariation
+
+Die zwei äußeren Intervalle der Länge .14 und das mittlere Intervall
+[.27,.53] tragen getrennte externe Higgsprofile bei H=0 und T=.8.
+Die tatsächliche Kreisvariation bei fester Holonomie ist
+d_log(r) p = -p. Sie gibt eine -p gamma Generatorinsertion. Der gemischte
+lokale Seescore ist wegen der getrennten Träger null, die festgehaltene
+äußere Referenz hat keine Marken. Im ausgewerteten Zweig variiert Z3
+als Operator nicht, die kontrahierte Spur in seinen Sektoren variiert.
+
+Der unabhängige analytische Zweifensterkern ist
+K(p)=int f(s)k(v) cosh(p*(T-2*abs(s-v)))/(1+cosh(T*p)) ds dv.
+Seine volle gemischte Z3 Logantwort ist
+K(p)[B + alpha*3 Bc s/(1-3s)],
+s=1/(2+2cosh(Tp)), Xi=(1-3s)^36, alpha=2Xi/(1+2Xi).
+B=145.0082345063759 ist das gesamte Übergangsgewicht; Bc ist sein
+farbgeladener Anteil. Ableitung nach log(r) über -p d_p.
+
+p=.25: analytisch .088414184976, Generatorinsertion .088414184912,
+direkte Radiusvariation .088414845175.
+p=5: analytisch 1.837483177794, Generatorinsertion 1.837483164735,
+direkte Radiusvariation 1.837483509655. Der darin enthaltene Z3 Beitrag
+zur Radiusantwort ist .004338894313; er wurde nicht weggelassen.
+Dies ist ein echter Tangentialscore des festen Originalcharts mit
+zwei externen Profilen. Keine allgemeine metrische Variation, keine
+Stress-Spin-2 Identifikation und kein physisches UY in dieser Rechnung.
+Quellen: QUARTER-REFERENCE-METRIC-20261109.txt und TFPT-VOGELPERSPEKTIVE-
+ZEITPROFILE-20261109.txt.
+
+3. Räumliche Grenzprobe an denselben Vakuumübergängen
+
+Für jede endliche Vierteldomäne zuerst T gegen unendlich nehmen,
+H=0, im selben geladenen Zweig. Die Fockgrundbelegung füllt gamma=-1.
+Der Code prüft ihre Z3 Neutralität und [Y,Z3]=0. Y koppelt ausschließlich
+zwischen den beiden Gradierungen. Die von Y aus dem Grundzustand
+erreichbaren Teilchen-Loch Übergänge haben Energie 2p und sind neutral.
+Z3 lässt ihre positive Spektralmasse daher exakt unverändert.
+
+In der archivierten Zählung je Vierteldomäne ist p_n=(2n+1)/(4r).
+Für das räumlich konstante diagonale Y-Wort ist die Vakuummasse pro r
+mu_r=(B/r) sum_(n>=0) delta_((n+1/2)/r). Auf endlichen Energiebändern
+konvergiert sie gegen B dE. Die Schwelle ist linear, nicht
+superlinear. Für d>0 ist der zeitgeordnete Kern
+B/[2r sinh(d/(2r))] -> B/d. Mit Mittelung über [.05,.09] und [.29,.37]
+ist der Grenzwert 563.346182241 pro r, bei r=4096 der Wert 563.346182147.
+Dagegen ist int_(0,1] E^(-1)dmu_r =
+B sum_(n+1/2<=r) 1/(n+1/2) = B log r + O(1). Die numerische letzte
+Logsteigung ist 145.008230610. Es ist die statische Spektralsumme
+eines festen Operators mit eingefrorenem Skalar. Sie ist keine
+statische Variation einer bewegten Seesubtraktion und nicht der
+negative künstliche Logarithmus des polaren Zweipulsscores.
+Die Rechnung prüft weder die räumlich lokal getragenen Marken noch den
+ganzen 3+1D Grenzwert. Ein gleichmäßig beschränkter Fenstertest reicht
+auch an dieser Originalfaser nicht für eine statische Aussage.
+
+Anschluss. Aus dem ursprünglichen bosonischen Endpunktkern oder einem
+identifizierten physischen Caller die beiden dynamischen Marken, das
+unmarkierte Referenzgewicht und die vollständige Projektion gemeinsam
+auswerten. Relative Higgsorientierung samt Eichtransport, geometrische
+Einsetzung und getrennte Spektraltests dabei erhalten. Physische
+Z0, F(0), C_UY und die volle physische IR Aussage bleiben offen.
+
+Reproduktion im TFPT Repository mit PYTHONPATH=verification,
+VECLIB_MAXIMUM_THREADS=1 und OPENBLAS_NUM_THREADS=1:
+python3 -B experiments/theory-contracts/chat-triangulation-20261108/check_source_strategies_execution_20261109.py

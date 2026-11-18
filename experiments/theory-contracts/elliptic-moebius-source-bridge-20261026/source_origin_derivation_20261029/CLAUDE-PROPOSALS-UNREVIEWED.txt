@@ -1,0 +1,285 @@
+UNREVIEWED CLAUDE RESEARCH PROPOSALS. These contain rejected inferences.
+Do not use them as proved source input. See PROOF.txt for review and exclusions.
+
+
+PROPOSAL claude-response.json
+## 0. Precise statement of the target object
+
+Fix notation so every route aims at the *same* arrow. Let $\mathfrak A_E(\mathcal O)$ be the Euclidean source algebra (Def. physical-admissible-local-net), $\mathfrak A_{\mathrm{adm}}(\mathcal O)$ the reconstructed admissible net, $H$ the collar Hamiltonian, $J_\Theta$ the reflection, $\rho_{P2}$ the five‑slot carrier action, $W=e^{2\pi i H}=i^{N_+-N_-}$ the quarter transport (PROOF.txt §8). The "original local source" is a single map
+
+$$
+\Phi:\mathfrak A_E(\mathcal O)\longrightarrow \mathfrak A_{\mathrm{adm}}(\mathcal O)
+$$
+
+required to satisfy, simultaneously,
+
+- **(P)** $\Phi(ab)=\Phi(a)\Phi(b),\ \Phi(a^\ast)=\Phi(a)^\ast$ (products/adjoints);
+- **(Ph)** $\Phi\circ W=\mathrm{Ad}(e^{2\pi iH})\circ\Phi$ (determinant‑line phase, the $i\pi/2\,\Delta\eta_\Sigma$ term);
+- **(S)** $\operatorname{supp}\Phi(\text{field})\subset\bigcup_{k=1}^8 \mathrm{arc}_k$;
+- **(C)** $\Phi\circ\rho_{P2}=\mathrm{Ad}(u_{P2})\circ\Phi$ (charge/P2 covariance);
+- **(Ω)** $\Phi_\ast\,\omega=\langle\Omega_{\mathrm{adm}},(\cdot)\,\Omega_{\mathrm{adm}}\rangle$ (normalized joint state);
+- **(T)** $\Phi\circ\Theta=\mathrm{Ad}(J_\Theta)\circ\Phi$ with $J_\Theta:(t,s)\mapsto(-t,s)$ (actual reflection/time).
+
+The recovered results already pin down fragments: $\Gamma(R)=\bigoplus_n\Lambda^n R$ fixes the *ray* but not the pairing; faithful $\rho$ gives RP heat‑word histories but not $\rho$ from P1; positive spectral weight alone need not preserve RP. So the open content is: produce a $\Phi$ meeting **(P)–(T)** *without* stipulating $\omega$'s higher moments or a Gaussian axiom.
+
+---
+
+## 1. Three genuinely different derivation routes
+
+### Route A — Inner‑fluctuation / spectral‑action variational route (bosonic/current sector)
+
+First equations. Promote the primitive action to a source‑dressed action by Connes inner fluctuation of $D_{\mathrm{rel}}$:
+
+$$
+S_{\mathrm{prim}}[\mathcal J]=\operatorname{tr}f\!\Big(\tfrac{D_{\mathrm{rel}}+A(\mathcal J)}{\chiseed}\Big)-\operatorname{tr}f\!\Big(\tfrac{D_{\mathrm{ref}}}{\chiseed}\Big)+\tfrac{i\pi}{2}\Delta\eta_\Sigma,\qquad
+A(\mathcal J)=\sum_a J_a\,[D_{\mathrm{rel}},b_a]+J\!A\!J^{-1}.
+$$
+
+Then $W_{\mathrm{rel}}=\log Z_{\mathrm{rel}}=-S_{\mathrm{prim}}$ on shell and
+
+$$
+S_2^T(x,y)=\frac1{\chiseed^2}\operatorname{tr}\!\big[f''(D/\chi)\,\{A'_x,A'_y\}\big],\qquad
+S_4^T=\delta^4 W_{\mathrm{rel}}/\delta\mathcal J^4\big|_0 .
+$$
+
+The source map is $\Phi_A(J_a)=\delta/\delta J_a$ realized as the one‑form $[D,b_a]$.
+
+Smallest decisive test. Compute the *fourth* heat‑kernel variation $S_4^T$ and check it against the connected four‑point demanded by ELLIPTIC‑CURRENT §9: if $S_4^T$ from $\operatorname{tr}f$ equals the Wick product of $S_2^T$, the source is free; any $f$‑dependent non‑Wick remainder is the genuinely new interacting kernel. One scalar invariant — the amputated connected $S_4^T$ at a single symmetric configuration — decides it. This is the route that can *fail cheaply*: a non‑vanishing $f$‑dependent remainder would contradict the "existing Gaussian premise."
+
+### Route B — GNS / half‑sided‑modular (Tomita–Takesaki) route (the one I think is correct)
+
+First equations. From the operational seed take $M:=\pi_\omega(\mathfrak A_+)''$, $\Omega:=\Omega_\omega$; $\omega$ faithful $\Rightarrow\Omega$ separating, GNS over $\mathfrak A_+\Rightarrow\Omega$ cyclic. Tomita yields $S=J\Delta^{1/2}$. The collar generator gives a one‑parameter translation $U(s)=e^{isP}$, $P=H\ge0$ (exactly the PROOF.txt operator $Q_l=e^{-lH}$, $H\ge0$, trace class). Define
+
+$$
+\Phi_B(a)=\pi_\omega(a)\big|_{\mathcal H_{\mathrm{adm}}},\qquad \mathcal H_{\mathrm{adm}}=\operatorname{Ran}\Padm .
+$$
+
+Smallest decisive test. Verify the *half‑sided modular* inclusion $N:=U(1)MU(-1)\subset M$ with
+
+$$
+\boxed{\ \Delta^{it}\,N\,\Delta^{-it}\subset N\quad (t\le0),\qquad \Delta^{it}U(s)\Delta^{-it}=U(e^{-2\pi t}s).\ }\tag{$\star$}
+$$
+
+If $(\star)$ holds, Borchers/Wiesbrock promote $\Phi_B$ to a *local net* map with $J=J_\Theta$ the geometric $(t,s)\mapsto(-t,s)$ reflection (matching the recovered Schottky reflection). The single decisive check is the operator identity $(\star)$ at one value $t,s$.
+
+### Route C — Sewing / boundary‑CFT route (chiral $\alpha=1/4$ + W8)
+
+First equations. Use the exact chiral data: $D_\alpha=-i\partial_\theta$, $f(\theta+2\pi)=e^{2\pi i\alpha}f(\theta)$, $\alpha=\tfrac14$, $q=e^{-l}$,
+
+$$
+\operatorname{Tr}R^p=\frac{q^{p\alpha}+q^{p(1-\alpha)}}{1-q^p},\qquad Z_p=\det(I+R^p),\qquad W=e^{2\pi iH}\ \text{acts as }i\ (=e^{2\pi i\alpha}).
+$$
+
+The source insertion is the arc‑endpoint primary with monodromy $e^{2\pi i\alpha}=i$; the eight arcs carry the eight boundary‑condition‑changing operators, $\Phi_C$ sews the collar annulus $|B_\Sigma\rangle$ with the 17‑term W8 neutral completion (BILOCAL §6).
+
+Smallest decisive test. Crossing (sewing) consistency of the four‑arc amplitude: whether the $s$‑ and $t$‑channel factorizations of the fermion four‑point agree. This equals, verbatim, the "connected fermion four‑point" discriminant of ELLIPTIC §9, now phrased as modular/crossing covariance rather than a Wick identity.
+
+Routes A, B, C are mechanistically independent (variational heat‑kernel; operator‑algebraic modular; 2D sewing). They *converge* only at one scalar invariant: the connected four‑point.
+
+---
+
+## 2. Attempted proof of the best missing step (Route B), with indispensable assumptions
+
+**Proposition (conditional reconstruction).** Let $\mathfrak S=(\mathfrak A_{\mathrm{loc}},\tau_t,\Theta,\omega,[u_\Sigma],\mathcal D_{\mathrm{coll}})$ satisfy Def. operational‑seed (i)–(iv) with $\omega$ *faithful*. Then:
+
+1. (OS/transfer — unconditional) RP + clustering + the reflection‑regular positive‑side collar give a contraction semigroup $e^{-lH}$ with $H\ge0$ self‑adjoint, cyclic separating $\Omega$. *Proof:* standard OS reconstruction on the positive‑time net; the explicit realization is PROOF.txt §8 ($H|S\rangle=E(S)|S\rangle$, $E(S)=\sum\varepsilon_{\sigma,n}$, $\sum_S E(S)^2|\psi_S|^2<\infty$ a core, $Q_l=e^{-lH}$ trace class with tail bound $\|Q_l-Q_{l,N}\|=q^{N+1+\min(\alpha,1-\alpha)}$). This step is rigorous and already certified in the excerpt.
+
+2. (Net/locality — conditional on $(\star)$) If the collar inclusion is half‑sided modular, i.e. $(\star)$ holds, then by Wiesbrock's theorem $(M,U,\Omega)$ generate a positive‑energy representation of the $ax+b$ group, $J=J_\Theta$ implements $(t,s)\mapsto(-t,s)$, and the family $\mathcal A(I)=U(s)MU(-s)'\cap M$ is a **local net with Haag duality**. Then $\Phi_B(a)=\pi_\omega(a)|_{\mathcal H_{\mathrm{adm}}}$ satisfies **(P)** (homomorphism, automatic), **(Ω)** (GNS), **(T)** ($J=J_\Theta$), and **(S)**/**(C)** because the eight boundary intervals are exactly the eight arcs and $\rho_{P2}$ acts as an *inner* gauge automorphism commuting with $U$ and $\Delta$ (DHR‑covariant global symmetry). **(Ph)** holds because $W=e^{2\pi iH}=U_{-2\pi}$ lies in the reconstructed group.
+
+**Indispensable extra assumptions, named exactly.**
+
+- **(A1) $\omega$ faithful.** Needed for Tomita; given by (ii) on the admissible algebra. *Already present.*
+- **(A2) The modular/Bisognano–Wichmann relation $(\star)$.** This is *not* derivable from RP + clustering. It is the precise content of "positive spectral weight alone need not preserve RP" (recovered results): a positive two‑point determines $e^{-lH}$ but not that $\Delta^{it}$ *dilates the collar coordinate*. Physically $(\star)$ is the assertion that $\Theta$ **is** the modular conjugation, i.e. KMS/geometric modular action of the collar. Without it one gets a Hilbert space + Hamiltonian but **no locality**, hence no $\Phi$ of nets. I claim $(\star)$ is the single indispensable geometric input; (ii)–(iv) do not imply it.
+- **(A3) Graded‑locality compatibility of $\Theta$ with the carrier grading.** The reconstructed net is Fermi; one needs $\Theta$ to intertwine the $\mathbb Z_2$ grading with the twist (the $e^{2\pi i\alpha}$ monodromy, $\alpha=1/4$). This is what makes **(C)** and the eight‑arc **(S)** consistent rather than merely formal.
+
+**What the proof does *not* close (the residual four‑point).** Even with (A1)–(A3), the reconstructed *neutral* net is pinned: a current two‑point + Haag duality forces the unique $\widehat{u}(1)$ current net (Buchholz–Mack–Todorov uniqueness), so the neutral W8 observables are free‑determined — consistent with BILOCAL §6 ("reused, not newly selected"). The genuinely undetermined object is the **charged $\alpha=1/4$ (soliton/DHR) sector and its braiding**: the fermion fields $\eta$ carry monodromy charge $e^{2\pi i\alpha}=i$ and live in a non‑local superselection sector *not* fixed by the vacuum two‑point. Their connected four‑point $=$ the ELLIPTIC §9 discriminant $=$ the monodromy/fusion data of the quarter sector. So **(P)–(T) are satisfied on the neutral net but the charged $\Phi$ needs one more datum** (Part 4).
+
+---
+
+## 3. Can an automated prover be made sound and meaningfully more complete?
+
+Yes, as a **bridge‑checker**, not an oracle or a fitter. Concretely:
+
+**Formalize (trusted lemmas, proved once, not enumerated):**
+- OS reconstruction (RP+clustering $\Rightarrow$ $H\ge0$, $\Omega$ cyclic/separating).
+- Borchers/Wiesbrock: $(\star)\Rightarrow$ local net with Haag duality and $J=J_\Theta$.
+- $\Gamma(R)=\bigoplus_n\Lambda^n R$ second quantization (already a recovered result).
+- Buchholz–Mack–Todorov uniqueness of the neutral current net.
+
+**Enumerate (finite, decidable per candidate):**
+- carrier structure constants (the 17‑term W8 coefficients),
+- arc self‑adjoint‑extension phases $\{\alpha_k\}$ (the $U(1)$ twists, here $\alpha=1/4$),
+- candidate modular Hamiltonians *within* the spectral‑action family $\operatorname{tr}f(D_{\mathrm{rel}}/\chi)$,
+- DHR fusion/braiding data of the charged sectors (finite tensor category skeleton).
+
+**Avoid circular sources (the hard rule).** The only admissible *inputs* are the P1 primitives $(c_3=\tfrac1{8\pi},\ \alpha=\tfrac14,\ [u_\Sigma],\ l,\ \text{carrier grading})$. Target moments, Wick values, free couplings, a chosen state $\omega$, or a Hamiltonian **may not be entered**; the two‑point itself must be *derived* from $\operatorname{tr}f(D_{\mathrm{rel}}/\chi)$ and then *all* higher moments must come out of certified positivity + $(\star)$, never stipulated. This is exactly what blocks the "software recovery" collapse noted in AUTOMATION NOW: the GNS completion that "fixes all 16 entries" used the supplied Gram $A=G^{\mathsf T}$ as input — forbidden here.
+
+**Full certificate = quintuple:**
+1. derived two‑point from the spectral action (symbolic);
+2. a PSD Gram certificate (SOS) for RP of **all** words up to OPE‑closure degree — not just quadratic (this is the step that would have caught the "positive weight ⇏ RP" failure);
+3. a verified operator identity $(\star)$ at generating $t,s$ (symbolic/interval‑arithmetic), with explicit tail bounds $\le q^{N+\cdots}$ for the cutoff (template already in PROOF.txt §8);
+4. vanishing locality commutators on the eight disjoint arcs;
+5. $\rho_{P2}$‑covariance $\Phi\rho_{P2}=\mathrm{Ad}(u_{P2})\Phi$.
+
+**Soundness/completeness verdict.** Sound: every accepted quintuple *is* a verified $\Phi$ meeting **(P)–(T)**. Meaningfully *more* complete: the open problem is reduced from an infinite‑dimensional search to the **finite OPE/braiding parameter** plus the four trusted lemmas, so completeness is attainable *relative to that finite datum*. It is **not** complete over the continuum, and multiple certificates can coexist (Part 4). No genetic fitting, no orchestration harness: the prover's job is to *refuse* any run that injects moments and to emit the quintuple or a counterexample to one of its five clauses.
+
+---
+
+## 4. Underdetermination test and the narrowest missing definition
+
+**Rigorous original‑scope underdetermination test.** Build two seeds $\mathfrak S,\mathfrak S'$ sharing *identical* $(\text{two-point of }\mathfrak A_{\mathrm{loc}},\ \Theta,\ \text{collar},\ [u_\Sigma])$ and both satisfying (i)–(iv)+$(\star)$, hence the *same* HSMI neutral net and the *same* $S_2^T$, but with **different connected $S_4^T$**. A concrete admissible pair in the chiral sector: the free CAR current net versus a current–current (Thirring‑type) deformation that preserves the $\widehat u(1)$ current two‑point while shifting the charged‑field anomalous dimension — equivalently, two DHR charged sectors with the same vacuum two‑point but different monodromy of the $\alpha=1/4$ field. If both pass clauses 1–5 of the certificate, then **P1 as stated is underdetermined precisely at the connected four‑point**, and the distinguishing invariant is the scheme‑independent amputated $S_4^T$.
+
+Candid scope: this is underdetermination of the *four‑point/charged sector only*; both members share the P1 two‑point and the neutral net. It is **not** a P1/P2 countermodel — both are full RP local nets, and the toy chiral realization is not a substitute for the marked equatorial P1 carrier (ELLIPTIC §9 caveat).
+
+**Narrowest missing mathematical definition.** One datum removes the underdetermination:
+
+$$
+\boxed{\ \text{the arc‑endpoint OPE / monodromy constant }C_{rs}^{\,t}:\quad \eta_r^\ast(x)\,\eta_s(y)\ \xrightarrow{x\to y}\ \sum_t C_{rs}^{\,t}\,\mathcal O_t,\quad \text{with }\alpha=\tfrac14\ \text{monodromy }e^{2\pi i\alpha}=i.\ }
+$$
+
+Equivalently: the self‑adjoint boundary extension at the eight arc endpoints $+$ the braiding of the quarter‑charge DHR sector, together with the **determinant‑line section** that carries the $\tfrac{i\pi}{2}\Delta\eta_\Sigma$ phase (the "unnormalized source data" that the normalized state discards, PROOF.txt §8). This finite set is exactly what the neutral two‑point + $(\star)$ provably *cannot* fix, and exactly what the automated certificate of Part 3 must enumerate rather than import.
+
+---
+
+## Actionable next derivation
+
+Attack **(A2)** directly in the chiral model, where everything is explicit: with $H$ spectrum $\{n+\alpha,\ n+1-\alpha\}$ and $Q_l=e^{-lH}$ (PROOF.txt §8), *compute the Tomita $\Delta$ of $(M,\Omega)$ for the two‑face doubled CAR representation and test the dilation relation $\Delta^{it}U(s)\Delta^{-it}=U(e^{-2\pi t}s)$ at $\alpha=1/4$.* This is a finite, falsifiable operator computation. If $(\star)$ holds there, Route B upgrades to a proof of the neutral local source; the only remaining object is then the single OPE/braiding constant $C^{\,t}_{rs}$, which Routes A and C independently constrain (heat‑kernel fourth variation; crossing of the four‑arc amplitude). If $(\star)$ fails at $\alpha=1/4$, then $\Theta\neq$ modular conjugation and the P1 reflection is strictly stronger than RP — itself a decisive, publishable negative result scoped exactly to the supplied data.
+
+PROPOSAL claude-followup-response.json
+## 1. What K_Φ actually is — correcting the earlier route
+
+First, the corrections stand and they change the object itself.
+
+- **K_Φ is not a Hessian of the bosonic spectral action.** The primitive action in lines 302–311 is a function of an *operator*, `S_prim = Tr f(D_rel/χ) − Tr f(D_ref/χ) + (iπ/2)Δη_Σ`. It contains **no odd field ψ**. Its second variation along *bosonic* operator directions V,W is governed by divided differences, `Tr f[1](D)(V·f[1]…)`, not by `Tr f''(D){V,W}`; and inner fluctuations `A=Σ aᵢ[D,bᵢ]` are **bosonic**. So nothing in `Tr f` differentiates with respect to `ψ̄, ψ`. The fermion Hessian cannot be extracted from the spectral trace. That was the fatal step in Route A.
+
+- **Where the odd field actually lives.** The only place odd variables appear is the generating functional (lines 144–160): `W_rel[J,η,η̄]=log Z_rel`, with `η,η̄` odd and `S_n^T = δⁿW_rel/δ𝒥⋯|₀`. This *confirms* odd fields `ψ,ψ̄` exist in the theory, and `W=log Z` is the connected generating functional — **not** the on‑shell `−S`. So:
+
+  **K_Φ = δ²S_adm/(δψ̄ δψ) can only be the kernel of a fermionic bilinear term in S_adm**, i.e. the Dirac form `⟨ψ̄, K_Φ ψ⟩`, with `K_Φ = Π_adm D_A Π_adm` (D_A the fluctuated relative operator restricted to the admissible sector per def. 319–342). At the quadratic/tree level this Hessian is exact because the primitive fermion action is bilinear; the *connected* two‑point `δ²W/δη̄δη` is then `⟨K_Φ⁻¹⟩_A`.
+
+This is the honest reorganization: the first arrow is **not** `Tr f'' → K_Φ`. It is *“does S_adm contain the bilinear `⟨ψ̄ K_Φ ψ⟩`, and with which K_Φ and which Berezin law?”*
+
+## 2. Does the excerpt specify enough? — the exact remaining definition
+
+**No — and the gap is narrow and nameable.** The excerpts fix:
+
+- the bosonic operator action `S_prim` (two relative traces + η‑phase),
+- the *existence* of odd sources `η,η̄` and `W=log Z_rel`, with Schwinger functions as its derivatives,
+- the admissible net by **restriction** (not compression) to `Ran(Π_adm)`,
+- RP + clustering ω (explicitly **not** faithfulness), Θ, seam class, collar.
+
+They do **not** fix the three things needed to close `S_prim → S_adm[ψ,ψ̄] → K_Φ`:
+
+1. **The fermionic action bilinear** — the coupling of `ψ` to `D_rel` (the term `⟨Jψ, D_A ψ⟩`). It is nowhere written.
+2. **The odd‑field (Berezin) measure and its reality constraint** — determinant vs **Pfaffian**, and the real structure J used to form the bilinear. This is exactly the “derive that actual measure and insertion map” flagged in ELLIPTIC‑CURRENT‑SOURCE.txt line 159, and the warning that “the relative spectral action is not automatically the Weyl functional.”
+3. **The bosonic admissible measure** `dμ_adm(A)` and how the bosonic source `J` couples to `A`.
+
+So the **narrowest missing mathematical definition** is:
+
+> the odd‑field density `S_ferm[ψ,ψ̄;A] = ½⟨Jψ, D_A ψ⟩_adm` together with the Berezin measure `Dψ` and its charge‑conjugation reality (Pfaffian or determinant), plus the source coupling `⟨η̄,ψ⟩+⟨ψ̄,η⟩`.
+
+This is **underdetermination, not a no‑go.** For any P1 model that adopts the Connes–Chamseddine fermionic convention, item (1) is canonical and `K_Φ` follows immediately. The excerpt simply does not pin the convention, so distinct quantization laws remain compatible with the abstract definition `W=log Z_rel` — see §6.
+
+## 3. The full Schwinger–Dyson source identity (conditional on §2)
+
+Once the one undischarged input (the fermion bilinear + measure) is supplied, **every moment is internal**, no oracle. Write `ψ,ψ̄ ∈ Ran(Π_adm)`, bosonic fluctuation `A`, sources `J,η,η̄`:
+
+```
+S_adm[A,ψ,ψ̄] = { Tr f(D_A/χ) − Tr f(D_ref/χ) } + (iπ/2) Δη_Σ[D_A] + ⟨ψ̄, K_Φ[A] ψ⟩,
+      K_Φ[A] := Π_adm D_A Π_adm ,   D_A = D_rel + A + ε' J A J⁻¹ .
+```
+
+The only ψ‑dependence is the bilinear, hence **exactly**
+
+```
+K_Φ(x,y) = δ²S_adm / δψ̄(x) δψ(y) = (Π_adm D_A Π_adm)(x,y).
+```
+
+Generating functional and Berezin step:
+
+```
+Z_rel[J,η,η̄] = ∫ dμ_adm(A) ∫ Dψ̄Dψ  exp( −S_adm + ⟨J,A⟩ + ⟨η̄,ψ⟩ + ⟨ψ̄,η⟩ )
+            = ∫ dμ_adm(A)  𝒩[K_Φ[A]] · exp( S_bos[A] + ⟨η̄, K_Φ[A]⁻¹ η⟩ ),
+```
+
+where `𝒩 = det K_Φ` or `Pf K_Φ` — this factor is precisely the ambiguity of §2(2).
+
+**Schwinger–Dyson identity** (Berezin translation invariance `δ/δψ̄(x)`):
+
+```
+0 = ∫ δ/δψ̄(x)[ e^{−S_adm+sources} ]  ⟹  ⟨ δS_adm/δψ̄(x) ⟩_J = η(x)
+                                      ⟹  ⟨ (K_Φ[A] ψ)(x) ⟩_J = η(x).
+```
+
+Promoting field insertions to source derivatives (A‑dependence through `δ/δJ`):
+
+```
+K_Φ[ δ/δJ ](x,·)  δW_rel/δη̄(·)  =  η(x)  −  (connected A–ψ vertices),      (SD)
+```
+
+and the full tower is generated by repeated `δ/δη, δ/δJ`:
+
+```
+S₂^T(x,y) = δ²W_rel/δη̄(x)δη(y)|₀ = ⟨ K_Φ[A]⁻¹(x,y) ⟩_A          (propagator)
+S_{n}^T   = (products of K_Φ⁻¹ with vertices ⟨ψ̄ A ψ⟩, averaged with dμ_adm). 
+```
+
+Because the primitive fermion action is **bilinear** in ψ, there are *no* intrinsic fermion self‑interactions; the only allowed fermionic interactions are the gauge/Yukawa vertices `⟨ψ̄, A ψ⟩` already inside `D_A`. Support is the eight arcs (the bilinear is supported where `D_rel` and `Π_adm` are), Θ‑reflection is inherited because `K_Φ` is built from the Θ‑covariant `D_rel`, and normalization is `W_rel(0)=log Z_rel(0)`. **This is a complete internal moment generator — contingent on exactly one input, the Berezin law/measure.** No target Wick value, coupling, or state is inserted.
+
+## 4. One source‑grounded next proof attempt: the η‑phase *selects* the measure
+
+The innovation is to use the term already present in `S_prim` that is usually treated as mere anomaly bookkeeping — `(iπ/2)Δη_Σ` — as the object that **removes** the Berezin ambiguity, instead of introducing a new toy action.
+
+**Claim.** For a real (self‑dual) bilinear `Q(ψ)=½⟨Jψ, D_rel ψ⟩`, Berezin integration yields a **Pfaffian**, whose phase is the APS spectral asymmetry:
+
+```
+log Pf(D_rel) = ½ log det(D_rel) = ½[ log|det D_rel| + iπ · η(D_rel) ].
+```
+
+Matching the imaginary part to the phase already in `S_prim`:
+
+```
+(iπ/2) Δη_Σ   ⟺   ½ iπ [ η(D_rel) − η(D_ref) ]      ⟹   Δη_Σ = η(D_rel) − η(D_ref).
+```
+
+Because the *same* operators `D_rel, D_ref` appear in the two trace terms **and** (by this match) in the Pfaffian phase, internal consistency forces the fermion kernel to be `K_Φ = Π_adm D_rel Π_adm` and the measure to be the **Pfaffian/real‑structure** one. This supplies §2(1)–(2) from data already in `S_prim`, not from an added ansatz.
+
+**Smallest decisive test (fully computable on the declared quarter source).** From PROOF.txt lines 201–204, `D_α=−i∂_θ` with `f(θ+2π)=e^{2πiα}f(θ)` has single‑particle spectrum `{n+α : n∈ℤ}`. The eta invariant is
+
+```
+η(s) = Σ_{n≥0}(n+α)^{−s} − Σ_{n≥1}(n−α)^{−s} = ζ_H(s,α) − ζ_H(s,1−α),
+η(0) = (½−α) − (½−(1−α)) = 1 − 2α.
+```
+
+For the declared `α = 1/4`:  **η(D_{1/4}) = 1/2**. Against the self‑conjugate reference `α=1/2` (η=0): **Δη_Σ = 1/2**, predicting the primitive phase
+
+```
+(iπ/2)·(1/2) = iπ/4 .
+```
+
+This is a single number. **If the independently declared `Δη_Σ` of the quarter P1 construction equals 1/2 (coherently, the quarter signature `2·¼`, and the `iπ/4` phase sitting beside `c₃=1/(8π)` and unit winding), the Pfaffian/real‑structure quantization law is confirmed internally and K_Φ is derived. If `Δη_Σ ≠ 1/2`, the measure is genuinely a different one and remains underdetermined.** Either outcome is decisive and uses no inserted moment.
+
+This proof attempt is correctly scoped: it does **not** claim a dilation/modular identity (correction #3 — a gapped `H` with isolated gap 1/4 cannot satisfy `Δ^{it}HΔ^{-it}=e^{−2πt}H`; and for the thermal standard form `Δ=L_ρR_ρ^{-1}` commutes with the left `H`, so no scaling occurs). It also does **not** claim the quarter holonomy is DHR charge/braiding, nor that one OPE constant carries all residual physics (correction #4). It only fixes the fermion bilinear.
+
+## 5. Completeness conditions for automated proof search
+
+Stated precisely, relative to an *explicitly formalized* axiom set `𝒜`:
+
+- **Soundness** is attainable and non‑negotiable: every output is a machine‑checkable derivation term in `𝒜` (operator/CAR word identities, divided‑difference expansions, Berezin/Pfaffian expansions, OS/Tomita–Takesaki/APS lemmas invoked as certified axioms).
+- **Relative completeness is bounded by the logical strength of `𝒜`.** If `𝒜` is first‑order, `𝒜⊢φ` is *semidecidable* (Gödel): a fair enumeration finds any proof but need not halt. The actual target lives over ℝ, operator theory and Berezin integration — a higher‑order theory whose truths are **not recursively enumerable**. Therefore **there is no universal guaranteed solver**, and I do not promise one.
+- **What must be formalized** (so that the problem becomes r.e. *conditionally* on these): the spectral triple `(𝔄,ℋ,D,J,Γ)`; `Π_adm` and the net axioms (def. 319–342); the **odd‑field measure** as a formal object with its reality constraint (the §2(2) datum); APS eta↔Pfaffian phase as a lemma; OS/RP axioms. The fermion bilinear is then *derivable* via the §4 match rather than assumed.
+- **What can be enumerated** (decidable fragments where CEGIS/symbolic search already works): finite CAR word identities, Hessian divided‑difference symbols, Wick/Pfaffian contractions, Hurwitz‑zeta eta evaluations. The §4 test (`η(0)=1−2α`) sits entirely here.
+- **Avoiding circular sources:** the invariant discipline — **no** target moment, Wick value, coupling, state, or Hamiltonian may enter `𝒜`. A certificate is rejected unless every `S_n^T` traces to `δ^nW_rel` of a `Z_rel` whose integrand is itself derived (from `S_prim` + measure), never posited.
+- **A full certificate** is a proof term that (i) builds `S_adm` from `S_prim` via the η/Pfaffian match (§4), (ii) derives (SD) by Berezin invariance, (iii) shows each `S_n^T` equals the SD‑generated derivative, (iv) verifies support/Θ/normalization/RP are preserved. Everything is complete **modulo the single formal input** of §2 — which is why the search is *relatively* complete, not absolutely.
+
+## 6. The rigorous underdetermination test (narrow, not a P1/P2 countermodel)
+
+The abstract definition `W=log Z_rel[J,η,η̄]` with `S_n=δ^nW/δ𝒥` does **not** by itself fix `𝒩=det` vs `𝒩=Pf`, nor the real structure J. Exhibit two Berezin laws on the *same* `Π_adm`‑sector bilinear:
+
+- `𝒩=det K_Φ`, complex (Dirac) measure → `S₂^T = ⟨K_Φ⁻¹⟩`, phase from `arg det`;
+- `𝒩=Pf K_Φ`, real (Majorana) measure → `S₂^T` paired via J, phase `½π η(D_rel)`.
+
+Both satisfy the stated axioms (RP, clustering, def. 144–160), yet give **different** two‑point phase/pairing. That is a genuine underdetermination *at the level of the excerpt* — and it is strictly a statement about the odd‑field measure, **not** a P1/P2 countermodel (the bosonic sector, seam, carrier are untouched). The §4 η‑phase match is precisely the extra, source‑internal constraint that collapses these two to one; the quarter test `Δη_Σ =? 1/2` decides whether that collapse is the one P1 actually realizes.
+
+---
+
+**Bottom line.** The missing first arrow is not `Tr f'' → K_Φ`; it is the fermion bilinear `⟨ψ̄,K_Φ ψ⟩` with `K_Φ=Π_adm D_A Π_adm`, plus its Berezin measure. The excerpt supplies the operator action, the odd sources, and `W=log Z`, but **not** the measure — that single definition is the entire remaining gap. The nonspeculative way to supply it from the given data is the **η‑invariant = Pfaffian‑phase identification** (§4), whose decisive, already‑computable check on the declared α=1/4 source is `η(0)=1−2α=1/2 ⟹ Δη_Σ=1/2, phase iπ/4`. If that matches the declared primitive phase, the SD tower of §3 derives all moments internally; if not, the measure is formally independent and must be added as the one named axiom — with automated search complete only relative to that addition, never universally.

@@ -1,0 +1,344 @@
+INDEPENDENT REVIEW: MICROSCOPIC QWZ TO OCTIC COMPOSITION
+========================================================
+
+DISPOSITION AFTER REPAIR, 25 October 2026:
+The review below is retained as the initial draft review. Its ultraviolet
+objection led to SMEARED-OCTIC-ENERGY-BOUND.txt, which now proves the strong
+smeared limit and its adjoint by the global mode route and the separately
+mollified local route, in their stated iterated orders. The same reviewer
+checked the repair, the full source-energy/charge bound, the E-independent
+CAR approximants and the common-Wick-counterterm condition. Section4 of
+MICROSCOPIC-TO-OCTIC-COMPOSITION.txt and its P1 citation were corrected.
+The remaining P1 local source/collar identification is still open. Read the
+repaired proof for current status; the following PARTIAL verdict records
+the earlier draft rather than an outstanding ultraviolet objection.
+
+25 October 2026. Read only review of
+MICROSCOPIC-TO-OCTIC-COMPOSITION.txt and its registered sources.
+No Atlas, index, ledger or source contract was changed.
+
+Verdict
+-------
+
+PARTIAL.
+
+The QWZ-to-smeared-CAR theorem, the orientation change from the positive
+alpha=3/4 sea to the negative alpha=1/4 sea, and the finite energy-64 Ward
+matrix element compose correctly. These statements concern fixed smooth
+elementary CAR smearings or a fixed finite set of oscillator modes.
+
+Section 4 does not yet prove the stronger statement in the opening verdict
+that the local neutral F8 field and its adjoint are strong microscopic
+operator limits. A nonzero point separation does not turn point fields into
+bounded CAR operators. A common smearing of the centre variable does not make
+the expression a fixed finite product of the separately smeared elementary
+fields covered by the QWZ finite-word theorem. The missing step is a regulated
+three-stage limit with explicit energy bounds.
+
+The safe current status is:
+
+  PROVED:
+    strong transported convergence of each fixed smoothly smeared elementary
+    QWZ CAR field and its adjoint; all fixed finite words of such fields;
+    exact fold/orientation arithmetic; and the finite-mode energy-64 Ward
+    amplitude.
+
+  PROVED IN THE CONTINUUM CURRENT REPRESENTATION:
+    the formal/current-normal-ordered F8 field, its oscillator state and its
+    ordered continuum correlation functions under the already fixed current
+    prescription.
+
+  OPEN IN THE PRESENT COMPOSITION:
+    strong graph convergence of a microscopic local F8 smearing and its
+    adjoint after removal of all ultraviolet regulators.
+
+1. QWZ positive sea and the negative alpha=1/4 sea
+--------------------------------------------------
+
+This identification passes the smallest exact test.
+
+The QWZ source modes are
+
+  exp(i(j-1/4) theta),      j>=1 occupied.
+
+With n=j-1 these are the positive-filled alpha=3/4 modes
+
+  exp(i(n+3/4) theta),      n>=0 occupied.
+
+Let R reverse the circle coordinate, (Rf)(theta)=f(-theta). With
+
+  m=-n-1=-j
+
+one obtains
+
+  R f_(n,3/4)=f_(m,1/4),   m<=-1,
+  m+1/4=1/4-j.
+
+Thus the occupied positive half-line is mapped exactly to the negative-D
+alpha=1/4 half-line, and the one-particle eigenvalue is the QWZ limiting
+eigenvalue epsilon_j. Writing n=8l+k gives
+
+  m=8(-l-1)+(7-k),
+
+so the fold channel reverses as k -> 7-k. Direct rational evaluation gives
+
+  delta_(7-k)^(1/4)=-delta_k^(3/4)
+
+for all eight channels. This confirms equations (7) and (8), including the
+time eigenvalue. The charge Q=N-N_sea is unchanged by the one-particle
+orientation unitary, so annihilators retain charge -1 and creators +1.
+
+One convention should nevertheless be made explicit in the proof. If the
+current is treated as the scalar charge density, the desired operator formula
+is
+
+  Gamma(R) :psi^* psi:_(C+)(theta) Gamma(R)^*
+    = :psi^* psi:_(C-)(-theta).
+
+If it is treated as a one-form component, the coordinate Jacobian contributes
+an additional sign. The contract currently says that creator/annihilator
+order and the current-charge convention are transported, but does not display
+this operator equality. Adding it would prevent the correct delta arithmetic
+from being combined later with the wrong current orientation.
+
+Sources checked:
+
+  paper-source:7296b452273b7022082ac2e2
+    tex-artefacts/toe_research_20260909.tex:16--96;
+
+  research-source:1a8c7c3f539e779301a7377d
+    FOLD-COVARIANCE-TO-NATIVE-FIELD-RESPONSE.txt:53--152.
+
+2. What the microscopic theorem actually proves
+------------------------------------------------
+
+For every fixed smooth L2 test function g, the elementary operators
+
+  Psi_N(g)=a_N(R_N g),        Psi_N(g)^*
+
+are bounded CAR operators. The source proves, along the isometries V_N,
+
+  Psi_N(g)V_N psi -> V_N a(g)psi,
+  Psi_N(g)^*V_N psi -> V_N a(g)^*psi
+
+on each finite-excitation vector. It also proves the corresponding generator
+limit on every fixed continuum energy cutoff. Because the elementary fields
+are bounded for fixed g, the result extends by the ordinary telescoping
+identity to a fixed finite word of fixed smooth smearings and to its adjoint.
+
+This is genuine transported strong vector convergence. It is stronger than a
+statement about compressed matrix elements. It is not standard strong
+operator convergence on one fixed Hilbert space, because the microscopic
+spaces vary with N; the displayed V_N formula is the correct precise meaning.
+
+The quantifiers are essential. The theorem says:
+
+  for each fixed finite list g_1,...,g_r of smooth functions,
+  first take N -> infinity.
+
+It does not cover N-dependent delta sequences, unsmeared point fields,
+normal-order subtractions diverging with a regulator, or an unbounded current
+polynomial obtained after a diagonal ultraviolet limit.
+
+The full analytic statement is in
+
+  experiments/theory-contracts/microscopic-charged-car-limit/README.md:
+  41--68,70--117,119--226.
+
+The registered paper excerpt states the same restriction as "fixed smooth
+finite field words". Its checker supplies finite diagnostics; the all-N
+statement rests on the analytic estimates in that README.
+
+3. Decisive counterexample to the fixed-split bounded-word claim
+----------------------------------------------------------------
+
+Let eta_delta,x be a smooth approximate delta function on the circle with
+integral one. Then
+
+  ||a(eta_delta,x)||=||eta_delta,x||_2,
+
+and for the usual scaling
+
+  ||eta_delta,x||_2 proportional to delta^(-1/2).
+
+The norm diverges as delta -> 0. Translating the field to x+epsilon leaves
+this norm unchanged. Therefore epsilon != 0 separates two singular supports
+from each other, but it does not make either psi(x+epsilon) or psi(x) a
+bounded operator.
+
+The same issue survives for currents. A smoothly smeared U(1) current is a
+well-defined closable operator on the finite-energy core, but it is generally
+unbounded. Its powers and the degree-eight current polynomial are likewise
+unbounded. Calling the fixed-split expression a "fixed finite even CAR
+polynomial" confuses the bounded CAR algebra generated by a(f), f in L2,
+with the unbounded operator-valued distributions obtained after point
+localization and normal ordering.
+
+This invalidates the inference at MICROSCOPIC-TO-OCTIC-COMPOSITION.txt:
+201--212 as written. Equation (11) does not follow directly from the finite
+word theorem when the fields in its definition are point fields and only one
+common centre smearing rho is displayed.
+
+Smooth centre smearing may define the separated bilocal or multilocal field
+as an operator-valued distribution after a separate continuum argument. It
+does not turn that integral into one finite product of fixed elementary
+smearings. One must prove the distributional integral or approximate it by
+finite sums with a uniform estimate.
+
+4. Minimal repair: three ordered limits
+---------------------------------------
+
+Choose one smooth mollifier eta and put
+
+  eta_(delta,x)(y)=delta^(-1) eta((y-x)/delta),
+  psi_delta(x)=a(eta_(delta,x)).
+
+Every occurrence of a fermion field in the point-split formula must receive
+its own translated mollifier. Define
+
+  F8_(N,epsilon,delta)(rho)
+
+by the same ordered fermion word, the same sea contractions, the same finite
+derivative counterterms and the same matrices A,b, but with all elementary
+fields separately mollified. The adjoint must use conjugated mollifiers,
+reverse the word order and conjugate the subtraction constants.
+
+The clean limit order is
+
+  1. N -> infinity with epsilon>0 and delta>0 fixed;
+  2. delta -> 0 with epsilon>0 fixed;
+  3. epsilon -> 0 in the prescribed current-normal-order extension.
+
+At stage 1 every integrand is a bounded finite CAR word of fixed smooth
+smearings. The microscopic theorem applies. If the centre variable is
+integrated rather than replaced by a finite sum, one also needs a uniform
+fixed-regulator bound in x or an explicit Riemann-sum argument.
+
+Stage 2 is a continuum operator-valued-distribution statement for separated
+points. Stage 3 is the actual composite-field renormalization. Neither stage
+follows from bounded-product convergence at stage 1.
+
+For strong field and adjoint convergence on the common smooth-energy core,
+the missing estimate should have the form
+
+  ||F8_(N,epsilon,delta)(rho) psi||
+   +||F8_(N,epsilon,delta)(rho)^* psi||
+    <= C_(epsilon,delta,rho) ||(1+H)^s psi||
+
+at stage 1, followed by continuum energy bounds that control the two regulator
+limits in a common graph topology. The exponent s may be high for a
+weight-eight field. It must not be replaced by the elementary bounded-field
+estimate.
+
+If only Wick kernels and fixed finite-energy matrix elements are controlled,
+the valid conclusion is weaker:
+
+  the ordered microscopic matrix elements converge to the established
+  continuum current-normal-ordered distribution.
+
+That statement is still useful and is enough for specified correlation
+functions. It is not strong operator or strong graph convergence of F8 and
+F8^*.
+
+The continuum literature cited by the existing contract uses polynomial
+energy bounds precisely to pass from formal vertex fields to closable smeared
+operators and conformal nets. It cannot be invoked without checking that the
+present F8 composite satisfies the required bound and without transporting a
+compatible bound through the microscopic N limit. Relevant primary sources:
+
+  Carpi, Kawahigashi, Longo, Weiner,
+  From vertex operator algebras to conformal nets and back,
+  arXiv:1503.01260;
+
+  Carpi, Tanimoto, Weiner,
+  Local energy bounds and strong locality in chiral CFT,
+  arXiv:2103.16475.
+
+5. Energy 64 and the Ward amplitude
+-----------------------------------
+
+This part survives the ultraviolet objection because it can be formulated
+entirely with finitely many modes.
+
+The continuum excitation energies are |j-1/4|. On H<=64 the possible labels
+are exactly
+
+  -63 <= j <= 64.
+
+There are 128 one-particle labels, and the fermionic energy cutoff contains
+only finitely many occupation patterns. Since
+
+  M_N=min(floor(N/8),floor(sqrt(N))),
+
+Gamma(Pi_M) is the identity on this continuum cutoff for N>=4096. The
+polarized isometry I_N then intertwines every required truncated elementary
+mode and its adjoint exactly. Replacing polarized modes by the actual top-row
+modes contributes the already proved residual, which tends to zero for each
+of the finitely many labels.
+
+The fold relation
+
+  Lhat_-1=Lcal_-8/8
+
+therefore puts both the degree-eight F8 oscillator state and
+(Lhat_-1)^8 Omega_d in original source excitation energy 64. The corresponding
+matrix element is a fixed finite-mode calculation. It may be expanded into a
+finite sum of elementary particle-hole CAR words before applying the QWZ
+limit. In that form the fixed-word theorem does apply, including the adjoint.
+
+Two scope qualifications should remain explicit:
+
+  * H<=64 here is the finite-dimensional continuum top-edge excitation
+    cutoff on which V_N is eventually isometric. It is not a claim that the
+    entire microscopic QWZ energy-64 spectral subspace contains no bottom-edge
+    or other states.
+
+  * Convergence of this one finite-mode Ward amplitude proves a microscopic
+    source matrix element. It does not by itself prove existence or strong
+    convergence of the whole local smeared F8 field.
+
+The exact arithmetic in equations (13)--(16) is consistent with the existing
+native_folded_octic_origin.py certificate. No new E8 field construction is
+needed for this retained amplitude.
+
+6. Source reference defect
+--------------------------
+
+The final source citation in section 6 is not valid as written.
+
+  paper-source:7b58a2b8767cacd98fa2feb4
+
+currently resolves in the Atlas to
+
+  documents/tfpt_1_architecture_e8/sections/004-source.tex:1--200,
+
+not to
+
+  documents/tfpt_research_contracts/sections/001-source.tex:201--243.
+
+Moreover, the latter lines state the conditional Seam Collar Realisation
+target and its six steps. They do not state the claimed proposition that the
+scalar P1 value alone fails to select the QWZ collar and operator data. That
+conclusion is reasonable from the typed source inventory, but this source ID
+and line range do not prove it. The citation must be replaced by the actual
+operational-seed/P1 source passage or the sentence must be marked as the
+contract's inference.
+
+7. Required verdict correction
+-------------------------------
+
+Until the three-stage limit is supplied, the opening verdict should not say
+without qualification that "the neutral F8 operator" is a microscopic strong
+scaling limit. A precise replacement is:
+
+  The actual QWZ elementary CAR fields, their adjoints, state, charge and time
+  converge on the finite-energy core. Their fixed finite-mode composition
+  reproduces the nonzero neutral F8 Ward amplitude at source energy 64. The
+  full local F8 current composite is already defined in the continuum folded
+  CAR representation. Its microscopic distributional or strong operator
+  limit requires separately mollified fields, the ordered regulator limits
+  and compatible energy bounds.
+
+This repair keeps the new physical advance. It removes only the unsupported
+upgrade from fixed smooth finite CAR words to an unbounded local weight-eight
+composite.

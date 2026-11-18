@@ -14,7 +14,7 @@ from pathlib import Path
 HERE = Path(__file__).resolve().parent
 ROOT = HERE.parents[2]
 PINS = {
-    "experiments/theory-contracts/charged-cocycle-lift/checker.py": "4be4fa0ea26e4ce302b59f53f86787953544c7ea355168ccc24501501cc8d1dc",
+    "experiments/theory-contracts/charged-cocycle-lift/checker.py": "2df67cda01259c0719a3724d995d0832b0b79878d8f4fa5e6d9aacea71a0aa02",
     "experiments/tfpt-discovery/census_qsm_normflow_probe.py": "b60e4e1773ebdf4335211d64ef578190c6efeca81774b09066d412be6ea0af8e",
 }
 

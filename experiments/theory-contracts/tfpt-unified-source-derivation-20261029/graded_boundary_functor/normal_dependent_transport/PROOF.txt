@@ -1,0 +1,182 @@
+NORMAL-DEPENDENT TRANSPORT IN THE SAME GRADED BOUNDARY CHART
+29 October 2026
+
+Purpose and scope
+The existing coupled dictionary need not require a normal-independent
+classical background. The same constant chart transports the entire
+normal-dependent Cauchy graph, including its crossing blocks. This removes
+the restriction in FINITE-COUPLED.txt:7-8 for the stated product class.
+It does not construct a physical bosonic measure, identify OS time, or prove
+that P1 chooses this Clifford quantization. No pinned source is changed.
+
+1. Fixed geometric data, varying actual coefficients
+
+Retain the product collar and its fixed normal matrices
+
+  Z=diag(1,-1), N=[[0,-1],[1,0]], S=NZ,
+  Gamma_tot=Z tensor gamma_F, Ical=i0 Gamma_tot, C0=i0 N tensor I.
+
+Let gamma_F be fixed. At each r let A(r)=A(r)^* be even and let
+Phi(r)=Phi(r)^* be odd: [A(r),gamma_F]=0, {Phi(r),gamma_F}=0.
+Allow smooth dependence on r and theta, with the same original finite
+Dirac/Higgs coefficient type. Any additional original J_F-even condition on
+Phi is retained; it is not needed for the following transport identity.
+Put
+
+  B(r)=Z tensor A(r)-S tensor Phi(r),
+  E v=(P_F,+ v, i0 P_F,- v),
+  h(r)=A(r) gamma_F-i0 gamma_F Phi(r).
+
+Then E is independent of r AND of the background, E^*E=I, and pointwise
+
+  [B(r),Gamma_tot]=0, C0 B(r) C0=-B(r), B(r)E=E h(r).
+
+C0 is complex-antilinear for Ical; it is linear for the old i0 structure.
+The fixed one-face unitary chart is
+
+  T(v,bar(w))=Ev+C0Ew,
+  T^-1 B(r) T=h(r) directsum(-bar(h(r))).                 (1)
+
+No derivative of E occurs. A moving grading, moving normal frame, or moving
+metric trivialisation would require the corresponding connection terms.
+They are outside this fixed product assertion.
+
+2. Exact finite regulated transfer, without a commutativity premise
+
+Work first in any finite regulator preserving the displayed constant maps
+and adjoints. B(r) is then a smooth selfadjoint matrix for the new Hermitian
+metric. Let K(0)=I and
+
+  K'(r)=-B(r)K(r).
+
+Finite evolution is invertible. Set M(r)=C0 K(r) C0. Since r is real,
+
+  M'=B(r)M, M(0)=I.
+
+Also (K^*)'=-K^*B(r). Consequently
+
+  ((K^*)^-1)'=B(r)(K^*)^-1.
+
+Uniqueness for this finite ordinary differential equation proves
+
+  C0 K(r) C0=(K(r)^*)^-1.                               (2)
+
+No commutation of B(r) with B(s) is assumed. In general the right side is
+NOT K(r)^-1. This is the transport version of the oriented Green pairing.
+
+3. Entire two-face projector in the charged chart
+
+Write L_K=Graph(K) in H_boundary directsum H_boundary. Its orthogonal
+projection is
+
+  P_K=[I;K](I+K^*K)^-1[I,K^*].
+
+For C_faces=C0 directsum(-C0), equation (2) gives
+
+  C_faces(v,Kv)=(C0v,-C0Kv) in Graph(K)^perp.
+
+Indeed set w=-C0Kv. Then -K^*w=C0v, so the displayed vector is (-K^*w,w),
+the general form of a vector in Graph(K)^perp. Dimensions, or invertibility,
+give equality of the two subspaces. Thus
+
+  C_faces P_K C_faces=I-P_K.                             (3)
+
+Let K_+'=-h(r)K_+, K_+(0)=I. Equation (1) and the constant E imply
+
+  T^-1 K T=K_+ directsum overline((K_+^*)^-1).
+
+Use the same oriented two-face chart as before:
+
+  T_faces(v0,v1,bar(w0),bar(w1))
+    =(Ev0+C0Ew0, Ev1-C0Ew1).
+
+The first charged sector satisfies v1=K_+v0. The second satisfies
+w1=-(K_+^*)^-1 w0. Its conjugate graph is exactly the orthogonal complement
+of Graph(bar(K_+)). Therefore
+
+  T_faces^-1 P_K T_faces
+       =P_K+ directsum(I-bar(P_K+)).                     (4)
+
+All face-diagonal and crossing correlations are retained. Constant B is
+the earlier exponential special case, not a prerequisite for (4).
+Composition K_20=K_21 K_10 intertwines through the same E. This is an exact
+composition statement, not a new determinant-line or physical sewing theorem.
+
+4. Small exact ordering check in the same coefficient type
+
+For a purely algebraic finite check take gamma_F=diag(1,-1) on one even/odd
+pair and X=[[0,1],[1,0]]. Set
+
+  B1=Z tensor I, B2=-S tensor X.
+
+They have precisely the displayed even-A/odd-Phi form, B_j^2=I, and
+C0 B_j C0=-B_j. Choose ordered disjoint smooth normal bumps f1,f2, each
+with integral t>0, and B(r)=f1(r)B1+f2(r)B2. The exact transfer is
+
+  K=exp(-t B2)exp(-t B1).
+
+Then
+
+  C0KC0-K^-1
+    =exp(t B2)exp(t B1)-exp(t B1)exp(t B2)
+    =sinh(t)^2 [B2,B1]
+    =-2 sinh(t)^2 N tensor X != 0.
+
+This is an ordering counterexample to the wrong inverse formula, not a new
+physical source or a replacement for the actual 96-dimensional coefficient.
+It uses smooth normal dependence; no suite or numerical evolution is needed.
+
+5. Existing joint bosonic insertions can pass through the fixed chart
+
+Suppose a common bosonic measure mu(db), its original insertions q(b), and
+the conditional fermionic functionals omega_b are already given, with the
+required integrability. At each background b use precisely its actual B_b
+and graph, not a fitted covariance. If these functionals use the Clifford
+graph as quantum covariance, (4) transports every conditional CAR word
+through the SAME background-independent algebra map alpha. Hence
+
+  integral q(b) omega_b(F) mu(db)
+     = integral q(b) omega'_b(alpha(F)) mu(db).            (5)
+
+The same holds for arbitrary existing integrable bosonic functionals q and
+finite linear combinations of joint words, including distinct insertion
+points. Bounded CAR words allow the usual dominated integration when q is
+integrable and the conditional states are normalized. Any determinant or
+Pfaffian factor already included in the original common measure must be
+retained on both sides. This identity does not supply that factor or measure.
+It concerns conditional classical-background integration, not an automatic
+identification of an arbitrary noncommuting bosonic operator algebra.
+
+For a positive normalized mu and conditional states, the integrated fermion
+state is generally a mixture. With a complex eta or Pfaffian density, (5)
+remains an integrable algebraic identity and asserts no positive mixture.
+The averaged two-point function need not be a projector, and higher moments are integrals
+of the actual conditional moments. They are not obtained by applying Wick
+to the averaged two-point function. No projector-rigidity or Gaussian
+assumption for the integrated source is made here. Likewise no bosonic
+reflection positivity follows just from this intertwiner.
+
+6. Unbounded operators and provenance
+
+The finite proof asserts no well-posed arbitrary Hilbert-space Cauchy problem
+for an unbounded elliptic generator. In the continuum, use the actual closed
+elliptic Cauchy data space with its Green form and compatible domain. If that
+space has the standard Lagrangian property and is invariant under the fixed
+grading, the same constant chart gives (4) by splitting its two grades and
+using C_faces L=L^perp. No everywhere bounded K is required in that argument.
+Additional APS, admissibility, Pin, or gluing restrictions must preserve the
+specific maps before this continuum statement applies to them.
+
+The general geometric Lagrangian input was already present in the primary
+construction: Ludewig and Roos, The Chiral Anomaly of the Free Fermion in
+Functorial Field Theory (2020), section 3.3, equations 36-38 and Theorem 3.12,
+as cited in ../PROOF.txt:43-48. The present extra step is the explicit fixed
+E transport of the actual odd finite coefficient through a normal-dependent
+family, beyond ../FINITE-COUPLED.txt:7-8. It does not create a new quantization
+principle from the paper's geometric anomaly-twist construction.
+
+Original fermion action and source distinctions are recorded in
+../charge_transport/ORIGINAL-SOURCE-AUDIT.txt. In particular the already given
+full operational Seed needs no newly chosen Berezin measure for its own
+reconstruction. Identifying its actual physical insertions with this Clifford
+functor, its charge J and physical time remains the stated origin task.

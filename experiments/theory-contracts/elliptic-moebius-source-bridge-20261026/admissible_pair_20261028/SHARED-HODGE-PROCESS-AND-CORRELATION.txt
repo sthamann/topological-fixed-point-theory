@@ -1,0 +1,114 @@
+GEMEINSAMER EPSILON PROZESS: SPURERHALTUNG UND KORRELATION
+=========================================================
+
+2. November 2026. Endlicher mathematischer Vertrag, kein Ursprungssatz
+und keine Behauptung, dass die urspruengliche P1/P2 Quelle diese Amplituden
+oder eine bestimmte Ereignisoperation bereits gewaehlt hat.
+
+Vorhandene Daten und bereits bekanntes Resultat
+----------------------------------------------
+
+Die fuenf urspruenglichen Hodge Koeffizienten C_m: Lambda^2 C^5 ->
+(Lambda^2 C^5)* werden unveraendert aus hodge_complement_channel.py,
+Funktion hodge_amplitudes, geladen. P5=(1/6)sum_m |C_m>><<C_m|.
+Der Atlas verzeichnet bereits finding:single-positive-process-saturation-
+selects-full-hodge-channel: Fuer einen GEGEBENEN CPTP Carrierkanal erzwingen
+P5 Saettigung und Positivitaet den Kanal Phi=(1/3)sum_m C_m (.) C_m*.
+Die 25 linearen Identitaeten und die Eindeutigkeit sind dort bereits bekannt.
+
+Die nachfolgende Folgerung betrifft eine gemeinsame, moeglicherweise mit
+dem Carrier korrelierte Familienumgebung. Sie ist ein elementarer Anschluss
+aus demselben 25er Satz, keine neue unabhaengige Physik und keine neue
+Kanalidentifikation aus der urspruenglichen Quelle.
+
+Satz und Beweis
+---------------
+
+H=Lambda^2 C^5, Ein und Ausgabefamilie F,F' beliebig endlichdimensional.
+Sei die VOLLSTAENDIGE gemeinsame CP Operation E: B(H tensor F) ->
+B(H* tensor F') durch Krausoperatoren
+
+    L_s = sum_(m=0)^4 C_m tensor A_(s,m)
+
+gegeben und spurtreu auf dem ganzen gemeinsamen Eingaberaum. Die A_(s,m)
+koennen beliebige komplexe Matrizen F -> F' sein, insbesondere kohaerent
+und nicht diagonal; keine isotrope Einsatzgrammatrix und keine bestimmte
+Familienvorbereitung werden vorausgesetzt. Die Importkonstruktion liefert
+die 25 linear unabhaengigen Matrizen C_m* C_n; der Checker bestaetigt Rang25.
+Ferner gilt sum_m C_m* C_m=3 I_H.
+
+Spurtreue besagt
+
+    sum_(m,n) (C_m* C_n) tensor (sum_s A_(s,m)* A_(s,n)) = I_H tensor I_F.
+
+Da I_H=(1/3)sum_m C_m* C_m und die 25 Produkte linear unabhaengig sind,
+koennen ihre operatorwertigen Koeffizienten durch lineare Funktionale
+einzeln ausgelesen werden. Es folgt ohne Kommutativitaet der A
+
+    sum_s A_(s,m)* A_(s,n) = delta_mn I_F/3.                 (1)
+
+Fuer jedes Carrierobservable X liefert (1)
+
+    E*(X tensor I_F') = Phi*(X) tensor I_F.
+
+Somit gilt fuer JEDEN gemeinsamen Eingangszustand rho_CF, auch fuer
+beliebige Carrier Familienkorrelationen und Verschraenkung,
+
+    Tr_F' E(rho_CF) = Phi(Tr_F rho_CF).                       (2)
+
+Folglich hat der entstehende Carrierkanal J_Phi=2P5 und normierten P5 Wert
+1. Die Bedingung in (1) betrifft den NACH vollstaendiger Ausspurung
+wirksamen Koeffizienten. Eine urspruengliche anisotrope Einsetzungsgrammatrix
+darf vorher nicht einfach mit diesem Endkoeffizienten gleichgesetzt werden.
+Falls ein berechnetes Krausmenue (1) verletzt, ist dieses Menue unter den
+erklaerten Voraussetzungen nicht gemeinsam spurtreu; es kann eine einzelne
+Ausgangsbranche sein oder weitere Amplituden brauchen.
+
+Expliziter Gegenfall fuer ein einzelnes Sub-TP Ereignis
+------------------------------------------------------
+
+Im Originalduadenchart setze F=C^2 und
+
+    L=C_0 tensor |0><0| + C_1 tensor |1><1|.
+
+L*L ist ein Projektor und damit <=I, aber nicht I. Betrachte
+
+    rho_A=1/2 (|12,0><12,0| + |02,1><02,1|),
+    rho_B=1/2 (|12,1><12,1| + |02,0><02,0|).
+
+Ihre Carrier Marginale ist jeweils (|12><12|+|02><02|)/2. Die ORIGINALEN
+Epsilonmatrizen geben C_0|12>=+/-|34>, C_1|02>=+/-|34>, dagegen
+C_1|12>=C_0|02>=0. Deshalb gilt
+
+    Tr_F L rho_A L* = |34><34|,    Tr L rho_A L*=1,
+    Tr_F L rho_B L* = 0,           Tr L rho_B L*=0.
+
+Dieselbe Carrier Marginale genuegt fuer einen nicht spurtreuen Ausgang bei
+Anfangskorrelation also nicht. Bedingung auf Erfolg ist fuer B undefiniert
+und allgemein keine lineare TP Abbildung. Eine Spurtreue ergaenzende
+Komplementbranche liegt im Allgemeinen ausserhalb der bezeichneten
+gemeinsamen C_m Spanne und ist deshalb nicht in Satz (2) enthalten.
+
+Ursprungsfrage und Ausfuehrung
+-----------------------------
+
+Der tatsaechliche S_adm/W_k Aufruf liefert eine formal definierte
+Erzeugungsfunktion (originale source_extracts--04_qft_source/sections/
+007-subsection-renormalized-physical-and-scheme-readout-laye.tex:3-22),
+aber diese Stelle schreibt keine hier benoetigte gemeinsame CP Ereigniskarte,
+keine zugehoerige Krausspanne und keine Familienausspurung vor. Der
+P1/P2 Herkunftspfeil muss beides auf demselben lokalen, zeittreuen und
+reflexionsvertraeglichen Traeger aus der urspruenglichen Quelle liefern.
+Der bekannte joint cocycle chart ist mitzunehmen: seine Diagonalphase ist
+nicht notwendig ein Produkt separater Carrier und Familienphasen.
+
+Die vorhandene E8 A4 x A4 Bracketrechnung bietet im angegebenen gemeinsamen
+Chart B_(m,ab)=C_m tensor A_ab und nach einer zusaetzlichen inklusiven
+Krauslesart Phi tensor WH_5, siehe hodge_complement_20261028/
+E8-A4-PETERSEN-RESPONSE.txt:23-42,155-196. Satz (2) besagt, dass die volle
+gemeinsame TP plus exakte Bracketspanne schon als Auswahlkriterium reicht;
+die Herkunft dieser Voraussetzungen bleibt zu zeigen.
+
+Ausfuehrung: python3 -B admissible_pair_20261028/check_shared_hodge_process.py
+vom Elternordner dieses Vertrags. 13 exakte Kontrollen bestanden. Keine neue
+Lean Ausfuehrung, kein physischer Nachweis und keine Ledgerpromotion.

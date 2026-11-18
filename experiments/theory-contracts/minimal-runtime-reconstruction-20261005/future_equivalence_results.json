@@ -1,0 +1,44 @@
+{
+  "steps": [
+    {
+      "step": "FE1 button: |+> and |-> agree on the present test P0; with only Rz they stay equivalent for all words (closure span{I,Z}); the admissible Hadamard X separates them (closure grows to M_2)",
+      "pass": true,
+      "detail": "closure dims without X [2, 2], with X [2, 3, 4, 4]; max prob difference 0.0e+00 vs 1.00"
+    },
+    {
+      "step": "FE2 closure terminates: dimension rises strictly until the first repetition; <= d^2 - 1 enlargements",
+      "pass": true,
+      "detail": "d=2:[2, 4, 4]; d=3:[2, 4, 8, 9, 9]; d=4:[2, 4, 8, 16, 16]; d=5:[2, 4, 8, 16, 25, 25]"
+    },
+    {
+      "step": "FE3 brute force: difference orthogonal to O_* (dim 4 = M_2 (x) I) -> identical probabilities for all 127 words up to length 6; a difference inside O_* but invisible now is separated at length 1 <= closure index",
+      "pass": true,
+      "detail": "closure dims [2, 4, 4]; equivalent pair max deviation 4.4e-16; present-invisible pair separated at length 1"
+    },
+    {
+      "step": "FE4 kernel-only quotient: rank stabilises (r_{L+1} = r_L), r <= d rank(rho), realization reproduces unused longer words, adjoint letters = K-adjoints",
+      "pass": true,
+      "detail": "d=3, rank(rho)=1: r_L=[1, 3, 3], err 3.9e-16, adj 3.3e-16; d=3, rank(rho)=3: r_L=[1, 5, 9, 9], err 4.3e-15, adj 3.0e-11; d=4, rank(rho)=2: r_L=[1, 7, 8, 8], err 4.3e-15, adj 3.6e-13"
+    },
+    {
+      "step": "FE5 quotient relations = source relations + ker pi_omega: {C_a, C_b} = 2 delta_ab appears on the quotient exactly when the state lives on the sector where it already holds; with a faithful state the generic sector survives and it fails",
+      "pass": true,
+      "detail": "support in Clifford sector: rank 4, defect 0.0e+00, faithful: rank 8, defect 8.0e+00"
+    },
+    {
+      "step": "FE6 survival: A4 relations (s^2 = t^3 = (st)^3 = 1) hold on every quotient and the V4 commutator never becomes -I (A4-specific); commuting involutions never acquire scalar anticommutators",
+      "pass": true,
+      "detail": "pure and tracial states; commuting witness defect 1.99"
+    },
+    {
+      "step": "FE7 IR versus fundamental: H1, H2 agree on the IR window -> identical IR-restricted answers; an admissible high-energy intervention (window-crossing superposition) separates them",
+      "pass": true,
+      "detail": "IR deviation 0.0e+00; fundamental return-probability difference 0.354"
+    }
+  ],
+  "passed": 7,
+  "total": 7,
+  "research_id": "UR.FUTURE_EQUIVALENCE.FINITERANK.01",
+  "verdict": "PASS_MATHEMATICAL",
+  "statement": "Future indistinguishability is decided by a finite Heisenberg/Hankel closure (<= d^2 - 1 enlargements); the quotient is the GNS homomorphism pi_omega: it removes no source relation and adds only those in ker pi_omega (none for faithful states). Class obstructions must be shown channel by channel."
+}

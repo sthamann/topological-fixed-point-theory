@@ -1,0 +1,185 @@
+MATH.SEAM.E7.FULL.RESPONSE.20261106
+6 November 2026
+
+Question and exact object
+Evaluate E7+A1 responses of the SAME originally supplied source, retaining
+its state, current normalization, complementary factor, matched glue sectors
+and original H8. Determine whether a new coupling coefficient or natural
+constant follows. The supplied source is the existing unitary level-one
+E8 lattice VOA/net. Its identification with the fully integrated primitive
+physical P1/S_adm is not assumed or newly derived here.
+
+Original-source owners reused
+verification/v1_e8_glue.py:e8_roots;
+verification/v498_celestial_wp5b_singular_vector.py:Chevalley,Affine;
+compiler-integral-triality-20260918/certificate.json:original simple basis;
+compiler-vacuum-current-cubic-20260918/PROOF.txt:20-105;
+e-series-source-reconstruction-20261024/THEOREMS.txt:existing source theorem;
+elliptic-moebius-source-bridge-20261026/dynamic_reconstruction_20261027/
+A7-E7-CLOCK-DECOMPOSITION.txt:original H8 and Q-neutral E7.
+The existing Chevalley and affine PBW definitions are extracted unchanged.
+Legacy assertions are retained as unconditional checks. No new oscillator,
+state-selection law, physical field content, Hamiltonian or response fit is
+introduced. Heat traces below are traces, not the supplied vacuum state.
+
+1. Which E7 is retained
+All six root-normal E7 cuts containing the native D5 are tested, together
+with the distinct source-charge-neutral E7 normal to alpha=(1/2)^8.
+For every normal root alpha, let P1=alpha alpha^T/2 and P7=I-P1.
+The actual root partition is126 E7 roots,2 A1 roots and112 mixed roots.
+Including Cartans gives248=(133,1)+(1,3)+(56,2).
+Every mixed root has squared projection norms3/2 and1/2. Hence the matched
+primary weights are3/4 and1/4, summing to the original weight1.
+The complementary A1 and mixed sector are kept throughout.
+
+2. Current response at the actual affine normalization
+The original conventions are [e_r,e_-r]=-H_r and kappa(e_r,e_-r)=-1,
+with compact adjoint e_r^dagger=-e_-r. The source vacuum obeys
+J_(a,m)Omega=0 for m>=0. For every one of240 original roots, modes1,2,3
+give exactly
+  <J_(r,-n)Omega,J_(r,-n)Omega>=n, k=1.
+Both E7 and A1 therefore inherit level1. Restricting the current field does
+not multiply the central coefficient by8/7 or2.
+
+The complete root trace tensors are checked exactly for all seven cuts:
+  sum_(r in E7) r r^T =36 P7,
+  sum_(r in A1) r r^T = 4 P1,
+  sum_(r mixed) r r^T =24 P7+56 P1,
+  sum_(r in E8) r r^T =60 I8.
+These are adjoint trace tensors, not the affine level itself.
+
+The original hypercharge vector is
+  Y=(-1/3,-1/3,-1/3,1/2,1/2,0,0,0).
+For all seven cuts P7Y=Y and P1Y=0. Direct contraction in the original
+affine engine gives <JY_-1 Omega,JY_-1 Omega>=5/6.
+In the existing SU2 generator convention this is kY=2*(5/6)=5/3.
+Adjoint charge traces split E7/A1/mixed as30/0/20, totaling50.
+No interpretation of these adjoint sectors as a derived physical matter
+spectrum is made. The existing hypercharge normalization is unchanged.
+
+3. Actual Sugawara stress response, beyond counting central charges
+Build the conformal vectors with the original PBW engine, original invariant
+form and Cartan inverse, using coefficients1/(2(k+hdual)). These are
+1/62 for E8,1/38 for E7 and1/6 for A1 at k=1.
+For one native D5-preserving cut and independently for the Q-neutral cut,
+the exact contractions give
+  <T7,T7>=7/2,
+  <T1,T1>=1/2,
+  <T7,T1>=0,
+  <T8,T8>=4,
+  ||T8-T7-T1||^2=0.
+Thus T8=T7+T1 in the given unitary integrable quotient. The difference
+need not vanish as a vector of the universal PBW module before its null
+quotient; the calculation correctly uses its zero Gram norm.
+The inherited stress Gram values have ratio7:1. This is not an assertion
+about separately unit-normalized fields or a7:1 thermal response under H8.
+The source's separate P1 Jones index4 has not been identified with the
+stress Gram4 by this calculation.
+
+4. The complete source module and original time
+The actual conformal inclusion has full module
+  V8=(V7^0 tensor V1^0) direct_sum (V7^56 tensor V1^2).
+The second summand carries the matched order-two glue. The lattice
+extension index2 is not the original P1 C4/Jones marking.
+Use the unchanged source generator
+  H8=8L0-rho_A7.a0+(2a-1)Q/2,
+  rho_A7=(7,5,3,1,-1,-3,-5,-7)/2,
+  Q=sum a0_j, a=1/4 or3/4.
+Orthogonal projection splits this very H8 into its two inherited operators,
+including the source Cartan shifts. No substitution of L0 for H8 is made.
+The full heat trace is therefore
+  Z8(t,a)=Z7^0(t,a)Z1^0(t,a)+Z7^56(t,a)Z1^2(t,a).
+All8 oscillator factors and both full lattice cosets are included.
+Neither t nor H8 is identified with physical inverse temperature or the
+independent P1 angular KMS normalization by this evaluation.
+
+An explicit unshifted-Casimir trace formula for the supplied H8 is
+  Z8=Theta_E8(t,w)/prod_(n>=1)(1-exp(-8tn))^8,
+  w=rho_A7-(2a-1)q/2,
+  Theta_E8=sum_(p in E8) exp(-4t||p||^2+t w.p).
+The absence of an added Casimir is inherited from the given H8 expression;
+an identical pre-existing scalar reference would multiply both sides.
+
+For an independent direct evaluation use E8=D8 union(s+D8), s=(1/2)^8.
+Write S_j=sum_n exp(-4tn²+t w_j n), A_j with an additional(-1)^n,
+H_j=sum_n exp(-4t(n+1/2)²+t w_j(n+1/2)), B_j with(-1)^n.
+Then exactly
+  Theta_E8=(prod S+prod A+prod H+prod B)/2.
+The coordinate E7+A1 formulas are obtained by resolving the last selected
+two coordinates into sum and difference and retaining both parity sectors.
+An odd coordinate sign change reverses the half-coset parity and is included.
+For the Q-neutral cut, coefficient extraction at Q=0 gives Theta7^0;
+exp(2t) times the Q=2 coefficient gives Theta7^56. Its A1 theta series
+has integer or half-integer momentum with norm2. This checks the actual
+charged source without treating the two complete Hilbert spaces as independent.
+
+Numerical evaluations at85-digit precision, coordinate truncation n=-18..18
+and400 oscillator factors, agree to relative error below1e-65 for every
+one of the7 cuts at both quarters and t=1/4,1/2,1,2. These are numerical
+consistency checks, not interval certificates. The all-state identity follows
+from the exact lattice module decomposition and parity sum, not from claiming
+that finite numerical cutoffs enumerate the infinite theory.
+
+At a=1/4 (a=3/4 gives the same complete values):
+  t       complete Z8             neutral matched-glue fraction
+  1/4     718.475858080336195       0.493355566192482174
+  1/2      26.701852507944496       0.421656152258830999
+  1         5.179128941063011       0.233657499262417639
+  2         2.496530523084581       0.053500834568526202
+Dropping the matched glue fails the actual source trace by these nonzero
+fractions. A bare E7 x A1 vacuum-module product is a changed source.
+
+5. Original-time vacuum current kernel
+The source commutator gives current energies
+  E(r,n)=8n-rho_A7.r+(2a-1)Q(r)/2, n>=1.
+With the existing vacuum and unit current Gram the full positive-mode sum is
+  K8(t)=exp(-8t)/(1-exp(-8t))^2
+         *[8+sum_(240 roots)exp(t(rho.r-(2a-1)Q(r)/2))].
+It splits into E7, A1 and mixed root contributions with7 and1 Cartans.
+The exact grade-one root histograms for all cuts and both quarters are saved.
+This is a current kernel, distinct from a stress kernel and from a heat trace.
+There is no universal scalar7/8 multiplying all these different responses.
+
+6. Which coefficient follows and what is new
+A complete coordinate rewrite of the already normalized source has response
+ratio1. Its inherited c3=1/(8pi) remains unchanged. This is not a fresh
+absolute derivation of primitive physical P1 from its uncomputed integrated
+response. The actual current central coefficients are1; the inherited stress
+Gram values are7/2 and1/2; full trace sector fractions depend on t and marking.
+These are different measured mathematical responses of the supplied source.
+No universal E7 coupling1/(7pi) is produced by keeping the whole source.
+Obtaining that number through the stress route would require an E7 truncation
+and an extra rule identifying inverse standalone E7 stress norm with coupling.
+The earlier conditional1/(4pi) belonged to the rank32/64 block diagnostic,
+not to the full response just evaluated. Neither is selected as a new physical
+coupling by this calculation. The original absolute physical modular response
+map is not supplied by a choice between those arithmetic numbers.
+
+There is a positive exact stress-norm representation of an existing ratio:
+  c_mu/c_tau=8/7=<T8,T8>/<T7,T7>.
+Consequently the existing source-mass formula can be written
+  mhat_mu/mhat_tau=phi0 <T8,T8>/<T7,T7>.
+This does not independently derive the mass formula or identify its physical
+mass functional with a stress response. It predicts no additional independent
+natural constant. Hypercharge kY=5/3 and its existing readouts are preserved.
+
+Reproduction
+Run e7_full_source_response_20261106.py --out OUTPUT_DIRECTORY.
+The results file records the actual three source SHA256 values read.
+
+Execution and review
+The targeted original-engine calculation passed27974 exact/numerical
+assertions, including720 root-mode central terms,7 full root trace tensors,
+two grade-two Sugawara comparisons and56 complete heat-trace comparisons.
+The count is execution scope, not scientific weight. No fullsuite, Lean,
+Wolfram, empirical fit or physical ledger promotion was performed.
+Independent read-only analytic review confirmed the stated scope, with two
+wording refinements applied: stress Gram ratios are not normalized thermal
+responses; inverse E7 stress normalization is an additional coupling rule.
+The review did not independently execute the code or audit every source.
+
+External primary reference for the existing conformal module theorem:
+Adamovic,Kac,Moseneder Frajria,Papi,Perse,
+Finite vs infinite decompositions in conformal embeddings,
+arXiv:1509.06512v2,6 April2016,section6.6.
+https://arxiv.org/html/1509.06512v2#S6.SS6

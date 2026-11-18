@@ -1,0 +1,48 @@
+{
+  "steps": [
+    {
+      "step": "WC1 graded multiplicities: Spin(10) on the carrier Fock space = 16 (even) + 16bar (odd), each once; family groups on Lambda C^3 recorded per parity (A4 characters orthonormal, class sizes 1/3/4/4)",
+      "pass": true,
+      "detail": "SU(4): 2 (irrep, parity) labels; SU(3): 4 (irrep, parity) labels; SO(3): 4 (irrep, parity) labels; A4: 4 (irrep, parity) labels; U(1)_N: 4 (irrep, parity) labels"
+    },
+    {
+      "step": "WC2 Spin(10) gauge: for family SU(4), SU(3), SO(3) and A4 every (carrier, family) irrep pair occurs at most once per parity, and the parity-even commutant of the local algebra is abelian (all commutators vanish): no neutral M_2, no C^2 multiplicity of the matter 16",
+      "pass": true,
+      "detail": "SU(4): max W 1, dim commutants 2x2, even part 4, max commutator 9e-33; SU(3): max W 1, dim commutants 2x6, even part 8, max commutator 1e-32; SO(3): max W 1, dim commutants 2x8, even part 8, max commutator 1e-32; A4: max W 1, dim commutants 2x8, even part 8, max commutator 3e-16"
+    },
+    {
+      "step": "WC3 weakened gauge (SU(5) or SM, family SO(3)): neutral M_2 blocks appear (non-abelian even commutant), all of them pairing the carrier-empty and carrier-full states: e.g. |0_c,000_f> <-> |11111_c,111_f> commutes with SM x SO(3) but not with Spin(10) (16 vs 16bar); an eight-fermion operator in the carrier-singlet sector, no matter",
+      "pass": true,
+      "detail": "SU(5): 2 blocks with W>=2, carrier labels all trivial (Lambda^0/Lambda^5), family labels ['(0.0,)', '(1.0,)']; SM: 2 blocks with W>=2, carrier labels all trivial (Lambda^0/Lambda^5), family labels ['(0.0,)', '(1.0,)']"
+    },
+    {
+      "step": "WC4 source process operators (channel-A family Majorana products, second-quantised flavor monodromies Gamma(M_a)) act on the family factor only: zero matrix element between carrier-empty and carrier-full (diagonal on every neutral M_2 block), and their intersection with the family-neutral commutant is abelian",
+      "pass": true,
+      "detail": "process algebra dimension 32 of 64; neutral intersection dimension 4, max commutator 4e-16; empty<->full element 0e+00"
+    },
+    {
+      "step": "WC5 other candidates are no coins: sheet doublet = fermion-parity grading (Part K9), all four marks act by the same swap (Gram rank 1); flavor fiber C^3 and U(1)_N-only multiplicities (dims 1,3,3,1) are family-carrying",
+      "pass": true,
+      "detail": "U(1)_N multiplicities [1, 1, 3, 3]"
+    },
+    {
+      "step": "WC6 (statement) SOURCE.WEYLCOIN.ORIGIN.01 = NO_NEUTRAL_COIN_IN_SOURCE: with the TFPT gauge group Spin(10) the parity-even neutral commutant is abelian for every family group containing A4; weaker gauge groups give only carrier-empty/full M_2 blocks without matter on which the source process acts diagonally -> AX.WEYLCOIN is the minimal additional microscopic input",
+      "pass": true,
+      "detail": ""
+    }
+  ],
+  "passed": 6,
+  "total": 6,
+  "research_id": "SOURCE.WEYLCOIN.ORIGIN.01",
+  "verdict": "NO_NEUTRAL_COIN_IN_SOURCE",
+  "pins": {
+    "spin10_max_W": {
+      "SU(4)": 1,
+      "SU(3)": 1,
+      "SO(3)": 1,
+      "A4": 1
+    },
+    "process_algebra_dim": 32,
+    "neutral_intersection_dim": 4
+  }
+}

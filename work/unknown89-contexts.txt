@@ -1,0 +1,859 @@
+
+===== 01 GATE.UWALL.13 verification/v145_pairing_atoms.py:46 scope=<module> =====
+42: import sympy as sp
+43: 
+44: from tfpt_constants import check, summary, reset, N_fam, g_car
+45: 
+46: Z2, MU4 = 2, 4
+47: ONE = sp.Matrix([1, 1, 1])
+48: A = sp.Matrix([1, 1, 2])
+49: SIGMA = sp.Matrix([2, -9, 5])
+50: N = sp.Matrix([5, -9, 6])
+
+===== 02 GATE.METRIC.18 verification/v162_seam_transport_identification.py:129 scope=run =====
+125: 
+126:     # ---- 4. the fixed space is the rank-8 Calderon polarization (alpha) ----
+127:     a16 = sp.zeros(16)
+128:     for i in range(8):
+129:         a16[2 * i, 2 * i + 1] = 1
+130:         a16[2 * i + 1, 2 * i] = -1
+131:     P = (sp.eye(16) + sp.I * a16) / 2
+132:     fixed_ok = (sp.simplify(P * P - P) == sp.zeros(16) and P.rank() == 8
+133:                 and g_car + N_fam == 8)
+
+===== 03 DHR.MODULAR.01 verification/v242_spin_statistics_modular.py:78 scope=run =====
+74:     unit = np.allclose(S @ S.conj().T, np.eye(N))
+75:     symm = np.allclose(S, S.T)
+76:     Cexp = np.zeros((N, N))
+77:     for a in G:
+78:         Cexp[IDX[a], IDX[neg(a)]] = 1
+79:     s2C = np.allclose(S @ S, Cexp)
+80:     s4 = np.allclose(np.linalg.matrix_power(S, 4), np.eye(N))
+81:     check("MODULAR S-MATRIX [E]: S_ab = (1/sqrt 16) e^{-2 pi i B(a,b)} is unitary, "
+82:           "symmetric, S^2 = C (charge conjugation, C_ab = delta(b,-a)) and S^4 = I "
+
+===== 04 PS.NCG.FLUCT.01 verification/v254_inner_fluctuations.py:58 scope=sm_basis =====
+54:     for q in (I2, 1j * sx, 1j * sy, 1j * sz):
+55:         B.append(t.rep(0.0, q, z3))
+56:     for k in range(3):
+57:         for l in range(3):
+58:             E = np.zeros((3, 3), complex); E[k, l] = 1.0
+59:             B.append(t.rep(0.0, z2, E))
+60:     return B
+
+===== 05 SEAM.EQUIV.APPLICABILITY.01 verification/v441_seam_applicability_ledger.py:97 scope=run =====
+93: 
+94:     # ---- 4. the single imported analytic fact ----
+95:     n_internal = sum(1 for r in LEDGER if r[2] == "internal")
+96:     n_external = sum(1 for r in LEDGER if r[2] == "external")
+97:     only_existence = (n_external == 1 and
+98:                       [r for r in LEDGER if r[2] == "external"][0][1].startswith(
+99:                           "continuum chiral scaling-limit"))
+100:     check("THE SINGLE IMPORTED FACT [E]: of %d audited hypotheses across the three "
+101:           "cited theorems, %d are TFPT-internal computed facts and exactly %d is "
+
+===== 06 QGEO.MULTILOCAL.01 verification/v480_multilocal_four_interval.py:88 scope=clock_matrix =====
+84:             t, sign = t - N, -1.0
+85:         if t in idx:
+86:             R[idx[t], i] = sign
+87:         else:
+88:             broken += 1
+89:     return R, broken
+
+===== 07 SEAM.MU.01 verification/v490_seam_parity_census.py:232 scope=run =====
+228:     census16 = {k: v ** N_Maj for k, v in census.items()}
+229:     n_even_16 = sum(1 for v in census16.values() if v == +1)
+230:     A_D8 = sp.zeros(8, 8)
+231:     for i in range(8):
+232:         A_D8[i, i] = 2
+233:     for a, b in [(1, 2), (2, 3), (3, 4), (4, 5), (5, 6), (6, 7), (6, 8)]:
+234:         A_D8[a - 1, b - 1] = -1
+235:         A_D8[b - 1, a - 1] = -1
+236:     detD8 = int(A_D8.det())
+
+===== 08 CELEST.WP1.01 verification/v492_celestial_z4_orbifold.py:124 scope=wclass =====
+120:         out = []
+121:         for sub in combinations(range(4), k):
+122:             v = [F(-k, 4)] * 4
+123:             for i in sub:
+124:                 v[i] += 1
+125:             out.append(tuple(v))
+126:         return out
+
+===== 09 CELEST.WP5A.01 verification/v497_celestial_wp5a_null_ideal.py:311 scope=freudenthal =====
+307:         lr = vadd(lam, self.rho)
+308:         nlr = ip(lr, lr)
+309:         for mu in cands:
+310:             if mu == lam:
+311:                 mult[lam] = 1
+312:                 continue
+313:             cmu = [int(c) for c in self.alpha_coords(vsub(lam, mu))]
+314:             num = 0
+315:             for a, ca in acoords:
+
+===== 10 SEAM.BIT.FREEDOM.01 verification/v510_seam_bit_freedom.py:304 scope=pairing_of =====
+304: def pairing_of(inv_map, ms, n=16):
+305:     order = sorted(ms)
+306:     pos = {m: i for i, m in enumerate(order)}
+307:     pairs = set()
+308:     for m in ms:
+
+===== 11 SEAM.BIT.FREEDOM.01 verification/v510_seam_bit_freedom.py:664 scope=b_m1_moebius =====
+662: def b_m1_moebius():
+663:     print("  -- B-M1: the Moebius covering deck is free (discrete model)")
+664:     L, W = 12, 5                             # cylinder Z_{2L} x {0..W-1}
+665:     pts = [(x, y) for x in range(2 * L) for y in range(W)]
+666: 
+667:     def deck(p):
+668:         return ((p[0] + L) % (2 * L), W - 1 - p[1])
+
+===== 12 HECKE.GEOM.EICHLER.01 verification/v536_eichler_trace_layer.py:364 scope=type_ii_eval =====
+360:     n_diff = 0
+361:     for g in lines:
+362:         v = adjust_isotropic_lift(g, p)
+363:         Gv = (G @ v).astype(np.int64)
+364:         si = 0
+365:         sii = 0
+366:         cnt = 0
+367:         for a in range(p):
+368:             kk = key_of((a * v) % p, p)
+
+===== 13 PRIME.LONGLAG.SUPP.01 verification/v544_long_lag_support.py:571 scope=run =====
+567: 
+568:     # ------------------------------------------------------------ (2), (3)
+569:     print("\nS2 -- (2) supp(Delta) = anti-diagonal comb stripes at the atoms")
+570:     STR = [(t, pr, stripes(pr["Dl"], t["M"])) for t, pr in PAIR]
+571:     frac_min, n_edge, n_str, coll = 1.0, 0, 0, 0
+572:     for t, _, st in STR:
+573:         on = t["c_cb"][st["lab"]] > 0.0
+574:         frac_min = min(frac_min, float(on.mean()))
+575:         n_edge += st["n"]
+
+===== 14 PRIME.GAUGE.PPR.01 verification/v556_gauge_ppr_identities.py:408 scope=parity_basis =====
+408: def parity_basis(m, kb=None):
+409:     N = 2 * m + 1
+410:     jj = np.arange(m)
+411:     kk = np.arange(1, (kb or m) + 1)
+412:     return (2.0 / math.sqrt(N)) * np.sin(
+
+===== 15 PRIME.GAUGE.PPR.01 verification/v556_gauge_ppr_identities.py:418 scope=lap_P_mat =====
+416: def lap_P_mat(m):
+417:     L = sym(2.0 * np.eye(m) - np.eye(m, k=1) - np.eye(m, k=-1))
+418:     L[m - 1, m - 1] = 3.0
+419:     return L
+
+===== 16 QGEO.REAL.01 verification/v599_real_structure.py:264 scope=<module> =====
+260: 
+261: Jsym = sp.Matrix(3, 3, lambda i, j: sp.Symbol("j_%d%d_re" % (i, j)) + sp.I * sp.Symbol("j_%d%d_im" % (i, j)))
+262: subs_h = {}
+263: for i in range(3):
+264:     subs_h[sp.Symbol("j_%d%d_im" % (i, i))] = 0
+265:     for j in range(i + 1, 3):
+266:         subs_h[sp.Symbol("j_%d%d_re" % (j, i))] = sp.Symbol("j_%d%d_re" % (i, j))
+267:         subs_h[sp.Symbol("j_%d%d_im" % (j, i))] = -sp.Symbol("j_%d%d_im" % (i, j))
+268: Jh = Jsym.subs(subs_h)
+
+===== 17 PRIME.SHADOW.01 verification/v625_prime_shadow.py:97 scope=power =====
+97: def power(a, k, nmax=NMAX):
+98:     r = [1] + [0] * nmax
+99:     for _ in range(k):
+100:         r = mul(r, a, nmax)
+101:     return r
+
+===== 18 E8.RM13REV.01 verification/v646_rm13_reverse.py:605 scope=<module> =====
+601: dist_types_n = Counter()
+602: for s in set(SYND_N.values()):
+603:     dist = tuple(sorted(Counter(
+604:         sum(v) for v in SYND_N if SYND_N[v] == s).items()))
+605:     dist_types_n[dist] += 1
+606: check("R3.3 KILL does NOT fire for R2: naive leader census %s and "
+607:       "distribution multiset identical to C* (%s) -- ALL pure-code "
+608:       "R2 matches (240, 8, 248, 60, ...) are placement-INDEPENDENT "
+609:       "code facts, not equivariance results"
+
+===== 19 META.DISCIPLINE.01 verification/v649_discipline_audit.py:193 scope=ledger_census =====
+189: def ledger_census(rows=None):
+190:     rows = ledger_rows() if rows is None else rows
+191:     dist = {"E": 0, "C": 0, "O": 0, "X": 0, "AXIOM": 0, "OTHER": 0}
+192:     for r in rows:
+193:         dist[row_class(r["status"])] += 1
+194:     kill_ids = sorted({r["claim_id"] for r in rows if KILL_RE.search(
+195:         (r.get("claim") or "") + " " + (r.get("canonical_status") or ""))})
+196:     return dict(
+197:         rows=len(rows),
+
+===== 20 QGEO.ORBMOD.01 verification/v650_orbifold_modular.py:573 scope=<module> =====
+569: 
+570: # M4.2 exact factorization: cover deck^h trace = product of the three
+571: #      base twist sectors with per-class insertion (-1)^h omega^{g~ h}
+572: GTIL = {0: 2, 1: 0, 2: 1}                 # class r -> base twist g~
+573: dev_fac, dev_z6 = 0.0, 0.0
+574: for h in range(6):
+575:     for L in (32, 72):
+576:         lhs = lnZraw(N_MAIN, L, 0, N_BASE * kc * h)
+577:         rhs = 0.0 + 0.0j
+
+===== 21 PRIME.W3LAND.01 verification/v659_w3_landscape.py:201 scope=zeta_grid_const =====
+200: def zeta_grid_const():
+201:     mp.mp.dps = 30
+202:     c_th = float(-2 * mp.diff(lambda s: mp.zeta(s), mp.mpf(1) / 2)
+203:                  / mp.zeta(mp.mpf(1) / 2))
+204:     return 2.0 * math.log(-c_th / 4.0)
+
+===== 22 PRIME.GARDING.01 verification/v661_garding.py:357 scope=build_QGH =====
+357: def build_QGH(a, M, layers=False):
+358:     """Q (total form), Mass, H, D at window a with M cells; optionally
+359:     the layer matrices (Q_sm, Q_at, Q_po)."""
+360:     c_sm, c_at, c_po, D = galerkin_layers(a, M)
+361:     n = M - 1
+
+===== 23 PRIME.GARDING.01 verification/v661_garding.py:584 scope=run =====
+580:         alpha = float(core.U_ALL[kz])
+581:         D_k = 0.5 * float(core.G_ALL[kz]) / float(core.NU_MAIN)
+582:         Mz = int(math.ceil(alpha / D_k - 1.0e-9)) + 1
+583:         if Mz % 2:
+584:             Mz += 1
+585:         hz = Mz // 2
+586:         complete = math.exp(2.0 * alpha) <= core.ATOM_MAX + 0.5
+587:         fam.append((kz, alpha, hz, complete))
+588:     comp = [t for t in fam if t[3]]
+
+===== 24 PRIME.KEIPERLI.01 verification/v665_keiper_li.py:437 scope=run =====
+433:     print("\nK4 -- A3 CENTRAL: cross-route comparison against the "
+434:           "declared budget")
+435:     mp.dps = DPS_COMB
+436:     rows = []
+437:     max_use, max_adiff, worst_n = 0.0, 0.0, 0
+438:     all_raw_pos = True
+439:     for n in range(1, N_MAX + 1):
+440:         la = mpf(mp.nstr(lam_arith[n], DPS_COMB))
+441:         d_raw = la - lam_comb_raw[n]
+
+===== 25 PRIME.LIE4.01 verification/v673_li_e4.py:445 scope=run =====
+441:     lam_f1 = [mpf(0)]
+442:     for n in range(1, N_MAX + 1):
+443:         prime = -1 + mp.fsum(mp.binomial(n, j) * eta[j - 1]
+444:                              for j in range(1, n + 1))
+445:         arch = (-mpf(n) / 2 * mp.log(mp.pi)
+446:                 + mp.fsum(mp.binomial(n, j) * b[j - 1]
+447:                           for j in range(1, n + 1)) / 2)
+448:         lam_f1.append(mpf(2) + prime + arch)
+449: 
+
+===== 26 PRIME.W3STRUCT.01 verification/v677_w3_structure_theorem.py:589 scope=__init__ =====
+586:     def __init__(self, fz):
+587:         self.fz = fz
+588:         self.cache = {}
+589:         self.n_eval = 0
+
+===== 27 PRIME.W3STRUCT.01 verification/v677_w3_structure_theorem.py:749 scope=run =====
+745:         dev_split = max(dev_split, float(np.max(np.abs(eT - eS))) / rad)
+746: 
+747:         e_sym = 0.5 * (c + np.concatenate([[c[0]], c[1:][::-1]]))
+748:         rr = np.arange(h)
+749:         Eh = (e_sym[np.abs(rr[:, None] - rr[None, :])]
+750:               - e_sym[rr[:, None] + rr[None, :] + 1])
+751:         o_part = c - e_sym
+752:         Om = (o_part[np.abs(rr[:, None] - rr[None, :])]
+753:               - o_part[rr[:, None] + rr[None, :] + 1])
+
+===== 28 PRIME.HOLECLOSED.01 verification/v681_coverage_hole.py:238 scope=check =====
+238: def check(name, ok, detail=""):
+239:     global N_CHK
+240:     N_CHK += 1
+241:     if not ok:
+242:         FAILS.append(name.split()[0])
+
+===== 29 PRIME.HOLECLOSED.01 verification/v681_coverage_hole.py:456 scope=bs_K =====
+452:     x = np.asarray(x, dtype=float)
+453:     s = np.abs(x) < 1e-8
+454:     xs = np.where(s, 1.0, x)
+455:     out = (np.sin(np.pi * xs) / (np.pi * xs)) ** 2
+456:     out[s] = 1.0
+457:     return out
+
+===== 30 PRIME.RANK3FUNC.01 verification/v683_rank3_functionals.py:200 scope=check =====
+200: def check(name, ok, detail=""):
+201:     global N_CHK
+202:     N_CHK += 1
+203:     if not ok:
+204:         FAILS.append(name.split()[0])
+
+===== 31 PRIME.RANK3ZERO.01 verification/v684_rank3_zeroside.py:153 scope=<module> =====
+149: T_SCAN = 2.0e4          # precise-zero horizon (~21k zeros)
+150: SCAN_STEP = 0.01        # initial sign-change grid
+151: SCAN_STEP_FINE = 0.002  # refinement step on checkpoint mismatch
+152: CHECKPOINT = 1000.0     # RvM checkpoint spacing (units of gamma)
+153: S_T_BAR = 3.0           # declared |S(T)| budget for the count checks
+154: CACHE_FRAC_BAR = 0.995  # fraction of cache mids that must be matched
+155: Z_BISECT_TOL = 1.0e-9   # bisection width
+156: DELTA_POS = 1.0e-3      # declared position-error budget of scan zeros
+157: GABCKE_C = 0.127        # |R0| <= 0.127 (t/2pi)^{-3/4}, t >= 200
+
+===== 32 PRIME.GEOMSOS.01 verification/v686_geometric_sos.py:213 scope=run =====
+211: def run():
+212:     global N_CHK, FAILS
+213:     N_CHK = 0
+214:     FAILS = []
+215:     print("=" * 78)
+216:     print("GEOMETRIC SOS -- feasibility strike for PRIME.GEOMSOS.01")
+217:     print("(H, Phi, <,>, Tr) inventory + first construction, K1..K5-audited")
+
+===== 33 PRIME.KERNELCLASS.01 verification/v687_extremal_kernel.py:529 scope=lp_capture =====
+525:     A_eq = np.zeros((1, n_c + 1))
+526:     A_eq[0, 0] = a / math.pi          # q(0) = c0 a/pi = 1
+527:     b_eq = np.array([1.0])
+528:     obj = np.zeros(n_c + 1)
+529:     obj[-1] = -1.0
+530:     res = linprog(obj, A_ub=A_ub, b_ub=b_ub, A_eq=A_eq, b_eq=b_eq,
+531:                   bounds=[(None, None)] * (n_c + 1), method="highs")
+532:     if res.status != 0:
+533:         return None, None
+
+===== 34 PRIME.Z1UVAROV.01 verification/v697_z1_uvarov.py:416 scope=run =====
+412:           "point masses of the orthogonality measure" % len(i_slots),
+413:           anat_ok)
+414: 
+415:     # T1.2 locality vs measure point mass
+416:     c1_2, nz_2 = atom_read(w4, 0)          # atom n=2
+417:     m0_2 = int(nz_2[0])
+418:     ks_sm, Es_sm, bd_sm = levinson(w4["p_sm"], m0_2)
+419:     ks_sm1, _, _ = levinson(w4["p_sm"] + c1_2, m0_2)
+420:     dev_loc = float(np.max(np.abs(ks_sm1[:m0_2 - 1] - ks_sm[:m0_2 - 1])))
+
+===== 35 PRIME.SECTIONEDGE.01 verification/v707_chain_section_edge.py:467 scope=run =====
+463:         if j + 1 < len(sl0):
+464:             m0n0 = sl0[j + 1]["m0"]
+465:         else:
+466:             u_nx = float(core.U_ALL[s["i"] + 1])
+467:             m0n0 = int(np.nonzero(unit_read(w0, u_nx))[0][0])
+468:         Nm0 = min(w0["M"] - 1, m0n0)
+469:         adm0 = [fw for fw in np.geomspace(0.05, 20.0, 81)
+470:                 if bd_of(prev0 + fw * s["mu"] * s["cu"],
+471:                          Nm0 - 1) is None]
+
+===== 36 PRIME.L1MONTAGE.01 verification/v713_l1_montage.py:402 scope=arch_int =====
+402: def arch_int(z, a, b, K=K_ARCH):
+403:     """Closed tower sum: int_a^b rho(tau) e^{z tau} d tau."""
+404:     acc = 0j
+405:     for k in range(K):
+406:         bk = 2.0 * k + 0.5
+
+===== 37 PRIME.L1MONTAGE.01 verification/v713_l1_montage.py:570 scope=run =====
+566:             / float(rho_arch(tau_d))
+567:         dev_cp[bar_tag] = abs(w["cp"][d] / D
+568:                               - 2.0 * math.cosh(tau_d / 2.0)) \
+569:             / (2.0 * math.cosh(tau_d / 2.0))
+570:     dev_atom = 0.0
+571:     i_int = int(np.searchsorted(core.U_ALL, T4 - 2.0 * D4)) - 1
+572:     for i in (0, 1, 10, 100, 1000, i_int):
+573:         c1, _ = core.atom_lags_at(alpha4, w4["M"],
+574:                                   core.U_ALL[i:i + 1],
+
+===== 38 PRIME.L1MONTAGE.01 verification/v713_l1_montage.py:875 scope=run =====
+871:                 devs_pm.append(abs(Wa - exact))
+872:                 Dl.append(D)
+873:             sl = float(np.polyfit(np.log2(Dl),
+874:                                   np.log2(devs_pm), 1)[0])
+875:             ok_pm &= (SLOPE_PM_LO <= sl <= SLOPE_PM_HI
+876:                       and devs_pm[-1] <= BAR_PM_FINE)
+877:             print("   atom %-7s s=%.2f t=%4.1f: dev %s  LSQ D-rate "
+878:                   "%.2f" % (lab, s, tb,
+879:                             ["%.1e" % x for x in devs_pm], sl))
+
+===== 39 PRIME.GATE0.01 verification/v733_strat3_gate0_census.py:153 scope=orbit_trace_signature =====
+149:     support = [j for j, exponent in enumerate(word) if exponent != 0]
+150:     if len(support) != 1:
+151:         return (0, 0, 0)
+152:     out = [0, 0, 0]
+153:     out[support[0]] = 1
+154:     return tuple(out)
+
+===== 40 PRIME.S1CANON.01 verification/v734_s1_canonical.py:432 scope=c2_cauchy =====
+428:           ok_eq and ok_cau)
+429: 
+430:     # (c2) boundary phase velocity of the Weyl function == Gamma side
+431:     import mpmath as mp
+432:     mp.mp.dps = 20
+433:     comb, _meta = stage2.geo_comb(X_COMB)
+434:     us = np.array(sorted(comb))
+435:     mu_n = np.array([2.0 * comb[int(n)] / math.sqrt(float(n))
+436:                      for n in us])
+
+===== 41 PRIME.SCHURCONE.01 verification/v743_schur_cone_recursion.py:215 scope=lev_kmax =====
+211:     r = np.asarray(r, float)
+212:     a = np.zeros(N + 1)
+213:     a[0] = 1.0
+214:     E = float(r[0])
+215:     kmax = 0.0
+216:     for n in range(1, N + 1):
+217:         acc = r[n] + (float(a[1:n] @ r[n - 1:0:-1]) if n > 1 else 0.0)
+218:         k = -acc / E
+219:         kmax = max(kmax, abs(k))
+
+===== 42 E8.MULTIWAY.01 verification/v747_automaton_multiway_tower.py:138 scope=g0_ast_firewall =====
+137: def g0_ast_firewall():
+138:     src = open(os.path.abspath(__file__), "r", encoding="utf-8").read()
+139:     tree = ast.parse(src)
+140:     hits = set()
+141:     for node in ast.walk(tree):
+142:         if isinstance(node, ast.Name) and node.id in BANNED:
+
+===== 43 E8.MULTIWAY.01 verification/v747_automaton_multiway_tower.py:518 scope=run =====
+514:     # ---------------- S3: Pfad-Zaehlung vs Lambda-Rekursion ------------------
+515:     print("\n--- S3: Zensus-Zellen, Lambda-Rekursion, Kettenzahlen " + "-" * 23)
+516:     iota = ideal_counts(primes, X_NORM)
+517:     a = census_cells(iota, X_NORM)
+518:     ok_census = (a.get(2) == 15 and a.get(5) == 312 and a.get(9) == 820
+519:                  and a.get(13) == 4760 and a.get(4) == 155
+520:                  and a.get(8) == 1395 and a.get(10) == 4680)
+521:     check("S3.1 Zell-Formel == explizite Enumeration + v714-Kalibrierung",
+522:           ok_census,
+
+===== 44 E8.MULTIWAY.01 verification/v747_automaton_multiway_tower.py:712 scope=run =====
+708:     # Deck-Sektor-Erhaltung: exakt, aber trivial (Shift kommutiert mit Shift)
+709:     commLD = all(L[deck[x]] == deck[L[x]] for x in L)
+710:     Pmat = np.zeros((48, 48), dtype=complex)
+711:     for x in L:
+712:         Pmat[widx[L[x]], widx[x]] = 1.0
+713:     Dmat = np.zeros((48, 48), dtype=complex)
+714:     for x in deck:
+715:         Dmat[widx[deck[x]], widx[x]] = 1.0
+716:     om = np.exp(2j * np.pi / 3)
+
+===== 45 E8.ORBIFOLDCONF.01 verification/v748_automaton_sigma_orbifold_confluence.py:303 scope=run =====
+299:     h2 = (q ** 6 + q ** 5 + 2 * q ** 4 + 2 * q ** 3 + 2 * q ** 2 + q + 1)
+300:     mass_cyc = sum(c for c in p_ii.values() if c in (1, 2))
+301:     mass_11 = sum(c for c in p_ii.values() if c in (10, 20))
+302:     n_fix81 = sum(1 for v in ff_ii.values() if v)
+303:     ok_ii = (sum(p_ii.values()) == 820 * 820
+304:              and set(spectrum(p_ii)) <= {1, 2, 10, 20}
+305:              and mass_cyc == h2 - t11 and mass_11 == 10 * t11)
+306:     check("O1.d1 (Z) Quotienten-Spektrum == gefaltetes Upstairs "
+307:           "{1: h2-[4,2]_9, 10: [4,2]_9}", ok_ii,
+
+===== 46 E8.ONEOBJECT.01 verification/v781_one_object_clock_census.py:280 scope=cartan_A =====
+277: def cartan_A(n):
+278:     M = [[0] * n for _ in range(n)]
+279:     for i in range(n):
+280:         M[i][i] = 2
+281:     for i in range(n - 1):
+282:         M[i][i + 1] = M[i + 1][i] = -1
+283:     return M
+
+===== 47 E8.CLIFFORD2Q.01 verification/v783_two_qubit_clifford.py:897 scope=main =====
+893:         for r in range(len(M)):
+894:             if r != rank and M[r][col]:
+895:                 M[r] = [(a + b) % 2 for a, b in zip(M[r], M[rank])]
+896:         pivots.append(col)
+897:         rank += 1
+898:     free_cols = [c for c in range(16) if c not in pivots]
+899:     null_dim = 16 - rank
+900:     null_basis = []
+901:     for fc in free_cols:
+
+===== 48 HECKE.POSITIVE_C2_LIFT.01 verification/v788_positive_c2_lift.py:229 scope=kron_mul =====
+225:         d = prod & mask
+226:         prod >>= K
+227:         if d >= half:
+228:             d -= (1 << K)
+229:             prod += 1
+230:         out[i] = -d if neg else d
+231:     return out
+
+===== 49 HECKE.POSITIVE_C2_LIFT.01 verification/v788_positive_c2_lift.py:557 scope=main =====
+553:                                     m_ = sx + 2 * (u1 + u2 + u3 + u4)
+554:                                     if m_ <= M_MICRO:
+555:                                         cnt[m_] += 1
+556:                                         if m_ == 2:
+557:                                             key = ("x_only"
+558:                                                    if u1 + u2 + u3 + u4 == 0
+559:                                                    else "y_active")
+560:                                             split_m2[key] += 1
+561:     check(f"microstate count R(2m+3) = #(x,y) in N^8 with m = sum T_x + "
+
+===== 50 CURVE.CODE.OUTERSPIN.01 verification/v796_duad_syntheme_bridge.py:326 scope=__init__ =====
+322:             self.zeros = {q: sum(1 for b in q if b == 0) for q in self.refs}
+323:             self.odds = sorted(q for q in self.refs if self.zeros[q] == 6)
+324:             self.evens = sorted(q for q in self.refs if self.zeros[q] == 10)
+325:             self.lines = iso_lines(self.tab)
+326:             self.spreads = spreads_of(self.lines)
+327:             self.sp = linear_transporters(self.tab, self.tab)
+328:             # duad vector for each pair of odds
+329:             self.duad_vec = {}
+330:             for v in range(1, 16):
+
+===== 51 HECKE.R_MICROSTATE.01 verification/v797_r_microstate_identification.py:261 scope=odd_diag_count =====
+257: def odd_diag_count(target):
+258:     """#{(x, y) in Z^8, all coords odd : Sum x^2 + 2 Sum y^2 = target}
+259:     by exact convolution of one-mode theta series."""
+260:     one = [0] * (target + 1)
+261:     x = 1
+262:     while x * x <= target:
+263:         one[x * x] += 2
+264:         x += 2
+265:     two = [0] * (target + 1)
+
+===== 52 E8.SYNDROME.ALGEBRA.01 verification/v805_e8_syndrome_algebra.py:686 scope=main =====
+682:                 continue
+683:             for c_r in CV[v]:
+684:                 for c_rp in CV[w]:
+685:                     _, d, k = product_data(c_r, v, c_rp, w)
+686:                     s_tot += 1
+687:                     # true translation is v+w; claimed target is scrambled:
+688:                     if bxor(v, w) == tgt_claimed and d in CSET.get(
+689:                             tgt_claimed, {}):
+690:                         s_hit += 1
+
+===== 53 PRIME.LORENTZ.SPINOR.01 verification/v807_lorentz_nullselector.py:302 scope=<module> =====
+298: FIT_R2 = 0.50
+299: RHO_TOL = 0.20
+300: R_TOL = 0.80
+301: CR_FRAC = 0.85
+302: CR_CONST_CV = 0.10
+303: REVEAL_FRAC = 0.85
+304: BAR_SCR = 5.0
+305: N_RAND = 200
+306: RAND_PCT = 95
+
+===== 54 PRIME.LORENTZ.SPINOR.01 verification/v807_lorentz_nullselector.py:1038 scope=run =====
+1034:               and h1_P1(-4) == int(tc.N_fam))
+1035: 
+1036:         a_anchor = (1, 1, 2)
+1037:         e1 = sum(a_anchor)
+1038:         e2 = (a_anchor[0] * a_anchor[1] + a_anchor[0] * a_anchor[2]
+1039:               + a_anchor[1] * a_anchor[2])
+1040:         e3 = a_anchor[0] * a_anchor[1] * a_anchor[2]
+1041:         i_s, j_s = 1, 2                      # the spinor = anchor support
+1042:         t_ = sp.Symbol("t")
+
+===== 55 FLAVOR.GRAPH.FILTRATION.01 verification/v812_flavor_graph_filtration.py:371 scope=adj_matrix =====
+371:     def adj_matrix(edges, n=5):
+372:         A = [[0] * n for _ in range(n)]
+373:         for e in edges:
+374:             a, b = sorted(e)
+375:             A[a][b] = A[b][a] = 1
+
+===== 56 FLAVOR.GRAPH.FILTRATION.01 verification/v812_flavor_graph_filtration.py:375 scope=adj_matrix =====
+371:     def adj_matrix(edges, n=5):
+372:         A = [[0] * n for _ in range(n)]
+373:         for e in edges:
+374:             a, b = sorted(e)
+375:             A[a][b] = A[b][a] = 1
+376:         return A
+
+===== 57 TFPT.POSITIVE_DESCENT.MASTER.01 verification/v817_positive_descent_master.py:194 scope=check =====
+194: def check(name, ok, detail=""):
+195:     CHECKS.append((name, bool(ok)))
+196:     print(("PASS " if ok else "FAIL ") + name
+197:           + ("  -- " + detail if detail else ""))
+198:     return ok
+
+===== 58 PRIME.PACKET.RM14.01 verification/v819_prime_packet_rm14.py:206 scope=nullspace =====
+202:     free = [c for c in range(NPT) if c not in pivots]
+203:     out = []
+204:     for fc in free:
+205:         vec = [0] * NPT
+206:         vec[fc] = 1
+207:         for i, pc in enumerate(pivots):
+208:             vec[pc] = A[i][fc]
+209:         out.append(sum(b << k for k, b in enumerate(vec)))
+210:     return out
+
+===== 59 PRIME.FLOOR.SKELETON.01 verification/v824_prime_floor_skeleton.py:254 scope=check =====
+254: def check(name, ok, detail=""):
+255:     global N_CHK
+256:     N_CHK += 1
+257:     if not ok:
+258:         FAILS.append(name.split()[0])
+
+===== 60 PRIME.FLOOR.SKELETON.01 verification/v824_prime_floor_skeleton.py:417 scope=_probe_run =====
+413:           "deep envelope)")
+414:     print("    %5s %6s | %9s %9s %9s | %9s %11s | %6s %9s"
+415:           % ("h", "alpha", "eps_deep", "eps_arch", "eps_f", "pert",
+416:              "X^2", "close?", "T_need"))
+417:     n_close, close_flags = 0, []
+418:     for w in wins:
+419:         D, hz, Mz, al = w["D"], w["h"], w["M"], w["alpha"]
+420:         jj = np.arange(hz)
+421:         t1v = parity_t(1, hz)
+
+===== 61 PRIME.FLOOR.SKELETON.01 verification/v824_prime_floor_skeleton.py:1216 scope=run =====
+1212:     g1_, g2_, g3_ = _LAST1.get("grades", ("?", "?", "?"))
+1213:     print()
+1214:     fails2, n2 = _part2()
+1215:     v2 = _LAST2.get("verdict", "?")
+1216:     ok = (n1 == 12 and fails1 == [] and v1 == "FLOOR-PARTIAL"
+1217:           and g1_.startswith("PER-RUNG-ONLY")
+1218:           and g2_.startswith("UNIFORM-VERIFIED")
+1219:           and g3_ == "UNIFORM-VERIFIED"
+1220:           and n2 == 9 and fails2 == []
+
+===== 62 PRIME.FLOOR.PAIRCORR.01 verification/v831_prime_alias_second_moment.py:221 scope=run =====
+217:     rows.sort(key=lambda w: w["alpha"])
+218:     for Mz in DEEP_MS:
+219:         rows.append(dict(h=Mz // 2, M=Mz, D=DGRID,
+220:                          alpha=(Mz // 2) * DGRID, rr=None, deep=True))
+221:     worst_idw = 0.0
+222:     for w in rows:
+223:         fr = pole_frame(w["h"], w["D"], gam)
+224:         tau_z, lam_z, idw = tau_of(fr)
+225:         worst_idw = max(worst_idw, idw)
+
+===== 63 PRIME.RESIDUAL.QUADRATURE.01 verification/v876_carleson_polygon_wave.py:2195 scope=_gate =====
+2194: def _gate(name, out, code, same, exp_n, exp_fails, exp_verdict, exp_code,
+2195:           exp_sha, gates, extra=()):
+2196:     n, fails, verdict = _census(out)
+2197:     m = _SHA_RE.search(out)
+2198:     sha_ok = m is not None and m.group(1) == exp_sha
+2199:     ok = (n == exp_n and fails == list(exp_fails)
+
+===== 64 PRIME.PI.RESONANCE.ANATOMY.01 verification/v876_carleson_polygon_wave.py:2221 scope=<module> =====
+2217:              verdict[:140]), flush=True)
+2218:     return ok
+2219: 
+2220: 
+2221: _PLAN = (
+2222:     ("phase_polygon_probe", _SRC_POLYGON, 8, ("S3.1", "S3.2"),
+2223:      "POLYGON-BREAKS", 1, EXPECT_SHA_POLYGON, (
+2224:          ("CARLESON-WARD",
+2225:           r"\[PASS\] S4\.1 \[CARLESON WARD\] lam_max\(M_- in plus-poly "
+
+===== 65 PRIME.EULERPICK.CERTIFIED.FLOORS.01 verification/v915_eulerpick_certified_floors.py:694 scope=part =====
+690:                          % (gs, ds, nstar, expect))
+691:     check("D1 planted-off-line detection subset (round-95 table)",
+692:           det_ok, "; ".join(det_lines))
+693: 
+694:     gamma_reach = 8
+695:     t_pt = 3_000_175_332_800
+696:     check("D2 reach cap vs the verification height (disproof-sound, "
+697:           "reach-capped)",
+698:           det_ok and t_pt / gamma_reach > 3.75e11
+
+===== 66 PRIME.EULERPICK.CERTIFIED.FLOORS.01 verification/v915_eulerpick_certified_floors.py:570 scope=part =====
+566:         s = mp.mpf(3 * j + 2) / (2 * j)
+567:         s_up = (mp.mpf(B_PSI) * s / (s - 1)
+568:                 * mp.power(Y_SPLIT, 1 - s))     # RS-Abel upper bound
+569:         err_bound = (K_TERM_U * u53 + DD_ACC_U2 * n_c * u53 ** 2) * s_up
+570:         err_ok = (err_ok and err_bound <= mp.mpf("1e-18")
+571:                   and mp.mpf(RECORD_ERR_S[j - 1]) <= err_bound)
+572:         err_lines.append("j=%d %.1e" % (j, float(err_bound)))
+573:     th_up = mp.mpf(B_PSI) * mp.mpf(10) ** 13
+574:     err_th = (E_LOG_U * u53 + DD_ACC_U2 * n_c * u53 ** 2) * th_up
+
+===== 67 PRIME.DEPTHBLOCK.TRANSFER.01 verification/v928_depthblock_transfer_theorems.py:143 scope=check =====
+143: def check(name, ok, detail=""):
+144:     ok = bool(ok)
+145:     CHECKS.append((name, ok))
+146:     if not ok:
+147:         FAILS.append(name.split()[0])
+
+===== 68 PRIME.SIGMAFLOOR.FACTORIZATION.01 verification/v929_sigmafloor_factorization.py:155 scope=<module> =====
+151: PIN_MINSIN_MIN = 1.5e-6
+152: # r169 G50 controls: raw floor sigma_w (holds) vs BA3 bridge (false)
+153: PIN_CTRL_SIGMA_W = (0.123, 0.127, 0.199)
+154: 
+155: N_CHECKS = 12
+156: EXPECTED = "SIGMAFLOOR-FACTORIZATION"
+157: 
+158: CHECKS: list[tuple[str, bool]] = []
+159: FAILS: list[str] = []
+
+===== 69 PRIME.SIGMAFLOOR.FACTORIZATION.01 verification/v929_sigmafloor_factorization.py:162 scope=check =====
+162: def check(name, ok, detail=""):
+163:     ok = bool(ok)
+164:     CHECKS.append((name, ok))
+165:     if not ok:
+166:         FAILS.append(name.split()[0])
+
+===== 70 PRIME.ZERO.CAUSAL.SYNTH.01 verification/v945_zero_causal_stratification.py:356 scope=run =====
+352:     print("=" * 74)
+353:     rc = part()
+354:     n_run, fails = len(CHECKS), list(FAILS)
+355:     verdict = EXPECTED if (rc == 0 and not fails) else "MIXED"
+356:     ok = (rc == 0 and n_run == N_CHECKS and not fails
+357:           and verdict == EXPECTED)
+358:     print("\n" + "=" * 74)
+359:     print("v945: %d/%d checks passed | verdict %s | runtime %.1f s"
+360:           % (n_run - len(fails), n_run, verdict, time.time() - T_ALL))
+
+===== 71 CCC.SEAM.CROSSOVER.01 verification/v957_ccc_crossover_kinematics.py:2293 scope=real_so4 =====
+2290:     def real_so4(M2):
+2291:         R = np.zeros((4, 4))
+2292:         for j in range(2):
+2293:             e = np.zeros(2, complex); e[j] = 1.0
+2294:             w = M2 @ e
+2295:             R[0, 2*j], R[1, 2*j], R[2, 2*j], R[3, 2*j] = (
+2296:                 w[0].real, w[0].imag, w[1].real, w[1].imag)
+2297:             w = M2 @ (1j * e)
+
+===== 72 PRIME.PORT.WALL.METRIC_FIREWALL.01 verification/v961_midpoint_orientation_dictionary.py:6627 scope=_gate =====
+6623:     fails = sorted({tok for st, tok in marks if st == "FAIL"})
+6624:     m = _RES_RE.search(out)
+6625:     res_ok = (m is not None and int(m.group(1)) == exp_n
+6626:               and int(m.group(2)) == exp_n and m.group(3) == exp_sha)
+6627:     ok = (n == exp_n and not fails and code == 0 and res_ok
+6628:           and same is not False)
+6629:     gates.append(ok)
+6630:     prov = ("byte-exact vs experiments source" if same is True else
+6631:             "embedded copy (source file not present)" if same is None
+
+===== 73 PRIME.PORT.REPRESENTATION.CONTEST.01 verification/v963_lstar_reduction_dictionary.py:6233 scope=_exec_probe =====
+6229:     path = _probe_file(name)
+6230:     same = None
+6231:     if path is not None:
+6232:         with open(path, encoding="utf-8") as fh:
+6233:             same = (fh.read() == src)
+6234:     fname = path or os.path.abspath(__file__)
+6235:     mod = types.ModuleType(name)
+6236:     mod.__file__ = fname
+6237:     sys.modules[name] = mod
+
+===== 74 PRIME.L2.REDUCTION_CHAIN.01 verification/v966_l2_reduction_chain.py:384 scope=_l2_reduction_chain =====
+380:         "rational vectors, with the ratio form (D2/D1)(neff2/neff1)"
+381:         " == (L12/L11)^2 across ladder points -- the exact content "
+382:         "of sl_D = 2 sl_L1 - sl_neff")
+383:     R = _R300
+384:     ok_t3b = (2 * R["sl_L1"] - R["sl_neff"] == _Fr(-571, 1000)
+385:               and R["sl_mx"] + R["sl_L1"] + R["sl_fill"]
+386:               == _Fr(-571, 1000)
+387:               and 2 * R["sl_L1"] - _R297["sigma_star"]
+388:               == _Fr(908, 1000)
+
+===== 75 PRIME.L2.NEFF_TARGET.01 verification/v966_l2_reduction_chain.py:384 scope=_l2_reduction_chain =====
+380:         "rational vectors, with the ratio form (D2/D1)(neff2/neff1)"
+381:         " == (L12/L11)^2 across ladder points -- the exact content "
+382:         "of sl_D = 2 sl_L1 - sl_neff")
+383:     R = _R300
+384:     ok_t3b = (2 * R["sl_L1"] - R["sl_neff"] == _Fr(-571, 1000)
+385:               and R["sl_mx"] + R["sl_L1"] + R["sl_fill"]
+386:               == _Fr(-571, 1000)
+387:               and 2 * R["sl_L1"] - _R297["sigma_star"]
+388:               == _Fr(908, 1000)
+
+===== 76 DYN.UNITARY.DILATION.01 verification/v987_os_dilation_package.py:233 scope=per_cell_channel =====
+229:     def per_cell_channel(L):
+230:         outs = []
+231:         for basis in range(3):
+232:             p = np.zeros(3)
+233:             p[basis] = 1.0
+234:             rho = np.array([1.0])
+235:             for _ in range(L):
+236:                 rho = np.kron(rho, np.diag(p))
+237:                 rho = np.kron(rho, np.diag([1.0, 0, 0]))
+
+===== 77 DYN.UNITARY.DILATION.01 verification/v999_weak_collision_hp.py:408 scope=run_family =====
+404:     )
+405: 
+406:     richardson_errors = []
+407:     for coarse_index in range(len(GENERATOR_DTS) - 1):
+408:         ratio = (
+409:             GENERATOR_DTS[coarse_index]
+410:             / GENERATOR_DTS[coarse_index + 1]
+411:         )
+412:         extrapolated = (
+
+===== 78 DYN.UNITARY.DILATION.01 verification/v999_weak_collision_hp.py:221 scope=swap_operator =====
+217:     for left in range(dimension):
+218:         for right in range(dimension):
+219:             source = dimension * left + right
+220:             target = dimension * right + left
+221:             swap[target, source] = 1.0
+222:     return swap
+
+===== 79 SEAM.EQUIV.SKELETON.01 verification/v973_seam_route_narrowing.py:294 scope=e =====
+292:     def e(k):
+293:         v = [0] * _NP18
+294:         v[k] = 1
+295:         return v
+
+===== 80 TFPT4D.LATTICE.ACTION.01 verification/v989_lattice_gate_battery.py:150 scope=four_point =====
+149: def four_point(beta, faces, lateral):
+150:     z = 0.0
+151:     m1 = np.zeros(4)
+152:     m2 = np.zeros((4, 4))
+153:     for cfg in range(4096):
+154:         s = [1 if (cfg >> i) & 1 else -1 for i in range(12)]
+
+===== 81 TFPT4D.LATTICE.ACTION.01 verification/v989_lattice_gate_battery.py:548 scope=gauss_factors =====
+546: def gauss_factors(num, gL, gR, s, site=1):
+547:     s = int(s) % 4
+548:     vlink = (np.linalg.matrix_power(_link_c(1, X1_C), s)
+549:              @ np.linalg.matrix_power(_link_c(0, X1_C), (4 - s) % 4))
+550:     phi = (_i_n_phase(num[site][0], gL) @ _i_n_phase(num[site][1], gR))
+551:     return vlink, phi
+
+===== 82 FTRANSFER.GENERATING.01 verification/v990_wj_transduction_mechanism.py:276 scope=dH_frozen_dtheta =====
+276:     def dH_frozen_dtheta(theta, w=W_HOP):
+277:         phase = np.exp(1j * theta)
+278:         dseam = 1j * phase * (F_PSI[1].conj().T @ F_PSI[0])
+279:         return w * (dseam + dseam.conj().T)
+
+===== 83 PRIME.WORLD.DIRICHLET_MATCHED_FRAME.01 verification/v982_dirichlet_matched_frame.py:189 scope=run =====
+185: 
+186:     # ---- 4. the parity kernel at 30 digits
+187:     for a in (0, 1):
+188:         for xival in (mp.mpf(1) / 2, mp.mpf(3) / 2):
+189:             mp.mp.dps = 35
+190:             z = mp.mpf(1 + 2 * a) / 4 + 1j * xival / 2
+191:             target = mp.re(mp.digamma(z))
+192:             got = kernel_integral(a, xival)
+193:             check("parity kernel VERIFIED at 30 digits (a = %d, xi = "
+
+===== 84 BULK.PRIME_COMPLETION.01 verification/v1020_spectator_sector_obstruction.py:192 scope=chern_number_fhs =====
+192: def chern_number_fhs(mass: float, grid: int = CHERN_GRID) -> float:
+193:     step = 2.0 * pi / grid
+194:     occupied = []
+195:     for ix in range(grid):
+196:         row = []
+
+===== 85 BULK.PRIME_COMPLETION.01 verification/v1020_spectator_sector_obstruction.py:262 scope=krylov_dimension =====
+258:     for seed in seed_dims:
+259:         if seed >= dim:
+260:             continue
+261:         v = np.zeros(dim, dtype=complex)
+262:         v[seed] = 1.0
+263:         w = v.copy()
+264:         for _ in range(dim):
+265:             if len(basis) >= dim:
+266:                 break
+
+===== 86 GRAV.PARENT.GAP.NO_GO.01 verification/v1024_parent_internal_boundaries.py:557 scope=tt_projector =====
+553:     theta = np.eye(3) - np.outer(direction, direction)
+554:     basis6 = []
+555:     for index in range(3):
+556:         matrix = np.zeros((3, 3), dtype=float)
+557:         matrix[index, index] = 1.0
+558:         basis6.append(matrix)
+559:     for left, right in ((0, 1), (0, 2), (1, 2)):
+560:         matrix = np.zeros((3, 3), dtype=float)
+561:         matrix[left, right] = matrix[right, left] = 1.0 / math.sqrt(2.0)
+
+===== 87 FTRANSFER.PARENT.Z5CAP.01 verification/v1024_parent_internal_boundaries.py:47 scope=check =====
+47: def check(name: str, condition: bool, detail: str = "") -> None:
+48:     result = Result(name, bool(condition), detail)
+49:     RESULTS.append(result)
+50:     label = name if not detail else f"{name} -- {detail}"
+51:     suite_check(label, result.passed)
+
+===== 88 GRAV.SPIN2.LOCAL.CONSTRAINT.01 verification/v1029_local_tensor_constraints.py:37 scope=tensor_data =====
+33: def tensor_data(k: sp.Matrix) -> tuple[sp.Matrix, ...]:
+34:     basis = []
+35:     for index in range(3):
+36:         element = sp.zeros(3)
+37:         element[index, index] = 1
+38:         basis.append(element)
+39:     for left, right in ((1, 2), (0, 2), (0, 1)):
+40:         element = sp.zeros(3)
+41:         element[left, right] = element[right, left] = 1/sp.sqrt(2)
+
+===== 89 GRAV.FREE.CURVATURE.FOCK.01 verification/v1031_quantum_tensor_curvature.py:304 scope=finite_ccr_no_go =====
+300:             annihilator[level-1, level] = sp.sqrt(level)
+301:         q = (annihilator+annihilator.T)/sp.sqrt(2)
+302:         p = (annihilator-annihilator.T)/(sp.I*sp.sqrt(2))
+303:         top = sp.zeros(dimension)
+304:         top[dimension-1, dimension-1] = 1
+305:         defect = q*p-p*q-sp.I*sp.eye(dimension)
+306:         check(f"finite-dimensional CCR negative control d={dimension}",
+307:               zero(defect+sp.I*dimension*top)
+308:               and sp.trace(q*p-p*q) == 0

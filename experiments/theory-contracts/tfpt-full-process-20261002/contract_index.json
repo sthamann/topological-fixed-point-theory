@@ -1,0 +1,200 @@
+{
+  "contract": "tfpt-full-process-20261002",
+  "date": "20261002",
+  "research_id": "TFPT.FULL.PROCESS.01",
+  "question": "Is there ONE parameter vector Theta and ONE state |Omega_Theta> from which chiral light matter, flavor, charges, the E8 readouts, alpha, mass relations, dynamical gauge fields, the space-time cone and gravity follow simultaneously?",
+  "status_values": [
+    "FAIL",
+    "CONDITIONAL",
+    "DERIVED"
+  ],
+  "status_rule": "FAIL: at least one hard joint condition contradicts another for the candidate Theta. CONDITIONAL: one joint model passes all gates but needs additional axioms. DERIVED: all operations come from P1/P2 or explicitly accepted base axioms. Results from different parameter worlds may not be combined; no test count is an overall verdict.",
+  "verdict": "FAIL",
+  "verdict_scope": "FAIL refers to Theta0 (Gate B fails structurally, vector-like IR). Theta1 (frozen minimal-doubling h_W, structure_hash 2b23ba1ba94c9058) is evaluable with exact signs but has no verdict: Gate B thermodynamics, C, D, E, F not evaluated.",
+  "single_model_rule": "U_Test = U_Links U_Interaction Gamma_-(U_Walk[U, e]) with one Theta = {g, g_1, g_2, g_3, walk data, E(x), state, ...}; every gate is evaluated in the same Theta and the same |Omega_Theta>.",
+  "gates": {
+    "A_source": {
+      "criterion": "P1 + P2 -> local single-particle space + spin + internal source",
+      "Theta1": "CONDITIONAL input: AX.WEYLCOIN (explicit minimal runtime input, NOT_DERIVED; frozen 2026-10-05): a local, family-free, gauge-singlet, translation-covariant complex factor C_x ~ C^2 at every spatial address, addressable by the spatial runtime. Spin 1/2 then emerges at the isotropic Weyl node of h_W (mark-projective-lift-20261005); the source contains no such factor (weylcoin-origin-20261005, NO_NEUTRAL_COIN_IN_SOURCE). AX.MARKCLIFFORD is SUPERSEDED for the chiral Theta1 branch (kept for Dirac/vector-like constructions, Theta0). Space and step time derived."
+    },
+    "B_chiral_matter": {
+      "criterion": "G1: inside a fixed B_eps(Gamma) only the desired Weyl sector and its ordinary multi-particle states; G2: Delta_out^(eps) = inf_{k in BZ \\ B_eps(Gamma)} Delta_odd^{T=0}(k) > 0 with fixed eps; G3: no state in any active symmetry sector (k, q_active) below the desired-Weyl multi-particle threshold E_ref(K, q) (SECTOR_GAP with active Z4 charge, beta-slope plateau, SECTOR_EXCESS); G4: Spin(10), Z4 and translations unbroken (untwisted runs); G5: G1-G4 stable for V -> infinity, beta -> infinity, dtau -> 0; only then Gate B = CONDITIONAL",
+      "Theta0": "FAIL (vector-like: both chirality blocks light at k = 0)",
+      "Theta1": "local strong-coupling necessary condition PASSED (unique symmetric ground state, even gap 144 g*, odd gap 232 g*); anomalies zero; product proof EXCLUDED (frustration); IR protection PROVEN: Sigma_int = f^2 Sigma^ and the exact spectral sum rule mu2 = f^2 <{X,X^dag}> (leading elementary limit nonperturbative, no assumption; subleading structure assumes regular Sigma^; dark composites open); counterterms: 6-dim allowed space, none from H_int; sign: no on-site Kramers Theta (structural), but exact Pfaffian weights (QMC.PFAFFIAN.GENERAL.01, 7 unit tests) and a MILD measured phase for the frozen h_W on 16/32 sites (R >= 0.9935, phase-quenched, beta ~ L; genuine, converged in dtau; 64 sites running); first G_P(tau) on 16 sites: Gamma exactly free; the depletion at the old P is 79-89 % (16 sites) and 98-101 % (32 sites; multiplet picture excluded) one-loop NODE SHIFT (Sigma^(1)(P) = b.sigma, |dk| = 39.6 g/t along [111], charge -1 kept) -- no gap claim; node tracking with Spin(10)-Cartan flavour twists running; HS-dressed composite seeds give a non-positive C(t0) (contact terms) -> no composite statement; thermodynamic mirror gap on a homothetic family, composites (GEVP), symmetry-breaking scaling and the g phase map NOT evaluated -> no verdict yet; NODE TRACK: at g = 0.01 the Q+ sector at the one-loop node gives G(beta/2) = 0.4976 (one loop 0.5000) -> pure node motion confirmed there; one loop predicts the end of the linear regime near g ~ 0.02 with an axis pair process that transfers the mirror charge -1 (never removed at first order); g >= 0.03 under scan; beyond the one-loop fold (g = 0.03, 16 sites) the QMC departs from the one-loop node (0.11 vs 0.50 at lambda = 1.9; best line point G = 0.325 at lambda = 0.3) -- first many-body departure, not a gap claim; 32-site check and g = 0.1 points running; spectral fits (E, Z): gapless within the beta resolution only at g <= 0.01 (moved node, Z ~ 1); g = 0.03: all measured points E >~ 1 with Z 0.6-1; g = 0.1 (16 sites): Gamma exactly free, all other measured points E >~ 4 (Trotter-limited) -- a strong-coupling candidate region, not yet a verdict (no node search off the measured points, no sector test, no volume scaling, no symmetry scaling); 32-site node points: g = 0.01 node motion confirmed (G = 0.504 at lambda = 0.21); g = 0.03 departure from the one-loop node survives on 32 sites (G = 0.118 vs 0.499 at lambda = 1.9); NODE_SPECTRAL_FIT.02: with free particle / hole channels g = 0.03 shows levels |e| ~ 0.24-0.5 at several momenta (within the thermal resolution) -> no gap evidence at g = 0.03 (earlier M1 'E >~ 1' withdrawn); g = 0.1 remains a strong-coupling candidate (lowest resolvable level ~ 3.7, Trotter-limited); sign: at g = 0.1 on 32 sites R drops from 0.9935 (dtau = 0.25) to 0.889 +- 0.078 (dtau = 0.125) -> the mild-phase statement holds only for weak coupling / coarse dtau so far; dense scan: perturbative node tracking holds at g = 0.015 (G = 0.503 at the one-loop node) and fails at g = 0.021 (0.377 vs 0.4995) -> onset of the non-perturbative region between 0.015 and 0.021, at the one-loop fold; 32-site line at g = 0.03: maximum G = 0.373 at lambda = 0.3 (below 1/2, as on 16 sites), lambda = 0.9 unusable (R = 0.10); g = 0.03 star around P + 0.3 (1,1,1) (multi-twist, 16 sites): G flat at 0.26-0.27, no node nearby -- node elsewhere, Z < 1 or a small gap; error bars underestimated (independent chains differ by 5 sigma); dense trajectory: QMC follows first order up to g = 0.015 and departs continuously from g ~ 0.016-0.018 (G at the one-loop node 0.465 at 0.018, 0.38 at 0.021, 0.22 at 0.024, 0.11 at 0.03); model-free W_Omega: low-energy weight forced at the moved node for g <= 0.018, undecided at beta = 2 for g = 0.021-0.03 (no gap claim), W_max(1.0) <= 0.04 at the measured momenta for g = 0.1; spectral fits with identifiability: low levels with large residue at g = 0.021 (e = -0.11, w 0.84, 16 sites) and g = 0.03 (e = -0.17, w 0.77, 32 sites) near P + 0.3-0.35 (1,1,1) hint at a relocated mirror (Case 1), model-free undecided at beta = 2 -> confirmation (new chains, fixed k*, beta 4-6) pending; double star at g = 0.03 (16 sites, beta = 2): flat landscape, dispersion fit not determined, no zero bracket -> undecided at beta = 2; beta = 4/6 confirmation running; beta = 4 confirmation: g = 0.021 low-energy weight forced below 0.5 (W_min^{some spin} >= 0.52) -> no mirror gap >= 0.5 at g = 0.021; g = 0.03 twisted beta = 4 sign-limited (R = 0.54 / 0.13), undecidable so far; sign scaling at g = 0.1, c_beta = 0.5: R = 0.9997 / 0.9935 / 0.915 on 16 / 32 / 64 sites (Delta f grows with V) -> strong coupling and low temperature are sign-limited | ROUND 52 (GROUNDLINE.RESIDUE.01, rule fixed before the data): at the predeclared Q+ momenta the mirror line is GROUND_CONNECTED_3BETA_CANDIDATE (renamed: three temperatures cannot exclude a slow decay) at g = 0.018 (P + 0.39 (1,1,1), Z_0 = 0.91, |e| <= 0.05 at beta = 2/4/6) and at g = 0.021 (P + 0.35 (1,1,1), Z_0 = 0.80, |e| <~ 0.07; two chains at beta = 4 and 6); beta = 6 matrix windows L_0.5 >= 0.72-0.93 -> the mirror survives past the onset of departure from first order (g ~ 0.018) up to at least g = 0.021 on 16 sites; a possible SMG region lies at larger g. g = 0.03 parked: intrinsic sign problem at beta = 4 (untwisted R = 0.043 / 0.306, 32 sites 0.347). Not yet sector-projected, one volume -> no verdict. | ROUND 53: g = 0.018 promoted to MIRROR_GROUND_SECTOR_LIGHT (16 sites, beta <= 8): start-sector projected Green function flat and stable at fixed tau, multiplicity-free sector slope Delta E = -0.01 +- 0.11 for reference -> reference + one mirror particle (free 0.53). g = 0.021 stays GROUND_CONNECTED_3BETA_CANDIDATE (sector estimator noise-limited at beta = 6). g = 0.024 light at beta = 4 (L_0.5 >= 0.72), beta = 6 sign-limited (R = 0.345); g = 0.027 undecided at beta = 4 (R = 0.549). Outcome of the route above 0.021: the sign limit (g_sign(beta = 6) ~ 0.022-0.024) comes before any gapped region -> SOLVER.FEASIBILITY.01 decision point reached; no Gate B verdict. | ROUND 54 CORRECTION: the round-53 promotion of g = 0.018 to MIRROR_GROUND_SECTOR_LIGHT is WITHDRAWN -- SPG.BUDGET.01 (B1-B7) fails (negative sector fractions beyond 3 sigma, too few effective blocks, one seed); g = 0.018 is GROUND_CONNECTED_3BETA_CANDIDATE with SPG_PROJECTION_UNRESOLVED. Diagnosis: no projection sign problem (R^proj ~ 0.997, joint (phi, U) sign ~ 0.99), Z4 projection clean (D_q = 0.25), the TRANSLATION projection is under-sampled (HS-field autocorrelation). | ROUND 54: ten independent chains at g = 0.018, beta = 6 still SPG_PROJECTION_UNRESOLVED (cause MIXING: chain means of D_ref 0.02-1.9, projection sign healthy R^proj 0.98); envelope sampler 7x worse in error^2 x CPU-h -> not adopted; g = 0.024: no beta > 4 passes the R budget (two chains per beta). No coupling has reached MIRROR_GROUND_SECTOR_LIGHT; the mirror remains light in the ordinary spectral data up to g = 0.024 at beta = 4. | ROUND 55 (QMC.MIXING.MODE.01): short chains BURN_IN_LIMITED; six long chains (burn-in 100) still relax (log max |f_U| falls through 140 sweeps), five approach uniform sector fractions D_ref ~ 1/64, one stays high -> SLOW_MODE_CANDIDATE, no global mode identified; pooled SPG still unresolved. Reading: with 16 near-zero mirror modes the low manifold spans all sectors at beta = 6 -- the start-sector projection is likely inactive in equilibrium at this volume (operator-independent sign of light states, but no SPG promotion possible). | ROUND 56 CORRECTION: equilibration matters at g >= 0.018 -- with >= 150 burn-in sweeps G_{P+d}(beta/2) at g = 0.018, beta = 6 falls from 0.46 to 0.39 +- 0.03 and the phase R to 0.24-0.97; all g >= 0.018 results taken with 8-10 burn-in sweeps (GROUNDLINE candidates, matrix windows, g = 0.024 lightness, beta budget) are BURN_IN_SUSPECT; in equilibrium the start-sector projection is inactive (uniform sectors). The mirror is still light-ish in equilibrium (G(beta/2) far above the free 0.065) but the quantitative picture is open. | ROUND 57: with the validated global amplitude move the slow direction relaxes ~10x faster; g = 0.021, beta = 4 equilibrates into a strongly paired state (|phi|^2 ~ 2.3 x prior, G_{P+d}(beta/2) = 0.035-0.039: mirror line strongly suppressed); umbrella / WHAM at g = 0.015, beta = 6: the paired state is the equilibrium (Delta F = -13.4 +- 0.9, phase-corrected), barrier not resolved. Open and decisive: G4 (is the paired state symmetric? 32-site volume test running), then the active mirror-sector gap and Gamma in the paired state. The weak-coupling picture (mirror only moves) holds for the metastable weak branch; whether it is the equilibrium below g = 0.015 is being tested (g = 0.012, 0.010). | ROUND 58 (interim): G4 trend reversal -- the uniform pairing order parameter S_0/N grows slowly in every long chain (16 sites 0.2 -> 3.0 over 250-300 sweeps, still rising; 8 sites 3 of 4 chains condensed; 32 sites rising); the earlier falling S/N was non-equilibrium; a uniform Spin(10)-vector pairing condensate (G4 failure for this phase) is now the more likely outcome; undecided until S_0/N saturates (uniform-mode pCN runs started). | ROUND 58 (interim, 2026-10-07): umbrella in the K = 0 pairing order parameter X = |M|^2 / N at g = 0.021, beta = 4: 16 sites minimum at X* ~ 16-20; 32 sites (with a validated uniform-mode scaling move) every window runs far above its centre (X 10-26, mean forces strongly negative up to X ~ 25): the order parameter per site does not fall with N -> short-range pairing excluded, long-range uniform Spin(10)-vector pairing order indicated -> G4 FAIL for the paired state is the expected verdict (formal verdict pending stationarity).",
+      "measurement_rules": [
+        "report Delta_at_old_P, node_shift (one loop), k_star, Delta_at_k_star and the finite-size multiplet estimate separately; none of them is called 'mirror gap'",
+        "Cartan sectors G_+ and G_- of twisted runs are reported separately, never averaged (TW2: G_+(delta) = G_-(-delta))",
+        "G(beta/2) ~ 1/2 at k_star is a strong positive test for a gapless node; G < 1/2 is NOT a gap proof (Z < 1, continua): beta doubling and dtau halving required",
+        "twist runs only for k_star, Delta_min, topology; spontaneous symmetry breaking only from untwisted runs",
+        "Trotter extrapolation O = O_0 + c dtau^2 before any central number enters the graph",
+        "spectral energies from M1/M2/M3 model comparison (NODE_SPECTRAL_FIT.02), never from the symmetric pair alone",
+        "multi-twist reweighting only with N_amp and the coherent N_coh = N_amp R_theta^2 both above 10-20 % of the independent anchor samples",
+        "correlation matrices must be PSD for all 0 <= tau <= beta; negative eigenvalues beyond errors mean wrong operators or insufficient statistics",
+        "sector traces only with the active Z4 charge inserted directly and only from the symmetric HS integrator; gap from the slope -d log(Z_s/Z_r)/d beta (beta, 2 beta, 4 beta plateau)",
+        "twisted runs carry their own sign problem (32 sites, g = 0.03: R = 0.998 / 0.928 / 0.104 at lambda = 1.9 / 0.3 / 0.9); points with R < 0.5 are excluded, R is reported with every twisted point",
+        "independent seeds required at every central point: two chains at the same parameters differed by 5 binned sigma (0.261 vs 0.325) -> binned errors at 40 sweeps underestimated by ~3",
+        "multi-twist reweighting accepted for local scans (|delta change| <~ 0.15 on 16 sites: N_coh 25-32 of 32)",
+        "twisted production points require R > 0.5 and N_amp, N_coh > 0.2 N_eff",
+        "spectral statements need the model-free W_Omega interval in addition to M1/M2/M3 fits",
+        "sector traces: exact roots of unity for the symmetry phases, slope estimator over beta, 2 beta, 4 beta at fixed dtau; signal-to-noise falls like e^{-beta Delta}",
+        "search and confirmation separated: k* located on one set of chains, confirmed only with new independent chains at the fixed k*",
+        "predeclared model-free windows Omega = 0.25, 0.5, 1 (t = 1 units); a gap candidate needs W_max -> 0 in a FIXED positive window with improving data",
+        "curves whose lowest level is not identifiable (energy Fisher information ~ Z^2) are reported as ENERGY_UNIDENTIFIABLE, never as gap or gapless",
+        "g ~ 0.018 is the onset of the departure from the first-order approximation, not a phase transition (finite V, finite beta: responses are smooth in g)",
+        "matrix spin-block bounds W_min^{some spin} and W_max^{any spin} per fixed window are reported alongside the pole fit and ZERO.BRACKET; the elementary-block bounds do not replace the active sector test",
+        "a final 'passed' statement needs the bounds certified over the continuous frequency range (exact / rational certificate); the float LP on a frequency grid is exploration-grade",
+        "a zero-frequency line is not a ground-state excitation: zero brackets are THERMAL_SPECTRAL_BRACKET until GROUNDLINE.RESIDUE supports Z_0 > 0 and the active sector trace confirms",
+        "GROUNDLINE.RESIDUE.01: per identified line (beta, e_beta, Z_beta, R); models M_G: Z = Z_0 + A e^{-beta delta} (Z_0 >= 0) vs M_T: Z = A e^{-beta delta}; GROUND_CONNECTED only if Z_0 > 0 is supported",
+        "GROUNDLINE first: a THERMAL_SPECTRAL_BRACKET or a low thermal line is interpreted only after the GROUNDLINE.RESIDUE classification (GROUND_CONNECTED / THERMAL / UNDECIDED) of the same branch, or after the sector-projected Green function confirms it; no manual interpretation between the three statuses; for UNDECIDED at most one beta = 8 point and only if R and the residue resolution allow it",
+        "Promotion: GROUND_CONNECTED_<n>BETA_CANDIDATE + SPG_LOW_GAP + SECTOR_LOW_GAP -> MIRROR_GROUND_SECTOR_LIGHT; a finite set of temperatures alone never gives GROUND_CONNECTED (GL4 counter-case)",
+        "Projected Green function: absolute normalisation (C_r(0) = <P_r O O^dag>/<P_r>), no per-curve renormalisation; compare the same physical tau across beta (beta -> infinity at fixed tau first), then the tau dependence; it shows what THIS operator sees in the start sector -- the lowest state of a sector needs the direct sector trace",
+        "SPG.BUDGET.01 before any ground-state reading of a projected correlator: B1 R_phase > 0.5, B2 projection active (D_ref >= 2/64 and > 1/64 + 3 sigma; else SPG_INACTIVE), B3 R^proj >= 0.1 resolved, B4 N_eff >= 8, B5 no unphysical sector fraction beyond 3 sigma, B6 >= 2 compatible seeds, B7 stable block errors; otherwise SPG_PROJECTION_UNRESOLVED",
+        "Equilibration (round 56): at g >= 0.018 a QMC point counts only with >= 150 burn-in sweeps (or continuation from an equilibrated configuration) and >= 2 chains whose late-window means agree; results with shorter burn-in are BURN_IN_SUSPECT"
+      ],
+      "criterion_history": [
+        "Delta(P) > 0 (withdrawn: node motion)",
+        "min_{k != Gamma} Delta_odd(k) > 0 (withdrawn: the Gamma cone has arbitrarily small energies)"
+      ],
+      "preregistration": {
+        "timestamp": "2026-10-03T08:41:49",
+        "windows": [
+          0.1,
+          0.25,
+          0.5,
+          1.0
+        ],
+        "note": "Omega = 0.1 added before evaluating the beta = 4 untwisted (cf4u, cf4v), 32-site beta = 4 (cf4c) and susceptibility (sus) data; windows 0.25 / 0.5 / 1 cannot distinguish E = 0 from a small gap E ~ 0.17",
+        "statuses": [
+          "THERMAL_SPECTRAL_BRACKET (a sign change of a thermal line; not mirror-gapless)",
+          "GROUND_CONNECTED (only if Z_beta -> Z_0 > 0 is supported by GROUNDLINE.RESIDUE)",
+          "ENERGY_UNIDENTIFIABLE"
+        ],
+        "outcome_round52": "Omega = 0.1 window evaluated on the residue series as registered: L_0.1 = 0 at every point (unresolved for beta <= 6), U_0.1 = 0.81-1.00 on the Q+ branch -> no elementary gap candidate (step 9 condition U_0.1 << 1 not met)."
+      },
+      "route_above_0.021": "Adaptive: g = 0.024 at beta = 4 (small twist scan around the branch, R and G(beta/2) per point, full curve at the best candidate; production rule R > 0.5; all points below -> QMC limit reached), then asymmetric fit, Z, four matrix windows, beta = 6 only for an interesting line; g = 0.027 only if the mirror still lives at 0.024. Plot Z_mirror(g), Delta_sector(g), -log R(g): outcomes A (Z ~ 1, Delta ~ 0: not the desired phase), B (Z -> 0, Delta ~ 0: dark light sector), C (Z -> 0 and Delta > 0 without symmetry breaking: first SMG / Gate B candidate). SOLVER.FEASIBILITY.01 only when g_sign < g_critical is evident; candidates: orbital (32 small tensors per site), Spin(10)-adapted local basis (truncation to be tested numerically), neural quantum state / VMC on 32V occupation bits; any second solver must first reproduce g = 0.01 / 0.018 / 0.021 (energy, protected Gamma, moving mirror, sector gaps, symmetry observables). | OUTCOME (2026-10-03): g = 0.024 lives at beta = 4, beta = 6 sign-limited; g = 0.027 undecided at beta = 4 -> QMC limit reached before the physics changes."
+    },
+    "C_dynamic_gauge": {
+      "criterion": "link Hilbert spaces L^2(G), electric/magnetic dynamics, Gauss law [H_total, G_x^A] = 0 on the physical space, massless gauge bosons for unbroken groups",
+      "Theta1": "first exact checkpoint (separate from Gate B): dynamical U(1) links on the bcc plaquette, exact Gauss law, per-gate invariance, static potential (gauge_dynamic.py); photons, SU(2)/SU(3) and the joint B + C test NOT evaluated"
+    },
+    "D_original_readouts": {
+      "criterion": "S48, y, W_S, T, R, B_Y, mass relations and alpha from the same state",
+      "Theta1": "not evaluated in the joint state (matter content S48 = 3 x 16 and y used as input of Gate B)"
+    },
+    "E_gravity": {
+      "criterion": "spin-2 pole in the retarded frame-frame kernel (CTP), two helicities, Ward identity, universal coupling, Einstein-Hilbert coefficients from the same state",
+      "Theta1": "not evaluated (frame = vierbein kinematics only; full Floquet-sea measure blind)"
+    },
+    "F_flavor": {
+      "criterion": "coefficients y_ij selected by a source functional (no fit), then CKM/PMNS",
+      "Theta1": "not evaluated"
+    }
+  },
+  "candidates": {
+    "Theta0": "four-component Dirac mark walk (AX.MARKCLIFFORD), uniform beta mass, sheet mass AX.SHEETMASS, background links, flat frame",
+    "Theta1": "one Clifford block (Weyl walk) per left-handed 16, frozen bcc filter F_U, filtered Spin(10) interaction H_int = -g sum O_A^2, background links, flat frame; state: strong-coupling local singlets on the mirror sector, free light 16"
+  },
+  "evidence": [
+    "experiments/theory-contracts/seam-holonomy-generating-20261001/audit.py",
+    "experiments/theory-contracts/seam-holonomy-generating-20261001/chiral_floquet.py",
+    "experiments/theory-contracts/seam-holonomy-generating-20261001/filter_ir.py",
+    "experiments/theory-contracts/seam-holonomy-generating-20261001/mark_parity.py",
+    "experiments/theory-contracts/seam-holonomy-generating-20261001/mirror_node.py",
+    "experiments/theory-contracts/seam-holonomy-generating-20261001/node_track.py",
+    "experiments/theory-contracts/seam-holonomy-generating-20261001/qmc_pfaffian.py",
+    "experiments/theory-contracts/seam-holonomy-generating-20261001/reweight.py",
+    "experiments/theory-contracts/seam-holonomy-generating-20261001/reweight_check.py",
+    "experiments/theory-contracts/seam-holonomy-generating-20261001/supercell_search.py",
+    "experiments/theory-contracts/seam-holonomy-generating-20261001/symmetric_gap.py",
+    "experiments/theory-contracts/seam-holonomy-generating-20261001/theta1_md.py",
+    "experiments/theory-contracts/seam-holonomy-generating-20261001/twist_covariance.py"
+  ],
+  "next_rounds": [
+    "G4: 32-site extension with the VT3 block rule (G4_PASS_CANDIDATE / SOLVER_LIMIT / CONTINUE)",
+    "Active mirror-sector gap: MIRROR.CORRELATOR.BASIS.01 (preregistered: elementary + cubic composite operators, Wick per HS configuration, GEVP with tau_0 = 0.5) in the paired state; the HS sector projection is blind there (SECTOR_TRACE_INACTIVE_IN_PAIRED_HS)",
+    "Gamma Weyl cone in the paired state; then a homothetic volume family and lower temperatures",
+    "If the phase on 32 sites stays R_eq << 0.5: SOLVER.FEASIBILITY.01 (symmetry-resolved Hamiltonian solver for G4 and the sector gap)",
+    "Transition region g = 0.012 undecided (secondary for Gate B)"
+  ],
+  "not_claimed": [
+    "No complete TFPT solution.",
+    "No symmetric mirror gap in the thermodynamic limit.",
+    "No dynamical gauge field, no spin-2 pole, no flavor angles."
+  ],
+  "relations": [
+    "UR.SOURCE.HOLONOMY_GENERATOR.01",
+    "CHIRAL4D.NOMIRROR.01",
+    "GRAV.SPIN2.EMERGENCE.01",
+    "GRAV.WEINBERG.WITTEN.01",
+    "TFPT.TOE.COMPLETE.01"
+  ],
+  "promotion": false,
+  "complete_TFPT_solution": false,
+  "summary_de": "Master-Contract mit sechs Gates und nur drei Statuswerten. Bewertet ist bisher nur das vollstaendig spezifizierte Modell Theta0 (Dirac-Markenwalk mit beta- und Blattmasse): FAIL an Gate B, weil beide Chiralitaetsbloecke bei k = 0 leicht bleiben (vektorartig). Kandidat Theta1 (ein Cliffordblock pro linkshaendigem 16, eingefrorener bcc-Filter, gefilterte Spin(10)-Wechselwirkung) besteht die exakt pruefbare lokale Bedingung von Gate B (eindeutiger symmetrischer Grundzustand bei starker Kopplung, Luecke 144 g, Anomalien null); die thermodynamische Spiegelluecke und die Gates C bis F sind nicht bewertet. Theta1 hat deshalb noch keinen der drei Statuswerte. Nachtrag 2. Oktober (Runden 34-36): Theta1 praezise festgelegt (Weyl-Block, eingefrorener Filter, Spin(10)-Wechselwirkung, triviale Links fuer Gate B, Zellen mit P). Gate B: lokale Bedingung bestanden, Produktbeweis durch Frustration ausgeschlossen, keine Kramers-Vorzeichenfreiheit fuer den BDT-Hamiltonwalk; thermodynamisch offen. Gate C: erster exakter Pruefpunkt (U(1)-Plakette, Gauss-Gesetz, Gatterinvarianz). Artefaktregel eingefuehrt. Theta1 hat weiterhin kein Urteil. Runde 37: Vorzeichenproblem fuer die ganze Klasse strukturell (kein ortslokales Kramers-Theta), gemessene Phase auf der 16-Platz-Zelle bei beta = 1 mild; naechster Schritt: Reweighting-QMC mit Messung der mittleren Phase gegen beta und Volumen. Nachtrag Runden 38-41: Theta1 eindeutig festgelegt (minimal verdoppelnder C3-Hamiltonoperator auf drei Markenrichtungen, structure_hash 2b23ba1ba94c9058); IR-Schutz des leichten Knotens bewiesen (Annahme: Sigma^ regulaer); sechs Gegenterme, keiner aus H_int; exakte Pfaffian-Gewichte mit sieben Einheitstests; mittlere Phase auf 16/32 Plaetzen mild (64 laeuft); erste Spiegelknotenmessung auf 16 Plaetzen (Luecke ~ g, Endlichkeitseffekt nicht ausgeschlossen). Gate B bleibt ohne Urteil, bis Spiegelluecke, Komposite und Symmetrie auf einer homothetischen Zellreihe entschieden sind. Runde 42: Korrektur -- die gemessene Absenkung bei P ist ueberwiegend Knotenverschiebung (79-89 % erster Ordnung), keine Spiegelluecke. Gate-B-Kriterium verschaerft auf min_{k != Gamma} Delta_odd(k) > 0. Naechster entscheidender Contract: CHIRAL4D.MIRROR.NODE_TRACK.01. g/N-Test: auf 32 Plaetzen 98 % Knotenverschiebung; bei schwacher Kopplung kein Spiegel-Gap.",
+  "Theta1_definition": {
+    "walk": "minimal-doubling C3 Weyl Hamiltonian per left-handed 16: h_W(k) = t sigma.(B^-1 d(Bk)), d_i = sin p_i + cos p_{i+1} - 1, p = Bk, B rows (1,1,-1), (1,-1,1), (-1,1,1) (three of the four mark directions; the omitted mark is an input, MARK_C3_SELECTION outcome A/C); nodes Gamma (V = 1) and P (V = -R_120); the legacy BDT walk is a diagnostic only",
+    "filter": "F = I - (1/8) sum_eps T_eps (frozen)",
+    "interaction": "H_int = -g sum_{x,A} O_A(x)^2, O_A = rho^T (i sigma_2 (x) B_A) rho + h.c., B_A standard Spin(10) 10-channel",
+    "matter": "S48 = 3 x 16, hypercharge y = sum y_i n_i",
+    "links_for_gate_B": "trivial (U_e = I)",
+    "boundary_conditions": "periodic cells containing P: primitive L^3 with 4 | L, or cubic side multiple of 4",
+    "excluded": "no sheet mass, no Dirac beta mass, no dynamical gauge fields in Gate B",
+    "structure_hash": "2b23ba1ba94c9058",
+    "parameter_hash": "separate (theta1_md.py parameter_hash(t, g, beta, dtau, cell))",
+    "symmetry": "C3[111] x Spin(10) x Z4 x translations"
+  },
+  "artifact_rule": {
+    "rule": "each gate produces an artifact that the next gate consumes verbatim; no re-reconstruction with other conventions",
+    "current": {
+      "A": "pending (source_basis.json)",
+      "B": [
+        "seam-holonomy-generating-20261001/filter_ir_results.json",
+        "seam-holonomy-generating-20261001/filtered_patch_results.json",
+        "seam-holonomy-generating-20261001/hs_sign_results.json",
+        "seam-holonomy-generating-20261001/mirror_node_results.json",
+        "seam-holonomy-generating-20261001/node_track_results.json",
+        "seam-holonomy-generating-20261001/qmc_pfaffian_results.json",
+        "seam-holonomy-generating-20261001/reweight_check_results.json",
+        "seam-holonomy-generating-20261001/sign_remedy_results.json",
+        "seam-holonomy-generating-20261001/supercell_search_results.json",
+        "seam-holonomy-generating-20261001/symmetric_gap_results.json",
+        "seam-holonomy-generating-20261001/theta1_md_results.json",
+        "seam-holonomy-generating-20261001/twist_covariance_results.json"
+      ],
+      "C": [
+        "seam-holonomy-generating-20261001/gauge_dynamic_results.json"
+      ],
+      "D": "pending",
+      "E": "pending",
+      "F": "pending"
+    }
+  },
+  "axiom_balance": {
+    "note": "Explicit inputs of the single-model rule beyond P1/P2 (research bookkeeping, not ledger axioms). Added 2026-10-05.",
+    "AX.WEYLCOIN": {
+      "status": "EXPLICIT_MINIMAL_RUNTIME_INPUT / NOT_DERIVED",
+      "statement": "At every spatial address x there is a local complex factor C_x ~ C^2 that carries no family index, is a singlet of the internal gauge groups, is carried along locally and translation-covariantly, and may be addressed nontrivially by the spatial runtime.",
+      "not_included": [
+        "SU(2)",
+        "Pauli matrices",
+        "spin 1/2",
+        "Clifford algebra",
+        "Weyl dispersion",
+        "chirality"
+      ],
+      "consequence": "With an isotropic isolated linear node the coin carries the spin-1/2 representation of the emergent rotations; its 2pi action coincides with the existing fermion parity (not an IR derivation of spin-statistics, not a derivation of the coin).",
+      "evidence": [
+        "minimal-runtime-reconstruction-20261005 (SOURCE.MARK_CLIFFORD.01 NO_GO_FROM_CURRENT_SOURCE)",
+        "mark-projective-lift-20261005 (NOT_FORCED_IN_SOURCE)",
+        "weylcoin-origin-20261005 (NO_NEUTRAL_COIN_IN_SOURCE)"
+      ],
+      "role": "prerequisite of Gate A for Theta1",
+      "open_question": "Why does the local runtime state possess a neutral C^2?"
+    },
+    "AX.MARKCLIFFORD": {
+      "status": "SUPERSEDED_FOR_CHIRAL_THETA1",
+      "statement": "Cl(4)-module coin labelled by the four marks (seam-holonomy-generating-20261001, audit.py).",
+      "note": "Not deleted: still the input of the Dirac/vector-like constructions (Theta0, AX.SHEETMASS); for chiral matter beta is unused."
+    }
+  }
+}

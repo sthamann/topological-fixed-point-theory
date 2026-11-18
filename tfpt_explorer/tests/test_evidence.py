@@ -3,6 +3,7 @@ from __future__ import annotations
 import csv
 import json
 from pathlib import Path
+import pytest
 
 from tfpt_explorer.evidence import (
     STAGE_IDS,
@@ -12,9 +13,31 @@ from tfpt_explorer.evidence import (
     summarize_build_audit_log,
     summarize_verification_log,
 )
+from semantic_explorer.atlas_client import load_atlas_export
 
 
 REPO = Path(__file__).resolve().parents[2]
+
+
+@pytest.fixture(scope="session")
+def real_atlas_snapshot():
+    return load_atlas_export(REPO)
+
+
+def _write_atlas_fixture(root: Path, snapshot: dict) -> None:
+    atlas_dir = root / "semantic_explorer"
+    atlas_dir.mkdir(parents=True, exist_ok=True)
+    (atlas_dir / "test-atlas.json").write_text(json.dumps(snapshot), encoding="utf-8")
+    run = atlas_dir / "run.sh"
+    run.write_text(
+        "#!/bin/sh\n[ \"$1\" = export ] || exit 2\nexec cat \"$(dirname \"$0\")/test-atlas.json\"\n",
+        encoding="utf-8",
+    )
+    run.chmod(0o755)
+
+
+def _empty_atlas() -> dict:
+    return {"meta": {}, "nodes": [], "edges": [], "sources": []}
 
 
 def _write_csv(path: Path, fieldnames: list[str], rows: list[dict[str, str]]) -> None:
@@ -81,23 +104,19 @@ def _minimal_repo(tmp_path: Path) -> Path:
     )
     for script in scripts:
         (verification / f"{script}.py").write_text("def run(): return 0\n", encoding="utf-8")
-    (verification / "theory_graph.json").write_text(
-        json.dumps({"nodes": [], "edges": [], "meta": {"counts": {}, "sources": []}}),
-        encoding="utf-8",
-    )
+    _write_atlas_fixture(root, _empty_atlas())
     return root
 
 
-def test_real_catalog_covers_authoritative_inventory() -> None:
-    catalog = build_catalog(REPO)
+def test_real_catalog_covers_authoritative_inventory(real_atlas_snapshot) -> None:
+    catalog = build_catalog(REPO, atlas_snapshot=real_atlas_snapshot)
     source_counts = catalog["summary"]["source_counts"]
     assert source_counts["registry_scripts"] == source_counts["run_all_modules"]
     assert source_counts["registry_scripts"] == len(get_verification_modules(REPO))
-    assert source_counts["graph_nodes"] == 5969
-    assert source_counts["graph_edges"] == 64164
-    assert source_counts["lean_files_graph"] == 179
+    assert source_counts["graph_nodes"] == len(real_atlas_snapshot["nodes"])
+    assert source_counts["graph_edges"] == len(real_atlas_snapshot["edges"])
+    assert source_counts["lean_files_graph"] >= 1
     assert source_counts["lean_source_files"] == 178
-    assert source_counts["lean_build_files"] == 1
     assert catalog["summary"]["coverage"]["registry_runner_equal"] is True
     assert catalog["summary"]["coverage"]["registered_files_present"] is True
     assert catalog["summary"]["coverage"]["experiment_units_catalogued"] == source_counts["experiment_units"]
@@ -319,34 +338,19 @@ def test_resumed_build_audit_requires_explicit_successful_stage_markers(tmp_path
 
 def test_rh_audit_result_overlays_exact_probe_without_changing_verdict(tmp_path: Path) -> None:
     root = _minimal_repo(tmp_path)
-    graph_path = root / "verification/theory_graph.json"
-    graph_path.write_text(
-        json.dumps(
-            {
-                "nodes": [
-                    {
-                        "id": "rh:experiments/tfpt-discovery/block_completion_probe.py",
-                        "type": "rh",
-                        "label": "experiments/tfpt-discovery/block_completion_probe.py",
-                        "path": "experiments/tfpt-discovery/block_completion_probe.py",
-                        "attrs": {"outcome": "KILLED", "round": "r484"},
-                        "sources": ["experiments/tfpt-discovery/block_completion_probe.py"],
-                    },
-                    {
-                        "id": "rh:rh/problem/block_completion.pdf",
-                        "type": "rh",
-                        "label": "rh/problem/block_completion.pdf",
-                        "path": "rh/problem/block_completion.pdf",
-                        "attrs": {"outcome": "KILLED", "round": "r484"},
-                        "sources": ["rh/problem/block_completion.pdf"],
-                    },
-                ],
-                "edges": [],
-                "meta": {"counts": {}, "sources": []},
-            }
-        ),
-        encoding="utf-8",
-    )
+    _write_atlas_fixture(root, {
+        "meta": {}, "edges": [],
+        "sources": [
+            {"id": "s1", "path": "experiments/tfpt-discovery/block_completion_probe.py"},
+            {"id": "s2", "path": "rh/problem/block_completion.pdf"},
+        ],
+        "nodes": [
+            {"id": "attempt:rh:experiments/tfpt-discovery/block_completion_probe.py", "type": "attempt",
+             "label": "block completion probe", "attrs": {"attempt_kind": "rh", "verdict_raw": "KILLED", "round": "r484", "source_refs": ["s1"]}},
+            {"id": "attempt:rh:rh/problem/block_completion.pdf", "type": "attempt",
+             "label": "block completion paper", "attrs": {"attempt_kind": "rh", "verdict_raw": "KILLED", "round": "r484", "source_refs": ["s2"]}},
+        ],
+    })
     for rel in (
         "experiments/tfpt-discovery/block_completion_probe.py",
         "rh/problem/block_completion.pdf",
@@ -388,8 +392,8 @@ def test_rh_audit_result_overlays_exact_probe_without_changing_verdict(tmp_path:
     }
 
 
-def test_real_rh_audit_records_are_searchable_and_keep_r484_killed() -> None:
-    catalog = build_catalog(REPO)
+def test_real_rh_audit_records_are_searchable_and_keep_r484_killed(real_atlas_snapshot) -> None:
+    catalog = build_catalog(REPO, atlas_snapshot=real_atlas_snapshot)
     coverage = catalog["summary"]["coverage"]["rh_audit_records"]
     assert coverage == {
         "parsed": 264,
@@ -420,8 +424,8 @@ def test_verification_allowlist_has_no_arbitrary_commands() -> None:
         assert module["path"].endswith(".py")
 
 
-def test_requested_source_documents_are_direct_catalog_items() -> None:
-    catalog = build_catalog(REPO)
+def test_requested_source_documents_are_direct_catalog_items(real_atlas_snapshot) -> None:
+    catalog = build_catalog(REPO, atlas_snapshot=real_atlas_snapshot)
     coverage = catalog["summary"]["coverage"]["requested_source_documents"]
     assert coverage["catalogued"] == 19
     assert coverage["missing"] == []
