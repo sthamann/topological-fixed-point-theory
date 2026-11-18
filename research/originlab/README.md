@@ -1402,6 +1402,21 @@ The watcher hashes the selected native sources and the frozen empirical
 register. A changed file starts a new epoch and the review outbox binds
 these source hashes with the results.
 
+## Source rules as purity of two arcs
+
+```bash
+python3 -B research/originlab/main.py --campaign f1_two_arc_purity --finite-controls-only --out research/originlab/runs/purity
+```
+
+`f1_two_arc_purity.py` enumerates non-negative integer multiplicities of
+the three pairings of the four seam marks and reads each rule as the
+purity of two opposite arcs (hypothesis H-R2, round twenty-five of
+`THEORY-BRIEF.md`). Exact guards: distant arcs decouple in both
+channels, the seam state is pure, the number of exchanged fermion pairs
+is an integer. The lane needs no model and no source packet. It returns
+`original_r113_values: None`; that the P1 form is this purity is the
+hypothesis, not a result.
+
 ## Synthesis from an open source question
 
 The first search round now also runs the [graded sewing and return

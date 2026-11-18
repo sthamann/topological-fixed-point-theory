@@ -1,0 +1,36 @@
+R1  recorded law = level-two Gaussian
+  ok   F_1/4(q) + F_3/4(r) = (p^2 + d^2 - d)/4 with p = q + r, d = q - r
+  ok   4 pi (F_1/4 + F_3/4) = 2 pi [(q - 1/4)^2 + (r + 1/4)^2] - pi/4: the weight exp(-2 pi |v|^2), shifts -+1/4
+R2  recorded numbers
+  ok   means +-0.04134328958148 (recorded value)   0.0413432895814817
+  ok   both variances equal 1/(8 pi)
+  ok   recorded proof: Z(t) = t^-1/2 Z(1/t), (log Z)'(1) = -1/4, so Var(p) = 1/(4 pi)
+  ok   total charge law exp(-pi p^2), discrete, for even and odd p alike
+R3  fermion blocks and charge law
+  ok   modes r + 0.25 with occupation (1 + exp(4 pi (r + alpha)))^-1 carry the charge law exp(-4 pi F_alpha)
+  ok   modes r + 0.75 with occupation (1 + exp(4 pi (r + alpha)))^-1 carry the charge law exp(-4 pi F_alpha)
+  ok   on the spinor modes k in Z + 1/2 of the unit square torus the translation by the half period 1/2 has eigenvalues +-i; k in 2Z + 1/2 is alpha = 1/4, k in 2Z + 3/2 is alpha = 3/4
+R4  the two tori
+  ok   W = z^2 = sl^2 has the larger lattice varpi (Z + iZ): a square torus E_i, of which E is a double cover
+  ok   on E_i (lattice Z + iZ): 0 is z = 0, the half periods a = 1/2 and b = i/2 are z^2 = 1 and z^2 = -1 (the marks +-1 and +-i), c = (1+i)/2 is z = infinity
+  ok   the quarter turn fixes 0 and c and exchanges a and b: the recorded action Q = S on the half periods
+  ok   self-dual Gaussian exp(-pi |w|^2) of E_i over the lifts of the half period, one sheet of E = Gaussian exp(-2 pi |v|^2) of E over the lifts of a mark (w = (1+i) v)
+  ok   without the sheet condition the sum is theta2(i) theta3(i); one sheet carries exactly half
+      dictionary: p = coordinate of the lift along the direction in which the mark is a lattice point,
+      d - 1/2 = coordinate along the direction in which it is a half period; q, r = the diagonals.
+R5  ledger combinations against the cumulants (a control, expected negative)
+      cumulants: ['0.04134328958', '0.03978873577', '0.03633766861', '0.03032839359']
+  ok   no simple cumulant equals c3 + 36 c3^4 or phi0 (no further ledger number comes for free)   []
+R6  uniqueness over all offsets (a1, a2) and widths beta
+  ok   the parity gap vanishes exactly at a1 - a2 = 1/2 (mod 1) for every width: zeros of theta2   {'2.0': ['0.5'], '12.57': ['0.5'], '30.0': ['0.5']}
+  ok   the characteristic function of the total is the same Gaussian, periodised, only for a1 + a2 in Z   {'0': '0.0', '0.1': '0.0535', '0.25': '0.202', '0.5': '0.727'}
+  ok   self-dual width only at beta = 4 pi   {'8.0': '0.18', '12.57': '0.0', '16.0': '0.109'}
+      together: (a1, a2) = (+-1/4, -+1/4) and beta = 4 pi; the other two marks are the same statement
+      with total and relative charge exchanged.
+R7  the recorded Szego kernel of the spin structure fixed by the quarter turn, at the marks
+  ok   simple pole with residue one at the centre of the quarter turn
+  ok   S(i u) = -i S(u): from the centre, the two mark classes are seen with a relative quarter phase
+  ok   S vanishes at c = a - b: the kernel between neighbouring marks (+-1 against +-i) is exactly zero
+  ok   S(a)^2 = e_a - e_c = varpi^2 = Gamma(1/4)^4/(8 pi)   (6.87518581802 + 2.69281337077e-85j)
+
+all checks passed

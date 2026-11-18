@@ -1,0 +1,314 @@
+TFPT. Gemeinsame Uhrantwort, Ladungsparität und ursprüngliches E8 Gewicht
+12. November 2026
+
+1. Was gerechnet wird
+
+Die bisherige gemeinsame E8 Vakuumform mit bewegtem Messort hatte
+F_B/F_A = -1/5. Das gilt auch für den neutralen Stressterm.
+Hier bleiben Vakuum, Wickwörter, E8 Gitter und beide Originaltakte
+unverändert. Die anderen beiden ursprünglichen Viertelpunkte
+tragen nun ein geladenes Vertex und sein konjugiertes Gegenbein.
+Die Summe der Ladungen ist null. Jeder der 240 ursprünglichen
+Wurzelimpulse wird durchgerechnet. Anschließend wird im vorhandenen
+vollen E8 Transfer eine echte, unnormierte Antwort ausgewertet.
+
+Verwendet werden die unmodifizierten Wurzeln aus RM(1,3), der
+Quartikcode und die tatsächlichen Gaußhebungen A, B, G aus
+check_tfpt_five_clock_source_20261112.py. Die feste Simplexmarke
+ist 4 und B schickt sie auf 0. G=(0123) hält 4 und 5 fest.
+Alle Aussagen zu den Hebungen verwenden alle 32 kompatiblen G
+und setzen keinen bestimmten physischen Lift voraus.
+Die ursprüngliche volle E8 Fockraumform und L0 Spur stehen in
+evidence/LOCAL-SOURCE-RECORD-SPLIT-PROOF.txt, §§1–2.
+Lattice net construction: Dong and Xu, arXiv:math/0411499.
+
+2. Geladene Ortsantwort mit demselben Vakuum
+
+Schreibe P_j für die ursprüngliche Quartik ohne Einheitsnormierung
+und r für den Gaußwurzelvektor der Rohnorm 2. Sein physischer
+Gitterimpuls ist p=r/sqrt(2) im reellen orthonormalen Cartanchart.
+In der normierten komplexen isotropen Basis ist y=r/2.
+Für a,b als geladene Vertexorte und z,w als Quartikorte ist das
+neutrale Vakuumwort nach Division durch die geladene Zweipunktform
+das Gaußwort mit Cartanmittel y[1/(z-a)-1/(z-b)] pro Quartikbein
+und unveränderter Kreuzkontraktion 1/(z-w)^2. Das folgt aus
+[J_n,V_p(a)]=(p,J) a^n V_p(a) und Verschieben der positiven
+Oszillatormoden; die Vertexphasen bleiben im gemeinsamen Faktor.
+Innerhalb jeder Quartik gibt es keine Kontraktion, weil ihre
+vier komplexen Stromrichtungen isotrop sind.
+
+Setze C_k(P,Q;y)=sum_{|m|=k} conj(partial^m P(y)) partial^m Q(y)/m!.
+Relativ zum gemeinsamen Kreuzfaktor (z-w)^(-8) ist die Antwort
+sum C_k X^(4-k), mit X=(z-w)^2 (a-b)^2/[(z-a)(z-b)(w-a)(w-b)].
+Für A ist Q=P_4, für B ist Q=P_0, jeweils P=P_4.
+Die rohe vakuumartige Norm ist C4(P_4,P_4)=960 und C4(P_4,P_0)=-192.
+Die verbundene Antwort der beiden Wickwörter nach der geladenen
+Einfügung lässt nur k=1,...,4 stehen. Für d=P_0+P_4/5 sind
+C4 und C3 auf allen 240 Wurzeln exakt null. Die erste nicht
+verschwindende Antwort kommt mit zwei Kreuzkontraktionen und
+vier Ladungsfaktoren. Direkte Wickzählung über Teilmengen und
+gleichfarbige Paarungen verifiziert die vier Kontrastklassen
+unabhängig von der Ableitungsformel.
+
+Bei z=1, a=-1, b=-i und w=i ist X=1/2. Verschiebe nur w auf
+(3+4i)/5. Dann ist X=1/6. Für die unten definierte Klasse {4,5}
+wechselt der verbundene B/A Quotient von -41/190 auf -55/272.
+Für {0,4} wechselt er von -13/95 auf -13/68. Der Taktfaktor
+ist hier wirklich ortsabhängig, auch nach Abzug der zwei
+geladenen Einzelantworten. Alle vier Ladungskoeffizienten des
+Kontrasts summieren sich über die volle Wurzelschale exakt zu
+null. Die Nichtnullantwort verlangt erhaltene Ladungsinformation.
+Die Ortsbewegung liegt weiterhin auf dem ursprünglichen Kreis.
+
+3. Welche Ladung die ursprünglichen Takte auszeichnen
+
+Auf L/(1+i)L gibt es 15 nichttriviale Klassen, wie im
+vorhandenen Gauß Code Nachweis. Jede enthält 16 Wurzeln.
+Der neue direkte Vergleich identifiziert eine Klasse mit genau
+den zwei Simplexmarken, deren Quartikbetrag auf ihr groß ist.
+Die Betragsquadrate der sechs Quartiken auf den 240 rohen r sind
+je viermal 256 und zweimal 1024. Vergleich der Differenzen
+(r-s)/(1+i) mit dem ursprünglichen Binärcode bestätigt alle
+15 Klassen. Alle 15 tatsächlichen Transpositionslifts wirken
+darauf genau wie auf den ungeordneten Markenpaaren. Das bindet
+die Teilung an die ursprüngliche Gitterwirkung.
+
+G=(0123) hat genau eine nichttriviale Fixklasse, c_*={4,5}.
+Jede der 32 Hebungen erhält diese Klasse, aber keine fixiert
+auch nur eine ihrer 16 einzelnen Wurzeln. Auf ihnen wirkt
+jede Hebung in vier Viererzyklen. Eine feste Klasse ist weder
+eine feste Ladung noch ein Zustand, der nur in dieser Klasse lebt.
+
+Die originale Gitterform gibt auf L/(1+i)L die alternierende
+Paarung b(x,y)=< (1+i)x,y > mod 2 (reelles Gitterprodukt).
+Sie steigt ab, weil (1+i)^2=2i und (1-i)(1+i)=2.
+Wegen der Selbstdualität des E8 Gitters ist sie nicht ausgeartet:
+b(x,.)=0 impliziert (1+i)x in 2L, somit x in (1+i)L.
+Die einzige nichttriviale G-feste binäre Ladungsablesung ist
+b(c_*,.). Ihr Nullgitter hat Index zwei und 112 Wurzeln.
+Das Wurzelsystem ist zusammenhängend und hat Rang acht, also D8.
+Eine unabhängig rekonstruierte D8 Vektorbasis liest dieselben
+112 Vektorwurzeln und die 128 halbzahligen Spinorwurzeln.
+Die Parität wird von keiner der Ordnung-fünf-Hebungen von A
+erhalten. Deshalb kann der Takt den parity-aufgelösten Wert
+ändern, obwohl die volle ungeladene Summe invariant ist.
+
+Für die gerade Wurzelschale sind die aufsummierten C0,C1,C2
+(-48,-768,-13824/5), für die ungerade exakt die Gegenwerte.
+Dies ist eine echte Vorzeichenbeziehung für dieselbe vollständige
+ursprüngliche Wurzelschale, keine Wahl eines neuen Wahrscheinlichkeitsmaßes.
+
+4. Unnormierte Originalantwort des vollen E8 Transfers
+
+Verwende H=L0 in der Konvention des ursprünglichen E8
+Quellenbelegs und q=exp(-beta). Die Sektoren werden durch
+die wirkliche Gitterladung projiziert. Pi_c kommutiert mit
+dem Transfer. Für c und seine Spiegelung gilt -c=c in
+L/(1+i)L. Der Transfer e^(-t L0) verklebt auf diesem Sektor
+exakt. Ein reflektiertes Halbwort trägt die tatsächliche
+Adjungierung; die Sektorspur ist positiv, da ihre Gramform
+eine Hilbert-Schmidt-Norm im Sektor ist. Beim Durchgang
+geladener Wörter muss der entsprechende Zielsektor
+mittransportiert werden. Eine Projektion vor jedem
+geladenen Buchstaben wäre ein anderer Prozess.
+
+Schreibe Theta(q)=sum_{p in L} q^(p^2/2) und
+O(q)=prod_{n>=1}(1-q^n)^(-8). Die 15 nichttrivialen Klassen
+haben durch die tatsächlichen Gitterisometrien dieselbe
+Theta-Reihe. Die Nullklasse hat Theta(q^2). Damit gilt
+    Z_c(q)=O(q)[Theta(q)-Theta(q^2)]/15 für c!=0,
+    Z_odd(q)=8 Z_c(q),
+    Z_even(q)=O(q)Theta(q)-Z_odd(q).
+Für die Klasse beginnen die Gitterkoeffizienten mit
+16, 128, 448, 1024; die absolute Referenz dieses E8 Traces
+ist fest durch die ursprüngliche L0 Konvention. Sie wird
+nicht mit der separaten P1 Leerreferenz gleichgesetzt.
+
+Für 0<t<beta ist der unnormierte geordnete Kontrast
+    D_c(beta,t)=O(q) sum_{p in c} q^(p^2/2)
+                        sum_{k=0}^4 C_k(P_4,d;y_p) K_beta(t)^k,
+    K_beta(t)=sum_{n>=1} n[e^(-nt)+e^(-n(beta-t))]/(1-q^n).
+Das ist die volle ursprüngliche Heisenberg Spur in jedem
+Ladungssektor, weil die Quartiken Ladung erhalten und die
+thermischen Oszillatormoden dieselbe Gaußregel haben. Beide
+Summen konvergieren absolut. Die vollständige Summe über
+alle Sektoren hat exakt D_all=0 durch A Invarianz; die
+gerade und ungerade Antwort sind daher bei jeder
+zulässigen beta,t exakt entgegengesetzt.
+
+Bei q=2^(-16) wurden Z und die unnormierten Kontraste
+für exp(-t)=1/16 und 1/256 auf der ganzen Quelle ausgewertet.
+Die Polynome wurden bis Gittergewicht 4 exakt summiert.
+Mit |y|^2=h und Fischer-Norm 960 liefert symmetrische
+Tensor Cauchy-Schwarz |sum_k C_k K^k|<=1152(h+K)^4.
+Da die E8 Schale höchstens 240 h^4 Impulse hat und K<1,
+ist der abgeschnittene Rest durch
+1152*240 sum_{h>=5} h^4(h+1)^4 q^h kontrolliert.
+Oszillator und K Reihenreste sind getrennt beschränkt.
+Der absolute Fehler für den Kontrast liegt unter 2e-13.
+Die genaue Ausgabe steht im Prüflog. Dies ist ein
+ausgewerteter gemeinsamer E8 Zweig; beta und t sind
+ausdrücklich Testzeiten, keine physische Kalibrierung.
+
+5. Der Vergleich mit der älteren geladenen Naht
+
+In TFPT-NATIVE-DEFEKTVERKLEBUNG-20261111.txt, §2, ist die
+alte Achterwirkung der konkrete Gittercharakter
+    g8(p)=exp(2 pi i <w,p>/8),
+    w=(0,2,4,-2,0,4,2,0).
+Seine vierte Potenz definiert den ursprünglichen D8 Zweig.
+Wenn G diese zyklische Achtergruppe normalisiert, muss
+G zuerst ihren eindeutigen Involutionscharakter erhalten.
+Falls dieser alte D8 Zweig auf der oben geprüften
+G-invarianten Gaußparität liegt, sind alle Isometrien
+zwischen den beiden D8 Charts signierte Koordinaten-
+permutationen, da sie die 16 minimalen Vektorgewichte
+des dualen D8 permutieren. Die gewählte Spinororientierung
+wird erhalten; ein unbenutztes Nullzeichen von w kann
+jede notwendige gerade Gesamtzahl von Vorzeichen herstellen.
+
+Für alle 32 Viertelhebungen werden alle 17.920 möglichen
+Positionen und Vorzeichen des alten w in diesem D8 Chart
+gegen Gw=k w mod 8L, k=1,3,5,7, geprüft. Es gibt keine.
+Damit kann dieselbe kompatible Viertelhebung die alte
+Achtergruppe in keinem dieser D8 Charts normalisieren.
+Das gilt schon ohne Festlegung der D5 und A3 Einbettung.
+Die Aussage ist auf diese tatsächlichen Gaußhebungen,
+diesen alten Charakter und die untersuchte invariante
+Parität beschränkt. Ein mitbewegter Achterrahmen ist
+eine andere, prüfbare Form der gemeinsamen Regel.
+
+6. Bedeutung für F1
+
+Die Ladungsauflösung verbindet die beiden Takte, den
+ursprünglichen Ort und das gemeinsame E8 Wärmegewicht in
+einer tatsächlich ausgerechneten Antwort. Die binäre
+Auslesung folgt aus G und dem markierten Gitter; die
+ganze ältere Achterphase folgt nicht als stationärer
+gemeinsamer Charakter. Der mögliche Anschluss verlangt
+daher die geordneten transportierten Ladungsrahmen
+w, Gw, G^2w, G^3w mit den ursprünglichen Gegenbeinen
+und Phasen, nicht ein neues frei gewähltes Gewicht.
+Die Prüfdatei wertet auch den elementaren Gegenfall aus,
+in dem ein einziges altes Ladungsregister an jedem der
+vier Schnitte unverändert abgelesen wird.
+
+Das ist kein Nachweis, dass P1 einen der beiden
+Paritätssektoren auswählt. Das gesamte E8 Vakuum
+und seine vollständige neutrale Summe sind weiterhin
+zu unterscheiden von den geladenen Einfügungen und der
+ausgewerteten Ladungsspur. Die primitive P1 Form benötigt
+die tatsächlichen Geometrie-, Zustands-, Referenz- und
+Feldbeine im selben ursprünglichen Caller. Die E8 Antwort
+bleibt auf einem räumlichen Kreis. Weder die 15 Klassen
+noch ihre Energieantwort bilden drei lokale Raumrichtungen.
+Der nachgeschaltete Geometrietest ist daher der lokale
+Schnitttransport mit mitbewegtem Ladungsrahmen, vor
+jeder Ortsintegration, zusammen mit derselben Metrikvariation.
+
+7. Vollständiger Vergleich und gemeinsames viertes Vorzeichen
+
+Die nachgeschaltete Suche über alle 256 binären Gittercharaktere
+findet für jedes G drei nichttriviale G-feste D8 Paritäten. Nur
+eine faktorisiert durch L/(1+i)L. Auch in den beiden anderen
+D8 Charts normalisiert G die alte Achtergruppe in keiner
+Platzierung. G^2 kann sie dort normalisieren: je 128 Platzierungen
+für jeden der vier ungeraden Exponenten in jedem alternativen
+Chart. Auf der ausgezeichneten Gaußparität gibt es selbst für
+G^2 keine solche Platzierung. Der alte Charakter hat dort
+eine viergliedrige Bahn zyklischer Achtergruppen. Ein fest
+gehaltenes Register mit gleichem Achterrest nach allen vier
+Schritten lässt auf der ungeraden Gewicht-eins Schale je nach
+Platzierung null oder acht der 128 Impulse durch, nie mehr.
+Dies ist kein Ausschluss eines mittransportierten Registers.
+
+Die Standardhebung U_G des Gitterautomorphismus auf die volle
+geladene E8 Vertexalgebra ist auf dem Fixgitter phasenneutral.
+Ihr viertes Potenzgesetz auf dem Impuls p lautet
+    U_G^4 |p> = (-1)^<p,G^2 p> |p>.
+Es gilt unverändert auf allen Oszillatortürmen, weil G^4
+auf den Strömen die Identität ist. Primärquelle: van Ekeren,
+Möller und Scheithauer, Proposition 7.5,
+https://www2.mathematik.tu-darmstadt.de/~scheithauer/papers/orbifolds.pdf .
+Die binäre Form <p,G^2 p> ist additiv, weil G^2 orthogonal
+und selbstadjungiert ist und der Kreuzterm zweimal ganzzahlig
+ist. Ein Vergleich auf den 240 Gittererzeugern entscheidet
+deshalb den ganzen Charakter. Für alle 32 G ist er exakt
+b(c_*,p). Alle 112 D8 Wurzeln tragen +1 und alle 128
+Spinorwurzeln -1. Die Standardhebung hat somit Ordnung acht.
+In einem D8 Chart, der die alte Halbphase mit der
+ausgezeichneten Gaußparität identifiziert, gilt exakt
+    U_G^4 = g8^4 = (-1)^b .
+Die beiden Gruppen haben nur diese Halbphase gemeinsam:
+U_G verschiebt Ladungen, g8 wirkt diagonal. Die früher
+ausgeschlossene Identifikation der gesamten Uhren bleibt
+ausgeschlossen. Die echte gemeinsame Struktur ist ihre
+vierte Potenz auf dem geladenen Raum.
+
+Für w_j=G^j w sei Pi_(j,l) der Ladungsprojektor auf
+<w_j,p>=l mod 8. Die tatsächliche Kovarianz lautet
+U_G Pi_(j,l)=Pi_(j+1,l) U_G, auch mit Kokzykelphase.
+Die vier Transportstücke
+    T_j = Pi_(j+1,l) U_G exp(-t_j L0) Pi_(j,l)
+haben deshalb zusammen auf dem Eingang
+    T_3 T_2 T_1 T_0 = U_G^4 exp(-sum_j t_j L0) Pi_(0,l).
+Kein Ladungslabel geht bei dieser mitbewegten Ablesung
+verloren. Auf einem ungeraden Kanal ist die geschlossene
+Amplitude negativ, während T_j^* T_j=exp(-2 t_j L0) Pi_(j,l)
+positiv bleibt. Das bewahrt die Phasen und unterscheidet
+eine markierte geschlossene Spur von der reflektierten Norm.
+
+8. Geschlossener markierter Wert ohne Sektorwahl
+
+Ohne Auswahl eines der beiden Sektoren liefert die aus
+vier Vierteln geschlossene, markierte E8 Spur
+    Z_tw(q)=Tr(U_G^4 q^L0)
+            =O(q)[16 Theta(q^2)-Theta(q)]/15.
+Mit den beiden ursprünglichen Quartikworten und dem
+Kontrast d=P_0+P_4/5 ergibt dieselbe Spur
+    D_tw(beta,t)=D_even(beta,t)-D_odd(beta,t)
+                =-2 D_odd(beta,t).
+Ohne geschlossene Taktphase ergibt sie exakt null. Für
+q=2^(-16) und exp(-t)=1/16 bzw. 1/256 hat die markierte
+Spur Z_tw rund 0,999877936. Der unnormierte Kontrast
+wechselt von -0,00356667800 auf -0,00165453716.
+Der kontrollierte absolute Fehler des Kontrasts ist
+kleiner als 4e-13. Bei der offenen reflektierten Norm
+wird die Phase dagegen mit ihrer Adjungierten gepaart.
+Auf einem ungeraden Gewicht-eins Zustand wäre die
+signierte Form als Norm strikt negativ. Daher ist
+Z_tw eine ursprüngliche E8 Spur mit Einfügung und
+keine neue positive absolute P1 Vakuumnorm.
+
+9. Wie weit der Schritt an die ursprüngliche P1 Naht reicht
+
+Boundary002 fordert im operativen Seed eine eigenständige
+nichttriviale Nahtklasse, auf dem minimalen Zweig mit
+|SF(U_Sigma)|=1. Eine isolierte kontinuierliche unitäre
+Operation endlicher Ordnung kann diese Klasse nicht
+tragen: Die festen endlich vielen Eigenphasen erlauben
+einen globalen stetigen Logarithmus als Polynom in der
+Operation und damit eine Homotopie zur Identität.
+Dies gilt, wenn sie selbst als Nahtunitäre im
+entsprechenden unitalen Algebra/K1 Paar eingesetzt wird.
+Die vorhandene räumliche Windung ist also eine eigene
+Information. Genau diese Trennung ist schon im
+Originalvergleich TFPT-CLOCK-WINDUNG-PICARD-20261111.txt,
+§5 sichtbar: Bei festgehaltenem Marker wechselt der
+offene Familienblock sein Vorzeichen, die leere
+reflektierte Norm bleibt gleich; mitbewegte Marker
+können das Zeichen aufheben.
+
+Die neu ausgerechnete vierfache geladene Verklebung
+liefert den konkreten Kandidaten für die Phase dieses
+Weges und einen Wert für den gemeinsamen E8 Zweig.
+Die erste zu prüfende Gleichheit im primitiven Original
+ist jetzt, ob seine Naht den vierfachen Transport als
+einmalige Einfügung auf der markierten Geschichte
+trägt oder ihn bereits an der Reflexion paarweise
+aufhebt. Dabei müssen die tatsächliche Windung,
+Referenz, ursprüngliche Zeit, Feldbeine und Ortsstützen
+mitgeführt werden. Ohne diese Abbildung bleiben die
+gewichtete primitive P1 Form, zwei zusätzliche lokale
+Raumrichtungen und die vierdimensionale Gravitation
+unberechnet. Der ausgerechnete E8 Zweig ersetzt sie nicht.

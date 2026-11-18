@@ -1,0 +1,47 @@
+M1  kernel between half periods
+  ok   S_eps(u)^2 - S_delta(u)^2 does not depend on u and equals e_delta - e_eps
+  ok   at the half periods: S_eps(t)^2 = e_t - e_eps, zero for t = eps (general tau)
+M2  the square torus
+      structure a: |S|^2 at (a, b, c) in units of varpi^2: ['8.69494e-86', '2.0', '1.0']
+      structure b: |S|^2 at (a, b, c) in units of varpi^2: ['2.0', '1.28023e-84', '1.0']
+      structure c: |S|^2 at (a, b, c) in units of varpi^2: ['1.0', '1.0', '6.69879e-85']
+  ok   structure c (recorded, fixed by the quarter turn): (1, 1, 0), normalised (1/2, 1/2, 0)
+  ok   structures a and b: (0, 2, 1) and (2, 0, 1), normalised (0, 2/3, 1/3) and (2/3, 0, 1/3)
+  ok   quarter phase in the recorded structure: S_c(b) = -i S_c(a)
+M3  all four points at once
+      structure a: four-point value for the splittings (a, b, c), units varpi^2: ['(-1.0 + 0.0j)', '(-1.0 + 0.0j)', '(-2.0 + 0.0j)']
+      structure b: four-point value for the splittings (a, b, c), units varpi^2: ['(1.0 + 0.0j)', '(1.0 - 1.22566e-83j)', '(-2.0 + 0.0j)']
+      structure c: four-point value for the splittings (a, b, c), units varpi^2: ['(-1.0 + 0.0j)', '(1.0 + 3.15362e-85j)', '(-2.0 + 0.0j)']
+  ok   recorded structure c: moduli (1, 1, 2) for the splittings by a, b, c
+  ok   every even structure gives the same three moduli 1, 1, 2 up to order   {'a': ['1.0', '1.0', '2.0'], 'b': ['1.0', '1.0', '2.0'], 'c': ['1.0', '1.0', '2.0']}
+M4  the triangle
+  ok   sides of the two-torsion triangle = pi^2 (theta4^4, theta2^4, theta3^4); Jacobi's identity closes it
+  ok   square torus: pi^2 theta2^4 = pi^2 theta4^4 = varpi^2 = Gamma(1/4)^4/(8 pi), pi^2 theta3^4 = 2 varpi^2
+      sides 1 : 1 : 2, perimeter 4, in units of varpi^2 (the recorded anchor triple is (1, 1, 2), e1 = 4;
+      this is an agreement of numbers, no connection is shown).
+M5  the qubit weights from the same triangle, general modulus
+  ok   p_k = 1 - 2 |theta_k|^4 / sum_j |theta_j|^4 equals the squared Bloch components of the mark, at four moduli   3.44e-41
+  ok   so the weights are fixed by the squared moduli of the three theta squares, the recorded carrier of v117: (1/4, 1/2, 1/4) at the square, (1/3, 1/3, 1/3) at the hexagon
+      sum over the three even structures of |S|^2 at (a, b, c), normalised: ['0.375', '0.375', '0.25']  (qubit: 1/2, 1/2, 0)
+M6  the recorded source on the cover branched at the four marks
+  ok   lattice of the cover: 1 + i and -1 + i; both loops carry periodic spinors, Arf invariant 1: odd structure
+      an odd structure on a torus has exactly one holomorphic spinor, a constant: the lifted source
+      has one zero mode, with the same value at all four marks.  No kernel between the four marks
+      exists for it; the kernel of M2 lives on the recorded torus, where the marks are two points.
+M7  seventh pasted note: localisation and reference
+  ok   a probe supported on one quarter arc has half of its norm square in each of the two mode groups   0.5
+      -> the two quarter groups are not the odd and even arcs; that reading of the eleventh round is withdrawn.
+  ok   variance at a fixed mark 1/(8 pi) = 0.03978873577; all four marks mixed from a common origin 0.08332635858   0.0833263585757
+M8  the rule that selects the square
+  ok   rectangle: j real and >= 1728; after the identification j real and <= 1728; both only at the square   {'0.6': '1.6917863', '0.8': '814.09999', '1': '1728.0', '1.3': '595.82959', '2': '-89.594998'}
+      a torus has a mirror with two fixed circles exactly when j >= 1728: the rule leaves the square.
+      in this session's terms the identification is the passage from the cover of the mark sphere
+      to the recorded torus over the sphere of z^2, i.e. the quotient by the half turn z -> -z.
+M9  the two mirrors on the two tori (lattice Z + iZ each; w = (1+i) v)
+      mark circle z -> 1/conj(z)               fixed circles on the mark cover: 2, on the recorded torus: 1
+      axis through two marks z -> conj(z)      fixed circles on the mark cover: 1, on the recorded torus: 2
+      axis between the marks z -> i conj(z)    fixed circles on the mark cover: 2, on the recorded torus: 1
+  ok   the original mirror divides the cover of the marks and not the recorded torus; the mirror through two marks does the opposite
+      the recorded free source is reflection positive for the second kind (time = Im w, circles 0 and 1/2).
+
+all checks passed
