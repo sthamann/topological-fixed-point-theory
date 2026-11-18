@@ -6804,7 +6804,7 @@ weiterhin keinen R113 Wert. F1 bleibt in Bearbeitung. Kein Ledgerwechsel.
 Atlas `9c3fcfbb2f9ccd1e34134464`, Problem
 `problem:four-marks-quartic-and-free-seam-source`, 39 Befunde, geschrieben auf
 dem lokalen Atlasstand.
-[Runden und Geltungsbereich](../../../research/originlab/THEORY-BRIEF.md) ·
+[Runden und Geltungsbereich](../../../research/originlab/SESSION-FOUR-MARKS-20261118.md) ·
 [Skripte, Ausgaben, Prüfsummen](../../../experiments/theory-contracts/originlab-four-marks-session-20261118/README.md).
 
 ## RADICALBRIDGE20261118 und RADICALHIST20261118 · Brücke und frühe Fassungen

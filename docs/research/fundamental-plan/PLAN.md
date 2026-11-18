@@ -12,7 +12,7 @@ sie benutzt (einfacher Seitentausch oder aufgezeichnete Realstruktur; die
 aufgezeichnete Tabelle ist die des einfachen Spiegels). In der verklebten Form
 sind die Dauern Reihenfolgen; eine Zeit mit Länge müsste aus einem nicht
 flachen Zustand kommen. F1 bleibt in Bearbeitung. Kennung FOURMARKS20261118.
-[Runden und Geltungsbereich](../../../research/originlab/THEORY-BRIEF.md).
+[Runden und Geltungsbereich](../../../research/originlab/SESSION-FOUR-MARKS-20261118.md).
 
 ## 18. November: Selbstdualer Punkt als Kandidat für das Auswahlprinzip
 

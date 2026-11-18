@@ -4,7 +4,7 @@ Prüfskripte der Sitzung, verschoben aus
 `research/originlab/runs/session-scenarios-20261117/` (dort von Git
 ausgeschlossen). Nichts hier ist ein Ledger- oder Atlas-Eintrag.
 
-- Erläuterung aller Runden: `research/originlab/THEORY-BRIEF.md`
+- Erläuterung aller Runden: `research/originlab/SESSION-FOUR-MARKS-20261118.md`
 - Vorschlag für einen Atlas-Eintrag:
   `research/originlab/ATLAS-PROPOSAL-20261118.md`
 - Prüfsummen und Ergebnis jedes Laufs: `MANIFEST.txt`

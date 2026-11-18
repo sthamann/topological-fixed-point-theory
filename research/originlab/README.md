@@ -1411,7 +1411,7 @@ python3 -B research/originlab/main.py --campaign f1_two_arc_purity --finite-cont
 `f1_two_arc_purity.py` enumerates non-negative integer multiplicities of
 the three pairings of the four seam marks and reads each rule as the
 purity of two opposite arcs (hypothesis H-R2, round twenty-five of
-`THEORY-BRIEF.md`). Exact guards: distant arcs decouple in both
+`SESSION-FOUR-MARKS-20261118.md`). Exact guards: distant arcs decouple in both
 channels, the seam state is pure, the number of exchanged fermion pairs
 is an integer. The lane needs no model and no source packet. It returns
 `original_r113_values: None`; that the P1 form is this purity is the

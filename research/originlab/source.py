@@ -594,6 +594,23 @@ def evaluate(root, path=None):
             **moment_bound(sp.simplify(raw["ZU"]/z),*relative_moments,connected=connected),
             "source_id":source_id,"time_id":time["id"],"normalization":"common_empty",
             "scope":"conditional on the supplied radial law and normalized Y profile bindings"}
+    if "joint_source_checks" in bundle:
+        data = bundle["joint_source_checks"]
+        if data.get("source_id")!=source_id or data.get("time_id")!=time["id"] or not data.get("ward_binding"):
+            raise ValueError("joint marks must bind their original source, time and Ward rule")
+        scale = data.get("normalization","absolute_reference")
+        if scale not in ("same_empty","absolute_reference") or (reference is None and scale!="same_empty"):
+            raise ValueError("joint marks without an absolute reference must use same_empty normalization")
+        if set(data["extra_forms"])&set(MARKS):
+            raise ValueError("extra marks cannot replace the four original marks")
+        denom = z if scale=="same_empty" else reference
+        if not z:
+            raise ValueError("common empty response must be nonzero to check the joint marks")
+        combined = {**raw,**{key:numerator(as_form(value,size)) for key,value in data["extra_forms"].items()}}
+        candidate["joint_source_checks"] = {
+            **check_joint_marks(data,{key:sp.simplify(value/denom) for key,value in combined.items()}),
+            "normalization":scale,
+        }
     if reference is None:
         status = "EXACT_RADIAL_MOMENT_BOUND" if radial_only else "EXACT_RELATIVE_CONTRACTION"
         missing = ["bound absolute empty reference"]

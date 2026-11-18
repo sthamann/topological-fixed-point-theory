@@ -179,6 +179,11 @@ class Corpus:
         self.root=root.resolve(); self.sources={}; self.script_nodes={}; self.lean_nodes={}; self.file_cache={}; self.document_source_cache={}
         with (root/"verification/status_ledger.csv").open(newline="") as f: self.rows=list(csv.DictReader(f))
         self.by_id={r["claim_id"]:r for r in self.rows}
+        registry_path = root / "verification/script_registry.csv"
+        self.script_registry = {}
+        if registry_path.is_file():
+            with registry_path.open(encoding="utf-8-sig", newline="") as f:
+                self.script_registry = {row["script"]: row for row in csv.DictReader(f)}
         self.docs={}
         for f in sorted(root.glob("*.tex")): self.docs[f.stem]=f
         for slug in ["tfpt_1","tfpt_2","tfpt_3","tfpt_4","tfpt_5"]:
@@ -298,6 +303,12 @@ class Corpus:
         ref=self.source(p)
         self.script_nodes[sid]={"id":sid,"type":"script","label":p.name,"summary":(ast.get_docstring(tree) or "") if 'tree' in locals() else "",
             "attrs":{"path":rel,"sha256":digest,"source_refs":[ref["id"]],"static_inputs":{"syntactic_input_candidates":candidates,"imports":imports,"checks":checks,"callable_audit":callable_audit,"notice":"Syntaktische Kandidaten sind keine festgestellten Beweislücken."}}}
+        registered = self.script_registry.get(p.stem) if rel == f"verification/{p.name}" else None
+        if registered:
+            self.script_nodes[sid]["attrs"].update(
+                cluster=registered["cluster"], registry_description=registered["what_web"],
+                registry_source="verification/script_registry.csv",
+            )
         return sid,ref,candidates,imports
 
     def index_lean(self):
@@ -346,7 +357,7 @@ class Corpus:
                 next_decl=decls[pos+1][0] if pos+1<len(decls) else len(ls)
                 while end+1<next_decl and end-i<120 and not re.search(r'(?::=|\bwhere\b)',ls[end]):end+=1
                 signature='\n'.join(ls[i:end+1]).split(':=',1)[0].rstrip()
-                qualified=(ns+'.' if ns else '')+name
+                qualified=name.removeprefix('_root_.') if name.startswith('_root_.') else '.'.join(filter(None, (ns, name)))
                 identity=qualified if counts[name]>1 else name
                 tid='lean_theorem:'+relative+':'+identity
                 ref=self.source(p,max(1,i-4),min(len(ls),end+10))
@@ -1180,7 +1191,7 @@ def build_graph(corpus,cache,model):
         seen.add(key);edges.append({"id":"edge:"+sha('|'.join(key).encode())[:20],"src":src,"dst":dst,"type":typ,"attrs":attrs or {}})
     for k,(label,terms) in TOPICS.items():node('topic:'+k,'topic',label,terms)
     enriched=pending=errors=0
-    for row in corpus.rows:
+    for row_number, row in enumerate(corpus.rows, 2):
         cid=row['claim_id']; id='claim:'+cid; rec=cache.get(cid,{})
         state='enriched' if rec.get('semantic') else 'error' if rec.get('error') else 'pending'
         enriched+=state=='enriched'; errors+=state=='error'; pending+=state=='pending'
@@ -1190,7 +1201,12 @@ def build_graph(corpus,cache,model):
         if rec.get('coverage'):attrs['source_coverage']=rec['coverage']
         if rec.get('inventory_freshness'):attrs['cache_freshness']=rec['inventory_freshness']
         if rec.get('normalizations'):attrs['annotation_normalizations']=rec['normalizations']
-        node(id,'claim',sem.get('title_de',cid),sem.get('overview_de',row['claim']),attrs)
+        if rec.get('inventory_freshness', {}).get('state') == 'source_stale':
+            ledger_ref = corpus.source(corpus.root / 'verification/status_ledger.csv', row_number, row_number)
+            attrs['source_refs'] = list(dict.fromkeys([ledger_ref['id'], *attrs['source_refs']]))
+            node(id, 'claim', cid, row['claim'], attrs)
+        else:
+            node(id,'claim',sem.get('title_de',cid),sem.get('overview_de',row['claim']),attrs)
     nodes.update(corpus.script_nodes);nodes.update(corpus.lean_nodes)
     for sn in corpus.script_nodes.values():
         for imp in sn['attrs']['static_inputs']['imports']:
@@ -1264,7 +1280,7 @@ def build_graph(corpus,cache,model):
         state=rec.get('inventory_freshness',{}).get('state')
         if state:freshness_counts[state]=freshness_counts.get(state,0)+1
     return {'meta':{'schema_version':1,'generated_at':now(),'model':model,'prompt_version':VERSION,
-        'coverage':{'claims_total':len(corpus.rows),'claims_enriched':enriched,'claims_pending':pending,'claims_error':errors,'scripts_total':len(corpus.script_nodes),'lean_theorems_total':sum(n.get('type')=='lean_theorem' for n in corpus.lean_nodes.values()),'lean_declarations_total':len(corpus.lean_nodes),'lean_sources_total':len({s.get('path') for s in corpus.sources.values() if str(s.get('path','')).endswith('.lean')})},
+        'coverage':{'claims_total':len(corpus.rows),'claims_enriched':enriched,'claims_pending':pending,'claims_error':errors,'scripts_total':len(corpus.script_nodes),'registered_scripts_total':sum('registry_source' in n['attrs'] for n in corpus.script_nodes.values()),'lean_theorems_total':sum(n.get('type')=='lean_theorem' for n in corpus.lean_nodes.values()),'lean_declarations_total':len(corpus.lean_nodes),'lean_sources_total':len({s.get('path') for s in corpus.sources.values() if str(s.get('path','')).endswith('.lean')})},
         'cache_freshness':freshness_counts,
         'notice':'KI-Annotationen sind ungeprüfte Interpretationen; Ledgerstatus und Originalquellen bleiben maßgeblich. Keine Scripts wurden ausgeführt.',
         'errors':meta_errors,'orientation_loaded':orientation_path.is_file(),
@@ -1749,6 +1765,8 @@ def main():
                 else:cache[cid]=rec
             if row in selected and not cache.get(cid,{}).get('semantic') and not args.offline:packets[cid]=(packet,digest,file,model);todo.append(cid)
             if (i+1)%200==0:print(f'inventory {i+1}/{len(corpus.rows)}',flush=True)
+        for name in corpus.script_registry:
+            corpus.script(args.repo / "verification" / f"{name}.py")
         if args.preserve_cache:
             hydrated=hydrate_cache_source_records(cache,corpus)
             for row in corpus.rows:

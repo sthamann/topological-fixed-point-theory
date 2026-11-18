@@ -383,3 +383,29 @@ werden), Website (18 Quelldateien), `semantic_explorer` (8 Dateien),
 | main enthält alles Lokale | 0 | 53 | `research/originlab/test_marked_search.py` |
 | main enthält alles Lokale | 0 | 41 | `research/originlab/test_source_bridge.py` |
 | main enthält alles Lokale | 0 | 16 | `website/components/explain/TheoryGuide.tsx` |
+
+## Nachgezogene Zusammenführungen vom selben Tag
+
+- Registry, Verzeichniskarten und Manifest wurden auf dem Stand von main neu
+  erzeugt; ihre Prüfungen bestehen.
+- Suchprogramm (`research/originlab`): `autonomy.py` mit der lokalen Fassung als
+  Grundlage und den zusätzlichen Zeilen von main; `source.py` und
+  `test_relational.py` mit der Fassung von main und den lokalen Ergänzungen.
+  Vorher ließ sich die Testreihe auf main nicht laden (ein mitgekommener Test
+  brauchte eine Funktion der lokalen Fassung). Jetzt bestehen 449 Tests.
+- Atlas-Code (`semantic_explorer`): neun Dateien mit der lokalen Fassung als
+  Grundlage. Der Server übersetzt, 111 von 112 Servertests und 109 von 114
+  Python-Tests bestehen. Die verbleibenden Fehler prüfen, ob die gespeicherten
+  Atlaskarten zu den Quelldateien passen. Sie passen erst wieder, wenn der Atlas
+  in einem Arbeitsverzeichnis mit den lokalen Atlasdaten neu aufgefrischt wird.
+- `docs/CHANGELOG.md` und `experiments/next.txt`: beide Seiten behalten. Drei
+  Vertragsindexe: lokale Fassung als Grundlage, gültiges JSON.
+- Der Forschungsbrief des Suchprogramms war durch die Sitzung zu lang geworden
+  und sprengte das Zeichenbudget des Suchprogramms. Die Runden stehen jetzt in
+  `research/originlab/SESSION-FOUR-MARKS-20261118.md`, im Brief steht eine
+  Zusammenfassung.
+
+Weiter in der Fassung von main: die 18 abweichenden Website-Quelldateien und die
+`README.md` der Wurzel. Sie lassen sich nur mit einem Website-Bau prüfen; ihre
+lokale Fassung steht im Zweig `backup/local-state-20261118`.
+

@@ -497,6 +497,77 @@ fn matches_scope(n: &Node, scope: &str) -> bool {
         }
     }
 }
+fn secondary_paper(n: &Node) -> bool {
+    let path = n.attrs.pointer("/source/path").and_then(Value::as_str).unwrap_or_default();
+    path.starts_with("documents/changelog/") || path == "tex-artefacts/verification.tex"
+        || n.id == "document:changelog"
+}
+
+pub fn source_rank_factor(n: &Node, query: &str) -> f32 {
+    let lower = query.to_lowercase();
+    let historical_intent = ["changelog", "änderungsprotokoll", "release history", "verification index"]
+        .iter().any(|word| lower.contains(word));
+    if is_paper(n) && secondary_paper(n) && !historical_intent && n.id != query {
+        0.57
+    } else {
+        1.0
+    }
+}
+
+fn passage_key(n: &Node) -> Option<(&str, &str)> {
+    if n.kind != "paper_section" || !is_paper(n) { return None; }
+    let sha = n.attrs.pointer("/source/span_sha256").and_then(Value::as_str)?;
+    if sha.len() != 64 || !sha.bytes().all(|b| b.is_ascii_hexdigit()) { return None; }
+    let scope = n.attrs.get("publication_scope").or_else(|| n.attrs.get("scope"))
+        .and_then(Value::as_str).unwrap_or("public");
+    Some((scope, sha))
+}
+
+fn canonical_passage_rank(n: &Node, id: &str) -> (bool, bool, bool, bool) {
+    (n.id != id, !source_current(n),
+        n.attrs.get("content_scope").and_then(Value::as_str) != Some("active"), secondary_paper(n))
+}
+
+/// Count repeated physical spans once; retain provenance aliases in the same scope.
+pub fn collapse_passages(items: Vec<Value>, by_id: &HashMap<&str, &Node>, query: &str) -> Vec<Value> {
+    let mut found = HashMap::new();
+    let mut groups: Vec<(Value, Vec<&Node>)> = Vec::new();
+    for mut item in items {
+        let Some(n) = item["id"].as_str().and_then(|id| by_id.get(id).copied()) else {
+            groups.push((item, vec![]));
+            continue;
+        };
+        let Some(key) = passage_key(n) else {
+            groups.push((item, vec![]));
+            continue;
+        };
+        let Some(index): Option<usize> = found.get(&key).copied() else {
+            found.insert(key, groups.len());
+            groups.push((item, vec![n]));
+            continue;
+        };
+        let (representative, locations) = &mut groups[index];
+        if canonical_passage_rank(n, query) < canonical_passage_rank(locations[0], query) {
+            item["score"] = representative["score"].clone();
+            *representative = item;
+            locations.insert(0, n);
+        } else {
+            locations.push(n);
+        }
+    }
+    groups.into_iter().map(|(mut item, locations)| {
+        if locations.len() > 1 {
+            item["same_passage_count"] = json!(locations.len());
+            item["other_locations"] = json!(locations.iter().skip(1).take(8)
+                .map(|n| json!({"id":n.id,"path":n.attrs.pointer("/source/path"),
+                    "line_start":n.attrs.pointer("/source/line_start"),
+                    "content_scope":n.attrs.get("content_scope")})).collect::<Vec<_>>());
+            item["other_locations_omitted"] = json!(locations.len().saturating_sub(9));
+        }
+        item
+    }).collect()
+}
+
 fn outline_ids(g: &KnowledgeGraph, n: &Node) -> Vec<String> {
     if let Some(ids) = n.attrs.get("ordered_section_ids").and_then(Value::as_array) {
         return ids
@@ -785,6 +856,7 @@ pub fn query(
                 } else {
                     2.0 * lexical / tokens.len() as f32
                 } + semantic.max(0.0) * 3.0;
+                let score = score * source_rank_factor(n, q);
                 let historical = matches!(
                     n.attrs.get("content_scope").and_then(Value::as_str),
                     Some("archive" | "historical")
@@ -796,7 +868,7 @@ pub fn query(
             scored.sort_by(|x, y| y.0.total_cmp(&x.0).then(x.1.cmp(&y.1)).then(x.2.cmp(&y.2)).then(x.3.cmp(&y.3)));
             page(
                 tool,
-                scored.into_iter().map(|x| x.4).collect(),
+                collapse_passages(scored.into_iter().map(|x| x.4).collect(), &by_id, q),
                 offset,
                 limit,
                 cap,
@@ -853,9 +925,22 @@ pub fn query(
                 );
             }
             let mut ids = HashSet::from([id.to_owned()]);
+            let path = n.attrs.get("path").and_then(Value::as_str);
+            let registry_id = match (n.kind.as_str(), path) {
+                ("script", Some(path)) => Some(format!("python_verification:{path}")),
+                ("lean_theorem" | "lean_declaration", Some(path)) => {
+                    Some(format!("lean-symbol:{path}:{}", n.label))
+                }
+                _ => None,
+            };
+            if let Some(registry_id) = registry_id.filter(|id| by_id.contains_key(id.as_str())) {
+                ids.insert(registry_id);
+            }
             if n.kind == "paper_document" {
                 ids.extend(outline_ids(g, n));
             }
+            let include_private = matches_scope(n, "local_private")
+                || matches!(a.get("scope").and_then(Value::as_str), Some("all" | "private" | "local_private"));
             let filter = a.get("evidence_type").and_then(Value::as_str);
             let mut items = Vec::new();
             for e in &g.edges {
@@ -872,6 +957,13 @@ pub fn query(
                 let Some(other) = by_id.get(target.as_str()) else {
                     continue;
                 };
+                if !include_private && (matches_scope(other, "local_private")
+                    || e.attrs.get("scope").and_then(Value::as_str) == Some("local_private")) {
+                    continue;
+                }
+                if ids.contains(target) {
+                    continue;
+                }
                 if filter.is_some_and(|f| {
                     e.kind != f
                         && other.kind != f
@@ -884,15 +976,16 @@ pub fn query(
                 }) {
                     continue;
                 }
-                items.push(json!({"relation":{"src":e.src,"dst":e.dst,"type":e.kind,"match_basis":e.attrs.get("match_basis"),"confidence":e.attrs.get("confidence"),"scope":e.attrs.get("scope"),"reviewed":false},"evidence":{"id":other.id,"type":other.kind,"label":clipped(&other.label,240),"path":other.attrs.get("path"),"evidence_type":other.attrs.get("evidence_type").or(other.attrs.get("original_type")),"status_as_recorded":other.attrs.get("status_as_recorded"),"scope":other.attrs.get("publication_scope").or(other.attrs.get("scope")),"source_current_as_recorded":other.attrs.get("source_current"),"source_freshness":fresh.check(root,g,other)}}));
+                items.push((e.kind == "cross_reference_join", json!({"relation":{"src":e.src,"dst":e.dst,"type":e.kind,"match_basis":e.attrs.get("match_basis"),"confidence":e.attrs.get("confidence"),"scope":e.attrs.get("scope"),"reviewed":false},"evidence":{"id":other.id,"type":other.kind,"label":clipped(&other.label,240),"path":other.attrs.get("path").or_else(|| other.attrs.pointer("/source/path")),"cluster":other.attrs.get("cluster"),"kernel_checked":other.attrs.get("kernel_checked"),"evidence_type":other.attrs.get("evidence_type").or(other.attrs.get("original_type")),"status_as_recorded":other.attrs.get("status_as_recorded").or_else(|| other.attrs.pointer("/ledger/status")),"scope":other.attrs.get("publication_scope").or(other.attrs.get("scope")),"source_refs":other.attrs.get("source_refs").and_then(Value::as_array).map(|refs|refs.iter().take(4).collect::<Vec<_>>()),"source_current_as_recorded":other.attrs.get("source_current"),"source_freshness":fresh.check(root,g,other)}})));
             }
+            items.sort_by_key(|(navigation_join, _)| *navigation_join);
             page(
                 tool,
-                items,
+                items.into_iter().map(|(_, item)| item).collect(),
                 offset,
                 limit,
                 cap,
-                json!({"id":id,"scope":n.attrs.get("publication_scope").or(n.attrs.get("scope")),"content_scope":n.attrs.get("content_scope"),"paper_layer":is_paper(n),"evidence_type":filter,"notice":"Literal citation/navigation relations and AI candidates retain their separate stored types; none establishes a proof."}),
+                json!({"id":id,"scope":n.attrs.get("publication_scope").or(n.attrs.get("scope")),"content_scope":n.attrs.get("content_scope"),"paper_layer":is_paper(n),"cluster":n.attrs.get("cluster"),"evidence_type":filter,"notice":"Literal citation/navigation relations and AI candidates retain their separate stored types; none establishes a proof."}),
             )
         }
         _ => bail!("unknown paper tool: {tool}"),
@@ -964,18 +1057,39 @@ mod tests {
         }
     }
     #[test]
+    fn script_evidence_connects_exact_path_to_public_sections_with_source_handles() {
+        let mut f = Fixture::new();
+        let path = "verification/v1_glue.py";
+        let evidence_id = format!("python_verification:{path}");
+        for node in [
+            json!({"id":"script:v1_glue","type":"script","attrs":{"path":path,"cluster":"core"}}),
+            json!({"id":evidence_id,"type":"paper_evidence","attrs":{"path":path}}),
+        ] {
+            f.graph.nodes.push(serde_json::from_value(node).unwrap());
+        }
+        for section in ["section:active", "section:private"] {
+            f.graph.edges.push(serde_json::from_value(json!({"src":section,"dst":evidence_id,"type":"explicit_script_identifier"})).unwrap());
+        }
+        let result = f.query("paper_evidence", json!({"id":"script:v1_glue"}));
+        assert_eq!(result["context"]["cluster"], "core");
+        assert_eq!(result["total"], 1);
+        assert_eq!(result["items"][0]["evidence"]["source_refs"][0], "paper-source:fixture");
+        assert_eq!(f.query("paper_evidence", json!({"id":"script:v1_glue","scope":"all"}))["total"], 2);
+    }
+    #[test]
     fn full_tail_semantics_scopes_and_tie_ranking() {
         let f = Fixture::new();
         let r = f.query(
             "search_papers",
             json!({"query":"trailing_covariant_formula","limit":10}),
         );
-        assert_eq!(r["total"], 2);
+        assert_eq!(r["total"], 1);
         assert_eq!(r["items"][0]["id"], "section:active");
+        assert_eq!(r["items"][0]["same_passage_count"], 2);
         assert_eq!(r["items"][0]["source_current"], true);
         assert_eq!(
             f.query("search_papers", json!({"query":"geometric transport"}))["total"],
-            2
+            1
         );
         assert_eq!(
             f.query(
@@ -1145,8 +1259,9 @@ mod tests {
             })
             .await
             .unwrap();
-        assert_eq!(result["total"], 3);
+        assert_eq!(result["total"], 2);
         assert_eq!(result["results"][0]["source_current"], true);
+        assert_eq!(result["results"][0]["same_passage_count"], 2);
         assert!(store
             .source("paper-source:fixture", Some(1), Some(1))
             .await
