@@ -5,6 +5,7 @@ in the modular `changelog.tex` document. This file records repository structure,
 navigation and maintenance changes that make no new scientific claim.
 
 ## 2026-11-09: Preserve the whole TFPT status in the Atlas
+## 2026-11-10 — Verification and formal evidence in the Atlas
 
 Overall status queries keep the full set of research areas and paginate their
 question index independently of individual research packets. The local Atlas
@@ -12,8 +13,16 @@ and public evidence portal share the same scoped entry points. The public
 snapshot includes the reviewed source findings through the current freeze.
 The paper importer can rebuild source ranges before import, and search
 keeps expired annotations separate from current text.
+The Atlas imports the Python inventory and clusters from the verification
+registry. Paper evidence follows exact source identities from a Python script
+or Lean declaration and exposes source handles for the linked records. Formal
+files named in the ledger have a separate reference type. Wolfram headings end
+at their own closing comment and only their leading identifiers drive joins.
+Search shows the current ledger statement when a cached claim annotation cites
+changed source. Its historical annotation remains available with freshness metadata.
 
 ## 2026-11-06: Improve public search and source navigation
+## 2026-11-02 — Current research routing and source-bound Atlas repairs
 
 Three topic guides and three original argument reading editions provide stable
 addresses with their mathematical premises, source versions and verification
@@ -21,6 +30,11 @@ scope. The FAQ and llms.txt share the same scoped summaries. Author identities
 are connected across profiles and papers; the earlier Zenodo release is kept
 distinct from the current document set. Generated PDF dates remain artifact
 metadata rather than invented first publication dates.
+The shared Atlas and skills now read the live fundamental plan before historical
+research tasks. Exact result identifiers keep their complete scoped findings and
+premise dependencies; historical tasks retain their authored status and carry an
+explicit historical execution priority. The canonical plan documents have source
+handles without becoming mathematical findings.
 
 The complete publication history remains available through month and day archives.
 Eleven duplicated presentation archives are removed, the global history search
@@ -29,6 +43,11 @@ site check covers canonical addresses, readable content, legacy redirects,
 bibliographic metadata and sitemap discovery. A fixed observation question set
 supports later search and AI citation measurements. Scientific sources, claim
 statuses and prediction values are unchanged.
+Source reading now checks and returns the actual original text, reports its extent
+and gives executable bounded continuations. Paper navigation follows the actual
+section and evidence identities. The registry records all local Lean source roles
+without claiming a fresh kernel check, and explicitly retires three removed legacy
+navigation tools. Checker and contract relations retain repository path identity.
 
 ## 2026-11-05 — Preserve the shared source update in every public view
 
@@ -69,6 +88,13 @@ cross-references by their external owner, and use the independently checked
 Kubo derivative for strict zero-response controls. The finite-difference
 comparison, unknown-reference rejection and all scientific claim statuses
 remain unchanged.
+Complete unchanged source windows can be relocated only by an exact unique match;
+changed or ambiguous annotation sources require renewed extraction. Damaged control
+characters are rejected, external historical RH references preserve their unresolved
+scope, and the E8 glue execution note is reconciled only against its hash-verified
+historical receipt. R096's three different branches now expose their distinct
+conjunctive premises. Source freshness, AI review status and proof validation remain
+separate; this maintenance makes no new mathematical or physical claim.
 
 ## 2026-10-18 — Paper navigation in the shared Atlas
 

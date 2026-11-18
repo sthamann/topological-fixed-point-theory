@@ -12,6 +12,7 @@ use serde_json::{json, Value};
 use std::{path::PathBuf, sync::Arc};
 use tower_http::services::{ServeDir, ServeFile};
 
+mod cross;
 mod overview;
 mod papers;
 mod research;
@@ -519,6 +520,32 @@ mod mcp {
             tool("theory_overview", "Return a compact readonly summary of the locally saved theory map, if available.", json!({"type":"object","properties":{}})),
         ];
         specs.extend(crate::papers::tool_specs());
+        for spec in &mut specs {
+            let annotations = match spec["name"].as_str() {
+                Some("record_research_update") => json!({
+                    "readOnlyHint": false,
+                    "destructiveHint": true,
+                    "idempotentHint": false,
+                    "openWorldHint": false
+                }),
+                Some("search_knowledge" | "search_papers") => json!({
+                    "readOnlyHint": true,
+                    "openWorldHint": true
+                }),
+                Some(
+                    "research_state" | "assess_research_plan" | "get_dossier" | "audit_inputs"
+                    | "trace_reasoning" | "list_topics" | "graph_status" | "read_source"
+                    | "topic_overview" | "solution_chain" | "list_attempts" | "research_brief"
+                    | "research_context" | "compare_aspects" | "theory_overview" | "list_papers"
+                    | "paper_outline" | "paper_section" | "paper_evidence" | "paper_coverage",
+                ) => json!({
+                    "readOnlyHint": true,
+                    "openWorldHint": false
+                }),
+                _ => continue,
+            };
+            spec["annotations"] = annotations;
+        }
         specs
     }
     fn tool(name: &str, description: &str, input_schema: Value) -> Value {
@@ -580,10 +607,18 @@ mod mcp {
             "list_papers" | "paper_outline" | "paper_section" | "search_papers"
             | "paper_evidence" | "paper_coverage" => store.paper_tool(name, &a).await?,
             "search_knowledge" => {
+                let kind = a.get("type").and_then(Value::as_str);
+                let query = if kind == Some("theory_pattern") {
+                    a.get("query")
+                        .and_then(Value::as_str)
+                        .context("missing string argument query")?
+                } else {
+                    arg_str(&a, "query")?
+                };
                 store
                     .search(SearchRequest {
-                        query: arg_str(&a, "query")?.to_owned(),
-                        kind: a.get("type").and_then(Value::as_str).map(str::to_owned),
+                        query: query.to_owned(),
+                        kind: kind.map(str::to_owned),
                         limit: a.get("limit").and_then(Value::as_u64).map(|n| n as usize),
                     })
                     .await?
@@ -791,6 +826,24 @@ mod mcp {
             assert!(names.contains(&"research_context"));
             assert!(names.contains(&"compare_aspects"));
             assert!(names.contains(&"theory_overview"));
+            for spec in &specs {
+                let name = spec["name"].as_str().expect("tool has a name");
+                let annotations = &spec["annotations"];
+                assert_eq!(
+                    annotations["readOnlyHint"].as_bool(),
+                    Some(name != "record_research_update"),
+                    "{name}"
+                );
+                assert_eq!(
+                    annotations["openWorldHint"].as_bool(),
+                    Some(matches!(name, "search_knowledge" | "search_papers")),
+                    "{name}"
+                );
+                if name == "record_research_update" {
+                    assert_eq!(annotations["destructiveHint"].as_bool(), Some(true));
+                    assert_eq!(annotations["idempotentHint"].as_bool(), Some(false));
+                }
+            }
         }
         #[tokio::test]
         async fn paper_tools_are_dispatched_through_mcp_and_http() {

@@ -2,6 +2,7 @@
 """Refresh/check the single Atlas without LLM calls or research execution."""
 import argparse
 import csv
+from hashlib import sha256
 import json
 import os
 from pathlib import Path
@@ -42,10 +43,29 @@ def check_ledger():
     recorded = {n['id'].removeprefix('claim:'): n.get('attrs', {}).get('ledger')
                 for n in graph['nodes'] if n['type'] == 'claim'}
     changed = sorted(cid for cid in rows.keys() | recorded.keys() if rows.get(cid) != recorded.get(cid))
+    with (REPO / 'verification/script_registry.csv').open(encoding='utf-8-sig', newline='') as handle:
+        scripts = list(csv.DictReader(handle))
+    script_nodes = {n['id']: n['attrs'] for n in graph['nodes'] if n['type'] == 'script'}
+    linked = {edge['dst'] for edge in graph['edges'] if edge['type'] == 'implemented_check'}
+    script_issues = []
+    for row in scripts:
+        script_id = 'script:' + row['script']
+        path = f"verification/{row['script']}.py"
+        attrs = script_nodes.get(script_id, {})
+        source = REPO / path
+        if attrs.get('path') != path or not source.is_file():
+            script_issues.append({'id': script_id, 'issue': 'missing_script_or_source'})
+        elif attrs.get('sha256') != sha256(source.read_bytes()).hexdigest():
+            script_issues.append({'id': script_id, 'issue': 'stale_source'})
+        if attrs.get('cluster') != row['cluster']:
+            script_issues.append({'id': script_id, 'issue': 'registry_cluster_mismatch'})
+        if script_id not in linked:
+            script_issues.append({'id': script_id, 'issue': 'no_ledger_link'})
     print(json.dumps({'atlas_ledger_current': not changed, 'changed_claims': changed,
+                      'registered_scripts_checked': len(scripts), 'script_issues': script_issues,
                       'coverage': graph.get('meta', {}).get('coverage'),
                       'notice': 'Freshness is not a scientific or semantic correctness verdict.'}))
-    return not changed
+    return not changed and not script_issues
 
 
 def main():

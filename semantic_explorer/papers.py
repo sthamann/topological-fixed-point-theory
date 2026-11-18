@@ -430,7 +430,7 @@ class PaperCorpus:
                 self.registry_evidence.add(ev["id"])
                 refs=[];error=None
                 try:
-                    start=ev.get("line_start",ev.get("row_number",1));end=ev.get("line_end",start)
+                    start=ev.get("line_start",ev.get("row_number",1));end=ev.get("line_end",ev.get("row_number"))
                     ref,_,_=self.source(ev["path"],ev.get("sha256"),start,end);refs=[ref]
                 except (ValueError,OSError)as e:error=str(e)
                 self.node({"id":ev["id"],"type":"paper_evidence","label":ev.get("qualified_name",ev.get("claim_id",ev.get("heading_as_written",ev["path"]))),"summary":"Indexed source entity; no new proof or status inference.",
@@ -467,6 +467,65 @@ class PaperCorpus:
             if record.get("state")=="complete":self.stale_chunks.discard(key)
         for scope,index in self.cache_indices.items():atomic(self.cache_dir/scope/"index.json",index)
 
+    def scope_review_evidence(self):
+        """Publish scoped audits as evidence records with hash-checked originals."""
+        file = self.root / "semantic_explorer/data/paper-scope-reviews.json"
+        reviews = read_json(file, {})
+        nodes = []
+        edges = []
+        for sid, packets in self.packets.items():
+            attrs = self.nodes[sid]["attrs"]
+            if attrs["publication_scope"] != "public":
+                continue
+            source = attrs["source"]
+            for packet in packets:
+                chunk_id = packet["chunk_id"]
+                review = reviews.get(chunk_id)
+                if not review:
+                    continue
+                ref_ids = list(attrs["source_refs"])
+                current = (
+                    review.get("section") == sid
+                    and review["source"]["sha256"] == source["sha256"]
+                    and review["annotation_key"] == packet["cache_key"]
+                    and self.records.get(packet["cache_key"], {}).get("state") == "complete"
+                    and review.get("annotation_sha256") == sha(canonical(self.records[packet["cache_key"]]["semantic"]))
+                )
+                try:
+                    for evidence in review["sources"]:
+                        ref_id, _, _ = self.source(evidence["path"], evidence["sha256"],
+                                                   evidence["line_start"], evidence["line_end"])
+                        ref_ids.append(ref_id)
+                except (OSError, ValueError):
+                    current = False
+                rid = "paper-scope-review:" + chunk_id.removeprefix("section:")
+                if current:
+                    points = review["points"]
+                    statuses = ", ".join(dict.fromkeys(point["verdict"] for point in points))
+                    label = next((p["remaining"] for p in points if p["verdict"] in {"open_derivation", "missing_original"} and p["remaining"]), review["focus"])
+                    summary = review["annotation_guidance_de"]
+                else:
+                    points = []
+                    statuses = "review_stale"
+                    label = "Originalquelle oder Annotation geändert"
+                    summary = "Der Quellenabgleich muss für die aktuelle Fassung wiederholt werden."
+                nodes.append({"id": rid, "type": "paper_evidence",
+                              "label": label, "summary": summary,
+                              "attrs": {"original_type": "paper_scope_review", "scope": "public",
+                                        "path": source["path"], "chunk_id": chunk_id,
+                                        "line_start": review["source"]["block_first_line"],
+                                        "line_end": review["source"]["block_last_line"],
+                                        "status_as_recorded": statuses, "points": points,
+                                        "method": review["model"], "source_refs": list(dict.fromkeys(ref_ids)),
+                                        "evidence_sources": review["sources"] if current else [],
+                                        "external_sources": review.get("external_sources", []) if current else [],
+                                        "source_current": current, "reviewed": False}})
+                edges.append({"src": sid, "dst": rid, "type": "has_source_scope_review",
+                              "attrs": {"scope": "public", "confidence": "scoped_source_review",
+                                        "match_basis": "Review of the exact source block and named evidence",
+                                        "reviewed": False}})
+        return nodes, edges
+
     def graph(self):
         states={};chunks_total=chunks_current=0
         for sid in self.section_ids:
@@ -484,8 +543,9 @@ class PaperCorpus:
                      "quote_offset_units":"Unicode code points relative to the complete section source_text",
                      "annotation_provenance":[{k:r[k]for k in("chunk_id","cache_key","model","prompt_version","annotation_format","created_at","correction_provenance","replaced_record_sha256","replacement_reason")if k in r}for r in complete],
                      "kinds":sorted({r["semantic"]["kind"]for r in complete}),"chunks":len(complete)}
-                for name in ("concepts","assumptions","results","limits","quotes"):sem[name]=[x for r in complete for x in r["semantic"][name]]
-                for q in sem["quotes"]:q["source_id"]=a["source_refs"][0]
+                for name in ("concepts","assumptions","results","limits"):sem[name]=[x for r in complete for x in r["semantic"][name]]
+                sem["quotes"] = [{**quote, "source_id": a["source_refs"][0]}
+                                 for record in complete for quote in record["semantic"]["quotes"]]
                 a["semantic"]=sem;node["summary"]=sem["summary"]
             a["errors"]=[r.get("error")for r in records if r.get("state")=="error"]
         for did in self.document_ids:
@@ -508,8 +568,9 @@ class PaperCorpus:
                   "public_sections":scopes["public"],"private_sections":scopes["local_private"],**counts,"current_chunks":chunks_current,"total_chunks":chunks_total,
                   "semantic_complete":counts["complete"]==len(self.section_ids)and not self.errors,"source_errors":len(self.errors),"document_source_errors":document_errors,
                   "evidence_entities":len(self.registry_evidence),"evidence_source_errors":len(evidence_errors),"reviewed":False,"proofs_checked":False}
+        review_nodes, review_edges = self.scope_review_evidence()
         return {"meta":{"schema_version":"1.0","paper_atlas":True,"prompt_version":VERSION,"model":self.model,"include_local":self.include_local,"registry_fingerprints":{s:h for s,_,h in self.registries},"coverage":coverage,"errors":self.errors,"evidence_errors":evidence_errors,"notice":"Complete-source AI annotations remain unreviewed; registry scope and original ledger verdicts remain unchanged."},
-                "nodes":list(self.nodes.values()),"edges":self.edges,"sources":list(self.sources.values())}
+                "nodes":list(self.nodes.values())+review_nodes,"edges":self.edges+review_edges,"sources":list(self.sources.values())}
 
 
 def embedding_nodes(graph):return[n for n in graph["nodes"]if n["type"]in{"paper_section","paper_document"}and n["attrs"].get("paper_layer")and n["attrs"].get("summary_state")=="complete"]

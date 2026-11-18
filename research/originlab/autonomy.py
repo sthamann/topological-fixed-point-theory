@@ -10,6 +10,7 @@ from datetime import datetime,timezone
 import argparse
 import fcntl
 import json
+import shutil
 import sqlite3
 import subprocess
 import sys
@@ -23,7 +24,7 @@ from verify import digest
 HERE = Path(__file__).resolve().parent
 ENGINE = {p.name:digest(p) for p in sorted(HERE.glob("*.py"))}
 ENGINE.update({p.name:digest(p) for p in [*HERE.glob("*.lean"), HERE/"gates.json",
-                                       HERE/"f1_native_contract.json"]})
+                                       HERE/"f1_native_contract.json",HERE/"THEORY-BRIEF.md"]})
 
 CASE_FIELDS = {
     "complete_mark_graphs":(set(),{"maximum"}),
@@ -66,6 +67,7 @@ CASE_FIELDS = {
     "observable_alphabets":({"input"},set()),
     "gaussian_source":({"input"},set()),
     "joint_source":({"input"},set()),
+    "atlas_scenario_case":({"scenario"},set()),
     "origin_dsl":({"size","seed","profile"},{"observations","suggested","mutations","depth"}),
 }
 
@@ -110,6 +112,7 @@ def setup(path):
             id TEXT PRIMARY KEY, phase TEXT NOT NULL, spec TEXT NOT NULL, priority INTEGER NOT NULL,
             status TEXT NOT NULL DEFAULT 'queued', attempts INTEGER NOT NULL DEFAULT 0,
             result TEXT)""")
+        db.execute("CREATE TABLE IF NOT EXISTS cache (key TEXT PRIMARY KEY, result TEXT NOT NULL)")
         # The supervisor holds the only writer lease for this campaign.
         db.execute("UPDATE jobs SET status='queued' WHERE status='running'")
 
@@ -126,13 +129,34 @@ def claim(db,phase):
         ) RETURNING id,spec,attempts""",(phase,)).fetchone()
 
 
-def worker(path,phase,root,timeout):
+# Proof lanes depend on the Lean backend and its time budget.
+UNCACHED = {"f1_solution","proof_search","lean","atlas_scenarios","atlas_scenario_case",
+            "scenario_proposals","scenario_agent","scenario_research"}
+
+
+def cache_key(basis,spec):
+    """Identify a job by its inputs, independent of epoch, stage and round."""
+    data = json.loads(spec)
+    if basis is None or data["lane"] in UNCACHED or data.get("sol_timeout"):
+        return None
+    return token([basis,data])
+
+
+def worker(path,phase,root,timeout,basis=None):
+    reused = 0
     with closing(connection(path)) as db:
         while (row := claim(db,phase)):
             job,spec,attempt = row
+            key = cache_key(basis,spec)
+            hit = key and db.execute("SELECT result FROM cache WHERE key=?",(key,)).fetchone()
+            if hit:
+                db.execute("UPDATE jobs SET status='done',result=? WHERE id=?",(hit[0],job))
+                reused += 1
+                continue
             try:
+                limit = max(timeout,json.loads(spec).get("model_timeout",0)+60)
                 child = subprocess.run([sys.executable,"-B",__file__,"--job","-","--repo",str(root)],
-                                       input=spec,text=True,capture_output=True,timeout=timeout,check=True)
+                                       input=spec,text=True,capture_output=True,timeout=limit,check=True)
                 result = json.loads(child.stdout)
                 status = "done"
             except (subprocess.SubprocessError,OSError,ValueError) as error:
@@ -142,6 +166,9 @@ def worker(path,phase,root,timeout):
                           "detail":str(stderr)[-3000:]}
                 status = "queued" if attempt < 2 else "failed"
             db.execute("UPDATE jobs SET status=?,result=? WHERE id=?",(status,packed(result),job))
+            if key and status=="done" and "INCONCLUSIVE" not in str(result.get("status")):
+                db.execute("INSERT OR REPLACE INTO cache(key,result) VALUES(?,?)",(key,packed(result)))
+    return reused
 
 
 def result_rows(path,phase):
@@ -168,6 +195,51 @@ def execute(spec,root):
         if campaign not in registered_origin_campaigns():
             raise ValueError("unknown registered origin campaign")
         return run_campaign(campaign,root,None,[],[],[])
+    if lane=="atlas_scenarios":
+        from atlas_scenarios import PROGRAM, run
+        return run(root) if (root/PROGRAM).is_file() else {"status":"ATLAS_UNAVAILABLE","physical_solution":False}
+    if lane=="scenario_proposals":
+        from scenario_model import propose
+        catalogue = {name:{"required":sorted(need),"optional":sorted(extra)}
+                     for name,(need,extra) in CASE_FIELDS.items() if name!="atlas_scenario_case"}
+        return propose(root,spec["model"],spec["model_timeout"],spec["budget"],spec["history"],
+                       catalogue,spec["known"])
+    if lane=="scenario_research":
+        from scenario_agent import research
+        return research(root,spec["groups"],spec["model"],spec["attempt_timeout"],spec["budget"],spec["rounds"])
+    if lane=="scenario_agent":
+        from scenario_agent import investigate
+        return investigate(root,spec["scenario"],spec["model"],spec["model_timeout"],spec["budget"])
+    if lane=="atlas_scenario_case":
+        from atlas_scenarios import assess, knowledge
+        verdict = assess(knowledge(root),spec["scenario"])
+        checks = []
+        if verdict["status"]=="ADMISSIBLE_FOR_CHECKS":
+            free = {job["lane"] for _,job in specifications(3,Path("."),None,[]) if set(job)=={"lane"}}
+            for check in spec["scenario"].get("checks",[]):
+                job = check.get("job") if isinstance(check,dict) else None
+                job = {"lane":job} if isinstance(job,str) else job
+                try:
+                    if set(check)!={"job","expect"} or job.get("lane")=="atlas_scenario_case":
+                        raise ValueError("a scenario check names one typed job and its expected status")
+                    if job!={"lane":job["lane"]} or job["lane"] not in free:
+                        valid_case(job)
+                except (ValueError,AttributeError,KeyError,TypeError) as error:
+                    return {**verdict,"status":"REJECTED_MALFORMED_CHECK","error":str(error)[:300],"checks":checks}
+                try:
+                    observed = execute(job,root).get("status")
+                except Exception as error:  # untrusted job arguments reach many lane validators
+                    return {**verdict,"status":"REJECTED_MALFORMED_CHECK","checks":checks,
+                            "error":f"{job['lane']}: {type(error).__name__}: {str(error)[:300]}"}
+                checks.append({"job":job,"expected_status":check["expect"],"status":observed,
+                               "passed":observed==check["expect"],"discriminating":len(job)>1})
+            # A typed job does not depend on the scenario. Its outcome is a
+            # declared prediction about the record and decides no identification.
+            if any(not c["passed"] for c in checks):
+                verdict["status"] = "DECLARED_PREDICTION_FAILED"
+            elif any(c["discriminating"] for c in checks):
+                verdict["status"] = "DECLARED_PREDICTIONS_HOLD"
+        return {**verdict,"checks":checks}
     if lane=="discovered_original_packet":
         from original_discovery import replay
         return replay(root,Path(spec["domain"]),spec["entry"])
@@ -390,6 +462,7 @@ def specifications(resolution,domain,toolchain,focus,seed_research=True,packets=
     for entry in packets:
         yield 100,{"lane":"discovered_original_packet","domain":str(domain),"entry":entry}
     yield 100,{"lane":"r113_synthesis","domain":str(domain)}
+    yield 99,{"lane":"atlas_scenarios"}
     yield 99,{"lane":"q0_rule_search","domain":str(domain),"depth":min(resolution-1,4)}
     yield 98,{"lane":"p1_origin_hypotheses"}
     yield 98,{"lane":"coherent_origin","stage":resolution-1}
@@ -451,24 +524,27 @@ def specifications(resolution,domain,toolchain,focus,seed_research=True,packets=
                   "metric":metric,"resolution":min(resolution,10)}
 
 
+def valid_case(row):
+    lane = row.get("lane") if isinstance(row,dict) else None
+    if not isinstance(lane,str) or lane not in CASE_FIELDS:
+        raise ValueError(f"unknown custom job: {lane!r}")
+    required,optional = CASE_FIELDS[lane]
+    fields = set(row)-{"lane"}
+    if not required<=fields<=required|optional:
+        raise ValueError(f"invalid fields for {lane}: {sorted(fields)}")
+    if lane=="origin_dsl" and (type(row["size"]) is not int or not 1<=row["size"]<=8 or
+            type(row.get("depth",5)) is not int or not 1<=row.get("depth",5)<=8):
+        raise ValueError("OriginDSL size and test depth must be between 1 and 8")
+    return row
+
+
 def extra_specs(path):
     if path is None:
         return []
     rows = json.loads(path.read_text())
     if not isinstance(rows,list) or any(not isinstance(row,dict) for row in rows):
         raise ValueError("case manifest must be a list of job objects")
-    for row in rows:
-        lane = row.get("lane")
-        if not isinstance(lane,str) or lane not in CASE_FIELDS:
-            raise ValueError(f"unknown custom job: {lane!r}")
-        required,optional = CASE_FIELDS[lane]
-        fields = set(row)-{"lane"}
-        if not required<=fields<=required|optional:
-            raise ValueError(f"invalid fields for {lane}: {sorted(fields)}")
-        if lane=="origin_dsl" and (type(row["size"]) is not int or not 1<=row["size"]<=8 or
-                type(row.get("depth",5)) is not int or not 1<=row.get("depth",5)<=8):
-            raise ValueError("OriginDSL size and test depth must be between 1 and 8")
-    return list({packed(row):row for row in rows}.values())
+    return list({packed(valid_case(row)):row for row in rows}.values())
 
 
 def watched_sources(root, domain):
@@ -547,7 +623,91 @@ def discovered_source_evidence(original,replays):
     return replay,{"status":"REPLAYED_SOURCE_REQUIRES_REVIEW","packet":replay["discovered_packet"]}
 
 
-def search_round(args,db,out,epoch,resolution,context,domain,focus,extras,dsl):
+def work_order(original,complete,discovered,errors,backend=None):
+    """Name the inputs that a higher search stage cannot produce."""
+    from f1_solution import native_registry
+    from original_discovery import PACKET_SCHEMA, SOURCE_DIRS
+    backend = shutil.which("elan") if backend is None else backend
+    items = []
+    if complete.get("formal_acceptance_registered") is False:
+        items.append({
+            "id":"native_acceptance_contract","blocks":sorted(native_registry()["gates"]),
+            "reason":"No pinned native F1 contract is registered. Every stage returns the search bound.",
+            "open_gate_statements":{gate:row["open"] for gate,row in native_registry()["gates"].items()},
+            "pickup":"Register {file, sha256} as 'contract' in f1_native_contract.json. "
+                     "The engine digest changes and the supervisor opens a new epoch."})
+    if original.get("status")=="BLOCKED":
+        items.append({
+            "id":"original_source_packet","blocks":["G3","G4"],
+            "reason":original.get("reason") or "The native consumer received no original source operation.",
+            "first_operation":original.get("first_operation"),"missing":original.get("missing",[]),
+            "obligations":original.get("obligations",{}),"rejected_packets":discovered.get("rejected",[]),
+            "pickup":f"A {PACKET_SCHEMA} packet with input_role source_reviewed_original, bound to the "
+                     f"native domain digest, under {', '.join(SOURCE_DIRS)} is discovered and replayed."})
+    if not backend:
+        items.append({"id":"lean_backend","blocks":sorted(native_registry()["gates"]),
+                      "reason":"elan is not on PATH, so no proof certificate can be checked.",
+                      "pickup":"Install elan. The pinned toolchain is fetched on first use."})
+    if errors:
+        items.append({"id":"failed_jobs","blocks":[],
+                      "reason":"These jobs failed twice and contribute no evidence.",
+                      "jobs":[{"lane":row["spec"]["lane"],"error_type":row["result"].get("error_type")}
+                              for row in errors]})
+    proof_inputs = {"native_acceptance_contract","lean_backend"}
+    return {"f1_proof_reachable":not any(item["id"] in proof_inputs for item in items),
+            "scope":"inputs outside the implemented search grammars; a listed item is a research task, "
+                    "and its presence alone establishes no physical claim",
+            "items":items}
+
+
+def completeness(root,domain,toolchain,discovered,complete,far=64):
+    """Compute whether this configuration can decide every gate and still grow."""
+    from f1_solution import native_registry
+    registry = native_registry()
+    contract = registry["contract"]
+    predicates = dict.fromkeys(registry["gates"])
+    if contract is not None and complete.get("same_model_gates"):
+        predicates.update(complete["same_model_gates"])
+    gates = {gate:{"acceptance_predicate":predicates[gate],
+                   "scoped_evidence":{path:(root/path).is_file() for path in row["evidence"]}}
+             for gate,row in registry["gates"].items()}
+    # A lane whose job is identical at two far stages has exhausted its grammar.
+    stage = lambda n: {packed(spec) for _,spec in specifications(n,domain,toolchain,[],seed_research=False)}
+    growing = sorted({json.loads(spec)["lane"] for spec in stage(far+1)-stage(far)})
+    undecidable = sorted(gate for gate,row in gates.items() if row["acceptance_predicate"] is None)
+    packets = len(discovered.get("matching",[]))
+    return {"complete":not undecidable and bool(growing) and (packets>0 or contract is not None),
+            "gates":gates,"gates_without_acceptance_predicate":undecidable,
+            "source_reviewed_packets":packets,
+            "lanes_still_growing_with_stage":growing,
+            "scope":"software reachability of the registered gates; it establishes no physical claim"}
+
+
+def scenario_verdicts(rows):
+    """Compact record of tested scenarios for the next proposal."""
+    verdicts = []
+    computed = {row["spec"]["scenario"]["id"]:row["result"] for row in rows
+                if row["spec"]["lane"]=="scenario_agent" and row["queue_status"]=="done"}
+    for row in rows:
+        if row["spec"]["lane"]!="atlas_scenario_case":
+            continue
+        scenario,result = row["spec"]["scenario"],row["result"]
+        verdicts.append({"id":scenario["id"],"statement":scenario["statement"][:400],"scenario":scenario,
+                         "status":result.get("status"),
+                         "repeated_closed_routes":[r["strategy"] for r in result.get("repeated_closed_routes",[])],
+                         "tasks_with_missing_premises":result.get("tasks_with_missing_premises",{}),
+                         "error":result.get("error"),
+                         "new_premises":scenario.get("new_premises",[]),
+                         "computed_comparison":{k:computed[scenario["id"]].get(k) for k in
+                                                ("status","computed_status","computed","referee","rationale","target",
+                                                 "script_sha256","cost_usd")}
+                                               if scenario["id"] in computed else None,
+                         "failed_checks":[c["job"]["lane"] for c in result.get("checks",[]) if not c["passed"]]})
+    return verdicts
+
+
+def search_round(args,db,out,epoch,resolution,context,domain,focus,extras,dsl,history=(None,0),
+                 scenario_history=(),spent_before=0.0):
     round_key = token([epoch,resolution,context["atlas_program_sha256"],context["git_head"],source_input_key(domain,args.repo),ENGINE,
                        context["watched_sources"],context["discovered_original_sources"],
                        focus,args.lean_toolchain,args.timeout,extras,dsl])
@@ -559,12 +719,15 @@ def search_round(args,db,out,epoch,resolution,context,domain,focus,extras,dsl):
     enqueue(db,round_key,specs)
     enqueue(db,round_key,[(75,spec) for spec in extras])
     enqueue(db,round_key,[(55,dsl)])
+    basis = token([context["atlas_program_sha256"],context["git_head"],source_input_key(domain,args.repo),
+                   ENGINE,context["watched_sources"],context["discovered_original_sources"]])
+    reused = 0
     with ThreadPoolExecutor(max_workers=args.workers) as pool:
         def run_queued():
+            nonlocal reused
             timeout = args.timeout * max(1,resolution-args.start_resolution+1) if args.until_proved else args.timeout
-            futures = [pool.submit(worker,db,round_key,args.repo,timeout) for _ in range(args.workers)]
-            for future in futures:
-                future.result()
+            futures = [pool.submit(worker,db,round_key,args.repo,timeout,basis) for _ in range(args.workers)]
+            reused += sum(future.result() for future in futures)
             return result_rows(db,round_key)
 
         rows = run_queued()
@@ -572,6 +735,74 @@ def search_round(args,db,out,epoch,resolution,context,domain,focus,extras,dsl):
         if followups:
             enqueue(db,round_key,followups)
             rows = run_queued()
+        if args.scenario_model and not args.scenario_proposals:
+            agents = []
+            from itertools import combinations
+            order = ("A1","A7","A5","A8","A11","A2","A9","A10","A6","A3","A4")
+            covered = {row["id"] for row in scenario_history}
+            pairs = [pair for pair in combinations(order,2)
+                     if "research-"+"-".join(group.lower() for group in pair) not in covered]
+            threads = [(94,{"lane":"scenario_research","groups":list(pair),"model":args.scenario_model,
+                            "attempt_timeout":args.scenario_agent_timeout,"rounds":args.scenario_research_rounds,
+                            "model_timeout":args.scenario_research_rounds*(args.scenario_agent_timeout+400),
+                            "budget":args.scenario_agent_budget_usd})
+                       for pair in pairs[:args.scenario_research_max]]
+            if threads:
+                enqueue(db,round_key,threads)
+                rows = run_queued()
+        elif args.scenario_model:
+            # Parameter-free jobs of this stage give the model observed outcomes to predict against.
+            known = {row["spec"]["lane"]:row["result"].get("status") for row in rows
+                     if set(row["spec"])=={"lane"} and row["queue_status"]=="done"}
+            ask = {"lane":"scenario_proposals","model":args.scenario_model,
+                   "model_timeout":args.scenario_timeout,"budget":args.scenario_budget_usd,
+                   "history":list(scenario_history),"known":known}
+            enqueue(db,round_key,[(96,ask)])
+            rows = run_queued()
+            proposed = next(row["result"] for row in rows if row["spec"]==ask)
+            cases = []
+            for scenario in proposed.get("scenarios",[]):
+                try:
+                    cases.append((96,valid_case({"lane":"atlas_scenario_case","scenario":scenario})))
+                except ValueError:
+                    continue
+            followups = [*followups,(96,ask),*cases]
+            if cases:
+                enqueue(db,round_key,cases)
+                rows = run_queued()
+            # Scenarios consistent with the record get a computed comparison of their sources.
+            admissible = [row["spec"]["scenario"] for row in rows
+                          if row["spec"]["lane"]=="atlas_scenario_case" and row["queue_status"]=="done"
+                          and row["result"].get("status")=="ADMISSIBLE_FOR_CHECKS"
+                          and (row["spec"]["scenario"].get("identifies")
+                               or row["spec"]["scenario"].get("new_premises"))]
+            # Scenarios that add a rule come first: the record cannot produce those itself.
+            admissible.sort(key=lambda scenario: not scenario.get("new_premises"))
+            current = {scenario["id"] for scenario in admissible}
+            backlog = [row["scenario"] for row in scenario_history
+                       if row.get("status")=="ADMISSIBLE_FOR_CHECKS"
+                       and (row.get("computed_comparison") or {}).get("status") in (None,"AGENT_UNAVAILABLE")
+                       and row.get("scenario",{}).get("new_premises") and row["id"] not in current]
+            admissible = [*backlog,*admissible]
+            agents = [(95,{"lane":"scenario_agent","scenario":scenario,"model":args.scenario_model,
+                           "model_timeout":args.scenario_agent_timeout,"budget":args.scenario_agent_budget_usd})
+                      for scenario in admissible[:args.scenario_agent_max]]
+            # Research threads look for one mechanism behind two anchor groups that no thread covered yet.
+            from itertools import combinations
+            # Groups on different spaces come first: the E8 matter roots, the 96-dimensional triple,
+            # the conformal seam, the flavour lattice and the fixed point.
+            order = ("A1","A7","A5","A8","A11","A2","A9","A10","A6","A3","A4")
+            covered = {row["id"] for row in scenario_history}
+            pairs = [pair for pair in combinations(order,2)
+                     if "research-"+"-".join(group.lower() for group in pair) not in covered]
+            threads = [(94,{"lane":"scenario_research","groups":list(pair),"model":args.scenario_model,
+                            "attempt_timeout":args.scenario_agent_timeout,"rounds":args.scenario_research_rounds,
+                            "model_timeout":args.scenario_research_rounds*(args.scenario_agent_timeout+400),
+                            "budget":args.scenario_agent_budget_usd})
+                       for pair in pairs[:args.scenario_research_max]]
+            if agents or threads:
+                enqueue(db,round_key,[*agents,*threads])
+                rows = run_queued()
     scenarios = [row["result"] for row in rows if row["spec"]["lane"]=="scenario" and row["queue_status"]=="done"]
     baseline = {packed(spec) for _,spec in specs+followups}
     baseline.add(packed(dsl))
@@ -695,7 +926,50 @@ def search_round(args,db,out,epoch,resolution,context,domain,focus,extras,dsl):
         "charged_original_observation":original.get("charged_bridge"),
         "refinement":{"resolution":resolution,"next_resolution":resolution+1 if resolution<args.max_resolution else None},
     }
+    atlas = results.get("atlas_scenarios") or {}
+    frontier["atlas_scenarios"] = atlas
+    frontier["supplied_scenarios"] = [row for row in rows if row["spec"]["lane"]=="atlas_scenario_case"]
+    frontier["scenario_proposals"] = results.get("scenario_proposals")
+    frontier["scenario_comparisons"] = [row for row in rows
+                                        if row["spec"]["lane"] in ("scenario_agent","scenario_research")]
+    for row in frontier["scenario_comparisons"]:
+        if row["result"].get("script"):
+            folder = out/"scenario-checks"
+            folder.mkdir(exist_ok=True)
+            (folder/f"{row['result']['id']}.py").write_text(row["result"]["script"],encoding="utf-8")
+    tested = {row["id"]:row for row in (*scenario_history,*scenario_verdicts(rows))}
+    for row in rows:
+        result = row["result"]
+        if row["spec"]["lane"]=="scenario_research" and row["queue_status"]=="done":
+            scenario = result.get("scenario") or {"id":result["id"],"statement":"","new_premises":[]}
+            tested[result["id"]] = {
+                "id":result["id"],"statement":scenario["statement"][:400],"scenario":scenario,
+                "status":"RESEARCH_THREAD","new_premises":scenario.get("new_premises",[]),
+                "attempts":result.get("attempts"),
+                "computed_comparison":{key:result.get(key) for key in (
+                    "status","computed_status","computed","referee","rationale","target","script_sha256","cost_usd")}}
+    # A scenario from the backlog was assessed in an earlier stage; attach its new test.
+    for row in rows:
+        name = row["spec"].get("scenario",{}).get("id")
+        if row["spec"]["lane"]=="scenario_agent" and row["queue_status"]=="done" and name in tested:
+            tested[name] = {**tested[name],"computed_comparison":{
+                key:row["result"].get(key) for key in ("status","computed_status","computed","referee",
+                                                       "rationale","target","script_sha256","cost_usd")}}
+    calls = [frontier["scenario_proposals"] or {},*(row["result"] for row in frontier["scenario_comparisons"])]
+    spent = spent_before+sum((call.get("cost_usd") or 0)+((call.get("referee") or {}).get("cost_usd") or 0)
+                             for call in calls)
     errors = [row for row in rows if row["queue_status"]=="failed"]
+    order = work_order(original,complete,context["discovered_original_sources"],errors)
+    # A stage makes progress only if a gate, source or acceptance state moves.
+    signature = token([frontier["state"],{gate:row["status"] for gate,row in physical["gates"].items()},
+                       original.get("status"),original.get("missing"),complete.get("status"),
+                       source_choice,[item["id"] for item in order["items"]],
+                       sorted(packed(row["spec"]["lane"]) for row in errors)])
+    stalled = history[1]+1 if history[0]==signature else 0
+    order.update(stalled_rounds=stalled,round=round_key,resolution=resolution,
+                 completeness=completeness(args.repo,domain,args.lean_toolchain,
+                                           context["discovered_original_sources"],complete))
+    frontier["work_order"] = order
     report = {"epoch":epoch,"atlas_revision":context["atlas_revision"],
               "git_head":context["git_head"],"domain_sha256":digest(domain) if domain.is_file() else None,
               "engine_sha256":token(ENGINE),
@@ -721,6 +995,27 @@ def search_round(args,db,out,epoch,resolution,context,domain,focus,extras,dsl):
               "custom_cases":len(extras),
               "generated_complexes":results.get("complexes",{}).get("count"),
               "reconstruction_status":results.get("reconstruction",{}).get("status"),
+              "reused_results":reused,"stalled_rounds":stalled,
+              "f1_proof_reachable":order["f1_proof_reachable"],
+              "search_complete":order["completeness"]["complete"],
+              "gates_without_acceptance_predicate":order["completeness"]["gates_without_acceptance_predicate"],
+              "lanes_still_growing_with_stage":order["completeness"]["lanes_still_growing_with_stage"],
+              "work_order":[item["id"] for item in order["items"]],
+              "atlas_scenarios":{
+                  "status":atlas.get("status"),"contexts_needed":len(atlas.get("needed_contexts",[])),
+                  "minimum_identifications":atlas.get("minimum_identifications"),
+                  "identifications_without_recorded_link":len(
+                      (atlas.get("scenarios") or [{}])[0].get("contexts_without_recorded_link",[])),
+                  "open_inputs":len(atlas.get("open_inputs",[])),
+                  "findings_with_changed_source":(atlas.get("evidence_integrity") or {}).get(
+                      "findings_with_changed_or_missing_source"),
+                  "model":(frontier["scenario_proposals"] or {}).get("status","DISABLED"),
+                  "model_cost_usd":(frontier["scenario_proposals"] or {}).get("cost_usd"),
+                  "spent_usd":round(spent,2),
+                  "supplied":{row["spec"]["scenario"]["id"]:row["result"].get("status")
+                              for row in frontier["supplied_scenarios"]},
+                  "computed_comparisons":{row["result"].get("id"):row["result"].get("status")
+                                          for row in frontier["scenario_comparisons"]}},
               "failures":len(errors),"best_readout":questions[0] if questions else None,
               "physical_solution":physical["physical_solution"],"round":round_key,"resolution":resolution,
               "complete_contract_status":complete.get("status","NOT_RUN"),
@@ -730,6 +1025,7 @@ def search_round(args,db,out,epoch,resolution,context,domain,focus,extras,dsl):
     atomic_json(round_dir/"engine.json",ENGINE)
     atomic_json(round_dir/"sources.json",context["watched_sources"])
     atomic_json(out/"latest.json",report)
+    atomic_json(out/"work-order.json",order)
     atomic_json(round_dir/"review-outbox.json",
                 {"status":"SOURCE_REVIEW_REQUIRED","atlas_revision":context["atlas_revision"],
                  "candidate_artifacts":{k:digest(round_dir/f"{k}.json")
@@ -743,7 +1039,10 @@ def search_round(args,db,out,epoch,resolution,context,domain,focus,extras,dsl):
                 "questions":dsl_result.get("questions",[]),"excluded":list(archived.values()),
                 "directed_research_round":new_research or prior_research,
                 "physical_solution":physical["physical_solution"]}
-    return round_key,refinement_focus(scenarios),feedback
+    atomic_json(out/"scenarios.json",list(tested.values()))
+    return round_key,refinement_focus(scenarios),feedback,{"signature":signature,"stalled":stalled,
+                                                         "scenario_history":list(tested.values())[-200:],
+                                                         "scenario_spent_usd":spent}
 
 
 def main():
@@ -767,6 +1066,26 @@ def main():
                         help="Monitor original source revisions after bounded search is exhausted")
     parser.add_argument("--until-proved",action="store_true",
                         help="Keep increasing proof and model stage until native F1 is proved or interrupted")
+    parser.add_argument("--scenario-model",
+                        help="Claude model alias or id that proposes Atlas scenarios each stage, e.g. opus")
+    parser.add_argument("--scenario-timeout",type=int,default=600)
+    parser.add_argument("--scenario-budget-usd",type=float,default=2.0,
+                        help="Spending limit of one proposal call")
+    parser.add_argument("--scenario-agent-max",type=int,default=2,
+                        help="Scenarios per stage whose sources a model compares by a sandboxed computation")
+    parser.add_argument("--scenario-agent-timeout",type=int,default=900)
+    parser.add_argument("--scenario-agent-budget-usd",type=float,default=3.0)
+    parser.add_argument("--scenario-proposals",action=argparse.BooleanOptionalAction,default=True,
+                        help="Let the model propose scenarios; --no-scenario-proposals runs research threads only")
+    parser.add_argument("--scenario-research-max",type=int,default=0,
+                        help="Research threads per stage, each seeking one mechanism behind two anchor groups")
+    parser.add_argument("--scenario-research-rounds",type=int,default=3,
+                        help="Attempts per research thread, each revising after its computed outcome")
+    parser.add_argument("--scenario-total-budget-usd",type=float,default=20.0,
+                        help="The campaign stops with status 4 once model calls have cost this much")
+    parser.add_argument("--stall-rounds",type=int,default=3,
+                        help="With --until-proved, stop raising the stage after this many stages without a "
+                             "change of gate, source or acceptance state; 0 never stops")
     parser.add_argument("--job",help=argparse.SUPPRESS)
     args = parser.parse_args()
     args.repo = args.repo.resolve()
@@ -783,6 +1102,10 @@ def main():
     if not args.out or not (3<=args.start_resolution<=args.max_resolution<=10 and
                             1<=args.workers<=32 and 1<=args.max_dsl_size<=8 and
                             args.timeout>0 and args.watch_seconds>=0 and args.sol_timeout>0 and
+                            args.stall_rounds>=0 and args.scenario_timeout>0 and
+                            args.scenario_budget_usd>0 and args.scenario_agent_max>=0 and
+                            args.scenario_research_max>=0 and 1<=args.scenario_research_rounds<=6 and
+                            args.scenario_agent_timeout>0 and args.scenario_agent_budget_usd>0 and
                             (not args.sol_proposals or args.sol_timeout<args.timeout)):
         parser.error("output and valid bounded worker/resolution parameters required")
     domain = (args.domain or args.repo/NATIVE).resolve()
@@ -800,6 +1123,8 @@ def main():
         cursor = out/"campaign.json"
         previous = json.loads(cursor.read_text()) if cursor.exists() else None
         epoch = 0 if previous is None else previous["epoch"]
+        scenario_archive = []
+        spent_archive = 0.0
         from original_discovery import inventory
         while True:
             context = current_context(args.repo)
@@ -817,23 +1142,48 @@ def main():
                                  context["watched_sources"],context["discovered_original_sources"],
                                  context["git_head"],str(args.repo),str(domain),
                                  args.start_resolution,args.lean_toolchain,
-                                 args.max_dsl_size,observations,proposals,args.sol_proposals,args.sol_timeout,args.timeout])
+                                 args.max_dsl_size,observations,proposals,args.sol_proposals,args.sol_timeout,args.timeout,
+                                 args.scenario_model,args.scenario_proposals])
             if previous and previous["context"] != context_key:
                 epoch += 1
                 archives = previous.get("feedback",{}).get("excluded",[]) if previous.get("engine")==ENGINE else []
+                # Tested scenarios stay known across epochs; the Atlas revision may have moved.
+                scenario_archive = previous.get("scenario_history",[])
+                spent_archive = previous.get("scenario_spent_usd",0.0)
                 previous = None
             else:
                 archives = []
             if previous and previous.get("feedback",{}).get("physical_solution"):
                 return
+            if (args.scenario_model and previous
+                    and previous.get("scenario_spent_usd",0.0)>=args.scenario_total_budget_usd):
+                print(f"scenario budget spent: {previous['scenario_spent_usd']:.2f} USD; see {out/'scenarios.json'}",
+                      file=sys.stderr)
+                sys.exit(4)
+            # A proposing model changes the search every stage, so only its budget ends the run.
+            if (args.until_proved and args.stall_rounds and not args.scenario_model and previous
+                    and previous.get("stalled",0)>=args.stall_rounds):
+                # Further stages repeat the same blocked state. Wait for a
+                # changed source, contract or engine, which opens a new epoch.
+                if not args.watch_seconds:
+                    print(f"stalled after {previous['stalled']} unchanged stages; see {out/'work-order.json'}",
+                          file=sys.stderr)
+                    sys.exit(3)
+                time.sleep(args.watch_seconds)
+                continue
             start = previous["resolution"]+1 if previous else args.start_resolution
             for resolution in range(start,start+1 if args.until_proved else args.max_resolution+1):
                 focus = previous.get("focus",[]) if previous and resolution>args.start_resolution+1 else []
                 feedback_input = previous.get("feedback",{}) if previous else {"excluded":archives}
                 dsl = dsl_spec(args,resolution,feedback_input,observations,proposals)
-                round_key,next_focus,feedback = search_round(args,db,out,epoch,resolution,context,domain,focus,extras,dsl)
+                history = (previous.get("signature"),previous.get("stalled",0)) if previous else (None,0)
+                round_key,next_focus,feedback,progress = search_round(
+                    args,db,out,epoch,resolution,context,domain,focus,extras,dsl,history,
+                    previous.get("scenario_history",[]) if previous else scenario_archive,
+                    previous.get("scenario_spent_usd",0.0) if previous else spent_archive)
                 previous = {"context":context_key,"epoch":epoch,"resolution":resolution,
-                            "round":round_key,"focus":next_focus,"feedback":feedback,"engine":ENGINE}
+                            "round":round_key,"focus":next_focus,"feedback":feedback,"engine":ENGINE,
+                            **progress}
                 atomic_json(cursor,previous)
                 if feedback.get("physical_solution"):
                     return

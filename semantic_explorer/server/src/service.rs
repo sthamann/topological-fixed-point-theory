@@ -248,6 +248,15 @@ impl GraphStore {
                 p.revision
             );
         }
+        if ["de", "en"].contains(&lang) && (2000..=60000).contains(&max_chars)
+            && crate::research::allows_cross_question(query, offset, detail_offset)
+        {
+            if let Ok(map) = self.read_theory_map().await {
+                if let Some(packet) = crate::cross::question(&p, &self.repo_root, &map, query, lang, max_chars) {
+                    return Ok(packet);
+                }
+            }
+        }
         crate::research::state(
             &p,
             &g,
@@ -595,7 +604,36 @@ impl GraphStore {
             }
             Err(error) => return Err(error),
         };
-        Ok(compact_theory_map(&map, 20))
+        let mut result = compact_theory_map(&map, 20);
+        let p = crate::research::load(&self.research_path())?;
+        let mut inventory = crate::cross::inventory(
+            &p, &crate::research::freshness(&p, &self.repo_root));
+        let graph = self.snapshot().await?;
+        let mut paper_points = std::collections::BTreeMap::<&str, usize>::new();
+        let mut paper_records = 0;
+        let mut ledger = std::collections::BTreeMap::<&str, usize>::new();
+        for node in &graph.nodes {
+            if node.kind == "claim" {
+                *ledger.entry(assessment_category(node).unwrap_or("unclassified")).or_default() += 1;
+            } else if node.attrs["original_type"] == "paper_scope_review"
+                && node.attrs["scope"] == "public"
+            {
+                paper_records += 1;
+                for point in node.attrs["points"].as_array().into_iter().flatten() {
+                    if let Some(verdict) = point["verdict"].as_str() {
+                        *paper_points.entry(verdict).or_default() += 1;
+                    }
+                }
+            }
+        }
+        inventory["separate_evidence_layers"] = json!({
+            "ledger_claims_by_reported_assessment":ledger,
+            "public_paper_review_records":paper_records,
+            "paper_review_points_by_verdict_as_recorded":paper_points,
+            "notice":"The three inventories overlap and use different status vocabularies."
+        });
+        result["evidence_inventory"] = inventory;
+        Ok(result)
     }
     pub async fn theory_map(&self) -> Result<Value> {
         self.read_theory_map().await
@@ -2028,11 +2066,12 @@ impl GraphStore {
             bail!("compare_aspects needs 2 to 6 node IDs");
         }
         let graph = self.snapshot().await?;
-        let by_id: HashMap<&str, &Node> = graph
-            .nodes
-            .iter()
-            .map(|node| (node.id.as_str(), node))
-            .collect();
+        let map = self.read_theory_map().await.unwrap_or(Value::Null);
+        let map_nodes = crate::cross::map_records(&map)
+            .filter(|node| node["id"].as_str().is_some_and(|id| ids.iter().any(|wanted| wanted == id)))
+            .map(theory_navigation_node).collect::<Result<Vec<_>>>()?;
+        let by_id: HashMap<&str, &Node> = graph.nodes.iter().chain(&map_nodes)
+            .map(|node| (node.id.as_str(), node)).collect();
         let mut items = Vec::new();
         let mut upstream_sets = Vec::new();
         let mut seed_sets = Vec::new();
@@ -2299,6 +2338,9 @@ impl GraphStore {
                 "derivations":derivations,
                 "source_ids":source_values.into_iter().take(20).collect::<Vec<_>>(),
                 "recorded_graph_links":links,
+                "conditions":node.attrs.get("conditions"),
+                "counterevidence":node.attrs.get("counterevidence"),
+                "external_sources":node.attrs.get("external_sources"),
                 "topic_contents":topic_contents
             }));
         }
@@ -2338,7 +2380,25 @@ impl GraphStore {
             "notice":"Comparison aid only. Shared upstream references, seeds, source files, or status labels do not establish a logical conclusion or proof.",
             "max_chars":max_chars
         });
-        Ok(fit_compare_budget(brief, max_chars))
+        let connections = crate::cross::comparison(&map, ids);
+        let mut available = connections.len();
+        while available > 0 {
+            let cards = json!(&connections[..available]);
+            let reserve = json_char_count(&cards) + 170;
+            if max_chars > reserve + 1100 {
+                let mut result = fit_compare_budget(brief.clone(), max_chars - reserve);
+                result["max_chars"] = json!(max_chars);
+                result["cross_connections"] = cards;
+                result["cross_connections_omitted"] = json!(connections.len() - available);
+                if json_char_count(&result) <= max_chars { return Ok(result); }
+            }
+            available -= 1;
+        }
+        let mut result = fit_compare_budget(brief, max_chars);
+        if !connections.is_empty() && json_char_count(&result) + 45 <= max_chars {
+            result["cross_connections_omitted"] = json!(connections.len());
+        }
+        Ok(result)
     }
     pub async fn theme(
         &self,
@@ -2951,8 +3011,9 @@ impl GraphStore {
                 let paper = crate::papers::is_paper(n);
                 let paper_source_current = crate::papers::source_current(n);
                 let paper_summary_current = crate::papers::summary_current(n, paper_source_current);
-                let semantic = n.attrs.get("semantic");
-                let translation = n.attrs.pointer("/translations/en");
+                let stale_annotation = n.attrs.pointer("/cache_freshness/state").and_then(Value::as_str) == Some("source_stale");
+                let semantic = n.attrs.get("semantic").filter(|_| !stale_annotation);
+                let translation = n.attrs.pointer("/translations/en").filter(|_| !stale_annotation);
                 let title = [
                     semantic.and_then(|v| v.get("title_de")),
                     semantic.and_then(|v| v.get("title_en")),
@@ -2986,6 +3047,13 @@ impl GraphStore {
                 .collect::<Vec<_>>()
                 .join(" ");
                 let keywords = value_text(n.attrs.get("keywords"));
+                let registry_text = [n.attrs.get("cluster"), n.attrs.get("registry_description")]
+                    .into_iter()
+                    .flatten()
+                    .filter_map(Value::as_str)
+                    .collect::<Vec<_>>()
+                    .join(" ")
+                    .to_lowercase();
                 let ledger_text = [
                     n.attrs.pointer("/ledger/claim"),
                     n.attrs.pointer("/ledger/topic"),
@@ -3035,7 +3103,7 @@ impl GraphStore {
                             || translated_overview_text.contains(token)
                         {
                             3.0
-                        } else if ledger_text.contains(token) || contract_text.contains(token) {
+                        } else if ledger_text.contains(token) || contract_text.contains(token) || registry_text.contains(token) {
                             2.5
                         } else if title_text.contains(token) || keywords_text.contains(token) {
                             2.0
@@ -3058,7 +3126,9 @@ impl GraphStore {
                 } else {
                     lexical_score + semantic_score
                 };
-                (score > 0.0).then_some((priority, score, n))
+                let factor = crate::papers::source_rank_factor(n, query);
+                let priority = if priority == 1 && factor < 1.0 { 2 } else { priority };
+                (score > 0.0).then_some((priority, score * factor, n))
             })
             .collect();
         scored.sort_by(|a, b| {
@@ -3109,13 +3179,14 @@ impl GraphStore {
             .as_deref()
             .is_none_or(|kind| kind == "theory_pattern")
         {
-            self.matching_theory_patterns(query, limit).await
+            self.matching_theory_patterns(query,
+                if req.kind.as_deref() == Some("theory_pattern") { 50 } else { limit }).await
         } else {
             Vec::new()
         };
         let (results, total) = if req.kind.as_deref() == Some("theory_pattern") {
             let total = pattern_hits.len();
-            (pattern_hits, total)
+            (pattern_hits.into_iter().take(limit).collect::<Vec<_>>(), total)
         } else {
             let mut combined: Vec<(u8, f32, String, Value)> = scored
                 .into_iter()
@@ -3141,13 +3212,11 @@ impl GraphStore {
                     .then_with(|| b.1.total_cmp(&a.1))
                     .then_with(|| a.2.cmp(&b.2))
             });
-            let total = combined.len();
-            let results = combined
-                .into_iter()
-                .take(limit)
-                .map(|(_, _, _, result)| result)
-                .collect();
-            (results, total)
+            let by_id: HashMap<_,_> = g.nodes.iter().map(|node| (node.id.as_str(),node)).collect();
+            let results = crate::papers::collapse_passages(
+                combined.into_iter().map(|(_,_,_,result)| result).collect(), &by_id, query);
+            let total = results.len();
+            (results.into_iter().take(limit).collect(), total)
         };
         Ok(
             json!({"query":query,"count":results.len(),"total":total,"limit":limit,"truncated":total>limit,"search_mode":search_mode,"results":results}),
@@ -3161,6 +3230,10 @@ impl GraphStore {
         let Ok(map) = self.read_theory_map().await else {
             return Vec::new();
         };
+        let tokens = tokenize(query);
+        if let Some(matches) = crate::cross::pattern_search(&map, query, limit) {
+            if !matches.is_empty() { return matches; }
+        }
         let mut matches: Vec<(usize, Value)> = map
             .get("patterns")
             .and_then(Value::as_array)
@@ -3187,20 +3260,7 @@ impl GraphStore {
                 if matched.is_empty() {
                     return None;
                 }
-                let source_ids: Vec<String> = pattern
-                    .get("source_refs")
-                    .and_then(Value::as_array)
-                    .into_iter()
-                    .flatten()
-                    .filter_map(|reference| {
-                        reference
-                            .get("source_id")
-                            .and_then(Value::as_str)
-                            .or_else(|| reference.as_str())
-                    })
-                    .take(8)
-                    .map(str::to_owned)
-                    .collect();
+                let source_ids = crate::cross::source_ids(pattern);
                 let label = value_text(pattern.get("label_de"));
                 let summary = value_text(pattern.get("summary_de"));
                 let label_en = pattern.get("label_en").and_then(Value::as_str);
@@ -3217,6 +3277,7 @@ impl GraphStore {
                     "match_terms":matched,
                     "match_reason":"Direct term match in an authored theory-map pattern; this record is a navigation aid, not a proof.",
                     "source_ids":source_ids,
+                    "external_sources":crate::cross::external_sources(pattern),
                     "related_ids":pattern.get("related_ids").and_then(Value::as_array).into_iter().flatten().take(8).cloned().collect::<Vec<_>>(),
                     "conditions":pattern.get("conditions").and_then(Value::as_array).into_iter().flatten().take(2).cloned().collect::<Vec<_>>(),
                     "counterevidence":pattern.get("counterevidence").and_then(Value::as_array).into_iter().flatten().take(2).cloned().collect::<Vec<_>>(),
@@ -3239,7 +3300,7 @@ impl GraphStore {
         let g = self.snapshot().await?;
         let Some(node) = g.nodes.iter().find(|n| n.id == id) else {
             if let Some(pattern) = self.theory_pattern_by_id(id).await? {
-                let node = theory_pattern_node(&pattern)?;
+                let node = theory_navigation_node(&pattern)?;
                 let by_id: HashMap<&str, &Node> = g
                     .nodes
                     .iter()
@@ -3294,7 +3355,7 @@ impl GraphStore {
                     "related_nodes":related_nodes,
                     "edges":edges,
                     "sources":sources,
-                    "external_sources":pattern.get("source_refs").and_then(Value::as_array).into_iter().flatten().filter(|reference| reference.get("source_location_state").and_then(Value::as_str) == Some("moved_to_external_repository")).map(|reference| json!({"source_url":reference.get("source_url"),"repository":reference.get("external_repository"),"revision":reference.get("external_revision"),"path":reference.get("external_path"),"sha256":reference.get("external_sha256"),"line_start":reference.get("line_start"),"line_end":reference.get("line_end"),"reference_role":reference.get("reference_role"),"source_location_state":reference.get("source_location_state")})).collect::<Vec<_>>(),
+                    "external_sources":crate::cross::external_sources(&pattern),
                     "counts":{"related_nodes":related_ids.len(),"edges":related_ids.len(),"sources":sources.len()},
                     "truncated":related_ids.len()>200,
                     "notice":"Theory-map pattern and related records are navigation metadata; these references do not establish proof."
@@ -3482,12 +3543,24 @@ impl GraphStore {
             source
         } else {
             source_from_pattern = self.theory_pattern_source_by_id(id).await?;
-            source_from_pattern
-                .as_ref()
-                .ok_or_else(|| anyhow!("source not found: {id}"))?
+            if let Some(source) = &source_from_pattern {
+                source
+            } else if let Some(moved) = self.moved_theory_source(id, requested_start, requested_end).await {
+                return Ok(moved);
+            } else {
+                bail!("source not found: {id}");
+            }
         };
         let (text, line_start, line_end, extent) =
-            self.source_text(src, requested_start, requested_end)?;
+            match self.source_text(src, requested_start, requested_end) {
+                Ok(result) => result,
+                Err(error) => {
+                    if let Some(moved) = self.moved_theory_source(id, requested_start, requested_end).await {
+                        return Ok(moved);
+                    }
+                    return Err(error);
+                }
+            };
         Ok(
             json!({"id":src.id,"path":src.path,"line_start":line_start,"line_end":line_end,
             "page":src.page,"sha256":src.sha256,"text":text,"extent":extent}),
@@ -3497,27 +3570,36 @@ impl GraphStore {
         let Ok(map) = self.read_theory_map().await else {
             return Ok(None);
         };
-        Ok(map
-            .get("patterns")
-            .and_then(Value::as_array)
-            .into_iter()
-            .flatten()
-            .find(|pattern| pattern.get("id").and_then(Value::as_str) == Some(id))
-            .cloned())
+        let result = crate::cross::map_records(&map)
+            .find(|pattern| pattern["id"].as_str() == Some(id)).cloned();
+        Ok(result)
     }
     async fn theory_pattern_source_by_id(&self, id: &str) -> Result<Option<Source>> {
         let Ok(map) = self.read_theory_map().await else {
             return Ok(None);
         };
-        Ok(map
-            .get("patterns")
-            .and_then(Value::as_array)
-            .into_iter()
-            .flatten()
-            .filter_map(|pattern| pattern.get("source_refs").and_then(Value::as_array))
-            .flatten()
-            .filter_map(theory_pattern_source)
-            .find(|source| source.id == id))
+        let result = crate::cross::map_records(&map)
+            .filter_map(|pattern| pattern["source_refs"].as_array()).flatten()
+            .filter_map(theory_pattern_source).find(|source| source.id == id);
+        Ok(result)
+    }
+    async fn moved_theory_source(&self, id: &str, start: Option<usize>, end: Option<usize>) -> Option<Value> {
+        let map = self.read_theory_map().await.ok()?;
+        let mut seen = HashSet::new();
+        let locations: Vec<_> = crate::cross::map_records(&map)
+            .filter_map(|record| record["source_refs"].as_array()).flatten()
+            .filter(|reference| reference["source_id"].as_str() == Some(id))
+            .filter_map(crate::cross::moved_source)
+            .filter(|location| seen.insert(location["source_url"].as_str().unwrap_or_default().to_owned()))
+            .collect();
+        let location = locations.iter().find(|location|
+            start.is_none_or(|line| location["line_start"].as_u64().is_some_and(|n| n as usize <= line))
+            && end.is_none_or(|line| location["line_end"].as_u64().is_some_and(|n| n as usize >= line)))
+            .or_else(|| locations.first())?;
+        let mut result = location.clone();
+        result["locations"] = json!(locations);
+        result["text"] = Value::Null;
+        Some(result)
     }
     fn source_text(
         &self,
@@ -6732,6 +6814,12 @@ fn compact_dossier_projection(dossier: &Value, max_chars: usize, neighbor_limit:
         "assessment",
         "enrichment_state",
         "cache_freshness",
+        "path",
+        "cluster",
+        "registry_description",
+        "source_role",
+        "kernel_checked",
+        "contains_sorry",
         "provenance",
         "extraction_quality",
         "translations",
@@ -7671,7 +7759,7 @@ fn chain_public_node(node: &Node) -> Value {
     })
 }
 
-fn theory_pattern_node(pattern: &Value) -> Result<Node> {
+fn theory_navigation_node(pattern: &Value) -> Result<Node> {
     let id = pattern
         .get("id")
         .and_then(Value::as_str)
@@ -7686,7 +7774,7 @@ fn theory_pattern_node(pattern: &Value) -> Result<Node> {
         .collect();
     Ok(Node {
         id: id.to_owned(),
-        kind: "theory_pattern".to_owned(),
+        kind: if id.starts_with("map:") { "theory_map_aspect" } else { "theory_pattern" }.to_owned(),
         label: value_text(pattern.get("label_de")),
         summary: value_text(pattern.get("summary_de")),
         attrs: json!({
@@ -7697,8 +7785,9 @@ fn theory_pattern_node(pattern: &Value) -> Result<Node> {
             "epistemic_role":"authored_cross_source_pattern",
             "source_refs":source_ids,
             "related_ids":pattern.get("related_ids"),
-            "conditions":pattern.get("conditions"),
-            "counterevidence":pattern.get("counterevidence")
+            "conditions":pattern.get("conditions").or_else(|| pattern.get("scope_note")),
+            "counterevidence":pattern.get("counterevidence"),
+            "external_sources":crate::cross::external_sources(pattern)
         }),
     })
 }
@@ -7760,7 +7849,8 @@ fn question_for_attempt<'a>(
 }
 
 fn compact_search_result(node: &Node, score: f32, matching_question: Option<&Node>) -> Value {
-    let semantic = node.attrs.get("semantic");
+    let stale_annotation = node.attrs.pointer("/cache_freshness/state").and_then(Value::as_str) == Some("source_stale");
+    let semantic = node.attrs.get("semantic").filter(|_| !stale_annotation);
     let counts = |key: &str| {
         semantic
             .and_then(|value| value.get(key))
@@ -7777,7 +7867,7 @@ fn compact_search_result(node: &Node, score: f32, matching_question: Option<&Nod
     } else {
         node.summary.clone()
     };
-    let translation = node.attrs.pointer("/translations/en");
+    let translation = node.attrs.pointer("/translations/en").filter(|_| !stale_annotation);
     let label_en = node
         .attrs
         .get("label_en")
@@ -7814,6 +7904,12 @@ fn compact_search_result(node: &Node, score: f32, matching_question: Option<&Nod
         "publication_scope":node.attrs.get("publication_scope"),"content_scope":node.attrs.get("content_scope"),"summary_state":node.attrs.get("summary_state"),"source_current":node.attrs.get("source_current"),"source_freshness":node.attrs.get("source_freshness"),"context_current":node.attrs.get("context_current"),"reviewed":node.attrs.get("reviewed"),
         "score":score
     });
+    if let Some(cluster) = node.attrs.get("cluster") {
+        result["cluster"] = cluster.clone();
+    }
+    if let Some(freshness) = node.attrs.get("cache_freshness") {
+        result["annotation_freshness"] = freshness.clone();
+    }
     if crate::papers::is_paper(node) {
         let current = crate::papers::summary_current(node, crate::papers::source_current(node));
         result["summary_current"] = json!(current);
@@ -7822,6 +7918,12 @@ fn compact_search_result(node: &Node, score: f32, matching_question: Option<&Nod
                 result[field] = Value::Null;
             }
         }
+    }
+    if node.kind == "research_finding" {
+        result["status"] = node.attrs["status"].clone();
+        result["scope"] = node.attrs["scope_de"].clone();
+        result["source_state"] = node.attrs["source_state"].clone();
+        result["premise_ids"] = node.attrs["premise_ids"].clone();
     }
     if let Some(question) = matching_question {
         result["contract_question_match"] = json!({

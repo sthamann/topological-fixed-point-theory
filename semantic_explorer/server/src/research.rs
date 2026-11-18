@@ -17,7 +17,7 @@ pub struct Text {
     pub en: String,
 }
 impl Text {
-    fn get(&self, lang: &str) -> &str {
+    pub(crate) fn get(&self, lang: &str) -> &str {
         if lang == "en" {
             &self.en
         } else {
@@ -378,7 +378,7 @@ pub fn validate(p: &Program) -> Result<()> {
 fn digest(bytes: &[u8]) -> String {
     format!("{:x}", Sha256::digest(bytes))
 }
-fn source_id(s: &Citation) -> String {
+pub(crate) fn source_id(s: &Citation) -> String {
     format!(
         "research-source:{}",
         &digest(format!("{}:{}:{}:{}", s.path, s.sha256, s.line_start, s.line_end).as_bytes())
@@ -404,7 +404,7 @@ fn source_current(
         .as_ref()
         .is_some_and(|(h, n)| h == &s.sha256 && *n >= s.line_end)
 }
-fn freshness(p: &Program, root: &Path) -> HashMap<String, bool> {
+pub(crate) fn freshness(p: &Program, root: &Path) -> HashMap<String, bool> {
     let mut cache = HashMap::new();
     p.problems
         .iter()
@@ -702,7 +702,7 @@ pub fn augment(g: &mut KnowledgeGraph, p: &Program, root: &Path) {
     }
     g.meta["research_program"] = json!({"revision":p.revision,"reviewed_problems":p.problems.len(),"reviewed_findings":current.len(),"stale_findings":stale,"pending_attempts":pending_total.len(),"coverage":"explicit source review only; pending records are not new scientific open questions","entry_tool":"research_state","plan_tool":"assess_research_plan","update_tool":"record_research_update"});
 }
-fn task_status<'a>(t: &'a Task, q: &'a Problem, current: &HashMap<String, bool>) -> &'a str {
+pub(crate) fn task_status<'a>(t: &'a Task, q: &'a Problem, current: &HashMap<String, bool>) -> &'a str {
     if t.resolution_ids
         .iter()
         .any(|id| !current.get(id).copied().unwrap_or(false))
@@ -765,7 +765,7 @@ fn pending_attempts<'a>(q: &Problem, g: &'a KnowledgeGraph) -> Vec<&'a Node> {
     out
 }
 fn tokens(s: &str) -> HashSet<String> {
-    let lower = s.to_lowercase().replace('α', " alpha ");
+    let lower = s.to_lowercase().replace('α', " alpha ").replace('×', "x");
     let mut out: HashSet<String> = lower
         .split(|c: char| !c.is_alphanumeric())
         .filter(|w| {
@@ -865,6 +865,8 @@ fn tokens(s: &str) -> HashSet<String> {
                 "projector".into()
             } else if w.starts_with("markier") || w.starts_with("marking") {
                 "marking".into()
+            } else if matches!(w, "fourth" | "vierte") {
+                "fourth".into()
             } else if w.starts_with("famil") {
                 "family".into()
             } else if w.starts_with("naht") || w == "seam" {
@@ -1353,6 +1355,12 @@ fn overview_state(mut value: Value, graph: &KnowledgeGraph, cap: usize, offset: 
     Ok(value)
 }
 
+pub(crate) fn allows_cross_question(query: &str, offset: usize, detail_offset: usize) -> bool {
+    offset == 0 && detail_offset == 0 && !query.trim().is_empty()
+        && !crate::overview::requested(query) && result_identifiers(query).is_empty()
+        && !asks_current_priority(query) && !(query.contains(':') && !query.contains(' '))
+}
+
 pub fn state(
     p: &Program,
     g: &KnowledgeGraph,
@@ -1434,30 +1442,33 @@ pub fn state(
                 // A large historical problem must not combine unrelated findings
                 // into a better match than a focused answer to the actual question.
                 let score_passage = |headline: &HashSet<String>, content: &HashSet<String>| {
-                    needle.iter().filter(|t| content.contains(*t)).map(|t| {
+                    let coverage = needle.intersection(content).count();
+                    let weighted = needle.iter().filter(|t| content.contains(*t)).map(|t| {
                         let frequency = documents.iter()
                             .filter(|(_, words)| words.contains(t)).count().max(1);
                         (if headline.contains(t) { 400 } else { 100 }) / frequency
-                    }).sum::<usize>()
+                    }).sum::<usize>();
+                    (coverage, weighted)
                 };
                 let problem_title = tokens(&format!("{} {}", q.title.de, q.title.en));
-                let heading_score = score_passage(&problem_title, title) * 4;
+                let (heading_coverage, heading_score) = score_passage(&problem_title, title);
                 let finding_score = q.findings.iter().map(|finding| {
                     let headline = tokens(&format!("{} {}", finding.title.de, finding.title.en));
                     let mut content = headline.clone();
                     content.extend(tokens(&format!("{} {}", finding.statement.de, finding.statement.en)));
                     score_passage(&headline, &content)
-                }).max().unwrap_or(0);
+                }).max().unwrap_or_default();
                 let strategy_score = q.strategies.iter().map(|strategy| {
                     let headline = tokens(&format!("{} {} {}", strategy.title.de, strategy.title.en,
                         strategy.aliases.join(" ")));
                     score_passage(&headline, &headline)
-                }).max().unwrap_or(0);
+                }).max().unwrap_or_default();
                 let topic_score = q.topics.iter().map(|topic| {
                     let words = tokens(topic);
                     needle.intersection(&words).count()
                 }).sum::<usize>() * 1000;
-                topic_score + heading_score + 4 * finding_score.max(strategy_score)
+                let (coverage, weighted) = finding_score.max(strategy_score);
+                (topic_score + 4 * (heading_score + weighted) + 100 * coverage.max(heading_coverage)).min(14_999)
             };
             (score, q)
         })
@@ -1481,6 +1492,15 @@ pub fn state(
     }
     result["coverage"]["pending_attempts_scope"]=json!("union of attempts directly linked to topics/goals of matched reviewed problems; not scientific open questions");
     if overview {
+        let inventory = crate::cross::inventory(p, &current);
+        if max_chars >= 4800 {
+            result["evidence_inventory"] = json!({
+                "findings_by_status":inventory["findings_by_status"],
+                "tasks_by_effective_status":inventory["tasks_by_effective_status"],
+                "topic_breakdown_tool":"theory_overview",
+                "pattern_search":{"tool":"search_knowledge","type":"theory_pattern"}
+            });
+        }
         return overview_state(result, g, max_chars, offset, lang);
     }
     if matches.is_empty() {
@@ -1662,6 +1682,18 @@ pub fn state(
                 .and_then(Value::as_array)
                 .map_or(0, Vec::len)
     );
+    if partial.is_some() && serde_json::to_string(&result)?.chars().count() + 60 > max_chars {
+        let needed = serde_json::to_string(&result)?.chars().count() + 200;
+        result["problems"] = json!([]);
+        result["budget"]["next_offset"] = json!(offset);
+        result["budget"]["next_detail_offset"] = json!(detail_offset);
+        result["budget"]["truncated"] = json!(true);
+        result["budget"]["continuation"]["offset"] = json!(offset);
+        result["budget"]["continuation"]["detail_offset"] = json!(detail_offset);
+        let continuation_budget = result["budget"]["continuation"]["max_chars"]
+            .as_u64().unwrap_or_default() as usize;
+        result["budget"]["continuation"]["max_chars"] = json!(needed.max(continuation_budget).min(60_000));
+    }
     for _ in 0..3 {
         result["budget"]["serialized_chars"] =
             json!(serde_json::to_string(&result)?.chars().count());

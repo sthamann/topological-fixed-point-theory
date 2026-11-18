@@ -268,6 +268,19 @@ class RelationalTests(unittest.TestCase):
             self.assertEqual(result_with_return["values"],result["values"])
             self.assertEqual(result_with_return["original_values"],result["values"])
             self.assertFalse(result_with_return["physical_source_identity_proved"])
+
+            del packet["reference_window_history"]
+            packet["normalization_scope"] = "relative_mark_contraction"
+            attached.write_text(json.dumps({**domain,"original_domain_binding":binding,"whole_source_bundle":packet}))
+            with self.assertRaisesRegex(ValueError,"must use same_empty normalization"):
+                evaluate(root,attached)
+            packet["joint_source_checks"]["normalization"] = "same_empty"
+            attached.write_text(json.dumps({**domain,"original_domain_binding":binding,"whole_source_bundle":packet}))
+            relative = evaluate(root,attached)
+            joint = relative["joint_source_checks"]
+            self.assertEqual(joint["normalization"],"same_empty")
+            self.assertEqual(joint["mixed"],result["joint_source_checks"]["mixed"])
+            self.assertEqual(relative["original_values"],dict.fromkeys(MARKS))
             # Replacing even one ambient leg by a quotient leg cannot give a
             # valid closed-space product for the remaining excursion.
             atom["ordered_window_legs"]["Y"] = leg(3)
