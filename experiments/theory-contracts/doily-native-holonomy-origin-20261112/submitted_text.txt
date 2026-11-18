@@ -1,0 +1,401 @@
+# TFPT: Die Suche nach der vollständigen Ursprungsregel
+
+Ich habe die neuesten Quellprüfungen mit dem quartischen Compiler, der Doily Geometrie und der tatsächlichen P1 Zustandskonstruktion verglichen. Dabei sind zwei neue mathematische Ergebnisse entstanden, die für die Frage nach der ursprünglichen Dynamik wichtig sind.
+
+Der entscheidende Fortschritt: Die bekannte Petersen Dynamik kann nicht unmittelbar eine kontinuierliche, gedächtnislose Markovzeit auf ihrem eigenen Zustandsraum sein. Ein Prozess mit zusätzlichen Zwischenzuständen kann dieselben beobachteten Übergänge dagegen exakt erzeugen.
+
+Außerdem lässt sich zeigen, wie eine einzige lokale Konsistenzbedingung die zuvor freien Phasen eines solchen Zwischenprozesses bis auf Eichtransformationen festlegen kann.
+
+## 1. Warum die bisherige Clock nicht die vollständige Zeit sein kann
+
+Die bekannte Petersen Dynamik verwendet den Operator
+
+\\[ V=\frac{A\_{\mathrm{Pet}}}{3} \\]
+
+mit dem Spektrum
+
+\\[ \operatorname{spec}(V)= \left\\{1,\frac13,-\frac23\right\\}. \\]
+
+Nach zwei Schritten ist
+
+\\[ \boxed{V^2=\frac{2I-A\_{\mathrm{Pet}}+J}{9}} \\]
+
+und damit
+
+\\[ \operatorname{spec}(V^2)= \left\\{1,\frac19,\frac49\right\\}. \\]
+
+Das sieht zunächst wie ein gewöhnlicher positiver zeitlicher Transfer aus.
+
+Aber: Zwischen zwei direkt benachbarten Petersen Zuständen hat \\(V^2\\) exakt den Übergangswert null. Über andere Zustände sind beide trotzdem miteinander verbunden.
+
+Daraus folgt ein strenger Ausschluss: Es existiert kein zeitunabhängiger Generator einer kontinuierlichen klassischen Markovkette auf denselben zehn Zuständen, dessen Exponentialfunktion bei positiver Zeit genau \\(V^2\\) ergibt.
+
+Der Grund ist elementar: In einer kontinuierlichen Markovkette besitzt jede über eine endliche Übergangsfolge erreichbare Verbindung bereits zu jeder positiven Zeit eine positive Übergangswahrscheinlichkeit. Die Nullstellen von \\(V^2\\) widersprechen dem.
+
+Das habe ich anhand sämtlicher Matrixeinträge und der exakten Eigenwerte überprüft.
+
+Diese Aussage schließt keine kontinuierliche Quantendynamik oder eine Markovdynamik auf einem größeren Zustandsraum aus.
+
+## 2. Zwei Prozessseiten beheben die Obstruktion
+
+Nun kommt eine mögliche Verbindung zu deiner Vorstellung zweier P1 Seiten.
+
+Wir betrachten die zehn Petersen Zustände auf zwei unterscheidbaren Prozessseiten. Ereignisse wechseln die Seite und verändern dabei den Zustand entsprechend der ursprünglichen Petersen Nachbarschaft.
+
+Der Generator lautet:
+
+\\[ \boxed{ Q=\lambda \begin{pmatrix} -I\_{10}&V\\\ V&-I\_{10} \end{pmatrix} } \\]
+
+mit einer positiven Ereignisrate \\(\lambda\\).
+
+Dieser Operator ist ein gültiger Generator einer kontinuierlichen, reversiblen Markovkette:
+
+- Sämtliche Übergangsraten sind nichtnegativ.
+- Jede Zeilensumme beträgt null.
+- Alle Übergänge sind lokal bezüglich der Petersen Nachbarschaft und wechseln die Prozessseite.
+- Der Generator respektiert die volle \\(S_5\\) Symmetrie.
+
+Die Dynamik ist jetzt kontinuierlich und besitzt keinen zusätzlichen frei gewählten Energieoperator. Bis auf die Zeiteinheit \\(\lambda\\) wird sie durch die Nachbarschaft und die Forderung gleicher lokaler Raten bestimmt.
+
+Schematische Darstellung eines verdoppelten Prozessraums. Die Seiten sind zunächst mathematische Zustandsregister, nicht bereits nachgewiesene physikalische P1 Randseiten.
+
+Nach genau sechs Ereignissen erhält man:
+
+\\[ \boxed{ \begin{pmatrix} 0&V\\\V&0 \end{pmatrix}^{6} = \begin{pmatrix} V^6&0\\\0&V^6 \end{pmatrix} } \\]
+
+und damit die exakten bekannten Dämpfungsfaktoren:
+
+\\[ \boxed{ 1,\qquad\frac{64}{729},\qquad\frac1{729}. } \\]
+
+Das ist eine vollständige mathematische Realisierung der sechs Schritte durch einen einzigen kontinuierlichen Prozess mit Seitenwechseln.
+
+Wichtig ist allerdings: Das Ergebnis \\(V^6\\) gilt nach genau sechs Ereignissen. Bei einer fest vorgegebenen kontinuierlichen Zeit werden unterschiedliche Ereigniszahlen gemischt. Außerdem ist noch nicht bewiesen, dass die beiden Register wirklich den ursprünglichen P1 Seiten entsprechen.
+
+## 3. Die ursprüngliche Doily enthält 16 unabhängige Phasenzyklen
+
+Ich bin anschließend von der Petersen Geometrie zur älteren [Doily Konstruktion v809](https://github.com/sthamann/topological-fixed-point-theory/blob/main/verification/v809_curve_code_doily.py?utm_source=chatgpt.com) zurückgegangen.
+
+Ihre Inzidenzstruktur besteht aus 15 Paaren und 15 Dreierpartitionen. Verbindet man jedes Paar mit den Partitionen, in denen es vorkommt, entsteht der sogenannte Tutte Coxeter Graph.&#x20;
+
+[image](https://www.google.com/s2/favicons?domain=https://www.combinatorics.org\&sz=32)
+
+combinatorics.org+1
+
+
+
+# 30
+
+Knoten
+
+# 45
+
+Verbindungen
+
+# 16
+
+unabhängige Zyklen
+
+Die letzte Zahl folgt exakt aus der Topologie:
+
+\\[ \boxed{\beta_1=45-30+1=16.} \\]
+
+Es gibt außerdem genau 90 einfache geschlossene Wege der Länge acht. Kürzere einfache Zyklen existieren nicht.
+
+Das ist für den Compileransatz interessant, weil jedem Verbindungsweg eine komplexe Phase zugeordnet werden kann. Die 16 unabhängigen Zyklen tragen dann 16 unabhängige, eichinvariante Umlaufphasen.
+
+Die bloße Inzidenzgeometrie bestimmt diese Phasen nicht.
+
+## 4. Ein lokales Konsistenzprinzip kann alle 16 Phasen festlegen
+
+Jetzt habe ich ein zusätzliches Auswahlprinzip untersucht.
+
+Sei \\(N\_\phi\\) die \\(15\times15\\) Inzidenzmatrix, wobei jede vorhandene Verbindung eine Phase \\(e^{i\phi_e}\\) trägt.
+
+Daraus konstruieren wir den positiven Operator
+
+\\[ \boxed{ H\_\phi= I\_{30}-\frac13 \begin{pmatrix} 0&N\_\phi\\\ N\_\phi^\dagger&0 \end{pmatrix}. } \\]
+
+Er kann als Summe lokaler positiver Terme geschrieben werden:
+
+\\[ \boxed{ \langle\psi,H\_\phi\psi\rangle = \frac13\sum\_{(d,s)} |\psi_d-e^{i\phi\_{ds}}\psi_s|^2. } \\]
+
+Damit lässt sich ein exakter Satz beweisen:
+
+Ein gemeinsamer Zustand, der sämtliche lokalen Prüfbedingungen gleichzeitig mit Energie null erfüllt, existiert genau dann, wenn die Phasenholonomie auf jedem geschlossenen Zyklus trivial ist.
+
+Der Beweis folgt direkt aus der Summe nichtnegativer Quadrate. Soll sie null sein, muss jede lokale Gleichung
+
+\\[ \psi_d=e^{i\phi\_{ds}}\psi_s \\]
+
+gelten. Beim Umlauf über einen geschlossenen Weg muss derselbe Zustand zurückkehren. Deshalb muss das Produkt aller Phasen entlang des Weges eins sein.
+
+Da der Graph verbunden ist, bestimmen diese Bedingungen den gemeinsamen Nullzustand bis auf einen globalen Faktor. Alle zulässigen Phasenbelegungen sind bis auf Eichtransformationen äquivalent.
+
+Das ist deutlich stärker als Reflexionspositivität allein: Frustrationsfreiheit aller lokalen Prüfbedingungen erzwingt in diesem Modell die flache Phasenverbindung.
+
+Der Vorbehalt ist entscheidend: Wir haben noch nicht bewiesen, dass der tatsächliche P1 Randkern genau diese lokale Frustrationsfreiheit fordert.
+
+### Ein Phasenfehler wird erst in der vierten Prozesspotenz sichtbar
+
+Als Gegenprobe habe ich genau eine Verbindung mit dem Vorzeichen \\(-1\\) versehen.
+
+Sei
+
+\\[ B\_\phi=N\_\phi N\_\phi^\dagger. \\]
+
+Die ersten drei Spurmomente bleiben unverändert:
+
+| Moment                             | Ohne Phasenfehler | Mit einem Vorzeichenfehler |
+| ---------------------------------- | ----------------- | -------------------------- |
+| \\(\operatorname{Tr}(B\_\phi)\\)   | 45                | 45                         |
+| \\(\operatorname{Tr}(B\_\phi^2)\\) | 225               | 225                        |
+| \\(\operatorname{Tr}(B\_\phi^3)\\) | 1305              | 1305                       |
+| \\(\operatorname{Tr}(B\_\phi^4)\\) | 8865              | 8609                       |
+
+Der erste Unterschied beträgt exakt
+
+\\[ \boxed{\Delta\operatorname{Tr}(B\_\phi^4)=-256.} \\]
+
+Bei einer beliebigen Phase \\(e^{i\theta}\\) auf dieser einen Verbindung erhält man sogar
+
+\\[ \boxed{ \Delta\operatorname{Tr}(B\_\phi^4) =128(\cos\theta-1). } \\]
+
+Das habe ich zusätzlich für die Phasen \\(-1\\) und \\(i\\) exakt überprüft.
+
+Die geometrische Erklärung: Ein geschlossener Weg muss mindestens acht Kanten durchlaufen, um eine nichttriviale Umlaufphase zu messen. Vier Anwendungen von \\(N\_\phi N\_\phi^\dagger\\) entsprechen genau acht solchen Schritten.
+
+Damit ergibt sich eine mögliche neue Rolle höherer Korrelationen: Sie können Phasenfehler erkennen, die für niedrigere Prozessmomente vollständig unsichtbar bleiben.
+
+Das ist verwandt mit der früheren quartischen TFPT Fragestellung. Eine Identität mit dem ursprünglichen vierten \\(E_8\\) Momentoperator \\(\Pi_5\\) ist damit jedoch noch nicht gezeigt.
+
+## 5. Ein überraschender neuer 16 dimensionaler Raum, aber kein zweiter Spinor
+
+Die 16 unabhängigen Zyklen haben noch eine tiefere Eigenschaft.
+
+Ich habe die Wirkung sämtlicher 720 Permutationen der sechs ausgezeichneten Punkte auf dem Zyklusraum untersucht.
+
+Für eine Permutation \\(g\\) lässt sich ihr Charakter direkt aus den festen Knoten und Kanten berechnen:
+
+\\[ \chi(g)= \\#E\_{\mathrm{fix}}(g) -\\#V\_{\mathrm{fix}}(g)+1. \\]
+
+Die vollständige Charakterzählung ergibt:
+
+| Charakterwert | Anzahl Gruppenelemente |
+| ------------- | ---------------------- |
+| 16            | 1                      |
+| 1             | 144                    |
+| 0             | 495                    |
+| −2            | 80                     |
+
+Daraus folgt exakt
+
+\\[ \boxed{\frac1{720}\sum\_{g\in S_6}|\chi(g)|^2=1.} \\]
+
+Das bedeutet: Der komplexifizierte 16 dimensionale Zyklusraum ist eine irreduzible Darstellung von \\(S_6\\). Genauer handelt es sich um die Specht Darstellung zum Young Diagramm \\((3,2,1)\\).
+
+Damit gibt es in der ursprünglichen Doily einen echten 16 dimensionalen Symmetrieraum, der direkt aus den geschlossenen Prozesswegen folgt.
+
+### Die entscheidende Gegenprobe zum TFPT Spinor
+
+Wir haben gleichzeitig den bekannten 16 dimensionalen Materieträger:
+
+\\[ S^+\_{10}=\Lambda^{\mathrm{even}}\mathbb C^5. \\]
+
+Es wäre verlockend, beide Räume gleichzusetzen. Das habe ich direkt getestet.
+
+Unter der nativen Dreierpermutation der Familien gilt:
+
+| Darstellung          | Charakter der Dreierclock |
+| -------------------- | ------------------------- |
+| Doily Zyklusraum     | −2                        |
+| Fermionischer Spinor | 4                         |
+
+Die beiden Darstellungen sind also nicht äquivalent.
+
+Mehr noch: Ihre Eigenraumdimensionen unter der Dreierclock sind
+
+\\[ H\_{\mathrm{Zyklen}}:\quad 4+6+6 \\]
+
+und
+
+\\[ H\_{\mathrm{Spinor}}:\quad 8+4+4. \\]
+
+Damit kann eine lineare, mit dieser Clock verträgliche Abbildung zwischen beiden Räumen höchstens Rang zwölf haben.
+
+Es bleiben zwingend mindestens vier Dimensionen, die eine solche Abbildung nicht erreichen kann.
+
+### Aber es gibt einen gemeinsamen Sechserkanal
+
+Unter der stärkeren \\(S_5\\) Symmetrie des ausgezeichneten Referenzpunktes lässt sich das Ergebnis noch weiter schärfen.
+
+Die beiden 16 dimensionalen Darstellungen besitzen genau eine gemeinsame irreduzible Komponente der Dimension sechs.
+
+Ich habe dafür einen expliziten gruppengemittelten Intertwiner konstruiert:
+
+\\[ X:H\_{\mathrm{Zyklen}}\longrightarrow S^+\_{10}. \\]
+
+Er erfüllt für alle 120 Elemente von \\(S_5\\):
+
+\\[ \boxed{X\rho\_{\mathrm{Zyklen}}(g)= \rho\_{\mathrm{Spinor}}(g)X} \\]
+
+und besitzt exakt
+
+\\[ \boxed{\operatorname{Rang}(X)=6.} \\]
+
+Die Gruppengleichungen wurden mit ganzzahligen Matrizen überprüft.
+
+Es handelt sich also um einen realen, symmetrieverträglichen Verbindungskanal, nicht nur um eine gleiche Dimensionszahl. Er lebt im antisymmetrischen Zweiformsektor des Spinors.
+
+Folgerung für TFPT: Die ursprünglichen geschlossenen Ereigniswege können mit dem Materieträger symmetrieverträglich koppeln. Aber eine vollständige direkte Identifikation aller 16 Zustände ist ausgeschlossen.
+
+Für die fehlenden Sektoren benötigen wir eine weitere physikalische Struktur, etwa die geladene Quellalgebra, den bereits bekannten nichttrivialen Pauli Übertrag oder eine andere zulässige Kopplung. Dass eine dieser Möglichkeiten tatsächlich die Lücke schließt, ist noch nicht gezeigt.
+
+## 6. Die Dynamik aus virtuellen Zwischenzuständen lässt sich exakt berechnen
+
+Jetzt lässt sich deine ursprüngliche Idee am konkreten Doily Modell formulieren: Der Compiler prüft nicht jeden Zwischenzustand einzeln, sondern lässt vollständige Prozessgeschichten zu.
+
+Wir verwenden den 30 dimensionalen positiven Operator aus Abschnitt 4 ohne zusätzliche Phasen:
+
+\\[ H=I\_{30}- \frac13 \begin{pmatrix} 0&N\\\N^\top&0 \end{pmatrix}. \\]
+
+Sei \\(P\\) die Projektion auf die 15 Paarzustände. Die anderen 15 Zustände sind die Zwischenpartitionen, mit \\(Q=I-P\\).
+
+Dann gilt:
+
+\\[ \boxed{PHQHP=\frac{NN^\top}{9}.} \\]
+
+Der Ausdruck rechts ist exakt der ursprüngliche Doily Transferoperator mit dem Spektrum
+
+\\[ \boxed{\left\\{1^1,(4/9)^9,0^5\right\\}.} \\]
+
+Das \\(4/9\\) Spektrum entsteht hier also als Wirkung eines Hinwegs in den Zwischenraum und eines Rückwegs. Es muss nicht als eigenständige physikalische Rate eingesetzt werden.
+
+### Die vollständige Zeitantwort
+
+Noch interessanter wird es, wenn wir den Zwischenraum nicht nach jedem Schritt künstlich entfernen.
+
+Für den reduzierten Operator
+
+\\[ F(t)=P e^{-tH}P \\]
+
+erhalte ich exakt:
+
+\\[ \boxed{ F(t)=e^{-t}\cosh\left(t\sqrt M\right), \quad M=\frac{NN^\top}{9}. } \\]
+
+Die Abweichung von einer gewöhnlichen zeitlichen Halbgruppe ist
+
+\\[ \begin{aligned} \mathcal D(t) &=F(2t)-F(t)^2\\\ &=Pe^{-tH}Qe^{-tH}P\\\ &=\boxed{e^{-2t}\sinh^2(t\sqrt M)}. \end{aligned} \\]
+
+Dieser Operator ist für jedes \\(t\geq0\\) positiv semidefinit.
+
+Seine Eigenwerte sind exakt:
+
+\\[ \operatorname{spec}\mathcal D(t)= \left\\{ \begin{array}{ll} e^{-2t}\sinh^2(t)&(1),\\\ e^{-2t}\sinh^2(2t/3)&(9),\\\ 0&(5). \end{array} \right. \\]
+
+Im Grenzfall kleiner Zeiten folgt
+
+\\[ \boxed{ \lim\_{t\to0}\frac{\mathcal D(t)}{t^2}=M. } \\]
+
+Damit ist die virtuelle Rückkehr durch den Zwischenraum unmittelbar beobachtbar als Abweichung vom Halbgruppengesetz.
+
+Die allgemeine Identität für \\(\mathcal D(t)\\) wurde bereits in der TFPT Arbeit [R113 Projected Joint Source Generator](https://github.com/sthamann/topological-fixed-point-theory/blob/main/experiments/theory-contracts/original-local-source-variable-background-20261102/PROJECTED-JOINT-SOURCE-GENERATOR-20261103.txt?utm_source=chatgpt.com) hergeleitet. Meine zusätzliche Rechnung ist die explizite Auswertung für die kanonische Doily Inzidenz, einschließlich der vollständigen Zeitfunktion und aller Eigenwerte.
+
+### Ein effektiver Gedächtniskern statt eines frei gewählten Hamiltonoperators
+
+Eliminieren wir die 15 Zwischenzustände exakt, erhalten wir für die Paarzustände
+
+\\[ \boxed{ \dot\psi_P(t)= -\psi_P(t)+ \int_0^t e^{-(t-s)}M\psi_P(s)\\,ds. } \\]
+
+Hier entsteht eine nichtlokale Wirkung in der Zeit, obwohl die vollständige 30 dimensionale Dynamik lokal bezüglich des Inzidenzgraphen ist.
+
+Der Gedächtniskern ist
+
+\\[ \boxed{\mathcal K(t)=e^{-t}M.} \\]
+
+Das ist ein konkreter Mechanismus, mit dem virtuelle Zwischenprozesse eine effektive Dynamik erzeugen.
+
+Die Konstruktion erklärt innerhalb dieses endlichen Modells die Entstehung des \\(4/9\\) Transfers. Sie erzeugt aber nicht automatisch den zusätzlichen \\(1/3\\) Modus der markierten Petersen Clock. Auch die physikalische Zeitnormierung ist noch nicht aus P1 gewonnen.
+
+## 7. Der eigentliche Engpass ist jetzt schärfer sichtbar
+
+Eine weitere wichtige Korrektur ergibt sich aus den neueren Originalquellen.
+
+Im vollständigen operativen P1 Ansatz sind
+
+\\[ \mathcal S= (\mathcal A\_{\mathrm{loc}},\tau_t,\Theta, \omega,[u\_\Sigma],D\_{\mathrm{coll}}) \\]
+
+bereits gemeinsame Ausgangsdaten.
+
+Das heißt: Die ursprüngliche Quelle enthält Zustand, Zeitwirkung, Spiegelung und lokale Algebra bereits in ihrer Definition. Aus einem vollständigen solchen Datensatz folgt der zugehörige Osterwalder Schrader Transfer eindeutig.
+
+Die bisherige Frage, ob ein zusätzlicher Compiler irgendwann erst die Zeit einschaltet, ist deshalb nicht die präziseste Formulierung des ungelösten Problems.
+
+Die tatsächliche Aufgabe lautet:
+
+Leitet die ursprüngliche P1 Quelle bei Auswertung ihrer vollständigen Feld und Prozesskorrelatoren genau die beobachtete TFPT Materie und Dynamik ab?
+
+Siehe [Source Determinacy](https://github.com/sthamann/topological-fixed-point-theory/blob/main/experiments/theory-contracts/original-local-source-variable-background-20261102/SOURCE-DETERMINACY.txt?utm_source=chatgpt.com).
+
+### Auch die Auswahl des Referenzpunktes ist noch nicht vollständig erzwungen
+
+Ein zusätzlicher endlicher Test bestätigt diese Grenze.
+
+Der native Dreierzyklus lässt auf dem vierdimensionalen binären Code genau vier quadratische Verfeinerungen invariant. Drei davon besitzen die benötigte ungerade Arf Struktur.
+
+Erst durch zusätzliche Werte für den Anker und die Familiensumme wird die bekannte Verfeinerung \\(q\_\*\\) eindeutig.
+
+Die reine Clocksymmetrie erzwingt den richtigen physikalischen Referenzpunkt also noch nicht.
+
+Dasselbe Problem besteht bei der neuen lokalen Doily Dynamik: Ihr eindeutiger frustrationsfreier Grundzustand ist zunächst vollständig \\(S_6\\) symmetrisch. Er wählt keinen der sechs ausgezeichneten Punkte aus.
+
+Die Auswahl muss deshalb aus einer zusätzlichen physikalischen Randinformation oder einem nachgewiesenen Symmetriebrechungsmechanismus stammen.
+
+## 8. Der entscheidende Test gegen die tatsächliche P1 Quelle
+
+Die [Original Caller Prüfung vom 6. November 2026](https://github.com/sthamann/topological-fixed-point-theory/blob/main/experiments/theory-contracts/original-paper-source-reconciliation-20261102/TRIANGULATION-ORIGINAL-CALLER-20261106.txt?utm_source=chatgpt.com) benennt den noch nicht vollständig ausgeführten Quellaufruf.
+
+Es fehlen die tatsächlichen ursprünglichen Werte
+
+\\[ Z_0,\quad Z_U,\quad Z_Y,\quad Z\_{UY}. \\]
+
+Aus ihnen muss die verbundene physikalische Antwort entstehen:
+
+\\[ \boxed{ C\_{UY}= \frac{Z\_{UY}}{Z_0} -\frac{Z_UZ_Y}{Z_0^2}. } \\]
+
+Diese Größen müssen aus derselben ursprünglichen Quelle stammen, mit vollständigen bosonischen und fermionischen Feldern, dem tatsächlichen Zulässigkeitsprojektor, der Referenz, den Phasen und der korrekten Reihenfolge der Grenzübergänge.
+
+Unsere neue Doily Rechnung liefert dafür jetzt einen sehr konkreten Prüfkandidaten:
+
+\\[ \boxed{ PH(I-P)HP \stackrel{?}{\sim} \frac{NN^\top}{9}. } \\]
+
+Das Zeichen \\(\sim\\) bedeutet hier eine noch zu konstruierende, physikalisch begründete Operatorzuordnung einschließlich der Zeitnormierung. Es ist keine bereits bewiesene Gleichheit der tatsächlichen P1 Operatoren.
+
+Der Test ist wesentlich strenger als ein Vergleich der Spektren. Die vollständigen Projektorprodukte, alle Phasen und der ursprüngliche Zustand müssen verträglich sein.
+
+| Prüffrage                                                               | Erwartetes Ergebnis des Kandidaten                                                |
+| ----------------------------------------------------------------------- | --------------------------------------------------------------------------------- |
+| Entstehen Rückkehrbeiträge über den Zwischenraum?                       | Positiver Halbgruppendefekt                                                       |
+| Stimmt der native Zweitordnungsoperator mit der Doily Struktur überein? | Spektrum \\(1,4/9,0\\) mit Vielfachheiten \\(1,9,5\\)                             |
+| Liefern die nativen Phasen eine verträgliche Umlaufstruktur?            | Gleiche Wilsonphasen auf allen relevanten geschlossenen Wegen                     |
+| Erzeugt derselbe Originalaufruf die physikalische R113 Antwort?         | Vollständige Übereinstimmung von \\(C\_{UY}\\), Zeitantwort und Zustandszuordnung |
+| Entsteht daraus eine lokale 3+1 dimensionale Theorie?                   | Noch gesondert zu beweisen                                                        |
+
+## 9. Ergebnis dieser Forschungsrunde
+
+Exakt geklärt
+
+Die Petersen Clock benötigt für eine kontinuierliche klassische Markovrealisierung zusätzliche Zustandsinformation. Ein zweitseitiger Prozess realisiert ihre diskreten Ereignisfolgen. Die Doily besitzt 16 unabhängige Phasenzyklen, einen exakten lokalen Positivitätsoperator und einen expliziten Gedächtniskern mit dem bekannten \\(4/9\\) Spektrum.
+
+Neue strukturelle Verbindung
+
+Der 16 dimensionale Doily Zyklusraum ist eine irreduzible \\(S_6\\) Darstellung. Seine Verbindung zum fermionischen Spinor besitzt unter \\(S_5\\) genau einen gemeinsamen sechs dimensionalen Kanal. Eine vollständige lineare Identifikation ist ausgeschlossen.
+
+Fundamental weiterhin offen
+
+Die ursprüngliche P1 Quelle muss die konkrete Auswahl der Prozessoperationen, den tatsächlichen kohärenten Gedächtnisbeitrag, die geladenen Sektoren und ihre lokale Raumzeitfortsetzung gemeinsam liefern. Die Originalauswertung von R113 und die Herleitung von 3+1D, chiraler Materie und Gravitation sind nicht abgeschlossen.
+
+Die stärkste Konsequenz dieser Runde ist für mich die mathematisch präzise Trennung von Prüfgeometrie, virtueller Prozessgeschichte und physikalischem Quellzustand.
+
+Wir können nun nachweisen, dass die Prüfgeometrie einen nichttrivialen Gedächtniskern hervorbringen kann. Wir können sogar exakt sagen, welche Phasenbedingungen ihn schützen und welche Symmetriekanäle die Materie erreichen.
+
+Was wir noch nicht nachweisen können, ist, dass die ursprüngliche P1 Quelle genau diesen Prozess realisiert. Das wäre der entscheidende Schritt zur vollständigen TFPT, nicht ein weiterer passender Zahlenvergleich.

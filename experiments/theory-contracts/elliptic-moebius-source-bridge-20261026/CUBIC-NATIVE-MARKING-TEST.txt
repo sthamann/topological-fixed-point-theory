@@ -1,0 +1,235 @@
+THE SOURCE CUBIC MATCHES THE NATIVE PAULI SIGMA, NOT THE CODE LABEL SIGMA
+The first exact native intertwiner test after spin selection
+2026-10-26
+
+VERDICT
+
+PROVED, with a material target correction.  The source object Jac(C)[2] is a
+theta translation space.  Its native counterpart is the projective Pauli
+translation module
+
+    P_nat=N64/mu4,
+
+not the Gaussian code label module V_code=L/(1+i)L.  Verification v783 proves
+that these are two different Sp(4,2) modules: the Gaussian classes correspond
+to Pauli contexts by point to line duality, and there is no linear module
+isomorphism between code labels and Pauli translations.
+
+On the correctly typed module P_nat, the original native sigma is fixed point
+free and has the same characteristic polynomial as the source cubic c_src:
+
+    chi(x)=(x^2+x+1)^2,       fixed dimension 0.                 (1)
+
+An explicit symplectic intertwiner is given below.  Moreover, the native sigma
+action canonically determines an unordered pair of orthogonal invariant
+symplectic planes.  This is exactly the type of the source pair {V_q,V_p}.
+
+The earlier fixed dimension mismatch remains true only for the wrongly typed
+comparison with V_code, where native sigma has fixed dimension two.  It is a
+diagnostic that forces the target correction, not an obstruction to the
+theta to Pauli bridge.
+
+
+1. THE SOURCE ACTION
+
+The accepted source result gives
+
+    Jac(C)[2]=V_q direct_sum V_p,                                (2)
+
+an orthogonal sum of symplectic two dimensional F2 planes.  On either plane,
+c_src cycles the three nonzero elements.  In a symplectic basis
+
+    e_0=L_0,       e_1=L_1,       L_2=e_0+e_1,
+
+the pullback convention c_src^*L_a=L_(a-1) gives
+
+                   [1 1]
+    C_0         =  [1 0].                                       (3)
+
+Therefore
+
+    C_src=diag(C_0,C_0),
+    chi_Csrc(x)=(x^2+x+1)^2,
+    ker(C_src-I)=0.                                              (4)
+
+The inverse pullback convention replaces C_0 by C_0^2 and leaves all
+conjugacy data unchanged.
+
+
+2. THE TWO NATIVE FOUR BIT MODULES MUST NOT BE IDENTIFIED
+
+The frozen Gaussian chart pairs the four real coordinate pairs into C^4.  The
+native element sigma cycles the first three complex coordinates and fixes the
+fourth:
+
+    (z_1,z_2,z_3,z_4) |-> (z_3,z_1,z_2,z_4).                    (5)
+
+On the Gaussian code label quotient V_code, v689 proves that this becomes the
+family plus anchor action
+
+    F_1 |-> F_2 |-> F_3 |-> F_1,       A |-> A.                 (6)
+
+Thus V_code^sigma has dimension two.  Its characteristic polynomial is
+
+    (x+1)^2 (x^2+x+1).                                          (7)
+
+So there is no c_src to sigma intertwiner from Jac(C)[2] to V_code.  This
+calculation is correct but it answers the wrong typed question.
+
+Verification v783 gives the decisive distinction.  The projective Pauli group
+P_nat=N64/mu4 acts trivially on the sixteen Gaussian code labels.  The induced
+G31 action on V_code and its conjugation action on the Pauli bits have
+
+    dim Hom_F2[G31](V_code,P_nat)=0,
+
+with zero invertible intertwiners.  The fifteen nonzero code labels map to the
+fifteen Pauli contexts, meaning maximal commuting triples, through the outer
+point to line duality of W(3,2).  They do not map linearly to the fifteen
+nonidentity Pauli translations.
+
+The theta group of a genus two Jacobian is instead a central extension of
+Jac(C)[2] by phases.  Therefore P_nat, the translation quotient of the native
+Heisenberg group N64, is the first type correct target for the source test.
+
+
+3. ACTUAL NATIVE SIGMA ACTION ON PAULI TRANSLATIONS
+
+Use the v783 Pauli bit order
+
+    (x_1,z_1,x_2,z_2).
+
+In the frozen computational chart, conjugation by the coordinate permutation
+(5) sends the Pauli generators, with irrelevant signs suppressed, as follows:
+
+    X_1 |-> X_2,
+    Z_1 |-> Z_1 Z_2,
+    X_2 |-> X_1 X_2,
+    Z_2 |-> Z_1.                                                 (8)
+
+Hence its exact symplectic matrix is
+
+                    [0 0 1 0]
+                    [0 1 0 1]
+    Sigma_Pauli  =  [1 0 1 0]
+                    [0 1 0 0].                                  (9)
+
+Direct multiplication gives
+
+    Sigma_Pauli^3=I,
+    ker(Sigma_Pauli-I)=0,
+    chi_Sigma(x)=(x^2+x+1)^2.                                  (10)
+
+This also follows from the exact Clifford conjugation map in v783, but (8)
+and (9) make the relevant marked element explicit rather than relying on a
+group order census.
+
+
+4. AN EXPLICIT SYMPLECTIC INTERTWINER
+
+Take the source basis
+
+    (e_0^q,e_1^q,e_0^p,e_1^p)
+
+with symplectic Gram matrix diag([[0,1],[1,0]],[[0,1],[1,0]]).  In the native
+Pauli basis, define Phi by the following columns:
+
+    Phi(e_0^q)=IY =(0,0,1,1),
+    Phi(e_1^q)=YZ =(1,1,0,1),
+    Phi(e_0^p)=ZY =(0,1,1,1),
+    Phi(e_1^p)=YI =(1,1,0,0).                                   (11)
+
+Thus
+
+          [0 1 0 1]
+          [0 1 1 1]
+    Phi = [1 0 1 0]
+          [1 1 1 0].                                            (12)
+
+With Omega the standard Pauli commutator form, exact F2 multiplication gives
+
+    Phi^T Omega Phi=diag(Omega_2,Omega_2),
+    Sigma_Pauli Phi=Phi C_src.                                  (13)
+
+Therefore Phi is an invertible symplectic c_src to sigma intertwiner.  The
+first required marked native test passes without a search among 720 frames.
+
+
+5. THE q|p PLANE SPLIT IS VISIBLE NATIVELY
+
+Sigma_Pauli has exactly five invariant two dimensional F2 subspaces.  Three
+are isotropic.  Exactly two are symplectic:
+
+    W_q={0,IY,YZ,YX},
+    W_p={0,ZY,XY,YI}.                                            (14)
+
+They are orthogonal complements.  Consequently the native marked sigma
+action itself selects the unordered pair
+
+    {W_q,W_p}                                                    (15)
+
+as its unique pair of invariant symplectic planes.  Formula (11) sends the
+source unordered pair {V_q,V_p} onto (15).
+
+The selection is not yet an ordered or fully framed identification.  There
+are three c equivariant symplectic bases on each plane and two ways to exchange
+the planes, leaving
+
+    2 * 3 * 3 = 18                                              (16)
+
+symplectic c_src to sigma intertwiners.  The remaining source operations s,
+Q, and the selected spin lift beta must decide whether one of these eighteen
+is the actual joint dictionary.
+
+
+6. RELATION TO v796 AND THE PREVIOUS TESTS
+
+The code label mismatch in (7) is exactly the outer class distinction recorded
+by v796: native sigma has type [3,1,1,1] on the code side, whereas its outer
+point to line action has the [3,3] type.  Verification v796 constructs an outer
+duad to syntheme bridge because it compares those different types.
+
+The present source Jac(C)[2] already has the translation type of P_nat and
+therefore matches the fixed point free Pauli action internally.  No v784 curve
+or abelian surface is imported.  The earlier outer result explains why the
+Gaussian code label quotient was the wrong direct target; it does not itself
+construct the current Phi.
+
+The literal Q to central J quotient obstruction also remains valid on its
+stated objects.  The correction here concerns the order three target: source
+c_src must be compared with conjugation by sigma on Pauli translations, while
+the central phase selected by beta belongs at the Heisenberg extension level.
+
+
+7. REMAINING EXACT BRIDGE QUESTION
+
+The first generator and symplectic plane tests now pass.  What is not yet
+proved is that one of the eighteen maps (16) extends simultaneously to
+
+  * the source involution s and quarter map Q;
+  * the source selected projective spin lift beta;
+  * the full theta central extension and its four dimensional Schrodinger
+    module;
+  * the corresponding native N64 and Gaussian C^4 action.
+
+That joint extension test is the next genuine source question.  The present
+result neither selects a convenient native order three element nor changes the
+source marking: it uses the original sigma itself in the frozen v783 chart.
+
+
+SOURCE ANCHORS
+
+  * research-20261026-real-boundary/SIX-LINE-THETA-COMPLETION.txt,
+    lines 107--125 and 180--205: the two source symplectic planes and the
+    already stated native target N64/mu4.
+  * research-20261026-real-boundary/SOURCE-SELECTED-THETA-SPIN.txt:
+    the unique source theta characteristic and selected spin lift beta.
+  * verification/v634_st31_structure.py, lines 90--151 and 722--748:
+    the original native sigma coordinate permutation and compiler identities.
+  * verification/v689_gaussian_code_bridge.py, lines 1--30 and 409--518:
+    the distinct Gaussian code label action with its fixed anchor.
+  * verification/v783_two_qubit_clifford.py, lines 39--70, 440--490,
+    496--519, 588--650, and 803--936: the frozen computational chart, Pauli
+    conjugation module, N64 extension, and zero module intertwiners between
+    Gaussian labels and Pauli translations.
+  * verification/v796_duad_syntheme_bridge.py, lines 13--47 and 510--535:
+    the earlier outer point to line class distinction.

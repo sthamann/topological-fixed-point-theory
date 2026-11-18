@@ -1,0 +1,165 @@
+{
+  "contract": "UR.SEAM.CONSTRUCTIVE_SEARCH.01",
+  "run_id": "run-20261015T121548Z",
+  "status": "SCOPED_CONTINUATION_COMPLETE_SOURCE_EQUIVALENCE_EXCLUDED",
+  "overall_verdict": "PARTIAL",
+  "physical_solution": false,
+  "P1_P2_source_selection": false,
+  "target": "Original seam jointly deriving marking, state and time",
+  "actual_scope": "Fixed-source algebra classification and conditional continuations; all candidates fail unchanged CAR/QWZ source equivalence. No original source selection.",
+  "atlas_input_revision": "144a75c9b1cdd433d716c595",
+  "coverage": {
+    "expected": 262144,
+    "classified_unique": 262144,
+    "filter_survivors": 4,
+    "lean_certified": 4,
+    "genetic_generations_per_gpu": 20,
+    "genetic_evaluations": 5120,
+    "no_repeated_evaluations": true
+  },
+  "devices": [
+    {
+      "gpu_name": "NVIDIA H200 NVL",
+      "gpu_uuid": "c52ea084-e076-a5f2-5ed3-fede2b2154c8",
+      "classification_count": 131072,
+      "classification_new_evaluations": 128819,
+      "elapsed_seconds": 14.279749848181382,
+      "cuda_event_milliseconds": 1.286911964416504,
+      "reason": "classification_complete"
+    },
+    {
+      "gpu_name": "NVIDIA H200 NVL",
+      "gpu_uuid": "80434844-1ead-0410-1db7-f755dd6ce75a",
+      "classification_count": 131072,
+      "classification_new_evaluations": 128205,
+      "elapsed_seconds": 13.643414285033941,
+      "cuda_event_milliseconds": 1.3063360452651978,
+      "reason": "classification_complete"
+    }
+  ],
+  "candidates": [
+    {
+      "candidate_key": "3b7d33a52c52782383f961fc35f7bc7cbefdfe43ccf975094d5f761357f110bb",
+      "candidate_class": {
+        "orientation": "minus_i",
+        "zeta_gauge_exp": 0,
+        "p_lift_exp": 0
+      },
+      "lean_ok": true,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "receipt": "runs/run-20261015T121548Z/proofs/3b7d33a52c52782383f961fc35f7bc7cbefdfe43ccf975094d5f761357f110bb/receipt.json"
+    },
+    {
+      "candidate_key": "c791873e4e6212f726b01471a03efee1e22149ed699d20fce9aa530f694a2e97",
+      "candidate_class": {
+        "orientation": "minus_i",
+        "zeta_gauge_exp": 0,
+        "p_lift_exp": 2
+      },
+      "lean_ok": true,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "receipt": "runs/run-20261015T121548Z/proofs/c791873e4e6212f726b01471a03efee1e22149ed699d20fce9aa530f694a2e97/receipt.json"
+    },
+    {
+      "candidate_key": "794a8c6c75c24285a2da2697e4766276cf5996918fc89e68afa7a6385132b965",
+      "candidate_class": {
+        "orientation": "plus_i",
+        "zeta_gauge_exp": 0,
+        "p_lift_exp": 0
+      },
+      "lean_ok": true,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "receipt": "runs/run-20261015T121548Z/proofs/794a8c6c75c24285a2da2697e4766276cf5996918fc89e68afa7a6385132b965/receipt.json"
+    },
+    {
+      "candidate_key": "987f4638d60aa55425ade8a721cdb581720c1833c11144bd9519a409d1fd9f69",
+      "candidate_class": {
+        "orientation": "plus_i",
+        "zeta_gauge_exp": 0,
+        "p_lift_exp": 2
+      },
+      "lean_ok": true,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "receipt": "runs/run-20261015T121548Z/proofs/987f4638d60aa55425ade8a721cdb581720c1833c11144bd9519a409d1fd9f69/receipt.json"
+    }
+  ],
+  "novelty_boundary": "Four phase classes were analytically expected; the run supplies complete finite coverage and all-word kernel certificates. It is not a newly discovered source selector.",
+  "regression_tests": {
+    "gpu_engine": 10,
+    "independent_domain_cpu_cuda": 9,
+    "lean_pipeline": 9,
+    "collector": 3
+  },
+  "remote_run": "/home/aime/tfpt-constructive-search-20261015/runs/run-20261015T121548Z",
+  "classification_key_digest": "d5eab20824cd26e89beb4808a37022879ff4501b5b37d19cb2637b5eb0eab2f5",
+  "classification_result_digest": "13c7f656411ebd1b7ec6ce5e34c5ca30e8f6f3013af593b09c421823d43a388f",
+  "source_snapshot": "runs/run-20261015T121548Z/source",
+  "next_decisive_tasks": [
+    "Derive a source representation with the required neutral partner or a different source-derived common time/operator dictionary before reopening this search class",
+    "Retain Cartan observables when comparing states; shift-word equality alone cannot select the physical density",
+    "Reuse the completed finite class, T1, parity and positivity results; no repeated phase scan without a changed premise"
+  ],
+  "production_proved_scope": {
+    "proved": [
+      "C1-C7 exact phase, character, D8, P-lift, and UsRc relations",
+      "C8 universal normal-form associativity for every n,m,l in Z^8 and c,d,f in Bool",
+      "C9 partial: Q(Pp+a)-Q(p)=4 for all rational charges, including the half-lattice",
+      "C10 fixed rational K_alpha W4 Ward identity, source-channel clock pullback, and mu8 quarter table",
+      "fixed four-sector toggle, T-sign, and Arf-coefficient fixture only"
+    ],
+    "not_proved": [
+      "C9 remaining parity-operator transport through U_s, R_c, and every sector",
+      "C11 finite-word expectation SOS and positivity",
+      "C12 full P_hat/U_s/R_c/W4 action and S/T/Arf compatibility",
+      "P1/P2 source selection",
+      "local vertex existence",
+      "event law",
+      "C-star completion",
+      "physical state selection",
+      "T1-T8 closure"
+    ]
+  },
+  "production_status": "FINITE_ALGEBRA_CLASS_COMPLETE",
+  "continuation": {
+    "summary": "SYNTHESIS.md",
+    "marked_P_classes_after_parity_equivalence": 2,
+    "current_group_P_sign_given_E8": 1,
+    "T1": "continuation/T1/result.json",
+    "global_equivalence": "continuation/branch_equivalence/results.json",
+    "current_group": "continuation/current_group/result.json",
+    "positive_state": "continuation/state_expectation/receipt.json",
+    "T1_lean": "continuation/t1_certificate/receipt.json",
+    "ground_state": "continuation/ground_state/result.json",
+    "new_GPU_run": false,
+    "source_equivalence_compatible_candidates": 0,
+    "source_equivalence_scope": "Unchanged specified CAR/QWZ source with same Hilbert space, Cartan and K; not all P1/P2 realizations"
+  },
+  "source_compatibility": {
+    "checker": "source_compatibility.py",
+    "assessment_count": 4,
+    "excluded_in_unchanged_source": 4,
+    "scope": "same specified CAR/QWZ Hilbert space, Cartan and K only",
+    "assessments": [
+      "runs/run-20261015T121548Z/proofs/3b7d33a52c52782383f961fc35f7bc7cbefdfe43ccf975094d5f761357f110bb/assessment.json",
+      "runs/run-20261015T121548Z/proofs/794a8c6c75c24285a2da2697e4766276cf5996918fc89e68afa7a6385132b965/assessment.json",
+      "runs/run-20261015T121548Z/proofs/987f4638d60aa55425ade8a721cdb581720c1833c11144bd9519a409d1fd9f69/assessment.json",
+      "runs/run-20261015T121548Z/proofs/c791873e4e6212f726b01471a03efee1e22149ed699d20fce9aa530f694a2e97/assessment.json"
+    ]
+  }
+}

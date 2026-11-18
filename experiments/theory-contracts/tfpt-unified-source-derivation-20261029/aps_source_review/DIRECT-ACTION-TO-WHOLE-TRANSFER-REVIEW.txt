@@ -1,0 +1,153 @@
+Direkte ursprüngliche Wirkung, ganzer Transfer und tatsächliche Zweirandantwort
+2026-10-30. Gezielte Fortsetzung, keine Atlasänderung oder neue Quellenklasse.
+
+1. Eine direkte ganze Transferroute ist bereits vorhanden
+
+Original QFT8 = documents/archive--tfpt-45--source_extracts--04_qft_source/
+sections/008-section-relative-reflection-positivity-with-fermions.tex:
+217-253 definiert die OS Form aus der bereits gegebenen ganzen Quelle.
+Auf ihrem Quotienten gilt für positive Zeittranslation
+ T_t[F]=[tau_t F],
+ ([F],T_t[G])_OS=omega_rel(Theta F · tau_t G).          (1)
+Die beiden Endzustände sind die ursprünglichen Worte F,G. Das Produkt
+und sämtliche gemeinsamen Momente stammen aus demselben omega_rel.
+Dies ist eine tatsächliche Matrixelementregel für den ganzen Transfer;
+sie verlangt keinen zusätzlichen d_r Gewichtscompiler oder neuen Zustand.
+Die Gleichung folgt direkt aus der gedruckten OS Form:233-246 und dem
+dortigen Zeittranslationsaufruf. Auf beliebigen gewählten endlichen
+Momentunterräumen folgt daraus keine ungeprüfte Semigruppenschließung.
+
+Original boundary_source002:103-143 definiert den vollständigen operativen
+Seed bereits mit A_loc,tau,Theta,omega,[u],Dcoll. Für diesen Seed ist(1)
+vorhanden. Eine neue CAR/Berezinwahl wäre für seine eigene Rekonstruktion
+eine falsche Zusatzpflicht. Die Herkunftsfrage betrifft die Identifikation
+dieser ganzen Quelle mit dem jeweiligen dünneren Wirkungsdatum.
+
+2. Die echte gedruckte Wirkung und ihre gegebenen Variablen
+
+Original boundary_source001 =
+documents/archive--tfpt-45--source_extracts--01_boundary_kernel_source/
+sections/001-section-primitive-core-and-carrier-interface-handoff.tex:
+65-90 gibt Tbound=(A+,H+,D+,J,Gamma,BΣ), den Produktkragen und seine
+reflexionsreguläre Domäne;122-154 bindet
+ A=Dref=(D+RDR)/2, B=Drel=(D-RDR)/2;
+42-55 bindet chi=lambda1+(|BΣ|)^-1.
+302-316 definiert bei deklariertem spektralem Profil f
+ Sprim=Tr f(B/chi)-Tr f(A/chi)+(i pi/2)Delta eta.       (2)
+Kein neues f und keine unabhängige Referenz werden gewählt.
+
+QFT7 = gleicher QFT Ordner/
+007-subsection-renormalized-physical-and-scheme-readout-laye.tex:3-22
+schreibt den tatsächlichen Feldcaller
+ exp W_k[J]=integral_(Hadm) Dvarphi
+   exp[-Sadm[varphi]-.5<varphi,R_k varphi>+<J,varphi>],
+mit gegebenem admissible Regulator R_k.
+121-140 verwendet er ausdrücklich Sadm^(2) und alle höheren Vertices.
+Das ist ein vorhandener Wirkungsconsumer; er darf die gegebene volle
+Quelle lesen. An diesen Stellen steht aber keine Operatorgleichung
+Sadm^(2)=Dcoll oder Sadm^(2)=L=-N D und keine ausgeschriebene Zuordnung
+varphi -> (D[varphi],R[varphi],Referenz,chi,Domäne) für(2).
+Sprim an einem gegebenen D ist ein spektraler Skalar. Seine gedruckte
+Form allein ist noch kein Zweirandfeldkernel. Eine geeignete tatsächliche
+Sewingabbildung kann diesen Unterschied schließen; die Typunterscheidung
+ist kein allgemeines Verbot einer solchen Abbildung.
+
+Das konkrete geometrische Maß in metrology_source005:136-178 ist
+dmu_n proportional exp[-Tr f_star(D_Vn²/Lambda²)] dnu_Vn auf dem
+BRST reduzierten geometrischen Konfigurationsraum. Sein Referenzmaß
+dnu_Vn und die Feldfamilie D_Vn sind dort gegeben. Es ist nicht schon
+eine Matrixelementformel mit zwei Fermionendzuständen. Die früheren
+Prüfungen dieses Maßsatzes werden nicht erneut als neuer Befund wiederholt.
+
+Padm ist in QFT2:31-117 explizit aus dem vorhandenen Operator und den
+Penalties konstruiert. QFT7 integriert auf Hadm; boundary_source001:
+319-342 definiert das lokale physische Netz durch Einschränkung auf einen
+invarianten Raum, ausdrücklich nicht durch beliebige globale Kompression.
+Damit ist die tatsächliche Bindung an Padm vorhanden; sie ersetzt die
+oben bezeichnete Feld-zu-Operator-Zuordnung nicht.
+
+3. Bestehendes echtes Sewing wiederverwenden, Richtung korrekt halten
+
+seam-collar-multifield-20261016/source_sewing.py:24-50 löst für einen
+gegebenen Einteilchentransport R die volle Creatorwirkung und fixiert alle
+CAR Wortmatrixelemente bei vorhandener Vakuumnormierung.
+kernel_functional.py:38-56 bildet den ganzen Matrixkernel K_T;
+104-126 integriert das innere Berezinbein und ergibt exakt K_(T2 T1).
+136-150 schließt dessen tatsächliche Spur mit dem festen fermionischen
+Vorzeichen. Das trägt beide Randfelder und alle Einfügungen.
+
+Die dortige action_split(matrix):73-93 läuft dagegen in der Richtung
+ T -> K_T -> (lambda,S_nil), lambda exp(-S_nil)=K_T.
+Sie ist eine exakte Darstellung des BEREITS gegebenen Transfers als
+Grassmannwirkung. Sie beweist keine Gleichheit S_nil=Sprim oder Sadm.
+Die kleinste entscheidende Codeprüfung ist ihre Eingangssignatur:
+Sie konsumiert die ganze Transfermatrix, nicht die gedruckte Wirkung(2).
+Das ist kein Fehler dieser Funktion und kein Bedarf für eine weitere Quelle.
+Reuse ACTION-INTERVENTION-SEWING.txt und ORIGINAL-SOURCE-AUDIT.txt.
+
+Auch v151_bfk_split.py:74-122 ist ein vorhandener bedingter Gluingbefund,
+jedoch eine Kontrolle der konischen DtN/Determinantenkonstante im gegebenen
+2D gapped Contract, keine ausgeschriebene ganze Sprim→Sadm Quellidentität.
+Die später tatsächlich gebauten Hamiltonianrouten bleiben erhalten:
+research_contracts017:193-235 dokumentiert v989,v1011,v1013 mit positivem
+T=exp(-aH) für die dort gegebenen Hamiltonians und kontrollierter Dynamik.
+Ihre Originalmarker bleiben offen; sie werden nicht durch die fehlende
+Gleichsetzung mit(2) mathematisch entwertet oder erneut quantisiert.
+
+4. Kleinste Einfügung auf dem schon gegebenen ganzen Kinetik/Sewingpfad
+
+Verwendet wird der bereits original getypte vollständige mu01 Wedge/KO
+Beitrag Phi_M, kein frei gewähltes dGamma eines besetzten Readerraums.
+Reuse HARDY-BMU-ALL-SIX-INPUT-READER.txt, ORIGINAL-PRIMITIVE-WEDGE-
+CONSUMER-HARDY-REVIEW.txt und die bestehende vollständige Zweikanten KO
+Fortsetzung. Für ihre Koeffizienten alpha,beta mit gemeinsamer Phase gilt
+ r²=|alpha|²+|beta|²>0, rank Phi_M=64, Tr96 Phi_M²=64r².
+Dies ist ein Beitrag zum ursprünglichen endlichen Feldslot, keine
+Identifikation mit allen physischen Yukawas.
+
+Im gegebenen konstanten NS/common-quarter Quellchart, bei festgehaltenem
+bereits ausgewertetem Phi0 Koeffizienten, setze für die Einfügungsableitung
+ h_s=p gamma_F-i gamma_F s Phi_M, delta h=-i gamma_F Phi_M.
+Das ist der vorhandene FINITE-COUPLED Operatortyp. Es wird keine neue
+Modellklasse oder frei angepasstes Quellengewicht ergänzt.
+Aus h_s²=p²+s²Phi_M² folgt auf jedem tatsächlichen Fouriermodus p!=0
+ d_s exp(-ell h_s)|0=-sinh(ell|p|) delta h/|p|,
+ d_s G(h_s)|0=diag(f_p delta h,-f_p delta h),           (3)
+ f_p=tanh(ell|p|)/(2|p|),  d_s X(h_s)|0=0.
+Hier G ist der ganze gelabelte Zweifacengraph; X sein Kreuzblock.
+Der Normaltransfer kann unbeschränkt sein; die normierte Antwort(3)
+ist dagegen ein wohldefinierter beschränkter Operator. Ihre Norm auf
+den BEIDEN geladenen Faces mit sämtlichen96 endlichen Slots lautet
+ ||d_s G|0||_HS²=32r²[tanh(ell|p|)/|p|]²>0.             (4)
+Die kanonischen adjungierten/selfdualen Slots folgen durch den vorhandenen
+T_faces Funktor; sie sind keine zusätzlichen Teilchensorten.
+Über alle NS oder Quartermoden ist(4) summierbar wie sum1/p².
+Im vorhandenen W Bild wird die Antwort mit demselben W transportiert;
+keine unabhängig ungewichtete Fuchsquelle wird stattdessen gesetzt.
+ell bleibt die Breite des gegebenen geometrischen Kragens, nicht eine
+neu identifizierte physische P1 Zeit.
+
+Direkter exakter Kurzcheck: allgemeiner ungerader Singularblock pZ+sY
+in der vorhandenen Klasse, symbolische Ableitung von exp(-ell h_s),
+G11 und X bestätigt alle Zeichen in(3). Die vollständige Familiennorm
+folgt nach Ausklammerung der gemeinsamen Phase aus dem reellen
+Familienfaktor R³=r²R,Tr R²=2r² und den32 tatsächlichen Carrierslots.
+Es wurde kein Kandidatenhintergrund gescannt und kein Ledger ausgeführt.
+
+5. Herkunftsurteil und nächster tatsächlicher Aufruf
+
+Die ganze Quelle hat sowohl die direkte OS Regel(1) als auch ein
+vollständiges vorhandenes Feldsewing. Der echte endliche Wedgebeitrag
+erzeugt darin die nichtnull Zweirandantwort(3)-(4). Dies ist stärker als
+ein ausschließlich ausstehender Gewichtscompiler.
+
+Der erste noch nicht ausgeführte Ursprungspfeil dieses ALTERNATIVEN
+Aktionswegs ist die tatsächliche gemeinsame Identifikation des
+Feldfunktionals Sadm[varphi] beziehungsweise seines eingesetzten
+Kinetik/Sewingoperators mit der gebundenen spektralen Wirkung(2).
+Es wird kein neues Maß für einen schon gegebenen Seed gefordert.
+Ebenso ist action_split(T) kein Beweis dieses Pfeils in Gegenrichtung.
+Die ursprüngliche Betreiberfamilie und ihre Referenz-, Gap-, Eta- und
+Domänenvariationen bleiben nach GROK38-PRIMITIVE-PROJECTOR-AND-
+VARIATION-REVIEW.txt gebunden; eine freie neue Wirkungswahl wird nicht
+als Lösung eingeführt.

@@ -12,7 +12,7 @@ import sympy as sp
 HERE = Path(__file__).resolve().parent
 ROOT = HERE.parents[2]
 INPUT = ROOT / "experiments/theory-contracts/compiler-involution-types/checker.py"
-PIN = "9bf99de79f224ffcd060359eb146510b6e49973170f9953a0aec26760bd2c1a1"
+PIN = "a0923ab19e46d784b28783f3b943df032d9de3c08b7ecda017b3d4cd3e5ad1ab"
 
 
 def require(ok, message):

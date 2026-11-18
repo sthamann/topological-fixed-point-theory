@@ -1,0 +1,175 @@
+A7 CLOCK DIRECTION AND THE NEUTRAL E7 ROOT CUT
+==============================================
+
+27 October 2026
+
+Question
+--------
+
+What is the exact Lie theoretic direction of the original eightfold source
+offset
+
+  delta_j=(j+a)/8-1/2,  j=0,...,7,
+
+and how does its distinguished zero-grade root p* sit in the complete E8 root
+system with the source charge Q(alpha)=sum alpha_j?
+
+Verdict
+-------
+
+The nonuniform part of the source offset is exactly the A7 Weyl vector with
+Coxeter denominator eight:
+
+  rho_A7=(7/2,5/2,3/2,1/2,-1/2,-3/2,-5/2,-7/2),
+
+  delta=-rho_A7/8+(2a-1)q/16,       q=(1,...,1).
+
+Consequently the folded source generator has the exact decomposition
+
+  H8=8L0-rho_A7.a0+(2a-1)Q/2.                         (1)
+
+This corrects the proposed identification of the staircase with a D8 or E8
+Coxeter direction.  The denominator eight and rho_A7 are intrinsic to the
+ordered eight-coordinate ramp.  This statement does not identify physical
+Euclidean time and does not replace the independent D8 and E8 Coxeter clocks
+elsewhere in the theory.
+
+The complete E8 root census by Q is
+
+  Q       -4   -2    0   +2   +4
+  count    1   56  126   56    1.
+
+The 126 neutral roots are exactly the E7 subsystem orthogonal to q.  Under
+its maximal-rank A7 subsystem they split as
+
+  126 = 56 + 70
+      = roots(A7) + weights(Lambda^4 C^8).              (2)
+
+The distinguished root
+
+  p*=(1/2,1/2,1/2,1/2,-1/2,-1/2,-1/2,-1/2)
+
+is omega_4(A7), has norm squared two, rho_A7.p*=8 and Q(p*)=0.  It is thus an
+E7 root with zero charge under the complementary source U1.  Calling this
+"electromagnetically neutral" is valid only through the already stipulated
+source charge dictionary; algebraically the exact statement is Q(p*)=0.
+It is not an E7 singlet.
+
+1. Source and Atlas boundary
+----------------------------
+
+The original retained formula is in
+
+  experiments/theory-contracts/seam-joint-ward-state-20261014/PROOF.txt,
+  lines 17-26.
+
+That proof already records p*, Q(p*)=0 and delta.p*=-1 at lines 57-69, and
+the complete charge histogram at lines 96-101.  It does not identify the
+staircase with -rho_A7/8 or refine the 126 neutral roots as 56+70.
+
+The active Atlas revision 4d210a8bebd5c91c7ee7ad75 was searched for the A7
+Weyl-vector identity, omega4 and the 126=56+70 decomposition.  No reviewed
+finding containing this exact joint statement was found.  The Atlas does
+contain the older E8 charge histogram through the registered joint-source
+contract, so the five charge multiplicities are supporting context rather
+than a new result by themselves.
+
+2. Exact offset decomposition
+-----------------------------
+
+The j-th entry of -rho_A7/8 is
+
+  -(7-2j)/16.
+
+Adding the uniform component (2a-1)/16 gives
+
+  -(7-2j)/16+(2a-1)/16
+    =(j+a)/8-1/2
+    =delta_j.
+
+Since L0=N+p^2/2 and Q=q.a0, multiplication by eight gives (1) exactly.
+The parameter a occurs only in the uniform U1 direction.  Every Q-neutral
+state is therefore independent of a under the nonuniform grading.
+
+For a level-one root state J_(alpha,-1)|0>, the basic commutator is
+
+  [H8,J_(alpha,-1)]
+    =(8-rho_A7.alpha+(2a-1)Q(alpha)/2) J_(alpha,-1).    (3)
+
+For alpha=p*, rho_A7.p*=8 and Q(p*)=0, so the coefficient in (3) vanishes.
+This is the precise source of the old zero grade.  It is an A7 principal
+grade cancellation, independent of the Wilson-line parameter a.
+
+Among all 126 neutral E7 roots, p* is the unique root with zero coefficient
+in (3).  The opposite root has coefficient 16.  The complete neutral base
+grade multiplicities for grades 0 through 16 are
+
+  1,2,4,6,9,10,13,14,8,14,13,10,9,6,4,2,1.
+
+3. Full root census and the E7 cut
+----------------------------------
+
+Use the standard E8 realization with 112 integer D8 roots
+
+  +/-e_i +/-e_j
+
+and 128 half roots (1/2)(+/-1,...,+/-1) with an even number of minus signs.
+
+For the integer roots, Q=0 consists exactly of e_i-e_j and its negatives:
+2*C(8,2)=56 roots.  The remaining integer roots give 28 roots at each of
+Q=+2 and Q=-2.
+
+For a half root with m minus signs,
+
+  Q=4-m.
+
+The allowed even values m=0,2,4,6,8 yield multiplicities
+
+  1,28,70,28,1.
+
+Adding both root types gives the five-charge census above.  At Q=0 the 70
+half roots have four plus and four minus signs.  Choosing the four plus
+positions identifies them exactly with the 70 weights of Lambda^4 C^8.
+Together with the 56 A7 roots they form the 126-root, rank-seven,
+reflection-closed E7 subsystem q-perp inside E8.  This is the standard
+adjoint branching
+
+  133 of E7 -> 63 of A7 + 70,
+
+with the common seven Cartan directions added to the root counts in (2).
+
+4. Consequence and limit
+------------------------
+
+The earlier source result that p* is a nontrivial D8 spinor-sector vector
+and the present statement that it is Q-neutral are compatible.  D8
+superselection class and the complementary E7 x U1 charge are different
+gradings.  The new exact bridge is:
+
+  ordered eightfold source clock
+       -> A7 rho grading plus uniform U1
+       -> Q=0 E7 root cut
+       -> p*=omega4(A7) as its unique zero-grade root.
+
+This explains the zero grade within the original eight-clock geometry.  It
+does not prove that H8 is physical OS time, that the p* current is an
+admissible local observable, or that any E7 gauge interpretation is selected
+by P1.  Those source identifications remain exactly as scoped in the prior
+local-time and admissibility reports.
+
+5. Reproduction
+---------------
+
+Run
+
+  python3 check_a7_e7_clock.py
+
+The checker constructs all 240 roots with exact rational arithmetic, verifies
+the offset identity, the five charge sectors, their integer/half-root
+refinement, the A7 plus Lambda4 neutral decomposition, rank seven and
+reflection closure, p*=omega4, and the full commutator-grade distribution.
+Its JSON output is a7-e7-clock-results.json.  The checker contains explicit
+failure exceptions and therefore runs identically with python3 and python3
+-OO.
+
+No repository or Atlas file was changed.

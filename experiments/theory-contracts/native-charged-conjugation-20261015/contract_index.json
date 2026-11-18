@@ -1,0 +1,79 @@
+{
+  "contract": "native-charged-conjugation-20261015",
+  "research_id": "UR.NATIVE.CHARGED_CONJUGATION.01",
+  "date": "2026-10-15",
+  "question": "Does the actual original local charge source have an all-time opposite-charge response symmetry, and which uniform chemical markings remain visible to charged corners despite a total-zero starting sector?",
+  "verdict": "PARTIAL",
+  "verdict_enum": "PARTIAL",
+  "mathematical_verdict": "PASS_SOURCE_CONJUGATION_AND_CHARGED_CORNER_DISCRIMINATOR",
+  "scope": "Original finite-volume Round20 onsite field algebra and scalar-coupled native Hamiltonian, with a charge-conjugation-invariant start. Exact source-specific response obstruction to one fixed marked chiral twist; not a universal source no-go.",
+  "summary_de": "Die tatsächliche bilineare Cocycle-Quelle besitzt C T_p C=T_-p und C W_p C=W_p*. Das Vorzeichen T_p*=(-1)^e(p)T_-p bleibt erhalten. Quadratische Energie, Skalarteil und Hopping sind C-invariant; damit sind entgegengesetzte adjungiert-gepaarte Feldantworten bei C-invariantem Start für alle Zeiten gleich. Ein fester nichttrivialer chiraler Vierteltwist hat dagegen Ratio exp(-2tδ·p). Uniforme chemische Markierung ist auf C0 null, wird aber in geladenen onsite Einfüge/Entferne-Ecken sichtbar; C0 ist kein Argument gegen alle lokalen Ladungsproben.",
+  "summary_en": "The actual bilinear-cocycle source has C T_p C=T_-p and C W_p C=W_p*. The sign T_p*=(-1)^e(p)T_-p is retained. Quadratic energy, scalar dynamics and hopping are C invariant, so opposite-charge adjoint-paired responses at a C-invariant start agree at all times. A fixed nonzero chiral quarter twist instead has ratio exp(-2tδ·p). A uniform chemical marking vanishes within C0 but remains visible in charged onsite insertion/removal corners; C0 does not remove all local charge probes.",
+  "assumptions": [
+    "The original full tensor_x l2(E8) field source, frozen bilinear cocycle, finite lattice, eight arithmetic hops and given scalar/charge Hamiltonian.",
+    "A C-invariant starting density, including the given full or sector Gibbs states. Arbitrary broken-symmetry starts are outside the symmetry conclusion.",
+    "For the chiral comparison, the fixed primary vacuum, opposite marked charges, common time normalization and already stipulated chiral E8 representation.",
+    "Chemical eta is an additional comparison input; charged onsite insertions require full exterior-sector propagation, not a fictitious T endomorphism of C0."
+  ],
+  "positive_results": [
+    "Actual source C symmetry extends from the exact cocycle to the original selfadjoint Hamiltonian, its Gibbs states and all C-conjugate bounded multitime words.",
+    "C0 retains balanced local W dynamics and charged corners for onsite T; it is not a blanket local-observable blindness statement.",
+    "For C0-supported invariant starts, H_eta=H+eta.Q gives exact charged return ratio exp(-2t eta.p), although sector-internal dynamics is unchanged. Eta=B^Tdelta is only the conditional linear coordinate dictionary.",
+    "For arbitrary fixed Peierls link phases and flux, A=C times complex conjugation preserves the original hopping source. A-invariant full/C0 Gibbs starts retain equal positive Euclidean opposite-charge return responses; no arbitrary real-time equality is asserted."
+  ],
+  "kills": [
+    "Identifying all opposite marked charged responses of the unchanged C-invariant native source/start with one fixed asymmetric nonzero chiral twist.",
+    "Dropping the actual T adjoint cocycle sign.",
+    "Treating onsite T as an operator within C0 or inferring all local charge probes are blind from global neutrality.",
+    "Calling a stipulated chemical marking or symmetric +/-twist mixture a source-selected physical solution.",
+    "Repairing this asymmetric Euclidean charged-pair target solely by fixed Peierls/quarter phases at an A-invariant start."
+  ],
+  "leaves_open": [
+    "Derive the original physical source, state and any C-breaking marking from P1/P2.",
+    "Construct an actual marked local operator/state/time dictionary or another source realization; equality of one odd response factor is insufficient.",
+    "Physical detector/preparation access, instrument/event selection and all T1-T8 gates."
+  ],
+  "claims_tested": [],
+  "gates": [],
+  "physical_gates_closed": [],
+  "complete_TFPT_solution": false,
+  "promotion": false,
+  "firewall": "experiments",
+  "proof": "PROOF.md",
+  "checker": "checker.py",
+  "certificate": "results.json",
+  "source_manifest": "source_manifest.json",
+  "local_check_count": 24,
+  "relations": [
+    {
+      "target": "local-charge-transport-round20",
+      "type": "uses"
+    },
+    {
+      "target": "native-source-reconstruction-20261014",
+      "type": "extends"
+    },
+    {
+      "target": "clock-source-twist-transport-20261015",
+      "type": "compares"
+    },
+    {
+      "target": "source-ground-response-20260920",
+      "type": "preserves_distinct_prior_result"
+    },
+    {
+      "target": "source-charged-extension-selection-20260921",
+      "type": "uses_prior_distinction"
+    }
+  ],
+  "topics": [
+    "topic:origin",
+    "topic:quantum",
+    "topic:clocks",
+    "topic:universalraum"
+  ],
+  "addendum": "ADDENDUM.md",
+  "addendum_checker": "peierls_checker.py",
+  "addendum_certificate": "peierls_results.json",
+  "addendum_local_check_count": 16
+}

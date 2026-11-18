@@ -1,0 +1,69 @@
+{
+  "schema": "tfpt.lean.full_collar_algebra.v1",
+  "verdict": "KERNEL_CHECKED_RATIONAL_ALGEBRA",
+  "checked_utc": "2026-10-15T17:14:27Z",
+  "source": {
+    "path": "experiments/theory-contracts/seam-full-collar-reconstruction-20261015/lean/FullCollar.lean",
+    "sha256": "f6f023448881534249fabe24b9a1b92dc3272a67cf91c44ea7d478ee083e9a37"
+  },
+  "environment": {
+    "project": "experiments/lean4-carrier-rigidity",
+    "lean": "Lean 4.29.1 arm64-apple-darwin24.6.0 commit f72c35b3f637c8c6571d353742168ab66cc22c00",
+    "lake": "5.0.0-src+f72c35b",
+    "lean_toolchain_sha256": "7dc000621e0046d1aada809e2b7177e64454645cf4c741e9daaf79c99ec2e7a2",
+    "lakefile_sha256": "f21759f0f80ad0d9979b9c98e9a467abee273f33064ed02ef924e64214b70764",
+    "lake_manifest_sha256": "79252b4623ddc4d1555ff884e4332b0b3e426bd7b481eb87843bdb4ebea35ebb"
+  },
+  "command": "/Users/stefanhamann/.elan/bin/lake env lean /Users/stefanhamann/Projekte/tfpt-theoryv4/experiments/theory-contracts/seam-full-collar-reconstruction-20261015/lean/FullCollar.lean",
+  "exit_code": 0,
+  "theorems": [
+    "TFPT.FullCollar.G_transpose",
+    "TFPT.FullCollar.G_idempotent",
+    "TFPT.FullCollar.G_fixes_graph",
+    "TFPT.FullCollar.G_range_formula",
+    "TFPT.FullCollar.G₁₁_ne_zero",
+    "TFPT.FullCollar.recover_t",
+    "TFPT.FullCollar.G_injective",
+    "TFPT.FullCollar.diagonalData_sign_blind",
+    "TFPT.FullCollar.G_eq_neg_iff",
+    "TFPT.FullCollar.retained_polarization_is_identity",
+    "TFPT.FullCollar.negative_restriction_zero",
+    "TFPT.FullCollar.retained_polarization_fixes_range",
+    "TFPT.FullCollar.anticommuting_involutions_square",
+    "TFPT.FullCollar.anticommuting_involutions_ne"
+  ],
+  "axioms": {
+    "rational_matrix_theorems": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "abstract_ring_theorems": [
+      "propext",
+      "Quot.sound"
+    ],
+    "sorryAx_present": false
+  },
+  "proved_scope": [
+    "For rational t, G(t) is symmetric and idempotent.",
+    "G(t) fixes every vector (x,t*x) and maps every rational two-vector explicitly onto that graph.",
+    "G(t)[0,0] is nonzero and t=G(t)[1,0]/G(t)[0,0], hence the full matrix datum is injective in t.",
+    "The diagonal entries alone are identical for t and -t, while G(t)=G(-t) holds exactly when t=0.",
+    "For arbitrary elements C,Q of any ring, C*Q=Q implies (2*C-1)*Q=Q and (1-C)*Q=0.",
+    "If additionally Q*v=v, then the retained polarization (2*C-1) fixes v.",
+    "In any characteristic-zero ring, anticommuting involutions R,F satisfy (R*F)^2=-1 and R is not equal to F."
+  ],
+  "given_not_derived": [
+    "the product-collar form D=J(partial_r+B)",
+    "the interpretation of t, G, R, or F as operators from the microscopic TFPT source",
+    "the compression elements C,Q and the retention premise C*Q=Q"
+  ],
+  "not_proved": [
+    "an unbounded Hilbert-space logarithm or analytic reconstruction theorem",
+    "operator domains, closures, spectral limits, positivity beyond the finite rational matrix",
+    "quarter boundary holonomy",
+    "a nontrivial 3+2 carrier selection from positive-only compression; on the retained range the proved polarization is the identity",
+    "any alternative factorization or restriction map that could carry a different marking",
+    "source state, locality, CAR realization, or a full P1/P2 source derivation"
+  ]
+}

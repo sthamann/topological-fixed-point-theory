@@ -1,0 +1,82 @@
+{
+  "steps": [
+    {
+      "step": "FP1.filtered CAR: {rho_x, rho_y^dag} = (F F^dag)_xy; without links F^2 has support {0, eps, eps+eps'} with 9/8, -1/4, 1/16 (2,0,0), 1/32 (2,2,0), 1/64 (2,2,2) (exact fractions); with random U(2) links the diagonal stays 9/8 and the support is unchanged",
+      "pass": true,
+      "detail": "{rho, rho} = 0 trivially (rho is linear in psi)"
+    },
+    {
+      "step": "FP2.spectrum of F^2: f^2 in [0, 4]; null space = the k = 0 class only (one null momentum per cell, full rank elsewhere); smallest nonzero eigenvalue ~ L^-4; condition number bounded away from Gamma; normalised overlaps -2/9 (nearest), 1/18, 1/36, 1/72",
+      "pass": true,
+      "detail": "null momenta per cell [1, 1, 1, 1]; min nonzero f^2 ~ L^-4.00; condition number for distance >= 0.5: 280.2, >= 1.0: 23.4"
+    },
+    {
+      "step": "FP3.cell geometry: a periodic primitive L^3 cell contains the mirror momentum P iff 4 | L (2^3, 3^3 do not, 4^3 does); a cubic box contains P iff its side is a multiple of 4 (the conventional 2^3 cubes with 16 sites do)",
+      "pass": true,
+      "detail": "primitive 2^3 (8 sites): no; primitive 3^3 (27 sites): no; primitive 4^3 (64 sites): yes; cubic side 2 (2 sites): no; cubic side 4 (16 sites): yes; cubic side 6 (54 sites): no; cubic side 8 (128 sites): yes"
+    },
+    {
+      "step": "FP4.local spectrum by parity (canonical a = sqrt(8/9) rho, g* = 81/64 g): E_0 = -2176 g*; lowest even excitation 144 g* (x10), lowest odd 232 g* (x64), next even 320 g* (x54); even and odd sectors 2^31 each",
+      "pass": true,
+      "detail": "gaps (in g*) and degeneracies: even (144.0, 10), odd (232.0, 64), next even (320.0, 54); in the original coupling: 729/4 g, 2349/8 g"
+    },
+    {
+      "step": "FP5.normal ordering: [Q, Q^dag] = 2 tr(M M^dag) - 4 a^dag (M^dag M) a (checked on a random 4-mode example), = 64 - 4N for the unitary B_A; hence H_int = H_quartic + 45 g sum psi^dag F^2 psi - 810 g N_sites; the extra one-particle term ~ f(k)^2 ~ |k|^4/4 at the light node; N conserved only mod 4",
+      "pass": true,
+      "detail": "coefficients 45, 810"
+    },
+    {
+      "step": "FP6.LOCAL_PATCH frustration: for b = r a + s c (r = -2/9) and any state whose a-factor has <a^dag a> = 1/2, <a a> = 0 (the unique singlet: Schur, Z4, <N-16> = 0), ||J_b Psi||^2 >= r^2 s^2 tr(t^2)/2 > 0: the two singlet minima are never reached simultaneously; E_min(h_x + h_y) > 2 E_0 (exact value of the 2^64 patch not computed)",
+      "pass": true,
+      "detail": "ratio ||J_b Psi||^2 / bound on test states [13.136, 16.175, 7.79, 8.217] (>= 1); bound for tr t^2 = 8: 4 r^2 (1 - r^2) = 0.1878"
+    },
+    {
+      "step": "FP7.(statement) the strong-coupling ground state is not a product of local singlets; the simple product proof of a mirror gap is excluded, the collective phase of the overlapping model decides Gate B (QMC / tensor networks after the sign audit)",
+      "pass": true,
+      "detail": "no marker moves"
+    }
+  ],
+  "passed": 7,
+  "total": 7,
+  "F2_support": {
+    "(0, 0, 0)": [
+      "9/8"
+    ],
+    "(1, 1, 1)": [
+      "-1/4"
+    ],
+    "(2, 2, 2)": [
+      "1/64"
+    ],
+    "(0, 2, 2)": [
+      "1/32"
+    ],
+    "(0, 0, 2)": [
+      "1/16"
+    ]
+  },
+  "cells_with_P": {
+    "primitive 2^3 (8 sites)": false,
+    "primitive 3^3 (27 sites)": false,
+    "primitive 4^3 (64 sites)": true,
+    "cubic side 2 (2 sites)": false,
+    "cubic side 4 (16 sites)": true,
+    "cubic side 6 (54 sites)": false,
+    "cubic side 8 (128 sites)": true
+  },
+  "local_gaps_gstar": {
+    "even1": [
+      144.0,
+      10
+    ],
+    "odd1": [
+      232.0,
+      64
+    ],
+    "even2": [
+      320.0,
+      54
+    ]
+  },
+  "frustration_bound": 0.18777625361987502
+}

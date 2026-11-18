@@ -1,0 +1,174 @@
+TFPT. Vollständiger longitudinaler Windungsvergleich und Picard Familien
+11. November 2026
+
+1. Gemeinsame Fock Randform des gegebenen R032 Verlaufs
+
+Verwendet werden die ursprünglichen sechs v252/R032 Matrizen,
+ihre vorgegebenen Dauern, die volle gefüllte See und die
+ursprüngliche freie reflektierte Referenz. Ausgewertet wird die
+longitudinale Fourier Familie p=n+alpha für beide alpha=1/4,3/4
+in derselben festen Geschichte. Damit wird die frühere Rechnung
+für p=1/4,3/4 wiedergewonnen und auf den gegebenen ganzen
+longitudinalen Turm fortgesetzt.
+
+Die zwei Randoperatoren in dieser Rechnung sind K und V K.
+V ist die originale longitudinale Rückkehr, auf den Quarter
+Räumen mit v=+i beziehungsweise -i. Auf dem Außenraum gilt
+Tr(Gamma(K)^* Gamma(VK))=det(I+K^* V K). Dabei bezeichnet Gamma
+hier den gesamten fermionischen Außenraumoperator. Die
+ursprüngliche Seennormierung und die freie Referenz sind
+auf beiden Wegen gleich. Pro Modus ist der Quotient der
+Kreuzform durch die Diagonalnorm
+  det(I+v K^*K)/det(I+K^*K).
+Die beiden Diagonalen stimmen exakt überein. Der gewählte
+Vergleich ist die kohärente Endpunktüberlappung der CAR
+Operatoren auf dieser gegebenen Geschichte.
+
+Die volle Seennormierung ist für die Entfernung der
+Fourierabschneidung wesentlich. Für h_i=p Gamma+M_i und
+{Gamma,M_i}=0 liegt die Fock Lücke wenigstens bei |p|.
+Normiert man jeden Schritt durch seine gefüllte See, ist
+sein Fock Transfer der Rang eins Seeprojektor plus ein
+Hilbert Schmidt Rest, der exponentiell fällt. Auf der
+48 dimensional gefüllten See ist (+i)^48=(-i)^48=1.
+Deshalb konvergiert der Quotient der Kreuzform mit
+exponentiellem Rest. Jeder endliche Faktor 1+v lambda
+ist nichtnull. Das unendliche Produkt ist somit nichtnull.
+
+Für die Diagonalnorm bleibt die Überlappung der benachbarten
+Seeprojektionen. Der erste Term des Logarithmus pro Modus ist
+  -A/p², A=(1/8) sum_i ||M_(i+1)-M_i||_HS².
+Der nächste Potenzterm ist O(p^-4). Der Check benutzt die
+explizite Projektorformel (I-h_i/sqrt(p²+M_i²))/2, getrennte
+diagonale und offdiagonale Schranken, und den exponentiellen
+Fock Rest. Der Logarithmus der Diagonalnorm konvergiert.
+Bei der vollen Rechnung, relativ zur gesamten freien S Norm:
+  log Diagonale etwa -173.282020
+  Betrag der Diagonale etwa 5.55e-76
+  Betrag Kreuzform / Diagonale etwa 1.30095e-52
+  Betrag Kreuzform etwa 7.22e-128.
+Die Schranke des weggelassenen Modenturms beträgt auf dem
+Logarithmus der Diagonale 0.000318, auf dem komplexen Log
+des Kreuzquotienten 3.0e-15. Die endliche Auswertung ist
+Fließkommarechnung, keine Intervallzertifizierung dieser Zahlen.
+Das Vorzeichen der früheren normierten 3x3 Antwort und diese
+Fock Überlappung sind unterschiedliche Auslesungen.
+
+Auch der kleinste ursprünglich markierte schwache Übergang
+zwischen den beiden Quartern wurde als gemischte Fock
+Nebenform berechnet. Die verwendete Antwort ist
+S_b^-1 (v_a K_b^* T^+ K_a) S_a^-1 mit
+S_j=I+v_j K_j^*K_j. Ein expliziter Blockinversentest
+verifiziert die einseitige Ableitung. Direkt und nach den
+Schnitten 2, 4 und 2+4 ergibt sich derselbe markierte Block.
+Seine Singularwerte sind 0.33271408, 0.27939135, 0.18740503.
+Nach Multiplikation mit der gemischten Fock Norm liegt
+der größte Eintrag relativ zum ganzen freien S bei etwa
+2.00e-128. Diese Fock Nebenform ist auf den ersten
+Fouriermoden markiert. Die anderen Moden faktorisieren.
+
+2. Was die neue Randform für das gemeinsame Maß verlangt
+
+Die ursprüngliche Radiusprobe ist p -> p exp(-r) bei
+denselben Matrizen und Dauern. Daher trägt die Entfernung
+der hohen Fermionmoden einen r abhängigen Faktor. Der
+führende Logkoeffizient des ausgelassenen Teils ist
+-A exp(2r) sum(p^-2), A=40.00220538648 pro Modenturm.
+Der ausgeführte Test bestätigt p² mal Radiusableitung
+gegen -80.00441077. Bei festem Profil faktorisiert die
+Fock Rechnung. Sobald der Radius mitintegriert wird, ist
+der ausgelassene Faktor keine Konstante auf der behaltenen
+Geometrie. Er muss als marginaler Gewichtsfaktor mitgeführt
+werden. Das ist ein konkreter Beitrag zur bereits in R080
+hergeleiteten notwendigen bedingten Marginalgleichung.
+
+Der ursprüngliche Q Integrationsaufruf wurde auf der
+unveränderten Domäne erneut ausgeführt. Er endet mit Exit 2
+und fehlendem original_blocked_fiber_packet. Die jetzt
+berechnete Fock Randform liefert eine bedingte Originalfaser
+mit gegebener Referenz. Die gemeinsame physische Randform
+braucht zusätzlich das über zulässige Geometrie und Felder
+integrierte Gewicht dnu_V, die gesamte Reflexionspaarung
+und die gemeinsame absolute Referenz. R080 hat für die
+wörtliche globale Profilvorschrift mit K>=m>0 auf
+[0,infty) bereits ausgeschlossen, dass die angegebene
+Lebesgue Normalisierung einen endlichen Profilfixpunkt
+liefert. Punktweise Positivität ist dort ebenfalls kein
+Beweis der Reflexionspositivität. Diese Runde führt
+keine Ersatzverteilung und keine neue Dichte ein.
+
+3. Was der ergänzende Picard Text löst
+
+Die Gruppe der speziellen Picardkurve hat 48 Elemente und
+vier konjugierte Dreieruntergruppen. Der Normalisator der
+festen Dreierüberlagerung hat Ordnung 12 und ist das alte
+C12. Die alte v784 Bezeichnung als volle Automorphismengruppe
+ist zu weit. Bei festem Deckgenerator bleiben die damaligen
+Rechnungen innerhalb dieses Normalisators als getrennte
+Aussagen über die dort gewählte Paarung zu lesen.
+Primärquelle: Bouw, Koutsianas, Sijsling und Wewers,
+DOI 10.1112/jlms.12323, Lemma 4.1.5.
+
+Die zusammengesetzte Darstellung V1 tensor Sym²(V2) hebt
+die Wirkung des zentralen Viertels auf. Ein expliziter
+Intertwiner zu den vier Überlagerungsmarken bestätigt
+die lineare A4 Wirkung und die anti-lineare Konjugation.
+Seine positive Hermitesche Paarung ist nach einem
+Skalarfaktor die A3 Metrik. Das ist eine wirkliche
+konstruktive Alternative zu den einzelnen Differentialen.
+Für die ungerade lineare Erweiterung hat die unverdrehte
+Viererpermutation Spur -1, der echte v117 Operator U
+Spur +1. Das v117 Wörterbuch verlangt den Paritätstwist.
+Der überprüfte anti-lineare Picard Pfeil liefert für
+sich keine Identifikation mit diesem linearen Operator.
+
+Die Normen der Diskriminantgeneratoren sind 3/4 und 5/4.
+Die übliche bedingte E8 Verklebung ist damit möglich.
+Der Paritätstwist negiert bei ungerader A3 Permutation
+deren Diskriminantgenerator. Eine verklebungsverträgliche
+D5 Operation muss ebenfalls die beiden Spinorklassen
+tauschen. Im festen D5 Block wurden alle signierten
+Permutationen geprüft. Genau zwölf erhalten das gegebene
+diagonale Y, alle ohne Vorzeichenwechsel. Die zwölf,
+die Y zu -Y schicken, haben fünf Vorzeichenwechsel und
+tauschen die Spinorklassen. Der ungerade lineare v117
+Zug ist also innerhalb dieser ursprünglichen blockweisen
+Gitteraktion mit unverändertem Y nicht gemeinsam hebbar.
+Ein ladungskonjugierender Pfeil in den anderen Sektor
+ist ein eigener Anschluss und wurde nicht ausgeschlossen.
+
+Die vollständige Picard Symmetrie fixiert auf dem
+zweidimensionalen Prym exakt einen Strahl positiver
+Hermitescher Formen. Die kanonische integrale Prym
+Polarisation hat primitiven Typ (1,2); alle integralen
+Formen auf diesem Strahl sind ganzzahlige Vielfache.
+Modulo zwei sind sie degeneriert. Die eingefrorene
+ungerade (1,3) Form aus v784 kann daher nicht invariant
+unter allen 48 Automorphismen sein. Das bloße Erweitern
+der Gruppe behebt die alte symplektische Codefrage
+auf derselben Prym Faser nicht. Primärquelle für
+die kanonische Polarisation: Laga und Shnidman,
+DOI 10.1112/jlms.70347.
+
+Die Fläche 8pi ist bei Krümmung -1 richtig und gilt für
+jede kompakte Kurve vom Genus drei. Als Inversfläche
+bestimmt sie c3 nur nach der zusätzlichen Identifikation
+dieser Kurvennormierung mit der ursprünglichen
+physikalischen P1 Flächennorm. Die Punktgitter und der
+übliche Weinbergwinkel 3/8 mit gegebenem Y ersetzen
+weder die Ladungswirkung noch ein Konfigurationsmaß.
+
+4. Nächste physische Probe
+
+Die bedingte longitudinale Randform ist jetzt bis zur
+vollen Fock Norm, einer gemischten schwachen Nebenform
+und dem radialen marginalen Beitrag berechnet. Die
+gemeinsame physische Randform verlangt den tatsächlichen
+geometrischen marginalen Faktor auf demselben Originalschnitt.
+Die Endpunktwerte der beiden Windungen, der geschlossene
+Q4 Rückkanal und die gemischte geladene Antwort müssen
+auf genau diesem Maß gemeinsam entstehen. Die Picard
+Familienkonstruktion ist als positiver A4 Anschluss zu
+erhalten. Für eine Erweiterung zur geladenen Quelle muss
+die tatsächliche anti-lineare Ladung und der Austausch
+der Spinorsektoren aus der ursprünglichen Reflexion folgen.

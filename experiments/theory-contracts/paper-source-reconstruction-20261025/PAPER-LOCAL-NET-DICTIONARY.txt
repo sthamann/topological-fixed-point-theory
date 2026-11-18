@@ -1,0 +1,257 @@
+PAPER-LOCAL-NET-DICTIONARY
+==========================
+
+Purpose
+-------
+
+This note records the strongest source-to-field map that is actually proved in
+the existing TFPT papers, and separates it from the still conditional E8 local
+net reconstruction.  It is a source audit.  It changes no Atlas or ledger
+status.
+
+Verdict
+-------
+
+The papers already contain a genuine microscopic-to-boundary field map.  It is
+the charged scaling limit of one complex chiral CAR channel of the original
+filled QWZ strip.  It preserves the filled-sea vacuum, both field adjoints,
+integer charge, the microscopic time evolution, positive excitation energy,
+and sampled spatial support on a common finite-energy core.
+
+The papers do not contain a map from the scalar P1 datum itself to that QWZ
+source, nor a same-source construction of the odd Z4 simple-current fields
+which add the 128 spinor currents and generate the E8 extension.  The local E8
+net theorem is therefore a rigorous conditional theorem whose remaining
+antecedent is the support-preserving microscopic exhaustion condition ALG-EXH.
+No global CAR to P1 bulk isomorphism is needed for the boundary theorem, but a
+boundary source identification is still needed.
+
+1. The proved microscopic CAR boundary map
+-------------------------------------------
+
+The active paper source
+
+  paper-source:7296b452273b7022082ac2e2
+  tex-artefacts/toe_research_20260909.tex, lines 16-96
+
+fixes one concrete source, rather than an abstract free-field model:
+
+  * the number-conserving QWZ strip with width 8, mass 1 and holonomy r=1;
+  * its negative-energy projector P_N of rank 8N;
+  * its actually filled sea Omega_N;
+  * H_N = dGamma(N h_N/(2 pi)) - Tr(P_N N h_N/(2 pi));
+  * Q_N = Number - 8N.
+
+For a smooth periodic boundary test function g it defines the top-row vector
+
+  (R_N g)(x,y) = N^(-1/2) exp(-i pi x/(2N)) g(x/N)
+                 delta_(y,7) chi_+
+
+and the actual microscopic field
+
+  Psi_N(g) = a_N(R_N g).
+
+These operators satisfy the exact CAR, Psi_N has charge -1, its adjoint has
+charge +1, and both are supported on the sampled support of g.  They are not
+auxiliary charge-register operators.
+
+The paper constructs a one-particle isometry J_N from the chiral current modes
+to projected source edge modes, with
+
+  P_N J_N = J_N P_cur
+
+exactly and an explicit O(rho_j) mode error.  Second quantization relative to
+the filled sea maps the target vacuum, particles and holes into the same source
+Fock space.  On every fixed finite-energy core it proves convergence of the
+fields and their adjoints, charge intertwining, and the transported time law
+
+  g_t(x) = exp(i t/4) g(x - t/(2 pi)).
+
+The source commutator and transport estimates are uniform in N for each smooth
+g.  Consequently every fixed finite field word and every corresponding vacuum
+moment converges.  This is the existing local field, state and time
+intertwiner.  Its target is one complex chiral CAR channel with integer charge.
+It is not the compiler's sixteen real Majoranas and is not yet an E8 spin
+field.
+
+2. What the neutral multipoint result adds
+------------------------------------------
+
+The same source and filled projector give neutral four-word limits without a
+change of dynamics:
+
+  paper-source:cd8ffe37854d065f0df6c453
+  tex-artefacts/toe_research_20260909.tex, lines 97-114.
+
+Alternating words cancel the outer history ramps and normal ordering is the
+finite-sea trace subtraction.  The result includes collision control in L1
+for the stated four-point family.  The paper explicitly warns that pair-Gram
+positivity is not Osterwalder-Schrader positivity.
+
+A later synthesis derives, for eight declared identical and equally oriented
+copies with product vacuum, the distributional weight-one pair kernel
+
+  (1 - exp(2 pi i (b-a) - 0))^(-2).
+
+Source:
+
+  paper-source:10db59c23f40c37375a6f46d
+  TFPT_Gesamtsynthese, lines 174-258.
+
+This is a real common-source pair response.  The eight copies remain a stated
+input.  The kernel does not determine zero-mode charge, cocycle, spinor
+chirality, local exchange products or all mixed currents.  It therefore does
+not by itself construct the odd E8 sectors.
+
+The newly derived native octic F8 response belongs on this neutral/current
+side of the dictionary: it is an even CAR current composite in the already
+available source.  It neither creates the two odd 64-dimensional grades nor
+proves microscopic exhaustion.
+
+3. The strongest conditional local E8 theorem
+----------------------------------------------
+
+The charged MMST memorandum states the exact implication:
+
+  paper-source:b09cb15941959108aaa64faa
+  mmst_charged_scaling_limit_en, lines 45-100.
+
+Let A be the neutral current net and let Psi_(k lambda,N), k in Z4, be the
+charged candidate generators.  If the full local scaling algebra is exhausted
+by A and these four grades, then the fields converge on a common finite-energy
+core, the local algebras converge to a local conformal extension B, finite Z4
+crossed products and expectations commute with the limit, and
+
+  B is the strongly local lattice net A_(V_E8) = (E8)_1.
+
+The logical split inside this implication is precise.
+
+Proved pieces:
+
+  * graph convergence and energy control for the edge-projected charged
+    candidate fields;
+  * relative locality against the neutral D5 plus A3 current net, from the
+    integral pairings <lambda,alpha> in Z
+    (paper-source:d83d12cab2865e92155c8a1c, lines 1-42);
+  * the finite-group crossed-product and conditional-expectation limit;
+  * preservation of compatible invariant states and their GNS expectations
+    (paper-source:792aea785e4efca243045914, lines 308-366);
+  * the fixed marked C4 extension and its E8 identification once a local,
+    irreducible, common-stress-tensor extension exists.
+
+Open antecedent:
+
+  ALG-EXH requires, interval by interval,
+
+    limsup_N B_N(I)
+      subset W*(A(I), overline(Psi_(k lambda)(f)))
+      subset liminf_N B_N(I),
+
+  or equivalently the two phase-space and finite-energy approximation
+  estimates written in equation (5.31) of
+  paper-source:fa103420115caae1fcee2ec6, lines 83-212.
+
+The paper supplies an exact one-mode counterexample to the earlier
+Vandermonde shortcut: full CAR compression can be M_2 while the even/code
+generated algebra is only diagonal.  Thus finite-sector counting cannot prove
+the upper inclusion.  FE-GEN or an exact gauge/code-projected microscopic
+algebra theorem is independently required.
+
+Once L1/L2 hold, the endpoint is rigid.  For
+
+  A = A_(D5,1) tensor A_(A3,1),  mu_A = 4*4 = 16,
+
+the diagonal isotropic subgroup has order 4, so KLM gives
+
+  mu_B = 16/4^2 = 1.
+
+The common stress tensor, finite-dimensional L0 spaces and the lattice
+
+  union_(k=0)^3 (D5 plus A3 plus k lambda)
+
+then identify B with the unique rank-8 even unimodular lattice net E8.  This
+argument is in paper-source:8f22ae2e47e6a9e2b2f0d308, lines 1-114.  It is
+an endpoint theorem, not the missing microscopic realization.
+
+4. Reflection, state and time are present in two different constructions
+--------------------------------------------------------------------------
+
+The filled-QWZ source has the actual source vacuum and time dynamics, but its
+neutral paper proves pair-Gram positivity only and explicitly does not prove
+OS positivity.
+
+The WOIT beta_2 finite free seam model separately constructs a positive OS
+quotient, a fixed vacuum, a positive self-adjoint transfer step and a compact
+KMS representation.  Its beta_3 continuation constructs the compatible
+anti-unitary reflection.  Sources:
+
+  paper-source:fbdc575f08b751529cc80783, lines 139-390.
+
+That result is restricted to the finite free/quotient seam model.  The same
+source says that the interacting holomorphic algebra is untouched and all
+seven kill tests remain live there.  It therefore cannot be composed with the
+QWZ-to-CAR field map as if the two source representations had already been
+identified.
+
+5. Exact relation to P1
+-----------------------
+
+In the architecture paper P1 is the scalar normalization
+
+  c3 = 1/(8 pi),
+
+given the geometric reading one half times the S2 Gauss-Bonnet coefficient:
+
+  paper-source:7b58a2b8767cacd98fa2feb4, lines 201-243.
+
+It does not specify a local algebra, a covariance, a vacuum, a Hamiltonian or
+a field insertion.  The older claim that P1 forces the chiral edge is marked
+conditional and explicitly leaves SEAM.EQUIV.01 open:
+
+  paper-source:4b317ed30cf21a13d786c49d, lines 1-52.
+
+The later P1/KMS statement is also conditional.  Even after the E8 net and its
+unique rotational KMS state are obtained, deriving c3 requires the additional
+operator identification of the determinant-line modular response with an
+additive transitive four-channel response:
+
+  paper-source:fa1bb1505a5a15659ba5956c, lines 115-175.
+
+The paper states explicitly that the net theorem does not make this
+identification.
+
+6. The smallest constructive closure target
+--------------------------------------------
+
+A global isomorphism between an entire 3+1-dimensional P1 bulk theory and a
+free CAR theory is stronger than the boundary result needs.  The smallest
+useful closure is one boundary functor on the existing collar, with four
+simultaneous properties:
+
+  (S) Source selection.  Derive from the original P1/P2 boundary data either
+      the fixed QWZ collar and filled-sea covariance used above, or a local
+      covariance in the same scaling class.  This must also derive the eight
+      equally oriented copies if the eight-copy current construction is used.
+
+  (C) Charged extension.  In that same source Hilbert space construct a
+      support-preserving, renormalized inter-sector field for the odd Z4
+      grades, with both adjoints, charge, cocycle, Clock/mark action, energy
+      bound and time transport.  The paper identifies this exact missing
+      source-to-source bridge in
+      paper-source:0437442fcf03b22a6f32088b, lines 193-215.
+
+  (E) Exhaustion.  Prove the two ALG-EXH estimates, so no bounded local
+      ultraviolet sequence survives outside the neutral currents and the four
+      charged grades.
+
+  (R) Reflection on the same representation.  If the OS/KMS conclusion is
+      required, prove reflection positivity and descent for this same QWZ and
+      charged representation, rather than importing the finite free seam OS
+      quotient.
+
+Under (S), (C) and (E), the already proved conditional theorem supplies the
+local 1+1-dimensional E8 boundary net, its vacuum, conformal Hamiltonian and
+Z4 expectation.  Adding (R) supplies the desired same-representation OS/KMS
+dictionary.  None of these steps implies a 3+1-dimensional bulk source or a
+physical detector process.
+

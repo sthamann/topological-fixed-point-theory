@@ -1,0 +1,155 @@
+THE ACTUAL FOLDED STRESS: LOCAL HISTORIES AND THE FIRST NONZERO JET
+=================================================================
+
+Claim: MATH.NATIVE.FOLDED-OCTIC-WARD.01
+Status: PROVED within the supplied original quarter CAR/fold current
+realization. This is a nonzero transition amplitude, not pure-state
+preparation or an identification of this net with the primitive P1 seed.
+
+1. The reference state is part of the operator dictionary
+---------------------------------------------------------
+Write Omega_d for the ground vector of the actual shifted oscillator
+module, not for a shift vector. In its underlying oscillator coordinates,
+
+  L_n^d=L_n+d.h_n+||d||^2 delta_n0/2,
+  L_0^d Omega_d=h_d Omega_d,    h_d=||d||^2/2=85/256.
+
+The fixed O/M/U+ dictionary gives b=U_+^T O^T d. The normalized native
+octic state in this module is
+
+  |F8;d> = F8hat(a_+,-1) Omega_d,
+  F8hat(x)=I8(x)/(96 sqrt(140)).
+
+It has relative oscillator weight eight and polarization degree plus
+eight. The Hilbert product is linear in the second slot. The exact
+checker obtains F8hat(b) != 0 in BOTH original quarters alpha=1/4,3/4.
+It also proves ||F8;d||=1. No variable d is adjusted to obtain a hit.
+
+The unshifted statement remains valid: F8hat is primary for L_n and is
+orthogonal to all stress descendants of the unshifted vacuum. In the
+actual shifted representation it is not primary for L_n^d. Already
+L_1^d F8hat has nonzero x0^7 coefficient b_0/(12 sqrt(140)).
+
+2. All oscillator words in the translation orbit
+------------------------------------------------
+Put y_n=d.h_-n. On these creation polynomials the actual L_-1^d is
+
+  L_-1^d = y_1 + sum_(n>=1) n y_(n+1) partial_(y_n).
+
+This follows from [L_-1,h_-n]=n h_(-n-1), with L_-1 Omega_d=0 for the
+unshifted oscillator part. Consequently its full descendants are
+
+  V_k=(L_-1^d)^k Omega_d
+     =k! [z^k] exp(sum_(n>=1) y_n z^n/n) Omega_d.           (1)
+
+At k=8, equation (1) has all p(8)=22 oscillator partitions, including
+the modes -2 through -8. None is replaced by a single-mode truncation.
+The exact checker independently constructs V_k by the displayed
+derivation and by the partition formula for every k=0,...,8. It then
+computes its full norm using
+
+  ||product_n y_n^(m_n) Omega_d||^2
+    =product_n m_n! (n ||d||^2)^(m_n),
+
+and obtains k!(||d||^2)_k at every level. At d=0 all positive-level
+descendants vanish, recovering the unshifted vacuum control.
+
+Only the y_1^8 term can pair with |F8;d>; its coefficient in V_8 is one.
+Thus the exact all-word identity is
+
+  <F8;d|V_8> = 8! conjugate(F8hat(b)) != 0.                 (2)
+
+The complete unitary disk-Mobius orbit is
+
+  U(w) Omega_d=(1-|w|^2)^h_d exp(w L_-1^d) Omega_d,
+  <F8;d|U(w) Omega_d>
+    =(1-|w|^2)^h_d w^8 conjugate(F8hat(b)),   |w|<1.        (3)
+
+Its norm is one by sum_n (2h_d)_n |w|^(2n)/n!
+=(1-|w|^2)^(-2h_d). Higher levels in (3) are retained. A matrix element
+extracts a component; it does not perform a physical projection.
+
+3. Smooth local stress histories
+---------------------------------
+For a real smooth fold-circle profile g, fix the Fourier convention by
+
+  A_d(g)=sum_n g_(-n) L_n^d,
+  c_-1=coefficient of L_-1^d=g_1.
+
+The unshifted Sugawara operator L_n has polarization degree zero. The
+linear shift d.h_n has degrees plus or minus one. A product of k copies
+of A_d(g) cannot reach degree plus eight when k<8, so
+
+  <F8;d|A_d(g)^k Omega_d>=0,                 k<8.           (4)
+
+At k=8 every factor must contribute the positive linear shift. Their
+commutators have zero polarization degree and cannot contribute. After
+commuting away annihilators, all eight surviving creation modes have
+positive oscillator weight. Total weight eight forces all to be -1.
+The complete eighth coefficient therefore is
+
+  <F8;d|A_d(g)^8 Omega_d>
+    =8! conjugate(F8hat(b)) c_-1^8.                         (5)
+
+These statements apply to the whole smooth profile. To pass from a finite
+Fourier sum to g, use smooth Fourier convergence and the current/stress
+energy bounds on the common smooth-energy domain. The shifted finite
+energy vector Omega_d lies in every domain required for (4)-(5). The
+self-adjoint smeared stress generates its unitary flow, and the finite
+order spectral theorem Taylor expansion gives
+
+  <F8;d|exp(i t A_d(g)) Omega_d>
+    =t^8 conjugate(F8hat(b)) c_-1^8+o(t^8).                 (6)
+
+No analyticity of a general smooth vector is assumed. Differentiability
+through order eight suffices. A projective scalar phase leaves the first
+nonzero coefficient unchanged. If c_-1 != 0 the exact amplitude is nonzero
+for all sufficiently small nonzero real t. The transition probability
+begins at t^16 |F8hat(b)|^2 |c_-1|^16+o(t^16).
+
+For every proper fold interval choose a smaller subinterval of width
+less than pi and a nonzero, nonnegative smooth bump there. Rotating to
+its centre makes the real part of its first Fourier coefficient strictly
+positive. Hence c_-1 != 0 is available with genuine local support. The
+argument keeps the infinite Fourier tail of the bump.
+
+4. Original localization and the scope of the origin result
+------------------------------------------------------------
+The original operator relation is
+
+  Lhat_n=Lcal_(8n)^alpha/8+21/64 delta_n0.
+
+Thus the fold profile lifts to v(theta)=g(8theta)/8 on the original CAR
+circle. A fold-local operation is supported on eight preimage intervals
+there. This is the actual locality dictionary; it does not turn one
+fold interval into one original interval.
+
+GEOMETRIC-SOURCE-JET.txt derives its one-particle jet by half-density
+diffeomorphism transport of the supplied quarter Dirac operator. The
+linear source generator is stress. Its DIRECT F8 matrix element is zero,
+while the eighth ordered response (5) is nonzero. Demanding a nonzero
+first-order F8 coupling therefore excludes an actual supplied mechanism
+without justification.
+
+The profile g and pulse strength t specify an intervention. The remaining
+P1 origin question is the exact embedding of this supplied source net,
+ground state, reflection, clock and collar into the primitive seed. It is
+not a demand that P1 choose every laboratory pulse. Full transport of all
+data is a passive equivalence; an active unitary at a fixed detector is a
+different comparison. Neither equation (5) nor (6) proves exclusivity of
+the F8 ray, a six-outcome measurement instrument, or a 3+1-dimensional
+physical reconstruction.
+
+Original source and standard analytic input
+-------------------------------------------
+  joint-native-algebra-selection-20261016/
+    FOLD-COVARIANCE-TO-NATIVE-FIELD-RESPONSE.txt:109-164
+    ORIGINAL-DENSITY-GEOMETRY-AND-TIME-HISTORIES.txt:188-221
+    FULL-SOURCE-HULL-AND-QUARTIC-OPE.txt:81-91
+  v16-operator-pullback-20261014/FOLD-AUDIT.md:36-86
+  Carpi, Kawahigashi, Longo, Weiner, From vertex operator algebras to
+    conformal nets and back, arXiv:1503.01260, stress-energy covariance
+    and energy-bounded smeared fields.
+    https://arxiv.org/abs/1503.01260
+
+All relative source paths above are under experiments/theory-contracts/.

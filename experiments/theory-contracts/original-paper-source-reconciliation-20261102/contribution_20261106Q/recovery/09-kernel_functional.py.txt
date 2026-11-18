@@ -1,0 +1,151 @@
+1: """Exact finite coherent kernels for even CAR operators.
+2: 
+3: Conditional algebra on the existing collar path. This reconstructs finite
+4: operator matrices and sews their kernels; it does not select a P1/P2 source or
+5: claim a physical field theory. Fock bit ordering is the source_sewing ordering.
+6: """
+7: from __future__ import annotations
+8: 
+9: import argparse
+10: from fractions import Fraction
+11: import hashlib
+12: import json
+13: from pathlib import Path
+14: import re
+15: 
+16: import sympy as sp
+17: 
+18: from joint_source import add, clean, exponential, multiply, scale, variable
+19: from source_sewing import source_lift
+20: 
+21: 
+22: def _check_operator(matrix):
+23:     t = sp.Matrix(matrix)
+24:     if t.rows != t.cols or t.rows not in (2, 4, 8, 16, 32):
+25:         raise ValueError("exact kernel reconstruction accepts 1..5 CAR modes")
+26:     n = t.rows.bit_length() - 1
+27:     for i in range(t.rows):
+28:         for j in range(t.cols):
+29:             if ((i.bit_count() - j.bit_count()) & 1) and t[i, j] != 0:
+30:                 raise ValueError("kernel chart accepts parity-even operators only")
+31:     return t, n
+32: 
+33: 
+34: def _sign(number):
+35:     return (-1) ** (number * (number - 1) // 2)
+36: 
+37: 
+38: def kernel(matrix, bar_start=0, field_start=None):
+39:     """K_T(bar z,z)=sum_IJ (-1)^C(|I|,2) bar z_I T_IJ z_J."""
+40:     t, n = _check_operator(matrix)
+41:     field_start = bar_start + n if field_start is None else field_start
+42:     out = {}
+43:     for i in range(1 << n):
+44:         for j in range(1 << n):
+45:             coefficient = _sign(i.bit_count()) * t[i, j]
+46:             if coefficient == 0:
+47:                 continue
+48:             monomial = {0: sp.Integer(1)}
+49:             for mode in range(n):
+50:                 if i >> mode & 1:
+51:                     monomial = multiply(monomial, variable(bar_start + mode))
+52:             for mode in range(n):
+53:                 if j >> mode & 1:
+54:                     monomial = multiply(monomial, variable(field_start + mode))
+55:             out = add(out, scale(monomial, coefficient))
+56:     return clean(out)
+57: 
+58: 
+59: def matrix_from_kernel(poly, modes, bar_start=0, field_start=None):
+60:     """Invert the coefficient map for a polynomial in the standard kernel chart."""
+61:     if not 1 <= modes <= 5:
+62:         raise ValueError("exact kernel reconstruction accepts 1..5 CAR modes")
+63:     field_start = bar_start + modes if field_start is None else field_start
+64:     result = sp.zeros(1 << modes)
+65:     for i in range(1 << modes):
+66:         for j in range(1 << modes):
+67:             mask = sum(1 << (bar_start + k) for k in range(modes) if i >> k & 1)
+68:             mask |= sum(1 << (field_start + k) for k in range(modes) if j >> k & 1)
+69:             result[i, j] = sp.simplify(_sign(i.bit_count()) * poly.get(mask, 0))
+70:     return result
+71: 
+72: 
+73: def action_split(matrix, bar_start=0, field_start=None):
+74:     """Return (lambda, S_nil) with lambda*exp(-S_nil)=K exactly."""
+75:     k = kernel(matrix, bar_start, field_start)
+76:     scalar = sp.simplify(k.get(0, 0))
+77:     if scalar == 0:
+78:         raise ValueError("nilpotent action chart requires a nonzero scalar body")
+79:     n = sp.Matrix(matrix).rows.bit_length() - 1
+80:     normalized = scale(k, 1 / scalar)
+81:     nil = dict(normalized)
+82:     nil[0] = sp.simplify(nil.get(0, 0) - 1)
+83:     nil = clean(nil)
+84:     # Each nonzero term has positive Grassmann degree; 2n is a safe finite bound.
+85:     log = {}
+86:     power = nil
+87:     for order in range(1, 2*n + 1):
+88:         if not power:
+89:             break
+90:         coefficient = sp.Rational((-1) ** (order + 1), order)
+91:         log = add(log, scale(power, coefficient))
+92:         power = multiply(power, nil)
+93:     return scalar, scale(log, -1)
+94: 
+95: 
+96: def _berezin_integral(poly, modes, internal_start):
+97:     internal_mask = ((1 << (2 * modes)) - 1) << internal_start
+98:     orientation = (-1) ** (modes * (modes + 1) // 2)
+99:     return clean({mask ^ internal_mask: orientation * coefficient
+100:                   for mask, coefficient in poly.items()
+101:                   if mask & internal_mask == internal_mask})
+102: 
+103: 
+104: def sew(left, right):
+105:     """Berezin sew K_left(bar x,w) and K_right(bar w,y), returning K_(left right)."""
+106:     a, n = _check_operator(left)
+107:     b, m = _check_operator(right)
+108:     if n != m:
+109:         raise ValueError("sewn kernels must have the same number of modes")
+110:     # Variable blocks: bar-x, bar-w, w, y. The chosen Berezin orientation makes
+111:     # integral exp(-bar-w w)=1, matching joint_source.berezin_source.
+112:     left_kernel = kernel(a, bar_start=0, field_start=2*n)
+113:     right_kernel = kernel(b, bar_start=n, field_start=3*n)
+114:     gaussian = scale(sum_polynomials(
+115:         multiply(variable(n + j), variable(2*n + j)) for j in range(n)), -1)
+116:     integrand = exponential(gaussian, 4*n)
+117:     integrand = multiply(multiply(left_kernel, integrand), right_kernel)
+118:     integrated = _berezin_integral(integrand, n, n)
+119:     # Collapse the external y field block from its temporary 3n offset back
+120:     # to the canonical kernel's n offset.
+121:     result = {}
+122:     for mask, coefficient in integrated.items():
+123:         bars = mask & ((1 << n) - 1)
+124:         fields = (mask >> (3*n)) & ((1 << n) - 1)
+125:         result[bars | (fields << n)] = coefficient
+126:     return clean(result)
+127: 
+128: 
+129: def sum_polynomials(polys):
+130:     result = {}
+131:     for poly in polys:
+132:         result = add(result, poly)
+133:     return result
+134: 
+135: 
+136: def coherent_trace(matrix, insertion=None):
+137:     """Tr(T W) via integral exp(-bar z z) K_(T W)(-bar z,z)."""
+138:     t, n = _check_operator(matrix)
+139:     w = sp.eye(t.rows) if insertion is None else sp.Matrix(insertion)
+140:     w, nw = _check_operator(w)
+141:     if n != nw:
+142:         raise ValueError("trace insertion must have the same Fock dimension")
+143:     tw = t * w
+144:     k = kernel(tw, bar_start=0, field_start=n)
+145:     substituted = {mask: coefficient * (-1) ** (mask & ((1 << n) - 1)).bit_count()
+146:                    for mask, coefficient in k.items()}
+147:     gaussian = scale(sum_polynomials(
+148:         multiply(variable(j), variable(n + j)) for j in range(n)), -1)
+149:     integral = multiply(exponential(gaussian, 2*n), substituted)
+150:     return sp.simplify(_berezin_integral(integral, n, 0).get(0, 0))
+151: 

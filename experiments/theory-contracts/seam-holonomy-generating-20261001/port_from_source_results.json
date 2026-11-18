@@ -1,0 +1,63 @@
+{
+  "steps": [
+    {
+      "step": "G1.the raw clock's orbit of one access point closes after 4 steps: positions p, p+N/4, p+N/2, p+3N/4 (computed)",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "step": "G2.cross-ratio of the computed access points = 2 (harmonic): lambda = -1 is an OUTPUT",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "step": "G3.full clock covariance [Q,K] = 0 on the vacuum mark kernel (all N)",
+      "pass": true,
+      "detail": "max 0.0e+00"
+    },
+    {
+      "step": "G4.uniform port: E_+ K E_+ is rank one along s; alternating eigenvalue / uniform -> 0 as N grows",
+      "pass": true,
+      "detail": "lam_v/lam_s = 5.43e-05, 1.36e-05, 3.39e-06, 8.49e-07"
+    },
+    {
+      "step": "G5.normalised vacuum kernel -> circ(0,1,2,1) (the original C_mark of v484/v485), hence E_+ C E_+ = 4 P0 as output",
+      "pass": true,
+      "detail": "K/K01 row0 = [-0.0, 1.0, 2.0, 1.0]"
+    },
+    {
+      "step": "G6.with that kernel: E_+ C E_+ = 4 P0 and det(I-uC) = (1-4u)(1+2u)^2 (spectrum 4,-2,0,-2)",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "step": "G7.control: one point per station but NOT a clock orbit -> [Q,K] != 0, non-harmonic cross-ratio, port not along s",
+      "pass": true,
+      "detail": "cr=1.4347, lam_v/lam_s=0.065"
+    },
+    {
+      "step": "G8.control: square marks but the non-logarithmic current kernel |C|^2 -> even port has rank 2 (log/Green kernel is essential)",
+      "pass": true,
+      "detail": "lam_v/lam_s = -1.000"
+    },
+    {
+      "step": "G9.universality: with next-nearest hopping t2=0.3 the port is again rank one along s ([Q,K]=0, ratio -> 0, K02/K01 -> 2)",
+      "pass": true,
+      "detail": "ratio 4.3e-05, K02/K01 1.9998; ratio 9.4e-07, K02/K01 2.0000"
+    }
+  ],
+  "passed": 9,
+  "total": 9,
+  "ratios": {
+    "256": 5.4293132060805125e-05,
+    "512": 1.3577723667969706e-05,
+    "1024": 3.3947082021022858e-06,
+    "2048": 8.48699437802451e-07
+  },
+  "K_normalised_N2048": [
+    -0.0,
+    1.0,
+    2.000003394800632,
+    1.0
+  ]
+}

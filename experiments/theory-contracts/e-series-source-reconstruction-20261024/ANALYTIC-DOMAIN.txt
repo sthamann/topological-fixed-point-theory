@@ -1,0 +1,125 @@
+MATH.SEAM.ESERIES.SOURCE-RECONSTRUCTION.06 / analytic-domain audit and repair
+24 October 2026
+
+Verdict
+
+The universal infinitesimal-boundedness assertion in the original
+thm:well-posed-primitive-dynamics is FALSE. A valid same-domain theorem
+requires the actual relative bound to be smaller than1, or a verified
+bounded zeroth-order perturbation. No conclusion is made here that the
+intended special TFPT operator has no valid realization.
+
+1. The original assertion and the invalid step
+
+Boundary-source section001, lines353-376, chooses a compact self-adjoint
+Dirac anchor A with a self-adjoint elliptic modified APS boundary condition.
+It asserts that every symmetric bounded-coefficient differential B of
+order<=1 is infinitesimally A-bounded. The proof continues at section002,
+lines1-30. Its valid estimates are
+
+  ||psi||_H1 <= C(||A psi||+||psi||),
+  ||B psi|| <= C1 ||psi||_H1+C0||psi||.
+
+They imply only
+
+  ||B psi|| <= C1*C ||A psi||+(C1*C+C0)||psi||.
+
+The coefficient C1*C is fixed. It cannot be replaced by an arbitrary
+epsilon>0. Same differential order gives graph boundedness, not relative
+bound zero.
+
+2. Counterexample within the stated modified APS boundary class
+
+On H=L2([0,2*pi]), let
+
+  A=-i*d/dx,
+  Dom(A)={f in H1([0,2*pi]): f(0)=f(2*pi)}.
+
+Integration by parts shows that the adjoint has exactly the same periodic
+trace condition, so A=A*. Its orthonormal eigenbasis is
+
+  e_n=(2*pi)^(-1/2) exp(i*n*x),  A e_n=n e_n, n in Z.
+
+The tangential boundary operator in this one-dimensional example is0 on
+the two endpoints. Its kernel is the complete C2 boundary space. The
+periodic trace line L={(z,z)} is Lagrangian for the Green boundary form,
+so this is precisely a self-adjoint modified APS condition. It is also
+the elliptic transmission condition obtained by cutting the circle.
+
+Take B=-A on the same domain. It is symmetric, first order, and has
+constant bounded coefficients. Its exact A-relative bound is1: any bound
+with coefficient a gives |n|<=a|n|+b, so a>=1, while a=1,b=0 works.
+In particular the estimate with epsilon=1/2 is impossible.
+
+Moreover A+B is zero on the proper dense domain Dom(A), whereas its
+adjoint is zero on all of H. It is not self-adjoint on the original
+domain and is not closed there. Thus the theorem's general same-domain
+conclusion also fails, not just the proof of relative bound zero.
+
+This is a counterexample to the generic mathematical theorem. It is not
+presented as a full P1/P2 physical model.
+
+3. Reflection oddness does not lower the differential order
+
+The original split is D_rel=(D-U_tau D U_tau^-1)/2. Once a unitary bundle
+lift of the geometric reflection is actually specified, its principal
+symbol satisfies
+
+  sigma1(D_rel)=1/2(sigma1(D)-sigma1(U_tau D U_tau^-1)).
+
+Thus D_rel has order zero iff the two first-order symbols agree. Projecting
+onto the reflection-odd part alone proves no such equality.
+
+For example, on the doubled circle let D=-i*d/dx and U_tau f(x)=f(-x).
+Then U_tau D U_tau^-1=-D, so D_ref=0 and D_rel=D is first order. The fixed
+set is{0,pi} and the quotient is an interval. A different specified bundle
+or Pin lift may change the symbol parity. The source does not specify
+that lift or a principal-symbol equivariance identity; the actual intended
+special case therefore needs this check.
+
+Formal symmetry also does not fix the operator domain. If a reflection is
+used to compare two closed realizations, it must preserve or explicitly
+transport the APS boundary subspace, including the kernel Lagrangian.
+
+4. Correct conditional replacement
+
+Let A be a self-adjoint compact elliptic anchor with the chosen self-adjoint
+D-elliptic boundary condition. Suppose Dom(A) is contained in Dom(B), B is
+symmetric on Dom(A), and
+
+  ||B psi|| <= a ||A psi||+b||psi||,  a<1.
+
+Then A+B is self-adjoint on Dom(A) by Kato-Rellich. The two graph norms are
+equivalent, hence the compact inclusion of Dom(A) into H persists and the
+sum has compact resolvent as well.
+
+A reflection-specific sufficient condition is:
+
+  (i) a specified unitary reflection lift preserves the chosen domain;
+  (ii) sigma1(D)=sigma1(U_tau D U_tau^-1);
+  (iii) the resulting order-zero D_rel has bounded self-adjoint coefficients.
+
+Then B=D_rel is bounded symmetric on H, so a=0 and the same-domain result
+follows. If the first-order symbols do not cancel, an actual a<1 estimate
+must instead be derived. The graph estimate by itself is insufficient.
+
+There is a second notation check before applying any replacement: the
+carrier-source section006, lines271-273, later defines D_geo=D_ref+D_rel=D.
+Thus D_geo+D_rel is not simply the reconstructed D. One must name whether
+the anchor is D_ref, D_geo, or a separately declared operator, and apply
+the estimate to that actual pair. Renaming the operator cannot remove the
+domain and relative-bound requirement.
+
+References checked at the originals
+
+Gerald Teschl, Mathematical Methods in Quantum Mechanics, Theorem6.4:
+  https://www.mat.univie.ac.at/~gerald/ftp/book-schroe/schroe.pdf
+Bär and Ballmann, Boundary Value Problems for Elliptic Differential
+Operators of First Order (elliptic/transmission conditions, graph norms):
+  https://arxiv.org/abs/1101.1196
+Bär and Ballmann, Guide to Boundary Value Problems for Dirac-Type
+Operators, Theorems4.11-4.12 (self-adjoint domains and kernel normal form):
+  https://arxiv.org/html/1307.3021
+
+The infinite eigenvalue argument above is the proof. The finite
+discriminant/current checks in checker.py do not test this analytic claim.

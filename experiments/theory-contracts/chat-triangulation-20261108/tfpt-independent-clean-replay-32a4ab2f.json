@@ -1,0 +1,68 @@
+{
+  "checkout": "/Users/stefanhamann/Documents/Codex/2026-11-09/hol/work/tfpt-f1-source-weight-20261110",
+  "commit": "32a4ab2f01479dba78aa9e0f264924858134c1e9",
+  "git_status_command": [
+    "git",
+    "status",
+    "--porcelain=v1",
+    "--untracked-files=all"
+  ],
+  "git_status_before": "",
+  "git_status_after": "",
+  "execution": {
+    "command_template": [
+      "/opt/homebrew/opt/python@3.14/bin/python3.14",
+      "-B",
+      "-c",
+      "<audit_wrapper>",
+      "<absolute_script>",
+      "<checkout>",
+      "<forbidden_original_repo>"
+    ],
+    "audit_wrapper": "import os,runpy,sys\nfrom pathlib import Path\nscript, root, forbidden=sys.argv[1:4]\nassert Path(script).resolve().is_relative_to(Path(root))\nforbidden=Path(forbidden)\ndef hook(event,args):\n    if event in (\"open\",\"os.listdir\",\"os.scandir\",\"os.chdir\") and args and isinstance(args[0],(str,bytes,os.PathLike)):\n        candidate=Path(os.fsdecode(os.fspath(args[0]))).resolve()\n        if candidate.is_relative_to(forbidden):\n            raise RuntimeError(\"original repository access blocked: \"+str(candidate))\nsys.addaudithook(hook)\nsys.argv=[script,root]\nrunpy.run_path(script,run_name=\"__main__\")\n",
+    "cwd": "checkout",
+    "PYTHONPATH": "removed",
+    "forbidden_original_repo": "/Users/stefanhamann/Projekte/tfpt-theoryv4",
+    "OPENBLAS_NUM_THREADS": "1",
+    "OMP_NUM_THREADS": "1",
+    "PYTHONDONTWRITEBYTECODE": "1"
+  },
+  "checks": [
+    {
+      "id": "parity",
+      "script": "experiments/theory-contracts/chat-triangulation-20261108/check_original_parity_counterbond_20261110.py",
+      "expected_stdout": "experiments/theory-contracts/chat-triangulation-20261108/original-parity-counterbond-results-20261110.json",
+      "exit": 0,
+      "stderr_empty": true,
+      "stderr": "",
+      "stdout_byte_identical": true,
+      "stdout_sha256": "300d018c527bf3214dd33f46459a2be18ba0bac84cda7cf9355f1addd5e6fcca",
+      "expected_sha256": "300d018c527bf3214dd33f46459a2be18ba0bac84cda7cf9355f1addd5e6fcca",
+      "differences": []
+    },
+    {
+      "id": "sigma",
+      "script": "experiments/theory-contracts/chat-triangulation-20261108/check_native_sigma_glue_charge_20261110.py",
+      "expected_stdout": "experiments/theory-contracts/chat-triangulation-20261108/native-sigma-glue-charge-results-20261110.json",
+      "exit": 0,
+      "stderr_empty": true,
+      "stderr": "",
+      "stdout_byte_identical": true,
+      "stdout_sha256": "e9699ea2a4fc67705ae2a499016058b78878e21de123919dbd09a35732005418",
+      "expected_sha256": "e9699ea2a4fc67705ae2a499016058b78878e21de123919dbd09a35732005418",
+      "differences": []
+    },
+    {
+      "id": "weights",
+      "script": "experiments/theory-contracts/chat-triangulation-20261108/check_tfpt_conditioned_r113_weights_20261110.py",
+      "expected_stdout": "experiments/theory-contracts/chat-triangulation-20261108/tfpt-conditioned-r113-weights-results-20261110.jsonl",
+      "exit": 0,
+      "stderr_empty": true,
+      "stderr": "",
+      "stdout_byte_identical": true,
+      "stdout_sha256": "383143d5e23bf8224e2407602632e618396d2463239a3ade51c90bede3adae8f",
+      "expected_sha256": "383143d5e23bf8224e2407602632e618396d2463239a3ade51c90bede3adae8f",
+      "differences": []
+    }
+  ]
+}

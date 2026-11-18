@@ -799,8 +799,8 @@ _The quantum-gravity measure contract, the audit ledger, the data scorecard, and
   - deps: v388_corrections_budget, v388, v337, v374, v212, v187 · cited: introduction, origin theory
 - **v394_coxeter_atoms** [E/C] `COXETER.ATOMS.01` — COXETER.ATOMS.01: the clockwork coherence -- the three Coxeter primes ARE the three anchor atoms ARE the three number-field facets, and the prime-2 seam is the common dynamical fac
   - deps: v314, v319, v383, v387, v390, v23, v53 · cited: introduction, origin theory, research contracts
-- **v395_hypergraph_coupled** [E/O] `HYP.COUPLED.01` — HYP.COUPLED.01: the coupled hypergraph rewrite -- one local rule unifies v299+v327+v324 (carrier x family). [E] LOCAL COUPLED MICRO-RULE: state on 9 affine-E8 nodes x 3 family slot
-  - deps: v299, v312, v317, v324, v327 · cited: introduction, origin theory
+- **v395_hypergraph_coupled** [E/C/O] `HYP.COUPLED.01` — HYP.COUPLED.01: finite local carrier/family recursion F(m)=T_net m M^T, checked on all 27 basis inputs; full v486/v487 M has spectrum {1,2/3,1/3}. The joint Perron line is marks te
+  - deps: v299_hypergraph_0d_autonomous, v324_hypergraph_fiber, v327_hypergraph_rewrite, v486_transfer_full_rule, v487_transfer_clock_rungs, v299, v324, v327 · cited: introduction, origin theory
 - **v396_phi0_icosahedral** [E/C/O] `HYP.PHI0.01` — HYP.PHI0.01: the phi0 leading term from icosahedral combinatorics (sharpening v312/v395). [E] ICO COUNTS ANCHOR-FORCED: V=12, E=30=h(E8), F=20=g_car(g_car-1), |Aut|=120=4h=|2I|. [E
   - deps: v312, v216, v342, v327, v395 · cited: introduction, origin theory
 - **v397_external_clock_probe** [E/C] `FR.CLOCK.PROBE.01` — FR.CLOCK.PROBE.01: a FALSIFIABLE probe of how external the 'external physics' really is -- do the frontier scheme-numbers land on the {2,3,5} clock (the anchor atoms, v394) or not?

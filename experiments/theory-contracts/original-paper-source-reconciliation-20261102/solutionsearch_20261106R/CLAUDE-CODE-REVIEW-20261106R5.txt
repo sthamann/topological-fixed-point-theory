@@ -1,0 +1,133 @@
+Ergebnis vorab
+
+Blockierend vor dem Start sind drei kleine Punkte, alle mit wenigen Zeilen behebbar. Den Kern davon habe ich lokal mit dem launch.py aus dem Paket reproduziert:
+
+Ein R055-Wiederfund zählt als Zielfortschritt.
+Das Etikett „Ausführung beobachtet“ lässt sich mit cat erfüllen.
+Die Vollständigkeit der Guardrails wird nicht erzwungen.
+
+Dazu kommt ein reiner Textparameter (der Startauftrag), der eine wahrscheinliche Zielverfehlung in der ersten Runde vermeidet.
+
+Alles andere kann parallel verbessert werden. Ohne Befund bleiben: alte Checkpoints, keine physikalische Abnahme, Schema, Pfadflucht über ../, historisch unbekannte Labels und die Übereinstimmung des Prompts mit R055.
+
+Deine Korrekturen übernehme ich:
+
+Der Strahlengradtest gilt nur bei bekannten Restfaktoren. Divergenz zeigt man über einen Winkelpatch (R055 §3); Konvergenz bräuchte eine gleichmäßige Schranke über alle Richtungen einschließlich der Nullstellenmengen.
+IR ist nicht der ganze T_V.
+Eine Markenfamilie liefert eine Kandidatenfamilie. Eindeutigkeit vorab zu verlangen war zu streng.
+Blockierend vor Start
+B1. Wiedergefundene Ausschlüsse zählen als Fortschritt
+
+Befund. target_assessment wertet already_implied_by nirgends aus. Lokal geprüft: Der Kritiker meldet target_progress = candidate_excluded mit already_implied_by = [finding:bounded-fixed-rank-spectral-action-…]. Ergebnis ist effective_progress = candidate_excluded. followup reicht dann den lokalen Kritikertask ohne DIRECT_TARGET_TASK weiter.
+
+Warum das zählt. Das ist genau der wahrscheinlichste erste Schritt nach einem Neustart: einen Kandidaten vorschlagen, an R055 scheitern lassen und das als Fortschritt verbuchen. Damit entsteht wieder die alte Drift.
+
+Reparatur:
+
+
+python
+if claimed in ('candidate_excluded', 'definition_decided', 'input_derived') and review.get('already_implied_by'):
+    effective = 'none'; reasons.append('Already implied by: ' + ', '.join(review['already_implied_by']))
+
+Das ist konsistent mit RULES: Ein Ergebnis mit wirklich geänderter Prämisse soll den Befund dort gerade nicht als already_implied_by führen.
+
+Kontrolle: Der reproduzierte Fall muss none ergeben und als Folgeaufgabe DIRECT_TARGET_TASK enthalten.
+
+B2. Der Host behauptet eine Ausführung, die er nicht belegt
+
+Befund. Lokal geprüft: Der Kommandostring /bin/zsh -lc 'cat p.py' mit Exit 0, ein Produzent, der selbst mit Exit 1 endet, und eine Ergebnisdatei mit den Werten "handgeschrieben" ergeben zusammen candidate_computed mit dem Etikett candidate_artifacts_and_execution_observed.
+
+Die physikalische Abnahme berührt das nicht. Aber die eigene Evidenzaussage des Hosts wäre falsch, und genau diese Umgehung solltet ihr prüfen.
+
+Reparatur, minimal. Der Aufruf muss eine echte Python-Ausführung des Produzenten sein, und die Ausgabe dieses Kommandos muss den Hash der Ergebnisdatei enthalten:
+
+
+python
+import re
+inv = re.compile(r'(?:^|[\s/\'"])python[0-9.]*(?:\s+-\S+)*\s+(?:\S*/)?' + re.escape(producer.name) + r'(?:[\s\'"]|$)')
+digest = hashlib.sha256(result_file.read_bytes()).hexdigest()
+if not any(c.get('exit_code') == 0 and inv.search(c.get('command') or '')
+           and ('RESULT_SHA256=' + digest) in (c.get('output') or '') for c in commands):
+    raise ValueError('No observed producer execution that emitted this result file')
+
+In RULES kommt ein Satz hinzu: „The producer must print RESULT_SHA256=<sha256 of result_file>.“ Ohne diesen Satz scheitern legitime Kandidaten.
+
+Kontrollen:
+
+cat ergibt none.
+python p.py mit passendem Hash in der Ausgabe ergibt candidate_computed.
+Ein veränderter values.json nach dem Lauf ergibt none.
+B3. Guardrail-Vollständigkeit wird nicht erzwungen
+
+Befund. target_guardrails meldet fehlende IDs nur im Feld requested_ids_not_found. Der Prompt behauptet trotzdem: „The fixed_target_guardrails are embedded … In particular R055 already excludes …“. Fehlt eine ID, etwa durch abweichende Schreibweise oder Atlasstruktur, stimmt diese Behauptung still nicht.
+
+Reparatur in prepare:
+
+
+python
+if guardrails['requested_ids_not_found']:
+    raise FileNotFoundError('Guardrail findings missing: ' + ', '.join(guardrails['requested_ids_not_found']))
+
+Vor dem Start einmal die erzeugte target-source-guardrails.json ansehen: sieben Befunde, jeweils mit scope, premise_ids und sources.
+
+Startauftrag (Textparameter, keine Architektur)
+
+Die letzte Journalzeile hat kein target_assessment. Die erste neue Runde bekommt also GOAL_ANCHOR + DIRECT_TARGET_TASK + INITIAL_TASK. INITIAL_TASK verlangt erneut, nu_Vn und D_Vn aus Metrology005 herzuleiten. Das ist durch das Integrand-Review bereits begrenzt entschieden, und R1–R5 haben es schon umkreist. Ohne definition_decision in den Altzeilen ist eine Wiederholung wahrscheinlich.
+
+R055 §6 nennt dagegen den konkreten nächsten Originalproduzenten. Vorschlag für INITIAL_TASK:
+
+Führe den in R055 §6 benannten ursprünglichen Feldquellen-Pushforward aus S_prim/Z_adm oder dem Nahttransfer auf die H⁰(O1)-Koeffizienten aus. Lies zuerst den in R055 §1 erhaltenen endlichen Transferketten-Maßbegriff (tfpt2 section010:30–61) in seinem eigenen Scope. Prüfe als Erstes: Besitzt dieses ursprüngliche endliche Maß eine Pushforward-Abbildung mit tatsächlichem Support, tatsächlicher Dichte und Trägerabbildung auf die Higgs-Koeffizientenfaser? Ist das Ergebnis normierbar? Erst danach Ref/Eta/H0, Z[0] und die Marken 1 und u. Fehlt eine Komponente, wird sie als ausdrückliche Kandidatenhypothese mit erster neuer Annahme geführt. Den nu_Vn-Suchbefund des Integrand-Reviews nicht wiederholen.
+
+Weil prompts.py in die Kontextversion eingeht, entsteht automatisch eine neue Kontextversion. Das ist korrekt.
+
+Geprüft und nicht blockierend
+
+Alte Checkpoints. Drei Fälle, alle tragfähig:
+
+Ein laufender Altprozess, der per SIGTERM beendet wird, hinterlässt einen Teilaufruf. Der neue Code wiederholt nur die fehlende Rolle mit neuem Schema; ein alter Proposer ohne Kandidatenfelder wird über .get behandelt.
+Eine Altzeile ohne target_assessment führt zum Ankerauftrag.
+Wird ein Altprozess während eines Proposers ohne geschriebenes round-state.json gestoppt, folgt ebenfalls der Ankerauftrag.
+
+Eine bereits begonnene Runde mit vorhandenem State behält ihre alte Frage. Für genau eine Runde ist das vertretbar.
+
+Physikalische Abnahme. ADMISSION ist überall gesetzt. Assessment-Scope und Prompt sagen ausdrücklich „not host-admitted“. Es gibt keinen Pfad zu einem PASS.
+
+Weitere Punkte ohne Befund:
+
+falsified und unresolved führen zu none.
+input_derived ist nur bei tatsächlich vorausgesetztem Ziel gesperrt, also keine pauschale Zirkularität.
+Die Formulierung zu R055 im Prompt stimmt mit dem Originalbeweis überein: feste Ränge, beschränktes Profil, gewöhnliches nichtkompaktes Volumen, polynomiale Fermionfaktoren, keine Übertragung auf gemeinsame Rang- bzw. IR-Vorschriften und kein Ersatz durch die lokale Entwicklung.
+Parallel verbesserbar
+stop-after-round wird nie gelöscht. Ein späterer Neustart hält sonst nach einer Runde wieder an. Beim Start unlink(missing_ok=True) aufrufen oder den Betrieb entsprechend dokumentieren.
+Unabhängige Wiederholung für candidate_computed. Zusätzlich verlangen, dass der Kritiker den Produzenten des Proposers ausführt (der Lesezugriff besteht über das Run-Verzeichnis) und dieselben vier Werte erhält. Das schärft die Unabhängigkeit, ist aber nicht nötig, um die Evidenzaussage korrekt zu machen.
+Schwache Belege bei Ausschluss und Definitionsentscheidung. Bei candidate_excluded und definition_decided genügt jede beliebige Datei als Beleg. Für die Steuerung reicht das; später kann man ein strukturiertes Suchprotokoll verlangen.
+Wiederanlauf-Ablauf. Den alten Controller per SIGTERM beenden (er kennt stop-after-round noch nicht), dann mit B1–B3 und dem neuen Startauftrag neu starten. Die acht bisherigen Kontrollen plus die fünf neuen aus B1 und B2 sollten vorher grün sein.
+
+
+
+vor 8 Minuten
+
+
+
+
+
+
+Opus 5.5
+ Hoch
+
+
+Claude ist eine KI und kann Fehler machen. Bitte überprüfe die Antworten.
+Inhalt
+Claude_TFPT_Suchprogramm_Pruefpaket_2026-11-06.md
+
+MD
+
+Claude_TFPT_Sol_Laufpruefung_2026-11-06.md
+
+MD
+
+Claude_TFPT_Sol_Korrektur_Pruefdiff_2026-11-06.md
+
+MD
+
+Claude hat die Antwort abgeschlossen

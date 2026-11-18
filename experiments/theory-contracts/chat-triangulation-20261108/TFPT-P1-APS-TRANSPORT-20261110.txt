@@ -1,0 +1,173 @@
+TFPT | P1 und die Ableitung am ursprünglichen APS Rand
+10. November 2026 | Anschluss an Fundamentalplan 252
+Ergebniskennung TFPTP1APSTRANSPORT20261110
+
+Ergebnis
+--------
+Der im Original ausgeführte zweiflächige Produktkragen liefert einen
+eindeutigen Vorwärtstransport für jeden lokalen linearen Frequenzblock.
+Dessen gewöhnlicher adjungierter Rückweg bleibt genau dann im
+Cauchyraum, wenn die tatsächliche tangentiale Frequenz erhalten bleibt.
+Ein expliziter, modenabhängiger unitärer Graphtransport zwischen den
+beiden Viertelphasen existiert. Er ist nichtlokal, ändert den
+Tangentialoperator und transportiert für sich keinen Ramond Feldoperator.
+Auf der vollen physischen APS Domäne bleiben der P1 Transport, die
+beiden Selektorwerte und beide physisch gewichteten Antworten offen.
+
+1. Originales Randproblem und der erste Auswertungsschritt
+----------------------------------------------------------
+Die Originalquelle beginnt mit dem ganzen D_+ im Kragen. Sein
+Cauchyprojektor definiert die Nahtpolarisation. Danach kommen die
+Deckzerlegung D_ref/D_rel und die spätere geschlossene APS Domäne.
+Der festgehaltene provisorische APS Bereich legt für sich keine
+Zustandspräparation fest. Die Hilberträume für Cauchyspinoren und
+die Zustände der rekonstruierten Felder sind in dieser Frage getrennt.
+Ein Poissonoperator verlängert gegebene Cauchydaten. Er erzeugt
+daraus keinen noch nicht zugeordneten sektorwechselnden Feldoperator.
+
+Der in R074 ausgeführte Originalkragen hat in periodischer
+Achtfachfaltung p=8n+k+alpha und ell=beta/2=2pi. Seine zwei
+Randwerte sind auf der Cauchylinie (1,u), u=exp(-ell p).
+Ein Fourierblock m von Kanal l nach k und von alpha nach alpha'
+hat Frequenzdifferenz Delta=8m+k-l+alpha'-alpha. Auf der
+Zielseite ist die Steigung s*u mit s=exp(-ell Delta).
+
+2. Exakte Klassifikation des direkten lokalen Transports
+--------------------------------------------------------
+Ein 2x2 Block A=(a b;c d), der den Quellgraphen vorwärts in den
+Zielgraphen trägt, muss für alle ursprünglichen n erfüllen
+
+    c + d u = s u (a + b u).
+
+Für einen Multiplikator sind a,b,c,d bei festem Fourierblock
+unabhängig von n. Drei bzw. unendlich viele verschiedene u
+liefern c=b=0 und d=s a. Die gleiche Folgerung gilt für jeden
+lokalen Differenzialoperator endlicher Ordnung auf dem glatten
+gemeinsamen Fourierkern: Seine Blockeinträge sind Polynome in n.
+Im positiven Spektraltail geht u exponentiell gegen null,
+also muss das Polynom c verschwinden. Im negativen Tail
+nach Division durch u² muss b verschwinden. Der Rest ist d=s a.
+Hier wird keine Vermutung über asymptotische Größe einer
+unbekannten physischen Gewichtung gebraucht.
+
+Für den adjungierten Rückweg muss zusätzlich d*=s^(-1) a*
+gelten. Somit gilt (s²-1)a=0. Zwischen alpha=1/4 und alpha'=3/4
+ist jede Delta halbzahlig und von null verschieden. Also ist jeder
+lokale lineare Block mit beiden Graphbedingungen null. Bei gleicher
+Viertelphase bleiben nur m=0, k=l und gleiche Faktoren auf beiden
+Flächen. Die Aussage schließt räumliche Spiegelung mit geänderter
+Frequenzrichtung, Defektoperatoren, eine mitbewegte Naht und
+mehrteilchige Feldtransporte nicht ein. Der alte P1 Prozess kann
+bereits innerhalb einer Viertelphase zwischen Spinsektoren wechseln.
+Der Befund behauptet daher nicht, jeder physische P1 Weg müsse
+zwischen den beiden Viertelphasen wechseln.
+
+Kontrolle am tatsächlichen Viertelpaar bei n=0:
+Der vorwärts richtige lokale Block diag(1,exp(-pi)) hat beim
+Adjungierten ein Leck von 0.203140181195 auf dem normierten
+Cauchyvektor. Die Zahl ist eine Norm am gegebenen Kragen und
+kein physischer Übergangswert.
+
+3. Der explizite geometrische Graphtransport
+--------------------------------------------
+Der normierte Graphvektor und sein orthogonales Komplement bilden
+den reellen orthogonalen Rahmen F(p). Die Matrix
+U(p',p)=F(p') F(p)^* transportiert den ganzen Graphprojektor
+unitär, einschließlich des adjungierten Rückwegs. Mit S als
+Flächentausch gilt F(-p)=S F(p) diag(1,-1). Das ergibt die richtige
+gepaarte Reflexionskovarianz auf diesem Kragen. Die Rechnung wurde
+auf 61 Originalmoden kontrolliert. Bei n=0 ist der Winkel
+-0.195977418529 und det U=1. Für n gegen plus oder minus unendlich
+geht U exponentiell gegen I. U-I ist deshalb ein glättender
+nichttrivialer Fouriermultiplikator. Sein Faltungskern hat als
+reell analytische Funktion keinen lokal begrenzten Träger.
+Dieser Transport setzt also keine lokale Feldmarke um.
+
+Die negativen APS Vorzeichen der beiden skalaren periodischen
+Vergleichsoperatoren stimmen bei gleichem n überein. Ihr
+tangentialer Abstand von null ist jeweils 1/4. Dennoch gilt
+B_alpha' U - U B_alpha = U/2 für diese Frequenzzuordnung. Die
+isometrische Graphabbildung trägt somit nicht den unveränderten
+Tangentialgenerator. Weder det U=1 noch der tangentiale Vergleichsgap
+berechnet den physischen Q_Theta oder D_adm Spektralfilter.
+
+4. Prüfung des stationären Pin Begleiters aus Plan 253
+-------------------------------------------------------
+Die inzwischen belegte Originalpaarung bei gleicher Schleifenphase
+hat K=I tensor H_b - tau2 tensor sigma1 rho Phi.
+Der tatsächliche Begleiter J=i tau2 vertauscht die beiden b Domänen
+und kommutiert mit K. Jede reine 2x2 Labelmatrix auf diesem festen
+Paar, die mit K kommutiert, ist a I+b J, sobald der gekoppelte
+Higgs/Majorana Term nicht null ist. Das folgt aus dem exakten
+Kommutanten von tau2. Diese Algebra hat keine nichtnull nilpotente
+Matrix. Die alte Familie hat dagegen eine Leiter mit N^3=0
+und N^2 ungleich null. Der reine einseitige b Block von J hat
+Quadrat null und die b Projektion kommutiert nicht mit K.
+
+Noch unmittelbarer: J hat auf dem nativen Paar keinen Kern und
+kommutiert mit allen vier tatsächlichen Higgs Einformkoeffizienten.
+Der alte N_0 löscht P1 selbst aus und erzeugt auf B P1 das
+nichtnull mittlere Wort. Die geordnete Kontaktantwort des
+geometrischen Kandidaten ist dagegen identisch null, bevor P,
+Ref oder irgendein Bosongewicht wirken. Dies wurde auf allen 192
+nativen Paarkoordinaten mit Majorana und drei verschiedenen
+Higgsstücken überprüft; mindestens zwei Generatoren kommutieren
+dabei nicht. Die ganze Zeitfolge erhält J dennoch. Hält man das
+Higgsfenster fest und zieht J durch die Folge, ändert seine
+Position nichts. Vertauscht man bei festgehaltenen zwei Zeiten
+auch die Higgszeit, kann der gewöhnliche Zeitkommutator von B
+beitragen. Das ist kein Nachweis des Familienkommutators.
+Der Ausschluss betrifft den reinen Labeltausch und seine
+stationäre 2x2 Labelalgebra; ein gekoppelter Feldtransport mit
+eigener Wirkung auf Koeffizienten bleibt offen.
+
+5. P1, Determinante, Gap und Bosongewicht
+-----------------------------------------
+Am wirklichen v16 Fold liegen q und r im alten Ramond Modul s.
+2q, das geladene untere Feld B und der Ausgang W mit Impuls r+q
+liegen im geraden Modul 0. Ein auf den vier alten D8 Modulen
+skalarer, am Vakuum positiv normierter Selektor behält W also
+exakt. Das gilt auch mit dem ursprünglichen Farbzentrumfilter.
+Das ist ein Selektortest in einer klar benannten Klasse. Die
+Originaldefinition von Q_Theta als Operator auf dem
+Determinantenfaktor liefert keine solche Identifikation.
+Insbesondere liegt die Ladung des mittleren Feldoperators selbst
+bei r und ist halbzahlig. Das ganzzahlige Bild nach dem Feld ist
+kein Nachweis für einen NS-internen Feldoperator. Der bisherige
+lokale Originalrand liefert diesen geladenen Pfeil nicht aus
+seinen integer geladenen Einzelfeldern.
+
+Der volle Gapfilter nimmt D_adm^* D_adm auf Ran(P_str).
+Ohne tatsächlich transportiertes W auf der gleichen APS Domäne
+ist seine Spektralmasse über der Schwelle nicht bestimmbar.
+Die beiden ursprünglichen Endpunkt und Faseroperationen wurden
+in der unveränderten nativen Domain aufgerufen. Es fehlen
+whole_source_bundle und original_blocked_fiber_packet. Die
+originale Maßmasse ist nicht ausgewertet. Es gibt keinen
+vollständig gewichteten Zähler und keinen ausgewerteten
+gemeinsamen physischen Referenznenner für diese Ordnungen.
+Kein altes Gewicht und keine Norm des gegebenen Graphen wurde
+als Ersatz eingesetzt.
+
+Der nächste konkrete Ursprungsschritt ist eine sektorwechselnde
+Feldoperation auf der tatsächlichen APS Quelle, mit ihrem
+adjungierten Rückweg und der Ward Ladung von q. Ein reiner
+Cauchygraphtransport liefert diesen Operator nicht. Danach lassen
+sich am einen Paket P1 das Q_Theta ungerade Gewicht und der
+Gapverlust mit dem schon vorhandenen gemeinsamen Schnittverfahren
+getrennt bestimmen. F1 bleibt offen.
+
+Originale
+---------
+experiments/theory-contracts/tfpt-unified-source-derivation-20261029/
+  aps_source_review/CALDERON-OPERATION-SOURCE-PROOF.txt
+  aps_source_review/C58-ORIGINAL-APS-AND-SEWING-REVIEW.txt
+experiments/theory-contracts/chat-triangulation-20261108/
+  TFPT-ORIGINAL-P1-RAMOND-ENDPOINT-20261110.txt
+  TFPT-QUERVERBINDUNGEN-DECKUNG-PIN-COMPILER-20261110.txt
+  check_tfpt_family_middle_ordered_cut_20261110.py
+  check_original_qtheta_word_20261109.py
+documents/archive--tfpt-45--source_extracts--01_boundary_kernel_source/
+  sections/001-section-primitive-core-and-carrier-interface-handoff.tex
+documents/archive--tfpt-45--source_extracts--04_qft_source/
+  sections/002-section-closure-theorems-from-the-admissibility-complex.tex

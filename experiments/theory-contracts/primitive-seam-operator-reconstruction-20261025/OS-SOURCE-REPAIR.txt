@@ -1,0 +1,375 @@
+OS SOURCE REPAIR: FULL MOMENTS, GRADED WORDS, AND THE PRIMITIVE SEAM BOUNDARY
+================================================================================
+
+Scope and verdict
+-----------------
+
+This note repairs one precise mathematical defect in the archived TFPT
+Osterwalder--Schrader argument.  It does not construct a new physical source.
+
+PROVED here:
+
+1. The connected or truncated distributions
+
+       kappa_n = delta^n log Z |_{0}
+
+   cannot themselves be used as the full Schwinger moment functional in the OS
+   Gram form.  A two-variable Gaussian already gives a 2 by 2 counterexample.
+
+2. The correct input is the full normalized moment functional
+
+       S_n = Z[0]^{-1} delta^n Z |_{0},
+
+   equivalently the graded moment--cumulant expansion of exp(log Z).
+
+3. A unital, reflection-intertwining boundary word map which preserves the
+   complete original Z-functional on all reflected word products induces an OS
+   isometry.  This is a sufficient repair theorem.  It does not require odd CAR
+   fields to belong to the physical observable algebra.
+
+OPEN after the repair:
+
+The cited TFPT source does not construct Z_adm from D_+, B_Sigma, the Calderon
+projector, or the relative spectral/Chern--Simons expressions.  It also does not
+provide the state-preserving boundary word map required below.  Thus this note
+repairs the logical form of the OS step but does not close the primitive source
+gap.
+
+
+1. The defect in the cited source
+---------------------------------
+
+The relevant original passages are:
+
+* documents/archive--tfpt-45--source_extracts--04_qft_source/sections/
+  005-subsection-admissible-schwinger-functions-minkowski-loca.tex:144-161
+  defines W_rel = log Z_rel and explicitly calls
+
+       S_n^T = delta^n W_rel |_{0}
+
+  the truncated admissible Schwinger distributions.
+
+* The same file, lines 163-184, then applies the OS axioms directly to
+  {S_n^T} and says that the reconstructed theory has these truncated
+  distributions as its Schwinger functions.
+
+* documents/archive--tfpt-45--source_extracts--04_qft_source/sections/
+  008-section-relative-reflection-positivity-with-fermions.tex:181-196 and
+  217-254 repeats the same typing: it proves distributional properties of the
+  truncated family and supplies that family directly to the stated OS/CAR
+  reconstruction theorem.
+
+This is not the standard OS input.  Reflection positivity is a positivity
+condition on the full moment functional, or equivalently on the normalized
+generating functional Z/Z[0].  It is nonlinear under passage from moments to
+connected cumulants.  Positivity of a reflected full Gram matrix is therefore
+not positivity of a matrix formed by replacing its entries with cumulants.
+
+
+2. Small exact counterexample
+-----------------------------
+
+Let X be a centered real Gaussian variable smeared at positive Euclidean time,
+and write Y = Theta X for its reflected copy.  Choose the covariance
+
+       E[X^2] = E[Y^2] = a > 0,
+       E[YX] = c > 0,
+
+with 0 < c <= a, so that the elementary covariance matrix
+
+       [ a  c ]
+       [ c  a ]
+
+is positive semidefinite.  Such a centered Gaussian field is reflection
+positive on the one-dimensional positive-time test space.  Explicitly, put
+rho=c/a and expand a polynomial F in Hermite polynomials for the normalized
+variable X/sqrt(a): F=sum_n f_n H_n.  The bivariate Gaussian identity gives
+
+       E[(Theta F)F] = sum_n n! rho^n |f_n|^2 >= 0.
+
+Thus positivity holds on the whole polynomial algebra, not merely at degree
+one.
+
+Use the positive-time polynomial basis
+
+       F_0 = 1,
+       F_1 = X^2.
+
+The genuine OS Gram matrix is
+
+       G_ij = E[(Theta F_i) F_j].
+
+Wick's rule gives
+
+       E[X^2]       = a,
+       E[Y^2 X^2]   = E[Y^2]E[X^2] + 2E[YX]^2
+                     = a^2 + 2c^2.
+
+Hence
+
+       G_full = [ 1       a          ],
+                [ a   a^2 + 2c^2     ]
+
+and
+
+       det G_full = 2c^2 > 0.
+
+Thus the full moment functional is positive on span{1,X^2}.
+
+Now make exactly the erroneous replacement of a full four-point entry by its
+connected four-point cumulant.  For a centered Gaussian,
+
+       kappa_4(Y,Y,X,X) = 0,
+
+while the two-point cumulant is kappa_2(X,X)=a.  The resulting cumulant
+substitution is
+
+       G_trunc = [ 1   a ],
+                 [ a   0 ],
+
+with
+
+       det G_trunc = -a^2 < 0.
+
+Therefore an RP Gaussian theory becomes nonpositive if truncated functions are
+inserted as though they were full OS moments.  Conversely, separate properties
+of the cumulants cannot establish positivity of the full reflected word
+functional without the moment reconstruction.
+
+This example is only a test of the theorem's mathematical typing.  It introduces
+no TFPT field, state, or physical source.
+
+
+3. Correct bosonic and fermionic reconstruction
+------------------------------------------------
+
+Let the mixed source be mathcal J=(J,eta,bar eta), with J even and eta,bar eta
+Grassmann odd.  Assume Z[0] is nonzero and define
+
+       W[mathcal J] = log Z[mathcal J] - log Z[0].
+
+Connected distributions are derivatives of W.  Full distributions are
+
+       S_n(z_1,...,z_n)
+         = Z[0]^{-1}
+           delta_{z_1} ... delta_{z_n} Z[mathcal J] |_{mathcal J=0}.
+
+Equivalently,
+
+       S_n(z_1,...,z_n)
+         = sum_{pi in Pi_n} epsilon(pi;z_1,...,z_n)
+             product_{B in pi} kappa_{|B|}(z_B).
+
+Here Pi_n is the set of set partitions.  Inside each block and among blocks one
+uses one declared canonical order.  epsilon(pi;z_1,...,z_n) is the Koszul sign
+of the permutation which moves the odd source derivatives into that block
+order; even source derivatives contribute no sign.  This is precisely the
+coefficient identity Z/Z[0] = exp(W).
+
+For a purely fermionic Gaussian source, W has degree two.  Thus connected
+cumulants above degree two vanish, but the full even moments do not:
+
+       S_{2m}(f_1,...,f_{2m})
+          = Pf( K(f_i,f_j) )_{1 <= i,j <= 2m}.
+
+This Pfaffian is the Grassmann-signed sum over pairings.  It is the fermionic
+analogue of the a^2+2c^2 term in the preceding bosonic example.  Reconstructing
+with exp W therefore retains the complete Wick family which the direct use of
+{S_n^T} discards.
+
+
+4. Minimal repaired OS theorem
+------------------------------
+
+Let P_+ be the unital graded polynomial word algebra generated by admissible
+Euclidean field insertions with support at positive time.  Let Theta be the
+antilinear graded reflection, including the declared order reversal and CAR
+sign convention.  Let omega_Z be the normalized full moment functional obtained
+from Z/Z[0].
+
+Assume:
+
+  (R1) omega_Z is defined on every word (Theta F)G with F,G in P_+;
+
+  (R2) full reflection positivity holds,
+
+           omega_Z((Theta F)F) >= 0       for every F in P_+;
+
+  (R3) positive Euclidean translations act on P_+, preserve the OS null space,
+       and the induced operators satisfy the symmetric contraction bounds and
+       strong continuity required for a self-adjoint positive generator;
+
+  (R4) if a full relativistic reconstruction is claimed, the full moments
+       reconstructed from Z satisfy the required graded symmetry, Euclidean
+       covariance, and the uniform growth/regularity hypotheses of that
+       reconstruction theorem. Temperedness of each connected distribution
+       separately is not a substitute for these full-family hypotheses.
+
+Then
+
+       <F,G>_OS = omega_Z((Theta F)G)
+
+is positive semidefinite.  Quotienting P_+ by its null space and completing
+gives the OS Hilbert space. Under (R3), positive-time translation descends to
+a strongly continuous symmetric contraction semigroup exp(-tH), H>=0. The
+self-adjointness conclusion uses symmetry, not merely the general
+Hille--Yosida theorem for an arbitrary contraction semigroup. In an application
+one may prove (R3) from the complete standard OS assumptions instead of
+assuming it separately. Truncated
+functions may be used to encode Z through exp W, but never as replacements for
+the entries of this Gram form.
+
+
+5. State-preserving primitive boundary transport is sufficient
+---------------------------------------------------------------
+
+Let P_boundary,+ be a graded boundary field-word algebra built on the primitive
+boundary data, and let P_adm,+ be the positive-time field-word algebra whose
+full functional is the original Z_adm.  Assume that this full original
+functional is reflection positive.  Suppose there is a unital graded word map
+
+       iota : P_boundary,+ -> P_adm,+
+
+such that
+
+  (B1) iota intertwines reflection and the declared grading;
+
+  (B2) it preserves the complete reflected word functional,
+
+       omega_boundary((Theta F)G)
+         = omega_adm((Theta iota(F)) iota(G))
+
+       for all F,G in P_boundary,+;
+
+  (B3) it intertwines positive Euclidean translation on a common invariant
+       dense word domain.
+
+Then the boundary OS Gram matrix is the pullback of the original admissible OS
+Gram matrix.  In particular it is positive, and
+
+       [F]_boundary -> [iota(F)]_adm
+
+is a well-defined isometry of OS quotient spaces.  By (B3) it also intertwines
+the reconstructed positive-time semigroups.  This is the smallest positive
+repair path: no independently chosen boundary state is needed if the complete
+state-preserving map into the already defined original Z_adm is proved.
+
+Preservation of the two-point function alone is insufficient outside a proven
+quasi-free sector.  After a fluctuating bosonic background has been integrated,
+a mixture of Gaussian fermion states need not remain Gaussian, so its full
+four-point function is not fixed by the averaged two-point kernel.
+
+
+6. Field algebra and observable algebra
+---------------------------------------
+
+The repaired theorem is first a statement about the graded field-word algebra.
+Odd CAR generators may live in a charged field algebra F.  The physical
+observable algebra is obtained only afterward by the actual gauge-invariant or
+admissible restriction used by the theory.  In the cited primitive source,
+
+  documents/archive--tfpt-45--source_extracts--01_boundary_kernel_source/
+  sections/001-section-primitive-core-and-carrier-interface-handoff.tex:319-343
+
+defines A_adm by restriction of operators which preserve Ran(P_adm), together
+with their adjoints.  It does not require each odd charged field to be an
+element of A_adm.  The boundary map above must therefore map field words into
+the graded source algebra before this observable restriction; the restriction
+can then be checked on invariant/even words.  No identification of Q_Theta with
+fermion parity is used here.
+
+
+7. Source audit: what the spectral and Chern--Simons data do not supply
+------------------------------------------------------------------------
+
+The following statements are source-level facts, not a general impossibility
+claim.
+
+1. Primitive relative spectral action.
+
+   documents/archive--tfpt-45--source_extracts--01_boundary_kernel_source/
+   sections/001-section-primitive-core-and-carrier-interface-handoff.tex:302-317
+   defines
+
+       S_prim = tr f(D_rel/chi) - tr f(D_ref/chi) + (i pi/2) Delta eta_Sigma.
+
+   This is a spectral functional.  It contains no Grassmann integration,
+   fermionic source coupling, inverse Dirac kernel, or definition of Z_adm.
+
+2. Relative generating functional.
+
+   documents/archive--tfpt-45--source_extracts--04_qft_source/sections/
+   002-section-closure-theorems-from-the-admissibility-complex.tex:256-316
+   defines only
+
+       Z_rel[J,eta,bar eta]
+          = Z_adm[J,eta,bar eta] / Z_ref[0,0,0].
+
+   Its reflection-positivity lemma explicitly assumes that the admissible
+   fermionic CAR kernel is reflection positive.  It does not derive that kernel
+   or Z_adm from D_+ and B_Sigma.
+
+3. Geometric measure.
+
+   documents/archive--tfpt-45--source_extracts--05_metrology_source/sections/
+   005-section-absolute-dimensionless-metrology-from-the-bounda.tex:136-178
+   constructs a measure weighted by exp[-tr f_*(D_V^2/Lambda^2)] on the
+   BRST-reduced geometric configuration space.  It does not include D psi,
+   define a Berezin measure, or provide the missing mixed source functional.
+
+4. Chern--Simons material.
+
+   documents/tfpt_research_contracts/sections/005-source.tex:97-108 uses an
+   abelian bosonic 2+1-dimensional Chern--Simons/K-matrix theory to type the
+   anyon-condensation and holomorphic-edge step.  It is not a definition of the
+   local fermionic Z_adm.  The Maxwell/Chern--Simons reading in
+   documents/tfpt_1_architecture_e8/sections/007-source.tex:140-150 is itself
+   conditional and likewise does not provide Grassmann sources or the full
+   Schwinger family.
+
+5. Explicit coupled source remains a demand.
+
+   documents/tfpt_research_contracts/sections/017-source.tex:153-191 asks for
+
+       Z_a[J] = integral DU Dpsi DPhi exp(-S_a + J O),
+       S_a = S_Wilson + bar psi D_GW[U,Phi] psi
+             + S_Phi + S_seam/top,
+
+   and marks the complete T1--T7 package open.  This confirms where an actual
+   fermion-plus-boson source would enter; it is not supplied by the primitive
+   spectral action.
+
+
+Final boundary
+--------------
+
+The exact repair is therefore:
+
+       derivatives of log Z  -> connected cumulants
+       exponentiation         -> full graded moments
+       full Z moments         -> OS Gram form
+       state-preserving map   -> boundary OS isometry.
+
+The first three arrows are mathematical identities or the standard OS input.
+The fourth is a precise sufficient interface.  The original TFPT sources cited
+above do not yet construct Z_adm from the primitive D_+, B_Sigma data and do not
+prove that interface.  No claim of complete primitive seam reconstruction is
+made.
+
+Primary mathematical references
+--------------------------------
+
+K. Osterwalder and R. Schrader, Axioms for Euclidean Green's Functions II,
+Communications in Mathematical Physics 42 (1975), 281-305,
+doi:10.1007/BF01608978. The corrected theorem and its full-family growth
+hypotheses are in Sections III-IV, especially IV.1. This reference supplies
+the standard reconstruction framework, not the missing TFPT functional.
+
+P. F. Baum and E. van Erp, The Index Theorem for Toeplitz Operators as a
+Corollary of Bott Periodicity, arXiv:2010.02906v2 (2020), Section 6,
+Proposition 13; Quarterly Journal of Mathematics 72 (2021), 547-569,
+doi:10.1093/qmath/haab008. The Calderon and nonnegative boundary spectral
+projections there differ by a compact operator and give the same index.
+Equality of that index does not give an exact equality of projections,
+an isometric shift, a CAR state, or the time covariance used in the companion
+operator theorem.

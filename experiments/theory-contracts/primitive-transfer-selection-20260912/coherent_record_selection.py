@@ -11,8 +11,8 @@ from pathlib import Path
 import sympy as S
 
 HERE = Path(__file__).resolve().parent
-HELPER_PIN = '1c853b49041aaa61e772ad331e22d9e5400c3192c81d69fead873396db6a9109'
-RECORD_PIN = 'db28d0111b8455439e1abb43c961ac67f5fc6572c9efe76449f17c11b71b6b55'
+HELPER_PIN = 'b5f9d1543a68bec1ef6624be115dc1fc7ecb7ddf97683f67f2b72b9486eb2f12'
+RECORD_PIN = '30cfd86c442097b5a759bfdd4692bcc67f29936ef05c7e701903a558431f246a'
 checks = 0
 
 

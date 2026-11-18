@@ -1,0 +1,143 @@
+INDEPENDENT REVIEW OF CLAUDE48: FINITE PAULI AND PARTICLE-HOLE FACE BLOCK
+30 October 2026. No original source, Atlas entry or pinned report changed.
+
+VERDICT
+
+The graph-face calculation is correct for the already given Phi=0 NS source.
+It canonically defines a nonzero finite particle-hole contribution with the
+claimed family trace and the exact phase -pi/3. Two corrections are required.
+
+First, Claude48's displayed Wick coefficient is the answer per retained
+P_gamma,+ carrier component, or with a separately declared normalized carrier
+trace. The ordinary trace over the actual finite 96-dimensional source has an
+additional carrier multiplicity 16 per family trace. Second, the complex
+answer is a directed non-selfadjoint channel component. It is not yet the
+correlation of the complete adjoint and J_F-completed real field, and the
+original whole sewing/kernel caller has not been proved to select this finite
+compression as its regular part.
+
+1. ACTUAL TWO-FACE BLOCK
+
+Write, on the h=1/2 normal mode,
+
+  V=(sqrt(a),sqrt(1-a))^t,
+  V_perp=(-sqrt(1-a),sqrt(a))^t,
+  a=(1+exp(-ell_NS))^-1.
+
+These are isometries with orthogonal ranges G and 1-G. Retaining the actual
+J=Swap tensor j and the same two-face insertion used by the established Hardy
+reader gives the exact face factors
+
+  V* Swap V                 =2sqrt(a(1-a))=sech(ell_NS/2),
+  V_perp* Swap V            =2a-1=tanh(ell_NS/2),
+  V* Swap V_perp            =2a-1=tanh(ell_NS/2),
+  V_perp* Swap V_perp       =-2sqrt(a(1-a)).
+
+Thus E^h=V_perp E0 is a canonical finite subspace of the actual unoccupied
+graph range, and both particle-hole directions have the same positive graph
+factor. Relative to the old particle-particle response,
+
+  M_ph=sinh(ell_NS/2) M_pp.
+
+Since M_pp=(2/pi)sech(ell_NS/2) m tensor P_gamma,+, this becomes
+
+  M_ph=M_hp=(2/pi)tanh(ell_NS/2) m tensor P_gamma,+.       (1)
+
+Nothing in this derivation replaces j by a naked two-dimensional Swap. The
+old spatial R_x, F_R, spin, normal reduction and P_gamma,+ factor remain in m
+and in the already evaluated periods. Only the graph-face vector changed.
+
+2. PAULI STATEMENT
+
+Let Pi=EE* and compress K=J* M_mu to Pi K Pi. Pi lies in the filled range of
+the given pure graph projector. On the completely filled finite defect wedge,
+
+  dGamma(Pi K Pi) Omega=Tr(Pi K Pi) Omega.
+
+For each of the six matrices F or N the family trace vanishes, so the actual
+compressed particle-particle operator annihilates this vector. This is the
+correct narrow Pauli statement. It does not make the whole original K_mu
+invisible: the particle-hole blocks (1) are nonzero, and contributions outside
+Pi and Pi_h have not been removed from the original field.
+
+3. FINITE CONNECTED WICK BLOCK AND THE MISSING CARRIER TRACE
+
+For the finite Pi/Pi_h part of the standard ordered bilinear covariance,
+
+  Tr[G K_mu (1-G) K_nu],
+
+equation (1) gives, per retained P_gamma,+ carrier component,
+
+  C_family(mu,nu)=(2/pi)^2 tanh^2(ell_NS/2)
+                    Tr_family(m_mu m_nu).               (2)
+
+The actual v252 grading is 96-dimensional. P_gamma,+ has rank48 on all three
+families, hence rank16 on the 32-dimensional carrier attached to one family.
+With the ordinary unnormalized one-particle trace, the full finite block is
+
+  C_full(mu,nu)=16 C_family(mu,nu).                      (3)
+
+A stated selfdual second-quantization convention may add its global one-half
+normalization. It does not turn the carrier trace into one. Therefore (2) is
+not the whole 96-dimensional trace unless a normalized carrier trace or one
+fixed carrier component is explicitly declared.
+
+4. EXACT FAMILY PAIRING AND PHASE
+
+For
+
+  m_F=I02 E02+I21 E21,
+  m_N=-i(I02 E12+I21 E20),
+
+direct multiplication gives
+
+  Tr(m_F^2)=Tr(m_N^2)=0,
+  Tr(m_F m_N)=Tr(m_N m_F)=-2i I02 I21.
+
+With I02=C L, I21=-C J and positive real L,J,
+
+  -2i I02 I21=2i C^2 L J,
+  arg(2i C^2)=-pi/3.
+
+The carrier factor in (3) is positive real, so it does not change this phase.
+The common-frame trace is also invariant under a simultaneous family basis
+change. Hence -pi/3 is an exact phase of this directed finite complex channel
+component, not a numerical fit.
+
+The original finite source is selfdual. A physical selfadjoint field includes
+the ordinary adjoint and the actual J_F image, with P_gamma,- on the conjugate
+slot. Their complete correlation is a sum of directed components and is real
+for a selfadjoint observable. The single complex phase above must therefore
+not be promoted by itself to a CP observable, a CKM phase or the phase of the
+complete KO-real field.
+
+5. SOURCE SCOPE
+
+Pi_h=E^h E^h* is canonically defined once the original E0 and pure graph G
+are fixed. Selecting the Pi/Pi_h summand of the Wick trace is nevertheless a
+finite compression of the whole source correlation. The checked calculation
+does not prove that the original Z, sewing operation or second source
+variation singles out precisely this summand, nor that it is the renormalized
+regular part of the uncompressed local kernel. No new state, time or cutoff is
+needed to define the summand, but its use as the complete original response
+remains a separate source statement.
+
+REPRODUCIBILITY
+
+  check_claude48_pauli_ph.py
+    SHA256 51ad2b474ed6397dd0b0c0f56b33b59aa2d6bbac9a72805b4b6650588f92ecbc
+  claude48-pauli-ph-face-block-results.json
+    SHA256 666f077db9359b620e7eb471e05f1e4e6054226ed7c99a922a2d04b84b4de9d0
+
+Normal Python and python -OO produced byte-identical stdout and JSON. The
+checker imports the actual v252 grading, verifies the 96/48/16 dimensions,
+all four face blocks and the four family traces exactly.
+
+SOURCE ANCHORS
+
+  INDUCED-HARDY-DEFECT-BMU-FINITE-READER.txt:45-71,87-108;
+  HARDY-BMU-FIRST-NONZERO-ENTRY.txt:21-30,77-90;
+  HARDY-BMU-FULL-MU01-READER.txt:104-118;
+  HARDY-BMU-KO-AND-FOUR-SECTOR-COMPLETION.txt:13-79,81-143;
+  GEOMETRIC-R-SPIN-COLLAR-REVIEW.txt:114-136;
+  verification/v252_full_finite_triple.py:72-78,119-132.

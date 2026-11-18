@@ -1,0 +1,254 @@
+# Historische EM Quellenkette: Kreisoperator, Nahttransfer und `tr_adm`
+
+Datum: 2026-10-25  
+Atlas Stand: `43a4702c9b0d0e33066def66`  
+Status: Quellenaudit mit exaktem Operator Gegencheck. Keine Änderung an Atlas, Ledger oder Paper.
+
+## Ergebnis
+
+Die älteren Papers enthalten zwei konkrete Operatorstufen, die bisher getrennt betrachtet wurden:
+
+1. Seit `fullv21` ist die geometrische Nahtfamilie ausdrücklich gegeben:
+   \[
+   D_\Gamma=i\frac d{d\theta},\qquad U_\Gamma(\theta)=e^{i\theta},
+   \qquad \lambda_n(\varphi)=n+\frac{\varphi}{2\pi}.
+   \]
+   Der Text folgert daraus `SF(U_Gamma)=1`, den Nahtbeitrag `Delta_Gamma=2 pi` und mit beiden Randzyklen `phi_base=1/(6 pi)`. Die gedruckten positiven Eigenwerte gehören jedoch zum entgegengesetzt orientierten `B=-D_Gamma=-i partial_theta`. Nach dieser ausdrücklichen Reparatur ist der innere Einteilchen Spektralfluss `+1` exakt. Die globale APS Klebung und die gesamte physische Normierung `1/(6 pi)` werden damit hier nicht neu bewiesen.
+
+2. Erst in `tfpt-31` erscheint ein positiver Wärmeübertrag
+   \[
+   \mathcal U_\Sigma=P_{\rm adm}e^{-\ell_\Sigma|B_\Sigma|}P_{\rm adm}
+   \]
+   mit gewöhnlichem Fredholm Determinanten. Die ausführliche Begleitfassung verlangt dazu ausdrücklich `[P_adm,|B_Sigma|]=0`, das Fehlen eines admissiblen Nullmodus und verwendet alle Eigenwerte `u_j=e^{-ell lambda_j^+}`. Der niedrigste Block wird zusätzlich und als conjectural bridge mit Multiplizität `m_1=48` angesetzt. `tfpt-32` stuft denselben Weg korrekt als künftige Vermutung ein. `tfpt-42` erhebt den vollen Wärmeübertrag wieder zum Theorem und führt den exakten Rang eins Fall nur unter der zusätzlichen Voraussetzung `U_Sigma=rho P_Sigma^(1)` aus.
+
+Der tragfähige wiedergewonnene Anschluss ist daher präzise begrenzt: Die ältere Kreisfamilie ist der im Paper angegebene Ansatz für `1/(6 pi)` und stellt einen konkreten tangentialen Nahtoperator bereit. Die ältere Fredholm Route stellt eine konkrete positive Transferformel bereit, unter ihren angegebenen Spektralannahmen. In keiner geprüften Quelle steht jedoch
+\[
+B_\Sigma=D_\Gamma,\qquad
+P_{\rm adm}=\mathbf 1_{(0,\infty)}(D_\Gamma),\qquad
+U_\Sigma^{\min}=\text{Spektralprojektor von }|B_\Sigma|,
+\]
+oder ein Intertwiner zwischen diesen Objekten. Insbesondere ist der spätere frei benannte Vektor `psi_Sigma` historisch nicht durch den Wärmeübertrag konstruiert worden.
+
+Damit wird das frühere Urteil korrigiert, ohne die verbleibende Lücke zu verdecken: Es gab schon früh ein konkretes Nahtpaar und später einen konkreten spurklassigen Transfer. Es gab keinen älteren Beweis, dass der für die EM Erzeugungsfunktion verwendete admissible Transfer exakt Rang eins ist.
+
+## Historische Quellenkette
+
+### 1. `fullv21`: konkrete Nahtfamilie und geometrische Basisnormierung
+
+Quelle: `paper-source:1fe2ddfabc74ac0e94a4686d`  
+Pfad: `documents/archive--paper-latex--tfpt-theory-fullv21/sections/001-section-introduction-the-problem-of-parameters.tex`  
+Zeilen: 198 bis 255  
+SHA256: `85bb11511be05385a7cadf6071dbede216b12befeb9d6767bc4460748cbec5d7`
+
+Operatorwirkung und Schluss:
+
+* Zeilen 230 bis 244 setzen `D_Gamma=i d/dtheta`, `U_Gamma=e^{itheta}` und die getwisteten Eigenwerte `lambda_n(varphi)=n+varphi/(2pi)`.
+* Zeilen 246 bis 251 zählen genau einen Nulldurchgang und folgern `SF=1`, danach `Delta_Gamma=2pi`.
+* Zeilen 253 bis 255 addieren zwei physische Randzyklen und die Naht zu `6pi`; die Stationaritätsbedingung liefert `phi_base=1/(6pi)`.
+
+Das Paar ist damit der dort angegebene Ausgangspunkt für die geometrische Konstante. Es wird dort weder exponentiert noch mit einem admissiblen Projektor komprimiert. Seine Funktion ist der behauptete APS Anschluss; ein globaler APS Klebesatz folgt nicht schon aus der hier geprüften Einteilchen Kreisrechnung.
+
+Dieselbe Kreisfamilie bleibt in `fullv24` bis `fullv28` erhalten:
+
+* `fullv24`, `.../sections/001-section-introduction-the-problem-of-parameters.tex`, Zeilen 205 bis 255, SHA256 `7e0c49f697146492d08784c465716d78eb8f0e2fb19f1d5dcce5e62f99a487f8`.
+* `fullv25`, `.../sections/001-section-kernel-and-discrete-grammar.tex`, Zeilen 304 bis 352, SHA256 `f3276d2d81ca2f78eeb69df57f02c131b57337eb5bdd640fb2c151c43ea0c218`.
+* `fullv26`, derselbe Modulname, Zeilen 304 bis 352, SHA256 `b6bc76d71b849085c8a805abaed0e8bdc6ff9d28def47d3e03dd0b62ffa32640`.
+* `fullv27`, derselbe Modulname, Zeilen 305 bis 353, SHA256 `86ec96a2e9e6b0c9c400873d2c09a4300c3a7bf7b9901ddd1a68cf781d736048`.
+* `fullv27-final`, derselbe Modulname, Zeilen 306 bis 354, SHA256 `f579c09a04da836e0b2f0fa36ed99f61d5db72f0daae38bb1c50d7c34e234e36`.
+* `fullv28`, `.../sections/002-subsection-geometric-axioms-a1-a4.tex`, Zeilen 52 bis 104, SHA256 `16f0ae6ffad3c72cea5c2653fc4bebdce78443f93300437cc9d0b8714757ad1d`.
+
+`tffpt-theory-fullv2` enthält diese konkrete Notation noch nicht.
+
+### 2. `fullv21`: die alpha abhängige EM Antwort stammt aus Sektorgewichten
+
+Quelle: `paper-source:c0087bb39f24847f7e0a02a2`  
+Pfad: `documents/archive--paper-latex--tfpt-theory-fullv21/sections/002-subsection-closure-axioms-a7-a8.tex`  
+Zeilen: 214 bis 275  
+SHA256: `6a44df43d61d84b026c5ad15a1bdbdcc8822e741b4af8b709f0f3563fa3c0b6a`
+
+Hier wird die EM Antwort nicht aus `D_Gamma` berechnet. Man zerlegt vielmehr
+\[
+Z=Z_{\rm triv}+Z_{\rm def},\qquad
+\delta_{\rm top}=Z_{\rm def}/Z_{\rm triv},
+\]
+setzt `S_def(alpha)=S_def(0)+alpha J` und erhält `delta_top(alpha)=delta_top exp(-alpha J)`. Die Wahl `J_1=1` und der Grad zwei der orientierbaren Überlagerung geben `J=2` und somit
+\[
+\phi_z(\alpha)=\phi_{\rm base}+\delta_{\rm top}e^{-2\alpha}.
+\]
+`J_1=1` wird als minimale deckinvariante Normierung gesetzt. Es ist kein Eigenwertsatz für `D_Gamma` und kein Fredholm Trace.
+
+Die hyperchargeabhängige Determinantenspur ist ebenfalls eine andere Schicht. `paper-source:60482538011da95e4c2076f9`, dieselbe Datei, Zeilen 4 bis 54, beschreibt `b_1=41/10` als quadratischen Ladungsindex des UV Log Terms eines regulierten Randdeterminanten. Dort wird kein `tr_adm` und kein Rang eins Operator definiert.
+
+### 3. `tfpt-v29` und `tfpt-v30`: Herkunft von `4/3` und `5/4`
+
+Quelle: `paper-source:5aaee4ce3d65ff6262ab1a4a`  
+Pfad: `documents/archive--paper-latex--tfpt-v29/sections/002-subsection-general-abelian-index.tex`  
+Zeilen: 3 bis 29  
+SHA256: `21d5c4aeeac2a34d0916786f8f2aab758fa9408de2866872ebaf42ac60fd29a1`
+
+Das `4/3` in `b_1=(4/3)N_fam+(1/10)N_H` ist ein GUT normalisierter Materie Spurkoeffizient. Es ist keine Dimension eines Nahtmodus. Unabhängig davon erscheint in `fullv21` Zeilen 268 bis 271 ein `-4/3` bloß als kubischer Taylor Koeffizient von `e^{-2alpha}`.
+
+Quellen: `paper-source:89e77086f491c379a6d2f395` und `paper-source:762cfec1725b19c6e8f68b4d`  
+Pfad: `documents/archive--paper-latex--tfpt-v30/sections/002-subsection-character-trace-identities-and-the-abelian-in.tex`  
+Zeilen: 76 bis 125 und 170 bis 220  
+SHA256: `f8b452dc7ad930271e6477cbc7e338cbb43a6941f5280079bae025b30aa00f4e`
+
+Vor einer Rang eins Transferdefinition steht dort bereits die Skalarreihe
+\[
+\phi_z(\alpha)=\frac1{6\pi}+\delta_{\rm top}e^{-2\alpha}
++\delta_2e^{-4\alpha}+\cdots,
+\qquad \delta_2=\frac54\delta_{\rm top}^2.
+\]
+Das `5/4` wird als `B gamma=(3/2)(5/6)` sowie als Verhältnis `D_start/O_adm=60/48` erklärt. Historisch stammt dieser Koeffizient daher aus der Carrier Arithmetik. Er wurde erst später als Exponent einer Rang eins Determinante geschrieben. Gleiche Zahl bedeutet hier keine frühere Operatoridentität.
+
+### 4. `tfpt-31`: erster konkreter positiver Nahttransfer
+
+Quelle: `paper-source:5a353a0fd12cbded11558872`  
+Pfad: `documents/archive--paper-latex--tfpt-31/sections/014-section-downstream-cosmology-module-on-the-observation-c.tex`  
+Zeilen: 4 bis 24 und 57 bis 68  
+SHA256: `e14c581e23fce25f7e809cac0f4711eccd618db459ee1843655f18644c2ca2ef`
+
+Die Quelle setzt
+\[
+\mathcal U_\Sigma=P_{\rm adm}e^{-\ell_\Sigma|B_\Sigma|}P_{\rm adm}
+\]
+und bezeichnet den Operator als positiv und spurklassig. Sie verwendet
+`-log det_adm(1-U_Sigma)` als gewöhnlichen Fredholm Ausdruck. In diesem v31 Baum tritt `B_Sigma` nur in diesem Kosmologie Modul auf; eine Definition `B_Sigma=D_Gamma` fehlt.
+
+Die Formel ist damit explizit, ihre Spurklassigkeit aber nicht aus einem dort definierten `B_Sigma` hergeleitet. Auch die wörtliche Spektrumsangabe `Spec(U_Sigma) subset (0,e^{-S}]` muss bei unendlichem Rang als Aussage über die nichtverschwindenden Eigenwerte gelesen werden: Für jeden unendlichdimensionalen kompakten spurklassigen Operator gehört `0` zum Spektrum. Diese Präzisierung ändert den Fredholm Ausdruck nicht, verhindert aber, dass die Quellenformulierung als vollständiger Operatorsatz überinterpretiert wird.
+
+Der admissible Projektor ist dagegen ein großer Hodge und Constraint Projektor:
+
+Quelle: `paper-source:c108d5aa4300090790075793`  
+Pfad: `documents/archive--paper-latex--tfpt-31/sections/011-subsection-transport-side-ingredients-for-the-strong-cp-.tex`  
+Zeilen: 182 bis 236  
+SHA256: `67f45f9072363128377e9e48735d24fb1748e504b57c0ab44dc136454e1ed144`
+
+Er wird als `P_adm=P_str P_gap`, mit `P_str=P_Seam,+ P_sing P_Theta`, beziehungsweise als Hodge Projektor `Pi_ker Delta_adm` beschrieben. Die Quelle identifiziert ihn nicht mit einer eindimensionalen Hardy Linie.
+
+Die ausführliche zu v31 gehörige Fassung macht den Status klar:
+
+Quelle: `paper-source:4398a4fa20cf0cd9558d8fea`  
+Pfad: `documents/archive--paper-latex--tfpt-31-cosmolical-constant/sections/001-section-what-tfpt-is.tex`  
+Zeilen: 88 bis 165  
+SHA256: `d192f04d578103a7f1bbfb5af911ade2f4c48fbf4b4a20d9c81c34b1d3b5b9bc`
+
+Sie nimmt `[P_adm,|B_Sigma|]=0` und keinen admissiblen Nullmodus an. Danach sind die Eigenwerte `u_j=e^{-ell lambda_j^+}` und
+\[
+-\log\det(1-U)=\sum_{k\ge1}\frac1k\operatorname{Tr}(U^k).
+\]
+Die zusätzliche Identifikation des niedrigsten Blocks mit `m_1=O_adm=48` wird ausdrücklich als importiert und conjectural bezeichnet. Dies widerspricht einer exakten historischen Rang eins Lesart dieser Transferstufe.
+
+### 5. `tfpt-32`: explizite Herabstufung zur Vermutung
+
+Quelle: `paper-source:fc1ecf31c471e96069db2ab9`  
+Pfad: `documents/archive--paper-latex--tfpt-32/sections/015-subsection-internal-closure-candidates-beyond-the-theore.tex`  
+Zeilen: 54 bis 110  
+SHA256: `8582c396e7a64e91ef798ea9feb978dede36c7fb7468c903f08e84bf15368c30`
+
+Die Abbildung nennt denselben Ansatz `future Fredholm route`; Zeilen 71 bis 110 formulieren ihn als Vermutung. Die Spurentwicklung ist ausdrücklich die gewöhnliche Summe `sum_k tr(U^k)/k`, und der führende Term bleibt `48 exp[-2pi alpha^{-1}/3]`. Das ist die ehrlichste historische Statusangabe des vollständigen Transfers.
+
+### 6. `tfpt-42`: voller Transfer und separate Rang eins Definition
+
+Quelle: `paper-source:482df41c92cd8cfa9d57ed45`  
+Pfad: `documents/archive--paper-latex--tfpt-42/sections/029-section-frw-reduction-seam-transfer-and-the-scalaron-bra.tex`  
+Zeilen: 4 bis 26 und 96 bis 136  
+SHA256: `0d89ad0434fe7c373ea190a4e116cad32e1b362516b7aeec9b163931115ab97f`
+
+Der volle Wärmeübertrag wird wieder als positiver spurklassiger Operator formuliert. Die Determinantenabschätzung summiert seine admissiblen Eigenwerte. Erst der Satz `If, moreover, ... is rank one` reduziert den Fredholm Determinanten auf `1-rho`. Rang eins ist dort klar eine Zusatzvoraussetzung.
+
+Quelle: `paper-source:c6aa05563c9c859fbbda7bed`  
+Pfad: `documents/archive--paper-latex--tfpt-42/sections/007-subsection-carrier-form-of-the-electromagnetic-closure.tex`  
+Zeilen: 13 bis 47  
+SHA256: `6f98cfb7404f415e4a511712c1fa144c85bb662c36386cc32d1ebb3537a9fb6b`
+
+Die EM Schicht definiert dagegen direkt
+\[
+U_\Sigma^{\min}=|\psi_\Sigma\rangle\langle\psi_\Sigma|
+\]
+und erhält mit dem gewöhnlichen Rang eins Identitätssatz
+\[
+-\frac54\operatorname{tr}_{\rm adm}\log(1-qU_\Sigma^{\min})
+=-\frac54\log(1-q).
+\]
+Der zitierte Generator Satz benennt den Modus, aber die hier geprüfte historische Kette liefert keinen Spektralprojektor, der diesen Vektor aus `D_Gamma`, `B_Sigma` oder dem v31 Transfer erzeugt.
+
+Die Aussage in `tfpt-42`, Zeilen 55 bis 66 des Transfermoduls, dass derselbe admissible Determinantensektor daher denselben Dämpfungsmaßstab definiere, ist keine Operatorgleichheit. Sie gibt weder ein Intertwining noch Spektralmultiplizitäten an.
+
+## Was `tr_adm` historisch bedeutet
+
+Die Literalprüfung der ausgewählten Versionsbäume findet `tr_adm` erst in `tfpt-42`, genau im allgemeinen Transfermodul und in der Rang eins EM Definition. `tfpt-31` und `tfpt-32` schreiben in der Fredholm Entwicklung schlicht `Tr` beziehungsweise `tr`.
+
+Die operative Definition ergibt sich aus `tfpt-42`, Transfermodul, Zeilen 98 bis 135: Man nimmt die admissiblen Eigenwerte des positiven spurklassigen Operators, summiert sie und bildet den gewöhnlichen Fredholm Determinanten. Das Suffix `adm` bezeichnet die Einschränkung auf `Ran(P_adm)`. In den geprüften Quellen gibt es hier keine Supertrace, keine relative Kohomologiespur und keine Graduierung, die aus einem Index automatisch den Faktor `(1-q)^{-1}` erzeugt.
+
+Somit ist die spätere EM Rechnung eine gewöhnliche Rang eins Spur. Sie kann nicht rückwirkend als ein historisch vorhandener graded determinant ausgegeben werden.
+
+## Kleinster entscheidender Operator Gegencheck
+
+Nimmt man zugunsten des stärksten möglichen Anschlusses an,
+\[
+B_\Sigma=D_\Gamma=i\frac d{d\theta}
+\]
+und wählt den positiven Hardy Spektralraum ohne Nullmode, dann gilt für `q=e^{-ell}`:
+\[
+P_+e^{-\ell|D_\Gamma|}P_+e_n=q^n e_n,
+\qquad n=1,2,3,\ldots
+\]
+Der Operator ist positiv und spurklassig, aber unendlich dimensional. Sein Fredholm Determinant ist
+\[
+\det(1-P_+e^{-\ell|D_\Gamma|}P_+)
+=\prod_{n\ge1}(1-q^n),
+\]
+nicht `1-q`. Bereits der zweite Eigenwert `q^2>0` entscheidet die Frage. Nimmt man den Nullmode hinzu, ist der Spektralradius eins und der in v31 verlangte Determinant nicht von der behaupteten Form.
+
+Ausführbarer endlicher Präfixtest:
+
+```python
+import sympy as s
+q=s.symbols('q', positive=True)
+eigs=[q**n for n in range(1,5)]
+det4=s.prod(1-x for x in eigs)
+assert all(x != 0 for x in eigs)
+assert s.simplify(det4-(1-q)) != 0
+assert s.simplify(det4/(1-q)-s.prod(1-q**n for n in range(2,5))) == 0
+```
+
+Der Test lief am 2026-10-25 durch. Er beweist nicht die unendliche Aussage durch Endlichkeit; diese folgt direkt aus der gezeigten Eigenbasis. Er zertifiziert den kleinsten unterscheidenden Präfix exakt symbolisch.
+
+## Minimaler wiedergewonnener Anschluss ohne freien Modus
+
+Der alte Transfer erlaubt einen kanonischen Rang eins Anschluss genau unter einer zusätzlichen, prüfbaren Spektralaussage:
+
+* `P_adm` reduziert `|B_Sigma|`.
+* Der kleinste positive admissible Eigenwert `lambda_1` ist isoliert und einfach.
+* Dann ist
+  \[
+  P_1=\mathbf 1_{\{\lambda_1\}}\bigl(|B_\Sigma|\vert_{\operatorname{Ran}P_{\rm adm}}\bigr)
+  \]
+  ein kanonischer Rang eins Projektor, und äquivalent
+  \[
+  P_1=\operatorname*{s-lim}_{t\to\infty}
+  e^{t\lambda_1}P_{\rm adm}e^{-t|B_\Sigma|}P_{\rm adm}.
+  \]
+
+Dieser Anschluss wählt keinen freien Vektor. Er verwendet nur die bereits vorhandenen Operatoren. Die historischen Quellen beweisen seine Voraussetzungen für den EM Sektor jedoch nicht. Die v31 Begleitfassung setzt auf ihrem kosmologischen Ast sogar `m_1=48`, also das Gegenteil der benötigten Einfachheit. Eine vollständige positive Reparatur braucht deshalb genau einen der folgenden ursprünglichen Nachweise:
+
+1. einen EM spezifischen invariant reduzierenden Teilraum, auf dem der erste admissible Eigenwert einfach ist, samt Abbildung zum späteren `psi_Sigma`, oder
+2. eine direkte Quellengleichheit `B_Sigma=D_Gamma` plus eine begründete admissible Projektion auf eine einfache erste Kreislinie.
+
+Ohne einen solchen Nachweis bleibt die volle Wärmeübertragung historisch konstruiert und die Rang eins EM Determinante historisch angenommen. Das ist die kleinste verbleibende Lücke.
+
+## Kurzregister weiterer geprüfter Quellen
+
+* `paper-source:b44aafebf2cbf89b4a6d47a4`, `tfpt-42/sections/036-section-absolute-dimensionless-metrology-from-the-bounda.tex`, Zeilen 252 bis 307, SHA256 `084a84dda258841c64b89b8a7a2d8861e3deb044a3214735e9949d484a8252e5`: formuliert Rang eins und Ausschöpfung des IR Blocks ausdrücklich als Annahme.
+* `paper-source:e66f2358afcfb634f61704f3`, `tfpt-42/sections/040-subsection-full-stage-atlas.tex`, Zeilen 314 bis 395, SHA256 `eafcd82930fa314a0ed69b3fa68f46082a6536c31d6a2e17d4d286335aa5a037`: führt die IR Fortsetzungen und Rang eins Trunkierung im bedingten Layer.
+* `paper-source:08d600e1a95d2e7d738df66a`, `_archive/paper-latex/old/eliminating_k.tex`, Zeilen 75 bis 112, SHA256 `94cec6ff6d98506955170ec3d5973d58c19a674a4109cfd2f697c00a9afb2097`: verwendet `phi_tree=1/(6pi)` nur in der Gravitationsnormierung, ohne Nahttransfer oder `tr_adm`.
+* `_archive/paper-latex/old/theory_root.tex`, Zeilen 103 bis 149, SHA256 `ff5e09a20f2665ce64e8b9b0155f00d4d7518a7096d490834cf164abc5d87b5a`: zeigt die Addition `2pi+2pi+2pi=6pi`, aber keinen Transferoperator.
+
+## Verdict
+
+* **Quellengeprüft und präzisiert:** Die ältere konkrete Kreisfamilie ist der angegebene Ursprung des Naht Spektralflusses und der beanspruchten Normierung `1/(6pi)`. Nach Orientierungsreparatur ist der innere Kreis Spektralfluss exakt; globale Klebung und physische Normierung sind damit nicht neu bewiesen. Der v31 Wärmeübertrag ist als volle Spektralfunktion definiert, und `tr_adm` ist in der späteren Verwendung eine gewöhnliche Spur auf dem admissiblen Raum.
+* **Historisch als konkrete Formel definiert, aber nicht aus dem alten Kreisoperator hergeleitet:** Der positive spurklassige Transfer `P_adm exp(-ell|B_Sigma|)P_adm` steht in v31; die benötigten Reduktions und Spektralannahmen werden in der Begleitfassung offengelegt. v32 erklärt seine kosmologische Verwendung zur Vermutung. v42 übernimmt ihn wieder theoremförmig.
+* **Exakt ausgeschlossen:** Der natürliche Wärmeübertrag des alten Kreisoperators ist nicht Rang eins. Gleiche Basiskonstante, gleicher Dämpfungsmaßstab oder gleiche admissible Bezeichnung liefern keine Operatoridentität.
+* **Bedingt kanonisch reparierbar:** Ein einfacher isolierter niedrigster admissibler Eigenwert erzeugt über seinen Spektralprojektor die benötigte Linie ohne freie Wahl.
+* **Offen in den geprüften Quellen:** Einfachheit dieses EM Eigenwerts, die Gleichheit `B_Sigma=D_Gamma`, die genaue EM Teilprojektion und das Intertwining zum späteren `psi_Sigma`.

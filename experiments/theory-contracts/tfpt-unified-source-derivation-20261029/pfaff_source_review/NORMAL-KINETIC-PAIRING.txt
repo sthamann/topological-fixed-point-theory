@@ -1,0 +1,143 @@
+CONSTRUCTIVE REPAIR: THE EXISTING NORMAL KINETIC OPERATOR
+29 October 2026. Independent analytical review; no new field, J choice,
+source measure, test suite, original edit or Atlas mutation.
+
+Result
+L=-N D=partial_r+B gives a correct new-complex skew kinetic pairing with
+the EXISTING C0. It works at scalar quarter holonomy too. It retains the
+same whole Cauchy graph and gives the canonical charged cross action.
+This repairs a mathematical Pfaffian PRESENTATION inside the given Clifford
+quantization. It does not prove that the original P1 source selects that
+quantization or identify its unnormalized determinant with Z_adm.
+
+1. Fixed data and exact type
+Use the entire existing coupled chart, not a right-channel reduction:
+  D=N(partial_r+B), N^2=-I,
+  B=Z A-S Phi, A=-i0 partial_theta+alpha,
+  Gamma=Z tensor gamma_F, Ical=i0 Gamma, C0=i0 N,
+  C0^2=I, C0 Ical=-Ical C0, C0 B C0=-B.
+The background Phi is the given bounded smooth selfadjoint odd coefficient,
+normal-independent here. The actual scalar alpha=1/4 or3/4 is unchanged.
+Inner products below are NEW-complex Hermitian products, linear in the
+second argument. C0 is antiunitary for this structure, not the old Jloc.
+
+N and D are new-complex-antilinear, whereas
+  L=-N D=partial_r+B
+is new-complex-linear. On the common interior smooth core,
+  L*= -partial_r+B,
+  C0 L C0=partial_r-B=-L*.
+The multiplication by -N is fixed by the existing normal symbol; it is not
+a fitted identification, an extra conjugation or Ical C0D.
+
+Sources: graded_boundary_functor/{PROOF.txt,FINITE-COUPLED.txt};
+charge_transport/DERIVED-PAIRING.txt:17-30,83-95. The earlier failed scalar
+quarter pairing <Jloc x,Dy>_old is a DIFFERENT form. Its counterexample
+remains correct and does not apply to the new pairing below.
+
+2. Exact bilinear skew identity and its boundary term
+Define on this same field-test space
+  beta_L(x,y)=integral_0^ell <C0 x,L y>_new dr.
+It is complex-bilinear. The C0 pairing b(x,y)=<C0x,y> is symmetric, while
+the B term in beta_L is skew since B*=B and C0 B C0=-B. Integration by
+parts therefore gives exactly
+  beta_L(x,y)+beta_L(y,x)
+       =<C0 x(ell),y(ell)>-<C0 x(0),y(0)>.
+With the EXISTING face order(0,ell) and C_faces=(C0,-C0), this is
+  -<C_faces tr(x),tr(y)>.
+Reversing the overall Green orientation reverses both boundary signs.
+The crucial relative minus sign between the two faces is unchanged.
+On compactly supported interior fields beta_L is thus skew, for both scalar
+quarter values and without the old condition a^J=-a.
+
+For a closed realization the actual trace domain must make this bilinear
+boundary pairing vanish. An operator version requires the transported
+adjoint-domain relation C0 Dom(L)=Dom(L*) and C0 L C0=-L* there. These
+global boundary conditions were not automatically proved by the interior
+formula. Invertibility/Fredholm data and any zero modes must also be retained
+before taking a determinant or inverse. In particular, specifying the
+Cauchy-solution graph is not by itself an invertible closed-boundary problem.
+
+3. Charged cross pairing, retaining the same quarter parameter
+Use the already proved whole unitary chart
+  T(v,bar(w))=Ev+C0Ew,
+  T^-1 B T=h directsum(-bar(h)), h=A gamma_F-i0 gamma_F Phi.
+Since T is constant,
+  T^-1 L T=(partial_r+h) directsum(partial_r-bar(h)).
+For x=T(v,bar(w)), y=T(v',bar(w')) this gives the exact expression
+  beta_L(x,y)
+   =integral[<w,(partial_r+h)v'>+<(partial_r-h)w',v>] dr.
+After the displayed integration by parts,
+  beta_L(x,y)
+   =integral[<w,Kv'>-<w',Kv>] dr+[<w',v>]_0^ell,
+  K=partial_r+h.
+Thus on the interior core this is the ordinary charged cross pairing.
+There is no extra physical fermion copy: the second slot is the conjugate
+test space already present in the complete selfdual chart.
+
+In a finite regulator with its matching boundary pairing, its skew matrix
+in particle/conjugate order is
+  M=[[0,-K^T],[K,0]].
+Consequently Pf(M)=+/-det(K), with the sign fixed by the retained Berezin
+orientation. The Grassmann half-quadratic is the charged barpsi K psi action.
+The Pfaffian is not a freely inferred square root of the determinant on a
+different field space. In particular a factor1/2 in a full doubled trace
+cannot be carried into a comparison with the original spectral trace
+without identifying that trace's actual space and real structure.
+
+4. Same incoming/outgoing full graph, not just face occupations
+D x=0 and L x=0 have exactly the same Cauchy solutions because -N is
+invertible. For the existing normal-independent collar, put R=exp(-ell h).
+The charged trace relation is v1=R v0. Its orthogonal graph projector is
+  G(h)=[[a,c],[c,1-a]],
+  a=(1+exp(-2ell h))^-1, c=(2cosh(ell h))^-1.
+The full oriented chart is the existing
+  T_faces(v0,v1,bar(w0),bar(w1))
+       =(Ev0+C0Ew0, Ev1-C0Ew1).
+The conjugate solutions give w1=-R^-1 w0, so their graph is precisely the
+orthogonal complement of the conjugate charged graph. Therefore
+  T_faces^-1 G(B) T_faces=G(h) directsum(I-bar(G(h))).
+Both crossing blocks c and both labeled face covariances are retained.
+The alpha dependence is present in h and R. Opposite outward-normal signs
+do not require choosing a second independent quarter source.
+
+For unbounded h the exponentials are used on their actual graph domains
+and the bounded projector is defined by spectral calculus, as in the old
+proof. This is not an assertion of a well-posed arbitrary L2 Cauchy ODE.
+The existing normal-dependent extension replaces R^-1 by(R*)^-1 and uses
+the actual elliptic Cauchy space or a finite regulator; it need not be
+re-derived here. See normal_dependent_transport/PROOF.txt:sections2-3.
+
+5. What is repaired, what is reused, and the exact remaining identification
+Given that the full graph is the quantum CAR covariance, the existing
+positive-projector theorem fixes every CAR word. The new L pairing is a
+correct kinetic presentation of that same conditional charged/Clifford source.
+It repairs the local skew typing of the candidate at fixed scalar alpha.
+It neither revives <Jloc,D>_old as skew nor identifies C0 with physical J_F.
+The whole existing HS reflection and same-parameter circle action remain
+the results of GRADED-HS-REFLECTION-AND-TIME.txt, with beta=2ell.
+
+The Atlas already contains the relevant stronger sewing statement:
+  finding:collar-car-projection-multifield-ray,
+  finding:original-operational-seed-and-given-green-pairing.
+Their actual source seam-collar-multifield-20261016/PROOF.txt:34-128,449-480
+was reread. It fixes the oriented multi-field operator RAY as direct sum
+of exterior powers of R and explicitly does not recover its overall complex
+scalar, vacuum determinant or unnormalized partition function. This is
+reused, not announced as a new completion of all source normalization.
+
+A chosen fixed-domain Gaussian integral can supply a determinant scalar;
+showing it equals the ORIGINAL relative source requires its same reference,
+zero-mode convention, determinant-line orientation/eta phase and actual
+bosonic background weight. The normalized graph and its Wick/Pfaffian
+moments alone do not prove that equality. For a complete given Seed these
+objects are to be compared with its existing state and source, not selected
+again. The original physical use of the Clifford functor remains exactly
+the explicit premise of graded_boundary_functor/PROOF.txt:99-104.
+
+Finally r evolution of this first-order kinetic problem, its charged circle
+automorphism, the HS Liouvillian and a physical OS transfer are distinct
+previously typed actions. This corrected pairing supplies no new physical
+time identification. The constructive next comparison is the actual
+fixed-domain charged K functional with the original source insertions and
+reference, with the full T_faces graph retained. No new source platform is
+needed to perform that comparison.

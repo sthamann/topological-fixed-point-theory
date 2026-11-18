@@ -1,0 +1,531 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "schema_version": 1,
+  "domain_id": "tfpt.crossed_defect.v1",
+  "title": "Source-fixed crossed-lattice defect extension",
+  "research_question": "Does the actual ordered eight-channel CAR cocycle admit a full odd-field defect extension whose fixed half-lattice generator, fixed permutation lift, fixed quarter clock, fixed state restriction, and fixed W4 action satisfy one common set of exact relations?",
+  "verdict_ceiling": "CONDITIONAL_MARKED_DEFECT_LIFT",
+  "not_claimed": [
+    "P1/P2 selection of the eight-channel source",
+    "selection of a Hamiltonian, beta, state, event law, probe, or instrument",
+    "ordinary-local inclusion of odd CAR fields in the bosonic E8 vacuum algebra",
+    "a raw Xi map from the original source to V16",
+    "T1-T8 closure or a physical spacetime theory"
+  ],
+  "fixed_source_data": {
+    "dimension": 8,
+    "basis": [
+      "e0",
+      "e1",
+      "e2",
+      "e3",
+      "e4",
+      "e5",
+      "e6",
+      "e7"
+    ],
+    "vectors": {
+      "q": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "s_twice": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "a": [
+        1,
+        1,
+        1,
+        1,
+        0,
+        0,
+        0,
+        0
+      ],
+      "b": [
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        1,
+        1
+      ],
+      "r0_twice": [
+        1,
+        1,
+        1,
+        1,
+        -1,
+        -1,
+        -1,
+        -1
+      ]
+    },
+    "definitions": {
+      "s": "q/2",
+      "b": "P(a)",
+      "r0": "s-b",
+      "charge": "Q(n)=sum_j n_j",
+      "permutation": "P(n0,n1,n2,n3,n4,n5,n6,n7)=(n4,n5,n6,n7,n0,n1,n2,n3)",
+      "epsilon_Z": "eps(n,m)=(-1)^(sum_{i>j} n_i*m_j)",
+      "permutation_lift": "P_hat E_n P_hat^-1=eta(n) E_(P n), eta(n)=(-1)^(A(n)B(n)), A=sum_{j<4}n_j, B=sum_{j>=4}n_j",
+      "torus_lift": "Z_a E_n Z_a^-1=(-1)^(a dot n) E_n and Z_a X Z_a^-1=(-1)^(a dot s)X=X",
+      "integer_word_product": "E_n E_m=eps(n,m) E_(n+m)",
+      "normal_form": "Every word reduces to a unique formal pair (n,c), written E_n X^c with n in Z^8 and c in {0,1}.",
+      "half_word": "E_r0 := E_(-b) X",
+      "operators": "U_s:=i^(-zeta_exp)X; R_c:=Z_a E_r0 P_hat; W4:=Z_a E_a P_hat. In the calibrated zeta_exp=2 gauge this is U_s=-X."
+    },
+    "time": {
+      "kind": "fixed_input_extended_to_all_charges",
+      "charges": "p=n+c*s, n in Z^8, c in {0,1}",
+      "K_alpha": "K_alpha(p,N)=N+|p|^2/2+delta_alpha dot p",
+      "delta_alpha": "delta_alpha[j]=(j+alpha)/8-1/2",
+      "alpha_values": [
+        "1/4",
+        "3/4"
+      ],
+      "W4_ward": "[K_alpha,W4]=W4*(Q/2+3/4+alpha/2)",
+      "quarter_character_mu8_exp": {
+        "alpha_1_4": "7+4*(Q mod 2) mod 8",
+        "alpha_3_4": "1+4*(Q mod 2) mod 8"
+      },
+      "selection_status": "premise; extending the same quadratic K_alpha to the half-lattice is tested, not derived from P1/P2"
+    },
+    "state": {
+      "restriction": "the fixed source CAR state omega0",
+      "sector_labels": "[0,s,v,c]=[(0,0),(1,0),(0,1),(1,1)] where the pair is (X-grade c, Q(n) mod 2) for E_n X^c",
+      "sector_actions": "X toggles 0<->s and v<->c; every odd E_ej toggles 0<->v and s<->c",
+      "fixed_modular_data": {
+        "sector_order": [
+          "0",
+          "s",
+          "v",
+          "c"
+        ],
+        "S_numerator": [
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            -1,
+            -1
+          ],
+          [
+            1,
+            -1,
+            1,
+            -1
+          ],
+          [
+            1,
+            -1,
+            -1,
+            1
+          ]
+        ],
+        "S_denominator": 2,
+        "T_sign": [
+          1,
+          1,
+          -1,
+          1
+        ]
+      },
+      "fixed_Arf_recombination": {
+        "formula": "Z_F[rho_x,rho_t]=(1/2) sum_(a,b in F2) (-1)^(a*b+a*rho_t+b*rho_x) Z_B[a,b]",
+        "ab_order": [
+          "00",
+          "01",
+          "10",
+          "11"
+        ],
+        "rho_x_rho_t_order": [
+          "00",
+          "01",
+          "10",
+          "11"
+        ],
+        "sign_rows": [
+          [
+            1,
+            1,
+            1,
+            -1
+          ],
+          [
+            1,
+            1,
+            -1,
+            1
+          ],
+          [
+            1,
+            -1,
+            1,
+            1
+          ],
+          [
+            1,
+            -1,
+            -1,
+            -1
+          ]
+        ]
+      },
+      "conditional_expectation": "E0(E_n X^c)=E_n for c=0 and 0 for c=1",
+      "extension": "omega_tilde=omega0 o E0",
+      "uniqueness_scope": "canonical and unique only in the dual-Z2-invariant class with the stated restriction",
+      "positivity_scope": "algebraic finite-word SOS; no C-star completion, Gibbs choice, or physical source-selection claim"
+    }
+  },
+  "genotype_schema": {
+    "type": "object",
+    "additionalProperties": false,
+    "required": [
+      "schema",
+      "chi_exp",
+      "zeta_exp",
+      "kappa_exp"
+    ],
+    "properties": {
+      "schema": {
+        "const": "tfpt.crossed_defect.v1"
+      },
+      "chi_exp": {
+        "description": "lambda_j with X E_ej X^-1=i^(lambda_j) E_ej, in basis order e0..e7",
+        "type": "array",
+        "minItems": 8,
+        "maxItems": 8,
+        "items": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 3
+        }
+      },
+      "zeta_exp": {
+        "description": "z with X^2=i^z E_q",
+        "type": "integer",
+        "minimum": 0,
+        "maximum": 3
+      },
+      "kappa_exp": {
+        "description": "k with P_hat X P_hat^-1=i^k X",
+        "type": "integer",
+        "minimum": 0,
+        "maximum": 3
+      }
+    }
+  },
+  "candidate_semantics": {
+    "phase_group": "mu4",
+    "phase_convention": "exponent e denotes i^e; every congruence is modulo 4",
+    "character": "L(n)=sum_j chi_exp[j]*n_j mod 4 and chi(n)=i^L(n)",
+    "crossed_relations": [
+      "X E_n = i^L(n) E_n X",
+      "X^2 = i^zeta_exp E_q",
+      "P_hat X P_hat^-1 = i^kappa_exp X"
+    ],
+    "forbidden_candidate_fields": [
+      "Hamiltonian or energy coefficients",
+      "state weights, beta, density matrix, or Gram target",
+      "W4, U_s, R_c, P_hat, epsilon_Z, eta, Z_a, or their target actions",
+      "a target-derived UHU* transport",
+      "a declaration that odd fields are ordinary local"
+    ]
+  },
+  "exact_constraints": [
+    {
+      "id": "C1_character",
+      "formula": "L(n+m)=L(n)+L(m) for all n,m in Z^8",
+      "finite_reduction": "definition of L from the eight generator exponents"
+    },
+    {
+      "id": "C2_square_inner_action",
+      "formula": "2*chi_exp[j]=2 mod 4 for every j",
+      "meaning": "chi(n)^2=(-1)^Q(n)=eps(q,n)/eps(n,q), so conjugation by X^2 agrees with Ad(E_q) on every integer word"
+    },
+    {
+      "id": "C3_q_fixed",
+      "formula": "sum_j chi_exp[j]=0 mod 4",
+      "meaning": "X commutes with E_q, hence the relation X^2=i^z E_q is associative"
+    },
+    {
+      "id": "C4_even_D8_restriction",
+      "formula": "chi_exp[i]-chi_exp[j]=0 and chi_exp[i]+chi_exp[j]=2 mod 4 for every i<j",
+      "meaning": "for every d with even Q(d), chi(d)=(-1)^(Q(d)/2), the exact section-21 even-sector action"
+    },
+    {
+      "id": "C5_P_compatibility",
+      "formula": "chi_exp[j]=chi_exp[(j+4) mod 8] for all j and 2*kappa_exp=0 mod 4",
+      "meaning": "P preserves chi and P_hat^2 acts trivially on X"
+    },
+    {
+      "id": "C6_full_composition",
+      "formula": "L(-b)=0 mod 4",
+      "derivation": "eps(-b,q)=+1, hence X E_r0=i^(L(-b)+zeta_exp)E_a; the source-normalized definition U_s=i^(-zeta_exp)X cancels the section phase, so with R_c=Z_a E_r0 P_hat and [Z_a,X]=0 this is exactly U_s R_c=W4. The scalar is determined by X^2 and is not a fit parameter."
+    },
+    {
+      "id": "C7_odd_defect_statistics",
+      "formula": "chi_exp[j] is odd for every j",
+      "meaning": "X has mutual phase +i or -i with each odd CAR generator; ordinary locality is rejected. Both uniform orientations remain admissible unless an independent fixed source identity distinguishes them."
+    },
+    {
+      "id": "C8_all_word_associativity",
+      "formula": "reduce both parenthesizations of (E_n X^c)(E_m X^d)(E_l X^f), c,d,f in {0,1}, using the fixed normal form and require identical integer charge, grade, and mu4 exponent",
+      "quantification": "symbolic in n,m,l; the certificate proves the polynomial exponent identities, not a finite charge sample"
+    },
+    {
+      "id": "C9_charge_parity",
+      "formula": "Q(U_s R_c)-Q(input)=4, Pi W_n Pi=(-1)^n W_n, and W4 is even while X is a defect-sector transporter",
+      "meaning": "R_c alone is never accepted as W4"
+    },
+    {
+      "id": "C10_fixed_time_and_quarter",
+      "formula": "evaluate the fixed K_alpha on n+c*s and prove the W4 Ward identity plus the two fixed mu8 quarter characters for alpha=1/4,3/4",
+      "meaning": "candidate phases cannot redefine time or erase the quarter phase"
+    },
+    {
+      "id": "C11_expectation_SOS",
+      "formula": "for y=a0+a1 X, E0(y* y)=a0* a0+phi^(-1)(a1* a1), where phi(E_n)=chi(n)E_n",
+      "meaning": "omega0 o E0 is positive on finite words whenever omega0 is positive; no new kernel is optimized"
+    },
+    {
+      "id": "C12_all_sector_state_compatibility",
+      "formula": "track (c,Q(n) mod 2) through every normal-form product and through X, odd E_ej, P_hat, U_s, R_c, and W4; require the fixed [0,s,v,c] action, T signs, and Arf recombination coefficients to be unchanged",
+      "meaning": "the candidate acts on all four state sectors and may not silently drop or flip the twisted-sector contribution"
+    }
+  ],
+  "canonicalization": {
+    "integer_reduction": "reduce all exponents to 0,1,2,3",
+    "x_rephasing": "Let t=exp(pi*i*g/4). Under X' = t X, zeta_exp' = zeta_exp+g mod 4, E_r0' = t E_r0, and therefore R_c' = t R_c. The normalized U_s'=i^(-zeta_exp')X' equals t^(-1)U_s, so U_s'R_c'=U_sR_c=W4. chi_exp and kappa_exp are unchanged. Canonical search representatives use zeta_exp=0; zeta is a section gauge and never a distinct algebraic candidate class.",
+    "permutation": "no channel permutation quotient; channel order and P are source-marked",
+    "canonical_json_key_order": [
+      "schema",
+      "chi_exp",
+      "zeta_exp",
+      "kappa_exp"
+    ]
+  },
+  "calibration": {
+    "candidate": {
+      "schema": "tfpt.crossed_defect.v1",
+      "chi_exp": [
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3
+      ],
+      "zeta_exp": 2,
+      "kappa_exp": 2
+    },
+    "expected": {
+      "feasible": true,
+      "interpretation": "X E_n X^-1=(-i)^Q(n)E_n, X^2=-E_q, P_hat X P_hat^-1=-X",
+      "status": "nonempty plumbing calibration and explicit conditional construction; neither this orientation nor this P-lift branch is selected by P1/P2"
+    },
+    "alternate_unselected_P_lift": {
+      "schema": "tfpt.crossed_defect.v1",
+      "chi_exp": [
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3
+      ],
+      "zeta_exp": 2,
+      "kappa_exp": 0
+    }
+  },
+  "first_search_objective": {
+    "name": "classify_full_marked_odd_defect_lifts",
+    "question": "Classify every source-marked mu4 crossed extension satisfying C1-C12, test whether any already-fixed source identity distinguishes chi=-i from chi=+i, and keep the two P-lift branches distinct unless a fixed source identity removes one. The currently cited source identities distinguish neither pair: both chi orientations have the same chi^2=(-1)^Q, D8 restriction, W4 Ward/quarter character, charge/parity, S/T/Arf data, and induced-state restriction; both kappa branches have the same integer-CAR P lift and W4 product, while kappa appears only when P_hat crosses X. Therefore the four survivors are algebraic candidate classes, not proven physically inequivalent classes.",
+    "constructive_success": "an exact candidate and Lean certificate for the full normal-form algebra, odd defect statistics, U_s R_c=W4, fixed time/quarter action, and induced-state SOS",
+    "scoped_negative": "an exact proof that no genotype in this crossed-extension class satisfies all fixed source identities; this excludes only this declared class",
+    "stop_condition": "all 4^9 canonical-zeta rows are classified (odd kappa rows serve as P-square negatives), and all four surviving orientation-by-kappa classes have an exact analytical classification and Lean certificate; stop rather than extending an already classified finite table",
+    "novelty_rule": "the known calibration alone is not counted as a new discovery; progress requires the all-word odd-sector extension and its fixed marking/time/state checks, or a scoped exact obstruction"
+  },
+  "gpu_evaluator": {
+    "api": [
+      "sample",
+      "mutate",
+      "crossover_optional",
+      "canonicalize",
+      "evaluate"
+    ],
+    "device_rule": "all batch residual tensors are allocated and evaluated on the requested CUDA device; device name, UUID, dtype, batch size, synchronized elapsed time, and peak allocation are recorded",
+    "arithmetic": "torch integer tensors with exact modulo-4 residuals; the implemented fixed rational time identities are scaled by 64 (energy64), with delta represented at denominator 32 and doubled charges. The exhaustive implementation evaluates 4^9=262144 canonical-zeta rows with kappa_exp in {0,1,2,3}; P_hat^2 rejects odd kappa, leaving the 4^8*2=131072 source-valid rows before the other constraints.",
+    "objectives_minimized_in_order": [
+      "inner_action_q_fixed_and_200_associator_probe_violation_count",
+      "D8_restriction_P_compatibility_and_kappa_square_violation_count",
+      "U_s_R_c_W4_composition_violation_count",
+      "36_fixed_time_and_quarter_probe_violation_count"
+    ],
+    "pending_exact_acceptance_objectives": [
+      "C9 full charge/parity operator transport",
+      "C11 finite-word expectation SOS and positivity",
+      "C12 full field/sector and S/T/Arf compatibility"
+    ],
+    "feasible": "provisional_feasible is true iff every currently implemented exact GPU residual is zero and the candidate is serializable for the exact checker; it is not the final research verdict",
+    "implemented_acceptance_2026_10_15": [
+      "phase/character constraints C1-C7",
+      "200 bounded normal-form associator coefficient probes toward C8",
+      "36 fixed rational time/quarter probes toward C10"
+    ],
+    "pending_before_final_acceptance": [
+      "C9 full charge/parity operator transport",
+      "C11 finite-word expectation SOS and positivity",
+      "C12 full field/sector and S/T/Arf compatibility"
+    ],
+    "descriptor": [
+      "chi_orientation_plus_i_or_minus_i_or_other",
+      "zeta_rephasing_orbit",
+      "kappa_branch",
+      "odd_mutual_phase_multiset",
+      "exact_violation_signature"
+    ],
+    "evidence_boundary": "GPU enumeration or a zero numeric residual is not a proof; feasibility becomes certified only after exact replay and Lean acceptance"
+  },
+  "lean_certificate": {
+    "status": "implemented_scoped; all four orientations/lifts kernel-checked; full state/field acceptance remains pending",
+    "candidate_input": "the strict four-key genotype JSON plus hashes of the fixed source fixtures",
+    "proof_style": "universal integer exponent identities reduced to generator congruences, exhaustive c,d,f in Fin 2, and exact rational/scaled-integer time identities",
+    "prohibited": [
+      "candidate-provided theorem assumptions",
+      "floating-point premises",
+      "hard-coded acceptance of the calibration JSON",
+      "a rational surrogate for log(Q), Q^(-1/2), or a Gibbs state"
+    ],
+    "target_theorem_signature": "check g = true -> CrossedWordAssociative g /\\ D8Restriction g /\\ DefectOddBraiding g /\\ UsRcEqW4 g /\\ ChargeParity g /\\ QuarterTimeWard g /\\ CanonicalExpectationSOS g /\\ AllSectorArfCompatibility g",
+    "implemented_theorem": "SeamConstructiveCertificate.candidate_certificate",
+    "implemented_scope": [
+      "C1-C7 phase and character relations",
+      "C8 universal charge/grade/phase associativity",
+      "C9 partial: affine W4 charge carry for every rational charge",
+      "C10 fixed rational K_alpha Ward identity, channel clock pullback and parity table",
+      "fixed sector toggle/T-sign/Arf bookkeeping only"
+    ]
+  },
+  "mandatory_negative_mutations": [
+    {
+      "id": "ordinary_local_X",
+      "mutation": "set every chi_exp[j]=0",
+      "must_fail": [
+        "C2_square_inner_action",
+        "C4_even_D8_restriction",
+        "C7_odd_defect_statistics"
+      ]
+    },
+    {
+      "id": "drop_half_transport",
+      "mutation": "replace U_s R_c by R_c in the composition fixture",
+      "must_fail": [
+        "C6_full_composition",
+        "C9_charge_parity"
+      ]
+    },
+    {
+      "id": "wrong_U_normalization",
+      "mutation": "change zeta_exp from 2 to 0 but incorrectly keep U_s=-X instead of the fixed rule U_s=i^(-zeta_exp)X",
+      "must_fail": [
+        "C6_full_composition"
+      ]
+    },
+    {
+      "id": "erase_quarter",
+      "mutation": "replace alpha by 0 or delete the fixed mu8 character",
+      "must_fail": [
+        "C10_fixed_time_and_quarter"
+      ]
+    },
+    {
+      "id": "flip_twisted_Arf_sign",
+      "mutation": "flip the fixed (-1)^(a*b) coefficient in the twisted-sector recombination",
+      "must_fail": [
+        "C12_all_sector_state_compatibility"
+      ]
+    },
+    {
+      "id": "cyclic_charge_four",
+      "mutation": "reduce Q and the T1 carry modulo 4",
+      "must_fail": [
+        "C9_charge_parity",
+        "C10_fixed_time_and_quarter"
+      ]
+    }
+  ],
+  "source_manifest": [
+    {
+      "path": "experiments/theory-contracts/seam-joint-ward-state-20261014/PROOF.txt",
+      "sha256": "7c0cd92dfc5eca88260baae0af9edad66f958a27ce0d15d7965414b3971f8da0",
+      "lines": [
+        752,
+        861
+      ],
+      "use": "actual T1/W4 action, integer carry, charge/parity, K_alpha Ward identity, and retained quarter character"
+    },
+    {
+      "path": "experiments/theory-contracts/seam-joint-ward-state-20261014/PROOF.txt",
+      "sha256": "7c0cd92dfc5eca88260baae0af9edad66f958a27ce0d15d7965414b3971f8da0",
+      "lines": [
+        1003,
+        1087
+      ],
+      "use": "ordered CAR cocycle, P_CAR lift, W4=Z_a E_a P_CAR, even D8 crossed extension, kappa branches, and the exact boundary of the prior result"
+    },
+    {
+      "path": "experiments/theory-contracts/charged-source-time-audit-20260920/PROOF.txt",
+      "sha256": "97ddf9206a860c00d797dc62bb23b6d731523ca21c10280592f6c61e8a0b2476",
+      "lines": [
+        154,
+        290
+      ],
+      "use": "charged-field time tests, half-spinor sector transport, and the prohibition on replacing the quarter-shifted time by neutral-current agreement"
+    },
+    {
+      "path": "experiments/theory-contracts/source-sector-reconstruction-20260920/PROOF.txt",
+      "sha256": "a5796f90f4fa079badc5a07c451f1ea1028fcff3f258ac3f6992c6ae8d65d7d6",
+      "lines": [
+        1,
+        293
+      ],
+      "use": "four discriminant sectors, spin/defect interpretation of odd fields, fixed Arf recombination, and common-time requirement"
+    },
+    {
+      "path": "experiments/theory-contracts/v16-operator-pullback-20261014/PROOF.md",
+      "sha256": "a4802d25255e9bc1ce3cd4a3577c56dd5e81e02fe976d565a8b459a871421a5f",
+      "use": "explicit boundary that a 128-component spinor packet is not a dimension-only source-to-vector operator dictionary"
+    },
+    {
+      "path": "experiments/theory-contracts/native-source-reconstruction-20261014/PROOF.md",
+      "sha256": "d16b6af2c90491ac94eeb4ab04a8c96b072d37bb6bc5015b3db85c023f8a96e2",
+      "use": "state/time constructions are conditional on fixed source choices and do not provide the missing source selector"
+    }
+  ]
+}

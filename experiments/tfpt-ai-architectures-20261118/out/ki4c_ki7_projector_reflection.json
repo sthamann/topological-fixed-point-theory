@@ -1,0 +1,136 @@
+{
+ "KI4c": {
+  "aligned to TFPT five-space (function control)": {
+   "tfpt_rank5": [
+    0.145,
+    0.025
+   ],
+   "random_rank5": [
+    1.124,
+    0.111
+   ],
+   "pca_rank5": [
+    1.012,
+    0.035
+   ],
+   "pls_rank5": [
+    0.919,
+    0.045
+   ],
+   "full_256": [
+    0.909,
+    0.043
+   ]
+  },
+  "signal in a random five-space": {
+   "tfpt_rank5": [
+    1.083,
+    0.06
+   ],
+   "random_rank5": [
+    1.092,
+    0.076
+   ],
+   "pca_rank5": [
+    1.004,
+    0.024
+   ],
+   "pls_rank5": [
+    0.898,
+    0.046
+   ],
+   "full_256": [
+    0.888,
+    0.047
+   ]
+  },
+  "signal in a random five-space of Sym^4": {
+   "tfpt_rank5": [
+    0.984,
+    0.109
+   ],
+   "random_rank5": [
+    1.061,
+    0.057
+   ],
+   "pca_rank5": [
+    1.007,
+    0.036
+   ],
+   "pls_rank5": [
+    0.905,
+    0.05
+   ],
+   "full_256": [
+    0.897,
+    0.05
+   ]
+  },
+  "handwritten digits, one-vs-rest": {
+   "tfpt_rank5": [
+    0.946,
+    0.059
+   ],
+   "random_rank5": [
+    0.956,
+    0.064
+   ],
+   "pca_rank5": [
+    0.774,
+    0.145
+   ],
+   "pls_rank5": [
+    1.14,
+    0.742
+   ],
+   "full_256": [
+    0.586,
+    0.162
+   ]
+  },
+  "metric": "test MSE / variance of target (1.0 = no better than predicting the mean), mean and std over 40 trials"
+ },
+ "KI7": {
+  "reflection + shift": {
+   "recall_accuracy": {
+    "T=20": 1.0,
+    "T=100": 1.0,
+    "T=300": 1.0
+   },
+   "gradient_norm_untrained": {
+    "T=20": 8.0,
+    "T=100": 8.0,
+    "T=300": 8.0,
+    "T=1000": 8.0
+   }
+  },
+  "tanh recurrent": {
+   "recall_accuracy": {
+    "T=20": 1.0,
+    "T=100": 0.625,
+    "T=300": 0.247
+   },
+   "gradient_norm_untrained": {
+    "T=20": 1.111e-05,
+    "T=100": 0.0,
+    "T=300": 0.0,
+    "T=1000": 0.0
+   }
+  },
+  "GRU": {
+   "recall_accuracy": {
+    "T=20": 1.0,
+    "T=100": 0.131,
+    "T=300": 0.131
+   },
+   "gradient_norm_untrained": {
+    "T=20": 0.0008474,
+    "T=100": 3.729e-19,
+    "T=300": 0.0,
+    "T=1000": 0.0
+   }
+  },
+  "chance_level": 0.125,
+  "note": "Norm-preserving recurrences built from Householder reflections are a known architecture class (unitary / orthogonal RNNs, Mhammedi et al. 2017); the TFPT pulse operator is one instance of it."
+ }
+}

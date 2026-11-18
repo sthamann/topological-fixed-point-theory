@@ -1,0 +1,79 @@
+{
+  "steps": [
+    {
+      "step": "T1.1 reconstruction of the frozen h_W: Hermitian, support {0, +-b1, +-b2, +-b3} (three of the four mark directions), zeros exactly at Gamma and P, V_Gamma = I, V_P = -R_120 (orthogonal, det -1): two isotropic Weyl cones of opposite chirality; lowest free positive energies reproduce the published 1.4142 / 0.7174 / 0.7071 for V = 16 / 32 / 64",
+      "pass": true,
+      "detail": "zero classes 2; lowest positive energies {'cubic16': np.float64(1.4142), 'oh32': np.float64(0.7174), 'prim64': np.float64(0.7071), 'debug4': np.float64(3.4641)}"
+    },
+    {
+      "step": "T1.2 microscopic point group of h_W: of the 48 elements of O_h (with spin rotation) exactly the three-element C3 about [111] survives",
+      "pass": true,
+      "detail": "3 surviving elements"
+    },
+    {
+      "step": "T1.3 MARK_C3_SELECTION: the four chart Hamiltonians h^(a) (mark a distinguished) are mapped onto each other by every mark rotation g in A4 with its spin lift, U_g h^(a)(g^-1 k) U_g^dag = h^(g a)(k) up to the cyclic relabelling of the three primitive directions (outcome A: chart equivalence); the surviving C3 is the stabiliser of the distinguished mark; the surface relation and the mark Clifford algebra treat all four marks alike, so nothing checked in P1/P2 selects one (outcome C for the selection)",
+      "pass": true,
+      "detail": "A4 elements checked 12, stabiliser of mark 0: 3 elements"
+    },
+    {
+      "step": "T1.4 GAMMA_FACTOR: h_W(Gamma) = 0 and f(Gamma) = 0 on every P-compatible periodic cell, so all kinetic and HS matrices vanish on the 32 Gamma modes; Z_Theta = 2^32 Z_active at mu = 0 (Gamma observables analytic)",
+      "pass": true,
+      "detail": "Gamma block removed analytically from QMC"
+    },
+    {
+      "step": "T1.5 hashes: structure_hash fixes h_W, F, B_A, interaction and symmetries; parameter_hash(g, beta, N_tau, V) varies independently (g scans do not change the architecture)",
+      "pass": true,
+      "detail": "structure_hash 2b23ba1ba94c9058; example parameter_hash(0.02, 2, 8, 16) 34204b86b6e92e77"
+    }
+  ],
+  "passed": 5,
+  "total": 5,
+  "structure": {
+    "h_W": "t sigma.(B^-1 d(Bk)), d_i = sin p_i + cos p_{i+1} - 1, p = Bk",
+    "B": [
+      [
+        1.0,
+        1.0,
+        -1.0
+      ],
+      [
+        1.0,
+        -1.0,
+        1.0
+      ],
+      [
+        -1.0,
+        1.0,
+        1.0
+      ]
+    ],
+    "filter": "F = I - (1/8) sum_eps T_eps",
+    "B_A": "standard Spin(10) 10-channel (C = Gamma1 Gamma3 Gamma5 Gamma7 Gamma9)",
+    "interaction": "-g sum_{x,A} O_A(x)^2",
+    "symmetry": "C3[111] x Spin(10) x Z4 x translations"
+  },
+  "structure_hash": "2b23ba1ba94c9058",
+  "lowest_free_energies": {
+    "cubic16": 1.4142135623730956,
+    "oh32": 0.717438935214301,
+    "prim64": 0.7071067811865456,
+    "debug4": 3.4641016151377553
+  },
+  "V_P": [
+    [
+      0.0,
+      0.0,
+      -0.9999999998622222
+    ],
+    [
+      -0.9999999999732445,
+      -1.1102230246251565e-10,
+      0.0
+    ],
+    [
+      -1.1102230246251565e-10,
+      -0.9999999999732445,
+      0.0
+    ]
+  ]
+}

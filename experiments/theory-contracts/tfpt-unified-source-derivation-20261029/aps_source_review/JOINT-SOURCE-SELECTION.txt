@@ -1,0 +1,98 @@
+ZWISCHENZEITLICHE NEBENRECHNUNG. Nach Nutzerkorrektur nicht als fundamentaler Fortschritt oder aktive Priorität übernommen. Siehe GESAMTBILD.md.
+
+URSPRÜNGLICHE GEMEINSAME QUELLE UND DIE AUSWAHLFRAGE
+30.10.2026. Fortsetzung nach dem ausdrücklichen Auftrag zur vollständigen Lösung.
+Gesamtstatus: NICHT GELÖST. Keine neue physische Auswahlregel erfunden.
+
+1. Stärksten vorhandenen Selektor tatsächlich gelesen
+Das Originalmasterfunktional steht in archive--tfpt-45--source_extracts--
+02_carrier_source/sections/009-source.tex:334-377. Es fixiert d_disc* und P_adm,
+setzt xi=(alpha,chi_geo,delta_ph,rho_vac) und sperrt alle B außer B_min durch
+eine unendliche Barriere. Der anschließende Beweis in Abschnitt010 behauptet
+die additive Zerlegung in vier Sektorfunktionen. Diese Quelle wurde gelesen.
+Der ursprüngliche Operator samt Zulässigkeit und kontinuierlichem Quellinput
+wird in dieser Definition nicht als zusätzliche Unbekannte minimiert.
+Das war bereits im Atlas geklärt: master-functional-presupposes-source-selection
+und joint-selfconsistency-presupposes-minimal-algebra-fiber-selection.
+Diese bekannten Befunde werden hier übernommen, nicht als neue Entdeckung gezählt.
+
+2. Neuer entscheidender Test am tatsächlich verwendeten Quellenoperator
+Die ursprünglichen bereits benutzten Richtungen sind
+ A=p I+t Q, Phi=r D_Y+D_MR, h=A gamma-i gamma Phi.
+Hier ist Q sechs mal die tatsächliche Hyperladung aus dem originalen reellen
+unimodularen v252 Gaugelift. r ist die schon bestehende Higgs Einformrichtung
+bei FESTEN Yukawamatrizen. Es wird keine freie Yukawavariation vorausgesetzt.
+Setze T=gamma Q, H=-i gamma D_Y. Beide sind hermitesch; [Q,gamma]=0 und
+{gamma,D_Y}=0. Im vierten Spektralmoment hat die gemeinsame Quelle den Term
+
+ coeff_(t^2 r^2) Tr(h^4)
+ =4 Tr(T^2 H^2)+2 Tr(T H T H)
+ =4 Tr(Q^2 D_Y^2)-2 Tr(Q D_Y Q D_Y)
+ =2 Tr(Q^2 D_Y^2)+||[Q,D_Y]||_HS^2.
+
+Die konstanten ursprünglichen Beiträge p und D_MR ändern diesen homogenen
+Term vierten Grades nicht. Es wird also keine physische Quartermode entfernt.
+Wegen Hermitizität gilt Tr(Q^2 D_Y^2)=||Q D_Y||_HS^2>=0.
+Beide Summanden sind nichtnegativ. Im originalen Feldwörterbuch folgt genau
+
+ coeff_(t^2 r^2) Tr(h^4)
+ =312||Yu||_HS^2+168||Yd||_HS^2+216||Ye||_HS^2+72||Ynu||_HS^2.
+
+Begründung der vier Gewichte: Q Links/Rechts ist (1,4),(1,-2),(-3,-6),(-3,0).
+Teilchen und Antiteilchen liefern je dieselbe positive Summe. Zusammen mit
+der Farbmultiplizität ergibt dies je Sektor 8 N_c(qL^2+qR^2-qL qR).
+Die Frobeniusnorm summiert sämtliche neun komplexen Einträge, einschließlich
+der beiden reellen Richtungen. Unterschiedliche ursprüngliche Slots sind
+orthogonal. Damit gilt die Formel für die GANZE Originalfamilie, nicht nur
+für einen einzelnen Kontrollpunkt. Sie ist strikt positiv, sobald irgendeine
+der vier ursprünglichen Yukawamatrizen nicht null ist. MR wird nicht ausgewählt.
+
+3. Tatsächliche Ausführung und unabhängige Rechenwege
+check_joint_gauge_higgs_source.py benutzt den tatsächlichen96er Originalbuilder.
+Der Kontrollpunkt ergibt den ganzzahligen gemischten Koeffizienten44208.
+||[Q,D_Y]||_HS^2=16128 und Tr(Q^2 D_Y^2)=14040 ergeben denselben Wert.
+Alle sechs Matrixworte, eine unabhängige Vorzeichendifferenz des vierten
+Moments und die positive Normidentität liefern exakt dieselbe Antwort.
+Alle72 reellen Yukawa Grundrichtungen haben das jeweilige positive Gewicht.
+11 Kontrollen bestehen. Die allgemeine Aussage folgt aus der analytischen
+Identität und dem Originalslotwörterbuch. Kein neuer Lean Satz wird behauptet.
+
+4. Was daraus folgt und was nicht
+Diese beiden tatsächlichen Richtungen können nicht auf disjunkte unabhängige
+Direktsummanden desselben Quellenoperators verteilt werden. Dann wäre TH=0
+und der gemischte Term müsste verschwinden. Ebenso kann nicht JEDES spektrale
+Funktional dieser Quelle als F(t)+G(r) geschrieben werden: Bereits das vierte
+Moment enthält den gemeinsamen Term. Im endlichen Wärmetrace erscheint dieser
+Term in der Koeffizientenentwicklung; es wird daraus kein unbelegter
+Kontinuumsdeterminant und kein physisches Cutoffprofil ausgewählt.
+
+Dies widerlegt NICHT automatisch die vier skalaren Gleichungen des archivierten
+Masterfunktionals. Dort werden andere ausdrücklich benannte Variablen auf einem
+gegebenen Zweig verwendet. Zusätzliche Beiträge von logZ, Referenz, Eta oder
+weiteren Sektoren könnten gemeinsame Variationen aufheben. Diese Aufhebung
+muss jedoch tatsächlich auf derselben Quelle und Domain ausgerechnet werden.
+Kommutierende Projektoren allein beweisen weder disjunkte Unterstützung der
+beiden ursprünglichen Richtungen noch Faktorisierung ihres Quellfunktionals.
+Die bloße Zusammensetzung schon definierter Sektorfunktionen liefert diese
+Rechnung nicht. Der notwendige nächste Ausdruck ist die GESAMTE gemeinsame
+Variation des originalen logZ, des relativen Spektraldeterminanten, von Eta,
+des Transportdeterminanten und der Vakuumwirkung mit ihren wirklichen Inputs.
+
+5. Zusammenhang mit Primärliteratur und Gesamtziel
+Chamseddine/Connes/Marcolli hep-th/0610241, Gleichung3.35/3.36 und Abschnitt4.6,
+behält die kovariante gemeinsame Eich/Higgswirkung ausdrücklich bei.
+https://arxiv.org/pdf/hep-th/0610241, am30.10.2026 gelesen.
+Das ist Kontext und eine unabhängige Strukturkontrolle; keine Herleitung der
+offenen TFPT Auswahl. Naht, E8 und Clocknetz bleiben erhalten. Der Quellenweg
+muss diese Kopplung bis zu Zustand, Alpha/Flavor und Raumzeit/Gravitation tragen.
+
+6. Präzise Wahrheit zum Gesamtauftrag
+Es liegt weiter keine vollständige ursprüngliche TFPT Herleitung vor. Die
+stärkere Originalmasteraussage wurde geprüft; sie bestimmt den vorgelagerten
+Quelleninput nicht durch ihre Definition. Der neue Operatornachweis verhindert
+zusätzlich, eine beliebige Sektortrennung als Ersatz dieses Schritts einzusetzen.
+Keine Sperre oder Nutzerfreigabe verhindert diese Rechnung. Die verbleibende
+Aufgabe ist ein offenes wissenschaftliches Herleitungsproblem, keine lediglich
+noch nicht eingeschaltete Milliardenenumeration. Aus den Resultaten folgt kein
+universeller Beweis, dass eine künftige vollständige Herleitung unmöglich ist.
+F2 bleibt offen. Keine Hintergrundsuche und keine fertige Lösung behauptet.

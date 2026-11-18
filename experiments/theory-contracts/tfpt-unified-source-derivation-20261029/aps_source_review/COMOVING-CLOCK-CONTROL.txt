@@ -1,0 +1,69 @@
+CONSTANT HIGGS PAIR: TRANSPORTED DIAGNOSTIC CLOCK AND ITS SOURCE TEST
+
+Scope. R081's fixed constant Higgs quark singular block, R084's explicitly
+diagnostic selective shift, both quarter phases. This is NOT an identification
+of the original P1 seam clock, its real reflection, or its common source.
+The preexisting whole 36-dimensional quark covariance and its coupled P/Q
+fields are retained. Neither the full dynamical Higgs integral nor a physical
+4D theory follows from this check.
+
+Let p=n+alpha, alpha=1/4 or 3/4, n integer, h_p=p sigma_z+m sigma_x,
+E_p=sqrt(p^2+m^2), ell>0 and C_p=(I+tanh(ell E_p)h_p/E_p)/2.
+For m real after the given singular-block change of basis define
+ theta_p=arctan(m/p) in (-pi/2,pi/2),
+ W_p=exp(-i theta_p sigma_y/2),
+ U0=S P_+ + P_-, with S e_n=e_(n+1), P_+=(I+sigma_z)/2.
+Then W_p* h_p W_p=sign(p) E_p sigma_z. W is the direct sum of W_p
+and the proposed new conditional clock is Um=W U0 W*.
+
+1. Exact transported result. W* C W is diagonal with upper occupation
+ c(p)=(1+sign(p)tanh(ell E_p))/2. As n increases, c is nondecreasing,
+with limits zero and one. Thus U0 W*CW U0* - W*CW is diagonal with entries
+c(n-1+alpha)-c(n+alpha) on the first internal component and zero on the
+second. The telescoping sum is absolutely convergent and has total absolute
+value 1. Therefore Um C Um* - C is trace class with exact trace norm 1.
+For 0<z<1 its ordinary relative determinant equals (1-z)^(-1). No product
+of separately compressed interacting covariances is used.
+
+The same argument holds for all fixed finite constant V with Gamma^2=I,
+V=V*, {Gamma,V}=0 and equal finite Gamma sectors, by SVD decomposition. If
+each of r paired Gamma+ directions is shifted, direct-sum multiplicity gives
+(1-z)^(-r); in the complete R081 quark Gamma+ block r=18. This does not
+settle the relationship between the full source and an original single
+P1 winding. The two quarter phases are not physically identified by this.
+
+2. The new clock differs from the previously tested fixed one. For nonzero
+m, W-I is Hilbert Schmidt since W_p-I=O(1/|p|); its off-diagonal diagonal
+matrix elements behave like m/(2p), so W-I is not trace class. Um-U0 is
+Hilbert Schmidt from the product identity. Its mode-diagonal block equals
+W_p P_- W_p*, with mixed element -sign(p)m/(2E_p). The absolute sum of
+these same-index matrix elements diverges. Hence Um-U0 is NOT trace class.
+The comparison is between two stipulated operators, neither automatically
+the original physical clock. This is compatible with Um C Um* - C being
+trace class: the latter is a different operator.
+
+3. A concrete source/locality discriminator. A pointwise multiplication
+operator on the circle has the same n,n Fourier block for every n. Here
+(Um)_{nn}=W_{n+alpha} P_- W_{n+alpha}* depends on n if m != 0. Therefore
+Um cannot be pointwise multiplication by an internal matrix-valued function.
+This does not rule it out as an operator in a larger OS algebra, as a dressed
+operation, or as a permitted originally sourced nonlocal transformation.
+Its construction alone does not establish any of these. It makes an explicit
+test possible: derive the actual original source map and compare its mode
+blocks to these, with both paired source sectors, domains, time, reference,
+eta, Z0 and all mixed words intact.
+
+4. Conditional quarter reflection illustration. At the purely 2x2 algebra
+level, p -> -p maps quarter alpha to 1-alpha with n -> -n-1 and conjugation
+by sigma_x sends W_p to W_-p and h_p to h_-p. The same conjugation exchanges
+P_+ and P_- and reverses S. Thus it sends U0 to S* P_- + P_+, not U0*.
+This check uses a stated model antiunitary/reflection convention; it does not
+claim the actual P1 reflection has this action. The actual charge, orientation
+and reflection dictionary must be derived before drawing a P1 conclusion.
+
+Reproduction: python3 check_comoving_clock.py. The 32 finite and explicit
+algebra controls include the seed252 singular value, both quarter phases,
+exact diagonalization, endpoint product, and growing lower bounds on the
+new-vs-fixed clock. The analytic estimates above, not finite truncations,
+establish the Schatten classes. No Lean, original-source proof, physical
+validation, absolute determinant, eta or ledger promotion is claimed.

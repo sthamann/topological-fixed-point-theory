@@ -1,0 +1,209 @@
+ORIGINAL SOURCE EVALUATOR AND THE FIRST UNEVALUATED OPERATION
+6 November 2026. Work area only. No new physical measure or parent.
+
+IMPLEMENTED AND EXECUTED
+
+source/evaluator.py now performs the actual finite unnormalized matrix
+fibre sum, followed by the original endpoint contraction. For explicitly
+supplied original atoms x it computes
+ Q_A=sum_x nu_n({x}) s_n(x) Q_A(x), A=1,U,Y,UY,
+ Z_A=s_outer Tr(Cap P Q_A P)/Z_ref[0].
+All four matrices are integrated BEFORE the connected subtraction.
+Their Gram form can be nonorthogonal or have null classes. The code uses
+a declared numerical eigenvalue threshold for its retained quotient and
+transports every supplied form. This is an approximation without a
+certified original null ideal or rank gap; the threshold and eigenvalues
+are returned. It then
+keeps P exactly twice at the outer boundary. No P is inserted between
+letters, no scalar/reference is set to one, and no conditional per-field
+normalization is used. Supplied complex/signed weights are retained.
+The second supported input is an already integrated whole blocked kernel;
+it follows the identical endpoint contraction. This is a consumer and an
+aggregation implementation, not the missing physical producer.
+
+Eighteen end-to-end arithmetic controls passed, including a complex cap,
+noncommuting P, nonorthogonal Gram with null class, complex unnormalized
+atom weights, and equality between direct whole-kernel contraction and
+the fibre sum. A null class cannot acquire a marked value. Missing
+weights/reference/source data have no unit fallback. Empty input and a
+role string cannot enable a full physical start. These controls are
+labelled ARITHMETIC ONLY and are not physical TFPT parameters or values.
+physical_source_complete is always false for this consumer; a metadata
+label cannot certify the original source identity. numeric_bundle_ready
+and direct-caller readiness report an actually validated and evaluated
+numerical input only. Ensemble tests need not pass before integration
+starts; absent producer inputs, rather than unmeasured physics, prevent it.
+
+FIRST NATIVE ALL-FIELD BASIS WITHOUT AN EXTRA CAR REQUIREMENT
+
+The original neutral marks already provide the retained word list
+ F=(1,U,Y,UY), U=sum_a X_a^2, Y=sum_a X_a K_a,
+with their original spatial tests, point splitting and source order.
+This is an algebraic retained word list, not an orthonormal basis and not
+an assertion that it is dynamically closed. Its actual metric and source
+forms are
+ G_ab=omega((Theta F_a)F_b),
+ Q_A,ab=I_orig((Theta F_a) [original ordered A at its time] theta_T F_b).
+The retained null quotient is determined by G, not by a new Gaussian or
+Lebesgue normalization. The exact blocked kernel may retain complement
+return/history. Exponentiating its compressed first derivative would
+change that kernel unless the actual block is reducing. Thus no finite
+Galerkin Hamiltonian has been substituted in the code.
+
+The assembler's |n,j> (mode n, one of96 internal coefficient labels) is
+also an actual native basis, but of the tangential ONE-PARTICLE operator.
+It is not this complete bosonic/fermionic endpoint word space. Likewise
+one spatial H Fourier configuration is one integration argument, not
+its own different whole primitive quantum source. At fixed original
+couplings the whole source values are common to all such configurations.
+
+DERIVATION ATTEMPT FROM METROLOGY005, QFT004 AND C6
+
+Metrology005:61-134 defines nu_star on PROPER TIME through K(s,t),psi(s)
+and its fixed-point/moment slice. It produces the spectral function f_star.
+Metrology005:136-178 separately writes a configuration-space measure
+ dmu_n proportional exp[-Tr f_star(D_Vn(x)^2/Lambda^2)] dnu_Vn(x)
+on the BRST-reduced geometric domain. These two measures have different
+arguments and different roles. A proper-time sample cannot be used as
+a mass nu_Vn({x}) for a Higgs history. No independent ambient construction
+is required by this distinction; the actual identified IR/boundary source
+would equally supply the original operation I_orig.
+
+The natural attempted derivation is weighted disintegration. Given that
+SAME source on a finer original domain and the actual retained map p,
+ q_n,A(x)=I_fibre(p=x)[w_m(phi) A(phi)].
+Then I_n(q_n,A)=I_m(w_m A), with all exterior source legs retained.
+This is the already closed whole-source blocking/tower map, now exactly
+implemented for an actually finite atomic fibre input. It is a valid
+operation, but its right-hand side needs the original fine source packet.
+The compatibility identity alone transports such packets; it does not
+supply the initial packet from unweighted domain labels.
+
+QFT004:112-150 uses the actual local C6 kernels, word grammar, diagonal
+labels and original selectors to prove positivity/primitivity of a given
+blocked transfer. QFT004:282-335 proves the full generated matrix algebra
+from separation and positive entries. The previously established label
+projectors already settle the separation requirement; there is NO new
+requirement to invent a dynamical diagonal-weight producer for that proof.
+These algebraic conclusions do not return the actual mixed Higgs/Yukawa
+source forms Q_A or the full-field fibre masses.
+
+The original v330 transfer DOES give a complete evaluated cylinder law
+for ITS given three-state labels, with stationary weights and all its
+own cylinder observables. BLOCKING-PATH.txt section1 already derives
+those unnormalized compatible sums exactly. Reusing that law for the
+full current source requires the original map of its label observables
+to the actual X_a,K_a and their original time. This file does not choose
+such a map or call three transfer states four continuous Higgs coordinates.
+The known improper full-half-line K lower-bound/infinite-mass issue is
+already a historical reviewed exclusion and is not presented as a new
+result here. Nor is the ordinary v36 a2/a4 arithmetic reused as full weight.
+
+MINIMAL UNFILLED FUNCTION BODY
+
+The numerical aggregation now needs one concrete ORIGINAL producer:
+
+ original_blocked_fiber_packet(V_n,x,endpoint_words,ordered_times)
+   -> original measure atom/density or original boundary pairing weight;
+   -> unnormalized scalar including its actual Ref/Eta/rest placement;
+   -> whole matrix packet (Q_1(x),Q_U(x),Q_Y(x),Q_UY(x)).
+
+For a non-atomic original domain the same operation must return its actual
+integration rule with controlled remainder, or the integrated packet.
+The body must perform the original inner bosonic/geometry/gauge/Grassmann
+integration or compute its already identified boundary equivalent. It
+must not return merely h_N(x), an independently chosen field grid mass,
+a fit to low moments, or a normalized fermion covariance. The original
+finite Schur routine returns both the effective fermion kinetic matrix
+AND its interior determinant, so retaining only its matrix would omit
+one of these required outputs. Its Berezin checker is exact for its
+stated size1..3 and is not an executed full-field96 source producer.
+
+This identifies the first actual numerical operation, rather than asking
+for a further generic field, state, time or reference dictionary. The
+full U/Ref/field maps and the same-caller source sewing remain closed.
+A whole original kernel or identified IR parent providing the packet is
+sufficient; no separately chosen physical Dphi is requested.
+
+BOUNDARY/QUASIFREE SHORTCUT: FIRST ACTUAL IDENTIFICATION TEST
+
+The existing HYPF contact formula reconstructs
+ D_ji={c_j,[H,c_i^*]}, X_a=A^-1 sum_ij(T_a)_ij D_ji,
+ U=sum_a X_a^2 and the mixed UY word from at most8 CAR letters and3
+ORIGINAL time derivatives. The whole-word physical P is applied last.
+This already supplies the correct candidate observable dictionary.
+
+In every SAME-CAR quasifree parent with linear original CAR evolution,
+ [H,c_i^*]=sum_j c_j^* h_ji,
+CAR gives D_ji=h_ji I exactly, independent of the chosen quasifree state.
+Thus the contact dictionary produces scalar X_a and scalar U, and its
+connected UY is identically zero. This is the previously executed
+conditional Clifford result, extended by the same algebra to that stated
+linear-evolution class; no numerical background study was repeated.
+Such a source can represent nonGaussian composites of its elementary
+fermions, but the ORIGINAL contact map would need to map the actual c_i
+to those nonlinear fields with their actual source time. Simply applying
+Wick to the old elementary c_i does not do that.
+
+The existing full graph/Clifford/HS transports are linear field maps of
+precisely this conditional family. The complete marked E8 lattice source
+also has evaluated vertex correlators and its own clock. The recorded
+LOCAL-TIME-COMPATIBILITY result excludes the stated fixed inner-clock
+extension under its full premises; it is not a no-go for all IR parents.
+No inspected original here supplies a different nonlinear same-source
+c_i/time map that turns the contact D_ji into a nontrivial Higgs operator
+while preserving the already specified physical source. A free parent
+with nonlinear composite Higgs is therefore not excluded by R048
+nonGaussianity alone. It has not been obtained by relabelling the existing
+linear contact consumer. No generic Wick engine was built as a substitute
+for that first identification.
+
+STATUS
+
+The requested source consumer and exact finite aggregation are executable
+and checked. No original full-field fibre packet or whole primitive
+Z0/ZU/ZY/ZUY value has been generated by the reviewed inputs. The current
+runtime can honestly execute field/operator diagnostics and call the
+actual source consumer; it cannot label that a completed full physical
+source search when the producer body above is not supplied. No additional
+ambient-measure gate, state, profile, P, HB or physical time was chosen.
+
+IMPLEMENTED EXECUTION API
+
+The source now separates direct whole-caller evaluation from field fibres.
+evaluate_source consumes a supplied whole endpoint source or finite fibre
+sum. contribution_capability_report and evaluate_contribution expose
+unnormalized W0,WU,WY,WUY matrices and the ORIGINAL measure mass separately.
+The native unit either contains the whole history and both boson endpoints,
+or is an original retained-field fibre whose packet already retains them.
+The physical P remains outside the eventual aggregate, never P_H.
+
+integration_plan enumerates every supplied original measure atom. Its
+unit multiplicity counts that actual atom once; it does not replace its
+supplied measure mass by1. Two distinct actual atoms having the same
+visible field genotype remain two entries. aggregate_contributions accepts
+the full original atom set, sums its actual masses and matrix packets,
+and only then forms Z0,ZU,ZY,ZUY and their connected quotient. A partial
+archive is not a whole Z. Genetic fitness and deduplication never become
+physical probabilities. No new Monte Carlo proposal was introduced.
+
+The contribution path was tested against the direct original-form sum
+on the visibly arithmetic-only fixture, including two atoms with the same
+visible configuration and a rejected partial archive. These are program
+checks, not an integration of physical Higgs configurations.
+
+IMPLEMENTATION REVIEW CORRECTIONS RETAINED
+
+Contribution readiness validates only the source packet structure and its
+executable per-fibre data. It does not compute the whole Z or require an
+unmeasured ensemble result before starting. Direct whole-source capability
+is a separate consumer mode. Actual configuration ids, native ids, domain,
+native input SHA and bundle digest are checked across contribution and
+aggregation. Identically named atoms from different source domains cannot
+be mixed. Missing fibre weights produce an explicit input error.
+
+The only registered implemented ensemble callback is original_domain_coverage.
+It checks the supplied finite atom set after integration. Original physical
+source identity, OS positivity, Ward equations and limit controls are NOT
+registered as working tests. Their implementation is not fabricated from
+a result label or from positivity of a Gram matrix.

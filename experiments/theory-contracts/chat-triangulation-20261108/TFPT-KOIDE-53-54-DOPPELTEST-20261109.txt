@@ -1,0 +1,78 @@
+TFPTKOIDE5354DUAL20261109
+9. November 2026. Direkter Doppelnachtest des vorhandenen Kandidaten
+FR.KOIDE.03 und seines Operatorfaktors FR.KOIDE.07. Keine Anpassung
+an Polmassen. Der ursprüngliche Vorschlag ist Paper 4, Section 002,
+Zeilen 40-69. Die Möbiusroute wird als eigene Abbildung behandelt.
+
+1. Beide Ausgaben aus den ursprünglichen Operationen
+
+v183 gibt die exakten Matrizen R und Q, den Eckoperator F=R+Q,
+a=(1,1,2)^T und 1=(1,1,1)^T. Direkt an diesen Matrizen:
+  a^T F 1=53, 1^T R a=27, det([1,a]^T F [1,a])=52.
+Der Quotient ist f=53/54. Die anderen geprüften Ecken geben
+32, 21, 35 und 56 statt 53. Der Operatorfaktor ist exakt.
+
+Die Leptonzeile der ursprünglichen Massenpotenzmatrix K in v37/v183
+ist n=(5,3,2). Um Verwechslung zu vermeiden bezeichnet K_l im
+Folgenden den Massenquotienten. Aus dem v20 Hexagonresolventen
+amp2(r)=1/(5/4-cos(r pi/3)) mit tatsächlichen Resten 2 und 5
+sowie Windungen 1 und 0 folgen c_e=4 amp2(2)=16/7 und
+c_mu=amp2(5)=4/3. Die tatsächliche Sektorproduktregel 32/9
+gibt c_tau=7/6. Damit lautet der ausdrücklich angegebene
+skalare Kandidat aus Paper 4:
+  m'_i = M c_i (f u)^n_i, u=1/(6pi)+48/(8pi)^4.
+M ist die gemeinsame Massennormierung. Sie kürzt sich bei allen
+hier geprüften Werten. Kein Einsatz eines gemessenen Massenwerts
+in der Konstruktion.
+
+Für t=f u:
+  Q(t) = (7/6+(4/3)t+(16/7)t^3)
+         /(sqrt(7/6)+sqrt((4/3)t)+sqrt((16/7)t^3))^2,
+  K_l(t) = m'_e (m'_tau)^2/(m'_mu)^3
+         = [(16/7)(7/6)^2/(4/3)^3] t^(5+4-9)=21/16.
+Die zweite Identität gilt für jedes u>0, jedes f>0 und jedes M>0.
+Sie prüft die ganze gemeinsame Seed-Umparametrisierungsklasse,
+nicht nur das gerundete Zahlenresultat für f=53/54.
+
+2. Gemeinsame Vorhersage gegen archivierte Polmassen
+
+                              Q                 K_l
+  TFPT Quelle          .664463816123       1.312500000000
+  F Eckkandidat        .666666096864       1.312500000000
+  v420 Poltripel       .666664463403       1.367882710480
+
+Das gefrorene v420 Poltripel ist in MeV
+(.51099895069, 105.6583755, 1776.93).
+Bei tau +/- .09 MeV und festgehaltenem e/mu liegt Q des
+Kandidaten im resultierenden Q Intervall, K_l im ganzen Intervall
+[1.367744149787, 1.368021278192] oberhalb des Kandidaten.
+
+Einzelverhältnisse Kandidat / Polvergleich:
+  e/mu   .004668879191 / .004836331699  (-3.46239 Prozent)
+  mu/tau .059642613024 / .059461191775  (+0.30511 Prozent).
+Die Polprobe liegt beim Quotienten 4.21964 Prozent über dem
+Kandidaten. Ein anderer Wert für den gemeinsamen Seed würde an
+der exakten Invariante nichts ändern.
+
+3. Was der exakte Eckoperator damit noch leistet
+
+Schreibe die drei logarithmischen Korrekturen als delta_i.
+Der veröffentlichte Seedtransfer liefert delta=n log(53/54)
+bis auf einen gemeinsamen Normierungsanteil. Das lineare
+Funktional w=(1,-3,2) vernichtet n und die gemeinsame Normierung.
+Der Polvergleich verlangt w dot delta=log(K_pole/(21/16))
+=.041330362088. Eine tatsächliche Familienabbildung braucht daher
+eine zusätzliche durch die ursprüngliche Dynamik bestimmte
+Richtung. Die Operatoridentität 53/54 bleibt exakt. Der im Paper
+publizierte skalare Lift ist als vollständige parameterfreie
+Abbildung der drei Polmassenverhältnisse ausgeschlossen.
+
+v82/v99 liefern separat die Möbiusdynamik der einzelnen Koide
+Koordinate. Sie legen den zweiten Quotienten nicht fest. Jede
+Realisierung dieser Dynamik durch eine bloße Änderung desselben
+u im unveränderten Leitertripel behält K_l=21/16. Eine unabhängige
+physische Familienabbildung ist durch diesen Test nicht ausgeschlossen.
+
+Kontrollen: originale v183 5/5, v20 12/12, v37 33/33 erneut
+ausgeführt. Exakte Sympy- und 70-stellige mpmath-Prüfung:
+PYTHONPATH=verification python3 -B experiments/theory-contracts/chat-triangulation-20261108/check_koide_corner_dual_20261109.py

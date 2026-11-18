@@ -169,8 +169,9 @@ class State:
     def load_catalog(self):
         try:
             from .evidence import build_catalog
-            catalog = build_catalog(ROOT)
-            graph = json.loads((ROOT / "verification/theory_graph.json").read_text())
+            from semantic_explorer.atlas_client import load_atlas_export
+            graph = load_atlas_export(ROOT)
+            catalog = build_catalog(ROOT, atlas_snapshot=graph)
             nodes = {n["id"]: n for n in graph["nodes"]}
             neighbors = {key: [] for key in nodes}
             for edge in graph["edges"]:

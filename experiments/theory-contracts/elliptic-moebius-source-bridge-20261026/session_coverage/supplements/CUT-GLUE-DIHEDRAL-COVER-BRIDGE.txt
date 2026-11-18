@@ -1,0 +1,344 @@
+CUT, GLUE AND THE EXISTING DIHEDRAL COVER CARRIER
+26 October 2026
+
+Question
+========
+
+Can the original Moebius cut and Pin gluing be connected to the already
+present marked P1 and C2/C12 covers without choosing a new bundle, a new
+state, or a global Cartan field on the compact normal S2?
+
+Verdict
+=======
+
+Yes, at one precise and useful level.  The pair of Pin quarter sectors on
+the existing NS orientation cover and the polarized real first cohomology of
+
+  C2: y^2=x^4-1
+
+carry the same real two dimensional marked dihedral representation.  The
+map x:C2->P1 is already the double cover branched at the four flavor marks
+mu4.  Thus there is an exact monodromy carrier from the original Pin cut and
+gluing to the marked flavor P1.  It does not pass through the normal S2 and
+does not require a global Cartan choice there.
+
+This closes a representation and marking bridge.  It does not yet identify
+the full two dimensional Green covariance with the original P1 boundary
+state or Hardy covariance.  That state, time and field map remains open.
+
+The changed premise
+===================
+
+The earlier search often asked for a global map from the compactified normal
+S2, with its degree one determinant line, to the flavor P1.  The original
+paper does not ask for such a map.  It constructs two outputs from the seam:
+
+  * the compact normal S2 with L2=O(1), and
+  * the compact seam quotient P1 with four mu4 marks.
+
+The smallest common object required for the current question is therefore
+the representation carried by the cut and gluing operators.  It need not be
+a common base surface.  This weaker premise is sufficient for the exact
+bridge below and introduces no geometry.
+
+Corrected source boundary: deck reflection is not the Calderon polarization
+============================================================================
+
+The archived source starts from D_+=gamma_n(partial_n+B_Sigma) and constructs
+
+  M_tilde=M_+ union_Sigma M_+^op,
+  Sigma=Fix(tau_dbl),
+  D=D_+ union_Sigma D_+^op,
+
+It then claims on the Cauchy data
+
+  i_C=2P_C-I=R_tau_dbl.                                (0)
+
+This equality is not a positive bridge.  It was already disproved in the
+scoped 15 October contract.  On a compact product Dirac collar the local
+geometric deck lift conjugates the two-face graph projector instead of being
+2P_C-I.  More generally, the principal symbol of 2P_C-I depends on tangential
+cotangent direction, while a local deck lift is pointwise in the bundle.
+Defining R_tau:=2P_C-I makes the equation tautological and loses the claimed
+geometric identity.
+
+The corrected operator slots are therefore separate:
+
+  * geometric deck tau_dbl,
+  * operational reflection Theta,
+  * Calderon polarization P_C.
+
+The full two-face Cauchy graph remains positive and reconstructs the signed
+boundary operator B.  It does not identify any of these three slots.  No new
+requirement Theta_x=R_tau is made here.
+
+Positive bridge, prioritized test: NS Pin pair and polarized C2 cohomology
+============================================================================
+
+On the existing NS orientation cover the original Pin operator is
+
+  A=J T1,        A^2=-I.
+
+The two Pin sectors are the A eigenlines with eigenvalues +i and -i.  The
+linear reflection R satisfies
+
+  R A R=-A=A^{-1}.
+
+Hence, in the ordered (+i,-i) basis,
+
+  A=diag(i,-i),       R=[[0,1],[1,0]].                 (1)
+
+This is the standard real D4 representation after complexification.
+
+Now use only the existing parity cover C2 and its already marked base map:
+
+  p:C2->P1_x,   p(x,y)=x,
+  Q2(x,y)=(i x,y),
+  kappa(x,y)=(bar x,bar y).
+
+The branch divisor of p is exactly mu4.  Infinity has two unramified points.
+For the holomorphic differential eta=dx/y,
+
+  Q2* eta=i eta,
+  Q2* bar(eta)=-i bar(eta),
+  kappa eta=bar(eta),
+  kappa Q2* kappa=(Q2*)^{-1}.                           (2)
+
+Equations (1) and (2) give the explicit intertwiner
+
+  Pin +i line  -> C eta,
+  Pin -i line  -> C bar(eta),
+  A            -> Q2* on H1(C2,R),
+  R            -> kappa on H1(C2,R).
+
+This is stronger than matching two eigenvalues.  In the real basis
+
+  a=Re(eta),       b=Im(eta),
+
+write the intersection form, quarter rotation and real reflection as
+
+  Omega=[[0,1],[-1,0]],
+  Q=[[0,1],[-1,0]],
+  K=[[1,0],[0,-1]].
+
+Then, exactly,
+
+  Q^T Omega Q=Omega,
+  K^T Omega K=-Omega,
+  K Q K=Q^{-1}.
+
+Thus Q preserves the symplectic intersection pairing, while K is
+the expected anti-symplectic reflection.  For the positive Hodge L2 metric
+g, normalized to the identity in this basis,
+
+  Q^T g Q=g,          K^T g K=g.
+
+So the full real carrier is positively polarized and the two generators are
+Hodge isometries.  There is one essential type distinction.  The linear
+pullback K swaps H^{1,0}=C eta with H^{0,1}=C bar(eta).  It does not preserve
+the positive holomorphic line by itself.  If C denotes coefficient
+conjugation, the anti-linear operation C K fixes each of those quarter
+eigenlines.  This reproduces the two different NS facts: the linear Green
+Clifford reflection swaps the quarter sectors, while the anti-linear
+reflection preserves each sector.  It still does not identify their Green
+covariance or Fock state with the Hodge polarization.
+
+The comparison is made in the category of real representations.  Pullback by
+kappa is complex linear on complex-valued cohomology and swaps the two Hodge
+types; the separate coefficient conjugation is anti-linear.  Neither is
+being confused with the linear Clifford factor in the Green positivity form.
+On the four marked points, kappa acts as z->1/z,
+because every mark lies on the unit circle.  Thus it has exactly the same
+marked permutation as the paper's D4 reflection.  Globally, one is an
+antiholomorphic real structure and the other is the holomorphic Moebius map
+z->1/z.  The proved dictionary is the marked real representation and not an
+identity of those two maps on all of P1.
+
+This is more than a count of four points.  It preserves the quarter
+eigenvalues, the reflection conjugation law, and the actual branch marking.
+It also explains why one fixed Pin eigenline is insufficient: reflection
+exchanges the two conjugate cohomology lines just as the Green reflection
+exchanges the two Pin sectors.
+
+The same reflection also inverts the existing C12 compiler clock
+===================================================================
+
+On the already forced common cover
+
+  C12: s^12=x^4-1
+
+retain the previously fixed marked clock
+
+  R12=Q12 Delta12^4,   Q12(x,s)=(i x,s).
+
+Complex conjugation is a canonical real structure of this same equation:
+
+  kappa(x,s)=(bar x,bar s).
+
+It inverts both factors and therefore
+
+  kappa R12 kappa=R12^{-1}.                            (3)
+
+The old power relations remain unchanged:
+
+  ord(R12)=12,
+  R12^4=Delta12^4,
+  R12^9=Q12.
+
+Under C12->C2, y=s^6, the factor Delta12^4 acts trivially on y.  Thus R12
+descends to Q2 and equation (3) descends to the reflection law in (2).  This
+adds reflection to the already established clock dictionary.  It does not
+identify cover degree 12 with clock order 12 and does not add a new cover.
+
+Cut and gluing picture
+======================
+
+Cut the Moebius band along its core.  The orientation cover has two boundary
+copies related by the Pin gluing.  Applying the gluing twice produces the NS
+sign, so the gluing operator has square -I and quarter eigenvalues +i,-i.
+The elliptic cover C2 packages exactly those two conjugate quarter lines as
+eta and bar(eta).  Its projection forgets the sheet and leaves the four
+branch values mu4 on P1.  Reflection swaps the two quarter lines and inverts
+the rotation.  This is the whole proved geometric content of the bridge.
+
+The compact normal S2 remains the separate normal index surface.  Its
+degree one line selects the weak doublet, but no source passage makes it the
+base of C2, and none is needed for the representation result above.
+
+Smallest decisive certificate
+==============================
+
+  research-20261026-fundamental-rethink/geometry/
+  check_dihedral_cover_bridge.py
+
+Normal and python -OO runs have byte-identical output.  The exact checks are:
+
+  * A^2=-I, A^4=I and RAR=A^{-1};
+  * Q2*=diag(i,-i) on eta,bar(eta), with conjugation inversion;
+  * Q2 preserves the intersection form, while kappa reverses it;
+  * both actions preserve the positive Hodge metric, with the linear and
+    anti-linear reflection actions kept separate;
+  * ord(R12)=12 and kappa R12 kappa=R12^{-1};
+  * R12^4=Delta12^4, R12^9=Q12 and descent to C2;
+  * genus(C2)=1 with four finite simple branch points.
+
+Cable and knot terminology
+===========================
+
+No cable construction is needed for either bridge.  A literal audit of the
+original paper corpus found zero technical occurrences of cable, cabling,
+knot, torus-knot, mapping-torus, orientation-double and Kabel.  German
+"Knoten" occurrences denote graph vertices or spectral zeros.  The original
+vocabulary is "oriented double cover", "cut geometry", "gluing" and "spin
+lift".  The maps used here are the existing cyclic branched covers and their
+induced cohomology actions.
+Calling them a cable would add a knot or solid torus structure that has not
+been supplied by the seam sources.  The useful cabling intuition is only the
+elementary one that repeated gluing records powers of one monodromy.  The
+proof uses the displayed cover maps and operator relations instead.
+
+Original and pinned sources
+===========================
+
+0. Original cut, double and Calderon reflection:
+
+  documents/archive--tfpt-45--source_extracts--01_boundary_kernel_source/
+  sections/001-section-primitive-core-and-carrier-interface-handoff.tex:58-145
+  Atlas source paper-source:8027564739689dd02e02f11c
+  SHA256 7d6e673d99c29d950dc601283cd51c1cc0b113567eeb79c8396fec9c82a02c79
+
+The older four-corner statement is:
+
+  documents/archive--paper-latex--tfpt-theory-fullv25/sections/
+  009-subsection-spin-lifted-deficit-factor.tex:1-20
+  Atlas sources paper-source:307a26903989dae663920511 and
+  paper-source:f00f8d45157e4dcca78bcd5f
+  SHA256 5c60e2ee85d7d3f3ab76c95c5ea48260583feb76c72ec9b88b3a6249ee4d3b76
+
+The correction of the archived Calderon equals deck claim is authoritative
+for this report:
+
+  experiments/theory-contracts/seam-full-collar-reconstruction-20261015/
+  PROOF.txt:14-61,63-123,162-177
+  Atlas contract seam-full-collar-reconstruction-20261015
+  Atlas finding full-two-face-collar-recovers-signed-operator
+  SHA256 9f4effed34316798c6a35e1ac0ec2832cd3720180f476cb8747bb32359b56e6a
+
+1. Original family surface and its actual D4 action:
+
+  documents/archive--tfpt-45--source_extracts--02_carrier_source/
+  sections/006-subsection-family-monodromy-and-occupancy.tex:74-125
+  SHA256 179b2d568e897e059c2d1ef804bb9b06ee053483d366fc9d24189f1df44253b2
+
+This defines the compact seam quotient from the deck involution and its spin
+lift, derives four quarter corners, and gives r(z)=iz, s(z)=1/z and
+P1 minus mu4.
+
+2. Original normal surface, kept separate:
+
+  documents/archive--tfpt-45--source_extracts--02_carrier_source/
+  sections/007-subsection-bosonic-relative-index-and-higgs-selection.tex:96-180
+  SHA256 cf801a467465db8d72e4eb3f8e32eea2e23393bf42232a225116c34ed093f761
+
+This compactifies the oriented normal slice to S2 and uses L2=O(1).  It gives
+no map from that S2 to the flavor surface.
+
+3. Existing C2/C12 maps and marked clock:
+
+  experiments/theory-contracts/e-series-compiler-closure-20261023/
+  COVERS.txt:6-33, 50-62, 91-115, 142-159
+  SHA256 cdd04f5f38819b60ddd8488eb1c3c316c6849829387205e78ec5e4bf767f80bf
+
+4. Existing NS orientation cover and full Green result:
+
+  research-20261026-p1-reflection/NS-COVER-FULL-DIRAC-RP.txt:14-31,107-160
+  SHA256 a18c7589ac87b0ea875af7a2a46790989c80c836369b9ee001b0417dda6ab154
+
+5. Earlier source reviewed context for the same nonsplit extension class:
+
+  documents/tfpt_research_contracts/sections/004-source.tex:229-284
+  SHA256 ea6eabe0b7bec647c69ac92510bb3206ef7939c3974dd11c94a2847c073eecb9
+
+This already relates the central D4 involution, the free deck and the
+nonsplit NS implementation.  The new step here is the explicit C2
+cohomology intertwiner and its compatible descent from the fixed C12 clock.
+
+Terminology boundary: the original uses "spin lift", not the later specific
+Pin terminology.  Also its symbol C_2 in older family-cycle passages is a
+family cycle, not the later named elliptic cover C2:y^2=x^4-1.
+
+6. Primary geometry read for the Pin domain and monodromy:
+
+  Anik Chakraborty, Pin Equivariance and Local Dirac Boundary Problems on
+  the Flat Moebius Band, arXiv:2610.03745v1, sections 3, 6 and 8.
+  https://arxiv.org/abs/2610.03745
+
+The A3 ALE route was checked as context, not used as a premise for this
+proof:
+
+  Roland Bittleston, Simon Heuveline and David Skinner,
+  The Celestial Chiral Algebra of Self-Dual Gravity on Eguchi-Hanson Space,
+  arXiv:2305.09451.
+  https://arxiv.org/abs/2305.09451
+
+Status
+======
+
+PROVED: the exact real D4 representation intertwiner between the NS Pin pair
+and H1(C2,R), including the mu4 branch marking.
+
+PROVED: reflection inversion of the fixed C12 marked clock and its descent
+to C2.
+
+EXCLUDED IN GENERAL: geometric deck reflection equals 2P_C-I.  The archived
+formula is retained only as a corrected source claim.  The three reflection,
+deck and polarization slots remain distinct.
+
+NOT REQUIRED: a global Cartan choice or a map from the normal S2 to flavor
+P1 for these representation statements.
+
+OPEN: an operator map identifying the full NS Green covariance, time,
+support and field algebra with the original P1 boundary kernel.  The present
+bridge supplies one exact polarized monodromy and reflection carrier.  Its
+selection as the original physical carrier, and the state and field map,
+remain open.

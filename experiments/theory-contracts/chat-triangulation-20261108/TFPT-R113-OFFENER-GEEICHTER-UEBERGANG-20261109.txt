@@ -1,0 +1,133 @@
+R113OPEN20261109. Unnormierter offener Originalübergang in mitgeführter
+schwacher Karte. 9. November 2026. Originale Definitionen und bedingte
+R032 Operatorprobe; die primitive Bosonkontraktion bleibt unausgewertet.
+
+1. Schwache Richtungen aus dem lokalen Higgsbein in die Übergänge bringen
+
+Im tatsächlichen R026/96 Chart ist q(H)=[[conj(h2),h1],[-conj(h1),h2]],
+q* q=U I und det q=U. Für U>0 ist g=q(H)/sqrt(U) in SU2.
+Es gilt H=g (0,sqrt(U)) im korrespondierenden schwachen Doppeltrahmen.
+Die reale Fermionwirkung W(g)=pi(1,g,I) J pi(1,g,I) J^-1 erhält
+gamma_F und D_M. Sie konjugiert die innere Einform L(0,sqrt(U)) in L(H).
+Voraussetzung ist die tatsächliche gemeinsame Eichkarte samt Domain.
+
+An zeitlichen Teilschnitten i setze
+  B_i = exp(-dt_i h_i), L_i : frame_i -> frame_(i+1),
+  B'_i = W_i* B_i W_i, L'_i = W_(i+1)* L_i W_i.
+Dann gilt offen für jedes geordnete Wort
+  B'_n L'_(n-1) ... L'_1 B'_1 = W_n* (B_n L_(n-1) ... L_1 B_1) W_1.
+Jede ursprüngliche markierte Einfügung wird im selben Rahmen
+konjugiert. Für eine zeitabhängige glatte Karte enthält der Generator
+zusätzlich W* dot W. Äußere Projektoren und Randformen sind dieselben
+Operatoren in ihrer transportierten Darstellung. Der skalare
+Originalfaktor einschließlich vorhandener See- und Etaanteile bleibt.
+
+Auch das gegebene lokale kovariante Higgsbein bewahrt den Transport:
+  ||H_(i+1)-L_i H_i||^2
+  = U_(i+1)+U_i-2 sqrt(U_(i+1) U_i) Re[(g_(i+1)* L_i g_i)_22].
+Dies ist die endliche Transportidentität für das gegebene Higgsdoppel,
+keine neu gewählte Diskretisierung der gesamten Originalwirkung.
+
+Ausführung am unveränderten v252 96er Feldoperator, p=.25 und T=.8:
+sechs spiegelgerade Teilstreifen mit drei verschiedenen Normwerten
+.2473, .0997, .1946 und nichtkommutierenden schwachen Anschlüssen.
+Für A, S und T stimmen ursprüngliche und gedrehte offene Matrix,
+späte Y Variation des Fermionoperators und Seefaktor bis 1.1e-14
+überein. S trägt den ursprünglichen freien Fermiongenerator, T stimmt
+in diesem geraden Chart mit dem A Fermionbein überein. Werden die
+umgerechneten Links weggelassen, entsteht bei unveränderter Normbahn
+ein offener A Matrixfehler 1.5648693942. Die Rechnung betrifft eine
+vorgegebene Geschichte mit zeitlich wechselnden Feldern, keine Summe
+über die dynamischen Originalgeschichten.
+Quellen: TFPT-R113-DIREKTE-FELDALGEBRA-20261109.txt und
+recursive-mirrored-source-20261103/REFERENCE-FIBER-EVALUATION.txt:36-65.
+
+2. Originale unnormierte Kontraktion und Nullschnitt
+
+Für jeden der ursprünglichen Zweige j=A,R ist der offene Übergang
+  K_j[B](b_out,b_in)
+    = I_(j;b_out,b_in){ w_j[b] s_j[b] Gamma(R_j[b];B) }.
+Gamma bezeichnet die ganze Außenalgebra; B markiert die tatsächlich
+geordnete Einfügung. I enthält die originale innere Faseroperation,
+w alle weiteren Felder und die Basis-/Eichgewichte; s den tatsächlich
+gebundenen skalaren Fermion-/Phasenfaktor. Die gedrehte Karte ist der
+Pushforward derselben I samt transportierten Randdaten, keine
+unabhängige Haar- oder Radialwahrscheinlichkeit. Bei U=0 ist g
+undefiniert; der Originalchart oder der Stratumanteil bleibt dort.
+Der geometrische Faktor im glatten vierreellen Koordinatenvolumen ist
+  d^4 H = pi^2 U dU dg
+mit normalisiertem Haar dg, aus Vol(S^3)=2pi^2 und U=rho^2.
+Das sagt nichts über die gewichtete Dichte auf (U, gedrehte Links, Rest).
+
+A_j[B] kontrahiert K_j[B] mit dem ursprünglichen äußeren P und der
+Randpaarung. Der original gebundene Referenzwert R_0 ist bei allen
+äußeren Marken fest. Deshalb exakt
+  Z0=A_A[1]/R_0,
+  F(0)=lim_(e->0) 2 A_A[1_(0<U_tau<=e)]/(pi^2 e^2 R_0),
+  C_UY=(A_A[T(U_tau Y_sigma)] A_A[1]-A_A[U_tau] A_A[Y_sigma])
+       / A_A[1]^2,  tau<sigma.
+Die F(0) Formel gilt für den regulären vierreellen Einzelzeitanteil.
+Bei einem regulär vollständig kontrahierten Winkelmittel f(U) ist
+der Dichtequotient gleich f(0+)/R_0. Abtrennen des Nullatoms und
+wirklicher Grenzübergang vor jeder Ersetzung durch eine Auswertung
+bei H=0. Ein Spektralsprung am Gap-Cut kann zusätzliche Kontrolle
+erfordern. Kein Schluss von strukturellem Gap auf ein Higgsatom.
+
+Der echte native Integrationsaufruf im Modus integrate mit
+contribution_20261106Q/domain/native-diagnostic-v1.json wurde
+ausgeführt. Status ORIGINAL_SOURCE_INTEGRATION_NOT_STARTED,
+0 Originalatome, original_blocked_fiber_packet fehlt.
+W0, WU, WY, WUY sind jeweils null im JSON (unberechnet, keine
+numerischen Nullen), keine GA Auswahl. Der aufgerufene Adapter
+integriert vorhandene ganze Gewichte, liefert sie aber nicht.
+Metrology005:136-178 schreibt das spektrale Gewicht mit dnu_Vn.
+Geprüft fehlt für diesen Aufruf die bedingte Originalfaseroperation
+für w_j s_j bei gegebenen Endpunkten, alternativ dieselbe
+vollständig ausgewertete Randform. Eine zweite unabhängige
+Referenzwahl oder ein neues frei gewähltes Maß ist nicht erforderlich.
+
+3. Voller Selektor und trennender statischer IR Test
+
+QFT002:31-117 gibt P=P_seam,+ P_sing P_Theta P_gap. Der letzte
+Faktor schneidet D_adm*D_adm und nicht ohne weitere Identifikation
+das Spektrum der physikalischen Zeitentwicklung ab.
+Ist der originale positive Zeitgenerator G=H-E0>=0 identifiziert,
+und P reduziert G und erhält V Omega für jede betrachtete zentrierte
+Marke V, bleiben deren Spektralgewichte durch die bloße Einschränkung
+auf Ran(P) bei demselben Omega unverändert.
+Reduziert P den Zeitgenerator nicht, ergibt am kompatiblen endlichen
+Regulator (Q=I-P, z>0) die Blockelimination exakt
+  P(G+z)^-1 P = [G_PP+z-G_PQ(G_QQ+z)^-1 G_QP]^-1 auf Ran(P).
+Der abgezogene Term ist positiv, daher liegt der ganze diagonale
+statische Matrixwert über oder gleich der Rechnung mit nur G_PP
+und identischen Markenvektoren in Ran(P). Für eine gemischte
+Antwort folgt daraus keine Vorzeichenordnung. Dieselbe volle
+Außenprojektion bzw. echte OS Quelle muss benutzt werden.
+
+Für ein endliches komplexes Spektralmaß mu der zentrierten U,Y
+Marken, Nullatom abgezogen, sei mu((0,E])=c E+o(E). Dann gilt
+  -d_log(z) int (E+z)^-1 dmu(E)
+    = int z/(E+z)^2 dmu(E) -> c.
+Beweis durch partielle Integration: der lineare Anteil liefert c,
+der Rest ist auf einem kleinen Intervall beliebig klein relativ zu E,
+und außerhalb ist der Beitrag O(z). Für das Ablesen eines gemeinsamen
+Volumenlimes sind die entsprechende Konvergenz bei festem z und
+kontrollierte Reihenfolge der Limites erforderlich. c=0 allein
+schließt schwächere statische Divergenzen nicht aus.
+Am bereits ausgewerteten R032 Z3 Vakuumzweig mu=B dE auf (0,1]
+ist der Zielwert bei z=.004 B/(1+z)=144.43051245655. Die originale
+Viertelmodenfolge bei r=262144 gibt 144.43050146620. Der Logkoeffizient
+bei z->0 ist B=145.00823450638 für diesen Zweig und diese Marke.
+Das ist der statische Spektraltest, nicht der negative künstliche
+Logarithmus der polaren Fermionnormierung. Der vollständige P_adm
+ist hier nicht numerisch ausgewertet; seine Überlappung mit den
+relevanten dynamischen markierten Richtungen ist weiterhin offen.
+
+Damit ist die mittransportierte bedingte Originalform hergeleitet
+und geprüft. Physische Zahlen für Z0, F(0), C_UY sowie die
+Auslöschung oder das Überleben des IR Terms mit dem ganzen P
+sind nicht entschieden.
+
+Rechenbeleg im Repo mit PYTHONPATH=verification,
+VECLIB_MAXIMUM_THREADS=1 OPENBLAS_NUM_THREADS=1:
+python3 -B experiments/theory-contracts/chat-triangulation-20261108/check_r113_dressed_open_20261109.py

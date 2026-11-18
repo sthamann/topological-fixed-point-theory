@@ -1,0 +1,121 @@
+TFPT | Reiner ursprünglicher Pin See und seine vollständigen Moden
+10. November 2026, ergänzender Originaltest zu Plan 239.
+
+1. Warum dieser zweite Zustandsweg geprüft wurde
+
+Die alte geometrische Quelle erhält auf ihrer flachen
+Normalnullbranche den Quarter Hardy Zustand und seine
+Dirac Zeit bereits exakt. Nach dem Ausschluss der
+direkten treuen Green Zustandsabbildung ist das die
+naheliegende andere ursprüngliche Wahl. Die Frage
+lautet, ob der reine Dirac See über alle ursprünglichen
+Pin Moden einen gemeinsamen Fockraum für die native
+Higgsvariation liefert. Die beiden Zustandsbegriffe
+werden auf ihren tatsächlichen Räumen getrennt gehalten.
+
+2. Exakter Modenvergleich
+
+Das bestehende gepaarte Pin Dirac hat nach dem Gamma
+Transport die Form D_Phi=tau3 D+tau1 Phi. Bei
+konstanter nativer Phi und einem D Eigenwert lambda
+ist die negative Projektion
+ P_Phi(lambda)=[I-(lambda tau3+tau1 Phi)
+                       (lambda²+Phi²)^(-1/2)]/2.
+Die beiden gegebenen nativen Matrizen sind
+Phi_0=M_R und Phi_1=M_R+.55 L_H. Sie müssen nicht
+kommutieren. Für ihre tatsächlichen Eigenbasen u,v
+mit Massen s,t hat die Differenz im Quadrat die
+Summe
+ sum_{s,t} |<u_s,v_t>|² (d1²+d2²)/2
+ mit d1=lambda(1/sqrt(lambda²+s²)-1/sqrt(lambda²+t²)),
+     d2=s/sqrt(lambda²+s²)-t/sqrt(lambda²+t²).
+Die direkte 192er Projektion stimmt an zwei
+ursprünglichen Modewerten bis 1e-13 überein.
+Für große |lambda| lautet der führende Term
+ Tr((Phi_1-Phi_0)²)/(2 lambda²)+O(lambda^-4).
+Der numerische Rest wird mit dem exakten
+skalarweisen Taylorrest aus der Prüferformel
+begrenzt. Es wurde keine Austauschbarkeit der
+beiden Majorana und Higgs Matrizen angenommen.
+
+Die einzelne Normalnullbranche hat nur den
+Längsimpulsturm 2pi(n+1/4). Auf ihr ist die
+Quadratsumme endlich, wie in der C58 Kreisrechnung.
+Eine explizite massenabhängige Rotation der
+beiden Pin Komponenten diagonalisiert den
+gegebenen Block. Beim alten k=pi/2 ergibt
+der native neue Block Energiebeträge von
+1.5710214419 bis 4.8583472646, gegenüber
+1.5707963268 auf dem alten masselosen Block.
+Die Rotation erhält die Projektion als Zustand
+unter dem entsprechend mitbewegten Feld. Sie
+erhält nicht die alte B Zeit auf diesem Modus.
+
+3. Alle Längs und Quermoden ändern das Ergebnis
+
+Beim selben flachen ursprünglichen (c,b)=(i,+)
+hat der Normalgrad m den Betrag pi m/2 und den
+Twist alpha=1/4 für gerade m, 3/4 für ungerade m.
+Für m>0 enthält der geometrische D beide
+Vorzeichen von sqrt((2pi(n+alpha))²+(pi m/2)²).
+Der Nullzweig zählt nur einmal. Das sind die
+wirklichen Moden des Vergleichs, kein neuer
+Kinetikterm. Der gepaarte 2x2 Block ist schon
+in P_Phi enthalten und wird nicht erneut gezählt.
+
+Die halbe Gitterebene der beiden Impulse und
+beide Vorzeichen geben N(|lambda|<=L)=L²/pi+O(L).
+Daher ist die volle Hilbert Schmidt Quadratsumme
+für die native Higgsänderung logarithmisch
+divergent. Der exakte Koeffizient ist
+ Tr((Phi_1-Phi_0)²)/pi = 35.2644722061.
+Die Verdoppelung 512->1024 gibt 35.27224546
+pro log L, mit Schranke .00045425 für den
+Fehler der asymptotischen Summanden in dieser
+letzten Schale. Beim gleichen Schnitt wächst
+die volle Quadratsumme von rund 204.54 auf
+228.99; die Nullzweigsumme liegt bei rund
+17.92 und 17.93. Der alte Kreis und der ganze
+Pin Streifen haben deshalb verschiedene
+Zustandsgrenzen.
+
+Nach dem Kriterium für reine quasifreie CAR
+Projektionen reicht diese logarithmisch
+divergente Differenz nicht für eine unitäre
+Implementierung der Higgsänderung im selben
+reinen Dirac Fockraum. Ein algebraischer
+CAR Transport bleibt möglich. Physisch
+braucht es dann eine aus der Quelle
+begründete Zustandsfamilie oder eine
+andere Darstellung. Hier ist weder die
+tatsächliche Raumzeitdarstellung noch ein
+Ausschluss jeder anderen F1 Quelle gezeigt.
+Der Grund ist der Modenturm des alten
+zweidimensionalen flachen Pin Vergleichs.
+
+Die kombinierte Schlussfolgerung ist konkret.
+Die statische Green Route ist positiv, ihr
+direkter Zustandstransport ist ausgeschlossen
+und die geprüfte gereinigte Zeitkarte hat
+die falsche Normalparität. Der alte reine
+Dirac Weg erhält Zustand und Zeit auf
+seiner freien Nullbranche. Unter dem
+nativen Higgsfeld verschiebt sich ihre
+Zeit; auf dem vollen Pin Raum divergiert
+zusätzlich der reine Fockzustandswechsel.
+Keine der beiden bekannten statischen
+Zeitkarten liefert so die gemeinsame
+physische Zustands und Auswahlregel.
+Q_Theta, D_adm, q Rückweg, R113 und F1
+bleiben offen.
+
+Originale:
+ GEOMETRIC-SOURCE-RETURN.txt:6–41, ursprüngliche
+ D-Sea und seine reduzierte Nullbranche.
+ NS-COVER-FULL-DIRAC-RP.txt:21–123, Quarter,
+ Normalmoden und getrennte Green Zeit.
+ TFPT-VIER-MUSTER-UND-PIN-PAAR-20261110.txt:199–253,
+ tatsächlicher gepaarter nativer Phi Aufbau.
+ Araki, Publ. RIMS 6 (1970), reine CAR Projektionen,
+ https://www.jstage.jst.go.jp/article/kyotoms1969/6/3/6_3_385/_article
+ Prüfer check_tfpt_pin_pure_sea_uv_20261110.py <Repo>.

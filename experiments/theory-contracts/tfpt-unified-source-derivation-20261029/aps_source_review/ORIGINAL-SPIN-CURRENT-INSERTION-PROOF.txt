@@ -1,0 +1,179 @@
+R072. ACTUAL ARC AND RESIDUE SOURCE INSERTION
+1 November2026. Scoped source test, not completion of physical F1.
+
+1. First identification, before another endpoint calculation
+R071 already gives the entire conditional mixed spinor/CAR word and NS/R
+sewing. We do not recompute it. The test here is whether the ORIGINAL scalar
+cover-current operation produces the smooth Cartan transport in the actual
+q direction. This is a necessary test of that specific proposed insertion,
+not a universal requirement on the original neutral source route.
+
+Use the actual source fold, from ORIGINAL-ORDERED-CURRENT-KERNEL-AND-SEAM-
+GRADING.txt:108-160:
+ eta_r(x)=psi((x+2pi r)/8)/sqrt8,
+ U_alpha(r,k)=exp(2pi i(k+alpha)r/8)/sqrt8, chi=U_alpha^* eta.
+The chi_k are the residue channels, not the eight geometric preimage arcs.
+The original scalar Weyl operation acts in the ARC chart as
+ G_phi(x)=diag_r exp(-i phi((x+2pi r)/8)).                    (1)
+One smooth scalar cover profile can have different values on the eight
+arcs. We do NOT assume those eight values coincide. The decisive property
+is that(1) is DIAGONAL in the arc chart.
+
+For the actual four missing color roots beta=+/-b,+/-(a+b), a=e1-e2,
+b=e2-e3, keep the original M from fold-results.json and put q=M^T beta.
+For beta=b this gives
+ q=(1,-1,-1,-1,-1,-1,1,-1)/2.                            (2)
+Every one of these four vectors has two signs of one type and six of the
+other, q.q=2, sum(q)=+/-2. These are original fixed data, not a fitted frame.
+
+2. Complete scalar-profile class decided
+A smooth closed Cartan rotation in this q direction acts on chi as
+ D_q(b)=diag_k exp(-i q_k b(x)),
+so its REQUIRED arc action is
+ V_q(b)=U_alpha D_q(b) U_alpha^*.                         (3)
+Here b is a real smooth periodic test function. It may vanish outside an
+interval and have plateau2pi. It need not wind around the circle.
+
+Write U_alpha=P_alpha F_8, where P_alpha is diagonal and F_8 is the DFT.
+F_8 diag(d_k) F_8^* is diagonal iff every nonzero discrete Fourier
+coefficient of d vanishes, equivalently d_k is constant. Thus the arc and
+residue diagonal algebras intersect in C I. This is an all-profile proof.
+For the actual signs(2), all exp(-iq_k b) coincide iff b in2pi Z.
+On a connected circle, a smooth b with that property is constant. If b
+vanishes outside a proper interval it is identically zero.
+
+There is therefore NO scalar original cover profile phi implementing a
+nontrivial smooth closed q rotation(3). On plateau b=2pi the matrix is -I,
+which a scalar phase can implement there; its smooth transitions require
+the offdiagonal arc matrix. No scalar interpolation fixes this obstruction.
+
+The defect is explicit and independent of alpha:
+ A_q=U_alpha diag(q) U_alpha^*, (A_q)_rr=sum(q)/8=+/-1/4,
+ ||offdiag A_q||_HS^2=2-8(1/4)^2=3/2,
+ V_q(b)=cos(b/2)I-2i sin(b/2) A_q,
+ ||offdiag V_q(b)||_HS^2=6 sin^2(b/2).                    (4)
+At b=pi the missing offdiagonal norm squared is6. A diagonal cover action
+has zero in all these entries. Both original quarters obey exactly(4).
+The independent symbolic Fourier equations have rank7 and constant kernel.
+No scan over millions of scalar profiles can change this class decision.
+
+3. What the actual available composite insertion is
+The existing folded current prescription already supplies
+ J_q(x)=:chi(x)^* diag(q) chi(x):
+       =:eta(x)^* A_q eta(x):,                           (5)
+with its ORIGINAL point splitting, sea and reference subtraction. Formula
+(5) is a fixed combination of the original residue Cartan currents. In
+the original cover it contains psi(theta_r)^* psi(theta_s), r!=s, at the
+same quotient point x. It couples preimages separated by2pi(r-s)/8.
+It is not a scalar density psi(theta)^*psi(theta) at one cover point.
+For a test profile supported in quotient K, its algebraic support stays
+in the actual union of eight preimages F^-1(K), not one newly declared
+cover interval. The full Hilbert space/source remains the original one.
+
+Smooth exponentiation is available on this GIVEN folded CAR representation:
+the normal-ordered modes J_q,n obey
+ [J_q,n,J_q,m]=(q.q)n delta_(n+m,0)=2n delta_(n+m,0).
+For real smooth b, sum_(n>0)n|b_n|^2<infinity. The usual current energy
+bounds give an essentially selfadjoint smeared current on the finite
+energy core and its bounded unitary exponential. Equivalently, the smooth
+matrix loop(3) has Hilbert Schmidt offdiagonal Hardy block, since its
+Fourier coefficients have sum |n| ||V_n||_HS^2<infinity. The original
+finite grading/quarter shifts do not change this finiteness. The current
+exponential, not a free implementer phase, fixes its central extension.
+Explicitly, for J_q(b)=b0(q.p)+sum_(n>0)[b_n J_q,-n+bar(b_n)J_q,n],
+ [J_q(b),J_q(c)]=2sum_(n>0)n[bar(b_n)c_n-b_n bar(c_n)] I,
+ W_q(b)W_q(c)=exp(-[J_q(b),J_q(c)]/2) W_q(b+c).
+This is the original current convention with its forced level2; zero-mode
+q.p and its actual source expectation are retained. The FOCK exponential
+W_q and its ONE-PARTICLE action V_q are different operators. The latter
+does not by itself supply the phase or expectation of the former.
+These statements concern the existing CAR representation and its algebra
+with the actual multi-arc support. They do not assert that the primitive
+physical action already selects(5) or identify a new physical local net.
+
+There is a second exact distinction. Write U=union_r K_r=F^-1(K). The
+even part of the full CAR algebra on U contains cross-arc bilinears. The
+ADDITIVE algebra generated by the individual even CAR(K_r) does not
+automatically contain them. Choose an original smooth scalar phase equal
+to pi on K_r and zero on the other seven arcs, with transitions outside
+U. Its Weyl implementer commutes with each individual even CAR(K_s),
+hence with their generated von Neumann algebra. On U its one-particle
+action is R_r=I-2|r><r|. For generic b,
+ [R_r,V_q(b)]!=0 whenever that row of offdiag A_q is nonzero.
+Therefore the q unitary cannot belong to that additive even algebra.
+This is an actual scalar-source exterior-commutant test, not a dimension
+or neutrality argument. A quotient-local full-CAR operation is not thereby
+an additive local observable on the eight separate original arcs. A larger
+interval hull or actual extended physical net needs its own original map.
+
+For an allowed complete current insertion, all native point-split fields
+are transported with V_q(x+)^* A_a V_q(x-), and the ENTIRE original
+reference subtraction. The original C_alpha or1-C_alpha supplies the
+contractions in separated field products. Amplitudes retaining the current
+implementer also retain its central phase and full expectation; they are
+not replaced with a bare finite Wick Pfaffian. This is the already proven
+original field prescription applied to its actual matrix, not eight new
+independent vacua or a newly chosen normal metric.
+
+4. Neutral locality and the distinction from a spinor endpoint
+A smooth current unitary supported in the quotient interval hull K can
+coexist with the actual odd CAR fields. Its adjoint action on the residue
+annihilation components is exp(-i q_k b(x)). On a plateau b=2pi every
+component changes sign; outside K they stay fixed. An even bilinear with
+one argument in the plateau and one outside changes sign. Thus one must
+retain the connecting support, rather than only two endpoint neighborhoods.
+All words completely outside F^-1(K) commute with this even supported
+insertion. Ordinary interval-hull locality and such connecting support are
+compatible. Mutual fractional endpoint monodromy alone is not an exclusion
+of ALL bounded neutral observables or of a direct neutral local route.
+
+Do not identify the Cartan current J_q or its smooth closed exponential
+with the charged root vertex Y_q. The former has zero Cartan charge and
+preserves NS/R sectors; Y_q carries q and changes NS toR. A sharp endpoint
+limit needs its own UV normalization, domain and actual source comparison.
+No equality with the entire R071 mixed spinor word follows from(5) alone.
+No sum over spin structures,4pi winding rule or spacetime statistics
+promotion follows merely from the half entries in(2). In particular a
+real periodic b with zero net change has no extra4pi closure obligation.
+
+5. Effect on the active original-source derivation
+This rules out the precise scalar-profile substitution at its first actual
+operator action. It ALSO identifies the existing composite current needed
+for the smooth operation: A_q is fixed by M and U_alpha. Missing provenance
+of an insertion is not a claim that all such CAR operations are impossible.
+The original S_TFPT/Z_adm or C_Sigma/P_F field map must now be checked at
+this specific multi-arc kernel and its actual support, reference, phase,
+state and time. If it uses the full composite fields, compute the original
+neutral insertion there; if it offers only the scalar density call, it
+cannot silently be substituted for(3). No fresh scalar-profile search.
+
+The actual Higgs pushforward and full96 matter source are still required.
+Retain R054's four-field defect, R063's entire quarter reader, R067/R068
+color and counterface responses and R071's mixed word, with H before/after
+integration typed. R035/R037/R043, Z0/Ref/Eta/H0, state/time/RP, memory,
+E8/clocks and existing Yukawa/Flavor/Alpha remain unchanged in scope.
+No physical3+1 or universal spin2 source is derived in this result, and
+no new physical F1 milestone is marked complete.
+
+6. Sources, evidence and counterparty corrections
+The check imports the original rational M and independently evaluates all
+four q, the full DFT linear system, exact norms and both quarter phasings.
+These finite controls support the stated analytic all-profile theorem;
+they do not themselves establish a physical source or new Lean theorem.
+The original folded field prescription at lines108-160 and original closed
+half-kink source are reused. This result adds the ACTUAL nonuniform q
+arc-action test, not another claim to discover the uniform half-kink.
+
+Primary literature crosscheck: Longo/Rehren arXiv:0712.2140 section2,
+equations(2.1)-(2.8), distinguishes smooth local Weyl transporters,
+connecting-region algebras and renormalized sharp vertex limits. Its
+two-dimensional construction is not a TFPT3+1 origin theorem.
+https://arxiv.org/abs/0712.2140
+
+Claude's proposed universal neutral-locality and3+1 exclusions were not
+adopted. The supplied old smooth-Weyl countercase keeps the direct neutral
+route open; its initial scalar lift was itself corrected by the actual
+arc/residue basis distinction above. A common lattice isometry preserves
+q.v, so a proposed common-frame symmetrization scan is vacuous. The extra
+4pi closure claim and assumption that scalar cover values coincide on all
+eight arcs are false in this actual test. See separate review evidence.

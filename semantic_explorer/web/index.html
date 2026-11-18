@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#142d37">
+  <meta name="description" content="Der TFPT-Wissensatlas macht Aussagen, Herleitungen, Prüfprogramme und offene Fragen durchsuchbar.">
+  <title>TFPT Wissensatlas</title>
+  <link rel="stylesheet" href="/style.css">
+  <link rel="stylesheet" href="/agent-guide.css?v=20261013-atlas3">
+  <link rel="stylesheet" href="/story-map.css?v=20261013-atlas3">
+  <link rel="stylesheet" href="/reading.css?v=20261013-atlas3">
+  <link rel="stylesheet" href="/research.css?v=20261015-research1">
+</head>
+<body>
+  <a class="skip-link" href="#main">Zum Inhalt springen</a>
+  <header class="topbar">
+    <a class="brand" href="#" aria-label="TFPT Wissensatlas Startseite">
+      <span class="brand-mark" aria-hidden="true"><span></span><span></span><span></span></span>
+      <span><strong>TFPT</strong><small>Wissensatlas</small></span>
+    </a>
+    <a class="topbar-research-link" href="#" data-i18n="research-link">Forschungsstand</a>
+    <a class="topbar-link" href="#orientation"><span data-i18n="structure-link">Aufbau verstehen</span> <span aria-hidden="true">↗</span></a>
+    <a class="topbar-map-link" href="#map"><span data-i18n="full-map-link">Gesamtkarte</span></a>
+    <label class="language-control"><span class="sr-only">Sprache / Language</span><select id="language-select" aria-label="Sprache / Language"><option value="de">Deutsch</option><option value="en">English</option></select></label>
+    <button class="refresh-button" id="refresh-view" type="button" title="Daten aktualisieren">Aktualisieren</button><span id="refresh-hint" class="refresh-hint" hidden></span>
+    <div class="topbar-note"><span class="live-dot"></span><span id="connection-label">Wissensgraph wird geladen</span></div>
+  </header>
+
+  <main id="main">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <p class="eyebrow" data-i18n="research-hero-eyebrow">Vom Befund zur nächsten Frage</p>
+        <h1 id="hero-title" data-i18n="research-hero-title">Baue auf dem auf, was wir wissen.</h1>
+        <p class="hero-intro" data-i18n="research-hero-intro">Sieh, was bereits geklärt ist, welche Wege unter welchen Voraussetzungen ausscheiden und welcher Schritt jetzt weiterführt.</p>
+      </div>
+      <form class="searchbox" id="search-form" role="search">
+        <label class="sr-only" for="search-input">Den Wissensgraph durchsuchen</label>
+        <span class="search-icon" aria-hidden="true">⌕</span>
+        <input id="search-input" name="q" type="search" autocomplete="off" placeholder="Zum Beispiel: Wie entsteht die Feinstrukturkonstante?" aria-describedby="search-hint">
+        <button class="search-submit" type="submit" aria-label="Suchen"><span>Suchen</span><span aria-hidden="true">↵</span></button>
+        <div class="search-hint" id="search-hint"><span>Enter zum Suchen</span><span data-i18n="research-search-hint">Eine Frage oder ein Thema eingeben</span></div>
+        <div class="search-modes"><label><input type="radio" name="search-mode" value="research" checked><span data-i18n="research-search-mode">Forschungsstand</span></label><label><input type="radio" name="search-mode" value="entries"><span data-i18n="research-entries-mode">Alle Aussagen & Quellen</span></label></div>
+      </form>
+      <div class="hero-orbit orbit-one" aria-hidden="true"></div><div class="hero-orbit orbit-two" aria-hidden="true"></div>
+    </section>
+
+    <section class="status-strip" aria-label="Umfang des Wissensgraphen">
+      <div class="status-intro"><span class="status-icon">◎</span><span><strong>Der aktuelle Wissensstand</strong><small>Extrahierte Inhalte aus dem Theoriegraphen</small><small class="coverage-detail" id="coverage-detail" hidden></small></span></div>
+      <div class="stat"><strong id="stat-nodes">—</strong><span>Einträge</span></div>
+      <div class="stat"><strong id="stat-claims">—</strong><span>Aussagen</span></div>
+      <div class="stat"><strong id="stat-sources">—</strong><span>Quellen</span></div>
+      <a href="#about-coverage" class="status-link"><span data-i18n="coverage-link">Wie ist das zu lesen?</span> <span aria-hidden="true">↗</span></a>
+    </section>
+
+    <div class="workspace" id="workspace">
+      <aside class="sidebar" aria-label="Themen und Suchergebnisse">
+        <div class="sidebar-head"><h2 id="sidebar-title">Themen entdecken</h2><span id="sidebar-count" class="muted"></span></div>
+        <div id="sidebar-content" class="sidebar-content">
+          <div class="loading-block"><span class="spinner"></span><span>Themen werden geladen …</span></div>
+        </div>
+      </aside>
+
+      <section class="content" aria-live="polite" aria-atomic="false">
+        <div id="notice" class="notice" hidden></div>
+        <div id="view" class="view"></div>
+      </section>
+    </div>
+
+    <section id="agent-guide" class="agent-guide" hidden aria-label="MCP agent guide"></section>
+
+    <section class="reading-note" id="about-coverage">
+      <div class="note-symbol" aria-hidden="true">i</div>
+      <div><h2 data-i18n="reading-title">Ein Kompass, kein Gütesiegel</h2><p><span data-i18n="reading-p1">Der Atlas ordnet Aussagen, Argumente und Prüfmaterial aus dem vorhandenen Theoriegraphen. Eine KI-Auswertung hilft beim Auffinden und Zusammenfassen; sie ist</span> <strong data-i18n="reading-bold">keine fachliche Abnahme und kein Beweis</strong><span data-i18n="reading-p2">. Der Status im ursprünglichen Ledger bleibt maßgeblich. Offene Fragen sind ausdrücklich als offen markiert.</span></p></div>
+      <div class="status-legend"><span class="legend-item"><i class="legend-dot exact"></i>im Original verzeichnet</span><span class="legend-item"><i class="legend-dot ai"></i>KI-Auswertung</span><span class="legend-item"><i class="legend-dot open"></i>offen / ungeklärt</span></div>
+    </section>
+  </main>
+
+  <footer class="footer"><span>TFPT Wissensatlas</span><span>Orientierung im Theoriegraphen</span></footer>
+  <script src="/i18n.js" defer></script>
+  <script src="/theory-map.js?v=20261013-atlas3" defer></script>
+  <script src="/research.js?v=20261015-research1" defer></script>
+  <script src="/app.js?v=20261015-research1" defer></script>
+  <script src="/agent-guide.js?v=20261013-atlas4" defer></script>
+</body>
+</html>

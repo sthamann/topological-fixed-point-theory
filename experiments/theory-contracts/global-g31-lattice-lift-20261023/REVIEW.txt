@@ -1,0 +1,38 @@
+MATH.SEAM.G31.LATTICE.03
+Beweisprüfung und ausführbare Verifikation, 23. Oktober 2026
+
+Ein tatsächlich ausgeführter Claude CLI Aufruf mit claude-opus-4-8 hat
+ausschließlich THEOREMS.txt gelesen. Read war das einzige zugelassene
+Werkzeug; Bash, Agent, Edit und Write waren gesperrt. Der Prozess endete
+erfolgreich ohne Berechtigungsablehnung. Das vollständige zurückgegebene
+Gutachten steht in claude-review.txt. Die wiederverwendete Sitzung ist
+72508647-4dc3-4214-965d-11ee455889b3.
+
+Das Gutachten bestätigt die genaue Beschreibung durch den endlichen
+Quotienten, die logische Nichtspaltung aus den sieben Gleichungen, die
+Unterscheidung von Gruppenlift und Monodromielift sowie die affine
+Konjugationsformel und den vollständigen Burnsidequotienten. Es nennt
+keinen substanziellen Korrekturbedarf.
+
+Claude hat keine Programme ausgeführt und keine anderen Quelldateien
+gelesen. Die sieben Gleichungszeilen wurden von Claude auf ihren
+Widerspruch geprüft, ihre Herleitung aus eps_e8 wurde vom eigenen
+checker.py ausgeführt. Die vollständigen endlichen Tabellen wurden von
+quarter_lifts.py und audit_lifts.py berechnet; sie wurden vom Gutachter
+als berechnete Eingaben beurteilt, nicht unabhängig erneut ausgeführt.
+
+Ausführbare Verifikation dieser Arbeit:
+1. checker.py verwendet die ursprünglichen Kokykelfunktionen unmittelbar,
+   berechnet die sieben Gleichungen erneut und prüft ihre Summe0=1.
+   Es prüft außerdem alle22 echten Untergruppen durch vollständigen
+   Abschluss ihrer endlichen Liftaktionen und das gesamte binäre G31 Bild.
+2. quarter_lifts.py berechnet alle11356 Normalformen und ihre Stabilisatoren.
+3. audit_lifts.py zählt dieselben62 Klassenfamilien mit einer eigenständigen
+   Burnsideauswertung. Alle62 Zahlen stimmen mit der Orbitzerlegung überein.
+   Zusätzlich berechnet es alle17 ungeclockten Liftquotienten.
+4. Alle drei Programme wurden normal und unter Python -OO ausgeführt.
+   Die jeweils erzeugten drei Ergebnisdateien stimmen bytegenau überein.
+   verification_summary.json dokumentiert den Abschluss.
+
+Der Quellenreview und diese Programmausführungen sind getrennte Nachweise.
+Die wissenschaftlichen Originaldateien und das Ledger wurden nicht geändert.

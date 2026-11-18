@@ -1,0 +1,112 @@
+1: /-
+2:   TFPT Carrier — Paper 1 Calderon Interface
+3:   -----------------------------------------
+4: 
+5:   This module makes the Paper 1 input to the carrier-rigidity
+6:   chain an explicit Lean *certificate*, rather than something
+7:   silently consumed.
+8: 
+9:   --------------------------------------------------------------
+10:   What Paper 1 contributes
+11:   --------------------------------------------------------------
+12: 
+13:   TFPT Paper 1 (Boundary Polarization and the Primitive Kernel)
+14:   constructs the carrier involution `ε := ι_C |_E` from the
+15:   Calderón polarisation of an admissible one-sided boundary
+16:   datum. The output of that construction, restricted to the
+17:   finite essential carrier `E`, is an element ε of the
+18:   endomorphism ring of `E` satisfying `ε² = id`.
+19: 
+20:   The carrier-rigidity chain consumes exactly this output. It
+21:   does *not* attempt to reformalise Paper 1's analytic content:
+22:   the Calderón polarisation, boundary elliptic regularity, and
+23:   the operator-theoretic construction of the involution all
+24:   live upstream of this project.
+25: 
+26:   --------------------------------------------------------------
+27:   Why an explicit interface
+28:   --------------------------------------------------------------
+29: 
+30:   In the v5 chain, `CarrierInvolution` (in
+31:   `InvolutionProjectors.lean`) was the entry point of the
+32:   algebraic chain. It is a clean structure but it does *not*
+33:   document that ε is meant to come from Paper 1's Calderón
+34:   polarisation.
+35: 
+36:   The reviewer's standing critique is that
+37:   this hides an *upstream* dependency: the Lean chain works for
+38:   *any* involution, but the TFPT claim is that the involution is
+39:   produced by a specific boundary construction. Without an
+40:   explicit interface, a reader cannot see at the type-theory
+41:   level "this is the place where Paper 1 enters".
+42: 
+43:   `CalderonCertificate` below is exactly that interface: a thin
+44:   structural wrapper around `CarrierInvolution` that names the
+45:   Paper 1 origin in its docstring. Any future Lean
+46:   formalisation of Paper 1's boundary elliptic theory would
+47:   *produce* a `CalderonCertificate`; the present chain
+48:   *consumes* it.
+49: -/
+50: 
+51: import Mathlib.Algebra.GroupWithZero.Invertible
+52: import Mathlib.Algebra.Ring.Basic
+53: 
+54: import TfptCarrier.InvolutionProjectors
+55: 
+56: namespace TFPT.Carrier.CalderonInterface
+57: 
+58: /--
+59: **`CalderonCertificate`** — Paper 1 interface for the carrier
+60: involution.
+61: 
+62: The certificate carries an element `ε` of a ring `A` (in
+63: practice, `Module.End K E` for a finite-dimensional `K`-vector
+64: space `E`) together with the involutive relation `ε² = 1`.
+65: 
+66: The intended reading is: ε is the Calderón-induced carrier
+67: involution `ι_C |_E` of TFPT Paper 1, restricted to the finite
+68: essential carrier `E`. The Lean structure does not formalise
+69: the Calderón construction itself; it names where the construction
+70: enters the carrier-rigidity chain.
+71: 
+72: The forgetful map
+73: `CalderonCertificate A → CarrierInvolution A` then feeds the
+74: algebraic chain in `InvolutionProjectors.lean`.
+75: -/
+76: structure CalderonCertificate (A : Type*) [Ring A] where
+77:   /-- The Calderón-induced carrier involution element. -/
+78:   eps : A
+79:   /-- Involutive relation `ε² = 1`, the output of Paper 1's
+80:       boundary polarisation argument. -/
+81:   eps_sq : eps * eps = 1
+82: 
+83: namespace CalderonCertificate
+84: 
+85: variable {A : Type*} [Ring A]
+86: 
+87: /-- A Calderon certificate produces the algebraic carrier
+88: involution consumed by `InvolutionProjectors`. -/
+89: def toCarrierInvolution (c : CalderonCertificate A) :
+90:     TFPT.Carrier.InvolutionProjectors.CarrierInvolution A where
+91:   eps := c.eps
+92:   eps_sq := c.eps_sq
+93: 
+94: end CalderonCertificate
+95: 
+96: /-- Conversely: a `CarrierInvolution` can be re-packaged as a
+97: `CalderonCertificate`, with the understanding that its origin is
+98: *not* certified by the wrapper — only that its algebraic content
+99: is the same.
+100: 
+101: This is the converse direction. It is sometimes useful to wrap
+102: a `CarrierInvolution` constructed by other means (e.g.\ from a
+103: concrete matrix) into the Calderón-interface shape for
+104: downstream uniformity. -/
+105: def CalderonCertificate.ofCarrierInvolution
+106:     {A : Type*} [Ring A]
+107:     (c : TFPT.Carrier.InvolutionProjectors.CarrierInvolution A) :
+108:     CalderonCertificate A where
+109:   eps := c.eps
+110:   eps_sq := c.eps_sq
+111: 
+112: end TFPT.Carrier.CalderonInterface

@@ -1,0 +1,159 @@
+TATSAECHLICHES J_F: VOLLSTAENDIGER TRANSPORT UND DIE ZWEI PAARUNGEN
+2026-10-29. Unabhaengige analytische Fortsetzung. Keine Originalaenderung,
+kein Atlas-/Ledgerupgrade, kein Testlauf und keine neue Quellenklasse.
+
+GELTUNGSBEREICH UND EINGABE
+
+Die tatsaechlichen endlichen Identitaeten aus
+verification/v252_full_finite_triple.py, Kswap/Japply und die Realitaets- und
+Graduierungspruefungen in Zeilen 225-258, sind
+  J_F^2=1,  J_F gamma_F=-gamma_F J_F,  J_F Phi=Phi J_F,
+  Phi*=Phi,  {gamma_F,Phi}=0.
+J_F ist ALT-komplex-antilinear. Die folgenden Rechnungen gelten auch fuer
+komplexe Yukawaeintraege und komplexe symmetrische Majoranabloecke. Es wird
+nirgends vorausgesetzt, dass deren Matrizen reell sind. Die Erweiterung auf
+Kreisfunktionen wirkt punktweise und konjugiert deshalb auch Fourierfaktoren.
+
+Es gelten die bereits geprueften Collar- und Chartdefinitionen aus
+../FINITE-COUPLED.txt, mit altem Skalar i0 und g=gamma_F:
+  Z=diag(1,-1), N=[[0,-1],[1,0]], S=NZ=[[0,1],[1,0]],
+  Gamma=Z tensor g, Ical=i0 Gamma, C0=i0 N,
+  E v=(P_+v,i0 P_-v),  P_+=(1+g)/2, P_-=(1-g)/2,
+  A=-i0 partial_theta+a(theta),  B_A=Z A-S Phi,
+  h_A=A g-i0 g Phi,  D_A=N(partial_r+B_A).
+a ist glatt, beschraenkt, selbstadjungiert und [a,g]=0. Phi ist glatt,
+beschraenkt und erfuellt die angegebenen J-/Gradidentitaeten punktweise.
+Die tangentialen Identitaeten gelten auf periodischem H1. Volle D- und
+Paarungsidentitaeten gelten zunaechst auf glatten, im Collarinneren kompakt
+getragenen Funktionen; eine globale Randdomaene muss zusaetzlich transportiert
+und auf J-Invarianz geprueft werden. Das feste B-Graphdiagramm setzt einen
+normalunabhaengigen Hintergrund voraus. [A,Phi]=0 wird nicht gebraucht.
+
+1. DER UNVERAENDERTE PUNKTWEISE LADUNGSOPERATOR
+
+Setze Jhat=I_normal tensor J_F und
+  A^J=J_F A J_F^{-1}=+i0 partial_theta+a^J,
+  a^J=J_F a J_F^{-1}.
+Dann gelten exakt
+  Jhat^2=1, Jhat Gamma=-Gamma Jhat, Jhat Ical=Ical Jhat,
+  Jhat C0=-C0 Jhat.
+Jhat ist im NEUEN komplexen Typ LINEAR und vertauscht die Totalgraduierungen.
+Es ist deshalb weder C0 noch eine neue Konjugation auf E(K).
+
+Mit dem ALT-antilinearen k=-g J_F gilt
+  k^2=-1,  Jhat E=C0 E k.
+Auf dem ganzen Chart T(v,bar(w))=E v+C0 E w lautet der Transport
+  T^{-1} Jhat T(v,bar(w))=(-k w,overline(k v)).
+Diese Abbildung ist neu-komplex-linear; die konjugierte zweite Komponente
+darf bei der Typpruefung nicht weggelassen werden. C0 Jhat erhaelt E(K) und
+induziert dort k mit Quadrat -1, nicht mit Quadrat +1.
+
+2. DER NORMALE FAKTOR S LIEFERT EINEN ANDEREN EXAKTEN TYP
+
+Setze Jloc=S Jhat. Dann
+  Jloc^2=1, [Jloc,Gamma]=0, [Jloc,C0]=0, Jloc N=-N Jloc.
+Jloc ist ALT- und NEU-komplex-antilinear. Es erhaelt E(K), und
+  Jloc E=E c,  c=-i0 J_F,  c^2=1,
+  T^{-1} Jloc T(v,bar(w))=(c v,overline(c w)).
+Der Faktor S ist ausdruecklich mitgefuehrt. Die endliche v252 J_F-Vorschrift
+allein behauptet noch nicht, dass gerade S Jhat die physische totale
+Realstruktur der Originalquelle ist.
+
+Die vollstaendige tangentiale Wirkung, einschliesslich Impulsumkehr, ist
+  c h_A c^{-1}=h_{-A^J},
+  c h_A c^{-1}-h_A=-(a+a^J) g,
+  Jloc B_A Jloc^{-1}=B_{-A^J},
+  Jloc D_A Jloc^{-1}=-D_{-A^J}.
+
+Bei a^J=-a, insbesondere a=alpha Q mit [Q,g]=0 und J_F Q J_F^{-1}=-Q,
+folgt A^J=-A und damit
+  [c,h_A]=0, [Jloc,B_A]=0, Jloc D_A=-D_A Jloc.
+Hierfuer wird KEIN [Q,Phi]=0 vorausgesetzt. Dies ist eine bedingte Aussage
+fuer die wirkliche ladungskovariante Verbindung; die alte skalare Holonomie
+alpha I wird damit nicht stillschweigend ersetzt.
+
+Fuer a=alpha I ist stattdessen c h_alpha c^{-1}=h_{-alpha}
+und die Differenz zu h_alpha ist -2 alpha g. Auf Fourierfunktionen kehrt
+J_F den Modenindex k in -k um. Mit der expliziten Windung W=e^{-i theta}
+gilt W h_{-alpha} W*=h_{1-alpha}; Wc bildet k auf -k-1 ab und (Wc)^2=1.
+Die Quartersektoren alpha=1/4 und 3/4 werden so ausgetauscht. Eine identische
+markierte See oder ein identischer implementierter Vielteilchenzustand folgt
+ohne dessen gesonderten Transport nicht aus dieser Einteilchenidentitaet.
+
+3. DER VOLLE D TRANSPORT IST NICHT DIE RAND-HAMILTONFUNKTION
+
+Auf der genannten gemeinsamen Collar-Domaene gilt
+  D_A E=C0 E[-i0(partial_r+h_A)],
+  D_A C0 E=E[-i0(partial_r-h_A)],
+also
+  T^{-1}D_A T(v,bar(w))=
+    (-i0(partial_r-h_A)w,overline(-i0(partial_r+h_A)v)).
+D_A ist ALT-komplex-linear, aber NEU-komplex-ANTILINEAR:
+  D_A Ical=-Ical D_A.
+B_A und h_A sind demgegenueber komplex-linear in ihren jeweiligen Typen.
+Die alte Voll-Diracwirkung darf deshalb nicht durch blosses Ersetzen von D_A
+durch h_A als dieselbe neu-komplexe bilineare Wirkung bezeichnet werden.
+
+4. EINE ECHTE SKEWPAARUNG IM ALTEN VOLLRAUM UND IHRE EINSCHRAENKUNG
+
+Nun a^J=-a. Mit dem ALTEN Skalarprodukt, linear im zweiten Argument, ist
+  beta_D(x,y)=<Jloc x,D_A y>_old
+antisymmetrisch: Jloc^2=1 und Jloc D_A=-D_A Jloc liefern
+  beta_D(y,x)=-beta_D(x,y).
+Das gilt auf dem inneren glatten Kern bzw. einer passenden selbstadjungierten
+Jloc-stabilen Domaene. Es gibt also auf dem uneingeschraenkten alten vollen
+Collarraum eine konkrete nichttriviale moegliche Skewform. Ein allgemeiner
+Pfaffianausschluss waere hier falsch.
+
+Aber [Jloc,Gamma]=0 und {D_A,Gamma}=0 ergeben auf EINER Totalgraduierung
+  beta_D(Ev,Ew)=0.
+Die nichttriviale Vollform koppelt die beiden Totalgraduierungen. Explizit,
+fuer x=T(v,bar(w)) und y=T(v',bar(w')),
+  beta_D(x,y)=<c v,-i0(partial_r-h_A)w'>
+              +<c w,-i0(partial_r+h_A)v'>.
+Eine nichtverschwindende chirale Pfaffianwirkung ist damit nicht hergeleitet.
+
+Die reduzierte Randform
+  beta_h(v,w)=<c v,h_A w>
+ist unter denselben zulaessigen Adjunktbedingungen SYMMETRISCH, weil c^2=1
+und c h_A=h_A c. Sie ist nicht der Pullback von beta_D auf E x E; dieser
+Pullback ist gerade null. Beide Aussagen gehoeren zu verschiedenen Paarungen.
+Auch Fix(c) ist unter exp(i0 t h_A) im Allgemeinen nicht invariant:
+  c exp(i0 t h_A)c^{-1}=exp(-i0 t h_A).
+Die Randrealstruktur liefert fuer sich keine physische Majoranareduktion.
+
+5. DER ALTE ISOLIERTE ENDLICHE MASSENTEST BLEIBT GENAU SICHTBAR
+
+Mit der unveraenderten punktweisen Jhat und D_mass=Z Phi gilt
+  D_mass E=C0 E(-g Phi),
+  <Jhat Ev,D_mass Ew>_old=<J_F v,Phi w>_old.
+Die originale symmetrische endliche KO6-Massenpaarung wird also exakt
+wiedergefunden. Auf dem reduzierten k-Bild mit h_F=-i0 g Phi gilt ebenso
+  k h_F=-h_F k,
+  <k v,h_F w>=i0 <J_F v,Phi w>.
+Dieser Massentest erlaubt keine Aussage ueber den globalen KO-Typ von h_A:
+der Tangentialteil und die Impulsumkehr sind in Abschnitt 2 und 3 enthalten.
+
+Noch staerker ist der vollstaendige Pullback
+  <Jhat Ev,D_A Ew>_old
+   =i0 <J_F v,(g partial_r+A)w>_old+<J_F v,Phi w>_old.
+Hier werden normale Ableitung, tangentialer Operator und Originalmasse im
+selben Ausdruck mitgefuehrt. Eine weitere raumzeitliche J-Vorschrift oder
+physische Chiralitaetsprojektion wird damit nicht automatisch ausgewiesen.
+
+ERREICHTER ANSCHLUSS
+
+Das tatsaechliche endliche J_F besitzt einen expliziten Transport auf dem
+GANZEN geometrischen Chart. Die von S begleitete Variante ist bei einer
+J-ungeraden Verbindung mit h_A vertraeglich und gibt im alten Vollraum eine
+Skewform. Die alte isolierte endliche symmetrische Massenpaarung bleibt exakt
+erhalten. Diese Aussagen sind gleichzeitig richtig und widersprechen sich
+nicht. Sie identifizieren weder C0 mit J_F noch den neuen Cliffordtyp mit der
+tatsaechlichen physischen Grassmannintegration der Originalquelle.
+
+Die interne v252 Buchhaltung enthaelt bereits Teilchen und Antiteilchen.
+Es folgt keine zusaetzliche physische Halbierung, keine neue Teilchenzahl,
+keine bosonische Quantisierung und keine P1-/OS-Zeitableitung. Der konkrete
+Originalquellenstatus und die offen verlangte vierdimensionale Wirkung stehen
+in ORIGINAL-SOURCE-AUDIT.txt. Der hier gewonnene Inhalt ist der gemeinsame
+Operator- und Paarungstransport, nicht ein behaupteter fundamentaler Abschluss.

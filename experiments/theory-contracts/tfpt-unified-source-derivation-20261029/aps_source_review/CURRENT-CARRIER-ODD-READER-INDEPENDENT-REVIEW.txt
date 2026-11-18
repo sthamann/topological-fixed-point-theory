@@ -1,0 +1,114 @@
+INDEPENDENT REVIEW: CURRENT CARRIER ODD READER ON THE WHOLE SOURCE
+30 October 2026. Read-only review of the original and the new source chain.
+
+VERDICT
+The operator identity in CURRENT-CARRIER-ODD-READER-WHOLE-SOURCE.txt is
+correct with its stated scope. The v258 odd projection is the finite
+chirality projection for gamma_F. After the already checked reducing map E,
+it acts on
+
+  h_s=A gamma_F-i gamma_F Phi_s,
+
+not on the total boundary grading Gamma_tot. For the actual second face
+
+  C_s=(I+exp(2 ell h_s))^-1
+
+functional calculus gives, on Dom(h_s)=H1,
+
+  log((I-C_s)C_s^-1)=2 ell h_s,
+  Pi_odd^gamma log((I-C_s)C_s^-1)=-2 ell i gamma Phi_s.   (1)
+
+Thus the reader extracts the complete bounded finite coefficient without a
+Fourier projection. It does not derive Phi_s or identify the still unnamed
+paper symbol P_F with E, p_E or the face map.
+
+1. The grading and carrier types agree
+v258_dirac_covariance_induction.py:24-27 defines Pi_odd using gamma_F. Its
+implemented diagnostic uses the same left/right chirality convention. The
+coupled source imports grading() from v252_full_finite_triple.py, so there is
+no second hidden parity. On the doubled normal fiber the total grading is
+
+  Gamma_tot=Z tensor gamma_F,
+
+and B_s is even for Gamma_tot. The constant isometry
+
+  E v=(P_+v,i P_-v)
+
+has EE*=(I+Gamma_tot)/2 and reduces B_s. Only after this reduction does the
+finite gamma_F odd projection in (1) remove A gamma_F and retain the Phi_s
+term. Applying Pi_odd to B_s with Gamma_tot would be the wrong operation.
+
+The second-face map is separately nonreducing for the whole two-face graph,
+because its crossing block is nonzero. The reviewed report keeps this
+distinction and does not move a logarithm through an arbitrary compression.
+
+2. Exact comparison unitary, charge and gauge type
+For
+
+  U_gamma=exp(-i pi gamma_F/4)=(I-i gamma_F)/sqrt(2)
+
+and {gamma_F,Phi_s}=0,
+
+  U_gamma Phi_s U_gamma*=-i gamma_F Phi_s.              (2)
+
+Combining (1) and (2) gives exactly
+
+  mu_geo Pi_odd log((I-C_s)C_s^-1)
+       =2 ell mu_geo U_gamma Phi_s U_gamma*.             (3)
+
+The charge statement also has the right antilinear sign. Since J_F is
+antilinear and J_F gamma_F J_F^-1=-gamma_F, its conjugation changes both i
+and gamma_F, hence J_F U_gamma J_F^-1=U_gamma. The actual represented finite
+algebra is even and commutes with gamma_F, so it also commutes with U_gamma.
+This makes (2) a fixed charge-compatible comparison. It does not make
+U_gamma a physical gauge event.
+
+3. Scale audit
+Equation (3), with 2 ell mu_geo left explicit, is the strongest justified
+normalization. In v258 the general modular dictionary is
+
+  C=(I+exp(D/mu_geo))^-1,
+  D=mu_geo log((I-C)C^-1).
+
+For the present face exponent 2 ell h_s, the choice mu_geo=(2 ell)^-1 would
+normalize (3) to U_gamma Phi_s U_gamma*. That equality of scales has not
+been derived here and the reviewed report correctly does not impose it.
+
+There is a small implementation limit worth recording. v258's executable
+scale test sets mu_geo=1. Its line125 passes Dmass/mu_geo into kms_cov and
+also passes mu_geo as the function scale, so that line would divide the
+exponent twice away from the unit convention. It therefore checks only the
+mu_geo=1 convention and is not evidence for a general scale relation. The
+analytic formula above is unaffected.
+
+4. Domain and smallest independent actual-96 check
+C_s and I-C_s are injective but have no bounded inverse on the whole circle.
+The logarithm in (1) is the spectral logarithm on Dom(h_s)=H1. Since gamma_F
+preserves H1 and Phi_s is bounded, the odd difference initially defined on
+H1 extends to the bounded multiplication operator in the right side of (1).
+This is the precise sense in which its finite96 coefficient is read on the
+whole circle.
+
+An independent actual-v252 diagnostic used a generic complex full_D,
+symmetric Majorana block, ell=.73 and scalar A=.41. The residuals were
+
+  ||Phi-Phi*||                         0,
+  ||{gamma,Phi}||                     0,
+  ||logit(C)-2 ell h||                2.44e-12,
+  ||Pi_odd(logit C)+2 ell i gammaPhi||1.86e-12,
+  ||U Phi U*+i gammaPhi||             5.39e-15,
+  ||J_F U J_F^-1-U||                  0,
+  ||[pi(a),gamma]|| and ||[pi(a),U]|| 0.
+
+These numerical residuals only replay the exact algebra above; they add no
+source choice. The resulting statement is a positive whole-source reader
+for an already supplied Phi_s, not a derivation of its Yukawa values, a
+literal finite-rank circle compression, or a proof of the physical P_F
+binding in the current paper.
+
+SOURCES CHECKED
+verification/v258_dirac_covariance_induction.py:10-27,65-76,79-125;
+verification/v252_full_finite_triple.py:86-132,139-168;
+graded_boundary_functor/FINITE-COUPLED.txt:10-68;
+graded_boundary_functor/check_finite_typing.py:28-54;
+aps_source_review/CURRENT-CARRIER-ODD-READER-WHOLE-SOURCE.txt:1-104.

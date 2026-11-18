@@ -1,0 +1,163 @@
+THE ACTUAL WHOLE COUPLED SOURCE AND THE ORIGINAL SEAM MATCHING
+Independent analytical continuation, 29 October 2026.
+Existing registered sources and scalar proof remain unchanged.
+
+1. Fixed original data and the exact scope of the matching
+Reuse F5-HARDY-SEAM-OPERATOR-REVIEW.txt and the sources cited there.
+The original fullv21 introduction:225-247 specifies FOUR boundary pieces,
+APS on C1,C2, and the seam clutch U_Gamma=e^(i theta) on Gamma_+,Gamma_-.
+It does not identify that seam pair with the two F5 collar faces.
+Subject to that specific endpoint assignment, use its unitary clutch
+  x(ell)=U x(0), U=M_(exp(i theta)) tensor I_F.
+Keep the previously fixed orientation U e_n=e_(n+1). Reversed clutch gives
+the opposite primitive index. No scalar channel or three copies are selected.
+
+The actual existing charged coefficient is
+  h=A gamma+V, V=-i gamma Phi, A=-i partial_theta+alpha,
+  Phi=Phi*, {gamma,Phi}=0, gamma=gamma_F.
+Here Phi is CONSTANT and internally A and U are scalar. Thus V=V*,
+V^2=Phi^2, {A gamma,V}=0, and U*VU=V. These are used below.
+This is the constant constructor class already tested in EXACT-CHANNELS.txt,
+not all Higgs backgrounds or all possible charged seam holonomies.
+References: graded_boundary_functor/FINITE-COUPLED.txt:10-56;
+verification/v252_full_finite_triple.py:86-121.
+
+For R=exp(-ell h), C=(I+R^2)^(-1/2), the SAME complete Cauchy graph has
+  V_h=(C,R C),       F_U V_h=(R-U)C.
+Both coefficients are bounded, with no truncation or arbitrary Cauchy ODE.
+This is relative boundary mismatch, not compression of U on either face.
+The existing C0, charged/conjugate slots, graph state, reflection and circle
+action are retained. No equivalence with the original P1 source is added.
+
+2. Full principal symbol and the actual ordinary index
+Let d_+=dim F_+, d_-=dim F_- for the finite gamma grading. At Phi=0 the
+whole bounded mismatch is the direct sum of the scalar positive and negative
+gamma blocks. Its compact reference is
+  (P_- -U P_+) tensor I_(F_+)
+       directsum (P_+ -U P_-) tensor I_(F_-),
+where P_+ selects n>=0 and P_-=I-P_+ for 0<alpha<1.
+The first scalar reference is injective with one cokernel, index -1.
+The second is surjective with one kernel, index +1.
+
+This remains the reference for constant Phi. Indeed
+  h_n=p_n gamma+V,       h_n^2=p_n^2+Phi^2,
+and its positive/negative spectral projections differ from those of
+p_n gamma by O(1/|p_n|). The two bounded graph coefficients converge to
+the same projections with the same O(1/|p_n|) error. Consequently their
+difference from this reference is compact, in fact Hilbert-Schmidt in one
+circle dimension. The massless error was trace class; no trace-class claim
+is made for the general coupled error.
+Therefore, on the WHOLE charged coefficient,
+  ind((R-U)C)=d_- -d_+=-Tr_F(gamma).                  (1)
+The actual v252 grading has d_+=d_-=48, hence the whole ordinary index is0.
+
+This uses the full principal symbol rather than assigning the scalar -1
+to selected physical copies. Coupling mixes F_+ and F_-: gamma does NOT
+commute with h when Phi!=0. A difference of separate chiral indices is
+then not an additional gamma-graded Fredholm invariant of this operator.
+The selfdual completion is not an additional set of independent physical
+fields. Vanishing whole integer index does not trivialize every determinant
+line character and does not refute the old one-sided spin Hardy theorem.
+
+3. Stronger exact defect theorem for this SAME constant coupling
+Use K_Phi=partial_r+A gamma+V with the above unitary clutch, initially on
+smooth matching fields and then on its closed H1 realization. Its adjoint
+is -partial_r+A gamma+V with the SAME unitary clutch: integration by parts
+gives y(ell)=U y(0), since U is unitary.
+
+Expansion, Hermiticity and anticommutation give
+  ||K_Phi x||^2=||K_0 x||^2+||Phi x||^2,            (2)
+  ||K_Phi* x||^2=||K_0* x||^2+||Phi x||^2.         (3)
+The derivative cross term is exactly
+  [<x(r),V x(r)>]_(0)^ell=0
+by U*VU=V. The tangential cross term is zero by {A gamma,V}=0.
+No fixed-domain APS projection is being varied in this argument.
+
+For K_0, gamma+ has no kernel and one adjoint kernel per internal vector;
+gamma- has one kernel and no adjoint kernel. The gamma- kernel is the
+smooth Gaussian clutch solution
+  f(r,theta)=sum_n c_n exp(r p_n) e_n(theta),
+  c_n=c_0 exp[-ell(n(n+1)/2+alpha n)].
+The same scalar f is the adjoint-kernel function on gamma+.
+Equations(2)-(3) therefore imply exactly
+  dim ker K_Phi =dim(ker Phi intersect F_-),
+  dim ker K_Phi*=dim(ker Phi intersect F_+).          (4)
+
+These are also the kernel and cokernel dimensions of the bounded matching
+map in section1. One can justify the domain passage without an arbitrary
+L2 evolution assumption: the compact-reference remainder above gains one
+Fourier Sobolev order. Its explicit shift reference has a parametrix
+preserving every Sobolev order, up to finite smooth modes. Bootstrap makes
+all matching kernels and adjoint matching kernels smooth. R x=U x then
+gives smooth endpoint traces and the corresponding H1 interior solutions.
+Conversely each H1 clutch solution supplies these graph data. For the
+adjoint matching equation, pointwise Fourier equality R_n y_n=y_(n+1)
+also proves y lies in Dom R; it is the adjoint boundary consumer.
+
+In particular, invertible Phi gives NO kernel and NO cokernel. On the
+closed differential realization (2)-(3) give the inverse bound
+  ||K_Phi^(-1)|| <= 1/s_min(Phi).
+This is not asserted as a bound on a differently normalized boundary map.
+Hermitian odd Phi on equal-dimensional grades has equal kernel dimensions
+on the two grades, so the surviving defects occur in opposite pairs.
+
+4. Apply the already verified WHOLE v252 controls, without another run
+Atlas finding:whole-quarter-channels-identified-by-exact-internal-kernel,
+research-source:02a45b61c44bd61d15ef2453, EXACT-CHANNELS.txt:1-44;
+research-source:054e763500be2aab6476a2e4, exact-source-channels.json:1-44.
+Its existing diagonal control has positive kernel0, hence negative kernel0:
+the actual whole coupled seam matching has defect(ker,coker)=(0,0).
+Its rank-deficient controls have positive kernels2 and1, respectively;
+equation(4) gives whole defects(2,2) and(1,1), all with integer index0.
+These are specified constructor controls, not derived physical masses.
+
+The actual neutral positive submodule is nu_R^c tensor C3. Its criterion
+  ker [[MR],[entrywise_bar(Ynu)]]
+is retained exactly. It is not the adjoint of Ynu. No phase or scaling
+chooses three neutral solutions when this actual matrix has trivial kernel.
+In the actual positive/negative neutrino order, the off-diagonal Phi block is
+  Q_nu=[[Ynu,0],[MR*,Ynu^T]],   Phi_nu=[[0,Q_nu],[Q_nu*,0]].
+Here * denotes adjoint. This explicitly shows which original Yukawa and
+Majorana insertions lift the two grades; it does not add a new interaction.
+
+5. The actual primitive NS clutch, insertion and time tests
+BOUNDARY-SOURCE.txt:114-194 gives the full NS operator and
+  u_cov=[[0,u_base],[I,0]], u_cov^2=diag(u_base,u_base).
+Thus the original primitive winding exchanges the two quarter sectors.
+It has one primitive scalar contribution in each internal gamma direction,
+not two independently selected quarter contributions. The same proof in
+the NS Fourier basis p_n=n+1/2 gives (1)-(4). Physical normalization of A
+rescales ell and the Gaussian, not their dimensions or integer index.
+
+For a constant original odd insertion deltaPhi,
+  delta K=-i gamma deltaPhi.
+Between a surviving normalized gamma- Gaussian kernel and gamma+ adjoint
+kernel, its first-order finite defect matrix is precisely
+  -i P_(kerPhi intersect F_+) deltaPhi P_(kerPhi intersect F_-).
+This is a decisive actual insertion test. A deltaPhi pairing these null
+directions removes opposite defects; a freely chosen scalar multiplicity
+does not survive this test automatically.
+
+For the whole quarter h, [h,U]=U gamma and [h,gamma]=2i Phi, so the old
+scalar covariance U_t=exp(it)U does not apply on the whole field space.
+The already given time transports the matching FAMILY by
+  U_t=exp(it h) U exp(-it h).
+It need not preserve the fixed original seam domain. In the primitive NS
+basis the same identities hold with its actual Fourier normalization.
+
+6. Outcome and retained first original assignment
+The whole constant coupled source has an exact automatically decidable
+seam defect, given by its already computable internal kernel, and ordinary
+index0 for the actual96-dimensional v252 coefficient. The complete given
+source is used; no channel, state, physical family or scalar coefficient
+has been fitted. The old scalar Fredholm proof remains a valid block result.
+This extends the OLD full-kernel recognition result to the original relative
+seam boundary consumer. It does not repeat the older full-COMPLEX-CAR
+vector-current cancellation as a new exclusion of the graded source.
+
+The true original comparison still needs the calibrated assignment of
+Gamma_+,Gamma_- to these two collar traces and the actual spin/cable domain
+map. A charged noncentral U, nonconstant Phi or connection not commuting
+with Phi changes the hypotheses of (2)-(4); no cancellation of their cross
+terms has been assumed. No whole P1 exclusion, physical mass selection,
+three-family derivation or new absolute source normalization follows.

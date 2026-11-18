@@ -1,0 +1,237 @@
+CLAUDE29 CHIRAL E8 LIFT: INDEPENDENT v252 AND F5 TYPE REVIEW
+29 October 2026
+
+Scope
+
+This is the bounded check of the proposed chirality dependent continuation in
+CLAUDE29-K-E8-CHIRAL-LIFT-UNGEPRUEFT.txt.  It uses the actual 96 dimensional
+full_D constructor, its KO6 grading and real structure, and the already proved
+F5 graph typing.  It does not certify the candidate's separate assertion that
+its family diagonal preserves every original K mark.  In fact
+CLAUDE29-FIRST-K-MARK-REVIEW.txt has already found a line order error in that
+assertion.
+
+VERDICT
+
+The proposed Yukawa formula is correct.  The proposed Majorana formula is
+wrong by one power of omega.  For
+
+  D=omega^2 S,  S=diag(1,-1,1),  omega^3=1,
+
+and the proposed chiral continuation, the exact v252 result is
+
+  Y'_f = omega S bar(Y_f) S,
+  M'_R = omega^2 S bar(M_R) S.                         (1)
+
+The correction does not destroy the proposed torus absorption.  It makes its
+mechanism precise.  After the family sign S is removed, the actual Spin(10)
+weight pattern from lambda_5 together with the stated common A3 family shift
+acts on all Yukawas by omega^2 and on the Majorana term by omega.  Therefore it
+maps the corrected pair (omega bar(Y_f),omega^2 bar(M_R)) exactly to
+(bar(Y_f),bar(M_R)).  Lambda_5 alone does not do this.  The A3 shift is
+essential.
+
+This is an exact finite matrix identity in the displayed v252 field chart.  It
+is still conditional as an original K/clock equivalence because the proposed
+K mark identification is independently false in the current line ordering,
+and the complete v252 to E8 weight dictionary is being checked separately.
+
+1. THE MAJORANA BLOCK FIXES THE PHASE
+
+The original constructor is
+
+  Phi=[[S_Y,T_MR],[T_MR^*,bar(S_Y)]],
+
+where T_MR is the top right map from particle nu_R to antiparticle nu_R.  Let
+D_K act by
+
+  D on particle L and antiparticle R,
+  bar(D) on particle R and antiparticle L.
+
+For the finite coefficient part of K_E=D_K kappa P_E one therefore has
+
+  Phi^K=D_K bar(Phi) D_K^*.
+
+On a particle L to particle R Yukawa block this gives
+
+  D bar(Y_f) (bar(D))^* = D bar(Y_f) D^T
+                         = omega S bar(Y_f) S.
+
+On the particle nu_R to antiparticle nu_R Majorana block it gives instead
+
+  bar(D) bar(M_R) D^* = bar(D) bar(M_R) bar(D)^T
+                       = omega^2 S bar(M_R) S.
+
+The second formula is forced by the actual position of T_MR.  Reusing the
+Yukawa row and column types for this block produces the candidate's erroneous
+common omega.
+
+A targeted replay imported verification/v252_full_finite_triple.py and used
+deterministic Gaussian integer matrices with seed 2929.  It found
+
+  ||Phi^K-Phi(equation (1))|| = 3.26e-14.
+
+The same calculation with the candidate's omega Majorana formula differs by a
+macroscopic nonzero norm.  This is a structural block error, not numerical
+roundoff.
+
+2. KO6 AND THE COMPLETE F5 OPERATOR
+
+The chiral diagonal itself is consistently typed on the v252 coefficient
+space:
+
+  D_K bar(D_K)=I,
+  [K_E,gamma_F]=0,
+  [K_E,J_F]=0,
+  K_E^2=I,
+
+with J_F=K_swap kappa.  Thus the transformed coefficient still satisfies the
+original KO6 reality relation.
+
+For the full F5 chart use the existing data
+
+  Gamma=Z tensor gamma_F,
+  Ical=i Gamma,
+  C0=i N tensor I_96,
+  B_Phi=Z tensor A-S_normal tensor Phi.
+
+Because K_E is antiunitary and commutes with Gamma,
+
+  K_E Ical=-Ical K_E,  K_E C0=-C0 K_E.
+
+Consequently
+
+  Jcal_E=Ical K_E
+
+is a NEW antiunitary involution which commutes with C0 and the oriented face
+operator and satisfies
+
+  Jcal_E B_Phi Jcal_E^-1=B_(Phi^K),
+  Jcal_E G(B_Phi) Jcal_E^-1=G(B_(Phi^K)).              (2)
+
+In the charged chart E(v)=(P_+v,iP_-v), the pullback is
+
+  j_E=i gamma_F K_E,
+  j_E h_Phi j_E^-1=h_(Phi^K).
+
+Since j_E is antiunitary, the corresponding circle identity is
+
+  j_E exp(i t h_Phi) j_E^-1=exp(-i t h_(Phi^K)).       (3)
+
+Equations (2) and (3) are source family covariance.  They do not turn K_E
+into the physical CAR/OS reflection and do not give a same Phi symmetry for
+generic complex controls.
+
+The independent targeted F5 replay gave, at floating precision,
+
+  ||K_E^2-I||                 = 2.18e-15,
+  ||[K_E,gamma_F]||           = 0,
+  ||[K_E,J_F]||               = 0,
+  ||Jcal_E^2-I||              = 3.08e-15,
+  ||[Jcal_E,C0]||             = 0,
+  B covariance residual       = 1.54e-15,
+  charged chart residual      = 0,
+  h covariance residual       = 1.09e-15.
+
+3. THE ACTUAL SPIN(10) TORUS PATTERN
+
+The original weight source v109 constructs the chiral spinor as the sixteen
+weights (epsilon_1,...,epsilon_5)/2 with even sign parity.  In the standard
+even exterior chart, for an even subset A of {1,...,5}, the lambda pairing is
+
+  P(A)=sum_(i in A) lambda_i - (1/2)sum_i lambda_i.
+
+For
+
+  lambda_5=(1/6,1/6,1/6,1/2,1/2)
+
+the six Standard Model weight classes have the following values:
+
+  nu^c : -3/4        empty subset,
+  u^c  : -5/12       two colour indices,
+  Q    : -1/12       one colour and one weak index,
+  e^c  :  1/4        two weak indices,
+  d^c  :  7/12       four indices, missing colour,
+  L    :  1/4        four indices, missing weak.
+
+Add the common A3 family shift +1/12 on the selected family triplet, with
+-1/4 on the fourth slot so that the A3 trace remains zero.  Relative to Q the
+resulting phases are exactly
+
+  Q:0,
+  u^c,d^c:-1/3,
+  L,e^c,nu^c:+1/3                         modulo 1. (4)
+
+Thus the corresponding complex linear unitary T in the v252 particle chart
+acts as
+
+  Q_L:1,  L_L:omega,
+  u_R,d_R:omega,  e_R,nu_R:omega^2,
+
+and by conjugate phases on antiparticles.  Direct block multiplication gives
+
+  T Phi(Y_f,M_R) T^* = Phi(omega^2 Y_f,omega M_R).     (5)
+
+The common A3 shift is not cosmetic.  Lambda_5 without it gives factor -1 on
+both Y_f and M_R.  Its opposite contributions to Dirac and Majorana bilinears
+are what change these into the two different factors in (5).
+
+Let L_S apply S to the three family slots on particles and antiparticles.
+Combining (1) and (5) yields the exact identity
+
+  T L_S Phi^K L_S^* T^*
+     = Phi(bar(Y_f),bar(M_R)).                         (6)
+
+The v252 replay of (6) gave residual 3.12e-14.  Normal and Python -O outputs
+were byte identical, SHA256
+0aa983be7cfb6a5b2ddcfb7a8a1ce998a2d4c09dcd5ce9182940112b1faf8b00.
+
+4. WHAT EQUATION (6) DOES AND DOES NOT ESTABLISH
+
+Equation (6) repairs the finite coefficient part of Claude29 more strongly
+than the printed common omega formula: the corrected unequal phases are
+exactly the phases required by the actual Spin(10) weight action.
+
+It does not by itself prove that T L_S is an allowed element of the original
+marked K action.  The candidate identifies its S with iota_mq(-I5), but the
+actual G column order is (L0,L2,L1).  The independent first K mark review
+shows that iota_mq(-I5) puts the minus sign on the wrong line and has a
+different commutator with the quarter coefficient.  Therefore the statements
+"D_K lies in K", "it commutes with Q4 and M_q", and "all marks are preserved"
+cannot be inherited from the candidate as written.
+
+The weight calculation proves the relative Spin(10) torus phase, and the A3
+shift is an abstract trace zero family torus element.  The remaining finite
+dictionary question is whether that combined torus action, with the corrected
+line permutation and native clock mark, is the same operation on the actual
+v252 states.  No equality of dimensions or labels settles that point.
+
+Finally, (6) is a covariance from Phi to bar(Phi).  It becomes a fixed source
+antiunitary only when the given controls are invariant under this conjugation
+up to an independently allowed source equivalence.  A CKM invariant can
+obstruct such a fixed generalized CP symmetry, but the finite block
+calculation does not prove the candidate's unrestricted "if and only if"
+claim.  It also gives no global CP or OS obstruction: physical Theta, J_F,
+C0 and the E0 family reflection are distinct typed operations.
+
+Sources
+
+* Workspace candidate
+  outputs/multi-model-source-search-20261029/
+  CLAUDE29-K-E8-CHIRAL-LIFT-UNGEPRUEFT.txt,
+  SHA256 f72ce34b34474114393238bf1a4e30948ea44af497b21570e75e721f517e915a.
+* verification/v252_full_finite_triple.py, especially full_D, grading and
+  Kswap, SHA256
+  820254440e178430422e50605067775656236602996307f67c9e69124ba5d163.
+* verification/v109_sheet_pairing.py, actual Spin(10) weight generator,
+  SHA256
+  0db2e76a9221a40f2fbefef954e453ce833c2160e2e411525541266c5286ca7d.
+* aps_source_review/E0-WHOLE-FINITE-SOURCE-TYPE-REVIEW.txt,
+  SHA256 495da7fc1f9eb2e78e28834885b0ba1c89158923e121a13c53ac037fdb69e957.
+* aps_source_review/CLAUDE29-FIRST-K-MARK-REVIEW.txt,
+  SHA256 e5c5e7492abb6792520ebbfbca3cf98a5668b92c64396772bfb2d01c6c27bb09.
+* graded_boundary_functor/check_finite_typing.py,
+  SHA256 404cd24e04ae86ca95b981c5fc6a728930bbc2579aaefdd22e2bf2da9113f06e.
+* graded_boundary_functor/FINITE-COUPLED.txt,
+  SHA256 61d3d524801aff0147d393c518ad554e3ab550271165e2000d9efbf613b90234.
+

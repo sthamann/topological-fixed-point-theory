@@ -1,0 +1,121 @@
+Automated faithful source completion and a source-directed next query
+2026-10-29. Continuation of UR.SEAM.POSITIVE_KERNEL_SEARCH.01.
+
+Verdict: exact finite recovery and a repaired executable search path. No new
+original P1 source value, physical source selection, or T1-T8 closure.
+
+1. The repaired path
+
+MomentSearch already accepts a thermal_gns transfer with both positive and
+negative Liouville energies. Its former completion path supported only a pure
+minimal Fock representation with a contraction transfer. Therefore the campaign
+returned INCONCLUSIVE_UNSUPPORTED_TRANSFER_TYPE even for compatible known
+thermal data. That was a completion limitation, not a physical exclusion.
+
+run_search now offers the explicit faithful_car_gns completion option, also
+available through finite_completion. The original minimal_fock default remains.
+The code fingerprint includes the new implementation. Probe extrema explore
+ambiguity; they do not select a physical state, response or source.
+
+2. Exact finite construction
+
+Assume the COMPLETE CAR-only moments of a normalized faithful state on m modes
+are supplied. The current implementation accepts m<=2. Let b_i be all ordered
+Clifford monomials, including b_0=1, and set G_ij=omega(b_i^* b_j).
+The exact PSD checker must find G>0, of rank 4^m. Otherwise this particular
+recovery is inconclusive and a null-space quotient or other representation is
+needed. A pure state is not replaced by an arbitrary faithful one.
+
+The cyclic vectors b_i Omega are a basis. Left CAR multiplication determines
+the Majorana matrices exactly. Their adjoint is defined by G, not by an
+unqualified Euclidean transpose. The quarter action is the original formal
+CAR rotation, with the state checked invariant. It is not physical time.
+
+For an unknown transfer T write A=GT. Then G-selfadjointness and bounds are
+  A=A^*,  lower G <= A <= upper G.
+Reference stationarity becomes A e_0=lambda G e_0. Quarter covariance is
+equivalently Q^* A Q=A because Q^*GQ=G. A word with exactly one T supplies a
+linear matrix-entry equation; the actual Clifford adjoint phase is retained.
+
+Numerical semidefinite search proposes A. Rational recovery, exact pivoted
+Schur/LDL checks, CAR/adjoint/reference/quarter checks and replay of EVERY
+supplied word decide acceptance. Multi-T equations are not assumed linear:
+they are replayed in the recovered full representation. Failure is inconclusive,
+never a source exclusion. Exactness concerns supplied rational strings or
+explicit rational recovery of numerical inputs. Fixed exact source values
+are preserved after checking numerical residuals. Fixed words outside the old
+moment prefix are also imposed and replayed.
+
+The extra finite ansatz is important: T preserves this CAR-cyclic space.
+No truncated-flatness, larger-dilation or continuum uniqueness is asserted.
+Neither the absolute partition scalar nor the P1 field map is reconstructed.
+
+3. Automatic query and feedback from an EXISTING source
+
+The old thermal_gns_transfer in seam-collar-multifield-20261016/collar_control.py
+provides the given one-mode quarter control. The data input is its complete
+51-word prefix through degree4. The optimizer receives those moments, not the
+target Hamiltonian, density or transfer matrix. The known model is the oracle
+for this recovery control; it is not claimed derived from the primitive action.
+
+The CAR basis has four vectors. The initial data fixes 15 of the 16 entries of
+A. The program generates the first missing Hermitian one-T word and finds
+two exactly certified completions which disagree on it. The shortest query is
+  gamma_0 gamma_1 T gamma_0 gamma_1,
+of length5. Candidate values are -481/289 and -241/289. Neither value is fed
+back as a source fact. Evaluation of the EXISTING source gives -1.
+
+The minus sign is physical-word bookkeeping, not a negative norm: gamma0 gamma1
+=iZ, and the canonical ordered word is minus the positive paired word.
+Adding this exact source answer fixes all 16 entries of A. Since G is invertible,
+T=G^-1 A is unique WITHIN the stipulated faithful CAR-cyclic representation.
+This complete-entry proof is stronger than seeing two optimizers coincide.
+
+The result has spectrum {1 twice,1/4,4}. More decisively, the explicit map U
+whose columns are the actual b_i Omega in the old HS source obeys
+  U^*U=G, rank U=4, U T_recovered=T_original U.
+Thus the actual source action is recovered; equal spectra alone are not used.
+The full existing search CLI and the query feedback through the same completion
+API were executed. No source-selected physical T or universal uniqueness follows.
+
+4. Two-mode transfers and adversarial checks
+
+The supplied old two-mode source from build_source_choi_control gives a faithful
+16-dimensional CAR GNS control. Full one-T data determines its 256 metric entries.
+For two orthogonal mode labels, the actual neutral transfer fields satisfy
+  E_rs=a_r^* a_s, E_rs^*=E_sr,
+  E_rs E_sr=n_r(1-n_s), [E_rs,E_sr]=n_r-n_s.
+These identities were also independently checked with the old density and
+Clifford matrices, without a solver. This checks the algebra used by the arc
+transfer fields, not their original P1 insertion map or full spacetime locality.
+
+Regression cases reject an inconsistent multi-T value, a nonfaithful state
+without its quotient, and an external T^5=2 control when T Omega=Omega.
+A valid newly answered word outside the old prefix is retained. Answered words
+in fixed_moments are no longer proposed as missing. The new eight tests and
+the existing completion/search regressions pass: 37 tests in the combined run.
+Numerical inaccurate-status controls in the older search tests remain numerical;
+they do not turn into exact or physical results by passing this run.
+
+5. What the original papers still have to supply
+
+The source-reviewed BILOCAL-RECONSTRUCTION and MICROSCOPIC-TO-OCTIC-COMPOSITION
+already justify using neutral transfers across the eight actual fold arcs in
+the GIVEN CAR source. This is stronger than separate additive arc densities.
+It is not a new numerical P1 four-point condition.
+
+Write C_rs=omega(a_r^*a_s), and
+  kappa_rs=omega(n_r n_s)-C_rr C_ss+|C_rs|^2.
+Then CAR gives
+  omega(E_rs E_sr)=C_rr(1-C_ss)+|C_rs|^2-kappa_rs.
+The free candidate has kappa=0. Positivity of C alone does not force that value.
+ELLIPTIC-CURRENT-SOURCE.txt:164-168 already names this actual P1 four-point test.
+The old Schwinger block defines local derivatives of an introduced Z_rel;
+the operational seed already includes its algebra,state,time and reflection.
+Those formulas are not an evaluator for a newly derived P1 insertion.
+
+The actual reflection remains rho(t,s)=(-t,s). A spatial arc flip, modular
+conjugation and physical time are distinct maps until their dictionary is proved.
+Next scientific step: derive the original local insertion/sewing map or evaluate
+its actual connected neutral four-point datum. Do not insert the free Wick value
+or a candidate prediction as an extra P1 axiom. Retain the wider T1-T8 goal.

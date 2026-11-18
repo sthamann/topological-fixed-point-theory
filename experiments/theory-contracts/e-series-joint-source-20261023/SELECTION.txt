@@ -1,0 +1,110 @@
+MATH.SEAM.JOINT.SELECTION.05
+23 October 2026
+
+Exact remaining selection symmetry
+
+1. Fixed object and scope
+
+Retain the native E8 chart, H=W(D5)xW(D3), J, sigma, c=J sigma and
+Y=(-2,-2,-2,3,3,0,0,0)/6. Retain the native quartic subspace P5 and its
+actual equivariant erasure map into the neutral cubic20. Morphisms preserve
+these subspaces and maps with their actual component representations. They
+do not fix each individual quartic vector pointwise. Morphisms here are the
+native lattice isometries in H that stabilize the named marks and maps.
+They preserve the compiler root factors setwise; they need not commute with
+every labelled element of H. A separately selected
+field ray, preparation or cut would be extra marking.
+
+Question: do these data already distinguish one of the four E6 cuts
+containing the given D5? This is a necessary check before declaring a
+uniquely selected common E6 source.
+
+2. Complete stabilizer calculation
+
+Inside H each matrix is a signed permutation preserving the two coordinate
+blocks, with even sign parity separately in each. Commutation with J forces
+source coordinate pairs to map to target pairs. Complete enumeration gives
+
+  C_H(J): order64,
+  image on the four family axes: cyclic order4, transitive,
+  C_H(J) intersect Stab(Y) = {I,d},
+  d=diag(1,1,1,1,1,1,-1,-1).
+
+The last equality also has an immediate analytic proof. Fixing Y permits
+only ordinary permutations within its three color and two weak coordinates.
+J couples color coordinate2 to weak3 and weak4 to zero-family5, so both
+weak coordinates and color2 are fixed individually. Commuting with J then
+fixes color0 and1 as well. Only the last family pair6,7 can move. Its even
+family sign condition leaves I or simultaneous reversal of6,7.
+
+The matrix d commutes with sigma and c. The projective family axes can be
+written(1,+/-1,+/-1). It acts by
+
+  (1,a,b) -> (1,-a,-b),
+
+which has two two-cycles and no fixed vertex.
+
+3. Actual quartic and erasure compatibility
+
+In the native complex chart, d sends(z0,z1,z2,z3) to(z0,z1,z2,-z3).
+On the literal five native quartics its matrix is
+
+  diag(1,1,1,1,-1).
+
+This is checked against the actual sparse supports of process._code_basis.
+On each derivative g_(i,j)=partial_j f_i it gives the actual chain-rule
+factor epsilon_i d_j. Thus d preserves the original4/5/20 diagram as an
+equivariant diagram. No charged current20 or replacement erasure is used.
+
+4. Exact nonselection conclusion and positive meaning
+
+If a rule selects one E6 vertex equivariantly from precisely these marked
+data, every automorphism of the data must fix that selected vertex. The
+explicit automorphism d fixes the data but no vertex. Hence no such unique
+selection rule exists in this category.
+
+The obstruction is not resolved by adding the already supplied J, sigma,
+c, Y or whole quartic/erasure spaces: all are preserved by d. It is not a
+no-go for a separately marked quartic ray or any different input category.
+The complete covariant mathematical object therefore carries the family
+and its transport. It must not manufacture a preferred vertex. Existing
+individual E6 charts remain exact conditional charts.
+
+5. The full-field phases also preserve the obstruction
+
+The preceding category result does not by itself test whether fixed charged
+lift phases break d. That additional smallest test is now completed with
+the unchanged epsilon and the actual lift functions of joint_clock.py.
+Fix Jhat=S_J and the representative chat=S_c D_31. All256 lifts
+dhat=S_d D_b were examined on the eight lattice generators. Exactly16
+commute with Jhat, with masks
+
+  8,9,40,41,94,95,126,127,128,129,160,161,214,215,246,247.
+
+Exactly four also commute with chat:
+
+  126,127,128,129.
+
+They form an affine torsor under the difference subgroup{0,1,254,255}.
+The first two have squareI. The last two have square D_1 and order4.
+Therefore the two INVOLUTIVE full lattice-VOA automorphisms with masks126
+and127 are actual automorphisms of the fixed associated source and its
+compiler clock, not just transitions to another lift choice. Their neutral
+action is d and their E6 vertex action is still fixed-point-free.
+
+Since the other three cyclic chat representatives are conjugate by character
+gauges fixing Jhat, conjugating these dhat gives the same obstruction for
+each representative. Character gauges do not change root support projectors.
+Thus adding the supplied full-field clock phases does not select an E6
+corner either. No stronger claim about separately fixed individual quartic
+vectors or extra charged states is made.
+
+Executable certificate:
+  python3 -B experiments/theory-contracts/e-series-joint-source-20261023/stabilizer_selection.py
+
+Native sources retained without changes:
+  verification/v634_st31_structure.py:J_vec,SIGMA_IDX
+  tfpt_explorer/process.py:_code_basis
+  ../e-series-compiler-closure-20261023/CUTS.txt:125-155,207-324
+
+Verdict: PASS, complete in the fixed marked-data category above.

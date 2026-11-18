@@ -1,0 +1,103 @@
+Ungeprüfte Modellantwort,Claude,https://claude.ai/chat/23a5a91a-95a2-475c-84ba-1ce29e045339,29October2026
+
+Fortsetzung 24: Der Hardy-Shift in der vorhandenen Zwei-Flächen-Quelle
+Kurzfassung
+
+Ja: Die vorhandene Originalquelle wertet denselben Hardy-Shift M_z gegen I aus, im skalaren primitiven Nahtsektor und bereits bei jedem endlichen ℓ. Die Auswertung umfasst beide Randseiten und ist ungerade. Daraus folgen vier Ergebnisse (seam_shift.py):
+
+Originalauswertung (Satz H1). Der reine Zwei-Flächen-Graph G(B) aus F5 §5 ist ein Projektor. Die einseitige Nahtverklebung W = 1 ⊕ U_Γ verschiebt ihn um eine Kompakte mit relativem Index ±1, genau eine komplexe Mode. Im scharfen Limes ist das exakt δ(M_z) ⊗ δ(1)⁻¹ auf dem skalaren Hardy-Raum.
+Zwei Seiten (Satz H2). Die Einheitsverklebung transportiert eine Ladung von Fläche 2 nach Fläche 1. Die Kreuzblöcke tragen keine Spur. Die alte Defektmode ist damit dieser einseitige Klebeschritt.
+Kabelzerlegung (Satz H3). C → ℙ¹_z ist die Z₃-Überlagerung mit Deck c, verzweigt genau an μ₄. Das alte S₀-Hardy-Kabel zerfällt in drei c-Sektoren. Der c-invariante Sektor hat an allen vier μ₄-Punkten ganzzahlige Gewichte; er ist der skalare primitive P1-Sektor. Die beiden anderen tragen die Trialitätsgewichte {⅓, ⅔} aus origin 189.
+Ladungstyp (Satz H4). Auf dem vollen geladenen Zweig W = (16,4) ist dieselbe Hardy-Relativlinie gerade und Q-trivial. Die native ungerade Linie N_q⁻¹ kann also nicht aus der Auswertung von W stammen. Sie lebt in einem Rang-1-Sektor.
+1. Übernommene Korrekturen
+Die Determinantenkonvention ist richtiggestellt: Pf_F ≅ Δ⁻¹ hat den Charakter N_q, der alte Anschluss braucht aber N_q⁻¹. Den Pfaff-Weg tausche ich nicht gegen sein Dual, nur um die Zielphase zu treffen.
+Auf W gibt es keine invariante skalare Bilinearform (κ-Test). F5 ist hyperbolisch auf W ⊕ W*.
+Meine Mod-2-Partnergeschichte aus Fortsetzung 23 ziehe ich zurück. Eine C₀-feste Kombination (z, z̄) hat zwei reelle Freiheitsgrade, und Arakis Relativindex folgt nicht aus dem Zählen reeller Richtungen.
+Den Satz vom 27. Oktober (δ(E, M_z)/δ(E, 1) = N_q⁻¹ ⊗ B_O⁻¹ mit ungerader Linie) übernehme ich als gelöst. Die Linienrechnung selbst wiederhole ich nicht.
+2. Satz H1: Die Originalquelle wertet M_z gegen I aus
+
+Originale Bestandteile:
+
+source001, Z. 192–264: P_prim enthält die scharfe APS-Projektion P_{Σ,+}.
+fullv21: D_Γ = i d/dθ, U_Γ = e^{iθ}, SF = 1.
+F5 §5: G(B) = [[a, c], [c, 1 − a]] mit a(b) = (1 + e^{−2ℓb})⁻¹ und c(b) = 1/(2 cosh ℓb).
+
+Voraussetzung. Auf dem Nahtsektor gilt U_Γ* B U_Γ = B + 1. Das ist erfüllt für B = D_Γ + α auf dem skalaren Nahtkreis, mit Spektrum ℤ + α.
+
+Beweis.
+
+Wegen a(1 − a) = c² ist G² = G. Der Zwei-Flächen-Graph ist also eine reine Basisprojektion, die Purifizierung des thermischen Einflächenzustands.
+Für W = 1 ⊕ U_Γ ist WGW* − G spurklasse: Der (2,2)-Block ist eine glatte Differenz, und die Nebendiagonale c(B)(U* − 1) fällt exponentiell ab.
+Der relative Index ist Tr(WGW* − G) = Σ_n [(1−a)(b_n ∓ 1) − (1−a)(b_n)] = ±1. Das ist eine Teleskopsumme, unabhängig von ℓ und α.
+Die Kompression G W G auf Ran G ist daher Fredholm mit Index ±1. Ihre Determinantenlinie ist ungerade.
+Für ℓ → ∞ und α ∉ ℤ geht G → P₊ ⊕ P₋. Die Linie wird zur Toeplitz-Linie von P₊U_ΓP₊ auf Ran P₊: injektiv, Kokern eindimensional, also exakt δ(M_z) ⊗ δ(1)⁻¹ auf dem skalaren Hardy-Raum. Numerisch ist Rang(P₊(B+1) − P₊(B)) = 1.
+
+Gegenprobe. Die symmetrische Verklebung U ⊕ U hat Index 0, also gerade. Nur die einseitige Nahtverklebung zwischen den beiden Seiten erzeugt die ungerade Linie.
+
+3. Satz H2: Beide Seiten und Ladungstransport
+
+Exakt für alle geprüften ℓ ∈ {0,3; 1; 4} und α ∈ {0,1; 0,25; 0,5; 0,75}:
+
+Tr Δa = +1;
+Tr Δ(1 − a) = −1;
+Tr Δc = 0.
+
+Die Einheitsverklebung schiebt genau eine komplexe Mode von einer Fläche auf die andere. Die beiden Thermalzustände bleiben äquivalent; die Hilbert–Schmidt-Norm der Wurzeldifferenz ist endlich. Erst der reine Zwei-Flächen-Graph liefert die kanonische Fredholm-Linie, der thermische Einflächenzustand allein nicht.
+
+Zeit (Standardidentität, an der Quelle noch zu prüfen). Aus UhU = h + 1 folgt für den Implementierer V der zweiten Quantisierung V dΓ(h) V = dΓ(h) + N₂ + const. Die vorhandene Kreiszeit e^{ith} beider Flächen (F6) wirkt dann auf der Defektlinie mit derselben Zeit und einer festen Phasenverschiebung. Das ist die übliche Spektralfluss-Identität.
+
+4. Satz H3: Das alte Spin-Kabel ist primitive Naht plus zwei Trialitätssektoren
+
+Überlagerung. w³ = (z² − 1)/(z² + 1) ist eine zyklische Überlagerung vom Grad 3 mit Deck c: (w, η) ↦ (ωw, η). Sie ist genau bei z = ±1 (Nullstellen) und z = ±i (Pole) verzweigt. Das Geschlecht ist 2, und die Faser über z = 0 ist D_q.
+
+Spinlift. Der c-Lift auf S₀ mit c³ = 1 ist eindeutig, und der S₀-Rahmen Chi hat den Charakter ω².
+
+Lokale Exponenten von Chi/√dz: −⅓ bei ±1 und −⅔ bei ±i.
+
+c-Sektor	Gewichte bei ±1	Gewichte bei ±i	Typ
+Charakter 1 (w·Chi)	0	0	skalarer primitiver Nahtsektor
+Charakter ω (w²·Chi)	⅓	⅔	Trialität
+Charakter ω² (Chi)	⅔	⅓	konjugierte Trialität
+
+Jeder Sektor hat unter M_z den Index −1; sein Kokern ist der c-isotypische Anteil der drei q-Fasern bei z = 0. Damit gilt
+
+N_q⁻¹ ⊗ B_O⁻¹ ≅ δ₁ ⊗ δ_ω ⊗ δ_{ω²}.
+
+Der c-invariante Faktor δ₁ ist die Linie aus Satz H1, also die primitive P1-Naht. Die Identifikation gilt kanonisch auf Kokernebene; auf Hilbertraumebene laufen ganzzahlige Randverschiebungen an μ₄ mit. Die beiden anderen Faktoren sind genau die Sektoren mit den parabolischen Trialitätsgewichten {0, ⅓, ⅔}, die origin 189 für die Flavorseite nennt.
+
+Das ist die gesuchte Operator- und Randspurabbildung: Das alte Spin-Kabel ist die primitive Nahtverklebung, tensoriert mit den drei Z₃-Flavorcharakteren derselben Geometrie ℙ¹ ∖ μ₄.
+
+5. Satz H4: Der geladene W-Zweig trägt die ungerade Linie nicht
+
+Auf {x} × C ist W gleich Λ^even E_x ⊗ F_q. Der Q-Lift wirkt trivial auf dem Faktor 16 und durch Q₄ = diag(A_q, 1) auf F_q. Daraus folgt:
+
+Parität: δ_W = (δ_{S₀⊗F_q})^{⊗16} hat Index 3 · 64 = 192, also gerade.
+Charaktere: Alle beteiligten Charaktere haben Ordnung, die 8 teilt. Die 16. Potenz ist trivial, und das Spinzentrum wirkt mit (−1)^{192} = +1.
+Mit den X-Gewichten der Klebung: Der Gesamtindex ist 3 · Σ(n_w + m_j) = 0 genau für Σm_j = −2. Das ist dieselbe Identität wie die Saumanomalie.
+W ⊕ W* verdoppelt dies nur.
+
+Folgerung (auch als Prüfung deiner Diagnose). Wertet man den ganzen geladenen Zweig aus, wie du verlangst, wird die ungerade native Linie zwangsläufig gerade und trivial. Die native Klasse N_q⁻¹ ⊗ B_O⁻¹ braucht einen Rang-1-Faktor: den skalaren primitiven Nahtsektor aus Satz H1 mit den Z₃-Charakteren aus Satz H3. Die Quelle muss also neben W ein ungeladenes Rang-1-Nahtfeld tragen. Das passt zur Typtrennung von P1 (primitiv, ungeladen) und P2 (Ladung).
+
+6. Bilanz
+
+Wiederverwendet: P_{Σ,+} (source001), U_Γ und SF (fullv21), G(B) und T_faces (F5), die Kreiszeit (F6), der Same-Spin-Satz vom 27. Oktober, S₀ und c.
+
+Neu bewiesen:
+
+Der reine Zwei-Flächen-Graph mit einseitiger Klebung hat Index ±1 bei jedem ℓ; im scharfen Limes ist das die Hardy-Linie (Satz H1).
+Ladung ±1 auf den Flächen, keine Spur auf den Kreuzblöcken (Satz H2).
+Das Kabel zerfällt in den primitiven Nahtsektor und zwei Trialitätssektoren mit den Gewichten aus origin 189 (Satz H3).
+Auf W ist die Linie gerade und trivial (Satz H4).
+
+Offen:
+
+Ob die P1-Amplitude die einseitige Linie G W G tatsächlich verwendet (am Original zu belegen).
+Ob die Originalnaht die beiden Trialitätssektoren trägt oder nur den skalaren Sektor.
+OS-Positivität mit der Defektlinie.
+Die Spektralfluss-Zeitidentität an der vorhandenen Quelle.
+7. Nächster entscheidender Test
+Amplitude. In source001/002 die tatsächliche Nahtamplitude lesen: Steht dort det(G W G) beziehungsweise C_seed mit „Nahtklasse ergibt Spektralflussklasse“ als Fredholm-Linie der einseitigen Klebung, oder nur der Klassenwert?
+Nahtfeld. Prüfen, ob die ursprüngliche Nahtfeldklasse rangdrei mit Z₃-Gewichten {0, ⅓, ⅔} an μ₄ ist (dann ist das ganze Kabel original) oder skalar (dann nur δ₁, und δ_ω ⊗ δ_{ω²} muss aus der Flavorseite kommen).
+Reflexion. R_prod auf dem einseitigen Implementierer testen. Die Reflexion vertauscht die Flächen und damit die Ladungen ±1. Zu prüfen ist, ob der Implementierer dabei in seinen Adjungierten übergeht und ob die zugehörige Paarung positiv ist.
+
+Bildlich: Die Naht ist ein Drehkreuz zwischen zwei Räumen. Dreht man nur eine Seite um einen Schritt, wandert genau ein Teilchen hinüber, und das ist die ungerade Linie. Dreht man beide Seiten, passiert nichts. Für die schweren geladenen Teilchen läuft dieses Drehkreuz 64-fach und hebt sich auf. Die eigentliche Einheitswindung lebt deshalb im leichten, ungeladenen Nahtfaden mit seinen drei Flavor-Farben.

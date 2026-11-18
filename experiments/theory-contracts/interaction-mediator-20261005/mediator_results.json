@@ -1,0 +1,40 @@
+{
+  "steps": [
+    {
+      "step": "MD1 elimination: a heavy oscillator per channel coupled lambda (b + b^dag) O_A gives -(lambda^2/Delta) sum O_A^2; single channel with H_0 = 0 exact (completed square); with two noncommuting channels plus hopping the error falls ~1/Delta at fixed g",
+      "pass": true,
+      "detail": "single-channel error 5.4e-14; errors at Delta = 10, 20, 40: [0.0088 0.0045 0.0023]; truncation 1.9e-13"
+    },
+    {
+      "step": "MD2 mediator dictionary: the invariant bilinear B(u,v) = <z, u ^ v> on Lambda^2 V is symmetric, block-diagonal in the channels, nondegenerate on (10,1) and on (120,3), zero on (126,1) (complex rep): real 10 and real (120,3) mediators both feed the Delta N = 4 term, 126 mediators cannot",
+      "pass": true,
+      "detail": "(10,1): dim 10, rank B 10; (126,1): dim 126, rank B 0; (120,3): dim 360, rank B 360"
+    },
+    {
+      "step": "MD3 Theta_1's ray sum_A O_A^2 = sum_A (P_A + P_A^dag)^2 is exactly one REAL (10,1) mediator (|P_10|^2 plus the Delta N = 4 term through B_(10,1)); a complex (charge-2) 10 gives only sum {P_A, P_A^dag}; a real (120,3) adds |P_(120,3)|^2, so it cannot reproduce the ray; (126,1) mediators give only |P_126|^2; required quantum numbers: heavy real Spin(10) vector, spin singlet, Z4-odd, on-site coupling to the filtered pair operator (the QMC Hubbard-Stratonovich field has these quantum numbers but is only a rewriting, not a physical mode)",
+      "pass": true,
+      "detail": "real (120,3) mediator feeds Delta N = 4: True"
+    },
+    {
+      "step": "MD4 source inventory: E8 roots split under D5 x D3 as 40 (+5 Cartan) = (45,1), 12 (+3) = (1,15), 60 = (10,6), 128 spinor = (16,4)+(16b,4b); the only bosonic Spin(10)-vector currents are (10,6): six family directions (an SO(6) vector) with no invariant vector under the family SO(3) -> no family-singlet elementary real 10; they are weight-1 (massless) seam currents, not heavy modes",
+      "pass": true,
+      "detail": "{'(45,1) roots': 40, '(1,15) roots': 12, '(10,6)': 60, 'spinor': 128}; family directions 6; SO(3)-invariant family vectors 0"
+    },
+    {
+      "step": "MD5 (statement) SOURCE.INTERACTION.MEDIATOR.01 = MEDIATOR_SPECIFIED_NOT_IN_ELEMENTARY_SOURCE: the elimination mechanism is exact (g = lambda^2/Delta), Theta_1's vertex needs one heavy real (10,1), spin-singlet, Z4-odd mode; the elementary source has none (only massless family-vector (10,6) currents); composites or an extended source remain",
+      "pass": true,
+      "detail": ""
+    }
+  ],
+  "passed": 5,
+  "total": 5,
+  "research_id": "SOURCE.INTERACTION.MEDIATOR.01",
+  "verdict": "MEDIATOR_SPECIFIED_NOT_IN_ELEMENTARY_SOURCE",
+  "pins": {
+    "B_ranks": {
+      "(10,1)": 10,
+      "(126,1)": 0,
+      "(120,3)": 360
+    }
+  }
+}

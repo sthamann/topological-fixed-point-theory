@@ -1,0 +1,75 @@
+{
+  "steps": [
+    {
+      "step": "PF1 brute force (Fock space, 3 modes): Pfaffian routine exact (recursive expansion, Pf^2 = det); single positive Gaussian (c, T = Om^dag tanh(K/2) Om) and the composition rule reproduce the Fock-space Grassmann coefficients; 200 traces of six random BdG Gaussians with complex pairing agree including phase, although the principal sqrt det(1 + B) has the wrong sign on many of them",
+      "pass": true,
+      "detail": "max rel. error 1.7e-12; principal sqrt wrong in 193/200; Re W < 0 in 76/200"
+    },
+    {
+      "step": "PF2 4-site comparison (debug4, frozen h_W): h_W commutes with n.sigma, n = [111]/sqrt3; after the particle-hole transformation of down_n, W = 2^32 e^{-beta 64 sqrt3 t} det(1 + S_active) exactly (Gamma block of every slice = 1, Tr H_up = -64 sqrt3); the Pfaffian weight reproduces it on 1920 random HS histories (g = 0.1, 0.5: |d log W| < 1e-8; g = 2, log|W| ~ 2e3: relative < 1e-7, conditioning-limited), continuous tracking of det(1 + B) agrees; on this cell all weights are real positive (the non-trivial sign tests are PF1 and PF4)",
+      "pass": true,
+      "detail": "1920 histories; per g (max |dlog|W||, max |d arg|, max relative): {0.1: ('4.5e-13', '1.5e-12', '1.3e-15'), 0.5: ('1.3e-10', '7.8e-11', '1.4e-13'), 2.0: ('1.5e-05', '1.2e-05', '8.3e-09')}; |arg W| > pi/2 in 0.0%, max |arg W| 1.9e-06; Tr H_up = -110.8513 (64 sqrt3 = 110.8513); relative Gamma-block deviation 1.9e-15; tracking vs exact on 60 histories (g = 2) 2.0e-06; outside the range, g = 5 prior (conditioning limit, not gating): 3.3e-02; 854 s"
+    },
+    {
+      "step": "PF3 limits: free g = 0 (W = det(1 + e^{-beta H_w}) on debug4, cell8, cubic16) and interaction-only t = 0 (spin SU(2) exact, number-conserving formula on every cell: debug4, cell8, cubic16) reproduced by the Pfaffian weight",
+      "pass": true,
+      "detail": "free: {'debug4': '5.7e-13', 'cell8': '6.8e-13', 'cubic16': '3.2e-12'}; t = 0: {'debug4': '8.2e-11', 'cell8': '3.6e-12', 'cubic16': '1.8e-11'}; 101 s"
+    },
+    {
+      "step": "PF4 sign crossing: on a real-weight family (3 modes, real BdG, 4 slices) W(s) changes sign; the Pfaffian weight follows the brute-force sign through the crossing, sqrt det(1 + B) with continuity tracking stays on one sheet (det = W^2 only touches zero) and is wrong after the crossing",
+      "pass": true,
+      "detail": "sign changes 1; Pfaffian max rel. error 5.8e-12; tracked-sqrt max error 845598.28"
+    },
+    {
+      "step": "PF5 HMC force: analytic d log W / d phi = 1/2 Tr[(1 + B)^-1 dB] in the symmetrised stabilised form (cyclic UDV Green function, exact Frechet derivative of e^{K_phi}; real part = phase-quenched force, imaginary part = d theta) agrees with central finite differences of the Pfaffian log W on debug4 at g = 0.5 (cond B ~ 1e18; 16 random components)",
+      "pass": true,
+      "detail": "max rel. deviation 2.8e-07; |force| range 4.29e-01 .. 3.15e+01"
+    },
+    {
+      "step": "PF6 leapfrog: forward trajectory, momentum flip, backward trajectory returns to the start (reversibility), and |Delta H| scales like eps^2 (ratio 4 per halving)",
+      "pass": true,
+      "detail": "reversibility error 5.1e-12; |Delta H| ['6.48e-01', '1.64e-01', '4.12e-02']; ratios [3.95, 3.99]"
+    },
+    {
+      "step": "PF7 stability (debug4, g = 0.1, beta = 1 ... 16, up to 64 slices): Pfaffian log|W| equals 1/2 log det(1 + B) of the stabilised UDV chain and 2 arg W = arg det mod 2 pi; the unstabilised product drifts with beta",
+      "pass": true,
+      "detail": "beta=1: rel |2 log|W| - UDV| 0.0e+00, phase 4.4e-13, naive rel. error 3.1e-12, log|W| 372.1; beta=4: rel |2 log|W| - UDV| 0.0e+00, phase 3.2e-12, naive rel. error 1.8e+00, log|W| 1390.6; beta=8: rel |2 log|W| - UDV| 0.0e+00, phase 1.2e-12, naive rel. error 3.4e+00, log|W| 2733.6; beta=16: rel |2 log|W| - UDV| 6.6e-16, phase 2.4e-12, naive rel. error 4.2e+00, log|W| 5474.7"
+    }
+  ],
+  "passed": 7,
+  "total": 7,
+  "pf2_histories": 1920,
+  "pf2_max_dlog": 1.5423372587974882e-05,
+  "pf2_max_darg": 1.2107313633435979e-05,
+  "TrH_up": -110.85125168440817,
+  "stability": [
+    [
+      1.0,
+      0.0,
+      4.4364512064021255e-13,
+      3.115233388265488e-12,
+      372.1277155715061
+    ],
+    [
+      4.0,
+      0.0,
+      3.2462921240039577e-12,
+      1.7679313890757187,
+      1390.624752874618
+    ],
+    [
+      8.0,
+      0.0,
+      1.2114753644709708e-12,
+      3.367378678490418,
+      2733.6068038990934
+    ],
+    [
+      16.0,
+      6.64513468600111e-16,
+      2.369660023759934e-12,
+      4.172923264865926,
+      5474.650220040857
+    ]
+  ]
+}

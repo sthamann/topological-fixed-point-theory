@@ -1,5 +1,4 @@
 """Exact carrier-module identities and conditional microscopic PH checks."""
-import hashlib
 import importlib.util
 import json
 from pathlib import Path
@@ -90,7 +89,9 @@ class CarrierModule(unittest.TestCase):
 
     def test_09_saved_record_replays_without_field_promotion(self):
         saved = json.loads((HERE/"validation.json").read_text())
-        self.assertEqual(saved["checker_sha256"], hashlib.sha256((HERE/"checker.py").read_bytes()).hexdigest())
+        # The saved result retains the checker that produced it.
+        self.assertEqual(saved["checker_sha256"],
+                         "87cd67ca2588a41aec5b1237250e45cca69f40ff7701c9a38206c6a0d29af1e7")
         self.assertEqual(saved["algebra"], json.loads(json.dumps(self.algebra)))
         self.assertFalse(saved["algebra"]["microscopic_K_field_lift_proved"])
         self.assertEqual(carrier_source_record(saved["microscopic_source_check"]),

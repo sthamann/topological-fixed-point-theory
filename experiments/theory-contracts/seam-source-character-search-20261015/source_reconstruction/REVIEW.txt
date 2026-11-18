@@ -1,0 +1,286 @@
+INDEPENDENT REVIEW — SOURCE OPERATOR RECONSTRUCTION
+15 October 2026
+
+Reviewed object
+
+PROOF.txt, SHA-256 at review time:
+25faa1166d9edfe5f6cbe5bb86c411faf4922fc1649d5e60a8e86f9d3e859200
+
+Verdict
+
+PROVISIONAL PASS. I found no material mathematical defect in the decisive
+operator, Wold, continuous-symbol, CAR, charge, state or time chain. The
+result is correctly scoped as a conditional reconstruction and diagnostic,
+not a derivation of the actual TFPT P1/P2 source. Final receipt status remains
+pending only because results.json must be regenerated after the final PROOF
+text and final manifest are frozen.
+
+1. Compression identity and first missing source condition
+
+For S=C U C on C H,
+
+ C-S* S=C U* (1-C) U C=((1-C) U C)*((1-C) U C)
+
+is exact. Therefore S is an isometry exactly when (1-C) U C=0. Fredholm
+index -1 alone gives neither this leakage identity nor purity. Once isometry
+is separately known, the index does give a one-dimensional wandering space.
+The proof preserves this logical order and does not infer an operator from a
+winding class.
+
+2. Continuous scalar Hardy classification
+
+The strengthening from rational to every continuous scalar unimodular symbol
+is sound. Zero leakage implies M_u H2 is contained in H2; testing the constant
+function shows that all negative Fourier coefficients of u vanish. For
+continuous u, analytic Fejer sums converge uniformly, so u is the boundary
+value of a disk-algebra function. Boundary modulus one gives a zero-free
+collar, hence only finitely many interior zeros. Dividing their Blaschke
+factors leaves a zero-free v in A(D), with 1/v also in A(D). Applying the
+maximum principle to v and 1/v makes v a constant phase. The boundary winding
+is consequently the number of zeros, so winding one gives exactly one
+Blaschke factor.
+
+This is exhaustive only for the stated continuous scalar Hardy-multiplier
+class. The proof correctly does not transfer it to an unknown TFPT Calderon
+pair or to general matrix-valued/bordism data.
+
+The exact non-inner control is also correct:
+
+ u_a=z^2/b_a,
+ [z^(-m)]u_a=(1-a^2)a^(m+1),
+ ||(1-C)u_a e_0||^2=a^4(1-a^2).
+
+At a=1/4 the last value is 15/4096. Its phase derivative is 2-P_a and has
+lower bound 2-(1+a)/(1-a), equal to 1/3 at a=1/4. Thus smoothness, strict
+orientation and unit winding still do not imply zero leakage.
+
+3. Purity, minimal dilation and time reconstruction
+
+For one Blaschke factor, H2 minus b_a H2 is the span of the normalized kernel
+k_a, and the intersection of b_a^n H2 over n>=0 is zero: membership forces a
+zero of every order at a. This proves purity rather than merely fitting finite
+modes.
+
+Given leakage zero, index -1, purity and minimality, Wold decomposition yields
+
+ C H = orthogonal_sum_(n>=0) U^n W,
+ H   = orthogonal_sum_(n in Z) U^n W,
+
+with dim W=1. The second equality follows from the stated minimal unitary
+dilation hypothesis; it does not follow from the winding class alone.
+Adding the actual common-core covariance U* B U=B+1 and B w=alpha w then gives
+B U^n w=(n+alpha)U^n w for every integer n. The diagonal finite-span operator
+is essentially selfadjoint, C is its nonnegative spectral projection for
+0<alpha<1, and the quarter transition follows. These are correct conditional
+consequences, and the proof labels both covariance and the wandering
+eigenvalue as premises.
+
+4. Bilateral Blaschke basis
+
+The claimed basis k_a b_a^n, n in Z, is genuinely unitary, not a dimension
+count. On the circle, if phi is the phase of b_a, then
+
+ d phi/d theta=P_a=|k_a|^2.
+
+Consequently the change of variables phi=arg b_a makes the Gram matrix of
+k_a b_a^n the Fourier Gram matrix. This proves orthonormality. The associated
+weighted composition operator is onto L2 because b_a is a circle
+diffeomorphism; its restriction is the standard disk-automorphism unitary on
+H2, so its nonnegative modes span H2. It therefore reduces H2 and commutes
+with C. The conjugated B_a has the asserted covariance and quarter phase.
+For a nonzero a it is correctly distinguished from the supplied
+B_alpha=N+alpha, whose increment is P_a rather than one.
+
+As an independent numerical sanity check, for a=0.21+0.13 i and modes
+-4,...,4, a 131072-point boundary quadrature gave a maximum Gram error
+1.87e-14. This numerical check is only a check; the change-of-variables
+argument above is the proof.
+
+5. Conditional CAR field, sea state and time
+
+With the explicit convention
+
+ beta_U(A)=R A R*,
+ R c_n R*=c_(n+1),
+ R* c_n R=c_(n-1),
+
+the anomaly signs are consistent. Normal ordering relative to occupation of
+n<0 gives, on the algebraic finite-excitation core,
+
+ R* Q R=Q+1,
+ R* H_alpha R=H_alpha+Q+alpha.
+
+The rank-one change of polarization is Hilbert-Schmidt, so the CAR
+automorphism is implementable in the charged sea representation up to scalar
+phase. R Omega adds the n=0 mode and has charge 1 and energy alpha; R^(-1)
+Omega removes n=-1 and has charge -1 and energy 1-alpha. Iterating in either
+direction gives
+
+ E(k)=k(k-1)/2+alpha k
+
+for every integer k. I independently summed the particle/hole energies for
+k=-8,...,8 at alpha=1/4 and 3/4; all values agree exactly.
+
+For 0<alpha<1 every nonvacuum particle or hole has positive cost, so the sea
+vector is the unique zero-energy vector in this conditional representation.
+Also H_alpha-alpha Q has integral eigenvalues on the complete finite-
+excitation occupation basis. Equality of the two bounded exponentials on
+that dense basis extends to
+
+ exp(2 pi i H_alpha)=exp(2 pi i alpha Q).
+
+This retains the quarter phase on fields and states without requiring the
+charged winding to preserve the vacuum. The text also correctly separates
+the representation equivalence F, the charged implementer R and the quarter
+transition.
+
+6. Source scope
+
+The proof makes the decisive boundary explicit. P1/P2 do not yet supply:
+
+- the scalar Hardy Calderon realization;
+- an actual U satisfying the leakage identity;
+- purity and minimal unitary generation;
+- the common-source B covariance and wandering eigenvalue;
+- the CAR identification, physical quasifree state or physical time.
+
+Accordingly, the reconstructed rank-one channel is not identified with the
+five-slot P2 carrier, a D5 spinor or the earlier E8 extension. The note does
+not establish an event law or source selection and does not turn the
+diagnostic control into a universal no-go. This scope is mathematically and
+physically honest.
+
+7. Required editorial corrections
+
+These do not alter the verdict, but should be fixed before a final receipt:
+
+1. PROOF line 79 says "u=S1 belongs to H2". It should say
+   "M_u 1=u belongs to H2".
+2. PROOF line 138 should write the orthogonal difference explicitly, for
+   example "W=C H orthogonal-minus U C H", not an unqualified set minus.
+3. PROOF lines 168-169 reuse e_n after section 5 already defined
+   e_n=U^n w. Define a reference basis delta_n and write
+   F delta_n=U^n w; otherwise F reads as the identity by notation alone.
+
+8. Executable status
+
+The ten current unit tests pass, including exact CAR signs, inverse sea
+translation, charge/time recurrences, a far-mode control, rational
+cancellation and mutation rejection. The cited Wold theorem was checked: its
+Theorem 2.1 is the standard decomposition of an isometry into shift and
+unitary parts with wandering space ker V*. It does not supply any P1 premise.
+
+At this review point, replay against the saved results.json is intentionally
+pending because the final proof text changed after that payload was written.
+Regenerate results.json only after the proof and final manifest are frozen,
+then require `python3 search.py verify --output results.json` to pass. This is
+a receipt synchronization item, not a mathematical defect.
+
+9. Final bounded verification after corrections
+
+FINAL PASS.
+
+The final PROOF.txt SHA-256 is
+3e0bfdd050dad0b96f5f666172a71a87316d42ec48bc1cf78e3f6d3bb2ea44fc.
+The three editorial points above are resolved: the constant-function argument
+now reads M_u 1=u; W is explicitly the orthogonal difference; and the CAR
+isomorphism is defined from a separate reference basis delta_n.
+
+`python3 search.py verify --output results.json` now returns
+"VERIFIED exact replay; conditional diagnostic, NO_P1_DERIVATION".
+
+Every required path in the results source manifest exists and its actual
+SHA-256 equals the recorded value, including both original TFPT sources, the
+Atlas snapshot, final proof, executable, Lean receipt and Lean source. The
+Lean source hash in lean-receipt.json also equals the actual
+SourceReconstruction.lean hash. The recorded lean-toolchain, lakefile.lean and
+lake-manifest.json hashes all equal their actual files. The receipt reports
+exit code zero and no sorryAx. No theorem scope or physical-source claim was
+changed by these editorial and receipt updates; all conditional boundaries in
+the provisional review remain in force.
+
+10. Bounded review of the same-source energy addendum
+
+PASS.
+
+The current PROOF.txt SHA-256 after the section 6a addition is
+424e2f8eaf021cae575e479ccca4fcd2b8a34df1e5d5410371a86144f07ddb5d.
+This addendum was reviewed only for its new CAR implementability, charge and
+energy calculation, variational conclusion and stated scope; the earlier proof
+was not re-reviewed.
+
+For U=M_u, Q_occ=1-C and transformed covariance U Q_occ U*, the displayed
+occupation formula is correct. A Fourier shift k changes the filled sea by
+charge k and energy k(k-1)/2+alpha k. Therefore, for an H1 unimodular loop
+u=exp(i phi) of winding w,
+
+ <Q>_u=sum_k k |u_k|^2=w,
+ <H_alpha>_u=1/2 <phi'^2>+(alpha-1/2)w.
+
+The sums have the claimed convergence: H1 gives sum k^2|u_k|^2 finite,
+hence absolute charge convergence, finite positive excitation energy and
+sum |k||u_k|^2 finite. Direct matrix-element counting across the Hardy split
+gives
+
+ ||[C,M_u]||_HS^2=sum_k |k||u_k|^2,
+
+so the stated Fock implementability follows. The cited Araki source was
+checked: Lemma 9.4 gives implementability when the transformed basis
+projection differs by a Hilbert-Schmidt operator, and Theorem 7 gives the
+equivalent off-diagonal Hilbert-Schmidt criterion in the Fock representation.
+The proof correctly notes that this representation criterion is not a
+physical selection principle.
+
+For winding one,
+
+ <H_alpha>_u=alpha+1/2 <(phi'-1)^2>,
+
+and equality holds exactly for u=exp(i chi)z. This proves global uniqueness
+modulo scalar phase in the stated scalar H1 multiplication class. It does not
+prove uniqueness in the full restricted unitary group. The text now also
+keeps the original reference representation and vector distinct from the
+generated state R_u Omega with covariance U Q_occ U*.
+
+The real-Poisson identities are correct:
+
+ <P_a P_b>=(1+ab)/(1-ab),
+ E(b_a)-alpha=E(z^2/b_a)-alpha=a^2/(1-a^2).
+
+At a=1/4 the excess is 1/15 and the alpha=1/4 total is 19/60. Thus leakage
+and original-time excitation energy test different properties: nonzero
+leakage blocks the Wold-isometry route but does not block a physically
+implementable CAR transformation.
+
+The scope statement is adequate. Minimum charge-one excitation energy is an
+additional selection rule that is not derived from P1, and the variational
+theorem presupposes the B, CAR field algebra and sea state used to define the
+energy. No P1/P2 source-selection claim follows from this addendum. The engine
+regeneration and replay are separate from this bounded mathematical review.
+
+11. Original master-functional cross-check
+
+PASS FOR THE STATED OPEN PROVENANCE BOUNDARY.
+
+The additional original passage in
+_archive/tfpt-45/source_extracts/02_carrier_source.tex:3020-3063 does not
+supply the missing P1 source selector or the charge-one minimum-energy rule.
+It first fixes d*_disc and P_adm (lines 3022-3024). Its continuous variable is
+only xi=(alpha, chi_geo, delta_ph, rho_vac), already restricted to the retained
+branch. The bordism term is then defined to be zero when B is isomorphic to
+B_min and positive infinity otherwise (lines 3046-3059). Thus membership in
+the B_min equivalence class is encoded as a hard barrier rather than derived
+by varying the displayed functional.
+
+The subsequent proof makes this dependence explicit: off B_min the functional
+is infinite "by construction", and on B_min it reduces to the continuous
+functional of xi (lines 3106-3114). In this source extract B_min has no
+independent construction or classification. Even granting the previously
+claimed singleton d*_disc, this passage adds no comparison among actual seam
+operators in the same winding class.
+
+In particular, neither u, R_u Omega nor the charge-one excitation energy
+alpha+1/2 Var(phi') is a variable or term of this master functional. Its
+continuous closure can optimize xi after the stratum has been chosen, but it
+does not imply that the physical P1 seam minimizes the section 6a energy.
+Therefore the additional minimum-energy selection rule and the original
+field/state/time identification remain genuine provenance obligations.

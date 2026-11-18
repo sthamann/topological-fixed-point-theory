@@ -2,7 +2,7 @@
 
 Generated source-navigation diagnostics; unresolved means no unique local target was asserted. Historical/moved-project references may be intentional. Absence of a citation is not absence of a proof.
 
-Unresolved explicit citation groups: **4097**. Evidence entities without incoming indexed citation: **817**.
+Unresolved explicit citation groups: **4121**. Evidence entities without incoming indexed citation: **825**.
 
 The full precise list (section IDs, physical lines, tokens, candidates) is in `registry.json` → `diagnostics`. This page groups repeated tokens for readability.
 
@@ -151,6 +151,9 @@ The full precise list (section IDs, physical lines, tokens, candidates) is in `r
 | ambiguous_file_citation | `common.py` | 8 |
 | ambiguous_file_citation | `composition.py` | 1 |
 | ambiguous_file_citation | `core.py` | 1 |
+| ambiguous_file_citation | `docs/research/fundamental-plan/RESULTS.md` | 1 |
+| ambiguous_file_citation | `experiments/theory-contracts/joint-source-clock-field-closure-20261102/PROOF.txt` | 1 |
+| ambiguous_file_citation | `experiments/theory-contracts/puncture-metric-joint-completion-20261102/PROOF.txt` | 1 |
 | ambiguous_file_citation | `field_dictionary.py` | 10 |
 | ambiguous_file_citation | `freeze.py` | 3 |
 | ambiguous_file_citation | `ground_replay/work/many_pair/weak_coupling.py` | 3 |
@@ -218,6 +221,9 @@ The full precise list (section IDs, physical lines, tokens, candidates) is in `r
 | ambiguous_lean_symbol | `nonempty_iff_finrank_eq_three` | 3 |
 | ambiguous_lean_symbol | `sm_pair_eq` | 1 |
 | ambiguous_lean_symbol | `smith_certificate` | 1 |
+| retired_navigation_source | `verification/build_theory_graph.py` | 1 |
+| retired_navigation_source | `verification/enrich_theory_graph_llm.py` | 1 |
+| retired_navigation_source | `verification/theorycat.py` | 1 |
 | unmatched_claim_identifier | `A.1` | 1 |
 | unmatched_claim_identifier | `ARCHITECTURE_ADJUDICATION.01` | 2 |
 | unmatched_claim_identifier | `B.0` | 3 |
@@ -784,14 +790,21 @@ The full precise list (section IDs, physical lines, tokens, candidates) is in `r
 | unmatched_file_citation | `CofinalPredefinition.lean` | 4 |
 | unmatched_file_citation | `CofinalWeil.lean` | 2 |
 | unmatched_file_citation | `DenseWeilCore.lean` | 2 |
+| unmatched_file_citation | `FULL-SOURCE-CORRECTION.txt` | 1 |
+| unmatched_file_citation | `GROUND-SOURCE.txt` | 1 |
 | unmatched_file_citation | `JetSumRules.lean` | 4 |
+| unmatched_file_citation | `LARGER-CHARGED-SOURCE-EVALUATION.txt` | 1 |
 | unmatched_file_citation | `MEASUREMENT_BRIDGE_VALIDATION.json` | 1 |
 | unmatched_file_citation | `MomentLaurent.lean` | 2 |
+| unmatched_file_citation | `PAIRED-DYSON-PROOF.txt` | 1 |
+| unmatched_file_citation | `PHYSICAL-THERMAL-SOURCE.txt` | 1 |
 | unmatched_file_citation | `PRE_REGISTRATION.md` | 2 |
 | unmatched_file_citation | `PRE_REGISTRATION_v2.md` | 2 |
 | unmatched_file_citation | `PacketRM14.lean` | 5 |
 | unmatched_file_citation | `PinchIdentity.lean` | 2 |
 | unmatched_file_citation | `PositiveC2Lift.lean` | 2 |
+| unmatched_file_citation | `REFERENCE-SOURCE-COMPLETION.txt` | 1 |
+| unmatched_file_citation | `SEED-FIELD.txt` | 1 |
 | unmatched_file_citation | `SESSION/outputs/dreier-auslesung/Allgemeine-Lueckenschranke.md` | 2 |
 | unmatched_file_citation | `SESSION/outputs/dreier-auslesung/Inklusiver-Auslesebeweis.md` | 2 |
 | unmatched_file_citation | `SESSION/outputs/gemeinsamer-ursprung/Universalraum-gemeinsamer-Ursprung.txt` | 2 |
@@ -808,10 +821,13 @@ The full precise list (section IDs, physical lines, tokens, candidates) is in `r
 | unmatched_file_citation | `SESSION/work/session-documentation-20260920/initial_context.txt` | 2 |
 | unmatched_file_citation | `SESSION/work/session-documentation-20260920/late_results.txt` | 2 |
 | unmatched_file_citation | `SHADOW_MIRROR.md` | 1 |
+| unmatched_file_citation | `SHARED-METRIC-SOURCE.txt` | 1 |
+| unmatched_file_citation | `SOURCE-GENERATOR-RESIDUAL-20261103.txt` | 1 |
 | unmatched_file_citation | `SPRINT2A_VALIDATION.json` | 1 |
 | unmatched_file_citation | `SineGramKeystone.lean` | 2 |
 | unmatched_file_citation | `SpacingProduct.lean` | 2 |
 | unmatched_file_citation | `SpectralBalance.lean` | 2 |
+| unmatched_file_citation | `TRANSFER-EXTRACTION.txt` | 1 |
 | unmatched_file_citation | `TfptCarrier/CellCocycle.lean` | 4 |
 | unmatched_file_citation | `TfptCarrier/CofinalCurrent.lean` | 4 |
 | unmatched_file_citation | `TfptCarrier/CofinalPredefinition.lean` | 2 |
@@ -826,9 +842,12 @@ The full precise list (section IDs, physical lines, tokens, candidates) is in `r
 | unmatched_file_citation | `Universalraum_Urspruenglicher_Austausch_2026-09-15.md` | 4 |
 | unmatched_file_citation | `Users/stefanhamann/.codex/context/tfpt-gesamtkontext.md` | 2 |
 | unmatched_file_citation | `Users/stefanhamann/Documents/Codex/2026-09-25/und-verifiziere-und-beweise-und-teste/BEURTEILUNG.md` | 1 |
+| unmatched_file_citation | `VARIABLE-BACKGROUND-PROOF.txt` | 1 |
 | unmatched_file_citation | `WallCertifiedHead.lean` | 2 |
 | unmatched_file_citation | `WallCofinalComposition.lean` | 2 |
 | unmatched_file_citation | `WeilDictionary.lean` | 4 |
+| unmatched_file_citation | `ZERO-FREE-JOINT.txt` | 1 |
+| unmatched_file_citation | `ZERO-FREE-ORIGIN.txt` | 1 |
 | unmatched_file_citation | `_documentation/core-physics/big-picture.md` | 1 |
 | unmatched_file_citation | `_meta.json` | 2 |
 | unmatched_file_citation | `a0_uplift_probe.py` | 1 |
@@ -856,11 +875,19 @@ The full precise list (section IDs, physical lines, tokens, candidates) is in `r
 | unmatched_file_citation | `dbn_heatflow_probe.py` | 2 |
 | unmatched_file_citation | `decision_probe.py` | 1 |
 | unmatched_file_citation | `derivation_probe.py` | 1 |
+| unmatched_file_citation | `docs/research/fundamental-plan/CONSOLIDATION-R110-20261103.md` | 1 |
 | unmatched_file_citation | `e8_chain_analysis.json` | 8 |
 | unmatched_file_citation | `e8_composite_gauss_result.json` | 6 |
 | unmatched_file_citation | `e8_directed_readout_probe.py` | 1 |
 | unmatched_file_citation | `errorterm_demand_curve_probe.py` | 2 |
 | unmatched_file_citation | `experiments/tfpt-discovery/pruefer_compensation_probe.py` | 2 |
+| unmatched_file_citation | `experiments/theory-contracts/constant-triangulation-20261103/CONSTANT-TRIANGULATION.txt` | 1 |
+| unmatched_file_citation | `experiments/theory-contracts/craig-original-source-bridge-20261103/ACTUAL-PRODUCT-PAIRING.txt` | 1 |
+| unmatched_file_citation | `experiments/theory-contracts/craig-original-source-bridge-20261103/COLOR-PROJECTED-KERNEL.txt` | 1 |
+| unmatched_file_citation | `experiments/theory-contracts/cyclic-genesis-literature-20261103/GENESIS-CYCLIC.txt` | 1 |
+| unmatched_file_citation | `experiments/theory-contracts/original-local-source-variable-background-20261102/ADMISSIBLE-ACTION-DERIVATION-20261103.txt` | 1 |
+| unmatched_file_citation | `experiments/theory-contracts/original-local-source-variable-background-20261102/PROJECTED-JOINT-SOURCE-GENERATOR-20261103.txt` | 1 |
+| unmatched_file_citation | `experiments/theory-contracts/original-paper-source-reconciliation-20261102/AUDIT.txt` | 1 |
 | unmatched_file_citation | `freetail_case_bridge_probe.py` | 2 |
 | unmatched_file_citation | `full-plank/beschreibung.txt` | 2 |
 | unmatched_file_citation | `fullsource_quasidefiniteness_probe.py` | 2 |

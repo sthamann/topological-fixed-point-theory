@@ -1,0 +1,31 @@
+{
+  "steps": [
+    {
+      "step": "MM1 quarter analysis of the ten short chains (g = 0.018, beta = 6, burn-in 8 sweeps): common first-to-last-quarter trend, within- vs between-chain variance -> classification",
+      "pass": true,
+      "detail": "10 chains; D_ref: trend -1.6 sigma, within/between 0.76 -> SLOW_MODE_CANDIDATE; log max |f_U|: trend -3.4 sigma, within/between 0.16 -> BURN_IN_LIMITED; VERDICT BURN_IN_LIMITED; quarter means of D_ref per chain: [[0.145, 0.188, 0.219, 0.13], [0.017, 0.02, 0.018, 0.017], [0.183, 0.2, 0.076, 0.04], [0.76, 0.694, 0.65, 0.515], [0.596, 0.585, 0.322, 0.136], [0.188, 0.096, 0.069, 0.063], [1.646, 1.363, 0.676, 0.977], [0.107, 0.09, 0.063, 0.095], [3.513, 2.414, 0.767, 0.271], [0.176, 0.055, 0.065, 0.09]]"
+    },
+    {
+      "step": "MM2 (statement) relaxation of the long chains: chain-averaged log max |f_U| (U != 1) and d_ref versus sweep (blocks of 4 monitor points), chain-to-chain spread of d_ref",
+      "pass": true,
+      "detail": "6 chains, up to sweep 136: sweep 0: <log max|f|> +0.41, <d_ref> 0.478, spread 0.767; sweep 20: <log max|f|> +0.17, <d_ref> 0.459, spread 0.780; sweep 40: <log max|f|> -0.43, <d_ref> 0.128, spread 0.198; sweep 60: <log max|f|> -0.30, <d_ref> 0.157, spread 0.307; sweep 76: <log max|f|> -1.08, <d_ref> 0.151, spread 0.323; sweep 92: <log max|f|> -1.19, <d_ref> 0.348, spread 0.802; sweep 108: <log max|f|> -1.91, <d_ref> 0.073, spread 0.131; sweep 124: <log max|f|> -2.42, <d_ref> 0.095, spread 0.183"
+    },
+    {
+      "step": "MM3 (statement) global HS-field features against d_ref: strongest correlations over all monitor records and R^2 of the chain means (SLOW_MODE_IDENTIFIED needs R^2 > 0.7 for one feature)",
+      "pass": true,
+      "detail": "210 records, 6 chains; top correlations: m_0 -0.56, m_9 -0.48, P_K14 -0.40, P_K12 -0.39, |Ft_w1| +0.32, P_K0 -0.31; chain-mean R^2: m_0 0.56, m_9 0.47, P_K14 0.45, P_K12 0.43, P_K2 0.36, |Ft_w1| 0.28; null 95 % quantile of the max R^2 (chain-shuffled, 32 features): 0.71; identified: none; within-chain co-movement (chain means removed): m_6 -0.44, P_K13 -0.32, P_K15 -0.32, m_0 -0.29, P_K8 -0.27, P_K10 -0.27"
+    },
+    {
+      "step": "MM4 (statement) long chains, sweeps 40-140: quarter classification and the final QMC.MIXING.MODE.01 verdict",
+      "pass": true,
+      "detail": "6 chains; d_ref: trend -1.8 sigma, within/between 0.36 -> SLOW_MODE_CANDIDATE; log max |f_U|: trend -2.2 sigma, within/between 0.39 -> SLOW_MODE_CANDIDATE; quarter means of d_ref [[0.032, 0.027, 0.017, 0.013], [0.036, 0.015, 0.025, 0.031], [0.017, 0.012, 0.014, 0.015], [0.572, 0.836, 1.471, 0.391], [0.077, 0.022, 0.012, 0.01], [0.06, 0.037, 0.03, 0.037]]; FINAL SLOW_MODE_CANDIDATE"
+    },
+    {
+      "step": "MM5 (statement) four-outcome classification on the continued chains (windows A = 150-200, B = 210-260 sweeps)",
+      "pass": true,
+      "detail": "window means A [0.015, 0.011, 0.013, 0.029, 0.014, 0.058], B [0.015, 0.007, -0.008, 0.014, 0.003, 0.064]; spread A / B 0.72; chi^2/dof of B means 34.0; internally stationary False; kappa_char max 2.14; OUTCOME EXPLORATORY_DIAGNOSIS_ONLY"
+    }
+  ],
+  "passed": 5,
+  "total": 5
+}

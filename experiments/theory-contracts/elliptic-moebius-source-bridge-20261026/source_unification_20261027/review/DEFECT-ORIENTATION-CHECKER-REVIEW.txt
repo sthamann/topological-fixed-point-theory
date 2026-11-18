@@ -1,0 +1,61 @@
+INDEPENDENT REVIEW OF check_defect_orientation.py
+2026-10-27
+
+VERDICT
+
+The finite CAR calculation is correct and its saved scope is properly
+conditional.  It proves the orientation statement for the given
+three-dimensional defect representation.  It does not prove that the
+physical P1 source supplies this C3 Hardy covariance or its operator map.
+
+The checker uses the complete eight-dimensional exterior algebra.  Its
+Jordan-Wigner signs satisfy all 72 basis CAR tests.  With
+
+  Q=zeta_8 times the transposition (q_1 q_2),
+  c=(q_0 q_1 q_2),
+  beta=i I_3,
+
+the induced exterior actions obey
+
+  c^3=I,
+  Q^2=beta,
+  beta^2=(-1)^F,
+  Q c Q^(-1)=c^(-1).
+
+The code checks Q and c covariance for every creation operator on every
+exterior basis vector.  Since beta=Q^2 and the actions are unitary signed
+permutations, the corresponding beta and annihilation covariance follow.
+
+On the filled three-mode ket it obtains, in zeta_8 exponents,
+
+  ket:   c=0, Q=7, beta=6, parity odd,
+  dual:  c=0, Q=1, beta=2, parity odd.
+
+Thus beta acts by -i on the ket and +i on the dual.  This agrees with the
+analytic determinant calculation and preserves odd parity under duality.
+The empty and filled annihilation relations checked at the end, together
+with CAR, give the expected zero and identity covariances on the defect
+space.
+
+Normal Python and python -OO produced byte-identical output in the independent
+replay.  The output SHA256 was
+
+  32972f51d03aa8336d275fd709ae86cab1e146a137f785a4922dbf813890a15a.
+
+The checker source SHA256 was
+
+  49f2017bd6cca278cc175a49590f4843069c669db1be5a141bdf8b05b5905071.
+
+ONE WORDING CORRECTION
+
+The source comment
+
+  "Relative density matrices see no ray phase, but CAR charged words do."
+
+is too broad.  Every expectation in the vector state is invariant under a
+common phase of the ket, including expectations of charged words.  The phase
+can appear in charged transition amplitudes between different sectors or in
+a separately oriented bra, ket or determinant line.  The executable checks,
+the JSON verdict and PROJECTOR-CAR-DEFECT-LINE-REVIEW use the correct narrower
+statement, so this comment does not invalidate any computed result.
+

@@ -1,0 +1,309 @@
+UR.SEAM.MIXED_CURRENT_ORIGIN.01 -- 23 October 2026
+Continuous-time compactness test for arbitrary nonunitary endpoint limits
+Verdict: PARTIAL physical origin; a stronger source-specific exclusion.
+
+1. Precise question and inherited original source
+
+Can arbitrary renormalized NONUNITARY fields extracted from the actual
+neutral parity pair produce a genuinely new spinor sector, while retaining
+the original full source norm, time and observable comparison? This goes
+beyond the earlier smooth-unitary-return bound. No uniform bound on the
+first energy moment is assumed here.
+
+Use the original mass1,width8,one-copy QWZ cylinder and fixed quarter r1
+or3, alpha=r/4, full negative filled sea Omega_N, and
+  H_N=N/(2pi)[dGamma(h_N)-Tr(P_N h_N)] >=0.
+Both physical edges and all massive modes remain present. Their original
+full spectral exhaustion is proved in FULL-FINITE-ENERGY-AND-SECTOR-MENU.txt
+sections1-3: for each cutoff E off the limiting spectrum the ENTIRE low
+spectral projection eventually has the limiting finite rank; its occupied
+particle/hole basis converges to the two-edge Fock basis. The limiting H
+has compact resolvent. This is not a claim about all P1 representatives.
+
+2. Needed comparison hypotheses, not just a spectrum match
+
+A. Full low-energy spectral identifications are compatible for increasing
+cutoffs, with limiting two-edge Fock space H_old and finite-rank P(E).
+These follow from the fixed source eigenmode/Fock identifications above.
+A diagonal choice gives isometries J_N of finite source Hilbert spaces
+into H_old, agreeing on every fixed low window for large N. Remaining
+finite high basis vectors can be sent into the unused complement.
+
+B. For each RETAINED bounded observable A of the old field/observable net,
+its actual microscopic A_N has sup_N||A_N||<infinity and its matrix elements
+on every fixed low-energy window converge to those of pi_old(A).
+In the original CAR source, such matrix elements are fixed finite Wick
+words between the convergent low-mode particle/hole states. Smeared CAR
+generators are uniformly bounded, and their norm-closed algebra extends
+this conclusion. The given fixed fold only reorganizes those fields.
+For D8 currents use the original even-CAR realization; do not silently
+substitute a different action on the old odd sector.
+
+This is stronger than convergence of the neutral VACUUM correlators alone.
+It is the same FULL-source observable comparison already required when
+transporting arbitrary source words, including odd intermediate states.
+Spectrum alone never supplies B. The known odd-sector Phi refielding is
+not excluded here: it CHANGES this full observable comparison.
+
+Importantly B concerns the observable operators, NOT the unknown states
+v_N. A disjoint state limit does not automatically violate B. With fixed
+old operators B can hold identically while high-energy states escape;
+in the compact source such an escape must fail D or another hypothesis.
+
+C. For a fixed field smearing, let v_N=T_N Omega_N. The operators T_N may
+be arbitrary finite-source operators, long histories, coherent sums,
+endpoint dressings, heat-filtered insertions, or N-dependent renormalized
+operators with divergent norms. Require only
+  n_N=||v_N||^2 -> n in(0,infinity).
+No Gaussianity, unitarity or finite word-degree bound on T_N is assumed.
+
+D. Retain the actual positive time response
+  F_N(t)=<v_N,exp(-t H_N)v_N> -> F(t),  t>0,
+with lim_(t down0) F(t)=F(0)=n.
+This is automatic for a proposed limiting smeared vector with finite norm
+and a strongly continuous positive-energy semigroup IF that semigroup is
+claimed to be the limit of the SAME original response. It does NOT assume
+a finite first moment <H_N>, nor convergence of a derivative at t0.
+A formal separately assigned charged-sector energy does not establish D.
+
+Alternatively, it suffices to require the actual REAL-time word kernels
+G_N(t)=<v_N,exp(-itH_N)v_N> to converge for t in a neighborhood of0,
+with the limiting G continuous there and G(0)=n. The averaging argument
+below yields the same tightness. Euclidean time is therefore not an extra
+physical input needed for this exclusion.
+
+3. Elementary tail bound and theorem
+
+For every E,t>0, the spectral theorem gives
+  ||1_(E,infinity)(H_N)v_N||^2
+    <= [n_N-F_N(t)]/[1-exp(-tE)].                      (1)
+
+Given eta>0, continuity at zero lets us choose t>0 with n-F(t)<eta/4.
+For all large N the numerator is then <eta/2. Choose E large enough so
+1-exp(-tE)>1/2, avoiding the discrete limiting spectrum. Equation(1) gives
+a tail <eta for all sufficiently large N. Hence
+  lim_(E to infinity) limsup_N
+       ||1_(E,infinity)(H_N)v_N||^2 = 0.              (2)
+
+For the real-time variant, average Re G_N over 0<t<a. Spectral calculus
+gives n_N-a^-1 integral_0^a Re G_N(t)dt
+ =integral[1-sin(a lambda)/(a lambda)]dmu_N(lambda).
+For lambda>E>=2/a, the bracket is >=1/2. Therefore
+  ||1_(E,infinity)(H_N)v_N||^2
+    <=2[n_N-a^-1 integral_0^a Re G_N(t)dt].            (2a)
+Uniform boundedness |G_N(t)|<=n_N permits dominated convergence. Continuity
+of G at0 makes the limiting right side arbitrarily small by taking a small,
+and then E>=2/a. This proves(2) from REAL time as well, with no derivative
+or first-moment hypothesis.
+
+The finite-window identifications in A now make J_N v_N norm-precompact.
+Proof: choose a low window with tail<eta; its bounded coefficient vectors
+live in one fixed finite-dimensional ball. Take a convergent subsequence,
+then a diagonal subsequence over windows. The uniform tail makes that
+subsequence norm-Cauchy in H_old. It converges to v with ||v||^2=n.
+An arbitrary original sequence need not itself converge; subsequential
+compactness is the exact assertion.
+
+For a bounded retained A, truncate v_N to u_N=P_N(E)v_N. With
+eta_N=||v_N-u_N||^2, the discarded expectation obeys
+  |<v_N,A_N v_N>-<u_N,A_N u_N>|
+    <= ||A_N||[2 sqrt(n_N eta_N)+eta_N].               (3)
+The finite-block comparison B passes the truncated expectation to the old
+net. Letting E increase in(3) proves on the chosen subsequence
+  <v_N,A_N v_N> -> <v,pi_old(A)v>.                     (4)
+If the full word-state limit exists, every such subsequential expression
+agrees with it. In particular its state is NORMAL in the ORIGINAL global
+representation. For mixed positive source states the same argument uses
+finite-block density matrices and trace-norm tightness instead.
+
+THEOREM. Under A-D every full retained-observable word-state limit of these
+arbitrary nonunitary insertions lies in the original representation folium.
+It cannot be a representation disjoint from pi_old. A uniform energy
+expectation is unnecessary; norm plus a continuous original time kernel
+is enough.
+
+This is an elementary spectral compactness argument, not a new general
+theorem of operator-algebra theory. The new use is the joint source/time/
+observable test at the actual TFPT neutral-pair loophole.
+
+4. Application to a spinor endpoint and the exact scope
+
+Under the separately established fixed D8/even-CAR dictionary, the original
+one-chiral-edge NS Fock representation restricts to 1 direct-sum v.
+Neither s nor c is in that global folium. Adding the retained opposite
+physical edge gives multiplicities, not a new left D8 representation.
+Therefore a nonzero charged spinor endpoint state, whose neutral-observable
+representation is s or c, cannot be obtained by T_N satisfying A-D while
+retaining that SAME full D8 observable map. This covers arbitrary
+nonunitary neutral-pair histories and all scalar field renormalizations
+for which the claimed full norms and original time kernels converge.
+
+The D8 sector statement uses the standard free even-CAR sector theorem
+(Boeckenhauer, arXiv:hep-th/9507047 sections3-6), transported through the
+EXISTING fixed dictionary. It is not a proof that P1 selects that dictionary,
+or that the primitive QWZ source is eight independent complex flavours.
+
+This extends the previous bounded-mean-energy compactness test and the
+unitary 2pi/eps bound. It does not promote spectrum counting into a
+classification of every possible local scaling net. The crucial EXTRA
+hypothesis is B: unchanged low-window action of the retained observables.
+A local new field representation must actually be compared, not named.
+
+5. Full local register removes register-changing loopholes in this class
+
+At the initial definite quarter r, Z Omega_N=i^r Omega_N and [Z,H_N]=0.
+Suppose a proposed limiting bosonic endpoint field T(f) is local away from
+the retained local EVEN register Z. The full word contract then requires
+  ||(Z_N T_N-T_N Z_N)Omega_N||^2 -> 0.
+Resolve v_N into register grades q=0,1,2,3. Orthogonality gives exactly
+  ||(Z_N-i^r)v_N||^2
+    =sum_q |i^(r+q)-i^r|^2 ||v_(q,N)||^2.             (5)
+All nonzero coefficients are >=2. Thus the total norm of register-changing
+components tends to zero. The surviving vector lies asymptotically in the
+same quarter block, where sections2-4 apply. No definite microscopic
+register grade for T_N was needed.
+
+The common ORIGINAL microscopic register reference can also be controlled,
+without choosing four independent subtractions. Put
+  e(p)=-Tr|h(p)|/2, E0_N(alpha)=sum_j e(2pi(j-alpha)/N).
+Tr h(p)=0, so this is the actual filled-sea ground energy. The same Bloch
+analysis used in the original exhaustion proof shows that zero occurs
+only at p0, in the two branches with slopes+1,-1. Off p0, e is real
+analytic by spectral functional calculus. Near0 its only nonsmooth part
+is -|p| plus piecewise analytic terms. Thus its distributional second
+derivative has finite total variation V, independent of N and alpha.
+Its Fourier coefficients obey |e_m|<=V/(2pi m^2), m!=0.
+Absolute Fourier convergence gives the exact sampling identity
+  E0_N(alpha)=N sum_(l in Z) e_(lN) exp(-2pi i l alpha).
+For ANY two of the four backgrounds, therefore,
+  |E0_N(alpha)-E0_N(beta)|<=V pi/(3N),
+  |N/(2pi)[E0_N(alpha)-E0_N(beta)]|<=V/6.             (5a)
+The estimate uses sum_(l!=0)l^-2=pi^2/3. Finite-R zero-mode filling affects
+neither Tr|h| nor this ground energy; no Wick replacement is involved.
+
+Consequently the full register Hamiltonian, with ONE common reference
+equal to the initial quarter vacuum energy, is bounded below by -V/6
+uniformly in N. Its semigroup norms are <=exp(tV/6) at fixed t. Dropping
+the register-changing components in(5) therefore changes the full time
+kernel by an amount tending to zero. The grade0 main part has exactly
+the original nonnegative quarter H_N. Thus A-D reduce to that block even
+for arbitrary grade mixtures. No separate sector energy convention was
+introduced. The actual neutral pair already has grade0 identically.
+
+A changed Gauss/local-net assignment can make Z a GLOBAL Wilson loop and
+therefore exits this remote-local-Z premise, exactly as the earlier
+conditional completion demonstrated. The theorem does not prohibit that
+move or derive its physical origin.
+
+6. Heat regularization: a concrete nonunitary attempt and its trap
+
+First consider the ACTUAL full QWZ source, not a bosonized replacement.
+Take the original neutral pair P_E, E the eight preimages of a base
+interval. Imaginary-time filtering gives v_(N,s)=exp(-sH_N)P_E Omega_N.
+This is a pure Slater vector, so its complete finite word state is fixed
+by its covariance and CAR/Wick. Write U_-,U_+ for all occupied/unoccupied
+one-body eigenvectors, epsilon_-,epsilon_+ for their positive scaled
+hole/particle energies, and sigma the actual parity sign matrix. In a
+nonsingular Slater chart set
+  A=U_-^* sigma U_-, B=U_+^* sigma U_-, Zp=B A^-1,
+  Zp_s=exp(-s epsilon_+) Zp exp(-s epsilon_-),
+  V_s=U_-+U_+ Zp_s,
+  C_s=V_s (I+Zp_s^* Zp_s)^-1 V_s^*.
+A singular A requires a different chart; it is no sector obstruction.
+The exact normalized ORIGINAL time kernel is
+  F_(N,s)(t)=det(I+Zp_(s+t/2)^* Zp_(s+t/2))
+              /det(I+Zp_s^* Zp_s).                  (5b)
+The prefactor det(A) cancels; all massive states and both edges remain.
+
+The checker evaluates Nx32,Ny8, quarters1 AND3, s1/4,t1/10, base interval
+(pi/2,pi), retaining all512 one-body modes and256 occupied modes. Both
+quarters give <H_N>=36.8319309197 and F_(N,s)(t)=0.0735083926. The original
+eight JOINT Bloch-residue occupations are unchanged to numerical accuracy;
+they are NOT identified with eight separately left-chiral D8 Cartans.
+Both physical-edge covariance responses survive. These are finite controls
+of an actual nonunitary original operator, not a continuum-sector proof.
+Imaginary time is used as a diagnostic; its physical preparation is not
+claimed to have been selected by P1.
+
+For a separate analytic SINGLE-CHIRAL comparison the time kernel can also
+be summed in closed form. This is conditional on the stated Weyl map.
+In the GIVEN single-chiral Weyl comparison, a periodic uniform base profile
+phi(theta)=f(8theta) displaces the source oscillator J_(8n) with coherent
+amplitude a_n=i sqrt(8n) f_n; its GIVEN K=H_cover/8 frequency is n.
+The actual full-strip heat filter above uses H_N, converging to cover time.
+This chiral comparison uses the previously fixed constant time conversion;
+it preserves continuity/compactness and does NOT divide primitive flow.
+For a step profile f=pi 1_(x,y), n>0,
+  f_n=(exp(-inx)-exp(-iny))/(2 i n).
+At fixed positive heat time s, the normalized vector proportional to
+exp(-sK) W(phi_eps)Omega has in the sharp profile limit amplitudes
+  a_n(s)=exp(-sn) sqrt(2/n)
+         [exp(-inx)-exp(-iny)].                       (6)
+The vacuum overlap can tend to zero before normalization. Taking ratios
+of finite-cutoff coherent coefficients proves(6); no unregulated infinite
+determinant is used. The resulting coherent vector has finite norm and
+finite energy for every s>0, but is a NEUTRAL PAIR state in the old Fock
+module, not a charged-sector vector.
+
+Put d=y-x, r=exp(-2s). Its exact original K expectation is
+  E_s=4 sum_(n>=1) r^n[1-cos(nd)]
+     =4[r/(1-r)-Re(r exp(id)/(1-r exp(id)))].           (7)
+For d=pi, E_s=8r/(1-r^2), which diverges like2/s as s down0.
+The normalized time-response kernel is
+  F_s(t)=exp(-sum_n |a_n(s)|^2[1-exp(-tn)]),           (8)
+continuous at zero. In fact the normalized heat-filtered vector is the
+old Weyl coherent vector with Poisson-smoothed profile f_(s,n)=e^(-sn)f_n.
+Both endpoints and the old Cartan charges remain present.
+For d=pi, the exact sum in(8) gives the particularly decisive formula
+  F_s(t)=[(1+r exp(-t))(1-r)/((1-r exp(-t))(1+r))]^4.  (8a)
+For each s>0 this is continuous and equals1 at t0. But at every t>0,
+F_s(t)->0 as s down0. Removing the heat regularization restores the
+sharpness at the cost of a unit jump between the limiting norm at0 and
+the positive-time kernel. This is a concrete example of the failure of D,
+not a normalizable positive-time charged state in the same time limit.
+
+This is a chiral smooth-Weyl comparison. It is NOT a theorem identifying
+the sharp discrete lattice parity P_E with that sharp Weyl limit. Exact
+finite parity is 2pi-periodic and selfadjoint; the single unwrapped
+bosonic profile need not retain its branch data in a singular limit.
+The actual microscopic parity asymptotics require their own determinant/
+word-limit control. The main theorem in sections2-4 does not need this
+identification and applies to the ACTUAL lattice insertions directly.
+
+7. Necessary exclusions and countercontrols
+
+(a) Without continuity F(0)=n: v_N a unit vector at energy E_N->infinity
+has n_N=1,F_N(t)=exp(-tE_N)->0 for all t>0. The lost norm is a jump at0.
+(b) A diverging first moment ALONE does not imply failure: put mass1/N at
+energy N^2 and the rest in the vacuum. Mean energy diverges, while the
+vectors converge in norm to the vacuum and F(t) is continuous at0.
+(c) Without finite low multiplicities: H_N=I on N-dimensional degeneracy,
+v_N=e_N, has continuous e^-t but no norm compactness in the fixed embedding.
+(d) Without the full observable comparison B: the existing global odd
+Phi can preserve H,Q and the neutral vacuum correlators while changing
+the odd-sector Cartan action. It is outside B, not a counterexample.
+These controls are essential; do not replace them by an energy-only or
+norm-only conclusion. Local normality of a DHR sector alone supplies
+neither A-D nor its microscopic source origin.
+
+8. Consequence for the original research decision
+
+The actual neutral pair and its uniform16component parity-cut action
+remain valid. No new local charged sector was produced by it. The whole
+nonunitary fixed-source class with the SAME global norm, continuous time
+and full retained observable map is now excluded as an origin of a
+disjoint spinor representation.
+
+A genuine escape must supply an originally justified charged comparison
+of state, time/reference and observable action (or a demonstrably different
+local-net/Gauss realization). The conditional charged energy rule K_lambda
+is already fixed once the sector is given; freely writing it does not
+prove that comparison. Singular limits losing the global time/norm
+contract cannot be called a solution of that contract.
+
+This remains a source-specific result, not an all-P1 no-go. Single-register
+half-flux, original parity pairs, changed Gauss nets, the standard DHR
+sectors and the original native Hamming/E8/J/4/5/20/carry structures keep
+their separate, previously recorded scopes. The primitive P1/source-circle
+and chiral measure origin are still not derived.
+

@@ -1,0 +1,134 @@
+MATH.SEAM.ESERIES.INCIDENCE.07.CLOCK-AUDIT
+24 October 2026
+
+Reconciliation with the independent report using the actual original files
+
+1. Four representatives and one class: the precise restricted problem
+
+Keep the ORIGINAL even E8 lattice L, the ordered epsilon cocycle, the
+integral basis B displayed in JOINT-CLOCK.txt, and the generator-normalized
+field lift Jhat=S_J. The native standard J has 2 by 2 blocks
+
+    [0 -1; 1 0].
+
+The report displays inverse blocks [0 1; -1 0]. This changes the marked
+orientation convention. It does not change the root census, J^2=-I or the
+unrestricted class counts. Numerical masks may be compared only after
+aligning the lattice basis, epsilon convention and clock orientation.
+
+Keep sigma cycling the first three complex coordinates, c=J sigma,
+c^4=sigma, c^9=J, c^12=I. The candidates are ALL sign lifts chat=S_c D_a,
+a in Hom(L,F2), satisfying the ADDITIONAL equation
+
+                       chat^9 = fixed S_J.                   (1.1)
+
+They are compared under character conjugations D_t preserving that same
+S_J. This is not the unrestricted lift problem for J or for c.
+
+The exact affine equation for (1.1) in the ordered dual basis has byte columns
+
+    (1,2,93,128,119,1,215,128),    defect169,     rank6.
+
+It has precisely four solutions, the masks31,62,151,182. Their fourth powers
+are S_sigma D_b with b=63,30,183,150 respectively. The Jhat-preserving
+character group has16 elements and its stabilizer on any solution has4.
+There is one orbit of size4. No solution also has b=0. This is the complete
+meaning of the original claim, verified on the eight lattice generators
+and directly on all240 roots; oscillator descendants inherit the action.
+
+2. Why the report's unrestricted numbers also hold
+
+On the SAME original E8 basis, the new audit obtains
+
+    SNF(I-J)=diag(1,1,1,1,2,2,2,2).
+
+All256 sign lifts of J have order4: the character norm I+J+J^2+J^3 is zero,
+and the original S_J has fourth powerI. Character conjugation is translation
+by (I+J*)t over F2, of rank4, so it gives16 orbits of size16.
+Keeping those256 SIGN-lift candidates unchanged and enlarging ONLY their
+allowed gauge equivalence to fourth-root-valued characters, the Smith
+invariants1 and2 show that every sign correction becomes a coboundary.
+Then there is one class. If the candidate space ALSO includes every
+fourth-root-valued lift, its quotient by fourth-root-valued gauge instead
+has16 classes: the cokernel of I-J* modulo4 has size2^4. The one-class
+statement is exactly about sign candidates under the larger gauge relation.
+In this precise sense the counts agree with the independent report.
+
+For completeness, all256 unrestricted sign lifts of c have order12.
+The original S_c has order12 and sum(k=0..11)c^k=0. The unrestricted sign
+character gauge has rank6, giving four orbits of size64. Restricting to
+(1.1) fixes Jhat and reduces both the candidate set and its allowed gauge,
+giving the ONE orbit in Section1. These are distinct, explicit equivalence
+problems, not inconsistent answers to one problem.
+
+The coefficient module is Hom(E8,{+1,-1}). Nothing here replaces the original
+noncentral lattice-isometry lift extension by the older central mu4
+extension of G31. The underlying lattice-VOA lift framework is described in
+Dong and Nagatomo, Automorphism Groups and Twisted Modules for Lattice
+Vertex Operator Algebras, https://arxiv.org/abs/math/9808088.
+
+3. Actual matrix and ALL peripheral generators
+
+The original COVERS.txt and cover_dictionary.py supply saturated integral
+bases BE,BC, retained byte-for-byte in the bundle. The common clock is
+
+    A = [0 0 0 -1]
+        [1 0 0  0]
+        [0 1 0  1]
+        [0 0 1  0],
+
+with irreducible characteristic polynomial Phi12=x^4-x^2+1. In these actual
+bases J BE=BE A^9 and deck BC=BC A^4. Rational clock Hom is Q[A]; its integral
+lattice is Z[A]. On that Hom space, D H J^-1=A^7 H.
+
+The base is FIVE-punctured P1, with ordered generators g1,g2,g3,g4,gInfinity
+and relation g1*g2*g3*g4*gInfinity=1. Its four finite punctures are1,i,-1,-i.
+The supplied covers u_n^n=x^4-1 fix the winding homomorphism
+
+    nu(g1)=nu(g2)=nu(g3)=nu(g4)=1,    nu(gInfinity)=-4.
+
+The two ORIGINAL associated systems have ALL generator images
+
+                 g1    g2    g3    g4    gInfinity
+    native        A9    A9    A9    A9       I
+    Burau deck    A4    A4    A4    A4       A8
+    relative      A7    A7    A7    A7       A8.
+
+Here Ak denotes A to power k. Infinity is the inverse product of the four
+finite images in each row. The Burau system is DEFINED by its supplied
+marked cover and deck representation. It is not a separately proved
+Gauss-Manin homology family. That qualification is part of the theorem.
+
+4. Global factorization and minimality, rather than one local period
+
+All generator images in the last row are powers of A, and the presentation
+has no missing generators. Consequently, on EVERY word w in pi1,
+
+                       rho_rel(w)=A^(7 nu(w)).                (4.1)
+
+This proves global factorization through nu modulo12. The order of A is12
+and gcd(7,12)=1; hence the representation of C12 is faithful and
+
+          ker(rho_rel)=ker(nu modulo12).                     (4.2)
+
+Connected covers correspond to subgroups of pi1. A cover trivializes the
+relative local system iff its subgroup is contained in this kernel. The
+index of the kernel is12, and it gives exactly the existing C12 cover
+s^12=x^4-1. Every other connected trivializing cover has degree divisible
+by12; the minimum degree is12. The same holds for the orbit of ANY nonzero
+rational clock intertwiner, since Q[A] is a field and A^(7k)-1 is invertible
+for1<=k<12. The parallel clock-Hom subspace on the base has dimension0.
+
+The user's four-punctured-sphere example has independent exponent generators
+(1,0),(0,1),(0,0),(-1,-1) in C12 x C12. Its image has144 elements and it
+satisfies its own sphere relation. It correctly disproves the general
+inference from individual local orders12 to a degree12 trivializing cover.
+It does not have the global factorization (4.1). The new audit explicitly
+checks all original generator matrices AND that degree144 negative control.
+
+Thus both previously inaccessible original conclusions pass the requested
+test in their stated marked and induced-local-system category. Their
+premises and actual matrices are present here and in the portable bundle.
+The full field-associated-source construction and the distinction among
+base rotation, deck action and fibre clock remain exactly as in the
+unchanged original JOINT-CLOCK.txt.

@@ -1,0 +1,182 @@
+UNABHAENGIGER REVIEW DER GEKOPPELTEN EINFORM RANDANTWORT
+=======================================================
+
+Datum: 2026-10-30
+Geprueft: ACTUAL-ONEFORM-COUPLED-SOURCE-RESPONSE.txt
+Status: Formelkette bestaetigt, Ursprungsaussage eng begrenzt
+
+Urteil
+-------
+
+Die nichtkommutative Loewnerkette in Gleichung (2) ist korrekt. Sie ist die
+exakte erste Ableitung des ganzen zweiflaechigen Cauchyprojektors entlang
+der bereits vorhandenen finiten Einformrichtung D_Y, auch wenn der
+Majoranaanteil nicht mit D_Y kommutiert. Die Fréchet Ableitung von
+tanh(ell h) ist fuer ell>0 auf dem endlichen selbstadjungierten
+Koeffizientenraum injektiv. Daher ist die diagonale Operatorantwort auf
+jede nichtverschwindende D_Y Richtung nicht null.
+
+Die Allmodenabschaetzung traegt ebenfalls: der diagonale Jet ist
+Hilbert Schmidt und der Kreuzblockjet spurklassig. Damit ist die
+Ableitung aller endlichen Wick und CAR Polynome der gegebenen
+quasifreien Quelle bestimmt.
+
+Der Satz schliesst nicht die noch offene Sprim beziehungsweise gemeinsame
+bosonisch fermionische Quellenwirkung. Er beweist weder die Herkunft der
+Yukawamatrizen noch, dass P_adm, ein Skalartrace, eine Luecke oder ein
+physischer Messconsumer die volle injektive Operatorantwort ohne Kern
+liest. Der gedruckte vierdimensionale gemeinsame Wirkungsansatz bleibt
+ausdruecklich der offene Vertrag TFPT4D.LATTICE.ACTION.01.
+
+1. Exakte Ableitung des Projektors
+----------------------------------
+
+Im konstanten Quarterchart gelten
+
+  h_s=p gamma_F-i gamma_F Phi_s,
+  V=dot(h)_0=-i gamma_F D_Y,
+  T_s=h_s^2=p^2+Phi_s^2,
+  Q=dot(T)_0={D_F,D_Y}.
+
+Die Vorzeichen sind korrekt. Aus {gamma_F,Phi_s}=0 folgt h_s=h_s^dagger,
+die linearen Kreuzterme in h_s^2 heben sich auf und
+
+  hV+Vh={D_F,D_Y}.
+
+Mit
+
+  q(u)=tanh(ell sqrt(u))/sqrt(u),
+  x(u)=1/(2 cosh(ell sqrt(u)))
+
+gilt durch Spektralkalkuel
+
+  tanh(ell h)=h q(T),
+  X=x(T).
+
+Die Produktregel fuer Fréchet Ableitungen liefert daher exakt
+
+  dot(a)=1/2 [V q(T)+h Dq_T(Q)],
+  dot(X)=Dx_T(Q).
+
+Der Ausdruck h Dq_T(Q) darf im nichtkommutierenden Majoranablock nicht
+durch h q'(T)Q ersetzt werden. ROOT-COUPLED-YUKAWA-RESPONSE-CHECK.json
+belegt dazu den tatsaechlichen Einblock Gegenfall
+
+  [D_F^2,{D_F,D_Y}] != 0
+
+mit Normquadrat 4 M^6 m^2. Das ist genau der richtige kleinste Typentest.
+
+Da
+
+  G_s=[[a_s,X_s],[X_s,1-a_s]]
+
+fuer jedes s ein orthogonaler Projektor ist, folgt durch Ableiten von
+G_s^2=G_s auch korrekt
+
+  G dot(G)+dot(G)G=dot(G).
+
+2. Injektivitaet der tanh Antwort
+---------------------------------
+
+Diagonalisiere das selbstadjungierte h mit reellen Eigenwerten lambda_i.
+Dann hat die Fréchet Ableitung die Eintraege
+
+  (D tanh(ell h)[V])_ij
+    =tanh(ell .)[1](lambda_i,lambda_j) V_ij.
+
+Fuer lambda_i != lambda_j ist der Loewnerkoeffizient
+
+  [tanh(ell lambda_i)-tanh(ell lambda_j)]/(lambda_i-lambda_j)>0,
+
+und auf der Diagonale ist er
+
+  ell sech^2(ell lambda_i)>0.
+
+Alle Koeffizienten sind fuer endliche Eigenwerte und ell>0 strikt positiv.
+Der Schurmultiplikator hat daher keinen Matrixeintrag im Kern. Somit
+
+  D tanh(ell h)[V]=0  genau dann, wenn V=0.
+
+Weil V=-i gamma_F D_Y und gamma_F invertierbar ist, folgt dot(a)!=0 fuer
+D_Y!=0. Diese Injektivitaet gilt fuer die volle finite Operatorantwort vor
+weiteren Projektoren, Traces oder Messconsumern. Sie beweist keine
+Injektivitaet einer spaeteren skalaren oder P_adm projizierten Auswertung.
+
+3. Allmoden und CAR Umfang
+--------------------------
+
+Auf den Quartermoden p=n+alpha, alpha=1/4 oder3/4, ist |p| nach unten von
+null getrennt. Fuer festes endliches D_F,D_Y und grosses |p| gilt
+
+  q(p^2+Phi^2)=O(1/|p|),
+  Dq_(p^2+Phi^2)(Q)=O(1/|p|^3),
+
+also dot(a)=O(1/|p|). Damit ist die direkte Summe der diagonalseitigen
+Jets Hilbert Schmidt, weil sum_p |p|^-2 endlich ist.
+
+Fuer x(u)=1/(2cosh(ell sqrt(u))) liefern die dividierten Differenzen
+
+  Dx_(p^2+Phi^2)(Q)=O(exp(-ell|p|)/|p|).
+
+Ihre Spurklassennormen sind ueber alle Moden summierbar. Der Kreuzblockjet
+ist deshalb spurklassig und der gesamte dot(G) Jet Hilbert Schmidt. Die
+endlichen internen Dimensionen und beide Quarterverschiebungen aendern
+diese Klassen nicht.
+
+Wenn G_s wie im bestehenden Boundaryfunktor die wirkliche quasifreie
+CAR Kovarianz ist, bestimmt G_s alle endlichen Wickpolynome. Deren erste
+Ableitungen folgen durch die uebliche endliche Determinantenproduktregel.
+Das ist eine Aussage ueber alle endlichen, passend geschmierten CAR Worte
+dieser gegebenen quasifreien Quelle. Es ist keine Gleichsetzung mit einem
+interagierenden Pfadmass, dem unnormalisierten Z_adm oder einer beliebigen
+Vervollstaendigung der Observablenalgebra.
+
+4. Was aus den Originaldaten folgt
+----------------------------------
+
+Tatsaechlich vorhanden und wiederverwendet sind:
+
+* der finite v252 Dirac und Majoranakoeffizient D_F;
+* der v254 Einformraum und die konkrete reelle Higgsrichtung D_Y bei
+  unveraendertem Majoranablock;
+* der voll gekoppelte Boundaryfunktor G(h) mit beiden Flaechen und
+  Kreuzbloecken;
+* die bedingte reine CAR Quelle, sobald dieser Graph als ihre Kovarianz
+  eingesetzt wird.
+
+Daraus folgt nun neu und exakt die Hintergrundableitung D_Y -> dot(G) im
+bereits gekoppelten, nichtkommutierenden Hintergrund. Die Werte der vier
+Yukawamatrizen bleiben dabei dieselben vorgegebenen Eingaben. Die Rechnung
+waehlt weder ihre Werte noch die Richtung durch ein P1 Gesetz aus.
+
+Die Originalstelle documents/tfpt_research_contracts/sections/017-source.tex:
+153-191 druckt zwar die gewuenschte gemeinsame Wirkung
+
+  S_Wilson+bar(psi)D_GW[U,Phi]psi+S_Phi+S_seam/top,
+
+bezeichnet sie aber als Demand und den Vertrag TFPT4D.LATTICE.ACTION.01
+als OPEN. Die spaeteren positiven Hamiltonian und Dynamikklassenresultate
+schliessen diesen Vertrag ausdruecklich nicht. Deshalb ist die vorliegende
+Randantwort kein Beweis einer Sprim Variation, keiner bosonischen
+Phi Integration und keiner vollstaendigen vierdimensionalen Quelle.
+
+Ebenso bleibt dot(iota_C)=2dot(G) nur die Ableitung der
+Cauchypolarisation. Sie ist keine Deckreflexion, keine OS Reflexion und
+keine Determinantinvolution Q_Theta. Ein Gapjet wird erst zum originalen
+chi_seed Jet, wenn der tatsaechliche B_Sigma Operator durch denselben
+Produktchart intertwiniert ist.
+
+5. Quellen
+----------
+
+* ACTUAL-ONEFORM-COUPLED-SOURCE-RESPONSE.txt.
+* verification/v252_full_finite_triple.py und
+  verification/v254_inner_fluctuations.py.
+* graded_boundary_functor/FINITE-COUPLED.txt, besonders die vollstaendige
+  h und G Abbildung.
+* pfaff_source_review/NORMAL-KINETIC-PAIRING.txt fuer den bedingten
+  kinetischen und CAR Umfang.
+* documents/tfpt_research_contracts/sections/017-source.tex:153-235 fuer
+  den weiterhin offenen gemeinsamen Wirkungscontract.
+* ROOT-COUPLED-YUKAWA-RESPONSE-CHECK.json fuer den exakten
+  Nichtkommutativitaetsgegenfall im Neutrinoblock.

@@ -1,0 +1,89 @@
+CO-MOVING WINDING, CHARGED QUARTER AND THE DYNAMIC FIELD TERM
+
+Scope: the given constant singular block and diagnostic shift of R087, not an
+identification of the primitive P1 clock or a new physical source. The given
+alpha is 1/4 or 3/4, p=n+alpha, n in Z. Write P+=(I+sigma_z)/2, P-=I-P+,
+h_p=p sigma_z+m sigma_x, W_p=exp(-i atan(m/p) sigma_y/2),
+U_m=W (S P+ + P-) W*, S|n>=|n+1>. The original free charged quarter and
+its explicitly stated time-loop relation are in seam-collar-multifield-
+20261016/PROOF.txt, sections 6, 8, particularly lines 166-170, 249-256.
+R087's whole covariance and its hypotheses remain unchanged.
+
+1. Exact spectral flow; the direction and index are not guessed.
+Let P0 be the negative-energy projector of p sigma_z, so that it occupies
+|n,+> when n<0 and |n,-> when n>=0. Let P_m=W P0 W* be the actual negative
+spectral projector of h on the stated block. Directly,
+
+ U_m P_m U_m* - P_m = W |0,+><0,+| W* .                    (1)
+
+The right side is exactly one rank-one projector, trace +1, for every finite
+constant m and either quarter. This is a unit spectral flow across the chosen
+filled sea. It is not the 18-fold result unless all 18 modes are selected.
+W-I is Hilbert-Schmidt, so its off-diagonal blocks relative to P0 are Hilbert-
+Schmidt; the polarized CAR representation of P_m is unitarily equivalent to
+that of P0. The Bogoliubov transformation U_m is implementable as its
+commutator with P_m has finite rank. A corresponding implementer takes the
+filled reference to the +1 charged sector; by the original particle/hole
+charge convention Q=Np-Nh, it obeys
+
+ exp(i pi Q_m/2) Uhat_m exp(-i pi Q_m/2) = i Uhat_m.       (2)
+
+Q_m and its reference are transported WITH W. The phase in (2) is independent
+of the undetermined overall phase of Uhat_m. This is a structural compatibility
+of a charged winding with a co-transported charged quarter action, not a proof
+that Uhat_m is an admissible primitive-source operation, nor a derivation of
+its determinant/eta/absolute partition phase. In particular, the unitarily
+transported Q_m has not been identified with the original interacting Q.
+
+U_m is not itself an order-four quarter operator: U_m^4 is unitarily equivalent
+to S^4 P+ + P-, which is not I. Its spectrum includes the full unit circle,
+whereas an operator whose fourth power is I has spectrum inside the four roots
+of unity. The original P1 winding, geometric loop and quarter representation
+may be distinct operations: this refutes only their DIRECT identification.
+
+2. An explicit antiunitary opposite-quarter diagnostic.
+Define R by R|n,v>_alpha=|-n-1,sigma_x conjugate(v)>_(1-alpha).
+Since sigma_x W_p sigma_x=W_-p, it sends P_m to the corresponding opposite-
+quarter P_m and sends U_m to the co-moving S* P- + P+ shift. The transported
+rank-one defect (1) then sits at |-1,-> in the reflected frame, still with
+trace +1. Antiunitarity conjugates the scalar i in (2). This is a precisely
+given reflection test, NOT an asserted identification of R with the original
+P1 reflection, time reversal, charge conjugation or the physical OS map.
+
+3. Actual dynamic-field connection and a decisive source-generator test.
+For differentiable real m(t), retain ALL of the stated time-dependent block.
+With psi=W chi and i dot(psi)=h psi, the transformed equation is
+
+ i dot(chi) = [ sign(p) E_p sigma_z
+                - (p dot(m)/(2(p^2+m^2))) sigma_y ] chi,     (3)
+ E_p=sqrt(p^2+m^2).
+
+The second term is compulsory and follows from -i W* dot(W). It is nonzero for
+p!=0 and dot(m)!=0, couples both eigensectors and must remain in time ordered
+words. Example p=1/4,m=0,dot(m)=1 gives -2 sigma_y. The complete source may
+have further terms and field dependencies; (3) neither selects its measure nor
+replaces all 96 components or the mixed vertices. It proves that replacing a
+time dependent source by only the instantaneous diagonal E_p fails this
+specified exact moving-frame equation.
+
+The original FREE charged-source model explicitly has Wq=exp(2pi i Hfree).
+If one additionally identifies the same unrescaled 2pi generator, at nonzero m,
+with the positive quasiparticle energy E_n and retains the co-transported
+quarter eigenvalue exp(2pi i alpha), this proposed identification fails for
+any fixed nonzero m. For n>=0,
+
+ E_n-(n+alpha)=m^2/(sqrt((n+alpha)^2+m^2)+(n+alpha)) >0,
+
+and it tends to 0; eventually it lies strictly between 0 and 1, so the two
+exponentials cannot agree. This is a conditional failure of THAT SAME-generator
+identification. In particular it does not imply that geometric angular
+translation must equal the massive Hamiltonian, and does not refute a separate
+original quarter operator or any full TFPT theory. The actual originating map,
+its time generator, charge, coupling, field/frame transport and reflection must
+be compared with these identities. Eta and reference phase remain separate.
+
+Reproduction: python3 check_comoving_winding_reflection.py checks both quarters,
+three masses, interior finite-window rank-one and opposite-quarter reflection,
+U^4 != I, and three finite-difference checks of (3). Infinite identities and
+the nonzero-m mismatch are proved analytically above; truncation is not their
+proof. No new Lean proof, physical experiment or ledger promotion is asserted.

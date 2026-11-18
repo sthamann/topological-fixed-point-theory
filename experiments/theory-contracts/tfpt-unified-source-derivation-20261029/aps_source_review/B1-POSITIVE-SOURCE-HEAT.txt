@@ -1,0 +1,101 @@
+EXISTING AP POSITIVE FACTOR TO HEAT MIXTURE, WITH FULL SOURCE ORIENTATION
+30 October 2026. Constructive continuation of B1/B3; no new physical model.
+
+1. Original factor, not a replacement action
+ROOT-CANONICAL-DOUBLE-AND-ORIGINAL-LIFT.txt:48-76 already computes
+ F_AP=Tr[beta E_mu+2log(I+exp(-beta E_mu))], beta=2ell,
+ E_mu=sqrt(B^2+mu^2), for each finite tangential selection; the full-circle
+Fredholm gluing term is defined separately from the divergent bulk.
+At mu=0, on the given charged gamma sector E=|h|, with
+ h=p gamma-i gamma Phi, h^2=p^2+Phi^2, p=n+1/4.
+The same positive factor Q=exp(-beta E) occurs in that existing determinant.
+No statement S_bos=-logPf, new coupling, or independent source is introduced.
+The physical K_car origin, reference, eta and4D action remain separate.
+
+2. Lossless polar source representation
+Let h be the GIVEN selfadjoint tangent source, with its actual domain and a
+gap at0 as in this constant quarter class. Define E=|h| and R=sgn(h), R^2=I.
+The spectral theorem gives Q=exp(-beta E), 0<Q<I, commuting with R.
+The entire Fermi source and crossface block follow exactly:
+ C=(I-R)/2+R Q(I+Q)^-1,
+ X=Q^(1/2)(I+Q)^-1,
+ G=[[I-C,X],[X,C]].
+This is proved separately on the positive and negative h spectral sectors:
+there C=Q/(1+Q) and1/(1+Q), respectively. The crossblock is even in h.
+Conversely C determines k=log((I-C)C^-1)=beta h by its unbounded spectral
+functional calculus, hence determines R and Q=exp(-|k|).
+Thus (R,Q) carries the whole source; Q by itself loses orientation. Indeed
+h and-h give the same Q,X but complementary C. No new sign choice is made:
+R is inherited from the original h, not selected from Q.
+If an original zero mode were present, keep its projection and C=1/2 there;
+the invertible quarter hypothesis avoids this extra bookkeeping here.
+
+This constructs the bounded positive factor that the signed one-particle
+exp(-k) could not supply. It does not identify either with the many-particle
+Fock density, GNS modular operator, or full bosonic spectral action.
+
+3. Exact positive heat representation of the SAME factor
+To test the squared-energy argument set u=(beta E)^2, by functional calculus,
+so Q=F(u) with F(u)=exp(-sqrt(u)). This is an argument conversion on the
+existing factor. It is not a postulate that the physical action uses u.
+For all scalar u>=0 the standard subordination formula gives
+ F(u)=integral_0^infinity exp(-t u)dnu(t),
+ dnu(t)=[1/(2sqrt(pi))]t^(-3/2)exp[-1/(4t)]dt.
+The measure is strictly positive, has total mass1, and is diffuse rather than
+the point mass delta1 associated with exp(-u).
+A scalar Gaussian integral proves the formula; positive bounded spectral
+calculus then gives the corresponding strong operator integral on the
+whole given source. No Fourier or internal dimension cutoff is needed.
+The tangent E here is NOT silently identified with the current whole4D
+D_rel or the full normal-double D; those require the original map.
+
+Primary mathematical context read: Ferguson, Mei, Simanek,
+H-infinity-calculus for semigroup generators on BMO,
+https://arxiv.org/pdf/1701.06623 , introduction and section1 equation3.
+It distinguishes the Poisson e^(-t sqrt(L)) and heat e^(-t L) semigroups and
+their positive subordination. The present application uses the elementary
+selfadjoint spectral identity, not its additional BMO hypotheses.
+
+4. Whole-profile shape differs from the unit-moment exponential
+By u=v^2 and elementary gamma integrals,
+ m0=F(0)=1,
+ m1=integral F(u)du=2 integral v exp(-v)dv=2,
+ m2=integral u F(u)du=2 integral v^3 exp(-v)dv=12.
+The same values follow from integral t^-1dnu=2 and integral t^-2dnu=12.
+Consequently the positive-measure shape invariant is
+ J=m0*m2/m1^2=3,
+whereas exp(-u), with its point heat measure, has J=1.
+For any amplitude a>0 and argument rescaling b>0, F_ab(u)=a F(bu),
+ (m0,m1,m2)->(a m0,a m1/b,a m2/b^2), so J is unchanged.
+No such normalization turns the entire triple(1,2,12) into(1,1,1).
+Equivalently the variance of inverse heat time is12-4=8, not0.
+Thus the positive-source conversion and the previous exact moment theorem
+fit together: one is a diffuse positive measure, the other a unique point.
+This is an exact shape distinction, not a failed numerical fit.
+
+5. Precise consequence for the original source/action bridge
+If the proposed identification is literally the existing positive source
+factor expressed in its squared-energy argument, the profile is the stated
+subordinated one and is not the v259 unit-moment exp(-u) profile, even after
+an overall amplitude and scale change. If the action instead uses the
+linear positive energy as argument, the scalar exp(-u) notation has a
+different meaning; its Seeley moment convention and operator map must be
+transported accordingly. The printed first-order D notation alone cannot
+identify these arguments. v255's displayed moment convention is retained
+as printed, not silently corrected or applied to the wrong variable.
+Nothing here proves that the physical bosonic action MUST equal the
+fermionic gluing functional or this single source factor. These are given
+consumers of the source, not an independently derived whole4D interaction
+measure. The original same-source argument and reference transport remains
+the concrete unresolved equation, now with an explicit positive comparison.
+
+6. Evidence and next step
+check_b1_positive_source_heat.py and B1-POSITIVE-SOURCE-HEAT.json contain18
+successful new controls: exact normalization, inverse-time moments and
+sample subordination values, all required profile moments, scale invariant,
+and actual96 reconstruction of C, X and whole G from (R,Q). The analytic
+spectral theorem above supplies the all-spectrum result; the matrix probes
+are controls rather than an infinite-dimensional proof.
+Retain this source-to-positive-heat map and its orientation in B3.M5.
+No physical B1/B3 parent or complete TFPT solution is thereby closed.
+The new source comparison is not a new reason to rerun the earlier73 tests.

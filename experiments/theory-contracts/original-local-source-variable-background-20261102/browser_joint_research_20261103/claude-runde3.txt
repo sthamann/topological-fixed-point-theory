@@ -1,0 +1,86 @@
+# Amplitudenregel: Rahmungsfreie holomorphe Faktorisierung (RHF)
+
+## 0. Ausgangslage
+
+Wie zuletzt präzisiert: Anomalien und Determinantenlinien legen Krümmung und Transformationsgesetz fest, lassen aber invariante Multiplikatoren frei. Die Frage ist daher, **welche Multiplikatoren die vorhandene markierte E8₁-Quelle allein festlegt**, und ob danach eine einzige zusätzliche Regel ausreicht. SSA ziehe ich in den gerügten Punkten zurück: universeller RP-Satz, Elimination von χ, Trunkierung auf drei Momente, Calderón-Identität, Eindeutigkeit der η-Lagrangeschen, 41 → b₁ als Beweis.
+
+## 1. Was die markierte E8₁-Quelle selbst festlegt
+
+E8₁ ist holomorph: Es gibt genau ein irreduzibles Modul. Der Raum der Konformblöcke hat daher auf jeder Fläche Dimension 1. Das folgt aus der Verlinde-Formel für die triviale modulare Kategorie.
+
+**Satz A.** OPE-Daten, Sewing (Faktorisierung entlang von Schnittkreisen) und die Normierung des Sphärenvakuums legen alle chiralen E8₁-Amplituden eindeutig fest, bis auf genau zwei Daten:
+- **(a)** einen Euler-Multiplikator e^{a·χ(Σ)}. Er ist sewing-verträglich, weil χ beim Kleben entlang von Kreisen additiv ist, und er wird durch die Sphärennormierung festgelegt, nämlich e^{2a}·Z_{S²} = 1;
+- **(b)** die **Rahmung**. Die Blöcke sind Schnitte von λ^{c/2} = λ⁴ mit nichttrivialem Multiplikator, auf dem Torus der T-Phase e^{−2πi·8/24} = e^{−2πi/3}. Eine Trivialisierung braucht eine Rahmung, also ein Datum, das im Seed nicht vorkommt.
+
+**Bei zweiseitiger Paarung** fällt (b) weg: Die Paarung |F|²·(det Im Ω)^{−c/2} mit der kanonischen Hodge-Metrik ist eine Funktion. Dafür entsteht die Weyl-Anomalie c + c̄ = 16 > 0. Die Liouville-Abhängigkeit ist damit festgelegt, aber der lokale Flächen-Gegenterm e^{μ·A} bleibt ein freier invarianter Multiplikator. Er lässt sich mit unitärem Inhalt nicht beseitigen, denn c_tot > 0.
+
+**Entscheidung:** Die markierte E8₁-Quelle legt **nicht** alle Multiplikatoren fest. Es bleibt genau ein Datum: einseitig die Rahmung (ein Torsionsdatum), zweiseitig der Flächenparameter μ (eine reelle Zahl). OPE-Daten der E8₁ allein können das nicht beheben. Kompatible Normal-Dirac-Einfügungen können es nur, wenn sie die Anomalie aufheben. Das führt auf genau ein Prinzip.
+
+## 2. Das neue minimale Prinzip H★ (erste zusätzliche Annahme)
+
+**H★: Die chirale Nahtquelle jedes Lesers ist rahmungsfrei, d.h. c ∈ 24ℤ.**
+
+**Begründung der Auswahl:**
+- Zweiseitige Weyl-Freiheit ist mit unitärem Inhalt unmöglich (c + c̄ > 0); sie wäre ein leeres Prinzip.
+- H★ ist das einzige Anomalieprinzip, das den verbleibenden Multiplikator ohne neuen Parameter beseitigt: Die chirale Amplitude auf dem Torus wird eine modulare **Funktion**, und die zugehörige invertierbare 3D-Randtheorie hängt nicht mehr von der Rahmung ab.
+- H★ verlangt keine Referenz, keine Skala und keinen Cutoff, sondern nur, dass die Amplitude ohne ein dem Seed fremdes Datum definiert ist.
+
+## 3. Was H★ an der vollständigen Quelle auswählt
+
+**Ladungsbilanz.** c(E8₁) = 8 ist fest. H★ verlangt einen kompensierenden chiralen Anteil c ≡ 16 (mod 24), im Minimalfall c = 16.
+
+**Herkunft dieser 16 ohne Setzung, über einen Indexsatz.** An einem Nahtdefekt mit Windungszahl n trägt jede 4D-Dirac-Spezies, die mit Ladung 1 an die windende Phase koppelt, nach Jackiw–Rossi bzw. Callan–Harvey genau |n| chirale 2D-Nullmoden. Die Einheitswindung von P1 ergibt dann
+
+  c_normal = Ind_Naht(D_H; n = 1) = Anzahl der an die windende Phase gekoppelten Spezies.
+
+Das ist ein **berechneter Index** und keine Gleichsetzung von „internem 16“ mit Nullmoden. Die Regel sagt voraus: Ind_Naht(D_H; 1) ≡ 16 (mod 24).
+
+**Die ganze chirale Quelle.** Liefern die 16 chiralen Nahtmoden die Ströme so(32)₁, dann muss die holomorphe Theorie mit c = 24 die Lie-Algebra V₁ ⊇ e8 ⊕ so(32) enthalten. In der Niemeier- bzw. Schellekens-Klassifikation ist das eindeutig das Gitter **E8 ⊕ D16⁺**. Die Spinorklebung von D16 ist dabei durch Holomorphie erzwungen, analog zum Nennerbeweis; die beiden Spinorklassen geben isomorphe Gitter.
+
+**Die Amplitude auf dem Torus** ist dann ohne jeden Multiplikator festgelegt:
+
+  Z₁(τ) = θ_{E8}·θ_{D16⁺}/η²⁴ = E₄·E₄²/Δ = **j(τ)**,
+
+mit konstantem Term 744 = 248 + 496 = dim V₁. Auf höherem Geschlecht legen Sewing und Sphärennormierung den Rest fest. Ohne Ghosts bleibt dort nur die Hodge-Gewichtung, und die ist kanonisch über det Im Ω.
+
+## 4. Der wirkliche Zeitkernel auf der Naht
+
+Für „denselben konformen Vektor“ ist der Generator durch die OPE-Daten erzwungen. Nach Sugawara, mit dualer Coxeter-Zahl h∨ = 30 sowohl für E8 als auch für D16, ist
+
+  T = (1/62)·[ Σ_{e8} :J^aJ^a: + Σ_{so(32)} :J^bJ^b: ],
+
+was c = 248/31 + 496/31 = 24 ergibt. Für einen Leser ist der Nahttransfer
+
+  **T_s = e^{−s(L₀ − 1)}**,  wegen c/24 = 1.
+
+Zur Abgrenzung: Die Coxeter-Uhr (Ordnung 30) und L₀ sind verschiedene Strukturen. Dass beide mit h∨ = 30 verträglich sind, ist **keine** Gleichsetzung; ebenso wenig wird modulare oder OS-Zeit mit der Clock-Zeit identifiziert. Für die Volumenzeit verlangt RHF eine Verträglichkeit zwischen Volumen und Rand: H_adm muss auf dem Nullmodensektor der Naht als L₀ wirken. Für freie chirale Moden ist das automatisch erfüllt, denn der Sugawara-Operator von so(2N)₁ ist der freie Fermion-Energieoperator. Ein zusätzlicher Zeitparameter tritt nicht auf.
+
+## 5. Bis zu S_adm: was ausgewählt wird und was nicht
+
+RHF legt in S_adm Folgendes fest:
+
+- **(i) Die Index-Bedingung an den Fermionsektor.** Die originale Kopplung Φ(H) = V(U)·(r·D_Y + D_MR)·V(U)* muss auf dem Hintergrund mit Einheitswindung Ind ≡ 16 (mod 24) pro Leser liefern. Das bindet die Rangstruktur der Kopplung an die windende Phase. Ein Satz neuer Kopplungen wird nicht eingeführt.
+- **(ii) Die topologischen Zuflussterme.** Pro Seite ergibt sich ein ganzzahliges gravitatives Chern-Simons-Niveau aus c/24 = 1. Zweiseitig heben sich die Terme auf. Freie topologische Multiplikatoren gibt es keine.
+- **(iii) Die Amplituden der Nahtquelle** auf allen Geschlechtern, eindeutig.
+
+**Nicht ausgewählt** werden lokale, nicht topologische Volumendichten wie das Higgs-Potential oder Eichkopplungen außerhalb der Naht. Sie sind beim Sewing additiv und von der Nahtamplitude unabhängig. Hier muss die übrige originale Struktur (α-Gleichung, Seed, Yukawas) greifen. Dass RHF diesen Teil löst, behaupte ich nicht.
+
+**Konsequenz für die gemeinsame Lösung:** Die Quellwahl zerfällt sauber in zwei Teile:
+- einen **topologischen bzw. Nahtteil**, der unter H★ vollständig und multiplikatorfrei festgelegt ist;
+- einen **lokalen Volumenteil**, für den eine Amplitudenregel prinzipiell nicht ausreicht.
+
+## 6. Erste Festlegung mit Originaldaten und Widerlegbarkeit
+
+**(T1) Index, der entscheidende Test.** Man berechnet Ind_Naht(D_H; n = 1) für das originale Normal-Dirac-Paket mit der tatsächlichen Kopplung an die windende Phase.
+
+| Ergebnis | Bedeutung |
+|---|---|
+| ≡ 16 (mod 24) | H★ ist mit der markierten E8₁ konsistent, und die Nahtquelle ist E8 ⊕ D16⁺ |
+| 48 (drei volle Familien) | c = 56 ≡ 8. H★ ist mit **einer** markierten E8₁ unverträglich und widerlegt, außer die Kopplung an die Windung hat genau Rang 1 im Familienraum |
+| 3 (nur ν_R-Majorana) | H★ ist widerlegt |
+
+**(T2) Torus-Charakter.** Die Ein-Leser-Torusquelle muss j(τ) sein. Unter H★ ergeben sich 744 Zustände vom Gewicht 1 (248 aus E8, 496 aus der Normalmode-so(32)), nicht 248.
+
+**(T3) Euler-Normierung.** Es muss Z_{S²} = 1 aus der originalen Normierung des OS-Vakuums folgen.
+
+**Wenn H★ fällt**, ist das Ergebnis trotzdem präzise: Der einzige verbleibende Multiplikator ist dann die Rahmung (einseitig) bzw. der Flächenparameter μ (zweiseitig). Jede weitere Ursprungsregel muss genau dieses eine Datum bestimmen und sonst nichts.

@@ -16,7 +16,7 @@ TFPT verbindet zwei Wege vom selben Ursprung. Das Viermarkenobjekt liefert die d
 | Zeit und Geometrie. Die einzelnen Modularzeiten sind auf überlappenden Paaralgebren unverträglich. Die gemeinsame absolute Modularzeit hat zweiseitiges Spektrum. Der ursprüngliche bewegte Q Schnitt hat lokal Rang eins, nach Integration Rang drei. Am 12. November bleibt der markierte Fünfertaktquotient bei echter Ortsbewegung und Stresseinfügung −1/5. | Geometrische Information muss vor der Ortsintegration am tatsächlichen lokalen Träger nachgewiesen werden. |
 | Gravitation und Gesamtantwort. Auf festem R032 Verlauf ist ein gemischter Higgs, Hyperladungs und Radiuskontrast berechnet. Das Öffnungswinkelsignal am Horizont benötigt die mitbewegte Referenz. Die bedingte D₅ Kinetik und der weiche Spin 2 Vergleich setzen einen gemeinsamen physischen Träger voraus. | Die konforme Stressantwort ist eine Kontrolle. Ein physischer Lorentzkegel, der universelle Spin 2 Pol und der Alpha Anschluss müssen aus derselben ausgewerteten Quelle folgen. |
 
-[Aktiver P0 Plan](../../../docs/research/fundamental-plan/PLAN.md:3) · [Tagesregister](../../../docs/research/fundamental-plan/RESULTS.md:4773) · [CP Paar](../../../docs/research/fundamental-plan/TFPT-ORIGINAL-CP-PAAR-20261111.md) · [Originalquellenvertrag](../../../docs/research/fundamental-plan/P0-ORIGINALQUELLE-20261111.md)
+[Aktiver P0 Plan](/Users/stefanhamann/Projekte/tfpt-theoryv4/docs/research/fundamental-plan/PLAN.md:3) · [Tagesregister](/Users/stefanhamann/Projekte/tfpt-theoryv4/docs/research/fundamental-plan/RESULTS.md:4773) · [CP Paar](/Users/stefanhamann/Projekte/tfpt-theoryv4/docs/research/fundamental-plan/TFPT-ORIGINAL-CP-PAAR-20261111.md) · [Originalquellenvertrag](/Users/stefanhamann/Projekte/tfpt-theoryv4/docs/research/fundamental-plan/P0-ORIGINALQUELLE-20261111.md)
 
 ## 1. Die Einheitswindung gehört zur markierten Geschichte
 
@@ -36,7 +36,7 @@ für 0 ≤ r ≤ 1. Bei r=1 ist Uᵣ der Torusumlauf. Bei r=0 ist er konstant. B
 
 **Verdikt.** Bestanden als markierte topologische Klassifikation der ursprünglichen Torusschleifen. Widerlegt als Windung aus dem Mittelstrom allein. Die Viertelphase zeigt nur die Parität, daher haben h und 3h dieselbe Halbphase und verschiedene Indizes. Die Topologie gibt eine primitive Klasse, sobald der Originalprozess die Endlinien trägt und primitive Schleifen auszeichnet. Der physische Test ist die Erhaltung dieses U(1) Charakters auf dem tatsächlichen reflektierten P1 Quotienten. Erst dann lässt sich entscheiden, ob die ursprüngliche Quelle h, −h oder eine andere Geschichte realisiert.
 
-[Ursprüngliches geladenes Wort und serielle Windung](../../../docs/research/fundamental-plan/TFPT-E8-P1-LADUNGSWINDUNG-20261112.txt) · [Atiyah, Patodi und Singer zum Spektralfluss](https://repository.ias.ac.in/33549/)
+[Ursprüngliches geladenes Wort und serielle Windung](/Users/stefanhamann/Projekte/tfpt-theoryv4/docs/research/fundamental-plan/TFPT-E8-P1-LADUNGSWINDUNG-20261112.txt) · [Atiyah, Patodi und Singer zum Spektralfluss](https://repository.ias.ac.in/33549/)
 
 ## 2. Vier euklidische Richtungen aus den Fünfertakten
 
@@ -48,7 +48,7 @@ für 0 ≤ r ≤ 1. Bei r=1 ist Uᵣ der Torusumlauf. Bei r=0 ist er konstant. B
 
 **Verdikt.** Ausgeschlossen für die geometrische Identifikation im selben vierdimensionalen Tangentialraum, wenn beide Takte den A₆ Quotienten auf diesem Raum realisieren. Auch der einzelne feste Takt liefert in der Minimaldarstellung mit einer normalisierenden Involution keine Spiegelung an einer Zeitnullfläche. Der echte antilineare Austausch der beiden Marken im Gaußraum bleibt als interner Operator erhalten. Ein anderer Ursprung der Ortsbewegung muss durch die Wirkung auf ganze lokale Algebren sichtbar werden.
 
-[Originale Fünfertakte und markierter Austausch](../../../docs/research/fundamental-plan/TFPT-ZWEI-FUENFERTAKTE-AM-ORIGINALRAND-20261112.txt) · [Osterwalder und Schrader zur euklidischen Rekonstruktion](https://projecteuclid.org/journals/communications-in-mathematical-physics/volume-42/issue-3/Axioms-for-Euclidean-Greens-functions-II-with-an-Appendix-by/cmp/1103899050.pdf) · [Rastanawi und Rote zu vierdimensionalen Punktgruppen](https://page.mi.fu-berlin.de/rote/Papers/pdf/Towards%2Ba%2Bgeometric%2Bunderstanding%2Bof%2Bthe%2B4-dimensional%2BPoint%2BGroups.pdf)
+[Originale Fünfertakte und markierter Austausch](/Users/stefanhamann/Projekte/tfpt-theoryv4/docs/research/fundamental-plan/TFPT-ZWEI-FUENFERTAKTE-AM-ORIGINALRAND-20261112.txt) · [Osterwalder und Schrader zur euklidischen Rekonstruktion](https://projecteuclid.org/journals/communications-in-mathematical-physics/volume-42/issue-3/Axioms-for-Euclidean-Greens-functions-II-with-an-Appendix-by/cmp/1103899050.pdf) · [Rastanawi und Rote zu vierdimensionalen Punktgruppen](https://page.mi.fu-berlin.de/rote/Papers/pdf/Towards%2Ba%2Bgeometric%2Bunderstanding%2Bof%2Bthe%2B4-dimensional%2BPoint%2BGroups.pdf)
 
 ## 3. Die Geometrie aus den Stromantworten rekonstruieren
 
@@ -64,7 +64,7 @@ Eine positive lokale Feldnormierung multipliziert D zeilen und spaltenweise mit 
 
 **Verdikt.** Exakte Rekonstruktion für die Einzelantworten des ursprünglichen Kreises. Ein nichtverschwindender Rest auf der marginalisierten Antwort kann schon von einem Gemisch eindimensionaler Geschichten kommen. Der Test gehört deshalb auf die ortsaufgelöste Form bei festgehaltener Geschichte, soweit diese aus der ursprünglichen Quelle zugänglich ist. Eine Verletzung trennt diese Form von der Einkreisform. Für drei Raumrichtungen bleibt der unabhängige lokale Rangtest am selben markierten Schnitt entscheidend.
 
-[Originale Stromform und getrennte Kragen](../../../docs/research/fundamental-plan/TFPT-E8-VERKLEBUNG-GEMEINSAME-ZEIT-20261111.txt) · [Ursprünglicher lokaler Schnittkommutator](../../../docs/research/fundamental-plan/TFPT-SCHNITTFORM-UND-RAUMRANG-20261111.txt) · [Carpi, Kawahigashi, Longo und Weiner zum lokalen affinen Netz](https://arxiv.org/abs/1503.01260)
+[Originale Stromform und getrennte Kragen](/Users/stefanhamann/Projekte/tfpt-theoryv4/docs/research/fundamental-plan/TFPT-E8-VERKLEBUNG-GEMEINSAME-ZEIT-20261111.txt) · [Ursprünglicher lokaler Schnittkommutator](/Users/stefanhamann/Projekte/tfpt-theoryv4/docs/research/fundamental-plan/TFPT-SCHNITTFORM-UND-RAUMRANG-20261111.txt) · [Carpi, Kawahigashi, Longo und Weiner zum lokalen affinen Netz](https://arxiv.org/abs/1503.01260)
 
 ## Anschluss an die vollständige Herleitung
 

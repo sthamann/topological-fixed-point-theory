@@ -1,0 +1,278 @@
+SPECTRAL SEAM RECONSTRUCTION FROM THE ORIGINAL OPERATOR PAIR
+==========================================================
+Date: 2026-10-25
+Contract: primitive-seam-operator-reconstruction-20261025
+Verdict: PROVED under the explicit operator hypotheses below.
+Original TFPT application: CONDITIONAL; the same-pair covariance and index
+identification are not supplied by the original passages reviewed here.
+
+Purpose
+-------
+The archived primitive seam theorem fixes a winding number and a spectral-flow
+class. The electromagnetic closure later invokes a normalized seam vector as
+if that theorem had already selected its line. The following theorem gives a
+positive repair: construct the line and its whole circle channel from the
+already supplied self-adjoint boundary operator B and seam unitary u.
+
+No external Hardy space, chosen rank-one bundle, new source profile, or
+identification of the Calderon projection with a quantum covariance is used.
+The theorem concerns one-particle operators; second quantization and the
+physical interpretation of the original time remain separate interfaces.
+
+1. Hypotheses on the SAME original Hilbert space
+------------------------------------------------
+Let H be a complex Hilbert space, B a self-adjoint operator on H and u a
+unitary operator on H. Assume:
+
+ (H1) Strong time covariance, for every real t,
+
+      exp(itB) u exp(-itB) = exp(it) u.                  (1)
+
+ (H2) 0 is not in the spectrum of B.
+
+ (H3) With P_B = 1_(0,infinity)(B), the compression
+
+      S = P_B u P_B : P_B H -> P_B H
+
+      is Fredholm and ind(S) = -1.
+
+Units are chosen so that the shift in (1) is one. If the actual source uses a
+positive shift omega, the rescaling B/omega must be declared and justified
+using that same source; this is not a choice of a new physical clock.
+
+Conclusion: for exactly one epsilon in (0,1), the pair is unitarily equivalent
+to
+
+      H = L2(S1,dtheta/(2 pi)),
+      B = -i partial_theta + epsilon,   Dom(B) = H1(S1),
+      u = multiplication by exp(i theta),
+      P_B = projection onto the Fourier modes n >= 0.    (2)
+
+The canonical primitive seam line is
+
+      Pi = P_B - u P_B u* = 1_(0,1](B),
+      rank(Pi) = 1.                                   (3)
+
+Choosing a unit vector psi in this line only fixes an irrelevant common phase
+for the basis u^n psi. Both Pi and every subspace in the construction are
+independent of that phase. The conclusion classifies this operator class;
+it does not assert that every primitive TFPT boundary must satisfy (H1)--(H3).
+
+2. Domain-safe covariance and the compression
+---------------------------------------------
+From (1),
+
+      u* exp(itB) u = exp(it) exp(itB) = exp(it(B+1)).
+
+Uniqueness of the self-adjoint generator implies
+
+      u Dom(B) = Dom(B),
+      u* B u = B+1,
+      B u xi = u(B+1)xi       for xi in Dom(B).          (4)
+
+Thus the spectral functional calculus gives, for every Borel set Delta,
+
+      u E_B(Delta) u* = E_B(Delta+1).                   (5)
+
+In particular,
+
+      u P_B u* = E_B((1,infinity)) <= P_B.              (6)
+
+Therefore u leaves P_B H invariant and S is simply u restricted to P_B H.
+It is an isometry, with
+
+      S* S = I_(P_B H),
+      S S* = E_B((1,infinity))|_(P_B H).
+
+The defect projection in (3) is consequently an orthogonal spectral
+projection. A formal commutator [B,u]=u on an unspecified set of vectors is
+not a replacement for (1) or a proven equivalent common-core theorem.
+
+3. The index constructs the line, with its sign fixed
+----------------------------------------------------
+An isometry has zero kernel and closed range. Hence
+
+      ind(S) = -dim ker(S*) = -rank(Pi).
+
+Hypothesis (H3) yields rank(Pi)=1. Since Pi is a rank-one spectral projection
+on the bounded interval (0,1], its range lies in Dom(B), and B acts there by
+one scalar epsilon with 0 < epsilon <= 1. Let psi be any unit vector in it:
+
+      B psi = epsilon psi.
+
+The endpoint epsilon=1 would give B u^(-1)psi=0 by (4), contradicting (H2).
+Thus 0 < epsilon < 1.
+
+The sign in (H3) is the usual Hardy orientation: multiplication by z has
+zero kernel and a one-dimensional cokernel on the nonnegative Fourier modes.
+An oppositely oriented original seam must be paired with u* and the
+correspondingly reversed spectral-flow convention. An orientation convention
+cannot supply the missing relation between B and u.
+
+4. Completeness on the original H, not an added model space
+----------------------------------------------------------
+Define e_n=u^n psi for all n in Z. Equations (4)--(5) imply
+
+      B e_n = (n+epsilon)e_n,
+      E_B((n,n+1]) = u^n Pi u^(-n).                    (7)
+
+These projections have pairwise orthogonal ranges and each has rank one.
+Since the half-open intervals (n,n+1] partition the real line, countable
+additivity of the spectral measure gives
+
+      sum_(n in Z) E_B((n,n+1]) = I    strongly.         (8)
+
+Consequently {e_n:n in Z} is an orthonormal basis of the ENTIRE H. There is
+no unseen unitary Wold summand and no extra sector to be removed. The Fourier
+map W e_n = exp(in theta) is unitary, W u W* = M_z, and the spectral theorem
+gives exactly
+
+      Dom(W B W*)
+        = {sum c_n exp(in theta): sum |n+epsilon|^2 |c_n|^2 < infinity}
+        = H1(S1),
+
+      W B W* = -i partial_theta+epsilon.                (9)
+
+This proves (2), including the unbounded operator domain. Compact resolvent,
+a one-dimensional base manifold, a preselected scalar bundle, and purity of
+an independently supplied projection were not assumed. In this particular
+operator class they follow, or become unnecessary, after (H1)--(H3).
+
+5. What selects the quarter offset
+-----------------------------------
+If the SAME original B additionally satisfies
+
+      exp(2 pi i B) = i I,                              (10)
+
+then exp(2 pi i epsilon)=i and 0<epsilon<1 uniquely give epsilon=1/4.
+The value -i instead selects epsilon=3/4. Neither value is a consequence of
+the winding number, Fredholm index, or the covariance (1) alone.
+
+The determinant clutching function exp(i phi) on a normal two-sphere, the
+normal spinor half-angle exp(i phi/2), and (10) have different full-turn
+phases. They cannot be equated without the actual bundle/representation map.
+In particular a four-step bookkeeping clock is not by itself the monodromy
+of B. This theorem requires the latter if the quarter offset is claimed.
+
+6. Relation to the existing electromagnetic rank-one formula
+------------------------------------------------------------
+Once (H1)--(H3) are proved on the original pair, Pi in (3) can replace a freely
+named |psi_Sigma><psi_Sigma|. For |q|<1 the trace is then well-defined:
+
+      Tr log(I-q Pi) = log(1-q),
+      exp[-(5/4) Tr log(I-q Pi)] = (1-q)^(-5/4).        (11)
+
+Equation (11) proves only the rank-one trace evaluation from the operator
+data. It does not derive the factor 5/4, the interpretation of q, the physical
+normalization, or the full electromagnetic generating functional; those need
+the existing independent TFPT arguments. The trace alone cannot distinguish
+two different rays of equal rank. Equation (3), rather than the scalar trace,
+is what would remove that ambiguity.
+
+7. How to test the ORIGINAL spectral-flow claim
+-----------------------------------------------
+Original source:
+
+ documents/archive--tfpt-45--source_extracts--03_em_flavor_source/sections/
+ 001-section-kernel-numerics-and-electromagnetic-closure.tex:9-45
+
+gives [u_Sigma]=1 in K1(S1), SF(U_Sigma)=1, Delta_Sigma=2 pi and the numerical
+c3 and phi_base evaluations. At lines 94-122 it subsequently calls a
+normalized primitive seam mode 'singled out' by that theorem. The theorem
+does not exhibit a vector, spectral projector or a Fredholm compression of
+the displayed tangential operator B_Sigma.
+
+The boundary-core source separately supplies B_Sigma and a Calderon
+projection. It does not display the strong covariance (1) or the actual
+same-pair index in (H3). A sufficient repair would identify, with all domains
+and signs, the original path with
+
+      B_t=B+t, 0<=t<=1,       B_1=u* B u,
+      SF(B_t)=+1,
+      ind(P_B u P_B)=-SF(B_t)=-1.                     (12)
+
+The displayed path uses the same B and u as (1); a different representative
+having the same abstract K1 class is not enough. One may prove (H3) directly
+instead of using (12). In the reconstructed model, exactly the eigenvalue
+epsilon-1 crosses zero upward along B+t, so the signs in (12) agree.
+
+The new premise relative to earlier scalar-circle studies is the direct
+operator relation on the original Hilbert space, rather than choosing the
+circle, line bundle, source, and clock first. If the original full B_Sigma
+fails this relation, the theorem cannot be applied to it. Restriction to a
+sector is allowed only after the original construction supplies that sector
+and its reducing/source/time properties; no projector is added by fiat.
+
+8. Locality, fields, and the full TFPT completion boundary
+----------------------------------------------------------
+The unitary W identifies C*(u) with continuous functions on S1, including
+continuous functions supported in proper arcs. The Borel arc projections
+1_I(u) belong to W*(u), not to C*(u): the connected circle has no nontrivial
+continuous projection-valued scalar functions. This reconstructs a circle
+coordinate algebra. It does not identify those arcs with the original
+spacetime regions or prove that the original locality/reflection maps agree.
+
+Ordinary complex CAR quantization of H is mathematically available for any
+complex H. Its physical use here must still be tied to the original graded
+field algebra, full source functional and the original positive time. If that
+same-time full CAR ground-state interface is supplied, the existing
+GROUND-STATE-SOURCE-REDUCTION theorem forces the negative-B polarization and
+all Wick moments. No independently tuned experimental pulse is required.
+
+The odd CAR fields may belong to a graded charged field algebra F; they need
+not preserve the physical admissible subspace. Physical observables are
+obtained by the actual invariant/admissible restriction. Requiring the odd
+field algebra itself to lie inside A_adm would impose an unjustified extra
+condition.
+
+The Calderon Cauchy-data projection P_C is not used anywhere in this proof.
+No equality P_C=P_B, or antiunitary complement relation for P_C, is required
+for ordinary complex CAR. Those identities would matter only for an
+additional, explicitly proposed identification of classical Cauchy data with
+a particular self-dual quantum polarization. The original B,u pairing is the
+smallest sufficient operator test pursued here; it is not a no-go theorem for
+all alternative TFPT quantizations.
+
+The operator theorem and the full-moment OS repair do not close the coupled
+four-dimensional source, interactions, generation/mirror selection, physical
+state, or infrared universality. In the original research contracts the
+consistent local lattice route is allowed; an exact continuum OS limit is an
+additional strengthening, not a universal prerequisite for that route.
+
+Decision-relevant outcome
+--------------------------
+The rank-one seam mode is no longer a vague free choice within the stated
+operator class: Pi=1_(0,1](B), and the complete channel is generated by u^n.
+The first decisive original-source test is (1) together with the SAME-pair
+index (H3). Quarter phase, spacetime localization and the full graded source
+functional must be identified in their proper types. None is replaced by a
+matching dimension, topological number, or finite numerical example.
+
+9. Why winding and the existing offset cannot supply the covariance
+-------------------------------------------------------------------
+The distinction persists inside a fixed circle Hilbert space with a fixed
+quarter-shifted B, without changing its CAR state. Put
+
+      B=-i partial_theta+1/4,
+      b_a(z)=(z-a)/(1-a z),  u_a(z)=z^2/b_a(z), 0<a<1/3.
+
+The unimodular smooth u_a has winding 2-1=1. Its angular derivative is
+
+      d arg(u_a)/dtheta = 2-(1-a^2)/|exp(i theta)-a|^2 > 0,
+
+because the maximum of the subtracted Poisson kernel is (1+a)/(1-a)<2.
+Nevertheless
+
+      u_a* B u_a-B = d arg(u_a)/dtheta
+
+is nonconstant. Hence (H1) fails while the winding and quarter offset agree.
+With the same Hardy cut, the negative Fourier coefficients of u_a are
+(1-a^2)a^(m+1) at z^(-m), m>=1. Thus
+
+      ||(1-P_B)u_a e_0||^2 = a^4(1-a^2) > 0.
+
+At a=1/4 this equals 15/4096. The Toeplitz index remains -1 by its actual
+circle-symbol pairing, but the compression is not an isometry. This is a
+counterexample to inferring (H1) or isometry from that index/winding/offset
+alone. It is not a pair of complete TFPT models and does not exclude an
+additional original source rule which identifies the correct representative.

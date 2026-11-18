@@ -1,0 +1,336 @@
+PAIR INDEX AND THE RELATIVE SEAM DETERMINANT
+============================================
+
+25 October 2026. Independent analytic review. No Atlas, index, paper or
+existing contract was changed. This note reviews only the ordinary Fredholm
+determinant and its precise TFPT scope.
+
+Verdict
+-------
+
+The proposed theorem is correct after making its hypotheses and orientation
+explicit.
+
+Let P and Q be orthogonal projections on the same Hilbert space, assume
+Q-P is trace class, and put
+
+  k=Tr(Q-P).                                                (1)
+
+Then k is an integer pair index with the sign convention in (1), and for
+every |z|<1,
+
+  det_F[(I-zQ)(I-zP)^(-1)] = (1-z)^k.                      (2)
+
+The difference Q-P need not be positive or finite rank. In particular, a
+primitive value k=1 fixes the scalar factor 1-z without selecting a primitive
+line, a defect vector or a rank-one transfer operator.
+
+If Q=UPU* for a unitary U satisfying Q-P trace class and if C is a positive
+contraction with C-P trace class, the exact three-factor cancellation gives
+
+  det_F[(I-z UCU*)(I-zC)^(-1)] = (1-z)^k.                  (3)
+
+Thus the existing faithful KMS theorem extends from the old unit shift and its
+integer powers to every unitary in the same restricted polarization class.
+This is a genuine strengthening of the present contract. It weakens the need
+for the specially named primitive ray only when the requested output is the
+single scalar determinant response.
+
+It does not reconstruct the primitive vector, transfer spectrum, state
+preparation or the operator U_Sigma^min. It also does not derive the original
+coefficient 5/4. An ordinary pair index is integral. The original formula uses
+the already separate carrier weight B gamma=5/4 multiplying the logarithm.
+
+1. Projection-pair proof and sign
+---------------------------------
+
+Write
+
+  A_Q(z)=I-zQ,       A_P(z)=I-zP,
+  R(z)=A_Q(z) A_P(z)^(-1).                                (4)
+
+For |z|<1 both inverses exist. Moreover
+
+  R(z)-I=-z(Q-P)A_P(z)^(-1)                               (5)
+
+is trace class, so its ordinary Fredholm determinant is defined.
+
+Direct differentiation gives
+
+  R'(z)R(z)^(-1)
+    =A_Q(z) [(P-Q)/(1-z)] A_Q(z)^(-1).                    (6)
+
+For completeness, differentiate A_Q A_P^(-1), multiply on the right by
+A_P A_Q^(-1), and use
+
+  A_P^(-1)P=P/(1-z),       QA_Q^(-1)=Q/(1-z).
+
+Since P-Q is trace class, cyclicity against the bounded invertible A_Q gives
+
+  Tr[R'R^(-1)]
+    =Tr(P-Q)/(1-z)
+    =-k/(1-z).                                             (7)
+
+The Fredholm Jacobi formula and det_F R(0)=1 now imply on the analytic branch
+in the unit disk
+
+  log det_F R(z)=k log(1-z),                               (8)
+
+which is (2).
+
+The sign is fixed by the stated order of the relative pair. On the actual old
+negative sea
+
+  P=1_(B_a<0),       u=M_z,       uPu*=P+Pi_0,
+
+one has Q-P=Pi_0 and k=+1, hence 1-z. For the complementary positive Hardy
+projection the same u gives k=-1 and the ordered factor is (1-z)^(-1).
+Reversing U or reversing the ordered determinant also reverses k.
+
+The integrality in (1) is the standard index theorem for a trace-class pair
+of projections. With the Avron, Seiler and Simon convention
+ind(P,Q)=Tr(P-Q), the present k equals -ind(P,Q). The bibliographic source is
+
+  J. Avron, R. Seiler, B. Simon,
+  The Index of a Pair of Projections,
+  Journal of Functional Analysis 120 (1994), 220-237,
+  DOI 10.1006/jfan.1994.1031.
+
+The determinant identity itself follows from the short calculation above and
+does not require a separate finite-rank reduction.
+
+2. Exact extension from P to any trace-class covariance
+--------------------------------------------------------
+
+Assume now
+
+  0 <= C <= I,       C-P in L1,
+  Q=UPU*,            Q-P in L1.                            (9)
+
+The phrase any U below always means a unitary satisfying the second condition
+in (9). It does not mean every unitary on the Hilbert space.
+
+Put
+
+  A_C=I-zC,       A_UC=I-zUCU*.
+
+Then UCU*-C is trace class because
+
+  UCU*-C=U(C-P)U*+(Q-P)+(P-C).                            (10)
+
+The relative operator has the exact factorization
+
+  A_UC A_C^(-1)
+   =[A_UC A_Q^(-1)]
+    [A_Q A_P^(-1)]
+    [A_P A_C^(-1)].                                      (11)
+
+Every factor is identity plus trace class. The first factor is the unitary
+conjugate of
+
+  A_C A_P^(-1),
+
+while the third factor is its inverse. Fredholm determinant multiplicativity
+and unitary invariance cancel their determinants exactly. The middle factor is
+the projection pair in (2). This proves (3) without commutativity of C with P
+or U and without a sign assumption on UCU*-C.
+
+Positivity of C is the natural covariance hypothesis and ensures the displayed
+inverses for |z|<1. Algebraically, the same proof only needs bounded C and an
+open z domain on which the inverses exist.
+
+3. Smooth scalar winding on the actual circle
+----------------------------------------------
+
+Let P=P_- be the negative Fourier projection on L2(S1), and let U=M_u for a
+smooth scalar function u:S1->U(1). Write
+
+  u(theta)=sum_j u_j exp(i j theta).
+
+For one Fourier monomial, [P,M_(z^j)] is a partial isometry of rank |j|.
+Consequently
+
+  ||[P,M_u]||_1 <= sum_j |j| |u_j|.                       (12)
+
+The right side is finite for smooth u. Since
+
+  UPU*-P=[U,P]U*,                                         (13)
+
+the projection pair is trace class. The Toeplitz pair-index theorem, with the
+negative-sea orientation used here, gives
+
+  Tr(UPU*-P)=wind(u).                                      (14)
+
+Equations (3) and (14) therefore yield
+
+  det_F[(I-z UCU*)(I-zC)^(-1)]
+    =(1-z)^(wind(u))                                      (15)
+
+for every positive contraction C in the trace-class polarization class of P.
+For u(theta)=exp(i theta), wind(u)=1 and (15) is the old factor. For the
+positive Hardy projection the sign in (14) is reversed.
+
+Smoothness is stronger than necessary. The operative sufficient condition in
+(12) is the weighted Fourier summability sum |j||u_j|<infinity. Mere
+boundedness or continuity of u does not by itself prove trace class.
+
+4. Deduplizierung against the present Atlas and contract
+--------------------------------------------------------
+
+The current Atlas finding
+
+  finding:old-seam-relative-determinant-is-stable-in-faithful-kms-class
+
+already records the following narrower result:
+
+  * C-P trace class gives 1-z for the actual old shift u;
+  * the faithful C_beta=(I+exp(beta B_a))^(-1) belongs to that class;
+  * integer powers u^m give (1-z)^m;
+  * full carrier plus complement transport retains the same determinant.
+
+The reviewed proofs are in
+
+  GRADED-DETERMINANT-SOURCE.txt:435-566,
+  KMS-AND-CARRIER-TRANSPORT.txt:38-159,
+  RELATIVE-PAIRING-REVIEW.txt:411-475.
+
+The new theorem does not repeat the faithful KMS calculation. Its additional
+content is:
+
+  * arbitrary trace-class projection pairs, including indefinite and
+    infinite-rank differences;
+  * arbitrary restricted unitaries U rather than only the translation subgroup
+    generated by M_z;
+  * the exact derivative (6)-(7);
+  * the smooth scalar loop criterion and the full winding formula (15);
+  * the conclusion that scalar determinant matching cannot select a ray.
+
+The finite NS cyclic calculation in NS-CONTINUUM-WINDING-LIMIT.txt is an exact
+control. There the finite projection pair has one infrared and one ultraviolet
+crossing, hence Tr(Q_N-P_N)=0 and its ordinary determinant is one. Strong escape
+of the ultraviolet vector does not change this finite pair index and does not
+give trace-norm convergence. This agrees with (2); it is not an exception.
+
+The reflected two-face pair is another control. Its two orientations have
+indices k and -k, so their ordinary product determinant is one. Selecting one
+labeled face is therefore still part of the directed original readout. The pair
+index theorem does not create a chiral or sheet projection.
+
+5. Susceptibility and multiparameter scope
+------------------------------------------
+
+For the ordinary determinant in (2), the complete scalar logarithmic response
+is
+
+  L(z)=log det_F R(z)=k log(1-z),
+  L'(z)=-k/(1-z),
+  L''(z)=-k/(1-z)^2.                                     (16)
+
+Thus the projection geometry contributes only the locally constant integer k.
+Smooth variation of U within one restricted-unitary component cannot generate
+a continuously varying susceptibility: k stays constant until the
+trace-class/Fredholm hypotheses fail or a different component is crossed.
+
+If a physical parameter lambda enters only through a supplied scalar
+z=z(lambda), then the theorem gives only the chain rule
+
+  partial_a L=-k (partial_a z)/(1-z),
+
+  partial_a partial_b L
+   =-k[(partial_a partial_b z)/(1-z)
+       +(partial_a z)(partial_b z)/(1-z)^2].               (17)
+
+Equation (17) does not determine z(lambda), a metric on parameter space, or
+independent cross susceptibilities. Several source variables, several
+noncommuting insertions, or a matrix-valued fugacity require a new determinant
+identity. They do not follow from the one-variable pair index.
+
+6. The 5/4 carrier weight is not an ordinary index
+---------------------------------------------------
+
+An ordinary projection-pair determinant has the integer exponent k. Therefore
+
+  k=5/4
+
+is impossible in this theorem. The original v42 formula instead has the
+well-typed structure
+
+  W_Sigma(z)=-B gamma tr_adm log(1-z U_Sigma^min),
+  B gamma=5/4.                                             (18)
+
+If the scalar determinant supplied by the pair theorem has k=1, then retaining
+the already declared carrier coefficient gives
+
+  exp W_Sigma=(1-z)^(-5/4).                               (19)
+
+This is a valid conditional compression of the scalar response. The pair index
+supplies 1-z; it neither derives B gamma nor turns 5/4 into a topological index.
+
+A usual graded determinant only replaces k by an integer signed index and does
+not produce 5/4. A normalized or weighted trace could produce rational powers,
+but it would be an additional functional. Its cyclicity, determinant
+multiplicativity, branch and physical source would have to be specified and
+proved. No such weighted determinant is needed for (19), because the original
+already places B gamma outside tr_adm.
+
+7. Exact TFPT impact
+--------------------
+
+For the scalar seam factor alone, the sufficient data are now smaller:
+
+  * one original polarization P;
+  * one positive covariance C with C-P trace class;
+  * one supplied unitary U with UPU*-P trace class;
+  * primitive oriented pair index Tr(UPU*-P)=1.
+
+These data prove the base factor 1-z. Positivity, rank one and a distinguished
+defect vector are unnecessary. Therefore a proof which uses only the scalar
+factor must not claim that this factor has reconstructed psi_Sigma or selected
+U_Sigma^min.
+
+The special ray remains necessary wherever the theory asks for more than that
+scalar, for example a primitive state, a finite transfer spectrum, matrix
+elements, repeated interventions, a carrier embedding or a prepared physical
+mode. Different restricted unitaries with the same pair index give the same
+determinant and may have different operator defects. Equation (2) deliberately
+forgets those differences.
+
+The smallest decisive original test is consequently no longer a rank-one test.
+It is the oriented pair-index test on the actual supplied boundary operation:
+
+  C_Sigma-P in L1,
+  U_Sigma P U_Sigma*-P in L1,
+  Tr(U_Sigma P U_Sigma*-P)=1.                              (20)
+
+If (20) holds, the scalar determinant portion of the seam response is closed
+without selecting a ray. The separate source law z=q(alpha), the carrier
+coefficient B gamma=5/4 and every nonscalar physical readout retain their own
+existing provenance requirements. This is the precise gain of the theorem,
+not a new full electromagnetic or TFPT closure.
+
+Independent checks
+------------------
+
+A finite-dimensional numerical check used noncommuting projection pairs with
+rank differences 2, 0 and -3 and two complex values of z. It verified (2),
+the full operator equality (6) and trace sign (7) to below 1e-10. A separate
+positive contraction and noncommuting unitary check verified the three-factor
+cancellation at pair index zero. These calculations are diagnostics; the proof
+above is analytic.
+
+Sources inspected
+-----------------
+
+  J. Avron, R. Seiler, B. Simon, The Index of a Pair of Projections,
+  Journal of Functional Analysis 120 (1994), 220-237,
+  DOI 10.1006/jfan.1994.1031.
+
+  experiments/theory-contracts/original-admissible-source-closure-20261025/
+    GRADED-DETERMINANT-SOURCE.txt:435-566
+    KMS-AND-CARRIER-TRANSPORT.txt:38-159
+    RELATIVE-PAIRING-REVIEW.txt:411-475
+    NS-CONTINUUM-WINDING-LIMIT.txt:1-65,141-246
+    EM-SOURCE-VARIATION-FORWARD.txt:1-330
+
+  experiments/theory-contracts/original-admissible-source-closure-20261025/
+    FOCK-DEFECT-REVIEW.txt:12-102,189-260

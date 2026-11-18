@@ -1,0 +1,123 @@
+{
+  "checker_runtime": {
+    "optimization_level": 0,
+    "python": "/opt/homebrew/opt/python@3.14/bin/python3.14"
+  },
+  "coefficient_diagnostics": {
+    "EH_variation_convention": "delta S_m = -(1/2) int sqrt(g) T_ab delta g^ab",
+    "after_v73_k_equals_c3_over_2": "1/c3",
+    "coefficient_shift": "4*pi*A*lambda",
+    "conical_convention": "Q_n - n Q_1 = 4*pi*(1-n)*A",
+    "entropy_before_shift": "4*pi*A*k",
+    "entropy_from_shifted_replica_functional": "4*pi*A*(k + lambda)",
+    "fixed_metric_normalized_correlation_shift": "0",
+    "four_dimensional_scaling": {
+      "G_times_m2": "m2/(16*pi*(k + m2*z))",
+      "d_dz": "-m2**2/(16*pi*(k + m2*z)**2)",
+      "lambda": "z*m2"
+    },
+    "general_einstein_coefficient": "1/(2*k)",
+    "interpretation": "the variation supplies the factor 1/2 conditional on the action normalization k; substituting k=c3/2 yields 1/c3 but does not independently select k",
+    "microscopic_trace_caveat": "multiplying the replica functional by exp(lambda Q[g]) changes the replica completion; this does not alter the entropy of the same fixed density matrix trace",
+    "symbolic_pass": true
+  },
+  "contract": "seam-gravity-source-bridge-20261013",
+  "full_tfpt_solution_claimed": false,
+  "original_verifier_replays": {
+    "v323": {
+      "exit_status": 0,
+      "python_executable": "/opt/homebrew/opt/python@3.14/bin/python3.14",
+      "stderr": "",
+      "stdout": "v323  Bisognano-Wichmann keystone: the seam modular flow is geometric\n  [PASS] CLOCK = GEOMETRIC ROTATION [E]: rho = diag(i^n) = exp(i(pi/2)L), L = diag(n) the seam rotation generator; rho^4 = exp(i 2pi L) = I -- mu4 \u2282 U(1)_rot is the quarter-turn subgroup (a GEOMETRIC symmetry, not an abstract one)\n    BW C=f(L): ||[K,L]||=0.00e+00  ||[rho,K]||=0.00e+00  ||[rho,C]||=0.00e+00\n  [PASS] BW MODULAR FLOW IS GEOMETRIC [E]: a rotation-covariant C = f(L) gives K = log((1-C)/C) = g(L) (a function of L = the DtN symbol |n|), so [K,L] = 0 (the modular flow sigma_t = e^{iKt} commutes with all rotations) AND [rho,K] = [rho,C] = 0 -- the mu4 clock is a modular symmetry FOR FREE\n    period-4:  ||[rho,K]||=6.14e-13  ||[K,L]||=4.10e+01\n  [PASS] DISCRIMINATOR vs v309 [E]: a period-4 curvature preserves the clock ([rho,K] = 0) but its modular flow is NOT geometric ([K,L] != 0) -- BW (full rotation covariance) is STRICTLY STRONGER than v309's clock-invariance: it pins the WHOLE rotation group, not just the mu4 subgroup\n  [PASS] NEG CONTROL [E]: a non-rotation-covariant C (period-2 coupling, a function NOT of L) breaks [rho,K] != 0 -- rotation covariance is the EXACT condition for the geometric modular flow and the clock symmetry\n  [PASS] LINKED BEDROCK [C]: GIVEN the seam is the (E8)_1 chiral conformal net (v308 / SEAM.EQUIV.01), Bisognano-Wichmann / Hislop-Longo make the vacuum modular flow GEOMETRIC, so the geometric mu4 rotation is automatically a modular symmetry => QGEO.SYM.01 (omega o rho = omega) is DOWNSTREAM of SEAM.EQUIV.01 + a rotation-invariant vacuum, NOT an independent axiom\n  [PASS] RESIDUAL [O]: the single remaining premise is that the RAW collar vacuum is rotation-invariant (no preferred seam angle) -- a clean geometric statement, strictly cleaner than v309's bespoke thermal state and SHARED with v308; NOT a closure of the bedrock\n--- v323 Bisognano-Wichmann keystone (geometric modular flow): 6 passed, 0 failed ---"
+    },
+    "v358": {
+      "exit_status": 0,
+      "python_executable": "/opt/homebrew/opt/python@3.14/bin/python3.14",
+      "stderr": "",
+      "stdout": "v358  GRAV.ENTROPY.EQUILIBRIUM.01: parameter-free linearised Einstein from delta S = delta<K>\n  [PASS] PARAMETER-FREE EINSTEIN COEFFICIENT [E]: delta S = delta<K> => G_ab = (1/c3) T_ab with 1/c3 = 8pi FIXED; all four c3-roles consistent (Unruh 1/(2pi)=4c3, EH 1/(16pi)=c3/2, Einstein 8pi=1/c3, Bekenstein 1/4=1/|mu4|) -- no free dimensionless Newton dial\n  [PASS] THERMO = GEO COINCIDENCE [E]: the first law needs coeff 2pi/eta = 8*pi; the geometry gives 1/c3 = |Z2|*2pi*chi = 8*pi; they AGREE iff |mu4| = |Z2|*chi = 4 -- a TFPT atom identity (v216). So the thermodynamic and geometric origins of c3 are ONE\n  [PASS] J3 SOLVED [C]: the ball modular Hamiltonian is the boost (CHM; geometric via BW, v323) K_B = 2pi int_B w T_00, w=(R^2-r^2)/(2R); the 3-ball weight integral is int_B w d^3x = 4*pi*R**4/15, so delta<K_B> = 8*pi**2*R**4/15 * delta<T_00> -- a CONCRETE matter boost flux of TFPT's stress tensor (the assembled matter side of the first law)\n  [PASS] ENTROPY DENSITY ATOM-FIXED [E]: Bekenstein numerator 1/4 = 1/|mu4| (v57) AND the entanglement normalisation = central charge c = g_car + N_fam = 8 (a CFT's universal area-law coefficient IS its central charge); area-law FORM established for the RP-Gaussian seam (v59). So the dimensionless entropy-density coefficient is atom-determined; only the absolute area UNIT (v_geo) remains -- not a free dimensionless gap\n  [PASS] RESULT [E]: equilibrium (delta S_UV + delta S_matter = 0) with these pieces => the LINEARISED Einstein equation G_ab = (1/c3) T_ab, parameter-free (G = the v_geo unit); the two formerly-open pieces (J3, entropy coefficient) are assembled/atom-fixed\n  [PASS] RESIDUAL [O]: (i) linearised -> FULL non-linear covariant Einstein (the original B6, all-balls/all-frames + non-linear) and (ii) the absolute scale v_geo (Planck-area unit). NO free dimensionless parameter remains in the gravity coupling; the residual is the non-linear extension + the one unit -- NOT closed here\n--- v358 GRAV.ENTROPY.EQUILIBRIUM.01: the entanglement first law with TFPT's coefficients gives the LINEARISED Einstein equation parameter-free (8pi=1/c3); the thermo (2pi/eta) and geo (|Z2|2pi chi) origins of c3 coincide via |mu4|=|Z2|chi=4; J3 assembled (CHM ball modular Hamiltonian, matter flux = 8pi^2 R^4/15 * delta<T_00>); entropy density atom-fixed (1/|mu4| + c=8); residual = linear->nonlinear (B6) + the v_geo unit: 6 passed, 0 failed ---"
+    },
+    "v73": {
+      "exit_status": 0,
+      "python_executable": "/opt/homebrew/opt/python@3.14/bin/python3.14",
+      "stderr": "",
+      "stdout": "v73  k = c3/2 forced: variational factor x Gauss-Bonnet topology (absolute scale = anchor)\n  [PASS] k = c3/2 = 1/(16pi) (Einstein-Hilbert action coefficient in seam units)\n  [PASS] (a) variational factor: 16pi = 2*8pi (action coeff 1/(16piG) vs EOM coeff 8piG); the 1/2 is forced by delta(sqrt(g)R)->G_uv, cutoff-independent [I]\n  [PASS] (b) seam S^2 Gauss-Bonnet intK dA = 2pi*chi(S2) = 4pi (chi=2, TOPOLOGICAL); c3 = 1/(|Z2|*intK) = 1/(8pi) [I/L]\n  [PASS] (c) Fursaev-Solodukhin S = 4*pi*k*A = 2*pi*c3*A => S/A = 1/4 (Bekenstein-Hawking) [I]\n  [PASS] k = (1/2)*(1/(|Z2|*2pi*chi(S2))) = c3/2 : DIMENSIONLESS coefficient forced by variation x topology, both cutoff-independent\n  [PASS] RESIDUAL isolated: only the absolute 4D Newton scale (Lambda^2*f2 prefactor of the carrier-Dirac a2, v68) is UV-sensitive => the one irreducible dimensionful anchor; the coefficient k=c3/2 itself is internally forced (Alessandro's target met at the dimensionless level)\n--- v73 k = c3/2 forced (coefficient internal, scale = anchor): 6 passed, 0 failed ---"
+    }
+  },
+  "scope": "source-native research diagnostic; no physical-model addition",
+  "scope_summary_pass": true,
+  "source_provenance": {
+    "v323": {
+      "cited_lines": "47-50,74-78,92-114",
+      "path": "/Users/stefanhamann/Projekte/tfpt-theoryv4/verification/v323_bw_geometric_modular.py",
+      "sha256": "cfef049d611a93ab594892fb78c9a0dfb2faa7f51286e3961331e7e3d1088230"
+    },
+    "v358": {
+      "assignment_anchors": [
+        {
+          "line": 61,
+          "source": "eta = sp.Rational(1, mu4)"
+        }
+      ],
+      "cited_lines": "61-86",
+      "path": "/Users/stefanhamann/Projekte/tfpt-theoryv4/verification/v358_grav_entropy_equilibrium.py",
+      "sha256": "f5f0beb9178b8fffcde3b5b9458d75c025b3c1f7f2affffd24b8d7c938ca4ce2"
+    },
+    "v73": {
+      "assignment_anchors": [
+        {
+          "line": 34,
+          "source": "k = c3 / 2"
+        }
+      ],
+      "cited_lines": "34-46",
+      "path": "/Users/stefanhamann/Projekte/tfpt-theoryv4/verification/v73_k_c3_half.py",
+      "sha256": "e7749cbd4a1f150bbb31385e68bf08c18df094b860b5fa4429663495e80b94af"
+    }
+  },
+  "t1_t8_closed": [],
+  "theory_gates_moved": [],
+  "v323_diagnostic": {
+    "adjacent_bilinear_transport": [
+      {
+        "K_gap": -1.0,
+        "m": -1,
+        "mode_gap": 1,
+        "modular_phase_t_pi_over_2": {
+          "imag": -1.0,
+          "real": 6.123233995736766e-17
+        },
+        "n": 0
+      },
+      {
+        "K_gap": 1.0,
+        "m": 0,
+        "mode_gap": 1,
+        "modular_phase_t_pi_over_2": {
+          "imag": 1.0,
+          "real": 6.123233995736766e-17
+        },
+        "n": 1
+      }
+    ],
+    "criteria": {
+      "K_equals_abs_L_max_error": 0.0,
+      "[K,L]": 0.0,
+      "[rho,C]": 0.0,
+      "[rho,K]": 0.0,
+      "diagonal_in_L_basis": true
+    },
+    "least_squares_K_equals_aL_plus_b": {
+      "a": 2.4624016340764845e-17,
+      "b": 6.240000000000004,
+      "residual_l2": 18.07097119692243
+    },
+    "pass": true,
+    "rigid_rotation_max_phase_residual": 2.0,
+    "scope": "finite mode diagnostic only; does not exclude doubled/chiral geometric actions or prove local interval Bisognano-Wichmann",
+    "single_rigid_rotation_phase": {
+      "imag": 1.0,
+      "real": 0.0
+    }
+  },
+  "verdict": "PARTIAL"
+}

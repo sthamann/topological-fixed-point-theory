@@ -1,0 +1,134 @@
+Independent audit: finite bath-pulse channel (2026-10-13)
+
+Verdict
+-------
+The derivation is correct for the specified 24-dimensional H_sym pulse, with
+the pair interaction switched off, and the Spin(5)-invariant diagonal bath
+tau = p0 |v><v| + w sum_a |a><a|, p0 + 5w = 1. The PDF's page-17 source
+equations were not independently checked; this audit takes those equations
+and their encoding premise as given. No claim is made about coherent or
+non-invariant bath states, other pulses, or physical TFPT source selection.
+
+Independent channel construction and numerical checks
+------------------------------------------------------
+I formed the system Kraus blocks independently from the 24x24 unitary:
+
+  K_{ba} = sqrt(q_a) <b| exp(-i theta H_sym) |a>,
+  E(X) = sum_{a,b} K_{ba} X K_{ba}^dagger,
+
+with q_0=p0 and q_a=w on the five-dimensional bath sector. This gives
+maximal trace-preservation residual 5.55e-16 and minimum Choi eigenvalue
+-2.56e-16 over s in {0, 5/12, 15/26, 25/42, 25/46, 1} at p0=7/12,
+w=1/12. The tiny negative Choi value is floating-point roundoff. At the
+thermal optimal pulse below, independently constructed Choi spectra agree
+with the predicted Pauli-class probabilities (times 4 for the unnormalized
+Choi convention) within 4.5e-16 for r=0, 1/7, and 1; TP residuals are at
+most 1.34e-15.
+
+Contraction and exact-match calculation
+---------------------------------------
+For the five Clifford generators Gamma_a, M(I)=5I, M(Gamma_a)=-3 Gamma_a,
+and M(i Gamma_a Gamma_b)=+i Gamma_a Gamma_b for a != b. Hence M^2 has
+eigenvalues 9 and 1 on the vector and bivector sectors. The given channel
+
+ E(X) = (1-s(p0+2w))X + (p0+w)s M(X)/5 + ws M^2(X)/25
+
+therefore has multipliers
+
+  lambda_v = 1 - s(8p0/5 + 56w/25),
+  lambda_b = 1 - s(4p0/5 + 44w/25).
+
+The native target 7X/12 + M(X)/12 has multipliers 1/3 and 2/3. Exact
+matching requires (1-lambda_v)-2(1-lambda_b)=-32sw/25=0. Since s=0 does
+not match the target, w=0; normalization then gives p0=1, and s=5/12.
+Thus the non-pure invariant bath cannot exactly realize this target with this
+pulse. For p0=7/12,w=1/12 the separate required values s_v=25/42 and
+s_b=25/46 disagree. The minimax error across just these two multipliers is
+4/195 at s=15/26. Inputs (I+O)/4 for O=Gamma_1 or i Gamma_1 Gamma_2 give
+trace-norm output error 4/195, so the unhalved diamond norm is at least this
+large (conventional half-diamond distance at least 2/195).
+
+Exact diamond distance and optimal pulse repair
+-----------------------------------------------
+Expanding M^2 groups the channel into 16 unitary-conjugation classes:
+identity, five Gamma_a, and ten bivectors i Gamma_a Gamma_b. Their
+probabilities are
+
+  q_I = 1 - s(p0 + 9w/5),
+  q_Gamma = (p0+w)s/5  (each of five),
+  q_B = 2ws/25  (each of ten).
+
+The 16 Clifford monomials of grades 0, 1, and 2 are an orthogonal unitary
+operator basis in dimension four: tr(U_j^dag U_k)=4 delta_jk. Their
+normalized Choi vectors are consequently an orthonormal Bell basis. For two
+channels diagonal in this basis, a maximally entangled input gives trace norm
+sum_j |q_j-p_j|; the triangle inequality gives the matching diamond-norm
+upper bound because each unitary channel has diamond norm one. Thus the exact
+diamond norm is the l1 distance of these probabilities. A possible transpose
+in the Choi convention only changes the Bell basis vectors by a unitary
+conjugation and does not affect orthogonality or the norm.
+
+For the stated bath p0=7/12,w=1/12 and native target probabilities
+(7/12, 1/12 x5, 0 x10),
+
+  D(s) = |5/12 - 11s/15| + 5|2s/15 - 1/12| + s/15.
+
+Its global minimum on 0<=s<=1 is at s=25/44, where D=5/66, so the exact
+minimum half-diamond distance is 5/132 (~3.7879%). At the native pulse
+s=5/12, D=5/18 and half-diamond distance is 5/36. This is an exact optimal
+repair within this one-parameter pulse family for the stated invariant bath.
+
+For the invariant Gibbs bath with singlet energy 0 and quintet energy 8g,
+r=exp(-8 beta g), p0=1/(1+5r), w=r/(1+5r), beta>=0. Substitution gives
+the minimizing pulse and exact minimum half-diamond distance
+
+  s_* = 25(1+5r)/(12(5+9r)),
+  epsilon_min = 5r/(3(5+9r)).
+
+For 0<epsilon<5/42, epsilon_min<=epsilon is equivalent to
+
+  beta g >= (1/8) log((5-27 epsilon)/(15 epsilon)).
+
+At epsilon>=5/42 the beta>=0 constraint alone suffices; at epsilon=0 the
+bound requires beta g -> infinity. The listed source bath corresponds to
+r=1/7 (beta g=log(7)/8), which recovers s_*=25/44 and epsilon_min=5/132.
+
+This completes the finite-temperature approximate-channel result for the
+given source and pulse family only. The existence/physical origin of the
+page-17 source encoding remains a separate premise.
+
+Pair parent left on during the pure-singlet pulse
+-------------------------------------------------
+An additional exact positive result holds in the same reduced 1+5 bath,
+provided the bath starts in its unique singlet and the pair parent has energy
+0 on that singlet and 8g on each quintet state. In system-first ordering this
+is H_pair = I_4 tensor diag(0,8g,8g,8g,8g,8g). With the pair parent left on,
+the bright doublet {|psi>|v>, T|psi>|v>} has pulse Hamiltonian
+
+  [[kappa, kappa], [kappa, kappa+8g]].
+
+After subtracting the scalar (kappa+4g)I, its transfer frequency is
+Omega=sqrt(kappa^2+16g^2), and the singlet-to-quintet probability is
+
+  s(t) = kappa^2/(kappa^2+16g^2) * sin^2(Omega t).
+
+The reduced channel is still (1-s)X + s M(X)/5: survival leaves the system
+unchanged, transfer applies Gamma_a with orthogonal bath records |a>, and
+the bath trace removes cross terms. Thus the native channel is reachable iff
+the pulse's peak transfer probability is at least 5/12, i.e.
+
+  kappa/g >= sqrt(80/7),
+
+for positive kappa,g. The earliest matching time is
+
+  t = asin(sqrt((5/12)(1+16g^2/kappa^2))) / sqrt(kappa^2+16g^2).
+
+Independent numerical check: at kappa/g=4, g*t=0.20333951358463065,
+s=5/12, the bright block is [[4,4],[4,12]] for g=1, and the full 24x24
+unitary followed by bath partial trace matches the target on all 16 system
+matrix units with maximum residual 1.2335152563727652e-16. The pair parent
+stayed on throughout this calculation; its restricted eigenvalues are 0
+(multiplicity 4) and 8g (multiplicity 20), and the bright subspace had zero
+leakage. This needs retiming and the input choice of kappa/g; it removes the
+claim that the parent must be switched off, but does not derive that ratio,
+the pulse time, the source encoding, or the physical TFPT selection.

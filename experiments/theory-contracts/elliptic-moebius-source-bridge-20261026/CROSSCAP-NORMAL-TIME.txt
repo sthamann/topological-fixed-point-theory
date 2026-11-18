@@ -1,0 +1,469 @@
+CROSSCAP UND NORMALE KRAGENZEIT IM URSPRÜNGLICHEN P1 PFAD
+======================================================================
+26. Oktober 2026
+
+Urteil
+------
+
+Die neue Leserichtung besteht den kleinsten Operatorentest. Sie liefert im
+konkreten flachen Pin-minus Möbiusmodell erstmals eine direkte Kette
+
+  Dirac Kragenform
+    -> Crosscap Gluing
+    -> gedämpfter Calderón Graph
+    -> reiner quasifreier Randzustand
+    -> Möbius Sewing
+    -> Vierteloperator im Loop Kanal.
+
+Damit wird die zuvor geprüfte negative Aussage über einen einzelnen
+Pin-minus Greenkern nicht auf diesen Pfad übertragen. Jene Rechnung nahm x
+als euklidische Zeit und erzeugte die gemischte thermische Kovarianz
+(1+exp(2H_w))^-1. Hier ist die normale Kragenkoordinate r die Transferzeit,
+x ist der Raumkreis, und die Cauchypolarisation ist eine echte Projektion
+auf einen Graphen. Das sind verschiedene Zustandstypen.
+
+Im freien flachen Modell ist dieser Crosscap Pfad BEWIESEN. Für das
+ursprüngliche P1 ist er ein konkreter, enger Rekonstruktionskandidat. Die
+Originaldefinition gibt die richtige Kragenform und eine euklidische OS
+Zeitstruktur vor, identifiziert aber weder ihren Zustand mit dem unten
+berechneten Crosscap Zustand noch ihre volle Padm Kompression mit dessen
+zyklischem Unterraum. Der P1 zu W8 Pfeil ist deshalb noch nicht vollständig
+bewiesen. Neu ist, dass dafür keine frei gewählte Quarter Hardy Quelle am
+Anfang mehr nötig ist: Im Kandidaten wird zuerst die Cauchypolarisation aus
+D+ und der Crosscap Relation gewonnen. Der alte Viertel Hardy Zweig erscheint
+danach im Loop Kanal des gleichen Möbiusbandes.
+
+1. Präzise Prämissen und Typen
+------------------------------
+
+Für den ausgeführten Test werden ausschließlich folgende Daten benutzt:
+
+  M = (R x [-1,1]) / ((x,w) ~ (x+1,-w)),
+  D = -i(sigma_1 partial_x + sigma_2 partial_w),
+  psi(x+1,-w) = c sigma_1 psi(x,w),       c in {+i,-i},
+  sigma_1 psi(x,+/-1) = b psi(x,+/-1),   b in {+1,-1}.
+
+Die letzte Bedingung ist eine lokale selbstadjungierte Randbedingung des
+vollständigen Diracoperators. In der Crosscap Darstellung bezeichnet sie
+den Randzustand B_b, mit dem der vom Möbiusinneren präparierte Zustand
+ausgewertet wird. Sie darf nicht zugleich als Definition des freien
+Randwertes eines Zustandsfunktionals benutzt werden.
+
+Im P1 Original sind als getrennte Typen gegeben:
+
+  (A_loc, tau_t, Theta, omega, [u_Sigma], D_coll)
+
+und das daraus behauptete einseitige Randdatum
+
+  (A_+, H_+, D_+, J, Gamma, B_Sigma),
+  D_+ = gamma_n(partial_n+B_Sigma).
+
+Die geometrische Deckabbildung, die OS Reflexion, die Calderónpolarisation,
+der lokale Randparameter b und die Pin Markierung c werden im Folgenden
+nicht gleichgesetzt. Genau diese Typtrennung ist im aktuellen Atlas als
+Prämisse `premise:typed-source-structures` festgehalten.
+
+2. Der geschlossene Kanal: r ist Transferzeit und x ist Raum
+----------------------------------------------------------------
+
+Auf der oberen Hälfte setze
+
+  r = 1-w,       0 <= r <= L,
+  phi(x,r) = psi(x,1-r).
+
+Für den flachen Einheitsstreifen ist L=1. Dann ist
+
+  D = -i sigma_1 partial_x + i sigma_2 partial_r
+    = gamma_r(partial_r+B_Sigma),
+
+  gamma_r = i sigma_2,
+  B_Sigma = i sigma_3 partial_x.                         (1)
+
+Zwei Möbiuswindungen geben auf dem Orientierungscover
+
+  phi(x+2,r) = -phi(x,r).
+
+Der räumliche x Kreis hat daher Länge zwei und NS Moden. Am Möbiuskern
+r=L lautet die Pin Relation
+
+  phi(x+1,L) = c sigma_1 phi(x,L).
+
+Mit T_1 phi(x)=phi(x+1) und
+
+  A = sigma_1 T_1
+
+ist dies die Crosscap Bedingung
+
+  A phi(L)=c phi(L).                                     (2)
+
+Auf dem NS Kreis gelten exakt
+
+  A^2 = T_2 = -1,
+  A B_Sigma A^-1 = -B_Sigma.                             (3)
+
+Dies ist die gesuchte Gluing Relation für die beiden Vorzeichen von
+B_Sigma. Sie kommt direkt aus der gegebenen Pin Wirkung. Es wurde keine
+zusätzliche Matrix U angepasst. Der Projektor auf die c Crosscap Linie ist
+
+  P_c = (1 + conjugate(c) A)/2,
+
+und (3) gibt
+
+  B_Sigma P_c = P_-c B_Sigma.                            (4)
+
+Cho, Hsieh, Morimoto und Ryu gewinnen Crosscap Zustände genau durch den
+Wechsel von Loop zu Tree Kanal. Ihre fermionische Gluing Bedingung koppelt
+rechte und linke Moden an antipodischen Punkten. Für eine Parität mit
+Quadrat minus eins liegt der Tree Kanal im antiperiodischen Sektor und hat
+keine Nullmode. Das ist dieselbe Struktur wie (2) und (3), ohne damit schon
+eine Identifikation ihrer SPT Theorie mit TFPT zu behaupten.
+
+3. Die erste echte Operatorrelation: der Crosscap Cauchyraum ist ein Graph
+----------------------------------------------------------------------------
+
+Betrachte Lösungen der euklidischen Diracgleichung im Kragen:
+
+  (partial_r+B_Sigma) phi = 0,
+  phi(r)=exp(-r B_Sigma)u,       u=phi(0).                (5)
+
+Sei e_+ eine normierte B_Sigma Eigenmode mit Eigenwert lambda>0 und setze
+e_-=A e_+. Wegen (3) hat e_- den Eigenwert -lambda und A e_-=-e_+.
+Schreibe u=a e_+ + d e_-. Die Bedingung (2) bei r=L ist genau dann erfüllt,
+wenn
+
+  d = -c exp(-2L lambda) a.                              (6)
+
+Über alle positiven Moden ist der Randwert des Crosscap Inneren daher
+
+  Ran(P_C,c) = graph(T_c),
+  T_c = -c A exp(-2L B_+): H_+ -> H_-,                  (7)
+
+wobei B_+ die positive Einschränkung von B_Sigma bezeichnet. Der
+orthogonale Graphprojektor ist
+
+  P_C,c = [ (1+T_c^*T_c)^-1,
+            (1+T_c^*T_c)^-1 T_c^*;
+            T_c(1+T_c^*T_c)^-1,
+            T_c(1+T_c^*T_c)^-1 T_c^* ].                 (8)
+
+Formel (8) ist wörtlich idempotent und selbstadjungiert. Sie ist keine
+thermische Einteilchenkovarianz. Da die NS Eigenwerte von |B_Sigma| linear
+wachsen, ist T_c für L>0 Hilbert Schmidt. Die zugehörige reine quasifreie
+Fockdarstellung existiert daher mit einem normalisierbaren geglätteten
+Crosscap Vektor
+
+  |C_c;L> = exp(-L dGamma(|B_Sigma|)) |C_c>.
+
+Pro gepaartem Modus ist sein Normfaktor
+
+  1 + exp(-4L lambda) > 0.                               (9)
+
+Das ungedämpfte Ishibashi ähnliche |C_c> kann distributionell sein. Jede
+positive Kragenlänge macht das Produkt in (9) konvergent. Das ist die
+operative positive Form der Aussage
+
+  <C_c| exp(-2L H_tree) |C_c> >= 0.                      (10)
+
+Sie entsteht geometrisch, indem das Möbiusband an seinem Rand mit seiner
+reflektierten Kopie verklebt wird. Das Resultat ist der Kleinflaschenkanal.
+Mit Einfügungen auf einer Hälfte wird (10) zur gewöhnlichen Normform
+
+  <C_c;L| pi(F)^* pi(F) |C_c;L> >= 0.                    (11)
+
+Dies ist genau die Art von Relation, aus der eine OS Form folgen kann,
+falls die P1 Reflexion und positive Halbalgebra mit dieser Verdopplung
+identifiziert werden.
+
+Ein wichtiger Unterschied zur zu starken Gleichung im archivierten Text:
+Am Crosscap selbst, L=0, ist die Bedingung ein A Eigenraum. Am äußeren Rand
+bei L>0 ist der Cauchyraum der gedämpfte Graph (7). Deshalb ist sein
+Calderónprojektor im Allgemeinen nicht der rohe geometrische Projektor
+(1+A)/2. Eine Gleichung iota_C=2P_C-1 kann hier korrekt benutzt werden,
+wenn iota_C die aus (8) gebildete Calderóninvolution meint. Sie darf nicht
+erneut mit dem untransportierten Deckoperator A identifiziert werden.
+
+4. Der offene Kanal: b und c erzeugen exakt die Vierteloperatoren
+------------------------------------------------------------------
+
+Der Möbius Pfadintegral mit der lokalen Randbedingung b ist im geschlossenen
+Kanal eine Rand Crosscap Amplitude
+
+  Z_b,c = <B_b| exp(-L H_tree) |C_c>.                    (12)
+
+Yamaguchi schreibt die Möbius Amplitude in genau dieser Form und denselben
+Pfadintegral im offenen Kanal als Spur mit Flipoperator. Die beiden Formen
+sind keine zwei Zustände, sondern zwei Schnitte derselben Fläche.
+
+Für den hier tatsächlich gegebenen Diracoperator ist der Loop Kanal bereits
+vollständig spektral gelöst. Mit den Querfunktionen f_n gilt
+
+  J f_n = b (-1)^n f_n,
+  exp(2 pi i theta_n) = c b (-1)^n,                      (13)
+
+und die longitudinalen Impulse sind
+
+  q_n,k = 2 pi (k+theta_n).
+
+Insbesondere ist der einfache Nullquerzweig f_0 konstant und erfüllt
+
+  D|n=0 = b(-i partial_x),
+  f(x+1)=cb f(x).                                        (14)
+
+Für c=+i oder -i folgen bei festem b exakt
+
+  cb=+i  -> alpha=1/4,
+  cb=-i  -> alpha=3/4.                                  (15)
+
+Die vier Möglichkeiten sind
+
+  (b,c)=(+1,+i) oder (-1,-i)  -> alpha=1/4,
+  (b,c)=(+1,-i) oder (-1,+i)  -> alpha=3/4.
+
+Damit ist die verlangte graphische Winding Relation keine Dimensionsanalogie:
+
+  Crosscap A, A^2=-1
+      --Sewing mit Randlinie sigma_1=b-->
+  q=cb
+      --longitudinaler Generator-->
+  B_alpha=-i partial_x,
+  Dom(B_alpha)={f in H1[0,1]: f(1)=exp(2 pi i alpha)f(0)}. (16)
+
+Der kinematische Quarter Hardy Einteilchenoperator ist somit im freien
+Modell der Nullquerzweig des Loop Kanals. Für b=+1 stimmt auch das Vorzeichen
+von D mit B_alpha überein. Für b=-1 erhält man die explizite
+Teilchen Loch konjugierte Polarisation. Die vollständige alte W8 Quelle mit
+ihrem lokalen Stromnetz und ihrer Normalordnung folgt daraus erst nach dem
+Test (23). Der normale Tree Hamiltonoperator ist dagegen |B_Sigma| auf dem
+NS Kreis. Beide Operatoren dürfen nicht wörtlich gleichgesetzt werden. Ihre
+Verbindung ist das offene geschlossene Sewing von (12), (13) und (16).
+
+5. Die reflektierte Kopie trägt eine transportierte Domäne
+-----------------------------------------------------------
+
+Auf den Randdaten antikommutiert die normale Cliffordmatrix gamma_r mit
+sigma_1, A und B_Sigma. Daher
+
+  gamma_r Q_b = Q_-b gamma_r,
+  gamma_r P_c = P_-c gamma_r,
+  gamma_r B_Sigma gamma_r^-1 = -B_Sigma.                 (17)
+
+Die lineare Spinorverklebung zur entgegengesetzt orientierten Kragenkopie
+transportiert also
+
+  (b,c) -> (-b,-c),
+
+und erhält dabei das Loop Kanal Zeichen
+
+  (-b)(-c)=bc.                                           (18)
+
+Das beantwortet den kleinsten Domänentest positiv: Für die Dirac
+Verdopplung ist eine transportierte M^op Domäne die natürliche Relation.
+Eine Forderung, dieselbe b Linie auf beiden orientierten Kopien punktweise
+festzuhalten, wäre hier die falsche Bedingung. Als unabhängige Kontrolle
+beweist die vollständige flache Spektralanalyse auch
+
+  Gamma Dom(D_c,b) = Dom(D_-c,-b),
+  D_-c,-b Gamma = -Gamma D_c,b.
+
+Die lineare Domänentransportabbildung ist von der antiunitären
+Viertelkonjugation zu unterscheiden. Letztere sendet alpha nach 1-alpha
+und Teilchen nach Löcher. Diese beiden Operationen haben verschiedene
+Typen und werden für die Normbildung nicht zusammengezogen.
+
+6. Was dies über die ursprüngliche P1 Zeit aussagt
+--------------------------------------------------
+
+Die Originalquelle sagt an den entscheidenden Stellen:
+
+  * Der positive Seed ist ein euklidisches lokales Netz mit tau_t, positiver
+    Zeitreflexion Theta, reflexionspositivem und clusterndem omega sowie
+    einem eigenen elliptischen D_coll.
+
+  * Der induzierte Randoperator hat im Kragen die Produktform
+    D_+=gamma_n(partial_n+B_Sigma).
+
+  * OS Rekonstruktion kommt erst nach der euklidischen positiven
+    Halbstruktur. Padm wählt danach einen Unterraum des OS Hilbertraums.
+
+Nirgends in diesen Stellen wird tau_t als Lorentzperiode, KMS Umlauf um den
+x Kreis oder Einrunden Thermalspur definiert. Clustering ist dort
+euklidisches OS Clustering. Die normale Kragenrichtung ist daher ein
+typgerechter Kandidat für die positive Transferzeit. Sie ist sogar der
+einzige Kandidat, den die lokale Produktform unmittelbar als Semigruppe
+exp(-r|B_Sigma|) anbietet.
+
+Das ist noch keine Originalherleitung, denn Definition 9.1 führt tau_t,
+Theta, omega und D_coll gemeinsam als Seed Daten. Der kurze Beweisentwurf
+behauptet nur, dass OS Rekonstruktion auf dem Kragen die einseitige Struktur
+liefert. Er beweist nicht die drei benötigten Identitäten
+
+  tau_t = normale Kragentranslation,
+  omega = omega_(P_C,c),
+  Theta = adjungierende Reflexion der verklebten Kragenhälften.             (19)
+
+Die Crosscap Rechnung liefert also eine konkrete Ausfüllung dieses offenen
+Seed Slots. Sie ersetzt ihn nicht durch eine neue globale Zeit oder eine
+frei gewählte thermische Dichte.
+
+7. Pprim, Padm und der kleinste entscheidende Originaltest
+----------------------------------------------------------
+
+Der primitive Selektor verwendet laut Original
+
+  P_seam,+ = (1+iota_C)/2,
+  P_prim = P_seam,+ P_prim,gap,
+
+und der volle Padm fügt später Farb und Determinantprojektoren hinzu. Wenn
+iota_C die tatsächliche Involution 2P_C,c-1 aus (8) ist, liegt der
+Crosscap Cauchyraum definitionsgemäß in ihrem Plusraum. Das löst den ersten
+Selektionsschritt, nicht automatisch den Gap, Farb und Determinantschritt.
+
+Der kleinste noch entscheidende Test am Original lautet deshalb:
+
+  (A) Cauchyidentität
+
+      P_C^(P1) = P_graph(-c A exp(-2L B_+)).             (20)
+
+  (B) Zustands und Zeitidentität auf der positiven lokalen Algebra
+
+      omega_P1(Theta(F)G)
+        = <C_c;L| pi(F)^* pi(G) |C_c;L>.                 (21)
+
+  (C) Admissibilität
+
+      Padm |C_c;L> = |C_c;L>,                            (22)
+
+      oder äquivalent Invarianz des von diesem Vektor erzeugten zyklischen
+      lokalen Unterraums.
+
+  (D) Sewing zum vorhandenen W8 Quellzweig
+
+      Der n=0 Anteil von (12) muss als lokales, supporterhaltendes
+      Isomorphismusbild die beiden vorhandenen Hardy Domänen alpha=1/4 und
+      3/4 samt See, Normalordnung und Punktspaltung tragen.                 (23)
+
+Erfolgskriterium ist dieselbe Randkovarianz und derselbe lokale
+Operatortransport in (20) bis (23), nicht nur dieselbe Viertelspektrumsmenge.
+Der Weg bricht für die ursprüngliche P1 Identifikation ab, falls das echte
+P_C nicht der Crosscap Graph ist, Padm einen der transportierten Sektoren
+entfernt oder die operative tau_t Wirkung nicht die normale Semigruppe
+implementiert. Dann bleibt die freie Möbius Crosscap Konstruktion korrekt,
+ist aber nicht der P1 Ursprung von W8.
+
+8. Verhältnis zu den bisherigen Ergebnissen
+---------------------------------------------
+
+BEWIESEN im angegebenen flachen Modell:
+
+  * normale Kragenform (1);
+  * Crosscap Algebra A^2=-1 und AB_Sigma=-B_Sigma A;
+  * gedämpfter Cauchygraph (6) bis (8), reine Projektorkovarianz und positive
+    verdoppelte Norm;
+  * transportierte Domäne (b,c)->(-b,-c) mit invariantem Produkt bc;
+  * vollständige Loop Verschiebung cb(-1)^n und die Viertelzweige im
+    Nullquermodus.
+
+TYPISCH KORRIGIERT:
+
+  * Der frühere x Zeit Greenzustand ist nicht dieser r Zeit Crosscap Zustand.
+  * Die Möbius Amplitude (12) ist im Allgemeinen keine positive Zahl. Die
+    positive Form ist die an der Randkante verdoppelte Norm (10) und (11).
+  * B_Sigma im Tree Kanal ist der NS Tangentialoperator. B_alpha im Loop
+    Kanal ist der longitudinale Vierteloperator. Sewing verbindet sie.
+  * Ein untransportiertes festes b ist für die Dirac Verdopplung nicht nötig.
+
+BEDINGT für P1:
+
+  * D_coll ist genau dieser Möbius Kragenoperator;
+  * tau_t, Theta und omega erfüllen (19) bis (21);
+  * Pprim und Padm erhalten den Crosscap Cauchy und zyklischen Unterraum;
+  * das lokale Sewing (23) trifft die bereits verwendete W8 Quelle.
+
+OFFEN:
+
+  * die Originalbeweise von (20) bis (23);
+  * die Ableitung der konkreten Pin und Randmarkierungen aus den abstrakten
+    P1 Seedaxiomen;
+  * der Anschluss an die vorhandene E8 Erweiterung und W8 Wechselwirkung.
+
+Es folgt insbesondere kein all P1 No Go. Ebenso folgt noch keine komplette
+P1 Herleitung von W8. Der Fortschritt ist die erste konkrete pure
+Cauchypolarisation, aus der der bekannte Viertelzweig durch dasselbe
+Möbius Sewing entsteht, ohne ihn als anfängliche CAR Zustandswahl
+vorauszusetzen.
+
+9. Originalstellen und Primärliteratur
+--------------------------------------
+
+P1 Original:
+
+  documents/archive--tfpt-45--source_extracts--01_boundary_kernel_source/
+  sections/001-section-primitive-core-and-carrier-interface-handoff.tex
+
+  Zeilen 65 bis 80: einseitiges Randdatum und Produktform.
+  Zeilen 94 bis 170: Verdopplung und behauptete Calderónpolarisation.
+  Zeilen 172 bis 179: Trennung der Involutionstypen.
+  Zeilen 182 bis 263: Pprim aus iota_C, APS und D_rel.
+  Zeilen 291 bis 342: Padm und physisches lokales Netz.
+
+  documents/archive--tfpt-45--source_extracts--01_boundary_kernel_source/
+  sections/002-section-intrinsic-closed-branch-and-canonical-rigid-obje.tex
+
+  Zeilen 103 bis 143: operativer Seed, OS Positivität, Clustering und
+  D_coll als getrennte Daten.
+  Zeilen 252 bis 305: reflexionsreguläres Bordism und Kragenform.
+
+Konkreter Möbius Diracoperator:
+
+  Anik Chakraborty,
+  Pin Equivariance and Local Dirac Boundary Problems on the Flat Möbius Band,
+  arXiv:2610.03745v1, Gleichungen (1), (2), (9), (14), (15), (22) bis (25)
+  und Proposition 8.3.
+  https://arxiv.org/html/2610.03745v1
+
+  Dort sind insbesondere der ein Schritt Operator cJ, die Verschiebung
+  exp(2 pi i theta_n)=cb(-1)^n, die volle selbstadjungierte Randdomäne und
+  der Transport (c,b)->(-c,-b) explizit bewiesen.
+
+Möbius Rand Crosscap Sewing:
+
+  Shun-ichi Yamaguchi,
+  The Critical Ising Model on a Möbius Strip,
+  Prog. Theor. Phys. 97 (1997) 703,
+  arXiv:cond-mat/9704039, Gleichungen (1), (6) bis (8), (14) bis (17).
+  https://arxiv.org/abs/cond-mat/9704039
+
+  Gleichung (1) ist die Rand Crosscap Amplitude, Gleichung (8) derselbe
+  Pfadintegral als offene Spur mit Flip, und die expliziten Majorana
+  Crosscap Zustände enthalten die alternierende Modenphase.
+
+Fermionische Crosscap und Kanalwechsel:
+
+  Gil Young Cho, Chang-Tse Hsieh, Takahiro Morimoto und Shinsei Ryu,
+  Topological Phases Protected by Reflection Symmetry and Cross-cap States,
+  Phys. Rev. B 91 (2015) 195142,
+  arXiv:1501.07285, Abschnitt II.3 und Abschnitt IV.2.
+  https://arxiv.org/abs/1501.07285
+
+  Gleichungen (13) bis (17) geben Loop und Tree Kanal sowie die
+  Crosscap Crosscap Amplitude. Gleichungen (78) bis (87) geben die
+  fermionische Gluing Relation. Für Paritätsquadrat minus eins folgt der
+  antiperiodische Sektor ohne Majorana Nullmode.
+
+Atlasrahmen:
+
+  Revision 70d8c8e427bd8d29c8610ff3, nur lesend. Der relevante geprüfte
+  Problemknoten ist `problem:seam-partner-charge-state-time`. Seine
+  Typprämisse und die bereits bewiesene Konjugation alpha -> 1-alpha wurden
+  beibehalten. Es wurde kein Atlas Verdict verändert.
+
+Endstatus
+---------
+
+Neues tragendes Ergebnis: PROVED im konkreten freien flachen Modell.
+
+P1 Herkunftsstatus: CONDITIONAL mit den vier expliziten Tests (20) bis (23).
+
+Keine neue frei angepasste Quelle, keine globale unitäre Wahl und kein
+allgemeiner P1 Ausschluss wurden eingeführt.
+

@@ -14,7 +14,7 @@ import numpy as np
 HERE = Path(__file__).resolve().parent
 ROOT = HERE.parents[2]
 SOURCE = "experiments/theory-contracts/gaussian-vacuum-filter/checker.py"
-SOURCE_SHA256 = "4a319e059d25be9f0aace0fbc994c0a1201ac8846a6910962c9379d48248e9fa"
+SOURCE_SHA256 = "2f7fcb6a1cc4935ef8f54d9c64b93b08ee04c10e1d5a091ecdbc75892a6849fb"
 
 
 def require(ok, message):

@@ -1,0 +1,106 @@
+UR.SOURCE.NATIVE_SECTOR_CALIBRATION.01 — 2026-10-13 — PARTIAL
+
+QUESTION AND SOURCE
+The prior source-charged-register contract, PROOF.txt equations (1)–(4b),
+retains a conditional C4 tensor Fock(V) lift of v1033. Its native completed
+CAR fields F_j^u preserve C=Z tensor i^N. There are four C eigenspaces P_s.
+The already supplied unitary disorder D satisfies D P_s=P_(s+1) D and
+D J_s^u=J_(s+1)^u. This is the operator in the original source, not a newly
+added ancilla, coupling or interpolating geometry. The earlier response
+contract computes D's spectrum and response. We use those facts to solve
+a calibration-identifiability question; we do not claim a new disorder
+construction or a new general operator-algebra theorem.
+
+1. COMPLETE AMBIGUITY OF THE SPECIFIED INTERNAL DYNAMICS
+Let two finite-dimensional Hermitian generators H and H' induce identical
+Heisenberg derivations on every completed CAR generator and on C. Then
+A=H'-H commutes with these operators and their adjoints. On each C block,
+the finite full CAR representation generates all M_(2^n)(C). Explicitly,
+the vacuum projector is the product of (1-n_j); creation monomials on
+its left and annihilation monomials on its right give every occupation
+basis matrix unit. The supplied unitary J_s^u transports these matrix
+units to each C sector (prior charged-register proof, equation (4b)).
+Commuting
+with C eliminates cross-block entries. Therefore
+                 A = sum_(s=0)^3 c_s P_s, c_s real.
+Conversely every such A preserves those specified derivations. Since H
+commutes with C, the all-time Heisenberg evolutions on this block-diagonal
+algebra also agree. Each separately normalized block Gibbs state agrees.
+This does NOT assert that a full Gibbs state with measured weights across
+all sectors is unchanged: those weights can themselves constrain offsets.
+
+2. THE NATIVE OPERATOR RECOVERS EXACTLY THREE RELATIVE MODES
+For H_c=H+sum_s c_s P_s,
+ ([H_c,D]-[H,D]) P_s = (c_(s+1)-c_s) D P_s.
+Multiplying on the left by D^dagger gives
+ K := D^dagger([H_c,D]-[H,D]) = sum_s b_s P_s,
+                  b_s=c_(s+1)-c_s.
+Thus a sector-resolved first time response supplies the cycle differences.
+Their sum is zero. The C4 oriented incidence matrix has rank3 and kernel
+span{(1,1,1,1)}. Integration around a spanning path reconstructs c uniquely
+modulo a common constant. The sum-zero relation is a consistency condition
+for the scalar-sector-offset model, not a proof of the physical source.
+
+By contrast D squared supplies c_(s+2)-c_s. Its graph has two connected
+components, {0,2} and {1,3}; rank2 leaves a separate constant on each.
+Keeping the original D therefore matters: the quarter-step operator
+contains information absent from its square. This is a relation between
+actual operator actions, not a dimension or numerical coincidence.
+
+3. A CONSTRUCTIVE FOUR-PREPARATION PROTOCOL
+A full matrix tomography assumption is unnecessary if the supplied D can
+be used for preparation and its complex temporal response is accessible.
+Choose a fixed normalized vector psi in one C sector, and use the four
+preparations D^k psi. Do not replace this preparation by the ground state
+of each shifted Hamiltonian. For a prepared vector in sector s, define
+ G_s(t;H)=<psi_s|D^dagger exp(itH) D exp(-itH)|psi_s>.
+Then for every real t,
+ G_s(t;H_c)=exp(it b_s) G_s(t;H), and G_s(0;H)=1.
+Hence [G'_s(0;H_c)-G'_s(0;H)]/i=b_s. The initial sector is known; D moves
+it around the full cycle. This reconstructs the three relative offsets
+from the four first moments, with one dependent consistency equation.
+
+The required original response or specified H baseline and the preparation
+menu are inputs of this inverse problem. They are not inferred from a
+single ground-state autocorrelator, from CAR alone, or from the existence
+of D in an inventory. A scalar change invisible in an unknown channel
+cannot simply be made observable by postulating a free control gate;
+physical controls require additional structure (see Araújo et al.,
+arXiv:1309.7976v2, discussion of global/relative phase). Here the native D
+and its four sectors are explicitly present, but their physical P1-derived
+realization remains open.
+
+4. SOURCE-SPECIFIC CHECK
+checker.py imports the unchanged v1033 qwz_cylinder(3,1,+1,r), builds only
+the previously declared conditional Fock lift and completed CAR dictionary,
+and checks the operator identities on dimension256. The original ground
+has E=-4 and lies in C sector1. Test offsets (0,1/2,7/4,-3/2) are probes of
+the ambiguity, not new physical parameters or fitted predictions.
+Their native response differences are (1/2,5/4,-13/4,3/2), reconstructing
+centered offsets (-3/16,5/16,25/16,-27/16). In particular the test value
+5/4 here is a freely chosen offset difference, NOT the D5 conformal factor.
+The analytic proof holds for arbitrary real c_s; sampled numerical
+responses are only an implementation check. Exact cycle ranks use SymPy.
+
+5. WHAT IS RESOLVED AND WHAT IS NOT
+Resolved: the exact relative calibration ambiguity for the stated finite
+source algebra, and an explicit native-response inverse. This combines
+the existing charged-source dictionary with the normalization-ambiguity
+contract; it partitions previously conflated information loss into three
+recoverable relative modes and one common invisible mode.
+Unresolved: selecting this Fock lift, field/intervention dictionary and time
+from original P1/P2; absolute energy/source normalization; geometry and
+local physical continuum. At every externally fixed background g, adding
+c(g) I remains invisible to ALL these Heisenberg responses. Nothing above
+selects the metric-dependent Q[g] or its conical area coefficient. No
+physical T1–T8 goal is closed and no load-bearing ledger is promoted.
+
+ORIGINAL-FUNCTIONAL ADMISSIBILITY
+The fixed-background c(g)I invisibility is an algebraic observation-class
+statement. It does not establish that an arbitrary c(g), or lambda Q[g],
+is admissible in the specified original profile-free zeta/residue
+functional. The original-source-functional-audit-20261013, section D,
+explicitly rules out that inference. Within the original problem one
+must derive the common off-shell operator/domain/reference/metric family
+and its gluing normalization. Only admissible original-source families
+can decide whether its remaining normalization is actually unique.

@@ -1,0 +1,590 @@
+INDEPENDENT REVIEW: TWO-FACE RELATIVE PAIRING
+=============================================
+
+25 October 2026. This is a source review and an exact operator calculation.
+It changes no original paper, Atlas entry, ledger, contract index, or other
+contract file.
+
+Question
+--------
+
+Can the doubled source
+
+  B_pair=diag(A,-A),
+  C_0=diag(P_-,P_+),
+  U=diag(u,u)
+
+turn the previously proved single-CAR factor 1-z into an original two-face
+relative determinant-line response? In particular, do the original grading,
+deck involution, primitive eta term, Quillen line, or cover normalization
+already select the sheet ratio and its factor 1/2?
+
+Verdict
+-------
+
+The finite-rank operator calculation is exact:
+
+  * the ordinary full-pair relative covariance determinant is 1;
+  * a separately introduced sheet superdeterminant is (1-z)^2;
+  * one half of its logarithm is log(1-z).
+
+The last two bullets are not yet an original TFPT identification. The actual
+primitive grading Gamma commutes with the deck involution. A sheet sign
+Gamma_sheet=diag(1,-1) for a deck operation that exchanges the two faces would
+anticommute with that deck operation. Therefore Gamma_sheet is not the
+displayed original Gamma and must not be inserted under its name.
+
+The Quillen norm does not repair the cancellation. For the actual inverse
+pair R=diag(1-z,(1-z)^(-1)), determinant-line multiplicativity gives a trivial
+relative line and
+
+  ||s_R||_Q=|1-z| |1-z|^(-1)=1.
+
+Taking one half of the logarithm still gives zero. A positive squared norm
+(1-z)^2 would require a different operator, for example two copies of the same
+oriented one-face deformation. Neither the original filtration nor the written
+gluing formulas construct that operator.
+
+There is nevertheless an exact positive one-face continuation already using
+the recovered circle KMS covariance. Its winding defect is positive trace
+class with trace one, and its directed relative Fredholm determinant is exactly
+1-z at every finite inverse temperature. This removes the nonfaithful endpoint
+problem of the pure-sea rank-one formula. The original electromagnetic formula
+is singly directed and starts from one-sided boundary data, so no physical
+full-pair determinant is required. Its admissible trace is nevertheless not
+defined literally as a trace on H_+. The remaining missing equality identifies
+the admissible OS boundary marginal with the recovered circle KMS covariance.
+
+The original d=2 weight remains a separate positive cover-degree statement:
+two identical sheet contributions are added. It is compatible only with a
+separately defined positive-pair norm, not with the actual inverse pair. It is
+not the sheet ratio and does not derive the factor 1/2. Thus a hypothetical
+positive determinant-line amplitude and the topological weight d SF=2 can
+coexist as two typed pieces of one source contract; they cannot yet be called
+the same original operation.
+
+1. Exact two-line calculation
+-----------------------------
+
+Assume the established one-face defect line Pi satisfies
+
+  P_- Pi=0,
+  P_+ Pi=Pi.
+
+On the paired polarization put
+
+  C_1=C_0+diag(Pi,-Pi).
+
+For |z|<1 define the directed relative Fredholm operator
+
+  R(z)=(I-z C_1)(I-z C_0)^(-1).
+
+It is the identity away from the two defect lines. On the first line C_0=0 and
+C_1=1, hence R_+(z)=1-z. On the reflected line C_0=1 and C_1=0, hence
+
+  R_-(z)=(1-z)^(-1).
+
+Consequently
+
+  det_F R(z)=(1-z)(1-z)^(-1)=1.                 (1)
+
+This cancellation is correct for the ordinary vector determinant of the full
+occupation-covariance pair. It does not say that a real electromagnetic
+susceptibility cancels. Particle and hole have opposite signed charge, while a
+quadratic gauge response depends on charge squared and adds their
+contributions. Equation (1) is therefore an occupation-response statement,
+not an F^2 response theorem.
+
+If one defines an additional face grading
+
+  Gamma_sheet=diag(1,-1),
+
+then its superdeterminant is
+
+  sdet_Gamma_sheet R(z)
+    =det R_+(z)/det R_-(z)
+    =(1-z)^2,                                      (2)
+
+and on the holomorphic branch fixed by Log(1)=0,
+
+  (1/2) Log sdet_Gamma_sheet R(z)=Log(1-z).        (3)
+
+Equations (2) and (3) are exact algebra. They do not establish that
+Gamma_sheet is an original grading or that this superdeterminant is the
+physical response.
+
+2. The decisive original type check
+-----------------------------------
+
+The original reduced datum requires the involution to commute with Gamma:
+
+  documents/archive--paper-latex--tfpt-31/sections/
+  002-subsection-primitive-relative-spectral-dynamics.tex:7-29.
+
+The current source extract retains the same typed separation:
+
+  documents/archive--tfpt-45--source_extracts--01_boundary_kernel_source/
+  sections/001-section-primitive-core-and-carrier-interface-handoff.tex:94-179.
+
+It distinguishes the geometric deck involution tau_dbl, the Calderon
+polarization iC, and the restricted carrier involution eps_car. It explicitly
+forbids identifying these three operators without a displayed restriction or
+transport map.
+
+For a two-face basis in which the deck operation exchanges faces,
+
+                [ 0  I ]
+  tau_sheet  =  [      ],
+                [ I  0 ]
+
+one has
+
+  tau_sheet Gamma_sheet tau_sheet^*=-Gamma_sheet. (4)
+
+This contradicts the original commutation type if Gamma_sheet is called the
+original Gamma. The normal reflection can make the relative operator odd
+under deck exchange, but it does not turn the spectral-triple grading into a
+sheet sign. The proposed ratio orientation therefore needs its own oriented
+relative line or face-label datum.
+
+3. What S_prim and Delta eta actually supply
+--------------------------------------------
+
+The primitive action is
+
+  S_prim[chi_seed]
+    =Tr f(D_rel/chi_seed)-Tr f(D_ref/chi_seed)
+     +(i pi/2) Delta eta_Sigma,
+
+with
+
+  f(x)=integral exp(-t x^2) dnu(t),  dnu>=0.
+
+Sources:
+
+  documents/archive--paper-latex--tfpt-31/sections/
+  002-subsection-primitive-relative-spectral-dynamics.tex:42-96;
+
+  documents/archive--tfpt-45--source_extracts--01_boundary_kernel_source/
+  sections/001-section-primitive-core-and-carrier-interface-handoff.tex:302-317.
+
+The traces are ordinary traces of an even spectral profile. There is no
+Str_Gamma, sheet supertrace, determinant ratio L_+/L_-, or factor 1/2 in this
+definition. The eta difference supplies the spectral-asymmetry phase. In the
+Dai-Freed formulation an exponentiated eta invariant is naturally a vector in
+an inverse boundary determinant line and obeys a gluing law; this does not by
+itself select a Hermitian norm, a sheet grading, or a real electromagnetic
+susceptibility.
+
+The source's canonical defect filtration likewise uses
+
+  deg_det^+(B)=c1(L_+)+c1(L_-),
+
+not a displayed difference. Here L_+ and L_- are boundary-polarized finite
+blocks, not proved position-face lines. This positive sum is compatible with
+adding real norm responses, but it cannot be used as a proof of the proposed
+sheet quotient:
+
+  documents/archive--tfpt-45--source_extracts--01_boundary_kernel_source/
+  sections/002-section-intrinsic-closed-branch-and-canonical-rigid-obje.tex:
+  166-183.
+
+4. The actual Quillen norm and the different positive-pair candidate
+---------------------------------------------------------------------
+
+For a chiral Fredholm family D_z^+, a relative determinant-line section s_z
+has a Hermitian Quillen norm. With the convention that its squared norm is
+given by the zeta determinant of the positive Laplacian, the elementary
+identity is
+
+  Delta log ||s_z/s_0||_Q
+    =(1/2) Delta log det_zeta((D_z^+)^*D_z^+).             (5)
+
+For the actual cancelling pair, multiplicativity gives
+
+  Det(R)=Det(R_+) tensor Det(R_-)
+        =Det(1-z) tensor Det((1-z)^(-1)) congruent C,       (6)
+
+and its Quillen norm is
+
+  ||s_R||_Q=|1-z| |1-z|^(-1)=1.                           (7)
+
+Equivalently, the positive operators associated with the two inverse relative
+sections have reciprocal determinant ratios. Formula (5) therefore gives zero,
+not Log(1-z). The same conclusion holds for complex z after the inverse phase
+is included: the full determinant-line section is canonically the product of a
+line and its dual.
+
+A different positively adding pair could be written abstractly as
+
+  R_pos(z)=diag(1-z,1-z),
+  det R_pos(z)=(1-z)^2.                                  (8)
+
+For real 0<=z<1 its Quillen norm would be 1-z, since the norm is the
+square root of the squared norm. But R_pos is not R. It replaces the reflected
+inverse update by a second copy of the same oriented update. The factor one
+half is then only the standard conversion from norm squared to norm of this
+different object. It is not a normalization that can be applied to the
+cancelling pair.
+
+The required original identification is absent at three exact points:
+
+  1. The v42 master functional writes
+
+       Re log det_zeta,Padm(D_xi^2+mu^2)
+       +(1/2) eta_Sigma,Padm(D_xi)
+
+     with coefficient one on the positive determinant, not one half:
+
+       documents/archive--paper-latex--tfpt-42/sections/
+       027-subsection-primitive-completion-from-the-boundary-kernel.tex:
+       229-248.
+
+     That source does not define D_xi as the covariance-pair deformation.
+
+  2. The active Quillen contract defines the continuum line from a chiral
+     family D_b^+ and requires a future comparison of its metrics and
+     connections with the occupied Berry line. It writes the proposed
+     functional with log det_zeta Delta_U(1), while explicitly retaining the
+     continuum comparison and first-principles response identity as open:
+
+       documents/tfpt_research_contracts/sections/020-source.tex:180-240,
+       296-318.
+
+  3. The already reviewed direct-defect contract records as open the equality
+     between the original electromagnetic logarithmic response and the
+     directed relative covariance determinant. Replacing that determinant by
+     a Quillen norm changes the candidate but does not prove the missing source
+     map.
+
+Thus neither the Quillen metric nor Delta eta turns the actual inverse pair
+into the single factor. To use (8), the source must first construct a positive
+pair family and then identify its electromagnetic observable with that norm.
+
+5. What the existing BFK, Forman, gluing and Calderon material proves
+---------------------------------------------------------------------
+
+The targeted source search found no original operator family whose
+Schur complement or monodromy is proved to satisfy
+
+  M(z) M(0)^(-1)=I-z Pi.                                (9)
+
+The closest registered BFK calculation is
+
+  verification/v151_bfk_split.py:1-57, 94-120.
+
+It uses the multiplicative split
+
+  det(bulk)=det(D-half)^2 det(DtN) times local edge factors
+
+and proves only that the conical corner coefficient of the two-sided DtN jump
+determinant vanishes. Its own scope retains as premises both the identification
+of the RP seam kernel with that BFK Calderon datum and the remaining source
+normalization. It never defines a winding-dependent DtN family M(z), a rank-one
+Schur complement, or equation (9). The factor one half there belongs to the
+Gaussian identity log Z=-(1/2)log det(bulk); it is not a half-sheet rule for the
+cancelling covariance pair.
+
+The broader source contract identifies the free Laplacian DtN symbol |k| and
+uses the Calderon projector as a boundary polarization:
+
+  documents/tfpt_research_contracts/sections/009-source.tex:190-221.
+
+This still supplies no monodromy deformation with relative determinant 1-z.
+The active Quillen contract explicitly retains the continuum Bismut-Freed
+identification and the exact U(1) response as open:
+
+  documents/tfpt_research_contracts/sections/020-source.tex:286-318.
+
+No instantiated Forman identity or other original gluing formula was found
+that supplies (9). BFK multiplicativity by itself preserves the cancellation
+in (6). A nontrivial factor must come from a separately proved boundary jump or
+Schur-complement family; it cannot be inferred from the word gluing.
+
+The positive filtration degree
+
+  deg_det^+=c1(L_+)+c1(L_-)
+
+also does not provide R_pos. It is a sum of topological degrees of
+boundary-polarized finite blocks, with no displayed family of positive
+operators and no determinant response. Likewise the historical d=2 rule adds
+two identical source weights, but does not define the required paired
+operator.
+
+6. The original electromagnetic readout is one-sided
+-----------------------------------------------------
+
+The current source does select one oriented collar side before doubling. Its
+starting datum is
+
+  T_boundary=(A_+,H_+,D_+,J,Gamma,B_Sigma),
+  Spec Z(A_+)=M_+,
+  D_+=gamma_n(partial_n+B_Sigma).
+
+This is stated in
+
+  documents/archive--paper-latex--tfpt-42/sections/
+  003-subsection-primitive-relative-spectral-dynamics.tex:3-24.
+
+Only afterwards does the source form
+
+  M_tilde=M_+ union_Sigma M_+^op
+
+to obtain the deck involution, the doubled operator, and the Calderon projector
+of the APS problem for D_+; see the same file at lines 37-88. Thus the double is
+derived comparison and reconstruction data. It is not the definition of the
+domain on which every later observable must be traced.
+
+The relevant plus signs have distinct types. M_+, H_+, and D_+ name the chosen
+oriented collar side. The boundary projector P_C selects Cauchy data of interior
+D_+ solutions. In the primitive complex,
+
+  P_Seam,+=(I+iota_C)/2=P_C,
+
+selects the seam-even Calderon polarization. Gamma is the real-even spectral
+grading compatible with the boundary restriction. None of these statements
+identifies Gamma with a position-face projector. The source itself warns that
+deck reflection, Calderon polarization, and the finite carrier involution may
+only be related by the displayed restrictions and transports.
+
+The electromagnetic formula is also singly directed. It defines
+
+  U_Sigma^min=|psi_Sigma><psi_Sigma|
+
+from the normalized primitive seam mode and evaluates
+
+  -B gamma tr_adm log(1-q(alpha) U_Sigma^min).            (10)
+
+Source:
+
+  documents/archive--paper-latex--tfpt-42/sections/
+  007-subsection-carrier-form-of-the-electromagnetic-closure.tex:20-48.
+
+The formula in (10) is therefore singly directed: it contains one retained
+rank-one seam transfer and no reflected inverse partner. This is compatible
+with the oriented one-sided starting datum, and the source does not instruct
+one to adjoin the reflected inverse determinant before taking the trace. But
+the notation tr_adm is not defined as a trace on H_+ itself. The same source
+defines
+
+  H_adm=Ran(P_adm) subset H_OS
+
+and defines the physical net by restriction to this invariant admissible
+subspace; see 003-subsection-primitive-relative-spectral-dynamics.tex:248-285.
+Thus P_adm is an admissibility selector after OS reconstruction, not a
+position-face projector. The full-pair calculation in Sections 1 and 4 is a
+type check on a possible doubled reinterpretation, not an obstruction to the
+written singly directed EM formula; conversely, one must not identify
+tr_adm with a chiral or face trace without another map.
+
+Historical A3 uses two boundary cycles plus the eta gluing term to normalize
+the cover curvature, and A4 adds the discrete topological correction. Those
+statements fix phi_base and delta_top; they do not define the operator domain of
+tr_adm or turn (10) into a full doubled vector determinant:
+
+  documents/archive--paper-latex--tfpt-theory-fullv21/sections/
+  001-section-introduction-the-problem-of-parameters.tex:165-221, 258-276.
+
+The one-sided selection does not yet supply the KMS marginal used below. The
+weakened ambient object
+
+  (A_+,H_+,D_+,J,Gamma,B_Sigma,tau_t,omega)
+
+assumes quasilocal positive dynamics, reflection positivity, and an admissible
+vacuum sector, but it neither states that omega is a quasi-free beta-KMS state
+nor gives
+
+  C_adm,Sigma=(1+exp(beta B_Sigma))^(-1).                (11)
+
+Source:
+
+  documents/archive--paper-latex--tfpt-42/sections/
+  034-subsection-weakened-ambient-class.tex:3-18, 107-120.
+
+Nor is there a displayed isometry from the recovered old circle to the
+admissible boundary marginal that intertwines B_a, u, tau_t, and the state.
+Equation (10) instead defines the EM response directly from the already
+selected rank-one transfer U_Sigma^min. Therefore the side selection is
+sourced, while (11) is the exact remaining state/operator identification. No
+additional chiral projection and no equality Gamma=P_C is needed.
+
+7. Exact faithful KMS continuation on the existing one-face circle
+-------------------------------------------------------------------
+
+Let psi_l, l in Z, be the twisted circle basis, 0<a<1, and let
+
+  B_a psi_l=(l+a)psi_l,
+  u psi_l=psi_(l+1),
+  C_beta psi_l=n_l psi_l,
+  n_l=(1+exp(beta(l+a)))^(-1),  beta>0.
+
+The proposed collar specialization sets beta=2 ell, but the proof is independent
+of that value and holds for every beta>0. Since n_l is strictly decreasing,
+
+  D_beta:=u C_beta u^*-C_beta
+
+is diagonal with eigenvalues d_l=n_(l-1)-n_l>0. Moreover
+
+  sum_l d_l=lim_(L->infinity)[n_(-L-1)-n_L]=1.          (12)
+
+Thus D_beta is positive trace class, Tr D_beta=1. Both C_beta and
+u C_beta u^* are faithful contractions: no eigenvalue is zero or one. For
+|z|<1 the relative operator
+
+  R_beta(z)=(I-z u C_beta u^*)(I-z C_beta)^(-1)
+
+differs from the identity by trace class. Its determinant exists, and the
+symmetric finite products telescope:
+
+  product_(l=-L)^L (1-z n_(l-1))/(1-z n_l)
+    =(1-z n_(-L-1))/(1-z n_L)
+    ->1-z.                                               (13)
+
+Trace-norm convergence of the diagonal perturbations justifies passage to the
+Fredholm determinant. Therefore
+
+  det_F R_beta(z)=1-z                                  (14)
+
+exactly at every finite beta. As beta tends to infinity, D_beta tends in trace
+norm to the rank-one projector Pi and (14) recovers the pure-sea formula. This
+proves a faithful KMS continuation, not a regularization chosen to fit the
+answer.
+
+The ingredients were already present separately: the actual twisted-circle
+thermal product and source winding are recorded in
+
+  experiments/theory-contracts/mixed-current-origin-20261014/
+  ATLAS-KMS-LOCALITY-AND-SOURCE-WINDING.txt:75-121,
+
+and the active source contracts use Fermi-Dirac covariances
+C_beta=(1+exp(beta K))^(-1). The targeted source and Atlas search found no
+previous calculation of the telescoping relative determinant (13). In
+particular, the earlier conclusion that an exact faithful factor 1-z would
+force a rank-one endpoint perturbation applies only to a rank-one compressed
+ansatz; (12)-(14) are its explicit trace-class countercase.
+
+On the reflected face take C_beta^ref=I-C_beta. Then
+
+  u C_beta^ref u^*=C_beta^ref-D_beta,
+
+and the same telescoping calculation gives determinant (1-z)^(-1). Hence the
+ordinary full two-face determinant and its Quillen norm remain one. The KMS
+continuation therefore closes only the one-face faithfulness gap. It does not
+select R_pos and does not prove the missing marginal equality (11). Once (11)
+is supplied, the written one-sided EM domain is already the correct type for
+the directed determinant (14).
+
+8. Relation to the original d=2 source weight
+----------------------------------------------
+
+The historical cover rule is explicitly additive:
+
+  J=d J_1,
+  J_1=SF,
+  d=2,
+  SF=1.
+
+It assumes identical sheet contributions and produces
+
+  delta_top(alpha)=delta_top exp(-2 alpha).
+
+Sources:
+
+  documents/archive--paper-latex--tfpt-theory-fullv21/sections/
+  001-section-introduction-the-problem-of-parameters.tex:165-192;
+
+  documents/archive--paper-latex--tfpt-theory-fullv21/sections/
+  002-subsection-closure-axioms-a7-a8.tex:227-258;
+
+  documents/archive--paper-latex--tfpt-theory-fullv27/sections/
+  003-subsection-the-cubic-fixed-point-equation-cfe.tex:286-320.
+
+This is a sum of two positive, deck-invariant responses. It is neither the
+ordinary cancellation (1) nor the signed quotient (2). A separately constructed
+positive pair norm such as (8) could add particle and hole contributions and is
+structurally closer to this source rule. The actual inverse pair has norm one.
+Taking one half of the hypothetical positive paired log determinant returns a
+base-normalized amplitude, whereas the original d=2 rule retains the cover
+integral as twice the base response.
+
+The two statements can consistently coexist only with separate types:
+
+  topological source action:       J_top=2 SF,
+  hypothetical positive-pair amplitude:
+      log A_det=(1/2) log ||s_pos||^2.
+
+No checked source equates J_top with log A_det or multiplies the first by the
+second. In particular, the one half must not be used to cancel d=2 silently.
+
+9. Smallest decisive source contract
+------------------------------------
+
+No new geometry is needed. The missing theorem can be stated on the existing
+one-sided datum:
+
+  (A) Circle-to-boundary marginal.
+      Construct the state-preserving boundary map V into the admissible
+      boundary marginal and prove, on its common invariant core,
+
+        V u = u_Sigma V,
+        V B_a = B_Sigma V,
+        C_adm,Sigma=V C_beta V^*.
+
+      Here u_Sigma must be the sourced boundary winding operator, not the
+      rank-one projector U_Sigma^min and not the heat transfer customarily also
+      denoted U_Sigma. If no such operator is displayed, constructing and
+      typing it is part of the missing theorem. An equivalent equality of all
+      quasi-free two-point functions on the boundary marginal is sufficient.
+      Preserve the declared time, state, adjoint, APS domain, and reference
+      sector. No equality Gamma=P_C and no new chirality projector is part of
+      this test.
+
+  (B) Existing electromagnetic observable.
+      Keep the already written singly directed quantity (10). Prove the exact
+      response identity
+
+        det_F R_beta(q)=det(1-q U_Sigma^min)=1-q.          (15)
+
+      Equality of the two scalar determinants alone is not enough. At finite
+      beta the KMS jump D_beta is trace class of infinite rank, whereas
+      U_Sigma^min is rank one, so no unitary V can identify those two operators.
+      A literal rank-one identification is available only in the limit beta
+      tends to infinity after proving V Pi V^*=U_Sigma^min. At finite beta the
+      source must instead prove that its EM functional reads the relative
+      Fredholm determinant of the marginal in (A).
+
+  (C) Optional doubled norm route.
+      If a genuinely positive two-face Quillen response is still intended,
+      separately construct R_pos and prove that the original source reads its
+      norm. This cannot be inferred from the actual inverse pair, whose
+      determinant and norm are one.
+
+  (D) Topological coupling.
+      Retain J_top=d SF=2 as the separately sourced alpha reweighting and prove
+      the previously identified residual-sector Ward constancy. Do not infer
+      this coupling from a determinant norm.
+
+The original formula (10) already fixes a singly directed admissible EM
+functional, and the KMS identity (14) supplies the exact one-face factor on a
+faithful circle covariance. It does not by itself identify tr_adm with H_+ or
+with that covariance. The first unsupported implication is (A), followed by
+the response identification in (B). A physical full-pair determinant is not
+required by the cited EM formula. Merely naming a Quillen line, BFK gluing, or
+an eta phase does not pass the test.
+
+Atlas comparison
+----------------
+
+At Atlas revision fc37fe012313a99c2c456cca, the registered
+original-admissible-source-closure contract still lists as open the
+identification of the original electromagnetic logarithmic response with the
+directed relative covariance determinant. ALPHA.QUILLEN.EXACT.01 separately
+keeps the continuum Quillen comparison and the first-principles U(1) response
+identity open. The present calculation narrows those two gaps to the observable
+and normalization alternatives above; it does not promote either claim.
+
+Primary mathematical reference used only for the determinant-line role of
+eta and its gluing/variation law:
+
+  X. Dai and D. S. Freed, Eta-Invariants and Determinant Lines,
+  arXiv:hep-th/9405012.

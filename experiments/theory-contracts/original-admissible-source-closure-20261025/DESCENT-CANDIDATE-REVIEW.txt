@@ -1,0 +1,216 @@
+INDEPENDENT REVIEW: THE FIXED PIN DESCENT CANDIDATE A = u_cov C
+================================================================
+
+26 October 2026
+
+Verdict
+-------
+
+The composite gives a valid positive one particle statement in the same flat
+Moebius geometry.  With
+
+  D = -i(sigma_1 partial_x + sigma_2 partial_w),
+  C = sigma_1 K,
+  u(x) = exp(i pi x),
+  A = u C,
+
+and c = plus or minus i, A is an antiunitary involution of the single fixed
+domain Dom D_(c,b).  It preserves the chosen Pin-minus lift, the physical
+boundary sign b, H1 regularity and supports.
+
+It is not a symmetry of the supplied Dirac realization.  The exact identity is
+
+  D_(c,b) A = - A D_(c,b) + pi sigma_1 A,                 (1)
+  A D_(c,b) A = -D_(c,b) + pi sigma_1.                   (2)
+
+Consequently it neither preserves nor exactly complements the original
+positive spectral polarization.  It is not an intertwiner of the original
+Dirac solution operator, heat semigroup or positive time.  Its action on the
+Calderon boundary range requires a separate boundary trace calculation and
+does not follow from the bulk relation alone.  It is therefore not yet the
+P1 reflection Theta.  It closes the narrower descent question that u alone
+left open: the lift-changing winding can be combined with the sector-changing
+charge conjugation to obtain a support-preserving antiunitary on one fixed Pin
+and boundary domain.
+
+1. Exact domain calculation
+---------------------------
+
+The primary source uses
+
+  Psi(x+1,-w) = c sigma_1 Psi(x,w),
+  sigma_1 Psi(x,plus or minus 1) = b Psi(x,plus or minus 1).
+
+Proposition 8.3 proves that C maps (c,b) to (bar c,b).  For c = plus or
+minus i one has bar c = -c.  If Phi belongs to the -c sector, then
+
+  (u Phi)(x+1,-w)
+    = -u(x) (-c sigma_1) Phi(x,w)
+    = c sigma_1 (u Phi)(x,w).
+
+Thus u maps (-c,b) to (c,b), and A maps (c,b) to itself.  Multiplication by
+u and C both preserve H1.  Since sigma_1 is real and u bar(u)=1,
+
+  A^2 = u sigma_1 K u sigma_1 K = I.                    (3)
+
+The boundary condition is retained because C preserves b and u is scalar.
+Both operations are pointwise, so A preserves support in the cover chart.
+
+2. The derivative term is decisive
+------------------------------------
+
+Direct differentiation gives
+
+  D u = u D + pi sigma_1 u.
+
+Combining this with D C = - C D proves (1).  Since A commutes with the real
+matrix sigma_1, the centered operator
+
+  D_cen = D - (pi/2) sigma_1                              (4)
+
+does satisfy
+
+  D_cen A = - A D_cen.                                   (5)
+
+Equation (5) cannot be silently assigned to the original source.  The gauge
+v(x)=exp(-i pi x/2) obeys
+
+  D(v Psi) = v D_cen Psi,
+
+and changes the deck multiplier from c to -i c.  Hence for c=plus i or
+minus i the centered problem is gauge equivalent to the c=plus 1 or minus 1
+Pin-plus realization.  It is the original differential expression with an
+additional flat connection, not the supplied fixed Pin-minus operator.
+
+This also agrees with the primary spectral table.  A strict particle-hole
+symmetry inside one c=plus or minus i realization would force symmetric
+spectrum, while Corollary 8.4 gives eta plus or minus one half.
+
+3. Original polarization and Fock type
+---------------------------------------
+
+Let P_- be the negative spectral projection of the actual D_(c,b).  A
+particle-hole lift on its quasifree CAR representation would require
+
+  A P_- A^(-1) - (I-P_-)
+
+to be Hilbert-Schmidt.  This is not true for the full two dimensional
+realization.
+
+For every nonzero transverse mode, the primary source reduces D to the
+two by two blocks
+
+  H(q,mu) = b q sigma_1 + mu sigma_3,
+  mu = n pi/2,  n >= 1.
+
+Equations (2) and functional calculus reduce the covariance mismatch to the
+difference of the positive projectors of
+
+  H(q,mu)                    and
+  H(q,mu) - pi sigma_1.
+
+Put x=bq.  The squared Hilbert-Schmidt distance of these rank one projectors
+is exactly
+
+  1 - [x(x-pi)+mu^2]
+      / [sqrt(x^2+mu^2) sqrt((x-pi)^2+mu^2)].            (6)
+
+For n >= 4, restrict to the longitudinal frequencies with |q| <= mu and the
+appropriate sign of x=bq.  There are at least n/4 such lattice points.  The
+exact two by two projector formula gives on each of them
+
+  ||Delta P||_HS^2 >= pi^2/(13 mu^2) = 4/(13 n^2).       (7)
+
+Their contribution at transverse level n is therefore at least 1/(13n).
+The harmonic sum diverges, so the full mismatch is not Hilbert-Schmidt.
+
+Accordingly A has no Shale-Stinespring particle-hole implementer in the
+standard full D sea representation.  Ordinary second quantization Gamma(A)
+would in any event be the wrong type because A is antiunitary.
+
+The one dimensional zero-transverse branch is different.  There sigma_1=b
+and A sends a longitudinal eigenvalue lambda to b pi-lambda.  The failure to
+exchange positive and negative modes is only one unpaired quarter mode, so
+the reduced circle particle-hole map is implementable with a finite defect.
+That is consistent with the already proved quarter-domain/Fock construction
+in seam-partner-original-action-20261015 and FOCK-DEFECT-REVIEW.txt.  It does
+not promote that reduced branch to the full collar.
+
+4. Time, reflection and Calderon data
+-------------------------------------
+
+For the original realization,
+
+  A exp(-t |D|) A^(-1)
+    = exp(-t |-D + pi sigma_1|),                         (8)
+
+which is not the original positive semigroup.  Likewise antiunitarity gives
+
+  A exp(i t D) A^(-1)
+    = exp(i t (D-pi sigma_1)),                           (9)
+
+not the original unitary time.  The normal derivative makes sigma_1 fail to
+commute with D, so the extra term cannot be removed from these formulas by a
+scalar phase.
+
+The original P1 construction distinguishes geometric deck reflection,
+Calderon polarization and finite carrier involution.  A moves no base point;
+it is pointwise conjugation followed by a phase.  It therefore does not by
+itself exchange the positive and negative collar regions.  If a local spinor
+solves D Psi=0, equation (1) gives
+
+  D(A Psi)=pi sigma_1 A Psi,
+
+so A is not a bulk D-solution intertwiner.  This fact alone does not prove
+that its boundary trace fails to preserve the Calderon range: another
+D-solution could have the same transformed boundary trace.  Deciding that
+question requires the actual Poisson or Calderon boundary operator and the
+identity
+
+  A_boundary Ran(P_C) = Ran(P_C),
+
+or a counterexample to it.  Neither is supplied by the present calculation.
+Preserving the local physical edge condition b is strictly weaker than
+preserving the P1 boundary polarization.
+
+The composite can decorate a separately supplied geometric reflection, but
+reflection positivity, the state, the collar reference and their common
+intertwiner still have to be proved on that same representation.
+
+5. Relation to the earlier source results
+------------------------------------------
+
+The registered earlier work contains the two ingredients separately:
+
+  * C exchanges the alpha=1/4 and alpha=3/4 source domains and gives their
+    state, charge and positive excitation energy conjugation.
+  * u_cov exchanges the two quarter character spaces on the cut NS cover and
+    has the existing CAR winding implementer.
+
+In the registered sources inspected here the two ingredients are stated
+separately; I found no stated full two dimensional composite as a fixed
+Pin-minus endomorphism and no occurrence of the correction term in (1).  The
+composite therefore supplies a useful local conclusion for the domain descent
+test.  The same correction term prevents the present calculation from being
+called the already required Theta arrow.
+
+Sources actually checked
+------------------------
+
+Anik Chakraborty, Pin Equivariance and Local Dirac Boundary Problems on the
+Flat Moebius Band, arXiv:2610.03745v1, Theorem 3.2, Corollary 4.2,
+Definition 6.1, Theorem 8.2, Proposition 8.3 and Corollary 8.4.
+https://arxiv.org/html/2610.03745v1
+
+experiments/theory-contracts/canonical-seam-fermionization-20261025/
+MOBIUS-QUARTER-OPERATOR-DICTIONARY.txt, sections 2 through 6.
+
+experiments/theory-contracts/seam-partner-original-action-20261015/
+PROOF.txt, lines 154 through 203.
+
+experiments/theory-contracts/original-admissible-source-closure-20261025/
+FOCK-DEFECT-REVIEW.txt, sections 1 through 3.
+
+documents/archive--tfpt-45--source_extracts--01_boundary_kernel_source/
+sections/001-section-primitive-core-and-carrier-interface-handoff.tex,
+lines 118 through 180.

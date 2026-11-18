@@ -13,7 +13,7 @@ import sympy as s
 ROOT = Path(__file__).resolve().parents[3]
 PINS = {
     'experiments/theory-contracts/source-half-sector-bridge/checker.py':
-        '43d682889f84f83b8a7ba7c5d7bf0ce92913d6310d6ba7243d07c827e6a2218d',
+        'effed6ccb62245785f9685fa10979c734483479aae369ed0df414d2208c683b7',
     'experiments/theory-contracts/compiler-clifford-bridge/checker.py':
         'bf566c57f8f9fd2839c3b9ea6fe9c8ce65cc66c310fb6a4ee3119a8c9329d22d',
 }

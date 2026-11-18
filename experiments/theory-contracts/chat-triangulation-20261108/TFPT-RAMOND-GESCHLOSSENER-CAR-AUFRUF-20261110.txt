@@ -1,0 +1,187 @@
+TFPTRAMONDCLOSED20261110
+Geschlossener Rückweg aus den vorhandenen neutralen CAR Strömen
+
+1. Der tatsächlich ausgeführte Quellenaufruf
+
+Im vorhandenen v16 Fold seien q das Ramond Bein, R=M^T c M
+die native Clock, q'=Rq und gamma=q-q'. Die geschlossene
+Kreuzform wird mit denselben fünf ursprünglichen neutralen
+Präparationen phi_i vor der q Einfügung gelesen. Ihre
+Ramond Bilder sind w_i=(V_q)_0 phi_i. Die transformierte
+rechte Präparation hat Stromachsen R V. Sie verwendet
+denselben ursprünglichen Viertelzustand und dieselbe
+Punktspaltungsverschiebung wie die direkte Rechnung.
+
+Das q=0 Oszillatorteil von R braucht keinen Halbimpuls.
+Für einen reellen schiefen Logarithmus A von R ist
+ sum_(n>=1) J_-n^T A J_n/n
+auf jeder endlichen Stufe ein schiefadjungierter Operator.
+Seine Exponentialabbildung wirkt auf den Erzeugern als R
+und ist als direkte Summe unitär. Der Kommutator mit
+J_(-n)(v) ist J_(-n)(A v). Damit ist der transportierte
+neutrale Eingang vollständig durch die vorhandenen
+Strommoden gegeben. Die Generatorphase des geladenen
+Clockbeins bleibt die geordnete Phase aus der vorherigen
+Rechnung. Die Wahl des Logarithmus ändert die Exponentialwirkung
+auf den Oszillatoren nicht.
+
+2. Neutrale Form des ganzen geladenen Worts
+
+Die radialen Einfügungen sind p1=q', p2=gamma, p3=-q
+bei |z1|<|z2|<|z3|. Ihre Summe ist null. Die drei
+Skalarprodukte sind p1.p2=-2, p1.p3=0 und p2.p3=-2.
+Auf der gewöhnlichen neutralen CAR Stromfaser erhält
+das geordnete Wort daher die Form
+
+  phase * (z3-z2)^(-2) (z2-z1)^(-2)
+    exp[sum_(n>0) J_(-n)(sum_i p_i z_i^n)/n]
+    exp[-sum_(n>0) J_n(sum_i p_i z_i^(-n))/n].
+
+Die geordnete Phase einschließlich des ursprünglichen
+Adjungierten ist in der verwendeten Liftkonvention -1.
+Die Formel folgt aus der zentralen Stromklammer und
+dem ursprünglichen Kozyklus. Sie benutzt keine einzeln
+implementierte Ramond Erzeugung als Eingabe für das
+geschlossene Wort. Die Gleichheit gilt als radiale
+Operatorwertreihe auf dem gemeinsamen endlichen
+Energiekern. Bei den Originalmoden extrahiert man den
+Koeffizienten z1^(-1) z2^(-2) z3^(-1).
+Auf einem gleichgradigen Matrixelement liefert ein
+Laurentmonom z^p des neutralen Teils dafür den Faktor
+(-p1)p3, wenn p1<=-1 und p3>=1, sonst null. In dieser
+Koeffizientenregel bezeichnen p1 und p3 Exponenten.
+
+Der Checker berechnet die fünf mal fünf leere Rückgramform
+und die kompensierte Kreuzmatrix ausschließlich über diese
+neutralen Ströme. Die leere Gramform stimmt in allen 25
+Einträgen pro Quarter exakt mit dem direkten q Rückweg.
+Die Kreuzmatrix hat beide Male Rang fünf und reproduziert
+den bereits direkt berechneten ersten Zweipaketblock.
+Bei alpha=1/4 lautet dieser
+ [[-77/16+16i, 9i/64],[-459i/512,1539/65536]].
+Bei alpha=3/4 lauten die Nebendiagonalen i/64 und -51i/512.
+Damit stimmen beide Phasen ohne neue Normierung. Der
+Auswahlbegriff leere Rückgramform meint hier das unmarkierte
+Paketwort und nicht den absoluten physischen Z_ref.
+
+3. Leere und markierte Spur desselben alten Zylinders
+
+Ein zweiter Quellenaufruf benutzt den ursprünglichen
+thermischen CAR Zylinder von R071, beta=4pi, die ganze
+See Subtraktion und die echte alte Farbzentrumsauswahl
+auf der ganzzahligen äußeren NS Ladung. Dies ist eine
+thermische Spur, getrennt von der Grundzustandsrechnung
+an den fünf Paketen. Keiner der beiden Aufrufe liefert
+den vollständigen physischen APS Zylinder.
+
+Die absolute leere Spur ist
+  Z_NS,0 = prod_(n>=1)(1-exp(-nT))^-8 Theta_NS,0(0),
+mit T=8 beta. Mit X=q'x1+gamma x2-q x3 ist die relative
+markierte Spur
+  -exp(delta.X) Theta_NS,0(X)/Theta_NS,0(0)
+     / [E_T(x3-x2)^2 E_T(x2-x1)^2].
+Theta summiert über alle ganzzahligen Ladungen mit dem
+alten Farbcharakter null. q', gamma und q erhalten
+diesen Charakter an beiden inneren Schnitten. Die
+Verklebung enthält die vollen Zwischenräume. Diese
+Formel benutzt die R071 Ordnung, ganze OS Zeit des
+alten Kreises und denselben thermischen Referenznenner.
+
+Für die vorhandenen alten Zeitabstände 1/20 und 1/8
+in H Zeit, also x=(0,2/5,7/5), ergibt der numerische Lauf
+
+alpha | Z_NS,0 | markierte unnormierte Spur | Quotient
+1/4 | 1.00000000680652608898 | -4.64883273911401207431 | -4.64883270747161096761
+3/4 | 1.00000015071391279183 | -4.64883410212239467664 | -4.64883340147852282247
+
+Die Zahlen wurden mit 65 Dezimalstellen und zwei
+Trunkierungen ausgewertet, Differenz unter 1e-58.
+Die Formel selbst ist exakt. Die Zahlen sind keine
+rigorosen Intervallwerte. Die Nichtnullaussage folgt
+bereits analytisch aus der positiven Theta Summe,
+den positiven Primfaktoren und dem festen Kozyklus.
+
+4. Innerer Sektor bleibt messbar
+
+Obwohl das ganze Wort auf der neutralen NS Faser
+lesbar ist, liegen die Zwischenfasern bei q' und q,
+also bei halbganzzahligen Ladungen in allen acht
+Komponenten. Auch bei jeder ganzzahligen äußeren
+Thermalladung liegen die beiden inneren Impulse in
+den halbganzzahligen Cosets. Ein mittlerer Einsatz
+S_j=exp(2pi i Q_j) multipliziert das ganze alte Wort
+an jedem der beiden inneren Schnitte exakt mit -1.
+Der zugehörige ganzzahlige Projektor (I+S_j)/2
+annulliert das Wort. Im leeren NS Aufruf und am
+äußeren Ende wirkt S_j als +1. Das Resultat betrifft
+den tatsächlichen Cartanstrom. Seine Identifikation
+mit der physischen Determinanteninvolution folgt
+daraus nicht.
+
+Dies trennt die vollständige neutrale Rückantwort
+von einer Darstellung, die auch am inneren Schnitt
+ausschließlich ganzzahlige CAR Ladungen zulässt.
+Letztere liefert beim selben Ward Einsatz das
+Pluszeichen. Beide Aussagen bleiben bei einer
+gemeinsamen nichtnullen äußeren Gewichtung als
+Wortidentitäten gültig. Das Argument fordert
+keinen physischen Projektor inmitten des Worts.
+Es benennt die prüfbare Wirkung für den Fall eines
+diagnostischen inneren Einsatzes.
+
+5. Die benötigte gemeinsame Form auf den Originalvektoren
+
+Für die zwei ersten tatsächlichen Pakete seien
+a_j=U_c w_j und b_i=(V_gamma)_0^* w_i die beiden
+Paare am gleichen inneren q' Schnitt. Phase und
+Adjungierter sind in derselben geordneten Konvention
+geführt. Am äußeren q Schnitt sind die vier Vektoren
+w_0,w_1,V_gamma U_c w_0,V_gamma U_c w_1 zu verwenden.
+Beide Vierergramformen sind in jedem Quarter strikt
+positiv, mit Rang vier. Der innere und der äußere
+ungewichtete Kreuzblock stimmen adjungiert exakt
+überein. Das prüft auch das Rückbein.
+
+Nach einer gemeinsamen tatsächlichen Feldabbildung
+genügt für diesen Zweipakettest die Einschränkung der
+vollen positiven Schnittform auf die vier konkreten
+Richtungen. Die beiden Diagonalblöcke und der leere
+Referenzskalar bestimmen den Kreuzblock nicht. Weil
+die Vektoren unabhängig sind, geben die ursprüngliche
+Gramform und die Blockdiagonale ihrer zwei
+Diagonalblöcke zwei strikt positive Formen auf
+demselben Span, bei gleicher separater Paarungsnorm
+und verschiedenem Kreuzblock. Das ist ein Test der
+Information, keine Wahl eines physischen Gewichts.
+
+Der geschlossene neutrale CAR Aufruf beseitigt die
+Notwendigkeit, für dieses vollständige Randwort erst
+einen separaten lokalen Halbimpulsoperator zu wählen.
+Der physische Anschluss braucht die gemeinsame
+Abbildung dieses Mehrbogenworts und der vier
+tatsächlichen Richtungen in den APS Aufruf, die
+darauf wirkende vollständige Auswahl und die
+ursprüngliche Faserform samt Leerreferenz.
+Der vorhandene Q Adapter multipliziert die schon
+gelieferten ordered_source_forms mit ihrem ebenfalls
+gelieferten unnormierten Gewicht. Die heute neu
+berechneten Formen sind die alten CAR Formen, keine
+solche ausgeführte physische Faser. Die native
+unveränderte Laufprobe der letzten Fortsetzung hat
+dafür bereits die fehlende Faseroperation festgestellt.
+R113 und F1 bleiben auf dieser Ebene unberechnet.
+
+Reproduktion und Originale
+
+check_ramond_closed_car_return_20261110.py
+check_ramond_clock_return_20261110.py und
+TFPT-RAMOND-CLOCK-RUECKWEG-20261110.txt für Ladung,
+Adjungierten und direkten ursprünglichen Paketvergleich.
+MIXED-SPIN-WORD-PROOF.txt im Original APS Vertrag für
+T, Theta, Primfaktor und absolute NS Referenz.
+TFPT-NEUTRALE-FOLD-VERKLEBUNG-20261109.txt für die
+vorhandene neutrale Paarverklebung und den Ward Schnitt.
+Original Q runtime/original_source_adapter.py,
+contribution_capability_report und _evaluate_contribution_unchecked.
+Mason und Tuite, https://arxiv.org/abs/math/0204323.
+Rehren und Tedesco, https://arxiv.org/abs/1205.0324.

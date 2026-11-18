@@ -1,0 +1,50 @@
+V311 TRANSFER: EXACT QUANTUM-PROCESS AMBIGUITY
+
+Question. Does the whole population history of the existing three-state
+transfer determine its full quantum process? No, within the extension class
+constructed here. This answers an identifiability question about that reader;
+it does not prove any of these extensions is the original physical TFPT source.
+
+Original input: verification/v311_gap_decoupled_measure.py, transfer(). The
+checker imports and compares the original numerical 3x3 matrix, and constructs
+its spectral-projector expression exactly over the rationals:
+
+ T = [[1651/4374, 1267/4374, 728/2187],
+      [1267/4374, 1651/4374, 728/2187],
+      [728/2187,  728/2187,  731/2187]].
+
+Set E_ij=|i><j| and, for 0 <= e <= 731/2187,
+
+ Phi_e(X) = e X + sum_ij (T_ij - e delta_ij) E_ij X E_ij^*.
+
+This is a diagnostic family on an auxiliary three-dimensional Hilbert space.
+The interval is sufficient for the construction; it is not claimed maximal.
+Every coefficient is nonnegative, so the displayed Kraus decomposition is
+completely positive. The column sums of T equal one, making Phi_e trace
+preserving. The checker independently verifies the exact Choi decomposition
+and its partial trace, symbolically in e. It checks the nine matrix units to
+establish, for every complex input matrix X,
+
+ diag(Phi_e(X)) = T diag(X),  diag(Phi_e^n(X)) = T^n diag(X).
+
+Thus all e have identical population histories for all initial matrices and
+all nonnegative integer times. Yet for rho=|0+1><0+1|/2 the off-diagonal
+entry is e/2: values e=0, 1/5, 1/3 give 0, 1/10, 1/6 respectively.
+The interval therefore contains uncountably many distinct channels with this
+same population reader. This does not claim the displayed interval exhausts
+all possible values or channels.
+
+Additional TFPT source, E8/clock intertwiner, CAR, Higgs, locality and state
+constraints are not imposed here. They may distinguish or exclude these
+extensions. Identifying this qutrit with the full E8, 96-component or physical
+source carrier would be an additional, unproved assumption. A classical
+population history is not a complete multi-time process tensor with arbitrary
+interventions; the latter could distinguish the channels.
+
+Run from repository root:
+
+ python3 experiments/theory-contracts/tfpt-unified-source-derivation-20261029/aps_source_review/check_v311_process_ambiguity.py
+
+Requires numpy and sympy. Exit 0 means all listed exact identities and the
+comparison to the original floating-point transfer passed. This is a theory
+contract diagnostic, not an empirical prediction or ledger promotion.

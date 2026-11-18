@@ -1,0 +1,145 @@
+{
+  "checks": [
+    {
+      "detail": "char(A0*) = lambda(lambda-1/3)(lambda-2/3) exactly",
+      "id": "A0_SPECTRUM",
+      "passed": true
+    },
+    {
+      "detail": "V0,V1,V2 are exact eigenvectors for weights 0,1/3,2/3",
+      "id": "A0_EIGENVECTORS",
+      "passed": true
+    },
+    {
+      "detail": "A_(k+1)=U A_k U^-1; this proves C4 covariance only",
+      "id": "C4_FLAGS",
+      "passed": true
+    },
+    {
+      "detail": "sum A_k = diag(2,1,1)",
+      "id": "RESIDUE_SUM",
+      "passed": true
+    },
+    {
+      "detail": "the four M_k generate irreducible A4 of order 12, not S4",
+      "id": "FOUR_PUNCTURE_MONODROMY_IS_A4",
+      "passed": true
+    },
+    {
+      "detail": "adjoining the C4 covariance U extends A4 to the sign-twisted standard S4 representation",
+      "id": "U_EXTENDS_A4_TO_S4",
+      "passed": true
+    },
+    {
+      "detail": "81 threshold patterns; all 31 with sum>=5 have rank 5; max sum=4",
+      "id": "RANK1_DEG_MINUS2_81_PATTERNS",
+      "passed": true
+    },
+    {
+      "detail": "a degree -1 line lies in span(e2,e3) and has total weight at most 2/3",
+      "id": "RANK1_DEG_MINUS1",
+      "passed": true
+    },
+    {
+      "detail": "81 upper-weight patterns; all 31 with sum<=3 have rank 4; min sum=4",
+      "id": "RANK2_QUOTIENT_DEG_MINUS1_81_PATTERNS",
+      "passed": true
+    },
+    {
+      "detail": "the eight all-zero-weight equations have rank 7 in seven variables",
+      "id": "RANK2_QUOTIENT_DEG_ZERO",
+      "passed": true
+    },
+    {
+      "detail": "all saturated rank-1 subbundles have pardeg<0 and all rank-2 quotients have pardeg>0",
+      "id": "ALGEBRAIC_PARABOLIC_STABILITY",
+      "passed": true
+    },
+    {
+      "detail": "g=diag(w^2,w,w) leaves the exact residue -(2sqrt(2)/3)E12; pure BG shear is insufficient",
+      "id": "INFINITY_DIAGONAL_SHEAR_AUDIT",
+      "passed": true
+    }
+  ],
+  "failures": [],
+  "infinity_patch": {
+    "affine_residue_sum": [
+      2,
+      1,
+      1
+    ],
+    "consequence": "a further Levelt/Birkhoff lattice choice is required and may change the affine splitting frame",
+    "finite_flags_unchanged_if_transition_valid": true,
+    "negative_BG_transition": "g(w)=diag(w^2,w,w)",
+    "pure_diagonal_shear_holomorphic": false,
+    "remaining_residue": [
+      [
+        "0",
+        "-2*sqrt(2)/3",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0"
+      ]
+    ]
+  },
+  "monodromy": {
+    "covariance_character_distribution": {
+      "-1": 9,
+      "0": 8,
+      "1": 6,
+      "3": 1
+    },
+    "covariance_extension_group": "S4",
+    "covariance_extension_group_order": 24,
+    "four_puncture_character_distribution": {
+      "-1": 3,
+      "0": 8,
+      "3": 1
+    },
+    "four_puncture_group": "A4",
+    "four_puncture_group_order": 12,
+    "kernel_cover": "degree 12 and genus 5 for the compactified four-puncture A4 kernel cover"
+  },
+  "rank1": {
+    "bounds": {
+      "degree_-1": "pardeg <= -1 + 2/3 = -1/3",
+      "degree_-2": "pardeg <= -2 + 4/3 = -2/3",
+      "degree_<=-3": "pardeg <= -3 + 8/3 = -1/3"
+    },
+    "degree_minus1_maximum_weight_units": 2,
+    "degree_minus2_feasible_patterns": 46,
+    "degree_minus2_patterns": 81,
+    "maximum_weight_units": 4,
+    "sum_at_least_5_full_rank": 31,
+    "sum_at_least_5_patterns": 31
+  },
+  "rank2": {
+    "bounds": {
+      "quotient_degree_-1": "pardeg(Q) >= -1 + 4/3 = 1/3",
+      "quotient_degree_-2": "pardeg(Q) = -2 + 8/3 = 2/3",
+      "quotient_degree_0": "pardeg(Q) >= 1/3",
+      "quotient_degree_>0": "pardeg(Q) > 0"
+    },
+    "degree_minus1_feasible_patterns": 34,
+    "degree_minus1_quotient_patterns": 81,
+    "degree_zero_all_weight_zero_matrix_rank": 7,
+    "minimum_weight_units": 4,
+    "sum_at_most_3_full_rank": 31,
+    "sum_at_most_3_patterns": 31
+  },
+  "scope": {
+    "not_proved": "identity of that affine flag object with the Deligne extension of the v115 ODE",
+    "proved": "stability of the declared split parabolic object with the four raw rotated A0* flags",
+    "symmetry": "C4 covariance exact; no D4 reflection linearization inferred",
+    "v117_relation": "the four peripheral monodromies generate irreducible A4; U extends it to S4 and supplies the covariance data; A0* identification remains numerical"
+  },
+  "verdict": "PASS_SCOPED"
+}

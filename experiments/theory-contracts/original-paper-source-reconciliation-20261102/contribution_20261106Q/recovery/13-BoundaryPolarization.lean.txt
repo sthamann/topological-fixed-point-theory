@@ -1,0 +1,47 @@
+1: /-
+2:   TFPT Carrier — Boundary Polarisation
+3:   ------------------------------------
+4: 
+5:   v10 upstream layer for the Calderón interface.
+6: 
+7:   In Paper 1's analytic incarnation, the Calderón polarisation
+8:   is the decomposition of a boundary spectral space into a
+9:   positive and a negative chirality block,
+10: 
+11:       H = H_+ ⊕ H_-,
+12: 
+13:   where the two blocks are spanned by the eigenspaces of the
+14:   boundary spectral operator above and below threshold. The
+15:   Calderón projector is then the linear projection onto `H_+`
+16:   along `H_-`. Its key algebraic property is idempotency.
+17: 
+18:   This module captures the *algebraic skeleton* of that
+19:   construction: a `BoundaryPolarization` is a complementary
+20:   pair of submodules of a `K`-module `H`. The projection onto
+21:   the positive block (an endomorphism of `H`) is idempotent by
+22:   the standard Mathlib lemma `IsCompl.projection_isIdempotentElem`.
+23: 
+24:   Composing the two bridges
+25: 
+26:       BoundaryPolarization  →  CalderonProjector  →
+27:       CalderonCertificate   →  CarrierInvolution
+28: 
+29:   feeds the carrier-rigidity chain entirely from a polarisation
+30:   datum, modulo `Invertible (2 : K)` (i.e.\ `char K ≠ 2`).
+31: 
+32:   --------------------------------------------------------------
+33:   Scope discipline
+34:   --------------------------------------------------------------
+35: 
+36:   This module formalises the *algebraic step* from a polarised
+37:   module to a Calderón idempotent. The analytic content of
+38:   Paper 1 — boundary elliptic theory producing the spectral
+39:   decomposition `H = H_+ ⊕ H_-` from a Calderón operator on
+40:   Sobolev spaces — remains upstream. The structure here is the
+41:   Lean-side target for that analytic theorem: a future
+42:   formalisation of Paper 1 would produce a
+43:   `BoundaryPolarization` from the boundary spectral pair.
+44: -/
+45: 
+46: import Mathlib.LinearAlgebra.Projection
+47: import Mathlib.Algebra.Module.End

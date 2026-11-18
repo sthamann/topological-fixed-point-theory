@@ -1,0 +1,219 @@
+TFPTYUKAWAARC20261109
+Zwei ursprüngliche Yukawa Feldenden trennen Richtung, Phase und Quelle.
+Fortsetzung von TFPTNORMALORBIT20261109. Kein Ledgerwechsel.
+
+1. Bestandsabgleich und genaue Eingänge
+
+Die Originalform q(H)=(Htilde,H), Htilde=J conj(H), mit beiden
+Leptonkopplungen steht in Carrier007:212–225. Die Realwirkung und
+Majorana-Kopplung werden mit dem unveränderten v252 Builder und mit
+check_r113_dressed_open_20261109.py gelesen. Für den R032 Vergleich
+werden die ersten zwei dort tatsächlich gespeicherten Higgsvektoren
+und deren nativer undressierter Einheitslink verwendet. Das ist ein
+einzelner R032 Diagnoseabschnitt, keine behauptete physische Wahl.
+
+Der getrennte schon vorhandene NS Zweirandkragen hat Normalbreite 1/8,
+räumliche Enden 0 und pi/4, beide Quarterkarten und die ursprüngliche
+schwache Richtung sigma_x. TFPT-SCHWACHE-GREEN-RANDANTWORT-20261109
+liefert die vollständige Green Ableitung mit diesen Eingängen.
+check_weak_transport_on_original_arc.py liefert die tatsächlichen
+Q-Sektoren 0,±1 und die nichttriviale Bogenwirkung selbst bei schwacher
+Gesamtholonomie I. Der Vollkernel des formalen Querfeldes ist hier
+direkt an endlichen Stärken ausgewertet. Die beiden gegebenen Charts
+werden nicht als bereits identische physische Zeiten, Zustände oder
+Referenzen ausgegeben. Frühere Higgs/Yukawa-, E8-, Clocks-, Flavor-
+und Gravitationsbefunde bleiben getrennt nach ihrem Geltungsbereich.
+
+Die eichkovarianten Higgs-Komposite haben eine bekannte allgemeine
+Vorgeschichte bei Fröhlich, Morchio und Strocchi (Phys. Lett. B97,
+1980). Hier werden die vorhandenen TFPT Yukawa Beine, ihre tatsächliche
+Hyperladungswirkung und der beschriftete Zweirandkern direkt benutzt.
+
+2. Zwei Yukawa Beine lesen den komplexen Bogen
+
+Sei U_H=λ u im Higgsraum, u∈SU(2), |λ|=1, d=det U_H=λ². Im
+ursprünglichen Teilchenblock von v252 wirkt auf (nu_L,e_L) die
+Realwirkung L=conj(λ)u=d^(-1) U_H und auf (nu_R,e_R) die
+Realwirkung R=diag(1,d^(-1)). Die Farbkompensation wird in den
+96er Eichmatrizen unimodular gewählt; die leptonischen Blöcke
+hängen von ihr nicht ab.
+
+Für normierte nichtverschwindende Higgsvektoren am Start i und
+Ziel j setze Q_i=q(Hhat_i), Q_j=q(Hhat_j),
+  c=<Hhat_j,U_H Hhat_i>,    b=<Htildehat_j,U_H Hhat_i>.
+Unitarität und die Determinante liefern
+  Q_j* U_H Q_i = [[d conj(c), b],[-d conj(b), c]],
+  |c|²+|b|²=1.
+Im Leptonblock der echten Yukawa Einform gilt
+  V_i = (Q_i ⊗ I_fam) diag(Y_nu,Y_e)
+für den normierten Higgsvektor. Nach links und rechts nur die
+unveränderten Familienmatrizen entfernen und den rechten Transport
+R am Ausgang rückführen. Die zweiendigen Einfügungen V_j* L V_i
+liefern dann
+  [[conj(c), d^(-1)b],[-d conj(b), c]] ⊗ I_fam.
+Elektron und Neutrino lesen konjugierte Phasen desselben Links.
+Der Abgleich wurde auf den tatsächlichen v252 Matrizen durchgeführt,
+auch bei unabhängig geänderten SU(2) und U(1) Rahmen an beiden Enden.
+c und |b|² sind invariant; der offene Wechselkoeffizient trägt
+Ladung und soll nicht allein als neutrale Zahl interpretiert werden.
+
+R032, erster vorhandener Abschnitt:
+  nativer Link: c=.13310263365-.09807562479 i, |b|²=.97266486074;
+  Richtungslink: c=.80505583735-.59319903805 i, |b|²=0;
+  Vektorlink: c=1, |b|²=0.
+Die jeweils rechte Neutrinoantwort ist konjugiert. Der erste Wert
+liest einen wirklichen Wechsel im vorhandenen bedingten Feldchart;
+die beiden anderen behalten explizit geänderte Links aus der
+vorigen Rechnung bei. Diese Angaben sind die reinen Linkanteile
+der ursprünglichen Beine, keine bereits vollständig gewichteten
+Übergangswahrscheinlichkeiten.
+
+3. Exakte Aufteilung von Richtungswechsel und Phase
+
+Für jede tatsächlich positive normalisierte Stichprobe der
+unitären Linkdaten gilt
+  1-|E c|² = E|b|² + E|c-E c|².
+Die beiden Terme sind getrennt nichtnegativ. Gleichheit mit null
+erfordert b=0 und c konstant fast sicher. Für zwei Historien sind
+die Varianz und der Wechselterm mit beliebigen reellen
+Gewichtparametern algebraisch in WeakArcMoments.lean geprüft;
+Positivität benutzt wirkliche nichtnegative Gewichte.
+
+Die Fassung ohne Division verwendet
+  C=<H_j,U_H H_i>, B=<Htilde_j,U_H H_i>, R_H=||H_i|| ||H_j||.
+Punktweise gilt |C|²+|B|²=R_H² einschließlich H=0. Ist dμ ein
+positiver gemeinsamer Input und E_μ R_H²>0, gilt Abschnitt 3 für
+dν=R_H² dμ/E_μ R_H² und c=C/R_H auf dessen Träger. Für das
+Originalmaß, sofern es positiv in dieser Form bereitgestellt wird,
+sind somit die polynomiellen Wörter C, |B|² und R_H² verfügbar;
+Nullstellen werden nicht durch eine gewählte Higgsphase gefüllt.
+E_ν c liest E_μ(R_H C)/E_μ R_H². Eine andere Normierung oder eine
+komplexe gemeinsame Gewichtung muss separat aus der Originalquelle
+behandelt werden. Es wird keine positive S_adm Verteilung angenommen.
+Mit rein polynomiellen Momenten folgt alternativ
+  E_μ R_H²-|E_μ C|² = E_μ|B|² + E_μ|C-E_μ C|²
+für normalisiertes positives μ. Hier enthält die zweite Varianz
+bei wechselnden Radien sowohl Phase als auch Higgsbetragsstreuung.
+
+Exakter Gegenfall mit zwei gleich gewichteten Bogenpaaren, Winkel pi/4.
+Die vorhandenen Richtungen sigma_x und sigma_z geben jeweils U_±=
+exp(±i(pi/4)sigma). In beiden Fällen ist det U=1, U_±^8=I und
+der volle Mittelwert des schwachen Links ist cos(pi/4)I. Trotzdem
+  Paar quer: E|b|²=1/2, Var(c)=0.
+  Paar längs: E|b|²=0, Var(c)=1/2.
+Das widerlegt die Bestimmung dieser beiden Ursachen aus sogar
+der ganzen gemittelten nackten Wilsonmatrix, zusätzlich zu
+Determinante und Ganzkreis-Holonomie. Die beiden Mischungen sind
+Kontrollen; es ist keine physische Ensembleannahme und keine
+Gleichheit ihrer gesamten gemittelten interagierenden Greenkerne.
+
+4. Der volle vorhandene NS Feldkern am selben Bogen
+
+Setze s=1/8, ell=pi/4, p=m+alpha, Q die reelle 96er schwache
+Lie-Wirkung, h_p(a)=(pI+aQ)Γ-iΓ D_F. Mit X_p=(2 cosh(s h_p))^-1
+ist der gebundene beschriftete NS Kreuzwert des vorhandenen
+homogenen Kragens
+  K_alpha(a)=exp(-i ell aQ) sum_m exp(-i p ell) X_p/(2pi).
+Die Reihenfolge der offenen Wilsonwirkung entspricht dem
+vorhandenen TFPT-SCHWACHE-GREEN-RANDANTWORT Check. Es ist keine
+äußere Normierung und kein S_adm Zweirandwert unter vollem P_adm.
+
+Die tatsächliche Realwirkung G des Higgs fixierenden
+det(U_H)=-1 Elements erfüllt G D_F G=D_F, G Q G=-Q und
+G Γ G=Γ. Daher gilt K(-a)=G K(a) G exakt und
+  P_- (K(a)+K(-a)) P_+/2=0.
+Das Quadrat ||P_- K(a) P_+||_F² ist gleich bei ±a und geht
+bei einer positiven reflektierten Paarung, die die beiden
+Beiträge getrennt aufbewahrt, nicht durch lineare Ausmittelung
+verloren. Das ist vor der physischen Einbettung der tatsächlichen
+determinantenartigen Kandidatenmarke G. Es wird nicht Q_Theta
+mit G identifiziert. Ein Gauss-neutral geschlossenes Quadrat
+und die offene ladungstragende Matrix müssen getrennt bleiben.
+
+Für die gegebenen reellen D_F,Γ,Q gilt zusätzlich
+h_{-p}(-a)=-conj(h_p(a)). Die gerade NS Funktion und
+m→-m-1 ergeben K_(1-alpha)(-a)=conj(K_alpha(a)).
+Also sind die Beträge in den beiden Quarterkarten exakt gleich.
+Die endliche Rechnung benutzt den entsprechend gepaarten Moden-
+schnitt und reproduziert die Identität bis etwa 4.6e-15.
+
+Bei der bereits vorhandenen formalen Bogenstärke a=1 liefert
+der nackte Wilsonlink |b|²=1/2. Die ganze NS Antwort zwischen
+den beiden linken Yukawa Richtungen nach Entfernen der
+Familienkoeffizienten liefert in beiden Quarterkarten
+  ||K_nu,nu||_F²≈7.67499020e-8,
+  ||K_e,nu||_F²≈6.96084944e-11.
+Der Anteil des Wechsels innerhalb dieser zwei beobachteten
+linken Richtungen ist damit 0.00090613, also rund 0.091 Prozent.
+Der ganze G-ungerade 96er Übergangsblock hat Quadrat
+etwa 2.76425351e-8. Für den longitudinalen sigma_z Einsatz
+kommutiert der ganze Kern mit G; der Wechselblock ist null.
+Unabhängig über h² kontrolliert, Matrixdifferenz <4.6e-15.
+Die analytische Frobenius-Restschranke der Modensumme ist
+1.11e-19, ohne zusätzlich zertifizierte Rundungsintervalle.
+
+5. Warum die bloße Holonomie das Ergebnis nicht erklärt
+
+Falls [Q,D_F]=0, kann man in jedem Q-Eigenraum q separat
+p→p+a q umbenennen. Für ganzzahliges a und die tatsächlichen
+q=0,±1 bleiben die ursprünglichen Quartermodengitter invariant.
+Das dabei entstehende exp(+i ell a q) hebt sich gegen den
+Wilsonfaktor auf. Folglich ist der ganze beschriftete K_alpha(a)
+gleich K_alpha(0), für jede Breite s>0. Das gilt insbesondere
+exakt im freien Kontrollkern D_F=0, bei unverändertem Q und
+derselben Geometrie. Numerisch Differenz <4e-16. Die freie
+Kontrolle ist kein behaupteter physischer relativer Nenner.
+
+Im interagierenden ursprünglichen Diagnosekern ist [Q,D_F]
+ungleich null und bei a=1 ändert sich derselbe K gegenüber
+a=0 in Frobeniusnorm um rund .00024415434. Deshalb misst der
+verbleibende Querbeitrag die gekoppelte Quelle. Die vorhandene
+topologische Windung und der volle schwache Umlauf allein
+bestimmen ihn nicht. Diese Beobachtung erklärt zugleich, warum
+aus einer passenden Clocksumme oder einem reinen Wilsonzeichen
+keine absolute leere Rückkehr und kein metrischer Koeffizient
+folgt. Der NS Normalzeitkernel ist keine Spin-2 Berechnung.
+
+6. Physischer Originalschnitt und Fortsetzung
+
+QFT002:14–117 liefert P_adm ≤ (I+Q_Theta)/2 und damit die
+bekannte Identität für einzelne vollständig admissible
+Endoperatoren. Die bestehende TFPTQTHETAWORD Zerlegung trennt
+retained, Gapverlust, Strukturverlust und Q_Theta-ungerade
+Beiträge durch vier Originaleinfügungen. Sie bleibt der richtige
+Verbraucher. Ein positiver Querblock zwischen zwei Yukawabeinen
+kann nur geprüft werden, wenn sein Zwischenraum vor dem
+Schließen des neutralen Worts tatsächlich mitgeführt wird.
+
+Erneuter Direktaufruf des vorhandenen Endpunktpfades meldet
+original_full_source_operation_not_supplied und
+original_blocked_fiber_packet. Die vier registrierten
+Z0/ZU/ZY/ZUY Werte sind null im Sinn fehlender Daten, nicht
+numerisch Null. Der echte gemeinsame reflektierte Cap,
+physische P_adm/Q_Theta Wirkung, D_adm Schwelle sowie
+gebundene Originalreferenz sind auf diesem Bogentest unberechnet.
+Der vorhandene E8_1 Wardwort Rechner liest exakte Stromwörter
+im Vakuum, aber hat kein eingetragenes physisches Wörterbuch
+für die beiden Higgs/Yukawa Enden dieses Schnitts.
+
+Nächster direkter Quelltest: Am ersten gemeinsamen Originalblock
+dieselben rechten Yukawa Enden über das ursprüngliche schwache
+Querfeld schließen. Die komplexe Diagonale sowie den reflektierten
+positiven Wechsel mit dem neutralen Gegenstück, derselben Cap,
+Zeit, Referenz und dem echten D_adm Gap liefern. I, Q_Theta,
+P_str und P_adm als getrennte Schnitteinfügungen auswerten.
+Nur so unterscheidet sich eine physische Selektion von bloßer
+linearen Ausmittelung. Den polynomiellen H=0-sicheren Reader
+benutzen, keine neue Phase, Yukawawahl, Metrik oder Feldgewicht
+einsetzen. Anschließend dieselbe Auswertung in der zweiten
+Originalmetrik und erst dann die gemeinsame Metrikantwort.
+
+Originalquellen und Reproduktion
+- verification/v252_full_finite_triple.py, full_D, rep und Kswap
+- documents/archive--tfpt-45--source_extracts--02_carrier_source/sections/007-subsection-bosonic-relative-index-and-higgs-selection.tex
+- documents/archive--tfpt-45--source_extracts--04_qft_source/sections/002-section-closure-theorems-from-the-admissibility-complex.tex
+- TFPT-SCHWACHE-GREEN-RANDANTWORT-20261109.txt und check_weak_transport_on_original_arc.py im gleichen Contract
+- TFPT-NORMALKRUEMMUNG-UND-SCHWACHER-ORBITTRANSPORT-20261109.txt und TFPT-QTHETA-GELADENES-ORIGINALWORT-20261109.txt im gleichen Contract
+- check_original_yukawa_arc_20261109.py <TFPT-Repository>
+- original-yukawa-arc-results-20261109.json
+- WeakArcMoments.lean und weak-arc-moments-lean-20261109.txt

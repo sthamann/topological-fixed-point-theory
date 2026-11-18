@@ -1,0 +1,258 @@
+INDEPENDENT REVIEW: NORMAL GREEN TRACE TO THE CALDERON GRAPH
+30 October 2026
+
+Question
+
+Claude39's bare notation S2=G is ill typed: a bulk Green kernel and a
+two-boundary Calderon projector are not the same operator.  Does the original
+constant product collar nevertheless contain an exact, choice-free map from
+the Green kernel to that projector?  Is the antiperiodic normal double used in
+this map fixed by the original source, or only one compatible closure?
+
+Verdict
+
+The ORIGINAL homogeneous collar already fixes the closed Poisson range
+
+  graph(exp(-ell h)).
+
+Together with its positive boundary metric, this range fixes the orthogonal
+Calderon projector, independently of any chosen compatible closed Green
+realization.  No new antiperiodic selection gate is needed for that existing
+G contract.  For a selfadjoint tangential operator h the result is
+
+  G = [[A,X],[X,1-A]],
+  A=(1+exp(-2 ell h))^-1,
+  X=exp(-ell h)(1+exp(-2 ell h))^-1.
+
+The antiperiodic circle of length 2 ell supplies one stronger realization:
+the boundary trace of its raw Green Poisson formula is already this orthogonal
+G.  This genuine Green-to-Calderon trace identity uses the jump, the sign of
+the negative Green branch and both boundary limits.  It is not the naked
+equality of a bulk two-point function with a boundary projector.
+
+The antiperiodic closure is actual data in the already constructed elliptic
+NS source and in the period-two NS cover.  There the raw Green trace identity
+is an original source identity inside the explicitly retained free charged
+Gaussian premise.  It is not forced for every primitive P1 Green realization
+by a local Spin(2) lift with square -I alone.  The transport from the abstract
+P1 datum to this particular elliptic NS source is needed only if one wants to
+identify their BULK Schwinger kernels or quantizations.  It is not a
+prerequisite for the original orthogonal Calderon projector obtained from the
+Poisson range and boundary metric.  This review does not identify h with the
+old longitudinal quarter generator, and it supplies no new state, physical
+time or P1 quantization rule.
+
+1. Exact scalar identity
+
+Fix ell>0 and one spectral value lambda of h.  Put
+
+  q=exp(-ell lambda),
+  a=1/(1+q^2),
+  x=q/(1+q^2),
+  c=q^2/(1+q^2)=1-a.
+
+On the antiperiodic circle of length 2 ell the inverse of partial_s+lambda has
+the two branches
+
+  S(tau)= exp(-tau lambda)a,                    0<tau<2 ell,
+  S(tau)=-exp(-(tau+2 ell)lambda)a,          -2 ell<tau<0.
+
+They satisfy
+
+  S(0+)-S(0-)=a+q^2 a=1,
+  S(tau+2 ell)=-S(tau).
+
+For 0<s<ell, the Poisson field produced from an arbitrary boundary source
+pair is
+
+  psi(s)=S(s)f_0-S(s-ell)f_ell.                         (1)
+
+The interior limits of (1) are
+
+  psi(0+)   =a f_0+x f_ell,
+  psi(ell-) =x f_0+c f_ell.
+
+Thus the normal trace of the Green Poisson operator is
+
+  g_lambda=[[a,x],[x,c]].                               (2)
+
+Directly,
+
+  a^2+x^2=a,
+  x^2+c^2=c,
+  ax+xc=x.
+
+Therefore g_lambda*=g_lambda and g_lambda^2=g_lambda.  Its range is the
+one-dimensional graph {(u,q u)}.  This proves both the signs and the
+normalization without equating the Green kernel itself to g_lambda.
+
+2. Full selfadjoint operator
+
+Let h be an arbitrary selfadjoint operator.  The transfer
+
+  T=exp(-ell h)
+
+can be unbounded when h is unbounded below, but it is a closed positive
+operator.  The scalar functions
+
+  a(lambda)=1/(1+exp(-2 ell lambda)),
+  x(lambda)=exp(-ell lambda)/(1+exp(-2 ell lambda)),
+  c(lambda)=1-a(lambda)
+
+are bounded.  Borel functional calculus therefore defines bounded operators
+A, X and C=1-A on the whole boundary Hilbert space.  The scalar identities of
+section 1 hold almost everywhere for the spectral measure of h, hence
+
+  G=[[A,X],[X,C]]=G*=G^2.                              (3)
+
+The standard closed-graph formula gives the same result:
+
+  P_graph(T)=
+    [[(1+T*T)^-1,          (1+T*T)^-1 T*],
+     [T(1+T*T)^-1, T(1+T*T)^-1 T*]].                  (4)
+
+Since T=T*, all four entries of (4) are A,X,X,C.  Thus (3) is the
+orthogonal Calderon projector for the homogeneous collar, including the full
+unbounded spectral case.  Boundary limits are understood in the usual trace
+domain of the Poisson solution; the resulting projector is bounded.
+
+3. Why antiperiodicity matters, and what does not depend on it
+
+For comparison, suppose a periodic circle of length 2 ell is chosen and
+1-exp(-2 ell h) has a bounded inverse.  Put
+
+  A_p=(1-exp(-2 ell h))^-1,
+  X_p=exp(-ell h)A_p.
+
+The periodic Green branches have no minus sign across the closure.  Applying
+the same two-boundary trace to (1) gives
+
+  C_p=[[A_p,-X_p],[X_p,-exp(-2 ell h)A_p]].             (5)
+
+Scalar functional calculus gives C_p^2=C_p, and its range is again graph(T),
+but generally C_p is not selfadjoint.  Its orthogonal range projection is the
+operator G in (3).  A zero mode of h makes the periodic inverse singular,
+whereas the antiperiodic inverse and (3) remain regular with A=C=X=1/2 on that
+mode.
+
+Consequently the graph subspace and its orthogonal projector are intrinsic to
+the given homogeneous collar transfer and its positive boundary metric.  The
+statement that the RAW CLOSED Green jump matrix produces this orthogonal
+projector directly does use the antiperiodic spin closure.  Local face reality
+and the square of a local lift do not on their own choose that closure, but no
+such choice is needed to orthogonally project onto the already fixed Poisson
+range.
+
+4. Status in the actual sources
+
+The existing elliptic source fixes the relevant global data.  On its NS--NS
+spin line, partial_t+B is antiperiodic in both directions.  Its spectral Green
+kernel has precisely the two branches above, and its half-annulus Cauchy data
+have transfer exp(-W B).  ELLIPTIC-GREEN-RP proves that the time-zero Green
+covariance is the labeled face compression of that same finite-width graph.
+CANONICAL-CUT-STATE-TIME-BRIDGE specializes the same calculation to the actual
+period-two NS cover, where the Pin lift gives psi(x+2,w)=-psi(x,w), the cut is
+at x=0,1, and h=H.  In that source the antiperiodicity is therefore not a new
+choice made for this calculation.
+
+The retained premise matters.  That report states explicitly that the charged
+CAR field and its Gaussian Green kernel are source premises, not consequences
+of the bare differential expression.  BOUNDARY-SOURCE also states that the
+primitive P1 material does not provide the transport from its abstract
+one-sided datum to this specific C2 annulus.  DOUBLE-WALL-REVIEW gives the same
+typing test in local terms: a local face compatibility equation permits both a
+clutch U and -U, so it cannot select the global gluing sign.
+
+The correct scope is therefore:
+
+  * the orthogonal G is exact for every selfadjoint h from the homogeneous
+    Poisson range and positive boundary metric;
+  * the raw Green boundary trace equals G directly once the antiperiodic
+    normal double is given;
+  * actual for the named elliptic NS free Gaussian source and period-two NS
+    cover;
+  * the existing primitive P1 Calderon contract does not wait for an
+    antiperiodic closure, while identification of its bulk Schwinger kernel
+    with the elliptic NS kernel remains a separate source map;
+  * independent of any equality between h and the tangential quarter clock;
+  * no derivation of an interacting source, a physical state-selection rule or
+    a physical time evolution.
+
+5. The original W_rel contract does not select J* M_mu
+
+The original definition is
+
+  Z_rel[J,eta,bar eta]=Z_adm[J,eta,bar eta]/Z_ref[0,0,0],
+  W_rel=log Z_rel.
+
+Its Schwinger distributions are defined by differentiating W_rel with respect
+to the generic local source tuple (J,eta,bar eta).  These statements fix the
+normalization and say how an ALREADY SPECIFIED local source insertion is read.
+They do not provide an operator map from the symbol J or the Grassmann sources
+to the later geometric Hom insertion M_mu.  In particular, the displayed
+definition contains neither the q/p transport J_geom nor the contraction
+M_mu, and it cannot by itself select
+
+  K_mu=J_geom* M_mu.                                  (6)
+
+The existing whole source supplies the two ingredients separately.  Its
+transported CAR state and geometry give J_geom and the graph covariance G_q;
+the original spin product plus its specified tangent or Clifford contraction
+gives M_mu.  Once BOTH are supplied, (6) is uniquely typed on the q source and
+the existing state fixes its response.  For graph test columns E_r,
+
+  <E_r,G_q J_geom* M_mu E_s>
+    =<J_geom E_r,M_mu E_s>.                           (7)
+
+Thus the positive answer is precise: the given CAR source determines the
+response of the specified insertion, including its endpoint, state and graph
+factors.  W_rel alone neither chooses M_mu nor identifies its generic source
+variable with (6).  This is the smallest decisive distinction between a
+source functional and a source-to-operator dictionary.  It also agrees with
+the recovered P1 kernel typing: the thin kernel does not specify its insertion
+algebra, while the full operational seed may include such an algebra as
+additional given data.
+
+6. Sources checked
+
+  experiments/theory-contracts/elliptic-moebius-source-bridge-20261026/
+  ELLIPTIC-GREEN-RP.txt
+  SHA256 d8799f04851a9bd539b05b4d013b38eb00de9bec07dddde6438023aaf1facd80
+
+  experiments/theory-contracts/elliptic-moebius-source-bridge-20261026/
+  GEOMETRY.txt
+  SHA256 be6dca12fe366f6aeba7953dd7ba1c100ddfe40d5faca43d8ea1a883fe85c4ce
+
+  experiments/theory-contracts/elliptic-moebius-source-bridge-20261026/
+  BOUNDARY-SOURCE.txt
+  SHA256 a12e7b7566734e26ef9c53c6ee910638a77f20412085943d6cd30b255b7e9251
+
+  experiments/theory-contracts/elliptic-moebius-source-bridge-20261026/
+  session_coverage/supplements/CANONICAL-CUT-STATE-TIME-BRIDGE.txt
+  SHA256 510bb197905fb037d35dad3e73e7db839bd4ae1a19af864f020c324c6c170422
+
+  experiments/theory-contracts/tfpt-unified-source-derivation-20261029/
+  aps_source_review/DOUBLE-WALL-REVIEW.txt
+  SHA256 f8635d1b544e80626b79ca7a3a23120d568b8f3878ace11acacfadaa98ab759c
+
+  documents/archive--tfpt-45--source_extracts--04_qft_source/sections/
+  002-section-closure-theorems-from-the-admissibility-complex.tex
+  SHA256 61ecee7727bdec47936bbffc028d3dbac5260a025b6dbcce30124a60d635fc9c
+
+  documents/archive--tfpt-45--source_extracts--04_qft_source/sections/
+  005-subsection-admissible-schwinger-functions-minkowski-loca.tex
+  SHA256 8bf0a37157505ca12b90154dbe41a29c49a503686a8493dffd63945f205e0af6
+
+  experiments/theory-contracts/tfpt-unified-source-derivation-20261029/
+  aps_source_review/F5-QP-REVERSE-HOM-KERNEL-REVIEW.txt
+  SHA256 07b31e029aef2bb4f51ffd3c65a6f659da29581c203df2101dd6556c4c7be2b9
+
+  experiments/theory-contracts/tfpt-unified-source-derivation-20261029/
+  aps_source_review/INDUCED-HARDY-DEFECT-BMU-FINITE-READER.txt
+  SHA256 209e29b96e4f43d7a4211f3a0a8ccaa0e4607db9991947b622ee174fceb510d3
+
+  experiments/theory-contracts/elliptic-moebius-source-bridge-20261026/
+  neutral_moebius_source_20261029/P1-KERNEL-TYPES.txt
+  SHA256 92791e1f2cf9633989188e6e6696f7426ba838095808206b059627454480af16
+
+No registered source, Atlas record or original file was modified.

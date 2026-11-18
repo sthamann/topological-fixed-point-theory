@@ -1,0 +1,87 @@
+E8MIDDLEBLOCKS20261116 · Positive Dynamik im geordneten E8 Rückweg
+
+Ansatz und Normierung
+
+Die Eingänge sind die 128 Materiewurzeln im D8 Chart und die 60
+bifundamentalen Nullmoden aus E8WORD20261116. Der frühe Marker ist
+U(s)=h(s)^2 mit h(s)=a.s und a=(-1/6,-1/6,-1/6,1/4,1/4)
+auf den ersten fünf Vorzeichen. Für die gleichgewichtete äußere
+Spur gilt µ=E[U]=5/24. Die Vergleichsziele für jeden Strom mit
+Trägerkoordinate i sind ZY/Z0=1/4 und ZUY/Z0=(µ-2a_i²)/4.
+Sie entsprechen den Cartan Mischwerten -1/72 und -1/32.
+Der auszuwertende reflektierte Operator ist X_gamma* W X_gamma.
+W ist positiv semidefinit und darf verstärken. Die Wurzelbilder sind
+normierte Einzelzustände. Bei diesem äußeren Trace gehen deshalb
+auch für ein nichtdiagonales W nur seine nichtnegativen Diagonalen ein.
+
+Ein gemeinsamer Mitteloperator
+
+Fixiere eine Familienkoordinate j und fasse jeweils vier Vorzeichen
+zusammen. Jeder Zielzustand t hat für jede Trägerkoordinate i genau
+einen Eingang. Dessen U Wert ist (h(t)-2a_i t_i)^2. Die Familie des
+Eingangs ist bei festem t und j unabhängig von i: Der Familienschnitt
+benutzt dieselbe geänderte Familienkoordinate und dieselbe umgekehrte
+Trägerparität. Eine Auslassung am äußeren Rand gibt daher dieselbe
+Zielmaske für alle fünf i. ZY/Z0=1/4 für die vier Vorzeichen normiert
+die Gewichte auf dieser Maske auf Summe eins.
+
+Auf jedem Zielzustand ist die Summe der fünf gedrehten Quadrate
+genau U(t)+4µ. Der Summenwert der fünf Zielquadrate beträgt 3µ.
+Ein nichtnegatives gemeinsames Gewicht kann diese Lücke nicht schließen.
+Der schärfere Punktwert des gewichteten Fehlers ist mindestens 7/528.
+Dazu die fünf Fehler (gedrehtes Quadrat minus Zielquadrat), jeweils
+geteilt durch vier, mit (2/11,2/11,2/11,5/22,5/22) mitteln.
+Die Untergrenze gilt auf allen 128 Zielzuständen, also auch nach jeder
+Auslassung. Der größte Fehler unter den einzelnen Strömen ist mindestens
+so groß wie dieses gewichtete Mittel der Quartettmittel.
+Für den vollen Trace erreicht eine positive semidefinite Diagonale
+die Grenze für alle 60 Ströme gleichzeitig. Sie gibt den
+Besetzungsorbits (-3,-2) und (-1,-2) die Massen 43/88 und 45/88.
+Die Zahl 7/528 ist für den vollen Trace scharf.
+
+Zwei Typen, dieselben Operatoren für jede äußere Auswahl
+
+Die Besetzungsorbits sind die Summen der drei Farbvorzeichen und
+der zwei schwachen Vorzeichen, gemeinsam bis auf Spiegelung. In der
+Reihenfolge (-3,-2),(-3,0),(-3,2),(-1,-2),(-1,0),(-1,2) liefern
+folgende strikt positiven Diagonalen genau die Ziele:
+
+Farbe:   (167,127,39,39,63,39)/67
+Schwach: (4,4,4,28,4,28)/13
+
+Sie sind Funktionen der Besetzungszahlen in den beiden Blöcken,
+invariant unter SU(3) mal SU(2) und unter Reflexion. Dieselben zwei
+Operatoren treffen für jeden der 60 Ströme alle Marken auf dem
+vollen Trace und nach jeder der vier Familienauslassungen. 300
+Strom/Auswahl Kombinationen wurden mit rationalen Zahlen geprüft.
+Die Integration eines Typlabels kann beide Blöcke als einen positiven
+Operator auf dem direkten Summenraum darstellen.
+
+Ein einziger skalarer Generator mit zwei positiven Zeiten scheitert
+
+Für jeden Typ haben die Gleichungen über die sechs Orbitgewichte
+Rang vier. Für jede zulässige positive Diagonale folgen daraus
+die Identitäten (Orbitindex beginnt bei 0)
+
+Farbe:   w[1]-w[3] = 125/114 + 7 w[0]/228 + 55 w[2]/228
+Schwach: w[3]-w[1] = 16/9 + (w[0]+w[1])/9.
+
+Beide Untergrenzen sind unter Nichtnegativität scharf. Für die Orbits
+(-3,0) und (-1,-2) erzwingen die Marken entgegengesetzte Ordnung.
+Ein einziger skalarer nichtnegativer Generator auf diesen Orbits,
+exponentiert bei zwei positiven Zeiten und jeweils positiv skaliert,
+behält seine Ordnung und ist daher in dieser Klasse ausgeschlossen.
+
+Geltungsbereich und Reproduktion
+
+PYTHONPATH=research/originlab python3 -B -c 'from e8_family_return import controls; print(controls()["scalar_marker_comparison"]["positive_middle_comparison"])'
+
+Die reguläre Kampagne f1_solution führt dieselbe Rechnung über
+original_session_checks aus. Siehe den Eintrag in RESULTS für den
+ausgeführten Lauf. Die positiven Operatoren sind algebraische
+Realisierungen mit expliziten Vergleichsgewichten. Das ursprüngliche
+Feldmaß, die Endauswahl und die physische Zeit sind hier nicht
+abgeleitet. Das ursprüngliche U[h] ist nur im Vergleich durch das
+Hyperladungsquadrat vertreten. Ein nichtskalarer gemeinsamer
+Generator auf einem größeren Träger, der Typlabel tatsächlich
+transportiert, bleibt eine mögliche Herkunft der beiden Blöcke.

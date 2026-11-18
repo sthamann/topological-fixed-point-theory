@@ -148,6 +148,48 @@ class ContentRegistryTests(unittest.TestCase):
             self.assertEqual(sections[0]["check_labels_as_written"], ["v1031 projector"])
             self.assertFalse(sections[0]["checked_by_registry"])
 
+    def test_wolfram_headings_keep_adjacent_checks_and_context_separate(self):
+        source = (
+            '\n(* ---- (v3) Alpha closure ---- *)\n'
+            'check["alpha", True]; (* compare v1 *)\n\n'
+            '(* ---- (v1/v2) Glue arithmetic ----\n'
+            '   v4 is Python-only. *)\n'
+            'checkExact["glue", True];\n'
+        )
+        with tempfile.TemporaryDirectory() as directory, patch.object(registry, "ROOT", Path(directory)):
+            Path(directory, "mirror.wl").write_text(source)
+            sections, _ = registry.parse_wolfram("mirror.wl")
+            self.assertEqual([s["line_start"] for s in sections], [2, 5])
+            self.assertEqual([s["python_identifiers_in_heading"] for s in sections], [["v3"], ["v1", "v2"]])
+            self.assertEqual([s["check_labels_as_written"] for s in sections], [["alpha"], ["glue"]])
+
+    def test_lean_inline_and_multiple_attributes_preserve_real_declarations_only(self):
+        source=("/- @[simp] theorem fake : False := by sorry /- lemma nested : False -/ -/\n"
+                "namespace Example\n"
+                "@[simp] lemma decorated : True := by trivial\n"
+                "@[simp] @[local simp] private theorem multiple : True := by trivial\n"
+                "@[ext] theorem extensional : True := by sorry\n"
+                "end Example\n")
+        with tempfile.TemporaryDirectory() as directory, patch.object(registry,"ROOT",Path(directory)):
+            Path(directory,"Attributes.lean").write_text(source)
+            declarations,_=registry.parse_lean("Attributes.lean")
+            self.assertEqual({d["qualified_name"]for d in declarations},
+                             {"Example.decorated","Example.multiple","Example.extensional"})
+            self.assertEqual([d["declaration_kind"]for d in declarations],["lemma","theorem","theorem"])
+            self.assertTrue(all(not d["checked_by_registry"]for d in declarations))
+            self.assertTrue(next(d for d in declarations if d["name"]=="extensional")["contains_sorry_or_admit"])
+
+    def test_lean_dotted_names_keep_the_enclosing_namespace(self):
+        source = ("namespace Example\n"
+                  "theorem Carrier.relative : True := by trivial\n"
+                  "theorem _root_.Carrier.absolute : True := by trivial\n"
+                  "end Example\n")
+        with tempfile.TemporaryDirectory() as directory, patch.object(registry, "ROOT", Path(directory)):
+            Path(directory, "Names.lean").write_text(source)
+            declarations, _ = registry.parse_lean("Names.lean")
+            self.assertEqual([d["qualified_name"] for d in declarations],
+                             ["Example.Carrier.relative", "Carrier.absolute"])
+
     def test_historical_replay_snapshots_cannot_inherit_current_status(self):
         for filename in ("v1033_original.py","status_ledger_original.csv","v1033_charged_disorder.py"):
             info=registry.historical_snapshot_info("verification/historical_replay/"+filename,
@@ -185,6 +227,33 @@ class ContentRegistryTests(unittest.TestCase):
             (root/"verification/v1.py").unlink()
             with self.assertRaisesRegex(ValueError,"Missing declared research evidence sources: verification/v1.py"):
                 registry.research_evidence_paths(declared,config)
+
+    def test_retired_navigation_inventory_is_explicit_and_does_not_hide_proof_sources(self):
+        with tempfile.TemporaryDirectory() as directory, patch.object(registry,"ROOT",Path(directory)):
+            root=Path(directory);(root/"semantic_explorer").mkdir()
+            (root/"semantic_explorer/source_inventory.py").write_text("# replacement")
+            retired="verification/build_theory_graph.py"
+            config={"excluded_components":[],"retired_navigation_sources":{
+                retired:{"replacement":"semantic_explorer/source_inventory.py","reason":"retired navigation tool"}}}
+            notes=[]
+            self.assertEqual(registry.research_evidence_paths([retired],config,(),{"v1"},notes),[])
+            self.assertEqual(notes[0]["kind"],"retired_navigation_source")
+            self.assertFalse(notes[0]["current_proof_coverage"])
+            for proof in ("verification/v1.py","proof.lean","mirror.wl"):
+                config["retired_navigation_sources"]={proof:{"replacement":"semantic_explorer/source_inventory.py","reason":"invalid proof retirement"}}
+                with self.assertRaisesRegex(ValueError,"cannot retire"):
+                    registry.research_evidence_paths([proof],config,(),{"v1"},[])
+
+    def test_local_formal_discovery_is_scoped_and_excludes_dependencies(self):
+        with tempfile.TemporaryDirectory() as directory, patch.object(registry,"ROOT",Path(directory)):
+            root=Path(directory)
+            for rel in ("experiments/theory-contracts/native/lean/Proof.lean",
+                        "experiments/theory-contracts/native/.lake/Dependency.lean",
+                        "unrelated/Private.lean"):
+                p=root/rel;p.parent.mkdir(parents=True,exist_ok=True);p.write_text("theorem kept : True := by trivial")
+            config={"excluded_components":[".lake"],"local_formal_source_roots":["experiments/theory-contracts"]}
+            self.assertEqual(registry.discover_local_formal_sources(config),
+                             ["experiments/theory-contracts/native/lean/Proof.lean"])
 
     def test_local_git_deleted_tools_are_explicit_omissions_but_proof_sources_fail_closed(self):
         with tempfile.TemporaryDirectory() as directory, patch.object(registry,"ROOT",Path(directory)):

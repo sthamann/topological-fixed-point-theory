@@ -1,0 +1,253 @@
+TFPTCUTCOMPLETE20261109
+Der gemeinsame Schnitt braucht die von der Auswahl aufgespannten
+Zwischenräume. Exakte Zusammenführung der letzten TFPT Befunde.
+Auswertung des unveränderten bedingten R032 Charts in beiden
+Testmetriken. Physischer gemeinsam gewichteter Schnitt bleibt offen.
+
+1. Die tatsächliche Schnittfrage
+
+R113-ORIGINAL-UND-REFERENZ gibt den geordneten bedingten
+Historienoperator mit derselben Referenz und dem ganzen
+ursprünglichen Gewicht. TFPTWEIGHTEDCUT20261109 liefert
+den tatsächlichen v252 Vertex aus Y_e^*, W_perp und Y_nu
+und liest Q_Theta und P_adm aus vier echten Einsätzen am
+selben Schnitt. TFPTWEAKJOINT20261109 zeigt, weshalb ein
+echter schwacher Zwischenraum bei einer relativen Marke
+nicht vorzeitig entfernt werden darf.
+Diese Konstruktionen greifen ineinander, wenn die Quelle
+die GEKOPPELTEN Halbwortformen tatsächlich liefert.
+
+Seien V_j die wirklichen Halbwortvektoren derselben
+positiven reflektierten Schnittform, mit originalem
+Gewicht, gemeinsamer Cap, Zeit und Randtransport. Die
+Abbildung V nimmt Linearkombinationen der Worte in den
+Schnittraum. In dieser Darstellung sind die vier disjunkten
+Auswahlsektoren E_i die tatsächlichen Projektionen
+  P_adm, P_str-P_adm, P_Theta-P_str, I-P_Theta.
+Sollen gerade Elektron und Neutrino mit Querfeld als
+zwei Halbwortbeine verglichen werden, muss ihre tatsächliche
+Eichbegleitung einen gemeinsamen Gesamtkanal bilden. Die
+offene, ladungstragende Vertexmatrix allein reicht nicht.
+Reflexionspositivität auf dem admissiblen Netz beweist die
+positive erweiterte Halbwortform für offene geladene Beine
+nicht automatisch. Alle folgenden PSD Aussagen gelten,
+wenn genau diese gemeinsame positive Form verfügbar ist.
+Die vier linearen Rückleseformeln aus TFPTWEIGHTEDCUT
+benötigen diese zusätzliche Positivität nicht.
+
+2. Exakte gemeinsame Realisierung der vier Sektoren
+
+Schreibe G=V*V und X_i=V* E_i V. Dann X_i>=0 und Sum_i X_i=G.
+Umgekehrt sind diese beiden Bedingungen hinreichend für
+eine orthogonale Sektorrealisierung des gegebenen
+reflektierten Wortblocks. Wähle
+  H_min=direct_sum_i Ran(sqrt(X_i)),
+  V_min x = (sqrt(X_i)x)_i,
+und E_i als die Koordinatenprojektionen. Dann stimmen G
+und alle vier markierten Formen exakt. Jeder Nullvektor
+von G ist in allen X_i null. Das ursprüngliche
+Nullquotientenprinzip wird erhalten.
+
+Jede andere Realisierung braucht in Sektor i wenigstens
+rank X_i Richtungen, weil ihre V_j dort diese Grammatrix
+haben. Die direkte Summe erreicht das Minimum Sum_i rank X_i.
+Auf dem von E_i V_j erzeugten Raum ist die Realisierung bis
+auf eine die Sektoren und V_j transportierende unitäre
+Abbildung eindeutig. Diese Konstruktion ist der endliche
+kommutative Fall der Neumark/Stinespring Dilatation.
+Sie bestimmt keine zusätzliche Zeitentwicklung, kein Maß,
+keine genuine D_adm Domain und keine gemeinsame Eichkarte.
+
+Für die tatsächlich gedruckten vier Leseformen aus
+TFPTWEIGHTEDCUT sei G=unmarkiert, S=strukturell,
+H_T=Theta-Wärme, H_g=strukturell beschränkte Gap-Wärme.
+Mit Dämpfungen x,y in (0,1) entsprechen die vier
+Positivitätstests genau
+  H_g-y S >= 0,
+  S-H_g >= 0,
+  H_T-x G-(1-x) S >= 0,
+  G-H_T >= 0.
+Die Rückrechnung setzt gemeinsame Wortbasis, Referenz,
+Zeiten und Gewichte voraus. Das sind notwendige und
+hinreichende Tests FÜR EINE positive Sektorrealisierung
+des gegebenen Blocks, keine Prüfung der physikalischen
+Identität des Producers.
+
+Die Originalanwendung ist dadurch konkret: Wenn die
+Quelle nur die vier reflektierten Gramformen liefert,
+kann man die gesuchte Rückkehr und den Kanalverlust
+direkt daraus lesen. Wenn man sie durch den vorhandenen
+vollen Adapter als orthogonalen Selektor ausführen will,
+muss der Wortsatz um die tatsächlichen E_i V_j ergänzt
+werden. Für weitere geordnete Worte A kommen deren
+echte Blockformen V* E_i A E_j V dazu, für den außen
+projizierten Aufruf insbesondere der P A P Block.
+Weder X_i noch das volle unmarkierte V* A V erzwingen
+diese neuen Operatorblöcke.
+
+3. Warum kleine Wortpakete den tatsächlichen Projektor nicht tragen
+
+Auf dem Nullquotienten setze U=V G^(-1/2) und Pi=U U*.
+Der dort aus E_i sichtbare Effekt ist A_i=U* E_i U.
+Es gilt exakt
+  A_i-A_i²=U* E_i (I-Pi) E_i U
+            = [(I-Pi) E_i U]* [(I-Pi) E_i U].
+Diese Gleichung und das nachfolgende Involutionspolynom
+sind in Lean geprüft. A_i ist genau dann ein Projektor,
+wenn der Wortbereich unter E_i abgeschlossen ist.
+Mit Q_eff=I-2 A_odd gilt
+  I-Q_eff²=4(A_odd-A_odd²).
+Die echte zweifache Marke Q_Theta²=I liefert weiterhin
+die Identität. Das Quadrat ihrer Kompression erzeugt
+eine Zwischenprojektion. Damit ist die ältere
+Tripletdifferenz 1 gegen 1/9 ein Spezialfall derselben
+Gleichung und keine Differenz zweier tatsächlicher Q_Theta.
+
+Der aktive original_source_adapter.py:181–206 prüft auf
+dem gelieferten Wortquotienten zurecht P²=P; 233–238
+wertet trace(cap P q P) aus. Diese Formel erfordert
+einen auf der gelieferten Basis echten Projektor.
+Nur seine Fehlermeldung zu entfernen würde die
+Kanalverluste verfälschen. Schon für A=I liefert der
+korrekte P I P Block den Effekt A_P, während ein
+ungeprüft komprimierter Ersatz A_P² ergeben würde.
+Für allgemeines A ist sogar der ganze unmarkierte
+komprimierte A-Block zu wenig: falls w=(I-Pi)P u!=0
+für einen sichtbaren u, haben I und I+δ|w><w| dieselbe
+unmarkierte Kompression, aber in u verschiedene
+P A P Werte um δ||w||^4. Das ist ein allgemeiner
+Identifizierbarkeitstest, keine geänderte Originalquelle.
+
+4. Was aus den getrennten Gewichten und der ganzen Rückkehr folgt
+
+Für zwei Wörter seien a_i,b_i ihre Diagonalen in Sektor i
+und c die ganze unmarkierte komplexe Kreuzantwort.
+Für die zurückgehaltene Kreuzantwort z gilt exakt
+  |z| <= sqrt(a_P b_P),
+  |c-z| <= Sum_(i!=P) sqrt(a_i b_i).
+Umgekehrt ist jeder z in dieser Schnittmenge möglich,
+wenn nur diese Daten festliegen. Jede positive 2×2
+Sektorform hat eine freie Nebendiagonale in einer
+Kreisscheibe. Die Summe der anderen Kreisscheiben ist
+eine Kreisscheibe mit summiertem Radius. Mit Abschnitt 2
+realisiert man jede solche Wahl im gemeinsamen
+orthogonalen Sektorschnitt. Selbst die vollständige
+unmarkierte Grammatrix und sämtliche Einzelgewichte
+erzwingen deshalb im Allgemeinen nicht die markierte
+Kreuzphase.
+
+Sind beide tatsächlichen Halbwortbeine im selben
+Gesamtkanal zugänglich, liefern zusätzlich die
+beiden positiven Diagonalproben v_e+v_Wnu und
+v_e+i v_Wnu die fehlende komplexe Kreuzantwort durch
+Polarisation. Bei der Konvention <v_e,v_Wnu>=z gilt
+  Re z=(W(e+Wnu)-a-b)/2,
+  Im z=(a+b-W(e+i Wnu))/2.
+Dies liest denselben Originaloperator, sofern diese
+Linearkombinationen in der tatsächlichen erweiterten
+Quellform erlaubt sind. Keine Überlagerung von
+verschiedenen gesamten Gaußladungen angenommen.
+
+5. Ausgeführte Original-R032 Kontrolle in den beiden Testmetriken
+
+Die vorhandene R032 Higgsfolge und alle nativen
+Einheitslinks bleiben unverändert. Auf dem tatsächlichen
+96er Einteilchen-Halbstreifen bei Zeit 0.4 stehen die
+beiden ursprünglichen Yukawa Feldbeine e und nu.
+Der vorhandene formale schwache sigma_x wird am
+Zwischenschnitt mit seinem Queranteil zum tatsächlichen
+Higgsray eingesetzt. Die reelle v252 Liftwirkung und
+Gamma_F bleiben erhalten. Auf der gewählten Einteilchen-
+faser ist Gamma(K) genau K. Das ist ein bedingter
+Schnitttest, weder volle Exteriortrace noch das echte
+Q_Theta, P_adm oder gemeinsame Bosongewicht.
+
+Mit der bereits früher gerechneten schwachen Marke
+G_mid als Kandidatenmarke sind auf BEIDEN Testmetriken
+die zwei Halbwortvektoren unabhängig. Ihre + und -
+Gramformen haben je Rang zwei. Der kleinste
+selektorabgeschlossene Raum hat daher Rang vier.
+Für m=-.001 lauten die Eigenwerte des sichtbaren +
+Effekts 0.8388466603, 0.9586849551, für m=+.001
+0.8388968273, 0.9586894268. Die Projektordefekte
+||A_+-A_+²|| sind 0.1351829408 und 0.1351489405.
+Gleiche gebundene diagnostische freie S Vorschrift
+je Metrik für alle Vergleichsmarken; der Effekt ist
+gegen den gemeinsamen skalaren Faktor invariant.
+
+Bei festgehaltenem ganzem unmarkiertem G und beiden
+Sektordiagonalen sind bei m=-.001 bereits auf der Linie
+der unmarkierten Phase alle Beträge zwischen .4007735872
+und .5982100194 für die + Kreuzantwort möglich.
+Bei m=+.001 entsprechend .4009515081 bis .5984194107.
+Beide Endpunkte wurden explizit als positive
+Gramvervollständigungen gegen die unveränderten
+Diagonalen und G kontrolliert. Sie sind mathematische
+Möglichkeiten aus Teildaten, keine neuen physischen
+Modelle. Die tatsächlich aus dem bedingten Vertex
+gelesene + Kreuzantwort wird separat ausgegeben.
+Der direkte Polarisationsread reproduziert sie.
+
+6. Metrik und Gesamtzusammenhang
+
+Nach der tatsächlichen gemeinsamen metrischen
+Transportkarte sei L_m=(I-P_m)V_m. Der Verlust ist
+  D_m=G_m-X_P,m=L_m* L_m.
+An einem vollständig erhaltenen Basisschnitt L_0=0
+gilt bei differenzierbaren L_m
+  D_m=m² L'_0* L'_0+o(m²),
+  L'_0=(I-P_0)V'_0-P'_0 V_0.
+Das gibt eine positive quadratische Verlustantwort.
+Eine symmetrische Differenz D_(+ε)-D_(-ε) entfernt
+diesen führenden Anteil; zum Lesen dient die gerade
+Kombination. Eine rein gemeinsame Rahmenänderung
+liefert L_m=0, wenn der Basisschnitt voll erhalten war.
+Die Aussage setzt die tatsächlich transportierte
+Domain und eine glatte Projektorfamilie voraus; bei
+echtem Gapwechsel muss direkt gerechnet werden.
+
+Das verbindet die älteren Resultate: E8, Carrier und
+Clock liefern die möglichen Ladungs- und Phasenkanäle.
+Die Yukawa- und Quereinfügungen öffnen einen solchen
+Kanal. Der Auswahloperator kann den Bereich zwischen
+den eingesetzten Worten verlassen. Das führt zu
+einer messbaren Formänderung, die sich von einem
+gemeinsamen Referenzfaktor unterscheiden lässt.
+Für absolute Antworten muss der ganze ursprünglich
+gewichtete gemeinsame Schnitt samt Referenz eingehen.
+Eine transversale Gravitation braucht daraus weiterhin
+das tatsächliche geometrische Spektrum. Die
+Sektorrealisierung liefert keinen Spin-2 Pol.
+
+7. Tatsächlicher Originalpfad und nächster Test
+
+Die vorhandenen C6 und v330 Gewichte bleiben echte
+Auswertungen ihrer Zweige. Der separate vR6
+native_constructors.endpoint_marks setzt ausdrücklich
+schon gebundene U,Y und eine Zeitkarte voraus; er
+erzeugt keinen neuen physischen Felddatensatz.
+Der erneut ausgeführte ursprüngliche Endpunkt- und
+Faseraufruf meldet kein whole_source_bundle und kein
+original_blocked_fiber_packet. Kein physisches
+Metrikpaar wurde ausgewertet. Im geprüften
+Originalaufrufpfad ist der verbleibende konkrete
+Eingang der gemeinsam gewichtete, positiv reflektierte
+Block mit beiden Yukawa Halbworten und echter
+schwacher Eichbegleitung. Vier tatsächliche Einsätze
+aus TFPTWEIGHTEDCUT und zwei Polarisationskombinationen
+für die Kreuzphase liefern den kleinsten trennenden
+Vergleich. Bei Benutzung des vollen Adapters die
+sektorgeschlossenen Worte und tatsächlichen
+P A P Blöcke übergeben, nicht den Projektortest lockern.
+Eine neue Quelle, Zeit, Dynamik, Geometrie,
+Eichwahl oder Referenz wurde nicht eingesetzt.
+
+Quellen und Reproduktion
+- TFPT-GEWICHTETER-QUERSCHNITT-ECHTE-PENALTIES-20261109.txt
+- TFPT-GEMEINSAMER-SCHWACHER-SCHNITT-UND-AUSWAHL-20261109.txt
+- R113-ORIGINAL-UND-REFERENZ-20261109.txt
+- experiments/theory-contracts/original-paper-source-reconciliation-20261102/contribution_20261106Q/runtime/original_source_adapter.py
+- experiments/theory-contracts/original-paper-source-reconciliation-20261102/solutionsearch_20261106R/source_recovery/native_constructors.py
+- check_joint_cut_completion_20261109.py und joint-cut-completion-results-20261109.json
+- TFPTCutCompression.lean und tfpt-cut-compression-lean-20261109.txt
+- Stinespring 1955, Positive functions on C*-algebras, doi:10.1090/S0002-9939-1955-0069403-4.

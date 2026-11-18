@@ -1,0 +1,356 @@
+MATH.SEAM.ESERIES.CUTS.04
+23 October 2026
+
+Exact compatibility dictionary for the native D5+A3 compiler split
+
+1. Object class, markings, and equivalence
+
+Let L be the existing E8 lattice in its standard R8 chart, Phi its240
+norm-two roots, and
+
+  J(x0,x1,x2,x3,x4,x5,x6,x7)
+   =(-x1,x0,-x3,x2,-x5,x4,-x7,x6).
+
+The fixed compiler subsystem is
+
+  D5 = {roots supported on coordinates0,...,4},
+  D3 = {roots supported on coordinates5,6,7} = A3.
+
+Its Weyl group is
+
+  H=W(D5)xW(D3),  |H|=1920*24=46080.
+
+All equivalence statements below use this fixed chart and the actual H
+action. J is not changed or conjugated to preserve the split. An E7 cut is
+
+  C_alpha = Phi intersect alpha-perp,
+
+where alpha is a root and alpha and -alpha define the same cut. An E6 cut is
+
+  C_A = Phi intersect span(A)-perp,
+
+where A is a regular A2 root subsystem. The A2 subsystem, rather than a
+chosen ordered pair of simple roots, is the marking. There are1120 such A2
+subsystems and therefore1120 E6 cuts.
+
+The original 3+2 mark is retained throughout:
+
+  Y=(-1/3,-1/3,-1/3,1/2,1/2,0,0,0),   (Y,Y)=5/6.
+
+2. Complete E7 dictionary relative to D5+D3
+
+The120 root-normal E7 cuts form four H orbits. The table records the location
+of the normal root line and the root subsystem left inside each fixed factor.
+
+  normal line   number   C_alpha intersect D5   C_alpha intersect D3
+  ------------------------------------------------------------------
+  D5              20          A3+A1                    A3
+  D3               6          D5                       A1
+  mixed           30          D4                       A1+A1
+  half-root       64          A4                       A2
+
+Here mixed means an integer root with one nonzero coordinate in each fixed
+block. Half-root means one of the128 spinorial E8 roots.
+
+For every alpha, (alpha,J alpha)=0. J pairs the120 cuts into60 unordered
+pairs. Every intersection is exactly D6 with60 roots:
+
+  C_alpha intersect C_(J alpha) = D6.
+
+Exactly six E7 cuts contain the whole original D5. Their normal root lines
+are the six root lines of D3. W(D3)=S4 acts transitively on them. They are the
+six weights of the family representation6=exterior^2(4), viewed as root
+lines. Thus the fixed split canonically supplies an unordered six-cut family,
+but no distinguished member.
+
+J does not preserve this six-cut family. Only the two normal lines supported
+on coordinates6,7 form one internal J pair. The other four cuts are paired
+with mixed-normal E7 cuts. Their pair intersections are still D6.
+
+Proof of the four rows. For a normal root in D5, the perpendicular roots in
+D5 are D3+A1, while the full family D3 remains. The analogous statement with
+the factors exchanged gives the D3 row. A mixed normal removes one coordinate
+from each block, leaving D4 and D2=A1+A1. A half-root selects half the roots
+on every coordinate pair, giving A4 inside D5 and A2 inside D3. The four
+normal-root sectors have20+6+30+64=120 lines and H is transitive on each, so
+the list is complete.
+
+3. Complete E6 dictionary relative to D5+D3
+
+Each row below is one complete H orbit. The normal column gives the sector
+composition of the six A2 roots. The cut columns give C_A intersect D5 and
+C_A intersect D3. The last two columns refine the orbit by the actual
+intersection C_A intersect C_(JA). Those counts are counts of ordered cuts.
+
+  A2 normal roots   orbit  stabilizer   D5 cut   D3 cut   A2+A2   D4
+  -----------------------------------------------------------------
+  6 D5                40      1152      A1+A1      A3       16     24
+  2 D5+4 mixed       120       384      A3         A1+A1    80     40
+  2 D5+4 half        320       144      A2+A1      A2      192    128
+  2 D3+4 mixed        60       768      D4         -        32     28
+  4 half+2 mixed     480        96      A3         A1      256    224
+  6 D3                 4     11520      D5         -         0      4
+  2 D3+4 half         96       480      A4         A1       64     32
+  -----------------------------------------------------------------
+  total              1120                                    640    480
+
+Consequently J has no fixed regular E6 cut. It gives560 unordered pairs.
+Their intersections are320 pairs of type A2+A2 and240 pairs of type D4.
+This identifies the intersection root systems that were left unnamed in the
+preceding contract's12-root and24-root census.
+
+Completeness proof. Every A2 is the six-root closure
+
+  {+/-alpha,+/-beta,+/-(alpha+beta)},  (alpha,beta)=-1.
+
+Exact enumeration in the native shell gives1120 distinct sets. Reflections in
+the five standard D5 simple roots and the three standard D3 simple roots
+generate H. Breadth-first orbit closure gives exactly the seven rows above.
+Within each row the normal-sector composition and both fixed-factor root types
+are constant. Orbit-stabilizer gives the displayed stabilizer orders. Their
+sum is1120. Hence this is a classification under the stated equivalence, not
+only a list of root-count coincidences.
+
+4. The E6 cuts that preserve the original D5 carrier
+
+C_A contains the original D5 exactly when A is an A2 subsystem of the family
+D3. The A3 root system contains exactly four A2 subsystems. Therefore exactly
+four of the1120 E6 cuts contain D5.
+
+Their A2 planes have the four projective normal axes
+
+  (1,1,1), (1,1,-1), (1,-1,1), (1,-1,-1)
+
+in the last three coordinates. They are the vertices of the family
+tetrahedron. W(D3)=S4 acts transitively, with stabilizer S3. Thus the fixed
+D5+D3 split canonically determines the unordered set of four E6 cuts. It does
+not determine one cut without an additional root, A2 plane, or tetrahedral
+vertex marking.
+
+J sends every one of these four cuts outside the D5-containing family because
+it rotates coordinate4 into coordinate5. Each cut is paired with a distinct
+member of the 2D3+4mixed orbit. For all four pairs,
+
+  C_A intersect C_(JA) = D4 on coordinates0,1,2,3.
+
+Thus the four J pairs have a common carrier intersection, but neither member
+selection nor a J-invariant E6 reduction follows from the fixed split.
+
+5. Exact character dictionary
+
+The native root partition is the actual D5xA3 restriction of the E8 adjoint:
+
+  248 = (45,1) + (1,15) + (10,6) + (16,4) + (16bar,4bar).       (5.1)
+
+This is a weight identity in the fixed coordinates:
+
+  * the40 D5 roots plus its five Cartans give(45,1);
+  * the12 D3 roots plus its three Cartans give(1,15);
+  * the60 mixed roots are the full Cartesian weight product10x6;
+  * the128 half-roots split into the two parity-correlated products
+    16x4 and16barx4bar, each with64 weights.
+
+For any one of the four D5-compatible E6 cuts, choose its A2 orientation so
+that the standard family branching is
+
+  4    = 3_1 + 1_-3,
+  4bar = 3bar_-1 + 1_3,
+  6    = 3bar_2 + 3_-2,
+  15   = 8_0 + 1_0 + 3_4 + 3bar_-4.                            (5.2)
+
+Substituting (5.2) into (5.1) gives
+
+  78 = 45_0 + 1_0 + 16_-3 + 16bar_3,                           (5.3)
+
+for the E6 adjoint, and the complete E6xA2 branching
+
+  248 = (78,1) + (1,8) + (27,3) + (27bar,3bar),                 (5.4)
+
+with
+
+  27    = 1_4 + 10_-2 + 16_1,
+  27bar = 1_-4 + 10_2 + 16bar_-1.                              (5.5)
+
+Equations (5.1) through (5.5) are compatible term by term. In the +++ axis
+chart the E6 root spaces are40 D5 roots of charge0 and two sets of16 half
+roots of charges+3 and-3. The remaining162 roots split as
+
+  3_(+4) + 3_(-4) + 30_(+2) + 30_(-2) + 48_(+1) + 48_(-1),
+
+which are exactly the weight terms in (27,3)+(27bar,3bar). Reversing the axis
+simultaneously reverses charges and exchanges barred labels.
+
+The corresponding character for any E7 cut containing D5 is
+
+  133 = (45,1)_0 + (1,3)_0 + (1,1)_0
+        + (10,1)_2 + (10,1)_-2
+        + (16,2)_1 + (16bar,2)_-1,                              (5.6)
+
+under D5xA1xU1, again up to simultaneous orientation reversal. This is the
+restriction of the standard E7 to D6xA1 character
+
+  133=(66,1)+(1,3)+(32,2)
+
+followed by D6 to D5xU1. Formula (5.6), rather than the number133 alone, is
+the representation content of the six D5-compatible E7 cuts.
+
+6. The 3+2 mark and the canonical four-cut family
+
+Y has support only in the D5 Cartan. It is orthogonal to every family A2
+normal plane, hence lies in every one of the four D5-compatible E6 cuts. The
+whole W(D3)=S4 fixes Y. Therefore Y preserves the canonical unordered four-cut
+family but cannot distinguish one tetrahedral vertex. Its existing identity
+
+  Tr Y^2=3(1/3)^2+2(1/2)^2=5/6
+
+is unchanged by the E6 restriction.
+
+7. What the carrier numbers do and do not identify
+
+There is a genuine representation bridge in (5.1): the half-root sector is
+
+  128 = 16*4 + 16*4.
+
+The family factor here is the four-dimensional defining representation of
+A3. Correspondingly, the D5-compatible E6 cuts form a four-vertex S4 orbit.
+The rank of A3 is3, but rank3 is not the multiplicity character4.
+
+The tempting equality for the paired E7 closure,
+
+  missing48 = 3*16,
+
+fails as a representation identity. For the canonical pair with normals
+alpha=e0+e1 and Jalpha=e0-e1, the missing root spaces form
+
+  (12,2,2)
+
+under D6xA1xA1. They are not closed as three D5 spinors. The fixed Y character
+gives an immediate exact discriminator. The missing48 charge multiset is
+
+  -5/6:4, -2/3:2, -1/3:12, -1/6:4, 0:4,
+   1/6:4,  1/3:12,  2/3:2,  5/6:4.
+
+Three copies of the two D5 chiral spinors instead give respectively
+
+  -1:3, -1/3:9, -1/6:18, 0:3, 1/2:6, 2/3:9,
+
+and
+
+  -2/3:9, -1/2:6, 0:3, 1/6:18, 1/3:9, 1:3.
+
+Neither character matches. The earlier equality16*5*3=240 remains its stated
+root-count identity. It does not turn the E7 missing sector into three spinor
+carriers or turn the four E6 cuts into a three-element family.
+
+8. Positive four-cut consequence inside the original (16,4) block
+
+There is nevertheless a different, exact 48-dimensional module in the E6
+dictionary. It must be kept separate from the missing48 sector of Section7.
+
+Choose one of the two chiral half-root blocks in (5.1), and write its literal
+weight basis as
+
+  B = {(s,t): s is one of the16 D5 half-spin weights,
+              t is one of the four even-parity family sign triples}.
+
+Thus B is the existing (16,4) root-current block and dim B=64. Let
+
+  T={(1,1,1),(1,-1,-1),(-1,1,-1),(-1,-1,1)}.
+
+The four D5-compatible E6 cuts are naturally indexed by t in T. On the root
+current basis define
+
+  P_t E_(s,u) = delta_(t,u) E_(s,u),       Q_t=I_B-P_t.          (8.1)
+
+These are explicit coordinate projectors, not fitted embeddings. They satisfy
+
+  rank P_t=16,       rank Q_t=48,
+  P_t P_u=delta_(t,u)P_t,       sum_(t in T) P_t=I_B.           (8.2)
+
+For the cut indexed by t, the E6 adjoint contains exactly P_t B. The
+complement is
+
+  Q_t B = 16 tensor 3,                                           (8.3)
+
+where the A2 is the normal root subsystem of that same cut. W(D3)=S4
+conjugates these projectors by
+
+  w P_t w^-1 = P_(wt).
+
+Hence the whole four-projector resolution is canonical, while no individual
+projector is canonical.
+
+The module action in (8.3) is literal in the native root chart. D5 root
+addition changes only s and gives480 directed nonzero root-step transitions on
+Q_t B. A2 root addition changes only u and gives96 directed transitions. The
+three family weights form the complete A2 triplet graph, with six directed
+root steps for every fixed D5 spinor weight. A2 has no transition out of the
+family singlet P_t B within B. This proves the tensor-product action rather
+than inferring it from dimension48.
+
+The positive off-block character is the actual term
+
+  (27,3) = (16,3)_1 + (10,3)_-2 + (1,3)_4,                    (8.4)
+
+so its81 root spaces split exactly as
+
+  81 = 48 + 30 + 3.                                            (8.5)
+
+For every one of the four cuts, the script constructs the three explicit root
+subsets in (8.5). Their family weight sets are three isomorphic A2 triplets,
+and the native A2 roots act on each. The conjugate (27bar,3bar) block is the
+oppositely oriented statement.
+
+The existing seed ratio now has an exact representation dictionary. Taking
+the ordinary trace on the same root-current basis gives, for every cut,
+
+  Tr(I_B)/Tr(Q_t) = 64/48 = 4/3
+                   = (1/(6 pi))/(1/(8 pi)) = phi_base/c3.       (8.6)
+
+This equality is cut independent because S4 conjugates all four Q_t. It is an
+identity between the existing coefficient and the actual ranks of the native
+projectors. It does not require a preferred tetrahedral vertex.
+
+The same weight basis also retains the original glue norms pointwise. Every
+half-root r in B, and hence every r in Q_t B, obeys
+
+  ||projection_D5 r||^2 = 5*(1/2)^2 = 5/4,
+  ||projection_A3 r||^2 = 3*(1/2)^2 = 3/4,
+  ||r||^2 = 2.                                                  (8.7)
+
+Equations (8.3), (8.6), and (8.7) give the requested single dictionary for
+the actual48 module, the coefficient4/3, and the D5 discriminant norm5/4.
+The actual48 here is the off-block lattice-current module (16,3). The E7
+closure sector of Section7 remains the different module (12,2,2).
+
+9. Reproducibility and source ownership
+
+cut_dictionary.py extracts these native functions literally without executing
+their module-level suites:
+
+  verification/v1_e8_glue.py:e8_roots
+  verification/v634_st31_structure.py:J_vec
+
+It independently reconstructs the240 doubled-coordinate roots and the block
+matrix J, then checks equality with the native definitions. All root-system
+types are recovered from exact component ranks and root counts. The complete
+1120-cut orbit classification, all560 J pairs, the character weight products,
+the four tetrahedral axes, the fixed D4 intersections, Y, the failed E7
+missing48 character equality, the four rank16/rank48 projectors, their literal
+D5/A2 root-step actions, the81=48+30+3 branching, the trace ratio4/3, and the
+pointwise5/4+3/4 projection norms are executable assertions.
+
+Run:
+
+  python3 -B experiments/theory-contracts/e-series-compiler-closure-20261023/cut_dictionary.py
+
+Expected first line:
+
+  MATH.SEAM.ESERIES.CUTS.04 PASS
+
+This closes the finite compatibility problem: the original D5+A3 split has a
+canonical unordered four-cut E6 family and a canonical unordered six-cut E7
+family; their actual J transport and intersections are fully classified, and
+the exact branching characters show which carrier correspondences are valid.
+The positive correspondence is the S4-family of (16,4) projector splittings
+16+48, with 64/48=4/3 and D5 norm5/4 in every cut.

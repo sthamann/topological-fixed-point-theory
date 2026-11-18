@@ -1,0 +1,849 @@
+SEAM SPECTRAL RESPONSE AND GEOMETRIC ORIGIN (2026-10-13)
+
+Requested outcome: a common physical TFPT source, including the gravity bridge.
+Verdict: PARTIAL, experiment-only. No T1--T8 closure or ledger promotion.
+
+Question and discriminator
+--------------------------
+Can the original source's symmetric Dirac scale family identify the exact
+information needed to reconstruct geometry from seam data? The decisive test
+is whether a single zero-energy Cauchy space detects an interior conformal
+profile and whether a spectral boundary response detects that same profile.
+Success here means an exact distinction between insufficient static data and
+a sufficient conditional reconstruction interface. It does NOT mean deriving
+that interface from P1/P2. Stop this branch if the distinction merely changes
+the full primitive datum or fails to preserve the stated boundary data.
+
+Changed premise relative to existing attempts
+-------------------------------------------
+source-conformal-kernel-selection-20260921 treats massless scalar 2D DtN
+energy. This contract instead uses the original spinorial D_sigma family,
+zero-energy Cauchy traces versus spectral response, and the full dynamical
+inverse Dirac theorem. No alternative oscillator, lattice, interaction or
+physical background is introduced. The argument applies to an arbitrary
+already-given smooth compact spin manifold with nonempty boundary.
+
+1. Exact source-native zero-energy ambiguity
+-------------------------------------------
+Let D be a formally self-adjoint Dirac-type differential operator on a compact,
+connected smooth manifold M with smooth nonempty boundary Sigma. Let f be a real smooth function that
+vanishes on a whole boundary collar. Work in one fixed L2 Hilbert space and set
+
+  A_f = exp(-f/2),     D_f = A_f D A_f.
+
+This is exactly the family used by the original source02, lines 1841--1871.
+For any smooth solution Du=0, put u_f=exp(f/2)u. Then
+
+  D_f u_f = exp(-f/2) Du = 0,     u_f|Sigma = u|Sigma.
+
+The inverse multiplication gives the converse. Hence the entire zero-energy
+Cauchy trace space is unchanged, not merely finitely many traces. Its
+orthogonal projection in the fixed boundary Hilbert space is unchanged too.
+The tangential boundary operator, collar product structure and boundary
+spectral unit lambda_Sigma are unchanged because f=0 throughout the collar.
+This statement concerns the orthogonal Cauchy-space projector; a separately
+chosen oblique Calderon projector requires its complement convention as well.
+
+If D has an invertible self-adjoint elliptic boundary realization, multiplication
+by A_f preserves its boundary condition since A_f=1 on the collar, and
+
+  D_f^{-1} = exp(f/2) D^{-1} exp(f/2),
+  gap(D_f) >= exp(-||f||_infinity) gap(D).
+
+Thus positivity of a spectral gap as a property does not remove this freedom.
+The numerical gap, complete spectrum and full D are NOT asserted unchanged.
+No preservation of a full quantum reflection-positive generating functional,
+retained projector, particle masses or all TFPT axioms is inferred.
+
+For an actual spin Dirac operator, the usual conformal rule for g_f=e^{2f}g
+is dimension-weighted in the fibrewise spin identification:
+
+  D_{g_f} = e^{-(n+1)f/2} D_g e^{(n-1)f/2}.
+
+The unitary L2 density identification contributes e^{nf/2} on the left and
+e^{-nf/2} on the right. In the fixed Hilbert space this is precisely
+e^{-f/2}D_g e^{-f/2}. The symmetric family therefore has a geometric reading
+under the stated bundle/density identification. If D=D_g+Q, the corresponding
+potential in the new geometric spin bundle must be Q_f=e^{-f} beta Q beta^{-1},
+where beta is the fibrewise spinor isometry. This congruence is not ordinary
+unitary bundle-gauge conjugation. Unchanged masses are not asserted.
+
+2. Spectral response sees what static Cauchy data lose
+----------------------------------------------------
+For z != 0, D_f u_f = z u_f is equivalent, with u_f=e^{f/2}u, to
+
+  D u = z e^f u.
+
+The fixed spectral parameter is therefore weighted differently in the
+interior. A mere zero-energy boundary trace does not include this information.
+
+There is a more direct boundary observable. Define the Green boundary form
+
+  B(a,b) = (Du,v)_M - (u,Dv)_M,
+  a=u|Sigma, b=v|Sigma,
+
+with a consistent inner-product and normal convention. Let A_B be an invertible
+self-adjoint elliptic realization of D. For a smooth harmonic u, an explicit
+spectral solution chart for |z|<gap(A_B) is
+
+  u_z=u+z(A_B-z)^{-1}u.
+
+The resolvent maps L2 to H1, this expression is analytic, and direct substitution
+gives (D-z)u_z=0 and u_0=u. Its H^{1/2} boundary trace is analytic. Take Dv=0
+and real z. Green's identity gives
+
+  B(a_z,b) = z (u_z,v)_M,
+  B(d_z a_z|0,b) = (u,v)_M.
+
+This first-jet form is chart-independent: the difference between the derivatives
+of two charts solves D w=0 and its Green pairing with any harmonic v is zero.
+
+For D_f the boundary form is identical because its collar is identical. The
+zero-energy solutions with the same traces are e^{f/2}u and e^{f/2}v, so the
+corresponding first spectral jet has Gram form
+
+  G_f(a,b) = integral_M e^f <u,v> dvol_g,
+  G_f(a,b)-G_0(a,b) = integral_M (e^f-1)<u,v> dvol_g.
+
+In particular if f>=0 is smooth and nonzero, and u is a nonzero harmonic
+spinor for which the chart exists, unique continuation prevents u from
+vanishing on the entire open set where f>0. Thus
+
+  G_f(a,a)-G_0(a,a) > 0.
+
+This is an exact positive discriminator for this class of interior profiles.
+It is NOT a theorem that the first jet alone reconstructs an arbitrary metric.
+The explicit chart requires a fixed elliptic boundary choice at a regular
+spectral point; poles/zero modes must be removed or treated separately. General inverse
+uniqueness below uses the complete dynamic/boundary spectral data.
+
+3. Four-dimensional geometric response is not fixed by the static trace space
+-----------------------------------------------------------------------------
+Use Delta_g=div_g grad_g throughout; a nonnegative Laplacian requires reversing
+all corresponding Delta signs. For the geometric spin case in n=4, the conformal scalar-curvature formula and
+integration by parts (f supported away from boundary) yield
+
+  I_R(f) = integral_M dvol_{g_f} R[g_f]
+         = integral_M dvol_g e^{2f} (R[g] + 6|grad f|^2).
+
+For f=epsilon h, its first and second variations at epsilon=0 are
+
+  I_R'(0) = 2 integral_M h R dvol_g,
+  I_R''(0) = integral_M (4h^2 R + 12|grad h|^2) dvol_g.
+
+If the initial scalar curvature vanishes, a nonconstant compactly supported
+profile gives a positive quadratic curvature response although the entire
+zero-energy Cauchy trace space stays fixed. This compares fixed-frame geometric
+functionals, not two fully specified TFPT determinants with identical inputs.
+The relative reference, B_rel, chi_geo, replica/gluing rule and potential can
+affect the full TFPT response and are NOT silently held equivalent. In the
+flat-background subcase the changed metric is not isometric to the original
+one because its total scalar-curvature integral is nonzero. A separately
+specified coupled Weyl/compensator quotient is outside this argument.
+
+4. What full boundary information would actually suffice
+---------------------------------------------------------
+Kurylev--Lassas, arXiv:math/0501049v2, Theorems 2.9 and 2.10, provide a
+conditional constructive reconstruction. Within their smooth compact
+connected Riemannian Dirac-bundle/chirality class, known compatible boundary
+geometry and induced bundle structure together with the complete hyperbolic
+Cauchy data (or the full eigenvalues plus normalized boundary eigenspinor
+traces of an admissible self-adjoint realization) determine the interior up
+to the stated isometry and Dirac bundlemorphism. Their C0(D) denotes traces
+of time-dependent waves, NOT the zero-energy elliptic Cauchy space above.
+Eigenvalues alone, internal clock spectra, and a single P_C do not meet this
+data interface. Their boundary metric, chirality, normal Clifford action and
+locality/manifold assumptions must be supplied; the theorem does not derive
+them from the E8 rank or from P1/P2. It reconstructs the Dirac operator, not
+a separately chosen decomposition of it into connection and potential.
+
+5. Full original datum and homogeneous scale theorem
+----------------------------------------------------
+Original source01 lines 42--170 defines Tbound=(A+,H+,D+,J,Gamma,B_Sigma),
+with a smooth manifold and Dirac product collar already assumed. The later
+boundary primitive kernel also contains D (source01 lines 715--731).
+Consequently the conformal calculation does NOT give two equal full Tbound
+data, nor does it refute reconstructing geometry after the full D is given.
+It identifies the information that a compression to P_C/B_Sigma loses.
+
+Original source05 lines 1437--1491 proves uniqueness of one positive
+homogeneous scale rho_star assuming g=g_vac, Phi=Phi_vac and three sign/
+strict-convexity/asymptotic hypotheses for a supplied potential. This is not
+a construction of that potential from P1/P2 or a local equation selecting
+every sigma(x). No gauge-inequivalence of every f is inferred: a separately
+specified coupled Weyl gauge/compensator quotient would need to be applied.
+
+6. Exact variation of the supplied relative spectral source
+-----------------------------------------------------------
+This part calculates the original supplied A_sigma rather than selecting it.
+Set A=D_sigma+B_rel, P_s=|A|^{-2s-2}, and vary sigma by epsilon h with h
+supported away from the collar. Hold B_rel, the self-adjoint elliptic domain,
+reference, relative sector/projection and boundary conditions fixed. Assume an
+invertible smooth family and a cyclic trace with trace-class products for
+Re(s) sufficiently large. A supertrace requires the appropriate even/graded
+conditions. Since delta D_sigma=-{h,D_sigma}/2, Duhamel differentiation gives
+
+  F_h(s) = delta Tr_rel |A|^{-2s}
+         = s Tr_rel h(D_sigma A P_s + A P_s D_sigma)
+         = 2s Tr_rel(h|A|^{-2s})
+           -s Tr_rel h(B_rel A P_s + A P_s B_rel).
+
+The two B_rel terms cannot be merged with |A| powers without a commutation
+theorem. A changing B_rel, projection, reference or domain adds its own
+variation. With smooth meromorphic continuation the original uninserted
+residues respond by
+
+  delta E_D = Res_{s=1} F_h(s),
+  delta Gamma_D^(4) = FP_{s=0} F_h(s) + (i pi/2) delta Delta eta_Sigma.
+
+If eta is solely that of the fixed boundary operator, its variation is zero
+for an interior-supported h. Otherwise it must be retained. For B_rel=0,
+F_h(s)=2s zeta_h(s). With an ordinary simple pole at s=1 this gives
+delta E_D=2 Res_1 zeta_h; retain the unshortened formula if logarithmic/APS
+calculus permits higher poles. The s=0 finite part is not a zeta-determinant
+derivative: if zeta_h is regular there, FP_0(2s zeta_h)=0. This difference
+matters because the original source defines Gamma_D^(4) as FP_0 Zrel.
+
+For constant h=c in the B_rel=0 geometric piece,
+
+  D_sigma -> e^{-c}D_sigma,    zeta_A(s) -> e^{2cs}zeta_A(s).
+
+The A-only Res_1 scales by e^{2c}, while chi^2=Lambda^2 e^{2sigma}
+also scales by e^{2c}. Their product therefore has e^{4c}, before reference,
+other terms or field-frame changes. This is not an inconsistency theorem;
+it is an exact check that both uses of sigma must be accounted for.
+
+7. Localized curvature contribution and frame dictionary
+----------------------------------------------------------
+The globally traced E_D is a number. A local scale chi(x) requires a local
+residue density or an explicitly smeared trace. A natural completion convention
+is
+
+  E_A[w]=Res_1 Tr(M_w |A|^{-2s}) = integral w e_A,
+  Gamma_E=-6(E_A[chi^2]-E_ref[chi^2]).
+
+This prescription agrees with multiplying by chi^2 when chi is constant,
+but its selection from the primitive data is NOT proved here. The original
+local target action requires a density-level interpretation of this kind.
+Its full variation also contains delta chi^2=2h chi^2, including in the
+weighted reference term. The uninserted F_h above is not by itself that full
+variation.
+
+For the geometric spin curvature subterm only (B_rel=0), write its local
+residue density as e_A=-a dvol_{g_sigma} R[g_sigma]. Leave a explicit: its
+trace/projection convention has not been derived in this contract; original
+source05's displayed R coefficient is a=1/(24 pi^2). In the physical
+geometric frame g_sigma=e^{2sigma}g,
+
+  -6E_A[chi^2] = 6a integral dvol_{g_sigma} chi^2 R[g_sigma].
+
+With chi=Lambda e^sigma, express this SAME contribution in the seed frame g:
+
+  Gamma_E,A = 6a Lambda^2 integral dvol_g e^{4sigma}
+              (R[g]-6 Delta_g sigma-6|grad sigma|^2).
+
+For sigma supported away from the boundary, integration by parts gives
+
+  Gamma_E,A = 6a Lambda^2 integral dvol_g e^{4sigma}
+              (R[g]+18|grad sigma|^2).
+
+The factor 18 is fixed bookkeeping for this subterm, not a fitted Z_chi.
+In the g_sigma frame it is the nonminimal chi^2 R term; in the seed frame
+the associated derivative term is present. They must not be counted as
+independent contributions without a field-frame map. The reference piece,
+B_rel, a4, boundary/eta terms and other source sectors remain to be added.
+No complete sigma equation follows from this subterm alone.
+
+Varying just this contribution yields
+
+  9 Delta_g sigma+18|grad sigma|^2=R[g],
+  equivalently Delta_g phi=(2/9)R[g] phi,  phi=e^{2sigma}.
+
+This is a conditional subterm Euler--Lagrange identity. It is not the full
+TFPT field equation, and no particular seed metric or physical solution is
+chosen here. It gives a concrete formula against which a source-derived
+localization/frame completion can be checked.
+
+Source05 DOES state a local chi equation (lines 1254--1284), derived from
+a proposed low-curvature fixed-Mpl action. The earlier target (lines
+416--435) uses c_R chi(x)^2 R and Z_chi; its residue table (lines 514--547)
+lists Higgs, curvature and gauge terms but not an explicit Z_chi or U(chi)
+derivation. The correct missing link is the local density/coefficients and
+the frame/freezing relation, not absence of any local equation. An unfrozen
+nonminimal frame has curvature and derivative-of-chi^2 variation terms;
+a fixed-Mpl form can follow after an explicitly supplied freeze or Einstein
+frame map. No source error is inferred merely because that map is missing
+from the checked passages.
+
+Outcome and next source-native step
+----------------------------------
+The first missing geometric interface can now be asked operationally:
+derive the complete time/frequency boundary response, including the boundary
+coupling/eigenspinor traces and a common energy unit, from the actual TFPT
+source. A full signed boundary propagator T exp(-it A_B) T* or boundary
+resolvent T(A_B-z)^{-1}T* contains frequencies/poles and operator-valued
+spectral residues, once T, its normalization, induced boundary structure and
+observability of every eigenspace are specified. Boundary trace distributions
+require the appropriate Sobolev/test-function interpretation. These residues
+encode boundary spectral data up to unitary changes inside degenerate
+eigenspaces. A passive covariance can suppress modes through unknown state
+weights; a D^2 heat kernel loses the signs of Dirac eigenvalues. Neither is
+automatically a complete inverse-data interface. A particular kernel,
+generator and source/observer coupling may not be invented to make the
+inverse theorem apply. A fixed D+ would compute that response,
+but choosing D+ as input is not a P1/P2 origin proof. A first-jet calculation
+is a cheap decisive diagnostic for the specific ambiguity proved here; it
+cannot replace the complete-source reconstruction or physical T1--T8 work.
+
+Checker scope: checker.py verifies local algebra and conformal coefficient
+bookkeeping symbolically. It does not construct the PDE chart, prove unique
+continuation, run an inverse reconstruction, execute a physical replica family,
+or validate all TFPT axioms. The analytic statements require their displayed
+mathematical assumptions. An independent mathematical review accepted this
+bounded argument after requiring connectedness, the explicit resolvent chart,
+transformed-potential and sign/observability qualifications; they are now
+incorporated. No full suite is required or claimed for this experiment-only
+contract. The review does not validate the unconstructed physical source.
+
+Additional independent review: sections 6--7 were confirmed with the stated
+fixed-domain/reference assumptions, coefficient18, source localization
+convention, and Laplacian/frame qualifications. No physical source validated.
+
+8. Source-reference matching precedes the physical EH/replica inference
+---------------------------------------------------------------------
+The fresh Atlas audit retains the existing chiral U source, neutral boundary
+universality, charged/register reconstruction and conditional HSMI route.
+These are not replaced by the zero-energy conformal diagnostic above.
+In particular, an intrinsic Borchers/Wiesbrock route is available once an
+actual standard half-line inclusion and its common vacuum are constructed.
+The finite v438 phase/ladder certificate is not that construction, and the
+neutral-sector intertwiner alone is not a charged full-source equivalence.
+
+The archived original source01 lines126--128 defines, with an involutive
+lift U of the doubled reflection,
+
+  D_ref = (D + U D U^-1)/2,  D_rel = (D - U D U^-1)/2.
+
+Source05 lines16--17 identifies D_geo=D_ref+D_rel=D. Thus the reference
+cannot silently be replaced by an independently chosen geometric operator.
+For a branch satisfying U D U^-1=D, the displayed split gives D_ref=D.
+At sigma=0 and B_rel=0, with the same spectral realization, projection,
+kernel convention and domain in both terms, the spectral difference in
+source05 lines108--114 is identically zero before taking any trace.
+Res_1 and FP_0 of that difference are zero. If the relative eta term is
+also zero, the full displayed relative functional is zero. Keeping a
+different eta contribution does not create a Res_1 bulk Einstein term.
+
+This is an exact interface diagnostic, not a claim that the full TFPT
+admissibility selector permits B_rel=0, that every geometric lift commutes
+with D, or that its physical replica family uses these same domains. No
+complete TFPT countermodel is asserted. It identifies precisely what the
+claimed nonzero relative curvature residue must specify to evade the
+cancellation: the actual lift, reference transport, operator/domain and
+relative-trace assignments, including the nontrivial source B_rel.
+
+For the SAME commuting branch, hold D_ref=D fixed and take a constant
+profile c in the numerator: D_c=e^-c D, with B_rel=0. Write
+zeta_D(s)=Tr |D|^-2s, using the same invertible spectral realization. Then
+
+  Z_rel(s;c)=(e^(2sc)-1) zeta_D(s),
+  E_rel(c)=(e^(2c)-1) Res_1 zeta_D.
+
+If zeta_D is regular at zero, FP_0 Z_rel(s;c)=0. More generally, for a
+simple pole at zero of residue r0, FP_0 Z_rel(s;c)=2c r0. The eta term,
+if not canceled, must still be appended. For chi=Lambda e^c, the residue
+piece is therefore
+
+  -6 Lambda^2 (e^(4c)-e^(2c)) Res_1 zeta_D,
+
+not just -6 Lambda^2 e^(4c) Res_1 zeta_D. This also makes explicit the
+reference term already retained in section7. It is a statement along a
+constant-scale spectral family, not a proof of a Newton coefficient under
+an independently varying metric or of a unique physical frame.
+
+Reference transport is equally decisive for replicas. For any compatible
+normalized replica families write
+
+  W_rel(n)=W(n)-W_ref(n),
+  L_rel(n)=W_rel(n)-n W_rel(1),
+  S_rel_replica=-L_rel'(1)=S_replica-S_ref_replica.
+
+Here S_rel_replica is the replica derivative of a quotient partition
+function. It is NOT Araki/Umegaki relative entropy between states. The
+physical replica entropy follows without a subtraction only if the
+specified reference has zero normalized replica derivative, or if the
+reference contribution is restored. A reference fixed as a named operator
+does not by itself establish that its transported/glued replica response
+is zero. This is not arbitrary counterterm freedom in the fixed functional.
+
+Conditional coefficient consistency, preserving the existing v90 chain:
+if the identified relative source has the asserted EH term with
+kappa=chi0^2/(4pi^2), and its Euclidean log-partition convention gives the
+smooth-cone defect 4pi kappa (1-n) A, then
+
+  S_EH=4pi kappa A=chi0^2 A/pi,
+  G=1/(16pi kappa)=pi/(4chi0^2),
+  2pi/(S_EH/A)=1/(2kappa)=2pi^2/chi0^2=Mpl^-2.
+
+No independent A/4 normalization has been added. The coefficient identity
+is the existing smooth-cone mechanism combined with the asserted original
+spectral coefficient, not a new microscopic replica theorem. FP_0,
+higher-curvature/Wald, seam/contact, eta and variable-chi terms remain.
+If the reference replicates with the same defect, it contributes its own
+4pi kappa_ref A_ref and cannot be dropped.
+
+Priority correction: before promoting either an inverse-geometry interface
+or the conditional EH coefficient to a physical TFPT result, reconcile
+source01's actual even/odd reference split with source05's nonzero relative
+residue on one specified operator/metric/replica family. This supersedes
+the earlier priority in 'Outcome and next source-native step'; the earlier
+conditional conformal and variation statements retain their stated scope.
+The fresh compact packets for goals T1--T8, typed comparisons, all pages of
+linked attempts in the relevant topics, and original holonomy contract were
+used for this choice. That navigation does not certify corpus completeness.
+
+9. The earlier boundary identification: local reflection versus Calderon
+----------------------------------------------------------------------
+This test logically precedes the reference test in section8. Source01
+lines130--166 identifies the geometric deck reflection induced on boundary
+data with R_C=2P_C-I. In the ordinary boundary realization
+H_boundary=L^2(Sigma; S|_Sigma), for a Dirac operator on a smooth compact
+spin manifold with positive-dimensional boundary, this is not an automatic
+consequence of doubling or reflection regularity.
+
+The orthogonal Calderon projector is a classical pseudodifferential
+operator of order zero. By Guillarmou--Moroianu--Park, Theorem2,
+
+  P_C=(I+S(0))/2,
+  principal_symbol(S(0))(x,xi)=i c(nu)c(xi)/|xi|,
+
+with the sign convention of their inward normal and Clifford action.
+Denote this last Hermitian involution by b(x,xi). For nonzero tangential
+xi, b(x,xi)^2=I and b(x,-xi)=-b(x,xi).
+
+A local bundle lift U of the geometric deck reflection restricts at the
+fixed seam to multiplication by U(x), since the base points there are
+fixed. Its order-zero symbol is independent of xi. Were its boundary
+restriction equal to R_C, equality of principal symbols at xi and -xi
+would require U(x)=b(x,xi)=-b(x,xi), contradicting b^2=I. This applies
+also to local internal matrix factors. A zero-dimensional boundary or a
+restricted nonstandard boundary space is outside this test.
+
+The result excludes the displayed equality under that local-lift/ordinary
+trace-space reading. It does not exclude a nonlocal induced action on a
+solution/doubled boundary space. For such a reading, the actual Poisson,
+scattering or other transport and its domains must be specified. Restricted
+to the positive Cauchy space alone P_C=I, which likewise does not determine
+the asserted complementary reflection sector on all boundary data.
+
+There is a source-native correction without adding a physical model:
+keep R_C=S(0)=2P_C-I as the analytic Calderon/scattering polarization of
+the given D_+, and keep the geometric deck tau as the involution of the
+double. If an identification between their actions is intended, prove it
+on the explicitly identified spaces with the required nonlocal transport.
+The same transport/lift must then enter the reference definition and
+relative spectral domains in section8. It cannot be silently local in
+the reference formula and nonlocal in the boundary formula.
+
+This repairs the type of the boundary polarization; it does not select
+D_+, a four-dimensional source, a global state/instrument family, or all
+T1--T8. The correction and the conditional reference cancellation were
+independently reviewed against the original excerpts and this primary
+analytic theorem. No kernel receipt or physical-gate promotion is claimed.
+
+Primary mathematical source:
+https://www.imar.ro/~sergium/fisiere/calderon.pdf
+Guillarmou, Moroianu, Park, Bergman and Calderon Projectors for Dirac
+Operators, Theorem2 (Calderon/scattering identity and principal symbol).
+
+10. The existing odd-transition route: a GNS null check is already exact
+----------------------------------------------------------------------
+The source-operator-origin-20260920 original result retains six Clifford
+generators before even-family compression and proves P_even gamma_a
+P_even=0 in the exported compression. This does not say that gamma_a is
+null for the full original Clifford algebra. If gamma_a*=gamma_a and
+gamma_a^2=I, every normalized positive source functional omega gives
+
+  omega(gamma_a* gamma_a)=omega(I)=1.
+
+Thus the full generator is never GNS-null, independently of state choice.
+In any unital GNS representation pi, pi(gamma_a)^2=I, so it cannot vanish.
+By contrast,
+
+  (P_even gamma_a P_even)^2=0,
+  P_even gamma_a^2 P_even=P_even.
+
+The compression is not multiplicative on the full Clifford algebra, and
+cannot be substituted for its unital GNS representation. In general the
+GNS null space N_omega={a:omega(a*a)=0} is a LEFT ideal, not a two-sided
+ideal; ker pi_omega is a two-sided ideal. Invariance of omega under a
+source automorphism group alpha_t makes N_omega invariant and permits
+the canonical GNS implementing unitaries. State selection and a physical
+source time remain separate hypotheses.
+
+This closes the proposed nonnull check only for complete Clifford
+generators, not for individual projected transition components and not
+for a spacetime-local charged field realization. The original center
+obstruction remains: an equivariant unital map to an unchanged target
+whose whole operator algebra has center sign +1 cannot retain a source
+generator of sign -1. Equivariance would give pi(gamma_a)=-pi(gamma_a)=0,
+contrary to pi(gamma_a)^2=I. The existing source therefore needs its actual
+charged graded field/dynamic realization; more composites of the unchanged
+center-trivial target cannot provide that missing sign.
+
+This is an analytic consequence of the existing original Clifford
+relations and projection result, not a new physical model or a new
+T1--T8 closure. It removes a redundant proposed null test and corrects
+the type of the prospective GNS construction. Original result:
+source:dbbee916835d6a6733ad,
+experiments/theory-contracts/source-operator-origin-20260920/ERGEBNIS.md,
+section2 (Clifford transitions and the even compression).
+
+11. Constructive boundary/double dictionary from the original Dirac datum
+------------------------------------------------------------------------
+This is the next step after section9, not a new physical model. Take a
+formally self-adjoint geometric Dirac operator with the original product
+collar D=N(partial_x+B), N*= -N, N^2=-I, NB=-BN. Here N is normal
+Clifford multiplication; it is NOT the antilinear real structure J of
+Tbound. For the orthogonal Calderon P on ordinary boundary spinor traces,
+the Cauchy space is Lagrangian for the Green form. The precise identity
+is N P N^-1=I-P (Guillarmou--Moroianu--Park Proposition12). Hence
+
+  R_C=2P-I=S(0),  F=iN,
+  R_C*=R_C, F*=F, R_C^2=F^2=I, {R_C,F}=0.
+
+R_C distinguishes the two analytic Cauchy sides; F interchanges them.
+This is the canonical boundary Cl2 relation, replacing the unsupported
+local-deck=Calderon equality. These symbols do not identify a spacetime
+Cl4 module or the actual TFPT four-station clock. In particular Q=R_C F
+has Q^2=-I, so an order4 Q here has only the two eigenvalues +i,-i and
+cannot simply be substituted for a clock carrying all four C4 characters.
+
+The global lift is explicit on the exact invertible double. Using two
+copies of the one-sided operator D0 in the product/UCP setting, write
+
+  Ddouble=diag(D0,-D0),
+  dom(Ddouble)={(f+,f-) in H1: trace f-=N trace f+}.
+
+The reflection on this PAIR representation is
+
+  K=[[0,iI],[-iI,0]].
+
+It is self-adjoint and unitary, K^2=I, {K,Ddouble}=0. It preserves the
+domain: g+=if-, g-=-if+, and N trace g+=iN^2 trace f+=-i trace f+=trace g-.
+Its one-sided boundary action is F=iN. The ambiguous shorthand iN times
+an ordinary component swap is not this pair operator and in general
+does not preserve that domain. These facts follow from the standard
+invertible-double clutching, not from a frequency-by-frequency local
+replacement of R_C.
+
+In even dimension, let Gamma be the geometric chirality with Gamma N
+=-N Gamma and {Gamma,D0}=0. Define Gdouble=diag(Gamma,-Gamma). It
+preserves the same glued domain, anticommutes with Ddouble and with K.
+Thus U0=i Gdouble K is a self-adjoint unitary involution commuting with
+Ddouble. The two lifts are distinguished: K is Dirac-odd, U0 Dirac-even.
+The original excerpt does not select their spin/internal lift by name.
+For the even lift, the primitive even reference is R0=Ddouble. For the
+odd lift it is zero, not an ordinary elliptic/Fredholm reference. Declaring
+an empty nonzero spectrum and primed zeta0=0 would require an additional
+convention; the usual relative heat trace would contain the non-trace-class
+identity e^-t0 on an infinite Hilbert space. No such convention is inferred.
+
+Primary source for the double and domain: Booss-Bavnbek--Lesch,
+The invertible double of elliptic operators, Proposition1.4 and the
+Dirac product/double construction, https://arxiv.org/pdf/0803.4047.
+The explicit pair-lift formula above is algebra derived from that domain.
+
+12. Fixed-reference completion: zero at a point does not kill variation
+------------------------------------------------------------------------
+Section8's cancellation must NOT be promoted to a gravity no-go. The
+original source01 derives a reference from a primitive BASEPOINT datum;
+source05 gives D_sigma an index but not D_ref. More explicitly source02
+lines2257--2266 defines Z_rel=Z_adm/Z_ref[0] and calls its denominator
+fixed, not a second fluctuating measure. This supports freezing the
+reference once, rather than recomputing its even part at every field value.
+It does not by itself define the complete off-shell metric/replica family.
+
+A constructive analytic completion relative to a given even-lift baseline
+is available. Let g0 and D0 be fixed, use a fixed spin structure, and vary
+positive metrics g equal to g0 on a whole collar. Write
+g(v,w)=g0(A_g v,w), A_g positive g0-self-adjoint. The positive map
+b_g=A_g^-1/2 identifies g0-orthonormal frames with g-orthonormal frames;
+its continuous spin lift beta_g is fixed relative to the identity at g0.
+With q_g=dvol_g/dvol_g0, set
+
+  W_g=q_g^(1/2) beta_g^-1,
+  W_g:L2(S_g,dvol_g) -> L2(S_g0,dvol_g0),
+  Dhat[g]=W_g D_g W_g^-1.
+
+W_g is unitary and equals the identity on the collar. The boundary operator
+and a chosen compatible APS domain therefore remain fixed. This is the
+standard Bourguignon--Gauduchon spinor/metric comparison. It constructs
+a family for all such g without choosing a new specific metric. Choosing
+that full family as the PHYSICAL TFPT family, its spin/internal realization,
+and its relation to Padm is still an additional identification beyond the
+original conformal subfamily. No unique world metric is asserted here.
+
+Freeze R0=Dhat[g0], not the newly recomputed even part of Dhat[g]. Define
+on a gap-preserving neighborhood with the same zero-mode convention
+
+  E_rel[g]=Res_1(zeta_Dhat[g]-zeta_R0).
+
+E_rel[g0]=0, yet delta E_rel[g0]=delta Res_1 zeta_Dhat[g]|g0. Thus a zero
+relative action VALUE at its reference does not erase its field derivative
+or Hessian. The analogous statement holds for FP0 and unchanged seam eta.
+For the already supplied constant conformal family, E_rel(c)=(e^2c-1)E0,
+so E_rel'(0)=2E0, generally nonzero. Sections8--9 diagnose an identification
+and reference-family issue, not nonexistence of a gravitational response.
+
+At fixed low-energy chi0, if the claimed local numerator residue is
+-a integral sqrt(g)R, its relative Einstein action is
+
+  Gamma_E[g;g0]=6a chi0^2 (I_R[g]-I_R[g0]).
+
+The second term is constant under metric variations with g0 held fixed.
+It does not affect the local Einstein equation or its kinetic Hessian.
+With matter on the SAME metric and T_munu=-2/sqrt|g| delta S_matt/delta
+g^munu, conventional Lorentzian continuation gives
+
+  12a chi0^2 G_munu = T_munu
+
+at leading EH order, with cosmological and higher-curvature/scalar terms
+retained when present. For a=1/(24pi^2), this agrees with the asserted
+Mpl^2=chi0^2/(2pi^2). This is a conditional field-variation theorem;
+it does not identify the source matter action, quantize the full parent,
+or derive the numerical a from an unspecified trace.
+
+Primary metric-comparison source: Bourguignon--Gauduchon,
+Spinors, Dirac Operators and Metric Variations,
+https://pschwahn.github.io/assets/spineurs_variations.pdf.
+
+13. Tensor-compatible replica normalization keeps the physical response
+------------------------------------------------------------------------
+For a fixed, nonzero one-copy normalizing denominator d1=Z_ref[0], its
+extension as normalization of independent copies has d_(m+n)=d_m d_n.
+For integer n this forces d_n=d1^n. If Z_n denotes the actual glued
+physical replica numerator, then
+
+  Z_rel,n=Z_n/d1^n,
+  Z_rel,n/(Z_rel,1)^n=Z_n/(Z_1)^n.
+
+The reference cancels EXACTLY from the normalized replica moment; its
+entropy derivative is not an area subtraction. This is distinct from
+replicating a second physical reference state on a glued geometry, which
+gives the entropy difference of section8. For a derivative at real n=1,
+integer-copy multiplicativity alone is insufficient: retain a continuous
+positive exponential-semigroup normalization or a specified compatible
+analytic continuation satisfying d(n)=d1^n in a neighborhood of1. Mere
+agreement at the positive integers does not fix d'(1). Under the stated
+stronger premise the cancellation is exact near1.
+
+This completes the normalizing-denominator algebra for the original fixed
+Z_ref reading. It does NOT show that the source spectral Gamma equals
+the microscopic -log Z_n. If its EH subterm has the appropriate Euclidean
+log-partition sign and smooth cone geometry, its defect is
+4pi kappa(1-n)A and its entropy is 4pi kappa A. Source05's FP0 zeta term
+must not be silently identified with the derivative-at-zero log determinant.
+The higher coefficients, seam/gluing/eta, variable chi and matter terms
+remain. The spectrum/state/measure correspondence and the actual replica
+domain are still required for a physical quantum-gravity conclusion.
+
+14. Evaluate the trace before declaring the Newton coefficient selected
+----------------------------------------------------------------------
+On a four-dimensional geometric Dirac branch, away from a fixed collar,
+the Lichnerowicz operator has heat endomorphism E=-R/4 times identity.
+The ordinary Laplace-type coefficient is
+
+  a2_bulk=(4pi)^-2 integral sqrt(g) tr(E+R I/6)
+         =-r_eff/(192pi^2) I_R[g].
+
+Here r_eff is the weighted LOCAL rank of the active metric-dependent
+principal symbol, per the explicitly declared base integral, including
+normalization, geometric/internal multiplicities and a compatible local
+projection. It is NOT the literal difference of two identity traces:
+a frozen equal-rank reference may cancel a baseline value without
+cancelling the active variation. For a nonlocal or symbol-incompatible
+projection, an abstract rank is insufficient; its local heat coefficient
+must be computed. It is not the number of root states or a central charge just
+because that number happens to coincide. Boundary terms are separate.
+For a fixed reference their metric derivative vanishes if the collar is
+unchanged, while the numerator's interior coefficient remains as displayed.
+
+With the original prefactor -6chi0^2 the EH coefficient is
+
+  kappa=r_eff chi0^2/(32pi^2),
+  Mpl^2=r_eff chi0^2/(16pi^2).
+
+Thus the asserted coefficient kappa=chi0^2/(4pi^2) requires r_eff=8.
+Source05 lines437--444 writes E_rel=-R/4 I_48+..., whereas lines517--523
+assert -R/(24pi^2) for the Einstein residue. If48 is total ordinary fiber
+rank it gives -R/(4pi^2); if48 is an internal multiplicity and spin rank4
+is additional, it gives -R/pi^2. Neither reading by itself establishes8.
+A projection or explicit normalized internal trace can change the number,
+but the operative trace and its source origin must be supplied.
+
+For example the trace-preserving clock conditional expectation
+E_clock(A)=(1/m)sum Ad(C^k)(A) does NOT divide tr(A) by m. A Hilbert-space
+invariant-sector projection (1/m)sum C^k is a different operation, whose
+rank and compatibility with the geometric symbol must be calculated.
+This prevents using an unexplained six-clock average to turn48 into8.
+
+The checked original source01/02/04/05 excerpts and v245/v261 do not give
+that trace contraction. This is a scoped source gap, not a proof of global
+absence in the entire current TFPT corpus. Source01 labels the almost-
+commutative spin/internal factorization a realization choice. The remaining
+load-bearing task on this path is to derive the actual physical trace and
+the same charged metric/replica source, not to choose r_eff=8 to fit a target.
+The canonical dictionary and fixed-reference completion above remove
+earlier ambiguities; they do not promote any full physical T1--T8 gate.
+
+Heat-coefficient primary source: D.V.Vassilevich, Heat kernel expansion:
+user's manual, Dirac-square endomorphism and general a2,
+https://arxiv.org/pdf/hep-th/0306138.
+
+15. Joint Einstein--Higgs contraction: a trace-independent factor-six test
+------------------------------------------------------------------------
+Checking only the Einstein coefficient can hide a mismatch between the
+orders of one source. Source05 lines437--445 gives the same endomorphism
+
+  E_R=-R I/4, E_H=-H P2, H=Phi^dagger Phi.
+
+Use the standard graded Dirac--Yukawa reading: a local Laplace-type
+square, one field-independent fiber trace t at both orders, and a
+spin/gauge connection whose curvature Omega has no additional Phi
+dependence. Read algebraic bulk invariants with covariantly constant
+Phi jets, vanishing gauge curvature and no scalar derivatives, away from
+the fixed collar. The standard Gilkey expressions (Vassilevich4.27--4.28)
+give, with p=t(P2),
+
+  a2_H=-p H/(16pi^2),
+  a4_RH=p R H/(192pi^2).
+
+The cross term follows from 60 R E_H+180(E_R E_H+E_H E_R):
+(-60+90)p R H=30p R H. Consequently the ratio of the mixed a4
+coefficient to the magnitude of the a2 Higgs coefficient is 1/12.
+This test does NOT require P2^2=P2, a rank count, or a trace normalization.
+
+Source05 lines517--544 instead prints a2_H=-H/(48pi^2) and
+a4_RH=R H/(96pi^2). Their coefficient ratio is1/2, SIX times1/12.
+If P2 is indeed a projector, then also a4_H^2=p H^2/(32pi^2).
+The source's quartic coefficient1/(16pi^2) and mixed coefficient
+1/(96pi^2) both require p=2, while its a2_H requires p=1/3.
+No single p satisfies all three equations.
+
+The prefactor -6chi^2 is applied only AFTER E_D has been computed, so
+it cannot change this relation between E_D and Gamma_D^(4). A fixed
+reference changes field-independent values, not these interior scalar
+coefficients. In a regular four-dimensional zeta family, Res1 is a2
+because Gamma(1)=1, and FP0 is the a4/zeta(0) value, with a possible
+constant kernel subtraction. It is not a zeta-prime-at-zero determinant.
+Keep kernel dimension and seam/eta data fixed in this local test.
+
+There is an explicit consistent contraction, but it must not be confused
+with a derived TFPT trace. IF the displayed I48 has total ordinary rank48
+and P2 extends as a rank2 projection in this same fiber, then
+
+  E_D,bulk=-integral sqrt(g) [R/(4pi^2)+H/(8pi^2)],
+  Gamma4,bulk contains H^2/(16pi^2)+R H/(96pi^2).
+
+The source's a4 scalar coefficients match this reading, whereas BOTH of
+its a2 coefficients have been divided by6. Retaining the original
+-6chi^2 prefactor on this reading gives Mpl^2=3chi0^2/pi^2, six times
+the printed Planck value. This is the conditional consistent coefficient,
+not authorization to change the source or its physical predictions.
+P2 is originally a weak-sector projection on E3+E2 (source05:165--197);
+its extension into the geometric fiber is itself not supplied by a rank
+label. The positive bosonic rank2 theorem does not identify that extension.
+
+The no-match conclusion has a precise scope: the displayed E with the
+standard Phi-independent geometric connection and one common trace.
+A Phi-dependent effective connection can contribute through 30 Omega^2;
+a different Yukawa endomorphism or order-dependent trace can change the
+calculation. None is inferred from the displayed E alone. Such a proposal
+must supply its actual operator/source derivation and redo ALL linked
+coefficients. This is not a no-go for every possible TFPT dynamics.
+Independent scoped review confirmed the algebra and this limitation.
+
+16. The smallest scale explanation and why it needs a source dictionary
+------------------------------------------------------------------------
+The two-sheet source geometry and v36's ordinary spin rank4 provide a
+conditional numerical route to rank8 per quotient integral. This does not
+identify source05's I48/P2 trace. More strongly, a single constant operator
+scale can mathematically produce the order-dependent factor in section15:
+
+  D_new=sqrt(6) D_old,
+  zeta_new(s)=6^(-s) zeta_old(s),
+  Res1 zeta_new=(Res1 zeta_old)/6,
+  FP0 zeta_new=FP0 zeta_old   [regular at0].
+
+If zeta has a simple zero pole, the last line instead shifts by
+-log(6) Res0 zeta_old. Regularity is an explicit premise.
+
+This exactly reproduces the printed a2/a4 numbers from the conditional
+ordinary rank48/rank2 contraction when they are expressed in OLD fields.
+It is therefore premature to call the numerical mismatch a global TFPT
+contradiction. But it is not a hidden free physical repair either.
+
+The principal-symbol metric and Yukawa dictionary must scale together:
+
+  g_new=g_old/6, R_new=6 R_old, H_new=6 H_old,
+  dvol_new=dvol_old/36.
+
+Writing the heat coefficients in these actual new geometric fields
+restores the standard common-trace coefficients and the ratio1/12.
+If the scale is merely a change of the common spectral unit, then
+lambda_new=sqrt(6)lambda_old and chi_new=sqrt(6)chi_old; the combination
+chi^2 Res1 is invariant. It does not repair a physical Newton coefficient
+by an independent factor6. Scaling the anchor at fixed boundary data is
+also not a unitary admissible boundary morphism (source05:1344--1368).
+
+The existing local scale D_sigma=e^-sigma/2 Dgeo e^-sigma/2 provides the
+same algebra for constant sigma, but a physical choice giving this factor
+would have to be selected by the actual stationary source and matched to
+the physical g/Phi frame. Source05:1371--1500 gives a conditional
+uniqueness theorem for rho_star from Vhat', not a computed rho_star=1/6
+or this trace/field dictionary. For nonzero B_rel not scaled with Dgeo,
+the simple zeta scaling law cannot even be applied to D_sigma+B_rel.
+
+The decisive next source task is now joint and concrete: calculate the
+one physical squared operator, its full connection, trace, reference and
+g/Phi/chi dictionary, then obtain the a2/a4 coefficients and stationary
+root from that same object. Picking a rank8, a factor6 or a rho value to
+match one desired coefficient is not that derivation. The constructive
+boundary/frozen-reference results remain valid in their stated scope;
+the present source chain still does not close full physical T1--T8.
+
+17. An affine unitary connection cannot supply the missing quartic sign
+------------------------------------------------------------------------
+One simple repair class mentioned in section15 can be tested without
+constructing a new physical model. Keep the displayed E_H=-H P2 with
+P2^2=P2 and a positive cyclic fiber trace (or parallel positive weighting).
+Its printed a2 coefficient forces p=t(P2)=1/3. Then E^2 supplies only
+
+  a4_H^2,E=H^2/(96pi^2),
+
+whereas the printed coefficient is6 times larger. It needs a POSITIVE
+extra +5 H^2/(96pi^2).
+
+In a flat gauge-free patch let a proposed scalar-dependent unitary
+connection be affine-linear and vanish at zero scalar: A_mu(t)=t K_mu,
+with constant skew-Hermitian K_mu and scalar amplitude Phi(t)=t Phi0.
+Its curvature is Omega_mu,nu=t^2[K_mu,K_nu], skew-Hermitian. Therefore
+
+  t(Omega_mu,nu Omega_mu,nu)
+     =-sum ||Omega_mu,nu||_t^2 <=0.
+
+The +30 Omega^2/(360(4pi)^2) heat term is nonpositive at quartic order,
+so it cannot supply the positive missing contribution. A hermitian
+physical field strength uses Omega=iF; changing that notation does not
+change this conclusion. The traced E double-derivative is a total
+divergence/commutator trace and supplies no interior algebraic quartic
+term. The frozen reference and unchanged seam also do not supply it.
+
+This excludes that specific affine unitary-connection repair while E and
+the positive compatible trace are held fixed. It does not exclude an
+actual source completion changing E by further scalar endomorphisms,
+a different nonlinear connection, a nonpositive supertrace or a different
+frame. Those are additional source structures requiring derivation,
+not established consequences of the displayed operator. The sign and
+its limited scope were independently reviewed against the heat formula.

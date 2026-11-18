@@ -1,0 +1,510 @@
+=sp.zeros(5)
+for j,jnew in enumerate(indices): T[j,jnew]=1
+T[4,4]=-I
+print("tau index",indices,"T",T)
+print("Tv0",T*v0,"Tv1",sp.simplify(T*v1))
+# quotient characters using matrix basis v2, v3, e_inf alongside v0,v1
+v2=sp.Matrix([z**2 for z in a]+[0])
+v3=sp.Matrix([z**3 for z in a]+[0])
+einf=sp.Matrix([0,0,0,0,1])
+B=sp.Matrix.hstack(v0,v1,v2,v3,einf)
+print("full det", sp.simplify(B.det()),"tau diag",sp.simplify(B.inv()*T*B))
+# principal angles naive branch coordinate metric
+BF=sp.Matrix.hstack(sp.eye(5)[:,2],sp.eye(5)[:,3]) 
+H=sp.simplify(BF.H*V/2)
+print("overlap",H, "singular square",sp.simplify(H*H.H))
+R= Matrix([[3/4, 3/4, -3/4, -3/4, 0], [0, 0, 0, 0, -3], [3/4, -3/4, 3*I/4, -3*I/4, 0]]) rank 3 kernel nullspace= [Matrix([
+[1/2 - I/2],
+[1/2 + I/2],
+[        1],
+[        0],
+[        0]]), Matrix([
+[1/2 + I/2],
+[1/2 - I/2],
+[        0],
+[        1],
+[        0]])] RV= Matrix([[0, 0], [0, 0], [0, 0]])
+V Gram Matrix([[4, 0], [0, 4]])
+n order 3 elements 8 n C3 subgroups 4
+fixed [0]
+fixed [3]
+fixed [2]
+fixed [1]
+A3 Gram Matrix([[2, -1, 0], [-1, 2, -1], [0, -1, 2]]) det 4 SNF already
+tau index [2, 3, 1, 0] T Matrix([[0, 0, 1, 0, 0], [0, 0, 0, 1, 0], [0, 1, 0, 0, 0], [1, 0, 0, 0, 0], [0, 0, 0, 0, -I]])
+Tv0 Matrix([[1], [1], [1], [1], [0]]) Tv1 Matrix([[I], [-I], [-1], [1], [0]])
+full det 16*I tau diag Matrix([[1, 0, 0, 0, 0], [0, I, 0, 0, 0], [0, 0, -1, 0, 0], [0, 0, 0, -I, 0], [0, 0, 0, 0, -I]])
+overlap Matrix([[1/2, I/2], [1/2, -I/2]]) singular square Matrix([[1/2, 0], [0, 1/2]])
+TFPT: Ein neuer Ansatz zur gemeinsamen Ursprungslösung
+Ich habe die Suche weitergeführt und bin bei einer Verbindung gelandet, die ich für deutlich grundlegender halte als die bisherigen Yukawa, CP und Gravitationsmodelle.
+
+Die spezielle Picardkurve könnte gleichzeitig erklären, woher die vier Marken, die drei Familienrichtungen, die fünf Materieplätze und sogar deren 
+3
++
+2
+3+2 Struktur kommen.
+
+Das Entscheidende: Nicht durch vier separate Zahlenvergleiche, sondern durch zwei zusammenhängende mathematische Konstruktionen.
+
+1. Vier Marken entstehen möglicherweise aus vier verschiedenen Überlagerungen
+Wir kennen die Kurve:
+
+𝐶
+:
+𝑦
+3
+=
+𝑥
+4
+−
+1.
+C:y 
+3
+ =x 
+4
+ −1.
+Die mathematische Literatur bestätigt einen bemerkenswerten Sachverhalt: Ihre holomorphe Automorphismengruppe besitzt 48 Elemente und genau vier verschiedene Untergruppen der Ordnung drei. Jede dieser Untergruppen definiert eine dreifache Überlagerung der projektiven Geraden. Die vier Untergruppen sind durch Symmetrien ineinander überführbar. 
+
+Wiley Online Library
+
+Das ist wichtig. Bisher haben wir die vier TFPT Marken vor allem als vier Punkte einer bereits gewählten Naht betrachtet.
+
+Vielleicht sind sie fundamentaler als vier gleichberechtigte Möglichkeiten, dieselbe ursprüngliche Geometrie als Prozess zu betrachten.
+
+Ich habe die dazugehörige endliche Gruppenrechnung überprüft. Die alte TFPT Familiengruppe 
+𝑆
+4
+S 
+4
+​
+  besitzt ebenfalls exakt vier solche Dreieruntergruppen. Ihre Konjugationswirkung permutiert diese vier Möglichkeiten.
+
+Aus den vier formalen Richtungen entsteht damit ein dreidimensionaler Differenzraum:
+
+𝐹
+=
+{
+(
+𝑧
+1
+,
+𝑧
+2
+,
+𝑧
+3
+,
+𝑧
+4
+)
+∈
+𝐶
+4
+:
+𝑧
+1
++
+𝑧
+2
++
+𝑧
+3
++
+𝑧
+4
+=
+0
+}
+.
+F={(z 
+1
+​
+ ,z 
+2
+​
+ ,z 
+3
+​
+ ,z 
+4
+​
+ )∈C 
+4
+ :z 
+1
+​
+ +z 
+2
+​
+ +z 
+3
+​
+ +z 
+4
+​
+ =0}.
+Die ganzzahligen Differenzen 
+𝑒
+𝑖
+−
+𝑒
+𝑗
+e 
+i
+​
+ −e 
+j
+​
+  erzeugen das Wurzelgitter 
+𝐴
+3
+A 
+3
+​
+ . Seine Cartanmatrix ist
+
+(
+2
+−
+1
+0
+−
+1
+2
+−
+1
+0
+−
+1
+2
+)
+,
+det
+⁡
+=
+4.
+​
+  
+2
+−1
+0
+​
+  
+−1
+2
+−1
+​
+  
+0
+−1
+2
+​
+  
+​
+ ,det=4.
+Das liefert aus demselben geometrischen Objekt:
+
+vier gleichberechtigte Markierungen,
+
+drei unabhängige Familienrichtungen,
+
+ein 
+𝐴
+3
+A 
+3
+​
+  Gitter mit Diskriminantgruppe 
+𝑍
+4
+Z 
+4
+​
+ .
+
+Gerade diese 
+𝑍
+4
+Z 
+4
+​
+  Struktur benötigt TFPT bereits für die Verklebung mit 
+𝐷
+5
+D 
+5
+​
+  zu 
+𝐸
+8
+E 
+8
+​
+ .
+
+Die Rechnung ist exakt. Die Gleichsetzung mit physikalischen Familien ist noch eine Hypothese.
+
+2. Die fünf Plätze enthalten eine natürliche 
+3
++
+2
+3+2 Struktur
+Hier liegt der für mich stärkste neue mathematische Befund.
+
+Wähle eine der vier dreifachen Überlagerungen. Sie besitzt fünf Verzweigungsstellen. Für deren Summe 
+𝐷
+D gilt auf der Kurve vom Geschlecht drei:
+
+deg
+⁡
+𝐷
+=
+5
+,
+dim
+⁡
+𝐻
+0
+(
+𝐶
+,
+𝑂
+(
+𝐷
+)
+)
+=
+3.
+degD=5,dimH 
+0
+ (C,O(D))=3.
+Jetzt betrachten wir nicht nur die Anzahl der Funktionen, sondern die Frage:
+
+Welche vorgegebenen Polinformationen an den fünf Stellen lassen sich überhaupt zu einer globalen Funktion zusammensetzen?
+
+Die Antwort liefert die exakte Kohomologiesequenz
+
+0
+⟶
+𝐶
+⟶
+𝐶
+3
+⟶
+𝐶
+5
+⟶
+𝐶
+3
+⟶
+0.
+0⟶C⟶C 
+3
+ ⟶C 
+5
+ ⟶C 
+3
+ ⟶0.
+​
+ 
+Dahinter steht das klassische Mittag Leffler Problem auf kompakten Riemannschen Flächen. 
+
+users.dma.unipi.it
+
+Die Interpretation ist verblüffend einfach:
+
+Fünf lokale Polinformationen
+
+5
+2
+Global realisierbare Richtungen
+
+Erlaubte meromorphe Funktionen
+3
+Unabhängige Hindernisrichtungen
+
+Globale Kohomologie
+Die fünf lokalen Daten besitzen also einen ausgezeichneten zweidimensionalen Unterraum. Ihr Quotient ist dreidimensional.
+
+Das ist eine 
+3
++
+2
+3+2 Struktur, die nicht durch eine nachträglich ausgewählte Teilchenladung definiert wird.
+
+Ich habe sie an der konkreten Picardkurve vollständig symbolisch überprüft. In den lokalen Koordinaten 
+𝑦
+y an den vier endlichen Verzweigungsstellen und 
+𝑥
+/
+𝑦
+x/y im Unendlichen wird der zweidimensionale Kern von den beiden Vektoren
+
+𝑣
+0
+=
+(
+1
+,
+1
+,
+1
+,
+1
+,
+0
+)
+v 
+0
+​
+ =(1,1,1,1,0)
+𝑣
+1
+=
+(
+1
+,
+−
+1
+,
+𝑖
+,
+−
+𝑖
+,
+0
+)
+v 
+1
+​
+ =(1,−1,i,−i,0)
+aufgespannt.
+
+Die zugehörige Residuenabbildung hat exakt Rang drei und annihiliert beide Vektoren. Es handelt sich damit nicht nur um eine Dimensionszählung.
+
+Die Unterscheidung ist allerdings wichtig: Die Geometrie bestimmt zunächst einen Zweierraum und einen Dreierquotienten, noch keine eindeutige orthogonale Aufteilung in zwei physikalische Teilräume. Dafür braucht man zusätzlich eine passende positive Paarung.
+
+Und genau hier entsteht die nächste, besonders interessante Verbindung.
+
+3. Eine überraschende Konsequenz: Die Kurve besitzt genau 20 ausgezeichnete Punkte
+Die vier Dreieruntergruppen liefern nicht nur vier Möglichkeiten, sondern jeweils fünf Fixpunkte.
+
+Ich habe die Automorphismen der Picardkurve verwendet, um sämtliche Fixpunkte zu bestimmen.
+
+Das Ergebnis ist eine Menge von 20 verschiedenen Punkten, die unter der vollständigen holomorphen Symmetriegruppe in genau zwei Bahnen zerfällt:
+
+4
+Besonders symmetrische Punkte
+
+Stabilisator mit 12 Elementen
+16
+Weitere Fixpunkte
+
+Stabilisator mit 3 Elementen
+Die vier besonderen Punkte sind der Punkt im Unendlichen und die drei endlichen Punkte mit 
+𝑥
+=
+0
+,
+ 
+𝑦
+3
+=
+−
+1
+x=0, y 
+3
+ =−1.
+
+Die anderen 16 Punkte lassen sich explizit angeben:
+
+𝑦
+=
+0
+,
+𝑥
+4
+=
+1
+(
+4
+ Punkte
+)
+,
+𝑦
+=
+2
+𝜔
+𝑘
+,
+𝑥
+4
+=
+9
+,
+𝑘
+=
+0
+,
+1
+,
+2
+(
+12
+ Punkte
+)
+,
+​
+  
+y=0,x 
+4
+ =1
+y=2ω 
+k
+ ,x 
+4
+ =9,k=0,1,2
+​
+  
+​
+  
+(4 Punkte),
+(12 Punkte),
+​
+ 
+mit 
+𝜔
+=
+𝑒
+2
+𝜋
+𝑖
+/
+3
+ω=e 
+2πi/3
+ .
+
+Ich habe geprüft, dass diese 16 Punkte unter sämtlichen drei erzeugenden Automorphismen der Originalkurve abgeschlossen sind. Sie bilden eine einzige Bahn.
+
+Damit stehen zwei exakte Zerlegungen desselben geometrischen Objekts nebeneinander:
+
+20
+=
+4
+×
+5
+=
+4
++
+16
+20=4×5=4+16
+​
+ 
+Das erinnert einerseits an den älteren TFPT Träger mit vier mal fünf Zustandsplätzen und andererseits an die 16 Komponenten des Materiespinors.
+
+Aber gleiche Dimension ist noch keine identische Darstellung. Um daraus einen physikalischen Anschluss zu machen, müssten wir einen Operator konstruieren, der die tatsächlichen Symmetrieaktionen erhält.
+
+Das Ergebnis ist trotzdem stärker als ein bloßer Zahlentreffer: Die 20 Punkte und die beiden Bahnen sind durch ihre Stabilisatoren geometrisch charakterisiert. Die zugrunde liegende Automorphismengruppe ist in der Literatur vollständig klassifiziert. 
+
+Wiley Online Library

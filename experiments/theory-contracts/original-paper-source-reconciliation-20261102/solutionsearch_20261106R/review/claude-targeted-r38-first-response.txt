@@ -1,0 +1,115 @@
+Claude hat geantwortet: Kurzurteil
+Checking the candidate's normalizability and reflection positivity before claiming it
+
+Checking the candidate's normalizability and reflection positivity before claiming it
+Kurzurteil
+
+Seit R25 prüft der Proposer Eigenschaften der Regulatorfamilie und ihrer Grenzübergänge, bevor überhaupt ein einziges endliches Familienmitglied existiert. Die Ausschlüsse sind sauber, aber zielirrelevant.
+
+Gleichzeitig liegt das entscheidende Material bereits vor und wird nicht benutzt. R32 berichtet einen ursprünglichen, nichtpolynomialen Faktor unendlichen Rangs, der winkeluniform exponentiell in |H| abfällt: log det_F C/r → −(π−2)·2Tr(3|Yu|+3|Yd|+|Ye|+|Yν|). R055 §3 hat genau diesen Fall ausdrücklich offengelassen („A nonpolynomial infinite-rank determinant can change the premises and must be evaluated“).
+
+Der nächste Schritt ist daher kein weiterer Cap-Test, sondern ein Kandidat, der diesen Faktor als Gewicht verwendet und seine Annahme dabei offen ausweist.
+
+1. Welche Forderung der Proposer unterlassen muss
+
+Er darf nicht verlangen, dass der endliche Kandidat schon Eigenschaften der Regulatorfamilie oder eines Grenzübergangs erfüllt. Genau diese Forderung hat er in den letzten Runden immer wieder selbst hinzugefügt:
+
+t → 0-Identität bzw. starke Stetigkeit (R25, R36);
+ℓ → 0 (R33);
+separate projektive Verträglichkeit n → n+1 (R38);
+UV-Normalität aller Frequenzen (R35);
+Vakuumerhaltung (R34);
+exakte Nullenergie (R37);
+einfache Perronrichtung (R26).
+
+Das sind spätere Familienpflichten. Für ein einzelnes Mitglied mit festem ℓ₀ > 0 sind sie keine Existenzbedingung.
+
+Für das Familienmitglied bleiben verpflichtend:
+
+ursprüngliche Feldtypen;
+jeder Faktor des R113-Callers ist durch das deklarierte Gesetz erzeugt oder als Scope deklariert, nie stillschweigend gleich eins;
+absolute Integrierbarkeit von Z0, ZU, ZY und ZUY;
+Reflexionspositivität der reflektierten Wörter bei festem Mitglied;
+R055 in seinem Scope.
+2. Ein konkreter Konstruktionsversuch: Randkontraktionskandidat K_cap(ℓ₀)
+
+Status: neue Hypothese, nicht hergeleitet. Die übermittelten Daten bestimmen keinen vollständigen Originalproduzenten. Der Versuch muss deshalb einen neuen gesetzartigen Körper konstruieren, das Randkontraktionsgesetz. Es besteht aus vier Teilen; die erste neue Annahme ist A1.
+
+Teil	Inhalt	Status
+A1 (erste neue Annahme)	Das absolute Gewicht a_A/a_R des Blocks ist der ursprüngliche Capquotient bei fester Capbreite ℓ₀: Π_{k,p} C_{k,p}(ℓ₀,H) / Π C(ℓ₀,0). Er bildet den ganzen Fermion- bzw. Randfaktor; ein zusätzlicher Pfaffian kommt nicht hinzu, um Doppelzählung zu vermeiden.	Hypothese. Deine Warnung gilt: Cap ist ein Quotient zweier Randkontraktionen und nicht automatisch a_A/a_R. Genau diese Gleichsetzung ist A1. Die Wärmefaserspur wird nicht mit Cap gleichgesetzt.
+A2	Die bosonische Basis ist das gewöhnliche lineare Volumen d⁴H_G zur ursprünglichen Gram-Metrik (carrier007) auf ganz ℂ², ohne Domänenschnitt.	Hypothese. Dieselbe explizite Realisierung, die R055 §1 als Testrealisierung verwendet.
+A3	Zeitregel: Zwei Marken im ursprünglichen Zeitabstand t verlängern den Streifen, also ℓ = ℓ₀ + t/2. Y ist der Erzeuger −∂_t.	Hypothese. Erfüllt die Semigruppe per Konstruktion. Das t → 0-Problem aus R36 entfällt, weil ℓ₀ > 0 fest bleibt.
+A4	Regulatormitglied n = 0: der konstante Higgsblock des ursprünglichen 96D-Kreisoperators. Eich- und Geometriehintergrund sind als feste äußere Daten deklariert. Nichtkonstante Bosonmoden existieren auf dieser Stufe nicht.	Deklarierter Scope, kein Faktor gleich eins.
+
+Vollständiges Objekt:
+
+
+C_{k,p}(ℓ,r) = a + (1−a)·e^{−2ℓE},   a = (1+|p|/E)/2,   E = √(p² + s_k² r²)
+  (s_k: Singulärwerte des ursprünglichen 96D Yukawa/Majoranablocks inkl. Farbmultiplizität;
+   p: antiperiodische Kreisimpulse; Majorana als gleichmäßige Singulärwertstörung wie in R32)
+
+W_ℓ(H) = exp(−[Tr f*(D_H²/Λ²) − Tr f*(D_0²/Λ²)]) · Π_{k,p} C_{k,p}(ℓ,|H|)
+
+Z0(t)  = ∫ W_{ℓ₀+t/2}(H) d⁴H_G            ZU(t)  = ∫ H†H · W_{ℓ₀+t/2}(H) d⁴H_G
+ZY(t)  = −∂_t Z0(t)                        ZUY(t) = −∂_t ZU(t)
+
+Wie die Faktoren entstehen, keiner wird gesetzt:
+
+Referenz: Π C(ℓ,0) = 1 wegen a = 1 bei H = 0. Das ist ein Rechenergebnis.
+Eta und Orientierung: C > 0, also ist die Phase gleich 1, ebenfalls gerechnet.
+Skalar: die ursprüngliche relative Spektralwirkung, nach R055 beschränkt. Zu prüfen ist, dass Σ_p f*(p²/Λ²) im Kreis endlich ist.
+Eichquotient: kompakte Bahn bei r > 0. Das induzierte Maß ist r³dr mal das Bahnvolumen, explizit berechnet, ohne erfundene Dämpfung.
+Äußerer Quotient: nur der ganze äußere Quotient, kein inneres P.
+
+Wegen q†q = uI hängt W im Wesentlichen nur von r ab. Damit sind alle vier Z eindimensionale Radialintegrale.
+
+Billigster entscheidender Test, in dieser Reihenfolge:
+
+D1 Existenz. Das ist der R055-Test mit geänderter Prämisse. Für ℓ ∈ {ℓ₀, ℓ₀ + t/2}:
+
+log W_ℓ(r) exakt als konvergente Modensumme auf einem r-Gitter berechnen;
+eine nichtasymptotische Schranke sup_r [log W_ℓ(r) + c′r] < ∞ mit c′ > 0 nachweisen;
+die Beschränktheit von e^{−S_rel} prüfen;
+Winkelgleichmäßigkeit mit eingeschaltetem Majorana prüfen.
+
+Scheitert D1, folgt candidate_excluded mit genau dieser Ursache. Das wäre zielrelevant, weil Normierbarkeit die eigentliche Maßfrage ist.
+
+D2 Guardrail-Abgleich. Abgleich mit finding:rec20261103e-high-gap-retains-coupled-higgs-radial-tail in dessen Scope. Deckt dessen Prämissenmenge diesen Kandidaten ab und behauptet sie einen nicht abfallenden gekoppelten Radialschwanz, ist K_cap dort ausgeschlossen. Andernfalls ist zu benennen, welche Prämisse sich unterscheidet.
+
+D3 Rechnung. Z0, ZU, ZY und ZUY als Funktionen von t berechnen. Der verbundene Anteil ist ZUY·Z0 − ZU·ZY = −Z0²·∂_t⟨u⟩_t. Bei mindestens zwei Werten von ℓ₀ wird die Abhängigkeit von ℓ₀ ausgewiesen. Ist sie stark und liefert das Original kein ℓ₀, dann ist ℓ₀ die präzise benannte nächste Originalgröße. Danach gehen die Wörter (1, u) mit echten Einträgen an reflected_rp.
+
+3. Verbindlicher Arbeitsauftrag für die nächste Sol-Runde
+
+Baue und berechne genau den Kandidaten K_cap(ℓ₀). Keine weitere isolierte Cap-, CP-, Zeit- oder Projektivitätsprüfung.
+
+Verboten als Kandidatenforderung: jede Eigenschaft der Familie oder eines Grenzübergangs (ℓ→0, t→0-Identität, n→n+1-Projektivität, UV-Normalität aller Frequenzen, Vakuumerhaltung, exakte Nullenergie, Perronrichtung). Diese werden in open_obligations geführt, nicht geprüft.
+
+Pflicht:
+
+Schreibe das Randkontraktionsgesetz A1–A4 als candidate_bundle mit den sechs Slots. A1, A2 und A3 sind hypothesis mit new_assumption; R32, R055, carrier007, Metrology005 und R113 sind original mit Zeilenangaben. A4 steht als Scope in regulator_family. Jeder R113-Faktor (Skalar, Referenz, Eta, Orientierung, Rest, Domäne, äußerer Quotient) wird im Bundle als durch das Gesetz erzeugt oder als Scope ausgewiesen; kein Faktor wird ohne Rechnung gleich eins gesetzt.
+Führe einen Produzenten aus, der D1 und dann D3 rechnet. Er schreibt unnormalized_values Z0, ZU, ZY und ZUY bei ℓ₀ und dem ursprünglichen Zeitabstand t (falls R113 keinen liefert: t ∈ {0.5ℓ₀, ℓ₀, 2ℓ₀}, als solche Wahl ausgewiesen) sowie die ℓ₀-Variation und gibt RESULT_SHA256 aus.
+Führe D2 vor jeder Erfolgsmeldung aus.
+
+Ergebnis ist genau eines von zwei: candidate_computed mit Werten, oder candidate_excluded, wobei die widerlegende Bedingung D1 oder D2 ist. Ein Ausschluss über eine selbst hinzugefügte Nebenforderung zählt nicht.
+
+Trennung
+
+Bewiesen bzw. belegt:
+
+R055 in seinem Scope.
+R32: Formel und winkeluniformer Grenzwert, von zwei Sol-Rechnungen übereinstimmend berichtet. Das ist eine Modellrechnung, keine Hostabnahme. Vor D1 sollte eine Kontrolle mit exakter Arithmetik wiederholt werden.
+R33–R38 in ihren jeweiligen Scopes.
+
+Mein Vorschlag, nicht bewiesen:
+
+A1–A4 und das Randkontraktionsgesetz insgesamt;
+die Lesart des Capquotienten als absolutes Randgewicht. Physikalisch entspricht sie einem Überlappungsgewicht vom Typ Orthogonalitätskatastrophe;
+die Zeitregel als Streifenverlängerung;
+die Auswahl von D1–D3 als entscheidende Tests.
+
+Selbst wenn alle Tests bestehen, ist K_cap ein berechneter Kandidat unter benannten Hypothesen. Er ist weder die Originalquelle noch ein Beitrag zu T1–T8.
+
+
+
+
+jetzt

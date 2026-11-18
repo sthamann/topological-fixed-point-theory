@@ -1,0 +1,56 @@
+{
+ "TFPT quartic code": {
+  "kl_violation_weight1": 4.6731093179481906e-17,
+  "kl_violation_weight2": 0.8,
+  "readout_ranks_1_2_3_registers": [
+   1,
+   10,
+   25
+  ],
+  "recovery_after_one_lost_register": [
+   1.0,
+   1.0
+  ],
+  "distance": 2
+ },
+ "random rank-5 code in Sym^4 (20 samples)": {
+  "kl_violation_weight1": [
+   0.2861,
+   0.3536
+  ],
+  "kl_violation_weight2": [
+   0.2536,
+   0.314
+  ],
+  "recovery_after_one_lost_register_mean": 0.6261
+ },
+ "random rank-5 code in full space (20 samples)": {
+  "kl_violation_weight1": [
+   0.1925,
+   0.2284
+  ],
+  "kl_violation_weight2": [
+   0.2595,
+   0.3004
+  ],
+  "recovery_after_one_lost_register_mean": 0.8149
+ },
+ "noisy_memory_with_postselection": {
+  "p=0.01": {
+   "accepted": 0.957,
+   "fidelity_when_accepted": 1.0,
+   "unprotected_fidelity_4_registers": 0.9606
+  },
+  "p=0.03": {
+   "accepted": 0.8904,
+   "fidelity_when_accepted": 0.99962,
+   "unprotected_fidelity_4_registers": 0.88529
+  },
+  "p=0.1": {
+   "accepted": 0.6699,
+   "fidelity_when_accepted": 0.99804,
+   "unprotected_fidelity_4_registers": 0.6561
+  }
+ },
+ "reading": "The quartic code detects any single-register error and corrects one known lost register exactly (distance 2), as the source document states; two lost registers or one error at an unknown place are not correctable.  Random rank-5 subspaces, also inside Sym^4, do not have this property, so within this comparison the code is special.  In absolute terms it is a small detection code: 8 physical qubits for log2(5) = 2.32 logical qubits at distance 2, the same distance as the textbook [[4,2,2]] code, which stores 2 qubits in 4."
+}

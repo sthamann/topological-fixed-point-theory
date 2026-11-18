@@ -1,0 +1,1264 @@
+{
+  "schema": 1,
+  "collection": "fresh MCP graph_status and complete exact research_state calls",
+  "collected_at_utc": "2026-10-15T14:56:12Z",
+  "atlas_revision": "a31bcbb4bbd5dc062c728bdb",
+  "graph_status": {
+    "assessment_counts": {
+      "assumed": 2,
+      "conditional": 35,
+      "excluded": 45,
+      "historical": 5,
+      "methodological_rule": 2,
+      "mixed": 751,
+      "open": 42,
+      "recorded_established": 295,
+      "unknown": 17
+    },
+    "audit": {
+      "by_impact": {
+        "circularity_risk": 348,
+        "conditional": 8040,
+        "missing_derivation": 355
+      },
+      "enriched_claims": 1194,
+      "input_audit_entries": {
+        "by_origin": {
+          "declared_axiom": 2768,
+          "derived_in_script": 7892,
+          "external_data": 553,
+          "free_parameter": 37,
+          "hardcoded": 6730,
+          "other": 0,
+          "unknown": 284,
+          "upstream_result": 631
+        },
+        "total": 18895
+      },
+      "proof_gaps": 3736
+    },
+    "counts": {
+      "edges": 126249,
+      "nodes": 71907
+    },
+    "meta": {
+      "cache_freshness": {
+        "current": 105,
+        "source_current_prompt_or_packet_changed": 1089
+      },
+      "corpus_merge": {
+        "edges_added": 19895,
+        "edges_skipped_unknown_endpoint": 186,
+        "nodes_added": 8719,
+        "nodes_merged": 3285,
+        "sources_added": 180
+      },
+      "coverage": {
+        "claims_enriched": 1194,
+        "claims_error": 0,
+        "claims_pending": 0,
+        "claims_total": 1194,
+        "lean_theorems_total": 3374,
+        "scripts_total": 1035
+      },
+      "embedding_coverage": {
+        "cache_contract_valid": true,
+        "cache_hits": 11552,
+        "eligible_nodes": 11759,
+        "embedded_nodes": 11552,
+        "invalid_cached_vectors": 0,
+        "missing_nodes": 207
+      },
+      "embedding_dimensions": 256,
+      "embedding_model": "text-embedding-3-small",
+      "error_summary": {
+        "examples": [],
+        "notice": "Raw extractor errors are omitted. Entries for claims now marked enriched are counted as superseded metadata, not current failures.",
+        "recorded_total": 0,
+        "superseded_by_current_enrichment": 0,
+        "unlinked_records": 0,
+        "unresolved_current_claims": 0
+      },
+      "generated_at": "2026-10-15T14:30:42.309813+00:00",
+      "graph_integrity": {
+        "issue_count": 0,
+        "notice": "Construction checks do not establish mathematical validity. Unresolved references and self-relations are reported, never silently used as reasoning links.",
+        "unresolved_semantic_links": 0
+      },
+      "model": "gpt-5.4-mini",
+      "notice": "KI-Annotationen sind ungeprüfte Interpretationen; Ledgerstatus und Originalquellen bleiben maßgeblich. Keine Scripts wurden ausgeführt.",
+      "orientation_loaded": true,
+      "orientation_overlay": {
+        "english_fields_added": 0,
+        "path": "orientation.json"
+      },
+      "prompt_version": "1.3-reference-integrity",
+      "quality_merge": {
+        "sources_added": 0
+      },
+      "research_program": {
+        "coverage": "explicit source review only; pending records are not new scientific open questions",
+        "entry_tool": "research_state",
+        "pending_attempts": 696,
+        "plan_tool": "assess_research_plan",
+        "reviewed_findings": 36,
+        "reviewed_problems": 13,
+        "revision": "a31bcbb4bbd5dc062c728bdb",
+        "stale_findings": 0,
+        "update_tool": "record_research_update"
+      },
+      "schema_version": 1,
+      "semantic_search": {
+        "available": true,
+        "cache_available": true,
+        "cache_entries": 14220,
+        "coverage": 0.16098600969845606,
+        "coverage_scope": "Exact SHA-256 matches of stored node label + newline + summary. Cached vectors cover selected records only; coverage is partial.",
+        "existing_graph_vectors": 11552,
+        "graph_nodes": 71764,
+        "hydrated_nodes": 1,
+        "model": "text-embedding-3-small",
+        "query_embedding": "On-demand embedding for explicit search requests; falls back to lexical ranking if unavailable.",
+        "valid_cache_entries": 14220,
+        "vector_nodes": 11553
+      }
+    },
+    "service_identity": {
+      "name": "tfpt-semantic-explorer",
+      "notice": "The catalog count helps distinguish server generations; use tools/list for the exact tool names.",
+      "tool_catalog_count": 17,
+      "version": "0.1.0"
+    },
+    "source_count": 14622,
+    "source_freshness": "checked_when_read"
+  },
+  "research_states": [
+    {
+      "budget": {
+        "index_omitted": 0,
+        "max_chars": 30000,
+        "next_offset": 1,
+        "offset": 0,
+        "serialized_chars": 22388,
+        "topic_index_omitted": 0,
+        "truncated": false
+      },
+      "coverage": {
+        "corpus_complete": false,
+        "matched_problems": 1,
+        "pending_attempts": 597,
+        "pending_attempts_scope": "union of attempts directly linked to topics/goals of matched reviewed problems; not scientific open questions",
+        "reviewed_findings": 36,
+        "reviewed_problems": 13,
+        "stale_findings": 0
+      },
+      "lang": "en",
+      "notice": "Source-reviewed decisions in stated scopes. New or unreviewed attempts are a curation backlog, not new scientific open questions. Graph membership and source hashes do not prove conclusions. Empty matches mean missing reviewed coverage, not absence of results.",
+      "problem_index": [
+        {
+          "findings": 4,
+          "id": "problem:common-source-state-event-selection",
+          "ready_tasks": [
+            {
+              "id": "task:derive-physical-source-selector",
+              "title": "Find the original selector for source/state/event"
+            }
+          ],
+          "resolved_tasks": 4,
+          "title": "Selecting a common source, state, and events"
+        }
+      ],
+      "problems": [
+        {
+          "accepted_premises": [
+            {
+              "id": "premise:declared-p1-p2",
+              "statement": "This program checks which additional source, state, event, and observable structures follow from accepted TFPT principles; it does not revoke or replace P1/P2.",
+              "title": "P1/P2 remain declared starting axioms"
+            },
+            {
+              "id": "premise:quarter-phase-retained",
+              "statement": "Comparisons retain the original charged quarter phase; switching to another phase branch is not an admissible solution to the selection problem.",
+              "title": "Quarter phase is retained"
+            },
+            {
+              "id": "premise:typed-source-structures",
+              "statement": "Observable algebra, OS reflection, state, collar operator, time evolution, carrier connection, family holonomy, and readout are distinct data until an original map relates them.",
+              "title": "Do not identify source types"
+            }
+          ],
+          "connections": [
+            {
+              "direction": "incoming",
+              "explanation": "Future classes and the GNS representation are determined given complete r or a supplied positive K. This does not select the original answer alphabet or K; their common source selection remains open in the target problem.",
+              "finding_ids": [
+                "finding:future-equivalence-minimizes-declared-answer-process",
+                "finding:positive-word-kernel-reconstructs-cyclic-gns"
+              ],
+              "id": "connection:future-kernel-to-common-source",
+              "kind": "shares_unresolved_input",
+              "other_problem_id": "problem:future-quotient-and-gns-reconstruction",
+              "other_title": "Future quotient and positive GNS reconstruction",
+              "premise_ids": [
+                "premise:future-answer-functional",
+                "premise:positive-word-kernel-null-stability"
+              ],
+              "proof_inference": false,
+              "source_problem_id": "problem:future-quotient-and-gns-reconstruction",
+              "source_state": "current",
+              "target_problem_id": "problem:common-source-state-event-selection",
+              "target_title": "Future quotient and positive GNS reconstruction"
+            },
+            {
+              "direction": "incoming",
+              "explanation": "The 2+2 exclusion holds only with the added premise of parallelity to the marked irreducible family connection. Whether the common original source induces this connection and marking belongs to the target problem’s open source selection.",
+              "finding_ids": [
+                "finding:parallelity-excludes-2plus2-only-conditionally",
+                "finding:joint-discrete-data-vs-connection"
+              ],
+              "id": "connection:marked-family-transport-to-common-source",
+              "kind": "shares_unresolved_input",
+              "other_problem_id": "problem:seam-family-connection-compatibility",
+              "other_title": "Seam connection and family action",
+              "premise_ids": [
+                "premise:declared-p1-p2",
+                "premise:typed-source-structures",
+                "premise:parallel-irreducible-family-connection"
+              ],
+              "proof_inference": false,
+              "source_problem_id": "problem:seam-family-connection-compatibility",
+              "source_state": "current",
+              "target_problem_id": "problem:common-source-state-event-selection",
+              "target_title": "Seam connection and family action"
+            },
+            {
+              "direction": "incoming",
+              "explanation": "The sign projector loses |H|; unique dynamics returns only with faithful KMS covariance or the same complete transfer T. This ties the time question to the open joint selection of tau_t, state, and operator in the target problem.",
+              "finding_ids": [
+                "finding:sign-projector-does-not-determine-time-magnitude",
+                "finding:full-faithful-kms-or-transfer-recovers-magnitudes"
+              ],
+              "id": "connection:full-time-transfer-to-common-source",
+              "kind": "shares_unresolved_input",
+              "other_problem_id": "problem:physical-time-projector-transfer",
+              "other_title": "Physical time and complete transfer",
+              "premise_ids": [
+                "premise:sign-covariance-only",
+                "premise:known-faithful-kms-or-full-transfer"
+              ],
+              "proof_inference": false,
+              "source_problem_id": "problem:physical-time-projector-transfer",
+              "source_state": "current",
+              "target_problem_id": "problem:common-source-state-event-selection",
+              "target_title": "Physical time and complete transfer"
+            },
+            {
+              "direction": "incoming",
+              "explanation": "The ratio 55/117 is closed on the documented discrete stratum; U_f* remains open as the absolute scale. Its physical selection needs an original rule for connection and readout and belongs to the target problem’s open source selection.",
+              "finding_ids": [
+                "finding:flavor-ratio-closed-absolute-anchor-open"
+              ],
+              "id": "connection:absolute-flavor-readout-to-common-source",
+              "kind": "shares_unresolved_input",
+              "other_problem_id": "problem:flavor-ratio-amplitude-readout",
+              "other_title": "Flavor ratio and absolute amplitude scale",
+              "premise_ids": [
+                "premise:declared-p1-p2",
+                "premise:typed-source-structures"
+              ],
+              "proof_inference": false,
+              "source_problem_id": "problem:flavor-ratio-amplitude-readout",
+              "source_state": "current",
+              "target_problem_id": "problem:common-source-state-event-selection",
+              "target_title": "Flavor ratio and absolute amplitude scale"
+            },
+            {
+              "direction": "incoming",
+              "explanation": "The matter-only ambiguity belongs to a larger observation class and does not automatically change the fixed original Gamma_grav. The missing common off-shell geometry family and normalization must come from the original source; this is the same open source selection in the target problem.",
+              "finding_ids": [
+                "finding:matter-observations-do-not-fix-geometric-response"
+              ],
+              "id": "connection:gravity-response-to-common-source",
+              "kind": "shares_unresolved_input",
+              "other_problem_id": "problem:gravity-flow-normalization",
+              "other_title": "Geometric flow and gravity normalization",
+              "premise_ids": [
+                "premise:declared-p1-p2",
+                "premise:typed-source-structures",
+                "premise:fixed-input-models-scoped"
+              ],
+              "proof_inference": false,
+              "source_problem_id": "problem:gravity-flow-normalization",
+              "source_state": "current",
+              "target_problem_id": "problem:common-source-state-event-selection",
+              "target_title": "Geometric flow and gravity normalization"
+            },
+            {
+              "direction": "incoming",
+              "explanation": "The complete response restricts neutral matrix equivalences; it selects neither source nor physical instruments.",
+              "finding_ids": [
+                "finding:four-clock-fields-complete-quadratic-response"
+              ],
+              "id": "connection:quadratic-response-constrains-common-source",
+              "kind": "constrains_under",
+              "other_problem_id": "problem:clock-linked-neutral-response-reconstruction",
+              "other_title": "Clocks and complete neutral source response",
+              "premise_ids": [
+                "premise:native-current-clock-ope-access"
+              ],
+              "proof_inference": false,
+              "source_problem_id": "problem:clock-linked-neutral-response-reconstruction",
+              "source_state": "current",
+              "target_problem_id": "problem:common-source-state-event-selection",
+              "target_title": "Clocks and complete neutral source response"
+            },
+            {
+              "direction": "incoming",
+              "explanation": "A common source must specify which data physically change and which are merely redescribed together.",
+              "finding_ids": [
+                "finding:actual-j-covariant-source-transport",
+                "finding:fixed-source-affine-j-obstruction"
+              ],
+              "id": "connection:j-transport-constrains-common-source",
+              "kind": "constrains_under",
+              "other_problem_id": "problem:clock-source-covariant-transport",
+              "other_title": "Clock action on charge, time and quarter transition",
+              "premise_ids": [
+                "premise:stipulated-e8-clock-tuple"
+              ],
+              "proof_inference": false,
+              "source_problem_id": "problem:clock-source-covariant-transport",
+              "source_state": "current",
+              "target_problem_id": "problem:common-source-state-event-selection",
+              "target_title": "Clock action on charge, time and quarter transition"
+            },
+            {
+              "direction": "incoming",
+              "explanation": "An available original charged-probe contract would make different twist candidates distinguishable.",
+              "finding_ids": [
+                "finding:eight-charged-responses-reconstruct-twist"
+              ],
+              "id": "connection:charged-discriminator-constrains-common-source",
+              "kind": "constrains_under",
+              "other_problem_id": "problem:charged-twist-response-identifiability",
+              "other_title": "Which responses distinguish charged time action?",
+              "premise_ids": [
+                "premise:normalized-charged-primary-time-access"
+              ],
+              "proof_inference": false,
+              "source_problem_id": "problem:charged-twist-response-identifiability",
+              "source_state": "current",
+              "target_problem_id": "problem:common-source-state-event-selection",
+              "target_title": "Which responses distinguish charged time action?"
+            },
+            {
+              "direction": "incoming",
+              "explanation": "The common seam/state map must account for this response symmetry.",
+              "finding_ids": [
+                "finding:native-opposite-charge-response-symmetry"
+              ],
+              "id": "connection:native-selection-to-common-source",
+              "kind": "constrains_under",
+              "other_problem_id": "problem:native-charged-seam-selection",
+              "other_title": "Which seam action distinguishes native opposite charges?",
+              "premise_ids": [
+                "premise:native-full-charge-field-source",
+                "premise:native-c-invariant-start"
+              ],
+              "proof_inference": false,
+              "source_problem_id": "problem:native-charged-seam-selection",
+              "source_state": "current",
+              "target_problem_id": "problem:common-source-state-event-selection",
+              "target_title": "Which seam action distinguishes native opposite charges?"
+            },
+            {
+              "direction": "incoming",
+              "explanation": "Reuse algebra, winding and positive extension. The common source candidate must first supply actual Cartan, ground-space and time compatibility; an identical shift functional is insufficient.",
+              "finding_ids": [
+                "finding:constructive-phase-class-and-full-winding",
+                "finding:constructive-positive-state-extension",
+                "finding:constructive-current-group-selects-positive-p-lift",
+                "finding:constructive-state-algebra-resolution-and-source-test",
+                "finding:constructive-all-phases-fail-unchanged-source"
+              ],
+              "id": "connection:constructive-seam-to-common-source",
+              "kind": "constrains_under",
+              "other_problem_id": "problem:constructive-seam-lift-state",
+              "other_title": "Constructive seam search: operators, state and source compatibility",
+              "premise_ids": [
+                "premise:fixed-car-crossed-half-charge-search",
+                "premise:fixed-positive-crossed-state",
+                "premise:unchanged-quarter-car-qwz-source-comparison",
+                "premise:stipulated-even-e8-seam-lift"
+              ],
+              "proof_inference": false,
+              "source_problem_id": "problem:constructive-seam-lift-state",
+              "source_state": "current",
+              "target_problem_id": "problem:common-source-state-event-selection",
+              "target_title": "Constructive seam search: operators, state and source compatibility"
+            },
+            {
+              "direction": "incoming",
+              "explanation": "The two conjugations are typed; the actual quarter source determines transport of the supplied marking. No fixed time-stabilizing repair exists. Original selection of the first marked field source remains with the common selector; no new spinor16 replacement source.",
+              "finding_ids": [
+                "finding:partner-carrier-charges-and-state-types",
+                "finding:partner-fixed-quarter-time-splits-sm-multiplet",
+                "finding:partner-original-carrier-cross-sheet-conjugation",
+                "finding:partner-chiral-quarter-conjugation-state-time",
+                "finding:joint-bilinear-hermitian-correction",
+                "finding:joint-quarter-transports-marking",
+                "finding:joint-fixed-time-marking-repair-excluded",
+                "finding:joint-spinor-not-source-coefficient"
+              ],
+              "id": "connection:partner-types-to-common-source",
+              "kind": "constrains_under",
+              "other_problem_id": "problem:seam-partner-charge-state-time",
+              "other_title": "Which partner actually belongs to the original seam?",
+              "premise_ids": [
+                "premise:oriented-p2-exterior-carrier",
+                "premise:fixed-e8-fold-quarter-dictionary",
+                "premise:actual-chiral-opposite-quarter-domains",
+                "premise:given-first-marked-quarter-character",
+                "premise:given-d5-a3-free-fermion-realization"
+              ],
+              "proof_inference": false,
+              "source_problem_id": "problem:seam-partner-charge-state-time",
+              "source_state": "current",
+              "target_problem_id": "problem:common-source-state-event-selection",
+              "target_title": "Which partner actually belongs to the original seam?"
+            }
+          ],
+          "findings": [
+            {
+              "attempt_ids": [
+                "contract:source-graded-gns-matter-gate-20260922"
+              ],
+              "id": "finding:operational-seed-is-input",
+              "premise_ids": [
+                "premise:declared-p1-p2",
+                "premise:typed-source-structures"
+              ],
+              "scope": "Applies to the cited operational seed category and its collar completion; it does not claim that no other original selector exists.",
+              "source_state": "current",
+              "sources": [
+                {
+                  "line_end": 520,
+                  "line_start": 480,
+                  "path": "_archive/tfpt-45/source_extracts/01_boundary_kernel_source.tex",
+                  "sha256": "53a8c2854c26c086a73198842d7985981444028c22ba6bef160f176869d5e6f1",
+                  "source_id": "research-source:b2473526446e86b037d2f5d0"
+                }
+              ],
+              "statement": "The original definition already assumes (A_loc, tau_t, Theta, omega, [u_Sigma], D_coll); its collar-completion theorem derives B_Sigma and spectral data from them, but does not select those inputs.",
+              "status": "established_scoped",
+              "title": "The operational seed category takes the central data as an input object"
+            },
+            {
+              "attempt_ids": [
+                "contract:native-source-reconstruction-20261014"
+              ],
+              "id": "finding:native-source-common-time-thermal-family",
+              "premise_ids": [
+                "premise:declared-native-round20-source"
+              ],
+              "scope": "Finite spatial volume and original neutral scalar/charge source; no spatial continuum or P1/P2 selection claim.",
+              "source_state": "current",
+              "sources": [
+                {
+                  "line_end": 102,
+                  "line_start": 7,
+                  "path": "experiments/theory-contracts/native-source-reconstruction-20261014/PROOF.md",
+                  "sha256": "d16b6af2c90491ac94eeb4ab04a8c96b072d37bb6bc5015b3db85c023f8a96e2",
+                  "source_id": "research-source:f229447932498ddeff1f3dda"
+                }
+              ],
+              "statement": "The original H is positive self-adjoint and has a faithful Gibbs state for every prescribed beta. The actual transfer reconstructs Hδ=−log Qδ/δ; removing the temporal regulator makes its unitary dynamics converge to the same H. Spatial lattice, couplings and beta remain declared inputs.",
+              "status": "established_scoped",
+              "title": "The same source supplies Hamiltonian, time and thermal state"
+            },
+            {
+              "attempt_ids": [
+                "contract:native-mark-memory-20261014"
+              ],
+              "id": "finding:native-grade-carry-and-memory",
+              "premise_ids": [
+                "premise:declared-native-round20-source"
+              ],
+              "scope": "Given source, grade and J>0; the two-time kernel is neither a physical measuring instrument nor a universal three-dimensional memory realization.",
+              "source_state": "current",
+              "sources": [
+                {
+                  "line_end": 151,
+                  "line_start": 31,
+                  "path": "experiments/theory-contracts/native-mark-memory-20261014/PROOF.md",
+                  "sha256": "10492f2d34e93ffb8db2593b120ef120401e26bd5acc34db0cd9c7e8f15ec364",
+                  "source_id": "research-source:e0ee6607c2146261c68ef1be"
+                }
+              ],
+              "statement": "Original grade and transport generate M4(C(S1)) with integer carry. Full H couples grade and carry. The GNS projection has K(t)=B*exp(itLQ)B with rank K(0)=3; its minimal temporal realization may be infinite-dimensional. No external memory is appended.",
+              "status": "established_scoped",
+              "title": "Marking and necessary memory are connected within the given source"
+            },
+            {
+              "attempt_ids": [
+                "contract:seam-joint-ward-state-20261014"
+              ],
+              "id": "finding:even-seam-global-operator-factorization",
+              "premise_ids": [
+                "premise:stipulated-even-e8-seam-lift"
+              ],
+              "scope": "Global charge transports in the stipulated even completion; not local vertex insertions, an ordinary-local odd CAR/E8 inclusion or event dynamics.",
+              "source_state": "current",
+              "sources": [
+                {
+                  "line_end": 1087,
+                  "line_start": 1003,
+                  "path": "experiments/theory-contracts/seam-joint-ward-state-20261014/PROOF.txt",
+                  "sha256": "7c0cd92dfc5eca88260baae0af9edad66f958a27ce0d15d7965414b3971f8da0",
+                  "source_id": "research-source:1a8db88614570db5aa2d1c62"
+                }
+              ],
+              "statement": "On the even D8 Fock sector W4=Us Rc holds with the actual ordered CAR/E8 cocycle, Klein signs, all oscillators and current central term; Rc preserves Q,K and the quarter transition. The E8 extension and lift convention are explicitly given.",
+              "status": "established_scoped",
+              "title": "A common global seam-operator factorization exists"
+            }
+          ],
+          "goals": [
+            "goal:T1",
+            "goal:T2",
+            "goal:T8"
+          ],
+          "id": "problem:common-source-state-event-selection",
+          "pending_attempts": {
+            "items": [
+              {
+                "id": "scorecard:quantum:qgeo-s-off-on-a-real-measured-boundary-operator-eit-analog-c",
+                "title": "quantum: QGEO S_off on a real measured boundary operator (EIT analog "
+              },
+              {
+                "id": "scorecard:CMB:crossover-relic-top-hat-discs-ccc-disc-search-01",
+                "title": "CMB: crossover-relic top-hat discs (CCC.DISC.SEARCH.01)"
+              },
+              {
+                "id": "scorecard:CMB:cosmic-birefringence-rotation-fingerprint-beta-morphology-nu",
+                "title": "CMB: cosmic birefringence rotation fingerprint (beta morphology +"
+              }
+            ],
+            "total": 597
+          },
+          "premises": [
+            {
+              "id": "premise:declared-p1-p2",
+              "statement": "This program checks which additional source, state, event, and observable structures follow from accepted TFPT principles; it does not revoke or replace P1/P2.",
+              "title": "P1/P2 remain declared starting axioms"
+            },
+            {
+              "id": "premise:quarter-phase-retained",
+              "statement": "Comparisons retain the original charged quarter phase; switching to another phase branch is not an admissible solution to the selection problem.",
+              "title": "Quarter phase is retained"
+            },
+            {
+              "id": "premise:typed-source-structures",
+              "statement": "Observable algebra, OS reflection, state, collar operator, time evolution, carrier connection, family holonomy, and readout are distinct data until an original map relates them.",
+              "title": "Do not identify source types"
+            },
+            {
+              "id": "premise:declared-native-round20-source",
+              "statement": "Fixed finite periodic spatial lattice source of rounds20–26 with original G, cocycle, neutral Z8 charges, scalar field and H=Hdiag+Hhop; a,m,beta>0 and original couplings are supplied. Nontrivial memory requires J>0. The original grade k is additionally retained, without presuming its selection from P1/P2.",
+              "title": "Declared native charge/scalar source"
+            },
+            {
+              "id": "premise:stipulated-even-e8-seam-lift",
+              "statement": "Assume the E8 extension of the even D8 CAR sector constructed in seam-joint-ward-state, with original ordered cocycle, retained quarter transition and explicit P-lift convention. An ordinary-local inclusion of odd CAR fields is not assumed.",
+              "title": "Stipulated even E8 completion with actual Klein signs"
+            }
+          ],
+          "question": "Do the original principles derive a common physical source together with its state, dynamical events, and physically observed fields?",
+          "strategies": [
+            {
+              "changes_required": "Provide an explicit original-source rule mapping degree to source selection before assessing the strategy as a selector.",
+              "explanation": "The cited original seed definition assumes A_loc, tau_t, Theta, omega, [u_Sigma], and D_coll as data and shows only their collar completion. This cited evidence supplies no rule selecting the common physical source from a polynomial degree.",
+              "finding_ids": [
+                "finding:operational-seed-is-input"
+              ],
+              "id": "strategy:polynomial-degree-selects-source",
+              "outcome": "insufficient_for_goal",
+              "premise_ids": [
+                "premise:declared-p1-p2",
+                "premise:typed-source-structures"
+              ],
+              "title": "Polynomial degree as a physical source selector"
+            }
+          ],
+          "tasks": [
+            {
+              "depends_on": [],
+              "effective_status": "resolved",
+              "id": "task:read-operational-inputs",
+              "kind": "assessment",
+              "next_action": "Treat as established; do not count a later GNS construction as a source selector.",
+              "required_premise_ids": [
+                "premise:declared-p1-p2",
+                "premise:typed-source-structures"
+              ],
+              "resolution_ids": [
+                "finding:operational-seed-is-input"
+              ],
+              "status": "resolved",
+              "success_criterion": "The defined seed data and the outputs induced from them are documented separately.",
+              "title": "Record the input status of the operational seed"
+            },
+            {
+              "depends_on": [
+                "task:read-operational-inputs"
+              ],
+              "effective_status": "ready",
+              "id": "task:derive-physical-source-selector",
+              "kind": "construction",
+              "next_action": "The joint map of the supplied quarter source is explicitly constructed in problem:seam-partner-charge-state-time: O=-MRM^T transports time, state and the first marking into the second. First determine the charged Z4 character and full transfer on the same original P1 field coefficients and reconstruct the first marking from them. No second vacuum, no fixed marking under a source action that moves it, no spinor16 as an elementary c=8 CAR coefficient. Full original source/event selection remains the goal; reconstruction from an inserted kernel is not selection.",
+              "required_premise_ids": [
+                "premise:declared-p1-p2",
+                "premise:typed-source-structures"
+              ],
+              "resolution_ids": [],
+              "status": "open",
+              "success_criterion": "A rule derived from P1/P2 and original definitions jointly determines A_loc, omega, tau_t, events, and their field readout.",
+              "title": "Find the original selector for source/state/event"
+            },
+            {
+              "depends_on": [],
+              "effective_status": "resolved",
+              "id": "task:reuse-native-source-common-time-thermal-family",
+              "kind": "construction",
+              "next_action": "Reuse the existing proof within its scope.",
+              "required_premise_ids": [
+                "premise:declared-native-round20-source"
+              ],
+              "resolution_ids": [
+                "finding:native-source-common-time-thermal-family"
+              ],
+              "status": "resolved",
+              "success_criterion": "Finite spatial volume and original neutral scalar/charge source; no spatial continuum or P1/P2 selection claim.",
+              "title": "The same source supplies Hamiltonian, time and thermal state"
+            },
+            {
+              "depends_on": [],
+              "effective_status": "resolved",
+              "id": "task:reuse-native-grade-carry-and-memory",
+              "kind": "construction",
+              "next_action": "Reuse the existing proof within its scope.",
+              "required_premise_ids": [
+                "premise:declared-native-round20-source"
+              ],
+              "resolution_ids": [
+                "finding:native-grade-carry-and-memory"
+              ],
+              "status": "resolved",
+              "success_criterion": "Given source, grade and J>0; the two-time kernel is neither a physical measuring instrument nor a universal three-dimensional memory realization.",
+              "title": "Marking and necessary memory are connected within the given source"
+            },
+            {
+              "depends_on": [],
+              "effective_status": "resolved",
+              "id": "task:reuse-even-seam-global-operator-factorization",
+              "kind": "construction",
+              "next_action": "Reuse the existing proof within its scope.",
+              "required_premise_ids": [
+                "premise:stipulated-even-e8-seam-lift"
+              ],
+              "resolution_ids": [
+                "finding:even-seam-global-operator-factorization"
+              ],
+              "status": "resolved",
+              "success_criterion": "Global charge transports in the stipulated even completion; not local vertex insertions, an ordinary-local odd CAR/E8 inclusion or event dynamics.",
+              "title": "A common global seam-operator factorization exists"
+            }
+          ],
+          "title": "Selecting a common source, state, and events",
+          "topics": [
+            "topic:origin",
+            "topic:quantum",
+            "topic:clocks"
+          ]
+        }
+      ],
+      "query": "problem:common-source-state-event-selection",
+      "revision": "a31bcbb4bbd5dc062c728bdb"
+    },
+    {
+      "budget": {
+        "index_omitted": 0,
+        "max_chars": 30000,
+        "next_offset": 1,
+        "offset": 0,
+        "serialized_chars": 21048,
+        "topic_index_omitted": 0,
+        "truncated": false
+      },
+      "coverage": {
+        "corpus_complete": false,
+        "matched_problems": 1,
+        "pending_attempts": 621,
+        "pending_attempts_scope": "union of attempts directly linked to topics/goals of matched reviewed problems; not scientific open questions",
+        "reviewed_findings": 36,
+        "reviewed_problems": 13,
+        "stale_findings": 0
+      },
+      "lang": "en",
+      "notice": "Source-reviewed decisions in stated scopes. New or unreviewed attempts are a curation backlog, not new scientific open questions. Graph membership and source hashes do not prove conclusions. Empty matches mean missing reviewed coverage, not absence of results.",
+      "problem_index": [
+        {
+          "findings": 8,
+          "id": "problem:seam-partner-charge-state-time",
+          "ready_tasks": [],
+          "resolved_tasks": 8,
+          "title": "Which partner actually belongs to the original seam?"
+        }
+      ],
+      "problems": [
+        {
+          "accepted_premises": [
+            {
+              "id": "premise:declared-p1-p2",
+              "statement": "This program checks which additional source, state, event, and observable structures follow from accepted TFPT principles; it does not revoke or replace P1/P2.",
+              "title": "P1/P2 remain declared starting axioms"
+            },
+            {
+              "id": "premise:quarter-phase-retained",
+              "statement": "Comparisons retain the original charged quarter phase; switching to another phase branch is not an admissible solution to the selection problem.",
+              "title": "Quarter phase is retained"
+            },
+            {
+              "id": "premise:typed-source-structures",
+              "statement": "Observable algebra, OS reflection, state, collar operator, time evolution, carrier connection, family holonomy, and readout are distinct data until an original map relates them.",
+              "title": "Do not identify source types"
+            }
+          ],
+          "connections": [
+            {
+              "direction": "outgoing",
+              "explanation": "The two conjugations are typed; the actual quarter source determines transport of the supplied marking. No fixed time-stabilizing repair exists. Original selection of the first marked field source remains with the common selector; no new spinor16 replacement source.",
+              "finding_ids": [
+                "finding:partner-carrier-charges-and-state-types",
+                "finding:partner-fixed-quarter-time-splits-sm-multiplet",
+                "finding:partner-original-carrier-cross-sheet-conjugation",
+                "finding:partner-chiral-quarter-conjugation-state-time",
+                "finding:joint-bilinear-hermitian-correction",
+                "finding:joint-quarter-transports-marking",
+                "finding:joint-fixed-time-marking-repair-excluded",
+                "finding:joint-spinor-not-source-coefficient"
+              ],
+              "id": "connection:partner-types-to-common-source",
+              "kind": "constrains_under",
+              "other_problem_id": "problem:common-source-state-event-selection",
+              "other_title": "Selecting a common source, state, and events",
+              "premise_ids": [
+                "premise:oriented-p2-exterior-carrier",
+                "premise:fixed-e8-fold-quarter-dictionary",
+                "premise:actual-chiral-opposite-quarter-domains",
+                "premise:given-first-marked-quarter-character",
+                "premise:given-d5-a3-free-fermion-realization"
+              ],
+              "proof_inference": false,
+              "source_problem_id": "problem:seam-partner-charge-state-time",
+              "source_state": "current",
+              "target_problem_id": "problem:common-source-state-event-selection",
+              "target_title": "Selecting a common source, state, and events"
+            }
+          ],
+          "findings": [
+            {
+              "attempt_ids": [
+                "contract:seam-partner-original-action-20261015"
+              ],
+              "id": "finding:partner-carrier-charges-and-state-types",
+              "premise_ids": [
+                "premise:oriented-p2-exterior-carrier",
+                "premise:fixed-e8-fold-quarter-dictionary"
+              ],
+              "scope": "Original carrier plus supplied E8 charge dictionary; no physical field identification.",
+              "source_state": "current",
+              "sources": [
+                {
+                  "line_end": 63,
+                  "line_start": 13,
+                  "path": "experiments/theory-contracts/seam-partner-original-action-20261015/PROOF.txt",
+                  "sha256": "ff7c8dff8939e8380509bff5a34145f935407344a07bda1d65b7b25489a2677c",
+                  "source_id": "research-source:96a7f7e834d6b08af22ce600"
+                }
+              ],
+              "statement": "epsilon1 epsilon4 produces u1∧u4 in the carrier: Y=1/6 and source charge change0. Root operator, spinor carrier vector and affine root-current state have different types. The exterior unit is the internal nu^c label, not the affine vacuum.",
+              "status": "established_scoped",
+              "title": "Concrete pair operator; source neutrality is not hypercharge neutrality"
+            },
+            {
+              "attempt_ids": [
+                "contract:seam-partner-original-action-20261015"
+              ],
+              "id": "finding:partner-fixed-quarter-time-splits-sm-multiplet",
+              "premise_ids": [
+                "premise:oriented-p2-exterior-carrier",
+                "premise:fixed-e8-fold-quarter-dictionary"
+              ],
+              "scope": "Only the supplied affine dictionary. Backgrounds or time-dependent covariant symmetries have different premises; no general gauge-physics no-go.",
+              "source_state": "current",
+              "sources": [
+                {
+                  "line_end": 114,
+                  "line_start": 65,
+                  "path": "experiments/theory-contracts/seam-partner-original-action-20261015/PROOF.txt",
+                  "sha256": "ff7c8dff8939e8380509bff5a34145f935407344a07bda1d65b7b25489a2677c",
+                  "source_id": "research-source:02b662eabf932257ad20f26f"
+                }
+              ],
+              "statement": "Mdelta=(-1/2,0,alpha/4,-1/2,0,(alpha-1)/4,-1/4,-1/4). The six (3,2) root energies are (0,1/2,1/2,1,1/2+alpha/4,1+alpha/4). K therefore does not commute with the fixed full SM action. The quarter phase is retained.",
+              "status": "established_scoped",
+              "title": "Fixed quarter time splits the color/weak multiplet"
+            },
+            {
+              "attempt_ids": [
+                "contract:seam-partner-original-action-20261015",
+                "contract:seam-joint-conjugation-20261015"
+              ],
+              "id": "finding:partner-original-carrier-cross-sheet-conjugation",
+              "premise_ids": [
+                "premise:oriented-p2-exterior-carrier"
+              ],
+              "scope": "Representation with metric/orientation; J_C is not yet the actual boundary/OS conjugation. Two carrier labels are not two vacua.",
+              "source_state": "current",
+              "sources": [
+                {
+                  "line_end": 152,
+                  "line_start": 116,
+                  "path": "experiments/theory-contracts/seam-partner-original-action-20261015/PROOF.txt",
+                  "sha256": "ff7c8dff8939e8380509bff5a34145f935407344a07bda1d65b7b25489a2677c",
+                  "source_id": "research-source:c8740952e71547e23d446acf"
+                },
+                {
+                  "line_end": 78,
+                  "line_start": 39,
+                  "path": "experiments/theory-contracts/seam-joint-conjugation-20261015/PROOF.txt",
+                  "sha256": "bbea15f5ebb1dff698f1ecdfd8a18e724089c8fe9880dea684a5f9fd45cb1c8a",
+                  "source_id": "research-source:48db3028a5eb826da0bb985b"
+                }
+              ],
+              "statement": "J_C=∏(epsilon_i+iota_i)K is antiunitary, exchanges S± and reverses Y. Exactly Lambda0 and Lambda5 have Y=0. J_C dGamma(h) J_C^-1=tr(h)I−dGamma(h). It is fully Spin(10)-equivariant. Reuse CAR.PAIR.01's bilinear pairing; CAR.PAIR.02's Hermitian selection inference has been corrected and is not evidence.",
+              "status": "established_scoped",
+              "title": "Explicit conjugation for the existing sheet pairing"
+            },
+            {
+              "attempt_ids": [
+                "contract:seam-partner-original-action-20261015"
+              ],
+              "id": "finding:partner-chiral-quarter-conjugation-state-time",
+              "premise_ids": [
+                "premise:actual-chiral-opposite-quarter-domains"
+              ],
+              "scope": "Given chiral source. No selection from P1/P2, no equal responses within one fixed twist, and no identification with affine r0.",
+              "source_state": "current",
+              "sources": [
+                {
+                  "line_end": 203,
+                  "line_start": 154,
+                  "path": "experiments/theory-contracts/seam-partner-original-action-20261015/PROOF.txt",
+                  "sha256": "ff7c8dff8939e8380509bff5a34145f935407344a07bda1d65b7b25489a2677c",
+                  "source_id": "research-source:04ae73dea3e04eaa4ed71fd0"
+                }
+              ],
+              "statement": "n→−n−1, alpha→1−alpha gives C D_alpha C^-1=−D_(1−alpha). Particles become holes and conversely; normal charge reverses and positive excitation energy is preserved. The unique sea state maps to the other sea state without adding a zero vector within one domain.",
+              "status": "established_scoped",
+              "title": "Actual partner map between quarter domains"
+            },
+            {
+              "attempt_ids": [
+                "contract:seam-joint-conjugation-20261015"
+              ],
+              "id": "finding:joint-bilinear-hermitian-correction",
+              "premise_ids": [
+                "premise:oriented-p2-exterior-carrier"
+              ],
+              "scope": "Correction of the finite selection inference; no identification of I with the actual Calderon operator and no P1 countermodel.",
+              "source_state": "current",
+              "sources": [
+                {
+                  "line_end": 78,
+                  "line_start": 39,
+                  "path": "experiments/theory-contracts/seam-joint-conjugation-20261015/PROOF.txt",
+                  "sha256": "bbea15f5ebb1dff698f1ecdfd8a18e724089c8fe9880dea684a5f9fd45cb1c8a",
+                  "source_id": "research-source:48db3028a5eb826da0bb985b"
+                }
+              ],
+              "statement": "CAR.PAIR.01 counts complex-bilinear singlets. The Hermitian scalar <f,g> already exists on S+; CAR.PAIR.02's 'scalar iff sheet-odd' inference is false in this reading. The previous J_C includes reversion signs and is fully Spin(10)-equivariant.",
+              "status": "established_scoped",
+              "title": "Bilinear sheet pairing is not Hermitian kernel selection"
+            },
+            {
+              "attempt_ids": [
+                "contract:seam-joint-conjugation-20261015"
+              ],
+              "id": "finding:joint-quarter-transports-marking",
+              "premise_ids": [
+                "premise:actual-chiral-opposite-quarter-domains",
+                "premise:fixed-e8-fold-quarter-dictionary",
+                "premise:given-first-marked-quarter-character"
+              ],
+              "scope": "Exact map of the supplied source and conditional E8 lift; first marking, source realization and physical event law are not derived from P1/P2. Both quarter domains remain explicit; no switch to another branch to solve a fixed-sector question.",
+              "source_state": "current",
+              "sources": [
+                {
+                  "line_end": 187,
+                  "line_start": 80,
+                  "path": "experiments/theory-contracts/seam-joint-conjugation-20261015/PROOF.txt",
+                  "sha256": "bbea15f5ebb1dff698f1ecdfd8a18e724089c8fe9880dea684a5f9fd45cb1c8a",
+                  "source_id": "research-source:1e85b4e0a16e59c397c00f0b"
+                }
+              ],
+              "statement": "n→−n−1 forces j→7−j and O=−MRM^T with O(x)=(x4,−x5,−x6,x1,−x2,−x3,x8,x7). O d_alpha=d_(1−alpha); P5_beta=O P5_alpha O^-1 and k_beta=k_alpha∘O^-1 need no new marking choice. Sea state and positive time are transported; the E8 current lift assumes the existing extension.",
+              "status": "established_scoped",
+              "title": "Actual quarter conjugation transports the supplied marking"
+            },
+            {
+              "attempt_ids": [
+                "contract:seam-joint-conjugation-20261015"
+              ],
+              "id": "finding:joint-fixed-time-marking-repair-excluded",
+              "premise_ids": [
+                "premise:actual-chiral-opposite-quarter-domains",
+                "premise:fixed-e8-fold-quarter-dictionary",
+                "premise:given-first-marked-quarter-character"
+              ],
+              "scope": "Only fixed fold time and fixed 5+3 marking. Covariant marking transport is positively constructed; other sources or dynamical dictionaries are not excluded.",
+              "source_state": "current",
+              "sources": [
+                {
+                  "line_end": 187,
+                  "line_start": 153,
+                  "path": "experiments/theory-contracts/seam-joint-conjugation-20261015/PROOF.txt",
+                  "sha256": "bbea15f5ebb1dff698f1ecdfd8a18e724089c8fe9880dea684a5f9fd45cb1c8a",
+                  "source_id": "research-source:49403a86fdc26c526449d2cd"
+                }
+              ],
+              "statement": "After actual quarter conjugation the D5 projections of the time axis have distinct squared norms 129/256 and 137/256. Hence no orthogonal T satisfies T d_beta=d_beta and T O(P5)T^-1=P5. This excludes every Weyl correction in this fixed comparison.",
+              "status": "excluded_scoped",
+              "title": "No time-stabilizing orthogonal repair of the fixed marking"
+            },
+            {
+              "attempt_ids": [
+                "contract:seam-joint-conjugation-20261015"
+              ],
+              "id": "finding:joint-spinor-not-source-coefficient",
+              "premise_ids": [
+                "premise:oriented-p2-exterior-carrier",
+                "premise:given-d5-a3-free-fermion-realization"
+              ],
+              "scope": "Representation types of the supplied free realization; no selection from P1/P2 and no new spinor-CAR replacement.",
+              "source_state": "current",
+              "sources": [
+                {
+                  "line_end": 216,
+                  "line_start": 189,
+                  "path": "experiments/theory-contracts/seam-joint-conjugation-20261015/PROOF.txt",
+                  "sha256": "bbea15f5ebb1dff698f1ecdfd8a18e724089c8fe9880dea684a5f9fd45cb1c8a",
+                  "source_id": "research-source:55e1a01319dc1feaa105883e"
+                }
+              ],
+              "statement": "D5_1 has ten real vector fermions; S± each contain 16 complex Ramond/spin-field states. Using S+ as an ordinary CAR coefficient would give c=16 and Spin(10) level 4. The documented c=8 connection uses 10+6 real fermions and mixed spin fields of weight 5/8+3/8=1.",
+              "status": "established_scoped",
+              "title": "Spinor16 is a state sector, not a 16-real one-particle field"
+            }
+          ],
+          "goals": [
+            "goal:T1",
+            "goal:T2",
+            "goal:T8"
+          ],
+          "id": "problem:seam-partner-charge-state-time",
+          "pending_attempts": {
+            "items": [
+              {
+                "id": "scorecard:quantum:qgeo-s-off-on-a-real-measured-boundary-operator-eit-analog-c",
+                "title": "quantum: QGEO S_off on a real measured boundary operator (EIT analog "
+              },
+              {
+                "id": "scorecard:CMB:crossover-relic-top-hat-discs-ccc-disc-search-01",
+                "title": "CMB: crossover-relic top-hat discs (CCC.DISC.SEARCH.01)"
+              },
+              {
+                "id": "scorecard:CMB:cosmic-birefringence-rotation-fingerprint-beta-morphology-nu",
+                "title": "CMB: cosmic birefringence rotation fingerprint (beta morphology +"
+              }
+            ],
+            "total": 621
+          },
+          "premises": [
+            {
+              "id": "premise:declared-p1-p2",
+              "statement": "This program checks which additional source, state, event, and observable structures follow from accepted TFPT principles; it does not revoke or replace P1/P2.",
+              "title": "P1/P2 remain declared starting axioms"
+            },
+            {
+              "id": "premise:quarter-phase-retained",
+              "statement": "Comparisons retain the original charged quarter phase; switching to another phase branch is not an admissible solution to the selection problem.",
+              "title": "Quarter phase is retained"
+            },
+            {
+              "id": "premise:typed-source-structures",
+              "statement": "Observable algebra, OS reflection, state, collar operator, time evolution, carrier connection, family holonomy, and readout are distinct data until an original map relates them.",
+              "title": "Do not identify source types"
+            },
+            {
+              "id": "premise:oriented-p2-exterior-carrier",
+              "statement": "Given E=C5=E3⊕E2, a Hermitian metric, volume orientation, S± and Y=(-1/3)^3⊕(1/2)^2. Internal carrier labels are not physical vacua; geometric seam reflection is not identified with carrier conjugation.",
+              "title": "Original oriented exterior carrier"
+            },
+            {
+              "id": "premise:fixed-e8-fold-quarter-dictionary",
+              "statement": "The existing Weyl lift M, affine E8 module, Q'=2(H3+H6) and K_alpha=L0+delta_alpha.H0 with alpha=1/4,3/4 are held fixed for comparison. This representation is not derived from P1/P2; an unbroken SM time action is not assumed.",
+              "title": "Stipulated E8 quarter-fold dictionary"
+            },
+            {
+              "id": "premise:actual-chiral-opposite-quarter-domains",
+              "statement": "D_alpha=-i∂theta on f(theta+2pi)=exp(2pi i alpha)f(theta), filled negative spectrum and relative particle/hole excitation time; alpha=1/4,3/4. This compares two conjugate domains, not opposite charges in one fixed domain or all P1 sources.",
+              "title": "Given chiral source in both quarter domains"
+            },
+            {
+              "id": "premise:given-first-marked-quarter-character",
+              "statement": "In the supplied E8 dictionary, D5 on the first five coordinates, D3 on the last three and k=2sum(p1..p5) mod4 are given for the first quarter domain. The other domain may transport these data covariantly; their original physical selection is not presumed.",
+              "title": "First 5+3 marking and Z4 character supplied"
+            },
+            {
+              "id": "premise:given-d5-a3-free-fermion-realization",
+              "statement": "Compare the documented free D5_1+A3_1 realization with five plus three complex fermions and spin-field sectors; realization by the raw P1 source is not presumed.",
+              "title": "Supplied free D5+A3 realization"
+            }
+          ],
+          "question": "Which charge, state type and time action belong to the root partner and original sheet pairing?",
+          "strategies": [
+            {
+              "changes_required": "Derive the actual field representation with all charges, boundary conjugation, state and time from the same source.",
+              "explanation": "M r0=e1+e4 does not define a state map; source charge is not Y and K splits the multiplet.",
+              "finding_ids": [
+                "finding:partner-carrier-charges-and-state-types",
+                "finding:partner-fixed-quarter-time-splits-sm-multiplet"
+              ],
+              "id": "strategy:root-coordinate-equality-as-physical-partner",
+              "outcome": "insufficient_for_goal",
+              "premise_ids": [
+                "premise:oriented-p2-exterior-carrier",
+                "premise:fixed-e8-fold-quarter-dictionary"
+              ],
+              "title": "Equal root as equal physical partner"
+            },
+            {
+              "changes_required": "Use the actually transported marking or supply a different source action derived from P1/P2; a larger phase scan does not change the invariant.",
+              "explanation": "Unequal projection norms exclude the whole orthogonal correction class at fixed d_beta.",
+              "finding_ids": [
+                "finding:joint-fixed-time-marking-repair-excluded"
+              ],
+              "id": "strategy:fixed-time-weyl-repair-quarter-conjugation",
+              "outcome": "excluded_scoped",
+              "premise_ids": [
+                "premise:actual-chiral-opposite-quarter-domains",
+                "premise:fixed-e8-fold-quarter-dictionary",
+                "premise:given-first-marked-quarter-character"
+              ],
+              "title": "Restore fixed marking after quarter conjugation by Weyl correction"
+            }
+          ],
+          "tasks": [
+            {
+              "depends_on": [],
+              "effective_status": "resolved",
+              "id": "task:reuse-partner-type-1",
+              "kind": "assessment",
+              "next_action": "Reuse the reviewed result within its stated scope.",
+              "required_premise_ids": [
+                "premise:oriented-p2-exterior-carrier",
+                "premise:fixed-e8-fold-quarter-dictionary"
+              ],
+              "resolution_ids": [
+                "finding:partner-carrier-charges-and-state-types"
+              ],
+              "status": "resolved",
+              "success_criterion": "Original carrier plus supplied E8 charge dictionary; no physical field identification.",
+              "title": "Concrete pair operator; source neutrality is not hypercharge neutrality"
+            },
+            {
+              "depends_on": [],
+              "effective_status": "resolved",
+              "id": "task:reuse-partner-type-2",
+              "kind": "assessment",
+              "next_action": "Reuse the reviewed result within its stated scope.",
+              "required_premise_ids": [
+                "premise:oriented-p2-exterior-carrier",
+                "premise:fixed-e8-fold-quarter-dictionary"
+              ],
+              "resolution_ids": [
+                "finding:partner-fixed-quarter-time-splits-sm-multiplet"
+              ],
+              "status": "resolved",
+              "success_criterion": "Only the supplied affine dictionary. Backgrounds or time-dependent covariant symmetries have different premises; no general gauge-physics no-go.",
+              "title": "Fixed quarter time splits the color/weak multiplet"
+            },
+            {
+              "depends_on": [],
+              "effective_status": "resolved",
+              "id": "task:reuse-partner-type-3",
+              "kind": "assessment",
+              "next_action": "Reuse the reviewed result within its stated scope.",
+              "required_premise_ids": [
+                "premise:oriented-p2-exterior-carrier"
+              ],
+              "resolution_ids": [
+                "finding:partner-original-carrier-cross-sheet-conjugation"
+              ],
+              "status": "resolved",
+              "success_criterion": "Representation with metric/orientation; J_C is not yet the actual boundary/OS conjugation. Two carrier labels are not two vacua.",
+              "title": "Explicit conjugation for the existing sheet pairing"
+            },
+            {
+              "depends_on": [],
+              "effective_status": "resolved",
+              "id": "task:reuse-partner-type-4",
+              "kind": "assessment",
+              "next_action": "Reuse the reviewed result within its stated scope.",
+              "required_premise_ids": [
+                "premise:actual-chiral-opposite-quarter-domains"
+              ],
+              "resolution_ids": [
+                "finding:partner-chiral-quarter-conjugation-state-time"
+              ],
+              "status": "resolved",
+              "success_criterion": "Given chiral source. No selection from P1/P2, no equal responses within one fixed twist, and no identification with affine r0.",
+              "title": "Actual partner map between quarter domains"
+            },
+            {
+              "depends_on": [],
+              "effective_status": "resolved",
+              "id": "task:reuse-joint-bilinear-hermitian-correction",
+              "kind": "assessment",
+              "next_action": "Reuse the reviewed conclusion with its premises.",
+              "required_premise_ids": [
+                "premise:oriented-p2-exterior-carrier"
+              ],
+              "resolution_ids": [
+                "finding:joint-bilinear-hermitian-correction"
+              ],
+              "status": "resolved",
+              "success_criterion": "Correction of the finite selection inference; no identification of I with the actual Calderon operator and no P1 countermodel.",
+              "title": "Bilinear sheet pairing is not Hermitian kernel selection"
+            },
+            {
+              "depends_on": [],
+              "effective_status": "resolved",
+              "id": "task:reuse-joint-quarter-transports-marking",
+              "kind": "assessment",
+              "next_action": "Reuse the reviewed conclusion with its premises.",
+              "required_premise_ids": [
+                "premise:actual-chiral-opposite-quarter-domains",
+                "premise:fixed-e8-fold-quarter-dictionary",
+                "premise:given-first-marked-quarter-character"
+              ],
+              "resolution_ids": [
+                "finding:joint-quarter-transports-marking"
+              ],
+              "status": "resolved",
+              "success_criterion": "Exact map of the supplied source and conditional E8 lift; first marking, source realization and physical event law are not derived from P1/P2. Both quarter domains remain explicit; no switch to another branch to solve a fixed-sector question.",
+              "title": "Actual quarter conjugation transports the supplied marking"
+            },
+            {
+              "depends_on": [],
+              "effective_status": "resolved",
+              "id": "task:reuse-joint-fixed-time-marking-repair-excluded",
+              "kind": "assessment",
+              "next_action": "Reuse the reviewed conclusion with its premises.",
+              "required_premise_ids": [
+                "premise:actual-chiral-opposite-quarter-domains",
+                "premise:fixed-e8-fold-quarter-dictionary",
+                "premise:given-first-marked-quarter-character"
+              ],
+              "resolution_ids": [
+                "finding:joint-fixed-time-marking-repair-excluded"
+              ],
+              "status": "resolved",
+              "success_criterion": "Only fixed fold time and fixed 5+3 marking. Covariant marking transport is positively constructed; other sources or dynamical dictionaries are not excluded.",
+              "title": "No time-stabilizing orthogonal repair of the fixed marking"
+            },
+            {
+              "depends_on": [],
+              "effective_status": "resolved",
+              "id": "task:reuse-joint-spinor-not-source-coefficient",
+              "kind": "assessment",
+              "next_action": "Reuse the reviewed conclusion with its premises.",
+              "required_premise_ids": [
+                "premise:oriented-p2-exterior-carrier",
+                "premise:given-d5-a3-free-fermion-realization"
+              ],
+              "resolution_ids": [
+                "finding:joint-spinor-not-source-coefficient"
+              ],
+              "status": "resolved",
+              "success_criterion": "Representation types of the supplied free realization; no selection from P1/P2 and no new spinor-CAR replacement.",
+              "title": "Spinor16 is a state sector, not a 16-real one-particle field"
+            }
+          ],
+          "title": "Which partner actually belongs to the original seam?",
+          "topics": [
+            "topic:origin",
+            "topic:quantum",
+            "topic:e8",
+            "topic:clocks"
+          ]
+        }
+      ],
+      "query": "problem:seam-partner-charge-state-time",
+      "revision": "a31bcbb4bbd5dc062c728bdb"
+    }
+  ],
+  "sources": [
+    {
+      "line_end": 520,
+      "line_start": 480,
+      "path": "_archive/tfpt-45/source_extracts/01_boundary_kernel_source.tex",
+      "sha256": "53a8c2854c26c086a73198842d7985981444028c22ba6bef160f176869d5e6f1",
+      "source_id": "research-source:b2473526446e86b037d2f5d0"
+    },
+    {
+      "line_end": 102,
+      "line_start": 7,
+      "path": "experiments/theory-contracts/native-source-reconstruction-20261014/PROOF.md",
+      "sha256": "d16b6af2c90491ac94eeb4ab04a8c96b072d37bb6bc5015b3db85c023f8a96e2",
+      "source_id": "research-source:f229447932498ddeff1f3dda"
+    },
+    {
+      "line_end": 151,
+      "line_start": 31,
+      "path": "experiments/theory-contracts/native-mark-memory-20261014/PROOF.md",
+      "sha256": "10492f2d34e93ffb8db2593b120ef120401e26bd5acc34db0cd9c7e8f15ec364",
+      "source_id": "research-source:e0ee6607c2146261c68ef1be"
+    },
+    {
+      "line_end": 1087,
+      "line_start": 1003,
+      "path": "experiments/theory-contracts/seam-joint-ward-state-20261014/PROOF.txt",
+      "sha256": "7c0cd92dfc5eca88260baae0af9edad66f958a27ce0d15d7965414b3971f8da0",
+      "source_id": "research-source:1a8db88614570db5aa2d1c62"
+    },
+    {
+      "line_end": 203,
+      "line_start": 154,
+      "path": "experiments/theory-contracts/seam-partner-original-action-20261015/PROOF.txt",
+      "sha256": "ff7c8dff8939e8380509bff5a34145f935407344a07bda1d65b7b25489a2677c",
+      "source_id": "research-source:04ae73dea3e04eaa4ed71fd0"
+    },
+    {
+      "line_end": 216,
+      "line_start": 189,
+      "path": "experiments/theory-contracts/seam-joint-conjugation-20261015/PROOF.txt",
+      "sha256": "bbea15f5ebb1dff698f1ecdfd8a18e724089c8fe9880dea684a5f9fd45cb1c8a",
+      "source_id": "research-source:55e1a01319dc1feaa105883e"
+    }
+  ],
+  "source_verification_scope": "only original sources from reviewed findings",
+  "proof_boundary": "navigation and typed prior evidence; no automatic physical-source conclusion"
+}

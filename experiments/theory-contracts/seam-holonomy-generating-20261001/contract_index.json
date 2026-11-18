@@ -1,0 +1,695 @@
+{
+  "contract": "seam-holonomy-generating-20261001",
+  "date": "20261001",
+  "research_id": "UR.SOURCE.HOLONOMY_GENERATOR.01",
+  "question": "Are T, R, B_Y, R_Y and a family operator Taylor coefficients of one object, the response W_S(z)=sum_{beta in S} exp(i z.beta) B_beta of the original local pair products to a Cartan seam holonomy z? What does the E8 7-design property force on the closed source, and which layer can select flavor? Second round: does a declared port-consistency condition plus finite-order Cartan holonomies select S=48 (3+1) instead of declaring it?",
+  "verdict": "PARTIAL",
+  "verdict_enum": [
+    "PASS",
+    "PARTIAL",
+    "FAIL"
+  ],
+  "mathematical_verdict": "EXACT_DESIGN_FORCING_ON_CLOSURE; ONE_GENERATING_FUNCTION; THREE_LAYER_FLAVOR_OBSTRUCTION; CONDITIONAL_HOLONOMY_SELECTION_OF_3PLUS1; P1_REALIZATION_OF_HOLONOMIES_AND_T_TO_4D_OPEN; DECK_MU4_LIFTS_TO_MU8_WITH_FOURTH_POWER_SPINOR_PARITY",
+  "summary_de": "Auf den originalen 240 Wurzeln sind die Momente der Ordnung 2,4,6 isotrop und alle ungeraden null (exakte Tensoridentitaet, 7-Design); Ordnung 8 nicht. Daher erzeugt die geschlossene Quelle bis Ordnung 5 in der Holonomie nur T und :J_zJ_z: (W_240(0)=60T, Hesse entlang y = 10T+12:J_YJ_Y:). R, S_Y und jede Flavorrichtung sind Designdefekte der Auswahl S=48. Dieselbe Funktion W_48 liefert T,R (Ordnung0), den Anomalietensor (Ordnung1, null auf allen SM-Eich-Cartanpaaren), B_Y=5/2T+R_Y mit Gram[[48,10],[10,35/3]] (Ordnung2 entlang y) und einen Familienoperator (Ordnung2 entlang f). y ist die einzige Linie im 3D-Kommutanten von su3c+su2w+su3fam orthogonal zu Traeger- und Familienzahl. Flavor in drei Schichten: neutral skalar (Schur, SU3_fam), Cartan-Twist diagonal (Impulserhaltung: Hierarchie, keine Winkel/Phasen), Mischung nur ueber gerichtete Wurzelvertices E_(alpha_a-alpha_b), die originale E8-Wurzeln sind. Der Kac-Haupttwist rho/3 ist der einzige regulaere Ordnung-3-Twist von A2 und gibt das Residuenmuster (0,1/3,2/3); diese Gleichsetzung mit der Fuchs-Verbindung ist eine Identifikation, nicht hergeleitet. Runde 2 (36/36): Von 65535 Vereinigungen der 16 D5xA3-Bloecke erfuellen 65 die Port-Konsistenz <R_S,R_S>=|S| (Zustandsnorm = Komponentenzahl aus delta_top=48c3^4), 32 ohne +-beta-Paare, mit P2-Traegerchiralitaet S+ genau vier: die 3-von-4-Familienauswahlen (W(D8)-konjugiert); <R,R>=16k(4-k) vs |S|=16k. z4=-(1/2)(1^5;0^3) (Zentrum Spin(10), Ordnung 4) graduiert 240=52|64|60|64 mit Grad 1/4 = chiraler (16,4)-Sektor; ueber alle Familienholonomien der Ordnung 2..6 sind die norm=count-Eigenraeume genau die vier 3+1-Mengen; S=48 = gemeinsamer i*omega-Eigenraum von exp(2pi i(z4+z3)), z3=(0^5;2/3^3), Ordnung 12. Kommutant span{X,Familienzahl,y}: zwei endliche Auswahlholonomien plus kontinuierliche Gewichtsrichtung y. B_Y=(|y|^2/4)B_48+S_Y, S_Y nur im D5-Block, orthogonal zu T,R. Kostant (A2): Coxeterpermutation der Familien und Haupttwist per Z3-Fourier konjugiert (Skelett, keine PMNS-Vorhersage). z4/z3 sind Torusholonomien, NICHT die Weyl-Elemente J,sigma aus v633. Runde 3 (37/37): Logik umgedreht. Mit der vorhandenen bedingten Markenkette (QGEO.MARKS.03 Gauss-Bonnet n=2chi=4, QGEO.MARKS.02/COHOM.01 H^1 = drei nichttriviale mu4-Charaktere, N_fam=3) folgt k=3 und damit <R,R>=16k(4-k)=48=Omega_adm=N_fam dim S+: Port-48 und topologische 48 aus delta_top sind dann ein Satz, keine importierte Bedingung. Neuer Ausschluss: Die H^1-mu4-Charakterwirkung {1,i,-1,-i} auf den vier Familienbloecken ist durch KEINE Spin(10)-kommutierende Cartan-Holonomie realisierbar (Beweis fuer alle reellen z: Blockwerte summieren zu 4c=0 mod 1, Ziel 3/2=1/2 mod 1; Gitterzensus 262144/0). Hindernisklasse 1/2 (ein Z2). Zwei mu4 sind zu trennen: toraler Glue-mu4 z4 (Zentrum Spin(10)) und nicht-toraler Deck-mu4 auf den Familien. Runde 4 (40/40): Das Z2-Hindernis ist aufgeloest. Der Deck-mu4 wirkt nicht diagonal, sondern PERMUTIERT die vier Familienlinien als 4-Zyklus (Weyl-Element w:(x6,x7,x8)->(x7,-x6,-x8), Traegerkoordinaten fest, erhaelt die 240), wie rho:z->iz die vier Punkturen permutiert. Ein 4-Zyklus ist ungerade: jede SU(4)-Hebung g=DP hat g^4=-I, der Deck hat auf dem Familien-4 Ordnung 8 (mu4 hebt sich zu mu8). g^4 ist das Toruselement (0^5;1,0,0) und wirkt -1 genau auf den 128 Spinorwurzeln (16,4)+(16b,4b), +1 auf den 112 ganzzahligen: g^4 = (-1)^F der D8-Spinorerweiterung. KORREKTUR Runde 3: C9 schliesst nur die diagonale (linienfixierende) Realisierung aus; die permutierende Realisierung kommutiert mit Spin(10) und kostet stattdessen die Doppelueberlagerung. Die Aussage 'Deck-mu4 muss in den Traeger eingreifen' ist damit NICHT erzwungen. Runde 5 (QGEO.MARKS.01 zerlegt; end_to_end.py 23/23, E8 selbst konstruiert, Projektobjekte nur als Endvergleich): (1) Existenz: Marken = Verzweigungspunkte der Z2-Blattdeckung, n gerade (31 D4-invariante Divisoren). (2) Anzahl: unter treuen D4-Divisoren gilt flach <=> minimal <=> eine freie rho-Bahn <=> rank H1=3 <=> n=4; Gegenmodelle ohne Flachheit: n=6 (Geschlecht 2, y^2=x^5-x), n=8 (Geschlecht 3), n=2 nicht treu. Unabhaengiger algebraischer Weg: D5+A_(n-1) hat nur fuer n=4 (n=2..20) ein gerades unimodulares Oberlattice. (3) Ordnung: Moebius-Stabilisator von 4 Marken ist V4 (generisch), A4 (tetraedrisch) oder D4 (Quadrat); ein 4-Zyklus nur beim Quadrat. Fordert man, dass der Familien-Coxeter-4-Zyklus geometrisch wirkt, ist das Quadrat (Doppelverhaeltnis 2, j=1728) erzwungen: der bisher eingegebene Quadratmodulus aus MARKS.03 ist damit hergeleitet. (4) Spiegelung: voller Stabilisator des Quadrats ist genau D4, tau erzwungen. Kette bis S48, mu8/(-1)^F, y, W_S, T, R, B_Y unabhaengig rekonstruiert und gleich den Projektobjekten. Verbleibende Praemissen: (P-a) Z2-Blatt = verzweigte Doppeldeckung einer Geschlecht-0-Basis (chi=2 aus c3), (P-b) Kruemmung nur in den Marken (flache Gauss-Bonnet-Lesart) oder alternativ die Glue-Bedingung, (P-c) Deck wirkt auf Marken wie auf Familienlinien. Runde 6 (end_to_end.py 29/29): Praemissen selbst reduziert. D1: H_1(P^1-4 Marken)=Z^4/(1,1,1,1) mit residuendualer Form ist isometrisch zum E8-Familienlinien-Gitter (Gram delta-1/4, Summe 0). D2: P-c folgt aus Funktorialitaet: genau 4=|C4| aequivariante Zuordnungen Marken->Linien, tau wird eine E8-Familienwurzelspiegelung. D3: Familienrang 8-5=3 erlaubt (g,n) in {(0,4),(1,2)}; nichtentartete Residuenpaarung erzwingt g=0, n=4 (P-a, P-b werden Folgen). D4: alle Punkturklassen tragen dieselbe Z4-Glueklasse, Glue = Monodromie der zyklischen Ueberlagerung y^4=prod(x-z_a), das Z2-Blatt ist ihr Quotient. D5: Maximalsymmetrie waehlt falsch (Tetraeder 12>8). D6: rho existiert genau wenn j(E)=1728, d.h. wenn die Blattinvolution [-1] eine Quadratwurzel hat (Z2 in Z4); Zeuge phi(x,y)=(-x,iy) auf y^2=x^3-x. Neue Praemissenlage: Q1 Familiengitter = H_1(Naht-Marken) mit Residuenpaarung, Q2 E8-Glue (vorhandener Compiler), Q3 Blattinvolution hat Quadratwurzel. Runde 7 (selection.py 8/8): Externe Kritik bestaetigt und eingearbeitet: vier Defekte erzwungen, Quadratlage nicht; lambda(theta)=-tan^2(theta/2), Quadrat <=> lambda=-1; D4 auf H^1 reduzibel (1+2). Neu: (E2/E3) No-go: keine Viermarkengeometrie traegt zugleich eine konforme Ordnung-4- und eine konforme Ordnung-3-Uhr (Fixpunkte der anharmonischen Gruppe disjunkt); eine der beiden muss nichtkonforme Monodromie sein. (E4) Die irreduzible Familienwirkung kommt topologisch: Bild der Abbildungsklassengruppe S4=W(A3) wirkt irreduzibel auf H^1, fuer jedes lambda; Ordnung-3 = Zopfmonodromie. (E5) Extremalprinzip scheitert: log det' Laplace ist bei tau=i kritisch, aber Sattel; Maximum hexagonal (j=0). (E6) Die rohe antiperiodische Stationsuhr R (mu4-pointing) ist projektiv der 4-Zyklus der Stationen mit det R=1, R^4=-I: exakt die in E8 gefundene SU(4)-Hebung. (E7) Wirkt diese Uhr als vakuumerhaltende geometrische Symmetrie eines Moebius-kovarianten Nahtnetzes, so ist sie eine Drehung und jede Bahn harmonisch: lambda=-1 [C]. (E8) In E8 ist die det-1-Bedingung automatisch: Zentralisator von Spin(10) hat Lie-Algebra su(4) ohne zusaetzliches u(1). Diagnose: die verbleibende Information ist EIN Bit, welche Uhr (4 oder 3) geometrisch wirkt; der rohe Ring legt es bereits fest (R auf Stationen, Ordnung 3/6 in G_F intern). Runde 8 (seam_vacuum_covariance.py 9/9): Operatortest der Stationsuhr auf dem antiperiodischen kritischen Ring N=256=4x64 (Klasse v480). F1 R_station(x)I_64 ist exakt die verdrillte Vierteltranslation; F2 R Omega=Omega (R C R^T=C, 1e-15, Vakuum homogen); F3 R A(I) R^-1 = A(I+N/4) fuer alle getesteten Boegen; F4 R^4=-I = NS-Vorzeichen (-1)^F; F5 Gitterkovarianz = Moebius-kovarianter NS-Kern 1/(N sin(pi d/N)) exakt (1e-14). F6 Das Bit: Marken auf dem Nahtkreis sind konzyklisch, also lambda reell; der Tetraeder (j=0) hat nichtreelles lambda und eine Ordnung-3-Kreisdrehung kann 4 Marken nicht permutieren: die geometrische Ordnung-3-Uhr ist ausgeschlossen. F7 Gleich grosse Stationen (4x64) setzen die Marken auf Winkel k pi/2: lambda=-1; Negativkontrolle ungleiche Stationen (60,68,64,64): reelles, nicht harmonisches Doppelverhaeltnis 1.906, keine Ordnung-4-Kovarianz. Offen bleibt allein die Gleichsetzung des rohen TFPT-Nahtvakuums mit diesem homogenen antiperiodischen Ringvakuum (SEAM.EQUIV.01 / QGEO.SYM.01 / QGEO.KERNEL.01); der Hopping-Hamiltonian ist die v480-Modellwahl. Runde 9 (port_from_source.py 9/9, Red-Team-Regel: kein lambda, kein Quadrat, kein P0 als Eingabe): Eingabe nur roher antiperiodischer 4xM-Ring, homogenes Vakuum, rohe Stationsuhr Q=R_station(x)I_M und die Forderung, dass Q auf denselben vier Zugaengen wirkt. Ausgabe: Q-Bahn eines Zugangs schliesst nach 4 Schritten bei p+kN/4, Doppelverhaeltnis 2 (lambda=-1 als Ausgabe); der Markenkern wird aus dem Vakuum berechnet (Dichtekorrelation, gitterbosonisiert G=Delta^-1 S ohne Nullmode): [Q,K]=0 exakt, E_+=(I+Q^2)/2 aus der Uhr, E_+KE_+ Rang eins entlang der uniformen Richtung s mit lam_v/lam_s ~ N^-2 (5.4e-5 bei 256 bis 8.5e-7 bei 2048), normierter Kern -> circ(0,1,2,1) = Original-C_mark aus v484/v485, also E_+CE_+=4P0 und det(I-uC)=(1-4u)(1+2u)^2 als Ausgabe. Kontrollen: Nicht-Bahn-Lage (ein Punkt pro Station) bricht [Q,K] und den uniformen Port (cr 1.435, lam_v/lam_s 0.065); Nicht-Log-Kern |C|^2 gibt Rang 2; Universalitaet mit Uebernaechster-Nachbar-Hopping t2=0.3 bestaetigt. Damit sind uniforme Portlinie und volle zugangsverschiebende Uhr zwei Aspekte desselben homogenen antiperiodischen Ringvakuums. Offen bleibt die Gleichsetzung dieses Ringvakuums mit dem rohen TFPT-Nahtvakuum (SEAM.EQUIV.01) und der Normierungsfaktor -c3 log2. Runde 10 (kernel_reconstruction.py 6/6): Zustandskern statt Hamiltonian. Klasse: reine eichinvariante quasifreie Zustaende einer komplexen Spezies auf dem antiperiodischen Ring, invariant unter der Ein-Platz-Translation (K0) = Fermi-Meere. Vollstaendiger Zensus N=12/16/20 (924/12870/184756 Meere): Halbfuellung K1 und Spiegelung K2 lassen 20/70/252, zusaetzlich genau zwei Fermi-Punkte K3 genau 2; diese sind durch die lokale Umeichung c_j->(-1)^j c_j verbunden, Kern = sin(pi d/2)/(N sin(pi d/N)) eindeutig bis auf lokale Eichung, ohne Hamiltonian. NEGATIV: Meere mit 6 oder 8 Fermi-Punkten halten den uniformen Port ebenfalls; der Port waehlt K3 nicht. K3 folgt aus c=8=rang E8 bei 8 symmetrieaequivalenten komplexen Spezies (16 Majoranas). Normierung: 2 pi x bosonisierter Vakuum-Green -> |D|^-1-Kern von v484 (Abw. 3e-6), Bahnmittel 1/4 gibt K_mark=-c3 ln2 circ(0,1,2,1); der Faktor 2 pi (nichtchirale Gitterdichte vs |D|^-1-Mass) ist Konvention, 1/(2pi)=4c3 ist P1. SEAM.EQUIV endlich: Phi = Umeichungs-Bogoliubov-Automorphismus, sternerhaltend, zustandsabbildend, vertauscht mit R. Rekonstruktionsaxiome des Nahtzustands: K0 Homogenitaet, quasifrei rein eichinvariant ([C] wie v155/v160), K1, K2, K3. Runde 11 (redteam_k3_norm.py 5/5, q1_groupoid.py 7/7, axiom_balance.json): K3-Red-Team: 16 Majoranas kommen aus P2 (dim Lambda^even C^5), c=8 ist Ausgabe; K3 ist aber aus c=8 nicht zirkelfrei herleitbar und bleibt das Axiom 'rein chirale Naht' (Nielsen-Ninomiya: Fermi-Punkte stets paarweise, K3 = genau eine chirale Mode pro Seite). 2 pi-Faktor kanonisch: CAR erzwingt Level 1 (N S^(m)=|m| exakt), der |D|^-1-Kern bzgl. d theta folgt ohne freien Faktor; Portnormierung -c3 ln2 damit hergeleitet (mit v484-Bahnmittel). Q1 auf Gruppoid-Ebene: gerichtete Markenbesuche gamma_k ab dem rho-Fixpunkt z=0, Transport mit der Original-v117-Verbindung numerisch integriert: Ordnung 3 je Besuch, Funktor (Komposition/Inverse), Viertelrotation T(gamma_k+1)=U T(gamma_k) U^-1, Flaechenrelation trivial, (M_0 U^-1)^2=I als Pfadrelation (Kegelpunkt x=inf, Ordnung 2), M_0 = v117-M bis auf Diagonalaehnlichkeit, Bilder A4 (12) bzw. S4 (24), nichtabelsche Notwendigkeit: Kommutator mit H_1-Klasse 0 hat Spur -1. Axiom-Bilanz: ASSUMED = P1, P2, Zustandsaxiome, K3, Identifikation Nahtwoerter/Fuchs-Verbindung; Theorem D offen. Runde 12: (K) SEAM.ACCESS: jede vakuumerhaltende lokalitaetserhaltende (vorzeichenbehaftete Permutation) Implementierung einer fixpunktfreien Ordnung-4-Uhr ist die Vierteldrehung (Aut des Nachbarschaftsgraphen = D_N, Vorzeichenhebung bis auf globales Vorzeichen eindeutig), alle Zugangsbahnen sind Quadrate; 'Marken = Stationen' wird fuer lambda nicht gebraucht, ersetzt durch AX.LOCALCLOCK; Kontrollen vier Kopien (Kreuzantworten 0, K0 verletzt) und delokalisierte Stationen (Uhr bleibt Drehung, Stationen keine Boegen). (L) FLAVOR.CONNECTION: Monodromie (M,U) durch lokale Klassen (4,3,2) Katz-starr eindeutig (Index 11); Residuen additiv nicht starr (9<11); Diagonalen aus Ganzzahligkeit bei inf + Schur-Horn + Irreduzibilitaet = (1/2,1/4,1/4) in drei Slots; Gitterscan: im v117-Slot triviale inf-Monodromie nur am v117-Punkt, in den anderen Slots ein tau-Spiegelpaar mit Ordnung-4-Klasse bei x=inf (Delta(4,3,4), unendlich); Endlichkeit der Flavorgruppe waehlt v117 (Gitterscan, kein Kontinuumsbeweis). (M) K3 aus Orientierung + positiver Energie: eindeutiger L0-Grundzustand = Hardy-Meer (ein Fermi-Punkt), Anregungen p(h); K3 damit kein eigenes Axiom neben AX.POSENERGY. (I1 korrigiert) Speziesanzahl = Cartanrang 5+3 = 8, nicht dim S+ (das ist der komplexe D5-Spinor). (N) Externer SEAM.ACCESS-Befund unabhaengig nachgerechnet 9/9: kovariante Zugangsklasse nicht eindeutig (K_02 = (p-q)/((1-z)(3-z))), invarianter Zustand gibt Rang 1, regulierte Punktauswertung ||J_N e_j||^2 = N/pi, M(0) = -(ln2/2pi)circ(0,1,2,1), M(-1)-Zeile bestaetigt, beschraenkte J-Form ausgeschlossen (Polgewichte Tr 4/pi divergent), Reparatur mit J0=(A+1)^-1 gamma^dag exakt. Neu: der uniforme Rang-1-Port ist STATISCH (lam_v(-1) = -0.2794) und braucht exakt den v485-Referenzabzug (lam_v = delta). Audit (audit.py): AUDIT OK, Labels AXIOM 9, DERIVED 16, IMPORTED_THEOREM 7, NUMERICAL_CHECK 3, OPEN 1. Runde 13: (P) AX.ACCESS entfaellt: der vorhandene exakt lokale CAR-Zugriff Psi_N = a(R_N g) im tatsaechlichen gefuellten Meer des Original-QWZ-Zylinders liefert das chordale Log-Gesetz (Abw. 1.4e-2/6.8e-3/3.4e-3 bei N=64/128/256), die Cauchy-Vierpunktidentitaet auf mikroskopischen Daten und den uniformen Port als Ausgabe (lam_v/lam_s 2.4e-3, M -> circ(0,1,2,1)); einziger Referenzabzug = Nullmode von |D|; Bulk-Zeile 3.5e-15 (kein Log), untere Kante gleiches Gesetz. P6: die deklarierte QWZ-Quelle erfuellt K0, K1, K2 und Vierteltranslations-Kovarianz (1e-17); positive Energie im CAR-Vertrag bewiesen -> AX.STATE und AX.POSENERGY werden Eigenschaften der Quelle, ersetzt durch die eine Identifikation AX.SOURCE. (L7) AX.FINITEFLAVOR entfaellt: das (4,3,4)-Gegenpaar ist nicht unitarisierbar (|Eigenwert| e^0.26), v117 unitaer; Forderung = unitaerer Flavortransport. (L8) Markenordnung 3 erzwungen: sphaerische (4,q,r) mit r|4 sind D4 und S4, nur S4 hat 3-dim Irrep. Audit: AXIOM 7 (P1, P2, SOURCE, LOCALCLOCK, UNITARY, HERMITIAN, IDENT.RAWWORDS), DERIVED 18, IMPORTED_THEOREM 9, NUMERICAL_CHECK 3, OPEN 1 (Satz D). Runde 14 (universal_source.py 9/9): Ein universelles Objekt U statt Kette A->B->C: chirales CAR-Netz aus 8 komplexen Moden (5 Traeger aus P2, 3 Familie aus den Marken) auf der orientierten Z2-geblaetterten markierten Naht. Exakt gegen Projektobjekte: R-Sektor mit GSO = die 128 Spinorwurzeln, NS-Bilineare = 112 ganzzahlige Wurzeln (E8 = NS + R); Traeger S+ = gerade Besetzung der 5 Moden; die vier Familienlinien = Familienbesetzung 0 (Fock-Vakuum, die weggelassene Linie) oder 2 (Lambda^2 C^3, die drei Familien); S48 = {Traeger gerade, Familienzahl 2} identisch; z3 = exp(2 pi i (2/3) N_fam), z4 = Traegerparitaet; y = sum y_i n_i; (-1)^F = -1 genau auf R; D5 + D3 in D8 in E8 mit Index 4 und zyklischem Z4 (Gram-Determinanten 4, 4, 1; Spinorklasse Ordnung 4); Flavor-Monodromie reell (FS +1), SO(3) < U(3) < SO(6) auf den Familienmoden. Grenze: das chirale Nahtnetz traegt nur PSL(2,R); Satz D ist kein Korollar von U. Audit: E8, S48, y, mu8, W_S, T, R, B_Y haengen nur an P1, P2, AX.FAMILY (+ zitierte Eindeutigkeit holomorph c=8); Marken ueber flache Gauss-Bonnet-Lesart (zirkelfrei); 7 Axiome: P1, P2, FAMILY, SOURCE, LOCALCLOCK, UNITARY, HERMITIAN. Runde 15 (neutral_weyl.py 5/5): Externer Befund bestaetigt: der direkte GELADENE CAR-Zugriff ist nicht die Nahtweylfunktion (W1 exakt -24/(35pi) vs -1/(2pi), Differenz -13/(70pi); W2 alle 16 Baender am Original-Streifen reproduzieren die externe Tabelle auf 10 Stellen). Runde-13-Lesart korrigiert: der geladene Zugriff traegt nur den statischen Log-Kern (bosonisiert). NEU: der NEUTRALE Kantenstrom der echten Quelle hat Niederenergie-Gewicht S(n)/n = 1.0000 vollstaendig bei Energie n (Holonomie faellt heraus, Bulk bei E ~ N Luecke); mit dem kanonischen Zugang 1/sqrt|n| (einzige Isometrie Ein-Strom-Raum <-> L^2_0 mit H <-> |D|, H^{1/2}-Randspur/Newton-Wigner) und oberer + unterer Kante (reflektiertes Doppel) reproduziert die mikroskopische Quelle die VOLLE dynamische Weylfunktion: Abweichung 1.2e-3/9.1e-4/3.5e-4 bei N=128/512/2048. Kein lokales lineares Feld d^k phi hat dieses Gewicht: der Nahtzugang ist kanonisch, aber nichtlokal in der Stromalgebra. Runde 16 (bulk_boundary.py 5/5, TFPT.BULK.BOUNDARY.RECONSTRUCTION): Die Nahtweylfunktion ist die ROBIN-ZU-DIRICHLET-Abbildung des LOKALEN flachen Scheiben-Laplace (Scheibe = euklidische Haelfte der chi=2-RP-Verdopplung aus P1): duennbesetzter polarer FD-Operator, lokale Punktquelle, lokale Spur, kein Fourier-Ansatz; K(-2)-K(-1) an den Quadratmarken -> geometrische Zeile (Abw. 3.6e-3/1.9e-3/9.9e-4, Nebendiagonalen 5-stellig). Die Nichtlokalitaet von |D|^-1/2 entsteht erst durch Elimination des Bulk. Eindeutigkeit: massiver Bulk und variable Leitfaehigkeit verfehlen DtN = |n| (Calderon zitiert). Q2: Dirichlet-Energie = H^{1/2}-Form (pi n): der 1/sqrt n-Zugang ist die Spur H^1 -> H^{1/2}. Q4: DtN = r d_r = Dilatationsgenerator (Radialquantisierung, Bulk-Stresstensor); der Spektralparameter z ist eine lokale Robin-Randkopplung, keine Energie. Grenzen: der rekonstruierende Bulk ist die 2D-euklidische Compilerscheibe, nicht 3+1D; der geladene QWZ-Bulk ist ein anderer Bulk mit derselben neutralen Randtheorie (AX.SOURCE bleibt Identifikation). Runde 17 (boundary_universality.py 6/6): Satz I (TFPT.BOUNDARY.UNIVERSALITY) im NEUTRALEN Sektor: drei Realisierungen einer Randtheorie mit expliziten unitaeren Ein-Teilchen-Intertwinern: E8-Cartanstroeme im Original-Affincode (Gram = n x Cartanmatrix, det 1, Fock-Normen), DtN-Scheibe (Dirichlet-Gram pi n delta, L0 = r d_r = n), QWZ-Kantenstrom mikroskopisch (S(n)/n = 1.00000 bei Energie n, Dispersionskruemmung O((2 pi n/N)^2)); gemeinsame Weylfunktion (E8 exakt, DtN-Bulk 9.9e-4, QWZ 3.5e-4); Fock-Funktorialitaet hebt auf Vakuummoduln. Grenze: geladene Sektoren NICHT aequivalent (QWZ |j-1/4| vs E8-Wurzelvertex L0 = 1). Satz II: verfuegbare Geometrien 1+1 (zwei chirale Haelften) und 2+1 (QWZ-Bulk); propagierende Gravitation braucht d(d-3)/2 > 0, also d >= 4: ein 3+1D-Netz ist echter neuer Input. Audit umgebaut: lambda und Port folgen aus dem Scheiben-Bulk (vakuumerhaltende Ordnung-4-Automorphie = Drehung), AX.SOURCE traegt nur noch die mikroskopische QWZ-Realisierung. Physikalische Ausgaben: E8/S48/W_S/T/R/B_Y <- P1, P2, FAMILY; lambda/Port <- P1, LOCALCLOCK; Flavor <- + UNITARY, HERMITIAN. Runde 18 (spacetime_precision.py 7/7): Externer Befund eingearbeitet: physische Endpunktoperation = integrierter Strom (a_n ~ 1/n), Kovarianz C = |D|^-1, Praezisionsoperator C^-1 = |D| (mikroskopisch: C^-1-Eigenwerte 1.0000..6.0000); Geometrie aus Korrelationen, die Scheibe ist lokale Realisierung von C^-1, z = Praezisions-/Robinvariation. SPACETIME.PRECISION.01: Weyl-Gesetz des vollen Praezisionsoperators von U Exponent 1.0000 (raeumlich 1), thermodynamisches Wachstum des vollen E8_1-Prozessraums alpha = 0.501 -> d = 2.00; Kontrolle 3+1D-Skalar auf S^3: alpha = 0.750 -> d = 4.00, Weyl 2.96 (Test unterscheidet 2 und 4). Waermeleitungskern auf der chi=2-Verdopplung: Konstante 1/3 = chi/6, der 2D-Einstein-Hilbert-Term ist topologisch (Gauss-Bonnet von c3), keine Dynamik. Ergebnis: mit allen jetzigen TFPT-Strukturen ist die rekonstruierte Raumzeit 1+1D; 3+1D braucht ein Kovarianznetz mit Weyl-Exponent 3 (alpha = 3/4) -- quantitatives Ziel fuer Satz D. Runde 19 (process_lattice.py 8/8, SPACETIME.PROCESS.LATTICE.01): Cardy-Wachstum als abhaengiger Schatten des Weyl-Spektrums akzeptiert (Meinardus). Prozessgraph aus den primitiven Markenbesuchen gamma_0..3 (Relation gamma_0 gamma_1 gamma_2 gamma_3 = 1), drei Quotienten: (a) volle Woerter F_3 exponentiell (Faktor 6.47) -> kein lokaler Raum; (c) endliche Flavor-Monodromie (transportierte v117-Matrizen) saettigt bei 12 (A4) -> Dimension 0; (b) Windungen H_1 = Z^4/(1,1,1,1): d_H = 2.95, d_s = 2.96, Weyl-Exponent des Praezisionsoperators 2.92 -> DREI unbeschraenkte Richtungen; die Windungen spannen das bcc-Gitter, O_h = S4 x Inversion macht das Symbol bei p^2 isotrop (ein c), Anisotropie erst bei p^4. Bedingung: Windungen sind physikalisch nur aufgeloest, wenn ein Test unendlicher Ordnung existiert (generische kontinuierliche Familien-Cartan-Holonomie trennt 729/729; die Ordnung-3-Familienholonomie nur 3) -> AX.RESOLVE als Kandidat. Spannung: dieselben drei Klassen sind endliche Familien und unbeschraenkte Windungsrichtungen (3 = n-1 = rang H_1). Offen: Zeit-/Dispersionskopplung, Lorentz-Hauptsymbol, Praezisionsoperator aus der tatsaechlichen Zustandskovarianz auf dem Gitter. Runde 20 (spacetime_pontryagin.py 7/7): PONTRYAGIN: Familien-Cartan-Verdrehung z = flacher U(1)-Zusammenhang auf der markierten Sphaere (Holonomie e^{i z.w_a}, Relation = Summe w_a = 0), Charaktere multiplikativ und trennend, z mod Perioden = T^3 = Hom(H_1,U(1)), S4-kompatibel; tatsaechliche Antwort = Spektralfluss des E8-Level-1-VOA: E(z) = |z|^2/2 EXAKT innerhalb des Packungsradius (2.8e-17, isotrop, kein z^4); S48 allein anisotrop (4,16,16), chiraler (16,4)-Block isotrop; Praezisionsoperator zweiter Ordnung, Weyl Lambda^1.40 (~3/2). INTERNAL_VS_SPACE: S4 wirkt auf Raum als std (Transpositionen = Spiegelungen, det -1), auf Flavor als std x sgn (det +1) -> verschiedene Darstellungen; pi_1 -> Z^3 x A4 Faserprodukt (pro Windung eine V4-Nebenklasse) -> IR-Faktorisierung. LORENTZ (blind): mit der Nahtzeit L0 ist omega = |p|^2/2, z_dyn = 2 (galileisch), NICHT 1. Abbruchregel greift: Windungsgitter + Nahtzeit ist nicht Lorentz-3+1. Eine relativistische Massenschale braucht eine Gitterrichtung negativer Norm (zeitartig), die in keinem TFPT-Gitter vorkommt (alle positiv definit). AX.RESOLVE auf die Physikalitaet der kontinuierlichen Verdrehung eingeengt. Runde 21 (time_causal.py 7/7): Zeit als geordnete Komposition statt L0. Ereignis = ein gerichteter Markenbesuch (Position +-w_a, Flavor M_a^{+-1}, exakte unitaere v117-Matrizen). V1 keine zwei Besuche kommutieren: Einzelgeschichten sind Ketten. V2 kombinatorischer Kegel = Wuerfel (lineare Hoechstgeschwindigkeit, Polytop). V3 parameterfreier Pfadsummen-Generator H(z) = sum_a e^{iz.w_a} M_a + h.c.: H(0) = 0 dreifach entartet, LINEARE Aufspaltung, z_dyn = 1.0001. V4 ballistisch (Varianz ~ t^2). V5 (nach erster Fehllesung korrigiert): det L = 0, v^2 = n^T V n exakt (Kegel ellipsoidisch), aber V = (0,4,4): entartet. V6 Nullrichtung = Achse der raeumlichen Deckwirkung (uneigentlich, Ordnung 4); die ganze Achse ist eine Knotenlinie H = 0, quer dazu identische Kegel c = 2 -> gestapelte 2+1-Kegel, kein isotroper 3+1-Knoten. Zurueckgezogen: ein S4-Darstellungsargument (H ist nur C4/D4-symmetrisch). Externe Punkte uebernommen: positive Kovarianz F gibt durch Inversion keinen Lorentzoperator (H ist gerichteter Generator, nicht F^-1); DtN legt in 2D nur die konforme Klasse fest (Bulk-Kruemmung nicht bestimmt). Runde 22 (primitive_step.py 7/7, SPACETIME.PRIMITIVE.STEP.01): Ursache der Nullachse exakt: n.Gamma = -2i (O - O^dag) des (2,3)-Blocks, v117-M ist komplex-symmetrisch mit reeller (2,3)-Kopplung; generisches X hebt sie. Kohaerenz: tr(M_a^dag M_b)/3 = 0 bzw. -1/3 (Alternativen interferieren). Inventur vorhandener Sektoren als Propagationsfaktor: geladene nu=1/4-Phase -> Beruehrkegel Rang 2; zweite Chiralitaet als direkte Summe -> gleiche Nullachse; Flavor auf jedem Schritt eines unitaeren Walks -> nicht unitaer. Kein vorhandener Sektor liefert die fehlende Richtung. Der bcc-Weyl-Walk lebt auf GENAU den acht Schritten: U(k) = prod_i e^{-i k_i sigma_i} = sum_eps e^{-i eps.k} A_eps (Rang-1-A), unitaer, i log U = k.sigma (isotroper Weyl, Rang 3), Berry +1 / Partner sigma->sigma* -1; Flavor als Zuschauer unitaer (H_eff = k.sigma x 1 + 1 x H_fl). Fehlender Propagationsfaktor = C^2-Spinor mit der Doppelueberlagerung der raeumlichen Punktgruppe (mu8-Vorzeichen); mit ihm fixiert Bisio-D'Ariano-Tosini (zitiert) den Weyl-Walk. Neuer Kandidat AX.SPINSTEP, nicht aus der jetzigen TFPT-Quelle hergeleitet. Runde 23 (spinor_origin.py 6/6, SPINOR.ORIGIN.01): Die drei Familien-CAR-Moden liefern Spin(4) = Spin(3) x Spin(3) in der Familien-Spin(6) = SU(4); die vier Familienlinien sind (1/2,1/2); unter der diagonalen SO(3) ist die weggelassene Linie das Singulett (Fock-Vakuum) und die drei Familien das Triplett: die 3+1-Familienaufspaltung = Vektor + Singulett. Mit diesem Spinor entsteht der isotrope bcc-Weyl-Walk samt mu8 (Viertel-Drehung Ordnung 8, vierte Potenz -1). KILL: als Propagationsspinor mischt er die weggelassene Linie mit den drei Familien kinetisch ([U,P_vac] = O(k), linear), fuer J und J' -> Familienzahl wuerde sich bei freier Propagation aendern, unvertraeglich mit der Raum/Flavor-Trennung (T6). AX.SPINSTEP bleibt, verschaerft: der Raumzeit-Spinor muss frei von inneren Quantenzahlen sein. Runde 24 (mark_spinor.py 8/8, SPINOR.ORIGIN.02): Kandidat AX.MARKMAJORANA = eine reelle, innere-singulettige Majorana-Nullmode pro Marke (Cl(4) der vier Marken). Daraus ohne Wahl: Markenindex R^4 = Oberflaechenrelations-Richtung (1,1,1,1) + Raum; e_i = sum_a (w_a)_i gamma_a, beta = sum gamma_a/2; Dirac-Algebra alpha_i = i beta e_i, Spin S_i, Chiralitaet Gamma, alpha_i = -Gamma S_i (L+R, entgegengesetzte Helizitaet), beta = skalarer Massenoperator. Markenumbenennungen = Punktgruppe: Pin(4)-Lifts mit p S p^-1 = sgn std S (gerade = Drehungen, ungerade = Paritaet L<->R), Achsen-pi-Drehungen -> Quaternionengruppe; Deck-Lift p^4 = -1 (mu8). Guertel-Trick: Majorana-Zoepfe erfuellen Artin, volle Verdrillung = Gamma, Sphaerenwort = -Gamma, also genau auf dem Sektor der Oberflaechenrelation eine echte B_4(S^2)-Darstellung mit Delta^2 = -1. Kills: die 16 E8-Naht-Majoranas als Spinortraeger (diagonaler pi-Lift quadriert zu (-1)^N = +1, kein Spin 1/2); schwaches Doublett als Spinor (triviale Isospin-Mischung). AX.SPINSTEP ist ersetzt durch AX.MARKMAJORANA (ungerade Anzahl reeller Markenspezies noetig). Runde 25 (causal_dirac.py 8/8, TIME.EVENT_DEPTH/MICROCAUSALITY): strikte Mikrokausalitaet (Propagator exakt im Schrittwuerfel), IR-Kegel isotrop mit c = 1 im harten Wuerfel, Lorentz-Verletzung O(k), Eigenzeit = Massenphase (omega - k.v = m sqrt(1-v^2)). KORREKTUR der Runden Q/K: der bcc-Weyl-Walk hat pro chiralem Block einen Doppler entgegengesetzter Ladung an den BZ-Ecken +-P = +-(pi/2)(1,1,1) (Nielsen-Ninomiya, vektorartiges IR); die homogene Masse gappt ihn nicht (U_D(+-P,m) hat exakt Eigenwert 1). Die Blattzahl (Gesamtwindungsparitaet = Deck-Index der an den Marken verzweigten Doppelueberlagerung = bcc-Untergitter) liefert eine deck-ungerade Masse (Kandidat AX.SHEETMASS), die 0 und pi gappt; der Dirac-See clustert dann exponentiell. Nicht abgeleitet: chirales IR, Wechselwirkungen, Eichfelder, Gravitation; Weinberg-Witten nur querverlinkt. Runde 26 (gauge_links.py 7/7, GAUGE.LINK.01): Der Walk faktorisiert in drei kontrollierte Teilverschiebungen; Linkvariablen auf den Wuerfelkanten geben einen exakt unitaeren, eichkovarianten Walk (zufaellige U(2)-Links); konstante Links = flacher Familien-Cartan-Twist; homogenes B ergibt relativistische Landau-Niveaus sqrt(2nB) (Abweichung 0,2-0,7 %, halbiert bei halbem B). Nielsen-Ninomiya in geeichter Form: die chiralen n=0-Zweige von leichtem Knoten (k_z=0) und Doppler (k_z=pi/2) haben entgegengesetzte Steigung, der Doppler hebt die chirale Anomalie auf; ein nur auf einen Chiralitaetsblock wirkender Link koppelt daher vektoriell. Zaehlung: Materie pro Familie = Lambda^even C^5 = 16 (1+10+5), S48 = 3 x 16, Z16-Index 16 = 0 mod 16, also notwendige Bedingung fuer eine symmetrische Luecke des Dopplersektors erfuellt (Mechanismus nur zitiert, nicht getestet). Das chirale SM-Eichgefuege ist auf freiem Niveau NICHT erreicht. Nachtrag K9 (mark_spinor.py jetzt 9/9): Das Z2-Blatt wirkt in U als (-1)^F auf alle 16 reellen Naht-Fermionen (U6), U liefert also eine GERADE Zahl blatt-ungerader Spezies; der Markenspinor ist damit NICHT in der bestehenden Quelle enthalten. AX.MARKMAJORANA verlangt eine zusaetzliche reelle blatt-ungerade Singulett-Mode; chiral gaebe sie c = 17/2 mit Ising-Primaerfeldern (Spannung zu IMP.HOLO), nicht-chiral (1/2,1/2) nicht. Runde 27 (projective_transport.py 6/6, SOURCE.PROJECTIVE_TRANSPORT.01, externer Auftrag): Fuchs-Links aus den unveraenderten v117-Residuen auf die abelsche Ueberdeckung gehoben; Unterteilungen komponieren exakt, jeder Umlauf verschiebt das Blatt um w_a, Determinantenwindung 1 bleibt erhalten, alle vier integrierten Monodromien = exakte M_a in EINEM gemeinsamen Rahmen (Residuum 3,7e-15), invariante Form eindeutig; spurfreier Ersatz = zentraler Faktor e^{-2 pi i/3}. Relative Operatoren Omega_ab = L_ba^-1 L_ab beider Besuchsreihenfolgen (gleiches Endblatt, gleiche Determinantenphase): nicht zentral (Involution, Eigenwerte 1,-1,-1), genau zwei Werte X, Y (Deckrotation vertauscht sie), erzeugen V4 = [A4,A4], KOMMUTIEREN -> trivialer Kokzyklus auf K = Z2^2, kein Clifford-Sektor aus der Originalfaser (allgemein: Monodromie einer flachen Verbindung ist linear, [A4,A4] abelsch; Halbdeterminanten-/Blattlinie aendert nichts). Die Halbshift-Klassen werden von keinem Quellentransport erreicht (geschlossene Wege verschieben in Lambda; G/[G,G] = Z3 trivial auf Lambda/2Lambda). Antikommutierend nur im SU(2)-Lift der reellen Flavorverbindung (lift-unabhaengig, Quaternionengruppe) = flavorabgeleiteter Spin, nicht die Quellenfaser. Weyl-Blindtest daher nicht ausgefuehrt. Runde 28 (sheet_parity.py 5/5, SHEET.PARITY.01): Kommutant der Traeger-Eichalgebra auf R^10 abelsch (su(5): C; SM: C+C) -> keine innere SU(2)-Spinwirkung auf Traegerfeldern; unitaere Nahtrotationen spannen su(1,1) (nur abelsches e^{i theta L0}); Pin-Ueberlagerung der Markenumbenennungen = GL(2,3)-Typ (13 Involutionen, 12 Elemente der Ordnung 8), gerader Teil 2T; die orientierte Naht realisiert T_d, 2O gehoert zur Flavor-Rotationswirkung O. Walk exakt kovariant unter der Kleinschen Vierergruppe, unter der Dreierdrehung nur konjugiert. Part N lief bereits auf der Vereinigung der vier Zwischenklassen (Reparatur von Test B). Ergebnis: der Spinfaktor ist notwendig eine Erweiterung der Quelle; Entscheidung noetig. Runde 29 (frame_gravity.py 5/5, GRAV.FRAME.01): Rahmenfeld n_i = Vierbein (unitaer, IR-Metrik G = Gram(n), G_ii = 1, kein Konformfaktor in dieser Klasse); Blatt-Identitaet s U s = -U fuer beliebige Vor-Ort-Muenzen -> Floquet-Dirac-See exakt -pi pro Zelle fuer jeden Rahmen und jede Masse: keine induzierte homogene Rahmenpotenz, kein kosmologischer Term, Volumen-Entkopplung (formal unimodular, nur Beobachtung). Graviton kann nach Weinberg-Witten nur das Rahmenfeld selbst sein; seine Dynamik ist nicht induziert; T7 offen. Runde 30 (KORREKTUR zu Runde 29, frame_gravity.py 5/5): Die volle Floquet-See-Energie ist auch fuer jedes Magnetfeld exakt -pi pro Platz, obwohl ein Dirac-See auf B reagiert; jedes Niveau ist mit seinem zeitlichen Doppler (omega -> omega + pi) gepaart. Das Mass ist blind; die Aussage 'kein induziertes Rahmenpotential, kein kosmologischer Term' ist zurueckgenommen, die induzierte Dynamik ist unentschieden. Runde 31 (chiral_floquet.py 4/4, CHIRAL.FLOQUET.01): Ein zusaetzlicher unkontrollierter Primitivschritt (T_eps W) trennt den Doppler in der Quasienergie (alle qe-0-Knoten gleicher Chiralitaet, Partner bei -pi/2), aber die Kegel sind Typ II und det U = e^{-2i n.k} windet -> jede k_z-Linie kreuzt qe 0 mindestens 2|n_z|-mal (Floquet-Metall). Ohne Neigung ist jede Schaltung aus Achsen-Teilshifts und Muenzen nullhomotop (Grad 0, gedoppelt). Ergebnis: in der Walk-Architektur der Teile K/L/N gibt es kein freies chirales IR; das chirale Standardmodell braucht Wechselwirkung (symmetrische Luecke des Dopplersektors). Runde 32 (mark_parity.py 7/7, MARK.PARITY.01, externer Paritaetsbefund): Sind die vier gamma_a physische Majorana-Nullmoden (Lesart R1), so ist jede Diracmasse paritaetsungerade (Massenraum {a beta + b i chi beta}, reell zweidimensional); mit einem Referenzpaar (eta, zeta; sechs Majoranas) wird i beta eta gerade und wirkt auf dem Code exakt wie beta (alle Spektren uebertragen sich), aber die Referenzaufspaltung erzeugt das chirale Potential (Delta/2) chi mit E^2 = m^2 + (|k| +- mu)^2; eingefroren verschwindet die Masse. R1 braucht daher eine exakt entartete Referenz und einen Defektsektor (eine Nullmode auf dem unveraenderten Nahtraum widerspraeche der Vakuumeindeutigkeit). Lesart R2 (Einteilchen-Muenzraum als Cl(4)-Modul) hat kein Paritaetsproblem: Bilineare psi^dag beta psi sind gerade, die Spin-Ueberlagerung wirkt als -I auf allen 16 inneren Komponenten (jede Spezies Spin 1/2; das (-1)^16 aus K7 betrifft nur speziesdiagonale Fock-Lifts). AX.MARKMAJORANA -> AX.MARKCLIFFORD (R2). Massenklassen: jede gleichfoermige antikommutierende Masse laesst +-P exakt ungegapt; eine gleichfoermige chirale Phase laesst Nullstellen anderswo. AX.SHEETMASS ist explizit C(x) = exp(-(i/2)(m + m_s s(x)) beta), U = C W C, s(x) = Blattvorzeichen (koppelt k und k+Q), und besteht bei denselben Parametern (m, m_s) = (0,2; 0,6) den gemeinsamen Test: Luecken 0,2 bei 0 und pi, isotroper Diracgrenzwert, exponentielles Clustering. Runde 33 (symmetric_gap.py 7/7, CHIRAL4D.SYMMETRIC_GAP.01, externer Filter-Vorschlag): Filter F = I - (1/8) sum T_eps eingefroren und verifiziert (Symbol 1 - cos kx cos ky cos kz, quadratisch am IR-Knoten, Nullstellen nur in der k=0-Klasse, f(+-P) = 1, f(H) = 2, F_U positiv und eichkovariant). Strukturbefund: im vierkomponentigen Dirac-Walk haben BEIDE Chiralitaetsbloecke ihren leichten Knoten bei k = 0 (f = 0); ein gefilterter Gap kann den rechtshaendigen Partner nicht entfernen -> vektorartig (KILL fuer diese Variante); das chirale 16 braucht EINEN Cliffordblock (Weyl-Walk), Spiegel = +P mit f = 1; beta-Masse und AX.SHEETMASS gehoeren nur zu vektorartiger Materie. Operatoren: O_A hermitesch, paritaetsgerade, Delta N = +-2 (Z4), Spin-Singulett, Spin(10)-Vektor; O_A + so(10) = so(11) (55), mit Q_A so(12) (66). Exaktes lokales Spektrum bei starker Kopplung (2^32 Zustaende, Racah-Speiser, Dimension 2^32 geprueft, kappa = 16 aus Fock-Spur UND Spurform): EINDEUTIGER Grundzustand lambda = (8,0,0,0,0) mit Spin(10)-Singulett, Luecke 144 g zu jeder lokalen Anregung (auch zusammengesetzte Kanaele) -> notwendige lokale Bedingung fuer eine symmetrische Luecke ERFUELLT. Anomalien des leichten 16 und des Spiegel-16 verschwinden (tr Y, tr Y^3, SU(2)^2 Y, SU(3)^2 Y, SU(3)^3, Witten, Z16). NICHT entschieden: die thermodynamische Spiegelluecke mit leichten chiralen Moden, leichte Komposite bei mittlerer Kopplung, Greenfunktionen (2^3 bcc-Zellen = 512 Fermionmoden, 2^512 Zustaende; braucht QMC/Tensornetzwerke). Runde 34 (filtered_patch.py 7/7, FILTERED_CAR.01 + LOCAL_PATCH.01): {rho, rho^dag} = F F^dag mit Traeger 9/8, -1/4, 1/16, 1/32, 1/64 (exakt), Nullraum nur bei k = 0, kleinster Eigenwert ~ L^-4; der Spiegelimpuls P liegt nur in primitiven Zellen mit 4 | L bzw. kubischen Seiten durch 4 teilbar. Externe Lokalzahlen unabhaengig bestaetigt: E0 = -2176 g*, gerade Luecke 144 g* (10-fach), ungerade 232 g* (64-fach), naechstes gerades 320 g* (54-fach), g* = 81/64 g; Normalordnung H_int = H_quartisch + 45 g psi^dag F^2 psi - 810 g N_Orte, Teilchenzahl nur mod 4. Frustration: benachbarte Singulettminima nie gleichzeitig erreichbar (||J_b Psi||^2 >= 4 r^2 (1 - r^2) = 0,188, r = -2/9) -> der Produktbeweis einer Spiegelluecke ist ausgeschlossen. Runde 35 (hs_sign.py 4/4, HS_SIGN.01): fuer den BDT-Hamiltonwalk H = (i/2)(W - W^dag) existiert KEIN antiunitaeres Theta mit Theta^2 = -1, das Walk, Filter und alle zehn Paarungskanaele erhaelt (teilchenzahlerhaltend durch 16 != 16bar ausgeschlossen, teilchen-loch-artig erzwingt skalaren Spinanteil und h_(g eps) = -h_eps, von keinem der 48 Punktgruppenelemente erfuellt); Hindernis ist der Ordnungsterm nu_eps, ohne ihn entstehen Knotenlinien -> keine Kramers-Garantie, QMC nicht gestartet. Runde 36 (gauge_dynamic.py 5/5, GAUGE.DYNAMIC.U1.01, getrennt von Gate B): dynamische trunkierte U(1)-Links auf der bcc-Rhombusplakette mit Weyl-Hopping: exaktes Gauss-Gesetz, jedes primitive Gatter einzeln gaussinvariant (auch mit dynamischem Fermion), statisches Potential g^2/2 pro Flusslink bei starker Kopplung, trunkierungsstabil. Runde 37 (sign_remedy.py 5/5, CHIRAL4D.SIGN_REMEDY.01): Spurformel W^2 = det(1+B) exakt und Phase stetig verfolgt (an einem exakt loesbaren System bestaetigt). Gemessen auf der 16-Platz-Zelle mit P (beta = 1, stabilisierte UDV-Determinante): die HS-Gewichte haben von null verschiedene, aber kleine Phasen (BDT: max 0,0066 bei g = 0,02, 0,062 bei g = 0,1; <cos> >= 0,999) -> Phasenproblem vorhanden, auf dieser Groesse mild. Ein zeitumkehrsymmetrischer Walk existiert (ungerade antihermitesche Bindungen + s1 s2 s3-Term hebt Knotenlinien, alle Nullstellen isoliert, f >= 0,78 abseits k = 0), ABER: ein Kramers-Argument braucht ein ORTSLOKALES antiunitaeres Theta, das jeden HS-Term einzeln erhaelt (Gitterabbildungen schicken phi(x) nach phi(gx) und sind unzulaessig -- Korrektur des zu weiten Suchraums von Runde 35). Teilchenzahlerhaltend scheitert es am komplexen 16 (Konjugation wirkt auf die zehn Kanaele mit Muster (+,-,...) und Determinante -1, T = i sigma_y K kehrt genau fuenf Kanaele um), teilchen-loch-artig an jedem Weyl-Hopping (keine 2x2-Loesung). Struktureller No-go: keine Kramers-Vorzeichenfreiheit fuer die ganze Klasse; Theta1 bleibt Kandidat, kein Walk wird getauscht. Runde 38 (supercell_search.py 3/3): Zellen mit P nur fuer N = 0 mod 4, volle O_h bei 4, 16, 32, 128; BDT-Reweighting nur Diagnose. Runde 39 (theta1_md.py 5/5): Theta1-Kinetik = minimal verdoppelnder C3-Hamiltonoperator auf drei der vier Markenrichtungen, Knoten Gamma und P, freie Energien reproduziert; MARK_C3_SELECTION: vier Karten aequivalent (A), keine Quellauswahl (C, Eingabe); Z = 2^32 Z_aktiv. Runde 40 (filter_ir.py 5/5): Sigma_int = f^2 Sigma^ -> H_int erzeugt am leichten Knoten weder Masse noch Knotenverschiebung noch Geschwindigkeitsaenderung (Annahme: Sigma^ regulaer bei Gamma); sechs erlaubte Gegenterme, keiner aus H_int. Runde 41 (qmc_pfaffian.py 7/7, reweight_check.py 8/8): exakte Pfaffian-Gewichte ohne Wurzel (sieben Einheitstests, zwei echte Fehler im ersten Lauf gefunden und behoben); mittlere Phase des eingefrorenen Theta1 auf 16/32 Plaetzen nahe 1 (R >= 0,9935; 64 Plaetze laeuft), echt aber klein (bei dtau = 0,125 und 0,0625 gleich, dtau = 0,25 ueberschaetzt etwa 3fach); erste G_P(tau)-Messung auf 16 Plaetzen: Gamma exakt frei, Luecke bei P etwa linear in g (0,12 / 0,42 / 1,35 bei g = 0,003 / 0,01 / 0,03) -- moeglicherweise Endlichkeitsaufspaltung des 32-fachen P-Nullmoden-Multipletts (H_eff = -(g/N) sum O~^2); g/N-Skalierungstest und 32-Platz-Lueckenmessungen laufen. HS-gekleidete Komposit-Saaten (Grad 1/3/5) implementiert, C(t0) nicht positiv definit (Kontaktterme) -> keine Kompositaussage. Keine thermodynamische Aussage, Gate B ohne Urteil. Runde 42 (mirror_node.py 6/6, filter_ir.py 6/6): KORREKTUR der Spiegelluecken-Deutung. Die Selbstenergie erster Ordnung bei P ist ein reiner Pauli-Vektor (b = 22,85 g (1,1,1)), keine Masse: der Spiegelknoten wandert entlang [111] um 39,6 g/t (Ladung -1 bleibt); diese Verschiebung erklaert 79-89 % der auf 16 Plaetzen gemessenen Absenkung von G_P. Gate-B-Kriterium jetzt min_{k != Gamma} Delta_odd(k) > 0 statt Delta(P) > 0. Knoten-Tracking mit flavour-getwisteten Raendern (Spin(10)-Cartan, einziger erlaubter kontinuierlicher Twist) validiert, Laeufe gestartet. IR-Schutz verschaerft: exakte Spektral-Summenregel, fuehrender elementarer Grenzwert ohne Regularitaetsannahme. g/N-Test: Multiplett-Bild ausgeschlossen; auf 32 Plaetzen erklaert die Knotenverschiebung 98 % der Absenkung (16 Plaetze: 79 %) -> bei schwacher Kopplung wird der Spiegel verschoben, nicht entfernt. TWIST.COVARIANCE.01 (6/6): Cartan-Twist ist flache Hintergrundverbindung (alle sechs Einzeltests, inkl. Pfaffian und HMC-Kraft bei komplexem Gewicht). Zweiter 32-Platz-Punkt: Knotenverschiebung erklaert 101 %. Knotenbahn erster Ordnung: lineares Regime endet bei g ~ 0,02; Paarerzeugung/-vernichtung auf der Achse uebertraegt die Spiegelladung -1 nach aussen, sie verschwindet nie. Twist-QMC bei g = 0,01: Knoten genau dort, wo erste Ordnung ihn hinlegt, praktisch lueckenlos (G = 0,4976). Knoten-Tracking: bei g = 0,01 trifft das QMC den Knoten erster Ordnung (0,4976 vs 0,5000); bei g = 0,03 (16 Plaetze) weicht es am Knoten erster Ordnung stark ab (0,11 vs 0,50) -- erste deutliche Vielteilchen-Abweichung, keine Lueckenaussage; 32-Platz-Pruefung laeuft. Runde 44: NODE_SPECTRAL_FIT (4/4): E und Z getrennt; lueckenlos innerhalb der beta-Aufloesung nur bei g = 0,003 (alter P) und am gewanderten Knoten bei g = 0,01; bei g = 0,03 alle Messpunkte E >~ 1 (Minimum 0,97 bei lambda = 0,3), Z teils 0,6-0,9; bei g = 0,1 (16 Plaetze) Gamma exakt frei, alles andere E >~ 4 (zeitschrittbegrenzt). SECTOR_GAP-Methode validiert (3/3). TWIST.MULTIREWEIGHT implementiert (Selbsttest exakt; Ueberlapp auf 4 Plaetzen schon fuer delta-lambda = 0,05 schlecht), 16-Platz-Test laeuft. RWC9: bei g = 0,1 auf 32 Plaetzen verschlechtert sich die Phase mit kleinerem Zeitschritt (R 0,9935 -> 0,89 +- 0,08) -> 'mildes Phasenproblem' nur fuer schwache Kopplung / grobes dtau belegt. Runde 46: Multireweighting funktioniert lokal (N_coh 25-32/32); Sternscan um P + 0,3(1,1,1) bei g = 0,03: G flach 0,26-0,27, kein Knoten in der Naehe; zwei unabhaengige Ketten am Anker 0,261 vs 0,325 (5 sigma) -> Fehler ~3fach unterschaetzt. 32-Platz-Linie: lambda = 0,9 unbrauchbar (R = 0,10), Twist kann das Vorzeichenproblem stark verschaerfen. Runde 47: 13-Punkt-Stern (zwei Schrittweiten, drei Seeds) gestartet; Gamma-Methode + Rohdaten-Zeitreihen; modellfreie W_Omega-Schranken: Niedrigenergiegewicht bei g <= 0,018 am Knoten erzwungen, bei 0,021-0,03 mit beta = 2 unentschieden, am Knoten erster Ordnung bei g = 0,03 hoechstens 25 %, bei g = 0,1 W_max(1) <= 0,04. SECTOR_GAP: beta-Plateau im freien Grenzfall exakt (2,8286 vs 2,8284), naive Schaetzung verzerrt; exakte Einheitswurzeln noetig. SECTOR.INTEGRATOR.SYMMETRY.01 festgeschrieben. Runde 49: Doppelstern g = 0,03 (25 Impulse, 6 Ketten): Landschaft flach G = 0,20-0,35; sechs unabhaengige Zentrumswerte konsistent mit Gamma-Methode-Fehlern (ehrliche Fehler ~1,6x gebinnt); Dispersionsfit NICHT bestimmt; ZERO.BRACKET (Methode 2/2 Tests) ohne signifikante Punkte bei beta = 2 -> unentschieden; beta = 4/6-Bestaetigung und Suszeptibilitaeten (inkl. neuem Dichte-Strukturfaktor) laufen. Runde 51: beta = 4-Bestaetigung (neue Ketten, vorab festgelegte Zentren): g = 0,021 Niedrigenergiegewicht erzwungen (W_min^{irgendeine Spinrichtung}(0,5) >= 0,52) -> keine Spiegelluecke >= 0,5, Spiegel lebt dort sehr wahrscheinlich; g = 0,03: Vorzeichenproblem bei beta = 4 auf der getwisteten Zelle (R = 0,54 / 0,13) -> mit dieser Methode unentscheidbar; ungetwistete beta = 4-Laeufe pruefen, ob der Twist die Ursache ist. RWC10: 64-Platz-Phase R = 0,915 bei c_beta = 0,5, g = 0,1 -> -log R waechst viel schneller als beta V (Delta f 1e-5 / 8e-5 / 4e-4 auf 16/32/64); Reweighting bei starker Kopplung nur bis ~64-128 Plaetze. Runde 52: GROUNDLINE.RESIDUE mit drei Temperaturen (beta = 2/4/6, 16 Plaetze): g = 0.018 und g = 0.021 sind beide GROUND_CONNECTED (Z_0 = 0.91 bzw. 0.80, |e| <~ 0.07); der Spiegel lebt bis mindestens g = 0.021 (Szenario 1). Sektorprojizierte Greenfunktion als Methode an kleinen Modellen validiert (SPG1-SPG3, 2.6e-11). Vorzeichenproblem bei g = 0.03, beta = 4 intrinsisch (ohne Twist R = 0.043 / 0.306, 32 Plaetze 0.347): g = 0.03 geparkt. Nullstellen-Klammer heisst jetzt THERMAL_SPECTRAL_BRACKET. Runde 53: Status in GROUND_CONNECTED_3BETA_CANDIDATE umbenannt (GL4-Gegenfall). Sektorprojizierte Greenfunktion in Produktion (64 Elemente, getwistete Translationen exakt symmetrisch, 6/6): bei g = 0,018 Sektorspuren bei beta = 4 gleichverteilt wie im HF-Modell mit 16 Spiegelmoden bei |e| ~ 0,01, bei beta = 6/8 vier fast entartete Sektoren inkl. Referenz + Spiegelteilchen, Steigung Delta E = -0,01 +- 0,11 (frei 0,53), projizierte Kurve bei festem tau stabil und flach -> MIRROR_GROUND_SECTOR_LIGHT bei g = 0,018 (16 Plaetze). g = 0,021 beta = 6: Schaetzer rauschbegrenzt. g = 0,024: bei beta = 4 leicht (L_0,5 >= 0,72), beta = 6 vorzeichenbegrenzt (R = 0,345); g = 0,027 beta = 4 unentschieden (R = 0,549). Suszeptibilitaet 16 -> 32 ohne Volumenwachstum. Entscheidungspunkt SOLVER.FEASIBILITY.01 erreicht. Runde 54: SPG-Budget SPG.BUDGET.01 (B1-B7) eingefuehrt; Befoerderung von g = 0,018 aus Runde 53 zurueckgenommen. Zehn unabhaengige Ketten bei g = 0,018, beta = 6: weiter SPG_PROJECTION_UNRESOLVED (Kettenmittel von D_ref 0,02-1,9, chi^2/dof 86090; Ursache Mischung, keine Projektionsphase: R^proj 0,98). Huellmass-Sampler gebaut und geprueft, im Benchmark 7x schlechter (Fehler^2 x CPU-h 3,1 gegen 0,44) -> nicht uebernommen. g = 0,024: kein beta > 4 freigegeben (beta 5: R 0,24 / 0,85). Runde 56: Fortsetzung der langen Ketten (>= 260 Sweeps): L4 schliesst sich an, alle Ketten nahe gleichverteilten Sektoren -> SPG_INACTIVE im Gleichgewicht; G_P(beta/2) bei g = 0,018, beta = 6 faellt mit dem Aufwaermen von 0,46 auf 0,39 +- 0,03, die Phase R auf 0,24-0,97 -> alle Messungen bei g >= 0,018 mit kurzem Aufwaermen sind BURN_IN_SUSPECT; der 3-beta-Kandidatenstatus bei 0,018/0,021 ist bis zur Neumessung ausgesetzt. Runde 57: Amplitudenzug (Jacobi s^D, pCN) validiert, relaxiert die langsame Mode ~10x schneller; g = 0,021, beta = 4 im Gleichgewicht stark gepaart (|phi|^2 ~ 2,3 x Vorwert, G_P(beta/2) = 0,035-0,039). Umbrella/WHAM bei g = 0,015, beta = 6: gepaarter Zustand ist das Gleichgewicht, Delta F = -13,4 +- 0,9, Barriere nicht aufgeloest (Koexistenz nicht belegt). Volumentest G4 laeuft (8 / 16 Plaetze: maximale Mode sinkt; 32 Plaetze noch nicht im Gleichgewicht). Tempering ueber |W|^s unpraktikabel, durch Umbrella ersetzt.",
+  "claims_tested": [],
+  "claims_scoped_not_closed": [
+    "AX.P1.01",
+    "AX.P2.01",
+    "QGEO.MARKS.01"
+  ],
+  "gates": [
+    "T1",
+    "T6"
+  ],
+  "checker": "checker.py",
+  "results": "results.json",
+  "firewall": "experiments",
+  "promotion": false,
+  "complete_TFPT_solution": false,
+  "physical_gates_closed": [],
+  "kills": [
+    "Any Cartan-quadratic local pair response of the CLOSED 240 source, with holonomy weighting up to order 5, contains a direction beyond T and :J_z J_z: (excluded by exact 7-design tensor identities).",
+    "Any operator of the neutral quadratic closure (T, R, S_Y, R_Y, B_Y) selects a family direction or Majorana phase on the six retained pairs (scalar by SU3_fam Schur).",
+    "Any Cartan-quadratic operator Q_A, for arbitrary A, produces family mixing angles or relative phases between the six pair states (momentum conservation; diagonal only).",
+    "A family-block selection other than 3-of-4 (k=1,2,4) satisfies the port consistency <R_S,R_S>=|S| (exact: 16k(4-k) vs 16k).",
+    "A family Cartan holonomy of order 2..6 other than the 3+1 class produces a norm=count eigenspace inside the chiral mu4 sector.",
+    "A Spin(10)-commuting Cartan holonomy realises the H^1 mu4 characters {1,i,-1,-i} on the four family blocks (exact obstruction 1/2 mod 1).",
+    "Z2 cone points + chi=2 + faithful D4 alone fix the mark count (counter-models n=6 genus 2, n=8 genus 3).",
+    "A four-mark configuration other than the square admits an order-4 Moebius symmetry (stabilisers V4/A4 contain no 4-cycle).",
+    "A maximal-symmetry principle on four marks selects the square (it selects the tetrahedral set, |Stab| 12 > 8).",
+    "Family rank 3 with nondegenerate residue pairing on a positive-genus seam (only g=0, n=4 survives).",
+    "An extremal principle of log det' Laplace on the sheet torus selects the square (it is a saddle; the maximum is hexagonal).",
+    "A four-mark seam with both a conformal order-4 and a conformal order-3 clock.",
+    "A geometric (conformal) order-3 clock on four marks lying on the seam circle (concyclic marks have real lambda; j=0 is non-real).",
+    "A one-point-per-station access set that is not a clock orbit gives the uniform rank-one port (control: lam_v/lam_s = 0.065, [Q,K] != 0).",
+    "A non-logarithmic vacuum kernel (|C|^2 current correlator) gives the rank-one uniform port (control: rank 2).",
+    "The uniform port selects one Fermi pair per species (seas with 6 or 8 Fermi points keep it).",
+    "Clock covariance, normalisation and reachability select a unique access map J (counter-case O1).",
+    "The ideal point contact response is B + J^dag (A - z)^-1 J for a bounded J (O5).",
+    "The uniform rank-one port persists away from z = 0 (O7: lam_v(-1) != 0).",
+    "'No defect at infinity' alone selects the v117 residues (tau-mirror pair with Delta(4,3,4) monodromy survives).",
+    "The charged CAR one-particle boundary resolvent equals the geometric seam Weyl function M(z) (exact: -24/(35 pi) vs -1/(2 pi) at (-2,-1)).",
+    "A local linear neutral field d^k phi realises the geometric seam access (weights n^(2k-1), never 1).",
+    "A massive bulk or a non-constant isotropic conductivity reproduces the seam Weyl function (DtN != |n|).",
+    "Charged-sector equivalence of the QWZ edge (nu = 1/4) with untwisted E8 vertex operators.",
+    "Propagating (dynamical) gravity from any of the reconstructed geometries (1+1, 2+1).",
+    "The full current TFPT process space (U / E8_1) reconstructs a 3+1D spacetime by the precision-operator route (d = 2.00 measured).",
+    "The full-word process graph as a local space (exponential growth).",
+    "The finite flavor-monodromy quotient as a space (12 states).",
+    "Lorentzian 3+1 from the winding lattice with the seam time L0 (blind classification: z_dyn = 2, Galilean).",
+    "Identity of the spatial and the flavor S4 action (std vs std x sgn).",
+    "An isotropic 3+1 point node from the parameter-free path-sum generator of the mark visits (nodal line along the deck axis instead).",
+    "An existing TFPT sector (charged nu=1/4 phase, second chirality, flavor monodromy per step) as the propagation factor that lifts the deck-axis null direction.",
+    "TFPT's family Spin(4) spinor as the propagation spinor of the bcc Weyl walk (kinetic family mixing at O(k)).",
+    "The 16 E8 seam Majoranas as carrier of the propagation spinor (diagonal lift squares to (-1)^16 = +1: no spin 1/2).",
+    "The weak doublet as propagation spinor (weak isospin would change kinetically; trivial kill).",
+    "The single-node / IR-chiral reading of the bcc Weyl walk: a doubler of opposite chirality sits at the BZ corners +-P (Nielsen-Ninomiya holds).",
+    "Gapping the +-P doubler pair with the uniform on-site mass beta (U_D(+-P, m) keeps eigenvalue 1 for all m).",
+    "Chiral gauge coupling of the free mark walk: a link acting on one chirality block couples to light node and doubler with opposite chiral slopes (vector-like).",
+    "SOURCE.PROJECTIVE_TRANSPORT.01 on the original Fuchs fiber: relative operators of transport histories commute (V4), no Clifford composition sign.",
+    "Internal SU(2) spin on the carrier fields commuting with the carrier gauge algebra (abelian commutant).",
+    "Non-abelian geometric spin from unitary seam rotations (the Hermitian L_0, L_+-1 span su(1,1)).",
+    "Induced homogeneous frame potential / cosmological term from the Floquet Dirac sea (exactly -pi per cell for every frame and coin).",
+    "Free chiral IR in the walk architecture (controlled shifts, coins, translations): tilted Floquet separation gives type-II cones and quasi-energy-0 Fermi surfaces, untilted circuits have degree 0.",
+    "Reading 'no induced frame potential / no cosmological term' from the full Floquet-sea energy (the measure is blind, also to a magnetic field).",
+    "Even Dirac mass on the isolated four-Majorana Fock space (all anticommuting masses are parity-odd).",
+    "Uniform mass pulses or a uniform chiral phase as doubler gap (P stays gapless, or zeros appear elsewhere).",
+    "Four-component Dirac mark walk + filtered symmetric gap as chiral matter: both chirality blocks are light at k = 0 (f = 0), the IR stays vector-like.",
+    "Product of local singlets as the strong-coupling ground state of the filtered interaction (neighbouring singlet minima are incompatible).",
+    "Kramers sign-free Hubbard-Stratonovich decoupling of Theta_1 with the BDT Hamiltonian walk (no antiunitary Theta with Theta^2 = -1 in the symmetry-adapted class).",
+    "Kramers sign-free Hubbard-Stratonovich decoupling for ANY two-component Weyl walk with the Spin(10) 10-channel pairing (structural: complex 16, Weyl hopping spans su(2)); lattice maps are not admissible for term-wise HS invariance.",
+    "Numerically evaluated determinants of single ill-conditioned chi slices as a sign reference (replaced by the closed-form prefactor).",
+    "Unstabilised (1 + B)^-1 in the HMC force (fails at cond B ~ 1e18; replaced by the symmetrised cyclic-UDV form).",
+    "Reading the depletion of G_P(beta/2) at the old mirror momentum P as a mirror gap (79-89 % is the one-loop node shift; a single Weyl node is moved, not gapped, by any bilinear).",
+    "Post-hoc deconvolution of the 2^32 free Gamma modes from total-charge Z4 sector traces (rank 3: the Gamma character vanishes at m = 2).",
+    "M1-only (symmetric pole pair) energies as gap values: 'all g = 0.03 points E >~ 1' withdrawn after M2/M3 fits.",
+    "Gate B criterion min_{k != Gamma} Delta_odd(k) > 0 (impossible with a healthy Weyl cone at Gamma; replaced by the fixed-epsilon exterior criterion).",
+    "HS-dressed composite seeds as interpolators (their correlation matrix is not PSD: not physical operators)."
+  ],
+  "resolved": [
+    "R, S_Y and family operators are design defects of the selection, not independent constructions.",
+    "B_Y is the second holonomy derivative along y of the same function whose zeroth order is 12T+R.",
+    "First-order holonomy response along y is the mixed anomaly tensor and vanishes on all SM gauge Cartan pairs.",
+    "Mixing requires the directed family root vertices E_(alpha_a-alpha_b), which are original E8 roots.",
+    "S=48 is the joint i*omega eigenspace of an order-4 (Spin(10) centre, mu4 glue) and an order-3 (SU3xU1 family) Cartan holonomy, conditional on port consistency.",
+    "Commutant span{X, family number, y}: X and family number generate the selection, y the charge weighting.",
+    "Hessian decomposition B_Y = (mean Y^2 on a 16) B_48 + S_Y with S_Y carrier-only.",
+    "Given the existing conditional mark chain (k=3), port consistency <R,R>=|S|=Omega_adm is a theorem, not an imported condition.",
+    "Glue mu4 (toral, Spin(10) centre) and deck mu4 on families (non-toral, Z2-obstructed) are different actions.",
+    "The 1/2 obstruction is the sign of the 4-cycle: the deck mu4 on the family lines lifts linearly only as mu8, with g^4 = (-1)^F (the D8 spinor parity of E8).",
+    "QGEO.MARKS.01 decomposed: existence, count, order and reflection each follow from named premises (P-a, P-b or glue, P-c); the square modulus input of QGEO.MARKS.03 is derived from P-c.",
+    "Independent end-to-end reconstruction premises -> marks -> S48 -> mu8/(-1)^F -> y -> W_S -> T, R, B_Y equals the project objects.",
+    "P-c (marks <-> family lines) follows from functoriality of H_1 once the family lattice is H_1(seam - marks); 4 equivariant labellings.",
+    "P-a/P-b replaced: genus 0 and n=4 follow from nondegenerate residue pairing plus the E8 rank/glue condition.",
+    "The order-4 rotation rho is equivalent to the sheet involution having a square root (j=1728).",
+    "Irreducible family action with order-3 element is the topological mapping-class image S4=W(A3) on H^1, independent of lambda.",
+    "The raw antiperiodic station clock is exactly the det-1 lift with R^4=-I; inside E8 the det-1 condition is automatic (Lie-algebra level).",
+    "lambda=-1 follows if the raw station clock acts as a vacuum-preserving geometric symmetry of a Moebius-covariant seam net.",
+    "On the antiperiodic critical 4x64 ring the raw station clock satisfies R Omega = Omega, R A(I) R^-1 = A(I+N/4), R^4 = (-1)^F, with the exact NS conformal kernel; equal stations give lambda = -1.",
+    "The geometric-clock bit is decided by concyclicity of the marks on the seam circle.",
+    "Uniform port line E_+ C E_+ = 4 P0 and full clock covariance [Q,C] = 0 are computed outputs of the homogeneous antiperiodic 4xM ring vacuum with the raw station clock acting on its own access points; lambda = -1 is an output; universal under next-nearest hopping.",
+    "Seam state kernel reconstructed without Hamiltonian: K0-K3 in the pure quasi-free class give a unique kernel up to the local staggering gauge; explicit finite SEAM.EQUIV map Phi intertwining state and station clock.",
+    "Port normalisation -c3 ln2 reduced to the v484 |D|^-1 chain; remaining factor 2 pi is a density/measure convention.",
+    "Port normalisation including 2 pi derived from CAR level one and the d theta kernel measure.",
+    "Q1 on groupoid level: directed mark visits form a functor into the Fuchs transport; (MU^-1)^2 = I is a path relation; H_1 alone is provably insufficient.",
+    "lambda = -1 needs only a locality-preserving vacuum-preserving clock (D_N argument), not 'marks = stations'.",
+    "Flavor monodromy is Katz-rigid; the v117 residues follow on the scanned family from equivariance, mark exponents, no defect at infinity, Hermiticity, irreducibility and finiteness.",
+    "K3 follows from P1 orientation plus positive energy (Hardy sea).",
+    "External SEAM.ACCESS.01 analysis independently confirmed; the port is a regulated local evaluation with fixed reference, static rank one.",
+    "AX.ACCESS replaced by the existing microscopic CAR access (port kernel = Hessian of log charged correlators).",
+    "AX.STATE and AX.POSENERGY are properties of the declared QWZ source; AX.FINITEFLAVOR replaced by unitarity; mark order 3 forced by the spherical classification.",
+    "One universal source: 8 complex chiral modes (5 + 3) on the Z2-sheeted marked seam; E8 = GSO closure, matter = Ramond ground states, 3+1 = family Fock vacuum + Lambda^2 C^3, selection holonomies = number holonomies.",
+    "E8 no longer an imported input: derived from U plus the cited uniqueness of the holomorphic c = 8 extension.",
+    "SEAM.NEUTRAL.WEYL.01: the neutral edge current of the declared QWZ source with the canonical H^{1/2} trace access reproduces the full dynamical seam Weyl function (top + bottom edge).",
+    "Bulk-boundary reconstruction: the seam Weyl function is the Robin-to-Dirichlet map of the local flat disc Laplacian (Euclidean half of P1's RP double); the canonical access is the local H^1 -> H^{1/2} trace; DtN = dilation generator.",
+    "Theorem I on the neutral sector: QWZ edge current, DtN disc and E8 Cartan current are unitarily equivalent one-current realisations with one Weyl function.",
+    "AX.SOURCE no longer needed for any first-half physical output (lambda and port follow from the disc bulk).",
+    "SPACETIME.PRECISION.01: geometry from inverse covariance works (C^-1 = |D|), and fixes the reconstructed dimension of all present structures to 1+1 with a discriminating 3+1 control.",
+    "SPACETIME.PROCESS.LATTICE.01: three unbounded IR directions exist in the existing process structure (puncture windings, bcc lattice, isotropic at p^2) -- conditional on an infinite-order resolving test (AX.RESOLVE).",
+    "SPACETIME.PONTRYAGIN.01: windings = positions, family-Cartan twist = quasi-momentum on T^3, exact isotropic |z|^2/2 response; internal and spatial S4 are different representations.",
+    "Emergent time from ordered composition: the path-sum generator over the primitive events gives z_dyn = 1 and ballistic propagation (unlike L0), with an exact ellipsoidal but rank-2 cone and a nodal line along the deck axis.",
+    "SPACETIME.PRIMITIVE.STEP.01: the bcc step set from the windings carries the isotropic Weyl walk once each step carries the spin-1/2 double cover; flavor is a spectator; null-axis cause identified exactly.",
+    "The 3+1 family split is the SO(3) vector + singlet of the four family lines (1/2,1/2); the omitted line is the singlet.",
+    "Given one real internal-singlet Majorana per mark: spinor, Dirac algebra (alpha_i, beta), chirality, point-group double cover with parity = odd mark relabelings, and mu8 = Pin lift of the deck relabeling follow without choice; the mass operator beta lies along the surface-relation direction (1,1,1,1).",
+    "Free 3+1D kinematics of the mark walk: strict microcausality, isotropic emergent cone inside the hard step cube, O(k) Lorentz violation, proper time as mass phase; with the deck-odd sheet mass a gapped, exponentially clustering Dirac sea.",
+    "Gauge fields as link variables on the controlled partial shifts: exactly unitary and covariant for arbitrary links, flat links = family-Cartan twist, correct continuum minimal coupling (relativistic Landau levels).",
+    "Lifted Fuchs links on the abelian cover with the original residues, common frame with the exact monodromies, determinant winding kept; relative operators = two commuting involutions X, Y generating V4.",
+    "The mark Pin cover is of GL(2,3) type with even part 2T; 2O is the cover of the flavor rotation action, not of the spatial T_d of the oriented seam.",
+    "The frame field of the mark walk is a vierbein with IR metric equal to the Gram matrix of the frame legs.",
+    "Free-level chirality no-go for the TFPT walk architecture: chirality at quasi-energy 0 requires interactions.",
+    "Joint sheet-mass test at the same parameters: gaps at 0 and pi, isotropic Dirac limit and exponential clustering together.",
+    "The coin-Clifford reading (AX.MARKCLIFFORD) has no fermion-parity problem and gives spin 1/2 to all 16 species.",
+    "Strong-coupling local necessary condition of the filtered Spin(10) interaction: unique Spin(10) x SU(2) x Z4-symmetric ground state (lambda = (8,0,0,0,0)) with gap 144 g to every local excitation.",
+    "Filtered CAR structure of rho = F psi (support, spectrum, conditioning, overlaps) and the parity-resolved exact local spectrum.",
+    "Exact Gauss law and per-gate Gauss invariance for dynamical U(1) links on the bcc plaquette.",
+    "Measured fermion phase of the HS decoupling on the 16-site cell with P at beta = 1: nonzero but mild (stabilised determinant).",
+    "Frozen Theta_1 kinetics reconstructed and hashed (minimal-doubling C3 Hamiltonian, structure_hash 2b23ba1ba94c9058).",
+    "MARK_C3_SELECTION: the four chart Hamiltonians are A4-equivalent; no P1/P2 selection (input).",
+    "IR protection Sigma_int = f^2 Sigma^ at the light node (assumption: Sigma^ regular).",
+    "Counterterm classification near Gamma: 6-dimensional, none from H_int.",
+    "Sign-exact Pfaffian HS weights with seven unit tests (QMC.PFAFFIAN.GENERAL.01).",
+    "Average phase of the frozen Theta_1 measured on 16/32 sites (phase-quenched, beta ~ L; 64 sites running); converged in dtau, genuine but small.",
+    "First-order mirror self-energy: pure Pauli vector along [111], node shift 39.6 g/t, Weyl charge kept.",
+    "Nonperturbative leading elementary IR protection at Gamma via the exact spectral sum rule (no regularity assumption)."
+  ],
+  "not_claimed": [
+    "P1-derived seam holonomy z or derivation of the selection S=48 from the seam.",
+    "Identification of the principal twist with the original Fuchs residues beyond the matching pattern.",
+    "Any mass, mixing angle, CP phase or neutrino prediction.",
+    "Any 4D stress tensor, metric variation or Einstein equation.",
+    "Novelty of the 7-design property itself (already sealed in v1018 C4).",
+    "Identification of z4/z3 with the v633 Weyl elements J, sigma or the G31 compiler clock c (different objects, equal orders only).",
+    "First-principles derivation of the port-consistency condition; it is imported from the existing alpha port and delta_top.",
+    "That the deck must act on the carrier (Runde-3 reading withdrawn: only the diagonal realisation is excluded).",
+    "That this mu8 lift is the physical Moebius/spin double cover; the match of g^4 with (-1)^F is exact, the physical identification is [C].",
+    "Moebius covariance of the actual seam net (SEAM.EQUIV.01 open) or that the station clock is vacuum-preserving and geometric.",
+    "Connectedness of the Spin(10) centraliser in E8 (only its Lie algebra is checked).",
+    "That the raw TFPT seam vacuum equals the homogeneous antiperiodic hopping-ring vacuum (model choice of v480).",
+    "Quasi-freeness and homogeneity of the raw seam state (axioms K0 and quasi-free remain [C]).",
+    "A continuum SEAM.EQUIV map (scaling limit stays the cited MMST route).",
+    "Derivation of K3 (pure chirality) or of the v117 Fuchs connection from the raw ring.",
+    "Novelty of the fermionic construction of E8_1 or of SO(10) spinors as Fock spaces (standard).",
+    "Any 3+1D geometry from U (U9: only PSL(2,R))."
+  ],
+  "leaves_open": [
+    "Show from P1 that the seam carries exactly the order-4 and order-3 Cartan holonomies (z4, z3) and the continuous twist y, and that the physical response is the Taylor expansion of W_S.",
+    "Theorem D: the spin factor is necessarily an extension of the present source (SHEET.PARITY.01, SOURCE.PROJECTIVE_TRANSPORT.01 negative on the Fuchs fiber); AX.MARKCLIFFORD (single-particle coin Cl(4)-module labelled by the marks; zero-mode reading needs six zero modes and a degenerate reference) is the recommended explicit choice, AX.SHEETMASS (deck-odd mass, joint test passed) a further candidate input; neither is derived; the IR is vector-like (doubler pair at +-P), so a chiral IR (Standard-Model chirality, CHIRAL4D.NOMIRROR.01) is open; a symmetric (chirality-preserving) interacting gap of the doubler sector (anomaly condition 16 = 0 mod 16 holds; frozen Theta_1 with exact Pfaffian weights and a mild measured phase on 16/32 sites, a P gap roughly linear in g on 16 sites (finite-size multiplet splitting not excluded, g/N test running), thermodynamic gap on a homothetic family, composites (GEVP) and symmetry breaking not yet decided), dynamical gauge fields beyond background links, the dynamics of the frame field (vierbein; induced dynamics undecided, the full Floquet-sea measure is blind) and spin 2 (GRAV.SPIN2.EMERGENCE.01, GRAV.WEINBERG.WITTEN.01) are open.",
+    "Construct the directed root process E_(alpha_a-alpha_b) from the original word process and test it against Q/R/K/L and the frozen CKM/PMNS values.",
+    "T to 4D geometry (independent bridge, untouched)."
+  ],
+  "relations": [
+    {
+      "type": "extends",
+      "target": "source-rule-search-20260930"
+    },
+    {
+      "type": "uses",
+      "target": "verification/v1018_e8_directed_readout.py"
+    }
+  ],
+  "end_to_end": "end_to_end.py",
+  "end_to_end_results": "end_to_end_results.json",
+  "selection": "selection.py",
+  "selection_results": "selection_results.json",
+  "vacuum_covariance": "seam_vacuum_covariance.py",
+  "port_from_source": "port_from_source.py",
+  "kernel_reconstruction": "kernel_reconstruction.py",
+  "q1_groupoid": "q1_groupoid.py",
+  "redteam_k3_norm": "redteam_k3_norm.py",
+  "axiom_balance": "axiom_balance.json",
+  "seam_access": "seam_access.py",
+  "flavor_connection": "flavor_connection.py",
+  "chirality_positive_energy": "chirality_positive_energy.py",
+  "seam_access_contact": "seam_access_contact.py",
+  "audit": "audit.py",
+  "audit_report": "audit_report.json",
+  "car_access": "car_access.py",
+  "universal_source": "universal_source.py",
+  "neutral_weyl": "neutral_weyl.py",
+  "bulk_boundary": "bulk_boundary.py",
+  "boundary_universality": "boundary_universality.py",
+  "spacetime_precision": "spacetime_precision.py",
+  "process_lattice": "process_lattice.py",
+  "spacetime_pontryagin": "spacetime_pontryagin.py",
+  "time_causal": "time_causal.py",
+  "primitive_step": "primitive_step.py",
+  "spinor_origin": "spinor_origin.py",
+  "mark_spinor": "mark_spinor.py",
+  "causal_dirac": "causal_dirac.py",
+  "gauge_links": "gauge_links.py",
+  "projective_transport": "projective_transport.py",
+  "sheet_parity": "sheet_parity.py",
+  "frame_gravity": "frame_gravity.py",
+  "chiral_floquet": "chiral_floquet.py",
+  "mark_parity": "mark_parity.py",
+  "symmetric_gap": "symmetric_gap.py",
+  "filtered_patch": "filtered_patch.py",
+  "hs_sign": "hs_sign.py",
+  "gauge_dynamic": "gauge_dynamic.py",
+  "sign_remedy": "sign_remedy.py",
+  "theta1_md": {
+    "script": "theta1_md.py",
+    "result": "5/5",
+    "research_ids": [
+      "THETA1.MD.01",
+      "SOURCE.MARK_C3_SELECTION.01",
+      "QMC.GAMMA_FACTOR.01"
+    ],
+    "summary": "Frozen Theta_1 kinetics reconstructed: h_W(k) = t sigma.(B^-1 d(Bk)), d_i = sin p_i + cos p_{i+1} - 1, p = Bk, B rows (1,1,-1), (1,-1,1), (-1,1,1) = three of the four mark directions; support {0, +-b_i}; exactly two Weyl nodes Gamma (V = 1) and P (V = -R_120, det -1); point group C3[111] only; free lowest energies 1.4142 / 0.7174 / 0.7071 (V = 16 / 32 / 64, published values). MARK_C3_SELECTION: the four chart Hamiltonians (each omitting one mark) are A4-equivalent with spin lift (outcome A), and no P1/P2 rule selects one (outcome C: the omitted mark is an input). GAMMA_FACTOR: Z = 2^32 Z_active (Gamma modes decouple from H_int and from h_W). structure_hash 2b23ba1ba94c9058, parameter_hash separate.",
+    "structure_hash": "2b23ba1ba94c9058"
+  },
+  "filter_ir": {
+    "script": "filter_ir.py",
+    "result": "6/6",
+    "research_ids": [
+      "CHIRAL4D.FILTER_IR_PROTECTION.01",
+      "THETA1.COUNTERTERMS.01"
+    ],
+    "summary": "[H_int, psi_v] = f X_v (exact) and Sigma_int(k) = f(k)^2 Sigma^(k) in normal and anomalous Nambu blocks (thermal ED: zero-mode rows < 1e-10, eps^2 scaling ratios 4.1 / 4.0); at Gamma f = |k|^2/2, so H_int generates no mass, no node shift and no velocity change PROVIDED Sigma^ is regular at Gamma (no critical composite mode) -- precise remaining IR assumption. Counterterms allowed by C3 x Spin(10) x Z4 x translations to linear order: 6-dimensional (mu, c || n, b || n, V in the commutant of R_120); none generated by H_int, all generable by couplings acting on psi directly (gauge links): Lorentz restoration is a joint Gate B + C question. IR4 (exact spectral sum rule mu2(k) = f(k)^2 <{X_k, X_k^dag}>): the leading elementary IR statement holds nonperturbatively without the regularity assumption (Chebyshev concentration on the free cone); the regularity of Sigma^ is needed only for subleading structure; dark composite sectors not excluded."
+  },
+  "qmc_pfaffian": {
+    "script": "qmc_pfaffian.py",
+    "result": "7/7",
+    "research_ids": [
+      "QMC.PFAFFIAN.GENERAL.01"
+    ],
+    "summary": "Sign-exact HS weights without square root: every slice is a positive Gaussian (c_l > 0, T_l = Om^dag tanh(K/2) Om); products compose by the Grassmann-integral rule c_XY = c_X c_Y Pf([[T_X, 1], [-1, T_Y]]) / Pf_0. Seven unit tests: PF1 PASS; PF2 PASS; PF3 PASS; PF4 PASS; PF5 PASS; PF6 PASS; PF7 PASS. First run found two real bugs (swapped Nambu blocks in the HMC force; unstabilised (1 + B)^-1 at cond ~ 1e18) and a numerically evaluated prefactor in the comparison formula; all fixed (symmetrised stabilised force, closed-form prefactor e^{-beta 64 sqrt3 t}). Outside the tested range (g = 5 prior fields) both evaluations reach the double-precision conditioning limit."
+  },
+  "reweight_theta1": {
+    "scripts": [
+      "reweight.py",
+      "reweight_check.py"
+    ],
+    "result": "10/10",
+    "research_ids": [
+      "CHIRAL4D.REWEIGHT.01",
+      "CHIRAL4D.MIRROR_GAP.01 (first look)"
+    ],
+    "summary": "Frozen Theta_1 (walk md): Theta_1 (md): cubic16 (V=16, c_beta=0.25), beta=1.0, dtau=0.0625, g=0.1: R=0.999931+-7.9e-06, -log R=6.90e-05, Var theta=1.38e-04, Delta f=4.31e-06, 1/R^2=1.0001, tau_int=2.6, acc=0.42, zero detector=1.82e-02 | cubic16 (V=16, c_beta=0.25), beta=1.0, dtau=0.125, g=0.1: R=0.999931+-1.9e-05, -log R=6.91e-05, Var theta=1.38e-04, Delta f=4.32e-06, 1/R^2=1.0001, tau_int=1.8, acc=0.44, zero detector=3.46e-02 | cubic16 (V=16, c_beta=0.25), beta=1.0, dtau=0.25, g=0.1: R=0.999769+-2.4e-05, -log R=2.31e-04, Var theta=4.61e-04, Delta f=1.44e-05, 1/R^2=1.0005, tau_int=3.3, acc=0.14, zero detector=4.46e-02 | cubic16 (V=16, c_beta=0.50), beta=2.0, dtau=0.25, g=0.003: R=1.000000+-2.1e-09, -log R=3.35e-08, Var theta=6.71e-08, Delta f=1.05e-09, 1/R^2=1.0000, tau_int=4.5, acc=0.59, zero detector=1.81e-01 | cubic16 (V=16, c_beta=0.50), beta=2.0, dtau=0.25, g=0.01: R=0.999978+-6.1e-07, -log R=2.15e-05, Var theta=4.30e-05, Delta f=6.72e-07, 1/R^2=1.0000, tau_int=2.8, acc=0.58, zero detector=1.51e-01 | cubic16 (V=16, c_beta=0.50), beta=2.0, dtau=0.25, g=0.03: R=0.997754+-2.3e-05, -log R=2.25e-03, Var theta=4.50e-03, Delta f=7.03e-05, 1/R^2=1.0045, tau_int=5.2, acc=0.52, zero detector=7.18e-02 | cubic16 (V=16, c_beta=0.50), beta=2.0, dtau=0.25, g=0.05: R=0.998408+-6.2e-04, -log R=1.59e-03, Var theta=3.19e-03, Delta f=4.98e-05, 1/R^2=1.0032, tau_int=2.6, acc=0.22, zero detector=1.24e-02 | cubic16 (V=16, c_beta=0.50), beta=2.0, dtau=0.25, g=0.1: R=0.999683+-4.3e-05, -log R=3.17e-04, Var theta=6.35e-04, Delta f=9.92e-06, 1/R^2=1.0006, tau_int=1.3, acc=0.16, zero detector=1.10e-02 | cubic16 (V=16, c_beta=0.50), beta=2.0, dtau=0.25, g=0.2: R=0.999676+-8.5e-05, -log R=3.24e-04, Var theta=6.48e-04, Delta f=1.01e-05, 1/R^2=1.0006, tau_int=0.8, acc=0.38, zero detector=1.63e-02 | oh32 (V=32, c_beta=0.25), beta=1.25, dtau=0.25, g=0.1: R=0.999221+-2.1e-04, -log R=7.79e-04, Var theta=1.56e-03, Delta f=1.95e-05, 1/R^2=1.0016, tau_int=1.6, acc=0.91, zero detector=2.27e-02 | oh32 (V=32, c_beta=0.50), beta=2.5, dtau=0.25, g=0.1: R=0.993469+-1.3e-03, -log R=6.55e-03, Var theta=1.31e-02, Delta f=8.19e-05, 1/R^2=1.0132, tau_int=1.2, acc=0.88, zero detector=4.83e-03 || Trotter: dtau = 0.25: -log R = 2.31e-04 (+-2.4e-05); dtau = 0.125: -log R = 6.91e-05 (+-1.9e-05); dtau = 0.0625: -log R = 6.90e-05 (+-7.9e-06); ratios per halving [3.34, 1.0] || scaling: md: g = 0.1, c_beta = 0.25: Delta f(16) = 1.44e-05, Delta f(32) = 1.95e-05, R(16) = 0.99977, R(32) = 0.99922, R_128 ~ 9.950e-01; md: g = 0.1, c_beta = 0.50: Delta f(16) = 9.92e-06, Delta f(32) = 8.19e-05, R(16) = 0.99968, R(32) = 0.99347, R_128 ~ 9.589e-01; bdt: g = 0.05, c_beta = 0.25: Delta f(16) = 2.17e-06, Delta f(32) = 2.44e-06, R(16) = 0.99997, R(32) = 0.99990, R_128 ~ 9.994e-01; bdt: g = 0.1, c_beta = 0.25: Delta f(16) = 2.23e-06, Delta f(32) = 4.20e-06, R(16) = 0.99996, R(32) = 0.99983, R_128 ~ 9.989e-01; bdt: g = 0.05, c_beta = 0.50: Delta f(16) = 6.84e-06, Delta f(32) = 3.69e-05, R(16) = 0.99978, R(32) = 0.99705, R_128 ~ 9.813e-01; bdt: g = 0.1, c_beta = 0.50: Delta f(16) = 3.00e-06, Delta f(32) = 5.86e-05, R(16) = 0.99990, R(32) = 0.99533, R_128 ~ 9.705e-01 || decision: reweighting of Theta_1 feasible (lowest R = 0.9935, extrapolated R_128 ~ 9.59e-01): go to the g phase map and the mirror-gap measurement; Gate B stays open || mirror node: cubic16 beta=2.0 g=0.003: G_P(beta/2) = 0.4965+-0.0001 (free 0.50) -> gap ~ 0.12, G_-P = 0.0367 (free 0.0313), Gamma sentinel 9e-16, chi_O = 64.06+-4.72, GEVP kept 1/3 seeds | cubic16 beta=2.0 g=0.01: G_P(beta/2) = 0.4582+-0.0008 (free 0.50) -> gap ~ 0.42, G_-P = 0.0444 (free 0.0313) | cubic16 beta=2.0 g=0.03: G_P(beta/2) = 0.2441+-0.0071 (free 0.50) -> gap ~ 1.34, G_-P = 0.1132 (free 0.0313), Gamma sentinel 2e-15, chi_O = 3.30+-1.60, GEVP kept 2/3 seeds || RWC9 (finding): at strong coupling on 32 sites (beta = 2.5, g = 0.1) the phase gets WORSE when dtau is halved: R = 0.9935 (dtau = 0.25) -> 0.889 +- 0.078 (dtau = 0.125), -log R 0.0066 -> 0.12; the dtau = 0.25 phases underestimate the sign problem there; extrapolated R_128 ~ 0.47 instead of 0.96; 'mild phase' restricted to weak coupling / coarse dtau until dtau -> 0 is controlled. || RWC10 (finding): at fixed c_beta = 0.5, g = 0.1, dtau = 0.25: R = 0.99968 / 0.99347 / 0.915 +- 0.017 on 16 / 32 / 64 sites; -log R grows by 20.6 and 13.5 while beta V grows by 2.5 -> Delta f = 1.0e-5 / 8.2e-5 / 4.3e-4 is not yet intensive (non-homothetic cells, more light modes on larger cells); with RWC9 (dtau = 0.25 underestimates the phase at strong coupling) R_128 ~ 0.3-0.8 at beta = 4 -> reweighting at g = 0.1 feasible to ~64-128 sites at most. The phase problem, not the method, is the bottleneck at strong coupling and low temperature."
+  },
+  "mirror_node": {
+    "script": "mirror_node.py",
+    "result": "8/8",
+    "research_ids": [
+      "CHIRAL4D.MIRROR.ONE_LOOP.01",
+      "CHIRAL4D.MIRROR.NODE_TRACK.01 (infrastructure)"
+    ],
+    "summary": "Exact first-order HFB self-energy (brute-force validated): Sigma^(1)(k) = f(k)^2 b.sigma (x) 1_16, b = 22.85 g (1,1,1), |b| = 39.58 g, no identity part, no anomalous part. The mirror node moves along [111] by |dk| = 39.6 g/t (linear for g -> 0; external estimate 80 g/t is a factor 2.02 larger), Weyl charge -1 kept; the old P has |E| = |b|. On 16 sites (beta = 2) the one-loop node shift explains 89 % / 79 % / 80 % of the measured depletion 1/2 - G_P(beta/2) at g = 0.003 / 0.01 / 0.03: the earlier reading 'gap at P' is withdrawn. Flavour-twisted boundary conditions with the Spin(10) Cartan generator (the only continuous twist compatible with H_int, which conserves charge only mod 4) validated; node-tracking QMC runs started (g = 0.01, delta = 0.2(1,1,1), where one loop puts the moved node; g = 0.03, delta = 0.6(1,1,1)). g/N test (MN7): 32 sites, beta = 2, g = 0.02 give G_P(beta/2) = 0.3817 +- 0.0010 against 0.4582 for 16 sites at g = 0.01 -> the pure multiplet picture is excluded; the one-loop node shift explains 98 % of the 32-site depletion (79 % on 16 sites): the beyond-one-loop residual shrinks with volume (non-homothetic cells, indication). At weak coupling the mirror is moved, not gapped. Second 32-site point (beta = 2.5, g = 0.01): QMC 0.4473 +- 0.0002 vs one-loop 0.4465 (share 101 %). One-loop node trajectory (MN8, global census and C3 axis): Gamma +1 fixed; mirror -1 at lambda = 0.21 / 0.45 for g = 0.01 / 0.02, then a +-1 pair is created on the axis (g ~ 0.0205), the new +1 annihilates the old mirror (g ~ 0.0235) and the new -1 carries the charge on (lambda = 1.71 / 1.93 / 2.27 for g = 0.024 / 0.03 / 0.05; off-axis +-1 pairs around g = 0.05; g = 0.1: -1 at k = -0.81 (1,1,1)): the linear regime ends near g ~ 0.02 and the mirror charge is never removed at first order. Twist QMC: g = 0.01, delta = 0.2 (1,1,1): Q+ sector G(beta/2) = 0.4976 +- 0.0004 vs one loop 0.5000 (free 0.466) -> node motion confirmed at g = 0.01; g = 0.03, delta = 0.6 (1,1,1): 0.264 +- 0.013 (one loop 0.476 there; the one-loop node is at lambda ~ 1.9, run started).",
+    "b_over_g": [
+      22.8528182972013,
+      22.852818297201413,
+      22.852818297202113
+    ],
+    "dk_per_g": [
+      22.85281829527568,
+      22.85281829527638,
+      22.85281830034991
+    ],
+    "one_loop_share": {
+      "0.003": 0.8882472606717003,
+      "0.01": 0.7860159225519724,
+      "0.03": 0.8001974561836984
+    }
+  },
+  "twist_covariance": {
+    "script": "twist_covariance.py",
+    "result": "6/6",
+    "research_ids": [
+      "TWIST.COVARIANCE.01"
+    ],
+    "summary": "TW1 delta -> 0 PASS; TW2 delta -> -delta PASS; TW3 sum_A O_A^2 is holonomy covariant PASS; TW4 no channel is renormalised by the twist PASS; TW5 flat connection PASS; TW6 at delta != 0 (twisted debug4, g = 0.5, and a twisted 16-site configuration with complex weight) PASS. The Spin(10)-Cartan twist is a flat background connection; twist runs serve k_star, Delta_min and topology only, symmetry-breaking tests use untwisted runs (the twist breaks Spin(10) explicitly to the commutant of Q). The two Cartan sectors are measured and reported separately (never averaged)."
+  },
+  "node_track": {
+    "script": "node_track.py",
+    "result": "4/4",
+    "research_ids": [
+      "CHIRAL4D.MIRROR.NODE_TRACK.01",
+      "CHIRAL4D.MIRROR.PERTURBATIVE_MATCH.01 (first points)"
+    ],
+    "summary": "Per point the table keeps Delta_at_old_P, the one-loop node position, k_star (measured, away from Gamma), Delta_at_k_star and the residual at P apart; Cartan sectors separate. Linear regime: g = 0.01 (16 sites, beta = 2), Q+ at delta = 0.2 (1,1,1): G(beta/2) = 0.4976 +- 0.0004 vs one loop 0.5000 -> node motion confirmed. Beyond the one-loop fold: g = 0.03 (16 sites) at the one-loop node lambda = 1.9: G = 0.1125 +- 0.0044 vs one loop 0.4983; best measured point on the line lambda = 0.3, G = 0.325 (Delta_eff ~ 1.0) -> first clear many-body departure from first order; NOT a gap claim (node may sit between points, Z < 1, small cell); 32-site points at the nodes (g = 0.03, lambda = 1.9; g = 0.01, lambda = 0.21) and the first g = 0.1 points are running. 32-site node points: g = 0.01, lambda = 0.21: G = 0.5044 +- 0.0002 (one loop ~ 0.50; above the exact bound 1/2 -> binned errors underestimated, realistic +- 0.005) -> node motion confirmed on 32 sites; g = 0.03, lambda = 1.9: G = 0.1179 +- 0.0039 vs one loop 0.4994 (16 sites: 0.1125) -> the departure from first order SURVIVES on the larger cell. Dense g scan (16 sites, beta = 2) at the one-loop node: g = 0.015, lambda = 0.32: G = 0.503 +- 0.001 (one loop 0.4997) -> perturbative; g = 0.021, lambda = 0.49: G = 0.377 +- 0.008 (one loop 0.4995) -> departure. The QMC leaves the perturbative node trajectory between g = 0.015 and 0.021, where first order has its fold (pair creation at g ~ 0.0205); g = 0.018, 0.021 (lambda = 0.35) and 0.024 running. 32-site line scan at g = 0.03: lambda = 0.3: Q+ G = 0.373 +- 0.008 (free 0.390; line maximum, as on 16 sites 0.325 at the same lambda), Q- at P - 0.3 (1,1,1): 0.174; lambda = 0.9: R = 0.104 -> UNUSABLE (N_eff ~ N R^2 ~ 0.2; G = 0.55 violates the bound 1/2). The twist can strongly worsen the sign problem depending on delta (R = 0.998 at lambda = 1.9, 0.928 at 0.3, 0.104 at 0.9 on 32 sites); runs with R < 0.5 are excluded from all evaluations. At g = 0.03 the line maximum G ~ 0.37 near P + 0.3 (1,1,1) stays below 1/2 on both cells: node off the line, Z < 1 or a small gap -- star scan needed. Dense trajectory (16 sites, beta = 2, at the one-loop node, QMC vs one loop): g = 0.010: 0.498 / 0.500; 0.015: 0.503 / 0.500; 0.018: 0.465 / 0.500; 0.021: 0.377 / 0.500 (lambda = 0.35: 0.419 / 0.494); 0.024 (outer branch, lambda = 1.71): 0.216 / 0.489; 0.030 (lambda = 1.9): 0.113 / 0.498 -> the QMC leaves the first-order trajectory continuously from g ~ 0.016-0.018, just before the one-loop fold (g ~ 0.0205); what happens to the mirror beyond is open (node elsewhere, Z < 1 or a gap). Errors underestimated ~3x.",
+    "rows": [
+      {
+        "cell": "cubic16",
+        "beta": 2.0,
+        "dtau": 0.25,
+        "g": 0.003,
+        "Delta_at_old_P": 0.11873419048536947,
+        "node_shift_one_loop_lambda": 0.049999999999999996,
+        "node_shift_one_loop_G_max": 0.49986679229456077,
+        "k_star_lambda": 0.0,
+        "k_star_sector": "untwisted",
+        "G_at_k_star": 0.4964961329213114,
+        "G_at_k_star_err": 8.442135011383484e-05,
+        "Delta_at_k_star": 0.11873419048536947,
+        "residual_at_P": -0.0003915667443817328
+      },
+      {
+        "cell": "cubic16",
+        "beta": 2.0,
+        "dtau": 0.25,
+        "g": 0.01,
+        "Delta_at_old_P": 0.4239619104722543,
+        "node_shift_one_loop_lambda": 0.19999999999999998,
+        "node_shift_one_loop_G_max": 0.49999986900587423,
+        "k_star_lambda": 0.2,
+        "k_star_sector": "Q+",
+        "G_at_k_star": 0.4975923974318972,
+        "G_at_k_star_err": 0.0003616074917704018,
+        "Delta_at_k_star": 0.0983321584947263,
+        "residual_at_P": -0.00894449506363465
+      },
+      {
+        "cell": "cubic16",
+        "beta": 2.0,
+        "dtau": 0.25,
+        "g": 0.03,
+        "Delta_at_old_P": 1.3445747296786712,
+        "node_shift_one_loop_lambda": 1.9,
+        "node_shift_one_loop_G_max": 0.498289480857498,
+        "k_star_lambda": 0.3,
+        "k_star_sector": "Q+",
+        "G_at_k_star": 0.3245243253535936,
+        "G_at_k_star_err": 0.012151733048942126,
+        "Delta_at_k_star": 0.9979856977251085,
+        "residual_at_P": -0.05113570211103177
+      },
+      {
+        "cell": "oh32",
+        "beta": 2.0,
+        "dtau": 0.25,
+        "g": 0.02,
+        "Delta_at_old_P": 0.7682054439705798,
+        "node_shift_one_loop_lambda": 0.44999999999999996,
+        "node_shift_one_loop_G_max": 0.4996703971882023,
+        "k_star_lambda": 0.0,
+        "k_star_sector": "untwisted",
+        "G_at_k_star": 0.3817174699950256,
+        "G_at_k_star_err": 0.0010251952169443338,
+        "Delta_at_k_star": 0.7682054439705798,
+        "residual_at_P": -0.0021209112941911745
+      },
+      {
+        "cell": "oh32",
+        "beta": 2.5,
+        "dtau": 0.25,
+        "g": 0.01,
+        "Delta_at_old_P": 0.38474885712975593,
+        "node_shift_one_loop_lambda": 0.19999999999999998,
+        "node_shift_one_loop_G_max": 0.4999093163876704,
+        "k_star_lambda": 0.0,
+        "k_star_sector": "untwisted",
+        "G_at_k_star": 0.4472687360249372,
+        "G_at_k_star_err": 0.00020570365203138335,
+        "Delta_at_k_star": 0.38474885712975593,
+        "residual_at_P": 0.000741600924589858
+      },
+      {
+        "cell": "oh32",
+        "beta": 2.5,
+        "dtau": 0.25,
+        "g": 0.03,
+        "Delta_at_old_P": 1.172641604558509,
+        "node_shift_one_loop_lambda": 1.9,
+        "node_shift_one_loop_G_max": 0.49939241827273084,
+        "k_star_lambda": 0.0,
+        "k_star_sector": "untwisted",
+        "G_at_k_star": 0.2192065208237759,
+        "G_at_k_star_err": 0.005964575973695266,
+        "Delta_at_k_star": 1.172641604558509,
+        "residual_at_P": -0.0023526874788681873
+      }
+    ]
+  },
+  "spectral_fit": {
+    "script": "spectral_fit.py",
+    "result": "6/6",
+    "research_ids": [
+      "CHIRAL4D.NODE_SPECTRAL_FIT.02"
+    ],
+    "summary": "E and Z from the full tau-curve (single symmetric pole pair, endpoints excluded): free curves give E = |h(k)| (4e-8) and Z = 1; thermal correlation matrices PSD (brute force); measured G(tau) >= 0 within max(3 sigma, 0.005) (binned errors underestimated at strong coupling: G ~ -0.002 at g = 0.1). Gapless within the beta resolution (E beta < 0.5) only: g = 0.003 old P and the moved node at g = 0.01 (Z ~ 1). g = 0.03 (16 sites): all measured points gapped, line minimum E = 0.97 (Z = 1.0) at lambda = 0.3, at the one-loop node E = 1.64 (Z = 0.67); Z drops to 0.6-0.9 at several momenta. g = 0.1 (16 sites): Gamma exactly free, every other measured point E >~ 4 (E dtau > 1: Trotter-limited), Z 0.3-1. Single-pole chi^2/dof up to O(100) at weak coupling: the tau-curves are not single poles (or errors underestimated). NODE_SPECTRAL_FIT.02 (SF5): independent addition / removal levels (M2) and a positive rest (M3) against the symmetric pair (M1), AIC choice; M1 chosen only 7 of 85 times (particle-hole maps k to -k, so E+ != E- at one k is allowed). The M1 reading 'all g = 0.03 points E >~ 1' is WITHDRAWN: with free channels several g = 0.03 momenta show resolvable levels |e| ~ 0.24-0.5 (e.g. near P + 0.33 (1,1,1)), i.e. within the thermal resolution -> no gap evidence at g = 0.03; g <= 0.01 gapless at the moved node; g = 0.1 lowest resolvable level ~ 3.7 (Trotter-limited). Fits with 7 tau points are fragile; finer tau grids and autocorrelation-corrected errors needed. SF5 now flags ENERGY_UNIDENTIFIABLE (Fisher information of E ~ Z^2: energy error x3 > max(0.5, |E|) or residue < 2 sigma): 41 of 149 curves. Identifiable low levels: g = 0.018 at the moved node e = -0.035 (w 0.94); g = 0.021, lambda = 0.35 (16 sites): e = -0.11 (w 0.84); g = 0.03, lambda = 0.3 (32 sites): e = -0.17 (w 0.77); at g = 0.03 on 16 sites the same point is seed-dependent / unidentifiable. Model fits therefore hint at Case 1 (mirror persists with large residue, relocated off the first-order trajectory near P + 0.3-0.35 (1,1,1)); the predeclared model-free windows Omega = 0.25 / 0.5 / 1 are compatible with this but do not force it at beta = 2 (W_min = 0 for Omega <= 0.5) -> undecided; confirmation with NEW chains at the fixed k* and beta >= 4-6 required."
+  },
+  "sector_gap_method": {
+    "script": "sector_gap.py",
+    "result": "5/5",
+    "research_ids": [
+      "CHIRAL4D.SECTOR_GAP.01 (method)"
+    ],
+    "summary": "Operator-independent sector test prepared: Tr[P_k P_q e^{-beta H}] per HS configuration via Gaussian-unitary insertion (c_U = det(1 + u)/2^n) and exact Pfaffian composition; eigenvalue -1 via the exact eta split placed cyclically; brute force 1e-13 for general unitaries, Z4 and translation projectors. Physics run pending (zero twist only; Gamma modes deconvolved; cost N_cell x 4 compositions per configuration). Active Z4 charge Z_a = e^{i pi (N - N_Gamma)/2} inserted directly (brute force 2e-15); post-hoc deconvolution of total-charge sectors is impossible (Gamma character (1 + i^m)^32 vanishes at m = 2, rank 3) -> killed. SG5 (beta plateau, exactly solvable free limit on 16 sites, active charge, 60 digits with exact roots of unity): slope estimator 8 -> 16 gives 2.8286 vs exact 2.8284 (enumerated, with free P zero-mode shifts), the naive estimator at beta = 16 is 0.45 too low (log degeneracy / beta). Lessons: (i) the slope method works; (ii) symmetry phases must be exact roots of unity (float phases destroy the cancellation below e^{-beta Delta} ~ 1e-14); (iii) in QMC the signal-to-noise of a sector trace falls like e^{-beta Delta}, so only moderate beta Delta is accessible. A full Fock reference for the interacting Theta_1 on 4 sites is impossible (128 modes); exact references are the free limit and small interacting toy models."
+  },
+  "symmetric_transfer": {
+    "script": "symmetric_transfer.py",
+    "result": "3/3",
+    "research_ids": [
+      "QMC.SYMMETRY_PRESERVING_TRANSFER.01"
+    ],
+    "summary": "The HS slice of reweight.py is one exponential of the full bilinear sum_x phi_x . O_x averaged over an invariant Gaussian; it commutes exactly with translations and Z4 (solvable ring 1e-15 / 1e-17), while an ordered product of local gates breaks translation (1.5e-2). The leak mechanism of ordered-gate integrators therefore does not apply; no group-averaged integrator is needed. The slice differs from e^{-dtau H} by 6 % at dtau = 0.25: dtau extrapolation remains mandatory for gap values."
+  },
+  "multitwist": {
+    "research_ids": [
+      "TWIST.MULTIREWEIGHT.01"
+    ],
+    "run": "reweight_points_md_cubic16_mt1.json",
+    "summary": "16 sites, g = 0.03, anchor delta = 0.3 (1,1,1), 32 measurements: all six targets (axial +0.05 / +0.15, transverse +-0.1 e1, +-0.1 e2) have N_amp = 25-32 of 32 and N_coh = N_amp R_theta^2 ~ N_amp (R_theta ~ 0.997): multi-twist reweighting works for LOCAL scans (on debug4 it failed already at 0.05). Cross-check: target lambda = 0.45 gives 0.273 +- 0.013 vs the direct chain 0.277 +- 0.009. Star result: G(beta/2) is flat at 0.255-0.273 at all seven star points, no direction approaches 1/2 within h <= 0.15 -> no node near P + 0.3 (1,1,1) on 16 sites; the dispersion fit cannot locate a minimum. WARNING: two independent chains at the anchor give 0.261 +- 0.012 and 0.325 +- 0.012 (5 sigma): binned errors at 40 sweeps are underestimated by ~3; central points need several seeds, longer chains and autocorrelation analysis."
+  },
+  "spectral_bounds": {
+    "script": "spectral_bounds.py",
+    "result": "3/3",
+    "research_ids": [
+      "CHIRAL4D.SPECTRAL_WEIGHT_BOUNDS.01",
+      "QMC.ERRORS.GAMMA_METHOD.01"
+    ],
+    "summary": "Gamma method (Wolff) with automatic windowing validated on AR(1) series; raw measurement series are now stored by reweight.py. Model-free LP bounds W_Omega = int_{|w|<Omega} A over all A >= 0 with int A = 1 compatible with the data (errors inflated by the smallest factor >= 3 that makes them positivity-compatible): low-energy weight FORCED at the moved node for g <= 0.018 (W_min(0.5) >= 0.89 at 0.015, >= 0.42 at 0.018); g = 0.021-0.03: W_min = 0 and W_max = 0.4-0.9 at every measured point (beta = 2 cannot decide); g = 0.03 at the one-loop node lambda = 1.9: W_max(0.5) <= 0.25 (16 and 32 sites) -> no full-weight gapless node there; g = 0.1: W_max(1.0) <= 0.04 at the measured momenta. Several weak-coupling curves need errors x8-x20 to be positivity-compatible (G = 0.504 > 1/2): independent confirmation of underestimated binned errors. SB4: matrix bounds over the 2 x 2 spin block via scalar LPs over a grid of spin directions (no SDP solver available; conservative: W_max^{any spin} <= max_v LP_max(v), W_min^{some spin} >= max_v LP_min(v)); unit test: a gapless level in only one spin direction gives W_min^{some}(0.25) = 0.96 while the spin-averaged bound only forces 0.00; fully gapped block W_max^{any}(0.5) = 0.06. Pending for a final Gate-B statement: the exact rational certificate over the continuous frequency range (external tool, not in this repository); the current LP is exploration-grade (frequency grid, float).",
+    "summary_round52": "SB5 with the preregistered windows 0.1 / 0.25 / 0.5 / 1 on the residue series: at beta = 6 the Q+ branch has L_0.5 >= 0.72-0.93 and L_0.25 >= 0.20-0.72 (g = 0.018, 0.021); L_0.1 = 0 everywhere (Omega = 0.1 < 1/beta not resolvable); controls P - lambda (1,1,1): U_0.5 <= 0.25-0.34; infeasible curves (x20): gl4c both sectors, gl6b / gl6c P-d."
+  },
+  "sector_integrator_symmetry": {
+    "research_ids": [
+      "SECTOR.INTEGRATOR.SYMMETRY.01"
+    ],
+    "evidence": [
+      "symmetric_transfer.py ST1-ST3"
+    ],
+    "statement": "The transfer matrix that the QMC actually simulates is T = W_h E_phi[e^{K(phi)}] W_h (the HS average of one slice; slices are independent Gaussian, so E[prod_l X_l] = T^L and every sector trace Tr[P T^L] is an exact expectation of the per-configuration traces). This T commutes with P_k and with the active-charge projector P_q^a exactly (solvable ring: [T, translation] 1e-15, [T, Z4] 1e-17). The per-configuration slice e^{K(phi)} does NOT commute with them -- it does not need to; the ordered-gate leak mechanism (counter-check 1.5e-2) does not apply. No group-averaged integrator is required. ST4 (production code, frozen Theta_1, g = 0.1): cell translations commute with W_h, K(phi) is translation covariant (residual 2.5e-16) and Z4 maps K(phi) to K(-phi); release tied to integrator hash f0f2d58fada5669b."
+  },
+  "star_fit": {
+    "script": "star_fit.py",
+    "research_ids": [
+      "NODE.DISPERSION.13PT.01"
+    ],
+    "summary": "Joint-covariance dispersion fit (delete-block jackknife per chain, chains independent, Gamma-method block length); 13-point design rank 10 (7-point rank 7: the old star could not fix the 10-parameter fit). Synthetic gapless double star with chain-common noise: 2-sigma coverage of Delta^2 = 0 is 59/60 with the joint covariance (54/60 with diagonal errors in this setup -- the size of the effect depends on the correlation structure; covariance-free fits are not accepted). Found and fixed a double-whitened Jacobian in the first version (errors ~0). Measured double star (h = 0.15 / 0.075, three anchor chains each) running; search only, confirmation with new chains at the fixed k*. RESULT (g = 0.03, 16 sites, beta = 2): 25 momenta from six chains, landscape flat at G = 0.20-0.35 (nowhere near 1/2); six independent centre values 0.269 / 0.255 / 0.238 / 0.246 / 0.316 / 0.252 (spread 0.028) consistent with the Gamma-method errors +-0.022-0.033 (tau_int ~ 4.7; honest errors ~1.6x the binned ones); N_amp = N_coh = 13-40 of 40 for the targets; the dispersion fit is NOT DETERMINED (chi^2/dof ~ 6000, k* runs away): no resolvable quadratic structure at this beta and an ill-conditioned jackknife covariance (10 blocks for 5 quantities per chain)."
+  },
+  "zero_bracket": {
+    "script": "zero_bracket.py",
+    "research_ids": [
+      "NODE.ZERO.BRACKET.01"
+    ],
+    "summary": "Sign change of the same identifiable signed THERMAL spectral line (residue > 0.3, |e| > 2 sigma with errors x3) -> status THERMAL_SPECTRAL_BRACKET, NOT 'mirror gapless': omega = 0 in the thermal Green function is not a zero-energy ground-sector excitation (an excited -> excited transition can cross omega = 0 while the ground-sector gap stays finite). Ground connection requires CHIRAL4D.GROUNDLINE.RESIDUE.01 (Z_beta -> Z_0 > 0) and then SECTOR.PROJECTED.GREEN.01 / the active sector trace. Unit tests pass (synthetic signed branch bracketed; gapped branch not). g = 0.03 double star (16 sites, beta = 2): 0 of 30 points significant -> no bracket, no conclusion at beta = 2.",
+    "status_name": "THERMAL_SPECTRAL_BRACKET"
+  },
+  "confirmation_beta4": {
+    "research_ids": [
+      "CHIRAL4D.MIRROR.CONFIRM.BETA4.01"
+    ],
+    "runs": [
+      "reweight_points_md_cubic16_cf4a.json",
+      "reweight_points_md_cubic16_cf4b.json",
+      "reweight_points_md_cubic16_cf4d.json"
+    ],
+    "summary": "Confirmation at the PREDECLARED centres with new chains, constant dtau = 0.25, beta = 4 (16 sites). g = 0.021, P + 0.35 (1,1,1), Q+ sector: R = 0.996, G(beta/2) = 0.343 +- 0.004; matrix spin-block bound W_min^{some spin}(0.5) >= 0.52 (errors x8), scalar W_min(0.5) >= 0.26 -> low-energy weight FORCED below |w| < 0.5: no mirror gap >= 0.5 there (decision tree: 'weight forced -> keep searching'); W_min(0.25) = 0, so gaplessness in the strict sense is not yet proven (needs a zero bracket or forced weight in the 0.25 window); M3 level e = -0.28 (w 0.56) identifiable. Counter-check P - 0.35 (1,1,1): W_max(0.5) <= 0.34 (gapped there). g = 0.03, P + 0.3 (1,1,1): the sign problem explodes at beta = 4 on the twisted cell -- R = 0.54 (seed a, G(beta/2) = 0.10 +- 0.11, bounds undetermined) and R = 0.13 (seed b, unusable) -> g = 0.03 is undecidable with twisted reweighting at beta >= 4 on 16 sites; the twisted beta = 6 run was stopped as sign-dominated; two UNTWISTED beta = 4 runs at g = 0.03 test whether the sign problem is twist-induced; the 32-site twisted beta = 4 run is still running.",
+    "sign_problem_g003": "g = 0.03, beta = 4: cf4a R = 0.54, cf4b R = 0.13, untwisted cf4u R = 0.043, cf4v R = 0.306, 32 sites cf4c R = 0.347 -> the sign problem at g = 0.03, beta = 4 is intrinsic (present without twist and on 32 sites), not twist-induced; only cf4a passes R > 0.5. No beta = 4 statement at g = 0.03 beyond cf4a."
+  },
+  "sector_projected_green": {
+    "script": "sector_projected_green.py",
+    "result": "4/4",
+    "research_ids": [
+      "SECTOR.PROJECTED.GREEN.01 (method)"
+    ],
+    "summary": "C_{r -> s}(tau) = Tr[P_r e^{-(beta - tau) H} O P_s e^{-tau H} O^dag] / Tr[P_r e^{-beta H}] starts in the reference sector r and removes thermal excited -> excited lines. Validated on small models: (SPG1) Fock toy with a thermal omega = 0 line (residue ~ e^{-beta eps_b}, classified THERMAL by the GROUNDLINE rule) while the projected C_{0 -> 1} decays with the true gap 2 at beta = 2, 4, 6; (SPG2) reference sector determined from sector free energies, not assumed; (SPG3) per-configuration Gaussian formula Tr[U_m X_2 O U_m' X_1 O^dag] = Tr[Z] a^T S_B (1 + S_Z)^-1 tau b with sign-exact Pfaffian traces and the eta split for (-1)^N reproduces Fock-space projected numerators for random non-number-conserving BdG slices, all 16 Z4 sector pairs (max rel. error 2.6e-11). Both projectors are needed because single HS slices are not Z4 symmetric. Exact zeros Tr[Z] = 0 need the nilpotent form e^{O' O^dag} = 1 + (e^s - 1)/s O' O^dag (flagged, not implemented). QMC production on the Theta_1 cells pending (16 compositions per configuration and tau cut).",
+    "verdict": "METHOD_VALIDATED_SMALL_MODELS"
+  },
+  "susceptibilities_zero_twist": {
+    "research_ids": [
+      "CHIRAL4D.SYMMETRY.SUSCEPTIBILITY.01"
+    ],
+    "summary": "Zero-twist static density susceptibilities S_density(q) (16 sites, beta = 2): g = 0.018: Gamma 4.20, P 6.52, H 8.54 (free 1.72 / 3.42 / 4.97); g = 0.021: 7.45 / 8.92 / 10.35; g = 0.03: 13.74 / 14.21 / 14.97. Uniform growth with g (Gamma fastest: charge fluctuations), no q peak -> no indication of translation breaking at these sizes; chi_O noisy. Single volume: no order statement (16 -> 32 pending).",
+    "volume_16_32": "beta = 2, zero twist, S_density(Gamma / P / H): g = 0.018: 16 sites 4.20 / 6.52 / 8.54 -> 32 sites 3.62 / 6.18 / 8.25 (free 1.72 / 3.42 / 4.97 and 1.48 / 3.48 / 4.82); g = 0.021: 16 sites 7.45 / 8.92 / 10.35 -> 32 sites 4.50 / 6.99 / 9.02. No growth with V (an ordered density wave would give S(q) ~ V) and no q peak -> no indication of density order at g <= 0.021 (beta = 2 only). chi_O from the HS subtraction is not reliable (oh32 g = 0.018: -10.3 +- 1.1 < 0) and is not used."
+  },
+  "groundline_residue": {
+    "script": "groundline_residue.py",
+    "result": "4/4",
+    "research_ids": [
+      "CHIRAL4D.GROUNDLINE.RESIDUE.01"
+    ],
+    "rule": "fixed before the beta = 4/6 data: GROUND_CONNECTED iff Z_0 - 2 sigma > 0 (M_G: Z = Z_0 + A e^{-beta delta}) and the coldest residue exceeds 0.1 by 2 sigma; THERMAL iff the coldest residue is compatible with 0 (<= 0.05 at 2 sigma) and the M_T decay rate is significant; otherwise UNDECIDED; < 3 temperatures -> INSUFFICIENT; R < 0.5 excluded",
+    "runs": [
+      "reweight_points_md_cubic16_ds3.json",
+      "reweight_points_md_cubic16_gl4c.json",
+      "reweight_points_md_cubic16_gl6c.json",
+      "reweight_points_md_cubic16_ds4.json",
+      "reweight_points_md_cubic16_cf4d.json",
+      "reweight_points_md_cubic16_gl4d.json",
+      "reweight_points_md_cubic16_gl6a.json",
+      "reweight_points_md_cubic16_gl6b.json"
+    ],
+    "results": {
+      "g0.018_P+0.39(1,1,1)_Q+": {
+        "status": "GROUND_CONNECTED_3BETA_CANDIDATE -> BURN_IN_SUSPECT (round 56)",
+        "Z0": "0.913 +- 0.004",
+        "series": "beta 2: e = -0.035 +- 0.018, Z = 0.94, R = 1.000; beta 4: e = +0.047 +- 0.005, Z = 0.91, R = 0.999; beta 6: e = +0.007 +- 0.013, Z = 0.96, R = 0.987; G(beta/2) at beta = 6: 0.482",
+        "matrix_windows_beta6": "[L, U](0.1) = [0.00, 1.00], (0.25) = [0.71, 1.00], (0.5) = [0.90, 1.00], (1) = [0.94, 1.00] (errors x20); beta = 4: infeasible up to x20 (n/a)"
+      },
+      "g0.021_P+0.35(1,1,1)_Q+": {
+        "status": "GROUND_CONNECTED_3BETA_CANDIDATE -> BURN_IN_SUSPECT (round 56)",
+        "Z0": "0.803 +- 0.009",
+        "series": "beta 2: e = -0.109 +- 0.063, Z = 0.84, R = 1.000; beta 4: cf4d e = -0.275 +- 0.144, Z = 0.56 +- 0.16, R = 0.996 / gl4d e = -0.030 +- 0.025, Z = 0.78, R = 0.984; beta 6: gl6a e = +0.022 +- 0.018, Z = 0.82, R = 0.977 / gl6b e = +0.068 +- 0.019, Z = 0.78, R = 0.975",
+        "matrix_windows_beta6": "gl6a: [L, U](0.1) = [0.00, 0.91], (0.25) = [0.20, 1.00], (0.5) = [0.72, 1.00], (1) = [0.84, 1.00] (x8); gl6b: (0.25) = [0.72, 1.00], (0.5) = [0.93, 1.00], (1) = [0.97, 1.00] (x20)"
+      },
+      "controls_P-d": "g = 0.018 and 0.021 at P - lambda (1,1,1): ground-connected line at |e| = 0.9-1.1 with Z = 0.46-0.50 (finite-energy line); U_0.5 <= 0.25-0.34 where feasible"
+    },
+    "verdict": "Scenario 1 of the decision structure (status GROUND_CONNECTED_3BETA_CANDIDATE, not yet promoted): the mirror line at the predeclared Q+ momentum survives cooling with finite residue Z_0 = 0.91 (g = 0.018) and 0.80 (g = 0.021) and energy |e| <~ 0.07 -> no mirror gap there up to g = 0.021 on 16 sites, beta <= 6. Scope: one volume, one momentum per coupling (near the tracked node), energies model-dependent at the level beta e ~ 0.3; not yet sector-projected (SECTOR.PROJECTED.GREEN production pending); the window Omega = 0.1 is not resolved at beta = 6 (L_0.1 = 0 everywhere). Error caveats: the second g = 0.021 beta = 4 chain moves G(beta/2) by 0.04 against cf4d (binned errors 0.004); several matrix windows need error inflation x8-x20 or are infeasible (n/a).",
+    "status_rename": "GROUND_CONNECTED -> GROUND_CONNECTED_3BETA_CANDIDATE (2026-10-03): three temperatures cannot exclude a slow decay; GL4 counter-case Z = 0.6 e^{-beta} + 0.45 e^{-0.03 beta} (Z_inf = 0) gives an apparent plateau Z_0 ~ 0.37 at beta = 2, 4, 6 and is classified as a candidate. Promotion rule: GROUND_CONNECTED_<n>BETA_CANDIDATE + SPG_LOW_GAP (start-sector projected Green function) + SECTOR_LOW_GAP (direct sector trace) -> MIRROR_GROUND_SECTOR_LIGHT.",
+    "burn_in_caveat": "BURN_IN_SUSPECT (round 56): the beta = 2/4/6 series used 8-10 burn-in sweeps; at g = 0.018, beta = 6 equilibrated chains give G(beta/2) = 0.39 +- 0.03 instead of 0.48 -- the 3-beta candidate status of g = 0.018 / 0.021 is suspended until re-measured"
+  },
+  "spg_production": {
+    "script": "spg_production.py",
+    "research_ids": [
+      "SECTOR.PROJECTED.GREEN.PRODUCTION.01"
+    ],
+    "method": "start projector only (64 elements: 16 twisted translations x Z4); f_U = Tr[U X]/Tr[X] sign-exact by path continuation in the common plane-wave eigenbasis; g_U(tau) from the UDV chains with V_A -> V_A S_U^T; absolute normalisation; fixed tau = 0, 0.5, 1, 1.5, 2, 3 compared across beta. Checks: SPP1 Fock brute force with pairing (3e-14), SPP2 free closed forms for all 64 elements on the twisted cubic16 (f 3e-12, g 2e-15 abs.), SPP3 twisted translations commute with H_w and map the HS composites by real orthogonal 10 x 10 matrices (the HS-averaged slice commutes with all 64 elements), SPP4 U = 1 equals greens_k and f^2 equals the determinant ratio at three cuts.",
+    "observation": "Sector traces (operator independent) at g = 0.018, lambda = 0.39, 16 sites: beta = 2: all 64 sectors at 1/64 (per-configuration |f_U| <= 7e-17); beta = 4: max D_r = 0.0158 (uniform 0.0156), no sector above 0.02, per-configuration |f_U| <= 0.007 -- quantitatively the first-order HF quasi-particle model with the 16 Q+ mirror modes moved to |e| ~ 0.01 (max |<U>| 1.8e-3, max D 0.0157, no sector above 0.02), while the free twisted system (mirror modes at 0.53) gives max |<U>| 0.27, max D 0.0386 with 16 sectors above 0.02; the uniform sector spread at beta = 4 is the operator-independent trace of 16 near-zero modes. beta = 6: the projection acts -- reference sector (K, q) = (0, 0) with D = 0.171 +- 0.014, nearly degenerate with (13, 1) = reference + one particle at the mirror momentum (0.162), (15, 3) (0.161), (2, 2) (0.152); 28 sectors above 0.02 (free: max D 0.256, 11 sectors; HF: 0.043, 16 sectors).",
+    "status": "budget test SPG.BUDGET.01 applied: no run SPG_RESOLVED; second seeds running",
+    "result": "6/6",
+    "results_g0.018": {
+      "C_ref_tau": "beta = 6, reference (0, 0), absolute: tau 0 / 0.5 / 1 / 1.5 / 2 / 3: 0.4995 / 0.474 / 0.470 / 0.458 / 0.457 / 0.451 (jackknife +- 0.0004-0.0025, underestimated: 16 measurements, tau_int ~ 5); free reference 0.500 / 0.338 / 0.230 / 0.158 / 0.111 / 0.065",
+      "fixed_tau_across_beta": "tau = 0.5 / 1 / 1.5 / 2: beta = 4 (projection inactive, = G): 0.472 / 0.488 / 0.443 / 0.454; beta = 6 (reference sector): 0.474 / 0.470 / 0.458 / 0.457 -- stable within ~0.02",
+      "SPG_LOW_GAP": "NOT ESTABLISHED: the reference-sector curve is flat, but its denominator D_ref is not resolved by the budget test",
+      "SECTOR_LOW_GAP": "NOT ESTABLISHED (withdrawn with the promotion): the slope -0.01 +- 0.11 uses the unresolved sector fractions",
+      "promotion": "WITHDRAWN (round 54, SPG.BUDGET.01): the round-53 promotion to MIRROR_GROUND_SECTOR_LIGHT was made without a budget test; beta = 6: B5 (16 sector fractions negative up to -8.8 sigma_Gamma, all negative in every configuration of the run) and B6 (one seed); beta = 8: B4 (N_eff 4.3), B5, B6; max |Im D_r| 0.06-0.09 although the exact fractions are real -> errors underestimated, translation projection under-sampled. Status: GROUND_CONNECTED_3BETA_CANDIDATE with SPG_PROJECTION_UNRESOLVED.",
+      "beta8": "beta = 8 (R = 0.997): four near-degenerate sectors (0, 0) 0.182, (15, 3) 0.179, (13, 1) 0.177, (2, 2) 0.174 (+- 0.024); free system 0.61 in one sector (5 above 0.02), HF model max 0.12; reference-sector C(tau) at tau 0 / 0.5 / 1 / 1.5 / 2 / 3: 0.505 / 0.465 / 0.465 / 0.456 / 0.447 / 0.433 (beta = 6: 0.4995 / 0.474 / 0.470 / 0.458 / 0.457 / 0.451; free beta = 8: 0.500 / 0.337 / 0.227 / 0.154 / 0.104 / 0.048)"
+    },
+    "results_g0.021": "beta = 6 (R = 0.986), lambda = 0.35: estimator NOISE-LIMITED -- per-configuration |f_U| up to ~100 (median of maxima 29), sector fractions unphysical (D up to 1.39 > 1); reference-sector curve flat (0.496 / 0.452 / 0.467 / 0.451 / 0.457 / 0.478) but not usable; status stays GROUND_CONNECTED_3BETA_CANDIDATE (no promotion)",
+    "budget_round54": {
+      "rule": "SPG.BUDGET.01 B1-B7 (per run SPP8, pooled over independent chains SPP9; B5 incl. Im D_r compatible with 0, B6 incl. chain values of the ratio C_ref = N / D; extensions fixed before the ten-chain pool was evaluated; B2 materiality D_ref >= 2/64 added after the first application, flagged as such)",
+      "g0.018_beta6_ten_chains": "SPG_PROJECTION_UNRESOLVED (B2-noise, B6, B7; cause MIXING): chain means of D_ref 0.171 / 0.018 / 0.132 / 0.664 / 0.413 / 0.130 / 1.228 / 0.089 / 1.892 / 0.100 (two unphysical > 1), pooled 0.48 +- 0.19, chi^2/dof 86090; pooled R^proj 0.979 (no projection sign problem); B5 met with chain-level errors; C_ref(tau = 0 / 0.5 / 1 / 1.5 / 2 / 3) pooled 0.501 / 0.474 / 0.468 / 0.460 / 0.460 / 0.451 but chain values incompatible (chi^2/dof 110) -> not interpretable",
+      "g0.018_beta8_two_chains": "SPG_PROJECTION_UNRESOLVED: D_ref 0.182 vs 3.72 (chi^2/dof 2927)",
+      "g0.021_beta6_two_chains": "SPG_PROJECTION_UNRESOLVED: D_ref 1.38 vs 0.185, 11 sector fractions below -3 sigma, 32 imaginary parts beyond 3 sigma",
+      "verdict": "no SPG_RESOLVED point; MIRROR_GROUND_SECTOR_LIGHT not reached at any coupling; the plain sampler mixes the translation-sector weights too slowly (per-chain median |d_ref| from 0.018 to 0.69)"
+    }
+  },
+  "scan_g024_g027": {
+    "research_ids": [
+      "CHIRAL4D.MIRROR.G024.01",
+      "CHIRAL4D.MIRROR.G027.01"
+    ],
+    "runs": [
+      "reweight_points_md_cubic16_g24a..f.json",
+      "reweight_points_md_cubic16_g27a.json"
+    ],
+    "g0.024": "beta = 4 twist scan lambda = 0.29 / 0.33 / 0.37 / 0.41: R = 0.942 / 0.691 / 0.965 / 0.856, G(beta/2) = 0.304 / 0.332 / 0.396 / 0.403; best branch lambda = 0.37: e = -0.088 +- 0.032, Z = 0.81, matrix windows L_0.25 >= 0.24, L_0.5 >= 0.72 (no mirror gap >= 0.5); beta = 2 (lambda = 0.37): unresolved (e = 0.36 +- 0.48); beta = 6 (lambda = 0.37): R = 0.345 < 0.5 -> excluded (sign limit) -> GROUNDLINE INSUFFICIENT; status LIGHT_AT_BETA4",
+    "g0.027": "beta = 4, lambda = 0.37: R = 0.549, G(beta/2) = 0.257 +- 0.026, lowest level e = -0.13 +- 0.75, Z = 0.54 +- 0.16 (unresolved), matrix window W(0.5) in [0, 0.93] -> UNDECIDED (QMC at its limit)",
+    "sign_axis": "-log R at the best branch: beta = 4: g = 0.018 0.001, 0.021 0.004-0.016, 0.024 0.036, 0.027 0.60, 0.03 0.62-3.1; beta = 6: 0.018 0.013, 0.021 0.023-0.025, 0.024 1.06; beta = 8: 0.018 0.003 -> g_sign(beta = 6) ~ 0.022-0.024, g_sign(beta = 4) ~ 0.027-0.03 on 16 sites",
+    "verdict": "the mirror is light wherever QMC resolves it (g <= 0.024 at beta = 4, g <= 0.021 at beta = 6); no gapped region reached before the sign limit -> g_sign < g_critical (if g_critical exists) on 16 sites; decision point for SOLVER.FEASIBILITY.01 reached",
+    "beta_budget": "R-only budget at lambda = 0.37 (rule: R - 2 sigma > 0.5 PASS, R + 2 sigma < 0.5 BELOW_RULE, else UNRESOLVED; >= 2 chains per beta, sigma = max(binned, chain scatter / sqrt(n))): beta 4.5: 0.04 / 0.22 -> 0.13 +- 0.09 BELOW_RULE; beta 5: 0.24 / 0.85 -> UNRESOLVED; beta 5.5: 0.59 / 0.43 -> 0.51 +- 0.08 UNRESOLVED; beta 6: 0.345 (one chain) below; beta 4: 0.965 (one chain, provisional pass) -> no beta > 4 released at g = 0.024; the single-chain scan was non-monotone (binned R errors far below the seed scatter); g = 0.027 not started",
+    "burn_in_caveat": "BURN_IN_SUSPECT: all g = 0.024 / 0.027 points used 8-10 burn-in sweeps (lightness at beta = 4 and the beta budget to be re-measured with equilibrated chains)"
+  },
+  "sector_sampling": {
+    "scripts": [
+      "sector_sampling_feasibility.py",
+      "sector_envelope.py"
+    ],
+    "research_ids": [
+      "QMC.SECTOR_SAMPLING.FEASIBILITY.01",
+      "QMC.SECTOR_SAMPLING.PRODUCTION.01"
+    ],
+    "feasibility": "projection sign healthy (R^proj 0.98-1.00, joint (phi, U) sign 0.99-1.00); Z4-only fractions physical in 17 of 18 runs (chain g018b6c9: 0.38 / 0.24 / 0.12 / 0.26 -- the earlier claim 'Z4 clean in every run' is withdrawn); translation projection mixing-limited with heavy chain-to-chain tails",
+    "envelope": "surrogate-transition envelope sampler built (forward / backward sweeps as reversible proposal, outer acceptance min(1, h'/h), 1/h reweighting); toy exact (ES1), refactored sampler bitwise identical without envelope and integrator hash f0f2d58fada5669b unchanged (ES2); benchmark g = 0.018, beta = 6 (ES3): plain 10 chains error^2 x CPU-h 0.44, envelope 3 chains 3.1 (outer acceptance 0.88, chain D_ref 1.10 / 0.27 / 2.93) -> the envelope amplifies the heavy tail; NOT adopted",
+    "next": "identify the slow field mode that fixes the per-chain sector level (record global HS observables with d_ref) and test a targeted field update (e.g. a global move of that mode, HMC trajectories); global symmetry moves (translations, Spin(10) commutant, Z4) give no information (f_U invariant)"
+  },
+  "mixing_mode": {
+    "script": "mixing_mode.py",
+    "research_ids": [
+      "QMC.MIXING.MODE.01"
+    ],
+    "outcomes": "BURN_IN_LIMITED / SLOW_MODE_IDENTIFIED / MULTIMODAL_BARRIER (rule: common first-to-last-quarter trend > 3 sigma -> burn-in; within/between < 0.1 -> barrier; else slow-mode candidate, identified only if one global field feature explains the chain means with R^2 > 0.7 and above the chain-shuffled 95 % null of the maximum R^2)",
+    "short_chains": "ten chains (burn-in 8 sweeps): log max |f_U| falls from the first to the last quarter at -3.4 sigma (one chain D_ref 3.5 -> 0.27) -> BURN_IN_LIMITED",
+    "long_chains": "six chains, burn-in 100 sweeps, 140 sweeps, per-sweep monitors (uniform channel components, tau-Fourier modes, |phi(K)|^2 at 16 momenta, norm, log |W|) and sector traces every 4 sweeps: chain-averaged log max |f_U| falls through the whole run (+0.41 -> -2.42 at sweep 124); five chains approach D_ref 0.010-0.037 (~ 1/64, uniform sectors), chain L4 stays at 0.4-1.5 with no distinguishing global observable; quarter rule on sweeps 40-140: trends -1.8 / -2.2 sigma, within/between 0.36 / 0.39 -> SLOW_MODE_CANDIDATE; features: best chain-mean R^2 0.56 (m_0) below the null 0.71, within-chain co-movement |r| <= 0.44 -> no mode identified",
+    "pooled_budget_long": "SPG_PROJECTION_UNRESOLVED (B2-noise, B6, B7, cause MIXING): chain means 0.017 / 0.072 / 0.016 / 0.76 / 0.016 / 0.043, chi^2/dof 3.6e5; C_ref pooled 0.503 / 0.465 / 0.456 / 0.425 / 0.437 / 0.436",
+    "verdict": "EXPLORATORY_DIAGNOSIS_ONLY by the four-outcome rule; descriptively a very slow relaxation (>~ 150 sweeps) after which all chains approach uniform sector fractions (SPG_INACTIVE). Consequence: every g >= 0.018 measurement taken with 8-10 burn-in sweeps (GROUNDLINE candidates, matrix windows, g = 0.024 scan, beta budget, phase R) is BURN_IN_SUSPECT until re-measured with equilibrated chains.",
+    "continued_chains": "the six long chains continued from their saved configurations (120 sweeps, total >= 260): window means of d_ref A (150-200) 0.015 / 0.011 / 0.013 / 0.029 / 0.014 / 0.058, B (210-260) 0.015 / 0.007 / -0.008 / 0.014 / 0.003 / 0.064 -- the high L4 region was transient; kappa_char <= 2.1 (no conditioning problem); four-outcome rule (fixed before the data) -> EXPLORATORY_DIAGNOSIS_ONLY (spread ratio 0.72, chi^2/dof of the B means 34); pooled budget SPG_INACTIVE (D_ref 0.027 +- 0.010 < 2/64; chain means 0.016 / 0.016 / 0.016 / 0.023 / 0.016 / 0.062)",
+    "equilibration_effect": "ordinary G_{P+d}(tau) at g = 0.018, beta = 6, lambda = 0.39 drifts with the burn-in: G(beta/2) = 0.462 +- 0.009 (burn 8, 10 chains), 0.438 +- 0.012 (burn 100), 0.388 +- 0.032 (>= 150; free 0.065) and the phase R per chain falls to 0.24-0.97 -> the equilibrium mirror line is still light-ish (two-level reading |e| ~ 0.26 at Z = 1, or a reduced residue at e ~ 0) but NOT the burn-in picture e ~ 0.007, Z ~ 0.96"
+  },
+  "equilibration_audit": {
+    "script": "equilibration_audit.py",
+    "research_ids": [
+      "QMC.EQUILIBRATION.AUDIT.01"
+    ],
+    "rule": "EQUILIBRATED iff (i) no late drift (|W_last - W_prev| < 2 sigma for G(beta/2) and log |W| per chain, windows of 50 sweeps), (ii) chi^2/dof < 2 of the last-window chain means of G(beta/2), (iii) last-window R > 0.5 per chain, (iv) no chain moves the pooled value by > 2 sigma, (v) >= 150 sweeps per chain; >= 2 chains with different starts (prior draw / equilibrated nearby configuration); else NOT_EQUILIBRATED and extend by 50 sweeps",
+    "order": "stage 1 (running since 2026-10-04 10:38): g = 0.015 beta 6 (control anchor, lambda 0.32), g = 0.018 beta 4 (lambda 0.39), g = 0.021 beta 4 (lambda 0.35); go/no-go; stage 2: g = 0.021 beta 6, g = 0.024 beta 4, g = 0.018 beta 2",
+    "no_spg": "no SPG production during the audit (D_ref recorded only as a diagnostic time series)",
+    "stage1_result": "300 sweeps, two starts per point: all three NOT_EQUILIBRATED (rule (i) late drift). G_{P+d}(beta/2) per 50 sweeps: g = 0.015 beta 6: A 0.471 -> 0.398, B ~0.25 (starts do not meet: slow return or hysteresis); g = 0.018 beta 4: A 0.449 -> 0.309, B 0.344 -> 0.210; g = 0.021 beta 4: A 0.455 -> 0.120, B 0.310 -> 0.072. Within every drifting chain G(beta/2) follows the HS amplitude (smoothed corr with |phi|^2 -0.93 ... -0.99, with the time-constant power -0.95 ... -0.98, with log |W| -0.95 ... -0.98); |phi|^2 grows from the prior 23-27 to 29-47; the power grows in pairing channels at finite momentum (channel and momentum differ between chains) -> QMC.MIXING.MODE.01 = SLOW_MODE_IDENTIFIED (overall HS amplitude); the mirror line weakens as the amplitude grows -- symmetric strong correlation vs symmetry breaking undecided (no volume test yet)",
+    "targeted_update": "global amplitude move (Jacobian s^D) + pCN on time-constant modes, validated (global_moves.py GM1-GM3); benchmark chains g021b4GA / g021b4GB (eps 0.02, rho 0.3) running since 2026-10-04 17:00; plain chains extended to 500 sweeps"
+  },
+  "umbrella_amplitude": {
+    "script": "umbrella.py",
+    "research_ids": [
+      "QMC.UMBRELLA.AMPLITUDE.01"
+    ],
+    "result": "3/3",
+    "setup": "g = 0.015, beta = 6, lambda = 0.32 (16 sites): 20 windows U = kappa/2 (|phi|^2 - c)^2 (c = 32 ... 52; kappa 2, and 8 in the gap 38.5-40 with both branch starts), local sweeps + global amplitude moves, WHAM (unit-tested on a synthetic double well) with binwise phase correction F_phys = F_pq - log <cos theta>_A and block bootstrap",
+    "profile": "F_phys: 33.0: 22.0, 34.4: 16.7, 37.2: 14.9, 38.6: 13.4, 40.0: 10.2, 41.4: 6.9, 42.8: 2.5, 44.2: 1.0, 45.6: 0.25, 47.0: 0.7, 48.4: 3.4, 51.2: 10.0; G(beta/2) 0.37 (34.4) -> 0.20 (45.6) -> 0.16 (51); R(A) 0.95-1.00 except 0.76 at 38-40",
+    "result_values": "Delta F = F_strong - F_weak = -13.4 +- 0.9; strong minimum at |phi|^2 ~ 44.6-45.6; barrier not resolved (0.00 +- 0.01 in the merged profile; windows at 39-40 internally inconsistent, mean forces -5.4 ... +1.0 at the same position) -> a shallow barrier <~ 1 possible, coexistence NOT established",
+    "verdict": "the paired state is the lower-free-energy state at g = 0.015, beta = 6 on 16 sites (sign robust across WHAM variants; the magnitude is not controlled because three same-centre window pairs disagree); barrier not resolved; no first-order claim",
+    "systematics": "WHAM requires equilibrated windows; three window pairs with the same centre but different branch starts disagree (c = 38 (kappa 2): 37.8 vs 40.3; 39.0: 38.6 vs 39.8; 40.0: 39.9 vs 40.8) -> Delta F depends on which members are used: all 20 windows -13.4, without the low-start members -15.6, without the high-start members -9.2; sign robust (paired state lower), magnitude -9 ... -16 (systematic) on top of the bootstrap +- 0.9"
+  },
+  "volume_order_test": {
+    "script": "volume_test.py",
+    "research_ids": [
+      "CHIRAL4D.PAIRING.ORDER.VOLUME.01"
+    ],
+    "status": "running (uniform-mode pCN); G4 undecided, trend towards uniform pairing order",
+    "interim": "g = 0.021, beta = 4, lambda = 0.35, global moves: 8 sites (400 sweeps, stationary): |phi|^2 2.5-2.6 x prior, max time-constant mode 41 / 203 x prior (two chains), G(beta/2) 0.014-0.016; 16 sites: 2.3 x, 26-30 x, G 0.035-0.039; 32 sites at 33-37 of 100 sweeps: 1.8-1.9 x and rising, 11-18 x -> no verdict (rule: >= 100 sweeps and stationary max mode per cell; S_max/N reported)",
+    "note": "the first automatic verdict 'SHORT_RANGE' used 4-sweep 32-site chains and is void; the guard was added afterwards",
+    "block_rule": "VT3 (fixed 2026-10-05 before the 32-site extension data): per 50-sweep block (A) stationarity of |phi|^2, S_0/N, S_max(K != 0)/N, anisotropy within 15 % over the last two 25-sweep blocks, (B) two chains within 30 % on S_0/N and S_max/N, (C) R_eq on the stationary part with R_eq - 2 sigma > 0.5; all on 8 / 16 / 32 with S/N falling > 1.6 per doubling -> G4_PASS_CANDIDATE (not PASS: 8 / 16 / 32 is no asymptotic family); R_eq + 2 sigma < 0.5 on 32 -> SOLVER_LIMIT (stop sweeping, SOLVER.FEASIBILITY.01); else CONTINUE",
+    "after_100_sweeps": "CONTINUE: 8 sites -- chains disagree (S_0/N 23.4 vs 2.3: one chain formed a uniform condensate; the 8-site cell is probably too small); 16 sites -- consistent, R_eq 1.00, stationarity marginal; 32 sites -- not stationary, chains not yet consistent, R_eq 0.20 +- 0.20; S_max(K != 0)/N falls 8 -> 16 by 1.5 (rule 1.6) and 16 -> 32 by ~3.2",
+    "after_150_sweeps": "32 sites after 150 sweeps: chain A S_max(K != 0)/N 0.90 -> 0.98 -> 0.96 (flattening), |phi|^2 2.12-2.18 x prior, R per 25 sweeps 0.68 / 0.82; chain B 0.63 -> 0.77 -> 0.97 (still rising), 2.13-2.23 x, R 0.66 / 0.52; S_0/N 0.25 (A) vs 0.97 (B) not yet consistent; VT3 -> CONTINUE. Compared with 16 sites (S_max(K != 0)/N 1.95-2.40) the 32-site value ~0.96 is a factor ~2.3 lower (short-range-like) if it saturates there. Next block (150 -> 200) running; 16-site chains extended for the VT3 stationarity test; two more 8-site chains (the 8-site chains disagree: one formed a uniform condensate)",
+    "after_200_sweeps": "TREND REVERSAL in the uniform channel: the uniform pairing order parameter S_0/N (K = 0) grows slowly and steadily in every long chain -- 16 sites 0.17 -> 0.61 -> 1.04 -> 1.72 -> 3.04 (GA, 250 sweeps) and 0.46 -> 1.17 -> 1.46 -> 2.02 -> 2.58 -> 3.01 (GB, 300 sweeps), still rising; 8 sites: 3 of 4 chains carry a large uniform condensate (S_0/N 14-25), one does not (2.3); 32 sites (200 sweeps): 0.24 -> 0.38 (A) and 0.77 -> 1.27 (B), rising, while S_max(K != 0)/N is flat (0.76-0.89) and R recovered (0.77-0.98). The earlier 'falling S/N' was a non-equilibrium effect; slow condensation of a uniform Spin(10)-vector pairing order parameter (breaks Spin(10) and Z4 -> Z2) is now the more likely outcome. VT3 still CONTINUE (its 25-sweep stationarity window misses this slow drift). Targeted update for this direction: pCN on the 10 uniform (K = 0, omega = 0) channel modes (global_moves.py GM5, validated); runs on 16 and 32 sites started 2026-10-06 07:29.",
+    "order_parameter_definition": "S_0 is the physical pairing structure factor: phi_A couples linearly to O_A, so <phi_A phi_B> = 2 g dtau delta_AB + (2 g dtau)^2 <O_A O_B> exactly (time-integrated, Trotter sense); rotation-invariant measure |M|^2 / N with M_A = sum_{x,l} phi_A (all 10 channels), contact term (10 in prior units) subtracted, phase-reweighted. Order criterion: |M|^2 / N -> common positive value for growing N (finite systems do not break the symmetry: different Spin(10) directions between chains are expected).",
+    "after_200_sweeps_invariant": "|M|^2 / N (last 50-sweep windows, contact-subtracted and phase-reweighted values nearly identical): 8 sites 30 -> 38 (A), 6.6 -> 8.1 (B), 34 -> 47 (C), 36 -> 58 (D); 16 sites 5.4 -> 7.7 -> 10.1 (GA), 6.4 -> 7.8 -> 10.4 (GB); 32 sites 1.0 -> 1.5 (A), 1.5 -> 3.0 (B) -- all still rising, no cell stationary; a window Binder ratio <|M|^4> / <|M|^2>^2 ~ 1.00-1.03 is NOT informative yet (|M|^2 moves too slowly within a window)"
+  },
+  "tempering": {
+    "script": "tempering.py",
+    "research_ids": [
+      "QMC.TEMPERING.01"
+    ],
+    "result": "2/2",
+    "note": "validated on a toy; not run on Theta_1 (Delta log |W| ~ 300 between branches vs 2-30 fluctuations -> ~20 replicas); umbrella sampling along |phi|^2 used instead"
+  },
+  "below_015": {
+    "research_ids": [
+      "QMC.EQUILIBRATION.AUDIT.01 (g < 0.015)"
+    ],
+    "runs": "beta = 6, global amplitude moves, 120 sweeps, starts from the prior and from the paired g = 0.015 configuration",
+    "g0.010": "both starts converge to the weak state: |phi|^2 / prior 1.11 (prior start) vs 1.95 -> 1.14 (paired start); G(beta/2) 0.48 vs 0.21 -> 0.40 (still rising) -> weak state is the equilibrium",
+    "g0.012": "two stationary branches after 120 sweeps: |phi|^2 / prior 1.11-1.13 with G(beta/2) 0.47 (prior start) vs 1.29-1.31 with G 0.30-0.31 (paired start, plateau for the last 80 sweeps) -> undecided",
+    "g0.015": "two long-lived branches with global moves: 1.23-1.33 (G 0.29-0.34) vs 1.47-1.53 (G 0.19-0.21); umbrella: paired state lower (Delta F -9 ... -16)",
+    "reading": "g = 0.010: weak state is the equilibrium candidate (16 sites, beta = 6); g = 0.012: NOT yet decided (two long-lived stationary branches: true coexistence, extremely slow mixing or a finite-V / finite-beta effect); g = 0.015: the paired branch is lower in every WHAM variant (sign robust, magnitude not controlled -- not quoted as a precise free-energy difference); g >= 0.018: the paired state is reached. For Gate B the exact onset is secondary."
+  },
+  "paired_state_sector_traces": {
+    "research_ids": [
+      "CHIRAL4D.SECTOR_GAP.01 (paired state, preparation)"
+    ],
+    "runs": "g = 0.015, beta = 6, lambda = 0.32, two chains started in the paired minimum (|phi|^2 44-46.5, global moves), all 64 sector traces every 8 sweeps",
+    "result": "G(beta/2) = 0.20-0.21, R = 0.96-0.99; sector fractions exactly uniform (all D_r = 0.016 = 1/64, |Im D| < 1e-3), per-configuration |f_U| ~ 0 for U != 1: the strong pairing fields break U(1) and the translations in every configuration, so each Gaussian is spread over all sectors; the free system at the same beta / twist concentrates (max D 0.149, 15 sectors above 0.02)",
+    "reading": "the direct sector-trace route is UNINFORMATIVE in the paired state at beta = 6 with this HS representation (the physical sector weights are bounded by the per-configuration values, i.e. uniform at this beta -- consistent with many states below ~1/beta in every sector OR a gap that the projection cannot resolve at beta = 6); the active-sector gap needs another observable (full tau dependence of the mirror and composite correlators, larger beta) -- open",
+    "status": "SECTOR_TRACE_INACTIVE_IN_PAIRED_HS (a blind detector in this HS representation, not a Gate B failure)"
+  },
+  "mirror_correlator_basis": {
+    "research_ids": [
+      "MIRROR.CORRELATOR.BASIS.01"
+    ],
+    "status": "PREREGISTERED (2026-10-05), not run",
+    "purpose": "active mirror-sector gap in the paired state without the HS sector projection (blind there): variational spectrum of operators with the mirror quantum numbers",
+    "operators": [
+      "O_1: elementary mirror fermion psi_{k, s, f} at k = P + delta, Q = +1/2 flavours, full 2 x 2 spin block",
+      "O_2: on-site cubic pairing composite sum_A (psi^T C Gamma_A psi)(x) (Gamma_A^* psi^*)(x) projected to the same quantum numbers (Z4 charge, momentum, Q, spin)",
+      "O_3: on-site density composite (psi^dag psi)(x) psi(x) and O_4: the Spin(10) generator contraction (psi^dag Gamma_{AB} psi)(x) Gamma_{AB} psi(x)",
+      "O_5 ... : the same cubic contractions with one constituent on a nearest-neighbour site (8 bcc bonds, symmetrised), momentum-projected",
+      "all with momentum projections k = P + delta and the four nearest twisted momenta around it"
+    ],
+    "evaluation": "per HS configuration by Wick's theorem from the stabilised equal- and unequal-time Nambu Green functions (exact for the Gaussian X(phi)); phase-reweighted; C_ij(tau) for tau = 0 ... beta",
+    "analysis": "positivity of C(tau_0) checked (directions with non-positive eigenvalues dropped and reported); GEVP C(tau) v = lambda C(tau_0) v with tau_0 = 0.5 fixed in advance; effective energies E_n from lambda_n(tau + 0.5) / lambda_n(tau); report the lowest E_n with plateau, its overlap with O_1, and its stability under enlarging the basis",
+    "runs": "paired state at g = 0.015 (beta = 4, 6) and g = 0.021 (beta = 4), 16 sites, >= 2 equilibrated chains each; later 32 sites",
+    "verdict_rule": "MIRROR_SECTOR_GAP_CANDIDATE if the lowest GEVP level is > 2 x its error above the desired-Weyl continuum threshold at the same momentum, stable between beta = 4 and 6 and under basis enlargement; MIRROR_SECTOR_LIGHT if any level with the mirror quantum numbers is compatible with ~0; caveat: no light state in the basis is no proof against a dark state -- a final gap needs a complete operator space, an independent bound or a second solver"
+  },
+  "order_parameter_umbrella": {
+    "script": "umbrella.py (UM4, UM5)",
+    "research_ids": [
+      "CHIRAL4D.PAIRING.ORDER.UMBRELLA.01"
+    ],
+    "method": "umbrella windows in X = |M|^2 / N (M_A = sum_{x,l} phi_A, prior units; bias kind 'uniform'), local sweeps + global amplitude move + uniform-mode pCN, umbrella integration of the mean forces; validated at tiny g against the analytic chi^2_10 / N prior force (UM4, max deviation 0.22)",
+    "rule": "fixed 2026-10-06 before the window data: X*_32 / X*_16 in [0.7, 1.4] with X* > 0 -> FAIL_ORDERED (long-range uniform pairing order); < 0.6 -> SHORT_RANGE; else UNDECIDED",
+    "result_16": "g = 0.021, beta = 4, lambda = 0.35, 16 sites, 8 windows (kappa 1, c = 4 ... 34, 100 sweeps): mean forces F'(X) -4.4 (8.4), -1.4 (9.4), -2.2 (14.2), -0.2 (16.2), +0.6 (19.4), +1.6 (22.4), +3.0 (25.0), +3.8 (30.2); minimum of F at X* ~ 16-20 (flat region; the outer windows were still drifting, c = 12 / 16 / 20 stationary); R 0.99-1.00",
+    "result_32": "running (6 windows c = 3, 8, 13, 18, 24, 30, 50 sweeps, from the most advanced 32-site configuration), expected ~18:30",
+    "result_32_first": "first 32-site attempt (pCN only): all six windows stuck at X ~ 4-5 after 14 sweeps (order parameter barely moves) -> aborted; added the multiplicative move of the 10 uniform coordinates (Jacobian s^10, validated GM6, acceptance 0.44-0.60 on 32 sites). 32 sites, 50 sweeps with it: every window runs far ABOVE its centre: c 3 -> X 10.4 (F' -7.4, stationary), c 8 -> 14.7 (F' -6.7, stationary), c 13 -> 18.0, c 18 -> 23.1, c 24 -> 26.1, c 30 -> 26.1 (the last four still rising); R 0.99-1.00. On 32 sites F(X) falls strongly up to X >~ 15-26: the K = 0 order parameter per site does NOT fall with N (16 sites: X* ~ 16-20) -> SHORT_RANGE excluded; long-range uniform pairing order indicated. Formal rule verdict pending stationarity (extension of the 32-site windows and a 16-site rerun with the same moves started 2026-10-07 07:25).",
+    "status": "SHORT_RANGE excluded; FAIL_ORDERED indicated; formal verdict pending stationarity"
+  }
+}

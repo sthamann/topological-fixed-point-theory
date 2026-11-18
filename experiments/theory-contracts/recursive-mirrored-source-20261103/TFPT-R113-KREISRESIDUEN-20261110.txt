@@ -1,0 +1,67 @@
+TFPT | R113 Kreisresiduen und der geometrische Rest
+10. November 2026
+
+Originale. R113-ORIGINAL-UND-REFERENZ-20261109.txt, Abschnitt 3,
+check_quarter_reference.py und der unveränderte v252 Builder.
+Metrology001:103–149 und WEIGHT.txt:63–116 im Vertrag
+original-local-source-variable-background-20261102.
+
+Prüffrage. Liefert die vorhandene R032/v252 Tangentialmatrix auf dem
+gleichen Viertelkreis durch die spektralen Operationen des alten
+Geometriezweigs das erforderliche Feldgewicht? Die Typprüfung setzt
+die wirkliche 96er Tangentialmatrix ein, ohne den Kreis als die
+vierdimensionale Geometrie auszugeben.
+
+Schreibe E_p(m)=sqrt(p²+m²), p=(k+1/2)/(2r), und m_j für die 48
+gepaarten internen Massen von M+RY. Die hier geprüfte reelle spektrale
+Spur relativ zur festen freien S Referenz ist exakt
+
+ Z(s;R)=2 Σ_(j,k) [(p²+m_j²)^(-s)-p^(-2s)].
+
+Dieselbe Aussage gilt bei Subtraktion eines festen massiven
+Vergleichs, indem man zwei freie Vergleiche differenziert. Denn
+
+ (p²+m²)^(-s)-p^(-2s) = -s ∫_0^(m²) (p²+u)^(-s-1) du.
+
+Die Spur konvergiert lokal gleichmäßig für Re(s)>−1/2. Sie ist dort
+holomorph und hat einen expliziten Faktor s. Damit gilt für den
+konkreten Kreis Res_(s=1) Z = 0 und FP_(s=0) Z = 0. Hier geht es
+um den reellen Spektralanteil. Die gebundene geometrische Eta Phase
+bleibt eine getrennte originale Operation und liefert keine reelle
+Dämpfung als reine Phase.
+
+Auch die reguläre zeta Determinante desselben Operators liefert
+einen zu schwachen reellen Faktor. Termweise Ableitung und das
+Eulerprodukt des Hyperbelkosinus ergeben
+
+ -Z'(0;R)=2 Σ_j log cosh(2π r m_j(R)).
+
+Das folgt aus Π_(k≥0)[1+(2rm/(k+1/2))²]=cosh(2πrm).
+Quelle der Produktidentität: NIST DLMF https://dlmf.nist.gov/4.36.E2.
+Die Logdeterminante wächst höchstens linear in R, weil
+log cosh(x)≤|x| und Σ m_j(R)=O(R) in der gegebenen Matrix.
+Jede feste Potenz dieses Determinantenfaktors ist gegen das
+R² log R Wachstum des leeren Anregungsskalars zu schwach.
+
+Numerischer Gegencheck, unveränderter full96 v252 Diagnosesatz,
+r=1, freier S Vergleich. Direkte Summation mit N=2^16 und
+0≤ fehlender Logdeterminantenrest ≤ 2 Σ_j(2r m_j)²/N.
+Beim Vergleich nach expliziter Restabschätzung liegt die
+geschlossene Formel in den direkten Intervallen. Die vier Werte
+für R=0,.55,2,8 werden mit dem Originalbuilder berechnet.
+R=   0   closed=  68.518350870   missed=0.002304199   bound=0.002304199
+R=0.55   closed= 510.221102582   missed=0.009066077   bound=0.009066077
+R=   2   closed=1884.272316423   missed=0.091717460   bound=0.091717460
+R=   8   closed=7660.893864020   missed=1.432916240   bound=1.432916374
+
+Die Abschätzung folgt aus log(1+x)≤x und
+Σ_(k≥N)(k+1/2)^(-2)≤ ∫_N^∞u^(-2)du=1/N.
+
+Folge. Die tatsächliche vierdimensionale Quartik kann nur über eine
+Abbildung des wirklichen geometrischen Operators und der gebundenen
+Referenz zur R113 Randform getragen werden. Reine spektrale
+Weiterverarbeitung der hier gegebenen Tangentialmatrix erzeugt mit
+diesen beiden Originaloperationen keinen Beitrag dieser Art.
+Die Aussage erfasst die benannten relativen Kreisresiduen und
+die zeta Determinante. Sie erfasst weder unbekannte ursprüngliche
+Restfaktoren noch den vollständigen 4D Operator samt Randbedingungen.

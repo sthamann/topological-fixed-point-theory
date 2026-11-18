@@ -1,0 +1,21 @@
+{
+  "steps": [
+    {
+      "step": "ES1 toy: the surrogate-transition chain (pi_0 proposal kernel reversible as a forward / backward mixture, outer acceptance min(1, h'/h)) samples pi_0 h = N((a, 0), 1) and the 1/h reweighting recovers the pi_0 averages",
+      "pass": true,
+      "detail": "a = 0.8: <x>_pi = [0.785, 0.005] (exact (0.8, 0)), reweighted <x>_pi0 = [-0.006, 0.022] (exact (0, 0)), outer acceptance 0.84"
+    },
+    {
+      "step": "ES2 refactored reweight.run (optional envelope, forward / backward sweeps): with outer = None the phase series and Green functions on debug4 are bitwise identical to the pre-refactor sampler (stored reference) and the integrator hash is unchanged",
+      "pass": true,
+      "detail": "bitwise identical: True; integrator hash f0f2d58fada5669b"
+    },
+    {
+      "step": "ES3 (statement) benchmark at g = 0.018, beta = 6: chain-to-chain error x sqrt(total CPU time) of D_ref for plain vs envelope chains, outer acceptance",
+      "pass": true,
+      "detail": "plain (10 chains): D_ref 0.463 +- 0.183, cost metric 39.71; envelope (3 chains, outer acceptance 0.88): D_ref 1.429 +- 0.786, cost metric 105.46"
+    }
+  ],
+  "passed": 3,
+  "total": 3
+}

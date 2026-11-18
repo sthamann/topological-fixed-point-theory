@@ -1,0 +1,137 @@
+THE HYPERELLIPTIC HALF TURN HAS AN ORDER FOUR SPIN LIFT
+An exact typed survivor after the literal Q to J quotient obstruction
+2026-10-26
+
+VERDICT
+
+PROVED.  Let C be the genus two curve
+
+    C: eta^2=1-w^6
+
+and let h be its hyperelliptic involution.  Every one of the sixteen theta
+characteristics S on C is h invariant.  For each specified S, either of the
+two lifts of h that is compatible with S^2=K_C has square -I.  Thus every
+theta characteristic carries an order four spin lift of the geometric order
+two half turn.
+
+This proves the exact geometric mechanism by which the half turn h=Q^2 can
+produce a central quarter phase.  It does not select one of the sixteen S,
+choose between the two signs of its lift, or identify the resulting spin
+module with the native Gaussian E8 lattice module.  In particular it does not
+undo the separate proof that the literal action Q on Jac(C)[2] cannot map to
+the central Gaussian J on L/(1+i)L.
+
+
+1. ACTION OF THE HYPERELLIPTIC INVOLUTION ON Pic^1
+
+Choose a Weierstrass point W.  It is fixed by h and the hyperelliptic fiber at
+W is 2W, so
+
+    K_C isomorphic O_C(2W).                                      (1)
+
+Every degree one line bundle has a unique expression
+
+    L=O_C(W) tensor M,       M in Jac(C).                         (2)
+
+The hyperelliptic involution induces [-1] on Jac(C).  Hence
+
+    h^*L = O_C(W) tensor M^(-1)
+          = K_C tensor L^(-1).                                  (3)
+
+Equivalently, for every degree one divisor class D,
+
+    hD is linearly equivalent to K_C-D.                          (4)
+
+This argument takes place on all of Pic^1.  It does not assume that D is an
+effective point divisor.
+
+
+2. ALL SIXTEEN THETA CHARACTERISTICS ARE INVARIANT
+
+Let S be any theta characteristic:
+
+    S^2 isomorphic K_C.                                          (5)
+
+Equations (3) and (5) give
+
+    h^*S isomorphic K_C tensor S^(-1) isomorphic S.               (6)
+
+There are 2^(2g)=16 such line bundles at genus two.  Therefore h fixes every
+theta characteristic as an isomorphism class.  This is stronger than the
+modulo two statement that h acts trivially on Jac(C)[2]: it identifies each
+member of the affine theta characteristic torsor with its pullback.
+
+
+3. THE COMPATIBLE LIFT SQUARES TO -I
+
+Fix an isomorphism
+
+    alpha:S tensor S -> K_C.                                     (7)
+
+Because of (6), choose an isomorphism beta:h^*S->S.  The two maps from
+(h^*S)^2 to K_C obtained from alpha, beta, and the differential action of h
+on K_C differ by a nonzero complex scalar.  Rescaling beta by a square root
+makes the diagram compatible with (7).  Exactly two compatible choices
+remain, beta and -beta.
+
+Now evaluate at any Weierstrass fixed point.  Take a local coordinate u with
+
+    h(u)=-u.                                                      (8)
+
+Then h^*(du)=-du.  If beta acts on the one dimensional spin fiber at that
+point by the scalar lambda, compatibility with alpha gives
+
+    lambda^2=-1,
+    lambda=+i or -i.                                             (9)
+
+The square beta composed with h^*beta is a holomorphic automorphism of S and
+therefore a constant scalar on the connected compact curve.  Its value at the
+fixed point is lambda^2=-1.  Consequently
+
+    beta composed with h^*beta = -I_S,                            (10)
+
+so each compatible lift has order four.  Changing beta to -beta changes its
+quarter phase sign but leaves (10) unchanged.
+
+
+4. PRECISE CONSEQUENCE FOR THE CLOCK DICTIONARY
+
+For the original marked curve,
+
+    Q^2=h.
+
+The correct typed central phase candidate is therefore the spin lift beta of
+the half turn h, not the action of Q on the two torsion label space.  The two
+facts coexist exactly:
+
+  * h acts as [-1] on integral H_1(C,Z) and as the identity on Jac(C)[2];
+  * its compatible action on every chosen square root of K_C squares to -I.
+
+Thus an internal quarter phase can survive after the underlying two torsion
+label has forgotten the sign.  This is the same spin cocycle mechanism as the
+older order four lift of an order two base operation, now proved directly on
+the actual genus two curve C.
+
+Three source selections remain necessary before this lift can be called the
+native Gaussian J:
+
+  1. the original construction must select a particular theta characteristic
+     S among the sixteen;
+  2. it must select one of the two compatible signs beta and -beta;
+  3. it must construct an equivariant identification of the resulting spin or
+     theta module with the native Gaussian E8 module, including its central
+     mu4 phase.
+
+The curve, its q and p coefficient packets, and their two torsion action do
+not yet supply those three markings.  No native J identity is claimed here.
+
+
+SOURCE ANCHORS
+
+  * research-20261026-real-boundary/CLOCK-Q-PACKET-COMPATIBILITY.txt,
+    lines 22--54: the actual Q and h=Q^2 on C.
+  * research-20261026-real-boundary/Q-NATIVE-CLOCK-TEST.txt:
+    the separately proved literal quotient obstruction and its exact scope.
+  * Standard genus two hyperelliptic facts used explicitly above:
+    K_C is a hyperelliptic fiber, h acts by [-1] on Jac(C), and theta
+    characteristics form a torsor of size 2^(2g) over Jac(C)[2].

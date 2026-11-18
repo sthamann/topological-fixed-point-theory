@@ -1,0 +1,104 @@
+ACTUAL E8 CURRENT RESPONSE, FULL CLIFFORD CHANNEL AND RETAINED CARRY
+28 October 2026
+
+The actual source is loaded through
+tfpt_explorer.current_block_geometry._actual_current_source, which loads
+verification/v498_celestial_wp5b_singular_vector.py. No replacement E8
+bracket or fitted coupling table is used.
+
+Keep the existing first-five/last-three D5+D3 frame. Within E8, the 60
+mixed integer roots form g2=(10,6). The 128 half-roots split into the
+two64-dimensional modules g1=(16,4), g3=(16bar,4bar). The zero mode
+of a root current acts on the weight-one root states by the actual
+Chevalley bracket. Denote its restriction g1->g3 by B_beta.
+
+For each of the60 mixed roots the matrix B_beta has16 nonzero columns,
+each coefficient being exactly+1 or-1. Every input and output is incident
+to15 of these actions. Consequently
+
+  sum_beta B_beta^dagger B_beta = 15 I64,
+  sum_beta B_beta B_beta^dagger = 15 I64.
+
+Thus the mathematically specified inclusive current response
+
+  E(rho) = (1/15) sum_beta B_beta rho B_beta^dagger
+
+is completely positive, trace preserving and unital. The invariant source
+metric fixes the equal orthonormal weights within this irreducible sector.
+This fixes the mathematical response once that complete current sector is
+specified; it does not prove P1 selects this sector as an event source.
+
+The checker compares the actual current action to the exterior CAR action
+on all112 D8 roots and all128 half-root states. Its3584 signed equations
+have rank231 on240 weight/root phase variables. The resulting diagonal
+weight-space phases identify actual root actions, not just spectra. All
+eight Cartan charges match because the source roots and Fock occupation
+weights are explicitly matched. Commutators transport the Cartan action.
+The independent review confirms the full Spin16 representation bridge.
+
+This phase transport is a joint tensor chart. The raw Chevalley bitbasis
+does not admit a product phase correction into independent carrier and
+family factors. An untransported raw-coordinate family trace would not
+be justified. The fixed D5+A3 representation determines the tensor factors;
+the actual source data must be transported before taking a marginal.
+
+In that transported chart the channel factors exactly:
+
+  E = Q_carrier tensor Q_family,
+
+  Q_carrier(rho)=(1/5) sum_i=1..5
+       [a_i rho a_i^dagger + a_i^dagger rho a_i],
+
+  Q_family(sigma)=(1/3) sum_j=1..3
+       [b_j sigma b_j^dagger + b_j^dagger sigma b_j].
+
+The operators alternate the two chiral spinor modules. In real Majorana
+coordinates the same normalization is
+
+  B_Ap=(1/2) Gamma_A tensor Gamma_p,
+  sum_A Gamma_A^dagger Gamma_A=10I16,
+  sum_p Gamma_p^dagger Gamma_p=6I4,
+  K_Ap=Gamma_A tensor Gamma_p/sqrt60.
+
+Using the six complex epsilon basis matrices on4 instead gives
+sum E_p^dagger E_p=3I4 and normalization sqrt30. These are different
+orthonormal/Kraus-coordinate conventions for the same normalized response,
+not a normalization disagreement.
+
+For any joint input, including correlated and entangled inputs,
+
+  Tr_family_out E(rho_CF)
+      = Q_carrier(Tr_family_in rho_CF).
+
+This follows from the full factorization and Q_family^dagger(I)=I.
+It requires no chosen family state.
+
+On an incoming two-word in Lambda2 C5, exactly three creation operations
+lead to Lambda3 C5 and exactly two annihilation operations lead to
+Lambda1 C5. Their total weights are3/5 and2/5. The volume-form
+identification Lambda3 C5=Lambda2(C5)* turns the creation block into
+the subnormalized Petersen population A_Pet/5. The other2/5 is a real
+five-state output, not a stay operation on the original ten labels.
+
+On the complete32-state Fock parent, the population graph is the five-cube
+Q5. Its antipodal quotient is the Clebsch16 graph. The existing v810 already
+establishes the Clebsch and Petersen geometry. The present result reuses
+that old graph and supplies the actual signed current-response path to it.
+
+There are three different statements to retain:
+
+1. Full E8 D5+A3 inclusive response -> full Clifford channel: exact.
+2. Pure Petersen A/3 from that channel: requires selection and normalization
+   of its creation branch, followed by the dual target identification.
+3. Physical P1 event/time rule implementing this inclusive response:
+   not established by the bracket identity.
+
+The source currents used above are bosonic weight-one VOA currents with
+internal spinor transformation types. The sixteen-dimensional label module
+is not thereby a spacetime fermion field. The CAR operators realize the
+internal Clifford action. No physical Hamiltonian, local apparatus, time
+rate, additional bath or reset rule has been inferred.
+
+Checks: check_e8_clifford_response.py; source phases and exact outputs in
+e8-clifford-response-results.json. Normal and python -OO stdout agree.
+Independent review: E8-CLIFFORD-INDEPENDENT-REVIEW.txt.

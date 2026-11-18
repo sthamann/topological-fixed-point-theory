@@ -1,0 +1,261 @@
+TFPTLINKDIFFUSION20261110
+Prüfung aller Vorschläge nach Plan 231. 10. November 2026.
+
+1. Elektrischer Wärmekern und unabhängige Zahlen
+
+Für den konventionellen Kogut-Susskind-Elektroterm lautet der Generator
+H_E=(g^2/(2 a_s)) C_2. Für einen Zeitschritt a_t hat sein einzelner
+isotroper SU2-Kern Zeit t_2=(a_t/a_s)g^2/2. Die Identifikation setzt
+diesen Generator und seine Eichkoordinaten voraus. Magnetische und
+Higgsterme können zusätzliche nichtkommutierende Teile bilden.
+Kogut/Susskind: https://doi.org/10.1103/PhysRevD.11.395.
+
+Mit dem tatsächlichen TFPT v3 alpha^-1=137.0359992168407 und
+sin²(theta_W)=3/8 ergibt sich als deklarierte Vergleichsannahme
+g²=.24453663146766, t_2=.12226831573383 für a_t/a_s=1. Das mischt
+ohne weitere Abbildung Thomson-alpha mit dem hochskaligen
+Einbettungsverhältnis. T6 enthält den Kopplungs- und Skalenabgleich.
+Die OS-Zeit und Gitteranisotropie dieses R113 Schnitts bleiben
+eine zusätzlich benötigte tatsächliche Zuordnung.
+
+Gleicher Plan231 Vergleich mit früher flacher Vierkugel R=.55,
+spätem Higgsradius .55, 96 Fermionmoden, Farbauswahl und gebundenem
+S-Fermionnenner. Wir rechnen aus, wie sich nur die Linkregel ändert.
+
+Linkgesetz                 Z0                 F(0)              C_UY
+Haar                       3.006547166e-8      1.017871968e-5    -.0585097112
+Wärme t=.100               9.758814318e-8      1.017871968e-5    -.0945952057
+Wärme t=.1222683157        9.524162507e-8      1.017871968e-5    -.0932199092
+Wärme t=.150               9.250290034e-8      1.017871968e-5    -.0916436296
+Wärme t=.200               8.801700092e-8      1.017871968e-5    -.0891261139
+Wärme t=.250               8.402833077e-8      1.017871968e-5    -.0869513514
+Wärme t=2 pi               3.043616341e-8      1.017871968e-5    -.0588945561
+A t=.8                     6.599243729e-8      1.017871968e-5    -.1029057920
+A t=2 pi                   3.021331557e-8      1.017871968e-5    -.0592095461
+
+Eigenwert Spin 1/2 bei Wärme 2 pi ist in dieser Konvention
+exp(-3 pi/2)=.00898329. Haar und 2 pi unterscheiden sich im Z0
+um 1.23 Prozent und im Betrag C_UY um .66 Prozent. Gleiche F(0)
+folgt hier exakt aus dem frühen Nullfeld, dem dann mit der schwachen
+Wirkung kommutierenden frühen Fermiontransfer und Linknormierung.
+Die Gleichheit ist ein Normierungs- und Symmetrietest. Der Quotient
+F(0)/Z0 der alten Spektralzeile ist in beiden Normierungen .003758;
+für Wärme 2 pi und A .8 ist er 334.43 bzw. 154.24. Das bestätigt
+die starke Abhängigkeit des Vergleichs vom Feldgewicht und seiner
+Radialbasis. Diese Vierkugel war in Plan231 bereits eine explizite
+Vergleichsprämisse, keine ursprüngliche Radialauswahl.
+
+Die unabhängige Implementierung nutzt eine flache komplexe SU2-Scheibe,
+andere Winkelquadratur, volle 96er Determinanten und Jacobi-Spur.
+Sie importiert den vorigen Solver nicht und berechnet alpha aus v3 neu.
+Bei 20 Radialknoten stimmen die bisherigen A/2pi-Kontrollen auf den
+drei Metriken relativ bis 1.19e-13. Die neue alpha-Zeile am Mittelpunkt
+stimmt zwischen Charakter- und Scheibenrechnung ebenfalls bis 5e-14.
+In den Nachbarmetriken (-.001,+.001) liefert sie Z0=(9.568850366e-8,
+9.479709405e-8), F0=(1.020997646e-5,1.014757872e-5),
+C=(-.09323917914,-.09320065124). Damit ist dies mehr als Wiederholung
+derselben Implementierung. Physisches R113, Q_Theta und Gap wurden
+durch diese numerische Übereinstimmung nicht identifiziert.
+
+Die vorgeschlagene Inversion der SU2-Charaktere trennt bereits A.
+Für j=1/2,1,3/2,2 liefert A scheinbare Wärmezeiten
+1.0674667,.4008,.2141333,.1341333 statt einer einzigen Zeit.
+Für die alpha-Zeile sind die normierten Zielcharaktere
+.9123776937,.7830673029,.6322273718,.4801724857. Diese sind
+Vorhersagen des Kandidaten, keine gemessenen Originalcharaktere.
+
+2. Hyperladung und tatsächlich gemeinsamer U2-Kern
+
+Mit kanonischer U(1) Norm und gleichem passenden Einbettungsmaßstab
+g_Y²/g_2²=1/k_Y=3/5. Eine gemeinsame Anisotropie liefert
+t_Y=.07336098944, exponentiert mit physischem Y². Bei ganzzahlig
+geschriebenem q=2Y ist der Koeffizient vor q² entsprechend t_Y/4.
+Die Quarklift-Mehrdeutigkeit liegt in der mitgeführten Farbe; unsere
+skalare Probe verwendet die tatsächliche Z3-Auswahl. Das Elektronbein
+und das Neutrinobein wurden in der ursprünglichen v252 Wirkung geprüft.
+An der gerichteten R032 Karte ist das rechte Elektron Y=-1 und das
+rechte Neutrino Y=0; das konjugierte e^c hat Y=+1 und gleiche Dämpfung.
+Ein tatsächliches offenes geladenes Wort benötigt denselben Rücklink,
+damit seine Phase unter unabhängigen Endrahmen physisch lesbar ist.
+
+Bei G=e^(i phi/2) U und Higgsrichtung e2 ist der relative Higgslink
+X=U exp(-i phi T3), also X22=U22 e^(i phi/2). Auch wenn der zentrale
+Wärmekern in U und phi faktorisiert, faktorisiert er nicht in X und phi.
+Das reine Elektron/Neutrino-Determinantenverhältnis ist exp(-t_Y)
+=.9292653145; die Identitätserweiterung liefert 1 und würde bei
+positivem t_Y unter dieser Hypothese ausscheiden. Für den gemeinsam
+markierten Moment X22 exp(-i phi) ist der Quotient zum X22 Moment
+dagegen exakt 1; für conjugate(X22) exp(-i phi) ist er exp(-2t_Y)
+=.8635340247. Diese Kontraktion benutzt die gerichteten Phasen im
+selben Rahmen und widerlegt die Multiplikation der Einzelmittel.
+
+Die vollständige zentrale U2 Winkelrechnung auf dem gleichen
+endlichen Schnitt liefert Z0=9.288651919e-8, F0=1.017871968e-5,
+C_UY=-.09196222914. Es ist ein bedingter geladener Kandidat. Das
+gemeinsame Verhältnis 3/5 kommt aus dem gesetzten UV-Einbettungsvertrag
+und bindet die unbekannte ursprüngliche absolute Masse nicht.
+
+3. Higgsdiffusion und der Originaltest für ihre Reichweite
+
+Der positive Vierkomponenten-Wärmekern p_tau(H_R-GH_L) enthält
+automatisch den orientierten Überlapp. Für deterministische Links
+folgt durch die orthogonale Eichwirkung und Gaußfaltung exakt
+Integral p_tau2(H2-G2 H) p_tau1(H-G1 H0) d4H
+  =p_(tau1+tau2)(H2-G2 G1 H0).
+Im bedingten Einzelblock integrieren wir H_L auf ganz R4 mit
+p_tau(GH_L-H_R), ohne harte Kugel und ohne zusätzliches Potential.
+Für die skalaren reflektierten Wörter verschwindet das normierte
+separate Linkgesetz nach H'=GH_L samt gleichzeitigem Rahmentransport.
+Diese Aussage betrifft ein Linksegment mit diesen Enddaten, keine
+allgemeine Behauptung über Schleifen, offene Ladungen oder Originalmaß.
+
+tau        Z0              F(0)             C_UY          F(0)/Z0
+.02        1.367006e-8     1.512314e-7      -.155919      11.0630
+.05        1.600562e-8     2.261378e-6      -.137032      141.2864
+.10        1.057767e-8     2.565568e-6      -.113831      242.5458
+
+Die Werte sind Vergleichsprämissen. Die Gaussian-Massenkontrolle
+stimmt unter 7e-10; F(0) ist analytisch aus der kartesischen Dichte.
+Ein lokaler Potentialfaktor kann mit einer symmetrischen Trotterteilung
+einen positiven Transfer definieren. Sein Koeffizient, Tau und das
+physische absolute Maß folgen nicht aus dem bloßen Wunsch nach Diffusion.
+Die vorhandene ursprüngliche Profilrechnung vom 5. November liefert
+auf getrennten Zeitsupports einen nichtverschwindenden proper-time
+Gedächtniskern, der in der gebundenen S-Referenzklasse erhalten bleibt.
+Die bare Originalwirkung lässt sich dort nicht durch einen einzigen
+Endpunkt-Gaußkern mit lokaler Halbpotentialfaktorisierung ersetzen.
+Dies ist kein Ausschluss eines effektiven diffusen Teils mit weiteren
+Zwischenkanälen. Maßgeblich ist der originale Zeitschnittkoeffizient
+ORIGINAL-PROFILE-CROSS-STRIP-EVALUATION.txt:25-43,73-81.
+
+4. Spektralnormierung und Teilbarkeit
+
+Für die gewöhnliche unkomprimierte Spin(4)-mal-96 Spur sind die
+quadratischen Spuren T_SU3=T_SU2=12 und T_Y=20 in der physischen
+Hyperladungsnorm. Der a4-Vergleich mit 1/(4 g²) gibt
+g_3² f(0)=g_2² f(0)=(5/3)g_Y² f(0)=pi²/2. Die unprojizierte
+Normierung ist damit geprüft. Sie ersetzt die volle relative
+Spur samt tatsächlichem Selektor und Referenz nicht. Aus der
+skalenübergreifenden Thomson-Rechnung ergäbe sich f(0)=20.1802.
+Der tatsächliche v246 SM-Lauf verlangt bei der gemeinsamen
+M_scal Skala f0=(16.37253,16.87249,14.93701) (GUT1,2,3).
+Bei Mbar sind es (13.48085,19.10590,19.87403). Es gibt im
+geprüften unmodifizierten Lauf keinen nachgewiesenen gemeinsamen
+Wert. Dies ist ein konkreter Skalen- und Schwellentest, kein
+Ausschluss der vollen relativen Spektralquelle.
+
+Die Gleichung f(x+y)=f(x)f(y) würde für positives stetiges f
+f(0)=1 und f(x)=exp(-a x) erzwingen, mit freiem a. Sie betrifft
+ein Profilargument und folgt nicht aus T_(s+t)=T_s T_t in OS-Zeit.
+Schon (exp(-x)+exp(-2x))/2 ist ein positives Bernsteinprofil
+bei unverändert teilbarem zugrundeliegendem Wärmetransfer und
+verletzt die behauptete Profileigenschaft. Ein gegebenes f_★
+des ursprünglichen RG-Fixpunkts bleibt ein anderer Auswahlweg.
+R044/R045 enthält die tatsächlichen Argumentunterschiede zwischen
+Heat-, Poisson- und v255/v259 Momenten bereits. Ein Exponent
+e^-x legt ohne Argumentwahl und Normierung keine Zeit fest.
+CCM Originalnormierung: https://arxiv.org/abs/hep-th/0610241.
+
+5. Reflexionspositivität und Eindeutigkeit der gemeinsamen Verteilung
+
+Eine Punktdichte 1-chi_1/6 ist überall >=1/2. Ihr Spin-1
+Faltungskoeffizient ist -1/18. Sie scheitert an positiver
+Transfermatrix. Positive Punktwerte allein genügen also nicht.
+Die native 4x4 Halbwortmatrix für Elektron und Neutrino samt
+EK und WKN wurde auf gleichem frühen Radius .35 ausgewertet.
+Für beide normierten Split-Gewichte und für die zentrale U2
+Wärme sind alle vier Eigenwerte positiv. Zentrale U2:
+(.346661,1.671917,7.209708,8.765574). Das ist die ganze Matrix
+dieses getaggten Prüfspan, keine volle physische OS-Matrix.
+Die positiven reflektierten Formen sind dort Summen von Normen
+derselben vollständigen Halbwortlinearkombination. Sie entscheiden
+nicht zwischen positiven Kandidaten in dieser vorreflektierten Klasse.
+
+Stärkerer exakter Gegenfall zur vorgeschlagenen Eindeutigkeit:
+Auf (SU2 x Kreis)/Z2 wähle die beiden gemeinsamen Sprungdichten
+1 +/- chi_1(U) cos(2 theta)/6. Beide sind >=1/2, symmetrisch,
+normalisiert und haben identische Haar-Ränder. Dieselbe Diffusion
+plus dieselbe Poissonrate ergibt zwei verkettbare selbstadjungierte
+positive Transfers mit gleichen vollständigen Randprozessen.
+Im gemeinsamen Kanal (j=1,q=+/-2) haben die Sprünge Fourierwerte
++/-1/36 und daher verschiedene Zeitantworten. Für j=25 statt 1
+und 1/[2(2j+1)] sieht kein vorhandener fester Spin-bis-24-Reader
+diese Differenz. Das ist ein expliziter Gegenfall zur Eindeutigkeit
+aus den genannten Konsistenzen und endlich vielen gemischten Reads.
+Gleiche gesamte reine Brownsche Marginalprozesse würden in der
+zentralen Lévy-Klasse Sprünge ausschließen. In der bi-invarianten
+lokalen Klasse verbietet SU2-Invarianz einen gemischten Diffusionsterm;
+bei festgelegten Koeffizienten und Markovmasse ist dann der reine
+zentrale U2-Wärmekern eindeutig. Dass genau diese Klasse die ganze
+primitive TFPT-Wirkung ist, ist eine zusätzliche Prämisse.
+Ein relativer Energieoffset c lässt positive Verklebung und normierte
+Antworten bestehen, verschiebt bei fester Referenz aber das absolute
+Gewicht. Der volle OS-Ursprung braucht daher den gemeinsamen
+markierten Wortkern samt gebundenem Originalleerwert.
+Osterwalder/Seiler: https://doi.org/10.1016/0003-4916(78)90039-8.
+
+6. Z4, Ramond und der Zweistromtest
+
+Die vorgeschlagenen Gewichte (1/4,1,1/4) ergeben sich exakt
+für acht unabhängige komplexe NS-Fermionen mit gleich großen
+Viertelphasen. Die tatsächliche TFPT-Glue-Toruswirkung hat dagegen
+fünf Minus- und drei Plusrichtungen am Vektor, 52 feste Wurzeln
+und Ordnung vier erst auf Spinorwurzeln. Die gleich großen
+Viertelphasen haben je nach Signatur 128 oder 56 feste Wurzeln.
+Unter bereits angenommenem V_E8 gibt die native Gluewirkung
+Gewichte (3/8,1/2,3/8), Typ 4{2}. Die tatsächlich geliftete
+C(h)^4-Wirkung ist eine andere, Typ 4{1} mit (5/16,1/4,5/16).
+Das gewöhnliche chiral-bosonische Zyklusgauging der nativen
+Ordnung vier ist ohne Ausgleich nicht der Typ-Null-Fall.
+Die Deckoperation C(h)^8 hat zwar uniforme Viertelphase, ist
+aber der ganze Coverumlauf. Der ungelöste geladene lokale
+NS-R-Intertwiner wird dadurch nicht geliefert. Die beiden
+markierten R071-Partner sind im ursprünglichen D5+A3-Wörterbuch
+Bildwurzeln des neutralen Sektors, ihre halben alten CAR-Ladungen
+sind nicht automatisch Glueklassen 1 und 3. Gegenbond und
+Viertelphase bleiben auf dem geladenen Paar unterscheidbar.
+
+Der wörtliche Vakuumwert aus dem Vorschlag ist null wegen
+nichtverschwindender Summe der Stromladungen. Der richtige
+Vergleich ist der bereits angegebene geladene Übergang p->beta.
+Beide Ordnungen haben dort denselben Chevalley-Faktor +1.
+Die Zwischenwege laufen im alten CAR-Wörterbuch über s->0->0
+oder s->s->0. Eine mittlere NS-Auswahl würde eine Ordnung
+vollständig entfernen. Der schwache erste Zwischenzustand
+ist SU2-Singulett oder SU2-Triplett, nie Dublett. Der andere
+ist farbig und trägt Familie. K_weak-K_color ist für die vier
+Vorzeichen (-3/8,+1/4,-1/4,+3/8) bzw. (-5/8,+1/4,-1/4,+5/8).
+Das Vorzeichen kehrt sich schon unter Ladungskonjugation um.
+Der tatsächliche Drift spaltet sogar innerhalb der festen Farb-
+und schwachen Multiplets. Das schließt seine Lesart als
+eichinvariante Dublett-Triplett-Masse aus. Es liefert aber
+einen präzisen Sektortest für die spätere gemeinsame Quelle.
+Zyklische Orbifolds: https://arxiv.org/abs/1507.08142.
+
+7. Gravitation, Referenz und der nächste gemeinsame Originaltest
+
+48-48+0 kürzt mit demselben Regulator den führenden freien
+quadratischen Einstein-Koeffizienten. Mit bedingtem v986-Wert
+M_R²/Mbar²=1.42090e-9 liefern zwei volle interne Majorana-Slots
+im gewöhnlichen Bulk-Heatvergleich bei großem chi relativ
+-1.19973e-11 f(0) zur EH-Norm Mbar²/2. Eine getrennte physische
+Ein-Majorana-Schleife bei mu=M ergibt im angegebenen MS-Schema
+-1.49966e-12; beide Rechnungen sind verschieden. Die bestehende
+S-Referenz lässt die konstante Majorana-Masse bei H=0 weg, T
+trägt sie mit und löscht den gemeinsamen konstanten Beitrag.
+Die kleine bedingte Schwelle ist keine allgemeine
+Nichtrenormierung von c3. Weitere R048-Beiträge, Gegenterm,
+volle physische Auswahl, endlicher Newtonwert und TT-Pol bleiben
+von diesem führenden bzw. konstante-Masse-Vergleich getrennt.
+
+Konstruktiver nächster Angriff: aus dem ursprünglichen
+orientierten R113-Cap die gemeinsame geladene gemischte Matrix
+mit X22, X22 exp(-i phi), conjugate(X22) exp(-i phi) und neutralem
+Vergleich gewinnen, alle unter denselben Endzuständen, Zeiten,
+gebundener absoluter Referenz und Q_Theta/Gap. Der chargierte
+relative Transport ist hier zugleich von der Glueladung und der
+Zeitordnung zu unterscheiden. Dann den geankerten Zweistromtest
+mit der im tatsächlichen Zwischenraum zulässigen Auswahl
+kontrahieren. Die bisherige Graphstruktur oder die zwei positiven
+Kandidaten stellen diesen Original-Cap noch nicht bereit.
+Kein physisches Z0, F(0), C_UY oder F1-Abschluss beansprucht.

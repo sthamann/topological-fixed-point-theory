@@ -14,7 +14,7 @@ HERE = Path(__file__).resolve().parent
 ROOT = HERE.parents[2]
 PINS = {
     "experiments/theory-contracts/microscopic-energy-linearization/checker.py":
-    "393ee8e6362ca96c4fbf0354f5f9250ed445a56ba32e22659573649346cd2ce9",
+    "50de0b396a69ce911145fd478aa7f541043dcb715c2530a25f4a1054ef971db7",
     "experiments/theory-contracts/microscopic-neutral-limit/README.md":
     "d9a689536f654afdcfd7d9df39f08c1e5667adda52b15aeab95bad24f9baac7e",
 }

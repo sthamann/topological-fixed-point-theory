@@ -1,0 +1,55 @@
+{
+  "steps": [
+    {
+      "step": "K1.frame: (v, w_x, w_y, w_z) is orthonormal (sum_a w_a = 0), so beta = sum gamma_a/2 and e_i = sum_a (w_a)_i gamma_a are four anticommuting Majoranas: mark index = surface-relation direction + space",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "step": "K2.Dirac algebra from the marks: alpha_i = i beta e_i, beta Hermitian involutions, pairwise anticommuting; one spin su(2) S_i (S_x S_y = i S_z) commuting with beta and Gamma; Gamma anticommutes with beta and all gamma_a; alpha_i = -Gamma S_i: L + R with opposite helicity, beta the scalar mass operator",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "step": "K3.mark relabelings = point group: each of the 24 permutations has a Pin(4) lift p with p S p^-1 = sgn std S, p beta p^-1 = +-beta, p Gamma p^-1 = sgn Gamma (std = action on the windings); even = rotations on each chirality, odd = L <-> R; double transpositions lift to +-i S_axis (quaternion group)",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "step": "K4.mu8 from the marks: the deck relabeling a -> a+1 (odd, spatial det -1) lifts with p^4 = -1, p^8 = 1; belt trick: Majorana braids satisfy Artin's relations, full twist = Gamma, sphere word = -Gamma -> on the surface-relation sector a genuine B_4(S^2) representation with full twist -1; on the other sector the sphere relation fails by a sign",
+      "pass": true,
+      "detail": "deck lift p^4 = -1.0; relation sector: sphere word +1, full twist -1; other sector: sphere word -1, full twist +1"
+    },
+    {
+      "step": "K5.walks from the mark Clifford algebra: W(k) = prod (cos k_i - i sin k_i alpha_i) = sum over the eight bcc steps, unitary, i log W = k.alpha + O(k^2); Berry charges +-1 on the two chiral blocks; with the on-site mass coin e^{-i m beta/2}: omega^2 = k^2 + m^2 in the continuum limit (Dirac)",
+      "pass": true,
+      "detail": "Berry -1.0000, 1.0000; relative deviation of omega^2 from k^2+m^2 at (k,m) = s(0.02,0.02), s = 1, 1/2, 1/4: ['1.2e-02', '5.9e-03', '3.0e-03'] (-> 0 linearly: Dirac continuum limit)"
+    },
+    {
+      "step": "K6.orientation: on the sector where the Clifford image of the surface relation gamma_0 gamma_1 gamma_2 gamma_3 = +1, the walk closes on itself (one Weyl chirality, Berry sign fixed); the other sector carries the partner; only beta (and the gamma_a) connect them",
+      "pass": true,
+      "detail": "Berry charge on the relation sector 1.0000"
+    },
+    {
+      "step": "K7.species count: the diagonal pi-rotation lift over N real mark species squares to (-1)^N (N = 1, 2, 3 checked; N = 16 E8 seam Majoranas -> +1: no spin 1/2); the diagonal spin commutes with species rotations (Howe dual pair); weak doublet as spinor: [W(k), T_j] = O(k) -> kill",
+      "pass": true,
+      "detail": "N=1: square -1; N=2: square +1; N=3: square -1; weak isospin mixing 1.7e-03 at |k| = 1e-3"
+    },
+    {
+      "step": "K8.(statement) AX.SPINSTEP reduces to AX.MARKMAJORANA: one real internal-singlet Majorana zero mode per mark gives the C^2 spinor, the axis assignment (from the windings), the point-group double cover, mu8, parity = odd relabelings, both chiralities and the Dirac mass operator beta along the surface-relation direction",
+      "pass": true,
+      "detail": "remaining input: existence of an odd number (minimally one) of real internal-singlet mark modes"
+    },
+    {
+      "step": "K9.inventory against U: the sheet acts as (-1)^F on all 16 real seam fermions (U6 passed), so U supplies an EVEN count and the diagonal spin sign is (-1)^16 = +1 -> AX.MARKMAJORANA is an EXTENSION of U (one extra real sheet-odd singlet); chiral it would give c = 17/2 with Ising primaries (leaves the holomorphic c = 8 point, tension with IMP.HOLO); non-chiral (1/2,1/2) avoids it",
+      "pass": true,
+      "detail": "the spacetime spinor is NOT contained in the present source; decisive open input"
+    }
+  ],
+  "passed": 9,
+  "total": 9,
+  "berry": [
+    -1.0000000000000013,
+    1.0000000000000022
+  ]
+}

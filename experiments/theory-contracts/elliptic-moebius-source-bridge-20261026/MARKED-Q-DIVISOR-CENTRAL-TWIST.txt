@@ -1,0 +1,340 @@
+THE MARKED NEGATIVE DIVISOR RESTORES THE MISSING CENTRAL CHARACTER
+Exact finite-point determinant test after theta-sign cancellation
+2026-10-26
+
+VERDICT
+
+PROVED AS A SOURCE-DETERMINED CENTRAL-CHARACTER LINE ON THE FULL THETA
+FAMILY.  The ordinary theta determinant forgets the selected spin scalar
+because its Euler
+characteristic is zero.  The already marked negative branch divisor
+
+    D_q=q_0+q_1+q_2
+
+has odd length three.  Its finite evaluation determinant does not have that
+cancellation.  If
+
+    B_q=det H^0(D_q,S_0|D_q),
+
+or equivalently one uses the permutation-sign-free norm line N_q, then the
+source-selected hyperelliptic lift beta acts by -i on B_q and by +i on its
+dual.  Therefore
+
+    W_q=H^0(Jac(C),O(2 Theta)) tensor N_q^(-1)                  (1)
+
+has
+
+    beta|W_q=+i I_4,
+    alpha^2|W_q=+i I_4,
+    alpha^4|W_q=-I_4.                                          (2)
+
+These are the missing native central relations, and the constant line twist
+does not alter the cubic action.  No continuous
+phase was fitted: D_q, S_0, alpha and its orientation were all selected
+earlier by the original marked source.  The
+remaining discrete choice is whether the physical boundary construction
+uses the evaluation line or its dual.  The exact sequence below fixes the
+dual when one imposes vanishing at D_q, but the original source has not yet
+been shown to impose that boundary operation.
+
+This does not yet make (1) the physical quantization space.  The full-family
+statement requires the Poincare family to be normalized relative to S_0,
+rather than additionally choosing pointwise rigidification at q_0.  Section
+4 proves that this
+source-selected normalization makes the evaluation norm constant and is
+c and Q covariant.  The original papers inspected here still do not insert
+this marked-point determinant into the field or Calderon construction.
+Equation (1) is the smallest exact family-level repair candidate; its use as
+the source Hilbert or conformal-block module remains a new bridge statement
+to prove.
+
+
+1. THE FINITE-POINT LINE IS A NATURAL BOUNDARY DETERMINANT
+
+On
+
+    C: eta^2=1-w^6,
+
+write q_a=-omega^a, p_a=omega^a.  The source-selected spin line is
+
+    S_0=O_C(D_q-K_C),       S_0^2=K_C.                          (3)
+
+Because D_q is a reduced divisor of length three,
+
+    H^0(D_q,S_0|D_q)=direct_sum_a S_0|q_a,
+    B_q=det H^0(D_q,S_0|D_q).                                  (4)
+
+The exact evaluation sequence
+
+    0 -> S_0(-D_q) -> S_0 -> S_0|D_q -> 0                     (5)
+
+makes B_q a canonical boundary term in determinant functoriality.  In fact,
+by (3), S_0(-D_q)=O_C(-K_C).  Thus (4) is not an arbitrary one-dimensional
+character appended to the theta module.
+
+There are two closely related lines that must be distinguished:
+
+    B_q = det H^0(D_q,S_0|D_q),
+
+    N_q = B_q tensor det H^0(D_q,O_Dq)^(-1)
+        = tensor_a S_0|q_a.                                    (6)
+
+N_q is the ordinary norm or unordered tensor line.  Under a permutation of
+the points, B_q contains the determinant sign; N_q cancels that sign against
+the same permutation on O_Dq.  Both have the same beta action because beta
+fixes every branch point.  Their alpha actions differ by one minus sign
+because Q swaps q_1 and q_2.  Their alpha squares are identical.  Formula
+(1) uses N_q only to avoid making an irrelevant ordering choice.
+
+
+2. THE q ORBIT CARRIES THE REQUIRED +i CHARACTER
+
+The original quarter map is
+
+    Q:(w,eta) |-> (1/w,-i eta/w^3),
+    h=Q^2:(w,eta) |-> (w,-eta).                                (7)
+
+At q_0=-1, eta is a local coordinate and Q sends eta to +i eta.
+For the selected spin lift alpha this gives
+
+    alpha^2=beta,       beta|S_0,q_0=+i.                        (8)
+
+The cubic map c:(w,eta)|->(omega w,eta) cycles the three q points and
+commutes with h.  Let gamma be an order-three lift of c to S_0.  The
+commutator of gamma and beta is a scalar zeta.  From gamma^3=I and
+beta^2=-I one obtains
+
+    zeta^3=1,       zeta^2=1,
+
+so zeta=1.  Hence beta has the same +i fiber action at every q_a.  Taking
+the determinant or norm over the three points gives
+
+    beta|B_q=beta|N_q=i^3=-i,
+    beta|N_q^(-1)=+i.                                          (9)
+
+The normalized c lift acts trivially on N_q: it cyclically permutes three
+fibers, the cycle is even, and the product of its fiber maps is gamma^3=1.
+Rescaling gamma by a cube root of unity also changes the product by its
+third power and therefore changes nothing.  The twist preserves the cubic
+operator rather than fitting a new one.
+
+The ordinary theta space
+
+    H_Theta=H^0(Jac(C),O(2 Theta))
+
+has beta=+I under its canonical even linearization.  Combining this with
+(9) proves the first relation in (2).  For alpha, Q fixes q_0 and exchanges
+q_1,q_2.  Whether one uses B_q or N_q, functoriality gives
+
+    alpha^2|N_q=beta|N_q=-i,
+    alpha^2|N_q^(-1)=+i.                                      (10)
+
+Replacing alpha by -alpha multiplies its action on the three-fiber line by
+-1, so alpha itself is still determined only up to the already known global
+sign.  Its square in (10) is sign independent.  Since alpha^2 acts as +I on
+H_Theta, equations (1) and (10) prove the other two relations in (2).
+
+
+3. THE s-EXCHANGED POSITIVE LINE HAS THE CONJUGATE CHARACTER
+
+The same calculation is not symmetric after retaining the marked Q
+orientation.  At p_0=+1, formula (7) sends eta to -i eta.  Cubic covariance
+then gives
+
+    beta|S_0,p_a=-i       for all a,
+    beta|N_p=(-i)^3=+i,
+    beta|N_p^(-1)=-i,                                         (11)
+
+where D_p=p_0+p_1+p_2 and N_p is defined as in (6).
+
+The source involution s:(w,eta)|->(-w,eta) exchanges D_q and D_p and obeys
+
+    s Q s=Q^(-1).                                               (12)
+
+It therefore exchanges the two twisted spaces
+
+    W_q=H_Theta tensor N_q^(-1),
+    W_p=H_Theta tensor N_p^(-1),                               (13)
+
+on which beta has the conjugate central characters +i and -i.  A
+complex-linear operator cannot conjugate the scalar +i I on one fixed
+four-dimensional space to -i I on that same space.  An antiunitary
+identification or a changed complex structure would be extra data and is not
+introduced here.
+
+This does not damage the q candidate.  The accepted (4,3,2) triangle and
+v117 coefficient source already select the negative q packet; s is not a
+symmetry of that isolated A0* object.  If one demands the earlier six-line
+s covariance, the correct object is the paired system W_q direct_sum W_p,
+with s exchanging its two conjugate central-character blocks.  That paired
+eight-dimensional system is not being identified with the native four-
+dimensional module.
+
+
+4. THE SOURCE-SELECTED SPIN NORMALIZATION MAKES THE FAMILY LINE CONSTANT
+
+The preceding central-character calculation must be checked over the whole
+Jacobian A.  A Poincare bundle is defined only up to tensoring by a line
+pulled back from A.  Normalizing it at q_0 produces a misleading flat factor.
+Indeed, for a q_0-normalized Poincare bundle P one obtains
+
+    Norm_Dq(P)=mathcal P_delta_q,
+    delta_q=D_q-3q_0=q_1-q_2 not_equal 0 in Jac(C)[2].          (14)
+
+The original c moves this nonzero vector through the three nonzero elements
+of V_q.  Thus the q_0-normalized one-copy line is not c invariant.  This is
+an obstruction to that point normalization, not an intrinsic obstruction to
+the source family: using q_0 as the Poincare rigidification was an additional
+choice, even though q_0 itself was already source marked.
+
+The source has already selected a reference of the correct type, namely the
+degree-one spin line S_0.  From (3) and S_0^2=K_C,
+
+    O_C(D_q)=S_0 tensor K_C=S_0^3.                              (15)
+
+Let
+
+    mathcal R=<P,S_0>
+
+be the Deligne pairing over A, and define the spin-normalized Poincare family
+
+    P_spin=P tensor pr_A^*(mathcal R^(-1)).                     (16)
+
+This tensor factor comes from the base, so P_spin represents the same family
+of degree-zero line bundles on C.  Since deg(S_0)=1, bilinearity first gives
+
+    <P_spin,S_0>=<P,S_0> tensor mathcal R^(-1)=O_A.
+
+Norm functoriality and bilinearity of the Deligne pairing then give a
+canonical cancellation:
+
+    Norm_Dq(P_spin)
+      =<P,O_C(D_q)> tensor mathcal R^(-3)
+      =<P,S_0^3> tensor <P,S_0>^(-3)
+      =O_A.                                                      (17)
+
+Consequently the evaluation norm of
+
+    E_spin=S_0 tensor P_spin
+
+is the constant equivariant line
+
+    mathcal N_q(E_spin)=N_q(S_0) tensor O_A.                    (18)
+
+The same statement holds for D_p because O(D_p)=O(D_q)=S_0^3.  Thus the
+q and p blocks remain a full-family s-exchanged pair with the conjugate
+central characters computed in section 3.
+
+This normalization does not change the ordinary theta determinant.  A line
+pulled back from A enters determinant of cohomology with exponent
+chi(S_0 tensor L)=0, so the factor mathcal R^(-1) has weight zero there.
+It changes the length-three evaluation norm with exponent three, exactly as
+needed in (17).
+
+The construction is c and Q covariant because S_0 and D_q were already
+selected invariant objects, and the S_0-normalized universal family is unique
+up to its fixed rigidification.  The remaining scalar ambiguity in a lift of
+S_0 does not reintroduce a phase: scaling the second entry of the Deligne
+pairing acts with exponent deg(P_spin|C)=0.  Therefore (17) is independent of
+that scalar and obeys the same cocycles as the selected source lifts.
+
+The direct one-copy family correction is hence genuinely
+
+    O(2 Theta) tensor N_q(S_0)^(-1),                            (19)
+
+with no moving Pic^0 factor.  It retains the four-dimensional theta space,
+the original c action, and the central relations (2).  No new point or flat
+character has been selected; the normalization uses the unique
+c-invariant source spin line S_0.
+
+One distinction remains.  If one first imposes vanishing at D_q via (5) and
+then forms the usual two-theta line, the evaluation factor is squared:
+
+    (D tensor mathcal N_q(E_spin)^(-1))^(-2)
+      =D^(-2) tensor N_q(S_0)^2.                               (20)
+
+Its beta phase is (-i)^2=-1, not +i.  Thus determinant exactness alone does
+not select the one-copy insertion (19).  The remaining physical question is
+precise: does the original puncture, boundary, sewing or conformal-block
+construction attach one inverse copy of the marked evaluation norm directly
+to the O(2 Theta) module?  The geometry supplies that line canonically, but
+the inspected source has not yet supplied this insertion rule.
+
+
+5. SOURCE AUDIT AND EXACT REMAINING GAP
+
+The September synthesis already contains every geometric input used above:
+
+  * its section 004, lines 276--312, gives C, Q, c, s and the marked q and p
+    triples;
+  * lines 314--326 warn that the six-point transport is not yet a field
+    intertwiner;
+  * lines 378--379 require the original test-function space and
+    Riemann--Hilbert kernel for an actual quantization statement.
+
+Its following section 005, lines 1--13, gives the different determinant
+
+    det Psi(z)=1-z^4
+
+and its primitive winding, while explicitly leaving the contour and boundary
+operator map open.  That Fuchs fundamental-matrix determinant is not the
+finite evaluation determinant (4), so it does not already insert N_q^(-1)
+into the source state space.
+
+The targeted Atlas source v519 carries exact CAR reflection and spin phases,
+but on a different freely chosen sixteen-Majorana Fock object.  It supplies
+no functor from (C,S_0,D_q) to (1) and cannot be reused as that missing map.
+The inspected Atlas anchors are paper-source:c3a096bf0487b5234a147dce for
+the September determinant/winding passage, and v519 sources
+source:588e55951801405a5c25 and source:bd323276b179791d1d6c for the separate
+CAR object.
+No explicit q-divisor determinant twist was found in the bounded original
+source search.  This is a statement about the inspected source family, not
+an assertion that every archived paper has been exhausted.
+
+The sharp result is therefore:
+
+  * MATHEMATICALLY PROVED: N_q(S_0)^(-1) is a canonical line constructed from
+    existing marked source data and restores exactly the +i central
+    character without changing c;
+  * MATHEMATICALLY PROVED: its s partner has the conjugate -i character;
+  * MATHEMATICALLY PROVED: q_0 normalization creates the moving flat class
+    delta_q=q_1-q_2, while the source-selected S_0 normalization cancels it
+    canonically and leaves the ordinary theta determinant unchanged;
+  * CANDIDATE BRIDGE: the actual field/theta construction uses the one-copy
+    line (19), rather than the different boundary-first-then-square operation
+    (20);
+  * STILL OPEN: the original Calderon, Riemann--Hilbert, sewing or conformal-
+    block construction selects this boundary factor and identifies the
+    resulting four-dimensional linear module with the native one.
+
+
+MATHEMATICAL REFERENCES
+
+  * The Stacks Project, Tag 0FJ9, determinant of finite locally free modules:
+    https://stacks.math.columbia.edu/tag/0FJ9
+
+  * The Stacks Project, Tag 0FJW, determinant functor for perfect complexes
+    and exact/pullback functoriality:
+    https://stacks.math.columbia.edu/tag/0FJW
+
+  * The Stacks Project, Tag 0BD2, canonical norm for a finite locally free
+    morphism and base-change compatibility:
+    https://stacks.math.columbia.edu/tag/0BD2
+
+  * Pierre Deligne, Le determinant de la cohomologie, Contemporary
+    Mathematics 67 (1987), 93--177, for determinant and Deligne-pairing
+    functoriality:
+    https://publications.ias.edu/book/export/html/404
+
+
+LOCAL SOURCE ANCHORS
+
+  * research-20261026-real-boundary/THETA-FUNCTOR-SPIN-SIGN-TEST.txt
+  * research-20261026-real-boundary/SOURCE-SELECTED-THETA-SPIN.txt
+  * research-20261026-real-boundary/CLOCK-Q-PACKET-COMPATIBILITY.txt
+  * research-20261026-real-boundary/SIX-LINE-THETA-COMPLETION.txt
+  * documents/tfpt_explorer--docs--session-2026-09-28--
+    TFPT_Gesamtsynthese_2026-09-28/sections/004-subsection-auch-die-skalen-
+    besitzen-einen-gemeinsamen-va.tex
+  * the following section 005 on det Psi=1-z^4

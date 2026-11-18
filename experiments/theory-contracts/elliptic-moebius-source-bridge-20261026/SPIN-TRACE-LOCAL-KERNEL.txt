@@ -1,0 +1,274 @@
+SPIN TRACE OF THE ELLIPTIC SZEGO KERNEL AT THE FOUR BRANCH MARKS
+26 October 2026
+
+Question and verdict
+====================
+
+Let
+
+  p:E -> P1,  E:y^2=x^4-1,
+
+and retain the actual Q-invariant nontrivial spin line alpha and its NS--NS
+Szego Green kernel. The coefficient pushforward p_*alpha has the familiar
+local deck exponents 0 and 1/2. The ramified spin trace contains an additional
+half-density Jacobian. At every simple branch mark its two exponents are
+
+  -1/4 and +1/4,
+
+with spin-frame monodromy -i and +i. Thus the old quarter pair occurs
+naturally as the LOCAL conjugacy class of the spin-trace kernel in the
+central spin lift of the branch meridian. It was invisible in the raw
+coefficient pushforward because that calculation deliberately computed the
+ordinary rank-two coefficient bundle, not the ramified spin frame.
+
+This does not yet identify the old smooth quarter circle. The actual marked
+equator pullback is the ramified V4/E8 graph, and the spin trace has four
+regular-singular branch points. The old B_1/4 direct-sum B_3/4 system is a
+smooth circle domain with one global quarter holonomy. The two systems are
+conjugate on a punctured neighborhood of one mark, but no bounded smooth
+conjugacy extends through all four marked vertices. The missing datum is now
+precise: an original trace or vertex-domain map selecting a smooth carrier,
+not a missing quarter phase.
+
+1. Raw coefficient trace versus spin trace
+===========================================
+
+Near one branch point a in mu4 choose local coordinates
+
+  X=x-a=q^2.                                             (1)
+
+The flat line alpha is locally trivial on E because a small loop in the q
+disk contracts. A local coefficient section has the unique form
+
+  f(q)=f_0(X)+q f_1(X).                                  (2)
+
+For raw coefficient functions, the two summands in (2) have exponents
+
+  0, 1/2
+
+and monodromy +1,-1 around X=0. This is the order-two connection previously
+computed for p_*alpha.
+
+A chiral spinor on E is instead
+
+  f(q)(dq)^(1/2).
+
+In the base half-density frame,
+
+  (dq)^(1/2)=(dq/dX)^(1/2)(dX)^(1/2)
+             =(2q)^(-1/2)(dX)^(1/2).                   (3)
+
+Equations (2)-(3) give the two spin-trace frames
+
+  e_-(X)=q^(-1/2)(dX)^(1/2),
+  e_+(X)=q^(+1/2)(dX)^(1/2).                            (4)
+
+Up to the harmless constant 2^(-1/2), their exponents in X are -1/4 and
++1/4. Analytic continuation once around X=0 sends q to -q and therefore
+
+  e_- -> -i e_-,
+  e_+ -> +i e_+.                                        (5)
+
+No scalar phase was inserted. The quarter phases are forced by the simple
+ramification and the spin half-density.
+
+There is an essential type distinction here. The raw pushforward has
+
+  M_coeff=diag(1,-1),       M_coeff^2=I,
+
+whereas the frames (4) have
+
+  M_spin=diag(-i,+i),       M_spin^2=-I.                 (5a)
+
+Thus M_spin is not an ordinary representation of the order-two branch
+stabilizer. It is its central order-four spin lift, equivalently a projective
+or ramified spin-frame action. On the punctured q disk the factor q^(-1/2)
+itself changes sign around q=0, even though alpha is locally trivial there.
+It must not be described as a single-valued gauge of the ordinary flat bundle
+p_*alpha.
+
+The underlying ordinary holomorphic bundle statement remains unchanged:
+
+  p_*alpha=O(-1) direct-sum O(-1).
+
+Factoring the base spin line K_P1^(1/2)=O(-1) is a local calculation on the
+punctured base. Equations (4)-(5a) describe the ramified spin trace in the
+central extension of the branch group. They do not replace the ordinary flat
+connection on p_*alpha by a new connection with order-four holonomy.
+
+2. Exact pushed-forward local Cauchy kernel
+===========================================
+
+Write Y=r^2 at the second point. The singular part of the cover Szego kernel
+is
+
+  S_E(q,r)=c (dq)^(1/2)(dr)^(1/2)/(q-r)+regular,         (6)
+
+where c=i/(2pi) in the normalization of ELLIPTIC-GREEN-RP.txt. Choose the two
+sheet half-density factors
+
+  h_+(q)=(2q)^(-1/2),
+  h_-(q)=i(2q)^(-1/2).                                  (7)
+
+The factor i is not fitted: it is the analytic square root of
+d(-q)/dX=-1/(2q). In the ordered sheet basis (+,-), pushing (6) to the base
+is an exact operation on the actual elliptic covariance. More explicitly,
+write
+
+  S_E(u,v)=s_E(u,v)(du dv)^(1/2).
+
+Then the complete local pushforward is
+
+  K_full(X,Y)_(epsilon,eta)
+    =h_epsilon(q) h_eta(r) s_E(epsilon q,eta r)
+      (dX dY)^(1/2),                                    (7a)
+
+for epsilon,eta in {+1,-1}, with the square-root branches fixed by (7).
+Its universal singular part is the rank-two matrix
+
+  K_sheet(X,Y)=c/[2 sqrt(qr)]
+    [[1/(q-r),  i/(q+r)],
+     [-i/(q+r), 1/(q-r)]] (dX dY)^(1/2)
+    +regular.                                            (8)
+
+The constant unitary which diagonalizes
+
+  [[0,i],[-i,0]]
+
+turns (8) into
+
+  K_spin(X,Y)=c/(X-Y)
+    diag((X/Y)^(1/4),(Y/X)^(1/4)) (dX dY)^(1/2)
+    +regular.                                            (9)
+
+Indeed,
+
+  1/(q-r)+1/(q+r)=2q/(X-Y),
+  1/(q-r)-1/(q+r)=2r/(X-Y).
+
+Equation (9) is the smallest decisive kernel identity. Away from X=0 its
+diagonal singularity is the ordinary identity Cauchy kernel. Moving one
+argument around the branch point produces the two phases +i and -i. The
+regular part of the actual s_E in (7a) changes global correlations but cannot
+change these local exponents.
+
+3. Comparison with the old quarter circle
+==========================================
+
+On a punctured disk, after passing to the central spin lift of the branch
+meridian, the two diagonal factors in (9) are the standard regular-singular
+quarter systems
+
+  d+(1/4)dX/X,
+  d-(1/4)dX/X.                                           (10)
+
+Their scalar Cauchy kernels have the same local form
+
+  K_a(X,Y)=c (X/Y)^a (dX dY)^(1/2)/(X-Y),
+
+with a=+1/4 and a=-1/4. This is precisely the pair displayed in (9), up to
+the order of the two diagonal entries.
+
+This is the exact positive local match to the old B_1/4 and B_3/4 conjugacy
+class in the ramified spin category. It is stronger than matching the numbers
++i,-i: the Cauchy principal part, the half-density normalization and the
+central-lift monodromy are all carried together. It is not an isomorphism of
+the ordinary flat bundles, because M_coeff has order two and M_spin has order
+four.
+
+The global domains are nevertheless different.
+
+  * The old quarter pair lives on one smooth circle. Its +i,-i are the
+    holonomies of that circle generator.
+
+  * The elliptic spin trace lives on P1 minus the four branch marks. Each
+    branch meridian has the local pair (-i,+i). The product of the four local
+    monodromies is compatible with the trivial total loop on P1.
+
+  * The original marked equator |x|=1 passes through all four branch points.
+    Its full inverse image is the connected V4/E8 graph of local valence four,
+    not a smooth circle. At a vertex, smoothness in q imposes the canonical
+    regular-singular domain (2)-(4) on the four incident germs.
+
+Consequently a punctured local gauge identifies (9) with a quarter kernel,
+but it becomes singular as X^(+/-1/4) at the branch mark. A smooth bounded
+circle conjugacy across that mark does not exist. Replacing the graph by one
+normalized component, a radial push-off or a chosen vertex channel would be
+an additional source selection unless it is supplied by the original trace
+map.
+
+4. Quarter clock and loop typing
+================================
+
+The geometric clock Q:x->ix permutes the four branch marks and transports
+their local kernels. It does not turn a small branch meridian into the old
+longitudinal circle generator. Therefore the following statements have
+different scopes:
+
+  proved: every marked cusp carries the natural spin quarter pair;
+  proved: Q transports the four cusp kernels and their regular-singular
+          domains;
+  open:   one original Q-compatible trace map identifies a selected global
+          graph channel with the old smooth quarter-circle domain.
+
+This resolves the apparent coefficient mismatch. The raw p_*alpha
+monodromy (+1,-1) is correct for coefficient functions. The ramified
+spin-frame trace has the central-lift monodromy (-i,+i). Neither result
+replaces the other, and the latter does not erase the global V4/E8 graph
+obstruction or prove that the same ordinary connection is preserved.
+
+5. Consequence for the holomorphic source kernel
+================================================
+
+The rank-two kernel (8) is obtained by an exact pushforward of the already
+given elliptic Szego half-form, including its square-root Jacobian. Therefore
+the holomorphic two-point kernel, and algebraically the determinant Wick
+expressions built from that kernel, transport to the quasipermutation,
+ramified spin-trace chart on the punctured base with the cover-induced domain
+(4). The central lift and its phase are inherited from the original cover
+spinor rather than selected independently.
+
+This local half-form calculation does not by itself prove a positive
+equal-time CAR covariance on a base Hilbert space. Such a claim additionally
+requires a specified real slice and one-particle inner product, a closed trace
+operator T across all branch vertices, and the operator statements
+
+  C_base=T C_E T^*,       C_base=C_base^*,       0<=C_base<=I,
+
+with the relevant isometry or coisometry property of T. None of those
+Hilbert-space statements follows merely from the bilinear holomorphic formula
+(7a). In particular, a square-root Jacobian gives the correct tensorial
+transformation law but is not on its own a proof of unitarity or positivity.
+
+The strongest positive statement proved here is therefore narrower:
+
+  the same elliptic Szego half-form has the old quarter Cauchy principal part
+  at every marked branch point, including its central spin phase.
+
+It still does not supply a single periodic old-circle field. The first
+remaining source equation is a Q-compatible global trace or vertex-domain
+intertwiner from the actual ramified equator graph to the old smooth carrier.
+Without that equation and the Hilbert-space conditions above, local quarter
+conjugacy cannot be promoted to equality of CAR state, time or winding
+domains.
+
+Sources reused
+==============
+
+For the standard twisted-fermion category in which square-root Jacobians and
+quasipermutation monodromy are kept together, compare M. Bershtein,
+P. Gavrylenko and A. Marshakov, "Twist-field representations of W-algebras,
+exact conformal blocks and character identities", JHEP 08 (2018) 108,
+arXiv:1705.00957, especially Sections 3 and 6. Equations (6)-(9) above are a
+direct local calculation and do not depend on importing an additional model
+from that paper.
+
+  research-20261026-elliptic-source-continuation/
+  ELLIPTIC-GREEN-RP.txt
+  UPDATE-REAL-SLOTS-AND-SOURCE.txt
+  ELLIPTIC-PUSHFORWARD-ANCHOR-TEST.txt
+
+  experiments/theory-contracts/original-admissible-source-closure-20261025/
+  ORIGINAL-BASES-AND-ELLIPTIC-SPIN.txt
+
+No Atlas record or canonical project file was changed.

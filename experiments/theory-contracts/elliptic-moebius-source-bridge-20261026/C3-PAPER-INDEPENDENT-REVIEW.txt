@@ -1,0 +1,270 @@
+INDEPENDENT REVIEW OF THE PRINTED C3 PUNCTURE PACKAGE
+=====================================================
+
+26 October 2026
+
+Verdict
+-------
+
+The defect reported in EXISTING-C3-SOURCE-DICTIONARY.txt is real and occurs
+in the displayed TFPT45 construction itself. It is not removable by reading
+P as a different orientation convention.
+
+Its scope is archival. The same defective display occurs in archived TFPT42
+section 017, but the active TFPT2 source does not reuse its rigidity proof.
+TFPT2 section 008, lines 87-114 explicitly counts the bare Z4 character
+variety as positive dimensional, says that Z4 alone is not cohomologically
+rigid, and requires additional full-D4 and determinant-branch data. The
+finding below must therefore not be reported as an error in the current
+TFPT2 rigidity statement.
+
+The printed formula can be repaired with the already existing exact v117
+pair, without introducing a new physical dictionary:
+
+  M=M0_EXACT,
+  U=U_EXACT=diag(1,i,-i),
+  rho(gamma_(i^k))=U^k M U^(-k),     k=0,1,2,3.          (R)
+
+This gives four monodromies in the required cusp conjugacy class and their
+ordered product is exactly I. It recovers the exact algebraic v117 packet.
+
+What it does not recover is the printed rigidity theorem as stated. Formula
+(R) proves an explicit marked representation once (U,M) is fixed. The
+displayed argument does not show that local spectrum, determinant triviality
+and an abstract square symmetry select that pair uniquely. Nor does v117
+turn its numerical ODE match into a symbolic analytic identification. The
+minimal honest paper repair is
+therefore an existence/construction theorem conditional on the fixed marked
+v117 pair. A uniqueness theorem needs the additional anchor, residue and
+resonance hypotheses from the later verification chain.
+
+
+1. What the original actually requires
+---------------------------------------
+
+TFPT45 source extract 03, section 004, lines 6-13 chooses four positively
+oriented puncture loops with
+
+  gamma_1 gamma_i gamma_-1 gamma_-i=1.
+
+Lines 35-44 then state literally
+
+  rho(gamma_1)  =D,
+  rho(gamma_i)  =P D P^(-1),
+  rho(gamma_-1) =P^2 D P^(-2),
+  rho(gamma_-i) =(rho(gamma_1)rho(gamma_i)rho(gamma_-1))^(-1),
+
+where lines 15-31 define
+
+  P=[[0,1,0],[0,0,1],[1,0,0]],
+  D=diag(1,omega,omega^2).
+
+Lines 65-91 explicitly interpret the same P as the fiber implementation of
+the geometric quarter turn
+
+  1 -> i -> -1 -> -i -> 1.
+
+Thus the questioned formula is genuinely required by the original theorem;
+it is not an inference added by the new report.
+
+
+2. The exact internal failure
+-----------------------------
+
+For the displayed matrices,
+
+  P D P^(-1)=omega D,
+  P^2 D P^(-2)=omega^2 D.
+
+Consequently
+
+  D (PDP^(-1)) (P^2DP^(-2))
+    =omega^3 D^3
+    =I,
+
+and hence
+
+  rho(gamma_-i)=I.                                      (1)
+
+This contradicts the theorem's own assumption that every puncture has local
+spectrum {1,omega,omega^2}. It also shows why an orientation reversal does
+not help: it can exchange omega and omega^2, but the product remains I.
+
+There is a second, independent order mismatch. The base quarter turn has
+order four, whereas P has order three. If P is interpreted merely as a
+cyclic relabelling of the three eigenspaces, then it may explain the first
+three displayed conjugates, but it no longer implements the fourth base
+rotation. If it is interpreted as the actual fiber lift of the quarter turn,
+P^3=I contradicts that role and Ad_P does not return D after four steps.
+Therefore this is a mathematical defect, not harmless notation.
+
+The proof at lines 95-107 only invokes the puncture product relation after
+the first three assignments. It never checks that the resulting fourth
+matrix remains in the prescribed local conjugacy class. Equation (1) is the
+first failed implication.
+
+
+3. Minimal exact correction from v117
+--------------------------------------
+
+The unchanged v117 file defines
+
+  M = [[0,          -(1+i)/2, (1-i)/2],
+       [-(1+i)/2,   -i/2,     -1/2    ],
+       [(1-i)/2,    -1/2,      i/2    ]],
+
+  U = diag(1,i,-i).
+
+It verifies exactly
+
+  U^4=I,
+  M^3=I,
+  spec(M)={1,omega,omega^2},
+  (MU)^4=I.
+
+Define
+
+  M_k=U^k M U^(-k),             k=0,1,2,3.              (2)
+
+Every M_k is unitary, has determinant one and has the required local
+spectrum. Because U^4=I,
+
+  M_0 M_1 M_2 M_3
+    =M(UMU^(-1))(U^2MU^(-2))(U^3MU^(-3))
+    =(MU)^4
+    =I.                                                   (3)
+
+In particular,
+
+  M_3=(M_0 M_1 M_2)^(-1)=U^3 M U^(-3).                 (4)
+
+Equations (2)-(4) are the precise minimal correction to the printed
+monodromy formula. They preserve the same four labelled loops and the same
+ordered flatness relation. Exact enumeration in v117 further gives
+
+  <U,M> congruent to W(A3)=S4,       |<U,M>|=24.
+
+This correction is entirely internal to the already supplied mathematical
+package. It introduces no new field, state, geometry or physical map.
+
+
+4. What must be weakened in the printed theorem
+-----------------------------------------------
+
+Replacing (P,D) by (U,M) repairs existence and all four local classes. It
+does not prove the sentences "is forced" and "unique" in TFPT45 lines 33-47
+and 111-160 from the premises printed there. This review establishes a proof
+gap at that step; it does not claim a universal non-uniqueness theorem for
+every strengthened D4 moduli problem.
+
+The active source already makes this distinction correctly. In
+
+  documents/tfpt_2_standard_model/sections/
+  008-section-the-setup-parabolic-data-on-the-family-curve.tex:87-114
+
+it gives dimensions 8 for the four-class character variety and 2 after the
+bare Z4 reduction, explicitly rejects Katz rigidity for that bare system,
+and names full D4 plus the determinant-trivial branch as extra input. Lines
+115-172 further distinguish the parabolic and global holomorphic data from
+single-fibre monodromy. The archived D/P defect therefore motivates the v117
+existence correction; it does not overturn the active theory's scoped
+non-rigidity statement.
+
+The project's own later source distinguishes the needed extra information:
+
+  * tfpt_research_contracts section 005, lines 270-293 records a
+    two-parameter D4-fixed flat cusp branch before the anchor selection.
+
+  * Lines 296-325 add the anchor residue and initially retain a numerical
+    gauge-orbit uniqueness statement.
+
+  * Lines 328-350 add the exact resonance condition a_13=0 and the fixed
+    anchor moduli to obtain one gauge orbit inside that narrower ansatz.
+
+  * v117 proves the exact algebraic properties of M and U. Its source header
+    and status at lines 36-43 and 184-200 retain the identification with the
+    analytic A0* monodromy as numerical.
+
+The narrow corrected statement supported without further work is:
+
+  Fix the simultaneous SU(3) conjugacy class of the marked pair (U,M) from
+  v117. Then (2) defines a flat unitary four-puncture representation with the
+  required local spectra, and it is the unique tuple attached to that fixed
+  marked pair.
+
+To claim selection from the original geometric premises, the theorem must
+instead import and state the exact anchor/resonance hypotheses, and it must
+retain the analytic identification status. Full D4 equivariance also needs a
+marked reflection operator; (2) by itself supplies the C4 rotation part.
+
+
+5. Scope relative to the new C3 dictionary report
+--------------------------------------------------
+
+The main negative conclusion of EXISTING-C3-SOURCE-DICTIONARY.txt survives:
+the native E8 family permutation is only a bare C3-module match to M. The
+corrected tuple (U,M) does not create a Q-equivariant or quarter-equivariant
+intertwiner with the fixed native representatives, and it does not identify
+the Fermat deck carrier with the v117 local system.
+
+One sentence should be read narrowly: "restating the construction using the
+actual v117 matrices" repairs the explicit monodromy package, but does not by
+itself repair the paper's rigidity/uniqueness proof.
+
+
+6. Independent spin-trace scope correction
+-------------------------------------------
+
+SPIN-TRACE-LOCAL-KERNEL.txt previously moved too quickly from a holomorphic
+Szego half-form pushforward to transport of a positive CAR covariance. The
+local calculation proves the bilinear holomorphic kernel and its determinant
+Wick expressions. It does not establish a bounded or unitary one-particle
+trace operator on an equal-time Hilbert space.
+
+That report has now been corrected. A positive base CAR covariance would
+additionally require a real slice, the one-particle measure and inner
+product, a closed branch-domain trace T, and
+
+  C_base=T C_E T^*,   C_base=C_base^*,   0<=C_base<=I,
+
+together with the appropriate isometry or coisometry statement for T. The
+square-root Jacobian proves the correct half-form transformation and the
+local quarter principal part; it does not alone prove these Hilbert-space
+properties.
+
+
+7. Sources and checks
+---------------------
+
+Original paper source, read through the hash-validated Atlas record
+paper-source:9a3ef8e93be5da1e42c822aa:
+
+  /Users/stefanhamann/Projekte/tfpt-theoryv4/
+  documents/archive--tfpt-45--source_extracts--03_em_flavor_source/
+  sections/004-source.tex:1-160
+  SHA256 107d525221eb816043dbf4fb1a3c7e8244d3e24a5a5bcbfe1c2c34d8ee192f4a
+
+Exact verification source:
+
+  /Users/stefanhamann/Projekte/tfpt-theoryv4/
+  verification/v117_monodromy_weyl_a3.py:1-56,129-200
+  SHA256 55eca6a64144f6e49789f3f1bbe84e256764e7ce92b207044be693f8684d5df5
+
+Later scoped selection source:
+
+  /Users/stefanhamann/Projekte/tfpt-theoryv4/
+  documents/tfpt_research_contracts/sections/005-source.tex:270-378
+
+Active scoped replacement, hash-validated through Atlas source
+paper-source:7c86eb06f13b0b07e1658c8d for lines 87-114:
+
+  /Users/stefanhamann/Projekte/tfpt-theoryv4/
+  documents/tfpt_2_standard_model/sections/
+  008-section-the-setup-parabolic-data-on-the-family-curve.tex:87-172
+  SHA256 d8714f3a516a0a4d929a2121fa6dd16e0a00e4f972803130e9235b463276abb7
+
+I independently evaluated all four matrices in (2), their ordered product,
+and equation (4) with exact SymPy arithmetic. No floating-point comparison
+enters the defect or the correction.
+
+No Atlas, original paper, verification or canonical project file was changed.

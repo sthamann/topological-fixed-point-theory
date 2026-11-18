@@ -1,0 +1,129 @@
+Die ursprünglichen A0/HS-Lebesgue Vorschläge wurden im folgenden Austausch anhand des vorhandenen R055 Ausschlusses zurückgezogen. Verbindliche Umsetzung: R055 wiederverwenden, geänderte tatsächliche Quelle/Hypothese prüfen, keine erneute Gitterrechnung in derselben ausgeschlossenen Klasse. Der folgende rohe Review bleibt Datenquelle, kein ungeprüfter Beweis.
+
+Prüfung des Einwands: Er trifft, und ich hätte ihn vermeiden müssen
+
+Die Rechnung stimmt. Im Original ist f* vollständig monoton, also f*(x) = ∫e^{−sx} dν*(s) mit endlichem positivem ν*. Daraus folgt 0 ≤ f*(x) ≤ f*(0) = M = ν*([0,∞)) für alle x ≥ 0. Für jeden endlichen selbstadjungierten D der Dimension N gilt daher 0 ≤ Tr f*(D²/Λ²) ≤ N·M und damit e^{−S} ≥ e^{−NM} > 0.
+
+Für A₀ hat das drei Folgen:
+
+Bosonisch nicht normierbar. Auf dem unbeschränkten affinen Higgsraum ℝ^{4V} mit translationsinvariantem Lebesguemaß ist das Gewicht nicht integrierbar.
+Der Pfaffian verschlimmert es nur. Bei affin H-abhängigem endlichem D ist er ein Polynom. Ist er nicht identisch null, wächst der Integrand höchstens; ist er identisch null, gibt es kein Z0.
+Andere Varianten helfen nicht. Eine konstante äußere Referenzdivision ändert nichts, und eine relative Spektralwirkung ist ebenso durch N·M beschränkt.
+
+Dasselbe Argument trifft meinen Kandidaten B (HS-Lebesgue auf dem trunkierten Fluktuationsraum) genauso. Beide Erstprioritäten der letzten Antwort sind damit im Scope „beschränkte Spektralwirkung plus translationsinvariante Basis auf unbeschränktem affinem Raum“ erledigt.
+
+Selbstkritik. Der Befund stand bereits im ersten Prüfpaket: shorttime20261105k-whole-profile-quartic-transfer-and-domain-test (R055/R056: S_spec = O(1) bei festen Rängen und beschränktem Profil). Dort steht auch: Der ursprüngliche Gap ist eine untere Spektralschwelle und kein oberer Higgs-Hardcut, und eine kompakte Basis ist keine kompakte Amplitudendomäne. Ich habe also einen vorhandenen begrenzten Ausschluss verletzt, genau das Muster, das ich am Sol-Prozess kritisiert habe.
+
+Zurückgezogen wird auch meine Aussage zur naiven Wärmeabweichung. Ohne Grenzwert- und Vielfachheitswörterbuch (Taste-Zählung, Wurzelung) ist sie kein pauschaler Regulatorausschluss.
+
+Reichweite des Einwands, ebenfalls begrenzt. Er schließt keine endlichen Basismaße aus, keine ursprünglich kompakte Domäne und keine hinreichend abfallenden ursprünglichen Restfaktoren. Er zeigt vielmehr: Die Koerzivität, die QFT004:92–108 und Metrology005:175–178 voraussetzen, kann nicht aus der Spektralwirkung kommen. Sie muss aus ν_Vn, der Domäne oder den Restfaktoren stammen. Das ist keine Wahl, sondern eine herleitbare Eigenschaft des fehlenden Objekts.
+
+Was ohne willkürlichen Radialdämpfer übrig bleibt
+
+(i) Ursprüngliche admissible Domäne oder Restfaktoren.
+
+Domäne: Nach shorttime…k ist im geprüften Scope keine obere Higgsbeschränkung belegt; P_adm und die Gap-Schwelle sind untere Spektralbedingungen. Offen, aber ohne Beleg.
+Restfaktoren: Pfaffians wachsen. Bosonische Determinanten im Nenner, etwa det(I−GM_q)^{−1/2}, und Ghostfaktoren haben eigene Grade. Ob die Summe aller Grade Integrierbarkeit liefert, ist unentschieden und exakt prüfbar.
+
+(ii) Ursprüngliche unbeschränkte effektive Wirkung (R048, λρ⁴/4). Sie ist koerziv. Sie ist aber die lokale Entwicklung, und shorttime…k schließt ihren globalen Transfer auf die ganze Profilklasse aus (S_spec − S_SH = −Bt⁴ + O(t²)). Als Gesamtgewicht wäre sie eine neue Ursprungshypothese: „das physische Gewicht ist die lokale effektive Wirkung, nicht die exakte endliche Spektralwirkung“. Diese Hypothese widerspricht dem angezeigten Gewicht in Metrology005:142–144 und liegt nahe am Quartikspielzeug. Sie ist nicht priorisiert.
+
+(iii) Identischer IR-Block (QFT004:137–155, v330). Er besteht aus endlichen C6-Kernen, diagonalen Admissibilitätsgewichten, zweistufigem P_adm und einem eindeutigen Perronvektor. Das ist das einzige bisher belegte ursprüngliche Objekt mit endlicher Basis, und Koerzivität ist dort trivial. Er ist bedingt, und das Marken- und Zeitwörterbuch muss zuerst tragen, wie du betont hast.
+
+Der kleinste originale Definitions- und Koerzivitätstest
+
+Strahlengradtest des ganzen ursprünglichen Integranden bei einem endlichen Regulator. Er ist exakt und algebraisch, ohne Gitter-Monte-Carlo.
+
+Eingaben (alle original):
+
+das affine D_F(H) = D₀ + Σ_a H_a B_a aus DYNAMICAL-HIGGS-SOURCE-PROOF.txt:14–45 (q(H)diag(Y), Majoranablock, direkte J·H-Kopplung);
+der ursprüngliche KO2-Produktchart (KO4 × KO6) für den Pfaffiantyp, beachte finite-ko6-pairing-does-not-supply-standalone-pfaffian-source;
+ν* aus Metrology005:60–134;
+die tatsächlichen Restfaktoren des R113-Callers: PROJECTED-JOINT-SOURCE-GENERATOR-20261103.txt:15–35, w_{B,t} mit Skalar, Referenz, Eta, Orientierung und Rest.
+
+Rechnung für jede Richtung ĥ ∈ S^{4V−1}:
+
+Pfaffian. Pf(J·D(rĥ)) ist ein Polynom in r. Bestimmt werden der Leitgrad d_F(ĥ) und die Prüfung Pf ≢ 0 durch exakte rationale Auswertung bei hinreichend vielen r plus Interpolation, mit generischen und mit singulären Richtungen, also Rangabfällen von B(ĥ).
+Spektralwirkung. Bestätigt wird e^{−NM} ≤ e^{−S_spec(rĥ)} ≤ 1, zusätzlich der Grenzwert für r → ∞; nur Moden im Kern von B(ĥ) tragen dann noch bei.
+Restfaktoren. Jeder tatsächlich im Caller enthaltene Faktor bekommt seinen r-Grad d_R(ĥ), Nenner negativ.
+Domäne. Für jede ursprüngliche Admissibilitätsbedingung wird geprüft, ob sie r beschränkt (ja / nein / unbelegt).
+
+Ausgabe. Der Exponent e(ĥ) = d_F(ĥ) + d_R(ĥ) und eine von drei Klassifikationen:
+
+D: Eine ursprüngliche Domäne beschränkt r. Dann ist Lebesgue auf der admissiblen Domäne ein Kandidat ohne Dämpfer.
+R: Für alle ĥ gilt e(ĥ) < −4V gleichmäßig. Dann tragen die Restfaktoren die Integrierbarkeit.
+N: Weder noch. Dann ist als hergeleitete notwendige Bedingung ν_Vn ein endliches Maß mit ∫(1+|H|)^{max e(ĥ)} dν_Vn < ∞. Jede translationsinvariante oder flache Basis ist im Scope ausgeschlossen. Wo genau das Original diese Endlichkeit liefert, bleibt offen.
+
+Zusätzlich gilt: Pf ≡ 0 im Originalchart ergibt Z0 = 0 und damit einen Definitionsbefund über den Chart. Alle Aussagen gelten nur für den untersuchten Regulator und die protokollierten Restfaktoren.
+
+Erwartung. Nach shorttime…k erwarte ich N. Belegt ist das nicht, deshalb wird gerechnet und nicht angenommen.
+
+Der ausführbare Kandidatenauftrag für die nächste Runde
+
+Auftrag: Strahlengradtest ausführen; bei Ausgang N den identischen IR-Block als Kandidaten für ν_Vn prüfen, zuerst am Wörterbuch.
+
+Schritt 1: Strahlengradtest wie oben. Diese Runde rechnet weder Gitter noch Monte Carlo. Je nach Ausgang:
+
+Bei D oder R wird dieser Kandidat (ursprüngliche Domäne bzw. Restfaktoren mit Lebesgue) der nächste Auftrag, und Schritt 2 entfällt.
+Bei N folgt Schritt 2.
+
+Schritt 2, nur bei N. Die Kandidatenhypothese lautet H_IR: ν_Vn ist das endliche atomare Maß, das die C6-Kerne und die Admissibilitätsgewichte von QFT004 Block2 induzieren. Sie wird ausdrücklich als Hypothese geführt. Ihre Begründungsklasse: das einzige belegte ursprüngliche Objekt, das die in Schritt 1 hergeleitete Endlichkeitsbedingung erfüllt. Geprüft wird in dieser Reihenfolge:
+
+(a) Zeitwörterbuch.
+
+H_IR = −log T_V existiert, wenn T_V positiv definit ist; das Spektrum {1, (2/3)⁶, (1/3)⁶} wird exakt bestätigt.
+Prüfen, ob die Voraussetzungen von R113:43–58 erfüllt sind: derselbe ganze Caller als Semigruppe in ursprünglicher Zeit, Produktregel mit Dichte- und Endpunktableitungen, die Admissibilitätsgewichte als Dichte.
+Wenn eine Voraussetzung nicht erfüllt ist, endet die Runde mit genau diesem Befund. Marken werden dann nicht weiter behandelt.
+
+(b) Neutrale Marke, nur wenn (a) trägt.
+
+Die ursprünglichen Kontaktbeziehungen werden in ihrem Scope als Gleichungen für einen neutralen Markenoperator u in der IR-Algebra aufgestellt. Konkret: der neutrale Normzeitjet −K’_u(0) = ½⟨[u,[H,u]]⟩ sowie die Gram- und Cauchy-Schwarz-Schranken aus dyn20261106n.
+Konstanten wie N/V bleiben Symbole, solange das Wörterbuch sie nicht festlegt.
+Ein kontinuierliches Dublett wird nicht verlangt; nach R6 wäre es auf diskreten Labels zwingend null.
+Ergebnis ist die Lösungsmenge: leer, eindeutig oder eine Familie. Leer heißt excluded_scoped für H_IR mit diesem Markenwörterbuch. Eine Familie heißt echte Restwahl, und ihr Parameter ist präzise benannt.
+
+(c) Beiträge, nur bei eindeutigem u. Exakt rational aus den endlichen Atomen werden berechnet:
+
+W(1) und W(u(f));
+die vier Einträge der reflektierten Wortfamilie (1, u) zu zwei ursprünglichen Zeitmarken.
+
+Diese Daten gehen als Bundle mit Kandidatenreferenz an reflected_rp und den Ward/SD-Callback. Der Host ruft erneut auf, sobald sich der Bundle-Hash ändert.
+
+Erfolgskriterium. Ein vorliegender Slotdatensatz:
+
+S3: Klassifikation D, R oder N mit hergeleiteter Endlichkeitsbedingung;
+S4: Wörterbuchbefund;
+S6: exakte Beiträge.
+
+Daneben genügt alternativ ein präzise lokalisierter Ausschluss an einer der Stufen 1, 2a oder 2b. Ein Ausschluss zählt als Ausschluss, nicht als abgebauter Maßblocker.
+
+Abbruch. Eine Stufe verlangt einen nicht ursprünglich fixierten kontinuierlichen Parameter, etwa eine Radialdichte, eine N/V-Zuordnung oder einen Cutoff. Dann wird er benannt und als erste echte Restwahl ausgewiesen.
+
+Weder ein bestandener Test noch berechnete Beiträge machen H_IR zur hergeleiteten Originalquelle.
+
+
+Dokument erstellen
+
+
+
+vor 2 Minuten
+
+
+
+
+
+
+Opus 5.5
+ Hoch
+
+
+Claude ist eine KI und kann Fehler machen. Bitte überprüfe die Antworten.
+Inhalt
+Claude_TFPT_Suchprogramm_Pruefpaket_2026-11-06.md
+
+MD
+
+Claude_TFPT_Sol_Laufpruefung_2026-11-06.md
+
+MD
+
+Claude hat die Antwort abgeschlossen

@@ -1,0 +1,172 @@
+F20 BELL HODGE DICTIONARY
+=========================
+
+Stand: 2026-10-28
+Urteil: EXAKTER POSITIVER DARSTELLUNGSANSCHLUSS, MIT EINER NOCH OFFENEN
+ORIGINALEN TRAEGERIDENTIFIKATION. KEINE KANALGLEICHHEIT.
+
+1. Der uebersehene alte Operator
+---------------------------------
+
+Der fruehere U5 Test betraf nur
+
+  U5=exp(2 pi i X/5),
+
+der auf E und Lambda2 E skalar ist. Er sagt nichts ueber den getrennten
+nichtzentralen Operator aus
+
+  C5 = Comp(Phi5),
+  G : zeta5 -> zeta5^2,
+  G C5 G^-1 = C5^2,   C5^5=G^4=1.                 (1)
+
+Dieser Operator ist wirklich in der alten Quelle vorhanden. v419 konstruiert
+G in der Basis (1,x,x^2,x^3) durch Reduktion von x^(2k) modulo Phi5. Die
+erzeugte Gruppe ist
+
+  F20 = C5 semidirect C4.
+
+Die alte Textquelle nennt dies ausdruecklich die Galoiswirkung des
+Seam Vierteltakts auf dem Carrier Fuenfertakt. Das ist eine andere Operation
+als die Hyperladungsphase U5 und korrigiert die zu enge vorige Suche.
+
+Originalstellen:
+
+* verification/v419_seam_galois_carrier.py:1-110
+  SHA256 cc6152ad7ea68c67725020e386e49eec32810ab25bb483c76bae99964399c2fd
+  Exakte Matrizen C5,G und Relation (1).
+
+* experiments/theory-contracts/universalraum-spin-lift-basics-20260915/
+  sources/input_4_origin_theory.tex:180-191
+  SHA256 4a2ac752cf9beb65452d5c1aad3a9dc22b0d3fee24e8247c064ed654f910d95f
+  Historische Deutung von G als nichtzentraler Carrier Galoisoperator.
+
+2. Die beiden tatsaechlichen Zehner
+-----------------------------------
+
+Sei V die vierdimensionale cyclotomische Darstellung aus v419. Der
+Bell Kandidat ist
+
+  B = Sym2(V).                                         (2)
+
+Auf den fuenf Slots 0,...,4 wirkt dasselbe F20 affin durch
+
+  c:j -> j+1,   g:j -> 2j.
+
+Fuer die Permutationsdarstellung P=C^5 ist der Hodge Traeger
+
+  H = Lambda2(P).                                     (3)
+
+Der alte Bell Zehner als Sym2(C4) ist ebenfalls original:
+
+* documents/TFPT_Universalraum_Sitzungsdokumentation_2026-09-20/sections/
+  002-section-die-rahmenidentifikation-und-eine-wichtige-verwe.tex:22-37
+  SHA256 f63c670e7ed5304cd6a9b51c886bf715264049875ed50fe5c8c46100c4c45e22
+  U_l=Sym2(r_l) und der affine Nachfahrenanschluss.
+
+* experiments/theory-contracts/compiler-current-descendant-20260919/
+  checker.py:43-64, 143-153
+  SHA256 b342a8b102d9b1dedf150ccbd4812ccb26fa1b9a4b7cb70401b6cdd8201b4420
+  Exakte Bellbasis und ihr Typ Sym2(C4).
+
+Diese Stellen setzen allerdings die Bell Grundvier nicht ausdruecklich mit
+der cyclotomischen v419 Vier gleich. Der folgende Satz prueft genau, was bei
+dieser bereits naheliegenden, aber noch nicht original hergeleiteten
+Identifikation passiert.
+
+3. Exakter F20 Satz
+-------------------
+
+Sei chi der eindimensionale Viertelcharakter
+
+  chi(C5)=1,   chi(G)=i.                               (4)
+
+Dann gilt als komplexe F20 Darstellung exakt
+
+  chi tensor Sym2(V)  isomorphic  Lambda2(P).          (5)
+
+Dies ist staerker als gleiche Dimension und staerker als ein Vergleich nur
+der Elementordnungen. Der Checker prueft alle 20 Gruppenelemente. Die
+Charaktere stimmen nach dem Twist ueberall ueberein. Der einzige unmittelbar
+sichtbare Unterschied ohne Twist liegt auf der Involutionsklasse G^2:
+
+  tr Sym2(G^2)=+2,
+  tr Lambda2(P(G^2))=-2,
+  chi(G^2)=-1.                                        (6)
+
+Der Viertelcharakter repariert also genau das Vorzeichen, an dem die
+untwisted Darstellungen scheitern.
+
+In den Basen
+
+  Sym2: (00,01,02,03,11,12,13,22,23,33),
+  Lambda2: (01,02,03,04,12,13,14,23,24,34)
+
+ist ein exakter Intertwiner T:
+
+  [ 0  0  0  0  0  0  0  0  1 -1]
+  [ 0  0  0  0  i  0 -i  0  0  0]
+  [ 0  0  0  0  0 -i  0  0  0  0]
+  [ 0  0  0  0  0 -1  1  1 -1  0]
+  [ 0  0  0 -1  0  0  0  0  0  0]
+  [ 0  0 -i  0  0  0  0  i  0  0]
+  [-i  0  i  i  0  0  0  0 -i  0]
+  [-1  1  0  0  0  0  0  0  0  0]
+  [ 0  i  0 -i  0  0 -i  0  0  i]
+  [ 0  1 -1  0 -1  1  0  0  0  0].                  (7)
+
+Er hat det(T)=3i und erfuellt entryweise
+
+  T Sym2(C5) = Lambda2(P(c)) T,
+  T [i Sym2(G)] = Lambda2(P(g)) T.                    (8)
+
+Die konjugierte Wahl chi(G)=-i besitzt ebenfalls denselben Charakter. Die
+hier gezeigte positive Orientierung ist die in (4) verlangte Quarterwahl.
+Der abstrakte F20 Modulsatz allein waehlt diese Orientierung nicht neu aus.
+
+Ausfuehrbarer Beleg:
+
+* check_f20_twisted_intertwiner.py
+* f20-twisted-intertwiner-results.json
+
+Der Lauf prueft 30 exakte Identitaeten, darunter die beiden Originalpins,
+beide Gruppenrelationen, den invertierbaren Intertwiner und alle 20
+Charakterwerte.
+
+4. Was dadurch wirklich neu verbunden ist
+------------------------------------------
+
+Der bekannte volle S5 Einwand war zu grob. Sym2 der cyclotomischen Vier und
+Lambda2 der Permutationsfuenf sind als volle S5 Module nicht gleich. Auf der
+tatsaechlich alten nichtzentralen Untergruppe F20 sind sie nach genau einem
+Viertelcharakter jedoch isomorph. Damit existiert ein konkretes gemeinsames
+Clockmodul, das den Carrier Fuenfertakt und die Seam Viertelwirkung zugleich
+behaelt. Der Anschluss ist nicht aus einer neu gewaehlten abstrakten C5
+gebaut; seine Generatoren sind die Matrizen aus v419.
+
+Die erste verbleibende Originalfrage ist jetzt klein und typisiert:
+
+  Identifiziert die P1/P2 Quelle die Bell Grundvier mit dem cyclotomischen
+  V aus v419, einschliesslich der Charakterlinie chi?
+
+Die gelesenen Quellen tun dies noch nicht. Der Bell Grundraum wird dort als
+vier NS Fermionen beziehungsweise Pauli C4 eingefuehrt. v419 beschriftet
+seine Vier dagegen mit 1,zeta5,zeta5^2,zeta5^3. Gleichheit der zugrunde
+liegenden komplexen Dimension liefert diese physische Identifikation nicht.
+Der Satz (5) liefert aber nun den exakten Kandidaten und den vollstaendigen
+Generatorentest, den eine solche Originalzuordnung bestehen muss.
+
+5. Harte Grenze zur Ereignisoperation
+-------------------------------------
+
+Aus (5) folgt keine Gleichheit der Quantenkanaele. Der alte Bell Kanal hat
+Choi Rang15, der Hodge Komplementkanal Rang5. Choi Rang bleibt unter jeder
+invertierbaren beziehungsweise unitaeren Ein und Ausgangskoordinatisierung
+erhalten. T transportiert das F20 Modul, nicht die Krausfamilie oder das
+physische Instrument.
+
+Ebenso waehlt blosse natuerliche Markentransportkovarianz den Hodge Kanal
+nicht aus. Markabhaengige Kommutanten liefern global natuerliche Familien
+mit denselben Populationen, aber anderen P5 Antworten. Fuer eine
+Instrumentgleichheit bleibt daher weiterhin eine feste Faser SU5 Symmetrie,
+Markierungsunabhaengigkeit oder ein direktes originales C_m Amplitudengesetz
+erforderlich.

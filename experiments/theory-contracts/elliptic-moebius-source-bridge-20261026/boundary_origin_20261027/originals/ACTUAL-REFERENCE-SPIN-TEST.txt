@@ -1,0 +1,259 @@
+ACTUAL REFERENCE SPIN TEST
+Shifted gegen unshifted auf demselben Spin Hardyraum
+2026-10-27
+
+Atlasstand der Navigation: d40044e01d66e9efca2962b9
+
+Verwendeter bereits geschlossener q Spininput:
+
+  experiments/theory-contracts/elliptic-moebius-source-bridge-20261026/
+  MARKED-Q-DIVISOR-CENTRAL-TWIST.txt
+  SHA256 da1f75831a46a0c0662f931486b77e6e2085126df452b009d1a90351d413d904
+
+
+URTEIL
+=======
+
+Die tatsaechlichen Definitionen von D_ref und D_rel erzwingen keinen Wechsel
+vom Spintraeger S_0 zu einem skalaren Koeffiziententraeger O. Das ist kein
+Hindernis fuer den positiven Anschluss. Der urspruengliche fullv21
+Spektralfluss vergleicht den unverschobenen und den um eine Windung
+verschobenen Operator auf demselben Feldraum. Auf dem gesuchten Spin
+Hardyraum ist dies genau der Vergleich
+
+  M_1 gegen M_z auf H2(pi^(-1)D,S_0).                         (1)
+
+Der Fredholmdefekt von M_z hat keinen Kern und den kanonischen Kokern
+
+  H2(S_0)/z H2(S_0)=direct_sum_a S_0|q_a.
+
+Mit der Konvention Det(T)=det ker(T) tensor det coker(T)^(-1) folgt
+
+  Det(M_z) tensor Det(M_1)^(-1)=B_q^(-1).                     (2)
+
+Der vorher verlangte zweite skalare Hardyoperator auf O_C ist daher nur ein
+hinreichender Weg, das reine Ordnungszeichen zu normieren. Er ist keine
+notwendige physische Referenz.
+
+Tatsaechlich gilt
+
+  N_q=B_q tensor B_O^(-1),
+  B_O=det H^0(D_q,O_Dq),
+  B_q^(-1)=N_q^(-1) tensor B_O^(-1).                          (3)
+
+Auf B_O wirken c und beta trivial. Q vertauscht q_1 und q_2 und wirkt deshalb
+mit minus eins. Der Unterschied zwischen B_q^(-1) und N_q^(-1) ist somit nur
+das bereits vorhandene globale alpha Vorzeichen, sofern dieses Vorzeichen im
+aktuellen Modulvertrag frei bleibt. Fuer beta, c und alpha^2 sind beide Linien
+identisch. Als Superlinie ist B_O wegen der ungeraden Laenge drei allerdings
+odd. Die ungradierte Abkuerzung darf deshalb nicht automatisch als
+gradierungserhaltende Identifikation ausgegeben werden. Ein physischer O_C
+Referenzsektor ist fuer den ungradierten Modulanschluss nicht noetig; eine
+vollstaendig graduierte Antwort muss die Paritaet von B_O mitfuehren.
+
+Der wirkliche offene Originalanschluss ist jetzt kleiner:
+
+  Die Originale definieren einen Spinorhilbertraum, einen tangentialen
+  Kreisoperator und den Winding eins Shift. Sie identifizieren den positiven
+  Cauchy oder Hardyraum dieses Randspinors aber nicht mit
+
+    H2(pi^(-1)D,S_0)
+
+  fuer die konkrete Dreiblattkarte pi:C->P1_z. Ohne diese Identifikation ist
+  (2) ein exakter Kandidat, aber noch nicht der tatsaechliche physische
+  Fredholmdefekt der Originalquelle.
+
+Die gleiche Spinwirkung von D_ref und D_rel schliesst den Anschluss also
+nicht aus. Sie ist mit (1) kompatibel. Sie beweist allein weder die benoetigte
+Hardypolarisation noch die q Auswertungsfasern.
+
+
+1. DIE ORIGINALEN SEKTOREN HABEN DENSELBEN SPINTRAEGER
+=======================================================
+
+Quelle:
+
+  Atlas: paper-source:12323340247079857eb23f60
+  documents/archive--paper-latex--tfpt-31/sections/
+  002-subsection-primitive-relative-spectral-dynamics.tex:1-96
+  SHA256 6d8813b95a1ef4d82ee9cd48a25efff3f9c20066a06b85ad121bc26e5dbaae77
+
+v31 beginnt mit einem einzigen Datum
+
+  (A,H,D,J,Gamma,tau,nu)
+
+und definiert
+
+  D_ref=(D+tau D tau)/2,
+  D_rel=(D-tau D tau)/2.                                      (4)
+
+Die optionale fast kommutative Realisierung ist einmal
+
+  H=L2(M_tilde,S) tensor H_int.
+
+Mit P_plus=(1+tau)/2 und P_minus=(1-tau)/2 folgt
+
+  D_ref=P_plus D P_plus + P_minus D P_minus,
+  D_rel=P_plus D P_minus + P_minus D P_plus.                  (5)
+
+D_ref erhaelt die tau Paritaet, D_rel vertauscht sie. Beide bleiben Operatoren
+auf demselben Spintraeger.
+
+Der zentrale Test ist damit einfach. Fuer jede skalare zentrale Spinwirkung
+Z_S auf H gilt
+
+  [Z_S,tau]=0,
+  [Z_S,D_ref]=[Z_S,D_rel]=0.                                  (6)
+
+Insbesondere wirkt das zentrale minus eins der Spinstruktur als minus I auf
+Quelle und Ziel aller Bloecke in (5). Die markierte geometrische Wirkung beta
+muss davon unterschieden werden: Auf dem ganzen Hardyraum kann sie auch die
+Basisvariable bewegen. Auf dem Kokern sitzt sie jedoch an den beta fixierten
+q Punkten und wirkt auf jeder Faser S_0|q_a mit +i. Daher traegt der Kokern in
+(2)
+
+  beta|B_q=(+i)^3=-i,
+  beta|B_q^(-1)=+i,                                           (7)
+
+also bereits den benoetigten zentralen Charakter. Es gibt keinen zentralen
+Widerspruch, den ein skalarer Referenztraeger reparieren muesste.
+
+
+2. fullv21 VERGLEICHT SHIFTED GEGEN UNSHIFTED AUF EINEM FELDRAUM
+================================================================
+
+Quelle:
+
+  Atlas: paper-source:1fe2ddfabc74ac0e94a4686d
+  documents/archive--paper-latex--tfpt-theory-fullv21/sections/
+  001-section-introduction-the-problem-of-parameters.tex:220-258
+  SHA256 85bb11511be05385a7cadf6071dbede216b12befeb9d6767bc4460748cbec5d7
+
+Die Stelle setzt
+
+  D_Gamma=i d/dtheta,
+  U_Gamma(theta)=exp(i theta)
+
+und interpoliert die Randbedingung
+
+  psi(theta+2pi)=exp(i phi) psi(theta),
+  phi:0 -> 2pi.
+
+Die Eigenwerte n+phi/(2pi) zeigen, dass ein Modus kreuzt. Der Startpunkt
+phi=0 und der Endpunkt phi=2pi benutzen denselben psi Feldraum. U_Gamma
+verschiebt die Fouriermoden um eins. Auf der positiven Polarisation ist dies
+genau die einseitige Shiftstruktur M_1 gegen M_z aus (1).
+
+Diese Lesart benoetigt keinen zweiten skalaren Koeffiziententraeger. Sie
+benoetigt aber eine Aussage darueber, welcher positive Spinraum polarisiert
+wird. fullv21 schreibt D_Gamma in einer lokalen Kreisrahmung. Aus dieser
+Formel allein folgt nicht, dass der Raum der positive Hardyraum des spaeteren
+S_0 auf C ist.
+
+
+3. DER SKALARE PUNKTDETERMINANT IST NUR EINE ZEICHENNORMIERUNG
+===============================================================
+
+Auf den drei q Punkten ist
+
+  B_O=det H^0(D_q,O_Dq).
+
+c wirkt als Dreierzyklus und damit mit Zeichen plus eins. beta wirkt auf den
+skalaren Fasern trivial. Q fixiert q_0 und vertauscht q_1,q_2, also
+
+  c|B_O=1,
+  beta|B_O=1,
+  Q|B_O=-1.                                                   (8)
+
+Damit veraendert der Uebergang von B_q^(-1) zu N_q^(-1) weder den zentralen
+beta Charakter noch den kubischen Operator noch alpha^2. Er waehlt nur das
+Vorzeichen des Quarterlifts alpha.
+
+Wenn alpha und minus alpha im geschlossenen Modulvertrag dieselbe verbleibende
+Liftfreiheit sind, kann der physische Defekt direkt B_q^(-1) liefern. Der
+zusaetzliche relative Vergleich mit B_O ist dann eine kanonische
+zeichenfreie Normierung, keine notwendige zweite Teilchensorte oder ein
+notwendiger zweiter physischer Randoperator.
+
+Diese Abkuerzung gilt auf dem ungradierten vierdimensionalen Modul. Als
+Determinantensuperlinie hat B_O Paritaet
+
+  dim H^0(D_q,O_Dq) mod 2 = 3 mod 2 = 1.                      (9)
+
+B_O und B_O^(-1) sind also odd. Ein Vertrag, der die volle
+Determinantengradierung als physische Fermionparitaet festhaelt, muss diesen
+odd Faktor behalten oder seine Absorption in eine bereits vorhandene
+Gradierung beweisen. Gleiche beta,c und alpha^2 Charaktere loesen diese
+Paritaetsfrage nicht.
+
+Diese Aussage ist enger als eine Identifikation von B_q und N_q als
+equivarianten Linien. Sie sind verschieden. Der Unterschied liegt aber genau
+in dem bereits isolierten alpha Vorzeichen und nicht in einem neuen beta oder
+c Charakter.
+
+
+4. WAS v42 UND DIE NORMALENTKOPPLUNG OFFEN LASSEN
+==================================================
+
+Quelle:
+
+  Atlas: paper-source:543cbb0e445a456e04ec4efc
+  documents/archive--paper-latex--tfpt-42/sections/
+  003-subsection-primitive-relative-spectral-dynamics.tex:1-113
+  SHA256 8683d7459140a06d5e03a06adefd05bf7e6538356e4e4da4397133aa991b8fe4
+
+v42 startet mit dem einseitigen Datum
+
+  (A_plus,H_plus,D_plus,J,Gamma,B_Sigma),
+  D_plus=gamma_n(partial_n+B_Sigma),
+
+und bildet den verdoppelten Spinoroperator. Der Calderonprojektor wirkt auf
+dem Cauchydatenhilbertraum desselben D_plus. Eine solche Polarisation kann
+grundsaetzlich den positiven Hardyraum und den endlichen Shiftdefekt in (2)
+liefern.
+
+Aus den gelesenen Zeilen folgt aber nur:
+
+  * D_ref und D_rel haben denselben Spintraeger;
+  * der Randraum ist der Cauchydatenraum von D_plus;
+  * B_Sigma ist der tangentiale Randoperator.
+
+Nicht aus diesen Zeilen folgt:
+
+  * B_Sigma ist der Pullback von minus i d/dtheta auf die drei Blaetter der
+    konkreten Karte pi:C->P1_z;
+  * sein positiver Cauchyraum ist H2(pi^(-1)D,S_0);
+  * U_Gamma wirkt dort als die konkrete meromorphe Funktion z;
+  * der relative Fermionfaktor nimmt Det(M_z) gegen Det(M_1) genau einmal.
+
+Normalentkopplung und Polarisation koennen diese Aussagen in einem konkreten
+Quellmodell beweisen. Die Definitionen (4),(5) allein beweisen sie nicht.
+Ebenso wird hier die allgemein widerlegte Gleichsetzung von geometrischem
+Decklift und Calderonpolarisation nicht verwendet. Ein spezieller positiver
+Nachweis fuer den tatsaechlichen S_0 Quelloperator bleibt moeglich.
+
+
+5. KLEINSTER ENTSCHEIDENDER FOLGETEST
+======================================
+
+Fuer den nun fuehrenden Anschluss braucht die Originalquelle keine O_C
+Koeffizientenreferenz. Sie muss nur den folgenden einen Operatorpfeil liefern:
+
+  positive Cauchydaten des tatsaechlichen B_Sigma
+     -> H2(pi^(-1)D,S_0),                                   (10)
+
+mit den Intertwiningeigenschaften
+
+  B_Sigma -> minus i d/dtheta auf jedem Blatt,
+  U_Gamma -> M_z,
+  tau beziehungsweise Q,c -> die vorhandenen markierten Lifts.
+
+Dann folgt der Kokern in (2) ohne weitere Punktbedingung und ohne neue
+Koeffizientenlinie. Die fullv21 Interpolation liefert die Richtung shifted
+gegen unshifted. Der q Divisor und seine beta,c,Q Wirkung stammen aus der
+bereits vorhandenen z Karte.
+
+Solange (10) nicht aus der tatsaechlichen Randquelle bewiesen ist, bleibt nur
+die Herkunft des Spin Hardyraums offen. Die gleiche Spinwirkung von D_ref und
+D_rel ist damit ein positiver Typcheck, kein Beweis des analytischen
+Intertwiners und kein Ausschluss des Anschlusses.

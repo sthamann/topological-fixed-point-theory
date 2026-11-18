@@ -22,7 +22,7 @@ PINS={
     "experiments/theory-contracts/compiler-clifford-bridge/checker.py":
         "bf566c57f8f9fd2839c3b9ea6fe9c8ce65cc66c310fb6a4ee3119a8c9329d22d",
     "experiments/theory-contracts/compiler-involution-types/checker.py":
-        "9bf99de79f224ffcd060359eb146510b6e49973170f9953a0aec26760bd2c1a1",
+        "a0923ab19e46d784b28783f3b943df032d9de3c08b7ecda017b3d4cd3e5ad1ab",
 }
 ORIGINAL=Path('/Users/stefanhamann/Documents/Codex/2026-09-09/un/outputs/ankerkegel/pruefung.py')
 ORIGINAL_HASH='7d0b7803aa49aa5f034579d76567e154778386b39b041bcd7b3038778efe9696'

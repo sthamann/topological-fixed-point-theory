@@ -3987,6 +3987,1537 @@ TRIANGULATION20261106O: Den tatsächlich unveränderten ursprünglichen markiert
 
 Unabhängige drei Originalreviews im bestehenden Quellenvertrag unter triangulation_20261106O/. v365 korrigiert8/8, unabhängige Rechnung am ursprünglichen Dreiertransfer4 Vergleiche bei80 Stellen mit Fehler unter4.3e-79; keine rigorose Rundungseinschließung. Historische Aussagen bleiben datiert erhalten; aktive Paper/Website/Scriptbeschreibungen werden korrekt synchronisiert. Kein neuer Lean oder Fullsuite Lauf, kein ursprünglicher Vierwertecaller und keine physische Promotion.
 
+
+### FIELDSEARCH20261106P. Echte Feldprogrammwege und GA Sinnprüfung
+
+FIELDSEARCH20261106P: Vorhandener Suchmotor für veränderliche räumliche full96 Higgsoperatoren und getrennten originalgewichteten Integrationsweg umgebaut. Die27 deklarierte Diagnosekonfigurationen sind vollständig ausgewertet, alleZiele[0,1]; keine längere GA Runde ohne berechenbares ursprüngliches Selektionssignal. 18 gezielte Source/API Kontrollen und unabhängiger Review bestehen, arithmetischer Pfad zählt zwei verschiedene Originalatome gleicher sichtbarerKonfiguration. Tatsächlicher installierter Integrationsstart ruft Beitragsoperation auf und endetmitExit2: original_blocked_fiber_packet noch nicht implementiert. Dies ist ein neuer Programmname für die bereits verlangte ursprüngliche Integration, kein neues physisches Postulat. Jetzt genau diesen Originalbeitrag aus vollständigem Quellenaufruf auswerten, inklusive wirklicher Maßmasse und vier unnormierter Matrixmarken, oder gleichen tatsächlich ausgewerteten Randcaller verwenden. Nicht weiter Archive, abstrakte Karten oder beliebige Fitnesswerte bauen. Alle ursprünglichen Felder/P/Ref/Eta/Domain/Zeit und Grenzfolge erhalten. Fünf nicht implementierte Ensemblecallbacks sind der konkrete Softwarestand, keine fünf neu eröffneten physikalischen Grundsatzgates; passende vorhandene Beweise und Operatoranschlüsse direkt verwenden. Ensemblewahrheiten erst nach Integration prüfen, deren Auswertbarkeit vorher herstellen. GA kann künftig Gegenfälle/Proposals suchen, wenn Originalscore vorliegt; genetische Fitness nie als Quellenmaß verwenden. Vollständige physische Suche läuft nicht, keine primitiven Werte und keine fundamentale Gesamtlösung erreicht. F1 in_progress,52 bestehende Abschlüsse und Originalowner erhalten.
+
+Originalbelege: bestehender Quellenvertrag FIELD-SEARCH-AND-GA-20261106.md und fieldsearch_20261106P/. Zwei Generationen mit vier Feldkandidaten, volle27 Diagnoseklasse mit vier wiederverwendeten und23 neuen Bewertungen. Alle aktuelleSignaturen[0,1];0/27 Originalbeiträge/Massen vorhanden. Ein arithmetischer Aggregationskontrolllauf mit beiden Atomen und unverändertem Sourceconsumer besteht; keine physikalischen Werte daraus. Installierter Programmstart von der Hauptinstanz mitExit2 bestätigt.
+Vorheriger O Stand ist aufmain f80bd0c2dec077d72ffb5c211c172bf08f623287 veröffentlicht, Deploymentdpl_GyXmx6rP3by2THCz3dS5DTLi9d4B READY, 30/30 liveDateien bytegleich geprüft. Veröffentlichung bleibt bewusst auf ihrem geprüften Atlasstande8ff eingefroren. Neue P Implementierungsdaten sind lokaler gemeinsamer Forschungsstand; Paper behaupten keinen vollständigen Suchlauf.
+
+
+### YEM20261106_NATIVE. Feste Hyperladungsabbildung und tatsächlicher gemeinsamer Quellenversuch
+
+Die native Y Nullmodenwirkung wurde in die ursprüngliche Real Bimoduldarstellung und den v252 full96 Diracoperator verfolgt. Native chirale48 entspricht gamma_F=+ und nicht particle48. Alle72 reellen Yukawa und12 symmetrischen Majorana Basisrichtungen bestätigen Qem=Y+T3, die tatsächlichen Higgs und Collarzeitkontakte. R078 Higgsrotation und alle bestehenden ganzen Quellenkarten werden übernommen. Die volle affine Quelle wird nicht durch96 Matrizen ersetzt.
+
+Der ursprüngliche gemeinsame Integrationsstart wurde tatsächlich ausgeführt: Exit2 ORIGINAL_SOURCE_INTEGRATION_NOT_STARTED, original_blocked_fiber_packet fehlt,0 Originalatome, Massen und markierte Beiträge bleiben null als unberechnet. Dessen Yukawa/Zeitmark Y ist nicht Hyperladung. Es wurde kein Vierhyperladungswert erzeugt. Im vorhandenen minimalen Nahtfunktional wird delta_top bereits eingesetzt; seine vierte skalare Ableitung bestimmt diesen Input nicht. Historische delta_top=3/(256pi^4)=48c3^4 und Belegungsidentität48 bleiben erhalten, keine neue physische Herleitung von48.
+
+Originalbeleg und unabhängiger Review: experiments/theory-contracts/e-series-compiler-closure-20261023/Y-DIRAC-JOINT-RESPONSE-ATTEMPT-20261106.txt. Atlas 89284ef7d23961b334f37bf3. F1 in_progress, bestehender Owner und nächster Integrationsauftrag unverändert; keine neue erledigte physische Unteraufgabe oder Ledgerpromotion. Der angeforderte gemeinsame physische Wert und die fundamentale Lösung sind nicht erreicht.
+
+
+## SOLUTIONSEARCH20261106R2: Originalvergleich und Vorwissensrouting
+
+SOLUTIONSEARCH20261106R2: Ausführbarer Ganzquellen/Zeit/Markierungsvergleich im vorhandenen vollständigen festen Quellenrahmenzweig implementiert und unabhängig geprüft. Gleiche vier Jets bei verschiedenem ganzen Kernel werden erkannt; Umbenennungsfehler für bewegte Rahmen behoben. Default ruft wirkliche installierte Originalbeitragsoperation, weiterhin original_blocked_fiber_packet nicht bereitgestellt. Dies ist der bekannte ursprüngliche Integrationsauftrag, keine zusätzliche physische Voraussetzung. Der betroffene Sol Lauf ist nach bestätigtem Kontextverlust angehalten. Neue verlustfreie Übergabe erhält das gesamte geprüfte Atlaswissen mit Prämissen/Scopes, vollständige Inputs und alle253früherenProgramme/Prüfversionen; alte identische Programme und erfundene Befund IDs werden abgewiesen. Claude Opus5.5 führt auf ausdrückliche Datenfreigabe eine unabhängige Architekturkritik am tatsächlichen Code und ausgewählten Originalbefunden durch. Vor einer erneuten bloßen endlichen Konstruktion die Erreichbarkeit des fundamentalen Ziels prüfen und den fehlenden tatsächlichen Originalproduzenten bearbeiten. Vergleichscode ist kein ursprünglicher Quellenwert und keine T1 bis T8 Herleitung. Alle geschlossenen Quellen/Zustand/Zeit/Ref Anschlüsse, c3/P1/P2, E8, Clocks, Flavor/Yukawa/Alpha und begrenzten Ausschlüsse erhalten. F1 in_progress, bestehende52Abschlüsse und Originalowner unverändert; keine Ledgerpromotion.
+
+Originalbeleg: experiments/theory-contracts/original-paper-source-reconciliation-20261102/solutionsearch_20261106R/SOURCE-IDENTITY-AND-KNOWLEDGE-20261106R2.md. Atlas 2136f20d31f483ecbe72ea2f. Softwarekontrollen: Wissen14/14, verlustfreierCodec14/14, tatsächlicher lokaler Anschluss12/12; ursprünglicher Vergleich17anfängliche und7gezielte unabhängige Gegen/Erhaltungsfälle nachFix. Kein neuer Lean oder Fullsuite Lauf und keine physische Promotion.
+
+
+## SOLUTIONSEARCH20261106R3: Ausgabesuche korrigiert, nächster ursprünglicher Block
+
+SOLUTIONSEARCH20261106R3: Claude Opus5.5 Gegenreview in zwei Runden am tatsächlichen Code und Originalbefunden geprüft. Alle253alten ganzen Programme haben genau1physikalischenObligationsvektor und0ausgeführtephysischePASS/FAILPrüfungen. Die aktuelle endliche Ausgabeklasse liefert keine ursprünglichen Laufzeitdaten. Neuer tatsächlicher Standardstart rechnet Vergleichsprogramme und endetExit2/NO_COMPLETION_ROUTE ohne weiteren Modellaufruf. WholekernelSignatur stattvierJets, Neubewertung bei geändertem Prüfer erlaubt, ProviderERROR nichtKandidatenFAIL; wirkliche Datenproduzenten oder physische Teilprüfungen erlauben Weiterarbeit, fehlendeT1..T8werdengetrenntausgewiesen. Vorwissen bleibt vollständig mitScopes und Prämissen erhalten. Jetzt EINEN tatsächlichen ursprünglichen nu_Vn/D_Vn Regulatorblock ins gemeinsame Feldchart auflösen und unnormalisierte1/uBeiträge mit ganzemFermion/Ref auswerten, oder denselben markierten ursprünglichen IR Transfercaller. Die gelesenen owning Definitionen materialisieren diesen Block nicht; dies ist kein globaler Nichtvorhandenseinsbeweis. Keine zusätzliche freie omega: QFT004s Zustand des gegebenen Transfers und alle ganzen Quellen/Zeit/Ref Karten erhalten. Neue Forschungshypothese danach: ursprüngliche Ward/SD/RP Residuen am vorhandenen Caller mit unbekanntem Maßderivat/Jacobian und Randfluss auf Identifizierbarkeit prüfen; kein flaches Ersatzmaß. Zertifizierte endliche Zielintervalle bestimmen nur ihr Ziel, nicht automatisch die ganze Quelle oder absolute Masse/Z0; keine Gleichsetzung stabiler Trunkationen mit einem Grenzbeweis. Die aktuelle Ausgabekampagne bleibt angehalten. F1 in_progress,52bestehendeAbschlüsse und Originalowner erhalten; ursprüngliche Beiträge, Spektrum und fundamentale Lösung unberechnet, keine Ledgerpromotion.
+
+Originalbelege im bestehenden Quellenvertrag: solutionsearch_20261106R/CLAUDE-REVIEW-AND-SEARCH-CORRECTION-20261106R3.md, source_review/ORIGINAL-FINITE-INTEGRAND-SOURCE-REVIEW.txt und review/actual-search-signal-audit.json. Atlas c7a66d9345efa908522b8c85.
+
+
+### SOLUTIONSEARCH20261106R4: Originalquellenforschung tatsächlich aktiv
+
+Herleitung und getrennte Gegenprüfung ausschließlich mit `gpt-6.1-sol`; drei vollständige Paare und automatische nächste Runde beobachtet. Vollständige Rollencheckpointdaten, Werkzeugausgaben, Quelleneinstieg und Journal erhalten. Live: http://127.0.0.1:8768/, Lauf `sol-original-source-research`. Wiederaufnahme über `solutionsearch_20261106R/research_runtime/launch.py --repo TFPT_REPO --out EXISTING_RUN --rounds 0`; Dateisperre gegen Doppelstart. Geprüftes Claude Feedback zu ursprünglichem Maß, ganzen Quellen und Randbeiträgen ist enthalten. Laufende Modellresultate sind keine wissenschaftlich übernommenen Beweise; F1/Originalowner und alle bestehenden Abschlüsse bleiben erhalten. Details in `AUTONOMOUS-ORIGINAL-SOURCE-RESEARCH-20261106R4.md`.
+
+
+### SOLUTIONSEARCH20261106R5: Quellenkandidaten und feste Zielfortschrittsprüfung
+
+Claude Review am tatsächlichen Verlauf unabhängig geprüft und Steuerung konkret repariert. Nach 23 vollständigen Paaren denselben Sol Lauf mit erhaltener Historie wiederaufgenommen. Zwölf gezielte Softwarekontrollen bestanden. Der neue tatsächliche Prompt enthält direkte Atlasgegenbefunde, offene Annahmen und das ursprüngliche Pushforwardziel aus R055 §6. Der bereits vorhandene R055 Ausschluss wird wiederverwendet; zwei neue Claude Vorschläge fielen schon in diese Klasse. Kandidatenhypothesen bleiben zulässig und sichtbar, benötigen explizite Quellslots und tatsächliche Beitragsrechnungen. Keine neue physikalische Abnahme, keine Lösung von F1 oder T1..T8 und keine Ledgerpromotion. Details: experiments/theory-contracts/original-paper-source-reconciliation-20261102/solutionsearch_20261106R/SOURCE-CANDIDATE-STEERING-20261106R5.md.
+
+
+## SOLUTIONSEARCH20261106R6: Gezielt nachgeprüfter Claude Capquellenvorschlag wegen falscher Semigruppen-, Majorana/Referenz- und Phasenidentifikationen zurückgezogen. Primäre Capformel und Majoranarest unabhängig kontrolliert. Keine zusätzlichen UV Normalitäts-, Nullenergie- oder separaten Basisprojektivitätsforderungen vor endlichen Kandidaten. Ganze Zeitfamilien behalten tatsächliche Quelle, Verklebung und ursprüngliche Markenpflichten. Gram Laplace Erzeugervorschlag bleibt unüberprüfte Hypothese; keine vier ganzen Beiträge oder neue Physik. Gesunder Sol Controller im selben Run bleibt erhalten.
+
+
+## SOLUTIONSEARCH20261106R50
+
+SOLUTIONSEARCH20261106R50: Der konkret vorgeschlagene primitive Grundzustandsproduzent auf gewöhnlichem C2 mit voller96 Yukawa/Majorana Karte, bewegtem Seeanker und positivem Heatrest hat inf Spec G=-c_ref, aber keinen normalen untersten Eigenvektor. Die4D Variationsfolge und Profilkonstanten wurden unabhängig geprüft. Dies schließt ausschließlich diese erklärte Hypothese aus; keine Aussage gegen tatsächliche Domain/Selector/Restwirkungen oder feste APS Randpräparation. Ursprüngliches nu_Vn und vier ursprüngliche Beiträge bleiben offen. Bereits bekannte R43 Normhülle für begründete vollständige Randkandidaten wiederverwenden; keine erneute Grundzustandsoptimierung auf dem ausgeschlossenen Generator.
+
+
+## SOLUTIONSEARCH20261107R87
+
+Die unveränderte endliche Quark CAR Gibbs Antwort lässt sich nicht als positives gemeinsames Higgsbasismaß lesen. Der Originalaufruf besitzt in jeder Richtung dieselbe positive obere Spektralkante. Elementare Eigenwertschranken würden auf dem erzwungenen Kugelträger an jedem Randpunkt ein Atom mit derselben positiven Mindestmasse verlangen. Der Ausschluss ist unabhängig am Original geprüft und ergänzt den früheren Weyl Ausschluss. Gibbs Antwort, Legendrekarte und Jacobi Determinante für ein gegebenes Gewicht bleiben erhalten. Direktes Entropievolumen benötigt eine eigene Herkunft und eine Integrabilitätsprüfung der ganzen markierten Beiträge. F1, ursprüngliches nu_Vn und die vier ganzen Werte bleiben offen. Details: experiments/theory-contracts/original-paper-source-reconciliation-20261102/solutionsearch_20261106R/r87_review/SOURCE-REVIEW.md.
+
+## MANUAL-SOURCE-20261107
+
+Die erste rechtsseitige Wechselwirkungsableitung des R048 Paars ist bei derselben festen Referenz berechnet. Der bedingte ganze Viertelkreis liefert den Fermionanteil der S Referenz 58,5078959761 und die positive Untergrenze 0,01709171016 für seinen Quotienten. Bei den geprüften ungephasten Sechserkreisprodukten sind die direkte dreidimensionale Koordinatenauswahl mit diagonalen Randgewichten und die direkte Einschränkung auf einen reduzierenden Unterraum als Identifikationen mit v330 ausgeschlossen. Die Originalquellen und unabhängigen Rechenwege stehen im Atlas unter den drei Befunden `finding:manual20261107-*`.
+
+Die vollständigen ursprünglichen Werte Z0 und ZU, die gemeinsame Zeitquelle und die Herleitung über T1 bis T8 bleiben offen. F1 bleibt in Arbeit. Der dokumentierte Stop der automatischen Suche nach 130 Paaren gilt weiter. Quellenbeleg: `experiments/theory-contracts/original-paper-source-reconciliation-20261102/manual_20261107/SOURCE-REVIEW.txt`.
+
+## MARKEDBLOCK20261107. Originalaufruf und Eindeutigkeit der gemeinsamen Antwort
+
+QFT004 liefert die Primitivität des gegebenen Transfers, Metrology005 das spektrale Gewicht auf der ursprünglichen Basis. In den geprüften Konstruktionen wurden die ganze markierte Kontraktion und die ursprüngliche Basismasse nicht gewonnen. Der unveränderte installierte Aufruf im Modus integrate endet reproduzierbar mit Exit 2, null Originalatomen, vier unausgewerteten Beiträgen und fünf MISSING_INPUT. Das Ergebnis stimmt bytegenau mit dem archivierten Lauf überein. Die ursprüngliche Zylinderquelle v330 besitzt in ihrem angegebenen Raum keine ausgewerteten U und Yukawa Marken; in R048 fehlen für die numerische volle Quartik der konkrete ursprüngliche Regulator und seine Zellvolumina.
+
+Für den tatsächlichen statischen Hamilton Yukawa Mark gilt `y(u) = −B√u + O(1)`, mit `B > 0` als halber Spur von `abs(K)` für den ganzen ursprünglichen Yukawablock. Die Funktionen `1, u, y, uy` sind linear unabhängig. Daraus folgen zwei positive radiale Gewichte mit demselben Träger, denselben konditionalen Referenzen und exakt gleichen `Z0, ZU, ZY`, aber verschiedenem `ZUY`. Der Beweis hält auch mit dem tatsächlichen isolierten SU(3) Farbprojektor. Gauge Ward sieht diese radiale Richtung nicht; positive Mischungen der statischen Reflexionsformen bleiben positiv. Eine Schwinger Dyson Prüfung fixiert die radiale Richtung erst mit unabhängig festgelegter ursprünglicher Divergenz. Im vorhandenen 96 Komponenten Strukturfixture beträgt die Differenz des gemischten Moments 3,724080608, während die drei anderen Unterschiede unter 5,4 × 10⁻¹⁵ liegen. Das sind numerische Strukturkontrollen, keine physischen Werte.
+
+Atlas `8b6e8251d1cafaea61b0aa47`: `finding:markedblock20261107-static-actual-yham-mixed-value-not-fixed-by-three-lower-marks` und `finding:markedblock20261107-gauge-ward-needs-fixed-transverse-measure-drift`. Originalbeleg: `experiments/theory-contracts/original-paper-source-reconciliation-20261102/marked_block_20261107/MARKED-BLOCK-AND-IDENTIFIABILITY.txt`. Die Zeugen betreffen die gegebene statische Klasse vor dem ganzen physischen Selektor; keine zwei ganzen primitiven Quellen und keine dynamische Clusterbehauptung. Alle vier primitiven Werte, gemeinsame Dynamik und Spektrum bleiben offen. F1 in_progress, 52 bisherige begrenzte Abschlüsse, Originalowner und gestoppter automatischer Lauf erhalten.
+
+## HIGGSNORM20261108
+
+Im regulären ursprünglichen Vierkomponentenbild ist das absolute Normgewicht der Pushforward der ursprünglichen Endpunktkontraktion. Für u gegen null ist w(u)/u gleich π² F(0) im Grenzwert. Der reguläre Anteil hat dort weder ein Atom noch einen Randfluss. F(0) hält einen Zeitschnitt fest und integriert die ganzen inneren Feldhistorien. Das statische H=0 Referenzergebnis liefert diese Endpunktkontraktion nicht. Metrology005 definiert den spektralen Faktor auf der geometrischen Basis. Das tatsächliche Q Domänenpaket enthält weiterhin keine Originalfaser. Z0 und F(0) bleiben ohne Wert.
+
+Im gleichen tatsächlich lokalen OS Zweig ergibt sich aus der Normmarke 1−exp(−sU/2) der Kontakt −C_s'(0+)=a s² ω(U exp(−sU)). Der ganze Kontakt bestimmt das normierte radiale Gesetz und seine Masse bei null. Der gemischte Kontakt mit Y_ham liest die gleichzeitige markierte Laplace Antwort. Der radiale kinetische Ursprung ist im regulären lokalen Zweig Grenzpunkt. Symbolische Kontaktprüfung und Vergleich mit dem tatsächlichen v330 Modul sind ausgeführt. Dessen Loggenerator ergibt für die vorhandene Markierung den Kontakt 4 log(3/2). Keine nichttriviale positive v330 Normmarke erfüllt die ganze lokale Zeitjetfamilie, auch auf Ebene des stationären Zustands. Der Ausschluss ist auf diesen lokalen Vergleich begrenzt.
+
+Originalbeleg experiments/theory-contracts/original-paper-source-reconciliation-20261102/higgsnorm_20261108/higgsnorm-originalblock-2026-11-08.txt. Atlas 1611cb05bb2335be5609610d. F1 bleibt in Arbeit. Die absolute Normmasse und der identische vollständige markierte Transfer bleiben offen. Der automatische Suchlauf ist gestoppt.
+
+## ORIGPACKET20261108
+
+Die beiden angeforderten Werte verwenden denselben unmarkierten Referenznenner. Z0 ist die leere Originalkontraktion. Für F(0) sitzt ein Normindikator nur am vorgegebenen Zeitschnitt zwischen den beiden vollständigen Streifen. In vier regulären Komponenten liefert die Division durch das Volumen π² ε²/2 im Grenzwert die Dichte und für C² Dichte einen O(ε) Fehler. Eine bloße Summe über U=0 misst eine eventuelle Punktmasse.
+
+Die ursprünglichen Stellen wurden bis zu den Eingaben verfolgt. Metrology005 setzt die feine Konfigurationsbasis ein, die Gewichtskompatibilität braucht ihre Disintegration. QFT004 setzt die diagonal gewichteten Übergänge ein. Das Q Eingabepaket bleibt ohne Originalatome. Die bedingte Randrekonstruktion und die konditionale Fermionreferenz liefern keinen markierten ganzen Einzelzeitwert. Der vorhandene Ausführungsbeleg wurde wiederverwendet.
+
+Auf gemeinsamer regulärer Normkarte fixiert der absolute Referenzskalar den relativen Z0 Wert unter Basisvariationen genau dann, wenn die beiden kontrahierten Massen auf der betrachteten Testklasse proportional sind. Ferner lassen sich unter den angegebenen atomfreien Voraussetzungen beide Gesamtmassen und jede endliche Liste weiterer markierter Integrale exakt festhalten, während sich der positive reguläre F(0) Wert verändert. Die Aussage betrifft partielle Daten am einzelnen Schnitt. Eine vollständige ursprüngliche Referenzfunktion und derselbe ganze Quellquotient bleiben der vorhandene exakte Weg.
+
+Originalbeleg experiments/theory-contracts/original-paper-source-reconciliation-20261102/originalpacket_20261108/originalpaket-einzelzeitschnitt-2026-11-08.txt. Atlas fbe787e741c8471a7d0dffde. F1 bleibt in Arbeit, 52 begrenzte Abschlüsse und der ursprüngliche Owner bleiben erhalten. Keine Werte für F(0) und Z0. Der automatische Suchlauf ist gestoppt.
+
+
+## FULLTRIANGULATION20261108
+
+Die Ergebnisse dieses Chats sind im Atlas als problem:chat-triangulation-20261108 mit 25 geprüften oder ausdrücklich bedingten Einträgen und sechs Problemverbindungen hinterlegt. Die bereits vorhandenen Higgsbefunde bleiben in ihren Originaleinträgen. Der Abgleich T1 bis T8 führt die diskrete Struktur, die vorhandenen ganzen Feldkarten und den physischen Grenzvertrag zusammen. Statische Übergänge, einzelne Mischmomente und normierte Zeitwörter unterscheiden verschiedene fehlende Informationen. Sie ersetzen den ganzen unnormierten Originalübergang nicht.
+
+Der gemeinsame Referenzfluss verbindet normierte Antworten mit dem absoluten Quotienten über einen regulierten Anker. Am R032 Fermionzweig wurde der tatsächliche endliche Ankerteil aus dem v252 Diagnoseseed ausgewertet. S ergibt 0.140331072913927 und T eins für den Fermionquotienten. Die ganzen Restfaktoren bleiben unberechnet. Die unabhängige Higgsprobe hält U nur an einem Zeitschnitt fest und integriert alle inneren Wege.
+
+Quelle ist experiments/theory-contracts/chat-triangulation-20261108/TRIANGULATION.txt. Atlasrevision 645fe1f63e613195bf031056. F1 bleibt in Bearbeitung. Der bestehende Owner und alle Abschlüsse bleiben erhalten. F(0), Z0 und der gemeinsame physische 3+1D Grenzprozess sind offen. Der automatische Suchlauf ist weiterhin gestoppt.
+
+## REFMETRIC20261109
+
+REFMETRIC20261109. Die ganze gegebene R032 Exteriorfaser im geraden H Hintergrund wurde bei gemeinsamer räumlicher Kreisvariation über alle Moden ausgewertet. Im S Zweig ergibt sich bei r=1 und t=4π der Fermionquotient 0,777345176169 und die logarithmische Metrikableitung -0,781606856884. Bei festem t ist log Q/r endlich. Der See korrigierte Fermionfaktor hat im langen Zeitlimit gleichmäßig in r verschwindende Vakuumenergiedichte. Die Higgsnormableitung pro r enthält dagegen den exakten Infrarotterm -(t/2) tr[(P0 Y P0)^2] log r. Direkte volle v252 Rechnung bestätigt endlichen Mischwert und Logsteigung. Die Variation betrifft konstantes äußeres H und eine räumliche Richtung. Weiterhin den vollständigen markierten Originalblock oder dessen identischen Randaufruf auswerten. In dessen räumlicher Verfeinerung den markierten Infrarotterm mit tatsächlicher Projektion, Dynamik und Referenz kontrollieren. Z0, F(0), integriertes UY und der physische 3+1D Grenzprozess bleiben offen. F1 und bestehender Owner erhalten.
+
+Originalbeleg: `experiments/theory-contracts/chat-triangulation-20261108/QUARTER-REFERENCE-METRIC-20261109.txt`. Atlasrevision `8b162b22d5c1580b1e0d2f3d`.
+
+## JOINTIR20261109
+
+JOINTIR20261109. J(s,j) liest denselben unnormierten Originalübergang mit einem Higgs-Laplace-Schnitt und genau einer geordneten Yukawa Einfügung. Der leere Wert, der reguläre Nullschnittgrenzwert und die verbundene Mischableitung verwenden dasselbe Z_ref[0]. Beide vorhandenen Auswertungswege am tatsächlichen Paket melden fehlende Originaleingaben. Der direkte Endpunktkern oder die ursprüngliche Faseroperation muss vollständig geliefert werden. Im regulären gleichzeitigen R113 Schnitt skaliert die Y-markierte Masse mit ε³ und die unmarkierte mit ε². Im R032 Viertelzweig trägt allein der See-Faktor den r log r Term der Hintergrundantwort. Die rohe Hamiltonmarke bleibt am festen Impulsschnitt regulär. Globale Z3 und SU3 Farbmittelungen lassen den Gewichtslogarithmus bestehen. Die alte R067 Klassenantwort und rohe Spur bestimmen unter den benannten statischen Bedingungen die drei Kreuzkorrelationszeichen. Direkte Rechnungen am 96er und 36er Operator, Haar-Weyl Quadratur und exakte Nullschnittfaktoren bestätigen die Tests. Z0, F(0), geordnetes integriertes C_UY und dessen physischer Raumgrenzprozess bleiben offen. F1 bleibt beim bisherigen Owner. Der nächste Test am vollen Originalblock trennt Gewichtsscore, Hamiltonmarke, gleichzeitigen Nullschnitt und getrennte Zeitschnitte mit derselben Projektion und Referenz.
+
+Originalbeleg: `experiments/theory-contracts/chat-triangulation-20261108/JOINT-NULL-SLICE-IR-CROSS-20261109.txt`. Atlasrevision `54228bdb70e00188fb31068a`.
+
+## THREESTRAT20261109
+
+THREESTRAT20261109. Drei gezielte Strategien am ursprünglichen Viertelkreis und R063 geprüft. Der vollständige R032 S Fermionturm besitzt bei kurzer Übergangszeit den relativen Anker eins. Der unabhängige Energiescore reproduziert den bekannten endlichen Quotienten. Ein Energieoffset bleibt im Anker und normierten Wörtern unsichtbar. Die ganze ursprüngliche R063 Folge bestimmt auch eine endliche signierte radiale Quellenableitung, sofern die direkte Änderung des Besetzungslesers abgezogen wird. Der tatsächliche 96er Test zeigt diese Änderung bei festem H. Ein harter diagnostischer Gap im ursprünglichen Leptonkanal dreht den u-Gradienten über seinen Randbeitrag von -4,9390071040 auf +1,3041569813 und hat einen einseitigen Feldrand bei u*=Δ²/y². Keine Identifikation mit dem ganzen P_adm. Nächster konkreter Versuch: denselben lokalen R113 Randcap C_t^00 für tatsächliches Original und Referenz mitsamt absoluter Energieeinfügung gewinnen, gemeinsam mit dem markierten Originalaufruf J(s,j). In der physischen Verfeinerung die echte Projektorbewegung und ihre Randkontakte kontrollieren. Z0, F(0), geordnetes integriertes C_UY und der gemeinsame 3+1D Prozess bleiben offen. F1 und bestehender Owner bleiben erhalten.
+
+Originalbeleg: `experiments/theory-contracts/chat-triangulation-20261108/THREE-ORIGINAL-STRATEGIES-20261109.txt`. Atlasrevision `b7bcd28f23ab5aef8716aa16`.
+
+## WHOLECAP20261109
+
+WHOLECAP20261109. Drei Strategien am ursprünglichen R032/R063 Operator weiter geprüft. Die Majoranainterpolation reproduziert den Fermionquotienten erst nach gemeinsamer Seevariation. Der leere Koordinatenrand hat unvertauschbare UV und kurze Zeitgrenzen. Die negative Referenzpolarisation liefert bei festem r einen UV stabilen Randwert und besitzt einen expliziten Rückkehrterm. Ihr Quotient mit der vollen Spur hebt den gemeinsamen räumlichen Higgslogarithmus auf. Die Verwendung dieser Kürzung für die physische Antwort erfordert dieselbe ursprüngliche Referenz. Die R063 Besetzung trägt bei festem H ein eigenes zeitgeordnetes Yukawawort. Der diagnostische R032 Projektor bewegt sich bereits bei offenem Gap und festem Rang. Entscheidend ist der gemeinsame ursprüngliche R113 Randaufruf mit bosonischem C_t^00, gebundener absoluter Energie und Phase, ganzem P_adm und geordneten Marken. Z0, F(0), C_UY und physischer 3+1D Grenzprozess bleiben offen. F1 bleibt beim bisherigen Owner.
+
+Originalbeleg: `experiments/theory-contracts/chat-triangulation-20261108/WHOLE-STRATEGY-CAP-AND-CONTACTS-20261109.txt`. Atlasrevision `a1622ca82f1e6b74d93e14d6`.
+
+## R113PAIR20261109
+
+R113PAIR20261109. Gemeinsamer Original und Referenzrand im vorhandenen R113 Chart hergeleitet. C_t^00 integriert den tatsächlichen absoluten Skalar bei zwei offenen Bosonendpunkten. Spiegelgerader Vierstreifentest am geladenen R032 Operator: Der verklebte Seefaktor und der nachträglich aus dem ganzen Einteilchenrand abgelesene polare Faktor unterscheiden sich trotz identischem Randoperator. Der verklebte Faktor behält -tΣy² log r, die polare Normierung ist regulär und trägt die vorgegebene Verklebung nicht. Der feste äußere Referenznenner fällt aus C_UY. Ein historienabhängiger Gewichtsscore trägt exakt als geordnete Kumulante bei. Die tatsächliche geometrische Rand und Projektorvariation bleibt dabei zu prüfen. Ursprünglicher Integrationsstart Exit 2 wegen original_blocked_fiber_packet. Nächster Rechenschritt ist der tatsächliche gemeinsame bosonische Endpunktkernel oder die ursprüngliche Faseroperation mitsamt absoluter Referenz und den geordneten Formen. Physische Z0,F(0),C_UY und der Infrarotgrenzwert mit P_adm bleiben offen. F1 bleibt beim bestehenden Owner.
+
+Originalbeleg: `experiments/theory-contracts/chat-triangulation-20261108/R113-ORIGINAL-UND-REFERENZ-20261109.txt`. Atlasrevision `55cd54f1cc57cf8e8aca79dc`.
+
+## R113TIME20261109
+
+R113TIME20261109. Drei Zeitprofilstrategien am ursprünglichen geladenen R032 Operator geprüft. Die verklebte Infrarotform ist proportional zum zeitlichen L2 Skalarprodukt, die nachträgliche polare Form hängt nur vom Zeitmittel ab. Gleich starke konstante und oszillierende Profile liefern nach Subtraktion endliche räumliche Dichten. Getrennte Zeitfenster tragen verklebt keinen lokalen See Kreuzlogarithmus, während die polare Normierung einen solchen erzeugt. Das echte globale Z3 ändert endliche Werte und lässt die räumliche Logsteigung unverändert. Die positive reflektierte Gramform des geordneten Zeitkerns unterscheidet ihn vom älteren nackten spektralen Wirkungsrest. Diese Proben am gemeinsamen gewichteten R113 Originalaufruf mit ganzer Projektion, tatsächlichen Marken und festem Referenznenner wiederverwenden, sobald sein bosonischer Endpunktkern auswertbar ist. Physische Z0, F(0), C_UY und der ganze Infrarot und 3+1D Grenzprozess bleiben offen. F1 bleibt beim bisherigen Owner.
+
+Originalbeleg: `experiments/theory-contracts/chat-triangulation-20261108/TFPT-VOGELPERSPEKTIVE-ZEITPROFILE-20261109.txt`. Atlasrevision `5d63512fe7454393875435f1`.
+
+## R113WINDOWS20261109
+
+R113WINDOWS20261109. Bei skalarer Higgsnorm auf der tatsächlichen R113 Geschichte liefern der leere Kern K0 und der geordnete Yukawajet KJ dieselben vier UY Randformen und den Nullschnitt. Die verbundene Doppelform vermeidet Division durch einzelne Nullfasergewichte. Zwei geladene R032 Geschichten mit gleicher ganzer U Bahn und gleichem Seefaktor liefern mit echtem Z3 die unterschiedlichen späten Yukawa Antworten -3.2141147339 und -13.2221519656. Die ganze Vorzeichenumkehr bestätigt die globale Symmetriekontrolle. Getrennte Fenster entfernen bei Hintergrundvariation den direkten lokalen Mischkontakt. Kovarianzen der ersten Gewichtsscores bleiben möglich und sind bei der räumlichen Verfeinerung getrennt zu prüfen. Ursprünglicher Faseraufruf meldet weiterhin original_blocked_fiber_packet und Exit 2, direkter Endpunktaufruf hat ebenfalls kein Paket. Jetzt die tatsächlichen gewichteten, nicht radial reduzierten Historien mit K0, KJ, vollem P_adm, Rand und gebundener Referenz auswerten. Physische Z0, F(0), C_IJ und Infrarotgrenzwert bleiben offen. F1 bleibt beim vorhandenen Owner.
+
+Originalbeleg: `experiments/theory-contracts/chat-triangulation-20261108/TFPT-R113-GETRENNTE-ZEITFENSTER-20261109.txt`. Atlasrevision `2469d37ca9d25f2b78841fd3`.
+
+## R113PAPERAUDIT20261109
+
+R113PAPERAUDIT20261109. Die letzte Diagnose änderte beide spiegelgleichen äußeren Streifen bei festem späteren Fenster und fester Verbindung. Der mitgetragene schwache Zentrumtransport an beiden Übergängen stellt Spur und späten geordneten Yukawawert wieder her. Die ganze Higgsnormbahn ist im festen Chart kein Ersatz für Orientierung und Verbindung. Paper 2 und v330 liefern die tatsächliche C6 Brückenmaßquelle. Die gegebene Hamiltonklasse trägt bereits normierte thermische Wortquellen, liefert aber keine Identifikation der ursprünglichen U/Y Marken im gemeinsamen 3+1D Caller. Der direkte physische Hamiltonweg und der ursprüngliche Randkernel bleiben zwei echte Einstiege. Thermodynamik und kontrollierte IR Universalität sind gemäß QFT4D.LATTICE.FUNDAMENTAL.01 verbindlich, a→0 bleibt separate Verstärkung. Die R082 Korrektur bewahrt die tatsächliche Operatorvergleichslücke der alten metrischen Gapschranke. Normierte Wörter, absoluter Referenzwert und geometrischer Nullschnitt getrennt halten. Keine physischen Werte oder Ledgerpromotion. F1 bleibt beim vorhandenen Owner.
+
+Originalbeleg: `experiments/theory-contracts/chat-triangulation-20261108/TFPT-R113-PAPER-ATLAS-ABGLEICH-20261109.txt`. Atlasrevision `41ca155c2af5a92ccc66e1db`.
+
+## R113HAM20261109
+
+R113HAM20261109. Der unveränderte native 3+1D B7 Gaußwürfel liefert exakt transportierte Hamiltonmatrix und native Marken, denselben Grundzustand und die normierte Wilson/Hopping Antwort +.0024726044232553 in beiden Baumdarstellungen. Die direkte Zuordnung der R113 Koordinatenfermionzahl zu den nativen Sitebesetzungen scheitert: DET4 ändert Gesamtzahl um vier, Hopping die physische Flächenzahl. Keine nichttriviale additive Sitezählung ist erhalten. Die exakte lokale R113 Doppelkommutatoridentität kann auf demselben endlichen Matrixraum nur mit U=0 gelten. Einen tatsächlichen U/Y Feldanschluss mit gemeinsamem Zustand, Zeit und Eichtransport herleiten oder vorhandenen vollständig identifizierten Hamiltoncaller verwenden. Die native Fensterkontrolle ist kein physisches C_UY. Dieses und der physische IR Test bleiben offen. F1 bleibt beim vorhandenen Owner.
+
+Originalbeleg: `experiments/theory-contracts/chat-triangulation-20261108/TFPT-R113-HAMILTONWEG-20261109.txt`. Atlasrevision `4fede35ce490291463fd4cea`.
+
+## R113ALTMAP20261109
+
+R113ALTMAP20261109. Für jede erhaltene Zahlabbildung mit festen nativen Wilsonkoordinaten erzwingen die reinen elektrischen Chordflips dieselbe Matrix in allen Linkblöcken. Sieben Baumparitäten unterscheiden alle 128 Materiezustände. Hopping und DET4 lassen nur aP_(N mod4=0)+bP_(N mod4=2) mit Rängen 72 und 56. Keine nichtleere aktive CAR Zählung der acht Moden hat dieses Spektrum. Alle Originalblöcke in beiden Baumdarstellungen geprüft. Im tatsächlichen eindeutigen Grundzustand N mod4=2 hat jede verbliebene Marke die exakte normierte Fensterantwort null. Das ist kein physischer UY Wert. Der native dimensionslose Fensterfaktor aus der endlichen Lücke ist .8773093201 vor dem unbekannten Produkt der zentrierten Markennormen. Nächster echter Feldanschluss muss aus der ursprünglichen gemeinsamen Observable Algebra und Eichwirkung folgen. Physische UY Antwort und IR offen.
+
+Originalbeleg: `experiments/theory-contracts/chat-triangulation-20261108/TFPT-R113-ALTERNATIVE-FELDABBILDUNG-20261109.txt`. Atlasrevision `f515849456f188f2977244e3`.
+
+## R113DIRECT20261109
+
+R113DIRECT20261109. Die ursprüngliche quaternionische Einform und der schwach ungerade Hamiltonanteil liefern U und Y direkt, ohne Fermionzahlauswahl. Der direkte B7 Flächenwechsel isoliert senkrechtes Hopping, dessen Norm konstant und dessen relative Wirkung kommutativ ist. Das ursprüngliche Quaternion hat nichtkommutierende relative Richtungen. Die ersten nativen Wilson Einformen tragen nur elektrische Übergänge; der zweite Zeitkontakt ändert Materie nur zwischen Linkblöcken. Native H, Kandidaten, Grundzustand und Zeit sind in beiden Eichdarstellungen gemeinsam geprüft. Die exakte Fensterantwort des konstanten Kandidaten ist null, physisches C_UY bleibt unberechnet. Für den nächsten Kandidaten die ursprüngliche schwache und markierte Operatorwirkung auf derselben tatsächlichen Quelle herleiten. F1 und bisheriger Owner erhalten.
+
+Originalbeleg: `experiments/theory-contracts/chat-triangulation-20261108/TFPT-R113-DIREKTE-FELDALGEBRA-20261109.txt`. Atlasrevision `db0b0e5f2e1ad3db4e3f3541`.
+
+## R113STRATEGY20261109
+
+Der komprimierte R032 Randwert bei p=1/4 und H=0 hat durch acht verschiedene positive Exponentialanteile exakten Zeit-Hankelrang acht. Für zwei glatte streng getrennte externe Higgsprofile bleibt der polare Infrarotterm im R032 Test bestehen. Ein feldunabhängiger lokaler Kontaktterm endlich vieler Quellableitungen kann diese Kreuzantwort nicht korrigieren. Die vollständige Projektion und das physische UY sind in diesem Test ungeprüft. Am tatsächlichen offenen Schnitt Original und Referenz mit leerer, U und Y Marke auswerten. Ein längeres geordnetes Wort direkt gegen die Verklebung prüfen. Anschließend Metrik und Außenrand am selben Übergang variieren. F1 und der bestehende Owner bleiben erhalten.
+
+Originalbeleg `experiments/theory-contracts/chat-triangulation-20261108/TFPT-GEMEINSAME-QUELLE-STRATEGIEN-20261109.txt`. Atlasrevision `413804e998d25425f3ff3d21`.
+
+## R113STRATEGYTEST20261109
+
+Drei Prüfungen am geladenen R032 Exteriorzweig. Direkte Entwicklung und Verklebung reproduzieren die späte Marke. Gleiche Higgsnorm und veränderte frühe relative Orientierung ergeben Y=-5.991776 und -2.745809 bei fester Verbindung. Mittransportierter Rahmenwechsel erhält die Kontraktion. Die Tangentialvariation zweier getrennter externer Profile stimmt mit der Generatorinsertion einschließlich Z3 überein. Im räumlich konstant markierten Vakuumzweig ist der Fenstergrenzwert endlich, während das statische inverse Energiemoment mit 145.008235 log r wächst. Die physische gemeinsame Bosonintegration, volle Projektion und der 3+1D Grenzprozess sind offen. Die tatsächlichen offenen unnormierten Original- und Referenzkerne mit dynamischen Marken und relativer schwacher Orientierung samt Eichtransport auswerten. Danach feste Zeitfenster, statisches Spektralmoment und Geometrie am selben physisch projizierten Übergang prüfen. F1 und der bestehende Owner bleiben erhalten.
+
+Originalbeleg `experiments/theory-contracts/chat-triangulation-20261108/TFPT-DREI-QUELLENTESTS-20261109.txt`. Atlasrevision `018f5781ccaa9365967c8678`.
+
+## R113OPEN20261109
+
+Am 96er Originaloperator tragen die transformierten Anschlüsse die schwache Higgsorientierung bei wechselnden Normen. A, S und T samt vorhandener Seefaktoren und später Fermionmarke stimmen bis 1.1e-14 nach Transport überein. Ohne diese Anschlüsse ist der offene A Matrixfehler 1.564869. Der native Integrationsaufruf meldet das fehlende original_blocked_fiber_packet und keine berechneten markierten Beiträge. Für den vollständigen Selektor erhält die statische Blockelimination den Rückkehrterm, der glatte Logschätzer liest das lineare Spektralgewicht am Nullrand. Die R032 Z3 Kontrolle bestätigt den Schätzer. Physische Z0, F(0), C_UY und der IR Term des vollständigen Selektors bleiben unberechnet. Für einen tatsächlichen Originalblock das original_blocked_fiber_packet oder die äquivalente unnormierte Randform gewinnen. Die leeren Bosonbeine A/R und den kleinen positiven Normschnitt mit den mitgeführten schwachen Anschlüssen auswerten. Den statischen IR Test erst mit dem identifizierten physischen Zeitgenerator und dem ganzen Selektor durchführen. F1 und vorhandener Owner bleiben.
+
+Originalbeleg `experiments/theory-contracts/chat-triangulation-20261108/TFPT-R113-OFFENER-GEEICHTER-UEBERGANG-20261109.txt`. Atlasrevision `57e94392e742e2c72ebea5f7`.
+
+## TFPTBIGPATTERNS20261109
+
+Drei Querverbindungen im Gesamtbild. Der exakte Zeitantwort-Rang wächst im R032 Kreisgrenzprozess auch mit festem Energieband ohne einheitliche endliche Schranke. Die R048 reine Krümmungsmarke hat denselben linearen radialen Kanal wie die äußeren Yukawaproben und einen orthogonalen quadratischen Rest xi² G_xy²/2. Die gemeinsame Lepton c-Form ergibt den seedfreien Quotienten 21/16. Die archivierte Polmassenprobe liegt 4.2066 Prozent darüber und erfordert einen flavorabhängigen physischen Übergang, keine Änderung des gemeinsamen Seeds. Vier Python Verifikationen und zwei Lean Einstiege gezielt geprüft. F1 und Owner bleiben, keine neue physische Schließung.
+
+Originalbeleg `experiments/theory-contracts/chat-triangulation-20261108/TFPT-GESAMTBILD-QUERVERBINDUNGEN-20261109.txt`. Atlasrevision `c5c56d2f765021a2d30b50dd`.
+
+## TFPTBIGFOLLOWUP20261109
+
+Der Atlas-Einstieg priorisierte durch die 18476 Zeichen lange alte Planfortsetzung R113. Der aktuelle Einstieg fasst die Gesamtarchitektur, die neuen Querverbindungen und F1 zusammen; der alte Text ist historisch erhalten. Bei denselben Eingaben wie v420 braucht der seedfreie Leptonquotient Delta log K=+.041330362, reine Einloop-QED ergibt -.000947479. Koide Q und log K sind lokal unabhängige Massengestaltkoordinaten. Die v420 Abstandskontrolle trägt die kausale Deutung nicht. Gemeinsame Potenz ist ausgeschlossen; 53/54/Möbius bleibt ein Kandidat, der beide Massenverhältnisse liefern muss. Reine lineare R048 Skalar-Krümmung hat exakt keinen TT Anteil im flachen Chart. F1 und Owner bleiben, keine physische Gesamtschließung.
+
+Originalbeleg `experiments/theory-contracts/chat-triangulation-20261108/TFPT-GESAMTBILD-ATLAS-UND-HYPOTHESEN-20261109.txt`. Atlasrevision `b74d804b82d5c79629bb4192`.
+
+## TFPTKOIDE5354DUAL20261109
+
+Aus den unveränderten v183 Matrizen folgt der Eckfaktor 53/54, aus v20 und der Leptonzeile (5,3,2) das Massentripel. Der in Paper 4 publizierte gemeinsame Seedwechsel liefert Q=.666666096864, aber K=21/16 exakt bei jedem gemeinsamen Seed. Das archivierte v420 Poltripel liefert K=1.367882710480. Damit ist der skalare Lift als vollständiger Polmassenverhältnis-Übergang ausgeschlossen. Eine tatsächlich hergeleitete Familienwirkung müsste die fehlende (1,-3,2) Komponente liefern. Der Eckfaktor ist exakt. v183, v20 und v37 gezielt erneut ausgeführt. F1 und Owner bleiben.
+
+Originalbeleg `experiments/theory-contracts/chat-triangulation-20261108/TFPT-KOIDE-53-54-DOPPELTEST-20261109.txt`. Atlasrevision `b93378bac5ed2262449618b3`.
+
+## TFPTSTARTOVER20261109
+
+Gesamtaufnahme aus Ursprung, Compiler, Dynamik und physischen Verträgen. In der tatsächlichen v128 E8 Wurzelkonstruktion liefert die gemischte Glue-Phase 1 gegenüber 1/900 für unabhängig gezogene gleiche Marginalen. Die getrennte Neutralwahl entfernt 188 Wurzeln. Im geladenen originalen R032 Vakuumzweig ist das Spektralgewicht der festen lokalen Yukawa-Sonde gleichmäßig quadratisch in der Energieschwelle, ihr statisches inverses Energiemoment daher linear. Bei wachsender Sonde kehrt der logarithmische Beitrag pro Sondenlänge zurück. Tatsächliches Z3 und eingefrorener Seeskalar; keine volle physische Projektion oder 3+1D Schließung. F1 und Owner bleiben.
+
+Originalbeleg `experiments/theory-contracts/chat-triangulation-20261108/TFPT-URSPRUNG-LOKALITAET-UND-GLUE-20261109.txt`. Atlasrevision `5353a91604c8b24fb85315b0`.
+
+## TFPTJOINTCHECK20261109
+
+Am tatsächlichen Originalfold wechseln unter der nativen Clock 112/240 Wurzeln die feste Glueklasse trotz erhaltener Parität. Die Bahn (0,2,0) ergibt entgegengesetzte normierte Wörter für frühe und späte Phasenmarke. Zwischenneutralität löscht die Rückkehr. Derselbe Fold liefert eine Änderung des Randstressgewichts um zweimal den Quellenergiesprung. Im ursprünglichen R032 Kreis sind lokale Y und tangentiale Stressmarke auf disjunkten Spektralwegen. Der statische Tangentialbeitrag ist O(e³), sein TT Anteil exakt null. Die getrennte v1000 TT Kontrolle besteht 11/11 und liefert keinen gemeinsamen physischen Übergang. Die aktive oder kovariant mitgeführte Clock und der transversale Stressanschluss bleiben zu identifizieren. F1 und Owner bleiben.
+
+Originalbeleg `experiments/theory-contracts/chat-triangulation-20261108/TFPT-GEMEINSAMER-GLUE-CLOCK-STRESS-TEST-20261109.txt`. Atlasrevision `9df5ed662b866ea27691db85`.
+
+## TFPTBULKBRIDGE20261109
+
+Der tatsächliche Achtfachfold transportiert den R032 Kreisoperator samt 30 ortsabhängigen Yukawabeinen exakt in beiden Quarterkarten. Ein originales Gluewort 0,2,0 hat die Quellsektoren 0,s,0 und wird in der nackten CAR Zwischenprojektion exakt null. Für den ganzen R100 Clockorbit wächst der Energiebedarf 3n/4, daher reicht keine feste beschränkte Reserve. Beim freien v1000 Spin-2 Pol liefert eine transversale Punktsonde im Querraumlimit eine Schwelle ohne Atom. Die echte Interaktionsprobe bleibt im geprüften Fenster gapped; der vorhandene exponentielle Formfaktor verletzt Reflexionspositivität. Der gemeinsame physische 3+1D Übergang, Pole und universelle Materiekopplung sind offen. F1 und Owner bleiben.
+
+Originalbeleg `experiments/theory-contracts/chat-triangulation-20261108/TFPT-FOLD-R032-UND-3P1D-SZENARIEN-20261109.txt`. Atlasrevision `03ad377156b5be57fdddc11e`.
+
+## TFPTFOLDPROJ20261109
+
+Der Originalaufruf projiziert das geordnete Wort außen. Im unveränderten v989 Übergang mit beiden ursprünglichen Gauss Sternen hat der mittlere Link den Charakter minus. Phase innen und nach Rückkehr ergeben bei Diagnosezeiten 0, .4 und 1 exakt die relativen Vorzeichen minus und plus, eine zusätzliche mittlere Projektion ergibt null. Für die reflektierte Rückkehr ist eine scharfe Phase äquivalent zur entsprechenden Eigenwirkung auf dem ganzen übertragenen Zwischenzustand. Der Test identifiziert weder die Linkladung mit dem Fold Spinor noch P_G mit P_adm. Der voll projizierte Foldwert, der gemeinsame 3+1D Spin 2 Pol und seine Kopplungen an zwei Materiearten bleiben unberechnet. F1 und Owner bleiben.
+
+Originalbeleg `experiments/theory-contracts/chat-triangulation-20261108/TFPT-ERWEITERTER-FOLD-VOLLPROJEKTION-20261109.txt`. Atlasrevision `c414ffa39e054370f223dfce`.
+
+## TFPTDIRECTFOLD20261109
+
+Die zwei Spinorladungsdifferenzen des tatsächlichen Fold Zeugen geben Gewicht 2 Felder. Ihre konformen Nullmoden treffen auf derselben erweiterten Kreisquelle beide Primärlinien mit originalem Kokzyklus. Die Gluephase ist exakt die holonomiekorrigierte Vierteldrehung exp(i pi (8 K-alpha Q)/2), auf 240 Originalwurzeln geprüft. Mit gerader äußerer Projektion sind die normierten Antworten früh minus exp(-3t/16) oder minus exp(-t/16), spät positiv. Der relative glatte Halbkink hat keinen nichttrivialen Intertwiner in der CAR Normvervollständigung. Die schwache lokale Algebra oder neutrale Sewingregel bleibt der physische Anschluss. Der Stress auf demselben Anfangszustand ist tangential und die physische Vollprojektion, der gemeinsame Tensorpol sowie beide Materievertices bleiben unberechnet. F1 und Owner bleiben.
+
+Originalbeleg `experiments/theory-contracts/chat-triangulation-20261108/TFPT-DIREKTE-FOLD-OPERATOREN-20261109.txt`. Atlasrevision `3ba901309d9e40759bfb42e8`.
+
+## TFPTNEUTRALSEW20261109
+
+Die tatsächlichen zwei Spinorvertices reduzieren sich in radialer Ordnung auf einen geraden D8 Vertex und neutrale Ströme. Der markierte Kern hat Zwischenkoeffizienten n+1 und relativen Abstand 1/4+n in beiden Quarterkarten. Das relative Vorzeichen ist bei jeder äußeren Kompression im selben Quellraum stabil, ohne einen nichtverschwindenden Wert zu garantieren. Drei gerade D8 Wurzeln stimmen in Energie, Gesamtladung und Clockphase mit dem Spinor überein. Eine neutrale Cartan Marke ergibt 1/2; der positive reflektierte Quadrattest trennt diesen Wert von ganzzahligem Spektrum. Der ursprüngliche physische Caller mit P_adm, sein gleichzeitiger Tensorpol und zwei Materievertices bleiben unberechnet. F1 und Owner bleiben.
+
+Originalbeleg `experiments/theory-contracts/chat-triangulation-20261108/TFPT-NEUTRALE-FOLD-VERKLEBUNG-20261109.txt`. Atlasrevision `5c2834715950b38f22955941`.
+
+## TFPTP1CARTAN20261109
+
+Die geforderte Cartanmarke ist der aus den originalen Translationen gebildete Modulo 8 Filter. Sein Achtbogenbild hat Offdiagonalnorm zum Quadrat 7/8, der beste lokale skalare Ersatz liest Q/8=1/4 bei Spinor und den geraden Vergleichszuständen. Am vorhandenen v252/R032 Higgsprofil rotiert die Clockphase das Hintergrundprofil exakt. Die Cartanrotation gibt gleichen Fourierabständen verschiedene Faktoren und ist keine lokale Multiplikationsvariation. Der ursprüngliche bilokale P1 Anschluss samt vollem P_adm, Spinorantwort, Phase und gemeinsamer Tensor und Materieantwort bleibt unberechnet. F1 und Owner bleiben.
+
+Originalbeleg `experiments/theory-contracts/chat-triangulation-20261108/TFPT-P1-CARTAN-EINFUEGUNG-20261109.txt`. Atlasrevision `2bfef1bd426c4e8374763576`.
+
+## TFPTONEARC20261109
+
+Die erste tatsächliche Fold Kante nach Quarterkorrektur liefert den Realwert sqrt(2) auf der markierten Spinorlinie. Die relative Energie ist 1/4 und die Clockphase minus in beiden Quarterkarten. Auf der vollständigen markierten Schale liegen sieben gerade und sieben Spinorprimäre. Ein gerades Gemisch reproduziert die zwei Mittelwerte; das positive zweite Moment des zeitaufgelösten Einzeloperators trennt die Zielspinorlinie mit Abstandsschranke 3-2sqrt(2). Die ursprüngliche dynamische P1 Eichverbindung zu denselben Enden und der Wert unter vollem P_adm bleiben unberechnet. F1 und Owner bleiben.
+
+Originalbeleg `experiments/theory-contracts/chat-triangulation-20261108/TFPT-EINE-BOGENVERBINDUNG-20261109.txt`. Atlasrevision `99280497ba95c4c9c1aae3c3`.
+
+## TFPTOPENEDGE20261109
+
+Die ursprüngliche schwache Verbindung des v252 Feldcharts liefert auf der ersten Bogenstrecke exp(i pi a Q/4). Bei derselben geschlossenen Holonomie kann der bisherige Modulo Filter die geladenen Modenklassen 7 und 1 anstelle von 0 lesen. Das tatsächliche Higgs/Yukawa mischt die geladenen und neutralen schwachen Sektoren. Eine stetige schwach kovariante Wurzelregel allein aus der geschlossenen Holonomie scheitert bei ihrer entarteten Halbwendung. Offen bleibt der P1 Einsatz des tatsächlichen offenen Transports mit denselben Endfeldern, Zustand, Zeit, Referenz und vollem P_adm. Spinorantwort, Phase, gemeinsamer Tensorpol und beide Materievertices unberechnet. F1 und Owner bleiben.
+
+Originalbeleg `experiments/theory-contracts/chat-triangulation-20261108/TFPT-OFFENER-EICHTRANSPORT-20261109.txt`. Atlasrevision `9d3ca51ff48d15beeece1a09`.
+
+## TFPTWEAKEND20261109
+
+Am vorhandenen ganzen v252 Zweirandkern für die tatsächlichen Fold Enden 0 und pi/4 ist der isolierte Wilson Kontakt i(pi/4)Q exakt. Die eigene erste Feldkernantwort unterscheidet sich davon; die kovariant gekleidete Restnorm ist rund 0.00025824 in beiden Quarterkarten. Der tatsächliche EM Flip macht die neutrale lineare Spur exakt null. Der physische P1 Endpunktanschluss mit offenen Feldindizes und vollem P_adm ist noch nicht identifiziert. Die voll projizierte Rückkehr, das relative Minus und das zweite Moment um sqrt(2) sind unberechnet. F1 und Owner bleiben.
+
+Originalbeleg `experiments/theory-contracts/chat-triangulation-20261108/TFPT-ERSTE-SCHWACHE-ENDANTWORT-20261109.txt`. Atlasrevision `621cdd123c15e1e1001ef6b7`.
+
+## TFPTWEAKGREEN20261109
+
+Die direkte schwache Resolventenantwort aus der vorhandenen antiperiodischen NS Verdopplung reproduziert die volle Matrix an den Fold Enden vor der Spur. Die feste Cauchy Kompression löscht den Projektortangenten exakt. Die einseitige Kovarianz rekonstruiert die projizierte Querantwort nur bei Reduktion des Kerns; die konkrete v252 Singletkontrolle zeigt einen positiven Verlust. Die physische P1 Feldzuordnung und die drei Werte unter vollem P_adm sind weiterhin unberechnet. F1 und Owner bleiben.
+
+Originalbeleg `experiments/theory-contracts/chat-triangulation-20261108/TFPT-SCHWACHE-GREEN-RANDANTWORT-20261109.txt`. Atlasrevision `23eecc2a65aee612adec51b8`.
+
+## TFPTFACEASSIGN20261109
+
+Drei konkrete Zuordnungen der beschrifteten v252 Zweirandquelle erhalten die volle schwache Querantwort auf ihren jeweiligen Bildern. Die lineare Karte kehrt die feste Kreiszeit um. Die antiunitäre Karte im einzelnen Quarter spiegelt den Ort des zweiten Endes. Der punktweise Tausch des gesamten Quarterpaars erhält Orte, Zeit und freie Paarreferenz, trägt aber den ursprünglichen Cartanfilter F0 nach F7. Die Rückverschiebung um eine Mode ändert den Zeitgenerator um gamma_F. Der ursprüngliche P1 Endpunktaufruf mit festem Marker und die drei Werte unter vollem P_adm bleiben unberechnet. F1 und Owner bleiben.
+
+Originalbeleg `experiments/theory-contracts/chat-triangulation-20261108/TFPT-ZUORDNUNG-BEIDER-RANDSPUREN-20261109.txt`. Atlasrevision `12f93525e27c4cd0ab44634c`.
+
+## TFPTMARKREFLECT20261109
+
+Drei Wege zur markierten Randreflexion geprüft. Direkte signumkehrende flache Möbius Karten wechseln den Pin Abstieg. Der tatsächliche Fold Kokzykluslift ist involutiv und erhält mit mitgeführter Ladungsrichtung die Zeit, Phase und Spinormarke beider Quarterzweige. Ohne diese Richtung sind alle sieben Einzelbogenwerte der geraden Schale die reflektierten sieben Spinorwerte; invariant zusammengefasste Momente sind sektorenblind. Die physische P1 Reflexion, volle P_adm Rückkehr, relatives Minus und zweites Moment bleiben unberechnet. F1 und Owner bleiben.
+
+Originalbeleg `experiments/theory-contracts/chat-triangulation-20261108/TFPT-MARKIERTE-QUARTERREFLEXION-20261109.txt`. Atlasrevision `2775260319f8d8f002991626`.
+
+## TFPTALPHACASCADE20261109
+
+Topologie, Alpha Dämpfung und Resummierung verändern den gemeinsamen Seed, lassen K der Leptonleiter aber exakt bei 21/16. Die alte v27 E8 Kaskade reproduziert ihre gedruckten Sektorwerte. Ihre getrennten Möbius Cusps bewegen K, verfehlen aber gemeinsam Q und K. Nach 53/54 bleibt ein Familienkontrast von +0.04133036209 in log K; QED erster Ordnung hat das andere Vorzeichen. Alle sieben reflexionsinvariant zusammengefassten Bogenharmonischen sind auf der ursprünglichen Fold Schale durch eine affine Paarung sektorenblind. Das gepaarte Cartanquadrat trennt den Zielspinor gemeinsam mit der Bogenmarke auf dem Kreis. Die geordnete P1 Einsetzung und die drei Werte unter vollem P_adm bleiben unberechnet. F1 und Owner bleiben.
+
+Originalbeleg `experiments/theory-contracts/chat-triangulation-20261108/TFPT-ALPHA-E8-KOIDE-UND-REFLEKTIERTER-FOLD-20261109.txt`. Atlasrevision `c75de4e038ebcf10f8ff5ca0`.
+
+## TFPTA3LEPTON20261109
+
+Die tatsächlichen A3 Projektoren der v120 Adressen und das v20 Tau Produkt geben (16/7,4/3,7/6) auf der Quellleiter. Elektron und Myon lesen dieselbe A3 Eigenlinie auf unterschiedlichen Blättern. Die alte Möbius Regel liest die reellen Kanäle, nicht das komplexe Leptonpaar. Zwei analytische Fortsetzungen ab t=1/2 haben dieselbe seedfreie log K Steigung und beide verfehlen die zwei Polverhältnisse. Der Naht Exponent 2/9 als Wurzelmassenwinkel verfehlt selbst mit vier v82 Schritten den CODATA Myon Elektron Quotienten. Die echte normierte Fuchs Hardy Einzelauslesung hat für Elektron und Myon denselben Diagonalwert; der volle physische Transfer bleibt unberechnet. F1 und Owner bleiben.
+
+Originalbeleg `experiments/theory-contracts/chat-triangulation-20261108/TFPT-A3-FAMILIENANTWORT-UND-LEPTONPOLE-20261109.txt`. Atlasrevision `04540650de21dc3dae970292`.
+
+## TFPTFUCHSTT20261109
+
+Der ursprüngliche markierte Fuchs Beitrag ist an beiden Enden und im endlichen geladenen KO Block explizit. Globale reelle Gram Variation und endliche familienblinde Einform erzeugen ihn nicht. Isolierte B02/F/N Massenlesarten verfehlen in der deklarierten G Zuordnung den Doppeltest. Der echte Quellenstart liefert Exit 2 und null Originalatome wegen der fehlenden blockierten Faseroperation. Higgs Krümmungsaustausch gibt im flachen TT Test null; der gewöhnliche lokale a4 Anteil ist q^4. Leptonpole, relativer reiner Tensorhessian und zwei normierte Materievertices brauchen drei getrennte Auslesungen desselben ursprünglichen vollständigen Funktionals. F1 und Owner bleiben.
+
+Originalbeleg `experiments/theory-contracts/chat-triangulation-20261108/TFPT-FUCHS-BEIDE-ENDEN-UND-GEMEINSAME-GRAVITATION-20261109.txt`. Atlasrevision `e0fe8cdc5e863d59ce46e595`.
+
+## TFPTMOEBIUSSEW20261109
+
+Paper und Atlas trennen den gemeinsamen diskreten PGL2 Unterbau von getrennten kontinuierlichen Uhren. Auf der v81 Fläche hebt sich v82 zu ±8/27, und nur Verzweigungstausch ergibt den inversen Lift. Fuchs Vorzeichenwechsel braucht die Tau Partnerlinie, die wirkliche Viertelmarke den vollen Sechserraum. Vorzeitige Projektion verliert Rückkehrwerte 5/9, 1/9, 4/9. Exakte Verklebung kann die relative reine geometrische Normierung offenlassen. Der gemeinsame erste Test ist die absolute markierte Ganzstreifen/Teilstreifen Gleichheit mit ursprünglichem Maß, Zeit, Referenz und Metrik. F1 und Owner bleiben.
+
+Originalbeleg `experiments/theory-contracts/chat-triangulation-20261108/TFPT-MOEBIUS-DOPPELCOVER-UND-GANZE-VERKLEBUNG-20261109.txt`. Atlasrevision `180e17c352ee3a6ea4f32095`.
+
+## TFPTGANZSTREIFEN20261109
+
+Auf der unveränderten R032 Geschichte stimmt der 96er Ganzstreifen mit den beiden Teilstreifen an zwei Schnitten einschließlich Fermionsee, geladener Feldantwort und zweiter relativer Metrikableitung überein. Eine reine geladene Mittelauswahl verliert einen Rückkehrblock der Norm .24511334; separate Schließung verändert die relative Normierung und beide Metrikjets. Der direkte Endpunktweg und der Faserweg wurden tatsächlich befragt; der Integrationsstart liefert keine Originalatome. Die drei Werte unter vollem P_adm bleiben unberechnet. F1 und Owner bleiben.
+
+Originalbeleg `experiments/theory-contracts/chat-triangulation-20261108/TFPT-ORIGINAL-GANZSTREIFEN-ZWEI-TEILSTREIFEN-20261109.txt`. Atlasrevision `8d4b2c575bd988d0ba8842b4`.
+
+## TFPTMETRIKFASER20261109
+
+Die metrischen Jets der gewichteten markierten Originalfaser sind in der gemeinsamen Karte vor äußerem P_adm hergeleitet. Auf der festen R032 Geschichte stimmen die beiden Schnitte auch für die gewichteten geladenen Jets mit dem Ganzstreifen überein. Der tatsächliche Z3 Farbfilter lässt normierte Leptonjets invariant und verschiebt den relativen reinen Metrikjet geringfügig. Gleiche Higgsnorm reicht für eine Korrektur separat geschlossener Hälften nicht. Ein eingefrorener Linkjet kann den leeren Ersttest bestehen und den offenen oder zweiten Test verfehlen. Der ausgeführte Originalaufruf liefert keine gewichtete Feldintegration. Direkte markierte Randfaltung, vollständige OS Schnittblöcke und absoluter Referenztransport sind die drei geprüften Fortsetzungen. Volle physische Werte bleiben unberechnet. F1 und Owner bleiben.
+
+Originalbeleg `experiments/theory-contracts/chat-triangulation-20261108/TFPT-GEWICHTETE-MARKIERTE-METRIKFASER-20261109.txt`. Atlasrevision `622ae86dad3b693687cbae76`.
+
+## TFPTQTHETAWORD20261109
+
+Das leere Q_Theta Wort ist auf tatsächlich admissibler Zeit exakt das unmarkierte Wort. Vier Schnittwerte trennen erhaltenen Kanal, niedrigen Gap, übrige Strukturverluste und ungerade Determinantenkanäle. Auf der einzelnen ursprünglichen O(1) Linie ist ein faserweiser Involutionslift nur ein konstantes Vorzeichen. Die echte C6 Vergleichslücke ist 0.07338938653344; ihre Identifikation mit dem Gap des markierten OS Endpunkts liegt nicht vor. Direkter und Faseraufruf laufen bis zum fehlenden Originalpaket. Geladener und absoluter leerer Wert in beiden Metriken bleiben unberechnet. F1 und Owner bleiben.
+
+Originalbeleg `experiments/theory-contracts/chat-triangulation-20261108/TFPT-QTHETA-GELADENES-ORIGINALWORT-20261109.txt`. Atlasrevision `230e03a9c28bcaf7a786a298`.
+
+## TFPTMODULARCUT20261109
+
+Auf derselben festen R032 Geschichte und Referenz S rekonstruiert der ursprüngliche Kovarianzleser aus Ganzstreifen und reflektierten Teilstreifen denselben Operator. Der geordnete ungerade Operator reagiert auf den Radius; der lokale ungerade Schnittgenerator bleibt fest und besitzt auch nach möglicher Skalierung eine andere Spektralform. Der natürliche Polarfaktor führt die Logantwort nur gemeinsam mit der transportierten Graduierung korrekt zum Schnitt. Die tatsächlichen Originalräume für Q_Theta und Dadm, dynamisches Gewicht und vollständige geladene sowie leere Werte bleiben unberechnet. F1 und Owner bleiben.
+
+Originalbeleg `experiments/theory-contracts/chat-triangulation-20261108/TFPT-GEORDNETER-MODULARER-SCHNITT-20261109.txt`. Atlasrevision `763ff2c2e3a2d84d44b3a121`.
+
+## TFPTDETGAUGECUT20261109
+
+Originale, Ledger und Lean Quellen gezielt abgeglichen. Vier Verifikationsmodule erneut mit 39/39 Checks ausgeführt. Die Higgs fixierende lokale Vorzeichenhebung lässt sich nicht durch H=0 fortsetzen und scheitert an den tatsächlichen R032 Links. Die orientierungsfreie zentrale Hebung ist vierter Ordnung auf dem linken Feldbein. Eichsymmetrie der gepaarten leeren Antwort verdeckt positive Leckage an der Mitte. Auf dem nativen v989 Gaußraum bleiben die leeren Werte gleich und die geladene Antwort wechselt exakt das Vorzeichen. Der diagonale e_R Test prüft die tatsächliche Q_Theta Wirkung auf einem einzigen Originalhalbvektor ohne absolute Normierung. Der gewichtete Originalwert und die echte Gapfamilie bleiben unberechnet. F1 und Owner bleiben.
+
+Originalbeleg `experiments/theory-contracts/chat-triangulation-20261108/TFPT-DETERMINANTENMARKE-GEMEINSAMER-EICHTRANSPORT-20261109.txt`. Atlasrevision `bc41e822de84c9b1bed7d2f2`.
+
+## TFPTDETGAUGEEXTERIOR20261109
+
+Die vollständige bedingte 96er Außenalgebra des tatsächlichen R032 Eichpaars wurde mit Fermionsee, derselben S Referenz und äußerer Gauge-Plus Auswahl bei beiden Radien ausgewertet. Das geladene Diagonalwort hat rund 43 Prozent Plusleckage trotz symmetrischer unmarkierter leerer Paarung. Der leere Markenquotient ist .14284 und der geladene rund −.14365. Die freie S Referenz liefert die exakten Kontrollwerte +1 und −1. Die falsche Mitte kann damit auch ohne Änderung der Vergleichsmarke einen scheinbaren Metrikeffekt hervorrufen. Die echte gemeinsame Mitte und die tatsächliche Q_Theta/Gap Auswertung bleiben offen. F1 und Owner bleiben.
+
+Originalbeleg `experiments/theory-contracts/chat-triangulation-20261108/TFPT-DETERMINANTENMARKE-VOLLE-AUSSENALGEBRA-20261109.txt`. Atlasrevision `9f68a4f1f51597644aaafd30`.
+
+## TFPTDET16MARK20261109
+
+R104 Originalrechnung erneut bestanden. Markierte Eichkoeffizienten des nativen DET16 Spiegels exakt durch kleine Determinanten hergeleitet und gegen alle 65536 nativen Zustände geprüft. Drei Mechanismen stimmen am rechten Elektron überein und trennen sich im neutralen Halbwort. Zwei tatsächliche Carrier-Untergruppen liefern bei gleicher leerer und geordneter normaler Zweipunktantwort unterschiedliche Zustandsräume und eine neutrale Vierfeldantwort. Die exakten Ränge 5464 und Schnitt 3072 sowie der neutrale Unterschied 624 in der Besetzungsquadratsumme sind auch in Lean geprüft. Physische Q_Theta, gemeinsames Originalgewicht und Gap bleiben in beiden Metriken unberechnet. F1 und Owner bleiben.
+
+Originalbeleg `experiments/theory-contracts/chat-triangulation-20261108/TFPT-DET16-MARKIERTER-EICHKERN-UND-AUSWAHLCENSUS-20261109.txt`. Atlasrevision `62dc9efaeb0f47d5f8a48a25`.
+
+## TFPTNORMALORBIT20261109
+
+Die Originalwindung Grad eins erzwingt auf dem normalen Rang-zwei Bündel die scharfe projektive Krümmungsgrenze π²/A_N. Am Minimum entstehen zwei parallele schwache Linien. Die ursprünglichen Higgs- und Yukawaspalten schließen ein zentrales Zweierschild mit verschiedenen rechten Vorzeichen aus. Die bereits vorhandene Orbitgeometrie reproduziert mit zwei ausdrücklich geänderten R032 Transporten das Muster (+,−,+,+). Trotz gleicher freier Referenz ändert die Längsphase die leere Rückkehr um den Faktor 4,44. Im ursprünglichen formalen schwachen Querfeldeinsatz gilt unabhängig davon die exakte Materiekommutatornorm 2|t|. Vollständiges Q_Theta, P_adm, echtes Gap und die physische reine Metrikantwort bleiben unberechnet. F1 bleibt offen.
+
+Originalbeleg `experiments/theory-contracts/chat-triangulation-20261108/TFPT-NORMALKRUEMMUNG-UND-SCHWACHER-ORBITTRANSPORT-20261109.txt`. Atlasrevision `dcb25d3f5fa51aa1cead808e`.
+
+## TFPTYUKAWAARC20261109
+
+Die beiden echten Yukawa Feldenden lesen konjugierte Bogenphasen. Ein exakter Gegenfall trennt Phasenstreuung und Richtungswechsel bei identischer mittlerer Wilsonmatrix und Ganzkreiswirkung. Zwei Momentidentitäten in Lean geprüft. Im vollen vorhandenen NS Kragen beträgt die sichtbare Querantwort rund 0,091 Prozent innerhalb der zwei beobachteten linken Kanäle, gegenüber 1/2 des nackten Links. Die freie Kontrolle kürzt den ganzzahligen Weak Shift exakt. Der ursprüngliche Endpunktaufruf liefert weiterhin kein gewogenes physisches Paket. F1 bleibt offen.
+
+Originalbeleg `experiments/theory-contracts/chat-triangulation-20261108/TFPT-ORIGINALER-YUKAWA-BOGEN-UND-PHASENVARIANZ-20261109.txt`. Atlasrevision `4bcb0bc1fb8966b71b5e4b92`.
+
+## TFPTFIVEH20261109
+
+Fünf eingereichte Hypothesen am Original geprüft. M^4 ist das Farbzentrum, M^9 die bekannte zentrale Viererhebung. Sie und R5 teilen das Carrierquadrat, aber weder schwache Determinante noch Spinorphasen. Exakte DET16 Mindestgrade 12 zentral und 16 gespalten mit erreichten Untergrenzen. Einzelregisterabbildung des DET Zeugen in den Quartikcode ausgeschlossen. Bedingter R032 Phasenvergleich erklärt Faktor 4,44 im geordneten Kern bei gleicher Referenz und gleicher Kandidatenauswahl. Der tatsächliche physische Originalblock fehlt weiterhin. F1 bleibt offen.
+
+Originalbeleg `experiments/theory-contracts/chat-triangulation-20261108/TFPT-FUENF-HYPOTHESEN-CLOCK-DET16-UND-F1-20261109.txt`. Atlasrevision `7b354f5b3a99d0d12b295478`.
+
+## TFPTWEAKJOINT20261109
+
+Die beiden DET16 Auswahlen haben denselben nackten schwachen Singulettbereich mit Rang 1788 und denselben vollen SM Singulettbereich mit Rang 56. Vierfeldkontrast 624 liegt in höheren internen Kanälen, 576+48, und bleibt unter Dichtemittelung. Gemeinsame schwache Drehung ist Identität auf dem gepaarten Singulett; einseitiger Tripleteinsatz ergibt −1/3, zwei Einsätze mit oder ohne Zwischenprojektion 1/9 oder 1. Lean prüft die Tripletmatrix. Tatsächliche W Bank vollständig Lie-equivariant; invariante R109 Restintegration kann weder c- noch g-Auswahl liefern. Physischer gekoppelter Originalblock weiterhin unberechnet. F1 bleibt offen.
+
+Originalbeleg `experiments/theory-contracts/chat-triangulation-20261108/TFPT-GEMEINSAMER-SCHWACHER-SCHNITT-UND-AUSWAHL-20261109.txt`. Atlasrevision `cf3370163129ebf3d5081a67`.
+
+## TFPTWEIGHTEDCUT20261109
+
+Ursprüngliche v252 Yukawa Beine und schwaches Querfeld geben einen expliziten eichkovarianten offenen Vertex. Vier echte QFT002 Schnitteinsätze liefern eine exakt invertierbare Ablesung von Q_Theta und P_adm. Drei skalare Identitäten in Lean geprüft. Die ursprüngliche topologische Theta Phase verändert schon die leere admissible Antwort und kann deshalb nicht Q_Theta sein. Alle drei registrierten Domains geprüft. Die echten gewichteten Originalwerte für beide Metriken bleiben unberechnet. F1 offen.
+
+Originalbeleg `experiments/theory-contracts/chat-triangulation-20261108/TFPT-GEWICHTETER-QUERSCHNITT-ECHTE-PENALTIES-20261109.txt`. Atlasrevision `b68f748e38eac6881a882870`.
+
+## TFPTVOGEL20261109
+
+Gesamtvergleich mit R110 und den Originalformeln. Im bedingten R032 Schnitt braucht die getrennte Auswahl vier Richtungen statt zwei. Exakte minimale Sektorrealisierung und Interferenzgrenzen belegt. Der Originalproduzent für das gewichtete Metrikpaar bleibt offen. Aus der gedruckten Stieltjes Form folgen zwei Randgrenzwerte. Der v400 Ausdruck hat den richtigen Pol, ergibt als physische Zweipunktfunktion aber eine negative Zwei Zeiten Form. Der alte vollständige Gap Ausschluss und das sektorielle Ziel bleiben erhalten. Materieantwort und langwellige Geometrie müssen am selben ursprünglichen Übergang zusammen geprüft werden. F1 bleibt offen.
+
+Originalbelege `experiments/theory-contracts/chat-triangulation-20261108/TFPT-VOGELPERSPEKTIVE-GEMEINSAME-PHYSIK-20261109.txt` und `experiments/theory-contracts/chat-triangulation-20261108/TFPT-GEMEINSAMER-SCHNITT-SEKTORABSCHLUSS-20261109.txt`. Atlasrevision `2f7db0af68462a280978b166`.
+
+## TFPTC6V33020261109
+
+Sechserring und v330 im gleichen demokratischen Zustand verglichen. Positive Potenzprodukte, Mischungen und vakuumtreue Kompression verfehlen beide v330 Raten exakt. Die native Reflexionsfaltung liefert einen kürzesten reversiblen positiven Lift mit allen Paarwörtern. Das tatsächliche R111 Ortswort trennt jede Liftwahl vom unveränderten C6. Der gerichtete Shift mit der Paarmarke benötigt alle sechs Orte. Der bei gleicher langsamer Rate notwendige positive Rest hat Rang drei und ist kein additiver positiver homogener Sprung. 37 Prüfungen, 243 Paarwortvergleiche und unabhängige Gegenrechnung. Physischer gemeinsamer Zeitgenerator, Feldintegration und TT Kopplungen bleiben offen.
+
+Originalbeleg `experiments/theory-contracts/chat-triangulation-20261108/TFPT-SECHSER-DREIER-GEMEINSAME-DYNAMIK-20261109.txt`. Atlasrevision `7ea3eb80e0e65fd5a2df08d8`.
+
+## TFPTFUCHSCLOCK20261109
+
+Tatsächlicher Fuchs G Rahmen transportiert beide Clockzweige. Am vorhandenen Hardy Bein reagiert die zur v330 Paarzeit passende Korrektur auf beiden Blättern strikt verschieden, für jede positive Zeit. 27 direkte Zweiblattvergleiche bestanden. Das ganze physische Feldwort und F1 bleiben offen.
+
+Originalbeleg `experiments/theory-contracts/chat-triangulation-20261108/TFPT-FUCHS-ZWEIBLATT-UND-GEMEINSAME-CLOCK-20261109.txt`. Atlasrevision `76133f8ea278f7c4da8d1446`.
+
+## TFPTFUTURE20261109
+
+Sieben Strategien in Quellen- und Rechentests geordnet. Native DET16 Kandidaten: ein Vierfeldzeuge trennt sie, 14 Einzelmarken minimal auf der Vereinigung, Effektspan und Wortalgebra 7857/7858. Nativer C6: vier feste bzw. drei adaptive binäre Paarabfragen, Effektspannen 6 und 21 sowie mit bedingter lokaler Phase 36. Diagonaler Z4 Ranggegenfall D13+A3 und exakte Jensen Schranke für bloße Umgebungskopplung. Originaler gewichteter Feldblock, physische Instrumentherkunft und P1/P2 Auswahl offen. Unabhängige Gegenprüfung der endlichen Aussagen.
+
+Originalbeleg `experiments/theory-contracts/chat-triangulation-20261108/TFPT-F1-ZUKUNFTSWOERTER-SIEBEN-WEGE-20261109.txt`. Atlasrevision `817e22b14eb52288856d8d95`.
+
+## TFPTINTERFERENCE20261109
+
+Der offene Yukawa Kreuzterm dreht sich mit dem Elektronencharakter. Mit den ursprünglichen rechten Feldbeinen und der gemeinsamen linken Randpaarung lassen sich eichverträgliche Wörter für beide Phasenproben formulieren. Auf der vollständigen bedingten R032 Außenalgebra mit Fermionsee und echter Farbauswahl sind beide komplexen Kreuzkomponenten ungleich null. Die maximale Sichtbarkeit beträgt rund 0,644 Prozent. Der vollständige R113 Aufruf ohne Originalpaket lässt beide Werte unter vollem P_adm unberechnet. Die offene F1 Aufgabe und das Ledger bleiben erhalten.
+
+Originalbeleg `experiments/theory-contracts/chat-triangulation-20261108/TFPT-ZWEI-INTERFERENZPROBEN-ORIGINALSCHNITT-20261109.txt`. Atlasrevision `780af9bb53a67e814977483d`.
+
+## TFPTQUARTERPAIR20261110
+
+Im ersten gemeinsamen NS Modenpaar sind die beiden einzelnen Kreuzwerte komplex konjugiert. Auf der gemeinsamen 192er Außenalgebra mit einer echten Farbzentrumsauswahl ist I90=a+b exakt. I0 bleibt rund 0,626 Prozent darüber. Die Halbtranslationswahl hat eine andere Sektorrangverteilung als der Zweiflächengraph. Der unveränderte Flächentausch verfehlt den inversen Partnertransfer. Der native R113 Integrationsstart liefert Exit 2 und null integrierte Originalatome. Physisch entscheidet als erste Gleichung der orientierte Cauchyspurtransport. F1 bleibt offen.
+
+Originalbeleg `experiments/theory-contracts/chat-triangulation-20261108/TFPT-QUARTERPAAR-INTERFERENZ-20261110.txt`. Atlasrevision `4c74cb5db538a9c864c1251f`.
+
+## TFPTCROSSVIEW20261110
+
+Vier Quertests auf bestehenden Quellen. Orientierte R032 Viertelmarke rund 0,051 Prozent bei gemeinsamer Außenalgebra und Farbauswahl. Exakter lokaler Tangentialabdruck auf dem Modenpaar. Gleich starke Fuchs Kombinationen scheitern in der direkten G-Klasse für jede relative Phase. E8 Uhr auf ungeraden Wurzeln bis Länge drei gleichverteilt, vierte Marke kehrt sicher zurück, Rang acht für drei vergangene und drei folgende Marken. Im endlichen TT Zeugen gleiche Einzelgewichte und entgegengesetzte Kreuzzeichen. Keine neue physische R113 Auswertung oder Ledgerpromotion. F1 bleibt offen.
+
+Originalbeleg `experiments/theory-contracts/chat-triangulation-20261108/TFPT-VOGELPERSPEKTIVE-VIER-QUERTESTS-20261110.txt`. Atlasrevision `0360134947c22183ccd3312f`.
+
+## TFPTATTACH20261110
+
+Beide F1 Vorschläge in der Originalstruktur geprüft. Die Blattoperation allein lässt C6 bei 21 Effekten; ein kontrollierter kohärenter I/V Vergleich liefert dort 36 und auf dem DET16 Vergleich die Energieprobe. Acht native DET16 Messbahnen, sechs unter erhaltener Auswahl. Kein schwacher Up-Yukawa Paartrenner. Der ungerade gemischte Strom und die höhere gemeinsame Ladungsspur trennen die Gitter trotz gleicher quadratischer Hyperladungsspur. Die direkte Fuchs Blattkorrektur hat das falsche Vorzeichen für K. Radial/Haar allein bestimmt den ursprünglichen R113 Block nicht; null Originalatome. Der unsubtrahierte R048 Einstein Koeffizient ist positiv, sein voller relativer Wert offen. ACT 2,84 sigma gilt für LB2; v86 Reheating setzt eine andere Higgs Kopplung voraus. F1 bleibt offen.
+
+Originalbeleg `experiments/theory-contracts/chat-triangulation-20261108/TFPT-TEST-DER-BEIDEN-F1-VORSCHLAEGE-20261110.txt`. Atlasrevision `df2496314f70066c26479e94`.
+
+## TFPTFOLLOWUP20261110
+
+Kontrollierter relativer schwacher Link im gemeinsamen festen R032 Paar mit positivem Minusport; vollständige Gauss Rotation dagegen exakt trivial. Gaussian-J kommutiert mit Familienclock, nicht mit Coxeter; rationaler Kommutant enthält kein i. Der freie Ramond h=1 Strom verlangt 16 reelle Majoranas und eine einzelne chirale Erweiterung. Vier Marken folgen aus voller primitiver Gluung; schwächere Varianten haben Gegenfälle. Haar ist idempotent, 5/9 Linkgewicht hat einen positiven Halb-, keinen symmetrischen Viertelschritt. Zentrale SU2 Sprünge heben die 8/3 Grenze nicht. DET16 Bitflip ist kein Z6 Zentrum. Native Seesaw Textur liefert im SM+N Zweischleifenvergleich negatives Delta log K. R048 Replica stimmt nach Kontaktterm; konformaler Anomaliebenchmark N*=50.16942, n_s=.96013508 führend. Null native Originalatome, F1 offen.
+
+Originalbeleg `experiments/theory-contracts/chat-triangulation-20261108/TFPT-NAHT-KONTROLLE-TEILBARKEIT-UND-SCHWELLEN-20261110.txt`. Atlasrevision `e2c413ef325ec9028d6c14f3`.
+
+## TFPTARCHITECTURES20261110
+
+Zwei F1 Anhänge getestet. Neutraler rechter R032 Faktor ist durch Higgs gebunden. Kontrollierter Link erhöht Slater Rang, fester Außentransfer erzeugt ihn nicht. Ungerader Chevalley Strom ist kein unitärer Viererreferenzshift. Achtfachtwist im ursprünglichen Einkanal hat h=8, auch bei möglichem Doppelpol nach Fold. Transportiertes J wird mit den drei gemeinsamen Marken in der Standardplatzierung rekonstruiert. Zwei positive Linkhalbgruppen stimmen durch Spin24 überein. Native Fuchs Reihenfolgeeffekte bleiben kleiner 4,9e-6 und retten K nicht. Führendes SM 48-48+0 stimmt mit gemeinsamem Regulator, nicht als voller R048 Wert. Auch instantanes v86 Reheating bleibt 3,28 bis 3,72 sigma unter LB2. Null integrierte Originalatome, F1 offen.
+
+Originalbeleg `experiments/theory-contracts/chat-triangulation-20261108/TFPT-F1-QUELLARCHITEKTUREN-ZWEI-ANHAENGE-20261110.txt`. Atlasrevision `0a67b0f37c08ba1bc6284697`.
+
+## TFPTCUTMARKS20261110
+
+Am festen nativen R032 Schnitt unterscheiden die beiden geordneten Yukawa-Arme mit schwacher Quermarke alle sechs radialen Kovarianzkomponenten in beiden Metriken. Das konjugierte NS Paar behält den offenen Term. Klassische Mischungen zerlegbarer Ausgänge erreichen höchstens .9930677861 des kohärenten Linkziels. Der unveränderte Zeitfensterlauf trennt zwei normgleiche Orientierungen um Faktor 70.0258255. Der lokale Ramond-Endpunkt braucht einen ursprünglichen Sektorwechsel. Der native Familienclockschritt unterscheidet sich vom originalen schwachen Transport und vom festen markierten Quarterlift. F1 und primitive Werte offen.
+
+Originalbeleg `experiments/theory-contracts/chat-triangulation-20261108/TFPT-ORIGINALSCHNITT-KOVARIANZ-UND-MARKEN-20261110.txt`. Atlasrevision `a0d718657f58033f6fe5a4d6`.
+
+## TFPTWEIGHTDECISION20261110
+
+TFPTWEIGHTDECISION20261110. Drei bedingte Gewichte liefern Z0, F(0), C_UY im gemeinsamen endlichen 96er Vergleich. Originales Konfigurationsgrundmaß, relativer Absolutfaktor und geladene U2 Erweiterung bleiben zu binden. Nächster Originaltest: unnormierte orientierte Reduktion mit Elektron-Determinantencharakter gegen neutrales Bein unter echtem Q_Theta/Gap; dann die beiden expliziten Stromreihenfolgen des neutralen Rückkehrwortes im selben Zeit- und Referenzcaller prüfen. Gegenbondphase stimmt nur im neutralen Sektor. Keine neue physische Pflicht oder Ledgeraufwertung.
+
+Originalbeleg `experiments/theory-contracts/chat-triangulation-20261108/TFPT-F1-GEWICHTSENTSCHEIDUNG-20261110.txt`. Atlasrevision `6aebb08ca1a71cca23482eee`. Isolierter lokaler Branchcommit `d1986305b89d15dd1a8969c42d94268a64e9bbd7`.
+
+## TFPTLINKDIFFUSION20261110
+
+TFPTLINKDIFFUSION20261110. Bedingte Linkzeit aus alpha, zentraler U2-Kern und Higgsdiffusion ausgeführt. Zwei unabhängige Winkel- und Determinantenrechnungen bestätigen alpha-Zeile. Reflexionspositive Verklebung und gleiche Marginalen wählen die gemeinsame Phase nicht. Originaler nächster Test: den unnormierten gerichteten Cap mit den gemischten X22-/Elektroncharakteren und gebundener Referenz unter Q_Theta und echtem Gap liefern. Am selben zulässigen Zwischenraum den geladenen s→0→0/s→s→0 Stromtest kontrahieren. Originalwerte und F1 offen; kein Ledgeraufstieg.
+
+Originalbeleg `experiments/theory-contracts/chat-triangulation-20261108/TFPT-F1-EICHDIFFUSION-GEMEINSAMES-GEWICHT-20261110.txt`. Atlasrevision `f7c755e86d511e1430c4c5f2`. Lokaler Forschungscommit `3efbfd0dc7ff56c561f44c9d400dc815f1c2965c`.
+
+## TFPTSOURCECROSS20261110
+
+TFPTSOURCECROSS20261110. Alte C58/R080/OS und vorbereitete Ramond-Quellen am Original geprüft. Konstante C58 Faser nach benanntem Logabzug integrierbar, endlicher relativer Originalabzug offen. Kinematischer Higgs-Rahmenmix und deterministischer R032 Hessian sind getrennt vom freien κ, ein κ ersetzt die Plan232 Sprungdifferenz nicht. Nächster Originaltest: am unnormierten Fockvakuumbein mit gebundenem Ref/Eta den gemischten Kurzzeitinkrementwert nach Rahmenabzug und den neutralen q-Modus auf den fünf alten Paketen mit Q_Theta und Gap gemeinsam lesen. Danach den zweifachen alten NS-Anschluss an A und die echte Farbgegenladung prüfen. F1, absolutes Z0,F(0),C_UY und Ledgerstatus bleiben im bisherigen offenen Umfang.
+
+Originalbeleg `experiments/theory-contracts/chat-triangulation-20261108/TFPT-F1-ALTE-QUELLEN-MISCHANTWORT-UND-RAMOND-20261110.txt`. Atlasrevision `edc9aa7ac2709cf6b249ac04`. Lokaler Forschungscommit `45c358f949eefffb21607566562fdcd580218903`.
+
+## TFPTC58QRETURN20261110
+
+TFPTC58QRETURN20261110. Nativer C58 Kurzzeitjet hat nichtvertauschbare Grenzen und einen deterministischen zentrumungeraden Randterm. Der volle neutrale q Rückweg ist auf allen fünf alten Paketen im E8 Parent positiv; alter Halbtausch ersetzt Q_Theta dort nicht. Benannte C58 Abzüge zeigen einen von Gamma_L unabhängigen endlichen Higgsfreiheitsgrad. Nächster Originaltest: besetzten Zustand samt Teilchen-Loch Paargraph durch den markierten Pin/Cauchy Übergang in beide R113 Zweige tragen. Am selben gebundenen Vakuumbein den zweiten Higgsjet und die fünf q Rückwege mit I, E_+, P_str und P_adm lesen. Physische Dynamik, absolutes Z0, F(0), C_UY und F1 bleiben offen.
+
+Originalbeleg `experiments/theory-contracts/chat-triangulation-20261108/TFPT-F1-C58-KURZZEIT-UND-Q-RUECKWEG-20261110.txt`. Atlasrevision `d949ee1d2a83489b83be219a`. Lokaler Forschungscommit `42d28f3c54c97b8dcb2c760c6c63c97c5247b1f8`.
+
+## TFPTC58PAIRLIMIT20261110
+
+TFPTC58PAIRLIMIT20261110. Der ganze alte C58 Quarterturm besitzt einen endlichen normierten Teilchen-Loch Zustand, bei getrennt logarithmisch divergentem Vakuumgewicht. Den endlichen skalaren Abzug kann der Zustandsvektor daher nicht auswählen. Nächster Originaltest bleibt die gemeinsame Bindung von Paargraph, Gewicht, q und Q_Theta im markierten Pin/Cauchy Übergang beider R113 Zweige. Physische Dynamik, absolutes Z0, F(0), C_UY und F1 bleiben offen.
+
+Originalbeleg `experiments/theory-contracts/chat-triangulation-20261108/TFPT-C58-PAARZUSTAND-UND-GEWICHT-20261110.txt`. Atlasrevision `25fe3ded0a6fa23fb5f276df`. Lokaler Forschungscommit `79c5f3b440f3cf2024b626192d896289f8089712`.
+
+## TFPTPINREFCONTACT20261110
+
+TFPTPINREFCONTACT20261110. C58 liefert die getrennte Higgsantwort mit beiden alten Referenzpullbacks. Lokale Abzüge erscheinen auch an der Spiegeldiagonale, versetzte Fenster bleiben frei davon. Kompensierte Umbuchung zwischen Fermiondeterminant und Bosonanteil lässt das volle Gewicht gleich. Der echte Pin Diracoperator verwirft den Anschluss nur über seine Normalnullbranche; nächster Originaltest ist die native H/U2 Einfügung auf der ganzen Pin Domäne mit vollständigem Schurterm und gemeinsamem unnormiertem R113 Vakuumbein. Dann dieselben fünf q Pakete unter I,E+,Pstr,Padm prüfen. Physischer Übergang, absolutes Z0,F(0),C_UY und F1 bleiben offen.
+
+Originalbeleg `experiments/theory-contracts/chat-triangulation-20261108/TFPT-C58-PIN-REFERENZKONTAKT-20261110.txt`. Atlasrevision `3318dd54c6d22a662fea464a`. Lokaler Forschungscommit `5a6a1b6393e07b08a6118e80cea85933f3487f0b`.
+
+## TFPTFOURPATTERNSPIN20261110
+
+TFPTFOURPATTERNSPIN20261110. Native sigma Gluewechsel 112,112,0; die passende e4-e6 Spiegelung reproduziert die Klebesignatur, aber weder Hyperladung noch den 5/4 Ramond Halbtausch. Die nackte det2 ändert sogar den kontaktfreien C58 Higgsjet. Der tatsächliche C58 Cartan Kurzzeitkoeffizient ist kein Zentralterm der alten vollen p gamma Polarisation. Der native Higgsoperator verbindet die beiden ursprünglichen Pin Domänen (c,b) und (-c,-b) bei gleichem Kreistwist. Gepaarte Resolvente mit Majorana und getrennter schwacher Marke berechnet. Nächster Originaltest: physische Auswahl des Domänenpaars, Q_Theta und D_adm auf seinen offenen Higgs und q Beinen sowie unnormiertes R113 Vakuumbein mit gebundener Referenz. Physische OS Antwort, absolutes Z0,F(0),C_UY und F1 bleiben offen.
+
+Originalbeleg `experiments/theory-contracts/chat-triangulation-20261108/TFPT-VIER-MUSTER-UND-PIN-PAAR-20261110.txt`. Atlasrevision `da5099ee6c30f7c703b1cb36`. Lokaler Forschungscommit `18c5d0145eca981107e23ffaea568405aba50143`.
+
+## TFPTPINREFLECTEDCUT20261110
+
+TFPTPINREFLECTEDCUT20261110. Das bisherige Higgs Pin Paar bleibt bei festem Kreistwist unter der ursprünglichen Green Zeitreflexion offen; der Abschluss hat vier Labels. Das feste Quarter Halbwort ist komplex für jeden nichtverschwindenden glide-kompatiblen Higgsrückweg, der statische NS Abschluss besitzt eine positive native Gramform. Skalares Labelvorzeichen und absolute Dirac Lücke ersetzen Q_Theta und D_adm nicht. Die alte reine Hardy Kovarianz kann nicht direkt in die NS Green CAR Kovarianz eingebettet werden. Nächster Originaltest: primitive Cauchy/APS und Determinantendomäne mit einer zustandserhaltenden Feldabbildung auf diesem reflektierten Träger verbinden; dann I,Q_Theta,P_str,P_adm am selben Higgswort lesen. Physischer q Rückweg, Z0,F(0),C_UY und F1 bleiben offen.
+
+Originalbeleg `experiments/theory-contracts/chat-triangulation-20261108/TFPT-PIN-REFLEXION-VIER-DOMAENEN-20261110.txt`. Atlasrevision `68a30784bfa066dfcaf99ff2`. Lokaler Forschungscommit `c2304d33a429863b3b0748dae28b2c3dbfdf59b1`.
+
+## TFPTPINSTATETIME20261110
+
+TFPTPINSTATETIME20261110. Exakte NS und q Ramond Kovarianzen reproduzieren sämtliche alten Grame. Die treue physische Coverreferenz erlaubt keine zustandserhaltende direkte Einbettung des alten untreuen Zustands. Die gereinigte zeitgetreue skalare Pin Karte trifft nur die andere Normalparität; das native Higgsbein verlässt den Majorana Kern. Labelaufgelöste Viererstruktur ist minimal, die geprüfte innere Auswahlklasse hat acht Involutionen je Higgsparität. Fenstersumme, additive Majoranaphase, modularer Fixpunkt, Steifigkeit und Clock werden getrennt entschieden. Nächster Originaltest: Zustands/Zeit/Feldkarte mit tatsächlicher Cauchy, APS und Determinantendarstellung oder quelleneigener Zeit auf demselben Higgs und q Übergang. Physische P_adm Rückwege, Z0,F(0),C_UY,P2 und F1 offen.
+
+Originalbeleg `experiments/theory-contracts/chat-triangulation-20261108/TFPT-PIN-ZUSTAND-ZEIT-UND-FUENF-HYPOTHESEN-20261110.txt`. Atlasrevision `0e9576c5846527410dd56083`. Lokaler Forschungscommit `5c5a0e99bf1a5b8e485eb5521327a0153afd72cd`.
+
+## TFPTPINPURESEA20261110
+
+TFPTPINPURESEA20261110. Der ursprüngliche reine Pin Dirac See erhält auf der freien Normalnullbranche die Hardy Karte. Native Higgsmasse verschiebt dort die Zeit. Im vollständigen zweidimensionalen Pin Modenturm divergiert das Hilbert Schmidt Quadrat der reinen Zustandsdifferenz für M_R zu M_R+.55 L_H logarithmisch mit Koeffizient 35.26447221. Damit reicht weder die statische Green Zeit noch die direkte reine Dirac Fock Fortsetzung als gemeinsame Karte. Nächster Originaltest ist die aus der Quelle hergeleitete Zustandsfamilie mit gemeinsamem Cauchy/APS und Determinantentransport auf denselben Higgs und q Halbwörtern. Physische Auswahl, absolutes Z0,F(0),C_UY und F1 offen.
+
+Originalbeleg `experiments/theory-contracts/chat-triangulation-20261108/TFPT-PIN-REINER-SEE-UND-ALLE-MODEN-20261110.txt`. Atlasrevision `20225b9c3e9a8eb29cf07f0b`. Lokaler Forschungscommit `1449bbf715ec9556385b1402076501c2f59253a0`.
+
+## TFPTALGEBRAICPIN20261110
+
+TFPTALGEBRAICPIN20261110. Die statischen Higgszustände teilen eine CAR Algebra ohne Fock Unitäre. Der algebraische Transport trägt den Zustand und die Reflexion, verletzt aber feste Zeit und Halbraumlokalität. Die gewöhnliche D-See Historienidentifikation liefert eine negative neutrale Reflexionsform. Bei gleichen Massen, Trägern und Reflexion ist das neutrale Zweikanalwort im gewöhnlichen CAR Produkt -.00228563804 und in der geordneten freien NS Green Quelle +.00264573878. Die fünf tatsächlichen Ramond Pakete benötigen ihre vollen Zustandsfunktionale. Jetzt denselben neutralen Gegenwert aus der vollständigen geordneten P1 Quelle mit gebundener Referenz und physischer Auswahl bestimmen, dann erst den gemischten Higgs und Ramond Block. Z0, F(0), C_UY und F1 bleiben unberechnet.
+
+Originalbeleg `experiments/theory-contracts/chat-triangulation-20261108/TFPT-REKONSTRUKTION-CAR-UND-REFLEXION-20261110.txt`. Atlasrevision `d1bdc42e689ce2532ea3b6d6`. Lokaler Forschungscommit `30311cc988695c632c650768a3b2237f28d333d9`.
+
+## TFPTRAMONDMARKEDHISTORIES20261110
+
+TFPTRAMONDMARKEDHISTORIES20261110. Alle zehn alten Ramond Vektoren liefern die exakten Besetzungs und Phasenkorrelationen; die markierten alten 25er Grame haben Rang 21. Die unmarkierte Gibbs Verklebung scheitert an einem neutralen geraden Strom. Drei Zeitpunkte erzwingen bei identifizierten Perioden und unveränderter gemeinsamer Zeitverschiebung die gemischte flache q/Higgs Ecke null. Zwei exakte gleiche Quarterzustände unterscheiden sich durch geladene Zwischenwege. Die reine Volumenfreiheit der zwei Pin Metriken bleibt von der normierten Materie getrennt. Nächster Originaltest ist die Verschiebung derselben zwei Halbwortmarken über den einseitigen Calderon Schnitt bei gleicher Referenz und echtem Q_Theta/Gap. Physische gemeinsame Quelle, R113 und F1 unberechnet.
+
+Originalbeleg `experiments/theory-contracts/chat-triangulation-20261108/TFPT-MARKIERTE-RAMOND-HISTORIEN-UND-ZEITNAHT-20261110.txt`. Atlasrevision `7caa19a4c021b70defdf0dd0`. Lokaler Forschungscommit `ccb899554a0a06c80db4fac79f03d3d92e42f757`.
+
+## TFPTCALDERONSHIFT20261110
+
+TFPTCALDERONSHIFT20261110. Die geometrische Originalnaht hat auf dem Quarterpaar Quergewicht .199268407669, mit gleicher Fenstertranslation auf jeder Seite .196793055754, und Differenz exakt null. Auf einer gemeinsamen voll admissiblen OS Zeit sind die beiden gemischten Verschiebungen gleich, ihr gemeinsamer Wert liest das unbekannte Spektralmaß der tatsächlichen Halbwortbilder. Eine ausdrücklich markierte Schnittdifferenz liest T_R^* S-S T_H. Der aktuelle Originalaufruf hat weder das markierte Ramond/Higgs Bild auf der gemeinsamen Cauchy/OS Domain noch die ganze Quellenauswertung. Nächster Originalschritt ist genau diese gemeinsame Abbildung mit Q_Theta, Gap und gebundener Referenz. Physische Mischwerte, R113 und F1 unberechnet.
+
+Originalbeleg `experiments/theory-contracts/chat-triangulation-20261108/TFPT-CALDERON-FENSTERVERSCHIEBUNG-20261110.txt`. Atlasrevision `daa221fec0cd1c3843d02102`. Lokaler Forschungscommit `ec8aac97df3eb8701c4379318450bb3c1515ad59`.
+
+## TFPTSPINHALFWORDS20261110
+
+TFPTSPINHALFWORDS20261110. Die alten Ramond Halbwortbilder heben mit Rang 5 auf den gegebenen zweiflächigen Graphen. Die lokalisierte native Higgs Einform liefert einen kovarianten Calderón Tangentenwert .405588741064. Ein einzelnes q Halbwort und ein gewöhnliches Higgswort haben im kompatiblen alten Xi Grading entgegengesetzte Spinmarken. Ihre gewichtete Paarung liest genau den ungeraden Teil der Naht; bei spinverträglicher Verklebung null unter jedem skalaren Gewicht. Auch die volle Farbsingulettprojektion öffnet ihn nicht. Mit beiden q Enden trägt der tatsächliche schwache Wurzelstrom auf drei Paketkombinationen. Nächster Originaltest ist die native Higgs Einform zwischen beiden q Enden auf derselben physisch dargestellten Ramond Cauchy Domain, oder der Nachweis einer ungeraden Naht für das einzelne offene Wort. Echter P_adm, physischer Mischwert, R113 und F1 unberechnet.
+
+Originalbeleg `experiments/theory-contracts/chat-triangulation-20261108/TFPT-HALBWORTE-SPINSEKTOR-UND-CALDERON-20261110.txt`. Atlasrevision `51b1d0658041939fb2c8e985`. Lokaler Forschungscommit `8a2456d2407ce80ea79ed765d37a510225426540`.
+
+## TFPTRAMONDNATIVEHIGGSLIFTS20261110
+
+TFPTRAMONDNATIVEHIGGSLIFTS20261110. Zwei direkte Wege zur nativen Higgs Wirkung zwischen beiden q Enden sind entschieden. Die tatsächlichen Higgs Kräfte enthalten su2^12 und können nicht treu als lineare E8 Ströme mit Rang acht dargestellt werden. Der direkte native Kopienlift der Halbwindung verändert das alte Spinorgewicht von eins auf mindestens zwölf im bezeichneten teilchenerhaltenden Vergleich. Vier tatsächliche alte farbneutrale Y=1/2 Stromdubletts liefern im geschlossenen q Wort die unterschiedlichen Gramränge 3,5,5,2. Nächster Originalschritt ist die hergeleitete gemeinsame lokale Feldoperation, die alle zwölf nativen Kraftantworten und die geschlossenen Ramond Wörter mit echter Auswahl und gebundener Referenz trägt. Physischer Mischwert, R113 und F1 unberechnet.
+
+Originalbeleg `experiments/theory-contracts/chat-triangulation-20261108/TFPT-RAMOND-NATIVE-HIGGS-TRANSPORTTEST-20261110.txt`. Atlasrevision `f25af614f7cad451a666a9d6`. Lokaler Forschungscommit `cd7462855dce6a75d7a6bcd4603282cb7582393c`.
+
+## TFPTRAMONDNULLPRODUCTS20261110
+
+TFPTRAMONDNULLPRODUCTS20261110. Alle zwölf nativen Higgsrichtungen sind lokale CAR Produkte im gelieferten Feldchart. Ein ursprüngliches normales Stromprodukt zwischen beiden q Enden liefert Rang fünf und mit dem gleich geladenen einfachen Strom Rang zehn. Die vier exakten alten Nullrichtungen bleiben unter den getesteten Strom und Produktmarken null; die früh eingesetzte ursprüngliche neutrale Familienmarke liefert Rang vier, spät null. Zwei gleiche alte Diagonalzeiten erzwingen exakt keine autonome Kopplung aus dem alten Wortspan. Eine markierte Naht hat eine separat prüfbare Fensterverschiebung. Nächster Originaltest ist derselbe gewichtete physische Schnitt mit beiden q Enden und tatsächlicher nativer Einform, mit Diagonalen bei t und 2t sowie beiden Fensterverschiebungen. Physischer P_adm, Mischwert, R113 und F1 unberechnet.
+
+Originalbeleg `experiments/theory-contracts/chat-triangulation-20261108/TFPT-RAMOND-NULLRICHTUNGEN-UND-LOKALE-HIGGSPRODUKTE-20261110.txt`. Atlasrevision `f6b174588e2ce7db474a98fe`. Lokaler Forschungscommit `3df4d3322290e595e7ccda49fa20fb9cb69a33cc`.
+
+## TFPTRAMONDSIGNEDCUT20261110
+
+TFPTRAMONDSIGNEDCUT20261110. Der tatsächliche alte schwache Drift -4T3 wird mit festem Eichtransport getrennt. Die beiden nativen signierten Higgsfrequenzen haben unter erhaltener alter Zeit genau je zwei Ladungsgrundlinien. Die vollständigen alten Vertizes liefern vier reproduzierbare Rückwerte mit gleicher Referenz, und Weglassen des Eichfaktors dreht das Verschiebungsvorzeichen um. Beide alten Halbtauschlifts ändern auf den geladenen Zwischenzuständen das Farbzentrum und scheiden dort als tatsächliches Q_Theta aus. Nächster Originaleingang bleibt die native Einform in der gemeinsamen Ramond Cauchy Domain mit wirklichem Q_Theta, Gap, Gewicht und Referenz. Die vier physischen Antworten, R113 und F1 sind unberechnet.
+
+Originalbeleg `experiments/theory-contracts/chat-triangulation-20261108/TFPT-RAMOND-HIGGS-SIGNIERTE-ZEIT-UND-VIER-WERTE-20261110.txt`. Atlasrevision `ecc0a05fd702125cad2fb6ea`. Lokaler Forschungscommit `93da1d3f34075d39285c56be3e43cf2a07bced3d`.
+
+## TFPTDIRACFAMILYPROCESS20261110
+
+TFPTDIRACFAMILYPROCESS20261110. Die erste Ordnungsbedingung gilt auf der ganzen nativen v252 Standardmodellalgebra. Der quadratische Diracterm im gegebenen erweiterten Vergleich bleibt im rechten leptonischen Majoranablock. Der native Higgsoperator erzeugt trotzdem nach Elimination des Gegenblocks zwölf quadratische Spektralrichtungen. Die alten Vierfeldantworten mit Rang null und fünf sind Enden desselben Familienmultipletts. Die exakte Familienreflexion vertauscht ihre vollständigen Gramblöcke auf fünf mittransportierten Paketen. Die alte euklidische Übertragung ist ein zustandsabhängig gewichteter Filter. Nächster Test ist die relative Familienausrichtung des nativen Higgs und Yukawa Tensors zur Ramond Präparation am gemeinsamen Schnitt, mit tatsächlichem Selektor, Gewicht und Referenz. Die vier physischen Schnittwerte sind unberechnet. F1 bleibt offen.
+
+Originalbeleg `experiments/theory-contracts/chat-triangulation-20261108/TFPT-VOGELPERSPEKTIVE-DIRAC-FAMILIE-PROZESS-20261110.txt`. Atlasrevision `427214795af23d141e336dc5`. Lokaler Forschungscommit `870b2f0ec12cfeecf6176fc6898a7da5c06deaf7`.
+
+## TFPTFAMILYMIDDLEORDEREDCUT20261110
+
+TFPTFAMILYMIDDLEORDEREDCUT20261110. Geordnete native Higgsprodukte trennen Richtungen mit gleicher quadratischer Rückkehr und rekonstruieren alle vier Koeffizienten bis zum gemeinsamen Ausgangsrahmen. Das direkt berechnete mittlere Familienglied trägt im alten NS Sektor auf allen fünf Paketen. Bei der neutralen Familienmarke wechseln die Ordnungsränge zwischen fünf und eins. Die absolute Rückkehr reagiert auf die alte Ramond Auswahl. Der Zweizeitdefekt und das Verhältnis der Fensterverschiebungen übersehen das mittlere Glied, da beide Zwischenenergien gleich sind. Nächster Test ist die neutral markierte Paarung der zwei Zwischenbilder unter dem tatsächlichen Originalselektor im gemeinsamen nativen Rahmen, mit gebundenem Gewicht und Referenz. Die vier physischen Schnittwerte sind unberechnet. F1 bleibt offen.
+
+Originalbeleg `experiments/theory-contracts/chat-triangulation-20261108/TFPT-FAMILIENDREHUNG-ZWISCHENKANAL-UND-ZEIT-20261110.txt`. Atlasrevision `243a826971b195886ee84083`. Lokaler Forschungscommit `99257c12557e11963e12428c6c101febd8111949`.
+
+## TFPTGATEAFAMILYCLOSURE20261110
+
+TFPTGATEAFAMILYCLOSURE20261110. Die alten signierten Zwischenräume enthalten je zwei Ramond Linien und einen passenden NS Impuls mit sechs Farbsinguletts. Die neutrale Leiter schließt die beiden Linien mit genau einem NS Bild zu einem Triplett. Das Gewicht zwei Wort schließt auf sechs Tripletts und fünf Singuletts bei derselben alten Energie. Der unveränderte native feste Kreis mit allen Fouriermoden und beiden Vierteln hat je Energie höchstens zwölf Dimensionen. Damit scheidet der direkte zeitgetreue Anschluss des alten 23er Abschlusses aus. Die erneute C58 Radiusprobe widerlegt exakte lineare Skalierung und erhält die getrennten leeren und markierten Antworten. Nächster Quelltest ist der dreidimensionale signierte Kanal unter dem tatsächlichen Determinanten, Struktur und Gapfilter. Physische gewichtete Quelle, 3+1D Tensorantwort und F1 bleiben offen.
+
+Originalbeleg `experiments/theory-contracts/chat-triangulation-20261108/TFPT-TOR-A-FAMILIENRAUM-UND-C58-20261110.txt`. Atlasrevision `9846be85de1b6d34d32d9c5f`. Lokaler Forschungscommit `b308ef25867f2e94b79d8817acb0f27defeb58f8`.
+
+## TFPTFAMILYORDERWEIGHT20261110
+
+TFPTFAMILYORDERWEIGHT20261110. Am alten Originalrand beide Ordnungen mit H_alpha und derselben q Referenz ausgewertet. Früh sind Pakete 1 bis 4 bereits als Vektoren exakt null; spät ist ihr mittleres Wort W mit G_W>G_q/2 in beiden Quartern. Auf Paket 1 liefert der alte gemischte Rückweg früh null und spät 0.04556497058 beziehungsweise 0.03238365671. Der alte Farbzentrumfilter lässt die Wege durch. Das mittlere geladene Wort ist Xi ungerade; ein direkter Lift mit zwei Xi geraden Higgsbeinen und Xi erhaltender Naht liefert für beide Rückwege null. Im unveränderten Q Lauf Exit 2 vor Gewichtsauswertung: original_blocked_fiber_packet und whole_source_bundle fehlen, null Originalatome. Physische Werte unberechnet. Nächster Schritt bleibt der tatsächliche dreiwertige signierte Kanal aus Tor A unter Q_Theta, Struktur und Gapfilter. Dort die geordnete Probe auf einem alten Nullpaket als Ziel für den Worttransport verwenden und dann mit ursprünglichem Gewicht und derselben Referenz lesen. F1 bleibt offen.
+
+Originalbeleg `experiments/theory-contracts/chat-triangulation-20261108/TFPT-FAMILIENMARKE-ORIGINALSCHNITT-20261110.txt`. Atlasrevision `459b15df58a11940d461f87f`.
+
+## TFPTP1LOCALSPINPATH20261110
+
+TFPTP1LOCALSPINPATH20261110. Auf Paket P1 wird der mittlere alte Spinweg aus dem geladenen Zwischenvektor als Triplettanteil isoliert. Der Farbzentrumfilter ist auf allen getesteten alten Pfaden exakt Identität. Der erste energieanhebende lokale Modus J_(q,-1) gibt in beiden Ordnungen eine nichtnull reflektierte Rückkehr bei gemeinsamer alter Referenz. Der frühere Nullmodus und seine Mischprobe mit W_0 bleiben unverändert. Auf dem alten zweiseitigen Cauchygraphen braucht Modus k auf der zweiten Fläche den Faktor exp(-8 k ell); eine identische Kopie hat einen exakt hergeleiteten und ausgeführten Graphverlust. Die Original Endpunkt und Faseroperationen liefern kein whole_source_bundle, original_blocked_fiber_packet oder Maßmasse. Physische Werte unberechnet. Nächster ursprünglicher Vergleich: Paket P1 und W auf derselben APS Domäne unter wirklichem Q_Theta, Struktur und Gap tragen; Nullmodus und ersten lokalen Modus samt zweiter Fläche getrennt im selben Originalgewicht und Referenzcaller auswerten. Den vorhandenen Tor A Vergleich erhalten. F1 bleibt offen.
+
+Originalbeleg `experiments/theory-contracts/chat-triangulation-20261108/TFPT-P1-SPINWEG-UND-NAHT-20261110.txt`. Atlasrevision `aa4b10d5270bb28bab88860f`.
+
+## TFPTCOVERSELECTORCOMPILER20261110
+
+TFPTCOVERSELECTORCOMPILER20261110. Die zwei alten neutralen Schritte reproduzieren den direkten -2q Transport in allen vier signierten Paarungen samt ursprünglichem Kozyklus. Der alte Ramond Innenfilter löscht genau den Zweischritt; bei erhaltener Leiter liefert die tatsächliche mittlere Projektorbelegung die bedingte Formel. Die ursprüngliche Pin Normalmarke erreicht ausschließlich höhere ungerade Moden. Der stationäre Paarwechsel i tau2 erhält K und die native Higgsmarke, trägt aber allein keine lokalen nichtstationären Familienmoden. Der Klein Vergleich trennt freie Deckung von Pin Randbedingungen. Fuchs und Vierteloperator erhalten den Blattblock bei jeder Iteration. Nächster Quelltest ist die Abbildung der neutralen q Nullmode auf den tatsächlichen Paarwechsel und der lokalen q Moden auf beide physischen Schnittflächen samt ihrer Zeitfaktoren. Die tatsächliche Determinantenwahl, Gap, Gewicht und F1 bleiben offen.
+
+Originalbeleg `experiments/theory-contracts/chat-triangulation-20261108/TFPT-QUERVERBINDUNGEN-DECKUNG-PIN-COMPILER-20261110.txt`. Atlasrevision `f9a91fae84ead5285e2a4d30`. Lokaler Forschungscommit `28609ebc449fe41a85c408149ae85e1a1589fab0`.
+
+## TFPTP1APSTRANSPORT20261110
+
+TFPTP1APSTRANSPORT20261110. Der ursprüngliche R074 Cauchygraph erzwingt für den lokalen Vorwärtsblock auf beiden Flächen den Faktor exp(-ell Delta). Der adjungierte Rückweg bleibt nur bei Delta=0 im Graphen. Für beide festen Viertelphasen scheitert der direkte lokale lineare Lift auch in jeder endlichen Differenzialordnung. Der explizite unitäre Graphtransport trägt die gepaarte Reflexion, ist nichtlokal und verschiebt den Tangentialgenerator. Die aktuelle same-loop Pin Paarung i tau2 erhält K, kommutiert mit allen nativen Higgsbeinen und erzeugt den alten Familienkommutator auf P1 nicht; dies wurde im 192er Paar auch mit drei Higgsstücken geprüft. Altes W im D8 Vakuummodul passiert jeden am Vakuum positiven Modulskalar; das ist keine Identifikation von Q_Theta. Die unveränderten Endpunkt und Faseroperationen liefern keine physische Maßmasse. Nächster ursprünglicher Eingang ist die feldabhängige oder zusammengesetzte sektorwechselnde q Operation mit Adjungiertem auf der wirklichen APS Domäne; geometrischen Pin Begleiter nur mit nachgewiesener nichttrivialer Koeffizientenwirkung weitertragen. Q_Theta, Gap, echtes Gewicht und beide physischen Ordnungen bleiben unberechnet. F1 bleibt offen.
+
+Originalbeleg `experiments/theory-contracts/chat-triangulation-20261108/TFPT-P1-APS-TRANSPORT-20261110.txt`. Atlasrevision `dfcf98df069ca11934a33dd8`.
+
+## TFPTPINFAMILYCURRENTWORDS20261110
+
+TFPTPINFAMILYCURRENTWORDS20261110. Die ganze stationäre eich und gradierungstreue Pin Multiplikatoralgebra ist dreimal M2 und kann die alte Spin eins Leiter nicht tragen. Zwei tatsächliche positive Pin Doppelzustände ergeben im freien CAR die passende Leiterform, aber der freie Elektron Positron Kanal ist bei gleicher Energie zu klein für den alten Abschluss. Die lokalen direkten Einteilchenmoden sind auf dem festen massiven Paar ausgeschlossen. Im alten Ganzwort stimmen die stationären Teilwörter exakt überein. Die lokalen k=1 Oszillatorwege tragen entgegengesetzte Vorzeichen, und der lokale Kontakt verschwindet quadratisch. Nächster Test ist der aus der gemeinsamen Quelle hergeleitete zusammengesetzte Strom mit beiden lokalen Wegen unter tatsächlichem QTheta, Struktur und Gap. Der Originalaufruf stoppt vor Integration. Die physischen Werte und F1 bleiben offen.
+
+Originalbeleg `experiments/theory-contracts/chat-triangulation-20261108/TFPT-FAMILIENSTROM-PIN-GANZWORT-UND-TEILWOERTER-20261110.txt`. Atlasrevision `21bc7f1665d8d37a3f77f527`. Lokaler Forschungscommit `a7bcd0300ff7f145bf0ccf34bdf8a1278f8503fc`.
+
+## TFPTP1CLOSEDRETURN20261110
+
+TFPTP1CLOSEDRETURN20261110. Der alte P1 Normrückweg hat einen zweiten exakt ausgeführten Leser: auf dem geladenen Zwischenvektor Bv gilt N^*N Bv=(I-U)Bv, U=exp(i pi X), X der neutrale q Oszillatorzähler. Der kubische Ausdruck gilt nur auf der alten Stufe. Alle vier Zahlanteile und die Differenzen 19939674/2103973 bzw. 4987326/621575 sind mit derselben alten q Referenz exakt. Der zusammengesetzte Pin Familienroot erzeugt auf zwei nativen Außenbeinen exakt die Leiterform, aber alle sechs Fälle verfehlen feste native Zeit. Stationäres Einteilchenmittel ist auf den geladenen Blöcken normal und kann die nilpotente Leiter nicht erhalten. Nächster physischer Test: B*B und B*UB mit tatsächlichen Cartanströmen, P1 Präparation, äußerem Selektor und derselben Originalquelle vergleichen, ohne mittlere halbladige N Operation als Eingabe zu fordern. Die kubische Form nur bei nachgewiesener Bandbegrenzung. Die lokalen Pin Worttests und den echten zusammengesetzten Strom als separate Anschlussfrage erhalten. Absolutes Originalgewicht, physische Werte und F1 bleiben offen.
+
+Originalbeleg `experiments/theory-contracts/chat-triangulation-20261108/TFPT-P1-GESCHLOSSENER-QUELLENWEG-20261110.txt`. Atlasrevision `cf64e46238ca8dd0eb1986e6`.
+
+## TFPTTHREEHYPOTHESES20261110
+
+TFPTTHREEHYPOTHESES20261110. Die neutrale Cartanparität reproduziert den alten Nullmodusrückweg auf allen fünf Paketen in beiden Quartern. Die erste lokale Mode ist verschieden; die Differenz ihrer beiden entgegengesetzten Modennormen ist exakt die unmarkierte Norm auf allen zehn geladenen Bildern. Der ursprüngliche W Tensor erhält den gemeinsamen Fermion und Boson Familiengenerator auf allen zwölf Wurzeln. Q=2 Triplette liegen im Kern von W; Q=4 trägt Zweiboson-Triplette mit nichtverschwindender echter Kopplung 16|g|² im Normquadrat. Dies bleibt eine native Kandidatenquelle, kein P1 oder Higgs/APS Transport. Gleiche Norm und erste zwei Momente lassen die alte P1 Parität verschieden. Der W Vergleich liefert leere und markierte Spuren gegen dieselbe deklarierte g=0 Referenz, kein physisches Bosongewicht. Die befüllten Q Bundles sind nur arithmetische Kontrollen. Nächster Originaltest: geschlossener Paritätswert und affine lokale Warddifferenz auf demselben gewichteten Block mit leerer Referenz. Die Q=4 Kopplung nur mit tatsächlicher Feld-, Ladungs- und Zeitabbildung übertragen. F1 und physische Gesamtlösung offen.
+
+Originalbeleg `experiments/theory-contracts/chat-triangulation-20261108/TFPT-DREI-HYPOTHESEN-PRUEFUNG-20261110.txt`. Atlasbeleg `79af886cf5a379f374329936`, fortgeführte Atlasrevision `31ab0d0fb7f0b050a72b747d`.
+
+## TFPTNEUTRALFAMILYALLBANDS20261110
+
+TFPTNEUTRALFAMILYALLBANDS20261110. Die alte Zahlparität liest den Nullstrom nur bis Stufe drei. Die aus dem neutralen q Stress rekonstruierten Virasoro Module liefern den exakten Leser über alle alten Bänder; auf Stufe vier ist der erste Unterschied sechs gegen null. Vier aus den vorhandenen Paketen abgeleitete positive Proben bestimmen die lokale Zweiwegkompression. Zwei Rang eins Auswahlen haben trotz verschiedener Normantwort dieselbe gerichtete Interferenz. Die unveränderte freie massive Pin Fockquelle besitzt keine unendliche exakte Energieleiter. Der wechselwirkende W Block hat den stationären Strom, aber beim gegebenen Rechenpunkt Spektralbreite höchstens 14/5 und bei festem Q keine volle affine Zentralrelation. Nächster Quelltest ist derselbe erste physische Block mit neutralem Stressleser, vier Paketproben, vollständigen Selektoren und gebundener leerer Referenz. Physische Integration, Tensorantwort und F1 bleiben offen.
+
+Originalbeleg `experiments/theory-contracts/chat-triangulation-20261108/TFPT-NEUTRALER-FAMILIENSTROM-UND-PHYSISCHER-ANSCHLUSS-20261110.txt`. Atlasrevision `95bf9c7bf1c50d48cfe2713d`. Lokaler Forschungscommit `6d1926ff2bd0f7e8f5a4f6d02525e0f9959726e7`.
+
+## TFPTCAUCHYFAMILYHOLONOMY20261110
+
+TFPTCAUCHYFAMILYHOLONOMY20261110. Der ursprüngliche native Calderón Graph trägt nichtabelsche Familienwirkung. Die komplexen Higgsrichtungen erzeugen auf den linken Generationen die volle spurfreie Dreieralgebra; eine eichneutrale Summe und ein Doppelkommutator lesen sie auf dem ganzen schwachen Dublett. Mit Metrikmarken erreicht die geometrische Holonomie des gegebenen Quarkfarbblocks SU(12), weshalb ein paralleler nichttrivialer Selektor dort ausscheidet. Die originale offene Zeitantwort hat eine andere Fensterfunktion und die lokalen Fourierkrümmungen tragen die alte affine Zentralrelation nicht. Nächster Test ist das Higgsrechteck und die lokale Gegenmodenprobe auf demselben wirklich gewichteten Schnitt mit allen vier Paketpräparationen und leerer Referenz. Physische Quelle, Tensorantwort und F1 bleiben offen.
+
+Originalbeleg `experiments/theory-contracts/chat-triangulation-20261108/TFPT-GEOMETRISCHE-FAMILIENWIRKUNG-UND-ORIGINALZEIT-20261110.txt`. Atlasrevision `c7bd5e16cc15b8bbfb23a764`. Lokaler Forschungscommit `c0dae21062aaef25a3ff42ffc3f6e0b66fd0df2d`.
+
+## TFPTDESCENDANTSOURCE20261110
+
+TFPTDESCENDANTSOURCE20261110. Im tatsächlichen Fold ist B die volle q/r Strommodensumme; die lokale Reihenfolge unterscheidet Mittelwort plus mR Kontakt mit nichttrivialer Interferenz. Alle fünf Pakete in beiden Quartern und fünf Strommoden wurden exakt geprüft. W ist nach expliziten Vorzeichen dieselbe endliche E8 Paarklammer auf 2016 Spalten mit 480 Einträgen. Ein direkter affiner W Feldtransport scheitert am fehlenden B Gewicht, am bedingten CAR Pegel 16 gegen 1 und an der Doppelerzeugung aus dem Vakuum. Die zwei Wurzeln liegen mit D6 in einer Unterstruktur von Index vier; alle alten P1 Wege bleiben in der Klasse 00. Die ausgewählte lokale Wardnorm hat einen exakten Selektordefekt. Nächster Originaltest ist die gemeinsame relative q/r Stromdarstellung mit Pegel eins, Adjungierten und Zeitschnitten, einschließlich des gemischten Kontakts auf der ursprünglichen APS Domäne. Daran die echte Determinanten und Gapwirkung und den leeren Referenzblock binden. Weder die geometrische Graphrotation noch der nackte W Focktransport liefert diesen Strom. Physische Gewichte, beide physische Ordnungen, F1 und Gesamtlösung bleiben offen.
+
+Originalbeleg `experiments/theory-contracts/chat-triangulation-20261108/TFPT-DESCENDANT-UND-GEMEINSAME-QUELLE-20261110.txt`. Atlasbeleg `cf8920a6095de99c52069b69`, fortgeführter Stand `c480a9264b8cd038f10e0bd7`.
+
+## TFPTSESSIONCROSSCHECK20261110
+
+TFPTSESSIONCROSSCHECK20261110. Der nachgerechnete Sechserring trifft die v634 Clockzählung und der klassische Ringschritt den ursprünglichen Dreierquotienten B. Im gepinnten Fold verlassen beide markierten Stromwurzeln q,r schon in einem Clockschritt ihren gemeinsamen Raum. Ihr Abschluss ist A1^8 vom Index 16; die beiden D6 Einbettungen teilen nur 26 Wurzeln. Der spezifizierte Ringschritt löscht eine durch Platzmarken wieder sichtbare Mode. Deshalb besitzt er keinen nichttrivialen Verflechter zum injektiven nativen Cliffordkanal, der diese Marken erhält. Der lokale q/r Test am gewichteten Originalschnitt bleibt die nächste Aktion; keine neue Clockpflicht, keine physische Auswertung oder Ledgeränderung.
+
+Originalbeleg `experiments/theory-contracts/session-crosscheck-clock-clifford-20261110/CROSSCHECK.txt`. Atlasrevision `6f61f42a40d6421eb0249a1d`. Der eigenständige Ganzzahl und Bruchtest über alle 240 Wurzeln und den Ringschritt lief erfolgreich.
+
+## TFPTCLIFFORDQUARKBRIDGE20261110
+
+Die perfekte akzeptierte Übertragung allein klassifiziert die S⁴ Codes des nativen Kanals. Am R113/v252 Quarkblock schließen die tatsächlichen Higgsbeine einen festen eich und graduierungstreuen Viererblock aus. Das negative Rang sechs Band des stetig vorzeichenbehaftet fortgesetzten Tangentialoperators hat pro Farbe |c2|=3. Die tatsächlichen Projektorüberlappungen sind bereits innerhalb einer Hemisphäre nicht skalar. Damit scheitert auch eine unitäre Identifikation des ganzen Bandes mit drei identischen Cliffordkopien. Der ganze Calderón Graph besitzt einen globalen Rahmen. Der alte Stromtest reproduziert den gemischten Zentralkontakt. Der native Q Start erhält null Originalatome und stoppt mit Exit 2 vor der Integration. Die relative q/r Darstellung auf demselben gewichteten APS Schnitt mit leerer Referenz bleibt der nächste Originaltest. F1 und die physische Gesamtlösung bleiben offen.
+
+Originalbeleg `experiments/theory-contracts/clifford-native-quark-source-bridge-20261110/PROOF.txt`. Atlasrevision `a7a83e8def7f0883c05439f9`. Neun gezielte Kontrollgruppen, alter Foldtest und nativer Aufruf ausgeführt.
+
+
+## TFPTSLOTCLOCK20261110
+
+Nativer v634 Sechserring und volle 204er Weylzählung bestätigt. Sechs Schnitte mit paarweise 48 Wurzeln in der symmetrischen Differenz und 112 geänderten Glueetiketten, zwölf gerichtete Marken. Native Potenzen ergeben fünfmal 112, 128, fünfmal 112, 0. Fünf echte q Pakete behalten unter sigma Rang 5 in beiden Quartern; J wechselt die Impulsfaser. Festes Y schließt sechs Halbspinoren als full96 bereits am fünften Ladungsmoment aus. Die 48 gemischten Wurzeln sind dem v623 Cover als C12 Menge äquivalent, der NS Spinlift hat ein anderes Vorzeichen. Die Ringfaltung ergibt exakt v987 B; der originale v17/R111 Ortsleser behält die alternierende Mode. Rahmenkovarianz legt QTheta und Gap nicht fest.
+
+Am ohnehin vorgesehenen ursprünglichen gewichteten Schnitt die geladene Ramond Kreuzform zweier Pakete und leere Referenz für festen und tatsächlich transportierten D_adm/QTheta/Gap vergleichen. Gemeinsame Konjugation allein ist keine Auswahl. R113 Gewicht und F1 bleiben unberechnet. Keine neue physische Teilerledigung und keine Ledgerpromotion.
+
+Belege: `experiments/theory-contracts/chat-triangulation-20261108/TFPT-FABLE-SECHSERRING-PRUEFUNG-20261110.txt`, `experiments/theory-contracts/chat-triangulation-20261108/check_fable_slot_clock_20261110.py`. Exakte Prüfung mit Exit 0. Sieben Befunde in `problem:clock-source-covariant-transport` gespeichert (0beec9756c627134073325b6) und zurückgelesen (a7a83e8def7f0883c05439f9).
+
+## TFPTSINGULARITYSEAM20261110
+
+Ein exakter sichtbarer Neustart ist bei zyklischer Referenz durch Isometrien im Kommutanten klassifiziert. Im vorhandenen bedingten thermischen Zweirandkollar schließt die unveränderte doppelte Referenz einen nichttrivialen Reset aus. Die native Zeit erhält beide Seiten getrennt, die quantisierte Reflexion ist antiunitär. Am endlichen Regulator reicht die gleich große zweite Kopie für einen Reset auf die treue Dichte nicht. Der v221 Dreiertransfer ist kontraktiv und kann nicht der ganze reversible Übergang sein.
+
+Am bereits vorgesehenen gewichteten q/r APS Schnitt die komplexe Kreuzform von zwei vorhandenen Ramond Präparationen, beiden Phasen und der leeren Referenz als K* A K - ω(A) K* K auswerten; beide Stromordnungen, tatsächliche Zeit, Determinante, Gap und alle Zwischenbeine erhalten. Unnormierte Norm separat prüfen. Der Originalstart endet bislang vor der Integration mit null Originalatomen. Physische Form, Singularitätsfortsetzung, 3+1D Netz und absolute Flächenantwort sind unberechnet.
+
+Originalbeleg `experiments/theory-contracts/p1-singularity-seam-reset-20261110/PROOF.txt`. Der exakte Quellencheck bestand 6/6, unverändertes v221 bestand 7/7. Vier quellengeprüfte Befunde in `problem:p1-singularity-seam-reset`, gespeichert und gelesen auf Atlasrevision `558e74b3583cb88976439604`. Keine Änderung des Originalledgers und keine physische Teilerledigung.
+
+
+## TFPTRAMONDCLOCKRETURN20261110
+
+Am gepinnten v16 Fold erlaubt das q/r Paar keine nichttriviale Potenz des nativen c bei festem Originalgenerator. Der erste q Schritt kostet vier ursprüngliche H Einheiten. Am r Bein ändert c Farbwirkung und Hyperladung 1/2 zu 0. Der minimal erzwungene Ladungsausgleich q-Rq bringt auf der alten Stufe alle fünf Pakete zurück. Die Kreuzform hat in beiden Quartern Rang fünf und ist auch nach gemeinsamer Normierung vom Rahmenwechsel verschieden. Der Ausgleich koppelt mehrere Bögen des tatsächlichen skalaren Covers.
+
+Der native Q Lauf endete mit Exit 2, null Originalatomen und fehlendem original_blocked_fiber_packet. Die physische Faserform und das R113 Gewicht sind unberechnet. Am vorgesehenen gemeinsamen q/r APS Schnitt den tatsächlichen Mehrbogenoperator mit Adjungiertem und für r mit farbtragendem Partner an die ursprüngliche gewichtete Faser binden. Die zwei Ramond Pakete mit beiden Interferenzphasen, beiden Stromordnungen, leerer Referenz, Originalzeit und voller Auswahl vergleichen. Der kompensierte Randbefund gibt die Ladung und die zu überprüfende Stütze vor.
+
+Originalbelege `experiments/theory-contracts/chat-triangulation-20261108/TFPT-RAMOND-CLOCK-RUECKWEG-20261110.txt` und `experiments/theory-contracts/chat-triangulation-20261108/check_ramond_clock_return_20261110.py`. Exakter Checker Exit 0. Vier Befunde im Atlasproblem `problem:clock-source-covariant-transport` gespeichert und auf Revision `8e32f387ed39c60a987a40d2` zurückgelesen.
+
+## TFPTFIRSTWEIGHTEDBLOCK20261110
+
+Die erste spiegelverträgliche räumliche Mode des konstanten R113/v252 Zweigs ändert das relative Higgsgewicht für jedes nichttriviale positive Laplaceprofil mit der erklärten freien S Referenz. Der bekannte spektrale und fermionische Modenrest lässt sich mit uniformer Schranke erhalten. Das thermische Logprofil hebt zwei tatsächlich gemeinsam nachgewiesene übereinstimmende Faktoren exakt auf, wählt aber das physische Profil nicht. Die vorhandene nichtkonstante Q Konfiguration koppelt alle 192 behaltenen Richtungen an den ausgelassenen Raum. Die explizite Schurantwort stimmt bis 4.7e-16 je Eintrag mit der vollen räumlichen Resolvente überein. In der ursprünglichen gemeinsamen APS Faser bleiben Maßmasse, Selektor und geordnete q/r Zeit und Strommarken auszuwerten. F1 bleibt in Bearbeitung.
+
+Originalbeleg `experiments/theory-contracts/first-weighted-spectral-block-20261110/PROOF.txt`. Atlasrevision `3989a1f452560f8ca8ff6a4e`. Originalbuilder und unveränderter Q Assembler ausgeführt.
+
+
+## TFPTQLOCALNEUTRAL20261110
+
+Der erste lokale Modus J_(q,-1) besitzt im alten Level-eins Fold einen neutralen Leser aus dem verschobenen Cartanstress und dem festen Impulstransport. Das späte Endbild und die Normen wurden auf allen fünf Paketen in beiden Vierteln exakt geprüft. Beide Ordnungen haben denselben Endimpuls. Für Paket 1 bleibt die späte Norm größer, solange die gemeinsame positive Form relativ zu einem Skalar um weniger als 0.99310743537 beziehungsweise 0.99906984625 abweicht. Beliebige positive transversale Gewichtung bei trivialer Wirkung auf beiden q/r Oszillatorfaktoren kann auf den Paketen 1–4 die Reihenfolge nicht umdrehen. Die Wirkung nur auf q trivial zu halten reicht nicht. Die ursprüngliche Feldabbildung und gewichtete APS Form mit echter Auswahl bleiben physisch auszuwerten.
+
+Originalbeleg `experiments/theory-contracts/original-q-local-neutral-reader-20261110/PROOF.txt`. Atlasrevision `bfe25312693b89929ad0d5e9`. Exakter Checker Exit 0, zehn unabhängige Gram und Interferenzvergleiche mit der vorhandenen Descendant Rechnung stimmen.
+
+## TFPTORDEREDRESET20261110
+
+Die tatsächlichen q/r Ordnungen auf zwei ursprünglichen Ramond Paketen liefern bei alter Faltpaarung keine skalare markierte Form für irgendeine nichttriviale positive Mischung der Ordnungen. Beide Viertel einzeln und alle gemeinsamen Quartergewichte bei derselben Koeffizientenmatrix sind exakt geprüft. Reelle Originalzeitfaktoren liefern strikt positive Interferenz mit Untergrenzen 669/64 und 735/64. Die ausgeführten installierten Beitragsfunktionen liefern null Originalatome, und der erste fehlende Produzent liegt vor der Aggregation.
+
+Auf demselben gewichteten q/r APS Schnitt zusätzlich zur neutralen Endantwort TFPTQLOCALNEUTRAL20261110 den reellen physischen Kontrast (Tr G) Re Q01 - (Tr Q) Re G01 auswerten. Er verwendet zwei kohärente Ramond Präparationen, beide Originalordnungen, echte Adjungierte, Eichkontraktion, Zeit, Auswahl und Rückkehrwege. Eine gemeinsame absolute Normierung fällt für diese einzelne Widerlegung heraus. Bei Null die übrigen Kontraste und die unnormierte Norm prüfen. Die vollständige Faser oder ihr gleichwertiger unnormierter Randcaller bleibt unberechnet.
+
+Originalbeleg `experiments/theory-contracts/p1-singularity-seam-reset-20261110/ORDERED-RESET-CONTRAST.txt`. Exakter Checker Exit 0 einschließlich nativer Beitragsprobe. Zwei Befunde auf Atlasrevision `eeaab543d5a7b4a9c14c29e6` gespeichert und zurückgelesen.
+
+
+## TFPTRAMONDCLOSED20261110
+
+Der kompensierte q-Rückweg wird als ganzes neutrales Wort mit den ursprünglichen CAR Strömen ausgeführt. 25 exakte Gramwerte je Quarter und der komplexe Zweipaketblock stimmen mit dem direkten Ramond Aufruf. Die volle Kreuzmatrix hat Rang fünf. Auf demselben alten thermischen Zylinder wurden markierte Spur und leere Referenz mit echter Farbselektion gemeinsam ausgewertet. Die innere Cartanmarke gibt auf beiden Schnitten Minus, der dort eingesetzte Ganzzahlprojektor löscht das Wort. Äußerer und innerer Zweipaketschnitt haben je vier unabhängige Richtungen und denselben exakten adjungierten Kreuzblock.
+
+Die vier fest berechneten Richtungen und das geschlossene Mehrbogenwort über eine gemeinsame tatsächliche Feldabbildung an den ursprünglichen APS Schnitt binden. Dort die volle physische Form und Leerreferenz auswerten und den phasenempfindlichen Kreuzblock lesen. Einen diagnostischen inneren Cartaneinsatz mit der tatsächlichen Ramond Faser ausführen. Die aktuelle q/r Stromordnungsprobe am selben Schnitt bleibt Teil der F1 Fortsetzung. Die physische Faser, ihre Maßmasse und R113 bleiben unberechnet.
+
+Originalbelege `experiments/theory-contracts/chat-triangulation-20261108/TFPT-RAMOND-GESCHLOSSENER-CAR-AUFRUF-20261110.txt` und `experiments/theory-contracts/chat-triangulation-20261108/check_ramond_closed_car_return_20261110.py`. Exakter Checker Exit 0, thermischer Hochpräzisionsvergleich separat. Vier Befunde in `problem:clock-source-covariant-transport` auf Revision `6c45d7828dfe8dd56f69d0ef` gespeichert und zurückgelesen.
+
+
+## TFPTCALDERONWEIGHTLIMIT20261110
+
+Das Produkt der bekannten relativen Spektral und Fermionfaktoren der homogenen R032/v252 Faser bleibt gleichmäßig beschränkt und tendiert bei großer Higgsamplitude gegen eine positive Konstante. Es normalisiert das reelle Calderón Graphvolumen weder mit vier Komponenten noch im intrinsischen Winkelquotienten beim Entfernen der Moden. Schon bei festem Schnitt ist die leere Masse endlich, das erste Higgsnormmoment aber divergent und eine positive U Quelle unendlich. Für den ganzen Turm konvergiert kappa U gegen Gamma mit Form 1 beziehungsweise 1/4. Die gemeinsame Skalierung kappa N² gegen einen endlichen Wert ist exakt bestimmt. Unveränderter full96 Builder, numerische Kontrolle bis N=511 und getrennte Grenzquadratur. Der installierte Endpoint und Beitragsaufruf melden weiter fehlende Originaldaten. Der physische Kern, die Fasermaßmasse und die geordneten Werte bleiben unberechnet.
+
+Am bereits vorgesehenen tatsächlichen gewichteten APS Schnitt dieselbe leere Regulatorfamilie und die gaugeinvariante Higgsnormantwort auswerten. Bei ausführbarer Faser beide q/r Ordnungen und ihre komplexe Kreuzform auf genau dieser Basis mit gebundener Referenz prüfen. Die bekannte Spektral und Sea Gewichtung des reellen Graphvolumens nicht erneut als endliche gemeinsame Quelle verwenden.
+
+Originalbeleg `experiments/theory-contracts/original-calderon-weighted-source-limit-20261110/PROOF.txt`. Checker Exit 0. Drei Befunde auf Atlasrevision `13120b896000487f9c1a163d` gespeichert und als quellenaktuell zurückgelesen. Keine Ledgeränderung.
+
+## TFPTVACUUMRESET20261110
+
+Der exakte sichtbare Reset im selben zyklischen positiven TFPT Vakuumzweig mit endlichem Grundraum ist ausgeschlossen. Bei einer Vakuumlinie ist der Kommutant skalar. Jeder exakte Reset einer d-dimensionalen Eingangsfaser verlangt d orthogonale Kopien der sichtbaren GNS Darstellung. Die vorhandene HS Doppelung mit unveränderter Zweiflächenuhr kann den Speicher bei nichtnegativer Ausgangsenergie weder für den reinen Viertelgrundzustand noch für die treue Gibbsdichte tragen. Der unveränderte full96 Builder bestätigt symbolisch die Quadratik und die Vierteluntergrenze.
+
+Für die exakte kosmologische Fassung die tatsächlich von P1 erzeugte zusätzliche Vakuummultiplizität und ihren positiven Zeitgenerator identifizieren. Die bekannte HS Uhr ist dafür ausgeschieden. Den vorhandenen gewichteten q/r APS Test weiter für die konkrete Quellabbildung beziehungsweise die Fassung mit einer kleineren sichtbaren Algebra verwenden. Die neueste Graphvolumengrenze und den geschlossenen Ramond Mehrbogenaufruf erhalten. Voller Singularitätsübergang, physische APS Faser und absolute metrische Antwort bleiben unberechnet.
+
+Originalbeleg `experiments/theory-contracts/p1-singularity-seam-reset-20261110/VACUUM-AND-ENERGY-RESET.txt`. Der exakte full96 Quellencheck bestand mit Exit 0. Drei Befunde auf Atlasrevision `7d9211c9372d571dcee66f8a` gespeichert und zurückgelesen.
+
+## TFPTCROSSEDCURRENT20261110
+
+Im nativen R113/v252 Zweiflächenkragen sind glatte lokale CAR Multiplikatoren genau bei Erhaltung der vorzeichenbehafteten Flächengradierung implementierbar, auch für beschränkte räumliche Higgsprofile. Der tatsächliche Higgskoeffizient divergiert als einseitiger Strom. Der gekreuzte Strom existiert in dieser Darstellung, verfehlt roh die Wurzelrelation und hat polar normiert Zentralsteigung null. Alle festen Reduktionen mit tatsächlicher Eichwirkung, vier Higgsrichtungen und Majorana lassen die polaren Ränge ausgeglichen. Die bestehende relative zusammengesetzte oder sektorwechselnde q/r Quelle am gemeinsamen APS Schnitt bleibt zu binden. Auf derselben Faser sind die beiden geordneten Rückwege, Zentralkontakt, tatsächliche Zeit, Auswahl, Maß und Referenz auszuwerten. F1 bleibt in Bearbeitung. Der alte neutrale Cartan Caller reproduziert außerdem sämtliche 200 Einträge der vier geordneten q/r Formen auf fünf Originalpaketen und beiden Vierteln. Beim ersten inneren Cartaneinsatz erscheint exakt plus früh und minus spät. Auf dem tatsächlichen gewichteten APS Schnitt diesen geschlossenen Aufruf mit der gebundenen Leerreferenz auswerten. Beleg `experiments/theory-contracts/original-crossed-current-20261110/NEUTRAL-WORDS.txt`. Atlasrevision `d577b665cf0bfa4533a78dc5`.
+
+Originalbeleg `experiments/theory-contracts/original-crossed-current-20261110/PROOF.txt`. Atlasrevision `d577b665cf0bfa4533a78dc5`. Exakte Struktur und Ränge und numerische Fenster bis 256 in beiden Vierteln geprüft.
+
+
+## TFPTAPSHALFSHIFT20261110
+
+Die beiden festen Fourier Halbshiftprodukte liefern entgegengesetzte Hyperladung bei gleicher alter Seeenergie und gleicher R074 Graphnorm. Der erzwungene ganzzahlige Ausgleich hat Y=1 und vier getrennte Bogenbeine. Als Folge zweier Nullmoden liefert er fünf gleich geladene und gleichenergetische Endbilder, deren Raum mit dem gesuchten Fünferraum nur null gemeinsam hat. Der doppelte CAR Kontakt in Residuen 1 und 3 stellt alle fünf gesuchten Endbilder in beiden Vierteln exakt her. Sein Beitrag mit L0 Zwischenstufen plus/minus eins hat Rang fünf. Der erneut ausgeführte Originaladapter meldet null Atome und original_blocked_fiber_packet fehlt. Physische Faserform, Gewicht und F1 sind unberechnet.
+
+Am gemeinsamen ursprünglichen gewichteten q/r APS Schnitt den direkten geladenen B Einsatz und den äquivalenten doppelt kontrahierten CAR Kontakt in einem ganzen ladungsbalancierten Wort auf denselben zwei Ramond Präparationen vergleichen. Den adjungierten Rückweg, beide Zwischenenergien und das innere Cartan Vorzeichen aus TFPTRAMONDCLOSED20261110 mitführen. Gemeinsamen Originalzustand, vollen Selektor, Referenz und Gewicht verwenden. Die bisher vorgesehenen beiden q/r Ordnungen und neutralen Kontaktantworten bleiben Teil desselben Schnitts.
+
+Originalbelege `experiments/theory-contracts/original-aps-halfshift-20261110/PROOF.txt` und `experiments/theory-contracts/original-aps-halfshift-20261110/CONTACT.txt`. Beide Checker Exit 0. Fünf quellenaktuelle Befunde in `problem:original-aps-halfshift-20261110` auf Atlasrevision `f5f4d62d6d4d9e7f2160ed90` gespeichert und zurückgelesen. Keine Ledgeränderung.
+
+
+## TFPTEVENORDEREDCUT20261110
+
+Die beiden vollständigen alten q/r Halbwörter lassen sich mit normalgeordneten geraden Feldern und den radialen Faktoren der inneren Wege berechnen. Die exakte Prüfung reproduziert alle 100 alten Ausgänge über fünf Pakete, beide Viertel, beide Ordnungen und fünf Moden. Beim bisherigen lokalen m=-1 ist der frühe Arm auf diesen Paketen injektiv. Bei m=2 ist er null und der späte Arm liegt auf der geraden normierten Vierfermionenlinie d=q+r. Die Kombination u0-(16+47i)u3 löscht sich aus. Das Paket u3 liefert unter einem gemeinsam transportierten positiven äußeren Schnitt ein Vierundsechzigstel der direkten reflektierten Norm von d. Alle acht ursprünglichen Bögen tragen zur Vierfermionenmarke bei.
+
+Am selben tatsächlichen APS Schnitt die direkte Vierfermionennorm mit äußerem Selektor, ursprünglicher Zeit und leerer Referenz bestimmen und die beiden festen Präparationen vergleichen. Der lokale m=-1 Kontakt und eine tatsächlich geforderte innere Auswahl bleiben getrennte Tests. Die vorhandene native Quelle liefert die Norm und die gewichtete Form noch nicht. F1 bleibt in Bearbeitung.
+
+Originalbeleg `experiments/theory-contracts/original-even-ordered-cut-20261110/PROOF.md`. Drei exakte Checker ausgeführt. Atlas `problem:original-q-local-neutral-reader-20261110` auf Revision `ffc83c83bd716aaeb13396e7`. Keine Ledgeränderung.
+
+## TFPTRANDDAEMPFUNG20261110
+
+Die beiden gedruckten positiven 4D Higgsanteile liefern bei festem Randkragen eine untere Schranke min((7/12)√(ab)R³,bLR⁴/16). Der scharfe führende Produktkoeffizient bei freiem Gegenende ist 2√(ab)/3, in der gedruckten Normierung 1/(24π²). Ein möglicher Randnormaljet trägt auf demselben Profil ebenfalls kubisch bei; Wertgleichheit der beiden Flächen sichert keinen Ausgleich. Zwei Normen auf den alten m=2 Präparationen bestimmen bei positiver reflektierter Form die komplexe Rückkehrrichtung, wenn die alte Dunkelnorm null und die helle Norm positiv ist. Die direkte Vierfermionennorm prüft separat deren Faktor 64. Acht symbolische Kontrollen bestanden. Der erneut ausgeführte native Q Originalstart endet mit Exit 2, null Originalatomen und fehlendem original_blocked_fiber_packet. Physische Werte bleiben unberechnet.
+
+Am unveränderten ursprünglichen APS Schnitt die Netto Randwirkung des vorhandenen 4D Operators mit gebundener Referenz auf demselben zugelassenen Profil prüfen, einschließlich Feldnormierung, Wickkarte, Normaljet und Kragengeometrie. Für die gewichtete m=2 Probe zuerst die Normen von u0−(16+47i)u3 und u3 prüfen, dann den unabhängigen direkten Vierfermionenwert und die m=−1 Kontaktprobe. Der bestehende q/r Quellenaufruf, ursprüngliche Owner und seine Priorität bleiben erhalten.
+
+Originalbeleg `experiments/theory-contracts/recursive-mirrored-source-20261103/TFPT-R113-RANDDAEMPFUNG-UND-NULLPROBE-20261110.md`. Atlasrevision `070d53e772e3ee986020b559`. Keine Ledgeränderung.
+
+## TFPTAPSRANDQUELLE20261110
+
+Am flachen konditionalen 4D Produkt mit unverändertem v252 Higgs und Majorana ergeben die tatsächlichen Randjets kubische lokale Wirkungskoeffizienten +9.47777840282 für bewegtes APS und −4.73888920141 für die feste freie APS Fortsetzung. Der vollständige positive Laplaceprofilaufruf ist auf der variablen Randschichtfamilie bei fester Skala für beide Domänen gleichmäßig beschränkt. Das ist analytisch über alle Moden gezeigt. Der reine Fockwechsel divergiert linear. Beim festen Cap geben minimaler Abzug und det2 entgegengesetzte kubische Logterme; der Spur und der echte Rückweg bei der Verklebung bleiben erforderlich. Der 28er Checker ist bestanden. Der vorhandene ganze R032 Transfer bewahrt die inneren Rückwege. Auf dem gleichen ursprünglichen v252 Q Eingabepaket fehlen sowohl im direkten Endpunkt als auch im Faseraufruf die eigenen ursprünglichen Beiträge, bei fünf verschwindenden kinematischen Residuen. Die vier physischen Z und W bleiben unberechnet.
+
+Auf der festen reflektierten R032 Originalgeschichte ergibt die Summe der rechten geladenen Leptonenbesetzungen einen gemischten Logradius und Higgsjet +0.003917913585, vor Normierung und relativ zur selben freien S Referenz +8.826729377567e−6. Ein zweiter Rechenweg bestätigt beide Werte. Bei der determinantischen Spiegelpaarung der Viertel ergibt sich ein positiver Fermionkern. Die Gegenkarte konjugiert exakt, aber der ursprüngliche Logkontrast 0.00300811543552 zweier Halbgeschichten verdoppelt sich im Paar. Kein separater Halbskalar verändert ihn. Ein echter zusammenhängender Beitrag ist zur statischen Kompensation erforderlich. Für einen tatsächlich separat multiplikativen geometrischen Faktor ist im getesteten Zweierschnitt dessen normierter Kreuzbetrag höchstens exp(0.00300811543552), wenn die reflektierte Gesamtform positiv ist.
+
+Nächste Anwendung am Original ist die erste gewichtete geometrische Blockmarginale mit ihrer ursprünglichen absoluten Masse oder der quellenidentische unnormierte markierte Randaufruf. Die geschlossene m=2 Norm und der m=−1 Kontakt werden auf derselben tatsächlichen Faser geprüft. Keine neue Feldbasis oder Zeit. F1 bleibt in Bearbeitung. 52 begrenzte frühere Unteraufgaben bleiben erhalten.
+
+Originalbelege unter `experiments/theory-contracts/recursive-mirrored-source-20261103/`: `TFPT-APS-RANDJET-UND-VOLLPROFIL-20261110.md`, `TFPT-R113-GEMISCHTE-METRIK-MATERIE-ANTWORT-20261110.md` und `TFPT-R113-SPIEGELPAAR-UND-GEWICHTSKONTRAST-20261110.md`. Sechs neue begrenzte Atlasbefunde auf `17efccba357a689382c4dea2`. Keine Ledgeränderung.
+
+## TFPTSPIN4APSURSPRUNGSABGLEICH20261110
+
+Explizite unitäre Spin4 Einbettung in vier originale 96er R032 Normalübergänge, gültig für jeden normalen Higgsverlauf im deklarierten flachen Produkt. Feste und bewegte APS Projektoren sowie alle inneren geordneten Produkte werden erhalten. Im tatsächlichen Q Fourierblock `[2,1,1]` mit variierendem Higgs auf einer Achse reproduzieren die vier Blöcke die 384er Ausgangsmatrix exakt in der Rechengenauigkeit. Ein echter nichtkollinearer Übergang derselben Higgs Fourierkomponente mischt die Cliffordsektoren mit Norm `||Phi|| sin(theta/2)`, in der Originaldiagnose `0.0712409756738`. Die innere `Gamma_F J_F` Form hat Quadrat −1. Die auf dem vollen Spin4 Produkt vorhandene Realform `Gamma_tot J_tot` hat Quadrat +1 und trägt die APS Domäne zur Gegenkarte. Die gewöhnlichen komplementären festen Cap Determinanten sind exakt konjugiert; die tatsächliche physische Pfaffianorientierung folgt daraus nicht.
+
+Im R032 Paar verschwindet die zentrierte Summe der rechten Leptonenbesetzungen. Die gemischten Ableitungen von orientiertem Unterschied und quadratischer Summe wechseln in der tatsächlichen festen APS Cap Kontraktion gegenüber der vollen gewöhnlichen Spur die Vorzeichen: `(+0.007835827169, −0.001514408242)` gegenüber `(−0.073906556274, +0.036345331141)`. Analytische Einsetzungsjets und unabhängige Differenzen am Original stimmen überein. v221, v330, v369 und v36 wurden parallel quellengeprüft und unverändert ausgeführt. Die stationären v330 Zylinder haben exakte Marginalen auch ohne Lücke; der alte Negativtest hat einen negativen Übergang `−997/6000`. Der tatsächliche klassische Petz Hin und Rückweg hat Abweichungsfaktoren `4096/531441`, `1/531441`, keine Rekonstruktion. Die frühere volle Krümmungsrechnung R046 bleibt maßgeblich gegenüber dem ausgewählten v36 Monom.
+
+Der vollständige physische Quellenblock, seine absolute Masse, `Z0`, `F(0)`, `C_UY` und sein gemeinsames Spektrum bleiben unberechnet. F1 bleibt in Bearbeitung. Originalbelege unter `experiments/theory-contracts/recursive-mirrored-source-20261103/`: `TFPT-R113-SPIN4-APS-UND-GESPIEGELTE-MATERIE-20261110.md` und `TFPT-ALTE-TRANSFER-VERIFIKATIONEN-20261110.md`. Fünf neue begrenzte Atlasbefunde auf `21f54f02ae4b14908d722070`. Keine Ledgeränderung.
+
+## TFPTREFLEKTIERTEQUELLE20261110
+
+An der ursprünglichen v252 Higgs und Majorana Matrix wird der gemischte volle Wärmejet für disjunkte Halbprofile ausgewertet. Sein punktnaher Majoranabeitrag ist exakt positiv, mit einer von allen Tangentialmoden getragenen strikten Gegenspur für das reine Wärmegewicht auf `[-8,8]`. Im ersten endlichen Block bleibt ein negativer Reflexionswert nach exaktem Ausschalten aller gewöhnlichen Cap Raten. Die gerade Poisson Lesart des v259 Profils hat eine geschlossene Laplacedichte. Bei `λ=8`, `a=1` und `(n+1/4,j,k)` ist ihre Summe aller relevanten 260 Impulse im Intervall `[-24426.656,−24426.655]`. Der gewöhnliche Cap und die direkt berechnete gemischte chirale APS Majoranawirkung haben nur diskrete Raten. Sie können das negative kontinuierliche Band bei feldunabhängiger Referenz nicht aufheben. Direkte und inverse Duhamel Rechnungen sowie die chirale Green und unabhängige Cap Auswertung stimmen überein.
+
+Bei ausdrücklich gleichgesetzter geometrischer und physischer Spiegelung und unabhängigen Halbprofilen werden auch die beiden mitbewegten R032 Referenzen geprüft. Breite langsame Halbprofile geben für T eine Verletzung der Betragsbedingung. Für S liefern hochfrequente Halbprofile dieselbe Verletzung. Die Ausweichannahme punktweise gerader ganzer Geschichten würde unter Stationarität den Higgsnormleser zeitlich einfrieren. Das sind Ergebnisse zum geprüften bedingten Produkt und zu den angegebenen Kontraktionen. Die tatsächliche OS Zeit und vollständige gewichtete `S_adm` Feldkontraktion bleiben herzuleiten. Verifikationen v252 `11/11` und v259 `6/6` erneut ausgeführt. Fünf neue begrenzte Atlasbefunde. F1 bleibt in Bearbeitung, keine Ledgeränderung.
+
+Originalbelege `experiments/theory-contracts/recursive-mirrored-source-20261103/TFPT-R113-SPEKTRALGEWICHT-AN-DER-SPIEGELNAHT-20261110.md`, `TFPT-HIGGSPARITAET-UND-OS-ZEIT-20261110.md` im selben Ordner und `check_r113_majorana_heat_reflection_20261110.py`. Atlasrevision `0c44540fb9258fbb88b27b3b`.
+
+
+## TFPTNORMALWEAKTIME20261110
+
+**Originale Eichwirkung:** Auf der natürlichen Determinantenlinie wirkt das schwache Zentrum mit +1, auf dem physikalischen Dublett mit −1. Der direkte Schluss von H⁰(O(1)) auf das Eichdublett ist durch die tatsächliche Wirkung ausgeschlossen. Der unveränderte v252 Operator bestätigt gerade Majorana und ungerade Yukawa. Die gegebene äquivariante Richtungsfamilie rekonstruiert das eingesetzte V. Gemeinsame Orbitbewegung lässt F_tN und D_tH durch einen reinen Eichanschluss verschwinden.
+
+**Bedingter positiver Übergang:** Auf dem minimalen normalen Grad eins Split hat der transversale tangentiale schwache Operator den exakten Abstand 2π/A_N zur neutralen Normalgrundmode. Ein Higgs auf der Grad eins Linie koppelt die gesamte geladene Jacobi Kette. Der volle Rückkehrresolvent, positive Produktzeitkern und das finite relative Fredholm Gewicht zweier axialer Zweige sind berechnet. Die gemischte Normantwort um b=0 hat diskrete positive Raten und trägt keinen linearen Higgs Kreuzterm um H=0.
+
+**Auswahl und Baumrelation:** Falls die flache Linie zugelassen ist, minimiert das nichtverschwindende Higgs die lokale positive Energie als paralleles Feld dort. Falls nur der holomorphe Grad eins Bereich zugelassen ist, ändern sich Quadratik und Quartik. Im direkten lokalen Produkt mit konstantem neutralem Higgs ist m_W²−cos²θ_W m_Z²=2π/A_N. Die aktive elektroschwache Baumformel enthält diese Verschiebung nicht. Allgemeiner hat die vertikale Laplace auf su(E₂) für jede glatte unitäre Verbindung auf dem Bündel ungeraden Grads höchstens eine Nullrichtung. Zwei parallele Richtungen würden projektiv flache Krümmung und zwei gleiche ganzzahlige Liniengrade erzwingen. Ein nichtnegativer Higgs Hesseterm erzeugt dort keine zusätzlichen Nullmoden.
+
+**Nachweise:** `experiments/theory-contracts/recursive-mirrored-source-20261103/TFPT-NORMALER-SCHWACHER-UEBERGANG-UND-HIGGSGEWICHT-20261110.md`, `experiments/theory-contracts/recursive-mirrored-source-20261103/check_normal_weak_higgs_transfer_20261110.py`. Der gezielte Check lief mit Exit 0, der unveränderte v252 Check mit elf bestandenen Prüfungen. Fünf Atlasbefunde bei `78c44499adb55b25e13e0a91` gespeichert und zurückgelesen. Der native Originalaufruf endet mit Exitcode 2, null Originalatomen und fehlender Operation `original_blocked_fiber_packet`. Physisches Z₀, F(0), C_UY, H_tr,pos und F1 bleiben unberechnet.
+
+
+## TFPTWEAKEQUATOR20261110
+
+**E₈ und normale Moden:** Genau zwei der 28 Y neutralen Wurzeln tragen ursprüngliches T₃ Gewicht ungleich null. Sie spannen mit ihrem Cartan das schwache A₁ Ideal. Das ungerade adjungierte Bündel schließt eine globale punktweise weak su(2) Wirkung mit nichttrivialer Projektion darauf aus. Die vollen freien Normalquadrate benachbarter Liniengrade haben disjunkte positive Spektren. Beim v252 Zweig −1,0 fehlt auch eine gemeinsame Nullmode. Die normale Raumrotation des Higgsdubletts hat auf den linken Fermionnullmoden nur Singuletts.
+
+**Beide Kappen:** Für den Grad d sind die Cauchyräume n≥0 und n≤d−1 mit Paarindex d. Der Randshift transportiert die Südkappe und verliert auf der Nordkappe genau eine Linie. Deren Projektor ist zugleich der relative Fredholm Faktor 1−q in der gerichteten Determinante.
+
+**Positive geordnete Probe:** Mit W±=z^±1T± und gegebener freier v252 Viertelkinetik am H Nullpunkt haben beide geordneten Antworten im festen See 12 exp(−t/R). Die signierten zentralen Zusätze heben sich auf, die beiden Normen bleiben. Mit der mittransportierten Kinetik und See verschwinden sie im Vakuum. Die exakte thermische Probe ist ebenfalls berechnet. v330 kann die beiden entgegengesetzt geladenen Zustände bei einer gemeinsamen Abklingrate mit seinem einfachen angeregten Spektrum nicht darstellen.
+
+**Nachweise:** `experiments/theory-contracts/recursive-mirrored-source-20261103/TFPT-SCHWACHER-STROM-AM-NORMALEN-SCHNITT-20261110.md`, `experiments/theory-contracts/recursive-mirrored-source-20261103/check_native_weak_equator_20261110.py`. Die ursprünglichen Verifikationen v1, v252 und v330 liefen mit 17/17, 11/11 und 6/6. Der direkt ausgeführte QΘ Originalcaller liefert weder die physische Faseroperation noch den ganzen markierten Endpunkt. Fünf begrenzte Befunde bei `2e6f299a80914111a0d821be` gespeichert und zurückgelesen. Keine neue physische Norm, Referenz, Maßmasse, Z₀, F(0), C_UY oder H_tr,pos.
+
+## TFPTHIGGSRECTCOUNTERMODES20261111
+
+TFPTHIGGSRECTCOUNTERMODES20261111. Die umgekehrten Higgsrechtecke unterscheiden sich offen und stimmen in der geschlossenen R032 Farbzentrumsspur überein. Die vier alten Fold Proben zeigen bei der unteren Gegenmode eine exakte Auslöschung von u+v und eine zentrale Differenz 2I zur oberen Mode. Die echte Auswahl muss dieselben vier Präparationen und die gekennzeichneten Originalfasern an eine gemeinsame Endform binden. Der R113 Aufruf liefert null Atome. F1 und die gemeinsamen projizierten Antworten bleiben offen.
+
+Originalbeleg `experiments/theory-contracts/chat-triangulation-20261108/TFPT-HIGGSRECHTECK-UND-GEGENMODEN-AM-ORIGINALSCHNITT-20261111.txt`. Atlasrevision `51676bd3a452c31dd48d1c49`. Forschungscommit `467b61daa44ee55e9d20c73526b39e924acfbe24`.
+
+
+## TFPTQTHETAFIBER20261111
+
+Der originale QTheta Aufruf bestimmt die Form der Randkontraktion, die abstrakte OS Zeit und den separaten Leerreferenznenner. Das leere admissible Wort ist unter QΘ exakt invariant. Der vollständige markierte Endpunkt und das Originalfaserpaket fehlen im tatsächlich ausgeführten Aufruf.
+
+Auf der expliziten 14er v252 Verfeinerung ändert a=0,13 in der achte Harmonische die quadratische Spur um 18,56820153897 und die grobe Rückkehrspur um 3,09470025650. Die installierte grobe Matrix bleibt exakt gleich. Die verfeinerte Wärmespur bei s=0,001 ändert sich um −0,01744880296. Der Schurresolvent stimmt mit der direkten Paarinversion überein. Der grobe spektrale Leser ist für alle a gerade. Der offene Partnerübergang liest die ungerade Antwort und ergänzt die Rückkehr zu einer vollständigen bedingten Momenteninversion dieser einzelnen skalaren Faser.
+
+Der Originalcaller liefert weder `evaluate_original_full_blocked_endpoint_source` noch `original_blocked_fiber_packet` und keine Maßmasse. Die vollständige physische Z Quelle bleibt unberechnet. Die vier Originalverifikationen und der neue Vergleich wurden lokal bestanden. Belege `experiments/theory-contracts/recursive-mirrored-source-20261103/TFPT-QTheta-Quellintegration-2026-11-11.md` und `experiments/theory-contracts/recursive-mirrored-source-20261103/check_qtheta_refinement_20261111.py`. Drei Atlasbefunde gespeichert und zurückgelesen, Revision `87641dd9cfd9c8bf743bd035`.
+
+
+## TFPTQTHETABACKGROUND20261111
+
+Am Originalassembler sind alle drei vorgesehenen niedrigen Hintergrundharmonischen eingeschaltet. Die groben Matrizen für a=−u,0,+u sind gleich. Der ungerade vierte Rückweg −2→0 besteht aus drei exakt angegebenen Fourierwegen. Er bleibt im farbneutralen Block und im festen vorhandenen Cauchy Chart sichtbar. Die gemeinsam mit einer Halbwendung wirkende elektromagnetische Drehung erklärt die unveränderte ganze Spektralspur.
+
+Die bereits definierte lokale Higgsnorm ergibt U₇=ba und U₁₆=a²/2 auf der untersuchten Faser. Mit dem tatsächlich gemeinsamen unnormierten Originalcaller reichen 1,U₇,U₁₆ zur exakten Rückgewinnung der drei Gewichte. Bei gleichzeitiger Variation anderer Felder ist die echte Konditionierung mitzuführen. Der bisherige native Integrationsstart erreichte `original_blocked_fiber_packet`, Exitcode 2 und null Originalatome. Der vollständige physische Schnitt, Z₀, F(0), C_UY und H_tr,pos sind unberechnet.
+
+Belege `experiments/theory-contracts/recursive-mirrored-source-20261103/TFPT-QTheta-Higgsnorm-und-Rueckkehr-2026-11-11.md` und `experiments/theory-contracts/recursive-mirrored-source-20261103/check_qtheta_background_return_20261111.py`. Der bedingte offene Cauchy Eintrag hat Norm 1,09817167160. Die vollständige Rückkehrspur ist 1,41772687578, mit zusätzlicher Cauchy Auswahl in der Mitte 1,20598102030. Der positive Verlust wurde unabhängig aus der orthogonalen Zwischenrichtung berechnet. Vier Atlasbefunde auf `b477fb92b7fd9f75f1ea229b` gespeichert und zurückgelesen.
+
+## TFPTCOMMONBOUNDARYNULL20261111
+
+TFPTCOMMONBOUNDARYNULL20261111. Die gemeinsame Originalform ist die OS Paarung durch die feste leere Referenz auf dem ganzen projizierten Rand. In den alten gleichenergetischen Ramond Fenstern hat die untere Mode auf zusätzlichen q ungeraden Richtungen Rang 9,9,1,1. Die ursprüngliche Null von u+v braucht den geraden Mischeintrag und den sichtbaren ungeraden Teil der physischen Eingangsauswahl. Der besetzte C58 Rand unterscheidet die Higgsreihenfolgen bereits bei beiden Vorzeichen des Impulses. Der gemeinsame physische Rand der vier Fold Proben und die acht projizierten Werte bleiben unberechnet.
+
+Originalbeleg `experiments/theory-contracts/chat-triangulation-20261108/TFPT-GEMEINSAME-RANDFORM-UND-NULLPROBE-20261111.txt`. Atlasrevision `2157e5c1e32508b55416d569`. Forschungscommit `92ad4640e66985d06bf04ce7c2ed0004164236f6`.
+
+## TFPTORIGINALSEWINGUNIQUENESS20261111
+
+TFPTORIGINALSEWINGUNIQUENESS20261111. Die absolute Originalgewichtung verlangt die bedingte Fasergleichung des ganzen markierten Wortes. Auf den beiden isospektralen Higgsprofilen liefern zwei spiegelungspositive, reversible und exakt verklebende Fortsetzungen dieselben Einzeitdaten, aber verschiedene Zweizeitantworten. Der grobe Schnitt verliert das signierte Profil. F1 braucht seine Sichtbarkeit im physischen OS Quotienten und die Fortsetzungsregel aus der ganzen Originalwirkung. Die volle Quelle bleibt offen.
+
+Originalbeleg `experiments/theory-contracts/chat-triangulation-20261108/TFPT-ORIGINALGEWICHT-VERKLEBUNG-UND-EINDEUTIGKEIT-20261111.txt`. Atlasrevision `faeaaf6db67d33f4a2775a8f`. Forschungscommit `9c1664a1000ccfe9e45a9ef4e4972f6a7ae64aee`.
+
+## TFPTCOMMONKINETICRULE20261111
+
+TFPTCOMMONKINETICRULE20261111. Die ursprüngliche lokale Higgs Kinetik liefert bei identifiziertem kanonischem OS Generator einen ersten Zeitmoment als Energieform. Auf den echten Vorzeichenprofilen ergibt die volle lokale Variation 5117/5000 gegenüber 169/40000 für eine isolierte Mode. Ein gemeinsamer Wortspan kann mit seinem positiven zweiten Momentdefekt auf Abschluss unter dem Generator geprüft werden. Metrikvariation derselben Energieform und absolute Leerreferenz sind gemeinsam zu erhalten. Die volle physische Energieform und ihre Herkunft aus S_adm bleiben offen.
+
+Originalbeleg `experiments/theory-contracts/chat-triangulation-20261108/TFPT-GEMEINSAME-BEWEGUNGSREGEL-UND-F1-20261111.txt`. Atlasrevision `2cb47cfcb9a0826580ffc1b1`. Forschungscommit `20d84cff8bc437e220ee87b47095c0d2a72ee570`.
+
+## TFPTMARGINALSOURCE20261111
+
+TFPTMARGINALSOURCE20261111. Am unveränderten 384er QΘ Prüfschnitt ist das zweite Spurinkrement beim Weglassen einer Higgskoordinate sichtbarfeldunabhängig, die vierten Inkremente sind um mindestens 0,2424284706108 getrennt. Eine gemeinsame positive nichttriviale Faser erhält die nackte Spektralwirkung im zertifizierten kleinen Eigenzeitintervall nicht bis auf einen Skalar. Selbst sichtbarfeldabhängige profilfeste Fasergewichte scheitern für die ganze Eigenzeitvariation durch die ersten zwei Ableitungen. Das physische feste Profil und volle P1 Maß sind unberechnet. Am tatsächlichen gewichteten Originalschnitt die unnormierte blockierte Randform mit gebundener Referenz auswerten und den induzierten feldabhängigen Rest erhalten. Erst die gemeinsame grobe Form bei zwei tatsächlich gleich gerandeten Eliminationswegen prüfen, dann eine unabhängige gemischte Metrik und Feldantwort auf derselben Quelle lesen. F1 und der bestehende Owner bleiben in Arbeit.
+
+Originalbeleg `experiments/theory-contracts/recursive-mirrored-source-20261103/SOURCE-MARGINAL-OBSTRUCTION-20261111.txt`. Atlasrevision `0336ff464a43b928f11662f7`. Exakte dyadische Spuren, unabhängige Eigenwertkontrolle und Eigenzeitwerte .001, .02, 1. Kein Ledgeraufstieg.
+
+## TFPTTWOROUTES20261111
+
+TFPTTWOROUTES20261111. Vollständige Schur Elimination beider Reihenfolgen erhält R080 bei 288 und 576 Dimensionen bis 1,7e-14 und den markierten Jet bis 5,7e-11. Weglassen der Rückwege erzeugt bei beiden Auflösungen Fehler rund 0,00542 und 0,000542 im markierten Jet. Reflektierter R032 Vergleich erhält die Leeramplitude 6,0883387204e-8 gegen die gebundene S Referenz. Lokale kovariante Ricci Feldterme lassen zwei unabhängige q² Beiträge zur gemeinsamen Scherantwort frei. Unter gleichmäßig begrenzten Koeffizienten fallen sie weich ab. Nativer Q Aufruf meldet die fehlende vollständige Endpunktoperation und das fehlende Originalfaserpaket. Die unnormierte P1 Randfamilie und beide markierten Scherwerte bei q, q/2, q/4 auf zwei tatsächlich kompatiblen Auflösungen herleiten und prüfen. Rückwege und Referenz durch beide Eliminationswege erhalten. Metrikimpuls und räumliche Auflösung getrennt variieren. F1 und der bestehende Owner bleiben.
+
+Originalbeleg `experiments/theory-contracts/recursive-mirrored-source-20261103/TWO-ROUTES-AND-SHEAR-20261111.txt`. Atlasrevision `80d1244601ee633f7086285d`. Kein Ledgeraufstieg.
+
+## TFPTCHARGEDSEAM20261111
+
+TFPTCHARGEDSEAM20261111. Die tatsächliche Einblattwicklung und der Strom aus der Differenz der Originalviertel rekonstruieren das lokale geladene CAR Feld mit Wardladung eins und konformem Gewicht 1/2. Vier kompakte ungetwistete Vierteldrehungen geben Fermionparität. Der endliche Gegenversuch am ursprünglichen v252/QΘ Chart erhält Ladung, Farbe, schwache Kovarianz, erste Ordnung, Realstruktur und Graduierung, während die relative Elektron Yukawastärke verdoppelt wird. Das alte APS Halbschiebergebnis bleibt ausgeschlossen. Der physische Nachweis verlangt den lokalen Sektorwechsel aus der ursprünglichen Naht und eine normierte gemischte Kopplungsantwort derselben Quelle. F1 und der bestehende Owner bleiben in Arbeit.
+
+Originalbeleg `experiments/theory-contracts/recursive-mirrored-source-20261103/CHARGED-SEAM-RECONSTRUCTION-20261111.txt`. Atlasrevision `fe645feb58af91c9bbc2aa53`. Kein Ledgeraufstieg.
+
+
+## TFPTSEAMORDEREDYUKAWA20261111 · Geordnete Higgsantwort im E₈ Rand
+
+Am echten Gitteradjungierten liefert der affine E8 Rand zwei geordnete Ströme mit vollem Elektron-, Up- und Down-Rang. Der Up-Kanal braucht das vorhandene neutrale SU4 Familienkomplement. Die alte einzelne Fold-Orientierung und gleiche Gewichte scheitern. Die volle physische Randpaarung und der Yukawaquotient sind unberechnet.
+
+TFPTSEAMORDEREDYUKAWA20261111. Die alte q Familienmarke, ihre tatsächlich reflektierte Gegenrichtung und den neutralen SU4 Komplementübergang in derselben ursprünglichen Randpaarung auswerten. Rangtest und die exakte Up/Down Restdeterminante 0,661554178972 vor dem Elektron/Up Quotienten prüfen. Das originale Q blocked_fiber_packet fehlt weiterhin.
+
+Quelle und Gegenproben: [Originalrechnung](../../../experiments/theory-contracts/recursive-mirrored-source-20261103/SEAM-ORDERED-YUKAWA-20261111.txt). Atlas 3dd25f5c2ba6dba214731d43.
+
+Ergänzung zur alten Spinmarke. Bei einem Xi-geraden ersten Einsatz bleibt im ursprünglichen Fold ein Komplementzweig. Im geprüften reellen lokalen Chart muss das Verhältnis der beiden ersten Stromgewichte größer als rund 3,1885 sein. Atlas c56bdeca5d6ecd67faacdbac.
+
+
+## TFPTSEAMYUKAWAREFLECTION20261111 · Nahtinversion und Normierung der Yukawaantwort
+
+Die alte Gewichtsschranke 1/49 gilt bei Kreuzverhältnis 1/8. Die zyklischen Viertelmarken erlauben Up/Down bei gleichen Gewichten. Die Nahtinversion paart die zweite Familienmarke mit ihrem Adjungierten und vertauscht auf den ersten Strompaketen den alten Spin. Die reine diagonale Längenaufteilung scheitert in allen 216 ganzzahligen Varianten. Das ursprüngliche physische Zweipunktgewicht bleibt unberechnet.
+
+TFPTSEAMYUKAWAREFLECTION20261111. Auf derselben Originalquelle die getrennten AB/BA-Zweipunktnormen für erste und dritte Leptonrichtung bilden, mittransportierte Spinmarke und ganze Zwischenräume erhalten. Diagonale Normen am reellen Viertelchart müssen den Kontrast 2,0715654576975 erreichen; andernfalls 1–2 Mischung im ursprünglichen Operator prüfen. Auf denselben Rand die Quark-Endnormen und die gemeinsame normierte Higgsantwort beziehen.
+
+[Originalrechnung](../../../experiments/theory-contracts/recursive-mirrored-source-20261103/SEAM-YUKAWA-REFLECTION-20261111.txt). Atlas d6f6c06b1ef71fcf3ead91a6.
+
+
+## TFPTSEAMYUKAWAORDEREDNORMS20261111 · Reflektierte Endnorm und geordnete Familienmischung
+
+Vollständige affine AB/BA-Zweipunktantwort erzeugt den benötigten Normkontrast und reproduziert konditional die exakten Leptonverhältnisse. Gemeinsame Familiennorm scheitert an den drei einzelnen Quarkverhältnissen. Ursprüngliche gemischte CX Endformen unterscheiden Sektor und Chiralität, positive lineare Gewichtung reicht nicht. Der markierte Deckcharakter enthält eine konkrete Familienmischung; die physische Antwort bleibt unberechnet.
+
+TFPTSEAMYUKAWAORDEREDNORMS20261111. Den markierten i/-i Deckcharakter der reflektierten Ein- und Zweistromantwort in der vollständigen Originalquelle auf den geladenen Enden auswerten. Mittransportierten Spin und Referenz erhalten. Exaktes Leptonspektrum und alle drei einzelnen Quarkverhältnisse prüfen. Für den gemischten CX Weg geordnete statt additiver Endformen auswerten. Der originale Q Aufruf braucht weiterhin original_blocked_fiber_packet.
+
+[Originalrechnung](../../../experiments/theory-contracts/recursive-mirrored-source-20261103/SEAM-YUKAWA-ORDERED-NORMS-20261111.txt). Atlas e96795768c8dcee0968971f6.
+
+
+## TFPTSEAMYUKAWAPHASEPACKET20261111 · Phasengebundener Randblock und Spektralprüfung
+
+Der affine E8 Rand liefert den phasenmarkierten Leerblock und bei deklariertem radialem Abstand den normierten Kreuzwert -0,906033431987. Der Q Randleser liest ihn im Kontrollmodus mit phasenkompensierender Paarung. AB trifft bedingt die Leptonskala, verfehlt alle drei einzelnen Quarkverhältnisse. BA am selben Schnitt scheitert für alle komplexen Mischkoeffizienten am Leptonspektrum. Die physische Saat und der physische Kreuzwert sind offen.
+
+TFPTSEAMYUKAWAPHASEPACKET20261111. In derselben tatsächlichen operativen Saat die phasenkompensierte reflektierte B/BA Kreuzform und beide Selbstformen mit äußerer Auswahl und transportiertem Spin bestimmen. Gemeinsame skalare Referenz kürzt sich im Quotienten. Alle drei einzelnen Quarkverhältnisse neben der exakten Leptonhierarchie prüfen. Für die volle Integration bleiben Originalfasern und die markierten U/Y/UY Formen aus derselben Quelle zu gewinnen.
+
+[Originalrechnung](../../../experiments/theory-contracts/recursive-mirrored-source-20261103/SEAM-YUKAWA-PHASE-PACKET-20261111.txt). Atlas 72de4b4769174dec02b2b8c9.
+
+
+## TFPTSEAMFLAVORHISTORY20261111 · Historische Flavorrechnung und markiertes Randvolumen
+
+Historischer Quellenvergleich v21, v42/v45 und aktuelles Paper. Exakte gemeinsame Flächenwirkung und Blattzeichen der Familiennaht; Fuchs ODE an vier Punkturen bestätigt den v117 Repräsentanten numerisch. Reiner unitärer Worttransport und der skalare C6 Ansatz mit getrennten historischen Ladungswerten scheitern. Der erste bedingte physische Test ist die rechte Quarknorm 0.437653931715 am selben markierten Schnitt. F1 bleibt offen.
+
+TFPTSEAMFLAVORHISTORY20261111. In derselben tatsächlichen operativen Saat die phasenkompensierte B/BA Kreuzform, beide Selbstformen und die rechten u_R/d_R-Gramformen bei unveränderter physischer Auswahl bestimmen. Als ersten separaten Normtest det G_dR/det G_uR gegen 0.437653931715 prüfen, wenn die nackte Amplitude nur die alten Wortlängen und unitäre Holonomie enthält. Die markierte äußere Zweiform und ihr orientiertes Determinantenzeichen müssen gemeinsam transportiert werden. Bei Bestehen alle drei Quark- und beide Leptonverhältnisse ohne Nachfit prüfen, dann e/u mit gemeinsamer Higgsform auswerten. Für die volle Quelle bleiben die ursprünglichen Fasergewichte und W_U,W_Y,W_UY nötig.
+
+[Originalrechnung](../../../experiments/theory-contracts/recursive-mirrored-source-20261103/SEAM-FLAVOR-HISTORY-20261111.txt). Atlas b2f04786a5dc5f8913c13448.
+
+
+## TFPTSEEDFLAVORVOLUME20261111 · Seed Abhängigkeit der geladenen Norm
+
+Der Originalvergleich der Wortlängen und der aktuellen Potenzleiter ergibt die Seed Faktoren 1, 1−phi0 und (1−phi0)/phi0. Der algebraische C6 Kern kann die letzten beiden nicht exakt erzeugen. Die offenen Fuchsdeterminanten ergeben die passenden Faktoren in Koordinaten, die mit der parallelen Metrik wegfallen. Ein exakter Gegenfall erhält beide Quarkvolumina und alle drei Quarkverhältnisse bei anderem Elektron/Up. Native Originalintegration endet weiter bei Exit 2, da das blockierte Faserpaket fehlt.
+
+TFPTSEEDFLAVORVOLUME20261111. Aus derselben tatsächlichen operativen Saat die phasenkompensierte reflektierte Kreuzform, ihre beiden Selbstformen und die rechten u_R/d_R Familiengramformen auswerten. Der reine kinetische Ansatz muss die Determinantenquote 0.437653931715 treffen. Bei gemeinsamer Diagonalbasis auch das markierte Profil 1,1-phi0,(1-phi0)/phi0 einschließlich des Kontrasts der beiden schweren Richtungen prüfen. Dann die drei Quarkverhältnisse, die Leptonhierarchie und die kleinsten e/u Singulärwerte aus derselben normierten Higgsform bestimmen. Die vollständige Integration benötigt weiterhin die ursprünglichen Fasergewichte und W_U,W_Y,W_UY. Keine rohe Fuchsdeterminante als Randnorm einsetzen.
+
+[Originalrechnung](../../../experiments/theory-contracts/recursive-mirrored-source-20261103/SEED-FLAVOR-VOLUME-20261111.md). Atlas fa5d7ccbaaaf93b5e61fabe6.
+
+
+## TFPTORIGINALSMFORWARD20261111 · Alte Standardmodellkette und gerichtete Randkovarianz
+
+Der alte SM Träger, Hyperladungen, Anomalien, Flavorformeln und Alpha sind nachgerechnet. Die E8 Higgsformen ergeben exakt den Hodge Komplementärkanal. Im komplementären Normansatz braucht die vierte Richtung über 69.1 Prozent Gewicht. Die positive Mischung ist eine Machbarkeitsprobe. Die reine Einzeitkompression mit nur einer vierten Familie reicht für v258 nicht. Die vorhandene v724 Mutterkovarianz durch v258 liefert Rang zwei. Der offene gerichtete Beitrag ist die erste Variation im ursprünglichen Nullpaar.
+
+TFPTORIGINALSMFORWARD20261111. Die vorhandene v258 Auslese vorwärts mit einer tatsächlich reflektierten Higgs Materie Kovarianz benutzen. Erster Test am alten v724 Nullpaar: l†δC_LR r mit l=(-2,1,0)/sqrt5, r=e1, unter mittransportierter Phase und ohne eingegebene Zielmassen bestimmen. Die erste Spalte von Q ist ein algebraischer Kontrast, keine Quellenannahme. Am selben Schnitt das sechsdimensionale Higgs Moment, die Normkontraste, die gemeinsame linke Mischungsantwort sowie alle v20/v24 Relationen und e/u berechnen. Der reine Einzeitweg mit nur einer vierten Familie ist ausgeschlossen; nutze tatsächliche größere Zwischenräume oder den original ausgewählten gemischten Zustand. Die volle Quelle verlangt weiterhin die ursprünglichen Faserformen und ihren Zustand.
+
+[Originalrechnung](../../../experiments/theory-contracts/recursive-mirrored-source-20261103/ORIGINAL-SM-FORWARD-BRIDGE-20261111.md) · [Higgs Normprobe](../../../experiments/theory-contracts/recursive-mirrored-source-20261103/HIGGS-GRAM-COMPLEMENT-20261111.md). Atlas f16efb19695530137baad77e.
+
+
+## TFPTREFLECTEDV724ORIGINAL20261111 · Reflektierter Higgsübergang direkt und stufenweise
+
+Die unveränderten physischen Q Aufrufwege liefern keine Originalformen. Im affinen E8 Reader stimmt die reflektierte Higgsantwort direkt und über alle Zwischenmoden exakt überein und koppelt das v724 Nullpaar im deklarierten Rahmen. Das ursprünglich markierte Higgsfeld bleibt bei Rang zwei. Feste Viertelphasen können Rang drei erzeugen und verfehlen Flavor. Die beiden ursprünglichen Fuchsmarken liefern einen bedingten quadratischen Rückweg. Hyperladungslevel und affiner Stress sind auf demselben Wort berechnet. Die physische Photonennorm und Metrikvariation bleiben offen.
+
+TFPTREFLECTEDV724ORIGINAL20261111. Auf der unveränderten Q Domain den ursprünglichen Producer der unnormierten Randform und der markierten Higgsantwort herstellen. Den physischen Familienintertwiner einschließlich Reflexion und aller Zwischenmoden binden. Dann dasselbe Z0, die geladenen Formen, den Photonenkern und ihre Metrikvariation direkt und stufenweise vergleichen. Im v724 Nullpaar zuerst den linearen markierten Eintrag lesen. Bei null den bereits getesteten quadratischen Fuchs-Rückweg auf derselben Quelle prüfen. Voller Rang ist nur die erste Hürde; anschließend v20/v24, e/u und CKM gemeinsam ohne Zielmassen prüfen.
+
+[Originalrechnung](../../../experiments/theory-contracts/recursive-mirrored-source-20261103/REFLECTED-V724-ORIGINAL-20261111.md). Atlas ef8c47e4ca69dd9bbe84cb91.
+
+
+## TFPTWHOLEMODELSEPARATEDRESPONSE20261111 · Gesamtsynthese und gemeinsame Antwort
+
+Die Gesamtsynthese verbindet die bereits hergeleitete Carrierstruktur, Flavor, endliche und thermodynamische Dynamik, volle OS Momente und die absolute Referenz. Auf dem festen ursprünglichen R032 Verlauf liefert der getrennte Higgs, Hyperladungs und Radiuskontrast eine gemeinsame Antwort jenseits aller Einzel und Paarterme. Die gemeinsame physische Realisierung bleibt unberechnet.
+
+Denselben direkten und über zwei Schnitte verklebten S_adm/Z_rel Aufruf mit absoluter Originalreferenz und ganzen reflektierten Wörtern auswerten. Markierungen für Higgs/Familie, erhaltenen Strom und Geometrie trennen und gemeinsam variieren. Eichwechselkontrolle, Ward Prüfung und vorab festgelegtes weiteres geordnetes Wort verwenden. Bei positivem Anschluss die beiden Materiespektren im Tensorbereich und das Photonresiduum auf derselben physisch kalibrierten Zeit prüfen. Die vorhandenen SM/Flavoroperatoren, v724 Nullpaar und historischen Spektraltests als unabhängige Auslesungen desselben Prozesses prüfen. Aus den vorhandenen Quarter Momenten in der Gegenrichtung ein zurückgehaltenes geladenes und höheres Wort vorhersagen.
+
+[Synthese und Originalrechnung](../../../experiments/theory-contracts/chat-triangulation-20261108/TFPT-GESAMTMODELL-VERKLEBUNG-20261111.md). Atlas 0cb506f7f0d2f9d3fc3b3250.
+
+
+## TFPTCUTQUARTERHORIZONT20261111 · Naht, Quarter und Horizont
+
+Auf dem festen Originalprofil stimmen leeres Gewicht, geladene Familienblöcke und gemeinsame Variation direkt und an zwei Schnitten überein. Die relative Endphase und das Schnittgewicht sind eigene Daten. Der alte Quarter Zustand sagt eine komplexe Antwort voraus, sofern beide Partner erhalten bleiben. Der stationäre Öffnungswinkeljet trennt die Flächenantwort vom glatten Vakuumterm. Die physische gemeinsame Quelle ist weiter unberechnet.
+
+Auf derselben vollständigen nativen Q Quelle zwei Schnitte und direkten Weg mit unnormierter Originalreferenz ausführen. Am ersten physischen Schnitt die relative reflektierte Quarter Kreuzform mit geladenem Wort, den leeren Öffnungswinkeljet bei fester Fläche und den glatten Metrikjet mit demselben Spinhub berechnen. Flächenkoeffizient mit glatter gravitativer Kopplung vergleichen und normierten Photonpol gesondert auslesen. Das auf R032 geprüfte Zwischenraumgewicht und das gepaarte Quarter Holdout sind Kontrollen.
+
+[Originalvergleich](../../../experiments/theory-contracts/chat-triangulation-20261108/TFPT-NAHT-SCHNITTE-QUARTER-HORIZONT-20261111.md). Atlas 7f4889ff78c8012fcb17c7a2.
+
+
+## TFPTNATIVEQUARTERHORIZONNORM20261111 · Quarter Windung und Horizontnorm
+
+Die originale Windung bindet die Quarter Kreuzform auf dem festen R032 Profil direkt und an zwei Schnitten. Dieselbe freie Referenz trägt die glatte Radiusantwort. Der alte Annulus hat keinen unabhängigen physischen Öffnungswinkel. Die absolute konische Antwort braucht die Variation der Referenz. Der Flächenvergleich bei gleicher Topologie entfernt den Euleranteil.
+
+Aus der vollständigen ursprünglichen Q Quelle die integrierte Randform auf einem normalen Kragen mit bewegter Metrik und mitbewegter Referenz erzeugen. Die originale Windung und die geladene Markierung im Quarter Kreuzwort transportieren. Winkelantwort für zwei stationäre Flächen gleicher Horizonttopologie und Krümmung vergleichen und die Differenz durch die Flächendifferenz teilen. Auf derselben Normierung glatte gravitative Kopplung und normierten transversalen Photonpol auswerten. Die feste R032 Kreuzform und Radiusableitung dienen als endliche Kontrollen.
+
+[Originalvergleich](../../../experiments/theory-contracts/chat-triangulation-20261108/TFPT-NATIVE-QUARTER-WINDUNG-UND-HORIZONTNORM-20261111.md). Atlas 4919b8eb92431659b07fb18f.
+
+
+## TFPTNEWFUNDAMENTALKINETICSSOFTRG20261111 · Trägersymmetrie, Gravitation und Skalenfluss
+
+Eine tatsächliche D5 Matrix verbindet die führenden Quark und Leptonkoeffizienten unter zusätzlicher Kovarianz. Ein masseloser Spin 2 Pol würde die vorhandenen Streukanäle universell koppeln. Im historischen Einloop Pfad bleibt bei exakt an die Skalaronskala gebundener Pati Salam Schwelle ein gerichteter Rest. Der neue Ansatz beginnt am physischen räumlichen Hauptteil.
+
+Die originale L/Q Trägerabbildung auf den räumlichen Hauptteil des gleichen physisch propagierenden Quellblocks anwenden. Separaten lokalen DET Faktor als Nullkontrolle verwenden. Bei gemeinsamer Materiegeometrie den gemeinsamen Materie und Licht Spin 2 Pol und die gerichtete Pati Salam Schwellenkorrektur prüfen.
+
+[Herleitung und Originaltests](../../../experiments/theory-contracts/chat-triangulation-20261108/TFPT-NEUE-URSPRUNGSHYPOTHESEN-20261111.md). Atlas 881aa71d904fa14b47ba497e.
+
+
+## TFPTPREP1ORDEREDPROCESS20261111 · Geordnete Prozessauswahl vor P1
+
+v117 zeigt exakten Erhalt der geschlossenen Reihenfolge bei spätem Deckabschluss und vollen Matrizenraum für frei gewichtete Wörter. Eine gemeinsame reelle Struktur begrenzt CP, auch im geprüften affinen Rückweg. v49 verlangt die vollständig mitgeführten Marken. Der reversible Reset ist auf v117 konstruierbar, aber weder Zustand noch reduzierter Kanal wählen den markierten Prozess. Die operative P1 Saat wird im Original vorausgesetzt.
+
+Am tatsächlichen geladenen E8 Wort den ersten deckneutralen und unter der gemeinsamen v117 Realstruktur ungeraden Rückweg mit ursprünglicher Orientierungsmarke prüfen. Die volle reflektierte Paarung und Zwischenzustände bis zum letzten Abschluss erhalten. Den J geraden affinen Ordnungskontrast sowie die zwei gleichen reduzierten Kanäle mit verschiedenen Records als Kontrollen verwenden. Aus derselben ausgewählten Amplitude simultan Spektrum, Mischung und CP prüfen. Kinetik, Spin 2 und Skalenfluss danach als Konsistenztests anwenden.
+
+[Originalvergleich und Herleitung](../../../experiments/theory-contracts/chat-triangulation-20261108/TFPT-VOR-P1-GEORDNETE-PROZESSAUSWAHL-20261111.md). Atlas 0c8dc89ecdae4709f62f9b7b.
+
+
+## TFPTP0PLANREVISIONGATEA20261111 · Revision P0 und Originalquelle
+
+Die aktive Revision stellt die physische Originalquelle vor die Auswahl einer Prozessregel. Tor A bleibt offen. Direkter und gestufter Aufruf fehlen auf derselben nativen Domäne die gemeinsamen gewichteten Endpunktformen. Die fünf eingecheckten Pakete des geprüften Schemas sind Rechenkontrollen. Der CP Worttest steht nach Prozessauswahl und CP Symmetrieprüfung.
+
+Die erste fehlende gemeinsame blockierte gewichtete Randform samt absoluter Leerreferenz aus dem ursprünglichen Konfigurationsgrundmaß und der vollständigen bosonischen und fermionischen Antwort rekonstruieren. Die ursprüngliche Zeit und die mittransportierten Marken binden. Bei kontinuierlichem Original den direkten Endpunktweg verwenden. Die physische Kandidatenprüfung beginnt erst nach der quellgebundenen Auswertung.
+
+[Planrevision](PLAN.md#aktive-revision-p0), [Originalaufruf und Eingabevertrag](P0-ORIGINALQUELLE-20261111.md). Atlas 99164e6446ae35eaa7812e8f.
+
+## TFPTE8VERKLEBUNGGEMEINSAMEZEIT20261111 · Gemeinsame E8 Verklebung und regionale Zeiten
+
+Am vollständigen E8 Vakuumnetz ist die relative Verklebung zur Produktform der exakten lokalen Ränder kanonisch. Ihr Kokzykel trägt die vorhandene diagonale schwache Wurzelwirkung und verlangt die fortgeführte Referenz. Jedes Paar getrennter Kragen hat eine gekreuzte modulare Operatorantwort beliebig nahe bei Zeit null. Der exakte relative Stromquotient ist (1−u²)²/(1+r²u²)². Bei r=1/4 und u=1/2 ergibt sich 2304/4225. Alle sechs Viertelpaare sind korreliert. Der daraus gebildete Graphlaplaceoperator hat Spektrum 0,6,6,8 und liefert damit nur drei relative Knotenmoden.
+
+Die einzelnen Paarzeiten sind auf überlappenden Paaralgebren unverträglich. Die absolute Vakuummodularzeit hat auf der zyklischen Darstellung zweiseitiges Spektrum. Die primitive P1 Streifenform mit positiver Zeit und ursprünglicher Referenz bleibt unberechnet. Der nächste Originaltest umfasst zwei überlappende Paarantworten im selben markierten Dreiregionenstreifen. [Originalrechnung](TFPT-E8-VERKLEBUNG-GEMEINSAME-ZEIT-20261111.txt) und [symbolische Kontrolle](TFPT-E8-VERKLEBUNG-GEMEINSAME-ZEIT-20261111.log). Atlas ab1a645c31ec30e0004f4fe6, Ledger unverändert.
+
+## TFPTDREICHATSQUARTERORDNUNG20261111 · Gemeinsame Viertelwirkung und geladene Dreiregionenordnung
+
+Der [Originalabgleich](TFPT-DREI-CHATS-QUARTER-ORDNUNG-20261111.txt) liefert aus der gemeinsamen Viertelwirkung den E8 Achtertakt mit D8 Involution. Die Varianten mit Ordnung vier verfehlen die Picard Modularkongruenz. Die ursprüngliche Picardrotation hat auf der polarisierten Geometrie keine Quadratwurzel. Die offene Paarordnung unterscheidet sich quadratisch und die reflektierte Gramform kubisch. Auf dem vollständigen Rand ergibt das [geladene Dreiregionenwort](TFPT-E8-GELADENE-DREIREGIONENORDNUNG-20261111.txt) mit zwei ungeraden Enden und geradem Mittelstrom den Winkelpunktwert −i/4. Für F1 diese konkrete Antwort aus der ursprünglichen positiven Streifenform mit derselben absoluten Referenz gewinnen und die Auswahl der räumlichen Kontakte herleiten. Atlas a222c5b7a074d0e57fb72069.
+
+Die geordnete native Paarrechnung hat Kommutatorrang 48 und Normquadrat 704/1125. Die reflektierte kubische Differenz hat Normquadrat 3751616/6328125. Die Symmetrieprüfung umfasst alle 240 Wurzeln. Die sechs protokollierten Befunde sind auf ihre Originalquellen zurückgeführt. F1 bleibt offen.
+
+## TFPTNATIVEDEFEKTVERKLEBUNG20261111 · Defekte des Achtertakts und markierte E8 Abschlüsse
+
+Der [Originalabgleich](TFPT-NATIVE-DEFEKTVERKLEBUNG-20261111.txt) bestimmt alle 64 Sektoren und die zyklische Anomalie 6 mod 8. Das Fixgitter hat genau zwei gerade unimodulare Abschlüsse über derselben D8 Stufe. Sie unterscheiden sich in der Zuordnung der festen geladenen Enden des Dreiregionenworts und haben dieselben Antworten auf der gemeinsamen Fixalgebra. Die konjugierte Paarung kompensiert die Anomalie, lässt aber die Abschlusswahl offen. Für F1 im tatsächlichen positiven P1 Streifen die ursprünglichen und exakt geflippten Endladungen mit demselben Mittelstrom und derselben Leerreferenz in beiden Ordnungen auswerten. Atlas 7cbd8074191c025d6c1755a6.
+
+Die 60 kombinierten Simplex und Bell Ausgänge spannen nur sechs Eingabeeffekte. Der Familien-Dreierzyklus hat keinen Lift als geometrische Permutation der vier harmonischen Verzweigungsmarken. Beide rephasierten ursprünglichen Viertelshifts haben Mindestnormquadrat 12 und fallen aus der zweifaktorigen Picard Minimalitätsklasse. F1 bleibt offen.
+
+## TFPTGELADENENAHTVERKLEBUNG20261111 · Geladene E8 Naht und Zeitantwort
+
+Die [Originalrechnung](TFPT-GELADENE-NAHT-VERKLEBUNG-20261111.txt) zeigt, dass eine gekreuzte Naht mit allen festen Cartanladungen ausschließlich D8 überträgt. Beide festgehaltenen ungeraden Enden benötigen −e8. Das Vektorbein hat Gewicht 1/2 und ergänzt sich mit dem Gegenbein im vorhandenen diagonalen K Netz. Die konforme Dreiregionenantwort gibt −i/4 und zwei L0 Einfügungen 1/8, im neutralen gekreuzten Fall exakt null. Der Gitterflip erhält die ganze reflektierte konforme Norm. Für F1 den entsprechenden offenen Ladungsübergang im ursprünglichen gewichteten Blatt mit absoluter Referenz und physischer Auswahl auswerten. Atlas e0482f7d0d372085d8cd84e7.
+
+Geprüft sind die beiden 128er Spinorgewichtssysteme, die D8 Fusion, die Lage des Vektorbeins in der Diskriminantengruppe und die exakte radiale Formel. Das primitive P1 Gewicht, die physische Ladungspaarung und der metrische Anschluss bleiben unberechnet. F1 bleibt offen.
+
+## TFPTAFFINERCLOCKTRANSPORT20261111 · Affiner Achtertakt und markierte Rückkehr
+
+Der [Originalabgleich](TFPT-AFFINER-CLOCKTRANSPORT-20261111.txt) ergibt aus vier affinen Schritten den D8 Vektorcoset. Die festen Endgewichte werden 9 und 7. Die notwendige Korrektur lambda=−e8−w/2 hat Grad zwei und fehlt im reinen Fixnetz. Ein explizites Viererwort der vorhandenen D8 Ströme stellt die Gewichte 1 und 1 wieder her. Für F1 im ursprünglichen gewichteten P1 Blatt mit leerer Referenz das kohärente markierte Rückwort oder seine tatsächliche Summe am festen Mittelstrom auswerten. Atlas cf71918d8373c084fb2ce7e5.
+
+Genau 468 minimale Viererwörter erhöhen auf keinem der beiden Beine das Gewicht. Die Gaußmessung reproduziert die Originalränge 1,10,25 nach Registerreduktion. Keiner der drei bilinearen Typen für die Haagerup Niveaupaare lässt den tatsächlichen Takt als Normalisator zu. F1 bleibt offen.
+
+## TFPTHALBTAKTUNDQUARTERZEIT20261111 · Halbdefekt und Quarterzeit
+
+Der [Originalabgleich](TFPT-HALBTAKT-UND-QUARTERZEIT-20261111.txt) identifiziert den fehlenden Ladungsraum des alten Faltmodells mit der vom Halbdefekt vorgegebenen Randverdrehung. Die Markierung bestimmt den minimalen Endversatz. Die 24 gemeinsamen Minimalordnungen löschen sich unter konformer Zeit aus. Die alte Quarterzeit hebt beide Ordnungsentartungen auf. Für F1 den Halbdefekt mit seinem Gegenbein im gewichteten P1 Schnitt auswerten und prüfen, ob die physische Zeit und die Einfügungsgewichte diese Antwort erhalten. Atlas 5b13ceec64444486ced5f81c.
+
+Die alte W1 Operation bleibt in ihren vier Sektoren. Die Randverdrehung ist auf den 112 Faltströmen exakt und der Quartertest gilt bedingt für führende gleich gekoppelte Modi. Die absolute P1 Form und die räumliche und gravitative Antwort bleiben unberechnet. F1 bleibt offen.
+
+## TFPTSCHNITTFORMUNDRAUMRANG20261111 · Bewegte Schnitte und lokaler Raumrang
+
+Die [Originalrechnung](TFPT-SCHNITTFORM-UND-RAUMRANG-20261111.txt) liest aus dem Cauchy Schnittkommutator die lokale tangentiale Metrik. Im unveränderten Q Aufbau ergibt sie punktweise Rang eins und integriert Rang drei. Auch lokale E8 Stressflüsse bleiben auf dem Kreis. Der feste exakte Spiegelkragen erlaubt nur gleichförmige normale Nahtbewegung. Für F1 aus der ursprünglichen markierten Zustandsform physisch verschiedene regionale Schnittgeschichten gewinnen und den lokalen Rang im selben Zeittransport prüfen. Den reinen gemeinsamen Eichtransport abziehen und das Halbdefektwort auf derselben gewichteten Form mit der ursprünglichen Leerreferenz auswerten. Atlas 3cc2482d2d230d2413f260f1.
+
+Der 384er Originalaufbau wurde bitgenau reproduziert. Alle sechs Probeantworten stimmen auf sämtlichen Originalspalten bis 2,238e-15 mit der analytischen Identität überein. Der native Integrationsstart endete erneut mit Exit 2, null Originalatomen und fehlendem original_blocked_fiber_packet. Physische Zeit, absolute Randform und gravitative Antwort dieser gemeinsamen Quelle bleiben unberechnet. F1 bleibt offen.
+
+## TFPTZWEIFUENFERTAKTEORIGINALRAND20261112 · Zwei Fünfertakte am ursprünglichen markierten Rand
+
+Der [Originalvergleich](TFPT-ZWEI-FUENFERTAKTE-AM-ORIGINALRAND-20261112.txt) hebt beide Takte mit den echten Gaußreflexionen. Nur einer hält eine jeweils feste Viertelmarke. Auf denselben zwei Stromprofilen im selben Vakuum ergeben sich normierte Amplituden 1 und −1/5. Der Austausch gelingt im Gaußchart antilinear. Alle Taktwörter erhalten die lokalen Regionen und den neutralen Stress. Für F1 am gewichteten P1 Schnitt den G Lift, die physische Marke und die geladene geordnete Form mit Leerreferenz binden. Eine räumliche Wirkung muss aus den tatsächlichen Schnittabbildungen folgen und vor Ortsintegration drei unabhängige Richtungen zeigen. Atlas 5da53ecebf5a1d92170a8ec2.
+
+Die beiden Quotientengruppen erzeugen A6. Genau 32 von 64 nativen G Hebungen lassen beide exakten Quadrierungen zu. Der markierte Kommutator liefert ebenfalls −1/5. Der Vergleich verwendet das vorhandene konforme Stromvakuum. Die gewichtete P1 Quellform, der räumliche Rang drei und die gravitative Antwort bleiben unberechnet.
+
+## TFPTMARKIERTEUHRBEWEGTERORT20261112 · Markierte Uhrprobe bei bewegtem Ort
+
+Die [Originalrechnung](TFPT-MARKIERTE-UHR-BEWEGTER-ORT-20261112.txt) verschiebt den zweiten Messort auf dem gegebenen Stromkreis. Der Taktquotient bleibt −1/5, auch mit einer Stresseinfügung. Der mögliche gewichtete Kontrast ist exakt die Antwort auf d=B s+s/5 und verschwindet bei A-invarianter Form. Die exakte Fünferrelation wirkt auf drei linearen räumlichen Impulsen trivial. Für F1 die ursprüngliche gewichtete Form mit Leerreferenz am bewegten Schnitt binden und die Antwort auf d sowie ihre örtliche und metrische Variation berechnen. Atlas 9606fbbe0cb4874cbf1e0711.
+
+Beim Wechsel vom zweiten zum dritten Viertelpunkt ergeben sich 1/16 und −1/80 relativ zur ursprünglichen taktfreien Antwort. Die normierte ebene Stresseinfügung wechselt für beide Takte von 1 auf 4. Der direkte native Aufruf liefert weiterhin keine ursprüngliche integrierte Endpunktform. F1 bleibt offen.
+
+## TFPTLADUNGSWINDUNGVIERVIERTEL20261112 · Gemeinsame Halbphase und serielle Ladungswindung
+
+Alle 32 kompatiblen Viertelhebungen haben auf dem vollen geladenen E8 Zweig dieselbe vierte Potenz wie der alte Achtertakt im ausgezeichneten D8 Chart. Die [geschlossene Originalspur](TFPT-E8-LADUNG-UHR-GEWICHT-20261112.txt) trägt ohne Sektorwahl einen von null verschiedenen Taktkontrast. Der alte Achterrahmen muss beim Schnitt mitwandern. Die [ursprüngliche geladene Windung](TFPT-E8-P1-LADUNGSWINDUNG-20261112.txt) verklebt beide seriellen Primärbeine zu einer Kreislinie mit Index −1. Eine relative Halbphase dreht das volle Dreiregionenwort von −i/4 auf +i/4, zwei heben sich auf. Die physische P1 Calderon/OS Auswahl derselben Geschichte und ihr Feldgewicht samt positiver Norm und ursprünglicher Referenz bleiben auszuwerten. Atlas 135ecadb91792d5d02e19848.
+
+## TFPTP0MARKIERTEWINDUNGUNDLOKALEGEOMETRIE20261112 · Markierte Windung und lokale Geometrie
+
+Die ursprüngliche Windung −2e₈ kontrahiert bei festem Mittelstrom über zwei konkrete Wurzelgruppen. Bei erhaltenen Endlinien hat ihr gemeinsamer Charakter Grad −1. Das orthogonale Kocharaktergitter zerfällt in E₆ und die Windungsrichtung. Der A₆ Quotient beider Fünfertakte wirkt projektiv orthogonal auf vier reellen Tangentialrichtungen nur trivial. Die projektive Kreisbedingung gilt für beide einzelnen Originalkreisproben. Ihre gemittelte Antwort ergibt den exakten Rest 98924800/13608721.
+
+Im tatsächlichen markierten P1 Streifen mit fester Leerreferenz die beiden ursprünglichen Wurzelkontraktionen vergleichen. a fixiert die Enden, b führt sie bei festem Mittelstrom zu p_j+b. Auf derselben ortsaufgelösten Form die projektive Kreisbedingung vor Mittelung und den lokalen Raumrang prüfen. Die primitive gewichtete P1 Form bleibt unberechnet. [Herleitung](TFPT-Ursprungshypothesen-2026-11-12.md) und [exakter Check](check_tfpt_p0_20261112.py), Exit 0. Atlas 63067861cd7d1625161f18ee.
+
+## TFPTP1ORIGINALMARKENMETRIK20261112 · Direkter P1 Aufruf, volle Ladungsmarken und Metrik
+
+Die [Originalprüfung](p1-original-marken-und-metrik-20261112/TFPT-P1-ORIGINAL-MARKEN-UND-METRIK-20261112.txt) liefert nativ keine gewichtete Endpunktform und keine Leerreferenz. Die vorhandene native Generatoralgebra erhält alle Farbzentrumsblöcke, während der ursprüngliche E8 Mittelstrom sie wechselt. Die volle Achterwirkung schützt den markierten Index, sofern sie physisch über alle vier Schritte mitgeführt wird. Die Viertel bewegen den ganzen Eichrahmen. Die normierte Stressantwort derselben E8 Geschichte ist 3/4. Der ganze native Kreis bleibt auch ohne Modencutoff eindimensional und sein 2D Kragen liefert keinen Einstein Tensor. Der gemeinsame geladene P1 Übergang, die räumlichen Regionalalgebren und der universelle Tensorpol bleiben F1. Atlas 2812ea5410868d23557f016e.
+
+## TFPTFABLEGESAMTKONSOLIDIERUNG20261112 · Gemeinsame Herkunft und geordnete Auslesung
+
+Fable 5.2 und unabhängige Originalkontrollen trennen den inneren Klebecharakter der Ordnung vier vom gemeinsamen geometrischen E8 Lift der Ordnung acht. Im ursprünglichen markierten Gitterrahmen kommutieren beide, das Quadrat des Klebecharakters ist die vierte Potenz des Lifts. Ihre genaue Quadratgleichheit gilt auf einem konstruierten vierdimensionalen Cartanraum, während sie auf der ganzen E8 Algebra scheitert. Die diskrete Wirkung lässt inequivalente kontinuierliche Generatoren zu. Vier kürzeste Logarithmen entsprechen den tatsächlichen Meridianen. Am unveränderten v117 Satz erhalten zwei reversible Fortsetzungen die ganze sichtbare Halbgruppe und lesen verschiedene Markengeschichten.
+
+Die physische Herkunft der operativen Saat und die gemeinsame ursprüngliche Feldidentifikation aus demselben geordneten und lokalen Prozess bearbeiten. Vorhandene Viermarken/RR/W/E8 Zuordnung und die tatsächlichen geladenen Originalwörter als unabhängige Abnahme verwenden. Geometrischen Lift und Klebecharakter getrennt tragen. Das native Gewicht ist eine quantitative Anschlussfrage und keine Startvoraussetzung für die Ursprungsherleitung. F1 bleibt offen. [Herleitung und Gegenprüfung](TFPT-Gesamtkonsolidierung-2026-11-12.md). Atlas 905d29c9a43c2f04a7affa1f.
+
+## TFPTCARTANPROZESS20261112 · Gemeinsame lokale Cartanregel
+
+Im ursprünglichen E8 Vakuum erzeugen zwei lokale Klammern mit dem neuen regulären Cartan den markierten geladenen Zwischenstrom. Die quadratische Kontraktion desselben Cartans mit seinem Adjungierten ist der ursprüngliche Stress und transportiert ganze Intervallalgebren. Die Originalprobe ergibt -i/4 für das geordnete Wort und 3/4 für die normierte planare Wardantwort. Die Prüfung aller 240 Wurzeln lässt nur eine geometrische quadratische Cartanform bis auf Skalierung. Fables bedingte Gitterfortsetzung hat zwei Lichtkoordinaten. Die volle ursprüngliche Farbgruppe lässt sich auf den beiden T-adaptierten Blöcken bei keiner der zehn Farbbelegungen erhalten. F1 bleibt auf der physischen Quelle und den drei Raumrichtungen offen.
+
+Aus der markierten ursprünglichen einseitigen Quellenregel eine lokale Einbettung herleiten, die den geladenen Cartankeim bereitstellt und den Unterschied zu Q erklärt. Am selben Zustand die relative Schnittantwort vor jeder Ortsintegration auf drei unabhängige tangentiale Impulse prüfen. Das geordnete Ladungswort und die Wardantwort als unabhängige Abnahmen im selben Rahmen erhalten. [Herleitung und Originalabnahme](TFPT-Cartan-Prozess-2026-11-12.md). Atlas a65769f08cc020e3b4a031e0.
+
+## TFPTMARKIERTERSTABILISATOR20261112 · Einheitswindung im kompakten Stabilisator
+
+Am ursprünglichen geladenen E₈ Dreiregionenwort klassifiziert der gemeinsame Endliniengrad sämtliche stetigen Schleifen im Stabilisator der Endlinien des kompakten Mittelstromzentralisators. Die alte Windung −2e₈ ist sein primitiver Generator. Dieselbe Klasse erscheint als Chernzahl auf der Wurzelsphäre des ursprünglichen Familiendubletts. Der feste Standardmodellrahmen und Mittelstrom erzwingen fünf unabhängige Cartanbedingungen und korrigieren den Rang des vollen simultanen Achterstabilisators von sieben auf drei. Die Wurzelzahlen 8, 4 und 0 bleiben korrekt.
+
+Der konkrete Anschluss ist die positive Gramform der beiden ursprünglichen Achtergrade an jedem Ende samt tatsächlichem geladenen Mittelintertwiner. Eine injektive kovariante Abbildung auf den gemeinsamen reflektierten Raum erhält die Chernzahl. Die dynamische Wahl der Windung und die gewichtete P1 Form bleiben offen. [Herleitung](TFPT-MARKIERTER-STABILISATOR-20261112.txt) und [exakter Check](check_tfpt_marked_stabilizers_20261112.py), Exit 0. Auf dem vollständigen Enddublett sind die konformen Wort- und Stressmatrizen skalar mit −i/4 und −3i/16. Atlas 1857b36a9d20f4b32eae72a0. F1 und Hauptledger behalten ihren Status.
+
+## TFPTREGIONALEKOMPOSITION20261112 · Geladener Mittelstrom und zweite Ortsrichtung
+
+Auf den überlappenden ursprünglichen Intervallen transportieren zwei parabolische Gruppen den geladenen Mittelstrom. Ihre Klammer ist am gemeinsamen Mittelpunkt −1/2 und wirkt entlang desselben Kreises. Der echte Schnitt in der Vereinigung ist in keiner Richtung halbseitig modular. Mehrintervall-Dualität schließt die volle ursprüngliche Regionalfamilie unter Join, Schnitt und Kommutant. Ihr vakuumerhaltender geometrischer Normalisator trägt höchstens eine unabhängige kommutierende Ortsbewegung. Auch exakte reine E₈ Kopien auf punktgenauen parallelen Nullgeraden scheitern an starker Stetigkeit des Quertransports.
+
+Die wirkliche Niveau-eins-Relation der geladenen Wurzel e₁+e₆ erzwingt einen neutralen Rückweg. Für eine zusätzliche Ladungsrichtung im erhaltenen longitudinalen Grad eins muss er orthogonal zum ursprünglichen Vakuum in Grad null liegen und dieselbe Norm tragen. Die punktweise Profilfortsetzung mit skalarer Rückkehr liefert die exakten negativen Normquadrate −1/2 und −17/4. Als Nächstes den ursprünglichen geladenen Mittelübergang und diesen Rückweg im selben reflektierten P1 Quellenaufruf prüfen. Der operatorwertige R113 Bosonkörper bleibt dafür eine konkrete, noch unidentifizierte Stelle.
+
+[Herleitung](TFPT-REGIONALE-KOMPOSITION-20261112.txt) und [exakter Check](check_tfpt_regional_composition_20261112.py). Der neue Check und die drei ursprünglichen Cartan, Wort und Stresskontrollen endeten mit Exit 0. Das Originalwort ist −i/4, die normierte Stressantwort 3/4. Atlas 60c5dff25b6ad6aa9090f5fd. F1 offen.
+
+## TFPTCOXETERCARTANFAMILIE20261112 · Coxeter und Familie aus relativen Rahmen
+
+Auf dem neuen Cartan hebt die ursprüngliche Coxeterhalbperiode zur alten Spinorparität. Die native Familienuhr ist eine gemeinsame D5 und SU4 Wirkung. Zwei markierte Faktoren in verschiedenen Cartanrahmen ergeben den reinen Meridianzyklus und lassen bei geladenem Mittelstrom die relative Farbphase omega^-1 stehen. Keine reine Meridianrotation im Normalisator eines einzelnen D-stabilen und von D^2 invertierten Cartans. Die interne Verkettung und das Clockmittel erzeugen keine zusätzliche Ortsbewegung.
+
+Gemeinsame lokale Quellregel für relative Rahmen und regionale Einbettungen aus P1 herleiten. Auf dem ursprünglichen geladenen Wort Halbphase und relative Farbphase erhalten. Bei erhaltenem longitudinalem Grad zwei unabhängige Querimpulse samt ihren beiden orthogonalen neutralen Rückwegen auf der gleichen positiven Form prüfen. Der operatorwertige R113 Leerfermionblock ist der konkrete ursprüngliche Prüfort für diese Fortsetzung. F1 bleibt offen. [Herleitung und exakte Originaltests](TFPT-Coxeter-Cartan-und-Familientransport-2026-11-12.md). Atlas 648b178d7da0cac0bdb87a67.
+
+## TFPTR113GELADENEPAARRUECKKEHR20261112 · Originales Paar und neutraler R113 Rückweg
+
+Der ursprüngliche D₈ Strom e₁+e₆ ist das gerade Fermionpaar (1,6). Es trägt beide markierten Ramond Endwege mit den tatsächlichen Vorzeichen und kehrt im NS Vakuum mit exp(−t) zum ursprünglichen Zustand zurück. Das direkte Paar aus den jeweils acht disjunkten D₅/A₃ Spinorwegen liefert auf dem leeren Koordinatenzustand für das neutral geschlossene Wiederholungswort 7/4, während das Niveau-eins-Original null liefert. Die bekannte äußere Auswahl allein beseitigt die Differenz nicht, wenn sie den Ausgangszustand erhält.
+
+Der erste R113 Rückweg ist der markierte zweite Exteriorblock innerhalb der ursprünglichen gewichteten Randform. Seine Generator-Differenz zum Leerbein ist bei identifiziertem Paar der entsprechende operatorwertige Zweifermionkontakt. Der reine Leerfermionblock bestimmt ihn nicht. Bei alternativ verändertem longitudinalem Grad gibt der alte E₈ Raum auf Grad zwei acht exakte neutrale Rückwege durch die Wurzelspiegelung. Die ursprüngliche Kreisableitung nutzt davon allein die Wurzelrichtung. Die gewichtete Paarabbildung und die zusätzliche regionale Bewegung bleiben offen.
+
+[Herleitung](TFPT-R113-GELADENE-PAAR-RUECKKEHR-20261112.txt) und [exakter Check](check_tfpt_r113_pair_return_20261112.py), Exit 0. v113 unverändert: sechs bestanden, null fehlgeschlagen. Atlas ca93f14928e9eda89bb923a6. F1 offen.
+
+## TFPTHOLONOMIER113ORIGINALTEST20261112 · Holonomieklassifikation und vier R113 Ableitungen
+
+Für den gepinnten originalen Coxeter gibt es 20 E6/A2 Weylzerlegungen. Die fünf Viertelholonomien liefern Rang zwei auf dem E6 Fixraum und null Rückkehr auf der gedrehten A2 Ebene. Die fünfzehn Dreierholonomien liefern Rang eins auf dem E6 Fixraum. Genau eine Viertelorientierung hat Clockmittel I. Bei Identifikation der alten Halbphase kann das ungerade Register den ursprünglichen geraden D8 Paarzustand und sein Vakuum nicht direkt tragen.
+
+Den tatsächlich gewichteten R113 Paaraufruf mit gebundener Referenz und äußerem Originalselektor herleiten. Den E6 Fixraum und die gerade Paarwirkung nur mit physischem Intertwiner übertragen. Aus vier Originalableitungen direkten Block, G,K,L und den Rückkehrdefekt vergleichen. Die regionale Herkunft aus derselben Quelle weiter herleiten. F1 bleibt offen. [Herleitung und exakte Originaltests](TFPT-Holonomie-und-R113-Originaltest-2026-11-12.md). Atlas 054504f2b285209cd6974ca2.
+
+## TFPTP1PAARABBILDUNGNULLWORT20261112 · Neutraler Nulltest auf der ursprünglichen Zweiflächenpolarisation
+
+Das Originalnullwort eines quadratischen Aufsteigers mit nichtverschwindender erster Antwort verlangt genau einen Teilchen-Loch-Paarweg. Im endlichen Zweiflächenvergleich hat jeder nichtverschwindende implementierbare punktlokale Einflächenstrom dagegen unendlichen Paarrang, auch bei variablem ursprünglichem h. Im homogenen Zweiflächenchart gilt für beliebige lokale innere Koeffizienten und endlich viele Modussprünge die Alternative Null oder unendlicher Paarrang. Die native Ladungsprobe auf scharfer freier S Polarisation besteht das Nullwort. Auf dem tatsächlichen Vergleich bei beta=4pi hat der Viereranteil in den beiden Quarterdomänen die numerischen Untergrenzen 0.6817294725 und 0.5292810944.
+
+Der direkte gewichtete P1 Aufruf liefert den ursprünglichen Nullschnitt samt absoluter Kappe, Auswahl und Referenz weiterhin nicht. Die physische Paarabbildung bleibt offen. Ein positiver diagonaler Rückkehrkern hat auf seinem Träger trivialen Polartransport. Die Querbewegung ist an der nichtdiagonalen gemeinsamen regionalen Antwort mit derselben Referenz zu prüfen. [Herleitung](TFPT-P1-PAARABBILDUNG-NULLWORT-20261112.txt) und [ausgeführter Check](check_tfpt_p1_pair_nullword_20261112.py), Exit 0. Atlas 52d4df4cac9c9274b8ba84c7. F1 offen.
+
+
+## TFPTQ4PHYSISCHEAUSWAHLFORTSETZUNG20261112 · Physische Q4 Auswahl und gleiche Fortsetzung
+
+Am tatsächlichen ursprünglichen Q4 Rückkanal auf M5 gilt für jede CP idempotente Abbildung P und beliebige lineare D: K=D∘P oder K=P∘D erzwingt P=id. Die zehn nativen Rang eins Projektoren liegen im Bild von K; ihre multiplikative Domäne und die volle Spanne ihrer Produkte beweisen den Satz. Der orthogonale Trägerprojektor hat die Choi Eigenwerte 2, 3/4 und −1/4 mit Vielfachheiten 1, 9 und 15. Die spektralen Potenzen K^t sind für 0<t<1 nicht CP, bei t=1/2 ist der negative Choi Wert −1/10. Der symmetrische aktive Zehner und die volle Produktspanne waren bereits am 11. November bekannt und werden wiederverwendet.
+
+Der neue Fortsetzungszeuge C=[Pi_i,Pi_j] erfüllt K(C)=0, aber tr(Pi_j K(C Pi_i))=−32/729. Eine gegenwärtige Nullrichtung kann nach derselben Fortsetzung wieder sichtbar werden. Die native kohärente Isometrie mit Krausoperatoren Pi_i/sqrt(2) realisiert den Kanal exakt; die minimale reine Stinespring Umgebung hat Dimension zehn. Das ist eine bedingte Kanalrealisierung, keine Herkunft der physischen P1 Quelle. Der Satz schließt keine größeren Quellen, nichtidempotenten Faktoren oder positiven Hilbertraumtransfer auf ran K aus.
+
+[Analytischer Beweis und Herkunft](../../../experiments/theory-contracts/q4-physical-selection-and-ordered-continuation-20261112/PROOF.txt). Portable exakte Originalrechnung: Exit 0; 99 Originalchecks und zusätzliche exakte Matrixidentitäten. Der allgemeine CP Satz und der Fortsetzungszeuge wurden unabhängig intern algebraisch geprüft. Atlas aef42e2c38ad1a3cecc7c726. Die ursprünglichen Werte Z0, ZU, ZY und ZUY wurden nicht berechnet. F1 bleibt offen; Zuständigkeit und bestehende Fortsetzung an der gewichteten Paarabbildung bleiben erhalten.
+
+
+## TFPTCOMPILERZUSTANDZEIT20261112 · Gemeinsame Konsistenz, Zustand und Zeit
+
+Am identifizierten affinen E8 Niveau-eins-Vakuummodul bestimmen T Omega=Omega und T J_-1^a=exp(-tau)J_-1^a T auf sämtlichen endlichen Energiewörtern den vollständigen positiven Transfer exp(-tau L0). Die Perfektheit der Algebra erzeugt alle negativen Moden; Dichte und Beschränktheit schließen den analytischen Beweis. Drei positive Generatoren H_m=L0+2m L0(L0-1), m=0,1,2, behalten Vierteldrehung, E8 Nullmoden, Vakuum und erste Lücke, haben aber die neutralen zweiten Energien2,6,10. Das sind Gegenbeispiele gegen diskrete Auswahl, keine vollständigen lokalen P1 Gegenmodelle.
+
+Der Satz wurde direkt auf die tatsächliche geladene Quarterquelle erweitert. Alle Ladungssektoren mit h_q=(4q±1)^2/32 sind nichtausgeartete c1 Virasoro Focksektoren und durch Stressnachkommen aufgespannt. Zwei Transferrelationen für Lcal_-1,Lcal_-2 und die wirkliche Windungsrelation T R=R exp[-tau(Q+alpha)]T bestimmen H_src=F_alpha(Q)+N_osc=8K_alpha vollständig und seinen Grundzustand innerhalb dieser Darstellung eindeutig. Ohne Windung bleiben freie Sektormultiplikatoren; gerade CAR allein verbindet nur eine Ladungsparität. Der gemeinsame Kern und die korrekte Zeitnormierung sind ausdrücklich vorausgesetzt.
+
+[Beweis, Originalstellen und Geltungsbereich](../../../experiments/theory-contracts/joint-compiler-state-time-rigidity-20261112/PROOF.txt). Exakte Ergänzungsrechnung Exit0; die unendlichen Schließungssätze sind analytisch bewiesen und unabhängig intern geprüft. Die tatsächliche gewichtete P1 Form, ihre Feldabbildung und die Herleitung der drei Relationen aus P1/P2 bleiben offen. Kein ursprünglicher Quellenwert wurde berechnet, keine Ledgerbehauptung promoviert. Atlas 99bff06959055b4e74f19f04. F1 bleibt offen; bestehende Zuständigkeit und Paar/Nullwort/Regionalbedingungen bleiben erhalten.
+
+
+## TFPTDUADOPERATORANSCHLUSS20261112 · Vollständiger Duadvergleich mit der ursprünglichen Q4 Quelle
+
+Der eingereichte Compilertext wurde an v774, v809 und dem ursprünglichen audit.py geprüft. Die balancierten Sechserfolgen sind durch explizite signierte Gramübereinstimmung isometrisch zu jedem ursprünglichen Q4 Effekt. Für F e_ab=(e_a-e_b)(e_a-e_b)^T gilt KF=FM, M=(A+3I)/9=NN^T/9. F*F=3I+J-A ist invertierbar; der polare Intertwiner W liefert K|Sym²=WMW*. Damit ist die Spektralvermutung zum vollständigen endlichen Operatorvergleich verstärkt. Die Positivitätskegel und geordneten Algebren werden durch W nicht identifiziert.
+
+Die45 dimensionale Reflexionsuhr hat exakt das eingereichte Spektrum. Ihre Kompression ist D*UD=2M-I; die Projektionskompression ist D*SS*D=M. U besitzt17 Fixrichtungen, der gemeinsame Plusraum nur eine. Ein ursprüngliches Präparations und Auslesegesetz bleibt erforderlich. Charaktere8 und0 bestätigt; dies belegt keine im ganzen TFPT Korpus fehlende Fermionregel. Petersen Tr H^5=Tr H^6=120 exakt; unorientierte Zyklentabelle und orientierte Ihara Faktoren unterscheiden.
+
+[Beweis und Herkunft](../../../experiments/theory-contracts/compiler-attachment-audit-20261112/PROOF.txt). audit.py Exit0,99 ursprüngliche Checks wiederverwendet, sämtliche zusätzlichen Matrixgleichheiten exakt. Basisbeweis und Originalvorzeichen unabhängig intern geprüft. Atlas2006cf2b9fea80f8194dcb31. Keine physische P1 Quelle berechnet; F1 offen.
+
+## TFPTSTRESSSAETTIGUNG20261112 · Scharfe Stresslücke und korrigierte Quellenpriorität
+
+In einer tatsächlichen unitären chiralen Quelle mit D5_1 und A3_1 Strömen liefert Sugawara c=8. Der Cosetstress hat d>=0 und einen Gewicht6 Vektor mit Norm²=12d(2d-1)(128d+6943). Daher d=0 oder d>=1/2. Eine strikte Schranke c_W<17/2 erzwingt denselben Stressoperator; mit dem markierten h Modul liefert der vorhandene Erweiterungssatz W=V_E8. Das bekannte Ising Produkt zeigt Schärfe. v376 liefert nur einen endlichen freien Kettenfit mit vorausgesetzter Modenzahl, keine bewiesene Schranke der vollständigen Quelle.
+
+[Herleitung und Quellenabgleich](../../../experiments/theory-contracts/joint-source-stress-saturation-20261112/PROOF.txt). Exakte symbolische Prüfung Exit0 und unabhängiger interner Review. Die Viertelquelle wird als bedingte Realisierung erhalten, ihre globale Pflichtpriorität aus dem vorigen Eintrag korrigiert. Der originale gemeinsame Weg S_adm/Z_rel, volle Schwingerfunktionen und OS Zustand/Zeit bleibt maßgeblich. Atlas2006cf2b9fea80f8194dcb31. Kein Ledgerstatus geändert; F1 und bestehende Zuständigkeit bleiben offen.
+
+
+## TFPTNATIVEPRUEFOPERATION20261112
+
+12. November 2026. Tatsächliche ursprüngliche Q4 Antwortprojektoren exakt mit den15 Synthemenebenen identifiziert. Native Duadpräparation und R_m/6 messen (1-N)/12; N/3 ist auch durch klassische Nachverarbeitung dieses festen Readouts ausgeschlossen. Nativer Projektorausführungsvergleich und neuer15 nach10 Intertwiner geprüft. Originale60 Ereignisse reproduzieren die gemeinsame100er Kanalzerlegung; t=1/4,1/3,2/5 sind strikt positive Transfer mit identischem Fixzustand und verschiedenen Rückwerten49/160,3/10,59/200. Alle sechs Markierungen haben dasselbe Dreiecksphasenhistogramm. Dies sind bedingte endliche Resultate; vollständige physische Quelle, gemeinsame gewichtete Paarantwort und Regionalfortsetzung bleiben offen.
+
+Quelle: `experiments/theory-contracts/native-compiler-operation-20261112/PROOF.txt`. Atlasrevision `389798438d21722bc9797eb0`. F1 bleibt in_progress, bestehender Owner unverändert; kein Ledgerabschluss.
+
+
+## TFPTP1MARKIERTEAUSFUEHRUNG20261112
+
+12. November 2026. Die tatsächliche gemeinsame G31 Wirkung auf sechs Marken und60 Reflexionen besitzt genau Bahnen120 und240. Alle invarianten klassischen Gesetze bilden die t Familie mit uniformen Marginalen1/6 und1/60. Das ursprüngliche getrackte gestoppte Instrument ist unabhängig von t, die primitive Zählung bis sechs Akzeptanzen hat Mittel10/t. Bei persistenter anfänglich uniformer Marke gilt exakt C2-C60²=(t-1/3)²A, A Hilbert Schmidt positiv und Tr_HS A=27/5. Daher wählt tatsächlicher autonomer Zweischrittabschluss innerhalb dieser Klasse t=1/3. Die ganze P1 Halbgruppe beweist nicht den reduzierten Abschluss; ihr Kompressionsdefekt misst ausgelassene Rückwege. Q4 ist wegen Superoperatorspur5 statt9 kein einzelnes Mittel nativer Fünferreflexionen. Die ursprüngliche Quellenform legt bei tatsächlicher Ereignisidentifikation r und damit t fest, wurde hier jedoch nicht physisch ausgewertet.
+
+Quelle: `experiments/theory-contracts/p1-marked-execution-origin-20261112/PROOF.txt`. Exakter Originalcheck bestanden, analytische Gegenprüfung erfolgt. Atlasrevision `443f3b48d07cdd387e34e3dc`. Keine neue globale 60er Pflicht, F1 bleibt offen und bestehender Owner unverändert.
+
+
+## TFPTBORNQUARTIKWORTGESETZ20261112
+
+12. November 2026. Der neue Anhang ist an den tatsächlichen60 Quellenstrahlen und allen6 Marken geprüft. Born Intertwiner und quartische Isometrie tragen exakt. Mtilde hat ein eindeutiges positives Gesetz auf31 S6 Elementen: Identität1/6,30 korrelierte Viererwörter je1/36. Diese lösen den Ausschluss unabhängig klassenweise gemittelter Wörter nicht durch Interferenz, sondern durch Korrelation. Die vollen nativen Pauli Hebungen sind damit nicht eindeutig: Drei kovariante Makroausführungen behalten alle Populationen und denselben Quartikcodekanal, unterscheiden sich aber in der kohärenten Rückantwort um0,1/16,1/8. Zweikopiendichten erlauben keine lineare Wiedergewinnung der Vierkopienpräparation; die tatsächliche Labelisometrie bleibt erhalten. Geordnete native Projektoren erzeugenM10 und schließen zusätzliche CP Eingriffe aus, wenn alle60 Zustände fixiert bleiben. V² hat keinen homogenen kontinuierlichen Markovgenerator auf denselben zehn Zuständen; Hilbertraumzeit bleibt möglich.
+
+Die erste offene physische Identifikation bleibt dieselbe ursprüngliche Einfügungsfamilie an Q0 samt Zustand, Kappe, Selektor und Z_ref. Kein P1 Unmöglichkeitssatz, keine neue globale60er Pflicht, keine F1 Promotion. Eindeutige primitive Zeit oder Phasen aus dem Quotienten nicht ableiten. Quelle: `experiments/theory-contracts/attachment-born-quartic-origin-20261112/PROOF.txt`. Atlasrevision `6fefc4ba2ecc4d7bb58ee9c6`. Bestehender Owner unverändert.
+
+
+## TFPTDOILYHOLONOMIEURSPRUNG20261112
+
+12. November 2026. Neuer Anhang gegen v809, ursprünglichen Quartik/Pauli Fixraum und R113 geprüft. Zwei Prozessseiten liefern V6 nach sechs Ereignissen, bei fester Zeit dagegen eine strikt positive Poissonmischung. Die Doily Inzidenz reproduziert ihren erklärten Gedächtniskern exakt, lässt den nativen Quartikfünfer aber von Rückkehr entkoppelt. Jeder komplex gewichtete unveränderte Inzidenzträger hat Nullübergänge zwischen sich schneidenden Duaden, während Mtilde dort1/18 verlangt. Die frühere korrelierte Viererwortausführung bleibt erhalten.
+
+Für matrixwertige lokale Konsistenz ist der Nullraum der gemeinsame Holonomiefixraum. Auf dem vorhandenen Quartikfünfer ist seine Dimension genau die Zahl der Quotientenbahnen auf sechs Marken minus1. Nur Typ1+5 liefert die bekannte Xi_q Linie; reine S5 Dichteinvarianz lässt weiterhin eine Mischung zwischen1 und4 zu. VollerSym4 braucht Kontrolle zusätzlicher Fixvektoren. Diese Bedingungen wurden nicht als tatsächliche P1 Holonomie oder Frustrationsfreiheit ausgegeben. Der ursprüngliche Gram/Zeitableitungsvergleich ist konkret formuliert, der volle Quellaufruf bleibt unausgewertet.
+
+Quelle: `experiments/theory-contracts/doily-native-holonomy-origin-20261112/PROOF.txt`. Exakte Arithmetik und unabhängige analytische Prüfung. Atlas `3ccb0dbb42c4a33695c43f58`; F1 offen, Owner und Ledger unverändert.
+
+
+## TFPTP1ORIGINALC6NULL20261112
+
+12. November 2026. Aus dem ursprünglichen Source45 C6 Green Kern folgt R^-1-I=(y delta/c)(2I-U6-U6*), c=(y-delta)^2+eps^2. Die lokale Quadratform ist die Summe quadrierter Nachbardifferenzen; Nulllinie konstant, auf dem zentrierten Fünfer keine Null. Alle drei ursprünglichen Kerne am tatsächlichen algebraischen Pol sind ausgewertet. Die zentrierten Vielfachheiten2,2,1 schließen die direkte Identifikation mit einem S5 äquivarianten nativen1+4 Transfer aus. Ein lokaler Sechserschritt ist keine automatisch identifizierte Schleifenholonomie. Ganzer T_V mit Gewichten/Selektoren bleibt außerhalb.
+
+Originale primitive Hodge Wärmeentwicklung lässt den hohen zulässigen Spektralraum stehen; Parent verwendet bereits Perronlinie. Der aktuelle echte Quellenleser bestätigt das fehlende vollständige Quellenpaket in der explizit diagnostischen Konfiguration. Kein voller Q0/Z Wert erzeugt, kein allgemeines Nichtdeterminiertheitsresultat. Voller ursprünglicher Seed behält seine Zustands-/Zeitbestimmtheit. F1 bleibt offen, bestehender Owner und Ledger erhalten.
+
+Quelle: `experiments/theory-contracts/p1-original-local-kernel-20261112/PROOF.txt`. Exakte symbolische Identitäten, lokale numerische Auswertung und unabhängige analytische Gegenprüfung. Atlas `02b73dd078eb7f5ab7704bf9`.
+
+
+## TFPTP1CONTEXTSOURCE20261112
+
+12. November 2026. Tatsächliche60 Strahlen: formale Fourierzerlegung15+45, Synthesegram15^1,3^15,0^44. NativeV5 liegt im Kontext15 und verschwindet unter gewöhnlicher Projektorsynthese. Jede gemeinsame lineare M4 Einsetzung vernichtet daher alle fünf Quellrichtungen. Andere Originaleinsetzung muss tatsächlichen reflektierten Rang5 erhalten; vorhandene neutrale interarc CAR Komposite und fehlende F_a nach delta_a D_rel Abbildung bleiben der konkrete Anschluss. Kohärente vierte Potenz bleibt erhalten.
+
+Endlicher G/J Jet ist Formkompression. F(2t)-F(t)^2=E*Tt(I-EE*)TtE>=0; Null zu einer positiven Zeit erzwingt reduzierenden Wortspan, voller Generator nur bei Vollständigkeit. Exakter marginaler RP Gegenfall korrigiert Kommutationsschluss, widerlegt keine tatsächliche P1 Quelle. v800 und R075 nicht als neue Resultate ausgegeben. Keine vollständige P1 Auswertung, keine Herleitung des tatsächlichen Bahntyps1+5, kein F1 Abschluss. Owner und Ledger bleiben erhalten.
+
+Quelle: `experiments/theory-contracts/p1-context-source-interface-20261112/PROOF.txt`; exakte Originalrechnung und unabhängige analytische Gegenprüfung. Atlas `cac6e0330f5e02a1de6d55c7`.
+
+
+## TFPTLATESTSOURCETARGET20261112
+
+12. November 2026. Neue Sessions mit Originalquellen korreliert. Im ursprünglichen E8 Modul ist e²Ω=0 zustandsbezogen, ||e²E_-alpha,-1Ω||²=12. Kanonische thermische Antwort exakt hergeleitet: qE4prime/(E4(1-q)²)-4q/(1-q)³; Grad1 Trace236 direkt bestätigt. Vakuumerhaltender Ausschluss bleibt bestehen. Keine Identifikation mit tatsächlichem P1 Zustand, beta oder Zeit.
+
+Originaler Doily Rückkehrzehner1+4+5 unter markiertem S5 ist nicht Λ²C5=4+6. Maximaler Intertwinerrang4. Konjugiertes natives C4 Produkt1+15 lässt ρp Familie und freie Generatorlücke zu, trägt keinen nativen Pauli trivialen V5. Diskrete Viertelrückkehr fixiert keine kontinuierliche Windung. F1 bleibt offen, Owner erhalten, Ledger unverändert.
+
+Quelle: `experiments/theory-contracts/latest-session-source-tests-20261112/PROOF.txt`; unabhängige analytische Gegenprüfung und exakte Wurzel-/Charakterprüfungen. Atlas `888fd403fdb3e8eb7ccc9050`.
+
+
+## TFPTCOMMONHISTORY20261112
+
+12. November 2026. Die neuesten parallelen Sessions wurden erneut gelesen und konstruktiv verbunden. Aus ursprünglichen Reflexionen entsteht G240 mit Wurzelbahnen 120+80+40. Das tatsächliche äußere A5 fixiert q0 mit Bahntyp 1+5; die rohe Wirkung auf den ungeraden Formen bleibt transitiv. Das exakte Wörterbuch ordnet 20 gerichtete Paare, 30 Paare mit Drittmarke und 10 ungeordnete Paare zu. Ein expliziter diagonaler Phasenintertwiner stellt die gemeinsame A5 Wirkung her.
+
+Die vollständigen Wartegeschichten liefern Choi Eigenwerte 2/15 auf symmetrischen und 8/15 auf antisymmetrischen Kantenrichtungen. Das gemeinsame Instrument T=aPhi6+bPhi5+(1-a-b)R existiert genau bei 25a+15b<=1 und a,b>=0. Die Beispielgewichte 1/50, 1/30 und 71/75 sind gewählt. Eine kovariante kohärente Umgebungsmessung ist mathematisch verfügbar; ihre physische Auswahl bleibt unbewiesen. F1 bleibt offen, Zuständigkeit und Ledger bleiben erhalten.
+
+Quelle: `experiments/theory-contracts/common-history-construction-20261112/PROOF.txt`; exakte Rekonstruktion und unabhängige Gegenprüfung. Atlas `9b8d75dd887bf560611bf1e9`.
+
+
+## TFPTSOURCESELECTION20261112
+
+12. November2026. Das tatsächlicheG240 wählt eine eindeutige alternierende Linie und einen irreduziblen Stromfünfer. Volles ursprünglichesC60 enthält dessen KanalPhiOmega mit scharfemMaximalgewicht1/15. DerselbeEigenwert2/15 giltaufganzem15DStromraum, aus ursprünglichenProjektivmomenten abgeleitet. Der SlotEpsilonFünfer1+4 ist orthogonal und gehört zum anderen maximalenZweigPhiH/15 des ausgewählten gestopptenT. DieserZweig wird erst nachStay zugänglich, brauchtKohärenz innerhalbgleicherLänge und folgt nicht ausklassischemSortieren. Mere averaged refinement preserves C20; selected stopping is the comparison. OriginalP1/OPEQuelle,Zustand/Zeit undReferenz bleiben erhalten. Keine physische Gesamtidentität oderF1 Promotion.
+
+Quelle: `experiments/theory-contracts/source-selected-hodge-20261112/PROOF.txt`, exakteChecks undunabhängigePrüfung. Atlas `0c65e7c792d682595641abb5`.
+
+
+## OriginLab campaign, 13 November 2026
+
+The independent finite backend ran the original-domain R113 probe and all
+calibrations. R102 finite scan selects n=4 and Lean checks the rank lemma from
+divisibility. The R006 controls reproduce 2,245 moments and the exact word
+search finds a shortest length-five separator without the stored query.
+Three deeper P0 rounds reached 11,415 evaluated terms and 23 finite survivors
+in the last round. The native R113 packet and original bound empty reference
+were absent. No original Z marks, physical F1 promotion or ledger change.
+Evidence: [First campaign](../../../research/originlab/FIRST-RUN.md).
+
+
+## OriginLab scenario and source campaign, 13 November 2026
+
+The autonomous campaign completed 224 scenario evaluations and 30 additional jobs with zero worker errors. Exact charge and regional bridge tests were registered in Atlas revision de0e68e577b55691e1b6408c. Finite geometry and free regulator results remain scoped. R113 source and F1 remain open. See [run report](../../../research/originlab/SCENARIO-RUN.md).
+
+
+## OriginLab six routes and physical reconstruction, 13 November 2026
+
+19 tests passed before the autonomous launch. Three resolutions completed 224 scenario and 48 auxiliary jobs without worker error. 32 finite variations each exercise six checks and 57 subsets. A coherent and dephased GHZ pair has equal overlaps and both have flat tested word kernels, but only the dephased state matches Petz recovery. Exact local reconstruction results recorded in Atlas 02a4204e11a06c5346656bc3. F1 and original R113 remain open. [Campaign](../../../research/originlab/RECONSTRUCTION-RUN.md).
+
+## ORIGINLABR113RELATIONAL20261113
+
+13. November 2026. Die Literalrechnung reproduziert R104 mit 16 Moden, Petz Spurabstand 1/2 und vollem kohärentem Rang bei CAR Tiefe acht. Auf vier festen R032 Historien liefern zwei positive Vergleichsmaße dieselbe ganze gewichtete radiale Verteilung und dieselben Einzelmarken. Ihre verbundene Mischantwort unterscheidet sich rigoros. Der native R113 Aufruf liefert weiterhin keine vollständige gewichtete Quellenform. Der originale geladene Mittelstrom trägt eine andere Hyperladung als der R032 Vergleich.
+
+Der Hintergrundlauf prüft relative Phasen, auch nichttriviale Schleifen, endliche operative Tomographie, gemeinsame gemischte Antworten und ihre Varianten. 26 Tests und 308 Jobs in drei Suchstufen wurden ohne Fehler abgeschlossen. F1 bleibt in Bearbeitung. Atlas `7206ae64c7002cdb925e9f09`. [Rechnungen und Quellen](../../../research/originlab/R113-R104-RELATIONAL.md).
+
+## ORIGINLABFOURMARKSOURCE20261113
+
+13. November 2026. Die volle Flächensymmetrie wählt eine Paarung. Zwei quadratische Verfeinerungen werden am festgehaltenen Flächenquadrat unterschieden. Das primitive Viererwort braucht unter den deklarierten Cartanladungen und geraden Permutationen mindestens 15 Dimensionen, mit Cliffordoperationen mindestens 16. Der gemeinsame orientierte 16er Träger zeigt zwei symmetrieinvariante Zustandsphasen mit entgegengesetzter Antwort.
+
+Der explizite zweischichtige Spektralvergleich liefert vier Modellwerte. Die Fünfprofilvariante verletzt Reflexionspositivität auch mit dem Fermionfaktor. Die vier nativen R113 Werte sind unberechnet. Die Alpha Stufen und die Leptonabweichungen wurden mit publizierten Vergleichswerten nachgerechnet. F1 bleibt in Bearbeitung. Atlas `b5ee645f82e4c91b9b61cedb`. [Quellen und Ergebnisse](../../../research/originlab/FOUR-MARKS-AND-SOURCE.md).
+
+Die Gegenprobe verwendet fünf nichtnegative Radien und dieselben Basis und Fermiondaten. Ohne Spektralfaktor ist die Form positiv. Mit dem Faktor bei Stärke 1/100 liefert ein expliziter rationaler Testvektor eine negative Norm.
+
+## ORIGINLABORDEREDSEWING20261113
+
+13. November 2026. Vier Marken folgen aus Ranggleichheit im vollständigen Graphen. Das finite Modell mit gekreuzter CAR reproduziert die neutrale Rückkehr über den Komplementraum. Die binäre Gaußprojektion verändert die beobachtbaren Zeitraten. Im geschlossenen vierwertigen Zahlmodell verschwindet der Hop, obwohl der Link eine echte Verschiebung der Ordnung vier besitzt. Die orientierte Verklebung mit neutraler innerer Region ist assoziativ.
+
+Die neue inverse Suche erzeugt aus vier Antworten acht positive Generatoren. Der Lauf prüft die zusätzlich ausgewählte Beobachtung auf den Generatoren und trennt alle 28 Paare. Die Momentrekonstruktion konstruiert einen Transfer vom Rang zwei und reproduziert zwei zurückgehaltene Werte. Der affine Originalanker liefert eine nichtverschwindende primitive Rückkehr mit Viertelphase i. Die Identifikation der radialen Zeit und die gewichtete R113 Quelle sind unberechnet. Atlas `727bf0abd465da5cec08412d`. [Ausgeführte Prüfungen](../../../research/originlab/PLAN-AUDIT.md#dynamic-sewing-and-a-directed-search).
+
+## ORIGINLABAFFINETIME20261113
+
+13. November 2026. Auf der gegebenen E₈ Darstellung wird der radiale positive Transfer aus drei parabolischen Schritten mit gegenüberliegenden Fixpunkten gewonnen. Die geometrische Viertelrotation liefert das erforderliche Partnerbein. Das ursprüngliche geladene Zweizeitwort hat Koeffizienten mit Betrag min(m,n). Jedes Zeitrechteck mit verschiedenen Abständen pro Achse hat vollen Rang. Die feste einzelne Translation weicht schon in der ersten Antwort des Dreiregionenwortes ab. Auf dem normierten Gewicht eins Zustand trennt die zweite Zeitprobe nach Kalibrierung um 17/324. Die volle quadratische E₈ Nullmodenwirkung auf einer einzigen 96er CAR Faser ist durch die minimale E₈ Darstellungsdimension 248 ausgeschlossen.
+
+Auch ein beliebig großer endlicher freier Majoranaträger mit linearer E₈ Wirkung und lokalen quadratischen Strömen erreicht als kleinstes positives Niveau 30. Die tatsächliche E₈ Erweiterung über spinorielle Sektoren und der gegebene D8 Mittelstrom bleiben mögliche Teile eines kohärenten Quellanschlusses.
+
+Die exakten Prüfungen und alle 40 OriginLab Tests bestanden. Die positive Zeitkomposition wurde unabhängig in einer numerischen Gewicht eins Darstellung an vier Zeitwerten überprüft. Der ursprüngliche R113 Verbraucher meldet die fehlende gewichtete Randform. Z0, ZU, ZY und ZUY sind unberechnet. F1 ist in Bearbeitung. [Herleitung und Prüfpfade](../../../research/originlab/AFFINE-TIME-PROOF.txt) und [Niveauprüfung](../../../research/originlab/AFFINE-LEVEL-PROOF.txt). Atlas `9a3428981da4ac81d1def22a`.
+
+## ORIGINLABFOLDEDTIME20261113
+
+13. November 2026. Auf den unveränderten E₈ Zwischenlinien liefert die alte Quarterzeit die Energien (3/2,7) oder (5/2,7). Die Änderung des gesamten Dreiregionenworts ist ein Produkt der zwei Endfaktoren, bei identischer Breitenkarte. Der R113 Leser prüft den gemischten Quotienten, die absoluten Einträge, beide ursprünglichen Quarterwerte und ein stationäres Gemisch auf demselben Zeitgitter. Selbst getrennte Zeitskalierungen der radialen Antwort reproduzieren das ganze Wort nicht.
+
+Jeder positive Mittelwert der zwei ursprünglichen Quarter im festen Eichrahmen behält einen nichtnull Hyperladungsteil. Auf der markierten Spiegelnaht ergibt der feste Hintergrund relativ zu -e8 für das erste Endbein eine negative Energie. Eine energieerhaltende Spiegelung trägt den Hintergrund mit der eindeutigen Vorschrift d_refl=±d-v weiter. Die neu bestimmten Hintergrundnormen liegen außerhalb beider alter Quarterorbits.
+
+Alle 42 OriginLab Tests und die unabhängige Vergleichsrechnung bestanden. Der direkte originale R113 Aufruf liefert Z0, ZU, ZY und ZUY weiterhin unberechnet. Die gestufte Integration endet vor dem Quellenintegral mit Exit 2 und null Originalatomen. F1 ist in Bearbeitung. [Herleitung und Prüfpfade](../../../research/originlab/FOLDED-TIME-PROOF.txt). Atlas `32bb9da024c4595c2a8380f7`.
+
+Die vollständige Gitterspiegelung hält die leere Ladung null. Mit r(d)=d+e8/2 erhält sie alle relativen Energien der Originalzeit auch auf den Oszillatorstufen. Ohne Hintergrundtransport steigen beide markierten H8 Energien um je zwei. Die andere leere Linie -e8 gehört zur tatsächlichen Vektorverschiebung. Beide Fälle stimmen an den zwei Endladungen überein. Die unabhängige exakte Rechnung und 42 OriginLab Tests sind bestanden. Die gewichtete Quelle ist unberechnet. [Vollständiger Vergleich](../../../research/originlab/FOLDED-TIME-PROOF.txt).
+
+## ORIGINLABSOURCEBRIDGE20261114
+
+14. November 2026. Der feste spiegelgerade v252 Verlauf liefert für die
+42 geladenen Paare den verklebten Skalarquotienten log(A/S) ≈ −19,73994045338434.
+Die geladene unprojizierte Spur liefert ≈ −19,71988306021885. Der
+Vergleich mit der alternativen polaren Wahl ergibt ≈ −19,54420754979753.
+Beide bedingten Quotienten gegen T sind eins. Die Intervallrechnung
+bestätigt den Unterschied auf derselben Geschichte.
+
+Die vier echten Viertelkonjugate haben Rang drei im bekannten Möbius
+Spann. Die Klammer auf dem Keilquadrat hat Determinante 2 und beschränkt
+den kommutierenden Rang auf eins. Bei erhaltener affiner Wardrelation
+und festem longitudinalen Grad eins verlangt jede weitere unabhängige
+Richtung bei voller Ladung gamma einen weiteren neutralen Rückweg im
+Grad null. Zwei zusätzliche Richtungen brauchen zwei solche Rückwege.
+
+59 OriginLab Tests und der direkte Originalcheck der regionalen
+Komposition bestanden. Die drei kontrollierten Prüfläufe aus parallelen
+Sitzungen bestanden 41, 51 und 7 Einzelprüfungen. Sie dokumentieren die
+endliche Z4 Verklebung, die freie elliptische Markenkonfiguration und
+den Sechsertorus mit Indexbetrag drei und elf Spiegelpaaren.
+
+Der ursprüngliche R113 Aufruf meldet weiterhin BLOCKED. Die gewichteten
+physischen Antworten und F1 bleiben offen. Nächster Originaltest ist der
+neutrale Grad null des operatorwertigen R113 Leerfermionblocks mit
+absoluter Referenz und denselben geladenen Operationen. Eine unabhängige
+Querbewegung muss eine ganze lokale Algebra im selben Zeittransport
+verschieben. Atlas `dace8ddec7ef89c319e6bfed`.
+[Rechnung und Abnahme](../../../research/originlab/SOURCE-BRIDGE-2026-11-14.md).
+
+## ORIGINLABDOUBLECELL20261114
+
+14. November 2026. Die [Doppelzellkampagne](../../../research/originlab/double_cell.py)
+liefert exakt 16 eindimensionale gemeinsame Belegungsräume mit geradem
+Grad und Vielfachheiten 1, 10 und 5. Alle 120 Permutationen samt
+Stabilisatorzeichen wurden geprüft. Die native Zellparität spaltet 8+8,
+mit Stabilisator S4. Der Standardoperator a₅†a₄ zwischen den schwachen
+Plätzen hat Rang vier. Sein Kommutator mit Z₅ hat ebenfalls Rang vier.
+Bei gegebener Zuordnung der schwachen Plätze muss ein Übergang, der
+die physische Gesamtparität erhält, den Paritätswechsel kompensieren.
+
+Ein zweidimensionales Referenzsystem mit beiden Paritäten hält alle
+16 Zustände in einer festen Gesamtparität. Zwei Präparationen haben
+identische Marginalen und gemeinsame Antworten +1 und −1. Dies ist ein
+endlicher Referenztest. Die ursprüngliche R113 Zuordnung der beteiligten
+Operatoren und der Leerreferenz ist offen. Der nativen R113 Ausführung
+fehlte weiterhin der gewichtete Originalproduzent.
+
+Ein Rang eins Vakuum ist unter der vollen doppelten S5 Wirkung eindeutig.
+Die invarianten Hamiltonoperatoren mit g=1 und λ=0 beziehungsweise λ=1
+liefern die Lückenverhältnisse 2 und 10/3. Der frühere
+[skalare Kreiszeitsatz](../../../experiments/theory-contracts/source-local-time-origin-20260921/PROOF.md)
+bestimmt unter seinen Lokalitäts, DtN und Vierteldrehungsbedingungen
+weiterhin h=±κD. Die durch P1 rekonstruierte Zeit bleibt bei gegebener
+vollständiger konsistenter Halbgruppe eindeutig. Aktive Aufgabe ist
+weiterhin der ursprüngliche regionale Rückweg mit gebundener absoluter
+Referenz. Die kompensierte schwache Paarantwort ist ein weiterer
+Trennversuch am selben gewichteten Aufruf.
+
+Erneut ausgeführt: 54 OriginLab Tests mit Z3 und FLINT, neun technische
+Benchmarks, die Doppelzellkampagne sowie 99 Einzelprüfungen aus drei
+parallelen Sitzungsprogrammen. Fünf Tests des Autonomiepakets blieben
+hier wegen fehlender cvc5 und egglog Installation unzugänglich.
+
+## ORIGINLABMOVINGCARRIER20261114
+
+14. November 2026. Aus der Paralleluntersuchung stammt der Hardy Träger
+mit Konstante und vier Fourierklassen, deren normierte Abschnitte
+proportional zu z^k/(1−a^4 z^4) sind. OriginLab reproduziert für die
+fixierte Projektion den Faktor 8/63 mit vier positiven Eigendefekten
+bei |a|^8=1/2 und exp(−4κτ)=1/2. Die allgemeine Formel gilt für
+0<|a|<1 und τ>0. Die bewegte Projektion transportiert den Radius
+nach a exp(−κτ); ihre Normierungsfaktoren multiplizieren sich exakt.
+
+Die feste Zeitmomentfolge hat je nichtkonstanter Fourierklasse
+unendlichen Spektralträger und vollen Hankelrang in jeder endlichen
+Ordnung. Analytische Eindeutigkeit liefert die zeitzyklische Hülle H²
+für den gesamten Kandidatenträger. Die Berry Verbindung bleibt auf den
+vier nichtkonstanten Klassen skalar. Alle Rechnungen betreffen die
+deklarierte Hardy Familie. Sie bewerten keinen ursprünglichen R113
+Korrelator.
+
+Zwei erneute OriginLab Suchrunden meldeten 19 und 24 endliche
+Überlebende. Doppelzelle, Hardy Kontrolle und Originalquellenabgleich
+liefen im selben Kampagnenaufruf. Der gemeinsame gewichtete Produzent
+für R113 bleibt offen. Im Original feste und mitbewegte Projektion
+auf eine geladene Präparation, ihr Adjungiertes, zwei geordnete Zeiten
+und dieselbe absolute Leerreferenz anwenden.
+[Ausführbarer Hardy Test](../../../research/originlab/moving_carrier.py).
+
+## ORIGINLABAFFINERETURNALLGRADES20261114
+
+14. November 2026. Auf der vollen Ladungslinie kγ des ursprünglichen
+affinen E₈ Vakuums bilden e=E(γ,−1), f=e* und h=H(γ,0)−I
+ein sl₂ Tripel. Die Größe d=L₀−H(γ,0)/2 bleibt erhalten.
+Der Lattice Anteil der Energie ist k², die achtfarbige
+Oszillatormultiplizität ist p₈(d+k−k²). Differenzen aufeinanderfolgender
+Gewichtsmultiplizitäten geben die irreduziblen Leiteranteile.
+Der Rückkehroperator fe auf neutralem Grad d hat Eigenwert (j+1)² mit
+Multiplizität p₈(d−j(j+1))−p₈(d−(j+1)(j+2)).
+
+Im neutralen Grundgrad gibt es eine Linie, im neutralen Grad eins acht.
+Die Abbildung zum geladenen Grad zwei ist in den Oszillatorbasen die
+Wurzelreflexion I−γγᵀ. Zwei orthogonale Cartan Vektoren senkrecht zu γ
+geben ausdrückliche Kandidaten. Für neutralen Grad zwei ergibt sich
+das Rückkehrspektrum 1 mit Vielfachheit 43 und 4 mit Vielfachheit eins.
+49 Gradenkontrollen und der exakte Reflexionstest bestanden.
+Diese Richtungen gehören zum internen affinen Oszillatorraum. Zwei
+zusätzliche physische Ortsrichtungen erfordern noch den Nachweis
+der Verschiebung ganzer Trägeralgebren im gewichteten Original.
+
+Drei zusätzliche OriginDSL Runden mit Knotengrenze fünf und Worttiefe
+sechs werteten 11.339, 11.355 und 11.360 Terme aus. Sie behielten 26,
+34 und 40 endliche Kandidaten. Original R113 blieb blockiert,
+einschließlich aller vier markierten Werte. Der konkrete Anschluss
+sind zwei neutrale Gradeinspräparationen im operatorwertigen
+Leerfermionblock, ihre geladenen Adjungierten, Zeitgewichte und die
+gemeinsame absolute Referenz vor der äußeren Auswahl.
+[Skript](check_tfpt_all_grade_neutral_return_20261114.py).
+
+## ORIGINLABAFFINEPOLARIZATION20261114
+
+14. November 2026. Auf dem ursprünglichen markierten Wort der drei
+affinen E₈ Ströme seien Q die Ladungsspalten (−p₁,γ,p₂) und
+z=(1,ix,−xy) die radial fortgesetzten Marken. Das Pendeln der beiden
+Cartan Moden an die Vakuumenden gibt für die vorbereitete Matrix,
+geteilt durch das nackte Wort, die Metrik minus
+(Qz)(Qz⁻¹)ᵀ. Der inverse Vektor ist komponentenweise zu lesen.
+Q hat Rang zwei und der gemeinsame stumme Raum Dimension sechs.
+Auf γ⊥ verbleibt nur eine sichtbare Richtung. Die bisher
+vorgeschlagenen e₂ und e₃ werden vom verbundenen Wort nicht
+unterschieden. Bei x=y=1/2 sind alle vier verbundenen Einträge −25/16.
+
+Die Präparationen −p₁ und γ liefern bei x,y aus {1/2,1/4}
+vier linear unabhängige vektorisierte 2×2 Antwortmatrizen.
+Ihre Determinante ist (66339−428652i)/256. Jede Einzelantwort hat
+Rang höchstens eins. Eine Präparation orthogonal zu allen drei
+Ladungen bleibt eine exakte Nullkontrolle. Das betrifft die
+affine Antwort und bestimmt keine zusätzliche Ortsbewegung.
+
+OriginLab hat den Vergleich in den R113 Verbraucher eingebunden.
+Der Kontrolllauf trennt die relative Ward Übereinstimmung von einer
+abweichenden absoluten Normierung und erkennt einen manipulierten
+Matrixeintrag sowie einen degenerierten Nullnenner. Der native
+R113 Aufruf liefert weiterhin keine der vier ursprünglichen Marken.
+Im nächsten Originalschritt gleichzeitig das nackte Wort, das
+vorbereitete Zeitrechteck und die orthogonale Nullkontrolle lesen.
+Für einen zweiten unabhängigen γ-orthogonalen Rückweg ein anderes
+ursprüngliches Wort mit unabhängiger Ladungsprojektion oder eine
+echte regionale Einfügung verwenden.
+[Code und Prüfer](../../../research/originlab/affine_polarization.py).
+
+Der vollständige Halbspinorzensus bei festem γ=e₁+e₆, unveränderten
+Klebeklassen, Farbtrialitäten und Hyperladungen liefert genau zwei
+Wörter. Sie unterscheiden sich durch die Weyl Spiegelung an e₇+e₈.
+Für festgehaltene e₂/e₇ Präparationen beträgt der gemischte verbundene
+Eintrag bei x=y=1/2 im ersten Wort −25/16 und im zweiten +25/16.
+Die gemeinsam gelesenen Projektionen haben Rang zwei. Transport
+der Präparationen mit derselben Spiegelung entfernt den Kontrast.
+Die zweite volle Cartan Ladungszuordnung bleibt am Original R113 zu
+binden. Der Verbraucher prüft beide gelieferten Wortformen mit
+denselben Zeitpaaren, derselben Auswahl und Referenz. 56 OriginLab
+Tests und die neun Benchmarks bestanden. Die fünf Autonomietests
+blieben wegen fehlender cvc5 und egglog Installation ungetestet.
+
+## ORIGINLABAFFINEOPERATORS20261114
+
+14. November 2026. Der integrierte Operatorlauf aus Parallelcommit
+`70433fd83c9842ef3929194dfba3911765864f38` reproduziert 19.404
+Stromrelationen, 252 Ward Koeffizienten und die Rückkehrspektren der
+neutralen Grade null bis zwei. Der triviale Kozykel scheitert. Acht
+orthogonale Wurzeln liefern auf neutralem Grad zwei kommutierende
+Rückkehroperatoren mit Exzessrang acht. Die Marken erzeugen A2 mit
+acht Gradeinsrichtungen und Kommutant E6. Sechs weitere Ströme sind
+nötig und reichen in fünf eingeschränkten Klassen sowie der freien
+Kontrolle. Die übrigen drei Klassen erzeugen mit den Marken A1 × E7.
+Die 112 fehlenden Wurzeln sind schwache Dubletts. Die Hyperladungsaussage
+gilt für einzelne zulässige Strombuchstaben. Ein insgesamt neutrales
+Wort kann zwei schwach ungerade Ströme enthalten.
+
+Der neue explizite Test ersetzt die feste Mittelwurzel γ=e₁+e₆ durch
+a=e₁+e₄ und b=e₆−e₄. Die Beine tragen Hyperladungen +1/6 und −1/2.
+Die geordnete Einfügung E_a(1−m) E_b(n−1) und ihre umgekehrte Ordnung
+liefern auf dem 6×6 Modengitter relativ zum kozykelkorrigierten alten
+Wort 1/min(m,n) und 1/min(m,n)−1. Die [Entwicklung der vier affinen
+Polfaktoren](../../../research/originlab/PLAN.md) beweist dieselbe Formel
+für alle positiven Moden. Die Differenz ist der alte
+Mittelstrom. Erst die beiden getrennten absoluten Antworten testen den
+schwachen Zwischenweg. Beide sind im selben gewichteten R113 Aufruf
+vor äußerer Auswahl mit Zeitkarte und gebundener Leerreferenz zu lesen.
+Der Verbraucher nimmt das gebundene Kozykelvorzeichen und beide ganzen
+Wortformen entgegen. Im Negativtest verschiebt ein gleicher additiver
+Beitrag beide Ordnungen. Die Kommutatorrelation bleibt exakt, der Vergleich
+der Einzelantworten erkennt den Unterschied.
+[Operatoren und Kontrollen](../../../research/originlab/affine_operators.py).
+
+In der punktweisen affinen Niveau eins Erweiterung mit zentraler
+Profilaktion und beliebiger Grundgradmultiplizität faktorisiert der
+ganze konstante zyklische Stromraum über eine kommutierende
+Profilaktion auf dem Grundgrad. Stetige Normalisatoren bewegen bei
+endlich vielen Profilsektoren keinen Minimalprojektor. Der neue
+R113 Test misst den positiven Schurrest der geladenen Bilder außerhalb
+der gemessenen neutralen Rückkehr und den Transferkommutator. Die
+Kontrollen liefern Rest 0 für zwei Auswertungssektoren und Rang 1
+für ein skalares Mittel mit einem zusätzlichen geladenen Weg. Auf
+demselben Profilgram werden diagonaler und mischender positiver
+Neutraltransfer exakt unterschieden. Auf der nativen R113 Quelle ist
+die profilierte Form unberechnet. [Herleitung und Umfang](../../../research/originlab/SOURCE-BRIDGE-2026-11-14.md#punktweise-querprofile-mit-mehrdimensionalem-grundgrad).
+
+64 OriginLab Tests und neun Benchmarks bestanden. Die vier lokalen
+Kontrollkampagnen liefen auch ohne Atlas. Fünf Autonomietests blieben
+wegen fehlender cvc5 und egglog Abhängigkeiten unausgeführt. Der native
+R113 Verbraucher meldet weiterhin die fehlenden Endpunkt und
+Faseroperationen. Z0, ZU, ZY und ZUY sind unberechnet. F1 bleibt offen.
+Atlas `08924af4bef5129267810da9`.
+
+## ORIGINLABSIXWEAKRETURNS20261114
+
+14. November 2026. Auf dem ursprünglichen affinen E8 Niveau eins
+Vakuum wurden die sechs späten D8 Wurzeln eᵢ+eⱼ (i=1,2,3 und j=4,5)
+auf demselben neutralen Träger geprüft. Der gemeinsame Exzess der
+Rückkehroperatoren E*E−I hat in den Graden 0, 1, 2 Rang 0, 0, 6.
+Im ersten wirksamen Grad hat jede Richtung Quadratinorm 12. Die
+normierte Gramform hat Determinante 8/27 und Spektrum
+2, 4/3, 1, 1, 1/3, 1/3. Neun Paare kommutieren nicht, und höchstens
+zwei der markierten Rückkehroperatoren kommutieren paarweise.
+Auf dem gemeinsamen Träger ergeben Produkte bis Länge eins, zwei
+und drei die Dimensionen 6, 24 und 36. Das folgt aus der Darstellung
+als Rang eins Projektoren und der invertierbaren Gramform. Zwei
+strikt positive Dichten mit identischen Einzel und Paarantworten
+unterscheiden sich bei der Reihenfolge (e₁+e₄, e₁+e₅, e₂+e₅)
+um −4i/603. [Exakte Rechnung](../../../research/originlab/weak_return_rank.py).
+
+Die Parallelsitzung mit acht komplexen freien NS Fermionen liefert
+112 D8 Paarströme. Das Dublettwort hat auf dem geprüften Modengitter
+Kern min(m,n) bis zu einem einzigen gemeinsamen Orientierungsvorzeichen
+und schwachen Casimir 3/4. Die beiden ursprünglichen markierten
+Spinorenden benötigen ihren eigenen Feldträger.
+[Quellenabgleich](../../../research/originlab/affine_car.py).
+
+Das parallele Familienaudit zeigt bei fester S4 Wirkung und
+Analytizität auf einer einzigen Scheibe aus n₀+3n₃=1, dass n₃=0.
+Ohne diese Analytizität unterscheiden Determinante, vier feste
+Markenauslesungen und positiver Gram die relativen Indizes 0 und −3
+nicht. Die gemeinsame Quelle braucht für diese Unterscheidung eine
+sektoraufgelöste geordnete Phasenantwort.
+[Familienrechnung](../../../research/originlab/FAMILY-INDEX-20261114.md).
+
+Der kombinierte Lauf bewertete den affinen Kontrolltest exakt und
+alle neun Benchmarks als bestanden. Das Original R113 meldete die
+fehlende gewichtete Quelle. Z0, ZU, ZY und ZUY sind unberechnet. Die
+vorhandenen R113 Schnittstellen verlangen die Feldoperationen und
+die gemeinsame gebundene Leerreferenz. Im nächsten ursprünglichen
+Aufruf zuerst beide getrennten Ordnungen der schwachen Mittelwurzel,
+dann sechs Grade zwei Rückwege und das zurückgehaltene Dreierwort
+absolut vergleichen. Erst ein auf ganze lokale Algebren gehobener
+Transport kann Ortsbewegung belegen. F1 bleibt offen. Der Atlas
+enthält die vier neuen Befunde und weist nach der Quellprüfung
+null veraltete Befunde aus (Revision 166a58e813c989dc5df47193).
+
+Der lokal neu eingegangene native Test reproduziert die zwölf Higgs
+Endblöcke von Rang drei. Die Wurzelstrangidentität erzwingt Null für
+die geprüfte Farbbrücke auf der unveränderten 96er Faser. Die gerade
+CAR Erweiterung mit kanonisch polarer Normierung liefert kein
+ungerades Gewicht. Der getrennte DET16 Faktor besitzt keinen
+ungeraden Grundzustand und kann den fehlenden Übergang nicht als
+zeitneutraler Zusatzzustand tragen. Nächste Kandidaten brauchen einen
+echten gemischten Feldträger oder eine aus dem Original begründete
+Gradverschiebung. [Nativer Vergleich](../../../research/originlab/native_weak_bridge.py).
+
+Die freie Parallelrechnung und der Test der sechs Rückwege sind auf
+GitHub main in 8262c7a39c51b2b492ad3b3478a69d951a2cdb47 integriert.
+80 lokale OriginLab Tests bestanden. Die fünf Autonomietests blieben
+wegen fehlender cvc5 und egglog Abhängigkeiten unausgeführt.
+
 ## ORIGINLABWEAKREGIONAL20261114
 
 14. November 2026. Bei festem Mittelstrom $\gamma=e_1+e_6$ bleiben unter
@@ -4296,100 +5827,1080 @@ Wärmeableitung bleibt die nächste Probe des geladenen Feldanschlusses.
 F1 bleibt offen.
 [Ursprüngliche Konstruktorprüfung](../../../experiments/theory-contracts/original-paper-source-reconciliation-20261102/triangulation_20261106O/caller/ACTUAL-PRIMITIVE-REGULATOR-CALLER-TRACE.txt).
 
+## ORIGINLABQ0RIGIDITY20261116 · Quantenuhr und Suche über Quellenregeln
 
-## ORIGINLABMARKEDMETRIC20261115
+Der auf GitHub gelesene Stand `3d58f196` bestimmt im gegebenen
+Viermarkencode den fünften Codepunkt und sechs verankerte Viertelzyklen.
+Das dortige Choi Gegenbeispiel bei Orbitgewicht 1/2 wurde exakt auf
+die ganze D4 Mischfamilie erweitert. Für x=0, 1/3, 1 ist der
+gepaarte Vollkanal singulär. Sonst hat der selbstadjungierte Logarithmus
+auf vier festen Spektralprojektoren die Rangfolge 2, 4, 2, 8. Zwei
+exakte Choi Zeugen verletzen gemeinsam die bedingte vollständige
+Positivität für jedes reguläre x. Die Depolarisationshalbgruppe besteht
+denselben Test. Der Ausschluss gilt für die endliche tracial symmetrische
+zeitunabhängige CP Uhr auf M4 bei innerhalb der D4 Orbits gleichgewichteten
+Konjugationen. Kohärente Komposition, andere Zeitverträge und größere
+physische Träger bleiben gesonderte Kandidaten. [Exakter Rechenlauf](../../../research/originlab/f1_compiler_kms_family_audit.py).
 
-Im festen affinen E₈ Vakuummodul auf Niveau eins zerfällt Grad eins
-unter E₆ und A₂ in die vier irreduziblen Räume mit Dimensionen
-78, 8, 81 und 81. Die neutralen Adjungierten lassen vier unabhängige
-hermitesche Gewichte zu. Der markierte geladene Nullmodus liefert
-fünf gerichtete Wurzelblöcke und drei unabhängige Gleichungen.
-Die relative Form ist skalar, sobald seine fest vorgegebene
-Adjungierung gilt. Die neutrale positive Gegenform (1, 1, 1, 2)
-wird verworfen. Die Niveau eins Vakuumrückkehr bindet die Norm an
-die auf demselben Raum gelieferte Leerreferenz. Diese Folgerung
-betrifft die Form vor Zeit und Auswahl.
+Der lokale OriginLab Lauf mit r113, r113_synthesis und f1 endet bei
+BLOCKED, ORIGINAL_CHARGED_PRODUCER_REQUIRED und OPEN. Die ursprünglichen
+vier Werte bleiben leer. Das Fable 5.2 Review prüfte Momentensuche,
+lokalen Transfer und Zweitschnitt Bootstrap. Seine erste Empfehlung ist
+ein exakter Vergleich der Regeln, die den reflektierten Wortkern bestimmen.
+Der gemischte Kompressionsdefekt allein entscheidet die Abgeschlossenheit
+des Wortspanns nicht. Der Test auf einem eindimensionalen Wortspann im
+Dreiraum ergibt Defekt null bei strikt positiver Leckage beider Operatoren.
+Verwende für Abgeschlossenheit die positiven Selbstdefekte auf demselben
+Gramrahmen. Eine endliche Einzellösung gilt nur für die beobachtete
+Trunkierung. Eine vermutete modulare Spur braucht ihren eigenen
+Quellennachweis und bleibt vom absoluten R113 Vakuumcap getrennt.
 
-Die Zählung der affinen Grade null bis drei für d = 9g + 8c
-modulo zwölf reproduziert die gemeinsamen Spinor und Farbklassen
-modulo sechs. Die neutrale feine Algebra hat Wurzelkomponenten
-A₃, A₂, A₁, A₁ und eine abelsche Cartanrichtung. Die 24 Wurzeln
-der anderen grob neutralen Klasse haben Y = ±1/2 und schwache
-Gewichte ±1. Die beiden feinen Teilräume haben in Grad eins
-Dimensionen 30 und 24, in Grad zwei 382 und 380.
-[Rechnung und Geltungsbereich](../../../research/originlab/P1-MARKED-AFFINE-METRIC.md).
+Nächster Programmschritt: in der vorhandenen OriginLab Warteschlange
+eine Suche über Q0 produzierende Regeln mit echter Originalprovenienz
+anschließen. Auf festem affinem Wurzel und Cartan Wortbereich bis Grad
+drei Ward, Reflexion, Verklebung und unabhängig begründete Kontakte
+einzeln zuschalten. Exakte Projektionen und Nullräume, zulässige
+Gegenpaare und das kürzeste quellgebundene Trennwort ausgeben.
+Leerreferenz, Zeit und beide Außenprojektionen im ursprünglichen Aufruf
+halten. Auf einem zweiten Schnitt das gemischte Wort und die absolute
+Referenz zurückhalten. Ein unabhängiger Quellenwert oder eine
+hergeleitete Regel muss offene Richtungen entscheiden. Kein
+physischer F1 Abschluss und keine Ledgeränderung.
+Atlasrevision `c5a0d4cff2388470abe21785`. Aktueller gegengeprüfter
+GitHub Stand mit den zusätzlichen P1 Szenarien `ef937aeb`.
 
-Die Originalquellenprüfung übernimmt die Schranke für die
-Projektoridentifikation aus der parallelen P1 Untersuchung.
-Im Halbzylinder für die Produktgleichung ∂ᵤ + diag(1, −1)
-selektiert die Abklingbedingung die positive spektrale Gerade.
-Die Involution, welche die beiden Komponenten vertauscht, ist
-mit dem Tangentialoperator antikommutierend. Ihre Plusgerade
-ist verschieden, der Differenzoperator der Projektoren hat
-Eigenwerte ±1/√2. Eine konkrete Quellbindung des Randprojektors
-bleibt nötig. Die modellunabhängige Gleichsetzung ist ausgeschlossen.
+## ORIGINLABMOMENTPHASE20261116
 
-Die getrennte kinetische Rechnung vom 11. November wurde gegen
-das ursprüngliche Profil und die gespeicherte Ausgabe exakt
-reproduziert. Der vollständige lokale Higgsgradient gibt 5117/5000
-in Einheiten 1/(π R Z_H), die Einzelrichtung 169/40000. Der
-Vergleich des ursprünglichen Operators mit der zeitlichen
-Energiesumme ist an die physische Generatoridentifikation gebunden.
-[Ausführbarer Profiltest](../../../experiments/theory-contracts/chat-triangulation-20261108/check_tfpt_common_kinetic_clock_rule_20261111.py).
+Die automatische Suche kann nun auch bei wachsendem Rückkehrraum den
+gesamten zulässigen Bereich für das nächste Moment eines positiven
+Kontraktionsschritts berechnen. Zwei unabhängige Spektralmodelle liefern
+dieselben ersten vier Momente und danach 41/256 beziehungsweise 11/64.
+Die Schranken sind exakt. Eine angegebene spätere Antwort wird gegen
+die jeweils aktualisierte Schranke geprüft. Das bestimmt keine
+absolute Normierung und identifiziert den physischen Zeitgenerator nicht.
 
-18 gezielte OriginLab Tests bestanden. Der normale CLI Lauf lieferte
-EXACT_AFFINE_COLOUR_WARD_CHECKS und für die ursprüngliche Quelle
-BLOCKED. Z0, ZU, ZY und ZUY blieben leer. Die erste Originaloperation
-bleibt die gewichtete Paarung Q₀ mit derselben Basisintegration,
-dem tatsächlichen Zeittransport und der absoluten Leerreferenz.
-F1 bleibt offen.
+Die gemeinsame Vierteldrehung in der endlichen Dreiregionenkontrolle
+lässt auf Dichteebene vier Phasen mit gleichen Paarmarginalen zu.
+Die gemeinsame hermitesche Viertelprobe gibt im kohärenten Fixzustand 1,
+in der dephasierten Mischung 0. Erst die tatsächliche gemeinsame Wirkung
+auf der ursprünglichen Quelle erlaubt diese Unterscheidung für TFPT.
 
-## ORIGINLABFIBREQUARTER20261115
+Der explizite OpenAI Sol Lauf lieferte acht Vorschläge im endlichen
+P0 Suchraum. Der native R113 Aufruf bleibt BLOCKED und stellt keinen
+der vier markierten Werte her. F1 bleibt offen. Nächste Originaloperation:
+die gewichtete reflektierte Nullmarkenform Q0 auf derselben
+Basisintegration, Zeitkarte, Auswahl und absoluten Leerreferenz auswerten.
+Erst danach das Zeitspektrum und bei physisch gebundener Viertelwirkung
+die gemeinsame Dreiregionenantwort prüfen.
+[Herleitung und Geltungsbereich](evidence/ORIGINLAB-MOMENT-PHASE-20261116.txt).
+Atlasrevision `34b18cea1958e08902baa659`.
 
-Der affine Grad eins enthält 60, 64, 60 und 64 Richtungen nach
-Klebephase, mit den acht Cartanrichtungen in Phase eins. Der
-Polarisationshalbzeitschritt W hat nach Rephasierung nur die
-Eigenwerte eins und −i. Seine Konjugation enthält keine Phase
-−1 und kann die native Stromwirkung nicht realisieren. Das
-Tensorprodukt zweier kommutierender Zellen hat alle vier
-Operatorphasen. Die erste Zellpolarisation konjugiert das
-Quadrat seines Clocks auf das Negative. Auf einem für diese
-Polarisation und den Clock invarianten Grad muss seine Spur
-daher null sein. Die native Spur ist −8. In den affinen
-Graden null bis drei lautet die Spurfolge 1, −8, 28, −64.
-Relative Rephasierung ändert diesen Widerspruch nicht.
+## ORIGINLABHISTORYGRAMSWEEP20261116
 
-Eine paritywechselnde lineare Abbildung auf Grad eins braucht
-mindestens acht Nullrichtungen. Ein rein spektraler Überträger
-mit 64 Zuständen pro Phase und Dimension 256 erreicht die
-untere Schranke innerhalb der balancierten Vergleichsklasse.
-Er kann die native Phase abbilden, liefert aber keine
-ursprüngliche Stromalgebra, Polarisation oder Quelle.
-[Beweis und Scope](../../../research/originlab/P1-FIBRE-AND-CLOCK.md).
+OriginLab prüft den vierdimensionalen kohärenten Raum der sechs fest
+markierten D4 Historien über verschachtelte rationale Gitter. Die
+markierte Kanaleinbettung ist injektiv. Zwei Auflösungen prüften
+5.764.801 verschiedene Matrizen exakt, davon erfüllen 454.845
+vollständige Positivität und Spurerhaltung. Die zweite Runde prüfte
+5.374.176 neue Matrizen. Im unabhängigen Kontrollfall ließen zwei
+zurückgehaltene Antworten einen von 146 angepassten Kandidaten übrig.
+Die affine Rechnung bestimmt denselben positiven Kandidaten und
+erkennt eine verfälschte Phase als unvereinbar mit der ganzen Klasse.
+Claude Opus 4.8 prüfte den mathematischen Ansatz und die Zähllogik.
+23 gezielte Tests bestanden. R113 lieferte weiterhin keinen der vier
+Originalwerte. Als nächstes die vier identifizierenden Kanalantworten
+auf derselben ursprünglichen gewichteten Form und derselben
+absoluten Referenz binden.
+[Ausführung, Gleichungen und Geltungsbereich](evidence/ORIGINLAB-HISTORY-GRAM-SWEEP-20261116.txt).
+Atlasrevision `ed7f6d95e679b1f58924423d`.
 
-Der R113 Verbraucher integriert nun auf Wunsch die gelieferten
-feinen atomaren Formen je Urbildkonfiguration und zieht sie
-mit der gebundenen Worteinbettung auf die grobe Stufe zurück.
-Er vergleicht alle vier Formen jeweils mit den zwei unabhängig
-gebundenen Referenzen. Die exakte Negativprobe enthält zwei
-entgegengesetzte ZUY Defekte, die nach Gesamtsummation verschwinden.
-Der Vergleich meldet vor der physischen Kontraktion die erste
-defekte Konfiguration und die Matrixrangzahl.
+## ORIGINLABORIGINSCENARIOS20261116
 
-Der geprüfte Originalaufruf liefert weiterhin keine gewichteten
-Fasern für zwei Stufen. Z0, ZU, ZY und ZUY bleiben leer.
-Nächster Schritt an der wirklichen Quelle ist die explizite
-endliche Basisintegration auf beiden Stufen samt Zeit und
-gebundener Leerreferenz sowie ein Nachweis, wie die tatsächliche
-Polarisation die Spurabweichung trägt. F1 bleibt offen.
+OriginLab vergleicht jetzt 19 Geometrievarianten, acht Quanten und
+Auslesevarianten sowie sechs Gittervorläufer. Ein tatsächlicher
+holomorpher Vierzyklus der Verzweigungsmarken einer elliptischen
+Sphärenüberlagerung erzwingt j=1728. Gemeinsames Verdoppeln des
+Zählers und der Leerreferenz kürzt sich. Die geordnete Übergangsantwort
+unterscheidet die Polarorientierungen bei gleicher Gramform. Ein
+Auslesecode und die Hopf Projektion liefern unterschiedliche
+Rekonstruktionsbedingungen. Die verbundenen Wurzelblöcke trennen
+größere Gitter sogar bei gleicher Wurzelzahl.
 
-Die parallel veröffentlichten Bell Kontrollrechnungen zeigen einen
-endlichen Erwartungsindex vier. Der Tensorclock vertauscht die
-beiden Bell Stabilisatoren und lässt den gemeinsamen positiven
-Grundzustand fest. Im gleichzeitigen Diagonalraum lautet das
-clockverträgliche Spektrum (0,a,a,b). Nur die additive Klasse erzwingt
-b=2a. Die doppelte Anregung ist daher eine unabhängige Zeitprobe.
-Die Einbettung des Index und des Zeitwortes in die ursprüngliche
-physische Naht bleibt offen. 39 gezielte Tests bestanden. Der
-Faserfall prüft eine echte Vier-zu-zwei Gruppierung und weist auch
-eine isolierte Änderung der groben Leerreferenz zurück.
+Neue upstream Belege am Stand 8a0d2f54 geprüft, 17 Tests grün.
+18 gezielte Tests und der kombinierte OriginLab Lauf sind grün.
+R113 liefert weiterhin keine der vier physischen Antworten. Der
+ursprüngliche erste Test ist die gemeinsame gewichtete Form für
+die zwei Zeitfenster mit demselben Selektor und derselben absoluten
+Leerreferenz. Die 15 radialen Abfragen aus R032 und die vier
+Historienantworten benötigen ihre getrennten physischen Bindungen.
+[Belege und Fortsetzung](evidence/ORIGINLAB-ORIGIN-SCENARIOS-20261116.txt).
+Atlasrevision `2af6c0c045a27701e4de34fa`.
+
+## R113FULL96TWOWINDOW20261116
+
+Der originale full96 R032 Fermionrahmen liefert mit Majorana auf
+fünf Radien eine positive Zweifensterform vom Rang fünf. Beide
+bedingten Leerfaktoren wurden unabhängig gegeneinander geprüft.
+Zwei positive gemeinsame Massen mit gleichen unteren Marken
+liefern getrennte gemischte Antworten. Die 15 unmarkierten
+Zweifensterabfragen rekonstruieren beide Formen. Torusinversion
+im Einzelchart, ein eindimensionaler Auslesekanal und eine
+ungeordnete Transformation sind im jeweiligen geprüften Modell
+ausgeschlossen. Opus hat den Exteriorvertrag und die
+Unterscheidung von Reihenfolge und Orientierung gegengeprüft.
+19 Tests bestanden. Native R113 Werte bleiben unberechnet.
+[Beweise, Referenzformeln und Grenzen](evidence/R113-FULL96-TWO-WINDOWS-20261116.txt).
+Atlasrevision `f793069644df2774118766aa`.
+
+## ORIGINLABH0INTERPRETATION20261116 · Präphysikalische Rekonstruktion
+
+Ein dauerhaftes projektives Klein Produkt mit vollständiger M2
+Rekonstruktion und derselben treuen Spur lässt zwei positive CP
+Halbgruppen zu. Eine Pauli Achse hat dieselbe Abklingrate, eine zweite
+trennt die Fortsetzungen. Eine Zeitumskalierung beseitigt die Differenz
+der Ratenverhältnisse nicht.
+
+Der runde Gaußvergleich variiert die lokale Wirkung um u/r² bei festem
+kinetischem Koeffizienten, gleichem Flächenmaß und festgehaltener äußerer
+Nullrandbedingung. Radiale Reflexionspositivität bleibt auf der ganzen
+Familie erhalten. Der antipodale Wert nimmt strikt von 1/(8π) auf null
+ab, null ist nur ein Grenzwert. Das unabhängig gewonnene Modenverhältnis
+nu_1/nu_0=3 würde in dieser Klasse u=0 wählen. Beide Befunde sind
+Gegenzeugen gegen die Hinlänglichkeit ihrer benannten Annahmen, kein
+Ausschluss von H0 und keine Rechnung eines nativen R113 Vakuumfaktors.
+
+23 exakte OriginLab Kontrollen liefen in normalem und optimiertem Python
+mit identischer Ausgabe. Baseline ef937aeb: 22 übergreifende und 36
+sphärische Kontrollen; 32 gezielte Tests für Historien, Kokykel, Klein
+Verdopplung, Torusleser und Genus fünf. Im isolierten Export brauchten
+zwei ältere Kampagnen Korrekturen an symbolischen Gleichheitsprüfungen
+und am fehlenden Rückgabestatus. Danach liefen alle fünf gewählten
+Upstream Kampagnen und die zehn Compiler Regressionen. Die Reparatur des
+Upstream Exports wurde nicht in den Hauptbranch übernommen.
+
+Der native R113 Pfad blieb BLOCKED. Nächste Originaloperation ist der
+gemeinsame gewichtete Aufruf mit zwei offenen Bosonendpunkten und
+absoluter gebundener Referenz. Danach eine zweite unabhängige geordnete
+Zeit oder Spektralantwort des gleichen Kanals prüfen.
+[Belege und sieben Hypothesen](evidence/ORIGINLAB-H0-INTERPRETATION-20261116.txt).
+Atlasrevision `4fc2d3ffed94d8905637d5d5`. F1 bleibt offen.
+
+## ORIGINLABQ0P1SEARCH20261116 · Affine Regeln und P1 Ursprungshypothesen
+
+OriginLab führt `q0_rule_search` und `p1_origin_hypotheses` über die
+normale Kampagne und die autonome Warteschlange aus. Die reellen
+affinen Vergleichsformen bis Grad drei besitzen 15 unabhängige
+Wortzustände. Die Dimensionen beim Zuschalten der Bedingungen lauten
+120, 45, 21, 8, 7, 6. Dieselben beiden gesetzten Kontakte lassen bis
+Grad eins null und bis Grad zwei zwei freie Richtungen. Sechs
+unabhängige Einfensterabfragen trennen bis Grad drei den ganzen
+endlichen linearen Raum. Ein positives kontraktives Paar mit exakt
+gleicher Verklebungsregel liefert am unmarkierten Zweifensterwort
+$E_{-2}$ auf beiden Seiten $1/8$ und $9/8$, relativ zur
+Vergleichswortnorm $1/16$ und $9/16$. Eine optionale Originalprobe
+liest auf dem R113 Aufruf den absoluten Zähler und die Leerreferenz.
+Eine arithmetische Kontrolle trennt das Paar. Geänderte Schrittzeit
+und ein den Wortträger entfernender Selektor werden zurückgewiesen.
+Die beiden Vergleichskontakte stammen aus dem endlichen Modell.
+
+Die 15 Hypothesen aus den Sitzungen umfassen präphysikalische
+Interpretation und Rekonstruktion, globale Obstruktion, Defekte,
+relationale Zeit, Fehlerkorrektur, Möbius, Torus und doppelte elliptische
+Überlagerung, sphärische und Hopf Auslese, Picard Transformation,
+größere Träger und modulare Normierung. Acht Vergleichsmodule aus
+`ef937aeb` wurden verwendet. Die Geometrieprüfung erfüllt 22
+Quervergleiche. Der zyklische Kegellauf umfasst 527 Charaktersektoren
+von Ordnung 2 bis 32. Bei Ordnung vier lautet der reine skalare
+Fixpunktbeitrag $5/16,-1/16,-3/16,-1/16$. Beide bloßen Spinhebungen
+haben vierte Potenz minus eins. Gleiche Ordnungszahl und Gibbsperiode
+lassen im modularen Kontrollpaar verschiedene Antworten $2/5,1/2$
+zu. Keiner dieser Vergleiche bindet die native P1 Normierung.
+
+104 OriginLab Tests bestanden. Die autonome Ausführung erledigte 151
+und 135 Jobs ohne technischen Fehler. Nativer R113 Status BLOCKED
+mit vier leeren Ausgaben. Nächster Originaltest ist der absolute
+Zweifensterkern mit den beiden Bosonendpunkten und gebundener
+Leerreferenz, danach die affine Endpunktprobe mit unabhängig gebundenem
+Feldwörterbuch. F1 bleibt offen. Atlas `fb569a61afdb7357e7095235`.
+[Maschinenlesbare Ausführung und Kandidaten](evidence/ORIGINLAB-Q0-P1-SEARCH-20261116.json).
+
+## ORIGINLABSPHERICALPAIRING20261116 · Konforme Randantwort und markierte Paare
+
+Auf der runden Sphäre reichen Rotationen und eine einzige konforme
+Boost Ward Identität bei Gewicht 1/2 zur ganzen Eigenwertrekursion.
+Die unabhängig fixierte führende Steigung zwei ergibt k_ell=2ell+1
+und 1/(8π) als antipodalen Wert. Zwei verschiedene konzentrische
+konforme Kreisreflexionen plus Rotationen geben einen bedingten
+Mechanismus für diese Ward Bewegung. Der native Kreis ist hierbei
+nicht stillschweigend die Riemannsphäre. Eine positive Änderung
+im Grad zwei besteht die erste Ward Probe und fällt in der zweiten.
+
+Dieselbe Gaußkovarianz wählt für vier gleiche Phasenmarken ohne
+Paarbindung das Tetraeder, j=0. Die exakte globale Minimierung mit
+getrennter Paarbindung wählt j=1728 ab beta=sqrt(2)/8−1/16.
+Die Gewichtung ist als markierte Dipolantwort oder Singulettreward
+lesbar. Die Mittelung über alle Paarungen lässt nur die globale
+Dipolantwort und kann in dieser Klasse das Quadrat nicht auswählen.
+Auf dem Zwei Qubit Kontrollträger zertifizieren zwei geordnete
+Antikorrelationen das Singulett mit antipodalem Partner. Die
+geometrische Vierteldrehung hat auf dem Paar Ordnung vier, während
+die vierte Potenz auf dem Einzelspinor minus Eins ergibt.
+
+34 Kontrollen bestanden mit identischen Ergebnissen in normalem und
+optimiertem Python. Die H0 und 15 Hypothesen Kampagnen liefen mit.
+Nativer Lauf R113: BLOCKED, alle vier Werte unberechnet.
+Der gemeinsame absolute Zweifensterkern, P_adm und die gebundene
+Leerreferenz sind weiterhin der erste native Schritt. Anschließend
+die Paarkorrelationen und Grade 0→1→2 auf der tatsächlichen markierten
+Quelle prüfen. Die Geburt von vier Marken, die absolute Normierung
+und die native Verbindung zu P2, E8 und physischer Zeit bleiben
+offen. F1 in Bearbeitung, kein Ledgerwechsel.
+[Herleitung und Quellen](evidence/ORIGINLAB-SPHERICAL-PAIRING-20261116.txt).
+Atlasrevision `4bd5bcbe00a19ba640f265ec`.
+
+## ORIGINLABGENERATIVEPROOF20261116 · Erzeugende Regel und Kernelbeweis
+
+Fable 5.2 empfahl die Suche über Produzenten und Beweise mit
+festem, unabhängig prüfbarem Zieltyp. OriginLab führt dies in
+`proof_search` aus. Das eingebaute Lean Kontrollziel quantifiziert
+über beliebig lange Besetzungslisten und rationale Fenstergewichte.
+Der Lauf findet Niveau eins aus der Kontrollrekursion und liefert
+einen Kernelbeweis mit separatem Replay der Module. Die geprüfte
+Eindeutigkeit gilt im normalgeordneten Rang eins Bereich mit
+festem Kontaktkoeffizienten und normiertem Vakuum. Die Behauptung
+bei freiem Kontakt wurde formal durch Niveau eins und zwei
+widerlegt. Eingesetztes Axiom, endlicher Test, unvollständiger
+Regelnachweis und vorausgesetztes Ziel wurden abgewiesen.
+
+Der generische Pfad akzeptiert extern festgelegte Lean Zieltypen
+mit Hashbindungen und durchsucht geschlossene Erzeuger und
+Beweisterme aus deklarierten Konstruktoren. Ein zweiter Lauf mit
+eigenem Ziel über alle natürlichen Zahlen endete
+`FORMAL_GOAL_PROVED`. Die Suche erzeugt ihre endlichen Schnitte
+selbst. Im vorhandenen affinen E8 Radialchart liefert sie für die
+Moden vier und sechs den leeren geladenen Eintrag $6u^6v^6$ und
+das geordnete markierte Wort $4u^6v^4$. Die formale Kontrollaussage
+gilt für den Oszillatorblock. Der affine Ausdruck ist ein
+separater exakter Operatorvergleich.
+
+108 OriginLab Tests bestanden. Native R113 Quelle weiter BLOCKED,
+keine vier absoluten Originalwerte. Die acht physischen
+Anforderungen sind noch nicht als geprüfter gemeinsamer Lean
+Zieltyp vorhanden. Zuerst die ursprünglichen Quellaussagen mit
+Selektor, gewichteter Zwei Fenster Integration und absoluter
+Leerreferenz in einem gemeinsamen Produktionsvertrag binden.
+Der bestehende physische Arbeitsauftrag und Owner bleiben aktiv.
+Atlasrevision `5fdca6adbb443ae1a1b4373b`. F1 bleibt offen.
+[Beweiszertifikate und Laufdaten](evidence/ORIGINLAB-GENERATIVE-PROOF-20261116.json).
+
+## ORIGINLABBINARYCLIFFORD20261116 · Binäre Herkunft und gemischte Fenster
+
+Zwei binäre involutive Schnitte mit Re omega(ABAB)=-1 erzeugen eine
+Pauli Algebra und deren vier quadratische Marken. Ein Zweiblockzeuge
+mit gleicher binärer Paarstatistik gibt -7/25. Die gemischten reellen
+und quaternionischen Fenstertypen erzeugen fünf spurfreie Clifford
+Richtungen mit expliziter Isometrie zur unmarkierten q0 Tabelle des
+vorhandenen P2 Consumers. Gleichartige Fenster ergeben neun.
+Zwei Richtungen sind lokal am zweiten Fenster und drei bilokal.
+
+Die lokale Paarvierteldrehung findet eine fixierte Linie und zwei
+Vertauschungen. Beim verlangten projektiven Vierzyklus auf den
+anderen Linien ergeben die 16 signierten Hebungen achtmal U^4=-I
+und acht nichtzentrale vierte Potenzen. Für den zentralen Fall
+repariert ein reeller Zweierfaktor die Ordnung, falls der fünfte
+Punkt als Linie mit freiem Vorzeichen behandelt wird. Ist die
+gerichtete fünfte Achse fix, bleibt diese Reparatur ausgeschlossen.
+Die vier Markprojektoren besitzen nur Rang drei. Verdoppelte
+Paarmarken haben Rang vier, aber keinen unital positiven Transfer
+zu den vier scharfen Clifford Effekten.
+
+51 exakte Kontrollen in normalem und optimiertem Python gaben
+identische Ergebnisse. Die sphärische Paarung und markierte
+Geometrie liefen als Kontrollen. R113 bleibt BLOCKED, alle vier
+Originalwerte unberechnet. Die tatsächliche bosonische Integration
+und absolute Leerreferenz bleiben der erste Schritt. Danach
+beide Operationen A,B und ihr geordnetes Wort in derselben Form
+binden sowie die Orientierung und Fensterpolarisation prüfen.
+Keine Ledgerpromotion. Atlas `f1e60194c34cb0023fb32329`.
+[Rechnung und Geltungsbereich](evidence/ORIGINLAB-BINARY-CLIFFORD-ORIGIN-20261116.txt).
+
+## ORIGINLABCOMPLETECONTRACT20261116 · Gemeinsames Modell und alle F1 Pflichten
+
+Der neue Suchweg behandelt das Hauptziel und acht festgelegte
+Gateprädikate im selben Lean Satz auf einem erzeugten Modellterm.
+Die Kandidaten werden nach Syntaxkosten und Prüfbudget verschachtelt.
+Annahme erfolgt nach Kernelprüfung, transitivem Axiomaudit und Replay.
+Ein vollständiger Kontrollvertrag endet auch im normalen F1 Bericht
+bei `F1_CONTRACT_PROVED`. Der Hauptzielsatz allein und ein gültiger
+Teilbeweis für ein anderes Modell bestehen die Abnahme nicht. Auf einer
+temporären Testregistrierung wurde der Pfad `F1_PROVED` samt acht
+bestandenen Gates ausgeführt. Die reale native Registrierung blieb offen.
+Die Suche kann nach einem formalen Treffer selbst beenden und sich an
+einen bereits gespeicherten Abschluss erinnern.
+
+Der ursprüngliche Lauf führte die 34 sphärischen Kontrollen und die
+51 binären Clifford Kontrollen aus. Die acht zentral negativen und
+acht nichtzentralen vierten Potenzen auf dem irreduziblen Viererraum
+bleiben ein begrenzter Ausschluss. Der Lean Satz beweist aus der
+gegebenen sphärischen Ward Gleichung für jede rationale Folge
+$f(n)=(2n+1)f(0)$. Die Familien mit $f(0)=1$ und $f(0)=2$ zeigen
+die freie absolute Skala. Der native gewichtete Zweifensterkern,
+die gebundene Referenz und die gemeinsame Herkunft der chronologischen,
+chiralen und gravitativen Folgerungen bleiben offen.
+
+112 OriginLab Tests bestanden. Die autonome Warteschlange nahm den
+externen Kontrollvertrag ohne technische Fehler an. Der native Lauf
+meldet `NATIVE_FORMAL_CONTRACT_INCOMPLETE`, R113 bleibt `BLOCKED`.
+Als erste native Quelloperation bleiben die zwei bosonischen Endpunkte,
+der tatsächliche Selektor und die unabhängig gebundene absolute
+Leerreferenz gemeinsam zu berechnen. P1 Normierung und die geordneten
+binären Auslesungen müssen danach an diese Quelle gebunden werden.
+Keine Ledgeränderung. Atlas `efbe4ec255ede80e51637f6f`.
+[Kernelbelege und Suchausführung](evidence/ORIGINLAB-COMPLETE-CONTRACT-20261116.json).
+
+## ORIGINLABNATIVEPAIRSELECTION20261116 · Absolute Auswahlkosten
+
+Gemeinsam auslesbare binäre Kontraste haben dimensionsunabhängig
+Re((ab)^2) ≥ −I/4, und die unvollständig scharfe Pauli Paarung
+saturiert die Schranke. Im v746 NS See ergibt der scharf ergänzte
+ursprüngliche Gegenpunktstrom das Viererwort 0. Der Strom ohne
+Ergänzung ergibt −1/2, der konditionierte Einplatzsektor −1.
+Der feste Schnitt aller verschobenen Einplatzsektoren hat Gewicht
+(2k)!/[k!(4k)^k] bei N=4k, also asymptotisch sqrt(2) exp(−k).
+Bewegte Paarsektoren behalten Einzelgewicht 1/2 und verwandeln
+die Richtung einer der beiden Achsen beim NS Halbturn.
+Die separate ursprüngliche v1033 Zeitprobe liefert ebenfalls keine
+scharfe Sättigung. Zwei gerade Majorana Produkte mit gemeinsamem
+Modus liefern algebraisch −I auch auf dem leeren Cap. Die native
+Ladung und Einfügung des Kandidaten bleiben offen.
+
+23 OriginLab Kontrollen in normalem und optimiertem Python,
+13 benachbarte Regressionen, integrierter F1 Lauf mit Lean Ward
+Beweis. R113 bleibt BLOCKED und sein Synthesepfad benötigt die
+ursprüngliche geladene Quelle. Der native volle Lean Zielvertrag
+fehlt weiterhin. Die gewichtete R113 Endpunktform und die gebundene
+absolute Leerreferenz bleiben zuerst zu bestimmen. Danach bewegte
+Auswahl oder einen zulässigen geraden Paaroperator mitsamt Zeit
+auf derselben Quelle testen. Keine Hochstufung des Ledgers.
+[Rechnung und Geltungsbereich](evidence/ORIGINLAB-NATIVE-PAIR-SELECTION-20261116.txt).
+Atlasrevision `2595dd214a39d6a17229e379`.
+
+## ORIGINLABSOURCEAUDITABLE20261116 · Originalbeweise und Suchlauf
+
+Der vorige OriginLab Einstieg stoppte ohne registrierten Lean Satz.
+Die native Suche führt jetzt die Kandidatenprüfung aus und behandelt
+den Lean Satz als Abnahme eines vollständigen Treffers. Grad drei
+liefert 48 affine Wörter, Basisdimension 15 und sechs unabhängige
+Richtungen nach Ward Restriktionen und zwei Vergleichskontakten.
+Der Originaladapter liefert für das trennende Zweifensterwort noch
+keinen Wert. Die 15 P1 Hypothesen enthalten die anderen Sitzungen zu
+Rekonstruktion, Defekt, Torus und Überlagerungen, sphärischer Auslese,
+Quotientenwechsel und größeren Ursprungsalgebren. Der exakte affine
+Rückweg ist im Lauf enthalten. Der sphärische Lean Satz wurde geprüft.
+
+Vier Originalmodule wurden im Lean Kernel erneut geprüft. T1 liefert
+CAR Kokyklus, Viertellift und Zeitformel im rationalen Chart.
+SeamScalingLimit und SeamResidualAxiom weisen ihre physikalischen
+Realisierungsannahmen weiterhin im Axiomaudit aus. v216 und v483
+bestanden 6 und 4 Kontrollen. Die einseitige Gauss Bonnet Normierung
+ergibt c3 = 1/(8π) aus der betreffenden Kugel und zwei Blättern. v1015
+bestand 11 Kontrollen und seine 7 internen Kontrollen. Seine endliche
+Windungsbrücke trägt bis zur separat formulierten Identifikation des
+Kontinuumslimits. Der Originaltext zur Gravitation konstruiert bereits
+lokale, positive freie Helizität zwei. Die gemeinsame wechselwirkende
+Herkunft aus der Kandidatenquelle bleibt offen.
+
+Die Originalwirkung und das vorgeschriebene Maß liefern die Beiträge
+zur Integration. Der festgehaltene R048 Hintergrund hat eine ausführbare
+ungekürzte radiale Higgsintegration mit analytischer Fehlerschranke.
+Ihre sechs Regressionskontrollen bestanden, einschließlich der Ablehnung
+einer fehlenden gemischten Einfügung. Gleitkommafehler sind nicht
+eingeschlossen. Das volle Fermionbein mit Majorana wurde auf einem
+konditionierten Verlauf ausgewertet. Der Originaladapter liest ein
+fertiges Gesamtpaket und erzeugt es bisher nicht. Die Auswertung des
+gemischten Werts auf dem gemeinsamen Originalregulator mit Projektion
+und gebundener Leerreferenz bleibt offen. Der Lauf hat für alle vier
+Originalmarken leere Werte gemeldet. Vorhandene Originaloperatoren,
+Radialintegration und gemeinsame 15 Proben des Zweifensterbefunds
+sind für diese Berechnung wiederzuverwenden. Kein neues Maß, keine
+frei gewählte Normierung. 113 OriginLab Tests bestanden. F1 bleibt
+in Bearbeitung, Owner und 52 abgegrenzte Abschlüsse bleiben erhalten.
+Atlasrevision `49cf33385b8f12c35daf0842`.
+
+[Originalintegration](../../../tex-artefacts/toe_field_integration_20261105.tex),
+[R113 Zweifensterbefund](evidence/R113-FULL96-TWO-WINDOWS-20261116.txt),
+[OriginLab Einstieg](../../../research/originlab/f1_solution.py).
+
+## ORIGINLABREFLECTEDCAP20261116 · Reflektierte Full96 Paarform
+
+Die originale Graduierung und Realstruktur ergeben S=I⊗gamma K
+mit h(b) S+S h(b#)^T=0 für räumlich gespiegelte Profile b#.
+Alle 27 Originalprofile bestehen, bei 18 aktiven Sinusprofilen
+scheitert dieselbe Form auf nur einer Seite. Zwölf interne v252
+Eichgeneratoren erhalten S. Die exakte modulare Spektralprüfung
+schließt im Viermodenfixture jede feste eichinvariante Form aus,
+die beide ersten Harmonischen auf demselben Zweig erhalten soll.
+Gleiche Schrittfolge ist nötig. Die numerische Umkehrkontrolle
+liefert 0.06598 statt eines Rundungsresiduums unter 5e-15.
+
+Die invariante Exteriorform und ihr nichtverschwindendes Quadrat
+geben einen Vakuum plus Paar beziehungsweise Quartikraum C.
+Mit demselben äußeren Abschluss folgt N_ABAB=N_1−2N_C unabhängig
+von der parametrischen Wahl der Profilgewichte. Im Original muss
+die tatsächliche äußere Auswahl den Überlapp N_C/N_1 bestimmen.
+Die räumliche Spiegelung ist ein eigener Typpfeil; OS Zeit und
+Quarterwechsel werden nicht mit ihr gleichgesetzt.
+
+77 OriginLab Kontrollen und 14 unmittelbare Regressionen bestanden.
+Der integrierte F1 Suchpfad führt die neue Kontrolle aus. R113
+blieb BLOCKED, alle vier Originalwerte fehlen. Zuerst dieselbe
+gewichtete bosonische Endpunktform mit Spiegelseite,
+Originalselektor und gebundener absoluter Leerreferenz kontrahieren.
+F1 bleibt in Bearbeitung. Keine Ledgeränderung.
+Atlas 5f4bb98ed56ce9d9b87df9fa.
+[Rechnung und Grenzen](evidence/ORIGINLAB-REFLECTED-CAP-20261116.txt).
+
+Der parallele Yukawa Jet wurde mit demselben Full96 Lauf wiederholt.
+Bei zwei passenden Paarabschlüssen und unverändertem Historienfaktor
+verschwindet die lineare kontrollierte Yukawa Ableitung. Die zweite
+ist auf den Paar und Quartikabschlüssen näherungsweise 0.03876673
+und 0.07733103. Diese Werte betreffen den räumlichen Kontrolltransfer
+bei Prüfbreite 1/10. Sie enthalten weder die Seevariation noch einen
+ursprünglich integrierten gemischten Wert. Der OriginLab Gesamttest
+mit Flint bestand 113 Tests. Nach der parallelen Änderung wurde die
+integrierte Paar, R113 und F1 Kampagne erneut ausgeführt.
+Aktuelle Quellenbindung im Atlas 150803d76a0b8a7c79027b49.
+
+## R113PAIREDYUKAWA20261116 · Lineare Null und orthogonale Antwort
+
+Fable 5.2 Hoch über Google Chrome gegengeprüft. Sein ursprünglicher
+Pfaffianvorschlag ist ein eigener Fermionchart. Der R113 Originaltext
+setzt komplexe Außenpotenzen mit festem Grad null voraus. Im passenden
+räumlichen Doppelspiegel lieferten Hauptminoren und konstante
+Determinante die linearen Nullen für Y und skalares UY bei festem
+Seefaktor. Sie bleiben bei beiden festen Rändern im Paarraum nach
+jeder linearen Originalintegration erhalten. Die zweite diagonale
+Ableitung ist für einen Zwischengrad mit nichtverschwindender
+Yukawamarke strikt positiv. In den äußersten Graden ist der
+normierte Überlapp konstant.
+
+Die unabhängige Hauptminorenrechnung mit d=4 gab in allen fünf Graden
+lineare Nullen und die zweiten Ableitungen 0, 1/2, 2/3, 1/2, 0.
+Die einzelne Koordinatenrichtung gab als Gegenkontrolle linear 1.
+Im 384er Full96 Originalmatrixlauf bei räumlicher Prüfbreite 1/10
+betragen die zweiten Diagonalantworten etwa 0.03876673 und
+0.07733103. Die Norm² der linearen Antwort außerhalb der Paarlinie
+beträgt etwa 0.04013025. Damit ist eine konkrete Richtung für den
+nativen Außenabschluss verfügbar. Kein neuer Gewichtsparameter,
+keine Identifikation der räumlichen Breite mit physischer Zeit.
+
+113 Tests bestanden. Im integrierten Suchlauf 48 affine Wörter und 15
+P1 Ursprungshypothesen. F1 blieb offen, der R113 Adapter gab keine der
+vier Originalmarken aus. Tatsächlichen Cap auf den Paarraum und seine
+orthogonale Antwort kontrahieren und einen möglichen ursprünglichen
+Seeterm im gleichen Quellenaufruf auswerten. Kein Ledgerwechsel.
+Atlas `0ca6009c4d73d55b99226fa6`.
+[Quellen und Ableitung](evidence/R113-PAIRED-YUKAWA-20261116.txt).
+
+## R113WEAKCENTRESEWING20261116 · Gemeinsame Eichprojektion und Zeitverklebung
+
+Der tatsächliche schwache Zentrumslift des Full96 Assemblers
+erhält Majorana und den Paarvektor, während alle vier
+Yukawarichtungen das Vorzeichen wechseln. Mit derselben Umkehr
+der Higgskoordinate erhält der gemeinsame Projektor die aus V[b]
+gebildete Randsektion. Der Überlapp mit der ursprünglichen
+linearen Tangente ist in der Raumkontrolle 0.38982929 gegen die
+analytische untere Schranke 0.38554044. Die Fermionmittelung
+bei festem Higgs löscht denselben Überlapp exakt. Die separat
+genähte Seevariation liefert im bedingten Originalprofil
+d log(s)/dy ungefähr -26.39526611. Sie bleibt als eigene
+Markierungsvariante ausgewiesen.
+
+Zwei reversible Hilfsverklebungen mit den lokalen geladenen
+Paarmarken, gemeinsamem stationärem Zustand, Spektrum {0,1,2}
+und absolutem Leerwert 1 liefern zum selben Zeitpunkt exakt
+Mischwert null beziehungsweise einen strikt positiven Mischwert
+von ungefähr 0.00639768 in der gewählten Radialkoordinate.
+Eine hinreichende Kurzzeitschranke benutzt nur gleichzeitiges
+Mischmoment und die Dirichletenergien beider Marken am gleichen H.
+
+Fable 5.2 in Chrome konsultiert. Der Forschungsbericht der
+anderen Sitzung zu K4 und selbstreziproken Quellen wurde bis
+Abschnitt 11 gelesen. Unabhängige dyadische Addition trägt
+die bedingte Gaußauswahl. Die geordnete Originalverklebung
+braucht einen eigenen Nachweis dieser Komposition.
+
+118 OriginLab Tests bestanden. Der integrierte F1 Lauf prüfte
+48 affine Wörter und 15 Ursprungshypothesen. Er lieferte keine
+der vier ursprünglichen R113 Auslesungen. F1 bleibt in
+Bearbeitung. Naht, Determinante und Gap auf der gekoppelten
+Randsektion auswerten und die gleichzeitigen Formen des
+gemeinsamen physischen Generators prüfen. Keine Ledgeränderung.
+Atlas `b91084c9a962166dc1f50574`.
+[Rechnung und Geltungsbereich](evidence/R113-WEAK-CENTRE-SEWING-20261116.txt).
+
+## R113THREEWINDOWORDER20261116 · Exakte Dreifensterordnung
+
+Modularer Suchlauf auf den originalen v252 Matrizen im räumlichen
+Full96 Menü. 387420489 Kandidatenpaare wurden nach den ersten drei
+Ableitungen in Gleichheitsklassen aufgeteilt. Nach der ersten und
+zweiten Stufe bleiben 2803221 und 22355 Paare. In der dritten Stufe
+bleiben genau 19683 gleich geordnete Spiegelpaare. Eine tatsächliche
+Kollision bis Ordnung zwei wird in der dritten Ableitung an Zeile
+193, Spalte 0 mit Residuen 4164 und 27928 getrennt. Die analytische
+Eindeutigkeit setzt sich durch Lindemann–Weierstrass für alle
+positiven algebraischen Vergleichsbreiten fort.
+
+Für ein positives gemeinsames Verlaufsmaß selektiert die
+Norm² von R_a S R_b^t-S genau den Spiegelträger. Unabhängige
+nichttriviale Marginale scheitern in dieser Klasse. Ein linearer
+Mittelüberlapp von eins lässt dagegen falsche Paarungen zu.
+Ein exaktes positives Zweipunktmodell liefert den
+mittleren quadratischen Defekt 29889/14464. Bei der ursprünglichen
+Breite 1/10 zeigt die unabhängige Gleitkomma Gegenprobe etwa
+4.29e-29 und 1.34108e-4 für richtiges und falsches Paar.
+
+Fable 5.2 Hoch über Chrome hat den Beweis und die Normidentität
+gegengelesen. Der R113 Verbraucher bildet die Defektform jetzt
+aus drei Blöcken einer gemeinsamen positiven Grammatrix.
+Geprüft werden der Rang vor und nach P_adm und die äußere
+Kontraktion. Die Gegenkontrolle zeigt einen Rang eins Defekt,
+den der äußere Selektor vollständig verbirgt.
+
+122 OriginLab Tests bestanden. Der integrierte Lauf prüfte
+48 affine Wörter, 19 Ursprungshypothesen und den Dreifensterfall.
+R113 lieferte keine der vier physischen Originalantworten.
+Die wirklichen Gramblöcke auf der gemeinsamen ursprünglichen
+Zeit und dem äußeren Rand auswerten. F1 bleibt in Bearbeitung.
+Keine Ledgeränderung. Atlas `5048bd9c02a53911833707bb`.
+[Originaldaten und Beweis](evidence/R113-THREE-WINDOW-ORDER-20261116.txt).
+
+## ORIGINLABPAIRCENSUS20261116 · Geordnete Full96 Paarung und vier P1 Familien
+
+Der räumliche Full96 Vergleich legt im reinen Einfensterabschluss
+jeden der 27 Spiegelpartner eindeutig fest. In jedem inneren Grad
+erzeugt jede Fehlpaarung einen strikt positiven Exzess. Der Grad eins
+Exzess begrenzt die unbekannte Fehlpartnermasse einer nichtnegativen
+Mischung rational. Die exakte Gegenprobe für vertauschte Reihenfolge
+ergibt dagegen 47/128 im Zweierraum.
+
+Bei zwei unabhängigen Fensterfolgen reduzieren die ersten beiden
+Ableitungen 531.441 Paarungen über 6.859 auf 729. Der aktuell
+integrierte Dreifensterzweig der Parallelsitzung reduziert
+387.420.489 Paarungen über 2.803.221 und 22.355 auf 19.683.
+Die 22.355 Kandidaten nach zwei Ableitungen wurden separat aus
+Summe und Kommutatorkoeffizienten in ganzen Zahlen bestätigt.
+Im exakten affinen Lift gilt dieselbe Trennung bei jeder positiven
+algebraischen Vergleichsbreite nach Lindemann und Weierstrass.
+Forderung der Paarerhaltung für jede einzelne Historie erzwingt
+bei nichttrivialer Verteilung korrelierte Partner.
+[Dreifachordnung und Einzelbreitenbeweis](evidence/R113-THREE-WINDOW-ORDER-20261116.txt).
+
+K4 Selbstdualität, gerichtete Anker, Fourierfixpunkte und unabhängige
+dyadische Komposition laufen als vier zusätzliche P1 Hypothesen.
+Es sind 19 aktive Familien. Die affine Suche bis Grad vier prüft
+192 Wörter und behält 13 Richtungen. Das geordnete E(-2) Paar
+trennt darin weiterhin 1/16 und 9/16. Der R113 Adapter prüft bei
+erfüllter Quellenbindung das gemessene ABAB gegen N_1-2 N_C,
+einschließlich des vollen Matrixrests und des skalaren Restes.
+
+120 OriginLab Tests bestanden. Der ursprüngliche R113 Adapter
+meldet BLOCKED und liefert keine der vier Auslesungen. Die
+Physik bleibt bei 52 abgeschlossenen F1 Unteraufgaben in ihrem
+jeweiligen Umfang. Dieselben offenen Bosonendpunkte, der äußere
+Naht-, Determinanten- und Gapabschluss und die absolute Referenz
+bleiben die nächste Originalrechnung. Kein Ledgerwechsel.
+Atlas `0ee5275ae0b67e457595ad1a`.
+[Rechnung und Reproduktion](evidence/ORIGINLAB-PAIR-CENSUS-20261116.txt).
+
+Der integrierte dyadische Folgetest koppelt die beiden Profile durch
+genau die ermittelte Spiegelung. Die normierte Summe skaliert die
+zweiten Momente mit (2,0,2). Damit ist jede in dieser Schicht
+stabile Verteilung mit endlichem zweitem Moment auf die
+Nullfluktuation konzentriert. Die primitive Gaußhypothese
+verlangt eine andere oder getrennt hergeleitete Komposition.
+Atlas `ede1460036f5c97e023d4471`.
+[Nachweis](evidence/ORIGINLAB-MIRRORED-DYADIC-20261116.txt).
+
+## ORIGINLABCOHERENTF120261116 · Kohärente Quelle, Suche und Lean
+
+Die vier Familien des neuen Berichts sind in OriginLab registriert.
+Aufeinander folgende Nennerstufen 2 bis 4 ergaben 2, 8 und 22
+Kandidaten und 23 aktive P1 Familien. Die 192 affinen Wörter
+blieben im integrierten Lauf aktiv. Alle 32 Modelle erzeugen ihre
+Z Werte und drei Gramblöcke aus einer gemeinsamen Transfermatrix
+und einer separaten Modellreferenz, gefolgt vom R113 Verbraucher.
+Das kanonische Modell liefert normalisiert ABAB=-1 und i η q.
+Die entgegengesetzte Phase ändert den quadratischen Defekt.
+127 Worte bestehen in den beiden Modellrealisierungen einschließlich
+gerader Majorana Marker. Zeitrate und Leertransfer bleiben
+unabhängig unterscheidbar. Der negative Eigenwert des frühen
+Oszillatormarkers schließt die unmittelbare Identifikation mit
+dem nichtnegativen ursprünglichen skalaren Higgsmarker aus.
+
+Der Decoder scheitert am unveränderten additiven Transfer und
+erfüllt die logische Verschränkung am Ausgangsschritt q².
+Eine Vakuumreservoirerweiterung erhält die Energie, und ihre
+partielle Spur entfernt alle logischen Nichtdiagonalelemente.
+Lean Kernel und unabhängiger Replay prüften die drei kohärenten
+Modelllemmas. 123 OriginLab Tests bestanden. Die autonome Queue
+beendete 290 Jobs ohne technischen Fehler. Der zweite direkte
+Aufruf nahm den eingefrorenen Code bei Runde drei wieder auf.
+Der Originallauf blieb BLOCKED bei allen vier R113 Werten und
+nannte evaluate_original_full_blocked_endpoint_source.
+Native F1 Abnahme, absolute Referenz und Zeitkarte bleiben offen.
+Kein Ledgerwechsel. Atlas `cb4f9408790586dde3863596`.
+[Rechenbeleg und Originalgrenze](evidence/ORIGINLAB-COHERENT-F1-20261116.txt).
+
+## R113RELATIVERADIALORDER20261116 · Gemischte Randantwort und radiale Ordnung
+
+Der letzte äußere R113 Referenzskalar fällt aus C_UY heraus.
+Der relative Adapterpfad kontrahiert dieselben vier Zähler, dieselbe
+Gramform und den äußeren Originalselektor. Als Negativkontrolle zur
+Eckenauswertung haben zwei exakte Extremquellen C_UY=0, ihre gemeinsame
+relative Mitte hat C_UY=3/2. Bei unbestimmter Antwort erzeugt die
+Kandidatensuche das nächste zentrierte Wort oder die davor nötige
+Einzelmarke. Die absolut normierten Marken bleiben auf dem relativen
+Pfad offen.
+
+Auf fünf radialen Full96 Vergleichen inklusive Majorana haben alle
+100 Zweierminoren der bedingten K Matrix positives Vorzeichen. Die
+normierte späte Y Marke fällt in beiden Fenstern. Für positive
+bosonische Kreuzquotienten mindestens 243/250 folgt C_UY<0. Zwei
+positive Gewichte mit gleichen bloßen Rändern geben etwa -0.00015728
+und +0.02004267. Die vorhandene lokale vierreelle Higgswirkung liefert
+TP2, falls ihre ursprüngliche Diskretisierung tatsächlich offene
+skalare Nachbarlinks und radiale Restfaktoren ergibt. Das Besselglied
+2 I_1(a r s)/(a r s) erzeugt diese Ordnung streng. Positive
+Zwischenintegration erhält sie. Der ganze ursprüngliche äußere
+Rand und die Zeitkarte bleiben zu binden.
+
+122 OriginLab Tests bestanden. Im integrierten Lauf 192 affine Wörter
+und 23 Hypothesen einschließlich der vier Kohärenzfälle der
+Parallelsitzung. R113 lieferte keine Originalwerte, F1 bleibt in
+Bearbeitung. Nächster direkter Versuch ist die tatsächliche radiale
+Kreuzprobe nach dem ganzen Selektor oder die geordnete zentrierte
+Marke auf derselben Randform. Der absolute Referenzaufruf bleibt für
+Z0 und die übrigen absoluten Größen erforderlich. Keine Ledgeränderung.
+Atlas `bc4dbd01cd859035cd6e8ef4`.
+[Herleitung und Geltungsbereich](evidence/R113-RELATIVE-RADIAL-ORDER-20261116.txt).
+
+## R113REFLECTEDRADIAL20261116 · Eine reflektierte Radialrichtung entscheidet das bedingte Vorzeichen
+
+Auf dem zertifizierten Full96 Profil ergeben 20 frühe Steigungen
+und 64 späte Endpunktsekanten eine uniforme Mischschranke über alle
+frühen Mittelwerte. Bei gleichen Radialrändern gilt
+C_UY <= -(7/10) Var(U) - b Cov(U_e,U_l) mit b in {47,48,49,51}.
+Positive Varianz und nichtnegative Radialkovarianz reichen. Die
+reflektierte PSD Gegenkontrolle besitzt 28 negative Zweierminoren
+und trotzdem C_UY etwa -0.09259375415. Zwei vollständig umgekehrte
+Randpaare liefern etwa +0.47905070359. Auf der bedingten Full96
+Form mit einheitlichen Vorabmassen liefert die unabhängige
+Kontraktion C_UY etwa -0.01110832675 und die neue Schranke
+etwa -0.00137541964. Das sind keine ursprünglichen physischen Werte.
+
+Bei einem tatsächlich adjungiert verbundenen Rand mit Mittelstück
+M>=0, positivem Cap D und gleichem äußeren Selektor P sind die
+Radialblöcke G_ij=Tr(D P T* E_i M E_j T P) ein Gram. Faktoren
+B_j=M^(1/2) E_j T P D^(1/2) geben G_ij=Tr(B_i* B_j). Der
+zentrierte Kreuzwert ist damit eine Norm², ohne Kommutatorannahme
+zwischen P, T und M. Exakte Zweierprobe mit nichtkommutierendem
+P gibt G=((3/2,3/2),(3/2,9)) und zentrierte Kovarianz 4/1125.
+Ein positives M mit negativem Kreuzblock zeigt separat, dass
+die eintragsweise Positivität für die gemeinsame skalare
+Verlaufsdeutung eigenständig geprüft bleiben muss.
+
+Der relative R113 Verbraucher berechnet die bedingte Schranke
+bereits aus den fünf Radialmomenten samt gemeinsamer Leerform.
+Der Modus braucht keine absoluten Referenzdaten oder numerischen
+Y und UY Marken. Die Kontrollrechnung ergibt -63/6250 und erkennt
+im vollen Modus eine widersprechende gemessene Null. Die neue
+Routine läuft im F1 Lauf mit 192 affinen Wörtern und 23 Hypothesen.
+Native R113 lieferte keine der vier Antworten. Für den nächsten
+Originalaufruf den adjungiert verbundenen ausgewählten Rand und das
+normalisierte späte Profil binden. Bei Randsymmetrie reichen Varianz
+und die zentrierte reflektierte Radialrichtung für die Vorzeichenprobe.
+F1 in Bearbeitung, 52 abgeschlossene Unteraufgaben bleiben gültig.
+Kein Ledgerwechsel. Atlas `7f115d71addf5c201bd7ad12`.
+[Beweis und Rechenbeleg](evidence/R113-REFLECTED-RADIAL-COVARIANCE-20261116.txt).
+
+## R113PRIMITIVEHISTORY20261116 · Gemeinsame geordnete Zeitschritte
+
+OriginLab erzeugt die vier Marken aus den drei Zeitabschnitten und
+zwei Einfügungen auf jedem ganzen Faserverlauf. Bei einer expliziten
+vollen Darstellung wird erst nach der ganzen Wortkomposition projiziert.
+Damit bleiben zurückkehrende Zwischenrichtungen erhalten. Komprimierte
+Operatoren brauchen die von der Projektion unabhängige Bildgramform.
+Die getrennte Leerreferenz wird aus ihrem eigenen Transfer kontrahiert.
+Der quadratische Paarfehler entsteht aus denselben gewichteten Fasern.
+
+Die Bildnormgegenprobe mit 10 statt 9 wird zurückgewiesen. Die Rechnung
+mit einem Ausgang aus dem behaltenen Raum und anschließender Rückkehr
+liefert exakt (1, 2, 3, 6). Die kohärenten Suchstufen rechnen über diesen
+Verbraucher 2, 8 und 22 Kandidaten. Beide Phasen bleiben an den Rängen
+null und eins des ausgewählten Defekts trennbar. Der F1 Lauf prüft 192
+affine Wörter, 23 P1 Hypothesen und die kohärenten Lean Zertifikate.
+Der native R113 Aufruf meldet in
+allen drei Runden das fehlende original_blocked_fiber_packet. Die vier
+Originalwerte bleiben leer. Nächster Schritt ist die Herleitung der drei
+Zeitabschnitte und der geladenen Y Insertion auf dem gemeinsam gewichteten
+Full96 Rand. F1 bleibt in Bearbeitung. Die 52 abgegrenzten Abschlüsse
+bleiben gültig. Kein Ledgerwechsel. Atlas `92ba6b8310357b488a3076f8`.
+[Herleitung und Reproduktion](evidence/R113-PRIMITIVE-HISTORY-20261116.txt).
+
+Der autonome Lauf berücksichtigt ein einzelnes erfolgreich geprüftes
+passendes Paket in der R113 Evidenzausgabe und meldet mehrere verschiedene
+Pakete zur gemeinsamen Quellenprüfung. Der F1 Job erhält dieselbe
+ausgewählte Domäne wie die Quellenauswertung. Die synthetische Gegenprobe
+mit zwei verschiedenen gemischten Werten löst keine automatische Auswahl
+aus. Im lokalen Bestand fand die automatische Prüfung fünf Kontrollpakete
+und kein passendes Originalpaket. Nach dieser Integration bestanden alle
+124 OriginLab Tests. Der erneute autonome Lauf beendete 355 Jobs bei
+Auflösung drei bis fünf ohne technischen Fehler. Alle drei Stufen riefen
+die F1 Suche auf und dokumentierten die offene native R113 Quelle.
+
+## ORIGINLABAUTONOMOUSF1MERGE20261116 · Autonomer Supervisor auf main
+
+Der Supervisor durchsucht die registrierten Ursprungsfamilien und
+steigert die F1 Stufe unabhängig von einem vorausgesetzten Beweisvertrag.
+Er entdeckt passende native Quellenpakete und übernimmt geprüfte
+Auswertungen in den affinen Vergleich. Die drei geprüften Stufen 3 bis
+5 hatten keinen fehlgeschlagenen Job. Stufe 5 wurde aus dem vorhandenen
+Checkpoint im Modus ohne feste Endstufe wiederaufgenommen. Der F1
+Nachweis und die physische R113 Quellenbindung bleiben offen.
+
+Auf isoliertem, mit dem öffentlichen HEAD abgeglichenem Stand bestanden
+424 OriginLab Tests sowie 20 gezielte Tests nach den JSON Reparaturen.
+GitHub bestätigt PR #1 und den Mergecommit adfa0135e737fdf60e62d35a110e4993ce911901. Kein Ledgerwechsel.
+[Aufruf und Geltungsbereich](../../../research/originlab/AUTONOMOUS-F1.md).
+
+## ORIGINDIAG20261116 · Fehlender Produzent und fünf Ursprungsproben
+
+Von 246 jüngsten Fortschrittseinträgen nennen 55 dieselbe offene Stelle:
+gewichtete Originalform, absolute Leerreferenz oder Zeitkarte. Der native
+Aufruf liefert null Originalatome. Die im Bestand belegten Gegenpaare zeigen,
+dass P1, P2 und E8 die vier R113 Marken nicht festlegen. Benötigt wird ein
+zusätzliches Auswahlprinzip. Das ist eine Arbeitsfolgerung, kein Beweis.
+
+Exakter Prüflauf im D8 Chart, alle Prüfungen bestanden. Kein einziger der 60
+(10,6) Ströme erhält den Raum dreier Familien. 960 Matrixelemente bleiben
+innen, 480 treten in die vierte Familie aus. Die Kompression auf Full96 ist
+kein Homomorphismus der E8 Stromalgebra. Der Stabilisator von D5 + A3 hat 35
+Involutionstypen. Vier zerlegen E8 in D4 | D4. Keine der 18
+hyperladungsverträglichen Involutionen mit Minusrang vier tut das. Die
+symmetrische Drei Fermionen Spiegelwand ist damit im Gitterumfang
+ausgeschlossen. Eine goldene Struktur scheitert auf D5 und A3 am ungeraden
+Rang. Der Vakuumcharakter der einzelnen Naht hat χ(i) = 12, χ(ρ) = 0 und die
+T Phase exp(−2πi/3). Absolute Werte sind nur für das reflektierte Paar
+definiert.
+
+Nächster Schritt: das geordnete E8 Wort auf dem 128 dimensionalen Materieraum
+mit allen vier Familiengewichten und reflektierter Referenz auswerten. Prüfen,
+ob die bedingte Erwartung auf drei Familien die vier Marken festlegt. F1 und
+F2 bleiben in Bearbeitung. Kein Ledgerwechsel. Atlas `a373d32642b46aab3fbfc18b`,
+Problem `problem:origin-diagnosis-new-hypotheses-20261116`.
+[Befund, Proben und Reproduktion](../../../experiments/theory-contracts/origin-diagnosis-new-hypotheses-20261116/README.md).
+
+## E8WORD20261116 · Vier Marken des geordneten E8 Worts auf dem Materieraum
+
+Im E8 kovarianten Stromvertrag mit Cartanmarker und (10,6) Mittelstrom sind
+die vier Marken ohne freien Parameter festgelegt. Auf den 128 Materiewurzeln
+gilt für jeden der 60 Mittelströme ZY/Z0 = 1/4 und ZU/Z0 = |h|²/4. Exakt gilt
+ZUY = ZY · (Kovarianz von h quer zu γ − (h·γ)²/4). Die verbundene gemischte
+Antwort des Hyperladungsmarkers ist −1/32 für schwache und −1/72 für
+Farbströme, also stets strikt negativ.
+
+Die bedingte Erwartung auf drei Familien reproduziert für jede Wahl der
+ausgelassenen Familie und alle Trägermarker die Werte des vollen Raums. Die
+Kompression liefert ZY/Z0 = 1/6. Das fehlende Drittel sind die Rückwege durch
+die vierte Familie. Familienmarker unterscheiden drei von vier Familien.
+
+Offen bleibt das Wörterbuch zwischen Cartanmarker und dem ursprünglichen
+skalaren nichtnegativen Higgsmarker, außerdem Feldmaß, Zeitkarte und die
+Auswahl der verketteten Wortpaare. F1 bleibt in Bearbeitung. Kein
+Ledgerwechsel. Atlas `2a4e0853692927e5465678f3`, Problem
+`problem:e8-matter-word-four-marks-20261116`.
+[Rechnung und Reproduktion](../../../experiments/theory-contracts/origin-diagnosis-new-hypotheses-20261116/WORD.md).
+
+## E8FAMILYRETURN20261116 · Vollständiger Rückweg und ein einzelner Higgsmarker
+
+Das ursprüngliche affine Wurzelwort p2, gamma, -p1 wurde mit dem
+Gitterkozyklus als Nullmodenfolge auf Grad eins gerechnet. Für 128
+Materieendpunkte tragen die 112 geraden Wurzeln und acht Cartanzustände
+die Zwischenrichtungen. Die Folge hat 14 Rückwege, zwei über Cartan.
+Frühe Materieprojektion liefert null. Die normierte endliche reflektierte
+Spur beträgt 7/64 auf vier Familien und je nach Auslassung 1/8 oder
+3/32 auf drei Familien. Diese Rechnung ist eine andere Antwort als die
+bifundamentale Zweierantwort aus E8WORD20261116.
+
+Bei 7680 exakten Operatorbildnormen in der Zweierantwort ergibt jedes
+Vorzeichenquartett zum festen Koordinatenpaar in der Summe die Identität.
+Jeder gemeinsame einzelne frühe Marker hat dann verbundene Summe null.
+Der parallele geteilte Cartanfaktor hat pro Quartett -1/18 (Farbe) bzw.
+-1/8 (schwacher Träger). Mit dem positiven Hyperladungsquadrat ist die
+verbundene Antwort in allen 60 Fällen null. Bestmögliche maximale
+Abweichung des einzelnen Markers ist 1/32. Auch reine positive
+Dämpfung bei diesem Quadrat verfehlt alle schwachen Werte. Der scharfe
+Betrag der negativen Antwort ist auf 128 Zuständen höchstens 19/768.
+
+Positive gewichtete Verläufe mit dem festen dreigliedrigen Wort ergeben
+bei identischen unteren Marken ein exaktes Intervall von -105/2048
+bis 105/2048 für die verbundene Antwort im Vollraum. Der Transfer
+respektiert den geraden Sektor, ohne volle E8 Äquivarianz vorauszusetzen.
+Die zwei integrierten Runden prüften jeweils 192 affine Wörter und 23
+P1 Hypothesen. Beide bestätigten die 7680 Operatorbildnormen und lieferten
+keinen der vier physischen R113 Werte. Alle 13 gezielten Tests für den
+finalen F1 und R113 Pfad bestanden. `joint_source_checks` kann den
+relativen zentrierten Quartettwert nun auch vor einer absoluten
+Referenzbildung berechnen. Nächster Anschluss ist das schwache Quartett
+auf dem ursprünglichen gewichteten Rand, mit der tatsächlichen Zeit
+und dem einen äußeren Selektor. F1 und F2 bleiben offen. Kein Ledgerwechsel.
+Der Atlas Schreibversuch wurde unterbrochen und ist nicht bestätigt.
+[Beweis, Werte und Reproduktion](evidence/E8-FAMILY-RETURN-SCALAR-20261116.txt).
+
+## R113FOURFAMILYTRANSPORT20261116 · Eichneutrale Gegenprobe und Rückkehrtomographie
+
+Für jede ausgelassene Familie liefert das volle 128er CAR Wort
+mit gleichem Spektrum und gleichen projizierten Einzelmarken
+unterschiedliche gekoppelte Werte. Bei eichneutralen 3+2
+Vergleichsmarken sind es 1/96 und 1/192. Die 60 einfachen
+Rückkehrproben haben Rang 12 auf 32 Diagonalgewichten. Paarweise
+Schnittproben ergänzen Rang 32. Bei Komplementbindung lautet
+der Rangvergleich 6 zu 16. Der isospektrale Zeuge stimmt in
+allen Einzelproben überein und unterscheidet sich in einer
+Schnittprobe um eins.
+
+Die positive einseitige Cartanquadratik reproduziert die
+negative zweiseitige Stromantwort nicht. Sie liefert auf
+allen geprüften Gewichtsauswahlen null. Die Rechnung hält
+die parallele kovariante E8WORD Aussage in ihrem Geltungsbereich.
+Ungerade E8 Ströme führen in 28 gerade Wurzelräume und eine
+Cartanrichtung je Gegenwurzel. Reflektierte Paarung hebt die
+modulare Phase der Vergleichsreferenz auf. Die Skalare 144
+und 0 an zwei Modulwerten bleiben verschieden.
+Der integrierte F1 Lauf führte die neue Prüfung aus.
+R113 meldete BLOCKED. F1 bleibt offen. Atlas Schreibversuch
+unterbrochen. Kein Ledgerwechsel.
+[Rechnung und Geltungsbereich](evidence/R113-FOUR-FAMILY-TRANSPORT-20261116.txt).
+
+## E8MIDDLEBLOCKS20261116 · Farb und schwache Zwischenwirkung
+
+Auf den 128 Materiewurzeln kann ein gemeinsamer positiver
+Zwischenoperator mit einem frühen Hyperladungsquadrat und
+festen ZY/Z0=1/4 die geteilten Cartan Zielwerte nicht erreichen.
+Der maximale Fehler ist mindestens 7/528. Die Schranke ist auf
+dem vollen Raum scharf und gilt ebenfalls nach jeder äußeren
+Familienauslassung. Zwei strikt positive, eichinvariante
+Zwischenblöcke für Farbe und schwache Ströme treffen alle Marken
+in 300 exakten Strom/Auswahl Kombinationen.
+
+Die sechs Besetzungsgewichte pro Typ unterliegen vier
+unabhängigen Gleichungen. Ihre nichtnegativen
+Lösungen erzwingen typabhängig entgegengesetzte Ordnung
+zwischen den Besetzungsorbits (-3,0) und (-1,-2). Die positiven
+Ordnungsabstände betragen mindestens 125/114 und 16/9 in den
+jeweiligen Richtungen. Verschiedene Laufzeiten desselben skalaren
+Generators auf diesen Orbits können das nicht erzeugen.
+
+Alle 73 Tests der lokalen OriginLab Suite bestanden. Die reguläre
+F1 Kampagne auf Tiefe vier führte den neuen Vergleich zusammen
+mit 192 affinen Wörtern und 23 P1 Hypothesen aus. Der native R113
+Aufruf blieb BLOCKED mit vier leeren Originalwerten. Nächste Probe
+ist die Typselektion und derselbe Orbitkontrast auf der tatsächlichen
+gemeinsamen gewichteten R113 Quelle. Die zwei Vergleichsblöcke
+leiten weder das ursprüngliche skalare U[h] noch die Zeitkarte
+her. F1 und F2 bleiben in Bearbeitung. Drei Befunde in Atlasrevision
+`ee840e2befc8167fbec170ed` geschrieben und zurückgelesen. Kein Ledgerwechsel.
+[Herleitung und Reproduktion](evidence/E8-POSITIVE-MIDDLE-BLOCKS-20261116.txt).
+
+## RADICAL20261118 · Sechs Gesamthypothesen und der selbstduale Punkt
+
+Auftrag: prüfen, ob die Suche sich verrennt, und grundsätzlich andere
+Gesamthypothesen testen. 20 Prüfungen bestanden, Exit 0.
+
+Datenabgleich: kein Zug über 2 σ, ausgenommen die Cs Messung von α, die auch
+der Rb Messung widerspricht. Die Leptonquellverhältnisse liegen +0,21 % und
++2,20 % neben den Polmassen. Die Messwerte sind aus dem Gedächtnis zitiert.
+In einer Nachbarschaftsgrammatik der α Gleichung mit 259200 Kombinationen
+liegt genau der TFPT Satz im Fenster CODATA 2022 ± 2 σ, bei einer
+Zufallserwartung von 0,40. Die Stellenzahl von α allein ist dort kein Beleg.
+
+Neu und exakt auf dem holomorphen (E₈)₁ Torus: c₃ = 1/(8π) = E₂(i)/24. Das ist
+die Gitterladungsenergie pro Cartanrichtung jedes selbstdualen Gitters bei
+τ = i. E₈ trifft c₃, D₈ gibt 0,562 c₃, das unverklebte D₅ + A₃ gibt 0,289 c₃.
+Die Stromzweipunktfunktion ist −℘(w; τ) − E₆/(12 E₄). Ihre absolute Konstante
+verschwindet genau bei τ = i. Dort ist der Vakuumcharakter stationär, χ = 12.
+Der antipodale Ortsfaktor ist dort −(ϖ/2π)² = −0,174150 statt −1/4.
+
+Arbeitshypothese G1 für F2: Das fehlende Auswahlprinzip ist Stationarität am
+selbstdualen Modul. Zusätzliche Annahme: reflektiertes Paar gleich Torus. Der
+Anschluss an die vier R113 Marken, das Wörterbuch zum Higgsmarker, Feldmaß und
+Zeitkarte sind nicht hergeleitet. Die Familienaustauschsymmetrie aus dem
+harmonischen Stabilisator ist in der Flavormatrix R nicht vorhanden. Die
+Skalaronskala liegt bei einer Schleife um den Faktor 2,97 über der Skala mit
+sin²θ_W = 3/8.
+
+Nächster Schritt: Torus Zwei und Dreipunktfunktion der geladenen Wurzelströme
+bei τ = i an den Marken 1, i, −1 rechnen und gegen die antipodale Schranke
+(0, 1/(8π)] prüfen. F1 und F2 bleiben in Bearbeitung. Kein Ledgerwechsel.
+Atlaseintrag in dieser Sitzung nicht geschrieben.
+[Hypothesen, Proben und Reproduktion](../../../experiments/theory-contracts/radical-global-hypotheses-20261118/README.md).
+
+## RADICALCHARGED20261118 · Geladene Wurzelströme am selbstdualen Torus
+
+Der in RADICAL20261118 angekündigte Test ist gerechnet, 8 Prüfungen bestanden.
+Gitterspur und Ward Form stimmen für drei Moduln überein. Die geladene
+Zweipunktfunktion ist gleich der Cartanform. Bei τ = i ergeben die Marken
+1, i, −1 den Zweipunktwert −(ϖ/2π)² = −0,174150 und den Dreipunktbetrag
+(1 + √2)(ϖ/2π)³ = 0,175454, gegen −1/4 und 1/4 auf der Ebene.
+
+Der angekündigte Vergleich mit der Schranke (0, 1/(8π)] war falsch gestellt.
+Die Schranke gehört zu einer Gaußkovarianz vom Gewicht 1/2 auf der runden
+Sphäre. Der gleichartige Kern auf dem Torus liefert am Gegenpunkt 0,
+0,8346 c₃ und 1,1803 c₃. Keine Spinstruktur trifft c₃.
+
+Folge: Der selbstduale Punkt ist als Produzent der Ortsfaktoren der R113
+Marken nicht gestützt. Punktwerte dort enthalten ϖ, die TFPT Ausgaben nur π.
+Als Aussage über Energien bleibt c₃ = E₂(i)/24 exakt. Kein Ausschluss von
+τ = i als Auswahlprinzip und kein Ausschluss anderer Träger. Nächster Schritt:
+Sphäre (c₃ als Punktwert) und Torus (c₃ als Energie pro Cartanrichtung) über
+dieselbe Viermarkenüberlagerung verbinden. F1 und F2 bleiben in Bearbeitung.
+Kein Ledgerwechsel. Atlaseintrag nicht geschrieben.
+[Nachtrag und Reproduktion](../../../experiments/theory-contracts/radical-global-hypotheses-20261118/README.md).
+
+## FOURMARKS20261118 · Vier Marken, freie Naht auf zwei Kopien und verklebte Form
+
+Sitzung vom 17. und 18. November, 40 Runden, 48 Prüfskripte mit gespeicherten
+Ausgaben. Exakt an aufgezeichneten Objekten: Die Wurzeln von
+X⁴ + zX + q = 0 mit q³ = 27(z⁴ − 1)/256 lösen das v117 System. Der
+aufgezeichnete Torus ist die an den vier Marken verzweigte Überlagerung der
+Markenkugel. Das R066 Gesetz ist exp(−2π[(q − 1/4)² + (r + 1/4)²]) und über alle
+Versätze und Breiten eindeutig. Die aufgezeichnete Markenmatrix gibt je Paarung
+|θ/η|⁸ und in der Summe den E8 Charakter, 12 am Quadrat.
+
+Der in RADICALCHARGED20261118 genannte nächste Schritt ist gerechnet: Sphäre
+und Torus hängen über die Viermarkenüberlagerung als Reinheit zweier
+gegenüberliegender Bögen zusammen. Unter der Annahme einer freien Naht auf zwei
+Kopien folgen Vierteldrehung, Verschiebungen 1/4 und 3/4, β = 4π und
+θ₃(i)/η(i) = √2. Freie Naht 2, E8 3/2 am Quadrat.
+
+Die 96 nativen Fasern und der Dreifamilienteil der 128 Chartzustände sind
+dasselbe Ladungsmodul, mit Gradierung und Realstruktur. Die Realstruktur bildet
+den nativen Operator mit Verschiebung 1/4 in allen 27 Konfigurationen auf den
+mit 3/4 ab. Auf dem flachen Zustand gilt ⟨HXHX⟩ − ⟨H²⟩⟨X²⟩ = −½⟨|[H,X]|²⟩; das
+gibt −1/32 und −1/72 und im Fall zweier antikommutierender Schnitte ABAB = −1.
+
+Hypothesen, nicht hergeleitet: verklebte Form Q[F,G] = Tr(F†G)/d mit Referenz 1,
+aus der die aufgezeichnete Tabelle samt Vorzeichen folgt; native Schnitte
+(Gradierung, Richtung des Potentials −iγD_F) mit Kappe auf einer eindeutigen
+Eigenlinie von D_F, Marken (1, 0, 0, iη), bei Schritt null exakt in allen 27
+Konfigurationen. In der verklebten Form sind die Dauern Reihenfolgen.
+
+Ausgeschlossen im jeweiligen Rahmen: Marken als Spitzen der Stufe vier, die
+Fermiondeterminante als Ursprung der negativen gemischten Antwort, die native
+Higgskopplung als Kombination der Paarströme, das Higgsquadrat mit der
+Realstruktur als Spiegel für alle 60 Schnitte. Der native Aufruf liefert
+weiterhin keinen R113 Wert. F1 bleibt in Bearbeitung. Kein Ledgerwechsel.
+Atlas `9c3fcfbb2f9ccd1e34134464`, Problem
+`problem:four-marks-quartic-and-free-seam-source`, 39 Befunde, geschrieben auf
+dem lokalen Atlasstand.
+[Runden und Geltungsbereich](../../../research/originlab/THEORY-BRIEF.md) ·
+[Skripte, Ausgaben, Prüfsummen](../../../experiments/theory-contracts/originlab-four-marks-session-20261118/README.md).
+
+## RADICALBRIDGE20261118 und RADICALHIST20261118 · Brücke und frühe Fassungen
+
+Brücke, 9 Prüfungen bestanden: c₃ = (1/2)/(4π) folgt am Fixpunkt der Inversion
+aus dem Gewicht 1/2 einer Gitterrichtung, ohne Normierungswahl. Für E₈ ist die
+Energie pro Cartanrichtung c₃/Im τ plus ein modularer Rest, der bei τ = i
+verschwindet. Auf der Sphäre legt das Gewicht nur den Fluss c₃/2 fest, der
+Wert c₃ braucht die Normierung 4π und den Radius eins. Die Zuordnung
+Sehne = 2 Im τ scheitert. Der Sphärenwert folgt nicht aus dem Toruswert.
+
+Frühe Fassungen, 8 Prüfungen bestanden: Die Schließung von φ wurde dreimal
+geändert, mit Zügen +23918 σ, −418 σ, −242 σ und heute +1,9 σ gegen CODATA
+2022. Das stärkt die Hypothese G0. Die 41 stammt aus b₁ = 41/10. Die Kubik ist
+keine Laufgleichung (d(1/α)/dL = −15,48 statt +0,65). In y = 1/(64π²α) lautet
+sie 8 b₁ L y³ + y/(4π) = 1. Das geschlossene Paar φ = 2πk der historischen k
+Kubik verfehlt α um mehr als 1000 σ. Die rohen Nachrichten des Austauschs
+liegen außerhalb des Repositorys und wurden nicht gelesen.
+
+Nächster Schritt: Chronologie prüfen, ob der Exponent 5/4 der Rückkopplung vor
+dem Vergleich mit dem Messwert hergeleitet war. F1 und F2 bleiben in
+Bearbeitung. Kein Ledgerwechsel. Atlaseintrag nicht geschrieben.
+[Nachträge und Reproduktion](../../../experiments/theory-contracts/radical-global-hypotheses-20261118/README.md).
+
+## RADICALCHRONO20261118 · Chronologie des Koeffizienten 5/4
+
+9 Prüfungen bestanden. Quelle sind die datierten Fassungen im Archiv. Fassung
+2.4 vom 22. Januar 2026 führt den Zweidefektterm mit Koeffizient 1 und verfehlt
+CODATA 2022 um −46,9 σ. Fassung 2.5 vom 27. Januar 2026 setzt den Koeffizienten
+auf g/4 = 5/4 und liegt bei +1,9 σ. Dieselbe Fassung rechnet den Wert aus, der
+den Messwert genau trifft: 1,2404 ± 0,0051 in Einheiten von δ_top². Der
+Koeffizient 5/4 war also nicht vor dem Vergleich mit dem Messwert hergeleitet.
+
+Suchraum: Unter den 18 Brüchen mit Nenner bis 4 in (0, 3] trifft nur 5/4, die
+Zufallserwartung ist 0,12. Bei Nennern bis 12 sind es 138 Brüche mit Erwartung
+0,94. Die Resummation zu (1 − q)^(−5/4) kam später und ändert den Zug um
+0,03 σ. Folge: Die Übereinstimmung von α auf 1,9 σ ist kein unabhängiger Test.
+Ohne nachträglich gewählte Bausteine bleibt die Abweichung von 3,7 ppm der
+Fassung 1.0. Eine Anpassung ist damit nicht bewiesen.
+
+Nächster Schritt: das Zweidefektgewicht ohne Blick auf α aus der Zweidefekt
+Zustandssumme herleiten. F1 und F2 bleiben in Bearbeitung. Kein Ledgerwechsel.
+Atlaseintrag nicht geschrieben.
+[Nachtrag und Reproduktion](../../../experiments/theory-contracts/radical-global-hypotheses-20261118/README.md).
+
+## RADICALTWODEFECT20261118 · Zweidefektgewicht ohne Blick auf α
+
+9 Prüfungen bestanden. In den Quellen ist keine Zweidefekt Zustandssumme
+definiert, das Prüfskript der Fassung 2.5 fehlt im Repository. Neun übliche
+Zählungen eines Defektgases geben für den Koeffizienten von q² die Werte −1,
+0, 1/2, 3/5, 4/5, 1, 2 und 3, nie 5/4. Die Begründung über die
+Holonomieentartung g = 5 ist damit nicht gestützt.
+
+Ein natives Objekt liefert die ganze Funktion: q(1 − q)^(−5/4) ist q mal die
+Zweipunktfunktion des Spinorfelds von so(10)₁ mit Gewicht 5/8. Von den vier
+nativen Exponenten 3/4, 1, 5/4 und 2 trifft nur 5/4 den Messwert (−95,5 σ,
+−46,8 σ, +1,9 σ, +148 σ). Nicht hergeleitet sind die Auswahl des D₅ Faktors
+und der Einsetzungsabstand q. Dieser ist nicht das Doppelverhältnis der vier
+Marken. α unterscheidet die Fortsetzungen der Reihe nicht (unter 0,1 σ).
+
+Arbeitshypothese G6: Die Rückkopplung ist die Zweipunktfunktion des Feldes,
+das die Z₄ Verklebung trägt, eingeschränkt auf D₅. Nächster Schritt: Abstand
+q und D₅ Einschränkung aus der Nahtgeometrie prüfen. F1 und F2 bleiben in
+Bearbeitung. Kein Ledgerwechsel. Atlaseintrag nicht geschrieben.
+[Nachtrag und Reproduktion](../../../experiments/theory-contracts/radical-global-hypotheses-20261118/README.md).
+
+## RADICALSEPARATION20261118 · q ist kein Einsetzungsabstand
+
+9 Prüfungen bestanden. Auf dem Zylinder gibt das D₅ Spinorfeld
+q^(5/8) (1 − q)^(−5/4) und verfehlt CODATA um mehr als 10⁷ σ, der ganze
+Klebevektor gibt q (1 − q)^(−2) und verfehlt um +148 σ. Die Formel ist ein
+gemischtes Objekt: führende Potenz 1 vom ganzen Klebevektor, Exponent 5/4 nur
+von D₅. Eine Regel, die den A₃ Faktor entfernt, steht in keiner gelesenen
+Quelle. Eine zweite Lesart ist gleich kurz: 4 q d/dq (1 − q)^(−1/4).
+
+Als Abstand bräuchte q die Zeit 2α + 9,02548. α legt diese Zahl auf 6·10⁻⁷
+fest, 19 vorab benannte native Zeiten verfehlen sie um mehr als 40000 σ.
+δ_top = 1/(2⁸ vol S⁷) ist ein Gewicht. G6 ist in der strengen Form nicht
+gestützt. Für den Rückkopplungsterm gibt es damit weder eine vorab erfolgte
+noch eine nachträglich gelungene Herleitung.
+
+Nächster Schritt: die Alpha Gleichung prospektiv an einer noch nicht
+verglichenen Größe prüfen. F1 und F2 bleiben in Bearbeitung. Kein
+Ledgerwechsel. Atlaseintrag nicht geschrieben.
+[Nachtrag und Reproduktion](../../../experiments/theory-contracts/radical-global-hypotheses-20261118/README.md).
+
+Nachtrag vom selben Tag (Runden 41 bis 47, 55 Prüfskripte): Der einfache Spiegel
+ist die aufgezeichnete OS Konjugation (Familie D aus v519), die Realstruktur die
+andere Familie. Mit Spur aus P1 und Reflexionspositivität bleibt nur der einfache
+Spiegel. Die gemischte Marke bei gleicher Zeit ist der halbe Kommutator; mit der
+Richtung des nativen Potentials als Schnitt ist sie i·η mal dem chiralen
+Mittelwert des Markers, für die Hyperladung null. Der native Kandidat ist exakt
+das aufgezeichnete Kanonbündel mit q = 1; der unveränderte R113 Verbraucher
+liefert darauf Z_0 = 1, Z_U = Z_Y = 0, Z_UY = ±i und ABAB = −1. Unter der einen
+Annahme, dass die Originalform ein Vektorzustand auf zwei Seiten der Naht mit
+der aufgezeichneten Spiegelung ist, sind Form, Referenz, Spiegel, Schnitte, Kappe
+und Vorzeichen festgelegt. Der Kandidat braucht Majorana-Neutrinos und eine von
+null verschiedene leichteste Masse. Ohne die Annahme bleibt F1 offen. Kein
+Ledgerwechsel. Atlas `6d0f4e69269a72ff5000d3db`, 48 Befunde.

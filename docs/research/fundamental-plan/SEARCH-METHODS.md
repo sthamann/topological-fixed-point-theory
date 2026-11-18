@@ -5,6 +5,120 @@ Stand: 30. Oktober 2026. Ausführung im Repository `/Users/stefanhamann/Projekte
 
 ## Aktuelle Suchpriorität nach R110
 
+**Positive Zwischenwirkung mit Farb und schwachen Rückkehrblöcken.**
+`e8_family_return` vergleicht einen beliebigen positiven gemeinsamen
+Mitteloperator mit zwei positiven typabhängigen Blöcken. Es prüft
+den exakten Fehler 7/528, die 300 Strom/Auswahl Kombinationen
+des konstruktiven Treffers und die umgekehrte Besetzungsordnung,
+die eine skalare Zeitänderung ausschließt.
+[Beweis und Reproduktion](evidence/E8-POSITIVE-MIDDLE-BLOCKS-20261116.txt).
+
+**Vollständige E8 Nullmodenfolge und skalare Quartettprobe.** Die F1
+Kampagne prüft `e8_family_return` vor der Auswahl der drei Familien.
+Für die feste Folge p2, gamma, -p1 tragen gerade Wurzeln und Cartan
+die Zwischenpfade. Bei den 60 reflektierten bifundamentalen Rückkehren
+schließt die Vierervorzeichensumme einen einzigen gemeinsamen positiven
+Marker als unmittelbare Kopie des geteilten Cartanmarkers aus. Der
+originale Summenwert kann über `joint_source_checks` mit
+`normalization=same_empty` unabhängig vom äußeren Referenzskalar
+geprüft werden. [Exakte Originalprobe im affinen Modell und Eingabe](evidence/E8-FAMILY-RETURN-SCALAR-20261116.txt).
+
+**R113 Komposition auf dem vollen Wortraum.** `ordered_window_legs`
+liefert die vier geordneten Marken aus primitiven frühen, mittleren und
+späten Zeitabschnitten sowie U und Y auf einer gemeinsamen Faser.
+Eine explizite volle Darstellung erhält auslaufende und zurückkehrende
+Zwischenrichtungen. Auf dem behaltenen Quotienten wird Abschluss durch
+unabhängige Bildnormen geprüft. Der kohärente F1 Modellzweig erzeugt
+auch eine separate Leerreferenz und leitet die Paarfehlergrammatrix je
+Faser ab. Die vollständige physische Faser, die Gewichtung und dieselbe
+Zeitkarte sind der nächste ursprüngliche Anschluss.
+[Schema](../../../research/originlab/README.md#r113-inputs) und
+[Nachweis](evidence/R113-PRIMITIVE-HISTORY-20261116.txt).
+
+**Reflektierte Radialmomente.** Im F1 Lauf prüft
+`r113_reflected_radial` das bedingte Full96 Profil per
+Intervallrechnung. Der R113 Aufruf mit
+`normalization_scope=relative_radial_moment_bound` verwendet
+die beiden Formen `Z0` und `ZU` und vier zusätzlich gebundene
+Radialformen. Er gibt die bedingte obere Schranke für
+`C_UY` ohne absolute Referenz und ohne numerische Y Marken aus.
+Eine positive zentrierte Reflexionsrichtung reicht bei
+gleichen nichttrivialen Rändern und gebundenem Profil.
+[Beweis und Originalgrenzen](evidence/R113-REFLECTED-RADIAL-COVARIANCE-20261116.txt).
+
+**Relative R113 Mischantwort und radialer Ordnungstest.**
+Der reguläre F1 Lauf führt `r113_radial_order` auf den
+zertifizierten fünf R032 Radien aus. `r113_synthesis` akzeptiert
+für eine deklarierte endliche Vergleichsklasse das
+`kind=relative_connected_histories` mit vier rationalen
+Markenkoeffizienten und relativen linearen Beobachtungen.
+Bei vorhandenen gemeinsamen ursprünglichen Randformen erlaubt
+`normalization_scope=relative_mark_contraction` den R113 Aufruf
+ohne `reference_scalar`. Der Leser meldet die auf den gemeinsamen
+Leerkanal bezogene Mischantwort. Bei unbestimmten relativen
+Beobachtungen gibt die Kandidatensuche zusätzliche geordnete
+Marken oder einen exakten Gegenzeugen aus.
+[Rechnung und Eingabegrenzen](evidence/R113-RELATIVE-RADIAL-ORDER-20261116.txt).
+
+**Vollständige endliche Profilpaarung und die vier neuen P1 Familien.**
+`python3 -B research/originlab/main.py --campaign r113 --campaign r113_synthesis --campaign f1_solution --q0-depth 4 --jobs 2 --out /tmp/tfpt-f1-pairs`
+führt K4 und seine Reflexionsgegenprobe, gerichtete Fünfpunktanker,
+positive Fourierfixpunkte und die unabhängige dyadische Faltung aus.
+Der Full96 Teil durchsucht alle Einzel- und Zweifensterpaarungen im
+festen endlichen Profilmenü. `--campaign r113_pair_search` führt diese
+Paarung separat aus. Der R113 Adapter testet, sofern beides auf der
+ursprünglichen Quelle gebunden ist, die Projektion auf den Paarraum
+und die unabhängige ABAB Antwort. Die Raumprüfung über variable
+Breiten und die physische Zeitkarte haben verschiedene Voraussetzungen.
+[Herleitung und Gegenproben](evidence/ORIGINLAB-PAIR-CENSUS-20261116.txt).
+Die Zwei- und Dreifensterklassifikation gilt im exakten affinen Lift
+bei jeder positiven algebraischen Breite. Die normierte dyadische
+Summe von gespiegelten Profilen erhält keine nichttriviale
+Verteilung mit endlichem zweiten Moment.
+[Dyadische Gegenprobe](evidence/ORIGINLAB-MIRRORED-DYADIC-20261116.txt).
+
+**Reflektierte Paarquelle.** `f1_reflected_cap` prüft alle Originalprofile des full96 Assemblers, die zwölf internen Eichrichtungen, einen exakten modularen Ausschluss fester Einzweigformen und den abgeleiteten Wortquotienten `1 - 2 N_C/N_1`. `f1_solution` führt die Kontrolle auf der tatsächlichen Originalinstallation ohne vorausgesetzten nativen Lean Abnahmesatz aus. Zuerst den physischen äußeren Abschluss und dieselben zwei gewichteten R113 Endpunkte mit gebundener Referenz auswerten. [Rechnung und Geltungsbereich](evidence/ORIGINLAB-REFLECTED-CAP-20261116.txt).
+
+**Absoluter Paarsektortest.** Die Kampagne `f1_native_pair_selection` liest die vorhandene v746 Kovarianz und den tatsächlichen Shift, prüft die scharfe Viererantwort und rechnet das Gewicht der gleichzeitigen Ortsauswahl mit Slater Determinanten. Der vollständige `f1_solution` Lauf enthält diesen Vergleich. Die untere Schranke einer gemeinsamen positiven Auslese ist −1/4, der Zielwert −1 verlangt eine andere native Operatorstruktur. [Rechnung und Geltungsbereich](evidence/ORIGINLAB-NATIVE-PAIR-SELECTION-20261116.txt).
+
+`f1_solution` erweitert die generative Suche auf das Hauptziel und
+alle acht Prüfpflichten auf einem einzigen Modellterm. Die normalen
+Läufe und die autonome Warteschlange erhalten das vollständige
+Kernelzertifikat und dessen Geltungsbereich. Bei vorgegebenem
+Zielvertrag läuft die kostenweise Suche mit wachsenden Prüfzeiten
+weiter. Eine verdoppelte Suchzeit kann einen unentschiedenen
+Beweisterm erneut prüfen. Die native Belegung braucht die
+ursprünglichen Quell und Grenzwertaussagen. Ein externer
+Kontrollvertrag überprüft den vollständigen maschinellen Ablauf.
+
+**Binäre Schnitte und Clifford Fünfer.** `python3 -B research/originlab/main.py --finite-controls-only --campaign f1_binary_clifford_origin --jobs 1 --out /tmp/tfpt-binary` überprüft einen Zweipunkt Gegenzeugen, die vollständige Pauli Quadratik, die Isometrie zur vorhandenen q0 Tabelle und alle 16 signierten Vierzyklushebungen. Auf der ursprünglichen positiven Form bleibt das geordnete Viererwort ABAB die erste trennende Antwort nach Identifikation der beiden involutiven Operatoren. Die ursprüngliche Integration samt Selektor und absoluter Referenz bleibt der primäre Schritt. [Rechnung und Geltungsbereich](evidence/ORIGINLAB-BINARY-CLIFFORD-ORIGIN-20261116.txt).
+
+Die Kampagne `proof_search` durchsucht Programme und Beweisterme nach
+gemeinsamen Kosten. Ihr Abschluss prüft den exakten Typ des festgelegten
+Ziels, die transitiven Axiome und die erneute Kernelprüfung. Ein
+wechselndes Beweisbudget bleibt ein Suchparameter. Verworfene
+Beweisterme schließen die erzeugende Regel nicht automatisch aus.
+Für den normalgeordneten Oszillatorkern ist der Abschluss ausgeführt.
+Im F1 Pfad muss die formale Zielaussage aus den ursprünglichen
+Quellverträgen mit gemeinsamem Modell, absoluter Referenz und
+physikalischen Grenzwerten erarbeitet werden.
+
+**Konforme Randantwort und markierte Paarung.** `python3 -B research/originlab/main.py --finite-controls-only --campaign f1_spherical_pairing_selection --jobs 1 --out /tmp/tfpt-spherical-pairing` prüft die vollständige skalare Ward Rekursion, die exakte Tetraeder zu Quadrat Schwelle im gegebenen Paarmodell und zwei Singulett Steuermarken. Die Klasse ist analytisch entschieden. Für Anwendungen muss die Originalquelle das Feldwörterbuch, die beiden tatsächlich geordneten Paarkorrelationen, getrennte Dipolantworten, die Ward Bewegung und ihre absolute kinetische Normierung bereitstellen. [Herleitung und Scope](evidence/ORIGINLAB-SPHERICAL-PAIRING-20261116.txt).
+
+Der ausführbare OriginLab Lauf `q0_rule_search` reduziert am affinen
+Wurzel und Cartan Wortspann nacheinander die reelle reflektierte Form,
+Gradierung, Nullmoden Ward Bedingungen und zwei Vergleichskontakte.
+Er konstruiert ein exaktes positives Gegenpaar, prüft die
+Zweifensterverklebung und gibt unabhängige Einfensterabfragen sowie das
+kürzeste trennende Wort des Paars aus. Die native Prüfung übernimmt den
+bereits vorhandenen R113 Selektor, die Zeitbindung und die absolute
+Leerreferenz. `p1_origin_hypotheses` nimmt registrierte Hypothesen und
+Kegelordnungen als Fallparameter und vergleicht präphysikalische,
+geometrische und physikalisch interpretierte Mechanismen mit eigenen
+Prüfgrößen. [Aufruf und Datenformat](../../../research/originlab/README.md#r113-inputs).
+
+**Präphysikalische Interpretation H0.** `python3 -B research/originlab/main.py --finite-controls-only --campaign f1_prephysical_interpretation --jobs 1 --out /tmp/tfpt-h0` prüft die Obstruktion unter geänderten Koeffizienten, das exakte rekonstruierte Operatorprodukt bei verschiedenen CP Fortsetzungen und einen lokalen Normierungsgegenzeugen bei festem kinetischem Koeffizienten. Die ganze sphärische Familie wird analytisch entschieden. Eine native Herleitung muss das effektive Potential oder ein äquivalentes unabhängiges Modenspektrum aus der gewichteten Originalform bestimmen. [Ausführung und Geltungsbereich](evidence/ORIGINLAB-H0-INTERPRETATION-20261116.txt).
+
 Der lebende Plan priorisiert F1 und die tatsächliche ursprüngliche
 räumliche Feld und Zeitzuordnung aus R109/L. Die vorhandenen G/H/I/J/K/L
 Quellenanschlüsse und alle52 scoped Erledigungen erhalten. Die direkte
@@ -93,6 +207,31 @@ Die vorhandene Transferklasse und Referenzeigenwirkung sind passend zur Original
 **Verfahren und Test:** Die volle Antwort sämtlicher überlebender Konstruktionen vergleichen. Der erste exakte Unterschied wird als Versuch ausgegeben. Minimale Länge nur behaupten, wenn sämtliche kürzeren zugelassenen Wörter vollständig geprüft sind. Erst danach im Original klären, ob dieser Versuch physikalisch zugänglich ist.
 
 **Vorhandener Consumer:** `discriminate` in `seam-positive-kernel-search-20261015/run_search.py`; die Sitzung reproduziert zehn trennende Wörter von Länge fünf für die zwei vorhandenen vollständigen Kerne. Ein nur auf beiden Seiten vorkommendes Wortregister liefert ohne Vollständigkeitsnachweis keine globale Minimalität.
+
+**Schwacher Halbspinorweg im ursprünglichen Takt.** OriginLab berechnet mit
+`weak_folded_clock` die exakte Wurzelhebung und die Energieverschiebung
+in beiden Viertelcharts. Der Leser `weak_clock_sectors` gewinnt sieben
+komplexe Beiträge aus den ersten sieben Potenzen einer festen frühen
+Aktion. Potenz sieben prüft die Rekonstruktion auf demselben Maß. Die
+zusätzliche Zeitprobe vergleicht das Verhältnis der schwachen Gewichte
+mit $\sqrt{xy}$ für den wörtlichen Faltgenerator und mit eins für das
+gegebene W Modell. Fünf Zeitbreiten je Intervall genügen für einen
+Rangtest seiner fest präparierten Halbspinorantwort. Die Kampagne
+`r113_synthesis` liefert deren Ranggrenze vier aus den wirklichen
+CAR und CCR Termen. Weiterführende Kandidaten brauchen die ursprüngliche
+regionsabhängige Feldvariation und die gemeinsame gewichtete Randform
+einschließlich Zeit, Adjunktion und absoluter Leerreferenz.
+
+**Gemeinsame Zweiflächenableitung.** `p1_field_search` löst im angegebenen
+endlichen Kragen die geladenen ersten Ableitungen mit unabhängiger
+Verankerung der ursprünglichen Hyperladung. Das Kommutatorpaar aus
+Kovarianz und Hyperladung eliminiert die gemeinsame Rahmenbewegung.
+Ein nachfolgender geteilter Fermiquotient gewinnt den intrinsischen
+Feldoperator. Der Solver prüft die vollständigen drei Matrixjets,
+einschließlich Querblöcken und der unabhängigen Wärmeantwort. Ungleiche
+ursprüngliche Energien in verschiedenen Hyperladungssektoren sind Teil
+der benannten Klasse. Die tatsächlichen gewichteten Eingangsdaten
+gehören zum offenen P1 Aufruf.
 
 ## S5. Ganze ursprüngliche Wirkungsrichtungen lösen
 

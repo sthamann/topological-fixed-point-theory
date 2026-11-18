@@ -1,0 +1,487 @@
+SMEARED OCTIC ENERGY BOUND AND MICROSCOPIC ITERATED LIMIT
+=========================================================
+
+25 October 2026. Repair of the ultraviolet step in
+MICROSCOPIC-TO-OCTIC-COMPOSITION.txt after independent review.
+No Atlas, index, ledger or original source was changed.
+
+Verdict
+-------
+
+PROVED on the algebraic finite-energy core, in the following exact sense.
+
+The shifted neutral octic has a closable smooth smearing F8(rho), and both
+F8(rho) and its adjoint are absolute strong mode sums on every fixed energy
+cutoff. There is an energy-independent sequence of globally defined finite
+CAR-word operators G_K which eventually agrees with the current-mode cutoff
+on every fixed energy sector. The existing QWZ elementary-field theorem
+therefore gives the transported iterated limit
+
+  first N -> infinity, then current-mode cutoff K -> infinity.
+
+This already repairs the strong smeared-operator claim. The finite microscopic
+operators G_(N,K) are global Fourier operators, so this route does not assert
+exact microscopic interval support.
+
+The separately mollified local route also works as an iterated limit. One must
+first combine the old point-splitting subtractions into their finite Wick and
+divided-difference form. Then take
+
+  N -> infinity at fixed mollifier scale sigma and split epsilon,
+  sigma -> 0 at fixed epsilon,
+  epsilon -> 0.
+
+This gives the same F8(rho) strongly on the finite-energy core, together with
+its adjoint. It does not give a bound uniform in N,sigma,epsilon, a simultaneous
+ultraviolet limit, or a point field as a bounded operator.
+
+1. Current algebra and energy convention
+-----------------------------------------
+
+Let j^a_n, a=0,...,7, be the eight folded eigenchannel current modes in the
+negative-sea alpha=1/4 presentation. On the algebraic finite-energy domain,
+
+  [j^a_n,j^b_m]=n delta_ab delta_(n,-m),
+  (j^a_n)^*=j^a_-n.
+
+The eigenchannel quasifree covariance is diagonal, so these channels admit
+the usual derived graded tensor-product factorization. They are nevertheless
+the eight images of the one fixed folded CAR source, not eight independently
+chosen source copies. In the original arc chart their covariance is generally
+correlated.
+
+On one fixed charge sector, including the source p=0 sector, the zero modes
+are fixed scalars. The shift delta_alpha therefore changes only those scalar
+zero-mode entries. Let
+
+  H_osc=sum_(a=0)^7 sum_(n>0) j^a_-n j^a_n
+
+and let P_E be its spectral projection for energy at most E. Additive fixed
+ground and charge energies do not change any estimate below.
+
+For a projection in the whole CAR Hilbert space one must also bound the
+charge sectors. P_E for H_osc alone would have infinite rank. The actual
+positive source generator, in folded energy units, is
+
+  H_source/8 = H_osc + sum_k [q_k^2/2 + delta_k q_k].
+
+Here q_k is an integer and |delta_k|<=15/32 in the alpha=1/4 chart. Therefore
+
+  q_k^2/2 + delta_k q_k >= q_k^2/32.
+
+An actual source-energy cutoff consequently includes only finitely many
+charge sectors and bounds |q_k+delta_k| by C sqrt(1+E). The zero modes then
+obey the same square-root energy estimate as the nonzero modes. Equations
+(9)--(18) extend with one uniform coefficient constant to this full positive
+source-energy cutoff. Whenever finite dimensionality or V_N is used below,
+P_E means this actual source cutoff, or one explicitly fixed charge sector,
+and not H_osc alone with unrestricted charges. No oscillator index is being
+identified with a spacetime dimension.
+
+The four positive currents h^c_n=sum_a A_ca j^a_n use the already fixed matrix
+A=U_+^T O^T M. Since A is finite and AA*=I4, bounds for j transfer to h with
+one fixed constant. The isotropy AA^T=0 is needed for the octic field identity,
+but the estimates below do not rely on cancellations from isotropy.
+
+The normalized shifted octic is
+
+  F8^d(z)=:I8(h(z)+b/z):/[96 sqrt(140)],
+  b=A delta_alpha.
+
+It is a finite linear combination of normal-ordered current monomials of
+current degree r<=8. Every occurrence of b is a scalar zero-mode insertion and
+therefore lowers r.
+
+2. One-current energy bounds
+----------------------------
+
+For n>0 and psi=P_E psi,
+
+  ||j^a_n psi||^2
+    =<psi,j^a_-n j^a_n psi>
+    <=E ||psi||^2.                                        (1)
+
+The commutator gives
+
+  ||j^a_-n psi||^2
+    =||j^a_n psi||^2+n||psi||^2
+    <=(E+n)||psi||^2.                                     (2)
+
+Equations (1) and (2) hold componentwise and hence, with a fixed coefficient
+constant, for h^c_n and its conjugate current. They also hold after an earlier
+finite string of current modes, with E replaced by the largest intermediate
+energy.
+
+3. Polynomial bound for every octic mode
+----------------------------------------
+
+Consider a degree-r normal-ordered current monomial of total mode m,
+
+  W_m=sum_(n_1+...+n_r=m) :h^(c_1)_n1 ... h^(c_r)_nr: .    (3)
+
+Zero modes are fixed scalars and can be omitted from the count. For one term
+in (3), let
+
+  P=sum_(n_i>0) n_i,
+  Q=sum_(n_i<0) |n_i|.
+
+Normal ordering places the positive modes on the right. Acting on P_E, the
+term vanishes unless
+
+  P<=E.                                                    (4)
+
+Since m=P-Q,
+
+  Q=P-m<=E+|m|.                                           (5)
+
+Thus only finitely many integer r-tuples can act on P_E. Their number is at
+most
+
+  C_r (1+E+|m|)^(r-1).                                    (6)
+
+After all positive modes have acted, the negative modes can raise the energy
+by at most Q. Every intermediate energy is bounded by 2E+|m|. Repeated use of
+(1) and (2) therefore bounds the norm of each surviving term by
+
+  C_r (1+E+|m|)^(r/2) ||psi||.                            (7)
+
+Combining (6) and (7),
+
+  ||W_m P_E||
+    <=C_r (1+E+|m|)^(3r/2-1).                             (8)
+
+For r<=8 the largest exponent is eleven. Since I8 has finitely many fixed
+coefficients and b is fixed,
+
+  ||F8_m P_E|| <= C (1+E+|m|)^11,                         (9)
+
+where C depends only on A,b and the chosen normalization. Applying the same
+argument to the conjugated polynomial gives
+
+  ||(F8^#)_m P_E|| <= C# (1+E+|m|)^11.                    (10)
+
+Here F8^# is the field adjoint, with conjugated A,b and reversed radial
+ordering. Equation (10) is not inferred from (9) by a formal symbol; it is the
+same current-mode proof for the actual adjoint field.
+
+4. Smooth smearing, strong convergence and closability
+------------------------------------------------------
+
+Let rho be smooth on the fold circle and write rhohat_m for its Fourier
+coefficients in the convention paired with F8_m. For every q,
+
+  sum_m |rhohat_m| (1+|m|)^q < infinity.                  (11)
+
+Define on the algebraic finite-energy core D_fin
+
+  F8(rho) psi=sum_m rhohat_m F8_m psi.                     (12)
+
+Equations (9) and (11) make (12) absolutely convergent in Hilbert norm for
+every psi in D_fin. The symmetric cutoff
+
+  F8^[K](rho)=sum_(|m|<=K) rhohat_m F8_m                  (13)
+
+satisfies the operator estimate
+
+  ||(F8(rho)-F8^[K](rho))P_E||
+   <=C(1+E)^11 sum_(|m|>K)|rhohat_m|(1+|m|)^11 ->0.        (14)
+
+In particular, with
+
+  C_rho=C sum_m |rhohat_m|(1+|m|)^11,
+
+the full smeared field obeys the explicit energy bound
+
+  ||F8(rho)P_E|| <= C_rho (1+E)^11.                       (14a)
+
+The adjoint field obeys the same estimate. Let rho^# denote the smooth test
+function obtained from rho by the retained circle/radial adjoint convention;
+it includes complex conjugation and the fixed conformal coordinate factor.
+On D_fin the mode adjoint identity therefore passes through the absolutely
+convergent sums:
+
+  <F8(rho)psi,phi>=<psi,F8^#(rho^#)phi>.                  (15)
+
+Consequently F8(rho) is closable and its Hilbert-space adjoint extends the
+displayed smeared adjoint on D_fin. This is the required field-plus-adjoint
+statement. It is a statement about smooth smeared fields, not point values.
+
+5. Finite current cutoffs are finite original CAR words
+-------------------------------------------------------
+
+In the filled-sea representation each eigenchannel current mode has the
+standard fermionic form
+
+  j^a_n=sum_r :chi^a_r* chi^a_(r+n):_sea.                 (16)
+
+For fixed n and fixed input cutoff P_E, only finitely many summands in (16)
+act. Far from the Fermi surface both occupations agree with the sea and the
+normal-ordered bilinear annihilates the vector. Every excitation in P_E uses
+one of finitely many labels, and a shift by n enlarges that label window only
+by |n|. Thus j^a_n P_E is a finite sum of original CAR bilinears.
+
+Equations (4) and (5) show more. For fixed m and E, only finitely many current
+mode tuples in (3) act, and every surviving current reduces on P_E to finitely
+many CAR bilinears. This observation alone does not yet define an acceptable
+microscopic approximant: P_E is a comparison projection, not part of the
+physical operator.
+
+Define instead a global finite continuum operator G_K(rho), K>=2, without
+using E or P_E. Keep only
+
+  |m|<=K for the output field mode,
+  |n_i|<=K^2 for every internal current index,
+  |r|<=K^4 in every CAR sum (16),                         (16a)
+
+and use the same sea normal ordering, coefficients, b insertions and rhohat_m.
+This is a finite sum of globally defined original CAR words of fermion degree
+at most sixteen. Its one-particle entries are finite Fourier sums and hence
+smooth. For each fixed E, equations (4)--(5) bound every internal current
+index that can act by E+K. The source-energy bound also confines all fermion
+excitation labels. Consequently there is K_E such that, for K>=K_E,
+
+  G_K(rho) P_E = F8^[K](rho) P_E.                         (16b)
+
+Thus G_K is independent of E, while P_E is used only to state eventual
+agreement and convergence.
+
+Replace each elementary continuum CAR Fourier mode in G_K by the corresponding
+actual top-row QWZ field Psi_N(g), retaining the same filled-sea ordering and
+adjoint. Denote this globally defined finite microscopic Fock operator by
+G_(N,K)(rho). The existing microscopic theorem gives for each fixed E,K
+
+  ||(G_(N,K)(rho)V_N-V_N G_K(rho))P_E|| ->0,              (17)
+
+and the analogous statement for the adjoint. The original theorem is stated
+vectorwise. Since P_E is finite dimensional, convergence on a basis upgrades
+it to the restricted operator norm in (17).
+
+Combining (14) and (17), using that V_N is a contraction, gives the transported
+iterated limit
+
+  lim_(K->infinity) limsup_(N->infinity)
+   ||(G_(N,K)(rho)V_N-V_N F8(rho))P_E||=0,                 (18)
+
+and the identical conclusion for the adjoint. Equation (18) is the repaired
+strong microscopic smeared-composite theorem.
+
+No K-uniform microscopic estimate was used. Therefore (18) does not assert a
+simultaneous N,K limit. The finite K approximants are Fourier-mode operators
+with global circle support. Equation (18) alone does not prove exact interval
+support for the microscopic approximants.
+
+6. Separately mollified local route
+-----------------------------------
+
+The original current point-splitting prescription can also be retained
+locally, but every elementary fermion must first be separately smeared.
+
+Choose a nonnegative smooth compactly supported mollifier eta with integral
+one. Then ||eta||_1=1 and therefore |etahat(sigma r)|<=1. Let
+
+  eta_(sigma,x)(y)=sigma^(-1) eta((y-x)/sigma),
+  psi_sigma(x)=a(eta_(sigma,x)).                           (19)
+
+Use translated copies of (19) at every point in the epsilon-split definition
+of the currents and the octic. Let
+
+  F8_(epsilon,sigma)(rho)
+
+be the result after the same centre smearing rho and the same old sea
+subtractions and derivative counterterms. At finite N the subtraction may be
+written with the actual microscopic filled-sea contraction; at fixed
+sigma,epsilon it converges to the prescribed continuum subtraction. For each
+elementary bilinear the two subtractions differ by a vanishing scalar. After
+the finite Wick expansion of the octic, the complete difference is therefore
+a finite sum of lower-degree CAR words whose scalar coefficients vanish as
+N->infinity; it is not in general one scalar multiple of the identity. At
+sigma,epsilon>0 its kernel in the at most sixteen fermion variables is smooth.
+Its tensor Fourier series is absolutely summable, so it is a norm-convergent
+sum of bounded finite CAR words. The fixed-regulator QWZ limit follows
+termwise from the elementary theorem, with the absolute Fourier sum providing
+domination. More explicitly, if c_(r_1,...,r_s) are the tensor Fourier
+coefficients of one fixed-regulator kernel, then
+
+  sum_(r_1,...,r_s) |c_(r_1,...,r_s)| < infinity.         (19a)
+
+For a Fourier basis vector e_r, the source estimate is S_0(e_r)=1, hence
+
+  ||Psi_N(e_r)||=||R_N e_r||<=1
+
+uniformly in N. Every corresponding CAR word therefore has norm at most one.
+Equation (19a) is an N-independent Weierstrass majorant, so termwise QWZ
+convergence passes through the infinite Fourier-word sum. Thus
+
+  F8_(N,epsilon,sigma)(rho)V_N psi
+    ->V_N F8_(epsilon,sigma)(rho)psi                      (20)
+
+for psi in D_fin, and likewise for the adjoint.
+
+It remains to remove sigma and epsilon in the continuum. Wick expansion of a
+degree-eight polynomial in bilinear currents is finite. It has the form
+
+  sum_lambda c_lambda
+    :product_(l=1)^s_lambda partial^(q_lambda,l) psi^#_l:,
+
+  s_lambda<=16,
+  sum_l q_lambda,l+s_lambda/2=8,                           (21)
+
+including lower fermion degrees generated by the prescribed contractions.
+This is precisely why bosonic current normal ordering is not the naive
+degree-sixteen fermion monomial.
+
+The common-counterterm hypothesis used here is exact and limited. There is
+one finite universal Wick polynomial W_(epsilon,sigma)[C] in the elementary
+fields, the quasifree contraction C and its prescribed divided differences.
+The microscopic expression evaluates it at the actual sea contraction C_N;
+the continuum expression evaluates the same polynomial, with the same
+coefficients and ordering, at C. At fixed sigma,epsilon all finitely many
+mollified contractions and divided differences required by W converge from
+C_N to C. Expanding the finite polynomial then gives the lower-degree
+vanishing terms described above. If the two sides used independently chosen
+subtraction constants rather than evaluations of this same Wick polynomial,
+equation (20) would not follow. The retained current point-splitting
+prescription supplies precisely this common W_(epsilon,sigma)[C]; it is a
+premise of the local route, not a consequence of the energy estimate.
+
+The subtraction terms must be combined into (21), or equivalently into
+finite divided differences, before estimating them. For every fermion mode r,
+
+  |exp(i r epsilon)|=1,
+  |(exp(i r epsilon)-1)/epsilon|<=|r|,                     (22)
+
+and the q-th divided difference is bounded by |r|^q. Mollifier multipliers
+obey |etahat(sigma r)|<=1 and converge pointwise to one.
+
+On P_E each fixed total field mode has only finitely many acting fermion-mode
+tuples. Equations (21) and (22) give termwise convergence as sigma->0 and then
+epsilon->0. They also give a polynomial majorant uniform in small sigma and
+epsilon. A conservative count is
+
+  number of tuples: O((1+E+|m|)^(s_lambda-1)),
+  derivative weight: O((1+E+|m|)^(8-s_lambda/2)),
+
+whose combined exponent is
+
+  s_lambda/2+7 <=15.                                      (23)
+
+Smooth rho absorbs the power fifteen just as in (11). Dominated summation over
+m now yields, on every P_E,
+
+  strong-lim_(epsilon->0) strong-lim_(sigma->0)
+    F8_(epsilon,sigma)(rho)=F8(rho),                       (24)
+
+and the same limit for the adjoint. The target in (24) is the mode-defined
+F8(rho) of (12), because the retained point-splitting counterterms are exactly
+the Wick contractions that produce (21); after taking matrix elements between
+finite-energy vectors, both sides have the same finite mode coefficient at
+every m. Combining (20) and (24) proves the fully ordered local route
+
+  epsilon->0 after sigma->0 after N->infinity.             (25)
+
+For compactly supported rho and eta, the fixed-regulator microscopic fields
+are supported in the corresponding (sigma+|epsilon|)-neighborhoods of the
+eight original preimage arcs. This is the correct local statement. No support
+claim is made for the global finite-mode approximants of section 5, and no
+uniform estimate allows the three limits in (25) to be collapsed into one
+simultaneous limit.
+
+If the old counterterms are left as separately divergent powers of epsilon
+instead of first being combined into the Wick/divided-difference expression,
+the bound (22) is unavailable and the local proof fails. Their algebraic
+combination is therefore a load-bearing part of the theorem, not a notation
+choice.
+
+7. Energy-64 corollary and exact scope
+--------------------------------------
+
+The previous Ward result is the finite special case of the theorem. On the
+continuum H<=64 space, the one-particle labels satisfy -63<=j<=64, and
+Gamma(Pi_M) is the identity for N>=4096. The level-eight F8 state and
+(Lhat_-1)^8 Omega_d therefore use a finite original CAR word inventory, and
+their microscopic matrix element converges before any infinite mode sum is
+needed.
+
+ORIGINAL-CAR-WARD-IDENTIFICATION.txt now supplies the direct source-mode
+calculation behind this corollary. With K=Lcal_-8/8 and
+
+  c(r)=(r+alpha+4)/8,
+
+the original CAR commutator and sea crossing give exactly
+
+  [K,h_(k,-n)]=n h_(k,-n-1),
+  K Omega=sum_k delta_k h_(k,-1) Omega.
+
+Thus the finite energy-64 Ward vector is obtained inside the same original
+CAR representation used above. Its exact nonzero amplitude is
+
+  <F8;d|(Lcal_-8)^8 Omega>
+    =sqrt(35)(16250979+56071008 i)/128.
+
+The accompanying checker verifies the current QWZ strip atoms against the
+preserved historical AST and checks 258 bounded source modes. Those finite
+diagnostics corroborate this corollary; the all-energy smeared theorem rests
+on equations (1)--(25), not on the finite diagnostic sample.
+
+The theorem proves:
+
+  * the same one-channel QWZ field, state, charge, time and adjoint feed the
+    shifted neutral F8 smearing;
+  * F8(rho) and its adjoint are closable energy-bounded continuum operators on
+    the common finite-energy core;
+  * both the global mode route and the separately mollified local route give
+    transported strong iterated microscopic limits;
+  * the exact energy-64 Ward amplitude is retained.
+
+The theorem does not prove:
+
+  * a bounded point field F8(x);
+  * a simultaneous or regulator-independent diagonal N/UV limit;
+  * exact interval support for finite current-mode cutoffs;
+  * selection of the QWZ collar or quotient localization by P1/P2;
+  * an odd E8 root/spinor field, full microscopic field exhaustion or a
+    3+1-dimensional reconstruction.
+
+8. Sources
+----------
+
+Original microscopic elementary-field theorem:
+
+  paper-source:7296b452273b7022082ac2e2
+  tex-artefacts/toe_research_20260909.tex:16--96;
+
+  experiments/theory-contracts/microscopic-charged-car-limit/README.md:
+  41--68,70--117,119--226.
+
+Folded covariance and current normal ordering:
+
+  research-source:1a8c7c3f539e779301a7377d
+  experiments/theory-contracts/joint-native-algebra-selection-20261016/
+  FOLD-COVARIANCE-TO-NATIVE-FIELD-RESPONSE.txt:53--152;
+
+  research-source:9abbdd1d97ecab558a6beb99
+  experiments/theory-contracts/native-octic-seam-origin-20261025/
+  CAR-OCTIC-DICTIONARY.txt:1--109.
+
+Exact octic normalization and Ward amplitude:
+
+  experiments/theory-contracts/native-octic-seam-origin-20261025/
+  NATIVE-FOLDED-OCTIC-ORIGIN.txt:22--146;
+  native_folded_octic_origin.py.
+
+Direct original-CAR stress/current identification and current-source
+diagnostics:
+
+  experiments/theory-contracts/paper-source-reconstruction-20261025/
+  ORIGINAL-CAR-WARD-IDENTIFICATION.txt;
+  microscopic_octic_composition.py.
+
+Standard energy-bound framework used only for comparison and terminology:
+
+  Carpi, Kawahigashi, Longo, Weiner,
+  From vertex operator algebras to conformal nets and back,
+  arXiv:1503.01260;
+
+  Carpi, Tanimoto, Weiner,
+  Local energy bounds and strong locality in chiral CFT,
+  arXiv:2103.16475.

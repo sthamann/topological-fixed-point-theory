@@ -1,0 +1,116 @@
+{
+  "status": "EXACT_CONDITIONAL_CASIMIR_FILTER; SOURCE_SELECTION_OPEN",
+  "scope": "Bounded exact mode-filter search at the named neutral TFPT source; no physical-origin or TOE claim.",
+  "source_facts": {
+    "R": "4*T_A2 - 8*T_U1",
+    "vacuum_two_point": "48/(z-w)^4",
+    "weight": 2,
+    "primary_conditions": "In the stated grade-2 Heisenberg vacuum block, Tr(A_R)=0 gives L_2|R>=0; L_1 and higher positive Virasoro modes vanish under the stated vacuum assumptions.",
+    "selection_limit": "The source notes that neutrality and primarity do not select R uniquely; the 48-branch orthogonal projection selects this representative."
+  },
+  "mode_norm": {
+    "convention": "R(z)=sum_m R_m*z^(-m-2), radial vacuum, no half-mode normalization.",
+    "expansion": "48/(z-w)^4 = 48*z^-4*sum_{k>=0} binom(k+3,3)*(w/z)^k for |z|>|w|",
+    "coefficient_match": "<0|R_n R_-n|0> = 48*binom(n+1,3) = 8*n*(n^2-1), n>=2",
+    "exact_samples": {
+      "2": "48",
+      "3": "192",
+      "4": "480",
+      "8": "4032"
+    },
+    "n1": "The factor n^2-1 vanishes at n=1; the active tower starts at n=2."
+  },
+  "pure_power_class": {
+    "family": "s_n=c*n^a (D-only power rule)",
+    "search_box": {
+      "a": "half-integers in [-3,3]",
+      "coefficient": "positive c with c^2=2^j, j=-8..8"
+    },
+    "tested_finite_box": 221,
+    "exact_hits": [],
+    "class_verdict": "NONE, including beyond the finite exponent box",
+    "exact_reason": "After squaring, K*c^2*n^(1+2a)*(n-1)*(n+1)=1/n. The irreducible factors n-1 and n+1 have exponent 1 on the left and exponent 0 on the right; varying a or c cannot remove them."
+  },
+  "casimir_shift_class": {
+    "identity": "K*n*(n-1)*(n+1)*s_n^2 = 1/n for all integer n>=2",
+    "search_box": {
+      "a_b_d": "half-integers in [-3,3]",
+      "coefficient": "positive c with c^2=2^j, j=-8..8"
+    },
+    "factor_forcing": {
+      "a": "-1",
+      "b": "-1/2",
+      "d": "-1/2",
+      "c_squared": "1/8",
+      "required_j_if_power_of_two": -3
+    },
+    "exact_hits": [
+      {
+        "a": "-1",
+        "b": "-1/2",
+        "d": "-1/2",
+        "c_squared": "1/8",
+        "j": -3,
+        "positive_c": "2^(-3/2)"
+      }
+    ],
+    "unique_rule": "s_n=2^(-3/2)*n^-1*(n-1)^-1/2*(n+1)^-1/2"
+  },
+  "D_minus_2": {
+    "filter": "s_n=c*n^-2, c^2=1/8 (leading amplitude normalized)",
+    "identity": "1/n - 1/n^3",
+    "relative_error_formula_against_1_over_n": "-1/n^2",
+    "rows": [
+      {
+        "n": 2,
+        "filtered_mode": "3/8",
+        "target": "1/2",
+        "relative_error_signed": "-1/4",
+        "relative_error_abs": "1/4"
+      },
+      {
+        "n": 4,
+        "filtered_mode": "15/64",
+        "target": "1/4",
+        "relative_error_signed": "-1/16",
+        "relative_error_abs": "1/16"
+      },
+      {
+        "n": 8,
+        "filtered_mode": "63/512",
+        "target": "1/8",
+        "relative_error_signed": "-1/64",
+        "relative_error_abs": "1/64"
+      }
+    ]
+  },
+  "local_polynomial_class": {
+    "claim": "No nonzero finite polynomial multiplier P(n) gives K*n*(n^2-1)*P(n)^2=1/n for all n>=2.",
+    "reason": "If deg(P)=m>=0, the left side grows as a nonzero constant times n^(3+2m), while 1/n decays."
+  },
+  "source_field_composition": {
+    "condition": "s(p+q)=s(p)*s(q) for an unchanged common primitive-preserving product map",
+    "test_pair": {
+      "p": 2,
+      "q": 2
+    },
+    "positive_multiplier_squares": {
+      "s_4_squared": "1/1920",
+      "(s_2*s_2)_squared": "1/9216"
+    },
+    "equal": false,
+    "verdict": "FAILS for this candidate; the exact unequal squares suffice because both multipliers are positive.",
+    "scope": "This excludes using the same scalar modewise filter unchanged as an algebra/product homomorphism on the whole source-field mode tower. A boundary-to-field port need not be a homomorphism; this check alone does not exclude a separately specified port map or coupling."
+  },
+  "original_mark_green_scope": {
+    "source": "The original even mark-space orbit Green matrix is -c3*log(2)*C on four labels; compression gives 4*P0 and determinant 1-4*epsilon*c3*log(2).",
+    "missing_mode_map": "No map is specified from these four mark labels to the R Laurent modes n>=2 or to the Casimir factors n, n-1, n+1.",
+    "vertex_selection": "The original source_flavor_correlator says the boundary-to-R-vertex map/reference contraction is missing. Its conditional V=c3^2|R><p0| matches a target after that port is chosen; matching does not select it from Mark-Green data.",
+    "verdict": "The inverse-Casimir rule is an exact conditional mode filter, not a filter selected by the original logarithmic Mark-Green source or P1."
+  },
+  "prior_graph_check": {
+    "code_graph": "No nodes for the two named tfpt_explorer files; the provided original paths were read directly.",
+    "theory_graph": "OK, current generated snapshot; adjacent source/boundary contracts in the primer are PARTIAL and leave physical vertex/source selection open.",
+    "phrase_search": "No direct hits for the exact neutral-source/Casimir-filter phrases."
+  }
+}

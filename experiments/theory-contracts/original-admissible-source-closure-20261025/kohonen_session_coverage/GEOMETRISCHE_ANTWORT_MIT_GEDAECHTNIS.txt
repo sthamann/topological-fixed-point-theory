@@ -1,0 +1,182 @@
+# Die geometrische Antwort der vorhandenen Quelle
+
+Die Maschine berechnet jetzt zusätzlich die geometrische Antwort des
+beibehaltenen Nahtdefekts. Der Ausgangszustand und der Defekt entwickeln sich
+mit demselben vorhandenen Diracoperator. Dafür wurde keine weitere Lernrate
+oder Rückkopplungsregel eingesetzt.
+
+**Das Ergebnis:** Die Antwort enthält einen unmittelbaren Beitrag und einen
+zeitverzögerten Beitrag aus der bisherigen Entwicklung. Beide sind berechnet.
+Der bereits bekannte skalare Indexfaktor kann diese Feldantwort nicht bestimmen.
+
+Ein zusätzlicher Versuch zeigt das Gedächtnis direkt: Die Maschine entwickelt
+sich zuerst 50 Schritte mit einem kleinen geometrischen Impuls und danach
+50 Schritte wieder mit dem unveränderten Operator. Bei der Messung ist die
+Geometrie in allen drei Fällen exakt dieselbe. Die Antworten unterscheiden sich:
+
+| Vorgeschichte bei gleicher abschließender Geometrie | Relative Antwort |
+|---|---:|
+| Ohne Impuls | −0,4739486483 |
+| Vorheriger positiver Impuls mit Stärke 0,01 | −0,4701253569 |
+| Vorheriger negativer Impuls mit Stärke 0,01 | −0,4780397086 |
+
+Der Zustand behält die Vorgeschichte. Die 100 rekursiven Schritte stimmen mit
+der direkt berechneten Entwicklung bis auf etwa \(4{,}8\cdot10^{-14}\) überein.
+Stärke und Dauer des Impulses sind gewählte Testeingaben.
+
+## Was aus dem ursprünglichen Nahtkanal folgt
+
+Der vorhandene Paarindexsatz liefert innerhalb seiner Spurklasse
+
+\[
+\det_F[(1-zUCU^*)(1-zC)^{-1}]=(1-z)^k.
+\]
+
+Bei festem \(z\) und gleicher Windung \(k\) hängt dieser Ausdruck nicht von den
+übrigen Änderungen der Kovarianz \(C\) ab. Diese Eigenschaft wird hier aus dem
+bestehenden Originalvertrag wiederverwendet.
+
+Für die tatsächlich gemeinsam entwickelten Zustände gilt das sogar direkt:
+Ihre Kovarianzen sind \(P_t\) und \(Q_t=P_t+\Pi_t\), wobei \(\Pi_t\) die
+transportierte Defektlinie bleibt. Daraus folgt exakt
+
+\[
+(1-zQ_t)(1-zP_t)^{-1}=1-z\Pi_t,\qquad\det_F=1-z.
+\]
+
+Die skalare Antwort bleibt also auch im Impulsversuch gleich, während sich
+die oben gezeigte Feldantwort ändert. Dafür muss die Differenz zwischen dem
+entwickelten und dem ursprünglichen gesamten See nicht spurklassig sein.
+
+Die frühere Suche nach einer geometrischen Änderung von \(q\) braucht deshalb
+eine Präzisierung. Für das vollständige Verhältnis der ursprünglichen Sektoren
+gilt unter deren Gewichtsvertrag
+
+\[
+Q_{\rm full}(g,\alpha)=e^{-2\alpha}R(g,\alpha).
+\]
+
+Bei festem \(\alpha\) ist somit
+
+\[
+\delta_g\log Q_{\rm full}=\delta_g\log R.
+\]
+
+Das minimale \(q_{\rm min}=\delta_{\rm top}e^{-2\alpha}\) stimmt damit unter dem
+bereits benannten Normierungsvertrag überein. Der Index allein beweist keine
+Geometrieunabhängigkeit von \(R\). Der elliptische Nome und das elektromagnetische
+\(q_{\rm min}\) bleiben verschiedene Parameter.
+
+## Die tatsächlich berechnete Feldantwort
+
+Wir verwenden weiterhin die vorhandene Pin Diracquelle und ihr ursprüngliches
+negatives Spektrum als Anfangszustand \(C_0\). Der normale Nullzweig enthält den
+alten Quarterkreis. Sein kanonischer positiver Defekt ist die bereits bestimmte
+zusätzliche Linie \(\Pi=|\psi_0\rangle\langle\psi_0|\). Der Vergleichszustand
+hat die Kovarianz \(C_0+\Pi\). Das ist derselbe alte Einteilchendefekt.
+
+Unter derselben geometrischen Geschichte bleibt ihre Differenz
+
+\[
+\Delta C_s(t)=e^{-itD_s}\Pi e^{itD_s}.
+\]
+
+Für \(D_s=e^{-sh/2}D_0e^{-sh/2}\) wird die relative Antwort auf die Änderung
+des Operators dadurch zu
+
+\[
+\mathcal R_h(s,t)=\operatorname{Tr}\bigl(\Delta C_s(t)\,\partial_sD_s\bigr).
+\]
+
+Sie ist eine relative Operatorantwort. Ihre Identifikation mit der Ableitung
+der primitiven TFPT Wirkung ist weiterhin zu beweisen. Insbesondere wird aus
+dieser Formel keine Gleichheit des Pin Vergleichsoperators mit \(D_{\rm rel}\)
+und kein neuer physischer Zeitmaßstab gefolgert.
+
+Am unveränderten Ausgangspunkt gilt für den vorhandenen positiven Modus
+\(k=\pi/2\):
+
+\[
+\mathcal R_h(0,t)=-k\langle h\rangle.
+\]
+
+Für einen kleinen, ab \(t=0\) eingeschalteten Eingriff enthält die erste Änderung
+dieser Antwort genau zwei Teile:
+
+\[
+\left.\partial_s\mathcal R_h(s,t)\right|_0
+=k\langle h^2\rangle+\int_0^t\chi_{hh}(u)\,du.
+\]
+
+Der erste Term folgt aus der ausdrücklichen Änderung von \(\partial_sD_s\).
+Der zweite Term folgt aus der Entwicklung des Zustands. Der vollständige
+zeitverzögerte Kern ist im Beweis als konvergente Modensumme angegeben. Sein
+Anfangsverhalten lautet für zwei Profile \(h,g\):
+
+\[
+\chi_{hg}(0)=0,\qquad
+\chi'_{hg}(0)=-k\langle h'g'\rangle.
+\]
+
+Damit hängt die Antwort von räumlichen Änderungen des Profils und von der
+bisherigen Entwicklung ab. Eine Konstante oder eine zusätzliche Lernrate
+ersetzt diesen Kern nicht.
+
+## Prüfung am vorhandenen Ablauf
+
+Für das bisher verwendete glatte Profil, das an den bekannten Kragen
+verschwindet, ergeben sich bei \(t=1\) in der vorhandenen Quellenzeit:
+
+| Anteil der ersten Antwortänderung | Wert |
+|---|---:|
+| Unmittelbarer Beitrag | +0,3861727422 |
+| Zeitverzögerter Beitrag | −0,4054682615 |
+| Summe | −0,0192955193 |
+
+Die direkte Entwicklung mit positiven und negativen kleinen Eingriffen
+konvergiert zu dieser Summe. Eine Extrapolation aus den beiden kleinsten
+Eingriffen stimmt auf dem gesamten geprüften Intervall \(0\leq t\leq4\) bis
+\(3{,}3\cdot10^{-8}\) überein. Der unabhängig berechnete Kommutatorkern stimmt
+bis \(3{,}6\cdot10^{-13}\) überein. Das Weglassen des unmittelbaren Beitrags
+erzeugt einen Fehler von ungefähr 0,386.
+
+Die Maschine führt die neue Antwort auch im bisherigen Lauf mit Eingriff 0,1
+über 400 Schritte mit. Die Ergebnisse mit 129 und 257 Normalmoden unterscheiden
+sich in dieser Antwort um höchstens \(5{,}4\cdot10^{-7}\). Die relative Energie
+bleibt entlang dieser fest vorgegebenen Geschichte bis auf Rundung erhalten.
+Die Antwort auf eine zusätzliche Geometrieänderung kann dabei mit der Zeit
+variieren.
+
+![Berechnete geometrische Antwort](runs/geometric_sector_response.png)
+
+Die Modensumme der linearen Antwort konvergiert für die glatten Profile auch
+ohne endlichen Abschneider. Für die zweite Kovarianzantwort auf dem alten
+Kreis folgt außerdem eine summierbare Schranke proportional zu \(|k_n|^{-6}\).
+Das ist kein Beweis der Spurklasse für jede endliche Geometrieänderung und
+keine Zusage für beliebig hohe lokale Feldableitungen.
+
+## Was dies für den fundamentalen Anschluss verändert
+
+Die vorhandene Quelle liefert eine bestimmte zeitabhängige Antwort des alten
+Defekts. Der topologische Faktor zählt weiterhin die Windung. Für die Auswahl
+einer geometrischen Geschichte muss die ursprüngliche vollständige Quelle
+die passende Variation des Sektorquotienten \(R\), einschließlich Referenz und
+Maß, liefern. Der jetzt berechnete Kern ist ein konkreter Vergleich dafür,
+sobald dieser geometrische Eingriff auf dem tatsächlichen P1 Bild zulässig ist.
+
+Offen sind diese ursprüngliche Einfügungsabbildung und ihre Gleichheit mit
+der primitiven Wirkungsantwort. Das Profil und seine Amplitude bleiben die
+bereits gewählten Diagnoseeingaben. Die ursprünglichen lokalen Felder, ihre
+Zustände, Domains und Clocks werden durch diesen Vergleich nicht ersetzt.
+
+Reproduktion:
+
+```sh
+OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 python3 check_geometric_sector_response.py
+OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 python3 source_geometric_machine.py --output runs/source_geometric_force_machine.json
+```
+
+Vollständige Ergebnisse: [Antwortprüfung](runs/geometric_sector_response.json)
+und [ausgeführte Maschine](runs/source_geometric_force_machine.json).
+Der ausführliche Beweis liegt im bestehenden Originalvertrag unter
+`GEOMETRIC-SECTOR-RESPONSE.txt`.

@@ -1,0 +1,234 @@
+ZULAESSIGER ZWEIBEIN QUELLENZEUGE FUER HODGE UND J20
+====================================================
+
+28. Oktober 2026
+
+Frage und Urteil
+----------------
+
+Macht eine Eichbeschraenkung die Hodge Antwort
+
+    Phi(rho) = (1/3) sum_m C_m rho C_m^dagger
+
+und den alten normierten Zwanzig Ereignis Kanal
+
+    Psi(rho) = (1/12) sum_l R_l rho R_l^dagger
+
+operational gleich, obwohl die vollen Kanaele verschieden sind?
+
+Nein, sobald der gemeinsame SU(5) neutrale Zweibein Zeuge
+
+    P5 = (1/6) sum_m |C_m>><<C_m|
+
+als Choi Messung zugelassen ist. P5 ist ein orthogonaler Projektor vom Rang
+fuenf. Er kommutiert mit der vollen SU(5) Wirkung auf den beiden Beinen und
+damit auch mit dem festen Standardmodell Untergruppe
+S(U(3) x U(2)). Fuer die normierten Choi Zustaende gilt exakt
+
+    Tr(P5 rho_Phi) = 1,
+    Tr(P5 rho_Psi) = 1/5
+
+fuer jede der sechs alten Marken. Eine gemeinsame SU(5) Eichtransformation
+oder eine SU(5) Mittelung kann diesen Unterschied nicht beseitigen, weil P5
+selbst invariant ist.
+
+Auf einem einzelnen Bein besteht dagegen Gleichheit. Beide Choi Zustaende
+haben links und rechts die Marginale I_10/10. Deshalb stimmen alle
+Einbeinobservablen ueberein, insbesondere alle Einbeinobservablen im
+Kommutanten einer festen Standardmodell Untergruppe. Die neue Trennung ist
+wirklich eine korrelierte Zweibeinaussage.
+
+1. Exakte Normierung des Hodge Zeugen
+-------------------------------------
+
+Schreibe V fuer die 100 x 5 Matrix mit Spalten vec(C_m). Der vorausgehende
+Checker liefert im selben geordneten Duadenchart
+
+    V^dagger V = 6 I_5.
+
+Daher ist P5=VV^dagger/6 ein Projektor vom Rang fuenf. Der Hodge Choi
+Operator ist
+
+    J_Phi = (1/3) VV^dagger = 2 P5,
+
+hat Spur zehn und normierten Zustand rho_Phi=J_Phi/10. Somit
+
+    Tr(P5 rho_Phi) = Tr(2 P5)/10 = 1.
+
+Der Checker prueft P5^2=P5 und Rang(P5)=5 exakt mit ganzen Zahlen.
+
+2. Volle SU(5) Neutralitaet
+---------------------------
+
+Fuer R=Lambda^2 U und U in SU(5) gilt die bereits gepruefte
+Epsilon Kovarianz
+
+    R C_m R^T = sum_n conjugate(U_nm) C_n.
+
+Nach Vektorisierung ist der Spaltenraum von V deshalb eine bar5 in
+Lambda^2 C5 tensor Lambda^2 C5. Die Summe der fuenf orthogonalen
+Rang eins Projektoren ist invariant.
+
+Der neue Checker bestaetigt dies unabhaengig infinitesimal auf einer
+Gaussian ganzzahligen Basis aller 24 Erzeuger von su(5):
+
+    [dR(X) tensor I + I tensor dR(X), P5] = 0.
+
+Zusaetzlich wird dieselbe Gleichung fuer die zwoelf Erzeuger einer festen
+su(3)+su(2)+u(1) Unteralgebra geprueft. Die Neutralitaet von P5 ist damit
+eine volle SU(5) Aussage. Sie wird nicht aus einer blossen Dimensionszahl
+oder aus der Petersen Population geschlossen.
+
+Der alte Choi Operator selbst ist weder unter der vollen SU(5) Wirkung noch
+unter dieser festen Standardmodell Untergruppe invariant. In jeder der sechs
+Marken kommutiert er nur mit 4 von 24 beziehungsweise 4 von 12 gewaehlt
+geprueften Erzeugern. Das beeintraechtigt den Zeugen nicht. Ein Zustand muss
+nicht invariant sein, damit ein invariantes Observable seinen invarianten
+Anteil misst. Es bedeutet aber, dass aus Psi keine volle SU(5) kovariante
+Quelle gemacht werden darf.
+
+3. Auswertung an den tatsaechlichen zwanzig Ereignissen
+-------------------------------------------------------
+
+Die zwanzig Matrizen R_l werden fuer jede Marke direkt aus der gepinnten
+Originaldatei `source_channel.py` rekonstruiert. Es werden keine neuen
+Matrizen eingesetzt. Im festen Duadenchart lautet
+
+    J_Psi = (1/12) sum_l |R_l>><<R_l|,
+    rho_Psi = J_Psi/10.
+
+Mit P5=VV^dagger/6 folgt
+
+    Tr(P5 rho_Psi)
+      = [sum_l ||V^dagger vec(R_l)||^2] / (6 * 12 * 10).
+
+Der Zaehler ist fuer jede der sechs Marken exakt 144. Unter den zwanzig
+einzelnen Ereignissen haben achtzehn den Ueberlappungswert 4 und zwei den
+Wert 36. Daher
+
+    Tr(P5 rho_Psi) = 144/720 = 1/5.
+
+Nach den fuenf Komplementmarken gruppiert sind die Zaehler stets eine
+Permutation von
+
+    48, 48, 16, 16, 16.
+
+Die Gleichheit fuer alle sechs alten Marken zeigt, dass das Ergebnis nicht
+an der Wahl einer ausgezeichneten Marke haengt.
+
+4. Vollstaendiges SU(5) Twirlgewicht und Leckage
+------------------------------------------------
+
+Die beiden weiteren irreduziblen Projektoren sind
+
+    P45 = (I-Swap)/2,
+    P50 = (I+Swap)/2 - P5.
+
+Zusammen mit P5 sind sie paarweise orthogonal, summieren sich zu I und haben
+die Raenge 5, 45 und 50. Die Auswertung an den tatsaechlichen zwanzig
+Matrizen, getrennt fuer jede der sechs Marken, gibt ohne Symmetrieannahme
+
+    (p5,p45,p50) = (1/5,2/5,2/5).
+
+Die Choi Krausspanne hat unter Swap neun symmetrische und sechs
+antisymmetrische Richtungen. Die getrennten Projektionen auf P5, P45 und P50
+haben die Raenge 5, 6 und 7. Die Raenge duerfen nicht addiert werden, weil die
+P5 und P50 Projektionen derselben neun symmetrischen Richtungen verschieden
+ausrichten. Die Gewichte addieren sich dagegen wegen der orthogonalen
+Projektoren zu eins.
+
+Das volle SU(5) Twirl des alten Kanals ist somit
+
+    J_twirl = (1/5) (10/5) P5
+            + (2/5) (10/45) P45
+            + (2/5) (10/50) P50.
+
+Seine Populationswahrscheinlichkeit pro Zielduade lautet exakt
+
+    gleiche Duade:                  2/25,
+    verschiedene schneidende Duade: 19/225,
+    disjunkte Duade:                31/225.
+
+Von einer festen Eingabeduade gibt es eine gleiche, sechs schneidende und
+drei disjunkte Zielduaden. Die gesamten Massen sind daher
+
+    stay       = 2/25,
+    intersect  = 38/75,
+    disjoint   = 31/75.
+
+Sie summieren sich zu eins. Das SU(5) Twirl entfernt also nicht nur die
+alten Phasen. Es fuehrt Selbstuebergaenge und Uebergaenge zwischen
+schneidenden Duaden ein und zerstoert damit die reine Petersen Stuetzmenge.
+Genau dies erklaert, warum eine nachtraegliche Kovarianzmittelung den alten
+Kanal nicht in Phi verwandelt.
+
+5. Was der Kommutant sieht
+--------------------------
+
+Es sind drei Aussagen zu trennen.
+
+Erstens sind die normierten Choi Marginalen beider Kanaele auf jedem
+einzelnen Bein I_10/10. Das folgt aus Spurtreue und Unitalitaet und wird an
+den tatsaechlichen Krausfamilien als
+
+    sum C_m^dagger C_m = sum C_m C_m^dagger = 3 I,
+    sum R_l^dagger R_l = sum R_l R_l^dagger = 12 I
+
+exakt geprueft. Kein Einbeinobservable kann die beiden Kanaele unterscheiden.
+
+Zweitens sind die Einschraenkungen auf den Zweibein Kommutanten der vollen
+SU(5) Wirkung verschieden, denn P5 liegt in diesem Kommutanten und hat die
+Erwartungswerte 1 und 1/5.
+
+Drittens sind auch die Einschraenkungen auf den Zweibein Kommutanten einer
+einzigen festen Standardmodell Untergruppe verschieden. Derselbe P5 liegt
+auch dort. Eine Standardmodell Neutralitaetsforderung allein loescht den
+Phasenunterschied daher nicht.
+
+Dies entscheidet die enge Eichfrage: Die alten bedingten Klein Vier
+Phasenmittelungen sind keine reine Eichredundanz fuer alle gemeinsamen
+neutralen Prozessobservablen. Wer nur Populationen, Effekte oder ein Bein
+beobachtet, sieht sie nicht. Wer den neutralen Choi Projektor P5 messen kann,
+sieht sie mit Abstand 4/5 in dieser Ja Wahrscheinlichkeit.
+
+6. Geltungsbereich
+------------------
+
+Die Rechnung gilt exakt im festen Duadenchart, den der alte Quellchecker aus
+den sechs Marken und den zehn Bell Labels konstruiert. Der alte physische
+Raum ist weiterhin Bell10=Sym^2 C4. Die Permutation seiner zehn Ereignislabels
+auf die Zweiersubsets eines Fuenfers ist fuer sich kein linearer SU(5)
+Intertwiner und keine Identifikation mit Lambda^2 C5.
+
+Die bereits gepruefte A4 x A4 E8 Antwort liefert den Hodge Kanal tatsaechlich
+in einem Lambda^2 C5 Traeger. Sie beweist noch nicht, dass der alte Bell10
+Prozess genau denselben SU(5) Zweibein Zeugen physisch auslesen kann. Das
+vorliegende Resultat lautet deshalb bedingt und scharf: Wenn die gemeinsame
+zulassige Prozessobservable P5 im festgelegten Duadenchart zur
+Eichklassifikation gehoert, sind Phi und Psi operational verschieden.
+
+Weder eine Choi Praeparation noch eine Ereignisauswahl, Zeitentwicklung oder
+P1 Quellenregel wird hier hergeleitet.
+
+Reproduzierbarkeit
+------------------
+
+Checker:
+
+    research-20261028-admissible-pair-source/admissible_pair_source.py
+
+Ergebnis:
+
+    research-20261028-admissible-pair-source/result.json
+
+Gepinnte Originalquelle:
+
+    /Users/stefanhamann/Projekte/tfpt-theoryv4/experiments/theory-contracts/
+    compiler-correlated-event-clock-20260919/source_channel.py
+
+Gepinnter vorausgehender Checker:
+
+    research-20261028-hodge-complement-channel/hodge_complement_channel.py
+
+Normal und PYTHONOPTIMIZE=2 erzeugen bytegleiche Standardausgabe und
+bytegleiche Ergebnis JSON. Alle 444 Bedingungen bleiben dabei aktiv.

@@ -1,0 +1,510 @@
+SOURCE INDUCED SEAM TRANSPORT ON THE ELLIPTIC DOUBLE
+====================================================
+26 October 2026. Exact local branch, global push off and domain calculation.
+Atlas audit frame: revision c76c7d969cabaa790d397657.
+
+Question and answer
+===================
+
+On the existing curve
+
+  E: y^2=x^4-1,       p(x,y)=x,
+  h(x,y)=(x,-y),      Q(x,y)=(i x,y),
+
+take the already fixed Q invariant nontrivial spin line alpha with flat
+character chi_alpha(A)=chi_alpha(B)=-1. Does its flat connection turn the
+ramified pullback of the original seam into one canonical circle operator and
+one canonical vertex rule?
+
+It gives more than a bare monodromy list, but less than that conclusion.
+
+PROVED:
+
+  1. The two one sided resolutions have no free U(2) matrix. In a common
+     Q compatible sheet frame their local flat transports are exactly
+
+       T_out=I_2,             T_in=P,
+       P=[[0,1],[1,0]].                                      (1)
+
+     Reversing all orientation conventions exchanges the two names. The
+     invariant statement is T_out^(-1)T_in=P.
+
+  2. In a separately normalized local frame, a full positive or negative loop
+     around any one branch point has flat alpha monodromy P, because
+     P^(-1)=P. Its moving tangent Spin phase is respectively +i or -i. These
+     are distinct pieces of data:
+
+       M_flat,local^ccw=M_flat,local^cw=P,
+       M_tangent^ccw=+i P,   M_tangent^cw=-i P.               (2)
+
+     In one common global frame the four flat peripheral matrices are instead
+     (P,-P,P,-P). Their product is I. The signs are the actual alpha
+     translation character and cannot be discarded when comparing vertices.
+
+  3. The two radial push offs are both exact self adjoint realizations of the
+     pulled back scalar operator. Unmarked, they are unitarily equivalent and
+     have two copies of the integer spectrum. As Q and deck marked objects
+     they differ by P. The outer quarter action is the inner quarter action
+     times the deck exchange.
+
+     On the full flat alpha line, however, the genuine deck and quarter Spin
+     pullbacks anticommute. Thus Q exchanges the two deck eigensectors. No
+     single deck eigenline is a global Q preserved circle carrier.
+
+  4. At the ramification point itself the vector field lifting
+     -i partial_theta has a 1/z pole. The regular flat alpha connection does
+     not cancel it. Therefore neither radial realization extends as a regular
+     first order operator on all smooth alpha spinors of the ramified graph.
+
+  5. Keeping both push offs gives the canonical pair of smooth resolutions.
+     It does not give a single self adjoint four edge vertex domain. Smooth
+     ambient continuity is only a one dimensional trace condition, whereas a
+     self adjoint first order graph vertex requires a two dimensional
+     Lagrangian trace space.
+
+Thus the existing spin and complex choices canonically fix the two radial
+resolutions and leave one exact Z2 relative cocycle between them. They do not
+select a self adjoint vertex condition from the full mathematical family,
+identify the original matching operator U_Gamma, or produce the old quarter
+twisted Hardy domain. No free vertex matrix is inserted here.
+
+1. Local branch calculation
+============================
+
+Write the four marks as
+
+  a_j=i^j,             theta_j=j pi/2,             j=0,1,2,3,
+
+and use the same local coordinate at every mark,
+
+  w_j=(x-a_j)/a_j=z_j^2.                               (3)
+
+For x=r exp(i(theta_j+s)),
+
+  w_j=r exp(i s)-1=(r-1)+i s+O(s^2).                  (4)
+
+This normalization is Q equivariant because
+
+  w_(j+1)(Qx)=w_j(x).
+
+The sheet deck is z_j -> -z_j. Let the incoming and outgoing root frames be
+
+  z_- = exp(-i pi/4)sqrt(|s|),
+  z_+ = exp(+i pi/4)sqrt(|s|).
+
+For r>1, the path in (4) passes to the right of w=0 and its argument changes
+by +pi. Analytic continuation sends z_- to z_+, hence T_out=I. For r<1 it
+passes to the left and the continuously chosen argument changes by -pi. It
+sends z_- to -z_+, hence T_in=P. This proves (1) at all four marks at once.
+
+The labels in (1) depend on the displayed endpoint roots. Changing a sheet
+frame conjugates both matrices and may exchange which one is written as I.
+Their ratio P is invariant. It is the monodromy of a full small base loop.
+
+1.1 Flat alpha transport
+------------------------
+
+The lift of a small branch disk is an ordinary z disk. Alpha is flat and
+locally trivial there, so its parallel transport contributes scalar 1 on
+each lifted path. The full base loop is not a closed path on one sheet. It
+joins z to -z and therefore acts in that local frame on the rank 2 pushforward
+by P. Clockwise and counterclockwise give P and P^(-1), which are equal. This
+is a branchwise normalized statement. Transporting all four local frames to
+one base fiber introduces the alpha character signs computed in Section 1.3.
+
+There is no hidden sign from alpha itself. The closed radial components for
+r<1 contract to the two points over x=0, and those for r>1 contract to the
+two points over x=infinity. Consequently alpha has holonomy +1 around every
+one of these four component loops.
+
+1.2 Moving tangent Spin phase
+------------------------------
+
+A positive full base loop lifts to a half turn z -> -z. Its tangent rotates
+by +pi and the Spin lift contributes exp(+i pi/2)=+i. A negative loop gives
+-i. This proves the second line of (2). For the two half detours in (1), the
+lifted tangent rotates by plus or minus pi/2, so a standard endpoint tangent
+frame gives
+
+  H_out=zeta_8 I,       H_in=zeta_8^(-1) P,
+  zeta_8=exp(i pi/4).                                  (5)
+
+Their fourth products are both -I. This is the bounding Spin sign of a
+positively oriented contractible component. Their relative transport is
+
+  H_out^(-1)H_in=-i P.                                 (6)
+
+Equations (1), (5) and (6) must not be merged. Equation (1) is flat alpha
+parallel transport. Equation (5) expresses the same paths in a moving tangent
+Spin frame. The individual eighth root phases change with endpoint tangent
+frames; the full loop statement (2) and the total sign -I are invariant.
+
+There are two further common traps:
+
+  * The complex coordinate factor (2z)^(-1/2) changes phase around the branch
+    and is not a single valued gauge of p_*alpha.
+
+  * The metric half density |2z|^(-1/2) is positive and contributes no complex
+    phase at all.
+
+The ramified base orbifold has local order 2, while a pi tangent rotation has
+Spin lifts plus or minus i. It therefore does not define an ordinary Spin
+quotient downstairs. The honest object is the upstairs alpha line together
+with its central Spin extension.
+
+1.3 The global flat pushforward and all four peripherals
+--------------------------------------------------------
+
+Let Lambda=Z A plus Z B with A=1 and B=i, and write t_lambda for translation
+by lambda. In the affine torus coordinate used above,
+
+  h z=-z+T,       T=(1+i)/2,
+
+and the four branch reflections can be represented by
+
+  r_lambda=t_lambda h,       lambda in {0,A,A+B,B}.       (6a)
+
+Use the Q cyclic order
+
+  lambda_0=0, lambda_1=A, lambda_2=A+B, lambda_3=B.
+
+After naming the first fixed point x=1, this is the branch order
+1,i,-1,-i. A cyclic relabeling changes none of the relations below.
+
+Since r_a r_b=t_(a-b), the global peripheral relation is
+
+  r_0 r_A r_(A+B) r_B
+    =t_(-A+A+B-B)=1.                                    (6b)
+
+Now induce the actual flat alpha character
+
+  chi_alpha(A)=chi_alpha(B)=-1
+
+to the two sheets. In the common sheet basis,
+
+  rho(t_lambda)=chi_alpha(lambda) I,       rho(h)=P.
+
+Therefore the four peripheral matrices are exactly
+
+  (M_0,M_1,M_2,M_3)=(P,-P,P,-P),
+  M_j^2=I,       M_0 M_1 M_2 M_3=I.                     (6c)
+
+This is the requested common global frame. It also shows that the induced
+flat system is reducible. In the character basis e_plus=(1,1) and
+e_minus=(1,-1), P becomes Z=diag(1,-1), and the two global rank one
+characters have peripheral values
+
+  (+1,-1,+1,-1),       (-1,+1,-1,+1).                  (6d)
+
+The decomposition does not yield a Q invariant line. Conjugation by Q sends
+
+  lambda -> -A+i lambda       modulo 2 Lambda,
+
+which cycles 0,A,A+B,B. The possible discrepancy by 2 Lambda is invisible
+to chi_alpha. In the character basis one may take the raw Q intertwiner to
+be X=[[0,1],[1,0]], so
+
+  X M_j X^(-1)=M_(j+1),       X Z=-Z X.                 (6e)
+
+Thus Q exchanges the two characters. With the holomorphic Spin Jacobian,
+
+  Q_hat=zeta_8 X,       h_hat=i Z,
+
+one obtains Q_hat^4=-I, h_hat^2=-I and the same central anticommutator as in
+(7d) below.
+
+The half form Jacobian around a branch supplies a scalar c_j with c_j^2=-1.
+For oriented peripheral generators its lifted matrices have the form
+
+  M_tilde_j=c_j M_j.                                   (6f)
+
+The punctured sphere product relation requires product_j c_j=1. Q covariance
+requires c_(j+1)=c_j. Hence there are exactly two coherent Q equivariant
+choices, c_j=+i for every j or c_j=-i for every j. For the latter, the local
+diag(-i,+i) convention, the common character frame gives
+
+  (M_tilde_0,M_tilde_1,M_tilde_2,M_tilde_3)
+   =(diag(-i,+i),diag(+i,-i),diag(-i,+i),diag(+i,-i)),
+  product_j M_tilde_j=I.                               (6g)
+
+The choice c=+i negates all four matrices and matches h_hat=i Z. Both choices
+satisfy the product relation and Q covariance. Therefore the local half
+density factor diag(-i,+i) does not by itself choose a global lift. The
+isomorphism class of alpha fixes (6c) and (6d); choosing between (6g) and its
+negative is the remaining deck Spin linearization or orientation convention.
+The explicitly normalized source operator D fixes such a convention on its
+stated twisted section carrier, up to the unavoidable overall sign. It does
+not turn either character line into a Q invariant line.
+
+GLOBAL-SPIN-KERNEL.txt performs the further normalized Szego calculation.
+It shows that the actual alpha kernel fixes the unordered pair of these two
+choices and diagonalizes globally, while Q exchanges their labels. Thus no
+extra rank two kernel is needed, although no single Q invariant line results.
+
+2. The two radial push offs and Q
+=================================
+
+Along x=r exp(i theta), the quantity x^4-1 traces, during one quarter turn in
+theta, a circle centered at -1.
+
+  * For r<1 that circle does not enclose zero. A continuous square root
+    returns to itself after one quarter. Q preserves each radial component.
+
+  * For r>1 it encloses zero once. Its continuous square root changes sign
+    after one quarter. The algebraic Q keeps y fixed, so it exchanges the two
+    continuously labelled radial components.
+
+Let S be the quarter shift theta -> theta+pi/2 and let q be the fixed Spin
+lift scalar, q^2=i. Thus q=plus or minus zeta_8 and q^4=-1. In the continuous
+component frames,
+
+  Q_in=q S,             Q_out=q P S,
+  Q_out=P Q_in.                                         (7)
+
+Both lifts have fourth power -I and eighth power I. Formula (7) is the exact
+relation between the two Q equivariant radial shards. Here P is the local
+sheet permutation. It records the existing branch deck on component labels,
+but is not by itself the full global deck Spin pullback on alpha.
+
+This distinction is forced globally on the actual square torus. With
+
+  T=(1+i)/2,       h z=-z+T,       Q z=i z,
+
+one has
+
+  hQz=-iz+T,       Qhz=-iz+iT,       hQz-Qhz=1.          (7a)
+
+The given flat alpha character obeys chi_alpha(1)=chi_alpha(i)=-1. Therefore
+the raw pullbacks on alpha satisfy the exact central relation
+
+  U_h U_Q=-U_Q U_h.                                     (7b)
+
+Adding the genuine holomorphic Spin derivative factors does not remove it.
+For the standard source normalization
+
+  h_hat=i U_h,       Q_hat=zeta_8 U_Q,
+  h_hat^2=-I,        Q_hat^4=-I,                         (7c)
+
+and hence
+
+  h_hat Q_hat=-Q_hat h_hat.                              (7d)
+
+Consequently Q exchanges the plus i and minus i eigenspaces of h_hat. A
+single deck quarter eigensector cannot be selected as a globally Q invariant
+circle. This central sign comes from the already fixed alpha character and
+the actual affine h,Q actions; it is not an auxiliary Spin or sheet factor.
+
+In the common quarter interval frame used in (1), define piecewise constant
+
+  G_j=P^j        on (theta_j,theta_(j+1)).               (8)
+
+It removes the four P jumps because P^2=I and P^4=I. Hence it unitarily maps
+the two unmarked radial operators to each other. Under the quarter clock it
+changes by P. Therefore it is not an equivalence preserving the same Q mark.
+The two resolutions are spectrally equal and marked differently.
+
+3. Which operator is literally the pullback of -i partial_theta?
+================================================================
+
+For r different from 1, p restricts on each radial component with degree one.
+In a flat parallel alpha frame, the literal pullback is
+
+  B_r=-i d/dtheta                                      (9)
+
+on two copies of H1(S1) with periodic coefficients. Equivalently, in the
+common cut frame it acts on piecewise H1 C2 valued functions obeying
+
+  Psi(theta_j+)=T_j Psi(theta_j-),
+
+with all T_j=I on one resolution and all T_j=P on the other. These are
+self adjoint domains because the T_j are unitary.
+
+The all mode proof is immediate. On each open quarter an eigenfunction is
+exp(i lambda theta)v. Going around all four quarters gives
+
+  exp(2 pi i lambda) (product_j T_j)v=v.
+
+Both products equal I. Hence
+
+  lambda in Z, with multiplicity 2,                           (10)
+
+for either radial side. The gauge (8) gives the explicit unitary equivalence.
+
+If coefficients are written in the moving tangent frame, they are
+antiperiodic because the total tangent Spin holonomy is -1. The same pulled
+back connection is then
+
+  B_pull,mov=-i d/dtheta+1/2                              (11)
+
+up to the orientation convention. It still has the integer spectrum (10).
+The naive operator -i d/dtheta on that antiperiodic domain is a different
+intrinsic bounding circle Dirac operator and has spectrum Z+1/2.
+
+Neither reading gives the old quarter spectrum Z+1/4. The order 8 Q lift in
+(7) is a quarter rotation symmetry. It is not parallel transport through a
+full circle and cannot be substituted for a boundary condition. A quarter
+twist must still come from the original phi=pi/2 domain declaration or from
+an actual source intertwiner.
+
+3.1 Failure at the ramified seam itself
+---------------------------------------
+
+At r=1, use x=a_j(1+z^2). Since dx/dtheta=i x,
+
+  dz/dtheta=i(1+z^2)/(2z),
+
+and therefore
+
+  p^*(-i partial_theta)=(1+z^2)/(2z) partial_z.          (12)
+
+The coefficient has a pole. For a smooth local alpha section
+
+  f(z)=f_0+f_1 z+f_2 z^2+...,
+
+the leading result is f_1/(2z). In the base dtheta measure its square is not
+locally integrable. Regularity forces the odd first jet to vanish and, for a
+full invariant domain, removes the deck odd local branch. The regular flat
+alpha connection has local connection form zero and cannot cancel (12).
+
+The intrinsic Dirac operator using the smooth z coordinate is regular, but
+it is a different operator. It is not the pullback of the written base
+-i partial_theta. This is the exact operator obstruction at the branch.
+
+4. Why both resolutions do not make one graph vertex rule
+==========================================================
+
+The full pullback of the marked equator has four valence 4 ramification
+vertices. At one vertex the first order Green boundary form has signature
+(2,2) on the four half edge traces. A self adjoint local graph domain must
+choose a two dimensional Lagrangian subspace.
+
+The outer and inner push offs each choose such a pairing. They are the two
+smooth resolutions (1). Requiring a smooth ambient alpha section merely says
+that all four limiting values equal the one value in alpha at z=0. That trace
+space is one dimensional. It is isotropic but not maximal, so it is not a
+self adjoint graph Dirac vertex condition.
+
+Keeping both resolutions therefore gives a canonical pair, not a canonical
+single vertex operator. Choosing an arbitrary U(2) scattering matrix would be
+unjustified, and none is introduced here. The remaining decision is whether
+the original cut problem names one face, retains both as a two face Calderon
+space, or supplies a matching operator between them.
+
+5. Comparison with the original source
+=======================================
+
+The oldest explicit source says:
+
+  D_Gamma=i d/dtheta,
+  U_Gamma(theta)=exp(i theta),
+
+and separately interpolates twisted domains with eigenvalues
+n+phi/(2pi). It uses the words take and modeled by. It does not derive the
+domain or U_Gamma from the elliptic branch data:
+
+  documents/archive--paper-latex--tfpt-theory-fullv21/sections/
+  001-section-introduction-the-problem-of-parameters.tex:198-255
+  SHA256 85bb11511be05385a7cadf6071dbede216b12befeb9d6767bc4460748cbec5d7.
+
+The later v28 seam setup likewise takes the one dimensional tangential
+operator after already supplying a unitary matching operator:
+
+  documents/archive--paper-latex--tfpt-theory-fullv28/sections/
+  013-section-texorpdfstring-seam-gluing-and-the-eta-invariant.tex:7-17
+  Atlas paper-source:fc0457edc74d21592ac3a36d
+  SHA256 69adc16e3ba4106f164611a1104d42e7fa65de47bba8263f4780ba2ac542ce98.
+
+v510 explicitly distinguishes the free covering deck from the branched
+pillowcase involution. Its branch control says that the mark creating Z2 has
+four fixed points and restricts as a reflection, whereas the original
+Moebius covering deck is free:
+
+  verification/v510_seam_bit_freedom.py:1-47,63-93
+  SHA256 5b174a8914b14308621e0be98fc9d44e23b89713400ea5c09e1cae17d3546193.
+
+That distinction prevents P in (1) from being silently renamed the original
+free seam deck. It is the branch sheet exchange.
+
+v519 also keeps the roles separate: the deck gives the nonsplit Kramers
+class, while the seam circle reflection furnishes Theta. Its Q/Spin matrix
+uses zeta_8 exactly, consistent with (5) and (7), but it does not provide the
+ramified trace domain:
+
+  verification/v519_woit_theta_rp_free.py:1-86,97-105
+  SHA256 e86e3a055b58051c7978d8f10ee527948bac758fd4665ac216e18a71cc8c1ee9.
+
+The preceding exact curve results used here are:
+
+  /Users/stefanhamann/Projekte/tfpt-theoryv4/experiments/theory-contracts/
+  original-admissible-source-closure-20261025/
+  ORIGINAL-BASES-AND-ELLIPTIC-SPIN.txt:55-101
+  SHA256 bf6b2336e24a39aef26b9907c24f033a47a8a1318f8f19ae561e4c477680ce67.
+
+That original contract fixes alpha and proves the same central sign on the
+twisted two dimensional section space H0(alpha tensor p*O(1)). Equations
+(7a)-(7d) are the separate calculation on the full, untwisted flat alpha
+line. They do not infer the present commutator merely from the finite section
+space.
+
+  research-20261026-elliptic-source-continuation/
+  ORIGINAL-EQUATORIAL-REAL-LIFTS.txt:332-444
+  SHA256 434eaab2fa67fbf157967a78f4b3f742cb7731d61c9632cdb06f12773c0ba1dd.
+
+  research-20261026-elliptic-source-continuation/
+  ELLIPTIC-GREEN-RP.txt:1-216
+  SHA256 d8799f04851a9bd539b05b4d013b38eb00de9bec07dddde6438023aaf1facd80.
+
+The latter supplies a regular intrinsic elliptic Green and Calderon operator
+on the smooth annulus cut. Equation (12) explains why that result does not by
+itself identify the ramified base pullback operator.
+
+6. Exact certificate and final classification
+==============================================
+
+An inline exact SymPy replay, with no new checker file, returned
+
+  P^2=I,
+  T_out^4=T_in^4=I,
+  T_out^(-1)T_in=P,
+  M_flat,local^ccw=M_flat,local^cw=P,
+  (M_0,M_1,M_2,M_3)=(P,-P,P,-P),
+  M_0 M_1 M_2 M_3=I,
+  in the character basis M_j=(Z,-Z,Z,-Z),
+  X M_j X^(-1)=M_(j+1),
+  M_tangent^ccw=+iP,
+  M_tangent^cw=-iP=(+iP)^(-1),
+  H_out^4=H_in^4=-I,
+  H_out^(-1)H_in=-iP,
+  zeta_8^2=i, zeta_8^4=-1, zeta_8^8=1,
+  hQz-Qhz=1,
+  U_h U_Q=-U_Q U_h,
+  h_hat^2=-I, Q_hat^4=-I,
+  h_hat Q_hat=-Q_hat h_hat,
+  product_j M_tilde_j=I for both coherent choices c=+i and c=-i.
+
+It also checked the mode condition exactly for integer and half integer test
+values: the flat product I accepts exactly the integers, while the naive
+moving tangent product -I accepts exactly the half integers.
+
+Final status:
+
+  [E] Local sheet continuation, flat alpha transport and tangent Spin phases.
+  [E] Global raw peripherals (P,-P,P,-P), their product relation, reducible
+      character lines and their exchange by Q.
+  [E] Exact Q relation Q_out=P Q_in and the order 8 central lift.
+  [E] Exact global alpha anticommutator h_hat Q_hat=-Q_hat h_hat; Q exchanges
+      the two h_hat quarter eigenspaces.
+  [E] Two self adjoint radial domains, their complete spectra and their
+      unmarked unitary equivalence.
+  [E] The 1/z obstruction for the ramified pullback operator.
+  [E] Smooth ambient continuity is not a self adjoint valence 4 graph domain.
+  [O] Which original face/domain and matching U_Gamma is physical.
+  [O] Identification with the old quarter Hardy domain and its state.
+
+The constructive gain is precise: the two source induced radial resolutions
+contain no arbitrary local U(2) choice. The original C2 curve and alpha fix
+the pair {I,P}, with Q relating the pair by the local branch deck. Closing the
+source map still requires an original statement selecting or jointly using
+those two faces. Globally, the fixed alpha central extension forbids selecting
+one h_hat eigensector while retaining Q. Spin transport alone cannot supply
+the remaining face or joint domain statement.

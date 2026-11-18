@@ -1,0 +1,247 @@
+CLAUDE46 GRAM RESPONSE AND V_ADM TYPE REVIEW
+Independent targeted audit, 30 October 2026
+
+Result
+
+Claude46's Fréchet calculation contains a correct conditional resonance, but
+it does not prove that the Hardy coefficient is the original V_adm insertion.
+For the declared three-dimensional direction V=-kappa M0P0 on the positive
+C6 branch, the real and imaginary differential numbers reproduce exactly.
+The quoted 62.33 and 8.25 are Frobenius norms, not operator norms.  More
+importantly, the actual Hardy direction has phase -5pi/12.  Its full first
+variation is rank3 and only 89.03 percent of its Frobenius amplitude lies on
+the fixed resonant line, rather than the quoted 99.3 percent for the purely
+real test direction.  The remainder after the g^(-2) fixed-line term is
+O(g^(-1)), not O(1).  A purely imaginary kappa has no g^(-2) term but still
+diverges like g^(-1).
+
+The original EM5 contract permits an unspecified V_adm satisfying two
+conditions.  It does not set V_adm=-kappa M0P0.  The condition
+[Pstr,V_adm]=0 has not been checked because Pstr=P_Seam,+ P_sing P_Theta is
+not the positive C6 branch selector and none of these projectors is P0.  The
+existing spine/fold report explicitly leaves the coefficient-fiber pair
+distinct from the physical F5 face pair.  Hence neither the original source
+choice nor structural admissibility follows from the Gram response alone.
+
+
+1. Original contract
+
+Original EM5, 005-source.tex:42-94, states
+
+ D_f=D_0+V_adm,
+ [Pstr,V_adm]=0,
+ ||V_adm||<epsilon_f/2,
+ epsilon_f=2/3-delta_ph.
+
+EM3:91-97 defines
+
+ Pstr=P_Seam,+ P_sing P_Theta,
+ P_Seam,+=(1+iC)/2,
+ P_Theta=(1+Q_Theta)/2,
+ P_sing=(1+Z_c+Z_c^2)/3.
+
+The source gives a class of gap-stable perturbations and proves positivity
+for every member of that class.  It supplies no formula identifying the
+new Hardy matrix moment with V_adm.  In particular, the positive/negative
+three-dimensional C6 blocks of diag(M0,-M0) are not the P_Seam eigenspaces.
+The statement that a block-supported matrix commutes with a block selector
+therefore does not verify the printed commutator condition.
+
+The marked family endpoint P0 is likewise not Pstr, P_Theta or P_sing.  Even
+the forbidden substitution Pstr=P0 would fail:
+
+ ||[P0,M0P0]||=1.                                      (1)
+
+Thus the commutation condition must be checked only after an actual original
+map into the Pstr Hilbert space has been exhibited.  P0=P_Theta must not be
+inserted by notation.
+
+
+2. Exact spectrum and Fréchet derivative
+
+Set
+
+ y=2/3,
+ delta=0.593277280133224001394066545420926568...,
+ g=y-delta=0.07338938653344262...,
+ D0=yI-delta M0,
+ H0=D0*D0.
+
+The spectrum is
+
+ spec(H0)={g^2,h,h},
+ g^2=0.005386002055755119...,
+ h=1.191940562322203... .
+
+Let f=(1,-1,1)/sqrt3, so M0f=f and |f_0|^2=1/3.  For the declared
+direction V=-z M0P0, the derivative of K=(D*D)^(-1/2) is obtained from the
+standard divided differences of x^(-1/2).  On the fixed line it gives
+
+ <f,delta K_Re f>=1/(3g^2)=61.888824007625...,
+ <f,delta K_Im f>=0.                                    (2)
+
+This proves Claude46's singular leading term.  It is a leading component,
+not the whole derivative.  The full numerical values per unit direction are
+
+ real direction:
+   Frobenius norm 62.3267060810,
+   operator norm  62.3198583277,
+   rank3,
+   fixed-line amplitude fraction 0.9929744069;
+
+ imaginary direction:
+   Frobenius norm 8.24850950745,
+   operator norm  5.83257700740,
+   rank2,
+   fixed-line coefficient zero.
+
+Therefore 62.33 and 8.25 reproduce only when double bars are interpreted as
+Frobenius norms.  The 99.3 percent statement is an amplitude ratio for the
+artificially real direction; its squared Frobenius share is 98.60 percent.
+
+Claude46's displayed expansion
+
+ delta K=Re(kappa)/(3g^2) ff*+O(1)
+
+has the wrong remainder.  Put Q=ff* and R=I-Q.  The divided difference of
+x^(-1/2) between the two Gram eigenvalues is
+
+ c(g)=[1/g-1/sqrt(h)]/[g^2-h]
+     =-1/(3y^2 g)+O(1),
+ h=y^2+(y-g)^2+y(y-g).
+
+For V=-kappa M0P0 one has
+
+ Q delta H R
+   =-y bar(kappa) QP0(M0*-I)R+O(g),
+ ||QP0(M0*-I)R||=sqrt(2/3).
+
+Consequently, at y=2/3,
+
+ ||Q delta K R+R delta K Q||_op
+      =|kappa|/[sqrt(6)g]+O(1),
+ ||Q delta K R+R delta K Q||_F
+      =|kappa|/[sqrt(3)g]+O(1).                         (3)
+
+The fixed-line identity Re(kappa)/(3g^2)Q is exact.  For nonzero
+Re(kappa) it remains the leading singularity, with (3) as the subleading
+term.  For purely imaginary kappa, (3) is the leading divergence.  Thus the
+imaginary response is not uniformly O(1) as the gap closes.  A direct replay
+at g=10^(-4) gives g times the cross operator norm 0.40827417 and g times its
+Frobenius norm 0.57738688, converging to 1/sqrt6 and 1/sqrt3.
+
+
+3. The actual complex Hardy direction
+
+HARDY-BMU-FIRST-NONZERO-ENTRY.txt fixes
+
+ kappa=(4X_*/pi) I,
+ X_*=[2cosh(ell_NS/2)]^(-1),
+ arg I=-5pi/12.
+
+For the unit direction z=exp(-5pi i/12), real linearity of the Fréchet derivative
+gives
+
+ ||delta K||_F=17.9916735432,
+ ||delta K||_op=17.8809143219,
+ rank(delta K)=3,
+ |<f,delta K f>|=16.0180063322.
+
+The fixed-line Frobenius amplitude fraction is 0.8903010770 and its squared
+share is 0.7926360077.  Thus the actual complex Hardy phase retains a strong
+resonant component, but the whole response is neither rank1 nor 99.3 percent
+fixed-line.  Its mixed blocks obey the g^(-1) law (3).  At the fixed physical
+gap they form the finite nonresonant part that is numerically important for
+this phase.
+
+
+4. Conditional norm threshold
+
+The exact source value gives
+
+ |kappa|=0.3096133626901069/cosh(ell_NS/2).
+
+Since ||M0P0||=1 and EM5 itself defines epsilon_f=g, the norm inequality for
+this DECLARED direction would be
+
+ |kappa|<g/2
+
+and hence
+
+ ell_NS>5.644618151351245.                               (4)
+
+Claude46's rounded 5.65 is correct.  The phrase "if epsilon_f is the
+resonance gap" is unnecessary: EM5 defines it that way.  Equation(4) remains
+conditional for a different reason.  It applies only if an original source
+map first identifies -kappa M0P0 as V_adm on the actual Pstr space and the
+commutator condition is verified.  No current source fixes an ell_NS value
+and proves those two statements.
+
+
+5. Infinitesimal and finite responses are different
+
+The values in sections2-3 are derivatives at kappa=0.  The exact finite response
+is
+
+ [(D0-kappa M0P0)^dagger(D0-kappa M0P0)]^(-1/2)-H0^(-1/2),
+
+and is generally not kappa times the derivative.  As a dimensionless control
+inside the EM5 norm bound, take |kappa|/g=0.49 with the actual Hardy phase.
+Then
+
+ finite response Frobenius norm =0.5456360675,
+ linear response Frobenius norm =0.6469949632,
+ relative linearization error   =0.2264717958.
+
+The derivative is a correct local diagnostic.  Near the admissibility
+boundary it is not an accurate finite replacement.  A claimed physical
+finite K therefore has to use the exact inverse square root after ell_NS and
+the actual source insertion are known.
+
+
+6. Relation to the completed spine/fold result
+
+SPINE-ORIGINAL-PQ-FOLD-KERNEL-ADDENDUM.txt proves the actual coefficient
+isometry between the P/Q fold and diag(M0,-M0), including the full positive
+Gram functional calculus.  It says explicitly that these endpoint
+coefficient fibers need not be the F5 faces, transports the actual Pstr
+rather than replacing it by P0, and treats the Hardy W6 insertion only as a
+declared comparison embedding.  Claude46 may therefore use this map to
+evaluate the conditional Gram response, but not to promote the comparison
+embedding to the physical V_adm source.
+
+Likewise, P_Seam,+ in the primitive carrier theorem is a physical structural
+projector, while "positive C6 branch" labels the +M0 block.  Their common plus
+sign is not an operator identity.  The original positive C6 kernel is not
+automatically the F5 seam.
+
+
+Final scope
+
+The smallest supported conclusion is positive and conditional: if the actual
+source inserts -kappa M0P0 as a Pstr-preserving V_adm, the original Gram
+consumer has the exact strong resonance (2), the exact finite response above,
+and the conditional norm threshold (4).  Existing sources prove neither that
+insertion nor its structural commutator.  The Hardy coefficient remains a
+nonzero directed contribution already read by the primitive wedge consumer;
+it is not thereby the entire physical V_adm or Yukawa source.
+
+Reproducible check
+
+ experiments/theory-contracts/tfpt-unified-source-derivation-20261029/
+ aps_source_review/check_claude46_gram_response.py
+
+Output:
+ aps_source_review/claude46-gram-response-results.json
+
+Sources
+
+* CLAUDE46-SPINETRANSFER-GRAM-UNGEPRUEFT.txt,
+  SHA256 b49037522068ecc6006cbe0c58a4ed8dfd715d9359ba9a1ea1d61f660d00991e.
+* documents/archive--tfpt-45--source_extracts--03_em_flavor_source/
+  sections/005-source.tex,
+  SHA256 786d2619e775775d70adf177794138485b261968042a880b2f0f617bb0111814.
+* SPINE-ORIGINAL-PQ-FOLD-KERNEL-ADDENDUM.txt,
+  SHA256 d98da73f0023e1de696a31874d73b1df547564cec70205c07e5a54f3e0dc0fc5.
+* HARDY-BMU-FIRST-NONZERO-ENTRY.txt,
+  SHA256 57a86a6e51d78730e23d2e9763fa93f66dd1e001efdc9f3de5a383501334452b.

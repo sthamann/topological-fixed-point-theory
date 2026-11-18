@@ -1,0 +1,524 @@
+AKTUELLE STATUSKORREKTUR, 26.10.2026
+====================================
+Der im folgenden Arbeitsstand noch als numerisch/offen bezeichnete Anschluss
+der konkreten A0* ODE ist inzwischen durch den wiedergefundenen exakten
+C4 Dreiecksbeweis vom 28. September geschlossen. Maßgeblich sind jetzt
+C4-DESCENT-FINITE-MONODROMY.txt und C4-TRIANGLE-INDEPENDENT-REVIEW.txt.
+Die Identifikation gilt bis zum gemeinsamen konstanten Basiswechsel und der
+verbleibenden diagonalen Basiszeichenkonvention. Die tatsächliche Verbindung
+ist C4 äquivariant, hat aber keinen rationalen z->1/z Lift. Der bedingte echte
+D4 Satz beschreibt eine andere markierte Verbindung. Die Stabilitäts und
+Wandargumente unten behalten ihren jeweils ausdrücklich angegebenen Scope.
+Die frühere Offen Kennzeichnung ist überholt; keine neue ODE Suche nötig.
+
+STABILITY-SOURCE-RECONCILIATION
+===============================
+
+Datum: 2026-10-26
+
+Entscheidende Frage
+-------------------
+
+Beschreiben TFPT2 section008 und section011 dasselbe parabolische Objekt, wenn
+section008 ein stabiles D4 aequivariantes Buendel auf
+
+    E = O(-2) + O(-1) + O(-1)
+
+mit vier vollen Flags und Gewichten (0,1/3,2/3) fixiert, section011 dieselben
+Daten aber zu einem strikt polystabilen Wandpunkt erklaert?
+
+Ergebnis
+--------
+
+Nein. Die beiden Aussagen koennen nicht als Aussagen ueber dasselbe markierte
+parabolische Buendel gelten.
+
+Section011 beweist nur, dass eine besondere, an der
+Birkhoff Grothendieck Zerlegung vollstaendig gesplittete Flagkonfiguration
+polystabil ist. Ihre Matrix W_wall weist jedem der drei globalen
+Liniensummanden an jedem Punkt direkt eines der drei Gewichte zu. Dann sind die
+drei Summanden parabolische Linien vom Grad null und das Objekt ist
+reduzibel polystabil.
+
+Bei einem allgemeinen vollen Flag sind die drei festen holomorphen Summanden
+aber nicht gleichzeitig Flaglinien. Dann bilden ihre induzierten Gewichte an
+einem Punkt keine Permutation von (0,1/3,2/3). Genau diese unbegruendete
+Additivitaet wird in section011 Zeilen 262 bis 267 und in v26 Zeilen 60 bis 78
+benutzt. Das dortige Widerspruchsargument gilt daher nur fuer split parabolic
+bundles, nicht fuer jedes parabolische Buendel mit dem zugrunde liegenden
+holomorphen Split O(-2)+O(-1)^2.
+
+Der kleinste direkte Test entscheidet die Stabilitaet des algebraisch
+deklarierten Flagobjekts. Setzt man die exakten, durch U rotierten Eigenflags
+des vorhandenen Residuums A0* in die affine Spaltungsbasis von
+O(-2)+O(-1)^2, sind alle gesaettigten Rang 1 und Rang 2 Unterbuendel strikt von
+negativem parabolischem Grad. Dieses deklarierte parabolische Objekt ist
+stabil. Seine Identifikation mit der Deligne Erweiterung der A0* ODE ist jedoch
+nicht automatisch: der direkte Scherungstest am Punkt unendlich laesst einen
+resonanten Pol uebrig. Unabhaengig davon ist die
+exakte v117 Darstellung irreduzibel und unitaer. Mehta Seshadri ordnet ihr
+deshalb ebenfalls ein stabiles, nicht das in W_wall gesplittete polystabile,
+parabolisches Buendel zu.
+
+Die saubere Vereinbarung lautet daher:
+
+    section008 stable branch = nicht gesplittete, rotierte Flags;
+    section011 W_wall         = anderer, reduzierbarer Wandpunkt.
+
+Die Bezeichnung des W_wall Punktes als dasselbe physische nabla_F* ist nicht
+belegt und widerspricht der exakten Irreduzibilitaet von v117. Offen bleibt nur
+die bereits korrekt markierte analytische Identifikation der A0* ODE
+Monodromie mit der exakten v117 Darstellung. v117 prueft diese Identifikation
+numerisch auf etwa 1e-7, nicht algebraisch.
+
+1. Was die Originalstellen tatsaechlich sagen
+---------------------------------------------
+
+TFPT2 section008:
+
+* Zeilen 52 bis 59: vier volle Flags mit Gewichten (0,1/3,2/3) geben
+  pardeg(E)=deg(E)+4=0 und damit deg(E)=-4. Als zugrunde liegende Spaltung
+  wird O(-2)+O(-1)^2 genannt.
+* Zeilen 89 bis 103: M_k=R^k C R^-k, R mit Spektrum (i,-1,-i), und voller D4
+  Abstieg werden als Familienzweig beschrieben.
+* Zeilen 124 bis 127: der D4 aequivariante stabile parabolische Zweig wird
+  ausdruecklich fixiert. Die Coxeterdaten an 0 und unendlich sind Daten der
+  drei Orbifoldpunkte des Quotienten. Auf der Pullbackkurve P1 minus mu4 sind
+  sie keine zwei weiteren parabolischen Gewichtsbeitraege.
+* Zeilen 152 bis 170: der Text bemerkt selbst, dass ein einzelner fester
+  Faservergleich die globalen Unterbuendelgewichte nicht bestimmt. Gerade
+  deshalb darf man die Gewichte nicht zeilenweise auf die drei globalen
+  Summanden verteilen.
+
+TFPT2 section011:
+
+* Zeilen 202 bis 210 nennen weiterhin einen stabilen Zweig und die
+  Mehta Seshadri Korrespondenz mit irreduziblen unitaeren Darstellungen.
+* Zeilen 262 bis 268 behaupten danach, die Summe der induzierten Gewichte der
+  drei festen Summanden sei 4 und folgern aus w1<2, w2,w3<1 einen Widerspruch.
+* Zeilen 278 bis 297 geben
+
+      W_wall = (1/3) [[2,1,2,1],
+                      [1,0,0,2],
+                      [0,2,1,0]]
+
+  an. Jede Spalte ist eine Permutation von (0,1,2), jede Zeile hebt genau den
+  Grad des zugeordneten globalen Liniensummanden auf.
+
+Damit beschreibt W_wall definitionsgemaess die parabolische direkte Summe
+
+    L1_* + L2_* + L3_*,      pardeg(Lj_*)=0.
+
+Sie ist polystabil und reduzierbar. Das ist ein gueltiger Wandpunkt, aber kein
+stabiler Punkt und nicht die irreduzible v117 Korrespondenz.
+
+Das zugehoerige Skript v27 prueft nur die Spaltenpermutationen, Zeilensummen
+und diskreten Matrizeninvarianten. Die Behauptung der eindeutigen Auswahl wird
+in Zeilen 62 bis 64 durch check(..., True) aufgenommen. Sie wird dort nicht
+hergeleitet. Der Atlas fuehrt GATE.UWALL.01 entsprechend als historischen,
+offenen Selektor mit 144 Wandmatrizen in fuenf Orbits. Der Atlas fuehrt v117
+dagegen getrennt als exakte irreduzible S4 Darstellung; nur ihr Anschluss an
+die analytische A0* Monodromie ist numerisch.
+
+2. Der Konventionsfehler bei induzierten Gewichten
+--------------------------------------------------
+
+Mehta und Seshadri definieren am markierten Punkt eine absteigende Flagge
+
+    E_p = F_1 superset F_2 superset F_3 superset 0,
+    0 <= alpha_1 < alpha_2 < alpha_3 < 1.
+
+Fuer ein Unterbuendel wird die Flagge durch Schnitte induziert. Fuer eine
+Linie L ist ihr Gewicht alpha_j, wobei j der groesste Index mit
+
+    L_p subset F_j
+
+ist. Das ist Definition 1.7 des Originalartikels. Bei den Gewichten
+(0,1/3,2/3) erhaelt daher eine generische Linie Gewicht 0, eine Linie in
+F_2 Gewicht mindestens 1/3 und nur die hoechste Flaglinie Gewicht 2/3.
+
+Section008 Zeilen 153 bis 156 listet dagegen eine aufsteigende Folge
+
+    <e1> subset <e1,e2> subset E
+
+mit aufsteigenden Gewichten und weist einer generischen Linie ueber die erste
+enthaltende Stufe das Gewicht 2/3 zu. Das ist nicht die induzierte
+Unterbuendelkonvention aus Mehta Seshadri. Man kann diese aufsteigende
+Schreibweise fuer Eigenraumlabels verwenden. Fuer Stabilitaetsungleichungen
+muss sie jedoch in die absteigende MS Flagge uebersetzt werden. Section011
+mischt die beiden Lesarten.
+
+Noch elementarer sieht man den Fehler an drei beliebigen unabhaengigen Linien
+in einer gefilterten dreidimensionalen Faser: Sind sie nicht gleichzeitig an
+die Flagge adaptiert, sind ihre induzierten Gewichte nicht additiv. Nur fuer
+eine Flagspaltung ist ihre Summe 0+1/3+2/3. W_wall setzt genau diese
+zusaetzliche Flagspaltung voraus.
+
+Primaerquelle:
+
+V. B. Mehta und C. S. Seshadri, Moduli of vector bundles on curves with
+parabolic structures, Math. Ann. 248 (1980), 205 bis 239, Definitionen 1.5
+und 1.7, DOI 10.1007/BF01420526. Dort werden die absteigende Flagge, die
+Gewichte und die durch Schnitte induzierte Unterbuendelstruktur explizit
+definiert. Derselbe Satz identifiziert stabile Grad null Objekte mit
+irreduziblen unitaeren Darstellungen und polystabile mit vollstaendig
+reduziblen unitaeren Darstellungen.
+
+3. Exakte A0* Flags und die affine BG Praemisse
+-----------------------------------------------
+
+Aus verification/v115_anchor_residue.py Zeilen 28 bis 32 stammt
+
+          [ 1/2       sqrt(2)/6       0        ]
+    A0* = [ sqrt(2)/6  1/4             sqrt(5)/12]
+          [ 0          sqrt(5)/12      1/4      ].
+
+Seine Eigenwerte sind exakt 0,1/3,2/3. Geeignete Eigenvektoren sind
+
+    v_0   = ( sqrt(10)/5, -3 sqrt(5)/5, 1),
+    v_1   = (-sqrt(10)/5,    sqrt(5)/5, 1),
+    v_2   = ( sqrt(10),      sqrt(5),   1),
+
+wobei v_1 das Gewicht 1/3 und v_2 das Gewicht 2/3 traegt. Setze
+
+    U=diag(1,i,-i),       p_k=i^k,
+    H_k=span(U^k v_1,U^k v_2),
+    h_k=C U^k v_2.
+
+Die absteigende volle Flagge am Punkt p_k ist
+
+    E_{p_k} superset H_k superset h_k superset 0.
+
+Der Stabilitaetstest setzt hier zunaechst das algebraische Objekt fest: das
+splitte Buendel O(-2)+O(-1)^2 wird ueber der affinen Karte in seiner
+Standardbasis trivialisiert und traegt an p_k die obigen Flags. In genau diesem
+Objekt bleiben die endlichen Faserkoordinaten unveraendert.
+
+Ob dieselbe affine Basis tatsaechlich direkt aus der A0* Verbindung folgt, ist
+eine zweite Frage. Setze w=1/z und N=diag(2,1,1). Die affine Verbindungsform
+mit endlichen Residuen A_k hat am Punkt unendlich den fuehrenden Term
+-N dw/w. Fuer O(-2)+O(-1)^2 ist der diagonale Framewechsel
+
+    g(w)=diag(w^2,w,w).
+
+Waere dies bereits die richtige Deligne Lattice, muesste
+
+    Gamma_infty = g^-1 Gamma_aff g + g^-1 dg
+
+bei w=0 holomorph sein. Die exakte Rechnung ergibt jedoch
+
+    Res_{w=0}(Gamma_infty)=-(2 sqrt(2)/3) E_12.
+
+Die reine diagonale Scherung entfernt also den diagonalen Pol, aber nicht den
+resonanten E_12 Pol. Eine weitere Levelt oder Birkhoff Latticewahl ist noetig.
+Sie kann die affine Spaltungsbasis und damit die Darstellung der endlichen
+Flags veraendern. Deshalb beweist der folgende Test exakt die Stabilitaet des
+deklarierten splitten Flagobjekts, noch nicht dessen Identitaet mit der
+Deligne Erweiterung der v115 ODE.
+
+Aus U A_k U^-1=A_{k+1} folgt fuer diese Rohflags exakt C4 Kovarianz. Eine D4
+Reflexionslinearisierung folgt daraus nicht und wird hier nicht behauptet. Das
+stabile D4 aequivariante Mehta Seshadri Objekt aus v117 existiert davon
+unabhaengig.
+
+Eine besonders kurze exakte Gleichung fuer die mittlere Ebene ist
+
+    n_0=(-sqrt(10),3 sqrt(5),-5),
+    H_k=ker(n_0 U^-k).
+
+Damit sind alle unten verwendeten Inzidenzbedingungen unmittelbar lineare
+Gleichungen mit ausgeschriebenen Koeffizienten.
+
+Fuer eine Unterlinie L gilt in Einheiten von 1/3:
+
+    m_k(L)=0, wenn L_{p_k} nicht in H_k liegt,
+           =1, wenn L_{p_k} in H_k, aber nicht h_k liegt,
+           =2, wenn L_{p_k}=h_k.
+
+Alle Rechnungen unten sind exakte lineare Algebra ueber
+Q(i,sqrt(2),sqrt(5)). Es gibt keine numerische Toleranz und keine Annahme ueber
+die v117 ODE Identifikation.
+
+4. Alle Rang 1 Unterbuendel sind strikt negativ
+------------------------------------------------
+
+Jedes Linienunterbuendel von E hat Grad hoechstens -1.
+
+Grad -1.
+
+Jede Injektion O(-1) -> E liegt in
+
+    V=span(e2,e3)
+
+und ist dort eine konstante Linie. Keine h_k liegt in V, weil die erste
+Komponente von U^k v_2 ungleich null ist. Die Schnitte H_k cap V sind genau
+zwei alternierende Linien:
+
+    k gerade: C(0, sqrt(5)/3, 1),
+    k ungerade: C(0,-sqrt(5)/3, 1).
+
+Eine feste Linie in V trifft daher H_k an hoechstens zwei Punkten. Somit
+
+    sum_k m_k <= 2,
+    pardeg L <= -1 + 2/3 = -1/3 < 0.
+
+Grad -2.
+
+Eine Injektion O(-2) -> E hat in der affinen Karte die Form
+
+    s(z)=(a,bz+c,dz+e).
+
+Fuer a ungleich null ist sie automatisch nirgends null. Fuer a=0 ist sie
+genau dann gesaettigt, wenn be-cd ungleich null ist. Die Bedingungen
+
+    s(p_k) in H_k
+
+sind je eine lineare Gleichung in (a,b,c,d,e), die Bedingungen
+s(p_k) in h_k je zwei. Exakte Zeilenreduktion der 3^4 moeglichen
+Inzidenzmuster ergibt
+
+    max sum_k m_k = 4.
+
+Es gibt 31 Muster mit Summe mindestens 5. Bei jedem hat die aus
+n_0 U^-k s(i^k)=0 und den beiden Proportionalitaetsgleichungen zu U^k v_2
+gebildete Koeffizientenmatrix Rang 5. Sie besitzen also nur die Nullloesung.
+Die Schranke ist scharf. Das Muster (1,1,1,1) wird zum Beispiel durch
+
+    s(z)=(3 sqrt(2)/2,z,0)
+
+realisiert. Daher
+
+    pardeg L <= -2 + 4/3 = -2/3 < 0.
+
+Grad kleiner gleich -3.
+
+Selbst das maximale Gewicht 4 mal 2/3 liefert
+
+    pardeg L <= -3 + 8/3 = -1/3 < 0.
+
+Damit destabilisiert kein Linienunterbuendel.
+
+5. Alle Rang 2 Unterbuendel sind strikt negativ
+------------------------------------------------
+
+Sei F ein gesaettigtes Rang 2 Unterbuendel und Q=E/F das Quotientenlinienbuendel.
+Mit den induzierten Strukturen ist der parabolische Grad additiv. Da
+pardeg(E)=0, genuegt
+
+    pardeg(Q)>0.
+
+Ein Quotient E -> O(q) existiert nur fuer q >= -2.
+
+q=-2.
+
+Der Quotient ist bis auf Skalar die Projektion auf den O(-2) Summanden. Wegen
+der ersten Komponente sqrt(10) von v_2 gilt q(U^k v_2) ungleich null an allen
+vier Punkten. Sein Gewicht ist daher viermal 2/3 und
+
+    pardeg(Q)=-2+8/3=2/3>0.
+
+q=-1.
+
+Jeder Quotient hat die Form
+
+    q(z)=(az+b,c,d),       (c,d) ungleich (0,0).
+
+Fuer Quotienten ist das Gewicht in Einheiten von 1/3 gleich
+
+    0, wenn q(H_k)=0,
+    1, wenn q(U^k v_2)=0, aber q(H_k) nicht 0 ist,
+    2, wenn q(U^k v_2) nicht 0 ist.
+
+Die exakte Zeilenreduktion aller 3^4 oberen Inzidenzmuster ergibt
+
+    min sum_k m_k = 4.
+
+Es gibt 31 Muster mit Summe hoechstens 3. Fuer jedes hat die aus
+q(U^k v_2)=0 und q(H_k)=0 gebildete Koeffizientenmatrix Rang 4, also nur die
+Nullloesung. Die Schranke ist scharf. Das Muster (1,1,1,1) wird durch
+
+    q(z)=(-z/sqrt(2),1,0)
+
+realisiert. Also
+
+    pardeg(Q) >= -1+4/3=1/3>0.
+
+q=0.
+
+Ein Quotient hat die Form
+
+    q(z)=(Az^2+Bz+C,Dz+E,Fz+G).
+
+Gewicht null an allen vier Punkten wuerde q(H_k)=0 fuer jedes k verlangen.
+Die acht linearen Gleichungen in den sieben Koeffizienten besitzen Rang 7.
+Es gibt also keinen von null verschiedenen solchen Quotienten. Da die
+Gewichte Vielfache von 1/3 sind,
+
+    pardeg(Q) >= 1/3>0.
+
+q>0.
+
+Hier ist bereits der gewoehnliche Grad positiv und alle parabolischen
+Gewichte sind nichtnegativ.
+
+Folglich gilt fuer jedes gesaettigte Rang 2 Unterbuendel
+
+    pardeg(F)=-pardeg(Q)<0.
+
+Zusammen mit Abschnitt 4 ist das deklarierte splitte A0* Flagobjekt
+parabolisch stabil.
+
+6. Unabhaengige Darstellungskontrolle durch v117
+-------------------------------------------------
+
+verification/v117_monodromy_weyl_a3.py prueft exakt:
+
+    M0 ist unitaer, det M0=1, M0^3=I,
+    char(M0)=lambda^3-1,
+    U=diag(1,i,-i),
+    Produkt_k U^k M0 U^-k=I,
+    |<U,M0>|=24,
+    Summe_g |tr(g)|^2=24.
+
+Dabei muss die Gruppe sauber getrennt werden. Die vier tatsaechlichen
+Peripherien
+
+    M_k=U^k M0 U^-k
+
+erzeugen A4 von Ordnung 12. Ihre Charakterverteilung ist
+
+    {3:1,-1:3,0:8},       Summe |chi|^2=12,
+
+also ist bereits die vierpunktige Monodromiedarstellung irreduzibel. Das
+kompaktierte Kerncover hat Grad 12 und nach Riemann Hurwitz bei vier
+Traegheitspunkten der Ordnung 3 das Geschlecht 5. Erst das Hinzufuegen der
+C4 Kovarianz U erweitert A4 zur signgetwisteten dreidimensionalen
+S4 Darstellung von Ordnung 24. S4 ist daher die Kovarianzerweiterung, nicht
+die Monodromiegruppe der vierpunktigen x Sphaere.
+
+Das Charakterkriterium gibt die Irreduzibilitaet. Nach Mehta Seshadri gehoert
+zu dieser A4 Monodromie daher ein stabiles parabolisches Grad null Buendel.
+
+verification/v499_p2_weights_deligne_bg.py Zeilen 251 bis 303 zieht daraus
+korrekt h0(E)=0. Zusammen mit deg(E)=-4 und Birkhoff Grothendieck folgt
+
+    E = O(-2)+O(-1)+O(-1).
+
+Damit existiert durch v117 ein exaktes stabiles parabolisches Objekt mit derselben
+zugrunde liegenden Spaltung und denselben lokalen Gewichten. Die gewoehnliche
+Spaltung des Buendels ist kein Widerspruch zur parabolischen Stabilitaet. Die
+Flags mischen die Summanden.
+
+Der D4 Quotientenabstieg aus D4-ORBIFOLD-RIGIDITY.txt verschaerft dies: Unter
+dem echten (infinity,2,4) Abstieg, dem Spektrum von U und Irreduzibilitaet ist
+das markierte Paar bis auf den Zentralisator von U eindeutig und gleich v117.
+Dieser Schluss gilt fuer den stabilen Zweig. W_wall verletzt seine
+Irreduzibilitaet und gehoert nicht zu dieser Bahn.
+
+7. Exakte Korrektur der Quellenlage
+-----------------------------------
+
+Bewiesen:
+
+1. Vier Cuspflags liefern deg(E)=-4. Die beiden Quotienten Fixpunkte 0 und
+   unendlich sind Orbifoldisotropie und werden nicht als weitere Gewichte in
+   pardeg(E) addiert.
+2. Die exakte v117 Darstellung ist irreduzibel und liefert unter der bereits
+   angenommenen Unitaritaet ein stabiles parabolisches Objekt. Die vier
+   Peripherien erzeugen A4; U erweitert die Kovarianzgruppe auf S4.
+3. Das zugrunde liegende Buendel dieses stabilen Objekts hat die Spaltung
+   O(-2)+O(-1)^2.
+4. Die exakten rotierten A0* Eigenflags erfuellen auf dem algebraisch
+   deklarierten splitten Buendel alle strikten Rang 1 und Rang 2
+   Stabilitaetsungleichungen. Der direkte diagonale Infinity Framewechsel
+   identifiziert dieses Objekt noch nicht mit der A0* Deligne Erweiterung.
+5. W_wall ist eine andere, vollstaendig gesplittete und daher reduzible
+   polystabile Konfiguration.
+
+Zu korrigieren:
+
+1. Section011 Zeilen 262 bis 268 darf nicht behaupten, jede parabolische
+   Struktur auf O(-2)+O(-1)^2 liege auf der Wand. Die Rechnung gilt nur, wenn
+   die drei globalen Summanden die parabolische Flagge an jedem Punkt splitten.
+2. Section011 Zeilen 285 bis 297 darf W_wall nicht ohne weitere Identifikation
+   mit der stabilen nabla_F* oder der irreduziblen v117 Darstellung
+   gleichsetzen.
+3. Die Positivdimensionalitaet eines D4 Fixlokus fuer blosse Konjugationsklasse
+   plus Produktrelation und die Polystabilitaet von W_wall sind getrennte
+   Aussagen. Keine folgt aus der anderen.
+4. Section008 Zeilen 153 bis 156 muss fuer Stabilitaetsrechnungen in die
+   absteigende Mehta Seshadri Flagkonvention uebersetzt werden. Die dortige
+   generische Gewicht 2/3 Lesart ist eine Eigenraumlabelkonvention, keine
+   induzierte Unterbuendelkonvention.
+
+Noch offen:
+
+1. Die reine Infinity Scherung g=diag(w^2,w,w) laesst exakt den Residuenpol
+   -(2 sqrt(2)/3)E_12 uebrig. Die noetige Levelt oder Birkhoff Lattice und ihre
+   Wirkung auf die endlichen Flags sind noch nicht hergeleitet.
+2. v117 Zeilen 184 bis 200 identifiziert die analytische Monodromie des A0*
+   Systems nur numerisch mit M0. Die jetzt bewiesene Stabilitaet des
+   deklarierten A0* Flagobjekts ersetzt diesen transzendentalen
+   Gleichheitsbeweis nicht.
+3. Die U Rotation beweist C4 Kovarianz des A0* Flagobjekts. Die D4
+   Reflexionslinearisierung dieses konkreten Objekts ist nicht geprueft.
+4. Falls die aktive Quelle nicht den stabilen D4 linearisierten Zweig, sondern
+   bewusst W_wall als physisches Objekt waehlen will, braucht sie eine neue
+   Quelle fuer diese Auswahl und muss auf die Behauptung irreduzibler v117
+   Monodromie fuer dasselbe Objekt verzichten.
+
+Kleinster Erfolgstest und Abbruchkriterium
+-----------------------------------------
+
+Der entscheidende Stabilitaetstest war keine weitere Moduliscan. Er bestand
+nur aus den vier rotierten A0* Rohflags und allen moeglichen
+Unterbuendelgraden der deklarierten Spaltung. Erfolg bedeutete strikte
+Negativitaet fuer Rang 1 und Rang 2. Ein einziges Unterbuendel mit pardeg
+groesser gleich null haette dieses algebraische Flagobjekt widerlegt. Kein
+solches Unterbuendel existiert. Der getrennte Infinity Test hat dagegen die
+direkte ODE zu BG Identifikation abgebrochen: die reine diagonale Scherung ist
+nicht holomorph.
+
+Quellenschnappschuesse
+---------------------
+
+Repo: /Users/stefanhamann/Projekte/tfpt-theoryv4
+
+section008 SHA256
+    d8714f3a516a0a4d929a2121fa6dd16e0a00e4f972803130e9235b463276abb7
+section011 SHA256
+    a6ddc0c8bfa566b632b1b3734ea44ab684761310b141bcc05fd895c0c179961b
+v27_wall_representative.py SHA256
+    4041285e5d25d64fea1e8ed525e3477d7aa3c8db41fa8cc93d488aeeab9fcc67
+v115_anchor_residue.py SHA256
+    26d84469128747ef11be7513316e6c61f03517632d3a82a197413fe93af814a6
+v117_monodromy_weyl_a3.py SHA256
+    55eca6a64144f6e49789f3f1bbe84e256764e7ce92b207044be693f8684d5df5
+v499_p2_weights_deligne_bg.py SHA256
+    73098e62b3148d1cddb31e60c16a424159f985b874aa0dee1737260fb81017b9
+
+Eigenstaendige Reproduktion
+---------------------------
+
+    python3 research-20261026-real-boundary/check_parabolic_stability.py
+    python3 -OO research-20261026-real-boundary/check_parabolic_stability.py
+
+Beide Aufrufe liefern bytegleiches JSON und bytegleiche Standardausgabe. Das
+Programm verwendet keine Assertions als Kontrollfluss. Es prueft die je 81
+Rang 1 und Rang 2 Muster, die 31 entscheidenden High und Low Muster, die
+Grad null Quotientenmatrix, A4 versus S4 und den Infinity Patch getrennt.
+
+check_parabolic_stability.py SHA256
+    a9962489103f28ae692ca7b53f27f1d12397e579579c2b887b1c0ee65e2f38ee
+stability-results.json SHA256
+    e894f7531264fc5ab1b647922467c47c878d6c271c8e258f76ac4a7bfe7e24b7
+
+Atlasgrenze
+-----------
+
+Der Atlas bestaetigt die bisherige Trennung: GATE.UWALL.01 ist ein
+historischer offener Wandselektor, v117 eine exakte endliche irreduzible
+Darstellung mit numerischem ODE Anschluss. Der Atlas selbst ist Navigation,
+nicht der Beweis. Die Entscheidung oben stammt aus den Originalstellen, der
+primaeren MS Definition und der exakten Unterbuendelrechnung. Es wurden keine
+Atlasdaten und keine Originaldateien veraendert.

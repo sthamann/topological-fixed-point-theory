@@ -1,0 +1,298 @@
+TFPT: Ursprüngliche P1 Quelle, markierte Ausführung und erzwungene Gewichte
+12. November 2026
+Contract: p1-marked-execution-origin-20261112
+Verdict: PARTIAL. Vollständige physische Ursprungslösung nicht hergeleitet.
+
+1. Ergebnis und wissenschaftlicher Umfang
+
+Der Auftrag verlangt die Ausführung und Gewichtung aus der ursprünglichen
+P1 Quelle, unter Erhalt des gesamten TFPT Zusammenhangs. Die vollständige
+operative P1 Quelle bestimmt ihren Zustand und ihre Zeit bereits. Dies ist
+im Original vorhanden und wird nicht als neue Lücke behandelt.
+
+Für den vorgeschlagenen endlichen Compileranschluss ist nun die gesamte
+Klasse gemeinsam G31 invarianter Verteilungen von sechs äußeren Marken
+und 60 ursprünglichen Reflexionen bestimmt. Sie besitzt genau einen freien
+Parameter t. Sämtliche unmarkierten Einzelschrittgewichte sind 1/60, für
+jedes t. Die ursprüngliche mitgeführte Referenzclock nach Akzeptanz der
+Sprünge ist ebenfalls unabhängig von t. Die gemischte Markenantwort und
+primitive Ereigniszahlen unterscheiden t exakt.
+
+Das verstärkt den notwendigen Ursprungstest und präzisiert die vorige
+Aussage zur vollen Symmetrie. Es berechnet noch keinen physischen P1 Wert.
+Insbesondere sind diese endlichen Prozesse keine vollständigen P1 oder
+TFPT Gegenmodelle. Sie werden nicht anstelle der Originalquelle eingesetzt.
+
+2. Was die ursprüngliche Quelle tatsächlich vorgibt
+
+Source45 Boundary002:100–143 definiert die operative Saat
+  (A_loc, tau_t, Theta, omega, [u_Sigma], D_coll).
+Die lokale Algebra, tatsächliche Zeitwirkung, Reflexion, RP und clusternder
+Zustand und der Kragengenerator sind darin enthalten. Ihre vollständige
+positive Quelle bestimmt auf den echten Wortklassen den OS Transfer:
+  <[F], T_s[G]>_OS = omega((Theta F) tau_s G).
+Dieser ganze Kern bestimmt T_s und Omega=[1] bis zur entsprechenden
+unitären Darstellung. Nur c3 oder eine spektrale Teilantwort einzusetzen
+würde die tatsächlich vorausgesetzte Quelle verkürzen.
+
+Die bestehende volle Quellenkorrektur vom 2. November zeigt außerdem:
+  Z_rel[F] = omega_ref(R F),  R=w_ref^-1 w_adm,
+auf derselben ursprünglichen Integrationsbasis und bei legitimem Quotienten.
+Die ursprüngliche Reihenfolge, Domäne, Phase und Referenz bleiben erhalten.
+Bei Nullstellen bleibt die ursprüngliche Integration maßgeblich. S_prim,
+S_adm, -log Z, Gamma und der Master sind verschiedene Größen. Insbesondere
+ist R nicht durch bloßes Umbenennen gleich exp(-S_prim).
+
+Damit ist die erste offene Anwendung konkret: Die endlichen Reflexions-
+und Ereignisargumente müssen als tatsächliche Einfügungen dieser Quelle
+identifiziert werden. Eine bedingte Gewichtsfamilie auf Ereignislabels
+beweist keine Freiheit innerhalb einer bereits vollständig gegebenen omega.
+
+3. Vollständige Klassifikation der gemeinsamen endlichen Symmetrie
+
+Verwendet werden unverändert source_rays, reflection_actions und
+outer_mark_action aus compiler-correlated-event-clock-20260919/source_channel.py.
+Sei R die Menge der 60 ursprünglichen Reflexionen, Q die sechs äußeren
+Marken. Die äußere Wirkung jedes r auf Q ist eine Transposition. Sie bewegt
+zwei Marken und fixiert vier. Die innere ursprüngliche Sechserwirkung vor
+der äußeren Dualität ist eine andere Darstellung; beide werden getrennt.
+
+G31 wirkt auf Q x R durch
+  (q,r) -> (gq, g r g^-1).
+Der Originalmatrixtest ermittelt genau zwei Bahnen:
+  O_move = {(q,r): rq != q},  Größe 120,
+  O_fix  = {(q,r): rq = q},   Größe 240.
+Die Konjugationen wurden an allen 60 x 60 ursprünglichen Strahlen berechnet.
+Die daraus erzeugten Bahnen wurden vollständig bestimmt, nicht aus den
+Anzahlen geraten. Somit ist JEDE invariante klassische Wahrscheinlichkeits-
+verteilung auf diesem tatsächlichen Paarraum von der Form
+  p_t(q,r) = t/120       für (q,r) in O_move,
+             (1-t)/240  für (q,r) in O_fix,
+  0 <= t <= 1.
+
+Summieren liefert für jedes t
+  p_t(q)=1/6,
+  p_t(r)=(2t)/120+4(1-t)/240=1/60,
+  p_t(r|q)=t/20 für rq!=q, sonst (1-t)/40.
+Daher ist die über Marken gemittelte Einzelschrittabbildung immer C60:
+  (1/6) sum_q C_t^(q) = C60.
+Der eindeutige stationäre Zustand I10/10 und alle nativen Ereignisphasen
+bleiben in der zuvor geprüften positiven Teilfamilie erhalten.
+
+Diese Aussage betrifft den unmarkierten EINZELSCHRITT. Eine einmal gezogene
+und danach erhaltene Marke erzeugt in mehreren Schritten Korrelationen.
+Daraus wird ausdrücklich keine Gleichheit sämtlicher unmarkierter Historien
+mit unabhängig neu gezogenen C60 Ereignissen behauptet.
+
+4. Welche stärkere Symmetrieforderung t=1/3 auswählen würde
+
+Gleichverteilung der Reflexionen bei einer festgehaltenen Marke bedeutet
+  t/20=(1-t)/40, also t=1/3.
+Das ist stärker als gemeinsame Kovarianz von Marke und Ereignis oder eine
+invariante unmarkierte Verteilung. Innerhalb der obigen ganzen Klasse ist
+es genau die statistische Unabhängigkeit von q und r.
+
+Die gemeinsame invariante Observable
+  chi(q,r)=1{rq!=q}
+hat Erwartung t. Sie ist unter G31 invariant und wird durch die Symmetrie
+nicht auf 1/3 festgelegt. Ihre zentrierte Antwort ist t-1/3. Ein Argument,
+das nur beide gleichverteilten Marginalen feststellt, verliert genau diese
+Korrelation. Das Ergebnis von native-compiler-operation-20261112 zur
+Gleichgewichtung ist somit nur für die entsprechend stärkere Forderung
+an die bei festgehaltener Marke gegebenen Ereignisgewichte anzuwenden.
+
+Dies ist keine Aufforderung, die ursprüngliche Quelle künstlich zu mitteln.
+Das Original besitzt physische Marken. Zum Beispiel ist der erhaltene
+D5/A3 Gluecharakter in der vollständigen Wurzelwirkung nicht G31 zentral;
+seine Bahn hat 15 Elemente und der Stabilisator Ordnung 3072. Die dortige
+Markierung ist nicht ohne Abbildung mit dem äußeren q gleichzusetzen.
+
+5. Ausführung der ursprünglichen aufgezeichneten Clock für alle t
+
+Die ursprünglichen markierten Stay und Jump Karten S20,J20 erfüllen
+  S20+J20=C20,
+  S20*(I)=2I/5, J20*(I)=3I/5.
+Der mitgeführte Rahmen F macht jedes der 40 Hintergrundereignisse im
+relativen Leser zur Identität. Die vollständige Originalregel einschließlich
+Phasen und kovarianter Neubenennung der ausgewählten Ereignisse bleibt.
+Bei unabhängiger Neuwahl mit Gewicht t lauten die relativen Karten
+  S_t=(1-t)id+t S20,  J_t=t J20.
+Für jedes t>0 folgt exakt auf dem ganzen 100 dimensionalen Operatorraum
+  Phi_t=J_t(id-S_t)^-1=J20(id-S20)^-1.
+Der Inversenexistenz liegt die Normabnahme mit Erfolg 3t/5 zugrunde.
+Es geht nicht nur um Populationen oder Eigenwerte. Alle sechs ursprünglichen
+Marken und vollständigen Matrizen wurden für drei t exakt ausgewertet.
+Die algebraische Identität beweist die gesamte kontinuierliche Klasse.
+
+Auch jede geordnete Folge relativer ausgewählter Labels bleibt gleich,
+wenn die Hintergrundlabels und Wartezeiten verworfen werden: Vor einem
+solchen Label summieren sich die beliebig vielen Hintergrundidentitäten
+zu sum_b>=0 (1-t)^b t=1. Nach zusätzlichem Summieren der ausgewählten
+Stay Labels entsteht die obige Jump Karte. Das gilt für die ursprünglichen
+aufgezeichneten CP Historien, nicht für Interferenz zwischen verschiedenen
+gemessenen Historien oder für beliebige zusätzliche Laborinterventionen.
+Volle Hintergrundaufzeichnungen und Zeiten bleiben unterscheidbar.
+
+Der volle zählende CP Reihenformalismus ist
+  Phi_t(z)=z t J20 [id-z((1-t)id+t S20)]^-1.
+Seine Spur erzeugt für sechs Akzeptanzen
+  E[z^N]=[(3t/5)z/(1-(1-3t/5)z)]^6,
+  E[N]=10/t,  Var(N)=50/(3t²)-10/t.
+Dies sind Ereigniszahlen, keine hergeleiteten Sekunden. Zählung und
+Quantenendpunkt faktorisieren im Allgemeinen nicht.
+
+Drei bereits strikt positive Hilbert Schmidt Transfer aus derselben Klasse:
+  t       feste Zweikopienrückantwort r       E[N]      Var(N)
+  1/4                 49/160                  40        680/3
+  1/3                  3/10                   30         120
+  2/5                 59/200                  25        475/6
+Sie haben denselben getrackten gestoppten Quantenkanal. Ihre Quelle ist
+hier der ausdrücklich bedingte Originalprozess, kein neu gewähltes P1.
+
+5a. Positive Auswahlbedingung aus ursprünglicher Zweischrittverklebung
+
+Man kann t innerhalb desselben Originalmenüs eindeutig bestimmen, wenn
+eine zusätzliche volle Verklebungsidentität tatsächlich aus P1 folgt.
+Dazu sei die äußere Marke einmal gleichverteilt gewählt und anschließend
+beibehalten; die Reflexionsereignisse sind bedingt auf diese Marke iid.
+Mit D_q=C20^(q)-C40^(q) gilt sum_q D_q=0 und
+  C_t^(q)=C60+(t-1/3)D_q.
+Der unmarkierte Zweischritt ist deshalb
+  C2(t)=(1/6)sum_q (C_t^(q))²
+       =C60²+(t-1/3)² A,
+  A=(1/6)sum_q D_q².
+Jedes D_q ist selbstadjungiert im Hilbert Schmidt Raum. Daher ist A in
+diesem Hilbertraumsinn positiv, und A ist nicht null. Die vollständigen
+Originalmatrizen liefern exakt Tr_HS A=27/5. Daraus folgt
+  C2(t)=C60² genau dann, wenn t=1/3.
+Das ist eine notwendige und ausreichende Auswahl innerhalb dieser Klasse.
+Es ist kein neu gewähltes Entropieprinzip oder ein Fit von Gewichten.
+
+Die ursprüngliche P1 Verklebung auf ihrer VOLLEN Algebra impliziert diese
+Gleichung auf einem reduzierten Bell Leser jedoch nicht automatisch.
+Ein weggelassener korrelierter Markensektor kann Gedächtnis erzeugen.
+Die erstmals zu beweisende Zusatzidentifikation wäre gerade, dass die
+ursprüngliche Feldabbildung diesen Leser zu einem autonomen, unter dem
+Originaltransfer abgeschlossenen Unterraum mit derselben Präparation macht.
+Das ist bisher nicht hergeleitet. Für einen selbstadjungierten ganzen
+Transfer T und einen orthogonalen Leserprojektor P gilt exakt
+  P T² P-(P T P)²=P T(I-P)T P=((I-P)TP)*((I-P)TP).
+Der Zweischrittdefekt misst somit den Rückweg über ausgelassene Richtungen.
+Er verschwindet genau bei Invarianz des Leserunterraums. Dies beschreibt
+eine Hilbertraumkompression, nicht automatisch einen CP Instrumentfaktor.
+Bei unabhängig neu gezogener Marke in jedem Schritt verschwindet der
+obige gemittelte Defekt für alle t, eine andere Ausführung.
+
+Schon bei aufgezeichneten unmarkierten Ereignislabels gilt
+  Prob(r2=r1)=t²/20+(1-t)²/40
+             =1/60+(3t-1)²/120.
+Somit können auch unmarkierte Zweischrittantworten die Abweichung von 1/3
+sehen. Sie bestimmen nur den Betrag von t-1/3; die gemischte Markenantwort
+liefert zusätzlich die Richtung. Im ursprünglichen Zweikopienkanal ist
+  Tr_HS(C2-C60²)=(27/5)(t-1/3)²,
+mit Werten 3/80,0,3/125 für t=1/4,1/3,2/5.
+Der Tracedefekt ist hier keine behauptete einzelne physische Wahrscheinlichkeit.
+
+6. Weitere notwendige Operatorprüfung: Q4 ist kein Reflexionsmittel
+
+Die ursprünglichen 60 Reflexionen wirken auf dem nativen Fünfercode als
+15 Transpositionen mit vier Lifts. Auf der Standarddarstellung von S6 gilt
+tr rho5(r)=3 bis auf eine irrelevante Phase. Deshalb hat jede Konjugation
+Ad rho5(r) auf M5 Superoperatorspur 9. Jede normierte klassische Mischung
+aller dieser tatsächlichen Ereignisse besitzt ebenfalls Spur 9.
+
+Der ursprüngliche Q4 Rückkanal K hat dagegen
+  Tr_super K=1+9*(4/9)+15*0=5.
+Folglich kann keine Gewichtswahl den einstelligen Q4 Kanal als EINZELSCHRITT
+in diesem 60er Reflexionsmenü realisieren. Dies ist weder ein Ausschluss
+mehrerer Schritte noch beliebiger Instrumente, kohärenter Register oder
+vollständiger lokaler Quellen. Die im vorigen Vertrag identifizierten
+zweiten Q4 Antworten R_m und ihre Reflexionen -T_m sind ebenfalls andere
+Operatoren. Diese Ebenen dürfen nicht wegen ihrer gemeinsamen Geometrie
+ineinander eingesetzt werden.
+
+7. Was aus P1 für eine vollständige Auswahl gelesen werden muss
+
+Innerhalb der jetzt klassifizierten endlichen Familie genügt zur Bestimmung
+von t eine physisch identifizierte gemischte Antwort:
+  t = omega_P1(chi).
+Diese Schreibweise ist erst gerechtfertigt, wenn die Originalquelle die
+Ereignis und Markenaufzeichnungen tatsächlich als solche Observable trägt.
+Für eine fest präparierte Marke lautet dieselbe Aussage als Quotient
+  t_q = sum_{l: lq!=q} w(q,l) / sum_l w(q,l).
+Die w müssen aus derselben ursprünglichen geordneten Einfügung mit derselben
+Referenz folgen. Ein neues Countingmaß würde die gesuchte Herkunft voraussetzen.
+
+Alternativ ist der bereits vorhandene feste Zweikopienleser für Original-
+marke 4 oder 5 und X=|00,00><00,00| innerhalb dieser Familie invertierbar:
+  r=Tr[X C_t(X)]=(13-3t)/40,
+  t=(13-40r)/3.
+Mit der ursprünglichen Ereigniszählung ergibt sich eine überbestimmte Prüfung
+  E[N]*(13-40r)=30.
+Für echte Mischungen gilt 1/4<=r<=13/40; für positive Hilbert Schmidt
+Transfer 23/80<=r<=13/40. Beim gestoppten Prozess ist t=0 ausgeschlossen.
+Diese Beziehungen wählen keinen Zahlenwert, bevor die P1 Antwort vorliegt.
+Ein passendes r allein beweist weder das ganze Instrument noch die P1 Identität.
+
+Die Ausführung selbst benötigt alle Ausgangsantworten, nicht nur die
+Gewichte. Bei tatsächlich gegebenen zulässigen Einfügungen C_l muss
+omega_P1(F* C_l* B C_l G) auf dem gemeinsamen Wortcore mit demselben
+Zustand und der tatsächlichen Zeitwirkung übereinstimmen. B=I liest nur
+die Effekte. Die gesamte B und Fortsetzungsfamilie prüft den Eingriff.
+Diese Form ist ein notwendiger Vergleich am bestehenden Originalkernel,
+kein neu eingeführter physischer Detector oder eine behauptete P1 Abbildung.
+
+8. Prüfung des tatsächlichen ursprünglichen Anschlusses
+
+Der vorhandene affine Stromsatz liefert ein echtes Absorptionsinstrument
+  K_x=P_Omega J_n(w_x*) P_n/sqrt(5n),
+mit den originalen 120 source24 Richtungen und festen Stromgrad n.
+Es setzt den Zustand ins Vakuum; ohne Refresh gilt K_y K_x=0. Ein Instrument
+mit gleichen Effekten und erhaltenem Stromgrad hat andere Zukunftsantworten.
+Dieser schon im September bewiesene Unterschied bleibt erhalten. Er wählt
+nicht die 60 reflektierenden Gedächtnisoperationen und ihre Ereigniszeiten.
+
+Der jüngste ursprüngliche Zweiflächenaufruf dokumentiert weiter den nicht
+belegten Eingabewert Q_0[a,b]=I_orig((Theta F_a)theta_T F_b), samt absoluter
+Kappe, Selektor und Z_ref[0]. Der ausführbare Leser wurde direkt eingesehen:
+Fehlt sein geliefertes Gesamtquellenpaket, gibt er
+original_full_source_operation_not_supplied zurück. Das ist eine fehlende
+Eingabe dieses Verbrauchers und kein mathematischer Beweis, dass P1 sie
+nicht bestimmen kann. Ein Dummywert oder das Ersetzen durch h_N wäre falsch.
+
+Der Originalbericht ORIGINAL-P1-VARIATION-GAP-AND-EVENT-SELECTION.txt:198–215
+benennt dieselbe erste zusätzliche Wahl: die tatsächliche zulässige Familie,
+welche lokale Feld/Ereignisargumente in D+, B_Sigma, Domänen und Zustand
+einbettet. Die neue Rechnung liefert den gemischten Leser, der an dieser
+Stelle benötigt wird. Sie hat diese fehlende ursprüngliche Feldabbildung
+nicht konstruiert. Deshalb bleiben die tatsächlichen P1 Gewichte unberechnet.
+
+9. Gesamtzusammenhang, Abnahme und Fortsetzung
+
+Der Atlas wurde über seine Gesamtkarte, den Index aller 43 Forschungsprobleme,
+gezielte Suchen über den gesamten Atlas und entscheidende Originalquellen korreliert.
+Dies ist keine erneute unabhängige Beweisabnahme sämtlicher Atlasbehauptungen.
+Erhalten bleiben Viermarken/RR, P1/P2, E8, Flavor/Alpha, Quellenzeit, die
+relative S/Z/OS/Gamma Kette und die vorhandenen begrenzten Schließungssätze.
+Geladene Paarantwort und neutrales Nullwort sowie regionale Fortsetzung
+prüfen denselben physischen Quellenanschluss. Keine neue Pflicht zu einem
+speziellen CAR oder 60er Modell wird der gesamten TFPT auferlegt.
+
+Die Gleichgewichtung oder eine Clock kann die fehlende Quellenabbildung
+nicht durch Selbstkonsistenz ersetzen. Der weiterzuführende Schritt ist die
+echte gemischte ursprüngliche Randantwort mit transportierter Marke und
+festgehaltenem Ereigniswort samt Referenz. Die obigen exakten Relationen
+legen fest, welche Ausgaben gemeinsam bestehen müssen, falls die Original-
+quelle tatsächlich diesen endlichen Ausführungstyp realisiert.
+
+check_original.py verwendet den unveränderten Sourcebuilder, prüft die
+Konjugationen, beide Bahnen, sämtliche gemeinsamen Markentransporte,
+alle sechs gestoppten Operatoren, den vollständigen Zweischrittdefekt und
+exakte Zählantworten. Der Test bei z=1/2 kontrolliert das Spurfunktional
+der zählenden Karte auf allen Eingaben, nicht deren ganzen Kanaleintrag. Die allgemeine
+Klassifikation folgt aus den exakt bestimmten Bahnen; die t Unabhängigkeit
+ist zusätzlich analytisch bewiesen. Die entscheidenden analytischen Sätze
+und Quellenstellen wurden intern unabhängig geprüft, nicht extern begutachtet.
+
+F1_complete=false; physical_P1_mixed_response_evaluated=false;
+physical_event_insertion_identified=false; ledger_changed=false.

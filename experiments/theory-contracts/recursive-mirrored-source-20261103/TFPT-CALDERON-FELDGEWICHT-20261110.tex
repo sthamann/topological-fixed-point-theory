@@ -1,0 +1,149 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[T1]{fontenc}
+\usepackage[ngerman]{babel}
+\usepackage{lmodern,tgpagella,tgheros,amsmath,amssymb,booktabs,tabularx,array}
+\usepackage[margin=22mm]{geometry}
+\usepackage{xcolor,fancyhdr,xurl}
+\usepackage[colorlinks,linkcolor=teal!70!black,urlcolor=teal!70!black]{hyperref}
+\definecolor{pine}{HTML}{17675C}
+\definecolor{ink}{HTML}{142B3B}
+\color{ink}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{5pt}
+\setlength{\headheight}{15pt}
+\pagestyle{fancy}\fancyhf{}
+\fancyhead[L]{\sffamily\small\color{pine} TFPT \quad / \quad URSPRÜNGLICHES FELDGEWICHT}
+\fancyhead[R]{\sffamily\small 10. NOVEMBER 2026}
+\fancyfoot[R]{\sffamily\small\thepage}
+\newcommand{\sgn}{\operatorname{sgn}}
+\newcommand{\dd}{\mathrm d}
+\begin{document}
+{\sffamily\bfseries\color{pine} QUELLENTEST AM GANZEN KREIS\par}
+\vspace{3mm}
+{\sffamily\bfseries\fontsize{24}{28}\selectfont Kann das Calderón-Volumen\\ das fehlende Feldgewicht liefern?\par}
+\vspace{4mm}
+Die positive reelle Metrik des Calderón-Graphen ist im gegebenen R032 Kreis wohldefiniert. Ihr zurückgezogenes Higgsvolumen hat bei festem Modenschnitt endliche Masse. Schon das Higgsnormmoment divergiert, wenn man es nur mit dem bekannten beschränkten Fermiongewicht kombiniert. Beim Entfernen des Modenschnitts verliert die normierte Masse sogar jeden beschränkten Higgsbereich. Das gilt auch für das intrinsische Volumen nach Quotientierung der schwachen Winkel. Dieser Kandidat liefert damit die fehlende ursprüngliche Feldfaser nicht.
+
+\section*{Welche Originaldaten in die Rechnung eingehen}
+Fixiert sind die R032 Viertelphase $\alpha$, Kragenlänge $\ell=2\pi$, die ursprüngliche $96$ dimensionale Yukawa und Majorana Matrix und der homogene Higgsbereich $H\in\mathbb C^2$. Schreibe $H=R e$ mit $|e|=1$ und $p=n+\alpha$. Der unveränderte tangentiale Block ist
+\[
+ h_p(H)=p\Gamma+M+V(H),\quad M=-i\Gamma\Phi_M,\quad
+ V(H)=-i\Gamma\Phi_Y(H).
+\]
+$M$ und $V$ sind selbstadjungiert und antikommutieren mit $\Gamma$. $V$ ist reell linear. Geprüft wird die nichtdegenerierte Yukawafamilie des vorliegenden Beispiels. Für jede Einheitsrichtung ist $V(e)$ invertierbar. Die schwache $SU(2)$ Wirkung trägt die Richtungen ineinander und lässt $M,\Gamma$ invariant. Die schwache Spur und die zwei vollständigen Randflächen bleiben erhalten.
+
+Der orthogonale Graphprojektor des gegebenen Übergangs $\exp(-\ell h_p)$ ist
+\[
+ G_p=\frac12\begin{pmatrix}
+ I+\tanh(\ell h_p) & \operatorname{sech}(\ell h_p)\\
+ \operatorname{sech}(\ell h_p) & I-\tanh(\ell h_p)
+ \end{pmatrix}.
+\]
+Die vorliegende Prüfung setzt die reelle Spurmetrik $g_N=\sum_{|n|\le N}\operatorname{Re}\operatorname{Tr}(\dd G_p\,\dd G_p)$ versuchsweise als Metrik auf den vier Originalkoordinaten ein. $\rho_N=\sqrt{\det g_N}$ ist ihr Volumenfaktor relativ zum kartesischen Koordinatenvolumen. Diese ausdrücklich getestete Zuordnung ist die einzige zusätzliche Wahl. Sie war im Quellenbefund vom 3. November als von der verschwindenden Kählerform verschiedene Möglichkeit benannt.
+
+\section*{Erster Grenzwert: Ein fester Modenschnitt}
+Setze $A=V(e)$. Für jedes feste $p$ hat $\tanh(\ell h_p)$ bis auf exponentiell kleine Terme dieselben Ableitungen wie $\sgn h_p$. Die Ableitung von $\operatorname{sech}(\ell h_p)$ fällt exponentiell ab. Für die drei kartesischen Richtungen senkrecht zu $e$ ist die führende Ableitung
+\[
+ \frac1R D\sgn_{A}\bigl(V(v)\bigr),\qquad v\perp e.
+\]
+Für die radiale Richtung ist sie
+\[
+ -\frac1{R^2}D\sgn_A(p\Gamma+M).
+\]
+Die zweite Formel folgt aus der Homogenität von $\sgn$, also $D\sgn_{h_p}(h_p)=0$. Man kann dieselben Formeln als analytische Entwicklung in $1/R$ lesen.
+
+\clearpage
+Die drei Winkelableitungen sind auf dem ursprünglichen Quarkfarbblock linear unabhängig. Dort wirkt die schwache Drehung auf dem linken Dublett und trivial auf den rechten Singuletts. Die Vorzeichenmatrix des invertierbaren ungeraden $A$ ist eine unitäre Abbildung zwischen den beiden Gradierungen. Eine infinitesimale schwache Drehung kann sie daher nur bei trivialer Drehung unverändert lassen. Die Winkelableitungen sind ungerade bezüglich $\Gamma$. Die radiale Ableitung enthält dagegen den geraden, von null verschiedenen Term $p\Gamma|A|^{-1}$, denn $p\ne0$ in beiden Vierteln. Damit ist der führende vierdimensionale Jacobian positiv. Mit einer radialen Potenz zwei und drei Winkelpotenzen eins ergibt sich
+\[
+ \rho_N(R e)\sim c_N(e)R^{-5},\qquad c_N(e)>0 .
+\]
+Der radiale Massenanteil fällt wie $R^{-2}\dd R$. Deshalb ist die Gesamtmasse endlich und der Anteil des Higgsnormmoments $U=R^2$ unendlich. Ein zusätzlicher positiver Faktor, der nach unten durch eine positive Konstante beschränkt ist, ändert dieses Ergebnis für das Moment nicht.
+
+Für die intrinsische Metrik auf dem Quotienten nach den schwachen Winkeln ist der Radialkoeffizient das Schurkomplement der Winkelmatrix, $(g_N^{-1})_{RR}^{-1}$. Der gerade radiale Term bleibt nach der Winkelprojektion erhalten. Sein Wurzelvolumen fällt ebenfalls wie $R^{-2}\dd R$. Der Quotient hat somit dieselbe Momentgrenze. Das ist der metrische Quotient dieser konstanten Faser. Ein zusätzlicher ursprünglicher BRST Faktor oder eine geometrische Randbedingung ist darin nicht berechnet.
+
+\section*{Zweiter Grenzwert: Der ganze Modenturm}
+Schreibe $s=p/R$. Dann $h_p/R=s\Gamma+A+M/R$. Der spektrale Abstand von null ist für große $R$ gleichmäßig mindestens eine positive Konstante mal $\sqrt{1+s^2}$. Aus der Resolventendarstellung der Vorzeichenmatrix folgen die Ableitungsgrenzen $\|D\sgn\|=O((1+s^2)^{-1/2})$ und $\|D^2\sgn\|=O((1+s^2)^{-1})$. Die Modensumme konvergiert lokal gleichmäßig. Für die ganzen Moden ergibt die Riemannsumme
+\[
+ Rg_\infty(Re)\longrightarrow L_\infty(e),\qquad
+ (L_b)_{ij}=\frac12\int_{-b}^{b}\!
+ \operatorname{Re}\operatorname{Tr}
+ \bigl(D\sgn_{s\Gamma+A}(V_i)D\sgn_{s\Gamma+A}(V_j)\bigr)\dd s .
+\]
+Hier sind $V_i=V(e_i)$ die vier tatsächlichen Einformrichtungen. Die halbe Spur folgt aus den zwei Graphflächen. $L_b$ ist für jedes $b>0$ positiv definit. Wenn die integrierte Norm einer Richtung null wäre, würde ihre Ableitung aufgrund der Analytizität in $s$ überall verschwinden. Für große $|s|$ ist ihr führender Term $V(v)/|s|$, und $V(v)\ne0$ für $v\ne0$. Das zeigt auch die Positivität bei $b=\infty$.
+
+Damit gilt $\rho_\infty(Re)\sim R^{-2}\sqrt{\det L_\infty(e)}$. Die radialen Massen wachsen wie $R\dd R$. Im metrischen Winkelquotienten ergibt sich $R^{-1/2}\dd R$, dessen Integral ebenfalls divergiert. Beide Gesamtvolumina sind unendlich. Schon lokal auf jedem festen kompakten Higgsbereich bleibt der Volumenanteil beschränkt. Die normierte Masse kann daher beim Entfernen des Modenschnitts in keinem solchen Bereich bleiben.
+
+Für den symmetrischen Schnitt $|n|\le N$ ist die Rate bestimmbar. Bei $R=Nx$ gilt $Ng_N(Nxe)\to L_{1/x}(e)/x$. Das gesamte Vierervolumen dividiert durch $N^2$ konvergiert zu
+\[
+ C=\int_{S^3}\int_0^\infty x\sqrt{\det L_{1/x}(e)}\,\dd x\,\dd e\quad\in(0,\infty).
+\]
+Für $x\le1$ folgt ein Integrandhöchstwert $C_1x$ aus $g_N\le g_\infty=O((1+R)^{-1})$. Für $x\ge1$ gilt für den radialen Gramwert $O(N^3/R^4)$ und für die drei Winkelwerte $O(N/R^2)$. Die Determinantenschranke liefert $C_2x^{-2}$. Dominierte Konvergenz beweist die Rate und eine nichttriviale Grenzverteilung der skalierten Amplitude $R/N$. Im intrinsischen Quotienten wächst das Volumen proportional zu $\sqrt N$. Die Schranken für den reskalierten Quotientenintegranden sind $O(x^{-1/2})$ nahe null und $O(x^{-2})$ im Schwanz.
+
+\clearpage
+\section*{Was der Referenzquotient dabei tatsächlich misst}
+Auf dem geprüften bedingten R032 Zweig ist der bekannte seekorrigierte Fermionfaktor
+\[
+ w_{A,N}(H)=\prod_{|n|\le N}\prod_{a=1}^{48}
+ (1+e^{-t\sqrt{p^2+\sigma_a(H)^2}})^2 .
+\]
+Er liegt gleichmäßig zwischen 1 und dem endlichen freien Referenzfaktor $C_\alpha(t)$. Bei großer Amplitude konvergiert $w_{A,N}\to1$ gleichmäßig in $N$. Dies folgt aus der gleichmäßig wachsenden Masselücke von $V(H)+M$ und der summierbaren freien oberen Schranke. Mit dem gemeinsamen vorgeschlagenen Graphvolumen folgt daher
+\[
+ \lim_{N\to\infty}\frac{\int w_{A,N}\rho_N\,\dd^4 H}
+ {\int w_{R,S,N}\rho_N\,\dd^4 H}
+ =\frac1{C_\alpha(t)}\simeq0{,}0170917101584\quad(t=4\pi).
+\]
+Der reine S Referenzfaktor ist hier unabhängig von $H$. Das ist ein tatsächlich bestimmter Quotient für den geprüften Ersatz, entstanden durch die Masse bei entweichender Amplitude. Er gibt kein primitives $Z_0$. Das ursprüngliche restliche Bosongewicht, geordnete Historien und der physische Selektor sind darin nicht eingesetzt. Bei einem zusätzlich eingesetzten IR Faktor $e^{-\varepsilon_N R^2}$ mit $\varepsilon_N\to0$ beweist Fatous Lemma für denselben Ersatz erneut Massenverlust auf jedem beschränkten Bereich.
+
+\section*{So lässt sich das echte Gewicht am ursprünglichen Kern prüfen}
+Im festen lokalen Vergleich hat die bosonische Kinetik den Hauptteil $-a\Delta_H I$ mit $a>0$. Sei der absolute Originalgenerator in derselben Feldkarte
+\[
+ H_B=-a\Delta_H I+\sum_j B_j(H)\partial_j+V_0(H)
+\]
+und symmetrisch bezüglich des skalaren Gewichts $\rho(H)\dd^4 H$ und einer fest gewählten orthonormalen inneren Karte. Die formale Adjungierung der ersten Ableitungen ergibt exakt
+\[
+ \operatorname{Herm}B_j=-a\partial_j\log\rho\ I .
+\]
+Der schiefhermitesche Verbindungsanteil ändert diese Identität nicht. Ist der echte erste Ableitungskoeffizient bekannt, liefert die Gleichung $\dd\log\rho$ direkt. Ein gemeinsamer absoluter Anker bindet die verbleibende Konstante. Der so bestimmte Endpunktfaktor ist ein Teil der gesuchten Rechnung. Die tatsächliche innere Zeitverklebung, Auswahl und Phasen müssen zusätzlich aus demselben Originalkernel stammen.
+
+Ein einzelnes radiales Diagnosewort liest genau die benötigte Richtung. Wende $[H_B,U]$, $U=|H|^2$, auf eine Testsektion an, die nahe dem untersuchten Punkt konstant ist. Sein hermitescher lokaler Kontakt lautet $-8a-2aR\partial_R\log\rho$. Für die endliche Graphdichte nähert er sich $+2a$, für die ganze Graphdichte $-4a$. Die flache kanonische Dichte im lokalen Vergleich ergibt $-8a$. Für den ganzen Turm folgt die Ableitung aus $R^2\partial_R g_\infty\to-L_\infty$: Differenziert man den reskalierten Summanden, erhält man $-2F-sF'$, dessen Integral $-\int F$ ist. Die Resolventenschranken machen beide Terme integrierbar. Damit sind die drei Driftwerte unterscheidbar, selbst wenn man den gleichen kinetischen Hauptkoeffizienten misst. Bei einer Differenz zweier Generatoren mit demselben Hauptteil und demselben Gewicht würde der reelle Drift verschwinden. Die hierfür benötigte Information steckt im \emph{absoluten} leeren Kern.
+
+Der vorhandene lokale R113 Kontakt bestimmt den Hauptteil. Für den reellen Drift fehlt weiterhin der Kurzzeitjet des tatsächlich gewichteten leeren Originalkerns. F1 bleibt offen.
+
+\clearpage
+\section*{Rechnung und Quellen}
+Die Prüfung verwendet die 96 ursprünglichen Koeffizienten, einschließlich Majorana. Die Ableitungen wurden einmal durch dividierte Differenzen und unabhängig durch Änderung des ganzen Zweiflächenprojektors berechnet. Die größte Abweichung der Einträge der Gramform am direkten Vergleichspunkt war $4{,}33\cdot10^{-8}$. Auf dem festen Strahl $H=(0,R)$ beträgt der kleinste positive Yukawasingularwert ungefähr $0{,}13236$.
+
+\begin{center}
+\begin{tabularx}{\textwidth}{@{}>{\raggedright\arraybackslash}p{52mm}XX@{}}
+\toprule
+Prüfung & kleinerer Vergleich & größerer Vergleich\\
+\midrule
+$R^5\rho_2(0,R)$ & $241087$ bei $R=512$ & $241220$ bei $R=1024$\\
+$R^2\rho_N(0,R)$ bei $N=25R$ & $37350$ bei $R=16$ & $37341$ bei $R=32$\\
+Normierter Driftkontakt in Einheiten $a$ & $1{,}9971$ bei festem Schnitt & $-3{,}9224$ nahe dem ganzen Turm\\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+Die ganzen Grenzeigenwerte der reskalierten Gramform sind numerisch
+$120{,}649686$, $241{,}299372$, $255{,}256903$, $255{,}256903$.
+Unabhängig davon ist die radiale Konstante exakt $\frac\pi2\sum_{a=1}^{48}\sigma_a(e)$.
+Im reinen Yukawa Singularpaar ist der radiale Integrand
+$\sigma_a^2s^2/(s^2+\sigma_a^2)^2$.
+Die Phasenableitung am selben Strahl liefert $\pi\sum_a\sigma_a(e)$.
+Die numerischen Quadraturen bestätigen die angegebenen Grenzkonstanten numerisch. Die Potenzen, Positivität und Grenzargumente folgen aus den analytischen Rechnungen oben.
+
+\textbf{Originalbezug.} Der unveränderte v252 Quellimport und die vier ursprünglichen Einformrichtungen stehen in
+\nolinkurl{chat-triangulation-20261108/check_tfpt_native_cauchy_family_holonomy_20261110.py}
+und
+\nolinkurl{chat-triangulation-20261108/check_tfpt_conditioned_r113_weights_20261110.py}.
+Die reelle Metrik wurde im Unterschied zur verschwindenden Liouvilleform als gesonderte Frage benannt in
+\nolinkurl{recursive-mirrored-source-20261103/JOINT-INTEGRATOR-EXECUTION.txt}, Abschnitt 4.
+Zum bekannten ganzen Fermionfaktor siehe
+\nolinkurl{original-paper-source-reconciliation-20261102/FIELD-INTEGRATION-20261105.txt}.
+Der bedingte kinetische Hauptteil ist der Befund \nolinkurl{shorttime20261105g-local-residue-kinetic-first-jet-conditional}.
+Die zwei leeren Original und Referenzbeine sind in \nolinkurl{chat-triangulation-20261108/R113-ORIGINAL-UND-REFERENZ-20261109.txt} definiert.
+Zum Geltungsbereich lokaler gegenüber ganzen Spektralprofilen siehe auch das Originalpaper von Chamseddine und Connes. \href{https://arxiv.org/abs/0812.0165}{The Uncanny Precision of the Spectral Action}.
+
+\textbf{Abgrenzung.} Der Test betrifft die homogene vierkomponentige Higgsfaser des gegebenen R032 Kreises und ihren reellen metrischen Winkelquotienten. Er lässt dynamische Geometrie, zusätzliche geordnete Felder und nicht beschränkte ursprüngliche Restfaktoren offen. Die physische Maßmasse und die gewichteten $q/r$ Wörter bleiben unberechnet.
+\end{document}

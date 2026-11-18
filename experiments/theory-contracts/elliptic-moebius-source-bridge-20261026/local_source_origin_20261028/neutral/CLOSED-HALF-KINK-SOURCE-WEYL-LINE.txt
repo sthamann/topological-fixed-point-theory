@@ -1,0 +1,333 @@
+GESCHLOSSENE HALBKINKLINIE AUS DEM ORIGINALEN QUELLSTROM
+========================================================
+
+Stand: 28. Oktober 2026
+Atlasstand: c478cbc397ee23a375ff4093
+
+
+Ergebnis
+--------
+
+Die neutrale geschlossene Spinorlinie ist im bereits gegebenen achtfach
+gefalteten CAR Quotientennetz vollstaendig durch den originalen Gesamtstrom
+bestimmt. Es ist weder ein einzelnes Spinorfeld als Observable noch eine
+Summe ueber Spinstrukturen erforderlich.
+
+Fuer zwei glatte Halbkinkrepraesentanten g_I und g_J hat
+
+  g_I g_J^(-1)
+
+triviale Endphasen. Dieser Quotient ist ein einwertiger glatter U1 Loop und
+wird durch einen vorhandenen Quellen Weyloperator implementiert. Dessen
+CCR Phase, Zustandserwartungen und Zeittransport sind bereits in
+ORIGINAL-ORDERED-CURRENT-KERNEL-AND-SEAM-GRADING festgelegt.
+
+Die Faltung laesst dabei keine freie Stromnormierung zu. Fuer den
+Quotientengesamtstrom gilt exakt
+
+  J_tot,n = J_cover,8n,
+  [J_tot,n,J_tot,m]=8 n delta_(n+m,0).                   (1)
+
+Der Halbkoeffizient des Spinors reduziert dieses Level auf
+
+  8 (1/2)^2 = 2 = s^2,
+
+also auf das bereits gegebene s=q/2 mit Endpunktgewicht
+
+  h_s=s^2/2=1.                                          (2)
+
+Damit sind die glatten DHR Transporter, ihr Kokyklus und ihre Kovarianz unter
+der gegebenen K_alpha Quellenzeit geschlossen. Der scharfe Ausdruck
+V_s(x)V_(-s)(y) ist dagegen kein beschraenkter Weyloperator. Sein Stromprofil
+hat Spruenge und liegt nicht im
+H^(1/2) Einteilchenraum. Der Stromkernel fixiert fuer kontrollierte
+finite degree Quellenzustaende die renormierten Matrixelementgrenzwerte und
+die Singularitaet
+
+  V_s(x)V_(-s)(y) ~ (e^(ix)-e^(iy))^(-2) mal
+                     normalgeordnete geschlossene Linie. (3)
+
+Glatte geschlossene Linien sind bounded unitaer. Ein closable geschmierter
+Bilokaloperator auf einem gemeinsamen vollen finite energy core folgt daraus
+noch nicht. Dafuer fehlen eine passende Energybound und ein Domainbeweis.
+
+Dieser Satz ersetzt die bisher offene Existenz eines neutralen Xi auf dem
+stipulierten Quotientennetz: rho_s und seine geschlossenen Transporter sind
+dort aus dem vorhandenen CAR Strom rekonstruiert. Nicht geschlossen sind die
+physische P1 Einintervallabbildung, die Auswahl der Koeffizienten L_gamma und
+die Aussage, dass die Quelle die 30er CP Antwort wirklich ausfuehrt.
+
+
+1. Die Faltung fixiert den Gesamtstrom
+--------------------------------------
+
+Die vorhandene unitaere Faltung eines einzigen Coverfermions ist
+
+  eta_r(x)=psi((x+2 pi r)/8)/sqrt(8),    r=0,...,7.      (4)
+
+Setze mit derselben See und derselben Normalordnung
+
+  j_tot(x)=Sum_r :eta_r(x)^* eta_r(x): .                (5)
+
+Mit theta=(x+2 pi r)/8 gilt dx=8 dtheta. Der Faktor 1/8
+aus eta_r^* eta_r hebt sich exakt gegen die Jacobi Determinante. Fuer die
+normalisierten Fouriermoden folgt daher
+
+  J_tot,n
+    =(1/(2 pi)) integral_0^(2pi) e^(-inx) j_tot(x) dx
+    =J_cover,8n.                                        (6)
+
+Der originale einzelne komplexe CAR Strom hat
+
+  [J_m,J_l]=m delta_(m+l,0).
+
+Gleichung (1) folgt unmittelbar. Sie ist zugleich der genaue Unterschied
+zwischen acht unabhaengig nachtraeglich eingesetzten Kopien und der
+vorhandenen Faltung eines Kanals: Das Level acht ist aus F hergeleitet.
+
+Die hier verwendete Zeit ist die im vorhandenen Quellvertrag gegebene
+K_alpha Evolution
+
+  U_K(t)=exp(-i t K_alpha),
+  K_alpha=(Lcal_0^alpha-ground)/8,
+
+  U_K(t) J_(-m) U_K(t)^* = exp(-i t m/8) J_(-m).
+
+Auf den Quotientenmoden ergibt das ohne Kalibrierung
+
+  U_K(t) J_tot,-n U_K(t)^* = exp(-i t n) J_tot,-n.       (7)
+
+Die unskalierte Coverzeit Lcal_0^alpha-ground haette auf denselben Moden die
+Frequenz 8n. Gleichung (7) ist daher keine freie Zeitkalibrierung, aber auch
+keine Identifikation mit der primitiven P1 OS Zeit.
+
+Die geschlossene Linie besitzt Gesamtladung null. Der alpha abhaengige
+Nullmodenanteil erzeugt deshalb keine weitere Zeitphase.
+
+Insbesondere rotiert die Quellzeit den Kink und nicht seine Ladungsklasse:
+
+  tau_t^K o rho_s,I o tau_(-t)^K = rho_s,I+t.            (7a)
+
+Der Cocycle, der die rechte Seite zur gewaehlten Ausgangslokalisierung
+zuruecktransportiert, ist genau der unten konstruierte Weyloperator
+T_(I+t),I. Damit ist die DHR Kovarianz unter K_alpha keine weitere Annahme
+innerhalb des Quotientennetzes. Ihre Identifikation mit der rohen P1 OS Zeit
+bleibt offen.
+
+
+2. Glatte Halbkinks und der bounded Transporter
+------------------------------------------------
+
+Sei a_I eine glatte reelle Phase auf dem punktierten Quotientenkreis mit
+
+  a_I=0 auf I_minus,        a_I=2 pi auf I_plus,
+  g_I=exp(i a_I/2).                                      (8)
+
+Fuer zwei Lokalisierungen I und J ist
+
+  b_IJ=(a_I-a_J)/2                                      (9)
+
+ein einwertiges glattes periodisches Profil. Die Endwerte null und zwei pi
+der beiden a Profile heben sich auf. Ziehe es mit der vorhandenen Faltung
+zurueck,
+
+  b_F(theta)=b_IJ(8 theta mod 2 pi).
+
+Seine einzigen Cover Fouriermoden sind
+
+  (b_F)_(8n)=(b_IJ)_n.                                  (10)
+
+Im Quellenvertrag gilt
+
+  W(phi) psi(theta) W(phi)^*=exp(-i phi(theta))psi(theta).
+
+Damit implementiert der bereits vorhandene bounded Weyloperator
+
+  T_IJ = W(-b_F)                                        (11)
+
+genau g_I g_J^(-1). Fuer glattes b_IJ ist
+
+  Sum_(n>0) 8 n |(b_IJ)_n|^2 < infinity,
+
+also liegt (11) in der regulierten Strom Weyldarstellung. Seine
+Adjungiertenwirkung ist der lokalisierte Transport zwischen den beiden
+Realisierungen von rho_s. Im Haag dualen Vakuumnetz kann der DHR Transporter
+in der lokalen von Neumann Algebra eines Intervalls gewaehlt werden, das die
+beiden Lokalisierungsgebiete enthaelt. Eine Mitgliedschaft von (11) in der
+normabgeschlossenen quasilokalen C Stern Algebra wird hier nicht behauptet.
+
+Die Komposition ist nicht frei waehbar. Aus der originalen CCR Formel
+
+  W(phi)W(psi)
+    =exp(-[J(phi),J(psi)]/2) W(phi+psi)                  (12)
+
+folgen alle zentralen Phasen. Schreibt man die vollen Kinkphasen a statt
+der bereits halbierten Profile b, reduziert sich die Symplektik auf
+
+  sigma_s(a,c)
+    =2 Sum_(n>0)n[conj(a_n)c_n-a_n conj(c_n)].           (13)
+
+Der Faktor zwei ist exakt s^2. Somit stimmen Ladung, Braidingphase,
+Kokyklus und Konformalgewicht aus derselben Quellenoperation ueberein.
+Eine Kopplung oder ein nachtraeglicher Spinorphasenfit tritt nicht auf.
+
+
+3. Das vorhandene Funktional berechnet die Linie
+-------------------------------------------------
+
+ORIGINAL-ORDERED-CURRENT-KERNEL-AND-SEAM-GRADING beweist fuer jedes glatte
+reelle Coverprofil phi und fuer die tatsaechlichen Quellenvektoren P_i
+
+  <P_i,W(phi)P_j>
+    =exp[-(1/2) Sum_(m>0)m|phi_m|^2]
+       K_ij(i phi,i conj(phi)).                          (14)
+
+Setzt man in (14) ausschliesslich die in (10) festgelegten Moden ein, sind
+alle Matrixelemente von T_IJ bestimmt. Fuer mehrere Linien liefert (12) die
+vollstaendige geordnete Historie. Fuer zusaetzliche getrennte gerade CAR
+Felder gilt die bereits bewiesene Regel
+
+  W(phi) psi(theta) W(phi)^*=exp(-i phi(theta))psi(theta),
+
+gefolgt von den endlichen Wick Pfaffianen mit derselben gefalteten Kovarianz
+C_alpha. Damit sind nicht nur Vakuumerwartungen, sondern alle vorhandenen
+getrennten Source Weyl und Feldkorrelatoren der glatten neutralen Linie
+festgelegt.
+
+Der geordnete CAR Kokyklus aus SAME-SOURCE-AFFINE-DEFECT fixiert die
+Orientierungsphase der geladenen Endpunkte. In der geschlossenen Linie
+heben sich die Ladungsschuebe auf. Die verbleibende Phase ist genau der
+Weylkokyklus (12), normiert durch
+
+  T_II=I,       T_IJ^*=T_JI.                            (15)
+
+Das ist eine Identitaetsnormierung der glatten Transporter, keine
+Quellenkopplung. Sie fixiert keine absolute Normierung eines scharfen
+geladenen Endpunktfeldes und keinen endlichen UV Gegenfaktor.
+
+
+4. Der scharfe bilokale Grenzwert
+----------------------------------
+
+Der formale Punktoperator zwischen y und x verwendet das Sprungprofil
+
+  a_x,y=2 pi 1_[y,x].                                   (16)
+
+Seine n te Fourierkomponente faellt nur wie 1/n. Nach (1) und dem
+Halbkoeffizienten gilt
+
+  Sum_(n>0) 8 n |(a_x,y)_n/2|^2 = infinity.             (17)
+
+Deshalb konvergieren die entsprechenden unitaeren Weyloperatoren beim
+Schaerfen der Endpunkte nicht zu einem bounded Operator der
+Vakuumdarstellung. Dieser UV Befund darf nicht durch das Wort Wilsonlinie
+verdeckt werden.
+
+Die Divergenz ist jedoch nicht frei. Gleichung (13) gibt s^2=2. Die
+Standard Stromnormalordnung erzwingt deshalb den chiralen OPE Faktor
+
+  (z-w)^(-s^2)=(z-w)^(-2).                              (18)
+
+Fuer glatte Schaerfungsfolgen berechnet (14) die Selbstenergiedivergenz
+exakt. Nach Abzug dieses skalaren Terms besitzen die Matrixelemente zwischen
+den im Quellenvertrag kontrollierten finite degree Zustaenden den
+standardmaessigen Vertexgrenzwert mit Exponent zwei. Der Weylkokyklus, die
+vorhandene CAR Ordnung und K_alpha fixieren dabei die relative i0 Ordnung und
+die gewaehlte Renormierungsklasse.
+
+Nicht bewiesen sind die Unabhaengigkeit von beliebigen Schaerfungsfolgen auf
+einem vollen finite energy core, eine gemeinsame invariante Domain und die
+Closability eines geschmierten Bilokaloperators. Dazu braucht es einen
+Energybound und einen Domainbeweis oder eine passende VOA
+Vertexoperatorenkonstruktion. Ebenso fixieren T_II=I und die
+Adjunktenrelation nur die glatten Transporter. Sie bestimmen keine absolute
+UV Feldnormierung der geladenen Endpunkte.
+
+Fuer die DHR Konstruktion braucht man diesen unbeschraenkten Punktgrenzwert
+nicht. Die glatten T_IJ aus (11) sind bereits bounded Implementer mit
+lokalisierter Adjungiertenwirkung. Eine operatorwertige
+Distributionsdarstellung des scharfen Ausdrucks bleibt bis zum genannten
+Energybound und Domainbeweis eine zusaetzliche Aussage.
+
+
+5. Tatsaechlicher Geltungsbereich
+---------------------------------
+
+Geschlossen im gegebenen Quotienten CAR Netz sind nun:
+
+  * der lokalisierte Spinorendomorphismus rho_s;
+  * alle glatten geschlossenen Ladungstransporter T_IJ;
+  * ihre Weyl Kokyklusphasen und Adjunkten;
+  * die genaue K_alpha Quellenzeit (7), getrennt von der offenen P1 OS Zeit;
+  * alle glatten Source Weyl und getrennten Pfaffian Korrelatoren;
+  * der UV Exponent zwei und die kontrollierten renormierten Matrixelemente
+    des scharfen Bilokals in der festgelegten Subtraktionskonvention.
+
+Damit muss eine neutrale Observable Antwort nicht mehr die Existenz eines
+einzelnen lokalen Spinorfelds voraussetzen. In der DHR Form
+
+  a -> Sum_gamma L_gamma^* rho_s(a)L_gamma             (19)
+
+ist rho_s kein offenes mathematisches Objekt mehr. Offen bleiben die aus P1
+stammenden L_gamma, ihre Normierungsidentitaet und die Quellenpolicy, die
+gerade diesen Prozess ausfuehrt.
+
+Damit wird eine Formulierung im frueheren
+NEUTRAL-DHR-BILOCAL-SOURCE-TEST praezisiert. Dort war die Aussage, P1 liefere
+rho_s noch nicht, fuer den primitiven P1 Kern richtig. Fuer das bereits
+stipulierte achtfach gefaltete Quotienten CAR Netz ist die Existenz von
+rho_s und seiner neutralen Transporter durch den Halbkink und (11) nun
+geschlossen. Die beiden Netztypen duerfen in diesem Satz nicht mehr
+zusammengezogen werden.
+
+Die Achtfachfaltung bleibt eine Quotientenlokalisierung. Unter F lebt T_IJ
+auf der Vereinigung der acht Coverboegen ueber seinem Quotientenintervall.
+Der Satz macht daraus keinen primitiven P1 Einintervalloperator. Dazu fehlt
+weiterhin die lokale P1 Abbildung iota_I samt Zustand, Zeit und OS Reflexion.
+Ebenso wenig wird die volle geladene 40 dimensionale Feldantwort auf dem
+Vakuumhilbertraum konstruiert. Geschlossen sind die glatte neutrale Linie und
+ihre durch den vorhandenen Kernel berechneten Quellenmatrixelemente.
+
+
+6. Quellen
+----------
+
+  experiments/theory-contracts/joint-native-algebra-selection-20261016/
+  ORIGINAL-ORDERED-CURRENT-KERNEL-AND-SEAM-GRADING.txt
+  SHA256 62a9eeb4519b59d4514445f9d4dd5d2059e29179956a4c97ec94b7bae9ae3094
+  Abschnitte 2 bis 5: originaler Strom, alle glatten Weylhistorien,
+  Quellzeit, gefaltete Feldwirkung und Pfaffianfunktional.
+
+  experiments/theory-contracts/paper-source-reconstruction-20261025/
+  MICROSCOPIC-TO-OCTIC-COMPOSITION.txt
+  SHA256 eb0d6d436abeab7ace1ff094740c4b0d4748d3599331bfb3454dcb21e328ef5a
+  Abschnitt 2: exakte Faltung F und korrelierte Achtkanalkovarianz.
+
+  experiments/theory-contracts/canonical-seam-fermionization-20261025/
+  SAME-SOURCE-AFFINE-DEFECT.txt
+  SHA256 514356e9ca01f8aa02399020a503f6cd782c879b00220274b7c4377cbbad7255
+  Abschnitte 1 bis 3: D8 Sektoren, geordneter CAR Kokyklus und s=q/2.
+
+  research-20261028-local-source-origin/neutral/
+  HALF-WINDING-DHR-SOURCE-ADDENDUM.txt
+  SHA256 75308a38b30782bcedb656788229d2d5db72e21543a171dde78e602b0c7ece97
+  Lokalisierter Halbkink auf dem geraden Quotientennetz und Abgrenzung zur
+  primitiven Coverhalbwindung.
+
+  research-20261028-local-source-origin/review/
+  INDEPENDENT-HALF-KINK-DHR-WEYL-REVIEW.txt
+  SHA256 f6a7ab5c0eb4683d040a66194df4f00ffef796768d08e4007b8b899b52a787e2
+  Unabhaengige Pruefung der Lokalisierung, des bounded Weyltransporters, der
+  K_alpha Zeit und der hier umgesetzten UV und Algebra Scopekorrekturen.
+
+Primaere mathematische Grundlage fuer den lokalisierten Spinorendomorphismus:
+
+  Jens Boeckenhauer,
+  An Algebraic Formulation of Level One Wess Zumino Witten Models,
+  Rev. Math. Phys. 8 (1996), 925 bis 948,
+  arXiv:hep-th/9507047, Abschnitt Localized Endomorphisms.
+
+Kein Atlas, kein kanonischer Vertrag und keine vorherige Datei wurden
+veraendert. Die entscheidenden Gleichungen (1), (6), (7), (13) und (17)
+sind analytische Folgen der vorhandenen Faltung und CCR. Ein neuer
+numerischer Checker ist dafuer nicht erforderlich.

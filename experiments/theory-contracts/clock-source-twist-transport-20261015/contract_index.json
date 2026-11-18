@@ -1,0 +1,60 @@
+{
+  "contract": "clock-source-twist-transport-20261015",
+  "research_id": "UR.CLOCK.SOURCE_TWIST_TRANSPORT.01",
+  "date": "2026-10-15",
+  "question": "Can the actual Gaussian compiler J act on the retained source time, charge, cocycle and uncompensated quarter transition, either in one fixed source frame or covariantly across its twist orbit?",
+  "verdict": "PARTIAL",
+  "verdict_enum": "PARTIAL",
+  "mathematical_verdict": "PASS_SCOPED_Z4_COVARIANT_TWIST_FAMILY_AND_FIXED_SECTOR_OBSTRUCTION",
+  "scope": "Exact affine fixed-sector obstruction and phase-corrected order-four covariance in the already stipulated even E8 lattice Fock representation. The entire tuple delta, q and quarter-transition cocharacter is transported. This is not a derivation of physical twist sectors, source selection or switching dynamics.",
+  "summary_de": "Das tatsächliche J kann die feste Quellenzeit K nicht durch einen affinen Gitterlift erhalten: notwendig wäre 2δ in Ls, was exakt scheitert. Auch das feste Q bleibt nicht erhalten. Positiv existiert im vorausgesetzten E8-Fockraum ein unitärer Z4-Lift mit dem tatsächlichen geordneten CAR/E8-Cocycle. Er transportiert Kδ, Qq und die vollständige unkompensierte Vierteltransition gemeinsam entlang δa=J^aδ, qa=J^aq. Spektrum, Nichtnegativität und Grundzustandsdegeneration bleiben äquivalent. Die vier Rahmen sind vorerst eine Kovarianzfamilie, keine abgeleiteten physischen Sektoren oder Ereignisraten.",
+  "summary_en": "The actual J cannot preserve the fixed source K through an affine lattice lift: it would require 2δ in Ls, which fails exactly. Fixed Q is not preserved either. Positively, the stipulated E8 Fock representation admits a unitary order-four lift using the actual ordered CAR/E8 cocycle. It transports Kδ, Qq and the full uncompensated quarter transition together along δa=J^aδ, qa=J^aq. Spectrum, nonnegativity and ground degeneracy remain equivalent. The four frames are a covariance family, not derived physical sectors or event rates.",
+  "assumptions": [
+    "Already stipulated unitary even E8 lattice Fock representation M(1) tensor C_eps[Ls], with the existing ordered source CAR/E8 cocycle; no derivation from P1/P2.",
+    "The original folded source K(p,N)=|p|^2/2+delta.p+N, delta_k=(k+alpha)/8-1/2, source charge q=(1,...,1), and the retained orientation/physical-time scaling.",
+    "The actual J from v634, its original integral E8 basis, and the explicitly stated basis-generator lift convention.",
+    "Covariance transports q_a=J^a q and the complete uncompensated transition cocharacter; the original fixed charge is not secretly held unchanged.",
+    "The prior all-lattice nonnegativity/ground theorem and the conditional normal Cartan Ward-state rule keep their original representation and domain assumptions."
+  ],
+  "positive_results": [
+    "Actual source cocycle yields U_J^4=I on the entire stipulated Fock representation: the all-charge extension argument reduces the fourth-power character to its +1 values on the eight original lattice generators.",
+    "K_(Jdelta) U_J=U_J K_delta, Q_(Jq) U_J=U_J Q_q and full uncompensated t_(Jtau) U_J=U_J t_tau; no quarter phase is deleted.",
+    "For both original quarter cases, delta has a four-element J orbit with J^2delta=-delta. All source spectra, positivity, domains and the twofold ground degeneracy transport unitarily.",
+    "The lift fixes the common vacuum vector. The already existing full Cartan Ward rule selects its density within the specified normal ground-doublet class; no new vacuum selection from G31 symmetry is asserted."
+  ],
+  "kills": [
+    "Any fixed-K affine lattice action Ap+r with A^2=-I would imply 2delta in Ls; adjacent coordinate differences exclude that within the stated source class.",
+    "Keeping the original q fixed while claiming J covariance of Q.",
+    "Replacing the full uncompensated quarter transition with a compensated periodic clock or its adjoint shadow.",
+    "Interpreting a covariance orbit or direct-sum bookkeeping as a physical sector-switch process."
+  ],
+  "leaves_open": [
+    "Select the E8 completion and its physical field/locality map from the primitive source; this representation is given here.",
+    "Determine whether the transported marked tuples are physically admissible frame descriptions or actual sectors, and derive any physical transition/instrument law.",
+    "Relate the even E8 source action to raw Xi, odd vector CAR/defect fields and the native interacting fields with their state/time action.",
+    "Full common-source selection and all physical T1-T8 gates."
+  ],
+  "not_claimed": [
+    "No complete TFPT solution, raw-P1/P2 derivation, physical sector weight or switching rate.",
+    "No fixed-sector [K_delta,U_J]=0 or fixed-q charge symmetry.",
+    "No unique Hamiltonian ground eigenspace, source-selected lift character or universal quantum computation.",
+    "No new Lean build, verification-suite run, ledger or paper promotion."
+  ],
+  "claims_tested": ["E8.ST31.01"],
+  "gates": [],
+  "physical_gates_closed": [],
+  "complete_TFPT_solution": false,
+  "promotion": false,
+  "firewall": "experiments",
+  "proof": "PROOF.md",
+  "checker": "checker.py",
+  "certificate": "results.json",
+  "source_manifest": "source_manifest.json",
+  "local_check_count": 123,
+  "relations": [
+    {"target": "seam-joint-ward-state-20261014", "type": "extends"},
+    {"target": "v16-operator-pullback-20261014", "type": "uses"},
+    {"target": "marked-source-history-20261014", "type": "preserves_exclusion"}
+  ],
+  "topics": ["topic:clocks", "topic:e8", "topic:quantum", "topic:origin"]
+}

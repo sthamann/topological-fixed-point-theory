@@ -1,0 +1,140 @@
+TFPT: Stresssättigung als hinreichende Bedingung für den E8 Abschluss
+12. November 2026
+Contract: joint-source-stress-saturation-20261112
+Verdict: PARTIAL. Bedingter mathematischer Satz; keine berechnete P1 Quelle.
+
+1. Korrektur der Herkunftsfrage
+
+Die frühere Priorisierung der geladenen Viertelquelle als zwingender
+nächster Schritt für die gesamte TFPT war zu eng. Der Quellenabgleich
+vom2. und5. November hatte dies bereits geklärt. Der volle operationale
+Seed enthält (A_loc,tau_t,Theta,omega,[u_Sigma],D_coll). Für einen bereits
+vollständig festgelegten Seed sind Zustand und Zeit keine neu fehlenden
+unabhängigen Angaben. Die Originalpapers besitzen den gemeinsamen Weg
+Randkern -> Träger/Padm -> S_adm/Z_rel mit gebundener Referenz -> volle
+Schwingerfunktionen -> OS Zustand, Zeit und lokales Netz -> Gamma_ren.
+RG Fluss auf Gamma_ren ist nicht automatisch physische Zeit.
+
+Die schwächere Ursprungsfrage bleibt: Erzwingen die gemeinsamen invarianten
+P1/P2/Markierungsbedingungen den gesamten ursprünglichen Seed? Die alten
+Quellenaudits belegen keine solche globale Eindeutigkeit. Ein Singleton
+im Reduktionsbild oder in einer festgelegten minimalen Faser beweist
+keine Eindeutigkeit sämtlicher ursprünglicher Quellen. Die Viertelquelle
+bleibt eine nützliche bedingte Realisierung, keine globale Pflichtklasse.
+
+2. Bereits vorhandener positiver E8 Satz
+
+Der Vertrag e-series-source-reconstruction-20261024, insbesondere
+SIMPLIFICATION.txt, beweist: Eine zusammenhängende unitäre lokale
+Erweiterung W von U=V_D5 tensor V_A3 mit derselben konformen Struktur
+und dem markierten Modul h=(1,1) ist V_E8. Die vier C4 Sektoren, ihre
+Multiplizität eins, die Produkte und Holomorphie folgen in dieser Klasse.
+Sie müssen nicht einzeln als zusätzliche Minimalannahmen postuliert werden.
+Dieser bestehende Satz wird wiederverwendet, nicht als neu beansprucht.
+
+Wir schwächen jetzt seine Voraussetzung derselben konformen Struktur.
+
+3. Satz mit strikter Zentralchargenschranke
+
+Sei W eine unitäre chirale Vertexoperatoralgebra vom CFT Typ mit positivem
+Skalarprodukt, W0=C Omega, nichtnegativer ganzzahliger Energiegraduierung
+und endlichdimensionalen Gewichtsräumen. In W1 liegen zwei tatsächliche,
+mit der Adjungierung verträgliche, miteinander kommutierende affine
+Stromalgebren D5 und A3, jeweils auf Niveau1. Ihre lokalen Produkte,
+nicht bloß ihre Nullmodensymmetrien oder Dimensionen, seien identifiziert.
+W enthalte außerdem das ursprüngliche markierte Modul h=(1,1).
+
+Falls die Zentralcharge des ganzen W die strikte Schranke
+  c_W < 17/2
+hat, dann stimmt seine konforme Struktur mit der Sugawara Struktur von
+U überein. Der vorhandene Erweiterungssatz liefert anschließend W=V_E8.
+Dies fixiert Vakuum, lokale chirale Produkte und konformen Zeitfluss
+innerhalb dieser identifizierten Klasse und Konvention. Es identifiziert
+keinen beliebigen physikalischen Hamiltonoperator mit L0 und rekonstruiert
+keine3+1 dimensionale Raumzeit aus endlich vielen Zahlen.
+
+4. Beweis
+
+Gewicht1 Ströme sind hier primär. L1j liegt in W0; sein Skalarprodukt
+mit Omega ist <L_-1 Omega,j>=0. Höhere positive L_n liefern negatives
+Gewicht und verschwinden. Die Sugawara Zentralcharge der beiden Ströme ist
+  c_U=dim(D5)/(1+hdual_D5)+dim(A3)/(1+hdual_A3)
+     =45/9+15/5=8.
+
+Die Differenzmoden K_n=L_n^W-L_n^U kommutieren mit allen U Strömen.
+Sie bilden die unitäre Coset Virasoroalgebra mit Zentralcharge d=c_W-8,
+Adjungierung K_n*=K_-n und K_n Omega=0 für n>=-1. Insbesondere
+  ||K_-2 Omega||²=d/2,
+also d>=0.
+
+Im Gewicht6 betrachten wir die vier Vektoren
+  K_-6 Omega, K_-4 K_-2 Omega, K_-3² Omega, K_-2³ Omega.
+Ihre Gram Matrix folgt allein aus
+  [K_m,K_n]=(m-n)K_(m+n)+(d/12)(m³-m) delta_(m+n,0):
+
+ [35d/2, 5d,           18d,         24d                 ]
+ [5d,    5d²/2+8d,     14d,         9d²/2+24d           ]
+ [18d,   14d,          8d²+36d,     30d                 ]
+ [24d,   9d²/2+24d,    30d,         3d³/4+18d²+96d     ].
+
+Ihre Determinante ist
+  (3/4)d^4(2d-1)(5d+22)^2(7d+68).
+Noch unmittelbarer hat die feste Linearkombination
+  v=(-108K_-6-264K_-4K_-2+93K_-3²+64K_-2³)Omega
+die Norm
+  ||v||²=12d(2d-1)(128d+6943).
+Für0<d<1/2 ist diese strikt negativ. Ein positives Hilbertraumskalarprodukt
+schließt dieses ganze Intervall aus. Somit d=0 oder d>=1/2.
+Die Schranke c_W<17/2 erzwingt d=0. Dann ist K_-2 Omega ein Nullvektor
+und wegen strikter Positivität der Nullzustand. Die lineare Zustand Feld
+Zuordnung macht das gesamte Coset Stressfeld null, also alle K_n=0.
+Die konformen Strukturen sind gleich. Jetzt gilt der vorhandene markierte
+C4 Erweiterungssatz und identifiziert W mit V_E8.
+
+Der Grenzwert ist scharf: V_E8 tensor Ising besitzt c=8+1/2 und enthält
+dieselben U Ströme sowie h tensor Isingvakuum, aber einen zusätzlichen
+Stressoperator. Das ist ein Gegenbeispiel zur nichtstrikten Schranke in
+dieser chiralen Klasse, kein Gegenmodell zur gesamten P1 Quelle.
+
+5. Was die vorhandene c8 Rechnung tatsächlich liefert
+
+verification/v376_seam_s3_centralcharge.py wurde vollständig gelesen.
+Die Rechnung passt Entropien einer einzelnen kritischen freien Kette
+mit L=258 und386 an, erhält c ungefähr1 und multipliziert mit acht
+angenommenen komplexen Moden. Die Chiralität stammt aus Verweisen auf
+v367/v368. Das Skript nennt die Existenz des Kontinuums und die konkrete
+Netzidentifikation selbst als gesonderte Fragen. Ein endlicher Fit ist
+keine rigorose obere Schranke der vollständigen ursprünglichen Quelle.
+Auch die Nettoanomalie c_minus=8 ist bei möglichen gegenläufigen Sektoren
+nicht schon die gesamte positive Zentralcharge c_W=8.
+
+Der neue Satz reduziert die hinreichende Forderung auf eine strikte
+Schranke unter8.5. Er liefert diese Schranke nicht selbst. Der natürliche
+Quelltest ist das Stress Zweipunktprodukt T(z)T(w) am selben tatsächlichen
+Träger, zusammen mit den D5/A3 Stromprodukten und dem markierten Modul.
+Ein bloßer Rang8, die Zahl8 oder c3=1/(8pi) ist dafür kein Nachweis.
+Die chiral identifizierte Klasse ist nicht ohne Begründung der gesamte
+physische TFPT Quellenraum.
+
+6. Prüfung und Status
+
+check_stress.py berechnet die Gram Matrix und die Norm exakt mit SymPy.
+Die Intervallausschließung ist ein algebraischer Vorzeichenbeweis, kein
+numerischer Stichprobentest. Ein unabhängiger interner Review bestätigte
+Primarität, Cosetannahmen, Matrix, Normvektor und den Rückgriff auf den
+vorhandenen Erweiterungssatz. Keine externe Begutachtung und keine
+Behauptung allgemeiner mathematischer Neuheit der Virasoro Unitäritätslücke.
+Der Fortschritt ist ihre gezielte Anwendung zur Abschwächung einer
+konkreten Voraussetzung im vorhandenen TFPT Rekonstruktionsweg.
+
+Quellen:
+experiments/theory-contracts/original-paper-source-reconciliation-20261102/AUDIT.txt.
+experiments/theory-contracts/original-paper-source-reconciliation-20261102/WHOLE-SOURCE-CONTINUATION-20261105.txt.
+experiments/theory-contracts/craig-original-source-bridge-20261103/STATE-SOURCE-AND-FIELD-INTEGRATION.txt.
+experiments/theory-contracts/e-series-source-reconstruction-20261024/THEOREMS.txt.
+experiments/theory-contracts/e-series-source-reconstruction-20261024/SIMPLIFICATION.txt.
+verification/v376_seam_s3_centralcharge.py.
+Kent1985, unitäre Virasoro Darstellungen und Cosetkonstruktion:
+https://dml.cz/bitstream/handle/10338.dmlcz/701394/WSGP_05-1985-1_12.pdf
+
+physical_source_computed=false; F1_complete=false; ledger_changed=false.

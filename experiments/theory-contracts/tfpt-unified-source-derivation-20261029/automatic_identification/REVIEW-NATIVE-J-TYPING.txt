@@ -1,0 +1,119 @@
+UNABHAENGIGER TYPREVIEW DER NATIVEN J-WIRKUNG
+29. Oktober 2026. Analytischer Quellenreview, keine neue Suchrechnung und
+keine Atlasmutation. Parent rekonstruiert die nativen Wurzeln selbst.
+
+URTEIL
+
+Der ungerade-Rang-Satz und die 64/32-Mischzahlen sind richtig. Der starke
+Schluss gilt fuer eine 5+3-Zerlegung der reellen Wurzel-/Cartanebene im
+festen nativen R8, auch nach beliebiger orthogonaler oder Weyl-Konjugation.
+Er darf NICHT zu einem Ausschluss aller inneren E8-/VOA-Konjugationen
+erweitert werden: Die schon vorhandene volle Clockkonjugation liefert
+gerade einen anderen Jhat-festen D5+A3-Unter-VOA mit anders liegendem Cartan.
+
+1. Exakte native Daten und der allgemeine Satz
+
+e-series-joint-source-20261023/COMPILER-CLOSURE.txt:10-16 gibt
+  J(x0,...,x7)=(-x1,x0,-x3,x2,-x5,x4,-x7,x6).
+Also J^2=-I auf dem urspruenglichen REELLEN acht-dimensionalen Cartan.
+Ist ein reeller Unterraum V J-invariant, gilt auf ihm
+  det(J|V)^2=det(-I_V)=(-1)^dim_R(V).
+Die linke Seite ist nichtnegativ und wegen Invertierbarkeit positiv.
+Folglich ist dim_R(V) gerade. Orthogonalitaet ist fuer diesen Satz nicht
+einmal noetig; V traegt mit J eine komplexe Struktur.
+
+Daher koennen weder der reelle Rang5-D5-Wurzelspann noch der Rang3-A3-
+Wurzelspann einzeln durch J erhalten werden. Das gilt fuer ALLE anderen
+solchen reellen Wurzelspannen in demselben R8. Eine Suche nach O mit
+  O^-1 J O = J5 direct_sum J3
+und reellen Bloecken der Groessen5 und3 kann keinen Treffer liefern.
+Das minimale Polynom waere auf jedem Block t^2+1, was ungeraden Rang
+ebenfalls ausschliesst. Dies ist kein numerischer Suchausschluss.
+
+Der allgemeine Satz ist bereits dokumentiert: e-series-quarter-clock-
+20261023/PROOF.txt:23-28 benutzt genau das Argument fuer Rang7/E7.
+Die Anwendung auf die feste 5+3-Faktortrennung ist eine ausdrueckliche
+Konsequenz dieses alten Satzes, kein neuer allgemeiner Struktursatz.
+
+2. Die konkrete Halbrootparitaet und alle Mischzahlen
+
+Schreibe eine Halbroot als alpha=s/2 mit s_i in {+1,-1} und
+  product_(i=0)^7 s_i=+1.
+Definiere im ORIGINALEN D5+A3 Chart
+  chi(s)=product_(i=0)^4 s_i.
+Die torale Glueclock kappa mit v=(1/2^5,0^3) hat auf dieser Wurzel
+  exp(2pi i v.alpha)=i chi(s).
+Somit sind g1^kappa und g3^kappa die beiden chi-Paritaeten, je64 Wurzeln.
+Sie sind hier NICHT die i/-i-Eigenspaces der nativen Jhat selbst.
+
+Aus der angegebenen nativen Matrix folgt direkt
+  chi(Js)=-s0 s1 s2 s3 s5=-chi(s) s4 s5.             (1)
+J erhaelt die Paritaet genau fuer s4 s5=-1 und wechselt sie fuer s4 s5=+1.
+Innerhalb jeder der beiden64er-Klassen tauscht das gleichzeitige Umdrehen
+von s0 und s4 die Bedingungen s4 s5=+/-1 aus, waehrend chi und die globale
+gerade Vorzeichenparitaet erhalten bleiben. Beide Faelle haben daher32
+Elemente. Die Wurzeltraeger-Uebergangsmatrix von J ist genau
+  [[32,32],[32,32]].
+
+Da J^2s=-s und die erste Gruppe FUENF Koordinaten hat,
+  chi(J^2s)=(-1)^5 chi(s)=-chi(s).
+J^2 vertauscht also alle64 Wurzeln von g1^kappa mit allen64 von g3^kappa;
+J^3 mischt wieder32/32 und J^4 ist die Identitaet.
+Das benoetigt keine endliche Stichprobe. Beispiele fuer beide ersten
+Moeglichkeiten sind s=(1,1,1,1,1,1,1,1), das wechselt, und
+s=(-1,1,1,1,-1,1,1,1), dessen Paritaet erhalten bleibt.
+
+Diese Zahlen betreffen die ROOTLABELS bzw. die darunter gespannten
+Stromunterraeume. Ein voller Lattice-VOA-Lift kann zusaetzliche Phasen auf
+den einzelnen Wurzelvektoren tragen; diese aendern die Traegermischzahlen
+nicht. J^2=-I auf dem Cartan ist dagegen keine Gleichung Jhat^2=-I auf
+der gesamten248er Liealgebra oder der ganzen quantischen Quelle.
+
+3. Unerlaessliche Kategoriegrenze: volle innere Konjugation
+
+Der gezielt gelesene Originalsatz
+e-series-source-reconstruction-20261024/NATIVE-CLOCK-CONJUGACY.txt:1-8,
+14-26,60-80 benutzt eine ausdruecklich GROESSERE Kategorie: volle unitaere
+innere E8-Feldautomorphismen duerfen den genannten Heisenberg-Cartan,
+Gaussianvierer, D5+A3 Chart, Y und Quartikmarkierungen gemeinsam bewegen.
+Dort ist bereits bewiesen
+  C kappa C^-1=Jhat,
+  (V_E8)^Jhat=C(V_D5 tensor V_A3)C^-1.
+Der zweite Unter-VOA ist somit durch Jhat punktweise fest. Sein Cartan
+liegt anders als der urspruengliche acht-dimensionale Root-Cartan, auf
+dem die native Permutationsmatrix J gerade keine reellen Fixrichtungen
+hat. Der obige Determinantensatz schliesst diesen existierenden Satz
+nicht aus: Er darf nicht auf einen Raum angewandt werden, auf dem seine
+Voraussetzung J^2=-I gar nicht festgestellt ist.
+
+Eine Behauptung 'keine konjugierte feste D5+A3-Unteralgebra ueberhaupt'
+waere daher falsch und widerspraeche dem bereits vorhandenen positiven
+Anschluss. Richtig ist 'keine J-invariante reelle 5+3-Rootzerlegung im
+festen nativen Cartan, auch nicht durch eine andere orthogonale Rootkarte'.
+Eine ganze Tuplekonjugation muss zugleich alle zusaetzlich verlangten
+Markierungen transportieren; die alte native Cartanlage darf dabei nicht
+heimlich festgehalten werden.
+
+Atlasabgleich: finding:native-quarter-glue-inner-conjugacy-and-oriented-
+tetrahedron-flags registriert genau diesen positiven umfassenderen Satz.
+finding:complete-covariant-compiler-voa-source-and-weyl-closure registriert
+den alten Flagtransport. COMPILER-CLOSURE.txt:118-126 zeigt bereits, dass J
+das urspruengliche A3-Koordinatenframe {5,6,7} nach {4,6,7} traegt und
+alle vier dortigen E6-Schnitte aus der festen Familie bewegt.
+Der allgemeine odd-rank-Satz ist alt; die genaue32/32-Formel wurde in den
+gezielt gelesenen Registry-/Originalstellen nicht schon als eigene Aussage
+gefunden. Das ist keine Behauptung vollstaendiger Corpus-Neuheit.
+
+4. Konkrete Folgerung fuer die Quellensuche
+
+Ein Modell, das die native J-Wirkung gleichzeitig als intern in einem
+festen reellen D5-Faktor und intern in einem festen reellen A3-Faktor
+auffasst, verfehlt bereits diesen ersten Typentest. Weitere numerische
+Basisrotationen oder genetische Suchen innerhalb dieser Klasse helfen nicht.
+
+Der vorhandene transportierte Flag-/Quellfunktor bleibt dagegen der passende
+gemeinsame Gegenstand: Faktorschnitt, Cartan-/Feldchart, Halbrootgradierung
+und alle bezeichneten Operatoren werden gemeinsam bewegt. Der positive
+volle innere Clockkonjugationssatz bleibt ebenfalls erhalten. Die neue
+explizite Paritaetstransportrechnung beweist weder einen Widerspruch der
+TFPT noch einen neuen physischen Feldtyp, eine Quellenwahl oder Raumzeit.

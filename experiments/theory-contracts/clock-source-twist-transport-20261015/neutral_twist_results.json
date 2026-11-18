@@ -1,0 +1,88 @@
+{
+  "contract": "clock-source-twist-transport-20261015",
+  "addendum": "NEUTRAL_VACUUM_TWIST_BLINDNESS_AND_EIGHT_CHARGE_DISCRIMINATOR",
+  "verdict": "PASS_SCOPED_ANALYTIC_STATEMENTS",
+  "overall_physical_verdict": "PARTIAL",
+  "check_count": 23,
+  "failed": 0,
+  "checks": {
+    "two_original_sources_pinned": true,
+    "source_hash:verification/v634_st31_structure.py": true,
+    "source_hash:experiments/theory-contracts/seam-joint-ward-state-20261014/operator_transport_check.py": true,
+    "neutral_sector_K_is_N_for_arbitrary_delta": true,
+    "neutral_sector_Q_is_zero_for_arbitrary_q": true,
+    "neutral_sector_full_transition_is_identity_for_arbitrary_tau": true,
+    "charged_energy_odd_part": true,
+    "charged_energy_even_part": true,
+    "charged_ratio_log_exponent": true,
+    "eight_original_lattice_charges_independent": true,
+    "eight_charge_delta_reconstruction_symbolic": true,
+    "unknown_time_only_fixes_t_delta_from_ratios": true,
+    "quadratic_current_total_grade_is_n": true,
+    "1/4:frame0:actual_eight_charge_reconstruction": true,
+    "1/4:frame1:actual_eight_charge_reconstruction": true,
+    "1/4:frame2:actual_eight_charge_reconstruction": true,
+    "1/4:frame3:actual_eight_charge_reconstruction": true,
+    "1/4:four_twists_have_distinct_charged_data": true,
+    "3/4:frame0:actual_eight_charge_reconstruction": true,
+    "3/4:frame1:actual_eight_charge_reconstruction": true,
+    "3/4:frame2:actual_eight_charge_reconstruction": true,
+    "3/4:frame3:actual_eight_charge_reconstruction": true,
+    "3/4:four_twists_have_distinct_charged_data": true
+  },
+  "quarter_witnesses": [
+    {
+      "alpha": "1/4",
+      "basis_charge_index": 0,
+      "charge": [
+        "1/2",
+        "-1/2",
+        "-1/2",
+        "-1/2",
+        "-1/2",
+        "-1/2",
+        "-1/2",
+        "1/2"
+      ],
+      "delta_dot_charge": "1/16",
+      "Jdelta_dot_charge": "7/8"
+    },
+    {
+      "alpha": "3/4",
+      "basis_charge_index": 0,
+      "charge": [
+        "1/2",
+        "-1/2",
+        "-1/2",
+        "-1/2",
+        "-1/2",
+        "-1/2",
+        "-1/2",
+        "1/2"
+      ],
+      "delta_dot_charge": "-1/16",
+      "Jdelta_dot_charge": "7/8"
+    }
+  ],
+  "source_hashes": [
+    {
+      "path": "verification/v634_st31_structure.py",
+      "sha256": "5ff53ed031ca03103187ac22edf723aabce88bee3df1085c52486ecb0044d37c"
+    },
+    {
+      "path": "experiments/theory-contracts/seam-joint-ward-state-20261014/operator_transport_check.py",
+      "sha256": "33e98e7567b52c9ce82eed8a29fe37428b7d7ff539a6e8e311f0123e4c3e37a1"
+    }
+  ],
+  "checker_sha256": "39167db46fd71e04729d2af35f234813680f092bb348aab08191ba48309e5fe1",
+  "addendum_sha256": "54adf5088665c2eb9c7ae1f280f5e641ea30df39b06d53c4576e141f0458158d",
+  "scope": "Same vacuum, fixed Heisenberg/Jordan insertions each individually charge preserving, normal ordering and given lattice-Fock representation. No Gibbs/charged-state blindness claim.",
+  "charged_prerequisites": "Normalized charged primary preparation, original charge labels and common known time/kinetic normalization; global charge shifts are not derived local physical vertex instruments.",
+  "all_word_proof": "Charge sectors are invariant under every permitted insertion, every OPE coefficient and every intervening K evolution. Starting at p=0 the entire word remains in M(1) tensor |0>, where K=N, Q=0 and t_tau=I. See ADDENDUM.md; no finite word scan or oscillator cutoff substitutes for this argument.",
+  "not_claimed": [
+    "No blind statement for words with charged intermediate insertions even if the total word is neutral",
+    "No source-selected detector or charged-state preparation",
+    "No reconstruction of q or tau from C_delta alone",
+    "No P1/P2 source selection or physical gate closure"
+  ]
+}

@@ -1,0 +1,163 @@
+{
+  "verdict": "PASS: requested microscopic checks pass; this is not a complete P1/P2 derivation.",
+  "assumptions": [
+    "Call the original verification/v1033_charged_disorder.py qwz_cylinder with mass=1, ny=8, sectors=1 and 3.",
+    "Diagonalize the full original 2*N*ny matrix for N=8,16,32; numerical zero count uses |eigenvalue| <= 1e-10.",
+    "The numerical comparison tolerance against the exact analytic finite-N lower bound is 1e-9.",
+    "The analytic gap statement is scoped to the stated noninteracting source QWZ cylinder and quarter-twist sectors.",
+    "Weyl transport uses the stipulated folded E8 matrix and source Cartan charge already recorded in fold-results.json."
+  ],
+  "categories": {
+    "original_source_operator_spectrum": "numerically_checked_full_finite_matrices",
+    "source_noninteracting_gap": "analytic_from_exact_block_identity; numeric matrices are consistency checks",
+    "folded_Weyl_transport": "exact_rational_check_within_stipulated_folded_extension",
+    "complete_TFPT_solution": false,
+    "raw_P1P2_derivation": false,
+    "raw_quotient_or_E8_extension_selected_by_original_axioms": false
+  },
+  "checks": {
+    "original_QWZ_full_matrix_spectra": {
+      "source_function": "qwz_cylinder",
+      "source_path": "/Users/stefanhamann/Projekte/tfpt-theoryv4/verification/v1033_charged_disorder.py",
+      "source_line_range": "145-166",
+      "matrix_dimension_formula": "2*N*8",
+      "all_cases_pass": true,
+      "cases": [
+        {
+          "sector": 1,
+          "seam_phase_i_to_sector": "i",
+          "cases": [
+            {
+              "N": 8,
+              "matrix_dimension": 128,
+              "min_abs_eigenvalue": 0.19509032201612617,
+              "scaled_N_over_2pi_min_abs_eigenvalue": 0.24839671278604877,
+              "analytic_scaled_finite_bound_N_sin_pi_over_2N_over_2pi": 0.24839671278605144,
+              "negative_eigenvalue_count": 64,
+              "zero_count_at_abs_eigenvalue_le_1e-10": 0,
+              "numeric_minimum_ge_analytic_bound_with_tolerance_1e-9": true
+            },
+            {
+              "N": 16,
+              "matrix_dimension": 256,
+              "min_abs_eigenvalue": 0.09801714032956309,
+              "scaled_N_over_2pi_min_abs_eigenvalue": 0.24959859825891093,
+              "analytic_scaled_finite_bound_N_sin_pi_over_2N_over_2pi": 0.2495985982589046,
+              "negative_eigenvalue_count": 128,
+              "zero_count_at_abs_eigenvalue_le_1e-10": 0,
+              "numeric_minimum_ge_analytic_bound_with_tolerance_1e-9": true
+            },
+            {
+              "N": 32,
+              "matrix_dimension": 512,
+              "min_abs_eigenvalue": 0.04906767432741523,
+              "scaled_N_over_2pi_min_abs_eigenvalue": 0.24989961328740562,
+              "analytic_scaled_finite_bound_N_sin_pi_over_2N_over_2pi": 0.24989961328741978,
+              "negative_eigenvalue_count": 256,
+              "zero_count_at_abs_eigenvalue_le_1e-10": 0,
+              "numeric_minimum_ge_analytic_bound_with_tolerance_1e-9": true
+            }
+          ]
+        },
+        {
+          "sector": 3,
+          "seam_phase_i_to_sector": "-i",
+          "cases": [
+            {
+              "N": 8,
+              "matrix_dimension": 128,
+              "min_abs_eigenvalue": 0.1950903220161297,
+              "scaled_N_over_2pi_min_abs_eigenvalue": 0.24839671278605327,
+              "analytic_scaled_finite_bound_N_sin_pi_over_2N_over_2pi": 0.24839671278605144,
+              "negative_eigenvalue_count": 64,
+              "zero_count_at_abs_eigenvalue_le_1e-10": 0,
+              "numeric_minimum_ge_analytic_bound_with_tolerance_1e-9": true
+            },
+            {
+              "N": 16,
+              "matrix_dimension": 256,
+              "min_abs_eigenvalue": 0.09801714032955465,
+              "scaled_N_over_2pi_min_abs_eigenvalue": 0.24959859825888944,
+              "analytic_scaled_finite_bound_N_sin_pi_over_2N_over_2pi": 0.2495985982589046,
+              "negative_eigenvalue_count": 128,
+              "zero_count_at_abs_eigenvalue_le_1e-10": 0,
+              "numeric_minimum_ge_analytic_bound_with_tolerance_1e-9": true
+            },
+            {
+              "N": 32,
+              "matrix_dimension": 512,
+              "min_abs_eigenvalue": 0.04906767432741784,
+              "scaled_N_over_2pi_min_abs_eigenvalue": 0.2498996132874189,
+              "analytic_scaled_finite_bound_N_sin_pi_over_2N_over_2pi": 0.24989961328741978,
+              "negative_eigenvalue_count": 256,
+              "zero_count_at_abs_eigenvalue_le_1e-10": 0,
+              "numeric_minimum_ge_analytic_bound_with_tolerance_1e-9": true
+            }
+          ]
+        }
+      ]
+    },
+    "analytic_source_gap": {
+      "source_identity_path": "/Users/stefanhamann/Projekte/tfpt-theoryv4/experiments/theory-contracts/source-rg-clock-bridge-20260920/checker.py",
+      "source_identity_lines": "86-104",
+      "identity": "H(k)=[[-s I,B*],[B,s I]], H(k)^2=diag(s^2 I+B*B,s^2 I+BB*) >= sin(k)^2 I",
+      "quarter_twist_momenta": "k=2*pi*(j +/- 1/4)/N",
+      "minimum_absolute_sine": "sin(pi/(2N))",
+      "analytic_finite_N_gap_bound": "min|lambda| >= sin(pi/(2N))",
+      "scaled_lower_bound": "N/(2*pi)*sin(pi/(2N))",
+      "uniform_scaled_lower_bound": ">= 1/(2*pi)",
+      "limit": "1/4",
+      "scope": "the specified source noninteracting one-particle/cylinder operator; not an all-P1/P2 no-go or full interacting theory result",
+      "numeric_matrix_check_passes_bound": true,
+      "zero_absence_is_analytical": true
+    },
+    "folded_E8_Weyl_transport": {
+      "fold_results_path": "/Users/stefanhamann/Projekte/tfpt-theoryv4/experiments/theory-contracts/v16-operator-pullback-20261014/fold-results.json",
+      "p_star": [
+        "1/2",
+        "1/2",
+        "1/2",
+        "1/2",
+        "-1/2",
+        "-1/2",
+        "-1/2",
+        "-1/2"
+      ],
+      "M_times_p_star": [
+        "1",
+        "0",
+        "0",
+        "1",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "expected_image": [
+        "1",
+        "0",
+        "0",
+        "1",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "transported_source_U1_charge": [
+        "0",
+        "0",
+        "2",
+        "0",
+        "0",
+        "2",
+        "0",
+        "0"
+      ],
+      "image_dot_source_charge": "0",
+      "norm_squared_of_image": "2",
+      "D5_carrier_root_reason": "image=e1+e4 has two nonzero integer coordinates within the first five coordinates and norm squared 2; hence it is an ordinary D5 root in the stipulated coordinate embedding.",
+      "exact_rational_check_passes": true,
+      "scope": "conditional on the stipulated folded E8 Weyl map and its embedding; does not derive that extension from raw P1/P2."
+    }
+  }
+}

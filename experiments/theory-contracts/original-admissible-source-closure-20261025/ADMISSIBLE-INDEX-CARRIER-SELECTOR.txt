@@ -1,0 +1,534 @@
+# Admissibler Index und Carrierselektor
+
+Stand: 2026-10-25
+
+## Ergebnis
+
+Die scheinbare Multiplizitaetsluecke hat eine exakte, aber nur teilweise im
+Original realisierte Aufloesung.
+
+1. **PROVED, Operatorindex.** Ein endlicher innerer Rang `r` erzwingt nicht den
+   Faktor `(1-z)^r`. Dieser Faktor entsteht nur bei der trivialen skalaren
+   Fortsetzung `u I_r`. Fuer eine glatte vektorwertige Kupplung
+
+       G:S1 -> U(r)
+
+   ist der Exponent der relative Index
+
+       k = wind(det G).
+
+   Bei `k=1` ist der relative Determinantenfaktor exakt `1-z`, unabhaengig von
+   `r`. Ein Rang eins Projektor, eine Division durch `r` und die Auswahl eines
+   Fouriermodus sind dafuer nicht erforderlich.
+
+2. **PROVED, vorhandene topologische Klasse.** Das Original `tfpt-42`
+   schreibt fuer die schwache Determinantenlinie `L_2=det E_2` die konkrete
+   Kupplung `g_2(phi)=exp(i phi)` und damit `c_1(L_2)=1` hin. Diese Angabe
+   bestimmt den benoetigten Index eins auf der Determinantenlinie. Die aelteren
+   Fassungen `tfpt-31` und `tfpt-32` ordnen diese Klasse ausdruecklich dem einen
+   totalen Seam Twist und dem Half Angle Spinlift des schwachen Blocks zu. Die
+   aeussere Grad eins Linie ist damit im Original vorhanden und keine nachtraeglich
+   gewaehlte Kompensationslinie.
+
+3. **SOURCE REVIEWED, fehlende Operatorabbildung.** Das Original identifiziert
+   `g_2` nicht mit einer auf demselben Kreis Hilbertraum wirkenden
+   Carrierkupplung `G_2`, definiert nicht den zugehoerigen Multiplikationsoperator
+   `M_{G_2}` auf der treuen Kreisquelle und verbindet ihn nicht mit derselben
+   Hardy beziehungsweise KMS Kovarianz `C_Sigma`. Insbesondere wird der
+   Kupplungsaequator der normalen `S2` nicht operatoriell mit dem tangentialen
+   Quellkreis gleichgesetzt. Das symbolische `K_car` stellt diese Abbildung
+   ebenfalls nicht bereit. Deshalb ist der Faktor `1-z` fuer den schwachen
+   Determinantensektor topologisch bewiesen, als Determinante der tatsaechlichen
+   urspruenglichen fermionischen Quelle aber noch bedingt.
+
+4. **SOURCE REVIEWED NEGATIVE, kein versteckter Rang eins Selektor.** Weder
+   `P_adm`, `P_sing`, `P_Theta`, `tr_adm`, die FRG Supertrace noch die
+   eindimensionale Yukawa Invariantenmenge waehlen im Original einen einzelnen
+   internen Quellenkanal aus. Die spaetere Rang eins Groesse
+   `U_Sigma^min=|psi_Sigma><psi_Sigma|` wird definiert. Sie folgt nicht aus den
+   genannten Selektoren.
+
+Damit ist die kleinste positive Fortsetzung klar: Es genuegt eine originale
+Darstellung der bereits vorhandenen Grad eins Kupplung auf der treuen
+Kreisquelle. Eine neue Rang eins Wahl waere ueberfluessig. Die untersuchten
+Originalstellen enthalten diese Darstellung noch nicht.
+
+## 1. Deduplizierung
+
+Die folgenden Atlasbefunde wurden als bereits bekannt behandelt und nicht
+erneut als neue Resultate ausgegeben:
+
+* `finding:higgs-determinant-does-not-discharge-carrier-map`
+* `finding:minimum-rank-unique-primitive-channel-does-not-select-32`
+* `finding:primitive-invariant-does-not-select-rank-three`
+* `finding:historical-em-rank-one-and-full-heat-traces-have-different-contracts`
+* `finding:a4-spin-lift-fixes-local-ns-and-unordered-quarter-pair`
+
+Der Bericht
+`experiments/theory-contracts/original-admissible-source-closure-20261025/
+CARRIER-MODULE-FORWARD-MAP.txt` hat bereits gezeigt, dass die triviale
+Fortsetzung auf einen inneren Rang `r` den Faktor `(1-z)^r` liefert und dass
+das originale `K_car` keine ausgefuehrte Morita oder Kasparov Abbildung ist.
+Neu ist hier der entscheidende Vergleich mit einer nichtskalaren
+Vektorkupplung und der im Original schon vorhandenen Determinantenklasse.
+
+## 2. Exakter Paarindexsatz
+
+Sei `P` ein orthogonaler Projektor auf einem separablen Hilbertraum, `U`
+unitar und
+
+    Q = U P U*,             Q-P spurklassig.
+
+Fuer `|z|<1` sind `I-zP` und `I-zQ` invertierbar. Der relative Fredholm
+Determinant ist
+
+    D_{Q,P}(z)
+      = det_Fredholm[(I-zQ)(I-zP)^(-1)]
+      = (1-z)^(Tr(Q-P)).
+
+Die Ableitung des Logarithmus ist direkt berechenbar:
+
+    d/dz log D_{Q,P}(z)
+      = Tr[-Q(I-zQ)^(-1) + P(I-zP)^(-1)]
+      = -Tr(Q-P)/(1-z).
+
+Da `D_{Q,P}(0)=1`, folgt die Formel ohne eine Wahl von Eigenvektoren. Auf dem
+vektorwertigen Kreis setze
+
+    H = L2(S1,C^r),
+    P = Hardy Projektor,
+    U = M_G,
+
+mit einer glatten Schleife `G:S1->U(r)`. Dann ist `Q-P` spurklassig und der
+Toeplitz Paarindex ist, in der durch den urspruenglichen positiven Skalarloop
+`u(theta)=exp(i theta)` kalibrierten Orientierung,
+
+    Tr(Q-P) = wind(det G).
+
+Folglich gilt
+
+    det_Fredholm[(I-zQ)(I-zP)^(-1)]
+      = (1-z)^(wind(det G)).
+
+Der Spezialfall `G=u I_r` hat `det G=u^r` und liefert `(1-z)^r`. Das ist eine
+spezielle Kupplung, kein allgemeines Ranggesetz. Jede tatsaechliche
+`U(r)` Kupplung mit `wind(det G)=1` liefert dagegen genau `1-z`.
+
+## 3. Fortsetzung vom Hardy Projektor zur treuen KMS Kovarianz
+
+Der Index bleibt auch fuer die jetzt geschlossene treue Kreisquelle erhalten.
+Sei
+
+    0 <= C <= I,            C-P spurklassig,
+    C' = U C U*,
+    A_C = I-zC,             A_P = I-zP.
+
+Fuer `|z|<1` sind alle vier Operatoren invertierbar. Es gilt die exakte
+Faktorisierung
+
+    (U A_C U*) A_C^(-1)
+      = (U A_C A_P^(-1) U*)
+        (U A_P U* A_P^(-1))
+        (A_P A_C^(-1)).
+
+Der erste und der letzte Faktor sind Fredholm Determinanteninversen voneinander,
+weil der erste nur die unitaere Konjugation von `A_C A_P^(-1)` ist. Daher
+
+    det_Fredholm[(I-zC')(I-zC)^(-1)]
+      = det_Fredholm[(I-zQ)(I-zP)^(-1)]
+      = (1-z)^(wind(det G)).
+
+Die Voraussetzungen sind genau die benoetigten Operatorvoraussetzungen:
+`C-P` muss spurklassig sein, `M_G` muss auf demselben Hilbertraum wirken und
+der Kommutator mit dem Hardy Projektor muss die spurklassige Paarbedingung
+erfuellen. Eine glatte Matrixschleife erfuellt die letzte Bedingung. Der Satz
+waehlt weder `C` noch `G`; er transportiert deren vorhandenen Index.
+
+## 4. Was die Originaldeterminantenklasse wirklich liefert
+
+`documents/archive--paper-latex--tfpt-42/sections/
+012-subsection-bosonic-relative-index-and-higgs-selection.tex:3-31` definiert
+
+    L_2 = det E_2,          L_3 = det E_3
+
+auf der kompakten Normalsphaere und setzt explizit
+
+    g_2(phi)=exp(i phi),    g_3(phi)=1,
+    (c_1(L_2),c_1(L_3))=(1,0).
+
+Die Zeilen 34 bis 82 begruenden diese als eindeutige minimale nichtnegative
+Determinantenklasse. Zeilen 96 bis 130 lesen daraus den schwachen bosonischen
+Index eins und `H^0(O(1))=C^2` ab. Zeilen 182 bis 201 identifizieren den
+erhaltenen bosonischen Block als Rang zwei.
+
+Damit liegt bereits eine echte Grad eins Kupplung vor. Sie paart mit dem
+Kreis Hardyzyklus zu Index eins. Fuer diese topologische Aussage ist weder ein
+Vektor in `E_2` noch ein Rang eins Projektor noetig. Falls `E_2` als wirklicher
+Rang zwei Vektorbundel auf derselben Sphaere und mit einer Matrixkupplung
+`G_2:S1->U(2)` realisiert wird, gilt automatisch
+
+    det G_2 = g_2,          wind(det G_2)=1,
+
+und Abschnitt 2 liefert `1-z`.
+
+Das Original schreibt die Determinantenlinienkupplung `g_2` in diesem
+bosonischen Indexabschnitt hin. Unter der dort verwendeten woertlichen
+Vektorbundellesart besitzt `E_2` natuerlich eine `U(2)` Uebergangsfunktion
+`G_2` mit `det G_2=g_2`; ein bestimmter Matrixrepraesentant ist fuer den Index
+nicht noetig. Nicht geschrieben wird der Operator `M_{G_2}` auf demselben
+`H_circle tensor E_2`, auf dem die treue Quellenkovarianz `C_Sigma` lebt. Die
+Klasse bestimmt deshalb den Index, aber noch nicht den gemeinsamen
+Quelloperator.
+
+## 5. Faserstabilisator, aeussere Determinantenlinie und Spinstruktur
+
+Die erste Fassung dieses Berichts las den internen Stabilisator zu stark als
+globale Strukturgruppenreduktion. Das war falsch und wird hier ausdruecklich
+korrigiert.
+
+`tfpt-42/sections/005-subsection-internal-carrier-stabilizer-and-one-family-pa.tex:72-98`
+bestimmt den **faserweisen determinantenerhaltenden Automorphismenstabilisator**
+
+    G_car = S(U(3) x U(2)).
+
+Dieser Satz sagt nicht, dass die Uebergangsfunktionen eines globalen
+Carrierbundels in `S(U(3)xU(2))` liegen oder dass seine Determinantenlinie
+trivial ist. Sei vielmehr
+
+    E = E_3 direct-sum E_2,
+    L = det E = L_3 tensor L_2.
+
+Ein festes, auch nichttriviales `L` erlaubt weiterhin die faserweisen
+Automorphismen mit Determinante eins. Die Uebergangsfunktionen von `E` duerfen
+in `U(3)xU(2)` liegen und ihre Gesamtdeterminante sind die Uebergangsfunktionen
+von `L`. Daher ist
+
+    (c_1(L_2),c_1(L_3))=(1,0),
+    c_1(L)=1
+
+mit dem angegebenen internen Stabilisator vertraeglich. Es gibt keinen
+Zwang zu einem zusaetzlichen Grad `-1` und keinen Widerspruch.
+
+Die historische Herkunft ist sogar explizit. `tfpt-31/sections/
+007-subsection-occupancy-and-boundary-to-bulk-bridge.tex:142-169` und die
+entsprechende Stelle in `tfpt-32`, Zeilen 122 bis 149, nehmen einen totalen
+Seam Twist eins auf dem orientierten Doppelcover. Der Half Angle Spinlift des
+Rang zwei Blocks gibt eine volle Determinantenwindung in `L_2`; die Farbklasse
+`L_3` bleibt trivial. `tfpt-42` ersetzt diese Formulierung durch die konkrete
+Kupplung auf der kompakten Normalsphaere. Das ist eine vorhandene aeussere
+Seam Determinantenlinie, keine nachtraeglich erfundene Kompensation.
+
+Unter der woertlichen Vektorbundellesart folgt ausserdem exakt
+
+    w_2(E_R) = c_1(E) mod 2 = c_1(L) mod 2
+             = 1 in H^2(S2,Z2)
+
+auf `S2`. Das zugrunde liegende reelle Rang zehn Buendel besitzt daher keinen
+gewoehnlichen `Spin(10)` Lift. Als komplexes `U(5)` Buendel besitzt es aber den
+kanonischen `Spin^c(10)` Lift. Seine charakteristische Linie ist `L`, bis auf
+die konventionelle Dualisierung bei der Wahl des Exterioralgebra Spinormoduls.
+Die Modulo zwei Klasse und damit die Aussage bleiben bei dieser Dualisierung
+gleich. Das im Original verwendete
+
+    S+ = Lambda^even E
+
+ist, nach der ueblichen Dual beziehungsweise Konjugationskonvention, genau die
+Exterioralgebraform des `Spin^c` Fockmoduls. Dafuer ist keine Quadratwurzel von
+`L` zu waehlen. Die nichttriviale Determinantenlinie verhindert diese
+Konstruktion nicht.
+
+Fullv21 A4, `sections/001-section-introduction-the-problem-of-parameters.tex:
+258-276`, liefert den Ordnung vier Spinlift der geometrischen Moebius
+Identifikation. Der Atlasbefund
+`finding:a4-spin-lift-fixes-local-ns-and-unordered-quarter-pair` prueft daraus
+die lokale NS Struktur und das ungeordnete Viertelpaar. Dieser geometrische
+Pin beziehungsweise Spinlift ist nicht allein schon die volle globale
+`Spin^c(10)` Carrierconnection. Die alten `tfpt-31/32` Stellen geben jedoch
+die ausdrueckliche Determinantencharakter Abbildung vom Half Angle Lift nach
+`L_2`. Genau diese topologische Abbildung darf hier verwendet werden.
+
+## 6. Abgrenzung zur `Spin(10) x SU(4)` Glue Struktur
+
+`documents/tfpt_1_architecture_e8/sections/011-source.tex:165-196` beweist die
+algebraische und darstellungstheoretische Schliessung
+
+    G_closure = (Spin(10) x SU(4))/Delta Z4 subset E8.
+
+Sie sagt, dass die zentralen `Z4` Ladungen in den wirklichen Quotientendarstellungen
+wie `(16,4)` einander aufheben. Das ist eine faserweise Gruppen und
+Darstellungsaussage. Die Stelle baut kein globales Hauptbuendel ueber der
+Seam Normalsphaere und identifiziert keinen Cech `Z4` Liftobstruktionskokel mit
+der aeusseren Linie `L`.
+
+Sollte die Schliessungsgruppe unter derselben Vektorbundellesart global ueber
+diesem `S2` realisiert werden, muesste ein nichttrivialer Quotientenlift die
+Hindernisse der beiden Faktoren diagonal paaren. Der `D5` Anteil hat wegen
+`w_2(E_R)=1` keinen separaten `Spin(10)` Lift. Eine globale
+Quotientenrealisierung kann ihn nur dann ohne separate Spinstruktur tragen,
+wenn der `A3` Faktor die passende inverse `Z4` Liftklasse liefert, so dass alle
+diagonal neutralen Darstellungen absteigen. Das ist die buendeltheoretische
+Version der internen Zentralladungsaufhebung.
+
+Das Original beweist diese globale Kokelidentifikation nicht. Der endliche
+`D5+A3` Diskriminantenglue, die lokale A4 Spinstruktur und die Grad eins
+Determinantenlinie sind drei konkret vorhandene Daten. Ihre gemeinsame
+Hauptbuendelabbildung darf nicht allein aus dem gemeinsamen Namen `Z4`
+gefolgert werden. Damit entsteht kein neuer Widerspruch. Offen bleibt nur der
+globale Intertwiner, falls eine solche `E8` beziehungsweise Quotientenbuendel
+Lesart fuer die physische Quelle verlangt wird.
+
+Fuer den hier benoetigten relativen Determinantenfaktor ist diese volle
+globale `E8` Liftung staerker als erforderlich. Die vorhandene Linie `L_2`
+mit Grad eins genuegt topologisch. Noch zu zeigen ist ihre Wirkung auf
+derselben Quellenkovarianz.
+
+## 7. Warum `P_adm` keinen Einzelkanal waehlt
+
+`tfpt-42/sections/022-section-closure-theorems-from-the-admissibility-complex.tex:12-53`
+schreibt
+
+    H = H_Sigma tensor H_c tensor H_Theta tensor H_t,
+    P_str = P_Sigma,+ P_sing P_Theta,
+    P_sing = (I+Z_c+Z_c^2)/3,
+    P_Theta = (I+Q_Theta)/2.
+
+Fuer `Q_Theta` werden nur Selbstadjungiertheit und `Q_Theta^2=I` angegeben.
+Zeilen 70 bis 100 faktorisieren
+
+    P_adm = P_prim P_sing P_Theta = P_str P_gap.
+
+Es fehlt eine Darstellung von `Q_Theta`, aus der der Rang oder ein bestimmter
+interner Zustand folgen wuerde. `P_gap` haengt zudem von dem nicht konkret
+dargestellten `D_adm` ab.
+
+Auf dem ausdruecklichen Familienpaket
+
+    S+ = Lambda^even(E_3 direct-sum E_2)
+
+hat allein `P_sing` Rang vier: Es behaelt die beiden Singuletts
+`Lambda^0 E` und `Lambda^2 E_2` sowie das farblose schwache Dublett in
+`Lambda^4 E`. Das folgt direkt aus der Zerlegung in `tfpt-42/sections/
+005-subsection-internal-carrier-stabilizer-and-one-family-pa.tex:217-270`.
+Farbneutralitaet ist daher keine Rang eins Auswahl.
+
+Der Gradfilter aus `tfpt-42/sections/
+006-subsection-character-trace-identities-and-the-abelian-in.tex:209-229`
+erlaubt zwar den algebraischen Projektor auf `Lambda^2 E`. Das Produkt
+`P_sing P_{Lambda^2 E}` hat auf `S+` Rang eins und trifft
+`Lambda^2 E_2`. Dieser Projektor steht aber nicht in der Definition von
+`P_adm`, wird nicht mit `P_Theta` identifiziert und bezeichnet im
+Familienpaket den `e^c` Sektor. Ihn als EM Quellenkanal oder als die schwache
+bosonische Determinantenlinie einzusetzen waere eine neue Identifikation.
+
+## 8. `tr_adm` und `STr` liefern keine versteckte Normierung
+
+Die historische Quellenpruefung in
+`experiments/theory-contracts/older-paper-source-recovery-20261025/
+EM-HISTORY.txt:178-194` zeigt, dass `tr_adm` in diesem Zusammenhang die
+gewoehnliche Fredholm Spur nach Einschraenkung auf `Ran(P_adm)` ist. Sie ist
+weder eine Supertrace noch ein Index noch eine durch den Rang dividierte Spur.
+
+Das Original verwendet eine normierte Familienmittelung nur an einer anderen
+Stelle und benennt sie ausdruecklich:
+
+    E_{S+}(A) = (1/16) tr_{S+}(A).
+
+Sie steht in `tfpt-42/sections/
+009-subsection-carrier-compressions-on-the-minimal-branch.tex:87-113` und
+dient der Hyperchargevarianz. Zeilen 169 bis 174 unterscheiden sie nochmals
+von der unnormalisierten quadratischen Spur. Diese Mittelung darf nicht als
+Gewicht `1/r` in den relativen Determinanten eingesetzt werden.
+
+Die Supertrace in `tfpt-42/sections/
+035-subsection-renormalized-physical-and-scheme-readout-laye.tex:30-66` gehoert
+zur Wetterich Gleichung auf dem regulierten Feldraum. Sie ist eine
+Statistikgraduierung der effektiven Wirkung. Es gibt keine Originalgleichung
+
+    tr_adm = STr
+
+und keinen Satz, der die Superdimension des hier gesuchten Quellenmoduls auf
+eins setzt. Die beiden Spuren koennen den Paarindexsatz daher nicht ersetzen.
+
+## 9. Yukawa Eindeutigkeit ist keine Zustandsprojektion
+
+`tfpt-42/sections/023-source.tex:2-41` definiert die primitiven Yukawaobjekte
+als invariante trilineare Abbildungen. Zeilen 103 bis 164 setzen den bereits
+bestimmten schwachen Rang zwei ein und gewinnen den `3+2` Carrier. Zeilen 166
+bis 200 beweisen, dass der relevante Hom Raum genau dann eindimensional ist.
+
+Diese Eins ist die Dimension eines Raums von Wechselwirkungstensoren. Die
+schwache Kontraktion ist die alternierende bilineare Abbildung
+
+    E_2 tensor E_2 -> Lambda^2 E_2.
+
+Sie ist kein linearer Projektor `E_2 -> C` und waehlt keinen normierten
+Vektor in `E_2`. Auch die Eindeutigkeit des Yukawa Invarianten liefert daher
+keinen Rang eins Quellenkanal.
+
+## 10. Die spaetere Rang eins EM Definition
+
+`tfpt-42/sections/
+007-subsection-carrier-form-of-the-electromagnetic-closure.tex:20-48` beginnt
+mit einem als ausgezeichnet bezeichneten normierten Modus `psi_Sigma` und
+definiert dann
+
+    U_Sigma^min = |psi_Sigma><psi_Sigma|.
+
+Zeilen 145 bis 150 benutzen die gewoehnliche Rang eins Identitaet
+`det(1-q U_Sigma^min)=1-q`. Der zitierte primitive Generator in
+`tfpt-42/sections/
+006-subsection-character-trace-identities-and-the-abelian-in.tex:249-285`
+beweist jedoch nur
+
+    [u_Sigma]=1 in K1(S1),  SF(U_Sigma)=1.
+
+Er konstruiert weder `psi_Sigma` noch einen internen Rang eins Projektor.
+Die spaetere Definition ist mit dem Index eins vertraeglich, aber sie ist
+nicht dessen einzig moegliche Operatorrealisierung. Eine Grad eins
+Vektorkupplung waere eine zweite, rangunabhaengige Realisierung desselben
+skalaren Faktors.
+
+## 11. Rolle von `K_car` und der gemeinsamen Kovarianz
+
+Die aktiven Stellen
+
+* `documents/tfpt_2_standard_model/sections/
+  010-section-the-explicit-mass-gap-closes-dynamics-and-cluste.tex:304-315`,
+* `documents/tfpt_research_contracts/sections/002-source.tex:228-236`
+
+schreiben symbolisch
+
+    [D_F] = [D_Sigma] tensor_(E8)_1 [K_car],
+    C_F = P_F C_Sigma P_F.
+
+Wie in `CARRIER-MODULE-FORWARD-MAP.txt` quellengeprueft, definieren diese
+Stellen weder das Hilbertbimodul `K_car` noch seine Darstellungen,
+Operatorconnection oder den Projektor `P_F`. Insbesondere identifizieren sie
+nicht die schwache Determinantenkupplung `g_2` mit einem Multiplikationsoperator
+auf dem Hardy beziehungsweise KMS Kreisraum.
+
+Der Paarindexsatz zeigt jetzt, dass fuer den skalaren Faktor viel weniger als
+ein vollstaendiges endliches `C_F` genuegen wuerde. Benoetigt wird genau:
+
+1. eine tatsaechliche glatte Matrixkupplung `G` auf dem originalen Kreis,
+2. `wind(det G)=1`,
+3. ihre Darstellung `M_G` auf demselben Hilbertraum wie `C_Sigma`,
+4. die Spurklassenrelation `C_Sigma-P_Hardy`.
+
+Punkt 4 ist durch die jetzt geschlossene treue Kreiskonstruktion verfuegbar.
+Die Originaldeterminantenklasse liefert Punkt 2 auf ihrer Linie. Die
+typisierte Identifikation, die Punkte 1 und 3 mit demselben Quellenraum
+verbindet, fehlt.
+
+## 12. Kleinster Abschluss und Abbruchkriterium
+
+Ein Originalsbeleg schliesst die verbleibende Luecke bereits dann, wenn er
+einen der folgenden gleichwertigen Pfeile wirklich hinschreibt:
+
+    G:S1 -> U(r),       det G = g_2,
+    M_G:L2(S1,C^r) -> L2(S1,C^r),
+    C'_Sigma = M_G C_Sigma M_G*,
+
+Die vorhandene `L_2` Kupplung ist dafuer bereits der richtige topologische
+Kandidat. Es muss keine kuenstliche kompensierende Linie und keine Reduktion
+des ganzen Carrierbuendels auf `S(U(3)xU(2))` eingefuehrt werden.
+
+Erfolg ist die exakte Operatoraussage
+
+    det_Fredholm[(I-zC'_Sigma)(I-zC_Sigma)^(-1)] = 1-z
+
+fuer einen offenen Bereich `|z|<1` mit derselben Zeit, Domain und Kovarianz.
+
+Der Ansatz bricht an der ersten Identifikation ab, wenn
+
+* nur `G=u I_r` vorliegt, denn dann ist der Exponent `r`,
+* oder nur die abstrakte Linie `g_2` ohne Darstellung auf der Quelle vorliegt.
+
+Im zweiten Fall bleibt der Index eins bewiesen und die physische
+Quellendeterminante bedingt. Es ist weder ein neuer Zustand noch eine neue
+Kopplung erforderlich. Es fehlt die originale gemeinsame Darstellung.
+
+## 13. Schlussurteil
+
+**PROVED:** Der urspruengliche schwache Determinantensektor besitzt die
+minimale Klasse `c_1=1`. Eine tatsaechliche Kreis Carrierkupplung mit dieser
+Determinante erzeugt auf dem Hardyprojektor und auf jeder spurklassig dazu
+verschobenen treuen KMS Kovarianz exakt den Faktor `1-z`. Der interne Rang
+zwei oder ein anderer endlicher Rang vervielfacht den Exponenten nicht.
+
+**SOURCE REVIEWED NEGATIVE:** Die Originalselektoren waehlen keinen Rang eins
+Quellenkanal, und die Originalspuren normalisieren die Multiplizitaet nicht
+weg. Die Yukawa Eindeutigkeit waehlt einen Tensor, keinen Zustand.
+
+**CONDITIONAL:** Die Gleichsetzung dieses Grad eins Index mit der
+tatsaechlichen urspruenglichen fermionischen Quellendeterminante verlangt die
+noch fehlende Darstellung der Kupplung auf demselben Kreisraum wie
+`C_Sigma`. Das abstrakte `K_car` und die Formel `C_F=P_F C_Sigma P_F` liefern
+sie nicht.
+
+**CORRECTED GLOBAL TYPING:** Der interne Stabilisator
+`S(U(3)xU(2))` verbietet `c_1(det E)=1` nicht. Die Originalklassen definieren
+eine aeussere Gesamtlinie `L=L_3 tensor L_2` vom Grad eins. Unter der
+Vektorbundellesart gilt `w_2(E_R)=1`, also kanonischer `Spin^c` statt eines
+separaten `Spin(10)` Lifts. Die interne diagonale `Z4` E8 Glue Struktur ist
+damit kompatibel, aber ihre globale Hauptbuendelidentifikation mit dieser
+Linie ist im Original nicht ausgefuehrt.
+
+**FIRST ADDITIONAL INPUT:** Eine explizite Carrier beziehungsweise
+Determinantenlinien Wirkung auf der treuen Kreisquelle samt Domain und
+Adjungierter. Kein Rang eins Projektor, keine gewichtete Spur und keine
+Fouriermodenwahl ist erforderlich.
+
+## Quellenstaende
+
+* `documents/archive--paper-latex--tfpt-42/sections/
+  022-section-closure-theorems-from-the-admissibility-complex.tex`, SHA256
+  `fe626eb8126375f8e0028914a19e045802478f76f0c9b8e6655b8331b70848b2`
+* `documents/archive--paper-latex--tfpt-42/sections/
+  005-subsection-internal-carrier-stabilizer-and-one-family-pa.tex`, SHA256
+  `3348bf35cc05750e1ee198a772ff3278ef92797b9a83cd36b6ce2483300205e8`
+* `documents/archive--paper-latex--tfpt-42/sections/
+  006-subsection-character-trace-identities-and-the-abelian-in.tex`, SHA256
+  `341f53fab64f6f2cca53e505d497cdc7087285c95e8e0f44f616ac6754afa810`
+* `documents/archive--paper-latex--tfpt-42/sections/
+  007-subsection-carrier-form-of-the-electromagnetic-closure.tex`, SHA256
+  `6f98cfb7404f415e4a511712c1fa144c85bb662c36386cc32d1ebb3537a9fb6b`
+* `documents/archive--paper-latex--tfpt-42/sections/
+  009-subsection-carrier-compressions-on-the-minimal-branch.tex`, SHA256
+  `6df5455fede110db82b175373834ca184b7489745afaf10412e7a72e04a3e874`
+* `documents/archive--paper-latex--tfpt-42/sections/
+  012-subsection-bosonic-relative-index-and-higgs-selection.tex`, SHA256
+  `8140f7618b51292b8acf79fdc999cac9482842626ed07db4edb54dc91c9499d6`
+* `documents/archive--paper-latex--tfpt-31/sections/
+  007-subsection-occupancy-and-boundary-to-bulk-bridge.tex`, SHA256
+  `9c441d14de6a6c9586a4d2b077b160a4c5ce020d82243ff832300ff9554e6397`
+* `documents/archive--paper-latex--tfpt-32/sections/
+  007-subsection-occupancy-and-boundary-to-bulk-bridge.tex`, SHA256
+  `ee0f3ecd2776f594d9c0cc4ac5c9acae8835b29ae1254414431b234efd4d0e76`
+* `documents/archive--paper-latex--tfpt-theory-fullv21/sections/
+  001-section-introduction-the-problem-of-parameters.tex`, SHA256
+  `85bb11511be05385a7cadf6071dbede216b12befeb9d6767bc4460748cbec5d7`
+* `documents/tfpt_1_architecture_e8/sections/011-source.tex`, SHA256
+  `857be661c3833a260e8d0073483f7c7b4659dba6d77f2680be8bbfcc16550cfc`
+* `documents/archive--paper-latex--tfpt-42/sections/023-source.tex`, SHA256
+  `a08f3b96d2bc497d35591ab2fb35a7e225bbc6106ad1d810e582ec1f7994f235`
+* `documents/archive--paper-latex--tfpt-42/sections/
+  035-subsection-renormalized-physical-and-scheme-readout-laye.tex`, SHA256
+  `2a32bc13e10e2f2c7f7f42890f2065816d3c0289f1b71d23a4797b1bc10ade81`
+* `documents/tfpt_2_standard_model/sections/
+  010-section-the-explicit-mass-gap-closes-dynamics-and-cluste.tex`, SHA256
+  `3a31f272d999f1e0b027f25a877068576c6cbdc83150c7b5c0f8a6e17bed1904`
+* `documents/tfpt_research_contracts/sections/002-source.tex`, SHA256
+  `20bb3f922565e82917e4c0b16cfd84fddf57ce3e37e5734df75028d4b63aac80`
+* `experiments/theory-contracts/older-paper-source-recovery-20261025/
+  EM-HISTORY.txt`, SHA256
+  `372d4cd7bc1b5a74127fc24cc8b5b08f8590a301152145fe06bc48ba6a198dd3`
+* `experiments/theory-contracts/original-admissible-source-closure-20261025/
+  CARRIER-MODULE-FORWARD-MAP.txt`, SHA256
+  `947987a1bdff497d899c1921c2fe2e0098a4b3a30b0b837d849195c8544c28b6`
+* `experiments/theory-contracts/canonical-seam-fermionization-20261025/
+  ORIGINAL-SPIN-AND-SEAM-DICTIONARY.txt`, SHA256
+  `dfaef864428375b018d0eddcb77a4a5ccd085e996eb1c1b3f1d8db526991cf24`
+* `experiments/theory-contracts/seam-joint-ward-state-20261014/PROOF.txt`,
+  SHA256
+  `7c0cd92dfc5eca88260baae0af9edad66f958a27ce0d15d7965414b3971f8da0`

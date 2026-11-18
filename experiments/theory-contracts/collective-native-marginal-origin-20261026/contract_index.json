@@ -1,0 +1,72 @@
+{
+  "contract": "UR.NATIVE.COLLECTIVE4.01",
+  "date": "20261026",
+  "question": "Does the actual E8/J native source first distinguish its literal five-code through four-register correlations, and can any <=3-local Hamiltonian select that whole code as its exact ground space?",
+  "verdict": "EXACT_SCOPED_FOURTH_MOMENT_AND_MARGINAL_OBSTRUCTION; PHYSICAL_ORIGIN_OPEN",
+  "verdict_enum": "PARTIAL",
+  "claims_tested": [
+    "UR.NATIVE.COLLECTIVE4.MOMENTS.01",
+    "UR.NATIVE.COLLECTIVE4.MARGINALS.01",
+    "UR.NATIVE.COLLECTIVE4.LOCALITY.01"
+  ],
+  "gates": [
+    "T1",
+    "T8"
+  ],
+  "kills": [
+    "Exact isolated five-code ground space from <=3-register Hermitian terms on the same four registers, without ancillas"
+  ],
+  "checker": "check_collective_origin.py",
+  "proof": "PROOF.txt",
+  "results": "results.json",
+  "firewall": "experiments",
+  "premises": [
+    "Original E8 Gaussian roots and quarter J",
+    "Actual native symmetric quartic code and unitary metric"
+  ],
+  "not_derived": [
+    "Physical generator or state selection",
+    "Many-cell collective phase or continuum",
+    "Physical P1/P2 origin",
+    "3+2/clock/seed coefficient selection"
+  ],
+  "source_reference": "../joint-native-algebra-selection-20261016/SOURCE-SELECTION.md",
+  "literature_reference": "https://arxiv.org/abs/1110.6583",
+  "validation": {
+    "normal": "pass",
+    "optimized": "pass",
+    "results_byte_identical": true,
+    "negative_controls": "both fire"
+  },
+  "promotion": false,
+  "collective_dynamics_continuation": {
+    "date": "20261026",
+    "proof": "COLLECTIVE-DYNAMICS.txt",
+    "checker": "check_collective_dynamics.py",
+    "results": "dynamics_results.json",
+    "verdict": "EXACT_SOURCE_METRIC_AND_OVERLAP_BOUNDARIES; FUNDAMENTAL_ORIGIN_OPEN",
+    "new_physical_model": false,
+    "promotion": false
+  },
+  "recursive_machine_audit": {
+    "date": "20261026",
+    "proof": "RECURSIVE-SOM-AUDIT.txt",
+    "checker": "recursive_machine_audit/fundamental_audit.py",
+    "results": "recursive_machine_audit/runs/fundamental_audit.json",
+    "provenance": "recursive_machine_audit/provenance.json",
+    "verdict": "EXACT_DECLARED_UPDATE_U35_COVARIANCE_AND_FINITE_RATE_SENSITIVITY; NATIVE_PHYSICAL_ORIGIN_NOT_SELECTED",
+    "verdict_enum": "PARTIAL",
+    "explicitly_chosen_model": true,
+    "normal_optimized_byte_identical": true,
+    "promotion": false
+  },
+  "baseline_machine_runs": {
+    "proof": "COLLECTIVE-MACHINE-RUNS.txt",
+    "evidence": "baseline_machine_evidence/",
+    "summary": "baseline_machine_evidence/baseline_summary.json",
+    "provenance": "baseline_machine_evidence/provenance.json",
+    "status": "FINITE_MEASURED_DECLARED_MODEL; CHECKPOINT_AND_RESTORE_AUDIT_VERIFIED",
+    "long_runs_reexecuted_in_consolidation": false,
+    "promotion": false
+  }
+}

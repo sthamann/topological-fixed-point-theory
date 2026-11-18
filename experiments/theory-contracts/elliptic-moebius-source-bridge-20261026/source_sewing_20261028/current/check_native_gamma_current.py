@@ -1,0 +1,88 @@
+"""Identify the marked native Hodge Kraus space with actual Pauli current actions."""
+from pathlib import Path
+import hashlib
+import importlib.util
+import json
+from itertools import product,combinations
+import sympy as s
+
+HERE=Path(__file__).resolve().parent
+REPO=Path('/Users/stefanhamann/Projekte/tfpt-theoryv4')
+PRIOR=REPO/'experiments/theory-contracts/elliptic-moebius-source-bridge-20261026/source_recursion_20261028'
+HELPER=PRIOR/'check_native_spin5_source_record.py'
+FUNCTOR=PRIOR/'native-spin5-functor-results.json'
+SOURCE=REPO/'experiments/theory-contracts/compiler-correlated-event-clock-20260919/source_channel.py'
+pins={HELPER:'72fe426e34b1fb6b6195b8a333a71208d73b998be3719acb1ba66515f8dd40ee',FUNCTOR:'5d51730bb45405d04e7c144de10cd7bb23b1b69dbc6fbe558beaa00f98f3dff0',SOURCE:'3852fabaf10c143fe20238b67406df6396f85c931dfd4834fe91a2d7ef900593'}
+checks=[]
+def need(value,label):
+    if not bool(value):raise RuntimeError(label)
+    checks.append(label)
+def load(path,name):
+    spec=importlib.util.spec_from_file_location(name,path)
+    module=importlib.util.module_from_spec(spec);spec.loader.exec_module(module);return module
+for path,pin in pins.items():need(hashlib.sha256(path.read_bytes()).hexdigest()==pin,'pin '+path.name)
+helper=load(HELPER,'native_spin5_helpers');source=load(SOURCE,'actual_sixty_source')
+F=s.Matrix([[s.sympify(x) for x in row] for row in json.loads(FUNCTOR.read_text())['spin5_map']])
+q=s.Matrix([[-1,0,0,0,0],[0,0,0,0,-1],[0,0,0,1,0],[0,0,1,0,0],[0,-1,0,0,0]])
+rt=s.sqrt(2);eye=s.eye(5);ii=s.I
+R=s.Matrix.hstack(ii*eye[:,0],(eye[:,1]-eye[:,4])/rt,ii*(eye[:,1]+eye[:,4])/rt,(eye[:,2]+eye[:,3])/rt,ii*(eye[:,2]-eye[:,3])/rt)
+need(R.conjugate().T*R==eye and q*R.conjugate()==R,'actual compact real frame')
+pairs4=[(a,b) for a in range(4) for b in range(a,4)]
+pb=helper.pauli_basis(source.SYMMETRIC_BITS)
+N=s.Matrix.hstack(*[s.Matrix([P[a,b]/2 for a,b in pairs4]) for P in pb])
+U=s.simplify(helper.exterior_action(R,list(combinations(range(5),2))).conjugate().T*F*N)
+need(U.conjugate().T*U==s.eye(10),'reuse exact native Bell10 chart')
+K=[s.simplify(U.conjugate().T*C*U) for C in helper.hodge_amplitudes()]
+I=s.eye(2);X=s.Matrix([[0,1],[1,0]]);Y=s.Matrix([[0,-ii],[ii,0]]);Z=s.diag(1,-1)
+omega=s.Matrix([[0,1,0,0],[-1,0,0,0],[0,0,0,1],[0,0,-1,0]])
+gamma=[];names=[]
+for (a,A),(b,B) in product([('I',I),('X',X),('Y',Y),('Z',Z)],repeat=2):
+    P=s.kronecker_product(A,B)
+    if s.trace(P)==0 and P.T*omega==omega*P:
+        names.append(a+b);gamma.append(P)
+need(len(gamma)==5,'marked complement has five actual Pauli directions')
+need(all(G.conjugate().T==G and G**2==s.eye(4) for G in gamma),'five Hermitian unit Clifford directions')
+need(all(gamma[a]*gamma[b]+gamma[b]*gamma[a]==s.zeros(4) for a in range(5) for b in range(a+1,5)),'five Pauli directions anticommute')
+D=[]
+for G in gamma:
+    action=s.Matrix([[s.simplify(s.trace(Pa.conjugate().T*(G*Pb+Pb*G.T))/8) for Pb in pb] for Pa in pb])
+    D.append(action)
+    need(action.conjugate().T==action,'Hermitian collective current action')
+need(sum((A.conjugate().T*A for A in D),s.zeros(10))==3*s.eye(10),'collective current gain three I10')
+O=s.Matrix([[s.simplify(s.trace(A.conjugate().T*B)/6) for B in D] for A in K])
+need(O.conjugate()==O and O.T*O==s.eye(5),'exact real orthogonal Kraus mixing')
+need(all(s.simplify(D[n]-sum((O[m,n]*K[m] for m in range(5)),s.zeros(10)))==s.zeros(10) for n in range(5)),'native Hodge equals actual collective Pauli-current span')
+all_pauli={a+b:s.kronecker_product(A,B) for (a,A),(b,B) in product([('I',I),('X',X),('Y',Y),('Z',Z)],repeat=2) if a+b!='II'}
+all_D={name:s.Matrix([[s.simplify(s.trace(Pa.conjugate().T*(G*Pb+Pb*G.T))/8) for Pb in pb] for Pa in pb]) for name,G in all_pauli.items()}
+need(sum((A.conjugate().T*A for A in all_D.values()),s.zeros(10))==9*s.eye(10),'all fifteen native current directions have gain nine I10')
+ovoid_sets={}
+for form_name in ['IY','XY','YI','YX','YZ','ZY']:
+    form=all_pauli[form_name]
+    keep=[name for name,G in all_pauli.items() if G.T*form==form*G]
+    need(len(keep)==5,'five directions in form '+form_name)
+    need(sum((all_D[n].conjugate().T*all_D[n] for n in keep),s.zeros(10))==3*s.eye(10),'Hodge completeness in form '+form_name)
+    ovoid_sets[form_name]=keep
+multiplicities={name:sum(name in keep for keep in ovoid_sets.values()) for name in all_D}
+need(set(multiplicities.values())=={2},'every Pauli current occurs in exactly two of the six ovoids')
+super_all=s.simplify(sum((s.kronecker_product(A.conjugate(),A) for A in all_D.values()),s.zeros(100))/9)
+super_avg=s.simplify(sum((s.kronecker_product(all_D[n].conjugate(),all_D[n]) for keep in ovoid_sets.values() for n in keep),s.zeros(100))/18)
+need(super_avg==super_all,'six marked Hodge responses average to the canonical full-current channel')
+spectrum=super_all.eigenvals()
+need(spectrum=={s.Integer(1):1,s.Rational(5,9):15,-s.Rational(1,9):84},'full-current channel exact spectrum')
+bell_np,_,_=source.reflection_actions(source.source_rays())
+bell=[helper.exact_gaussian(A) for A in bell_np]
+W=s.Matrix.hstack(*[helper.vec(A) for A in bell])
+V15=s.Matrix.hstack(*[helper.vec(A) for A in all_D.values()])
+need(V15.rank()==15 and V15.conjugate().T*V15==6*s.eye(15),'fifteen independent current Kraus directions')
+need(W*W.conjugate().T*V15==8*V15,'all current directions lie in the actual source frame eigenvalue eight space')
+X15=W.conjugate().T*V15/8
+need(W*X15==V15 and X15.conjugate().T*X15==s.Rational(3,4)*s.eye(15),'minimum-norm current record amplitudes')
+E15=s.Rational(4,3)*X15*X15.conjugate().T
+need(E15**2==E15 and E15.rank()==15,'unmarked current record projector rank fifteen')
+index={name:j for j,name in enumerate(all_D)}
+effects={form:s.Rational(4,3)*X15[:,[index[n] for n in keep]]*X15[:,[index[n] for n in keep]].conjugate().T for form,keep in ovoid_sets.items()}
+need(sum(effects.values(),s.zeros(60))==2*E15,'six marked rank-five record effects resolve twice the current projector')
+need(s.simplify(W*E15*W.conjugate().T/60 - V15*V15.conjugate().T/45)==s.zeros(100),'full-current heralded map equals one fifth of normalized current response')
+result={'verdict':'NATIVE_HODGE_EQUALS_FIVE_ACTUAL_COLLECTIVE_PAULI_CURRENT_ACTIONS','gamma_names':names,'action':'D_m(P)=(gamma_m P+P gamma_m^T)/2 in the actual Bell basis','normalization':'Phi_native=(1/3) sum Ad(D_m)','gamma_selection':'traceless Hermitian Pauli satisfying gamma^T Omega=Omega gamma','mixing':[[str(x) for x in row] for row in O.tolist()],'six_ovoid_gamma_sets':ovoid_sets,'current_channel':'Psi_current=(1/9) sum over all fifteen Ad(D_gamma)','current_channel_spectrum':{str(k):v for k,v in spectrum.items()},'current_channel_is_six_hodge_barycenter':True,'full_current_record_success_probability':'1/5','full_current_record_effect_rank':15,'six_record_instrument':'six effects E_omega^T/2 plus failure I-E15^T; each success map Phi_omega/30; total success Psi_current/5','checks':len(checks),'check_names':checks,'scope':'Exact actual-current and source-record identities. The six-fiber family and its full-current barycenter require no distinguished Omega. Inclusive current contraction, physical record access/coupling, local field map and physical dynamics are not derived. No measured C60 record is needed for the algebraic current representation; record implementation remains conditional.'}
+(HERE/'native-gamma-current-results.json').write_text(json.dumps(result,indent=2)+'\n')
+print(json.dumps(result,indent=2))

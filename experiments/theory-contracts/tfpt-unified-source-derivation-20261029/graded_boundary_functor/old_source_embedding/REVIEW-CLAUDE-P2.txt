@@ -1,0 +1,191 @@
+INDEPENDENT REVIEW OF CLAUDE FOLLOW-UP 6: P2 AND THE ACTUAL v252 GRADING
+29 October 2026. Original/codegraph-first analytical review. No suite,
+new model, original edit, Atlas mutation or physical-source promotion.
+
+VERDICT
+The positive grading is NOT merely dimension 16. With the real unimodular
+SM gauge lift of the actual v252 bimodule it is explicitly equivalent, per
+generation, to the ORIGINAL P2 exterior-even module under the whole group
+S(U(3)xU(2)), with the correct hypercharges. An explicit unitary wedge
+dictionary is given below. The raw left algebra representation alone is
+not this physical gauge action. Nor does v252 implement a complete original
+Spin(10) action or derive its status as a physical source symmetry.
+
+A strongest conditional scalar selector also exists: SM invariance plus an
+EXPLICITLY GIVEN cyclic family permutation selects nu_R^c tensor (1,1,1)
+up to phase. This is not generally preserved by the actual Dirac coefficient.
+Its exact preservation condition is MR s=0 AND conjugate(Ynu) s=0.
+
+1. Actual original inputs and precise code sources
+
+verification/v252_full_finite_triple.py:
+  63-83: three generations, explicit nu/e/u/d, L/R, color labels;
+  86-99: S_LR=Y_name and S_RL=Y_name^*;
+  102-116: D_F=[[S,T],[T^*,conjugate(S)]], T_nuR,nuR=MR;
+  119-121: particle L has gamma_F=+1, particle R=-1;
+           antiparticle signs are opposite;
+  124-132: actual J_F=Kswap times complex conjugation;
+  139-168: actual pi(lambda,q,m) on both blocks;
+  258-259: opposite-action matrix J_F b J_F^-1=Kswap conjugate(b) Kswap.
+The functions grading, rep, Kswap, Japply, dirac_block and full_D were
+discovered/read through the code graph before reading their exact file lines.
+
+The ORIGINAL P2 comparison is not a guessed charge table:
+documents/archive--paper-latex--tfpt-v29/sections/
+001-section-overview-and-claim-map.tex:
+  166-174: Y=diag(-1/3,-1/3,-1/3,+1/2,+1/2);
+  187-197: S(U(3)xU(2)) and its Z6 global SM form;
+  236-282: S+=Lambda_even(E3+E2), including the six actual SM multiplets.
+The same primitive integer normalization X=6Y is explicitly retained in
+documents/archive--paper-latex--tfpt-42/sections/
+027-subsection-primitive-completion-from-the-boundary-kernel.tex:156-175.
+verification/v245_spectral_matter_content.py:44-52 and
+verification/v248_ps_algebra.py:42-56 record the corresponding Y and
+Y=T3R+(B-L)/2 tables. They do not replace the matrix check below.
+
+2. Actual real gauge action, including its essential opposite action
+
+Use the real bimodule gauge lift
+  U(u)=pi(u) J_F pi(u) J_F^-1,
+with u=(lambda,q,m), |lambda|=1, q in SU(2), m in U(3).
+This formula specifies the gauge action being compared. v252 supplies pi
+and J but does not itself contain a separately implemented gauge_lift or Y
+function; its numerical axiom checks alone are not this identification.
+The following is a direct calculation with those supplied matrices.
+
+For one generation det(pi(u))=(lambda det(m))^4; for three it is the twelfth
+power. Thus the connected unimodular branch is lambda det(m)=1. No charge
+fit is used: normalize its U(1) using the original P2 Y above and put
+  lambda=exp(i t/2), m=exp(-i t/6) conjugate(U3), q in SU(2).
+The physical color matrix U3 is the conjugate of the raw determinant-one
+part of m because the particle color action comes from J_F pi(u) J_F^-1.
+
+Multiplying the actual blocks gives
+  particle Q_L: exp(+i t/6) (U3 tensor q),
+  particle L_L: exp(-i t/2) q,
+  antiparticle u_R^c: exp(-2i t/3) conjugate(U3),
+  antiparticle d_R^c: exp(+i t/3) conjugate(U3),
+  antiparticle e_R^c: exp(+i t),
+  antiparticle nu_R^c: 1.
+These are exactly the gamma_F=+1 slots. The dimensions are 6,2,3,3,1,1,
+and the complete hypercharge multiset is
+  (1/6)^6, (-1/2)^2, (-2/3)^3, (1/3)^3, (1)^1, (0)^1.
+This verifies SU(3), SU(2) and hypercharge together, not just the multiset.
+For comparison, raw pi(u) alone acts trivially on the lepton doublet when
+q=I; its missing factor conjugate(lambda) comes precisely from the opposite
+action. Using only that left representation would fail the Y=-1/2 test.
+
+Equivalently this can be stated globally without a covering-parameter
+ambiguity. Take (x,z) in S(U(3)xU(2)). Choose lambda^2=det(z), and set
+  q=lambda^-1 z, m=lambda^-1 conjugate(x).
+Then q is in SU(2), lambda det(m)=1, and changing lambda to -lambda changes
+pi(u) by -1 on the full module, so U(u) is unchanged. The gauge action on
+the six gamma-positive pieces is respectively
+  x tensor z; det(x) z; det(x) conjugate(x);
+  conjugate(x); det(z); 1.
+These are the exterior-power actions in the next section. This establishes
+the global SM-group dictionary as well as its Lie algebra charges.
+
+3. Explicit unitary exterior dictionary, not a dimension match
+
+Choose orthonormal color basis c1,c2,c3 of E3 and weak basis w1,w2 of E2.
+Let vol_c=c1 wedge c2 wedge c3, vol_w=w1 wedge w2. For color c define
+  eta_c=(1/2) sum_jk epsilon_cjk c_j wedge c_k.
+Each eta_c has norm one; eta_2=c3 wedge c1 includes its actual sign.
+At any one fixed generation define W on the original v252 slots:
+  nu_R^c                 -> 1;
+  (u_L,c,d_L,c)          -> (c_c wedge w1,c_c wedge w2);
+  u_R,c^c                -> eta_c;
+  e_R^c                  -> vol_w;
+  d_R,c^c                -> eta_c wedge vol_w;
+  (nu_L,e_L)             -> (vol_c wedge w1,vol_c wedge w2).
+
+The images are the sixteen distinct orthonormal even wedge basis vectors,
+with their fixed signs. W is therefore unitary. The transformation laws
+in section2 prove
+  W U(u)|_(gamma=+) W^-1 = Lambda_even(x directsum z).
+In particular the particle color action, antiparticle conjugate color,
+weak doublet action and all hypercharges really intertwine.
+
+For all three generations this is W tensor I_family. Since J_F flips the
+grading and commutes with the real gauge lift, gamma_F=-1 is the conjugate
+SM module. Thus the two internal grades can genuinely be read as the
+P2 16 and conjugate 16 at this representation level. This does not by itself
+identify internal chirality with physical spacetime chirality or field count.
+
+The exterior construction does carry its usual full Spin(10) half-spinor
+action. W can TRANSPORT that action onto the positive v252 space. However
+the v252 builder implements the SM left/opposite action and a restricted
+PS-type left action, not explicit matrices for all Spin(10) generators.
+SM equivalence alone does not prove that the transported extra generators
+are original physical symmetries, preserve D_F or determine their relative
+intertwiner phases. Therefore 'actual full Spin(10) source action already
+derived' would overstate this result. The proven SM/P2 equivalence is exact.
+
+4. Strongest small scalar selector and its assumptions
+
+Under the ACTUAL SM lift just computed, the only pointwise-fixed, SM-neutral
+line of one generation in gamma=+ is nu_R^c. A charged one-dimensional
+representation also preserves a ray, but is not a neutral fixed vector.
+The colored pieces and weak doublets have
+no invariant vector; e_R^c has nonzero hypercharge. Across three generations
+the invariant subspace is span{nu_R,g^c}, dimension three.
+
+If a cyclic family permutation sigma=(123) is EXPLICITLY GIVEN on those
+same family labels, its eigenvalue-one subspace there is the single line
+  e=nu_R^c tensor s, s=(1,1,1)^T/sqrt(3).
+It is unique up to overall phase among SM-invariant, sigma-fixed vectors.
+This uses the actual eigenvalue-one condition, not merely an invariant ray
+under sigma; the latter would also allow its two other character lines.
+The original P1 source is not shown here to select this sigma. Generic v252
+Yukawa and Majorana inputs are not assumed invariant under it. The entire
+irreducible Spin(10) half-spinor has no invariant line.
+
+At Phi=0 and A=A_alpha tensor I_family, the fixed map f->f tensor e is a
+local one-particle isometry reducing h0=A_alpha gamma_F. Its induced bounded
+CAR map and the given free graph restriction have precisely the one-channel
+covariance at THAT SAME A_alpha and beta, and their circle time intertwines.
+Matching those A/beta/labels with an old physical scalar source is still its
+separate original-source comparison. This selector does not derive a clock
+twist from hypercharge: the SM-singlet hypercharge is zero, while the seam
+holonomy alpha is separate data.
+
+5. Exact actual Phi test on the candidate line
+
+Now retain the ACTUAL unchanged v252 coefficient Phi=D_F. A vector e on
+antiparticle nu_R has the two images, directly from full_D and dirac_block:
+  Phi e = particle nu_R(MR s)
+           + antiparticle nu_L(conjugate(Ynu) s).        (2)
+The second matrix is entrywise conjugate(Ynu), NOT Ynu^dagger; this follows
+from the actual lower block conjugate(S) and its LR entries. The two target
+subspaces are orthogonal and both have gamma=-1. Consequently
+  ||Phi e||^2=||MR s||^2+||conjugate(Ynu) s||^2.
+
+Because Phi is odd, preserving this positive-grade line requires Phi e=0.
+Thus the exact necessary and sufficient condition is
+  MR s=0 and conjugate(Ynu) s=0.                        (3)
+For scalar A, the same condition makes the line reduce h_Phi and retain
+the original one-channel free time/covariance. Otherwise h_Phi leaks from
+this line by -i gamma_F Phi e; the local CAR insertion still exists, but
+its state and time restriction are not the old autonomous scalar source.
+Any family-dependent connection must additionally preserve the line.
+
+The failure is generic already within the actual builder family. For example
+Ynu=m I, m!=0, MR=0 gives Phi e=conjugate(m) nu_L^c tensor s!=0. Likewise
+MR=m I, Ynu=0 gives a nonzero particle nu_R component. These are minimal
+constructor-type algebra checks, not newly proposed physical source models.
+Even imposing a cyclic family symmetry would only make s an eigenvector of
+the flavor blocks; a nonzero eigenvalue still violates (3). No claim about
+specific uninspected physical flavor inputs is inferred from these examples.
+
+6. Review conclusion
+
+Claude follow-up6 line16 has a genuine positive representation core once the
+real gauge lift, color convention and unimodular branch are stated. Its
+equivalence is stronger than a charge-count match and admits the explicit W.
+The raw pi action, complete Spin(10) dynamics, physical selection of one
+scalar line and its preservation by generic Phi do not follow automatically.
+The SM+explicit-sigma candidate above is the strongest concrete singlet
+choice in this module; the exact original coefficient test (2)-(3) shows
+precisely when it works and where the nonzero Yukawa/Majorana source couples
+it to the opposite internal grade. No full physical source origin is proved.

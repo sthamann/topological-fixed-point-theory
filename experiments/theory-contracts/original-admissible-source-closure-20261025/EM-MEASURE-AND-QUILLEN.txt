@@ -1,0 +1,628 @@
+EM FELDMASS, QUILLEN NORM UND DER MINIMALE NAHTDETERMINANT
+==========================================================
+
+Datum: 2026-10-25
+Gepruefter Atlas Stand: fc37fe012313a99c2c456cca
+Status: Originalquellenaudit und kleinster entscheidender Operatortest.
+Keine Atlas, Index, Ledger oder Paper Aenderung.
+
+
+ENTSCHEIDUNG
+------------
+
+Der spaetere Ausdruck
+
+  W_Sigma(alpha)
+    =-B gamma tr_adm log(1-q(alpha) U_Sigma^min)
+    =-(5/4) log(1-q(alpha))                           (1)
+
+ist algebraisch exakt ein negativer logarithmischer Fredholm Determinant:
+
+  W_Sigma=-B gamma log det_F(1-q U_Sigma^min).        (2)
+
+Das folgt, weil U_Sigma^min ein Rang eins Projektor ist. In den geprueften
+Originalen wird (1) aber als Definition des minimalen EM Transfers eingefuehrt.
+Es wird dort nicht aus einem gekoppelten Dirac Operator, einem Grassmannmass
+oder der Quillen Norm einer Determinantenlinie hergeleitet.
+
+Die genaue Grenze ist wichtig. Fuer ein komplexes Dirac Feld gilt formal
+
+  Z_F[A]=det D_A,
+  Gamma_F[A]=-log det D_A,
+  Re Gamma_F[A]=-(1/2) log det(D_A^* D_A).             (3)
+
+Damit hat (1) genau das Vorzeichen einer fermionischen effektiven Wirkung,
+falls ein originales relatives D_A fuer einen Vergleichspunkt alpha_* die
+Gleichung
+
+  Det_rel,ren(D_alpha^*D_alpha,D_alpha_*^*D_alpha_*)
+    =[(1-q(alpha))/(1-q(alpha_*))]^(2B gamma)           (4)
+
+erfuellt. Det_rel,ren bezeichnet hier den tatsaechlich definierten relativen
+Determinanten einschliesslich der erforderlichen lokalen Normierungs- oder
+Gegentermen. Die Schreibweise det_zeta(AB^(-1)) ist fuer allgemeine positive
+elliptische Operatoren nicht ohne diese Wahl und die Kontrolle einer
+moeglichen multiplikativen Anomalie automatisch eine relative Definition.
+Keine gepruefte Quelle gibt (4), ihre Variation oder einen
+Intertwiner an, der den alten Kreisdefekt in D_A einsetzt. Wenn W_Sigma
+stattdessen als log Z gelesen wird, ist exp(W_Sigma) der inverse Determinant.
+Auch diese Richtung wird nicht aus einem Fermionmass bewiesen. Die Quelle
+definiert die Richtung durch (1) und nennt danach
+
+  T_Sigma=exp(W_Sigma)=(1-q)^(-5/4).                  (5)
+
+Die bestehende direkte Defektrekonstruktion liefert bereits kanonisch den
+einzelnen Faktor det_F(1-q Pi)=1-q aus dem alten Paar (B_alpha,u). Der
+historische Spektralfluss koppelt auch q(alpha)=delta_top exp(-2 alpha).
+Insbesondere gilt q(0)=delta_top und nicht null. Eine nahtfreie Referenz wird
+deshalb im Folgenden entweder als eigener Operator D_ref mit q_ref=0 oder als
+Vergleichspunkt alpha_* mit dem tatsaechlichen Wert q(alpha_*) bezeichnet.
+Es fehlt daher weder ein neuer Waermeparameter noch ein frei gewaehlter
+Rang eins Kanal. Offen ist die physische Antwortabbildung, welche diesen
+relativen Kovarianzdeterminanten mit der realen EM Determinantennorm des
+tatsaechlichen admissiblen Feldmasses identifiziert und dabei die
+Suszeptibilitaet B gamma=5/4 erzeugt.
+
+Die Aufhebung voller Dirac Chiralphasen ist kein Gegenargument gegen diesen
+Anschluss. Links und rechts addieren sich in der reellen Vakuumpolarisation.
+Die Quillen Metrik kontrolliert die reelle Norm und ihre Kruemmung; eta und
+Chern Simons Daten kontrollieren die Phase. Ein vektorartiges volles Dirac
+System kann deshalb eine nichtverschwindende reelle EM Suszeptibilitaet
+haben, obwohl seine chirale Anomaliephase aufgehoben ist.
+
+
+1. DER KLEINSTE ENTSCHEIDENDE TEST
+----------------------------------
+
+Eine vorhandene fermionische Herleitung muesste mindestens eine der beiden
+folgenden Identitaeten enthalten.
+
+Auf Determinantenebene:
+
+  Re[Gamma_F(alpha)-Gamma_F(alpha_*)]
+    =-(1/2) log Det_rel,ren(
+         D_alpha^*D_alpha,D_alpha_*^*D_alpha_*)
+    =-B gamma log[(1-q(alpha))/(1-q(alpha_*))].         (6)
+
+Fuer eine nahtfreie Referenz setzt man stattdessen D_alpha_*=D_ref und
+q(alpha_*)=q_ref=0. Alpha=0 darf dafuer nicht eingesetzt werden, denn
+q(0)=delta_top. Der relative Determinant in (6) umfasst wie in (4) die
+lokalen Normierungsterme; er wird nicht stillschweigend mit
+det_zeta[(D_alpha^*D_alpha)(D_alpha_*^*D_alpha_*)^(-1)] gleichgesetzt.
+
+Oder auf Variationsebene, zusammen mit einer Referenznormierung:
+
+  delta_alpha[-(1/2)log det_zeta(D_alpha^*D_alpha)]
+    =delta_alpha[-B gamma tr_adm log(1-qU_Sigma^min)]. (7)
+
+Die linke Seite von (7) ist dabei als Variation derselben renormierten
+Quillen Log Norm samt ihren lokalen Termen zu lesen. Eine Variation des
+nackten formalen zeta Ausdrucks wuerde diese Daten erneut unterschlagen.
+
+Dazu muss die Quelle erklaeren:
+
+  * auf welchem fermionischen Hilbertraum D_alpha wirkt;
+  * wie alpha beziehungsweise die Nahtquelle in D_alpha eingeht;
+  * wie Pi oder U_Sigma^min aus diesem Operator entsteht;
+  * warum die geordnete relative Richtung 1-qPi ist;
+  * warum die Antwortpotenz B gamma=5/4 betraegt.
+
+Der bounded source audit findet keine solche Formel. Die entscheidende
+Abwesenheit ist nicht nur ein fehlender Name. Die historischen Stufen liefern
+jeweils verschiedene Teile, aber keine Stufe liefert ihre gemeinsame
+Operatoridentitaet:
+
+  fullv21:  einteilchiger Kreis und schematische EM Effektivwirkung;
+  v31:      skalares q und die Potenz 5/4;
+  v42:      Rang eins Fredholmform und allgemeines S_adm Funktional;
+  tfpt45:   eigener primitiver linearisierter Determinantenbegriff;
+  Paper 1:  Quillen und Ward Anschluss als ausdruecklich offene Bruecke.
+
+
+2. FULLV21: EFFEKTIVE WIRKUNG OHNE NAHT FERMIONMASS
+----------------------------------------------------
+
+Quelle: paper-source:0927580ef3c1738d79bbbb21
+Pfad: documents/archive--paper-latex--tfpt-theory-fullv21/sections/
+      006-section-numerical-constants-high-precision.tex
+Zeilen: 34 bis 187
+SHA256: 034f97c898e1c10caef9480e42f746ef1cfb58b770924e766f3dd5eceb526db8
+
+Die Quelle bezeichnet U(alpha) als Ein Schleifen Effektivpotential im
+background field gauge und schreibt die Stationaritaet von Gamma_eff. Die
+Koeffizienten werden Diagrammklassen zugeordnet. Der lineare Koeffizient
+b_1=41/10 ist der gewichtete Hyperladungskoeffizient. Er ist nicht der
+spaetere Faktor B gamma=5/4.
+
+An dieser Stelle stehen weder ein S[A,Psi] noch ein D_A, ein Grassmannintegral,
+eine Kopplung an psi_Sigma oder ein relativer Nahtdeterminant. Die Quelle gibt
+damit eine erklaerte Ein Schleifen Konstruktion des EM Potentials, aber keine
+Operatorreduktion dieses Potentials auf (1).
+
+Der konkrete alte Kreisoperator und u=M_z stehen in einem anderen Modul:
+
+Quelle: paper-source:1fe2ddfabc74ac0e94a4686d
+Pfad: documents/archive--paper-latex--tfpt-theory-fullv21/sections/
+      001-section-introduction-the-problem-of-parameters.tex
+Zeilen: 198 bis 251
+SHA256: 85bb11511be05385a7cadf6071dbede216b12befeb9d6767bc4460748cbec5d7
+
+Nach der bereits dokumentierten Orientierungskorrektur liefert dieses Paar
+den exakten relativen Polarisationsdefekt Pi. Das EM Effektivpotentialmodul
+setzt den Kreis jedoch nicht als Fermionblock seiner Wirkung ein. Die beiden
+Originalbausteine werden dort nicht durch ein gemeinsames D_alpha verbunden.
+
+
+3. V31: 5/4 IST VOR DEM RANG EINS OPERATOR VORHANDEN
+----------------------------------------------------
+
+Quelle: paper-source:6e51c0efeee84ee266e508d9
+Pfad: documents/archive--paper-latex--tfpt-31/sections/
+      004-subsection-character-trace-identities-and-the-abelian-in.tex
+Zeilen: 251 bis 331
+SHA256: b40bb6e3de5a581c746d0eacf71bdfbd8a1c42769ce6e1a73635c225a13a850d
+
+v31 definiert mit x=exp(-2 alpha) die skalare Nahtfunktion
+
+  phi_Sigma=phi_base+delta_top x(1-delta_top x)^(-5/4). (8)
+
+Hier stehen weder ein Transferoperator noch ein Hilbertraumdeterminant oder
+ein fermionisches Mass. Dieser historische Befund entscheidet die Herkunft
+der Potenz: 5/4 wird nicht spaeter aus der Anzahl von Fermionfeldern, einem
+Halbdeterminanten oder einer chiralen Pfaffwurzel gewonnen. v42 erklaert sie
+als Produkt der Carrier Groessen B=3/2 und gamma=5/6.
+
+Die Potenz kann als reale Suszeptibilitaet eines Determinantenfunktionals
+wirken. Sie ist ohne (6) aber keine rohe Fermionmultiplizitaet. Insbesondere
+ist der gebrochene Wert kein Beleg fuer fuenf Viertel unabhaengige Dirac
+Felder.
+
+
+4. V42: EXAKTER FREDHOLM DETERMINANT, ABER DEFINIERTER TRANSFER
+--------------------------------------------------------------
+
+Quelle: paper-source:c6aa05563c9c859fbbda7bed
+Pfad: documents/archive--paper-latex--tfpt-42/sections/
+      007-subsection-carrier-form-of-the-electromagnetic-closure.tex
+Zeilen: 13 bis 48 und 145 bis 151
+SHA256: 6f98cfb7404f415e4a511712c1fa144c85bb662c36386cc32d1ebb3537a9fb6b
+
+Das Modul setzt zuerst
+
+  B gamma=(3/2)(5/6)=5/4,
+
+waehlt danach eine normierte primitive Nahtmode psi_Sigma und definiert
+
+  U_Sigma^min=|psi_Sigma><psi_Sigma|.
+
+Anschliessend definiert es (1). Der spaetere Beweis benutzt korrekt die
+Rang eins Identitaet det(1-qU_Sigma^min)=1-q. Es gibt aber keinen vorherigen
+D_A, dessen relativer Determinant dieser Fredholm Determinant waere. Ebenso
+fehlen eine Berezin Integration, eine Pfaffianformel und eine Variation des
+Feldmasses nach alpha oder psi_Sigma.
+
+Die allgemeine Feldquelle wird in einem getrennten Modul geschrieben:
+
+Quelle: paper-source:dbb72694526d411ae94e9353
+Pfad: documents/archive--paper-latex--tfpt-42/sections/
+      035-subsection-renormalized-physical-and-scheme-readout-laye.tex
+Zeilen: 1 bis 145
+SHA256: 2a32bc13e10e2f2c7f7f42890f2065816d3c0289f1b71d23a4797b1bc10ade81
+
+Dort gilt formal
+
+  exp(W_k[J])=integral_Hadm Dvarphi exp(
+    -S_adm[varphi]-(1/2)<varphi,R_k varphi>+<J,varphi>)
+
+und im Ein Schleifen Schatten
+
+  Gamma_k=S_adm+(hbar/2)STr log(S_adm^(2)+R_k)+...
+
+Der Supertrace hat den richtigen relativen Vorzeichenmechanismus fuer
+bosonische und fermionische Bloecke. Das Modul gibt S_adm[A,Psi], einen
+gauge gekoppelten D_A oder eine Reduktion seines Hessians auf 1-qPi jedoch
+nicht an. Das allgemeine Funktional und der spezielle EM Transfer stehen
+damit im selben Programm, sind aber an dieser Stelle nicht operatorisch
+verbunden.
+
+
+5. TFPT45: DER PRIMITIVE DETERMINANT IST EIN ANDERES FUNKTIONAL
+--------------------------------------------------------------
+
+Quelle: paper-source:79aeb188204547f963615df9
+Pfad: documents/archive--tfpt-45--07_cmb_operational_closure_planck_pipeline/
+      sections/007-section-hook-solution-sketches-v4-6-5.tex
+Zeilen: 250 bis 270
+SHA256: 7b7c7d3fa47cc00ef771818c65f2a5c31c0c705d3890b8128a2d2ebe6e1a16da
+
+Die Quelle schreibt eine primitive Beziehung
+
+  -Re log det_adm^prim(1-U_Sigma)=2c_3 exp(-2 alpha_0^(-1)),
+
+definiert dabei aber ausdruecklich
+
+  log det^prim(1-U):=-Tr^prim(U).                      (9)
+
+(9) behaelt nur den primitiven linearen Umlauf. Es ist nicht die gewoehnliche
+Fredholmreihe
+
+  log det(1-U)=-sum_(n>=1) Tr(U^n)/n.
+
+Zwei weitere Quellmodule markieren genau diese Einschraenkung:
+
+Quelle: paper-source:ff26a1a38b9b8ac9bfb8a3fb
+Pfad: documents/archive--tfpt-45--07_cmb_operational_closure_planck_pipeline/
+      sections/002-section-the-five-lemmas-native-closure-conjecture-v4-6.tex
+Zeilen: 16 bis 38
+SHA256: d5995ce84b37f381f37e64600294584859f541702042170a2459001b8a8ce5b8
+
+Quelle: paper-source:8df0fbbbb38b21f50174b876
+Pfad: documents/archive--tfpt-45--07_cmb_operational_closure_planck_pipeline/
+      sections/004-subsection-what-a-passing-sprint-2a-run-looks-like.tex
+Zeilen: 227 bis 233
+SHA256: 406d22c6a2bc2f4f69ff24edc4c5505b060000e8fc593f61976ec4cad015af7e
+
+Sie sagen, dass Wiederholungen im gewoehnlichen Fredholm Determinant vorhanden
+sind und dass die primitive Wahl eine Definition ist. Dieser tfpt45 Begriff
+kann deshalb nicht als nachtraeglicher Beweis eines gewoehnlichen
+fermionischen Feldmasses fuer (1) verwendet werden.
+
+
+6. QUILLEN NORM, PHASE UND DIE ZWEI VERSCHIEDENEN GRADUIERUNGEN
+--------------------------------------------------------------
+
+Fuer eine komplexe Determinantenlinie sind drei Daten zu trennen:
+
+  determinant section: det D_A ist im Allgemeinen eine Sektion und braucht
+                       fuer eine skalare Phase eine Trivialisierung;
+
+  Quillen metric:      ||det D_A||_Q wird durch den positiven Operator
+                       D_A^*D_A und lokale Regularisierung bestimmt;
+
+  eta phase:           eta beziehungsweise Chern Simons Daten bestimmen
+                       die spektrale Phase und den Anomalie Inflow.
+
+Die uebliche Haelfte in (3) ist die Umrechnung von der Norm zum
+Normquadratdeterminanten. Sie halbiert nicht die reale Antwort eines vollen
+Dirac Feldes weg. Bei einem Majorana Feld tritt stattdessen ein Pfaffian auf;
+dessen Betrag ist, je nach reeller Struktur und Konvention, nochmals die
+entsprechende Wurzel. Keine der geprueften Quellen typisiert den Faktor 5/4
+als eine solche Pfaffian oder Halbdeterminantenpotenz.
+
+Auch die Gradierungen sind nicht austauschbar:
+
+Quelle: paper-source:543cbb0e445a456e04ec4efc
+Pfad: documents/archive--paper-latex--tfpt-42/sections/
+      003-subsection-primitive-relative-spectral-dynamics.tex
+Zeilen: 8 bis 24 und 37 bis 123
+SHA256: 8683d7459140a06d5e03a06adefd05bf7e6538356e4e4da4397133aa991b8fe4
+
+Gamma gehoert zum geraden Rand Spektraldatum. Die geometrische
+Deckinvolution der Verdopplung heisst tau_dbl. Auf Cauchydaten induziert sie
+die Calderon Polarisation iota_C=2P_C-1. Der Text warnt ausdruecklich davor,
+geometrische Reflexion, Randpolarisation und endlichen Carrier Split zu
+verwechseln. Eine chirale Determinantenphase darf daher nicht aus der
+Blattrelativgradierung abgelesen werden.
+
+Umgekehrt braucht die reale EM Antwort keine nichtaufgehobene chirale Phase.
+Fuer einen vektorartigen vollen Dirac Block addieren sich die beiden
+Chiralitaeten im Betrag beziehungsweise in D_A^*D_A. Nur die Phasen und
+Anomaliebeitraege koennen sich gegenseitig aufheben. Der richtige Test fuer
+den EM Anschluss ist deshalb (6), nicht die Forderung nach einer uebrig
+bleibenden chiralen Anomalie.
+
+
+7. AKTIVES PAPER 1 BENENNT GENAU DIE VERBLEIBENDE BRUECKE
+---------------------------------------------------------
+
+Quelle: paper-source:c1c6572e3fb923bf33cf141a
+Pfad: documents/tfpt_1_architecture_e8/sections/007-source.tex
+Zeilen: 53 bis 92, 110 bis 125, 143 bis 179 und 222 bis 245
+SHA256: 7e1cb59fef4de49deefe8f63b5d777e83528d0119e51191595784ee8c30dcd86
+
+Das aktive Paper zerlegt die Randquelle in Maxwell, Calderon und Transport
+und gibt eine Ward Lesart. Es markiert die physische Herkunft, darunter die
+Ableitung eines zeta Determinanten nach dem Quellparameter, als Interpretation
+und nicht als maschinell bewiesenen Satz.
+
+Die Quillen Form wird zu einer Stationaritaetsgleichung zusammengesetzt. Der
+Claim ALPHA.QUILLEN.EXACT.01 fordert aber weiterhin den Beweis aus ersten
+Prinzipien fuer
+
+  delta_tau(log det_zeta Delta_U(1)
+            +8 b_1 c_3^6 log phi_Sigma)=0.            (10)
+
+Die Quelle trennt ausserdem die reelle Kruemmungsantwort von der eta und
+Chern Simons Phase. Ein endliches Pumpmodell liefert einen
+Determinantenlinien Zeugen; fuer eine quasifreie Nahtquelle gilt die Quillen
+Lesart woertlich. Die Identifikation mit dem Kontinuumsrandproblem und die
+entsprechende Bismut Freed Struktur bleiben ausdruecklich offen.
+
+(10) ist breiter als (6), schliesst (6) aber nicht automatisch ein. Es gibt
+im aktiven Paper 1 keinen Intertwiner, der Delta_U(1), den alten CAR
+Kovarianzdefekt und U_Sigma^min als denselben relativen Operator ausweist.
+Gerade diese lokale Operatorabbildung ist der erste verbleibende Schritt.
+
+
+8. AKTIVES PAPER 2: DEKLARIERTE KOVARIANZINDUKTION, NOCH KEINE EM NORM
+---------------------------------------------------------------------
+
+Quelle: paper-source:2f8a823f065f3d3a1c82d4dc
+Pfad: documents/tfpt_2_standard_model/sections/
+      010-section-the-explicit-mass-gap-closes-dynamics-and-cluste.tex
+Zeilen: 273 bis 408
+SHA256: 3a31f272d999f1e0b027f25a877068576c6cbdc83150c7b5c0f8a6e17bed1904
+
+Paper 2 enthaelt die staerkste aktive Formulierung des gesuchten Pfeils. Es
+setzt die relative Spektralwirkung
+
+  S=Tr f((D_rel+A_Sigma)/chi)-Tr f(D_ref/chi)
+    +(i pi/2) Delta eta_Sigma                         (11)
+
+und erklaert D_rel als modulare beziehungsweise Kovarianzinduktion des
+Rand KMS Zustands. In der endlichen Realisierung steht
+
+  C_F=P_F C_Sigma P_F,
+  D_F=log((1-C_F)C_F^(-1)).                           (12)
+
+Als getypte Formel beschreibt (12) den richtigen Weg von einer
+Nahtkovarianz in einen endlichen Carrier Dirac Operator. Die Quelle
+konstruiert P_F und C_Sigma an dieser Stelle jedoch nicht. Abschnitt 10
+prueft den zugehoerigen v258 Pfad und zeigt, dass (12) dort eine bedingte
+Carrier beziehungsweise Morita Identifikation bleibt.
+
+Die Quelle fuehrt diesen Test aber nicht aus. Sie zeigt nicht
+
+  P_F Pi P_F=Pi_F mit rank(Pi_F)=1,
+
+sie identifiziert C_Sigma an dieser Stelle nicht mit der alten
+Kreispolarisation, und sie berechnet keinen relativen Determinanten von
+D_F(alpha)^*D_F(alpha). Ausserdem ist (11) eine relative Spektralaktion
+Tr f(D), nicht bereits das Grassmannresultat log det D. Die eta Phase steht
+separat daneben.
+
+Damit liefert Paper 2 die vorhandene Schnittstellenformel, aber noch keinen
+Intertwiner. Der kleinste naechste Test braucht keine neue Wirkung: Konstruiere
+die lokale Quellenabbildung und die Carrier Isometrie, setze den alten
+kanonischen Defekt in (12) ein und pruefe Rang, admissibles Bild und die
+Domainbedingung aus Abschnitt 10. Erst danach kann die relative reelle
+Determinantennorm mit (6) verglichen werden.
+
+
+9. WAS BEREITS TRAEGT UND WAS NOCH ZU BEWEISEN IST
+--------------------------------------------------
+
+Bewiesen aus den vorhandenen Operatoren:
+
+  * Der alte Kreis und sein Winding erzeugen den kanonischen Rang eins
+    Kovarianzdefekt Pi, ohne freie Wahl von psi_Sigma.
+
+  * Der geordnete relative Fredholm Determinant dieses Defekts ist exakt
+    det_F(1-qPi)=1-q.
+
+  * Die historische topologische Wirkungsverschiebung liefert das deklarierte
+    q(alpha)=delta_top exp(-2 alpha). Ein neuer Heat zu EM Ansatz ist nicht
+    erforderlich.
+
+  * Der v42 Transfer ist als endlicher Fredholmausdruck exakt und ergibt
+    (1-q)^(-5/4).
+
+In den Originalen erklaert, aber nicht als gemeinsame Massidentitaet bewiesen:
+
+  * Das fullv21 EM Potential wird als Ein Schleifen Effektivwirkung behandelt.
+
+  * v42 besitzt ein allgemeines graduiertes S_adm Funktional und einen
+    separaten minimalen EM Transfer.
+
+  * Das aktive Paper besitzt eine Quillen und Ward Zielgleichung sowie
+    endliche Determinantenlinien Zeugen.
+
+  * Paper 2 besitzt mit C_F=P_F C_Sigma P_F und dem modularen Log Odds
+    Operator die konkrete Formel einer Carrier Induktion. P_F und C_Sigma
+    werden im zugehoerigen v258 Pfad nicht konstruiert.
+
+Offen und fuer diesen Anschluss ausreichend:
+
+  1. Eine quellenkonstruierte lokale Abbildung T vom alten Kreis in den
+     Nahtsektor und eine Carrier Isometrie V_F mit P_F=V_F V_F^*. Erst dann
+     ist der alte CAR Defekt als V_F^* T Pi T^* V_F typisiert und sein Rang
+     sowie seine Domainwirkung berechenbar.
+
+  2. Ein gauge gekoppelter relativer Dirac Operator D_alpha auf diesem Bild,
+     fuer den (6) oder (7) gilt.
+
+  3. Die Herleitung der Antwortpotenz B gamma aus derselben Quellvariation
+     beziehungsweise ihrem festgelegten Carrier Gegenbeitrag.
+
+Erfolgskriterium ist eine dieser beiden exakten Gleichungen samt
+Referenznormierung. Ein weiterer skalarer Serienvergleich, gleiche Rangzahl
+oder die blosse Bezeichnung als Determinant reicht nicht. Der vorhandene
+relative Defekt ist der kanonische Kandidat; es wird kein neuer Kanal und
+kein neues Fermionmodell eingefuehrt.
+
+
+10. DER TATSAECHLICHE v258 PFAD: RUECKINVERSION STATT KOMPRESSION
+-----------------------------------------------------------------
+
+Primaerquelle:
+
+  verification/v258_dirac_covariance_induction.py
+  Zeilen 1 bis 58, 65 bis 76 und 79 bis 157
+  SHA256: 16c60e831dceba773f3629466895f1009654827286e5b760ae01bd755fd5c0b1
+
+Aktiver Statusspiegel:
+
+  paper-source:547b1d3f3e8f984b03f960cc
+  documents/changelog/sections/018-source.tex
+  Zeilen 268 bis 310, besonders 270 bis 279
+  SHA256: 36836f668474303dc1b7b2aece910da4390b122ffe85f50e551d56a9eb749daa
+
+Zugehoerige endliche Konstruktion:
+
+  verification/v252_full_finite_triple.py
+  Zeilen 1 bis 57 und 63 bis 116
+  SHA256: 820254440e178430422e50605067775656236602996307f67c9e69124ba5d163
+
+Der ausgefuehrte Datenfluss ist eindeutig. v252 baut zuerst den
+96 dimensionalen Raum H_F und D_F aus vorgegebenen Yukawamatrizen und dem
+Majoranablock. v258 baut ebenfalls zuerst einen zufaelligen Yukawablock
+Dblk beziehungsweise den schon festgelegten Massenblock Dmass. Danach gilt
+im Code
+
+  D_F  --kms_cov-->  C_F=(1+exp(D_F/mu))^(-1)
+       --induce-->   mu log((1-C_F) C_F^(-1))=D_F.               (13)
+
+Die Funktionen in Zeilen 65 bis 76 pruefen damit die exakte inverse
+Funktionalrechnung. Sie lesen keine Nahtdaten. In Zeilen 149 bis 155 wird
+die physische Gleichung C_F=P_F C_Sigma P_F ausschliesslich als
+check(..., True) registriert. Weder P_F noch C_Sigma treten als Matrix,
+Operator oder Eingabe auf. Der aktuelle Lauf endet deshalb zwar korrekt mit
+6 passed, 0 failed; keiner dieser sechs Checks berechnet eine Kompression.
+Der Codegraph bestaetigt denselben Datenfluss: run ruft induce und kms_cov
+auf, aber keinen der genannten Nahtpfade v155, v160 oder v175. induce wird
+ausserhalb dieses Skripts nur noch als derselbe Log Odds Leser im bereits
+begrenzten P1 Insertionstest verwendet. Der aktive Changelog fuehrt die
+Inversion als [E] und C_F=P_F C_Sigma P_F weiterhin getrennt als [C].
+
+Das Skript benennt diese Trennung selbst: Die Punkte 1 bis 5 in Zeilen 29
+bis 46 sind [E], die physische Identifikation in Zeilen 47 bis 58 ist [C].
+P_F ist daher im aktiven Pfad kein aus der alten Kreisquelle konstruierter
+Projektor. Es ist die noch zu realisierende Carrier beziehungsweise
+Morita/Kasparov Identifikation. v252 liefert eine explizite Basis von H_F,
+aber keine Isometrie aus dem Naht Hilbertraum in diese Basis. Auch der noch
+offene Kernel Satz benennt genau die vorgelagerte Luecke:
+
+  verification/v177_seam_marking_kernel.py
+  Zeilen 35 bis 42 und 130 bis 135
+  SHA256: bf6ad1e0d4dd21ca3b66790b004c2d202a67ea1e94a249c4f09437cc4b6a1c09
+
+Dort bleibt die Operatorgleichheit des rohen Calderon Kerns mit der freien
+gegappten Nahtkontraktion als QGEO.KERNEL.01 offen. Somit wird C_F im
+ausgefuehrten v258 Pfad aus dem gewaehlten D_F per Fermi Funktion
+zurueckgebaut und anschliessend wieder invertiert. Es wird nicht aus einem
+vorhandenen C_Sigma komprimiert.
+
+10.1 IST P_F Pi P_F BERECHENBAR?
+
+Noch nicht als Operator des vorhandenen Pfads. Der alte kanonische Defekt
+Pi lebt auf dem alten Kreisraum, waehrend P_F nach (12) auf dem bislang nicht
+konstruierten gemeinsamen Naht Hilbertraum leben soll. Der Ausdruck
+P_F Pi P_F ist ohne eine urspruengliche lokale Abbildung
+
+  T:H_Kreis -> H_Sigma
+
+sogar untypisiert. Mit einer solchen Isometrie T und einer Carrier Isometrie
+
+  V_F:H_F -> H_Sigma,       P_F=V_F V_F^*,
+
+waere die tatsaechliche endliche Kompression
+
+  delta C_F=V_F^* T Pi T^* V_F=|V_F^* T psi><V_F^* T psi|.       (14)
+
+Auf dem grossen Raum lautet sie P_F T Pi T^* P_F=|v><v| mit
+v=P_F T psi. Ihr Rang ist null fuer v=0 und sonst eins. Sie ist genau dann
+ein Rang eins Projektor, wenn ||v||=1, also wenn die kanonische Defektlinie
+vollstaendig im Carrierbild liegt. Diese Aussage ist exakt; die benoetigten
+Matrizen T und V_F fehlen jedoch im aktiven Pfad. Daher kann der gegenwaertige
+Quellstand weder den Rang noch die Richtung oder die admissible Aufnahme von
+P_F Pi P_F numerisch auswerten.
+
+Dieser Befund bestaetigt den bereits vorhandenen Quellenaudit, statt einen
+neuen Modellzweig zu eroeffnen:
+
+  experiments/theory-contracts/source-yukawa-forward-gate-20260921/
+    yukawa_source_provenance_20260921.md
+  Zeilen 8 bis 31, 44 bis 55 und 131 bis 190
+  SHA256: 631b122c6c8269f2be29850dcc903dd2ffd909fe9222c3377a32387390e5c86c
+
+  experiments/theory-contracts/seam-collar-multifield-20261016/
+    P1-INSERTION-TANGENT.txt
+  Zeilen 53 bis 74 und 175 bis 188
+  SHA256: b49aa4ec77bc22029545c4f8f2584e80e63fd8bb6b8a0ce8536baf4137d3ea55
+
+10.2 BEHAELT D_F UNTER DEM ALTEN DEFEKT SEINEN DEFINITIONSBEREICH?
+
+Nein, nicht unter der woertlichen Identifikation mit der alten reinen
+Kreispolarisation. Dort sind
+
+  C=P_- ,       Pi=|psi><psi| ,       C Pi=0,
+  C'=C+Pi
+
+beide Projektionen. Der exakte Log Odds Operator
+
+  h(C)=log((1-C)C^(-1))
+
+ist an den Eigenwerten 0 und 1 singulaer. Auf der Defektlinie springt die
+Besetzung von 0 auf 1 und der Log Odds Grenzwert von plus unendlich auf
+minus unendlich. Der endliche, ueberall definierte v258 Operator verlangt
+dagegen eine treue Kovarianz 0<C_F<I. Er behaelt unter der alten reinen
+Identifikation also nicht denselben Definitionsbereich.
+
+Die Eigenwertbeschneidung in v258, Zeilen 67 bis 69, ersetzt 0 und 1
+numerisch durch 10^(-15) und 1-10^(-15). Das produziert eine beschraenkte
+Testmatrix, ist an den Endpunkten aber eine Regularisierung und keine exakte
+modulare Gleichheit. Auch das direkte Addieren eines normierten Pi zu einer
+treuen Kovarianz C_F ist keine Loesung: In Richtung psi gilt
+
+  <psi,(C_F+Pi)psi>=<psi,C_F psi>+1>1,
+
+also ist C_F+Pi keine Kovarianz mehr.
+
+Nach einer tatsaechlichen Kompression kann ein abgeschwaechter Defekt
+delta C_F=|v><v| zulaessig sein. Fuer ein endliches treues C_F gilt exakt
+
+  C_F+|v><v|<I
+  genau dann, wenn <v,(I-C_F)^(-1)v><1.                    (15)
+
+Bei Gleichheit erreicht eine Eigenrichtung den Wert 1 und der Log Odds
+Operator verliert dort seine endliche Domain; bei einem Wert groesser eins
+ist die Summe keine positive Kontraktion. (15) ist der kleinste entscheidende
+Domain Test. Ohne T, V_F und das vorwaerts berechnete C_F kann er im jetzigen
+Pfad nicht ausgewertet werden.
+
+Die strukturelle Alternative ist bereits exakt dokumentiert:
+
+  experiments/theory-contracts/source-yukawa-forward-gate-20260921/
+    covariance_compression_review_20260921.md
+  Zeilen 18 bis 68, 145 bis 167 und 218 bis 239
+  SHA256: 0a460e9272a6da78e2bc199cd512807582c83dbccc4fedf08e51f8ab14c88f22
+
+Fuer eine reine globale Projektion kann eine nichtreduzierende Kompression
+durch Leckage treu werden; ihr Defekt erfuellt
+
+  C_F-C_F^2=(Q C_Sigma P_F)^*(Q C_Sigma P_F).
+
+Reduziert P_F dagegen denselben Generator und damit C_Sigma exakt, bleibt
+die Kompression eine Projektion und ihr Log Odds Operator singulaer. Das ist
+eine Domain Aussage, keine Widerlegung der Kompressionsidee.
+
+10.3 URTEIL FUER DEN EM ANSCHLUSS
+
+  * Bewiesen: v258 invertiert eine aus dem vorgegebenen D_F erzeugte treue
+    Fermi Kovarianz exakt. Der aktuelle Lauf reproduziert 6 passed.
+
+  * Bedingt: C_F=P_F C_Sigma P_F ist die richtige vorhandene
+    Schnittstellenformel, aber weder P_F noch C_Sigma werden im aktiven Pfad
+    konstruiert. Der dort ausgegebene PASS ist fuer diesen Punkt ein literal
+    True und keine Operatorpruefung.
+
+  * Nicht typisiert im aktuellen Pfad: P_F Pi P_F. Seine kanonische Form ist
+    erst (14), nachdem die urspruenglichen Abbildungen T und V_F vorliegen.
+
+  * Widerlegt fuer die woertliche reine Gleichsetzung: Der alte
+    Projektionsdefekt behaelt nicht die volle endliche Domain des v258 Log
+    Odds Operators. Eine echte abgeschwaechte Carrierkompression muss zuerst
+    (15) und die bereits bekannte Gram Bedingung erfuellen.
+
+Der vorhandene relative Rang eins Faktor det_F(1-qPi)=1-q bleibt davon
+unberuehrt. Er ist die exakte Antwort des reinen Defektoperators. Was dieser
+Test ausschliesst, ist nur seine unbewiesene Umdeutung als additive
+ungekuerzte KMS Kovarianzaenderung im v258 Carrier. Die bereits bekannte
+thermische volle Stromformel mit coth(ell m) wird hier weder neu abgeleitet
+noch veraendert.
+
+Der erste belastbare verbleibende Schritt ist damit scharf: Konstruiere aus
+den Originaldaten T und V_F, berechne C_F=V_F^* C_Sigma V_F vorwaerts und
+pruefe fuer v=V_F^*T psi zuerst (15). Nur bei bestandenem Domain Test ist die
+relative Variation des reellen Dirac Determinanten auf diesem Carrier
+definiert und mit dem bereits geschlossenen Faktor 1-q vergleichbar.

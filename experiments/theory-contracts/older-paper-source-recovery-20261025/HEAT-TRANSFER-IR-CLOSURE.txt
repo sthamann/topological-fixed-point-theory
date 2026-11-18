@@ -1,0 +1,272 @@
+OLDER CIRCLE SOURCE AND COMPLETE HEAT TRANSFER
+==============================================
+Date: 2026-10-25
+Verdict: PROVED for the originally supplied quarter-circle representative.
+Application to the original electromagnetic source: CONDITIONAL on the
+same admissible operator/trace and parameter identification stated below.
+
+Decision-relevant question
+--------------------------
+The older papers contain a concrete scalar circle Dirac operator and later
+introduce a full positive heat transfer. Can the later rank-one factor be
+recovered from these existing objects without choosing a free vector?
+
+Answer: YES as a canonical ground-mode limit with an explicit error bound.
+NO as an exact identity for the full heat operator at finite heat time.
+The full quarter-circle determinant is an odd Euler product. It gives a
+unique all-order continuation within this operator class and first differs
+from the rank-one opening at fourth order in its lowest heat weight.
+
+1. Original inputs and necessary orientation repair
+----------------------------------------------------
+The fullv21 geometric A3 passage supplies a one-dimensional tangential
+operator, circle multiplication and twisted boundary domains:
+
+  documents/archive--paper-latex--tfpt-theory-fullv21/sections/
+  001-section-introduction-the-problem-of-parameters.tex:230-251;
+  paper-source:1fe2ddfabc74ac0e94a4686d.
+
+Its printed D_Gamma=i partial_theta has the opposite sign to its printed
+eigenvalues n+varphi/(2 pi). Fix the orientation explicitly by B=-D_Gamma.
+Use a for the boundary twist, not for the electromagnetic coupling:
+
+  H=L2([0,2 pi],dtheta/(2 pi)),
+  Dom(B_a)={f in H1:f(2 pi)=exp(2 pi i a)f(0)},
+  B_a=-i partial_theta,
+  psi_(n,a)(theta)=exp(i(n+a)theta),  n in Z.
+
+Then B_a psi_(n,a)=(n+a)psi_(n,a). The domain is self-adjoint and the
+displayed basis is complete. Multiplication u=exp(i theta) preserves the
+domain and gives the strong same-space covariance and Toeplitz index in
+ORIGINAL-CIRCLE-REVIEW.txt. This is the old concrete gluing representative,
+not a representative newly chosen for this investigation.
+
+The old heat-transfer formula appears in
+
+  documents/archive--paper-latex--tfpt-31/sections/
+  014-section-downstream-cosmology-module-on-the-observation-c.tex:4-24,
+
+and in the later tfpt-42 FRW/transfer section. Those sources write
+
+  U_Sigma=P_adm exp(-ell_Sigma |B_Sigma|)P_adm.
+
+The present calculation uses the ORIGINAL CIRCLE representation of B,
+with no freely fitted potential or spectral weights. The papers do not
+identify this scalar H with Ran(P_adm), or B_a with B_Sigma on that range.
+That is the first additional physical/operator identification if this
+calculation is used for the electromagnetic transfer.
+
+2. The complete quarter-circle absolute spectrum
+------------------------------------------------
+For a=1/4 or a=3/4,
+
+  sigma(|B_a|)={(2m+1)/4:m=0,1,2,...},                  (1)
+
+and every eigenvalue is simple. The two branches have the same absolute
+spectrum but different signed eigenvectors:
+
+  a=1/4: lowest |B| line is span(psi_(0,a));
+  a=3/4: lowest |B| line is span(psi_(-1,a)).
+
+Let P_gap=1_{ {1/4} }(|B_a|). It is a canonical rank-one projection of
+the supplied operator. No unit vector is selected independently of B_a.
+The two quarters cannot be distinguished by |B_a| alone.
+
+The positive Toeplitz defect Pi=P_+-uP_+u* always selects psi_(0,a) when
+0<a<1. Thus Pi=P_gap at a=1/4 but Pi!=P_gap at a=3/4. Keep the signed
+circle time, its absolute heat operator, and these two projectors distinct.
+
+3. Exact ground-normalized heat convergence
+--------------------------------------------
+For heat parameter t>0 set
+
+  T_t=exp(-t|B_a|),
+  R_t=exp(t/4) T_t,
+  r=exp(-t/2).
+
+In the absolute-energy basis, T_t has eigenvalues exp[-t(2m+1)/4],
+and R_t has eigenvalues
+
+  1,r,r^2,r^3,... .                                    (2)
+
+All these are determined by the old given spectrum. Consequently
+
+  ||R_t-P_gap||_1=sum_(m>=1)r^m=r/(1-r).               (3)
+
+Thus R_t tends to P_gap in TRACE NORM as t tends to infinity. On this
+original representative the ground-mode limit and its simplicity are
+proved, rather than inserted as a free rank-one vector.
+
+The normalization exp(t/4) matters: T_t itself tends to zero in trace norm.
+It does not tend to P_gap. Subtracting the known ground energy is a
+mathematical ground-energy normalization. Its use in a physical EM source
+must be part of the original source prescription, not hidden in notation.
+
+4. Fredholm determinant and controlled rank-one limit
+------------------------------------------------------
+Let Q be a separate determinant argument with |Q|<1. By (2),
+
+  det(I-Q R_t)=product_(m>=0)(1-Q r^m).                 (4)
+
+The product converges since R_t is trace class. Equation (3), or the
+direct convergent product, gives
+
+  det(I-Q R_t) -> 1-Q.                                (5)
+
+For 0<=Q<1 the log error is nonnegative after reversing its sign and obeys
+
+  |log det(I-Q R_t)-log(1-Q)|
+    =sum_(m>=1)-log(1-Q r^m)
+    <=sum_(m>=1) Q r^m/(1-Q r)
+    =Q r/[(1-r)(1-Q r)].                             (6)
+
+Here -log(1-x)<=x/(1-x) and Qr^m<=Qr justify every inequality. This is
+an infinite-dimensional bound, not an extrapolation from a finite cutoff.
+
+For a supplied susceptibility exponent b=5/4, raising (4) to the power
+-b gives the full transfer factor, whose limit is (1-Q)^(-5/4). Neither
+b nor the determinant prescription is derived from the heat spectrum;
+they are retained original electromagnetic inputs.
+
+5. The unnormalized full heat determinant
+------------------------------------------
+At finite t put q=exp(-t/4). Then the actual unnormalized heat transfer is
+
+  T_t=diag(q,q^3,q^5,q^7,...)
+
+in the energy basis, and its complete Fredholm determinant is
+
+  D(q)=det(I-T_t)=product_(m>=0)(1-q^(2m+1)),  0<q<1.  (7)
+
+Every factor beyond 1-q is nontrivial, so D(q)!=1-q at finite t.
+This is not a quantum Fock partition function being postulated; it is
+the ordinary Fredholm determinant of the old heat-transfer formula.
+
+The quarter twist is crucial. An untwisted positive Hardy spectrum without
+zero instead has integer energies and product_(n>=1)(1-q^n). Those are
+different domains, not two expressions for the same transfer.
+
+If the electromagnetic opening uses the COMPLETE transfer (7), its
+mathematical continuation in this operator class would be
+
+  Phi_full(q)-phi_base=q D(q)^(-5/4).                  (8)
+
+The later rank-one prescription gives
+
+  Phi_1(q)-phi_base=q(1-q)^(-5/4).                     (9)
+
+Since D(q)=(1-q)(1-q^3)(1-q^5)...,
+
+  Phi_full(q)-phi_base
+    =q+(5/4)q^2+(45/32)q^3+(355/128)q^4+O(q^5),
+
+  Phi_1(q)-phi_base
+    =q+(5/4)q^2+(45/32)q^3+(195/128)q^4+O(q^5).      (10)
+
+Thus the first difference is
+
+  Phi_full(q)-Phi_1(q)=(5/4)q^4+O(q^5).               (11)
+
+The first three opening coefficients agree. Agreement of those coefficients
+cannot distinguish the two original spectral prescriptions. The difference
+in (11) is conditional on using the whole quarter-circle transfer and
+identifying its q with the electromagnetic argument; it is not a new
+physical prediction or a replacement for the original closure by default.
+
+6. All orders without fitting new coefficients
+------------------------------------------------
+Write F(q)=D(q)^(-b)=sum_(n>=0)t_n q^n, t_0=1. Taking a logarithmic
+derivative of the absolutely convergent product gives
+
+  log F(q)=b sum_(n>=1) sigma_odd(n) q^n/n,
+  sigma_odd(n)=sum_{d divides n, d odd} d.
+
+Consequently every coefficient is fixed by
+
+  n t_n=b sum_(k=1)^n sigma_odd(k)t_(n-k).             (12)
+
+This is the full series within the displayed operator/determinant class.
+The companion checker independently expands the individual odd factors
+and compares them with (12), exactly through the declared degree. The
+infinite product and recurrence themselves follow analytically here.
+
+7. What remains an original-source obligation
+-----------------------------------------------
+The positive results remove a free psi only on the old given circle
+representative, and show how rank one arises in a controlled normalized
+limit. They do not silently replace any of the following identifications:
+
+ (i) H_circle into the actual admissible EM spectral sector, preserving
+     |B|, its trace, its simple gap line and the original restrictions;
+
+ (ii) q_heat=exp(-t/4) with the original EM argument
+      q_EM=delta_top exp(-2 alpha_EM);
+
+ (iii) the ground-normalized t->infinity limit with an actual operation
+       or limiting prescription in the original electromagnetic source;
+
+ (iv) the signed B_a circle rotation with the original charged CAR time,
+      Euclidean reflection, full source functional and spacetime locality.
+
+In particular the older cosmology branch sometimes assumes a lowest-block
+multiplicity48. Its large admissible carrier is not the scalar multiplicity1
+circle used in (1). Both are existing source statements in different
+sectors; their common label does not identify them.
+
+The heat parameter t, the twist a, the spectral-flow path parameter and
+the electromagnetic coupling alpha_EM are four different variables. A
+positive |B| heat semigroup does not fix the orientation of B, the sign
+of the quarter holonomy, or a physical Fock Hamiltonian.
+
+8. The positive spectral half is a different canonical trace
+------------------------------------------------------------
+The same supplied B_a has the canonical positive spectral projector
+P_+=1_(0,infinity)(B_a). It reduces |B_a|. For every 0<a<1, not only
+the quarters, its compressed heat transfer has nonzero eigenvalues
+
+  T_t^+=P_+ exp(-t|B_a|)P_+ : exp[-t(n+a)], n>=0.
+
+With s=exp(-t), R_t^+=exp(ta)T_t^+ has nonzero eigenvalues 1,s,s^2,...,
+and its lowest projection is exactly the Toeplitz defect Pi from section2.
+The zero block on Ran(I-P_+) contributes neither trace nor determinant:
+
+  ||R_t^+-Pi||_1=s/(1-s).                            (13)
+
+Thus the original positive spectral half gives a canonical simple line
+at every interior twist. This also explains the three-quarter case:
+its positive-half gap is psi_(0,a), whereas the full |B_a| gap is psi_(-1,a).
+There is no contradiction; the two traces use different spectral spaces.
+
+At a=1/4, keep q=exp(-t/4). The positive and negative halves give
+
+  D_+(q)=product_(m>=0)(1-q^(4m+1)),
+  D_-(q)=product_(m>=0)(1-q^(4m+3)),
+  D(q)=D_+(q)D_-(q).                                  (14)
+
+The first full-circle correction (11) comes specifically from the negative
+half's lowest q^3 factor. If the actual EM admissible sector were P_+,
+its opening would instead be q D_+(q)^(-5/4), and
+
+  q D_+(q)^(-5/4)-q(1-q)^(-5/4)
+      =(5/4)q^6+O(q^7).                               (15)
+
+All coefficients for either half follow the same log-derivative argument:
+replace sigma_odd(k) in (12) with the sum of divisors d of k satisfying
+d=1 mod4 or d=3 mod4 respectively. The companion checker controls both
+these recurrences and the factorization (14) independently through degree20.
+
+These are consequences of spectral projections of the old given B_a,
+not newly fitted sectors. They do NOT establish P_adm=P_+. The q^4 and
+q^6 corrections are conditional diagnostics that distinguish the full
+circle trace from its positive spectral half. Neither is an unqualified
+electromagnetic prediction. The physical trace must be recovered first.
+
+Outcome
+---------
+The older papers contained enough concrete data for a genuine conditional
+recovery of the single-mode limit. The full finite heat determinant and
+the rank-one determinant are demonstrably different; their first three
+opening coefficients nevertheless agree. The canonical positive half
+agrees through five opening orders. This sharpens the original
+question to a comparison of actual admissible operators and limiting
+prescriptions. No extra source model or numerical parameter fit is used.

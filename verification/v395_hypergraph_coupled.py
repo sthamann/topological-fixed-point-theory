@@ -1,17 +1,18 @@
 """v395 -- the coupled hypergraph rewrite: one local rule, carrier x family (v299+v327+v324).
 
 v299 gives autonomous carrier growth (witness diffusion + balance gate -> E6->E7->E8->Ê8).
-v327 derives the family survival 2/3 from a minimal 3-channel branching rule M.
+v327 derives family survival 2/3; v486/v487 retain the full clock ladder
+{1, 2/3, 1/3} in its unique lazy Z2-pair rule M.
 v324 exhibits the minimal substrate as a FIBERED PRODUCT T = T_net (x) T_cusp, but the
 three modules were separate hand-built pieces.  This module closes the gap: ONE coupled
 local rewrite on a 9x3 labelled grid (network node x family channel) whose dynamics
 *generates* the v324 product structure -- network diffusion on each cusp column and the
-v327 M-rule on each node's family vector, with the recovery rate (2/3)^6 appearing after
+v486/v487 M-rule on each node's family vector, with the recovery rate (2/3)^6 appearing after
 one full clock hand (2 N_fam = 6 family micro-steps per network step).
 
   [E] 1. LOCAL COUPLED MICRO-RULE.  State m[i,j] on 9 affine-E8 nodes x 3 family slots.
         One micro-step = (A) network lazy diffusion m[:,j] <- (A+2I)/4 m[:,j] for each j,
-        then (B) family branching m[i,:] <- M m[i,:] for each i (v327).  Both steps are
+        then (B) family branching m[i,:] <- M m[i,:] for each i (v486/v487).  Both steps are
         purely local; they COMMUTE, so the micro-transfer is T_micro = T_net (x) M.
   [E] 2. JOINT ATTRACTOR.  T_micro has top eigenvalue 1 with eigenvector marks (x) e_0
         (Kac marks x democratic w=0); iteration from ANY positive 27-vector converges
@@ -21,10 +22,12 @@ one full clock hand (2 N_fam = 6 family micro-steps per network step).
         2/3, so M^6 has (2/3)^6 = 64/729 on the Galois pair [0,1,1]; T_hand carries this
         as a genuine eigenvalue with eigenvector marks (x) v_surv (the recovery gap).
   [E] 4. v324 EMERGES AS THE READOUT BASIS.  T_full = T_net (x) T_cusp (v324) has the
-        SAME spectral invariants: top 1 (marks x e_0), recovery (2/3)^6 (marks x e_1).
-        The cusp-diagonal T_cusp = diag(1,(2/3)^6,(1/3)^6) is the 6-hand transfer in
+        SAME full transfer in the orthogonal even/odd family basis:
+        O^T M^6 O = diag(1,(2/3)^6,(1/3)^6).
+        The cusp-diagonal T_cusp = diag(1,(2/3)^6,(1/3)^6) is the one-hand transfer in
         the Galois/cusp readout basis {w=0,1/3,2/3} (v317); the dynamical M-rule and
-        the v324 fiber are the same substrate on different timescales/bases.
+        the v324 fiber are the same scheduled transfer in different bases.
+        One hand is one network step and six family substeps, NOT T_micro^6.
   [E] 5. GROWTH + FIBER CONSISTENT.  The v299 autonomous growth (3-arm seed, local gate)
         is UNCHANGED when a constant M-fiber is attached at every node: E6->E7->E8->Ê8
         with self-generated witness at each stage; the fiber does not affect the network
@@ -54,8 +57,8 @@ def _adjacency():
 
 
 def _family_M():
-    t = THIRD
-    return np.array([[1, 0, 0], [0, t, t], [0, t, t]])
+    # The full-clock rule from v486/v487; v327 killed the odd family rung.
+    return np.array([[1, 0, 0], [0, 0.5, 1.0 / 6.0], [0, 1.0 / 6.0, 0.5]])
 
 
 def _T_net():
@@ -113,12 +116,7 @@ def _grow(seed, cap=12):
 
 def _micro_step(m, T_net, M):
     """One coupled local micro-step on a (nodes x 3) array."""
-    out = m.copy()
-    for k in range(3):
-        out[:, k] = T_net @ m[:, k]
-    for i in range(m.shape[0]):
-        out[i, :] = M @ m[i, :]
-    return out
+    return T_net @ m @ M.T
 
 
 def run():
@@ -144,16 +142,23 @@ def run():
     # 1. local coupled micro-rule commutes -> Kronecker product
     comm_ok = np.allclose(np.kron(T_net, np.eye(3)) @ np.kron(np.eye(9), M),
                           T_micro, atol=1e-12)
+    # Test the actual local routine on the complete basis, away from the
+    # Perron attractor that concealed the previous overwritten network step.
+    local_matrix = np.column_stack([
+        _micro_step(v.reshape(9, 3), T_net, M).ravel()
+        for v in np.eye(27)
+    ])
     check("LOCAL COUPLED MICRO-RULE [E]: one micro-step = network lazy diffusion on each "
-          "cusp column + v327 M on each node's family vector; the steps commute, so "
+          "cusp column + v486/v487 M on each node's family vector; the steps commute, so "
           "T_micro = T_net (x) M (purely local on 9x3 = 27 cells)",
-          comm_ok and T_micro.shape == (27, 27))
+          comm_ok and T_micro.shape == (27, 27)
+          and np.allclose(local_matrix, T_micro, rtol=0, atol=1e-12))
 
     # 2. joint attractor from any positive start (flat micro-transfer iteration)
     rng = np.random.default_rng(42)
     flat = rng.random(27)
     for _ in range(2000):
-        flat = T_micro @ flat
+        flat = _micro_step(flat.reshape(9, 3), T_net, M).ravel()
         flat = flat / flat.sum()
     cos_top = float(np.dot(flat / np.linalg.norm(flat), v_top / np.linalg.norm(v_top)))
     evals_micro = sorted(np.linalg.eigvalsh(T_micro).tolist(), reverse=True)
@@ -173,16 +178,26 @@ def run():
           and abs(rate_hand - RECOVERY) < 1e-9
           and abs(sorted(np.linalg.eigvalsh(M).tolist(), reverse=True)[1] - 2.0 / 3.0) < 1e-12)
 
-    # 4. v324 emerges: same spectral invariants in cusp readout basis
+    # 4. The FULL basis conjugacy, including the formerly erased odd mode.
+    O = np.array([[1, 0, 0], [0, 1, 1], [0, 1, -1]], dtype=float)
+    O[:, 1:] /= np.sqrt(2.0)
+    full_basis = np.kron(np.eye(9), O)
+    conjugacy_ok = np.allclose(full_basis.T @ T_hand @ full_basis, T_full,
+                               rtol=0, atol=1e-12)
+    N = np.kron(T_net, np.eye(3))
+    C = np.kron(np.eye(9), M)
+    schedule_ok = np.allclose(N @ np.linalg.matrix_power(C, 2 * N_fam),
+                               T_hand, rtol=0, atol=1e-12)
+    schedule_distinct = not np.allclose(np.linalg.matrix_power(T_micro, 2 * N_fam),
+                                        T_hand, rtol=0, atol=1e-12)
     evals_full = sorted(np.linalg.eigvalsh(T_full).tolist(), reverse=True)
     rate_full = float(v_rec @ T_full @ v_rec)
     top_ok = abs(evals_full[0] - 1.0) < 1e-9 and np.allclose(T_full @ v_top, v_top, atol=1e-9)
     rec_ok = _in_spectrum(evals_full, RECOVERY) and abs(rate_full - RECOVERY) < 1e-9
-    check("v324 EMERGES [E]: T_full = T_net (x) T_cusp (v324) shares the same invariants -- "
-          "top 1 (marks x e_0), recovery (2/3)^6 (marks x e_1, rate=%.10f); the cusp-diagonal "
-          "T_cusp is the 6-hand readout in the Galois basis {0,1/3,2/3} (v317), matching "
-          "the dynamical M-rule on its natural timescale" % rate_full,
-          top_ok and rec_ok)
+    check("v324 EMERGES [E]: full orthogonal conjugacy O^T M^6 O = "
+          "diag(1,64/729,1/729); one hand uses one network step and six family "
+          "substeps, and differs from T_micro^6 (recovery rate=%.10f)" % rate_full,
+          top_ok and rec_ok and conjugacy_ok and schedule_ok and schedule_distinct)
 
     # 5. growth + fiber: v299 trajectory unchanged with M attached
     seq = _grow([1, 2, 2])
@@ -204,7 +219,7 @@ def run():
           "= P2 (v299) and the analytic seed phi0 (v312) -- NOT derived here",
           Z2 == 2 and N_fam == 3 and g_car == 5)
 
-    return summary("v395 coupled hypergraph rewrite: one local rule (network diffusion + v327 M) unifies v299/v327/v324; joint attractor marks⊗e0, recovery (2/3)^6 after one hand; v324 fiber emerges as cusp readout")
+    return summary("v395 coupled hypergraph rewrite: one local rule (network diffusion + full v486/v487 M) unifies v299/v327/v324; joint attractor marks⊗e0, recovery (2/3)^6 after one hand; v324 fiber emerges as cusp readout")
 
 
 if __name__ == "__main__":

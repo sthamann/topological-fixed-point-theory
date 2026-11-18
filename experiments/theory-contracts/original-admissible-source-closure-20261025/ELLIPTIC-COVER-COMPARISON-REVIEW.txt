@@ -1,0 +1,293 @@
+ELLIPTIC COVER COMPARISON REVIEW
+================================
+
+Date: 2026-10-25
+Scope: pure mathematical comparison of already existing TFPT covers and marks
+Atlas audit frame: 02e0eaef087d79700f07ca0b
+Atlas mutation: none
+
+Question
+--------
+
+Do the already existing curves
+
+  C2: y^2=x^4-1,
+  C3: w^3=x^4-1,
+  C6: t^6=x^4-1,
+  C12: s^12=x^4-1
+
+give a concrete common connection between the four-point moduli j=1728 and
+j=0, and how do the pure deck generator and the existing mixed quarter/deck
+clocks act on that connection?
+
+The search was restricted to the existing tower and the existing family-D3
+and Bott/Bloch data.  No curve, physical source, Bott degree or free marking is
+introduced.
+
+Source state
+------------
+
+The targeted Atlas and literal search found the C2/C3/C6/C12 tower and the
+separate j=1728 and tetrahedral/Bott data.  It did not find the quotient map
+and paired image field below already stated as one result.
+
+This is a scoped reconciliation result, not a global novelty claim.  In the
+original modules actually read for this review, neither the concrete map
+(w,x^2) nor especially the common image field C(x,s^2)=C(C6) was written down.
+The individual ingredients were already present.  No broader absence claim is
+inferred from the Atlas search.
+
+The files used for the comparison were read without alteration:
+
+  experiments/theory-contracts/e-series-compiler-closure-20261023/CUTS.txt
+    lines 114-137
+    SHA256 e4eb9b53f944d411e887deb1783ff2d12e6a949e7550f9e6ebdd0cf77cd1ef21
+
+  experiments/theory-contracts/source-rule-search-20260930/BOTT_CLASS_ORIGIN.md
+    lines 20 and 31-50
+    SHA256 909b875df080c5cb0d7f690f7218ee50ea596a380ebe2c2cb0277e21461caf5e
+
+  verification/v492_celestial_z4_orbifold.py
+    lines 492-511
+    SHA256 7dc06180a0398a6b2d300b0c6d19150e4ad943eef3b058438d6a353b653ada44
+
+The pre-review pinned states that must remain canonical are:
+
+  experiments/theory-contracts/e-series-compiler-closure-20261023/COVERS.txt
+    SHA256 cdd04f5f38819b60ddd8488eb1c3c316c6849829387205e78ec5e4bf767f80bf
+
+  experiments/theory-contracts/e-series-compiler-closure-20261023/cover_dictionary.py
+    SHA256 426ca453e7359d7f08bbee7b9c93a38017daf32f91417ad34d9100058920cc27
+
+1. Exact elliptic quotient of the existing C3
+------------------------------------------------
+
+On C3 set
+
+  v=w,                 u=x^2.
+
+Then
+
+  u^2=x^4=w^3+1=v^3+1.
+
+The involution iota:(x,w)->(-x,w) therefore gives the degree-two quotient
+
+  C3 -> E_omega,       (x,w) |-> (v=w,u=x^2),
+  E_omega: u^2=v^3+1.                                  (1.1)
+
+C3 has genus 3 and E_omega has genus 1.  The fixed points of iota are the
+three points x=0, w^3=-1 and the unique point over infinity.  Riemann-Hurwitz
+checks the four branch points:
+
+  2g(C3)-2 = 4 = 2(2g(E_omega)-2)+4.
+
+The double cover E_omega->P1_v is branched at
+
+  {-1,-omega,-omega^2,infinity}.
+
+For that ordering its cross-ratio is
+
+  rho_bar=(1-i sqrt(3))/2,
+  rho_bar^2-rho_bar+1=0.
+
+The unordered orbit is {rho,rho_bar}; therefore j(E_omega)=0.  This is an
+actual quotient of the existing C3.  No equianharmonic curve has been added.
+
+2. Existing j=1728 image
+-------------------------
+
+The existing C2 is already elliptic.  Its degree-two map to P1_x is branched
+at
+
+  {1,i,-1,-i}.
+
+The ordered cross-ratio (1,i;-1,-i) is 2.  The Legendre formula
+
+  j(lambda)=256(1-lambda+lambda^2)^3 /
+                  (lambda^2(1-lambda)^2)
+
+then gives j(C2)=1728.  This is the harmonic four-point orbit already checked
+in v492.
+
+3. Exact common image from the existing C12
+---------------------------------------------
+
+The two maps from C12 are
+
+  pi_i(x,s)     =(x,y=s^6)              in C2,
+  pi_omega(x,s) =(v=s^4,u=x^2)          in E_omega.       (3.1)
+
+Their degrees are 6 and 8.  The second is the existing degree-four map
+C12->C3 followed by (1.1).
+
+Inside C(C12)=C(x,s), the two pulled-back image fields generate
+
+  C(x,s^6) C(s^4,x^2)
+    = C(x,s^6,s^4)
+    = C(x,s^2),                                          (3.2)
+
+because s^2=s^6/s^4.  With t=s^2 this is the existing C6 field
+
+  C(C6)=C(x,t),       t^6=x^4-1.
+
+Equivalently, the paired map (pi_i,pi_omega) has kernel
+
+  <Delta12^6>={1,s->-s}.
+
+The normalization of its image is C6.  The paired image forgets only the sign
+of s.  It does not retain the whole C4 kernel cover: z=s^3 is not contained in
+C(x,s^2).  Thus the common elliptic image is concrete, but it is not the full
+C12 common kernel cover.
+
+4. Deck and clock actions
+--------------------------
+
+Let
+
+  Delta=Delta12: (x,s)->(x,zeta12 s),
+  Q=Q12:         (x,s)->(i x,s),
+  R1=Q Delta,
+  R4=Q Delta^4.
+
+R1 is the lift of the original C3 mixed operation.  R4 is the unique
+compiler-marked lift called R12 in the pinned cover dictionary.  Their actions
+on the two elliptic images are
+
+                         C2: (x,y)              E_omega: (v,u)
+  Delta                     (x,-y)                       (omega v,u)
+  Q                         (i x,y)                      (v,-u)
+  R1                        (i x,-y)                     (omega v,-u)
+  R4                        (i x, y)                     (omega v,-u).
+
+Consequently Delta has order 2 on C2, order 3 on E_omega and order 6 on the
+pair.  Both mixed lifts have order 4 and 6 on the respective images, hence
+exact order 12 on the pair.  On the normalized C6 image they act as
+
+  Delta(x,t)=(x,zeta6 t),
+  R1(x,t)   =(i x,zeta6 t),
+  R4(x,t)   =(i x,zeta6^4 t).                            (4.1)
+
+The pure deck order drops from 12 to 6 while the mixed clock action remains
+faithful of order 12.  Clock order 12 therefore cannot be identified with
+cover degree 12.
+
+The compiler marking is unchanged.  R1 is not the compiler-marked generator:
+R1^9 is not Q.  R4 obeys the existing marks R4^9=Q and R4^4=Delta^4.
+
+5. Relation to the family-D3 tetrahedron
+-----------------------------------------
+
+CUTS.txt supplies an unordered projective set of four axes
+
+  (1,1,1), (1,1,-1), (1,-1,1), (1,-1,-1).
+
+It explicitly states that the fixed D5+D3 split determines this unordered set
+but does not determine a vertex.  Choose the sign representatives
+
+  (1,1,1), (1,-1,-1), (-1,1,-1), (-1,-1,1).
+
+They are the vertices of a regular oriented tetrahedron.  Normalize them and
+use the Bloch stereographic coordinate associated with the existing projector
+P(n),
+
+  z(n)=(n1+i n2)/(1-n3).
+
+For the displayed ordering their cross-ratio is
+
+  rho=(1+i sqrt(3))/2,
+  rho^2-rho+1=0.
+
+Reversing the orientation conjugates rho.  Hence the branch values of (1.1)
+and the family-D3 tetrahedron have the same unordered projective four-point
+orbit.
+
+This is the maximal source-backed statement.  The sign representatives and
+ordering implement an orientation choice.  The original data do not identify
+the family-D3 direction sphere with the physical seam normal sphere, do not
+select one tetrahedral vertex and do not add a Bott degree to the cover map.
+
+6. Minimal finite symbolic certificate
+----------------------------------------
+
+The following identities were executed both normally and with python3 -OO
+while the review was prepared:
+
+  gcd(6,4)=2,
+  [C(x,s^6),C(x,s^4)] = C(x,s^2),
+  deg(pi_i)=6,
+  deg(pi_omega)=8,
+  ord_pair(Delta)=lcm(2,3)=6,
+  ord_pair(R1)=ord_pair(R4)=lcm(4,6)=12,
+  lambda_omega^2-lambda_omega+1=0,
+  lambda_tetra^2-lambda_tetra+1=0,
+  j(lambda_omega)=j(lambda_tetra)=0,
+  lambda_square=2,
+  j(lambda_square)=1728.
+
+For reproducibility, the independent scalar core is:
+
+  import sympy as sp
+  from math import gcd, lcm
+  I = sp.I
+  rt3 = sp.sqrt(3)
+  omega = (-1+I*rt3)/2
+  rho = (1+I*rt3)/2
+  lam_w = sp.simplify((-1+omega**2)/(-omega+omega**2))
+  assert sp.simplify(lam_w**2-lam_w+1) == 0
+  def cr(a,b,c,d):
+      return sp.simplify((a-c)*(b-d)/((a-d)*(b-c)))
+  tet = ((1,1,1),(1,-1,-1),(-1,1,-1),(-1,-1,1))
+  zz = [sp.simplify((x/rt3+I*y/rt3)/(1-z/rt3)) for x,y,z in tet]
+  lam_t = sp.simplify(sp.expand_complex(cr(*zz)))
+  assert sp.simplify(lam_t-rho) == 0
+  def j(lam):
+      return sp.simplify(256*(1-lam+lam**2)**3/(lam**2*(1-lam)**2))
+  assert j(lam_w) == j(lam_t) == 0
+  assert cr(1,I,-1,-I) == 2 and j(2) == 1728
+  assert gcd(6,4) == 2 and lcm(2,3) == 6 and lcm(4,6) == 12
+
+The pinned checker was temporarily extended only to execute these independent
+identities in its existing arithmetic environment.  Those additions are not
+part of the canonical checker and are removed after this report is secured.
+
+Verdict
+-------
+
+PASS in the stated mathematical scope.
+
+The existing C3 has the explicit elliptic quotient E_omega of j=0, while the
+existing C2 has j=1728.  Their simultaneous image from C12 normalizes to the
+existing C6.  The pair loses the sign s->-s and therefore does not retain the
+full C4 kernel field.  Pure deck order is 6 on the paired image, whereas the
+existing mixed lifts remain order 12.  The compiler-marked lift remains R4.
+
+The equianharmonic branch orbit equals the projective orbit of the existing
+family-D3 tetrahedron after an orientation choice.  No physical seam/source
+identification, canonical vertex, new cover or Bott-degree conclusion follows.
+
+Restoration record
+------------------
+
+The temporary review states immediately before reversal were:
+
+  COVERS.txt
+    SHA256 7ad5522883e34f630843c6748d568e915f6210de499303a6f639b246d4fd2685
+
+  cover_dictionary.py
+    SHA256 5681a08caebeff3e46a1d9eeef439592bb6482da620b7df543bb8381ecee3a64
+
+Only the additions represented in this review were reversed.  The restored
+hashes are byte-for-byte equal to the pre-review pinned states:
+
+  COVERS.txt
+    SHA256 cdd04f5f38819b60ddd8488eb1c3c316c6849829387205e78ec5e4bf767f80bf
+
+  cover_dictionary.py
+    SHA256 426ca453e7359d7f08bbee7b9c93a38017daf32f91417ad34d9100058920cc27
+
+Post-restoration verification:
+
+  python3 cover_dictionary.py       PASS
+  python3 -OO cover_dictionary.py   PASS
+  check_normal_connection_marks.py PASS_EXACT_SCOPED_COMPARISONS
+                                   73 checks passed

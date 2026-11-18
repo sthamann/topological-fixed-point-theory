@@ -1,0 +1,64 @@
+{
+  "contract": "neutral-port-identifiability-20261013",
+  "research_id": "UR.SOURCE.P0_D5_IDENTIFIABILITY.COLD_CHECK.01",
+  "date": "2026-10-13",
+  "question": "Does the existing selected neutral R → P0 port retain or identify the D5 contribution sought for the 5/4 susceptibility?",
+  "verdict": "PARTIAL",
+  "verdict_enum": [
+    "PASS",
+    "PARTIAL",
+    "FAIL"
+  ],
+  "mathematical_verdict": "SELECTED_ROUTE_REJECTED_BY_EXACT_ZERO_D5_AND_EQUAL_OUTPUT_WITNESS",
+  "summary_de": "Der vorhandene neutrale Rest R=(0,4,-8) hat exakt keine D5-Stresskomponente. Ein anderer primärer Kontrast R′=(16/7,-12/7,-8) besitzt eine D5-Komponente, aber dieselbe Norm 48 und denselben P0-Ausgang. Dieser komprimierte Ausgang identifiziert die D5-Komponente daher nicht. Der konkrete R→P0-Weg liefert keine Herleitung des gesuchten 5/4-Faktors; andere geladene oder sektoraufgelöste Antworten bleiben möglich.",
+  "summary_en": "The existing neutral remainder R=(0,4,-8) has exactly zero D5 stress component. Another primary contrast R′=(16/7,-12/7,-8) has a D5 component but the same norm 48 and P0 output. This compressed output therefore does not identify the D5 component. The specific R→P0 route supplies no derivation of the sought 5/4 factor; other charged or sector-resolved responses remain possible.",
+  "assumptions": [
+    "Original selected 48-root branch, stress-orthogonal R and oscillator Gram form.",
+    "Existing conditional rank-one P0 port, injection scale c3 squared and scalar heat propagation on oscillator level two.",
+    "R prime is an information-loss witness in the primary plane, not another source-selected branch."
+  ],
+  "positive_results": [
+    "Exact original decomposition B48=(12,16,4), R=(0,4,-8) in the D5/A2/U1 sector-stress basis.",
+    "Distinct primary R prime=(16/7,-12/7,-8) has norm squared48 and nonzero D5 coefficient but exactly the same rank-one P0 output.",
+    "Scalar level-two heat propagation and the common injection scale preserve the equal-output witness for arbitrary alpha and c3."
+  ],
+  "kills": [
+    "Infer a retained D5 stress component from the selected neutral remainder R.",
+    "Infer a unique D5 decomposition or derive the 5/4 susceptibility from the scalar48 P0 compression alone."
+  ],
+  "leaves_open": [
+    "Derive a source-selected carrier-resolved or charged/defect observable and its physical response dictionary.",
+    "Derive the susceptibility5/4 and epsilon target from that response without inserting them.",
+    "Select the neutral branch, seam injection, physical state and metric-dependent absolute source from original principles."
+  ],
+  "claims_tested": [],
+  "gates": [],
+  "physical_gates_closed": [],
+  "complete_TFPT_solution": false,
+  "promotion": false,
+  "relations": [
+    {
+      "target": "source-observation-identifiability-20261013",
+      "type": "refines"
+    },
+    {
+      "target": "seam-readout-flow-deck-20261005",
+      "type": "refines"
+    },
+    {
+      "target": "seam-two-normalizations-origin-20261005",
+      "type": "references"
+    }
+  ],
+  "checker": "checker.py",
+  "proof": "PROOF.txt",
+  "certificate": "results.json",
+  "source_manifest": "source_manifest.json",
+  "firewall": "experiments",
+  "novelty_scope": "Project-specific exact information-loss witness for an existing source port, not a new general theorem or a global no-go.",
+  "topics": [
+    "topic:alpha",
+    "topic:e8"
+  ],
+  "scope": "Selected original neutral R and conditional rank-one P0 port on level two; an exact information-loss witness, not a no-go for full charged/defect responses or TFPT."
+}

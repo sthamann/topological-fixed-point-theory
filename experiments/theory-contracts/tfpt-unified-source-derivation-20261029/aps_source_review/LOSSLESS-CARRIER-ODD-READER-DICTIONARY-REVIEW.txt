@@ -1,0 +1,146 @@
+LOSSLESS DICTIONARY FOR THE GIVEN COUPLED CARRIER SOURCE
+Independent targeted review, 30 October 2026. No Atlas or original edit.
+
+VERDICT
+The new check_current_odd_reader.py follows the actual typed chain
+
+  B_s -> G(B_s) -> E* G_22(B_s) E -> v258 logit -> Pi_odd^gamma
+
+and its formulas are correct. Its strongest natural continuation is an exact
+lossless dictionary inside the already given smooth coupled operator class.
+The full face covariance retains h. The odd reader retains Phi. It does not
+retain the even connection A, so reconstructing h from the odd reader alone
+requires A to be kept as known source data.
+
+1. Targeted checker review
+The checker uses the actual v252 full_D, grading and KO6 swap. Its 192 by 192
+operator
+
+  B_s=Z tensor p-S tensor Phi_s
+
+is the scalar-mode instance of the original doubled coefficient. The displayed
+384 by 384 matrix is the complete two-face projector G(B_s), and the selected
+block is genuinely its second face. Since E reduces B_s,
+
+  E*G_22(B_s)E=(I+exp(2 ell h_s))^-1,
+  h_s=p gamma-i gamma Phi_s.
+
+The script does not commute a logarithm through a nonreducing face map. It
+first takes the already labeled face and then uses the reducing E chart.
+
+The exact SymPy checks retain symbolic momentum p and source parameter s.
+The numerical route then executes the actual B192, G384 and v258 induce call.
+The recorded maximum reader residual 1.90e-13 and central-difference jet
+residual 9.05e-10 agree with the exact identities. Its explicit eigenvalue
+guard also makes v258's numerical clipping inactive in every tested case.
+
+Two scope points should remain visible. The numerical run is a finite set of
+Fourier modes, while the whole-circle logarithm is justified analytically by
+spectral calculus. The symbolic test uses scalar p and therefore does not by
+itself test a noncommuting smooth connection; the theorem below does and does
+not need [A,Phi]=0.
+
+2. Exact smooth operator class
+Let
+
+  H=L2(S1,C^96),
+  gamma=gamma*=gamma^-1,
+  A=-i partial_theta+a(theta)
+
+with A selfadjoint on H1, a smooth bounded Hermitian coefficient and
+[A,gamma]=0. Let Phi(theta)=Phi(theta)* be smooth and bounded with
+{gamma,Phi}=0. Put
+
+  h=A gamma-i gamma Phi.                                (1)
+
+The bounded Phi term is selfadjoint, so Kato-Rellich makes h selfadjoint on
+Dom(A)=H1. The constant gamma preserves this domain. No commutator condition
+[A,Phi]=0 is used here. That commutator first matters in h^2, not in the
+reader.
+
+For ell>0 define the actual second face
+
+  C(h)=(I+exp(2 ell h))^-1.                             (2)
+
+C and I-C are injective. Their inverses are generally unbounded on the whole
+circle. Borel functional calculus nevertheless gives on Dom(h)
+
+  L(C):=log((I-C)C^-1)=2 ell h.                         (3)
+
+With Pi_even(T)=(T+gamma T gamma)/2 and
+Pi_odd(T)=(T-gamma T gamma)/2, equations (1)-(3) give
+
+  Pi_even L(C)=2 ell A gamma,
+  Pi_odd  L(C)=-2 ell i gamma Phi.                      (4)
+
+The odd difference in (4), initially written on H1, extends to the displayed
+bounded multiplication operator. This remains true for [A,Phi] nonzero.
+
+3. The precise lossless maps
+Fix gamma, ell>0 and a nonzero declared mu_geo. Define the original odd reader
+
+  R_Phi=mu_geo Pi_odd L(C).
+
+Then
+
+  R_Phi=-2 ell mu_geo i gamma Phi
+       =2 ell mu_geo U_gamma Phi U_gamma*,              (5)
+
+where U_gamma=exp(-i pi gamma/4). Its inverse is exact:
+
+  Phi=(i gamma R_Phi)/(2 ell mu_geo)
+     =U_gamma* R_Phi U_gamma/(2 ell mu_geo).             (6)
+
+Thus Phi <-> R_Phi is one-to-one for fixed ell and mu_geo. This statement
+does not select their values.
+
+The reader R_Phi intentionally deletes A. With A retained as known source
+data, one reconstructs
+
+  h=A gamma+R_Phi/(2 ell mu_geo),                        (7)
+
+then C(h), the complete two-face G(h), and through E plus the conjugate C0
+chart the original G(B_Phi). Without the retained A, equation (7) is not a
+reader-only reconstruction.
+
+The full covariance contains still more information than R_Phi. From C alone
+one obtains L(C), and (4) reconstructs both coefficients:
+
+  A=(Pi_even L(C)) gamma/(2 ell),
+  Phi=i gamma Pi_odd L(C)/(2 ell).                       (8)
+
+Hence, within this declared operator class, the full face C, h and the pair
+(A,Phi) are equivalent data once gamma and ell are fixed. The complete pure
+graph G is also equivalent because its second face is C and its other blocks
+are fixed spectral functions of h.
+
+Finally, the given G is a quasifree covariance. It determines all finite CAR
+word expectations by Wick's rule, and the already checked unitary carrier and
+selfdual charts transport those words. This is mathematical losslessness for
+the given quasifree source. It is not an original theorem selecting this
+source, Phi, A, ell or mu_geo, and it adds no interaction or physical field
+coupling.
+
+4. The direct reconstruction loop selects no Yukawa pattern
+If one first removes the fixed U_gamma comparison but does not divide by the
+known scale, feeding the reader output back as a new coefficient gives simply
+
+  F(Phi)=c Phi,  c=2 ell mu_geo.
+
+Its fixed points are all odd Phi when c=1, and only Phi=0 when c is not 1.
+The latter need not lie in the affine family Phi_s=(1+s)D_Y+D_MR when the
+fixed Majorana contribution is nonzero. If instead one uses the exact inverse
+(6), the feedback is the identity and again fixes every Phi. Therefore this
+lossless reconstruction loop supplies no preference among Yukawa matrices and
+no useful genetic search objective by itself. This conclusion is restricted
+to direct feedback through this reader. External original constraints, other
+fields or an actual action may still select a coefficient; no claim that a
+noncommuting compression is the only possible generation mechanism follows.
+
+SOURCES REVIEWED
+aps_source_review/check_current_odd_reader.py;
+aps_source_review/CURRENT-ODD-READER-CHECK.json;
+aps_source_review/CURRENT-CARRIER-ODD-READER-WHOLE-SOURCE.txt;
+graded_boundary_functor/FINITE-COUPLED.txt;
+verification/v252_full_finite_triple.py;
+verification/v258_dirac_covariance_induction.py.

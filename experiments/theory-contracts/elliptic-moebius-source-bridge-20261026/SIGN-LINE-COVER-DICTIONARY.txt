@@ -1,0 +1,276 @@
+SIGN-LINE COVER DICTIONARY
+Exact v117 coefficient lift on the genus-two source curve
+2026-10-26
+
+VERDICT
+
+PROVED.  The sign lines missing from the September 28 source are the three
+nonzero two-torsion differences inside the negative Weierstrass orbit, not the
+antipodal differences:
+
+    C: eta^2=1-w^6,
+    p_a=(omega^a,0),  q_a=(-omega^a,0),  omega=exp(2 pi i/3),
+
+    L_a^q = O_C(q_a-q_(a+1)),                  a mod 3.             (1)
+
+Their Kummer equations are
+
+    h_a^2 = (w+omega^a)/(w+omega^(a+1)),
+    h_0 h_1 h_2 = 1.                                                (2)
+
+The connected V4 cover Y_q -> C defined by (2) is unramified and has genus
+five.  Its descent over t=z^4 has the exact marked triangle passport
+
+    t=0 : 4,       t=1 : 3,       t=infinity : 2.                  (3)
+
+This is the same oriented (4,3,2) S4 triangle cover proved for the v117 ODE.
+Consequently the pulled-back coefficient local system splits exactly as
+
+    pi^* E_v117 ~= L_0^q direct-sum L_1^q direct-sum L_2^q          (4)
+
+with the canonical unitary flat structures of these two-torsion lines.
+
+The earlier antipodal proposal O(p_a-q_a) is explicitly excluded.  It gives
+passport (4,3,4) and genus three at the degree-24 triangle level.  The
+positive-orbit packet O(p_a-p_(a+1)) gives the reversed marking (2,3,4).
+Neither can be the original v117 source.
+
+Equation (4) is an exact coefficient-local-system identification.  It does
+not yet identify charged CAR fields, their state, local support, or response
+functionals.
+
+
+1. SOURCE STATUS
+
+The September 28 source, section 004, lines 203--327, already proves:
+
+  * the exact reduction of the v117 Fuchs system to the finite triangle
+    problem with local orders (4,3,2);
+  * absence of the resonant logarithm at infinity;
+  * the faithful determinant-one three-dimensional S4 representation;
+  * the marked positive t=0 monodromy U^(-1);
+  * A4, of order twelve, for the four actual z-plane puncture monodromies;
+  * the genus-two curve C above;
+  * that the remaining signs must be a line local system on C.
+
+The source stops before writing that line system.  Its six-point operator is
+explicitly only a point intertwiner.  It is not a field intertwiner or a seam
+projector derivation.  A targeted Atlas and old-source search found no older
+formula equivalent to (1)--(2).
+
+
+2. THE THREE TWO-TORSION LINES
+
+At q_a, eta is a local parameter and w+omega^a has order two.  Therefore
+
+    div((w+omega^a)/(w+omega^(a+1)))
+       = 2 q_a - 2 q_(a+1).                                       (5)
+
+There is no contribution at either infinity point.  Hence every L_a^q is an
+unramified order-two line in Pic^0(C).  It is nontrivial: if q_a-q_(a+1) were
+principal, its function would give a degree-one map from the genus-two curve
+to P1.  The product in (2) telescopes, so
+
+    L_0^q tensor L_1^q tensor L_2^q = O_C.                         (6)
+
+The three classes are distinct nonzero elements of a rank-two subgroup of
+Jac(C)[2].  Their connected Kummer cover has deck group V4.  Since it is
+unramified over C,
+
+    g(Y_q)=1+4(g(C)-1)=5.                                          (7)
+
+The rotation c:(w,eta)->(omega w,eta) cyclically permutes them:
+
+    c^* L_a^q = L_(a-1)^q.                                        (8)
+
+Thus the coefficient characters already carry the required V4 semidirect C3
+structure.
+
+
+3. THE DECISIVE PASSPORT TEST
+
+First forget eta and form the degree-four cover
+
+    Z_q = C(w,h_0,h_1),
+    h_a^2=(w+omega^a)/(w+omega^(a+1)).                             (9)
+
+It is a connected V4 cover of the w-sphere.  It branches only at the three
+negative points q_0,q_1,q_2, with inertia two.  Riemann--Hurwitz gives
+
+    2g(Z_q)-2 = 4(-2) + 3(4/2)(2-1) = -2,
+    g(Z_q)=0.                                                       (10)
+
+The original relations give
+
+    z^2 = (1+w^3)/(1-w^3),
+    t=z^4=((1+w^3)/(1-w^3))^2.                                    (11)
+
+For the map w -> t:
+
+  * q_a lies over t=0 with ramification two;
+  * w=0 and w=infinity lie over t=1 with ramification three;
+  * p_a lies over t=infinity with ramification two.
+
+The cover Z_q -> P1_t has degree 24.  At q_a the V4 square root in (9)
+combines with the order-two ramification of w -> t, giving order four.  The
+other two fibers are unramified in Z_q -> P1_w.  Therefore its exact passport
+is
+
+    (e_0,e_1,e_infinity) = (4,3,2).                               (12)
+
+It is connected and transitive of degree 24.  Its monodromy is a quotient of
+Delta(4,3,2)=S4, whose order is 24.  A transitive group on 24 sheets has order
+at least 24, so the quotient has order exactly 24 and the cover is regular.
+This is the unique marked regular S4 triangle cover with branch values
+0,1,infinity.
+
+The exact v117 matrices in the old F basis satisfy
+
+    ord(U^(-1))=4,
+    ord(M)=3,
+    ord((M U^(-1))^(-1))=2,                                      (13)
+
+and all have determinant one.  Thus (12) has the same target positions,
+positive t=0 clock, and determinant-one three-dimensional representation as
+the original v117 system.  No target matrix was inserted into the construction
+of Z_q.
+
+
+4. EXACT FIBER PRODUCT AND A4 KERNEL
+
+The identity
+
+    sqrt(t)=(1+w^3)/(1-w^3)                                      (14)
+
+shows that C(z^2) is already a subfield of C(Z_q).  It is also the unique
+quadratic subfield of C(z)/C(t).  The intersection cannot be the full cyclic
+quartic field C(z), because S4 has no C4 quotient.  Hence
+
+    C(Z_q) intersect C(z) = C(z^2).                               (15)
+
+It follows that the composite has degree
+
+    [C(Z_q,z):C(z)] = 24/2 = 12.                                  (16)
+
+The corresponding subgroup of S4 is the kernel of its only nontrivial cyclic
+quotient, namely A4.  On the other hand
+
+    C(C)=C(w,z),       eta=z(1-w^3),                              (17)
+
+so
+
+    C(Z_q,z) = C(C) C(Z_q) = C(Y_q).                              (18)
+
+Thus Y_q is exactly the A4 kernel cover of the original marked triangle
+source.  Restricting the determinant-one S4 representation to its normal V4
+splits it into the three nontrivial V4 characters.  Equations (1)--(2) realize
+those characters, proving (4) without a fitted C4 matrix or an abstract
+same-dimension argument.
+
+
+5. WHY THE OTHER TWO C3 PACKETS FAIL
+
+The positive-orbit packet
+
+    L_a^p=O_C(p_a-p_(a+1))
+
+branches only over the p_a on the w-sphere.  Its degree-24 cover therefore has
+orders
+
+    (2,3,4).                                                       (19)
+
+It is another spherical triangle cover, but the order-four and order-two
+fibers are exchanged.  The original ODE fixes order four at t=0 and order two
+at t=infinity, so this packet has the wrong marked clock.
+
+The previously proposed antipodal packet
+
+    L_a^anti=O_C(p_a-q_a),
+    u_a^2=(w-omega^a)/(w+omega^a)                                 (20)
+
+is mathematically valid and unramified over C, but its reduced V4 cover of the
+w-sphere branches at all six p_a and q_a.  Over t this gives
+
+    (4,3,4).                                                       (21)
+
+Riemann--Hurwitz at degree 24 gives genus three.  It is not the spherical
+(4,3,2) cover of the v117 ODE.  Matching its local A4 character dimensions or
+choosing a favorable lift of the quarter map cannot repair this global
+passport mismatch.
+
+This comparison is the smallest decisive selection test among the three
+natural C3-stable two-torsion packets.
+
+
+6. COMPARISON WITH THE OLD MU_12 QUARTER COVER
+
+Let
+
+    f(z)=(z^2-1)/(z^2+1),
+    D: H^12=f(z),
+    g=H^3,
+    w=H^4.                                                        (22)
+
+Then D maps to C and to the old elliptic square curve:
+
+    D -> C,   (z,H) |-> (w=H^4, eta=z(1-w^3)),
+    D -> E,   (z,H) |-> (z, y=H^6(z^2+1)),
+    E: y^2=z^4-1.                                                 (23)
+
+This cyclic root fiber product does not contain the sign lines (1).  Over C it
+is H^4=w.  The divisor of w has two simple zeros and two simple poles, so the
+relative C4 cover is totally ramified at all four points.  Its unique quadratic
+intermediate is also ramified there.  Every L_a^q is unramified.  Hence none of
+the three selected lines can be that cyclic quadratic intermediate.
+
+The quarter lift
+
+    (z,H) |-> (i z,i/H)                                           (24)
+
+still proves w->w^(-1) and g->-i g^(-1).  It transports the old unordered
+quarter pair and the genus-two geometry.  It does not itself supply the V4
+coefficient packet or a charged-field intertwiner.
+
+
+7. CONSEQUENCE AND REMAINING BOUNDARY
+
+The old statement that the genus-two curve needs an additional sign line
+system is now closed at coefficient level.  The exact system is the negative
+orbit packet (1), selected by the original order-four fiber at t=0.  Its
+fiber product is literally the A4 kernel of the already proved S4 triangle
+source.
+
+The remaining source problem is narrower: lift this exact coefficient
+identification to the original charged fields, state, local support, and full
+response functional.  The point hexagon and the mu_12 cover do not perform
+that lift automatically.
+
+
+8. REPRODUCTION
+
+Run from the task workspace:
+
+    python3 -B -OO research-20261026-real-boundary/check_sign_line_cover.py
+
+Expected verdict:
+
+    PASS_EXACT_Q_PACKET_V117_COEFFICIENT_LIFT
+
+The script writes:
+
+    research-20261026-real-boundary/sign-line-cover-results.json
+
+It checks the Kummer product relations, cyclic transport, rationality of Z_q,
+genus five of Y_q, the quotient coordinate t, all three competing passports,
+their Riemann--Hurwitz genera, the oriented v117 matrix orders, and the
+ramification obstruction for the old mu_12 cover.
+
+
+SOURCE FILES
+
+  * documents/tfpt_explorer--docs--session-2026-09-28--TFPT_Gesamtsynthese_2026-09-28/
+    sections/004-subsection-auch-die-skalen-besitzen-einen-gemeinsamen-va.tex,
+    lines 203--327.
+  * verification/v117_monodromy_weyl_a3.py.
+  * experiments/theory-contracts/elliptic-moebius-source-bridge-20261026/
+    GLOBAL-SPIN-KERNEL.txt.

@@ -1,0 +1,279 @@
+THE GLOBAL RANK TWO SPIN KERNEL ON THE ELLIPTIC DOUBLE
+======================================================
+26 October 2026. Exact algebraic continuation and full kernel diagonalization.
+Atlas audit frame: revision c76c7d969cabaa790d397657. No Atlas write.
+
+Question and verdict
+====================
+
+On the already fixed curve and spin line
+
+  E: y^2=x^4-1,       Q(x,y)=(ix,y),       alpha nontrivial and Q fixed,
+
+does the unique Q invariant branch partition give only the previously proved
+local quarter principal part, or the complete global pushed forward Szego
+kernel?
+
+It gives the complete kernel. Put
+
+  A(x)=sqrt(x^2-1),       B(x)=sqrt(x^2+1),       y=A B,
+  g(x)=sqrt(A(x)/B(x)),   g(x)^4=(x^2-1)/(x^2+1).       (1)
+
+Then the actual normalized alpha Szego kernel is
+
+  S_alpha(p,q)=sqrt(dx dz)/(2(x-z))
+    [g(x)/g(z)+g(z)/g(x)].                              (2)
+
+The square roots in (1) are sections on E, with their sheet signs retained.
+In the two sheet pushforward, one constant unitary J diagonalizes the full
+matrix kernel, not only its Cauchy principal part:
+
+  J^* K_sheet(x,z) J
+   =sqrt(dx dz)/(x-z)
+      diag(g(x)/g(z),g(z)/g(x)).                        (3)
+
+There is no omitted elliptic correction in (3). The two diagonal entries are
+the global quarter local systems selected as an unordered pair by the actual
+alpha spin structure. Q exchanges them. Thus the original elliptic data give
+a concrete global holomorphic source kernel without a fitted profile or a
+free vertex matrix.
+
+This does not turn the four marked punctures into the old smooth quarter
+circle. Nor does a holomorphic bilinear kernel alone prove positivity of an
+equal time CAR covariance. Those two operator statements remain separately
+typed.
+
+1. The partition is the actual alpha spin structure
+====================================================
+
+Let R_a denote the ramification point over a and let infinity_+, infinity_-
+be the two points over infinity. The divisor
+
+  D_A=R_1+R_(-1)-infinity_+-infinity_-                  (4)
+
+satisfies
+
+  2 D_A=div(x^2-1).                                    (5)
+
+It is nonprincipal. Indeed, if it were principal, a function with at most
+simple poles at the two infinities would vanish at both R_1 and R_(-1).
+But
+
+  H0(E,O(infinity_++infinity_-))=span(1,x),
+
+and no nonzero affine function of x vanishes at x=1 and x=-1.
+
+Likewise define
+
+  D_B=R_i+R_(-i)-infinity_+-infinity_-.
+
+Since D_A+D_B=div(y), one has D_B~-D_A~D_A. The quarter map Q swaps the two
+parts {1,-1} and {i,-i}, so the unordered partition
+
+  {1,-1} | {i,-i}                                      (6)
+
+is Q invariant. The other two nontrivial partitions are exchanged by Q.
+Thus O(D_A) is the unique Q fixed nontrivial two torsion spin line. It is the
+same alpha already fixed by the original elliptic spin audit. Since alpha is
+nontrivial of degree zero,
+
+  H0(E,alpha)=0.                                       (7)
+
+No new spin characteristic is selected in (6).
+
+2. Direct genus one Szego proof
+===============================
+
+For p=(x,y_x) and q=(z,y_z), define
+
+  S_part(p,q)=
+    [A(x)B(z)+B(x)A(z)]/[2(x-z)]
+    (dx/y_x)^(1/2) (dz/y_z)^(1/2).                     (8)
+
+The signs of A and B are chosen coherently so that A B=y on E. Formula (8)
+has the defining properties of the alpha Szego kernel:
+
+  * It is a half form in each variable with spin multipliers D_A.
+
+  * At p=q, its only pole has unit residue because both ratios tend to one.
+
+  * At q=h p, the apparent x=z pole cancels between the two numerator terms.
+
+  * It has no other poles.
+
+If S_part and the normalized Szego kernel differed, their difference for
+fixed q would be a holomorphic section of alpha. Equation (7) makes that
+difference zero. Hence (8) is the actual NS--NS elliptic Szego kernel.
+
+Now use y=A B. The two terms in (8) simplify exactly as
+
+  A(x)B(z)/sqrt(y_x y_z)=g(x)/g(z),
+  B(x)A(z)/sqrt(y_x y_z)=g(z)/g(x).                    (9)
+
+Equations (8) and (9) prove (2). This is a direct genus one argument from
+pole, multipliers and H0(E,alpha)=0. It does not import a genus two theorem.
+
+For comparison, the same algebraic shape for a hyperelliptic even spin
+partition is displayed in E. D'Hoker, M. Hidding and O. Schlotterer,
+"Cyclic products of Szego kernels and spin structure sums", JHEP 05 (2023)
+073, arXiv:2211.09069, equation (2.26):
+
+  https://arxiv.org/abs/2211.09069
+
+That reference treats genus two. It is a primary literature check of the
+partition formula, not the proof of the genus one identity used here.
+
+3. Exact two sheet matrix and constant diagonalization
+=======================================================
+
+Set
+
+  a=g(x)/g(z),       b=g(z)/g(x)=a^(-1).
+
+Use the analytic square root of the Jacobian on the second sheet, so the
+second half density differs by i. In the common ordered sheet frame the
+complete pushforward of (8) is
+
+  K_sheet(x,z)=sqrt(dx dz)/[2(x-z)]
+    [[a+b,       i(a-b)],
+     [-i(a-b),   a+b   ]].                              (10)
+
+The diagonal entries reconstruct the same sheet kernel (2). The off diagonal
+numerator a-b vanishes when x=z, which is the explicit cancellation of the
+false pole at the conjugate point.
+
+Let
+
+  J=1/sqrt(2) [[i,-i],[1,1]].                           (11)
+
+Then J is unitary and direct multiplication gives
+
+  J^* K_sheet J=sqrt(dx dz)/(x-z) diag(a,b).            (12)
+
+This proves (3). In particular, the regular part left unspecified by the
+earlier local calculation is not an additional matrix mixing term. The full
+global kernel splits into the two character kernels
+
+  K_+(x,z)=sqrt(dx dz)/(x-z) g(x)/g(z),
+  K_-(x,z)=sqrt(dx dz)/(x-z) g(z)/g(x).                 (13)
+
+Their average reconstructs the cover kernel because the inverse character
+transform has the usual factor 1/2.
+
+4. Peripheral monodromy and Q transport
+========================================
+
+The common factor
+
+  t(x)=(x^4-1)^(-1/4)=y^(-1/2)
+
+turns A t and B t into g and g^(-1). Therefore no independent fourth root
+has been fitted. Around x=1 and x=-1, a positive meridian gives
+
+  (g,g^(-1)) -> (i g,-i g^(-1)).                       (14)
+
+Around x=i and x=-i it gives the inverse pair
+
+  (g,g^(-1)) -> (-i g,+i g^(-1)).                      (15)
+
+In the cyclic branch order 1,i,-1,-i, the four peripheral matrices are
+
+  diag(i,-i), diag(-i,i), diag(i,-i), diag(-i,i),       (16)
+
+and their product is I. These are precisely the global Spin Jacobian lifts
+of the raw flat matrices P,-P,P,-P after passing to the character basis.
+Each matrix squares to -I, as a central Spin lift should.
+
+The quarter map acts on (1) by
+
+  g(ix)^4=g(x)^(-4).                                   (17)
+
+Thus Q exchanges K_+ and K_- and transports (14) to (15). The unordered
+rank two kernel is Q invariant, while neither diagonal line is. The two
+abstract coherent choices of local square root sign found from the product
+relation amount here to swapping the two character labels. The normalized
+kernel, its residue and the unordered partition fix the full rank two object;
+they do not canonically name one of its two lines.
+
+5. Exact finite replay
+======================
+
+An inline SymPy replay checked
+
+  J^*J=I,
+  J^* [[a+b,i(a-b)],[-i(a-b),a+b]] J /2=diag(a,a^(-1)),
+  (P)(-P)(P)(-P)=I,
+  product of the four matrices in (16)=I,
+  every matrix in (16) has square -I,
+  [(x^2-1)/(x^2+1)] at x->ix equals its reciprocal.
+
+The pole check is also exact: as z approaches x, a and b approach one, so
+(12) has identity residue. The conjugate sheet numerator a-b vanishes to
+first order and removes the other apparent pole.
+
+As an independent diagnostic, the square torus uniformization was evaluated
+at 80 decimal digits using
+
+  x(z)=sn(c z|-1),       c=2 K(-1)(1+i),
+  y(z)=i cn(c z|-1) dn(c z|-1),
+  A(z)=i sqrt(1-x(z)^2),       B(z)=y(z)/A(z).
+
+At three generic complex point pairs, the algebraic value
+
+  -i c [A(z)B(w)+B(z)A(w)]/[2(x(z)-x(w))]
+
+agreed with the normalized NS--NS theta kernel
+
+  pi theta_3(pi(z-w)) theta_1'(0)
+       /[theta_3(0) theta_1(pi(z-w))]
+
+to absolute errors 8.5e-81, 1.3e-80 and 9.5e-81. This is a diagnostic of
+normalization and spin characteristic. The proof remains the pole, multiplier
+and H0(alpha)=0 argument in Section 2.
+
+6. Scope and consequence
+========================
+
+PROVED:
+
+  [E] The Q invariant partition (6) is the already fixed alpha spin class.
+  [E] Formula (2) is the actual normalized NS--NS elliptic Szego kernel.
+  [E] The complete rank two spin trace diagonalizes as (12), with no
+      remainder and no fitted connection.
+  [E] Its four global peripheral matrices, product relation and Q exchange
+      are (16)-(17).
+
+This is a constructive global source connection in the holomorphic sense:
+the original curve, spin class and normalized elliptic Green function already
+supply the full global two point kernel on the four marked punctured carrier.
+It strengthens the earlier local quarter result substantially.
+
+OPEN:
+
+  [O] A holomorphic Szego kernel is not by itself an ordered equal time CAR
+      covariance. Positivity still requires the original real slice, trace
+      map and one particle inner product.
+
+  [O] The four punctured or ramified base carrier is not the old smooth
+      circle. Equations (12)-(17) do not identify its graph domain with the
+      original B_(1/4) direct-sum B_(3/4) circle domain.
+
+  [O] Since Q exchanges K_+ and K_-, selecting one diagonal channel would be
+      an extra symmetry breaking choice. The canonical source object is the
+      full unordered rank two pair.
+
+Source anchors
+==============
+
+  /Users/stefanhamann/Projekte/tfpt-theoryv4/experiments/theory-contracts/
+  original-admissible-source-closure-20261025/
+  ORIGINAL-BASES-AND-ELLIPTIC-SPIN.txt:55-101
+  SHA256 bf6b2336e24a39aef26b9907c24f033a47a8a1318f8f19ae561e4c477680ce67.
+
+  research-20261026-elliptic-source-continuation/ELLIPTIC-GREEN-RP.txt:1-216
+  SHA256 d8799f04851a9bd539b05b4d013b38eb00de9bec07dddde6438023aaf1facd80.
+
+  research-20261026-spin-transport/SPIN-TRACE-LOCAL-KERNEL.txt:1-253
+  Earlier local principal-part result; (10)-(13) provide the new exact global
+  completion. That file was not changed here.
+

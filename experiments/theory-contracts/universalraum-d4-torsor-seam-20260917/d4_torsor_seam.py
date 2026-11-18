@@ -60,7 +60,7 @@ TENSOR_SHA = ('3f00a0892157a691e4ef26920c3702772c7bf76a250fad98ff04a079b'
 
 CLOCK_PATH = REPO / ('experiments/theory-contracts/'
                      'compiler-involution-types/checker.py')
-CLOCK_SHA = '9bf99de79f224ffcd060359eb146510b6e49973170f9953a0aec26760bd2c1a1'
+CLOCK_SHA = 'a0923ab19e46d784b28783f3b943df032d9de3c08b7ecda017b3d4cd3e5ad1ab'
 
 checks = []
 

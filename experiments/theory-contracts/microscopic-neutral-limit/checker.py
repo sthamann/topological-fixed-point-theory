@@ -11,9 +11,9 @@ HERE = Path(__file__).resolve().parent
 ROOT = HERE.parents[2]
 PINS = {
     "experiments/theory-contracts/source-current-symbol-match/checker.py":
-    "b5aba00e28885a43965a75a45733ad9eb4ce8b12d624a83da942bc3848652d37",
+    "a4d286bce008caab76f9956dc70fa40027defb6d74c7779bc4f85ca50c2807b1",
     "experiments/theory-contracts/current-truncation-bridge/checker.py":
-    "0bcd39189a0b504f181670d4113437f706608b6d43af8267965e70c2ff1d3eda",
+    "a4b929ddf1767f7d913aa4d365cea1e1a54b332b57f43059c49cf81ddce9c397",
 }
 
 

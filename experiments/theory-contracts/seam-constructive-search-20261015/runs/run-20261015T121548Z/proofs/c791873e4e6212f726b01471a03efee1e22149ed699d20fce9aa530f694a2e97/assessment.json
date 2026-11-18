@@ -1,0 +1,272 @@
+{
+  "algebra_certificate_ok": true,
+  "algebra_receipt_candidate_match": true,
+  "candidate_sha256": "c791873e4e6212f726b01471a03efee1e22149ed699d20fce9aa530f694a2e97",
+  "conditional_scope": {
+    "does_not_claim": [
+      "a universal no-go for other representations, sources, scalings, or added sectors",
+      "a derivation or refutation of P1/P2 source selection",
+      "that failure of unchanged-source equivalence invalidates the algebraic Lean certificate"
+    ],
+    "requires": [
+      "the same microscopic source Hilbert space",
+      "the same eight integer occupation Cartans",
+      "the same normal ordering and source vacuum constant",
+      "the fixed K_alpha quadratic time with alpha in {1/4,3/4}",
+      "the fixed eight-dimensional charges s and r0"
+    ]
+  },
+  "ground_space": {
+    "connection_check_scope": "The displayed K(0)=K(r0)=0 identities only connect the candidate's fixed r0 and quarter branches to the source theorem. The full-lattice exclusion comes from the pinned analytic coordinate-minimization and microscopic-gap proof, not from this finite calculation.",
+    "original_source_multiplicity": 1,
+    "rational_connection_check": [
+      {
+        "K_r0": "0",
+        "K_zero": "0",
+        "alpha": "1/4",
+        "delta_dot_r0": "-1",
+        "norm_r0_squared": "2",
+        "quadratic_term": "1"
+      },
+      {
+        "K_r0": "0",
+        "K_zero": "0",
+        "alpha": "3/4",
+        "delta_dot_r0": "-1",
+        "norm_r0_squared": "2",
+        "quadratic_term": "1"
+      }
+    ],
+    "stipulated_e8_extension_multiplicity": 2
+  },
+  "half_charge_operator_obstruction": {
+    "candidate_interpretation": "The formal defect generator X can define an algebraic extension, but it is not an operator realization on the unchanged source Hilbert space.",
+    "statement": "Integer source Cartans satisfy Ad(exp(2*pi*i*N_k))=identity; a nonzero operator with Cartan charge +/-1/2 would instead acquire phase -1 and therefore must vanish.",
+    "status": "APPLIES"
+  },
+  "schema": "tfpt.source_compatibility.v1",
+  "scope_checks": [
+    {
+      "actual": 8,
+      "expected": 8,
+      "name": "dimension",
+      "passed": true
+    },
+    {
+      "actual": [
+        "e0",
+        "e1",
+        "e2",
+        "e3",
+        "e4",
+        "e5",
+        "e6",
+        "e7"
+      ],
+      "expected": [
+        "e0",
+        "e1",
+        "e2",
+        "e3",
+        "e4",
+        "e5",
+        "e6",
+        "e7"
+      ],
+      "name": "basis",
+      "passed": true
+    },
+    {
+      "actual": "Q(n)=sum_j n_j",
+      "expected": "Q(n)=sum_j n_j",
+      "name": "integer_charge",
+      "passed": true
+    },
+    {
+      "actual": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "expected": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "name": "s_twice",
+      "passed": true
+    },
+    {
+      "actual": [
+        1,
+        1,
+        1,
+        1,
+        0,
+        0,
+        0,
+        0
+      ],
+      "expected": [
+        1,
+        1,
+        1,
+        1,
+        0,
+        0,
+        0,
+        0
+      ],
+      "name": "a",
+      "passed": true
+    },
+    {
+      "actual": [
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        1,
+        1
+      ],
+      "expected": [
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        1,
+        1
+      ],
+      "name": "b",
+      "passed": true
+    },
+    {
+      "actual": [
+        1,
+        1,
+        1,
+        1,
+        -1,
+        -1,
+        -1,
+        -1
+      ],
+      "expected": [
+        1,
+        1,
+        1,
+        1,
+        -1,
+        -1,
+        -1,
+        -1
+      ],
+      "name": "r0_twice",
+      "passed": true
+    },
+    {
+      "actual": "fixed_input_extended_to_all_charges",
+      "expected": "fixed_input_extended_to_all_charges",
+      "name": "time.kind",
+      "passed": true
+    },
+    {
+      "actual": "p=n+c*s, n in Z^8, c in {0,1}",
+      "expected": "p=n+c*s, n in Z^8, c in {0,1}",
+      "name": "time.charges",
+      "passed": true
+    },
+    {
+      "actual": "K_alpha(p,N)=N+|p|^2/2+delta_alpha dot p",
+      "expected": "K_alpha(p,N)=N+|p|^2/2+delta_alpha dot p",
+      "name": "time.K_alpha",
+      "passed": true
+    },
+    {
+      "actual": "delta_alpha[j]=(j+alpha)/8-1/2",
+      "expected": "delta_alpha[j]=(j+alpha)/8-1/2",
+      "name": "time.delta_alpha",
+      "passed": true
+    },
+    {
+      "actual": [
+        "1/4",
+        "3/4"
+      ],
+      "expected": [
+        "1/4",
+        "3/4"
+      ],
+      "name": "time.alpha_values",
+      "passed": true
+    },
+    {
+      "actual": "[K_alpha,W4]=W4*(Q/2+3/4+alpha/2)",
+      "expected": "[K_alpha,W4]=W4*(Q/2+3/4+alpha/2)",
+      "name": "time.W4_ward",
+      "passed": true
+    },
+    {
+      "actual": {
+        "alpha_1_4": "7+4*(Q mod 2) mod 8",
+        "alpha_3_4": "1+4*(Q mod 2) mod 8"
+      },
+      "expected": {
+        "alpha_1_4": "7+4*(Q mod 2) mod 8",
+        "alpha_3_4": "1+4*(Q mod 2) mod 8"
+      },
+      "name": "time.quarter_character_mu8_exp",
+      "passed": true
+    },
+    {
+      "actual": true,
+      "expected": true,
+      "name": "r0=s-b",
+      "passed": true
+    },
+    {
+      "actual": true,
+      "expected": true,
+      "name": "a=s+r0",
+      "passed": true
+    }
+  ],
+  "source": {
+    "citations": [
+      {
+        "claim": "integer-Cartan half-charge operator obstruction",
+        "lines": "82-103",
+        "section": "3"
+      },
+      {
+        "claim": "same-K ground-space multiplicities 1 versus 2",
+        "lines": "105-147",
+        "section": "4"
+      },
+      {
+        "claim": "microscopic source gap and unique sea",
+        "lines": "149-172",
+        "section": "5"
+      }
+    ],
+    "path": "experiments/theory-contracts/quotient-locality-e8-20261014/PROOF.txt",
+    "research_id": "UR.SEAM.QUOTIENT_LOCALITY_E8.01",
+    "sha256": "dfa4b094f660d47bc28cf2729e1c12eb29ae0b79cdfda36e72cb40f9406f5714"
+  },
+  "source_equivalence_status": "EXCLUDED_IN_UNCHANGED_SOURCE",
+  "status_reason": "The proved crossed-defect algebra requires a nonzero half-Cartan-charge operator and an additional K_alpha ground state, both excluded on the unchanged source Hilbert space."
+}

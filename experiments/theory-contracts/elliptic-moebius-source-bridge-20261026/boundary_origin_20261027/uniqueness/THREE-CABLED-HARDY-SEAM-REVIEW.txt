@@ -1,0 +1,258 @@
+INDEPENDENT REVIEW OF THE THREE-CABLED HARDY SEAM
+2026-10-27
+
+VERDICT
+
+The proposed Hardy construction supplies the previously missing mathematical
+one-copy line.  On the existing source curve, the original coordinate z is a
+degree-three sewing function with one simple zero on each of the three sheets
+over the disk.  Multiplication by z has a rank-three cokernel.  Comparing its
+spin defect line with the corresponding three-cabled scalar reference defect
+gives exactly
+
+  N_q(S_0)^(-1)
+
+once, with the correct c, Q, alpha and beta actions.  The scalar i in
+Q M_z Q^(-1)=i M_z does not add a determinant-line phase: multiplication of a
+Fredholm operator by a nonzero scalar leaves its kernel and cokernel
+unchanged.  The induced action on the quotient is the relevant one.
+
+This closes the mathematical sewing origin of the one-copy norm factor on
+the specified Hardy half of the source curve.  It does not yet prove that the
+physical P1 seam, state, reflection and Calderon domain are this Hardy
+realization.  It also does not construct N64 anew; it supplies the missing
+one-dimensional line that the already accepted theta module tensors with.
+
+
+1. THE ORIGINAL FUNCTION HAS THE REQUIRED DIVISOR AND DEGREE
+
+On
+
+  C: eta^2=1-w^6
+
+define
+
+  z=eta/(1-w^3).
+
+Then
+
+  z^2=(1+w^3)/(1-w^3).                                       (1)
+
+At q_a, where w^3=-1, eta is a local coordinate and the denominator is
+nonzero.  Thus z has a simple zero at every q_a.  At p_a, where w^3=1, the
+same identity shows a simple pole.  Therefore
+
+  div(z)=D_q-D_p.                                              (2)
+
+There are three poles, so z:C->P1 has degree three.  Solving (1) gives
+
+  w^3=(z^2-1)/(z^2+1).
+
+The only branch values are z=+1,-1,+i,-i, all on the unit circle.  Hence over
+the open disk D={|z|<1}, the map is an unramified three-sheeted cover.  Since
+D is simply connected, its inverse image is the disjoint union of three
+disks, and each restriction maps biholomorphically to D.  The boundary branch
+points are measure-zero endpoints for the Hardy traces and do not alter the
+interior shift index.
+
+
+2. THE HARDY SHIFT HAS THE FULL q EVALUATION QUOTIENT
+
+Let
+
+  H_S=H^2(C_D,S_0),
+
+where C_D is the three-component inverse image of D.  Point evaluation at the
+interior zeros q_a is bounded on this Hardy space.  On each disk,
+multiplication by z is the ordinary unilateral shift, so M_z is injective,
+has closed range, and has a one-dimensional cokernel.  On all three sheets,
+
+  index(M_z|H_S)=-3,
+  H_S/zH_S isomorphic direct_sum_a S_0|q_a.                    (3)
+
+The quotient isomorphism is evaluation at the three simple zeros.  Therefore
+the Fredholm defect line, in the convention det ker tensor det coker^(-1), is
+
+  delta_S=det(H_S/zH_S)^(-1)=B_q^(-1).                        (4)
+
+Apply the same three-cabled shift to the trivial line:
+
+  H_O=H^2(C_D,O_C),
+  delta_O=B_O^(-1),
+  B_O=det H^0(D_q,O_Dq).                                      (5)
+
+Taking the spin defect relative to this scalar reference gives
+
+  delta_S tensor delta_O^(-1)
+    =B_q^(-1) tensor B_O
+    =N_q(S_0)^(-1).                                           (6)
+
+This identity is familywise, rather than confined to the trivial coefficient
+line.  Let L be any degree-zero line and use the same multiplier and the same
+three Hardy components for S_0 tensor L and for L.  Their cokernels are
+
+  direct_sum_a (S_0|q_a tensor L|q_a),
+  direct_sum_a L|q_a.
+
+With one common ordering of the q points,
+
+  det direct_sum_a(S_0|q_a tensor L|q_a)
+    =Nm_Dq(S_0) tensor det direct_sum_a L|q_a.
+
+Consequently
+
+  delta(S_0 tensor L,z) tensor delta(L,z)^(-1)
+    =Nm_Dq(S_0)^(-1)                                           (7)
+
+for every L.  All coefficient fibers and all sheet-permutation signs cancel.
+The equality is equivariant over the complete L family, including the actual
+q sign line and its c orbit.  It does not require L itself to be a c fixed
+point and it does not require a Poincare rigidification merely to cancel the
+coefficient line.  The spin-relative Poincare construction remains the
+stronger standalone trivialization of the individual norm family.
+
+Equations (6)-(7) are the decisive improvement over an arbitrary evaluation
+restriction.  The same original degree-three sewing function produces both
+operators, and the ratio removes the ordering determinant of the three-point
+scheme.  It also explains why the old base shift has index -1 while its
+actual three-sheet pullback has index -3: these are the base operator and its
+three-cabled lift, not two operators asserted to be invertibly identical.
+
+
+2A. HIGHER WINDING AND WHY INDEX ONE SELECTS ONE COPY
+
+For n>=1, multiplication by z^n has index -3n and quotient supported on the
+length-n divisor nD_q.  At each q_a its jet filtration has graded pieces
+
+  E|q_a tensor (T_q_a^*)^j,        j=0,...,n-1.
+
+Apply this once with E=S_0 tensor L and once with E=L.  The L fibers, the
+cotangent jet factors and their permutation signs cancel degree by degree.
+Every level retains one S_0|q_a.  Hence
+
+  delta(S_0 tensor L,z^n) tensor delta(L,z^n)^(-1)
+    =Nm_Dq(S_0)^(-n).                                         (8)
+
+This proves the exponent, including all jets; it is not a phase inference.
+On the base circle the same multiplier z^n has index -n.  Therefore an
+already specified oriented primitive seam with index -1, equivalently one
+positive winding, selects n=1 inside this cable functor.  The finite quarter
+characters alone only see n modulo 4 or 8 and could not make that selection.
+This conclusion uses the original integer index as part of the sewing data;
+it does not identify an unrelated physical D_rel or D_ref with these Hardy
+operators.
+
+
+3. THE Q SCALAR DOES NOT CREATE AN EXTRA LINE PHASE
+
+The source automorphisms act on z by
+
+  c z=z,
+  Q z=i z.                                                     (9)
+
+Thus c commutes with M_z, while in the stated pullback convention
+
+  Q M_z Q^(-1)=i M_z.                                        (10)
+
+Equation (10) maps the Fredholm operator to its nonzero scalar multiple.  The
+canonical identification of their determinant lines is the identity on
+kernel and cokernel, since
+
+  ker(iM_z)=ker(M_z),
+  coker(iM_z)=coker(M_z).                                    (11)
+
+Equivalently, to write a strictly commuting chain square one may multiply
+the domain action by i.  Because the kernel is zero, this domain scalar does
+not enter the Fredholm defect line.  The induced Q action on the cokernel is
+the quotient action on H/zH and agrees with the action obtained from the
+three evaluations.  No additional factor i^(index) belongs to the Fredholm
+line.  Such a factor would concern a separately normalized determinant
+section or a regularized determinant, neither of which is used in (4)-(8).
+
+The same chain scalar occurs for the spin and scalar three-cabled shifts and
+would cancel in their relative ratio in any case.
+
+
+4. THE FULL FINITE LINE CHARACTER IS CORRECT
+
+At each q point, beta acts by +i on the S_0 fiber.  It acts trivially on the
+corresponding scalar reference fiber.  Hence
+
+  beta|B_q=i^3=-i,
+  beta|B_O=1,
+  beta|B_q^(-1) tensor B_O=+i.                                (12)
+
+This is exactly the beta character of N_q^(-1).  At the Q level, both B_q
+and B_O contain the sign of the transposition of q_1 and q_2.  Their ratio
+cancels that common permutation sign and retains precisely the spin norm
+character.  Thus the alpha square and the alpha sign convention agree with
+the already proved marked-divisor line, rather than merely matching beta.
+
+The cubic c cycles the three points.  Its permutation is even, and the
+normalized spin lift has product one on N_q.  Since c also commutes with
+M_z, equation (6) carries the accepted trivial gamma character.  Therefore
+the relative Hardy defect supplies all line characters used in the
+spin-rigidified theta-module theorem.
+
+The one-dimensional c-invariant summand of the quotient must not be confused
+with this relative line.  Its undualized fiber has beta=+i, whereas its
+directed Fredholm defect is the inverse fiber and has beta=-i.  The correct
++i character arises from the inverse determinant of all three q fibers,
+relative to the equally cabled scalar reference.
+
+N64 itself continues to act on H^0(O(2Theta)); the Hardy quotient line is
+one-dimensional and does not independently derive that Heisenberg action.
+Tensoring the accepted theta module with the line (6) gives the already
+proved full finite package.  This distinction prevents a line calculation
+from being overstated as a new derivation of the theta representation.
+
+
+5. EXACT SCOPE OF THE POSITIVE CONNECTION
+
+The construction proves a canonical mathematical arrow
+
+  three-cabled spin Hardy shift / three-cabled scalar Hardy shift
+      -> N_q(S_0)^(-1).                                       (13)
+
+It uses only the existing source curve, its original z coordinate, the
+selected spin line and the disk bounded by the original four branch values.
+It does not choose an arbitrary point-evaluation operator after the fact.
+Together with the original primitive index-one seam, the higher-winding
+calculation selects this literal one-copy power within the mathematical
+Hardy sewing contract.
+
+Three physical identifications remain outside this theorem:
+
+  * the actual P1 seam circle and its polarization must be identified with
+    the z-boundary Hardy polarization used here;
+
+  * the original state, reflection and Calderon domain must induce the same
+    spin and scalar relative defect ratio;
+
+  * the source action must use this relative line, rather than a separate
+    zeta determinant or Pfaffian normalization.
+
+The construction is therefore a substantially stronger positive source
+candidate than the earlier abstract evaluation sequence.  It is not yet a
+claim that the real physical domain or OS state has been identified.
+
+
+FILES CHECKED
+
+  * research-20261027-boundary-origin/source/
+    check_three_cabled_seam.py
+
+  * research-20261027-boundary-origin/source/
+    three-cabled-seam.json
+
+  * research-20261027-boundary-origin/source/
+    ORIGINAL-BOUNDARY-NORM-ORIGIN.txt
+
+  * research-20261027-boundary-origin/originals/
+    INVERSE-Q-POINT-NORM-ORIGIN.txt
+
+  * research-20261026-real-boundary/
+    MARKED-Q-DIVISOR-CENTRAL-TWIST.txt
+
+  * research-20261026-real-boundary/
+    SPIN-RIGIDIFIED-THETA-MODULE.txt

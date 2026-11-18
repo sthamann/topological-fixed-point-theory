@@ -1,0 +1,121 @@
+TFPTFOLDPROJ20261109
+9. November 2026. Anschluss an TFPTBULKBRIDGE20261109.
+
+1. Welche Projektion und welches Wort?
+
+Die ursprüngliche Quellformel PROJECTED-JOINT-SOURCE-GENERATOR-20261103,
+Zeilen 105–158, setzt den vollen Selektor P_adm außen an das geordnete
+Wort. Ein zusätzlicher Selektor zwischen geladenen Buchstaben verändert
+den Caller. Der ursprüngliche volle Selektor besteht aus Naht, Farbe,
+Determinante und Spektralfenster. Das Spektralfenster bezieht sich auf
+D_adm* D_adm. Der tatsächliche lokale Gauss Projektor P_G aus
+PHYSICAL-THERMAL-SOURCE ist ein anderes konkret definiertes Objekt.
+Seine Wirkung bestimmt nicht automatisch die Wirkung von P_adm.
+
+Die mathematische D8+s Erweiterung der Quarterquelle und die vier
+ursprünglichen Wurzelwörter des Typs 0,s,0 mit Glue 0,2,0 bleiben
+gültig. Insbesondere liefert der feste beta=e2+e3 Zeuge bei früher
+gegen später Phasenmarkierung das Vorzeichen minus gegen plus.
+Die Z2 Erweiterungsparität, die Z4 Glueklasse und die physische
+Eichladung sind drei verschiedene Wirkungen. Im Originalübergang
+fehlt eine Quellabbildung, die die beiden Fold Schritte und die
+Phasenmarke zusammen auf dieselbe lokale Feldalgebra überträgt und
+ihre Wirkung auf jedem Faktor von P_adm bestimmt. Die äußere
+Anordnung ist geklärt. Der Wert des physisch voll projizierten
+Foldworts bleibt unberechnet.
+
+2. Kontrollrechnung mit beiden tatsächlichen Gauss Sternen
+
+Unverändertes verification/v989_lattice_gate_battery.py, originale
+Defaults, Innensterne G1 und G2, P_G=prod_i(1+Gi+Gi^2+Gi^3)/4.
+Der Rang ist 64 bei Dimension 1024. Als beobachteter Rückkehrpfad
+dient V=Z_link^2 auf dem mittleren originalen Link und V*. Gi V=-V Gi
+für beide Innensterne, [Gi,H]=0, PV P=0. Daraus folgt für jedes tau>=0
+und jede auf P_G getragene normierte Dichtematrix rho:
+
+ A=Tr(rho V* exp[-tau(H-E)] V)>0,
+ A_in=Tr(rho V* exp[-tau(H-E)] G1 V)=-A,
+ A_out=Tr(rho G1 V* exp[-tau(H-E)] V)=+A,
+ A_mid=Tr(rho V* exp[-tau(H-E)] P_G V)=0.
+
+Der Gesamtoperator V* exp[-tau(H-E)] V ist Gauss invariant.
+Invarianz des Gesamtwortes und das Überleben der Zwischenphase folgen
+hier also exakt aus demselben H, denselben Sternen und demselben
+Zustand. Die neue Rechnung verwendet die bereits definierte
+Gauss projizierte Gibbs Vorschrift bei Diagnosewert beta=1 und
+E=E_min des tatsächlichen physikalischen Blocks. Bei tau=0.4 ergibt
+sich A=0.15828556935870214, A_in=-0.1582855693587021,
+A_out=+0.1582855693587021, A_mid=0. Bei tau=1 ergibt sich
+A=0.011977823414059592 mit denselben relativen Vorzeichen und A_mid=0.
+Alle Operatoridentitäten wurden mit Nullresiduum geprüft.
+Der gewählte Link ist ein echter Testoperator der v989 Quelle. Seine
+Z4 Ladung 2 wird weder mit dem Fold Spinor identifiziert noch wird
+dieser Diagnosezustand als ausgewählter P1 Zustand verwendet.
+
+3. Exakter Test für den gesuchten voll projizierten Übergang
+
+Für eine reflektierte Rückkehr mit Eingabedichte rho=P_adm rho P_adm,
+aus der Quelle abgeleitetem Hinoperator B und gegebenem positiven
+Transfer T=e^(-tau H) definiere Xi=T^(1/2) B sqrt(rho). Bei
+unbeschränkten Operatoren gelten die Aussagen auf den gemeinsamen
+Domänen, sobald Xi Hilbert–Schmidt ist. Eine unitäre Marke C in
+der reflektierten Mitte hat die normierte Antwort
+
+ r=Tr(Xi* C Xi)/Tr(Xi* Xi).
+
+Die Antwort ist definiert genau wenn Xi ungleich null. Für einen
+Zielphasenwert eta mit |eta|=1 gilt
+ ||(C-eta) Xi||_HS^2=2||Xi||_HS^2 (1-Re(conj(eta) r)).
+Also r=eta genau dann, wenn C Xi=eta Xi. Überlapp mit einem Sektor
+oder eine nichtverschwindende Norm allein reicht nicht.
+Für eine zusätzliche orthogonale Zwischenprojektion P lautet der
+exakte Verlust des unmarkierten Wortes ||(1-P) Xi||_HS^2.
+Wird der Zeitort der Marke verschoben, ist der ursprüngliche
+geordnete Caller zu benutzen; die Formel verlangt die reflektierte
+Mitte oder eine tatsächlich nachgewiesene Zeitkovarianz der Marke.
+
+Falls die gesuchte Minusphase auf dem Zwischenzustand dieselbe
+Wirkung wie ein am Zwischenrand erzwungener Plus Selektor besitzt,
+kann ein vollständig dort projizierter Einzelschritt diese Phase
+nicht tragen. Der außen projizierte neutrale Rückkehrpfad bleibt
+davon unentschieden. Falls die Phase eine interne, mit den physischen
+Selektoren verträgliche Graduierung ist, gibt es diesen Widerspruch
+nicht. Für den tatsächlichen Fold sind Quellfeld B, Marke C,
+die Selektorwirkungen und der transportierte Zustand im gemeinsamen
+3+1D Caller noch nicht bestimmt. Keine der bedingten Möglichkeiten
+ist deshalb ein physischer Wert für 0,s,0.
+
+4. Spin 2 aus demselben Übergang
+
+Der v1013 Klassenbeweis liefert quasilokale Dynamik, echte lokale
+Gauss Bedingungen unter den angegebenen Voraussetzungen und
+Zustandsexistenz, ohne IR Pol oder eindeutige physische Quellauswahl.
+Der neue v989 Kontrollaufruf ist eine räumliche Kette mit einem
+Fermiontyp. Er liefert keine 3+1D transversale Tensorantwort und
+keine zwei physisch identifizierten Materievertices.
+Der getrennte freie v1000 TT Zweig besitzt seinen eigenen Pol.
+Sein Vorhandensein und die zuvor berechnete Linienschwelle
+liefern keine Poleigenschaft des Fold Übergangs.
+
+Eine gemeinsame Prüfung verlangt im selben gewählten Zustand
+die physische Tensorantwort bei festem 3er Impuls. Ihr
+Volumenlimit muss bei der Lichtkegelenergie ein nichtverschwindendes
+Polgewicht mit Helizitäten +2 und -2 ergeben. Ein bloßer Beginn
+eines kontinuierlichen Spektrums oder ein isolierter Peak in einer
+endlichen Box ist dafür unzureichend. Nach Normierung des
+Tensorzustands müssen in derselben Quelle die zwei amputierten
+Materievertices in der weichen Grenze auf denselben Koeffizienten
+vor dem jeweilig kanonisch normierten Energie–Impuls Tensor führen.
+Bei einem einzelnen Pol faktorisiert der Polrest der gemischten
+Streuamplitude in diese beiden Vertices. Zwei getrennte
+Kopplungsstärken ohne gemeinsame gekreuzte Streuamplitude reichen
+nicht zur Anwendung der universellen Soft Identität.
+Unter Weinbergs S Matrix Voraussetzungen liefert reale
+Impulsübertragung q ungleich null zwischen beiden Materiearten
+(g1-g2)q=0 (Phys. Rev. 135 B1049, DOI 10.1103/PhysRev.135.B1049).
+Diese Voraussetzungen werden aus dem lokalen Quellbeweis
+nicht hergeleitet. Physischer gemeinsamer Pol und Kopplungen sind
+unberechnet, nicht als Null oder als Ausschluss gewertet.
+
+Reproduzierbar mit check_native_gauss_word.py <TFPT-Repository>.
+Daten in fold-native-gauss-word-results.json.

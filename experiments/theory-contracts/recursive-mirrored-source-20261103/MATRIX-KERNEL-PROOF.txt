@@ -1,0 +1,293 @@
+EXACT MATRIX FIELD INTEGRATION OF THE SAME FINITE ORIGINAL SOURCE
+3 November 2026. Readonly theory review; workspace proof only.
+
+Scope and outcome
+-----------------
+An actual finite selfadjoint original Hamiltonian and its actual boson
+coordinate resolution determine a complete matrix-valued path integration.
+No additional physical boson measure, interaction, state or time is chosen.
+The construction retains the entire inner fiber, absolute scalar, original
+boundary state or physical selector, reference, and every source insertion.
+It applies to the existing finite Hamiltonian branch and passes bounded
+word limits wherever its already proved thermodynamic construction does.
+It does not identify that branch with primitive spectral S_adm, derive an
+unknown primitive H_B, or prove a positive scalar boson path law.
+
+The practical reduction is that a proposed original S_adm strip kernel can
+be compared infinitesimally, with every matrix coefficient retained. An
+evaluated same-source strip identity then implies all time-ordered source
+identities. It must not be replaced by naming a kernel or action.
+
+1. Actual coordinates, entire fibers, exact discrete integration
+--------------------------------------------------------------
+Let H=H* act on the ACTUAL finite regulated source Hilbert space Hcal.
+Let {E_q:q in Q} be a finite orthogonal resolution of identity belonging
+to the actual bosonic coordinate chart. If no such physical chart is
+identified, these formulas are an operator representation, not an
+identification with geometric/Higgs coordinates. No new chart is selected
+by the theorem. Put H_q=Ran E_q and H_yx=E_y H E_x:H_x->H_y.
+Fibers can have different dimensions. All matter, multiplicity, rest and
+constraint legs not resolved by E_q remain in H_q.
+
+Define the concrete whole strip kernel
+ K_t(y,x)=E_y exp(-tH) E_x:H_x->H_y.                     (1)
+For any positive partition t=sum_j delta_j,
+ K_t(q_M,q_0)=sum_(q_1,...,q_(M-1))
+      K_deltaM(q_M,q_(M-1)) ... K_delta1(q_1,q_0).        (2)
+Proof: insert the original identity sum_q E_q=I between the original
+semigroup factors. No marginal normalization, scalar logarithm or
+positivity inference is used. Equation (2) is exact at each partition.
+
+For actual bounded source insertions A_j, use their full rectangular
+blocks A_j(y,x)=E_y A_j E_x. Insert these blocks in (2) at the original
+times. Summing the intermediate coordinates is exactly the original
+operator product. In particular insertions need not be diagonal or
+individually commute with the coordinate projections. The theorem does
+not add charged observables to the physical source algebra.
+
+For the actual unnormalized pure boundary vector Omega, put
+Omega_q=E_q Omega. The whole open source is the sum of
+ <Omega_qM, K_deltaM ... A_j(...) ... K_delta1 Omega_q0>
+over ALL endpoint and intermediate coordinates. Endpoints are not made
+periodic. A supplied mixed boundary functional is contracted in its
+original matrix form instead. A coordinate Fock vacuum is not substituted
+for the physical OS boundary state.
+
+For the ACTUAL thermal selector P on the original common space,
+ Tr(P exp(-beta H))
+ =sum_(q_0,...,q_M) Tr_(H_q0)[
+       P_(q0,qM) K_deltaM(q_M,q_(M-1)) ... K_delta1(q_1,q_0)], (3)
+where P_(x,y)=E_x P E_y:H_y->H_x. Thus the product inside the trace maps
+H_q0 to itself even when the fiber dimensions differ. P is kept once at
+the boundary; no extra P is inserted between strips or charged letters.
+For P=I the boundary block is delta_(q0,qM) I_q0, yielding closed loops.
+For general P it need not be a closed coordinate loop.
+
+Equation (3) is an algebraic identity without [P,H]=0. Its interpretation
+as the previously constructed physical thermal Gibbs source uses the
+ACTUAL reducing physical P, [P,H]=0, nonzero physical space, and the
+actual admissible insertions from PHYSICAL-THERMAL-SOURCE.txt. The
+coordinate E_q themselves need not be separately physical observables:
+they can resolve the original ambient operator before the one final P.
+If working directly on physical space, use its actual coordinate map;
+do not compress an ambient resolution and assume it remains a PVM.
+
+Use (3) separately for actual numerator and actual reference callers,
+when both have this representation. Preserve their original quotient.
+The theorem does not postulate a new reference Hamiltonian or set Z_ref=1.
+Identity shifts in H remain in every strip and hence in the absolute Z.
+
+2. Explicit continuous-time matrix integration without a Markov premise
+---------------------------------------------------------------------
+For every ordered pair y!=x with H_yx!=0 choose a COMPUTATIONAL positive
+rate a_yx>0. The deterministic default a_yx=||H_yx|| uses only H.
+Set lambda_x=sum_(y!=x) a_yx and a_yx=0 for a zero block. Let X_t be
+the finite-state continuous-time Markov chain with these jump rates.
+The process is merely a reference representation for the source.
+
+Start U_0=I_x on H_x. While X_t=z, evolve the rectangular carried map by
+ dU_t/dt=-(H_zz-lambda_z I_z) U_t.                       (4)
+At a jump z->y multiply it on the LEFT by
+ J_yz=-H_yz/a_yz:H_z->H_y.                              (5)
+After any path from x to y, U_t:H_x->H_y, so no equal-fiber assumption
+is needed. Then
+ E_x[1_(X_t=y) U_t]=K_t(y,x).                            (6)
+
+Proof A, forward equation. Let F_yx(t) denote the expectation on the
+left. A no-jump increment at y contributes
+ -(H_yy-lambda_y I)F_yx-lambda_y F_yx=-H_yy F_yx.
+A jump z->y contributes a_yz J_yz F_zx=-H_yz F_zx.
+Thus dot F_yx=-sum_z H_yz F_zx, with F_yx(0)=delta_yx I_x.
+Finite-dimensional ODE uniqueness gives F=exp(-tH), proving (6).
+
+Proof B, path density. A path x_0=x,...,x_n=y with jump times
+0<s_1<...<s_n<t has reference density
+ exp[-sum_(r=0)^n lambda_xr (s_(r+1)-s_r)]
+                       product_(r=1)^n a_(xr,x_(r-1)),
+with s_0=0,s_(n+1)=t. Its carried matrix is
+ exp[-(t-s_n)(H_yy-lambda_y I)] J_(y,x_(n-1)) ...
+                   J_(x1,x0) exp[-s_1(H_x0x0-lambda_x0 I)].
+Scalar rate factors cancel EXACTLY against (5); holding-rate factors
+cancel EXACTLY against the lambda terms in (4). What remains is
+ exp[-(t-s_n)H_yy] (-H_(y,x_(n-1))) ...
+                   (-H_(x1,x0)) exp[-s_1 H_x0x0].        (7)
+This is the convergent finite-dimensional Dyson jump expansion of (1).
+Consequently every positive rate choice yields the SAME matrix kernel.
+Choosing rates is no physical coupling, state, time or boson measure.
+
+Convergence is elementary at a finite regulator. The Dyson expansion
+has a bound C_0 exp(C_1 t) from finitely many bounded blocks. Equivalently,
+finite jump rates give no explosion; for default norm rates ||J_yx||=1
+and ||U_t||<=exp[t max_z(||H_zz||+lambda_z)]. There is no extension to
+unbounded/infinite-fiber operators in this proof.
+
+Arbitrary original source marks follow by inserting their full blocks
+between independent Markov representations of successive intervals and
+summing both coordinate endpoints. This is exactly the kernel expansion
+of section 1. A non-diagonal mark is an original insertion, not a new
+physical jump rule. For bounded continuous sources one may instead use
+the norm-convergent original Dyson series and its usual exponential
+majorant. The same boundary contraction (3) completes the thermal source.
+
+The positive REFERENCE path chain is not automatically the physical
+boson distribution. Its matrix marks can have signs/phases. A scalar
+positive path measure for the physical source requires positivity of its
+actual entire contracted path weights. Ordinary OS reflection positivity
+or positive single-time boson marginal alone does not assert that.
+
+3. Scalar kinetic part plus internal W: a useful explicit corollary
+-----------------------------------------------------------------
+Suppose the ACTUAL identified source supplies a scalar boson operator
+H_B, together with the decomposition H=H_B tensor I+diag W(x), in a
+common identified fiber chart. Suppose its scalar off-diagonal kinetic
+blocks are H_yx=-a_yx I (identified equal fibers), a_yx>=0, and
+ H_xx=b_x I+W(x), W(x)=W(x)*.                            (8)
+Here b_x=(H_B)_xx is the actual supplied scalar block, not an arbitrary
+split between b_x I and W(x). These are checked properties of that
+original class, not universal TFPT axioms. Set u_x=b_x-lambda_x. Then
+all jump marks are identity and (6)
+becomes
+ K_t(y,x)=E_x[1_(X_t=y) exp(-int_0^t u_(X_s) ds)
+                             T exp(-int_0^t W(X_s) ds)]. (9)
+The order of W along the history remains. This explicitly separates the
+known scalar kinetic/holding contribution and the whole internal source.
+Both are determined by the original H. No field-configuration probability
+has been selected independently of H.
+
+For the EXISTING R113 conditional branch H=H_B tensor I+sum V_ji
+tensor c_j^dagger c_i, if and ONLY if its actual coordinate representation
+has the scalar kinetic form (8) and V_ji is multiplication by v_ji(x),
+ W(x)=sum v_ji(x)c_j^dagger c_i=dGamma(v(x)).
+Let R_t[X] solve dot R=-v(X_t)R, R_0=I. The exterior representation gives
+ T exp[-int W(X_s)ds]=Gamma(R_t[X]).                     (10)
+For the unrestricted full fermion trace,
+ Tr_F Gamma(R_t[X])=det(I+R_t[X]).                       (11)
+For a physical selector, keep its ACTUAL boundary block in (3) instead
+of replacing that trace by (11). For an actual vacuum leg, its matrix
+element is instead 1; it is not the thermal trace determinant. Thus the
+bosonic body kernel, the vacuum matrix leg and the thermally integrated
+boson weighting are distinct, explicitly computed contractions of the
+same source, not three independently chosen measures.
+
+If V contains actual bosonic differential/shift operators or physical
+gauge reduction introduces operator-valued jumps, (8)-(11) cannot be
+assumed. The full formulas (1)-(7) still apply. Higher internal vertices
+also remain in W without a Gaussian truncation. In a coherent CAR
+presentation the exact matrix kernels can be expanded in all Grassmann
+coefficients and composed with the original coherent resolution of
+identity and Berezin orientation. This is a representation of the entire
+operator, not proof of the primitive physical fermion pairing.
+
+4. Infinitesimal source identification: the actionable primitive check
+--------------------------------------------------------------------
+Let L_epsilon^S be the actual UNNORMALIZED original S_adm strip integral,
+constructed using its original integration operation, actual boundary
+chart, full field legs, orientation, eta/reference and scalar factors.
+Suppose it acts on the SAME finite source space, uses the SAME original
+time, has the actual strip composition prescription, and satisfies
+ L_0^S=I,
+ L_epsilon^S=I-epsilon H+o(epsilon) in operator norm,
+ ||L_epsilon^S||<=exp(C epsilon).                        (12)
+Then for fixed t,
+ (L_(t/n)^S)^n -> exp(-tH) in norm.                      (13)
+Proof: finite H gives exp(-epsilon H)=I-epsilon H+O(epsilon^2).
+Telescoping the difference of n products yields
+ ||(L_epsilon^S)^n-exp(-n epsilon H)||
+ <=n exp(C' n epsilon) ||L_epsilon^S-exp(-epsilon H)||,
+which tends to zero for epsilon=t/n. Finite actual insertions follow
+by telescoping products interval by interval; bounded-source Dyson
+functionals follow by their norm exponential majorant. Actual boundary
+and P contractions are continuous, hence carry the same whole source.
+
+Thus the decisive comparison is the evaluated whole short-time block
+ E_y dot L_0^S E_x = -H_yx for EVERY actual block and internal coefficient,
+plus the identity at zero width and original sewing. It is not enough
+to compare the Fock vacuum block, eigenvalues, normalized graph kernel,
+or quadratic Grassmann coefficient alone. For a supplied coherent CAR
+description compare the complete finite Grassmann symbol, including
+scalar and all higher coefficients, on the original pairing convention.
+
+An arbitrary rescaling L_epsilon->(1-c epsilon)L_epsilon changes H by
+cI and the absolute source. It fails this test unless c is the actual
+original scalar derivative. No normalized-fiber loss is allowed.
+
+This is a sufficient finite-regulator identification theorem, not an
+evaluation of an unavailable primitive strip integral. It does not assume
+a spectral trace is automatically local in physical time. If the actual
+original S_adm kernel retains memory/rest legs, keep those legs in the
+common strip space rather than resetting them after each slice. Neither
+the norm o(epsilon) bound nor common-domain convergence at an unbounded
+regulator follows from a formal core commutator; a separate actual
+operator convergence proof would be needed there.
+
+5. Actual original finite matrix test and independent review
+------------------------------------------------------------
+Graph-first code discovery in the indexed owning repository and exact snippets:
+ experiments/tfpt-discovery/tfpt3p1d_coupled_wall_probe.py
+ TreeGauge.canonicalize:334-361, coupled_hamiltonian:421-517.
+Root executed the UNCHANGED coupled_hamiltonian at g=0.8, the first declared
+coupling in the original model. Every other constructor argument retained
+its original default. This is not a derived primitive physical coupling.
+
+Whole native dimension4096 =32 original Z2 cycle coordinates times128 even
+matter states; H has78336 stored entries. Hermiticity, all12 electric
+involutions, their pairwise commutation and absence of cross-coordinate
+blocks in the retained R are exact in the computed matrix entries.
+H=H_E+R has floating residual8.88e-16. No term or original offset is removed.
+With c=g²/2, the original electric quotient operators X_l give
+ H_E=c sum_l(I-X_l),
+ exp(-s H_E)=exp(-12cs) product_l[cosh(cs)I+sinh(cs)X_l].
+The full R coordinate blocks retain magnetic,mass,matter hopping and DET.
+Thus exact block exponentials and symmetric Strang composition implement
+the full same-source field integration with all its internal matrix marks.
+
+At diagnostic t0.2, full-vector errors versus independent sparse exponential
+for4,8,16 slices are2.693321492e-4,6.742529507e-5,1.686211705e-5.
+One actual boson-coordinate mark and even matter mark give whole-word vector
+errors1.808698568e-6,4.528993390e-7,1.132702707e-7 for the same slice counts.
+These are two numerical legs,not exhaustive all-source tests. All finite
+bounded source insertions follow analytically from operator-norm Strang
+convergence and the kernel identities. No new convergence claim from counts.
+
+The q0->q6 electric block has entries-0.32,+0.32 and no internal offdiagonal
+entries. Replacing it by the EMPTY OCCUPATION coordinate entry times identity
+has norm error0.64=g². This is not the physical OS vacuum or ground state.
+Analytically the block is -(g²/2)diag((-1)^popcount(gauge_mask & occupancy)),
+with gauge_mask supplied by the actual original canonicalize. Its path jump
+must retain this whole occupation-dependent phase. No coordinate-independent
+positivity obstruction or new physical interaction is inferred.
+
+A separate analytical source/code review checked the electric exponential,
+all retained terms,projection/normalization conventions and numerical scope.
+No sign/projection/normalization error was found. Scalar positivity of the
+reference sampling process does not turn these matrix weights into physical
+positive scalar boson probabilities. Existing R113 and physical thermal
+source prerequisites remain. Root g0.8 check/results are retained in
+check_native_matrix_source.py and native-matrix-source-results.json.
+
+6. Original-source and mathematical scope
+----------------------------------------
+R113 PROJECTED-JOINT-SOURCE-GENERATOR-20261103.txt gives the existing
+conditional joint generator and operator-valued H_B body. Sections 1-4
+here apply after that whole generator has ACTUALLY been identified and
+evaluated. They do not calculate the unknown primitive H_B by definition.
+ADMISSIBLE-ACTION-DERIVATION-20261103.txt retains its original physical
+linear-fermion-contact premise; this proof does not silently assert it.
+
+Existing finite physical Hamiltonian source: PHYSICAL-THERMAL-SOURCE.txt
+supplies actual reducing P, whole bounded Euclidean words and their
+thermodynamic limit. Every bounded kernel-expanded word equals that same
+finite word, so its sum has the same already established limit. Individual
+configuration kernels need not have independent thermodynamic limits.
+No global finite infinite-volume partition number is inferred.
+
+For the primitive spectral S_adm branch, (12) is still to be evaluated on
+its actual entire original field/domain/reference chart. No result here
+declares that equality established, renames -log omega as the action,
+or promotes the primitive physical spectrum/ledger/F1 to solved.
+
+Primary context checked: arXiv:2311.08564 is WITHDRAWN and states that its
+technical contributions were superseded by arXiv:2405.12316. It is not used
+as an authority for any claim here. The finite matrix identities above
+are proven directly by ODE uniqueness and the Dyson expansion, with
+independent analytical/code review. No novelty priority is claimed.

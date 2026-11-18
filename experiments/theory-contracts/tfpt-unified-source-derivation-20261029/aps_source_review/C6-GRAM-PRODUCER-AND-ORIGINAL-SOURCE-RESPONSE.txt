@@ -1,0 +1,164 @@
+C6 Gramproducer, tatsächlicher Quellenconsumer und der neue Hardybeitrag
+2026-10-30. Enger Originalaudit, analytische Ableitung. Keine Atlasänderung.
+
+1. Ergebnis und erster tatsächlicher Anschluss
+
+Der ursprüngliche positive Transportkernel besitzt einen vollständigen
+endlichen Producer. Die Operation ist Gramnormalisierung, keine nachträglich
+gewählte Normalintegration. Für A=D_f P_str und H=A* A auf Ran P_str gilt
+
+  K_str=H^(-1/2),  V=A K_str,  V*V=I.                     (1)
+
+K_str ist eindeutig durch den gegebenen D_f und P_str bestimmt. V ist der
+kanonische polare isometrische Faktor. Diese beiden Operatoren erfüllen
+verschiedene Aufgaben: Die ORIGINALFORMEL für Y lautet Hol K_str, nicht
+Hol V. Eine polare Feldisometrie darf daher den originalen Kopplungsconsumer
+nicht stillschweigend ersetzen.
+
+Der aktuelle Hardybeitrag hat bereits einen originalen primitiven
+Wedgeconsumer. Dessen Ausführung ist nicht erneut offen. Noch nicht
+identifiziert ist seine konkrete Rolle als Variation des ursprünglichen
+D_f/der Holonomie oder als ausgewerteter Summand ihrer ursprünglichen
+Transportoperation. Eine einzelne ausgewertete Komponente muss dabei
+keineswegs die ganze Yukawamatrix sein.
+
+2. Originalquellen und tatsächliche Rechenfolge
+
+Alle folgenden Pfade liegen unter documents/ im TFPT Repository.
+
+EM3 = archive--tfpt-45--source_extracts--03_em_flavor_source/sections/
+003-subsection-discrete-phase-operator-and-transport-grammar.tex
+paper-source:8c374b792c3f7ed5c3c4211f
+SHA256 00a2cf1b249b77280dbbf6dfb41c91c77e08aa63e0f30b682d1a8a621f3dd7ec
+Zeilen3-12: U6, D_y=yI-delta U6, Fourierform des Sechserzyklus.
+Zeilen91-108: P_str und K_str als inverse Quadratwurzel.
+Zeilen109-125: F_tr=-sum_y log det(D_y*D_y+eps²), Stationarität in delta.
+
+EM4 = gleiche Quelle, 004-source.tex
+paper-source:7268c6c6db6ca8a62299c024
+SHA256 107d525221eb816043dbf4fb1a3c7e8244d3e24a5a5bcbfe1c2c34d8ee192f4a
+Zeilen164-239: Y_ij=<ei,Hol_G(nabla_F*) K_str ej>.
+Zeilen353-389: exakter endlicher C6 Resolvent und Fourier/Pfadlesart.
+
+EM5 = gleiche Quelle, 005-source.tex
+paper-source:e82e66eae30ffc1f14630794
+SHA256 786d2619e775775d70adf177794138485b261968042a880b2f0f617bb0111814
+Zeilen2-25: sechs Singularwerte und positive kleinste Lücke.
+Zeilen42-94: D_f=D_(2/3)+V_adm, [P_str,V_adm]=0,
+             ||V_adm||<epsilon_f/2, daher H>=epsilon_f²/4.
+Zeilen118-198: endliche positive C6 Greenalgebra.
+Zeilen233-242: der Originaltext selbst trennt die exakte
+Kompressionsidentität von einer Herleitung des Transports aus dem Carrier.
+
+Damit folgt (1) unmittelbar für die ursprüngliche gapstabile Klasse.
+Es ist keine zusätzliche freie Polarregel für einen neuen Orbitkernel.
+
+3. Die endlichen Pfadsummanden und die Quadratwurzel sind auswertbar
+
+Die Originalidentität lautet
+
+ D_y^(-1)=[sum_(m=0)^5 y^(5-m)delta^m U6^m]/(y^6-delta^6). (2)
+
+Sie liefert genau sechs bereits vorhandene Transportworte. Der regulierte
+positive Kernel ist H_y^(-1), H_y=aI-2b C mit C=(U6+U6*)/2,
+a=y²+delta²+eps², b=y delta. Original EM5 reduziert ihn exakt modulo
+4C^4-5C²+I=0. Auch die Quadratwurzel braucht keinen neuen Suchansatz:
+
+ r(c)=(a-2bc)^(-1/2), c in {1,1/2,-1/2,-1};
+ E1=(r(1)+r(-1))/2, Eh=(r(1/2)+r(-1/2))/2,
+ O1=(r(1)-r(-1))/2, Oh=(r(1/2)-r(-1/2))/2.
+
+ H_y^(-1/2)=[(4Eh-E1)/3]I+[(8Oh-O1)/3]C
+             +[4(E1-Eh)/3]C²+[4(O1-2Oh)/3]C³.             (3)
+
+Einsetzen der vier tatsächlichen Cosinuswerte beweist (3). Diese Formel
+ist eine konkrete Spektralrechnung im ORIGINALEN endlichen Transport,
+keine neue Zeitentwicklung. Für allgemeines V_adm ist (1) die passende
+Operation; (3) gilt für den nackten C6 Operator, nicht für jede nicht-
+kommutierende Störung oder beliebige nichtreduzierende Kompression.
+
+4. Die tatsächliche Quellenvariation ist ebenfalls konkret
+
+Bei festem P_str und zulässiger D_f(s)=D_f+s W gilt
+
+ delta H=P_str(W*D_f+D_f*W)P_str,
+ delta[-log det(H+eps²)]=-Tr((H+eps²)^(-1) delta H).         (4)
+
+Für die inverse Quadratwurzel selbst gilt exakt
+
+ delta K=-(1/pi) integral_0^infty t^(-1/2)
+                (H+t)^(-1) delta H (H+t)^(-1) dt.          (5)
+
+(5) ist eine Funktionalkalkülidentität, KEIN aus P1 neu hergeleitetes
+Properzeitmaß. Insbesondere liefert (4) nicht ohne weitere Operation K.
+Die ursprüngliche Kopplungsvariation ist vielmehr
+
+ delta Y=(delta Hol)K+Hol(delta K),                        (6)
+
+in den vorhandenen transportierten Familienrahmen. Die Basisvariation ist
+mitzuführen, wenn die Quelle selbst den Rahmen variiert. Diese Formeln
+geben den kleinsten ausführbaren Test einer vorgeschlagenen originalen
+Einfügung. Der Hardyterm darf ein Matrixelement von (6), ein tatsächliches
+Transportwort oder eine andere originale Einfügung sein; die Behauptung
+W=Hardyterm ist durch seine bloße Zulässigkeit als endliche Matrix nicht
+bewiesen. D_f hier ist der Transportdenominator, nicht automatisch v252 D_F.
+
+5. Ganze Quelle: was K_str bereits trägt und was seine Norm nicht trägt
+
+Schon auf dem nackten ursprünglichen C6 Zweig y=2/3 hat der U6=1 Vektor
+H_y-Eigenwert epsilon_f² bei eps=0. Mit 0<epsilon_f<1/3 gilt
+||K_str e||²=epsilon_f^(-2)>9. Daher wäre eine behauptete CAR-Feldkarte
+ a(e) -> a(K_str e)
+keine Sternhomomorphie: der Antikommutator wäre epsilon_f^(-2) statt1.
+Dies ist ein Test im nackten C6 Raum; er setzt den Vektor nicht ungeprüft
+in jede anschließende P_str Restriktion ein. Allgemein braucht eine
+solche Feldkarte K* K=I, während hier K* K=H^(-1) gilt.
+
+Der polare V aus (1) erhält dagegen die CAR auf seinem tatsächlichen
+Eingangsraum. Ein selbstdualer Feldtransport muss zusätzlich die bereits
+gegebenen konjugierten Slots mittragen. Zustand, beide Ränder, Reflexion
+und Zeit folgen aus einer passenden gemeinsamen Quellenabbildung, etwa
+G' V=V G, C' V=V C und h' V=V h; sie folgen nicht aus K>0 allein.
+Dies fordert keinen neuen Zustand für den schon vollständig gegebenen Seed.
+Unsere fertige G/W/T_faces Karte trägt genau dessen ganze Feldprodukte,
+Zustand, Reflexion und Zeit. (1) oder die Formel Hol K identifiziert diese
+Karte noch nicht mit dem strukturellen C6 Consumer.
+
+Die stärkste weitere Originalroute bleibt ausdrücklich erhalten: QFT4
+004-source.tex:111-155 baut T_V aus lokalen Greenkernen, diagonalen
+Zulässigkeitsgewichten und Selektor und benutzt dessen Perronvektor.
+QFT8 008-section-relative-reflection-positivity-with-fermions.tex:143-168,
+179-253 benutzt das ganze Z_adm und seine Quellenableitungen für OS/CAR.
+Dort steht keine Gleichung G_F5=H_y^(-1/2) oder X_F5=H_y^(-1/2).
+K_str als einen Kopplungskoeffizienten in dieser ganzen Quelle zu verwenden
+ist typgerecht. Ihn selbst zur ganzen CAR Kovarianz zu erklären wäre eine
+andere, durch den Normtest widerlegte Behauptung.
+
+6. Verbindung zum bereits ausgeführten primitiven Consumer
+
+ORIGINAL-PRIMITIVE-WEDGE-CONSUMER-HARDY-REVIEW.txt und
+HARDY-BMU-FIRST-NONZERO-ENTRY.txt werden unverändert wiederverwendet:
+Der ursprüngliche Wedgekanal liefert für Q=c0 wedge w1,
+u^c=c1 wedge c2,H=w2 den Beitrag +kappa; die genaue v252/KO Auslese
+trägt den festen Konventionsfaktor -kappa. kappa ist tatsächlich ungleich0.
+Das ist eine ausgeführte ursprüngliche Carrierkontraktion eines konkreten
+Quellenbeitrags. Es begründet weder seine Gleichsetzung mit dem ganzen Y
+noch seinen Einsatz als V_adm in (4). Der nächste positive Originaltest
+ist deshalb die tatsächliche Darstellung eines ursprünglichen C6 Wortes
+oder einer gebundenen Quellenvariation in diesem schon gegebenen G/W
+Quellenraum und die Auswertung von (6) beziehungsweise des Wortes daran.
+Eine zusätzliche freie Integraltransformation wurde hier nicht eingeführt.
+
+Reuse: finding:original-z6-positive-structural-kernel-does-not-supply-
+oriented-phase-observable und K3-COMMON-PHASE-CP-REVIEW.txt bleiben mit
+ihrem bisherigen Scope bestehen. Keine neue CP Klassifikation oder
+behauptete vollständige P1 Lösung; keine Suite und kein Parameterscan.
+
+Quellenregister für die beiden ganzen Quellpfade:
+QFT4 = documents/archive--tfpt-45--source_extracts--04_qft_source/sections/
+004-source.tex; paper-source:87d8d6e4c79b70b432a7cb68; SHA256
+a5d1cc26f80d2f1d5af3d89b94cf8ff8912b572040614d4e1c27f1fe3b747126.
+QFT8 = gleicher Ordner,
+008-section-relative-reflection-positivity-with-fermions.tex;
+paper-source:0a20b5f10cab5406141fa04e; SHA256
+898aa879cf6a3eb6464d3180274bc2fc028408aeec9676af70a862dad9c3f4dc.

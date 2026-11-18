@@ -1,0 +1,467 @@
+CROSSCAP KRAGENZEIT: DER KLEINSTE ENTSCHEIDENDE ZEIT UND W8 TEST
+=================================================================
+26. Oktober 2026
+
+Urteil
+------
+
+Der endliche Crosscap Cauchyzustand ist kein Grundzustand derselben durch
+B_Sigma bestimmten CAR Zeit. Pro positivem Eigenwert lambda besitzt sein
+Calderónprojektor einen explizit von null verschiedenen Kommutator mit
+B_Sigma. Der zugehörige Fockvektor ist eine kohärente Überlagerung aus
+Vakuum und neutralem Teilchen Loch Paar. Unter
+
+  H_exc = lambda (N_p+N_h)
+
+rotiert die Paarphase mit 2 lambda und der Zustand ist nicht stationär.
+
+Wiederholtes Ankleben eines normalen Kragens hat trotzdem eine exakte
+Wirkung: Es multipliziert die Paaramplitude mit exp(-2 s lambda) und führt
+im Grenzwert zum Tree Kanal NS Vakuum. Der Grenzwert gilt auf dem vollen
+Fockraum in Spurweite. Er liefert aber nicht den Quarter Hardy Zustand des
+Loop Kanals. Die Pin und Randmarkierung, aus der alpha=1/4 oder 3/4 folgt,
+verschwindet aus dem normierten Tree Vakuumlimit.
+
+Für das ursprüngliche P1 ist dieser Grenzübergang nicht hergeleitet. Die
+Originalquelle setzt tau_t, omega und D_coll gemeinsam als operative Daten
+ein. Sie gibt weder eine Sewing Kompositionsregel noch die Identität von
+tau_t mit der normalen D_coll Semigruppe noch die Identität von omega mit
+dem Crosscap Cauchyzustand an. Die primitive Wirkung ist eine relative
+Spektralwirkung und kein Gaußscher Crosscap Normkern. Damit ist die neue
+Route im flachen Modell exakt, schließt aber die fehlende P1 zu W8
+Zustandsidentifikation noch nicht.
+
+1. Was P_C tatsächlich projiziert
+---------------------------------
+
+Der Calderónraum eines Diracoperators auf einem Gebiet ist der Raum der
+Randspuren aller Lösungen im Inneren. Bei seiner Konstruktion ist der
+Randwert frei. Im vorliegenden Kragen ist daher
+
+  C_c(L) = { u=phi(0) : (partial_r+B_Sigma)phi=0,
+                         A phi(L)=c phi(L) }
+
+und P_C,c(L) ist der orthogonale Projektor auf C_c(L).
+
+Die lokale Linie
+
+  sigma_1 psi = b psi
+
+gehört dagegen zur Domäne einer selbstadjungierten physischen Realisierung
+D_c,b. Würde man sie schon bei der Definition von P_C am freien Außenrand
+auferlegen, ersetzte man den Cauchyraum durch den Schnitt
+
+  C_c(L) intersect Ran(Q_b).
+
+Das ist ein anderes Problem. Insbesondere gilt für den vollständigen
+flachen Möbiusoperator
+
+  dim ker D_c,b = 1  falls cb=1,
+                  0  falls cb!=1.
+
+Für c=+i oder -i und b=+1 oder -1 ist cb immer ungleich eins. Der physische
+Pin minus Operator hat also keinen Nullvektor. Das widerspricht dem
+nichttrivialen Calderónraum nicht, denn P_C ist ohne die physische b Linie
+definiert. Die b Linie tritt erst bei der Rand Crosscap Amplitude oder beim
+Schnitt mit einer selbstadjungierten Domäne ein.
+
+Diese Typtrennung ist auch diejenige des P1 Originals. Dort enthält das
+einseitige Randdatum B_Sigma und seinen Calderónprojektor. Es wird an dieser
+Stelle keine lokale b Linie als Teil der Definition von P_C genannt.
+
+2. Exakte Zwei mal Zwei Kovarianz
+---------------------------------
+
+Wähle für lambda>0 eine normierte Mode e_+ mit
+
+  B_Sigma e_+ = lambda e_+,
+  e_- = A e_+,
+  B_Sigma e_- = -lambda e_-,
+  A e_- = -e_+.
+
+In der Basis (e_+,e_-) sind
+
+  B_lambda = lambda [ 1  0 ],
+                    [ 0 -1 ]
+
+  A_lambda = [ 0 -1 ].
+             [ 1  0 ]
+
+Die Crosscap Bedingung am inneren Ende des Kragens gibt für den Randwert
+u=a e_+ + d e_-
+
+  d = t_lambda a,
+  t_lambda = -c exp(-2 L lambda),
+  r_lambda = |t_lambda| = exp(-2 L lambda).
+
+Der Projektor auf diese Graphgerade lautet exakt
+
+  P_lambda(L,c) = 1/(1+r_lambda^2)
+                  [ 1                 conjugate(t_lambda) ] .       (1)
+                  [ t_lambda          r_lambda^2             ]
+
+Damit folgt
+
+  [B_lambda,P_lambda]
+    = 2 lambda/(1+r_lambda^2)
+      [ 0                 conjugate(t_lambda) ] .                    (2)
+      [ -t_lambda         0                   ]
+
+Folglich
+
+  ||[B_lambda,P_lambda]||
+      = 2 lambda r_lambda/(1+r_lambda^2)
+      = lambda/cosh(2 L lambda),                                    (3)
+
+  ||[B_lambda,P_lambda]||_HS^2
+      = 8 lambda^2 r_lambda^2/(1+r_lambda^2)^2
+      = 2 lambda^2/cosh(2 L lambda)^2.                               (4)
+
+Der Kommutator ist für jede endliche positive Kragenlänge ungleich null.
+Dass A und die Graphabbildung mit |B_Sigma| verträglich sind, reicht nicht:
+Auf diesem Paar ist |B_Sigma|=lambda I und kommutiert deshalb mit jeder
+Zwei mal Zwei Matrix. Die physische Vorzeicheninformation der CAR Zeit
+steckt in B_Sigma, und genau mit ihr kommutiert P_lambda nicht.
+
+3. Derselbe Befund im Fockraum
+------------------------------
+
+Fixiere die Phasenkonvention so, dass der normierte Paarvektor zu (1) ist
+
+  |Psi_lambda,L,c>
+     = (|00> + t_lambda |ph>)/sqrt(1+r_lambda^2).                    (5)
+
+Unter H_exc=lambda(N_p+N_h) gilt in reeller Zeit
+
+  exp(-i tau H_exc)|Psi_lambda,L,c>
+    = (|00> + t_lambda exp(-2 i lambda tau)|ph>)
+      /sqrt(1+r_lambda^2).                                          (6)
+
+Der Zustand ist bei endlichem L nicht stationär. In der geraden
+Zweidimensionalität span{|00>,|ph>} ist
+
+  [H_exc,rho_lambda]
+    = 2 lambda/(1+r_lambda^2)
+      [ 0                  -conjugate(t_lambda) ] .                  (7)
+      [ t_lambda           0                    ]
+
+Sein Energieüberschuss und seine Energievarianz sind
+
+  E_lambda(L)
+    = <H_exc>
+    = 2 lambda r_lambda^2/(1+r_lambda^2)
+    = 2 lambda/(exp(4 L lambda)+1),                                 (8)
+
+  Var_lambda(H_exc)
+    = 4 lambda^2 r_lambda^2/(1+r_lambda^2)^2
+    = lambda^2/cosh(2 L lambda)^2.                                  (9)
+
+Der kleinste neutrale Feldtest sieht dieselbe Rotation. Für entgegengesetzte
+Ladungen von p und h ist
+
+  X_lambda = a_p^dagger a_h^dagger + a_h a_p
+
+neutral. Seine Erwartung ist bis zur festgelegten CAR Vorzeichenkonvention
+
+  <X_lambda> = 2 Re(t_lambda)/(1+r_lambda^2),                        (10)
+
+und unter der Zeitentwicklung wird t_lambda durch
+t_lambda exp(-2 i lambda tau) ersetzt. Eine Ladungsneutralität macht den
+Crosscap Zustand also nicht zeitstationär. Allgemein gilt für ein neutrales
+Monom M mit Erzeugerenergien lambda_i und Vernichterenergien mu_j
+
+  [H_exc,M] = (sum_i lambda_i - sum_j mu_j) M.                       (11)
+
+Für einen späteren W8 Test ist deshalb Energieausgleich jedes tatsächlich
+auftretenden CAR Monoms die relevante Bedingung. E8 Invarianz und neutrale
+Gesamtladung allein beweisen diesen Ausgleich nicht. Ohne die konkrete P1
+zu W8 Modenabbildung darf (11) nicht durch einen bloßen Oktik Grad ersetzt
+werden.
+
+4. Normales Sewing ist exakte euklidische Filterung
+---------------------------------------------------
+
+Klebt man an den äußeren Rand einen weiteren Produktkragen der Länge s,
+dann wird L durch L+s ersetzt. Pro Modenpaar gilt exakt
+
+  t_lambda(L+s) = exp(-2 s lambda) t_lambda(L),
+
+  |Psi_lambda,L+s>
+    = exp(-s H_exc)|Psi_lambda,L>
+      /||exp(-s H_exc)|Psi_lambda,L>||.                              (12)
+
+Das ist keine stationäre Zeitentwicklung, sondern euklidische
+Grundzustandsfilterung.
+
+Für den vollen komplexen Fockraum sei m_lambda die Multiplizität im
+positiven Spektralraum von B_Sigma. Dann faktorisiert der Crosscap Vektor
+über alle Paare. Mit
+
+  S_L = sum_{lambda>0} m_lambda exp(-4 L lambda)
+
+ist sein quadriertes Vakuumoverlap
+
+  F_L = |<0|Psi_L>|^2
+      = product_{lambda>0}(1+exp(-4 L lambda))^(-m_lambda).          (13)
+
+Aus log(1+x)<=x folgt
+
+  1-F_L <= 1-exp(-S_L) <= S_L,
+
+  || |Psi_L><Psi_L| - |0><0| ||_1
+      = 2 sqrt(1-F_L)
+      <= 2 sqrt(S_L).                                                (14)
+
+Auf dem kompakten NS Randkreis ist exp(-4 L B_+) spurklassig. Deshalb ist
+S_L endlich und geht für L gegen unendlich gegen null. Gleichfalls
+
+  E_L = sum_{lambda>0} m_lambda
+          2 lambda/(exp(4 L lambda)+1)
+      <= 2 Tr(B_+ exp(-4 L B_+)) -> 0.                              (15)
+
+Im konkreten komplexen Rang zwei Modell auf dem Kreis der Länge zwei sind
+
+  lambda_n = pi(n+1/2),   m_lambda_n=2,
+
+und somit
+
+  S_L = 2 exp(-2 pi L)/(1-exp(-4 pi L)).                            (16)
+
+Damit ist der volle Fock Grenzwert quantitativ bewiesen.
+
+Dieser globale Vektorzustand ist weder bei endlichem L noch im Grenzwert
+treu auf B(Fock). Er ist rein und besitzt immer Projektionen ungleich null,
+auf denen sein Erwartungswert null ist. Eine treue Einschränkung auf eine
+lokale Typ III Algebra wäre eine zusätzliche AQFT Aussage. Sie folgt nicht
+aus dem Graphprojektor oder aus (12) bis (16).
+
+5. Was der Grenzwert auswählt und was er nicht auswählt
+------------------------------------------------------
+
+Die Filterung (12) wählt den positiven Spektralraum des Tree Operators
+B_Sigma und damit das NS Vakuum des räumlichen x Kreises auf dem
+Orientierungscover. Sie wählt nicht den Quarter Hardy Zustand des offenen
+Loop Kanals.
+
+Der Unterschied ist schon an den Markierungen sichtbar:
+
+  Tree Kanal:
+    B_Sigma auf dem Länge zwei NS Kreis,
+    Spektrum lambda_n=pi(n+1/2),
+    lim_{L->infinity}|Psi_L,c> = |0_NS> unabhängig von c und b.
+
+  Loop Kanal:
+    B_alpha=-i partial_x auf dem Länge eins Kreis,
+    exp(2 pi i alpha)=cb,
+    alpha=1/4 oder 3/4.
+
+Der Quarter Charakter bleibt in der Rand Crosscap Amplitude und in der
+offenen Spektraldomäne erhalten. Er ist kein Label des normierten Tree
+Vakuumlimits. Große Tree Länge entspricht beim Kanalwechsel auch nicht der
+offenen Grundzustandsgrenze. Deshalb kann man das alte Quarter Hardy
+Vakuum nicht durch L gegen unendlich aus (12) ableiten.
+
+Das engere positive Ergebnis lautet: Dieselbe Möbiusgeometrie erzeugt den
+Quarter Operator im Loop Kanal und den Crosscap Graph im Tree Kanal. Ein
+lokaler Sewing Isomorphismus zwischen deren CAR Netzen und Zuständen ist
+weiterhin die fehlende Herkunftsrelation.
+
+6. Hat das Original P1 dieses wiederholte Sewing bereits?
+---------------------------------------------------------
+
+Nein. Die entscheidenden Originalstellen sagen:
+
+  * 001, Zeilen 42 bis 55: B_Sigma und P_C gehören zum einseitigen
+    Randdatum. Die geschlossene Struktur wird daraus behauptet.
+
+  * 001, Zeilen 65 bis 80: D_+=gamma_n(partial_n+B_Sigma) ist die
+    Produktform im Kragen.
+
+  * 001, Zeilen 302 bis 317: S_prim ist
+
+      tr f(D_rel/chi_seed) - tr f(D_ref/chi_seed)
+        + i pi Delta eta_Sigma/2.
+
+    Das ist eine relative Spektralwirkung. Die Stelle definiert weder einen
+    Gaußschen Schwingerfunktional noch einen Crosscap Vektor noch die Norm
+    einer durch den Kragen präparierten Randwellenfunktion.
+
+  * 001, Zeilen 319 bis 342: Der physische lokale Operatornet wird erst
+    nach einer späteren OS Rekonstruktion auf Ran(P_adm) definiert.
+
+  * 001, Zeilen 345 bis 350: Bernstein Profile realisieren analytisch einen
+    bereits festgelegten Transferkanal. Sie sollen seine Zulässigkeit nicht
+    erst erzeugen.
+
+  * 002, Zeilen 103 bis 120: Der operative Seed enthält
+
+      (A_loc,tau_t,Theta,omega,[u_Sigma],D_coll).
+
+    Somit sind Zustand, Zeit und Kragenoperator gleichzeitig Eingaben.
+
+  * 002, Zeilen 122 bis 143: Der kurze Beweisentwurf sagt, dass
+    Reflexionspositivität und positives Zeitnetz den OS Hilbertraum
+    rekonstruieren und D_coll den B_Sigma Operator bestimmt. Er identifiziert
+    den OS Transferoperator nicht mit dGamma(|B_Sigma|).
+
+In den einschlägigen Originalabschnitten gibt es keine Axiomformel für die
+Komposition zweier Kragen, keine Gleichung tau_s=exp(-s dGamma(|B_Sigma|))
+und keine Gleichung omega=omega_P_C. Clustering ist eine Eigenschaft des
+bereits eingesetzten omega. Es beweist diese fehlenden Identitäten nicht.
+
+Ein späterer Forschungscontract sagt korrekt, dass OS Rekonstruktion aus
+einem gegebenen reflexionspositiven Zustand einen kanonischen Transfer
+T=exp(-H) liefert. Derselbe Contract hält aber die Identifikation seiner
+vollen L2 Dynamik mit der geometrischen Nahtenergie als offene
+Bisognano Wichmann Bedingung fest. Das füllt die Lücke des Originals nicht.
+
+Damit ist (12) im flachen Crosscap Modell ein bewiesener geometrischer
+Semigruppenpfad. Ihn als ursprüngliche P1 Zeit zu verwenden verlangt genau
+eine neue, klar lokalisierte Identität:
+
+  T_s^(OS,P1) = exp(-s H_exc)
+  auf dem rekonstruierten zyklischen OS Hilbertraum,
+
+  omega_P1 = der aus P_C,c(L) erzeugte Crosscap Zustand.                 (17)
+
+Hier ist T_s der positive euklidische Transfer und H_exc der positive
+Anregungshamiltonian nach der Teilchen Loch Konstruktion. exp(-s H_exc)
+ist keine reelle Zeitautomorphie der Algebra. Eine rekonstruierte reelle
+Zeit wirkt gegebenenfalls durch Ad(exp(i t H_exc)). Die nichtstationaere
+endliche Crosscap Praeparation darf bei festem H_exc nicht als dessen
+invarianter Vakuumzustand bezeichnet werden. Ohne die tatsaechlichen
+Quellen und Zeitabbildungen darf man weder den Fock Grenzwert noch dessen
+Vakuum als P1 Zustand ausgeben.
+
+7. Unabhängiger Referee Test des normalen Flips
+-----------------------------------------------
+
+Setze
+
+  D = -i(sigma_1 partial_x + sigma_2 partial_w),
+  (R_w psi)(x,w)=psi(x,-w).
+
+Zwei lineare Abbildungen müssen getrennt werden.
+
+Erstens ist der geometrische Pin Lift
+
+  S_w = sigma_1 R_w.                                                    (18)
+
+Aus R_w partial_w=-partial_w R_w und den Pauli Relationen folgt direkt
+
+  S_w D = D S_w,       S_w^2=1.                                       (19)
+
+Falls psi(x+1,-w)=c sigma_1 psi(x,w) und sigma_1 psi=b psi am physischen
+Rand, dann erfüllt S_w psi dieselben beiden Bedingungen. Also
+
+  S_w : Dom(D_c,b) -> Dom(D_c,b).                                     (20)
+
+Der Operator sigma_1 R_w ist daher eine domänenerhaltende Symmetrie. Er
+ist nicht die Abbildung (b,c)->(-b,-c).
+
+Zweitens sei gamma_w=i sigma_2 die normale Cliffordmultiplikation und
+
+  N_w = gamma_w R_w.                                                    (21)
+
+R_w allein erhält die beiden Label. gamma_w antikommutiert mit sigma_1.
+Daher
+
+  N_w : Dom(D_c,b) -> Dom(D_-c,-b).                                   (22)
+
+Außerdem ergibt die explizite Konjugation
+
+  R_w D R_w^-1 = -i(sigma_1 partial_x-sigma_2 partial_w),
+
+  gamma_w sigma_1 gamma_w^-1=-sigma_1,
+  gamma_w sigma_2 gamma_w^-1= sigma_2,
+
+und somit
+
+  D_-c,-b N_w = -N_w D_c,b.                                           (23)
+
+Die konstante Chiralität Gamma=sigma_3 liefert denselben Domänentransport
+und dieselbe Antikommutation ohne räumlichen Pullback. Das ist die in
+Chakrabortys Proposition 8.3 tabellierte Kontrolle.
+
+Die korrigierte geometrische Aussage lautet also:
+
+  sigma_1 R_w       erhält (b,c) und kommutiert mit D,
+  gamma_w R_w       schickt (b,c) nach (-b,-c) und antikommutiert mit D,
+  Gamma=sigma_3     schickt (b,c) nach (-b,-c) und antikommutiert mit D.
+
+Das Produkt bc und damit der Quarter Loop Charakter bleiben beim
+entgegengesetzten Kopientransport invariant.
+
+8. Status und Konsequenz für den W8 Herkunftspfeil
+--------------------------------------------------
+
+BEWIESEN im flachen komplexen Rang zwei Möbiusmodell:
+
+  1. P_C ist ein freier Cauchydatenprojektor und nicht ker(D_c,b).
+  2. Die Modenkovarianz (1), ihr Kommutator (2) und alle Normen (3), (4).
+  3. Nichtstationarität, Energieüberschuss und neutraler Paarfeldtest
+     (5) bis (11).
+  4. Wiederholtes Kragensewing, voller Fock Spurabstandsgrenzwert und
+     Energiegrenzwert (12) bis (16).
+  5. Der Grenzwert ist das unmarkierte Tree NS Vakuum, nicht das Quarter
+     Hardy Vakuum.
+  6. Die drei verschiedenen Normalabbildungen (18) bis (23).
+
+BEWIESEN über den Wortlaut des P1 Originals:
+
+  Das Original stellt keine Gleichung bereit, die seine tau_t und omega
+  mit dieser Kragensemigruppe und diesem Crosscap Zustand identifiziert.
+  Seine relative Spektralwirkung ist nicht der benötigte Normkern.
+
+OFFEN und jetzt auf eine Relation komprimiert:
+
+  Die Zustands und Zeitidentität (17), zusammen mit einem lokalen Sewing
+  Isomorphismus, der den Loop Quarter Operator samt CAR Normalordnung und
+  W8 Feld aus demselben P1 Funktional transportiert.
+
+Der Test schließt die Crosscap Route nicht aus. Er verhindert aber die
+zu starke Abkürzung
+
+  [U,|B_Sigma|]=0  =>  gleicher stationärer CAR Zustand
+
+und ebenso die Abkürzung
+
+  langer normaler Kragen  =>  Quarter Hardy Vakuum.
+
+Quellen
+-------
+
+P1 Original:
+
+  documents/archive--tfpt-45--source_extracts--01_boundary_kernel_source/
+  sections/001-section-primitive-core-and-carrier-interface-handoff.tex,
+  Zeilen 42 bis 55, 65 bis 80, 302 bis 350.
+
+  documents/archive--tfpt-45--source_extracts--01_boundary_kernel_source/
+  sections/002-section-intrinsic-closed-branch-and-canonical-rigid-obje.tex,
+  Zeilen 103 bis 143.
+
+Flaches Möbius Spektrum und Domänen:
+
+  Anik Chakraborty,
+  Pin Equivariance and Local Dirac Boundary Problems on the Flat Möbius Band,
+  arXiv:2610.03745v1, Theorem 7.2, Theorem 8.2 und Proposition 8.3.
+  https://arxiv.org/html/2610.03745v1
+
+  Theorem 8.2 gibt dim ker D_c,b=0 für cb!=1. Proposition 8.3 gibt den
+  unabhängigen Chiralitätstransport (c,b)->(-c,-b).
+
+Möbius Kanalwechsel und Crosscap Zustände:
+
+  Shun-ichi Yamaguchi,
+  The Critical Ising Model on a Möbius Strip,
+  Prog. Theor. Phys. 97 (1997) 703,
+  arXiv:cond-mat/9704039.
+  https://arxiv.org/abs/cond-mat/9704039
+
+  Gil Young Cho, Chang-Tse Hsieh, Takahiro Morimoto und Shinsei Ryu,
+  Topological Phases Protected by Reflection Symmetry and Cross-cap States,
+  Phys. Rev. B 91 (2015) 195142,
+  arXiv:1501.07285.
+  https://arxiv.org/abs/1501.07285
+

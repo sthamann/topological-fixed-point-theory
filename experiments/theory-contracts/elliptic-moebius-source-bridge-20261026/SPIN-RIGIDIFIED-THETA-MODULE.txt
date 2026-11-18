@@ -1,0 +1,276 @@
+THE SPIN-RIGIDIFIED THETA MODULE IS THE NATIVE N64 MODULE
+Finite Heisenberg and Clifford closure after the marked q divisor twist
+2026-10-26
+
+VERDICT
+
+PROVED at the finite geometric module level, conditional only on the already
+isolated physical insertion rule.
+
+Let A=Jac(C), let L=O_A(2 Theta), and use the source-selected spin
+normalization and the marked negative-divisor line from
+MARKED-Q-DIVISOR-CENTRAL-TWIST.  If the physical source uses the one-copy
+factor N_q(S_0)^(-1), then
+
+    W_q=H^0(A,L) tensor N_q(S_0)^(-1)
+
+carries the exact source relations
+
+    gamma^3=I,
+    alpha^2=iI,
+    alpha gamma alpha^(-1)=gamma^(-1).                         (1)
+
+Here gamma is the normalized cubic lift and alpha is the spin-rigidified
+quarter lift.  The exact normalization in (1) does not add a phase fit.  If
+an order-three lift gamma_0 initially obeys
+
+    alpha gamma_0 alpha^(-1)=kappa gamma_0^(-1),
+
+then kappa^3=1.  There is a unique cube root lambda with
+kappa lambda^2=1, and gamma=lambda gamma_0 still has order three.  This
+normalization is forced by the actual geometric relation QcQ^(-1)=c^(-1).
+It does not change the q norm line, where a cube-root rescaling enters through
+its third power.  This fixes the representative of the initially projective
+theta linearization; it is precisely the normalization used to define the
+source gamma in (1), not a later change of an independently fixed operator.
+
+The finite theta group of L contains a canonical 64-element
+Heisenberg subgroup N with center mu4.  Its action on W_q is the unique
+four-dimensional irreducible representation with central character
+zeta |-> zeta.  Every explicit symplectic identification
+
+    Phi:A[2] -> N64/mu4
+
+lifts to an isomorphism N -> N64 fixing mu4, and finite Stone-von Neumann
+then supplies an intertwiner W_q -> C^4, unique up to scalar.
+
+For the already matched fixed-free cubic action, this intertwiner can be
+chosen so that gamma maps to the frozen native sigma itself.  No residual
+cube-root phase remains.  The transported alpha then lies in the single
+joint native class already proved by the exact Pauli-spin census: for each
+of the nine compatible quotient actions there are exactly alpha and -alpha,
+and the nine sign classes form one orbit under the actual native centralizer.
+
+Thus the finite geometric theta module, its mu4 center, its cubic lift and
+its spin quarter lift are the native N64/Clifford package up to Heisenberg
+frame, the unavoidable sign of alpha, and the stated centralizer orbit.
+Calling every such frame change a physical gauge transformation would still
+require the additional P1, P2, anchor, state and readout markings.
+
+The remaining source question is no longer a missing four-dimensional module
+intertwiner.  It is the earlier, sharply typed physical question whether the
+original boundary, sewing or Calderon construction inserts one inverse copy
+of N_q(S_0).  Without that insertion the ordinary theta functor has central
+phase +1 and equation (1) does not hold.
+
+
+1. THE FOURTH-ROOT SUBGROUP IS CLOSED AND HAS ORDER 64
+
+The theta group of L fits into
+
+    1 -> C* -> G(L) -> K(L)=A[2] -> 1.                         (2)
+
+For x,y over A[2], their commutator is the Weil pairing e_2(x,y), hence is
++1 or -1 and is central.  Define
+
+    N={g in G(L):g^4=1}.                                       (3)
+
+This is a subgroup.  Indeed, in this class-two group,
+
+    (gh)^4=g^4 h^4 [h,g]^6=1                                  (4)
+
+for g,h in N, because [h,g]^2=1.  Also g^(-1) belongs to N.  Over each of
+the sixteen elements of A[2], any theta-group lift can be multiplied by a
+scalar so that its fourth power is one.  Exactly four scalar multiples do
+so.  Therefore
+
+    |N|=16*4=64,       ker(N -> A[2])=mu4.                     (5)
+
+The commutator pairing on A[2] is nondegenerate.  Hence an element central
+in N has trivial image in A[2], and
+
+    Z(N)=mu4.                                                   (6)
+
+This also shows directly that (3) is the finite theta Heisenberg group, not
+an arbitrary 64-element subgroup selected from G(L).
+
+
+2. EVERY SYMPLECTIC PHI LIFTS, AND THE MODULE IS UNIQUE
+
+Choose a symplectic basis e_1,f_1,e_2,f_2 of A[2].  Choose lifts in N.
+Each basis lift has square +1 or -1.  Multiplication by i reverses that
+square, so the four lifts may be normalized to square +1.  Their only
+nontrivial commutators are
+
+    [E_j,F_j]=-1.                                               (7)
+
+These are exactly the standard two-qubit Pauli relations with center mu4.
+Consequently every specified symplectic map Phi lifts to a center-preserving
+isomorphism
+
+    Phi_tilde:N -> N64.                                        (8)
+
+Different lift choices differ by a character of A[2], equivalently by an
+inner Pauli change of Heisenberg frame.  There is no further extension-class
+obstruction hidden behind Phi.
+
+Riemann-Roch gives
+
+    dim H^0(A,O(2 Theta))=2^2=4.                               (9)
+
+The theta-group action has central weight one and is irreducible.  The finite
+Stone-von Neumann theorem says that N has exactly one irreducible
+representation with this faithful central character, of dimension
+
+    sqrt(|N/Z(N)|)=4.                                         (10)
+
+The constant line N_q(S_0)^(-1) changes the alpha and beta characters proved
+in the preceding report, but it does not alter the N action.  Equations
+(8)-(10) therefore produce an intertwiner
+
+    T:W_q -> C^4,       T rho_N(g) T^(-1)=rho_native(Phi_tilde(g)),
+
+unique up to one nonzero scalar.                               (11)
+
+
+3. THE CUBIC OPERATOR HAS NO RESIDUAL PAULI OR SCALAR SHIFT
+
+The source action of c on A[2] is fixed-free and Phi identifies it with the
+native Pauli action Sigma of the frozen sigma.  Transport gamma through T.
+The unitary normalizer of N64 maps onto Sp(4,2); the kernel is U(1) times the
+Pauli translations.  Hence initially
+
+    T gamma T^(-1)=lambda p sigma                              (12)
+
+for a scalar lambda and a Pauli label p.
+
+Conjugating (12) by a Pauli q changes p by (1-Sigma)q.  Since Sigma has no
+nonzero fixed vector on the four-dimensional F2 Pauli quotient and has odd
+order, 1-Sigma is invertible.  There is therefore a unique q that removes p.
+After this Heisenberg-frame change,
+
+    T gamma T^(-1)=lambda sigma.                               (13)
+
+Both gamma and sigma have exact order three, so lambda^3=1.  It remains to
+exclude the two nontrivial cube roots without choosing a trace convention.
+
+The source relation in (1), together with unitarity, gives
+
+    tr(gamma)=tr(gamma^(-1))=conjugate(tr(gamma)),              (14)
+
+so tr(gamma) is real.  On End(W_q), conjugation by gamma permutes the Pauli
+basis through the fixed-free action of c.  Only the identity Pauli is fixed;
+the fifteen nonzero labels form five three-cycles.  Therefore
+
+    tr(Ad gamma)=1=|tr(gamma)|^2.                              (15)
+
+No physical metric is assumed here.  The finite group generated by N, alpha
+and gamma admits an invariant positive Hermitian form by averaging, so the
+finite complex representation may be made unitary for this trace argument.
+
+An order-three operator on a four-dimensional space has multiplicities
+(n_0,n_1,n_2) for eigenvalues 1,omega,omega^2.  Reality in (14) gives
+n_1=n_2.  Together with (15) and n_0+n_1+n_2=4, this forces
+
+    (n_0,n_1,n_2)=(2,1,1),       tr(gamma)=1.                  (16)
+
+The frozen native sigma has the same spectrum and trace one.  Equations
+(13) and (16) therefore force
+
+    lambda=1,       T gamma T^(-1)=sigma.                      (17)
+
+Thus neither a Pauli translation nor a central cube-root phase survives.
+
+
+4. THE QUARTER LIFT LANDS IN THE UNIQUE NATIVE JOINT CLASS
+
+Transport alpha through the same T.  By (1) and (17), it normalizes N64 and
+satisfies
+
+    alpha_native^2=iI,
+    alpha_native sigma alpha_native^(-1)=sigma^(-1).           (18)
+
+Its quotient action Q_bar consequently obeys
+
+    Q_bar^2=I,
+    Q_bar Sigma Q_bar=Sigma^(-1).                              (19)
+
+The exact native census in PAULI-SPIN-CENTRAL-LIFT enumerates all 720
+elements of Sp(4,2), all nine quotient actions satisfying the marked plane
+conditions and (19), and all 64 Pauli-center lifts over each action.  It
+proves:
+
+  * every solution of (18) lies in zeta8 G31;
+  * each Q_bar has exactly two solutions, alpha_native and -alpha_native;
+  * the nine sign classes form one orbit under C_G31(sigma);
+  * one representative is alpha_native=zeta8 (XI) U.
+
+The continuous U(1) kernel of the full unitary normalizer creates no omitted
+solutions.  The first equation in (18) restricts its phase to the two signs
+already present in the exhaustive fiber census.  Likewise, section 3 used
+gamma^3=1 and the trace to eliminate its full scalar phase.  Thus the earlier
+census really is exhaustive for the transported geometric operators, rather
+than only for a preselected rational phase convention.
+
+
+5. EXACT SCOPE
+
+The result closes the following mathematical arrow:
+
+    source-selected (A[2],N,W_q,gamma,alpha)
+       -> native (N64,C^4,sigma,alpha_native)                  (20)
+
+up to Heisenberg frame, alpha -> -alpha, and the single native centralizer
+orbit.  No new four-dimensional representation, continuous phase or Cartan
+choice is required.
+
+This is a complex representation statement.  Pulling the native Hermitian
+form or Gaussian E8 lattice back through T certainly produces such a form or
+lattice on W_q, but the finite theorem does not prove that the original curve
+or boundary source selected that integral lattice, its metric, a W8 operator,
+or a physical state rule.  Those structures cannot be transferred merely
+because the complex N64 modules are isomorphic.
+
+Equation (20) is conditional on using W_q, because the one-copy factor is
+what changes alpha^2 from +I on the ordinary second-order theta space to
++iI.  The geometry constructs and rigidifies this factor canonically, but
+the original physical sewing rule has not yet been proved to insert it.
+Nothing here supplies that missing rule, identifies a local field or state,
+or proves that all native centralizer conjugacies preserve the additional
+physical markings.
+
+
+EXACT REPLAY USED
+
+    python3 research-20261026-real-boundary/check_pauli_spin_central_lift.py
+    python3 -OO research-20261026-real-boundary/check_pauli_spin_central_lift.py
+
+The two modes pass with byte-identical output.  They verify the nine quotient
+actions, every 64-element lift fiber, the two surviving signs, the explicit
+matrix relations and the transitive centralizer orbit.
+
+
+SOURCES
+
+  * D. Mumford, On the Equations Defining Abelian Varieties I, Inventiones
+    Mathematicae 1 (1966), sections 1-2, for theta groups and their
+    irreducible Schrödinger representation:
+    https://pazuki.perso.math.cnrs.fr/index_fichiers/Mumford66.pdf
+
+  * research-20261026-real-boundary/SOURCE-SELECTED-THETA-SPIN.txt:
+    the selected S_0 and projective spin lifts.
+
+  * research-20261026-real-boundary/MARKED-Q-DIVISOR-CENTRAL-TWIST.txt,
+    SHA256 da1f75831a46a0c0662f931486b77e6e2085126df452b009d1a90351d413d904:
+    the spin-normalized theta family and the one-copy q divisor character.
+
+  * research-20261026-real-boundary/PAULI-VERSUS-CODE-SOURCE-TARGET.txt:
+    the explicit symplectic Phi, fixed-free cubic Pauli action and nine
+    compatible quotient Q actions.
+
+  * research-20261026-real-boundary/PAULI-SPIN-CENTRAL-LIFT.txt:
+    the exact full-fiber lift census and native centralizer orbit.
+
+  * verification/v783_two_qubit_clifford.py and
+    verification/v634_st31_structure.py in the TFPT repository:
+    the native N64, Clifford and centralizer certificates used by that census.

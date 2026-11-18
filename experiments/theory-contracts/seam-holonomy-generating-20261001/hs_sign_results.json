@@ -1,0 +1,42 @@
+{
+  "steps": [
+    {
+      "step": "HS1.Hamiltonian walk: h_eps = (i/8) eps.sigma - (1/8) nu_eps.sigma (nu = ordering terms), Hermitian, = (i/2)(W - W^dag); zeros at k = 0 and the filtered doublers +P, -P, H (f = 1, 1, 2); the time-reversal-friendly part alone vanishes on the whole line (pi/2, pi/2, k_z)",
+      "pass": true,
+      "detail": "max |H_BDT| on that line 1.000 (the ordering terms lift the nodal line)"
+    },
+    {
+      "step": "HS2.internal part: no intertwiner between the 16 and its conjugate (16 is not self-conjugate), so a Spin(10)-compatible antiunitary must be particle-hole type psi -> b psi^dag; with Y = 1 its pairing condition det(b_s) Y^T B_A^* Y = -B_A^* holds for all ten channels iff det b_s = -1",
+      "pass": true,
+      "detail": "B_A pattern ['real', 'imag', 'real', 'imag', 'real', 'imag', 'real', 'imag', 'real', 'imag']"
+    },
+    {
+      "step": "HS3.search over all 48 point-group elements g: particle-number-preserving Theta is excluded (HS2); for the particle-hole type the conditions Theta^2 = -1 and the pairing determinant force a SCALAR spin part (eigenvalue argument), and then the walk would need h_{g eps} = -h_eps for all eps -- satisfied by no g (inversion fails on the ordering term nu_eps); the linear null spaces confirm it: the Kramers route to a sign-free decoupling fails for the BDT Hamiltonian walk",
+      "pass": true,
+      "detail": "linear solution dimensions {'N': 4, 'CT': 4}; g with h_(g eps) = -h_eps: 0; admissible Theta: 0"
+    },
+    {
+      "step": "HS4.(statement) no sign-free guarantee for Theta_1 from a Kramers symmetry; options: a different local walk Hamiltonian with the same light node and filtered doublers that admits Theta (the time-reversal-friendly part alone has nodal lines), Majorana-class criteria, or measuring the average sign; QMC for Gate B is not started",
+      "pass": true,
+      "detail": "Gate B stays open"
+    }
+  ],
+  "passed": 4,
+  "total": 4,
+  "solution_dims": {
+    "N": 4,
+    "CT": 4
+  },
+  "B_pattern": [
+    "real",
+    "imag",
+    "real",
+    "imag",
+    "real",
+    "imag",
+    "real",
+    "imag",
+    "real",
+    "imag"
+  ]
+}

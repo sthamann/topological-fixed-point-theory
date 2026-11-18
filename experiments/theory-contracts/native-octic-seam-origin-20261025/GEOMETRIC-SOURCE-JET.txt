@@ -1,0 +1,261 @@
+THE TRANSPORTED GEOMETRIC SOURCE JET AND ITS EIGHTH ORDER OCTIC RESPONSE
+========================================================================
+
+Scope: exact for the already supplied quarter CAR source, its eightfold fold,
+and fixed native current dictionary. CAR-OCTIC-DICTIONARY.txt realizes the
+neutral octic directly in the even CAR current algebra, without requiring
+a full E8 root extension. The P1 admissibility conclusion is
+conditional only at the existing interface that identifies this source net,
+state, reflection and time with an object of the primitive P1 seed category.
+No matrix potential, F8 coupling or detector is added.
+
+1. The actual source diffeomorphism and its one-particle jet
+-------------------------------------------------------------
+
+Let phi_t be a smooth orientation-preserving diffeomorphism of the original
+cover circle, with lifted periodicity
+
+  phi_t(theta+2 pi)=phi_t(theta)+2 pi,
+  phi_0(theta)=theta,
+  dot phi_0(theta)=v(theta).
+
+For a real smooth profile g on the fold circle, the actual eight-preimage
+lift is
+
+  v(theta)=g(8 theta)/8.
+
+Thus a properly supported fold interval lifts to eight separated intervals
+on the original one-channel circle.  It is local in the quotient c=8 fold
+net, not point-local in the original c=1 localization.
+
+In the quarter-twisted chart the canonical half-density transport is
+
+  (U_t^tw f)(theta)=sqrt(phi_t'(theta)) f(phi_t(theta)).       (1)
+
+It is unitary on L2(S1,dtheta), preserves the original quarter boundary
+condition, and maps H1_alpha onto itself.  With
+
+  A_v^tw=-i(v partial_theta+v'/2),
+
+equation (1) has dot U_0^tw=i A_v^tw.  Hence, for the active convention
+
+  B_t^tw=U_t^tw B^tw U_t^tw*,       B^tw=-i partial_theta,
+
+the exact first jet is
+
+  dot B_0^tw=i[A_v^tw,B^tw]
+            =i(v' partial_theta+v''/2).                        (2)
+
+For v=g(8theta)/8 this is
+
+  dot B_0^tw=i(g'(8theta) partial_theta+4 g''(8theta)).        (3)
+
+The periodic chart is related to the twisted chart by
+
+  (Q_alpha f)(theta)=exp(i alpha theta) f(theta),
+  B^per=Q_alpha* B^tw Q_alpha=-i partial_theta+alpha.
+
+The transport itself must be gauge conjugated.  It is therefore
+
+  U_t^per=Q_alpha* U_t^tw Q_alpha,
+  (U_t^per f)(theta)
+    =exp(i alpha(phi_t(theta)-theta))
+       sqrt(phi_t'(theta)) f(phi_t(theta)),                    (4)
+
+not the plain half-density pullback on periodic functions.  Its generator is
+
+  A_v^per=Q_alpha* A_v^tw Q_alpha
+         =-i(v partial_theta+v'/2)+alpha v,
+  dot U_0^per=i A_v^per.
+
+Thus the same transported operator in the periodic chart has first jet
+
+  dot B_0^per=i[A_v^per,B^per]
+             =i(v' partial_theta+v''/2)-alpha v'.              (5)
+
+For v=g(8theta)/8 equation (5) is
+
+  dot B_0^per
+    =i(g'(8theta) partial_theta+4 g''(8theta))
+       -alpha g'(8theta).                                     (6)
+
+The signs in (2) and (5) follow from dot U_0=iA_v in their respective
+charts.  Choosing instead U_t=exp(-itA_v) reverses both the diffeomorphism
+convention and these first-jet signs.
+
+The finite operator is the already classified scalar first-order source
+fiber.  Put x=phi_t and a_t=1/phi_t'.  In the twisted chart,
+
+  B_t^tw=-i(a_t partial_theta+a_t'/2).                          (7)
+
+Gauge conjugation gives the equivalent periodic-chart formula
+
+  B_t^per=Q_alpha* B_t^tw Q_alpha
+         =-i(a_t partial_theta+a_t'/2)+alpha a_t.              (8)
+
+which is exactly the half-density normal form in
+SCALAR-FIRST-ORDER-SOURCE-FIBER-AND-SEAM-WARD.txt.  Thus this is a canonical
+transport of the original source, not a fitted scalar or matrix deformation.
+
+2. All source and P1 comparison data must move together
+--------------------------------------------------------
+
+Functional calculus and unitary covariance give
+
+  C_t=U_t C_alpha U_t*,
+  Dom(B_t)=U_t Dom(B_alpha),
+
+and the same transport must be applied to the bulk/collar operator,
+reflection, reference, relative operator and their domains.  Here U_t and
+B_t are taken together in either the twisted chart or the gauge-equivalent
+periodic chart above.  Mixing plain periodic pullback with the twisted-chart
+operator would describe a different transport.
+
+Denote the compatible collar/bulk lift of U_t by U_tilde:
+
+  D_t=U_tilde D U_tilde*,                 R_t=U_tilde R U_tilde*,
+  D_ref,t=U_tilde D_ref U_tilde*,         D_rel,t=U_tilde D_rel U_tilde*.
+
+On Fock space use the projective implementer Gamma(U_t), including the fixed
+normal-ordering and Schwarzian conventions.  Transport the net, time and
+state by
+
+  A_loc,t=Ad_Gamma(U_t)(A_loc),
+  tau_s,t=Ad_Gamma(U_t) o tau_s o Ad_Gamma(U_t)*,
+  omega_t=omega o Ad_Gamma(U_t)*,
+
+and transport Theta and every detector in the same way.
+
+Under the existing premise that the supplied CAR/fold source is an object of
+the P1 operational seed category and that its circle transport has this
+compatible collar lift, the family preserves all displayed P1 admissibility
+properties.  Self-adjointness and ellipticity are preserved by unitary
+conjugation; positive principal symbol follows from phi_t'>0;
+reflection regularity and positivity are preserved because reflection and
+state are transported; seam spectral flow, eta data, clustering, relative
+action finiteness and the declared reference are unchanged as unitary
+invariants.  In particular
+
+  S_prim[D_rel,t,D_ref,t,chi_t,eta_t]=S_prim[D_rel,D_ref,chi,eta]
+
+when every defining datum is transported.  This is an isospectral family of
+presentations.  It does not by itself select a physical pulse or new branch.
+
+Bare P1 does not establish the premise that the supplied quotient fold net,
+its quarter state and its physical time are the displayed A_+, omega and
+tau_t.  That precise source-to-P1 embedding remains the condition on the
+preceding paragraph.
+
+3. Passive kernel transport and active preparation are different diagrams
+------------------------------------------------------------------------
+
+Let V_t=Gamma(U_t).  Passive covariant transport sends
+
+  (source data, omega, O)
+      | Ad(V_t) on every datum
+      v
+  (transported source data, omega_t, O_t),
+
+where omega_t=omega o Ad(V_t*), O_t=V_t O V_t*.  Consequently
+
+  omega_t(O_t)=omega(O).                                      (9)
+
+Equation (9) is the isospectral kernel/action statement.  Calling it a new
+prepared response would count a coordinate change as an intervention.
+
+An active preparation at a fixed detector instead keeps the source chart and
+O fixed and changes only the vector/state:
+
+  Omega_d -> Omega_d(t)=V_t Omega_d,
+  omega_t^active(O)=omega(V_t* O V_t).                        (10)
+
+Equations (9) and (10) are related by covariance, but they answer different
+questions.  The first transports the detector as well and is response
+invariant.  The second compares the transformed state with a fixed detector
+and can have a nonzero octic response.
+
+4. The first source jet is stress; the octic response is eighth order
+---------------------------------------------------------------------
+
+The fold relation
+
+  Lhat_n=Lcal_(8n)^alpha/8+21/64 delta_n0
+
+maps the cover vector v(theta)=g(8theta)/8 to the supplied shifted fold
+stress
+
+  A_d(g)=sum_n g_(-n) L_n^(d),
+  L_n^(d)=L_n+d.h_n+||d||^2/2 delta_n0.
+
+Thus (2), equivalently (5), is the one-particle source jet and A_d(g) is its
+Fock stress implementer, up to the fixed projective scalar.  Let c_-1 denote the
+coefficient of L_-1^(d) in A_d(g).  With the displayed Fourier convention
+c_-1=g_1=conjugate(g_-1) for real g.
+
+The normalized original octic ray is
+
+  F8hat=I8/(96 sqrt(140)) in Im M.
+
+The unshifted Sugawara part L_n has polarization degree zero, while the two
+linear pieces of d.h_n have degree plus or minus one.  F8hat has pure positive
+degree eight.  It follows exactly that
+
+  <F8hat,A_d(g)^k Omega_d>=0,                    k<8.          (11)
+
+At k=8 every factor must be the positive linear shift.  Positive modes
+annihilate Omega_d, and total oscillator weight eight forces all eight modes
+to be -1.  Therefore
+
+  <F8hat,A_d(g)^8 Omega_d>
+     =8! conjugate(F8hat(b)) c_-1^8,                           (12)
+
+where b=U_+^T O^T d is the actual native M/O transport.  Both original
+quarter sectors have F8hat(b) nonzero.  Consequently
+
+  <F8hat,exp(i t A_d(g)) Omega_d>
+     =t^8 conjugate(F8hat(b)) c_-1^8+o(t^8).                  (13)
+
+The projective scalar phase cannot change the first nonzero F8 coefficient.
+A real smooth bump in any proper fold interval can be chosen with c_-1 nonzero,
+and the existing affine energy bounds define its smeared stress unitary.
+
+5. Correct origin criterion
+----------------------------
+
+The earlier test
+
+  <F8hat,P_8 dot D Omega> != 0
+
+is a valid test for a DIRECT LINEAR F8 coupling.  It is not a necessary test
+for origin from a geometric one-parameter source family.  In the actual
+transported family the first jet is the linear stress generator and its F8
+matrix element vanishes by (11), while the eighth ordered product is nonzero
+by (12).  The correct criterion is the first nonzero jet of the supplied
+family:
+
+  P_(C F8hat) P_(Im M) P_8 d^k/dt^k|_0 Omega_d(t) != 0
+
+for some source-derived k. Here the minimal k is exactly eight when
+c_-1 != 0, the local profile class established in section4.
+
+This proves availability, not a law selecting a particular g or t.  Choosing
+an experimental profile and pulse strength is an intervention specification,
+not a missing fundamental constant.  The remaining fundamental obligation is
+the embedding of the already given CAR/fold net, quarter state, reflection
+and time into the P1 operational seed.  No identification of the root-current
+OPE coefficient with dot B or dot D is needed for this geometric route, and
+none is inferred.
+
+Source locations
+----------------
+
+  experiments/theory-contracts/joint-native-algebra-selection-20261016/
+    SCALAR-FIRST-ORDER-SOURCE-FIBER-AND-SEAM-WARD.txt:31-65,172-197
+    ORIGINAL-DENSITY-GEOMETRY-AND-TIME-HISTORIES.txt:191-221
+    FOLD-COVARIANCE-TO-NATIVE-FIELD-RESPONSE.txt:109-151
+    FULL-SOURCE-HULL-AND-QUARTIC-OPE.txt:81-91
+  experiments/theory-contracts/v16-operator-pullback-20261014/
+    FOLD-AUDIT.md:12-65,67-86
+  documents/archive--tfpt-45--source_extracts--01_boundary_kernel_source/
+    sections/001-section-primitive-core-and-carrier-interface-handoff.tex:65-80,302-343
+    sections/002-section-intrinsic-closed-branch-and-canonical-rigid-obje.tex:103-143

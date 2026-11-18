@@ -1,0 +1,77 @@
+HIST20261103M. Recovered modular/recovery history and actual source types.
+Anonymized original-source review, 3 November2026.
+
+Actually reviewed original code:
+verification/v238_modular_lindblad_dynamics.py, lines1-180,
+SHA256 7938425550d9ad7f199e875f22c52609f4eeeb25b9f51df9a49af508a3576645.
+verification/v240_gns_os_reconstruction.py, complete143lines,
+SHA256 9c2f5a46007479b3e2557d9406392a5067f28228c97e04f979925ce9cd854480.
+Graph discovery preceded code reading. No module result is newly claimed
+executed. The following small exact algebra was independently evaluated.
+
+R238 actually sets u2=(1,-1,0)/sqrt2,u3=(1,1,-2)/sqrt6,
+J=ones(3)/3,T=J+(64/729)u2u2^T+(1/729)u3u3^T,L=logT.
+The eigenvalues of -L are exactly0,6log(3/2),6log3.
+L is genuinely a classical Markov generator here: L12=log(9/8)>0,
+L13=L23=2log3>0, and row/column sums vanish. This is retained.
+
+The same caller sets Lambda=diag(1,2,3) and calls G=iLambda+L a GKSL split.
+Its checks establish only antihermiticity of iLambda and symmetric
+nonpositivity of L. They do not define a generator map on M3 observables.
+If the3-vector is interpreted as the actual diagonal algebra C^3,
+G(1,1,1)^T=i(1,2,3)^T, so that literal action is not unital and does not
+preserve real observables. A Hamiltonian acts on an observable algebra by
+a commutator, not by an arbitrary one-sided phase multiplication.
+A3x3 amplitude generator is also not, by that fact alone, a generator on
+all9matrix coordinates. No additional Lindblad embedding is inserted.
+Primary mathematical definition: Lindblad, Commun.Math.Phys48(1976),
+119-130, Theorem2 and introduction's conditions Phi_t(I)=I and complete
+positivity; DOI10.1007/BF01608499. The original article was checked.
+
+R240 supplies M3 and rho=diag(1/2,3/10,1/5), with GNS inner product
+Tr(rho A*B), dimension9, modular generator i[logrho,.]. These finite
+GNS facts for the supplied faithful state are retained. It separately
+constructs the same3x3 -logT as in R238. It does not construct a common
+field map that makes this3x3 transfer the action on the full9dimGNS space.
+
+The smallest exact same-diagonal-state test gives, with p=diag(rho),
+Tp=(3742/10935,710/2187,3643/10935),
+Tp-p=(-3451/21870,539/21870,1456/10935) !=0.
+Thus if that actual diagonal channel is meant, the separately supplied
+GNS state is not its stationary state. Changing channel or basis requires
+an actual transported map, not an equal gap. Also the chosen Lambda's
+arithmetic-progression spectrum differs from logrho modulo a constant
+and an overall nonzero scale: log(1/2)+log(1/5)-2log(3/10)=log(10/9)!=0.
+R238 permits other diagonal Lambda as a family, but choosing another
+family member is not proof of equality of these concrete two callers.
+
+Scope of exclusion: the literal assertion that these two displayed
+callers already give one full original source/state/time or a verified
+quantum GKSL generator. Positive -logT, its finite gap, the GNS theorem
+for the supplied state and valid classical Markov L are not withdrawn.
+No universal obstruction to a genuine quantum/continuum embedding is
+claimed. The current P1 source already includes its state and time;
+this historical comparison does not demand a new arbitrary state there.
+
+Later existing manuscripts explicitly work under additional hypotheses:
+1. Holomorphic KMS extension article, setting section: proper INTERNAL
+Z4 gauge action preserving every local interval algebra and commuting
+with rotations. It explicitly distinguishes vacuum-vector ground state
+from vacuum-sector rotational Gibbs state and assumes the scaling-limit
+identification for its frozen finite CAR interpretation. Such a gauge
+action is not automatically the original geometric quarter rotation.
+Only the setting/frozen-covariance/qualification text was consulted here;
+no new independent proof of every quoted classification theorem is made.
+2. Thermodynamic-dynamics article, equilibrium and combined theorem
+section: existence of limit dynamics and ground/KMS states is stated for
+a supplied frozen finite-local-space Hamiltonian class, without claiming
+unique state, gap survival or interacting continuum/IR closure. Preserve
+this existing conditional dynamics route; it does not select S_adm.
+These articles are retained for continuity, not used to relabel a new
+chosen Gibbs state as the whole original interacting TFPT vacuum.
+
+The P25-L kinetic/time response, Q25/S25 source checks, later seam/E8,
+clocks, flavor, alpha and full96 source results remain in their scopes.
+A common positive spectrum must be obtained from the same original
+field action, reference, state and physical time; equal numerical gaps
+or reusing the same matrix logarithm do not establish that identity.

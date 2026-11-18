@@ -1,0 +1,118 @@
+MATH.SEAM.JOINT.RELATIVE.05
+23 October 2026
+
+Complete joint deck and clock comparison
+
+1. Question and the supplied objects
+
+The predecessor COVERS.txt gives an actual integral clock intertwiner between
+the unique Phi12 components of the native real8 compiler and the retained
+Burau rank6 lattice model. Does that same map also intertwine the original
+peripheral local system and the cover-induced Burau deck local system? This
+is the first necessary comparison before
+claiming a common parallel identification over the punctured base.
+
+Use exactly the supplied saturated cyclic bases B_E,B_C. Both clock actions
+become the companion matrix A of Phi12(X)=X^4-X^2+1. In these same bases the
+actual native meridian is J=A^9 and the actual oriented Burau meridian is
+D=A^4. Infinity has native action I and Burau action D^-4=A^8.
+
+On the Burau side the local system is DEFINED by the existing marked cover
+and its retained deck representation:
+
+  U_B,per=(C3 x U_B)/((Delta3 p,u)~(p,D u)).
+
+Equivalently use the supplied C12 refinement and send its deck generator to
+D. This is the standard induced local system from already supplied objects.
+It is not an independently established geometric Gauss-Manin H1 family or
+an identification of the integral Burau basis with geometric cycles. The
+native side is the supplied all-J local system. The comparison below is
+complete for precisely this pair of associated local systems.
+
+2. Complete clock-intertwiner space
+
+Every rational clock intertwiner in the common bases commutes with A. Since
+A is the companion matrix of the irreducible polynomial Phi12,
+
+  Hom_clock = Q[A] = Q(zeta12), dimension4 over Q.
+
+The integral cyclic vector e0 satisfies(e0,Ae0,A^2e0,A^3e0)=I4. Thus an
+integral commuting matrix H is determined by the integral vector H e0 and
+is precisely a polynomial in A with integer coefficients. Consequently
+
+  Hom_clock,integral = Z[A] = Z[zeta12],
+  Isom_clock,integral is a torsor under Z[zeta12]^units.
+
+The predecessor displayed one explicit representative of this torsor. It did
+not derive a uniquely selected intertwiner.
+
+3. Actual peripheral action and exact obstruction
+
+Parallel transport in the Hom local system acts by
+
+  H -> D H J^-1 = A^4 H A^-9 = A^-5 H = A^7 H.          (3.1)
+
+Every clock intertwiner is subject to the same relative character. Its
+characteristic polynomial is again Phi12. In particular
+
+  ker(H -> D H J^-1-H)=0.
+
+There is NO nonzero rational map that simultaneously preserves the actual
+clock and both peripheral monodromies on this component. The complete
+ordinary local-system comparison is therefore decided negatively; a constant
+clock intertwiner must not be advertised as a parallel map of the original
+local systems. No change of integral basis repairs this spectral obstruction.
+
+4. Forced relative transport and the common cover
+
+The relative Hom system is nevertheless fully determined. Its finite
+peripheral exponents and infinity exponent, in terms of A, are
+
+  (7,7,7,7,8) modulo12.                               (4.1)
+
+The sphere relation holds because4*7+8=36=0 modulo12. Multiplication by A^7
+has exact order12; moreover every nonzero H has an orbit of length12 because
+Q[A] is a field and no A^(7k)-1 vanishes for1<=k<12.
+
+Let nu be the already supplied winding character taking each positive finite
+meridian to1. The monodromy is A^(7 nu). Since7 is invertible modulo12,
+
+  kernel(relative Hom monodromy)=kernel(nu modulo12).
+
+This is exactly the existing forced cover C12:s^12=x^4-1. Hence that cover
+is the minimal connected cover trivializing the complete relative Hom system,
+not merely a degree match between two unrelated constructions. The supplied
+relative mismatch itself derives its degree12 requirement.
+
+On C12, parallel clock intertwiners exist after specifying their initial
+value; deck transport of that value remains the explicit A^7 action. On the
+base the complete object is the relative Hom local system (3.1), with this
+carry retained. Introducing an extra line twist to erase the carry would
+change the supplied comparison and is not done here.
+
+5. Consequence for the joint construction
+
+The associated E8 lattice-VOA system of JOINT-CLOCK.txt carries the original
+peripheral J and cyclic compiler action together without merging their base
+roles. The present result specifies exactly how its common Phi12 clock
+component compares with the retained Burau model: an integral clock
+isomorphism torsor with forced faithful relative order12 transport. The
+original forms and complementary spectra remain different. This gives the
+full comparison object and its exact obstruction to a stronger identification.
+
+Executable certificate:
+  python3 -B experiments/theory-contracts/e-series-joint-source-20261023/relative_transport.py
+
+The certificate imports the original cover dictionary through its direct
+existing execution path, retains both displayed bases and actual J/deck
+matrices, solves the clock commutant, verifies its integral cyclic basis,
+checks(3.1) on all four Hom generators, proves absence of invariant Hom,
+and checks the exact relative order and infinity relation.
+
+Standard covering-space basis:
+  Allen Hatcher, Algebraic Topology, Section1.3, Propositions1.39 and1.40.
+  https://pi.math.cornell.edu/~hatcher/AT/AT.pdf
+
+Verdict: PASS, complete for the supplied clock and peripheral modules. The
+flat-intertwiner dimension is exactly0, and the relative system trivializes
+on exactly the existing C12 kernel cover.

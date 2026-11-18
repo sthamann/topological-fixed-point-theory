@@ -1,0 +1,118 @@
+FLAVOR PATH TRANSPORT: G METRIC ADDENDUM
+Independent correction and positive closure, 2026-10-30
+
+This addendum updates the scoped conclusion of
+FLAVOR-PATH-TRANSPORT-SOURCE-TYPE-REVIEW.txt.  That review correctly found
+that flavor_path_transport.py does not itself pass the raw ODE frame into
+finite_kernel_comparison.  Its proposed metric intertwiner is nevertheless
+already fixed by the existing algebraic fundamental frame.  It is therefore
+a missing connection in that code path, not an open choice of source metric.
+
+1. FIXED SOURCE METRIC
+
+ORIGINAL-FUCHS-ALGEBRAIC-FRAME.txt gives an explicit fundamental matrix G(z)
+for the same plus-sign equation Psi'=A Psi on the actual negative q Kummer
+cover.  Its right deck matrices are unitary.  Hence
+
+  H(z)=G(z)^(-dagger) G(z)^(-1)
+
+is the fixed flat positive metric, unique up to an irrelevant positive
+scalar.  No fit to P, Q or T is involved.
+
+For x=1/2 let P:E_x->E_2 and Q:E_2->E_x be the actual outputs of
+integrate_path_transport and put
+
+  C_pair=diag(G_x,P G_x),
+  H_pair=diag(H_x,H_2).
+
+The signed three-cycle on the chosen lift is
+
+  C_s=[[0,0,1],[-1,0,0],[0,-1,0]].
+
+With the actual h signs h0=h1=-omega and h2=+omega, the algebraic G and the
+numerically integrated path obey
+
+  G_x^(-1) Q P G_x=C_s,
+  C_pair^(-1) T_raw C_pair=[[0,C_s],[I,0]],
+  C_pair^dagger H_pair C_pair=I.
+
+Thus T_raw is unitary for the source metric even though it is not unitary for
+the raw Euclidean coordinate metric.
+
+2. INDEPENDENT REPLAY
+
+I independently evaluated the displayed algebraic G column formulas at
+x=1/2, using w^3=(x^2-1)/(x^2+1), h0 h1 h2=1, and reused only P,Q from the
+public integrate_path_transport function.  The resulting errors were
+
+  ||G_x^(-1) Q P G_x-C_s||                         8.4991e-13
+  ||P^dagger H_2 P-H_x||                           3.7064e-16
+  ||Q^dagger H_x Q-H_2||                           5.6361e-14
+  ||C_pair^(-1)T_raw C_pair-[[0,C_s],[I,0]]||      8.4981e-13
+  ||C_pair^dagger H_pair C_pair-I||                7.2433e-16
+  ||T_raw^dagger H_pair T_raw-H_pair||             5.6362e-14.
+
+These agree with the separate ROOT-ACTUAL-PATH-G-METRIC-CHECK.json replay,
+whose corresponding errors are at most 1.26e-12.
+
+The remaining finite change to the original exact M is also already fixed.
+Let F=(e1,M e1,M^2 e1), as constructed by source_cycle_frame, and
+D=diag(1,-1,1).  Directly
+
+  F^dagger M F=P_c,
+  C_s=D P_c D,
+  B=F D,
+  B^dagger M B=C_s.
+
+B is unitary.  More precisely, with
+
+  C_M=C_pair diag(B^dagger,B^dagger)
+
+one has
+
+  C_M^(-1) T_raw C_M=[[0,M],[I,0]],
+
+the exact unitary path operator used by exact_clock_dictionary.  There is no
+new e0, norm or fitted phase in this repair.
+
+3. THE TWO ADJOINTS
+
+The earlier numerical statements T_raw^dagger != T_raw^(-1) remain correct
+only for the raw Euclidean coordinate adjoint.  The source adjoint is
+
+  T_raw^sharp=H_pair^(-1) T_raw^dagger H_pair=T_raw^(-1).
+
+Under the isometry C_pair it becomes the ordinary adjoint of the signed-cycle
+operator.  After B it is exactly the adjoint used in
+
+  J^dagger T^(-1) J=U6.
+
+Consequently the original path, its source metric, T^dagger, D, Green and the
+positive inverse square root now form one concrete finite operator chain.
+The earlier report must not be read as leaving the metric or its
+normalization free.
+
+4. RETAINED SCOPE
+
+This closes the first metric and frame bridge.  It does not by itself prove
+that this one primitive puncture path is the full D4-invariant geodesic spine,
+derive every Gamma_ij^min word, or identify the full P_str compression and
+all matrix elements of Hol_G K_f^str.  It also does not add a CAR state,
+reflection, domain or physical time.  Those are separate whole-source and
+consumer statements.
+
+The precise positive status is therefore:
+
+  actual original Fuchs path + canonical source metric + exact U6 functional
+  calculus are now one isometric finite source path;
+
+  the promotion from that path to the entire original Hol_G K_f^str consumer
+  remains to be checked with its fixed spine, compression and endpoint basis.
+
+SOURCES
+
+  aps_source_review/ORIGINAL-FUCHS-ALGEBRAIC-FRAME.txt
+  aps_source_review/FUCHS-FRAME-INDEPENDENT-TRACE-REVIEW.txt
+  tfpt_explorer/flavor_path_transport.py:28-199
+  tfpt_explorer/source_neutrino_dictionary.py:91-106
+  outputs/multi-model-source-search-20261029/ROOT-ACTUAL-PATH-G-METRIC-CHECK.json

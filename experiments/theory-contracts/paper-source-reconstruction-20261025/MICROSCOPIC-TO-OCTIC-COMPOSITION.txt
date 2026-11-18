@@ -1,0 +1,333 @@
+MICROSCOPIC QWZ TO NEUTRAL OCTIC COMPOSITION
+=============================================
+
+Purpose and verdict
+-------------------
+
+This note composes two existing proved maps:
+
+  (i) the filled QWZ top edge to one complex chiral CAR channel, including
+      fields, adjoints, vacuum, charge and time on a common finite-energy
+      core; and
+
+  (ii) the unitary eightfold reindexing of that same CAR channel, followed by
+       the fixed current map A=U_+^T O^T M and the neutral octic I8.
+
+Verdict: PROVED for the already fixed QWZ collar and the already fixed fold
+dictionary.  The neutral F8 operator and its level-eight Ward amplitude are
+microscopic scaling limits of operators in the original filled QWZ Fock
+space.  The construction uses one CAR channel.  It adds neither eight
+independent source copies nor the odd E8 charge sectors.  It therefore does
+not require an abstract B_N, an E8 root-field exhaustion theorem or FE-GEN.
+
+The remaining antecedent is the local operator and time identification of
+the primitive seed with the boundary source represented by this QWZ collar.
+The lattice parameters may be regulator coordinates rather than fundamental
+P1 constants. Once that boundary-source identification is supplied, the
+neutral field, state and time map is already present. For a full graded CAR
+embedding in the same positive-energy vacuum representation, the state is
+then forced by the time law, as GROUND-STATE-SOURCE-REDUCTION.txt proves.
+This statement does not identify the whole 3+1 dimensional P1 bulk with a
+free CAR theory.
+
+1. The microscopic theorem being composed
+-------------------------------------------
+
+For the width-eight, mass-one, holonomy-r=1 number-conserving QWZ strip, let
+P_N be its rank-8N negative-energy projector and Omega_N its filled sea.  Put
+
+  D_N=N h_N/(2 pi),
+  H_N=dGamma(D_N)-Tr(P_N D_N),
+  Q_N=Number-8N.
+
+For a smooth periodic boundary test function g, the top-edge source field is
+
+  Psi_N(g)=a_N(R_N g),
+
+  (R_N g)(x,y)=N^(-1/2) exp(-i pi x/(2N)) g(x/N)
+               delta_(y,7) chi_+.
+
+These are operators on the full microscopic QWZ Fock space.  They obey the
+exact CAR, have charges -1 and +1 for Psi_N and Psi_N^*, and keep the sampled
+support of g.  The polarized one-particle isometry J_N satisfies
+
+  P_N J_N=J_N P_cur.
+
+Its filled-sea second quantization gives a comparison contraction V_N from
+the continuum excitation Fock space into that same microscopic Fock space.
+On every fixed finite-energy sector V_N is eventually an isometry.
+For every finite-energy vector psi and every smooth g,
+
+  ||Psi_N(g)V_N psi - V_N a(g)psi|| -> 0,
+  ||Psi_N(g)^*V_N psi - V_N a(g)^*psi|| -> 0.              (1)
+
+The same statement holds for every fixed finite word, including timed words,
+and the generators satisfy on every fixed energy cutoff E
+
+  ||(H_N V_N-V_N H) 1_(H<=E)|| -> 0.                       (2)
+
+The transported continuum time law is
+
+  g_t(x)=exp(i t/4) g(x-t/(2 pi)).                          (3)
+
+Equations (1)-(3) are strong vector convergence on the common dense union of
+finite-energy spaces.  They are stronger than convergence of compressed
+matrix elements.  The construction writes V_N=I_N Gamma(Pi_M).  On any fixed
+finite-energy space, including the energy-64 space used below, Pi_M is the
+identity for all sufficiently large N.  I_N then intertwines every required
+truncated particle and hole mode and its adjoint exactly.  The actual local
+top-edge modes differ from those polarized modes by the proved vanishing
+edge-mode residual.  Thus the limiting statement concerns actual QWZ local
+operators.  It does not claim strong convergence uniformly on the entire
+infinite-energy microscopic Fock space.
+
+Primary registered theorem source:
+
+  paper-source:7296b452273b7022082ac2e2
+  tex-artefacts/toe_research_20260909.tex:16-96.
+
+The full-core and adjoint estimates are expanded in
+experiments/theory-contracts/microscopic-charged-car-limit/README.md,
+sections 2, 3 and 5.
+
+2. One-channel eightfold fold and the quarter convention
+---------------------------------------------------------
+
+On the continuum one-particle space define
+
+  (F f)_r(x)=f((x+2 pi r)/8)/sqrt(8),  r=0,...,7.          (4)
+
+This is a unitary reindexing of one field.  If
+
+  f_(n,alpha)(theta)=exp(i(n+alpha)theta)/sqrt(2 pi),
+  n=8l+k,  mu_k=(k+alpha)/8,
+
+then exactly
+
+  F f_(8l+k,alpha)
+    =U_alpha(:,k) exp(i(l+mu_k)x)/sqrt(2 pi),
+
+  U_alpha(r,k)=exp(2 pi i(k+alpha)r/8)/sqrt(8).            (5)
+
+Consequently the folded covariance is
+
+  U_alpha^* F C_alpha F^* U_alpha
+    =diag_k C^-_(mu_k)                                    (6)
+
+in the eigenchannel chart.  In the eight-arc chart the off-diagonal
+correlations U_alpha diag(C^-_(mu_k)) U_alpha^* remain. The diagonal
+eigenchannel representation has the derived graded tensor-product
+factorization of this fixed state. It adds no freely chosen source copies.
+
+The apparent alpha mismatch is only the stated occupation and orientation
+change.  The QWZ edge uses modes exp(i(j-1/4)theta) filled for j>=1.  With
+n=j-1 this is the positive-filled alpha=3/4 chart.  Reversing the boundary
+orientation and writing m=-n-1 gives
+
+  exp(-i(n+3/4)theta)=exp(i(m+1/4)theta),  m<=-1,           (7)
+
+which is the negative-D alpha=1/4 sea used by the native Ward calculation.
+Since m=-j, its one-particle generator is
+
+  m+1/4=1/4-j=epsilon_j,
+
+exactly the QWZ limiting energy appearing in (3), including its sign.
+The channel label reverses k -> 7-k, and the point-split counterterms obey
+
+  -delta_k^(3/4)=delta_(7-k)^(1/4),
+  delta_k^(alpha)=(k+alpha)/8-1/2.                         (8)
+
+The minus sign in (8) is accompanied by the creator/annihilator order and
+the current-charge convention.  Flipping only the displayed c-number would
+not define the same representation.  With this complete transport, the QWZ
+time law (3), the folded source time and the adjoint operation describe one
+and the same filled-sea representation.
+
+Registered fold source:
+
+  research-source:1a8c7c3f539e779301a7377d
+  FOLD-COVARIANCE-TO-NATIVE-FIELD-RESPONSE.txt:53-152.
+
+3. The actual neutral octic in the QWZ source
+----------------------------------------------
+
+Let j_sea=(j_0,...,j_7) be the eight eigenchannel currents formed as
+
+  j_k(z)=:chi_k^*(z) chi_k(z):_sea
+
+from the folded version of the one QWZ limit field.  Retain the original
+matrices M and O and the J-positive polarization U_+.  Put
+
+  A=U_+^T O^T M,
+  A A^*=I_4,
+  A A^T=0,
+  b_alpha=A delta_alpha.                                  (9)
+
+With
+
+  I8(x)=sum_a x_a^8
+        +14 sum_(a<b) x_a^4 x_b^4
+        +168 product_a x_a^2,
+
+the normalized source field is
+
+  F8^d(z)
+    =:I8(A(j_sea(z)+delta_alpha/z)):/[96 sqrt(140)].       (10)
+
+Each current in (10) is a bilinear in the original CAR field.  Hence F8^d is
+an even, charge-zero operator affiliated with the even algebra of the one
+folded QWZ channel.  Its adjoint is obtained by conjugating A and b while
+retaining the same radial boundary value and i0 prescription.  No E8 root or
+spin field occurs in (10).
+
+Registered object and map sources:
+
+  research-source:9abbdd1d97ecab558a6beb99
+  CAR-OCTIC-DICTIONARY.txt:1-109;
+
+  source:7767562118f34639c420
+  NATIVE-FOLDED-OCTIC-ORIGIN.txt:1-211;
+
+  source:142789ffb055ac6b1a5d
+  native_folded_octic_origin.py:1-314.
+
+4. Strong composition and the ordered ultraviolet limit
+---------------------------------------------------------
+
+Take N along compatible multiples of eight.  On every finite mode window
+Pi_M, apply (5) to the residue classes j=8l+k and then transport those modes
+through the exact polarized isometry I_N.  Equivalently, smear the actual
+top-edge fields at the eight preimage arcs with the inherited QWZ seam
+phases.  This is the finite restriction of the unitary F, within the single
+microscopic one-particle space.  Its second quantization introduces no new
+Fock factor.  The unitary fold and the fixed finite matrices in (9) preserve
+the strong convergence (1), including adjoints and timed words.
+
+A nonzero point split does not by itself turn an unsmeared fermion field
+into a bounded CAR operator. The first draft of this section incorrectly
+used the elementary finite-word theorem at that step. The independent review
+identified the gap. SMEARED-OCTIC-ENERGY-BOUND.txt supplies its repair.
+
+For the actual shifted current polynomial and its actual adjoint it proves
+
+  ||F8_m P_E|| <= C(1+E+|m|)^11,
+  ||F8(rho) P_E|| <= C_rho(1+E)^11,                       (11)
+
+on the true positive-source-energy cutoff. Smooth rho makes the mode sum
+absolute in Hilbert norm, and the adjoint estimate proves closability.
+Every fixed output/internal/fermion mode cutoff is a finite original CAR
+polynomial. Replacing its elementary Fourier modes by the actual QWZ fields
+and first taking N->infinity therefore gives a strong transported limit;
+removing those cutoffs afterwards yields the full smeared F8 and its
+adjoint. These Fourier approximants have global support.
+
+The local route instead separately smooths every elementary fermion with
+a compactly supported mollifier of scale sigma. The original subtractions
+must first be combined into the finite Wick/divided-difference expression,
+including the derivative counterterms. At fixed sigma,epsilon>0 the smooth
+CAR kernel has an absolutely summable Fourier-word expansion. The proof
+then gives, for the field and its adjoint, the ordered local limit
+
+  first N->infinity at fixed sigma,epsilon,
+  then sigma->0 at fixed epsilon,
+  finally epsilon->0.                                     (12)
+
+The finite Wick expression has at most sixteen elementary fermions and
+total conformal weight eight. The corresponding mode bound has polynomial
+degree at most fifteen, absorbed by smooth rho. Fixed-regulator support lies
+in shrinking neighborhoods of the same eight original preimage arcs.
+No simultaneous lattice/ultraviolet limit or bounded point field is asserted.
+
+5. The decisive energy-64 Ward test
+-----------------------------------
+
+The fold retains the exact source-mode relation
+
+  Lhat_n=Lcal_(8n)^alpha/8+21/64 delta_(n,0),
+  L_-1^d=Lhat_-1=Lcal_-8^alpha/8.                         (13)
+
+The state
+
+  |F8;d>=F8hat(a_+,-1) Omega_d
+
+has folded oscillator level eight.  By (13) its original source excitation
+energy is 8*8=64.  The Ward vector (L_-1^d)^8 Omega_d has the same folded
+level eight and the same original energy 64.  Both vectors are charge zero:
+F8 is a current polynomial and L_-1^d is built from the neutral shifted
+stress tensor.  Thus the test never leaves the neutral source-energy-64
+sector of the original QWZ scaling representation.
+
+For any homogeneous degree-eight oscillator polynomial P,
+
+  <P(a_+,-1)Omega_d,(L_-1^d)^8 Omega_d>
+      =8! conjugate(P(b)).                                (14)
+
+For the normalized F8 and the QWZ-equivalent negative-sea alpha=1/4 chart,
+
+  A_(1/4)
+    =3 sqrt(35)(5416993+18690336 i)/2^31 != 0.            (15)
+
+In original source normalization, (13) gives the actual amplitude
+
+  <F8;d|(Lcal_-8^(1/4))^8 Omega_d>
+    =8^8 A_(1/4)
+    =sqrt(35)(16250979+56071008 i)/128.                   (16)
+
+At energy at most 64 the truncation Gamma(Pi_M) in V_N is eventually the
+identity.  The finite polarized mode intertwiner I_N therefore reproduces
+the finite oscillator polynomial entering (14) exactly for all sufficiently
+large N.  Replacing its polarized edge modes by the actual local top-edge
+QWZ modes changes each fixed mode by the proved vanishing residual.  Since
+(14) contains a fixed finite-degree word, the actual microscopic amplitude
+converges in the ordered limit (12) to (15), or to (16) with the unscaled
+source mode.  This is an amplitude of the full QWZ filled-sea Fock space,
+not a value obtained only after an energy compression.
+
+The exact arithmetic certificate
+
+  native_folded_octic_origin.py
+
+returns PASS_EXACT_ORIGINAL_FOLDED_OCTIC_OVERLAP and independently checks
+(9), (13)-(16), all oscillator partitions in the Ward descendant, and the
+nonzero values in both quarter sectors.
+
+6. Exact remaining primitive-source question
+---------------------------------------------
+
+The neutral microscopic chain is now complete after its boundary data and
+the original fold/current dictionary have been fixed:
+
+  P1/P2 boundary data
+    -> width-eight, mass-one, holonomy-r=1 QWZ collar
+    -> negative-energy projector P_N and filled sea Omega_N
+    -> top-edge chirality chi_+ and boundary orientation/reflection
+    -> the quotient localization and unitary fold (4)
+    -> the fixed original matrices M, O and U_+
+    -> the neutral field (10), state, time and Ward amplitude (16).
+
+The primitive step not derived by this composition is the first source
+identification: the original seed must contain the appropriate local CAR
+image and induce the same one-particle time, seam and reflection, with the
+required collar domains and relative action. A microscopic regulator's
+specific width and mass need not themselves be fundamental constants.
+If the full graded CAR image lies in the original reconstructed vacuum
+representation, its given positive energy and the same gapped time law force
+the filled-sea state; that state is not another independent assumption.
+An even-algebra image alone does not force it.
+
+P1 scalar source and preceding explicitly conditional premise merge:
+
+  documents/tfpt_1_architecture_e8/sections/004-source.tex:190-243.
+
+The registered paper-source:7b58a2b8767cacd98fa2feb4 covers the preceding
+context at lines1-200; the continuation at201-243 was also read in the actual
+source. The former research_contracts path in this note was incorrect.
+
+This is narrower than a missing generic source-field map.  The QWZ-to-CAR
+field/state/time map and the one-CAR-to-neutral-F8 map are explicit and
+compose.  The separate eight-identical-copy synthesis remains a different
+route for its stated pair-kernel result.  It is neither used nor selected by
+the present neutral-octic construction.  Charged E8 root/spinor fields and
+microscopic exhaustion remain separate questions and are not premises for
+the result proved here.
+

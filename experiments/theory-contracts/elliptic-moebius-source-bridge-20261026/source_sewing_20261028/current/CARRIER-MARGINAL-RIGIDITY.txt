@@ -1,0 +1,165 @@
+RIGIDITAET DES CARRIER RANDKANALS
+================================
+
+28. Oktober 2026
+
+Urteil
+------
+
+Der vorgeschlagene Satz ist korrekt, wenn die Voraussetzungen woertlich fuer
+den vollstaendigen normierten Prozess gelten:
+
+* E ist CPTP von 10 tensor bar5 nach bar10 tensor 5.
+* Der gesamte Kraussupport liegt in
+
+      span { C_m tensor A_ab }.
+
+Dann gilt ohne SU5 Kovarianz und ohne Killing Gleichgewichtung
+
+    Tr_Fout E = Phi o Tr_Fin
+
+auf allen Eingabeoperatoren, auch auf verschraenkten Zustaenden. Hier ist
+
+    Phi(rho)=(1/3) sum_m C_m rho C_m^dagger
+
+der getypte Kanal von 10 nach bar10.
+
+Der Satz fixiert nur den reduzierten Carrierkanal. Der volle gemeinsame Kanal,
+seine Familienkorrelationen und seine Instrumentzerlegung bleiben frei.
+
+1. Reduktion auf den vorhandenen Einprozess Satz
+------------------------------------------------
+
+Schreibe jeden globalen Krausoperator als
+
+    L_alpha = sum_(m,r) l_(alpha,m,r) C_m tensor A_r,
+
+wobei r die zehn Paare ab bezeichnet. Fuer eine Familieneingangsdichte
+
+    sigma=sum_q s_q |q><q|
+
+und eine Ausgangsbasis |u> besitzt der Carrier Randkanal
+
+    T_sigma(rho)=Tr_Fout E(rho tensor sigma)
+
+die Krausoperatoren
+
+    K_(alpha,u,q)
+      = sqrt(s_q) sum_(m,r) l_(alpha,m,r)<u|A_r|q> C_m.
+
+Jeder K_(alpha,u,q) liegt also in span{C_m}. T_sigma ist vollstaendig positiv.
+Weil E spurtreu und Tr(sigma)=1 ist,
+
+    Tr T_sigma(rho)=Tr E(rho tensor sigma)=Tr(rho),
+
+ist T_sigma auch spurtreu.
+
+Nun greift exakt der bereits reviewed Atlas Satz
+
+    finding:single-positive-process-saturation-selects-full-hodge-channel.
+
+Seine kanonische Quelle ist
+
+    experiments/theory-contracts/elliptic-moebius-source-bridge-20261026/
+    admissible_pair_20261028/single_ward_refinement/
+    SINGLE-PROCESS-WARD-CRITERION.txt
+
+mit SHA256
+
+    4af9dd295fae970d03e90c224183d7ea635cc6e02f1c46587418e41eefa87a36.
+
+Der dort bewiesene Koeffizientenrang 25 und die eindeutige TP Loesung
+K=I_5/3 zeigen fuer jeden CPTP Kanal mit Kraussupport in span{C_m}
+
+    T_sigma=Phi.
+
+Es wurde dabei keine SU5 Kovarianz vorausgesetzt.
+
+2. Von Produktzustaenden zu beliebigen Eingaben
+-----------------------------------------------
+
+Setze M=Tr_Fout o E. Fuer alle Carrier und Familiendichten gilt nach Abschnitt1
+
+    M(rho tensor sigma)=Phi(rho)
+                       =Phi(Tr_Fin(rho tensor sigma)).
+
+Dichtematrizen spannen den gesamten komplexen Operatorraum linear auf.
+Produkte solcher Matrizen spannen daher
+
+    End(10 tensor bar5).
+
+Durch Linearitaet folgt
+
+    M(X)=Phi(Tr_Fin X)
+
+fuer jeden Operator X. Damit gilt die Identitaet insbesondere fuer
+verschraenkte Eingaben. Es wird keine Produktannahme fuer den endgueltigen
+Satz benoetigt.
+
+3. Typen, Transponierung und ungesehene Zweige
+----------------------------------------------
+
+Die Ausgabe bar10 ist wesentlich und bereits im Einprozess Satz enthalten.
+Die C_m sind getypte Karten 10 nach bar10. Der Beweis identifiziert bar10
+nicht stillschweigend mit 10.
+
+Eine andere Vektorisierung kann die skalaren Koeffizienten in
+K_(alpha,u,q) transponieren oder konjugieren. Sie aendert ihren Carrieranteil
+nicht: Jeder reduzierte Krausoperator bleibt eine Linearkombination der C_m.
+Im Einprozess Satz ist die relevante Choi Transponierung bereits durch
+
+    A(K)=tr(K)I-dGamma(K^T)=I
+
+und den vollen Rang 25 kontrolliert.
+
+Die Aussage scheitert, sobald einer der drei tragenden Punkte fehlt:
+
+* Ein postselektierter oder verlorener Zweig ist im Allgemeinen nur
+  spurmindernd. Dann greift die TP Rigiditaet nicht.
+* Zusaetzliche Krausoperatoren ausserhalb des Produktspans koennen den
+  Carrier Randkanal veraendern.
+* Eine bloss algebraische Bracketclosure liefert noch keinen positiven
+  normalisierten CP Prozess.
+
+`Alle Krausoperatoren im Span` muss deshalb den vollstaendigen Prozess
+einschliesslich aller ungelesenen Ausgangszweige meinen. Unter dieser Lesart
+gibt es keinen versteckten Zweig mehr. Bei groesserem physischem Ausgangsraum
+muss entweder sein gesamter Kraussupport dieselbe Carrierbedingung erfuellen
+oder er explizit in die TP Bilanz aufgenommen werden.
+
+4. Was sich fuer die E8 Herkunft vereinfacht
+--------------------------------------------
+
+Der schon gepruefte E8 Satz
+
+    E8-A4-PETERSEN-RESPONSE.txt
+
+mit SHA256
+
+    8311a51e2f9a0e5e9eb9307fc329cdce77e5d65a599da3fa5692b7460ec63a38
+
+liefert die tatsaechliche Faktorisierung
+
+    B_(m,ab)=C_m tensor A_ab
+
+auf allen 600 Bracketkanten. Seine Killing orthogonale Gleichgewichtung
+1/12 konstruiert einen CPTP Produktkanal und ist daher eine hinreichende
+Realisierung des Randwerts Phi.
+
+Sie ist fuer den Carrier Randwert nicht notwendig. Jede positive kohaerente
+50 mal 50 Koeffizientenmetrik, die mit demselben vollstaendigen Bracketspan
+einen global spurtreuen Kanal erzeugt, hat denselben Carrier Randkanal Phi.
+Das legt weder diese Metrik noch den vollen gemeinsamen Kanal fest und sagt
+nicht, dass jede positive Metrik automatisch spurtreu ist.
+
+Der erste noch fehlende P1 Satz kann damit enger formuliert werden:
+
+    Die Originalquelle muss einen geschlossenen, positiven und normierten
+    CP Prozess liefern, dessen vollstaendiger Kraussupport im verifizierten
+    Bracketspan liegt.
+
+Die besondere gleichgewichtete 50er Orbitspur ist eine ausreichende Form
+dieses Satzes, aber keine notwendige Form fuer die Carrierantwort. Positivitaet,
+Spurtreue, Supportvollstaendigkeit und die physische Wahl dieses Prozesses
+sind aus P1 weiterhin nicht hergeleitet. Aus der algebraischen Orbitclosure
+allein folgt der Satz nicht.

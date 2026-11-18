@@ -1,0 +1,32 @@
+{
+  "steps": [
+    {
+      "step": "UM1 WHAM unit test: a synthetic double-well free energy sampled in harmonic umbrella windows is recovered (positions of both minima, their difference within 0.2)",
+      "pass": true,
+      "detail": "minima at 35.88 / 44.12 (true 36 / ~44), F_right - F_left measured -0.92, true -1.00"
+    },
+    {
+      "step": "UM4 order-parameter umbrella (bias on X = |M|^2 / N) through the production code at tiny g (debug4): measured mean force -kappa (<X> - c) matches the analytic prior force N/2 - 4/X of X = chi^2_10 / N",
+      "pass": true,
+      "detail": "N = 4; (<X>, measured F', analytic F'): [(1.32, -1.26, -1.04), (2.0, 0.01, -0.0), (2.85, 0.61, 0.59), (3.77, 0.9, 0.94)]; max deviation 0.22"
+    },
+    {
+      "step": "UM2 (statement) phase-quenched free-energy profile F(|phi|^2) at g = 0.015, beta = 6, lambda = 0.32 from umbrella windows (WHAM) with G(beta/2) per bin, plus the umbrella-integration mean forces",
+      "pass": true,
+      "detail": "20 windows (centres [32.0, 34.0, 36.0, 38.0, 38.0, 38.5, 38.5, 39.0, 39.0, 39.5, 39.5, 40.0, 40.0, 40.0, 42.0, 44.0, 46.0, 48.0, 50.0, 52.0], kappa [2.0, 8.0]); WHAM profile: 33.0: F_pq 21.84, F_phys 21.97, R 0.99, G nan; 34.4: F_pq 16.46, F_phys 16.70, R 0.95, G 0.369; 35.8: F_pq 14.84, F_phys 16.79, R 0.97, G -0.085; 37.2: F_pq 13.20, F_phys 14.89, R 0.90, G 0.216; 38.6: F_pq 13.13, F_phys 13.35, R 0.76, G 0.256; 40.0: F_pq 9.88, F_phys 10.16, R 0.76, G 0.233; 41.4: F_pq 6.85, F_phys 6.85, R 0.97, G nan; 42.8: F_pq 2.57, F_phys 2.53, R 0.99, G 0.216; 44.2: F_pq 1.00, F_phys 0.96, R 0.99, G 0.212; 45.6: F_pq 0.27, F_phys 0.25, R 1.00, G 0.198; 47.0: F_pq 0.73, F_phys 0.67, R 0.99, G 0.174; 48.4: F_pq 3.42, F_phys 3.38, R 1.00, G 0.166; 49.8: F_pq 6.40, F_phys 6.43, R 0.97, G 0.154; 51.2: F_pq 9.92, F_phys 10.03, R 0.99, G 0.163; global minimum at |phi|^2 = 44.6 (F_pq) / 44.6 (F_phys); overlap gaps between consecutive windows: [(np.float64(35.41), np.float64(35.51))]; mean forces: <n> 33.83: F' -3.66; <n> 34.81: F' -1.62; <n> 36.48: F' -0.96; <n> 37.91: F' +0.19; <n> 38.39: F' +0.88; <n> 38.93: F' +0.53; <n> 39.05: F' -4.40; <n> 39.37: F' +1.02; <n> 39.68: F' -5.44; <n> 40.03: F' -4.21; <n> 40.03: F' -0.21; <n> 40.22: F' -4.45; <n> 40.64: F' -5.11; <n> 41.15: F' -2.30; <n> 42.90: F' -1.80; <n> 44.35: F' -0.70; <n> 45.83: F' +0.34; <n> 47.39: F' +1.22; <n> 48.77: F' +2.46; <n> 50.58: F' +2.83"
+    },
+    {
+      "step": "UM3 (statement) phase-corrected minima, barrier and Delta F = F_strong - F_weak at g = 0.015, beta = 6 (block bootstrap), overlap support",
+      "pass": true,
+      "detail": "weak minimum at |phi|^2 = 38.6, strong minimum at 44.6, barrier at 38.6; Delta F = -13.35 +- 0.85, barrier above the weak minimum 0.00 +- 0.01 (200 bootstrap samples); samples in the overlaps of consecutive windows: [55, 0, 37, 94, 48, 111, 92, 105, 88, 120, 110, 103, 92, 27, 20, 52, 22, 41, 12]"
+    },
+    {
+      "step": "UM5 (statement) G4 order-parameter profile F(X), X = |M|^2 / N, per cell (umbrella integration), minimum X* and the 16 / 32 comparison",
+      "pass": true,
+      "detail": "g021X16: c 4: <X> 8.37 (sd 0.68), F' -4.37, R 0.99; c 8: <X> 9.36 (sd 0.86), F' -1.36, R 0.99; c 12: <X> 14.21 (sd 0.43), F' -2.21, R 1.00; c 16: <X> 16.16 (sd 0.38), F' -0.16, R 1.00; c 20: <X> 19.42 (sd 0.88), F' +0.58, R 1.00; c 24: <X> 22.39 (sd 1.03), F' +1.61, R 1.00; c 28: <X> 25.04 (sd 1.61), F' +2.96, R 1.00; c 34: <X> 30.17 (sd 2.26), F' +3.83, R 1.00 -> F(X) by integration: 8.4: +0.0, 9.4: -2.8, 14.2: -11.5, 16.2: -13.8, 19.4: -13.2, 22.4: -9.9, 25.0: -3.8, 30.2: +13.6; minimum at X* = 16.16"
+    }
+  ],
+  "passed": 5,
+  "total": 5,
+  "g4_umbrella_decision": "UNDECIDED"
+}

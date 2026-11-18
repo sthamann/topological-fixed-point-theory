@@ -1,0 +1,292 @@
+CANONICAL COMMON COVER OF THE OLD ROOT COORDINATE AND THE v117 SIGN LINES
+===========================================================================
+
+26 October 2026.  Exact finite coefficient and holomorphic transport result.
+No Atlas, paper, ledger, or canonical contract was changed.
+
+Verdict
+=======
+
+PROVED.  Let
+
+  f(z)=(z^2-1)/(z^2+1),
+
+  C: w^3=f(z),       eta=z(1-w^3),       eta^2=1-w^6,
+
+  D: H^12=f(z),      w=H^4,              g=H^3,
+
+and let Y_q -> C be the accepted unramified V4 cover which trivializes the
+three actual negative coefficient lines
+
+  h_a^2=(w+omega^a)/(w+omega^(a+1)),      h_0 h_1 h_2=1.
+
+The normalization
+
+  X = normalization(D times_C Y_q)                         (1)
+
+is the minimal connected cover which simultaneously carries the original g
+coordinate and trivializes all three v117 coefficient lines.  Its exact
+invariants are
+
+  [X:C]=16,       [X:P1_z]=48,
+
+  Gal(X/C)=C4 times V4,
+
+  Gal(X/P1_z)=C12 times_C3 A4 congruent A4 times C4,
+
+  g(X)=41.                                                (2)
+
+No extra cover or line character was selected.  Equation (1) is the
+canonical normalization of the two already fixed function fields.
+
+The actual geometric quarter lift also combines canonically on X, once its
+accepted marked lift on Y_q is retained.  It still has order four.  It is
+not the order twelve compiler clock from JOINT-CLOCK.txt: here the quarter
+map inverts the C12 deck generator, whereas the compiler construction uses a
+different root cover on which base quarter and deck commute.
+
+1. Existing results and source search
+=====================================
+
+The inputs are already established in:
+
+  research-20261026-real-boundary/SIGN-LINE-COVER-DICTIONARY.txt
+  SHA256 555f75a2d3c67347fa5f8e3c4f7f46e79d94cb4172176c84010224585dc842e7;
+
+  research-20261026-real-boundary/CLOCK-Q-PACKET-COMPATIBILITY.txt
+  SHA256 fe37f20bbb2d959dfe678ca1bf435a69067cfcb859a3d36769294bbe9bf61c32;
+
+  paper-source:10bdafe2930b29584f91db06, lines 203-327,
+  SHA256 574058876ebe23d693a9fce061f68da6fdec63419af78243ac9d457d7858f74b.
+
+The September source constructs C, the signed permutation point transport,
+and the geometric quarter map.  SIGN-LINE-COVER-DICTIONARY identifies Y_q
+as the actual A4 kernel and proves that D does not by itself contain its
+unramified sign lines.  CLOCK-Q-PACKET-COMPATIBILITY constructs the marked
+order-four action on those lines.
+
+A targeted Atlas and literal source search found the individual covers,
+their earlier fiber products, and the separate quarter actions.  It did not
+find the normalized compositum (1), the degree 48 group calculation, or the
+genus 41 statement in an older source.  The result here is a direct
+reconciliation of those existing fields.  It is not a new freely fitted
+cover.
+
+For comparison, the separate compiler cover contract is:
+
+  experiments/theory-contracts/e-series-compiler-closure-20261023/COVERS.txt
+  SHA256 cdd04f5f38819b60ddd8488eb1c3c316c6849829387205e78ec5e4bf767f80bf;
+
+  experiments/theory-contracts/e-series-joint-source-20261023/JOINT-CLOCK.txt
+  SHA256 02a15050dc0d8f7ad69ad1d867318d7a9abfa4bee274e14f1f06a12cf16c9628;
+
+  experiments/theory-contracts/e-series-joint-source-20261023/
+    COMPILER-CLOSURE.txt
+  SHA256 de73510dc40b968940c68662ab07252995f96a98363e6cb1e9436937ecf62b3c.
+
+2. Why the two extensions have trivial intersection over C
+===========================================================
+
+Over C the old root cover is simply
+
+  D/C: H^4=w.                                             (3)
+
+The function w has two simple zeros, at (w,eta)=(0,+1) and (0,-1), and two
+simple poles, the two points at infinity of the even hyperelliptic model.
+Thus (3) is a cyclic C4 cover totally ramified at exactly four points.
+Its only proper nontrivial intermediate cover is the quadratic cover
+obtained from H^2.  That cover is ramified at the same four valuations.
+
+By contrast, Y_q/C is the connected unramified V4 cover defined by the
+three two-torsion lines.  Let E be the intersection of the function fields
+of D and Y_q over C.  Since E is a subfield of Y_q, E/C is unramified.  Since
+it is also a subfield of the cyclic C4 extension D/C, it can only be C, the
+ramified quadratic intermediate, or D.  The latter two are ramified.
+Therefore
+
+  C(D) intersect C(Y_q) = C(C).                         (4)
+
+This proves linear disjointness, connectedness of the normalized fiber
+product, and
+
+  [X:C]=4 times 4=16,       Gal(X/C)=C4 times V4.       (5)
+
+The argument uses ramification type rather than coprime degrees.  Both
+relative covers have degree four, so a degree count alone would not prove
+(4).
+
+3. Absolute group and the shared cubic clock
+=============================================
+
+Both D and Y_q are Galois over the z sphere:
+
+  Gal(D/P1_z)=C12,
+  Gal(Y_q/P1_z)=A4.
+
+Their common intermediate C has
+
+  Gal(C/P1_z)=C3.
+
+The quotient C12 -> C3 is the action on w=H^4.  The quotient A4 -> C3 has
+kernel V4 and is the same marked rotation w->omega w.  Therefore the deck
+group of X over z is the fiber product
+
+  G = C12 times_C3 A4,       |G|=12*12/3=48.            (6)
+
+This is not C12 times A4 of order 144.  The common cubic motion is identified
+once, rather than copied twice.
+
+The Chinese remainder isomorphism C12 congruent C3 times C4 gives an exact
+marked isomorphism
+
+  G -> A4 times C4,
+  (n,a) |-> (a,n mod 4),                                  (7)
+
+where n mod 3 is the A4/V4 class of a.  Given (a,k), the inverse chooses the
+unique n mod 12 satisfying
+
+  n=q(a) mod 3,       n=k mod 4.
+
+Thus
+
+  Gal(X/P1_z) congruent A4 times C4.                     (8)
+
+The C4 factor in (8) is the relative root deck of D/C.  It is not a second
+family C3 clock and does not duplicate the A4/V4 quotient.
+
+4. Minimality in the requested object class
+============================================
+
+The phrase “carries the original g” is already strong enough to require D.
+Indeed, on C one has
+
+  g=H^3,       w=H^4,       H=w/g.                      (9)
+
+Hence C(C,g)=C(D).  A connected cover carrying w and the given g coordinate
+therefore factors through D.
+
+Likewise, a connected cover on which all three flat coefficient characters
+become trivial has fundamental group contained in the intersection of their
+kernels.  That kernel is precisely the connected V4 cover Y_q.  Equivalently,
+the cover contains two independent Kummer roots h_0,h_1, with h_2 fixed by
+h_0 h_1 h_2=1, and therefore factors through Y_q.
+
+Any connected cover satisfying both requirements contains both function
+fields.  It consequently contains their compositum and maps to X.  By (4)
+its degree is at least 16 over C and 48 over z.  The normalization (1)
+attains both bounds.  Minimality holds among all connected covers, not only
+among Galois or cyclic candidates.
+
+5. Genus
+========
+
+The map X -> Y_q is the base change of D -> C.  Since Y_q -> C is unramified
+of degree four, each of the four branch points of D -> C has four preimages
+on Y_q.  Thus X -> Y_q is cyclic of degree four and is totally ramified at
+16 points.  Since g(Y_q)=5, Riemann-Hurwitz gives
+
+  2g(X)-2
+    =4(2*5-2)+16(4-1)
+    =32+48
+    =80.
+
+Therefore
+
+  g(X)=41.                                               (10)
+
+Equivalently, for X -> C of degree 16, each of the four branch points has
+four points above it with inertia C4.  This gives
+
+  16(2*2-2)+4*4*(4-1)=32+48=80.
+
+6. The actual quarter lift on the compositum
+==============================================
+
+On C the existing geometric quarter is
+
+  Q_C:(z,w,eta) |-> (i z,w^(-1),-i eta/w^3).            (11)
+
+It has order four and its square is the hyperelliptic involution over w.
+On D it lifts as
+
+  Q_D:(z,H) |-> (i z,i/H),                              (12)
+
+so that w=H^4 goes to w^(-1) and g=H^3 goes to -i/g.
+
+On Y_q the accepted marked lift is represented by
+
+  Q_Y^* h_a=epsilon_a omega/h_(-a-1),
+  (epsilon_0,epsilon_1,epsilon_2)=(1,-1,-1),             (13)
+
+up to the already recorded V4 frame change.  It restricts to (11), has order
+four, and on the three coefficient frames has square (+,-,-), up to ordering.
+
+Because (12) and (13) have the same restriction to C, their pair defines an
+automorphism of the normalized compositum:
+
+  Q_X=(Q_D,Q_Y):X -> X.                                  (14)
+
+It covers z->iz.  Both components have fourth power one, so Q_X^4=1; since
+its base action has exact order four, Q_X itself has exact order four.  This
+is one diagonal quarter action on the common field.  Taking two independent
+quarter generators would change the object and is neither required nor
+canonical.
+
+7. Why this is not the joint compiler C12 clock
+================================================
+
+Let delta be the deck generator of D/P1_z,
+
+  delta(H)=zeta_12 H.
+
+The geometric quarter (12) satisfies
+
+  Q_D delta Q_D^(-1)=delta^(-1).                        (15)
+
+In particular, for the cubic deck sigma=delta^4,
+
+  (Q_D sigma)^2=Q_D^2,
+
+and Q_D sigma still has order four.
+
+The compiler cover in COVERS.txt is a different root problem,
+
+  s^12=x^4-1.
+
+There the plain base quarter Q_12 commutes with Delta_12, and
+
+  R_12=Q_12 Delta_12^4
+
+has order twelve, with R_12^4=Delta_12^4 and R_12^9=Q_12.  Equations
+(15) and the commuting compiler relation are inequivalent.  The present
+compositum must not turn Q_X into R_12 or claim that the new C4 factor is a
+second compiler clock.
+
+What does match is narrower and exact: the common C3 quotient in (6) is the
+already marked w rotation, and the q coefficient packet carries its actual
+C4 covariance.  A total compiler field action would require an additional
+proved map between these two root problems.  No such map is introduced here.
+
+8. Scope and executable certificate
+====================================
+
+The result supplies the minimal common holomorphic carrier for:
+
+  * the existing g and H root coordinates;
+  * the three actual v117 flat coefficient lines;
+  * their already proved geometric quarter transport.
+
+It does not identify charged fields, a CAR state, local support, a seam
+projector, or the full compiler lattice action.  The genus 41 curve is a
+normalization forced by existing fields, not a new physical worldsheet.
+
+The targeted certificate is:
+
+  research-20261026-real-boundary/check_common_cover_compositum.py
+  research-20261026-real-boundary/common-cover-compositum-results.json
+
+It checks the A4/V4 quotient, the order 48 fiber product, the exact CRT
+isomorphism with A4 times C4, both degree calculations, genus 41, recovery of
+H from (w,g), the inversion relation (15), and the order-four versus
+order-twelve clock distinction.  Normal Python and Python -OO give byte
+identical JSON.

@@ -1,0 +1,51 @@
+MCKAY RECURSION: A SOURCE BASED READING OF THE EXISTING NETWORK STEP
+27 October 2026
+
+Scope. This is a synthesis of the already proved v219/v299 McKay data and
+the actual v395 network update. It adds no P1 selection theorem and does
+not identify a representation index with a physical particle or spacetime.
+
+The original v219 constructs the binary icosahedral group from 120 unit
+quaternions and obtains the affine E8 adjacency A from tensoring with its
+natural two dimensional representation V. The irreducible dimensions are
+the existing marks d=(1,2,3,4,5,6,4,2,3), in the v395 ordering.
+They satisfy A d=2d and sum d_i^2=120.
+
+The actual recursive operator is T=(A+2I)/4. With D=diag(d), its canonical
+positive eigenvector transform is
+
+  P=D^-1 T D,
+  P_ij=(A_ij+2 delta_ij)d_j/(4d_i).
+
+This is entrywise nonnegative and each row sums to one. Its stationary law
+is pi_i=d_i^2/120, and pi_i P_ij=pi_j P_ji follows from A_ij=A_ji.
+Thus the mark vector and the Plancherel equilibrium are two normalizations
+of the same existing recursion, not two independently chosen states.
+
+There is also an exact representation meaning. Tensor an irreducible i
+with R=V direct-sum 1 direct-sum 1, and select summand j with probability
+proportional to its multiplicity times d_j. R has dimension four and
+multiplicity matrix A+2I, so the resulting tensor-product Markov chain is
+precisely P. Its lazy weight was already fixed by v395; the representation
+description does not derive that choice anew from P1.
+
+Primary literature check: Benkart, Diaconis, Liebeck and Tiep, Tensor Product
+Markov Chains, arXiv:1810.00409, equation (1.1) and Theorem 1.1, give the
+general multiplicity-times-dimension transition rule and its Plancherel
+stationary distribution. The specialization above is a direct derivation
+for the TFPT operator, using the existing v219/v299 source data.
+https://arxiv.org/abs/1810.00409
+
+The exact rational calculation is saved as mckay-doob-exact.json. All rows,
+positivity, detailed balance and normalization were checked without numeric
+tolerances. Analytically those checks follow from the two displayed formulas.
+
+Meaning for the requested route. The hypergraph fixed point is already tied
+to tensor fusion of representations and to the binary double cover. It need
+not be interpreted as an arbitrary classical crystal. However the Markov
+chain describes representation populations. It does not specify coherent
+intertwiners, their phases, a physical field state, an electromagnetic
+interaction or the physical clock. Promoting it to those objects would
+repeat the source identification problem. This reading should be reused as
+a finite structural connection, not as a new independent derivation of E8
+or a complete quantum dynamics.

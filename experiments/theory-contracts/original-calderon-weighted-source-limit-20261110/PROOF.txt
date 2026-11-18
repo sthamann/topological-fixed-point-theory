@@ -1,0 +1,234 @@
+TFPTCALDERONWEIGHTLIMIT20261110
+Gewichteter Higgsquellaufruf und Grenze der ursprünglichen Moden
+
+1. Gegenstand und Quellbindung
+
+Geprüft wird der vorhandene homogene R032 Kreis mit ursprünglichem
+v252 Volloperator, vier reellen Higgskoordinaten H=R e, den gegebenen
+Yukawas, Majorana, beiden Vierteln und demselben freien S Referenzbein.
+Als vorgeschlagenes Basismaß wird genau der reelle Calderón Pullback
+aus TFPT-CALDERON-FELDGEWICHT-20261110.tex geprüft. In der Variante
+mit schwachem Winkelquotienten wird genau dessen intrinsischer
+Schurkomplementkoeffizient verwendet. Ein zusätzlicher BRST Jacobian
+ist nicht als berechnet vorausgesetzt.
+
+Das offene physische Problem betrifft den unnormierten, geordneten,
+voll ausgewählten APS Schnitt. Diese Untersuchung prüft, ob sich
+sein fehlendes Bosonmaß aus dieser vorgeschlagenen Geometrie plus den
+beiden bereits bekannten ganzen skalaren Faktoren gewinnen lässt.
+Der Quellaufruf W_k in archive45 QFT007:4–26 verlangt tatsächlich
+ein Feldintegral, einen quadratischen Regulator und Quellen. Wir
+prüfen auf dieser Karte eine radiale kommutierende Restriktion des
+Regulators, mit Exponent -kappa U, U=|H|². kappa bezeichnet den
+Koeffizienten im Exponenten und keine TFPT Clock.
+
+2. Exakt eingesetzte Faktoren und endlicher Schnitt
+
+Für p=n+alpha gilt h_p(H)^2=p² I+Phi(H)². F sei ein nichtnegatives
+fallendes Laplaceprofil mit B=96 sum_p F(p²)<infinity. Diese
+Spurbedingung folgt auf dem Kreis beispielsweise aus F(0)<infinity
+und int_0^infinity F(x)dx<infinity durch Monotonie. Der Fall eines
+konstanten Profils oder eines ungebundenen H abhängigen Referenzbeins
+liegt außerhalb dieser Rechnung. Mit der festen S Referenz lauten
+die tatsächlichen bekannten Faktoren auf dem Schnitt N
+
+  w_N(H) = exp(B_N - A_N(H)) D_N(H)/C_N,
+  A_N(H) = Tr F(h_{p,H}²) auf dem Schnitt,
+  B_N = 96 sum_{|n|<=N} F(p²),
+  D_N(H) = prod_{|n|<=N,a<=48}(1+exp(-t sqrt(p²+b_a(H)²)))²,
+  C_N = prod_{|n|<=N}(1+exp(-t|p|))^96.
+
+Ein eventueller H unabhängiger Originalfaktor kann separat
+mitgeführt werden. Die in Rechnung gestellte Vorzeichenkonvention
+ist e^-S für den relativen Spektralanteil und die erklärte
+seekorrigierte Fermiongewichtung. Es gilt 0<=A_N<=B_N<=B und
+1<=D_N<=C_N<=C<infinity, also 1/C<=w_N<=exp(B).
+Da der kleinste Yukawasingularwert positiv ist, gilt gleichmäßig
+in der Richtung b_min(R e)>=R y_min-||Phi_M||. Dominierte
+Konvergenz über den ganzen p Turm zeigt A_N(R e)->0 und
+log D_N(R e)->0 gleichmäßig in N. Somit gilt
+w_N(R e)-exp(B_N)/C_N->0 gleichmäßig in N.
+
+Der bestehende Calderón Beweis liefert auf dem festen Schnitt
+in beiden Varianten den radialen Massenschwanz c_N R^-2 dR.
+Nach der gemeinsamen Gewichtung ist der Koeffizient
+d_N=c_N exp(B_N)/C_N weiterhin strikt positiv. Der leere
+Aufruf Z_N(0) ist endlich, aber sein erster Higgsnormmoment ist
+unendlich. Für jede positive invariante Higgsquelle j U
+divergiert Z_N(0,j). Mit Regulator ist Z_N(kappa,j) genau
+dann endlich, wenn j<=kappa, und bei j=kappa ist die
+Rechtsableitung in die nicht regulierte Richtung nicht endlich.
+Für die kartesische lineare Quelle J.H folgt dieselbe
+Nichtendlichkeit für J ungleich null auf einem offenen Winkelkegel.
+Für die Aussage zur Grenzableitung verwenden wir die
+gaugeinvariante U Einfügung.
+
+Genauer liefert x=sqrt(kappa) R, unter Verwendung des
+R^-2 Schwanzes und dominierter Konvergenz ab einem festen Radius,
+
+  Z_N(0,0)-Z_N(kappa,0) ~ d_N sqrt(pi kappa),
+  E_{N,kappa}[U] ~ d_N sqrt(pi)/(2 Z_N(0,0) sqrt(kappa)).
+
+Das Integral int_0^infinity (1-exp(-x²))/x² dx = sqrt(pi)
+folgt durch partielle Integration. Der Beitrag eines kompakten
+Radiusintervalls zur ersten Formel ist O(kappa).
+Der aus diesem Ersatz gebildete ursprüngliche unregulierte W
+besitzt also schon vor dem räumlichen Grenzübergang keine
+offene Quellumgebung mit regulärer Higgsnormantwort. Eine
+leere Referenzdivision oder ein H unabhängiger endlicher Faktor
+ändert diese Aussage nicht.
+
+3. Grenzübergänge der vollständigen bekannten Gewichtung
+
+Für den ganzen Turm ist der radiale Massenschwanz vor der
+Gewichtung C_raw R dR beziehungsweise C_q R^-1/2 dR, mit
+strikt positiven Konstanten. Abschnitt 2 multipliziert diese
+Koeffizienten mit exp(B)/C. Mit kappa>0 ist der radiale
+Grenzaufruf nach N->infinity endlich. Lokale Konvergenz,
+g_N<=g_infinity und der entsprechende monotone radiale
+Schurkomplementkoeffizient dominieren beide Grenzaufrufe.
+Letzterer ist das Minimum der ganzen Metrikform über die
+Winkelkomponenten bei fester radialer Komponente und wächst
+daher mit g_N. Mit x=sqrt(kappa) R folgt bei kappa->0
+
+  Z_infinity(kappa,0) ~ K Gamma(a)/(2 kappa^a),
+  kappa U -> Gamma-Verteilung mit Form a und Rate 1,
+  a=1 im vierkomponentigen Maß, a=1/4 im Winkelquotienten,
+  kappa E[U]->a und kappa² Var(U)->a.
+
+Dies folgt durch Dominanz für alle positiven Momente. Die
+Prüfgröße E[exp(-kappa U)] konvergiert exakt gegen 1/2
+beziehungsweise 2^(-1/4). Vor dem Grenzwert sind das zwei
+verschiedene, explizit benannte Volumenvorschläge.
+
+Auch die gemeinsame Entfernung beider Regulatoren liefert
+für jede Folge N->infinity und kappa_N->0 keine enge
+Wahrscheinlichkeitsfamilie. Auf jedem kompakten H Bereich
+bleibt die Masse gleichmäßig beschränkt. Die positive Masse
+außerhalb wächst ohne Schranke nach Fatou, weil die lokalen
+Dichten gegen die nicht integrierbare Ganzmodendichte
+konvergieren. Für kappa_N N²->lambda<infinity kann man zusätzlich
+die Skala der entweichenden Masse exakt ausrechnen. Bei x=R/N
+sind die reskalierten radialen Dichten proportional zu
+
+  exp(-lambda x²) x sqrt(det L_{1/x})             (vier Komponenten)
+  exp(-lambda x²) sqrt(Schur_R(L_{1/x})/x)        (Winkelquotient).
+
+Hier ist L_b exakt das Integral der ursprünglichen
+Vorzeichenableitungen aus dem Calderón Befund. Die dortigen
+Dominatoren O(x), O(x^-1/2) nahe null und O(x^-2) bei infinity
+gelten weiter, da das ganze bekannte Zusatzgewicht gleichmäßig
+beschränkt ist. Auf jedem x>0 strebt es gegen dieselbe Konstante,
+die in den normierten Ausgaben wegfällt. Die beiden angegebenen
+Verteilungen und die skalierten Massengesetze N² und sqrt(N)
+gelten also einschließlich des vollständigen bekannten
+spektralen und fermionischen Gewichts. Die originale R113
+Anregungsordnung oder ein gegebenes P_adm werden dabei nicht
+mit einem geometrischen Volumenvorschlag identifiziert.
+
+Falls der bekannte R113 Operator selbst als Gapoperator auf
+einer festen, von ihm erhaltenen nichtleeren Strukturauswahl
+eingesetzt wird, ist der Gapfilter bei hinreichend großem R
+dort die Identität. Denn die kleinste Singularzahl ist
+mindestens R y_min-||Phi_M||, unabhängig von N. Der so
+spezifizierte Gap kann den Schwanz nicht entfernen. Diese
+Implikation setzt die konkrete Bindung voraus. Sie entscheidet
+weder den ursprünglichen Determinantenselektor noch einen
+anderen physischen D_adm.
+
+Ein noch unbekannter, radial vergleichbarer positiver Restfaktor
+R^-beta müsste im Ganzmodenmaß beta>2 für endliche Masse und
+beta>4 für ein endliches Higgsnormmoment erfüllen. Im
+Winkelquotienten sind die entsprechenden Grenzen beta>1/2 und
+beta>5/2. Diese Schwellen gelten bei zweiseitigem Potenzvergleich
+und geben keine neue Dämpfung vor. Eine erst im kleinen H
+Bereich hergeleitete lokale Quartik ist keine Identität mit
+dem beschränkten ganzen Spektralgewicht aus Abschnitt 2.
+
+4. Positiver Anschluss an den ursprünglichen Feldaufruf
+
+Falls der absolute leere Originalaufruf im festen
+vierkomponentigen Chart mit einer tatsächlichen Dichte b(H)
+ausgewertet wird, kann dieselbe gedruckte Quadratik diese
+Dichte lokal direkt messen. Für den zur Punktmitte H passenden
+Quellwert J=2 kappa H gilt durch quadratische Ergänzung
+
+  (kappa/pi)^2 exp(W_kappa[2 kappa H]-kappa |H|²)
+    = (kappa/pi)^2 int exp(-kappa |X-H|²) b(X) d^4 X.
+
+Das liefert b(H) im starken Lokalisierungsgrenzwert an ihren
+Lebesguepunkten, sofern der Originalaufruf diese gemeinsame
+regulierte Familie mit den tatsächlichen Feldmarken ausführt.
+Bei nur relativem W wird b(H)/b(H_0) aus der Quotientenform
+bestimmt, falls b(H_0)>0. Der gemeinsame leere absolute Wert
+ist weiterhin eine eigenständige Ausgabe. Die auf denselben
+Hintergrund und denselben Regulator zentrierten zwei markierten
+Formen liefern analog ihre konditionierten Dichten, sofern der
+Originalcaller auch diese berechnet. Die Formalgleichung für
+den Fluss stellt keine dieser Ausgaben schon bereit.
+
+Für den invarianten radialen Anteil ist kein geladener
+linearer Quellwert nötig. In einer tatsächlich gemeinsamen
+Familie Z_kappa(0) ist die Radialmasse der eindeutige
+Laplace Urheber von Z_kappa(0). Dasselbe gilt für die
+komplexen markierten Radialmaße, falls sie mit demselben
+Regulator und derselben Referenz geliefert werden. Aus
+einer normierten Radialantwort zu nur einem Regulator
+folgt der absolute leere Wert nicht.
+
+Der kleinste für den aktuellen Stand nützliche Test ist die
+gaugeinvariante Abfrage Z_kappa(j U)/Z_kappa(0) und ihr erster
+normierter j Ableitungswert am wirklichen leeren APS Kern.
+Für den jetzt ausgeschlossenen Ersatz sind die Grenzgesetze
+oben exakt. Für den tatsächlichen Kern kann der Quellenwert
+eine endliche Antwort liefern, oder der Physikzweig muss eine
+andere gemeinsame Quelle beziehungsweise seinen zulässigen
+Quellbereich tatsächlich ableiten. Erst aus demselben Kernel
+sind Gewicht, echte Auswahl und die zwei q/r Ordnungen
+gemeinsam auszuwerten.
+
+5. Verifikationsumfang
+
+check_weighted_limit.py verwendet unverändert den tatsächlichen
+full96 v252/R032 Builder und seine volle Zweiflächenmetrik.
+Es setzt als numerischen Integrandkontrollwert das bereits
+benutzte proper-time Stück exp(-x) ein. Die analytischen
+Aussagen gelten für jede in Abschnitt 2 angegebene Spurklasse.
+Der Kontrollwert ist keine Profilwahl. Die skalierte Probe
+exp(-U/N²) vergleicht gewichtete und ungewichtete Originaldaten
+bei kappa N²=1 und die unabhängig integrierte Grenzform
+L_{1/x}. Eine zweite Integrationsmethode prüft die beiden
+Gamma Prüfwerte des Ganzmodenlimits. Die tatsächlichen
+Ergebnisse stehen in RESULTS.json. Die ursprüngliche
+Einzelmodenrechnung und die gebündelte Rechnung stimmen
+am Kontrollpunkt überein. Beim Schnitt N=31 betragen die
+beiden gewichteten Proben 0.56417103 und 0.59699978, bei
+N=511 0.76429361 und 0.88795106. Die berechneten
+Grenzproben für kappa N²=1 sind 0.76583056 und 0.91598848.
+Die Differenz des Quotienten bei N=511 ist sichtbar.
+Eine zu strenge anfängliche Kleinschnittprüfung schlug
+fehl. Der erweiterte Schnitt prüft fallende Abstände
+und hält die tatsächlich gemessene Abweichung fest.
+
+Der direkte Aufruf von capability_report und
+contribution_capability_report mit der unveränderten
+nativen Domäne liefert aktuell zweimal ready=false.
+Es fehlen die ganze ursprüngliche Endpoint Operation und
+das ursprüngliche blockierte Faserpaket. Dies bestätigt
+den fehlenden Input am installierten Aufruf und ist
+kein weiterer Integrationsversuch mit denselben Daten.
+
+Quelle Geometrie: recursive-mirrored-source-20261103/
+TFPT-CALDERON-FELDGEWICHT-20261110.tex:27–95.
+Quelle Spektral und Sea Gewicht: first-weighted-spectral-block-20261110/
+PROOF.txt:18–119 sowie tfpt-unified-source-derivation-20261029/
+aps_source_review/WHOLE-CIRCLE-HIGGS-MEASURE-PROOF.txt.
+Quelle des regulierten Feldintegrals: archive45 QFT007:4–26.
+Die Trennung von exaktem Profil und lokaler Entwicklung folgt
+auch dem einschlägigen Originalvergleich von Chamseddine und
+Connes, https://arxiv.org/abs/0812.0165.
+
+Diese Rechnung entscheidet einen gemeinsam gewichteten
+konkreten Quellenkandidaten. Sie liefert keine primitive
+Maßmasse, keinen physischen q/r Wert, keine ursprüngliche
+3+1D Rekonstruktion und keinen Ledgeraufstieg. F1 bleibt offen.

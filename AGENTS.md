@@ -1,5 +1,33 @@
 # Working in TFPT
 
+## Current research directive — user decision of 2026-10-30
+
+The user explicitly requested a source-checked fundamental TFPT plan, concrete
+automatic candidate search, and successive execution with durable completion
+and result tracking across follow-up research sessions. This replaces the
+23 October purely mathematical priority for this fundamental research request.
+Preserve that program's proved results and scoped exclusions.
+
+Start every continuation with `docs/research/fundamental-plan/PLAN.md`,
+`progress.json`, the newest `RESULTS.md` entries and the live sole TFPT Atlas.
+Continue the first actually actionable open task from the live progress record,
+including its next action, prerequisites, continuation basis and active owner.
+Reuse completed mathematical subtasks instead of reopening them. Dated task
+names in entry maps or historical handoffs do not override live progress.
+`SEARCH-METHODS.md` names the actual candidate classes, existing executable
+solvers, required original inputs, exact checks and planned extensions.
+
+During and before ending a session, record consequential positive, negative
+and inconclusive results, source/evidence, scope and next action in RESULTS.
+Update progress and the plan's completion overview. Mark a task done only
+when its own success criterion is evidenced; an excluded search class does
+not close its parent physical goal. Persist source-reviewed scientific changes
+through the Atlas's revision-checked update. Preserve existing ownership and
+concurrent edits. Do not replace productive research with another planning loop.
+
+This continuation directive does not reactivate the stopped recurring model-chat
+automation. Current explicit user instructions remain authoritative.
+
 ## Start with the actual task
 
 This repository owns physical TFPT, its compiler mathematics and its stated

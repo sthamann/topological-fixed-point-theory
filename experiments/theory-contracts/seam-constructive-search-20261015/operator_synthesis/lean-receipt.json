@@ -1,0 +1,100 @@
+{
+  "allowed_axioms": [
+    "Quot.sound",
+    "propext"
+  ],
+  "audit_errors": [],
+  "axiom_dependencies": {
+    "TFPT.OperatorTransport.RingExpr.map_eval": [
+      "propext",
+      "Quot.sound"
+    ],
+    "TFPT.OperatorTransport.conjugateBy_positive_square": [
+      "propext"
+    ],
+    "TFPT.OperatorTransport.conjugateBy_star": [
+      "propext"
+    ],
+    "TFPT.OperatorTransport.conjugate_intertwines_eval": [
+      "propext",
+      "Quot.sound"
+    ],
+    "TFPT.OperatorTransport.imaginary_generator_changes_sign": [
+      "propext",
+      "Quot.sound"
+    ],
+    "TFPT.OperatorTransport.intertwines_add": [],
+    "TFPT.OperatorTransport.intertwines_eval": [
+      "propext",
+      "Quot.sound"
+    ],
+    "TFPT.OperatorTransport.intertwines_mul": [],
+    "TFPT.OperatorTransport.intertwines_neg": [
+      "propext",
+      "Quot.sound"
+    ],
+    "TFPT.OperatorTransport.intertwines_pow": [
+      "propext"
+    ],
+    "TFPT.OperatorTransport.intertwines_star_of_unitary": [
+      "propext"
+    ],
+    "TFPT.OperatorTransport.intertwines_target_eq_conjugate": []
+  },
+  "checker_sha256": "bb78990a83d4a2e4947a9027bfc428f506bb866bf8eeba329f5796d9ad2f461e",
+  "command": [
+    "/Users/stefanhamann/.elan/bin/lake",
+    "env",
+    "lean",
+    "/Users/stefanhamann/Projekte/tfpt-theoryv4/experiments/theory-contracts/seam-constructive-search-20261015/operator_synthesis/lean/OperatorTransport.lean"
+  ],
+  "environment": {
+    "lake": "Lake version 5.0.0-src+f72c35b (Lean version 4.29.1)",
+    "lake_manifest_sha256": "79252b4623ddc4d1555ff884e4332b0b3e426bd7b481eb87843bdb4ebea35ebb",
+    "lakefile_sha256": "f21759f0f80ad0d9979b9c98e9a467abee273f33064ed02ef924e64214b70764",
+    "lean": "Lean (version 4.29.1, arm64-apple-darwin24.6.0, commit f72c35b3f637c8c6571d353742168ab66cc22c00, Release)",
+    "lean_toolchain_sha256": "7dc000621e0046d1aada809e2b7177e64454645cf4c741e9daaf79c99ec2e7a2"
+  },
+  "exit_code": 0,
+  "integration_rule": "A candidate receipt may invoke these theorems only after an independent exact matrix checker has verified the listed generator, unitary, star, and conjugation equations.",
+  "lean_stderr": "",
+  "lean_stdout": "'TFPT.OperatorTransport.RingExpr.map_eval' depends on axioms: [propext, Quot.sound]\n'TFPT.OperatorTransport.intertwines_add' does not depend on any axioms\n'TFPT.OperatorTransport.intertwines_neg' depends on axioms: [propext, Quot.sound]\n'TFPT.OperatorTransport.intertwines_mul' does not depend on any axioms\n'TFPT.OperatorTransport.intertwines_pow' depends on axioms: [propext]\n'TFPT.OperatorTransport.intertwines_eval' depends on axioms: [propext, Quot.sound]\n'TFPT.OperatorTransport.intertwines_target_eq_conjugate' does not depend on any axioms\n'TFPT.OperatorTransport.intertwines_star_of_unitary' depends on axioms: [propext]\n'TFPT.OperatorTransport.conjugateBy_star' depends on axioms: [propext]\n'TFPT.OperatorTransport.conjugateBy_positive_square' depends on axioms: [propext]\n'TFPT.OperatorTransport.conjugate_intertwines_eval' depends on axioms: [propext, Quot.sound]\n'TFPT.OperatorTransport.imaginary_generator_changes_sign' depends on axioms: [propext, Quot.sound]\n",
+  "ok": true,
+  "schema": "tfpt.operator_transport.lean_receipt.v1",
+  "scope": {
+    "not_proved": [
+      "any concrete solver candidate satisfies the theorem hypotheses",
+      "existence or uniqueness of a linear or antilinear intertwiner",
+      "analytic positivity, logarithms, operator domains, or C-star completion",
+      "selection of the source representation, state, dynamics, or P1/P2 origin"
+    ],
+    "proved": [
+      "simultaneous intertwining of checked generators extends to every finite noncommutative integer-polynomial expression",
+      "one checked intertwining relation extends to every natural power",
+      "unitary-like transport identifies the target by conjugation and preserves adjoints",
+      "unitary-like conjugation transports algebraic positive squares star(a)*a",
+      "an explicit conjugation automorphism extends generator checks to every generated expression",
+      "a conjugation-odd imaginary generator changes sign in the conjugate-linear branch"
+    ]
+  },
+  "sorryAx_present": false,
+  "source": {
+    "path": "experiments/theory-contracts/seam-constructive-search-20261015/operator_synthesis/lean/OperatorTransport.lean",
+    "sha256": "febc7d1c8d7f9ea33f010d2de7e9c5e949be7a0b53c3acb49040c398b09fa161"
+  },
+  "theorems": [
+    "TFPT.OperatorTransport.RingExpr.map_eval",
+    "TFPT.OperatorTransport.intertwines_add",
+    "TFPT.OperatorTransport.intertwines_neg",
+    "TFPT.OperatorTransport.intertwines_mul",
+    "TFPT.OperatorTransport.intertwines_pow",
+    "TFPT.OperatorTransport.intertwines_eval",
+    "TFPT.OperatorTransport.intertwines_target_eq_conjugate",
+    "TFPT.OperatorTransport.intertwines_star_of_unitary",
+    "TFPT.OperatorTransport.conjugateBy_star",
+    "TFPT.OperatorTransport.conjugateBy_positive_square",
+    "TFPT.OperatorTransport.conjugate_intertwines_eval",
+    "TFPT.OperatorTransport.imaginary_generator_changes_sign"
+  ],
+  "verdict": "KERNEL_CHECKED_GENERIC_OPERATOR_TRANSPORT"
+}

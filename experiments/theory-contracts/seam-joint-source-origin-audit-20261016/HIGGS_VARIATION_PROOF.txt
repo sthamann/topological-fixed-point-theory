@@ -1,0 +1,249 @@
+SOURCE-FIRST HIGGS VARIATION — 16 October 2026
+Annex to UR.SEAM.JOINT_SOURCE_ORIGIN_AUDIT.01
+Verdict: CONDITIONAL_VARIATION_DERIVED_NO_3PLUS2_ORIGIN
+
+1. Question and scope
+
+Derive the dependence on a putative Higgs field from the original source,
+without choosing a suitable coupling, then test whether it selects3+2.
+We follow the concrete inner-fluctuation mechanism mentioned by the original
+source, rather than postulating K(Phi)=K0+Phi Y with a desired Y.
+
+Three objects must remain distinct:
+  (a) the original abstract one-sided source tuple and relative action;
+  (b) the actually reconstructed conditional scalar quarter-circle source;
+  (c) the existing finite SM spectral-triple implementation.
+The quarter source is not already selected from P1/P2; the finite SM triple
+already includes color/weak modules and Yukawa blocks. Neither may be relabelled
+as a new unconditional fundamental source derivation.
+
+Result: the represented local one-forms of (b) can be completely derived, and
+the Higgs-type scalar dependence of (c) can be derived symbolically from its
+actual code. Neither derivation selects the missing carrier or its coupling.
+An enlargement using the Cauchy projection supplies arbitrary matrix directions,
+but is nonlocal and does not satisfy the original smooth-center identification
+by merely being declared a local source algebra.
+
+2. What the original source actually permits
+
+_archive/tfpt-45/source_extracts/01_boundary_kernel_source.tex (S1):
+  69-82 gives A_+, H_+, D_+, J, Gamma and B_Sigma as data;
+  302-315 defines S_prim=Tr f(D_rel/chi)-Tr f(D_ref/chi)+i pi Delta_eta/2,
+    with declared f and carrier-compatible bosonic fluctuations introduced later;
+  319-343 introduces local field insertions as a source algebra;
+  480-520 already includes the net, time and state in the operational seed.
+_archive/tfpt-45/source_extracts/02_carrier_source.tex (S2):1795-1814
+invokes inner fluctuations of the anchored datum for the gauge sector, after
+the branch package already contains E3 direct_sum E2 (1750-1774).
+
+The concrete represented first-order mechanism is
+  A=sum_j a_j[D,b_j], D_A=D+A+epsilon' JAJ^-1.
+Here a_j,b_j must belong to the ACTUAL represented algebra; their meaning
+cannot be changed halfway through the derivation. This is also the formula
+used by verification/v254_inner_fluctuations.py:6-7.
+
+Primary literature confirms that this real formula requires the appropriate
+first-order condition. Without it the gauge-covariant extension has an extra
+quadratic term. We do not transfer an SM first-order calculation to full
+Pati-Salam without that term. In all cases the original algebra, its action,
+and D are inputs to the mechanism, not outputs of a choice of one-form.
+Reference: Chamseddine, Connes, van Suijlekom, arXiv:1304.7583, sec.III.
+
+3. Derive every local one-form in the retained quarter-circle realization
+
+The existing source_reconstruction/PROOF.txt, sections4-5, reconstructs under
+its explicit Wold/operator hypotheses
+  H=L2(S1), B_alpha=N+alpha, N=-i partial_theta,
+  alpha=1/4 or3/4, U=M_exp(i theta), C=1_(n>=0),
+in periodic trivialization. The following calculation uses its local coordinate
+algebra A_loc=C_infty(S1), acting by pointwise multiplication on the charged line.
+This is a scoped local realization, not a claim that all allowed P1/P2 algebras
+are commutative or that the full physical insertion net has been selected.
+
+For every smooth periodic b and every vector in the smooth common core,
+  [B_alpha,M_b]=-i M_(partial_theta b).
+Thus every represented one-form is a multiplication operator M_v. Conversely,
+  U* [B_alpha,U]=I,
+so for any smooth h, M_h=M_(h)U* [B_alpha,U] is a represented one-form.
+Consequently
+  Omega1_(B_alpha)(A_loc)=M_(C_infty(S1)),
+and its selfadjoint elements are EXACTLY real-valued smooth potentials v.
+The dependence derived here, without choosing a Yukawa matrix, is
+  B_alpha,v=-i partial_theta+alpha+v(theta).
+
+This is a connection component on the given charged line. The pointwise
+unitary algebra is U(1); an inhomogeneously transforming connection is not a
+new fundamental weak SU(2) doublet. The representation and line multiplicity
+are unchanged. Adding the opposite-charge conjugate source changes no such
+conclusion: completion with its given J transports the same multiplication
+operators, possibly cancelling or pairing them, and creates no new nonabelian
+carrier module. No physical anomaly cancellation is inferred from this statement.
+
+4. Complete smooth-potential classification, including fixed quarter holonomy
+
+Put vbar=(2pi)^-1 integral v. Let lambda be a real primitive of v-vbar; it is
+periodic and smooth. Multiplication by exp(i lambda) is unitary on L2 and
+preserves the H1 domain. Direct differentiation gives
+  exp(-i lambda) B_(alpha+vbar) exp(i lambda)=B_alpha,v.
+The same statement works on the actual twisted boundary domain in its
+equivalent nonperiodic trivialization. In particular
+  exp(2pi i B_alpha,v)=exp(2pi i(alpha+vbar)) I.
+Keeping the original quarter transition therefore requires vbar in Z.
+For vbar=k in Z the additional periodic large multiplication exp(i k theta)
+relates B_(alpha+k) to B_alpha. A half-integer mean flips the quarter branch
+and is not an allowed same-branch solution.
+
+This proves a one-particle operator classification, not physical gauge
+equivalence of fixed vacua, determinant-line triviality, cancellation of a
+chiral anomaly, or a new physical time identification. A transported spectral
+covariance is conjugated with the same operator; holding the old reference sea
+fixed is a different question. Large gauge maps can carry charge. Likewise a
+four-dimensional interpretation as gauge-Higgs unification would require an
+actual spacetime/representation map and is not established by a circle label.
+
+Any additional original reflection/state/admissibility constraints restrict
+this local one-form space; they do not turn its unchanged U(1) representation
+into a new SU(3)xSU(2) fundamental carrier. This exclusion does not cover a
+larger independently derived local algebra or a different original source.
+
+5. The tempting Calderon enlargement does not fix the missing coupling
+
+One might try to obtain matrix-valued scalar directions by including C itself
+as a local algebra element. On the actual bilateral source basis e_n, define
+  P0=C-U C U*,
+  E_mn=U^m P0 U^(-n), m,n in Z.
+P0 e_n=delta_(n,0)e0 and E_mn e_j=delta_(j,n)e_m. Thus the algebra generated
+by U,U*,C contains all finite matrix units. Every central bounded element must
+commute with them, hence is scalar. The center is not C_infty(S1).
+Here use the algebraic generated star-algebra (or a specified smooth algebra
+with bounded commutators), not all bounded operators. A norm closure alone
+does not establish the domain of the unbounded commutator with B_alpha.
+
+Because U*[B_alpha,U]=I still holds, every element a of that enlarged algebra
+is also a represented one-form a U*[B_alpha,U]. In particular, arbitrary
+selfadjoint finite matrix perturbations become available. This permits desired
+couplings to be INSERTED; it does not select one. C is not a pointwise local
+multiplication: it is a nonlocal Cauchy/spectral projection.
+
+Therefore this enlargement cannot silently serve as the missing physical local
+source algebra while retaining the original smooth geometric center. A genuine
+noncommutative boundary net could be a different justified source, but its field
+action, state/time and center/locality relation must be derived, not supplied
+by declaring a projector to be a new local field. No general noncommutative
+Higgs mechanism is excluded.
+
+6. Derive the actual existing finite-triple Higgs dependence, leaving inputs visible
+
+The finite path is read from the owning implementation, not from an inferred
+Atlas annotation:
+  v252_full_finite_triple.py:64-69 explicitly enumerates nu/e and u/d, with3 colors;
+  :86-99 defines dirac_block(Yu,Yd,Ye,Ynu) by inserting those four matrices;
+  :139-168 fixes rep(lambda,q,m) for C+H+M3 with the weak/color actions;
+  v254_inner_fluctuations.py:80-87 uses random Yukawa blocks for its example.
+No such random block or chosen physical Yukawa value is used in this annex.
+
+For one sector with the GIVEN right-to-left seed
+  M=diag(Y_up,Y_down),
+let e_R be the represented lambda=1,q=0 element and a_q the represented
+lambda=0, quaternion q element. The actual one-form has LR block
+  (a_q[D_F,e_R])_LR=q M,
+where
+  q=[[phi1,phi2],[-conjugate(phi2),conjugate(phi1)]].
+Hermitian completion supplies M* q* in the reverse block. Including the seed
+replaces q by H=I+q, which has the same quaternion coordinate space. Thus
+  M_q(H)=[[phi1 Yu, phi2 Yd],[-conjugate(phi2) Yu,conjugate(phi1) Yd]],
+with an identical color copy already present in the input representation.
+The lepton formula uses Ynu,Ye. The physical full real-triple completion and
+Majorana requirements retain their separate first-order conditions.
+
+This also describes EVERY particle LR one-form for this supplied SM action:
+if b acts as q_b on the left and r_b=diag(lambda_b,conjugate(lambda_b)) on the
+right, the commutator and left multiplication give
+  (a[D_F,b])_LR=q_a(M r_b-q_b M)=q_a(r_b-q_b) M.
+The family matrices commute with r_b because its entries are scalars on the
+family index. Both r_b and q_b are quaternions, hence q_a(r_b-q_b) is one.
+Arbitrary sums retain this structure, and b=e_R realizes every q M. No Yukawa
+value was chosen to obtain this identity. The Majorana sector and real
+completion remain separate as stated above.
+
+The scalar interaction derivative is therefore proportional to the EXISTING
+Y input. Inner fluctuation does not supply a missing numerical or structural
+Yukawa seed. For D_F=0, all [D_F,b] and therefore all finite one-forms vanish.
+For a fixed represented algebra, every block reducing both D_F and the algebra
+also reduces every a[D_F,b]. None of this selects an absent 3+2 representation.
+
+The independent block formula was checked against the actual original
+dirac_block and rep code on the complete72-real-coordinate basis of the four
+complex3x3 input matrices and all4 quaternion coordinates. All288 block
+identities, comprising663552 Gaussian-integer entries, agree exactly. These
+coordinate probes certify a linear identity; they are not chosen physical
+couplings or an origin test. The zero-seed control is likewise not claimed as
+a P1/P2-admissible alternative world. We do not rerun a target-mass inverse-KMS
+construction as a Yukawa derivation.
+
+7. Variation of the original relative action does not supply the missing field map
+
+For any genuinely specified path D(s), at fixed actual reflection R and fixed
+chi, write D_rel=(D-RDR)/2 and D_ref=(D+RDR)/2. On a finite regulator, or where
+the indicated derivatives satisfy the trace-class/relative-trace conditions
+on a common operator/form domain and a differentiable spectral chart, exact
+first variation is
+  delta S_prim = chi^-1 Tr[f'(D_rel/chi) delta D_rel]
+              - chi^-1 Tr[f'(D_ref/chi) delta D_ref]
+              + i pi delta(Delta_eta)/2,
+  delta D_rel=(delta D-R delta D R)/2,
+  delta D_ref=(delta D+R delta D R)/2.
+No commutativity of D and delta D is needed for this TRACE first derivative.
+If chi varies as prescribed by the source, add its chain-rule contribution:
+  -(delta chi)/chi^2 (Tr[D_rel f'(D_rel/chi)]
+                      -Tr[D_ref f'(D_ref/chi)]).
+If R itself varies, its derivatives must also be included. An absolute Eta
+term and any reference-dependent response cannot be discarded by normalization.
+Explicitly, delta(RDR)=(delta R)DR+R(delta D)R+RD(delta R), with any moving
+operator-domain or APS-boundary terms handled separately. A chi selected from
+lambda1+(|B_Sigma|) is differentiable only on an isolated stable-multiplicity
+spectral branch; eigenvalue crossings require a one-sided or spectral-projection
+treatment. The displayed delta Eta is an ordinary derivative away from zero
+crossings; spectral-flow jumps must not be erased by differentiating through them.
+
+These formulas differentiate a supplied operator path; they do not define
+which delta D is a physical Higgs field. In particular, scalar seam-evenness
+of Phi alone does not determine parity of a putative spinor operator delta D:
+the actual Clifford and carrier factors must be supplied. The source's smooth
+test function f is also a declared realization choice. Neither replacing f nor
+postulating delta D=Phi Y with the desired Y counts as the requested derivation.
+
+8. Result and next source requirement
+
+The initial instruction has been pursued through the source's concrete
+fluctuation mechanism rather than a fitted coupling:
+  - local quarter-circle source -> all scalar connection variations, no new3+2;
+  - add nonlocal C -> unrestricted finite matrix directions and changed center,
+    not an originally derived local Higgs source;
+  - existing SM finite triple -> explicit H times supplied Y, with3+2/SM module
+    structure already encoded in the representation.
+The full physical Higgs dependence is therefore NOT derived from P1/P2 or the
+original abstract tuple by these routes, and3+2 does not newly follow.
+
+The smallest remaining source datum is an independently derived noncommutative
+local algebra and its ACTUAL off-diagonal Dirac action (or equivalent charged
+mixed source vertex), with locality, group action, state and time identified.
+A name for the algebra, a matching matrix dimension, or arbitrary elements of
+the enlarged one-form space do not supply that datum. Any proposed extension
+must first pass this operator/representation test before optimizing a potential
+or claiming a selected vacuum. This is a scoped obstruction to the investigated
+origin route, not a universal no-go for TFPT, Higgs physics or all sources.
+
+Evidence: higgs_variation.py and higgs_variation_results.json. Existing
+verification scripts were imported read-only and not modified. No ledger,
+paper, empirical or T1-T8 status promotion. No new Lean build is claimed.
+An independent read-only mathematical review approved the stated scope,
+including the source algebra, domains, finite LR module and trace variations;
+its spectral-chart and algebra-closure qualifications are retained above.
+
+Primary references:
+Chamseddine and Connes, The Spectral Action Principle, hep-th/9606001:
+https://arxiv.org/abs/hep-th/9606001
+Chamseddine, Connes and van Suijlekom, Inner Fluctuations in Noncommutative
+Geometry without the First Order Condition, arXiv:1304.7583:
+https://arxiv.org/html/1304.7583v1

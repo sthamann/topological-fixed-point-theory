@@ -1,0 +1,269 @@
+HYPERGRAPH RECURSION SOURCE AUDIT
+=================================
+
+27 October 2026
+
+Question
+--------
+
+Can an existing recursive or hypergraph operation supply carrier dynamics,
+the family clock and a state selector from the same source, instead of freezing
+the discussion at H = 8K?  The smallest decisive test is the claimed coupled
+9 x 3 rule in v395, because the old synthesis calls it the point where v299,
+v327 and v324 become one local recursion.
+
+Result
+------
+
+There is a real finite recursion here, but the published v395 implementation
+does not implement it.  Its `_micro_step` drops the complete network update.
+The executable checks never call `_micro_step`, so the error is invisible.
+The same file also uses the superseded uniform family matrix and therefore
+cannot equal the full cusp readout in any basis.  Replacing that matrix by the
+already derived v486/v487 lazy rule repairs the full family spectrum exactly.
+
+The corrected statement is slightly more structured than the old one:
+
+* one local coupled step is
+
+      F(m) = T_net m M_lazy^T ;
+
+* one clock hand is a scheduled composition of one carrier step and six
+  family substeps,
+
+      H = (T_net tensor I) (I tensor M_lazy)^6
+        = T_net tensor M_lazy^6 .
+
+It is not the sixth iterate of one isotropic microstep.  That iterate would be
+
+      F^6 = T_net^6 tensor M_lazy^6 .
+
+Thus the original order six clock supplies an actual two rate recursion.  It
+does not yet identify the recursion with a local charged quantum field or with
+the physical OS transfer operator.
+
+1. The source claim and the implementation
+------------------------------------------
+
+The original synthesis states that a microstep applies network lazy diffusion
+to every cusp column and the family rule to every network row, with
+`T_micro = T_net tensor M` on 27 cells.  It further says that one clock hand
+contains one network step and six family microsteps, and that the cusp matrix
+is the same substrate in a readout basis:
+
+  /Users/stefanhamann/Projekte/tfpt-theoryv4/experiments/theory-contracts/
+  universalraum-spin-lift-basics-20260915/sources/input_4_origin_theory.tex,
+  lines 315 to 324.
+
+The actual function is at
+
+  /Users/stefanhamann/Projekte/tfpt-theoryv4/verification/
+  v395_hypergraph_coupled.py, lines 114 to 121.
+
+It first writes `T_net @ m[:,k]` into every column of `out`.  The second loop
+then overwrites every row of `out` with `M @ m[i,:]`, using the original `m`.
+Because M is symmetric, its actual return value is simply
+
+      _micro_step(m) = m M^T.
+
+The network factor has disappeared.  The test at lines 144 to 150 proves the
+abstract Kronecker identity, but it never calls `_micro_step`.  The later
+iteration at lines 152 to 163 uses the separately constructed 27 x 27 matrix
+`T_micro`.  It therefore verifies the intended matrix and not the named local
+implementation.
+
+2. Three direct inputs
+----------------------
+
+I imported the unchanged v395 module and compared its actual function with
+`T_net @ m @ M.T`.
+
+For E_00, one unit in network node 0 and family slot 0:
+
+      actual:       (0,0) = 1
+      corrected:    (0,0) = 1/2, (1,0) = 1/4
+      Frobenius error = sqrt(5)/4.
+
+For E_01, one unit in network node 0 and family slot 1:
+
+      actual:       (0,1) = 1/3, (0,2) = 1/3
+      corrected:    (0,1) = 1/6, (0,2) = 1/6,
+                    (1,1) = 1/12, (1,2) = 1/12
+      Frobenius error = sqrt(10)/12.
+
+For `MARKS tensor e0`, the two outputs agree exactly.  This is not a partial
+repair.  It explains why the defect hides at the advertised attractor:
+
+      T_net MARKS = MARKS,     M e0 = e0.
+
+The special Perron line is insensitive to the lost network step, while generic
+local data are not.
+
+3. The stale family rule and its exact repair
+---------------------------------------------
+
+v395 uses
+
+             [1   0    0 ]
+      M_u =  [0  1/3  1/3]
+             [0  1/3  1/3]
+
+with spectrum {1, 2/3, 0}.  Hence every positive power retains a zero mode.
+Its sixth power cannot be the full cusp transfer, whose spectrum is
+{1, 64/729, 1/729}.  Nevertheless v395 check 4, lines 176 to 185, checks only
+the top eigenvalue and the 64/729 recovery mode.  It never tests the third
+mode or an actual basis conjugacy.
+
+The old synthesis itself later supersedes this uniform rule.  The exact source
+is `input_4_origin_theory.tex`, lines 284 to 313.  The executable derivations
+are v486 lines 63 to 113 and v487 lines 73 to 119.  They force
+
+                [1   0    0 ]
+      M_lazy =  [0  1/2  1/6]
+                [0  1/6  1/2]
+
+from the full clock ladder.  Define the orthonormal columns
+
+      e0 = (1,0,0),
+      e+ = (0,1,1)/sqrt(2),
+      e- = (0,1,-1)/sqrt(2),
+
+and O = [e0 e+ e-].  Direct multiplication gives
+
+      O^T M_lazy O   = diag(1, 2/3, 1/3),
+      O^T M_lazy^6 O = diag(1, 64/729, 1/729)
+                     = T_cusp.
+
+This is the exact orthogonal readout basis that v395 claimed but could not
+possess with M_u.  It uses no fitted parameter.  v487 derives the two pair
+eigenvalues as the even and odd deck rungs of the existing resummed clock.
+
+The minimal code correction would be
+
+      def _micro_step(m, T_net, M):
+          return T_net @ m @ M.T
+
+with `M = M_lazy`.  I did not edit the verification corpus because this task
+permits only a local research note.
+
+4. The clock schedule carries information that the Kronecker product hides
+---------------------------------------------------------------------------
+
+v395 defines
+
+      T_micro = T_net tensor M,
+      T_hand  = T_net tensor M^6.
+
+These formulas cannot both arise by repeating one autonomous map six times:
+
+      (T_net tensor M)^6 = T_net^6 tensor M^6,
+
+and `T_net^6` is not `T_net`.  Numerically, with the corrected M_lazy, the
+Frobenius distance between these two 27 x 27 operators is about 1.10448.
+
+The formula for `T_hand` does have a clean operational meaning.  Let
+
+      N = T_net tensor I,       C = I tensor M_lazy.
+
+Then N and C commute and one hand is `N C^6`.  The existing sixfold family
+clock is therefore a scheduler: six family substeps occur per carrier update.
+This is a source backed finite time hierarchy.  Calling it the sixth iterate
+of one rule erases that hierarchy.
+
+5. What this recovers
+---------------------
+
+The corrected scheduled recursion has three exact properties from the old
+sources:
+
+1. `MARKS tensor e0` is its fixed Perron line.  The affine E8 Kac marks and the
+   family vacuum are selected by the same finite update.
+2. The complete family ladder {1, 2/3, 1/3} appears at one step, and the full
+   cusp spectrum appears after six family steps.
+3. The even and odd deck modes survive separately.  The zero mode in v395 was
+   a stale collapse of the odd rung, not a physical necessity.
+
+This is genuine progress beyond a frozen H = 8K reading.  It gives a recursive
+state selector and a discrete time index on the finite carrier by family
+coefficient system.
+
+It does not by itself give local charged fields.  The strongest nearby source
+for that further step is v808.  There the ten weight two carrier words form
+the Petersen graph, its shells of sizes 1, 3 and 6 are charge pure, and the
+outer shell is an actual C6.  Its radial stochastic quotient
+
+             [0  3  0]
+      P = 1/3[1  0  2]
+             [0  1  2]
+
+has eigenvalues {1, 1/3, -2/3}; its sixth power has precisely
+{1, 1/729, 64/729}.  This is the first existing rule that transports actual
+carrier charge labels before the sixth power erases the sign.  The same file
+correctly marks the full ten state transfer as a proposal and states that no
+deployed shells to cusp intertwiner exists.
+
+That missing intertwiner is now sharply typed.  It must preserve the signed
+one step action, not merely the sixth power spectrum.  In particular the
+Petersen radial rule is not similar to M_lazy at one step because one has
+-2/3 where the other has +2/3.  A clock or reflection lift would have to
+account for this sign explicitly.  Equality of the sixth powers is not enough.
+
+6. Why the later Perron and OS construction does not close this arrow
+---------------------------------------------------------------------
+
+The later QFT source constructs a primitive blocked transfer operator from
+strictly positive C6 Green kernels, diagonal admissibility weights and the
+already chosen projector P_adm.  It then obtains a unique positive Perron
+vacuum and a thermodynamic limit.  See
+
+  documents/archive--tfpt-45--source_extracts--04_qft_source/sections/
+  004-source.tex, lines 113 to 155 and 191 to 224.
+
+This is a valid state reconstruction once the retained admissible basis and
+local amplitudes have been supplied.  It does not generate the charged basis
+or its embedding from the hypergraph.  Likewise the C6 resolvent
+
+      D_y = y I - delta_ph U6,
+      Y_y = (D_y^* D_y + epsilon^2)^(-1)
+
+in paper tfpt-42, sections 018 and 019, is a strictly positive downstream
+kernel on already admissible cusp values.  Absolute cusp values have already
+removed the signed Petersen mode at that stage.
+
+The known quantum lifts do not silently repair the gap.  v976 proves that the
+deployed Kraus realization is measure and prepare and destroys all coherence.
+v977 supplies an exact SU(3) amplitude lift of the one step matrix, but proves
+that repeated relaxation is not generated by powers of one fixed unitary.
+Dephasing between steps and a still unselected orientation sign are required.
+
+7. Precise next source test
+---------------------------
+
+The best next test is not another spectral fit.  It is the signed one step
+intertwiner
+
+      carrier shell space  --I-->  family or cusp coefficient space
+
+with
+
+      I P_Petersen = M_signed I
+
+before the sixth power, together with the deck or OS operation that changes
+the -2/3 mode into the positive survival convention.  Success would connect
+actual charged carrier transitions, the sixfold clock and the Perron state
+selection.  Failure would show exactly where the charged graph and the
+positive transfer theory separate.
+
+No such intertwiner is stated in the inspected original sources.  The present
+result therefore establishes the corrected finite recursion and its time
+schedule, while leaving the local charged field interpretation as one precise
+operator equation rather than a general missing dictionary.
+
+Reproduction note
+-----------------
+
+The three input test was run by importing the unchanged v395 module, adding
+its `verification` directory only to Python's module path, and comparing
+`_micro_step(m,T,M)` with `T @ m @ M.T`.  The orthogonal identities above were
+checked directly with the exact rational matrix and numerically to machine
+precision.  No repository or Atlas file was changed.

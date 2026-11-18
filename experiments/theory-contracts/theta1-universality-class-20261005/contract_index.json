@@ -1,0 +1,86 @@
+{
+  "contract": "theta1-universality-class-20261005",
+  "date": "20261005",
+  "research_id": "THETA1.UNIVERSALITY.CLASS.01",
+  "question": "If Gate B holds at the frozen point P0 = (b, theta, gamma) = (0, 120 deg, 0), does the symmetric-gapped chiral phase persist on an open neighbourhood in (b, theta, gamma), so that P1/P2 only need to select a region?",
+  "verdict": "PREREGISTERED_NOT_RUN",
+  "verdict_enum": [
+    "UNIVERSAL_CANDIDATE",
+    "FINE_TUNED",
+    "UNDECIDED",
+    "PREREGISTERED_NOT_RUN"
+  ],
+  "verdict_scope": "Only exact free / one-site / IR prechecks were computed. No QMC was launched.",
+  "preregistration": {
+    "timestamp": "2026-10-05T14:28:54",
+    "design_points": {
+      "P0": [
+        0.0,
+        120.0,
+        0.0
+      ],
+      "P_b+": [
+        0.25,
+        120.0,
+        0.0
+      ],
+      "P_b-": [
+        -0.25,
+        120.0,
+        0.0
+      ],
+      "P_th-": [
+        0.0,
+        100.0,
+        0.0
+      ],
+      "P_th+": [
+        0.0,
+        140.0,
+        0.0
+      ]
+    },
+    "coordinates": "(b, theta in degrees, gamma): filter f_b = 1 - ccc + b sss; kinetic d_i = sum_j alpha_ij sin p_j + sum_j beta_ij(theta, gamma)(cos p_j - 1) + axis hops (gamma, -gamma)",
+    "run_condition": "Start only after Gate B reaches CONDITIONAL at P0 under TFPT.FULL.PROCESS.01 G1-G5, including the round-56 equilibration rule and SPG.BUDGET.01. Use the same g, beta, dtau, cells, estimators and >= 2 independent chains per point. Reproduce the free reference (prechecks UC7) first.",
+    "reporting": "Report g and g_mirror = g (1 + b)^4 and g* = g (9/8 + b^2/8)^2 separately; the theta points change only the mirror frame.",
+    "decision_rule": "UNIVERSAL_CANDIDATE if all five points pass the same Gate-B criteria. FINE_TUNED if P0 passes and at least one neighbour fails cleanly, with a resolved sign budget and equilibration. UNDECIDED if any point is sign- or feasibility-limited. No interpolation between outcomes.",
+    "not_allowed": "No larger scan before this decision. No retuning of the design points after data are seen.",
+    "amendment_1": {
+      "timestamp": "2026-10-05T14:49:16",
+      "before_any_data": true,
+      "arms": {
+        "A_fixed_coupling": "same microscopic g at all five points (what does the same fundamental parameter do in different runtime realisations?)",
+        "B_matched_mirror_coupling": "g(b) = g0/(1+b)^4 so that g(b)(1+b)^4 = g_mirror(P0): P_b+ 0.4096 g0, P_b- 3.1605 g0 (decisive for the universality question)"
+      },
+      "velocities": "Gamma and mirror Weyl speeds are exactly 1 at every design point (V_Gamma = I, V_P orthogonal); report them, no renormalisation needed",
+      "decision_rule_update": "UNIVERSAL_CANDIDATE requires arm B to pass at all five points; arm A is reported separately and does not decide universality",
+      "feasibility_note": "arm B at P_b- needs 3.16 g0; if g0 lies near the sign-limited region the point may be UNDECIDED (record R and the sign budget)"
+    }
+  },
+  "mathematical_verdict": "ALL_DESIGN_POINTS_MINIMALLY_DOUBLED; MIRROR_AT_P; LOCAL_SO11_CONDITION_HOLDS_UP_TO_G_STAR_RESCALING; MIRROR_WEIGHT_(1+b)^4; IR_IDENTICAL; ARM_B_MATCHED_MIRROR_COUPLING_ADDED; UNIT_WEYL_SPEEDS",
+  "summary_de": "Vorregistrierter Universalitaetstest: fuenf Punkte (b = +-0.25; theta = 100/140 Grad) um den eingefrorenen Punkt. Alle sind minimal verdoppelt, der Spiegel sitzt bei P, die lokale so(11)-Bedingung gilt bis auf g* = g (9/8 + b^2/8)^2, und das IR ist identisch. Der Spiegel sieht den Quartic mit Gewicht (1+b)^4 (2,44 bzw. 0,32). Kein QMC gestartet: Gate B fuer P0 ist offen.",
+  "gates": [
+    "T4"
+  ],
+  "kills": [],
+  "resolved": [
+    "Frozen design and decision rule; exact free reference energies for validation."
+  ],
+  "related_contracts": [
+    "tfpt-full-process-20261002",
+    "minimal-runtime-reconstruction-20261005",
+    "seam-holonomy-generating-20261001"
+  ],
+  "checker": "prechecks.py",
+  "results": "prechecks_results.json",
+  "proof": "README.md",
+  "firewall": "experiments",
+  "promotion": false,
+  "complete_TFPT_solution": false,
+  "physical_gates_closed": [],
+  "claims_tested": [],
+  "claims_scoped_not_closed": [
+    "AX.P1.01",
+    "AX.P2.01"
+  ]
+}

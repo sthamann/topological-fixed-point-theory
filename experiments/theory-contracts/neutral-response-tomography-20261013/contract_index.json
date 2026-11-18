@@ -1,0 +1,70 @@
+{
+  "contract": "neutral-response-tomography-20261013",
+  "research_id": "UR.SOURCE.NEUTRAL_RESPONSE_TOMOGRAPHY.01",
+  "date": "2026-10-13",
+  "question": "Which additional native neutral-field responses repair the information lost by the rank-one P0 port, and under which source-alignment assumptions?",
+  "verdict": "PARTIAL",
+  "mathematical_verdict": "SCOPED_RESPONSE_IDENTIFIABILITY_PROVED",
+  "summary_de": "Die ursprüngliche neutrale Quelle enthält mehr Information als ihr P0-Port: Norm und vorhandene Dreipunktantwort bleiben für (0,4,-8) und (2,-6,2) gleich. Die aus derselben Quelle berechnete verbundene Vierpunktantwort unterscheidet sie und identifiziert (0,4,-8) im festen 5+2+1-Blockraum eindeutig. Zwei gemischte Antworten auf die nativen Sektor-Stressfelder rekonstruieren die Blockkoeffizienten sogar linear. Ohne feste Ausrichtung bleiben isospektrale quadratische Felder durch sämtliche Selbstantworten ununterscheidbar. Physische Messauswahl und 5/4-Suszeptibilität sind nicht hergeleitet.",
+  "summary_en": "The original neutral source retains more information than its P0 port: norm and the existing three-point response coincide for (0,4,-8) and (2,-6,2). Its connected four-point response distinguishes them and uniquely identifies (0,4,-8) in the fixed 5+2+1 block class. Two mixed responses to native sector stress fields reconstruct the block coefficients linearly. Without fixed alignment, isospectral quadratic fields retain identical self-responses of every order. Physical measurement selection and the 5/4 susceptibility are not derived.",
+  "scope": "Exact vacuum Wick responses of original neutral_source_response.py with fixed native rank5,2,1 projectors and block-scalar quadratic primaries; algebraic identifiability, not physical source selection or susceptibility derivation.",
+  "assumptions": [
+    "Original native P5,P2,P1 projectors and oscillator vacuum contraction; no replacement source or fitted kernel.",
+    "Uniqueness assertion restricts candidates to aP5+bP2+cP1 with 5a+2b+c=0 and a fixed marked sector dictionary.",
+    "Connected four-point response or mixed sector stress responses are additional observables beyond the scalar P0 port.",
+    "Original vacuum Wick state and exact coefficients; physical detector access, defect-state transfer and noisy reconstruction are not established."
+  ],
+  "positive_results": [
+    "Native connected four-point response has coefficient Tr(R^4)=4608, obtained by explicit Wick cycles.",
+    "Exact elimination proves unique coefficients (0,4,-8) from primarity and moments (96,-384,4608) in the fixed three-block class.",
+    "Mixed native sector responses reconstruct a=2m5/5, b=m2, c=-2(m5+m2) in that class."
+  ],
+  "kills": [
+    "Claim that adding the existing cubic response alone repairs scalar P0 identifiability: (2,-6,2) has the same norm and cubic.",
+    "Claim that self-correlators alone identify carrier alignment for arbitrary quadratic matrices: an exact isospectral witness changes the D5 block trace."
+  ],
+  "leaves_open": [
+    "Derive physical detector access to the native sector-resolved or higher local responses and the state/normalization dictionary.",
+    "Derive the physical 5/4 susceptibility and readout kernel without inserting them; the selected R still has zero D5 coefficient.",
+    "Reconstruct arbitrary quadratic matrices, including off-diagonal blocks, with an admissible complete probe menu.",
+    "P1/P2 source/branch/state selection and the physical T1–T8 completion."
+  ],
+  "topics": [
+    "topic:alpha",
+    "topic:e8",
+    "topic:quantum",
+    "topic:universalraum"
+  ],
+  "relations": [
+    {
+      "target": "neutral-port-identifiability-20261013",
+      "type": "extends"
+    },
+    {
+      "target": "source-observation-identifiability-20261013",
+      "type": "refines"
+    },
+    {
+      "target": "seam-readout-flow-deck-20261005",
+      "type": "references"
+    }
+  ],
+  "claims_tested": [],
+  "gates": [],
+  "physical_gates_closed": [],
+  "complete_TFPT_solution": false,
+  "promotion": false,
+  "firewall": "experiments",
+  "checker": "checker.py",
+  "proof": "PROOF.txt",
+  "certificate": "results.json",
+  "source_manifest": "source_manifest.json",
+  "novelty_scope": "Project-specific exact higher/mixed-response reconstruction and its alignment boundary. Wick theory and the native norm/cubic are prior knowledge; no new general physical theory.",
+  "literature": [
+    {
+      "url": "https://arxiv.org/pdf/hep-th/9108028",
+      "title": "Paul Ginsparg, Applied Conformal Field Theory",
+      "scope": "Section2.3 free boson normal-ordering and Wick conventions; no TFPT source-selection evidence."
+    }
+  ]
+}

@@ -1,0 +1,116 @@
+{
+  "steps": [
+    {
+      "step": "L1.microcausality: after t = 6 steps the propagator is supported EXACTLY in the cube |x_i| <= t (zero outside, nonzero at the corners), norm preserved: strict causal cone, {psi(x,t), psi^dag(0,0)} = 0 outside",
+      "pass": true,
+      "detail": "max outside 0.0e+00, corner amplitude 1.51e-03, norm 1.000000000000"
+    },
+    {
+      "step": "L2.emergent cone inside the hard cone: all group velocities over the Brillouin zone satisfy |v_i| <= 1 (cube); the IR cone (m = 0) is isotropic with speed 1, inscribed in the cube",
+      "pass": true,
+      "detail": "max |v_i| over BZ 0.9981; IR speeds in [0.99966, 1.00084]"
+    },
+    {
+      "step": "L3.Lorentz is emergent: omega/|k| - 1 is direction dependent and vanishes linearly with |k| (leading violation O(k l)); no exact lattice boosts",
+      "pass": true,
+      "detail": "max |omega/|k| - 1| = 3.71e-03 (|k| = 0.02), 1.86e-03 (0.01); spread over directions 3.7e-03"
+    },
+    {
+      "step": "L4.proper time: event depth t is coordinate time; a massive excitation with group velocity v accumulates phase (omega - k.v) t = m sqrt(1 - v^2) t in the continuum limit: emergent time dilation",
+      "pass": true,
+      "detail": "max relative deviation 4.65e-02 -> 2.19e-02 at half scale"
+    },
+    {
+      "step": "L5.doubling census (corrects the single-node reading of Parts Q/K): per chiral block the quasi-energy-0 nodes are k = 0 and one BZ corner +-P = +-(pi/2)(1,1,1) with OPPOSITE charge; the pi-nodes cancel likewise: Nielsen-Ninomiya holds, the walk is vector-like in the IR",
+      "pass": true,
+      "detail": "block +: qe 0 {'G': np.float64(1.0), '+P': np.float64(-1.0)}, qe pi {'H': np.float64(1.0), '-P': np.float64(-1.0)}; block -: qe 0 {'G': np.float64(-1.0), '-P': np.float64(1.0)}, qe pi {'H': np.float64(-1.0), '+P': np.float64(1.0)}"
+    },
+    {
+      "step": "L6.the on-site mass coin gaps k = 0 (quasi-energies +-m) but leaves the doubler pair EXACTLY massless: U_D(+-P, m) has eigenvalue 1 for every m; P and -P differ by Q = (pi,pi,pi), not a reciprocal vector",
+      "pass": true,
+      "detail": "m = (0.1, 0.3, 1.0): min |quasi-energy| at +-P = 0 (exact)"
+    },
+    {
+      "step": "L7.sheets: total winding parity is a Z2 grading of H_1 (every primitive step flips it, the relation (1,1,1,1) is even) = deck index of the double cover branched at the marks = bcc sublattice sign e^{iQ.x}; the sheet-odd mass gaps quasi-energies 0 AND pi everywhere and its Dirac sea clusters exponentially; with m_s = 0 the walk stays gapless at +-P",
+      "pass": true,
+      "detail": "gaps (0, pi): sheet-odd [0.5, 0.5], uniform only [0.0, 0.0]; |<psi^dag(r,r,r) psi(0)>| at r = 1,3,5: [3.49e-01 8.60e-03 2.58e-04] (same-sheet r even: 0); decay rate 1.803/step; uniform-only min |sin omega| 3.4e-17 (no Dirac sea)"
+    },
+    {
+      "step": "L8.(statement) dimension typing: hypotheses = 3D bcc lattice + step time + AX.MARKMAJORANA + sheet-odd mass; conclusion = free 3+1D kinematics of a vector-like Dirac pair (light pair at k = 0, sheet-gapped doubler pair at +-P) with strict causality, emergent Lorentz cone, proper time and clustering vacuum; NOT derived: chiral IR, interactions, gauge fields, gravity; Weinberg-Witten only cross-linked",
+      "pass": true,
+      "detail": "no spin-2, chirality or TOE marker moves"
+    }
+  ],
+  "passed": 8,
+  "total": 8,
+  "vmax": 0.998112964500919,
+  "lorentz_violation": [
+    0.0037064788114409275,
+    0.001860399373468491
+  ],
+  "census": {
+    "+": [
+      [
+        [
+          "G",
+          1.0
+        ],
+        [
+          "+P",
+          -1.0
+        ]
+      ],
+      [
+        [
+          "H",
+          1.0
+        ],
+        [
+          "-P",
+          -1.0
+        ]
+      ]
+    ],
+    "-": [
+      [
+        [
+          "G",
+          -1.0
+        ],
+        [
+          "-P",
+          1.0
+        ]
+      ],
+      [
+        [
+          "H",
+          -1.0
+        ],
+        [
+          "+P",
+          1.0
+        ]
+      ]
+    ]
+  },
+  "gaps_sheet_odd": [
+    0.49999999999999944,
+    0.49999999999999956
+  ],
+  "gaps_uniform": [
+    8.673617379884278e-19,
+    0.0
+  ],
+  "clustering": [
+    0.9999999999999999,
+    0.34886907921079946,
+    3.7835628676256225e-16,
+    0.008598214009228108,
+    3.169930281769991e-16,
+    0.000257551568933624,
+    3.2373458160637403e-16,
+    5.466932484046289e-05,
+    3.74787057632651e-16
+  ]
+}

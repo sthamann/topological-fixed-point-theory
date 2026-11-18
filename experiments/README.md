@@ -1159,3 +1159,43 @@ python experiments/build_evidence_scorecard.py
   still nach `[E]` hochgestuft.
 * Standalone unter `experiments/` — **nicht** im Verification-Suite/Ledger/Website,
   keine load-bearing Claims.
+
+
+### Konstruktive Nahtsuche mit Atlas, zwei H200 und Lean (15.10.2026)
+
+`theory-contracts/seam-constructive-search-20261015/` verbindet quellgebundene Atlas-MCP-Pakete, genetische Kandidaten, exakte Constraints und feste Lean-Zertifikate. Erster Produktionslauf: 262.144 eindeutige Genotypen, vier algebraische Kandidatenklassen, vier automatisch geprüfte universelle Wortzertifikate. Quelle, Halbsektor und quadratische Zeit sind Voraussetzungen; Zustandspositivität, vollständiger Feldanschluss und P1/P2-Auswahl sind nicht durch diesen Lauf bewiesen. Unveränderte abgeschlossene Klassen werden wiederverwendet. Fortsetzung prüft den ursprünglichen Einzelwindungsschritt T1 und zulässige Äquivalenzen. Details und Ergebnisse im Experiment.
+
+Fortsetzung desselben Experiments: Paritätsäquivalenz, vollständiger T1-Lift, positive Zustandsfortsetzung, bedingter E8-Stromgruppenlift und Cartan-/Grundzustandsvergleich sind in `SYNTHESIS.md` verbunden. Der bereits bekannte unveränderte Quellenwiderspruch wird auf sämtliche Kandidaten angewandt; eine algebraische Erweiterung zählt nicht als ursprüngliche Quellenrealisierung.
+
+
+### 2026-10-15: Original carrier partner and quarter-domain conjugation
+
+`theory-contracts/seam-partner-original-action-20261015/` constructs the original carrier pair action and cross-sheet conjugation. The prior source-neutral root has hypercharge 1/6; the fixed folded time splits its (3,2) multiplet. Actual chiral particle-hole conjugation preserves excitation energy across the two quarter domains and adds no second vacuum. Carrier labels, affine states and physical source states stay distinct. No P1/P2 source or physical-time selection is claimed; see PROOF.txt and results.json.
+
+
+## Source-typed collar and multi-field sewing (2026-10-16)
+
+[Source control and derivation](theory-contracts/seam-collar-multifield-20261016/README.md): corrected feasibility defaults and explicit vacuum/thermal transfer classes prevent artificial exclusions. The duplicated-mode collar calibration has product response 1/16; the actual lowest quarter-source particle/hole pair instead gives 1/256, with opposite charged quarter phases. Actual CAR graph covariance plus oriented state/map pairing reconstructs all exterior field amplitudes; explicit tails control the complete known quarter source. These physical identifications and the unnormalized scalar are still premises, while the original interacting Schwinger route remains available.
+
+The same contract now retains a reference amplitude lambda and constructs a joint
+unnormalized free source by exact Berezin/Schur integration. For the supplied
+angular quarter Dirac operator, its zeta determinant is1-i with the Green/eta
+variation checked. These explicit measure and regularization choices have not
+been selected from P1/P2; geometric boundary pairing and the full interacting
+source remain separate from the finite mode-partition control.
+
+## Positive source-kernel construction (2026-10-15)
+
+[Positive word-kernel search](theory-contracts/seam-positive-kernel-search-20261015/README.md) now constructs unknown moments, exactly certifies finite completions and automatically finds a shortest distinguishing word. Two five-mode, 32-dimensional completions reproduce all 2245 moments through degree 4 and differ at degree 5. Explicit CAR/transfer assumptions and a minimal Fock completion remain additional premises; physical marking, original quarter holonomy and the event law are not derived. The executable search and its independent checker are registered in the Atlas.
+
+## Automated operator construction (2026-10-15)
+
+[Operator synthesis](theory-contracts/seam-constructive-search-20261015/operator_synthesis/README.md): typed operator-word search learns exact counterexamples; an inverse solver constructs simultaneous linear or antilinear maps from declared operator relations. The recorded CAR recovery is a known-result calibration, not a new physical derivation. The exhausted phase search is preserved. The subsequent finite positive-kernel implementation is linked above; the original physical source-selection problem remains open.
+
+## Source-generated marking search (2026-10-15)
+
+[Exact character search](theory-contracts/seam-source-character-search-20261015/README.md): a complete source-plane classification replaces arbitrary phase scanning. Sixteen four-torsion characters contain four D5+A3 markings, whose projectors are reconstructed. Lean checks the plane saturation and joint charge/time/sheet identities. Actual source-field phases and the existing state obstruction prevent physical-source promotion. No unchanged H200 rerun; P1/P2 source selection remains open.
+
+## Joint quarter conjugation (2026-10-15)
+
+[Source-derived transport in the retained realization](theory-contracts/seam-joint-conjugation-20261015/README.md): the actual quarter particle-hole map determines the transport of charge, state, time and a supplied marking. The opposite marking follows without another choice; a fixed-time correction cannot restore the old marked subspace. Bilinear/Hermitian and spinor/elementary-field distinctions are checked explicitly. Experiment only; the first physical source and E8 extension are not selected from P1/P2.

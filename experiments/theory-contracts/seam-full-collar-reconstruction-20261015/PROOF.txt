@@ -1,0 +1,221 @@
+TFPT: Full two-face source reconstruction and the reflection/polarization distinction
+Date: 2026-10-15
+Contract: UR.SEAM.FULL_COLLAR_RECONSTRUCTION.01
+Verdict: EXACT_CONDITIONAL_RECONSTRUCTION_WITH_SOURCE_CORRECTION
+Overall physical P1/P2 source selection: NOT DERIVED.
+
+1. Question and input audit
+
+The requested object is one original seam action determining its marking, field action,
+state and time, retaining the quarter phase. Reconstructing a chosen Hamiltonian is not
+that selection. This investigation corrects a particular original identification and
+retains the source information needed for a constructive inverse map.
+
+Original source: _archive/tfpt-45/source_extracts/01_boundary_kernel_source.tex.
+Lines 65-80 already supply a boundary tuple including D_+ and B_Sigma and an exact
+product collar D_+=gamma_n(partial_n+B_Sigma). Lines 130-136 and 154-166 assert that
+the geometric deck reflection R_tau is F=2P_C-I. Lines 480-520 supply an operational
+seed containing the algebra, time, reflection, state, winding and collar operator.
+The present results do not remove those supplied inputs by renaming them outputs.
+
+2. The geometric reflection is not the Calderon polarization
+
+Let C be the ORTHOGONAL projection onto the Cauchy data of a symmetric Dirac operator,
+and let J_n be its normal Clifford action, J_n*=-J_n and J_n^2=-I. Under the usual
+Dirac hypotheses the Cauchy space is Lagrangian for <J_n u,v>. Consequently
+J_n C J_n*=I-C. For F=2C-I this gives J_n F=-F J_n.
+The algebraic operator R_alg=J_n F is a selfadjoint involution, satisfies
+R_alg F R_alg=-F and R_alg F=J_n. This is a reconstructed, generally nonlocal
+operator; it is not automatically the local geometric lift of a deck reflection.
+If R and F are anticommuting involutions then (RF)^2=-I, whereas R=F would give
+(RF)^2=I. The algebraic quarter turn is not a derivation of charged holonomy i.
+
+An explicit Dirac calculation: on a circle let A_alpha=-i partial_theta+alpha,
+alpha=1/4, in the periodic frame. On TWO GRADED COMPONENTS OF THE SAME DOMAIN put
+B=diag(A_alpha,-A_alpha), J_n=[[0,-I],[I,0]], and R=[[0,I],[I,0]]. Then
+J_n^2=-I, R^2=I, R J_n R=-J_n, R B R=-B. The actual differential operator
+D=J_n(partial_r+B) commutes with the geometric reflection psi(r)->R psi(-r).
+On the half-infinite cylinder C_half=1_(0,infinity)(B), and
+R C_half R=I-C_half, not C_half. Thus its Cauchy range is not the +1 eigenspace of R.
+
+There is also a compact version; the conclusion is not an artifact of an infinite
+collar. Double [0,ell]xS^1 to the r-circle of length 2ell with constant D as above.
+The involution r->-r fixes r=0 and r=ell, and has the local lift R. The Cauchy
+projection of the original finite cylinder is G_ell in section 3. On its two
+boundary components the deck lift is diag(R,R). On any nonzero B mode it conjugates
+G_ell=[[A,Cross],[Cross,I-A]] to [[I-A,Cross],[Cross,A]], which differs from G_ell.
+In particular it cannot equal 2G_ell-I, an operator that commutes with G_ell.
+Do not confuse this deck operation, which fixes each boundary, with reflection
+WITHIN the original cylinder: (u,v)->(Rv,Ru); the latter preserves graph(exp(-ell B)).
+
+More generally, a lift over the fixed boundary is pointwise in the bundle, while
+the principal symbol of 2C-I depends on tangential cotangent direction for an
+ordinary Dirac boundary. These cannot be identified just from reflection regularity.
+If R_tau is instead DEFINED as 2C-I, the algebraic statement is true by definition,
+but its identification with a geometric reflection has become an extra hypothesis.
+This corrects the stated geometric inference; it is not a no-go for all TFPT seams.
+
+For a generic compact interior, C need not equal the positive spectral projector
+of B. The half-cylinder equality used above is exact in its specified realization.
+The two-face finite-cylinder calculation below uses the actual solutions, not that
+generic replacement. Orthogonalizing a Calderon projection is also explicit here.
+
+3. The complete two-face datum retains the signed operator
+
+Assume a given selfadjoint B on H, a known normal length ell>0, identified/labeled
+boundary fibers, and an exact normal-independent product equation
+(partial_r+B)psi=0 on the retained interval [0,ell]. Write T=exp(-ell B).
+By the spectral theorem T is positive, injective, densely defined and closed,
+possibly unbounded. The L2-closed endpoint Cauchy space is
+L_ell={(u,Tu): u in D(T)}, where
+D(T)={u: integral exp(-2ell lambda) dmu_B,u(lambda)<infinity}.
+Finite spectral-cutoff solutions form a core for this closed graph. No claim is
+made that every such endpoint pair has an H1 solution up to both boundary faces.
+
+The orthogonal graph projection is
+G_ell = [[A,Cross],[Cross,I-A]],
+A=(I+T^2)^(-1)=(I+exp(-2ell B))^(-1),
+Cross=T(I+T^2)^(-1)=(2cosh(ell B))^(-1).
+This follows by projecting each spectral two-vector onto span(1,t), or from the
+closed-operator graph projection theorem. All four displayed blocks are bounded.
+Both A and I-A are injective, with dense range; 0 and 1 can be spectral limit
+points but not eigenvalues. The original signed B is recovered uniquely by
+B=(2ell)^(-1) log(A/(I-A)),
+D(B)={u: integral_(0,1) |log(a/(1-a))|^2 dmu_A,u(a)<infinity}.
+This formula keeps signs and magnitudes and transforms covariantly with the fibers.
+
+Likewise T is the spectral quotient Cross/A on D(T). As a raw composition,
+Cross A^(-1) has domain Ran(A)=D(T^2); its closure is T. Omitting this closure
+would give the wrong domain in infinite dimension. Example: B e_n=-n e_n,
+u_n=exp(-3ell n/2) is in D(T) but not D(T^2).
+If ell is not independently known, the reconstruction determines only ell B.
+If the face identification is missing, a positive transfer cannot simply be
+declared in an arbitrary frame. Recovering a spectral list is not recovering
+the matrix/operator action on the given local fields.
+
+4. A common state and time from that same datum, with explicit field premise
+
+Now additionally assume that the actual field algebra is charged CAR(H direct_sum H)
+and that its state is the gauge-invariant quasifree state with covariance G_ell.
+These are field/statistical premises, not consequences of P1 alone. A projection
+covariance defines a pure quasifree state. Restriction to the second labeled face
+has occupation n_ell=I-A=(I+exp(2ell B))^(-1), with 0<n_ell<I spectrally.
+For the free CAR dynamics a(f)->a(exp(itB)f), this is the quasifree KMS state
+at inverse temperature beta=2ell (using the convention where occupation is
+(I+exp(beta B))^(-1)). Its one-particle modular logarithm is
+log((I-n_ell)/n_ell)=2ell B.
+Thus the covariance and time generator are read from the SAME two-face datum;
+one does not fit a second Hamiltonian to a prescribed occupation list. In infinite
+dimension this is a state on the CAR algebra, not automatically a trace-class
+Gibbs density matrix in an arbitrarily chosen Fock representation.
+
+This is the known faithful-covariance inverse from the earlier Atlas contract
+seam-state-dynamics-injectivity-20260918, now linked to the exact finite-collar
+boundary equation. Neither the logarithm nor quasifree purification is new general
+mathematics. The constructive contribution here is the corrected TFPT data path.
+As ell->infinity, n_ell tends strongly to 1_(-infinity,0)(B)+1/2*1_{0}(B).
+The sign-only limit loses the energy magnitudes that the finite two-face data keep.
+On that limit one must not continue using a faithful-state logarithm.
+
+Normal distance and physical time are distinct. Analytic continuation of the
+positive transfer constructs a unitary one-particle group exp(itB). Its physical
+identification, time unit and event interpretation require the original field
+realization and scale. Neither a finite matrix test nor KMS uniqueness proves them.
+
+5. Quarter phase, markings and actual field action
+
+All spectral functions above act on the given domain of B. They retain an existing
+quarter transition; they do not select alpha=1/4 from unrestricted holonomies.
+In the explicit witness the negative branch has eigenvalues
+-(n+1/4)=(-n-1)+3/4. This is a spectral relabeling. The matrix J_n acts linearly
+between graded components of the SAME domain. An anti-linear charge conjugation
+of a literal scalar twisted section instead sends H_alpha to H_(1-alpha).
+These statements must not be merged into an untyped scalar identity between domains.
+
+For a supplied unitary source transport W, B'=WBW*, G'=diag(W,W)Gdiag(W*,W*)
+and n'=WnW*. A supplied marking M must transform M'=WMW*, including
+[B',M']=W[B,M]W*. On the CAR algebra the associated field map is a(f)->a(Wf).
+The checks transport a noncommuting marking and test the operator action, not
+only equal eigenvalues. They do NOT derive the original M, the P2 split, a local
+geometric W, or an implementer in every infinite-dimensional Fock representation.
+In particular a function of B alone commutes with B. A noncommuting physical
+marking cannot be manufactured from spectral data of B alone; local algebra,
+winding or another source structure has to supply its actual operator action.
+
+6. What the automated calculation establishes
+
+checker.py reconstruct --kernel accepts an exact rational two-face projection,
+explicit face/mode labels and a positive known ell. It receives no B or target
+spectrum. It checks symmetry, idempotence, graph rank/invertibility, positive
+selfadjoint transfer and all graph blocks, then returns the unique spectral-log
+operator expression. The generic non-diagonal fixture reconstructs [[2,1],[1,2]].
+Sign-only limit projections, nonpositive transfers and nonprojections are rejected.
+The diagnostic choice ell=4log(2) makes quarter-mode transfers rational and allows
+exact recovery of the diagnostic B without numerical logarithms. That length and
+these test modes are diagnostic inputs, not TFPT-derived physical constants.
+
+The Lean certificate proves rational graph projection, graph range, injectivity,
+and the anticommuting-involution identities. It does not formalize the unbounded
+logarithm, Hilbert domains, CAR/KMS theory, locality or the microscopic P1 source.
+The source-manifest replay detects changed inputs; it is not proof of source truth.
+
+7. Decisive continuation in the original source
+
+Use the supplied product-collar structure before taking the infinite/sign limit.
+Retain both endpoint fields, their actual comparison map, and the normal scale.
+The scalar or matrix reconstruction then requires no separate search over B,
+thermal occupations or compatible unitary time laws: these are consequences of G.
+This reduces the remaining construction to the original full kernel/local algebra
+and its marking action. It is not justified to generate G from a guessed B and
+then call the inverse formula an independent derivation of that B from P1/P2.
+
+The source definition permits cutting a finite collar from a GIVEN D_+; it does
+not specify an independent numerical two-face kernel or select D_+ uniquely.
+P2 carrier/interface data and the E8 extension are not supplied by the graph
+inverse. A physical event law and all T1-T8 gates remain unproved by this contract.
+The corrected relation must replace the geometric R_tau=F inference in future
+reasoning; the original archived source is preserved as evidence, not silently edited.
+
+Primary references used to check the operator types and analytic scope:
+David Bleecker and Bernhelm Booss-Bavnbek, Spectral Invariants of Operators of
+Dirac Type on Partitioned Manifolds, Example 2.24(b), Proposition 2.26:
+https://thiele.ruc.dk/~booss/ell/blbo030307p.pdf
+Bernhelm Booss-Bavnbek, Matthias Lesch and Chaofeng Zhu, The Calderon Projection:
+New Definition and Applications, Proposition 5.12, Remark 5.13, section 6:
+https://arxiv.org/pdf/0803.4160
+Huzihiro Araki, On Quasifree States of CAR and Bogoliubov Automorphisms:
+https://ems.press/content/serial-article-files/41673
+
+8. The original positive-only compression destroys the proposed carrier marking
+
+A second, independent typing failure occurs before the finite carrier theorem.
+In 01_boundary_kernel_source.tex:204-207 the seam selector is
+P_Seam,+=(I+F)/2=C. Lines 249-261 state Pprim=C Pprim,gap, hence
+Ran(Pprim) is contained in Ran(C), even without assuming the factors commute.
+Lines 274-283 select H_car after primitive admissibility compression and define
+epsilon_car=F|H_car. Read literally as H_car subset Ran(Pprim), this implies
+epsilon_car=+I, E_-=0 and E_+=H_car. Indeed C v=v implies (2C-I)v=v.
+Equivalently, for any carrier projection Q with C Q=Q, (2C-I)Q=Q.
+An isometric pullback W with image in Ran(C) cannot fix this: W*F W=I.
+
+But 02_carrier_source.tex:174-180 defines P3=(I-epsilon_car)/2 and
+P2=(I+epsilon_car)/2, and lines 235-283 require dim E3=3 and dim E2=2.
+The stated positive-only restriction therefore cannot supply the claimed 3+2
+marking. This is a contradiction in the literal source-to-carrier construction,
+not a refutation of the abstract P2 interface or its conditional 3+2 algebra.
+If H_car instead means a separate coefficient factor BEFORE state compression,
+the displayed restriction has a different type and needs its actual embedding
+and internal involution. The cited definition supplies neither map.
+
+The repair must retain the full field space and the marking action before any
+state/admissibility projection. A state covariance is not an internal carrier
+grading. In particular, the full two-face route is NOT sufficient if one again
+sets epsilon_car=(2G-I)|Ran(G); that restriction is identically +I as well.
+G is to be retained as operator data on both labeled faces, with the local field
+algebra and source marking, not used to discard one grading and later recreate it.
+No arbitrary 3+2 matrix or five selected modes are inserted as a purported repair.
+This identifies a concrete reason why the previous carrier reconstruction cannot
+close its own missing marking map, and specifies the information it must preserve.
+The executable carrier audit checks an explicitly supplied isometric embedding W
+and claimed involution E against (2G-I)W=W E. It validates a supplied dictionary;
+it does not derive W or E, and a positive-only image cannot carry a negative E sector.

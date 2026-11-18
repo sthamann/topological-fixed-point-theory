@@ -1,0 +1,244 @@
+NATIVE EVENT CHANNEL INTERSECTION
+=================================
+
+Verdict
+-------
+
+The forgotten-outcome channel Phi_p of the six-effect covariant instrument is
+an exact positive mixture of conjugations by the actual native G31 event words
+if and only if
+
+    1/10 <= p <= 1/2.
+
+The square-root Lueders channel p=1 is therefore not a mixture of the original
+native event unitaries.  The nonempty interval is a genuine positive overlap
+with the old event menu, but the original sources still do not select a weight
+distribution or a value of p.
+
+
+1. Why central S6 weights are complete
+--------------------------------------
+
+On the original quartic H5, scalar phases and the P64 kernel disappear under
+unitary conjugation.  The actual native G31 event action therefore factors
+through its existing S6 quotient.  The checker reconstructs all 720 H5
+matrices as products of fifteen selected representatives among the original
+sixty native reflections.  Every quotient element retains its word in the
+original reflection indices.
+
+Suppose a random-unitary channel is fully G31 covariant.  Conjugating its
+probability distribution by any group element gives the same channel.
+Averaging those distributions preserves positivity and the channel while
+making the distribution constant on conjugacy classes.  It is therefore both
+necessary and sufficient to study nonnegative total class weights w_C.
+
+
+2. Actual End(H5) representation and class characters
+------------------------------------------------------
+
+The conjugation representation decomposes as
+
+    End(H5) = 1 + 5 + 9 + 10.
+
+This is checked on the actual native 5 by 5 word matrices.  Central character
+projectors reconstructed from all 720 words are exact orthogonal idempotents
+of ranks 1,5,9,10 and sum to I25.
+
+For a cycle type C let m1 and m2 be its numbers of one-cycles and two-cycles.
+Writing chi=chi5=m1-1 and chi2=chi5(g^2)=m1+2m2-1 gives
+
+    chi9  = (chi^2+chi2)/2 - chi - 1,
+    chi10 = (chi^2-chi2)/2.
+
+The eleven exact class rows are:
+
+    cycles       size   chi5  chi9  chi10
+    (6)           120     -1     0      1
+    (5,1)         144      0    -1      0
+    (4,2)          90     -1     1      0
+    (4,1,1)        90      1    -1      0
+    (3,3)          40     -1     0      1
+    (3,2,1)       120      0     0     -1
+    (3,1,1,1)      40      2     0      1
+    (2,2,2)        15     -1     3     -2
+    (2,2,1,1)      45      1     1     -2
+    (2,1,1,1,1)    15      3     3      2
+    (1,1,1,1,1,1)   1      5     9     10
+
+For every class average A_C and every one of the four actual isotypic
+projectors Q_d, the checker verifies directly
+
+    A_C Q_d = chi_d(C)/d Q_d.
+
+Thus the subsequent character calculation is an exact compression of the
+actual native operator calculation, not a replacement representation.
+
+
+3. Exact channel intersection
+-----------------------------
+
+The classified six-effect channel has eigenvalues
+
+    1 on the trivial line,
+    p-1/5 on the five,
+    0 on the nine and ten.
+
+A central native random-unitary mixture matches it precisely when
+
+    sum_C w_C = 1,
+    sum_C w_C chi9(C) = 0,
+    sum_C w_C chi10(C) = 0,
+    w_C >= 0,
+
+and
+
+    lambda5 = sum_C w_C chi5(C)/5 = p-1/5.
+
+The three equality constraints have rank three.  Exact enumeration of every
+basic feasible support of at most three classes gives 29 vertices.  Each
+vertex was also expanded to its actual 25 by 25 native channel and compared
+entry by entry with Phi_p.
+
+
+4. Short analytic proof of the complete interval
+-------------------------------------------------
+
+Let expectation refer to the class distribution and put chi=chi5.  The two
+zero-eigenvalue equations imply
+
+    E[chi^2] = 1 + E[chi].
+
+The character chi is integral on every S6 class.  Hence the following two
+polynomials are pointwise nonnegative:
+
+    chi(chi+1) >= 0,
+    (chi-1)(chi-2) >= 0.
+
+Averaging and inserting the moment identity gives
+
+    1 + 2 E[chi] >= 0,
+    3 - 2 E[chi] >= 0.
+
+Therefore
+
+    -1/2 <= E[chi] <= 3/2.
+
+Since p=(1+E[chi])/5, every feasible mixture obeys
+
+    1/10 <= p <= 1/2.
+
+Both bounds are attained by actual native word distributions below.  Their
+convex combinations attain every intermediate p, so this necessary interval
+is also sufficient.
+
+
+5. Explicit endpoint mixtures
+-----------------------------
+
+At the lower endpoint p=1/10, take total class weights
+
+    w_(6)       = 1/2,
+    w_(3,2,1)   = 1/2.
+
+Both classes have size 120, so each of their 240 actual native words receives
+probability 1/240.
+
+At the upper endpoint p=1/2, take
+
+    w_(4,1,1)     = 1/4,
+    w_(3,1,1,1)   = 1/2,
+    w_(2,2,1,1)   = 1/4.
+
+The class sizes are 90,40,45.  The corresponding per-word probabilities are
+1/360, 1/80 and 1/180.
+
+For any p in the full interval set
+
+    t = (10p-1)/4
+
+and mix the lower and upper endpoint distributions with weights 1-t and t.
+This gives an explicit native event law for every mathematically reachable
+Phi_p.  The JSON certificate records every contributing S6 permutation and
+one word in original native reflection indices for all 415 endpoint members.
+
+
+6. Complete vertex census
+-------------------------
+
+The notation a[C] means total weight a on cycle class C.  The 29 exact basic
+feasible vertices are:
+
+ 1. p=1/10: 1/2[3,3] + 1/2[3,2,1]
+ 2. p=1/10: 1/2[5,1] + 1/2[4,2]
+ 3. p=1/10: 1/2[6] + 1/2[3,2,1]
+ 4. p=1/10: 1/2[5,1] + 1/3[3,3] + 1/6[2,2,2]
+ 5. p=1/10: 1/3[6] + 1/2[5,1] + 1/6[2,2,2]
+ 6. p=3/20: 1/4[5,1] + 1/2[3,3] + 1/4[2,2,1,1]
+ 7. p=3/20: 1/2[6] + 1/4[5,1] + 1/4[2,2,1,1]
+ 8. p=1/5: 1/2[4,2] + 1/2[4,1,1]
+ 9. p=1/5: 1/4[4,1,1] + 1/2[3,3] + 1/4[2,2,1,1]
+10. p=1/5: 1/2[4,1,1] + 1/3[3,3] + 1/6[2,2,2]
+11. p=1/5: 4/5[5,1] + 1/6[2,2,2] + 1/30[1,1,1,1,1,1]
+12. p=1/5: 1/2[6] + 1/4[4,1,1] + 1/4[2,2,1,1]
+13. p=1/5: 1/3[6] + 1/2[4,1,1] + 1/6[2,2,2]
+14. p=1/4: 3/4[5,1] + 1/8[2,2,2] + 1/8[2,1,1,1,1]
+15. p=1/4: 9/20[5,1] + 1/2[3,2,1] + 1/20[1,1,1,1,1,1]
+16. p=3/10: 7/10[5,1] + 1/4[2,2,1,1] + 1/20[1,1,1,1,1,1]
+17. p=3/10: 1/2[5,1] + 1/3[3,1,1,1] + 1/6[2,2,2]
+18. p=3/10: 1/2[5,1] + 1/3[3,2,1] + 1/6[2,1,1,1,1]
+19. p=1/3: 2/3[5,1] + 1/6[2,2,1,1] + 1/6[2,1,1,1,1]
+20. p=17/50: 9/20[4,1,1] + 1/2[3,2,1] + 1/20[1,1,1,1,1,1]
+21. p=9/25: 4/5[4,1,1] + 1/6[2,2,2] + 1/30[1,1,1,1,1,1]
+22. p=2/5: 1/2[3,2,1] + 1/2[3,1,1,1]
+23. p=2/5: 3/4[4,1,1] + 1/8[2,2,2] + 1/8[2,1,1,1,1]
+24. p=2/5: 1/2[4,1,1] + 1/3[3,1,1,1] + 1/6[2,2,2]
+25. p=2/5: 1/2[4,1,1] + 1/3[3,2,1] + 1/6[2,1,1,1,1]
+26. p=11/25: 7/10[4,1,1] + 1/4[2,2,1,1] + 1/20[1,1,1,1,1,1]
+27. p=9/20: 1/4[5,1] + 1/2[3,1,1,1] + 1/4[2,2,1,1]
+28. p=7/15: 2/3[4,1,1] + 1/6[2,2,1,1] + 1/6[2,1,1,1,1]
+29. p=1/2: 1/4[4,1,1] + 1/2[3,1,1,1] + 1/4[2,2,1,1]
+
+
+7. Consequence for the Lueders member
+-------------------------------------
+
+For p=1 the five-sector eigenvalue is 4/5.  Every native random-unitary
+mixture satisfying the required zero action on the nine and ten has
+
+    lambda5 <= 3/10.
+
+Therefore the Lueders channel cannot be assembled as a positive mixture of
+the actual original event conjugations.  Its Liouville rank remains six, but
+that rank fact alone is not the obstruction.  The obstruction is the exact
+central character polytope above.
+
+The forgotten-outcome channels of the reachable members 1/10<=p<=1/2 lie in
+the old unitary event cone. Turning one of these distributions into a physical
+event law still requires an original weight-selection rule. Covariance and
+the common representation do not choose it.
+
+This is not an equality of the six-outcome instruments. A recorded native
+word g has operation J_g(rho)=w_g C5(g) rho C5(g)^*, hence effect
+
+    J_g^*(I)=w_g I5.
+
+Grouping words or stochastically relabeling them preserves scalar effects.
+It cannot yield the rank-one E_a. The equality proved here is only for
+Phi_p=sum_a I_a after the measurement outcome has been forgotten.
+
+
+Reproduction
+------------
+
+From the repository root:
+
+    PYTHONDONTWRITEBYTECODE=1 python3 \
+      experiments/theory-contracts/atlas-defect-synthesis-20261024/native_event_channel_intersection.py
+
+The checked output is
+
+    native_event_channel_intersection_results.json
+
+It contains all eleven class channels, all 29 vertices, actual isotypic
+projector hashes, both endpoint word distributions and the analytic dual
+certificate.  No Atlas or contract-index edit is made.

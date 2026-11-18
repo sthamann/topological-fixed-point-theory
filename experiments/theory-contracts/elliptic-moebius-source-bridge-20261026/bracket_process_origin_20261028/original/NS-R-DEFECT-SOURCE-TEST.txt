@@ -1,0 +1,366 @@
+NS/R DEFECT SOURCE TEST
+=======================
+
+Stand: 28. Oktober 2026
+Atlasstand: 63fab31610450cc88e168232
+
+
+Frage
+-----
+
+Der gesuchte Spinorstrom hat im Bosonisierungschart die Ladung
+
+  s=q/2=(1/2,...,1/2),
+  Q(s)=4,
+  h(s)=s^2/2=1.                                         (1)
+
+Er ist daher nicht ein weiteres Produkt lokaler Vektorfermionen im festen
+NS CAR Netz. Koennte er stattdessen schon der durch die originale
+Moebiusnaht erzeugte NS/R Sektorintertwiner sein?
+
+Der kleinste Test vergleicht die tatsaechlichen Aktionen auf den vier
+D8 Modulen
+
+  (0,v,s,c),
+  H_NS=H_0+H_v,
+  H_R =H_s+H_c.                                         (2)
+
+
+Urteil
+------
+
+Der vorhandene Originalnahtwechsel ist nicht der gesuchte NS/R
+Intertwiner. Er bewahrt die Zerlegung (2).
+
+Der wirkliche affine Windungsoperator ist
+
+  W_ext=E_e0 R_hat
+
+und wirkt auf den Sektoren als
+
+  W_ext : (0 v)(s c).                                   (3)
+
+Der benoetigte Spinorschub wirkt dagegen als
+
+  E_s : (0 s)(v c).                                     (4)
+
+Damit gilt exakt
+
+  P_s W_ext P_0=0,
+  P_s E_s P_0!=0.                                       (5)
+
+Auch eine spektrale Quadratwurzel oder eine andere beschraenkte
+Funktion von W_ext hilft nicht. W_ext kommutiert mit dem Ramondprojektor
+P_R. Deshalb kommutiert jede beschraenkte Borel Funktion f(W_ext) mit P_R.
+Sie kann den NS Vakuumvektor nicht in H_s oder H_c transportieren.
+
+Die originale Moebius Spinhebung bestaetigt denselben Befund von der
+geometrischen Seite. Der Lift r der Basisidentifikation erfuellt
+
+  r^2=-I.                                               (6)
+
+Sein Quadrat ist die Holonomie um den vollen Kern der orientierbaren
+Doppelueberlagerung. Diese Holonomie ist antiperiodisch und definiert die
+bounding NS Spinstruktur. r ist ein Uebergang im bereits gewaehlten
+Spinbuendel. Er ist keine Operation, die NS in R verwandelt.
+
+Der skalare Matchingweg U_Gamma(theta)=exp(i theta) hat Windungszahl eins.
+Nach der A4 Korrektur lautet die physische NS Spektralfamilie
+
+  lambda_n(t)=n+1/2+t,    0<=t<=1.                      (7)
+
+Der Endpunkt t=1 ist nach Umnummerierung wieder NS. Bei t=1/2 erscheint
+formal das periodische Spektrum, aber die Originalquelle zeichnet diesen
+Mittelpunkt weder als lokalen Defekt noch als Endpunktoperator aus. Der
+Originalprozess ist ganzzahliger Spektralfluss innerhalb derselben
+Spinwindungsklasse. Er ist nicht der gleichzeitige Halbshift (1/2)^8.
+
+Damit ist genau die Gleichsetzung
+
+  tatsaechlicher Originalnahtwechsel = Spinorfeld E_s    (8)
+
+ausgeschlossen.
+
+Dieser Ausschluss blockiert den inzwischen bewiesenen 30er Wardpfad nicht.
+Der neue Pfad verlangt keine Gleichsetzung von W_ext mit E_s. Er verwendet
+E_s als das bereits korrekt getypte E8 Wurzelstromfeld, waehrend U5 und die
+tatsaechliche geladene Foldholonomie seinen Stromsektor algebraisch
+auswaehlen. Weiter offen ist nur, ob P1 dieses Feld lokal mit Smearing,
+Domain, Reflexion und Zustand realisiert.
+
+Nicht ausgeschlossen ist ein zusaetzlicher lokalisierter Sektorintertwiner
+relativ zum geraden D8 Stromnetz. Der vorhandene Viersektor Elternraum
+enthaelt E_s bereits als mathematisch korrekt getypten globalen
+Ladungsschub. Was weiterhin fehlt, ist seine Herleitung als lokales Feld
+und Zustandsabbildung aus P1.
+
+
+1. Der Ladungs und Sektortest
+-----------------------------
+
+Fuer acht komplexe Fermionen ist ein einzelnes NS Fermion durch den
+Gittervektor e0 beschrieben:
+
+  Q(e0)=1,
+  h(e0)=1/2.                                            (9)
+
+Addition von e0 vertauscht die D8 Klassen
+
+  0<->v,    s<->c.                                     (10)
+
+Das ist genau die Wirkung von W_ext in (3). Die zusaetzliche zyklische
+Permutation R und der originale Klein Faktor aendern diese Sektorwirkung
+nicht.
+
+Der uniforme Halbvektor s besitzt Norm2 und Gewicht1. Addition von s ergibt
+
+  0<->s,    v<->c.                                     (11)
+
+Diese beiden Permutationen sind verschieden. Ihre Unterscheidung benutzt
+Ladung, Konformalgewicht und Sektorwirkung gleichzeitig. Eine gleiche
+Gruppenordnung oder ein order vier Lift kann sie nicht identifizieren.
+
+Der unveraenderte Checker wurde erneut ausgefuehrt:
+
+  cd /Users/stefanhamann/Projekte/tfpt-theoryv4
+  python3 experiments/theory-contracts/
+    canonical-seam-fermionization-20261025/
+    check_same_source_affine_defect.py
+
+  python3 -OO experiments/theory-contracts/
+    canonical-seam-fermionization-20261025/
+    check_same_source_affine_defect.py
+
+Beide Ausgaben sind bytegleich. Der Output enthaelt
+
+  T1_sector_map = {0:v, v:0, s:c, c:s},
+  fermion_NS_preserved = 0+v,
+  Ramond_sum_preserved = s+c,
+
+und die volle Wardidentitaet
+
+  W_ext^* Q W_ext=Q+1,
+  W_ext^* H W_ext=H+Q+alpha.                             (12)
+
+Hashes:
+
+  check_same_source_affine_defect.py
+  0f51ab119938a05184a3f3e11b364dcb4ee02749487829bf65147bc86647131c
+
+  aktuelle normale und OO Ausgabe
+  a22b60de5df1e4020cc7a69cb9798c0c9a03ca45d6d3a69e6685568ac7f71f0e
+
+
+2. Was die originale Moebiushebung wirklich tut
+------------------------------------------------
+
+Die Originalgeometrie nimmt den physikalischen Raum als orientierbare
+Doppelueberlagerung eines Moebiusbandes. In Koordinaten kann die Deckabbildung
+geschrieben werden als
+
+  tau(s,t)=(s+2pi,-t).                                  (13)
+
+Die A4 Aussage hebt dieselbe Identifikation spinoriell zu einem Element r
+der Ordnung vier. Eine volle Runde auf dem angehobenen Kern wendet r zweimal
+an. Gleichung (6) ergibt deshalb die NS Holonomie minus eins.
+
+Die beiden moeglichen Vorzeichen r und minus r haben dasselbe Quadrat. Auch
+die beiden Pin minus Strukturen auf dem Moebiusband induzieren auf der
+orientierbaren Doppelueberlagerung dieselbe NS Struktur. Eine direkt auf dem
+Annulus hinzugefuegte nichttriviale flache Z2 Linie wuerde NS in R aendern,
+steigt aber nicht von der originalen A4 Moebiushebung ab. Sie ist eine neue
+Geometriewahl und kann den gesuchten Pfeil nicht als bereits vorhanden
+ausweisen.
+
+Originalstellen:
+
+  documents/archive--paper-latex--tfpt-theory-fullv21/sections/
+  001-section-introduction-the-problem-of-parameters.tex
+  Zeilen 165 bis 277
+  SHA256 85bb11511be05385a7cadf6071dbede216b12befeb9d6767bc4460748cbec5d7
+
+  documents/archive--paper-latex--tfpt-theory-fullv21/sections/
+  007-subsection-m-obius-matching-and-the-minimal-gluing-class.tex
+  Zeilen 1 bis 23 und 75 bis 108
+  SHA256 278c385040ba000fc6577b3ba4630b41b49d4486b069c2034e31c4c9bfb3ae2b
+
+Die alte gedruckte Familie lambda_n(phi)=n+phi/(2pi) benutzt am Start ein
+periodisches Skalarspektrum. Das ist mit der A4 bestimmten NS Domäne nicht
+woertlich derselbe Operator. In der konsistenten Spinorlesart wird daraus
+(7). Der Spektralflussbetrag bleibt eins. Es entsteht kein ausgezeichneter
+Halbflussoperator.
+
+
+3. Der vorhandene mathematische Spinorintertwiner
+-------------------------------------------------
+
+Die korrekte Alternative ist im bereits gegebenen Viermodul Elternraum
+explizit. Mit s=(1/2)^8 wird der globale Ladungsschub
+
+  X=E_s
+
+zum viersektorigen Ladungsalgebraoperator. Fuer den originalen geordneten
+CAR Kokyklus gilt
+
+  eps_Z(n,m)=(-1)^(sum_(i>j)n_i m_j),                    (14)
+
+und die gemeinsame Erweiterung ist durch
+
+  X E_n X^(-1)=i^Q(n) E_n,
+  X^2=-E_1,    1=2s                                    (15)
+
+fixiert. In der Sektion E_(n+c0 s)=E_n X^c0 lautet der gemeinsame
+Zweikokyklus
+
+  eps_*(n+c0 s,m+d0 s)
+    =i^(c0 Q(m)) eps_Z(n,m),       wenn c0 d0=0,
+
+  eps_*(n+s,m+s)
+    =-i^Q(m) eps_Z(n,m) eps_Z(n+m,1).                   (16)
+
+Seine Einschraenkungen sind exakt der alte CAR Klein Faktor auf Z8 und der
+schon fixierte E8 Kokyklus auf 0+s. Der formale Vertexoperator Y(e^s,z)
+ist relativ zu den D8 Stroemen lokal, weil s mit allen D8 Wurzeln ganzzahlig
+paart. Mit dem Vektorfermion v hat er Monodromie minus eins. Er ist daher ein
+Spin beziehungsweise Twistfeld relativ zum geraden D8 Stromnetz und kein
+lokaler Endomorphismus des unveraenderten NS CAR Netzes.
+
+Quelle:
+
+  experiments/theory-contracts/
+  canonical-seam-fermionization-20261025/
+  SAME-SOURCE-AFFINE-DEFECT.txt
+  Zeilen 70 bis 134 und 180 bis 210
+  SHA256 514356e9ca01f8aa02399020a503f6cd782c879b00220274b7c4377cbbad7255
+
+Das ist ein wirklicher mathematischer Zweiersektorpfeil und nicht nur eine
+Dimensionsanalogie. Seine Grenze ist ebenso konkret. X ist dort ein globaler
+Ladungsschub. Der formale AIA Vertexoperator besitzt noch keine aus P1
+hergeleitete Testfunktionskarte, keinen nachgewiesenen gemeinsamen
+Operatorabschluss mit dem P1 Rohkernel und keine physische OS Zustandsmap.
+Genau diese lokale Quellenidentifikation waere Xi.
+
+
+4. Warum die anderen bereits geloesten Auswahlresultate Xi nicht ersetzen
+--------------------------------------------------------------------------
+
+Der tatsaechliche W_ext besitzt eine vollstaendige Viermodul Fortsetzung und
+transportiert die E8 Darstellung 0+s in ihr getwistetes Modul v+c. Das ist
+ein positiver Defektsatz. Auf dem Vakuumsektor gilt aber weiterhin 0->v und
+nicht 0->s. Halbzahlige Potenzen im Feldkoordinatenfaktor z stammen von der
+getwisteten Feldentwicklung. Sie sind keine halbzahlige Operatorpotenz von
+W_ext.
+
+Die modulare Zyklentauschbedingung waehlt innerhalb der vier klassifizierten
+lokalen Erweiterungen die beiden E8 Erweiterungen aus. Dieser Satz setzt
+jedoch eine P1 Karte auf einen einzelnen chiralen Torusvakuumblock und dessen
+Zyklentausch voraus. Die originale Moebiusnaht definiert diese Blockkarte
+nicht. Das Auswahlresultat liefert daher ebenfalls keinen schon vorhandenen
+lokalen E_s Operator.
+
+Der Primaerabgleich bestaetigt die Typtrennung. Fermionische CFTs sind auf
+Flaechen mit Spinstruktur definiert, und die Fermionisierung von E8 liefert
+16 freie Majorana Weyl Fermionen. Diese allgemeine Konstruktion bestimmt
+die Sektorstruktur, nicht die Identifikation eines konkreten TFPT
+Nahtoperators mit dem s Feld:
+
+  Philip Boyle Smith, Ying-Hsuan Lin, Yuji Tachikawa, Yunqin Zheng,
+  Classification of chiral fermionic CFTs of central charge <=16,
+  arXiv:2303.16917v2, insbesondere Abschnitte2.1,5.1 und AnhangA.
+  https://arxiv.org/html/2303.16917v2
+
+
+5. Konsequenz fuer den aktuellen Ursprungspfeil
+------------------------------------------------
+
+Der Defekttest korrigiert den Feldtyp: Xi darf nicht als gewoehnlicher
+lokaler Endomorphismus des festen NS CAR Netzes gesucht werden. Der richtige
+Zieltyp ist ein lokalisiertes geladenes Feld relativ zum geraden D8
+Stromnetz, beziehungsweise das Wurzelfeld E_s der lokalen E8 Erweiterung.
+
+Die Originalnaht liefert dieses Feld nicht schon durch ihren Windungswechsel.
+Sie liefert
+
+  * geometrisch eine NS Spinstruktur durch r^2=-I;
+  * analytisch einen ganzzahligen Spektralfluss von eins;
+  * affin den Operator W_ext mit Sektorwirkung (0 v)(s c).
+
+Der aktuelle algebraische Anschluss ist inzwischen staerker als zur ersten
+Fassung dieses Berichts. Auf der stipulierten E8 Darstellung gilt exakt
+
+  g_alpha^2
+    =exp(2 pi i alpha Q_source/4) C_int^(-1).              (17)
+
+Gemeinsam mit U5 Rest 3 waehlt der kompensierte Glueeigenwert -1 exakt die
+30 Erzeugungsstroeme des Wardmoduls (5,6). Deren signierte Klammer hat Gain
+9 I_40 und liefert nach Normierung den reinen Petersen Carrierrand. Der
+vollstaendige alte 60er Kanal zerfaellt dabei zustandsunabhaengig in die
+Gewichte 3/5 und 2/5. Weder ein ganzer 50er A4 mal A4 Abschluss noch eine
+Recordmessung wird fuer diesen kleineren Kanal benoetigt.
+
+Gleichung (17) ist eine innere Cartan Holonomie auf dem bereits gegebenen
+E8 Gitterraum. Sie ist kein NS/R Wechsel und ersetzt W_ext nicht. Deshalb
+bleibt der Befund dieses Berichts unveraendert, waehrend die aktuelle
+Herkunftsluecke kleiner wird.
+
+Der erste fehlende Test ist nun die lokale Karte
+
+  Xi_loc F_q(f)=Y(e^s,f),                                 (18)
+
+auf einer gemeinsamen dichten P1 Domain. Sie muss Quellladung, U5,
+g_alpha, Reflexion und den lokalen OPE Rest gemeinsam transportieren.
+Insbesondere muss fuer vorhandene Carrierfelder V_v gelten
+
+  Res_(z=w) Y(Xi_loc F_q,z)Y(V_v,w)
+    =Y(V_[e_s,v],w).                                      (19)
+
+Sobald diese lokale Feldkarte samt Adjunkten in der zulaessigen Algebra
+liegt, folgen der geschlossene 30er Support und seine Normierung bereits aus
+den vorhandenen E8 Operatoren. Was nicht mehr verlangt werden muss, ist die
+falsche Gleichsetzung Originalwindung=E_s oder eine neue halbe
+Spektralflussgeometrie.
+
+Der Ausschluss betrifft daher nur die Gleichsetzung des tatsaechlichen
+Originalnahtwechsels mit E_s. Er ist kein No Go gegen (18), keine Aussage
+gegen den jetzt algebraisch geschlossenen Wardstrom und keine Uebertragung
+des v896 Nullblockbefunds.
+
+
+6. Reproduzierbare und gepruefte Quellen
+----------------------------------------
+
+  experiments/theory-contracts/canonical-seam-fermionization-20261025/
+  ORIGINAL-SPIN-AND-SEAM-DICTIONARY.txt
+  SHA256 dfaef864428375b018d0eddcb77a4a5ccd085e996eb1c1b3f1d8db526991cf24
+
+  experiments/theory-contracts/elliptic-moebius-source-bridge-20261026/
+  charged_source_alternatives_20261027/SECTOR-TRANSPORT-CORRECTION.txt
+  SHA256 65110e2226bb31beee107314e0244131d084196b74d5d07be4438b0c36bf9268
+
+  verification/v506_seam_clock_rigidity.py
+  SHA256 3f8605fb91c96583072913c5f2546cdd491a73f3ad2494c907a0115dcd3d450b
+
+  research-20261028-bracket-process-origin/closure/
+  WARD-U5-CREATION-CHANNEL.txt
+  SHA256 03adbed045f9269eb4e4ca2c534426ee8066aa9d12b765bde482528eef238ec7
+
+  research-20261028-bracket-process-origin/original/
+  SOURCE-CHARGE-GLUE-QUARTER-IDENTITY.txt
+  SHA256 adbf414bf1105de1087740b3bd1707e9f0dcfe7504eb0da4467a0e01a2289b9c
+
+Der aktuelle v506 Lauf endet mit
+
+  34 passed, 0 failed,
+
+und prueft insbesondere
+
+  D_NS^2=-I,
+  U_deck^2=(-1)^F,
+  U_R^2=+I.
+
+Das trennt die NS Moebiushebung auch auf dem Fockraum exakt von einem
+periodischen Ramonddeck.
+
+Kein Atlas und kein kanonischer Vertrag wurden veraendert. Ein neuer Checker
+war nicht erforderlich, weil die beiden benoetigten Operatoraktionen bereits
+in den unveraenderten Checkern vollstaendig vorliegen.

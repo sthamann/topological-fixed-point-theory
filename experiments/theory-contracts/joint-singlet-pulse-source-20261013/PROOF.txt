@@ -1,0 +1,55 @@
+Joint singlet preparation and native pulse: exact conditional finite result
+2026-10-13. Experiment-only; no load-bearing or physical-gate promotion.
+
+Premise: equations stated on page 17 of TFPT-Kernessenz-Deutsch.pdf dated
+13 October 2026. The external encoding matrices/64x64 implementation referred
+to in that PDF are not supplied; they are not independently validated here.
+The five Hermitian Clifford generators satisfy {Gamma_a,Gamma_b}=2 delta_ab I4.
+M(X)=sum_a Gamma_a X Gamma_a. Native channel=(7 id+M)/12.
+The six-dimensional antisymmetric bath is 1+5. T=sum Gamma_a tensor |a><v|/sqrt5,
+P=T* T, Q=T T*, Hsym=kappa(P+Q+T+T*). P Q=0, Hsym^2=2 kappa Hsym.
+
+1. Invariant diagonal source with pair parent switched off during pulse:
+Bath=p0|v><v|+w sum_a|a><a|, p0+5w=1. Let s=sin^2(kappa t).
+Direct partial trace gives
+Phi=(1-s(p0+2w)) id + s(p0+w)M/5 + ws M^2/25.
+M has eigenvalues 5,-3,1 on identity, vector and bivector sectors.
+Thus lambda_v=1-s(8p0/5+56w/25), lambda_b=1-s(4p0/5+44w/25).
+Matching native 1/3 and 2/3 requires -32sw/25=0. Since s=0 cannot match,
+w=0,p0=1,s=5/12 is necessary and sufficient in this invariant bath class.
+Thermal Choi weights p0=7/12,w=1/12 cannot reproduce the channel at any time:
+vector matching s=25/42 differs from bivector matching s=25/46.
+
+2. Complete optimal approximation with the same pulse:
+The 16 Clifford words of grades 0,1,2 form an orthogonal unitary basis.
+Probabilities: qI=1-s(p0+9w/5), qGamma=(p0+w)s/5 each, qB=2ws/25 each.
+Bell input attains the l1 probability difference; triangle inequality proves
+this is the exact unhalved diamond distance. For the stated thermal source,
+D(s)=|5/12-11s/15|+5|2s/15-1/12|+s/15.
+Unique optimum s=25/44 has half-diamond distance 5/132=0.0378787878.
+The original pure-source timing s=5/12 has half-distance 5/36.
+For HPaar in 1+5, energies are 0 and 8g (full 1+5+10 has additional 4g).
+For beta>=0 let r=exp(-8 beta g), p0=1/(1+5r),w=r/(1+5r).
+Optimal s=25(1+5r)/(12(5+9r)); minimum half-distance=5r/(3(5+9r)).
+For 0<epsilon<5/42 it is <=epsilon iff
+beta g>=log((5-27epsilon)/(15epsilon))/8. Exact zero needs r=0.
+This is an approximation prescription, not a microscopic cooling derivation.
+
+3. Positive exact construction with pair parent retained during pulse:
+Prepare the unique singlet ground and add the full bath HPaar=diag(0,8g I5)
+to Hsym. The reached bright doublet has matrix [[kappa,kappa],[kappa,kappa+8g]].
+Hence s(t)=kappa^2/(kappa^2+16g^2) sin^2(t sqrt(kappa^2+16g^2)).
+Native channel is reached iff kappa/g>=sqrt(80/7), for positive g,kappa.
+Earliest matching time is
+asin(sqrt((5/12)(1+16g^2/kappa^2)))/sqrt(kappa^2+16g^2).
+At kappa/g=4, gt=0.20333951358463065; all16 matrix-unit output residual
+is 1.2335152563727652e-16. The pair Hamiltonian remains on; no compensating
+resonance term is inserted. Below the threshold no retiming can match.
+
+What is new here: joint use of the two displayed preparation/pulse equations,
+exact thermal mismatch/optimal error, and positive retimed pair-on repair.
+The individual Clifford channel and singlet pair constructions were already
+in the source. This is local conditional closure, not selection of their
+couplings, source state, pulse timing or the complete TFPT parent.
+No claim about arbitrary baths, pulses, continuum, chirality, gravity or T1-T8.
+Independent Kraus/Choi and bright-block audit is preserved in INDEPENDENT_AUDIT.txt.

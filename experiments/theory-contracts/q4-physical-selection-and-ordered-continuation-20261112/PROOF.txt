@@ -1,0 +1,180 @@
+TFPT: Native Q4 recovery, physical selection and ordered continuation
+12 November 2026
+Contract: q4-physical-selection-and-ordered-continuation-20261112
+Verdict: PARTIAL for F1; the specified CP projection factorization is excluded.
+
+Question and scope
+
+The submitted F1 proposal separates the fifteen zero modes of the native
+25-dimensional recovery into a physical selection step and interprets the
+active ten-dimensional space as wedge^2(C5). Test that identification first,
+on the actual original Q4 operators. Do not infer physical P1, spacetime or
+absolute source values from a finite channel calculation.
+
+The hypotheses below retain the native ten real rank-one effect projectors
+on H=C5 and the original Gram metric. The operator algebra is M5(C).
+Its Hilbert-Schmidt space has dimension 25. A positive Hilbert-space
+operator on this space and a completely positive map on M5 are different
+notions. No replacement of the physical source measure is made.
+
+Original data and previously established results
+
+Let Pi_i=|u_i><u_i|, i=0,...,9, with unit u_i, pairwise overlap magnitude
+1/3 and sum_i Pi_i=2I. The ten vectors span C5. The actual channel is
+
+  K(X) = (1/2) sum_i Pi_i X Pi_i
+       = (1/2) sum_i Pi_i tr(Pi_i X).
+
+It is self-adjoint in the Hilbert-Schmidt metric, unital and trace preserving.
+In particular K(Pi_j)=(4/9)Pi_j+(1/9)I. Its superoperator spectrum is
+1 with multiplicity 1, 4/9 with multiplicity 9 and 0 with multiplicity 15.
+The active 1+9 is symmetric: it is not the antisymmetric ten. All of
+wedge^2(C5), and an additional symmetric five, lie in the kernel.
+The fixed vector vec(I) is symmetric and is killed by the antisymmetrizer.
+
+These facts, and the conditional selection of 4/9 by native Choi crossing,
+were already established in TFPT-Q4-PICARD-AUSWAHL-20261111.txt. The fact
+that the products Pi_i Pi_j span all M5, and the failure of a quotient by
+ker K as a complete ordered algebra, were already established in
+TFPT-Q4-OFFENE-WORTE-20261111.txt. They are reused here, not claimed new.
+
+The new additions are the exclusion of EVERY CP idempotent factor on M5,
+the exact Choi spectrum of the support projection, the fractional-power
+obstruction, and an explicit continuation after the same final recovery.
+
+1. The support projection is not a physical quantum channel
+
+Write B=|vec(I)><vec(I)|/5, P9=(9/4)(K-B), E=B+P9. These are
+Hilbert-Schmidt orthogonal spectral projectors where appropriate. E is
+the rank-ten support projection of K. Use the unnormalized Choi matrix
+C(Phi)=sum_ab |a><b| tensor Phi(|a><b|), with the original real frame
+converted to an orthonormal basis. Native four-leg crossing gives
+
+  C(K)=K,    C(B)=I25/5,
+  C(B+lambda P9)=(1-9lambda/4) I25/5+(9lambda/4) K.
+
+Thus C(E) has eigenvalues 2 (once), 3/4 (nine times), -1/4 (fifteen times).
+E is not completely positive. Complete positivity requires positivity of
+the Choi matrix; positive superoperator eigenvalues are not sufficient.
+
+For support powers K^t=B+(4/9)^t P9 with t>0, the Choi eigenvalue on
+ker K is [1-(9/4)(4/9)^t]/5. It is negative for 0<t<1; at t=1/2 it
+is -1/10. Consequently these powers are not CP intermediate maps.
+For t>=1 this particular family is CPTP. The limit at t down to zero
+is E, not id_M5. This does not exclude a positive Hilbert-space heat
+semigroup exp[-t log(9/4)P9] on ran K. It also does not classify arbitrary
+CP roots, time-dependent maps or enlarged-space dynamics.
+
+2. Stronger theorem: no nontrivial CP idempotent factor at either side
+
+Let P:M5->M5 be ANY completely positive idempotent linear map. It need
+not be orthogonal, trace preserving or initially assumed unital. Let
+D:M5->M5 be ANY linear map. If either K=D o P or K=P o D, then P=id.
+
+Proof for K=D o P. Idempotence gives K o P=K. Taking Hilbert-Schmidt
+adjoints and using K*=K gives P* o K=K. Since K(I)=I, P*(I)=I.
+Thus P* is a unital CP map fixing ran K pointwise. Each Pi_i lies in
+ran K, by K(Pi_i)=(4/9)Pi_i+(1/9)I and I in ran K. Hence P*(Pi_i)=Pi_i.
+For a unital CP map a fixed projection belongs to its multiplicative
+domain: equality holds in both Schwarz inequalities, since Pi_i^2=Pi_i.
+It follows that P*(Pi_i Pi_j)=Pi_i Pi_j for every i,j.
+
+All overlaps <u_i,u_j> are nonzero, so Pi_i Pi_j is a nonzero scalar
+multiple of |u_i><u_j|. Since the u_i span C5, those products span M5.
+Therefore P*=id and P=id. For K=P o D, idempotence instead gives
+P o K=K. Apply the same argument directly to P. This proves both cases.
+
+This excludes the proposed physical selection followed by dynamics on
+the same algebra, even when the selection is nonorthogonal. It does
+not exclude nonidempotent CP factors, instruments with retained records,
+a different algebra with a justified physical map, or coherent dilation.
+It says nothing by itself against OS Hilbert-space quotienting, where
+the relevant positivity and allowed continuations must be specified.
+
+3. A continuation distinguishes equal present recovery outputs
+
+Take distinct native effects Pi=Pi_i, Pj=Pi_j and C=[Pi,Pj]. Put
+t=tr(Pi Pj)=1/9. The antisymmetric commutator obeys
+
+  ||C||_HS^2=2t(1-t)=16/81,    K(C)=0.
+
+Nevertheless, after the same right continuation Pi and the same final
+recovery, the Pj response is
+
+  tr(Pj K(C Pi)) = tr(K(Pj) C Pi)
+                 = (4/9)(t^2-t) = -32/729.
+
+Here tr(C Pi)=0 and K(Pj)=(4/9)Pj+(1/9)I were used. Thus the histories
+Pi Pj and Pj Pi have the same present K output, but their common
+continuation by Pi has different K outputs. This is an ordered
+correlation witness, not a claimed standalone probability or a computed
+physical P1 response. Its physical use requires the original insertion
+map to realize those words on the same weighted source and reference.
+
+4. Exact finite realization retaining the coherent information
+
+The native Kraus operators A_i=Pi_i/sqrt(2) satisfy sum_i A_i* A_i=I.
+The map V=sum_i |i> tensor A_i is an isometry from C5 to C10 tensor C5:
+V*V=I and Tr_environment(V X V*)=K(X). The Choi rank is ten, so ten is
+the minimal environment dimension for a pure Stinespring realization
+of THIS channel. The joint isometric output retains the input; the
+recovered marginal alone loses it. Nothing here selects V as a physical
+P1 law, an apparatus, an event process or a space direction.
+
+The rank-one Kraus form also makes K an entanglement-breaking channel.
+It is therefore inappropriate to identify this closed readout, without
+additional evidence, with the full coherent fundamental process.
+
+5. Consequences for F1 and the original source
+
+The native ten-dimensional range is not a matrix algebra under the
+ordinary product. Its products generate all 25 operator directions.
+A future-faithful state description for these full native operations
+cannot simply discard the fifteen current zero modes. Keeping the
+coherent source is necessary for that comparison, but it does not
+derive the physical source itself.
+
+The missing original source values Z0, ZU, ZY and ZUY have not been
+computed here. Neither the configuration measure nor the local net,
+time generator, physical source insertions or 3+1D continuum has been
+derived. The recent original pair/null-word constraint remains in force.
+No existing F1 task is marked complete by this contract. No ledger,
+paper, empirical scorecard or prediction is promoted.
+
+The next physical work remains the original weighted joint boundary
+form with its bound empty reference, first nonzero charged word and
+neutral null word. Compare regional embeddings using the same source.
+The finite Q4 dilation is not substituted for that missing producer.
+
+6. Reproduction and independent check
+
+audit.py extracts the actual embedded original audit.py from
+_newest2/TFPT_Gesamtdokumentation2_20260927.md, with normalized SHA256
+4a19f8145d5ccaef08bfdc5893f64484feae630cf61e49639df52f89f56528c4.
+It executes its 99 checks before the two-module section and verifies
+all finite matrix identities above with exact SymPy arithmetic. The
+CP idempotent theorem is proved analytically in section 2; a finite
+matrix test is not offered as a proof over all CP maps.
+
+A separate agent independently checked the section 2 proof and the
+section 3 witness, including arbitrary linear D and both factor orders.
+This is an internal independent algebraic review, not external peer review.
+See INDEPENDENT-REVIEW.txt and results.json. Run:
+python3 audit.py --repo /path/to/tfpt-theoryv4 --output /tmp/q4-results.json
+
+Sources
+
+Native source: _newest2/TFPT_Gesamtdokumentation2_20260927.md, embedded
+TFPT_Rekursive_Bindung_20260926/audit.py.
+Prior symmetry/crossing: docs/research/fundamental-plan/
+TFPT-Q4-PICARD-AUSWAHL-20261111.txt.
+Prior product closure: docs/research/fundamental-plan/
+TFPT-Q4-OFFENE-WORTE-20261111.txt.
+Current original-source obligation: docs/research/fundamental-plan/
+TFPT-P1-PAARABBILDUNG-NULLWORT-20261112.txt.
+Choi, Completely positive linear maps on complex matrices (1975):
+https://doi.org/10.1016/0024-3795(75)90075-0
+Horodecki, Shor, Ruskai, General Entanglement Breaking Channels (2003),
+v2 dated 4 June 2003: https://arxiv.org/abs/quant-ph/0302031v2
+
+complete_TFPT_solution=false; F1_complete=false; ledger_changed=false.

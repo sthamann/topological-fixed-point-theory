@@ -1,0 +1,289 @@
+SOURCE SELECTION OF THE NATIVE SPIN5 RECORD EFFECT
+28 October 2026
+
+VERDICT
+
+The new native Spin5 result fixes a basis-independent rank-five coefficient
+projector and, by the Stinespring transpose convention, a rank-five physical
+record effect in the sixty-dimensional record dilation.  It does not leave a
+numerical filter to fit.  The original P1/P2 boundary sources nevertheless do
+not execute or select this effect.
+
+The exact distinction is:
+
+    finite source data + native Spin5 target
+        determine the coefficient projector Pi_coeff and record effect E_H,
+
+    original P1/P2 sewing
+        does not couple a pointer to E_H and does not postselect it.
+
+The primitive Hodge projector, the Calderon projector, and the fermionic
+Pfaffian are operators or forms on different spaces.  No original map places
+the sixty source labels in those spaces.  Moreover, the tempting rank-five
+kernel identification is exactly wrong: the five-dimensional kernel of the
+sixty-event Kraus frame produces zero system amplitude, while Pi_coeff lies in
+its orthogonal complement.
+
+The first additional operation is therefore now very small and explicit: a
+coherently accessible sixty-label Stinespring record together with the binary
+effect {E_H,1-E_H}.  The five-plane itself is derived; coherent access and the
+occurrence of this measurement are not.
+
+
+1. THE DERIVED RECORD PROJECTOR
+
+Let
+
+    W1 : C^60 -> End(Bell10)
+
+be the matrix whose columns are the vectorized sixty source matrices, and let
+
+    V : C^5 -> End(Bell10)
+
+have the five native Hodge Kraus matrices as columns.  The completed native
+record theorem proves
+
+    rank W1 = 55,
+    im V is contained in im W1,
+
+and fixes the minimum-norm coefficient map X1 by
+
+    W1 X1 = V,
+    (ker W1)^* X1 = 0,
+    X1^* X1 = (3/4) I5.
+
+Consequently
+
+    C_H := sqrt(4/3) X1
+
+is an isometry C^5 -> C^60 and
+
+    Pi_coeff := C_H C_H^* = (4/3) X1 X1^*
+
+is an orthogonal rank-five projector.  Replacing the Hodge basis by any
+orthogonal five-frame sends X1 to X1 O and leaves Pi_coeff unchanged.
+
+There is a transpose between this coefficient projector and the physical
+effect.  With the standard Stinespring convention
+
+    V_src psi = (1/sqrt(60)) sum_l |l> tensor U_l psi
+
+and W1=[vec(U_l)], the Choi matrix produced by a record effect E is
+
+    J_E = W1 E^T W1^* / 60.
+
+Therefore the physical Hodge effect is
+
+    E_H := Pi_coeff^T = (4/3) conjugate(X1) X1^T.             (1)
+
+The exact checker finds Pi_coeff real in this particular marked frame, so
+E_H=Pi_coeff numerically here.  Equation (1), rather than that accidental
+reality, is the invariant record convention.
+
+The successful E_H branch has Kraus operators sqrt(1/45) K_m and therefore
+
+    rho -> (1/45) sum_m K_m rho K_m^*
+         = (1/15) Phi_native(rho).
+
+Equivalently, its Choi matrix is
+
+    J_E_H = W1 E_H^T W1^*/60 = V V^*/45.
+
+This restates the optimal 1/15 result as one concrete record effect.  It also
+isolates what is and is not still free.
+
+The source frame operator itself does not make this selection.  Its exact
+spectrum is
+
+    96^1, 16^9, 8^45, 0^45,
+
+and the Hodge five-plane lies inside the forty-five-dimensional eigenvalue-8
+space.  The source frame selects that large eigenspace, not the Hodge
+five-plane within it.
+
+
+2. THE FIVE-DIMENSIONAL KERNEL IS NOT THE HODGE EFFECT
+
+Since rank W1=55,
+
+    dim ker W1 = 5.
+
+This numerical equality could suggest that a primitive kernel or relation
+projector supplies the desired record selection.  The source equations rule
+that out:
+
+    W1 n = 0             for n in ker W1,
+    im X1 is contained in (ker W1)^perp,
+    W1 X1 = V != 0.
+
+Using the transposed physical effect of the coefficient projector onto ker W1
+gives the zero system Kraus map.  Using E_H, whose dual coefficient plane is
+im X1, gives the native Hodge subchannel.  The two coefficient five-planes are
+orthogonal and have opposite operational meanings.
+
+This is the smallest decisive test against identifying E_H with P_prim merely
+because both are described through a kernel construction.  Any genuine
+connection must transport the actual operators and satisfy
+
+    J_rec E_H J_rec^* = P_selected
+
+on a specified boundary or auxiliary complex.  Rank five, harmonic language,
+or a shared word such as primitive cannot replace J_rec.
+
+
+3. WHAT THE ORIGINAL BOUNDARY OPERATORS ACT ON
+
+The primitive source defines
+
+    H_prim = H_Seam tensor H_t,
+    P_prim = Pi_ker Delta_prim
+           = P_Seam,+ P_prim,gap.
+
+Here P_Seam,+ is the Calderon Cauchy-data projector and P_prim,gap is a spectral
+projector of the APS-realized D_prim^*D_prim.  The auxiliary differential
+
+    Q_prim = eta_Sigma^* K_Sigma + eta_g^* K_g
+
+and its adjoint act on the exterior auxiliary complex attached to these seam
+and gap penalties.  The definition contains no Bell10 factor, no C^60 source
+label factor, and no embedding of the sixty Gaussian events into its Cauchy
+data.
+
+The Calderon projector is likewise the range projector for harmonic boundary
+traces.  It is not an emission space or a Stinespring environment.  Identifying
+it with E_H would require a new intertwiner from the source record into the
+boundary trace space and an exact range identity.  No such map is present in
+the audited original sources.
+
+The fermionic Pfaffian has a still different type.  The original closure text
+uses the Pfaffian or determinant form to express positivity of the reflected
+CAR two-point kernel on positive-time test spinors.  It is a scalar
+multilinear form entering reflection positivity.  It neither supplies sixty
+orthogonal record labels nor defines a rank-five effect on them.
+
+Thus P_prim, Calderon, Q_prim^*, and the Pfaffian do constrain relations,
+ranges, and signs.  Their actual source types do not select E_H.
+
+
+4. WHAT RECORD STRUCTURE THE EXISTING SOURCES DO PROVIDE
+
+The pinned sixty-event compiler contract constructs the averaged channel
+
+    C60(rho) = (1/60) sum_l U_l rho U_l^*,
+
+and explicit stay/jump instruments.  Its recorded-process continuation keeps
+the event labels and a classical history frame F.  The proof itself states
+that the shared label, iid weights, record algebra, and adaptive readout are
+premises and are not derived merely by the finite construction.
+
+An older boundary-selection contract goes one step further.  For the
+fundamental C4 reflection channel it constructs the coherent record unitary
+
+    H60 = J60/30 - I60,
+
+which rotates the sixty reflection Kraus operators into sixty projector Kraus
+operators.  This proves that coherent sixty-label dilations are mathematically
+available.  The same report explicitly says that H60 is a conditional
+coherent implementation, not a physical record carrier derived from TFPT.
+It also does not contain E_H or a five-output Spin5 contraction.
+
+This result is more than an absence check.  It displays the record-unitary
+freedom directly: two different coherent record bases give the same reduced
+channel and different conditional states.  The reduced source channel cannot
+therefore select E_H by itself.
+
+The later original-paper record layer also does not make the selection.  It
+defines a slow approximately commuting record algebra after a gap and
+clustering theorem, then assumes a complete family of pointer projectors
+{P_i} inside a chosen observer algebra and applies the Born rule.  The main
+text explicitly says that this record and readout layer is not used to select
+the closed branch.  It assigns probabilities once a projector family is
+given; it does not derive E_H.
+
+
+5. PRECISE SOURCE STATUS
+
+What is now derived:
+
+1. The exact sixty source matrices U_l and their uniform CPTP channel.
+2. The native basis-independent Hodge Kraus space.
+3. The unique minimum-norm coefficient isometry C_H, coefficient projector
+   Pi_coeff, and physical effect E_H=Pi_coeff^T.
+4. The successful map (1/15) Phi_native and its optimality inside this fixed
+   one-record dilation.
+
+What the original source does not yet derive:
+
+1. Coherent physical access to the record amplitudes |l>, rather than only
+   the reduced channel or retained classical event labels.
+2. A seam, Calderon, admissibility, or Pfaffian operator whose transported
+   effect equals E_H.
+3. A pointer coupling or sewing rule that performs {E_H,1-E_H}.
+4. A rule declaring the E_H branch to be the physical response rather than
+   one mathematically available heralded subchannel.
+
+The first additional choice is item 3 after item 1 has been supplied.  It is
+not another free five-plane and it is not a fitted amplitude.  It is the
+physical execution of one already fixed coherent effect.
+
+
+6. EXACT SOURCES
+
+Native Spin5 record theorem:
+
+    /Users/stefanhamann/Documents/Codex/2026-10-23/
+      untersuch-nochmal-eie-urwpr-nge-von/
+      research-20261028-source-recursion-search/
+      NATIVE-SPIN5-SOURCE-RECORD.txt
+    SHA-256 311ca0616297b862fcc4fd645756d2d6b56ac126409b089815bfc98fe2214f77
+
+Pinned sixty-event source matrices and reduced channel:
+
+    /Users/stefanhamann/Projekte/tfpt-theoryv4/
+      experiments/theory-contracts/compiler-correlated-event-clock-20260919/
+      source_channel.py
+    lines 49-68, 112-150, 413-505
+    SHA-256 3852fabaf10c143fe20238b67406df6396f85c931dfd4834fe91a2d7ef900593
+
+Recorded finite continuation and its explicit premises:
+
+    experiments/theory-contracts/compiler-correlated-event-clock-20260919/
+      PROOF.txt
+    lines 1-34, 70-96, 150-193, 251-266
+    SHA-256 bf1f85c99f5f89a0a15da1af5e3ff321c2756fda132a9f8d644f9ce0e08c2f5c
+
+Existing coherent sixty-record rotation and its scope:
+
+    experiments/theory-contracts/compiler-boundary-selection-20260914/
+      RECORDS.md
+    lines 1-106
+    SHA-256 efe0152c3226377c90493c55fccf0b4b86ace694465e760879500e11861e2f36
+
+Original primitive and Calderon projector types:
+
+    documents/archive--tfpt-45--source_extracts--01_boundary_kernel_source/
+      sections/001-section-primitive-core-and-carrier-interface-handoff.tex
+    lines 182-271
+    SHA-256 7d6e673d99c29d950dc601283cd51c1cc0b113567eeb79c8396fec9c82a02c79
+
+Original Pfaffian positivity role:
+
+    documents/archive--tfpt-45--source_extracts--04_qft_source/
+      sections/008-section-relative-reflection-positivity-with-fermions.tex
+    lines 140-169
+    SHA-256 898aa879cf6a3eb6464d3180274bc2fc028408aeec9676af70a862dad9c3f4dc
+
+Stable record algebra and explicit nonselection of the closed branch:
+
+    documents/archive--tfpt-45--source_extracts--04_qft_source/
+      sections/005-subsection-admissible-schwinger-functions-minkowski-loca.tex
+    lines 354-383
+    SHA-256 8bf0a37157505ca12b90154dbe41a29c49a503686a8493dffd63945f205e0af6
+
+Appendix pointer projectors and Born evaluation after a family is given:
+
+    documents/archive--paper-latex--tfpt-42/sections/
+      042-subsection-seed-variance-and-surprisal-readings.tex
+    lines 148-207
+    SHA-256 1ed7def1fc7f7256e9e1bb25fbc2620f7e608cc3f3ff71609588d1857a2035bb
+

@@ -1,0 +1,387 @@
+ORIGINAL BOUNDARY NORM ORIGIN
+The exact three-cabled seam determinant
+2026-10-27
+
+QUESTION
+
+The accepted finite source construction has
+
+    H_Theta = H^0(Jac(C),O(2 Theta)),
+    W_q     = H_Theta tensor N_q^(-1),
+
+where N_q is the permutation-free norm of the source-selected spin line S_0
+over D_q=q_0+q_1+q_2.  Why should the original boundary operation contribute
+exactly one inverse N_q, rather than a fitted line power?
+
+RESULT
+
+There is an exact answer at the relative Fredholm-line level.  It uses the
+original seam multiplier itself.
+
+On the already reconstructed genus-two source
+
+    C: eta^2=1-w^6
+
+one has the original covering coordinate
+
+    z=eta/(1-w^3),            z^2=(1+w^3)/(1-w^3),      (1)
+
+and therefore
+
+    div(z)=D_q-D_p,           c*z=z,       Q*z=i z.      (2)
+
+The old fullv21 seam gluing is exactly multiplication by
+U_Gamma(theta)=exp(i theta), hence by z.  Over the open unit z-disc the
+three-sheeted map C->P1_z is unramified and splits into three discs, centered
+at q_0,q_1,q_2.  Pulling the original shift to the selected spin line S_0
+gives an injective three-cabled Hardy shift whose cokernel is
+
+    K_q = direct_sum_a S_0|q_a.                          (3)
+
+Its Fredholm determinant line is the inverse evaluation determinant
+
+    Det_Fred(z:S_0)^{} = det(K_q)^(-1)=B_q^(-1).         (4)
+
+More generally, for every degree-zero family line L, compare the spin
+cable S_0 tensor L with the otherwise identical reference cable L.  If B(E)
+denotes the ordered evaluation determinant of E at D_q, their relative line is
+
+    B(S_0 tensor L)^(-1) tensor B(L)
+      = Nm_Dq(S_0)^(-1)
+      = N_q^(-1).                                        (5)
+
+All L fibers and all permutation signs cancel between the two determinant
+lines.  For L=O_C this is B_q^(-1) tensor B_O.  Equation (5) is exactly one
+inverse norm, fiberwise over the full Picard family; it does not require a
+c-fixed L.
+The exponent is the integer winding.  For multiplication by z^n the same
+relative construction gives N_q^(-n).  The original scalar seam spectral
+flow is one, so it selects n=1 and hence exactly one inverse norm.  This is
+stronger than the finite quarter-clock test, which sees only a residue of n.
+It does not turn the three-dimensional cokernel into three independent
+physical insertions.
+
+This closes the algebraic sewing question.  One physical-source premise
+remains: the actual relative boundary field must be the S_0 cable in (3),
+and the declared physical reference D_ref must induce the same degree-zero L
+cable without the S_0 twist, as used in (5).  The original texts supply
+that seam multiplier and a relative operator split, but they do not yet prove
+this common-L spin-twist identification.  Thus (5) is an original-operation
+reconstruction with a sharply stated field/reference premise, not yet an unconditional
+identification of the full P1 operator.
+
+1. THE ORIGINAL MAP AND ITS DIVISOR
+
+The algebra in (1) is immediate from eta^2=(1-w^3)(1+w^3).  At
+q_a=-omega^a, eta is a local parameter and 1-w^3 is nonzero, so z has a
+simple zero.  At p_a=omega^a, eta is again a local parameter and
+1-w^3 has a double zero, so z has a simple pole.  Hence
+
+    div(z)=q_0+q_1+q_2-p_0-p_1-p_2.
+
+The two source automorphisms act by
+
+    c(w,eta)=(omega w,eta),
+    Q(w,eta)=(1/w,-i eta/w^3).
+
+Substitution gives c*z=z and Q*z=i z exactly.  Thus z is simultaneously
+
+  * the cyclic quotient coordinate for c;
+  * the original quarter-clock coordinate for Q;
+  * the old seam multiplier exp(i theta) on |z|=1.
+
+The branch values of w^3=(z^2-1)/(z^2+1) are z=1,-1,i,-i.  They lie on the
+unit circle.  The open unit disc is therefore unramified.  Since it is simply
+connected, its inverse image is the disjoint union of three discs, one about
+each q_a.
+
+This is the missing geometric reason that the old one-circle shift and the
+three q evaluations belong to the same map.  It does not yet say which
+coefficient bundle the physical field carries.
+
+2. HARDY DEFECT AND THE ONE INVERSE LINE
+
+Let H_q be the direct sum of the three holomorphic Hardy spaces of S_0 on
+the lifted discs.  Multiplication by z is an isometry after the standard
+boundary normalization and satisfies
+
+    H_q / z H_q  ~=  direct_sum_a S_0|q_a              (6)
+
+by evaluation at the three simple zeros.  No boundary Sobolev trace theorem
+is needed for (6): on each disc it is the elementary exact sequence
+0->zH^2->H^2->fiber_at_0->0.
+
+2.1 THE HARDY NORM IS FIXED BY THE HALF-FORM
+
+This Hardy realization does not require a fitted measure.  On each open lifted
+disc, dz has no zero and the theta characteristic S_0 has a holomorphic
+half-form e with e^2=dz.  For psi=f(z)e, and likewise after tensoring with a
+unitary flat frame of L,
+
+    integral_boundary |psi|^2
+      = integral_|z|=1 |f(z)|^2 |dz|.
+
+Thus the source spin structure supplies the ordinary Hardy norm, while the
+unitary coefficient metric is the same in the relative and reference cables.
+Changing e by its other square root changes no norm or determinant line.
+
+At each of the four branch points on |z|=1, a local coordinate u has
+z-z_0=a u^3.  Hence dz has a zero of order two and e has a zero of order one.
+Those boundary points have measure zero in the Hardy norm and create no
+additional interior evaluation defect or H^1 point term.  This proves the
+natural half-form Hardy realization used in (6).  It does not identify that
+Hardy polarization with the physical Calderon polarization of D_rel and
+D_ref; that remains the operator premise stated in section 7.
+
+The shift has no kernel and three-dimensional cokernel, hence
+
+    index(z|H_q)=-3.
+
+With the determinant-line convention
+
+    Det_Fred(T)=det ker(T) tensor det coker(T)^(-1),
+
+(6) gives B_q^(-1), exactly as in (4).  This is one line.  Its inverse power
+is fixed by the cokernel orientation in the Fredholm determinant functor.
+
+For any degree-zero line L, apply the same shift to S_0 tensor L and to
+L.  Their cokernel determinants obey
+
+    B(S_0 tensor L)=Nm_Dq(S_0) tensor B(L).
+
+Consequently the relative Fredholm line is
+
+    Det_rel(L)
+      = Det_Fred(z:S_0 tensor L) tensor Det_Fred(z:L)^(-1)
+      = B(S_0 tensor L)^(-1) tensor B(L)
+      = Nm_Dq(S_0)^(-1)=N_q^(-1).                       (7)
+
+Both ordered determinants acquire the same sign when the sheets are
+permuted, so the ratio is the permutation-free norm automatically.  All
+three L fibers cancel.  Thus (7) holds over the full Picard family, not only
+at a c-fixed fiber.  The spin-relative Poincare normalization from the
+accepted construction then makes the remaining N_q line constant over that
+family.
+
+2.2 INTEGER WINDING FIXES THE NORM POWER
+
+For n>=1, multiplication by z^n has cokernel equal to the length-n jets at
+each q point:
+
+    H_q(E)/z^n H_q(E) ~= H^0(nD_q,E|nD_q).
+
+Its natural filtration has graded pieces
+
+    gr_j ~= direct_sum_a E|q_a tensor (T_q_a^* C)^j,
+    j=0,...,n-1.                                      (8)
+
+Take E=S_0 tensor L and compare with E_ref=L.  In the ratio of the two
+Fredholm determinant lines, every L fiber, every cotangent/jet factor and
+every sheet-permutation sign in (8) cancels.  Each value of j leaves one
+copy of Nm_Dq(S_0)^(-1).  Therefore
+
+    Det_rel(z^n; S_0 tensor L,L)=N_q(S_0)^(-n),
+    index(z^n on each cable)=-3n.                       (9)
+
+Downstairs the scalar shift by z^n has spectral flow n and index -n.  The
+fullv21 source chooses the primitive class SF=1, so n=1.  Thus the original
+integer winding fixes the literal power in (7).  The earlier finite
+relations could only constrain n modulo 4, or modulo 8 after retaining the
+Spin-lift sign; the Fredholm winding removes that residual ambiguity.
+
+The executable audit is
+
+    check_three_cabled_seam.py
+
+with checked output three-cabled-seam.json.  It verifies (1), both symmetry
+actions, and, for n=1,...,8, the explicit rectangular matrix of z^n on three
+truncated polynomial sheets.  It computes rank, kernel, the 3n-dimensional
+jet quotient, its c character, and the Q and beta determinant characters
+zeta_8^(-3n) and i^n.  This finite calculation checks the algebraic exact
+sequences and symmetry bookkeeping.  The Hardy/Fredholm passage and the
+determinant-line identity are the analytic argument above, not a conclusion
+drawn from truncation.  Normal Python and python -OO give byte-identical
+output.
+
+3. INDEX MINUS ONE IS NOT THE INVERSE NORM DEFECT
+
+The old scalar circle shift has index -1.  The pulled-back S_0 cable has
+three sheets and index -3.  These are different operators, and their
+determinant orientations prevent a phase-only identification.
+
+The quotient by c makes the distinction exact.  Set x=w^3.  Then
+
+    C/<c>: eta^2=1-x^2,
+
+and q_0,q_1,q_2 map to one unramified point qbar with x=-1.  The pushforward
+F=rho_*S_0 has rank three and
+
+    F|qbar=F_1 direct_sum F_omega direct_sum F_omega2,
+
+its regular C3 representation.  Modifying the whole fiber drops the index by
+three.  Modifying only the invariant character F_1 drops it by one.
+
+But beta acts by +i on every q fiber.  Hence
+
+    beta|F_1=+i,             beta|F_1^(-1)=-i,
+    beta|B_q=-i,             beta|B_q^(-1)=+i.          (10)
+
+The directed Fredholm line of the rank-one modification is F_1^(-1), so it
+has the wrong beta and alpha-square character for N_q^(-1).  The undualized
+F_1 has the desired phase, but it is the opposite determinant orientation.
+The full three-fiber determinant succeeds precisely because
+(i^3)^(-1)=+i.
+
+Therefore the base index-minus-one seam defect is not already the inverse q
+norm.  The positive construction is the full three-cabled pullback followed
+by the relative determinant quotient (7).  This is a degree-three
+pushforward, not an invertible identification of the old scalar operator
+with the full defect.
+
+The exact check is check_c3_quotient_defect.py, with checked output
+c3-quotient-defect.json.  It verifies both indices and the determinant
+orientation under normal Python and python -OO.
+
+4. THE ORDINARY THETA EVALUATION SHORTCUT HAS THE OPPOSITE SIGN
+
+This result must be distinguished from modifying one of the two positive
+theta determinants by vanishing at D_q.  With
+
+    D(E)=det H^0(E) tensor det H^1(E)^(-1),
+    O(Theta)=D(E)^(-1),
+
+and
+
+    0 -> E(-D_q) -> E -> E|D_q -> 0,
+
+one has
+
+    D(E(-D_q))=D(E) tensor B_q^(-1).
+
+Therefore
+
+    D(E)^(-1) tensor D(E(-D_q))^(-1)
+      = O(2 Theta) tensor B_q,                         (11)
+
+which is N_q, not N_q^(-1), after removing the ordering line.  Its beta
+phase is -i.  Conditioning both theta factors gives N_q^2 and phase -1.
+
+The one inverse norm in (7) therefore comes from the determinant line of the
+original multiplication shift and its relative reference.  It does not come
+from imposing q vanishing inside one positive theta factor.
+
+At D_p the analogous vanishing operation gives O(2Theta) tensor N_p and has
+the desired scalar beta phase +i, but N_p is a different typed line.  The
+source selects the q packet for the (4,3,2) triangle.  A scalar phase match
+does not identify N_p with N_q^(-1).
+
+The exact convention audit is check_boundary_norm_conventions.py, with
+checked output boundary-norm-conventions.json.
+
+5. RELATION TO ETA AND PFAFFIAN SEWING
+
+The three-cabled proof above is a relative Fredholm determinant statement.
+The general Dai--Freed theorem independently explains why a genuine Dirac
+bordism amplitude contains one inverse boundary determinant line.  For an
+odd-dimensional spin Dirac operator on X with boundary Y,
+
+    tau_X in Det_Y^(-1),
+
+and cutting introduces a pair L_Y tensor L_Y^(-1) which gluing contracts
+once.  See Daniel S. Freed, Determinant Line Bundles Revisited,
+https://arxiv.org/html/dg-ga/9505002, equations (2)--(3) and Theorems 5/8.
+
+The primitive TFPT action contains +(i*pi/2) Delta eta_Sigma, suggesting the
+real/Majorana square-root, hence Pfaffian, refinement.  That physical
+application remains conditional because the September source itself treats
+the same-chirality real Spin--Dirac symbol and Pfaffian structure as a premise,
+not a completed identification of the raw seam operator.  Yonekura likewise
+states that the Majorana case requires a square-root refinement but does not
+carry it out in his Dirac derivation: https://arxiv.org/html/1607.01873,
+sections 1.2, 3.2 and 4.3.
+
+Accordingly, two levels must remain separate:
+
+  * (7) is an exact complex relative Fredholm line for the original
+    multiplier on the source-selected three-sheet cable;
+
+  * identifying this line with the physical eta/Pfaffian boundary amplitude
+    still requires the actual Spin--Dirac/Pfaffian field map.
+
+6. ORIGINAL SOURCE CHECK
+
+The relevant original passages are precise.
+
+1. fullv21 section001, lines 225--250, cuts the double cover along the seam,
+   declares the unitary seam gluing U_Gamma(theta)=exp(i theta), and computes
+   one scalar spectral-flow crossing.  After the already reviewed orientation
+   correction, its Hardy compression has index -1.
+
+2. The September genus-two reconstruction gives
+   w^3=(z^2-1)/(z^2+1), eta=z(1-w^3), eta^2=1-w^6 and the original Q lift.
+   These printed equations are exactly (1)--(2), so the three-cabled map is
+   recovered from the original coordinate rather than introduced as a new
+   model.
+
+3. The same September source warns that the finite point transport is not by
+   itself a field intertwiner or Calderon projector.  This warning is still
+   active: equations (3)--(7) become the physical source only after the actual
+   boundary field is identified with the S_0 cable.
+
+4. The TFPT45 primitive core has a declared relative split
+   (D_ref,D_rel) and the action
+
+       tr f(D_rel/chi)-tr f(D_ref/chi)+(i*pi/2) Delta eta.
+
+   It does not identify its two coefficient cables with
+   (S_0 tensor L,L).  That is the precise remaining reference premise in
+   (7).
+
+5. The Riemann--Hilbert free-fermion formula uses separate bases at z=0 and
+   z=infinity and retains a diagonal normalization ambiguity.  It confirms
+   the incoming q and outgoing p typing, but it does not by itself prove the
+   (S_0 tensor L,L) relative boundary pair.  See Gavrylenko--Marshakov,
+   https://arxiv.org/html/1605.04554, equations (4.1)--(4.3), (5.2)--(5.3),
+   and the normalization discussion after (4.1).
+
+7. VERDICT AND NEXT DECISIVE TEST
+
+PROVED FROM THE EXISTING SOURCE GEOMETRY:
+
+  * the old seam multiplier is the same function z whose zeros are exactly
+    D_q and whose poles are D_p;
+
+  * its pullback to the three unramified q sheets has cokernel
+    direct_sum S_0|q_a, index -3 and Fredholm line B_q^(-1);
+
+  * the half-form identity e^2=dz gives the standard Hardy norm on every open
+    sheet without a fitted measure; boundary ramification adds no point term;
+
+  * relative to the otherwise identical cable L, with the spin twist S_0
+    present only in the relative member, winding n gives exactly N_q^(-n)
+    for every degree-zero L;
+
+  * the original primitive spectral flow one sets n=1 and therefore fixes
+    the literal single inverse norm, beyond the finite clock congruence;
+
+  * the c-invariant rank-one quotient channel has index -1 but its directed
+    Fredholm line has the opposite beta phase, so it is not N_q^(-1);
+
+  * the ordinary mixed theta-determinant construction gives the opposite line
+    N_q and therefore is not the origin.
+
+REMAINING PHYSICAL PREMISE:
+
+Prove on the actual boundary Cauchy-data space that
+
+    (D_rel coefficient cable, D_ref coefficient cable)
+       ~= (S_0 tensor L, L) on pi^(-1)(disc) for one common L,     (12)
+
+with multiplication by the original z, and with the c,Q actions preserved.
+Equation (12), not another line-power choice or a rank-one character
+projection, is now the smallest decisive operator test.
+
+If (12) holds, (7) derives the single inverse N_q factor directly from the
+original boundary operation.  If D_ref induces a different coefficient line,
+the relative factor is its actual defect determinant and need not be N_q^-1.
+This is a concrete falsifiable distinction.

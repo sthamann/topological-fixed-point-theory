@@ -16,7 +16,7 @@ import sympy as sp
 HERE = Path(__file__).resolve().parent
 ROOT = HERE.parents[2]
 PINS = {
-    "experiments/theory-contracts/half-twist-grade-carry/checker.py": "1336ef54c776794f2a587fbd9c7250f069394ae9e509e2e32dc91a357fa8ab47",
+    "experiments/theory-contracts/half-twist-grade-carry/checker.py": "0109b5f8ca4cea8fa1d78a9fea904ee958ff31381eef423e482e65fee873afb7",
     "experiments/theory-contracts/half-twist-grade-carry/validation.json": "68306ccccd20bba83faf37ce9e2705aa97952c11ca3756caf09258c887f8606d",
     "experiments/theory-contracts/half-twist-grade-carry/vacuum_diagnostic.json": "9079ea8d448976c5cef9bc1ad7bcd09abdb5dce618c4d5caa8507d400072c3d5",
 }

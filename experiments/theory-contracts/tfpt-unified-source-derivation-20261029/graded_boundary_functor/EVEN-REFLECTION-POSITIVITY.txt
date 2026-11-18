@@ -1,0 +1,170 @@
+EVEN REFLECTION POSITIVITY OF THE ACTUAL ORIENTED TWO-FACE GRAPH
+29 October 2026. Independent analytic proof of the concrete follow-up-4
+candidate. No numerical argument, changed source or original-paper upgrade.
+
+RESULT
+
+For the already given normal-independent product collar, the canonical
+graded Clifford source with covariance G(B) is reflection positive on the
+ENTIRE even bounded CAR algebra of either face for the product reflection
+R=face_swap tensor (S tensor gamma_F). The reflection is an antilinear,
+ORDER-PRESERVING *-automorphism. The proof retains all same-face contractions
+and all crossing blocks. It is not a proof that the original physical source
+chooses this Clifford quantization, or that its physical OS time is fixed.
+
+1. EXACT EXISTING OPERATOR AND ORIENTATION
+
+Reuse FINITE-COUPLED.txt without changing its coefficient or holonomy:
+  g=gamma_F, Z=diag(1,-1), N=[[0,-1],[1,0]], S=NZ,
+  B=Z tensor A-S tensor Phi, A=-i0 partial_theta+a(theta),
+  [A,g]=0, Phi*=Phi, {g,Phi}=0,
+  Gamma=Z tensor g, Ical=i0 Gamma, C0=i0 N tensor I_F.
+A and B have their full periodic H1 domains. The smooth bounded backgrounds
+are independent of the normal coordinate. Let H be the NEW complex Hilbert
+space with multiplication by i equal to Ical, and real metric Re<.,.>_old.
+Then C0 is new-antiunitary, C0^2=1, C0 B C0=-B, and B is selfadjoint.
+
+Put F=S tensor g. This is the ACTUAL existing product-reflection fiber
+R_prod of original_insertions/PROOF.txt:179-188, not a fitted new J matrix.
+There it accompanied r reversal and preserved the full coupled Dirac symbol.
+Here the two labeled faces are interchanged. Direct multiplication gives
+  F^2=1, F Gamma=-Gamma F, F B F=-B,
+  F C0 F=-C0, Ical F=-C0.
+Thus F is new-antiunitary and preserves the B domain. No J_F condition,
+no [A,Phi]=0 and no commutation of a with Phi is required for these formulas.
+
+For ell>0 let, by bounded spectral calculus on the FULL B,
+  a_ell(B)=(1+exp(-2ell B))^{-1},
+  m_ell(B)=(2cosh(ell B))^{-1},
+  G=[[a_ell(B),m_ell(B)],[m_ell(B),1-a_ell(B)]].
+The orientation of the two faces is essential:
+  C_faces=diag(C0,-C0),   R=[[0,F],[F,0]].
+One has G=G*=G^2, C_faces G C_faces=1-G, R^2=1,
+  R C_faces=C_faces R,   R G R=G.
+The last identity uses a_ell(-B)=1-a_ell(B) and m_ell(-B)=m_ell(B),
+together with the face interchange. These are whole-operator identities,
+not checks in a Fourier window or in selected eigenchannels.
+
+2. CAR CONVENTION AND THE ACTUAL CROSSING PHASE
+
+Use selfdual CAR generators c(u), complex-linear in u, with
+  c(u)*=c(C_faces u),
+  {c(u),c(v)}=<C_faces u,v>_new I.
+The inner product is linear in its second entry. The actual graph state is
+  omega_G(c(u)*c(v))=<u,Gv>_new.
+It is the canonical pure quasifree state of the given projector G. Equivalently
+the earlier projector-covariance uniqueness argument fixes this state and
+all its words; no independently fitted Gaussian covariance is introduced.
+
+Because R is antiunitary and commutes with C_faces, the prescription
+  Theta(c(u))=c(Ru), Theta(z X)=bar(z)Theta(X),
+  Theta(XY)=Theta(X)Theta(Y)
+extends to an isometric antilinear *-automorphism of CAR, with Theta^2=1.
+The relation R G R=G implies omega_G(Theta(X))=overline(omega_G(X)).
+
+Let W=Fix(C0), a real Hilbert space, and j_+(f)=(f,0). For f in W,
+  Ff=Ical f,
+since Ical Ff=-C0 f=-f. Also R j_+(f)=(0,Ff) is C_faces-real.
+Define the real symmetric positive bilinear kernel on W
+  M(f,g)=<f,m_ell(B)g>_new=Re<f,m_ell(B)g>_old.
+It is real because m_ell(B) commutes with C0. Its positivity follows from
+the nonnegative function (2cosh(ell x))^{-1}; no choice of B's energy sign
+or of a vacuum sea is needed. The crossing contraction is EXACTLY
+  omega_G(c(Rj_+f)c(j_+g))
+   =<Ff,m_ell(B)g>_new=-i M(f,g).                 (1)
+Here i means Ical in the new Hilbert space and the ordinary complex scalar
+in the CAR algebra. Reversing the common reflection sign yields +i instead;
+the even result below is unchanged. Replacing C_faces by (C0,C0) is invalid.
+
+3. SAME-FACE CONTRACTIONS ARE REMOVED BY AN INVERTIBLE WICK BASIS
+
+Write X(f)=c(j_+f) for f in W and keep the ACTUAL same-face contraction
+  K(f,g)=omega_G(X(f)X(g))=<f,a_ell(B)g>_new.
+For an ordered list define its Wick polynomial W_K(f_1,...,f_n) by
+  W_K(empty)=1, W_K(f)=X(f),
+  W_K(f_1,...,f_n)=X(f_1) W_K(f_2,...,f_n)
+    +sum_{j=2}^n (-1)^{j-1} K(f_1,f_j)
+                        W_K(f_2,...,omit(f_j),...,f_n).
+In particular W_K(f,g)=X(f)X(g)-K(f,g)I. This is triangular, with leading
+term the original word and lower terms differing in length by even integers.
+For every finite real test span e_1,...,e_d, the ordered W_K(e_I) for subsets
+I form an invertible triangular change of the usual Clifford word basis.
+Thus the even Wick polynomials span the WHOLE even face algebra in that
+finite span, not a restricted subclass of normal-ordered insertions.
+
+The reflected same-face contractions are bar(K), by R G R=G. Antilinearity
+of Theta therefore gives the reflected Wick polynomial with exactly those
+conjugate contractions. In the expectation of a reflected and an unreflected
+Wick polynomial all contractions internal to either group cancel. This is
+the Wick inclusion-exclusion identity, also obtained by induction from the
+displayed recursion and the quasifree pairing formula.
+
+For lists f=(f_1,...,f_n) and g=(g_1,...,g_m) the result is zero if n!=m.
+For n=m, the only surviving pairings join each reflected entry to exactly
+one unreflected entry. Keeping both lists in their ORIGINAL order gives
+  omega_G(Theta(W_K(f)) W_K(g))
+   =(-1)^{n(n-1)/2} det[-i M(f_a,g_b)]_{a,b=1}^n.       (2)
+The prefactor is the sign of moving the second list through the first list
+to make the cross pairings. For n=2 this is -det(-i M), not +det(-i M).
+
+4. POSITIVITY FOR ALL EVEN LINEAR COMBINATIONS AND THE NORM CLOSURE
+
+If n=2m, the total phase in (2) is
+  (-1)^{n(n-1)/2}(-i)^n
+   =(-1)^{m(2m-1)}(-1)^m=1.                            (3)
+Consequently different Wick lengths are orthogonal, and the length-2m
+block is the Gram form on the exterior power Lambda^(2m) of the POSITIVE
+kernel M. For a finite real basis e_1,...,e_d let M_d=(M(e_i,e_j)).
+For any even face element written uniquely as
+  A=sum_{I even} alpha_I W_K(e_I),
+equations (2)-(3) give
+  omega_G(Theta(A) A)
+   =sum_{n even} sum_{|I|=|J|=n}
+         bar(alpha_I) det(M_d[I,J]) alpha_J >=0.        (4)
+Each compound matrix Lambda^n M_d is positive semidefinite because M_d is.
+The n=0 block is |alpha_empty|^2. This proves positivity for every even
+polynomial, including arbitrary mixtures of degrees and their original
+non-normal-ordered forms. The finite span need not reduce B or M.
+
+Every bounded even CAR element is a norm limit of such polynomials. Theta
+is isometric and omega_G is bounded, so (4) passes to that norm limit.
+Thus the result holds on the full bounded even CAR algebra of one face.
+No finite-mode regulator or trace-class hypothesis on B enters the proof.
+Point fields and unbounded point-split composites require their own limit
+and domain control; they are not automatically covered by C*-norm closure.
+
+For odd n the same phase equals -i, independent of n. Hence ordinary
+untwisted reflection positivity does NOT hold on the odd sector. Its
+smallest decisive example is A=X(f) with f!=0:
+  omega_G(Theta(A)A)=-i M(f,f),
+which is nonzero imaginary. Multiplying the odd reflected pairing by the
+fixed twist i makes every odd exterior-power block positive as well.
+The opposite overall reflection sign uses the opposite odd twist.
+
+5. PRIMARY LITERATURE, DUPLICATE CHECK AND EXACT SCOPE
+
+The order-preserving antilinear reflection and parity twist are standard
+fermionic RP conventions, not an analogy with scalar RP. Primary sources:
+Jaffe and Janssens, Characterization of Reflection Positivity: Majoranas
+and Spins, Commun. Math. Phys.346(2016),1021-1050, sections I.4-I.5 and II.2,
+https://doi.org/10.1007/s00220-015-2545-z
+Author full text consulted:
+https://www.arthurjaffe.com/Assets/pdf/RP-Char-1506.04197v1.pdf
+Their general twisted Clifford form includes odd sectors. The calculation
+above independently establishes the exact restricted even form for THIS G.
+
+The current Atlas already registers the full free/finite-coupled Clifford
+chart as finding:graded-boundary-clifford-typing-transports-full-scalar-and-
+finite-coupled-source. The registered PROOF.txt:123-129 and the old actual
+R_prod paragraph of original_insertions/PROOF.txt explicitly left this RP
+step unproved. This note supplies that exact sign and all-word step. The
+targeted Atlas search is not a claim of exhaustive corpus novelty.
+
+The result assumes the canonical Clifford source really uses G(B) as its
+quantum covariance. It does not establish that identification from P1 or
+from the original physical insertion algebra. It proves no general positive
+physical generator, radial transfer semigroup, interacting bosonic measure,
+four-dimensional chiral field theory or original physical OS reconstruction.
+For a normal-dependent B(r), reflection-compatible background transport and
+the corresponding covariance are additional inputs; neither this constant-
+product proof nor a separate radial evolution identity supplies them.

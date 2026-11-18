@@ -8,7 +8,7 @@ import sympy as S
 
 ROOT=Path(__file__).resolve().parents[3]
 PINS={
- 'experiments/theory-contracts/compiler-cone-object-audit/checker.py':'1a23ba58f9ca9eec3d51425e9dd6f200c2e22cd89cfd88a8f123dcbe489c4304',
+ 'experiments/theory-contracts/compiler-cone-object-audit/checker.py':'e3cfaa3b1a058cb5d1d1b9fc0560cbe5c586d22a175bee39b87233ca93bf4def',
  'experiments/theory-contracts/compiler-clifford-bridge/checker.py':'bf566c57f8f9fd2839c3b9ea6fe9c8ce65cc66c310fb6a4ee3119a8c9329d22d',
 }
 checks=0

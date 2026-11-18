@@ -1,0 +1,169 @@
+MATH.SEAM.ESERIES.SOURCE-RECONSTRUCTION.06 / simplification amendment
+24 October 2026
+
+The marked generator forces the whole extension
+
+1. Exact strengthening and correction
+
+Put U=V_D5 tensor V_A3 with its fixed unitary conformal structure. Retain
+the original discriminant group A=C4 x C4 and its marked h=(1,1).
+
+Consider all connected local unitary VOA extensions W of U with the SAME
+conformal vector. Isomorphisms restrict to the identity on U. Do not
+prescribe the full U-module support, its multiplicities, holomorphicity,
+finite extension index, or a separate minimality criterion.
+
+THEOREM. If Hom_U(M_h,W) is nonzero, then W is the unique marked extension
+V_E8 over U. Its U-module is automatically
+
+  W = M_0 + M_h + M_2h + M_3h,
+
+and every summand occurs exactly once.
+
+This strengthens the reconstruction theorem in THEOREMS.txt. The exact
+support and multiplicity-one requirements there are redundant within the
+connected local unitary SAME-CONFORMAL extension class once M_h occurs.
+In particular the last sentence of its Section5 must be qualified: merely
+containing the four sectors IS sufficient under these remaining hypotheses.
+A tensor spectator changes the total conformal vector and is outside this
+class. A repeated vacuum violates connectedness.
+
+The original theorem remains true in its narrower stated class. This
+amendment makes the stronger class and the correction explicit rather than
+silently rewriting the earlier source or its reviewed premise identity.
+
+2. Finiteness is a consequence
+
+U is regular. Therefore W, regarded as a weak U-module, decomposes as a
+direct sum of the sixteen irreducible lattice modules M_a, with possible
+multiplicities n_a. The common conformal vector identifies their L0 action
+with that on W. If Delta_a is the fixed lowest conformal weight of M_a,
+each copy contributes its nonzero ground space to W_(Delta_a), giving
+
+  n_a dim(M_a)_(Delta_a) <= dim W_(Delta_a) < infinity.
+
+If Delta_a is nonintegral this W weight space is zero. Thus every n_a is
+finite. There are only sixteen module labels, so W is automatically a
+finite U-module. No separate finite-index assumption is needed.
+
+By the standard VOA-extension/algebra correspondence, this finite unitary
+extension defines a connected commutative separable algebra B in the
+unitary pointed category C=Rep(U), with trivial twist. The normalized
+Q-system supplies separability and the corresponding semisimple module
+category. These are consequences of the unitary extension hypotheses,
+not new free algebra data.
+
+3. Short general multiplicity lemma
+
+Let B be a connected separable algebra in a pointed fusion category C.
+The category C_B of right B-modules is semisimple. The regular right
+module B is simple because
+
+  End_B(B) = Hom_C(1,B) = C.
+
+For each invertible simple object M_a, left tensoring by M_a is an
+autoequivalence of right B-modules, with inverse M_(-a). Thus M_a tensor B
+is also simple. The free-module/forgetful adjunction now gives
+
+  n_a = dim Hom_C(M_a,B)
+      = dim Hom_(C_B)(M_a tensor B,B)
+      in {0,1}.                                         (3.1)
+
+Moreover n_a=1 exactly when M_a tensor B is isomorphic to B as a right
+module. Consequently
+
+  S={a:n_a=1}
+
+is the stabilizer subgroup of the regular module under the invertible
+objects. This proves both subgroup closure and multiplicity one without
+assuming a pairing on repeated labels or choosing multiplication constants.
+
+The lemma uses standard semisimplicity and adjunction. Its application
+eliminates the redundant assumptions in the existing TFPT reconstruction.
+
+4. One marked generator saturates the allowed support
+
+In the native discriminant chart
+
+  q(a,b)=(5a^2+3b^2)/8 mod1,
+  b((a,b),(c,d))=(5ac+3bd)/4 mod1.
+
+The common conformal vector and the integer VOA grading give trivial
+twist on the support, hence q restricted to S is zero. Since S is a
+subgroup, polarization then gives b(S,S)=0.
+
+The hypothesis M_h subset W gives H=<h> subset S. Isotropy implies
+S subset H-perp. But the native lattice already gives
+
+  H-perp={(a,b):5a+3b=0 mod4}
+        ={(a,a):a in C4}=H.
+
+Therefore
+
+  H subset S subset H-perp=H,
+
+so S=H. Equation(3.1) gives each summand once. The coherent-product and
+fixed-U unitary uniqueness proof in THEOREMS.txt applies immediately.
+Thus the existing marked generator forces the full E8 extension, its
+canonical vacuum, all vacuum correlation functions and conformal dynamics.
+
+The local realization and the occurrence of M_h are still hypotheses.
+This theorem does not derive their realization by the primitive P1 kernel.
+
+5. Complete classification before choosing the generator
+
+The same lemma classifies all connected local unitary same-conformal
+extensions of this U. The only isotropic support subgroups are
+
+  S0={0},
+  S2={0,(2,2)},
+  Splus={(a,a):a in C4},
+  Sminus={(a,-a):a in C4}.                              (5.1)
+
+Completeness is elementary: q=0 has exactly the six labels
+
+  (0,0),(2,2),(1,1),(3,3),(1,3),(3,1).
+
+Its only nonzero order-two label is(2,2). Every order-four label generates
+either Splus or Sminus; these cannot occur together in an isotropic subgroup.
+This exhausts every subgroup of the zero set. The checker enumerates all
+subsets of that six-element set and confirms precisely(5.1).
+
+Each subgroup is cyclic. The even lattice overlattice gives existence,
+and the existing abelian-coherence argument gives one multiplication class
+for each support (H2(C_n,C*)=0 for these cyclic groups). Thus there are
+exactly four extension classes over the fixed U:
+
+  support     lattice realization     dimension of weight-one space
+  S0          V_(D5+A3)               60
+  S2          V_D8                    120
+  Splus       V_E8                    248
+  Sminus      V_E8                    248.              (5.2)
+
+The two E8 entries have different labelled embeddings over fixed U. They
+become equivalent after allowing the appropriate A3 diagram reversal.
+The original marked h=(1,1) selects Splus. It does not belong to Sminus.
+No variational choice of a preferred extension is needed once that marked
+generator is present in the stated local conformal realization.
+
+6. Sources and remaining first hypothesis
+
+Kirillov and Ostrik, Theorem1.6 (adjunction), Theorem3.3 (semisimplicity):
+  https://arxiv.org/html/math/0101219
+Davydov, Mueger, Nikshych and Ostrik, Sections3.3-3.4 (module categories
+and free-module functor for connected etale algebras):
+  https://arxiv.org/html/1009.2117
+Huang, Kirillov and Lepowsky, Theorem3.2 (VOA extensions):
+  https://arxiv.org/html/1406.3420
+Carpi, Gaudio, Giorgetti and Hillier, Theorems3.9,4.7,4.10 and Corollary4.11
+(unitary extensions, normalized Q-systems and local conformal nets):
+  https://link.springer.com/article/10.1007/s00220-023-04722-9
+
+The first additional realization premise is now smaller: the primitive
+source must realize the given U as a connected local unitary extension
+sharing its conformal vector and containing the marked charged module M_h.
+Exact support, multiplicities, holomorphicity, vacuum
+functional and conformal generator then follow. Original physical time,
+source localization and spacetime identifications are not supplied by this
+conditional chiral theorem. All earlier scoped clock/selection results
+and the original character-valued nonsplitting remain unchanged.

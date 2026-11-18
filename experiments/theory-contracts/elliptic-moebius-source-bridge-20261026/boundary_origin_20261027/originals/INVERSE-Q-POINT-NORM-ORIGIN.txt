@@ -1,0 +1,510 @@
+ORIGINALQUELLENPRÜFUNG: HERKUNFT EINER INVERSEN q PUNKTNORM
+Gerichtete Auswertungslinie, relative Determinante und der fehlende physische Einsatz
+2026-10-27
+
+Atlasstand der Navigation: d40044e01d66e9efca2962b9
+
+
+URTEIL
+=======
+
+Ein mathematisch exakter Kandidat fuer eine einzelne inverse q Punktnorm ist
+die gerichtete relative Determinantenlinie der algebraischen
+Auswertungssequenz
+
+  0 -> S_0(-D_q) -> S_0 -> S_0|D_q -> 0,
+  D_q=q_0+q_1+q_2.                                           (1)
+
+Mit der Konvention
+
+  lambda(E)=det H^0(C,E) tensor det H^1(C,E)^(-1)
+
+liefert der Determinantenfunktor
+
+  lambda(S_0(-D_q)) tensor lambda(S_0)^(-1)
+    = det H^0(D_q,S_0|D_q)^(-1)
+    = B_q^(-1).                                               (2)
+
+Das ist kein bloßer Gleichstand von Dimensionen. Es ist eine exakte Aussage
+ueber zwei verschiedene holomorphe Buendel beziehungsweise ihre
+Dolbeaultkomplexe. Die Richtung S_0(-D_q) relativ zu S_0 erzeugt B_q^(-1), die
+umgekehrte Richtung B_q. Sie ist aber noch keine Aussage ueber eine
+punktbeschraenkte geschlossene Domaene desselben analytischen Diracoperators.
+
+Für das bereits geschlossene Modul W_q wird die permutationszeichenfreie Norm
+
+  N_q = B_q tensor det H^0(D_q,O_Dq)^(-1)
+
+verwendet. Deshalb ist
+
+  N_q^(-1)=B_q^(-1) tensor det H^0(D_q,O_Dq).                 (3)
+
+Ein gewöhnlicher geordneter Punktdeterminant liefert also zunächst B_q^(-1).
+Um genau N_q^(-1) zu erhalten, muss die physische Operation entweder den
+ungeordneten Normfunktor benutzen oder zusätzlich die Orientierungsdeterminante
+des endlichen Punkteschemas in (3) mitführen. Dieser Unterschied ist für den
+Quarterlift wesentlich: c permutiert die drei Punkte gerade, Q vertauscht aber
+q_1 und q_2 ungerade. B_q und N_q haben denselben beta Charakter, aber einen
+verschiedenen alpha Vorzeichencharakter.
+
+In den geprueften Originalen ist (1) nicht als Domaenenoperation des
+geschlossenen Flaechendirac gesetzt. Sie enthalten aber mehr als zwei nur
+formal passende Teile:
+
+  * den gerichteten Index eins Nahtshift und seine relative Determinantenlinie;
+  * die geometrisch bestimmte Dreierbahn D_q auf der Genus zwei Kurve;
+  * dieselbe Basisfunktion z mit div(z)=D_q-D_p und Qz=iz, cz=z.
+
+Diese Daten liefern auf den drei Hardy Scheiben der Karte C->P1_z einen
+kanonischen Defektquotienten mit Fasern S_0|D_q. Relativ zum entsprechenden
+skalaren O_C Quotienten ist seine Determinantenlinie exakt N_q(S_0)^(-1).
+Die geprueften Originalstellen fuehren diesen relativen Hardyvergleich jedoch
+nicht als physische Feldoperation aus. Der Drei Punkte Divisor ist weiterhin
+nicht in D_+, D_ref, D_rel, im angenommenen CAR Kern oder im spaeteren D_xi
+der Masterfunktion eingesetzt.
+
+Damit ist der Quellenbefund PARTIAL:
+
+  POSITIV UND EXAKT:
+    Wenn die Originalquelle den holomorphen Spintraeger wirklich durch
+    S_0(-D_q) ersetzt, folgt der inverse Punktdeterminant (2) ohne zusaetzliche
+    Gewichtsanpassung. Mit ungeordnetem Normfunktor folgt (3). Eine andere
+    sourceigene relative Determinantenoperation kann denselben Faktor ebenfalls
+    liefern. Die vorhandene Karte z:C->P1 macht daraus bereits einen konkreten
+    Kandidaten: der relative Hardy Toeplitzdefekt von S_0 gegen O_C ist
+    N_q(S_0)^(-1), mit der richtigen c,Q Wirkung.
+
+  NICHT IM ORIGINAL GEFUNDEN:
+    Die physische Naht, der Collar oder die Source Action zieht U_Gamma=z auf
+    die drei Hardy Scheiben zurueck, vergleicht dort S_0 mit dem skalaren O_C
+    Referenzsektor und setzt genau eine Kopie dieses relativen Defektfaktors ein.
+
+  KLEINSTER ENTSCHEIDENDER QUELLENTEST:
+    Eine tatsaechliche Originaloperation muss auf demselben geladenen Sektor,
+    derselben Zeit und derselben Reflexion eine einzelne aequivariante relative
+    Linie erzeugen, die mit N_q(S_0)^(-1) samt Verbindung und c,Q Wirkung
+    uebereinstimmt. Die Buendelmodifikation (1) ist eine konkrete hinreichende
+    Route. Sie ist nicht logisch die einzig moegliche Herkunft.
+
+Die naheliegende analytische Lesart
+
+  psi(q_0)=psi(q_1)=psi(q_2)=0
+
+als geschlossene Domaenenrestriktion desselben zweidimensionalen Diracoperators
+funktioniert gerade nicht. Der folgende Kapazitaetstest zeigt dies explizit.
+
+Der Befund ist auf die unten einzeln gelesenen Quellen begrenzt. Er ist keine
+Behauptung, dass die gesamte private oder historische Ablage keine verwandte
+Formel enthält.
+
+
+0. DER NAIVE H1 PUNKTDEFEKT SCHLIESST SICH WEG
+===============================================
+
+Auf der geschlossenen reellen Flaeche C hat ein glatter Dirac oder
+Dolbeaultoperator erster Ordnung die geschlossene Graphdomaene H^1(C,S_0).
+Punktauswertung ist in reeller Dimension zwei auf H^1 nicht stetig. Daher ist
+
+  {psi glatt : psi(q_0)=psi(q_1)=psi(q_2)=0}
+
+in der H^1 Norm und damit in der elliptisch aequivalenten Graphnorm dicht.
+
+Der kleinste quantitative Zeuge ist die logarithmische Kapazitaet eines
+Punktes. In einer Kreisscheibe um q setze fuer 0<epsilon<1
+
+  eta_epsilon(r)=0                                      fuer r<=epsilon^2,
+                  log(r/epsilon^2)/log(1/epsilon)       fuer epsilon^2<r<epsilon,
+                  1                                     fuer r>=epsilon.
+
+Auf dem Zwischenring gilt
+
+  |grad eta_epsilon|=1/(r log(1/epsilon)),
+  integral |grad eta_epsilon|^2 dA
+       = 2 pi/log(1/epsilon) -> 0.                       (4)
+
+Nach einer beliebig kleinen Glaettung an den beiden Kreisraendern gilt fuer
+jede glatte Sektion s
+
+  eta_epsilon s -> s in H^1.                             (5)
+
+Der L2 Anteil und (1-eta_epsilon) grad s leben auf einer schrumpfenden
+Scheibe; der verbleibende Term s grad eta_epsilon wird durch (4) kontrolliert.
+Fuer q_0,q_1,q_2 waehlt man drei disjunkte Scheiben. Das Produkt der drei
+Cutoffs verschwindet in Umgebungen aller Punkte, und die gesamte
+Gradientenenergie ist O(3/log(1/epsilon)).
+
+Folge: Der Abschluss einer glatten Drei Punkte Nullbedingung in der
+urspruenglichen Graphnorm ist wieder ganz H^1(C,S_0). Er hat keinen
+Kodimension drei Defekt und erzeugt keine neue relative Determinantenlinie.
+
+Die exakte Sequenz (1) bleibt trotzdem richtig. S_0(-D_q) ist ein anderes
+holomorphes Linienbuendel. Eine Identifikation mit S_0 ausserhalb D_q benutzt
+eine meromorphe oder singulaere Eichung und aendert Operatorcoeffizienten oder
+Graphnorm. Deshalb darf der Dolbeaultkomplex von S_0(-D_q) nicht als
+ker(ev_q) innerhalb der geschlossenen H^1 Domaene von dbar_{S_0} ausgegeben
+werden.
+
+Eine physische Realisierung dieser algebraischen Route benoetigt damit
+tatsaechlich zusaetzliche, aber klar typisierte Quelldaten: die Aenderung des
+holomorphen Buendels, eine singulaere Verbindung oder parabolische Struktur,
+eine festgelegte geschlossene Punktwechselwirkung, oder ausgeschnittene kleine
+Scheiben mit Randbedingung und einem bewiesenen renormierten Grenzwert. Eine
+Auswertungsabbildung ev_q ist auf holomorphen Schnitten algebraisch sinnvoll;
+als stetige Spur auf der analytischen Domaene braeuchte sie staerkere
+Regularitaet H^s mit s>1, die ebenfalls aus der Quelle kommen muesste.
+
+Dieser Gegenzeuge widerlegt nur die woertliche H^1 Punktdomaenenrestriktion.
+Er ist kein allgemeines Hindernis fuer eine urspruengliche Defektoperation,
+Buendelmodifikation oder direkte Determinantenlinienabbildung.
+
+
+0B. DIE HARDY SPUR IST DIE ENTSCHEIDENDE AUSNAHME
+===================================================
+
+Die Originaldaten enthalten einen viel konkreteren hinreichenden Kandidaten
+als die geschlossene Flaechendomaene. Auf der bereits konstruierten Kurve
+
+  C: eta^2=1-w^6
+
+ist die urspruengliche Basisvariable selbst die meromorphe Funktion
+
+  z=eta/(1-w^3),       z^2=(1+w^3)/(1-w^3).                   (6)
+
+Damit gilt exakt
+
+  div(z)=D_q-D_p.                                              (7)
+
+An q_a mit w^3=-1 hat z eine einfache Nullstelle; an p_a mit w^3=1 einen
+einfachen Pol. Die Karte
+
+  pi:C -> P1_z
+
+hat Grad drei und c als Decktransformation. Ueber |z|<1 ist sie unverzweigt.
+Da die offene Kreisscheibe einfach zusammenhaengend ist, ist ihr Urbild die
+disjunkte Vereinigung dreier Scheiben, deren Mittelpunkte genau q_0,q_1,q_2
+sind. Die vier Verzweigungswerte 1,i,-1,-i liegen erst auf dem Rand.
+
+Die Quelle bestaetigt diese Karte und die Marken direkt:
+
+  Atlas: paper-source:10bdafe2930b29584f91db06
+  documents/tfpt_explorer--docs--session-2026-09-28--
+  TFPT_Gesamtsynthese_2026-09-28/sections/
+  004-subsection-auch-die-skalen-besitzen-einen-gemeinsamen-va.tex:272-313
+  SHA256 574058876ebe23d693a9fce061f68da6fdec63419af78243ac9d457d7858f74b
+
+Dort stehen w^3=(z^2-1)/(z^2+1), eta=z(1-w^3), die q und p Marken sowie die
+als r bezeichnete Quadratrotation; in der aktuellen Q Notation ist r=Q:
+
+  Q:(w,eta) |-> (1/w,-i eta/w^3),
+  c:(w,eta) |-> (omega w,eta).
+
+Direktes Einsetzen in (6) ergibt
+
+  Qz=iz,       cz=z.                                          (8)
+
+Das ist genau die Quarterkovarianz der alten Basiskreisoperation und zugleich
+die Dreiblattkovarianz. Sie wurde nicht durch eine neue Karte angepasst.
+
+Auf den drei holomorphen Hardyraeumen der Scheiben ist Multiplikation mit z
+eine Isometrie mit geschlossenem Bild. Fuer jede holomorphe Linie E auf C
+gilt der kanonische Quotient
+
+  H^2(pi^(-1)D,E) / z H^2(pi^(-1)D,E)
+       = direct_sum_a E|q_a.                                  (9)
+
+Hier ist Punktauswertung stetig. Der H^1 Kapazitaetsgegenzeuge aus Abschnitt
+0 greift nicht, weil (9) eine Hardy Spur und keine Punktbedingung in der
+Graphdomaene des geschlossenen Flaechendirac ist.
+
+Fuer E=S_0 ist die Determinantenlinie des Toeplitzshifts in der Richtung
+"verschobenes Bild relativ zum Hardyraum"
+
+  det H^0(D_q,S_0|D_q)^(-1)=B_q^(-1).
+
+Vergleicht man denselben Shift mit dem skalaren Referenzshift auf O_C, ergibt
+sich sogar exakt
+
+  B_q^(-1) tensor det H^0(D_q,O_Dq)=N_q^(-1).                 (10)
+
+Der Referenzquotient entfernt also gerade das reine Ordnungszeichen einer
+Permutation der drei Blaetter. Diese Rechnung ist eine konkrete positive
+Abbildung aus dem alten U_Gamma=z in die gesuchte Linie und keine freie
+Identifikation zweier eindimensionaler Raeume.
+
+Der verbleibende Quellenrand liegt nun an einer schmaleren Stelle. fullv21
+setzt den skalaren Kreisoperator D_Gamma und U_Gamma=e^{i theta}; sein
+phi=0 Sektor ist der periodische skalare Referenzsektor. Die Septemberquelle
+setzt die Dreiblattkarte (6). Keine der beiden gelesenen Stellen zieht jedoch
+den alten Hardyshift auf pi zurueck, setzt daneben den S_0 Hardyshift und
+nimmt deren relativen Determinantenquotienten (10). Insbesondere ist O_C als
+mathematisch kanonischer Pullback des skalaren Basissektors vorhanden, aber
+seine Rolle als physischer Referenzsektor fuer S_0 in (10) ist in den
+geprueften Originalstellen nicht erklaert.
+
+Damit ist die Hardyroute deutlich staerker als ein nachtraeglich gewaehltes
+ev_q: Karte, Basisshift, Defektfasern und Quarterwirkung stammen aus
+vorhandenen Originaldaten. Offen bleibt genau die gemeinsame physische
+Anweisung, den S_0 Hardyshift zu bilden, beide Hardyshifts relativ zu
+vergleichen und diese eine relative Linie an das W_q Modul anzusetzen.
+
+
+1. DER ALTE NAHTSHIFT LIEFERT DIE RICHTUNG, ABER KEINE q AUSWERTUNG
+==================================================================
+
+Original fullv21:
+
+  Atlas: paper-source:1fe2ddfabc74ac0e94a4686d
+  documents/archive--paper-latex--tfpt-theory-fullv21/sections/
+  001-section-introduction-the-problem-of-parameters.tex:230-258
+  SHA256 85bb11511be05385a7cadf6071dbede216b12befeb9d6767bc4460748cbec5d7
+
+Die Quelle setzt konkret
+
+  D_Gamma=i d/dtheta,
+  U_Gamma(theta)=exp(i theta),
+
+führt die verdrehte Randbedingung ein und zählt SF(U_Gamma)=1. Das ist die
+ursprüngliche gerichtete Operation. Nach der bereits geprüften gemeinsamen
+Orientierungsreparatur B=-D_Gamma liefert sie den Rang eins Kovarianzdefekt
+und den relativen Faktor 1-z beziehungsweise seine inverse Antwort.
+
+Diese Stelle allein kennt nur den Seam Kreis und einen durchlaufenden
+Fouriermodus. In ihr kommen weder C:eta^2=1-w^6 noch q_a oder S_0 vor. Die
+spaetere Originalkarte liefert jedoch denselben z Operator auf drei Hardy
+Blaettern und damit den konkreten Quotienten (9). Zu beweisen bleibt die
+physische gemeinsame Verwendung des skalaren und des S_0 Quotienten in (10).
+
+Die alte APS Aussage liefert außerdem eine Eta Gluing Zahl. Sie erzeugt keine
+Auswertungssequenz an drei Punkten. Insbesondere darf aus "Gluing" allein
+nicht (1) gefolgert werden.
+
+
+2. D_ref UND D_rel SIND WEDER PUNKTBÜNDELTWIST NOCH PUNKTDOMÄNE
+================================================================
+
+Original v31:
+
+  Atlas: paper-source:12323340247079857eb23f60
+  documents/archive--paper-latex--tfpt-31/sections/
+  002-subsection-primitive-relative-spectral-dynamics.tex:1-96
+  SHA256 6d8813b95a1ef4d82ee9cd48a25efff3f9c20066a06b85ad121bc26e5dbaae77
+
+v31 definiert
+
+  D_ref=(D+inv D inv)/2,
+  D_rel=(D-inv D inv)/2
+
+und die gerade Spektralwirkung
+
+  Tr f(D_rel/chi_seed)-Tr f(D_ref/chi_seed)+(i pi/2) Delta eta.
+
+Das ist ein relativer Spektraltrace auf einer bereits gegebenen Operatorfamilie.
+Die Quelle definiert D_rel nicht als D_ref mit einer endlichen
+Auswertungsrestriktion und schreibt keine Quotientenabbildung auf S_0|D_q.
+Deshalb kann die Differenz der beiden Namen nicht als Beweis für (2) dienen.
+
+Original v42:
+
+  Atlas: paper-source:543cbb0e445a456e04ec4efc
+  documents/archive--paper-latex--tfpt-42/sections/
+  003-subsection-primitive-relative-spectral-dynamics.tex:1-113
+  SHA256 8683d7459140a06d5e03a06adefd05bf7e6538356e4e4da4397133aa991b8fe4
+
+v42 beginnt stärker mit dem einseitigen Datum
+
+  T_bound=(A_+,H_+,D_+,J,Gamma,B_Sigma),
+  D_+=gamma_n(partial_n+B_Sigma),
+
+und bildet den geometrischen Double. Auch hier fehlen D_q und ev_q. Die im
+Original behauptete allgemeine Identität zwischen geometrischem Decklift und
+Calderon Polarisation ist zudem keine zulässige Brücke. Sie wurde im
+maßgeblichen Gegenbeweis widerlegt:
+
+  Atlas: research-source:7af7894ef3e81fd54f22b386
+  experiments/theory-contracts/seam-full-collar-reconstruction-20261015/
+  PROOF.txt:21-61
+  SHA256 9f4effed34316798c6a35e1ac0ec2832cd3720180f476cb8747bb32359b56e6a
+
+Der kompakte Produkt Dirac Gegenfall und der Hauptsymbolvergleich zeigen:
+2P_C-I ist im Allgemeinen nicht der lokale geometrische Decklift. Daher kann
+man D_q weder über den Deckoperator noch über P_C stillschweigend in die
+Fredholmquelle einführen. Eine positive Herkunft muss die konkrete
+Buendelmodifikation, singulaere Erweiterung oder eine andere tatsaechliche
+relative Determinantenoperation angeben.
+
+
+3. DIE SPÄTEREN DETERMINANTENLINIEN SIND STÄRKERE SEEDS, ABER NICHT B_q
+========================================================================
+
+TFPT 4.5 definiert in der kanonischen Defektfiltration
+
+  d_2(B)=deg_det^+(B)=c_1(L_+)+c_1(L_-).
+
+Quelle:
+
+  documents/archive--tfpt-45--source_extracts--01_boundary_kernel_source/
+  sections/002-section-intrinsic-closed-branch-and-canonical-rigid-obje.tex:
+  166-182
+  SHA256 1de90a4a7379bef804cc7815d72c0f86bb398a5771e9b00997c4bb15e8815f9e
+
+Die Quelle beschreibt L_+ und L_- als Determinantenlinien zweier
+randpolarisierter endlicher Blöcke. Sie definiert weder ihre Fasern als
+S_0|q_a noch eine Differenz oder einen Quotienten, der B_q^(-1) wäre. Die
+positive Summe der Chernklassen bestimmt nicht die gerichtete Linie (2).
+
+Die fermionische Reflexionspositivität setzt ebenfalls einen stärkeren Seed:
+
+  Atlas: paper-source:65e0489bd200e6407f60c40e
+  documents/archive--tfpt-45--source_extracts--technical_companion_source/
+  sections/006-subsection-infrared-continuations-of-the-seam-transfer.tex:
+  109-126
+  SHA256 a3268d08cad1134cea4f47818ed1234fe222d46481906bff1477e89373654ddd
+
+Der Text sagt, der admissible CAR Kern könne als reflektierte quadratische Form
+oder Pfaffianstruktur geschrieben werden. Der Kern ist dabei Eingabe. Die
+Passage konstruiert ihn nicht aus (C,S_0,D_q) und entscheidet weder B_q gegen
+N_q noch die Richtung der relativen Linie.
+
+Auch die spätere Masterfunktion setzt bereits P_adm und einen Operator D_xi:
+
+  Atlas: paper-source:e200c1f9075e588500860da9
+  documents/archive--tfpt-45--source_extracts--02_carrier_source/sections/
+  009-source.tex:334-353
+  SHA256 27114e2ce775346dac11c53ecb77871453f3ecf226fe40951f8b3099bdea6b05
+
+Sie enthält Re log det_zeta(D_xi^2+mu^2) und einen Eta Term. D_xi wird an
+dieser Stelle nicht als punktrestriktierter Spinoperator definiert. Der
+positive volle Determinant ist außerdem nicht automatisch die eine gerichtete
+komplexe relative Kopie.
+
+
+4. DER q DIVISOR UND DIE BASISFUNKTION z SIND GEOMETRISCH VORHANDEN
+===================================================================
+
+Die September Synthese schließt die tatsächliche v117 Fuchsquelle analytisch:
+
+  Atlas: paper-source:10bdafe2930b29584f91db06
+  documents/tfpt_explorer--docs--session-2026-09-28--
+  TFPT_Gesamtsynthese_2026-09-28/sections/
+  004-subsection-auch-die-skalen-besitzen-einen-gemeinsamen-va.tex:203-327
+  SHA256 574058876ebe23d693a9fce061f68da6fdec63419af78243ac9d457d7858f74b
+
+Die ursprüngliche ODE hat vier Punkturen z=i^k und Residuen U^k A_0 U^-k.
+Ihr exakter C4 Deszent erzeugt die Kurve
+
+  w^3=(z^2-1)/(z^2+1),
+  eta^2=1-w^6.
+
+Auf ihr werden die sechs Verzweigungspunkte als
+
+  p_a=omega^a,    q_a=-omega^a
+
+markiert. Der Text konstruiert den expliziten Sechspunktintertwiner und nennt
+ihn einen tatsächlichen markierten Punkttransport. Die Quelle grenzt seine
+Wirkung aber in derselben Stelle ausdrücklich ab: Er darf weder als
+Feldintertwiner noch als Ableitung des ursprünglichen Nahtprojektors ausgegeben
+werden. Zusammen mit dem Hardy Auswertungssatz liefert die z Funktion dennoch
+den mathematischen Defektquotienten aus (9). Was in der Quelle weiter fehlt,
+ist seine Verwendung als relativer S_0/O_C Fermiondeterminant und seine
+Einsetzung in die Antwort.
+
+Der stärkere Origin Text benutzt ebenfalls einen Divisor, jedoch einen anderen:
+
+  Atlas: paper-source:c1f6770cd713dd9080c5e547
+  documents/origin_theory/sections/
+  001-section-the-whole-integer-skeleton-from-one-pair-gcar-nf.tex:36-51
+  SHA256 d29b9f3624f985237a78386d33c5f2cdb1b78553882f33d39b632e96087d464b
+
+Dort ist D=mu_4 ein Divisor vom Grad vier auf P1. Er liefert die Zyklenzahl
+drei und den meromorphen Modenraum der Dimension fünf. Der Text markiert die
+physische Identifikation dieses Modenraums selbst als bedingt. D=mu_4 ist nicht
+der Grad drei Divisor D_q auf C und liefert nicht die relative Linie (2).
+
+
+5. DER AKTIVE DETERMINANTENLINIENVERTRAG SETZT DIE GESUCHTE IDENTITÄT ALS ZIEL
+===============================================================================
+
+  Atlas: paper-source:58d54f9787c7a7d7af26ba3c
+  documents/tfpt_research_contracts/sections/017-source.tex:239-266
+  SHA256 492599a0d20043a5589ca610ce7e1ebceffb8de043eae8eb406e4469d3e4be83
+
+SEAM.DETLINE.UNIFICATION.01 verlangt eine Isomorphie zwischen Bulk und Seam
+Determinantenlinien mit Verbindung und bezeichnet sie ausdrücklich als
+Hypothese. Der Vertrag liefert daher eine korrekte Zieltypisierung, aber noch
+nicht den relativen S_0/O_C Hardy Einsatz (10).
+
+Die beiden aktuellen mathematischen Abschlüsse sind:
+
+  experiments/theory-contracts/elliptic-moebius-source-bridge-20261026/
+  MARKED-Q-DIVISOR-CENTRAL-TWIST.txt
+  SHA256 da1f75831a46a0c0662f931486b77e6e2085126df452b009d1a90351d413d904
+
+  experiments/theory-contracts/elliptic-moebius-source-bridge-20261026/
+  SPIN-RIGIDIFIED-THETA-MODULE.txt
+  SHA256 4bd17ffbb2be4b31c4eb7a4efe9cd8a1191c9065655889ce189f3b1f6c2499d2
+
+Sie beweisen die q Normlinie, ihre Familienkonstanz und den vollständigen
+endlichen Modulschluss. Sie sagen selbst präzise, dass die physische Einfügung
+genau einer Kopie offen ist. Die vorliegende Originalprüfung liefert dafuer
+einen exakten algebraischen Kandidaten und zugleich die analytische Schranke:
+eine blosse H^1 Punktnullbedingung realisiert diesen Kandidaten nicht.
+
+
+6. KLEINSTER ENTSCHEIDENDER ANSCHLUSSTEST
+==========================================
+
+Kein weiterer endlicher Matrixcensus ist nötig. Die jetzt fuehrende Route und
+zwei allgemeinere hinreichende Alternativen sind:
+
+  A. Der alte Shift U_Gamma=z wird ueber die vorhandene Karte pi auf die drei
+     Hardy Scheiben gezogen. Die Originalquelle setzt den relativen
+     Toeplitzdeterminanten von S_0 gegen den skalaren Pullback O_C ein. Nach
+     (9),(10) ist seine Linie exakt N_q(S_0)^(-1).
+
+  B. Die Originalquelle ersetzt den Spintraeger wirklich durch S_0(-D_q), oder
+     definiert einen echten punktierten beziehungsweise singulaeren
+     geschlossenen Operator, und beweist, dass seine relative
+     Determinantenlinie aequivariant N_q(S_0)^(-1) ist.
+
+  C. Eine andere bereits physische Operation liefert direkt eine relative
+     Linie mit derselben Verbindung, demselben Zentralcharakter, derselben c,Q
+     Wirkung und demselben gerichteten Source Einsatz wie N_q(S_0)^(-1).
+     Diese Route muss keine Punktauswertung enthalten.
+
+Alle drei Routen müssen auf demselben Feldsektor genau eine Kopie erzeugen und
+den ungeordneten Normvertrag oder die Orientierungsdeterminante aus (3)
+mitführen. Bei Route A ist der ungeordnete Vertrag gerade der skalare
+Referenzquotient in (10). Source Action, Zeit und Reflexion muessen in jeder
+Route mit dem urspruenglichen physikalischen Sektor verbunden sein.
+
+Erfolgskriterium:
+
+  Eine tatsächliche Originaloperation liefert equivariant N_q(S_0)^(-1) samt
+  Verbindung und gerichteter Source Wirkung, ohne eine freie
+  Linienisomorphie einzusetzen.
+
+Abbruchkriterium:
+
+  Die Quelle enthält nur SF=1, einen relativen Spektraltrace, eine Eta Zahl,
+  abstrakte Determinantenlinien L_+ und L_-, einen vorausgesetzten CAR Kern,
+  Re log det(D_xi^2+mu^2), oder den Punkttransport auf D_q. Keines dieser
+  Objekte allein definiert eine der drei Anschlussrouten.
+
+Der gegenwärtige geprüfte Originalstand erfüllt das Abbruchkriterium noch,
+aber Route A ist jetzt bis auf eine einzelne physische Anweisung geschlossen:
+Verwendet die Quelle den skalaren periodischen Kreis als Referenz fuer den
+S_0 Hardyshift auf derselben Dreiblattkarte und setzt den Quotienten einmal
+ein? Die alten Originale begruenden den skalaren Operator und die Karte; der
+aktuelle Modulabschluss begruendet den Spintraeger S_0. Den S_0 Hardyoperator
+und den relativen S_0/O_C Einsatz (10) begruenden die gelesenen Originalstellen
+noch nicht.
+
+Falls Route A sourceigene gesetzt wird, legt der Fredholmdeterminant Richtung,
+einzelne Potenz und den ungeordneten Normvertrag zugleich fest. Falls eine
+andere Originaloperation den Faktor liefert, genuegt deren exakte
+Linienidentitaet; ev_q ist nicht logisch vorgeschrieben.
+
+Die scheinbar noch kleinere Vorschrift psi(q_a)=0 auf der unveränderten H^1
+Graphdomäne ist kein Anschluss: Der Kapazitätszeuge (4),(5) zeigt, dass ihr
+Abschluss wieder die volle Domaene ist. Das ist ein Hindernis fuer diese eine
+analytische Implementierung. Es trifft die Hardyroute A nicht.
