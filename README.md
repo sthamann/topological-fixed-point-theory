@@ -211,3 +211,7 @@ These licenses cover different kinds of material. The [licensing guide](LICENSIN
 Read [AGENTS.md](AGENTS.md) and the [maintenance guide](docs/LATEX_MAINTENANCE.md) before changing sources. Find the owning module, preserve claim scope and negative results, and check the affected path through to its public output. Record repository maintenance in [docs/CHANGELOG.md](docs/CHANGELOG.md); keep scientific and publication history in the paper changelog.
 
 This repository owns physical TFPT and its compiler mathematics. RH, prime number, Weil window and factorisation research belongs to the independent [Prime Front repository](https://github.com/sthamann/prime-front) and [website](https://prime.fixpoint-theory.com/).
+
+## Author
+
+Built by [Stefan Hamann](https://stefan-hamann.de/), co-founder of Shopware and author of the handbook [Agentic Commerce](https://www.agentic-commerce.sh/).
