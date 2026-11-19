@@ -6904,3 +6904,7 @@ der aufgezeichneten Spiegelung ist, sind Form, Referenz, Spiegel, Schnitte, Kapp
 und Vorzeichen festgelegt. Der Kandidat braucht Majorana-Neutrinos und eine von
 null verschiedene leichteste Masse. Ohne die Annahme bleibt F1 offen. Kein
 Ledgerwechsel. Atlas `6d0f4e69269a72ff5000d3db`, 48 Befunde.
+
+## OPHCOHERENT20261119. Kohärente OPH Randwege und gemeinsamer Spinor
+
+Die exakte endliche Suche liefert ein inverses Boostpaar nach sechs Schritten und eine trennende Interferenz ±1/64. Die vollständige C₄ Phasenprobe scheidet den unmittelbaren Ladungstwist als gemeinsames wirksames Kopplungsprinzip in dieser Klasse aus. Das Zwei Regionen Modell gibt eine kovariante Alternative. Physischer F1 Abschluss und Originalquelle bleiben offen. [Beleg und Grenzen](../../../research/originlab/OPH-COHERENT-HISTORY-20261119.md).

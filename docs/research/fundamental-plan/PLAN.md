@@ -1,5 +1,12 @@
 # TFPT: Aufgabenplan zur fundamentalen Herleitung
 
+## 19. November: Kohärente OPH Randwege als endliche Vergleichsregel
+
+Die OriginLab Kampagne prüft die gemeinsame Spinstruktur, kurze kohärente Rückwege und Ladungstransport.
+Der Modellbefund reduziert die Auswahl auf ein gemeinsames positives Ereignisgewicht vor dem Festschreiben der Wege.
+F1 bleibt in Bearbeitung. Die ursprüngliche Quelle und ihr Kontinuumsanschluss sind weiterhin Voraussetzung.
+[OPH Vergleich und Reproduktion](../../../research/originlab/OPH-COHERENT-HISTORY-20261119.md).
+
 ## 18. November: Vier Marken, zwei Kopien und verklebte Form
 
 Unter F1 als benannte Arbeitshypothese führen: Die ursprüngliche Randform ist

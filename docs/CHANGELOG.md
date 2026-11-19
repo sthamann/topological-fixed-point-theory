@@ -4,6 +4,10 @@ Scientific findings, their original scope and dated publication history remain
 in the modular `changelog.tex` document. This file records repository structure,
 navigation and maintenance changes that make no new scientific claim.
 
+## 2026-11-19 — OriginLab finite OPH campaign
+
+The OriginLab dispatcher accepts the coherent OPH history campaign and preserves the separate physical source verdict.
+
 ## 2026-11-09: Preserve the whole TFPT status in the Atlas
 ## 2026-11-10 — Verification and formal evidence in the Atlas
 
