@@ -6908,3 +6908,7 @@ Ledgerwechsel. Atlas `6d0f4e69269a72ff5000d3db`, 48 Befunde.
 ## OPHCOHERENT20261119. Kohärente OPH Randwege und gemeinsamer Spinor
 
 Die exakte endliche Suche liefert ein inverses Boostpaar nach sechs Schritten und eine trennende Interferenz ±1/64. Die vollständige C₄ Phasenprobe scheidet den unmittelbaren Ladungstwist als gemeinsames wirksames Kopplungsprinzip in dieser Klasse aus. Das Zwei Regionen Modell gibt eine kovariante Alternative. Physischer F1 Abschluss und Originalquelle bleiben offen. [Beleg und Grenzen](../../../research/originlab/OPH-COHERENT-HISTORY-20261119.md).
+
+## OPHCP20261119. Vollständig positive Viermarkenmischung
+
+Unter voller Zeitkovarianz und festen symmetrischen Populationsraten m folgt für den Übertrag der Ordnung −3/4 die Dämpfung γ ≥ m. Aus der zentrierten Vakuumkurve folgt eine scharfe Obergrenze für dieselbe geladene Antwort auf derselben Zeitkarte. Eine positive Fortsetzung erreicht auch die Hüllkurve für den ganzen geladenen Shift. Bloße Deckkovarianz lässt einen anderen, vierfach stationären Kandidaten zu. Der direkte R113 Aufruf bleibt wegen der fehlenden gewichteten Originalform und Leerreferenz BLOCKED. [Beleg und Geltungsbereich](../../../research/originlab/OPH-WINDING-MEMORY-20261119.md).

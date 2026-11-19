@@ -6,6 +6,7 @@ Die OriginLab Kampagne prüft die gemeinsame Spinstruktur, kurze kohärente Rüc
 Der Modellbefund reduziert die Auswahl auf ein gemeinsames positives Ereignisgewicht vor dem Festschreiben der Wege.
 F1 bleibt in Bearbeitung. Die ursprüngliche Quelle und ihr Kontinuumsanschluss sind weiterhin Voraussetzung.
 [OPH Vergleich und Reproduktion](../../../research/originlab/OPH-COHERENT-HISTORY-20261119.md).
+Die zeitkovariante vollständig positive Fortsetzung erzwingt eine mit der Vakuummischung gekoppelte Dämpfung geladener Überträge. Die scharfe endliche Schranke und ihr Gegenmodell unter bloßer Deckkovarianz sind gerechnet. [Nachweis und Geltungsbereich](../../../research/originlab/OPH-WINDING-MEMORY-20261119.md).
 
 ## 18. November: Vier Marken, zwei Kopien und verklebte Form
 

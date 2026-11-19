@@ -6,7 +6,7 @@ navigation and maintenance changes that make no new scientific claim.
 
 ## 2026-11-19 — OriginLab finite OPH campaign
 
-The OriginLab dispatcher accepts the coherent OPH history campaign and preserves the separate physical source verdict.
+The OriginLab dispatcher accepts the coherent OPH history campaign and preserves the separate physical source verdict. The same campaign now reports the four-mark channel controls and their source obligations.
 
 ## 2026-11-09: Preserve the whole TFPT status in the Atlas
 ## 2026-11-10 — Verification and formal evidence in the Atlas

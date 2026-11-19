@@ -225,6 +225,8 @@ def run(max_steps=6):
     charts, advance = directed_chart_operators()
     depths, witnesses = paired_return_search(advance, max_steps)
     ratio, interference, same, opposite = loop_and_charge_checks(advance)
+    from f1_oph_winding_memory import controls as winding_memory
+
     witness = ('HHHHHH', 'TTTTTT', 2)
     if max_steps >= 6:
         assert depths[-1]['length'] == 6 and witness in witnesses
@@ -243,6 +245,7 @@ def run(max_steps=6):
         'positive_return_ratio': str(ratio),
         'grade_twist_menu': {'projectively_factorizing_on_selected_return': same, 'opposite_spinor_dilations': opposite},
         'two_site_contact': two_site_contact(),
+        'winding_memory': winding_memory(),
         'open': ['native coherent history producer', 'native charged and regional source binding', 'interacting continuum'],
     }
 
