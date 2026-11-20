@@ -1,5 +1,7 @@
 # Lässt sich die Familiengeometrie aus ihrer Messgeschichte zurückgewinnen?
 
+[Fortsetzung zur Einheitswindung](../rahmentransport/VERDICT.md). Positive Zweimarkenumläufe und ihre kohärente Auslesung reproduzieren denselben Familienprojektor und den bedingten ursprünglichen Transfer.
+
 **KANDIDAT, Stufe 1.** Aus drei aufeinanderfolgenden Marken lässt sich in diesem Prozess die Fano Ebene rekonstruieren. Der bisherige Vierertransfer trägt in einer gewählten Spinorauslesung die Geometrie ebenfalls bis zur dritten Messzeit weiter. Die ersten beiden unmarkierten Transfers enthalten bereits Gedächtnis, lassen die Inzidenztabelle aber unbestimmt. Das Modell liefert eine kontinuierliche, reversible Dynamik für eine physikalische Zusatzannahme über Wartezeiten. Die ursprüngliche Zeitspiegelung und eine orientierte Windung aus dem Prozess bleiben offen.
 
 ## Welches Experiment wurde verändert?
