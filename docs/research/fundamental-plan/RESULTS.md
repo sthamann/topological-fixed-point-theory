@@ -7561,3 +7561,46 @@ Vertrag: `experiments/theory-contracts/original-reflection-and-forced-critical-p
 
 Nächster Schritt: begründen, warum der Modul der vier Marken über den elliptischen Überlagerer mit antiperiodischer
 Spinstruktur eingeht (Anschluss an NULLMODEN20261120: B_Σ nach der primitiven Kompression aufstellen); danach die Kubik.
+
+## GESAMT2-20261120 · Gesamtobjekt, zweite Fassung: acht Moden als Darstellung der Vierergruppe der Marken (bedingt)
+
+Reproduktion: `.venv/bin/python experiments/theory-contracts/pruefkatalog-querauswertung-20261120/check_gesamt_v4.py`
+(29 Prüfungen bestanden, zwei davon sind benannte Folgerungen ohne eigene Rechnung). Baut auf GESAMT20261120,
+EPSCAR20261120, NULLMODEN20261120, KERNORIG20261120 und dem Atlasbefund vom 19. November (acht Thetafunktionen = 5 + 3)
+auf. Kein Ledgerwechsel, kein Atlaseintrag, nichts befördert, kein Commit.
+
+**Objekt:** Torus E über der Sphäre, verzweigt an den vier Marken, mit dem Bündel L⁸ = Rückzug des Markendivisors. Seine
+acht Schnitte sind die Nullmoden des damit getwisteten Dirac Operators.
+
+**Befund (exakt):**
+
+- Deck: 5 gerade (Träger) + 3 ungerade (Familien). Bekannt.
+- Neu: Die Halbperioden E[2] wirken darauf; auf der Sphäre ist das die Kleinsche Vierergruppe V₄ der Marken
+  (Doppeltranspositionen). Träger = 2 · trivial + χ_a + χ_b + χ_ab, Familien = χ_a + χ_b + χ_ab. Zusammen zweimal
+  die reguläre Darstellung.
+- Die Teilung 2 + 3 des Trägers ist damit kanonisch und gilt für jede Lage der vier Marken (fünf Module geprüft). Sie
+  braucht keine ausgewählte Involution und kein besonderes Modul.
+- Farbteil und Familienraum sind als Darstellungen von V₄ gleich. Für die Familien folgt das direkt aus der Definition
+  des Originals (H¹ der punktierten Sphäre).
+- Die beiden Annahmen des Originals an die äußeren Potenzen gelten äquivariant: Λ² des Dubletts trivial, Λ² des
+  Farbblocks gleich seinem Dual, Determinante des Farbblocks trivial. Die Paritätslesart mit einer Involution
+  (EPSCAR20261120) besteht diesen Test nicht; sie mischt die Invarianten mit einem Farbplatz und wird hiermit ersetzt.
+- Auf der Quotientensphäre P¹/V₄: Dublett = H⁰(O(1)), jeder Farbplatz und jede Familie ein Bündel vom Grad 0.
+  Determinantenklassen (1, 0) wie im Original. Der Widerspruch aus NULLMODEN20261120 (Farbe Grad 2 gegen Grad 0)
+  entfällt in dieser Lesart.
+- Hyperladung: Y = 1/12 + (5/12)(2P − 1) mit P = Mittel über V₄ gibt 1/2 auf dem Dublett und −1/3 auf den Farben, ohne
+  den Vorzeichenwechsel aus EPSCAR20261120. Gleichwertig Y = −1/3 + (5/24) Σ_{g∈V₄} g.
+- Am Quadrat (τ = i, KERNORIG C) kommt die Vierteldrehung hinzu; sie lässt eine Involution fest und tauscht zwei. Farben
+  und Familien zerfallen dann je 1 + 2.
+
+**Geltung:** Rechnung am gewählten Modell (Träger = gerade Schnitte von L⁸). Das Original nennt für den Trägerblock kein
+Bündel; Voraussetzung (a) bleibt Setzung. P ist das Gruppenmittel, das Original schreibt ι_C = 2P_C − 1 mit der
+Spiegelung an der Naht: gleiche Form, nicht derselbe Operator. Die Spur von 2P − 1 auf den acht Moden ist −4, die
+Spurbedingung aus KERNSIX Schritt 2 ist nicht erfüllt. Die Stellen zu (c₁(L₂), c₁(L₃)) betreffen im Original den Higgs
+auf der Normalsphäre; dass diese die Quotientensphäre P¹/V₄ ist, ist nicht gezeigt. Die Koeffizienten 1/12 und 5/12
+kommen aus dem Original und werden nicht hergeleitet. Struktursuche in OriginLab nicht neu gelaufen.
+
+**Weiter gesetzt:** Trägerblock = gerade Schnitte; Kubik; Gravitation; eine Hand = sechs Züge; N⋆. F1 bleibt in Bearbeitung.
+
+**Nächster Schritt:** Am Original prüfen, ob die Normalsphäre des Higgs Abschnitts der Quotient der Markensphäre nach V₄
+ist und ob P_C auf dem endlichen Block mit dem Mittel über die Halbperioden zusammenfällt.
