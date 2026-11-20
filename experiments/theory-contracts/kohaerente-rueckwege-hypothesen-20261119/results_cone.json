@@ -1,0 +1,99 @@
+{
+ "name": "cone",
+ "checks": [
+  {
+   "check": "k = 0: eigenvalues 0 (twice) and 5/2 (twice)",
+   "pass": true,
+   "detail": "{5/2: 2, 0: 2}"
+  },
+  {
+   "check": "kernel: (2 chi, -chi)/sqrt 5, weight 4/5 on the retained block",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "velocities 0.8 sx, 0.8 sy, -0.8 sz as claimed",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "spatial form G = 0.64 delta, rank three",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "without the third coupling the rank is two",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "the three velocities anticommute: an isotropic Weyl cone omega^2 = 0.64 |k|^2",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "its handedness is opposite to the cone sigma.k: V_x V_y V_z = -i 0.512",
+   "pass": true,
+   "detail": "-64/125"
+  },
+  {
+   "check": "numerical eigenvalues of the full operator confirm the linear cone",
+   "pass": true,
+   "detail": "[np.float64(0.0004931087742492612), np.float64(-0.0004931974142486073)]"
+  },
+  {
+   "check": "control: with B = g + v sin kz (no sigma_z) the form (1/2) tr V_i V_j still has rank three",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "but V_z commutes with V_x, V_y: dispersion omega = -0.8 kz +- 0.8 |k_perp|, a drift, no third cone direction",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "numerical check of the drift dispersion",
+   "pass": true,
+   "detail": "[np.float64(-0.00011163479974374301), np.float64(-0.000688453784545766)]"
+  },
+  {
+   "check": "consequence: the test must demand the Clifford relation {V_i, V_j} = 2 G_ij, and the sigma_z in B is the neutral two-block put in by hand",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "the full 4 x 4 operator depends on k_z before any reduction (dH/dk_z != 0)",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "the direct block alone has no k_z dependence: rank two",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "embedding weight Z(z) = 1 + g^2/(z - Delta)^2; pole normalisation 1/Z(0) = 4/5 is the factor in the velocities",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "the embedding depends on z: (d/dz) iota != 0, so one fixed embedding reproduces the full amplitude at one energy only",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "at k = 0 the exact retained equation z - g^2/Delta - Sigma(z) = 0 has both roots 0 and 5/2: the reduction keeps the full spectrum only with the z-dependent return term",
+   "pass": true,
+   "detail": ""
+  }
+ ],
+ "data": {
+  "V": [
+   "[[0, 4/5], [4/5, 0]]",
+   "[[0, -4*I/5], [4*I/5, 0]]",
+   "[[-4/5, 0], [0, 4/5]]"
+  ],
+  "G": "[[16/25, 0, 0], [0, 16/25, 0], [0, 0, 16/25]]",
+  "drift_control_G_rank": 3
+ }
+}

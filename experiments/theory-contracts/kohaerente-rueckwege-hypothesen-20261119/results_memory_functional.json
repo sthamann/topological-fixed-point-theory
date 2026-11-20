@@ -1,0 +1,87 @@
+{
+ "name": "memory_functional",
+ "checks": [
+  {
+   "check": "visible state is exactly flat for every epsilon",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "modular Hamiltonian is -artanh(epsilon) Z x Z up to a constant",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "two-time response <X(t) X(0)> = cos(2 kappa t) + i epsilon sin(2 kappa t)",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "return value Tr(rho X rho X)/Tr rho^2 on the enlarged space is (1 - eps^2)/(1 + eps^2): it sees the hidden memory",
+   "pass": true,
+   "detail": "(1 - epsilon**2)/(epsilon**2 + 1)"
+  },
+  {
+   "check": "identity: 1 - return = ||[rho, X]||^2 / (2 Tr rho^2); flat return values force rho to commute with every marker",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "in the 128 x 2 chart every tested memory coupling changes some of the 60 anchors 1/4 unless epsilon = 0",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "the escape is the reference: evaluated on the visible algebra alone, Tr(rho_A X rho_A X)/Tr rho_A^2 = 1 for every epsilon",
+   "pass": true,
+   "detail": "hypothesis B needs returns defined on the visible algebra only"
+  },
+  {
+   "check": "flat state: Tr(rho [A, B]) = 0 for all 112 x 112 root pairs: mixed first-order responses are symmetric identically",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "non-flat state (weights by carrier number): the curl is nonzero exactly on pairs (beta, -beta) and equals the Cartan expectation",
+   "pass": true,
+   "detail": "80"
+  },
+  {
+   "check": "hence in the finite chart the functional test of hypothesis 3 is passed identically by the recorded flat state: no selective power there",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "replay of R113-FOUR-FAMILY-TRANSPORT: single returns fix 12 of 32 hidden diagonal weights, ordered two-cut probes all 32 (6 and 16 with reflection pairing)",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "replay: two positive transfers with equal first three marks and equal reference differ in the mixed word (5/12 and 3/8; neutral control 1/96 and 1/192)",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "so positivity + reflection pairing + gauge neutrality + the first three marks do not single out one process in the finite chart (uniqueness claim of F fails there)",
+   "pass": true,
+   "detail": ""
+  }
+ ],
+ "data": {
+  "return_value_toy": "(1 - epsilon**2)/(epsilon**2 + 1)",
+  "anchors_with_memory": {
+   "first colour sign": [
+    "1/4",
+    "-(epsilon - 1)*(epsilon + 1)/(4*(epsilon**2 + 1))"
+   ],
+   "carrier parity": [
+    "-(epsilon - 1)*(epsilon + 1)/(4*(epsilon**2 + 1))"
+   ],
+   "family sign": [
+    "1/4",
+    "-(epsilon - 1)*(epsilon + 1)/(4*(epsilon**2 + 1))"
+   ]
+  },
+  "curl_nonzero_pairs_nonflat": 80
+ }
+}

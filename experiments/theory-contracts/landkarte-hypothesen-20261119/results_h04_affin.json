@@ -1,0 +1,63 @@
+{
+ "name": "h04_affin",
+ "checks": [
+  {
+   "check": "z -> iz + 1/2 durchläuft die vier Halbperioden in einem Viererzyklus",
+   "pass": true,
+   "detail": "[(Fraction(0, 1), Fraction(0, 1)), (Fraction(1, 2), Fraction(0, 1)), (Fraction(1, 2), Fraction(1, 2)), (Fraction(0, 1), Fraction(1, 2))]"
+  },
+  {
+   "check": "die reine Vierteldrehung hält zwei Halbperioden fest und vertauscht zwei",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "Ordnung vier auf dem Torus, verträglich mit z -> -z (steigt auf die Kugel ab)",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "genau zwei Fixpunkte, (1+i)/4 und (3+3i)/4; sie werden von z -> -z vertauscht, auf der Kugel ist das EIN Punkt",
+   "pass": true,
+   "detail": "[(Fraction(1, 4), Fraction(1, 4)), (Fraction(3, 4), Fraction(3, 4))]"
+  },
+  {
+   "check": "die zweite Hebung -(iz + 1/2) hat ebenfalls zwei Fixpunkte: zusammen die zwei Pole der Kugeldrehung",
+   "pass": true,
+   "detail": "[(Fraction(1, 4), Fraction(3, 4)), (Fraction(3, 4), Fraction(1, 4))]"
+  },
+  {
+   "check": "die Markendrehung ist das Coxeterelement von A3 (Viererzyklus) und wirkt TRIVIAL auf der Klebegruppe A3*/A3 (alle Meridiane in einer Klasse, wie im Atlas)",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "Klebeklasse eines Meridians hat Ordnung vier: k m_0 liegt erst für k = 4 im Wurzelgitter",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "WÖRTLICHE FORM FÄLLT: die Klebegruppe wirkt auf den vier Gewichten als Zahl i, nicht als Vertauschung. Sie ist der Kommutator von Schieber (Markendrehung) und Uhr",
+   "pass": true,
+   "detail": "1j"
+  },
+  {
+   "check": "ERSATZ: das Coxeterelement von A3 ist genau bei harmonischer Lage eine Symmetrie der Marken (Quadrat ja; generisch, Rechteck, Tetraeder nein)",
+   "pass": true,
+   "detail": "{'Quadrat': True, 'generisch': False, 'Tetraeder': False, 'Rechteck': False}"
+  },
+  {
+   "check": "vier Marken plus zwei Pole: 24 Möbiussymmetrien (Oktaeder); die Bolzakurve y^2 = x^5 - x darüber hat 2 x 24 = 48",
+   "pass": true,
+   "detail": "24"
+  },
+  {
+   "check": "GRENZE: diese 48 sind GL(2,3) mit Zentrum der Ordnung 2. Die Picardgruppe G48 des Originals hat Zentrum mu_4 (Atlas). Gleiche Zahl, andere Gruppe",
+   "pass": true,
+   "detail": ""
+  }
+ ],
+ "data": {
+  "urteil": "Wörtliche Form ausgeschlossen: die Klebegruppe vertauscht die Marken nicht (Atlasbefund reproduziert). Exakter Ersatz: Klebegenerator = Kommutator von Markendrehung und Uhr; das Quadrat ist genau die Lage, an der das Coxeterelement von A3 geometrisch wirkt. Pole im Original nicht geprüft (R113 blockiert)."
+ }
+}

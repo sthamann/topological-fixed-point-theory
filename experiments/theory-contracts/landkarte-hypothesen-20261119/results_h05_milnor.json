@@ -1,0 +1,89 @@
+{
+ "name": "h05_milnor",
+ "checks": [
+  {
+   "check": "Faser von z^4: Gitter A3 (det 4), Umlauf hat Ordnung 4 = Coxeterzahl",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "Faser von x^2 + y^3 + z^5: gerade, definit, Determinante 1, Rang 8, also das Gitter E8",
+   "pass": true,
+   "detail": "[np.float64(0.075), np.float64(0.139), np.float64(1.0), np.float64(1.0), np.float64(1.746), np.float64(2.448), np.float64(4.115), np.float64(5.477)]"
+  },
+  {
+   "check": "ihr Umlauf ist das Tensorprodukt der Umläufe zu 2, 3, 5: Ordnung 30, charakteristisches Polynom = Kreisteilungspolynom Phi_30",
+   "pass": true,
+   "detail": "(15, 30)"
+  },
+  {
+   "check": "also C30 = C2 x C3 x C5 ohne Zusatzannahme, und die acht Eigenwerte sind die primitiven 30. Einheitswurzeln (Exponenten 1,7,11,13,17,19,23,29)",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "WÖRTLICHE FORM FÄLLT: D5 + A3 ist kein Teildiagramm von E8; die E8 Singularität hat keine Deformation mit diesen beiden Punkten",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "im erweiterten Diagramm (Marken 1,2,2,3,3,4,4,5,6) gibt das Streichen eines Knotens mit Marke 4 genau D5 + A3; Marke 5 gibt A4 + A4, Marke 6 gibt A5 + A2 + A1",
+   "pass": true,
+   "detail": "[(2, [(8, 4, 3)]), (4, [(1, 2, 0), (7, 8, 2)]), (6, [(1, 2, 0), (2, 3, 1), (5, 6, 2)]), (5, [(4, 5, 2), (4, 5, 2)]), (4, [(3, 4, 2), (5, 4, 3)]), (3, [(2, 3, 1), (6, 3, 3)]), (2, [(1, 2, 0), (7, 2, 3)]), (3, [(8, 9, 2)]), (1, [(8, 1, 3)])]"
+  },
+  {
+   "check": "Kurve mit Punkt der Ordnung 4 über der t Kugel: Diskriminante t^4 (16 t + 1), also Fasern I4 bei 0, I1 bei -1/16, und Ordnung 12 - 5 = 7 bei unendlich (I1*)",
+   "pass": true,
+   "detail": "t**4*(16*t + 1)"
+  },
+  {
+   "check": "Eulerzahl 4 + 1 + 7 = 12; Fasergitter A3 + D5 hat Rang 8 und Determinante 16 = 4^2: mit Torsionsschnitt der Ordnung 4 unimodular, also E8",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "der Schnitt (0,0) hat genau Ordnung 4: das ist der Klebevektor als Torsionsschnitt (Mordell Weil Gruppe Z/4)",
+   "pass": true,
+   "detail": "((t, 0), (0, t))"
+  },
+  {
+   "check": "Gegenprobe Ordnung 5: Diskriminante t^5 (t^2 - 11 t - 1): Fasern I5, I5, I1, I1, also A4 + A4 mit Klebung Z5",
+   "pass": true,
+   "detail": "t**5*(t**2 - 11*t - 1)"
+  },
+  {
+   "check": "drei Fasern der Familie sind quadratische Tori (c6 = 0 hat drei einfache Nullstellen): die Lage tau = i ist ein Punkt der Basis, kein Umlauf",
+   "pass": true,
+   "detail": "[-1/8, 1 - 3*sqrt(2)/4, 1 + 3*sqrt(2)/4]"
+  },
+  {
+   "check": "die drei Umläufe (parabolisch T^4, -T, T) haben nach Konjugation Produkt 1",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "ZEIT LESART FÄLLT: alle Umläufe haben unendliche Ordnung; die Vierteldrehung ist kein Umlauf dieser Familie, sondern eine Zusatzsymmetrie dreier Fasern",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "Zahl am Rand: (1 - 2/8) + (1 - 2/4) = 5/4 für D5 und A3; reine Arithmetik, keine Abbildung",
+   "pass": true,
+   "detail": ""
+  }
+ ],
+ "data": {
+  "gestrichene_knoten": [
+   "(2, [(8, 4, 3)])",
+   "(4, [(1, 2, 0), (7, 8, 2)])",
+   "(6, [(1, 2, 0), (2, 3, 1), (5, 6, 2)])",
+   "(5, [(4, 5, 2), (4, 5, 2)])",
+   "(4, [(3, 4, 2), (5, 4, 3)])",
+   "(3, [(2, 3, 1), (6, 3, 3)])",
+   "(2, [(1, 2, 0), (7, 2, 3)])",
+   "(3, [(8, 9, 2)])",
+   "(1, [(8, 1, 3)])"
+  ],
+  "urteil": "Wörtliche Form (eine isolierte Singularität) ausgeschlossen. Exakt: C30 = Tensorprodukt der Umläufe 2, 3, 5. Exakter Ersatz: D5 + A3 mit Klebung Z4 ist das Fasergitter der elliptischen Fläche mit Punkt der Ordnung 4; der Klebevektor ist ihr Torsionsschnitt, ihr Gitter ist E8 + U. Als Zeit fällt der Umlauf aus."
+ }
+}

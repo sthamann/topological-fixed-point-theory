@@ -1,0 +1,82 @@
+{
+ "name": "coherence",
+ "checks": [
+  {
+   "check": "chart: 128 even states, 112 even D8 roots, 60 mixed (carrier, family) roots, each mixed root on 32 states",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "24 occupation sectors; exactly one type occurs twice: the total singlet (1,1)_0 x family singlet, on the states 0 and 255",
+   "pass": true,
+   "detail": "{(('1', '1', Fraction(0, 1)), '1'): [(0, 0, 0), (3, 2, 3)]}"
+  },
+  {
+   "check": "commutant of SM x family SU(3) has dimension 26 = 22 + 2^2: the only neutral two-block is span{|0>, |255>}",
+   "pass": true,
+   "detail": "{'SM only': np.int64(224), 'SM x SU(3)_F': np.int64(26), 'plus carrier number': np.int64(24)}"
+  },
+  {
+   "check": "adding the carrier number (the extra U(1) of D5, B-L type) splits that block: commutant 24, no neutral coherence left",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "the coherence joins the carrier-empty SU(5) singlet (nu^c) of the omitted family with its conjugate: carrier number changes by 5, family number by 3",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "shortest root word from |0> to |255>: four roots with all even roots, five with the 60 mixed roots alone",
+   "pass": true,
+   "detail": "(4, 5)"
+  },
+  {
+   "check": "the word (0,5),(1,6),(3,7),(2,4) maps |0> to +-|255>: three mixed roots and one carrier root",
+   "pass": true,
+   "detail": "1"
+  },
+  {
+   "check": "operator form Tr(U X* W X) agrees with the diagonal formula on all 60 currents",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "all 600 marks ZY, ZUY (60 currents, five outer selections) are unchanged by the neutral coherence",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "occupation complement maps |0> <-> |255> with signs",
+   "pass": true,
+   "detail": "(np.float64(1.0), np.float64(1.0))"
+  },
+  {
+   "check": "complement pairing leaves the coherence c real (x*y = +1) or imaginary (x*y = -1): a sign, not a phase, stays free",
+   "pass": true,
+   "detail": "x*y = +1 -> c is real"
+  },
+  {
+   "check": "positivity bounds only its size: with diagonal entries 1 and 1/4 the block is positive exactly for |c| <= 1/2",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "on span{|0>, |255>} sigma_x, sigma_y are the two quadratures of the coherence and sigma_z the population difference: SM and family-SU(3) neutral; carrier number removes exactly sigma_x and sigma_y",
+   "pass": true,
+   "detail": ""
+  }
+ ],
+ "data": {
+  "commutant_dims": {
+   "SM": 224,
+   "SM_x_SU3F": 26,
+   "plus_carrier_number": 24
+  },
+  "word_lengths": {
+   "all_even_roots": 4,
+   "mixed_only": 5
+  },
+  "phase": "sign free, x*y=1"
+ }
+}

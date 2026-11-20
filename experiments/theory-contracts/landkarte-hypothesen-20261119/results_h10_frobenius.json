@@ -1,0 +1,108 @@
+{
+ "name": "h10_frobenius",
+ "checks": [
+  {
+   "check": "für y^2 = x^3 - x gilt bei allen 166 Primzahlen von 5 bis 1000: a_p = 0 für p = 3 mod 4, sonst |a_p| = 2a mit p = a^2 + b^2, a ungerade",
+   "pass": true,
+   "detail": "166"
+  },
+  {
+   "check": "an den Primzahlen der Theorie: |a_5| = 2, |a_13| = 6, |a_41| = 10, |a_137| = 22",
+   "pass": true,
+   "detail": "{5: 2, 13: 6, 41: 10, 137: 22}"
+  },
+  {
+   "check": "drei der vier Werte liegen in der festgelegten Menge (2, 6, 10), 22 nicht",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "alle Drehungen y^2 = x^3 - Dx derselben Kurve geben an diesen Primzahlen nur 2a oder 2b: {2,4}, {4,6}, {8,10}, {8,22}",
+   "pass": true,
+   "detail": "[[2, 4], [4, 6], [8, 10], [8, 22]]"
+  },
+  {
+   "check": "FOLGE: ein Treffer sagt nur, dass 2a oder 2b in der Menge liegt. Das ist eine Aussage über die Zerlegung der Primzahl in zwei Quadrate, nicht über die Theorie",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "enger Satz: mindestens drei Treffer aus vier erreicht ein merklicher Teil der Zufallskurven (kein seltenes Ereignis)",
+   "pass": true,
+   "detail": "Anteil 0.507, Mittel 2.46"
+  },
+  {
+   "check": "breiter Satz (166 Primzahlen): die Kurve mit i hat WENIGER Treffer als fast alle Zufallskurven, weil die Hälfte ihrer Spuren null ist",
+   "pass": true,
+   "detail": "Kurve 27, Zufall Mittel 75.5, Anteil mit mindestens so vielen 0.999"
+  },
+  {
+   "check": "auch nur auf den Primzahlen p = 1 mod 4 liegt die Kurve im Bereich der Zufallskurven",
+   "pass": true,
+   "detail": "Kurve 27 von 80, Zufall Mittel 35.0, Anteil 0.973"
+  },
+  {
+   "check": "ABBRUCHREGEL DER HYPOTHESE GREIFT: die Trefferzahl liegt im Bereich der Zufallskurven. Die Idee ist in dieser Form erledigt",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "Frobenius in der Uhrengruppe (Z/5)^* = Z/4: 41 wirkt als 1, 13 als 3, 137 als 2, 5 ist verzweigt",
+   "pass": true,
+   "detail": "{5: 0, 13: 3, 41: 1, 137: 2}"
+  },
+  {
+   "check": "über alle Primzahlen bis 100000 sind die vier Klassen gleich häufig (je ein Viertel, Dirichlet)",
+   "pass": true,
+   "detail": "{1: 2387, 2: 2411, 3: 2401, 4: 2390}"
+  },
+  {
+   "check": "GRENZE: diese Zuordnung ist ein Etikett je Primzahl. Sie hat keine Reihenfolge außer der Größe der Primzahl, keine Rate und keine Zusammensetzung von Ereignissen. Dynamik folgt daraus nicht",
+   "pass": true,
+   "detail": ""
+  }
+ ],
+ "data": {
+  "festlegung": {
+   "T": [
+    2,
+    3,
+    4,
+    5,
+    6,
+    8,
+    10,
+    12,
+    16,
+    20,
+    24,
+    30,
+    41,
+    48
+   ],
+   "primzahlen": [
+    5,
+    13,
+    41,
+    137
+   ],
+   "normierung": "Betrag der Spur |a_p|, a_p = p + 1 - Punktezahl",
+   "zufallskurven": 999,
+   "seed": 20261119
+  },
+  "treffer_theorie_primzahlen": 3,
+  "anteil_zufall_mindestens_so_gut": 0.5065065065065065,
+  "breit": {
+   "kurve": 27,
+   "zufall_mittel": 75.51851851851852,
+   "anteil": 0.998998998998999
+  },
+  "p_gleich_1_mod_4": {
+   "kurve": 27,
+   "von": 80,
+   "zufall_mittel": 35.01701701701702,
+   "anteil": 0.972972972972973
+  },
+  "urteil": "Fällt in dieser Form. Die Spuren sind durch p = a^2 + b^2 erzwungen und tragen keine Auskunft über die Theorie; die Trefferzahl liegt im Bereich der Zufallskurven. Exakt bleibt nur das Etikett p mod 5 in der Vier."
+ }
+}

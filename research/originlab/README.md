@@ -7,6 +7,35 @@ are neither imported nor executed. Historical certificates supply benchmark
 data. The original-source lane calls the native R113 consumer directly.
 The native domain and canonical Atlas supply original provenance.
 
+## Structure scenarios without a model, 19 November 2026
+
+Until now a scenario with a rule absent from the record could only come from
+a model call (`--scenario-model`). The lane `structure_scenarios` generates
+such scenarios deterministically. `structure_objects.py` enumerates
+mathematical objects with computed features (sublattices of E8, E7, E6,
+reflection groups, modular curves, elliptic surfaces, codes, anyons, boundary
+theories, fermion modes and their splits, subset graphs, repeated steps,
+matter content). An object may name the objects it contains by construction;
+its closure enters the pool as well. `structure_scenarios.py` computes the
+fingerprint from the Atlas itself: every integer and fraction that
+established findings of at least three independent problems state. Objects,
+pairs and triples are scored by the rarity-weighted fingerprint they carry
+and compared with random fingerprints drawn from the pool, so the search
+over the whole pool is part of each p-value. A layer decomposition and a
+withheld test (select on two thirds, predict one third) follow. The best
+scenarios are passed to `atlas_scenarios.assess` as declared hypotheses.
+
+```bash
+python3 -B research/originlab/structure_scenarios.py --fakes 1000 > /tmp/structure-scenarios.json
+python3 -B research/originlab/main.py --campaign structure_scenarios --jobs 1 --out /tmp/originlab-structure
+```
+
+The supervisor runs the lane in every stage and queues its scenarios as
+`atlas_scenario_case` jobs. Equal numbers are no identification; nothing is
+promoted. A new object family is one more `gen_*()` function. See the
+[first run and its limits](STRUCTURE-SCENARIOS-20261119.md) and
+[twelve tests](test_structure_scenarios.py).
+
 ## Alternative origin scenarios, 16 November 2026
 
 The new `f1_origin_scenarios` campaign compares five explicit hypotheses:

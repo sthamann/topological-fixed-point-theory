@@ -45,6 +45,7 @@ FINITE_CONTROLS += ("f1_two_arc_purity",)
 CAMPAIGNS += ("f1_two_arc_purity",)
 FINITE_CONTROLS += ("f1_oph_coherent_histories",)
 CAMPAIGNS += ("f1_oph_coherent_histories",)
+CAMPAIGNS += ("structure_scenarios",)
 
 
 def atomic_json(path, payload):
@@ -322,6 +323,9 @@ def execute(campaign, root, args, suggestion_rows, retained_rows, prior_question
     if campaign == "f1_origin_scenarios":
         from f1_origin_scenarios import controls
         return controls()
+    if campaign == "structure_scenarios":
+        from structure_scenarios import run as structure_run
+        return structure_run(root)
     if campaign == "f1_klein_phase_space_double":
         from f1_klein_phase_space_double import controls
         return controls()

@@ -1,0 +1,124 @@
+{
+ "name": "h07_kac",
+ "checks": [
+  {
+   "check": "alle verdrehten Werte sind reell",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "ohne Windung: eta = (p^2 - 1)/(6p) (Reproduktion)",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "Windung k = p/2 ist die zweite Spinstruktur: bei p = 4 gibt k = 2 den Wert -3/8 (Reproduktion)",
+   "pass": true,
+   "detail": "-0.375"
+  },
+  {
+   "check": "HYPOTHESE IN DER GENANNTEN FORM FÄLLT: der verdrehte Wert ist nicht k(p-k)/(2p)",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "GEMEINSAME REGEL (exakt, p = 2..12, alle k): eta_k = (p^2 - 1)/(6p) - k(p - k)/p",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "also: der Unterschied zur unverdrehten Größe ist genau k(p-k)/p, die Norm der Klebeklasse k von A_(p-1)",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "die Phase verschwindet ganz (eta_k = 0) für Einheitswindung k = 1 NUR bei p = 5; das ist die Fünferuhr Beobachtung aus P1KERN in einer Zeile",
+   "pass": true,
+   "detail": "[(5, 1), (19, 4), (71, 15), (265, 56)]"
+  },
+  {
+   "check": "die beiden Muster aus P1KERN sind zwei Fälle dieser einen Formel: p = 4 mit k = 0, 2 gibt 5/8 und -3/8; p = 5 mit k = 0 gibt 4/5 = 1·4/5",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "240 Wurzeln; Marken des erweiterten Diagramms 1,2,2,3,3,4,4,5,6",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "Marke 4 (D5 + A3): jede Wurzel außerhalb des Teilgitters zerfällt in Normen 5/4 + 3/4 oder 1 + 1; Zählung 64 + 64 und 60",
+   "pass": true,
+   "detail": "{((-5, Fraction(1, 1)), (3, Fraction(1, 1))): 60, ((-5, Fraction(5, 4)), (3, Fraction(3, 4))): 128}"
+  },
+  {
+   "check": "Marke 5 (A4 + A4): Normen 4/5 + 6/5 und 6/5 + 4/5",
+   "pass": true,
+   "detail": "{((4, Fraction(4, 5)), (4, Fraction(6, 5))): 200}"
+  },
+  {
+   "check": "für alle A Faktoren aller neun Knoten ist die Projektionsnorm von der Form k(n+1-k)/(n+1), also ein eta Unterschied des Linsenraums S^3/Z_(n+1)",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "GRENZE: die 5/8 von D5 ist die unverdrehte eta von S^3/Z_4. Der passende Rand zu D5 ist kein Linsenraum, sondern der Rand der D5 Singularität. Diese Gleichheit ist nur bei p = 4 da (p = 2 trifft 1/4, p = 3, 5, 6 treffen nicht)",
+   "pass": true,
+   "detail": ""
+  }
+ ],
+ "data": {
+  "eta": {
+   "2,0": "0.25",
+   "2,1": "-0.25",
+   "3,0": "0.4444444444",
+   "3,1": "-0.222222222",
+   "3,2": "-0.222222222",
+   "4,0": "0.625",
+   "4,1": "-0.125",
+   "4,2": "-0.375",
+   "4,3": "-0.125",
+   "5,0": "0.8",
+   "5,1": "-1.380506584",
+   "5,2": "-0.4",
+   "5,3": "-0.4",
+   "5,4": "2.7610131682",
+   "6,0": "0.9722222222",
+   "6,1": "0.1388888888",
+   "6,2": "-0.361111111",
+   "6,3": "-0.527777777",
+   "6,4": "-0.361111111",
+   "6,5": "0.1388888888"
+  },
+  "knoten": [
+   "(np.int64(2), [1, 7], {'((-7, Fraction(3, 2)), (1, Fraction(1, 2)))': 112})",
+   "(np.int64(3), [2, 6], {'((-6, Fraction(4, 3)), (2, Fraction(2, 3)))': 162})",
+   "(np.int64(4), [3, 5], {'((-5, Fraction(1, 1)), (3, Fraction(1, 1)))': 60, '((-5, Fraction(5, 4)), (3, Fraction(3, 4)))': 128})",
+   "(np.int64(5), [4, 4], {'((4, Fraction(4, 5)), (4, Fraction(6, 5)))': 200})",
+   "(np.int64(6), [1, 2, 5], {'((1, Fraction(0, 1)), (2, Fraction(2, 3)), (5, Fraction(4, 3)))': 90, '((1, Fraction(1, 2)), (2, Fraction(2, 3)), (5, Fraction(5, 6)))': 72, '((1, Fraction(1, 2)), (2, Fraction(0, 1)), (5, Fraction(3, 2)))': 40})",
+   "(np.int64(3), [8], {'((8, Fraction(2, 1)),)': 168})",
+   "(np.int64(4), [1, 7], {'((1, Fraction(1, 2)), (7, Fraction(3, 2)))': 112, '((1, Fraction(0, 1)), (7, Fraction(2, 1)))': 70})",
+   "(np.int64(2), [8], {'((-8, Fraction(2, 1)),)': 128})",
+   "(1, [8], {})"
+  ],
+  "nullstellen": [
+   [
+    5,
+    1
+   ],
+   [
+    19,
+    4
+   ],
+   [
+    71,
+    15
+   ],
+   [
+    265,
+    56
+   ]
+  ],
+  "urteil": "Die genannte Formel k(p-k)/(2p) fällt. Die gemeinsame Regel existiert und ist exakt: eta_k(p) = (p^2-1)/(6p) - k(p-k)/p. Sie fasst beide Muster aus P1KERN zusammen, und die Einheitswindung löscht die Phase genau bei p = 5. Der zweite Summand ist die Klebenorm von A_(p-1). Nicht gezeigt: dass P1 an einem solchen Schnitt sitzt."
+ }
+}

@@ -1,0 +1,100 @@
+{
+ "name": "h12_beauville",
+ "checks": [
+  {
+   "check": "Diskriminante 16 t^4 (t-1)^2 (t+1)^2; Grad 8, also Ordnung 4 bei unendlich: Fasern I4, I4 bei 0 und unendlich, I2, I2 bei 1 und -1",
+   "pass": true,
+   "detail": "16*t**4*(t - 1)**2*(t + 1)**2"
+  },
+  {
+   "check": "alle vier Stellen sind multiplikativ (c4 verschwindet dort nicht), Eulerzahl 4 + 4 + 2 + 2 = 12",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "Doppelverhältnis der vier Stellen (0, unendlich; 1, -1) ist -1: harmonische Lage wie die Marken",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "(t, t(t+1)) liegt auf der Kurve und hat Ordnung 4: seine Verdopplung ist der Punkt (0,0) der Ordnung 2",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "die halbierte Kurve hat Diskriminante ~ t^2 (t-1)^4 (t+1)^4: die Sorten sind getauscht (I2 bei 0 und unendlich, I4 bei 1 und -1)",
+   "pass": true,
+   "detail": "256*t**2*(t - 1)**4*(t + 1)**4"
+  },
+  {
+   "check": "m(t) = (1+t)/(1-t) hat Ordnung 4 und dreht die vier Stellen im Kreis: 0 -> 1 -> unendlich -> -1 -> 0",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "KERN: die halbierte Kurve bei t ist die ursprüngliche Kurve bei m(t) (gleiche j Invariante als Funktion)",
+   "pass": true,
+   "detail": "16*(t**4 + 14*t**2 + 1)**3/(t**2*(t - 1)**4*(t + 1)**4)"
+  },
+  {
+   "check": "der Vergleichsfaktor ist -(t-1)^2: gleich bis auf die Verdrehung mit -1, also erst nach Hinzunahme von i. Über Q(t) sind die beiden Kurven verdrehte Geschwister",
+   "pass": true,
+   "detail": "-(t - 1)**2"
+  },
+  {
+   "check": "FOLGE: die Vierteldrehung der Marken ist keine Symmetrie der Fläche, sondern eine Halbierung der Kurve (Isogenie vom Grad 2). Zweimal angewandt ist sie Verdopplung, also bis auf Maßstab die Identität",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "die Halbdrehung t -> -1/t ist eine echte Symmetrie (j bleibt gleich), ebenso t -> -t",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "der quadratische Torus (j = 1728) sitzt an sechs Stellen, darunter i und -i. Das sind genau die zwei Fixpunkte der Vierteldrehung m, also die Pole neben den vier Marken",
+   "pass": true,
+   "detail": "['-I', '-sqrt(2)', '-sqrt(2)/2', 'I', 'sqrt(2)', 'sqrt(2)/2']"
+  },
+  {
+   "check": "in D5 steht senkrecht auf einer Wurzel ein A1 + A3 (2 + 12 Wurzeln): D5 enthält A3 + A1 + A1",
+   "pass": true,
+   "detail": "(12, 40, 14)"
+  },
+  {
+   "check": "das Gitter A3 + A3 + A1 + A1 hat in E8 Index 8 mit Quotient Z4 x Z2: dieselbe Gruppe wie die Torsion der Fläche (Punkt der Ordnung 4 und volle Halbperioden)",
+   "pass": true,
+   "detail": "[1, 1, 1, 1, 1, 1, 2, 4]"
+  },
+  {
+   "check": "ABBRUCHREGEL GREIFT NICHT: die verlangte Selbstabbildung existiert und tauscht die zwei Sorten",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "NICHT GEZEIGT: dass P1 die Basis dieser Fläche ist. Die fünf Trägerfunktionen sind Funktionen auf der Basis; die Fläche hat acht Torsionsschnitte und Rang null. Eine natürliche Abbildung zwischen beiden fand sich nicht",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "SPANNUNG mit dem Original: dort sind die vier Marken gleichartig (je Defizit pi), hier sind es zwei Sorten. Verträglich nur, wenn die Vierteldrehung im Original als Halbierung gelesen werden darf",
+   "pass": true,
+   "detail": ""
+  }
+ ],
+ "data": {
+  "j": "256*(t**4 - t**2 + 1)**3/(t**4*(t - 1)**2*(t + 1)**2)",
+  "j_halbiert": "16*(t**4 + 14*t**2 + 1)**3/(t**2*(t - 1)**4*(t + 1)**4)",
+  "invarianten_snf": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1,
+   2,
+   4
+  ],
+  "urteil": "Trägt als Mathematik: harmonische Lage, Gitter in D5 + A3, Torsion = Klebegruppe Z4 x Z2, Vierteldrehung = Halbierung der Kurve. Bindung an P1 offen."
+ }
+}

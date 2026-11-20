@@ -1,0 +1,42 @@
+{
+ "id": "origin-ideas-alpha-recheck-20261119",
+ "result_id": "ORIGINIDEAS20261119",
+ "date": "2026-11-19",
+ "question": "War der Koeffizient 5/4 der Alpha Gleichung angepasst, und tragen Reed Muller Code, Kopplungsdualität, Gittermittel sowie Hopf und Twistor eine Rechnung?",
+ "verdict": "ALPHAPROV20261119: kein Fit; Aussage RADICALCHRONO20261118 zurückgenommen (Fitwert 1,2404 ± 0,0051, 5/4 liegt 1,9 sigma daneben, 5/4 = q(D5) = (3/2)(5/6)). RMFAMILY20261119: Pascal ist Selbstdualität von RM(2,5), nur g = 5; erklärt fünf, nicht drei. COUPLINGMODULUS20261119: als Flusssumme ausgeschlossen (verlangt m·m = 4/pi). DEBYEWALLER20261119: volles E8 Gittermittel ausgeschlossen (+141,7 sigma); exp(-2 alpha) ist exakt der Gaußanteil mit Varianz 2 c3 und zwei Blättern, nicht E8 selektiv. HOPFTWISTOR20261119: Treffer bei k = 1, 2, 4, Fehlstellen bei k = 3, 6, 8, nicht eindeutig. physical_solution=false",
+ "scope": "origin/main 9c695949; Archivfassungen 2.1 bis 2.8 nach Stichworten; exakte Arithmetik und 40 Stellen; Konvention e^2 = 4 pi alpha vorab festgelegt; Messwerte aus dem Gedächtnis; kein Ledgerwechsel, kein Commit.",
+ "resolved": [
+  "Alle archivierten Alpha Stufen reproduziert: -418, -242, -46,8, +1,9 sigma",
+  "5/4 ist nicht der Fitwert",
+  "dim RM(2,g) = 2^(g-1) genau für g = 5; RM(2,5) Typ II [32,16,8]",
+  "Stabilisator einer Dreiermenge in AGL(3,2): Ordnung 24, Bahnen 3 + 1 + 4, volle S4",
+  "<p_i p_j> = 2 c3 bei tau = i für jedes selbstduale Gitter; log phi = -pi z^2 + 7,878 z^4 - 15,96 z^8",
+  "delta_top = c3 · 2 c3 · 24 c3^2 entlang CP1 → CP3 → S4",
+  "v492 36/36, v519 34/34, v957 17/17 nach dem Abgleich erneut bestanden"
+ ],
+ "kills": [
+  "Behauptung, 5/4 sei an den Messwert angepasst",
+  "exp(-2 alpha) und exp(-2/alpha) als zwei Seiten einer Flusssumme",
+  "exp(-2 alpha) als volles Impulsgittermittel von E8 bei tau = i",
+  "zweite Defektordnung als oktonionische Hopfsphäre",
+  "kubischer Koeffizient als S5 Gewicht",
+  "Verdopplung 16 = 7 + 4 + 4 + 1 als Familienzerlegung"
+ ],
+ "open": [
+  "Welcher Zustand ist exakt gaußisch mit Varianz 2 c3",
+  "Regel, die eine Dreiermenge im Hammingcode auswählt",
+  "Verbleib des Skripts defect_partition_g5_audit",
+  "wechselwirkender reflexionspositiver Zustand (WOIT.OS.TWISTOR.01)",
+  "4D Rekonstruktion (SEAM.BULK4D.RECON.01)"
+ ],
+ "replay": "cd experiments/theory-contracts/origin-ideas-alpha-recheck-20261119 && for s in alpha_provenance reed_muller duality debye_waller hopf_twistor; do python3 -B check_$s.py; done",
+ "checks_passed": true,
+ "checks": {
+  "alpha_provenance": "13/13",
+  "reed_muller": "18/18",
+  "duality": "7/7",
+  "debye_waller": "8/8",
+  "hopf_twistor": "12/12"
+ },
+ "atlas": "eingetragen am 19.11.2026, Revision ed949b8a5af8d7b0a633dd03: vier neue Befunde und die korrigierte Chronologie in problem:alpha-fixed-input-root, ein Befund in problem:carrier-pascal-glue-formal-scope"
+}

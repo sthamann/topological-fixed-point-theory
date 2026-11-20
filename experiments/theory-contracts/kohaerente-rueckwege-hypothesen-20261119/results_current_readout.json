@@ -1,0 +1,58 @@
+{
+ "name": "current_readout",
+ "checks": [
+  {
+   "check": "vacuum, one oscillator mode: cumulants kappa_4 = kappa_6 = kappa_8 = 0 exactly",
+   "pass": true,
+   "detail": "[1, 0, 1, 0, 3, 0, 15, 0, 105]"
+  },
+  {
+   "check": "zero mode in the vacuum: the vacuum has lattice charge 0, so exp(i t a_0) acts as 1 (no lattice sum at all)",
+   "pass": true,
+   "detail": "vacuum vector lies in the charge-0 Fock module"
+  },
+  {
+   "check": "thermal oscillator stays Gaussian (kappa_4 -> 0 with the cutoff), variance (1 + q)/(1 - q) times the vacuum value",
+   "pass": true,
+   "detail": "(1.3333332625306695, -1.8408692723695204e-06)"
+  },
+  {
+   "check": "pure zero mode at tau = i: log phi = -pi z^2 + a4 z^4 with a4 = 7.878 (recorded value reproduced)",
+   "pass": true,
+   "detail": "7.878030005"
+  },
+  {
+   "check": "recorded closure reproduced",
+   "pass": true,
+   "detail": "137.03599921684"
+  },
+  {
+   "check": "zero-mode reading at tau = i: excluded (recorded +141.7 sigma)",
+   "pass": true,
+   "detail": "141.649"
+  },
+  {
+   "check": "oscillator-only reading at tau = i is Gaussian but its variance carries coth(pi): excluded as well",
+   "pass": true,
+   "detail": "alpha^-1 = 137.03599733164, -87.8742 sigma, coth(pi) - 1 = 0.0037419"
+  },
+  {
+   "check": "with the canonical mode normalisation (hbar = 1) the same vacuum readout gives exp(-4 pi alpha): far off",
+   "pass": true,
+   "detail": "alpha^-1 = 137.033437314, -121993.0 sigma"
+  },
+  {
+   "check": "required smearing norm: sum_n n |f_n|^2 = 1/(2 pi) per unit beta^2/2; the current algebra does not supply this number",
+   "pass": true,
+   "detail": "0.159154943092"
+  }
+ ],
+ "data": {
+  "a4": "7.87803000538",
+  "alpha_inv_vacuum_gaussian": "137.035999216841",
+  "sigma_zero_mode_tau_i": "141.649",
+  "sigma_oscillator_tau_i": "-87.8742",
+  "sigma_hbar_normalisation": "-121993.0",
+  "required_norm": "0.159154943091895"
+ }
+}

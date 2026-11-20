@@ -6847,7 +6847,8 @@ Fassung 1.0. Eine Anpassung ist damit nicht bewiesen.
 
 Nächster Schritt: das Zweidefektgewicht ohne Blick auf α aus der Zweidefekt
 Zustandssumme herleiten. F1 und F2 bleiben in Bearbeitung. Kein Ledgerwechsel.
-Atlaseintrag nicht geschrieben.
+Atlaseintrag am 18. November
+in `problem:alpha-fixed-input-root` geschrieben.
 [Nachtrag und Reproduktion](../../../experiments/theory-contracts/radical-global-hypotheses-20261118/README.md).
 
 ## RADICALTWODEFECT20261118 · Zweidefektgewicht ohne Blick auf α
@@ -6868,7 +6869,8 @@ Marken. α unterscheidet die Fortsetzungen der Reihe nicht (unter 0,1 σ).
 Arbeitshypothese G6: Die Rückkopplung ist die Zweipunktfunktion des Feldes,
 das die Z₄ Verklebung trägt, eingeschränkt auf D₅. Nächster Schritt: Abstand
 q und D₅ Einschränkung aus der Nahtgeometrie prüfen. F1 und F2 bleiben in
-Bearbeitung. Kein Ledgerwechsel. Atlaseintrag nicht geschrieben.
+Bearbeitung. Kein Ledgerwechsel. Atlaseintrag am 18. November
+in `problem:alpha-fixed-input-root` geschrieben.
 [Nachtrag und Reproduktion](../../../experiments/theory-contracts/radical-global-hypotheses-20261118/README.md).
 
 ## RADICALSEPARATION20261118 · q ist kein Einsetzungsabstand
@@ -6883,12 +6885,15 @@ Quelle. Eine zweite Lesart ist gleich kurz: 4 q d/dq (1 − q)^(−1/4).
 Als Abstand bräuchte q die Zeit 2α + 9,02548. α legt diese Zahl auf 6·10⁻⁷
 fest, 19 vorab benannte native Zeiten verfehlen sie um mehr als 40000 σ.
 δ_top = 1/(2⁸ vol S⁷) ist ein Gewicht. G6 ist in der strengen Form nicht
-gestützt. Für den Rückkopplungsterm gibt es damit weder eine vorab erfolgte
-noch eine nachträglich gelungene Herleitung.
+gestützt. Korrektur nach Atlasabgleich: Der Exponent 5/4 hat bereits eine
+exakte Herleitung als getrennte D₅ Auslese in der markierten E₈ Quelle
+(`finding:marked-e8-sector-grade-response-realizes-five-quarters`); offen
+sind die Wahl dieser Auslese, das Gewicht 48 c₃⁴ und die Kopplung exp(−2α).
 
 Nächster Schritt: die Alpha Gleichung prospektiv an einer noch nicht
 verglichenen Größe prüfen. F1 und F2 bleiben in Bearbeitung. Kein
-Ledgerwechsel. Atlaseintrag nicht geschrieben.
+Ledgerwechsel. Atlaseintrag am 18. November
+in `problem:alpha-fixed-input-root` geschrieben.
 [Nachtrag und Reproduktion](../../../experiments/theory-contracts/radical-global-hypotheses-20261118/README.md).
 
 Nachtrag vom selben Tag (Runden 41 bis 47, 55 Prüfskripte): Der einfache Spiegel
@@ -6905,6 +6910,69 @@ und Vorzeichen festgelegt. Der Kandidat braucht Majorana-Neutrinos und eine von
 null verschiedene leichteste Masse. Ohne die Annahme bleibt F1 offen. Kein
 Ledgerwechsel. Atlas `6d0f4e69269a72ff5000d3db`, 48 Befunde.
 
+## RADICALPROSPECT20261118 · Prospektive Testgröße für die Alpha Gleichung
+
+8 Prüfungen bestanden. Die Quellen vergleichen α nur mit CODATA Mittelwerten.
+Gegen die einzelnen Bestimmungen liegt die eingefrorene Wurzel
+137,0359992168407 bei +0,99 σ (Rb Rückstoß 2020), +3,39 σ (Elektron g−2 2023)
+und +6,33 σ (Cs Rückstoß 2018). Die drei Messungen widersprechen einander,
+χ² = 31 bei 2 Freiheitsgraden. Mit Standard QED folgt aus dem TFPT α ein
+magnetisches Moment a_e = 0,00115965218016, gemessen ist
+0,00115965218059(13).
+
+Testgröße ist α⁻¹ gegen die nächste Einzelbestimmung. Eine Bestimmung mit
+Unsicherheit bis 5·10⁻⁹, die mehr als 5 σ von der Wurzel abweicht, widerlegt
+die Gleichung samt Exponent 5/4. Die heutige Nähe zum Rb Wert ist keine
+unabhängige Stütze. Andere Ablesungen sind nicht empfindlich genug (Seed und
+Nahtwert unterscheiden sich relativ um 3,2·10⁻⁵).
+
+F1 und F2 bleiben in Bearbeitung. Kein Ledgerwechsel. Atlaseintrag am 18. November
+in `problem:alpha-fixed-input-root` geschrieben.
+[Nachtrag und Reproduktion](../../../experiments/theory-contracts/radical-global-hypotheses-20261118/README.md).
+
+## RADICALNORMAL20261118 · Alpha Gleichung in der Variable g und Atlaseintrag
+
+8 Prüfungen bestanden. Mit g = α/(2 c₃²) = e²/c₃ lautet die Gleichung exakt
+g² (g − c₃) = b₁ log(1/φ). Die Faktoren 8 und 2 verschwinden, ihre Deutungen
+als Rang von E₈ und Ordnung von Z₂ hängen an der Variable. Leiter gegen CODATA
+2022: Kubik mit φ = 1/(6π) −252 ppm, mit 48 c₃⁴ +3,67 ppm, mit exp(−2α)
+−0,037 ppm, mit (1 − q)^(−5/4) +0,0003 ppm. Alles unterhalb von 3,7 ppm
+steckt in einer Zahl: ungedämpft bräuchte CODATA das Gewicht 47,31150(3)
+statt 48.
+
+Atlas: RADICALHIST, RADICALCHRONO, RADICALTWODEFECT, RADICALSEPARATION und
+RADICALPROSPECT sind in `problem:alpha-fixed-input-root` eingetragen
+(Revision c564aadd0af506c8f73fdc34). Beim Abgleich wurde eine Aussage
+korrigiert: Der Exponent 5/4 hat dort bereits eine exakte Modellherleitung
+als getrennte D₅ Auslese. Offen bleiben die Wahl dieser Auslese, das Gewicht
+48 c₃⁴, die Dämpfung exp(−2α) und die Form der Kubik. Die Torusergebnisse und
+RADICALNORMAL sind nicht eingetragen. F1 und F2 bleiben in Bearbeitung. Kein
+Ledgerwechsel.
+[Nachtrag und Reproduktion](../../../experiments/theory-contracts/radical-global-hypotheses-20261118/README.md).
+
+## RADICALTHREE20261118 · Die drei offenen Stücke der Alpha Gleichung
+
+15 Prüfungen bestanden. Kubik: Die Urform α³ − A α² − A c₃² κ mit
+κ = (b₁/2π) log(1/φ₀) ist in den Quellen postuliert (Fassung 2.7:
+„postulated input"). In einem Suchraum von 8064 Nachbargleichungen auf dem
+Stand der Fassung 1.0 ist die Zufallserwartung für einen Treffer innerhalb
+von 3,7 ppm 0,0096, und nur die Kubik trifft. Der Suchraum wurde in Kenntnis
+der Form gewählt.
+
+Auslese: Jede Cartanrichtung einer Spinorwurzel trägt 1/4. Für n gelesene
+Richtungen ist der Exponent n/4; nur n = 5 trifft (n = 4: −46,8 σ, n = 6:
++50,6 σ). Das sind die fünf Trägerrichtungen einschließlich B−L, ohne die
+Familienrichtungen.
+
+Gewicht und Dämpfung: 48 = 16 · 3. exp(−2α) = exp(−α |β|²) mit |β|² = 2.
+Die Dämpfung wirkt nur auf den Vierfachterm und ist für alle 48 Zustände
+gleich; ladungsabhängige Formen verfehlen um mehr als 10⁴ σ. Zusammenfassung:
+φ − (4/3) c₃ = x (1 − x)^(−5/4), x = 48 c₃⁴ exp(−2α).
+
+Keines der drei Stücke ist hergeleitet. F1 und F2 bleiben in Bearbeitung.
+Kein Ledgerwechsel.
+[Nachtrag und Reproduktion](../../../experiments/theory-contracts/radical-global-hypotheses-20261118/README.md).
+
 ## OPHCOHERENT20261119. Kohärente OPH Randwege und gemeinsamer Spinor
 
 Die exakte endliche Suche liefert ein inverses Boostpaar nach sechs Schritten und eine trennende Interferenz ±1/64. Die vollständige C₄ Phasenprobe scheidet den unmittelbaren Ladungstwist als gemeinsames wirksames Kopplungsprinzip in dieser Klasse aus. Das Zwei Regionen Modell gibt eine kovariante Alternative. Physischer F1 Abschluss und Originalquelle bleiben offen. [Beleg und Grenzen](../../../research/originlab/OPH-COHERENT-HISTORY-20261119.md).
@@ -6912,3 +6980,360 @@ Die exakte endliche Suche liefert ein inverses Boostpaar nach sechs Schritten un
 ## OPHCP20261119. Vollständig positive Viermarkenmischung
 
 Unter voller Zeitkovarianz und festen symmetrischen Populationsraten m folgt für den Übertrag der Ordnung −3/4 die Dämpfung γ ≥ m. Aus der zentrierten Vakuumkurve folgt eine scharfe Obergrenze für dieselbe geladene Antwort auf derselben Zeitkarte. Eine positive Fortsetzung erreicht auch die Hüllkurve für den ganzen geladenen Shift. Bloße Deckkovarianz lässt einen anderen, vierfach stationären Kandidaten zu. Der direkte R113 Aufruf bleibt wegen der fehlenden gewichteten Originalform und Leerreferenz BLOCKED. [Beleg und Geltungsbereich](../../../research/originlab/OPH-WINDING-MEMORY-20261119.md).
+
+## ORIGINIDEAS20261119 · Alpha Herkunft nachgeprüft, drei Ursprungsideen, Twistor und Hopf
+
+Beleg: `experiments/theory-contracts/origin-ideas-alpha-recheck-20261119/README.md`. Fünf Skripte, 58/58 Checks. Kein Ledgerwechsel, kein Atlaseintrag. physical_solution=false.
+
+* **Alpha Herkunft.** Die Aussage aus RADICALCHRONO20261118, der Koeffizient 5/4 sei nach dem Vergleich mit dem Messwert gesetzt, ist zurückgenommen. Es wurde kein stetiger Parameter angepasst: Der Fitwert wäre 1,2404 ± 0,0051, 5/4 liegt 1,9 sigma daneben. 5/4 = q(D5) = (3/2)(5/6), und 5/6 steht schon in Fassung 2.1. Belegt ist nur die Reihenfolge: Der Term (g/4) delta^2 erscheint erstmals in Fassung 2.5 vom 27.01.2026. Grenze: Die Messung unterscheidet benachbarte Zählungen (n = 4: -46,8 sigma, n = 6: +50,6 sigma).
+* **Reed Muller.** 2^g = g^2 + g + 2 ist dim RM(2,g) = 2^(g-1), also Selbstdualität, nur für g = 5. RM(2,5) ist Typ II [32,16,8]. Erklärt fünf, nicht drei.
+* **Kopplungsdualität.** Als Flusssumme ausgeschlossen: verlangt m·m = 4/pi.
+* **Gittermittel.** <p_i p_j> = 2 c3 bei tau = i gibt mit zwei Blättern exakt exp(-2 alpha). Das volle E8 Mittel hat a4 = 7,878 und verschiebt Alpha auf +141,7 sigma: ausgeschlossen. Das zweite Moment ist nicht E8 selektiv.
+* **Hopf und Twistor.** 1/(2^(2k) vol S^(2k-1)) trifft c3, 2 c3^2 und delta_top bei k = 1, 2, 4 und verfehlt k = 3, 6, 8. delta_top = c3 · 2 c3 · 24 c3^2 entlang CP1 → CP3 → S4. Nicht eindeutig (B8, CP4). v492, v519, v957 erneut bestanden; WOIT.OS.TWISTOR.01 und SEAM.BULK4D.RECON.01 bleiben offen.
+
+F1 bleibt offen. Nächster Schritt aus diesem Vertrag: einen Zustand benennen, dessen Ladungsantwort exakt gaußisch mit Varianz 2 c3 ist.
+
+## LANDKARTE20261119 · Zustand, Uhren, Neustart und Leptontransfer
+
+Beleg: `experiments/theory-contracts/landkarte-origin-scenarios-20261119/README.md`. Vier Skripte, 39/39 Checks. Kein Ledgerwechsel. physical_solution=false.
+
+* **Zustand.** Der Grundzustand der Vierteldrehung (Fouriertransformation mit h = 1) hat <x^2> = <p^2> = 2 c3 und gibt den Weylerwartungswert exp(-2 alpha) exakt. Ein Ensemble aus N unabhängigen E8 Keimen weicht um 139,75 sigma / N ab (2 sigma ab N = 1360). Der nächste feste Zustand n = 4 ist ausgeschlossen. Bedingt: Konvention in Kenntnis des Zielwerts gewählt, keine Bindung an die Originalquelle.
+* **Uhren.** Mindestrang einer Uhr: Ebene trägt nur 2, 3, 4, 6; Fünf braucht Rang 4. In E8 sind 15, 20, 24, 30 je eine primitive Uhr, Ordnung 60 existiert nicht. Die Vier wirkt auf die Fünf als Galoisgruppe (F20). Sechseckmodul gäbe alpha^-1 = 104,42.
+* **Neustart.** Exakter informationserhaltender Neustart existiert genau bei verborgener Dimension >= r d; die Schranke ist scharf. Die bisherigen Ausschlüsse betreffen Fälle ohne Platz. P1 müsste ein lokaler Schnitt sein (Karte G3).
+* **Leptonen.** Einschleifen QED Lauf: falsches Vorzeichen. Koide als Schnittstelle plus Quellverhältnis e/mu gibt m_mu/m_tau auf 0,02 %; m_tau läge 4 sigma zu hoch.
+
+Die Landkarte ist berichtigt (5/4 ist kein Fit) und um zwei Karten ergänzt. F1 bleibt offen. Nächster Schritt: Grundzustand an den originalen P1 Kern binden (native Operatorgleichheit C_nat).
+
+## P1KERN20261119 · Der originale P1 Kern trägt das Gewicht des Grundzustands (bedingt)
+
+Vertrag: `experiments/theory-contracts/p1-kernel-ground-state-20261119/` · 77/77 Prüfungen · kein Ledgerwechsel.
+
+- **C_nat, bedingt bestanden.** Auf der runden S² trägt jeder Kanal des skalaren Kugelkerns 1/(4π) = 2c₃
+  (κ = 1), jeder Kanal der positiven Hälfte des originalen Dirac Randkerns 1/(2π) = 4c₃. Flach ist das
+  Spektrum nur auf S² (S¹ bis S⁷ geprüft). Ein positiver Dirac Kanal gibt exp(−2α) exakt; ein skalarer
+  Kanal (exp(−α)) und beide Vorzeichen (exp(−4α)) sind ausgeschlossen. Bedingung: runde S², positive Hälfte.
+- **Kugel ↔ Torus, exakt.** E₂(q) = 1 − 12 Σ_m Z⁺(mβ) mit Z⁺ = Wärmespur des Randoperators auf S².
+  Am quadratischen Torus: Schwingungen −c₃, Nullmode +T/4 = +c₃, Summe null, erzwungen durch Gewicht 2.
+- **Ein Beleg statt drei.** KMS Weg 1/(Iβ), Grundzustand mit h = 1 und E₂(i)/24 sind dieselbe Zahl (1/2π)/4.
+- **Vierteluhr.** Ganzzahliges Spektrum auf S²: exp(iπB/2) hat Ordnung 4; |B| ist isospektral zur
+  zweidimensionalen Schwingung, die Vierteluhr ist die Fouriertransformation (bis Phase −i).
+- **Quadrat ist Sattel.** Stabil nur, wenn die Spiegelung die Verdrehung einfriert; sonst Sechseck mit (2/√3)c₃.
+- **Horizont zuerst (G3).** Als Quantenzustand ausgeschlossen (exp(−6,31α)), als klassische Nullmode dieselbe Zahl.
+- **α Potential.** Genau ein Minimum, keine Barriere.
+- **Eigenphase der Wirkung.** η(S³/Z_p) = (p²−1)/(6p); exp(iπη/2) hat Ordnung 5 am Z₅ = A₄ Schnitt,
+  Ordnung 32 am Z₄ Schnitt, 576/1152/2880 an E₆/E₇/E₈. Nur A₄ trifft eine Uhr.
+- **Muster, nicht hergeleitet.** Z₄ Schnitt: |η| = 5/8 und 3/8 für die zwei Spinstrukturen, genau die
+  Spinfeldgewichte von D₅ und A₃ (Karte D₅ ⊕ A₃ in E₈); Summe 1 nur bei p = 4. Z₅: η = 4/5 = Norm der A₄
+  Klebeklasse, Gleichheit nur bei p = 5. Eine gemeinsame Regel für beide fehlt.
+- **Erzwingt das Original die Annahmen?** Positive Hälfte: ja (Calderón Projektor des APS Problems, λ₁⁺).
+  Runde S²: nein und nicht nötig. Das Original hat eine flache Kugel mit vier Marken bei μ₄; ihre
+  Doppelüberlagerung ist exakt der quadratische Torus (j = 1728). Das Gewicht 4c₃ je Spektraleinheit folgt
+  auf jedem zweidimensionalen Schnitt aus dem Weylgesetz. Mit Marken auf einem Kreis ist μ₄ das einzige
+  Extremum der freien Energie (Hypothese zur Markenauswahl).
+- **Offen:** Lage der vier Marken herleiten; eine chirale Nullmode begründen; δ_top und φ_tree
+  im Torusbild; gemeinsame Regel für Z₄ und Z₅ Schnitt; R113 bleibt blockiert.
+
+## SWEEP20261119 · Reihenprüfer: 141 Hypothesen gleichzeitig, Markenlage braucht Ordnung 4
+
+Vertrag: `experiments/theory-contracts/hypothesis-sweep-20261119/` · 11/11 Prüfungen · kein Ledgerwechsel.
+Rangliste: `RANKING.md` im Vertragsordner.
+
+- **Werkzeug.** `sweep.py` bewertet Hypothesenfamilien automatisch gegen die festen Zielgrößen
+  (c₃, exp(−2α), 5/4, 4/3, 48, Uhren 4 und 5, Markenlage, Kubik). Eigene Hypothesen über `hypotheses_extra.json`.
+- **Einzigkeit im Suchraum.** Unter 95000 Kombinationen (a/b, N, m) nur (4/3, 48, 4) innerhalb 3σ.
+  Von 25 Gitterklassen nur die Spinorklasse von D₅. In der Kubik nur 2 und 8·41/10. Von 46 ADE Schnitten nur Z₅.
+- **Markenlage.** Spiegelung allein wählt nichts (rechteckig oder rhombisch). Marken als Ecken auf der Naht
+  geben ein Rechteck mit freiem Seitenverhältnis. Die Kleinsche Vierergruppe wirkt bei jeder Lage transitiv.
+  Erst ein Element der Ordnung 4 erzwingt das Quadrat; die Klebegruppe von D₅ ist zyklisch, die von D₄, D₆ nicht.
+- **Entartung.** c₃ allein trennt Quadrat mit chiraler Nullmode nicht von Rechteck 2:1 mit voller Nullmode.
+- **Offen:** Wirkung der Klebegruppe auf den Marken im Original zeigen; weitere Familien ergänzen.
+
+## HYPCHECK20261119 · Zehn Hypothesen der Landkarte nachgerechnet
+
+Vertrag: `experiments/theory-contracts/landkarte-hypothesen-20261119/` · 110/110 Prüfungen in zehn Dateien ·
+kein Ledgerwechsel, keine Beförderung, physical_solution = false. F1 bleibt offen.
+Atlas: vier Befunde in `problem:c3-p1-p2-shared-origin-reconciliation`, einer in `problem:p1-singularity-seam-reset`.
+
+- **Gesamturteil.** Keine der zehn löst F1. Wörtlich gefallen: 4, 5, 6 (Dynamik), 8, 10. Bei 7 fällt die
+  genannte Formel, eine exakte Regel ersetzt sie. In engerer Fassung exakt: 1, 2, 3, 9.
+- **Eichalgebra als Zentralisator (1).** Die Eichalgebra (Dimension 12) ist der Zentralisator der Halbdrehung
+  exp(iπJz) der Hauptdrehgruppe SL(2) auf C⁵; andere Winkel geben 8, 6, 4. Y = 1/12 − (5/12)R. Ausgeschlossen:
+  dieselbe Fünf als Raumzeit Spin 2 mit vertauschender Eichwirkung (irreduzibel).
+- **Stabilisatorzustände wählen das regelmäßige Vieleck (2).** 3 Qubits: 12 von 18 symmetrischen, alle
+  gleichseitig. 4 Qubits: 12 von 18, alle Quadrate. Wählt die Lage, nicht die Vier. Typgrenze: Original ist
+  Fix_P(Sym⁴ C⁴), Sternlesart braucht Sym⁴ C²; gleich nur als A₅ Darstellung, Wahl der Ikosaedergruppe fehlt.
+- **Flussquant (3).** Ein Quant durch die Einheitszelle gibt Varianz 2c₃ je Quadratur (h = 1 als Folge).
+  Trägerbündel auf dem Torus: Grad 8, acht Schnitte = 5 gerade + 3 ungerade. Nicht gezeigt: Windung des
+  Originals (Chernzahl über C/K) = Fluss durch den Markentorus.
+- **Markendrehung (4).** z → iz + ½ ist das Coxeter Element von A₃ und wirkt auf der Klebegruppe trivial;
+  die Hypothese fällt. Exakt: der Coxeter Viererzyklus ist Möbiussymmetrie genau in harmonischer Lage.
+  Klebegenerator = Kommutator von Schieber und Uhr. Bolza (Zentrum 2) ist nicht Picard G48 (Zentrum μ₄).
+- **Elliptische Fläche statt Singularität (5).** D₅ ⊕ A₃ ist kein Teildiagramm von E₈. Exakt: die Fläche mit
+  Punkt der Ordnung 4, Δ = t⁴(16t + 1), Fasern I₄, I₁, I₁*, Torsion = Klebevektor. Umläufe unendlicher
+  Ordnung, also keine Uhr.
+- **Verschränkung (6).** Klebevektor maximal verschränkt und fest unter S ⊗ S, T ⊗ T; fester Raum
+  zweidimensional. Keine Dynamik (unitär, Produkt). Reduzierter Zustand 1/4 auf vier, Referenz 1/5 auf fünf.
+- **Gemeinsame Schnittregel (7).** η_k(p) = (p² − 1)/(6p) − k(p − k)/p für p = 2 bis 12, alle k. Der zweite
+  Term ist die Klebenorm der Klasse k von A_{p−1}. Die zwei Muster aus P1KERN (Z₄: 5/8, 3/8; Z₅: 4/5) sind
+  zwei Fälle davon. Bei k = 1 verschwindet η nur für p = 5. Damit ist „gemeinsame Regel für Z₄ und Z₅“
+  als Formel beantwortet; nicht gezeigt bleibt, dass P1 an einem solchen Schnitt sitzt.
+- **Turm (8).** Stufenabbildung 1 + J erhält nur Unterräume gerader Dimension und streckt alles um √2.
+  D₅ ⊕ A₃ bleibt nicht erhalten, keine Raten.
+- **Schärfe (9).** Intervall 2/9 ≤ q ≤ 1/4 reproduziert und am Matrixlogarithmus gegengeprüft. Bei q = 2/9
+  springen nur die drei Spiegelungen und q = (2/3)(1/3); bei q = 1/4 fällt r59 weg. Zwei Punkte, nicht einer.
+  γ = m wird erreicht, aber keine Abbildung auf q. Für κ und das Seitenverhältnis keine Schranke.
+- **Frobenius (10).** |a_p| ist durch p = a² + b² erzwungen. Gegen 1000 Zufallskurven kein Signal
+  (Festlegung vorher, seed 20261119). Bleibt das Etikett p mod 5 in der Vier, ohne Reihenfolge und Rate.
+- **Offen:** Möbiuskovarianz des originalen Kerns; Wahl der Ikosaedergruppe; Fluss gleich Windung;
+  Pole im Original (R113 gesperrt); Regel, die q = 2/9 wählt (Kandidat: nur native Spiegelungen springen).
+- **Zweite Runde (nur Vorschläge).** Zehn neue Hypothesen stehen in `tfpt_landkarte/content-hypothesen2.js`,
+  mit kleinen exakten Proben in `tfpt_landkarte/checks/vorrechnung_runde2.py`. Sie nutzen auch eine parallele
+  Prüfung aus einer anderen Sitzung, deren Unterlagen nicht im Repository liegen; deren Zahlen sind nur
+  berichtet. Exakt gerechnet: Streichen der Nachbarknoten Marke 4 und 5 lässt A₄ ⊕ A₃ mit senkrechtem
+  Gittervektor der Norm 20; y² = x(x + t²)(x + 1) hat Ausnahmefasern bei 0, ∞, ±1 (harmonisch);
+  θ₂⁸ : θ₃⁸ : θ₄⁸ = 1 : 4 : 1 bei τ = i; Σ_{i<j} x_i x_j auf vier Variablen hat Signatur (1,3).
+
+## HYPCHECKB20261119 · Zweite Runde: zehn Hypothesen nachgerechnet
+
+Vertrag: `experiments/theory-contracts/landkarte-hypothesen-runde2-20261119/` · 111/111 Prüfungen in zehn Dateien ·
+kein Ledgerwechsel, kein Atlaseintrag, keine Beförderung, physical_solution = false. F1 bleibt offen.
+
+- **Gesamturteil.** Keine löst F1. Gefallen: 11 (als Zeit), 14, 17, 19. Schon im Original: 13. Kern exakt,
+  Bindung offen: 12, 15, 16. Halb: 20. Nicht entscheidbar ohne fremde Daten: 18.
+- **Ein Kreis durch beide Schnitte (11).** v = 4ω₅ − 5ω₆, Norm 20; exp(2πi t v) ist bei t = 1/4 der Erzeuger der
+  Viererklebung, bei t = 1/5 der der Fünferklebung. v ist die Ladung X von SO(10) und wirkt auf den fünf
+  Plätzen als Zahl. Keine Zeit.
+- **Vierteldrehung als Halbierung (12).** Auf y² = x(x + t²)(x + 1) mit Ausnahmestellen 0, ∞, ±1 ist die
+  Teilung durch den Punkt der Ordnung 2 dieselbe Familie bei m(t) = (1 + t)/(1 − t), bis auf Verdrehung mit −1.
+  Fixpunkte ±i tragen j = 1728. A₃ ⊕ A₃ ⊕ A₁ ⊕ A₁ hat in E₈ den Quotienten Z₄ × Z₂. Nicht gezeigt: P1 ist die Basis.
+- **Die Vier (13).** Steht schon im Original (flache Z₂ Klasse, Gauss Bonnet, v216). Schärfung: von den vier
+  flachen Kugeln mit Kegelpunkten hat nur (2,2,2,2) eine freie Lage.
+- **Thetaanteile (14).** 1/6, 2/3, 1/6 bei τ = i exakt, aber formabhängig und ohne die Vielfachheiten 6, 6.
+  Parallele Gitterprobe reproduziert: E₈ immer 1/3, D₁₆ nur 1/9 oder 7/9 (Viererdesign gegen keins).
+- **Viertelphase (15).** Satz: Gaußphasenverhältnis verklebbarer Z₄ Seiten = Kommutator von Schieber und Uhr.
+  In v724 (reell) ist der umlaufabhängige Teil der Dreierspur exakt null; die Bindung fällt.
+- **Paarform (16).** Σ_{i<j} x_i x_j hat Signatur (1, n − 1), ganzzahlig U ⊕ A₂(−1). Linearer Rang höchstens 3
+  reproduziert. Quadrate der sechs fermionischen Kanäle erreichen unter SU(4) die Metrik nicht; ihre eigene
+  Form hat Signatur (3,3).
+- **CP (17).** J₊, J₋ reproduziert. Ungerader Teil trifft J (−0,16 σ), verfehlt γ (−2,27 σ); |V_td| trennt die
+  Orientierungen.
+- **OPH Zelle (18).** Nicht entscheidbar. Q = n Σr²/(Σr)² gibt für 1/3, 1/3, 2/3 genau 9/8 (Lesart). Fünf
+  Klassen statt vier. Wurzelgraph von E₈ trifft weder 7,6 noch 9/8.
+- **Zeitpfeil (19).** τ + 4n ist derselbe Torus; T hat auf Stufe N Ordnung 2N; das flache Kissen hat feste Lücke.
+- **Normierung (20).** Mit festem Umfang lässt die Vierteldrehung nur c = 0 zu, nicht c₃. Ohne absolute Länge
+  hat c keinen Platz.
+
+
+## SZENARIO20261119: Szenariosuche S42 gebaut, erster Lauf
+
+Ordner `experiments/theory-contracts/scenario-engine-20261119`. Auf Wunsch des Nutzers ohne Bezug auf R113.
+Statt Hypothesen aufzuschreiben erzeugt die Suche 554 Objekte aus 17 Familien mit berechneten Merkmalen und
+misst gegen 1000 Zufallsfingerabdrücke, welche Objekte, Paare und Tripel die 36 Merkmale der Theorie tragen.
+
+- **Kontrolle.** D5 + A3 in E8 steht allein vorn (57,5 von 178,1 Punkten, Zufall 23,7, p 0,001). Teils eingebaut.
+- **Rest ohne Anker.** Kein Objekt, Paar oder Tripel trägt 41, 48, 96, 1920, 46080, 4/3, 2/3, 1/3, 4/5, 5/3, 8/7,
+  12/7, 7/2 über Zufall (bestes p 0,20). Gilt nur für diesen Vorrat und diesen Fingerabdruck.
+- **Schwache neue Spuren.** Parafermionen Z5 (zentrale Ladung 8/7) mit A4 + A4 über Z5; A6 mit Klebenorm 12/7.
+  Der Atlas führt 8/7 als Verhältnis 4 : 7/2. Keine Abbildung gezeigt, p 0,33.
+- **Nächster Ausbau.** Erzeuger für Verhältnisse und reelle Invarianten, Fingerabdruck aus dem Atlas.
+
+Selbstprüfung 12 von 12. Nichts befördert, kein Ledgerwechsel, kein Atlaseintrag, kein Commit.
+
+## SZENARIO20261119B: Szenariosuche in OriginLab eingebaut, Fingerabdruck aus dem Atlas
+
+Dateien `research/originlab/structure_scenarios.py`, `structure_objects.py`, `test_structure_scenarios.py`,
+Bericht `research/originlab/STRUCTURE-SCENARIOS-20261119.md`. Die Spur läuft im Supervisor in jeder Stufe und
+reicht ihre Szenarien ohne Modell an die Atlasprüfung weiter. Atlasrevision `1823e3ca9e529dc86c8e8c0a`.
+
+- **Fingerabdruck.** 93 Zahlen und Brüche, die belegte Befunde aus mindestens drei der 58 Probleme nennen.
+- **Ein Objekt statt vieler.** Unter 731 Objekten steht vorn: acht Fermionmoden, geteilt in (3 + 2) + 3, mit der
+  spurfreien Ladung der Teilung 3 + 2, samt allem, was darin nach Bauart liegt (D₅ + A₃ in E₈, Paare aus fünf
+  Plätzen, Fockräume). Es trägt 45 der 93 Zahlen und 35 % des Gewichts (170,5 gegen Zufall 69,7; p 0,001).
+  Die nächsten Teilungen: (4 + 1) + 3 mit 154,2, (5 + 1) + 2 mit 141,5.
+- **Rückhaltetest.** Auf zwei Dritteln ausgewählt, sagt das Objekt das letzte Drittel vorher (p 0,006).
+- **Nur eine Schicht.** Nach Abzug trägt kein weiteres Objekt den Rest über Zufall (p 0,43).
+- **Arbeitsliste.** Nicht getragen: 1/6, 1/8, 27, 30, 36, 4/5, 1/5, 25, 4/3, 9/8, 1/729, 64/729, 75, 81, 192, 33, 56
+  und weitere; von keinem Objekt: 480, 7560, 65537, 92.
+
+Grenzen: Der Fingerabdruck ist der Bestand der Theorie, die auf E₈, D₅ und A₃ gebaut wurde; das Ergebnis zeigt
+die innere Ordnung des Bestands, keinen Beleg über die Natur und keinen Abschluss von F1. Fünf Objektfamilien
+wurden nach Sicht des ersten Laufs ergänzt; die p Werte rechnen diese Auswahl nicht ein. Der Abstand zwischen
+(3 + 2) + 3 und (4 + 1) + 3 ist nicht auf Zufall geprüft. Reelle Größen fehlen.
+
+Tests 8 von 8; mit `flint` (lokale Umgebung `.venv`, `python-flint` 0.9.0) bestehen auch `test_autonomy`,
+`test_supervisor` und `test_atlas_scenarios`, zusammen 30 von 30. Eine endliche Supervisorstufe
+(`autonomy.py --start-resolution 3 --max-resolution 3`) lief ohne Fehler durch: die Spur meldet ihr bestes
+Objekt in `latest.json`, alle acht erzeugten Szenarien wurden von der Atlasprüfung als zulässig für Prüfungen
+eingestuft. Nichts befördert, kein Ledgerwechsel, kein Atlaseintrag, kein Commit.
+
+## SZENARIO20261119C: Restliste der Szenariosuche abgearbeitet
+
+Bericht `research/originlab/STRUCTURE-SCENARIOS-20261119.md`, zweiter Lauf. Drei Änderungen, alle nach Sicht der
+48 unerklärten Zahlen, von den p Werten nicht eingerechnet: Buchhaltung aus dem Fingerabdruck entfernt (Fehlergrößen,
+Prüfzahlen, Rechenmodul, Zeilenangaben; 93 werden 86 Zahlen), Klebeklassen aller 15 vollrangigen Teilsysteme von E₈
+aus den 240 Wurzeln berechnet, allgemeine Merkmale für Operatoren, Ladungen der geraden Fockzustände und Paare.
+
+- **Tragendes Objekt unverändert:** acht Moden, geteilt in (3 + 2) + 3 mit Ladung. Jetzt 53 von 86 Zahlen, 48 % des
+  Gewichts (200,2 gegen Zufall 84,0; p 0,001). Rückhaltetest p 0,002, in 97 % der Teilungen gewählt.
+- **Abstand zum Zweiten:** (5 + 1) + 2 mit 172,2. Bei neu gezogenem Fingerabdruck bleibt (3 + 2) + 3 in 94 % der
+  Fälle vorn. Das ist deutlich, aber nicht sicher.
+- **Weiter nur eine Schicht** (zweite p 0,32).
+- **Rest 33 Zahlen, nach Ursache:** andere Schnitte desselben E₈ (27, 81, 192, 56, 36, 6/5, 7560, 480, 33, 54, 576);
+  sechs Schritte des Petersenkanals (1/729, 64/729: das Objekt trägt die Raten, nichts in ihm legt die Sechs fest);
+  Potenzen von 1/2 und 1/12; Einstellungen einzelner Rechnungen (1/10, 1/20, 2/9, 5/16 und kleine Zahlen);
+  ableitbar, aber nicht erzeugt (4/3, 5/2); ohne Platz im Vorrat: 9/8, 92.
+
+Ein Fehler der ersten Klassenrechnung (höchste Wurzel aus einer Klebeklasse statt aus dem Teilsystem) wurde durch
+die Summenprobe gefunden und behoben. Tests 33 von 33 mit `.venv`. Grenzen wie bei SZENARIO20261119B. Nichts
+befördert, kein Ledgerwechsel, kein Atlaseintrag, kein Commit.
+
+## RUECKWEGE20261119: dreizehn eingereichte Hypothesen zu kohärenten Rückwegen nachgerechnet
+
+Ordner `experiments/theory-contracts/kohaerente-rueckwege-hypothesen-20261119`. Atlasrevision
+`1823e3ca9e529dc86c8e8c0a`. Sieben Skripte, 89 Prüfzeilen bestanden. Urteile je Hypothese im README.
+
+- **Neutrale Kohärenz.** Einziger neutraler Zweierblock unter Standardmodell mal Familien SU(3): Zustände 0 und 255
+  (Kommutante 26 = 22 + 2²). Vier Wurzeln nötig, fünf mit gemischten allein. Alle 600 Marken ZY und ZUY sehen sie
+  nicht; sie trägt die Farb/Schwach Differenz nicht. Komplementpaarung macht sie reell, das Vorzeichen bleibt frei.
+- **Gemeinsamer Zwischenoperator.** W = δ + Σ G(t + β) mit Kopplungen aus höchstens vier Wurzelklassen: 0 von 32 795
+  Paaren treffen Farbe und Schwach. Kontrolle 7/528 reproduziert. Gleitkommasuche, kein Beweis.
+- **60er Uhr.** U = [[0, C], [1, 0]] auf E₈ ⊕ E₈ hat χ = Φ₆₀. Alle 16 Galoiskonjugationen sind Gitterisometrien.
+  Kein fester D₅ + A₃ Rahmen überlebt Fünfer und Dreiertakt. Auf E₈ ⊕ E₈(−1) ist U eine Anti-Isometrie.
+- **Alpha.** Gaußform im Vakuum automatisch; die Varianz 1/(2π) kommt nicht aus der Stromalgebra. Oszillator bei
+  τ = i: −87,9 σ. Kein neuer Herkunftsschritt gegenüber dem Grundzustandsbefund.
+- **Gedächtnis.** Flacher sichtbarer Zustand mit Zweizeitantwort stimmt. Rückkehrwerte auf dem ganzen Raum sehen das
+  Gedächtnis: (1 − ε²)/(1 + ε²).
+- **Geometrie.** Vergleichskegel bestätigt, Rangkriterium unzureichend (Driftkontrolle). Drei Paarungen geben
+  so(3, 1), keine Translationen. Kausale Struktur braucht die Spiegelkopie; mit positiven Formen ist sie trivial.
+
+Grenzen: endlicher D₈ Chart und Vergleichsmodelle; originaler P1 Kern nicht ausgewertet. Nichts befördert, kein
+Ledgerwechsel, kein Commit. Atlas: sechs Befunde in `problem:origin-diagnosis-new-hypotheses-20261116`, neue
+Revision `d824dc264aaeeb4d4f41797e`.
+
+## SECHS20261119: Woher die Sechs im Transfer kommt
+
+Ordner `experiments/theory-contracts/petersen-six-20261119`, `check_six.py` 20 von 20 exakt.
+
+Anlass: 1/729 und 64/729 aus der Restliste von SZENARIO20261119C. Schon im Original (`v808_petersen_sixthroot.py`):
+zehn Paare aus 3 + 2 Plätzen = Petersengraph, Schalen 1 + 3 + 6, äußere Schale ein Sechserkreis, Schrittmatrix P mit
+Raten 1, -2/3, 1/3 und spec(P^6) = {1, 64/729, 1/729}. Der Exponent ist dort gesetzt (`v124`: p_2 = 6 = |R+(A3)|).
+
+Nachgerechnet: (1) Drei gleich weit entfernte Raten gibt es unter den Paargraphen nur bei fünf Plätzen
+(n^2 - 9n + 20 = 0). (2) 6 ist die Ordnung von (f1 f2 f3)(w1 w2); deren Sechserbahn ist der Sechserkreis; in S5 haben
+nur die 20 Elemente vom Typ 3 + 2 Ordnung 6. (3) Positivität verlangt nur eine gerade Schrittzahl; 2 und 4 wären auch
+positiv. (4) Kürzester gerader Rundweg ohne Umkehr im Petersengraphen ist 6; bei sechs und sieben Plätzen 4. (5) Fünf
+Lesarten der Sechs fallen nur bei 3 + 2 zusammen.
+
+Urteil: Kandidatenregel "Transferschritt = kürzester positiver Rundweg" gäbe die Sechs ohne Setzung. Sie steht nicht im
+Original und ist nicht hergeleitet. Fehlende Abbildung: die drei Spitzen des Originaltransfers auf die drei Schalen
+(v808: gleiches Spektrum, nicht gleiche Basis). Zwei Lesarten der sechsten Einheitswurzeln nebeneinander: Familie mal
+Blatt (`v118`) und Farbe mal schwach (hier). Nichts befördert, kein Ledgerwechsel, kein Atlaseintrag, kein Commit.
+
+## CARTANDEPHASE20261119: ein gemeinsamer Prozess trifft Farbe und Schwach
+
+Nachtrag im Ordner `experiments/theory-contracts/kohaerente-rueckwege-hypothesen-20261119`, `check_dephasing.py` 16/16.
+
+- **Befund.** Die Dephasierung L_h(A) = h A h − (h² A + A h²)/2 mit h = Hyperladung ist vollständig positiv und
+  unital. Ihre Antwort auf die Rückkehr jedes gemischten Stroms ist −(q²/2) · ZY: −1/72 für Farbe, −1/32 für
+  Schwach, in allen 300 Fällen. Eine Zeit, Raten 1/18 und 1/8. Die zwei angepassten Blöcke werden nicht gebraucht.
+- **Folgen.** Flacher Zustand stationär. Einzige unter Eich Dephasierung geschützte Kohärenz: 0 gegen 255.
+  Voller Cartantorus: alle 112 Wurzelströme exp(−τ), mit τ = 2α der aufgezeichnete Faktor exp(−2α).
+- **Grenzen.** Die Markengleichung ist eine Identität der zweiseitigen Cartanwerte. Herkunft der Dephasierung, ihre
+  Richtungen und τ sind nicht hergeleitet. Bedingt, nichts befördert.
+
+## SECHSB20261119: Die drei Zustände des Originaltransfers sind nicht die drei Schalen
+
+Ordner `experiments/theory-contracts/petersen-six-20261119`, `check_cusps.py` 20 von 20 exakt.
+
+Original (`v486`, `v487`): fester Zustand plus tauschbares Paar, bleiben 1/2, wechseln 1/6, Verlust 1/3. Ausgeschlossen:
+Schalen 1, 3, 6 als diese Zustände, für jede Reihenfolge und jede Funktion des Schalenschritts (kein Eigenvektor mit
+Nulleintrag, kein tauschbares Schalenpaar, positiver Schritt hat negative Einträge). Passend: Zustände als Formen
+1, Y, Grad 2 in Y mit Raten 1 - n/3; nicht passend: Vorzeichen (-1)^n gegen die Parität gerade, gerade, ungerade des
+Originals. Keine Spiegelung in S5 trennt die 2/3 Formen von den 1/3 Formen. Auf dem Sechserkreis allein passen Verlust
+1/3 und Parität (Tausch der schwachen Plätze = Gegenpunkt), aber nicht fester Zustand, Vielfachheiten (2 und 4) und
+Sprungregel (bleiben 0, wechseln 2/3).
+
+Urteil: keine Lesart gibt den Originaltransfer als Matrix; die Sechs bleibt im Original gesetzt. Nicht durchsucht:
+andere Operatoren auf den zehn Paaren. Nichts befördert, kein Ledgerwechsel, kein Atlaseintrag, kein Commit.
+
+## KERNDEPHASE20261119: Der originale Randkern liefert Zeit und Gleichverteilung der Dephasierung, nicht die Hyperladungsrichtung
+
+Nachtrag 2 im Ordner `experiments/theory-contracts/kohaerente-rueckwege-hypothesen-20261119`, `check_kernel_dephasing.py` 21/21.
+
+- **Befund.** Lesart: Phase exp(i e Δw·φ), φ mit dem Kern als Kovarianz, e² = 4πα. Die positive Hälfte von |B|⁻¹ hat
+  auf der Einheits S² je Kanal 1/(2π); ein Kanal (der Saatkanal λ₁⁺) gibt τ = 2α exakt. Flaches Spektrum heißt: die
+  Kanalzahl ist eine Halbgruppenzeit, nur auf S². Der Kern wirkt als B ⊗ 1, also über alle acht Cartanrichtungen
+  gleich: alle 112 Wurzelströme exp(−2α).
+- **Ausgeschlossen.** Nur Hyperladung (z > +20000), nur elektrische Ladung (z = +12042), nur die sechs
+  Eichrichtungen (ungleiche Raten 1/3 bis 1), zwei Kanäle (z = −23816), Quantenschwingung (z = −87,9).
+- **Nicht geliefert.** Die Hyperladungsrichtung. Der Kernprozess gibt für alle 60 gemischten Ströme −ZY; −1/72 und
+  −1/32 sind sein Anteil entlang h (1/15, 3/20, mal 5/6, mal ZY). Diese Richtung kommt aus der Marke U = h².
+- **Folgen.** Kohärenz 0 gegen 255 fällt mit exp(−8α). Marken (τ = 0) und Alpha Dämpfung (τ = 2α) sind zwei Auslesen.
+- **Grenzen.** Kopplung e² = 4πα, Einheitsradius und runde S² sind Annahmen der Lesart. Dieselbe Zahl wie in
+  P1KERN20261119, kein zweiter Beleg. Bedingt, nichts befördert.
+
+## COULOMBKOPPLUNG20261119: Die Kopplung e² = 4πα ist das Coulombgesetz des Randkerns
+
+Nachtrag 3 im Ordner `experiments/theory-contracts/kohaerente-rueckwege-hypothesen-20261119`, `check_coulomb_coupling.py` 19/19.
+
+- **Original.** Exponent α · d · SF mit d = 2 Blättern und SF = 1; die Einheit je Blatt ist gesetzt, nicht gerechnet.
+- **Befund.** Der Vergleichskern bei κ = 1 ist exakt die Greenfunktion des Laplace Operators auf der Einheitskugel
+  (d = 3 bis 7). In d = 3 hat jeder Multipol von 1/(4π|x−y|) das Gewicht 1/(4π), also e² · Gewicht = α. κ = 1 ist das
+  Gaußsche Gesetz. Je Kanal und Blatt ist der Exponent α · |β|²/2 = α: die Einheit SF = 1 des Originals.
+- **Zählung der Zwei.** Zwei Blätter oder zwei Spinorkomponenten, nicht beides (k = 4, z = −23816). Das Original
+  entscheidet nicht zwischen beiden.
+- **Mehrere Defekte.** Unabhängige Addition exp(−2nα): z = +1,9. Kohärent im selben Kanal exp(−2n²α): z = −5,1.
+  Verschmelzendes Paar: z = +5,5.
+- **Grenzen.** Bedingt auf die Gleichsetzung Kernfeld = Cartan Eichpotential mit Gaußscher Normierung in drei
+  Raumrichtungen; sie steht nicht im Original. Saateinheit als Maß der Kugel bleibt Lesart. Nichts befördert.
+
+## SECHSC20261119: Suche nach dem Originaltransfer unter allen Operatoren mit der Symmetrie von 3 + 2
+
+Ordner `experiments/theory-contracts/petersen-six-20261119`, `search_transfer.py` und `check_search.py` 13 von 13.
+
+Suchraum 15 Operatoren auf den zehn Paaren, alle 2719 Dreiteilungen bis auf Symmetrie, Ziel der Transfer aus `v486`
+(fest, Paar mit 1/2 und 1/6), Verlust verschwindend oder aufgesogen. Aus dem Graphen allein: 0 Treffer. Mit freien
+Gewichten je Paartyp: 36 bzw. 57 Teilungen mit erlaubter Regel, also nicht erzwungen. Einzige symmetriefeste Teilung
+mit symmetrischer Regel: fest = FF und WW, Paar = die zwei Seiten des Sechserkreises. Mit reinen Raten 2/3 und 1/3
+bleiben dort zwei Regeln; Regel A (bleiben 1/2, schwachen Platz wechseln 1/6 bei gleicher Farbe) ist die Paarregel des
+Originals dreifach, aber kein Schritt des Petersengraphen. Die Regel über Kreisnachbarn bringt 7/12 und 5/12 mit.
+
+Urteil: Raten aus dem Lauf auf dem Graphen (v808) und Sprungregel des Originals haben in diesem Suchraum keinen
+gemeinsamen Operator. Vielfachheiten nach sechs Schritten unterscheiden die Lesarten (1 viermal, 3, 3 gegen 1, 5, 4).
+Die Sechs bleibt gesetzt. Nicht durchsucht: Mischzustände, größere Räume. Nichts befördert, kein Atlaseintrag, kein
+Commit.
+
+## KERNFELD20261119: Original legt das Kernfeld nicht fest; Coulomb Lesart gibt δ_top als drei Paarungen und μ₄ als Gleichgewicht
+
+Nachtrag 4 im Ordner `experiments/theory-contracts/kohaerente-rueckwege-hypothesen-20261119`, `check_kernel_field.py` 20/20.
+
+- **Original.** Der primitive Kern enthält keinen Hyperladungsoperator und kein Eichfeld; Eichfluktuationen kommen erst
+  nach dem Trägersatz. Das Kernfeld als Eichpotential ist also Lesart. Brücke: |h|² = 5/6 = γ = tr_E Y².
+- **Eine Varianz.** Mit w = 1/(4π) je Komponente: δ_top = 48 c₃⁴ = 3 w⁴ = drei Paarungen von vier Marken, jedes Paar
+  auf beiden Komponenten verbunden. 2 oder 9 Paarungen sind durch α ausgeschlossen. φ_base = (2/3) w bleibt unerklärt.
+- **Markenlage.** Vier gleiche Ladungen mit Kern 1/(4π d): auf dem Nahtkreis einziges Gleichgewicht das Quadrat (μ₄,
+  j = 1728); frei auf der Kugel das Tetraeder (j = 0), das Quadrat ist dort ein Sattel. Dieselben zwei Formen wie in
+  P1KERN20261119. Neue Prämisse gegenüber SWEEP20261119: Abstoßung der Marken über den Kern.
+- **Muster.** Paarungssumme des Coulombkerns am Quadrat exakt 5/4, im flachen Saatkanal 3. Keine Herleitung des Exponenten.
+- **Grenzen.** Gleiche Ladung der Marken und gemeinsame Paarung sind Annahmen. Offen: φ_base, 5/4, Kubik mit 41,
+  Hyperladungsrichtung. Keine vollständige Herleitung. Bedingt, nichts befördert.
+
+## SECHSD20261119: Eine Regel für den Transfer: drei Familienbits, sechs gleich wahrscheinliche Züge
+
+Ordner `experiments/theory-contracts/petersen-six-20261119`, `check_cube.py` 23 von 23 exakt. OriginLab: neue allgemeine
+Objektfamilie `moves:{d}x{q}` in `structure_objects.py`, Test in `test_structure_scenarios.py` (34 Tests bestehen).
+
+Regel: drei Bits, ein Zug setzt ein Bit auf einen Wert, je Schritt einer der sechs Züge gleich wahrscheinlich, eine
+Hand = sechs Schritte. Exakte Folgen, die das Original getrennt festhält: bleiben 1/2 und wechseln 1/6 (`v486`, dort aus
+dem Spektrum gewählt), Verlust 1/3, Leiter 1 - n/3 und Wand bei 3 (`v124`), Paritätswechsel je Stufe (`v487`),
+Gleichverteilung als Attraktor (`v327`), vier Zustände nach Zahl gesetzter Bits, Steigung 2 der linearen Uhr,
+Spektrum 1, (2/3)^6, (1/3)^6 der Hand. Als Operatoren: sechs Majoranagrößen, Sektoren 1, 15, 15, 1. Unter 24 Regeln
+(1 bis 6 Stellen, 2 bis 5 Werte) trifft nur (3, 2) alle fünf Zahlenangaben.
+
+Suche auf Atlasrevision `3d4edf28f96138a983aa8968` (88 Zahlen): bestes Objekt bleibt (3+2)+3 mit Teilen, Wert 213,90
+gegen Zufallsmedian 88,46 (ohne die Familie 200,15 gegen 85,17), Anteil 51,6 % statt 46,4 %, unerklärt 31 statt 35;
+neu getragen 1/729, 64/729, 1/10, 1/16. Familie nach Ansicht der Restliste gebaut.
+
+Urteil: keine vollständige Lösung. Offen: Hand = Zahl der Züge ist Setzung; Bindung der drei Bits an P1 und P2;
+gemeinsamer Ursprung mit dem Petersenlauf der Farbseite. Trennende Vorhersage: Vielfachheiten 1, 3, 3 und eine Rate 0
+(Würfel) gegen 1, 4, 5 (Petersen). F1 bleibt offen. Nichts befördert, kein Atlaseintrag, kein Commit.

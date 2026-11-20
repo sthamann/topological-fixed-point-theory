@@ -1,0 +1,54 @@
+{
+ "contract_id": "P1KERN20261119",
+ "date": "2026-11-19",
+ "folder": "experiments/theory-contracts/p1-kernel-ground-state-20261119",
+ "question": "Trägt der originale P1 Kern den Fourier-selbstdualen Grundzustand (C_nat), und welche weiteren Szenarien folgen daraus?",
+ "verdict": "C_nat bedingt bestanden: auf runder S² trägt die positive Hälfte des originalen Dirac Randkerns je Kanal 1/(2 pi) = 4 c3 und gibt exp(-2 alpha); flach nur auf S². Kugel und Torus sind exakt verbunden (E2 als Umlaufsumme der S² Wärmespur); die drei Wege zu c3 sind eine Zahl T/4. Quadrat ist Sattel, nur mit Spiegelung stabil. Eigenphase der Wirkung trifft die Fünferuhr nur am Z5 = A4 Schnitt; E6, E7, E8 Schnitte treffen keine Uhr. Nachtrag: positive Hälfte steht im Original; runde S² ist nicht erzwungen und nicht nötig, das flache Kissen mit Marken bei mu_4 hat den quadratischen Torus als Doppelüberlagerung. Muster: Z4 Schnitt gibt 5/8 und 3/8, die Klebegewichte der Karte D5 + A3. Nichts befördert, kein Ledgerwechsel, kein Commit.",
+ "resolved": [
+  "flaches Kanalspektrum 2 c3 (skalar) und 4 c3 (Dirac, positive Hälfte) nur auf S²",
+  "E2(q) = 1 - 12 Summe Z+(m beta)",
+  "Schwingungsenergie -c3 und Nullmode +c3 am quadratischen Torus",
+  "drei Wege zu c3 sind eine Zahl",
+  "I = 4 = 2 x 2 = reelle Dimension von C²",
+  "|B| auf S² isospektral zur 2D Schwingung, Vierteluhr = Fouriertransformation",
+  "Dirac eta von S³/Z_p = (p²-1)/(6p)",
+  "eta der E Schnitte 167/144, 383/288, 1079/720",
+  "U(alpha) hat genau ein Minimum",
+  "Z4 Schnitt: eta = 5/8 und 3/8 = Spinfeldgewichte von D5 und A3; Summe 1 nur bei p = 4 (Muster)",
+  "eta(Z_p) = (p-1)/p nur bei p = 5 (Muster)",
+  "positive Hälfte steht im Original (Calderón/APS, lambda_1^+)",
+  "Doppelüberlagerung von P1 über mu_4 ist exakt der quadratische Torus (j = 1728)",
+  "Weylgesetz: 4 c3 je Spektraleinheit auf jedem 2D Schnitt"
+ ],
+ "kills": [
+  "ein skalarer Kanal (exp(-alpha))",
+  "beide Dirac Vorzeichen (exp(-4 alpha))",
+  "quantenthermischer Horizontzustand mit omega = 1",
+  "D4 und D6 Spinfeld",
+  "E6, E7, E8 und D Schnitte als Uhrträger",
+  "Z4 Schnitt als Uhrträger",
+  "freie Verdrehung (rollt zum Sechseck)",
+  "runde S² als notwendige Annahme"
+ ],
+ "open": [
+  "warum genau eine chirale Nullmode",
+  "delta_top und phi_tree im Torusbild",
+  "A4 Schnitt gegen die Trägerrichtungen prüfen",
+  "gewichteter Originalschnitt R113",
+  "gemeinsame Regel für Z4 (eta = Norm/2) und Z5 (eta = Norm) fehlt",
+  "warum die vier Marken bei mu_4 liegen (Kandidat: Spiegelung plus Extremum der freien Energie)"
+ ],
+ "replay": "cd experiments/theory-contracts/p1-kernel-ground-state-20261119 && for s in cnat_channels torus_bridge clock_horizon_ufield square_stability eta_phase_and_period ade_cuts cut_glue_match original_forcing; do python3 -B check_$s.py; done",
+ "checks_passed": true,
+ "checks": {
+  "cnat_channels": "12/12",
+  "torus_bridge": "13/13",
+  "clock_horizon_ufield": "14/14",
+  "square_stability": "7/7",
+  "eta_phase_and_period": "9/9",
+  "ade_cuts": "7/7",
+  "cut_glue_match": "9/9",
+  "original_forcing": "6/6"
+ },
+ "atlas": "eingetragen am 19.11.2026, Revision e8f169399dde2e001515d562: drei Befunde in problem:c3-p1-p2-shared-origin-reconciliation, zwei in problem:p1-singularity-seam-reset, einer in problem:alpha-fixed-input-root"
+}

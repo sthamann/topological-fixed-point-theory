@@ -1,0 +1,126 @@
+{
+ "name": "coulomb_coupling",
+ "checks": [
+  {
+   "check": "original (v28): exponent law S_def(alpha) = S_def(0) + alpha J with J = d SF, d = 2 (orientable double cover), SF = 1",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "original (v28): the per-sheet unit is an identification ('We identify the per-sheet normalization with the spectral-flow unit'), not a computed kernel value",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "current EM source: q(alpha) = delta_top e^{-2 alpha}, spectral flow SF(U_Sigma) = 1, 'two sheets, one seam, one elementary relative winding'",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "neither passage contains a coupling e or a field covariance: the original has alpha times an integer, no 4 pi",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "Green function of -Laplace in R^d on the unit sphere has eigenvalue 1/(2l + d - 2) = 1/(2 Omega): it is the comparison kernel at kappa = 1 (d = 3..7, l < 25)",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "d = 3: 1/|x - y| = sum_l r^l P_l(cos g), every multipole with coefficient 1 (generating function, checked at r = 0.6)",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "so kappa = 1 is Gauss's law (unit flux per unit charge) and the flat spectrum is the Legendre series at r = 1: channel weight 1/(4 pi) for every l",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "e^2 * (Coulomb coefficient) = alpha in either unit convention: the 4 pi of the coupling cancels the 4 pi of the kernel, alpha is the only number",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "hence per multipole channel and per scalar sheet the exponent is alpha * |beta|^2/2 = alpha * 1 for a root: the original unit J_1 = SF = 1",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "two countings give k = 2 (two sheets of scalar channels; or one sheet with the two spinor components of the positive half); counting both gives k = 4, excluded",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "original doubling theorem: Ran(P_C) = ker(R - 1), the Calderon half is the reflection-even half of the doubled data, i.e. one copy: doubling and the positive half do not multiply",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "the 2 is therefore one count, readable as 'two sheets' or as 'two spinor components'; the original does not say which, and the alpha readout cannot tell (same number)",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "in seed units the weight is scale free: chi_seed^2 * (lowest degeneracy)/(area) = R^2 * 2/(4 pi R^2) = 1/(2 pi) for every radius",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "limit: the bare coincidence weight is 1/(2 pi R); that the sphere is measured in units of its own chi_seed is a reading (the original supplies the unit, not this combination)",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "law k = |Dw|^2 on the 128 weights: sectors k = 2, 4, 6, 8 (root currents 2, neutral coherence 0-255: 8), matching the original remark 'SF != 1 is a different sector with a different k'",
+   "pass": true,
+   "detail": "[2, 4, 6, 8]"
+  },
+  {
+   "check": "control: the series with n defects damped by exp(-2 n alpha) reproduces the recorded value",
+   "pass": true,
+   "detail": "137.03599921684"
+  },
+  {
+   "check": "several defects: only independent addition of the exponents stays within 2 sigma; coherent addition in one channel (|n beta|^2) and a pair fusing to a root are excluded beyond 5 sigma",
+   "pass": true,
+   "detail": "{'independent (exp(-2 n alpha))': '1.8972', 'same root, same channel (exp(-2 n^2 alpha))': '-5.1119', 'pair adding to a root (exp(-2 alpha) at n = 2)': '5.4778'}"
+  },
+  {
+   "check": "independent addition is what the kernel gives for defects in different channels (flat spectrum, uncorrelated channels) or for mutually orthogonal roots (|b1 + b2|^2 = 4)",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "verdict: e^2 = 4 pi alpha is not an extra input once the kernel field is a Cartan gauge potential with Gauss normalisation in three bulk dimensions; that identification is the remaining assumption",
+   "pass": true,
+   "detail": ""
+  }
+ ],
+ "data": {
+  "k_by_counting": {
+   "scalar Coulomb channel on each of two sheets (original d = 2)": "2.0",
+   "positive Dirac half on one sheet (two spinor components)": "2.0",
+   "positive Dirac half on each of two sheets": "4.0",
+   "one scalar channel on one sheet": "1.0"
+  },
+  "z_by_counting": {
+   "scalar Coulomb channel on each of two sheets (original d = 2)": "1.89718",
+   "positive Dirac half on one sheet (two spinor components)": "1.89718",
+   "positive Dirac half on each of two sheets": "-23815.8",
+   "one scalar channel on one sheet": "12041.6"
+  },
+  "sectors": [
+   2,
+   4,
+   6,
+   8
+  ],
+  "z_several_defects": {
+   "independent (exp(-2 n alpha))": "1.89718",
+   "same root, same channel (exp(-2 n^2 alpha))": "-5.11191",
+   "pair adding to a root (exp(-2 alpha) at n = 2)": "5.4778"
+  },
+  "verdict": "coupling reduced to Coulomb's law of the kernel; identification kernel field = Cartan gauge potential not in the original; origin of the count 2 ambiguous"
+ }
+}

@@ -130,7 +130,7 @@ def claim(db,phase):
 
 
 # Proof lanes depend on the Lean backend and its time budget.
-UNCACHED = {"f1_solution","proof_search","lean","atlas_scenarios","atlas_scenario_case",
+UNCACHED = {"f1_solution","proof_search","lean","atlas_scenarios","atlas_scenario_case","structure_scenarios",
             "scenario_proposals","scenario_agent","scenario_research"}
 
 
@@ -198,6 +198,9 @@ def execute(spec,root):
     if lane=="atlas_scenarios":
         from atlas_scenarios import PROGRAM, run
         return run(root) if (root/PROGRAM).is_file() else {"status":"ATLAS_UNAVAILABLE","physical_solution":False}
+    if lane=="structure_scenarios":
+        from structure_scenarios import run
+        return run(root)
     if lane=="scenario_proposals":
         from scenario_model import propose
         catalogue = {name:{"required":sorted(need),"optional":sorted(extra)}
@@ -463,6 +466,7 @@ def specifications(resolution,domain,toolchain,focus,seed_research=True,packets=
         yield 100,{"lane":"discovered_original_packet","domain":str(domain),"entry":entry}
     yield 100,{"lane":"r113_synthesis","domain":str(domain)}
     yield 99,{"lane":"atlas_scenarios"}
+    yield 99,{"lane":"structure_scenarios"}
     yield 99,{"lane":"q0_rule_search","domain":str(domain),"depth":min(resolution-1,4)}
     yield 98,{"lane":"p1_origin_hypotheses"}
     yield 98,{"lane":"coherent_origin","stage":resolution-1}
@@ -735,6 +739,14 @@ def search_round(args,db,out,epoch,resolution,context,domain,focus,extras,dsl,hi
         if followups:
             enqueue(db,round_key,followups)
             rows = run_queued()
+        # Generated structure scenarios need no model: each one is assessed against the record.
+        generated = next((row["result"].get("proposals",[]) for row in rows
+                          if row["spec"]=={"lane":"structure_scenarios"} and row["queue_status"]=="done"),[])
+        generated = [(96,{"lane":"atlas_scenario_case","scenario":scenario}) for scenario in generated]
+        if generated:
+            followups = [*followups,*generated]
+            enqueue(db,round_key,generated)
+            rows = run_queued()
         if args.scenario_model and not args.scenario_proposals:
             agents = []
             from itertools import combinations
@@ -929,6 +941,8 @@ def search_round(args,db,out,epoch,resolution,context,domain,focus,extras,dsl,hi
     atlas = results.get("atlas_scenarios") or {}
     frontier["atlas_scenarios"] = atlas
     frontier["supplied_scenarios"] = [row for row in rows if row["spec"]["lane"]=="atlas_scenario_case"]
+    structure = results.get("structure_scenarios") or {}
+    frontier["structure_scenarios"] = structure
     frontier["scenario_proposals"] = results.get("scenario_proposals")
     frontier["scenario_comparisons"] = [row for row in rows
                                         if row["spec"]["lane"] in ("scenario_agent","scenario_research")]
@@ -1001,6 +1015,14 @@ def search_round(args,db,out,epoch,resolution,context,domain,focus,extras,dsl,hi
               "gates_without_acceptance_predicate":order["completeness"]["gates_without_acceptance_predicate"],
               "lanes_still_growing_with_stage":order["completeness"]["lanes_still_growing_with_stage"],
               "work_order":[item["id"] for item in order["items"]],
+              "structure_scenarios":{
+                  "status":structure.get("status"),"objects":(structure.get("pool") or {}).get("objects"),
+                  "fingerprint_items":(structure.get("fingerprint") or {}).get("items"),
+                  "best":[{key:row.get(key) for key in ("names","share","p_search_wide")}
+                          for row in structure.get("singles",[])[:1]],
+                  "significant_layers":structure.get("significant_layers"),
+                  "unexplained":len(structure.get("unexplained_after_layers",[])),
+                  "withheld":{name:row.get("p_withheld") for name,row in (structure.get("withheld") or {}).items()}},
               "atlas_scenarios":{
                   "status":atlas.get("status"),"contexts_needed":len(atlas.get("needed_contexts",[])),
                   "minimum_identifications":atlas.get("minimum_identifications"),

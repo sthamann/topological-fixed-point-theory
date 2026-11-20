@@ -388,6 +388,173 @@ den Klebevektor) und der Abschnitt zur elektromagnetischen Schließung in
 Urteil: G6 ist in der strengen Form nicht gestützt. q ist ein Gewicht und kein
 Einsetzungsabstand, und keine native Zweipunktfunktion auf dem Zylinder gibt
 die Formel. Die Benennung 5/4 = 2h des D₅ Spinors bleibt eine exakte
-Gleichheit ohne Mechanismus. Zusammen mit der Chronologie heißt das: Für den
-Rückkopplungsterm gibt es weder eine vorab erfolgte noch eine nachträglich
-gelungene Herleitung.
+Gleichheit ohne Mechanismus. Siehe die Korrektur nach dem Atlasabgleich weiter unten.
+
+## Nachtrag RADICALPROSPECT20261118: Prospektive Testgröße
+
+Reproduktion: `python3 -B check_prospective.py` (Exit 0, 8 Prüfungen bestanden).
+
+Gesichtet: Atlas (Suche nach prospektiven Vorhersagen), `verification/v283_live_killtest_scorecard.py`
+und die aktuellen Paper. α wird dort nur mit den CODATA Mittelwerten 2018 und
+2022 verglichen. Die drei einzelnen Bestimmungen und das magnetische Moment
+des Elektrons stehen in keiner Quelle des Repositorys. Die Messwerte wurden am
+18. November 2026 per Websuche bestätigt.
+
+| Bestimmung | α⁻¹ | TFPT minus Messwert |
+|---|---|---|
+| Rb Rückstoß, Morel et al. 2020 | 137,035999206(11) | +0,99 σ |
+| Elektron g−2 mit QED, Fan et al. 2023 | 137,035999166(15) | +3,39 σ |
+| Cs Rückstoß, Parker et al. 2018 | 137,035999046(27) | +6,33 σ |
+| CODATA 2022 (Mittel, Fehler aufgeweitet) | 137,035999177(21) | +1,90 σ |
+
+- Die drei Bestimmungen widersprechen einander (Rb gegen Cs 5,5 σ, g−2 gegen
+  Cs 3,9 σ, Rb gegen g−2 2,2 σ). Ihr gewichtetes Mittel ist 137,0359991778(84)
+  mit χ² = 31 bei 2 Freiheitsgraden. Der CODATA Fehler ist deshalb aufgeweitet.
+- Die eingefrorene Wurzel 137,0359992168407 liegt beim Rb Wert, 3,4 σ über dem
+  g−2 Wert und 6,3 σ über dem Cs Wert.
+- Mit Standard QED folgt aus dem TFPT α ein magnetisches Moment
+  a_e = 0,00115965218016. Gemessen ist 0,00115965218059(13), also 4,3·10⁻¹³
+  mehr (3,3 σ der Messung allein).
+- Der Koeffizient 5/4 liefert nicht das angepasste Mittel: Der CODATA optimale
+  Koeffizient 1,2404 gäbe 137,035999177, die Wurzel liegt 4,0·10⁻⁸ darüber.
+- Andere Ablesungen benutzen den ungedämpften Seed φ₀. Er weicht relativ um
+  3,2·10⁻⁵ vom Nahtwert der α Gleichung ab. Keine andere Ablesung wird mit
+  dieser Genauigkeit verglichen, dort gibt es keinen Test.
+
+Testgröße: α⁻¹ selbst gegen die nächste Einzelbestimmung. Bei einer künftigen
+Unsicherheit von 3·10⁻⁹ trennt die Vorhersage sich von den heutigen
+Zentralwerten um 3,6 σ (Rb), 16,9 σ (g−2) und 56,9 σ (Cs). Regel: Eine
+Bestimmung mit Unsicherheit bis 5·10⁻⁹, die mehr als 5 σ von 137,0359992168
+abweicht, widerlegt die Gleichung samt Exponent 5/4. Übereinstimmung innerhalb
+von 2 σ bei dieser Genauigkeit wäre die erste unabhängige Stütze.
+
+Grenze: Die heutige Nähe zum Rb Wert ist keine unabhängige Stütze, weil der
+Koeffizient mit Blick auf CODATA gewählt wurde und Rb das CODATA Mittel
+mitbestimmt. Der Test verlangt neue Messungen. Die Rechnung für a_e benutzt
+nur die führende Empfindlichkeit.
+
+## Korrektur nach Atlasabgleich (18. November 2026)
+
+Beim Eintragen in den Atlas (`problem:alpha-fixed-input-root`) zeigte sich,
+dass zwei Aussagen der Nachträge RADICALTWODEFECT und RADICALSEPARATION zu
+weit gingen. Der Atlas führt bereits:
+
+- `finding:marked-e8-sector-grade-response-realizes-five-quarters`: In der
+  markierten E₈ Quelle gilt exakt
+  G_u(q₅, q₃) = [(1 − u)/(1 − u q₅)]^(5/4) [(1 − u)/(1 − u q₃)]^(3/4). Die
+  getrennte D₅ Auslese gibt (1 − u q)^(−5/4), die gemeinsame Zeitdiagonale den
+  Exponenten 2. Das ist dieselbe Struktur wie das hier gefundene gemischte
+  Objekt und war vorher bekannt. Offen sind dort u = 48 c₃⁴, q = exp(−2α) und
+  die physische Präparation.
+- `finding:alpha-archive-term-provenance-and-master-functional-scope`: Die
+  späteren Fassungen begründen 5/4 als B γ = (3/2)(5/6) und als Antwort eines
+  Rang eins Determinanten.
+
+Richtig ist deshalb: Der Exponent 5/4 hat eine exakte Herleitung in einem
+festgelegten Modell (getrennte D₅ Auslese). Nicht hergeleitet sind die Wahl
+dieser Auslese statt der gemeinsamen Zeit, das Gewicht 48 c₃⁴ und die Kopplung
+exp(−2α). Die Chronologie bleibt: Der Wert 5/4 kam nach dem Vergleich mit dem
+Messwert, die Modellherleitung später. Der Satz, es gebe keine nachträglich
+gelungene Herleitung, ist zurückgezogen.
+
+## Nachtrag RADICALNORMAL20261118: Die Gleichung in der Variable g
+
+Reproduktion: `python3 -B check_normal.py` (Exit 0, 8 Prüfungen bestanden).
+
+- Mit g = α/(2 c₃²) = 32π² α = e²/c₃ lautet die Gleichung exakt
+  g² (g − c₃) = b₁ log(1/φ). Die Wurzel ist g = 2,30470. Die Faktoren 8 und 2
+  der üblichen Schreibweise verschwinden. Ihre Deutungen als Rang von E₈ und
+  als Ordnung von Z₂ hängen an der Wahl der Variable, ebenso die Potenz c₃⁶.
+- Die ganze Gleichung braucht fünf Zahlen: c₃, b₁ = 41/10, 4/3 (Basis
+  φ = (4/3) c₃), 48 und 5/4.
+- Leiter gegen CODATA 2022: g = (b₁ log 6π)^(1/3) gibt +5567 ppm, der Zusatz
+  c₃/3 gibt −219 ppm, die exakte Kubik mit φ = 1/(6π) gibt −252 ppm, mit
+  48 c₃⁴ sind es +3,67 ppm, mit exp(−2α) −0,037 ppm, mit (1 − q)^(−5/4)
+  +0,0003 ppm.
+- Empfindlichkeit: d ln α / d ln b₁ = 0,331 und d ln α / d ln c₃ = 1,89.
+  Andere Feldinhalte geben 135,9 (zwei Higgs), 138,2 (kein Higgs), 124,8 (vier
+  Familien) und 156,1 (zwei Familien).
+- Alles unterhalb von 3,7 ppm steckt in einer Zahl: Ohne Dämpfung bräuchte
+  CODATA das Gewicht 47,31150(3) c₃⁴ statt 48 c₃⁴. Dämpfung und Resummation
+  liefern zusammen 47,31155.
+
+Einordnung: Die Kubik mit c₃, b₁ und der Basis 1/(6π) trifft auf 252 ppm, mit
+dem Gewicht 48 auf 3,7 ppm. Diese Stufen standen schon in Fassung 1.0. Die
+letzten vier Größenordnungen hängen an der einen Zahl 47,3115 und damit an
+Dämpfung und Exponent.
+
+Atlas: Die Ergebnisse RADICALHIST, RADICALCHRONO, RADICALTWODEFECT,
+RADICALSEPARATION und RADICALPROSPECT stehen seit dem 18. November 2026 als
+vier Befunde und eine Strategie in `problem:alpha-fixed-input-root`
+(Atlasrevision c564aadd0af506c8f73fdc34). Die Torusergebnisse RADICAL,
+RADICALCHARGED und RADICALBRIDGE sowie RADICALNORMAL sind nicht eingetragen.
+
+## Nachtrag RADICALTHREE20261118: Die drei offenen Stücke
+
+Reproduktion: `python3 -B check_three.py` (Exit 0, 15 Prüfungen bestanden).
+
+### Stück 1: Form der Kubik
+
+- Die Urform der Fassung 1.0 lautet α³ − A α² − A c₃² κ = 0 mit
+  A = 1/(256π³) und κ = (b₁/2π) log(1/φ₀) = 1,9147. κ ist der Betrag, um den
+  die inverse Hyperladungskopplung in einer Schleife über das Skalenverhältnis
+  1/φ₀ läuft. Das ist dieselbe Gleichung wie heute.
+- Fassung 2.7 nennt die Koeffizienten des Potentials selbst „postulated
+  input" in einem erklärten Schema. Eine Herleitung steht in keiner Quelle.
+- Suchraum auf dem Stand der Fassung 1.0, ohne spätere Zutaten: 8064
+  Nachbargleichungen (Potenz 2 bis 4, Vorfaktor des zweiten Terms 0, 1, 2, 4,
+  Potenz von c₃ von 2 bis 8, acht Zweierpotenzen, drei Potenzen des
+  Logarithmus, zwei Normierungen von b₁, zwei Werte von φ). 26 liegen
+  innerhalb von 1 % des Messwerts. Die Zufallserwartung für einen Treffer
+  innerhalb von 3,7 ppm ist 0,0096. Genau eine Gleichung trifft, die Kubik
+  der Fassung 1.0.
+
+Urteil: Die Form ist postuliert. Auf dem Stand vor allen späteren Zutaten ist
+ihr Treffer bei 3,7 ppm in diesem Suchraum aber kein Zufallsprodukt
+(Erwartung etwa 1 %). Grenze: Den Suchraum habe ich in Kenntnis der Form
+gewählt, und ob vor Fassung 1.0 Varianten probiert wurden, ist nicht geprüft.
+
+### Stück 2: Regel für die D₅ Auslese
+
+- Jede Cartanrichtung einer Spinorwurzel von E₈ trägt genau 1/4 zur Norm
+  bei. Liest die Rückkopplung n Richtungen, ist der Exponent n/4. Das „g/4"
+  der Fassung 2.5 ist n = 5, ihr „g = 4" ist n = 4.
+- Züge gegen CODATA 2022 für n = 0 bis 8: −242, −193, −144, −96, −47, +1,9,
+  +51, +99, +148 σ. Nur n = 5 trifft.
+- Benannte Möglichkeiten: nur elektrische Ladung (n = 1), Isospin und
+  Hyperladung (n = 2), Eichrang des Standardmodells (n = 4), Rang des Trägers
+  D₅ mit B−L (n = 5), ganz E₈ (n = 8).
+- Die Trägerzahl 5 stand schon vor dem Koeffizienten 5/4 fest: Fassung 2.4
+  setzt γ(0) = 5/6 aus SU(5).
+
+Urteil: Die Regel lässt sich auf eine ganze Zahl bringen. Die Rückkopplung
+liest alle fünf Richtungen des Trägers einschließlich B−L und keine der drei
+Familienrichtungen. Der Eichrang 4 des Standardmodells ist mit 47 σ
+ausgeschlossen. Warum B−L mitzählt, ist nicht hergeleitet.
+
+### Stück 3: Gewicht 48 c₃⁴ und Dämpfung
+
+- 48 = 16 · 3: ein Spinor von D₅ mit 16 Zuständen mal drei der vier
+  Gewichte von A₃. So steht es auch im vorhandenen Atlasbefund.
+- exp(−2α) = [exp(−e² c₃)]⁴ = exp(−α |β|²) mit der Wurzelnorm |β|² = 2,
+  und 2α = g/(16π²). Damit ist q = 48 [c₃ exp(−e² c₃)]⁴.
+- Die Dämpfung wirkt nur auf den Vierfachterm: Dämpft man auch die Basis
+  (4/3) c₃, verfehlt die Wurzel um mehr als 10⁶ σ.
+- Die Dämpfung ist für alle 48 Zustände gleich: Eine von der elektrischen
+  Ladung oder der Hyperladung abhängige Dämpfung verfehlt um mehr als
+  10⁴ σ.
+- Dämpfung exp(−s α) mit s = 3/4, 5/4, 2, 4: nur s = 2 trifft. Die Dämpfung
+  benutzt die ganze Wurzelnorm, der Oszillatorfaktor nur den Anteil in D₅.
+- Das Gewicht 48 c₃⁴ steht schon in den Fassungen 1.0 und 2.2.
+
+Urteil: Gewicht, Dämpfung und Exponent lassen sich in eine Aussage fassen:
+φ − (4/3) c₃ = x^h (1 − x)^(−2 h₅) mit x = 48 c₃⁴ exp(−2α), h = 1 und
+h₅ = 5/8. Die Dämpfung ist keine elektrische Selbstenergie der einzelnen
+Zustände. Nicht hergeleitet sind die Zeit 2α und die Potenz c₃⁴.
+
+### Stand nach den drei Stücken
+
+Hergeleitet ist keines der drei Stücke. Eingegrenzt sind sie auf: eine
+postulierte Kubik mit Suchraumerwartung 0,0096, eine ganze Zahl n = 5 und
+eine Zeit 2α. Offen bleibt ein Operator, der die Zeit am ganzen Klebevektor
+und die Oszillatorgrade nur an den fünf Trägerrichtungen liest.

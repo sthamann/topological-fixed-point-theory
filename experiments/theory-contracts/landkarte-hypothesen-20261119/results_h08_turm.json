@@ -1,0 +1,74 @@
+{
+ "name": "h08_turm",
+ "checks": [
+  {
+   "check": "erweiterter Hamming Code [8,4,4]: 16 Wörter, Gewichte 0, 4 (vierzehnmal), 8",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "Construction A gibt E8: 240 Vektoren der Norm 2",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "J (Vertauschen der Hälften mit Vorzeichen) ist eine Symmetrie des Gitters mit J^2 = -1: die gaußsche Struktur",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "der Wachstumsschritt phi = 1 + J verdoppelt jede Norm exakt (phi^T phi = 2)",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "Index [L : phi L] = 16, also Determinante der Stufe 16 gleich 256",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "Stufe 16 = {(u, u + v): u in L, v in phi L} hat KEINE Wurzeln: kein Vektor der Norm 2 von E8 + E8 liegt darin",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "kürzeste Vektoren der Stufe 16 haben Norm 4; ihre Anzahl ist 4320 (Barnes Wall Gitter)",
+   "pass": true,
+   "detail": "(3840, 240, 4320)"
+  },
+  {
+   "check": "also: Wurzeln, und damit Eichfelder in dieser Lesart, enden bei E8",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "J hat nur die Eigenwerte +i und -i: jeder J feste reelle Teilraum hat gerade Dimension",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "ABBRUCHKRITERIUM GREIFT: D5 hat Rang 5 und A3 Rang 3, beide ungerade. Keine gaußsche Struktur kann D5 + A3 erhalten; der Wachstumsschritt mischt Träger und Familie",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "KEINE RELAXATION: alle Dehnungen von phi sind Wurzel 2; Raten 2/3 und 1/3 können aus diesem Schritt nicht kommen",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "Stufe mit fünf Qubits: RM(2,5) hat Dimension 16, ist selbstdual und hat Mindestabstand 8 (Reproduktion von ORIGINIDEAS20261119)",
+   "pass": true,
+   "detail": "8"
+  },
+  {
+   "check": "NICHT ENTSCHEIDBAR HIER: ob der hinzukommende Tensorfaktor ein Ort ist. Dafür gibt es keine Rechnung ohne das Originalnetz",
+   "pass": true,
+   "detail": ""
+  }
+ ],
+ "data": {
+  "kuerzeste_vektoren": 4320,
+  "urteil": "Turm exakt (E8 -> Barnes Wall 16 über 1 + i, keine Wurzeln mehr). Als Wachstumsregel für TFPT ausgeschlossen: der Schritt kann die Zerlegung D5 + A3 nicht erhalten (ungerade Ränge) und trägt keine Relaxationsraten."
+ }
+}

@@ -1,0 +1,34 @@
+{
+ "contract_id": "SECHS20261119",
+ "date": "2026-11-19",
+ "folder": "experiments/theory-contracts/petersen-six-20261119",
+ "question": "Legt die Teilung (3+2)+3 den Exponenten 6 im Transfer {1, (2/3)^6, (1/3)^6} fest?",
+ "verdict": "Teilweise. Schon im Original (v808): Petersengraph, Schalen 1+3+6, Sechserkreis, spec(P^6). Neu nachgerechnet: gleichmäßige Leiter nur bei fünf Plätzen; 6 = Ordnung von (3-Zyklus)(2-Zyklus) = kürzester gerader Rundweg ohne Umkehr, nur bei fünf Plätzen; Positivität gibt nur 'gerade'. Die Regel 'kürzester positiver Rundweg' ist ein Kandidat, nicht hergeleitet; Abbildung Spitzen-Schalen fehlt.",
+ "physical_solution": false,
+ "checks": "20/20",
+ "promoted": false,
+ "followup": {
+  "contract_id": "SECHSB20261119",
+  "question": "Sind die drei Zustände des Originaltransfers die drei Schalen?",
+  "verdict": "Nein, ausgeschlossen für jede Reihenfolge und jede Funktion des Schalenschritts. Teillesarten: Formen auf Schalen (Raten ja, Parität nein); Sechserkreis (Verlust 1/3 und Parität ja; fester Zustand, Vielfachheit, Sprungregel nein). Sechs bleibt gesetzt.",
+  "checks": "20/20",
+  "physical_solution": false,
+  "promoted": false
+ },
+ "followup2": {
+  "contract_id": "SECHSC20261119",
+  "question": "Gibt es unter allen Operatoren mit der Symmetrie der Teilung 3 + 2 einen, der zusammengefasst den Originaltransfer ergibt?",
+  "verdict": "Aus dem Graphen allein: nie (0 von 2719 Teilungen). Mit freien Gewichten: 36 bzw. 57 Teilungen, nicht erzwungen. Ausgezeichnet: fest = FF und WW, Paar = zwei Seiten des Sechserkreises; reine Raten lassen zwei Regeln, eine davon der schwache Platzwechsel bei fester Farbe = Paarregel des Originals dreifach. Kein Petersenschritt. Sechs bleibt gesetzt.",
+  "checks": "13/13",
+  "physical_solution": false,
+  "promoted": false
+ },
+ "followup3": {
+  "contract_id": "SECHSD20261119",
+  "question": "Gibt es eine Regel, aus der der ganze Originaltransfer samt Sechs folgt?",
+  "verdict": "Teilweise. Regel: drei Familienbits, sechs gleich wahrscheinliche Züge. Daraus exakt: bleiben 1/2, wechseln 1/6, Verlust 1/3, Leiter 1 - n/3, Wand bei 3, Paritätswechsel, vier Urnenzustände, Steigung 2, Spektrum der Hand. Eindeutig unter 24 Regeln. Nicht hergeleitet: Hand = Zahl der Züge; Bindung der Bits an P1/P2; gemeinsamer Ursprung mit der Petersenseite.",
+  "checks": "23/23",
+  "physical_solution": false,
+  "promoted": false
+ }
+}

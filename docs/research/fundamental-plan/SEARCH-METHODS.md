@@ -713,3 +713,44 @@ ActualOriginalPadm/Berezin/Domain/Bosonweight mit dem tatsächlichen ganzen
 Quellenaufruf vergleichen. Vorhandene Registerkarten und spätere Gaußregeln
 behalten ihre Originalprämissen,keine neu gewählte Projektion einschieben.
 R109 größere Wechselwirkungsquelle und ihre tatsächliche Fortsetzung erhalten.
+
+## S41. Reihenprüfer: viele Ursprungshypothesen gleichzeitig bewerten (19. November 2026)
+
+**Zweck:** Nicht eine Hypothese nach der anderen, sondern ganze Familien in einem Lauf gegen dieselben
+festen Zielgrößen der Theorie prüfen und die Einzigkeit im erklärten Suchraum messen.
+
+**Aufruf:** `cd experiments/theory-contracts/hypothesis-sweep-20261119 && python3 -B sweep.py`
+(Rangliste in `RANKING.md`, Rohdaten in `results_sweep.json`; Prüfung mit `python3 -B check_sweep.py`).
+
+**Erweitern:** neue Familie als Funktion `fam_*()` in `sweep.py`, oder ohne Code über
+`hypotheses_extra.json` mit Einträgen `{"id", "text", "wahl", "pred": {Zielgröße: Wert}}`.
+Zielgrößen: `c3, k, expo, ratio, n48, clock, five, lam, A, B`.
+
+**Regel:** „trägt“ heißt nur widerspruchsfrei zu den Zielgrößen. Jede Hypothese nennt die Zahl ihrer
+freien Wahlen. Ein Treffer ist erst Fortschritt, wenn seine Auswahl aus dem Original folgt.
+
+## S42. Szenariosuche in OriginLab: Objekte erzeugen statt Hypothesen aufschreiben (19. November 2026)
+
+**Zweck:** Neue Szenarien entstehen lassen, die niemand vorher formuliert hat, und sofort gegen Zufall messen.
+Bisher kam eine Regel, die nicht im Atlas steht, nur über einen Modellaufruf in den Supervisor. Die Spur
+`structure_scenarios` erzeugt solche Szenarien ohne Modell und setzt keinen festen Engpass voraus.
+
+**Aufruf:** `python3 -B research/originlab/structure_scenarios.py --fakes 1000` (JSON auf die Ausgabe), als
+Kampagne `python3 -B research/originlab/main.py --campaign structure_scenarios --jobs 1 --out <Ordner>`, im
+Supervisor `autonomy.py` läuft sie in jeder Stufe mit. Tests: `python3 -B -m unittest test_structure_scenarios`
+im Ordner `research/originlab`.
+
+**Bausteine:** Fingerabdruck aus dem Atlas (jede ganze Zahl und jeder Bruch, die belegte Befunde aus mindestens
+drei unabhängigen Problemen nennen). Objektvorrat in `structure_objects.py`. Ein Objekt darf die Objekte nennen,
+die es nach Bauart enthält; sein Abschluss tritt mit an. Gewicht nach Seltenheit, Zufallsvergleich über den
+ganzen Vorrat, Schichten (was das beste Objekt trägt, wird entfernt), Rückhaltetest (auf zwei Dritteln
+auswählen, das letzte Drittel vorhersagen). Die besten Szenarien gehen als `hypothesis:structure-…` an
+`atlas_scenarios.assess`.
+
+**Erweitern:** eine Funktion `gen_*()` in `structure_objects.py`, Merkmale als `(kind, value, role)`.
+Schalter `--ratios` ergänzt Verhältnisse zweier Zahlen desselben Objekts.
+
+**Regel:** Gleiche Zahl ist nicht gleiche Sache. Der Fingerabdruck ist der Bestand der Theorie, kein Messwert.
+Wer nach einem Lauf neue Objektfamilien ergänzt, hat nachträglich ausgewählt; das steht dann im Bericht.
+Der erste Versuch außerhalb von OriginLab liegt als Beleg in
+`experiments/theory-contracts/scenario-engine-20261119` und wird nicht weitergeführt.

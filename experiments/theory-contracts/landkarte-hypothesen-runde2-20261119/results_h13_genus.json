@@ -1,0 +1,86 @@
+{
+ "name": "h13_genus",
+ "checks": [
+  {
+   "check": "Doppelüberlagerung der Kugel über n Marken hat Geschlecht (n - 2)/2; nur n = 4 gibt einen Torus",
+   "pass": true,
+   "detail": "{2: '0', 4: '1', 6: '2', 8: '3', 10: '4', 12: '5'}"
+  },
+  {
+   "check": "flache Kugeln mit Kegelpunkten gibt es genau vier: (2,2,2,2), (2,3,6), (2,4,4), (3,3,3)",
+   "pass": true,
+   "detail": "[(2, 2, 2, 2), (2, 3, 6), (2, 4, 4), (3, 3, 3)]"
+  },
+  {
+   "check": "nur (2,2,2,2) hat ausschließlich Halbdrehungen (Defizit pi). Mit lauter Halbdrehungen folgt aus Gauss Bonnet n pi = 4 pi, also vier Marken",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "nur (2,2,2,2) hat vier Punkte und damit eine freie Lage (ein Doppelverhältnis). Die drei anderen sind starr. Die Frage nach der Markenlage entsteht also genau durch die Halbdrehung",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "(2,4,4) ist der quadratische Torus geteilt durch die Vierteldrehung, (2,3,6) und (3,3,3) gehören zum Sechseck. Ein Kegelpunkt der Ordnung 4 erzwingt das Quadrat ohne weitere Wahl",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "ORIGINAL: der Abschnitt zur gemeinsamen Herkunft leitet die Vier schon so her (flache sphärische Z2 Klasse, Defizit pi, Gauss Bonnet)",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "ORIGINAL: die quadratische Lage ist dort ausdrücklich zusätzlich zur Anzahl",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "die zugehörige Originalprüfung v216 läuft durch",
+   "pass": true,
+   "detail": "--- v216 QGEO.MARKS.03 four marks from Gauss-Bonnet (count derived; square modulus open): 6 passed, 0 failed ---"
+  },
+  {
+   "check": "URTEIL: flach, Torus als Überlagerung und Fouriertransformation sind drei Namen für dieselbe Bedingung. Die Hypothese ist richtig, aber keine neue Herleitung",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "ZIRKEL: Flachheit und Halbdrehung sind im Original gesetzt (Klasse gewählt), nicht hergeleitet. Schieber und Uhr kommen dort aus der Klebegruppe, also von P2. Die eigene Abbruchregel greift für den Teil mit Schieber und Uhr",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "NEU ist nur die Schärfung: Halbdrehung ist der einzige flache Fall mit freier Lage; ein Punkt der Ordnung 4 ließe keine Wahl",
+   "pass": true,
+   "detail": ""
+  }
+ ],
+ "data": {
+  "flache_kugeln": [
+   [
+    2,
+    2,
+    2,
+    2
+   ],
+   [
+    2,
+    3,
+    6
+   ],
+   [
+    2,
+    4,
+    4
+   ],
+   [
+    3,
+    3,
+    3
+   ]
+  ],
+  "urteil": "Richtig, aber schon im Original (v216). Keine neue Herleitung; die Annahmen flach und Halbdrehung bleiben gesetzt."
+ }
+}

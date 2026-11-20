@@ -1,0 +1,56 @@
+{
+ "contract_id": "HYPCHECK20261119",
+ "date": "2026-11-19",
+ "folder": "experiments/theory-contracts/landkarte-hypothesen-20261119",
+ "question": "Halten die zehn Hypothesen der Landkarte ihrem eigenen Test stand?",
+ "verdict": "Keine löst F1. Wörtlich gefallen: 4, 5, 6 (Dynamik), 8, 10. Bei 7 fällt die genannte Formel, eine exakte gemeinsame Regel ersetzt sie. In engerer Fassung exakt: 1, 2, 3, 9. Sechs neue exakte Befunde, keiner bindet P1 an P2 oder liefert Dynamik. Nichts befördert, kein Ledgerwechsel, kein Commit.",
+ "physical_solution": false,
+ "resolved": [
+  "Eichalgebra (dim 12) = Zentralisator der Halbdrehung der Hauptdrehgruppe SL(2) auf C^5",
+  "Stabilisatorzustände auf 3 und 4 Qubits: symmetrische mit verschiedenen Sternen sind regelmäßige Vielecke",
+  "ein Flussquant durch die Einheitszelle gibt Varianz 2 c3 je Quadratur (h = 1 als Folge)",
+  "Trägerbündel auf dem Torus: Grad 8, acht Schnitte = 5 gerade + 3 ungerade",
+  "Coxeter Viererzyklus der Marken ist Möbiussymmetrie genau in harmonischer Lage; Klebegenerator = Kommutator von Schieber und Uhr",
+  "elliptische Fläche mit Punkt der Ordnung 4: Delta = t^4 (16 t + 1), Fasern I4, I1, I1*, Torsion = Klebevektor",
+  "Klebevektor als maximal verschränkter, unter S x S und T x T fester Zustand; fester Raum zweidimensional",
+  "eta_k(p) = (p^2 - 1)/(6p) - k(p - k)/p für p = 2..12; Nullstelle bei k = 1 nur p = 5",
+  "Knotentafel des erweiterten E8 Diagramms mit Klebenormen",
+  "q = 2/9 = (2/3)(1/3) ist der einzige Punkt der GKLS Familie mit reinen Spiegelungssprüngen",
+  "|a_p| der Kurve y^2 = x^3 - x ist durch p = a^2 + b^2 erzwungen"
+ ],
+ "kills": [
+  "dieselbe Fünf als Raumzeit Spin 2 mit vertauschender Eichwirkung",
+  "Klebegruppe wirkt als z -> iz + 1/2 auf den Marken",
+  "D5 + A3 als Deformation der E8 Singularität",
+  "Zeit als Umlauf der elliptischen Fläche (unendliche Ordnung)",
+  "modulare Wirkung auf den sechzehn Sektoren als Dynamik (unitär, Produkt, keine Raten)",
+  "reduzierter Bell Zustand als Petz Referenz (1/4 auf vier gegen 1/5 auf fünf)",
+  "k(p - k)/(2p) als Randinvariante",
+  "Barnes Wall Stufe erhält D5 + A3 (gerade Dimension erzwungen) und gibt Raten (alle singulären Werte sqrt 2)",
+  "Schärfeprinzip als eindeutige Auswahl von q",
+  "Frobenius Spuren als Träger von Theoriezahlen (im Bereich der Zufallskurven)"
+ ],
+ "open": [
+  "Möbiuskovarianz des originalen Kerns über mu_4 hinaus",
+  "Wahl einer Ikosaedergruppe in S6, die Fix_P(Sym^4 C^4) mit Sym^4 C^2 gleichsetzt",
+  "Gleichsetzung Fluss durch den Markentorus = Chernzahl des Endlinienbündels",
+  "zwei Pole neben den vier Marken im Original (R113 gesperrt)",
+  "sitzt P1 an einem Schnitt Z_p mit Windung k",
+  "Regel, die q = 2/9 statt 1/4 wählt (Kandidat: nur native Spiegelungen springen)"
+ ],
+ "replay": "cd experiments/theory-contracts/landkarte-hypothesen-20261119 && for s in h01_weyl h02_ghz h03_fluss h04_affin h05_milnor h06_bell h07_kac h08_turm h09_scharf h10_frobenius; do python3 -B check_$s.py; done",
+ "checks_passed": true,
+ "checks": {
+  "h01_weyl": "10/10",
+  "h02_ghz": "7/7",
+  "h03_fluss": "7/7",
+  "h04_affin": "11/11",
+  "h05_milnor": "14/14",
+  "h06_bell": "11/11",
+  "h07_kac": "13/13",
+  "h08_turm": "13/13",
+  "h09_scharf": "12/12",
+  "h10_frobenius": "12/12"
+ },
+ "atlas": "eingetragen am 19.11.2026: vier Befunde in problem:c3-p1-p2-shared-origin-reconciliation (Revision d2f36ed1c3a39bf5bda2fb25), einer in problem:p1-singularity-seam-reset (Revision 1823e3ca9e529dc86c8e8c0a). Kein Ledgerwechsel."
+}

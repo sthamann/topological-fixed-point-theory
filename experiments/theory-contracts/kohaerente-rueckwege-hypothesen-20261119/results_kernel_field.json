@@ -1,0 +1,129 @@
+{
+ "name": "kernel_field",
+ "checks": [
+  {
+   "check": "original: the primitive kernel contains 'No carrier split, no hypercharge operator, no family geometry'",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "original: 'Gauge fixing, ghosts, and carrier-compatible bosonic fluctuations are introduced only after the hard carrier theorem': a gauge potential is not kernel data",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "original: phi_base = (1 - tr_E Y^2)/pi with gamma = tr_E Y^2 = 5/6, and delta_top = Omega_adm c3^4 is an 'occupancy reinterpretation', not a kernel computation",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "verdict A: the original does not fix the kernel field as a gauge potential; it enters, if at all, with the later fluctuation package",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "link: the norm |h|^2 = 4 mu = 5/6 of the hypercharge direction in the chart is the original carrier norm gamma = tr_E Y^2",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "with w = 1/(4 pi): c3 = w/2, delta_top = 48 c3^4 = 3 w^4, phi_base = 1/(6 pi) = (2/3) w",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "delta_top in a menu of 32 Gaussian readings: exactly two hits, fourth cumulant of x^2 at variance c3 and fourth moment at pair weight w^2",
+   "pass": true,
+   "detail": "32"
+  },
+  {
+   "check": "only the second uses the variance of the damping: three pairings of four marks, each pair joined once on each of the two components (w * w); the first needs half that variance",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "control: independent pairings on the two components would give 9 w^4, a complex field 2 w^4: the pairing must be the same on both (deck invariant)",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "the alpha readout separates the counts: 3 pairings within 2 sigma, 2 or 9 far outside",
+   "pass": true,
+   "detail": "{'3 w^4': '1.89718', '2 w^4': '-548036.0', '9 w^4': '3.28472e+6'}"
+  },
+  {
+   "check": "not explained by the reading: phi_base = (2/3) w. In the original it is (1 - gamma)/pi; no Gaussian object of the menu gives 2/3 (moments and cumulants are integers times powers)",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "four equal charges on the seam circle, interacting through the kernel 1/(4 pi d): the only equilibrium reached from 60 random starts is the square (marks at mu_4)",
+   "pass": true,
+   "detail": "{(np.float64(1.5708), np.float64(3.14159), np.float64(4.71239))}"
+  },
+  {
+   "check": "without the reflection (free on the sphere) the equilibrium is the regular tetrahedron, with lower energy than the square",
+   "pass": true,
+   "detail": "tetrahedron 3.674235, square 3.828427"
+  },
+  {
+   "check": "square: cross ratio harmonic, j = 1728 (square torus tau = i); tetrahedron: equianharmonic, j = 0 (hexagonal torus)",
+   "pass": true,
+   "detail": "j = 1728.0000-0.0000j, 4.72e-22"
+  },
+  {
+   "check": "on the sphere the square is a saddle (energy falls when alternate marks leave the plane): it is stable only with the reflection, as recorded for tau = i in P1KERN20261119",
+   "pass": true,
+   "detail": "-1.828427098615748"
+  },
+  {
+   "check": "consistency with the record: hexagon excluded by alpha (recorded alpha^-1 = 104.42), square needs the reflection; here the same two shapes appear as the two equilibria of the kernel",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "pairing sum of the Coulomb kernel over the three pairings on a rectangle with half angle theta: 1/4 + 1/sin^2(2 theta); at the square exactly 5/4",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "the same sum is 3 for the flat seed channel (the count in delta_top = 3 w^4) and 5/4 for the full Coulomb kernel at the square; 9/16 for 1/d^2, 9/8 at the tetrahedron",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "pattern only: 5/4 is also the fixed exponent B gamma = (3/2)(5/6) and delta_2/delta_top^2; no step turns a pairing sum into the exponent of (1 - q), so this is not a derivation",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "verdict C: mark position is no longer a free input under the reading: reflection (marks on the seam) plus the kernel's own repulsion gives mu_4; the premise 'marks carry equal charge and repel through the kernel' is new and not in the original",
+   "pass": true,
+   "detail": ""
+  }
+ ],
+ "data": {
+  "readings_of_delta_top": [
+   "cumulant 4 of x^2, variance c3",
+   "moment <x^4>, variance w^2"
+  ],
+  "z_by_pairing_count": {
+   "3 w^4": "1.89718",
+   "2 w^4": "-548036.0",
+   "9 w^4": "3.28472e+6"
+  },
+  "pairing_sums": {
+   "flat (one seed channel)": 3.0,
+   "Coulomb 1/d": 1.25,
+   "1/d^2": 0.5625,
+   "log": 0.240226507,
+   "Coulomb at the tetrahedron": 1.125
+  },
+  "energy": {
+   "square": 3.82842712474619,
+   "tetrahedron": 3.6742346141747664
+  },
+  "second_derivative_out_of_plane_at_square": -1.828427098615748,
+  "verdict": "A: gauge potential not kernel data in the original. B: delta_top = three pairings of four marks at the damping variance; phi_base not explained. C: marks at mu_4 are the Coulomb equilibrium on the seam circle; 5/4 as pairing sum is a pattern."
+ }
+}

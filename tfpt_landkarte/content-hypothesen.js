@@ -1,0 +1,178 @@
+/* TFPT Landkarte · Teil 3: zehn Hypothesen (19. November 2026), am selben Tag geprüft.
+   Der obere Teil ist der Vorschlag im Wortlaut. Der Block am Ende trägt das Urteil der Prüfung
+   HYPCHECK20261119 (experiments/theory-contracts/landkarte-hypothesen-20261119). Kein Ledgerwechsel. */
+(function () {
+  const T = window.TFPT;
+  T.kinds.hyp = "Hypothese";
+  const H = (o) => T.nodes.push(Object.assign({ k: "hyp", st: "neu", src: [] }, o));
+
+  H({ id: "hyp-weyl", nr: 1, t: "Die vier Marken sind die Hauptrichtungen eines Krümmungsspinors",
+    s: "Der Träger mit fünf Plätzen ist der Raum der Spin 2 Größen auf der Himmelskugel. Damit wären Lorentzgruppe und Spin 2 schon in P2 enthalten.",
+    b: ["Funktionen mit einfachen Polen an vier Marken auf der Kugel sind Polynome vom Grad vier. Das ist die fünfdimensionale Darstellung von SL(2,C), also Spin 2. SL(2,C) ist die Lorentzgruppe, wie sie auf der Himmelskugel wirkt.",
+      "In der Gravitation ist genau so ein Polynom der Weyl Spinor. Seine vier Nullstellen sind die Hauptnullrichtungen. Vier verschiedene Marken heißen dort Petrov Typ I, und die harmonische Lage (Quadrat) ist die Bedingung J = 0 für die kubische Invariante.",
+      "Die Aufteilung 3 + 2 wäre gerade und ungerade unter der Halbdrehung: drei Komponenten mit geradem, zwei mit ungeradem Gewicht."],
+    why: ["Kein Ansatz liefert Ort und 3+1 Dimensionen", "Universalraum Runden gaben nur B_μν, kein Spin 2", "OPH Randwege schließen zu PSL(2,C)", "τ = i ist genau dort, wo E₆ verschwindet, also J = 0"],
+    gives: ["L", "W"],
+    test: "Prüfen, ob die μ₄ Wirkung, die 3+2 Aufteilung und die Hyperladung des Originals unter der vollen Möbiuswirkung auf Grad 4 Polynomen genau die Gewichtszerlegung sind. Dann prüfen, ob die OPH Gruppe auf derselben Kugel wirkt.",
+    kill: "Wenn der originale P1 Kern außer μ₄ keine Möbiuskovarianz trägt oder die Hyperladung kein Element dieser Wirkung ist.",
+    n: ["5", "4", "2", "3+1"], g: ["Raumzeit", "Lorentz", "Spin 2", "Marken", "Gravitation"],
+    l: [["viermarken", "testet"], ["p2", "testet"], ["netz", "testet"], ["grav", "testet"], ["dyn-oph", "gleich"], ["ur-first", "testet"]] });
+
+  H({ id: "hyp-ghz", nr: 2, t: "Der Träger sind vier Qubits, die Marken sind ihr GHZ Zustand",
+    s: "Fünf Plätze sind der symmetrische Teil von vier Qubits. Das Quadrat ist die einzige Markenlage, die ein Stabilisatorzustand tragen kann.",
+    b: ["Ein symmetrischer Zustand von vier Qubits hat fünf Komponenten und lässt sich als vier Punkte auf der Kugel zeichnen (Majorana Darstellung). Das Polynom z⁴ − 1 gehört zum Zustand |0000⟩ − |1111⟩.",
+      "Erste Rechnung vom 19.11.: Von 36720 Stabilisatorzuständen auf vier Qubits sind 18 symmetrisch. Sechs haben zusammenfallende Marken. Alle zwölf mit vier verschiedenen Marken sind harmonisch (j = 1728). Der Tetraederzustand kommt nicht vor.",
+      "Damit wäre das fehlende Element der Ordnung vier das Phasengatter, und die Auswahl der Markenlage wäre dieselbe Aussage wie die Codestruktur des Gitters.",
+      "Grenze: Für n Qubits wählt dasselbe Prinzip ein regelmäßiges n Eck. Es wählt die Lage, nicht die Vier."],
+    why: ["Markenlage braucht ein Element der Ordnung 4 (Reihenprüfer)", "60 Stabilisatorstrahlen und Clifford Gruppe im Gitter", "Sym⁴ und fünf Codewortsummen stehen schon im Atlas"],
+    gives: ["A", "Z"],
+    test: "Die fünf Codewortsummen des Originals mit den Dicke Zuständen vergleichen und prüfen, ob der dortige Erasure Intertwiner den GHZ Zustand festhält.",
+    kill: "Wenn die fünf Plätze des Originals keine symmetrische Vier Qubit Struktur tragen, bleibt nur eine Zahlengleichheit.",
+    n: ["4", "5", "16", "36720", "12"], g: ["Qubit", "Clifford", "Auswahl", "Marken", "Code"],
+    l: [["taui", "testet"], ["viermarken", "testet"], ["pat-qubit", "karte"], ["pat-code", "karte"], ["qcode", "testet"], ["hyp-weyl", "gleich"]],
+    src: ["tfpt_landkarte/checks/check_stabilizer_marks.py"] });
+
+  H({ id: "hyp-fluss", nr: 3, t: "Die Naht trägt genau ein Flussquant",
+    s: "Die Einheitswindung ist eine Chernzahl. Dann folgen eine chirale Nullmode, die Konvention h = 1 und der gaußsche Grundzustand aus einem Satz.",
+    b: ["Auf einer Fläche mit einem Flussquant hat das unterste Landau Niveau genau einen Zustand, und er ist eine Thetafunktion, also gaußisch. Der Indexsatz gibt genau eine Nullmode, und ihr Drehsinn ist das Vorzeichen des Flusses.",
+      "Flussquantisierung setzt Fläche mal Feld gleich 2π. Das wäre die Konvention h = 1, die am 19.11. noch in Kenntnis des Zielwerts gewählt wurde.",
+      "Auf der Kugel hat Fluss vier genau fünf Zustände. Das ist wieder der Träger. Mit Fluss N wirken die Verschiebungen als Uhr und Schieber mit N Stellungen: vier gibt zwei Qubits, fünf gibt den Fünfertakt."],
+    why: ["„Eine chirale Nullmode begründen“ ist offen", "Grundzustand der Vierteldrehung gibt exp(−2α), aber h = 1 war gewählt", "Ausgaben enthalten nur π, also gaußische Momente", "c₃ trennt Quadrat mit chiraler Nullmode nicht von Rechteck mit voller"],
+    gives: ["Z", "A", "O"],
+    test: "Am originalen Randoperator mit Windung eins den Index auf der flachen Viermarkenkugel und auf ihrer Doppelüberlagerung ausrechnen. Entscheidend ist, welcher Fluss auf dem Torus liegt.",
+    kill: "Wenn der Index auf der Überlagerung nicht eins ist oder beide Drehsinne gleich oft vorkommen.",
+    n: ["1", "4", "5", "2π"], g: ["Zustand", "Windung", "Index", "Fourier", "Alpha"],
+    l: [["p1", "testet"], ["dyn-vacuum", "testet"], ["dyn-p1kern", "testet"], ["alpha", "testet"], ["quelle", "testet"]] });
+
+  H({ id: "hyp-affin", nr: 4, t: "Die Klebung wirkt als Vierteldrehung plus halbe Verschiebung",
+    s: "z → iz + ½ auf dem quadratischen Torus vertauscht die vier Marken im Kreis. Ihre zwei Fixpunkte wären die fehlenden Pole.",
+    b: ["Die reine Vierteldrehung hält zwei der vier Marken fest und kann sie deshalb nicht alle gleich behandeln. Mit halber Verschiebung dazu läuft 0 → ½ → (1+i)/2 → i/2 → 0. Das ist ein Element der Ordnung vier, das alle Marken durchläuft.",
+      "Gelesen als Operation: erst Fouriertransformation, dann Verschiebung um den Klebevektor. Das ist ein Clifford Element.",
+      "Auf der Kugel bleiben zwei Punkte fest, die Pole. Vier Marken und zwei Pole bilden ein Oktaeder. Die Überlagerung über allen sechs ist die Bolzakurve y² = x⁵ − x mit 48 Symmetrien."],
+    why: ["Offen: Wirkung der Klebegruppe auf den Marken im Original zeigen", "Kleinsche Vierergruppe wirkt transitiv, wählt aber nichts", "Picard G48 und binäre Oktaedergruppe stehen im Atlas nebeneinander"],
+    gives: ["A", "T"],
+    test: "In den Selektorkontakten von R112 und R113 nach zwei ausgezeichneten Punkten neben den vier Marken suchen und prüfen, ob der D₅ Klebegenerator dort als diese affine Abbildung wirkt.",
+    kill: "Wenn das Original eine Marke auszeichnet, etwa als Ursprung oder ungerade Spinstruktur. Dann gibt es keine Wirkung, die alle vier durchläuft.",
+    n: ["4", "1/2", "6", "48", "5"], g: ["Verklebung", "Marken", "Fourier", "Auswahl", "Clifford"],
+    l: [["taui", "testet"], ["e8", "testet"], ["pat-picard", "gleich"], ["dyn-p1kern", "testet"], ["hyp-ghz", "karte"]] });
+
+  H({ id: "hyp-milnor", nr: 5, t: "P1 und P2 sind Faser und Umlauf einer einzigen Funktion",
+    s: "Die vier Marken sind die Lösungen von z⁴ = t. Läuft t einmal um null, drehen sie sich um ein Viertel. Zeit wäre der Umlauf um den kritischen Wert.",
+    b: ["In der Singularitätentheorie ist die Faser von z⁴ das Gitter A₃ mit Umlauf der Ordnung vier. Die Singularität x² + y³ + z⁵ hat als Faser das Gitter E₈, und ihr Umlauf ist das Produkt der Umläufe zu 2, 3 und 5. Das wäre der Dreißigertakt als C₅ × C₆ ohne Zusatzannahme.",
+      "Solche Funktionen sind Potentiale von Landau Ginzburg Modellen. Dort gibt es eine positive Metrik auf den Grundzuständen und eine Skalenentwicklung, die sie bewegt. Das wäre ein Kandidat für Positivität und Zeit aus derselben Quelle.",
+      "Zahl am Rand, noch ohne Abbildung: Die zentralen Ladungen 1 − 2/h geben für D₅ und A₃ zusammen 3/4 + 1/2 = 5/4."],
+    why: ["Das Clock Getriebe ist exakt, aber als Zeit gescheitert, weil eine Zählrichtung fehlt", "(2,3,5) und Brieskorn tauchen als Muster auf", "Gesucht ist ein Vorgang, kein weiteres Objekt (Diagnose 16.11.)"],
+    gives: ["T", "P", "A"],
+    test: "Eine Funktion mit Viererdrehsymmetrie suchen, deren Faser D₅ ⊕ A₃ mit Z₄ Verklebung in E₈ ergibt, und ihre Grundzustandsmetrik am Punkt z⁴ mit c₃ vergleichen.",
+    kill: "Wenn keine Deformation oder Faltung der E₈ Singularität die Zerlegung D₅ ⊕ A₃ mit zyklischer Klebung liefert.",
+    n: ["4", "30", "2", "3", "5", "5/4"], g: ["Clock", "Zeit", "Singularität", "Quelle", "Positivität"],
+    l: [["clocks", "testet"], ["a3", "testet"], ["e8", "testet"], ["quelle", "testet"], ["pat-hyper", "karte"], ["pat-a4cut", "gleich"]] });
+
+  H({ id: "hyp-bell", nr: 6, t: "Verklebung ist Verschränkung",
+    s: "Träger und Familie haben je vier Sektoren. Der E₈ Abschluss ist ihr maximal verschränkter Zustand, und die Bewegung ist die modulare Wirkung auf diesen sechzehn Sektoren.",
+    b: ["D₅ und A₃ haben je eine Klebegruppe Z₄ mit Gewichten 0, 5/8, 1/2, 5/8 und 0, 3/8, 1/2, 3/8. Der Klebevektor paart jeden Sektor mit seinem Gegenstück. Als Zustand geschrieben ist das ein Bell Zustand zweier Systeme mit vier Stellungen.",
+      "Als Phasen der Materie sind das Kitaevs Stufen 10 und 6 von sechzehn. Die Naht wäre die Grenze zwischen beiden.",
+      "Die Vierteldrehung wirkt auf den Sektoren als diskrete Fouriertransformation, die Verdrehung als Phasen exp(2πi·Gewicht). Das ist eine endliche, unitäre Wirkung, die den Klebevektor festhält."],
+    why: ["Am Z₄ Schnitt erscheinen 5/8 und 3/8 als Muster ohne Regel", "Neustart verlangt verborgenen Platz r·d", "Rekursive Bindung nutzt schon einen verschränkten Paarvektor", "Kondensation 16 → 4 → 1 steht bei Kitaev"],
+    gives: ["Z", "T", "P"],
+    test: "S und T Matrizen beider Seiten hinschreiben, den festen Vektor bestimmen und mit dem originalen Klebevektor und der Petz Rückabbildung vergleichen. Dann prüfen, ob die Spur über die Familienseite den Transfer mit Spektrum {1, (2/3)⁶, (1/3)⁶} gibt.",
+    kill: "Wenn der reduzierte Zustand auf der Trägerseite nicht die Referenz der vorhandenen Rückabbildung ist.",
+    n: ["4", "16", "5/8", "3/8", "10", "6"], g: ["Verklebung", "Qubit", "Zustand", "Kitaev", "Gedächtnis"],
+    l: [["e8", "testet"], ["dyn-recursion", "testet"], ["dyn-anomaly", "karte"], ["dyn-reset", "testet"], ["attraktor", "testet"], ["hyp-ghz", "gleich"]] });
+
+  H({ id: "hyp-kac", nr: 7, t: "Jeder Schnitt ist ein Knoten des E₈ Diagramms, und die Windung wählt das Gewicht",
+    s: "Kandidat für die fehlende gemeinsame Regel: Schnitt Z_p mit Windung k gibt k(p − k)/(2p).",
+    b: ["Streicht man im erweiterten E₈ Diagramm den Knoten mit Marke p, bleibt ein Teilgitter mit Klebegruppe Z_p: p = 4 gibt D₅ ⊕ A₃, p = 5 gibt A₄ ⊕ A₄, p = 2 gibt E₇ ⊕ A₁, p = 3 gibt E₆ ⊕ A₂, p = 6 gibt A₅ ⊕ A₂ ⊕ A₁.",
+      "Behauptet war: Die Formel k(p − k)/(2p) gibt für alle fünf Fälle das Gewicht der A Seite: 1/4, 1/3, 3/8, 2/5 und 3/5, 5/12. Der Rest zur Eins liegt jeweils auf der anderen Seite, bei p = 4 also 5/8 auf D₅.",
+      "Die bisher benutzte Größe ohne Windung trifft nur p = 2 und p = 4. Das erklärt, warum Z₄ und Z₅ bisher nicht unter eine Regel passten.",
+      "Schön daran: Die Einheitswindung von P1 wäre k = 1."],
+    why: ["Offen: gemeinsame Regel für Z₄ und Z₅ Schnitt", "OPH erhält D₅ ⊕ A₃ durch Streichen des vierdimensionalen Knotens", "McKay Marken (1,2,3,4,5,6,4,2,3)"],
+    gives: ["A", "O"],
+    test: "Die Randinvariante des originalen Operators auf S³/Z_p mit flachem Zusammenhang der Windung k für p = 2 bis 6 ausrechnen und gegen die Formel halten. Fünf Zahlen, keine freie Wahl.",
+    kill: "Ein einziger Fall, in dem die gerechnete Invariante von k(p − k)/(2p) abweicht.",
+    n: ["4", "5", "3/8", "5/8", "2/5", "1"], g: ["Singularität", "Windung", "Verklebung", "McKay", "Phase"],
+    l: [["pat-a4cut", "testet"], ["p1", "testet"], ["ext-oph", "karte"], ["e8", "testet"], ["hyp-bell", "karte"]] });
+
+  H({ id: "hyp-turm", nr: 8, t: "Wachstum heißt ein Qubit anfügen",
+    s: "E₈ ist die dritte Stufe eines Turms von Gittern, deren Symmetrie die Clifford Gruppe ist. Ort wäre der Tensorfaktor, der bei jeder Stufe hinzukommt.",
+    b: ["Die Barnes Wall Gitter in den Dimensionen 8, 16, 32 entstehen aus den Reed Muller Codes, und ihre Symmetriegruppe ist die reelle Clifford Gruppe auf 3, 4, 5 Qubits. Das ist bekannte Mathematik und steht im Atlas als wiederverwendbar.",
+      "Neu wäre die Lesart als Wachstumsregel: Jede Stufe ist eine Multiplikation mit 1 + i, also ein Skalenschritt. Ab Dimension 16 gibt es keine Wurzeln mehr. Das wäre der Grund, warum Eichfelder bei E₈ enden, die Welt aber weiterwächst.",
+      "Die Stufe mit fünf Qubits trägt den selbstdualen Code der Länge 32, der die Fünf erklärt."],
+    why: ["Hypergraph Wachstum stoppt bei E₈ und erzeugt keine Raumzeit", "Reed Muller Selbstdualität nur bei g = 5", "Lokalität fehlt bei allen Kandidaten", "Clifford und Barnes Wall Verbindung ist vorhanden, aber ohne Dynamik"],
+    gives: ["L", "T"],
+    test: "Die Stufe von 8 nach 16 ausschreiben: wie liegen zwei E₈ Kopien darin, was verbindet sie, und ist die induzierte Abbildung auf einer Kopie positiv mit den Raten 2/3 und 1/3?",
+    kill: "Wenn die Abbildung zwischen den Stufen die Ladungsstruktur D₅ ⊕ A₃ nicht erhält oder nicht positiv ist.",
+    n: ["8", "16", "32", "5", "3"], g: ["Qubit", "Clifford", "Wachstum", "Lokalität", "Code", "Gitter"],
+    l: [["qcode", "testet"], ["netz", "testet"], ["dyn-hypergraph", "karte"], ["pat-growth", "karte"], ["pat-code", "karte"], ["attraktor", "testet"]] });
+
+  H({ id: "hyp-scharf", nr: 9, t: "Die Quelle sitzt dort, wo alle Schranken zugleich scharf sind",
+    s: "Auffällig viele Befunde sind Ungleichungen, die genau erreicht werden. Vielleicht ist das die Auswahlregel.",
+    b: ["Beispiele aus dem Korpus: Kohärenz zerfällt mindestens so schnell wie Mischung (γ ≥ m). Neustart braucht mindestens r·d verborgene Dimensionen. Wachstum bleibt endlich bis ρ ≤ 2. Der Grundzustand hat kleinste Unschärfe. Das Gitter ist unimodular, der Code selbstdual mit Rate genau 1/2.",
+      "Hypothese: Die Quelle ist der Punkt, an dem alle diese Schranken mit Gleichheit gelten. Dann blieben keine freien Raten, kein freies κ und kein freies Seitenverhältnis.",
+      "Das wäre ein Prinzip der Form „so viel Bewegung wie möglich, ohne Information zu verlieren“."],
+    why: ["Fast kein Kandidat kommt ohne Zusatzwahl aus", "κ, Rate q und Seitenverhältnis sind die benannten freien Größen", "Schärfe der Neustartschranke ist seit 19.11. belegt"],
+    gives: ["A", "T"],
+    test: "γ = m in das vorhandene GKLS Intervall einsetzen und sehen, ob genau ein Wert bleibt. Dann prüfen, ob er das Spektrum {1, (2/3)⁶, (1/3)⁶} und κ = 1 gibt.",
+    kill: "Wenn die Gleichheiten einander widersprechen oder eine freie Schar übrig lassen.",
+    n: ["2/3", "1/2", "2", "1"], g: ["Auswahl", "Kohärenz", "Attraktor", "Information"],
+    l: [["dyn-markov", "testet"], ["dyn-reset", "testet"], ["dyn-holo", "testet"], ["attraktor", "testet"], ["quelle", "testet"]] });
+
+  H({ id: "hyp-frobenius", nr: 10, t: "Das Ereignisprotokoll sind die Frobenius Elemente des quadratischen Torus",
+    s: "Die Idee „Primzahlen als Protokoll“ in prüfbarer Form: Jede Primzahl hinterlässt auf der Kurve der Naht eine gaußsche Zahl.",
+    b: ["Der quadratische Torus hat komplexe Multiplikation mit i. Zu jeder Primzahl p = a² + b² gehört dort eine gaußsche Zahl a + bi, die zählt, wie die Kurve modulo p aussieht. Die Vier wirkt auf die Fünf schon als Galoisgruppe. Das wäre dieselbe Art von Wirkung, nur für alle Primzahlen.",
+      "Der Test vom September prüfte Ziffern von π und fand nichts. Diese Fassung prüft etwas anderes und Schärferes: ob die ganzen Zahlen der Theorie als Spuren an bestimmten Primzahlen stehen.",
+      "Zahlen, die auffallen und nichts beweisen: 5 = 2² + 1², 41 = 5² + 4², 137 = 11² + 4².",
+      "Wildeste der zehn. Die Gefahr, Muster zu sehen, ist hier am größten."],
+    why: ["Primzahlen als Ereignisprotokoll ist ein eigener Wunsch im Korpus", "41 als gaußsche Norm von 5 + 4i steht schon bei den Mustern", "Die Vier wirkt auf die Fünf als Galoisgruppe (Uhrensatz)"],
+    gives: ["T"],
+    test: "Vorher festlegen: welche Zahlen der Theorie, welche Primzahlen, welche Normierung. Dann gegen tausend Zufallskurven mit derselben Statistik auszählen.",
+    kill: "Wenn die Trefferzahl im Bereich der Zufallskurven liegt, ist die Idee in dieser Form erledigt.",
+    n: ["41", "137", "5", "4"], g: ["Primzahlen", "Galois", "Ereignis", "Protokoll", "Modul"],
+    l: [["pat-prime", "testet"], ["pat-41", "gleich"], ["taui", "testet"], ["pat-clockrank", "karte"]] });
+
+  /* ── Urteile der Prüfung HYPCHECK20261119 ── */
+  const C = "experiments/theory-contracts/landkarte-hypothesen-20261119/";
+  const V = {
+    "hyp-weyl": { st: "bedingt", res: "Enge Fassung exakt, starke Fassung ausgeschlossen", chk: "10/10", file: "check_h01_weyl.py",
+      found: ["Die Eichalgebra des Standardmodells (Dimension 12) ist genau das, was mit der Halbdrehung der Kugel auf den fünf Plätzen vertauscht. Andere Drehwinkel geben 8, 6 oder 4.", "Die Hyperladung ist Y = 1/12 − (5/12)·R mit R = Halbdrehung.", "z⁴ − 1 hat J = 0. Die Marken haben 8 Möbiussymmetrien, eine allgemeine Lage nur 4."],
+      falls: ["Dieselbe Fünf kann nicht zugleich Spin 2 der Raumzeit sein und eine vertauschende Eichwirkung tragen. Die Darstellung ist unzerlegbar, mit ihr vertauschen nur Vielfache der Eins."],
+      opn: "Ob der originale Kern außer der Vierteldrehung weitere Möbiussymmetrie trägt." },
+    "hyp-ghz": { st: "bedingt", res: "Auswahl der Lage exakt, Bindung an das Original nicht gezeigt", chk: "7/7", file: "check_h02_ghz.py",
+      found: ["Drei Qubits: 1080 Stabilisatorzustände, 18 symmetrisch, alle 12 mit verschiedenen Sternen sind gleichseitige Dreiecke.", "Vier Qubits: 36720, 18 symmetrisch, alle 12 mit verschiedenen Sternen sind Quadrate."],
+      falls: ["Das Prinzip wählt das regelmäßige Vieleck, nicht die Zahl vier."],
+      opn: "Die Fünf des Originals liegt in Sym⁴(C⁴), die Sternlesart braucht Sym⁴(C²). Beide sind als Darstellung der Ikosaedergruppe gleich. Welche Ikosaedergruppe gemeint ist, steht im Original nicht." },
+    "hyp-fluss": { st: "offen", res: "Rechnung exakt, Gleichsetzung mit der Windung nicht gezeigt", chk: "7/7", file: "check_h03_fluss.py",
+      found: ["Ein Flussquant durch die Einheitszelle gibt Varianz 1/(4π) = 2c₃ je Richtung. Die Konvention h = 1 folgt dann aus der Quantisierung.", "Auf dem Torus hat das zurückgezogene Trägerbündel acht Zustände: fünf gerade und drei ungerade. Die drei ungeraden verschwinden an den Marken."],
+      falls: ["Fluss eins auf dem Torus kommt nicht von der Kugel (dort wäre es ein halbes Quant).", "Quadrat und Rechteck 2:1 werden nicht getrennt."],
+      opn: "Die Einheitswindung des Originals ist eine Chernzahl über einem anderen Raum (Endlinienbündel über C/K). Dass sie der Fluss durch den Markentorus ist, ist nicht gezeigt." },
+    "hyp-affin": { st: "aus", res: "Wörtlich gefallen, exakter Ersatz gefunden", chk: "11/11", file: "check_h04_affin.py",
+      found: ["Ersatz: Die Drehung der Marken im Kreis ist das Coxeter Element von A₃. Sie ist genau dann eine Symmetrie der Kugel, wenn die Marken harmonisch liegen (Quadrat ja, Rechteck und Tetraeder nein).", "Der Klebegenerator ist der Kommutator von Schieber und Uhr und wirkt als Zahl i.", "Marken und Pole haben 24 Symmetrien. Die Bolzakurve hat 48, ist aber nicht Picards G48 (anderes Zentrum)."],
+      falls: ["Die Klebegruppe wirkt nicht als z → iz + ½. Diese Abbildung wirkt auf der Klebegruppe trivial."],
+      opn: "Ob das Original neben den vier Marken zwei Pole auszeichnet (Schnitt R113 gesperrt)." },
+    "hyp-milnor": { st: "aus", res: "Wörtlich gefallen, exakter Ersatz gefunden, Zeitlesart gefallen", chk: "14/14", file: "check_h05_milnor.py",
+      found: ["Ersatz: die elliptische Fläche mit einem Punkt der Ordnung vier, y² + xy − ty = x³ − tx². Ihre Fasern sind I₄, I₁ und I₁*, also A₃ und D₅, und der Punkt der Ordnung vier ist der Klebevektor.", "Der Dreißigertakt als Produkt der Umläufe zu 2, 3 und 5 ist exakt."],
+      falls: ["D₅ ⊕ A₃ ist kein Teildiagramm von E₈ und entsteht durch keine Deformation der Singularität.", "Zeit als Umlauf: alle drei Umläufe der Fläche haben unendliche Ordnung, keine Uhr.", "3/4 + 1/2 = 5/4 bleibt Arithmetik ohne Abbildung."],
+      opn: "Ob P1 die Basis dieser Fläche ist." },
+    "hyp-bell": { st: "aus", res: "Statik exakt, Dynamik gefallen, eigene Abbruchregel greift", chk: "11/11", file: "check_h06_bell.py",
+      found: ["Der Klebevektor ist ein maximal verschränkter Zustand und bleibt unter der modularen Wirkung fest. Gewichte, Fouriermatrizen und c = 5 und 3 stimmen."],
+      falls: ["Nicht eindeutig: der feste Raum ist zweidimensional.", "Keine Dynamik: die Wirkung ist unitär, ein Produkt beider Seiten und hat keine Raten.", "Abbruchregel: der reduzierte Zustand ist 1/4 auf vier Sektoren, die Referenz der Rückabbildung ist 1/5 auf fünf Plätzen."],
+      opn: "" },
+    "hyp-kac": { st: "bedingt", res: "Genannte Formel gefallen, exakte gemeinsame Regel gefunden", chk: "13/13", file: "check_h07_kac.py",
+      found: ["Die Regel für alle Schnitte Z_p und Windungen k (geprüft p = 2 bis 12): η = (p² − 1)/(6p) − k(p − k)/p. Der zweite Teil ist die Klebenorm der Klasse k.", "Die zwei Muster vom Z₄ und Z₅ Schnitt sind zwei Fälle dieser einen Formel.", "Bei Einheitswindung k = 1 verschwindet η nur für p = 5.", "Knotentafel: Marke 4 gibt Normen 5/4 + 3/4, Marke 5 gibt 4/5 + 6/5."],
+      falls: ["Die oben genannte Formel k(p − k)/(2p) ist nicht die Randinvariante."],
+      opn: "Dass P1 an einem solchen Schnitt sitzt. Die 5/8 der D₅ Seite ist nur bei p = 4 eine Größe des Linsenraums." },
+    "hyp-turm": { st: "aus", res: "Gefallen, eigene Abbruchregel greift", chk: "13/13", file: "check_h08_turm.py",
+      found: ["Der Turm selbst stimmt: Hamming Code gibt E₈, die Stufe 16 hat keine Wurzeln und 4320 kürzeste Vektoren."],
+      falls: ["Die Stufenabbildung erhält nur Unterräume gerader Dimension. D₅ ⊕ A₃ hat 5 und 3.", "Keine Raten: die Abbildung streckt alles gleich um √2."],
+      opn: "Ort als Tensorfaktor ließ sich hier nicht entscheiden." },
+    "hyp-scharf": { st: "offen", res: "Teilweise: Randpunkte ja, Eindeutigkeit nein", chk: "12/12", file: "check_h09_scharf.py",
+      found: ["Das erlaubte Intervall 2/9 ≤ q ≤ 1/4 ist nachgerechnet. An jedem Ende fällt genau eine Sprungart weg.", "Bei q = 2/9 springen nur noch die drei Spiegelungen, und q ist das Produkt der beiden anderen Raten (2/3)·(1/3).", "γ = m wird im Viererring erreicht."],
+      falls: ["Es bleiben zwei Punkte, nicht einer.", "Für κ und das Seitenverhältnis kennt der Korpus keine Schranke, die scharf werden könnte.", "Es gibt keine Abbildung, die γ = m in einen Wert von q übersetzt."],
+      opn: "Kandidat für die fehlende Regel: nur native Spiegelungen springen. Das würde q = 2/9 wählen." },
+    "hyp-frobenius": { st: "aus", res: "Gefallen, eigene Abbruchregel greift", chk: "12/12", file: "check_h10_frobenius.py",
+      found: ["Als Etikett bleibt: jede Primzahl wirkt in der Vier als p mod 5, alle vier Klassen gleich häufig."],
+      falls: ["Die Spuren sind durch p = a² + b² erzwungen (2, 6, 10, 22 an 5, 13, 41, 137). Ein Treffer sagt nichts über die Theorie.", "Vergleich mit 1000 Zufallskurven: mindestens drei Treffer aus vier erreicht etwa die Hälfte.", "Das Etikett hat keine Reihenfolge, keine Rate und keine Verknüpfung."],
+      opn: "" },
+  };
+  T.nodes.forEach((n) => { const v = V[n.id]; if (v) { Object.assign(n, v); n.src = (n.src || []).concat([C + v.file, C + "README.md"]); } });
+})();

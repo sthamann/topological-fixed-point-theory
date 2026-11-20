@@ -1,0 +1,82 @@
+{
+ "name": "hopf_twistor",
+ "checks": [
+  {
+   "check": "identity w_k = 1/(2^2k vol S^(2k-1)) = (k-1)! 2^(k-1) c3^k for all k (pure rewriting of c3 = 1/8pi)",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "k=1 (S1, real Hopf):        w = c3",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "k=2 (S3, complex Hopf):     w = 2 c3^2, the recorded normal-form scale g = alpha/(2 c3^2)",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "k=4 (S7, quaternionic Hopf): w = 48 c3^4 = delta_top",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "MISS k=3 (S5, no Hopf fibration): w = 8 c3^3, recorded cubic coefficient is 2 c3^3 (factor 4)",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "MISS k=8 (S15, octonionic Hopf): w = 645120 c3^8, recorded second order (5/4) delta_top^2 = 2880 c3^8 (factor 224)",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "MISS: the log coefficient (4/5) 41 c3^6 is no sphere weight (k=6 gives 3840 c3^6)",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "twistor fibration: vol S7 = vol S3 * vol S4(r=1/2), vol CP3 = vol S7/2pi, fibre CP1 = S3/S1 = S2(r=1/2)",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "so delta_top = c3 * (2 c3) * (24 c3^2): circle, twistor line, S4 base",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "look-elsewhere: delta_top is not unique to S7 (B8 and CP4 with 2^11 give the same number)",
+   "pass": true,
+   "detail": "[('CP4', 11), ('S7', 8), ('B8', 11)]"
+  },
+  {
+   "check": "BPST instanton (= quaternionic Hopf bundle over S4) has weight exp(-8 pi^2/e^2) = exp(-2 pi/alpha) ~ 1e-374: numerically irrelevant, no route to the recorded factors",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "selectivity: the Hopf chain exists for k = 1,2,4,8 only (Adams); it singles out neither g=5 nor N_fam=3 nor 5/4",
+   "pass": true,
+   "detail": "5 and 3 enter only through D5+A3, not through any sphere in the chain"
+  }
+ ],
+ "data": {
+  "verdict": "three exact volume coincidences (k=1,2,4), three misses (k=3,6,8), non-unique; naming level, no derivation",
+  "hits": [
+   [
+    "CP4",
+    11
+   ],
+   [
+    "S7",
+    8
+   ],
+   [
+    "B8",
+    11
+   ]
+  ]
+ }
+}

@@ -76,6 +76,16 @@ only with a changed premise that its exclusion did not have. Contexts and
 shared sources are recorded evidence for a link; they prove no
 identification.
 
+## Generated structure scenarios
+
+Every stage also runs `structure_scenarios.py`. It needs no model: it
+generates objects with computed features, derives the fingerprint from the
+established Atlas findings, ranks objects, pairs and triples against random
+fingerprints, and queues its best scenarios as `atlas_scenario_case` jobs
+with a `hypothesis:structure-…` premise. `latest.json` reports the best
+object, the number of significant layers, the unexplained numbers and the
+withheld p-values under `structure_scenarios`.
+
 ## Model proposals and computed tests
 
 ```sh

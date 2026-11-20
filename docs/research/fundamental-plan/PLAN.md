@@ -41,8 +41,16 @@ Test. Das Zweidefektgewicht ist ohne Blick auf α gerechnet
 mal die Zweipunktfunktion des D₅ Spinorfelds mit Gewicht 5/8. Der Abstand ist
 geprüft (RADICALSEPARATION20261118): q ist ein Gewicht und kein
 Einsetzungsabstand, die Formel mischt den ganzen Klebevektor mit D₅ allein.
-Als Nächstes unter F2 die Alpha Gleichung prospektiv an einer noch nicht
-verglichenen Größe prüfen. F1 und F2 bleiben in Bearbeitung.
+Die prospektive Testgröße ist benannt (RADICALPROSPECT20261118): die
+eingefrorene Wurzel 137,0359992168407 gegen die nächste Einzelbestimmung von
+α; heute Rb +0,99 σ, g−2 +3,39 σ, Cs +6,33 σ. Die Gleichung lautet in g = e²/c₃
+g² (g − c₃) = b₁ log(1/φ) (RADICALNORMAL20261118); fünf α Ergebnisse stehen
+im Atlas. Die drei offenen Stücke sind einzeln geprüft
+(RADICALTHREE20261118): Kubik postuliert mit Suchraumerwartung 0,0096,
+Auslese gleich fünf Trägerrichtungen, Dämpfung gleich voller Wurzelnorm.
+Als Nächstes unter F2 einen Operator suchen, der die Zeit 2α am ganzen
+Klebevektor und die Oszillatorgrade nur an D₅ liest, und prüfen, ob B−L in
+der ursprünglichen Quelle eichfähig ist. F1 und F2 bleiben in Bearbeitung.
 Kennung RADICAL20261118.
 [Hypothesen und Proben](../../../experiments/theory-contracts/radical-global-hypotheses-20261118/README.md).
 

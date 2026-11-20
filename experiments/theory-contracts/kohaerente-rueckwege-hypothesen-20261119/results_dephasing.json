@@ -1,0 +1,105 @@
+{
+ "name": "dephasing",
+ "checks": [
+  {
+   "check": "every mixed current has one charge under h: |h(t) - h(s)| = 2|a_i| on all its transitions",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "unmarked return ZY = 1/4 and one-sided marks early = late = (5/24)/4 for all 60 currents and five selections",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "generator response: Tr(h X* h X) - (early + late)/2 = -(q^2/2) ZY on all 300 cases",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "this is exactly the recorded pair of mixed values: -1/72 for colour, -1/32 for weak currents",
+   "pass": true,
+   "detail": "{'colour': Fraction(-1, 72), 'weak': Fraction(-1, 32)}"
+  },
+  {
+   "check": "and the recorded target ZUY = (mu - 2 a_i^2)/4 of the fitted middle blocks",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "exp(tau L_h) is completely positive and unital for every tau (positive multiplier matrix, unit diagonal)",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "finite time: return of a colour current decays as exp(-tau/18), of a weak current as exp(-tau/8); one time, rate ratio 9/4",
+   "pass": true,
+   "detail": "{'colour': {np.float64(0.979654269725)}, 'weak': {np.float64(0.954803231543)}}"
+  },
+  {
+   "check": "the flat state is stationary and populations never change: consistent with the recorded flat density",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "contrast: a common positive operator misses by 7/528 (recorded, reproduced in check_common_middle); a common completely positive process hits exactly",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "under dephasing by all gauge Cartan elements (colour, weak, hypercharge, family SU(3)) exactly one coherence survives: between the states 0 and 255",
+   "pass": true,
+   "detail": "[[0, 255]]"
+  },
+  {
+   "check": "carrier number removes it (rate 25/2), the full Cartan torus too (rate |w_0 - w_255|^2/2 = 4)",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "dephasing over the full Cartan torus damps every one of the 112 root currents by the same exp(-tau): rate = |beta|^2/2 = conformal weight 1",
+   "pass": true,
+   "detail": "{np.float64(0.690734330637)}"
+  },
+  {
+   "check": "on the 128 the generator sum h_a^2/2 is the constant 1: the zero-mode part of the Sugawara L_0",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "share of the hypercharge direction in the weight of a mixed current: 1/15 (colour), 3/20 (weak)",
+   "pass": true,
+   "detail": "{'colour': Fraction(1, 15), 'weak': Fraction(3, 20)}"
+  },
+  {
+   "check": "with tau = 2 alpha the common factor is the recorded damping exp(-2 alpha) = exp(-alpha |beta|^2), independent of the state",
+   "pass": true,
+   "detail": "137.03599921684"
+  },
+  {
+   "check": "tau = 2 alpha is the variance of the phase e beta.p with e^2 = 4 pi alpha and <p_i p_j> = delta_ij/(4 pi) on two sheets: 2 * 4 pi alpha * 2/(4 pi) / 2",
+   "pass": true,
+   "detail": ""
+  }
+ ],
+ "data": {
+  "connected_mixed_values": {
+   "colour": "-1/72",
+   "weak": "-1/32"
+  },
+  "rates_under_hypercharge": {
+   "colour": "1/18",
+   "weak": "1/8"
+  },
+  "protected_coherences": [
+   [
+    0,
+    255
+   ]
+  ],
+  "hypercharge_share_of_weight": {
+   "colour": "1/15",
+   "weak": "3/20"
+  }
+ }
+}

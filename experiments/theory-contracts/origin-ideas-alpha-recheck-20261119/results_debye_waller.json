@@ -1,0 +1,54 @@
+{
+ "name": "debye_waller",
+ "checks": [
+  {
+   "check": "lattice sum at tau=i equals E4(i) = 3 Gamma(1/4)^8/(2 pi)^6",
+   "pass": true,
+   "detail": "1.45576289226871"
+  },
+  {
+   "check": "second moment: log phi = -pi z^2 + ..., i.e. <p_i p_j> = delta_ij/(4 pi) = 2 c3 exactly",
+   "pass": true,
+   "detail": "-3.1415926535897932385"
+  },
+  {
+   "check": "self-duality forces this: phi(z) e^{pi z^2} is invariant under z -> i z (no z^2, z^6 terms)",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "Gaussian part reproduces the recorded damping: phi(e/2pi)^2 = exp(-2 alpha)(1 + O(alpha^2))",
+   "pass": true,
+   "detail": "8.50144e-5"
+  },
+  {
+   "check": "one sheet alone gives exp(-alpha) to leading order: the factor 2 needs the cover degree, not the root norm alone",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "not E8 selective: the plain Z lattice at tau=i has the same second moment 1/(4 pi)",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "the non-Gaussian correction is parameter free and resolvable (|shift| > 0.5 sigma)",
+   "pass": true,
+   "detail": "139.75"
+  },
+  {
+   "check": "verdict recorded (strict reading tested against CODATA 2022)",
+   "pass": true,
+   "detail": "EXCLUDED at >5 sigma"
+  }
+ ],
+ "data": {
+  "a4": "7.87803000538474",
+  "alpha_inv_recorded": "137.0359992168407",
+  "alpha_inv_exact_lattice": "137.0360021516306",
+  "z_recorded": "1.89718",
+  "z_exact_lattice": "141.649",
+  "shift_sigma": "139.752",
+  "verdict": "EXCLUDED at >5 sigma"
+ }
+}

@@ -1,0 +1,146 @@
+{
+ "name": "kernel_dephasing",
+ "checks": [
+  {
+   "check": "original: the seed is the first positive eigenvalue, chi_seed = lambda_1^+(|B_Sigma|)^-1, and the polarization is the Calderon projector",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "original: H_int is 'an analytic realization choice rather than part of the boundary datum': the kernel acts as B_Sigma x 1 on internal labels",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "original section 001 names no hypercharge, no Cartan direction and no coupling e: these are not kernel data",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "positive half of |B|^-1 on the unit S^2: every channel has weight 1/(2 pi)",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "so N channels dephase by exp(-N tau_1 |Dw|^2/2): an exact one-parameter semigroup with the channel number as time; this holds only on S^2 (S^1..S^7 tested)",
+   "pass": true,
+   "detail": "{1: False, 2: True, 3: False, 4: False, 5: False, 6: False, 7: False}"
+  },
+  {
+   "check": "time of one channel with e^2 = 4 pi alpha: tau_1 = e^2/(2 pi) = 2 alpha exactly",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "the seed channel is that one channel: degeneracy 2, area 4 pi, lambda_1^+ = 1, weight chi_seed * 2/(4 pi) = 1/(2 pi)",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "limit: the weight is 1/(2 pi R) on a sphere of radius R; the unit radius is the seed unit, an input of the reading",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "averaging the unitary exp(i e w.phi) over a Gaussian phi with covariance C per direction gives the multiplier exp(-e^2 C |Dw|^2/2) (quadrature, 3 cases)",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "the averaged channel is completely positive and unital (random unitary)",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "kernel x 1 on internal labels = all eight Cartan directions with equal weight: all 112 root currents get the same factor exp(-tau)",
+   "pass": true,
+   "detail": "12"
+  },
+  {
+   "check": "with tau = tau_1 = 2 alpha this is the recorded damping: alpha^-1 = 137.0359992168",
+   "pass": true,
+   "detail": "137.03599921684, z = 1.897"
+  },
+  {
+   "check": "any restricted direction set damps the root classes unequally (rates between 0 and 1); only the full torus gives one common rate 1",
+   "pass": true,
+   "detail": "{'hypercharge direction only': (-0.0, 0.6), 'electric charge direction only': (-0.0, 0.666666667), 'six gauge Cartan directions': (0.333333333, 1.0)}"
+  },
+  {
+   "check": "hypercharge only: mixed colour currents at rate 1/15, mixed weak at 3/20 (the recorded shares); with tau = 2 alpha that is exp(-2 alpha/15), exp(-3 alpha/10)",
+   "pass": true,
+   "detail": "[-0.0, 0.016666667, 0.066666667, 0.15, 0.266666667, 0.416666667, 0.6]"
+  },
+  {
+   "check": "every alternative is excluded by the alpha readout (|z| > 50); the full torus with exactly one positive channel is the only reading within 2 sigma (z = +1.9)",
+   "pass": true,
+   "detail": "{'exp(-3 alpha/10) (hypercharge only, weak)': '20522.0', 'exp(-2 alpha/15) (hypercharge only, colour)': '22547.0', 'exp(-alpha) (unit electric charge on one scalar field of weight 1/(2 pi))': '12042.0', 'exp(-4 alpha) (two channels or both Dirac signs)': '-23816.0', 'exp(-2 alpha coth(pi)) (quantum oscillator at tau = i)': '-87.874'}"
+  },
+  {
+   "check": "so: internal blindness of the kernel (B x 1) is exactly what the common damping needs; a gauge-selective dephasing would contradict it",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "generator of the kernel process on the 60 mixed currents: the same value -ZY for all, no colour/weak difference",
+   "pass": true,
+   "detail": "{Fraction(-1, 1)}"
+  },
+  {
+   "check": "the recorded mixed values -1/72 and -1/32 are its part along the hypercharge direction: -(share) * |h|^2 * ZY with |h|^2 = 4 mu = 5/6",
+   "pass": true,
+   "detail": "{'colour': {Fraction(-1, 72)}, 'weak': {Fraction(-1, 32)}}"
+  },
+  {
+   "check": "the hypercharge direction enters through the marker U = h^2 of the readout, not through the kernel: the kernel supplies the time, not this direction",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "the neutral coherence 0-255 is not protected by the kernel process: factor exp(-4 tau), at tau = 2 alpha that is exp(-8 alpha) = 0.9433",
+   "pass": true,
+   "detail": "0.9432925411947389"
+  },
+  {
+   "check": "the marks are generator values (exact rationals at tau = 0); read after the finite kernel time they would shift by 1 - exp(-2 alpha) = 1.45 percent: both cannot be the same readout",
+   "pass": true,
+   "detail": "0.014488718655833342"
+  }
+ ],
+ "data": {
+  "tau_one_channel": "2 alpha",
+  "alpha_inv_full_torus_one_channel": "137.03599921684",
+  "z_alternatives": {
+   "exp(-3 alpha/10) (hypercharge only, weak)": "20521.7",
+   "exp(-2 alpha/15) (hypercharge only, colour)": "22547.1",
+   "exp(-alpha) (unit electric charge on one scalar field of weight 1/(2 pi))": "12041.6",
+   "exp(-4 alpha) (two channels or both Dirac signs)": "-23815.8",
+   "exp(-2 alpha coth(pi)) (quantum oscillator at tau = i)": "-87.8742"
+  },
+  "rates_by_direction_set": {
+   "hypercharge direction only": [
+    -0.0,
+    0.016666667,
+    0.066666667,
+    0.15,
+    0.266666667,
+    0.416666667,
+    0.6
+   ],
+   "electric charge direction only": [
+    -0.0,
+    0.041666667,
+    0.166666667,
+    0.375,
+    0.666666667
+   ],
+   "six gauge Cartan directions": [
+    0.333333333,
+    0.6,
+    0.733333333,
+    1.0
+   ]
+  },
+  "verdict": "time and isotropy supplied conditionally (coupling e^2 = 4 pi alpha, unit seed sphere, one channel); hypercharge direction not supplied"
+ }
+}

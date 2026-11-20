@@ -1,0 +1,61 @@
+{
+ "name": "h02_ghz",
+ "checks": [
+  {
+   "check": "3 Qubits: 1080 Stabilisatorzustände; alle symmetrischen mit drei verschiedenen Marken sind gleichseitige Dreiecke auf einem Großkreis",
+   "pass": true,
+   "detail": "(1080, 18, {'zusammenfallend': 6, 'regelmäßiges Vieleck auf Großkreis': 12})"
+  },
+  {
+   "check": "4 Qubits: 36720 Stabilisatorzustände, 18 symmetrisch, 12 mit vier verschiedenen Marken, alle zwölf sind Quadrate auf einem Großkreis",
+   "pass": true,
+   "detail": "(36720, 18, {'zusammenfallend': 6, 'regelmäßiges Vieleck auf Großkreis': 12})"
+  },
+  {
+   "check": "GRENZE: das Prinzip wählt für n Qubits das regelmäßige n Eck, also die Lage und nicht die Vier",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "Fixraum der Pauligruppe (Ordnung 64): 16 im vollen vierten Tensorgrad, 5 in Sym^4(C^4) (wie im Atlas)",
+   "pass": true,
+   "detail": "(np.float64(16.0), np.float64(5.0))"
+  },
+  {
+   "check": "TYPGRENZE: der Fünfer des Originals liegt in Sym^4(C^4) (35 dim), die Majorana Lesart braucht Sym^4(C^2) (5 dim); das sind verschiedene Räume",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "als Darstellung der Ikosaedergruppe A5 stimmen beide Fünfer überein (Charaktere 5, 1, -1, 0, 0)",
+   "pass": true,
+   "detail": "([5, 1.0, -1.0, 0.0, -0.0], [5, 1, -1, 0, 0])"
+  },
+  {
+   "check": "unter der Quadratsymmetrie D4 zerfällt Spin 2 in genau ein Dublett und drei Einzelne: 2 + (1+1+1), kein Triplett",
+   "pass": true,
+   "detail": "(1.0, 3.0)"
+  }
+ ],
+ "data": {
+  "zaehlung": {
+   "3": [
+    1080,
+    18,
+    {
+     "zusammenfallend": 6,
+     "regelmäßiges Vieleck auf Großkreis": 12
+    }
+   ],
+   "4": [
+    36720,
+    18,
+    {
+     "zusammenfallend": 6,
+     "regelmäßiges Vieleck auf Großkreis": 12
+    }
+   ]
+  },
+  "urteil": "In der eigenen Klasse exakt: symmetrische Stabilisatorzustände mit n verschiedenen Marken sind regelmäßige n Ecke. Bindung an das Original nur über eine nicht gezeigte Wahl einer Ikosaedergruppe in S6."
+ }
+}

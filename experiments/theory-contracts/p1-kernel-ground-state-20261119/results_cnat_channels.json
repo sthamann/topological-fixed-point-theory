@@ -1,0 +1,76 @@
+{
+ "name": "cnat_channels",
+ "checks": [
+  {
+   "check": "scalar D-to-N kernel on S^2: every angular channel weighs exactly 1/(4 pi) = 2 c3 at kappa=1",
+   "pass": true,
+   "detail": "w_l = 0.07957747154594766788444188168625718101723"
+  },
+  {
+   "check": "flat scalar channel spectrum holds only for S^2 in R^3 (d = 2..8 tested)",
+   "pass": true,
+   "detail": "{2: False, 3: True, 4: False, 5: False, 6: False, 7: False, 8: False}"
+  },
+  {
+   "check": "source seam response |B_Sigma|^-1 on round S^2, positive spectral half: every channel weighs 1/(2 pi) = 4 c3 (2 c3 per spinor component; both signs together 1/pi)",
+   "pass": true,
+   "detail": "w_k = 0.1591549430918953357688837633725143620345"
+  },
+  {
+   "check": "flat Dirac channel spectrum holds only on S^2 (n = 1..7 tested)",
+   "pass": true,
+   "detail": "{1: False, 2: True, 3: False, 4: False, 5: False, 6: False, 7: False}"
+  },
+  {
+   "check": "chi_seed = 1/lambda_1^+(|B|) = 1 on the unit S^2; times lowest positive channel density 2/(4 pi) gives 1/(2 pi) = 4 c3",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "each S^2 channel is an h = 1 oscillator quadrature: weight = hbar_eff/2 with hbar_eff = 1/(2 pi)",
+   "pass": true,
+   "detail": "h_eff = 1.0"
+  },
+  {
+   "check": "one positive Dirac channel (weight 1/(2 pi)) gives exp(-2 alpha) exactly; one scalar channel gives exp(-alpha); both Dirac signs would give exp(-4 alpha)",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "scalar weight scales as 1/kappa (kappa = 1/2, 1, 2 -> 1/(2 pi), 1/(4 pi), 1/(8 pi)): kappa stays an input",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "antipodal sum of the flat spectrum has Abel value 1/2: R*C(x,-x) = c3 (equals closed form 1/(8 pi))",
+   "pass": true,
+   "detail": "Abel -> 0.5000002500001250000625000312500156250078"
+  },
+  {
+   "check": "channel sum reproduces the Coulomb kernel 1/(4 pi |x-y|) (generating function, r = 0.9)",
+   "pass": true,
+   "detail": "0.04974501158605461346783104710869670496774 vs 0.04974501158605461346783104710822040075267"
+  },
+  {
+   "check": "regularised coincidence sum is NOT fixed: Hurwitz zeta(0,a) = 1/2 - a gives 0, -1/2, -1 for a = 1/2, 1, 3/2",
+   "pass": true,
+   "detail": "{mpf('0.5'): mpf('0.0'), 1: mpf('-0.5'), mpf('1.5'): mpf('-1.0')}"
+  },
+  {
+   "check": "only two units of channel weight (k = 2) fit: k = 1 (one scalar channel) and k = 3, 4 are excluded",
+   "pass": true,
+   "detail": "{0: 24169.26433704857, 1: 12041.55481045291, 2: 1.8971767858827553, 3: -11950.346467033785, 4: -23815.80942508769}"
+  }
+ ],
+ "data": {
+  "z_by_k": {
+   "0": "24169.26433704857078069290869055745509289",
+   "1": "12041.55481045291022793563820353681018362",
+   "2": "1.8971767858827552525620895414832585926",
+   "3": "-11950.34646703378470408383735766531646567",
+   "4": "-23815.80942508769060006659234766482551191"
+  },
+  "w_scalar_S2": "0.07957747154594766788444188168625718101723",
+  "w_dirac_S2": "0.1591549430918953357688837633725143620345"
+ }
+}

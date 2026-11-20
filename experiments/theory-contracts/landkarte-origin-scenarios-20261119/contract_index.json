@@ -1,0 +1,41 @@
+{
+ "id": "landkarte-origin-scenarios-20261119",
+ "result_id": "LANDKARTE20261119",
+ "date": "2026-11-19",
+ "question": "Welcher Zustand macht die Dämpfung exakt gaußisch, was erzwingen die Uhren, wann ist ein Neustart an der Singularität möglich, und schließt QED die Leptonlücke?",
+ "verdict": "VACUUMSTATE20261119: Grundzustand der Vierteldrehung (Fouriertransformation, h = 1) gibt c3 als Nullpunktsenergie je Quadratur und exp(-2 alpha) exakt; Keimensemble braucht N >= 1360 für 2 sigma; n = 4 ausgeschlossen. Bedingt, Konvention in Kenntnis des Ziels gewählt. CLOCKRANK20261119: je zwei Uhren verschmelzen in E8 zu einer primitiven Uhr (15, 20, 24, 30), alle drei nie (keine Ordnung 60, Rang 16 nötig); Sechseck gäbe alpha^-1 = 104,42. SINGRESET20261119: exakter informationserhaltender Neustart existiert genau bei verborgener Dimension >= r d, Schranke scharf; P1 müsste lokaler Schnitt sein. LEPTONTRANSFER20261119: Einschleifen QED Lauf hat falsches Vorzeichen; Koide plus e/mu gibt mu/tau auf 0,02 %. physical_solution=false",
+ "scope": "Exakte und hochgenaue Rechnung in erklärten Modellen; keine Bindung an die Originalquelle; Messwerte aus dem Gedächtnis; W(E8) Ordnungen per Stichprobe; Typ III Satz zitiert; kein Ledgerwechsel, kein Commit.",
+ "resolved": [
+  "<x^2> = <p^2> = 2 c3 im Fourier-selbstdualen Grundzustand",
+  "Weylerwartungswert = exp(-2 alpha) exakt",
+  "Abweichung des Keimensembles = 139,75 sigma / N",
+  "Mindestrang für Ordnung n; phi(n) = 8 genau für 15, 16, 20, 24, 30",
+  "F20 als Getrieberelation",
+  "Neustartschranke r d ist scharf",
+  "Leptonlücken +2,194 % und +0,215 %"
+ ],
+ "kills": [
+  "einzelnes E8 Gitter als Zustand",
+  "kleine Keimzahlen N < 127",
+  "Fourierfester Zustand n = 4",
+  "Sechseckmodul und kohärente Mehrfachkeime",
+  "Ordnung 60 in E8",
+  "Einschleifen QED Lauf als Leptontransfer"
+ ],
+ "open": [
+  "Grundzustand an den originalen P1 Kern binden (C_nat)",
+  "warum die Vier auf der Fläche wirkt",
+  "gewichteter Originalschnitt für die Neustartprobe",
+  "G3 Horizont zuerst als eigene Probe",
+  "Herkunft der Lücke 0,21 % in e/mu"
+ ],
+ "replay": "cd experiments/theory-contracts/landkarte-origin-scenarios-20261119 && for s in vacuum_state clock_rank singularity_reset lepton_transfer; do python3 -B check_$s.py; done",
+ "checks_passed": true,
+ "checks": {
+  "vacuum_state": "11/11",
+  "clock_rank": "13/13",
+  "singularity_reset": "9/9",
+  "lepton_transfer": "6/6"
+ },
+ "atlas": "eingetragen am 19.11.2026, Revision d0a5f78f6bb97683d89ec5c7: je ein Befund in problem:alpha-fixed-input-root und problem:p1-singularity-seam-reset, zwei in problem:origin-diagnosis-new-hypotheses-20261116"
+}
