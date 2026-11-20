@@ -1,6 +1,6 @@
 ---
 name: tfpt-knowledge
-description: Query the TFPT Knowledge Atlas for papers, exact sources, Python/Lean/Wolfram evidence and recorded research decisions. Use it to check ideas and to continue named tasks; in Exploration mode it is a check after the idea phase, not the starting point.
+description: Query the TFPT Knowledge Atlas for papers, exact sources, Python/Lean/Wolfram evidence and recorded research decisions. Use it to check ideas and to continue named tasks; in Exploration mode it supplies details and checks ideas; it does not set the next step.
 ---
 
 The `tfpt-knowledge` MCP server is the sole theory atlas. The ledger
@@ -11,8 +11,9 @@ links, graph paths and AI annotations (`reviewed:false`) are navigation, not pro
 
 Read the repository `AGENTS.md` and pick the mode first.
 
-- **Exploration:** write your own ideas following `docs/research/EXPLORATION.md`
-  before any Atlas call. Then use the Atlas to check each idea: has it been tried
+- **Exploration:** start from `docs/research/TFPT-STAND.md` and
+  `docs/research/EXPLORATION.md`. Use the Atlas for details on what works and for
+  checking each idea, not to continue a contract chain: has it been tried
   (`search_knowledge`, `list_attempts`), which exclusion applies and under which
   exact premises. A scoped exclusion only blocks the idea if its premises really
   match; a different premise makes the idea legitimate.

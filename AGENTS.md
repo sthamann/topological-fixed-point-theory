@@ -11,11 +11,16 @@ Every research session runs in exactly one of two modes. Decide from the user's
 words; when unclear, ask once.
 
 **Exploration** — the user asks for new ideas, a fresh approach, creativity,
-"völlig neu", "anders", "Neuansatz", hypotheses or a broad search.
-Follow [`docs/research/EXPLORATION.md`](docs/research/EXPLORATION.md). Do **not**
-read PLAN.md, RESULTS.md, progress.json or the Atlas before the idea phase is
-written down. Work from the target list there. The Atlas is used afterwards, as a
-check, never as a starting point. No "next step" chain from earlier contracts.
+"völlig neu", "anders", "Neuansatz", a broad search or a complete solution.
+Goal: a complete TFPT solution (one principle that yields the inputs P1 and P2,
+reproduces the existing results and supplies state, time, 3+1 and gravity).
+Read [`docs/research/TFPT-STAND.md`](docs/research/TFPT-STAND.md) (what works,
+patterns, what is missing) and follow
+[`docs/research/EXPLORATION.md`](docs/research/EXPLORATION.md). Atlas and the
+catalogue `docs/catalog/TFPT_Pruefkatalog_2026-11-20.xlsx` are available for
+details at any time. Do not read PLAN.md, RESULTS.md, progress.json or contract
+chains beforehand, and do not start from an existing TFPT object: those objects
+are what a new idea must produce.
 
 **Continuation** — the user asks to continue the plan, a named task, contract or
 result. Read `docs/research/fundamental-plan/PLAN.md` (top section), the compact
