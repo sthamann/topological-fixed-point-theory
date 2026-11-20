@@ -7543,3 +7543,21 @@ Familienhälfte gestützt, Trägerhälfte bleibt Setzung.
 
 Nächster Schritt: B_Σ des Originals nach der primitiven Kompression explizit aufstellen (welches Bündel, welche
 Randbedingung an den Marken) und prüfen, ob sein Kern Pole erster Ordnung an den Marken zulässt.
+
+
+## KERNSYM20261120 · Spiegelung des Originals und erzwungener kritischer Punkt (begrenzt)
+
+Vertrag: `experiments/theory-contracts/original-reflection-and-forced-critical-point-20261120/README.md`. Reproduktion: `cd experiments/theory-contracts/original-reflection-and-forced-critical-point-20261120 && for s in a_reflection b_forced; do ../../../.venv/bin/python -B check_$s.py; done` (14 Prüfungen bestanden). Atlas Revision `3b1bd8ffcddefa5436f0227c`, zwei Befunde in
+`problem:four-marks-quartic-and-free-seam-source`. Kein Ledgerwechsel, nichts befördert.
+
+- Spiegelung: a(u) → a*(Gu) ist genau wegen der Lagrange Relation eine antiunitäre Symmetrie des Kernzustands. Sie
+  erhält jede Normalhälfte und ist nicht die modulare Konjugation J. Mit der Ordnungsumkehr der fermionischen
+  Rekonstruktion gibt sie auf einer Hälfte dieselbe Form Tr(F*G)/2^d wie J.
+- Marken: τ = i ist kritischer Punkt jeder Wärmesumme der antiperiodischen Spinstruktur (Fixpunkt von τ → −1/τ), der
+  hexagonale Punkt nicht. Sattel fester Orientierung, monoton auf der Spiegelfamilie. Vorzeichen des Determinantenterms,
+  Masse μ und Residuenterm sind für die Lage der Marken unerheblich.
+- Im Original stehen weder eine Formel für Θ noch die fermionische Wirkung in Z_adm; der quartische Teil der Alpha
+  Gleichung ist dort als Gegenterm über seine Ableitung definiert.
+
+Nächster Schritt: begründen, warum der Modul der vier Marken über den elliptischen Überlagerer mit antiperiodischer
+Spinstruktur eingeht (Anschluss an NULLMODEN20261120: B_Σ nach der primitiven Kompression aufstellen); danach die Kubik.

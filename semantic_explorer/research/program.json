@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "revision": "31dfc4024de867fd146a9645",
+  "revision": "3b1bd8ffcddefa5436f0227c",
   "premises": [
     {
       "id": "premise:declared-p1-p2",
@@ -118522,6 +118522,93 @@
               "sha256": "1de90a4a7379bef804cc7815d72c0f86bb398a5771e9b00997c4bb15e8815f9e",
               "line_start": 88,
               "line_end": 98
+            }
+          ],
+          "attempt_ids": []
+        },
+        {
+          "id": "finding:time-reflection-is-a-second-antiunitary-symmetry-of-the-kernel-state-and-gives-the-same-mirror-form-20261120",
+          "title": {
+            "de": "Die Zeitspiegelung ist eine zweite antiunitäre Symmetrie des Kernzustands und gibt dieselbe Spiegelform",
+            "en": "The time reflection is a second antiunitary symmetry of the kernel state and gives the same mirror form"
+          },
+          "statement": {
+            "de": "Die Lagrange Relation G P_C G = 1 - P_C macht die antilineare Feldabbildung a(u) -> a*(G u) zu einer Symmetrie der Zweipunktfunktion; mit jeder anderen relativen Phase zwischen den Normalhälften ist sie es nicht. Sie wird durch einen antiunitären Operator realisiert, der den Kernzustand festhält und jede Normalhälfte auf sich abbildet. Der Spiegel J von P1BIND20261120 bildet dagegen a(e) auf a*(U e) der anderen Hälfte ab: die Zeitspiegelung ist nicht die modulare Konjugation. Als ordnungserhaltende Abbildung gibt sie keine positive Form (Wert -1/4 für F = a_1 a_2); mit der Ordnungsumkehr der fermionischen Rekonstruktion ist sie auf einer Hälfte F -> F*, und <Omega, F* G Omega> = Tr(F* G)/2^d. Die reflektierte Form des Originals bei Zeit null und die Spiegelform von P1BIND stimmen auf jeder Normalhälfte überein. 8 Prüfungen.",
+            "en": "The Lagrange relation G P_C G = 1 - P_C makes the antilinear field map a(u) -> a*(G u) a symmetry of the two point function; with any other relative phase between the normal halves it is not. It is implemented by an antiunitary operator that fixes the kernel state and maps each normal half to itself. The mirror J of P1BIND20261120 instead sends a(e) to a*(U e) of the other half: the time reflection is not the modular conjugation. As an order preserving map it gives no positive form (value -1/4 for F = a_1 a_2); with the order reversal of the fermionic reconstruction it is F -> F* on a half, and <Omega, F* G Omega> = Tr(F* G)/2^d. The reflected form of the original at time zero and the mirror form of P1BIND agree on each normal half. 8 checks."
+          },
+          "status": "conditional",
+          "premise_ids": [
+            "premise:four-marks-session-recorded-objects-20261118",
+            "premise:boundary-state-is-fock-state-of-original-polarization-20261120"
+          ],
+          "scope": {
+            "de": "Fockraum mit drei Moden je Hälfte, feste Saat. Die Spiegelung ist hier aus der Symmetrie des Kernzustands konstruiert; in den gelesenen Abschnitten des Originals steht keine Formel für Theta als Operator und keine fermionische Wirkung in Z_adm. Die Übereinstimmung der Formen folgt aus der Spureigenschaft des Zustands auf einer Hälfte. Für die Form wird die Lesart der zwei Seiten als Normalhälften nicht gebraucht.",
+            "en": "Fock space with three modes per half, fixed seed. The reflection is constructed here from the symmetry of the kernel state; the sections of the original read contain no formula for Theta as an operator and no fermionic action in Z_adm. The agreement of the forms follows from the trace property of the state on a half. The reading of the two sides as normal halves is not needed for the form."
+          },
+          "sources": [
+            {
+              "path": "experiments/theory-contracts/original-reflection-and-forced-critical-point-20261120/check_a_reflection.py",
+              "sha256": "ce927f5a3d6ea079af2f952271c1ffdfefd99d735174418b9e6259bb43915af9",
+              "line_start": 1,
+              "line_end": 88
+            },
+            {
+              "path": "experiments/theory-contracts/original-reflection-and-forced-critical-point-20261120/README.md",
+              "sha256": "f522c2277ed625f0a0802fb736da78aaf3aa9d4fc4962468cbe073e4b01bfc56",
+              "line_start": 1,
+              "line_end": 87
+            },
+            {
+              "path": "documents/archive--tfpt-45--source_extracts--04_qft_source/sections/008-section-relative-reflection-positivity-with-fermions.tex",
+              "sha256": "898aa879cf6a3eb6464d3180274bc2fc028408aeec9676af70a862dad9c3f4dc",
+              "line_start": 140,
+              "line_end": 253
+            }
+          ],
+          "attempt_ids": []
+        },
+        {
+          "id": "finding:square-torus-is-the-symmetry-forced-critical-point-of-every-spectral-functional-for-the-antiperiodic-structure-20261120",
+          "title": {
+            "de": "Der quadratische Torus ist der durch Symmetrie erzwungene kritische Punkt jedes Spektralfunktionals der antiperiodischen Struktur",
+            "en": "The square torus is the symmetry-forced critical point of every spectral functional of the antiperiodic structure"
+          },
+          "statement": {
+            "de": "Für die Wärmesummen H(tau, s) über das Dirac Spektrum des flachen Torus der Fläche eins mit antiperiodischer Spinstruktur verschwindet der Gradient bei tau = i für jedes s (Fixpunkt von tau -> -1/tau, das die Spinstruktur erhält); am hexagonalen Punkt verschwindet er nicht. Bei periodischer Struktur verschwindet er an beiden Punkten. Für jedes s ist H am Quadrat entlang tau = i t am größten, quer dazu am kleinsten und entlang der Spiegelfamilie monoton. Für kleine s ist s H = 1/(2 pi) = 4 c3 je Flächeneinheit unabhängig von tau. Da jedes Spektralfunktional (Zeta Familie, Residuum, endlicher Teil, Determinante mit Masse) ein Integral von H über s ist, ist das Quadrat kritischer Punkt jedes solchen Funktionals; bei positivem Gewicht ein Sattel fester Orientierung ohne weiteren kritischen Punkt auf der Spiegelfamilie. Vorzeichen des Determinantenterms, Masse mu und Residuenterm sind für die Lage der Marken unerheblich. 6 Prüfungen.",
+            "en": "For the heat sums H(tau, s) over the Dirac spectrum of the flat torus of unit area with antiperiodic spin structure the gradient vanishes at tau = i for every s (fixed point of tau -> -1/tau, which preserves the spin structure); at the hexagonal point it does not. For the periodic structure it vanishes at both. For every s, H is largest at the square along tau = i t, smallest across it and monotone along the mirror family. For small s, s H = 1/(2 pi) = 4 c3 per unit area independent of tau. Since every spectral functional (zeta family, residue, finite part, determinant with a mass) is an integral of H over s, the square is a critical point of each; for positive weight a saddle of fixed orientation with no further critical point on the mirror family. The sign of the determinant term, the mass mu and the residue term are immaterial for the position of the marks. 6 checks."
+          },
+          "status": "conditional",
+          "premise_ids": [
+            "premise:four-marks-session-recorded-objects-20261118"
+          ],
+          "scope": {
+            "de": "Bedingt auf zwei Voraussetzungen: der Modul geht über den Dirac Operator des elliptischen Überlagerers der vier Marken ein, und die Spinstruktur ist antiperiodisch auf beiden Zyklen. Die Fläche ist festgehalten. Eindeutigkeit ist für den erzwungenen Punkt und für die Spiegelfamilie gezeigt, für das ganze Gebiet nur bei der Zeta Determinante (KERNORIG20261120). Die Lage der Marken ist damit nicht aus dem Original hergeleitet.",
+            "en": "Conditional on two premises: the modulus enters through the Dirac operator of the elliptic cover of the four marks, and the spin structure is antiperiodic on both cycles. The area is held fixed. Uniqueness is shown for the forced point and on the mirror family, for the whole region only for the zeta determinant (KERNORIG20261120). The position of the marks is thereby not derived from the original."
+          },
+          "sources": [
+            {
+              "path": "experiments/theory-contracts/original-reflection-and-forced-critical-point-20261120/check_b_forced.py",
+              "sha256": "6ca8c6b34594e49140019df56b2f0a0feef0308c73a7e50fa20d0ede123168cf",
+              "line_start": 1,
+              "line_end": 51
+            },
+            {
+              "path": "experiments/theory-contracts/original-reflection-and-forced-critical-point-20261120/README.md",
+              "sha256": "f522c2277ed625f0a0802fb736da78aaf3aa9d4fc4962468cbe073e4b01bfc56",
+              "line_start": 1,
+              "line_end": 87
+            },
+            {
+              "path": "documents/archive--tfpt-45--source_extracts--05_metrology_source/sections/001-subsection-from-bridge-to-geometric-completion.tex",
+              "sha256": "f03609effe2abf6629a0057fa024c29fba0c59176072588599bfa1646f48939e",
+              "line_start": 98,
+              "line_end": 127
+            },
+            {
+              "path": "documents/archive--tfpt-45--source_extracts--02_carrier_source/sections/009-source.tex",
+              "sha256": "27114e2ce775346dac11c53ecb77871453f3ecf226fe40951f8b3099bdea6b05",
+              "line_start": 334,
+              "line_end": 350
             }
           ],
           "attempt_ids": []

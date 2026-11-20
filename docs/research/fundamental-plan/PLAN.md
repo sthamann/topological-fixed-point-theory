@@ -1,5 +1,14 @@
 # TFPT: Aufgabenplan zur fundamentalen Herleitung
 
+## 20. November: Spiegelung des Originals und erzwungener kritischer Punkt (KERNSYM20261120)
+
+Vertrag `experiments/theory-contracts/original-reflection-and-forced-critical-point-20261120`, 14 Prüfungen, Atlas `3b1bd8ffcddefa5436f0227c`. Die Zeitspiegelung ist eine zweite antiunitäre Symmetrie des Kernzustands
+und gibt auf jeder Normalhälfte die Spiegelform; τ = i ist erzwungener kritischer Punkt jedes Spektralfunktionals der
+antiperiodischen Spinstruktur. Vorzeichen, Masse und Residuenterm entfallen als offene Punkte für die Markenlage.
+
+Nächste Aufgabe: B_Σ nach der primitiven Kompression aufstellen und daran prüfen, ob der elliptische Überlagerer mit
+antiperiodischer Spinstruktur und die Aufteilung 5 + 3 der Nullmoden folgen; danach die Kubik.
+
 ## 20. November: Profil, Zeit und Modul aus dem Original selbst (KERNORIG20261120)
 
 Vertrag `experiments/theory-contracts/original-profile-time-modulus-20261120`, 19 Prüfungen, Atlas `31dfc4024de867fd146a9645`. Das Original legt das Profil fest (Zeta Familie), seine OS/CAR
