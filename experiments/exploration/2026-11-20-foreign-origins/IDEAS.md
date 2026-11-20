@@ -23,7 +23,7 @@
 | H | Operatoralgebra: aus maximaler Symmetrie, Zustandsinvarianz und modularem Fluss soll Zeit entstehen | Modulare Zeit, theoretisch Thermodynamik | KMS, Fluss auf Matrixeinheiten, Spektrum des Modularoperators | Zustandsdichte und Faktorwahl | Endliche volle Matrixalgebra mit invariantem Normalzustand |
 | Z | Zufallsmatrizen: zufällige spektrale Selbstorganisation erzeugt interne dreifache und zweifache degenerierte Sektoren | Eventuelle 3+2 Aufspaltung ohne festes Feld | Entartungsmultiplizitäten, Eigenwertabstände, Casimirs | Ensemble und Kovarianzen | Stetiges vollsymmetrisches Zufallsmatrixensemble ohne interne Symmetrie |
 
-## Der neue gemeinsame Pfad K → T → Q → S
+## Der mathematische gemeinsame Pfad K → T → Q → S
 
 1. **Erstes Kohärenzdiagramm:** Für vier geordnete Faktoren gibt es fünf Klammerungen. Einzelne lokale Assoziatorbewegungen bilden genau ein Pentagon. Zwei Wege zwischen den extremen Klammerungen haben Längen zwei und drei.
 2. **Geometrische Realisierung:** Ein 2↔3 Pachnerzug in Dimension drei ist die Aufteilung der fünf Tetraederfacetten der Grenze eines 4 Simplex in zwei und drei. Beide Seiten haben dieselbe orientierte Randkette. Das ist ein lokales topologisches Ereignis, noch keine Lorentzgeometrie.
@@ -54,3 +54,10 @@
 | E8 Codeklasse | Alle 200787 binären [8,4] Unterräume | 30/200787; ein Permutationsorbit | Gerade Selbstdualität ist eine vorausgesetzte Konsistenzbedingung, nicht beobachtete Natur |
 
 Quellen: Repository `docs/research/TFPT-STAND.md`, `docs/research/EXPLORATION.md`, `research/originlab/genesis_rules.py`; Haydens und Preskills QEC Texte; Mathematik des Pachner 2↔3 Zuges; Literatur zum Associahedron und zu Construction A. Vollständige URLs und historische Eingrenzung in `VERDICT.md`.
+
+
+## Nachträglicher adversarialer Kontrolltest: E8 ist hier nicht QEC spezifisch
+
+`redteam_universality.py` widerlegt die stärkste naheliegende Einmaligkeitslesart der neuen Syndrombrücke. Die vier unabhängigen, aber völlig trivialen Fünfqubit Stabilisatoren `ZIIII, IZIII, IIZII, IIIZI` besitzen ebenfalls den abstrakten vierdimensionalen Syndromraum F2^4. Sie korrigieren **keinen** beliebigen Einzelfehler: unter den 15 Einzelpaulifehlern existieren nur fünf verschiedene Syndrome einschließlich null. Trotz dieses Defekts liefern alle **15 von 15** dreidimensionalen Unterräume durch die gleiche extern gewählte Hamming/Paritätserweiterung genau die gleiche E8 Gitterklasse mit 240 kurzen Wurzeln. Das gesamte „Syndromhyperfläche → Hamming → E8“ Verfahren ist also bereits durch die Wahl *vier unabhängiger binärer Checks* vollständig erklärt. Die 15/6435 Basislinie zeigt nur, dass lineare Siebenermengen unter beliebigen Siebenermengen selten sind; das ist **keine** gültige Basislinie für E8 Spezifität innerhalb der tatsächlich gewählten Klasse aller linearen Hyperflächen.
+
+**Korrigierte Bewertung:** Die Syndrom E8 Brücke bleibt exakt und anschaulich, ist aber **OFFEN** und nicht eigenständig `KANDIDAT` nach dem strengeren Kriterium „über einer strukturgleichen Null“. Ein echter Fortschritt erfordert eine neue kohärente *gemeinsame* Bedingung, die sowohl den perfekt korrigierenden, zyklischen Fünfercode als auch die spezielle physische D5/A3 Einbettung selektiert und die triviale `ZIIII` Kontrollquelle zurückweist.
