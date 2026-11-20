@@ -1,5 +1,15 @@
 # TFPT: Aufgabenplan zur fundamentalen Herleitung
 
+## 20. November: Profil, Zeit und Modul aus dem Original selbst (KERNORIG20261120)
+
+Vertrag `experiments/theory-contracts/original-profile-time-modulus-20261120`, 19 Prüfungen, Atlas `31dfc4024de867fd146a9645`. Das Original legt das Profil fest (Zeta Familie), seine OS/CAR
+Rekonstruktion gibt am Kragenoperator Polarisation, Fockvakuum und Zeit mit Lücke λ₁, und die Zeta Determinante des
+elliptischen Überlagerers hat im abgesuchten Gebiet nur τ = i als kritischen Punkt. Die freie Kragenbreite und das
+Modellprofil aus KERNSIX entfallen. F1 bleibt in Bearbeitung.
+
+Nächste Aufgabe: Vorzeichen des Determinantenterms klären; Θ des Originals gegen die modulare Konjugation prüfen;
+Residuenterm bei s = 1 und Referenz D_ref am elliptischen Überlagerer rechnen.
+
 ## 20. November: Sechs Folgeschritte am originalen Randkern (KERNSIX20261120)
 
 Vertrag `experiments/theory-contracts/kernel-followups-20261120`, 69 Prüfungen, Atlas `e2c9f270d2ca56276b98c9a9`. Urteile: (1) Randzustand = Fockzustand von P_C genau dann, wenn das Profil

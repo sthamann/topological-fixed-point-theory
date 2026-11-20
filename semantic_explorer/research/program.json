@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "revision": "e2c9f270d2ca56276b98c9a9",
+  "revision": "31dfc4024de867fd146a9645",
   "premises": [
     {
       "id": "premise:declared-p1-p2",
@@ -118365,6 +118365,163 @@
               "sha256": "1e08072922318f96c47ca2fc116c6d0717066d2de941a984a01f6ae7ce5e761e",
               "line_start": 1,
               "line_end": 150
+            }
+          ],
+          "attempt_ids": []
+        },
+        {
+          "id": "finding:original-fixes-the-spectral-profile-by-its-zeta-family-and-the-log-profile-is-its-derivative-at-zero-20261120",
+          "title": {
+            "de": "Das Original legt das Profil durch seine Zeta Familie fest; das Logarithmusprofil ist deren Ableitung bei null",
+            "en": "The original fixes the spectral profile by its zeta family; the logarithmic profile is its derivative at zero"
+          },
+          "statement": {
+            "de": "Das Original liest die geometrische Schließung aus Z_rel(s) = Tr_rel(|D|^(-2s) - |D_ref|^(-2s)) + (i pi/2) Delta eta, mit Residuum bei s = 1 und endlichem Teil bei s = 0, ausdrücklich statt eines frei gewählten Profils; die projizierte modulare freie Energie enthält Re log det_zeta(D^2 + mu^2) + (1/2) eta. Auf endlichen Matrizen: die halbe Ableitung von Z_rel bei s = 0 ist die primitive Wirkung mit f = -log|x|, mit dem Phasenterm der negative Logarithmus der relativen Fermiondeterminante; der Wert bei s = 0 trägt nur die Phase. Re log det(D^2) ist dasselbe Profil mit umgekehrtem Vorzeichen und doppeltem Gewicht. 4 Prüfungen.",
+            "en": "The original reads the geometric closure from Z_rel(s) = Tr_rel(|D|^(-2s) - |D_ref|^(-2s)) + (i pi/2) Delta eta, with the residue at s = 1 and the finite part at s = 0, explicitly instead of a freely chosen profile; the projected modular free energy contains Re log det_zeta(D^2 + mu^2) + (1/2) eta. On finite matrices: half the derivative of Z_rel at s = 0 is the primitive action with f = -log|x|, with the phase term minus the logarithm of the relative fermion determinant; the value at s = 0 carries only the phase. Re log det(D^2) is the same profile with opposite sign and double weight. 4 checks."
+          },
+          "status": "established_scoped",
+          "premise_ids": [
+            "premise:four-marks-session-recorded-objects-20261118"
+          ],
+          "scope": {
+            "de": "Beantwortet die offene Frage von KERNSIX20261120 nach der Form des Profils. Nicht entschieden ist das Vorzeichen: ein Fermionfeld gibt -log|det D|, die freie Energie schreibt +Re log det(D^2 + mu^2) neben -log Z_rel; ob das ein Regulatorterm ist, sagt der gelesene Text nicht. Die Prämisse zum fermionischen Logarithmus bleibt deshalb eine Prämisse.",
+            "en": "Answers the open question of KERNSIX20261120 on the form of the profile. Not decided is the sign: a fermion field gives -log|det D|, the free energy writes +Re log det(D^2 + mu^2) next to -log Z_rel; whether this is a regulator term is not said in the text read. The premise on the fermionic logarithm therefore stays a premise."
+          },
+          "sources": [
+            {
+              "path": "experiments/theory-contracts/original-profile-time-modulus-20261120/check_a_profile.py",
+              "sha256": "8a6f162097b084dada552482544ddc4f9dae3d8a1036a93a383de0dd263238cf",
+              "line_start": 1,
+              "line_end": 48
+            },
+            {
+              "path": "experiments/theory-contracts/original-profile-time-modulus-20261120/README.md",
+              "sha256": "29c69380af9d9126242c2b27f912c757c17777c3d2f9b54dceb327c3836ba1b9",
+              "line_start": 1,
+              "line_end": 107
+            },
+            {
+              "path": "documents/archive--tfpt-45--source_extracts--05_metrology_source/sections/001-subsection-from-bridge-to-geometric-completion.tex",
+              "sha256": "f03609effe2abf6629a0057fa024c29fba0c59176072588599bfa1646f48939e",
+              "line_start": 98,
+              "line_end": 127
+            },
+            {
+              "path": "documents/archive--tfpt-45--source_extracts--02_carrier_source/sections/009-source.tex",
+              "sha256": "27114e2ce775346dac11c53ecb77871453f3ecf226fe40951f8b3099bdea6b05",
+              "line_start": 334,
+              "line_end": 350
+            },
+            {
+              "path": "documents/archive--tfpt-45--source_extracts--01_boundary_kernel_source/sections/001-section-primitive-core-and-carrier-interface-handoff.tex",
+              "sha256": "7d6e673d99c29d950dc601283cd51c1cc0b113567eeb79c8396fec9c82a02c79",
+              "line_start": 298,
+              "line_end": 351
+            }
+          ],
+          "attempt_ids": []
+        },
+        {
+          "id": "finding:original-reconstruction-on-the-collar-operator-gives-the-polarization-and-a-time-with-gap-lambda1-20261120",
+          "title": {
+            "de": "Die Rekonstruktion des Originals gibt am Kragenoperator die Polarisation und eine Zeit mit Lücke lambda_1",
+            "en": "The reconstruction of the original on the collar operator gives the polarization and a time with gap lambda_1"
+          },
+          "statement": {
+            "de": "Das Original definiert die Form (F,G) = <Theta F, G> auf Observablen positiver euklidischer Zeit, teilt durch den Nullraum und liest die Zeithalbgruppe exp(-tH), H >= 0, mit rekonstruierter CAR Theorie und Vakuum. Für das freie Feld des Kragenoperators D = gamma_n (d_tau + B): der reflektierte Kern ist exp(-(t+t')|B|) auf einer Spektralhälfte und positiv; sein Nullraum ist die andere Hälfte, der Quotient ist die Polarisation; die Zeithalbgruppe ist exp(-t|B|) mit Lücke lambda_1 (Saatskala); der Gleichzeitgrenzwert der Zweipunktfunktion ist der Projektor, im Fockraum der Grundzustand von dGamma(B). Der Flächenzustand eines Kragens endlicher Breite läuft für wachsende Breite gegen dieses Vakuum. 8 Prüfungen.",
+            "en": "The original defines the form (F,G) = <Theta F, G> on observables at positive Euclidean time, divides by the null space and reads the time semigroup exp(-tH), H >= 0, with a reconstructed CAR theory and vacuum. For the free field of the collar operator D = gamma_n (d_tau + B): the reflected kernel is exp(-(t+t')|B|) on one spectral half and positive; its null space is the other half, the quotient is the polarization; the time semigroup is exp(-t|B|) with gap lambda_1 (seed scale); the equal time limit of the two point function is the projector, in Fock space the ground state of dGamma(B). The face state of a collar of finite width tends to this vacuum as the width grows. 8 checks."
+          },
+          "status": "conditional",
+          "premise_ids": [
+            "premise:four-marks-session-recorded-objects-20261118",
+            "premise:boundary-state-is-fock-state-of-original-polarization-20261120"
+          ],
+          "scope": {
+            "de": "Bedingt darauf, dass der fermionische CAR Kern des Originals die Greenfunktion seines Kragenoperators ist und reflexionspositiv (im Original Voraussetzung des Lemmas). Gezeigt auf dem Zylinder, auf der Stufe einer Teilchenzahl und in einem kleinen Fockraum. Nicht gezeigt: dass Theta die modulare Konjugation aus P1BIND20261120 ist. Die Zeit braucht keine freie Kragenbreite; der Vergleich des Planck Koeffizienten chi^2/(2 pi^2) mit dem Flächengesetz gibt nur die Bedingung l chi = (3/4) sqrt(zeta(3)).",
+            "en": "Conditional on the fermionic CAR kernel of the original being the Green function of its collar operator and reflection positive (in the original a hypothesis of the lemma). Shown on the cylinder, at the one particle level and in a small Fock space. Not shown: that Theta is the modular conjugation of P1BIND20261120. The time needs no free collar width; comparing the Planck coefficient chi^2/(2 pi^2) with the area law only gives the condition l chi = (3/4) sqrt(zeta(3))."
+          },
+          "sources": [
+            {
+              "path": "experiments/theory-contracts/original-profile-time-modulus-20261120/check_b_os.py",
+              "sha256": "e79f5bed1402141e41574f20ef16fa710b2b300ee4bbe701d74b1d3c8bd929df",
+              "line_start": 1,
+              "line_end": 76
+            },
+            {
+              "path": "experiments/theory-contracts/original-profile-time-modulus-20261120/README.md",
+              "sha256": "29c69380af9d9126242c2b27f912c757c17777c3d2f9b54dceb327c3836ba1b9",
+              "line_start": 1,
+              "line_end": 107
+            },
+            {
+              "path": "documents/archive--tfpt-45--source_extracts--04_qft_source/sections/002-section-closure-theorems-from-the-admissibility-complex.tex",
+              "sha256": "61ecee7727bdec47936bbffc028d3dbac5260a025b6dbcce30124a60d635fc9c",
+              "line_start": 256,
+              "line_end": 312
+            },
+            {
+              "path": "documents/archive--tfpt-45--source_extracts--04_qft_source/sections/008-section-relative-reflection-positivity-with-fermions.tex",
+              "sha256": "898aa879cf6a3eb6464d3180274bc2fc028408aeec9676af70a862dad9c3f4dc",
+              "line_start": 140,
+              "line_end": 253
+            },
+            {
+              "path": "documents/archive--tfpt-45--source_extracts--01_boundary_kernel_source/sections/002-section-intrinsic-closed-branch-and-canonical-rigid-obje.tex",
+              "sha256": "1de90a4a7379bef804cc7815d72c0f86bb398a5771e9b00997c4bb15e8815f9e",
+              "line_start": 88,
+              "line_end": 98
+            }
+          ],
+          "attempt_ids": []
+        },
+        {
+          "id": "finding:zeta-determinant-of-the-elliptic-cover-has-the-square-as-only-critical-point-in-the-scanned-region-20261120",
+          "title": {
+            "de": "Die Zeta Determinante des elliptischen Überlagerers hat im abgesuchten Gebiet nur das Quadrat als kritischen Punkt",
+            "en": "The zeta determinant of the elliptic cover has the square as its only critical point in the scanned region"
+          },
+          "statement": {
+            "de": "Der endliche Teil bei s = 0 ist für den Dirac Operator des flachen Torus mit antiperiodischer Spinstruktur auf beiden Zyklen die Zeta Determinante |theta_3(tau)/eta(tau)|^2, ohne Testprofil und ohne Normierung durch lambda_1. Das Modenprodukt mit der regularisierten Nullpunktsumme 1/12 gibt theta_3/eta und ist invariant unter tau -> -1/tau. tau = i ist kritisch in beiden Richtungen: Minimum entlang tau = i t, Maximum quer dazu, Krümmungen +1,5964 und -1,5964. Die Ableitung hat im Gebiet |Re tau| <= 0,9, 0,45 <= Im tau <= 3 genau eine Nullstelle (Windungszahl 1), die bei tau = i. Die Strukturen theta_4 und theta_2 sind dort nicht kritisch. tau = i entspricht den Marken bei den vierten Einheitswurzeln. Das Original verlangt einen kritischen Punkt, kein Minimum. 7 Prüfungen.",
+            "en": "The finite part at s = 0 is, for the Dirac operator of the flat torus with antiperiodic spin structure on both cycles, the zeta determinant |theta_3(tau)/eta(tau)|^2, without a test profile and without normalisation by lambda_1. The mode product with the regularised zero point sum 1/12 gives theta_3/eta and is invariant under tau -> -1/tau. tau = i is critical in both directions: a minimum along tau = i t, a maximum across, curvatures +1.5964 and -1.5964. The derivative has exactly one zero (winding number 1) in the region |Re tau| <= 0.9, 0.45 <= Im tau <= 3, the one at tau = i. The structures theta_4 and theta_2 are not critical there. tau = i corresponds to the marks at the fourth roots of unity. The original asks for a critical point, not a minimum. 7 checks."
+          },
+          "status": "conditional",
+          "premise_ids": [
+            "premise:four-marks-session-recorded-objects-20261118"
+          ],
+          "scope": {
+            "de": "Bedingt auf zwei Voraussetzungen: der Modul geht über den Dirac Operator des elliptischen Überlagerers der vier Marken ein, und die Spinstruktur ist antiperiodisch auf beiden Zyklen. Ersetzt das Modellprofil, die Normierung und die Minimumsregel des KERNSIX Befunds; die Spiegelbedingung wird für die Stationarität nicht gebraucht. Nicht nachgebildet: Residuenterm bei s = 1 und Referenz D_ref. Das Gebiet deckt den Fundamentalbereich nicht bis in die Spitzen ab. Die Lage der Marken ist damit nicht aus dem Original hergeleitet.",
+            "en": "Conditional on two premises: the modulus enters through the Dirac operator of the elliptic cover of the four marks, and the spin structure is antiperiodic on both cycles. Replaces the model profile, the normalisation and the minimum rule of the KERNSIX finding; the mirror condition is not needed for stationarity. Not modelled: residue term at s = 1 and reference D_ref. The region does not cover the fundamental domain up to the cusps. The position of the marks is thereby not derived from the original."
+          },
+          "sources": [
+            {
+              "path": "experiments/theory-contracts/original-profile-time-modulus-20261120/check_c_modulus.py",
+              "sha256": "17af14b849f1a98081c8a6afc6befd0562ef479778dfc3e415ceececce05a674",
+              "line_start": 1,
+              "line_end": 81
+            },
+            {
+              "path": "experiments/theory-contracts/original-profile-time-modulus-20261120/README.md",
+              "sha256": "29c69380af9d9126242c2b27f912c757c17777c3d2f9b54dceb327c3836ba1b9",
+              "line_start": 1,
+              "line_end": 107
+            },
+            {
+              "path": "documents/archive--tfpt-45--source_extracts--05_metrology_source/sections/001-subsection-from-bridge-to-geometric-completion.tex",
+              "sha256": "f03609effe2abf6629a0057fa024c29fba0c59176072588599bfa1646f48939e",
+              "line_start": 98,
+              "line_end": 127
+            },
+            {
+              "path": "documents/archive--tfpt-45--source_extracts--02_carrier_source/sections/010-partial-alpha-gamma-u-1-alpha-0.tex",
+              "sha256": "979c84b3208540fcd0ef01eefb173a70d91e79fa363c9d4f3270b65696ceb4c7",
+              "line_start": 1,
+              "line_end": 40
+            },
+            {
+              "path": "documents/archive--tfpt-45--source_extracts--01_boundary_kernel_source/sections/002-section-intrinsic-closed-branch-and-canonical-rigid-obje.tex",
+              "sha256": "1de90a4a7379bef804cc7815d72c0f86bb398a5771e9b00997c4bb15e8815f9e",
+              "line_start": 88,
+              "line_end": 98
             }
           ],
           "attempt_ids": []

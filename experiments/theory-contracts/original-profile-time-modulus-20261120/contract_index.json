@@ -1,0 +1,34 @@
+{
+ "contract_id": "KERNORIG20261120",
+ "date": "2026-11-20",
+ "folder": "experiments/theory-contracts/original-profile-time-modulus-20261120",
+ "question": "Legt das Original das Profil der Wirkung und eine Zeitskala fest, und was folgt daraus für Randzustand, Zeit und Lage der vier Marken?",
+ "verdict": "Profil: ja, die Zeta Familie Z_rel(s) mit Residuum bei s = 1 und endlichem Teil bei s = 0; deren halbe Ableitung bei 0 ist die Wirkung mit f = -log|x|. Vorzeichen des Determinantenterms in der freien Energie offen. Zustand und Zeit: die OS/CAR Rekonstruktion des Originals gibt am Kragenoperator die Polarisation als Quotienten, den Fockzustand als Vakuum und die Zeit mit Erzeuger |B| und Lücke lambda_1; keine freie Breite. Modul: die Zeta Determinante |theta_3/eta|^2 hat im abgesuchten Gebiet genau einen kritischen Punkt, tau = i (Marken bei mu_4). F1 bleibt in Bearbeitung. Nichts befördert, kein Ledgerwechsel.",
+ "resolved": [
+  "Profil des Originals = Zeta Familie; f = -log|x| ist deren halbe Ableitung bei s = 0",
+  "OS Quotient am Kragenoperator = Polarisation; Zeithalbgruppe exp(-t|B|), Lücke lambda_1",
+  "Original sitzt im Grenzfall unendlicher Kragenbreite (Temperatur null)",
+  "tau = i einziger kritischer Punkt von |theta_3/eta|^2 im Gebiet |Re tau| <= 0.9, 0.45 <= Im tau <= 3; Sattel"
+ ],
+ "kills": [
+  "freie Kragenbreite als Quelle der Zeit im Original",
+  "Minimum als Auswahlregel für den Modul",
+  "die zwei anderen geraden Spinstrukturen am Quadrat"
+ ],
+ "open": [
+  "Vorzeichen: +Re log det(D^2 + mu^2) gegen -log|det D| eines Fermionfelds",
+  "Theta des Originals = modulare Konjugation aus P1BIND?",
+  "Residuenterm bei s = 1 und Referenz D_ref am elliptischen Überlagerer",
+  "warum der Modul über den elliptischen Überlagerer eingeht",
+  "Kubik und Gravitation unverändert offen"
+ ],
+ "replay": "cd experiments/theory-contracts/original-profile-time-modulus-20261120 && for s in a_profile b_os c_modulus; do ../../../.venv/bin/python -B check_$s.py; done",
+ "checks_passed": true,
+ "checks": {
+  "a_profile": "4/4",
+  "b_os": "8/8",
+  "c_modulus": "7/7"
+ },
+ "physical_solution": false,
+ "atlas": "eingetragen am 20.11.2026, Revision 31dfc4024de867fd146a9645: drei Befunde in problem:four-marks-quartic-and-free-seam-source"
+}

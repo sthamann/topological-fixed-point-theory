@@ -7431,3 +7431,87 @@ sieben Befunde und eine Prämisse in `problem:four-marks-quartic-and-free-seam-s
 
 F1 bleibt in Bearbeitung. Nächster Schritt: prüfen, ob das Original das Profil f und die Breite ℓ festlegt
 (modulare freie Energie, Abschnitt 002 des Randkerns und die späteren Abschlusssätze).
+
+
+## GESAMT20261120 · Ein Objekt für den festen Bestand: vier Marken, zwei Seiten, acht Moden (Zusammenbau, bedingt)
+
+Sitzung vom 20. November 2026, Fortsetzung von KATALOGQUER20261120. Skript
+`experiments/theory-contracts/pruefkatalog-querauswertung-20261120/check_marks_modes.py`, 25 von 25 exakt. Struktursuche
+`structure_scenarios.py` auf Atlasrevision `e2c9f270d2ca56276b98c9a9` erneut gelaufen (bestes Objekt unverändert (3+2)+3,
+213,90 gegen Zufallsmedian 89,62). Kein Ledgerwechsel, kein Atlaseintrag, nichts befördert, kein Commit.
+
+**Objekt:** Sphäre mit dem Divisor D der vier Marken bei μ₄, fermionischer Kragen des Originals (KERNSIX Schritt 1), zwei
+Seiten. Träger `H⁰(O(D))` (Dimension 5) und Familien `H₁` (Rang 3) sind im Atlas als ein Divisor bewiesen.
+
+**Neu geprüft:**
+
+- μ₄ wirkt auf dem Träger mit den Charakteren 1, i, −1, −i, 1 und auf den Familien mit i, −1, −i (v453, QGEO.MARKS.02).
+  Zusammen sind die acht Moden genau zweimal die reguläre Darstellung von μ₄.
+- Die Involution z → −z teilt den Träger in 3 gerade (1, z², z⁴) und 2 ungerade (z, z³) Moden; die ungeraden sind das
+  konjugierte Paar (i, −i). Jede holomorphe Involution der Marken gibt dieselbe Teilung. Die Hyperladung des Originals
+  `Y = 1/12 + (5/12) ε_car` ist mit ε = −Parität genau (−1/3, −1/3, −1/3, 1/2, 1/2).
+- Die Spur der Involution auf den acht Moden ist null (Träger +1, Familien −1). Das ist die Bedingung aus KERNSIX
+  Schritt 2. Die Familien zerfallen 1 + 2.
+- Unter 2 bis 8 Marken gibt nur n = 4 die Teilung (3 + 2) + 3. Zyklische Viererverklebung verlangt 8 = 5 + 3.
+- Der Charakter von μ₄ auf dem Träger ist der der Galoiswirkung x → 2x auf Z/5 (ein Fixpunkt, ein Viererzyklus).
+
+**Geltung:** Die Teilung 3 + 2 ist damit eine Folge der Marken und keine eigene Setzung, falls ε_car die Parität der
+Deckinvolution ist. Diese Gleichsetzung ist nicht am Original geprüft. Gleiche Charaktere konstruieren keine Abbildung
+zur Galoiswirkung. Atlassuche fand die Paritätslesart und die doppelte reguläre Darstellung nicht.
+
+**Weiter gesetzt:** Profil f = −log|x|; Auswahl des Moduls τ = i; Breite ℓ des Kragens; Funktional der Kubik; eine Hand =
+sechs Züge; N⋆. F1 bleibt in Bearbeitung.
+
+**Nächster Schritt:** Am Trägerabschnitt des Originals (Abschnitt 001, Zeilen 170 bis 203) prüfen, ob ε_car als Wirkung von
+z → −z auf `H⁰(O(D))` definiert ist oder definiert werden kann, ohne die Kernalgebra aus Schritt 2 zu verletzen.
+
+
+## EPSCAR20261120 · ε_car am Original: Paritätslesart passt zum Kragendeck des Ledgers, nicht zum Wortlaut (bedingt)
+
+Sitzung vom 20. November 2026, Fortsetzung von GESAMT20261120. Skript
+`experiments/theory-contracts/pruefkatalog-querauswertung-20261120/check_epscar_original.py`, 14 von 14. Kein
+Ledgerwechsel, kein Atlaseintrag, nichts befördert, kein Commit.
+
+**Original gelesen:** Randkernquelle Abschnitt 001, Zeilen 103 bis 177 und 272 bis 289; Trägerquelle Abschnitt 001,
+Zeilen 8 bis 75 und 170 bis 203; `verification/v507_seam_bit_origin.py`, Kopf.
+
+**Befund:**
+
+- Das Original definiert `ε_car := ι_C|H_car` mit `ι_C = R_τ` und `Σ = Fix(τ)`. Es verbietet, Spiegelung, Polarisation
+  und Trägerteilung wörtlich gleichzusetzen. Die Teilung 3 + 2 folgt dort aus zwei Annahmen: `dim Λ²E₊ = 1` und
+  `Λ²E₋ ≅ E₋^∨`.
+- Wörtlich kann die Definition 3 + 2 nicht liefern (KERNSIX Schritt 2: `ι_C` hat auf jedem invarianten Block Spur null).
+  z → −z ist auch nicht die Spiegelung τ: es fixiert keinen Kreis und bewegt alle vier Marken.
+- Das Ledger führt ein zweites Deck: das Kragendeck der Naht selbst. `v507` identifiziert es als z → −z, die zentrale
+  Involution der Marken. Es wirkt innerhalb einer Normalhälfte und vertauscht mit der Kernalgebra, wie KERNSIX Schritt 2
+  es für `ε_car` verlangt.
+- Dieses Deck teilt `H⁰(O(D))` in 3 + 2. Beide Annahmen des Originals über die äußeren Potenzen folgen dann, und
+  umgekehrt lassen sie nur (3, 2) zu. Die Teilung hängt nicht an der Lage des Decks: jede holomorphe Involution gibt sie.
+
+**Geltung:** Bedingt auf zwei Voraussetzungen, die nicht im Original stehen: (a) der Trägerblock `H_car` ist `H⁰(O(D))`
+der vier Marken; (b) `ε_car` ist die Wirkung des Kragendecks, nicht die Einschränkung von `ι_C`. Dazu ein Vorzeichen:
+`ε_car = −Rückzug`, eine Wahl der Hebung. Die Auswahl von fünf Trägermoden bleibt die des Viermarkenobjekts.
+
+**Nächster Schritt:** (a) am Original entscheiden: Ist der nach der primitiven Kompression gewählte endliche Block der
+Raum der Nullmoden von B mit Polen an den Marken? Dazu den Kragenoperator auf der markierten Sphäre aufstellen und seine
+Nullmoden mit `H⁰(O(D)) ⊕ H⁰(K(D))` vergleichen.
+
+
+## KERNORIG20261120 · Profil, Zeit und Modul aus dem Original selbst (begrenzt)
+
+Vertrag: `experiments/theory-contracts/original-profile-time-modulus-20261120/README.md`. Reproduktion: `cd experiments/theory-contracts/original-profile-time-modulus-20261120 && for s in a_profile b_os c_modulus; do ../../../.venv/bin/python -B check_$s.py; done` (19 Prüfungen bestanden). Atlas Revision `31dfc4024de867fd146a9645`, drei Befunde in
+`problem:four-marks-quartic-and-free-seam-source`. Kein Ledgerwechsel, nichts befördert.
+
+- Profil: Das Original liest seine Schließung aus der Zeta Familie Z_rel(s) (Residuum bei s = 1, endlicher Teil bei
+  s = 0), ausdrücklich statt eines frei gewählten Profils. Deren halbe Ableitung bei s = 0 ist die Wirkung mit
+  f = −log|x|. Offen ist das Vorzeichen des Terms Re log det(D² + μ²) in der freien Energie.
+- Zustand und Zeit: Die OS/CAR Rekonstruktion des Originals gibt am Kragenoperator die Polarisation als Quotienten,
+  den Fockzustand als Vakuum und die Zeithalbgruppe exp(−t|B|) mit Lücke λ₁. Keine freie Kragenbreite nötig; das
+  Original ist der Grenzfall unendlicher Breite. Bedingt auf die Reflexionspositivität, die das Original voraussetzt.
+- Modul: Die Zeta Determinante |θ₃/η|² hat im Gebiet |Re τ| ≤ 0,9, 0,45 ≤ Im τ ≤ 3 genau einen kritischen Punkt,
+  τ = i (Marken bei μ₄); ein Sattel. Das Original verlangt einen kritischen Punkt. Bedingt auf den elliptischen
+  Überlagerer und die antiperiodische Spinstruktur.
+- Kubik und Gravitation unverändert nicht hergeleitet.
+
+Nächster Schritt: das Vorzeichen klären (ist Z_rel fermionisch und der Determinantenterm ein Regulator?) und prüfen, ob
+Θ des Originals die modulare Konjugation aus P1BIND ist; dann den Residuenterm bei s = 1 am elliptischen Überlagerer.
