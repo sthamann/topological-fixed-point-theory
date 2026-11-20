@@ -1,5 +1,17 @@
 # TFPT: Aufgabenplan zur fundamentalen Herleitung
 
+## 20. November: Sechs Folgeschritte am originalen Randkern (KERNSIX20261120)
+
+Vertrag `experiments/theory-contracts/kernel-followups-20261120`, 69 Prüfungen, Atlas `e2c9f270d2ca56276b98c9a9`. Urteile: (1) Randzustand = Fockzustand von P_C genau dann, wenn das Profil
+der primitiven Wirkung f = −log|x| ist; das Original lässt f offen. (2) Zustand, Form und Marker des E₈ Worts folgen;
+die Aufteilung 3 + 2 kommt nicht aus dem Kern; Trägermoden als Eigenmoden von ι_C sind ausgeschlossen. (3) Zeit mit
+Länge aus einer Kragenbreite ℓ (Temperatur 1/(2ℓ)); ℓ frei. (4) Quadrat als einziges Minimum auf der Spiegelfamilie
+(Modell). (5) Kubik nicht hergeleitet; Normalform w + κ w³ = 32π². (6) Flächengesetz ohne Abschneideskala, keine
+Gravitation. F1 bleibt in Bearbeitung.
+
+Nächste Aufgabe: im Original nach der Festlegung von f und ℓ suchen (modulare freie Energie); danach die relative
+Wirkung mit D_ref am elliptischen Überlagerer statt des Modells rechnen.
+
 ## 20. November: Marker, Schnitt und Spiegel am originalen Randkern
 
 Die originale Calderón Polarisation ist auf den zwei Normalhälften flach und rein. Ihr Fockzustand hat die verklebte

@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "revision": "aa5b1a2d49080a452e452db4",
+  "revision": "e2c9f270d2ca56276b98c9a9",
   "premises": [
     {
       "id": "premise:declared-p1-p2",
@@ -7051,6 +7051,17 @@
       "statement": {
         "de": "Der Randzustand ist der quasifreie Fockzustand der originalen Calderón Polarisation P_C auf der CAR Algebra der Randdaten. Die zwei Seiten der reflektierten Form sind die zwei Eigenräume der Normalgraduierung G = -i gamma_n. Die Cauchydaten der inneren Lösungen sind lagrangesch bezüglich der Randform <gamma_n u, v>. Im Original stehen das Randdatum, die Kragenform D_+ = gamma_n (d_n + B_Sigma) und die Polarisation i_C = 2 P_C - 1; der Satz, dass die Polarisation den Zustand definiert, steht dort nicht.",
         "en": "The boundary state is the quasi-free Fock state of the original Calderón polarization P_C on the CAR algebra of boundary data. The two sides of the reflected form are the two eigenspaces of the normal grading G = -i gamma_n. The Cauchy data of interior solutions are Lagrangian for the boundary form <gamma_n u, v>. The original states the boundary datum, the collar form D_+ = gamma_n (d_n + B_Sigma) and the polarization i_C = 2 P_C - 1; the statement that the polarization defines the state is not in it."
+      }
+    },
+    {
+      "id": "premise:primitive-action-profile-is-fermionic-logarithm-20261120",
+      "title": {
+        "de": "Profil der primitiven Wirkung ist der fermionische Logarithmus",
+        "en": "The profile of the primitive action is the fermionic logarithm"
+      },
+      "statement": {
+        "de": "Das deklarierte Profil der primitiven Wirkung S = tr f(D_rel/chi) - tr f(D_ref/chi) + (i pi/2) Delta eta ist f = -log|x|; die Wirkung ist dann die eines Fermionfelds mit dem Kragenoperator D = gamma_n (d_n + B_Sigma). Das Original lässt f offen (any declared spectral test profile). Im Original stehen der Phasenterm, die Determinantenlinien der polarisierten Blöcke, die Bezeichnung von D_rel als fermionischer Vergleichsoperator und die Rekonstruktion aus Reflexionspositivität; ein Satz, der f festlegt, steht in den gelesenen Abschnitten nicht.",
+        "en": "The declared profile of the primitive action S = tr f(D_rel/chi) - tr f(D_ref/chi) + (i pi/2) Delta eta is f = -log|x|; the action is then that of a fermion field with the collar operator D = gamma_n (d_n + B_Sigma). The original leaves f open (any declared spectral test profile). The original contains the phase term, the determinant lines of the polarised blocks, the name fermionic comparison operator for D_rel and the reconstruction from reflection positivity; a statement fixing f is not in the sections read."
       }
     }
   ],
@@ -116559,7 +116570,8 @@
       "accepted_premise_ids": [
         "premise:declared-p1-p2",
         "premise:four-marks-session-recorded-objects-20261118",
-        "premise:boundary-state-is-fock-state-of-original-polarization-20261120"
+        "premise:boundary-state-is-fock-state-of-original-polarization-20261120",
+        "premise:primitive-action-profile-is-fermionic-logarithm-20261120"
       ],
       "findings": [
         {
@@ -118043,6 +118055,316 @@
               "sha256": "7d6e673d99c29d950dc601283cd51c1cc0b113567eeb79c8396fec9c82a02c79",
               "line_start": 94,
               "line_end": 177
+            }
+          ],
+          "attempt_ids": []
+        },
+        {
+          "id": "finding:primitive-action-with-log-profile-is-relative-fermion-determinant-and-gives-fock-state-of-polarization-20261120",
+          "title": {
+            "de": "Primitive Wirkung mit Logarithmusprofil ist die relative Fermiondeterminante und gibt den Fockzustand der Polarisation",
+            "en": "The primitive action with logarithmic profile is the relative fermion determinant and gives the Fock state of the polarization"
+          },
+          "statement": {
+            "de": "Für den Kragenoperator D = gamma_n (d_n + B) laufen die Randwerte der Lösungen für jede Innenbedingung gegen den positiven Spektralprojektor von B, mit der Rate 2 lambda_1 (lambda_1 = Saatskala). Das fermionische Gaußintegral desselben Kragens gibt einen reinen Zustand mit dieser Zweipunktfunktion, auch für einen nicht gaußschen Innenzustand. Die primitive Wirkung des Originals ist genau für f = -log|x| der negative Logarithmus von det(D_rel)/det(D_ref); der Phasenterm (i pi/2) Delta eta ist für sich die Phase dieser Determinante, und chi fällt heraus. Für ein Gaußprofil ist der Betragsteil keine Determinante. Die Determinantenlinie eines polarisierten Blocks ist seine Fock Vakuumlinie. Damit ist die Voraussetzung (a) von P1BIND20261120 auf die Aussage über das Profil zurückgeführt. 12 Prüfungen.",
+            "en": "For the collar operator D = gamma_n (d_n + B) the boundary values of solutions converge, for every interior condition, to the positive spectral projector of B at rate 2 lambda_1 (lambda_1 = seed scale). The fermionic Gaussian integral of the same collar gives a pure state with this two-point function, also for a non-Gaussian interior state. The primitive action of the original is, exactly for f = -log|x|, minus the logarithm of det(D_rel)/det(D_ref); the phase term (i pi/2) Delta eta alone is the phase of this determinant, and chi drops out. For a Gaussian profile the modulus part is not a determinant. The determinant line of a polarised block is its Fock vacuum line. This reduces premise (a) of P1BIND20261120 to the statement about the profile. 12 checks."
+          },
+          "status": "established_scoped",
+          "premise_ids": [
+            "premise:four-marks-session-recorded-objects-20261118"
+          ],
+          "scope": {
+            "de": "Endliche Modelle mit fester Saat und Standardaussagen über Gaußintegrale. Gezeigt ist die Äquivalenz, nicht dass das Original f = -log|x| deklariert: das Original lässt das Profil offen. Im Kontinuum weicht der Calderón Projektor vom Spektralprojektor um einen glättenden Operator ab; die Reinheit bleibt. F1 bleibt in Bearbeitung, nichts befördert.",
+            "en": "Finite models with a fixed seed and standard statements on Gaussian integrals. Shown is the equivalence, not that the original declares f = -log|x|: the original leaves the profile open. In the continuum the Calderón projector differs from the spectral projector by a smoothing operator; purity stays. F1 stays in progress, nothing promoted."
+          },
+          "sources": [
+            {
+              "path": "experiments/theory-contracts/kernel-followups-20261120/check_1_state.py",
+              "sha256": "23119ab9264b6ca778934b249b53d4de378a7571203d7b7c8bfb92353ea197dc",
+              "line_start": 1,
+              "line_end": 119
+            },
+            {
+              "path": "experiments/theory-contracts/kernel-followups-20261120/README.md",
+              "sha256": "1e08072922318f96c47ca2fc116c6d0717066d2de941a984a01f6ae7ce5e761e",
+              "line_start": 1,
+              "line_end": 150
+            },
+            {
+              "path": "documents/archive--tfpt-45--source_extracts--01_boundary_kernel_source/sections/001-section-primitive-core-and-carrier-interface-handoff.tex",
+              "sha256": "7d6e673d99c29d950dc601283cd51c1cc0b113567eeb79c8396fec9c82a02c79",
+              "line_start": 298,
+              "line_end": 343
+            },
+            {
+              "path": "documents/archive--tfpt-45--source_extracts--01_boundary_kernel_source/sections/002-section-intrinsic-closed-branch-and-canonical-rigid-obje.tex",
+              "sha256": "1de90a4a7379bef804cc7815d72c0f86bb398a5771e9b00997c4bb15e8815f9e",
+              "line_start": 88,
+              "line_end": 98
+            },
+            {
+              "path": "documents/archive--tfpt-45--source_extracts--01_boundary_kernel_source/sections/002-section-intrinsic-closed-branch-and-canonical-rigid-obje.tex",
+              "sha256": "1de90a4a7379bef804cc7815d72c0f86bb398a5771e9b00997c4bb15e8815f9e",
+              "line_start": 168,
+              "line_end": 181
+            }
+          ],
+          "attempt_ids": []
+        },
+        {
+          "id": "finding:e8-word-state-form-and-marker-follow-from-kernel-state-and-original-hypercharge-20261120",
+          "title": {
+            "de": "Zustand, Form und Marker des E8 Worts folgen aus Kernzustand und originaler Hyperladung",
+            "en": "State, form and marker of the E8 word follow from the kernel state and the original hypercharge"
+          },
+          "statement": {
+            "de": "Die Hyperladung des Originals Y = 1/12 + (5/12) eps_car ist die spurfreie affine Funktion der Trägerpolarisation; 6Y = (-2,-2,-2,3,3) ist der Markervektor des aufgezeichneten Worts. Der Kernzustand ist auf den Moden einer Normalhälfte die normierte Spur (im Fockraum geprüft). Ein Sprung zwischen den Hälften hat im Kernzustand das Gewicht 1/4 und wirkt bis auf ein Vorzeichen wie der Strom a_i^+ a_j in einer Hälfte. Auf acht Nullmoden geben flacher Zustand und originale Hyperladung: Markergewicht tr_E(Y^2)/4 = 5/24, alle 60 Ströme zwischen Träger und Familie 1/4, Isospin 1/8 (Verhältnis 5/3), verbunden gemischt -1/32 und -1/72, drei Familien komprimiert 1/6: die aufgezeichneten Zahlen. 16 Prüfungen.",
+            "en": "The hypercharge of the original Y = 1/12 + (5/12) eps_car is the traceless affine function of the carrier polarization; 6Y = (-2,-2,-2,3,3) is the marker vector of the recorded word. The kernel state is the normalised trace on the modes of one normal half (checked in Fock space). A hop between the halves has weight 1/4 in the kernel state and acts, up to a sign, like the current a_i^+ a_j inside one half. On eight zero modes the flat state and the original hypercharge give: marker weight tr_E(Y^2)/4 = 5/24, all 60 currents between carrier and family 1/4, isospin 1/8 (ratio 5/3), connected mixed -1/32 and -1/72, three families compressed 1/6: the recorded numbers. 16 checks."
+          },
+          "status": "conditional",
+          "premise_ids": [
+            "premise:four-marks-session-recorded-objects-20261118",
+            "premise:boundary-state-is-fock-state-of-original-polarization-20261120"
+          ],
+          "scope": {
+            "de": "Bedingt auf den Fockzustand der Polarisation und auf acht Nullmoden auf einer Normalhälfte mit der Aufteilung 5 + 3 in Träger und Familie. Nicht hergeleitet: warum die Ströme vom Typ (10,6) der Schnitt sind, die Paarströme a a und a^+ a^+ als Kernoperatoren, die Auswahl von drei Familien, die Zahlenwerte der gewichteten R113 Form. Die Skala der Hyperladung ist die des Originals.",
+            "en": "Conditional on the Fock state of the polarization and on eight zero modes on one normal half with the split 5 + 3 into carrier and family. Not derived: why the currents of type (10,6) are the cut, the pair currents a a and a^+ a^+ as kernel operators, the choice of three families, the values of the weighted R113 form. The scale of the hypercharge is that of the original."
+          },
+          "sources": [
+            {
+              "path": "experiments/theory-contracts/kernel-followups-20261120/check_2_dictionary.py",
+              "sha256": "097921038a016e4006521dd37d88499aa159a88765dc498dffbe9c2acbf24ef0",
+              "line_start": 1,
+              "line_end": 133
+            },
+            {
+              "path": "experiments/theory-contracts/kernel-followups-20261120/README.md",
+              "sha256": "1e08072922318f96c47ca2fc116c6d0717066d2de941a984a01f6ae7ce5e761e",
+              "line_start": 1,
+              "line_end": 150
+            },
+            {
+              "path": "documents/archive--tfpt-45--source_extracts--02_carrier_source/sections/001-subsection-carrier-algebraic-normal-form.tex",
+              "sha256": "fb846ac340cc9f8ea0aa6431598b624f2f744fa08b7d4cfdc081c358d1ea7cee",
+              "line_start": 170,
+              "line_end": 203
+            }
+          ],
+          "attempt_ids": []
+        },
+        {
+          "id": "finding:carrier-modes-as-eigenmodes-of-the-kernel-polarization-contradict-the-recorded-word-20261120",
+          "title": {
+            "de": "Trägermoden als Eigenmoden der Kernpolarisation widersprechen dem aufgezeichneten Wort",
+            "en": "Carrier modes as eigenmodes of the kernel polarization contradict the recorded word"
+          },
+          "statement": {
+            "de": "Die von der Normalgraduierung G und der Polarisation i_C erzeugte Algebra ist eine Kopie der 2 x 2 Matrizen (Kommutant der Dimension m^2). i_C verschwindet auf jeder Normalhälfte, und auf jedem unter G und i_C invarianten Block hat i_C die Spur null: eine Signatur (3,2) ist dort unmöglich. Liest man die Trägermoden wörtlich als Eigenmoden von i_C, die der Kernzustand besetzt, so ist die Hyperladung scharf (Wert 1, Gewicht 1, keine Streuung), gegen das aufgezeichnete Gewicht 5/24. Im Wörterbuch wirkt eps_car daher auf den Moden einer Normalhälfte und vertauscht mit der Kernalgebra; die Aufteilung 3 + 2 liefert der Trägerschritt, nicht der Kern.",
+            "en": "The algebra generated by the normal grading G and the polarization i_C is one copy of the 2 x 2 matrices (commutant of dimension m^2). i_C vanishes on each normal half, and on every block invariant under G and i_C it has trace zero: a signature (3,2) is impossible there. Reading the carrier modes literally as eigenmodes of i_C filled by the kernel state gives a sharp hypercharge (value 1, weight 1, no spread), against the recorded weight 5/24. In the dictionary eps_car therefore acts on the modes of one normal half and commutes with the kernel algebra; the split 3 + 2 is supplied by the carrier step, not by the kernel."
+          },
+          "status": "excluded_scoped",
+          "premise_ids": [
+            "premise:four-marks-session-recorded-objects-20261118",
+            "premise:boundary-state-is-fock-state-of-original-polarization-20261120"
+          ],
+          "scope": {
+            "de": "Ausgeschlossen ist nur die wörtliche Lesart zusammen mit dem Fockzustand der Polarisation und den aufgezeichneten flachen Werten. Die Definition eps_car = i_C auf H_car des Originals ist damit nicht widerlegt; offen ist, auf welchem Block sie zu lesen ist.",
+            "en": "Excluded is only the literal reading together with the Fock state of the polarization and the recorded flat values. The definition eps_car = i_C on H_car of the original is not refuted by this; open is on which block it is to be read."
+          },
+          "sources": [
+            {
+              "path": "experiments/theory-contracts/kernel-followups-20261120/check_2_dictionary.py",
+              "sha256": "097921038a016e4006521dd37d88499aa159a88765dc498dffbe9c2acbf24ef0",
+              "line_start": 1,
+              "line_end": 133
+            },
+            {
+              "path": "experiments/theory-contracts/kernel-followups-20261120/README.md",
+              "sha256": "1e08072922318f96c47ca2fc116c6d0717066d2de941a984a01f6ae7ce5e761e",
+              "line_start": 1,
+              "line_end": 150
+            },
+            {
+              "path": "documents/archive--tfpt-45--source_extracts--01_boundary_kernel_source/sections/001-section-primitive-core-and-carrier-interface-handoff.tex",
+              "sha256": "7d6e673d99c29d950dc601283cd51c1cc0b113567eeb79c8396fec9c82a02c79",
+              "line_start": 270,
+              "line_end": 296
+            }
+          ],
+          "attempt_ids": []
+        },
+        {
+          "id": "finding:finite-collar-width-gives-thermal-state-of-boundary-operator-and-a-time-with-length-20261120",
+          "title": {
+            "de": "Endliche Kragenbreite gibt den thermischen Zustand des Randoperators und eine Zeit mit Länge",
+            "en": "A finite collar width gives the thermal state of the boundary operator and a time with a length"
+          },
+          "statement": {
+            "de": "Ein Kragen der Breite l mit zwei Flächen trägt einen reinen Zustand; auf eine Fläche eingeschränkt ist er C = (1 + exp(-2 l B))^(-1), im Fockraum der Gibbszustand von dGamma(B) bei inverser Temperatur 2 l. Breite null gibt den flachen Kernzustand mit Modularoperator 1. Nullmoden von B bleiben für jede Breite exakt flach. Es gilt dS = 2 l dE. Der modulare Fluss exp(-i s 2 l B) ist die Dirac Entwicklung auf R x Sigma; auf dem Gitterring bleibt das Gewicht außerhalb des Lichtkegels unter 1e-6. 10 Prüfungen.",
+            "en": "A collar of width l with two faces carries a pure state; reduced to one face it is C = (1 + exp(-2 l B))^(-1), in Fock space the Gibbs state of dGamma(B) at inverse temperature 2 l. Width zero gives the flat kernel state with modular operator 1. Zero modes of B stay exactly flat for every width. dS = 2 l dE holds. The modular flow exp(-i s 2 l B) is the Dirac evolution on R x Sigma; on the lattice ring the weight outside the light cone stays below 1e-6. 10 checks."
+          },
+          "status": "conditional",
+          "premise_ids": [
+            "premise:four-marks-session-recorded-objects-20261118",
+            "premise:boundary-state-is-fock-state-of-original-polarization-20261120",
+            "premise:primitive-action-profile-is-fermionic-logarithm-20261120"
+          ],
+          "scope": {
+            "de": "Bedingt auf die fermionische Lesart der Wirkung und darauf, dass die zwei Seiten die zwei Flächen eines Kragens sind (in P1BIND waren es die Normalhälften). Das Originaldatum legt keine Breite fest; in Saateinheiten ist T chi = 1/(2 l lambda_1) frei. Keine Aussage über eine Lorentzmetrik jenseits des statischen Produkts.",
+            "en": "Conditional on the fermionic reading of the action and on the two sides being the two faces of a collar (in P1BIND they were the normal halves). The original datum fixes no width; in seed units T chi = 1/(2 l lambda_1) is free. No statement on a Lorentz metric beyond the static product."
+          },
+          "sources": [
+            {
+              "path": "experiments/theory-contracts/kernel-followups-20261120/check_3_time.py",
+              "sha256": "fd645e5f341d6b16a433e5596abca1989a9113a55afa57887b4475d3600810b5",
+              "line_start": 1,
+              "line_end": 112
+            },
+            {
+              "path": "experiments/theory-contracts/kernel-followups-20261120/README.md",
+              "sha256": "1e08072922318f96c47ca2fc116c6d0717066d2de941a984a01f6ae7ce5e761e",
+              "line_start": 1,
+              "line_end": 150
+            },
+            {
+              "path": "documents/archive--tfpt-45--source_extracts--01_boundary_kernel_source/sections/002-section-intrinsic-closed-branch-and-canonical-rigid-obje.tex",
+              "sha256": "1de90a4a7379bef804cc7815d72c0f86bb398a5771e9b00997c4bb15e8815f9e",
+              "line_start": 88,
+              "line_end": 98
+            }
+          ],
+          "attempt_ids": []
+        },
+        {
+          "id": "finding:square-is-the-unique-minimum-of-the-seed-normalised-spectral-action-on-the-mirror-family-20261120",
+          "title": {
+            "de": "Auf der Spiegelfamilie ist das Quadrat das einzige Minimum der saatnormierten Spektralwirkung",
+            "en": "On the mirror family the square is the unique minimum of the seed-normalised spectral action"
+          },
+          "statement": {
+            "de": "Vier Marken auf dem Nahtkreis sind die Verzweigungspunkte eines rechteckigen Torus tau = i t; die Marken bei den vierten Einheitswurzeln entsprechen t = 1. Für S_f(t) = Summe f(lambda/lambda_1) über das Dirac Spektrum gilt bei antiperiodischer Spinstruktur auf beiden Zyklen S(t) = S(1/t), und t = 1 ist das einzige Minimum mit positiver Krümmung (vier Profile); der führende Term ist pi^2 (t + 1/t). Bei periodischer Struktur ist das Quadrat ein Maximum mit Knick, bei gemischter kein stationärer Punkt. Eine Verdrillung tau = x + i senkt die Wirkung nach beiden Seiten: unter allen Tori ist das Quadrat ein Sattel. Die Vierteldrehung bildet die Impulse nur am Quadrat auf sich ab. 10 Prüfungen.",
+            "en": "Four marks on the seam circle are the branch points of a rectangular torus tau = i t; the marks at the fourth roots of unity correspond to t = 1. For S_f(t) = sum f(lambda/lambda_1) over the Dirac spectrum with antiperiodic spin structure on both cycles S(t) = S(1/t), and t = 1 is the only minimum with positive curvature (four profiles); the leading term is pi^2 (t + 1/t). For the periodic structure the square is a maximum with a kink, for the mixed one there is no stationary point. A twist tau = x + i lowers the action on both sides: among all tori the square is a saddle. The quarter turn maps the momenta to themselves only at the square. 10 checks."
+          },
+          "status": "conditional",
+          "premise_ids": [
+            "premise:four-marks-session-recorded-objects-20261118"
+          ],
+          "scope": {
+            "de": "Modellrechnung unter drei Voraussetzungen: Marken auf dem Spiegelkreis, antiperiodische Spinstruktur, Auswahl des Moduls durch das Minimum der mit lambda_1 normierten Spektralwirkung des elliptischen Überlagerers. Die dritte ist ein Modell der modularen freien Energie des Originals; die relative Wirkung mit D_ref und der eta Term sind nicht nachgebildet. Die Lage der Marken ist damit nicht aus dem Original hergeleitet.",
+            "en": "Model computation under three premises: marks on the mirror circle, antiperiodic spin structure, selection of the modulus by the minimum of the spectral action of the elliptic cover normalised by lambda_1. The third is a model of the modular free energy of the original; the relative action with D_ref and the eta term are not modelled. The position of the marks is thereby not derived from the original."
+          },
+          "sources": [
+            {
+              "path": "experiments/theory-contracts/kernel-followups-20261120/check_4_marks.py",
+              "sha256": "ec0f67d8d9f8b7eb8c128ab7d942d629c81af9b754bbdabdefffef8632066540",
+              "line_start": 1,
+              "line_end": 91
+            },
+            {
+              "path": "experiments/theory-contracts/kernel-followups-20261120/README.md",
+              "sha256": "1e08072922318f96c47ca2fc116c6d0717066d2de941a984a01f6ae7ce5e761e",
+              "line_start": 1,
+              "line_end": 150
+            },
+            {
+              "path": "documents/archive--tfpt-45--source_extracts--01_boundary_kernel_source/sections/002-section-intrinsic-closed-branch-and-canonical-rigid-obje.tex",
+              "sha256": "1de90a4a7379bef804cc7815d72c0f86bb398a5771e9b00997c4bb15e8815f9e",
+              "line_start": 88,
+              "line_end": 98
+            },
+            {
+              "path": "documents/archive--tfpt-45--source_extracts--01_boundary_kernel_source/sections/001-section-primitive-core-and-carrier-interface-handoff.tex",
+              "sha256": "7d6e673d99c29d950dc601283cd51c1cc0b113567eeb79c8396fec9c82a02c79",
+              "line_start": 298,
+              "line_end": 318
+            }
+          ],
+          "attempt_ids": []
+        },
+        {
+          "id": "finding:alpha-equation-normal-form-in-inverse-coupling-and-b1-from-carrier-traces-20261120",
+          "title": {
+            "de": "Normalform der Alpha Gleichung in der inversen Kopplung und b1 aus Trägerspuren",
+            "en": "Normal form of the alpha equation in the inverse coupling and b1 from carrier traces"
+          },
+          "statement": {
+            "de": "Mit w = c3/alpha = 1/(2 e^2) ist die eingefrorene Gleichung w + kappa w^3 = 1/(2 c3^2) = 32 pi^2, kappa = (b1/2 pi) log(1/phi): der stationäre Punkt des konvexen Quartiks w^2/2 + kappa w^4/4 - w/(2 c3^2) mit genau einer reellen Wurzel (1/alpha = 137,0359992168407). Der logarithmische Term trägt 98,3 Prozent; ohne ihn wäre alpha = 2 c3^3, 58-mal zu klein; die führende Näherung gibt 137,83. 4 c3 = 1/(2 pi). b1 = (4/3) N_fam + (1/6) tr_{E+}(Y^2)/tr_E(Y^2) = 4 + 1/10 mit der Hyperladung des Originals; die Summe von Y^2 über eine Familie ist 16 mal das Markergewicht 5/24. Ohne den Beitrag von E_+ läge 1/alpha bei 138,16. Eine Laufrelation in einer Schleife wäre linear in w. 12 Prüfungen.",
+            "en": "With w = c3/alpha = 1/(2 e^2) the frozen equation is w + kappa w^3 = 1/(2 c3^2) = 32 pi^2, kappa = (b1/2 pi) log(1/phi): the stationary point of the convex quartic w^2/2 + kappa w^4/4 - w/(2 c3^2) with exactly one real root (1/alpha = 137.0359992168407). The logarithmic term carries 98.3 percent; without it alpha = 2 c3^3, 58 times too small; the leading approximation gives 137.83. 4 c3 = 1/(2 pi). b1 = (4/3) N_fam + (1/6) tr_{E+}(Y^2)/tr_E(Y^2) = 4 + 1/10 with the hypercharge of the original; the sum of Y^2 over one family is 16 times the marker weight 5/24. Without the contribution of E_+ 1/alpha would be 138.16. A one loop running relation would be linear in w. 12 checks."
+          },
+          "status": "established_scoped",
+          "premise_ids": [
+            "premise:four-marks-session-recorded-objects-20261118"
+          ],
+          "scope": {
+            "de": "Algebraische Umformung und Zuordnung der Koeffizienten. Die Kubik ist damit nicht hergeleitet: die Potenzen w und w^3 und der Quellterm 1/(2 c3^2) bleiben gesetzt; das Original nennt den quartischen Teil einen lokalen Gegenterm. phi wird am Fixpunkt ausgewertet.",
+            "en": "Algebraic rewriting and attribution of the coefficients. The cubic is thereby not derived: the powers w and w^3 and the source term 1/(2 c3^2) stay postulated; the original calls the quartic part a local counterterm. phi is evaluated at the fixed point."
+          },
+          "sources": [
+            {
+              "path": "experiments/theory-contracts/kernel-followups-20261120/check_5_cubic.py",
+              "sha256": "54ec37e93a6cb929447d01775f68e245b1c73249670fe3e273161e8a5cba59d6",
+              "line_start": 1,
+              "line_end": 78
+            },
+            {
+              "path": "experiments/theory-contracts/kernel-followups-20261120/README.md",
+              "sha256": "1e08072922318f96c47ca2fc116c6d0717066d2de941a984a01f6ae7ce5e761e",
+              "line_start": 1,
+              "line_end": 150
+            },
+            {
+              "path": "documents/archive--tfpt-45--source_extracts--03_em_flavor_source/sections/001-section-kernel-numerics-and-electromagnetic-closure.tex",
+              "sha256": "5fdbdc1b7d8af7f85e5fc2435f567402b3dbcb96938951e58e633cf42549c7e2",
+              "line_start": 124,
+              "line_end": 215
+            },
+            {
+              "path": "documents/archive--tfpt-45--source_extracts--02_carrier_source/sections/001-subsection-carrier-algebraic-normal-form.tex",
+              "sha256": "fb846ac340cc9f8ea0aa6431598b624f2f744fa08b7d4cfdc081c358d1ea7cee",
+              "line_start": 170,
+              "line_end": 203
+            }
+          ],
+          "attempt_ids": []
+        },
+        {
+          "id": "finding:face-state-entropy-is-finite-area-law-but-gravity-is-not-derived-20261120",
+          "title": {
+            "de": "Die Entropie des Flächenzustands ist ein endliches Flächengesetz; Gravitation ist nicht hergeleitet",
+            "en": "The entropy of the face state is a finite area law; gravity is not derived"
+          },
+          "statement": {
+            "de": "Die Entropie des auf eine Fläche reduzierten Kragenzustands ist S = (9 zeta(3)/2) c3 A / l^2, geprüft auf dem flachen Torus und der runden Sphäre; sie braucht keine Abschneideskala. Als S = A/(4G) gelesen ist G = l^2/(18 zeta(3) c3) = 1,1616 l^2. Bei Breite null ist die Entropie log 2 je Mode und wächst mit der Abschneideskala (4 c3 A L^2 Moden). Der modulare Erzeuger vertauscht mit den Translationen der Naht und ist kein Boost: ein Gleichgewicht bei einer Temperatur, kein Horizont. 9 Prüfungen.",
+            "en": "The entropy of the collar state reduced to one face is S = (9 zeta(3)/2) c3 A / l^2, checked on the flat torus and the round sphere; it needs no cutoff. Read as S = A/(4G), G = l^2/(18 zeta(3) c3) = 1.1616 l^2. At width zero the entropy is log 2 per mode and grows with the cutoff (4 c3 A L^2 modes). The modular generator commutes with the translations of the seam and is not a boost: an equilibrium at one temperature, no horizon. 9 checks."
+          },
+          "status": "conditional",
+          "premise_ids": [
+            "premise:four-marks-session-recorded-objects-20261118",
+            "premise:boundary-state-is-fock-state-of-original-polarization-20261120",
+            "premise:primitive-action-profile-is-fermionic-logarithm-20261120"
+          ],
+          "scope": {
+            "de": "Bedingt wie der Befund zur Kragenbreite. Kinematisch folgt nur eine statische Raumzeit R x Sigma. Für eine Herleitung der Gravitation nach Jacobson fehlen eine ortsabhängige Breite (Lapse), eine Horizontlesart des Flusses und ein Wert der Breite; kein Wert von G folgt.",
+            "en": "Conditional like the finding on the collar width. Kinematically only a static spacetime R x Sigma follows. A derivation of gravity along Jacobson lacks a position dependent width (lapse), a horizon reading of the flow and a value of the width; no value of G follows."
+          },
+          "sources": [
+            {
+              "path": "experiments/theory-contracts/kernel-followups-20261120/check_6_gravity.py",
+              "sha256": "fce7e57852dccb56a19071b09f547d801171b7f67a297ce0d14874d53ccb9ff3",
+              "line_start": 1,
+              "line_end": 79
+            },
+            {
+              "path": "experiments/theory-contracts/kernel-followups-20261120/check_3_time.py",
+              "sha256": "fd645e5f341d6b16a433e5596abca1989a9113a55afa57887b4475d3600810b5",
+              "line_start": 1,
+              "line_end": 112
+            },
+            {
+              "path": "experiments/theory-contracts/kernel-followups-20261120/README.md",
+              "sha256": "1e08072922318f96c47ca2fc116c6d0717066d2de941a984a01f6ae7ce5e761e",
+              "line_start": 1,
+              "line_end": 150
             }
           ],
           "attempt_ids": []

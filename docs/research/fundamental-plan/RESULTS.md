@@ -7377,3 +7377,57 @@ punktweisen Lift der Spiegelung. F1 bleibt in Bearbeitung.
 **Nebenbei erledigt:** Arbeitsstand vom 18. und 19. November committet und gepusht (461 OriginLab Tests bestehen nach
 Korrektur eines überschatteten Imports in `main.py`). Acht fehlende Befunde nachgetragen (Torus und Brücke vom 18.
 November, zweite Hypothesenrunde, Sechs im Transfer, Szenariosuche), Atlasrevision `b5b809c43458554296b079da`.
+
+
+## KATALOGQUER20261120 · Querauswertung des Prüfkatalogs: θ₁₃ Seed liegt auf λ_C² (Beobachtung)
+
+Sitzung vom 20. November 2026. Grundlage: `TFPT_Pruefkatalog_2026-11-20.xlsx` (12 Blätter, Atlasrevision
+`aa5b1a2d49080a452e452db4`). Skript `experiments/theory-contracts/pruefkatalog-querauswertung-20261120/check_theta13_ladder.py`,
+8 von 8 Prüfungen. Kein Ledgerwechsel, kein Atlaseintrag, nichts befördert, kein Commit.
+
+**Beobachtung:** `v328` hält den aus `sin²θ₁₃` rückgerechneten Seed `0,0505` als „etwa 5 % unter φ₀" fest. Dieser Wert
+ist `φ₀(1 − φ₀) = λ_C² = λ_Y²` (0,050345) innerhalb 0,12 σ; gegen φ₀ selbst 2,0 σ. Damit `λ_C² e^{−5/6} = 0,021880`
+gegen NuFIT 6.0 `0,02195 ± 0,00058` (−0,12 σ; Daya Bay +0,21 σ). Seedfrei: `sin θ₁₃ / λ_C = e^{−5/12} = 0,6592` gegen
+gemessen `0,6605 ± 0,0090`; die eingefrorene Lesart verlangt 0,6775. Das Seed χ² aus M066 fiele von 4,51 auf 0,54.
+
+**Geltung:** Nachträgliche Beobachtung an einem Datenpunkt. Die Daten legen nur den Koeffizienten erster Ordnung fest:
+`φ₀(1 − kφ₀)` mit `k = 0,94 ± 0,47`. `φ₀/(1 + φ₀)` ist heute nicht von `φ₀(1 − φ₀)` zu trennen. Keine Herleitung, warum
+der Trägerspurkanal auf der Leiterbasis `λ_Y²` statt auf φ₀ sitzt. Die eingefrorene Vorhersage 0,023108 und ihr
+Ausschlusskriterium bleiben unverändert.
+
+**Weitere Befunde am Katalog (ohne neue Rechnung am Original):** 59 von 127 Messkanälen prüfen dasselbe Transferspektrum,
+51 davon sind als unabhängig geführt; 25 der 30 Nullbefunde gehören dazu. M067, M070, M071 und M072 sind ein
+Freiheitsgrad `N⋆` mit zwei verschiedenen Referenzwerten; `C_inf` ist 0,97 (Planck 2018), 0,81 (CMB SPA, eigene
+Rechnung) und 0,52 (P ACT LB mit DESI). M080 nennt 1,9 σ gegen CODATA, der Atlas führt +3,39 σ gegen g − 2 und +6,33 σ
+gegen Cs. 19 der 25 Gegenprüfungen stammen aus der Primfront.
+
+**Nächster Schritt:** Am Original von `v268` prüfen, auf welchem Vektor die Spur `tr_E Y²` wirkt und ob die Normierung
+des Trägerzustands den Faktor `1 − φ₀` liefert, den `λ_C = √(φ₀(1 − φ₀))` schon trägt. Den Kandidaten als fünfzehnten
+Nachbardecoder in den Test von M066 aufnehmen.
+
+
+## KERNSIX20261120 · Sechs Folgeschritte am originalen Randkern (begrenzt)
+
+Vertrag: `experiments/theory-contracts/kernel-followups-20261120/README.md`. Reproduktion: `cd experiments/theory-contracts/kernel-followups-20261120 && for s in 1_state 2_dictionary 3_time 4_marks 5_cubic 6_gravity; do ../../../.venv/bin/python -B check_$s.py; done` (69 Prüfungen bestanden). Atlas Revision `e2c9f270d2ca56276b98c9a9`,
+sieben Befunde und eine Prämisse in `problem:four-marks-quartic-and-free-seam-source`. Kein Ledgerwechsel, nichts befördert.
+
+1. Randzustand aus der Wirkung (bedingt): Die primitive Wirkung ist genau für f = −log|x| der negative Logarithmus der
+   relativen Fermiondeterminante; der Phasenterm (iπ/2)Δη ist für sich deren Phase. Das Gaußintegral des Kragens gibt
+   dann den Fockzustand von P_C, für jedes Innere. Das Original lässt f offen. Voraussetzung (a) aus P1BIND ist damit
+   durch eine Aussage über das Profil ersetzt.
+2. Wörterbuch (bedingt, mit Ausschluss): Hyperladung des Originals Y = 1/12 + (5/12) ε_car ist der Marker des E₈ Worts.
+   Flacher Kernzustand plus diese Hyperladung geben 5/24, 1/4, 1/8, −1/32, −1/72 und 1/6. Ein Sprung zwischen den
+   Normalhälften hat Gewicht 1/4. Ausgeschlossen: Trägermoden als besetzte Eigenmoden von ι_C. Die Aufteilung 3 + 2
+   kommt nicht aus der Kernalgebra.
+3. Zeit (bedingt): Kragen der Breite ℓ gibt auf einer Fläche den Gibbszustand von B bei inverser Temperatur 2ℓ; Breite
+   null ist der flache Kernzustand; Nullmoden bleiben flach; dS = 2ℓ dE; der Fluss ist die Dirac Entwicklung auf R × Σ.
+   ℓ ist frei.
+4. Marken (bedingt, Modell): Auf der rechteckigen Familie ist das Quadrat das einzige Minimum der mit λ₁ normierten
+   Spektralwirkung bei antiperiodischer Spinstruktur. Unter allen Tori ist es ein Sattel.
+5. Kubik (nicht hergeleitet): Normalform w + κ w³ = 32π² mit w = c₃/α; eindeutige reelle Wurzel; der Logarithmus trägt
+   98,3 %; b₁ = (4/3) N_fam + (1/6) tr_{E₊}(Y²)/tr_E(Y²) = 41/10.
+6. Raumzeit und Gravitation: statische Raumzeit kinematisch; S = (9ζ(3)/2) c₃ A/ℓ² ohne Abschneideskala; kein Horizont;
+   Gravitation nicht hergeleitet, kein Wert von G.
+
+F1 bleibt in Bearbeitung. Nächster Schritt: prüfen, ob das Original das Profil f und die Breite ℓ festlegt
+(modulare freie Energie, Abschnitt 002 des Randkerns und die späteren Abschlusssätze).
