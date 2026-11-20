@@ -1,5 +1,15 @@
 # TFPT: Aufgabenplan zur fundamentalen Herleitung
 
+## 20. November: Marker, Schnitt und Spiegel am originalen Randkern
+
+Die originale Calderón Polarisation ist auf den zwei Normalhälften flach und rein. Ihr Fockzustand hat die verklebte
+Form Tr(F*G)/d mit Referenz 1, der Spiegel ist die modulare Konjugation (Seitentausch plus Adjunktion), Marker und
+Schnitt sind die Normalgraduierung und die tangentiale Phase. Die Annahme vom 18. November ist damit ersetzt durch:
+Der Randzustand ist der Fockzustand der originalen Polarisation. Als Nächstes diese Voraussetzung an der primitiven
+relativen Wirkung entscheiden und danach das Wörterbuch zu den Marken des E₈ Worts bauen. F1 bleibt in Bearbeitung.
+Kennung P1BIND20261120.
+[Rechnung und Geltungsbereich](../../../experiments/theory-contracts/p1-kernel-marker-cut-mirror-20261120/README.md).
+
 ## 19. November: Kohärente OPH Randwege als endliche Vergleichsregel
 
 Die OriginLab Kampagne prüft die gemeinsame Spinstruktur, kurze kohärente Rückwege und Ladungstransport.

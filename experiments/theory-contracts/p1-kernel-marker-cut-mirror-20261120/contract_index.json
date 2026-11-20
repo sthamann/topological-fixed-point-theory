@@ -1,0 +1,37 @@
+{
+ "contract_id": "P1BIND20261120",
+ "date": "2026-11-20",
+ "folder": "experiments/theory-contracts/p1-kernel-marker-cut-mirror-20261120",
+ "question": "Welchen Marker, welchen Schnitt und welchen Spiegel liest der originale P1 Kern, und folgt die verklebte Form zweier Seiten aus dem originalen Randdatum?",
+ "verdict": "Unter drei benannten Voraussetzungen ja. Die originale Calderón Polarisation ist auf den zwei Normalhälften exakt flach und rein; ihr Fockzustand hat die reflektierte Form Tr(F*G)/2^d mit Referenz 1; der Spiegel ist die modulare Konjugation, also Seitentausch durch den Kreuzblock der Polarisation plus Adjunktion, J² = 1; Marker und Schnitt sind die Normalgraduierung G und i G i_C mit den Marken (1, 0, 0, i eta) und ABAB = -1. Der aufgezeichnete native Operator ist ein Fall dieser Struktur. Die Annahme der Runde 47 ist ersetzt durch: Randzustand = Fockzustand der originalen Polarisation. F1 bleibt in Bearbeitung. Nichts befördert, kein Ledgerwechsel.",
+ "resolved": [
+  "Calderón Polarisation auf den Normalhälften: Diagonalblöcke 1/2, Kreuzblock unitär durch 2, für jedes Innere",
+  "Umkehrung: flach auf beiden Hälften genau für lagrangesche Projektoren",
+  "Fockzustand: Spur auf jeder Hälfte, zyklisch, Modularoperator 1",
+  "Spiegel J a(e) J = (-1)^N a*(U e), J² = 1, Form Tr(F*G)/2^d",
+  "Marken (1, 0, 0, i eta), ABAB = -1, gemischte Marke = i mal Polarisation",
+  "gemischte Marke eines Markers = chiraler Mittelwert (Gesetz der Runde 45) als Folge der Kernstruktur",
+  "nativ: Richtung des Potentials = -i g sign(D_F), flache Dichte 1/48 je Hälfte, lambda_1^+ nicht entartet"
+ ],
+ "kills": [
+  "Seitentausch ohne Adjunktion als Spiegel (nicht positiv)",
+  "Satz (iii) des Originals mit R_tau als punktweisem Lift (Eigenprojektor der Normalgraduierung ist nie lagrangesch)",
+  "Higgsquadrat und Hyperladung als Marker und Schnitt auf der primitiven Stufe"
+ ],
+ "open": [
+  "Voraussetzung (a): Randzustand = Fockzustand der originalen Polarisation",
+  "Wörterbuch von G und i_C zu den Marken des E8 Worts nach dem Trägersatz",
+  "Zahlenwerte der gewichteten R113 Form",
+  "Zeit mit Länge: der Kernzustand hat keinen eigenen Fluss",
+  "Lage der vier Marken"
+ ],
+ "replay": "cd experiments/theory-contracts/p1-kernel-marker-cut-mirror-20261120 && for s in polarization fock; do ../../../.venv/bin/python -B check_$s.py; done && ../../../.venv/bin/python -B check_native.py ../../..",
+ "checks_passed": true,
+ "checks": {
+  "polarization": "22/22",
+  "fock": "23/23",
+  "native": "9/9"
+ },
+ "physical_solution": false,
+ "atlas": "eingetragen am 20.11.2026, Revision aa5b1a2d49080a452e452db4: zwei Befunde und eine Prämisse in problem:four-marks-quartic-and-free-seam-source"
+}

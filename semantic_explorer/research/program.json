@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "revision": "b5b809c43458554296b079da",
+  "revision": "aa5b1a2d49080a452e452db4",
   "premises": [
     {
       "id": "premise:declared-p1-p2",
@@ -7040,6 +7040,17 @@
       "statement": {
         "de": "Eine Last, lokale OPH Kantenterme, gerichtete Flächenkarten, kohärente Unterraumabfrage und ein privates Wegbit bis zur gemeinsamen Auslese.",
         "en": "One load, local OPH edge terms, oriented face charts, coherent subspace projection and a private path bit retained until joint readout."
+      }
+    },
+    {
+      "id": "premise:boundary-state-is-fock-state-of-original-polarization-20261120",
+      "title": {
+        "de": "Randzustand als Fockzustand der originalen Polarisation",
+        "en": "Boundary state as Fock state of the original polarization"
+      },
+      "statement": {
+        "de": "Der Randzustand ist der quasifreie Fockzustand der originalen Calderón Polarisation P_C auf der CAR Algebra der Randdaten. Die zwei Seiten der reflektierten Form sind die zwei Eigenräume der Normalgraduierung G = -i gamma_n. Die Cauchydaten der inneren Lösungen sind lagrangesch bezüglich der Randform <gamma_n u, v>. Im Original stehen das Randdatum, die Kragenform D_+ = gamma_n (d_n + B_Sigma) und die Polarisation i_C = 2 P_C - 1; der Satz, dass die Polarisation den Zustand definiert, steht dort nicht.",
+        "en": "The boundary state is the quasi-free Fock state of the original Calderón polarization P_C on the CAR algebra of boundary data. The two sides of the reflected form are the two eigenspaces of the normal grading G = -i gamma_n. The Cauchy data of interior solutions are Lagrangian for the boundary form <gamma_n u, v>. The original states the boundary datum, the collar form D_+ = gamma_n (d_n + B_Sigma) and the polarization i_C = 2 P_C - 1; the statement that the polarization defines the state is not in it."
       }
     }
   ],
@@ -116547,7 +116558,8 @@
       "goals": [],
       "accepted_premise_ids": [
         "premise:declared-p1-p2",
-        "premise:four-marks-session-recorded-objects-20261118"
+        "premise:four-marks-session-recorded-objects-20261118",
+        "premise:boundary-state-is-fock-state-of-original-polarization-20261120"
       ],
       "findings": [
         {
@@ -117932,6 +117944,105 @@
               "sha256": "9762008b2cc89e85f02cf0285bc8786b5f35fbaaf7b1e375db9a3ff91f6b0159",
               "line_start": 1,
               "line_end": 152
+            }
+          ],
+          "attempt_ids": []
+        },
+        {
+          "id": "finding:original-calderon-polarization-is-flat-and-pure-on-the-normal-halves-20261120",
+          "title": {
+            "de": "Die originale Calderón Polarisation ist auf den zwei Normalhälften flach und rein",
+            "en": "The original Calderón polarization is flat and pure on the two normal halves"
+          },
+          "statement": {
+            "de": "Aus der Kragenform D_+ = gamma_n (d_n + B_Sigma) des Originals folgt gamma_n B + B gamma_n = 0, und die Randform <gamma_n u, v> ist entlang der Normalen erhalten. Mit dem bereits geführten Lagrange Lemma G P_C G = 1 - P_C für G = -i gamma_n hat die Polarisation in der Zerlegung nach G die Gestalt P_C = (1/2) [[1, U*], [U, 1]] mit unitärem U: auf jeder Normalhälfte ist die Zweipunktfunktion exakt 1/2, der Kreuzblock ist unitär durch 2. Umgekehrt ist jeder Projektor, der auf beiden Hälften flach ist, lagrangesch. Geprüft an einem geschichteten Inneren mit 40 ungeraden Schichten, das kein Produkt ist (Abstand zum Spektralprojektor des Randoperators 0,50, Lagrangedefekt 7e-15); 200 zufällige Polarisationen vom halben Rang sind nie flach (kleinster Defekt 0,22); die positive Hälfte eines Operators mit geradem Anteil ist nicht flach. Die Cauchydaten der gespiegelten Seite sind gamma_n Ran(P_C) = ker(P_C). Auf dem Fockzustand von P_C mit d = 1, 2, 3 Moden je Hälfte: Einschränkung auf jede Hälfte ist die Spur (Dichte 1/2^d, alle 4^d Monome), der Vektor ist zyklisch, und J(X Omega) = X* Omega ist antiunitär, der Modularoperator also 1. Am aufgezeichneten nativen Operator (96 Fasern) ist sign(D_F) auf jeder Graduierungshälfte exakt 1/2.",
+            "en": "From the collar form D_+ = gamma_n (d_n + B_Sigma) of the original follows gamma_n B + B gamma_n = 0, and the boundary form <gamma_n u, v> is conserved along the normal. With the already recorded Lagrange lemma G P_C G = 1 - P_C for G = -i gamma_n the polarization has, in the splitting by G, the shape P_C = (1/2) [[1, U*], [U, 1]] with unitary U: on each normal half the two-point function is exactly 1/2, the cross block is a unitary divided by 2. Conversely every projector that is flat on both halves is Lagrangian. Checked on a layered interior with 40 odd layers that is not a product (distance to the spectral projector of the boundary operator 0.50, Lagrange defect 7e-15); 200 random polarizations of half rank are never flat (smallest defect 0.22); the positive half of an operator with an even part is not flat. The Cauchy data of the reflected side are gamma_n Ran(P_C) = ker(P_C). On the Fock state of P_C with d = 1, 2, 3 modes per half: the restriction to each half is the trace (density 1/2^d, all 4^d monomials), the vector is cyclic, and J(X Omega) = X* Omega is anti-unitary, so the modular operator is 1. On the recorded native operator (96 fibres) sign(D_F) is exactly 1/2 on each grading half."
+          },
+          "status": "established_scoped",
+          "premise_ids": [
+            "premise:four-marks-session-recorded-objects-20261118"
+          ],
+          "scope": {
+            "de": "Lineare Algebra der Kernstruktur (ungerader Randoperator, lagrangesche Polarisation) in endlichen Modellen mit fester Saat, dazu der aufgezeichnete native Operator. Das Lagrange Lemma wird übernommen, nicht neu bewiesen; für das Kontinuum ist es der Standardsatz unter eindeutiger Fortsetzung. Die Aussage macht keine Annahme über Rundheit oder Dimension der Schnittfläche. Dass der physische Randzustand der Fockzustand dieser Polarisation ist, ist hier nicht gezeigt. Der Zustand hat keinen eigenen Fluss; eine Zeit mit Länge folgt aus ihm nicht. F1 bleibt offen.",
+            "en": "Linear algebra of the kernel structure (odd boundary operator, Lagrangian polarization) in finite models with a fixed seed, plus the recorded native operator. The Lagrange lemma is reused, not proved again; in the continuum it is the standard theorem under unique continuation. The statement makes no assumption on roundness or dimension of the cut surface. That the physical boundary state is the Fock state of this polarization is not shown here. The state has no flow of its own; a time with a length does not follow from it. F1 stays open."
+          },
+          "sources": [
+            {
+              "path": "experiments/theory-contracts/p1-kernel-marker-cut-mirror-20261120/check_polarization.py",
+              "sha256": "1a6826bf7e20ec52ef5f4e5683faa4bb6b608024e4e1c7f5b0c5e420d3a48125",
+              "line_start": 1,
+              "line_end": 130
+            },
+            {
+              "path": "experiments/theory-contracts/p1-kernel-marker-cut-mirror-20261120/check_fock.py",
+              "sha256": "4615ba657a42c88d61b06a82799b7c6f7ace982ae501043cb880d10f3b78425b",
+              "line_start": 1,
+              "line_end": 153
+            },
+            {
+              "path": "experiments/theory-contracts/p1-kernel-marker-cut-mirror-20261120/check_native.py",
+              "sha256": "acde9f670597cf18abc3b7ab0f2ad1bd51c6659359d98a9cacf8ebcf3e65a826",
+              "line_start": 1,
+              "line_end": 61
+            },
+            {
+              "path": "documents/archive--tfpt-45--source_extracts--01_boundary_kernel_source/sections/001-section-primitive-core-and-carrier-interface-handoff.tex",
+              "sha256": "7d6e673d99c29d950dc601283cd51c1cc0b113567eeb79c8396fec9c82a02c79",
+              "line_start": 42,
+              "line_end": 177
+            }
+          ],
+          "attempt_ids": []
+        },
+        {
+          "id": "finding:kernel-mirror-is-modular-conjugation-and-marks-are-normal-grading-with-tangential-phase-20261120",
+          "title": {
+            "de": "Spiegel des Kerns ist die modulare Konjugation; Marker und Schnitt sind Normalgraduierung und tangentiale Phase",
+            "en": "The mirror of the kernel is the modular conjugation; marker and cut are the normal grading and the tangential phase"
+          },
+          "statement": {
+            "de": "Auf dem Fockzustand der originalen Polarisation gilt für die Algebra A_+ einer Normalhälfte: <Omega, (J F J) G Omega> = Tr(F* G)/2^d mit Referenz 1, J^2 = 1, J Omega = Omega, und J A_+ J vertauscht mit A_+. Auf den Feldern ist J a(e) J = (-1)^N a*(U e) mit dem Kreuzblock U von i_C, bis auf eine gemeinsame Phase: Seitentausch durch die Polarisation plus Adjunktion, der einfache Spiegel von FOURMARKS20261118. Die drei anderen Formen (ohne Parität, ohne Adjunktion) haben Restfehler von Ordnung 1, und der antilinear fortgesetzte Seitentausch ohne Adjunktion nimmt auf hermiteschen Operatoren beide Vorzeichen an. Die Realstruktur des Datums geht nicht ein. Der Kern enthält zwei antikommutierende Involutionen, G und i_C. Mit Y0 = i G i_C gilt auf jeder Linie der Seite eta: Z_0 = 1, Z_U = Z_Y = 0, Z_UY = i eta, ABAB = -1 für (U, Y) = (G, Y0) und für jede Drehung des Paars um i_C; die gemischte Marke ist G Y0 = i i_C. Für jeden Marker c, der mit G vertauscht, gilt auf dem flachen Zustand einer Seite Z_c = <c>, Z_Y = 0, Z_cY = i eta <G c>. Im Produktkragen ist Y0 minus die Phase des tangentialen Teils gamma_n B_Sigma von D_+. Am aufgezeichneten nativen Operator ist die aufgezeichnete Richtung des Potentials sign(-i g D_F) exakt -i g sign(D_F); die Realstruktur K lässt sign(D_F) fest und tauscht die Graduierungshälften; lambda_1^+ = 0,0852 ist nicht entartet, die Saatlinie ist eine der 12 eindeutigen Eigenlinien.",
+            "en": "On the Fock state of the original polarization the algebra A_+ of one normal half satisfies: <Omega, (J F J) G Omega> = Tr(F* G)/2^d with reference 1, J^2 = 1, J Omega = Omega, and J A_+ J commutes with A_+. On the fields J a(e) J = (-1)^N a*(U e) with the cross block U of i_C, up to one common phase: exchange of sides by the polarization plus the adjoint, the plain mirror of FOURMARKS20261118. The three other forms (without parity, without adjoint) have residuals of order 1, and the anti-linearly extended exchange without the adjoint takes both signs on hermitian operators. The real structure of the datum does not enter. The kernel contains two anticommuting involutions, G and i_C. With Y0 = i G i_C every line of the side eta has Z_0 = 1, Z_U = Z_Y = 0, Z_UY = i eta, ABAB = -1 for (U, Y) = (G, Y0) and for every rotation of the pair about i_C; the mixed mark is G Y0 = i i_C. For every marker c commuting with G the flat state of one side gives Z_c = <c>, Z_Y = 0, Z_cY = i eta <G c>. In the product collar Y0 is minus the phase of the tangential part gamma_n B_Sigma of D_+. On the recorded native operator the recorded direction of the potential sign(-i g D_F) is exactly -i g sign(D_F); the real structure K fixes sign(D_F) and exchanges the grading halves; lambda_1^+ = 0.0852 is non-degenerate, and the seed line is one of the 12 unique eigenlines."
+          },
+          "status": "conditional",
+          "premise_ids": [
+            "premise:four-marks-session-recorded-objects-20261118",
+            "premise:boundary-state-is-fock-state-of-original-polarization-20261120"
+          ],
+          "scope": {
+            "de": "Bedingt auf die Prämisse, dass der Randzustand der Fockzustand der originalen Polarisation ist und die zwei Seiten die Normalhälften sind. Unter ihr ersetzt der Befund die Annahme der Runde 47 (Vektorzustand auf zwei Seiten mit aufgezeichnetem Spiegel) und braucht die 60 aufgezeichneten Rückkehrwerte nicht. Nicht gezeigt: das Wörterbuch von G und i_C zu den Marken des E8 Worts nach dem Trägersatz (der primitive Kern enthält weder Trägersplit noch Hyperladung, Higgsquadrat und Hyperladung können auf dieser Stufe nicht Marker und Schnitt sein); die Zahlenwerte der gewichteten R113 Form; eine Zeit mit Länge; die Lage der vier Marken; die Gleichsetzung der 96 Fasern mit Randmoden. Lesart des Originaltexts: Satz (iii), Ran(P_C) = ker(R_tau - 1), kann mit R_tau als punktweisem Lift der Spiegelung nicht gelten, weil dieser Lift bis auf eine Phase G ist und ein Eigenprojektor von G nie lagrangesch ist; der Satz stimmt als Definition von i_C über innere und gespiegelte Daten. Am Papier ist nichts geändert. F1 bleibt offen.",
+            "en": "Conditional on the premise that the boundary state is the Fock state of the original polarization and that the two sides are the normal halves. Under it the finding replaces the assumption of round 47 (vector state on two sides with the recorded mirror) and does not need the 60 recorded return values. Not shown: the dictionary from G and i_C to the marks of the E8 word after the carrier theorem (the primitive kernel contains neither carrier split nor hypercharge, so Higgs square and hypercharge cannot be marker and cut at this level); the numerical values of the weighted R113 form; a time with a length; the position of the four marks; the identification of the 96 fibres with boundary modes. Reading of the original text: theorem (iii), Ran(P_C) = ker(R_tau - 1), cannot hold with R_tau as the pointwise lift of the reflection, because that lift is G up to a phase and an eigenprojector of G is never Lagrangian; the theorem is correct as the definition of i_C through interior and reflected data. Nothing in the paper is changed. F1 stays open."
+          },
+          "sources": [
+            {
+              "path": "experiments/theory-contracts/p1-kernel-marker-cut-mirror-20261120/check_fock.py",
+              "sha256": "4615ba657a42c88d61b06a82799b7c6f7ace982ae501043cb880d10f3b78425b",
+              "line_start": 1,
+              "line_end": 153
+            },
+            {
+              "path": "experiments/theory-contracts/p1-kernel-marker-cut-mirror-20261120/check_polarization.py",
+              "sha256": "1a6826bf7e20ec52ef5f4e5683faa4bb6b608024e4e1c7f5b0c5e420d3a48125",
+              "line_start": 1,
+              "line_end": 130
+            },
+            {
+              "path": "experiments/theory-contracts/p1-kernel-marker-cut-mirror-20261120/check_native.py",
+              "sha256": "acde9f670597cf18abc3b7ab0f2ad1bd51c6659359d98a9cacf8ebcf3e65a826",
+              "line_start": 1,
+              "line_end": 61
+            },
+            {
+              "path": "experiments/theory-contracts/p1-kernel-marker-cut-mirror-20261120/README.md",
+              "sha256": "32fb8faea90855cf2fff6f0127255583c1be0075e59bee8a35d3a07e2e0a1049",
+              "line_start": 1,
+              "line_end": 138
+            },
+            {
+              "path": "documents/archive--tfpt-45--source_extracts--01_boundary_kernel_source/sections/001-section-primitive-core-and-carrier-interface-handoff.tex",
+              "sha256": "7d6e673d99c29d950dc601283cd51c1cc0b113567eeb79c8396fec9c82a02c79",
+              "line_start": 94,
+              "line_end": 177
             }
           ],
           "attempt_ids": []

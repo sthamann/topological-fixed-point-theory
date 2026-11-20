@@ -7337,3 +7337,43 @@ neu getragen 1/729, 64/729, 1/10, 1/16. Familie nach Ansicht der Restliste gebau
 Urteil: keine vollständige Lösung. Offen: Hand = Zahl der Züge ist Setzung; Bindung der drei Bits an P1 und P2;
 gemeinsamer Ursprung mit dem Petersenlauf der Farbseite. Trennende Vorhersage: Vielfachheiten 1, 3, 3 und eine Rate 0
 (Würfel) gegen 1, 4, 5 (Petersen). F1 bleibt offen. Nichts befördert, kein Atlaseintrag, kein Commit.
+
+
+## P1BIND20261120 · Marker, Schnitt und Spiegel am originalen P1 Kern (bedingt)
+
+Sitzung vom 20. November 2026. Vertrag `experiments/theory-contracts/p1-kernel-marker-cut-mirror-20261120`, drei
+Skripte, 54 von 54 Prüfungen. Atlasrevision `aa5b1a2d49080a452e452db4` (zwei Befunde, eine Prämisse in
+`problem:four-marks-quartic-and-free-seam-source`). Kein Ledgerwechsel, nichts befördert.
+
+**Frage:** FOURMARKS20261118 schloss F1 unter einer benannten Annahme: die ursprüngliche Randform ist ein Vektorzustand
+auf zwei Seiten der Naht mit dem aufgezeichneten Spiegel. Offen waren Marker, Schnitt und Spiegel am Original.
+
+**Original gelesen:** Randkernquelle Abschnitt 001, Zeilen 42 bis 177: Randdatum mit `B_Σ`, Kragenform
+`D₊ = γ_n(∂_n + B_Σ)`, Polarisation `ι_C = 2P_C − 1` aus dem Calderón Projektor, Verdopplung, Saatantwort `1/λ₁⁺`.
+
+**Ergebnis:**
+
+- Zustand: Mit dem schon geführten Lagrange Lemma ist `P_C` auf den zwei Normalhälften (`G = −iγ_n`) exakt
+  `½ [[1, U*], [U, 1]]`. Jede Hälfte trägt die Spur, der ganze Zustand ist rein. Gilt für jedes Innere, geprüft an einem
+  geschichteten Inneren, das kein Produkt ist. Umkehrung gilt.
+- Spiegel: Auf dem Fockzustand ist die reflektierte Form `Tr(F*G)/2^d`, Referenz 1. Der Spiegel ist die modulare
+  Konjugation, `J a(e) J = (−1)^N a*(U e)`, `J² = 1`: Seitentausch durch die Polarisation plus Adjunktion, also der
+  einfache Spiegel. Ohne Adjunktion ist die Form nicht positiv. Die Realstruktur geht nicht ein.
+- Marker und Schnitt: `(U, Y) = (G, iGι_C)` bis auf Drehung um `ι_C`. Marken `(1, 0, 0, iη)`, `ABAB = −1`. Die gemischte
+  Marke ist `i·ι_C`. Im Produktkragen ist `Y` die Phase des tangentialen Teils `γ_n B_Σ`.
+- Nativ: Die aufgezeichnete Richtung des Potentials ist exakt `−i g sign(D_F)`; flache Dichte 1/48 je Hälfte;
+  `λ₁⁺ = 0,0852` ist nicht entartet, die Saatlinie ist eine der 12 Kappenlinien.
+
+**Geltung:** Die Annahme der Runde 47 ist ersetzt durch drei schwächere Voraussetzungen: (a) Randzustand = Fockzustand
+der originalen Polarisation, (b) die zwei Seiten sind die Normalhälften, (c) Cauchydaten lagrangesch. (a) steht nicht im
+Original. Nicht gezeigt: Wörterbuch zum E₈ Wort, Werte der gewichteten R113 Form, Zeit mit Länge (der Kernzustand hat
+Modularoperator 1), Lage der Marken. Lesart des Originals: Satz (iii) gilt nur als Definition von `ι_C`, nicht mit dem
+punktweisen Lift der Spiegelung. F1 bleibt in Bearbeitung.
+
+**Nächster Schritt:** Voraussetzung (a) am Original entscheiden. Aus der primitiven Wirkung
+`tr f(D_rel/χ) − tr f(D_ref/χ)` den Randzustand ausrechnen und mit dem Fockzustand von `P_C` vergleichen; prüfen, ob
+`D_rel` auf den Randdaten der Schnitt `Y` ist.
+
+**Nebenbei erledigt:** Arbeitsstand vom 18. und 19. November committet und gepusht (461 OriginLab Tests bestehen nach
+Korrektur eines überschatteten Imports in `main.py`). Acht fehlende Befunde nachgetragen (Torus und Brücke vom 18.
+November, zweite Hypothesenrunde, Sechs im Transfer, Szenariosuche), Atlasrevision `b5b809c43458554296b079da`.
