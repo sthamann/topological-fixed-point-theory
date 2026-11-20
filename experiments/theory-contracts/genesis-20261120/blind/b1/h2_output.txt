@@ -1,0 +1,40 @@
+n | #switching-gauge-fixed relations | S^2=(n-1)I | two-eigenvalue (S^2=aS+bI) | values of a | iso classes of conference solutions
+2 | 1 | 1 | 1 | {0: 1} | 1
+3 | 2 | 0 | 2 | {1: 1, -1: 1} | -
+4 | 8 | 0 | 2 | {2: 1, -2: 1} | -
+5 | 64 | 0 | 2 | {3: 1, -3: 1} | -
+6 | 1024 | 12 | 14 | {4: 1, 0: 12, -4: 1} | 1
+7 | 32768 | 0 | 2 | {5: 1, -5: 1} | -
+8 | 2097152 | 0 | 2 | {6: 1, -6: 1} | -
+
+histogram: number of distinct eigenvalues over ALL gauge-fixed relations, n=6 (control)
+{2: 14, 3: 30, 4: 170, 5: 90, 6: 720}
+
+the n=6 solution (one representative):
+ [[ 0  1  1  1  1  1]
+ [ 1  0  1  1 -1 -1]
+ [ 1  1  0 -1  1 -1]
+ [ 1  1 -1  0 -1  1]
+ [ 1 -1  1 -1  0  1]
+ [ 1 -1 -1  1  1  0]]
+eigenvalues: [-2.236068 -2.236068 -2.236068  2.236068  2.236068  2.236068]  (+-sqrt5 = 2.236068 )
+rank of projector P+ : 3  -> six vectors P e_i in a 3-dim space
+normalized Gram (cosines):
+ [[ 1.        0.447214  0.447214  0.447214  0.447214  0.447214]
+ [ 0.447214  1.        0.447214  0.447214 -0.447214 -0.447214]
+ [ 0.447214  0.447214  1.       -0.447214  0.447214 -0.447214]
+ [ 0.447214  0.447214 -0.447214  1.       -0.447214  0.447214]
+ [ 0.447214 -0.447214  0.447214 -0.447214  1.        0.447214]
+ [ 0.447214 -0.447214 -0.447214  0.447214  0.447214  1.      ]]
+all |cos| off-diagonal equal 1/sqrt5 = True
+permutations preserving the switching class: 60  (of 720);  mapping S -> -S (self-complementary): 60
+element orders in that group: {1: 1, 2: 15, 3: 20, 5: 24}  (A5: 1:1, 2:15, 3:20, 5:24)
+2-transitive on the 6 points: True
+
+NON-exhaustive constructive controls for larger n (Paley construction, q prime = 1 mod 4):
+  n=6: S^2=(n-1)I True -> eigenspace dims 3 + 3
+  n=14: S^2=(n-1)I True -> eigenspace dims 7 + 7
+  n=18: S^2=(n-1)I True -> eigenspace dims 9 + 9
+  n=30: S^2=(n-1)I True -> eigenspace dims 15 + 15
+  => the rule alone gives dimension n/2 for every admissible n; only 'smallest non-trivial' gives 3.
+python3 h2_balanced_relation.py  1.45s user 0.03s system 99% cpu 1.484 total

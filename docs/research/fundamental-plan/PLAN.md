@@ -1,5 +1,36 @@
 # TFPT: Aufgabenplan zur fundamentalen Herleitung
 
+## Arbeitsweise ab 20. November 2026 (Nutzerentscheidung)
+
+Zwei Modi, siehe `AGENTS.md`. **Exploration** (neue Ideen, Neuansatz) folgt
+`docs/research/EXPLORATION.md` und liest diesen Plan nicht vorab. **Fortsetzung**
+liest diesen Abschnitt, das kompakte `progress.json` (Historie in
+`progress-history.json`) und die neuesten Einträge unten. Ein „Nächster Schritt“
+eines Eintrags ist ein Vorschlag, keine Pflicht für die folgende Sitzung.
+Explorationsergebnisse liegen unter `experiments/exploration/`.
+
+## 20. November: Neuansatz am singulären Punkt (NEUSING20261120)
+
+Auf Auftrag von vorn begonnen. Am quadratischen Torus existiert ein nicht umkehrbarer Schritt, der auf die
+Viermarkensphäre absteigt und die Marken erhält. Exakt: Fahne der Marken, Wiederkehr nur auf ungerader Torsion,
+Dilatation um √2, E₂(i) = 3/π, zwei entartete Füllungen, Baum der Valenz 3. Hypothese; keine neue Zahl. Selbstähnlichkeit
+geprüft: die aufgezeichneten Kerne sind es nicht, Fixpunkt ist der Kern mit entfernter Nullmode. Nächster Schritt: an der
+Kernquelle prüfen, ob P1 im Sektor mit Nullmode liegt (dort unentschieden: erlaubt, nicht behauptet). Nachtrag: die
+gleichmäßige Mischung der drei Schritte gibt 1/2, 1/6 und die Raten 2/3, 1/3 des Bestands; die 5-Torsion gibt das
+erweiterte E8 Netz mit Kac Marken; Netz und Familie haben dieselbe Form (1 + g)/2. Nicht gezeigt: Sechs, c₃, φ₀, α,
+Raum, Zeit, Gravitation. Keine volle Lösung. Nullmoden gerechnet: die Viertelwirkung des Bestands gibt am Punkt
+tau = i 32 chirale Nullmoden in der Verklebung, (4,1,2,1) + (4-quer,3,1,2) unter SU(4) × SU(3) × SU(2) × SU(2) × U(1);
+Anomalie nicht null, Kegelpunkte offen. Drei neue Ansätze: Gewichtsgesetz (c₃ als Gewicht 1/2), der Schritt als Frobenius einer
+Kurve über F₂ (1, 5, 13, 25, 41, …), E8 aus den 120 Einheitsquaternionen. Nächster Schritt: D5 + A3 aus dieser Kurve.
+
+## 20. November: Regelsuche über Regelklassen (GENESIS20261120)
+
+Neue Spur `genesis_rules` in OriginLab: sechs aufgezählte Universen, jede Teilmenge eines Eigenschaftsvorrats als Regel,
+Urteil an den kleinsten Lösungen. Dazu sechs blinde Agenten und ein Red Team. Keine neue Theorie. Exakt: blinde
+Vorzeichen geben 5 und 16; der Partner ist A₃; auf dem ergänzten Objekt bleiben 49, 38, 22, 0 blinde spiegelungerade
+Markierungen bei 0 bis 3 geprüften Partnerrichtungen, drei Familien nur bei 0. Die Verbindung beider Sätze zu einer
+Regel ist widerlegt. Stromtest ausgeführt: alle 60 (10,6) Ströme sehen die Dreifamilienmarkierung in erster Ordnung, blind bleiben nur die 40 Trägerströme. Lesart im Bestand geprüft: im Markenvertrag bleiben drei Familien blind, im vollen E₈ Netz nicht. Nächster Schritt: aus einem Originalaufruf entscheiden, ob die drei Cartanströme des Partners lokale Observablen sind. F1 bleibt in Bearbeitung.
+
 ## 20. November: Spiegelung des Originals und erzwungener kritischer Punkt (KERNSYM20261120)
 
 Vertrag `experiments/theory-contracts/original-reflection-and-forced-critical-point-20261120`, 14 Prüfungen, Atlas `3b1bd8ffcddefa5436f0227c`. Die Zeitspiegelung ist eine zweite antiunitäre Symmetrie des Kernzustands

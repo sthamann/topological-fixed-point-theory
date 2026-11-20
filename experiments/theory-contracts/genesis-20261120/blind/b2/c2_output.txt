@@ -1,0 +1,32 @@
+=== Part A: binary alphabet {+1,-1}^n, cubic condition m=3 (exhaustive, x in {-1,0,1}) ===
+n=1: antipodal pairs=1, conditions=2, rank=1, Q-nullity=0, nonzero solutions=0  (0.0s)
+n=2: antipodal pairs=2, conditions=6, rank=2, Q-nullity=0, nonzero solutions=0  (0.0s)
+n=3: antipodal pairs=4, conditions=13, rank=4, Q-nullity=0, nonzero solutions=0  (0.0s)
+n=4: antipodal pairs=8, conditions=24, rank=8, Q-nullity=0, nonzero solutions=0  (0.0s)
+n=5: antipodal pairs=16, conditions=40, rank=15, Q-nullity=1, nonzero solutions=2  (0.0s)
+   solution: #states=16, product-of-signs over states={-1}  (single parity class => even/odd-weight code)
+   solution: #states=16, product-of-signs over states={1}  (single parity class => even/odd-weight code)
+n=6: nullity and exact count via x = chi_all * sum a_i s_i, a_i in {0,+-1/2,+-1}:
+   Q-nullity = 6
+   nonzero {-1,0,1} solutions = 72  by #chiral states: {32: 12, 16: 60}
+
+=== Part B: order m of the invisibility condition vs minimal length (Q-nullity>0) ===
+m=1: (n, nullity) = [(1, np.int64(0)), (2, np.int64(0)), (3, np.int64(1)), (4, np.int64(4)), (5, np.int64(11)), (6, np.int64(26)), (7, np.int64(57)), (8, np.int64(120))]  -> minimal n = 3, states = 2^2 = 4
+m=3: (n, nullity) = [(1, np.int64(0)), (2, np.int64(0)), (3, np.int64(0)), (4, np.int64(0)), (5, np.int64(1)), (6, np.int64(6)), (7, np.int64(22)), (8, np.int64(64))]  -> minimal n = 5, states = 2^4 = 16
+m=5: (n, nullity) = [(1, np.int64(0)), (2, np.int64(0)), (3, np.int64(0)), (4, np.int64(0)), (5, np.int64(0)), (6, np.int64(0)), (7, np.int64(1)), (8, np.int64(8))]  -> minimal n = 7, states = 2^6 = 64
+If m = D/2+1 (order of the chiral anomaly in D dims, D=0 mod 4): n_min = D/2+3.
+   D=4: n_min=5, D+1=5, equal=True
+   D=8: n_min=7, D+1=9, equal=False
+   D=12: n_min=9, D+1=13, equal=False
+   D=16: n_min=11, D+1=17, equal=False
+
+=== Part C: negative controls (other alphabets, cubic condition m=3, exhaustive) ===
+alphabet (1, 0, -1) n=1: pairs=1, nonzero solutions=0 (0.0s)
+alphabet (1, 0, -1) n=2: pairs=4, nonzero solutions=0 (0.0s)
+alphabet (1, 0, -1) n=3: pairs=13, nonzero solutions=0 (0.0s)
+alphabet (3, 1, -1, -3) n=1: pairs=2, nonzero solutions=0 (0.0s)
+alphabet (3, 1, -1, -3) n=2: pairs=8, nonzero solutions=0 (0.0s)
+alphabet (2, 1, -1, -2) n=1: pairs=2, nonzero solutions=0 (0.0s)
+alphabet (2, 1, -1, -2) n=2: pairs=8, nonzero solutions=0 (0.0s)
+alphabet (2, 1, 0, -1, -2) n=1: pairs=2, nonzero solutions=0 (0.0s)
+alphabet (2, 1, 0, -1, -2) n=2: pairs=12, nonzero solutions=0 (0.0s)

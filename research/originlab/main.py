@@ -46,6 +46,10 @@ CAMPAIGNS += ("f1_two_arc_purity",)
 FINITE_CONTROLS += ("f1_oph_coherent_histories",)
 CAMPAIGNS += ("f1_oph_coherent_histories",)
 CAMPAIGNS += ("structure_scenarios",)
+FINITE_CONTROLS += ("genesis_rules",)
+CAMPAIGNS += ("genesis_rules",)
+FINITE_CONTROLS += ("genesis_foreign",)
+CAMPAIGNS += ("genesis_foreign",)
 
 
 def atomic_json(path, payload):
@@ -326,6 +330,12 @@ def execute(campaign, root, args, suggestion_rows, retained_rows, prior_question
     if campaign == "structure_scenarios":
         from structure_scenarios import run as structure_run
         return structure_run(root)
+    if campaign == "genesis_rules":
+        from genesis_rules import run as genesis_run
+        return genesis_run(root)
+    if campaign == "genesis_foreign":
+        from foreign_universes import run as foreign_run
+        return foreign_run(root)
     if campaign == "f1_klein_phase_space_double":
         from f1_klein_phase_space_double import controls
         return controls()

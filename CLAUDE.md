@@ -1,13 +1,13 @@
 # TFPT research in Claude Code
 
-Current user directive, 30 October 2026: follow the shared fundamental plan in
-`docs/research/fundamental-plan/PLAN.md`, read `progress.json` and the latest
-`RESULTS.md`, continue the next actionable unfinished task, and update completion
-and all consequential results. Reuse proved subtasks and the exact search tools
-in `SEARCH-METHODS.md`. The live Atlas remains the scientific decision source.
-This supersedes the prior mathematical-only priority for this request; it does
-not restart the stopped recurring model-chat automation.
+Read `AGENTS.md` first. It defines the two research modes:
 
-Read `AGENTS.md` and `semantic_explorer/skills/tfpt-knowledge/SKILL.md` before TFPT or Universalraum research. Use the `tfpt-knowledge` MCP server configured in `.mcp.json` as the sole current theory-graph interface. Begin with `graph_status` and `theory_overview`, then use `research_context`/`research_brief` and open only relevant dossiers and registered original sources.
+- **Exploration** (new ideas, Neuansatz, creative or broad search):
+  follow `docs/research/EXPLORATION.md`. Do not load PLAN/RESULTS/progress or the
+  Atlas before your own ideas are written down.
+- **Continuation** (continue the plan or a named task): `PLAN.md` top section,
+  compact `progress.json`, newest `RESULTS.md`, then the `tfpt-knowledge` Atlas.
 
-The original ledger and sources remain authoritative. AI annotations, cards, graph links, and shared inputs are not proof or independent evidence. Preserve scopes, conjunctive premises, unknowns, and negative-result limits. Keep RH source material and specialized RH skills; a graph path does not establish a claim.
+The ledger and original sources own claim status; Atlas links and AI summaries
+are navigation, not proof. Preserve scoped negative results, but a past
+"Nächster Schritt" is never an obligation for a new session.

@@ -1,0 +1,92 @@
+{
+ "status": "SELF_SIMILARITY_CHECKED",
+ "physical_solution": false,
+ "checks": [
+  {
+   "check": "residue 1 at the origin for all four kernels",
+   "passed": true,
+   "value": null
+  },
+  {
+   "check": "the odd kernel is doubly periodic and odd, and vanishes at the three marks",
+   "passed": true,
+   "value": null
+  },
+  {
+   "check": "at tau = i the odd kernel is zeta(z) - pi conj(z): the holomorphic part has no linear term, G2*(i) = 0",
+   "passed": true,
+   "value": "(3.14159265359 - 1.57772181044e-30j)"
+  },
+  {
+   "check": "the two even kernels exchanged by the symmetry are pulled back to the third one: 2 -> 3 and 4 -> 3",
+   "passed": true,
+   "value": {
+    "2": [
+     3,
+     -1,
+     "7.89e-31"
+    ],
+    "3": [
+     3,
+     1,
+     "2.1"
+    ],
+    "4": [
+     3,
+     1,
+     "8.13e-31"
+    ]
+   }
+  },
+  {
+   "check": "no even kernel is self-similar",
+   "passed": true,
+   "value": "2.10412"
+  },
+  {
+   "check": "the third even kernel is pulled back into the odd structure: alpha S3(alpha z) = Z(z) - Z(z + c)",
+   "passed": true,
+   "value": null
+  },
+  {
+   "check": "the odd kernel is self-similar under the step: alpha Z(alpha z) = Z(z) + Z(z + c)",
+   "passed": true,
+   "value": "1.18e-30"
+  },
+  {
+   "check": "also under 2+i (degree 5) and under 2 (degree 4)",
+   "passed": true,
+   "value": null
+  },
+  {
+   "check": "the purely holomorphic zeta is not self-similar; the term -pi conj(z) is needed",
+   "passed": true,
+   "value": null
+  },
+  {
+   "check": "control: at a generic torus the odd kernel obeys the same law under the integer 2 (so integers are not special to tau = i)",
+   "passed": true,
+   "value": null
+  },
+  {
+   "check": "control: at a generic torus 1+i is no map of the torus (the image of the lattice leaves the lattice)",
+   "passed": true,
+   "value": null
+  },
+  {
+   "check": "round sphere: the pulled back kernel is the kernel times sqrt((1+x^2)(1+y^2))/(1+xy), not the kernel",
+   "passed": true,
+   "value": "(x**2 + 1)*(y**2 + 1)/(x*y + 1)**2"
+  },
+  {
+   "check": "its defect: a second pole on the other sheet (y = -1/x) and branch points at the critical points +-i",
+   "passed": true,
+   "value": null
+  }
+ ],
+ "verdict": {
+  "round_sphere_kernel": "not self-similar",
+  "even_torus_kernels": "not self-similar; the step moves them 2,4 -> 3 -> odd, as it moves the marks",
+  "odd_kernel": "self-similar under every Gaussian integer; Z(z) = zeta(z) - pi conj(z)"
+ }
+}

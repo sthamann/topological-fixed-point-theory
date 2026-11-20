@@ -1,180 +1,82 @@
 # Working in TFPT
 
-## Current research directive — user decision of 2026-10-30
+This repository owns physical TFPT, its compiler mathematics and its physical
+interfaces. Prime-number, RH, Weil-window and factorisation research belongs to
+[Prime Front](https://github.com/sthamann/prime-front); do not reintroduce it here.
+Current explicit user instructions always take precedence over this file.
 
-The user explicitly requested a source-checked fundamental TFPT plan, concrete
-automatic candidate search, and successive execution with durable completion
-and result tracking across follow-up research sessions. This replaces the
-23 October purely mathematical priority for this fundamental research request.
-Preserve that program's proved results and scoped exclusions.
+## Pick the mode first — user decision of 2026-11-20
 
-Start every continuation with `docs/research/fundamental-plan/PLAN.md`,
-`progress.json`, the newest `RESULTS.md` entries and the live sole TFPT Atlas.
-Continue the first actually actionable open task from the live progress record,
-including its next action, prerequisites, continuation basis and active owner.
-Reuse completed mathematical subtasks instead of reopening them. Dated task
-names in entry maps or historical handoffs do not override live progress.
-`SEARCH-METHODS.md` names the actual candidate classes, existing executable
-solvers, required original inputs, exact checks and planned extensions.
+Every research session runs in exactly one of two modes. Decide from the user's
+words; when unclear, ask once.
 
-During and before ending a session, record consequential positive, negative
-and inconclusive results, source/evidence, scope and next action in RESULTS.
-Update progress and the plan's completion overview. Mark a task done only
-when its own success criterion is evidenced; an excluded search class does
-not close its parent physical goal. Persist source-reviewed scientific changes
-through the Atlas's revision-checked update. Preserve existing ownership and
-concurrent edits. Do not replace productive research with another planning loop.
+**Exploration** — the user asks for new ideas, a fresh approach, creativity,
+"völlig neu", "anders", "Neuansatz", hypotheses or a broad search.
+Follow [`docs/research/EXPLORATION.md`](docs/research/EXPLORATION.md). Do **not**
+read PLAN.md, RESULTS.md, progress.json or the Atlas before the idea phase is
+written down. Work from the target list there. The Atlas is used afterwards, as a
+check, never as a starting point. No "next step" chain from earlier contracts.
 
-This continuation directive does not reactivate the stopped recurring model-chat
-automation. Current explicit user instructions remain authoritative.
+**Continuation** — the user asks to continue the plan, a named task, contract or
+result. Read `docs/research/fundamental-plan/PLAN.md` (top section), the compact
+`progress.json` and the newest `RESULTS.md` entries, then the live Atlas. Continue
+the named task. Historic per-session records are in `progress-history.json`; read
+them only for a specific ID.
 
-## Start with the actual task
+Neither mode turns an automatic "Nächster Schritt" from the last contract into an
+obligation. Before a new contract in either mode, check in one line whether it is
+just another variant of the last three contracts; if so, pick something else.
 
-This repository owns physical TFPT, its compiler mathematics and its stated
-physical interfaces. Prime-number, RH, Weil-window and factorisation research
-belongs to [Prime Front](https://github.com/sthamann/prime-front). Do not
-reintroduce its modules, registries or runtime dependency into TFPT.
+## Scientific discipline (both modes)
 
-1. Read `README.md` and the central `docs/registry/INDEX.md`.
-2. Read the compact `docs/registry/summary.json` or use
-   `python3 verification/make_content_registry.py --query "topic"` to locate
-   a document, topic, editable
-   module and its cited verification/formal sources. The complete
-   `registry.json` is a large machine graph: query it in bounded slices rather
-   than loading it wholesale into an agent context. Read the original
-   statements; registry links alone do not establish a proof.
-   Read `docs/SEMANTIC_NAVIGATION.md` for coverage limits and the next-session
-   route. In the local Atlas use `paper_coverage`, `search_papers`/`list_papers`,
-   `paper_outline`, `paper_section`, `paper_evidence` and `read_source` before
-   joining the exact question to `research_state`. Source-grounded AI summaries
-   remain `reviewed:false`; check freshness, incomplete states and scope.
-   Structural/AI coverage is not curated scientific review; a missing reviewed
-   Atlas match is not evidence that a scientific question is open. Paper search
-   defaults public; explicitly include local/private material only for local work
-   and never copy it automatically into public artifacts.
-3. Read the relevant `.cursor/rules/` and any nested `AGENTS.md` that applies
-   to the files being changed. Current user instructions take precedence.
-4. Inspect the working tree. Preserve unrelated staged, modified, untracked
-   and ignored research. Never reset working files or broadly add another
-   research session's results.
-
-## Source ownership and document editing
-
-- `documents/` contains the editable modules of the modularized documents.
-  Existing `.tex` entry points retain their names for compilation and stable
-  PDF URLs. Follow the owning module path in the registry instead of putting
-  new chapters into a thin entry point.
-- `tex-artefacts/` owns shared style, notation, common references and reusable
-  fragments. Shared material has one owner; do not paste a copy into each paper.
-- `docs/registry/` is a generated navigation layer. Its documented configuration
-  owns curated descriptions/topic rules; the generator owns inventories,
-  source locations and reverse links. Regenerate rather than editing outputs.
-- `verification/status_ledger.csv` owns claim status. `run_all.py` and the
-  script registry own the registered executable suite. Exploratory scripts
-  stay under `experiments/` until an explicit reviewed promotion.
-- Actual `.lean` statements and `.wl` code own their formal/computational
-  scope. Keep hypotheses, axiom dependencies and open obligations explicit.
-- `website/` and generated TeX/CSV/TypeScript indices are derived surfaces.
-  Update them through the documented generators in the same change.
-- Documentation-only source organization/tooling changes belong in
-  `docs/CHANGELOG.md`; scientific/publication changes belong in the modular
-  paper changelog. Do not change scientific history merely to record a file move.
-- `_archive/` is historical. Do not silently rewrite a historical verdict to
-  match a later result. Make the dated scope and current source clear.
-
-When splitting or moving text, preserve ordering, macro definitions, labels,
-reference keys and mathematical content. Use the shared TeX include reader
-for tooling; do not regex only a root wrapper or invent another include
-expansion implementation. Keep include cycles and missing required sources
-as errors. Generated/optional build artifacts must be identified explicitly.
-
-## Find code and research without conflating them
-
-Prefer `codebase-memory-mcp` for code discovery:
-`search_graph`, `trace_path`, `get_code_snippet`, `query_graph`, `search_code`.
-Index an unindexed project first. Use targeted text search for literals,
-configuration, non-code sources, or insufficient graph coverage.
-
-For TFPT/Universalraum research, first read the complete available whole-system
-entry map and the `tfpt-knowledge` skill. On the maintained local installation:
-
-- `/Users/stefanhamann/.codex/context/tfpt-gesamtkontext.md`
-- `/Users/stefanhamann/.codex/skills/tfpt-knowledge/SKILL.md`
-- repository `semantic_explorer/skills/tfpt-knowledge/SKILL.md`, when present.
-
-Use `tfpt-knowledge` as the sole current theory-atlas interface. Start with
-`graph_status` and `theory_overview`, then query the actual question with
-`research_state`. Use exact problem/strategy/premise IDs with
-`assess_research_plan` before repeating a recorded approach. Load bounded
-original sources through the research context/dossier/source tools. Persist
-source-reviewed research changes through `record_research_update` using its
-revision check. Keep current source freshness and review coverage visible.
-
-The local Atlas may not be included in a public checkout. If unavailable,
-use the registry, ledger and original sources and state that the current
-local decision state was not consulted. Do not replace it with the retired
-`verification/theory_graph.json` or `theorycat.py`. The code graph, content
-registry and research Atlas serve different purposes.
-
-## Scientific discipline
-
-- Preserve the complete connected TFPT structure: inputs, compiler/E₈,
-  Standard Model/flavor, alpha, clocks, quantum/boundary structure, gravity,
-  consistency and the source question. Do not reduce it to the last model gap.
-- Distinguish declared input, exact consequence under assumptions, numerical
-  observation, conditional physical identification and open derivation.
-  Ledger status and original sources prevail over prose summaries.
+- Distinguish declared input, exact consequence, numerical observation,
+  conditional physical identification and open derivation. Ledger
+  (`verification/status_ledger.csv`) and original sources own claim status.
 - Matching numbers or dimensions do not establish an operator dictionary.
-  Check actual group actions, charges, grading, adjoints and composition.
-- Name the first additional geometry, metric, state, coupling, calibration
-  or selection rule. A working chosen model does not derive that choice.
-- Before expensive work, perform the smallest decisive structural test.
-  New models need a concrete question, success criterion and stopping rule.
-- Keep conjunctive prerequisites together. Common seeds are correlated
-  evidence; necessary conditions are not automatically sufficient.
-- Preserve scoped negative results. Revisit a failed route only after naming
-  the changed premise. Do not promote a finite check, source index or source
-  consistency audit to a physical or all-case proof.
-- Reconstruct the requested outcome and work toward it. Fix the existing
-  consumer path; do not substitute a growing collection of reports or models.
+  Name the first newly chosen geometry, state, coupling or selection rule.
+- Smallest decisive test first; new models need a question, success criterion
+  and stopping rule. Preserve scoped negative results.
+- A result may be marked **Kandidat**: it reproduces a target from the list
+  without TFPT inputs or fitted constants. That is a positive outcome worth
+  reporting, not a proof and not a ledger promotion.
+- AI annotations, graph edges and Atlas links are navigation, not proof.
 
-## Validation and integration
+## Atlas and tools
 
-Read `docs/LATEX_MAINTENANCE.md` for precise commands and generated outputs.
-For a structural document change:
+`tfpt-knowledge` (`.mcp.json`) is the sole theory-atlas interface:
+`graph_status`, `theory_overview`, `research_state`, `assess_research_plan`,
+`record_research_update` (with `expected_revision`). Code discovery:
+`codebase-memory-mcp`, then targeted text search. Content registry:
+`python3 verification/make_content_registry.py --query "topic"`, details in
+`docs/registry/INDEX.md`. Search programs live in `research/originlab`
+(`.venv/bin/python`); extend them instead of writing parallel tools.
+Catalog of all checks and experiments: `docs/catalog/TFPT_Pruefkatalog_2026-11-20.xlsx`.
 
-1. Verify expanded source preservation and the affected include/consumer tests.
-2. Regenerate the content registry, existing maps and document indices.
-3. Compile affected PDFs from their documented directory; check errors,
-   missing references and visible layout regressions. A TeX exit code alone
-   does not show that every reference is resolved.
-4. Refresh website/download mirrors; run `bash build.sh audit` and the website
-   production build when its content or inputs changed.
-5. Generate manifests last and run their `--check` mode. Ensure exports contain
-   all modular sources and their shared inputs.
+## Recording results
 
-For a scientific or executable change, run the actual affected verification
-and its meaningful negative control before editing its paper/ledger/status.
-Report the exact result first. Broaden tests when changes or unresolved
-failures justify it. Full numerical, Lean and Wolfram runs are separate;
-report unexecuted checks honestly. Independently review material physics,
-learning/restore and response-path changes once at the relevant diff.
+Exploration: one folder under `experiments/exploration/<date>-<slug>/` with
+`IDEAS.md`, scripts and `VERDICT.md` (Kandidat / verworfen / offen + why).
+Continuation: contract under `experiments/theory-contracts/`, entry in
+`RESULTS.md`, update the compact `progress.json` (`next_task`, `continuation`,
+task statuses). Persist source-reviewed changes through the Atlas update.
+Never store per-session `latest_*` records in `progress.json`; append them to
+`progress-history.json`.
 
-Do not hand-edit generated `verification.tex`, document maps, script index,
-changelog data, website version metadata or generated Atlas data. Do not
-silently add audit-baseline exceptions to make a refactor pass.
+## Source ownership and editing
 
-## Collaboration and delivery
+- `documents/` holds editable paper modules; `tex-artefacts/` shared style and
+  fragments. `docs/registry/`, `verification.tex`, document maps, script index,
+  website metadata and Atlas data are generated — regenerate, never hand-edit.
+- Exploratory scripts stay under `experiments/` until an explicit reviewed promotion.
+- `_archive/` is historical; do not rewrite old verdicts.
+- When moving TeX, preserve order, macros, labels and references; use the shared
+  include reader. See `docs/LATEX_MAINTENANCE.md` for build, registry, website and
+  manifest regeneration (`bash build.sh audit`, manifests `--check` last).
+- For an executable or scientific change run the affected verification and its
+  negative control before editing paper, ledger or status. Report exactly what ran.
 
-Use bounded, task-specific delegation when helpful. Follow the applicable
-agent-routing skill within available runtime tools; Cursor model names,
-hooks and AgentStores are not automatically available in Codex. Preserve
-existing ownership and avoid duplicate writers. Hand over a compact state
-with goal, exact files/interfaces, verified results, failures and next action.
-No cost/reservation gate is a prerequisite for a local diagnosis or repair.
+## Working tree and delivery
 
-Communicate the outcome in clear language. Keep progress updates about the
-next real uncertainty or repair. Report what changed, what actually passed,
-what remains unverified and any concrete blocker. Do not ask again for an
-already authorized reversible step. Publishing/merging follows the user's
-actual authorization; a local rule does not invent a second approval flow.
+Preserve unrelated modified and untracked research; never reset or broadly add
+another session's files. Report what changed, what passed and what is unverified.
+Do not ask again for an already authorized reversible step.

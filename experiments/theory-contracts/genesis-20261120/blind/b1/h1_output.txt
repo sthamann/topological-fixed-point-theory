@@ -1,0 +1,67 @@
+=== validation of cubic index (known values: SU3 6->7, 10->27, 8->0; SU5 10->1, 15->9) ===
+ A2 (2, 0) dim 6  A=7
+ A2 (3, 0) dim 10  A=27
+ A2 (1, 1) dim 8  A=0
+ A4 (0, 1, 0, 0) dim 10  A=1
+ A4 (2, 0, 0, 0) dim 15  A=9
+ A4 (1, 0, 0, 0) dim 5  A=1
+
+=== exhaustive enumeration, dim <= 1000 ===
+A_n (2<=n<=45): irreps scanned 1085, non-self-dual 970, of these cubic-blind: 0
+  smallest |cubic index| among non-self-dual A_n irreps: 1
+D rank 5: pos roots 20, irreps <=1000: 23, non-self-dual: 12
+D rank 7: pos roots 42, irreps <=1000: 11, non-self-dual: 4
+D rank 9: pos roots 72, irreps <=1000: 7, non-self-dual: 2
+D rank 11: pos roots 110, irreps <=1000: 4, non-self-dual: 0
+E6 rank 6: pos roots 36, irreps <=1000: 9, non-self-dual: 6
+
+ALL cubic-blind non-self-dual irreps with dim <= 1000 (dual pairs listed separately):
+  dim   16  D5=Spin(10)    (0, 0, 0, 0, 1)
+  dim   16  D5=Spin(10)    (0, 0, 0, 1, 0)
+  dim   27  E6             (0, 0, 0, 0, 0, 1)
+  dim   27  E6             (1, 0, 0, 0, 0, 0)
+  dim   64  D7=Spin(14)    (0, 0, 0, 0, 0, 0, 1)
+  dim   64  D7=Spin(14)    (0, 0, 0, 0, 0, 1, 0)
+  dim  126  D5=Spin(10)    (0, 0, 0, 0, 2)
+  dim  126  D5=Spin(10)    (0, 0, 0, 2, 0)
+  dim  144  D5=Spin(10)    (1, 0, 0, 0, 1)
+  dim  144  D5=Spin(10)    (1, 0, 0, 1, 0)
+  dim  256  D9=Spin(18)    (0, 0, 0, 0, 0, 0, 0, 0, 1)
+  dim  256  D9=Spin(18)    (0, 0, 0, 0, 0, 0, 0, 1, 0)
+  dim  351  E6             (0, 0, 0, 0, 0, 2)
+  dim  351  E6             (0, 0, 0, 0, 1, 0)
+  dim  351  E6             (0, 0, 1, 0, 0, 0)
+  dim  351  E6             (2, 0, 0, 0, 0, 0)
+  dim  560  D5=Spin(10)    (0, 1, 0, 0, 1)
+  dim  560  D5=Spin(10)    (0, 1, 0, 1, 0)
+  dim  672  D5=Spin(10)    (0, 0, 0, 0, 3)
+  dim  672  D5=Spin(10)    (0, 0, 0, 3, 0)
+  dim  720  D5=Spin(10)    (2, 0, 0, 0, 1)
+  dim  720  D5=Spin(10)    (2, 0, 0, 1, 0)
+  dim  832  D7=Spin(14)    (1, 0, 0, 0, 0, 0, 1)
+  dim  832  D7=Spin(14)    (1, 0, 0, 0, 0, 1, 0)
+
+CONTROL (a): drop cubic condition -> smallest non-self-dual irreps:
+  dim   3 A2=SU(3)     (0, 1) cubic=-1
+  dim   3 A2=SU(3)     (1, 0) cubic=1
+  dim   4 A3=SU(4)     (0, 0, 1) cubic=-1
+  dim   4 A3=SU(4)     (1, 0, 0) cubic=1
+  dim   5 A4=SU(5)     (0, 0, 0, 1) cubic=-1
+  dim   5 A4=SU(5)     (1, 0, 0, 0) cubic=1
+
+=== direct weight check of the theorem for minuscule cases (no appeal to invariant degrees) ===
+ Spin(10) 16          #weights=16  sum(w.H)^k for 3 random H: k=1 [0, 0, 0]  k=3 [0, 0, 0]  k=5 [1010880, 0, 1134000]  k=7 [22932000, 34927200, 0]
+ E6 27                #weights=27  sum(w.H)^k for 3 random H: k=1 [0, 0, 0]  k=3 [0, 0, 0]  k=5 [176400, 7015680, -2735040]  k=7 [-545454000, 0, -111857760]
+ Spin(14) 64          #weights=64  sum(w.H)^k for 3 random H: k=1 [0, 0, 0]  k=3 [0, 0, 0]  k=5 [0, 0, 0]  k=7 [-387072000, 0, -1842462720]
+ SU(5) 10 [control]   #weights=10  sum(w.H)^k for 3 random H: k=1 [0, 0, 0]  k=3 [-1782, 126, 252]  k=5 [-65700, -1016100, 104070]  k=7 [65683968, 79460178, -807030]
+
+=== CONTROL (b) = hypothesis H4: drop irreducibility. Multisets of nonzero integers, |q|<=10,
+    p1 = p3 = 0, no pair (q,-q); counted up to overall sign, gcd=1 ===
+  size 3: 0 solutions; first: []
+  size 4: 0 solutions; first: []
+  size 5: 2 solutions; first: [(-9, -5, -1, 7, 8), (-10, -4, -2, 7, 9)]
+  size 6: 2 solutions; first: [(-5, -1, -1, -1, 4, 4), (-6, -3, -2, 1, 5, 5)]
+  size 7: 11 solutions; first: [(-4, -2, -2, -1, 3, 3, 3), (-7, -3, -3, -2, 4, 5, 6), (-7, -4, -3, 1, 1, 6, 6)]
+  diagnostic comparison only (target, not input): multiset {1^6,-4^3,2^3,-3^2,6^1}
+    p1=0 p3=0 ; proper nonempty sub-multisets with p1=p3=0: 0 []
+python3 h1_chiral_cubic_blind.py  8.68s user 0.05s system 99% cpu 8.749 total

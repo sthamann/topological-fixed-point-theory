@@ -1,0 +1,25 @@
+n | #reduced squares | #with >=1 transversal | #with orthogonal mate | max MOLS | max k (projections) | n+1
+2 | 1 | 0 | 0 | 1 | 3 | 3   (0.0s)
+3 | 1 | 1 | 1 | 2 | 4 | 4   (0.0s)
+4 | 4 | 1 | 1 | 3 | 5 | 5   (0.0s)
+5 | 56 | 56 | 6 | 4 | 6 | 6   (0.0s)
+6 | 9408 | 7308 | 0 | 1 | 3 | 7   (1.2s)
+
+Detail: (algebraic type of the reduced square as a loop, #transversals, #normalised mates, size of largest MOLS set containing it) : #squares
+ n=2
+     ('group, element orders [1, 2] abelian', 0, 0, 1) : 1
+ n=3
+     ('group, element orders [1, 3, 3] abelian', 3, 1, 2) : 1
+ n=4
+     ('group, element orders [1, 2, 2, 2] abelian', 8, 2, 3) : 1
+     ('group, element orders [1, 2, 4, 4] abelian', 0, 0, 1) : 3
+ n=5
+     ('group, element orders [1, 5, 5, 5, 5] abelian', 15, 3, 4) : 6
+     ('non-associative loop', 3, 0, 1) : 50
+ n=6
+     ('group', 'transversals:0', 'mates:0') : 80
+     ('non-associative loop', 'transversals:0', 'mates:0') : 2020
+     ('non-associative loop', 'transversals:24', 'mates:0') : 108
+     ('non-associative loop', 'transversals:32', 'mates:0') : 180
+     ('non-associative loop', 'transversals:8', 'mates:0') : 7020
+python3 parallax.py  1.20s user 0.01s system 99% cpu 1.215 total

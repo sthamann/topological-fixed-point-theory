@@ -201,6 +201,12 @@ def execute(spec,root):
     if lane=="structure_scenarios":
         from structure_scenarios import run
         return run(root)
+    if lane=="genesis_rules":
+        from genesis_rules import run
+        return run(root)
+    if lane=="genesis_foreign":
+        from foreign_universes import run
+        return run(root)
     if lane=="scenario_proposals":
         from scenario_model import propose
         catalogue = {name:{"required":sorted(need),"optional":sorted(extra)}
@@ -467,6 +473,8 @@ def specifications(resolution,domain,toolchain,focus,seed_research=True,packets=
     yield 100,{"lane":"r113_synthesis","domain":str(domain)}
     yield 99,{"lane":"atlas_scenarios"}
     yield 99,{"lane":"structure_scenarios"}
+    yield 99,{"lane":"genesis_rules"}
+    yield 99,{"lane":"genesis_foreign"}
     yield 99,{"lane":"q0_rule_search","domain":str(domain),"depth":min(resolution-1,4)}
     yield 98,{"lane":"p1_origin_hypotheses"}
     yield 98,{"lane":"coherent_origin","stage":resolution-1}

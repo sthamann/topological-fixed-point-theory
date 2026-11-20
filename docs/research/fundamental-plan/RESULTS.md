@@ -7604,3 +7604,140 @@ kommen aus dem Original und werden nicht hergeleitet. Struktursuche in OriginLab
 
 **Nächster Schritt:** Am Original prüfen, ob die Normalsphäre des Higgs Abschnitts der Quotient der Markensphäre nach V₄
 ist und ob P_C auf dem endlichen Block mit dem Mittel über die Halbperioden zusammenfällt.
+
+
+## GENESIS20261120 · Suche nach einer Ursprungsregel über Regelklassen hinweg (keine neue Theorie; eine Regelverbindung widerlegt)
+
+Ordner `experiments/theory-contracts/genesis-20261120` (Bericht `README.md`, Katalog `HYPOTHESES.md`, Rohausgabe
+`genesis_rules_run.json`). Neue Spur `genesis_rules` in OriginLab (`research/originlab/genesis_rules.py`, eingebunden in
+`main.py` und `autonomy.py`), `test_genesis_rules.py` 13 von 13. Anlass: Auftrag des Nutzers vom 20. November, die Suche
+ohne Bindung an P1, R113 und die bisherigen Auswahloperatoren über verschiedene Ontologien zu führen. Kein
+Ledgerwechsel, kein Atlaseintrag, nichts befördert, kein Commit.
+
+**Verfahren:** Sechs vollständig aufgezählte Universen (161 640 binäre Codes, 11 zweiteilige Schnitte gerader selbstdualer
+Gitter, 3 850 Uhrgitter, 12 298 Faltungen, 127 Vorzeichenobjekte, 39 Umbenennungsgruppen). Jede Teilmenge eines
+Eigenschaftsvorrats ist eine Regel (162); Urteil leer, eindeutig oder mehrdeutig an den kleinsten Lösungen, dazu
+Ablation jedes Satzes. Sechs Agenten ohne Zugriff auf Repository und Atlas lieferten 25 Hypothesen mit 12 ausgeführten
+Aufzählungen. Ein Red Team mit Atlaszugriff rechnete acht Gegenproben.
+
+**Exakt, in den Schranken:**
+
+- Spiegelungerade Funktionen auf dem Würfel, blind für Proben erster und dritter Ordnung: erst bei fünf Vorzeichen, eine
+  Lösung bis auf Spiegel, 16 Wörter. Drei blinde Agenten kamen unabhängig darauf. Lehrbuchaussage (kleinster komplexer
+  anomaliefreier Spinor).
+- Partner des Fünfergitters in einem geraden selbstdualen Gitter: Rang 3 modulo 8 (Gaußsumme), unter allen geraden
+  Grammatrizen bis Rang 3 genau A₃. Im Bestand als q(D₅) + q(A₃) = 2.
+- Wörter und Umschaltungen von n Vorzeichen haben nur bei n = 8 dieselbe Norm.
+- Neu gegenüber dem Atlas (nicht gefunden): Auf den 128 Klebevektoren bleiben 49, 38, 22, 0 unabhängige spiegelungerade
+  Markierungen blind, wenn 0, 1, 2, 3 Partnerrichtungen mitgeprüft werden. Die Markierung mit vier Familiengewichten
+  bleibt bis zwei geprüfte Partnerrichtungen blind, die mit drei Familiengewichten nur bei keiner.
+- Uhren mit zyklischem Vektor auf E₈: Ordnungen 8, 12, 14, 15, 18, 20, 24, 30; ohne Teiluhr 15, 20, 24, 30. Ordnungen
+  15, 20, 24 im Atlas nicht gefunden.
+
+**Ausgeschlossen im geprüften Rahmen:** blinde Vorzeichen und selbstdualer Abschluss als eine Regel; ΣY = ΣY³ = 0 als
+Beleg für die Hyperladung (gilt für jede lineare Ladung); Chiralität allein als Auswahl von D₅ + A₃ (wählt E₆ + A₂);
+starres Ladungsbuch ohne Zusatzklausel; zyklische Dreifamilienmischung in exakter Form.
+
+**Geltung:** Auswahlaussagen über die genannten Universen. Die Universen der Regelsuche wurden in Kenntnis des Bestands
+gewählt; das Red Team schätzt acht von neun Übereinstimmungen als dadurch erzwungen. Die Teilung 3 + 2, die
+Koeffizienten der Hyperladung, die dritte Ordnung und das zweiwertige Alphabet sind gesetzt. Keine Aussage über Raum,
+Zeit, Dynamik, Wahrscheinlichkeiten, Gravitation, c₃, φ₀, α. Lean, Wolfram und `run_all.py` nicht ausgeführt.
+
+**Nächster Schritt:** Im E₈ kovarianten Stromvertrag prüfen, ob einer der 60 (10,6) Mittelströme in erster oder dritter
+Ordnung an eine der drei A₃ Richtungen der Dreifamilienmarkierung koppelt. F1 bleibt in Bearbeitung.
+
+**Nachtrag GENESIS20261120, Stromtest ausgeführt** (`current_probes()` in `genesis_rules.py`, Tests 14 von 14): Alle 60
+gemischten Wurzelströme vom Typ (10,6) sehen die Dreifamilienmarkierung in erster und dritter Ordnung (Werte ±16), 6 der
+12 Partnerströme in erster Ordnung (±32), die übrigen 6 in gemischter dritter Ordnung. Blind bleiben nur die 40 Ströme
+des Trägers. Als Übergang führt jeder gemischte Strom 16 markierte Wörter in den Spiegel und 8 aus der Markierung
+heraus. Die Vierfamilienmarkierung bleibt für 84 Ströme vom Rang 7 blind und wird erst von drei gemischten Strömen in
+drei Partnerrichtungen gesehen (128). Geltung: Wurzelströme des ergänzten Gitters mit ihrer Ladung als Probe; ob der
+Bestand die (10,6) Ströme als gemessene Ladungen oder nur als Übergänge führt, ist damit nicht entschieden. Stimmt mit
+dem Satz des Bestands überein, dass kein (10,6) Strom den Raum der drei Familien erhält. Kein Ledgerwechsel.
+
+**Nachtrag GENESIS20261120, Lesart der Ströme im Bestand** (`check_current_reading.py`, 9 von 9, mit den
+Antwortfunktionen aus `seam-collar-multifield-20261016/e8_boundary_response.py`): Im Markenvertrag ist der gemessene
+Marker ein Cartanstrom des Trägers, der (10,6) Strom tritt nur quadratisch über beide Chiralitäten auf; dort bleibt die
+Dreifamilienmarkierung blind. Im vollen lokalen E₈ Netz sind alle acht Cartanströme lokale Felder; die drei
+Partnerströme geben auf der Markierung je −16, jedes Paar V_α V₋α eines (10,6) Stroms −16, ein Familienmarker (1,1,1)
+−48. Drei blinde chirale Familien gelten also genau dann, wenn die drei Cartanströme des Partners keine lokalen
+Observablen sind. Geltung: stipulierte Darstellung des Bestands; welche Algebra die physische ist, ist nicht
+entschieden. Kein Ledgerwechsel.
+
+
+## NEUSING20261120 · Neuansatz: P1 am singulären Punkt des Modulraums (Hypothese mit exakten Bausteinen)
+
+Ordner `experiments/theory-contracts/neuansatz-singularitaet-20261120` (`README.md`, `check_singular_point.py`, 20 von 20).
+Anlass: Auftrag des Nutzers, von vorn zu beginnen und nach ganz anderen Prinzipien zu suchen. Kein Ledgerwechsel,
+kein Atlaseintrag, nichts befördert.
+
+**Exakt:** Am quadratischen Torus hat die Doppelüberlagerung nicht umkehrbare Selbstabbildungen. Multiplikation mit
+1 + i steigt ab als f(w) = (w² − 1)/(2iw); die vier Marken sind die postkritische Menge. Der Schritt ist auf den Marken
+nilpotent (Fahne Ursprung, ausgezeichnete Marke, Paar), wiederkehrende Bahnen liegen nur auf ungerader Torsion
+(Fixpunktzahlen 1, 5, 13, 25, 41, 65, 113, 225). Er streckt um √2 und erhält die Markenmenge; die aufgezeichnete
+Dilatationssperre betrifft nur umkehrbare Abbildungen. E₂(i) = 3/π folgt aus dem Verschwinden der ergänzten Form am
+singulären Punkt, also c₃ = E₂(i)/24. Bei τ = i sind zwei Füllungen gleich hoch. Die drei Schritte vom Grad 2 bilden
+einen Baum der Valenz 3, bei j = 1728 gefaltet.
+
+**Nicht gezeigt:** dass P1 diese Dynamik trägt; die Sechs der sechs Schritte; die Rolle von 2/3 und 1/3 (im Baum
+Wahrscheinlichkeiten, im Bestand Eigenwerte). Keine neue Zahl der Physik.
+
+**Nächster Schritt:** den aufgezeichneten Randkern mit f zurückziehen und auf Selbstähnlichkeit prüfen.
+
+**Nachtrag NEUSING20261120, Selbstähnlichkeit geprüft** (`check_self_similarity.py`, 13 von 13): Der Kern der runden
+Sphäre und die drei Toruskerne vom Gewicht 1/2 mit gerader Spinstruktur sind unter dem Schritt nicht selbstähnlich
+(ausgeschlossen im geprüften Rahmen). Der Schritt schiebt die Spinstrukturen wie die Marken: zwei auf die dritte,
+die dritte in die ungerade. Selbstähnlich ist allein der Kern der ungeraden Struktur ohne Nullmode,
+Z(z) = ζ(z) − π·z̄, unter 1 + i, 2 + i und 2. Der Koeffizient π = 1/(8c₃) ist dieselbe Zahl E₂(i) = 3/π, kein neuer
+Beleg. Berichtigung: Die Begründung von E₂(i) = 3/π über die ergänzte Form steht schon in P1KERN20261119. Offen: ob
+die Einheitswindung von P1 den Sektor mit Nullmode meint.
+
+**Nachtrag NEUSING20261120, Kernquelle:** Die Quelle des Randkerns lässt einen Kern des Randoperators ausdrücklich zu
+(modifizierte APS Bedingung mit Teilraum L), behauptet ihn aber nicht. Die ausgeführte Realisierung auf der runden
+Sphäre hat keinen. Ob P1 im Sektor mit Nullmode liegt, ist damit nicht entschieden.
+
+## FREMD20261120 · Prüfung zweier eingefügter Fremdberichte (19 Aussagen bestätigt, 5 nicht prüfbar)
+
+Ordner `experiments/theory-contracts/fremdberichte-pruefung-20261120` (`README.md`, `check_reports.py`). Unabhängig
+nachgerechnet, ohne die Dateien der Berichte. Bericht A (gemeinsamer Quantenprozess): 11 Aussagen bestätigt, darunter
+der Dreierraum mit dem Clockpaar aus `v117`, die Zerlegung unter der Vierergruppe, das Intervall 2/9 ≤ η ≤ 4/9, das
+engere Intervall 0,3205 bis 0,3467 und der negative Eigenwert −0,087696 des Logarithmus von N. Nicht geprüft: Norm
+10/9, M ≥ 2/405, Umweltisometrie, Rang 25, native Rückkehr, Koide Teil. Bericht B (Verlust der Unterscheidbarkeit):
+8 Aussagen bestätigt, darunter ±1/8 an der Matrix aus `v395` und genau fünf konsistente Zweibitregeln. Nicht gezeigt:
+dass die Theorie die zyklische Versetzung selbst erzeugt. Kein Ledgerwechsel.
+
+**Nachtrag NEUSING20261120, Paarungen** (`check_pairings.py`, 9 von 9): Die drei Schritte vom Grad 2 sind die drei
+Paarungen „ein Kanal und ein Paar". Die Symmetrie des Torus bewegt sie am sechseckigen Punkt zyklisch (geschlossener
+Vergleich an der Matrix aus `v395`: 0, +1/8, −1/8), am quadratischen vertauscht sie nur zwei (0, 1/4, 1/4, kein
+Vorzeichen). Die im Fremdbericht angenommene zyklische Versetzung liefert die Geometrie also selbst, aber bei τ = ω.
+Gesetzt bleibt die Zuordnung der drei Familienkanäle zu den drei Marken; nicht gezeigt ist, dass das Vorzeichen eine
+spätere Antwort ändert.
+
+**Nachtrag NEUSING20261120, Familienregel, Netz, gemeinsame Form** (`check_family_rule.py` 18 von 19, `check_network.py`
+10 von 10, `check_unified.py` 12 von 12; die eine verfehlte Zeile ist eine festgehaltene falsche Erwartung): Die
+gleichmäßige Mischung von (1 + tau_t)/2 über die drei Grad 2 Schritte ist (1/3)I + (1/6)J und gibt auf jedem Markenpaar
+den Paarblock 1/2, 1/6 von `v395` mit den Raten 2/3 und 1/3; eine feste zyklische Reihenfolge trifft die Raten nicht
+(18x³ − 3x² − 3x − 4). Die Punkte der Periode vier sind die 5-Torsion; ihre Symmetriegruppe SL2(F5) hat als McKay Graph
+das erweiterte E8 Diagramm mit den Marken des Netzes. T_net = (A + 2)/4 hat das Spektrum cos²(θ/2), also dieselbe Form
+(1 + g)/2 wie die Familienregel. **Nicht gezeigt:** die Sechs, c₃ (1/8 ist kein Klassenanteil; 1/6 schon), φ₀, α, die
+Identifikation der 5-Torsion mit dem Netz des Bestands, Raum, Zeit, Gravitation. Keine physikalische Lösung, nichts
+befördert, kein Ledgerwechsel, kein Atlaseintrag, kein Commit.
+
+**Nachtrag NEUSING20261120, Nullmoden und Chiralität** (`check_orbifold_zero_modes.py` 11 von 11 und fünf weitere
+Skripte): Mit der Viertelwirkung des Bestands (d = (0,1,2,−1,0)/4, a = (3,1,−1,−3)/8) überleben am Punkt tau = i
+konstante Nullmoden nur in den 128 Verklebungsrichtungen, 32 je Händigkeit. Die feste Algebra ist
+SU(4) × SU(3) × SU(2) × SU(2) × U(1), der Inhalt (4,1,2,1) + (4-quer,3,1,2): chiral, eine Familie der einen und drei
+der anderen Händigkeit. Unter Farbe und Hyperladung des Bestands ist dasselbe Spektrum vektorartig; die kubische
+Anomalie ist nicht null; die Kegelpunkte (4,4,2) sind nicht gerechnet. Am hexagonalen Punkt (Dreierwirkung angesetzt,
+nicht im Bestand): SU(5) × SU(4) × U(1) mit (10,4-quer) + (1,4) oder SU(9) mit 84. Das Standardmodell folgt nicht als
+gemeinsamer Rest (288 von 2880 Lagen). **Nachtrag FREMD20261120:** dritter und vierter Bericht, 22 weitere Aussagen
+bestätigt (Spektrum von `v999` je Hand, Koide-Auslese, Formen in Q(zeta_30), Familienkanal gibt B in der Clockbasis),
+zehn nicht prüfbar. Keine physikalische Lösung, nichts befördert, kein Ledgerwechsel, kein Atlaseintrag, kein Commit.
+
+**Nachtrag NEUSING20261120, drei neue Ansätze** (`check_new_ansaetze.py` 13 von 13, `check_icosians.py` 3 von 3):
+(A) Am Punkt tau = i gilt für jede Form vom Gewicht k mit erhaltenem Betrag D log f = k/(4π); c₃ = 1/(8π) ist k = 1/2,
+die E8 Gittersumme gibt 8·c₃. (B) Der Schritt 1+i ist der Frobenius der Kurve y² + y = x³ + x + 1 über F₂; Punktzahlen
+1, 5, 13, 25, 41, 65, 113, 225 ausgezählt. (C) Punkte der Periode g = g·2^(g−2) + 1 nur bei g = 5 (Zahlenbeobachtung).
+(D) Die 120 Einheitsquaternionen der Symmetrie der 5-Torsion spannen mit der Form 2(a ± b) ein gerades Gitter der
+Determinante 1 auf, also E8. **Nicht gezeigt:** D5 + A3, Familienzahl, phi_0, d_top, alpha, Massen, Raum, Zeit,
+Gravitation. Keine fundamentale Lösung, nichts befördert, kein Ledgerwechsel, kein Atlaseintrag, kein Commit.
