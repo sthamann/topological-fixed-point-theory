@@ -1,5 +1,7 @@
 # Wie weit trägt die Gleichsichtbarkeit von Ereignissen?
 
+[Weitere Rechnung zur Familienmessung](../familienmessung/VERDICT.md). Drei Ereignisse identifizieren die Inzidenz, und der Transport um ein geschlossenes Dreieck macht den zuvor gesetzten Familienprojektor auslesbar.
+
 Stand 20. November 2026. **KANDIDAT, Stufe 1 der physischen TFPT.** Die fünf markierten Plätze von P2 folgen mathematisch vollständig in einer angegebenen Modellklasse. Eine Messung auf diesen Plätzen reproduziert den bedingten ursprünglichen Transfer auf der gesamten Operatoralgebra. Der Nachweis, dass die physische Naht diesen Prozess ausführt, bleibt aus. P1 und die gemeinsame Raumzeitdynamik sind offen.
 
 ## Ein Prinzip mit einer eindeutigen endlichen Lösung
