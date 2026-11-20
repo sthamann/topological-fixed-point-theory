@@ -1,0 +1,185 @@
+{
+  "grammar": "Transparent expression census, independent of structural verdicts.\n\nOrdered binary expression trees; atoms 1,q,n evaluated at q=2,n=5; exactly\n0,1,2 binary operations from +,-,*,/,**. Division by zero is excluded.\nPower requires an integer exponent in 0..8; 0**0 is excluded. Finite numeric\nresource bound abs(numerator),denominator <=10**6 applies after EVERY node.\nCounts are syntactic, so commuted/identity expressions count separately.\nNo empirical number or tolerance is used. This is NOT a p-value or an\nindependent rediscovery of n,q. It shows why mere integer hits are cheap.\n",
+  "q": 2,
+  "n": 5,
+  "by_exact_binary_operation_count": [
+    {
+      "operations": 0,
+      "valid_expressions": 3,
+      "target_hits": {
+        "3": {
+          "count": 0,
+          "examples": []
+        },
+        "4": {
+          "count": 0,
+          "examples": []
+        },
+        "5": {
+          "count": 1,
+          "examples": [
+            "n"
+          ]
+        },
+        "16": {
+          "count": 0,
+          "examples": []
+        },
+        "60": {
+          "count": 0,
+          "examples": []
+        },
+        "63": {
+          "count": 0,
+          "examples": []
+        },
+        "68": {
+          "count": 0,
+          "examples": []
+        },
+        "120": {
+          "count": 0,
+          "examples": []
+        },
+        "240": {
+          "count": 0,
+          "examples": []
+        }
+      }
+    },
+    {
+      "operations": 1,
+      "valid_expressions": 45,
+      "target_hits": {
+        "3": {
+          "count": 3,
+          "examples": [
+            "(1+q)",
+            "(q+1)",
+            "(n-q)"
+          ]
+        },
+        "4": {
+          "count": 4,
+          "examples": [
+            "(q+q)",
+            "(q*q)",
+            "(q**q)",
+            "(n-1)"
+          ]
+        },
+        "5": {
+          "count": 4,
+          "examples": [
+            "(1*n)",
+            "(n*1)",
+            "(n/1)",
+            "(n**1)"
+          ]
+        },
+        "16": {
+          "count": 0,
+          "examples": []
+        },
+        "60": {
+          "count": 0,
+          "examples": []
+        },
+        "63": {
+          "count": 0,
+          "examples": []
+        },
+        "68": {
+          "count": 0,
+          "examples": []
+        },
+        "120": {
+          "count": 0,
+          "examples": []
+        },
+        "240": {
+          "count": 0,
+          "examples": []
+        }
+      }
+    },
+    {
+      "operations": 2,
+      "valid_expressions": 1294,
+      "target_hits": {
+        "3": {
+          "count": 54,
+          "examples": [
+            "(1+(1+1))",
+            "(1*(1+q))",
+            "(1+(1*q))",
+            "(1*(q+1))",
+            "(1+(q*1))",
+            "(1+(q/1))",
+            "(1+(q**1))",
+            "(1*(n-q))"
+          ]
+        },
+        "4": {
+          "count": 70,
+          "examples": [
+            "(1+(1+q))",
+            "(1+(q+1))",
+            "(1*(q+q))",
+            "(1*(q*q))",
+            "(1*(q**q))",
+            "(1-(q-n))",
+            "(1*(n-1))",
+            "(1+(n-q))"
+          ]
+        },
+        "5": {
+          "count": 89,
+          "examples": [
+            "(1-(1-n))",
+            "(1*(1*n))",
+            "(1/(1/n))",
+            "(1+(q+q))",
+            "(1+(q*q))",
+            "(1+(q**q))",
+            "(1+(n-1))",
+            "(1*(n*1))"
+          ]
+        },
+        "16": {
+          "count": 10,
+          "examples": [
+            "(q**(q+q))",
+            "(q**(q*q))",
+            "(q**(q**q))",
+            "(q**(n-1))",
+            "((1-n)**q)",
+            "((q+q)**q)",
+            "((q*q)**q)",
+            "((q**q)**q)"
+          ]
+        },
+        "60": {
+          "count": 0,
+          "examples": []
+        },
+        "63": {
+          "count": 0,
+          "examples": []
+        },
+        "68": {
+          "count": 0,
+          "examples": []
+        },
+        "120": {
+          "count": 0,
+          "examples": []
+        },
+        "240": {
+          "count": 0,
+          "examples": []
+        }
+      }
+    }
+  ]
+}
