@@ -1,5 +1,7 @@
 # Was ein elementarer Austauschprozess an TFPT tatsächlich trägt
 
+**Fortsetzung vom 20. November 2026.** Der [neue Auswahlsatz und die durchgerechneten Prozesse](fortsetzung/VERDICT.md) schließen die hier offengelassene positive Wortprobe und klassifizieren alle endlichen regulären dicken Kammergeometrien unter dem angegebenen Sichtbarkeitskriterium.
+
 **KANDIDAT, Stufe 1.** Aus einem einzigen geometrischen Modell lassen sich die primitive Austauschwindung, vier Verzweigungsstellen, fünf intern markierte Richtungen, eine vollständige Historienauslese und eine ganzzahlige Determinante mit Lorentzsignatur konstruieren. Zwischen dem endlichen Fünferraum und einem bestehenden TFPT Operatorregister gibt es eine geprüfte markierte quadratische Isometrie. Der Übergang zum ursprünglichen positiven Randzustand scheitert unter zwei präzisen Zusatzannahmen. Eine Grundregel, welche die zugrunde gelegte Geometrie, die konkrete physische Auslesung und ihre Wahrscheinlichkeiten auswählt, bleibt offen.
 
 ## 1. Die erste freie Wahl und die vier Punkte
