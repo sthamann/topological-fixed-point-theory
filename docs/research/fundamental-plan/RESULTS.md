@@ -7515,3 +7515,31 @@ Vertrag: `experiments/theory-contracts/original-profile-time-modulus-20261120/RE
 
 Nächster Schritt: das Vorzeichen klären (ist Z_rel fermionisch und der Determinantenterm ein Regulator?) und prüfen, ob
 Θ des Originals die modulare Konjugation aus P1BIND ist; dann den Residuenterm bei s = 1 am elliptischen Überlagerer.
+
+## NULLMODEN20261120 · Nullmoden auf der markierten Sphäre gegen den Trägerblock des Originals (begrenzt, teils negativ)
+
+Reproduktion: `.venv/bin/python experiments/theory-contracts/pruefkatalog-querauswertung-20261120/check_zero_modes.py`
+(17 Prüfungen bestanden). Kein Ledgerwechsel, kein Atlaseintrag, nichts befördert, kein Commit.
+
+Frage: Ist der Trägerblock H_car des Originals der Raum H⁰(O(D)) der vier Marken (Voraussetzung (a) aus EPSCAR20261120)?
+
+Befund:
+- Modelloperator: Dolbeault Dirac Operator ∂̄ + ∂̄* auf der Sphäre, getwistet mit O(D) ⊕ K(D). Exakt gezählt
+  (Čech, zwei Karten): Kern 5 + 3 = 8, beide H¹ verschwinden, alle Nullmoden einer Chiralität, Index 2·deg D.
+  Acht Nullmoden gibt es nur bei vier Marken.
+- Quotient nach z → −z (u = z²): gerader Trägerteil = H⁰(O_u(2)) (3), ungerader = z·H⁰(O_u(1)) (2). Der gerade Teil
+  ist das symmetrische Quadrat des ungeraden.
+- Übereinstimmung mit dem Original: Familienraum F = H¹(P¹∖μ₄, C) ≅ C³ (Rang der drei logarithmischen Formen);
+  schwaches Dublett als H⁰(S², O(1)) ≅ C² (Grad 1, Dimension 2, wie der ungerade Teil).
+- Keine Übereinstimmung: Das Original setzt die Farbklasse trivial (L₃ ≅ O, „no light color triplet“,
+  (c₁(L₂), c₁(L₃)) = (1, 0)). Im Modell ist der Farbteil H⁰(O(2)) mit drei Schnitten. Keine einheitliche Hebung der
+  Drehung gibt die Determinantenwindungen (1, 0).
+
+Geltung: Der Twist O(D) ⊕ K(D) ist gewählt, nicht aus B_Σ des Originals abgeleitet; das Original nennt kein Bündel
+für den fünfdimensionalen Trägerblock. Die Stellen zu L₂, L₃ betreffen den bosonischen Higgs auf der Normalsphäre,
+nicht die Trägerfermionen; die Übereinstimmung beim Dublett ist eine Analogie, die Abweichung bei der Farbe ein
+Hinweis gegen die wörtliche Gleichsetzung. Urteil zu (a): nicht entschieden, am Original weder belegt noch widerlegt;
+Familienhälfte gestützt, Trägerhälfte bleibt Setzung.
+
+Nächster Schritt: B_Σ des Originals nach der primitiven Kompression explizit aufstellen (welches Bündel, welche
+Randbedingung an den Marken) und prüfen, ob sein Kern Pole erster Ordnung an den Marken zulässt.
