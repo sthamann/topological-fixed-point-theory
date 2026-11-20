@@ -23,7 +23,10 @@ Checks are exact integer/GF2/rational/SymPy assertions. The output is `RESULTS.j
 - `flat_sign_baseline.py`: all 32768 sign models of equal magnitude and even parity; exact null count 192.
 - `syndrome_geometry.py`: exact five projective lines, C5 irreducible action, GF16/Frobenius, 15 hyperplanes, Hamming [7,4,3]/[8,4,4], 240 E8 roots, exhaustive 6435 subset null.
 - `modular_code_e8.py`: independent exhaustive Type II code enumeration and 30/200787 baseline; **previously known** mathematical route.
+- `redteam_universality.py`: adversarial non-correcting four-check source still produces all 15 Hamming/E8 extensions; 15/15 matched null defeats uniqueness claim.
 - `information_time_nogos.py`: scoped Fisher signature and finite tracial modular time counterexamples.
 - `run_all.py`, `RESULTS.json`, `RUN.log`: verification entrypoint, structured output and full log.
 
 **Important epistemic warning:** All 15 hyperplanes lead to the E8 *isomorphism type*, not to a unique physical embedding or a selected 3|2 flavor structure. Frobenius order four is not TFPT's μ4 deck action. No P1 kernel or continuum gravity has been produced.
+
+**Red team result:** Der abstrakte E8 Folgeschritt ist nicht spezifisch für den perfekten Code: sogar vier triviale Prüfgeneratoren reproduzieren ihn. In `VERDICT.md` ist S deshalb OFFEN, nicht KANDIDAT.
