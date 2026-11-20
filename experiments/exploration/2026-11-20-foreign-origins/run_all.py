@@ -10,6 +10,7 @@ from modular_code_e8 import test as modular
 from flat_sign_baseline import test as flat_null
 from syndrome_geometry import test as syndrome
 from information_time_nogos import test as nogos
+from redteam_universality import test as redteam
 
 
 def main():
@@ -17,7 +18,8 @@ def main():
              'five_qubit_qec':qec(), 'conditional_tensor_bridge':bridge(),
              'flat_sign_null':flat_null(), 'syndrome_geometry_e8_bridge':syndrome(),
              'modular_code_e8_control':modular(),
-             'information_time_no_gos':nogos()}
+             'information_time_no_gos':nogos(),
+             'redteam_generic_F2_4':redteam()}
     dst=Path(__file__).with_name('RESULTS.json')
     dst.write_text(json.dumps(results,ensure_ascii=False,indent=2)+'\n')
     for name, r in results.items():
