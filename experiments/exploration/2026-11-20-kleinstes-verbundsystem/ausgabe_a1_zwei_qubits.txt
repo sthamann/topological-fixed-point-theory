@@ -1,0 +1,55 @@
+1. Pauli Geometrie von zwei Qubits (F_2^4 mit symplektischer Form)
+  [ok] 15 Punkte, 15 kommutierende Tripel, 6 Spreads, 6 Ovoide
+  [ok] jeder vollstaendige Satz von 5 unverzerrten Basen = 3 Produkt + 2 verschraenkt -- Typen {('E', 'E', 'P', 'P', 'P')}
+  [ok] jeder Satz von 5 antikommutierenden Paulis = 2 lokal + 3 nichtlokal -- Gewichte {(1, 1, 2, 2, 2)}
+  Basislinie (Abzaehlung der Gewicht-1-Punkte, p prim, zwei p-Niveau-Systeme):
+    p=2: 5 Basen = 3 Produkt + 2 verschraenkt
+    p=3: 10 Basen = 4 Produkt + 6 verschraenkt
+    p=5: 26 Basen = 6 Produkt + 20 verschraenkt
+    p=7: 50 Basen = 8 Produkt + 42 verschraenkt
+  Nur p=2 gibt 5 = 3 + 2; ein einzelnes Qubit hat 3 Basen ohne Teilung.
+  [ok] Tausch von System und Spiegel: C^4 = 3 (symmetrisch) + 1 (antisymmetrisch)
+  [ok] lokale Symmetrie des Ovoids {ZI,XI,YX,YY,YZ}: Bahnen 2 + 3, S_2 x S_3 -- |Stab|=12, wirkt als S_2 auf dem Paar, Ordnung 6 auf dem Tripel
+
+2. Operatoralgebra M_4(C) = Lambda^gerade C^5 und eine Standardmodellgeneration
+  [ok] fuenf Gammas antikommutieren und quadrieren zu 1
+  [ok] Produkt aller fuenf ist ein Skalar (Lambda^4 = Lambda^1 dual) -- Skalar (-1+0j)
+  [ok] 1 + 10 + 5 = 16 gerade Monome sind eine Basis von M_4(C)
+  Multiplett      Anzahl  Y      Pauli Gewicht (0 = Eins, 1 = lokal, 2 = verschraenkend)
+  nu^c (1,1)         1       0  [0]
+  u^c (3b,1)         3    -2/3  [1]
+  Q (3,2)            6     1/6  [2]
+  e^c (1,1)          1       1  [1]
+  L (1,2)            2    -1/2  [1]
+  d^c (3b,1)         3     1/3  [2]
+  [ok] Anomalien verschwinden: Sum Y, Sum Y^3, SU(3)^2 Y, SU(2)^2 Y -- 0, 0, 0, 0
+  [ok] 6Y ganzzahlig mit ggT 1 (Z_6 Quotient)
+  Y ist bis auf die Skala eindeutig: spurfrei und konstant auf den 3 und den 2 Plaetzen.
+  Skala: kleinste Ladung 1/6; e^c (das Produkt der beiden lokalen Gammas) hat Y = 1.
+
+3. Dirac Algebra: dieselbe 3 + 2 Teilung als 3 Raum + (Zeit, Chiralitaet)
+  [ok] Cl(1,3): {G^mu, G^nu} = 2 eta^{mu nu}
+  [ok] G^5 = i G^0 G^1 G^2 G^3 ist (bis aufs Vorzeichen) das zweite lokale Gamma
+  [ok] Drehgeneratoren lokal (Gewicht 1, Spin Qubit), Boosts verschraenkend (Gewicht 2)
+  Zeit unter den drei nichtlokalen Gammas wuerde die S_3 Symmetrie des Tripels brechen;
+  mit Zeit im lokalen Paar bleiben drei gleichberechtigte Raumrichtungen: 3 + 1.
+
+4. Clifford Gruppe ueber Q(i) und ihr invariantes Gitter
+  [ok] Gruppenordnung 46080 = 4 * 16 * 720 (Zentrum mu_4, Paulis, Sp(4,2) = S_6) -- |G| = 46080
+  [ok] alle Erzeuger bilden das Gitter L = {x in Z[i]^4: x_j kongruent mod 1+i, Summe in 2Z[i]} in sich ab
+  [ok] 240 kuerzeste Vektoren = 16 + 96 + 128 (E8 Wurzeln als gausssches Gitter) -- {(0, 0, 0, 4): 16, (0, 0, 2, 2): 96, (1, 1, 1, 1): 128}
+  [ok] L/(1+i)L = F_2^4: 15 Klassen zu je 16 Wurzeln
+  [ok] jede Wurzel ist ein Stabilisatorzustand; Klasse <-> kommutierendes Tripel (Basis), bijektiv
+  [ok] fuenf Gammas zerlegen die 240 Wurzeln in 5 x 48 = (3 + 2) x 48 = 144 + 96
+  [ok] Hopf Abbildung <r|gamma_a|r>: Bild = 10 Ecken +-4 e_a (Vektorgewichte von D5), Faser je 24
+  [ok] jede Faser ist ein 24-Zell (D4 Wurzelsystem: 8 Nachbarn bei Skalarprodukt 2)
+  3 + 2 auf den Gammas gibt auf den Ecken 6 + 4: SO(10) > SO(6) x SO(4), also A3 = D3 und A1 + A1.
+
+5. Standardform von M_2(C): Zustand, Spiegelung und Zeit auf C^2 (x) C^2
+  [ok] J Delta^(1/2) a Omega = a* Omega fuer alle Matrixeinheiten (J = Tausch mit Konjugation)
+  [ok] modulares Spektrum {0, 0, +eps, -eps}: Ladungen 0, 0, +1, -1 (Einheitswindung je Periode)
+  Der Spiegel (Kommutant) ist J M J; die Zeit ist der modulare Fluss des Zustands.
+  Zweite Stufe: Standardform von M_4(C) ist C^16; Links- und Rechtsmultiplikation mit den
+  fuenf Gammas geben zehn antikommutierende Operatoren, also Cl(10) auf Lambda C^5.
+
+GESAMT: alle Pruefungen bestanden

@@ -62,18 +62,18 @@ export interface DisciplineStats {
 export const DISCIPLINE: DisciplineStats =
 {
   "ledger": {
-    "rows": 788,
-    "active": 783,
+    "rows": 789,
+    "active": 784,
     "retired": 5,
     "dist": {
       "E": 192,
       "C": 217,
-      "O": 328,
+      "O": 329,
       "X": 39,
       "AXIOM": 2,
       "OTHER": 10
     },
-    "killRows": 261
+    "killRows": 262
   },
   "suite": {
     "modules": 707,
@@ -86,8 +86,8 @@ export const DISCIPLINE: DisciplineStats =
     "sympyModules": 443
   },
   "contracts": {
-    "ledgerRows": 61,
-    "withKillCriteria": 48,
+    "ledgerRows": 62,
+    "withKillCriteria": 49,
     "texMentions": 86
   },
   "replay": {
@@ -121,7 +121,7 @@ export const DISCIPLINE: DisciplineStats =
     "modules": 67
   },
   "openGates": {
-    "count": 324
+    "count": 325
   }
 };
 

@@ -1,6 +1,6 @@
 # TFPT verification
 
-After the 2026-10-18 ownership split this project registers **707 modules** and maintains **788 ledger rows**. These are source counts, not a count of independent proofs.
+After the 2026-10-18 ownership split this project registers **707 modules** and maintains **789 ledger rows**. These are source counts, not a count of independent proofs.
 
 TFPT retains physical compiler verification and the generic mathematical kernels actually consumed by it. Riemann–Hilbert flat-bundle modules v32/v33 remain because they concern the TFPT family connection, not the Riemann hypothesis.
 

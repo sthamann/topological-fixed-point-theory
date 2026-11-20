@@ -1,0 +1,59 @@
+1. Standardform von M_2(C) gegen die TFPT Karte
+  [ok] u der Ordnung 3 dreht X nach Y nach Z nach X
+  [ok] Wurzeln der Standardform = die 240 TFPT Wurzeln, Koordinate fuer Koordinate -- Ankerachse = i mal Eins
+  [ok] Multiplikation mit i ist das TFPT J
+  [ok] Konjugation mit u (X -> Y -> Z, Eins fest) ist das TFPT sigma oder sein Inverses -- sigma
+  Also: Familienpaare = X, Y, Z Komponenten, Ankerpaar = Einskomponente (der Zustand Omega),
+  J = Phase i, sigma = Clifforddrehung der drei Pauliachsen.
+  Reelle Form: die geraden Koordinaten sind (X, Y, Z, i mal Eins), also i mal die Quaternionen.
+
+2. Alle A3 Teilsysteme von E8 und ihre Lage zu J und sigma
+  [ok] 7560 A3 Teilsysteme -- 7560
+  Typ (A3 Achsen mit J Partner in D5, komplexe Geraden in D5, komplexe Geraden in A3): Anzahl
+    (0, 0, 0): 6720
+    (1, 2, 1): 360
+    (3, 1, 0): 480
+  [ok] jede D5 Lage hat 10 Achsen, jede A3 Lage 6
+  sigma-invariante A3: 18, Typen {(0, 0, 0): 12, (3, 1, 0): 6}
+  [ok] sigma-invariante Lagen vom Blocktyp (3 Partnerachsen + 1 komplexe Gerade) existieren -- 6
+  [ok] darunter die Lage A3 = gerade Familienachsen {0, 2, 4}
+  [ok] in jeder Blocklage ist die komplexe Gerade von D5 punktweise sigma-fest (liegt im Fixraum von sigma)
+  [ok] J bildet die Blocklagen aufeinander ab (Orientierung)
+  Blocklagen, deren A3 das Ankerpaar nicht beruehrt: 2
+  sigma-invariante Lagen: (Typ, sigma Bahnen auf den 5 D5 Achsen, auf den 3 A3 Achsen): Anzahl
+    ((0, 0, 0), (1, 1, 3), (3,)): 12
+    ((3, 1, 0), (1, 1, 3), (3,)): 6
+  [ok] in jeder Blocklage zyklt sigma drei D5 Achsen und laesst zwei fest: markierte Teilung 3 + 2
+  [ok] die sechs Blocklagen sind drei sigma-feste komplexe Geraden mal zwei Orientierungen
+    Gerade aufgespannt von [(0, 1, 0, 1, 0, 1, 0, 1), (1, 0, 1, 0, 1, 0, 1, 0)] / 2
+    Gerade aufgespannt von [(0, 1, 0, 1, 0, 1, 0, -1), (1, 0, 1, 0, 1, 0, -1, 0)] / 2
+    Gerade aufgespannt von [(0, 0, 0, 0, 0, 0, 0, 2), (0, 0, 0, 0, 0, 0, 2, 0)] / 2
+
+3. Symmetrie: Cliffordgruppe in der Paulikarte, Normalisator von sigma
+  [ok] Cliffordgruppe ueber Q(i) in der Paulikarte: Ordnung 46080 -- 46080
+  [ok] alle Erzeuger bilden die 240 TFPT Wurzeln auf sich ab
+  Zentralisator von sigma: 72, Normalisator von <sigma>: 144
+  Bahnen auf den sechs Blocklagen: Zentralisator [6], Normalisator [6]
+  [ok] alle sechs Blocklagen sind unter den Symmetrien von (Gitter, J, sigma) gleichwertig
+  Bahnen auf den zwoelf generischen sigma-invarianten Lagen: [12]
+  [ok] die modulare Spiegelung a Omega -> a* Omega ist diag(+,-,+,-,+,-,-,+) auf den TFPT Koordinaten
+  [ok] sie erhaelt die 240 Wurzeln, antikommutiert mit J und kommutiert mit sigma
+
+4. Die Lagen des Korpus
+    v775 kanonisch, D5 = (0,2,4,6,7), A3 = (1,3,5): Typ (3, 1, 0), sigma-invariant True, modulare Spiegelung erhaelt sie True
+    v775 zweite, D5 = (1,3,5,6,7), A3 = (0,2,4): Typ (3, 1, 0), sigma-invariant True, modulare Spiegelung erhaelt sie True
+    v634 Arbeitskarte, D5 = (0,1,2,3,4), A3 = (5,6,7): Typ (1, 2, 1), sigma-invariant False, modulare Spiegelung erhaelt sie True
+  [ok] die beiden sigma-stabilen Teilungen aus v775 sind Blocklagen, die Arbeitskarte aus v634 nicht
+
+5. Zustandsraum 4 und Operatoralgebra 16 unter sigma (Lage D5 = (0,2,4,6,7), A3 = (1,3,5))
+  [ok] Klasse 1: 64 Wurzeln = 16 Gewichte von D5 mal 4 Gewichte von A3
+  [ok] 4 = 1 + 3 und 16 = 4 feste + 4 Dreierbahnen -- [1, 3], [1, 1, 1, 1, 3, 3, 3, 3]
+  Die 4 ist der Zustandsraum C^4 selbst: ein sigma-fester Zustand und ein Tripel.
+
+6. Das Ankerpaar ist die Zustandsgerade C Omega
+  [ok] Vielfache von Omega liegen ganz im Ankerpaar (Koordinaten 6 und 7) -- {'1': (0, -4), '1j': (4, 0), '(1+1j)': (4, -4)}
+  [ok] die drei Klassen der Geraden modulo 2 haben Normen (1, 1, 2), Summe 4: der Anker von AX.P1.01 -- [1, 1, 2]
+  Der Ledger fuehrt c3 = 1/(2 e1(a) pi) mit a = (1, 1, 2). Hier ist a die Zustandsgerade;
+  der Faktor 2 pi ist damit nicht hergeleitet.
+
+GESAMT: alle Pruefungen bestanden
