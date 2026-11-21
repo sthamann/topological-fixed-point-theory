@@ -37,7 +37,7 @@ assert simplify(K[0,0]*K[1,1]-K[0,1]**2)>0
 print("Reflection Gram rank2 positive: Kmn=pi0^2+pi0*pi1*phi^-4(m+n)")
 def primitive(M):
     Z=eye(M.rows)
-    for _ in range(1,8):
+    for _ in range(1,4*M.rows*M.rows+5):
         Z=Z*M
         if all(t>0 for t in Z):return True
     return False
