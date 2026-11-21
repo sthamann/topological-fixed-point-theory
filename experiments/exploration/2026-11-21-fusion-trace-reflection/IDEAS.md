@@ -60,3 +60,16 @@ Run `python experiments/exploration/2026-11-21-fusion-trace-reflection/check_new
 - Kong, *Anyon condensation and tensor categories*, Nuclear Physics B 886 (2014), https://doi.org/10.1016/j.nuclphysb.2014.07.003 .
 - PF/KMS graph states: https://doi.org/10.1016/j.jfa.2013.09.016 .
 - Doob/PF transforms: https://par.nsf.gov/servlets/purl/10411837 .
+
+
+## 7 — General Takesaki gate and explicit one-qubit witness
+
+Let N=M5(C) be a finite von Neumann subalgebra of a full von Neumann algebra M and let omega be a faithful normal state on M with omega|N=Tr/5. By Takesaki's invariant-subalgebra theorem, if sigma_t^omega(N)=N for all t, the restricted flow equals sigma_t^{omega|N}=id. Therefore a *nontrivial modular-time action on visible M5* is possible only if M5 is not globally invariant and the time flow accesses larger source/memory operators. This is a theorem specifically about modular evolution, **not** arbitrary Hamiltonian motion.
+
+Exact minimal memory witness: on M5 tensor M2 let Z5=diag(1,-1,0,0,0), Z2=diag(1,-1), eps=1/2, and rho=(I10+eps Z5 tensor Z2)/10. It is positive and faithful, with reduced rho5=I5/5, but
+
+    [log rho, E01 tensor I2] = log(3) E01 tensor Z2 !=0.
+
+Thus a SINGLE hidden qubit permits nontrivial global modular flow despite tracial visible state; zero hidden qubits do not. One-parameter eps is freely chosen and this is **not** an explanation of the original TFPT 63 memory directions or a source-selection theorem. Reproduce: modular_ancilla_witness.py. The next actual physical gate is to derive eps and the entire nontrivial memory cross-sector dynamics from an original P1/OS source, not to insert them as new premises.
+
+Takesaki source: https://doi.org/10.1016/0022-1236(72)90004-3 .
