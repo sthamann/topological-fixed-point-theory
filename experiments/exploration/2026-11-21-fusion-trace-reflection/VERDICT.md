@@ -14,3 +14,8 @@
 No known original TFPT physical 3+1 spacetime, chiral Standard Model or gravity has been derived. Nontrivial two-point reflected kernels are **not** an OS-complete field theory. Do not promote ledger, Atlas, R113, P1 or P2 status.
 
 **Next decisive task:** Build one underlying local algebraic probability/transfer source whose restriction to the conditioned fusion AF trace is correct, and whose *same* positive time flow induces the paired Doob semigroup on event observables, **without** choosing a second Hamiltonian. Then derive orientation, fermionic locality, E8 anomaly interface, and c3 by a single geometric continuum evaluation. Failure on either finite time or chirality is a clean falsifier.
+
+
+## Additional rigorous gate: modularly invariant tracial subalgebra
+
+**Conditional NO-GO:** A faithful original state whose restriction to M5 is tracial cannot have nontrivial *modular* action on M5 if that subalgebra is itself invariant under global modular flow (Takesaki restriction theorem). Therefore the source must transport visible operators through a larger algebra. **Positive witness only:** M5 tensor M2 with faithful rho=(I+1/2 Z5 tensor Z2)/10 has the same I5/5 visible marginal but nonzero modular commutator log(3) E01 tensor Z2. The hidden qubit is minimal for this witness; its coupling strength remains free. This raises no Stufe and does not reduce the actual TFPT 5+63 process budget.
