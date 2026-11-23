@@ -1,0 +1,196 @@
+Z27: Sakharov gegen Jacobson im selben Gitterregler (Prämisse D, z21 S5)
+Unter D: 1/(4G) = kappa/a^2, also a/l_P = 2 sqrt(kappa). Sakharov: derselbe Inhalt induziert 1/(16 pi G_ind).
+Gemessen wird sigma := a^2/(4 G_ind) in nat je Gitterfläche (gleiche Einheit wie kappa) und R = kappa/sigma.
+
+Teil 0: Kontinuumskalibrierung mit Wärmekernregler (Eigenzeit s >= eps)
+   Kegel mit Winkel 2 pi alpha, alpha = 1/n, über die Bildmethode (Z_n-Orbifold):
+   Tr K_Kegel - alpha Tr K_flach = (1/n) sum_j tr(Drehung_j) / (4 sin^2(pi j/n)) je Querfläche A/(4 pi s).
+   Skalar: sum 1/sin^2 = (n^2-1)/3, also (1/alpha - alpha)/12 (Abweichung 4e-15).
+   Dirac (Drehung um 2 pi = -1, tr S = 4 cos(theta/2), n ungerade): -(1/alpha - alpha)/6 (Abweichung 5e-15);
+   mit dem Fermionvorzeichen in ln Z also 2 Skalareinheiten.
+   Vektor minus 2 Geister (tr = 2 cos theta): 2 (1/alpha - alpha)/12 - (1 - alpha) (Abweichung 4e-16).
+   Bei alpha -> 1 ist eine Skalareinheit (1 - alpha)/6, der Zusatz -(1 - alpha) also -6 Einheiten (Kabat).
+   Bildmethode exakt: ja
+   Glatter a_1-Koeffizient auf der Einheits-S^2 (R = 2, Fläche 4 pi), Tr e^{-s Delta} - tr(1)/s -> Int a_1/(4 pi):
+   Skalar 0.33340 (R/6: 1/3), Spinor -0.33337 (tr(1/6 - 1/4) R: -1/3), 1-Form -1.33320 (tr(R/6 - Ric): -4/3)
+   In 3+1 D: a_1(Vektor) - 2 a_1(Geist) = (4/6 - 1) R - (2/6) R = -(2/3) R = -4 Skalareinheiten.
+   Gleicher Regler: S/A = (Kegelkoeffizient)/(48 pi eps), 1/(4 G_ind) = (a_1 in R/6-Einheiten)/(48 pi eps). Damit
+   R_Skalar = 1, R_Dirac = 2/2 = 1, R_Vektor = 2/(-4) = -1/2 ohne Randmoden und (2 - 6)/(-4) = 1 mit Kabats
+   Kontaktterm (Donnelly-Wall: das sind die Randmoden, im Wärmekernschema mit negativem Vorzeichen).
+   Die Kontinuumsidentität gilt also für Spin 0 und 1/2 und für Eichfelder nur mit dem Kontaktterm.
+
+Teil 1: Sakharov-Seite auf dem Gitter, statische TT-Antwort
+   Störung gamma_11 = -gamma_22 = eps cos(k z), k entlang z (transversal, spurfrei, diagonal: koppelt an die
+   x- und y-Gewichte). Kontinuumsgewichte: Skalar-Link i: sqrt(h) h^ii, Platz: pi^2/sqrt(h), m^2 sqrt(h);
+   Photon E_i und B_i: h_ii/sqrt(h); Dirac (kanonisches chi = h^(1/4) psi): naives Hüpfen e_i^i = h_ii^(-1/2),
+   Wilsonterm h_ii^(-c_W) (c_W = 1: kovarianter Laplace; 1/2: wie das naive Hüpfen; 0: metrikblind).
+   E^(2) = <V_2> - sum |<n|V_1|0>|^2/(E_n - E_0). Ultralokale <V_2> hängen nicht von k ab.
+   Blase: Bosonen -(1/16) <sum |Y/sqrt(w w') - X sqrt(w w')|^2/(w + w')>, Dirac -(1/2) <[g^2(1 + d.d') - 2(d.g)(d'.g)]/(E + E')>.
+   Ort der Gitterobjekte in z: ganzzahlig (x-,y-Links, Plätze, xy-Plaketten), halbzahlig (z-Links, xz-/yz-Plaketten).
+   Kopplungsregeln (wo die Metrik sitzt):
+     K  stetig an der Objektmitte abgetastet (kanonisch);
+     P  auf den Gitterplätzen, halbzahlige Objekte linear interpoliert (Faktor cos(k/2));
+     D  auf den Würfelmitten, ganzzahlige Objekte interpoliert (Faktor cos(k/2)).
+   Kontaktterme: kov (Gewichtsfunktion bis O(gamma^2)) oder no (Metrik koppelt an O - <O>, Vakuum lokal abgezogen).
+
+   Prüfung gegen direkte Diagonalisierung (Gitter 4 x 4 x 8, eps = 2e-3, k = 2 pi n/8), je Platz:
+   Skalar m=0,3: K1: 0.185888/0.185888, K2: 0.186320/0.186319, P1: 0.193128/0.193128, P2: 0.211038/0.211037, D1: 0.151426/0.151425, D2: 0.068441/0.068441
+   Wilson m=0,2: K1: -2.023280/-2.023274, K2: -2.018194/-2.018186, D1: -1.726977/-1.726972, D2: -1.009095/-1.009093
+   Photon: K1: 0.384387/0.384386, K2: 0.411181/0.411180, P1: 0.356507/0.356506, P2: 0.311366/0.311365, D1: 0.356507/0.356506, D2: 0.311366/0.311365
+   Größte Abweichung 8.0e-06 (endliches eps). Formeln samt Kontakttermen und Regeln stimmen: ja
+   Unabhängige Quadratur (gleichmäßiges Gitter, Anpassung in k) gegen Gauß-Legendre mit Punktdifferenz, m = 0,2:
+   Skalar e_2 = 0.0003149/0.0003149, Wilson e_2 = 0.0044557/0.0044563
+   Übereinstimmung: ja
+   Begründung des Weges: Die statische Antwort ist im selben Regler wie kappa definiert (Hamiltonsches Gitter,
+   gleiche Felder, gleiche Hüpfterme); sie misst den Koeffizienten von sqrt(h) R^(3). Zeitableitungsterme
+   (K_ij K^ij), die ein Gitter mit eigenem Koeffizienten tragen kann, sind nicht gemessen.
+
+Teil 2: Universeller Teil auf dem Gitter (m^2 ln m, reglerunabhängig)
+   Kontinuum (Wärmekern): 1/(4 G_ind) und S/A enthalten je Skalar (m^2/(24 pi)) ln m, je Dirac das Doppelte.
+   Die statische TT-Blase gibt im Kontinuum denselben Koeffizienten: e_2 enthält m^2 ln m/(384 pi^2) (analytisch:
+   Winkelmittel 4/105 und 4/15, ln-Koeffizienten 7/2 und 5/2, zusammen -1/(12 pi^2) mal -1/32).
+   Anpassung an m = 0.025, 0.035, 0.05, 0.07, 0.1, 0.14, 0.2 mit m^2 ln m, m^2, m^4 ln m, m^4 (Verschränkung mit Konstante):
+   Skalar:      Verschränkung 0.013263, Sakharov 0.013235, Kontinuum 1/(24 pi) = 0.013263
+   naives Dirac (8 Geschmäcker): Verschränkung 0.21212, Sakharov 0.21093, Kontinuum 8/(12 pi) = 0.21221
+   Konstanten: kappa_s(0) = 0.024262 (Z15 0.024262), kappa_naiv(0) = 0.786583 (Z2 0.786575)
+   Identität im universellen Teil auf dem Gitter erfüllt: Skalar ja, Dirac ja (R_universell Skalar 1.002, Dirac 1.006).
+   Damit ist die Normierung sigma = 16 pi e_2 auf dem Gitter bestätigt (26 s).
+   Der nicht-universelle Teil (Ordnung 1/a^2) ist damit nicht festgelegt; um ihn geht es unter D.
+
+Teil 3: Nicht-universeller Teil: sigma = a^2/(4 G_ind) je Feld und Kopplungsregel
+   Konvergenz Gauß-Legendre: Photon K 0.839605 (6) / 0.839605 (8 Knoten je Abschnitt); Wilson K 0.2914863 / 0.2914863: ja
+   kappa_Wilson(r = 1) aus Z15 0.22089, grob nachgerechnet (48^2) 0.22085: ja
+
+   sigma = a^2/(4 G_ind) in nat je Gitterfläche (Spalten: Regel und Kontaktterm):
+                                      K     P_kov      P_no     D_kov      D_no     kappa
+   Skalar m=0                    0.0171    0.6422    0.0171   -2.9761    0.1493    0.0243
+   Skalar m=0,5                  0.0123    0.6233    0.0123   -2.9218    0.1335    0.0196
+   Wilson-Dirac c_W=1            0.2915    0.2915    0.2915   25.8505    1.0547    0.2209
+   Wilson-Dirac c_W=1/2          0.1375    0.1375    0.1375   10.9837    0.6840    0.2209
+   Wilson-Dirac c_W=0            0.0895    0.0895    0.0895    2.1954    0.5933    0.2209
+   Wilson c_W=1 m=0,5            0.1571    0.1571    0.1571   25.8437    0.7454    0.1588
+   Photon                        0.8396   -1.5285    2.2219   -1.5285    2.2219    0.0485
+   naives Dirac (8 Geschmäcker), K: sigma = 0.4884, kappa = 0.7866
+   Wilson r = 0,5 / 2 (c_W = 1, K): sigma = 0.3466 / 0.2137; kappa (Z15) 0.3982 / 0.1040
+   (Rechenzeit Teil 3 19 s)
+
+   R = kappa/sigma je Feld:
+   Skalar m=0                     1.420     0.038     1.420    -0.008     0.163
+   Wilson-Dirac c_W=1             0.758     0.758     0.758     0.009     0.209
+   Wilson-Dirac c_W=1/2           1.606     1.606     1.606     0.020     0.323
+   Wilson-Dirac c_W=0             2.469     2.469     2.469     0.101     0.372
+   naives Dirac K: 1.611; Wilson r = 0,5 / 2 (K): 1.149 / 0.487
+
+   Gitterbruch der Identität in der kanonischen Kopplung K (Kontinuum: R = 1):
+   Skalar R = 1.420, naives Dirac R = 1.611, Wilson R = 0.758 (c_W = 1) bis 2.469 (c_W = 0).
+   Ein Term xi R phi^2 verschiebt sigma um -2 pi xi <phi^2>, <phi^2> = 0.22767 (Kontinuum mit Eigenzeitregler:
+   dieselbe Formel gibt die bekannte (1/6 - xi)-Abhängigkeit). R_Skalar = 1 verlangt xi = -0.0050 statt 0.
+
+   Kopplungsmehrdeutigkeit: Der k^0-Teil der Antwort (Vakuum-Schermodul) ist Ordnung 1/a^4, der gesuchte k^2-Teil
+   Ordnung 1/a^2. Jede Kopplungsänderung der Ordnung a^2 d^2 (Ort der Metrik, Interpolation, Kontaktterme)
+   verschiebt sigma daher um Größen derselben Ordnung wie sigma selbst:
+   Skalar m=0             e0_Blase =  -0.0105, Kontakt ganz/halb =   0.2487/ -0.0497, e_2(K) = 0.00034
+   Skalar m=0,5           e0_Blase =  -0.0096, Kontakt ganz/halb =   0.2431/ -0.0486, e_2(K) = 0.00024
+   Wilson-Dirac c_W=1     e0_Blase =  -0.0607, Kontakt ganz/halb =  -1.9732/  0.0000, e_2(K) = 0.00580
+   Wilson-Dirac c_W=1/2   e0_Blase =  -0.0435, Kontakt ganz/halb =  -0.8196/  0.0000, e_2(K) = 0.00274
+   Wilson-Dirac c_W=0     e0_Blase =  -0.0401, Kontakt ganz/halb =  -0.1275/  0.0000, e_2(K) = 0.00178
+   Wilson c_W=1 m=0,5     e0_Blase =  -0.0468, Kontakt ganz/halb =  -1.9973/  0.0000, e_2(K) = 0.00313
+   Photon                 e0_Blase =  -0.2200, Kontakt ganz/halb =   0.2985/  0.2985, e_2(K) = 0.01670
+   Spannweite sigma je Feld: Skalar m=0 -2.976 bis 0.642; Wilson-Dirac c_W=1 0.291 bis 25.850; Wilson-Dirac c_W=1/2 0.138 bis 10.984; Wilson-Dirac c_W=0 0.089 bis 2.195; Photon -1.529 bis 2.222
+   Umschließen die natürlichen Regeln kappa? Skalar ja, Wilson ja, Photon ohne Rand ja, Photon mit Rand g=0,55 ja
+   R = 1 liegt je Feld innerhalb der Kopplungsmehrdeutigkeit: ja
+   Abweichung |sigma_K - kappa| gegen Spannweite der Regeln: Skalar 0.007 gegen 3.618, Wilson c_W=1 0.071 gegen 25.559, Photon mit Rand 1.029 gegen 3.750
+   Mehrdeutigkeit größer als die Abweichung von R = 1 in K, für jedes Feld: ja
+   Gradientenfreier TT-Term nach Abzug der kosmologischen Konstanten (e0_LV, kovariantes Vakuum: 0): skalar 0.487, wilson_cW1.0 -3.673, photon 0.974.
+   Das Hamiltonsche Gittervakuum ist nicht lorentzinvariant (Druck != -rho); als induzierte Gravitation gelesen
+   ist e0_LV ein TT-Massenterm an der Gitterskala: ja
+
+   Kontinuum mit scharfem räumlichem Impulsschnitt (Winkelmittel bei |p| = 1): Skalar k^0 -0.008333 (-1/120), k^2 0.0032738 (11/3360 = 0.0032738); Photon k^0 -0.1000, k^2 0.0107143 (3/280).
+   Reglerabhängigkeit des Lambda^2-Koeffizienten, Photon/Skalar: Wärmekern -4, scharfer räumlicher Schnitt
+   3.273 (= 36/11), Gitter K 49.1.
+
+Teil 4: Eichfelder mit und ohne Randterm
+   Randterm (Shannon des ganzzahligen Randflusses) aus Z15 nachgerechnet, g = 0,55: 1.8432: ja
+   Sakharov-Seite: Bei schwacher Kopplung ist das kompakte Photon Gaußsch plus O(g^2); g skaliert aus der
+   Einschleifenantwort heraus. Der Randterm wächst dagegen wie ln(1/g): R_Eich(g) kann nur bei einem g gleich 1 sein.
+   Photon je Eichboson, R = kappa/sigma:
+                                          K     P_kov      P_no     D_kov      D_no
+   ohne Zentrum (2 kappa_s)           0.058    -0.032     0.022    -0.032     0.022
+   EZ destillierbar                   0.030    -0.016     0.011    -0.016     0.011
+   EZ + Rand g=0,55                   2.225    -1.222     0.841    -1.222     0.841
+   EZ + Rand g=1                      1.513    -0.831     0.572    -0.831     0.572
+   Ohne Randterm verfehlen Eichfelder R = 1 in allen fünf Regeln um mehr als Faktor 10: ja
+   Unter D ist der Randterm (Zentrumswahl) daher notwendig, wie Donnelly-Wall im Kontinuum.
+   g, bei dem R_Eich = 1 (Rand = sigma - kappa_dest): K: 1.538, P_kov: keins (sigma < kappa_dest), P_no: 0.386, D_kov: keins (sigma < kappa_dest), D_no: 0.386
+   Vorzeichen: Der Gitterrand ist positiv (Shannon), Kabats Kontaktterm im Wärmekern negativ. Das Gitterphoton
+   induziert in K, P_no und D_no positives 1/G (anders als -4 im Wärmekern), dort kann der Rand ausgleichen;
+   in P_kov und D_kov ist sigma_Photon < 0 und kein g hilft.
+
+Teil 5: Voller H6-Inhalt (Schema wie Z15: Wilson r = 1, schwer bei m = 0,5, 12 Eichbosonen, 4 Higgs)
+   Leicht: 3 x 16 mit nu_R = 24 Dirac masselos. Schwer (Z23-Eltern, getrennt): 16 Majorana-Weyl = 8 Dirac
+   bei m = 0,5 und Phi als 2 reelle Skalare bei m = 0,5. Eich: 12 Kopien, Rand mit n_eff = 12 (oder 8, nichtabelsch).
+   kappa (H6-Schema, g = 0,55): leicht 5.301, schwer 1.309, higgs 0.097, eich 22.418; gesamt 29.126 (Z15: 29.126)
+
+   sigma_gesamt und R_gesamt (g = 0,55; n_eff = 12 / 8):
+   Regel      c_W   leicht   schwer   Higgs     Eich    sigma   R(12)    R(8)   g*(12)   g*(8)  a/l_P|R=1
+   K          1.0    6.996    1.281   0.068   10.075   18.421   1.581   1.181    1.342   0.834       8.58
+   K          0.5    3.301    0.628   0.068   10.075   14.072   2.070   1.546    1.936   1.437       7.50
+   K          0.0    2.148    0.440   0.068   10.075   12.731   2.288   1.709    2.187   1.700       7.14
+   P_kov      1.0    6.996    2.503   2.569  -18.342   -6.274  -4.642  -3.467      -       -           -
+   P_kov      0.5    3.301    1.850   2.569  -18.342  -10.623  -2.742  -2.048      -       -           -
+   P_kov      0.0    2.148    1.662   2.569  -18.342  -11.964  -2.434  -1.818      -       -           -
+   P_no       1.0    6.996    1.281   0.068   26.663   35.008   0.832   0.621    0.337   0.105      11.83
+   P_no       0.5    3.301    0.628   0.068   26.663   30.660   0.950   0.709    0.484   0.181      11.07
+   P_no       0.0    2.148    0.440   0.068   26.663   29.319   0.993   0.742    0.541   0.214      10.83
+   D_kov      1.0  620.412  200.906 -11.904  -18.342  791.071   0.037   0.027    <0.02   <0.02      56.25
+   D_kov      0.5  263.609   80.636 -11.904  -18.342  313.999   0.093   0.069    <0.02   <0.02      35.44
+   D_kov      0.0   52.689    9.125 -11.904  -18.342   31.568   0.923   0.689    0.449   0.161      11.24
+   D_no       1.0   25.313    6.230   0.597   26.663   58.803   0.495   0.370    0.046   <0.02      15.34
+   D_no       0.5   16.416    4.569   0.597   26.663   48.245   0.604   0.451    0.112   0.020      13.89
+   D_no       0.0   14.240    4.222   0.597   26.663   45.722   0.637   0.476    0.138   0.027      13.52
+
+   Schwere Eltern getrennt (K, c_W = 1): kappa 1.309, sigma 1.281, R_schwer = 1.022; Anteil an sigma 7.0%.
+   Kanonische Kopplung K: R_gesamt = 1.18 bis 2.29 (c_W und n_eff variiert), bei g = 0,55.
+   R = 1 verlangt in K g(1/a) = 0.83 bis 2.19 (SM-Wert dort nach Z15 etwa 0,5 bis 0,6) und gibt dann
+   a/l_P = 2 sqrt(sigma) = 7.14 bis 8.58, unabhängig von g und Zentrumswahl.
+   Über alle Regeln: R_gesamt von -4.64 bis 2.29; a/l_P bei R = 1 von 7.1 bis 56.3 (wo sigma > 0); in 3 von 15 Kombinationen ist sigma <= 0.
+   Engeres Band mit lokal abgezogenem Vakuum (K, P_no, D_no): R_gesamt 0.37 bis 2.29, a/l_P bei R = 1 von 7.1 bis 15.3.
+   Die kov-Varianten zeigen, was geschieht, wenn die Vakuumenergie der Gitterobjekte an Metrikgradienten koppelt.
+   Ohne schwere Eltern (K, c_W = 1): R = 1.623 statt 1.581.
+
+Einordnung
+   Prämisse D: Weder widerlegt noch bestätigt. Der universelle Teil der Identität gilt auf dem Gitter (Teil 2).
+   Der Teil, der a/l_P festlegt, ist auf der Sakharov-Seite nicht durch den Feldinhalt bestimmt: Er hängt an der
+   Kopplung des Gitters an die Metrik in Ordnung a^2 d^2, weil das Gittervakuum einen Schermodul der Ordnung 1/a^4
+   trägt. Mit der kanonischen Kopplung K übersteigt die Verschränkung die induzierte Flächendichte (R_ges 1.18 bis 2.29);
+   die übrigen natürlichen Regeln überdecken R = 1 von beiden Seiten. Konsistenz von D mit H6-Inhalt verlangt eine
+   Zusatzannahme: entweder eine Kopplungsregel, die R = 1 ergibt, oder einen nackten Term (kappa - sigma)/a^2 aus
+   nicht-materiellen Freiheitsgraden, die H6 nicht hat.
+   a/l_P: bleibt unter D die Definition 2 sqrt(kappa). Fordert man zusätzlich R = 1, folgt a/l_P = 2 sqrt(sigma) ohne
+   Rand- und g-Abhängigkeit, aber mit der Kopplungsregel als neuer Eingabe: in K 7.1 bis 8.6,
+   mit lokal abgezogenem Vakuum 7.1 bis 15.3, mit Vakuumkontakttermen bis 56.
+   T7: Die fehlende Festlegung ist eine Gitterfassung der Diffeomorphismus-Wardidentität (wie T_mu nu an h_mu nu
+   koppelt, bis O(a^2 d^2)), dieselbe Struktur, die ein masseloser Spin-2-Pol braucht. Dazu kommt der
+   gradientenfreie TT-Term des Gittervakuums: Ein über Sakharov dynamisches Metrikfeld bekäme eine Masse an der
+   Gitterskala, die wie Lambda abgestimmt werden müsste. Unter D (kein Graviton) stört das nicht, zeigt aber, dass
+   der Schritt von D zu einem Graviton (T7) ohne neues Prinzip nicht aus dem Feldinhalt folgt.
+   Grenzen: nur statischer Koeffizient von sqrt(h) R^(3); TT-Mode '+' mit k entlang einer Gitterachse (die kubische
+   Gruppe erlaubt einen zweiten Koeffizienten für 'x'); freie Felder (Einschleifen); nichtabelsche Eichfelder als
+   U(1)-Kopien; Rand in der Innovationsnäherung aus Z15; Kopplungsfamilie mit drei Ortsregeln, zwei
+   Kontakttermen und c_W in {0, 1/2, 1}, nicht erschöpfend.
+
+Urteil:
+   Sakharov gegen Jacobson ist auf dem H6-Gitter nicht entscheidbar, mit benennbarem Grund. Der universelle Teil
+   der Identität gilt im selben Regler (m^2 ln m: Skalar 0,0133/0,0132, naives Dirac 0,212/0,211 gegen 1/(24 pi)
+   bzw. 8/(12 pi)). Der nicht-universelle Flächenkoeffizient a^2/(4 G_ind), der a/l_P festlegt, hängt aber um mehr
+   als eine Größenordnung und im Vorzeichen davon ab, wie das Hüpfen in Ordnung a^2 d^2 an die Metrik koppelt, weil
+   das Gittervakuum einen Schermodul der Ordnung 1/a^4 trägt. In der kanonischen Kopplung bricht das Gitter die
+   Identität: R = 1,42 (Skalar), 1,61 (naives Dirac), 0,76 bis 2,47 (Wilson, je nach c_W), für den H6-Inhalt R_ges
+   = 1,18 bis 2,29 bei g = 0,55. Eichfelder ohne Randterm verfehlen R = 1 in jeder Regel um mehr als Faktor 10;
+   unter D ist der Gitterrand also notwendig. Über die natürlichen Kopplungen liegt R = 1 innerhalb der
+   Mehrdeutigkeit. D ist daher nicht widerlegt, a/l_P wird aber keine Vorhersage: Fordert man R = 1, gilt a/l_P = 2
+   sqrt(sigma) = 7,1 bis 8,6 in der kanonischen Kopplung (dort mit g(1/a) = 0,83 bis 2,19 statt etwa 0,55), 7,1 bis
+   15,3 mit lokal abgezogenem Vakuum und bis 56, wenn die Vakuumenergie an Metrikgradienten koppelt. Es fehlt eine
+   Gitter-Wardidentität für die Metrikkopplung; dieselbe Struktur braucht T7 für einen Spin-2-Pol.
+
+Alle Prüfungen bestanden: True (15/15). Laufzeit 46 s.

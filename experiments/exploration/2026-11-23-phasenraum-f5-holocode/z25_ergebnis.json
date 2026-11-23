@@ -1,0 +1,324 @@
+{
+ "checks": {
+  "Allgemeine Formel reproduziert SM b_i = (41/10, -19/6, -7) und die SM-Matrix b_ij von v246 exakt (Brüche)": true,
+  "PS-Einschleifen-b von v266 reproduziert: minimal (-31/3, -3, -7/3), +(15,1,1) (-9, -3, -7/3); SO(10)+3x16: -76/3": true,
+  "v246 reproduziert: Spreizung 8,8 bei 2e16 (1 Schleife), 2 Schleifen Minimum 3,2 bei 1,7e14 und 8,7 bei 2e16": true,
+  "Integrator: DOP853 und RK4 (v246) stimmen bei 2e16 auf 0,02 überein": true,
+  "v266 reproduziert: minimal M_PS = 4,2e13, M_GUT = 2,4e15; +(15,1,1) M_GUT = 5,9e15 (auf 3 %)": true,
+  "2-Schleifen-Hybrid aus results/pati_salam.json reproduziert (M_GUT 1,29e15 und 2,80e15 auf 1 %)": true,
+  "y_t in führender Ordnung genügt: Zwei-Schleifen-Yukawabeitrag an 1/a = 0.028 < 0,1 in alpha^-1": true,
+  "H6-Eltern (10,1) unter SM: Delta b = (2/3, 2/3, 2/3), keine differentielle Schwelle an 1/a": true,
+  "Frage 1: SM vereinigt nicht an 1/a — Spreizung (2L) > 1 im ganzen Fenster (negatives Ergebnis, Kill)": true,
+  "Vektorisierter 2L-Löser stimmt mit solve_ivp/fsolve überein (M_U auf 0,2 %, alpha_U^-1 auf 0,01; drei Inhalte)": true,
+  "3A: Mit vollständigen E8-PS-Multipletts liegt kein M_U im Fenster (diskret 1L und 2L, freie Schwellen 1L) — negatives Ergebnis": true,
+  "3B: SM-Gruppe mit E8-Fragmenten erreicht das Fenster nicht mit Schwellen >= 1 TeV (exaktes LP-Maximum) — negatives Ergebnis": true,
+  "3C: PS mit gespaltenen Multipletts erreicht 1/a (LP und ganzzahlig, 2L bestätigt mit M_f >= 1 TeV)": true,
+  "3C: protonsicher (ohne D, XY) bei kappa >= 1 nur am Bandrand (kappa_max < 1,2) mit Farbskalaren unter 3 TeV; ganzzahlig mit einer Schwelle keine sichere Lösung": true,
+  "v266-Inhalte bei vollen zwei Schleifen von Super-K ausgeschlossen (auch +(15,1,1) komplex am oberen Bandrand)": true,
+  "L3 mit kappa in [1; 1,7]: alle Band-sicheren E8-Inhalte liegen auch am oberen Bandrand unter der Hyper-K-Reichweite": true,
+  "y1 reproduziert: 1/g^2(M) = 0,40532 / 0,28405 / 0,20677 bei M = 0,3 / 0,45 / 0,6 (N = 24)": true,
+  "Frage 3: y1-induzierter Wert und RG-Wert an 1/a stimmen nirgends im Fenster überein (Verhältnis > 2 auch naiv, SO(10) und SM) — negatives Ergebnis": true,
+  "z15 H6-Schema reproduziert: kappa = 29,126, a/l_P = 10,79": true,
+  "z15-Fixpunkt mit SM-RG-Kopplungen liegt im Fenster (Konsistenz der z15-Annahme g = 0,55)": true,
+  "SO(10)-Lesart: Fixpunkt a/l_P liegt über dem z15-Fenster (45 Eichkanten) — Bedingung an a/l_P": true
+ },
+ "befunde": [
+  "v266 zählt (15,1,1) komplex, das sind zwei reelle Adjungierte; die E8-Hülle hat nur eine reelle 45. Damit sinkt M_GUT schon in einer Schleife von 5,9e15 auf 3.6e+15 GeV und tau_p auf 2.2e+34 a (< Super-K).",
+  "Reines SM (mit importiertem Higgs) verfehlt die Gleichheit an 1/a im ganzen Fenster: Delta alpha^-1 = 19.0 / 15.6 / 15.1 (a/l_P = 1,65 / 10,8 / 14,3, zwei Schleifen); sin^2 theta_W(1/a) = 0.454 statt 0,375.",
+  "Mit vollständigen PS-Multipletts der E8-Hülle ist M_U höchstens 1.1e+16 GeV (2 Schleifen, 13440 Inhalte) bzw. 2.6e+16 GeV (1 Schleife, freie Schwellen) — Faktor 33 unter dem Fenster.",
+  "Ohne neue Eichbosonen (H6 wie gebaut) reicht die Gleichheit mit E8-Fragmenten oberhalb 1 TeV nur bis 5.2e+17 GeV; das Fenster verlangt ein Farboktett, Tripletts und Dubletts bei ~264 GeV (LHC-ausgeschlossen).",
+  "Gleichheit genau an 1/a geht mit E8-Inhalt nur über gespaltene Multipletts: bei M_PS auf der Skalaronskala (kappa 1,0-1,7) mit einer Fragmentschwelle stets Farboktett + >= 3 Farbtripletts (3,1,-1/3) bei 1e3-1e5 GeV; protonsicher nur bis kappa = 1.08 mit ~8 Farbskalaren bei ~1 TeV.",
+  "In jeder Lesart mit Gleichheit genau an 1/a ist der Eich-Protonzerfall unbeobachtbar (tau_p ~ 2e+44 a); Hyper-K sähe nichts.",
+  "In der SO(10)-Lesart ist Gleichheit an 1/a automatisch, aber der Wert passt nicht: RG alpha_U^-1(1/a) = 60-74, y1-induziert höchstens 23 (naiv) bzw. ~0.7 (ein Geschmack).",
+  "Die y1-Formel gibt für den H6-Inhalt g_ind(1/a) = 1.7 (naiv) bis 7 (ein Geschmack), nicht g = 0,55: Die induzierte Kopplung ist an der Gitterskala stark.",
+  "Selbstkonsistentes a/l_P: SM 11.0, PS-Beispiel 14.0, SO(10) 20.3 (nichtabelsch 15.8); mit y1-induziertem g fiele es auf 5.5-7.8."
+ ],
+ "urteil": "H6s Lesart 'Eichkopplungen an der Gitterskala induziert und gleich' fällt in der gebauten Form: Mit SM-Inhalt und importiertem Higgs ist die Spreizung an 1/a 15.1-19.0 (2 Schleifen, a/l_P 1,65-14,3), und ohne neue Eichbosonen erreichen E8-Fragmente oberhalb 1 TeV die Gleichheit nur bis 5.2e+17 GeV. Pati-Salam mit vollständigen E8-Multipletts vereinigt höchstens bei 2.6e+16 GeV; Gleichheit genau an 1/a gelingt nur mit gespaltenen Multipletts (bei kappa ~ 1 leichte Farbtripletts; protonsicher nur bis kappa = 1.08 mit ~8 Farbskalaren bei ~1 TeV) und dann ohne sichtbaren Protonzerfall. In der SO(10)-Lesart ist Gleichheit automatisch, aber der Wert widerspricht der y1-Induktion (alpha_U^-1(1/a) >= 60 gegen <= 23); sie überlebt nur als nackte SO(10)-Gitterkopplung, was 45 statt 12 Eichbosonen verlangt (z15-Fixpunkt a/l_P ~ 20, außerhalb des Fensters), und die v266-Inhalte sind bei zwei Schleifen von Super-K ausgeschlossen; mit kappa in [1; 1,7] überleben nur E8-Inhalte mit tau_p <= 3.5e+34 a, die Hyper-K vollständig entscheidet. sin^2 theta_W = 3/8 wird so von SO(10) geerbt, nicht von H6 induziert.",
+ "zahlen": {
+  "eingaben": {
+   "alpha_inv_MZ": [
+    59.01,
+    29.59,
+    8.47
+   ],
+   "M_Pl_GeV": 1.2209e+19,
+   "M_s_GeV": 30599694999637.406,
+   "yt_Mt": 0.9369,
+   "inv_a_GeV": {
+    "untere Grenze 1,65": 7.399393939393939e+18,
+    "robust 3,32": 3.677409638554217e+18,
+    "H6-Schema 10,79": 1.1315106580166822e+18,
+    "obere Grenze 14,27": 8.555711282410652e+17
+   },
+   "fenster_inv_a_GeV": [
+    8.555711282410652e+17,
+    7.399393939393939e+18
+   ]
+  },
+  "kalibrierung": {
+   "v246_spreizung_1L_2e16": 8.770324453756274,
+   "v246_2L_min": [
+    3.2030932695737846,
+    171040061526566.6
+   ],
+   "v246_2L_2e16": 8.711607213806417,
+   "v266_1L": {
+    "minimal": [
+     41892277472668.27,
+     2425452187152673.5,
+     45.061636684303345
+    ],
+    "+(15,1,1) komplex (v266)": [
+     40160288066188.75,
+     5886713668163441.0,
+     45.48387516254876
+    ],
+    "+(15,1,1) reell (E8)": [
+     41106155369062.695,
+     3610456109435225.0,
+     45.25107740178918
+    ]
+   },
+   "hybrid_2L": {
+    "min": [
+     37411259952582.24,
+     1290850249802241.2
+    ],
+    "+15c": [
+     36061314129155.53,
+     2799468960525677.0
+    ]
+   }
+  },
+  "frage1_sm": {
+   "untere Grenze 1,65": {
+    "mu": 7.399393939393939e+18,
+    "a_1L": [
+     33.60353231340498,
+     49.21288154655713,
+     51.84689605028419
+    ],
+    "a_2L": [
+     33.37022952791657,
+     48.90498714781679,
+     52.336111993376804
+    ],
+    "D_1L": 18.243363736879203,
+    "D_2L": 18.965882465460233,
+    "D_2L_ohne_Higgs": 18.332836885684493,
+    "sin2_2L": 0.46789164132721944
+   },
+   "robust 3,32": {
+    "mu": 3.677409638554217e+18,
+    "a_1L": [
+     34.05977811699278,
+     48.86049657630639,
+     51.067939800256234
+    ],
+    "a_2L": [
+     33.829310881756086,
+     48.555764930435316,
+     51.553590630530124
+    ],
+    "D_1L": 17.008161683263452,
+    "D_2L": 17.724279748774038,
+    "D_2L_ohne_Higgs": 17.102575630767276,
+    "sin2_2L": 0.4627092968159864
+   },
+   "H6-Schema 10,79": {
+    "mu": 1.1315106580166822e+18,
+    "a_1L": [
+     34.82889206935049,
+     48.2664654748919,
+     49.7548184181821
+    ],
+    "a_2L": [
+     34.603224772331025,
+     47.967139339078365,
+     50.23429927835463
+    ],
+    "D_1L": 14.92592634883161,
+    "D_2L": 15.631074506023602,
+    "D_2L_ohne_Higgs": 15.028489249567322,
+    "sin2_2L": 0.454065802618862
+   },
+   "obere Grenze 14,27": {
+    "mu": 8.555711282410652e+17,
+    "a_1L": [
+     35.01130155085775,
+     48.12558010299605,
+     49.44338759609653
+    ],
+    "a_2L": [
+     34.786776764979344,
+     47.82755006368711,
+     49.92137476559748
+    ],
+    "D_1L": 14.432086045238776,
+    "D_2L": 15.134598000618134,
+    "D_2L_ohne_Higgs": 14.536547168770738,
+    "sin2_2L": 0.4520326914786606
+   }
+  },
+  "frage1_kreuzungen_GeV": {
+   "a1=a2": 10756029311828.22,
+   "a1=a3": 171118570489783.78,
+   "a2=a3": 2.9293502743061772e+16
+  },
+  "frage2_3A": {
+   "anzahl_inhalte": 13440,
+   "max_MU_1L": 2.612803832091674e+16,
+   "max_MU_2L": 1.1324273062781064e+16,
+   "max_MU_freie_schwellen_1L": 2.6127580675911e+16,
+   "bester_inhalt": {
+    "bd_r": 1,
+    "t6_r": 6,
+    "s412_c": 4,
+    "s421_c": 0,
+    "a15_r": 1,
+    "a31_r": 0,
+    "a13_r": 0,
+    "a622_r": 0
+   },
+   "bester_MPS_2L": 11535255375679.043,
+   "bester_MU_2L": 1.1324273062781064e+16
+  },
+  "frage2_3B": {
+   "max_MU_ab_1TeV": 5.195177403812806e+17,
+   "noetige_untergrenze_GeV": 264.3938872315923,
+   "zusammensetzung": {
+    "O8_r": 1.0,
+    "T3_r": 1.0,
+    "Q_c": 5.0,
+    "H_c": 4.61,
+    "D_c": 10.0
+   },
+   "ohne_tripletts_erreichbar": false
+  },
+  "frage2_3C": {
+   "lp_kappa_1_1.7_erreichbar": true,
+   "lp_protonsicher_kappa_1_1.7": true,
+   "kappa_max_protonsicher": 1.0839656528412602,
+   "protonsicher_fragmentskala_GeV": 1166.705815708728,
+   "noetige_fragmentskala_GeV": 3307307239.7630496,
+   "lp_minimale_last": {
+    "D_c (aus s412_c)": 2.64,
+    "O8_r (aus a15_r)": 1.0
+   },
+   "ganzzahlig_loesungen": 103,
+   "ganzzahlig_kappa_1_1.7": 18,
+   "beispiel": {
+    "fragmente": {
+     "O8_r": 1,
+     "U_c": 1,
+     "D_c": 4
+    },
+    "eltern": {
+     "bd_r": 1,
+     "t6_r": 6,
+     "s412_c": 1,
+     "a15_r": 1
+    },
+    "MPS_1L": 31264041429503.832,
+    "Mf_1L": 56333.645975964275,
+    "MPS_2L": 27496998215700.848,
+    "Mf_2L": 13015.746309330721,
+    "alpha_U_inv_2L": 47.91178314438142,
+    "tau_p_eich_a": 2.3517940233522127e+44,
+    "MT_min_skalar_GeV": 126400961982.39188
+   }
+  },
+  "frage3": {
+   "zweige_2L": {
+    "minimal (v266)": {
+     "M_PS": 36915833174520.625,
+     "kappa": 1.206411801652208,
+     "M_GUT": 1192854966101268.0,
+     "alpha_U_inv": 44.437404426564584,
+     "tau_p": 2.498779631620696e+32
+    },
+    "+(15,1,1) komplex (v266, = 2 reelle)": {
+     "M_PS": 35382618132438.04,
+     "kappa": 1.1563062354986646,
+     "M_GUT": 2752749902301788.5,
+     "alpha_U_inv": 44.8271337242874,
+     "tau_p": 7.211556033263771e+33
+    },
+    "+(15,1,1) reell (E8, eine 45)": {
+     "M_PS": 36226994858127.91,
+     "kappa": 1.183900521183534,
+     "M_GUT": 1729124364335031.2,
+     "alpha_U_inv": 44.61042166689927,
+     "tau_p": 1.111879172300696e+33
+    },
+    "größtes M_U (3A)": {
+     "M_PS": 11535255375679.043,
+     "kappa": 0.3769728873381166,
+     "M_GUT": 1.1324273062781064e+16,
+     "alpha_U_inv": 45.64346593994021,
+     "tau_p": 2.141305239414401e+36
+    }
+   },
+   "scan_supk_sicher_zentral": 193,
+   "scan_supk_sicher_band": 556,
+   "scan_band_sicher_kappa_1_1.7": 101,
+   "tau_sicher_bereich": [
+    2.4222601638548386e+34,
+    2.141305239414401e+36
+   ],
+   "alpha_U_inv_1a": {
+    "untere Grenze 1,65": [
+     66.62511149152697,
+     73.55084511030185
+    ],
+    "robust 3,32": [
+     64.35471656022217,
+     70.99822150218687
+    ],
+    "H6-Schema 10,79": [
+     60.526757871410325,
+     66.69258323665696
+    ],
+    "obere Grenze 14,27": [
+     59.618757603850824,
+     65.67091190200847
+    ]
+   },
+   "y1_kappa_N32": {
+    "0.3": 0.3980943748524448,
+    "0.45": 0.28349383665168276,
+    "0.5": 0.25476890565327875,
+    "0.6": 0.206735024702657,
+    "1.0": 0.0933545992696899
+   },
+   "y1_fit": [
+    0.27650417748751616,
+    0.06446119784339802
+   ],
+   "induziert": {
+    "mu = 1/a": {
+     "naiv_16": 4.105949725422676,
+     "ein_geschmack": 0.2566218578389173,
+     "g_naiv": 1.7494362379839883,
+     "g_ein": 6.997744951935953
+    },
+    "mu = 0,5/a": {
+     "naiv_16": 11.205321713088324,
+     "ein_geschmack": 0.7003326070680203,
+     "g_naiv": 1.0589922139031087,
+     "g_ein": 4.235968855612435
+    }
+   },
+   "induziert_obergrenze": 23.211023548540098,
+   "verhaeltnis_min": 2.5685535788274474,
+   "a_lP_fixpunkt": {
+    "SM": 10.956015199916461,
+    "PS_beispiel": 14.00893604700158,
+    "SO10": 20.345801866199217,
+    "SO10_nichtabelsch": 15.759295320048267,
+    "g_ind naiv (1/a)": 7.8104572517000515,
+    "g_ind ein Geschmack (1/a)": 5.505183930978116
+   }
+  }
+ }
+}

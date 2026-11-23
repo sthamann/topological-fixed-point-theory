@@ -1,0 +1,1441 @@
+{
+ "checks": {
+  "GW, R D_W R = D_W^+ und R D R = D^+ (auch mit Theta-symmetrischem Hintergrund)": true,
+  "D^-1 = 1/2 + chiral ungerade, also S_W = P_+/2 delta + P_- D^-1 P_+ (Rest < 1e-12)": true,
+  "Verflechter (1 - D/2) g5^ = g5 (1 - D/2) und S_theta = (1 - (m/2) e^{i theta g5}) G_chi + 1/2": true,
+  "Theta bildet (P^_-, P_+) auf (P_-, gespiegelter Hut) ab; Abweichung = ||D||/2 (Rest < 1e-12)": true,
+  "P_+-Komponente des Weylfelds ist reiner Kontakt (Diagonale 1/2, sonst < 1e-12)": true,
+  "Wilson r = 1 Link-RP; r = 2, Gegenvorzeichen und Platzreflexion verletzt": true,
+  "Voller Overlap-Dirac (m0 = 0,5/1/1,5; m = 0 und 0,3) Link-RP in 2D": true,
+  "Lüscher-Weyl Link-RP: alle linearen Formen >= 0 (über Rundung) für alle m0, L_t, L_s, Holonomien, Abstände": true,
+  "Spektralgewichte des Weylblocks positiv-semidefinit, Rekonstruktion < 1e-8 (also RP für alle Abstände)": true,
+  "Ortsraum 2D: lineare Weyl-OS-Matrizen auf der ganzen Halbzeit hermitesch und >= 0 (L = 8 .. 24, mit Hintergrund)": true,
+  "Wick-Zerlegung: verbundener Teil = Tensorprodukt der linearen Formen (Rest < 1e-12)": true,
+  "Volle Komponenten: Kontaktasymmetrie |<Theta F> - <F>*| = 1/2 exakt (negatives Ergebnis festgestellt)": true,
+  "Ankeralgebra: Bilineare mit Eins hermitesch und >= 0": true,
+  "Theta_W: positiv für alle theta, m, L_t (Formen hermitesch)": true,
+  "Theta_D: positiv bei theta = 0 und pi, bei theta = 0,3/pi/2/4,0 nicht hermitesch (negatives Ergebnis)": true,
+  "Theta_D-Verletzung linear in m (Exponent 1 auf 0,15) und stabil in L_t (16 gegen 4096 auf 5 %)": true,
+  "Exakt: M_D = B M_W und Spektrum von M_W unabhängig von theta (Reste < 1e-12)": true,
+  "Spektral: Theta_W-Gewichte >= 0 bei jedem theta; Theta_D-Gewichte bei theta != 0 nicht hermitesch": true,
+  "Theta_W-Zustand reflexionssymmetrisch an allen Punkten (< 1e-12), Theta_D-Zustand bei pi/2 nicht (> 1e-2)": true,
+  "Ortsraum 2D (ganze Halbzeit, mit Hintergrund): Theta_W >= 0 bei 0 und pi/2; Theta_D bei pi/2 nicht hermitesch": true,
+  "Majoranadrehung X nicht quantisiert (|X| < 0,5 auf Teilen der Zone), also kein ortslokaler Verflechter": true,
+  "4D: Wilson r = 1 und Overlap Link-RP; Z19-Wert ov_GJ (pi/2) reproduziert": true,
+  "4D Lüscher-Weyl Link-RP für m0 = 0,5/1/1,5, L_t = 8/16/4096": true,
+  "4D gedrehte Phase: Theta_W >= 0 und hermitesch für alle theta; Theta_D bei pi/2 und 4,0 nicht hermitesch": true,
+  "4D Spektralgewichte (Weyl, Theta_W gedreht) >= 0, Rekonstruktion < 1e-8": true,
+  "4D Ortsraum: Identitäten exakt, Weyl-Formen >= 0, Theta_W gedreht >= 0, Theta_D gedreht nicht hermitesch": true,
+  "GJ-gepaarte Lüscher-Weylfelder: Phasenpotential flach (< 1e-12), Wilson nicht": true,
+  "GJ-Wirbel: Index = Windung (1, 0, 2, -1), also geschützte Naht": true,
+  "D_c chiral exakt ({g5, D_c} = 0, antihermitesch) und potenzartig nichtlokal (Exponent -1 auf 0,02 in 2D)": true,
+  "6a: J^2 = -1 = (-1)^F, J: psi -> chi, [J, U(1)_A] = 0 und [Theta_W, J] = 0 exakt": true,
+  "6b: J in Lüschers Variablen um O(a) gebrochen: Q = rechtsseitiger Hut, ||Q - P_-|| = ||D||/2, Wirkung D -> -D^+, Korrelator nicht kovariant (negatives Ergebnis)": true,
+  "6b: J-Bruch bei kleinen Impulsen O(a p): ||D||/2 < |p| und J_D-Rest < 2 |p| + m/2 für |p| < 0,3": true,
+  "6c: J_W in Ankervariablen exakt (Wirkung, Korrelator, Projektoren; Reste < 1e-12, impulsaufgelöst < 1e-12)": true,
+  "6c: J_W in Psi-Variablen potenzartig nichtlokal (4D-Exponent zwischen -3,6 und -2,8), Overlap exponentiell lokal": true
+ },
+ "befunde": {
+  "Theta bildet Lüschers projizierten Raum auf sich ab": false,
+  "Theta ist auf der vollen Komponentenalgebra der Weylfelder involutiv": false,
+  "Platzreflexion (naiv, Felder bei t = 0 fest) ist für Wilson, Overlap und Weyl verletzt": true,
+  "Volle Komponentenalgebra der Weylfelder ist RP (Bilineare mit Eins)": false,
+  "Lüscher-gepaarte Weylfelder bei gedrehter Phase RP unter Theta_D (Reflexion auf psi)": false,
+  "Lüscher-gepaarte Weylfelder bei gedrehter Phase RP unter Theta_W (Reflexion auf chi = (1 - D/2) psi)": true,
+  "Positive Transfer mit flacher Phase und geschützter Naht ohne Abstimmung (Theta_W, nichtultralokal)": true,
+  "Theta_W ist in den Variablen, auf denen es ortslokal wirkt, mit lokaler Wirkung verträglich": false,
+  "Gitter-J in Lüschers Originalvariablen exakt": false,
+  "Exakte Gitter-J mit J^2 = -1, verträglich mit Theta_W und U(1)_A (Ankerform)": true,
+  "Exakte J erzwingt die Majoranaform X": false,
+  "Vierter Ausweg gilt für H6s G selbst (J exakt, gleicher Preis: nichtlokale Wirkung in den Ankervariablen)": true
+ },
+ "urteil": "Fall (a), mit genau benanntem Preis. Für freie Lüscher-Weylfelder (Overlap, abelsch, a = 1, 2D und 4D) gilt Link-RP: Alle linearen OS-Formen (psi-quer P_+, Anker P_- psi) sind >= 0 für m0 = 0,5 bis 1,9, L_t = 8 bis 4096, L_s = 8 bis 64, Holonomien und Abstände 1 bis 3 zur Ebene (kein signifikant negativer Eigenwert; negative Werte nur in Rundung, roh <= 0.7 x 1e-15 max|G|), auf der ganzen Halbzeit im Ortsraum bis 24 x 24 auch mit nicht konstantem Theta-symmetrischem Hintergrund, und die Spektralgewichte (Pol plus Schnitt, L_t = unendlich) sind positiv-semidefinit. Theta bildet Lüschers Raum (P^_-, P_+) aber nicht auf sich ab, sondern auf (P_-, gespiegelter Hut), Abweichung ||D||/2 (O(ap), an den Verdopplern 1). Exakt ist S_W = P_+/2 delta + P_- D^-1 P_+: Die ganze Abweichung ist Kontakt. Mit der vollen Komponentenalgebra verletzt der Kontakt die Reflexionssymmetrie der Komposita psi-quer P_+ psi um genau 1/2. Die Ankeralgebra {psi-quer P_+, P_-(1 - D/2) psi} ist abgeschlossen und RP. Bei gedrehter Phase (Lüscher-Paarung L-R = GW-Drehung, die G-Paarung psi chi aus Z24) verletzt die Reflexion auf psi (Theta_D, wie Z19) RP: nicht hermitesch, 0.30 bei m = 0,3, linear in a m, stabil in L. Die Ursache ist exakt lokal, M_D = (1 - (m/2) e^{-i theta g5}) M_W. Die Reflexion auf chi = (1 - D/2) psi (Theta_W) ist bei jedem theta positiv, weil die GW-Drehung auf chi ortslokal als e^{i theta g5} wirkt. Mit flacher Phase (Spannweite 2e-16) und Index = Windung gibt das den vierten Ausweg aus dem Z24-Trilemma: geschützt, flach, positiv, ohne Abstimmung, aber nicht ultralokal. Die Variablen chi tragen eine potenzartig nichtlokale Wirkung (D_c ~ 1/x in 2D, Pole an den Verdopplern), und der Transfer hat ein Kontinuum je Impuls (Z19). Für die flachen Majoranaformen X und Xq aus Z19 gibt es kein solches Theta_W (X nicht quantisiert); dort bleibt die Verletzung. Für H6s G selbst (psi, chi gleicher Chiralität, J: psi -> chi -> -psi) gilt der vierte Ausweg ebenfalls: In Lüschers Originalvariablen ist J um O(a) gebrochen (||Q - P_-|| = ||D||/2 = 0.999, Wirkung D -> -D^+), in den Ankervariablen (chi, psi-quer) sind J mit J^2 = -1, U(1)_A und Theta_W zugleich exakt und ortslokal, zum selben Preis (dort nichtlokale Wirkung; J in psi-Variablen ~ x^-3.2 in 4D); die Majorana-Lesart mit lokaler J erzwingt dagegen X ohne Theta_W. Grenzen: frei, fester Hintergrund, keine Eichfeldintegration und keine komplexe Weyl-Determinante; 4D nur Impulsraum und Gitter bis 8 x 4^3.",
+ "zahlen": {
+  "identitaeten_rest_2d": {
+   "0.0": {
+    "GW": 8.881784197001252e-15,
+    "RDWR=DW+": 0.0,
+    "RDR=D+": 1.5543122344752192e-15,
+    "D^-1-1/2 ungerade": 3.1087529192134845e-15,
+    "S_W=P+/2+P-D^-1P+": 1.5543764596067423e-15,
+    "Verflechter": 1.1102230246251565e-15,
+    "R g5^ R = -(1-D) g5": 1.5543122344752192e-15,
+    "S_theta-Zerlegung": 1.1144649932300827e-15
+   },
+   "0.8": {
+    "GW": 9.325873406851315e-15,
+    "RDWR=DW+": 2.0206364052201328e-16,
+    "RDR=D+": 1.7763568394002505e-15,
+    "D^-1-1/2 ungerade": 2.0211371647335276e-14,
+    "S_W=P+/2+P-D^-1P+": 1.0105685823667638e-14,
+    "Verflechter": 1.6653345369377348e-15,
+    "R g5^ R = -(1-D) g5": 1.7763568394002505e-15,
+    "S_theta-Zerlegung": 1.793620188084545e-15
+   }
+  },
+  "theta_abweichung": {
+   "R_Phat_R_minus_P+": 0.9994390119769112,
+   "D_norm_halbe": 0.999439011976911,
+   "impulsaufgeloest": {
+    "(0.05,0.00)": 0.02499739591471234,
+    "(0.20,0.10)": 0.11186229012465172,
+    "(1.00,0.50)": 0.5494615803453742,
+    "(3.09,0.00)": 0.9996875162757026,
+    "(3.09,3.09)": 0.9999305241983519
+   }
+  },
+  "kalibrierung_2d": {
+   "Wilson r=1": {
+    "Link": [
+     1.5417314049969383e-15,
+     0.0
+    ],
+    "Link Gegenvorzeichen": [
+     1.5417314049969383e-15,
+     -1.0
+    ],
+    "Platz": [
+     3.612960827535564e-16,
+     -0.2123779065103474
+    ],
+    "Platz Gegenvorzeichen": [
+     3.612960827535564e-16,
+     -1.0
+    ]
+   },
+   "Wilson r=2": {
+    "Link": [
+     1.7986778980553974e-15,
+     -0.1077348571351186
+    ],
+    "Link Gegenvorzeichen": [
+     1.7986778980553974e-15,
+     -1.0
+    ],
+    "Platz": [
+     3.5602691779479116e-16,
+     -0.24623182183035458
+    ],
+    "Platz Gegenvorzeichen": [
+     3.5602691779479116e-16,
+     -1.0
+    ]
+   },
+   "Overlap m0=0,5": {
+    "Link": [
+     1.84250606018021e-15,
+     1.8169223502075987e-07
+    ],
+    "Link Gegenvorzeichen": [
+     1.84250606018021e-15,
+     -1.0
+    ],
+    "Platz": [
+     4.974488973952945e-16,
+     -0.38022807195160097
+    ],
+    "Platz Gegenvorzeichen": [
+     4.974488973952945e-16,
+     -1.0
+    ]
+   },
+   "Overlap m0=1": {
+    "Link": [
+     1.0620373063189489e-15,
+     6.679756512815353e-16
+    ],
+    "Link Gegenvorzeichen": [
+     1.0620373063189489e-15,
+     -1.0
+    ],
+    "Platz": [
+     4.236834454748377e-16,
+     -0.37775080142883355
+    ],
+    "Platz Gegenvorzeichen": [
+     4.236834454748377e-16,
+     -1.0
+    ]
+   },
+   "Overlap m0=1,5": {
+    "Link": [
+     8.865011371079345e-16,
+     4.391606267570297e-15
+    ],
+    "Link Gegenvorzeichen": [
+     8.865011371079345e-16,
+     -1.0
+    ],
+    "Platz": [
+     4.013813685178145e-16,
+     -0.37128587686841413
+    ],
+    "Platz Gegenvorzeichen": [
+     4.013813685178145e-16,
+     -1.0
+    ]
+   },
+   "Overlap m0=1, m=0,3": {
+    "Link": [
+     1.2103862720756301e-15,
+     1.6122700793506545e-15
+    ],
+    "Link Gegenvorzeichen": [
+     1.2103862720756301e-15,
+     -1.0
+    ],
+    "Platz": [
+     3.8137580648408906e-16,
+     -0.3553224162317551
+    ],
+    "Platz Gegenvorzeichen": [
+     3.8137580648408906e-16,
+     -1.0
+    ]
+   },
+   "Weyl m0=1": {
+    "Link": [
+     1.4426565520489086e-14,
+     1.2403241926639853e-12
+    ],
+    "Link Gegenvorzeichen": [
+     1.4426565520489086e-14,
+     -1.0
+    ],
+    "Platz": [
+     4.706204322453181e-16,
+     -0.8283062403174085
+    ],
+    "Platz Gegenvorzeichen": [
+     4.706204322453181e-16,
+     -1.0
+    ]
+   }
+  },
+  "weyl_2d_scan": {
+   "m0=0.5,Lt=8": 0.0001490633398698643,
+   "m0=0.5,Lt=16": 2.4337266169536503e-07,
+   "m0=0.5,Lt=32": 1.401764537824423e-09,
+   "m0=0.5,Lt=64": 1.1542655759118961e-09,
+   "m0=0.5,Lt=4096": 9.13391578011448e-10,
+   "m0=1.0,Lt=8": 0.0,
+   "m0=1.0,Lt=16": 0.0,
+   "m0=1.0,Lt=32": 0.0,
+   "m0=1.0,Lt=64": 0.0,
+   "m0=1.0,Lt=4096": 0.0,
+   "m0=1.5,Lt=8": 2.1366359685997687e-10,
+   "m0=1.5,Lt=16": 0.0,
+   "m0=1.5,Lt=32": 0.0,
+   "m0=1.5,Lt=64": 0.0,
+   "m0=1.5,Lt=4096": 0.0,
+   "m0=1.9,Lt=8": 1.289719750641156e-13,
+   "m0=1.9,Lt=16": 0.0,
+   "m0=1.9,Lt=32": 0.0,
+   "m0=1.9,Lt=64": 0.0,
+   "m0=1.9,Lt=4096": 0.0
+  },
+  "weyl_2d_scan_rundung": {
+   "formen": 42456,
+   "nur_rundung_negativ": 853,
+   "max_roh_durch_rauschgrenze": 0.6585744512563674
+  },
+  "weyl_2d_spektral": {
+   "m0=0.5,p=-3.0": {
+    "zst": 0.400076571537741,
+    "pole_bar": [],
+    "err": 2.5340568813159873e-12,
+    "wmin": 0.0,
+    "aher": 0.0
+   },
+   "m0=0.5,p=-2.0": {
+    "zst": 0.40590614818195836,
+    "pole_bar": [],
+    "err": 3.530868036287033e-12,
+    "wmin": 0.0,
+    "aher": 0.0
+   },
+   "m0=0.5,p=-1.0": {
+    "zst": 0.43368609883371756,
+    "pole_bar": [
+     0.4654618437160378
+    ],
+    "err": 1.1703865852586548e-12,
+    "wmin": -6.098690713699748e-19,
+    "aher": 1.1615728985604333e-16
+   },
+   "m0=0.5,p=-0.3": {
+    "zst": 0.486809536288643,
+    "pole_bar": [
+     0.7472320134490571
+    ],
+    "err": 9.71274760388212e-14,
+    "wmin": -2.0314360569527777e-17,
+    "aher": 1.2435848139057513e-16
+   },
+   "m0=0.5,p=-0.05": {
+    "zst": 0.4995849185969141,
+    "pole_bar": [
+     0.9512690104335284
+    ],
+    "err": 1.1589600002181955e-14,
+    "wmin": 0.0,
+    "aher": 1.341765277662751e-16
+   },
+   "m0=0.5,p=0.05": {
+    "zst": 0.4995849185969141,
+    "pole_bar": [
+     0.9512690104335284
+    ],
+    "err": 1.1591338624220025e-14,
+    "wmin": -3.3624358089988346e-17,
+    "aher": 1.0849308981351191e-16
+   },
+   "m0=0.5,p=0.3": {
+    "zst": 0.486809536288643,
+    "pole_bar": [
+     0.7472320134490571
+    ],
+    "err": 9.754865013472747e-14,
+    "wmin": -1.7189074328061968e-17,
+    "aher": 1.1004858228584504e-16
+   },
+   "m0=0.5,p=1.0": {
+    "zst": 0.43368609883371756,
+    "pole_bar": [
+     0.4654618437160378
+    ],
+    "err": 1.170527627537237e-12,
+    "wmin": -6.098690713699748e-19,
+    "aher": 1.2261119550952126e-16
+   },
+   "m0=0.5,p=2.0": {
+    "zst": 0.40590614818195836,
+    "pole_bar": [],
+    "err": 3.530717092886161e-12,
+    "wmin": 0.0,
+    "aher": 0.0
+   },
+   "m0=0.5,p=2.5": {
+    "zst": 0.40165413512556136,
+    "pole_bar": [],
+    "err": 2.711011990982608e-12,
+    "wmin": 0.0,
+    "aher": 0.0
+   },
+   "m0=0.5,p=3.1": {
+    "zst": 0.40000659174086906,
+    "pole_bar": [],
+    "err": 2.523139528120705e-12,
+    "wmin": 0.0,
+    "aher": 0.0
+   },
+   "m0=1.0,p=-3.0": {
+    "zst": 0.49916371559177075,
+    "pole_bar": [],
+    "err": 2.5406386884767872e-12,
+    "wmin": 0.0,
+    "aher": 0.0
+   },
+   "m0=1.0,p=-2.0": {
+    "zst": 0.44158820025800605,
+    "pole_bar": [],
+    "err": 1.6005985489574274e-11,
+    "wmin": 0.0,
+    "aher": 0.0
+   },
+   "m0=1.0,p=-1.0": {
+    "zst": 0.2550852939654178,
+    "pole_bar": [
+     0.4654618437160378
+    ],
+    "err": 7.971477816980412e-14,
+    "wmin": 0.0,
+    "aher": 4.699168103584016e-17
+   },
+   "m0=1.0,p=-0.3": {
+    "zst": 0.04107017136178648,
+    "pole_bar": [
+     0.7472320134490571
+    ],
+    "err": 2.9491917788847426e-15,
+    "wmin": 0.0,
+    "aher": 4.825951642304588e-15
+   },
+   "m0=1.0,p=-0.05": {
+    "zst": 0.0012466256323477864,
+    "pole_bar": [
+     0.9512690104335284
+    ],
+    "err": 3.050601722651193e-15,
+    "wmin": -8.932151944245131e-11,
+    "aher": 7.81563295121449e-11
+   },
+   "m0=1.0,p=0.05": {
+    "zst": 0.0012466256323477864,
+    "pole_bar": [
+     0.9512690104335284
+    ],
+    "err": 3.3910425910371646e-15,
+    "wmin": -1.103383475465575e-10,
+    "aher": 2.211145456786172e-11
+   },
+   "m0=1.0,p=0.3": {
+    "zst": 0.04107017136178648,
+    "pole_bar": [
+     0.7472320134490571
+    ],
+    "err": 3.414110648781267e-15,
+    "wmin": 0.0,
+    "aher": 4.042040715635822e-15
+   },
+   "m0=1.0,p=1.0": {
+    "zst": 0.2550852939654178,
+    "pole_bar": [
+     0.4654618437160378
+    ],
+    "err": 7.953918731923259e-14,
+    "wmin": 0.0,
+    "aher": 5.500439587299627e-17
+   },
+   "m0=1.0,p=2.0": {
+    "zst": 0.44158820025800605,
+    "pole_bar": [],
+    "err": 1.60059854895763e-11,
+    "wmin": 0.0,
+    "aher": 0.0
+   },
+   "m0=1.0,p=2.5": {
+    "zst": 0.4824502552316009,
+    "pole_bar": [],
+    "err": 3.012295535635264e-12,
+    "wmin": 0.0,
+    "aher": 0.0
+   },
+   "m0=1.0,p=3.1": {
+    "zst": 0.4999279118706077,
+    "pole_bar": [],
+    "err": 2.5145002225135613e-12,
+    "wmin": 0.0,
+    "aher": 0.0
+   },
+   "m0=1.5,p=-3.0": {
+    "zst": 0.6605015346743348,
+    "pole_bar": [],
+    "err": 2.610331912714056e-12,
+    "wmin": 0.0,
+    "aher": 0.0
+   },
+   "m0=1.5,p=-2.0": {
+    "zst": 0.3980731707600542,
+    "pole_bar": [
+     0.4423022958850793
+    ],
+    "err": 8.325778180390831e-13,
+    "wmin": 0.0,
+    "aher": 1.1872797919948168e-16
+   },
+   "m0=1.5,p=-1.0": {
+    "zst": -0.023585880666555425,
+    "pole_bar": [
+     0.4654618437160377
+    ],
+    "err": 1.0461277943602256e-15,
+    "wmin": 0.0,
+    "aher": 1.7213651774031573e-15
+   },
+   "m0=1.5,p=-0.3": {
+    "zst": -0.41115829671834314,
+    "pole_bar": [
+     0.7472320134490571
+    ],
+    "err": 2.1265245431131384e-14,
+    "wmin": 0.0,
+    "aher": 1.1671510575864087e-16
+   },
+   "m0=1.5,p=-0.05": {
+    "zst": -0.4970992039511801,
+    "pole_bar": [
+     0.9512690104335284
+    ],
+    "err": 5.492832661425656e-15,
+    "wmin": -3.420022529060857e-16,
+    "aher": 1.0553975773273738e-15
+   },
+   "m0=1.5,p=0.05": {
+    "zst": -0.4970992039511801,
+    "pole_bar": [
+     0.9512690104335284
+    ],
+    "err": 5.339436433857163e-15,
+    "wmin": -6.412542241989107e-16,
+    "aher": 3.7139307151520246e-16
+   },
+   "m0=1.5,p=0.3": {
+    "zst": -0.41115829671834314,
+    "pole_bar": [
+     0.7472320134490571
+    ],
+    "err": 2.1315907201726955e-14,
+    "wmin": 0.0,
+    "aher": 1.1811988790172178e-16
+   },
+   "m0=1.5,p=1.0": {
+    "zst": -0.023585880666555425,
+    "pole_bar": [
+     0.4654618437160377
+    ],
+    "err": 1.1001482596274512e-15,
+    "wmin": 0.0,
+    "aher": 6.885460709612629e-16
+   },
+   "m0=1.5,p=2.0": {
+    "zst": 0.3980731707600542,
+    "pole_bar": [
+     0.4423022958850793
+    ],
+    "err": 8.32577815206748e-13,
+    "wmin": 0.0,
+    "aher": 1.0936003611254954e-16
+   },
+   "m0=1.5,p=2.5": {
+    "zst": 0.5603400412735694,
+    "pole_bar": [],
+    "err": 6.5492643617098284e-12,
+    "wmin": 0.0,
+    "aher": 0.0
+   },
+   "m0=1.5,p=3.1": {
+    "zst": 0.66612900863744,
+    "pole_bar": [],
+    "err": 2.4981986783255945e-12,
+    "wmin": 0.0,
+    "aher": 0.0
+   }
+  },
+  "weyl_2d_ortsraum": {
+   "L=8,phi=0.0,bg=0.0": {
+    "bar": [
+     2.7513845010770154e-15,
+     -4.6511664654397004e-17
+    ],
+    "anker": [
+     2.379576774123273e-15,
+     -7.583007728220358e-17
+    ],
+    "voll_psi": [
+     2.379576774123273e-15,
+     -2.62149805834713e-16
+    ],
+    "hmin": 0.9999999999999987
+   },
+   "L=8,phi=0.7,bg=0.0": {
+    "bar": [
+     2.329592440083849e-15,
+     1.1401047892185975e-12
+    ],
+    "anker": [
+     2.1605387477594812e-15,
+     1.1399829509129843e-12
+    ],
+    "voll_psi": [
+     2.1605387477594812e-15,
+     -1.4336010812113984e-16
+    ],
+    "hmin": 1.0002911704035253
+   },
+   "L=8,phi=0.7,bg=0.8": {
+    "bar": [
+     1.6473887173393023e-15,
+     2.211091140848454e-06
+    ],
+    "anker": [
+     2.180091982914113e-15,
+     2.211091140838283e-06
+    ],
+    "voll_psi": [
+     2.180091982914113e-15,
+     -9.636582651034263e-17
+    ],
+    "hmin": 0.6567522842366188
+   },
+   "L=12,phi=0.0,bg=0.0": {
+    "bar": [
+     3.4482298005240313e-15,
+     -5.6518949587997e-16
+    ],
+    "anker": [
+     3.5465170590081104e-15,
+     -6.407130405609235e-17
+    ],
+    "voll_psi": [
+     3.5465170590081104e-15,
+     -4.1166788657264325e-16
+    ],
+    "hmin": 0.999999999999999
+   },
+   "L=12,phi=0.7,bg=0.0": {
+    "bar": [
+     2.9362027671558967e-15,
+     7.798028129250105e-17
+    ],
+    "anker": [
+     2.8659325551330883e-15,
+     -3.434159577778987e-17
+    ],
+    "voll_psi": [
+     2.8659325551330883e-15,
+     -2.123954943077197e-16
+    ],
+    "hmin": 1.0000579553037834
+   },
+   "L=12,phi=0.7,bg=0.8": {
+    "bar": [
+     3.942419021994174e-15,
+     9.841563643061802e-10
+    ],
+    "anker": [
+     2.586427152491757e-15,
+     9.841563753972578e-10
+    ],
+    "voll_psi": [
+     2.686299002676412e-15,
+     -7.638776271037852e-17
+    ],
+    "hmin": 0.7308447797788926
+   },
+   "L=16,phi=0.0,bg=0.0": {
+    "bar": [
+     4.5789316377984085e-15,
+     -2.1975644145346613e-16
+    ],
+    "anker": [
+     3.245507599876395e-15,
+     -1.339222899430648e-16
+    ],
+    "voll_psi": [
+     3.245507599876395e-15,
+     -7.511091311615078e-16
+    ],
+    "hmin": 0.9999999999999981
+   },
+   "L=16,phi=0.7,bg=0.0": {
+    "bar": [
+     3.3231711074149104e-15,
+     -4.391212331470031e-17
+    ],
+    "anker": [
+     2.7100539092200308e-15,
+     -6.074844665550252e-17
+    ],
+    "voll_psi": [
+     3.883564714055503e-15,
+     -4.2868379790252846e-16
+    ],
+    "hmin": 1.0000183859851235
+   },
+   "L=16,phi=0.7,bg=0.8": {
+    "bar": [
+     9.030510238060873e-15,
+     4.63573522849326e-13
+    ],
+    "anker": [
+     4.100453070047382e-15,
+     4.635912339170334e-13
+    ],
+    "voll_psi": [
+     5.010893288195794e-15,
+     -4.524870045587531e-17
+    ],
+    "hmin": 0.7818938326892988
+   },
+   "L=24,phi=0.0,bg=0.0": {
+    "bar": [
+     4.440359383059761e-15,
+     -4.983259425700006e-16
+    ],
+    "anker": [
+     4.081732731215067e-15,
+     -6.708724667733306e-16
+    ],
+    "voll_psi": [
+     4.081732731215067e-15,
+     -1.1303281834067444e-15
+    ],
+    "hmin": 0.9999999999999978
+   },
+   "L=24,phi=0.7,bg=0.0": {
+    "bar": [
+     3.86748348783064e-15,
+     -3.4853092350246225e-16
+    ],
+    "anker": [
+     3.5493898324735632e-15,
+     -4.566934116137346e-16
+    ],
+    "voll_psi": [
+     3.5493898324735632e-15,
+     -1.6225303006162373e-15
+    ],
+    "hmin": 1.0000036386398707
+   },
+   "L=24,phi=0.7,bg=0.8": {
+    "bar": [
+     2.7180943170432876e-14,
+     -1.4789629045959033e-17
+    ],
+    "anker": [
+     1.892381426507617e-14,
+     -1.3845294831322553e-17
+    ],
+    "voll_psi": [
+     2.829244225728586e-14,
+     -9.011762232165125e-14
+    ],
+    "hmin": 0.8435746999681136
+   }
+  },
+  "bilineare_2d": {
+   "L=8,bg=0.0,voll (mit Kontaktkomponente P_+ psi)": {
+    "dim": 513,
+    "asym": 0.5000000000000007,
+    "aher": 0.5000000000000007,
+    "min": -0.999999131905205,
+    "kron": 0.0
+   },
+   "L=8,bg=0.0,Anker (P_- psi)": {
+    "dim": 257,
+    "asym": 3.818283603795215e-16,
+    "aher": 3.818283603795215e-16,
+    "min": 4.653557497024146e-13,
+    "kron": 0.0
+   },
+   "L=12,bg=0.0,voll (mit Kontaktkomponente P_+ psi)": {
+    "dim": 1153,
+    "asym": 0.5000000000000008,
+    "aher": 0.5000000000000008,
+    "min": -0.9999990281712222,
+    "kron": 0.0
+   },
+   "L=12,bg=0.0,Anker (P_- psi)": {
+    "dim": 577,
+    "asym": 5.873211132778272e-16,
+    "aher": 5.873211132778272e-16,
+    "min": 1.2494891570140761e-14,
+    "kron": 0.0
+   },
+   "L=12,bg=0.8,voll (mit Kontaktkomponente P_+ psi)": {
+    "dim": 1153,
+    "asym": 0.5000000000000003,
+    "aher": 0.5000000000000003,
+    "min": -0.9999990315962322,
+    "kron": 0.0
+   },
+   "L=12,bg=0.8,Anker (P_- psi)": {
+    "dim": 577,
+    "asym": 1.2299079341846465e-15,
+    "aher": 1.2299079341846465e-15,
+    "min": 1.4828585250206201e-12,
+    "kron": 0.0
+   }
+  },
+  "gedreht_2d": {
+   "m=0.1,theta=0.0,Lt=16,Theta_D": [
+    1.0406055472948417e-13,
+    0.0
+   ],
+   "m=0.1,theta=0.0,Lt=16,Theta_W": [
+    2.1448249764721903e-14,
+    8.546696927267762e-17
+   ],
+   "m=0.1,theta=0.0,Lt=4096,Theta_D": [
+    2.4694565702787748e-14,
+    0.0
+   ],
+   "m=0.1,theta=0.0,Lt=4096,Theta_W": [
+    4.8810050820086096e-15,
+    0.0
+   ],
+   "m=0.1,theta=0.3,Lt=16,Theta_D": [
+    0.031030701554470772,
+    -1.545228372638838e-06
+   ],
+   "m=0.1,theta=0.3,Lt=16,Theta_W": [
+    2.1058281587181506e-14,
+    9.370188713333991e-17
+   ],
+   "m=0.1,theta=0.3,Lt=4096,Theta_D": [
+    0.031030701554481108,
+    -4.82081615029483e-05
+   ],
+   "m=0.1,theta=0.3,Lt=4096,Theta_W": [
+    4.6295067841931794e-15,
+    0.0
+   ],
+   "m=0.1,theta=1.571,Lt=16,Theta_D": [
+    0.09987523388778786,
+    -1.6045939398730777e-05
+   ],
+   "m=0.1,theta=1.571,Lt=16,Theta_W": [
+    2.1058281587181497e-14,
+    5.175212382772055e-17
+   ],
+   "m=0.1,theta=1.571,Lt=4096,Theta_D": [
+    0.0998752338877853,
+    -0.0005000808484304853
+   ],
+   "m=0.1,theta=1.571,Lt=4096,Theta_W": [
+    3.873189856830625e-15,
+    0.0
+   ],
+   "m=0.1,theta=3.142,Lt=16,Theta_D": [
+    9.599412147766914e-14,
+    4.248154037409696e-17
+   ],
+   "m=0.1,theta=3.142,Lt=16,Theta_W": [
+    2.027834523210071e-14,
+    5.5084629453664283e-17
+   ],
+   "m=0.1,theta=3.142,Lt=4096,Theta_D": [
+    1.0436465680899145e-14,
+    0.0
+   ],
+   "m=0.1,theta=3.142,Lt=4096,Theta_W": [
+    3.4708600997601955e-15,
+    0.0
+   ],
+   "m=0.1,theta=4.0,Lt=16,Theta_D": [
+    0.0732359819275748,
+    -8.617197502173733e-06
+   ],
+   "m=0.1,theta=4.0,Lt=16,Theta_W": [
+    2.0668313409641107e-14,
+    0.0
+   ],
+   "m=0.1,theta=4.0,Lt=4096,Theta_D": [
+    0.0732359819275822,
+    -0.0002687033098185772
+   ],
+   "m=0.1,theta=4.0,Lt=4096,Theta_W": [
+    3.977544693616618e-15,
+    0.0
+   ],
+   "m=0.3,theta=0.0,Lt=16,Theta_D": [
+    1.1923541838702878e-13,
+    0.0
+   ],
+   "m=0.3,theta=0.0,Lt=16,Theta_W": [
+    2.1092412011377056e-14,
+    2.293804250678526e-16
+   ],
+   "m=0.3,theta=0.0,Lt=4096,Theta_D": [
+    1.3657904660494294e-14,
+    0.0
+   ],
+   "m=0.3,theta=0.0,Lt=4096,Theta_W": [
+    4.108166386022116e-15,
+    0.0
+   ],
+   "m=0.3,theta=0.3,Lt=16,Theta_D": [
+    0.10334734270805886,
+    -0.00012345713345885626
+   ],
+   "m=0.3,theta=0.3,Lt=16,Theta_W": [
+    2.1092412011377034e-14,
+    2.186643149620938e-16
+   ],
+   "m=0.3,theta=0.3,Lt=4096,Theta_D": [
+    0.10334734270806067,
+    -0.0006511865376136556
+   ],
+   "m=0.3,theta=0.3,Lt=4096,Theta_W": [
+    4.083900517610548e-15,
+    0.0
+   ],
+   "m=0.3,theta=1.571,Lt=16,Theta_D": [
+    0.2966809058604942,
+    -0.0010735597475597213
+   ],
+   "m=0.3,theta=1.571,Lt=16,Theta_W": [
+    2.0701811788944125e-14,
+    2.754483173932442e-16
+   ],
+   "m=0.3,theta=1.571,Lt=4096,Theta_D": [
+    0.2966809058604979,
+    -0.005420420483412497
+   ],
+   "m=0.3,theta=1.571,Lt=4096,Theta_W": [
+    3.883323920573729e-15,
+    0.0
+   ],
+   "m=0.3,theta=3.142,Lt=16,Theta_D": [
+    8.531142626772902e-14,
+    4.632365266078074e-16
+   ],
+   "m=0.3,theta=3.142,Lt=16,Theta_W": [
+    2.1092412011377043e-14,
+    2.53301975755231e-16
+   ],
+   "m=0.3,theta=3.142,Lt=4096,Theta_D": [
+    1.374544907453063e-14,
+    0.0
+   ],
+   "m=0.3,theta=3.142,Lt=4096,Theta_W": [
+    4.407489610545471e-15,
+    0.0
+   ],
+   "m=0.3,theta=4.0,Lt=16,Theta_D": [
+    0.2056716608691482,
+    -0.0004965479771377338
+   ],
+   "m=0.3,theta=4.0,Lt=16,Theta_W": [
+    2.187361245624286e-14,
+    2.894613719139714e-16
+   ],
+   "m=0.3,theta=4.0,Lt=4096,Theta_D": [
+    0.20567166086916946,
+    -0.002589556176632365
+   ],
+   "m=0.3,theta=4.0,Lt=4096,Theta_W": [
+    4.973175235588502e-15,
+    0.0
+   ],
+   "m=0.6,theta=0.0,Lt=16,Theta_D": [
+    1.4416224975632546e-13,
+    0.0
+   ],
+   "m=0.6,theta=0.0,Lt=16,Theta_W": [
+    2.081426622461786e-14,
+    8.048991586537672e-16
+   ],
+   "m=0.6,theta=0.0,Lt=4096,Theta_D": [
+    1.8375175302566534e-14,
+    0.0
+   ],
+   "m=0.6,theta=0.0,Lt=4096,Theta_W": [
+    4.288658251048827e-15,
+    0.0
+   ],
+   "m=0.6,theta=0.3,Lt=16,Theta_D": [
+    0.24664821413767588,
+    -0.0020270011276549258
+   ],
+   "m=0.6,theta=0.3,Lt=16,Theta_W": [
+    2.1206988228855937e-14,
+    6.94864017009819e-16
+   ],
+   "m=0.6,theta=0.3,Lt=4096,Theta_D": [
+    0.2466482141376757,
+    -0.00380966655442968
+   ],
+   "m=0.6,theta=0.3,Lt=4096,Theta_W": [
+    4.28765747912788e-15,
+    0.0
+   ],
+   "m=0.6,theta=1.571,Lt=16,Theta_D": [
+    0.5746957711326944,
+    -0.017261753728828152
+   ],
+   "m=0.6,theta=1.571,Lt=16,Theta_W": [
+    2.042154422037978e-14,
+    7.118554392097177e-16
+   ],
+   "m=0.6,theta=1.571,Lt=4096,Theta_D": [
+    0.5746957711327011,
+    -0.02142312915244108
+   ],
+   "m=0.6,theta=1.571,Lt=4096,Theta_W": [
+    4.3184506917971644e-15,
+    0.0
+   ],
+   "m=0.6,theta=3.142,Lt=16,Theta_D": [
+    7.720293579142768e-14,
+    1.825918811982841e-15
+   ],
+   "m=0.6,theta=3.142,Lt=16,Theta_W": [
+    2.1206988228855924e-14,
+    7.884366262510174e-16
+   ],
+   "m=0.6,theta=3.142,Lt=4096,Theta_D": [
+    1.6643089917780948e-14,
+    0.0
+   ],
+   "m=0.6,theta=3.142,Lt=4096,Theta_W": [
+    4.9871281364359175e-15,
+    0.0
+   ],
+   "m=0.6,theta=4.0,Lt=16,Theta_D": [
+    0.37297732257743926,
+    -0.005732862745994893
+   ],
+   "m=0.6,theta=4.0,Lt=16,Theta_W": [
+    2.0028822216141714e-14,
+    7.700734445682338e-16
+   ],
+   "m=0.6,theta=4.0,Lt=4096,Theta_D": [
+    0.3729773225774455,
+    -0.008799364472302132
+   ],
+   "m=0.6,theta=4.0,Lt=4096,Theta_W": [
+    5.073222746519018e-15,
+    0.0
+   ]
+  },
+  "gedreht_2d_antiherm_gegen_m": {
+   "m": [
+    0.1,
+    0.3,
+    0.6
+   ],
+   "antiherm": [
+    0.0998752338877853,
+    0.2966809058604979,
+    0.5746957711327011
+   ],
+   "exponent": 0.9779545623599222
+  },
+  "gedreht_2d_spektral": {
+   "chi,theta=0.00,p=0.3": {
+    "err": 2.027581865087871e-15,
+    "wmin": -2.5211836699956834e-17,
+    "aher": 2.4466493456007546e-13,
+    "poles": [
+     0.6614446080924568
+    ]
+   },
+   "chi,theta=0.00,p=-0.3": {
+    "err": 2.2305213113207014e-15,
+    "wmin": -2.4742459308108706e-18,
+    "aher": 2.446649345600754e-13,
+    "poles": [
+     0.661444608092457
+    ]
+   },
+   "chi,theta=0.00,p=1.0": {
+    "err": 8.574135019383823e-14,
+    "wmin": -9.224893480557098e-18,
+    "aher": 3.222174735171885e-13,
+    "poles": [
+     0.45223277617517366
+    ]
+   },
+   "chi,theta=0.00,p=2.5": {
+    "err": 3.084658049077096e-12,
+    "wmin": 0.0,
+    "aher": 6.836057554149945e-13,
+    "poles": []
+   },
+   "chi,theta=0.00,p=-2.0": {
+    "err": 1.6494266583645854e-11,
+    "wmin": 0.0,
+    "aher": 6.460659277609707e-14,
+    "poles": []
+   },
+   "chi,theta=1.20,p=0.3": {
+    "err": 2.0263476557860044e-15,
+    "wmin": -1.6130107029112728e-17,
+    "aher": 3.907558479027922e-13,
+    "poles": [
+     0.661444608092457
+    ]
+   },
+   "chi,theta=1.20,p=-0.3": {
+    "err": 2.033189395518146e-15,
+    "wmin": 0.0,
+    "aher": 3.907558479027922e-13,
+    "poles": [
+     0.661444608092457
+    ]
+   },
+   "chi,theta=1.20,p=1.0": {
+    "err": 8.574135107458856e-14,
+    "wmin": -6.140851700516472e-18,
+    "aher": 8.028911614308082e-13,
+    "poles": [
+     0.45223277617517366
+    ]
+   },
+   "chi,theta=1.20,p=2.5": {
+    "err": 3.08480709616633e-12,
+    "wmin": 0.0,
+    "aher": 4.938856612549729e-13,
+    "poles": []
+   },
+   "chi,theta=1.20,p=-2.0": {
+    "err": 1.649447982064133e-11,
+    "wmin": 0.0,
+    "aher": 5.5149895363874516e-14,
+    "poles": []
+   },
+   "chi,theta=1.57,p=0.3": {
+    "err": 1.4295248323667213e-15,
+    "wmin": 0.0,
+    "aher": 4.0514083928594005e-13,
+    "poles": [
+     0.661444608092457
+    ]
+   },
+   "chi,theta=1.57,p=-0.3": {
+    "err": 1.6230362343822994e-15,
+    "wmin": -3.1052703669662585e-17,
+    "aher": 4.0514083928594005e-13,
+    "poles": [
+     0.661444608092457
+    ]
+   },
+   "chi,theta=1.57,p=1.0": {
+    "err": 8.610855446990073e-14,
+    "wmin": -9.352745878663389e-18,
+    "aher": 5.822970534651765e-13,
+    "poles": [
+     0.45223277617517366
+    ]
+   },
+   "chi,theta=1.57,p=2.5": {
+    "err": 3.0848070948915248e-12,
+    "wmin": 0.0,
+    "aher": 7.728903512641286e-13,
+    "poles": []
+   },
+   "chi,theta=1.57,p=-2.0": {
+    "err": 1.649426658381042e-11,
+    "wmin": 0.0,
+    "aher": 9.388910494874467e-14,
+    "poles": []
+   },
+   "ov,theta=0.00,p=0.3": {
+    "err": 1.6686667597492806e-15,
+    "wmin": 0.0,
+    "aher": 9.588066453360415e-17,
+    "poles": [
+     0.6614446080924568
+    ]
+   },
+   "ov,theta=0.00,p=-0.3": {
+    "err": 1.7878609645912715e-15,
+    "wmin": 0.0,
+    "aher": 1.0762253848581398e-16,
+    "poles": [
+     0.661444608092457
+    ]
+   },
+   "ov,theta=0.00,p=1.0": {
+    "err": 8.726416749734821e-14,
+    "wmin": 0.0,
+    "aher": 4.790628661816581e-17,
+    "poles": [
+     0.45223277617517366
+    ]
+   },
+   "ov,theta=0.00,p=2.5": {
+    "err": 3.0920928184056992e-12,
+    "wmin": 0.0,
+    "aher": 2.190649959767902e-16,
+    "poles": []
+   },
+   "ov,theta=0.00,p=-2.0": {
+    "err": 1.6498857439222773e-11,
+    "wmin": 0.0,
+    "aher": 3.059951010009076e-17,
+    "poles": []
+   },
+   "ov,theta=1.20,p=0.3": {
+    "err": 1.5921416377239838e-15,
+    "wmin": -0.002808926892025361,
+    "aher": 0.24989002930861226,
+    "poles": [
+     0.661444608092457
+    ]
+   },
+   "ov,theta=1.20,p=-0.3": {
+    "err": 1.0714809398960485e-15,
+    "wmin": -0.0028089268920252894,
+    "aher": 0.24989002930861218,
+    "poles": [
+     0.661444608092457
+    ]
+   },
+   "ov,theta=1.20,p=1.0": {
+    "err": 8.575380841255095e-14,
+    "wmin": -0.0004620022422256223,
+    "aher": 0.2891555287449016,
+    "poles": [
+     0.45223277617517366
+    ]
+   },
+   "ov,theta=1.20,p=2.5": {
+    "err": 3.085707300431134e-12,
+    "wmin": 0.0,
+    "aher": 0.2935975794617929,
+    "poles": []
+   },
+   "ov,theta=1.20,p=-2.0": {
+    "err": 1.649323509810937e-11,
+    "wmin": 0.0,
+    "aher": 0.2956532349262123,
+    "poles": []
+   },
+   "ov,theta=1.57,p=0.3": {
+    "err": 1.5067953072032392e-15,
+    "wmin": -0.002891066788786216,
+    "aher": 0.25351740010312135,
+    "poles": [
+     0.661444608092457
+    ]
+   },
+   "ov,theta=1.57,p=-0.3": {
+    "err": 3.0255330764957725e-15,
+    "wmin": -0.002891066788786226,
+    "aher": 0.2535174001031215,
+    "poles": [
+     0.661444608092457
+    ]
+   },
+   "ov,theta=1.57,p=1.0": {
+    "err": 8.960843309064853e-14,
+    "wmin": -0.00047557774661305554,
+    "aher": 0.29337305362173294,
+    "poles": [
+     0.45223277617517366
+    ]
+   },
+   "ov,theta=1.57,p=2.5": {
+    "err": 3.0863867122081917e-12,
+    "wmin": 0.0,
+    "aher": 0.2978825972199384,
+    "poles": []
+   },
+   "ov,theta=1.57,p=-2.0": {
+    "err": 1.6498223461480903e-11,
+    "wmin": 0.0,
+    "aher": 0.29996958815515207,
+    "poles": []
+   }
+  },
+  "gedreht_2d_ortsraum": {
+   "L=12,bg=0.0,theta=0.0,Theta_D": [
+    3.151292758715107e-15,
+    -1.5530449966343006e-16
+   ],
+   "L=12,bg=0.0,theta=0.0,Theta_W": [
+    2.8773959695759945e-15,
+    -1.2649502437158378e-16
+   ],
+   "L=12,bg=0.0,theta=1.571,Theta_D": [
+    0.2966809058604906,
+    -0.002153012296059776
+   ],
+   "L=12,bg=0.0,theta=1.571,Theta_W": [
+    3.1471351459137224e-15,
+    -1.5531630295603906e-16
+   ],
+   "L=16,bg=0.8,theta=0.0,Theta_D": [
+    4.2900014782939136e-15,
+    2.185429292952121e-11
+   ],
+   "L=16,bg=0.8,theta=0.0,Theta_W": [
+    4.23012801567699e-15,
+    2.1854284024764436e-11
+   ],
+   "L=16,bg=0.8,theta=1.571,Theta_D": [
+    0.2966809058604896,
+    -0.0030445898089776313
+   ],
+   "L=16,bg=0.8,theta=1.571,Theta_W": [
+    4.204977541085216e-15,
+    2.1854106223082494e-11
+   ]
+  },
+  "gedreht_2d_reflexionssymmetrie": {
+   "L=12,bg=0.0,theta=0.0,Theta_D": 1.6653404522023532e-15,
+   "L=12,bg=0.0,theta=0.0,Theta_W": 8.051240660769877e-16,
+   "L=12,bg=0.0,theta=1.571,Theta_D": 0.04442040828840663,
+   "L=12,bg=0.0,theta=1.571,Theta_W": 6.6007083079697e-16,
+   "L=16,bg=0.8,theta=0.0,Theta_D": 2.7761000691768152e-15,
+   "L=16,bg=0.8,theta=0.0,Theta_W": 1.9431625346107107e-15,
+   "L=16,bg=0.8,theta=1.571,Theta_D": 0.0536702279640421,
+   "L=16,bg=0.8,theta=1.571,Theta_W": 1.1295700899707568e-15
+  },
+  "majorana_X_spektrum_2d": [
+   0.011572331311638703,
+   0.9993971845525553
+  ],
+  "weyl_4d_scan": {
+   "m0=0.5,Lt=8": 0.00014906333986983419,
+   "m0=0.5,Lt=16": 1.8298062240670125e-06,
+   "m0=0.5,Lt=4096": 7.248022901487193e-08,
+   "m0=1.0,Lt=8": 0.0,
+   "m0=1.0,Lt=16": 0.0,
+   "m0=1.0,Lt=4096": 0.0,
+   "m0=1.5,Lt=8": 4.6571177628545316e-07,
+   "m0=1.5,Lt=16": 1.1041178519184716e-10,
+   "m0=1.5,Lt=4096": 2.4638586565591604e-13
+  },
+  "gedreht_4d": {
+   "theta=0.0,Theta_D": [
+    4.937850469463214e-15,
+    1.6347009742308454e-16
+   ],
+   "theta=0.0,Theta_W": [
+    1.0122080017194952e-15,
+    0.0
+   ],
+   "theta=1.571,Theta_D": [
+    0.2966809058604908,
+    -0.004899686376857424
+   ],
+   "theta=1.571,Theta_W": [
+    9.838396812578493e-16,
+    0.0
+   ],
+   "theta=4.0,Theta_D": [
+    0.20567166086914573,
+    -0.0023391912994129805
+   ],
+   "theta=4.0,Theta_W": [
+    1.9058262156624372e-15,
+    1.89355756311403e-16
+   ]
+  },
+  "spektral_4d": {
+   "p=(0.30,0.00,0.00)": {
+    "err": 3.4141243000683855e-15,
+    "wmin": -8.736809631907275e-17,
+    "aher": 8.829724512855271e-13
+   },
+   "p=(1.00,0.50,0.20)": {
+    "err": 1.683864975608497e-13,
+    "wmin": -9.634075684785197e-17,
+    "aher": 6.033089803771904e-13
+   },
+   "p=(2.50,2.00,0.30)": {
+    "err": 2.8032347270340746e-12,
+    "wmin": 0.0,
+    "aher": 1.1502755899257971e-12
+   },
+   "p=(3.14,0.40,0.00)": {
+    "err": 2.6364635775965392e-12,
+    "wmin": 0.0,
+    "aher": 5.349160278092412e-13
+   },
+   "p=(2.80,2.90,3.00)": {
+    "err": 2.6047902392658157e-12,
+    "wmin": 0.0,
+    "aher": 1.2795428550664048e-12
+   }
+  },
+  "ortsraum_4d": {
+   "4": {
+    "GW": 1.6431316236478533e-14,
+    "RDR": 6.661338147750939e-15,
+    "kontakt": 1.5543125139813567e-15,
+    "hmin": 1.014022007048302,
+    "weyl_bar": [
+     5.058645805470004e-15,
+     0.00026070862367358057
+    ],
+    "weyl_anker": [
+     4.550453855785054e-15,
+     0.00026070862367344846
+    ],
+    "ThetaD_pi2": [
+     0.29668090586049084,
+     -0.00016628191193331367
+    ],
+    "ThetaW_pi2": [
+     1.1752524594353236e-14,
+     0.000278142802606192
+    ]
+   },
+   "8": {
+    "GW": 2.398081772450794e-14,
+    "RDR": 1.0436096431476471e-14,
+    "kontakt": 2.831074402890661e-15,
+    "hmin": 1.0041789729302695,
+    "weyl_bar": [
+     5.201779431163033e-15,
+     3.5083540814556676e-08
+    ],
+    "weyl_anker": [
+     6.814974720401497e-15,
+     3.5083540243991094e-08
+    ],
+    "ThetaD_pi2": [
+     0.2966809058604902,
+     -0.0007379049021955998
+    ],
+    "ThetaW_pi2": [
+     6.345449114289581e-15,
+     4.921376736845375e-08
+    ]
+   }
+  },
+  "einordnung": {
+   "V_spannweite_GJ": 2.220446049250313e-16,
+   "V_spannweite_Wilson_twisted": 0.4501893119664606,
+   "index_GJ_wirbel": {
+    "1": 1,
+    "0": 0,
+    "2": 2,
+    "-1": -1
+   },
+   "D_c_schwanz": {
+    "0.5": {
+     "Dc_exponent": -1.0034463183763183,
+     "D_rate": -0.8080046536801195,
+     "Dc_bei_64": 0.04926542735356173,
+     "D_bei_16": 5.510151919524185e-07
+    },
+    "1.0": {
+     "Dc_exponent": -1.0037927424392914,
+     "D_rate": -0.7867919968730194,
+     "Dc_bei_64": 0.04222947622264549,
+     "D_bei_16": 4.086191306213536e-07
+    },
+    "1.5": {
+     "Dc_exponent": -1.0042573220836697,
+     "D_rate": -0.506821984227941,
+     "Dc_bei_64": 0.035193525091728725,
+     "D_bei_16": 1.6518788044479884e-05
+    }
+   }
+  },
+  "teil6_J": {
+   "J2_rest": 0.0,
+   "Q_minus_P-": 0.9986211815231685,
+   "D_halbe": 0.9986211815231683,
+   "J_D_rest_wirkung": 1.9876440280305534,
+   "J_D_rest_korrelator": 2.0181174586576565,
+   "J_W_rest_wirkung": 5.697660367415846e-14,
+   "J_W_rest_korrelator": 6.25653053127087e-14,
+   "impulsaufgeloest": {
+    "(0,05;0,02,0,0)": {
+     "abs_p": 0.05385164807134505,
+     "D_halbe": 0.02692566169666285,
+     "J_D_rest": 0.025857619575047477,
+     "J_W_rest": 9.223536720185377e-16
+    },
+    "(0,2;0,1,0,0)": {
+     "abs_p": 0.223606797749979,
+     "D_halbe": 0.11186229012465174,
+     "J_D_rest": 0.15691108854434188,
+     "J_W_rest": 8.230939405937218e-16
+    },
+    "(1;0,5,0,2,0)": {
+     "abs_p": 1.1357816691600546,
+     "D_halbe": 0.5597270715747078,
+     "J_D_rest": 1.0983611423442179,
+     "J_W_rest": 8.023931357179435e-17
+    },
+    "(pi-0,05;0,03,0,0)": {
+     "abs_p": 3.091738206208666,
+     "D_halbe": 0.9995756065181337,
+     "J_D_rest": 1.9991360416843753,
+     "J_W_rest": 6.637408976373031e-15
+    }
+   },
+   "J_W_kern_exponent_4d": -3.1764054091935336,
+   "D_rate_4d": -1.0176418228530086,
+   "Theta_W_J_kommutator": 0.0
+  }
+ }
+}

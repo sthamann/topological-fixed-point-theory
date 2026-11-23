@@ -1,6 +1,110 @@
 # Urteil
 
-## Aktueller Stand: H6h13 — die vier Entscheidungen und die TOE-Lückenkarte (`z21`–`z24`)
+## Aktueller Stand: H6h14 — drei falsifizierende Tests (`z25` RG, `z26` Lüscher, `z27` Sakharov)
+
+Bilanz jetzt 14 P und 6 L von 20: K15 fällt von P auf L. Die drei Tests liefen parallel und wurden
+danach selbst nachgerechnet; Text und JSON sind identisch bis auf Laufzeitangaben.
+
+**In einem Satz:**
+- Der RG-Test trifft H6: „an der Gitterskala induziert und gleich“ fällt gegen die Daten; es bleibt
+  nur eine nackte SO(10) an der Gitterskala, und dann entscheidet Hyper-K.
+- Lüschers Weylfelder sind reflexionspositiv, auch bei gedrehter Phase und mit exakter J. Das gibt
+  Entscheidung 4 einen zweiten Weg ohne Abstimmung, aber mit nichtlokalem Transfer.
+- Sakharov gegen Jacobson entscheidet nicht; die Gitter-Metrikkopplung ist die fehlende Größe.
+
+**1. RG-Test (`z25`, 21 Prüfungen).** Frage: Passen die gemessenen Kopplungen zu H6s Aussage aus
+y1, dass die Eichkopplungen an der Gitterskala induziert werden und dort gleich sind
+(sin²θ_W = 3/8)? Gitterskala nach z2 mit ℓ_P² = G: 1/a = 7,4·10¹⁸ / 1,1·10¹⁸ / 8,6·10¹⁷ GeV für
+a/ℓ_P = 1,65 / 10,8 / 14,3. Kalibriert gegen v246 und v266, zwei Schleifen mit Top-Yukawa.
+- **Reines SM (Higgs importiert): Kill.** Spreizung an 1/a Δα⁻¹ = 19,0 / 15,6 / 15,1,
+  sin²θ_W(1/a) ≈ 0,45 statt 0,375.
+- **Zwischeninhalt aus E₈ ({1, 10, 16, 45}, kein 126):** Pati–Salam mit vollständigen Multipletts
+  vereinigt höchstens bei 1,1·10¹⁶ GeV (zwei Schleifen, 13 440 Inhalte), Faktor 33 unter dem
+  Fenster. Ohne neue Eichbosonen kommen E₈-Fragmente ab 1 TeV höchstens bis 5,2·10¹⁷ GeV.
+  Gleichheit genau an 1/a geht nur mit gespaltenen Multipletts (Farboktett und Farbtripletts bei
+  TeV bis 10⁵ GeV); protonsicher nur am Rand (κ = 1,08, etwa acht Farbskalare bei 1 TeV), und
+  dann ohne sichtbaren Protonzerfall (τ_p ~ 10⁴⁴ a).
+- **SO(10) unterhalb, eine Kopplung bis 1/a:** Gleichheit ist dann automatisch, aber der Wert
+  widerspricht der Induktion. Die RG gibt α_U⁻¹(1/a) = 60–74, die y1-Formel
+  1/g² = Σ w_f κ(a m_f) (Steigung 0,277 reproduziert) für den H6-Inhalt höchstens 23 (großzügig)
+  bzw. etwa 4 (naiv, alle Geschmäcker leicht). Die induzierte Kopplung ist an der Gitterskala
+  stark (g ≈ 1,7 bis 7), nicht g ≈ 0,55. Kein a/ℓ_P schließt die Lücke.
+- **Querbefund zu v266 (PS.THRESHOLD.02, PS.PROTON.02).** v266 zählt (15,1,1) als komplexen
+  Skalar (Δb₄ = 4/3), das sind zwei reelle Adjungierte. E₈ liefert nur eine reelle 45
+  (Δb₄ = 2/3). Damit sinkt τ_p schon in einer Schleife von 1,6·10³⁵ auf 2,2·10³⁴ a, unter
+  Super-K. In zwei Schleifen sind beide v266-Inhalte ausgeschlossen (2,5·10³² und 7,2·10³³ a).
+  Mit κ ∈ [1; 1,7] überleben 101 andere E₈-Inhalte mit τ_p = 0,9–3,5·10³⁴ a; Hyper-K entscheidet
+  sie alle. Ledger nicht geändert.
+- **Urteil:** H6s Lesart „an der Gitterskala induziert und gleich“ fällt in der gebauten Form.
+  Überleben kann sie nur als nackte SO(10)-Gitterkopplung: Dann ist sin²θ_W = 3/8 von SO(10)
+  geerbt, nicht induziert, und es braucht 45 Eichbosonen, die der 3+2-Split nicht liefert
+  (z15-Fixpunkt dann a/ℓ_P ≈ 16–20, außerhalb des Fensters). Vorhersage in diesem Zweig:
+  p → e⁺π⁰ unterhalb 3,5·10³⁴ a, also bei Hyper-K.
+
+**2. Lüschers projizierte Weylfelder (`z26`, 34 Prüfungen).** Frage aus z19/z21: Kann ein chiraler
+Regler positiv sein? Freier abelscher Fall, Overlap mit Lüschers Projektoren, 2D und 4D, kalibriert
+gegen Wilson (r = 1 positiv, r = 2 nicht) und den vollen Overlap (positiv).
+- **Positiv.** Alle linearen OS-Formen der Weylfelder sind unter der Linkreflexion ≥ 0: 42 456
+  Formen über m₀ = 0,5–1,9, L_t bis 4096, Holonomien und Abstände; die Spektralgewichte (Pol plus
+  Schnitt) sind positiv-semidefinit, in 4D ebenso (Impulsraum und Ortsraum 8×4³). Negative Werte
+  liegen nur in der Rundung.
+- **Feinheit.** Θ bildet Lüschers Raum (P̂₋, P₊) nicht auf sich ab, die Abweichung ist ‖D‖/2. Exakt
+  gilt S_W = P₊/2·δ + P₋D⁻¹P₊: Die ganze Abweichung ist ein Kontaktterm, und die Ankeralgebra
+  {ψ̄P₊, P₋(1 − D/2)ψ} ist abgeschlossen und positiv.
+- **Gedrehte Phase.** Die Lüscher-Paarung mit Phase θ ist genau die GW-chirale Drehung. Die
+  Reflexion auf ψ (Θ_D, wie z19) verletzt dort die Positivität, linear in am (z19-Wert in 4D
+  reproduziert). Die Reflexion auf χ = (1 − D/2)ψ (Θ_W) ist für jedes θ, m und L positiv, weil die
+  Drehung auf χ ortslokal als e^{iθγ₅} wirkt. Das Phasenpotential ist flach (Spannweite 2·10⁻¹⁶
+  gegen 0,45 bei Wilson), und der Index ist gleich der Windung (1, 0, 2, −1).
+- **Gilt das für H6s G selbst?** Ja (Teil 6). G hat zwei Weylfelder gleicher Chiralität mit
+  J: ψ → χ → −ψ. In der Diraclesart Ψ = (ψ, χ^c) ist die Gitter-J algebraisch exakt (J² = −1,
+  J vertauscht mit U(1)_A und Θ_W), in Lüschers Originalvariablen aber um O(a) gebrochen: J bildet D
+  auf −D† ab, der Bruch D†D ist der Wilson-artige Teil des Overlap. In den Ankervariablen (χ, Ψ̄)
+  sind J, U(1)_A (quantisiert) und Θ_W zugleich exakt. Die Majoranaform X aus z19 wird also nicht
+  erzwungen; nur in der Majorana-Lesart mit lokaler J bleibt die Verletzung aus z19.
+- **Preis.** In den Ankervariablen ist die Wirkung ψ̄(D_c + m e^{iθγ₅})χ mit D_c = D(1 − D/2)⁻¹
+  exakt chiral und potenzartig nichtlokal (D_c ~ x⁻¹ in 2D, Pole an den Verdopplern); in
+  Ψ-Variablen ist J_W nichtlokal (x^−3,18 in 4D), der Overlap selbst exponentiell lokal. Der
+  Transfer hat je Impuls ein Kontinuum.
+- **Einordnung ins z24-Trilemma.** Kein Widerspruch: z24 schließt eine *lokale* positive
+  Transfermatrix aus. z26 zeigt, dass der nichtlokale Ausweg nicht positivitätsverletzend sein muss
+  (Korrektur zu z19, „wandfrei nur nichtlokal *oder* positivitätsverletzend“). Entscheidung 4 hat
+  damit zwei saubere Wege: lokal mit zwei abgestimmten Gegentermen, oder Lüscher–GW ohne Abstimmung
+  mit nichtultralokaler Wirkung. Unter der strengen Gitterlesart QFT4D.LATTICE.FUNDAMENTAL.01 (lokale
+  hermitesche H) ist nur der erste zulässig.
+- **Grenzen.** Frei, fester Hintergrund, keine Eichfeldintegration und keine komplexe
+  Weyl-Determinante; Teil 6 ohne Holonomie, weil J die Vektorladung umkehrt. Querbefund 6.b aus z21
+  (θ_eff = 0 über RP) könnte damit auch im GW-Zweig tragen; das ist nicht gerechnet.
+
+**3. Sakharov gegen Jacobson (`z27`, 15 Prüfungen).** Frage: Gibt derselbe Gitterregler für den
+H6-Inhalt dieselbe Planckeinheit aus der Verschränkung (κ/a², Jacobson) und aus der induzierten
+Wirkung (1/(4G_ind), Sakharov)? Sakharov-Seite: Antwort der Grundzustandsenergie auf eine schwache
+statische TT-Metrik im Hamiltonschen ℤ³ wie z2/z15, σ = a²/(4G_ind). Der Kegel wäre zirkulär.
+- **Kalibrierung besteht.** Im Kontinuum gilt die Identität für Skalar und Dirac (R = 1), für
+  Vektoren nur mit Kabats Kontaktterm. Auf dem Gitter treffen beide Seiten den universellen
+  m² ln m-Teil: Skalar 0,01326 / 0,01324 gegen 1/(24π), naives Dirac 0,212 / 0,211 gegen 8/(12π).
+- **Der Teil, der a/ℓ_P festlegt, ist nicht universell.** Er hängt stärker davon ab, wie das
+  Hüpfen in Ordnung a²∂² an die Metrik koppelt, als vom Feldinhalt, weil das Gittervakuum einen
+  Schermodul der Ordnung 1/a⁴ trägt. In der kanonischen Kopplung: R = κ/σ = 1,42 (Skalar),
+  1,61 (naives Dirac), 0,76–2,47 (Wilson), H6 gesamt 1,18–2,29. Über alle natürlichen
+  Kopplungen reicht R_ges von −4,6 bis 2,3; R = 1 liegt für jedes Feld in der Spanne.
+- **Robust:** Eichfelder ohne Randterm verfehlen R = 1 in jeder Kopplung um mehr als Faktor 10.
+  Unter D ist der Gitterrand (Shannon-Term) also notwendig, wie bei Donnelly–Wall. Und jedes Feld
+  erzeugt einen gradientenfreien TT-Term, gelesen als Gravitonmasse an der Gitterskala.
+- **Urteil:** Unentschieden mit benanntem Grund. D ist nicht widerlegt, a/ℓ_P wird keine
+  Vorhersage. Fordert man R = 1, folgt a/ℓ_P = 2√σ = 7,1–8,6 (kanonisch, dann g(1/a) = 0,8–2,2),
+  7,1–15,3 mit lokal abgezogenem Vakuum. Entscheiden würde eine Gitter-Wardidentität für die
+  Metrikkopplung; dieselbe Struktur braucht T7 für einen Spin-2-Pol, und der TT-Massenterm muss
+  wie Λ abgestimmt werden.
+
+**4. Bilanz.**
+- K15 (Eichdynamik) P → L: Die Yang-Mills-Struktur aus Fermionschleifen bleibt; gleich und
+  datenverträglich sind die Kopplungen an 1/a nur unter der Lesart „nackte SO(10)-Gitterkopplung“.
+- K13 (Gravitation) bleibt L, jetzt mit dem Z27-Befund.
+- K16 (Kontinuum, Positivität) bleibt L. Die Lesart ist jetzt „physisches Gitter mit zwei
+  Gegentermen oder nichtultralokale Lüscher–GW-Wirkung“ statt nur des ersten Wegs.
+
+## Davor: H6h13 — die vier Entscheidungen und die TOE-Lückenkarte (`z21`–`z24`)
 
 Bilanz unverändert bei 15 P und 5 L von 20. Drei Fragen liefen parallel und wurden danach selbst
 nachgerechnet: z21 (Lückenkarte), z22 (Prinzip U(1)_J) und z23 (die zwei 16er). Alle drei liefern

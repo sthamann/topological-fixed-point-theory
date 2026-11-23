@@ -127,10 +127,10 @@ Ursprung sollte beides zugleich liefern.
 
 ### Kandidat H6: Ursprung von P1 aus einer hintergrundfreien Naht (Exploration 23.11.)
 
-Quelle: `experiments/exploration/2026-11-23-phasenraum-f5-holocode/VERDICT.md` (Stand H6h13),
-Skripte `n1`, `v1`, `y1`, `z1`–`z24`, Lean-Vertrag `experiments/theory-contracts/h6-exakte-teile-20261123/`; Atlasproblem `problem:c3-p1-p2-shared-origin-reconciliation`,
-Befunde mit Präfix `h6`. Nichts davon ist im Ledger befördert. Prüfstand mit 20 Kriterien: 15
-hergeleitet, 5 unter benannter Lesart, keines gescheitert, offen oder gesetzt.
+Quelle: `experiments/exploration/2026-11-23-phasenraum-f5-holocode/VERDICT.md` (Stand H6h14),
+Skripte `n1`, `v1`, `y1`, `z1`–`z27`, Lean-Vertrag `experiments/theory-contracts/h6-exakte-teile-20261123/`; Atlasproblem `problem:c3-p1-p2-shared-origin-reconciliation`,
+Befunde mit Präfix `h6`. Nichts davon ist im Ledger befördert. Prüfstand mit 20 Kriterien: 14
+hergeleitet, 6 unter benannter Lesart, keines gescheitert, offen oder gesetzt.
 
 - **Prämissen:**
   - **A\*:** Die Naht hat keine Hintergrundgeometrie; Basiswechsel sind Symmetrien, die Form
@@ -151,8 +151,13 @@ hergeleitet, 5 unter benannter Lesart, keines gescheitert, offen oder gesetzt.
     Familienindex H⁰(K(D)) = 3 (ker D₋ = 0) mit Charakteren {−1, i, −i}. [E]
   - Λ²₊ = Λ²(Familien), also d = 4; Lipschitzgitter ℤ⁴ mit gleichwertigen Achsen. [E/C]
   - Lorentz bei Dimension ≤ 4 ohne Feinabstimmung; Reflexionspositivität über T². [E, perturbativ]
-  - Yang–Mills aus Fermionschleifen über die lokale 3+2-Verbindung, sin²θ_W = 3/8 an der
-    Gitterskala. [E im Modell]
+  - Yang–Mills aus Fermionschleifen über die lokale 3+2-Verbindung. [E im Modell] Die Lesart, die
+    Kopplungen würden an der Gitterskala induziert und seien dort gleich (sin²θ_W = 3/8), fällt
+    gegen die Daten (Z25, zwei Schleifen): Das SM spreizt an 1/a um Δα⁻¹ = 15–19, E₈-Zwischeninhalt
+    mit vollständigen Multipletts vereinigt höchstens bei 1,1·10¹⁶ GeV, und die induzierte Kopplung
+    ist an 1/a stark (α⁻¹ ≤ 23 gegen 60–74 aus der RG). Überleben kann sie nur mit SO(10) als
+    nackter Eichgruppe (45 Eichbosonen, nicht aus dem 3+2-Split); dann liegt p → e⁺π⁰ unter
+    3,5·10³⁴ a, also bei Hyper-K. [N/X]
   - Unter D liegt der Gitterabstand oberhalb der Planckskala: robust a/ℓ_P ≥ 1,65 (bosonischer
     Sockel ohne Randterm); die genaue Zahl hängt am Regulator. [N]
   - Die Naht ist ein verdrillter Defekt mit einer chiralen Mode je Fermion mit Spin-ℤ₄-Ladung 1.
@@ -161,9 +166,13 @@ hergeleitet, 5 unter benannter Lesart, keines gescheitert, offen oder gesetzt.
     ist der relevante Operator Λ² Re(Φ²) (ΔV = 0,254 m², auch für die lokale GJ-Form). Satz: Eine
     exakte ortslokale U(1) mit geladenem Φ lässt einem gegappten Wirbel keinen Index
     (Nielsen–Ninomiya). Geschützte Naht, lokale positive Transfermatrix und flache Phase ohne
-    Abstimmung schließen sich daher aus. Der Standardweg sind zwei abgestimmte Gegenterme
+    Abstimmung schließen sich daher aus. Der lokale Weg sind zwei abgestimmte Gegenterme
     (Re Φ², Re Φ⁴) wie die kritische Masse bei Wilson-QCD; U(1)_J ist flach, schützt den Index
-    aber nicht (Z22, Z24). [N/E]
+    aber nicht (Z22, Z24). Der nichtlokale Weg ist positiv (Z26): Lüschers projizierte Weylfelder
+    sind reflexionspositiv, bei gedrehter Phase unter der Reflexion auf χ = (1 − D/2)ψ; die Phase
+    ist flach, der Index gleich der Windung, und H6s J ist in diesen Variablen exakt. Preis: Die
+    Wirkung in χ ist potenzartig nichtlokal und der Transfer hat ein Kontinuum, unter der strengen
+    Gitterlesart (lokale hermitesche H) also unzulässig. [N/E, frei]
   - Gerechnet ist der Zufluss der SO(2)-Ladung und die Gravitationsanomalie: c = 0,4994 und
     h_R = 1/16 je Paar, also c = 8 und h_R = 1 für 16 Paare. Die Volumenwand trägt die Chernzahl 1
     je Windung, also c_Wand = c_Naht. Der Fluss in Krümmung ist nicht gerechnet. [N/E]
@@ -187,6 +196,11 @@ hergeleitet, 5 unter benannter Lesart, keines gescheitert, offen oder gesetzt.
   - Satzzahl: Gleichförmig drei Sätze widersprechen α unter der Lesart EM1. Offen bleibt der Zweig
     mit zwei verborgenen Sätzen; entscheidend ist c₋/k. [N/C]
   - a/ℓ_P mit vollem Feldinhalt: im H6-Schema etwa 10,8; über Regulatoren hinweg nicht festgelegt. [N]
+    Sakharov gegen Jacobson im selben Regler entscheidet nicht (Z27): Der universelle m² ln m-Teil
+    stimmt auf beiden Seiten, der Flächenkoeffizient hängt aber stärker von der Metrikkopplung des
+    Gitters ab als vom Feldinhalt (R = κ/σ für H6 1,18–2,29 kanonisch, −4,6 bis 2,3 über alle
+    Regeln). Robust: Eichfelder brauchen unter D den Randterm, und das Gitter erzeugt einen
+    gradientenfreien TT-Term (Gravitonmasse auf Gitterskala). D ist nicht widerlegt. [N]
   - Der KMS-Zustand bei β = L ist eindeutig der Zustand größter Entropie bei mittlerer Energie null
     (Gibbs). [E]
   - Lean (87 Theoreme, ohne sorry): Viertelsektoren, Familiencharaktere, 3+2, ℤ₁₆-Arithmetik,
@@ -201,8 +215,14 @@ hergeleitet, 5 unter benannter Lesart, keines gescheitert, offen oder gesetzt.
   - Die Wand am Schnitt hängt nicht am Wilson-Regulator allein: Unter G ist sie für jede lokale
     Form ein relevanter Operator (Z24).
   - Ein gemeinsames Multiplett für Naht und Familien (Z18) liefert keine chiralen Familien (Z23).
+  - Wandfrei ist nicht nur „nichtlokal oder positivitätsverletzend“ (Z19): Lüschers Weylfelder
+    sind wandfrei und positiv, wenn man auf χ = (1 − D/2)ψ reflektiert (Z26).
   - Die ℤ₁₆-Bedingung erzwingt die 16 nur in der partnerfreien Fassung.
   - Die Untergrenze a/ℓ_P ≥ 3,3 gilt nur für die gerechneten Regulatoren.
+  - sin²θ_W = 3/8 ist bei H6 nicht induziert mit den Daten verträglich, sondern nur von einer nackten
+    SO(10) geerbt (Z25). Nebenbefund: v266 zählt (15,1,1) komplex; mit der einen reellen 45 aus E₈
+    und zwei Schleifen sind beide v266-Inhalte von Super-K ausgeschlossen (PS.PROTON.02 im Ledger
+    unverändert, Prüfung offen).
 - **Offen:**
   - Was die primitive Ladung bzw. den Sektor 1 und genau einen windenden Block wählt: Keine
     Grundzustandsregel gefunden; Lesarten sind ein Ordnungsfeld ohne Mittelwert oder N_fam = 3k
@@ -214,9 +234,12 @@ hergeleitet, 5 unter benannter Lesart, keines gescheitert, offen oder gesetzt.
     ihr Grund nicht).
   - c₋/k der Naht (Satzzahl).
   - Der gravitative Fluss in Krümmung.
+  - Eine Gitter-Wardidentität für die Metrikkopplung bis O(a²∂²): Sie entscheidet Sakharov gegen
+    Jacobson und damit a/ℓ_P (Z27); dieselbe Struktur braucht ein Spin-2-Pol (T7).
   - Die Valenzformel in Lean.
-  - Nichtperturbative Universalität, chirale Gitterformulierung und Reflexionspositivität für einen
-    chiralen Regulator; Entscheidung 4 ist dieses Problem selbst (Z24).
+  - Nichtperturbative Universalität und eine chirale Gitterformulierung mit Eichfeldintegration;
+    Entscheidung 4 ist dieses Problem selbst (Z24). Frei ist ein positiver chiraler Regler gezeigt
+    (Z26); offen sind der wechselwirkende Fall und ob H6 eine nichtultralokale Wirkung zulässt.
   - θ₁₃ und δ aus TFPTs Kanälen (sin²θ₁₃ = 0,0231; 1,1σ bis 2,2σ je nach Datensatz laut externer
     Prüfung; δ = 240° ist ein zugewiesener Texturwert).
   - Ein gemeinsamer Elternoperator.

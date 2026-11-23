@@ -1,0 +1,576 @@
+{
+ "checks": {
+  "Kontinuum: Kegel-Bildmethode Skalar/Dirac/Vektor exakt (Kabat -6)": true,
+  "Kontinuum: a_1 auf S^2 (Skalar 1/3, Spinor -1/3, 1-Form -4/3)": true,
+  "Gitter: Blase + Kontaktterme = direkte Diagonalisierung (Skalar, Wilson, Photon; Regeln K, P, D)": true,
+  "Quadratur: gleichmäßiges Gitter = Gauß-Legendre für e_2 (rel. < 1e-3)": true,
+  "Universell Skalar: m^2 ln m beider Seiten = 1/(24 pi) (je < 2 %)": true,
+  "Universell Dirac (naiv, 8 Geschmäcker): m^2 ln m beider Seiten = 8/(12 pi) (je < 3 %)": true,
+  "Reproduktion: kappa_s(0) wie Z15 und kappa_naiv(0) wie Z2 (< 2e-5 bzw. < 2e-4)": true,
+  "Quadratur konvergiert (Photon 1e-4, Wilson 1e-5)": true,
+  "kappa_Wilson aus Z15 nachgerechnet (< 1e-3)": true,
+  "Gitter bricht die Identität in K für Skalar und naives Dirac (R zwischen 1,2 und 2): negativer Befund festgestellt": true,
+  "Kontinuum-TT-Blase: Skalar -1/120 und 11/3360 analytisch, Photon k^2 = 3/280": true,
+  "Randterm s(g) wie Z15 (g = 0,55)": true,
+  "Eichfeld ohne Randterm: |R| < 0,1 in allen Regeln (negativer Befund)": true,
+  "kappa_gesamt des H6-Schemas wie Z15 (< 1e-6)": true,
+  "Gesamtbilanz berechnet: R_gesamt über die natürlichen Regeln oberhalb und unterhalb von 1": true
+ },
+ "befunde": {
+  "R = 1 liegt je Feld innerhalb der Kopplungsmehrdeutigkeit": true,
+  "Kopplungsmehrdeutigkeit übersteigt die Abweichung von R = 1": true,
+  "Gitter erzeugt gradientenfreien TT-Term (Gravitonmasse an der Gitterskala)": true,
+  "R_gesamt = 1 in der kanonischen Kopplung K bei g = 0,55 (auf 20 %)": true,
+  "R_gesamt != 1 robust über alle natürlichen Kopplungen": false,
+  "a/l_P aus Sakharov = Jacobson als Vorhersage (Spanne unter Faktor 1,5 über alle Regeln)": false,
+  "a/l_P bei R = 1 in K enger als die Z15-Spanne 3,3 bis 14,3": true,
+  "schwere Eltern verschieben R_gesamt in K um mehr als 10 %": false
+ },
+ "urteil": "Sakharov gegen Jacobson ist auf dem H6-Gitter nicht entscheidbar, mit benennbarem Grund. Der universelle Teil der Identität gilt im selben Regler (m^2 ln m: Skalar 0,0133/0,0132, naives Dirac 0,212/0,211 gegen 1/(24 pi) bzw. 8/(12 pi)). Der nicht-universelle Flächenkoeffizient a^2/(4 G_ind), der a/l_P festlegt, hängt aber um mehr als eine Größenordnung und im Vorzeichen davon ab, wie das Hüpfen in Ordnung a^2 d^2 an die Metrik koppelt, weil das Gittervakuum einen Schermodul der Ordnung 1/a^4 trägt. In der kanonischen Kopplung bricht das Gitter die Identität: R = 1,42 (Skalar), 1,61 (naives Dirac), 0,76 bis 2,47 (Wilson, je nach c_W), für den H6-Inhalt R_ges = 1,18 bis 2,29 bei g = 0,55. Eichfelder ohne Randterm verfehlen R = 1 in jeder Regel um mehr als Faktor 10; unter D ist der Gitterrand also notwendig. Über die natürlichen Kopplungen liegt R = 1 innerhalb der Mehrdeutigkeit. D ist daher nicht widerlegt, a/l_P wird aber keine Vorhersage: Fordert man R = 1, gilt a/l_P = 2 sqrt(sigma) = 7,1 bis 8,6 in der kanonischen Kopplung (dort mit g(1/a) = 0,83 bis 2,19 statt etwa 0,55), 7,1 bis 15,3 mit lokal abgezogenem Vakuum und bis 56, wenn die Vakuumenergie an Metrikgradienten koppelt. Es fehlt eine Gitter-Wardidentität für die Metrikkopplung; dieselbe Struktur braucht T7 für einen Spin-2-Pol.",
+ "zahlen": {
+  "kalibrierung_universell": {
+   "skalar_verschraenkung": 0.013263089028198243,
+   "skalar_sakharov": 0.013234657291384249,
+   "ziel_skalar": 0.013262911924324612,
+   "naivdirac_verschraenkung": 0.21212135554610267,
+   "naivdirac_sakharov": 0.21092974491727137,
+   "ziel_naivdirac": 0.2122065907891938,
+   "kappa_s0_fit": 0.024261955944098235,
+   "kappa_naiv0_fit": 0.7865833546956218
+  },
+  "kalibrierung_kontinuum": {
+   "bildmethode_max_abw": 5.329070518200751e-15,
+   "S2_a1": [
+    0.3334000127016452,
+    -0.3333666746059407,
+    -1.333199974596937
+   ],
+   "R_kontinuum": {
+    "skalar": 1.0,
+    "dirac": 1.0,
+    "vektor_ohne_rand": -0.5,
+    "vektor_mit_kontakt": 1.0
+   }
+  },
+  "sigma_je_feld": {
+   "skalar": {
+    "K": 0.01708628819613947,
+    "P_kov": 0.6421590936846542,
+    "P_no": 0.01708628819613947,
+    "D_kov": -2.976101314173958,
+    "D_no": 0.14926271326861487
+   },
+   "skalar_m0.5": {
+    "K": 0.0122938994445577,
+    "P_kov": 0.6233384463527453,
+    "P_no": 0.0122938994445577,
+    "D_kov": -2.921750690358382,
+    "D_no": 0.13347204418255687
+   },
+   "wilson_cW0.0": {
+    "K": 0.08948101162922986,
+    "P_kov": 0.08948101162922986,
+    "P_no": 0.08948101162922986,
+    "D_kov": 2.1953825664582336,
+    "D_no": 0.5933375153067233
+   },
+   "wilson_cW0.0_m0.5": {
+    "K": 0.05188366618682938,
+    "P_kov": 0.05188366618682938,
+    "P_no": 0.05188366618682938,
+    "D_kov": 1.8710469310547546,
+    "D_no": 0.4943932461383993
+   },
+   "wilson_cW0.5": {
+    "K": 0.13752727609943627,
+    "P_kov": 0.13752727609943627,
+    "P_no": 0.13752727609943627,
+    "D_kov": 10.983698820697736,
+    "D_no": 0.6840004490152729
+   },
+   "wilson_cW0.5_m0.5": {
+    "K": 0.0754375498837494,
+    "P_kov": 0.0754375498837494,
+    "P_no": 0.0754375498837494,
+    "D_kov": 10.80998683725281,
+    "D_no": 0.5377383881596653
+   },
+   "wilson_cW1.0": {
+    "K": 0.29148630207278053,
+    "P_kov": 0.29148630207278053,
+    "P_no": 0.29148630207278053,
+    "D_kov": 25.850484434902278,
+    "D_no": 1.0546971956682187
+   },
+   "wilson_cW1.0_m0.5": {
+    "K": 0.15708049864070606,
+    "P_kov": 0.15708049864070606,
+    "P_no": 0.15708049864070606,
+    "D_kov": 25.843658297182685,
+    "D_no": 0.7454185744615595
+   },
+   "photon": {
+    "K": 0.8396047924576707,
+    "P_kov": -1.5285106676238709,
+    "P_no": 2.2219261653072864,
+    "D_kov": -1.528510667590606,
+    "D_no": 2.221926165340551
+   }
+  },
+  "vakuum_je_feld": {
+   "skalar": {
+    "e0_blase": -0.010518270571162789,
+    "kontakt_ganz": 0.24870856696453975,
+    "kontakt_halb": -0.04974171339290796,
+    "rho": 1.1938011214297914,
+    "e0_LV": 0.4868988633579169
+   },
+   "skalar_m0.5": {
+    "e0_blase": -0.009643054557677893,
+    "kontakt_ganz": 0.24312690022446398,
+    "kontakt_halb": -0.04862538004489278,
+    "rho": 1.2216345717858865,
+    "e0_LV": 0.490267108568365
+   },
+   "wilson_cW0.0": {
+    "e0_blase": -0.040095647072534206,
+    "kontakt_ganz": -0.1274866944733356,
+    "kontakt_halb": 0.0,
+    "rho": -6.5569916328352384,
+    "e0_LV": -1.8068302497546793
+   },
+   "wilson_cW0.0_m0.5": {
+    "e0_blase": -0.03521380937579187,
+    "kontakt_ganz": -0.10955061944005529,
+    "kontakt_halb": 0.0,
+    "rho": -7.462143840434301,
+    "e0_LV": -2.0103003889244224
+   },
+   "wilson_cW0.5": {
+    "e0_blase": -0.04348697881000642,
+    "kontakt_ganz": -0.8196239541044048,
+    "kontakt_halb": 0.0,
+    "rho": -6.5569916328352384,
+    "e0_LV": -2.502358841123221
+   },
+   "wilson_cW0.5_m0.5": {
+    "e0_blase": -0.036788750071423834,
+    "kontakt_ganz": -0.8174395586706148,
+    "kontakt_halb": 0.0,
+    "rho": -7.462143840434301,
+    "e0_LV": -2.719764268850614
+   },
+   "wilson_cW1.0": {
+    "e0_blase": -0.06073443661175465,
+    "kontakt_ganz": -1.973186053489521,
+    "kontakt_halb": 0.0,
+    "rho": -6.5569916328352384,
+    "e0_LV": -3.6731683983100853
+   },
+   "wilson_cW1.0_m0.5": {
+    "e0_blase": -0.04681848459642053,
+    "kontakt_ganz": -1.9972544573882138,
+    "kontakt_halb": 0.0,
+    "rho": -7.462143840434301,
+    "e0_LV": -3.9096089020932094
+   },
+   "photon": {
+    "e0_blase": -0.2200033947138276,
+    "kontakt_ganz": 0.29845028035745325,
+    "kontakt_halb": 0.29845028035745325,
+    "rho": 2.3876022428596264,
+    "e0_LV": 0.9737977267159855
+   }
+  },
+  "sigma_naiv_dirac_K": 0.48838006094288305,
+  "sigma_wilson_r_K": {
+   "0.5": 0.3466194725128069,
+   "2.0": 0.21369762721144908
+  },
+  "kappa_je_feld": {
+   "skalar": 0.024261892167406672,
+   "skalar_m0.5": 0.01960869438433263,
+   "wilson": 0.2208897383621991,
+   "wilson_m0.5": 0.15877559182824086,
+   "naiv": 0.7865746774262862,
+   "photon_ohne_zentrum": 0.048523784334813344,
+   "photon_ez_dest": 0.024930932527103142
+  },
+  "kappa_wilson_48_nachgerechnet": 0.2208463490937352,
+  "R_je_feld": {
+   "Skalar m=0": {
+    "K": 1.4199627144816906,
+    "P_kov": 0.03778174662013116,
+    "P_no": 1.4199627144816906,
+    "D_kov": -0.008152239996621475,
+    "D_no": 0.1625448957486435
+   },
+   "Skalar m=0,5": {
+    "K": 1.5949938807261894,
+    "P_kov": 0.03145754044061664,
+    "P_no": 1.5949938807261894,
+    "D_kov": -0.006711282536542304,
+    "D_no": 0.14691237033511503
+   },
+   "Wilson-Dirac c_W=1": {
+    "K": 0.7578048669575068,
+    "P_kov": 0.7578048669575068,
+    "P_no": 0.7578048669575068,
+    "D_kov": 0.00854489744354511,
+    "D_no": 0.20943427105848253
+   },
+   "Wilson-Dirac c_W=1/2": {
+    "K": 1.606152209416911,
+    "P_kov": 1.606152209416911,
+    "P_no": 1.606152209416911,
+    "D_kov": 0.02011068784460417,
+    "D_no": 0.3229380019855322
+   },
+   "Wilson-Dirac c_W=0": {
+    "K": 2.468565501667208,
+    "P_kov": 2.468565501667208,
+    "P_no": 2.468565501667208,
+    "D_kov": 0.10061560191696159,
+    "D_no": 0.37228345193715096
+   },
+   "naives Dirac": {
+    "K": 1.6105790148510537
+   },
+   "Wilson r=0,5": {
+    "K": 1.1488738983683526
+   },
+   "Wilson r=2": {
+    "K": 0.4865891715452571
+   }
+  },
+  "R_eich": {
+   "ohne Zentrum (2 kappa_s)": {
+    "K": 0.05779360095453446,
+    "P_kov": -0.03174579370796636,
+    "P_no": 0.02183861241316389,
+    "D_kov": -0.031745793708657245,
+    "D_no": 0.021838612412836942
+   },
+   "EZ destillierbar": {
+    "K": 0.0296936520027785,
+    "P_kov": -0.01631060420785891,
+    "P_no": 0.01122041448377978,
+    "D_kov": -0.01631060420821388,
+    "D_no": 0.0112204144836118
+   },
+   "EZ + Rand g=0,55": {
+    "K": 2.2250399486723573,
+    "P_kov": -1.2222055389506694,
+    "P_no": 0.8407814055588657,
+    "D_kov": -1.2222055389772684,
+    "D_no": 0.8407814055462783
+   },
+   "EZ + Rand g=1": {
+    "K": 1.512994226559334,
+    "P_kov": -0.8310816734794275,
+    "P_no": 0.571718909212414,
+    "D_kov": -0.8310816734975144,
+    "D_no": 0.5717189092038548
+   }
+  },
+  "g_stern_eich_je_regel": {
+   "K": 1.5384791571330394,
+   "P_kov": null,
+   "P_no": 0.3861192722625203,
+   "D_kov": null,
+   "D_no": 0.3861192722496763
+  },
+  "xi_stern_skalar": -0.0050161315935610485,
+  "phi2_skalar": 0.22767202582224494,
+  "photon_zu_skalar_K": 49.1390981364445,
+  "kappa_h6_schema": 29.12567386453797,
+  "kappa_h6_neff8": 21.752780777386057,
+  "gesamt": [
+   {
+    "regel": "K",
+    "c_W": 1.0,
+    "sigma_teile": {
+     "leicht": 6.995671249746733,
+     "schwer": 1.281231788014764,
+     "higgs": 0.06834515278455788,
+     "eich": 10.07525750949205
+    },
+    "sigma": 18.420505700038103,
+    "R12": 1.5811549551800699,
+    "R8": 1.180900303803335,
+    "g_stern_12": 1.3421369258879396,
+    "g_stern_8": 0.8341828833360637,
+    "a_lP_bei_R1": 8.583823320651026
+   },
+   {
+    "regel": "K",
+    "c_W": 0.5,
+    "sigma_teile": {
+     "leicht": 3.3006546263864704,
+     "schwer": 0.6280881979591106,
+     "higgs": 0.06834515278455788,
+     "eich": 10.07525750949205
+    },
+    "sigma": 14.072345486622188,
+    "R12": 2.069709977787723,
+    "R8": 1.5457821724221623,
+    "g_stern_12": 1.9355116029064952,
+    "g_stern_8": 1.436535386366151,
+    "a_lP_bei_R1": 7.502625003722947
+   },
+   {
+    "regel": "K",
+    "c_W": 0.0,
+    "sigma_teile": {
+     "leicht": 2.147544279101517,
+     "schwer": 0.43965712838375043,
+     "higgs": 0.06834515278455788,
+     "eich": 10.07525750949205
+    },
+    "sigma": 12.730804069761874,
+    "R12": 2.287811021592665,
+    "R8": 1.7086729681947683,
+    "g_stern_12": 2.187410757511206,
+    "g_stern_8": 1.6997205546625618,
+    "a_lP_bei_R1": 7.136050467804127
+   },
+   {
+    "regel": "P_kov",
+    "c_W": 1.0,
+    "sigma_teile": {
+     "leicht": 6.995671249746733,
+     "schwer": 2.503320881831139,
+     "higgs": 2.5686363747386167,
+     "eich": -18.34212801148645
+    },
+    "sigma": -6.274499505169962,
+    "R12": -4.64191189122566,
+    "R8": -3.466855126765497,
+    "g_stern_12": null,
+    "g_stern_8": null,
+    "a_lP_bei_R1": null
+   },
+   {
+    "regel": "P_kov",
+    "c_W": 0.5,
+    "sigma_teile": {
+     "leicht": 3.3006546263864704,
+     "schwer": 1.8501772917754857,
+     "higgs": 2.5686363747386167,
+     "eich": -18.34212801148645
+    },
+    "sigma": -10.62265971858588,
+    "R12": -2.7418438165329153,
+    "R8": -2.0477715895696464,
+    "g_stern_12": null,
+    "g_stern_8": null,
+    "a_lP_bei_R1": null
+   },
+   {
+    "regel": "P_kov",
+    "c_W": 0.0,
+    "sigma_teile": {
+     "leicht": 2.147544279101517,
+     "schwer": 1.6617462222001256,
+     "higgs": 2.5686363747386167,
+     "eich": -18.34212801148645
+    },
+    "sigma": -11.964201135446192,
+    "R12": -2.434401890674313,
+    "R8": -1.8181557239905772,
+    "g_stern_12": null,
+    "g_stern_8": null,
+    "a_lP_bei_R1": null
+   },
+   {
+    "regel": "P_no",
+    "c_W": 1.0,
+    "sigma_teile": {
+     "leicht": 6.995671249746733,
+     "schwer": 1.281231788014764,
+     "higgs": 0.06834515278455788,
+     "eich": 26.66311398368744
+    },
+    "sigma": 35.00836217423349,
+    "R12": 0.8319633383470524,
+    "R8": 0.6213595674406135,
+    "g_stern_12": 0.33686904098839526,
+    "g_stern_8": 0.10489612802602516,
+    "a_lP_bei_R1": 11.83357294720973
+   },
+   {
+    "regel": "P_no",
+    "c_W": 0.5,
+    "sigma_teile": {
+     "leicht": 3.3006546263864704,
+     "schwer": 0.6280881979591106,
+     "higgs": 0.06834515278455788,
+     "eich": 26.66311398368744
+    },
+    "sigma": 30.660201960817577,
+    "R12": 0.9499504896203662,
+    "R8": 0.7094793702006653,
+    "g_stern_12": 0.48397871906188283,
+    "g_stern_8": 0.18063720550207016,
+    "a_lP_bei_R1": 11.074331033668368
+   },
+   {
+    "regel": "P_no",
+    "c_W": 0.0,
+    "sigma_teile": {
+     "leicht": 2.147544279101517,
+     "schwer": 0.43965712838375043,
+     "higgs": 0.06834515278455788,
+     "eich": 26.66311398368744
+    },
+    "sigma": 29.318660543957265,
+    "R12": 0.9934176160902729,
+    "R8": 0.7419431984204143,
+    "g_stern_12": 0.5412255228604498,
+    "g_stern_8": 0.21361670424128462,
+    "a_lP_bei_R1": 10.829341724030554
+   },
+   {
+    "regel": "D_kov",
+    "c_W": 1.0,
+    "sigma_teile": {
+     "leicht": 620.4116264376546,
+     "schwer": 200.90576499674472,
+     "higgs": -11.904405256695831,
+     "eich": -18.342128011087272
+    },
+    "sigma": 791.0708581666162,
+    "R12": 0.036818034141770255,
+    "R8": 0.02749789169051208,
+    "g_stern_12": 0.0,
+    "g_stern_8": 0.0,
+    "a_lP_bei_R1": 56.251963811643634
+   },
+   {
+    "regel": "D_kov",
+    "c_W": 0.5,
+    "sigma_teile": {
+     "leicht": 263.60877169674563,
+     "schwer": 80.63639331730572,
+     "higgs": -11.904405256695831,
+     "eich": -18.342128011087272
+    },
+    "sigma": 313.99863174626825,
+    "R12": 0.09275732732515041,
+    "R8": 0.06927667377532953,
+    "g_stern_12": 0.0,
+    "g_stern_8": 0.0,
+    "a_lP_bei_R1": 35.44001307822943
+   },
+   {
+    "regel": "D_kov",
+    "c_W": 0.0,
+    "sigma_teile": {
+     "leicht": 52.689181594997606,
+     "schwer": 9.124874067721272,
+     "higgs": -11.904405256695831,
+     "eich": -18.342128011087272
+    },
+    "sigma": 31.567522394935775,
+    "R12": 0.9226468108631313,
+    "R8": 0.6890873634376752,
+    "g_stern_12": 0.44873427647525227,
+    "g_stern_8": 0.1612692899362649,
+    "a_lP_bei_R1": 11.236996466126662
+   },
+   {
+    "regel": "D_no",
+    "c_W": 1.0,
+    "sigma_teile": {
+     "leicht": 25.31273269603725,
+     "schwer": 6.23029268405759,
+     "higgs": 0.5970508530744595,
+     "eich": 26.66311398408661
+    },
+    "sigma": 58.80319021725591,
+    "R12": 0.49530771641690596,
+    "R8": 0.3699251808790922,
+    "g_stern_12": 0.046376455946166434,
+    "g_stern_8": 0.0,
+    "a_lP_bei_R1": 15.336647641157557
+   },
+   {
+    "regel": "D_no",
+    "c_W": 0.5,
+    "sigma_teile": {
+     "leicht": 16.416010776366548,
+     "schwer": 4.568851193642437,
+     "higgs": 0.5970508530744595,
+     "eich": 26.66311398408661
+    },
+    "sigma": 48.245026807170056,
+    "R12": 0.6037031336089834,
+    "R8": 0.45088130771135176,
+    "g_stern_12": 0.11179187306365629,
+    "g_stern_8": 0.020053175584984158,
+    "a_lP_bei_R1": 13.8917280144941
+   },
+   {
+    "regel": "D_no",
+    "c_W": 0.0,
+    "sigma_teile": {
+     "leicht": 14.240100367361359,
+     "schwer": 4.222090057472308,
+     "higgs": 0.5970508530744595,
+     "eich": 26.66311398408661
+    },
+    "sigma": 45.722355261994736,
+    "R12": 0.6370116696229725,
+    "R8": 0.4757580980406617,
+    "g_stern_12": 0.13794588838461966,
+    "g_stern_8": 0.02748722819888583,
+    "a_lP_bei_R1": 13.52366152519276
+   }
+  ],
+  "kanonisch_K": {
+   "R_gesamt": [
+    1.180900303803335,
+    2.287811021592665
+   ],
+   "g_stern": [
+    0.8341828833360637,
+    2.187410757511206
+   ],
+   "a_lP_bei_R1": [
+    7.136050467804127,
+    8.583823320651026
+   ]
+  },
+  "alle_regeln": {
+   "R_gesamt": [
+    -4.64191189122566,
+    2.287811021592665
+   ],
+   "a_lP_bei_R1": [
+    7.136050467804127,
+    56.251963811643634
+   ]
+  },
+  "vakuum_lokal_abgezogen": {
+   "R_gesamt": [
+    0.3699251808790922,
+    2.287811021592665
+   ],
+   "a_lP_bei_R1": [
+    7.136050467804127,
+    15.336647641157557
+   ]
+  },
+  "kontinuum_scharfer_schnitt": {
+   "skalar_k0_k2": [
+    -0.008333333333333328,
+    0.0032738090034183007
+   ],
+   "photon_k0_k2": [
+    -0.10000000000000012,
+    0.01071427946652327
+   ]
+  },
+  "laufzeit_s": 45.79750609397888
+ }
+}

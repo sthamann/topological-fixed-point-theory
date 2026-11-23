@@ -1,0 +1,143 @@
+Z25: RG-Test von H6 — Gleichheit der Eichkopplungen an der Gitterskala 1/a
+
+Teil 0: Eingaben und Konventionen
+   alpha_i^-1(M_Z) = [59.01, 29.59, 8.47] (GUT-normiert, PDG; wie v246/v249/v266), alpha_s-Fehler -> +-0.065 in alpha_3^-1.
+   y_t(M_t = 172.69) = 0.9369 (Eingabe, führende Ordnung im Lauf). Skalaronskala M_s = c3^(7/2) Mbar = 3.06e+13 GeV.
+   Planckeinheit: z2 setzt unter D eta = 1/4 je Fläche als Definition, 8 pi G = 2 pi/eta mit eta = kappa/a^2, also
+   l_P^2 = G = a^2/(4 kappa): nichtreduzierte Plancklänge, M_Pl = 1/l_P = 1,2209e19 GeV (z15 benutzt denselben Wert).
+   a/l_P =  1.65 (untere Grenze 1,65): 1/a = 7.40e+18 GeV
+   a/l_P =  3.32 (robust 3,32): 1/a = 3.68e+18 GeV
+   a/l_P = 10.79 (H6-Schema 10,79): 1/a = 1.13e+18 GeV
+   a/l_P = 14.27 (obere Grenze 14,27): 1/a = 8.56e+17 GeV
+   Gegenprobe reduzierte Planckmasse (nicht gemeint): 1/a wäre um 1/sqrt(8 pi) = 0.199 kleiner.
+   Higgs: H6 hat kein EW-Higgsfeld (Phi ist SO(16)-Singulett mit Z4-Ladung 2). Das SM-Dublett (1,2,1/2) wird als
+   Eingabe aus TFPT importiert (PS.NCG.FLUCT.01: innere Fluktuationen -> genau ein Dublett, kein 126).
+   y_t(M_Z) = 0.9694 (aus y_t(M_t) zurückgelaufen).
+
+Teil 1: Kalibrierung
+   [ok] Allgemeine Formel reproduziert SM b_i = (41/10, -19/6, -7) und die SM-Matrix b_ij von v246 exakt (Brüche)
+   [ok] PS-Einschleifen-b von v266 reproduziert: minimal (-31/3, -3, -7/3), +(15,1,1) (-9, -3, -7/3); SO(10)+3x16: -76/3
+   Hinweis: v266 zählt (15,1,1) komplex (Delta b4 = 4/3, gleich zwei reellen Adjungierten). Die E8-Hülle hat nur eine
+   reelle 45 (v247), also Delta b4 = 2/3: b = [-9.6667, -3.0, -2.3333].
+   v246: Einschleifen-Spreizung bei 2e16 GeV = 8.770; RK4 zwei Schleifen: Minimum 3.203 bei 1.71e+14 GeV, bei 2e16 8.712; DOP853 ohne y_t bei 2e16 8.702
+   [ok] v246 reproduziert: Spreizung 8,8 bei 2e16 (1 Schleife), 2 Schleifen Minimum 3,2 bei 1,7e14 und 8,7 bei 2e16
+   [ok] Integrator: DOP853 und RK4 (v246) stimmen bei 2e16 auf 0,02 überein
+   1 Schleife minimal                   : M_PS = 4.19e+13, M_GUT = 2.43e+15, alpha_U^-1 = 45.06, tau_p = 4.39e+33 a
+   1 Schleife +(15,1,1) komplex (v266)  : M_PS = 4.02e+13, M_GUT = 5.89e+15, alpha_U^-1 = 45.48, tau_p = 1.55e+35 a
+   1 Schleife +(15,1,1) reell (E8)      : M_PS = 4.11e+13, M_GUT = 3.61e+15, alpha_U^-1 = 45.25, tau_p = 2.17e+34 a
+   [Befund] v266 zählt (15,1,1) komplex, das sind zwei reelle Adjungierte; die E8-Hülle hat nur eine reelle 45. Damit sinkt M_GUT schon in einer Schleife von 5,9e15 auf 3.6e+15 GeV und tau_p auf 2.2e+34 a (< Super-K).
+   [ok] v266 reproduziert: minimal M_PS = 4,2e13, M_GUT = 2,4e15; +(15,1,1) M_GUT = 5,9e15 (auf 3 %)
+   Hybrid (2L SM, 1L PS) wie experiments/gauge-unification: minimal M_PS = 3.74e+13, M_GUT = 1.29e+15; +(15,1,1) M_GUT = 2.80e+15 (dort 3,74e13/1,29e15 und 2,80e15)
+   [ok] 2-Schleifen-Hybrid aus results/pati_salam.json reproduziert (M_GUT 1,29e15 und 2,80e15 auf 1 %)
+
+Teil 2 (Frage 1): reines SM von M_Z bis 1/a, zwei Schleifen mit y_t
+   a/l_P =  1.65, 1/a = 7.40e+18: alpha^-1 (2L) = [33.37, 48.9, 52.34], Delta = 18.97 (1L 18.24; ohne Higgs-Import 18.33); sin^2 theta_W(1/a) = 0.4679 statt 0,375
+   a/l_P =  3.32, 1/a = 3.68e+18: alpha^-1 (2L) = [33.83, 48.56, 51.55], Delta = 17.72 (1L 17.01; ohne Higgs-Import 17.10); sin^2 theta_W(1/a) = 0.4627 statt 0,375
+   a/l_P = 10.79, 1/a = 1.13e+18: alpha^-1 (2L) = [34.6, 47.97, 50.23], Delta = 15.63 (1L 14.93; ohne Higgs-Import 15.03); sin^2 theta_W(1/a) = 0.4541 statt 0,375
+   a/l_P = 14.27, 1/a = 8.56e+17: alpha^-1 (2L) = [34.79, 47.83, 49.92], Delta = 15.13 (1L 14.43; ohne Higgs-Import 14.54); sin^2 theta_W(1/a) = 0.4520 statt 0,375
+   [ok] y_t in führender Ordnung genügt: Zwei-Schleifen-Yukawabeitrag an 1/a = 0.028 < 0,1 in alpha^-1
+   Paarweise Kreuzungen (2L): a1=a2 bei 1.08e+13 GeV, a1=a3 bei 1.71e+14 GeV, a2=a3 bei 2.93e+16 GeV
+   Kleinste Spreizung im Fenster: 15.13. alpha_s-Fehler verschiebt um höchstens 0.065; Zwei- gegen Einschleifen
+   ändert um < 0,8. Gitterschwellen von H6 (Eltern (10,1) = 5+5b, Verdoppler je ganze Generation) sind vollständige
+   SU(5)-Multipletts und verschieben alle drei gleich, also nicht die Spreizung.
+   [ok] H6-Eltern (10,1) unter SM: Delta b = (2/3, 2/3, 2/3), keine differentielle Schwelle an 1/a
+   Zum Schließen bräuchte es eine Schwellendifferenz Delta b x ln(Lambda/M) = 2 pi Delta = 95.
+   [ok] Frage 1: SM vereinigt nicht an 1/a — Spreizung (2L) > 1 im ganzen Fenster (negatives Ergebnis, Kill)
+   [Befund] Reines SM (mit importiertem Higgs) verfehlt die Gleichheit an 1/a im ganzen Fenster: Delta alpha^-1 = 19.0 / 15.6 / 15.1 (a/l_P = 1,65 / 10,8 / 14,3, zwei Schleifen); sin^2 theta_W(1/a) = 0.454 statt 0,375.
+
+Teil 3 (Frage 2): welcher E8-erlaubte Zwischeninhalt gibt Gleichheit genau an 1/a?
+   E8-Hülle (v247): SO(10)-Inhalt {1, 10, 16, 45}, kein 126. Höchstzahlen aus einer 248: sechs reelle 10 (aus (10,6)),
+   vier komplexe 16 (aus (16,4)+(16b,4b)), eine reelle 45. Fermionen fest: 3 x 16 leicht, Eltern (10,1)+(1,6) bei m/a.
+
+   3A  SM -> PS bei M_PS, vollständige PS-Multipletts (Überlebenshypothese), alle 13440 Inhalte:
+   1 Schleife: 13440 gültige Lösungen, größtes M_U = 2.61e+16 GeV; im Fenster: 0
+   2 Schleifen (vektorisiert, Newton): 13440 konvergiert (Residuum < 1e-8), größtes M_U = 1.13e+16 GeV; im Fenster: 0
+   [ok] Vektorisierter 2L-Löser stimmt mit solve_ivp/fsolve überein (M_U auf 0,2 %, alpha_U^-1 auf 0,01; drei Inhalte)
+   Inhalt mit größtem M_U (2L): {'bd_r': 1, 't6_r': 6, 's412_c': 4, 's421_c': 0, 'a15_r': 1, 'a31_r': 0, 'a13_r': 0, 'a622_r': 0}: M_PS = 1.15e+13 (kappa = 0.38), M_U = 1.13e+16, alpha_U^-1 = 45.64
+   Freie Schwellen oberhalb M_PS (exaktes LP je M_PS, 1 Schleife): größtes M_U = 2.61e+16 GeV bei M_PS = 1.26e+13 (kappa 0.41); lösbar für M_PS = 1.06e+13 ... 8.66e+13
+   [ok] 3A: Mit vollständigen E8-PS-Multipletts liegt kein M_U im Fenster (diskret 1L und 2L, freie Schwellen 1L) — negatives Ergebnis
+   [Befund] Mit vollständigen PS-Multipletts der E8-Hülle ist M_U höchstens 1.1e+16 GeV (2 Schleifen, 13440 Inhalte) bzw. 2.6e+16 GeV (1 Schleife, freie Schwellen) — Faktor 33 unter dem Fenster.
+
+   3B  SM-Eichgruppe bis 1/a (H6 ohne neue Eichbosonen), E8-Fragmente auf freien Schwellen >= M_low (LP, 1 Schleife):
+   Größtes M_U mit Fragmenten >= 1 TeV: 5.20e+17 GeV (Fensterrand 8.56e+17).
+   Für M_U = Fensterrand müssen Fragmente bis 264 GeV hinunter; Lösung (Anzahl voll leicht): {'O8_r': 1.0, 'T3_r': 1.0, 'Q_c': 5.0, 'H_c': 4.61, 'D_c': 10.0}
+   Ohne Farbtripletts D, XY (protonsicher) erreichbar, selbst mit Fragmenten ab 1 MeV: False.
+   [ok] 3B: SM-Gruppe mit E8-Fragmenten erreicht das Fenster nicht mit Schwellen >= 1 TeV (exaktes LP-Maximum) — negatives Ergebnis
+   [Befund] Ohne neue Eichbosonen (H6 wie gebaut) reicht die Gleichheit mit E8-Fragmenten oberhalb 1 TeV nur bis 5.2e+17 GeV; das Fenster verlangt ein Farboktett, Tripletts und Dubletts bei ~264 GeV (LHC-ausgeschlossen).
+
+   3C  SM -> (Fragmente) -> PS: leichte SM-Fragmente unter M_PS, ihre PS-Eltern ab M_PS (LP-Relaxation, 1 Schleife):
+   kappa = M_PS/M_s in [1,0; 1,7] (PS.KAPPA.01): erreichbar True; nur mit protonsicheren Fragmenten (ohne D, XY): True. Protonsicher erreichbar nur bis kappa = 1.08, und nur mit leichten Fragmenten bis 1167 GeV hinunter (am Fensterrand: Oktett, ~5 (3b,1,-2/3), ~2 (3,2,1/6) an der Untergrenze).
+   Bei kappa in [1,0; 1,7] müssen leichte Fragmente bis 3.31e+09 GeV hinunter; minimale leichte Last bei M_PS = M_s,
+   1/a(H6): {'D_c (aus s412_c)': 2.64, 'O8_r (aus a15_r)': 1.0} (in Einheiten 'voll leicht ab 1 TeV').
+   Ganzzahlig (eine gemeinsame Fragmentschwelle >= 1 TeV, 1/a = 1.13e+18): 103 Lösungen; kappa in [1; 1,7]: 18; davon protonsicher 0; protonsicher bei kappa in [0,3; 3]: 0.
+   Beispiel (größtes M_f bei kappa in [1; 1,7]): Fragmente {'O8_r': 1, 'U_c': 1, 'D_c': 4} bei M_f = 5.63e+04 GeV, PS-Eltern {'bd_r': 1, 't6_r': 6, 's412_c': 1, 'a15_r': 1} ab M_PS = 3.13e+13 (kappa = 1.02), M_U = 1/a = 1.13e+18.
+   2 Schleifen: M_PS = 2.75e+13 (kappa = 0.90), M_f = 1.30e+04 GeV, alpha_U^-1(1/a) = 47.91, Residuum 7.1e-15
+   Protonzerfall über Eichbosonen (d = 6, M_U = 1/a): tau_p = 2.35e+44 a — weit jenseits Hyper-K (1.40e+35 a).
+   Skalare Farbtripletts (3,1,-1/3) mit 10_H-artigen Kopplungen (y y' ~ y_u y_d = 3.2e-10) verlangen M_T > 1.3e+11 GeV;
+   im Beispiel liegen 4 solche bei 1.3e+04 GeV: ohne zusätzliche Symmetrie (in H6 nicht hergeleitet) ausgeschlossen.
+   [ok] 3C: PS mit gespaltenen Multipletts erreicht 1/a (LP und ganzzahlig, 2L bestätigt mit M_f >= 1 TeV)
+   [ok] 3C: protonsicher (ohne D, XY) bei kappa >= 1 nur am Bandrand (kappa_max < 1,2) mit Farbskalaren unter 3 TeV; ganzzahlig mit einer Schwelle keine sichere Lösung
+   [Befund] Gleichheit genau an 1/a geht mit E8-Inhalt nur über gespaltene Multipletts: bei M_PS auf der Skalaronskala (kappa 1,0-1,7) mit einer Fragmentschwelle stets Farboktett + >= 3 Farbtripletts (3,1,-1/3) bei 1e3-1e5 GeV; protonsicher nur bis kappa = 1.08 mit ~8 Farbskalaren bei ~1 TeV.
+   [Befund] In jeder Lesart mit Gleichheit genau an 1/a ist der Eich-Protonzerfall unbeobachtbar (tau_p ~ 2e+44 a); Hyper-K sähe nichts.
+
+Teil 4 (Frage 3): SO(10) vereinigt unterhalb, eine Kopplung läuft bis 1/a
+   2L minimal (v266)                          : M_PS = 3.69e+13 (kappa 1.21), M_GUT = 1.19e+15, alpha_U^-1 = 44.44, tau_p = 2.50e+32 a [8.3e+31 ... 7.5e+32] -> ausgeschlossen
+   2L +(15,1,1) komplex (v266, = 2 reelle)    : M_PS = 3.54e+13 (kappa 1.16), M_GUT = 2.75e+15, alpha_U^-1 = 44.83, tau_p = 7.21e+33 a [2.4e+33 ... 2.2e+34] -> ausgeschlossen
+   2L +(15,1,1) reell (E8, eine 45)           : M_PS = 3.62e+13 (kappa 1.18), M_GUT = 1.73e+15, alpha_U^-1 = 44.61, tau_p = 1.11e+33 a [3.7e+32 ... 3.3e+33] -> ausgeschlossen
+   2L größtes M_U (3A)                        : M_PS = 1.15e+13 (kappa 0.38), M_GUT = 1.13e+16, alpha_U^-1 = 45.64, tau_p = 2.14e+36 a [7.1e+35 ... 6.4e+36] -> Super-K-sicher
+   alpha_s-Fehler (+-0.065 in alpha_3^-1): M_GUT x 1.071 / 0.934, tau_p x 1.32 / 0.76 (1L, E8-Inhalt) — innerhalb des x3-Bands.
+   [ok] v266-Inhalte bei vollen zwei Schleifen von Super-K ausgeschlossen (auch +(15,1,1) komplex am oberen Bandrand)
+   Scan 2L: Super-K-sicher (zentral) 193 von 13440, mit Band x3 556; davon kappa in [1; 1,7]: 11 / 101.
+   Sichere Inhalte: tau_p = 2.42e+34 ... 2.14e+36 a, kappa = 0.31 ... 1.13; innerhalb Hyper-K-Reichweite (1.40e+35): 163.
+   kappa in [1; 1,7] und Band-sicher: tau_p = 8.74e+33 ... 3.55e+34 a (oberer Bandrand 1.06e+35 a) — Hyper-K entscheidet diese Gruppe vollständig.
+   [ok] L3 mit kappa in [1; 1,7]: alle Band-sicheren E8-Inhalte liegen auch am oberen Bandrand unter der Hyper-K-Reichweite
+   alpha_U^-1(1/a) für a/l_P =  1.65: 66.6 ... 73.6 (Band-sichere Inhalte), g_U = 0.413 ... 0.434
+   alpha_U^-1(1/a) für a/l_P = 10.79: 60.5 ... 66.7 (Band-sichere Inhalte), g_U = 0.434 ... 0.456
+   alpha_U^-1(1/a) für a/l_P = 14.27: 59.6 ... 65.7 (Band-sichere Inhalte), g_U = 0.437 ... 0.459
+   Eltern zwischen 0,5/a und 1/a: Delta alpha^-1 = (2/3)/(2 pi) ln 2 = 0.074, für alle gleich.
+
+   Induzierte Kopplung nach y1 (naive Dirac-Fermionen, Fluss in einer Ebene, Masse M als Infrarotregler):
+   [ok] y1 reproduziert: 1/g^2(M) = 0,40532 / 0,28405 / 0,20677 bei M = 0,3 / 0,45 / 0,6 (N = 24)
+   N = 32: kappa(M) = 0.3: 0.3981, 0.45: 0.2835, 0.5: 0.2548, 0.6: 0.2067, 1.0: 0.0934; Anpassung 1/g^2 = 0.2765 ln(1/(aM)) + 0.0645
+   (Kontinuum 16 Geschmäcker: 16/(6 pi^2) = 0.2702). Formel für beliebigen Inhalt:
+      1/g_i^2(mu) = sum_f w_f(i) kappa(max(a mu, a m_f)),  w_f = Dirac-Gewicht x Dynkin-Index (Weyl 1/2, je naivem Feld 16 Geschmäcker).
+   H6-Inhalt: drei Generationen w = 3 je Faktor (gleiche Dynkin-Summe), Eltern (10,1) w = 1/2 bei m = 0,5; der importierte
+   Higgs bricht die Gleichheit minimal (komplexer Skalar, ein Geschmack: w = T/4/16).
+   mu = 1/a: alpha_ind^-1 = 4.11 (naiv, alle 16 Geschmäcker leicht, Obergrenze) bzw. 0.26 (ein Geschmack, Wilson-artig); g_ind = 1.75 bzw. 7.00
+   mu = 0,5/a: alpha_ind^-1 = 11.21 (naiv, alle 16 Geschmäcker leicht, Obergrenze) bzw. 0.70 (ein Geschmack, Wilson-artig); g_ind = 1.06 bzw. 4.24
+   Mit Higgs: sin^2 theta_W,ind(1/a) = 0.37521 statt 0,375.
+   Großzügigste Obergrenze (naiv, mu = 0,5/a, alle SO(10)-Skalare mit 16-fachem Fermiongewicht T/4): alpha_ind^-1 <= 23.2
+   RG-Wert an 1/a: SO(10)-Lesart >= 59.6 gegen <= 23.2 (Verhältnis >= 2.6); SM-Kopplungen >= 33.4 gegen <= 11.2 (Verhältnis >= 3.0); ein Geschmack: Verhältnis >= 85.
+   Bedingung an a/l_P aus dem Wert: alpha_U^-1 wächst oberhalb M_GUT (asymptotisch frei, b = -22.7 ... -20.3),
+   bleibt also über alpha_U^-1(M_GUT) ~ 45. Kein a/l_P schließt die Lücke; selbst alpha_1^-1 (SM, nicht asymptotisch frei)
+   fiele erst bei 6e+33 GeV auf 11, also a/l_P ~ 2e-15, weit unter der z15-Schranke 1,65.
+   [ok] Frage 3: y1-induzierter Wert und RG-Wert an 1/a stimmen nirgends im Fenster überein (Verhältnis > 2 auch naiv, SO(10) und SM) — negatives Ergebnis
+   [Befund] In der SO(10)-Lesart ist Gleichheit an 1/a automatisch, aber der Wert passt nicht: RG alpha_U^-1(1/a) = 60-74, y1-induziert höchstens 23 (naiv) bzw. ~0.7 (ein Geschmack).
+   [Befund] Die y1-Formel gibt für den H6-Inhalt g_ind(1/a) = 1.7 (naiv) bis 7 (ein Geschmack), nicht g = 0,55: Die induzierte Kopplung ist an der Gitterskala stark.
+
+   Selbstkonsistenz mit z15 (a/l_P = 2 sqrt(kappa), Kante je Eichboson h_e - ln g, H6-Schema Wilson r = 1, schwer m = 0,5):
+   [ok] z15 H6-Schema reproduziert: kappa = 29,126, a/l_P = 10,79
+   SM (12 Eichbosonen, g_i aus 2L-RG an 1/a): Fixpunkt a/l_P = 10.96, g = [0.603, 0.512, 0.5] (z15 nahm 0,55).
+   PS-Beispiel 3C (21 Eichbosonen, g = 0.512, 71 reelle Skalare): a/l_P = 14.01.
+   SO(10)-Lesart (45 Eichbosonen, Inhalt {'bd_r': 1, 't6_r': 6, 's412_c': 1, 's421_c': 1, 'a15_r': 1, 'a31_r': 0, 'a13_r': 1, 'a622_r': 0}, 137 reelle Skalare): a/l_P = 20.35 (nichtabelsch gezählt 25 Kopien: 15.76), g_U = 0.445.
+   Mit g_ind naiv (1/a) statt RG-g (SM-Inhalt): a/l_P = 7.81.
+   Mit g_ind ein Geschmack (1/a) statt RG-g (SM-Inhalt): a/l_P = 5.51.
+   [ok] z15-Fixpunkt mit SM-RG-Kopplungen liegt im Fenster (Konsistenz der z15-Annahme g = 0,55)
+   [ok] SO(10)-Lesart: Fixpunkt a/l_P liegt über dem z15-Fenster (45 Eichkanten) — Bedingung an a/l_P
+   [Befund] Selbstkonsistentes a/l_P: SM 11.0, PS-Beispiel 14.0, SO(10) 20.3 (nichtabelsch 15.8); mit y1-induziertem g fiele es auf 5.5-7.8.
+
+Teil 5 (Frage 4): Urteil über die Lesarten
+   L1  'induziert an 1/a, gleich, H6-Inhalt (SM + importierter Higgs)': fällt. Spreizung 15.1-19.0 an 1/a (2L); auch E8-Fragmente ohne neue Eichbosonen reichen nur bis 5.2e+17 GeV.
+   L2  'PS-Zwischenstufe, Gleichheit genau an 1/a': fällt mit vollständigen Multipletts (M_U <= 2.6e+16). Überlebt nur als
+       Anpassung mit gespaltenen Multipletts (Farboktett + Farbtripletts bei TeV ... 1e5 GeV bei kappa ~ 1; protonsicher nur
+       bis kappa = 1.08 mit ~8 Farbskalaren bei ~1 TeV), braucht 21 PS-Eichbosonen,
+       die der 3+2-Split von H6 nicht liefert, und gibt keinen sichtbaren Protonzerfall (tau_p ~ 2e+44 a). Ihr Wert
+       alpha_U^-1(1/a) = 47.9 widerspricht der y1-Induktion (<= 23) ebenso wie in L3.
+   L3  'SO(10) unterhalb, eine Kopplung bis 1/a': Gleichheit automatisch, aber nicht induziert: RG alpha_U^-1(1/a) >= 60
+       gegen y1-induziert <= 23. Überlebt nur als nackte Gitterkopplung mit SO(10)-Symmetrie (45 Eichbosonen, nicht
+       aus dem 3+2-Split). Die v266-Inhalte sind bei zwei Schleifen ausgeschlossen; E8-Inhalte mit großem M_U überleben,
+       z. B. {'bd_r': 1, 't6_r': 6, 's412_c': 4, 's421_c': 0, 'a15_r': 1, 'a31_r': 0, 'a13_r': 0, 'a622_r': 0} mit tau_p = 2.1e+36 a (kappa 0.38).
+       Mit kappa in [1; 1,7] (PS.KAPPA.01) bleiben 101 Inhalte im x3-Band (11 zentral).
+   Vorhersage, falls L3 mit kappa in [1; 1,7]: tau_p = 8.7e+33 ... 3.5e+34 a (Hyper-K-Reichweite 1.4e+35 a) und a/l_P = 16-20 aus z15 mit SO(10)-Eichkanten.
+
+Alle Prüfungen bestanden: True (21/21). Laufzeit 20 s.

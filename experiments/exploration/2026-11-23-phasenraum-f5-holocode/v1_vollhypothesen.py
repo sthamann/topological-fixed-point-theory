@@ -767,6 +767,31 @@ if "H6h2" in H and z1p.exists() and z2p.exists():
                                                                  "Geometrie; Phi kann die Familien nicht paaren (16 x 16 ohne Invariante, Z22), "
                                                                  "die Familienmassen-Obstruktion aus Z18 entfällt")
                                             facts["F32_four_decisions"] = {n: R[n]["urteil"] for n in R}
+                                            zq = {n: Path(__file__).with_name(f"z{n}_ergebnis.json") for n in (25, 26, 27)}
+                                            if all(p.exists() for p in zq.values()):
+                                                T3 = {n: json.loads(p.read_text()) for n, p in zq.items()}
+                                                okt = {n: all(T3[n]["checks"].values()) for n in T3}
+                                                H["H6h14"] = dict(H["H6h13"])
+                                                H["H6h14"]["K15"] = (LES if okt[25] else F,
+                                                                     "[nackte SO(10)-Gitterkopplung] Yang-Mills-Struktur aus Fermionschleifen "
+                                                                     "bleibt (y1); die Lesart 'an 1/a induziert und gleich' fällt gegen Daten "
+                                                                     "(Z25): SM-Spreizung 15-19 an 1/a, E8-Zwischeninhalt vereinigt höchstens "
+                                                                     "bei 1,1e16 GeV, und die induzierte Kopplung ist an 1/a stark (alpha^-1 <= 23 "
+                                                                     "gegen 60-74 aus der RG); überlebt nur mit SO(10) als nackter Eichgruppe "
+                                                                     "(45 Eichbosonen, nicht aus dem 3+2-Split), Protonzerfall bei Hyper-K")
+                                                H["H6h14"]["K13"] = (LES if okt[27] else F,
+                                                                     "[D] Jacobson; Sakharov gegen Jacobson im selben Regler unentschieden (Z27): "
+                                                                     "universeller Teil stimmt, der Flächenkoeffizient hängt von der Metrikkopplung "
+                                                                     "des Gitters ab (R_ges 1,18-2,29 kanonisch, -4,6 bis 2,3 über alle Regeln); "
+                                                                     "Eichfelder brauchen den Randterm; a/l_P keine Vorhersage")
+                                                H["H6h14"]["K16"] = (LES if okt[26] else F,
+                                                                     "[physisches Gitter mit zwei Gegentermen oder nichtultralokale Lüscher-GW-"
+                                                                     "Wirkung] Entscheidung 4 hat zwei Wege: G lokal mit Re Phi^2, Re Phi^4 "
+                                                                     "abgestimmt (Z24), oder Lüschers Weylfelder (Z26): geschützt (Index = Windung), "
+                                                                     "flach, reflexionspositiv unter Theta_W bei jeder Phase, J exakt in den "
+                                                                     "Ankervariablen, ohne Abstimmung; Preis potenzartig nichtlokale Wirkung in "
+                                                                     "chi bzw. Transfer mit Kontinuum, unter QFT4D.LATTICE.FUNDAMENTAL.01 unzulässig")
+                                                facts["F33_three_tests"] = {n: T3[n]["urteil"] for n in T3}
 
 order = [f"K{i}" for i in range(1, 21)]
 print("Gesamttabelle (P = hergeleitet, L = unter benannter Lesart, F = FAIL, O = OFFEN, E = EINGABE)\n")
