@@ -1,6 +1,6 @@
 # TFPT: Was funktioniert, was fehlt, was eine vollständige Lösung wäre
 
-Kompakter Stand vom 20. November 2026 (Abschnitt 5 ergänzt am 23. November) für
+Kompakter Stand vom 20. November 2026, ergänzt am 23. November (Befunde 20.–23. November und Abschnitt 5), für
 Explorations- und Lösungssitzungen. Neuere Befunde stehen in den Atlasproblemen mit Datum
 ab 20261120 und unter `experiments/exploration/`; dieser Stand wird nicht automatisch
 fortgeschrieben. Er ersetzt
@@ -77,6 +77,54 @@ in der Verklebung (NEUSING). Der Schritt 1 + i ist der Frobenius der Kurve y² +
 Vorzeichen liefert 5 und 16 mit eindeutigem Partner A₃ (GENESIS). Alles Hypothese oder
 bedingt, nichts befördert.
 
+### Befunde 20.–23. November, konsolidiert
+
+Quellen: Atlasprobleme mit Datum 20261120–20261123, `experiments/exploration/2026-11-20-*`
+und `2026-11-23-*`. Nichts davon ist im Ledger befördert.
+
+- **P2 ist weitgehend auf „4“ und „minimal“ zurückgeführt.**
+  - Kette μ₄ → 16 → 5 → 3+2 (Exploration 23.11., F3): Ein Weylfermion in d = 4 mit ℤ₄,
+    ℤ₄² = (−1)^F, ist anomaliefrei in Vielfachen von 16. Der gerade Fockraum von N Moden trägt
+    eine konsistente ℤ₄ Ladung genau für ungerades N; das kleinste ist N = 5. [E für die
+    Glieder, Kandidat Stufe 2 für P2 unter der Lesart „Generation = gerader Fockraum“]
+  - 3+2 als Minimum: Die positive Fockspur über Λ^gerade ℂ⁵ wählt 3+2 und die Orientierung
+    Σ ∝ −6Y; Γ = ρp₂ − tr log(1+Σ²) wählt global 3+2 für 1/3 < ρ < 1. Basislinie: dieselbe Spur
+    wählt für jedes N die balancierteste Teilung, also steckt in 3+2 nur die Information „5“.
+    Felddeterminante über die 16 Gewichte wählt dagegen 4+1. [E für die Minima]
+  - Klebegleichung m = n+1, n² = 2^(m−1), m/4 + (n−1)/n = 2 hat nur (n, m) = (4, 5); die
+    Korpuskarte ist die Standardform von M₂(ℂ), σ dreht 3 Produktbasen und fixiert 2
+    verschränkte; alle 18 σ-invarianten Lagen von D₅ + A₃ in E₈ drehen genau 3 der 5 D₅
+    Achsen. [E; Lesart als P2 bedingt, Ganzzahligkeit offen]
+  - Vier Marken aus quadratischer Vollständigkeit: Genau eine quadratische Relation zwischen
+    den logarithmischen Formen erzwingt n = 4 Marken; ein quadratisches Differential ohne
+    Nullstellen mit nur einfachen Polen hat g = 0, n = 4 und Windung +1 am Pol. Das
+    Produkt liefert fünf Trägermoden mit Viertelcharakteren; R² teilt 3+2, Y = (I−5R²)/12.
+    [E für die Geometrie, bedingt als Ursprung]
+- **c₃ und Seed haben eine Strukturlesart.** Viertelinvarianz und fehlende Nullmoden wählen
+  auf dem quadratischen Torus die Spinstruktur (−,−); ein Viertel der Dirac Wärmespur ergibt
+  s·H → 1/(8π) = c₃ (die Viertelzählung ist gewählt). Für X ∼ N(0, c₃) ist κ₄(X²) = 48c₃⁴,
+  genau der quartische Seedterm; die freie fermionische Kreisquelle trägt ihn, und die
+  Einheitsladung W₁ liefert relativ Δκₙ = n!·2ⁿ⁻³c₃ⁿ. Der Basisterm ist (1 − tr Y²)/π =
+  1/(6π). [bedingt]
+- **Lokale Eichstruktur.** Das Original W erfüllt alle Wardidentitäten (SU(3), SU(2), Y,
+  U(5), Spin(10), SU(4)) und ist lokal parallel; die Krümmung von Gr₃(ℂ⁵) spannt
+  s(u(3)⊕u(2)); Berryfelder geben keinen quadratischen Eichterm; vollständige Polarisation
+  fixiert den lokalen Dirac im festen Rahmen. Das volle E₈ Modell ist im Fenster 10 ≤ q ≤ 15
+  lokal stabil zertifiziert, global offen. [E im Geltungsbereich]
+- **Dynamik ist nicht autonom endlich.** Der ursprüngliche Kanal relaxiert exakt mit (3/4)ⁿ
+  (Spektrum 1, 3/4, 11/36, 1/4); sein Hauptlogarithmus ist kein GKSL Generator; jede exakte
+  autonome Erweiterung braucht eine unendlichdimensionale Umgebung; additive Y Erhaltung
+  scheitert. [E im Geltungsbereich]
+- **Skala und Abstand.** Umläufe und Ortsabstände bestimmen denselben Dämpfungsfaktor; nur
+  y = 1/3 trägt Einheitswindung; Nullenergiedaten bestimmen die Kragenlänge nicht; gleiche
+  frühe Energieantwort lässt verschiedene Innenräume zu. [E/bedingt]
+- **Methodik.** R113 ist eine eingeschränkte Route, kein Türsteher (Entscheidung 23.11.).
+
+**Muster dieser Runde.** Fast jede verbleibende Eingabe läuft auf zwei Fragen hinaus: woher
+die **Vier** kommt (μ₄, vier Marken, d = 4, Viertelzählung in c₃) und welches Prinzip
+**Minimalität** verlangt (kleinstes anomaliefreies N, kleinste Klebelösung). Ein neuer
+Ursprung sollte beides zugleich liefern.
+
 ## 4. Wiederkehrende Muster und Verbindungen
 
 - **Dieselbe Vier überall:** vier Marken, μ₄, Z₄ Glue, Nahtnormierung, 4 = 3 + 1.
@@ -100,6 +148,11 @@ bedingt, nichts befördert.
 - **Gravitation:** Flächennormierung und lokaler Boost/Horizontfluss (`map:area-normalization`,
   `map:local-boost`).
 - **Restflavor:** absolute Quarkamplitude, Neutrinozweig, Phasen.
+
+**Nach dem 23. November noch Eingabe** (für P2 und die Fermionstruktur): N = 5 über
+Minimalität; 10 + 6 in den 16 reellen Moden (D₅ ⊕ A₃, die Fockspur wählt 8 + 8); die spurfreie
+Quelle mit einem Konzentrationsgrenzwert; d = 4 mit μ₄. Für P1: die Viertelzählung, die
+c₃ = 1/(8π) gibt, und die Wahl der Spinstruktur; Zustand und Zeit mit unendlicher Umgebung.
 
 **Was nicht fehlt:** Die vier R113 Endpunktwerte (Z0, ZU, ZY, ZUY) der ursprünglichen
 Quellverträge sind ein Test, ob *diese* Originalquelle ihre markierten Antworten liefert.
