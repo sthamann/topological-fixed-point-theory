@@ -1,6 +1,94 @@
 # Urteil
 
-## Aktueller Stand: H6h2 — Eichdynamik und Prämissen (`y1_eichdynamik_praemissen.py`)
+## Aktueller Stand: H6h3 — externe Kritik geprüft (`z1_kritik_pruefung.py`, `z2_verschraenkungsdichte.py`)
+
+```
+        K1 K2 K3 K4 K5 K6 K7 K8 K9 K10 K11 K12 K13 K14 K15 K16 K17 K18    P  L  F  O  E
+   H6h2  P  P  P  P  P  P  P  P  P  P   P   P   L   P   P   O   O   L    14  2  0  2  0
+   H6h3  P  P  P  P  P  P  P  P  P  P   P   P   L   P   P   O   L   L    14  3  0  1  0
+```
+K17 (Rahmungsanomalie der Naht) und K18 (Neutrinomischung gegen Daten) sind neu im Katalog, damit
+die Punkte der Kritik sichtbar bleiben. H6h2 wird rückwirkend ehrlich bewertet: K17 offen.
+
+**Die Kritik Punkt für Punkt.** Alle 16 Rechenprüfungen in `z1` bestehen.
+1. *Kovarianz wählt kein Quadrat.* Richtig für die Zustandssumme: Z_AA(−1/τ) = Z_AA(τ) gilt auch bei
+   τ = 2i. Prinzip A verlangt aber mehr, nämlich dasselbe thermische System in beiden
+   Rekonstruktionen. Bei τ = 2i sind es verschiedene Systeme (β/L = 2 gegen 1/2, Besetzung der
+   tiefsten Mode 0,0019 gegen 0,172). A ist also die Fixpunktbedingung. Die von der Kritik
+   vorgeschlagene Verschärfung (echte Drehung der Ordnung größer zwei, Spinstruktur ohne Nullmoden
+   erhalten) ist dieselbe Bedingung. Drehungen der Ordnung > 2 gibt es nur bei i und ρ; bei ρ
+   bleibt nur PP erhalten, das Nullmoden hat; also τ = i mit (A,A). Das deckt sich mit dem
+   Atlasbefund vom 16.11. (nur j = 1728 erlaubt Ordnung vier auf den Marken). Offen bleibt, warum
+   die Natur den Fixpunkt realisiert: Das ist Prämisse A selbst.
+2. *Spinorwirkung der Vierteldrehung.* Gerechnet mit der gelifteten Drehung g̃ um den Viertelpunkt:
+   g̃ vertauscht mit dem Dirac, g̃⁴ = −1, es gibt keinen invarianten Sektor, und der naive Projektor
+   (1/4)Σg̃ᵏ ist keiner. Die Sektoren sind die vier Eigenwerte exp(iπ(2m+1)/4). Weil kein Impuls in
+   (ℤ+½)² fix ist, trägt jeder Sektor **exakt ein Viertel jedes Eigenraums**, ohne
+   Fixpunktkorrektur. Damit ist c₃ = 1/(8π) je Spinorsektor (Wärmespur 0,039788735773). Die
+   Viertelzählung überlebt die fermionische Drehphase.
+3. *Woher das Familienvorzeichen?* Neu und exakt: Die drei geraden Spinstrukturen der Naht sind die
+   nichttrivialen Charaktere der Markengruppe E[2]. Die zyklische Markendrehung g(z) = iz + ½ ist
+   affin. Ihr Verschiebungsteil wirkt auf diesen Charakteren über die Weilpaarung als Vorzeichen,
+   und das Spektrum ist **genau {−1, i, −i}**: (A,A) mit −1, AP und PA mit ±i. Kein Vorzeichen ist
+   eingesetzt. Eine Drehung um eine Marke statt um den Viertelpunkt gäbe {1, 1, −1}. Dasselbe g auf
+   H¹ der vier Marken gibt dasselbe Spektrum. Für alle 24 Elemente von S₄ = ⟨R, C⟩ = Aut(Q₈) gilt
+   Charakter auf Im H = Signum × Standard = Λ²(Standard). Die chiralen 2-Formen der Raumzeit sind
+   also das Λ² des Familienraums, und das Signum ist dessen Determinante. Das ist genau der
+   orientierte Viermarkenzustand, den die Kritik vermutet. Prämisse C wird damit zu
+   **C′: Familien = gerade Spinstrukturen der Naht, chirale 2-Formen = ihr Λ²**.
+4. *E₈ und die T-Phase.* Richtig: Die Vierteldrehung braucht nur S, und S ist für jedes N exakt.
+   T-Kovarianz der GSO-Summe verlangt N ≡ 0 mod 16, strenge T-Invarianz N ≡ 0 mod 48. E₈ (N = 16)
+   ist daher nur bis auf exp(−2πi/3) basisunabhängig. Es gibt zwei konsistente Ergänzungen:
+   **(F)** eine invertierbare 3D E₈ Phase mit Rand c = 8. Ihr T²-Hilbertraum ist eindimensional,
+   also bricht die Wahl der Füllung die Vierteldrehung nicht. Oder (F′) drei identische E₈ Blöcke,
+   c = 24, mit Zustandssumme χ_E8³ = j (χ_E8(i) = 12, j(i) = 1728). H6h3 nimmt F als neue Prämisse;
+   F′ würde TFPTs c = 8 in der Gravitation ändern. Nebenbefund: arg exp(−2πi/3) = 240° ist TFPTs
+   δ_PMNS. Die Zahl ist gleich; ein Zusammenhang ist nicht hergeleitet.
+5. *Lorentzsignatur.* Richtig: Die Gleichwertigkeit der vier Achsen ist eine euklidische Aussage.
+   H6 nutzt sie nur so. Die lorentzsche Zeit entsteht durch OS-Rekonstruktion entlang der Achse, die
+   der Zustand wählt. Dafür braucht es Reflexionspositivität der Gitterwirkung und die
+   Wiederherstellung von SO(4) im Limes. Beides gehört zu K16 und ist nicht gezeigt.
+6. *Eichdynamik.* Verbindung, Krümmung und induzierte Wirkung sind in `y1` gerechnet. Die gemeinsame
+   Normierung kommt aus denselben Fermionschleifen bei vollständigen Multipletts. Schwellen durch
+   ungleiche Massen sind nicht behandelt.
+7. *Gravitation braucht η mikroskopisch (Gegentest D, `z2`).* Gerechnet: Ein naives Diracfeld auf
+   ℤ³ trägt je Gitterfläche κ = 0,78657 nat (konvergiert in Ring und Querimpulsen; nicht π/4),
+   also 0,0983 je Geschmack. η = 1/4 entspricht 2,54 Dirac-Geschmäckern. Drei Generationen mit ν_R
+   geben schon ohne Eichfelder κ ≥ 2,36. Unter D ist daher a/ℓ_P = 2√κ ≥ 3,07 (naiv mit Verdopplern
+   8,7). **Korrektur:** Das Lipschitzgitter sitzt nicht in Planckeinheiten. Unter D ist η = 1/4 die
+   Definition der Planckeinheit, und a/ℓ_P wird eine Vorhersage, sobald der volle Feldinhalt samt
+   Kontaktterm der Eichfelder feststeht (Sakharovs Artenproblem in Gitterform).
+
+**θ₁₃ neu eingeordnet.** TFPT hat θ₁₃ bereits als eigenen Trägerkanal: sin²θ₁₃ = φ₀·exp(−tr Y²) mit
+tr Y² = 5/6 über der Hyperladung der fünf Plätze (FLAV.TH13.01). In H6 ist Y der Generator, den der
+lokale 3+2-Split (Prämisse E) liefert. H6 gibt die führende Ordnung (tribimaximal aus S₄), TFPT die
+Korrekturen: sin²θ₁₂ = 0,3067, sin²θ₂₃ = 1/2, sin²θ₁₃ = 0,0231. Laut TFPTs eigener Prüfliste liegt das
+etwa 2σ von den Daten; JUNO entscheidet. θ₁₃ ist damit keine Lücke von H6 mehr, sondern eine
+geerbte Vorhersage (K18 unter Lesart).
+
+**Der gemeinsame Nahtoperator (Vorschlag 5 der Kritik).** Ein einziger Operator, die geliftete
+Vierteldrehung g̃ um den Viertelpunkt, leistet zwei der drei geforderten Eigenschaften exakt.
+- Er permutiert die vier Marken zyklisch und gibt c₃ = 1/(8π) je Spinorsektor, mit Spinphasen.
+- Auf den geraden Spinstrukturen gibt er die Familien mit {−1, i, −i}, ohne eingesetztes Vorzeichen.
+
+Die dritte Eigenschaft, E₈ mit vollständig behandelter Anomalie, gilt für g̃ selbst (S ist exakt).
+Für vollständige Basisunabhängigkeit braucht sie die Ergänzung F.
+
+**Prämissen von H6h3.**
+- **A:** Der orientierte Tausch der Zyklen ist eine Symmetrie (Fixpunkt statt Kovarianz).
+- **C′:** Familien = gerade Spinstrukturen der Naht; die chiralen 2-Formen sind ihr Λ².
+- **D:** Gravitation als Zustandsgleichung (Jacobson).
+- **E:** Der 3+2-Split ist lokal.
+- **F:** Die Rahmungsanomalie wird durch eine invertierbare 3D E₈ Phase kompensiert.
+
+**Offen.**
+- K16: wechselwirkender Kontinuumslimes, Reflexionspositivität und SO(4).
+- a/ℓ_P mit vollem Feldinhalt.
+- F gegen F′.
+- Warum der Fixpunkt.
+- Der Weg von der T-Phase zur CP-Phase, falls es einen gibt.
+
+## Davor: H6h2 — Eichdynamik und Prämissen (`y1_eichdynamik_praemissen.py`)
 
 ```
         K1 K2 K3 K4 K5 K6 K7 K8 K9 K10 K11 K12 K13 K14 K15 K16    P  L  F  O  E

@@ -1,0 +1,91 @@
+1. Kovarianz gegen Zeitneutralität
+
+   tau = (0.0 + 2.0j): Z_AA(tau) = 2.87099994551, Z_AA(-1/tau) = 2.87099994551
+   tau = (0.0 + 1.0j): Z_AA(tau) = 2.0, Z_AA(-1/tau) = 2.0
+   Kovarianz gilt bei tau = 2i: ja (die Kritik hat hier recht)
+   Rekonstruktion A: Raum 1, Zeit 2: beta/L = 2.00, Besetzung der tiefsten Mode 0.00186
+   Rekonstruktion B: Raum 2, Zeit 1: beta/L = 0.50, Besetzung der tiefsten Mode 0.17210
+   Gleiche Zustandssumme, aber verschiedene thermische Systeme (kalt gegen heiß). Zeitneutral im
+   Sinn von H6 ist erst die Gleichheit der Systeme; das ist die Fixpunktbedingung, nicht die Kovarianz.
+
+   Tori mit Drehung der Ordnung > 2 im Fundamentalbereich: [(-0.5, 0.866, 6), (0.0, 1.0, 4), (0.5, 0.866, 6)]
+   (die beiden Randpunkte -1/2 und +1/2 sind derselbe Sechseckstorus)
+   Quadrat, Vierteldrehung:  AA->AA, AP->PA, PA->AP, PP->PP
+   Sechseck, Sechsteldrehung: AA->AP, AP->PA, PA->AA, PP->PP
+   invariant: Quadrat ['AA', 'PP'], Sechseck ['PP']; PP hat Nullmoden
+   Die verschärfte Fassung der Kritik (echte Drehung, Ordnung > 2, Spinstruktur ohne Nullmoden
+   erhalten) wählt genau tau = i mit (A,A). Das ist dieselbe Bedingung wie in N und deckt sich mit
+   dem Atlasbefund vom 16.11. (nur j = 1728 erlaubt Ordnung vier auf den Marken).
+
+2. Gelifte Vierteldrehung g(z) = i z + 1/2 auf Spinoren, Spinstruktur (A,A)
+
+   Marken 0, 1/2, (1+i)/2, i/2 gehen auf Indizes [1, 2, 3, 0]: Viererzyklus ja
+   g^4 = Identität auf dem Torus: ja
+   [g~, D] = 2.5e-15: ja;  g~^4 = -1: ja
+   Eigenwerte von g~ auf einer Bahn (in Einheiten pi/4): {1: 2, 3: 2, 5: 2, 7: 2}
+   naiver Projektor (1/4) Summe g~^k, k=0..3, ist idempotent: nein; invarianter Sektor hat Dimension 0
+   Mit Spinoren gibt es keinen invarianten Sektor (g~^4 = -1). Die Sektoren sind die vier Eigenwerte
+   exp(i pi (2m+1)/4), und jeder trägt auf jeder Bahn genau 2 von 8 Zuständen.
+   Impulse mit Fixpunkt unter der Drehung: 0; also Wärmespur je Sektor = Spur/4 exakt.
+   t * Spur je Sektor bei t = 0.002: 0.039788735773, 1/(8 pi) = 0.039788735773
+   Drehung um 0: Sektorzählung auf der Bahn {1: 2, 3: 2, 5: 2, 7: 2}
+   Drehung um (1+i)/4: Sektorzählung auf der Bahn {1: 2, 3: 2, 5: 2, 7: 2}
+   Ergebnis: Die fermionische Drehphase ändert die Viertelzählung nicht. Jeder der vier spinoriellen
+   Sektoren hat exakt ein Viertel jedes Eigenraums, ohne Fixpunktkorrektur, also c3 = 1/(8 pi).
+
+3. Familienvorzeichen
+
+   <R, C> auf Im H: Ordnung 24 ja; R hat Eigenwerte [0.+1.j 0.-1.j 1.+0.j]
+   Charakter auf Im H = Signum x Standard für alle 24 Elemente: ja
+   Charakter auf Im H = Lambda^2(Standard) für alle 24 Elemente: ja
+   Also: Die chiralen 2-Formen (Im H) sind die zweite äußere Potenz der Standarddarstellung,
+   weil Lambda^2 V = V* x det V und det(Standard) = Signum.
+
+   g = i z + 1/2 auf den drei nichttrivialen Charakteren der Markengruppe E[2] (Weilpaarung):
+   Matrix [[0, 1, 0], [-1, 0, 0], [0, 0, -1]], Eigenwerte [-1.+0.j  0.-1.j  0.+1.j]
+   Kontrolle Drehung um 0 (ohne Verschiebung): Eigenwerte [ 1. -1.  1.]
+   Die nichttrivialen Charaktere von E[2] sind die drei geraden Spinstrukturen; (1+i)/2 gehört zu (A,A).
+   Die zyklische Markendrehung ist affin. Ihr Verschiebungsteil wirkt über die Weilpaarung als
+   Vorzeichen, und das ergibt genau {-1, i, -i}: (A,A) mit -1, AP und PA mit +-i. Das Vorzeichen
+   ist damit nicht eingesetzt; es ist der Verschiebungsteil der Drehung um den Viertelpunkt.
+   Dasselbe g auf H^1 der vier Marken (Permutation ohne Summe): [-1.+0.j -0.-1.j -0.+1.j]
+   Orientierter Viermarkenzustand (Produkt der vier Majoranas) unter g: Faktor -1 = Signum
+
+4. E8 und die T Phase
+
+   N Majorana-Weyl, Summe über die drei geraden Spinstrukturen:
+    N    |S Verhältnis - 1|   T Phase / (2 pi)    T kovariant
+     8    4.7e-32            +nan           nein
+    16    2.8e-32            -0.333333           ja
+    24    9.1e-32            +nan           nein
+    32    2.0e-31            +0.333333           ja
+    48    1.2e-31            +0.000000           ja
+   N = 16 ist E4/eta^8: ja
+   chi_E8(i) = 12.0, chi_E8(i)^3 = 1728.0 = j(i) = 1728
+   S ist für jedes N exakt; die Vierteldrehung braucht nur S. T (Basiswechsel) ist für N = 16 nur bis auf
+   exp(-2 pi i/3) erfüllt. Strenge Basisunabhängigkeit ohne Zusatzstruktur verlangt N = 48 (c = 24),
+   mit Phase c/24 ganzzahlig. Die zwei konsistenten Ergänzungen sind daher:
+   (i)  eine invertierbare 3D E8 Phase (Rand c = 8), deren T^2 Hilbertraum eindimensional ist, so dass
+        die Wahl der Füllung die Vierteldrehung nicht bricht; (ii) drei identische E8 Blöcke, c = 24,
+        Zustandssumme chi^3 = j.
+   Die T Phase exp(-2 pi i/3) = -0.5000-0.8660i hat Argument 240 Grad;
+   TFPTs leptonische CP Phase ist delta_PMNS = 4 pi/3 = 240 Grad (GALOIS.CP.PREDICT.01). Gleiche Zahl,
+   ein Zusammenhang ist nicht hergeleitet.
+
+Zusammenfassung der Prüfungen:
+   bestanden: Z_AA kovariant bei 2i
+   bestanden: Drehung >2 nur bei i und rho
+   bestanden: Quadrat hält AA
+   bestanden: Sechseck hält nur PP
+   bestanden: g zyklisch auf Marken
+   bestanden: g^4 = id
+   bestanden: g~ vertauscht mit D
+   bestanden: g~^4 = -1
+   bestanden: je Sektor zwei Zustände je Bahn
+   bestanden: c3 je Spinorsektor
+   bestanden: Ordnung 24
+   bestanden: rot = sgn x std
+   bestanden: rot = Lambda2 std
+   bestanden: Familiencharaktere aus g
+   bestanden: H1 der Marken gleich
+   bestanden: chi16 = E4/eta8

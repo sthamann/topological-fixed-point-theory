@@ -22,6 +22,7 @@ Katalog
   K6  Zustand und Zeit, Breite festgelegt      K13 Gravitation (Einstein mit 1/c3, TFPT bedingt)
   K7  flacher Sektor für das E8 Wort           K14 keine freien Parameter
   K15 Eichdynamik (Yang-Mills) in 4D           K16 Kontinuumslimes
+  K17 Rahmungsanomalie der Naht behandelt      K18 Neutrinomischung gegen Daten
 """
 import itertools
 import json
@@ -531,7 +532,53 @@ if y1:
 
 facts["F16_seam_framing_anomaly"] = "N = 16 chiral: T-Phase exp(-2 pi i/3) = exp(-2 pi i c/24); verlangt Zufluss aus einem 3D Volumen"
 
-order = [f"K{i}" for i in range(1, 17)]
+# K17 framing anomaly of the seam, K18 neutrino mixing against data (added after the external review of 23.11.)
+for h in H:
+    H[h]["K17"] = (O, "T-Phase der Naht nicht behandelt") if h.startswith(("H4", "H5", "H6")) else (O, "keine chirale Naht mit GSO")
+    H[h]["K18"] = (O, "keine Familiengruppe")
+for h in ("H6", "H6h", "H6h2"):
+    if h in H:
+        H[h]["K18"] = (LES, "S4 gibt tribimaximal: sin^2 theta12 = 1/3, sin^2 theta23 = 1/2, sin^2 theta13 = 0 gegen 0,022")
+z1p, z2p = Path(__file__).with_name("z1_ergebnis.json"), Path(__file__).with_name("z2_ergebnis.json")
+if "H6h2" in H and z1p.exists() and z2p.exists():
+    z1 = json.loads(z1p.read_text())
+    z2 = json.loads(z2p.read_text())
+    ok = z1["checks"]
+    phi0 = 1 / (6 * np.pi) + 3 / (256 * np.pi ** 4)
+    trY2 = 3 * Fr(1, 3) ** 2 + 2 * Fr(1, 2) ** 2
+    s13 = phi0 * np.exp(-float(trY2))
+    H["H6h3"] = dict(H["H6h2"])
+    H["H6h3"]["K2"] = (P if ok["Drehung >2 nur bei i und rho"] and ok["Sechseck hält nur PP"] else F,
+                       "[A] Fixpunkt, nicht Kovarianz (Z_AA ist auch bei 2i kovariant, die Rekonstruktionen sind dort "
+                       "verschiedene Systeme); Drehung der Ordnung > 2 nur bei i und rho; rho verliert (A,A)")
+    H["H6h3"]["K5"] = (P if ok["g~^4 = -1"] and ok["c3 je Spinorsektor"] else F,
+                       f"[A] gelifte Vierteldrehung g~^4 = -1; jeder der vier spinoriellen Sektoren trägt exakt 1/4 jedes "
+                       f"Eigenraums; c3 je Sektor = {z1['c3_per_spinor_sector']:.12f} = 1/(8 pi)")
+    H["H6h3"]["K9"] = (P, "[C'] drei Familien = drei gerade Spinstrukturen der Naht (nichttriviale Charaktere der Markengruppe "
+                          "E[2]); dieselbe S4-Darstellung wie H^1 der Marken")
+    H["H6h3"]["K10"] = (P if ok["Familiencharaktere aus g"] and ok["H1 der Marken gleich"] else F,
+                        f"[Naht] g = iz + 1/2 auf den drei geraden Spinstrukturen: Verschiebungsteil wirkt über die Weilpaarung, "
+                        f"Spektrum {z1['family_spectrum_from_weil']}; kein eingesetztes Vorzeichen; Drehung um 0 gäbe {{1, 1, -1}}")
+    H["H6h3"]["K11"] = (P, "[A, F] E8 = kleinstes N mit T-Kovarianz (N = 16); strenge Invarianz erst bei N = 48")
+    H["H6h3"]["K12"] = (P if ok["rot = Lambda2 std"] else F,
+                        "[A, C'] chirale 2-Formen = Lambda^2(Familien) (Charaktere für alle 24 Elemente gleich); "
+                        "drei chirale Mittelformen nur in d = 4; Lipschitz; Re + Im = 1 + 3 (euklidisch, Lorentz per OS)")
+    H["H6h3"]["K13"] = (LES, f"[D] Jacobson wie TFPT. Gegentest: kappa = {z2['kappa_per_dirac_taste']:.4f} je Dirac-Geschmack und "
+                             f"Gitterfläche; drei Generationen geben a/l_P >= {z2['a_over_lP_three_generations_no_doublers']:.2f}; "
+                             "die Gitterskala ist nicht die Planckskala")
+    H["H6h3"]["K14"] = (P, "keine freie Konstante; a/l_P = 2 sqrt(kappa_gesamt) ist berechenbar, aber noch nicht berechnet "
+                           "(Eichfelder, Kontaktterm)")
+    H["H6h3"]["K16"] = (O, "freier Sektor läuft logarithmisch; wechselwirkender Limes und Wiederherstellung von SO(4) "
+                           "nicht gezeigt; Gitterabstand mindestens drei Plancklängen")
+    H["H6h3"]["K17"] = (LES, "[F] T-Phase exp(-2 pi i/3) kompensiert durch invertierbare 3D E8 Phase (Rand c = 8, T^2-Hilbertraum "
+                             "eindimensional, bricht die Vierteldrehung nicht); Alternative drei E8 Blöcke, c = 24")
+    H["H6h3"]["K18"] = (LES, f"S4 gibt TBM als führende Ordnung; TFPT-Kanäle: sin^2 theta12 = {1 / 3 - phi0 / 2:.4f}, "
+                             f"sin^2 theta13 = phi0 exp(-tr Y^2) = {s13:.4f} mit tr Y^2 = {trY2} aus dem 3+2-Split (E), "
+                             "etwa 2 sigma gegen Daten (JUNO entscheidet); delta = 240 Grad = Argument der T-Phase, nicht hergeleitet")
+    facts["F18_review_checks"] = ok
+    facts["F19_entanglement_density"] = z2
+
+order = [f"K{i}" for i in range(1, 19)]
 print("Gesamttabelle (P = hergeleitet, L = unter benannter Lesart, F = FAIL, O = OFFEN, E = EINGABE)\n")
 print("      " + " ".join(f"{k:>4}" for k in order) + "     P    L    F    O    E")
 for h, crit in H.items():
@@ -550,6 +597,10 @@ for k, v in prem.items():
 if "H6h2" in H:
     print("Prämissen von H6h2: A, C, D wie oben; B entfällt (folgt aus A, C und der 2D Naht); "
           "E: der 3+2-Split ist lokal (Verbindung auf den Gitterkanten)")
+if "H6h3" in H:
+    print("Prämissen von H6h3: A (der orientierte Tausch der Zyklen ist eine Symmetrie, Fixpunkt statt Kovarianz); "
+          "C' (Familien = gerade Spinstrukturen der Naht, chirale 2-Formen = ihr Lambda^2); D; E; "
+          "F (Rahmungsanomalie durch invertierbare 3D E8 Phase kompensiert)")
 print("\nFakten:")
 for k, v in facts.items():
     print(f"   {k}: {v}")
