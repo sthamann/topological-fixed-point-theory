@@ -1,0 +1,29 @@
+1. Auswahl über alle CM-Tori der Klassenzahl 1
+
+      d  |U|  p (A)  Dublett (B)  Spinstr. (C)    c = covol/(2π|U|)
+      1    4      5         True          True         0.0397887358  <- c3 = 1/(8π)
+      2    2      3        False          True         0.1125395395
+      3    6      7        False         False         0.0229720373
+      7    2   None        False          True         0.1052710998
+     11    2      3        False          True         0.1319643074
+     19    2   None        False          True         0.1734350783
+     43    2   None        False          True         0.2609121888
+     67    2   None        False          True         0.3256848386
+    163    2   None        False          True         0.5079885723
+
+   (A) und (B) und (C) erfüllt nur: d = [1]
+
+2. Der ausgewählte Torus C/Z[i] und seine 5-Torsion Z[i]/5
+   Multiplikation mit i in der Basis (1, i): [[0, -1], [1, 0]], symplektisch: True, Ordnung 4
+   Das ist das Weyl-Element w = [[0,-1],[1,0]] von SL(2,5); sein Weil-Bild ist die Fourier-
+   transformation S mit Spektrum {1, -1, -1, i, -i} (w1), also TFPTs R5 bis auf das Vorzeichen.
+   Eigenwert 2: Eigengerade erzeugt von 1 + 3*I, Torsionsgerade E[2 - I]
+   Eigenwert 3: Eigengerade erzeugt von 1 + 2*I, Torsionsgerade E[2 + I]
+   Plätze = Funktionen auf der Eigengeraden L = E[2-i] (Eigenwert 2; E[2+i] mit Eigenwert 3 ist
+   die Gegenorientierung). Translation um L ist C5, die Vierteldrehung wirkt auf L als x -> 2x = G.
+   Kontrolle: i bildet L = [(0, 0), (1, 3), (2, 1), (3, 4), (4, 2)] auf sich ab: True; wirkt dort als t -> 2t: True; G C5 G^-1 = C5^2: True
+
+3. Randnormierung aus der Wärmespur von C/Z[i] (Spinstruktur (-,-), Kantenlänge 1)
+   s = 0.02: s * (1/4) Tr exp(-s D^2) = 0.039788142660   (1/(8π) = 0.039788735773)
+   s = 0.01: s * (1/4) Tr exp(-s D^2) = 0.039788735771   (1/(8π) = 0.039788735773)
+   s = 0.005: s * (1/4) Tr exp(-s D^2) = 0.039788735773   (1/(8π) = 0.039788735773)

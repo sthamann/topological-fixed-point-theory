@@ -1,6 +1,6 @@
 # Urteil
 
-Gerechnet am 23. November 2026 mit `.venv/bin/python` (numpy, scipy, sympy). Fünf Skripte,
+Gerechnet am 23. November 2026 mit `.venv/bin/python` (numpy, scipy, sympy). Acht Skripte,
 alle mit Rückgabewert 0; Ausgaben in `ausgabe_*.txt`. PLAN, progress, Ledger und Atlas sind
 unberührt. Ausgangspunkt war der konsolidierte Stand in `docs/research/TFPT-STAND.md`
 (Abschnitt „Befunde 20.–23. November“): Die offenen Eingaben laufen auf „woher die Vier“ und
@@ -10,6 +10,7 @@ unberührt. Ausgangspunkt war der konsolidierte Stand in `docs/research/TFPT-STA
 
 | Nr | Urteil | Stufe | Erste freie Wahl |
 |---|---|---|---|
+| **G Gaußscher Torus ℂ/ℤ[i] (Hauptergebnis)** | **Kandidat** | **3 unter benannten Lesarten** (P1-Normierung und P2 aus einem Objekt) | Startklasse CM-Torus; Plätze = Torsionsstück; c₃ als Weylterm pro Einheitenbahn |
 | W Weil-Darstellung von SL(2, 𝔽₅) | **Kandidat** | 2 für P2 unter benannter Lesart | Auswahlregel „fermionischer Teil = treues SU(2) Dublett“; Lesart „fünf Plätze = Ortsbasis eines Fünfersystems“ |
 | W2 Clifford-Gruppe eines Fünfersystems | Uhrenrelation **bestätigt**, sechs Fasern **verworfen** | – | – |
 | W3 die 16 unter 2I | **bestätigt**, exakt | – | – |
@@ -20,8 +21,83 @@ unberührt. Ausgangspunkt war der konsolidierte Stand in `docs/research/TFPT-STA
 | F Familientest zu W (Nachtrag) | Kopienweg **verworfen**; Wörterbuch über 𝔽₅ **offen** | 1 für die Zahl 3 | siehe Abschnitt F |
 | K Familien als étale Kohomologie (Nachtrag) | Test **bestanden**, aber nicht unabhängig; Frobeniusgleichheit **neu** | 1 | siehe Abschnitt K |
 
-Keine vollständige Lösung. Was sich ändert: Die Vier braucht in W keine Eingabe mehr, und die
-Fünf folgt aus einer einzigen Auswahlregel statt aus d = 4, ℤ₄-Anomalie und Minimalität.
+Keine vollständige Lösung (Stufe 4 fehlt: physische Zeit und Zustand, 3 + 1, Kontinuum,
+Gravitation). Was sich ändert: G erzeugt P2 und die Normierung von P1 aus einem einzigen Objekt,
+ausgewählt durch eine einzige physikalische Forderung.
+
+## G: Ein Objekt für P1 und P2 — der Gaußsche Torus ℂ/ℤ[i] (`g1_gauss_torus.py`)
+
+**Prinzip.** Startklasse sind flache 2-Tori, deren Gitter ein Ganzheitsring O_K ist (Tori mit
+komplexer Multiplikation, Klassenzahl 1, neun Fälle). Auf einem Torsionsstück des Torus lebt ein
+endlicher Oszillator, die Weil-Darstellung auf den Funktionen dieses Stücks. Eine einzige
+physikalische Forderung: Auf dem Torsionsstück, auf dem die Symmetrien des Torus als volle
+Einheitengruppe eines Primkörpers wirken, hat der Oszillator einen Spin-½-Dublett als
+fermionischen Teil.
+
+**Kette.** Spin-½-Dublett ⇒ p = 5 (eindeutig, W) ⇒ Einheitengruppe der Ordnung p − 1 = 4 ⇒ ℤ[i],
+der quadratische Torus. Aus diesem einen Torus folgt:
+- **P2.** Plätze = Funktionen auf der Torsionsgeraden E[2−i] ≅ 𝔽₅. 3 + 2 = bosonischer Dreier ⊕
+  fermionisches Dublett. Y ist die einzige spurfreie Größe im Kommutanten (−1/3, +1/2). Die 16
+  trägt die Hyperladungen, jeder Sektor ist unter 2I irreduzibel (W3). SL(2,5) = 2I führt zu E₈
+  (Ikosiane, McKay, h = 30).
+- **μ₄ und Uhren.** Die komplexe Multiplikation mit i ist auf der 5-Torsion genau das Weyl-Element
+  [[0,−1],[1,0]]; ihr Weil-Bild ist die Fourier-Vierteldrehung, also TFPTs R₅ bis auf das
+  Vorzeichen. Auf E[2−i] wirkt sie als t ↦ 2t = G, die Torsionstranslation ist C₅, und
+  G C₅ G⁻¹ = C₅² gilt exakt.
+- **P1.** Randnormierung c = Kovolumen/(2π · |Einheiten|) = 1/(8π) = c₃ (Weylterm der
+  Dirac-Wärmespur pro Einheitenbahn, numerisch auf 12 Stellen). Die einzige invariante
+  Spinstruktur ohne Nullmoden ist (−,−). Der Modul τ = i ist der Fixpunkt, den KERNSYM als
+  symmetrieerzwungen kennt. Die vier Marken sind die Bilder der 2-Torsion unter der
+  Doppelüberlagerung y² = z⁴ − 1, mit Windung +1 des quadratischen Differentials (Atlas 23.11.).
+  Die Orientierung kommt aus der komplexen Struktur, die Reflexion z ↦ z̄ erhält ℤ[i].
+- **Familien.** H¹ von P¹ ohne die Marken: Rang 3, Charaktere {−1, i, −i}, über 𝔽₅
+  frobeniusgleich (K), Residuenbild der Trägermoden.
+
+**Auswahltabelle (alle neun CM-Tori der Klassenzahl 1).**
+- (A) Volle Einheitenwirkung auf einem Primkörper: p = 5 für ℤ[i], 7 für ℤ[ω], 3 für d = 2 und 11,
+  sonst kein p.
+- (B) Dublett: nur bei p = 5.
+- (C) Invariante invertierbare Spinstruktur: alle außer ℤ[ω].
+
+Nur d = 1 erfüllt alle drei Regeln. Die c-Werte der neun Tori liegen zwischen 0,023 und 0,51;
+nur ℤ[i] gibt 1/(8π).
+
+**Neu gegenüber TFPT.** Die Einzelteile waren bekannt: quadratischer Torus mit μ₄ (τ = i,
+j = 1728), c₃ aus der Viertelzählung (23.11., bedingt), 5 = (2+i)(2−i) als Zahlenbeobachtung
+(ARITH.TRICHOTOMY.01), x ↦ 2x und Y_par, PGL(2,5), 2I und E₈. Neu ist die Brücke: P2s fünf
+Plätze sind ein Torsionsstück desselben Torus, dessen Wärmespur P1s c₃ gibt. Und eine einzige
+Forderung (Spin-½-Dublett) wählt diesen Torus unter allen CM-Tori aus. Damit beantwortet G beide
+Leitfragen der Konsolidierung: **Die Vier ist die Einheitengruppe ℤ[i]^× des Torus**, erzwungen
+durch das Dublett. **Die Minimalität ist das erste Torsionsstück**, auf dem die Einheiten voll
+wirken.
+
+**Stufe.** Stufe 3 unter benannten Lesarten: P1 (Normierung, Spinstruktur, Modul, Marken,
+Orientierung) und P2 (fünf Plätze, 3 + 2, Y) kommen aus demselben Objekt, ohne angepasste
+Konstante; die vorhandenen Ergebnisse trägt der TFPT Compiler aus P1 und P2. Nicht Stufe 4:
+physische Zeit und Zustand, 3 + 1, Kontinuum und Gravitation liefert G nicht.
+
+**Benannte Lesarten (erste freie Wahlen).**
+1. Startklasse: Der Rand ist ein flacher Torus mit Ring-Gitter.
+2. Plätze = Schrödinger-Modell der Weil-Darstellung auf dem ersten Torsionsstück mit voller
+   Einheitenwirkung.
+3. c₃ = Weylterm der Dirac-Wärmespur, gezählt pro Einheitenbahn (in TFPT bisher bedingt).
+4. Die Paritätsbasis (Y_par) ist die physische Farb/Schwach-Basis. Das ist eine Identifikations-
+   änderung gegenüber der markierten Ladung, siehe W.
+
+**Basislinie.** Die Auswahl ist strukturell, kein Zahlentreffer. Effektiv entscheidet
+„Einheitengruppe der Ordnung 4“, und das Dublett erzwingt sie. Der Wert 1/(8π) ist keine
+unabhängige Vorhersage, weil die Viertelzählung am quadratischen Torus formuliert wurde.
+Unabhängig ist, dass die Regel von der P2-Seite denselben Torus wählt. Gegenproben: ℤ[ω] (sechs
+Einheiten) scheitert an zwei Regeln, die Tori mit nur ±1 an der Dublettregel.
+
+**Stärkster Einwand.** Die Lesarten 2 und 3 sind gewählt. SU(3) × SU(2) entsteht nicht, nur 2I
+und U(1) × U(1). Die Dynamik fehlt ganz. G erklärt die Eingaben, nicht die Physik dahinter.
+
+**Kleinster nächster Test (Stufe 4, kein Nebenschauplatz).** Zeit und Zustand aus demselben
+Torus: Die Vierteldrehung vertauscht die beiden Zyklen (τ ↦ −1/τ hat τ = i als Fixpunkt).
+Prüfen, ob der Weil-Oszillator auf E[5] zusammen mit der Torus-Wärmespur eine reflexionspositive
+Halbgruppe mit ausgezeichneter Zeitrichtung definiert, deren KMS-Zustand die Normierung c₃
+trägt. Abbruch, wenn Zeit oder Zustand eine zusätzliche freie Wahl brauchen.
 
 ## W: Weil-Darstellung von SL(2, 𝔽_p) (`w1_weil_darstellung.py`)
 
