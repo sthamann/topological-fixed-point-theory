@@ -1,0 +1,23 @@
+Teil 1: Verbindung aus dem lokalen 3+2-Split ist unitär True und eichkovariant (U -> h_x^* U h_y) True
+Teil 2: induzierte Kopplung 1/g^2 = Delta Gamma / (N^4 F^2 / 2), mit Fermionmasse M als Infrarotregler
+   ohne Masse (F setzt selbst die Infrarotskala, erwartet F^2 log F): {8: [np.float64(0.9338), np.float64(0.5434), np.float64(0.4559)], 16: [np.float64(0.9256), np.float64(0.6916), np.float64(0.6369)]}
+   M = 0.30, N = 16: F/M^2 = 0.273; 1/g^2 bei m = 1, 2: 0.44682, 0.40369
+   M = 0.30, N = 24: F/M^2 = 0.121; 1/g^2 bei m = 1, 2: 0.40532, 0.39817
+   M = 0.45, N = 16: F/M^2 = 0.121; 1/g^2 bei m = 1, 2: 0.29520, 0.28538
+   M = 0.45, N = 24: F/M^2 = 0.054; 1/g^2 bei m = 1, 2: 0.28405, 0.28347
+   M = 0.60, N = 16: F/M^2 = 0.068; 1/g^2 bei m = 1, 2: 0.20922, 0.20703
+   M = 0.60, N = 24: F/M^2 = 0.030; 1/g^2 bei m = 1, 2: 0.20677, 0.20669
+   quadratisch (m = 1 und 2 gleich auf 2 %, N = 24): True; positiv: True; eichinvariant: True; volumenunabhängig (N = 16 gegen 24): False
+   Lauf: d(1/g^2)/d log(1/M) = 0.2873; Kontinuum für 16 Diracarten (naive Doppler, Ladung 1): 16/(6 pi^2) = 0.2702
+
+Teil 3: Dynkin-Summen einer Generation: {'SU3': 2.0, 'SU2': 2.0, 'U1_GUT': 1.9999999999999998} -> gleiche induzierte Kopplungen, sin^2 theta_W = 0.37499999999999994 an der Gitterskala (TFPT: 3/8 an der Trägerskala)
+
+Teil 4: chirale Mittelformen je Dimension {2: 0, 3: 0, 4: 3, 5: 0, 6: 0, 7: 0, 8: 35, 9: 0}: drei nur bei d = 4. Mit einer 2D Naht ist die Kodimension 2;
+   A auf allen vier Zyklen macht die Normalebene der Naht gleichwertig (quadratisch). B folgt aus A, C und der 2D Naht.
+
+Teil 5: Familiengruppe Ordnung 24; 8 Elemente der Ordnung 3, 4 Kleinsche Vierergruppen
+   Mischmuster |U|^2 (Zeilen sortiert): [[np.float64(0.0), np.float64(0.333333), np.float64(0.666667)], [np.float64(0.166667), np.float64(0.333333), np.float64(0.5)], [np.float64(0.166667), np.float64(0.333333), np.float64(0.5)]]   <- tribimaximal
+   Mischmuster |U|^2 (Zeilen sortiert): [[np.float64(0.333333), np.float64(0.333333), np.float64(0.333333)], [np.float64(0.333333), np.float64(0.333333), np.float64(0.333333)], [np.float64(0.333333), np.float64(0.333333), np.float64(0.333333)]]
+   Vergleich: {'sin2_12_TBM': 0.3333333333333333, 'sin2_12_TFPT': 0.30674735724491053, 'sin2_12_NuFIT': 0.307, 'sin2_23_TBM': 0.5, 'sin2_23_NuFIT_range': '0.47-0.57', 'sin2_13_TBM': 0.0, 'sin2_13_NuFIT': 0.022}
+
+Teil 6: ohne Prämisse A: {'tau': 'frei (jeder Modul)', 'c3': '1/(2 pi) ohne, 1/(4 pi) mit Parität statt 1/(8 pi)', 'Kragenbreite': 'frei (T/lambda_1 frei)', 'N der Naht': 'frei (keine Modularbedingung)', 'E8': 'nicht erzwungen', 'Spinstruktur': 'nicht eindeutig'}

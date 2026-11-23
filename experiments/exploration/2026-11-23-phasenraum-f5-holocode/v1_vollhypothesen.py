@@ -514,6 +514,21 @@ k15_k16 = {
 k15_k16["H6h"] = k15_k16["H6"]
 for h in H:
     H[h]["K15"], H[h]["K16"] = k15_k16[h]
+y1 = json.loads(Path(__file__).with_name("y1_ergebnis.json").read_text()) if Path(__file__).with_name("y1_ergebnis.json").exists() else None
+if y1:
+    H["H6h2"] = dict(H["H6h"])
+    H["H6h2"]["K12"] = (P, "[A, C] d = 4 aus drei chiralen Mittelformen; Kodimension 2 der 2D Naht; A auf allen Zyklen "
+                           "macht die Normalebene gleichwertig, also Z[i] + Z[i] j = Lipschitz (Prämisse B entfällt)")
+    ok15 = y1["T1_link_covariant"] and y1["T2_quadratic"] and y1["T2_positive"] and y1["T2_gauge_invariant"]
+    H["H6h2"]["K15"] = (P if ok15 else F,
+                        f"[E] Verbindung aus dem lokalen 3+2-Split eichkovariant; Fermionschleifen induzieren F^2: quadratisch "
+                        f"{y1['T2_quadratic']}, positiv {y1['T2_positive']}, eichinvariant {y1['T2_gauge_invariant']}, "
+                        f"Lauf {y1['T2_log_running_slope']:.3f} (Kontinuum {y1['T2_slope_continuum_16_dirac']:.3f}); "
+                        f"Dynkin {y1['T3_dynkin']} -> sin^2 theta_W = 3/8 an der Gitterskala")
+    H["H6h2"]["K16"] = (O, "freier Sektor hat logarithmisch laufende Kopplung (renormierbare Struktur); wechselwirkender "
+                           "Kontinuumslimes nicht gezeigt")
+    facts["F17_family_mixing_from_S4"] = {"TBM_in_S4": y1["T5_TBM_in_S4"], **y1["T5_compare"]}
+
 facts["F16_seam_framing_anomaly"] = "N = 16 chiral: T-Phase exp(-2 pi i/3) = exp(-2 pi i c/24); verlangt Zufluss aus einem 3D Volumen"
 
 order = [f"K{i}" for i in range(1, 17)]
@@ -532,6 +547,9 @@ for h, crit in H.items():
 print("\nPrämissen von H6h:")
 for k, v in prem.items():
     print(f"   {k}: {v}")
+if "H6h2" in H:
+    print("Prämissen von H6h2: A, C, D wie oben; B entfällt (folgt aus A, C und der 2D Naht); "
+          "E: der 3+2-Split ist lokal (Verbindung auf den Gitterkanten)")
 print("\nFakten:")
 for k, v in facts.items():
     print(f"   {k}: {v}")

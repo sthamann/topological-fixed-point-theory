@@ -1,6 +1,50 @@
 # Urteil
 
-## Aktueller Stand: H6 gehärtet (H6h)
+## Aktueller Stand: H6h2 — Eichdynamik und Prämissen (`y1_eichdynamik_praemissen.py`)
+
+```
+        K1 K2 K3 K4 K5 K6 K7 K8 K9 K10 K11 K12 K13 K14 K15 K16    P  L  F  O  E
+   H6h   P  P  P  P  P  P  P  P  P  P   P   P   L   P   O   O    13  1  0  2  0
+   H6h2  P  P  P  P  P  P  P  P  P  P   P   P   L   P   P   O    14  1  0  1  0
+```
+
+**Eichdynamik (K15) hergeleitet unter einer kleinen Prämisse E** (der 3+2-Split ist lokal):
+- Der örtlich variierende Split definiert auf jeder Gitterkante eine Paralleltranslation
+  U = polar(V_x* V_y); sie ist unitär und eichkovariant (U ↦ h_x* U h_y).
+- Fermionschleifen auf dem Lipschitzgitter induzieren den Yang–Mills-Term. Mit Fermionmasse als
+  Infrarotregler und im Schwachfeldbereich (F/M² ≤ 0,12) ist die Wirkung **quadratisch** in F
+  (Fluss 1 und 2 gleich auf 2 %), **positiv**, **eichinvariant**, und die Kopplung **läuft
+  logarithmisch** mit d(1/g²)/d log(1/M) = 0,287 gegen 0,270 im Kontinuum (16 Diracarten).
+  Ohne Masse setzt das Feld selbst die Infrarotskala (F² log F), wie erwartet.
+- Eine Generation hat für SU(3), SU(2) und U(1) (GUT-normiert) dieselbe Dynkin-Summe 2. Die
+  induzierten Kopplungen sind daher gleich, **sin²θ_W = 3/8 an der Gitterskala**; TFPT hat 3/8 an
+  der Trägerskala.
+
+**Prämissen geprüft.**
+- **A** (keine ausgezeichneten Zyklen) ist tragend. Ohne A wären τ, c₃ (1/(2π) oder 1/(4π)), die
+  Kragenbreite, die Fermionenzahl der Naht, E₈ und die Spinstruktur frei.
+- **B entfällt.** Drei chirale Mittelformen gibt es nur in d = 4. Mit der 2D Naht ist die
+  Kodimension 2, und A auf allen vier Zyklen macht die Normalebene gleichwertig. B folgt also aus
+  A, C und der Naht.
+- **C gegen Daten.** Die Familiengruppe S₄ (Ordnung 24) mit Restsymmetrien Z₃ für die geladenen
+  Leptonen und Z₂ × Z₂ für Majorana-Neutrinos gibt genau die **tribimaximale Mischung**:
+  sin²θ₁₂ = 1/3 (TFPTs Leitterm; mit −φ₀/2 sind es 0,3067 gegen gemessen 0,307), sin²θ₂₃ = 1/2
+  (gemessen 0,47 bis 0,57), aber **sin²θ₁₃ = 0 gegen gemessen 0,022**. C besteht zwei von drei
+  Winkeln in führender Ordnung; θ₁₃ verlangt eine Brechung, die H6 noch nicht liefert. Die
+  Majorana-Forderung passt zu TFPTs Kandidaten vom 18. November.
+- **D** bleibt der Rahmen (Jacobson wie TFPT). Entscheidender Gegentest für später: die
+  Flächendichte der Verschränkung des Gittervakuums ausrechnen; sie legt fest, ob die Gitterskala
+  die Planckskala ist (2π/η = 8π = 1/c₃).
+- **E** (neu, mild): der Split ist ein lokales Feld.
+
+**Was jetzt noch offen ist.**
+1. **K16:** Der freie Sektor hat die renormierbare Struktur (logarithmischer Lauf). Ein
+   wechselwirkender Kontinuumslimes ist nicht gezeigt.
+2. **θ₁₃:** Die S₄-Restsymmetrie gibt null; der gemessene Wert verlangt eine Korrektur. Das ist
+   jetzt die schärfste Datenprüfung von H6.
+3. **D:** Gravitation nur im Jacobson-Rahmen; Gegentest oben.
+
+## Davor: H6 gehärtet (H6h)
 
 Gleicher Prüfstand, Katalog um K15 (Eichdynamik in 4D) und K16 (Kontinuumslimes) erweitert,
 damit nichts Fehlendes verdeckt wird.

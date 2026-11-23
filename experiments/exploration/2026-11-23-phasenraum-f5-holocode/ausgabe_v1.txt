@@ -8,6 +8,7 @@ Gesamttabelle (P = hergeleitet, L = unter benannter Lesart, F = FAIL, O = OFFEN,
    H6    P    P    L    P    P    P    L    P    L    L    P    L    O    P    O    O     8    5    0    3    0
    H6h    P    P    P    P    P    P    P    P    P    P    P    P    L    P    O    O    13    1    0    2    0
    H5    P    P    L    P    P    F    L    P    P    F    P    L    O    P    O    O     8    3    2    3    0
+   H6h2    P    P    P    P    P    P    P    P    P    P    P    P    L    P    P    O    14    1    0    1    0
 
 H1:
    K1 EINGABE: Blattinvolution und flache Naht vorausgesetzt
@@ -73,12 +74,16 @@ H5:
    K13 OFFEN: 4D lokal; Einstein mit 1/c3 nur über TFPT GRAV.NONLINEAR.01 (bedingt)
    K15 OFFEN: wie H2
    K16 OFFEN: wie H2
+H6h2:
+   K13 LESART: [D] TFPTs Jacobson-Herleitung, alle Eingaben aus H6: {'c_seam': 8.0, 'c_TFPT_g_car_plus_N_fam': 8, 'mu4': 4, 'Z2_times_chi': 4, 'einstein_coeff_2pi_over_eta': 25.132741228718345, 'one_over_c3': 25.132741228718345}; c = 8 der Naht ist abgeleitet (N = 16), nicht gesetzt
+   K16 OFFEN: freier Sektor hat logarithmisch laufende Kopplung (renormierbare Struktur); wechselwirkender Kontinuumslimes nicht gezeigt
 
 Prämissen von H6h:
    A: keine ausgezeichneten Zyklen (zeitneutral und basisunabhängig)
    B: die Naht ist eine Kodimension-2-Fläche mit gleichwertiger Normalebene
    C: Familien = chirale Formen mittlerer Dimension der Raumzeit
    D: Gravitation als Zustandsgleichung (Jacobson, wie TFPT)
+Prämissen von H6h2: A, C, D wie oben; B entfällt (folgt aus A, C und der 2D Naht); E: der 3+2-Split ist lokal (Verbindung auf den Gitterkanten)
 
 Fakten:
    F1_time_neutral_tau: [(np.float64(0.0), np.float64(1.0))]
@@ -126,4 +131,5 @@ Fakten:
    F13_quarter_turn_is_lattice_automorphism: True
    F14_chiral_middle_forms: {4: 3, 8: 35, 12: 462}
    F15_gravity_inputs: {'c_seam': 8.0, 'c_TFPT_g_car_plus_N_fam': 8, 'mu4': 4, 'Z2_times_chi': 4, 'einstein_coeff_2pi_over_eta': 25.132741228718345, 'one_over_c3': 25.132741228718345}
+   F17_family_mixing_from_S4: {'TBM_in_S4': True, 'sin2_12_TBM': 0.3333333333333333, 'sin2_12_TFPT': 0.30674735724491053, 'sin2_12_NuFIT': 0.307, 'sin2_23_TBM': 0.5, 'sin2_23_NuFIT_range': '0.47-0.57', 'sin2_13_TBM': 0.0, 'sin2_13_NuFIT': 0.022}
    F16_seam_framing_anomaly: N = 16 chiral: T-Phase exp(-2 pi i/3) = exp(-2 pi i c/24); verlangt Zufluss aus einem 3D Volumen
