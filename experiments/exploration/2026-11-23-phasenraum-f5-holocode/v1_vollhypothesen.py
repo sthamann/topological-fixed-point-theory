@@ -21,6 +21,7 @@ Katalog
   K5  c3 = 1/(8 pi) ohne Wahl                  K12 3+1 aus dem Prinzip
   K6  Zustand und Zeit, Breite festgelegt      K13 Gravitation (Einstein mit 1/c3, TFPT bedingt)
   K7  flacher Sektor für das E8 Wort           K14 keine freien Parameter
+  K15 Eichdynamik (Yang-Mills) in 4D           K16 Kontinuumslimes
 """
 import itertools
 import json
@@ -311,6 +312,90 @@ facts["F11_sigma_on_selfdual_order3"] = bool(np.allclose(np.linalg.matrix_power(
                                             not np.allclose(on_plus(Rs), np.eye(3)))
 facts["F11_quarter_fixes_normal_plane"] = bool(np.allclose(Rq[:, 2:], np.eye(4)[:, 2:]))
 
+
+# ---------------------------------------------------------------- hardening of H6
+# F12 basis independence of a chiral fermion seam: GSO sum of N Majorana-Weyl fermions must be S-invariant and
+#     T-invariant up to a constant phase; only N = 0 mod 16 works, smallest N = 16 -> c = 8, lattice D8+ = E8
+
+
+def f_gso(N, tau):
+    nome = exp(1j * pi * tau)
+    eta = exp(1j * pi * tau / 12) * qp(exp(2j * pi * tau))
+    th2, th3, th4 = (jtheta(k, 0, nome) for k in (2, 3, 4))
+    return (th3 ** (N // 2) + th4 ** (N // 2) + th2 ** (N // 2)) / (2 * eta ** (N // 2))
+
+
+gso = {}
+for N in (8, 16, 24, 32, 48):
+    t1, t2 = mpc(0.11, 1.07), mpc(-0.23, 1.31)
+    s_ok = all(abs(f_gso(N, t) / f_gso(N, -1 / t) - 1) < 1e-12 for t in (t1, t2))
+    r1, r2 = f_gso(N, t1 + 1) / f_gso(N, t1), f_gso(N, t2 + 1) / f_gso(N, t2)
+    t_ok = abs(abs(r1) - 1) < 1e-12 and abs(r1 - r2) < 1e-12
+    gso[N] = {"S": bool(s_ok), "T_bis_auf_Phase": bool(t_ok), "Phase/2pi": float(mp.arg(r1) / (2 * pi)) if t_ok else None}
+facts["F12_gso_modular"] = gso
+facts["F12_smallest_N"] = min(N for N, v in gso.items() if v["S"] and v["T_bis_auf_Phase"])
+facts["F12_central_charge"] = facts["F12_smallest_N"] / 2
+
+# F13 the family group: <sigma, quarter turn> on Lambda^2_+ and its character against S4 (standard x sign)
+gens3 = [on_plus(Rs), on_plus(Rq)]
+grp = [np.eye(3)]
+frontier = [np.eye(3)]
+while frontier:
+    nxt = []
+    for g in frontier:
+        for h in gens3:
+            m = np.round(g @ h, 9)
+            if not any(np.allclose(m, x) for x in grp):
+                grp.append(m); nxt.append(m)
+    frontier = nxt
+facts["F13_family_group_order"] = len(grp)
+
+
+def order_of(m):
+    x, n = m, 1
+    while not np.allclose(x, np.eye(len(m))):
+        x, n = x @ m, n + 1
+    return n
+
+
+ours = sorted((order_of(g), round(float(np.trace(g)), 6)) for g in grp)
+s4 = []
+for perm in itertools.permutations(range(4)):
+    P4 = np.zeros((4, 4))
+    for a, b in enumerate(perm):
+        P4[b, a] = 1
+    std = np.trace(P4) - 1
+    sign = round(np.linalg.det(P4))
+    s4.append((order_of(P4), round(float(std * sign), 6)))
+facts["F13_is_S4_standard_times_sign"] = ours == sorted(s4)
+# H^1 of the four marks = standard representation: quarter turn as 4-cycle vs as (1,1,2)
+four_cycle = np.roll(np.eye(4), 1, axis=0)
+fix_swap = np.eye(4)[[0, 1, 3, 2]]
+h1 = lambda P4: sorted(np.round(np.linalg.eigvals(P4), 9).tolist(), key=lambda c: (c.real, c.imag))
+ev4 = [complex(x) for x in h1(four_cycle)]
+ev4.remove(1 + 0j)
+evf = [complex(x) for x in h1(fix_swap)]
+evf.remove(1 + 0j)
+lam_sign = sorted([-x for x in facts["F11_quarter_on_selfdual"]], key=lambda c: (c.real, c.imag))
+facts["F13_H1_cyclic"] = sorted(ev4, key=lambda c: (c.real, c.imag))
+facts["F13_H1_centre_at_mark"] = sorted(evf, key=lambda c: (c.real, c.imag))
+facts["F13_selfdual_times_sign"] = lam_sign
+facts["F13_centre_forced"] = (np.allclose(facts["F13_H1_cyclic"], lam_sign) and
+                              not np.allclose(facts["F13_H1_centre_at_mark"], lam_sign))
+facts["F13_quarter_turn_is_lattice_automorphism"] = bool(np.allclose(Rq, np.round(Rq)) and
+                                                       np.allclose(Rq @ s4_ if (s4_ := np.full(4, .5)) is not None else 0,
+                                                                   Rq @ s4_) and
+                                                       np.allclose((Rq @ s4_ - s4_), np.round(Rq @ s4_ - s4_)))
+
+# F14 chiral middle forms: three of them only in d = 4
+from math import comb
+facts["F14_chiral_middle_forms"] = {d: comb(d, d // 2) // 2 for d in range(2, 13, 2) if (d // 2) % 2 == 0}
+
+# F15 inputs of TFPT's gravity derivation supplied by H6
+facts["F15_gravity_inputs"] = {"c_seam": facts["F12_central_charge"], "c_TFPT_g_car_plus_N_fam": 5 + 3,
+                               "mu4": 4, "Z2_times_chi": 2 * 2, "einstein_coeff_2pi_over_eta": 2 * np.pi * 4,
+                               "one_over_c3": 1 / facts["F3_c3"]}
+
 # ---------------------------------------------------------------- criteria
 P, LES, F, O, IN = "PASS", "LESART", "FAIL", "OFFEN", "EINGABE"
 cyc_ok = bool(facts["F2_cyclic_centres"])
@@ -389,11 +474,49 @@ H["H6"] = dict(seam_common, **{
     "K13": (O, "4D lokal; Einstein mit 1/c3 nur über TFPT GRAV.NONLINEAR.01 (bedingt)"),
     "K14": (P, "Lipschitz statt Hurwitz durch K6 erzwungen, 16 Fermionen durch E8"),
 })
+prem = {"A": "keine ausgezeichneten Zyklen (zeitneutral und basisunabhängig)",
+        "B": "die Naht ist eine Kodimension-2-Fläche mit gleichwertiger Normalebene",
+        "C": "Familien = chirale Formen mittlerer Dimension der Raumzeit",
+        "D": "Gravitation als Zustandsgleichung (Jacobson, wie TFPT)"}
+f12 = facts["F12_gso_modular"]
+H["H6h"] = dict(H["H6"])
+H["H6h"]["K3"] = (P if facts["F13_centre_forced"] else F,
+                  f"[C] H^1 der Marken muss als mu4-Modul gleich Lambda^2_+ x sign sein: zyklisch {facts['F13_H1_cyclic']} "
+                  f"= {facts['F13_selfdual_times_sign']}, Zentrum auf Marke {facts['F13_H1_centre_at_mark']}: Viertelpunkt erzwungen")
+H["H6h"]["K7"] = (P, f"[A] Basisunabhängigkeit: GSO-Summe nur für N = 0 mod 16 modular {f12}; kleinstes N = "
+                     f"{facts['F12_smallest_N']}, (P,P) mit 8 komplexen Nullmoden, flach für jede Breite")
+H["H6h"]["K9"] = (P if facts["F13_family_group_order"] == 24 else F,
+                  f"[C] drei chirale 2-Formen; <sigma, Vierteldrehung> hat Ordnung {facts['F13_family_group_order']}, "
+                  f"Charakter = Standard x Signum von S4: {facts['F13_is_S4_standard_times_sign']} (TFPT v117: signgetwistete Standarddarstellung)")
+H["H6h"]["K10"] = (P if facts["F13_is_S4_standard_times_sign"] else F,
+                   "[C] H^1 der Marken = Standarddarstellung von S4 = Lambda^2_+ x sign (Satz); der Vorzeichencharakter von q "
+                   "ist das Signum von S4, nicht gewählt; Charaktere {-1, i, -i}")
+H["H6h"]["K11"] = (P, f"[A] E8 = D8+ aus dem kleinsten modularen N = 16, dasselbe Gitter wie Z^8 mit Halbzahlkleber")
+H["H6h"]["K12"] = (P, f"[B, C] d = 4: drei chirale Mittelformen nur in d = 4 {facts['F14_chiral_middle_forms']}; Naht plus "
+                      "gleichwertige Normalebene = Z[i] + Z[i] j = Lipschitz; Re + Im = 1 + 3")
+H["H6h"]["K13"] = (LES, f"[D] TFPTs Jacobson-Herleitung, alle Eingaben aus H6: {facts['F15_gravity_inputs']}; "
+                        "c = 8 der Naht ist abgeleitet (N = 16), nicht gesetzt")
+H["H6h"]["K14"] = (P, "keine Konstante; N = 16, d = 4, mu4 erzwungen; die Gitterskala ist die Einheit")
 H["H5"] = dict(H["H2"])
 H["H5"]["K7"] = H["H4"]["K7"]
 H["H5"]["K11"] = (P, "dasselbe E8 zweimal: GSO-Gitter der Naht = Hurwitz^2 mod (1+i)")
 
-order = [f"K{i}" for i in range(1, 15)]
+# K15 gauge dynamics, K16 continuum limit: not part of the first catalogue, added for honesty
+k15_k16 = {
+    "H1": ((IN, "Eichgruppe nur über TFPT Compiler"), (O, "Gitter- und Kontinuumsfrage nicht gestellt")),
+    "H2": ((O, "Erhaltungsgruppe (SU3 x SU2 x U1)/Z6 aus 3+2 [TFPT E], Eichfelddynamik nicht hergeleitet"), (O, "Hurwitzgitter, kein Skalenlimes")),
+    "H3": ((P, "Spektralwirkung gibt Yang-Mills mit freien Kopplungen"), (O, "Kontinuum gesetzt")),
+    "H4": ((O, "E8 Ströme der Naht, keine 4D Eichfelder"), (O, "nur 2D")),
+    "H5": ((O, "wie H2"), (O, "wie H2")),
+    "H6": ((O, "Erhaltungsgruppe (SU3 x SU2 x U1)/Z6 aus 3+2 [TFPT E]; Eichfelddynamik in 4D nicht hergeleitet"),
+           (O, "Lipschitzgitter in Planckeinheiten; freier Skalenlimes, wechselwirkender Limes nicht gezeigt")),
+}
+k15_k16["H6h"] = k15_k16["H6"]
+for h in H:
+    H[h]["K15"], H[h]["K16"] = k15_k16[h]
+facts["F16_seam_framing_anomaly"] = "N = 16 chiral: T-Phase exp(-2 pi i/3) = exp(-2 pi i c/24); verlangt Zufluss aus einem 3D Volumen"
+
+order = [f"K{i}" for i in range(1, 17)]
 print("Gesamttabelle (P = hergeleitet, L = unter benannter Lesart, F = FAIL, O = OFFEN, E = EINGABE)\n")
 print("      " + " ".join(f"{k:>4}" for k in order) + "     P    L    F    O    E")
 for h, crit in H.items():
@@ -406,6 +529,9 @@ for h, crit in H.items():
         st, why = crit[k]
         if st != P:
             print(f"   {k} {st}: {why}")
+print("\nPrämissen von H6h:")
+for k, v in prem.items():
+    print(f"   {k}: {v}")
 print("\nFakten:")
 for k, v in facts.items():
     print(f"   {k}: {v}")

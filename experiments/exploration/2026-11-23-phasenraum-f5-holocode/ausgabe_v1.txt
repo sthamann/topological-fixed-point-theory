@@ -1,12 +1,13 @@
 Gesamttabelle (P = hergeleitet, L = unter benannter Lesart, F = FAIL, O = OFFEN, E = EINGABE)
 
-        K1   K2   K3   K4   K5   K6   K7   K8   K9  K10  K11  K12  K13  K14     P    L    F    O    E
-   H1    E    P    L    P    P    P    F    P    O    P    E    F    F    P     7    1    3    1    2
-   H2    P    P    L    P    P    F    F    P    P    F    P    L    O    P     8    2    3    1    0
-   H3    E    E    E    P    O    O    F    E    E    E    E    E    P    F     2    0    2    2    8
-   H4    E    P    L    P    P    P    L    P    O    P    P    F    F    P     8    2    2    1    1
-   H6    P    P    L    P    P    P    L    P    L    L    P    L    O    P     8    5    0    1    0
-   H5    P    P    L    P    P    F    L    P    P    F    P    L    O    P     8    3    2    1    0
+        K1   K2   K3   K4   K5   K6   K7   K8   K9  K10  K11  K12  K13  K14  K15  K16     P    L    F    O    E
+   H1    E    P    L    P    P    P    F    P    O    P    E    F    F    P    E    O     7    1    3    2    3
+   H2    P    P    L    P    P    F    F    P    P    F    P    L    O    P    O    O     8    2    3    3    0
+   H3    E    E    E    P    O    O    F    E    E    E    E    E    P    F    P    O     3    0    2    3    8
+   H4    E    P    L    P    P    P    L    P    O    P    P    F    F    P    O    O     8    2    2    3    1
+   H6    P    P    L    P    P    P    L    P    L    L    P    L    O    P    O    O     8    5    0    3    0
+   H6h    P    P    P    P    P    P    P    P    P    P    P    P    L    P    O    O    13    1    0    2    0
+   H5    P    P    L    P    P    F    L    P    P    F    P    L    O    P    O    O     8    3    2    3    0
 
 H1:
    K1 EINGABE: Blattinvolution und flache Naht vorausgesetzt
@@ -16,6 +17,8 @@ H1:
    K11 EINGABE: E8 nur über den TFPT Compiler
    K12 FAIL: Naht plus Normale: 2+1
    K13 FAIL: keine 4D Geometrie
+   K15 EINGABE: Eichgruppe nur über TFPT Compiler
+   K16 OFFEN: Gitter- und Kontinuumsfrage nicht gestellt
 H2:
    K3 LESART: zyklisch nur bei Drehzentrum ['(0.25+0.25j)', '(0.25+0.75j)', '(0.75+0.25j)', '(0.75+0.75j)']; Lesart: keine Marke ausgezeichnet
    K6 FAIL: 4D: einheiteninvariante invertierbare Spinstrukturen links [], links+rechts []
@@ -23,6 +26,8 @@ H2:
    K10 FAIL: Vierteldrehung der Naht auf den Geraden: i, -j, -k, also {1, -1, -1} statt {-1, i, -i}
    K12 LESART: Lesart Raumzeit = größte assoziative Divisionsalgebra H (Frobenius; Oktonionen nicht assoziativ: geprüft), Re + Im = 1 + 3
    K13 OFFEN: 4D lokal; Einstein mit 1/c3 nur über TFPT GRAV.NONLINEAR.01 (bedingt)
+   K15 OFFEN: Erhaltungsgruppe (SU3 x SU2 x U1)/Z6 aus 3+2 [TFPT E], Eichfelddynamik nicht hergeleitet
+   K16 OFFEN: Hurwitzgitter, kein Skalenlimes
 H3:
    K1 EINGABE: Naht nicht Teil des Prinzips
    K2 EINGABE: Quadrat gesetzt
@@ -36,6 +41,7 @@ H3:
    K11 EINGABE: E8 nicht aus dem Prinzip
    K12 EINGABE: d = 4 gesetzt
    K14 FAIL: Abschneidefunktion und ihre Momente frei
+   K16 OFFEN: Kontinuum gesetzt
 H4:
    K1 EINGABE: Blattinvolution vorausgesetzt
    K3 LESART: zyklisch nur bei Drehzentrum ['(0.25+0.25j)', '(0.25+0.75j)', '(0.75+0.25j)', '(0.75+0.75j)']; Lesart: keine Marke ausgezeichnet
@@ -43,6 +49,8 @@ H4:
    K9 OFFEN: keine Familienvervielfachung
    K12 FAIL: 2D Naht mit 3D Volumen
    K13 FAIL: keine 4D Geometrie
+   K15 OFFEN: E8 Ströme der Naht, keine 4D Eichfelder
+   K16 OFFEN: nur 2D
 H6:
    K3 LESART: zyklisch nur bei Drehzentrum ['(0.25+0.25j)', '(0.25+0.75j)', '(0.75+0.25j)', '(0.75+0.75j)']; Lesart: keine Marke ausgezeichnet
    K7 LESART: Lesart B = Naht-Dirac summiert über Spinstrukturen (GSO): 8 komplexe Nullmoden im (P,P) Sektor, flach für jede Breite; 120 + 128 = 248
@@ -50,6 +58,12 @@ H6:
    K10 LESART: Familien = selbstduale 2-Formen: Vierteldrehung [-1j, 1j, (1+0j)]; mit dem Vorzeichen-charakter von q (wie bei TFPTs Trägermoden) [(-1-0j), (-0-1j), (-0+1j)] = {-1, i, -i}
    K12 LESART: Lesart Raumzeit = größte assoziative Divisionsalgebra H (Frobenius), Re + Im = 1 + 3; Lipschitz ist ihr Gaußsches Gitter
    K13 OFFEN: 4D lokal; Einstein mit 1/c3 nur über TFPT GRAV.NONLINEAR.01 (bedingt)
+   K15 OFFEN: Erhaltungsgruppe (SU3 x SU2 x U1)/Z6 aus 3+2 [TFPT E]; Eichfelddynamik in 4D nicht hergeleitet
+   K16 OFFEN: Lipschitzgitter in Planckeinheiten; freier Skalenlimes, wechselwirkender Limes nicht gezeigt
+H6h:
+   K13 LESART: [D] TFPTs Jacobson-Herleitung, alle Eingaben aus H6: {'c_seam': 8.0, 'c_TFPT_g_car_plus_N_fam': 8, 'mu4': 4, 'Z2_times_chi': 4, 'einstein_coeff_2pi_over_eta': 25.132741228718345, 'one_over_c3': 25.132741228718345}; c = 8 der Naht ist abgeleitet (N = 16), nicht gesetzt
+   K15 OFFEN: Erhaltungsgruppe (SU3 x SU2 x U1)/Z6 aus 3+2 [TFPT E]; Eichfelddynamik in 4D nicht hergeleitet
+   K16 OFFEN: Lipschitzgitter in Planckeinheiten; freier Skalenlimes, wechselwirkender Limes nicht gezeigt
 H5:
    K3 LESART: zyklisch nur bei Drehzentrum ['(0.25+0.25j)', '(0.25+0.75j)', '(0.75+0.25j)', '(0.75+0.75j)']; Lesart: keine Marke ausgezeichnet
    K6 FAIL: 4D: einheiteninvariante invertierbare Spinstrukturen links [], links+rechts []
@@ -57,6 +71,14 @@ H5:
    K10 FAIL: Vierteldrehung der Naht auf den Geraden: i, -j, -k, also {1, -1, -1} statt {-1, i, -i}
    K12 LESART: Lesart Raumzeit = größte assoziative Divisionsalgebra H (Frobenius; Oktonionen nicht assoziativ: geprüft), Re + Im = 1 + 3
    K13 OFFEN: 4D lokal; Einstein mit 1/c3 nur über TFPT GRAV.NONLINEAR.01 (bedingt)
+   K15 OFFEN: wie H2
+   K16 OFFEN: wie H2
+
+Prämissen von H6h:
+   A: keine ausgezeichneten Zyklen (zeitneutral und basisunabhängig)
+   B: die Naht ist eine Kodimension-2-Fläche mit gleichwertiger Normalebene
+   C: Familien = chirale Formen mittlerer Dimension der Raumzeit
+   D: Gravitation als Zustandsgleichung (Jacobson, wie TFPT)
 
 Fakten:
    F1_time_neutral_tau: [(np.float64(0.0), np.float64(1.0))]
@@ -92,3 +114,16 @@ Fakten:
    F11_quarter_on_selfdual_times_q_character: [(-1-0j), (-0-1j), (-0+1j)]
    F11_sigma_on_selfdual_order3: True
    F11_quarter_fixes_normal_plane: True
+   F12_gso_modular: {8: {'S': True, 'T_bis_auf_Phase': False, 'Phase/2pi': None}, 16: {'S': True, 'T_bis_auf_Phase': True, 'Phase/2pi': -0.3333333333333333}, 24: {'S': True, 'T_bis_auf_Phase': False, 'Phase/2pi': None}, 32: {'S': True, 'T_bis_auf_Phase': True, 'Phase/2pi': 0.3333333333333333}, 48: {'S': True, 'T_bis_auf_Phase': True, 'Phase/2pi': -3.3676576258638635e-27}}
+   F12_smallest_N: 16
+   F12_central_charge: 8.0
+   F13_family_group_order: 24
+   F13_is_S4_standard_times_sign: True
+   F13_H1_cyclic: [(-1+0j), -1j, 1j]
+   F13_H1_centre_at_mark: [(-1+0j), (1+0j), (1+0j)]
+   F13_selfdual_times_sign: [(-1-0j), (-0-1j), (-0+1j)]
+   F13_centre_forced: True
+   F13_quarter_turn_is_lattice_automorphism: True
+   F14_chiral_middle_forms: {4: 3, 8: 35, 12: 462}
+   F15_gravity_inputs: {'c_seam': 8.0, 'c_TFPT_g_car_plus_N_fam': 8, 'mu4': 4, 'Z2_times_chi': 4, 'einstein_coeff_2pi_over_eta': 25.132741228718345, 'one_over_c3': 25.132741228718345}
+   F16_seam_framing_anomaly: N = 16 chiral: T-Phase exp(-2 pi i/3) = exp(-2 pi i c/24); verlangt Zufluss aus einem 3D Volumen

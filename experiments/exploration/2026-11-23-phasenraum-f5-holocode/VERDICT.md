@@ -1,6 +1,61 @@
 # Urteil
 
-## Stand zuerst: vollständige Hypothesen auf einem festen Prüfstand (`v1_vollhypothesen.py`)
+## Aktueller Stand: H6 gehärtet (H6h)
+
+Gleicher Prüfstand, Katalog um K15 (Eichdynamik in 4D) und K16 (Kontinuumslimes) erweitert,
+damit nichts Fehlendes verdeckt wird.
+
+```
+        K1 K2 K3 K4 K5 K6 K7 K8 K9 K10 K11 K12 K13 K14 K15 K16    P  L  F  O  E
+   H6    P  P  L  P  P  P  L  P  L  L   P   L   O   P   O   O     8  5  0  3  0
+   H6h   P  P  P  P  P  P  P  P  P  P   P   P   L   P   O   O    13  1  0  2  0
+```
+
+**Was die Härtung leistet.** Die fünf Lesarten von H6 sind durch Rechnungen ersetzt, die nur noch
+auf vier offen genannten Prämissen stehen:
+- **A** Keine ausgezeichneten Zyklen (zeitneutral und basisunabhängig).
+- **B** Die Naht ist eine Kodimension-2-Fläche mit gleichwertiger Normalebene.
+- **C** Familien = chirale Formen mittlerer Dimension der Raumzeit.
+- **D** Gravitation als Zustandsgleichung (Jacobson, wie TFPT).
+
+Die Ersetzungen im Einzelnen:
+1. **GSO, 16 Fermionen und E₈ aus A.** Eine chirale Fermion-Naht, die von der Wahl der
+   Basiszyklen nicht abhängt, ist nur für N ≡ 0 mod 16 modular konsistent (S exakt, T bis auf eine
+   Phase; geprüft N = 8, 16, 24, 32, 48). Das kleinste N = 16 gibt c = 8 und das Gitter D₈⁺ = E₈.
+   Der (P,P) Sektor trägt die 8 flachen Nullmoden des E₈ Worts. Die frühere Lesart „B ist über
+   Spinstrukturen summiert“ ist damit hergeleitet.
+2. **Familien, ihre Charaktere und das Drehzentrum aus C.** σ und die Vierteldrehung erzeugen auf
+   den drei chiralen 2-Formen eine Gruppe der Ordnung 24 mit dem Charakter Standard × Signum von
+   S₄. Das ist genau die Darstellung, die TFPT für die Familienmonodromie aufgezeichnet hat (v117,
+   „signgetwistete Standarddarstellung von S₄“). H¹ der Marken ist die Standarddarstellung (Satz).
+   Der früher „gewählte“ q-Charakter ist also das Signum von S₄. Die beiden Lesarten derselben
+   Familien stimmen nur bei zyklischer Wirkung auf den Marken überein; das erzwingt das
+   Drehzentrum auf dem Viertelpunkt ({−1, i, −i} gegen {−1, 1, 1}).
+3. **3 + 1 aus B und C.** Drei chirale Mittelformen gibt es nur in d = 4 (d = 8: 35, d = 12: 462).
+   Naht plus gleichwertige Normalebene ist ℤ[i] ⊕ ℤ[i]·j, also das Lipschitz-Gitter.
+4. **Gravitation unter D mit Eingaben aus H6.** TFPTs Herleitung braucht c = 8, |μ₄| = 4 =
+   |ℤ₂|·χ und 2π/η = 8π = 1/c₃. H6 liefert alle drei; c = 8 ist jetzt abgeleitet (N = 16), nicht
+   gesetzt, und stimmt mit TFPTs g_car + N_fam = 8 überein.
+
+**Neue Folgerung, zu prüfen.** Eine chirale Naht mit c = 8 hat die Rahmungsanomalie
+exp(−2πi c/24) = exp(−2πi/3). Sie verlangt einen Zufluss aus einem 3D Volumen, also eine
+E₈-artige Wand, die an der Naht endet.
+
+**Was noch fehlt (ehrlich).**
+- **K15 Eichdynamik:** Die Erhaltungsgruppe (SU(3) × SU(2) × U(1))/ℤ₆ folgt aus 3 + 2 (TFPT,
+  exakt). Yang–Mills-Felder in 4D folgen aus H6 nicht.
+- **K16 Kontinuumslimes:** Das Lipschitzgitter sitzt in Planckeinheiten; ein wechselwirkender
+  Skalenlimes ist nicht gezeigt.
+- **Prämissen B, C, D** sind physikalische Postulate, keine Herleitungen. Die quantitativen
+  Ergebnisse (α, φ₀, Massen) kommen wie bisher aus dem TFPT Compiler mit dessen eigenen
+  bedingten Schritten.
+
+**Nächste Schritte am Ganzen (kein Nebenschauplatz).** K15 auf dem Lipschitzgitter angehen:
+TFPTs Befund „Grassmannkrümmung spannt s(u(3) ⊕ u(2))“ als Gitter-Eichfeld auf den Verbindungen
+von ℤ⁴ formulieren und prüfen, ob die Wirkung Yang–Mills ergibt. Danach K16 und für jede Prämisse
+einen entscheidenden Gegentest. Nach jedem Schritt läuft der ganze Prüfstand neu.
+
+## Vorher: vollständige Hypothesen auf einem festen Prüfstand (`v1_vollhypothesen.py`)
 
 Arbeitsweise seit dem Hinweis des Nutzers: Jede Hypothese deckt die ganze Lösung ab und wird
 gegen denselben Katalog K1…K14 geprüft. Ein Fehlschlag beendet die Prüfung nicht.

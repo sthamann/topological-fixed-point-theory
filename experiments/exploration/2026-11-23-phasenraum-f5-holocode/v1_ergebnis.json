@@ -133,7 +133,69 @@
    "(-0+1j)"
   ],
   "F11_sigma_on_selfdual_order3": true,
-  "F11_quarter_fixes_normal_plane": true
+  "F11_quarter_fixes_normal_plane": true,
+  "F12_gso_modular": {
+   "8": {
+    "S": true,
+    "T_bis_auf_Phase": false,
+    "Phase/2pi": null
+   },
+   "16": {
+    "S": true,
+    "T_bis_auf_Phase": true,
+    "Phase/2pi": -0.3333333333333333
+   },
+   "24": {
+    "S": true,
+    "T_bis_auf_Phase": false,
+    "Phase/2pi": null
+   },
+   "32": {
+    "S": true,
+    "T_bis_auf_Phase": true,
+    "Phase/2pi": 0.3333333333333333
+   },
+   "48": {
+    "S": true,
+    "T_bis_auf_Phase": true,
+    "Phase/2pi": -3.3676576258638635e-27
+   }
+  },
+  "F12_smallest_N": 16,
+  "F12_central_charge": 8.0,
+  "F13_family_group_order": 24,
+  "F13_is_S4_standard_times_sign": true,
+  "F13_H1_cyclic": [
+   "(-1+0j)",
+   "-1j",
+   "1j"
+  ],
+  "F13_H1_centre_at_mark": [
+   "(-1+0j)",
+   "(1+0j)",
+   "(1+0j)"
+  ],
+  "F13_selfdual_times_sign": [
+   "(-1-0j)",
+   "(-0-1j)",
+   "(-0+1j)"
+  ],
+  "F13_centre_forced": true,
+  "F13_quarter_turn_is_lattice_automorphism": true,
+  "F14_chiral_middle_forms": {
+   "4": 3,
+   "8": 35,
+   "12": 462
+  },
+  "F15_gravity_inputs": {
+   "c_seam": 8.0,
+   "c_TFPT_g_car_plus_N_fam": 8,
+   "mu4": 4,
+   "Z2_times_chi": 4,
+   "einstein_coeff_2pi_over_eta": 25.132741228718345,
+   "one_over_c3": 25.132741228718345
+  },
+  "F16_seam_framing_anomaly": "N = 16 chiral: T-Phase exp(-2 pi i/3) = exp(-2 pi i c/24); verlangt Zufluss aus einem 3D Volumen"
  },
  "scorecard": {
   "H1": {
@@ -192,6 +254,14 @@
    "K14": [
     "PASS",
     "keine Konstante gewählt"
+   ],
+   "K15": [
+    "EINGABE",
+    "Eichgruppe nur über TFPT Compiler"
+   ],
+   "K16": [
+    "OFFEN",
+    "Gitter- und Kontinuumsfrage nicht gestellt"
    ]
   },
   "H2": {
@@ -250,6 +320,14 @@
    "K14": [
     "PASS",
     "keine Konstante; Gitterskala setzt nur die Einheit"
+   ],
+   "K15": [
+    "OFFEN",
+    "Erhaltungsgruppe (SU3 x SU2 x U1)/Z6 aus 3+2 [TFPT E], Eichfelddynamik nicht hergeleitet"
+   ],
+   "K16": [
+    "OFFEN",
+    "Hurwitzgitter, kein Skalenlimes"
    ]
   },
   "H3": {
@@ -308,6 +386,14 @@
    "K14": [
     "FAIL",
     "Abschneidefunktion und ihre Momente frei"
+   ],
+   "K15": [
+    "PASS",
+    "Spektralwirkung gibt Yang-Mills mit freien Kopplungen"
+   ],
+   "K16": [
+    "OFFEN",
+    "Kontinuum gesetzt"
    ]
   },
   "H4": {
@@ -366,6 +452,14 @@
    "K14": [
     "PASS",
     "16 Fermionen = Rang von E8 mal 2, nicht gewählt"
+   ],
+   "K15": [
+    "OFFEN",
+    "E8 Ströme der Naht, keine 4D Eichfelder"
+   ],
+   "K16": [
+    "OFFEN",
+    "nur 2D"
    ]
   },
   "H6": {
@@ -424,6 +518,80 @@
    "K14": [
     "PASS",
     "Lipschitz statt Hurwitz durch K6 erzwungen, 16 Fermionen durch E8"
+   ],
+   "K15": [
+    "OFFEN",
+    "Erhaltungsgruppe (SU3 x SU2 x U1)/Z6 aus 3+2 [TFPT E]; Eichfelddynamik in 4D nicht hergeleitet"
+   ],
+   "K16": [
+    "OFFEN",
+    "Lipschitzgitter in Planckeinheiten; freier Skalenlimes, wechselwirkender Limes nicht gezeigt"
+   ]
+  },
+  "H6h": {
+   "K2": [
+    "PASS",
+    "orientierte Zeitneutralität erzwingt tau = i (F1)"
+   ],
+   "K3": [
+    "PASS",
+    "[C] H^1 der Marken muss als mu4-Modul gleich Lambda^2_+ x sign sein: zyklisch [(-1+0j), -1j, 1j] = [(-1-0j), (-0-1j), (-0+1j)], Zentrum auf Marke [(-1+0j), (1+0j), (1+0j)]: Viertelpunkt erzwungen"
+   ],
+   "K4": [
+    "PASS",
+    "KMS in beiden Zyklen und invertierbar: (A,A)"
+   ],
+   "K5": [
+    "PASS",
+    "c3 = 2/(4 pi |mu4|) = 0.039788735773"
+   ],
+   "K6": [
+    "PASS",
+    "4D Lipschitz-Gitter: Q8 transitiv auf den Achsen True, (A,A,A,A) invariant und invertierbar True; Breite L/2 aus 2D"
+   ],
+   "K8": [
+    "PASS",
+    "aus K1 bis K3 über P2.PARTITION.01 (TFPT, exakt)"
+   ],
+   "K1": [
+    "PASS",
+    "Pi-Drehung (-1 in Q8) gibt zwei Blätter und vier 2-Torsionspunkte der Naht"
+   ],
+   "K7": [
+    "PASS",
+    "[A] Basisunabhängigkeit: GSO-Summe nur für N = 0 mod 16 modular {8: {'S': True, 'T_bis_auf_Phase': False, 'Phase/2pi': None}, 16: {'S': True, 'T_bis_auf_Phase': True, 'Phase/2pi': -0.3333333333333333}, 24: {'S': True, 'T_bis_auf_Phase': False, 'Phase/2pi': None}, 32: {'S': True, 'T_bis_auf_Phase': True, 'Phase/2pi': 0.3333333333333333}, 48: {'S': True, 'T_bis_auf_Phase': True, 'Phase/2pi': -3.3676576258638635e-27}}; kleinstes N = 16, (P,P) mit 8 komplexen Nullmoden, flach für jede Breite"
+   ],
+   "K9": [
+    "PASS",
+    "[C] drei chirale 2-Formen; <sigma, Vierteldrehung> hat Ordnung 24, Charakter = Standard x Signum von S4: True (TFPT v117: signgetwistete Standarddarstellung)"
+   ],
+   "K10": [
+    "PASS",
+    "[C] H^1 der Marken = Standarddarstellung von S4 = Lambda^2_+ x sign (Satz); der Vorzeichencharakter von q ist das Signum von S4, nicht gewählt; Charaktere {-1, i, -i}"
+   ],
+   "K11": [
+    "PASS",
+    "[A] E8 = D8+ aus dem kleinsten modularen N = 16, dasselbe Gitter wie Z^8 mit Halbzahlkleber"
+   ],
+   "K12": [
+    "PASS",
+    "[B, C] d = 4: drei chirale Mittelformen nur in d = 4 {4: 3, 8: 35, 12: 462}; Naht plus gleichwertige Normalebene = Z[i] + Z[i] j = Lipschitz; Re + Im = 1 + 3"
+   ],
+   "K13": [
+    "LESART",
+    "[D] TFPTs Jacobson-Herleitung, alle Eingaben aus H6: {'c_seam': 8.0, 'c_TFPT_g_car_plus_N_fam': 8, 'mu4': 4, 'Z2_times_chi': 4, 'einstein_coeff_2pi_over_eta': 25.132741228718345, 'one_over_c3': 25.132741228718345}; c = 8 der Naht ist abgeleitet (N = 16), nicht gesetzt"
+   ],
+   "K14": [
+    "PASS",
+    "keine Konstante; N = 16, d = 4, mu4 erzwungen; die Gitterskala ist die Einheit"
+   ],
+   "K15": [
+    "OFFEN",
+    "Erhaltungsgruppe (SU3 x SU2 x U1)/Z6 aus 3+2 [TFPT E]; Eichfelddynamik in 4D nicht hergeleitet"
+   ],
+   "K16": [
+    "OFFEN",
+    "Lipschitzgitter in Planckeinheiten; freier Skalenlimes, wechselwirkender Limes nicht gezeigt"
    ]
   },
   "H5": {
@@ -482,6 +650,14 @@
    "K14": [
     "PASS",
     "keine Konstante; Gitterskala setzt nur die Einheit"
+   ],
+   "K15": [
+    "OFFEN",
+    "wie H2"
+   ],
+   "K16": [
+    "OFFEN",
+    "wie H2"
    ]
   }
  }
