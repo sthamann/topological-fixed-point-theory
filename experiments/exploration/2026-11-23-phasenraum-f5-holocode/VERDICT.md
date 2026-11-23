@@ -18,6 +18,7 @@ unberührt. Ausgangspunkt war der konsolidierte Stand in `docs/research/TFPT-STA
 | T c₃ als Bekenstein-Viertel mal Unruh-Periode | bereits in TFPT, kein neuer Weg | – | – |
 | J Jordanalgebra J₃(𝕆), R Renormierung | **offen**, nicht gerechnet | – | siehe IDEAS.md |
 | F Familientest zu W (Nachtrag) | Kopienweg **verworfen**; Wörterbuch über 𝔽₅ **offen** | 1 für die Zahl 3 | siehe Abschnitt F |
+| K Familien als étale Kohomologie (Nachtrag) | Test **bestanden**, aber nicht unabhängig; Frobeniusgleichheit **neu** | 1 | siehe Abschnitt K |
 
 Keine vollständige Lösung. Was sich ändert: Die Vier braucht in W keine Eingabe mehr, und die
 Fünf folgt aus einer einzigen Auswahlregel statt aus d = 4, ℤ₄-Anomalie und Minimalität.
@@ -178,11 +179,46 @@ In TFPT sind Familien eine eigene Kohomologie H¹, hier liegen die Familienchara
 ℂ⁵ wie die Plätze; und die drei Sektoren sind verschieden statt gleich. Die Zerlegung 1 + 2 der
 Familien unter Galois ist eine prüfbare Vorhersage gegen die TFPT-Flavorstruktur, kein Befund.
 
+## K: Familien als étale Kohomologie (Nachtrag, `k1_kohomologie.py`)
+
+Test 1 aus Abschnitt F: H¹ von X = P¹ ohne die vier Marken über 𝔽̄_p, mit μ₄-Wirkung, gegen den
+TFPT Familienraum (Rang 3, Charaktere {−1, i, −i}). Abbruch bei Abweichung.
+
+**Befund (Punktzählung in explizit konstruierten Körpern 𝔽_{p⁴}, Lefschetz).**
+- |X(𝔽_{p^k})| ergibt tr(Frobᵏ | H¹_c). Für p = 5 und 13 (p ≡ 1 mod 4) hat der Frobenius auf
+  H¹_c die Eigenwerte **{1, 1, 1}**, auf H¹ also dreimal p (Gewicht 2). Für p = 3 und 7
+  (p ≡ 3 mod 4) sind es {1, 1, −1}.
+- Getwistete Zählungen bei p = 5: #Fix(Frob ∘ g_a) = 2, 6, 6, 6 für a = 1, 2, 4, 3. Die
+  Fourierzerlegung über μ₄ gibt: trivialer Charakter **0**, jeder der drei nichttrivialen
+  Charaktere **genau einmal** mit Frobenius 1. Dasselbe bei p = 13.
+- **Residuenbrücke.** Die Residuen der TFPT Trägermoden e_m = z^m/(z⁴ − 1) an den vier Marken
+  bilden die fünf Moden modulo Konstanten **surjektiv auf den Familienraum** ab (Rang 3). Der
+  Kern ist span(e₃, e₄ − e₀), die Markenverschiebung ζ ↦ iζ hat auf dem Bild die Eigenwerte
+  −1, i, −i. Über 𝔽₅ ist das Gegenstück die Einschränkung Fun(𝔽₅) → Fun(𝔽₅^×)/Konstanten mit
+  Kern span(δ₀, 1).
+
+**Urteil K: Test bestanden, aber nicht unabhängig.** Rang 3 und die Charaktere {−1, i, −i} folgen
+schon aus der komplexen Geometrie von P¹ ohne vier Punkte; über 𝔽̄₅ ändert sich daran nichts.
+**Neu** sind zwei Dinge:
+1. **Arithmetisch gleiche Familien.** Genau wenn i in 𝔽_p liegt (p ≡ 1 mod 4, kleinstes p = 5),
+   wirkt der Frobenius auf alle drei Familienklassen gleich. Die Familien unterscheiden sich
+   dann nur durch ihre μ₄-Ladung (i, −1, −i), sonst durch nichts. Bei p ≡ 3 mod 4 trennt der
+   Frobenius 2 + 1.
+2. **Familien = Trägermoden modulo Invarianten.** Die Residuen machen aus den fünf Trägermoden
+   genau den Familienraum; zwei Moden tragen keinen Familienanteil. Das beantwortet den Einwand
+   aus F teilweise: Die Familien liegen nicht „im selben ℂ⁵“, sie sind dessen Residuenbild in
+   H¹.
+
+Weiter ohne Mechanismus: drei gleiche Kopien der 16. Der Befund legt eine Lesart nahe (Materie =
+Familienraum ⊗ 16, die drei Kopien arithmetisch gleich und nur durch eine ℤ₄ Familienladung 1, 2, 3
+unterschieden), aber diese Lesart ist gewählt, nicht hergeleitet.
+
 ## Kleinste entscheidende Tests für eine Folgesitzung
 
-1. **Familien als Kohomologie über 𝔽₅.** Die étale Kohomologie H¹ von P¹ ohne μ₄ über dem
-   algebraischen Abschluss von 𝔽₅ mit der μ₄-Wirkung berechnen und mit dem TFPT Familienraum
-   (Charaktere {−1, i, −i}, Rang 3) vergleichen. Abbruch, wenn Rang oder Charaktere abweichen.
+1. **ℤ₄ Familienladung gegen Flavor.** Wenn die Familien die μ₄-Ladungen i, −1, −i tragen, ist
+   die Massenmatrix in Potenzen nach Ladungssumme geordnet. Prüfen, ob TFPTs Transportlängen L
+   und Potenzen K (oder die Leptonkoeffizienten 16/7, 4/3, 7/6) mit Ladungen 1, 2, 3 mod 4
+   verträglich sind. Abbruch, wenn keine Zuordnung der Ladungen die Ordnung der K trägt.
 2. **Galois 1 + 2 gegen Flavor.** Prüfen, ob eine TFPT Flavorgröße (Leptonkoeffizienten
    16/7, 4/3, 7/6, Transportlängen) eine Familie gegen zwei auszeichnet, und ob es die zum
    Legendre-Charakter passende ist.
