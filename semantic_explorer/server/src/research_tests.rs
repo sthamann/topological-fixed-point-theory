@@ -257,7 +257,7 @@ fn editable_record_scopes_premises_without_truncating_the_problem() {
     q.connections[0]
         .premise_ids
         .push("premise:connection-only".into());
-    let record = editable_record(&program, "problem:operator-map", 60000).unwrap();
+    let record = editable_record(&program, "problem:operator-map", 60000, None).unwrap();
     assert_eq!(
         record["problem"],
         serde_json::to_value(&program.problems[0]).unwrap()
@@ -287,7 +287,10 @@ fn editable_record_scopes_premises_without_truncating_the_problem() {
         .iter()
         .any(|x| x["id"] == "premise:connection-only"));
     program.problems[0].question = text(&"x".repeat(60000));
-    assert!(editable_record(&program, "problem:operator-map", 60000).is_err());
+    let fallback = editable_record(&program, "problem:operator-map", 60000, None).unwrap();
+    assert_eq!(fallback["edit_mode"], "patch");
+    assert!(fallback["required_full_chars"].as_u64().unwrap() > 60000);
+    assert!(fallback.get("problem").is_none());
 }
 
 #[test]
@@ -604,6 +607,117 @@ fn update_persists_and_fresh_load_observes_new_revision() {
 }
 
 #[test]
+fn scoped_patch_updates_an_oversized_problem_and_retains_other_records() {
+    let temp = TempDir::new("scoped-patch");
+    let mut program = fixture(temp.path());
+    add_connected_problem(&mut program);
+    program.problems[0].findings[0].statement = text(&"x".repeat(60000));
+    let path = temp.path().join("program.json");
+    fs::write(&path, serde_json::to_vec_pretty(&program).unwrap()).unwrap();
+    let revision = load(&path).unwrap().revision;
+    let problem_id = "problem:operator-map";
+    let selected = editable_record(
+        &load(&path).unwrap(),
+        problem_id,
+        2000,
+        Some(&["finding:known-scoped".to_owned()]),
+    )
+    .unwrap();
+    assert_eq!(selected["patch"]["findings"].as_array().unwrap().len(), 1);
+    assert_eq!(
+        selected["patch"]["findings"][0]["id"],
+        "finding:known-scoped"
+    );
+    let mut changed = selected["patch"]["findings"][0].clone();
+    changed["statement"] = json!(text("Corrected after reviewing the same source"));
+    let additional = finding(
+        "finding:new-scope",
+        "established_scoped",
+        &["premise:new-scope"],
+        citation(temp.path(), "sources/new.txt", "a separate finding\n"),
+    );
+    let mut patch = json!({
+        "problem_id": problem_id,
+        "findings": [changed, additional],
+        "tasks": [task("task:new-scope", "resolved", &["finding:new-scope"], &["premise:new-scope"])]
+    });
+    let apply = |revision, patch: &Value| {
+        update(
+            &path,
+            temp.path(),
+            &graph(),
+            revision,
+            ResearchChange::Patch(serde_json::from_value(patch.clone()).unwrap()),
+            vec![premise("premise:new-scope", "Source premise")],
+            "Review the new scope and correct the prior wording",
+        )
+    };
+    let result = apply(&revision, &patch).unwrap();
+    let persisted = load(&path).unwrap();
+    assert_eq!(result["persisted"], true);
+    assert_eq!(result["revision"], persisted.revision);
+    let stored = &persisted.problems[0];
+    assert_eq!(stored.findings.len(), 3);
+    assert_eq!(stored.findings[0].statement.de.len(), 60000);
+    assert_eq!(
+        stored.findings[1].statement.de,
+        "Corrected after reviewing the same source"
+    );
+    assert_eq!(stored.tasks.len(), 3);
+    assert_eq!(
+        stored.strategies.len(),
+        program.problems[0].strategies.len()
+    );
+    assert_eq!(
+        stored.connections.len(),
+        program.problems[0].connections.len()
+    );
+    assert_eq!(
+        fs::read_dir(temp.path().join("history")).unwrap().count(),
+        2
+    );
+
+    assert!(apply(&revision, &patch)
+        .unwrap_err()
+        .to_string()
+        .contains("revision conflict"));
+    assert_eq!(
+        apply(&persisted.revision, &patch).unwrap()["unchanged"],
+        true
+    );
+    let valid_source = patch["findings"][1]["sources"][0]["sha256"].clone();
+    patch["findings"][1]["sources"][0]["sha256"] = json!("0".repeat(64));
+    assert!(apply(&persisted.revision, &patch)
+        .unwrap_err()
+        .to_string()
+        .contains("stale or missing source"));
+    patch["findings"][1]["sources"][0]["sha256"] = valid_source;
+    patch["tasks"][0]["resolution_ids"] = json!(["finding:absent"]);
+    assert!(apply(&persisted.revision, &patch)
+        .unwrap_err()
+        .to_string()
+        .contains("unknown resolution"));
+    assert_eq!(load(&path).unwrap().revision, persisted.revision);
+    assert_eq!(
+        fs::read_dir(temp.path().join("history")).unwrap().count(),
+        2
+    );
+
+    fs::write(
+        temp.path().join("sources/result.txt"),
+        "historical source changed\n",
+    )
+    .unwrap();
+    patch["findings"].as_array_mut().unwrap().remove(0);
+    patch["findings"][0]["statement"] = json!(text("Only the new source is in this review"));
+    patch["tasks"][0]["resolution_ids"] = json!(["finding:new-scope"]);
+    assert_eq!(
+        apply(&persisted.revision, &patch).unwrap()["persisted"],
+        true
+    );
+}
+
+#[test]
 fn update_cannot_silently_remove_strategy_or_connection_decisions() {
     let temp = TempDir::new("decision-retention");
     let root = temp.path().join("repository");
@@ -852,36 +966,34 @@ fn actual_program_handles_natural_questions_and_preserves_connection_endpoints()
 #[test]
 fn actual_operator_problem_remains_editable_with_its_own_premises() {
     let Some(p) = installed_program() else { return; };
-    match editable_record(&p, "problem:automated-operator-source-synthesis", 60000) {
-        Ok(record) => {
-            assert!(!record["problem"]["findings"].as_array().unwrap().is_empty());
-            assert!(record["premises"].as_array().unwrap().len() < p.premises.len());
-            assert!(serde_json::to_string(&record).unwrap().chars().count() <= 60000);
-        }
-        Err(error) => {
-            // Oversized records remain intact; the API rejects rather than clipping them.
-            assert!(error.to_string().contains("editable record needs"));
-            let temp = TempDir::new("actual-operator-budget");
-            let state = state(
-                &p,
-                &KnowledgeGraph::default(),
-                temp.path(),
-                "problem:automated-operator-source-synthesis",
-                "de",
-                60000,
-                0,
-                0,
-            )
-            .unwrap();
-            assert_eq!(state["budget"]["truncated"], true);
-            assert_eq!(state["budget"]["partial_problem"], true);
-            assert_eq!(state["problems"][0]["packet_state"], "partial");
-            assert!(state["problem_index"]
-                .as_array()
-                .unwrap()
-                .iter()
-                .any(|r| r["id"] == "problem:automated-operator-source-synthesis"));
-        }
+    let id = "problem:automated-operator-source-synthesis";
+    let record = editable_record(&p, id, 60_000, None).unwrap();
+    if record["edit_mode"] == "patch" {
+        let finding_id = p.problems.iter().find(|q| q.id == id).unwrap().findings[0]
+            .id
+            .clone();
+        let selected = editable_record(&p, id, 12_000, Some(&[finding_id.clone()])).unwrap();
+        assert_eq!(selected["patch"]["findings"][0]["id"], finding_id);
+        assert!(record.get("problem").is_none());
+        assert!(record["required_full_chars"].as_u64().unwrap() > 60_000);
+        let temp = TempDir::new("actual-operator-budget");
+        let state = state(
+            &p,
+            &KnowledgeGraph::default(),
+            temp.path(),
+            id,
+            "de",
+            60_000,
+            0,
+            0,
+        )
+        .unwrap();
+        assert_eq!(state["budget"]["partial_problem"], true);
+        assert_eq!(state["problems"][0]["packet_state"], "partial");
+    } else {
+        assert!(!record["problem"]["findings"].as_array().unwrap().is_empty());
+        assert!(record["premises"].as_array().unwrap().len() < p.premises.len());
+        assert!(serde_json::to_string(&record).unwrap().chars().count() <= 60000);
     }
 }
 

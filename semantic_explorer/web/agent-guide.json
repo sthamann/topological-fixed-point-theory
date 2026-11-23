@@ -84,14 +84,14 @@
     {
       "name": "record_research_update",
       "group": "maintenance",
-      "purpose_de": "Schreibt den vollständig aktualisierten Forschungsdatensatz nach Quellenprüfung. expected_revision schützt vor Überschreiben fremder Änderungen; problem enthält den vollständigen zweisprachigen Datensatz, premises nur neu benötigte Definitionen und reason die Begründung. Der Atlas prüft Referenzen und Struktur; das ist keine automatische fachliche Abnahme.",
-      "purpose_en": "Writes the complete updated research record after source review. expected_revision prevents overwriting concurrent changes; problem contains the complete bilingual record, premises contains new definitions only, and reason explains the change. The atlas validates references and structure; this is not automatic scientific review.",
+      "purpose_de": "Aktualisiert gezielt die übergebenen zweisprachigen Einträge eines Problems nach Quellenprüfung. patch enthält problem_id und die geänderten Einträge. expected_revision schützt gegen konkurrierende Änderungen. Für einen neuen oder vollständig ersetzten Datensatz stattdessen problem angeben.",
+      "purpose_en": "Updates the supplied bilingual records of a problem after source review. patch contains problem_id and the changed records. expected_revision guards against concurrent edits. Use problem instead for creation or full replacement.",
       "example": {
         "arguments": {
           "expected_revision": "<revision from research_state>",
-          "problem": {
-            "id": "<exact problem ID>",
-            "...": "<complete edited bilingual record from research_state with editable=true>"
+          "patch": {
+            "problem_id": "<exact problem ID>",
+            "findings": ["<complete new or revised bilingual finding>"]
           },
           "premises": [],
           "reason": "<source-backed reason for this change>"
@@ -345,8 +345,8 @@
         "editable": true,
         "max_chars": 60000
       },
-      "de": "Für eine begründete Aktualisierung den editierbaren vollständigen Datensatz laden. Nach Originalquellenprüfung aktualisieren und mit derselben revision über record_research_update speichern. Beispiele in spitzen Klammern müssen durch echte Rückgabewerte ersetzt werden.",
-      "en": "For a justified update, load the complete editable record. Revise it after original-source review and save through record_research_update with the same revision. Replace angle-bracket placeholders with actual returned values."
+      "de": "Für die Revision research_state mit exakter Problem-ID, editable=true und record_ids=[] aufrufen. Bei Korrekturen in record_ids die genauen Einträge angeben. Nach Quellenprüfung nur die geänderten Einträge mit derselben Revision über record_research_update speichern.",
+      "en": "For the revision, call research_state with the exact problem ID, editable=true and record_ids=[]. For corrections, request the exact record IDs. After reviewing the sources, save only changed records through record_research_update with the same revision."
     }
   ]
 }

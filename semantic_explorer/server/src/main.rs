@@ -479,7 +479,7 @@ mod mcp {
                     VERSIONS[0]
                 };
                 Ok(
-                    json!({"protocolVersion":selected,"capabilities":{"tools":{"listChanged":false}},"serverInfo":{"name":"tfpt-semantic-explorer","version":env!("CARGO_PKG_VERSION")},"instructions":"Use this as the sole current TFPT/Universalraum theory atlas. For overall TFPT status start with the scope and evidence areas in theory_overview, separate current work from established results, and then use research_state(query in natural language, lang, max_chars=12000). Read its full problem packet when packet_state is absent. For packet_state=partial, use budget.continuation with detail_offset and treat only each returned scoped record as complete; the page is not proof of the whole problem. Use assess_research_plan with an exact strategy ID and explicit premise IDs before repeating work. Persist source-reviewed changes through record_research_update with expected_revision. Missing reviewed coverage is not scientific openness. For papers use list_papers/search_papers, paper_outline, paper_section, paper_evidence and read_source; paper_coverage separates source completeness from unreviewed AI summaries. For other unreviewed corpus material use research_context and read_source. Preserve scope, conjunctive premises, hidden inputs and negative results. Graph paths and AI annotations are navigation, not proofs. Pick the research mode from AGENTS.md first: in Exploration mode start from docs/research/TFPT-STAND.md and use this atlas for details and to check new ideas; in Continuation mode consult prior attempts before another run and name the changed premise. A past next step is not an obligation. Source or coverage gaps remain explicit. Original ledger and cited sources are authoritative."}),
+                    json!({"protocolVersion":selected,"capabilities":{"tools":{"listChanged":false}},"serverInfo":{"name":"tfpt-semantic-explorer","version":env!("CARGO_PKG_VERSION")},"instructions":"Use this atlas for current TFPT and Universalraum evidence. For a broad status, start with theory_overview and use research_state for scoped records. Follow budget.continuation only when the task needs more evidence. For an Atlas edit, use research_state with the exact problem ID, editable=true and record_ids=[] for the revision, or request the exact records to edit. After checking the original sources, send only changed records in record_research_update(patch, expected_revision, reason). Use assess_research_plan with exact strategy and premise IDs. For papers, navigate by paper ID and verify passages with read_source. Respect the research mode in AGENTS.md, scoped premises, and negative results. Missing review is a coverage gap. Original sources and the ledger own proof status."}),
                 )
             }
             "ping" => Ok(json!({})),
@@ -501,9 +501,45 @@ mod mcp {
 
     fn tool_specs() -> Vec<Value> {
         let mut specs = vec![
-            tool("research_state", "Read durable source-reviewed question state using natural language or topic/goal/problem ID. Separates resolved subresults, conditional findings, scoped exclusions, task prerequisites and unreviewed attempts. Whole-theory queries in German or English return evidence areas and a paged topic index before any research detail; use an exact problem ID for details. Oversized problems return explicitly partial, record-complete pages with exact premise, dependency and source handles; follow every argument in budget.continuation. A changed expected_revision rejects the continuation instead of mixing pages. A partial page is never proof of the whole problem. editable=true still returns only the complete authoring record. problem_index lists matches, not proofs. Original sources remain authoritative.", json!({"type":"object","properties":{"query":{"type":"string","default":""},"editable":{"type":"boolean","default":false,"description":"Return a complete editable authoring record for an exact problem ID; use max_chars=60000. detail_offset does not apply."},"lang":{"type":"string","enum":["de","en"],"default":"de"},"max_chars":{"type":"integer","default":12000,"minimum":2000,"maximum":60000},"offset":{"type":"integer","default":0,"minimum":0},"detail_offset":{"type":"integer","default":0,"minimum":0,"description":"Inner record offset for the oversized problem at offset. Use the exact value in budget.continuation."},"expected_revision":{"type":"string","description":"Revision from budget.continuation; rejects pagination across an Atlas update."}}})),
+            tool(
+                "research_state",
+                "Read source-reviewed research state. Broad queries return an index and scoped pages, with budget.continuation for further reading. For edits, use the exact problem ID, editable=true and record_ids=[] for the revision only, or provide exact IDs of records to edit. Without record_ids, editable=true returns the full authoring record if it fits or compact patch instructions if oversized.",
+                json!({"type":"object","properties":{
+                    "query":{"type":"string","default":""},
+                    "editable":{"type":"boolean","default":false},
+                    "record_ids":{"type":"array","uniqueItems":true,"items":{"type":"string"},"description":"Requires editable=true. Empty gives the revision only. Use exact finding, task, strategy, connection or premise IDs. The problem ID selects its metadata."},
+                    "lang":{"type":"string","enum":["de","en"],"default":"de"},
+                    "max_chars":{"type":"integer","default":12000,"minimum":2000,"maximum":60000},
+                    "offset":{"type":"integer","default":0,"minimum":0},
+                    "detail_offset":{"type":"integer","default":0,"minimum":0,"description":"Inner record offset for the oversized problem at offset; use budget.continuation."},
+                    "expected_revision":{"type":"string","description":"Require this exact revision for a subsequent read or continuation."}
+                }}),
+            ),
             tool("assess_research_plan", "Check a recorded strategy against explicitly supplied premise IDs. Exact strategy IDs permit reuse/exclusion only in the recorded scope; free text returns candidates and never an exclusion. Missing premises or changed sources block decisive reuse. No match is not proof of novelty; premise truth/compatibility is not inferred.", json!({"type":"object","properties":{"problem_id":{"type":"string"},"strategy_id":{"type":"string"},"premise_ids":{"type":"array","items":{"type":"string"},"default":[]},"lang":{"type":"string","enum":["de","en"],"default":"de"}},"required":["problem_id","strategy_id"]})),
-            tool("record_research_update", "Persist one complete reviewed problem record in the canonical Atlas, with immutable premise identities, source SHA256/line ranges, dependency validation, optimistic revision check, and retained history. Read semantic_explorer/research/program.json for the authoring schema; research_state supplies the current revision. Never use this to promote ledger proof status. Findings/tasks cannot silently disappear. The caller must review original sources; passing validation alone does not prove the result.", json!({"type":"object","properties":{"expected_revision":{"type":"string"},"problem":{"type":"object"},"premises":{"type":"array","items":{"type":"object"},"default":[]},"reason":{"type":"string"}},"required":["expected_revision","problem","reason"]})),
+            tool(
+                "record_research_update",
+                "Persist source-reviewed research with a revision check, validated references, pinned sources and retained history. For an existing problem prefer patch with its ID and only the changed bilingual records. Use problem for creation or a full replacement. Review original sources; the tool does not promote ledger proof status.",
+                json!({"type":"object","properties":{
+                    "expected_revision":{"type":"string"},
+                    "problem":{"type":"object","description":"Complete bilingual research problem, for creation or full replacement. Mutually exclusive with patch."},
+                    "patch":{"type":"object","additionalProperties":false,"required":["problem_id"],"properties":{
+                        "problem_id":{"type":"string"},
+                        "title":{"type":"object"},
+                        "question":{"type":"object"},
+                        "topics":{"type":"array","items":{"type":"string"}},
+                        "goals":{"type":"array","items":{"type":"string"}},
+                        "accepted_premise_ids":{"type":"array","items":{"type":"string"}},
+                        "reviewed_attempt_ids":{"type":"array","items":{"type":"string"}},
+                        "findings":{"type":"array","items":{"type":"object"},"description":"Complete new or changed bilingual findings. Same ID replaces; omission preserves."},
+                        "tasks":{"type":"array","items":{"type":"object"},"description":"Complete new or changed bilingual tasks, keyed by ID."},
+                        "strategies":{"type":"array","items":{"type":"object"},"description":"Complete new or changed bilingual strategies, keyed by ID."},
+                        "connections":{"type":"array","items":{"type":"object"},"description":"Complete new or changed bilingual connections, keyed by ID."}
+                    }},
+                    "premises":{"type":"array","items":{"type":"object"},"default":[]},
+                    "reason":{"type":"string"}
+                },"required":["expected_revision","reason"],
+                "oneOf":[{"required":["problem"]},{"required":["patch"]}]}),
+            ),
             tool("search_knowledge", "Search graph records with bilingual lexical matching and optional configured embeddings; directly matching authored theory-map patterns may appear as theory_pattern results and preserve their review state and source references.", json!({"type":"object","properties":{"query":{"type":"string"},"type":{"type":"string","description":"Optional node type filter; use theory_pattern to search authored theory-map patterns only."},"limit":{"type":"integer","maximum":50}},"required":["query"]})),
             tool("get_dossier", "Return a compact node dossier with its key results, premises, assumptions, positive findings, exclusions, explicit open steps, own registered source paths, neighbor counts, and omission counts. Use read_source for cited passages. Set expanded=true for the complete connected dossier when its serialized size fits max_chars. The HTTP dossier remains full.", json!({"type":"object","properties":{"id":{"type":"string"},"max_chars":{"type":"integer","default":24000,"minimum":1000,"maximum":500000},"neighbor_limit":{"type":"integer","default":8,"minimum":1,"maximum":50},"expanded":{"type":"boolean","default":false}},"required":["id"]})),
             tool("audit_inputs", "Inspect recorded input origins, impacts and proof gaps for a claim, or syntactic input candidates plus bounded related claim audits for a script.", json!({"type":"object","properties":{"id":{"type":"string"}},"required":["id"]})),
@@ -563,14 +599,24 @@ mod mcp {
             .unwrap_or_else(|| json!({}));
         let result = match name {
             "research_state" if a.get("editable").and_then(Value::as_bool).unwrap_or(false) => {
+                let record_ids = a
+                    .get("record_ids")
+                    .cloned()
+                    .map(serde_json::from_value::<Vec<String>>)
+                    .transpose()?;
                 store
                     .research_record(
                         arg_str(&a, "query")?,
                         a.get("max_chars").and_then(Value::as_u64).unwrap_or(12000) as usize,
+                        record_ids.as_deref(),
+                        a.get("expected_revision").and_then(Value::as_str),
                     )
                     .await?
             }
             "research_state" => {
+                if a.get("record_ids").is_some() {
+                    anyhow::bail!("record_ids requires editable=true");
+                }
                 store
                     .research_state(
                         a.get("query").and_then(Value::as_str).unwrap_or(""),
@@ -595,10 +641,18 @@ mod mcp {
                     .await?
             }
             "record_research_update" => {
+                use crate::research::ResearchChange;
+                let change = match (a.get("problem"), a.get("patch")) {
+                    (Some(problem), None) => ResearchChange::Full(problem.clone()),
+                    (None, Some(patch)) => ResearchChange::Patch(
+                        serde_json::from_value(patch.clone()).context("invalid problem patch")?,
+                    ),
+                    _ => anyhow::bail!("provide exactly one of problem or patch"),
+                };
                 store
                     .record_research_update(
                         arg_str(&a, "expected_revision")?,
-                        a.get("problem").cloned().context("problem required")?,
+                        change,
                         serde_json::from_value(a.get("premises").cloned().unwrap_or(json!([])))?,
                         arg_str(&a, "reason")?,
                     )

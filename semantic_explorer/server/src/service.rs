@@ -268,12 +268,21 @@ impl GraphStore {
             detail_offset,
         )
     }
-    pub async fn research_record(&self, id: &str, max_chars: usize) -> Result<Value> {
-        crate::research::editable_record(
-            &crate::research::load(&self.research_path())?,
-            id,
-            max_chars,
-        )
+    pub async fn research_record(
+        &self,
+        id: &str,
+        max_chars: usize,
+        record_ids: Option<&[String]>,
+        expected_revision: Option<&str>,
+    ) -> Result<Value> {
+        let p = crate::research::load(&self.research_path())?;
+        if let Some(expected) = expected_revision.filter(|expected| *expected != p.revision) {
+            bail!(
+                "research revision changed; current revision is {} (expected {expected})",
+                p.revision
+            );
+        }
+        crate::research::editable_record(&p, id, max_chars, record_ids)
     }
     pub async fn assess_research_plan(
         &self,
@@ -288,7 +297,7 @@ impl GraphStore {
     pub async fn record_research_update(
         &self,
         expected: &str,
-        problem: Value,
+        change: crate::research::ResearchChange,
         premises: Vec<crate::research::Premise>,
         reason: &str,
     ) -> Result<Value> {
@@ -298,7 +307,7 @@ impl GraphStore {
             &self.repo_root,
             &g,
             expected,
-            problem,
+            change,
             premises,
             reason,
         )

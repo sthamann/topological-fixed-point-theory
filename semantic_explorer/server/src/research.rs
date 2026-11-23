@@ -119,6 +119,84 @@ pub struct Program {
     pub problems: Vec<Problem>,
 }
 
+#[derive(Debug, Deserialize)]
+#[serde(deny_unknown_fields)]
+pub struct ProblemPatch {
+    pub problem_id: String,
+    pub title: Option<Text>,
+    pub question: Option<Text>,
+    pub topics: Option<Vec<String>>,
+    pub goals: Option<Vec<String>>,
+    pub accepted_premise_ids: Option<Vec<String>>,
+    pub reviewed_attempt_ids: Option<Vec<String>>,
+    #[serde(default)]
+    pub findings: Vec<Finding>,
+    #[serde(default)]
+    pub tasks: Vec<Task>,
+    #[serde(default)]
+    pub strategies: Vec<Strategy>,
+    #[serde(default)]
+    pub connections: Vec<Connection>,
+}
+
+pub enum ResearchChange {
+    Full(Value),
+    Patch(ProblemPatch),
+}
+
+impl From<Value> for ResearchChange {
+    fn from(problem: Value) -> Self {
+        Self::Full(problem)
+    }
+}
+
+fn upsert_records<T>(existing: &mut Vec<T>, updates: Vec<T>, id: fn(&T) -> &str) -> Result<()> {
+    let mut updated_ids = HashSet::new();
+    for record in updates {
+        let key = id(&record);
+        require(
+            updated_ids.insert(key.to_owned()),
+            format!("duplicate patch ID {key}"),
+        )?;
+        if let Some(previous) = existing.iter_mut().find(|previous| id(previous) == key) {
+            *previous = record;
+        } else {
+            existing.push(record);
+        }
+    }
+    Ok(())
+}
+
+impl ProblemPatch {
+    fn apply(self, problem: &mut Problem) -> Result<HashSet<String>> {
+        problem.title = self.title.unwrap_or_else(|| problem.title.clone());
+        problem.question = self.question.unwrap_or_else(|| problem.question.clone());
+        problem.topics = self.topics.unwrap_or_else(|| problem.topics.clone());
+        problem.goals = self.goals.unwrap_or_else(|| problem.goals.clone());
+        problem.accepted_premise_ids = self
+            .accepted_premise_ids
+            .unwrap_or_else(|| problem.accepted_premise_ids.clone());
+        problem.reviewed_attempt_ids = self
+            .reviewed_attempt_ids
+            .unwrap_or_else(|| problem.reviewed_attempt_ids.clone());
+
+        let reviewed_findings = self
+            .findings
+            .iter()
+            .map(|f| &f.id)
+            .chain(self.tasks.iter().flat_map(|t| &t.resolution_ids))
+            .chain(self.strategies.iter().flat_map(|s| &s.finding_ids))
+            .chain(self.connections.iter().flat_map(|c| &c.finding_ids))
+            .cloned()
+            .collect();
+        upsert_records(&mut problem.findings, self.findings, |f| &f.id)?;
+        upsert_records(&mut problem.tasks, self.tasks, |t| &t.id)?;
+        upsert_records(&mut problem.strategies, self.strategies, |s| &s.id)?;
+        upsert_records(&mut problem.connections, self.connections, |c| &c.id)?;
+        Ok(reviewed_findings)
+    }
+}
+
 pub fn load(path: &Path) -> Result<Program> {
     if !path.exists() {
         return Ok(Program {
@@ -1766,7 +1844,12 @@ pub fn assess(
     )
 }
 
-pub fn editable_record(p: &Program, id: &str, max_chars: usize) -> Result<Value> {
+pub fn editable_record(
+    p: &Program,
+    id: &str,
+    max_chars: usize,
+    record_ids: Option<&[String]>,
+) -> Result<Value> {
     require(
         (2000..=60000).contains(&max_chars),
         "max_chars must be between 2000 and 60000",
@@ -1776,15 +1859,95 @@ pub fn editable_record(p: &Program, id: &str, max_chars: usize) -> Result<Value>
         .iter()
         .find(|q| q.id == id)
         .context("editable=true requires an exact problem ID")?;
+    let mut selection = json!({
+        "revision": p.revision,
+        "problem_id": q.id,
+        "edit_mode": "patch",
+        "update_tool": "record_research_update"
+    });
+    if let Some(record_ids) = record_ids {
+        let mut patch = json!({"problem_id": q.id});
+        let mut premises = Vec::new();
+        let mut seen = HashSet::new();
+        for record_id in record_ids {
+            require(
+                seen.insert(record_id),
+                format!("duplicate record ID {record_id}"),
+            )?;
+            if record_id == &q.id {
+                patch["title"] = json!(q.title);
+                patch["question"] = json!(q.question);
+                patch["topics"] = json!(q.topics);
+                patch["goals"] = json!(q.goals);
+                patch["accepted_premise_ids"] = json!(q.accepted_premise_ids);
+                patch["reviewed_attempt_ids"] = json!(q.reviewed_attempt_ids);
+                continue;
+            }
+            if record_id.starts_with("premise:") {
+                let premise = p
+                    .premises
+                    .iter()
+                    .find(|p| &p.id == record_id)
+                    .with_context(|| format!("unknown premise {record_id}"))?;
+                premises.push(premise);
+                continue;
+            }
+            let record = match record_id.split_once(':').map(|(kind, _)| kind) {
+                Some("finding") => q
+                    .findings
+                    .iter()
+                    .find(|f| &f.id == record_id)
+                    .map(|f| ("findings", json!(f))),
+                Some("task") => q
+                    .tasks
+                    .iter()
+                    .find(|t| &t.id == record_id)
+                    .map(|t| ("tasks", json!(t))),
+                Some("strategy") => q
+                    .strategies
+                    .iter()
+                    .find(|s| &s.id == record_id)
+                    .map(|s| ("strategies", json!(s))),
+                Some("connection") => q
+                    .connections
+                    .iter()
+                    .find(|c| &c.id == record_id)
+                    .map(|c| ("connections", json!(c))),
+                _ => None,
+            };
+            let (field, value) =
+                record.with_context(|| format!("record {record_id} is not in problem {id}"))?;
+            patch
+                .as_object_mut()
+                .unwrap()
+                .entry(field)
+                .or_insert_with(|| json!([]))
+                .as_array_mut()
+                .unwrap()
+                .push(value);
+        }
+        selection["patch"] = patch;
+        if !premises.is_empty() {
+            selection["premises"] = json!(premises);
+        }
+        let size = serde_json::to_string(&selection)?.chars().count();
+        require(size <= max_chars, format!(
+            "selected records need {size} characters; request fewer record_ids or raise max_chars up to 60000"
+        ))?;
+        return Ok(selection);
+    }
     let used = problem_premise_ids(q);
     let premises: Vec<_> = p.premises.iter().filter(|x| used.contains(&x.id)).collect();
     let v = json!({"revision":p.revision,"problem":q,"premises":premises,"update_tool":"record_research_update","instructions":"Review original sources, edit this complete problem, supply expected_revision and a reason. Add new immutable premise definitions if needed. Findings and tasks cannot silently disappear. Source hashes and line ranges must match current files. This changes research navigation, not the original proof ledger."});
     let size = serde_json::to_string(&v)?.chars().count();
-    require(
-        size <= max_chars,
-        format!("editable record needs {size} characters; increase max_chars"),
-    )?;
-    Ok(v)
+    if size <= max_chars {
+        return Ok(v);
+    }
+    selection["required_full_chars"] = json!(size);
+    selection["instructions"] = json!(
+        "Use patch with this problem_id and revision. For existing records call research_state with editable=true and exact record_ids; for a new record only the revision is needed. Do not assemble the full problem from read pages."
+    );
+    Ok(selection)
 }
 
 /// A process-independent compare-and-swap update. Snapshots retain prior decisions for audit.
@@ -1793,7 +1956,7 @@ pub fn update(
     root: &Path,
     g: &KnowledgeGraph,
     expected: &str,
-    problem: Value,
+    change: impl Into<ResearchChange>,
     new_premises: Vec<Premise>,
     reason: &str,
 ) -> Result<Value> {
@@ -1819,12 +1982,31 @@ pub fn update(
         p.revision == expected,
         format!("revision conflict: current revision is {}", p.revision),
     )?;
-    let q: Problem = serde_json::from_value(problem)
-        .context("problem must be a complete bilingual research record")?;
     let old = serde_json::to_vec_pretty(&p)?;
+    let (q, reviewed_findings): (Problem, _) = match change.into() {
+        ResearchChange::Full(problem) => (
+            serde_json::from_value(problem)
+                .context("problem must be a complete bilingual research record")?,
+            None,
+        ),
+        ResearchChange::Patch(patch) => {
+            let mut problem = p
+                .problems
+                .iter()
+                .find(|q| q.id == patch.problem_id)
+                .with_context(|| format!("unknown problem for patch: {}", patch.problem_id))?
+                .clone();
+            let reviewed = patch.apply(&mut problem)?;
+            (problem, Some(reviewed))
+        }
+    };
     // Reviewed findings are append-only. Correct a record explicitly by supplying a replacement
     // source/statement with the same stable ID; omission cannot erase an earlier exclusion.
-    if let Some(prior) = p.problems.iter().find(|x| x.id == q.id) {
+    if let Some(prior) = p
+        .problems
+        .iter()
+        .find(|x| x.id == q.id && reviewed_findings.is_none())
+    {
         for f in &prior.findings {
             require(
                 q.findings.iter().any(|x| x.id == f.id),
@@ -1882,6 +2064,12 @@ pub fn update(
     validate(&p)?;
     let mut cache = HashMap::new();
     for f in &p.problems.iter().find(|q| q.id == id).unwrap().findings {
+        if reviewed_findings
+            .as_ref()
+            .is_some_and(|ids| !ids.contains(&f.id))
+        {
+            continue;
+        }
         for s in &f.sources {
             require(
                 source_current(s, root, &mut cache),
@@ -1891,6 +2079,11 @@ pub fn update(
     }
     p.revision.clear();
     p.revision = digest(&serde_json::to_vec(&p)?)[..24].to_owned();
+    if reviewed_findings.is_some() && p.revision == expected {
+        return Ok(
+            json!({"revision":p.revision,"problem_id":id,"persisted":false,"unchanged":true,"ledger_changed":false}),
+        );
+    }
     let history = parent.join("history");
     fs::create_dir_all(&history)?;
     // Only hash-derived names are used; the caller cannot choose a file path.

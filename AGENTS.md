@@ -50,7 +50,11 @@ just another variant of the last three contracts; if so, pick something else.
 
 `tfpt-knowledge` (`.mcp.json`) is the sole theory-atlas interface:
 `graph_status`, `theory_overview`, `research_state`, `assess_research_plan`,
-`record_research_update` (with `expected_revision`). Code discovery:
+`record_research_update` (with `expected_revision`). For an existing entry,
+use `research_state(editable=true, record_ids=[])` on its exact problem ID for
+the revision, or request the exact records to edit. Send only changed records
+in `record_research_update(patch=…)`; reserve the full `problem` payload for
+creation or explicit full replacement. Code discovery:
 `codebase-memory-mcp`, then targeted text search. Content registry:
 `python3 verification/make_content_registry.py --query "topic"`, details in
 `docs/registry/INDEX.md`. Search programs live in `research/originlab`

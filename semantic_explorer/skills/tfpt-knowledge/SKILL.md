@@ -46,10 +46,13 @@ reproduction of a measured target without TFPT inputs or fit may be reported as
 
 ## Recording
 
-After a source-supported result or correction: load
-`research_state(query=problem ID, editable=true, max_chars=60000)`, update the
-complete record and call `record_research_update(expected_revision=…)`. Reload on
-conflict; never hand-edit generated graph data. Exploration results stay in
+For an existing problem, call
+`research_state(query=problem ID, editable=true, record_ids=[])` for its revision.
+To correct existing records, pass their exact IDs in `record_ids`. After reviewing
+the original sources, call `record_research_update(expected_revision=…, patch=…, reason=…)`
+with the `problem_id` and only the new or changed bilingual records. Use `problem`
+for creation or explicit full replacement. Reload the affected records on a
+revision conflict. Never hand-edit generated graph data. Exploration results stay in
 `experiments/exploration/` until a Continuation session decides to adopt them.
 
 ## Interface checks
