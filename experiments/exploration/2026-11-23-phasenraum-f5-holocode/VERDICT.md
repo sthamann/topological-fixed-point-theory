@@ -17,6 +17,7 @@ unberührt. Ausgangspunkt war der konsolidierte Stand in `docs/research/TFPT-STA
 | P Poincaré-Sphäre | bereits in TFPT (v219), kein neuer Weg | – | – |
 | T c₃ als Bekenstein-Viertel mal Unruh-Periode | bereits in TFPT, kein neuer Weg | – | – |
 | J Jordanalgebra J₃(𝕆), R Renormierung | **offen**, nicht gerechnet | – | siehe IDEAS.md |
+| F Familientest zu W (Nachtrag) | Kopienweg **verworfen**; Wörterbuch über 𝔽₅ **offen** | 1 für die Zahl 3 | siehe Abschnitt F |
 
 Keine vollständige Lösung. Was sich ändert: Die Vier braucht in W keine Eingabe mehr, und die
 Fünf folgt aus einer einzigen Auswahlregel statt aus d = 4, ℤ₄-Anomalie und Minimalität.
@@ -128,15 +129,66 @@ Bekenstein 1/4 = 1/|μ₄|). J und R sind nicht gerechnet; ihre kleinsten Tests 
 2. Die Lesart „fünf Plätze = Ortsbasis“ samt Übernahme von Y_par statt der markierten Ladung.
 3. Familienzahl 3, D₅ ⊕ A₃, c₃, φ₀ und alles Dynamische wie bisher.
 
+## F: Familientest (Nachtrag am selben Tag, `f1_familien.py`)
+
+**A. Mehrere Fünfersysteme (der angekündigte Test).** Weil-Darstellung von Sp(2n, 5) auf
+ℂ^(5ⁿ), zerlegt nach dem Howe-Paar aus diagonalem 2I und O(n, 5); O(n,5) vertauscht exakt mit
+der Weil-Wirkung.
+- n = 1: Dublett einmal, Partner das Vorzeichen von O(1) (das ist W).
+- n = 2 (bosonisch 13, fermionisch 12): **kein** Dublett, weder 2 noch 2′.
+- n = 3 (bosonisch 63, fermionisch 62): Dublett 2 **fünfmal**, sein Multiplizitätsraum ist eine
+  irreduzible Fünferdarstellung von O(3,5) ≅ PGL(2,5) × ℤ₂; 2′ kommt nicht vor.
+
+**Urteil A: verworfen.** Die Abbruchregel greift: Weder n = 2 noch n = 3 liefert drei Kopien
+oder ein Triplett, und D₅ ⊕ A₃ erscheint nicht. Nebenbefund: Bei n = 3 trägt das Dublett
+wieder eine Fünf. Dass der bosonische Teil bei n = 3 die Dimension 63 hat (TFPT: 68 = 5 + 63
+Gedächtnisrichtungen), ist ein ungeprüfter Zufall; 63 = 2⁶ − 1 ist ebenso naheliegend.
+
+**B. Wörterbuch über 𝔽₅.** Exakt geprüft:
+- Die Nullstellen von z⁴ − 1 in 𝔽₅ sind **ganz 𝔽₅^×**: die vier Marken sind die Einheiten.
+- Polynome vom Grad ≤ 4 sind über 𝔽₅ genau alle Funktionen auf 𝔽₅ (3125 von 3125): die fünf
+  Schnitte von O(D) entsprechen den fünf Punkten der affinen Geraden.
+- Die Dilatation x ↦ 2x (TFPTs G) hat auf ℂ^𝔽₅ den invarianten Teil span(δ₀, 1_{𝔽₅^×}) und die
+  drei nichttrivialen Dirichlet-Charaktere mod 5 mit Eigenwerten −i, −1, +i. Das sind genau die
+  μ₄-Charaktere {−1, i, −i}, die der Atlas dem Familienraum H¹ zuschreibt (Befund vom 23.11.).
+- Die sechs Fasern sind P¹(𝔽₅) (in TFPT seit Oktober bekannt), ihr Punktstabilisator
+  AGL(1,5) = F₂₀ ist die Uhrengruppe ⟨C₅, G⟩.
+- Gauss-Summen: |g(χ)|² = 5 für alle drei, die Legendre-Summe ist √5 (goldener Schnitt, Ikosiane).
+- Auswahl: „Die Einheitengruppe ist genau μ₄“ gilt nur für p = 5. Das ist eine zweite,
+  unabhängige Regel neben „Spinorteil = Dublett“; beide wählen p = 5.
+
+Damit ist das Zahlengerüst 3 Familien, 4 Marken, 5 Plätze, 6 Fasern dasselbe wie p − 2, p − 1,
+p, p + 1 auf der projektiven Geraden über 𝔽₅, und die Familiencharaktere sind die nicht-
+trivialen Einheitencharaktere.
+
+**Basislinie zu B.** In TFPT sind 3, 4, 5 schon n − 1, n, n + 1 für n = 4 Marken
+(Riemann–Roch). Das Wörterbuch ersetzt die Frage „warum vier Marken“ durch „warum 𝔽₅“; neu ist
+die Lesart der Marken als Einheiten und der Familiencharaktere als Dirichlet-Charaktere, nicht
+die Zahlen selbst.
+
+**C. Familien als getwistete Sektoren.** Induziert man auf den sechs Punkten von P¹(𝔽₅) mit
+jedem Charakter von 𝔽₅^×, entstehen: trivial 1 ⊕ 5 (Steinberg), Legendre 3 ⊕ 3′ (bosonisch),
+die beiden quartischen Charaktere jeweils dieselbe irreduzible fermionische 6.
+Die drei Familiensektoren sind also **nicht gleich**: Unter der Galoiswirkung i ↦ −i zerfallen
+die Familiencharaktere in 1 + 2 (Legendre reell, quartisches Paar konjugiert).
+
+**Urteil F.** Kopienweg verworfen. Das Wörterbuch ist **offen**, Stufe 1 für die Zahl 3 und die
+Familiencharaktere, aber ohne Mechanismus für drei gleiche Kopien der 16. Stärkster Einwand:
+In TFPT sind Familien eine eigene Kohomologie H¹, hier liegen die Familiencharaktere im selben
+ℂ⁵ wie die Plätze; und die drei Sektoren sind verschieden statt gleich. Die Zerlegung 1 + 2 der
+Familien unter Galois ist eine prüfbare Vorhersage gegen die TFPT-Flavorstruktur, kein Befund.
+
 ## Kleinste entscheidende Tests für eine Folgesitzung
 
-1. **Drei Familien aus mehreren Fünfersystemen.** Für 𝔽₅ⁿ mit Sp(2n, 5) und ihrer Weil-
-   Darstellung auf ℂ^(5ⁿ): Gibt es ein natürliches n, für das der fermionische Teil drei Kopien
-   des Dubletts enthält oder D₅ ⊕ A₃ erscheint? Abbruch, wenn die Zerlegung für n = 2, 3 keine
-   Dreierstruktur zeigt.
-2. **Sechs Fasern.** Welches natürliche Element mit Nichtrest-Multiplikator (etwa J aus der
+1. **Familien als Kohomologie über 𝔽₅.** Die étale Kohomologie H¹ von P¹ ohne μ₄ über dem
+   algebraischen Abschluss von 𝔽₅ mit der μ₄-Wirkung berechnen und mit dem TFPT Familienraum
+   (Charaktere {−1, i, −i}, Rang 3) vergleichen. Abbruch, wenn Rang oder Charaktere abweichen.
+2. **Galois 1 + 2 gegen Flavor.** Prüfen, ob eine TFPT Flavorgröße (Leptonkoeffizienten
+   16/7, 4/3, 7/6, Transportlängen) eine Familie gegen zwei auszeichnet, und ob es die zum
+   Legendre-Charakter passende ist.
+3. **Sechs Fasern.** Welches natürliche Element mit Nichtrest-Multiplikator (etwa J aus der
    Standardform kombiniert mit einer Dilatation) erweitert A₅ auf PGL(2,5) mit Stabilisator F₂₀?
-3. **Y_par gegen die markierte Ladung.** Den Befund ‖[H*, Y]‖² = 19/12 gegen 17/6 mit der Weil-
+4. **Y_par gegen die markierte Ladung.** Den Befund ‖[H*, Y]‖² = 19/12 gegen 17/6 mit der Weil-
    Lesart neu bewerten: Welche Dynamik ist mit der Paritätsbasis verträglich?
-4. **Fockspur-Anschluss.** Wählt die positive Fockspur über Λ ℂ^(𝔽₅) mit der Weil-induzierten
+5. **Fockspur-Anschluss.** Wählt die positive Fockspur über Λ ℂ^(𝔽₅) mit der Weil-induzierten
    quadratischen Quelle (Exploration F1 vom 23.11.) dieselbe Orientierung Σ ∝ −6Y?
