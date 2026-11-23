@@ -1,6 +1,71 @@
 # Urteil
 
-Gerechnet am 23. November 2026 mit `.venv/bin/python` (numpy, scipy, sympy, mpmath). Neun Skripte,
+## Stand zuerst: vollständige Hypothesen auf einem festen Prüfstand (`v1_vollhypothesen.py`)
+
+Arbeitsweise seit dem Hinweis des Nutzers: Jede Hypothese deckt die ganze Lösung ab und wird
+gegen denselben Katalog K1…K14 geprüft. Ein Fehlschlag beendet die Prüfung nicht.
+
+Katalog: K1 vier Marken mit zwei Blättern · K2 quadratische Lage τ = i · K3 μ₄ permutiert die
+Marken zyklisch · K4 Spinstruktur (A,A) · K5 c₃ = 1/(8π) · K6 Zustand und Zeit mit festgelegter
+Breite · K7 flacher Sektor für das E₈ Wort · K8 P2 über P1 · K9 drei Familien als gleiche Kopien ·
+K10 Familiencharaktere {−1, i, −i} · K11 E₈ · K12 3+1 · K13 Gravitation · K14 keine freien
+Parameter.
+
+```
+        K1 K2 K3 K4 K5 K6 K7 K8 K9 K10 K11 K12 K13 K14    P  L  F  O  E
+   H1    E  P  L  P  P  P  F  P  O  P   E   F   F   P     7  1  3  1  2
+   H2    P  P  L  P  P  F  F  P  P  F   P   L   O   P     8  2  3  1  0
+   H3    E  E  E  P  O  O  F  E  E  E   E   E   P   F     2  0  2  2  8
+   H4    E  P  L  P  P  P  L  P  O  P   P   F   F   P     8  2  2  1  1
+   H5    P  P  L  P  P  F  L  P  P  F   P   L   O   P     8  3  2  1  0
+   H6    P  P  L  P  P  P  L  P  L  L   P   L   O   P     8  5  0  1  0
+```
+P hergeleitet, L unter benannter Lesart, F gescheitert, O offen, E Eingabe.
+
+**H6 ist die erste vollständige Hypothese ohne Fehlschlag.** In Worten:
+- **Raumzeit** ist das ganzzahlige Gitter der größten assoziativen Divisionsalgebra, die
+  Lipschitz-Quaternionen ℤ⁴ = ℤ⟨1, i, j, k⟩. Ihre Einheiten ±1, ±i, ±j, ±k machen alle vier
+  Achsen gleichwertig (keine vorab ausgezeichnete Zeit). Die Fermionen sind auf allen vier
+  Zyklen antiperiodisch (invariant, ohne Nullmoden). 3 + 1 ist Re ⊕ Im.
+- **Die Naht** ist eine Gaußsche Ebene ℤ[i] darin: quadratisch, τ = i, Spinstruktur (A,A). Die
+  π-Drehung −1 gibt zwei Blätter und vier Marken. Die Vierteldrehung um einen Viertelpunkt
+  permutiert die Marken zyklisch; c₃ = 2/(4π·4) = 1/(8π); die Kragenbreite ist ℓ = L/2.
+- **P2** folgt aus der Naht wie in TFPT (P2.PARTITION.01).
+- **E₈** ist dasselbe Gitter zweimal: aus ℤ⁸ = (ℤ⁴)² mit Halbzahlkleber (112 + 128 = 240) und als
+  GSO-Summe von 16 Majorana-Weyl-Fermionen auf der Naht (120 + 128 = 248). Der (P,P) Sektor hat
+  genau 8 komplexe Nullmoden, flach für jede Breite; dort lebt das E₈ Wort. Das löst die Gabel
+  aus Abschnitt N.
+- **Drei Familien** sind die drei selbstdualen 2-Formen (die drei Gaußschen Geraden ℤ[i], ℤ[j],
+  ℤ[k]), von σ zyklisch permutiert, also gleiche Kopien. Die Vierteldrehung wirkt auf ihnen mit
+  {1, i, −i}; zusammen mit dem Vorzeichencharakter von q, den TFPT auch für die Trägermoden
+  nutzt, ergibt das genau {−1, i, −i}.
+- **Gravitation**: 4D lokal; die Einsteingleichung mit Koeffizient 1/c₃ liefert nur TFPTs
+  bedingte Herleitung (GRAV.NONLINEAR.01).
+
+**Die fünf Lesarten von H6 (dort kann sie noch falsch sein).**
+1. K3: Keine Marke ist ausgezeichnet, also liegt das Drehzentrum auf einem Viertelpunkt.
+2. K7: Der Randoperator B ist der Naht-Dirac summiert über die Spinstrukturen (GSO).
+3. K9: Familien = selbstduale 2-Formen.
+4. K10: Die Familien tragen den Vorzeichencharakter von q. Diese Lesart ist nach Ansicht des Ziels
+   gewählt; derselbe Charakter steht aber schon in TFPTs Trägermoden.
+5. K12: Raumzeit = größte assoziative Divisionsalgebra (Frobenius).
+
+**Ausschlüsse dieses Prüfstands (wiederverwendbar).**
+- *Dreierdrehungen verbieten zeitneutrale invertierbare Fermionen.* Das hexagonale 2D-Gitter und
+  das Hurwitz-4D-Gitter haben keine einheiteninvariante Spinstruktur ohne Nullmoden; das
+  quadratische und das hyperkubische (Lipschitz) haben sie. Deshalb μ₄ und nicht μ₆, und deshalb
+  Lipschitz statt Hurwitz.
+- *Tensorprodukt-Spektraltripel* (H3) verlieren den flachen Sektor: mit invertierbarem
+  geometrischem Dirac gibt es keine Nullmoden.
+- *Naht allein* (H1, H4) liefert kein 3+1 und keine Gravitation.
+
+**Nächster Schritt (für H6 als Ganzes).** Jede der fünf Lesarten durch eine Herleitung oder einen
+entscheidenden Test ersetzen und danach den ganzen Prüfstand neu laufen lassen. Dazu die
+Gravitation (K13) auf der Lipschitz-Raumzeit selbst prüfen, statt sie aus TFPT zu übernehmen.
+
+---
+
+Gerechnet am 23. November 2026 mit `.venv/bin/python` (numpy, scipy, sympy, mpmath). Zehn Skripte,
 alle mit Rückgabewert 0; Ausgaben in `ausgabe_*.txt`. PLAN, progress, Ledger und Atlas sind
 unberührt. Ausgangspunkt war der konsolidierte Stand in `docs/research/TFPT-STAND.md`
 (Abschnitt „Befunde 20.–23. November“): Die offenen Eingaben laufen auf „woher die Vier“ und
