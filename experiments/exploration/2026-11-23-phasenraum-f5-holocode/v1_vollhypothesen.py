@@ -715,6 +715,26 @@ if "H6h2" in H and z1p.exists() and z2p.exists():
                                                           "= zwei invariante Trägermoden; auf dem Nahttorus O(2): 3 gerade + 1 ungerade, "
                                                           "Kopplung an den geraden Teil gibt drei Familien")
                                 facts["F29_review_three"] = z16
+                                zz = {n: Path(__file__).with_name(f"z{n}_ergebnis.json") for n in (17, 18, 19)}
+                                if all(p.exists() for p in zz.values()):
+                                    Q = {n: json.loads(p.read_text()) for n, p in zz.items()}
+                                    okq = {n: all(Q[n]["checks"].values()) for n in Q}
+                                    H["H6h11"] = dict(H["H6h10"])
+                                    H["H6h11"]["K16"] = (LES, "[physisches Gitter] Universalität perturbativ (Z6); Reflexionspositivität (Z19): "
+                                                              "naiv und Wilson r <= 1 linkpositiv, r = 2 nicht; Overlap bei theta = 0 positiv; "
+                                                              "flache Ginsparg-Wilson-Majoranaformen verletzen sie bei gedrehter Phase")
+                                    H["H6h11"]["K17"] = (P if okq[19] else F,
+                                                         "[G] Gravitationsanomalie gerechnet (Z13); Wand gegen Positivität (Z19): lokale "
+                                                         "Majoranaformen haben eine Barriere (Wilson 0,083, GJ 0,007), wandfrei nur nichtlokal "
+                                                         "oder um den Preis der Positivität")
+                                    H["H6h11"]["K19"] = (LES, "[G] keine Grundzustandsregel für den Sektor 1 gefunden (Z17); Lesarten: Ordnungsfeld "
+                                                              "ohne Mittelwert (genau ein Großkreis nahe der Schwelle) oder N_fam = 3k mit LEP; "
+                                                              "TFPTs Hopf-Lift (v957) mit Deck im Raum verbietet eine einzelne Naht")
+                                    H["H6h11"]["K20"] = (LES if okq[18] else F,
+                                                         "[Z18] ein Multiplett auf dem Nahttorus mit geeichtem Deck: J^2 = -1 erzwungen, ein Bündel "
+                                                         "O(R), 3 gerade Familien + 1 ungerade Nahtmode, Zuordnung über die Eichbedingung, 16 MW, E8; "
+                                                         "Paarung bleibt Eingabe und widerspricht psi chi aus G (Familienmassen 0, 1/2, 1/2)")
+                                    facts["F30_open_connections"] = {n: Q[n].get("urteil") for n in Q}
 
 order = [f"K{i}" for i in range(1, 21)]
 print("Gesamttabelle (P = hergeleitet, L = unter benannter Lesart, F = FAIL, O = OFFEN, E = EINGABE)\n")

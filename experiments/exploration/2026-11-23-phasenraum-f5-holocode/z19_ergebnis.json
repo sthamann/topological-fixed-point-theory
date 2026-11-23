@@ -1,0 +1,493 @@
+{
+ "checks": {
+  "Overlap erfüllt GW und Majoranabedingung C D C^-1 = D^T": true,
+  "X hermitesch, X^2 = 1 - D^+D/4": true,
+  "X stetig an den Verdopplerecken, sign X springt": true,
+  "X-Masse ist von selbst eine Majoranamasse (C-antisymmetrisch)": true,
+  "Wilson-Majorana: Barriere, Minimum bei pi, Periode 2 pi": true,
+  "X- und Xq-Form flach (Spannweite < 1e-12)": true,
+  "Z16 reproduziert: Dirac-GJ flach": true,
+  "Z9-Barriere reproduziert (0,0882)": true,
+  "Index = Windung für X, Xq, GJ (1, 0, 2, -1)": true,
+  "Wilson-Paar wie Z7: 1, 2, 0": true,
+  "Wilson: Windungskosten wachsen linear mit L": true,
+  "Xq: Windungskosten fallen wie 1/L (keine Wand)": true,
+  "Wilson r = 1: Link-RP, Platz nicht; Gegenvorzeichen verletzt": true,
+  "naiv und Wilson r = 0,5 Link-RP; Wilson r = 2 verletzt": true,
+  "Overlap bei theta = 0 (rho 0,5/1/1,5, m 0/0,3): Link-OS-Matrix positiv": true,
+  "Overlap-Spektrum: Pole + Schnitt rekonstruieren G(tau), alle Gewichte positiv-semidefinit": true,
+  "Wilson mit gedrehter Masse e^{i theta g5}: RP für alle theta": true,
+  "Wilson kappa(r = 1) reproduziert": true,
+  "Wilson konvergiert, SLAC wächst logarithmisch": true,
+  "Hamiltonsche Chiralladung Q5: [Q5, H] = 0, Spektrum |s|/E": true
+ },
+ "befunde": {
+  "J der Majorana-Overlapdrehung hat nicht Ordnung 4 (X nicht quantisiert)": true,
+  "Quantisierte Majoranadrehung (sign X) ist nichtlokal": true,
+  "Drehidentität aus Z16 überträgt sich nicht auf die Majorana-GJ-Form": true,
+  "X-Form: Verzweigungsschnitt ist physikalisch sichtbar (gebundene Zustände)": true,
+  "GJ-Form: Wand bleibt (Kosten wachsen mit L)": true,
+  "X-Form: Schnitt zwischen gleichen Vakua kostet Spannung": true,
+  "Overlap: Teilchenpol fehlt nahe den Verdopplerimpulsen (nur Kontinuum)": true,
+  "Lu-Shao-Behauptung für freies Overlap bei theta = 0 reproduziert": false,
+  "Overlap-Transfermatrix hat kontinuierliches Spektrum (unendlich dimensionaler lokaler Raum)": true,
+  "Flache Overlapformen (X, Xq) verletzen RP bei theta != 0 (Xq: != 0, pi)": true,
+  "GJ-Form bei theta = pi/2 nicht reflexionssymmetrisch (OS-Form nicht hermitesch)": true,
+  "RP-Verletzung verschwindet für p -> 0": false,
+  "SLAC (chiral, ohne Verdoppler, lokal in k) hat kein endliches kappa": true,
+  "Chiraler Regulator legt a/l_P fest": false
+ },
+ "urteil": {
+  "1a_phasenpotential": "hergeleitet: flach (Spannweite < 1e-12) nur mit der Majoranadrehung X (lokal, nicht quantisiert, J^4 != 1) oder sign X (quantisiert, nichtlokal); die lokale eindeutige GJ-Form behält 0.0073 je Zelle mit Periode pi; Wilson 0.083 euklidisch, 0.0882 hamiltonsch",
+  "1b_index": "hergeleitet: eine chirale Majorana-Weyl-Mode je Paar (Index = Windung von eta_+) für X, Xq, GJ und Wilson; Verdoppler tragen beim Overlap nicht bei; AB-Viertelfluss nicht im Overlap enthalten",
+  "1c_wand": "gescheitert für lokale Formen, Lesart für Xq: wandfrei nur mit nichtlokaler Drehung (dF ~ 1/L); lokal-flach (X) wird der Schnitt zur Wand (Spannung 0.0063 gegen Wilson <= 0.151 je Einheit Wandquerschnitt), lokal-eindeutig (GJ) bleiben zwei pi-Wände (je <= 0.0160)",
+  "2_positivitaet": "hergeleitet (Zielkonflikt): Wilson r <= 1 Link-RP für jede Massenphase; freies Overlap bei theta = 0 Link-RP (Pol + positives Kontinuum), Lu-Shao dafür nicht reproduziert; flache gedrehte Formen (X, Xq) verletzen RP auf Gitterskala, auch für p -> 0; GJ bei pi/2 nicht reflexionssymmetrisch. Für H6: Wand oder Positivität",
+  "3_gravitation": "gescheitert: kein chiraler Regulator macht kappa bestimmter; Overlap ohne endlichen lokalen Hilbertraum, SLAC ohne Flächengesetz (+0.162 je Verdopplung), Hamilton-chiral = Wilson(r); a/l_P bleibt regulatorabhängig (Wilson r = 1: kappa = 0.2208 je Dirac)"
+ },
+ "zahlen": {
+  "X_spektrum": [
+   0.056877439514779055,
+   0.914475225771951
+  ],
+  "J4_abweichung_max": 1.9998146610372722,
+  "J4_anteil_ueber_0.01": 1.0,
+  "lokalitaet_sprung": {
+   "0.01": [
+    0.014141192957266223,
+    2.828391776550589
+   ],
+   "0.0001": [
+    0.0001414213552946497,
+    2.828427121212388
+   ]
+  },
+  "phasenpotential": {
+   "W": [
+    0.08299376856153007,
+    0.07025158530777276,
+    0.04035996798999175,
+    0.011603607852612718,
+    0.0,
+    0.011603607852612718,
+    0.04035996798999175,
+    0.07025158530777276,
+    0.08299376856153007
+   ],
+   "X": [
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "Xq": [
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "GJ": [
+    0.0,
+    0.0036209334510770574,
+    0.007273321883728201,
+    0.0036209334510770574,
+    0.0,
+    0.0036209334510770574,
+    0.007273321883728201,
+    0.0036209334510770574,
+    0.0
+   ],
+   "GJ_Dirac": [
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ]
+  },
+  "barriere_hamilton_z9": 0.0882405082714861,
+  "index": {
+   "X": {
+    "1": 1,
+    "0": 0,
+    "2": 2,
+    "-1": -1
+   },
+   "Xq": {
+    "1": 1,
+    "0": 0,
+    "2": 2,
+    "-1": -1
+   },
+   "GJ": {
+    "1": 1,
+    "0": 0,
+    "2": 2,
+    "-1": -1
+   }
+  },
+  "index_wilson_paar": {
+   "(1, 0)": 1,
+   "(1, 1)": 2,
+   "(0, 0)": 0
+  },
+  "wand": {
+   "verteilt": {
+    "W": {
+     "8": 0.3369886839937948,
+     "16": 0.6589354121629611,
+     "32": 1.3093878880576142
+    },
+    "X": {
+     "8": 0.006395183320998754,
+     "16": 0.006286675268459163,
+     "32": 0.005991327718021466
+    },
+    "Xq": {
+     "8": 0.00797822638919854,
+     "16": 0.004398132947496691,
+     "32": 0.0022550310358866454
+    },
+    "GJ": {
+     "8": 0.037207297953703033,
+     "16": 0.06266621932489258,
+     "32": 0.11868791569464321
+    }
+   },
+   "sigma_W": 0.15126097044520748,
+   "sigma_GJ_je_pi_wand": 0.015955814803501056,
+   "sigma_X_schnitt": {
+    "6": 0.005549977030851139,
+    "8": 0.006102989241146162,
+    "10": 0.0062732182990137275
+   },
+   "kink": {
+    "W": {
+     "0.7": 0.15126097044520748,
+     "1.5": 0.30668033335675204,
+     "3.0": 0.5903012566484165,
+     "5.0": 0.8761493823099897
+    },
+    "GJ": {
+     "0.7": 0.03191162960700211,
+     "1.5": 0.05664292925573022,
+     "3.0": 0.09335040266907413,
+     "5.0": 0.10963897414509916
+    }
+   }
+  },
+  "rp": {
+   "naiv m=0.3": {
+    "link_min": -1.2164666466412407e-14,
+    "platz_min": -1.0000000000000062,
+    "antiherm": 1.390984229484823e-15
+   },
+   "wilson r=1.0": {
+    "link_min": -3.765012669249476e-12,
+    "platz_min": -0.23033949941761747,
+    "antiherm": 2.1056581574698836e-15
+   },
+   "wilson r=0.5": {
+    "link_min": -1.6491925781771014e-12,
+    "platz_min": -0.29874959769518106,
+    "antiherm": 1.5376900658485954e-15
+   },
+   "wilson r=2.0": {
+    "link_min": -0.1131614483754857,
+    "platz_min": -0.2522337279534098,
+    "antiherm": 2.7726506431229935e-15
+   },
+   "overlap rho=1.0": {
+    "link_min": -2.4775822014409406e-17,
+    "platz_min": -0.3577139570957931,
+    "antiherm": 4.487824809347023e-15
+   },
+   "overlap rho=1.0,m=0.3": {
+    "link_min": -6.514544826120741e-17,
+    "platz_min": -0.34250300053112215,
+    "antiherm": 5.480054703253595e-15
+   },
+   "overlap rho=0.5": {
+    "link_min": 7.248022900639372e-08,
+    "platz_min": -0.360128231742448,
+    "antiherm": 4.128614592599493e-15
+   },
+   "overlap rho=1.5": {
+    "link_min": 2.422213401640199e-13,
+    "platz_min": -0.35488472131223975,
+    "antiherm": 3.0677113891612003e-15
+   }
+  },
+  "rp_spektral": {
+   "rho=1.0,m=0.0,p=(0.30,0.00,0.00)": {
+    "zstar": 0.04107017136178648,
+    "E_cut": 3.192473178590271,
+    "poles": [
+     0.747232013449058
+    ],
+    "pole_min": -3.486539739685753e-18,
+    "cut_min": 0.9525088794389145,
+    "rek_fehler": 4.656784346058365e-15
+   },
+   "rho=1.0,m=0.0,p=(1.00,0.50,0.20)": {
+    "zstar": 0.27705159585932204,
+    "E_cut": 1.2835515235001236,
+    "poles": [
+     0.4175663677222379
+    ],
+    "pole_min": -6.581664334148958e-17,
+    "cut_min": 0.2552188017226445,
+    "rek_fehler": 1.5931277623272193e-13
+   },
+   "rho=1.0,m=0.0,p=(2.50,2.00,0.30)": {
+    "zstar": 0.271195843039546,
+    "E_cut": 1.3049140510586448,
+    "poles": [],
+    "pole_min": 1.0,
+    "cut_min": 0.20454962997970494,
+    "rek_fehler": 2.7340445781911006e-12
+   },
+   "rho=1.0,m=0.0,p=(3.14,0.40,0.00)": {
+    "zstar": 0.46027267478758993,
+    "E_cut": 0.7759361938411226,
+    "poles": [],
+    "pole_min": 1.0,
+    "cut_min": 0.3747269904190235,
+    "rek_fehler": 2.5730593977710382e-12
+   },
+   "rho=1.0,m=0.0,p=(2.80,2.90,3.00)": {
+    "zstar": 0.1684580758827492,
+    "E_cut": 1.781068367965033,
+    "poles": [],
+    "pole_min": 1.0,
+    "cut_min": 0.7377739023426818,
+    "rek_fehler": 2.5447518064913147e-12
+   },
+   "rho=1.0,m=0.3,p=(0.30,0.00,0.00)": {
+    "zstar": 0.04107017136178648,
+    "E_cut": 3.192473178590271,
+    "poles": [
+     0.6614446080924585
+    ],
+    "pole_min": 3.145239658276516e-17,
+    "cut_min": 0.5452131156997466,
+    "rek_fehler": 3.098767418221296e-15
+   },
+   "rho=1.0,m=0.3,p=(1.00,0.50,0.20)": {
+    "zstar": 0.27705159585932204,
+    "E_cut": 1.2835515235001236,
+    "poles": [
+     0.40905001134588337
+    ],
+    "pole_min": -9.510097494983402e-17,
+    "cut_min": 0.22053790838285062,
+    "rek_fehler": 1.6904311540437162e-13
+   },
+   "rho=1.0,m=0.3,p=(2.50,2.00,0.30)": {
+    "zstar": 0.271195843039546,
+    "E_cut": 1.3049140510586448,
+    "poles": [],
+    "pole_min": 1.0,
+    "cut_min": 0.17913666845916362,
+    "rek_fehler": 2.802530992839611e-12
+   },
+   "rho=1.0,m=0.3,p=(3.14,0.40,0.00)": {
+    "zstar": 0.46027267478758993,
+    "E_cut": 0.7759361938411226,
+    "poles": [],
+    "pole_min": 1.0,
+    "cut_min": 0.31186583817421565,
+    "rek_fehler": 2.634116759787216e-12
+   },
+   "rho=1.0,m=0.3,p=(2.80,2.90,3.00)": {
+    "zstar": 0.1684580758827492,
+    "E_cut": 1.781068367965033,
+    "poles": [],
+    "pole_min": 1.0,
+    "cut_min": 0.5072220773119943,
+    "rek_fehler": 2.6053825375631107e-12
+   },
+   "rho=0.5,m=0.0,p=(0.30,0.00,0.00)": {
+    "zstar": 0.486809536288643,
+    "E_cut": 0.7198823283140454,
+    "poles": [
+     0.7472320134490569
+    ],
+    "pole_min": -2.2272983685467004e-17,
+    "cut_min": 0.4523403359296169,
+    "rek_fehler": 9.825033694022072e-14
+   },
+   "rho=0.5,m=0.0,p=(1.00,0.50,0.20)": {
+    "zstar": 0.40069937823249524,
+    "E_cut": 0.9145438130445233,
+    "poles": [
+     0.41756636772224
+    ],
+    "pole_min": -1.813481480066093e-17,
+    "cut_min": 0.02889706134027411,
+    "rek_fehler": 1.7950713312344687e-12
+   },
+   "rho=0.5,m=0.0,p=(2.50,2.00,0.30)": {
+    "zstar": 0.2425143759912003,
+    "E_cut": 1.416694287923794,
+    "poles": [],
+    "pole_min": 1.0,
+    "cut_min": 0.2647928343221794,
+    "rek_fehler": 2.665551307395228e-12
+   },
+   "rho=0.5,m=0.0,p=(3.14,0.40,0.00)": {
+    "zstar": 0.3776678227914767,
+    "E_cut": 0.9737402453961845,
+    "poles": [],
+    "pole_min": 1.0,
+    "cut_min": 0.4891196483238069,
+    "rek_fehler": 2.5482209880883685e-12
+   },
+   "rho=0.5,m=0.0,p=(2.80,2.90,3.00)": {
+    "zstar": 0.1554367856672787,
+    "E_cut": 1.8615161530557487,
+    "poles": [],
+    "pole_min": 1.0,
+    "cut_min": 0.7564937367310296,
+    "rek_fehler": 2.546175363366028e-12
+   },
+   "rho=1.5,m=0.0,p=(0.30,0.00,0.00)": {
+    "zstar": -0.41115829671834314,
+    "E_cut": 0.8887769884709037,
+    "poles": [
+     0.747232013449054
+    ],
+    "pole_min": 2.6511097276238652e-18,
+    "cut_min": 0.5474483817147598,
+    "rek_fehler": 2.0927196973562045e-14
+   },
+   "rho=1.5,m=0.0,p=(1.00,0.50,0.20)": {
+    "zstar": 0.05147330718953391,
+    "E_cut": 2.966691912679292,
+    "poles": [
+     0.41756636772223626
+    ],
+    "pole_min": -1.1334399288142407e-17,
+    "cut_min": 0.8148050046859292,
+    "rek_fehler": 2.117701767583077e-15
+   },
+   "rho=1.5,m=0.0,p=(2.50,2.00,0.30)": {
+    "zstar": 0.30489866194497917,
+    "E_cut": 1.1877758135020535,
+    "poles": [],
+    "pole_min": 1.0,
+    "cut_min": 0.13744174528114778,
+    "rek_fehler": 2.885985725422729e-12
+   },
+   "rho=1.5,m=0.0,p=(3.14,0.40,0.00)": {
+    "zstar": 0.5778920305794535,
+    "E_cut": 0.5483682260641798,
+    "poles": [],
+    "pole_min": 1.0,
+    "cut_min": 0.19348856855093846,
+    "rek_fehler": 2.716395508466664e-12
+   },
+   "rho=1.5,m=0.0,p=(2.80,2.90,3.00)": {
+    "zstar": 0.18384191890093904,
+    "E_cut": 1.6936790270502922,
+    "poles": [],
+    "pole_min": 1.0,
+    "cut_min": 0.7158520921441065,
+    "rek_fehler": 2.544832476965152e-12
+   }
+  },
+  "rp_gedreht": {
+   "wilson theta=0.00": {
+    "antiherm": 1.456558595789205e-15,
+    "link_min": -1.1388255056045624e-13
+   },
+   "wilson theta=1.57": {
+    "antiherm": 5.555615823398129e-15,
+    "link_min": -1.7456538887472732e-13
+   },
+   "wilson theta=3.14": {
+    "antiherm": 1.8425979608954344e-15,
+    "link_min": -3.347028552353478e-14
+   },
+   "ov_X theta=0.00": {
+    "antiherm": 3.080999347946968e-15,
+    "link_min": 5.4817326874880865e-12
+   },
+   "ov_X theta=0.30": {
+    "antiherm": 2.2901498674054305e-15,
+    "link_min": -0.0008482415611901813
+   },
+   "ov_X theta=1.57": {
+    "antiherm": 2.646763741207028e-15,
+    "link_min": -0.015531359501170157
+   },
+   "ov_X theta=3.14": {
+    "antiherm": 2.465318380008131e-15,
+    "link_min": -0.029154174676494053
+   },
+   "ov_X theta=6.28": {
+    "antiherm": 4.792493834809977e-15,
+    "link_min": -0.2278935422661753
+   },
+   "ov_Xq theta=0.79": {
+    "antiherm": 3.1184449706798665e-15,
+    "link_min": -0.03167179246550404
+   },
+   "ov_Xq theta=1.57": {
+    "antiherm": 3.7085038896225895e-15,
+    "link_min": -0.040046934496771824
+   },
+   "ov_Xq theta=3.14": {
+    "antiherm": 1.94234525942688e-15,
+    "link_min": 5.4817134985700645e-12
+   },
+   "ov_GJ theta=1.57": {
+    "antiherm": 0.2966809058604908,
+    "link_min": -0.0028582588342629996
+   }
+  },
+  "rp_X_kleines_p": [
+   -0.0156530207067324,
+   -0.014308236104163407,
+   -0.014202468076998513
+  ],
+  "kappa": {
+   "wilson_r1": 0.22084634967810074,
+   "wilson_m0.5": {
+    "100": 0.15877310327548907,
+    "200": 0.15877310328019403,
+    "400": 0.15877310330226294
+   },
+   "slac_m0.5": {
+    "100": 1.432969222693494,
+    "200": 1.5945071546054628,
+    "400": 1.756060189954033
+   },
+   "wilson_band_z16": {
+    "1.0": 0.22086855123651536,
+    "2.0": 0.10398307323326691,
+    "4.0": 0.04338367634009869,
+    "8.0": 0.016505634181744958
+   },
+   "a_lP_24_dirac": {
+    "1.0": 4.604712902962081,
+    "2.0": 3.1594896787920708,
+    "4.0": 2.0407922306421775,
+    "8.0": 1.2587854787244392
+   }
+  }
+ }
+}

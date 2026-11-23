@@ -1,0 +1,226 @@
+A. Quellen (K5): Was TFPT über die Einheit sagt
+
+   documents/tfpt_1_architecture_e8/sections/001-source.tex:73
+      P1 im Architekturpapier: Einheitswindung [u_Sigma] = 1, Status 'primitive postulate'.
+   documents/archive--paper-latex--tfpt-42/sections/006-subsection-character-trace-identities-and-the-abelian-in.tex:253
+      tfpt-42: [u_Sigma] = 1 in K^1(S^1) = Z.
+   documents/archive--paper-latex--tfpt-42/sections/012-subsection-bosonic-relative-index-and-higgs-selection.tex:27
+      tfpt-42: c1(L2) = deg g2 = 1 auf der kompaktifizierten Normalensphäre.
+   documents/archive--paper-latex--tfpt-42/sections/029-section-frw-reduction-seam-transfer-and-the-scalaron-bra.tex:203
+      tfpt-42, Satz 'Boundary winding controls family': N_fam = 3n, N_DW = n.
+   documents/archive--paper-latex--tfpt-42/sections/029-section-frw-reduction-seam-transfer-and-the-scalaron-bra.tex:209
+      Dort: n = 1 ist der kanonische Zweig, gesetzt über den primitiven Generator.
+   documents/tfpt_research_contracts/sections/014-source.tex:111
+      Forschungsverträge (v957): die Nahtsphäre ist die Hopf-Basis von S^3.
+   verification/status_ledger.csv:737
+      Ledger CCC.SEAM.KINEMATICS.01 (4): vier Marken = vier Hopf-Fasern, in zwei Blattbahnen, verschlungen.
+   verification/status_ledger.csv:737
+      Ledger CCC.SEAM.KINEMATICS.01 (6): Polfäden tragen chi(D) = i, Nahtfäden chi(D^2) = -1 [C].
+   experiments/tfpt-discovery/ccc_uplift_4d_probe.py:94
+      Probe v957: offene Gabel, Deck auf der Raumzeit (X = S^3/Z4) oder intern (Raum S^3).
+   docs/research/fundamental-plan/TFPT-MARKIERTER-STABILISATOR-20261112.txt:91
+      Plan 12.11.: Welche Klasse physisch realisiert wird, muss eine Regel noch begründen.
+
+   Befund: TFPT setzt die Einheit (n = 1) als primitives Postulat. Der Satz N_fam = 3n verknüpft sie
+   mit der Familienzahl. Die Hopf-Hebung (v957) legt die vier Marken als vier Hopf-Fasern auf S^3.
+
+   Rechnung: Deck D = diag(i, -i) und Uhr rho = diag(i, 1) aus der Probe v957 auf Monomen z1^a z2^b.
+   Hopf-Ladung k = a + b, Deck-Charakter chi(D) = i^(a - b).
+   k = 1: Charaktere ['I', '-I']; D-invariant: keine
+   k = 2: Charaktere ['-1', '1', '-1']; D-invariant: ['z1^1 z2^1']
+   k = 3: Charaktere ['-I', 'I', '-I', 'I']; D-invariant: keine
+   k = 4: Charaktere ['1', '-1', '1', '-1', '1']; D-invariant: ['z1^4 z2^0', 'z1^2 z2^2', 'z1^0 z2^4']
+   Ein Feld mit k = 1 trägt chi(D) in ['-I', 'I']: das ist die Holonomie eines Spin-Z4-Fermions, nicht eines
+   J-neutralen Bosons. z1 verschwindet auf der Polfaser z = 0; dort sitzt nach Ledger (6) chi(D) = i.
+   k = 4: uhrinvariant ['z1^4 z2^0', 'z1^0 z2^4']; s = z1^4 - z2^4 hat einfache Nullfasern über
+   z in mu4; D bildet z -> -z ab, also 2 Bahnen: im Linsenraum X zwei Nahtfäden.
+   Verschlingung der Markenfasern über 1 und i (Windung von z1 - z2 längs der Faser über i): +1.0000
+   Folgerung (exakt, unter G): q = Phi^2 = det M ist J-neutral. Wirkt das Deck auf den Raum (X = S^3/<D>),
+   muss q D-invariant sein. Dann ist k gerade, und Nahtfäden kommen in X paarweise (wie Z11).
+   Eine einzelne Naht (k = 1) ist nur möglich, wenn das Deck intern ist und der Raum S^3 bleibt.
+
+   Familien je Naht (Lesart C'' je Naht): Index von K^(1/2) x O(D) ist H^0(K(D)) = 3 je Markensphäre.
+   Index additiv über k Nähte: N_fam = 3k, wie TFPTs Satz N_fam = 3n. Mit N_nu = 2.984 +- 0.0082
+   (LEP, externe Zahl, nicht im Repo geprüft): Abstand k = 1: +2 sigma, k = 2: +368 sigma, k = 3: +734 sigma.
+
+B. K1: Das Ordnungsfeld als Datum einer verzweigten Doppelüberlagerung w^2 = q
+
+   q sei ein Schnitt von O(k) auf der Normalensphäre (Hopf-Ladung k). w = sqrt(q) = Phi lebt auf der
+   Doppelüberlagerung mit r = k + (k mod 2) Verzweigungspunkten, Geschlecht g = r/2 - 1.
+   Geschlecht je k: {1: 0, 2: 0, 3: 1, 4: 1, 5: 2, 6: 2, 7: 3, 8: 3}
+   k = 4, w^2 = z^4 - 1: dz/w bei z = 1/t ist -1 dt + ..., regulär und ohne Nullstelle.
+   k = 1, w^2 = z: dz/w = 2 dw; bei w = 1/t: -2/t**2 dt, Pol zweiter Ordnung.
+   k = 3 mit Punkt im Unendlichen, z -> -z-symmetrisch: w^2 = z^3 - z, j = 1728. Auch das ist tau = i.
+   Vierteldrehung (z, w) -> (iz, w) auf w^2 = z^4 - 1: dz/w -> i dz/w; Quadrat -1 auf der 1-Form.
+   Die Bedingung J^2 = -1 auf der Form ist für k = 4 automatisch und für k = 1 leer (keine Form).
+   Ergebnis: Als Normalendatum wählt die Torusbedingung k = 3 oder 4, nicht 1. Mit mu4 ist k = 4 die
+   Hopf-Hebung der vier Marken aus v957 (vier verdrillte Fasern). Gescheitert für Primitivität.
+
+C. K2: Spin und Statistik
+
+   Clifford-Relationen: True. Hopf-Drehung um 2 pi (zwei Ebenen) auf Spinoren: +1; Drehung in einer Ebene: -1.
+   Deck D gehoben: Eigenwerte je Chiralität [[-1j, 1j], [(1+0j), (1+0j)]],
+   Determinanten [(1+0j), (1+0j)]. Der Lorentz-skalare Bilinear eps_ab eta^a eta^b trägt det = 1.
+   Damit: Jede geometrische Drehung wirkt auf Phi (Boson, J^2-neutral) trivial. Sie gibt q keine
+   ungerade Ladung. Ungerade Ladung heißt J-Holonomie längs der Faser, also eine verschlungene Naht.
+   Monodromie von sqrt(q) längs einer generischen Hopf-Faser für k = 1..4: [-1, 1, -1, 1] = (-1)^k.
+   'Phi spinoriell' ist also gleichwertig zu 'ungerade viele verschlungene Nähte'. Das ist zirkulär.
+   Spin^c-Buchhaltung unter G (Fermionen Ladung 1/4 relativ zu q): Nähte durch einen Zyklus C sind
+   kongruent 2 (C.C) mod 4: {0: 0, 1: 2, 2: 0, 3: 2}. Nie ungerade. Nur ohne J (q = Phi, Ladung 1/2) wäre k = C.C mod 2.
+
+D. K3: Energie und Entropie der Hopf-Sektoren
+
+   Ladung-k-Felder auf S^3 (Radius 1) sind Schnitte von O(k) auf der Basis S^2 (Radius 1/2) mit
+   Monopolzusammenhang; dazu kommt die Faserenergie k^2 |q|^2. Gitter: Würfeloberfläche, Peierls-Phasen.
+   E = 2 pi [ sum |q_j - U q_i|^2 + a^2 sum (k^2 |q|^2 + lam/2 (|q|^2 - v^2)^2) ], lam = 1.
+   k = 0: tiefster Eigenwert des Gitteroperators   0.000, Kontinuum k(k+2) = 0
+   k = 1: tiefster Eigenwert des Gitteroperators   2.998, Kontinuum k(k+2) = 3
+   k = 2: tiefster Eigenwert des Gitteroperators   7.991, Kontinuum k(k+2) = 8
+   k = 3: tiefster Eigenwert des Gitteroperators  14.981, Kontinuum k(k+2) = 15
+   v R =  4.0 (Würfel N = 12): E(k) = [0.0, 1090.4, 1975.0, 2518.2]; E(1)-E(0) = 1090.4, E(2)-E(1) = 884.7
+   v R =  8.0 (Würfel N = 12): E(k) = [0.0, 6029.2, 11891.9, 19087.0]; E(1)-E(0) = 6029.2, E(2)-E(1) = 5862.7
+   v R = 12.0 (Würfel N = 12): E(k) = [0.0, 15741.3, 31404.0, 51259.6]; E(1)-E(0) = 15741.3, E(2)-E(1) = 15662.7
+   v R = 16.0 (Würfel N = 24): E(k) = [0.0, 30906.1, 61847.3, 101026.2]; E(1)-E(0) = 30906.1, E(2)-E(1) = 30941.2
+   Mit konstanter Entropie mu je Naht wählt F(k) = beta E(k) - k mu genau k = 1 nur im Fenster
+   E(1)-E(0) < mu/beta < E(2)-E(1). Relative Fensterbreite (E(2)-2E(1)+E(0))/(E(1)-E(0)):
+   v R = 4: -0.1887, v R = 8: -0.0276, v R = 12: -0.0050, v R = 16: +0.0011.
+   Negativ heißt leer (E konkav). Wo es existiert, ist es unter 1 % breit: Feinabstimmung von mu.
+   Größenordnung bei beta = 2 pi (tau = i): beta E(1) / log 12 = [2757, 15245, 39803, 78147].
+   Die Nahtentropie log chi_E8(i) = log 12 ist gegen die Volumenkosten verschwindend; k = 0 gewinnt.
+
+E. K3': Nullmittel. Ordnungsfeld ohne Hintergrundwert, tiefste zulässige Mode l = 1
+
+   Lesart: A* auf das Ordnungsfeld übertragen, also kein konstanter Anteil, int q dV = 0. Dann ist die
+   tiefste Mode l = 1 (Eigenwert 3), und jede komplexe l = 1-Mode ist q = a.x mit a in C^4.
+   200 zufällige a: Nullmenge = Großkreis (Kern von Re a, Im a): True; Windungen [-1].
+   Momente auf S^3 (Monte Carlo): <x^4> = 0.1247 (1/8), <x1^2 x2^2> = 0.0416 (1/24).
+   <|q|^4>/<|q|^2>^2: kreisförmig (x0 + i x1) 1.3333 (MC 1.3334), reell (Wand) 2.0000,
+   Minimum über 2000 zufällige a: 1.3338. Nahe der Schwelle lam v^2 = 3 wählt das Quartische die
+   kreisförmige Mode: genau ein Großkreis, Windung 1, Lage frei (Modulraum der orientierten Ebenen).
+
+   Tief geordnet: Naht-Ansatz q = f(eta) e^(i xi1) gegen nullstellenfreie Textur q = g(chi) mit int q = 0.
+   v R =   2.0: Naht E/v^2 =   37.59; Textur E/v^2 =   38.20 (Mittel 5e-17, min|g|/v = 0.002)
+   v R =   4.0: Naht E/v^2 =   68.82; Textur E/v^2 =   90.82 (Mittel 4e-17, min|g|/v = 0.005)
+   v R =   8.0: Naht E/v^2 =   96.90; Textur E/v^2 =  155.83 (Mittel 9e-17, min|g|/v = 0.763)
+   v R =  16.0: Naht E/v^2 =  124.44; Textur E/v^2 =  180.34 (Mittel 7e-17, min|g|/v = 0.943)
+   v R =  32.0: Naht E/v^2 =  151.84; Textur E/v^2 =  187.26 (Mittel 2e-16, min|g|/v = 0.986)
+   v R =  64.0: Naht E/v^2 =  179.22; Textur E/v^2 =  189.05 (Mittel 2e-16, min|g|/v = 0.996)
+   Naht wächst wie 39.5 log(vR) (4 pi^2 = 39.5), die Textur sättigt bei 189.
+   Übergang bei v R = 82, also R/xi ~ 82 (lam = 1). Darüber ist eine nullstellenfreie Textur billiger.
+
+F. K4: Kopiedeterminante
+
+   C(z) = U diag(1,1,z) V mit unimodularen U, V: det C = z, Rang bei z = 0: 2, Kern 1.
+   Ungleichung dim ker C(z0) <= ord_z0 det C an 30 Zufallsfällen: True (Gleichheit in 26).
+   Drei gleiche Kopien C = z 1_3: det = z^3, Kern 3 bei z = 0, alle drei winden (c = 24).
+
+   Ohne J (Konstanten erlaubt): C(z) = Y z + m, Y und m komplex symmetrisch.
+   500 Zufallsfälle: drei getrennte einfache Nullstellen, jede mit Korang 1: True (kleinster Abstand 2.1e-01).
+   Störung von z 1_3 durch eps m: Aufspaltung / eps = 1.4690 und 1.4690 (linear in eps).
+   Dimension der Korang-r-Mengen (komplex): allgemein r=1: 8 von 9, r=2: 5; symmetrisch r=1: 5 von 6, r=2: 3.
+   Reelle Kodimension von Korang 2: allgemein 8, symmetrisch 6; beides > 4.
+   Ohne Symmetrie trägt also in 4D jede Naht generisch genau einen windenden Block.
+
+   Mit J (Prämisse G): J wirkt auf eta+ mit -i, auf eta- mit +i.
+   J-Ladungen der Bilineare: eta+ eta+: -1, eta+ eta-: +1, eta- eta-: -1.
+   Nackte Majoranamassen im windenden Kanal sind verboten; dort ist C = Y Phi ohne Konstante.
+   det(Y Phi) = det Y Phi^3: alle gekoppelten Kopien winden an derselben Stelle. Rang generischer Y: {3}.
+   Rang 1 (genau ein windender Block) hat komplexe Kodimension 3 in Sym^2 C^3: Feinabstimmung.
+
+   Kopien mit Familiencharakteren (-1, i, -i) unter der Vierteldrehung, Phi mit Charakter chi_Phi:
+   chi_Phi = 1: erlaubte Einträge [(1, 1), (2, 3)], generischer Rang 3
+   chi_Phi = i: erlaubte Einträge [(1, 2)], generischer Rang 2
+   chi_Phi = -1: erlaubte Einträge [(2, 2), (3, 3)], generischer Rang 2
+   chi_Phi = -i: erlaubte Einträge [(1, 3)], generischer Rang 2
+   Tragen die schweren Kopien die Familiencharaktere, winden stets mindestens zwei Blöcke zusammen.
+   Genau ein windender Block verlangt also eine schwere Kopie ohne Familienladung (TFPTs ein E8).
+
+G. K6: Gemeinsame GSO-Summe (A*) für n windende Blöcke
+
+   Unter A* ist die GSO-Summe die Summe über die Spinstrukturen des einen Nahttorus. Sie ist allen
+   windenden Fermionen gemeinsam. N = 16n Majorana-Weyl geben Z = (th3^8n + th4^8n + th2^8n)/(2 eta^8n).
+   n = 1: Ströme vom Gewicht 1: 248 (so(16): 120, E8^1: 248); h_R = 1; Z(i) = 12.0000
+   n = 2: Ströme vom Gewicht 1: 496 (so(32): 496, E8^2: 496); h_R = 2; Z(i) = 144.0000
+   n = 3: Ströme vom Gewicht 1: 1128 (so(48): 1128, E8^3: 744); h_R = 3; Z(i) = 2112.0000
+   n = 3 mit gemeinsamer GSO ist D24+ (Niemeier, Wurzelsystem D24, 1104 Wurzeln), nicht E8^3.
+   Unterwurzelsysteme von D24 sind vom Typ A und D (Borel-de Siebenthal, zitiert): kein E8.
+   E8^3 verlangt drei unabhängige GSO-Projektionen, also zwei zusätzliche geeichte Z2. A* liefert nur eine.
+   Die sichtbare Sonde SO(2) hat in so(48)_1 Niveau 1, c = 24: dieselben Zahlen wie Z14s verdeckter Zweig.
+   Alpha (EM1) schließt n = 3 so nicht aus; der Ausschluss kommt allein aus der Forderung E8 an der Naht.
+   Entropie: log Z(i) = 2.485, 4.970, 7.655. Sie bevorzugt mehr Blöcke.
+
+H. Urteil
+
+   K5_quellen: Lesart.
+      TFPT setzt n = 1 als primitives Postulat; N_fam = 3n verknüpft n mit der Familienzahl. Mit C'' je
+      Naht ist N_fam = 3k, also wählt N_nu = 3 (externe Zahl) k = 1 empirisch, nicht als Grundzustand. In
+      TFPTs eigener Hopf-Hebung (v957) sind die vier Marken vier Fasern; wirkt das Deck auf den Raum, hat
+      das J-neutrale q gerades k, und eine einzelne Naht ist unmöglich.
+   K1_verzweigung: gescheitert.
+      Die Torusbedingung am Normalendatum w^2 = q wählt k = 3 oder 4, nicht 1; J^2 = -1 auf der 1-Form ist
+      bei k = 4 automatisch und bei k = 1 leer.
+   K2_spin_statistik: gescheitert.
+      Geometrische Drehungen heben zu (-1)^F oder 1 und wirken auf Phi trivial. Spinorielles Phi ist
+      gleichwertig zu ungerader Verschlingung (zirkulär). Spin^c unter G gibt nur gerade Nahtzahlen.
+   K3_energie_entropie: gescheitert.
+      E(k) steigt streng: unter k != 0 ist k = 1 minimal (hergeleitet im Modell). k = 0 bleibt aber der
+      Grundzustand; log 12 je Naht ist um Größenordnungen zu klein. Das Fenster für genau eine Naht ist
+      für v R <= 12 leer (E konkav) und bei v R = 16 nur 0,1 % breit.
+   K3s_nullmittel: Lesart.
+      Ohne Hintergrundwert des Ordnungsfelds (int q = 0) ist die tiefste Mode l = 1; jede generische l =
+      1-Mode hat genau eine Naht mit Windung 1, und das Quartische wählt sie nahe der Schwelle
+      (hergeleitet). Gilt nur für R/xi unter etwa 82; darüber ist eine nullstellenfreie Textur billiger.
+      Das Nullmittel selbst ist eine übertragene Lesart von A*, keine Folgerung.
+   K4_kopiedeterminante: Lesart.
+      Primitive Determinante gibt genau einen Rangverlust (hergeleitet, Smith). Ohne J trägt jede Naht
+      generisch genau einen Block. Unter G verbietet J aber Konstanten im windenden Kanal; dann winden
+      alle gekoppelten Kopien gemeinsam, und genau einer verlangt Rang Y = 1. Mit Familiencharakteren ist
+      Rang 1 unmöglich.
+   K6_gemeinsame_GSO: Lesart.
+      Unter A* bilden n windende Blöcke D_{8n}^+; E8 nur für n = 1. Genau ein Block ist damit gleichwertig
+      zur Forderung E8 an der Naht (H6 wählte N = 16 als kleinstes N). Keine Grundzustandsauswahl: Die
+      Entropie bevorzugt mehr Blöcke.
+   gesamt: offen.
+      Keine Regel wählt den primitiven Sektor und genau einen windenden Block als Grundzustand. Erreicht
+      ist eine Reduktion: (a) k = 1 ist minimal unter k != 0 und folgt aus einem Nullmittel des
+      Ordnungsfelds nahe der Schwelle, oder empirisch aus N_fam = 3k; im Linsenraum X ist es
+      ausgeschlossen. (b) Genau ein Block ist unter A* gleichwertig zu E8 und verlangt eine schwere Kopie
+      ohne Familienladung.
+
+Zusammenfassung
+   bestanden: A: alle zitierten Stellen im Repo gefunden
+   bestanden: A: kein D-invariantes Feld mit k = 1 oder 3; kleinstes invariantes k = 2 (z1 z2)
+   bestanden: A: Ladung-1-Felder tragen chi(D) = +-i
+   bestanden: A: generisches D-invariantes q mit k = 4 gibt im Linsenraum genau zwei Nahtfäden
+   bestanden: A: Markenfasern paarweise einfach verschlungen
+   bestanden: A: P(z)dz/(z^4-1) im Unendlichen regulär genau für deg P <= 2 (h^0 = 3)
+   bestanden: A: nur k = 1 verträglich mit N_nu (externe Zahl, Lesart Familien je Naht)
+   bestanden: B: Torus (nirgends verschwindende 1-Form) nur für k in {3, 4}
+   bestanden: B: k = 1 hat keine holomorphe 1-Form, k = 4 eine ohne Nullstelle
+   bestanden: B: j(z^3 - z) = 1728
+   bestanden: C: Hopf-Drehung 2 pi hebt zu +1, Einzelebene zu -1 = (-1)^F
+   bestanden: C: geometrisches Deck wirkt auf skalare Bilineare trivial
+   bestanden: C: sqrt(q) spinoriell längs der Faser genau für ungerades k
+   bestanden: C: Spin^c unter G erlaubt nie eine ungerade Nahtzahl
+   bestanden: D: Gitter trifft die Ladung-k-Spektren k(k+2) auf 5 %
+   bestanden: D: im Sektor k genau k einfache Nähte (Windung +1 je Naht)
+   bestanden: D: E(k) steigt streng mit k, also k = 1 minimal unter k != 0
+   bestanden: D: Fenster für genau eine Naht leer oder relativ unter 1 %
+   bestanden: D: k = 0 hat die kleinste freie Energie auch mit log 12 je Naht
+   bestanden: E: jede generische l = 1-Mode hat genau eine Naht mit Windung +-1
+   bestanden: E: Momente 1/8 und 1/24
+   bestanden: E: Quartik minimal genau bei der kreisförmigen Mode (eine Naht), Wand teurer
+   bestanden: E: Naht unterhalb, Textur oberhalb des Übergangs (Ansatzschranken)
+   bestanden: F: primitive Determinante gibt genau einen Rangverlust an genau einer Stelle
+   bestanden: F: dim ker <= Nullstellenordnung der Determinante
+   bestanden: F: ohne J generisch Korang 1 an getrennten Stellen; Dreifachwindung spaltet linear auf
+   bestanden: F: Kodimensionen 1, 4 (allgemein) und 1, 3 (symmetrisch)
+   bestanden: F: J verbietet nackte Masse im windenden Kanal, erlaubt die Diracmasse eta+ eta-
+   bestanden: F: unter J ist der generische Rang 3, Rang 1 kodimensional
+   bestanden: F: mit Familiencharakteren ist der Rang nie 1
+   bestanden: G: GSO-Summe hat nur ganze q-Potenzen für N = 16, 32, 48
+   bestanden: G: Ströme 248, 496, 1128; Spinorströme nur für n = 1
+   bestanden: G: Twistgewicht h_R = n
+   bestanden: G: Z(i) = 12, 144, 2112 (= j(i) + 384)
+   bestanden: G: D24+ hat 1104 = 2*24*23 Wurzeln, keine aus der Spinorklasse
+   Befunde (negativ oder begrenzend): 10

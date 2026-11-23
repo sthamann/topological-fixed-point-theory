@@ -1,0 +1,202 @@
+1. Nahttorus E: w^2 = z^4 - 1 und seine Automorphismen
+
+   sigma, rho, iota bilden E auf sich ab: True
+   iota^2 = (z, -w), also iota^2 = sigma; rho sigma = sigma rho: True; rho^2 = (-z, w)
+   omega = dz/w = sqrt(q), q = dz^2/(z^4 - 1): sigma* omega = -1 omega, rho* omega = I omega, iota* omega = I omega
+   Fixpunkte von sigma: 4  [(-1, 0), (1, 0), (-I, 0), (I, 0)]
+   Fixpunkte von rho  : 2  [(0, -I), (0, I)]
+   Fixpunkte von iota : 2  [(-1, 0), (1, 0)]
+   Fixpunkte von tau  : 0  []
+   tau = sigma rho^2 ist fixpunktfrei, also eine Verschiebung um einen Halbperiodenpunkt.
+   Auf den Marken: rho dreht zyklisch (1 -> i -> -1 -> -i); iota hält 1 und -1 fest und vertauscht i, -i.
+   Drehung in den Fixpunkten von sigma: {-1, -1, -1, -1}
+   Drehung in den Fixpunkten von rho: {i, i}
+   Drehung in den Fixpunkten von iota: {i, i}
+   Folgerung. Ein Spinlift von sigma wirkt in jedem Fixpunkt als Wurzel aus d sigma = -1, also als +-i.
+   Damit gilt sigma~^2 = -1 auf jedem Spinor, für jede Spinstruktur: Der Spinlift des Blattwechsels hat
+   Ordnung 4 auf Fermionen und Ordnung 2 auf Bosonen. Das ist die Struktur von J (J^2 = (-1)^F), hier
+   erzwungen durch die vier Fixpunkte, nicht durch einen eingesetzten Viertelfluss.
+
+2. Nullmoden auf E: H^0(K_E(mR)), Deckteilung und Charaktere
+
+   Ein Dirac-Operator auf E mit K_E^(1/2) (x) L = K_E(mR) hat ker D+ = H^0(K_E(mR)) und ker D- = 0
+   (Grad 4m > 0, Geschlecht 1). Ansatz für die Basis: gerade Formen P(z) dz / w^(2j), ungerade
+   Formen Q(z) dz / w^(2j'+1). Geprüft werden Polordnungen, Unabhängigkeit und Riemann-Roch.
+   m = 0: Basis 1, Rang 1, Riemann-Roch 1, Polordnungen zulässig True; gerade 0, ungerade 1
+          rho auf gerade {}, auf ungerade {i}; Fehler der Darstellung 7.8e-16
+   m = 1: Basis 4, Rang 4, Riemann-Roch 4, Polordnungen zulässig True; gerade 3, ungerade 1
+          rho auf gerade {i, -1, -i}, auf ungerade {i}; Fehler der Darstellung 3.2e-16
+   m = 2: Basis 8, Rang 8, Riemann-Roch 8, Polordnungen zulässig True; gerade 3, ungerade 5
+          rho auf gerade {i, -1, -i}, auf ungerade {i, -1, -i, 1, i}; Fehler der Darstellung 7.0e-16
+   m = 3: Basis 12, Rang 12, Riemann-Roch 12, Polordnungen zulässig True; gerade 7, ungerade 5
+          rho auf gerade {i, -1, -i, 1, i, -1, -i}, auf ungerade {i, -1, -i, 1, i}; Fehler der Darstellung 7.1e-16
+
+   m = 1 (pi^* K(D)): gerade 3 mit rho-Charakteren {i, -1, -i}, ungerade 1: die Form dz/w = sqrt(q) mit {i}.
+   Die geraden Formen P(z) dz/(z^4 - 1) sind genau H^0(CP^1, K(D)); die ungerade ist die Nahtnullmode aus Z12.
+
+   Gegenrechnung mit der holomorphen Lefschetzformel aus den Fixpunktdaten allein:
+   m = 1: sigma: (2+0j) gegen Spur (2+0j); rho: (-1+1j) gegen Spur (-1+1j); iota: (1+1j) gegen Spur (1+1j)
+   m = 2: sigma: (-2-0j) gegen Spur (-2+0j); rho: (-1+1j) gegen Spur (-1+1j); iota: (1-1j) gegen Spur (1-1j)
+   m = 3: sigma: (2+0j) gegen Spur (2+0j); rho: (-1+1j) gegen Spur (-1+1j); iota: (-1-1j) gegen Spur (-1-1j)
+   Mit gerade + ungerade = 4m und gerade - ungerade = 2(-1)^(m+1) (vier Marken, je +-1/2) folgt
+   ungerade = 2m + (-1)^m und gerade = 2m - (-1)^m für alle m >= 1.
+   m = 0 gibt (0, 1): nur die Nahtmode, keine Familien. Drei Familien und genau eine Nahtmode verlangen m = 1.
+
+   Gegenprobe Funktionen in O(R) = M_E: sigma {1, -1, -1, -1}, rho {1, 1, i, -1}.
+   Als Funktionen sind die Familien die ungeraden Schnitte z^k/w (Charaktere {1, i, -1}) und die Naht die
+   gerade Konstante. Gerade/ungerade hängt an der Linearisierung; invariant ist nur: Familien und Naht
+   liegen in entgegengesetzten Sektoren, 3 gegen 1. Die Familiencharaktere {-1, i, -i} verlangen Formen.
+
+3. Eine Struktur: pi^* K(D) = K_E (x) O(R) mit O(R)^2 = pi^* O(D)
+
+   H^0(O(R)) = span{1, z^k/w}; mal omega ergibt [1/w, w**(-2), z/w**2, z**2/w**2]: genau die Basis von H^0(K_E(R)): True
+   L(2R) = H^0(O(2R)) = H^0(pi^* O(D)): Rang 8 = Grad 8; gerade 5 = Träger V, ungerade 3; Polordnungen an Marken/oo [-2, -2, -2, -2, 0, 0]
+   Produkte der drei ungeraden Schnitte z^k/w: 6 Stück, Rang 5, spannen den Träger auf (Rang mit V: 5); Kern = Kegelschnitt g0 g2 - g1^2 = 0.
+   Lesart: Das Nahtbündel M aus Z12 ist auf E das echte Bündel O(R) (O(R)^2 = pi^* O(D)), das
+   Materiebündel ist O(R) (x) omega. Die Nahtmode ist 1 (x) omega = sqrt(q), die Familien sind
+   (z^k/w) (x) omega. Der Träger V ist das Quadrat der Familienschnitte geteilt durch q: V q = Sym^2 F / Kegel.
+   T(f) = (1 - P0)(f) dz/z: Matrix [[0.0, 1.0, 0.0, 0.0, 0.0], [0.0, 0.0, 1.0, 0.0, 0.0], [0.0, 0.0, 0.0, 1.0, 0.0]], Rang 3, äquivariant True.
+   Auf E ist Theta: f -> f dz/z mit sigma vertauschbar (True); T ist sein gerader Block, gefolgt
+   von der Projektion weg von den rho-invarianten Moden. Äquivariante Abbildungen V -> F: 3 Parameter.
+   Die Deckstruktur legt T nicht fest: Theta ist ein Rückzug von CP^1 (dz/z ist deckgerade), und P0 kommt
+   von der Markendrehung. T bleibt die äquivariante Wahl mit drei gleichen Koeffizienten.
+
+4. J als Spinlift des Blattwechsels und die Eichbedingung
+
+   Fermion = Spinor (x) Eichbündel. Spinstruktur (P,P): K_E^(1/2) trivial mit sqrt(omega), sigma~ sqrt(omega)
+   = eps i sqrt(omega). Eichbündel O(R) mit der ehrlichen Wirkung sigma^* (Ordnung 2, bosonisch).
+   eps = +1: sigma^ auf (Naht, f0, f1, f2) = {i, -i, -i, -i}, sigma^2 = {-1, -1, -1, -1}
+   eps = -1: sigma^ auf (Naht, f0, f1, f2) = {-i, i, i, i}, sigma^2 = {-1, -1, -1, -1}
+
+   Eichung des Blattwechsels auf Fermionen braucht eine innere Phase J_int mit J_int^2 = -1, damit
+   sigma^ (x) J_int^(-1) die Ordnung 2 hat. Für die Paare (psi, chi) aus Z7 ist das J mit xi+- = +-i.
+   Physikalische Zustände: Eigenwert 1 von sigma^ (x) J_int^(-1).
+   eps = +1: je Paar 4 Moden; Naht sqrt(q) in xi+, Familien in xi-; 16 Paare: 16 Naht + 48 Familien
+   eps = -1: je Paar 4 Moden; Naht sqrt(q) in xi-, Familien in xi+; 16 Paare: 16 Naht + 48 Familien
+   Mit 16 Paaren: 16 Nahtmoden und 48 Familienkomponenten, aus einem Multiplett und einem Bündel.
+   Welcher J-Sektor die Naht trägt, legt die Orientierung eps fest. Z7 lässt xi+ winden; E8 verlangt dann,
+   dass xi+ die Naht trägt (sonst winden 48 Moden, Abschnitt 6): eps = +1 ist durch E8 festgelegt.
+
+   Vierteldrehungen und J:
+   Basis (f0, f1, f2, Naht). rho^*^2 = {-1, 1, -1, -1}, sigma^* = {1, 1, 1, -1}, tau^* = {-1, 1, -1, 1}
+   iota^*^2 = sigma^*: True; rho^*^2 = sigma^* tau^*: True
+   Auf der Nahtmode gilt rho^2 = sigma (tau = +1). Auf den Familien f0, f2 (Charaktere i, -i) ist tau = -1.
+   Verflechter: J = sigma~ = iota~^2 exakt (iota: z -> 1/z, w -> i w/z^2, Drehung um die Marken +-1).
+   Die Markendrehung rho erfüllt rho~^2 = J tau~; tau ist die Verschiebung um eine Halbperiode und wirkt
+   auf zwei Familien mit -1. iota ist keine Markendrehung (auf den Marken eine Spiegelung) und gibt auf
+   den Familien {1, -1, 1} statt {-1, i, -i}.
+   Gruppe aus sigma, rho, iota: Ordnung 16. Wurzeln aus sigma (g^2 = sigma): 4; ihre
+   Wirkung auf die Marken [(0, 3, 2, 1), (2, 1, 0, 3)]. Jede solche Wurzel wird auf CP^1 eine Involution und kann die vier
+   Marken nicht zyklisch drehen.
+
+5. Paarung der Nullmoden: Nahtkanal q und Familienkanäle
+
+   Eine 6D-Majoranamasse koppelt zwei Nullmoden über ihr Produkt (ein quadratisches Differential) an ein
+   inneres Profil s. 4D-Masse M_ab = <s, psi_a psi_b> im L^2-Produkt auf E. Produkte der Familien:
+   f_k f_l = z^(k+l) dz^2/(z^4 - 1)^2 = p_(k+l); Nahtkanal sqrt(q)^2 = q = dz^2/(z^4 - 1).
+   Exakt: f2^2 - f0^2 - q = 0. Der Nahtkanal liegt im Aufspann der Familienkanäle.
+   Auf P = span(p_0..p_4): rho^* = {-1, -i, 1, i, -1}, sigma^* = {1, 1, 1, 1, 1}, iota^*: p_m -> p_(4-m) True
+   Profile mit den Charakteren von q (rho -1, iota -1, sigma +1): Dimension 1, parallel zu q: True
+   G-invariante hermitesche Produkte auf P: 4 freie Parameter [a12, a18, a20, a24].
+   <q, q> = -2*a20 + 2*a24; <q, f_k f_l>: f0f0: a20 - a24, f0f1: 0, f0f2: 0, f1f1: 0, f1f2: 0, f2f2: -a20 + a24
+   Mit G (psi chi, beide xi gleich stark) und s = q: Nahtmasse 1 (in Einheiten m <q,q>), Familienmassen [0.  0.5 0.5].
+   Leicht bleibt nur die Familie f1 (Charakter -1); f0 und f2 (Charaktere i, -i) erhalten genau m/2.
+   Mit der J-projizierten Paarung Phi xi+ xi+ (nur der Nahtsektor) bleiben alle drei Familien leicht.
+
+   Auswahlregeln für alle Ladungen von Phi unter (sigma, rho, iota) auf den vier Nullmoden:
+   Ladungen, die die Nahtmode paaren dürfen: [('1', '-1', '-1')]; davon ohne jede Familienmasse: []
+   Die Geometrie von (E, Marken) trennt Naht- und Familienpaarung also nicht. Getrennt wird erst durch
+   die Kopplung an den J-Projektor P+ = (1 - iJ)/2: Phi koppelt nur an xi+, das ist nach Abschnitt 4 der
+   Nahtsektor. Das ist eine benannte Kopplung, aber eine Eingabe; G (Z7) setzt psi chi, nicht P+.
+
+6. E8-Bedingung für den Nahtsektor
+
+   m = 1, eps = +1 (xi+ trägt sqrt(q))       : 16 Majorana-Weyl, Gewicht-1-Zustände 248, Twistgewicht 1
+   m = 2 (Träger x sqrt(q))                  : 80 Majorana-Weyl, Gewicht-1-Zustände 3160, Twistgewicht 5
+   m = 1, eps = -1 (xi+ trägt die Familien)  : 48 Majorana-Weyl, Gewicht-1-Zustände 1128, Twistgewicht 3
+   E4/eta^8: 248, 4124, 34752; 16 MW: 248, 4124, 34752
+
+   Gegenprobe am Gitterdefekt aus Z7 (verdrillter Defekt, Viertelfluss): Kernmoden je Paar.
+   1 Paar(e): netto 1 chirale Kernmoden, Geschwindigkeiten [1.]
+   2 Paar(e): netto 2 chirale Kernmoden, Geschwindigkeiten [1. 1.]
+   Mit einem inneren Index 1 im Nahtsektor (sqrt(q)) gibt jedes der 16 Paare genau eine Mode (vgl. Z12,
+   Nahtmoden = Paare x Index). Die 48 Familienkomponenten in xi- winden nicht und tragen keine Nahtmode.
+
+7. Gitterprobe: quadratischer Torus (tau = i), N Flussquanten, Blattwechsel u -> -u
+
+   Hofstadter-Gitter L x L mit Landau-Eichung; das tiefste Band ist exakt N-fach entartet (Bild der
+   holomorphen Schnitte, Index N). Die Randphasen (0 oder pi) wählen eine der vier Wurzeln bzw.
+   Spinstrukturen. Die Eichtransformation zu u -> -u und u -> iu wird über einen Spannbaum bestimmt.
+   N = 4, Randphasen (0, 0) pi: Entartung 8.9e-15, Lücke 0.086; Blattwechsel: 3 gerade, 1 ungerade (Spur +2); Symmetriefehler 4.3e-14
+   N = 4, Randphasen (1, 0) pi: Entartung 7.1e-15, Lücke 0.086; Blattwechsel: 2 gerade, 2 ungerade (Spur +0); Symmetriefehler 4.2e-14
+   N = 4, Randphasen (0, 1) pi: Entartung 8.9e-16, Lücke 0.086; Blattwechsel: 2 gerade, 2 ungerade (Spur +0); Symmetriefehler 4.3e-14
+   N = 4, Randphasen (1, 1) pi: Entartung 3.6e-15, Lücke 0.086; Blattwechsel: 2 gerade, 2 ungerade (Spur +0); Symmetriefehler 4.3e-14
+   N = 8, Randphasen (0, 0) pi: Entartung 8.4e-15, Lücke 0.171; Blattwechsel: 5 gerade, 3 ungerade (Spur +2); Symmetriefehler 8.6e-14
+   N = 8, Randphasen (1, 0) pi: Entartung 1.0e-14, Lücke 0.171; Blattwechsel: 4 gerade, 4 ungerade (Spur +0); Symmetriefehler 8.5e-14
+   N = 8, Randphasen (0, 1) pi: Entartung 5.8e-15, Lücke 0.171; Blattwechsel: 4 gerade, 4 ungerade (Spur +0); Symmetriefehler 8.6e-14
+   N = 8, Randphasen (1, 1) pi: Entartung 1.1e-14, Lücke 0.171; Blattwechsel: 4 gerade, 4 ungerade (Spur +0); Symmetriefehler 8.5e-14
+   Die Teilung 3 + 1 verlangt, dass der Spinlift an allen vier Marken dieselbe Phase hat. Lesart: das ist die
+   Spinstruktur (P,P) (sqrt(omega) global); die drei geraden Spinstrukturen geben 2 + 2.
+   N = 4: Drehung u -> iu um die Marke im Ursprung: Gitter {-1, 1, 1, i}, algebraisch iota^* auf K_E(1R) {1, 1, i, -1}; gleich bis auf eine globale Phase: True
+   N = 8: Drehung u -> iu um die Marke im Ursprung: Gitter {-1, -1, -i, 1, 1, 1, i, i}, algebraisch iota^* auf K_E(2R) {-1, -i, -i, -i, 1, 1, i, i}; gleich bis auf eine globale Phase: True
+
+8. Bilanz und Urteil
+
+   Konstruktion. Ein Multiplett: 16 Paare (psi, chi) wie in Z7, als 6D-Weylfelder auf (Querschnitt mit
+   Defekt) x E. Innerer Dirac auf E mit K_E^(1/2) (x) L = pi^* K(D) = K_E(R), Spinstruktur (P,P).
+   Der Blattwechsel ist geeicht: physikalisch ist nur, was unter sigma~ (x) J^(-1) invariant ist.
+   Hergeleitet in diesem Lauf:
+   - J^2 = -1 auf Fermionen folgt aus den vier Fixpunkten des Blattwechsels (Spinlift), ohne Viertelfluss.
+   - Ein Bündel statt zwei: pi^* K(D) = O(R) (x) omega, O(R)^2 = pi^* O(D). Nullmoden 3 deckgerade
+     (Familien, {-1, i, -i}) + 1 deckungerade (sqrt(q), Charakter i). Nur m = 1 gibt 3 + 1 (Lefschetz,
+     Riemann-Roch, Gitter). Die Teilung 3 + 1 verlangt gleiche Fixpunktphasen (Lesart: (P,P)).
+   - Die Eichbedingung koppelt J-Ladung und Decksektor: xi+ trägt nur sqrt(q), xi- nur die Familien.
+     16 Paare geben 16 Nahtmoden und 48 Familienkomponenten. Die Zuordnung aus Z12 (welches Multiplett
+     an M, welches an O(D)) ist durch den Eigenwert von J ersetzt. E8 legt die Orientierung fest.
+   - Träger V = Sym^2(Familienschnitte von O(R)) modulo Kegelschnitt; T ist der deckgerade Block von
+     f -> f dz/z (Lesart; T ist dadurch nicht eindeutig, drei Parameter).
+   - Verflechter: J = sigma~ = iota~^2 exakt. Die Markendrehung erfüllt rho~^2 = J tau~, tau ist eine
+     Halbperiodenverschiebung mit -1 auf zwei Familien. Keine Wurzel aus sigma dreht die Marken zyklisch.
+   Gescheitert bzw. Eingabe:
+   - Paarung: q = f2^2 - f0^2 exakt, das kovariante Profil ist eindeutig s ~ q. Mit der Paarung psi chi
+     aus G bekommen die Familien f0, f2 genau die halbe Nahtmasse; leicht bleibt nur eine Familie. Keine
+     Symmetrieladung von Phi trennt Naht- und Familienpaarung.
+   - Drei leichte Familien verlangen die benannte Kopplung Phi xi+ xi+ = Phi psi^T C P+ psi mit dem
+     J-Projektor P+ = (1 - iJ)/2. Sie ist eine Eingabe, die G (psi chi) widerspricht.
+   - Eichdarstellungen sind nicht gerechnet: Familien brauchen eine chirale 16 von SO(10), die Nahteltern
+     eine reelle 16 von SO(16). Ein Multiplett aus Paaren gibt xi+ und xi- dieselbe Darstellung.
+   - Weiterhin eingesetzt: 16 Paare, die Paarstruktur mit J (G), die Spinstruktur (P,P), die Wahl m = 1
+     (durch die Ziele 3 + 1 ausgewählt, nicht aus einem Prinzip).
+   Urteil: Lesart: Zählung (16 Naht + 48 Familien aus einem Multiplett), Charaktere, J^2 = -1, E8 und die Zuordnung Naht/Familien über den J-Eigenwert sind hergeleitet. Die Paarung bleibt eine benannte Eingabe (J-Projektor P+); mit der Paarung psi chi aus G gescheitert (eine leichte Familie, zwei mit m/2).
+
+Zusammenfassung der Prüfungen
+   bestanden: iota^2 = sigma (Blattwechsel ist Quadrat einer Vierteldrehung)
+   bestanden: omega -> -omega (Blatt), i omega (rho und iota)
+   bestanden: Fixpunktzahlen sigma 4 (die Marken), rho 2, iota 2, tau = sigma rho^2 keine
+   bestanden: sigma dreht in allen vier Marken um pi (d sigma = -1); rho, iota um pi/2 (d = i)
+   bestanden: Basen von H^0(K_E(mR)), m = 0..3: Pole zulässig, unabhängig, vollständig (Riemann-Roch)
+   bestanden: m = 1: drei gerade Nullmoden {-1, i, -i} (Familien) und genau eine ungerade, sqrt(q) mit Charakter i
+   bestanden: Lefschetz aus Fixpunkten = Spur auf den Nullmoden (sigma, rho, iota; m = 1, 2, 3)
+   bestanden: Formel stimmt mit m = 1..3 überein, und nur m = 1 gibt 3 gerade + 1 ungerade
+   bestanden: Ein Bündel: K_E(R) = O(R) (x) omega; Träger = Sym^2(Familienschnitte von O(R)) modulo Kegelschnitt
+   bestanden: T = gerader Block von Theta = (.) dz/z, surjektiv, äquivariant
+   bestanden: sigma^ = sigma~ (x) sigma^*: Ordnung 4, Naht und Familien mit entgegengesetzter Ladung (+-i, 1 gegen 3)
+   bestanden: Eichbedingung: je Paar 1 Nahtmode + 3 Familien, Naht und Familien in entgegengesetzten J-Sektoren
+   bestanden: iota^2 = sigma und rho^2 = sigma tau auf den Nullmoden
+   bestanden: Gruppe der Ordnung 16 mit Wurzeln aus sigma
+   bestanden: q = f2^2 - f0^2 exakt; das kovariante Paarungsprofil ist eindeutig s ~ q
+   bestanden: Für jedes G-invariante Produkt: <q,f2^2> = -<q,f0^2> = <q,q>/2, alle anderen Familienkanäle 0
+   bestanden: Paarung psi chi: Familienmassen exakt {0, 1/2, 1/2} der Nahtmasse
+   bestanden: Nahtpaarung ist für genau eine Ladung erlaubt, und dort sind Familienmassen erlaubt
+   bestanden: Nahtsektor aus einem Multiplett (m = 1, eps = +1): 16 MW, Charakter = E8 bis Gewicht 3, Twistgewicht 1
+   bestanden: Gegenproben: m = 2 gibt 80 MW (3160 Ströme), falsche Orientierung 48 MW (1128)
+   bestanden: Z7-Defekt: eine chirale Mode je windendem Paar (additiv)
+   bestanden: Gitter: Teilung 3+1 (N = 4) und 5+3 (N = 8) nur für gleiche Fixpunktphasen, sonst N/2 + N/2
+   bestanden: Gitterdrehung um eine Marke = iota auf den Nullmoden (bis auf globale Phase)
+Befunde (negativ = ehrlich negativ, nicht erzwungen)
+   nein: Familiencharaktere {-1,i,-i} schon auf Funktionen (ohne K_E)
+   nein: T ist durch Deckstruktur und Vierteldrehung eindeutig festgelegt
+   nein: Markendrehung rho^2 = Blattwechsel auf allen Nullmoden
+   nein: eine Vierteldrehung mit Quadrat J, die zugleich die Marken zyklisch dreht
+   nein: drei leichte Familien mit der Paarung psi chi aus G (Z7) im einen Multiplett
+   nein: eine Symmetrieladung von Phi paart die Naht und verbietet alle Familienmassen

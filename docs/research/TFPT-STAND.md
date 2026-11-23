@@ -127,8 +127,8 @@ Ursprung sollte beides zugleich liefern.
 
 ### Kandidat H6: Ursprung von P1 aus einer hintergrundfreien Naht (Exploration 23.11.)
 
-Quelle: `experiments/exploration/2026-11-23-phasenraum-f5-holocode/VERDICT.md` (Stand H6h10),
-Skripte `n1`, `v1`, `y1`, `z1`–`z16`, Lean-Vertrag `experiments/theory-contracts/h6-exakte-teile-20261123/`; Atlasproblem `problem:c3-p1-p2-shared-origin-reconciliation`,
+Quelle: `experiments/exploration/2026-11-23-phasenraum-f5-holocode/VERDICT.md` (Stand H6h11),
+Skripte `n1`, `v1`, `y1`, `z1`–`z19`, Lean-Vertrag `experiments/theory-contracts/h6-exakte-teile-20261123/`; Atlasproblem `problem:c3-p1-p2-shared-origin-reconciliation`,
 Befunde mit Präfix `h6`. Nichts davon ist im Ledger befördert. Prüfstand mit 20 Kriterien: 15
 hergeleitet, 5 unter benannter Lesart, keines gescheitert, offen oder gesetzt.
 
@@ -157,8 +157,9 @@ hergeleitet, 5 unter benannter Lesart, keines gescheitert, offen oder gesetzt.
     Sockel ohne Randterm); die genaue Zahl hängt am Regulator. [N]
   - Die Naht ist ein verdrillter Defekt mit einer chiralen Mode je Fermion mit Spin-ℤ₄-Ladung 1.
     16 schwere reelle Fermionen (10,1)+(1,6) geben c = 8; der Schnitt ist genau bei ν ∈ 16ℤ
-    topologisch unsichtbar. Die Phasenbarriere am Schnitt ist ein Artefakt des Wilson-Glieds; mit
-    einem Ginsparg–Wilson-Operator bleibt die Phase exakt (freier Dirac gerechnet). [N/E]
+    topologisch unsichtbar. Am Schnitt gilt eine Abwägung: Wilson-Regulator mit Wand und
+    Reflexionspositivität, oder flache Ginsparg–Wilson-Majoranaformen ohne Wand, die bei gedrehter
+    Phase die Positivität verletzen; eine lokale wandfreie positive Form ist nicht gefunden. [N]
   - Gerechnet ist der Zufluss der SO(2)-Ladung und die Gravitationsanomalie: c = 0,4994 und
     h_R = 1/16 je Paar, also c = 8 und h_R = 1 für 16 Paare. Die Volumenwand trägt die Chernzahl 1
     je Windung, also c_Wand = c_Naht. Der Fluss in Krümmung ist nicht gerechnet. [N/E]
@@ -170,9 +171,10 @@ hergeleitet, 5 unter benannter Lesart, keines gescheitert, offen oder gesetzt.
     Torus hat genau 4 Verzweigungspunkte; mit Vierteldrehung ist s = a z⁴ + e, also j = 1728,
     τ = i. Die äquivariante Abbildung T: H⁰(O(D)) → H⁰(K(D)) macht die Familiencharaktere zum
     nichttrivialen Teil des Fünferträgers. [E]
-  - Ein gemeinsamer Elternoperator gelingt nur mit zwei Multipletts: Naht an K^{1/2} ⊗ M mit
-    M² = O(D), Materie an K^{1/2} ⊗ O(D), dort gekoppelt an den geraden Teil auf dem Nahttorus
-    (3 gerade, 1 ungerade). Mit einem einzigen Multiplett scheitert er. [N, Lesart]
+  - Gemeinsamer Operator: Ein Multiplett auf dem Nahttorus mit geeichtem Deck erzwingt J² = −1, gibt
+    3 deckgerade Familien und 1 deckungerade Nahtmode aus einem Bündel O(R) und ordnet über die
+    Eichbedingung ξ₊ der Naht und ξ₋ den Familien zu. Die Paarung bleibt Eingabe: Mit ψχ aus G
+    bekommen die Familien Massen 0, ½, ½ mal die Nahtmasse (exakte Obstruktion). [E/N, Lesart]
   - Satzzahl: Gleichförmig drei Sätze widersprechen α unter der Lesart EM1. Offen bleibt der Zweig
     mit zwei verborgenen Sätzen; entscheidend ist c₋/k. [N/C]
   - a/ℓ_P mit vollem Feldinhalt: im H6-Schema etwa 10,8; über Regulatoren hinweg nicht festgelegt. [N]
@@ -191,7 +193,10 @@ hergeleitet, 5 unter benannter Lesart, keines gescheitert, offen oder gesetzt.
   - Die ℤ₁₆-Bedingung erzwingt die 16 nur in der partnerfreien Fassung.
   - Die Untergrenze a/ℓ_P ≥ 3,3 gilt nur für die gerechneten Regulatoren.
 - **Offen:**
-  - Was die primitive Ladung bzw. den Sektor 1 und genau einen windenden Block wählt.
+  - Was die primitive Ladung bzw. den Sektor 1 und genau einen windenden Block wählt: Keine
+    Grundzustandsregel gefunden; Lesarten sind ein Ordnungsfeld ohne Mittelwert oder N_fam = 3k
+    mit LEP. TFPTs Hopf-Lift (v957) mit Deck im Raum verbietet eine einzelne Naht. Einen Block
+    wählt nur die Forderung „E₈ auf der Naht“ (sonst D₂₄⁺).
   - Warum Naht- und Materiemultiplett getrennt an M und O(D) koppeln.
   - c₋/k der Naht (Satzzahl).
   - Der gravitative Fluss in Krümmung.

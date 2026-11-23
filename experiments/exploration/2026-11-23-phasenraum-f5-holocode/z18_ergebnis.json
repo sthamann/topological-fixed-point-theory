@@ -1,0 +1,209 @@
+{
+ "checks": {
+  "iota^2 = sigma (Blattwechsel ist Quadrat einer Vierteldrehung)": true,
+  "omega -> -omega (Blatt), i omega (rho und iota)": true,
+  "Fixpunktzahlen sigma 4 (die Marken), rho 2, iota 2, tau = sigma rho^2 keine": true,
+  "sigma dreht in allen vier Marken um pi (d sigma = -1); rho, iota um pi/2 (d = i)": true,
+  "Basen von H^0(K_E(mR)), m = 0..3: Pole zulässig, unabhängig, vollständig (Riemann-Roch)": true,
+  "m = 1: drei gerade Nullmoden {-1, i, -i} (Familien) und genau eine ungerade, sqrt(q) mit Charakter i": true,
+  "Lefschetz aus Fixpunkten = Spur auf den Nullmoden (sigma, rho, iota; m = 1, 2, 3)": true,
+  "Formel stimmt mit m = 1..3 überein, und nur m = 1 gibt 3 gerade + 1 ungerade": true,
+  "Ein Bündel: K_E(R) = O(R) (x) omega; Träger = Sym^2(Familienschnitte von O(R)) modulo Kegelschnitt": true,
+  "T = gerader Block von Theta = (.) dz/z, surjektiv, äquivariant": true,
+  "sigma^ = sigma~ (x) sigma^*: Ordnung 4, Naht und Familien mit entgegengesetzter Ladung (+-i, 1 gegen 3)": true,
+  "Eichbedingung: je Paar 1 Nahtmode + 3 Familien, Naht und Familien in entgegengesetzten J-Sektoren": true,
+  "iota^2 = sigma und rho^2 = sigma tau auf den Nullmoden": true,
+  "Gruppe der Ordnung 16 mit Wurzeln aus sigma": true,
+  "q = f2^2 - f0^2 exakt; das kovariante Paarungsprofil ist eindeutig s ~ q": true,
+  "Für jedes G-invariante Produkt: <q,f2^2> = -<q,f0^2> = <q,q>/2, alle anderen Familienkanäle 0": true,
+  "Paarung psi chi: Familienmassen exakt {0, 1/2, 1/2} der Nahtmasse": true,
+  "Nahtpaarung ist für genau eine Ladung erlaubt, und dort sind Familienmassen erlaubt": true,
+  "Nahtsektor aus einem Multiplett (m = 1, eps = +1): 16 MW, Charakter = E8 bis Gewicht 3, Twistgewicht 1": true,
+  "Gegenproben: m = 2 gibt 80 MW (3160 Ströme), falsche Orientierung 48 MW (1128)": true,
+  "Z7-Defekt: eine chirale Mode je windendem Paar (additiv)": true,
+  "Gitter: Teilung 3+1 (N = 4) und 5+3 (N = 8) nur für gleiche Fixpunktphasen, sonst N/2 + N/2": true,
+  "Gitterdrehung um eine Marke = iota auf den Nullmoden (bis auf globale Phase)": true
+ },
+ "befunde": {
+  "Familiencharaktere {-1,i,-i} schon auf Funktionen (ohne K_E)": false,
+  "T ist durch Deckstruktur und Vierteldrehung eindeutig festgelegt": false,
+  "Markendrehung rho^2 = Blattwechsel auf allen Nullmoden": false,
+  "eine Vierteldrehung mit Quadrat J, die zugleich die Marken zyklisch dreht": false,
+  "drei leichte Familien mit der Paarung psi chi aus G (Z7) im einen Multiplett": false,
+  "eine Symmetrieladung von Phi paart die Naht und verbietet alle Familienmassen": false
+ },
+ "urteil": "Lesart: Zählung (16 Naht + 48 Familien aus einem Multiplett), Charaktere, J^2 = -1, E8 und die Zuordnung Naht/Familien über den J-Eigenwert sind hergeleitet. Die Paarung bleibt eine benannte Eingabe (J-Projektor P+); mit der Paarung psi chi aus G gescheitert (eine leichte Familie, zwei mit m/2).",
+ "hergeleitet": [
+  "J^2 = -1 aus den Fixpunkten des Blattwechsels",
+  "pi^* K(D) = O(R) (x) omega: 3 gerade Familien {-1,i,-i} + 1 ungerade sqrt(q); nur m = 1",
+  "Eichbedingung: xi+ <-> sqrt(q), xi- <-> Familien; 16 + 48 aus einem Multiplett",
+  "E8 (16 MW, Twistgewicht 1) und Orientierung eps = +1",
+  "J = sigma~ = iota~^2; rho~^2 = J tau~",
+  "q = f2^2 - f0^2; Familienmassen {0, 1/2, 1/2} bei Paarung psi chi"
+ ],
+ "eingaben": [
+  "Paarung nur im J-Sektor +i (P+ = (1 - iJ)/2), widerspricht psi chi aus G",
+  "16 Paare und Paarstruktur mit J (G)",
+  "Spinstruktur (P,P)",
+  "m = 1 durch die Ziele gewählt",
+  "Eichdarstellungen von Familien und Nahteltern (nicht gerechnet)"
+ ],
+ "data": {
+  "fixpunkte": {
+   "sigma": [
+    "(-1, 0)",
+    "(1, 0)",
+    "(-I, 0)",
+    "(I, 0)"
+   ],
+   "rho": [
+    "(0, -I)",
+    "(0, I)"
+   ],
+   "iota": [
+    "(-1, 0)",
+    "(1, 0)"
+   ],
+   "tau": []
+  },
+  "tabelle_KmR": {
+   "0": {
+    "dim": 1,
+    "even": 0,
+    "odd": 1,
+    "rho_even": "{}",
+    "rho_odd": "{i}",
+    "iota": "{i}"
+   },
+   "1": {
+    "dim": 4,
+    "even": 3,
+    "odd": 1,
+    "rho_even": "{i, -1, -i}",
+    "rho_odd": "{i}",
+    "iota": "{1, -1, 1, i}"
+   },
+   "2": {
+    "dim": 8,
+    "even": 3,
+    "odd": 5,
+    "rho_even": "{i, -1, -i}",
+    "rho_odd": "{i, -1, -i, 1, i}",
+    "iota": "{1, -1, i, -i, i, -i, 1, -i}"
+   },
+   "3": {
+    "dim": 12,
+    "even": 7,
+    "odd": 5,
+    "rho_even": "{i, -1, -i, 1, i, -1, -i}",
+    "rho_odd": "{i, -1, -i, 1, i}",
+    "iota": "{1, -1, 1, -1, i, -i, 1, -1, i, -i, -1, -i}"
+   }
+  },
+  "gruppe": {
+   "ordnung": 16,
+   "wurzeln_aus_sigma": 4,
+   "markenpermutationen": [
+    "(0, 3, 2, 1)",
+    "(2, 1, 0, 3)"
+   ]
+  },
+  "J_sektoren": {
+   "1": {
+    "n": 4,
+    "xi": [
+     0,
+     1,
+     1,
+     1
+    ],
+    "mode": [
+     0,
+     1,
+     2,
+     3
+    ]
+   },
+   "-1": {
+    "n": 4,
+    "xi": [
+     0,
+     0,
+     0,
+     1
+    ],
+    "mode": [
+     1,
+     2,
+     3,
+     0
+    ]
+   }
+  },
+  "paarung": {
+   "familienmassen_psichi": [
+    0.0,
+    0.5,
+    0.5
+   ],
+   "erlaubte_ladungen": [
+    [
+     "1",
+     "-1",
+     "-1"
+    ]
+   ]
+  },
+  "e8": {
+   "m = 1, eps = +1 (xi+ trägt sqrt(q))": [
+    "16",
+    "248",
+    "1"
+   ],
+   "m = 2 (Träger x sqrt(q))": [
+    "80",
+    "3160",
+    "5"
+   ],
+   "m = 1, eps = -1 (xi+ trägt die Familien)": [
+    "48",
+    "1128",
+    "3"
+   ]
+  },
+  "gitter": {
+   "N=4,tw=00": [
+    3,
+    1
+   ],
+   "N=4,tw=10": [
+    2,
+    2
+   ],
+   "N=4,tw=01": [
+    2,
+    2
+   ],
+   "N=4,tw=11": [
+    2,
+    2
+   ],
+   "N=8,tw=00": [
+    5,
+    3
+   ],
+   "N=8,tw=10": [
+    4,
+    4
+   ],
+   "N=8,tw=01": [
+    4,
+    4
+   ],
+   "N=8,tw=11": [
+    4,
+    4
+   ]
+  }
+ }
+}

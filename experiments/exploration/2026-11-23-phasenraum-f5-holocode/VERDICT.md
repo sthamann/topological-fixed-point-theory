@@ -1,6 +1,89 @@
 # Urteil
 
-## Aktueller Stand: H6h10 — dritte externe Prüfrunde (`z16_kritik_drei.py`)
+## Aktueller Stand: H6h11 — die drei offenen Verbindungen (`z17`, `z18`, `z19`)
+
+Bilanz unverändert bei 15 P und 5 L von 20. Die drei Verbindungen, die H6h10 als offen nannte, wurden
+parallel gerechnet und danach selbst nachgeprüft. Alle drei Skripte laufen reproduzierbar mit
+identischer Ausgabe (35, 23 und 20 Prüfungen); negative Ergebnisse stehen in `befunde`.
+
+**1. Wahl des Sektors 1 (`z17`).** Kein Kandidat wählt den primitiven Sektor und genau einen
+windenden Block als Eigenschaft des Grundzustands. Beide Fragen verengen sich auf je eine Lesart.
+
+| Kandidat | Ergebnis | Urteil |
+|---|---|---|
+| Ordnungsfeld als Datum der Doppelüberlagerung w² = q | Torus mit nirgends verschwindender Form nur für k ∈ {3, 4}; bei k = 1 gibt es keine holomorphe Form | gescheitert |
+| Spin und Statistik | die Monodromie von √q ist (−1)^k, also zirkulär; nach Spin^c-Buchhaltung unter G gibt es nie ungerade viele Nähte | gescheitert |
+| Energie und Entropie der Hopf-Sektoren | E(k) steigt streng, k = 0 ist Grundzustand; die Entropie log 12 ist vernachlässigbar (βE/log 12 ≥ 2,8·10³); ein Fenster für genau eine Naht gibt es nur mit Feinabstimmung | gescheitert |
+| Ordnungsfeld ohne Mittelwert | jede generische l = 1 Mode verschwindet auf genau einem Großkreis mit Windung 1; nahe der Schwelle wählt der Quartterm die Kreismode; trägt bis R/ξ ≈ 82 | Lesart (Mittelwert null aus A\* übertragen) |
+| Primitive Kopiendeterminante | primitive Determinante gibt genau einen Rangverlust; unter G winden aber alle gekoppelten Kopien am selben Ort, und genau ein Block braucht Rang Y = 1 (Kodimension 3); mit Familiencharakteren hat Y Rang 2 oder 3 | Lesart |
+| TFPT-Quellen | die Einheit ist ein Postulat; tfpt-42 029:203 setzt N_fam = 3n mit kanonischem n = 1. Familien je Naht geben N_fam = 3k; mit LEP N_ν = 2,984 ± 0,008 (extern) liegt k = 1 bei +2σ, k = 2 bei +368σ | Lesart (empirisch) |
+| Gemeinsame GSO-Summe unter A\* | n Blöcke geben D₈ₙ⁺; n = 3 ist so(48)₁ (D₂₄⁺), ohne E₈, mit sichtbarem Niveau 1 und c = 24. α schließt es nicht aus, nur die Forderung „E₈ auf der Naht“ | Lesart |
+
+**Neu und wichtig:** In TFPTs eigenem Hopf-Lift (v957, CCC.SEAM.KINEMATICS.01) sind die vier Marken
+vier verschlungene Hopf-Fasern. Jedes Feld mit Hopf-Ladung 1 trägt dort die Deck-Holonomie ±i; das
+kleinste Deck-invariante Feld hat Ladung 2 und gibt zwei Nahtstränge. Wirkt das Deck auf den Raum,
+ist eine einzelne Naht dort also unmöglich, im Einklang mit Z11. Eine einzelne Naht verlangt den
+Zweig von v957, in dem das Deck intern wirkt.
+
+**2. Gemeinsamer Operator mit benannten Kopplungen (`z18`).** Gerechnet ist ein Multiplett auf dem
+Nahttorus E. Der Dirac koppelt an K_E^{1/2} ⊗ π\*K(D) = K_E(R); R sind die vier Marken auf E, die
+Spinstruktur ist (P,P). Physisch sind nur Zustände, die unter σ̃ ⊗ J⁻¹ invariant sind (geeichtes
+Deck).
+- **Hergeleitet:**
+  - J² = −1 ist erzwungen, weil σ an den Marken um π dreht.
+  - Ein Bündel O(R) ersetzt die zwei Bündel aus Z12.
+  - Die Nullmoden teilen sich in 3 deckgerade (die Familien mit {−1, i, −i}) und 1 deckungerade
+    (ω = dz/w = √q). Laut Lefschetz geht 3 + 1 nur bei m = 1.
+  - Die Eichbedingung ordnet ξ₊ der Naht und ξ₋ den Familien zu; 16 Paare geben 16 Nahtmoden und
+    48 Familienkomponenten.
+  - E₈ entsteht nur bei richtiger Orientierung; die falsche gibt so(48).
+  - Ein Verflechter ι (z → 1/z) erfüllt ι² = σ.
+- **Exakte Obstruktion:** Der Nahtkanal liegt in den Familienkanälen (q = f₂² − f₀²), und das
+  Paarungsprofil ist eindeutig s ∝ q. Mit Gs Paarung ψχ bekommen die Familien Massen 0, ½ und ½ mal
+  die Nahtmasse. Keine Symmetrie trennt die Kanäle.
+- **Weiter Eingabe:**
+  - die Paarung Φ ξ₊ξ₊ (Projektor auf J = +i), die ψχ aus G widerspricht;
+  - die Eichdarstellungen (chirale 16 von SO(10) gegen reelle 16 von SO(16));
+  - die Spinstruktur (P,P);
+  - m = 1.
+
+  Urteil: Lesart mit klarer Obstruktion.
+
+**3. Ginsparg–Wilson-Paarung und Positivität (`z19`).**
+- Für Majoranafelder gibt es nur die symmetrische chirale Drehung δλ = iαXλ mit X = γ₅(1 − D/2),
+  deren Spektrum nicht quantisiert ist. Die exakte Drehidentität aus Z16 (Dirac) überträgt sich nicht.
+- **Phasenpotential:**
+  - Wilson: 0,083 (euklidisch) bzw. 0,088 (wie Z9).
+  - Lokale, eindeutige Majorana-Form (GJ): 0,0073 mit Periode π.
+  - Formen X und Xq: flach. X ist nicht 2π-periodisch und kostet am Schnitt; Xq ist nichtlokal.
+
+  **Korrektur zu H6h10:** Die Barriere ist nicht bloß ein Wilson-Artefakt; ohne Wand geht es nur
+  nichtlokal oder mit Kosten am Schnitt.
+- **Index:** eine chirale Mode je Paar mit allen Formen; die Overlap-Verdoppler tragen nichts bei.
+- **Reflexionspositivität:**
+  - Naiv und Wilson r ≤ 1 sind linkpositiv, r = 2 nicht.
+  - Overlap bei θ = 0 ist positiv (Pol plus Schnitt mit positivem Gewicht). Die Behauptung von Lu–Shao
+    ist für das freie vektorartige bzw. Majorana-Overlap nicht reproduziert; Lüschers projizierte
+    Weylfelder sind nicht geprüft.
+  - Die flachen Formen verletzen die Positivität bei gedrehter Phase, also dort, wo der Defekt
+    durchläuft (bis −0,23).
+
+  **Abwägung für H6:** entweder Wand (Wilson, positiv) oder Positivitätsverletzung auf Gitterskala
+  (flache Formen).
+- **Gravitation:** Kein chiraler Regulator macht a/ℓ_P bestimmter. SLAC hat kein Flächengesetz,
+  Overlap hat keinen endlichen lokalen Hilbertraum.
+
+**Was das für H6 heißt.** Die drei Verbindungen sind jetzt genau benannt:
+- Für genau eine Naht braucht es ein Ordnungsfeld ohne Mittelwert oder den Deck-internen Zweig von
+  v957.
+- Für genau einen Block braucht es die Forderung „E₈ auf der Naht“.
+- Für den gemeinsamen Operator braucht es eine Paarung, die nur ξ₊ξ₊ trifft, statt ψχ.
+
+Für die Zeitrekonstruktion bei endlichem Gitterabstand muss H6 wählen zwischen einer Wand mit
+Positivität und einer Positivitätsverletzung ohne Wand. Keine dieser Entscheidungen folgt bisher aus
+einem Prinzip.
+
+## Davor: H6h10 — dritte externe Prüfrunde (`z16_kritik_drei.py`)
 
 Bilanz unverändert bei 15 P und 5 L von 20. Drei externe Berichte vom selben Tag wurden geprüft. Ihre
 Pakete (PDF, ZIP, ein Lean-Zertifikat mit 15 Lemmas) liegen nicht im Repo; nachgerechnet ist alles,
