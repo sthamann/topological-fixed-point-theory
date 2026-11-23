@@ -1,3 +1,4 @@
+import AnalyticsPreferences from "./AnalyticsPreferences";
 import type { Metadata, Viewport } from "next";
 import "./site-fonts.css";
 import { Analytics } from "@vercel/analytics/next";
@@ -206,6 +207,7 @@ export default function RootLayout({
         </main>
         <Footer />
         <Analytics />
+        <AnalyticsPreferences />
       </body>
     </html>
   );
