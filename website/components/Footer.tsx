@@ -175,8 +175,9 @@ export function Footer() {
             Vercel Web Analytics
           </Link>{" "}
           for cookie-free, anonymous aggregate page-view and PDF-download
-          counts. No personal identifiers, no IP addresses, and no cookies are
-          stored.
+          counts. If you allow Google Analytics, Google also receives page visits
+          and device information and uses analytics cookies. You can change
+          your choice in Analytics preferences below.
         </div>
       </div>
     </footer>
