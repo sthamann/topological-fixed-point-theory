@@ -1,6 +1,66 @@
 # Urteil
 
-## Aktueller Stand: H6h5 — Gabel entschieden, Kontinuum (`z5_gabel.py`, `z6_kontinuum.py`)
+## Aktueller Stand: H6h6 — Ursprung der Naht (`z7_ursprung_naht.py`)
+
+```
+        K1 … K15 K16 K17 K18 K19    P  L  F  O  E
+   H6h5  P … P   L   L   L   E    14  4  0  0  1
+   H6h6  P … P   L   L   L   L    14  5  0  0  0
+```
+K19 (Existenz der Naht) ist neu im Katalog; bei allen früheren Hypothesen war die Naht Eingabe. In
+H6h6 ist nichts mehr als Eingabe gesetzt; alles steht unter benannten Prämissen.
+
+**Hypothese G.** Die Naht ist der verdrillte Defekt eines komplexen Paarungsmassenfelds
+m e^{iθ} ψχ zwischen Weyl-Fermionen ψ und Partnern χ. Um den Defekt werden ψ und χ mit der
+Vierteldrehung J: ψ → χ → −ψ vertauscht, und die Massenphase windet um π. Eindeutig ist das, weil J die
+Masse ψχ umpolt.
+
+**Gerechnet (alle sieben Prüfungen bestehen).** 3D Gitter, Defektlinie entlang z, Bogoliubov-de-Gennes
+mit Weyl-Kinetik und unter J invarianter Wilson-Majoranamasse gegen die Verdoppler. Kern- und
+Randmoden sind über den Kernprojektor getrennt, die Chiralität kommt aus ⟨∂H/∂k_z⟩.
+
+| Defekt | chirale Majorana-Weyl Moden am Kern |
+|---|---|
+| verdrillt (J, Phase windet um π), ein Paar | **1**, Geschwindigkeit +1,00 |
+| verdrillt, zwei Paare | **2** |
+| gewöhnlicher Wirbel (ohne J, Windung 1), ein Paar | 2 |
+| nur J, ohne Massenwindung | 0 |
+
+Der äußere Rand trägt jeweils dieselbe Zahl mit umgekehrter Richtung. Das Ergebnis ist robust bei
+L = 14 und 18 und für Massen von 0,4 bis 0,9.
+
+**Was daraus für die Naht folgt.**
+- Kodimension 2: Eine Defektlinie im Raum ist eine Fläche in der Raumzeit.
+- Geschlossen und flach heißt Torus (Gauß-Bonnet, χ = 0).
+- J² = −1 auf Fermionen, also wirkt J auf allem Bosonischen mit Ordnung 2. Das sind die **zwei
+  Blätter**; auf Fermionen ist es **μ₄**, wie die gelifte Vierteldrehung (g̃⁴ = −1, Z1).
+- Der Verzweigungsschnitt ist der Ort, an dem die halbe Phase springt. Seine Lage ist eine Eichwahl;
+  das ist der unbeobachtbare Schnitt aus F (Z5).
+- Die chiralen Moden laufen mit Lichtgeschwindigkeit. Ihre Zahl ist die Zahl der Paare, deren Masse am
+  Defekt windet; **16 Paare geben 16 Majorana-Weyl Moden, also c = 8**.
+- Gegenprobe: Die 16 Verdoppler eines naiven Feldes liefern die Moden nicht. Ohne Wilson-Glied haben
+  sie abwechselnde Chiralität, und der verdrillte Defekt trägt dann keine Mode. Gebraucht werden 16
+  echte Paare.
+
+**Korrektur zur Gabel (Z5).** Z5 hat nur die Operatorlesart (H|ψ⟩ = 0) ausgeschlossen. c = 24 mit der
+Energiebedingung im Mittel ist damit nicht ausgeschlossen. Z3 und Z4 gelten für E₈³ genauso: Dort ist
+nur i stationär, und die Energie ist null. Die Wahl c = 8 stützt sich auf TFPTs Familien in einem E₈
+und auf C′ (Familien als Spinstruktursektoren). Unter G ist c = 8 × (Zahl der 16er-Sätze, deren Masse
+windet).
+- Windet ein Satz, ist c = 8 und F nötig.
+- Winden drei, ist c = 24. Dann verschwindet die Rahmungsphase ohne F, und drei ist die kleinste Zahl
+  mit 8N ∈ 24ℤ. Die Familiencharaktere {−1, i, −i} kämen dann aber nicht mehr aus der Naht, denn J
+  wirkt innerhalb der Paare und vertauscht keine Sätze.
+
+Die Gabel ist damit eine Frage nach der Zahl der windenden 16er-Sätze.
+
+**Offen.**
+- Die Identität der 16 Paare. Sie sind im Volumen schwer (Masse m) und daher nicht die leichten
+  Fermionen des Standardmodells.
+- Warum genau ein (oder drei) Satz windet.
+- Warum der Grundzustand einen geschlossenen Defekt enthält.
+
+## Davor: H6h5 — Gabel entschieden, Kontinuum (`z5_gabel.py`, `z6_kontinuum.py`)
 
 ```
         K1 K2 K3 K4 K5 K6 K7 K8 K9 K10 K11 K12 K13 K14 K15 K16 K17 K18    P  L  F  O  E

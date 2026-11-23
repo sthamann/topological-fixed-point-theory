@@ -23,6 +23,7 @@ Katalog
   K7  flacher Sektor für das E8 Wort           K14 keine freien Parameter
   K15 Eichdynamik (Yang-Mills) in 4D           K16 Kontinuumslimes
   K17 Rahmungsanomalie der Naht behandelt      K18 Neutrinomischung gegen Daten
+  K19 Existenz der Naht (Ursprung)
 """
 import itertools
 import json
@@ -536,6 +537,7 @@ facts["F16_seam_framing_anomaly"] = "N = 16 chiral: T-Phase exp(-2 pi i/3) = exp
 for h in H:
     H[h]["K17"] = (O, "T-Phase der Naht nicht behandelt") if h.startswith(("H4", "H5", "H6")) else (O, "keine chirale Naht mit GSO")
     H[h]["K18"] = (O, "keine Familiengruppe")
+    H[h]["K19"] = (IN, "Existenz der Naht (geschlossene 2D Fläche mit chiralen Fermionen) als Ausgangspunkt gesetzt")
 for h in ("H6", "H6h", "H6h2"):
     if h in H:
         H[h]["K18"] = (LES, "S4 gibt tribimaximal: sin^2 theta12 = 1/3, sin^2 theta23 = 1/2, sin^2 theta13 = 0 gegen 0,022")
@@ -618,8 +620,20 @@ if "H6h2" in H and z1p.exists() and z2p.exists():
                                 f"{z6['landau_pole_GeV']:.1e} GeV. Nicht gezeigt: nichtperturbativ, chirale Gitterformulierung")
             facts["F22_fork"] = z5
             facts["F23_continuum"] = z6
+            z7p = Path(__file__).with_name("z7_ergebnis.json")
+            if z7p.exists():
+                z7 = json.loads(z7p.read_text())
+                ok7 = all(z7["checks"].values())
+                H["H6h6"] = dict(H["H6h5"])
+                H["H6h6"]["K19"] = (LES if ok7 else F,
+                                    "[G] Naht = verdrillter Defekt eines komplexen Paarungsmassenfelds (J: psi -> chi -> -psi, "
+                                    "Phase windet um pi): Kodimension 2; geschlossen und flach heißt Torus; J^2 = -1 gibt zwei "
+                                    "Blätter auf Bosonischem und mu4 auf Fermionen; der Schnitt ist der Phasensprung (Eichwahl); "
+                                    "Gitterindex: eine chirale Majorana-Weyl Mode je Paar mit Lichtgeschwindigkeit (robust), "
+                                    "16 Paare geben c = 8; die Verdoppler liefern sie nicht. Offen: Identität der 16 Paare")
+                facts["F24_seam_origin"] = z7
 
-order = [f"K{i}" for i in range(1, 19)]
+order = [f"K{i}" for i in range(1, 20)]
 print("Gesamttabelle (P = hergeleitet, L = unter benannter Lesart, F = FAIL, O = OFFEN, E = EINGABE)\n")
 print("      " + " ".join(f"{k:>4}" for k in order) + "     P    L    F    O    E")
 for h, crit in H.items():
