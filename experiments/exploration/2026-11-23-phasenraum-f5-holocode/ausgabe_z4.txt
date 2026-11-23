@@ -1,0 +1,46 @@
+Koeffizienten von chi_E8: [1, 248, 4124, 34752, 213126, 1057504] (1, 248, 4124, 34752, 213126, 1057504 erwartet)
+
+1. Verdrillung (x) bei y = 1
+
+   |Z(x + i)|/Z(i): Maximum 1.000000000000 bei x = +0.000; bei x = 0.1: 0.953090; bei x = 0.5: 0.372889
+   F_xx = +9.57854 > 0: stabil. Grund: positive Koeffizienten, |Tr e^(-beta H) e^(i theta P)| <= Tr e^(-beta H).
+
+2. Temperatur (y): Energie, Varianz, Wärmekapazität
+
+   beta/L = 0.80: <L0> - c/24 = +0.381914, Var(L0) = 0.352516, d^2 log Z/dy^2 = (2 pi)^2 Var = 13.91676
+   beta/L = 1.00: <L0> - c/24 = +0.000000, Var(L0) = 0.242627, d^2 log Z/dy^2 = (2 pi)^2 Var = 9.57854
+   beta/L = 1.25: <L0> - c/24 = -0.244425, Var(L0) = 0.082148, d^2 log Z/dy^2 = (2 pi)^2 Var = 3.24308
+   Bei y = 1 ist <L0> = c/24 = 1/3 genau: Casimir- und Anregungsenergie heben sich auf.
+   F_yy = -(2 pi)^2 Var = -9.57854; Z3 fand -9.57854: gleich ja
+   log Z(y) ist auf [0.3, 3] konvex: kleinste zweite Ableitung 0.0001 > 0 ja
+   -log Z ist längs der Temperatur also für jede unitäre Naht konkav. Das ist positive Wärmekapazität,
+   keine Instabilität; ein Minimum über die Temperatur gibt es grundsätzlich nicht.
+
+   Mikrokanonische Entropie S(E) = min_beta [log Z(beta) + beta E] (Legendre):
+   E (Einheiten 2 pi/L): -0.25 -0.20 -0.15 -0.10 -0.05 +0.00 +0.05 +0.10 +0.15 +0.20 +0.25
+   S(E):                 0.747 1.129 1.490 1.834 2.165 2.485 2.794 3.094 3.385 3.667 3.942
+   S(0) = 2.484910, log 12 = 2.484907 (chi_E8(i) = 12); S konkav: ja
+   Bei E = 0 ist die Temperatur beta = L, also genau der Punkt aus Z3. Die Lage ist der stabile
+   mikrokanonische Gleichgewichtszustand bei Energie null.
+
+3. Die Energiebedingung: im Mittel oder als Operatorgleichung?
+
+   c = 8: Niveaus L0 - c/24 liegen bei n - 1/3; ein Zustand mit Energie genau null existiert nicht.
+   Also gilt E = 0 bei c = 8 nur im Mittel (thermischer Zustand), nicht als H|psi> = 0.
+   c = 24 (E8 hoch 3, Z = j): Niveau L0 - 1 = 0 hat 744 Zustände (3 x 248 Ströme).
+   Auch bei c = 24 ist im thermischen Zustand bei y = 1: <L0> - 1 = +2.22e-16
+   Die Gabel aus Z1 erscheint hier wieder: Gilt die Energiebedingung als Operatorgleichung
+   (Wheeler-DeWitt-artig), braucht es c durch 24 teilbar (F'); gilt sie im Mittel des Zustands,
+   genügt c = 8 mit dem 3D Zufluss (F). TFPT nutzt ein E8 mit 248 = 78 + 8 + 2 x 27 x 3
+   (SEAM.EQUIV.02), also die Lesart im Mittel.
+
+Zusammenfassung
+   bestanden: E8 Koeffizienten
+   bestanden: Verdrillung null ist Maximum
+   bestanden: Energie null bei y = 1
+   bestanden: F_yy = -Varianz
+   bestanden: log Z konvex
+   bestanden: S konkav
+   bestanden: S(0) = log 12
+   bestanden: E8^3 Nullniveau 744
+   bestanden: E8^3 Energie null bei i

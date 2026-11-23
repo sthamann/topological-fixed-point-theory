@@ -1,6 +1,46 @@
 # Urteil
 
-## Aktueller Stand: H6h4 — Prämisse A hergeleitet (`z3_hintergrundfreiheit.py`)
+## Aktueller Stand: Stabilität der Lage τ = i (`z4_stabilitaet.py`)
+
+**Ergebnis: Die Lage ist stabil. Der Sattel aus Z3 ist keine Instabilität**, sondern die gewöhnliche
+Struktur zweier konjugierter Paare. Alle neun Prüfungen bestehen.
+
+In Rekonstruktion A (Raum L, Zeit β) ist τ = x + iy. Die beiden Richtungen des Sattels bedeuten
+Verschiedenes.
+- **Verdrillung x** koppelt an den Impuls: Z = Tr e^{−βH} e^{iθP}. Bei positivem Spektrum gilt
+  |Z(x + iy)| ≤ Z(iy), mit Gleichheit nur bei ganzem x. Verdrillung null ist für jede unitäre Naht ein
+  echtes Maximum von |Z|. Für E₈ gilt |Z(x+i)|/Z(i) = 0,953 bei x = 0,1 und 0,373 bei x = ½, also
+  F_xx = +9,58: **stabil**. Die „eingefrorene Verdrillung“, die frühere Befunde als Zusatzannahme
+  brauchten, ist damit automatisch.
+- **Streckung y = β/L** ist die inverse Temperatur. log Z ist in β konvex, denn die zweite Ableitung
+  ist die Energievarianz. Für E₈ gilt bei y = 1 exakt F_yy = −(2π)²·Var(L₀) = −9,58, mit
+  Var(L₀) = 0,2426. Längs der Temperatur ist −log Z daher **für jede unitäre Naht** konkav. Das ist
+  positive Wärmekapazität, keine Instabilität. Ein Minimum über die Temperatur gibt es grundsätzlich
+  nicht; die Temperatur ist eine Legendre-Variable.
+- **Mikrokanonisch:** Eine hintergrundfreie, geschlossene Naht hat kein äußeres Wärmebad. Ihre
+  Temperatur wird durch die Energiebedingung festgelegt, nicht gewählt. S(E) = min_β[log Z + βE] ist
+  konkav (stabil). Bei E = 0 liegt genau β = L, also τ = i, mit S(0) = log χ(i) = log 12. Dort gilt
+  ⟨L₀⟩ = c/24 = 1/3 exakt: Casimir- und Anregungsenergie heben sich auf.
+
+Die Lage τ = i ist damit der stabile Gleichgewichtszustand einer geschlossenen Naht bei Energie null
+und Impuls null: stationär (Z3) und stabil (Z4).
+
+**Neu sichtbar: die Gabel F gegen F′ als Frage nach der Energiebedingung.** Bei c = 8 liegen die
+Niveaus bei n − 1/3; einen Zustand mit Energie genau null gibt es nicht. E = 0 gilt also nur im
+Mittel des thermischen Zustands. Soll die Bedingung als Operatorgleichung gelten (H|ψ⟩ = 0,
+Wheeler-DeWitt-artig), muss c durch 24 teilbar sein. Bei E₈³ (Z = j) hat das Nullniveau 744 = 3 × 248
+Zustände. Das ist dieselbe Bedingung wie die T-Invarianz aus Z1. Die Lesart im Mittel passt zu TFPT,
+das ein E₈ mit 248 = 78 + 8 + 2·27·3 nutzt (SEAM.EQUIV.02). Entscheiden muss das eine eigene Prüfung.
+
+**Prüfstand.** Die Bilanz bleibt 14 P, 3 L, 0 F, 1 O. K2 trägt jetzt „stationär und stabil“.
+
+**Offen.**
+- K16: wechselwirkender Kontinuumslimes, Reflexionspositivität und SO(4).
+- a/ℓ_P mit vollem Feldinhalt.
+- Die Energiebedingung im Mittel (F, c = 8) oder als Operator (F′, c = 24).
+- Warum es überhaupt eine geschlossene 2D Naht mit chiralen Fermionen gibt.
+
+## Davor: H6h4 — Prämisse A hergeleitet (`z3_hintergrundfreiheit.py`)
 
 ```
         K1 K2 K3 K4 K5 K6 K7 K8 K9 K10 K11 K12 K13 K14 K15 K16 K17 K18    P  L  F  O  E
@@ -51,7 +91,7 @@ Gitterladungsenergie …“). Ebenso ist dort festgehalten, dass τ = i ein Satt
   F). Die Bewegungsgleichung gibt τ = i.
 
 **Was A\* nicht leistet.**
-- Die Lage ist stationär, aber nicht stabil: Sattel, instabil gegen Streckung. Wenn die Form wirklich
+- (Nachtrag: Z4 zeigt, dass der Sattel keine Instabilität ist; siehe oben.) Die Lage ist stationär, aber nicht stabil: Sattel, instabil gegen Streckung. Wenn die Form wirklich
   dynamisch ist, braucht die Stabilität einen weiteren Grund. Kandidaten sind die 3D E₈ Phase (F),
   die Ankopplung an die 4D Geometrie oder das Modulintegral, in dem ein Sattel der maßgebliche
   Punkt ist.

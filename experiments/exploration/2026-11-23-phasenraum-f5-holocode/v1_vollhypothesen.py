@@ -589,6 +589,16 @@ if "H6h2" in H and z1p.exists() and z2p.exists():
         H["H6h4"]["K14"] = (P, "keine freie Konstante; die Form der Naht ist nicht gewählt, sondern ihre Bewegungsgleichung; "
                                "a/l_P = 2 sqrt(kappa_gesamt) berechenbar, noch nicht berechnet")
         facts["F20_stress_free_selection"] = z3
+        z4p = Path(__file__).with_name("z4_ergebnis.json")
+        if z4p.exists():
+            z4 = json.loads(z4p.read_text())
+            st, why = H["H6h4"]["K2"]
+            stable = all(z4["checks"].values())
+            H["H6h4"]["K2"] = (st if stable else F,
+                               why + f"; stabil: Verdrillung null ist Maximum von |Z| (F_xx = {z4['Fxx']:+.3f}), längs der "
+                                     f"Temperatur ist die Krümmung -(2 pi)^2 Var = {z4['Fyy']:+.3f} (positive Wärmekapazität), "
+                                     f"mikrokanonisch S(E) konkav mit E = 0 bei beta = L")
+            facts["F21_stability"] = z4
 
 order = [f"K{i}" for i in range(1, 19)]
 print("Gesamttabelle (P = hergeleitet, L = unter benannter Lesart, F = FAIL, O = OFFEN, E = EINGABE)\n")
