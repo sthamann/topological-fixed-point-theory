@@ -1,6 +1,6 @@
 # Urteil
 
-Gerechnet am 23. November 2026 mit `.venv/bin/python` (numpy, scipy, sympy). Acht Skripte,
+Gerechnet am 23. November 2026 mit `.venv/bin/python` (numpy, scipy, sympy). Sieben Skripte,
 alle mit Rückgabewert 0; Ausgaben in `ausgabe_*.txt`. PLAN, progress, Ledger und Atlas sind
 unberührt. Ausgangspunkt war der konsolidierte Stand in `docs/research/TFPT-STAND.md`
 (Abschnitt „Befunde 20.–23. November“): Die offenen Eingaben laufen auf „woher die Vier“ und
