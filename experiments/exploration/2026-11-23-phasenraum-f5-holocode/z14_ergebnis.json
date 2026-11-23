@@ -1,0 +1,672 @@
+{
+ "checks": {
+  "[H, Q_probe] = 0 in allen Läufen": true,
+  "Kopplung bricht die einzelnen Satzladungen": true,
+  "Niveau = n für n = 1, 2, 3, ungekoppelt und gekoppelt": true,
+  "Sprung der Kernbesetzung = Summe der Kerngewichte der kreuzenden Moden (gelückte Läufe)": true,
+  "alle Kernmoden laufen in dieselbe Richtung": true,
+  "ungekoppelt v nahe 1 (0,9 bis 1), gekoppelt 0,1 < v < 0,9": true,
+  "Rand nimmt gegenläufig auf": true,
+  "Kernmoden über die Sätze verteilt (gekoppelt)": true,
+  "Besetzungszahl über k_z konstant": true,
+  "verborgener Zweig: Probe sieht Niveau 1, gemeinsame SO(2) sieht 3 Moden": true,
+  "E8: Tr_adj(H^2) = 2 h^v = 60": true,
+  "dim V(theta) = 248, dim V(2 theta) = 27000": true,
+  "Coset c = 16/11 = c(M(3,4)) + c(M(11,12))": true,
+  "E2(i) = 3/pi": true,
+  "c3 je Cartanrichtung für E8 und E8^3": true,
+  "Diagonalrichtung in E8^3 trägt c3": true,
+  "Gegenproben D8 und sqrt(3) E8 weichen ab": true,
+  "chi = 1, 248, 4124, 34752": true,
+  "chi^3 = j: 1, 744, 196884": true,
+  "chi(i) = 12, j(i) = 1728": true,
+  "4124 = Gewicht 2 nur bei Niveau 1": true,
+  "c = 24: verschiedene freie Fermionkonstruktionen": true,
+  "Referenz reproduziert alpha^-1 = 137,0359992168": true,
+  "Niveau 3 im alpha^3-Glied zerstört alpha (> 10^6 sigma)": true,
+  "nur der Faktor 48 trägt alpha": true,
+  "R102-Index 4 und det(sqrt3 E8) = 3^8": true
+ },
+ "befunde": {
+  "Lueckengrenze": {
+   "wert": {
+    "core_weights": [
+     0.68127147340751,
+     0.5637908068445552
+    ],
+    "velocities": [
+     0.2551,
+     0.1658
+    ],
+    "jump_per_weight": 0.6693215146620561
+   },
+   "text": "Bei t > m nähert sich die Volumenlücke dem Schluss: Kerngewicht und Geschwindigkeit fallen, der Sprung ist nicht mehr am Kern lokalisiert. Der Spektralfluss bleibt 2."
+  },
+  "c3_trennt_n_nicht": {
+   "wert": true,
+   "text": "c3 = E2(i)/24 je Cartanrichtung gilt für jedes unimodulare Gitter am selbstdualen Punkt, also für E8 und E8^3, auch entlang der Diagonalen. Es unterscheidet n = 1 und n = 3 nicht; nur die Summe 1/pi gegen 3/pi ändert sich, und sie geht in keine TFPT-Zahl ein. Ein für sich stehendes Niveau-3-Gitter sqrt(3) E8 trägt c3 nicht."
+  },
+  "chi_i_trennt_n_nicht": {
+   "wert": true,
+   "text": "chi_E8(i) = 12 und j(i) = 1728 sind beide TFPT-Zahlen; die Satzzahl wählt nur, welche die Zustandssumme der Naht ist. Kein Vorhersagewert hängt daran."
+  },
+  "c_gleich_gcar_plus_Nfam_ist_Lesart": {
+   "wert": true,
+   "text": "Bei n = 3 wird aus c = g_car + N_fam die Beziehung c = N_fam (g_car + N_fam); keine Zahl der Gravitationsherleitung ändert sich. Die Beziehung bevorzugt n = 1 nur als Lesart."
+  },
+  "alpha_ueberlebt_bei_gleichmaessiger_Umnormierung": {
+   "wert": true,
+   "text": "Werden alle drei Glieder der Wardidentität mit 3 multipliziert, bleibt alpha^-1 unverändert. Nur die Typisierung der Glieder (EM.WARD.01) schließt das aus; die EM1-Lesart k0 = Niveau ist [C], nicht bewiesen."
+  },
+  "seed_48_entscheidet_n_nicht": {
+   "wert": true,
+   "text": "48 c3^4 ist starr (16, 144, 3888 scheitern um > 10^5 sigma). Als Zählung der Nahtmoden würde 48 = nu(n=3) n = 3 stützen; TFPTs eigene Lesarten (Kumulant, 16 x N_fam Materie) sind satzzahlblind."
+  },
+  "verborgener_Zweig_besteht_alle_Zahlen": {
+   "wert": true,
+   "text": "offen; alle Zahlen bestehen, nur Lesarten (c = g_car + N_fam, c_-/|C| = 8, R102-Zählung) dagegen"
+  },
+  "gravitativer_Zufluss_nicht_gerechnet": {
+   "wert": true,
+   "text": "c_- der Naht ist im Gitter nur gezählt, nicht als Antwort (Energiestrom, p1-Koeffizient) aus dem 4D Volumen gerechnet."
+  },
+  "Gitter_reduziert": {
+   "wert": true,
+   "text": "Je Satz 2 von 16 Komponenten; die volle 16 ist über Additivität und den Einbettungsindex 1 argumentiert, nicht gerechnet. Die Probe ist eine SO(2), kein nichtabelscher E8-Strom."
+  }
+ },
+ "urteil": {
+  "gleichfoermig_n3": "gescheitert unter der EM1-Lesart (k0 = Niveau, [C]); alpha^-1 = 198,24",
+  "verborgen_n3": "offen; alle Zahlen bestehen, nur Lesarten (c = g_car + N_fam, c_-/|C| = 8, R102-Zählung) dagegen",
+  "n1": "Lesart; mit allen geprüften TFPT-Beziehungen verträglich, braucht gravitativen Zufluss (nicht gerechnet)",
+  "gesamt": "Lesart: TFPT fixiert das sichtbare E8-Niveau 1 (über alpha unter EM1), nicht die Satzzahl; entscheidend ist c_-/k der Naht (8 gegen 24)",
+  "entscheidende_rechnung": "gravitativer Zufluss der schweren 4D Fermionen beziehungsweise thermische Hallantwort der Naht: c_- = 8 (n = 1) oder 24 (n = 3) bei sichtbarem Niveau 1"
+ },
+ "niveau": {
+  "n1": 1,
+  "n2": 2,
+  "n3": 3,
+  "n2mix": 2,
+  "n2mix_mehr": 2,
+  "n2mix_grenze": 2,
+  "n3mix": 3,
+  "hidden_probe": 1,
+  "hidden_all": 3
+ },
+ "sprungverhaeltnis": {
+  "n1": 1.0,
+  "n2": 1.840693750676261,
+  "n3": 2.9002834052592044,
+  "n2mix": 1.9302420552036033,
+  "n2mix_mehr": 1.7899423768055438,
+  "n2mix_grenze": 0.9260942768412511,
+  "n3mix": 2.933894420216359,
+  "hidden_probe": 1.0,
+  "hidden_all": 2.976842190326766
+ },
+ "gitter": {
+  "n1": {
+   "n": 1,
+   "weights": [
+    1
+   ],
+   "masses": [
+    0.6
+   ],
+   "pairs": [],
+   "t_scale": 1.0,
+   "mu": 0.15,
+   "comm_probe": 0.0,
+   "comm_Q1": 0.0,
+   "sector_dim": 1152,
+   "core_jump": -0.8998511189479643,
+   "edge_jump": 0.930348665193037,
+   "core_weights": [
+    0.922037872422682
+   ],
+   "occupied": [
+    576,
+    576,
+    576,
+    576
+   ],
+   "velocities": [
+    0.9855
+   ],
+   "n_low": 2,
+   "net_chiral": 1,
+   "spectral_flow": 1,
+   "jump_per_weight": 0.9759372644678669,
+   "set_weights": [
+    [
+     1.0000000000000016
+    ]
+   ]
+  },
+  "n2": {
+   "n": 2,
+   "weights": [
+    1,
+    1
+   ],
+   "masses": [
+    0.6,
+    0.5
+   ],
+   "pairs": [],
+   "t_scale": 1.0,
+   "mu": 0.15,
+   "comm_probe": 0.0,
+   "comm_Q1": 0.0,
+   "sector_dim": 2304,
+   "core_jump": -1.6563503311865588,
+   "edge_jump": 1.7186280713002589,
+   "core_weights": [
+    0.9220378724226802,
+    0.850409227922506
+   ],
+   "occupied": [
+    1152,
+    1152,
+    1152,
+    1152
+   ],
+   "velocities": [
+    0.9855,
+    0.926
+   ],
+   "n_low": 4,
+   "net_chiral": 2,
+   "spectral_flow": 2,
+   "jump_per_weight": 0.9344991626909388,
+   "set_weights": [
+    [
+     0.9999999999999997,
+     0.0
+    ],
+    [
+     0.0,
+     0.9999999999999992
+    ]
+   ]
+  },
+  "n3": {
+   "n": 3,
+   "weights": [
+    1,
+    1,
+    1
+   ],
+   "masses": [
+    0.6,
+    0.5,
+    0.7
+   ],
+   "pairs": [],
+   "t_scale": 1.0,
+   "mu": 0.15,
+   "comm_probe": 0.0,
+   "comm_Q1": 0.0,
+   "sector_dim": 3456,
+   "core_jump": -2.609823267488707,
+   "edge_jump": 2.6961698916970818,
+   "core_weights": [
+    0.9575377044795397,
+    0.9220378724226804,
+    0.8504092279225056
+   ],
+   "occupied": [
+    1728,
+    1728,
+    1728,
+    1728
+   ],
+   "velocities": [
+    0.9983,
+    0.9855,
+    0.926
+   ],
+   "n_low": 6,
+   "net_chiral": 3,
+   "spectral_flow": 3,
+   "jump_per_weight": 0.9559845398686263,
+   "set_weights": [
+    [
+     0.0,
+     0.0,
+     0.9999999999999988
+    ],
+    [
+     1.0,
+     0.0,
+     0.0
+    ],
+    [
+     0.0,
+     0.9999999999999992,
+     0.0
+    ]
+   ]
+  },
+  "n2mix": {
+   "n": 2,
+   "weights": [
+    1,
+    1
+   ],
+   "masses": [
+    0.6,
+    0.5
+   ],
+   "pairs": [
+    [
+     0,
+     1
+    ]
+   ],
+   "t_scale": 1.0,
+   "mu": 0.15,
+   "comm_probe": 0.0,
+   "comm_Q1": 0.3492222707628465,
+   "sector_dim": 2304,
+   "core_jump": -1.7369304732153807,
+   "edge_jump": 1.7843599481149113,
+   "core_weights": [
+    0.8727543261835555,
+    0.9097971118209431
+   ],
+   "occupied": [
+    1152,
+    1152,
+    1152,
+    1152
+   ],
+   "velocities": [
+    0.7342,
+    0.78
+   ],
+   "n_low": 4,
+   "net_chiral": 2,
+   "spectral_flow": 2,
+   "jump_per_weight": 0.974406929406655,
+   "set_weights": [
+    [
+     0.6358764316717759,
+     0.36412356832822235
+    ],
+    [
+     0.3481525823578153,
+     0.6518474176421845
+    ]
+   ]
+  },
+  "n2mix_mehr": {
+   "n": 2,
+   "weights": [
+    1,
+    1
+   ],
+   "masses": [
+    0.6,
+    0.5
+   ],
+   "pairs": [
+    [
+     0,
+     1
+    ]
+   ],
+   "t_scale": 1.25,
+   "mu": 0.25,
+   "comm_probe": 0.0,
+   "comm_Q1": 0.43652783845355814,
+   "sector_dim": 2304,
+   "core_jump": -1.6106816506208474,
+   "edge_jump": 1.642839505343204,
+   "core_weights": [
+    0.7832462483043813,
+    0.9155976055278587
+   ],
+   "occupied": [
+    1152,
+    1152,
+    1152,
+    1152
+   ],
+   "velocities": [
+    0.5513,
+    0.6747
+   ],
+   "n_low": 4,
+   "net_chiral": 2,
+   "spectral_flow": 2,
+   "jump_per_weight": 0.9481045871211077,
+   "set_weights": [
+    [
+     0.5171785799732482,
+     0.4828214200267545
+    ],
+    [
+     0.45948061366580656,
+     0.5405193863341955
+    ]
+   ]
+  },
+  "n2mix_grenze": {
+   "n": 2,
+   "weights": [
+    1,
+    1
+   ],
+   "masses": [
+    0.6,
+    0.5
+   ],
+   "pairs": [
+    [
+     0,
+     1
+    ]
+   ],
+   "t_scale": 2.0,
+   "mu": 0.3,
+   "comm_probe": 0.0,
+   "comm_Q1": 0.698444541525693,
+   "sector_dim": 2304,
+   "core_jump": -0.8333469712669057,
+   "edge_jump": 0.8450518480912024,
+   "core_weights": [
+    0.68127147340751,
+    0.5637908068445552
+   ],
+   "occupied": [
+    1152,
+    1152,
+    1152,
+    1152
+   ],
+   "velocities": [
+    0.2551,
+    0.1658
+   ],
+   "n_low": 6,
+   "net_chiral": 2,
+   "spectral_flow": 2,
+   "jump_per_weight": 0.6693215146620561,
+   "set_weights": [
+    [
+     0.40327750333003043,
+     0.5967224966699701
+    ],
+    [
+     0.5705096777886289,
+     0.4294903222113721
+    ]
+   ]
+  },
+  "n3mix": {
+   "n": 3,
+   "weights": [
+    1,
+    1,
+    1
+   ],
+   "masses": [
+    0.6,
+    0.5,
+    0.7
+   ],
+   "pairs": [
+    [
+     0,
+     1
+    ],
+    [
+     1,
+     2
+    ],
+    [
+     0,
+     2
+    ]
+   ],
+   "t_scale": 1.0,
+   "mu": 0.15,
+   "comm_probe": 0.0,
+   "comm_Q1": 0.3492222707628465,
+   "sector_dim": 3456,
+   "core_jump": -2.6400681769068797,
+   "edge_jump": 2.690759227043827,
+   "core_weights": [
+    0.9204874345979694,
+    0.8632028864167434,
+    0.9238909505582965
+   ],
+   "occupied": [
+    1728,
+    1728,
+    1728,
+    1728
+   ],
+   "velocities": [
+    0.4304,
+    0.7384,
+    0.7962
+   ],
+   "n_low": 6,
+   "net_chiral": 3,
+   "spectral_flow": 3,
+   "jump_per_weight": 0.9750651641097714,
+   "set_weights": [
+    [
+     0.3349930968234847,
+     0.30831303198540894,
+     0.35669387119110807
+    ],
+    [
+     0.3018400136026217,
+     0.6630300795499433,
+     0.035129906847435846
+    ],
+    [
+     0.36184455941819305,
+     0.052980949551798565,
+     0.5851744910300107
+    ]
+   ]
+  },
+  "hidden_probe": {
+   "n": 3,
+   "weights": [
+    1,
+    0,
+    0
+   ],
+   "masses": [
+    0.6,
+    0.5,
+    0.7
+   ],
+   "pairs": [
+    [
+     1,
+     2
+    ]
+   ],
+   "t_scale": 1.0,
+   "mu": 0.15,
+   "comm_probe": 0.0,
+   "comm_Q1": 0.0,
+   "sector_dim": 1152,
+   "core_jump": -0.8998511189479643,
+   "edge_jump": 0.930348665193037,
+   "core_weights": [
+    0.922037872422682
+   ],
+   "occupied": [
+    576,
+    576,
+    576,
+    576
+   ],
+   "velocities": [
+    0.9855
+   ],
+   "n_low": 2,
+   "net_chiral": 1,
+   "spectral_flow": 1,
+   "jump_per_weight": 0.9759372644678669,
+   "set_weights": [
+    [
+     1.0000000000000016
+    ]
+   ]
+  },
+  "hidden_all": {
+   "n": 3,
+   "weights": [
+    1,
+    1,
+    1
+   ],
+   "masses": [
+    0.6,
+    0.5,
+    0.7
+   ],
+   "pairs": [
+    [
+     1,
+     2
+    ]
+   ],
+   "t_scale": 1.0,
+   "mu": 0.15,
+   "comm_probe": 0.0,
+   "comm_Q1": 0.0,
+   "sector_dim": 3456,
+   "core_jump": -2.678714775897049,
+   "edge_jump": 2.756021614237852,
+   "core_weights": [
+    0.9123540432765697,
+    0.9079918953940681,
+    0.9220378724226804
+   ],
+   "occupied": [
+    1728,
+    1728,
+    1728,
+    1728
+   ],
+   "velocities": [
+    0.752,
+    0.8121,
+    0.9855
+   ],
+   "n_low": 6,
+   "net_chiral": 3,
+   "spectral_flow": 3,
+   "jump_per_weight": 0.9767833244425091,
+   "set_weights": [
+    [
+     0.0,
+     0.20151155756323016,
+     0.7984884424367699
+    ],
+    [
+     0.0,
+     0.8243110451441942,
+     0.17568895485580865
+    ],
+    [
+     1.0,
+     0.0,
+     0.0
+    ]
+   ]
+  }
+ },
+ "alpha": {
+  "Referenz (n = 1, k0 = 1)": {
+   "alpha_inv": 137.0359992168407,
+   "sigma": 1.8971767858827553
+  },
+  "n = 3 gleichförmig: k0 = 3": {
+   "alpha_inv": 198.23779787005793,
+   "sigma": 2914371366.336092
+  },
+  "k0 = 3 und Calderónglied x 3": {
+   "alpha_inv": 197.1314858890937,
+   "sigma": 2861689843.4330335
+  },
+  "k0 = 3, b1 = (3/(5k)) 41/6 = 41/30": {
+   "alpha_inv": 285.55577372121644,
+   "sigma": 7072370216.391259
+  },
+  "alle drei Glieder x 3 (nur Umnormierung)": {
+   "alpha_inv": 137.0359992168407,
+   "sigma": 1.8971767858827553
+  },
+  "verborgene Sätze: sichtbares k0 = 1": {
+   "alpha_inv": 137.0359992168407,
+   "sigma": 1.8971767858827553
+  }
+ },
+ "seed": {
+  "48 (Kumulant je normierter Richtung, niveaublind)": {
+   "alpha_inv": 137.0359992168407,
+   "sigma": 1.8971767858827553
+  },
+  "16 (16 Nahtmoden, n = 1 gezählt)": {
+   "alpha_inv": 137.01297810603938,
+   "sigma": -1096241.4743149187
+  },
+  "48 = 3 x 16 (Nahtmoden bei n = 3)": {
+   "alpha_inv": 137.0359992168407,
+   "sigma": 1.8971767858827553
+  },
+  "144 = 3 x 48 (Summe über drei Sätze)": {
+   "alpha_inv": 137.10497837413556,
+   "sigma": 3284723.673121076
+  },
+  "3888 = 48 x 3^4 (Diagonalladung unnormiert)": {
+   "alpha_inv": 139.7070212577479,
+   "sigma": 127191527.65466213
+  }
+ },
+ "c3_je_richtung": {
+  "E8": 0.039788735772973836,
+  "E8^3": 0.039788735772973836,
+  "diag_in_E8^3": 0.039788735772967106,
+  "D8": 0.022373686651902872,
+  "sqrt3_E8": 5.861162448664576e-07,
+  "c3": 0.039788735772973836
+ },
+ "charaktere": {
+  "chi": [
+   1,
+   248,
+   4124,
+   34752
+  ],
+  "chi3": [
+   1,
+   744,
+   196884
+  ],
+  "chi_i": 12.0,
+  "j_i": 1728.0,
+  "gewicht2_niveau_ge2": 31124,
+  "dim_V_2theta": 27000
+ },
+ "sugawara": {
+  "E8_1": "8",
+  "E8_3": "248/11",
+  "coset_n3": "16/11"
+ },
+ "holomorph_c24_dimV1": {
+  "E8^3 (GSO je Satz)": 744,
+  "D16+ x E8 (GSO über 32 + 16)": 744,
+  "D24+ (GSO über alle 48)": 1128
+ }
+}

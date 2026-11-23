@@ -23,7 +23,7 @@ Katalog
   K7  flacher Sektor für das E8 Wort           K14 keine freien Parameter
   K15 Eichdynamik (Yang-Mills) in 4D           K16 Kontinuumslimes
   K17 Rahmungsanomalie der Naht behandelt      K18 Neutrinomischung gegen Daten
-  K19 Existenz der Naht (Ursprung)
+  K19 Existenz der Naht (Ursprung)            K20 gemeinsamer Elternoperator
 """
 import itertools
 import json
@@ -538,6 +538,7 @@ for h in H:
     H[h]["K17"] = (O, "T-Phase der Naht nicht behandelt") if h.startswith(("H4", "H5", "H6")) else (O, "keine chirale Naht mit GSO")
     H[h]["K18"] = (O, "keine Familiengruppe")
     H[h]["K19"] = (IN, "Existenz der Naht (geschlossene 2D Fläche mit chiralen Fermionen) als Ausgangspunkt gesetzt")
+    H[h]["K20"] = (O, "kein gemeinsamer Operator für Naht, E8 und Familien gebaut")
 for h in ("H6", "H6h", "H6h2"):
     if h in H:
         H[h]["K18"] = (LES, "S4 gibt tribimaximal: sin^2 theta12 = 1/3, sin^2 theta23 = 1/2, sin^2 theta13 = 0 gegen 0,022")
@@ -672,8 +673,50 @@ if "H6h2" in H and z1p.exists() and z2p.exists():
                                             "nicht erzwungen (Lesart: Fluktuationen auf Gitterskala)")
                         facts["F26_inflow_wall"] = z9
                         facts["F27_review_two"] = z10
+                        zs = {n: Path(__file__).with_name(f"z{n}_ergebnis.json") for n in (11, 12, 13, 14, 15)}
+                        if all(p.exists() for p in zs.values()):
+                            R = {n: json.loads(p.read_text()) for n, p in zs.items()}
+                            okz = {n: all(R[n]["checks"].values()) for n in R}
+                            H["H6h9"] = dict(H["H6h8"])
+                            H["H6h9"]["K13"] = (LES, "[D] Jacobson wie TFPT; a/l_P mit vollem Feldinhalt (Z15) nicht festgelegt: "
+                                                     "3,3 bis 14,3 je nach Schema, H6-Schema etwa 10,8; robust nur a/l_P >= 3,3; "
+                                                     "dominant ist der Randterm der Eichfelder")
+                            H["H6h9"]["K17"] = (P if okz[13] else F,
+                                                "[G] Gravitationsanomalie der Naht im Gitter gerechnet (Z13): c = 0,4994 und h_R = 0,0624 "
+                                                "je Paar, also c = 8 und h_R = 1 für 16 Paare; Volumenwand trägt Chernzahl 1 je Windung, "
+                                                "c_Wand = c_Naht; Fluss in gekrümmtem Hintergrund nicht gerechnet")
+                            H["H6h9"]["K19"] = (LES, "[G] verdrillter Defekt; TFPTs Einheitswindung ist lokal die det-Windung und wählt "
+                                                     "den verdrillten Defekt (Z11), erzwingt aber nicht genau eine Naht: unter G kommen "
+                                                     "verdrillte Nähte durch eine geschlossene Fläche nur paarweise; Grundzustand offen")
+                            H["H6h9"]["K20"] = (LES if okz[12] else F,
+                                                "[Z12] Produktoperator mit einem Multiplett scheitert (keine E8: 48 MW geben so(48); "
+                                                "Familien würden schwer; keine einzige Vierteldrehung); mit zwei Multipletts "
+                                                "(Naht an K^(1/2) x M, M^2 = O(D), Index 1; Materie an K^(1/2) x O(D), Index 3) "
+                                                "gelten Naht, E8 und Familien zugleich; die Aufteilung ist eingebaut")
+                            H["H6h9"]["K11"] = (P, "[A*, G] E8 aus 16 MW, Twistgewicht h_R = 1 jetzt auch im Gitter (Z13: 16 x 0,0624); "
+                                                   "gleichförmig drei Sätze widersprechen alpha unter EM1 (Z14), verborgene drei Sätze offen")
+                            facts["F28_followups"] = {n: R[n].get("urteil", R[n].get("befunde")) for n in R}
+                            z16p = Path(__file__).with_name("z16_ergebnis.json")
+                            if z16p.exists():
+                                z16 = json.loads(z16p.read_text())
+                                ok16 = all(z16["checks"].values())
+                                H["H6h10"] = dict(H["H6h9"])
+                                H["H6h10"]["K13"] = (LES, f"[D] Jacobson; a/l_P nicht festgelegt (Z15, Z16): Wilson-Fermionen allein geben "
+                                                          f"{z16['kappa_wilson']['1.0']:.3f} bis {z16['kappa_wilson']['8.0']:.3f} je Feld, "
+                                                          f"robust nur a/l_P >= {z16['bosonic_floor_a_lP']:.2f} (bosonischer Sockel ohne Randterm)")
+                                H["H6h10"]["K17"] = (P if ok16 else F,
+                                                     "[G] Gravitationsanomalie gerechnet (Z13, extern bestätigt: c = 0,49997 je Paar); die "
+                                                     f"Phasenbarriere der Wand ist ein Wilson-Artefakt: Overlap-Spannweite {z16['overlap_span']:.0e} "
+                                                     f"gegen Wilson {z16['wilson_span']:.2f} (Z16); Majoranapaarung mit Ginsparg-Wilson nicht gerechnet")
+                                H["H6h10"]["K19"] = (LES, "[G] relativ: Einheitswindung = c1 der Pfaffianlinie auf der Normalscheibe, erzwingt "
+                                                          "Rangverlust im Sektor 1 (Z16, explizite Masse M(z)); global: Hopf-Ordnungsfeld mit "
+                                                          "Ladung 1 auf S^3 erzwingt genau eine Naht; die Ladungswahl bleibt offen")
+                                H["H6h10"]["K20"] = (LES, "[Z12, Z16] zwei Multipletts; äquivariante Abbildung T: H^0(O(D)) -> H^0(K(D)) mit Kern "
+                                                          "= zwei invariante Trägermoden; auf dem Nahttorus O(2): 3 gerade + 1 ungerade, "
+                                                          "Kopplung an den geraden Teil gibt drei Familien")
+                                facts["F29_review_three"] = z16
 
-order = [f"K{i}" for i in range(1, 20)]
+order = [f"K{i}" for i in range(1, 21)]
 print("Gesamttabelle (P = hergeleitet, L = unter benannter Lesart, F = FAIL, O = OFFEN, E = EINGABE)\n")
 print("      " + " ".join(f"{k:>4}" for k in order) + "     P    L    F    O    E")
 for h, crit in H.items():

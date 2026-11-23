@@ -127,9 +127,9 @@ Ursprung sollte beides zugleich liefern.
 
 ### Kandidat H6: Ursprung von P1 aus einer hintergrundfreien Naht (Exploration 23.11.)
 
-Quelle: `experiments/exploration/2026-11-23-phasenraum-f5-holocode/VERDICT.md` (Stand H6h8),
-Skripte `n1`, `v1`, `y1`, `z1`–`z10`; Atlasproblem `problem:c3-p1-p2-shared-origin-reconciliation`,
-Befunde mit Präfix `h6`. Nichts davon ist im Ledger befördert. Prüfstand mit 19 Kriterien: 14
+Quelle: `experiments/exploration/2026-11-23-phasenraum-f5-holocode/VERDICT.md` (Stand H6h10),
+Skripte `n1`, `v1`, `y1`, `z1`–`z16`, Lean-Vertrag `experiments/theory-contracts/h6-exakte-teile-20261123/`; Atlasproblem `problem:c3-p1-p2-shared-origin-reconciliation`,
+Befunde mit Präfix `h6`. Nichts davon ist im Ledger befördert. Prüfstand mit 20 Kriterien: 15
 hergeleitet, 5 unter benannter Lesart, keines gescheitert, offen oder gesetzt.
 
 - **Prämissen:**
@@ -153,24 +153,53 @@ hergeleitet, 5 unter benannter Lesart, keines gescheitert, offen oder gesetzt.
   - Lorentz bei Dimension ≤ 4 ohne Feinabstimmung; Reflexionspositivität über T². [E, perturbativ]
   - Yang–Mills aus Fermionschleifen über die lokale 3+2-Verbindung, sin²θ_W = 3/8 an der
     Gitterskala. [E im Modell]
-  - Unter D liegt der Gitterabstand bei mindestens 3 ℓ_P (Verschränkungsdichte 0,0983 je
-    Dirac-Geschmack). [N]
+  - Unter D liegt der Gitterabstand oberhalb der Planckskala: robust a/ℓ_P ≥ 1,65 (bosonischer
+    Sockel ohne Randterm); die genaue Zahl hängt am Regulator. [N]
   - Die Naht ist ein verdrillter Defekt mit einer chiralen Mode je Fermion mit Spin-ℤ₄-Ladung 1.
     16 schwere reelle Fermionen (10,1)+(1,6) geben c = 8; der Schnitt ist genau bei ν ∈ 16ℤ
-    topologisch unsichtbar (ℤ₁₆-Bedingung), auf dem Gitter aber eine Domänenwand. [N/E]
-  - Gerechnet ist der Zufluss der SO(2)-Ladung; der gravitative Zufluss nicht.
+    topologisch unsichtbar. Die Phasenbarriere am Schnitt ist ein Artefakt des Wilson-Glieds; mit
+    einem Ginsparg–Wilson-Operator bleibt die Phase exakt (freier Dirac gerechnet). [N/E]
+  - Gerechnet ist der Zufluss der SO(2)-Ladung und die Gravitationsanomalie: c = 0,4994 und
+    h_R = 1/16 je Paar, also c = 8 und h_R = 1 für 16 Paare. Die Volumenwand trägt die Chernzahl 1
+    je Windung, also c_Wand = c_Naht. Der Fluss in Krümmung ist nicht gerechnet. [N/E]
+  - TFPTs Einheitswindung [u_Σ] = 1 ist die relative Chernzahl der Massenpfaffianlinie auf der
+    Normalscheibe; im Sektor 1 erzwingt sie einen Rangverlust, wählt aber den Sektor nicht. Unter G
+    kommen verdrillte Nähte durch geschlossene Flächen paarweise. Ein Ordnungsfeld mit Ladung 1
+    unter einer Hopf-U(1) auf S³ erzwingt genau eine Naht; offen ist die Ladungswahl. [E/N]
+  - Geometrischer Ursprung der Marken: Eine verzweigte Doppelüberlagerung w² = s(z) der Sphäre mit
+    Torus hat genau 4 Verzweigungspunkte; mit Vierteldrehung ist s = a z⁴ + e, also j = 1728,
+    τ = i. Die äquivariante Abbildung T: H⁰(O(D)) → H⁰(K(D)) macht die Familiencharaktere zum
+    nichttrivialen Teil des Fünferträgers. [E]
+  - Ein gemeinsamer Elternoperator gelingt nur mit zwei Multipletts: Naht an K^{1/2} ⊗ M mit
+    M² = O(D), Materie an K^{1/2} ⊗ O(D), dort gekoppelt an den geraden Teil auf dem Nahttorus
+    (3 gerade, 1 ungerade). Mit einem einzigen Multiplett scheitert er. [N, Lesart]
+  - Satzzahl: Gleichförmig drei Sätze widersprechen α unter der Lesart EM1. Offen bleibt der Zweig
+    mit zwei verborgenen Sätzen; entscheidend ist c₋/k. [N/C]
+  - a/ℓ_P mit vollem Feldinhalt: im H6-Schema etwa 10,8; über Regulatoren hinweg nicht festgelegt. [N]
+  - Der KMS-Zustand bei β = L ist eindeutig der Zustand größter Entropie bei mittlerer Energie null
+    (Gibbs). [E]
+  - Lean (87 Theoreme, ohne sorry): Viertelsektoren, Familiencharaktere, 3+2, ℤ₁₆-Arithmetik,
+    X-Ladungen, E₆(i) = 0. Offen ist die Eindeutigkeit, weil die Valenzformel fehlt. [E]
 - **Zurückgenommen oder korrigiert:**
   - Ein „Gitter in Planckeinheiten“ gibt es nicht.
   - Die Gabel c = 8 gegen 24 ist nur gegen die Operatorlesart entschieden.
   - Die Familiencharaktere legen die Satzzahl nicht fest.
   - J folgt nicht aus der Modenzahl, sondern aus der Blattstruktur.
+  - Die Einheitswindung erzwingt nicht genau eine Naht.
+  - Ein Elternoperator mit einem Multiplett liefert kein E₈.
+  - Die Wand am Schnitt ist kein allgemeiner Zwang, sondern hängt am Wilson-Regulator.
+  - Die ℤ₁₆-Bedingung erzwingt die 16 nur in der partnerfreien Fassung.
+  - Die Untergrenze a/ℓ_P ≥ 3,3 gilt nur für die gerechneten Regulatoren.
 - **Offen:**
-  - Was den Defekt im Grundzustand erzwingt (nichttriviales Massenbündel oder Defektsumme).
-  - Warum die Fermionen an K^{1/2} ⊗ O(D) koppeln.
-  - Der gravitative Zufluss.
-  - Die Satzzahl, über das Niveau eines gemeinsamen E₈ Stroms.
-  - Nichtperturbative Universalität und die chirale Gitterformulierung.
-  - θ₁₃ und δ aus TFPTs Kanälen (sin²θ₁₃ = 0,0231, etwa 2σ).
+  - Was die primitive Ladung bzw. den Sektor 1 und genau einen windenden Block wählt.
+  - Warum Naht- und Materiemultiplett getrennt an M und O(D) koppeln.
+  - c₋/k der Naht (Satzzahl).
+  - Der gravitative Fluss in Krümmung.
+  - Die Valenzformel in Lean.
+  - Nichtperturbative Universalität, chirale Gitterformulierung und Reflexionspositivität für einen
+    chiralen Regulator.
+  - θ₁₃ und δ aus TFPTs Kanälen (sin²θ₁₃ = 0,0231; 1,1σ bis 2,2σ je nach Datensatz laut externer
+    Prüfung; δ = 240° ist ein zugewiesener Texturwert).
   - Ein gemeinsamer Elternoperator.
 
 ## 4. Wiederkehrende Muster und Verbindungen

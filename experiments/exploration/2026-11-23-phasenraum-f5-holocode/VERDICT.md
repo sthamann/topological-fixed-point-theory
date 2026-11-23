@@ -1,6 +1,160 @@
 # Urteil
 
-## Aktueller Stand: H6h8 — Zufluss, Grundzustand, zweite Kritik (`z9_zufluss_grundzustand.py`, `z10_kritik_zwei.py`)
+## Aktueller Stand: H6h10 — dritte externe Prüfrunde (`z16_kritik_drei.py`)
+
+Bilanz unverändert bei 15 P und 5 L von 20. Drei externe Berichte vom selben Tag wurden geprüft. Ihre
+Pakete (PDF, ZIP, ein Lean-Zertifikat mit 15 Lemmas) liegen nicht im Repo; nachgerechnet ist alles,
+was sich aus dem Text rechnen lässt. Alle 21 Prüfungen in Z16 bestehen.
+
+**Bestätigt und übernommen.**
+- *Einheitswindung als relative Chernzahl.* Für die explizite Masse
+  M(z) = ½[[1+z, i(z−1)], [i(z−1), −1−z]] gilt exakt:
+  - det M = −z, M² = zI, Singulärwerte {1, |z|};
+  - Pf(M ⊗ iσ₂) = det M;
+  - Windung 1 auf dem Rand und genau ein Rangverlust bei z = 0.
+
+  Im Sektor 1 ist der Rangverlust also erzwungen. Die Wahl des Sektors bleibt offen.
+- *Äquivariante Abbildung vom Träger auf die Familien.* T(f) = (f − P₀f) dz/z ist surjektiv von
+  H⁰(O(D)) auf H⁰(K(D)), hat als Kern genau die zwei invarianten Trägermoden und vertauscht mit der
+  Vierteldrehung. Die Familiencharaktere (i, −1, −i) sind damit der nichttriviale Charakteranteil
+  des Fünferträgers (1, i, −1, −i, 1).
+- *Geometrischer Ursprung der Marken.* Eine verzweigte Doppelüberlagerung w² = s(z) der Sphäre mit
+  Torus braucht nach Riemann–Hurwitz genau r = 4 Verzweigungspunkte. Unter z → iz invariant ist nur
+  s = a z⁴ + e; das gibt w² = z⁴ − 1 mit Doppelverhältnis −1 und j = 1728. Vier Marken, zwei Blätter,
+  Torus und τ = i stammen so aus einem Objekt (Ordnung-4-Symmetrie vorausgesetzt).
+- *Nahttorus.* Zurückgezogen hat O(2) dort 3 gerade und 1 ungerade Schnitte, O(4) hat 5 gerade und 3
+  ungerade (wie im Atlasbefund vom 19.11.). Ein Elternoperator muss die leichten Fermionen an den
+  geraden Teil koppeln.
+- *Hopf-Modell.* Ein Ordnungsfeld mit Ladung 1 unter der Hopf-U(1) auf S³ hat als tiefste Moden genau
+  A z₀ + B z₁. Ihre Nullmenge ist ein Großkreis mit Windung 1: **genau eine Naht ist erzwungen**, ohne
+  Lage, Form oder Anzahl vorzugeben. Das ist verträglich mit Z11, weil H₂(S³) = 0 ist. Offen bleibt,
+  warum das Feld primitive Ladung trägt.
+- *Gibbs-Variationsprinzip.* Unter allen Zuständen mit mittlerer Energie null hat der KMS-Zustand bei
+  β = L eindeutig die größte Entropie, S(ρ\*) − S(ρ) = D(ρ‖ρ\*) > 0 (gerechnet). K6 wird damit ein
+  Variationsprinzip.
+- *Gravitativer Zufluss.* Der Bericht findet thermisch c = 0,49997 je Paar und 7,99995 für 16 Paare;
+  das bestätigt Z13 unabhängig.
+
+**Korrekturen an früheren Aussagen.**
+1. *Z9, Wand am Schnitt:* Die Phasenbarriere ist ein Artefakt des Wilson-Glieds. Mit einem
+   Ginsparg–Wilson-Operator gilt die Drehidentität exakt (Rest 1,3·10⁻¹⁵), und das Phasenpotential ist
+   flach (Spannweite 0 gegen 0,56 beim Wilson-Glied). Nielsen–Ninomiya erzwingt die Wand also nicht.
+   Für die Majoranapaarung von H6 ist das nicht gerechnet. Laut Bericht haben Overlap-Weylfermionen bei
+   endlichem Gitterabstand ein Problem mit der Reflexionspositivität (Lu–Shao); hier nicht geprüft.
+2. *Z8, die 16 aus ℤ₁₆:* Im Paarmodell tragen die Partner die Ladung −1, also ν = n₁ − n₃ = 0 für jede
+   Paarzahl. Die Elternanomalie erzwingt dort keine 16. Nur in der partnerfreien Fassung (16 Weyl mit
+   Ladung 1, Masse aus Φ mit Ladung 2) ist ν = 16 die ℤ₁₆-Bedingung. Sonst wählt erst die
+   E₈-Vervollständigung (Twistgewicht 1) die 16.
+3. *Z15, Untergrenze a/ℓ_P ≥ 3,3:* Sie gilt nur für die dort gerechneten Regulatoren. Wilson-Fermionen
+   geben je Feld κ = 0,221 (r = 1) bis 0,017 (r = 8). Robust bleibt nur der bosonische Sockel ohne
+   Randterm, a/ℓ_P ≥ 1,65. Das Gitter liegt also oberhalb der Planckskala, aber ohne feste Zahl.
+4. *Daten:* Für θ₁₃ sind Reaktorexperimente maßgeblich, nicht JUNO. Mit den Werten aus den Berichten
+   (hier nicht geprüft) ergeben sich folgende Abstände:
+   - sin²θ₁₂ gegen JUNO: 0,49σ;
+   - sin²θ₁₃ gegen NuFIT 6.1: 1,08σ, gegen Bari: 1,69σ;
+   - sin²2θ₁₃ gegen Daya Bay: 2,17σ.
+
+   δ = 240° ist im Register ein zugewiesener Texturwert, nicht hergeleitet.
+
+**Nicht prüfbar:** Die Lean-Zertifikate der Berichte und die dort behauptete Lean-Aussage, alle
+Nullstellen von E₆ lägen im Orbit von i. Im Repo ist nur E₆(i) = 0 bewiesen.
+
+**Was die Berichte gemeinsam schärfen.** Offen sind jetzt drei Verbindungen:
+- eine Regel, die den primitiven Sektor (Ladung oder Windung 1) und genau einen windenden Block wählt;
+- ein gemeinsamer Operator für schwere Nahtfelder, E₈ und drei leichte Familien, mit benannten
+  Kopplungen (gerader Teil auf dem Nahttorus);
+- Positivität und Gravitation bei endlichem Gitterabstand, für einen chiralen Regulator.
+
+## Davor: H6h9 — sechs Folgeprüfungen (`z11`–`z15`, Lean-Vertrag H6EXAKT20261123)
+
+```
+        K1 … K12 K13 K14 K15 K16 K17 K18 K19 K20    P  L  F  O  E
+   H6h8  P …  P   L   P   P   L   L   L   L   O    14  5  0  1  0
+   H6h9  P …  P   L   P   P   L   P   L   L   L    15  5  0  0  0
+```
+K20 (gemeinsamer Elternoperator, der zentrale Punkt der zweiten Kritik) ist neu im Katalog. Die
+sechs Prüfungen liefen parallel und wurden danach selbst nachgerechnet. Alle Skripte laufen
+reproduzierbar; negative Ergebnisse stehen jeweils in `befunde` und sind nicht als Prüfung erzwungen.
+
+**1. Einheitswindung als c₁ (`z11`, 15 Prüfungen).** TFPTs Einheitswindung ist im Original
+[u_Σ] = 1 ∈ K¹(S¹) (tfpt-42, Abschnitt 006, Z. 253) bzw. c₁(L₂) = deg g₂ = 1 auf der kompaktifizierten
+Normalensphäre (Abschnitt 012, Z. 27).
+- **Lokal: Lesart.** Diese Klasse ist genau die Windung von det M um die Naht, also der Index. Sie
+  wählt den verdrillten Defekt (Windung 1) und nicht den gewöhnlichen Wirbel (2).
+- **Als Zwang zu genau einer Naht: gescheitert.** Erstens liefert TFPT keinen geschlossenen
+  transversalen 2-Zyklus. Zweitens bricht das Wilson-Glied die Paarungsphase (Z9). Drittens ist
+  unter G der Grad von det M gerade (M ∈ Sym²E\*), also kommen verdrillte Nähte durch eine
+  geschlossene Fläche nur paarweise vor. c₁(Φ) = 1 erzwingt zwei, die Viereckenbilanz vier.
+  Gitter-Ginzburg–Landau auf Torus und Kugel bestätigt das.
+- Erzwungene Defekte liegen nicht quadratisch (auf der Kugel tetraedrisch). Die quadratische Lage
+  kommt in H6 aus A\*, nicht aus der Abstoßung.
+
+**2. Elternoperator (`z12`, 16 Prüfungen, 10 negative Befunde).** Gebaut ist ein BdG-Operator auf
+(Querschnitt mit Defekt) × k_z × Markensphäre. Der innere Dirac ist an K^{1/2} ⊗ L gekoppelt, und der
+Lift der Vierteldrehung wird aus der Invarianz von u⁴ − v⁴ berechnet.
+- **Hergeleitet:** Index 3 bei Grad 3; Charaktere {−1, i, −i}, die nur bei einer freien μ₄-Bahn der
+  Marken entstehen. Nahtmoden = Paare × Index des inneren Operators, alle mit Geschwindigkeit 1.
+- **Mit einem einzigen Multiplett gescheitert:**
+  - keine E₈, denn 48 Majorana-Weyl geben so(48);
+  - die Familien würden schwer;
+  - keine Vierteldrehung erfüllt beides zugleich, Familiencharaktere und J² = −1 auf der Naht.
+- **Mit zwei Multipletts Lesart.** Die Naht koppelt an K^{1/2} ⊗ M mit M² = O(D) (Index 1, Nullmode
+  √q, q → −q ist der Blattwechsel), die Materie an K^{1/2} ⊗ O(D) (Index 3, ungepaart). Dann gelten
+  Naht, E₈ und Familien zugleich. Die Aufteilung ist eingebaut.
+- Die Warnung des Atlas ist bestätigt: Auf den 248 Strömen ist J eine Involution (120/128 oder
+  136/112), nie i. Geometrische Drehung, Monodromie und Markendrehung sind drei verschiedene
+  ℤ₄-Wirkungen; ihre Identifikation braucht einen Verflechter.
+
+**3. Gravitativer Zufluss (`z13`, 16 Prüfungen).** **Hergeleitet** im freien Gitter.
+- Aus Casimirimpuls, Impulspolarisation und Energiestrom übereinstimmend: c = 0,4994 ± 0,0024 und
+  h_R = 0,0624 je verdrilltem Paar, also c = 7,99 und h_R = 0,999 für 16 Paare.
+- Eine Phasenwand im Volumen hat Chernzahl 1 je Windung, also c_Wand = 1/2 = c_Naht; der Viertelfluss
+  ändert sie nicht.
+- Die Wand trägt damit genau den Ausgleich von I₄ = (8/24) p₁.
+- Nicht gerechnet ist der ortsaufgelöste Fluss in gekrümmtem Hintergrund.
+
+**4. Satzzahl (`z14`, 26 Prüfungen).** Eine gemeinsame Sonde misst auf dem Gitter das Niveau n, auch
+bei gekoppelten Sätzen; die SO(2) hat in E₈ den Einbettungsindex 1.
+- *Gleichförmig drei Sätze* widersprechen α: Unter der Lesart EM1 (α³-Koeffizient = Niveau) gäbe
+  Niveau 3 α⁻¹ = 198,24.
+- *Drei Sätze, zwei verborgen* (sichtbares Niveau 1, c = 24) bestehen alle Zahlen; dagegen stehen nur
+  Lesarten.
+- Die Entscheidung bringt c₋/k der Naht (8 gegen 24), gleichwertig die eigene T-Phase der Naht.
+
+**5. a/ℓ_P mit vollem Feldinhalt (`z15`, 16 Prüfungen).** **Nicht festgelegt.**
+- Im H6-Schema (Wilson r = 1, schwerer Sektor, erweiterter Hilbertraum, g = 0,55) gilt a/ℓ_P ≈ 10,8.
+  Über alle Schemata reicht es von 3,3 bis 14,3.
+- Dominant ist der Shannon-Randterm des Eichflusses (etwa 1,8 nat je Kante und Eichboson), gefolgt von
+  der Behandlung der Verdoppler.
+- Robust ist nur a/ℓ_P ≥ 3,3: Das Gitter liegt nicht bei der Planckskala.
+
+**6. Lean-Vertrag (`experiments/theory-contracts/h6-exakte-teile-20261123/`).** 87 Theoreme
+kompilieren mit Mathlib, ohne `sorry`, ohne neue Axiome und ohne `native_decide`.
+- Viertelsektoren: g̃⁴ = −1, char. Polynom (X⁴+1)², jeder Sektor genau ein Viertel jedes Eigenraums.
+- Familiencharaktere und die Teilung 3+2 des Trägers.
+- Arithmetik: c ∈ 8ℤ ⇔ 16 | ν, Twistgewicht 1 ⇔ N = 16, 48 | N.
+- Die X-Ladungen des Standardmodells.
+- E₆(i) = 0.
+
+Offen bleibt die Eindeutigkeit der Nullstelle, weil Mathlib die Valenzformel fehlt. Das Ledger ist
+unverändert.
+
+**Prämissen von H6h9:** A\*, C″, D, E, G.
+
+**Was sich verschoben hat:**
+- Gravitativer Zufluss und Twistgewicht sind jetzt gerechnet.
+- Die Naht als genau eine erzwungene Naht ist widerlegt; Nähte kommen paarweise.
+- Der Elternoperator gelingt nur mit zwei Multipletts.
+- Die Satzzahl hängt an einer einzigen Größe, c₋/k.
+
+**Offen:**
+- Warum die Aufteilung in Naht- und Materiemultiplett.
+- Der Grundzustand.
+- c₋/k.
+- Der Fluss in Krümmung.
+- Die Valenzformel in Lean.
+
+## Davor: H6h8 — Zufluss, Grundzustand, zweite Kritik (`z9_zufluss_grundzustand.py`, `z10_kritik_zwei.py`)
 
 Bilanz unverändert: 14 P und 5 L von 19, nichts gescheitert, offen oder gesetzt. Geändert haben sich
 die Grundlagen von K9, K10, K17 und K19, und drei frühere Aussagen werden zurückgenommen. Alle

@@ -1,0 +1,141 @@
+Z15: Gitterabstand gegen Plancklänge mit dem vollen Feldinhalt von H6
+Prämisse D: a/l_P = 2 sqrt(kappa_gesamt), kappa in nat je Gitterfläche, ebener Schnitt in Z^3.
+Methode: je Querimpuls k zerfällt jedes freie Feld in 1D-Ketten. kappa = Mittel über k der Kettenentropie.
+
+Teil 1: freies reelles Skalarfeld
+   Kette je k: H = 1/2 sum [pi^2 + (phi_{n+1} - phi_n)^2 + M^2 phi^2], M^2 = m^2 + 4 sin^2(k1/2) + 4 sin^2(k2/2).
+   Kette bei kleiner Masse: S = -c ln M + const mit c = 0.1666 (freies Boson: 1/6 = 0.1667).
+   Steigung wie für c = 1: ja
+   Konvergenz des masselosen kappa_s (Ringgröße, Querimpulse):
+   Ring  200, Querimpulse  480^2: kappa_s = 0.0242615
+   Ring  400, Querimpulse  240^2: kappa_s = 0.0242610
+   Ring  400, Querimpulse  480^2: kappa_s = 0.0242617
+   Ring  400, Querimpulse  960^2: kappa_s = 0.0242619
+   Ring  800, Querimpulse  480^2: kappa_s = 0.0242617
+   Ring konvergiert (rel. < 1e-4): ja (6.5e-06); Querimpulse: ja (3.9e-05)
+   Infrarot: Fortsetzung unter M = 0.01 mit Steigung gegen konstant ändert kappa_s um 5.6e-07. Vernachlässigbar: ja
+   Kleine Massen als Infrarotregler: m = 0.003: 0.024261, m = 0.01: 0.024255, m = 0.03: 0.024212, m = 0.1: 0.023867, m = 0.3: 0.022005, m = 0.5: 0.019609, m = 1.0: 0.013661
+   m -> 0 stetig (|kappa_s(0.003) - kappa_s(0)| < 1e-4) und monoton: ja
+   Ergebnis: kappa_s = 0.02426 nat je Gitterfläche je reellem Skalar (masselos).
+   Zum Vergleich Srednicki (radiales Gitter): 0,30/(4 pi) = 0.0239. Gleiche Größenordnung, anderes Gitter.
+
+Teil 2: U(1)-Gitterphoton (Kogut-Susskind, schwache Kopplung, e = g E_int)
+   Je Querimpuls zerfällt die eichinvariante Algebra exakt in zwei Ketten mit derselben Masse M = |s_perp|:
+   TE: a = Querlinks senkrecht zu s_perp, auf Plätzen. Sie ist genau die Skalarkette.
+   TM: phi = E_x/M auf den x-Links, pi = Plakette b = grad_x A_par - M A_x. Gauß eliminiert E_par.
+   Auch TM ist eine harmonische Kette mit Masse M, nur auf den Linkpositionen n + 1/2.
+   Volles Gittermaxwell bei k = (0.7, 1.9): rot grad = 1e-17, 40 Eichmoden, Spektrum = 2 Ketten bis 4e-15,
+   <E_x(0) E_x(d)> d = 0,1,2: 0.71053190/0.71053190, 0.07268834/0.07268834, 0.01111511/0.01111511 (Maxwell/TM-Kette)
+   Volles Gittermaxwell bei k = (2.5, 0.3): rot grad = 1e-17, 40 Eichmoden, Spektrum = 2 Ketten bis 4e-15,
+   <E_x(0) E_x(d)> d = 0,1,2: 0.79292847/0.79292847, 0.07225309/0.07225309, 0.00984833/0.00984833 (Maxwell/TM-Kette)
+   TE + TM ist exakt das Gitterphoton, phi = E_x/M stimmt: ja
+   X_00(M=1) Ring gegen elliptisches Integral: 0.321318840887 / 0.321318840887: ja
+   Elektrisches Zentrum: Die x-Links über dem Schnitt tragen nur E_x. Bedingt auf diesen Fluss bleibt
+   der destillierbare TM-Anteil kappa_TM = 0.000669 (Ring 200/400/800: 0.000669/0.000669/0.000669).
+   Konvergiert: ja
+   Bedingen senkt die Entropie bei jedem M: ja
+   Randfluss je Link in e-Einheiten: Varianz 0.79587 (3D: <omega>/3 = 0.79587), Innovationsvarianz 0.70673 (Szegő).
+   Differentielle Entropie h_e = 1/2 ln(2 pi e) + 1/2 <ln C0(k)> = 1.24539 nat je Link.
+   Ganzzahliger Fluss E_int = e/g: Shannon-Anteil s(g) ~ h_e - ln g (wächst ohne Schranke für g -> 0).
+   Diskrete Entropie geht für breite Verteilung in die Gaußformel über: ja
+   Kante je Eichboson je Gitterfläche (Innovationsnäherung / Einzellink als obere Schranke):
+   g = 0.50: s = 1.9385 / 1.9979
+   g = 0.55: s = 1.8432 / 1.9026
+   g = 0.75: s = 1.5331 / 1.5925
+   g = 1.00: s = 1.2454 / 1.3048
+   g = 1.50: s = 0.8400 / 0.8882
+   Photon ohne Zentrum (Randlink ganz einer Seite oder keiner): 2 kappa_s = 0.04852.
+   Photon, elektrisches Zentrum, destillierbar: kappa_s + kappa_TM = 0.02493.
+   Photon, elektrisches Zentrum mit Kante bei g = 0,55: 1.8682.
+   Die Kante ist 74 mal größer als der destillierbare Teil.
+   Mehrdeutigkeit: Die Wahl des Zentrums ist Teil der Definition. Im Wärmeleitungs- oder Kegelschema
+   (Kabat) erscheint derselbe Kantenbeitrag als negativer Kontaktterm (Vektor: 2 - 6 = -4 Skalareinheiten);
+   Donnelly-Wall zeigen, dass dieser Term die Randmoden sind. Auf dem kompakten Gitter ist er positiv.
+   Nichtabelsch: hier als Kopien von U(1) gezählt (führende Ordnung). In der Formel H(R) + <ln dim R>
+   hat ln(1/g) den Koeffizienten (dim G + rang G)/2 statt dim G: SU(3) 5 statt 8, SU(2) 2 statt 3.
+   Das gibt eine untere Variante mit 8 statt 12 effektiven Kopien. U(1)_Y mit Ladungsquant 1/6 hätte
+   zusätzlich ln 6 = 1.792 je Link.
+
+Teil 3: Fermionen
+   Kette bei mu = 1: 0.3465735903; gedreht (s, B) = (0,6; 0,8): 0.3465735903; ln2/2 = 0.3465735903
+   Kettencode stimmt: ja
+   Naiv über die mu-Tabelle (Weg von Z2): kappa = 0.786575; Z2: 0.786575
+   Z2 reproduziert: ja
+   Unabhängig über direkte 2D-Integration (128^2): 0.786528: ja
+   Masse 0,3 direkt / Tabelle: 0.728369 / 0.728369: ja
+   Gestaffelte Fermionen: Die Spindiagonalisierung ist platzlokal und unitär. Daher ist ein naives Feld
+   exakt vier gestaffelte Felder, je zwei Geschmäcker: kappa je Geschmack = kappa_naiv/8 = 0.098322.
+   Wilson: h = sum alpha_j sin p_j + beta (m + r sum (1 - cos p_j)); je k zwei Kopien einer Kette mit d = (sin q, s, B + r(1-cos q)).
+   Wilson r = 1, masselos: 0.220890 (Querimpulse 64^2: 0.220868, Ring 400: 0.220868)
+   Konvergiert: ja
+   Massiv (je Dirac-Feld): m = 0.3: naiv 0.7284, Wilson 0.1801, m = 0.5: naiv 0.6588, Wilson 0.1588, m = 1.0: naiv 0.4780, Wilson 0.1203
+   Monoton fallend mit der Masse: ja
+   Wilson-Parameter, masselos: r = 0,5: 0.3982; r = 1: 0.2209; r = 2: 0.1040
+   Ein Wilson-Geschmack trägt 2.25 mal so viel wie ein gestaffelter Geschmack.
+   Die Verdoppler werden schwer, verschwinden aber nicht aus der Flächenentropie.
+   (Rechenzeit Wilson 28 s)
+
+Teil 4: Feldinhalt und Szenarien
+   Leicht: 3 Generationen mit nu_R = 48 Weyl = 24 Dirac (masselos an der Gitterskala).
+   Schwer: reelles 16-Plett der Naht = 16 Majorana-Weyl = 8 Dirac-Äquivalente mit Masse m (0,3 bis 1),
+   dazu das komplexe Paarungsfeld Phi als 2 reelle Skalare mit derselben Masse (Prämisse G).
+   Eichfelder: 12 (8 + 3 + 1), je eine Photonkopie. Higgs: 4 reelle Skalare, masselos.
+   Die 16 MW-Moden der Naht leben auf einer Linie im Raum. Sie tragen je Durchstoßpunkt durch die Ebene
+   höchstens (c_L + c_R)/12 ln(xi) = (2/3) ln(xi), also O(1) je Punkt und nichts je Fläche. Nur ein Nahtgas
+   auf Gitterskala (Fluktuationsweg aus Z9) könnte je Fläche beitragen; das ist hier nicht gerechnet.
+   Gravitonen: keine eigenen Gitterfreiheitsgrade, Gravitation ist unter D Zustandsgleichung.
+
+   Bausteine (nat je Gitterfläche):
+   24 leichte Dirac: gestaffelt 2.360, Wilson r=1 5.301, naiv 18.878
+   16-Plett + Phi bei m = 0,3/0,5/1: Wilson 1.485/1.309/0.990, naiv 5.871/5.309/3.851
+   4 Higgs: 0.097. 12 Eichbosonen: ohne Zentrum 0.582, destillierbar 0.299, Kante bei g = 0,55 zusätzlich 22.12
+
+   a/l_P (Zeilen: Fermionschema und schwerer Sektor; Spalten: Eichalgebra):
+                                 ohne Zentrum      EZ dest.     Kante g=1  Kante g=0,55   Kante g=0,5
+   gestaffelt, schwer aus                3.49          3.32          8.41          9.97         10.20
+   gestaffelt, schwer m=0,5              3.87          3.72          8.58         10.11         10.34
+   wilson, schwer aus                    4.89          4.77          9.09         10.55         10.76
+   wilson, schwer m=0,5                  5.40          5.29          9.37         10.79         11.00
+   naiv, schwer aus                      8.84          8.78         11.70         12.87         13.04
+   naiv, schwer m=0,5                    9.97          9.92         12.57         13.67         13.83
+
+   H6-eigenes Schema (Wilson r = 1 wie in Z7-Z10, schwer bei m = 0,5, erweiterter Hilbertraum, g = 0,55):
+   kappa = 29.13, a/l_P = 10.79.
+   Kernband (Wilson r = 1, schwer ein, Kante ein mit g in [0,5; 1], 8 bis 12 Kopien): a/l_P = 8.16 bis 11.04
+   Gesamtband über alle Schemata: kappa = 2.76 bis 50.91, a/l_P = 3.32 bis 14.27
+   Minimum: gestaffelt, schwer aus, Eich ez_dest. Maximum: naiv, schwer 0.3, Eich kante 0.5 12 marginal True.
+   Außerhalb des Gitterschemas (Kabat-Vorzeichen, Vektor = -4 kappa_s): kappa = 5.54, a/l_P = 4.71;
+   mit gestaffelten Fermionen ohne schweren Sektor kappa = 1.29, a/l_P = 2.27.
+
+   Empfindlichkeit: je eine Wahl variiert, Rest wie H6-eigenes Schema (a/l_P von bis):
+   Kante (aus / obere Schranke g=0,5 + ln6)        5.29 bis  11.45  (Breite 6.16)
+   Verdoppler (gestaffelt / Wilson r / naiv)      10.11 bis  13.67  (Breite 3.55)
+   Kopplung g (0,5 bis 1,0)                        9.37 bis  11.00  (Breite 1.63)
+   nichtabelsche Zählung (8 / 12 Kopien)           9.33 bis  10.79  (Breite 1.47)
+   schwerer Sektor (aus / m = 0,3 bis 1)          10.55 bis  10.83  (Breite 0.28)
+   Higgs und Phi (aus / ein)                      10.77 bis  10.79  (Breite 0.03)
+
+   Gitterskala im H6-Schema: 1/a = 1.13e+18 GeV. SM-Einschleifenkopplungen dort (Eingabe MZ-Werte):
+   g1 (GUT-normiert) = 0.601, g2 = 0.510, g3 = 0.503. Daher g = 0,55 als Referenz.
+   H6 selbst legt g an der Gitterskala nicht fest (induzierte Kopplung aus Fermionschleifen, Y1).
+
+Befunde (nicht erzwungen):
+   Gitter in Planckeinheiten möglich (kappa_min <= 1/4): nein
+   a/l_P eindeutig (Bandbreite unter 20 %): nein
+   Kante dominiert im H6-Schema (mehr als alles andere zusammen): ja
+   Wilson-Geschmack gleich gestaffeltem Geschmack: nein
+   Destillierbarer TM-Anteil unter 5 % von kappa_s: ja
+   Vorzeichen des Eichbeitrags schemaunabhängig: nein (Kabat-Schema gegen Gitter)
+   Größte Empfindlichkeit: Kante (aus / obere Schranke g=0,5 + ln6); dann Verdoppler (gestaffelt / Wilson r / naiv).
+
+Urteil:
+   a/l_P ist in H6 keine bestimmte Zahl. Robust ist nur die untere Schranke a/l_P >= 3.3 in jedem
+   Gitterschema. Mit Kabats Vorzeichen (außerhalb des Gitters) fiele sie auf 2.3; 1 wird nie erreicht.
+   Im H6-eigenen Schema liegt a/l_P bei etwa 11 (Kernband 8.2 bis 11.0),
+   über alle Schemata bei 3.3 bis 14.3.
+   Den Ausschlag gibt die Kante der Eichfelder: die Shannon-Entropie des ganzzahligen Randflusses,
+   rund 1,8 nat je Link und Eichboson bei g = 0,55, mit ln(1/g) wachsend. Danach kommen die Verdoppler.
+   Für eine Zahl braucht D drei Festlegungen: die Zentrumswahl als Teil von eta, g an der Gitterskala
+   aus H6 selbst und die chirale Gitterformulierung (Wilson r, gestaffelt, Domänenwand).
+
+Alle Prüfungen bestanden: True (16/16). Laufzeit 43 s.

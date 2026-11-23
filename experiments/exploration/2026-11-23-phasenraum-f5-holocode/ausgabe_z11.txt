@@ -1,0 +1,168 @@
+A. Was TFPT unter Einheitswindung versteht
+
+   docs/research/TFPT-STAND.md:26
+      P1 im Stand: orientierter, reflexionspositiver Randkern mit Einheitswindung.
+   documents/tfpt_1_architecture_e8/sections/001-source.tex:72
+      Architekturpapier: Randkern mit Einheitswindung [u_Sigma] = 1, primitives Postulat.
+   documents/archive--paper-latex--tfpt-42/sections/006-subsection-character-trace-identities-and-the-abelian-in.tex:253
+      Original (tfpt-42): [u_Sigma] = 1 in K^1(S^1) = Z, also eine Schleifenklasse auf dem Nahtumlauf.
+   documents/archive--paper-latex--tfpt-42/sections/006-subsection-character-trace-identities-and-the-abelian-in.tex:280
+      Dort: ein positiver Nahtumlauf ändert den Spektralfluss um eins; Delta = 2 pi, c3 = Delta/(16 pi^2).
+   documents/archive--paper-latex--tfpt-42/sections/012-subsection-bosonic-relative-index-and-higgs-selection.tex:12
+      Original: L2 = det E2 über der kompaktifizierten orientierten Normalensphäre der Naht.
+   documents/archive--paper-latex--tfpt-42/sections/012-subsection-bosonic-relative-index-and-higgs-selection.tex:27
+      Dort: c1(L2) = Grad der Verklebungsfunktion g2 = e^{i phi} = 1, c1(L3) = 0.
+   documents/archive--paper-latex--tfpt-42/sections/012-subsection-bosonic-relative-index-and-higgs-selection.tex:50
+      Dort: der Spinlift wirkt im Zweierblock mit halbem Winkel, erst die Determinante windet einmal.
+   documents/archive--paper-latex--tfpt-42/sections/029-section-frw-reduction-seam-transfer-and-the-scalaron-bra.tex:205
+      Original: Domänenwandzahl N_DW = n = Nahtwindung, also N_DW = 1.
+   documents/archive--paper-latex--tfpt-42/sections/011-subsection-family-monodromy-and-occupancy.tex:80
+      Original: jede Ecke trägt eine Vierteldrehung des Spinlifts, vier Ecken ergeben eine volle Windung.
+   docs/research/fundamental-plan/TFPT-MARKIERTER-STABILISATOR-20261112.txt:39
+      Plan 12.11.: markierte Einheitswindung = Endliniengrad in pi2(C/K) = pi1(K) = Z.
+   docs/research/fundamental-plan/TFPT-MARKIERTER-STABILISATOR-20261112.txt:40
+      Dort: der Endliniengrad ist die erste Chernzahl des Linienbündels über einer inneren Wurzelsphäre.
+   docs/research/fundamental-plan/TFPT-MARKIERTER-STABILISATOR-20261112.txt:90
+      Dort: welche Klasse physisch realisiert wird, muss eine Regel noch begründen.
+   experiments/theory-contracts/landkarte-hypothesen-20261119/check_h03_fluss.py:42
+      Atlas 19.11.: Fluss 1 auf dem Markentorus ist kein Rückzug von der Kugel (Rückzüge haben geraden Grad).
+   verification/status_ledger.csv:135
+      Ledger SEAM.HORIZON.01: 8 pi = |mu4| mal 2 pi Nahtwindung.
+
+   Drei Orte für die Einheit. (i) Lokal: Klasse der Schleife auf dem Nahtumlauf, über Verklebung c1 = 1
+   auf der kompaktifizierten Normalensphäre (Determinantenlinie, Halbwinkel im Zweierblock).
+   (ii) Auf dem Nahtquotienten: vier Ecken mit je einer Vierteldrehung. (iii) Intern: Wurzelsphäre in C/K.
+   Keiner der drei Orte ist eine geschlossene Querfläche im Raum, die die Naht von außen umschließt.
+
+B. Lokale Einheit im Nahtmodell von Z7
+
+   verdrillter Defekt (J, Phase windet um pi), ein Paar: Windung von det M = 1, chirale Moden aus Z7 = 1
+   gewöhnlicher Wirbel (ohne J, Windung 1), ein Paar: Windung von det M = 2, chirale Moden aus Z7 = 2
+   nur J, keine Massenwindung: Windung von det M = 0, chirale Moden aus Z7 = 0
+   verdrillter Defekt, zwei Paare: Windung von det M = 2, chirale Moden aus Z7 = 2
+   Die Klasse der Schleife M(phi) in K^1(S^1) ist die Windung von det M. Der verdrillte Defekt hat genau
+   die Einheit 1, der gewöhnliche Wirbel 2. Lokal wählt die Einheitswindung also den verdrillten Defekt.
+   Das ist die Lesart von [u_Sigma] = 1 und SF = 1 im Nahtmodell; c1 = 1 auf der Normalensphäre ist
+   dieselbe Zahl über die Verklebung. Sie setzt die Naht voraus und erzwingt sie nicht.
+   Dazu passt das Original: N_DW = n (Domänenwandzahl = Nahtwindung, also 1). Z9 fand für den verdrillten
+   Defekt auf dem Gitter genau eine Wand (Periode pi der Massenphase, ein Minimum je Periode).
+
+C. Grad- und Paritätsbuchhaltung unter G (exakt)
+
+   Ladungen: U(1)_V (gemeinsame Phase der Fermionen) und J (Z4). eta+ = (1, +1), eta- = (1, -1),
+   Phi = (-2, 2), Wilson eta+ eta- = (2, 0), det M ~ Phi^2 = (-4, 0). Ein verdrillter Durchstoßpunkt
+   trägt die J-Holonomie i auf eta+ und -i auf eta-; Phi windet dort um pi, det M einmal.
+   Auf einer geschlossenen Querfläche S mit k gleich orientierten Durchstoßpunkten und U(1)_V-Fluss f
+   (Fermioneinheiten) sind die Fermionlinien echt genau dann, wenn f + k/4 und f - k/4 ganz sind.
+
+   zulässige k (mit beiden J-Ladungen): [0, 2, 4, 6, 8]
+   zulässige k, wenn es nur eta+ gäbe:   [0, 1, 2, 3, 4, 5, 6, 7, 8]
+   R1: Grad der Determinantenlinie det M = 1: verdrillte Durchstoßpunkte keine zulässige Lösung
+   R2: c1 des Phi-Bündels = 1: verdrillte Durchstoßpunkte [2]
+   R3: Vierteldrehungen summieren zu 2 pi (vier Ecken): verdrillte Durchstoßpunkte [4]
+   R4: c1 der Paarungsphase in Fermioneinheiten = 1: verdrillte Durchstoßpunkte [4]
+   Grad von det M = 2 c1(Phi) ist immer gerade. Eine einzelne verdrillte Naht durch eine geschlossene
+   Querfläche ist unter G topologisch verboten. Das passt zum Atlas: Rückzüge haben geraden Grad.
+   Symmetrie von psi chi (bis aufs Vorzeichen) in O(2): 8 Elemente (D4); Kommutatoren: [(-1, 0, 0, -1), (1, 0, 0, 1)]; J darunter: False
+   Für jedes echte Paarbündel E gilt: M liegt in Sym^2 E*, det M in (det E*)^2, also ist die Summe der
+   det-Windungen -2 c1(E) gerade. Auch nichtabelsche Holonomien auf dem Paar ändern das nicht.
+
+   Alle 262144 Z2-Blattfelder auf dem 3x3-Torus und alle 4096 auf der Würfelkugel:
+   Zahl der Plaketten mit Monodromie -1 ist immer gerade: Torus True, Kugel True (vorkommend: [0, 2, 4, 6, 8])
+
+D. Ginzburg-Landau auf dem Gitter-Torus mit Bündel vom Grad d
+
+   Torus 24 x 24, Energie sum |Phi_j - e^(i q A) Phi_i|^2 + lambda (|Phi|^2 - v^2)^2, lambda = 0.25.
+   Fünf Zufallsstarts je Fall, dazu ein Start mit konstantem Phi = v.
+
+   q = 1, d = +0, lambda = 0.25: Windungen am Minimum [[]] (netto [0.0], q d = +0); vorher [202, 172, 204, 200, 182] Wirbelplaketten; E = 0.0000 bis 0.0000
+   q = 1, d = +1, lambda = 0.25: Windungen am Minimum [[1]] (netto [1.0], q d = +1); vorher [201, 165, 195, 197, 181] Wirbelplaketten; E = 12.2462 bis 12.2462
+      |Phi| am Kern höchstens 0.297 v, im Volumen (Median) 0.996 v
+   q = 1, d = +1, lambda = 2.0: Windungen am Minimum [[1]] (netto [1.0], q d = +1); vorher [201, 165, 195, 197, 181] Wirbelplaketten; E = 17.6290 bis 18.7868
+      |Phi| am Kern höchstens 0.751 v, im Volumen (Median) 0.999 v
+   q = 2, d = +1, lambda = 0.25: Windungen am Minimum [[1, 1]] (netto [2.0], q d = +2); vorher [194, 166, 194, 182, 184] Wirbelplaketten; E = 20.6676 bis 20.6676
+      |Phi| am Kern höchstens 0.303 v, im Volumen (Median) 0.989 v
+   q = 4, d = +1, lambda = 0.25: Windungen am Minimum [[1, 1, 1, 1]] (netto [4.0], q d = +4); vorher [192, 170, 206, 184, 186] Wirbelplaketten; E = 34.1875 bis 34.1875
+      |Phi| am Kern höchstens 0.314 v, im Volumen (Median) 0.969 v
+   q = 1, d = -2, lambda = 0.25: Windungen am Minimum [[-1, -1]] (netto [-2.0], q d = -2); vorher [206, 172, 206, 194, 190] Wirbelplaketten; E = 20.6676 bis 20.6676
+      |Phi| am Kern höchstens 0.303 v, im Volumen (Median) 0.989 v
+
+   d = 0: alle Wirbel aus den Zufallsstarts verschwinden: ja
+   d != 0: genau |q d| Elementarwirbel gleichen Vorzeichens in jedem Lauf, auch vom konstanten Start und bei lambda = 2: ja
+   Die Wirbel sind echte Nullstellen (|Phi| an den Plakettenecken unter halbem Volumenwert, lambda = 0.25; bei lambda = 2 ist der Kern kleiner als eine Plakette): ja
+   Sie kosten Energie und bleiben trotzdem: ja; Plakettenwindungen ganzzahlig auf 1e-8: ja
+   Lesart für H6: Ist Psi = Phi^2 (det M) das Feld mit Bündelgrad 2 c1(Phi), dann ist jeder Elementarwirbel
+   von Psi ein verdrillter Defekt. q d = 2 ist R2, q d = 4 ist R3/R4. q d = 1 wäre die einzelne Naht (R1),
+   die als Bündel von Psi allein existiert, aber nach C mit Phi und den Fermionen unter G unvereinbar ist.
+
+   Vier erzwungene Wirbel auf dem quadratischen Torus (Plakettenmitten) bei [[6.5, 9.5], [6.5, 21.5], [18.5, 3.5], [18.5, 15.5]]; größte Abweichung der
+   Abstände vom Halbperiodengitter {0, L/2}^2: 6.0 Gitterabstände.
+   Sie liegen nicht auf dem Halbperiodengitter, sondern versetzt (rhombisch).
+
+E. Phi mit freiem Blatt: gewöhnlicher Wirbel gegen zwei verdrillte Defekte (c1(Phi) = 1)
+
+   Unter G ist das Vorzeichen von Phi das Blatt und die Lage des Schnitts eine Eichwahl. Auf dem Gitter
+   heißt das: Auf jedem Link ist das Vorzeichen frei, die Energie ist min_sigma |Phi_j - sigma U Phi_i|^2.
+   gewöhnlicher Wirbel (Blatt fest): E = 12.2462; Psi-Windungen [2]; mit freiem Blatt bewertet E = 12.2386
+   derselbe Wirbel mit freiem Blatt nachrelaxiert: E = 11.6313; Psi-Windungen [1, 1], Blattmonodromien 2
+   zwei verdrillte Defekte (Blatt frei): E = 7.9534; Psi-Windungen [1, 1], Blattmonodromien 2
+   Mit c1(Phi) = 1 erzwingt das Bündel also zwei verdrillte Nähte, nicht eine; der gewöhnliche Wirbel
+   (Einheit 2, zwei Moden je Paar) ist teurer. Jede der beiden Nähte trägt lokal die Einheit 1.
+
+F. Kugel (Würfeloberfläche, N = 10)
+
+   q = 1, d = 0: Windungen [[], [], []], E = 0.0000
+   q = 1, d = 1: Windungen [[1], [1], [1]], E = 13.2029
+   q = 2, d = 1: Windungen [[1, 1], [1, 1], [1, 1]], E = 20.8872
+   q = 4, d = 1: Windungen [[1, 1, 1, 1], [1, 1, 1, 1], [1, 1, 1, 1]], E = 34.7367
+   Zwei erzwungene Defekte (q d = 2) stehen im Winkel 180.0 Grad: Zur Naht im Nordpol der
+   Normalensphäre gehört ein zweiter verdrillter Punkt, bei Gegenlage im Unendlichen (D_S).
+   Vier erzwungene Defekte (q d = 4): j-Invariante der Lage im Betrag 0.0
+   (Quadrat, harmonisch, mu4: 1728; Tetraeder: 0).
+
+G. Urteil
+
+   1. Lokal ist die Identifikation sauber: [u_Sigma] = 1 in K^1(S^1) ist die Windung von det M um die
+      Naht, gleich dem Index und der Modenzahl je Paar. Sie wählt den verdrillten Defekt (1) und
+      schließt den gewöhnlichen Wirbel (2) aus. c1 = 1 auf der Normalensphäre ist dieselbe Zahl über die
+      Verklebung. Das ist eine Lesart, die die Naht voraussetzt; erzwungen wird nichts.
+   2. Erzwingen kann nur ein Bündel auf einer geschlossenen Querfläche. Das verlangt zweierlei, was TFPT
+      nicht enthält: einen nicht zusammenziehbaren 2-Zyklus quer zur Naht (kompakter Raum) und eine exakte,
+      geeichte Phase der Paarung. Auf dem H6-Gitter bricht das Wilson-Glied diese Phase explizit (Z9),
+      dann gibt es kein Bündel mit c1, nur das Z2 des Blatts.
+   3. Auch wenn man beides zugesteht: Unter G ist der Grad von det M auf jeder geschlossenen Fläche gerade.
+      Eine einzelne verdrillte Naht (R1) ist verboten. c1(Phi) = 1 erzwingt zwei verdrillte Nähte,
+      die Viereckenbilanz (Vierteldrehungen zu 2 pi) und c1 = 1 in Fermioneinheiten erzwingen vier.
+   4. Die Satzzahl (c = 8 gegen 24) bleibt davon unberührt: Jede erzwungene Naht trägt die Moden aller
+      windenden Sätze. Die Einheitswindung legt die Zahl der Nähte fest, nicht die Zahl der Sätze.
+   5. Lage: Zwei erzwungene Defekte stehen auf der Kugel im Winkel 180 Grad. Vier liegen auf der Kugel bei
+      j = 0.0 im Betrag (Quadrat 1728, Tetraeder 0), auf dem Torus nicht auf den Halbperioden.
+      Die quadratische Lage der Marken folgt also nicht aus der Abstoßung erzwungener Defekte;
+      in H6 kommt sie aus A* (E6 = 0 auf dem Nahttorus).
+   Urteil: Lesart lokal; gescheitert als Erzwingung genau einer Naht. Ein Ausweg verlangt eine Änderung
+   von G: ein Paar ohne Partner entgegengesetzter J-Ladung (dann fiele das J-invariante Wilson-Glied)
+   oder ein Paarungsfeld, dessen det M kein Quadrat ist. Beides ist hier nicht gerechnet.
+
+Zusammenfassung
+   bestanden: Zitate an den angegebenen Zeilen vorhanden
+   bestanden: det-Windung um die Naht = Modenzahl aus Z7 (vier Fälle)
+   bestanden: unter G ist die Zahl verdrillter Durchstoßpunkte gerade
+   bestanden: R1 (eine einzelne Naht als Determinantengrad 1) ist unzulässig
+   bestanden: R2 verlangt genau zwei, R3 und R4 genau vier Durchstoßpunkte
+   bestanden: D4-Holonomien umgehen die Parität nicht (J ist kein Kommutator)
+   bestanden: Blattmonodromie -1 tritt auf geschlossenen Flächen nur paarweise auf (erschöpfend)
+   bestanden: d = 0: Nullstellen verschwinden
+   bestanden: d != 0: genau |q d| erzwungene Elementarwirbel in jedem Lauf
+   bestanden: erzwungene Wirbel sind Nullstellen des Betrags
+   bestanden: erzwungene Wirbel kosten Energie
+   bestanden: Peierls-Phasen konsistent: Plakettenwindungen ganzzahlig
+   bestanden: c1(Phi) = 1 mit freiem Blatt: genau zwei verdrillte Defekte, je Psi-Windung 1
+   bestanden: zwei verdrillte Defekte haben weniger Energie als der gewöhnliche Wirbel
+   bestanden: Kugel: genau |q d| Elementarwirbel, d = 0 ohne Wirbel
+   Befund (ja): lokal: Einheit = det-Windung 1 = verdrillter Defekt (gewöhnlicher Wirbel hat 2)
+   Befund (ja): ohne Partner eta- wäre ein einzelner Durchstoßpunkt zulässig (G liefert aber beide J-Ladungen)
+   Befund (nein): vier erzwungene Wirbel sitzen auf einem Halbperiodengitter des Torus
+   Befund (ja): gewöhnlicher Wirbel zerfällt unter freiem Blatt von selbst in zwei verdrillte
+   Befund (ja): Kugel: zwei erzwungene Defekte liegen gegenüber (Winkel > 150 Grad)
+   Befund (nein): Kugel: vier erzwungene Defekte liegen quadratisch (j nahe 1728)
+   Befund (ja): Kugel: vier erzwungene Defekte liegen tetraedrisch (j nahe 0)
