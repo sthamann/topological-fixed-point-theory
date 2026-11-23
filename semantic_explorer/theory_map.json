@@ -32,12 +32,12 @@
     },
     {
       "conditions": [
-        "Under the selected D₅ carrier and 3+2 marking; no physical identification follows from rank alone."
+        "Five-dimensional meromorphic mode space and stated Clifford construction."
       ],
       "from": "map:p2",
-      "kind": "conditional_bridge",
-      "label_de": "wird als D₅-Träger realisiert",
-      "label_en": "is realized as a D₅ carrier",
+      "kind": "construction",
+      "label_de": "trägt die Clifford Konstruktion des D₅ Halbspinors",
+      "label_en": "carries the Clifford construction of the D₅ half-spinor",
       "source_refs": [
         {
           "excerpt": "AX.P2.01,\"g_car = 5 carrier interface (3+2) -- a DECLARED input but an OVER-DETERMINED bootstrap fixed point, not a free choice: forced three independent ways by the E8 closure (bootstrap mu^2-5mu+4=0, BOOT.01/v6), uniquely solved by the Pascal carrier condition 2^g=g^2+g+2 => g=5 (Lean-formalised, no sorry; FORM.LADDER.01), and the (g_car,N_fam)=(5,3) pair is the anchor moment data e2(a)=g_car (ARCH.CORE.01/v53; a=(1,1,2) the unique multiset with elem-symm (4,5,2)). Reduces with P1 to {a, pi}. SYNTHESIS NOTE (reduction state 2026-07-21; text consolidation, marker Axiom UNCHANGED): P1 + the four marks are [E]-anchored (v216); given ",
@@ -1055,6 +1055,122 @@
           "source_id": "research-source:946f4899af6dbb1115b024dd"
         }
       ]
+    },
+    {
+      "conditions": [
+        "The marked divisor and its quarter-turn action are the input to the carrier derivation."
+      ],
+      "from": "map:shared-fourmark-origin",
+      "kind": "derivation_within_assumptions",
+      "label_de": "liefert fünf Moden und die 3 + 2 Teilung",
+      "label_en": "yields five modes and the 3 + 2 split",
+      "source_refs": [
+        {
+          "path": "documents/origin_theory/sections/001-section-the-whole-integer-skeleton-from-one-pair-gcar-nf.tex",
+          "line_start": 43,
+          "line_end": 80,
+          "sha256": "a29b538e1051f3ecb4e4b2fbb149760b9f5080b1aca3c4ddd72d912c410faa07",
+          "excerpt": "\\noindent\\emph{One object, two canonical invariants.} The pair $(\\gcar,\\Nfam)$ is read off the\n\\emph{same} four-point divisor $D=\\mu_4$ (degree $4$) by the two canonical functors on $\\PP^1$: the cycle\nside $\\operatorname{rank}H_1(\\PP^1\\setminus\\mu_4)=\\deg D-1=3=\\Nfam$ and the function side (Riemann--Roch)\n$h^0(\\PP^1,\\mathcal O(\\mu_4))=\\deg D+1=5=\\gcar$, the latter matched by $\\operatorname{rank}(D_5)=5$ (the\ncarrier is the $\\mathfrak{so}(10)$ half-spinor). Reading the carrier as this meromorphic seam-mode space\n(at most simple poles on $\\mu_4$) is geometrically natural \\mE\\ in its arithmetic, though the physical\nidentification stays \\mC\\ and does not displace the over-determined $\\gcar=5$ (Pascal/bootstrap/Lean)\n\\veri{v189\\_riemann\\_roch\\_carrier.py}.\n\\par\\smallskip\n\\noindent\\emph{And the function side generates $D_5$ itself, not just $\\gcar$.} The even Clifford algebra of\nthe $5$-dimensional mode space closes the chain $\\mu_4\\to\\gcar\\to D_5$: $\\Lambda^{\\mathrm{even}}(C_{\\mathrm{car}})\n=\\binom50+\\binom52+\\binom54=1+10+5=16=2^{\\gcar-1}=\\dim S^+$, which is exactly the $\\mathfrak{so}(10)=D_5$\nhalf-spinor. So the carrier is not merely ``rank $5$ like $D_5$'' --- it \\emph{is} the Clifford spinor of the\nRiemann--Roch mode space \\mE, with the physical identification again \\mC\\ \\veri{v197\\_rr\\_carrier\\_clifford\\_d5.py}.\n\n\\begin{keybox}[The $(5,3)$ generator and the Pythagorean mass volume \\mE\\ (\\veri{v53\\_compiler\\_core.py})]\nBy sum, difference and halving,\n\\[\n  \\operatorname{rank}E_8=\\gcar{+}\\Nfam=8,\\qquad |\\Z_2|=\\gcar{-}\\Nfam=2,\\qquad |\\mu_4|=\\tfrac{\\gcar+\\Nfam}{2}=4,\n\\]\nand $(\\Nfam,|\\mu_4|,\\gcar)=(3,4,5)$ is \\emph{the} Pythagorean triple. This is load-bearing: the\ngrand-mass-volume exponent $\\Delta_Y=\\gcar^2=25$ ($\\det M_{\\mathrm{SM}}\\sim(\\phiz)^{25}$) splits as a\n\\emph{difference of squares},\n\\[\n  \\boxed{\\ \\Delta_Y=\\gcar^2=\\underbrace{\\Nfam^2}_{\\text{down}=9}\n  +\\underbrace{(\\gcar{-}\\Nfam)(\\gcar{+}\\Nfam)}_{=\\,|\\Z_2|\\cdot\\operatorname{rank}E_8=\\dim S^+=16}\n  =9+16=25\\ }\n\\]\n(the $K$-row sums $(6,9,10)$: down carries $\\Nfam^2$, up$+$lepton carry $|\\Z_2|\\!\\cdot\\!\\operatorname{rank}E_8$).\nThe \\emph{anchor} $a=(1,1,2)$ is the unique $3$-multiset whose elementary symmetric functions are the\ncompiler atoms $(|\\mu_4|,\\gcar,|\\Z_2|)=(4,5,2)$; equivalently $\\chi_a(t)=(t{-}1)^2(t{-}2)=t^3-|\\mu_4|t^2+\\gcar t-|\\Z_2|$.\nSharper (\\veri{v491\\_p2\\_partition\\_corollary.py}): only $e_1{=}4$ is needed --- three positive integers\nsumming to $4$ already force $\\{1,1,2\\}$, so $\\gcar{=}5$ and $|\\Z_2|{=}2$ are corollaries of the four\nmarks given the weight typing; \\texttt{AX.P2.01} stays the declared axiom (the residual is the typing).\nAnd the typing is itself hardened (\\veri{v499\\_p2\\_weights\\_deligne\\_bg.py}): Deligne $+$\nBirkhoff--Grothendieck $+$ Mehta--Seshadri stability derive integrality, positivity ($h^0{=}0$) and the\nsum $4$ from the four marks, rank $3$, the cusp class and (U) --- the \\mC\\ residual is the module\nidentification plus (U) itself.",
+          "source_id": "paper-source:623921d3c25242053db291db"
+        },
+        {
+          "path": "experiments/theory-contracts/rr-residue-memory-20260921/RR_VORAUSSETZUNGEN.md",
+          "line_start": 30,
+          "line_end": 70,
+          "sha256": "c115ba579715538674a9d4fd1fc119de7a051a4b5459acb772b07195365ea3aa",
+          "excerpt": "## 2. Die innere 3+2-Involution ist jetzt explizit\n\nSetze P(z)=z⁴−1. Eine Basis von E ist\n\\[\ne_n(z)=\\frac{z^n}{P(z)},\\qquad n=0,1,2,3,4.\n\\]\nDie Funktionen haben höchstens einfache Pole an D und sind bei Unendlich regulär. Die konstante Funktion ist e₄−e₀.\n\nFür die geometrischen Pullbacks\n\\[\n(Rf)(z)=f(iz),\\qquad(Sf)(z)=f(1/z)\n\\]\nfolgt unmittelbar\n\\[\nR=\\operatorname{diag}(1,i,-1,-i,1),\n\\qquad Se_n=-e_{4-n}.\n\\]\nDamit gelten R⁴=I, S²=I und SRS=R⁻¹. Insbesondere liegt R² im Zentrum dieser Diederwirkung.\n\nDie Operatoren\n\\[\nP_c=\\frac{I+R^2}{2},\\qquad P_w=\\frac{I-R^2}{2}\n\\]\nsind komplementäre Projektoren mit\n\\[\n\\operatorname{rank}P_c=3,\\qquad\\operatorname{rank}P_w=2.\n\\]\nKonkret liegen e₀,e₂,e₄ im Dreierraum, e₁,e₃ im Zweierraum. Beide Räume werden von R und S erhalten.\n\n**Der präzise positive Satz:** Auf dem vorhandenen markierten RR-Träger ist die Zerlegung 3+2 durch die zentrale Halbwendung ausgewählt. Dieser Operator ist weder die Einschränkung einer bereits positiv projizierten Zustandsinvolution noch die reine CAR-Polarisation. Die früheren Ausschlüsse dieser beiden Gleichsetzungen treffen diese Konstruktion deshalb nicht.\n\nMit der bisherigen TFPT-Vorzeichenkonvention lautet die innere Involution εint=−R². Die Zahl 3 allein wird dabei nicht mit dem Familienraum gleichgesetzt: Der Dreierraum E_c trägt unter R die Eigenwerte (1,−1,1); die drei nichttrivialen Familiencharaktere tragen (i,−1,−i). Ihre Gruppenwirkungen unterscheiden sich.\n\n## 3. Der vorhandene Hyperladungsoperator folgt auf diesem Träger\n\nDie traceless Ladungsverteilung auf beiden Blöcken erfüllt 3y_c+2y_w=0. Mit der üblichen, bereits im Compiler benutzten Normierung y_w=1/2 folgt\n\\[\nY=-\\frac13P_c+\\frac12P_w\n=\\frac{I+5\\varepsilon_{\\rm int}}{12}.\n\\]\nDie Normierung und die Ladungskonjugationskonvention werden also benannt; sie werden nicht durch einen bloßen Projektorrang physisch bestimmt.",
+          "source_id": "research-source:be666ae37d3b840796f4fb91"
+        }
+      ],
+      "to": "map:p2"
+    },
+    {
+      "conditions": [
+        "Identify the marked eigenspaces on the common source with physical color and weak actions."
+      ],
+      "from": "map:p2",
+      "kind": "open_requirement",
+      "label_de": "an die physische Eichwirkung binden",
+      "label_en": "identify the physical gauge action",
+      "source_refs": [
+        {
+          "path": "documents/origin_theory/sections/001-section-the-whole-integer-skeleton-from-one-pair-gcar-nf.tex",
+          "line_start": 43,
+          "line_end": 80,
+          "sha256": "a29b538e1051f3ecb4e4b2fbb149760b9f5080b1aca3c4ddd72d912c410faa07",
+          "excerpt": "\\noindent\\emph{One object, two canonical invariants.} The pair $(\\gcar,\\Nfam)$ is read off the\n\\emph{same} four-point divisor $D=\\mu_4$ (degree $4$) by the two canonical functors on $\\PP^1$: the cycle\nside $\\operatorname{rank}H_1(\\PP^1\\setminus\\mu_4)=\\deg D-1=3=\\Nfam$ and the function side (Riemann--Roch)\n$h^0(\\PP^1,\\mathcal O(\\mu_4))=\\deg D+1=5=\\gcar$, the latter matched by $\\operatorname{rank}(D_5)=5$ (the\ncarrier is the $\\mathfrak{so}(10)$ half-spinor). Reading the carrier as this meromorphic seam-mode space\n(at most simple poles on $\\mu_4$) is geometrically natural \\mE\\ in its arithmetic, though the physical\nidentification stays \\mC\\ and does not displace the over-determined $\\gcar=5$ (Pascal/bootstrap/Lean)\n\\veri{v189\\_riemann\\_roch\\_carrier.py}.\n\\par\\smallskip\n\\noindent\\emph{And the function side generates $D_5$ itself, not just $\\gcar$.} The even Clifford algebra of\nthe $5$-dimensional mode space closes the chain $\\mu_4\\to\\gcar\\to D_5$: $\\Lambda^{\\mathrm{even}}(C_{\\mathrm{car}})\n=\\binom50+\\binom52+\\binom54=1+10+5=16=2^{\\gcar-1}=\\dim S^+$, which is exactly the $\\mathfrak{so}(10)=D_5$\nhalf-spinor. So the carrier is not merely ``rank $5$ like $D_5$'' --- it \\emph{is} the Clifford spinor of the\nRiemann--Roch mode space \\mE, with the physical identification again \\mC\\ \\veri{v197\\_rr\\_carrier\\_clifford\\_d5.py}.\n\n\\begin{keybox}[The $(5,3)$ generator and the Pythagorean mass volume \\mE\\ (\\veri{v53\\_compiler\\_core.py})]\nBy sum, difference and halving,\n\\[\n  \\operatorname{rank}E_8=\\gcar{+}\\Nfam=8,\\qquad |\\Z_2|=\\gcar{-}\\Nfam=2,\\qquad |\\mu_4|=\\tfrac{\\gcar+\\Nfam}{2}=4,\n\\]\nand $(\\Nfam,|\\mu_4|,\\gcar)=(3,4,5)$ is \\emph{the} Pythagorean triple. This is load-bearing: the\ngrand-mass-volume exponent $\\Delta_Y=\\gcar^2=25$ ($\\det M_{\\mathrm{SM}}\\sim(\\phiz)^{25}$) splits as a\n\\emph{difference of squares},\n\\[\n  \\boxed{\\ \\Delta_Y=\\gcar^2=\\underbrace{\\Nfam^2}_{\\text{down}=9}\n  +\\underbrace{(\\gcar{-}\\Nfam)(\\gcar{+}\\Nfam)}_{=\\,|\\Z_2|\\cdot\\operatorname{rank}E_8=\\dim S^+=16}\n  =9+16=25\\ }\n\\]\n(the $K$-row sums $(6,9,10)$: down carries $\\Nfam^2$, up$+$lepton carry $|\\Z_2|\\!\\cdot\\!\\operatorname{rank}E_8$).\nThe \\emph{anchor} $a=(1,1,2)$ is the unique $3$-multiset whose elementary symmetric functions are the\ncompiler atoms $(|\\mu_4|,\\gcar,|\\Z_2|)=(4,5,2)$; equivalently $\\chi_a(t)=(t{-}1)^2(t{-}2)=t^3-|\\mu_4|t^2+\\gcar t-|\\Z_2|$.\nSharper (\\veri{v491\\_p2\\_partition\\_corollary.py}): only $e_1{=}4$ is needed --- three positive integers\nsumming to $4$ already force $\\{1,1,2\\}$, so $\\gcar{=}5$ and $|\\Z_2|{=}2$ are corollaries of the four\nmarks given the weight typing; \\texttt{AX.P2.01} stays the declared axiom (the residual is the typing).\nAnd the typing is itself hardened (\\veri{v499\\_p2\\_weights\\_deligne\\_bg.py}): Deligne $+$\nBirkhoff--Grothendieck $+$ Mehta--Seshadri stability derive integrality, positivity ($h^0{=}0$) and the\nsum $4$ from the four marks, rank $3$, the cusp class and (U) --- the \\mC\\ residual is the module\nidentification plus (U) itself.",
+          "source_id": "paper-source:623921d3c25242053db291db"
+        },
+        {
+          "path": "experiments/theory-contracts/rr-residue-memory-20260921/RR_VORAUSSETZUNGEN.md",
+          "line_start": 30,
+          "line_end": 70,
+          "sha256": "c115ba579715538674a9d4fd1fc119de7a051a4b5459acb772b07195365ea3aa",
+          "excerpt": "## 2. Die innere 3+2-Involution ist jetzt explizit\n\nSetze P(z)=z⁴−1. Eine Basis von E ist\n\\[\ne_n(z)=\\frac{z^n}{P(z)},\\qquad n=0,1,2,3,4.\n\\]\nDie Funktionen haben höchstens einfache Pole an D und sind bei Unendlich regulär. Die konstante Funktion ist e₄−e₀.\n\nFür die geometrischen Pullbacks\n\\[\n(Rf)(z)=f(iz),\\qquad(Sf)(z)=f(1/z)\n\\]\nfolgt unmittelbar\n\\[\nR=\\operatorname{diag}(1,i,-1,-i,1),\n\\qquad Se_n=-e_{4-n}.\n\\]\nDamit gelten R⁴=I, S²=I und SRS=R⁻¹. Insbesondere liegt R² im Zentrum dieser Diederwirkung.\n\nDie Operatoren\n\\[\nP_c=\\frac{I+R^2}{2},\\qquad P_w=\\frac{I-R^2}{2}\n\\]\nsind komplementäre Projektoren mit\n\\[\n\\operatorname{rank}P_c=3,\\qquad\\operatorname{rank}P_w=2.\n\\]\nKonkret liegen e₀,e₂,e₄ im Dreierraum, e₁,e₃ im Zweierraum. Beide Räume werden von R und S erhalten.\n\n**Der präzise positive Satz:** Auf dem vorhandenen markierten RR-Träger ist die Zerlegung 3+2 durch die zentrale Halbwendung ausgewählt. Dieser Operator ist weder die Einschränkung einer bereits positiv projizierten Zustandsinvolution noch die reine CAR-Polarisation. Die früheren Ausschlüsse dieser beiden Gleichsetzungen treffen diese Konstruktion deshalb nicht.\n\nMit der bisherigen TFPT-Vorzeichenkonvention lautet die innere Involution εint=−R². Die Zahl 3 allein wird dabei nicht mit dem Familienraum gleichgesetzt: Der Dreierraum E_c trägt unter R die Eigenwerte (1,−1,1); die drei nichttrivialen Familiencharaktere tragen (i,−1,−i). Ihre Gruppenwirkungen unterscheiden sich.\n\n## 3. Der vorhandene Hyperladungsoperator folgt auf diesem Träger\n\nDie traceless Ladungsverteilung auf beiden Blöcken erfüllt 3y_c+2y_w=0. Mit der üblichen, bereits im Compiler benutzten Normierung y_w=1/2 folgt\n\\[\nY=-\\frac13P_c+\\frac12P_w\n=\\frac{I+5\\varepsilon_{\\rm int}}{12}.\n\\]\nDie Normierung und die Ladungskonjugationskonvention werden also benannt; sie werden nicht durch einen bloßen Projektorrang physisch bestimmt.",
+          "source_id": "research-source:be666ae37d3b840796f4fb91"
+        }
+      ],
+      "to": "map:p2-physical-interface"
+    },
+    {
+      "conditions": [
+        "Within the tested Gaussian torus construction."
+      ],
+      "from": "map:gaussian-torus-origin",
+      "kind": "conditional_bridge",
+      "label_de": "liefert die vier Verzweigungsmarken",
+      "label_en": "supplies the four branch marks",
+      "source_refs": [
+        {
+          "path": "experiments/exploration/2026-11-23-phasenraum-f5-holocode/VERDICT.md",
+          "line_start": 28,
+          "line_end": 100,
+          "sha256": "7caa9dee5b119fa1a4d735d96950aea680e3d65ea91629925d93202823e046b1",
+          "excerpt": "## G: Ein Objekt für P1 und P2 — der Gaußsche Torus ℂ/ℤ[i] (`g1_gauss_torus.py`)\n\n**Prinzip.** Startklasse sind flache 2-Tori, deren Gitter ein Ganzheitsring O_K ist (Tori mit\nkomplexer Multiplikation, Klassenzahl 1, neun Fälle). Auf einem Torsionsstück des Torus lebt ein\nendlicher Oszillator, die Weil-Darstellung auf den Funktionen dieses Stücks. Eine einzige\nphysikalische Forderung: Auf dem Torsionsstück, auf dem die Symmetrien des Torus als volle\nEinheitengruppe eines Primkörpers wirken, hat der Oszillator einen Spin-½-Dublett als\nfermionischen Teil.\n\n**Kette.** Spin-½-Dublett ⇒ p = 5 (eindeutig, W) ⇒ Einheitengruppe der Ordnung p − 1 = 4 ⇒ ℤ[i],\nder quadratische Torus. Aus diesem einen Torus folgt:\n- **P2.** Plätze = Funktionen auf der Torsionsgeraden E[2−i] ≅ 𝔽₅. 3 + 2 = bosonischer Dreier ⊕\n  fermionisches Dublett. Y ist die einzige spurfreie Größe im Kommutanten (−1/3, +1/2). Die 16\n  trägt die Hyperladungen, jeder Sektor ist unter 2I irreduzibel (W3). SL(2,5) = 2I führt zu E₈\n  (Ikosiane, McKay, h = 30).\n- **μ₄ und Uhren.** Die komplexe Multiplikation mit i ist auf der 5-Torsion genau das Weyl-Element\n  [[0,−1],[1,0]]; ihr Weil-Bild ist die Fourier-Vierteldrehung, also TFPTs R₅ bis auf das\n  Vorzeichen. Auf E[2−i] wirkt sie als t ↦ 2t = G, die Torsionstranslation ist C₅, und\n  G C₅ G⁻¹ = C₅² gilt exakt.\n- **P1.** Randnormierung c = Kovolumen/(2π · |Einheiten|) = 1/(8π) = c₃ (Weylterm der\n  Dirac-Wärmespur pro Einheitenbahn, numerisch auf 12 Stellen). Die einzige invariante\n  Spinstruktur ohne Nullmoden ist (−,−). Der Modul τ = i ist der Fixpunkt, den KERNSYM als\n  symmetrieerzwungen kennt. Die vier Marken sind die Bilder der 2-Torsion unter der\n  Doppelüberlagerung y² = z⁴ − 1, mit Windung +1 des quadratischen Differentials (Atlas 23.11.).\n  Die Orientierung kommt aus der komplexen Struktur, die Reflexion z ↦ z̄ erhält ℤ[i].\n- **Familien.** H¹ von P¹ ohne die Marken: Rang 3, Charaktere {−1, i, −i}, über 𝔽₅\n  frobeniusgleich (K), Residuenbild der Trägermoden.\n\n**Auswahltabelle (alle neun CM-Tori der Klassenzahl 1).**\n- (A) Volle Einheitenwirkung auf einem Primkörper: p = 5 für ℤ[i], 7 für ℤ[ω], 3 für d = 2 und 11,\n  sonst kein p.\n- (B) Dublett: nur bei p = 5.\n- (C) Invariante invertierbare Spinstruktur: alle außer ℤ[ω].\n\nNur d = 1 erfüllt alle drei Regeln. Die c-Werte der neun Tori liegen zwischen 0,023 und 0,51;\nnur ℤ[i] gibt 1/(8π).\n\n**Neu gegenüber TFPT.** Die Einzelteile waren bekannt: quadratischer Torus mit μ₄ (τ = i,\nj = 1728), c₃ aus der Viertelzählung (23.11., bedingt), 5 = (2+i)(2−i) als Zahlenbeobachtung\n(ARITH.TRICHOTOMY.01), x ↦ 2x und Y_par, PGL(2,5), 2I und E₈. Neu ist die Brücke: P2s fünf\nPlätze sind ein Torsionsstück desselben Torus, dessen Wärmespur P1s c₃ gibt. Und eine einzige\nForderung (Spin-½-Dublett) wählt diesen Torus unter allen CM-Tori aus. Damit beantwortet G beide\nLeitfragen der Konsolidierung: **Die Vier ist die Einheitengruppe ℤ[i]^× des Torus**, erzwungen\ndurch das Dublett. **Die Minimalität ist das erste Torsionsstück**, auf dem die Einheiten voll\nwirken.\n\n**Stufe.** Stufe 3 unter benannten Lesarten: P1 (Normierung, Spinstruktur, Modul, Marken,\nOrientierung) und P2 (fünf Plätze, 3 + 2, Y) kommen aus demselben Objekt, ohne angepasste\nKonstante; die vorhandenen Ergebnisse trägt der TFPT Compiler aus P1 und P2. Nicht Stufe 4:\nphysische Zeit und Zustand, 3 + 1, Kontinuum und Gravitation liefert G nicht.\n\n**Benannte Lesarten (erste freie Wahlen).**\n1. Startklasse: Der Rand ist ein flacher Torus mit Ring-Gitter.\n2. Plätze = Schrödinger-Modell der Weil-Darstellung auf dem ersten Torsionsstück mit voller\n   Einheitenwirkung.\n3. c₃ = Weylterm der Dirac-Wärmespur, gezählt pro Einheitenbahn (in TFPT bisher bedingt).\n4. Die Paritätsbasis (Y_par) ist die physische Farb/Schwach-Basis. Das ist eine Identifikations-\n   änderung gegenüber der markierten Ladung, siehe W.\n\n**Basislinie.** Die Auswahl ist strukturell, kein Zahlentreffer. Effektiv entscheidet\n„Einheitengruppe der Ordnung 4“, und das Dublett erzwingt sie. Der Wert 1/(8π) ist keine\nunabhängige Vorhersage, weil die Viertelzählung am quadratischen Torus formuliert wurde.\nUnabhängig ist, dass die Regel von der P2-Seite denselben Torus wählt. Gegenproben: ℤ[ω] (sechs\nEinheiten) scheitert an zwei Regeln, die Tori mit nur ±1 an der Dublettregel.\n\n**Stärkster Einwand.** Die Lesarten 2 und 3 sind gewählt. SU(3) × SU(2) entsteht nicht, nur 2I\nund U(1) × U(1). Die Dynamik fehlt ganz. G erklärt die Eingaben, nicht die Physik dahinter.\n\n**Kleinster nächster Test (Stufe 4, kein Nebenschauplatz).** Zeit und Zustand aus demselben\nTorus: Die Vierteldrehung vertauscht die beiden Zyklen (τ ↦ −1/τ hat τ = i als Fixpunkt).\nPrüfen, ob der Weil-Oszillator auf E[5] zusammen mit der Torus-Wärmespur eine reflexionspositive\nHalbgruppe mit ausgezeichneter Zeitrichtung definiert, deren KMS-Zustand die Normierung c₃\nträgt. Abbruch, wenn Zeit oder Zustand eine zusätzliche freie Wahl brauchen.",
+          "source_id": "research-source:d8ebb7ecf413ca8e31e65c44"
+        }
+      ],
+      "to": "map:shared-fourmark-origin"
+    },
+    {
+      "conditions": [
+        "Weil realization and identification of parity as the carrier grading."
+      ],
+      "from": "map:gaussian-torus-origin",
+      "kind": "conditional_bridge",
+      "label_de": "liefert den Fünferträger auf der Torsionsgeraden",
+      "label_en": "yields the carrier on the torsion line",
+      "source_refs": [
+        {
+          "path": "experiments/exploration/2026-11-23-phasenraum-f5-holocode/VERDICT.md",
+          "line_start": 28,
+          "line_end": 100,
+          "sha256": "7caa9dee5b119fa1a4d735d96950aea680e3d65ea91629925d93202823e046b1",
+          "excerpt": "## G: Ein Objekt für P1 und P2 — der Gaußsche Torus ℂ/ℤ[i] (`g1_gauss_torus.py`)\n\n**Prinzip.** Startklasse sind flache 2-Tori, deren Gitter ein Ganzheitsring O_K ist (Tori mit\nkomplexer Multiplikation, Klassenzahl 1, neun Fälle). Auf einem Torsionsstück des Torus lebt ein\nendlicher Oszillator, die Weil-Darstellung auf den Funktionen dieses Stücks. Eine einzige\nphysikalische Forderung: Auf dem Torsionsstück, auf dem die Symmetrien des Torus als volle\nEinheitengruppe eines Primkörpers wirken, hat der Oszillator einen Spin-½-Dublett als\nfermionischen Teil.\n\n**Kette.** Spin-½-Dublett ⇒ p = 5 (eindeutig, W) ⇒ Einheitengruppe der Ordnung p − 1 = 4 ⇒ ℤ[i],\nder quadratische Torus. Aus diesem einen Torus folgt:\n- **P2.** Plätze = Funktionen auf der Torsionsgeraden E[2−i] ≅ 𝔽₅. 3 + 2 = bosonischer Dreier ⊕\n  fermionisches Dublett. Y ist die einzige spurfreie Größe im Kommutanten (−1/3, +1/2). Die 16\n  trägt die Hyperladungen, jeder Sektor ist unter 2I irreduzibel (W3). SL(2,5) = 2I führt zu E₈\n  (Ikosiane, McKay, h = 30).\n- **μ₄ und Uhren.** Die komplexe Multiplikation mit i ist auf der 5-Torsion genau das Weyl-Element\n  [[0,−1],[1,0]]; ihr Weil-Bild ist die Fourier-Vierteldrehung, also TFPTs R₅ bis auf das\n  Vorzeichen. Auf E[2−i] wirkt sie als t ↦ 2t = G, die Torsionstranslation ist C₅, und\n  G C₅ G⁻¹ = C₅² gilt exakt.\n- **P1.** Randnormierung c = Kovolumen/(2π · |Einheiten|) = 1/(8π) = c₃ (Weylterm der\n  Dirac-Wärmespur pro Einheitenbahn, numerisch auf 12 Stellen). Die einzige invariante\n  Spinstruktur ohne Nullmoden ist (−,−). Der Modul τ = i ist der Fixpunkt, den KERNSYM als\n  symmetrieerzwungen kennt. Die vier Marken sind die Bilder der 2-Torsion unter der\n  Doppelüberlagerung y² = z⁴ − 1, mit Windung +1 des quadratischen Differentials (Atlas 23.11.).\n  Die Orientierung kommt aus der komplexen Struktur, die Reflexion z ↦ z̄ erhält ℤ[i].\n- **Familien.** H¹ von P¹ ohne die Marken: Rang 3, Charaktere {−1, i, −i}, über 𝔽₅\n  frobeniusgleich (K), Residuenbild der Trägermoden.\n\n**Auswahltabelle (alle neun CM-Tori der Klassenzahl 1).**\n- (A) Volle Einheitenwirkung auf einem Primkörper: p = 5 für ℤ[i], 7 für ℤ[ω], 3 für d = 2 und 11,\n  sonst kein p.\n- (B) Dublett: nur bei p = 5.\n- (C) Invariante invertierbare Spinstruktur: alle außer ℤ[ω].\n\nNur d = 1 erfüllt alle drei Regeln. Die c-Werte der neun Tori liegen zwischen 0,023 und 0,51;\nnur ℤ[i] gibt 1/(8π).\n\n**Neu gegenüber TFPT.** Die Einzelteile waren bekannt: quadratischer Torus mit μ₄ (τ = i,\nj = 1728), c₃ aus der Viertelzählung (23.11., bedingt), 5 = (2+i)(2−i) als Zahlenbeobachtung\n(ARITH.TRICHOTOMY.01), x ↦ 2x und Y_par, PGL(2,5), 2I und E₈. Neu ist die Brücke: P2s fünf\nPlätze sind ein Torsionsstück desselben Torus, dessen Wärmespur P1s c₃ gibt. Und eine einzige\nForderung (Spin-½-Dublett) wählt diesen Torus unter allen CM-Tori aus. Damit beantwortet G beide\nLeitfragen der Konsolidierung: **Die Vier ist die Einheitengruppe ℤ[i]^× des Torus**, erzwungen\ndurch das Dublett. **Die Minimalität ist das erste Torsionsstück**, auf dem die Einheiten voll\nwirken.\n\n**Stufe.** Stufe 3 unter benannten Lesarten: P1 (Normierung, Spinstruktur, Modul, Marken,\nOrientierung) und P2 (fünf Plätze, 3 + 2, Y) kommen aus demselben Objekt, ohne angepasste\nKonstante; die vorhandenen Ergebnisse trägt der TFPT Compiler aus P1 und P2. Nicht Stufe 4:\nphysische Zeit und Zustand, 3 + 1, Kontinuum und Gravitation liefert G nicht.\n\n**Benannte Lesarten (erste freie Wahlen).**\n1. Startklasse: Der Rand ist ein flacher Torus mit Ring-Gitter.\n2. Plätze = Schrödinger-Modell der Weil-Darstellung auf dem ersten Torsionsstück mit voller\n   Einheitenwirkung.\n3. c₃ = Weylterm der Dirac-Wärmespur, gezählt pro Einheitenbahn (in TFPT bisher bedingt).\n4. Die Paritätsbasis (Y_par) ist die physische Farb/Schwach-Basis. Das ist eine Identifikations-\n   änderung gegenüber der markierten Ladung, siehe W.\n\n**Basislinie.** Die Auswahl ist strukturell, kein Zahlentreffer. Effektiv entscheidet\n„Einheitengruppe der Ordnung 4“, und das Dublett erzwingt sie. Der Wert 1/(8π) ist keine\nunabhängige Vorhersage, weil die Viertelzählung am quadratischen Torus formuliert wurde.\nUnabhängig ist, dass die Regel von der P2-Seite denselben Torus wählt. Gegenproben: ℤ[ω] (sechs\nEinheiten) scheitert an zwei Regeln, die Tori mit nur ±1 an der Dublettregel.\n\n**Stärkster Einwand.** Die Lesarten 2 und 3 sind gewählt. SU(3) × SU(2) entsteht nicht, nur 2I\nund U(1) × U(1). Die Dynamik fehlt ganz. G erklärt die Eingaben, nicht die Physik dahinter.\n\n**Kleinster nächster Test (Stufe 4, kein Nebenschauplatz).** Zeit und Zustand aus demselben\nTorus: Die Vierteldrehung vertauscht die beiden Zyklen (τ ↦ −1/τ hat τ = i als Fixpunkt).\nPrüfen, ob der Weil-Oszillator auf E[5] zusammen mit der Torus-Wärmespur eine reflexionspositive\nHalbgruppe mit ausgezeichneter Zeitrichtung definiert, deren KMS-Zustand die Normierung c₃\nträgt. Abbruch, wenn Zeit oder Zustand eine zusätzliche freie Wahl brauchen.",
+          "source_id": "research-source:d8ebb7ecf413ca8e31e65c44"
+        }
+      ],
+      "to": "map:p2"
+    },
+    {
+      "conditions": [
+        "Unit-area torus and counting per quarter orbit."
+      ],
+      "from": "map:gaussian-torus-origin",
+      "kind": "conditional_bridge",
+      "label_de": "liefert die Normierung über die Viertelspur",
+      "label_en": "supplies normalization through the quarter trace",
+      "source_refs": [
+        {
+          "path": "experiments/exploration/2026-11-23-phasenraum-f5-holocode/VERDICT.md",
+          "line_start": 28,
+          "line_end": 100,
+          "sha256": "7caa9dee5b119fa1a4d735d96950aea680e3d65ea91629925d93202823e046b1",
+          "excerpt": "## G: Ein Objekt für P1 und P2 — der Gaußsche Torus ℂ/ℤ[i] (`g1_gauss_torus.py`)\n\n**Prinzip.** Startklasse sind flache 2-Tori, deren Gitter ein Ganzheitsring O_K ist (Tori mit\nkomplexer Multiplikation, Klassenzahl 1, neun Fälle). Auf einem Torsionsstück des Torus lebt ein\nendlicher Oszillator, die Weil-Darstellung auf den Funktionen dieses Stücks. Eine einzige\nphysikalische Forderung: Auf dem Torsionsstück, auf dem die Symmetrien des Torus als volle\nEinheitengruppe eines Primkörpers wirken, hat der Oszillator einen Spin-½-Dublett als\nfermionischen Teil.\n\n**Kette.** Spin-½-Dublett ⇒ p = 5 (eindeutig, W) ⇒ Einheitengruppe der Ordnung p − 1 = 4 ⇒ ℤ[i],\nder quadratische Torus. Aus diesem einen Torus folgt:\n- **P2.** Plätze = Funktionen auf der Torsionsgeraden E[2−i] ≅ 𝔽₅. 3 + 2 = bosonischer Dreier ⊕\n  fermionisches Dublett. Y ist die einzige spurfreie Größe im Kommutanten (−1/3, +1/2). Die 16\n  trägt die Hyperladungen, jeder Sektor ist unter 2I irreduzibel (W3). SL(2,5) = 2I führt zu E₈\n  (Ikosiane, McKay, h = 30).\n- **μ₄ und Uhren.** Die komplexe Multiplikation mit i ist auf der 5-Torsion genau das Weyl-Element\n  [[0,−1],[1,0]]; ihr Weil-Bild ist die Fourier-Vierteldrehung, also TFPTs R₅ bis auf das\n  Vorzeichen. Auf E[2−i] wirkt sie als t ↦ 2t = G, die Torsionstranslation ist C₅, und\n  G C₅ G⁻¹ = C₅² gilt exakt.\n- **P1.** Randnormierung c = Kovolumen/(2π · |Einheiten|) = 1/(8π) = c₃ (Weylterm der\n  Dirac-Wärmespur pro Einheitenbahn, numerisch auf 12 Stellen). Die einzige invariante\n  Spinstruktur ohne Nullmoden ist (−,−). Der Modul τ = i ist der Fixpunkt, den KERNSYM als\n  symmetrieerzwungen kennt. Die vier Marken sind die Bilder der 2-Torsion unter der\n  Doppelüberlagerung y² = z⁴ − 1, mit Windung +1 des quadratischen Differentials (Atlas 23.11.).\n  Die Orientierung kommt aus der komplexen Struktur, die Reflexion z ↦ z̄ erhält ℤ[i].\n- **Familien.** H¹ von P¹ ohne die Marken: Rang 3, Charaktere {−1, i, −i}, über 𝔽₅\n  frobeniusgleich (K), Residuenbild der Trägermoden.\n\n**Auswahltabelle (alle neun CM-Tori der Klassenzahl 1).**\n- (A) Volle Einheitenwirkung auf einem Primkörper: p = 5 für ℤ[i], 7 für ℤ[ω], 3 für d = 2 und 11,\n  sonst kein p.\n- (B) Dublett: nur bei p = 5.\n- (C) Invariante invertierbare Spinstruktur: alle außer ℤ[ω].\n\nNur d = 1 erfüllt alle drei Regeln. Die c-Werte der neun Tori liegen zwischen 0,023 und 0,51;\nnur ℤ[i] gibt 1/(8π).\n\n**Neu gegenüber TFPT.** Die Einzelteile waren bekannt: quadratischer Torus mit μ₄ (τ = i,\nj = 1728), c₃ aus der Viertelzählung (23.11., bedingt), 5 = (2+i)(2−i) als Zahlenbeobachtung\n(ARITH.TRICHOTOMY.01), x ↦ 2x und Y_par, PGL(2,5), 2I und E₈. Neu ist die Brücke: P2s fünf\nPlätze sind ein Torsionsstück desselben Torus, dessen Wärmespur P1s c₃ gibt. Und eine einzige\nForderung (Spin-½-Dublett) wählt diesen Torus unter allen CM-Tori aus. Damit beantwortet G beide\nLeitfragen der Konsolidierung: **Die Vier ist die Einheitengruppe ℤ[i]^× des Torus**, erzwungen\ndurch das Dublett. **Die Minimalität ist das erste Torsionsstück**, auf dem die Einheiten voll\nwirken.\n\n**Stufe.** Stufe 3 unter benannten Lesarten: P1 (Normierung, Spinstruktur, Modul, Marken,\nOrientierung) und P2 (fünf Plätze, 3 + 2, Y) kommen aus demselben Objekt, ohne angepasste\nKonstante; die vorhandenen Ergebnisse trägt der TFPT Compiler aus P1 und P2. Nicht Stufe 4:\nphysische Zeit und Zustand, 3 + 1, Kontinuum und Gravitation liefert G nicht.\n\n**Benannte Lesarten (erste freie Wahlen).**\n1. Startklasse: Der Rand ist ein flacher Torus mit Ring-Gitter.\n2. Plätze = Schrödinger-Modell der Weil-Darstellung auf dem ersten Torsionsstück mit voller\n   Einheitenwirkung.\n3. c₃ = Weylterm der Dirac-Wärmespur, gezählt pro Einheitenbahn (in TFPT bisher bedingt).\n4. Die Paritätsbasis (Y_par) ist die physische Farb/Schwach-Basis. Das ist eine Identifikations-\n   änderung gegenüber der markierten Ladung, siehe W.\n\n**Basislinie.** Die Auswahl ist strukturell, kein Zahlentreffer. Effektiv entscheidet\n„Einheitengruppe der Ordnung 4“, und das Dublett erzwingt sie. Der Wert 1/(8π) ist keine\nunabhängige Vorhersage, weil die Viertelzählung am quadratischen Torus formuliert wurde.\nUnabhängig ist, dass die Regel von der P2-Seite denselben Torus wählt. Gegenproben: ℤ[ω] (sechs\nEinheiten) scheitert an zwei Regeln, die Tori mit nur ±1 an der Dublettregel.\n\n**Stärkster Einwand.** Die Lesarten 2 und 3 sind gewählt. SU(3) × SU(2) entsteht nicht, nur 2I\nund U(1) × U(1). Die Dynamik fehlt ganz. G erklärt die Eingaben, nicht die Physik dahinter.\n\n**Kleinster nächster Test (Stufe 4, kein Nebenschauplatz).** Zeit und Zustand aus demselben\nTorus: Die Vierteldrehung vertauscht die beiden Zyklen (τ ↦ −1/τ hat τ = i als Fixpunkt).\nPrüfen, ob der Weil-Oszillator auf E[5] zusammen mit der Torus-Wärmespur eine reflexionspositive\nHalbgruppe mit ausgezeichneter Zeitrichtung definiert, deren KMS-Zustand die Normierung c₃\nträgt. Abbruch, wenn Zeit oder Zustand eine zusätzliche freie Wahl brauchen.",
+          "source_id": "research-source:d8ebb7ecf413ca8e31e65c44"
+        }
+      ],
+      "to": "map:c3-normalization"
     }
   ],
   "lanes": [
@@ -1227,17 +1343,27 @@
     },
     {
       "id": "map:p2",
-      "label_de": "P2: Trägerschnittstelle und ihre Ableitungen",
-      "label_en": "P2: carrier interface and its derivations",
+      "label_de": "P2: aus der markierten Naht abgeleiteter Träger",
+      "label_en": "P2: carrier derived from the marked seam",
       "lane": "carrier",
       "related_ids": [
         "claim:AX.P2.01",
         "topic:origin",
         "topic:e8",
-        "structure:p1-p2"
+        "structure:p1-p2",
+        "finding:four-mark-logarithmic-bilinear-exact-sequence-20261123",
+        "finding:four-mark-bilinear-quarter-character-20261123"
       ],
-      "scope_note": "Distinguish P2_interface from P2_algebra and conditional carrier reductions. Dimension five alone does not select the physical 3+2 split.",
+      "scope_note": "The marked four-point model yields the carrier and its quarter-turn grading. The physical color/weak dictionary and source identification are scoped separately.",
       "source_refs": [
+        {
+          "path": "experiments/theory-contracts/rr-residue-memory-20260921/RR_VORAUSSETZUNGEN.md",
+          "line_start": 30,
+          "line_end": 70,
+          "sha256": "c115ba579715538674a9d4fd1fc119de7a051a4b5459acb772b07195365ea3aa",
+          "excerpt": "## 2. Die innere 3+2-Involution ist jetzt explizit\n\nSetze P(z)=z⁴−1. Eine Basis von E ist\n\\[\ne_n(z)=\\frac{z^n}{P(z)},\\qquad n=0,1,2,3,4.\n\\]\nDie Funktionen haben höchstens einfache Pole an D und sind bei Unendlich regulär. Die konstante Funktion ist e₄−e₀.\n\nFür die geometrischen Pullbacks\n\\[\n(Rf)(z)=f(iz),\\qquad(Sf)(z)=f(1/z)\n\\]\nfolgt unmittelbar\n\\[\nR=\\operatorname{diag}(1,i,-1,-i,1),\n\\qquad Se_n=-e_{4-n}.\n\\]\nDamit gelten R⁴=I, S²=I und SRS=R⁻¹. Insbesondere liegt R² im Zentrum dieser Diederwirkung.\n\nDie Operatoren\n\\[\nP_c=\\frac{I+R^2}{2},\\qquad P_w=\\frac{I-R^2}{2}\n\\]\nsind komplementäre Projektoren mit\n\\[\n\\operatorname{rank}P_c=3,\\qquad\\operatorname{rank}P_w=2.\n\\]\nKonkret liegen e₀,e₂,e₄ im Dreierraum, e₁,e₃ im Zweierraum. Beide Räume werden von R und S erhalten.\n\n**Der präzise positive Satz:** Auf dem vorhandenen markierten RR-Träger ist die Zerlegung 3+2 durch die zentrale Halbwendung ausgewählt. Dieser Operator ist weder die Einschränkung einer bereits positiv projizierten Zustandsinvolution noch die reine CAR-Polarisation. Die früheren Ausschlüsse dieser beiden Gleichsetzungen treffen diese Konstruktion deshalb nicht.\n\nMit der bisherigen TFPT-Vorzeichenkonvention lautet die innere Involution εint=−R². Die Zahl 3 allein wird dabei nicht mit dem Familienraum gleichgesetzt: Der Dreierraum E_c trägt unter R die Eigenwerte (1,−1,1); die drei nichttrivialen Familiencharaktere tragen (i,−1,−i). Ihre Gruppenwirkungen unterscheiden sich.\n\n## 3. Der vorhandene Hyperladungsoperator folgt auf diesem Träger\n\nDie traceless Ladungsverteilung auf beiden Blöcken erfüllt 3y_c+2y_w=0. Mit der üblichen, bereits im Compiler benutzten Normierung y_w=1/2 folgt\n\\[\nY=-\\frac13P_c+\\frac12P_w\n=\\frac{I+5\\varepsilon_{\\rm int}}{12}.\n\\]\nDie Normierung und die Ladungskonjugationskonvention werden also benannt; sie werden nicht durch einen bloßen Projektorrang physisch bestimmt.",
+          "source_id": "research-source:be666ae37d3b840796f4fb91"
+        },
         {
           "path": "documents/tfpt_1_architecture_e8/sections/001-source.tex",
           "line_start": 67,
@@ -1271,12 +1397,12 @@
           "source_id": "research-source:946f4899af6dbb1115b024dd"
         }
       ],
-      "stage": "inputs",
-      "state": "assumed",
-      "summary_de": "Die fünfstellige 3+2 Schnittstelle bleibt als physischer Zugriff deklariert. Ihre algebraischen Folgen sind bewiesen. Viermarkendivisor, Anker, Pascal und Bootstrap liefern vorhandene bedingte Reduktionen; sie dürfen in der Übersicht nicht verschwinden.",
-      "summary_en": "The five-slot 3+2 interface remains declared as the physical readout. Its algebraic consequences are proved. The four-mark divisor, anchor, Pascal and bootstrap provide existing conditional reductions that must remain visible in the overview.",
-      "overview_de": "Deklarierte physische 3+2 Schnittstelle; Algebra und bedingte Viermarken, Anker und W Brücken Reduktionen sind vorhanden.",
-      "reviewed_at": "2026-11-05",
+      "stage": "geometry",
+      "state": "established_scoped",
+      "summary_de": "Aus der markierten P1 Naht folgen der fünfstellige Riemann–Roch Träger und die 3 + 2 Teilung durch R². Die ursprüngliche Schnittstellendeklaration AX.P2.01 bleibt im Ledger dokumentiert. Die physische Identifikation ist als eigener Anschluss gezeigt.",
+      "summary_en": "The marked P1 seam yields the five-slot Riemann–Roch carrier and its 3 + 2 split under R². The original interface declaration AX.P2.01 remains documented in the ledger. The physical identification is tracked as a separate connection.",
+      "overview_de": "P1 → Viermarkenraum → fünf Trägermoden. Das Quadrat der Vierteldrehung liefert 3 + 2.",
+      "reviewed_at": "2026-11-23",
       "research_problem_id": "problem:c3-p1-p2-shared-origin-reconciliation"
     },
     {
@@ -2356,8 +2482,8 @@
       "id": "map:shared-fourmark-origin",
       "label_de": "Gemeinsames Viermarkenobjekt",
       "label_en": "Shared four-mark object",
-      "summary_de": "Derselbe Divisor D mit Grad 4 liefert Rang H₁(P¹ ohne D)=3 und h⁰(O(D))=5. Seine vierteilige Nahtnormierung ist auch Teil des c₃ Pfads. Dies verbindet vorhandene Ableitungen aus gemeinsamer Struktur, ohne deren Voraussetzungen zu entfernen.",
-      "summary_en": "The same degree-four divisor D gives rank H₁(P¹ minus D)=3 and h⁰(O(D))=5. Its four-channel seam normalization also enters the c₃ route. This connects existing derivations from shared structure while retaining their premises.",
+      "summary_de": "Derselbe Divisor D mit Grad 4 liefert Rang H₁(P¹ ohne D)=3 und h⁰(O(D))=5. Seine vierteilige Nahtnormierung ist auch Teil des c₃ Pfads. Dies verbindet vorhandene Ableitungen aus gemeinsamer Struktur, ohne deren Voraussetzungen zu entfernen. Das Quadrat der markierten Vierteldrehung gibt auf den fünf Moden die Teilung 3 + 2.",
+      "summary_en": "The same degree-four divisor D gives rank H₁(P¹ minus D)=3 and h⁰(O(D))=5. Its four-channel seam normalization also enters the c₃ route. This connects existing derivations from shared structure while retaining their premises. The square of the marked quarter turn gives the 3 + 2 split on the five modes.",
       "scope_note": "The flat Z2 sphere class and marked divisor are specified. Cycles, meromorphic functions and differentials are distinct. Dimension five alone does not prove a physical 3+2 split.",
       "overview_de": "Derselbe Grad 4 Divisor liefert Familienrang 3 und Funktionsraumdimension 5; die Nahtnormierung verwendet dieselbe Viererstruktur.",
       "stage": "geometry",
@@ -2387,13 +2513,22 @@
           "sha256": "695a3249781bc7f6c46e091a0faec0c8eda384a9cf64c6d67f501d5ddf10c0e6",
           "excerpt": "meromorphic DIFFERENTIALS H0(K(D)), dimension3; on P1 their residues have one sum constraint. Both derive from the same divisor, but they are not the false short exact sequence0->C->V5->U3->0. The actual example f=1/(z-1) has f dz residue1 at1 and residue-1 at infinity. Thus its residues on four finite marked points alone need not sum to0. Multiplication by an unchosen differential cannot silently identify these spaces or the physical P2 three-plus-two split. Clifford(V plus V*) has a canonical nondegenerate evaluation pairing and spin module, without choosing a positive metric on V. Over real coordinates this evaluation is neutral. The scaling(v,phi)->(tv,t^-1 phi) preserves it for every t>0, so it alone does not choose a positive physical norm. P1 already supplies operative Hilbert/kernel data; these are not declared absent. The existing puncture-metric-joint-completion-20261102 theorem ALSO remains: under its fixed original additive spinor-meridian extension, W(D5) timesC4, and integral UNIMODULAR full pairing, the entire invariant positive metric has x=a=b=1. That theorem and R102 remove different assumptions. Combining them cannot prove either premise from its own consequence:",
           "source_id": "research-source:946f4899af6dbb1115b024dd"
+        },
+        {
+          "path": "experiments/theory-contracts/rr-residue-memory-20260921/RR_VORAUSSETZUNGEN.md",
+          "line_start": 30,
+          "line_end": 70,
+          "sha256": "c115ba579715538674a9d4fd1fc119de7a051a4b5459acb772b07195365ea3aa",
+          "excerpt": "## 2. Die innere 3+2-Involution ist jetzt explizit\n\nSetze P(z)=z⁴−1. Eine Basis von E ist\n\\[\ne_n(z)=\\frac{z^n}{P(z)},\\qquad n=0,1,2,3,4.\n\\]\nDie Funktionen haben höchstens einfache Pole an D und sind bei Unendlich regulär. Die konstante Funktion ist e₄−e₀.\n\nFür die geometrischen Pullbacks\n\\[\n(Rf)(z)=f(iz),\\qquad(Sf)(z)=f(1/z)\n\\]\nfolgt unmittelbar\n\\[\nR=\\operatorname{diag}(1,i,-1,-i,1),\n\\qquad Se_n=-e_{4-n}.\n\\]\nDamit gelten R⁴=I, S²=I und SRS=R⁻¹. Insbesondere liegt R² im Zentrum dieser Diederwirkung.\n\nDie Operatoren\n\\[\nP_c=\\frac{I+R^2}{2},\\qquad P_w=\\frac{I-R^2}{2}\n\\]\nsind komplementäre Projektoren mit\n\\[\n\\operatorname{rank}P_c=3,\\qquad\\operatorname{rank}P_w=2.\n\\]\nKonkret liegen e₀,e₂,e₄ im Dreierraum, e₁,e₃ im Zweierraum. Beide Räume werden von R und S erhalten.\n\n**Der präzise positive Satz:** Auf dem vorhandenen markierten RR-Träger ist die Zerlegung 3+2 durch die zentrale Halbwendung ausgewählt. Dieser Operator ist weder die Einschränkung einer bereits positiv projizierten Zustandsinvolution noch die reine CAR-Polarisation. Die früheren Ausschlüsse dieser beiden Gleichsetzungen treffen diese Konstruktion deshalb nicht.\n\nMit der bisherigen TFPT-Vorzeichenkonvention lautet die innere Involution εint=−R². Die Zahl 3 allein wird dabei nicht mit dem Familienraum gleichgesetzt: Der Dreierraum E_c trägt unter R die Eigenwerte (1,−1,1); die drei nichttrivialen Familiencharaktere tragen (i,−1,−i). Ihre Gruppenwirkungen unterscheiden sich.\n\n## 3. Der vorhandene Hyperladungsoperator folgt auf diesem Träger\n\nDie traceless Ladungsverteilung auf beiden Blöcken erfüllt 3y_c+2y_w=0. Mit der üblichen, bereits im Compiler benutzten Normierung y_w=1/2 folgt\n\\[\nY=-\\frac13P_c+\\frac12P_w\n=\\frac{I+5\\varepsilon_{\\rm int}}{12}.\n\\]\nDie Normierung und die Ladungskonjugationskonvention werden also benannt; sie werden nicht durch einen bloßen Projektorrang physisch bestimmt.",
+          "source_id": "research-source:be666ae37d3b840796f4fb91"
         }
       ],
       "related_ids": [
         "problem:c3-p1-p2-shared-origin-reconciliation",
-        "topic:origin"
+        "topic:origin",
+        "finding:four-mark-bilinear-quarter-character-20261123"
       ],
-      "reviewed_at": "2026-11-05",
+      "reviewed_at": "2026-11-23",
       "research_problem_id": "problem:c3-p1-p2-shared-origin-reconciliation"
     },
     {
@@ -2434,8 +2569,8 @@
     },
     {
       "id": "map:p2-reductions",
-      "label_de": "P2: gemeinsame geometrische und endliche Reduktionen",
-      "label_en": "P2: shared geometric and finite reductions",
+      "label_de": "Ergänzende Herleitungen zum P2 Träger",
+      "label_en": "Additional derivations for the P2 carrier",
       "summary_de": "Riemann Roch liefert fünf Funktionen und die Clifford Konstruktion den 16er Halbspinor. Anker, Pascal und Bootstrap liefern weitere bedingte Reduktionen. v1014 und v1015 leiten beide W Brücken Voraussetzungen endlich her; der endliche Axiomrest ist null modulo MMST Identifikation.",
       "summary_en": "Riemann–Roch gives five functions and the Clifford construction the 16-component half-spinor. Anchor, Pascal and bootstrap supply further conditional reductions. v1014 and v1015 derive both finite W-bridge premises; the finite axiom-core remainder is zero modulo MMST identification.",
       "scope_note": "Finite closure modulo the named MMST identification does not close the physical 3+2 interface, the full determinant response or all strict T1–T8 goals. Existing declared ledger markers are unchanged.",
@@ -2473,7 +2608,7 @@
         "problem:c3-p1-p2-shared-origin-reconciliation",
         "topic:origin"
       ],
-      "reviewed_at": "2026-11-05",
+      "reviewed_at": "2026-11-23",
       "research_problem_id": "problem:c3-p1-p2-shared-origin-reconciliation"
     },
     {
@@ -2502,6 +2637,71 @@
         "topic:origin"
       ],
       "reviewed_at": "2026-11-05",
+      "research_problem_id": "problem:c3-p1-p2-shared-origin-reconciliation"
+    },
+    {
+      "id": "map:p2-physical-interface",
+      "label_de": "P2: physische Farb- und Schwachwirkung",
+      "label_en": "P2: physical color and weak action",
+      "stage": "continuum",
+      "lane": "carrier",
+      "state": "open",
+      "overview_de": "Den abgeleiteten Träger samt Markierung mit der physischen Wirkung auf der gemeinsamen Quelle identifizieren.",
+      "summary_de": "Im Viermarkenmodell stehen die fünf Trägermoden und ihre 3 + 2 Teilung fest. Offen ist das gemeinsame Quellenwörterbuch, das die beiden Räume mit der physischen Farb- und Schwachwirkung identifiziert.",
+      "summary_en": "The four-point model fixes the five carrier modes and their 3 + 2 split. The remaining common-source dictionary identifies these spaces with the physical color and weak action.",
+      "scope_note": "The physical dictionary is a bridge from an established model-level carrier. The ledger still records AX.P2.01 as an interface declaration.",
+      "related_ids": [
+        "claim:AX.P2.01",
+        "problem:four-mark-bilinear-source-bridge-20261123",
+        "finding:four-mark-bilinear-quarter-character-20261123"
+      ],
+      "source_refs": [
+        {
+          "path": "documents/origin_theory/sections/001-section-the-whole-integer-skeleton-from-one-pair-gcar-nf.tex",
+          "line_start": 43,
+          "line_end": 80,
+          "sha256": "a29b538e1051f3ecb4e4b2fbb149760b9f5080b1aca3c4ddd72d912c410faa07",
+          "excerpt": "\\noindent\\emph{One object, two canonical invariants.} The pair $(\\gcar,\\Nfam)$ is read off the\n\\emph{same} four-point divisor $D=\\mu_4$ (degree $4$) by the two canonical functors on $\\PP^1$: the cycle\nside $\\operatorname{rank}H_1(\\PP^1\\setminus\\mu_4)=\\deg D-1=3=\\Nfam$ and the function side (Riemann--Roch)\n$h^0(\\PP^1,\\mathcal O(\\mu_4))=\\deg D+1=5=\\gcar$, the latter matched by $\\operatorname{rank}(D_5)=5$ (the\ncarrier is the $\\mathfrak{so}(10)$ half-spinor). Reading the carrier as this meromorphic seam-mode space\n(at most simple poles on $\\mu_4$) is geometrically natural \\mE\\ in its arithmetic, though the physical\nidentification stays \\mC\\ and does not displace the over-determined $\\gcar=5$ (Pascal/bootstrap/Lean)\n\\veri{v189\\_riemann\\_roch\\_carrier.py}.\n\\par\\smallskip\n\\noindent\\emph{And the function side generates $D_5$ itself, not just $\\gcar$.} The even Clifford algebra of\nthe $5$-dimensional mode space closes the chain $\\mu_4\\to\\gcar\\to D_5$: $\\Lambda^{\\mathrm{even}}(C_{\\mathrm{car}})\n=\\binom50+\\binom52+\\binom54=1+10+5=16=2^{\\gcar-1}=\\dim S^+$, which is exactly the $\\mathfrak{so}(10)=D_5$\nhalf-spinor. So the carrier is not merely ``rank $5$ like $D_5$'' --- it \\emph{is} the Clifford spinor of the\nRiemann--Roch mode space \\mE, with the physical identification again \\mC\\ \\veri{v197\\_rr\\_carrier\\_clifford\\_d5.py}.\n\n\\begin{keybox}[The $(5,3)$ generator and the Pythagorean mass volume \\mE\\ (\\veri{v53\\_compiler\\_core.py})]\nBy sum, difference and halving,\n\\[\n  \\operatorname{rank}E_8=\\gcar{+}\\Nfam=8,\\qquad |\\Z_2|=\\gcar{-}\\Nfam=2,\\qquad |\\mu_4|=\\tfrac{\\gcar+\\Nfam}{2}=4,\n\\]\nand $(\\Nfam,|\\mu_4|,\\gcar)=(3,4,5)$ is \\emph{the} Pythagorean triple. This is load-bearing: the\ngrand-mass-volume exponent $\\Delta_Y=\\gcar^2=25$ ($\\det M_{\\mathrm{SM}}\\sim(\\phiz)^{25}$) splits as a\n\\emph{difference of squares},\n\\[\n  \\boxed{\\ \\Delta_Y=\\gcar^2=\\underbrace{\\Nfam^2}_{\\text{down}=9}\n  +\\underbrace{(\\gcar{-}\\Nfam)(\\gcar{+}\\Nfam)}_{=\\,|\\Z_2|\\cdot\\operatorname{rank}E_8=\\dim S^+=16}\n  =9+16=25\\ }\n\\]\n(the $K$-row sums $(6,9,10)$: down carries $\\Nfam^2$, up$+$lepton carry $|\\Z_2|\\!\\cdot\\!\\operatorname{rank}E_8$).\nThe \\emph{anchor} $a=(1,1,2)$ is the unique $3$-multiset whose elementary symmetric functions are the\ncompiler atoms $(|\\mu_4|,\\gcar,|\\Z_2|)=(4,5,2)$; equivalently $\\chi_a(t)=(t{-}1)^2(t{-}2)=t^3-|\\mu_4|t^2+\\gcar t-|\\Z_2|$.\nSharper (\\veri{v491\\_p2\\_partition\\_corollary.py}): only $e_1{=}4$ is needed --- three positive integers\nsumming to $4$ already force $\\{1,1,2\\}$, so $\\gcar{=}5$ and $|\\Z_2|{=}2$ are corollaries of the four\nmarks given the weight typing; \\texttt{AX.P2.01} stays the declared axiom (the residual is the typing).\nAnd the typing is itself hardened (\\veri{v499\\_p2\\_weights\\_deligne\\_bg.py}): Deligne $+$\nBirkhoff--Grothendieck $+$ Mehta--Seshadri stability derive integrality, positivity ($h^0{=}0$) and the\nsum $4$ from the four marks, rank $3$, the cusp class and (U) --- the \\mC\\ residual is the module\nidentification plus (U) itself.",
+          "source_id": "paper-source:623921d3c25242053db291db"
+        },
+        {
+          "path": "experiments/theory-contracts/rr-residue-memory-20260921/RR_VORAUSSETZUNGEN.md",
+          "line_start": 30,
+          "line_end": 70,
+          "sha256": "c115ba579715538674a9d4fd1fc119de7a051a4b5459acb772b07195365ea3aa",
+          "excerpt": "## 2. Die innere 3+2-Involution ist jetzt explizit\n\nSetze P(z)=z⁴−1. Eine Basis von E ist\n\\[\ne_n(z)=\\frac{z^n}{P(z)},\\qquad n=0,1,2,3,4.\n\\]\nDie Funktionen haben höchstens einfache Pole an D und sind bei Unendlich regulär. Die konstante Funktion ist e₄−e₀.\n\nFür die geometrischen Pullbacks\n\\[\n(Rf)(z)=f(iz),\\qquad(Sf)(z)=f(1/z)\n\\]\nfolgt unmittelbar\n\\[\nR=\\operatorname{diag}(1,i,-1,-i,1),\n\\qquad Se_n=-e_{4-n}.\n\\]\nDamit gelten R⁴=I, S²=I und SRS=R⁻¹. Insbesondere liegt R² im Zentrum dieser Diederwirkung.\n\nDie Operatoren\n\\[\nP_c=\\frac{I+R^2}{2},\\qquad P_w=\\frac{I-R^2}{2}\n\\]\nsind komplementäre Projektoren mit\n\\[\n\\operatorname{rank}P_c=3,\\qquad\\operatorname{rank}P_w=2.\n\\]\nKonkret liegen e₀,e₂,e₄ im Dreierraum, e₁,e₃ im Zweierraum. Beide Räume werden von R und S erhalten.\n\n**Der präzise positive Satz:** Auf dem vorhandenen markierten RR-Träger ist die Zerlegung 3+2 durch die zentrale Halbwendung ausgewählt. Dieser Operator ist weder die Einschränkung einer bereits positiv projizierten Zustandsinvolution noch die reine CAR-Polarisation. Die früheren Ausschlüsse dieser beiden Gleichsetzungen treffen diese Konstruktion deshalb nicht.\n\nMit der bisherigen TFPT-Vorzeichenkonvention lautet die innere Involution εint=−R². Die Zahl 3 allein wird dabei nicht mit dem Familienraum gleichgesetzt: Der Dreierraum E_c trägt unter R die Eigenwerte (1,−1,1); die drei nichttrivialen Familiencharaktere tragen (i,−1,−i). Ihre Gruppenwirkungen unterscheiden sich.\n\n## 3. Der vorhandene Hyperladungsoperator folgt auf diesem Träger\n\nDie traceless Ladungsverteilung auf beiden Blöcken erfüllt 3y_c+2y_w=0. Mit der üblichen, bereits im Compiler benutzten Normierung y_w=1/2 folgt\n\\[\nY=-\\frac13P_c+\\frac12P_w\n=\\frac{I+5\\varepsilon_{\\rm int}}{12}.\n\\]\nDie Normierung und die Ladungskonjugationskonvention werden also benannt; sie werden nicht durch einen bloßen Projektorrang physisch bestimmt.",
+          "source_id": "research-source:be666ae37d3b840796f4fb91"
+        }
+      ],
+      "reviewed_at": "2026-11-23",
+      "research_problem_id": "problem:c3-p1-p2-shared-origin-reconciliation"
+    },
+    {
+      "id": "map:gaussian-torus-origin",
+      "label_de": "Gaußscher Torus: gemeinsamer P1 und P2 Kandidat",
+      "label_en": "Gaussian torus: joint P1 and P2 candidate",
+      "stage": "geometry",
+      "lane": "origin",
+      "state": "conditional",
+      "overview_de": "Das ausgewählte Ringgitter trägt die vier Marken, die Viertelspur für c₃ und den Fünferträger mit 3 + 2.",
+      "summary_de": "In der geprüften Ringgitterklasse wählt das treue fermionische Dublett p=5 und den Gaußschen Torus. Torsion und Weil Parität liefern P2; die vier Marken und der Weylkoeffizient der Viertelspur liefern P1 Geometrie und Normierung im Modell.",
+      "summary_en": "In the tested ring-lattice class the faithful fermionic doublet selects p=5 and the Gaussian torus. Torsion and Weil parity yield P2; four marks and the quarter-trace Weyl coefficient yield the model-level P1 geometry and normalization.",
+      "scope_note": "Conditional candidate. Ring-lattice class, torsion interpretation, physical parity dictionary and quarter counting remain assumptions; physical state, time, continuum and gravity remain open.",
+      "related_ids": [
+        "finding:shared-gaussian-torus-p1-p2-selection-20261123",
+        "problem:c3-p1-p2-shared-origin-reconciliation"
+      ],
+      "source_refs": [
+        {
+          "path": "experiments/exploration/2026-11-23-phasenraum-f5-holocode/VERDICT.md",
+          "line_start": 28,
+          "line_end": 100,
+          "sha256": "7caa9dee5b119fa1a4d735d96950aea680e3d65ea91629925d93202823e046b1",
+          "excerpt": "## G: Ein Objekt für P1 und P2 — der Gaußsche Torus ℂ/ℤ[i] (`g1_gauss_torus.py`)\n\n**Prinzip.** Startklasse sind flache 2-Tori, deren Gitter ein Ganzheitsring O_K ist (Tori mit\nkomplexer Multiplikation, Klassenzahl 1, neun Fälle). Auf einem Torsionsstück des Torus lebt ein\nendlicher Oszillator, die Weil-Darstellung auf den Funktionen dieses Stücks. Eine einzige\nphysikalische Forderung: Auf dem Torsionsstück, auf dem die Symmetrien des Torus als volle\nEinheitengruppe eines Primkörpers wirken, hat der Oszillator einen Spin-½-Dublett als\nfermionischen Teil.\n\n**Kette.** Spin-½-Dublett ⇒ p = 5 (eindeutig, W) ⇒ Einheitengruppe der Ordnung p − 1 = 4 ⇒ ℤ[i],\nder quadratische Torus. Aus diesem einen Torus folgt:\n- **P2.** Plätze = Funktionen auf der Torsionsgeraden E[2−i] ≅ 𝔽₅. 3 + 2 = bosonischer Dreier ⊕\n  fermionisches Dublett. Y ist die einzige spurfreie Größe im Kommutanten (−1/3, +1/2). Die 16\n  trägt die Hyperladungen, jeder Sektor ist unter 2I irreduzibel (W3). SL(2,5) = 2I führt zu E₈\n  (Ikosiane, McKay, h = 30).\n- **μ₄ und Uhren.** Die komplexe Multiplikation mit i ist auf der 5-Torsion genau das Weyl-Element\n  [[0,−1],[1,0]]; ihr Weil-Bild ist die Fourier-Vierteldrehung, also TFPTs R₅ bis auf das\n  Vorzeichen. Auf E[2−i] wirkt sie als t ↦ 2t = G, die Torsionstranslation ist C₅, und\n  G C₅ G⁻¹ = C₅² gilt exakt.\n- **P1.** Randnormierung c = Kovolumen/(2π · |Einheiten|) = 1/(8π) = c₃ (Weylterm der\n  Dirac-Wärmespur pro Einheitenbahn, numerisch auf 12 Stellen). Die einzige invariante\n  Spinstruktur ohne Nullmoden ist (−,−). Der Modul τ = i ist der Fixpunkt, den KERNSYM als\n  symmetrieerzwungen kennt. Die vier Marken sind die Bilder der 2-Torsion unter der\n  Doppelüberlagerung y² = z⁴ − 1, mit Windung +1 des quadratischen Differentials (Atlas 23.11.).\n  Die Orientierung kommt aus der komplexen Struktur, die Reflexion z ↦ z̄ erhält ℤ[i].\n- **Familien.** H¹ von P¹ ohne die Marken: Rang 3, Charaktere {−1, i, −i}, über 𝔽₅\n  frobeniusgleich (K), Residuenbild der Trägermoden.\n\n**Auswahltabelle (alle neun CM-Tori der Klassenzahl 1).**\n- (A) Volle Einheitenwirkung auf einem Primkörper: p = 5 für ℤ[i], 7 für ℤ[ω], 3 für d = 2 und 11,\n  sonst kein p.\n- (B) Dublett: nur bei p = 5.\n- (C) Invariante invertierbare Spinstruktur: alle außer ℤ[ω].\n\nNur d = 1 erfüllt alle drei Regeln. Die c-Werte der neun Tori liegen zwischen 0,023 und 0,51;\nnur ℤ[i] gibt 1/(8π).\n\n**Neu gegenüber TFPT.** Die Einzelteile waren bekannt: quadratischer Torus mit μ₄ (τ = i,\nj = 1728), c₃ aus der Viertelzählung (23.11., bedingt), 5 = (2+i)(2−i) als Zahlenbeobachtung\n(ARITH.TRICHOTOMY.01), x ↦ 2x und Y_par, PGL(2,5), 2I und E₈. Neu ist die Brücke: P2s fünf\nPlätze sind ein Torsionsstück desselben Torus, dessen Wärmespur P1s c₃ gibt. Und eine einzige\nForderung (Spin-½-Dublett) wählt diesen Torus unter allen CM-Tori aus. Damit beantwortet G beide\nLeitfragen der Konsolidierung: **Die Vier ist die Einheitengruppe ℤ[i]^× des Torus**, erzwungen\ndurch das Dublett. **Die Minimalität ist das erste Torsionsstück**, auf dem die Einheiten voll\nwirken.\n\n**Stufe.** Stufe 3 unter benannten Lesarten: P1 (Normierung, Spinstruktur, Modul, Marken,\nOrientierung) und P2 (fünf Plätze, 3 + 2, Y) kommen aus demselben Objekt, ohne angepasste\nKonstante; die vorhandenen Ergebnisse trägt der TFPT Compiler aus P1 und P2. Nicht Stufe 4:\nphysische Zeit und Zustand, 3 + 1, Kontinuum und Gravitation liefert G nicht.\n\n**Benannte Lesarten (erste freie Wahlen).**\n1. Startklasse: Der Rand ist ein flacher Torus mit Ring-Gitter.\n2. Plätze = Schrödinger-Modell der Weil-Darstellung auf dem ersten Torsionsstück mit voller\n   Einheitenwirkung.\n3. c₃ = Weylterm der Dirac-Wärmespur, gezählt pro Einheitenbahn (in TFPT bisher bedingt).\n4. Die Paritätsbasis (Y_par) ist die physische Farb/Schwach-Basis. Das ist eine Identifikations-\n   änderung gegenüber der markierten Ladung, siehe W.\n\n**Basislinie.** Die Auswahl ist strukturell, kein Zahlentreffer. Effektiv entscheidet\n„Einheitengruppe der Ordnung 4“, und das Dublett erzwingt sie. Der Wert 1/(8π) ist keine\nunabhängige Vorhersage, weil die Viertelzählung am quadratischen Torus formuliert wurde.\nUnabhängig ist, dass die Regel von der P2-Seite denselben Torus wählt. Gegenproben: ℤ[ω] (sechs\nEinheiten) scheitert an zwei Regeln, die Tori mit nur ±1 an der Dublettregel.\n\n**Stärkster Einwand.** Die Lesarten 2 und 3 sind gewählt. SU(3) × SU(2) entsteht nicht, nur 2I\nund U(1) × U(1). Die Dynamik fehlt ganz. G erklärt die Eingaben, nicht die Physik dahinter.\n\n**Kleinster nächster Test (Stufe 4, kein Nebenschauplatz).** Zeit und Zustand aus demselben\nTorus: Die Vierteldrehung vertauscht die beiden Zyklen (τ ↦ −1/τ hat τ = i als Fixpunkt).\nPrüfen, ob der Weil-Oszillator auf E[5] zusammen mit der Torus-Wärmespur eine reflexionspositive\nHalbgruppe mit ausgezeichneter Zeitrichtung definiert, deren KMS-Zustand die Normierung c₃\nträgt. Abbruch, wenn Zeit oder Zustand eine zusätzliche freie Wahl brauchen.",
+          "source_id": "research-source:d8ebb7ecf413ca8e31e65c44"
+        }
+      ],
+      "reviewed_at": "2026-11-23",
       "research_problem_id": "problem:c3-p1-p2-shared-origin-reconciliation"
     }
   ],
@@ -3858,8 +4058,8 @@
   "stages": [
     {
       "id": "inputs",
-      "label_de": "P1/P2 Eingaben",
-      "label_en": "P1/P2 inputs"
+      "label_de": "P1 und seine Normierung",
+      "label_en": "P1 and its normalization"
     },
     {
       "id": "geometry",
@@ -3932,7 +4132,7 @@
   "title_de": "TFPT-Gesamtkarte: Voraussetzungen, Compiler, Auslesungen und offene Brücken",
   "title_en": "TFPT overview: inputs, compiler, readouts, and open bridges",
   "version": 1,
-  "reviewed_at": "2026-11-05",
+  "reviewed_at": "2026-11-23",
   "research_problem_id": "problem:c3-p1-p2-shared-origin-reconciliation",
   "query_concepts": {
     "alpha": [
