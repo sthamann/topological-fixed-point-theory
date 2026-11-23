@@ -1,0 +1,46 @@
+1. Identität d log chi/d tau = -(2 pi i/3) E6/E4
+
+   tau = (0.13 + 1.21j): |lhs - rhs| = 5.1e-21
+   tau = (-0.31 + 0.97j): |lhs - rhs| = 3.39e-21
+   tau = (0.4 + 2.2j): |lhs - rhs| = 1.16e-23
+
+2. Stationäre Formen: Nullstellen von E6 (und Pole von log chi bei E4 = 0) im Fundamentalbereich
+
+   Nullstellen von E6 im Fundamentalbereich: [(np.float64(0.0), np.float64(1.0))]
+   E4(rho) = 5.12e-21: dort ist chi = 0, keine zulässige Form (Zustandssumme null)
+   Valenzformel: E6 hat Gewicht 6, also 6/12 = 1/2 Nullstelle, genau die halbe Nullstelle am
+   elliptischen Punkt i der Ordnung 2. Die Form ist damit ohne weitere Forderung eindeutig.
+
+3. Energie beider Rekonstruktionen (Casimir plus thermisch)
+
+   beta/L =  0.8: <H>_A = +2.399636, <H>_B (Tausch) = -1.535767
+   beta/L =  1.0: <H>_A = -0.000000, <H>_B (Tausch) = -0.000000
+   beta/L = 1.25: <H>_A = -1.535767, <H>_B (Tausch) = +2.399636
+   Am stationären Punkt ist die Gesamtenergie exakt null: Die thermische Energie hebt die
+   Casimirenergie auf. Beide Rekonstruktionen sind dasselbe System (beta = L), Zeitneutralität folgt.
+
+4. Stabilität: F = -log|chi| ist harmonisch
+
+   Hesse am Punkt i: F_xx = +9.57854, F_yy = -9.57854, Spur = +6.0e-08
+   Sattel: stabil gegen Verdrillung, instabil gegen Streckung (Casimir zieht zu dünnen Tori).
+   Allgemein: Für eine chirale Naht ist log|Z| harmonisch und hat nirgends ein lokales Minimum.
+   Energieminimierung kann die Form also grundsätzlich nicht wählen; Stationarität schon.
+
+5. Gegenproben: stationäre Formen bei anderem Nahtinhalt
+
+   freies Boson (E2* = 0): [(np.float64(0.0), np.float64(1.0)), (0.5, 0.866025)]
+   Dirac mit fester Spinstruktur (A,A), Thetagruppe: [(np.float64(0.0), np.float64(1.0))]
+   E8 hoch 3 (Z = j): [(np.float64(0.0), np.float64(1.0))]
+   Leech (Z = j - 720): [(np.float64(0.0), np.float64(1.0)), (0.5, 0.866025)]
+   Nur wo die Zustandssumme am Sechseck verschwindet (E8, E8 hoch 3), ist i die einzige stationäre
+   Form. Beim Boson und beim Leech-Gitter ist auch das Sechseck stationär; dort entscheidet erst die
+   Spinstruktur (Sechseck hält nur PP mit Nullmoden, Z1).
+
+Zusammenfassung
+   bestanden: Identität
+   bestanden: nur tau = i stationär
+   bestanden: Energie null bei i
+   bestanden: Sattel
+   bestanden: E8^3 nur i
+   bestanden: Leech auch rho
+   bestanden: Boson auch rho

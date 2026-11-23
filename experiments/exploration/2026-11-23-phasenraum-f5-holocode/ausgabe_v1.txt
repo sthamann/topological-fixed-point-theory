@@ -10,6 +10,7 @@ Gesamttabelle (P = hergeleitet, L = unter benannter Lesart, F = FAIL, O = OFFEN,
    H5    P    P    L    P    P    F    L    P    P    F    P    L    O    P    O    O    O    O     8    3    2    5    0
    H6h2    P    P    P    P    P    P    P    P    P    P    P    P    L    P    P    O    O    L    14    2    0    2    0
    H6h3    P    P    P    P    P    P    P    P    P    P    P    P    L    P    P    O    L    L    14    3    0    1    0
+   H6h4    P    P    P    P    P    P    P    P    P    P    P    P    L    P    P    O    L    L    14    3    0    1    0
 
 H1:
    K1 EINGABE: Blattinvolution und flache Naht vorausgesetzt
@@ -99,6 +100,11 @@ H6h3:
    K16 OFFEN: freier Sektor läuft logarithmisch; wechselwirkender Limes und Wiederherstellung von SO(4) nicht gezeigt; Gitterabstand mindestens drei Plancklängen
    K17 LESART: [F] T-Phase exp(-2 pi i/3) kompensiert durch invertierbare 3D E8 Phase (Rand c = 8, T^2-Hilbertraum eindimensional, bricht die Vierteldrehung nicht); Alternative drei E8 Blöcke, c = 24
    K18 LESART: S4 gibt TBM als führende Ordnung; TFPT-Kanäle: sin^2 theta12 = 0.3067, sin^2 theta13 = phi0 exp(-tr Y^2) = 0.0231 mit tr Y^2 = 5/6 aus dem 3+2-Split (E), etwa 2 sigma gegen Daten (JUNO entscheidet); delta = 240 Grad = Argument der T-Phase, nicht hergeleitet
+H6h4:
+   K13 LESART: [D] Jacobson wie TFPT. Gegentest: kappa = 0.0983 je Dirac-Geschmack und Gitterfläche; drei Generationen geben a/l_P >= 3.07; die Gitterskala ist nicht die Planckskala
+   K16 OFFEN: freier Sektor läuft logarithmisch; wechselwirkender Limes und Wiederherstellung von SO(4) nicht gezeigt; Gitterabstand mindestens drei Plancklängen
+   K17 LESART: [F] T-Phase exp(-2 pi i/3) kompensiert durch invertierbare 3D E8 Phase (Rand c = 8, T^2-Hilbertraum eindimensional, bricht die Vierteldrehung nicht); Alternative drei E8 Blöcke, c = 24
+   K18 LESART: S4 gibt TBM als führende Ordnung; TFPT-Kanäle: sin^2 theta12 = 0.3067, sin^2 theta13 = phi0 exp(-tr Y^2) = 0.0231 mit tr Y^2 = 5/6 aus dem 3+2-Split (E), etwa 2 sigma gegen Daten (JUNO entscheidet); delta = 240 Grad = Argument der T-Phase, nicht hergeleitet
 
 Prämissen von H6h:
    A: keine ausgezeichneten Zyklen (zeitneutral und basisunabhängig)
@@ -107,6 +113,7 @@ Prämissen von H6h:
    D: Gravitation als Zustandsgleichung (Jacobson, wie TFPT)
 Prämissen von H6h2: A, C, D wie oben; B entfällt (folgt aus A, C und der 2D Naht); E: der 3+2-Split ist lokal (Verbindung auf den Gitterkanten)
 Prämissen von H6h3: A (der orientierte Tausch der Zyklen ist eine Symmetrie, Fixpunkt statt Kovarianz); C' (Familien = gerade Spinstrukturen der Naht, chirale 2-Formen = ihr Lambda^2); D; E; F (Rahmungsanomalie durch invertierbare 3D E8 Phase kompensiert)
+Prämissen von H6h4: A* (die Naht hat keine Hintergrundgeometrie: Basiswechsel sind Symmetrien, und ihre Form erfüllt die Bewegungsgleichung <T> = 0) ersetzt A; C', D, E, F wie H6h3. Der Fixpunkt, die Zeitneutralität und die Orientierung folgen.
 
 Fakten:
    F1_time_neutral_tau: [(np.float64(0.0), np.float64(1.0))]
@@ -158,3 +165,4 @@ Fakten:
    F16_seam_framing_anomaly: N = 16 chiral: T-Phase exp(-2 pi i/3) = exp(-2 pi i c/24); verlangt Zufluss aus einem 3D Volumen
    F18_review_checks: {'Z_AA kovariant bei 2i': True, 'Drehung >2 nur bei i und rho': True, 'Quadrat hält AA': True, 'Sechseck hält nur PP': True, 'g zyklisch auf Marken': True, 'g^4 = id': True, 'g~ vertauscht mit D': True, 'g~^4 = -1': True, 'je Sektor zwei Zustände je Bahn': True, 'c3 je Spinorsektor': True, 'Ordnung 24': True, 'rot = sgn x std': True, 'rot = Lambda2 std': True, 'Familiencharaktere aus g': True, 'H1 der Marken gleich': True, 'chi16 = E4/eta8': True}
    F19_entanglement_density: {'kappa_naive_dirac': 0.7865746774262862, 'kappa_per_dirac_taste': 0.09832183467828577, 'a_over_lP_three_generations_no_doublers': 3.0722786542101668, 'a_over_lP_three_generations_naive': 8.689716280346756, 'tastes_for_quarter': 2.542670209704825}
+   F20_stress_free_selection: {'checks': {'Identität': True, 'nur tau = i stationär': True, 'Energie null bei i': True, 'Sattel': True, 'E8^3 nur i': True, 'Leech auch rho': True, 'Boson auch rho': True}, 'e6_zeros': [[0.0, 1.0]], 'boson_critical': [[0.0, 1.0], [0.5, 0.866025]], 'dirac_AA_critical': [[0.0, 1.0]], 'e8cubed_critical': [[0.0, 1.0]], 'leech_critical': [[0.0, 1.0], [0.5, 0.866025]], 'hessian_at_i': [9.578535929089053, -9.578535868881952]}

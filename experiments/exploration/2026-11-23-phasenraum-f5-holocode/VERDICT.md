@@ -1,6 +1,63 @@
 # Urteil
 
-## Aktueller Stand: H6h3 — externe Kritik geprüft (`z1_kritik_pruefung.py`, `z2_verschraenkungsdichte.py`)
+## Aktueller Stand: H6h4 — Prämisse A hergeleitet (`z3_hintergrundfreiheit.py`)
+
+```
+        K1 K2 K3 K4 K5 K6 K7 K8 K9 K10 K11 K12 K13 K14 K15 K16 K17 K18    P  L  F  O  E
+   H6h3  P  P  P  P  P  P  P  P  P  P   P   P   L   P   P   O   L   L    14  3  0  1  0
+   H6h4  P  P  P  P  P  P  P  P  P  P   P   P   L   P   P   O   L   L    14  3  0  1  0
+```
+Die Bilanz ist gleich; geändert hat sich die Grundlage. Die setzende Prämisse A („der orientierte
+Tausch der Zyklen ist eine Symmetrie“) ist ersetzt durch:
+
+**A\*: Die Naht hat keine Hintergrundgeometrie.** Ihre Basiswechsel (große Diffeomorphismen) sind
+Symmetrien, und ihre Form ist nicht vorgegeben, sondern erfüllt ihre Bewegungsgleichung: Die Antwort
+des Zustands auf jede Deformation der komplexen Struktur verschwindet, ⟨T⟩ = 0. Das ist die
+Bedingung einer dynamischen Nahtmetrik, wie die Virasoro-Bedingung.
+
+**Was daraus folgt (alle sieben Prüfungen bestanden).**
+- Für die E₈-Naht gilt exakt d log χ/dτ = −(2πi/3)·E₆/E₄ (geprüft auf 10⁻²¹). ⟨T⟩ = 0 heißt also
+  E₆(τ) = 0. Nach der Valenzformel hat E₆ im ganzen Fundamentalbereich genau eine Nullstelle, die
+  halbe am elliptischen Punkt i. **Die Form der Naht ist damit eindeutig τ = i**, ohne
+  Orientierungsvoraussetzung und ohne eingefrorene Verdrillung. Am Sechseck ist χ = 0; das ist keine
+  zulässige Form.
+- Dort ist die Gesamtenergie in beiden Rekonstruktionen exakt null: Die thermische Energie hebt die
+  Casimirenergie auf. Bei β/L = 0,8 und 1,25 vertauschen sich die Energien (+2,40 und −1,54). Beide
+  Rekonstruktionen sind am stationären Punkt dasselbe System (β = L). **Zeitneutralität ist damit
+  eine Folge, keine Prämisse.** Der Stabilisator von i ist μ₄; daraus folgen wie bisher die
+  zyklischen Marken, die Viertelzählung und c₃.
+- **Verbot (neu):** Für eine chirale Naht ist log|Z| harmonisch (Hesse +9,58 / −9,58, Spur 0). Es gibt
+  daher nirgends ein lokales Minimum. Energieminimierung kann die Form grundsätzlich nicht wählen; nur
+  Stationarität kann es. Das erklärt, warum frühere Minimierungsansätze (KERNSIX, KERNSYM) bei τ = i
+  einen Sattel fanden.
+- **Gegenproben.** Bei der Dirac-Naht mit fester Spinstruktur (A,A) ist i im Modulraum der
+  Thetagruppe ebenfalls die einzige stationäre Form. Bei E₈³ (Z = j) ist es nur i. Beim freien Boson
+  und beim Leech-Gitter ist zusätzlich das Sechseck ρ stationär; dort entscheidet erst die
+  Spinstruktur (Z1: am Sechseck bleibt nur PP mit Nullmoden). Die Auswahl ist also kein Artefakt
+  jeder beliebigen Naht.
+
+**Was davon schon bekannt war.** Dass die Energie des E₈-Charakters genau bei τ = i verschwindet und
+dass E₆ dort seine einzige Nullstelle hat, steht im Atlas (Befund vom 18.11., „c₃ ist die
+Gitterladungsenergie …“). Ebenso ist dort festgehalten, dass τ = i ein Sattel ist. Neu ist:
+- diese Nullstelle als Bewegungsgleichung einer hintergrundfreien Naht zu lesen, die den gesetzten
+  Fixpunkt ersetzt;
+- das Verbot für Minimierung über die Harmonizität;
+- die Gegenproben.
+
+**Prämissen von H6h4.**
+- **A\*** (hintergrundfreie Naht) ersetzt A.
+- C′, D, E, F bleiben wie in H6h3.
+- A\* trägt zweimal: Die großen Diffeomorphismen geben die GSO-Summe und damit E₈ mit T-Phase (daher
+  F). Die Bewegungsgleichung gibt τ = i.
+
+**Was A\* nicht leistet.**
+- Die Lage ist stationär, aber nicht stabil: Sattel, instabil gegen Streckung. Wenn die Form wirklich
+  dynamisch ist, braucht die Stabilität einen weiteren Grund. Kandidaten sind die 3D E₈ Phase (F),
+  die Ankopplung an die 4D Geometrie oder das Modulintegral, in dem ein Sattel der maßgebliche
+  Punkt ist.
+- Dass es überhaupt eine geschlossene 2D Naht mit chiralen Fermionen gibt, bleibt Ausgangspunkt.
+
+## Davor: H6h3 — externe Kritik geprüft (`z1_kritik_pruefung.py`, `z2_verschraenkungsdichte.py`)
 
 ```
         K1 K2 K3 K4 K5 K6 K7 K8 K9 K10 K11 K12 K13 K14 K15 K16 K17 K18    P  L  F  O  E

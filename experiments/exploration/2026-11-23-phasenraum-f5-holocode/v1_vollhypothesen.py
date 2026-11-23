@@ -577,6 +577,18 @@ if "H6h2" in H and z1p.exists() and z2p.exists():
                              "etwa 2 sigma gegen Daten (JUNO entscheidet); delta = 240 Grad = Argument der T-Phase, nicht hergeleitet")
     facts["F18_review_checks"] = ok
     facts["F19_entanglement_density"] = z2
+    z3p = Path(__file__).with_name("z3_ergebnis.json")
+    if z3p.exists():
+        z3 = json.loads(z3p.read_text())
+        ok3 = z3["checks"]
+        H["H6h4"] = dict(H["H6h3"])
+        H["H6h4"]["K2"] = (P if ok3["nur tau = i stationär"] and ok3["Energie null bei i"] else F,
+                           f"[A*] stationäre Nahtform <T> = 0: d log chi_E8/d tau = -(2 pi i/3) E6/E4, einzige Nullstelle im "
+                           f"Fundamentalbereich {z3['e6_zeros']}; Gesamtenergie dort null, beide Rekonstruktionen gleich; "
+                           f"ohne Orientierungsvoraussetzung; Gegenproben Boson {z3['boson_critical']}, Leech {z3['leech_critical']}")
+        H["H6h4"]["K14"] = (P, "keine freie Konstante; die Form der Naht ist nicht gewählt, sondern ihre Bewegungsgleichung; "
+                               "a/l_P = 2 sqrt(kappa_gesamt) berechenbar, noch nicht berechnet")
+        facts["F20_stress_free_selection"] = z3
 
 order = [f"K{i}" for i in range(1, 19)]
 print("Gesamttabelle (P = hergeleitet, L = unter benannter Lesart, F = FAIL, O = OFFEN, E = EINGABE)\n")
@@ -601,6 +613,10 @@ if "H6h3" in H:
     print("Prämissen von H6h3: A (der orientierte Tausch der Zyklen ist eine Symmetrie, Fixpunkt statt Kovarianz); "
           "C' (Familien = gerade Spinstrukturen der Naht, chirale 2-Formen = ihr Lambda^2); D; E; "
           "F (Rahmungsanomalie durch invertierbare 3D E8 Phase kompensiert)")
+if "H6h4" in H:
+    print("Prämissen von H6h4: A* (die Naht hat keine Hintergrundgeometrie: Basiswechsel sind Symmetrien, und ihre Form "
+          "erfüllt die Bewegungsgleichung <T> = 0) ersetzt A; C', D, E, F wie H6h3. Der Fixpunkt, die Zeitneutralität "
+          "und die Orientierung folgen.")
 print("\nFakten:")
 for k, v in facts.items():
     print(f"   {k}: {v}")
