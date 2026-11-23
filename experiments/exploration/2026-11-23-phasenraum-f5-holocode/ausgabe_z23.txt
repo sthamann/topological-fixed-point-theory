@@ -1,0 +1,188 @@
+0. E8-Wurzelsystem in R^8
+
+   240 Wurzeln, 8 einfache; det Cartan = 1; 248 als E8-Irrep: [1] mal Dimension 248
+   Automorphismen des E8-Dynkindiagramms: 1 (keine äußeren Automorphismen)
+
+1. Verzweigungen (Freudenthal auf den Gewichten)
+
+   1a. E8 > SO(16): 248 = 120 + 128
+       Kommt der Vektor 16 von SO(16) in der 248 vor? False
+   1b. SO(16) > SO(10) x SO(6):  16 = (10,1) + (1,6)
+                                120 = (10,6) + (45,1) + (1,15)
+                                128 = (16,4) + (16b,4b)
+   1c. SO(10) x SU(3) x U(1)_X' (SU(4) > SU(3) x U(1), 4 = 3_1 + 1_-3):
+       248 = (16,3)_1 + (16b,3b)_-1 + (45,1)_0 + (10,3)_-2 + (10,3b)_2 + (16,1)_-3 + (16b,1)_3 + (1,8)_0 + (1,3)_4 + (1,3b)_-4 + (1,1)_0
+   1d. E8 > E6 x SU(3): 248 = (27b,3b) + (27,3) + (78,1) + (1,8)
+       E6 > SO(10) x U(1): 27 = (16)_1 + (10)_-2 + (1)_4;  78 = (45)_0 + (16)_-3 + (16b)_3 + (1)_0
+       (16,3) aus der SO(16)-Kette und aus der E6-Kette: 48 bzw. 48 Gewichte, gleich: True
+       (16,1) (die vierte Familie) liegt in (78,1): True (16 = Spinoranteil von E6 > SO(10) x U(1))
+   1e. E8 > SU(5) x SU(5)': 248 = (5b,10') + (10b,5'b) + (10,5') + (5,10'b) + (1,24') + (24,1)
+       Eine Generation (16 Gewichte einer Familienkomponente) verteilt sich auf: {"(10,5')": 10, "(5b,10')": 5, "(1,24')": 1}
+       10 der Generation in (10,5'), 5b in (5b,10'), nu^c in (1,24'): drei verschiedene SU(5)'-
+       Darstellungen, kein gemeinsamer Familienindex. SU(5) x SU(5)' enthält SO(10) nicht.
+   1f. E8 > E7 x SU(2): 248 = (133,1) + (56,2) + (1,3)
+       Gewichte der (16,4) mit SU(2)-Ladung != 0 (in (56,2)): 32, mit Ladung 0 (in (133,1)): 32
+
+   1g. Eine Generation = Lambda^gerade C^5 (x_i = n_i - 1/2, gerade Besetzung = ungerade Minuszahl)
+       (3b,1,-2/3), (1,2,-1/2), (1,1,0), (3,2,1/6), (3b,1,1/3), (1,1,1)
+       X = 5(B-L) - 4Y = -2 sum x_i: Werte [Fraction(-3, 1), Fraction(1, 1), Fraction(5, 1)], alle = 1 mod 4: True
+
+2. Gitter und Verklebung D5 + A3 (R102)
+
+   Klassen (Z4 von Spin(10), Z4 von SU(4)) aller 248 Gewichte: {(0, 0): 60, (1, 3): 64, (2, 2): 60, (3, 1): 64}
+   E8 = D5 + A3 mit Verklebung {(0,0), (1,3), (2,2), (3,1)} (c5 + c3 = 0 mod 4): True
+   Naht-Eltern (10,1)+(1,6): Klassen [(0, 2), (2, 0)] -> c5 + c3 = 2: außerhalb der Verklebung
+   Generation (16,3): Klasse [(3, 1)] -> in der Verklebung (als (16,4) in der 128)
+   Vektorgewichte +-e_i im E8-Gitter: False; Generationsgewichte im E8-Gitter: True
+   g = exp(2 pi i H), H = (1/2)^8 (im E8-Gitter: True): Phasen auf allen 240 Wurzeln [Fraction(0, 1)] -> g = 1 in E8; auf 16_v: [Fraction(1, 2)] -> g = -1.
+   Folgerung: Die 16 Nahtfermionen sind Bausteine (freie Fermionen vor der GSO-Projektion), nie Komponenten
+   eines E8-Multipletts. 'Verschiedene Komponenten einer E8' ist für die Naht-16 unmöglich.
+
+3. Automorphismen, Trialität, Realität
+
+   Trialität diag(T,T) auf D4 x D4 (T vertauscht 8v und 8s): erhält die 240 Wurzeln: True
+   Bild von 16_v: z.B. ('1/2', '1/2', '1/2', '1/2', '0', '0', '0', '0'), Norm 1, im E8-Gitter: False
+   Bild der SO(10)-Wurzeln bleibt in SO(16): False (die SO(10) wird mitbewegt)
+   Irreps von Spin(10) mit Dimension <= 16: 1 (selbstkonj.), 10 (selbstkonj.), 16 (komplex), 16 (komplex)
+   (Labelsumme 2 gibt schon Dimension >= 54; die Dimension wächst mit jedem Label.)
+   Typ der selbstkonjugierten: {1: 'reell', 10: 'reell'}
+   Reelle 16-dimensionale Darstellungen von Spin(10): [{'1': 6, '10': 1, '16': 0, '16b': 0}, {'1': 16, '10': 0, '16': 0, '16b': 0}]
+   Satz R: Einschränkung einer reellen Darstellung ist reell, und jeder Automorphismus erhält den Typ.
+   Also trägt der Vektor 16 von SO(16) unter keiner Einbettung von Spin(10) oder G_SM eine Generation,
+   und kein Automorphismus (E8 hat keine äußeren; Trialität; Wahl einer anderen maximalen Untergruppe)
+   bildet die Naht-16 auf eine Generations-16 ab.
+
+   J-Satz (Z18-Lesart). Fermionen in Majorana-Basis: reeller Raum W mit reeller SO(10)-Wirkung; J reell,
+   J^2 = -1, [J, SO(10)] = 0. Dann ist xi- = konj(xi+) als SO(10)-Darstellung. Probe mit Zufalls-J:
+   W = 16_v + 16_v (Paare), W = (16)_R, W = beides: Inhalt von xi+ (Dim, Vektorgewichte, Spinorgewichte): {'vv': (16, 10, 0), 's': (16, 0, 16), 'vvs': (32, 10, 16)}
+   J^2 = -1 und [J, so(10)] = 0 in allen Proben: True; Gewichte von xi- = -(Gewichte von xi+): True
+   Z18 nimmt Naht = xi+ (x) sqrt(q) und Familien = xi- (x) f_k, k = 0,1,2. Als SO(10)-Darstellung also
+   Familien = 3 x konj(Naht-Multiplett). Mit Naht = 16_v = (10,1)+(1,6) folgt Familien = 3 x [(10,1)+(1,6)]:
+   reell, vektorartig, keine Generation. Umgekehrt verlangt Familien = 3 x 16 die Naht in 16b.
+   GSO: 16 MW -> Gewicht-1-Zustände 248, h_R = 1;  32 MW (Naht in 16b) -> 496, h_R = 2
+
+4. Ströme zu Fermionen: das Wörterbuch 128 > (16,4) > (16,3) + (16,1)
+
+   16 Nullmoden psi_a (a = 1..16) = 8 komplexe Moden; Fockraum 256 = 128 + 128'. Die GSO-behaltene Hälfte
+   ist genau die Spinorhälfte von E8: True. Die 10 Moden aus (10,1) geben Lambda^* C^5 = 16 + 16b;
+   die 6 aus (1,6) geben Lambda^* C^3 = 4 + 4b. Die 4 neben der Generation hat Besetzungszahlen {0: 1, 2: 3}
+   von C^3: 4 = Lambda^0 + Lambda^2 = 1 + 3, also (16,1) = leere, (16,3) = doppelt besetzte (1,6)-Moden.
+   Das ist die genaue Beziehung der beiden 16: dim 16 der Generation = 2^(10/2 - 1) aus den zehn (10,1)-
+   Moden; unter den Untergruppen SO(n) der 16 Moden hat nur n = [10] einen Spinor der Dimension 16.
+
+   4b. Statistik der Nebenklassen von D8 (bosonisiert: h = |lambda|^2/2 + ganze Oszillatoren), c = 8
+     Klasse 0: h mod 1 = [Fraction(0, 1)]; Drehphase eines Rings (h - c/24) mod 1 = [Fraction(2, 3)]
+     Klasse v: h mod 1 = [Fraction(1, 2)]; Drehphase eines Rings (h - c/24) mod 1 = [Fraction(1, 6)]
+     Klasse s: h mod 1 = [Fraction(0, 1)]; Drehphase eines Rings (h - c/24) mod 1 = [Fraction(2, 3)]
+     Klasse c: h mod 1 = [Fraction(0, 1)]; Drehphase eines Rings (h - c/24) mod 1 = [Fraction(2, 3)]
+   SO(10)-Spinorquantenzahlen (halbzahlige Koordinaten 1..5) treten genau in s und c auf, und dort ist h ganz.
+   Relativ zum Grundzustand des Rings haben die 128 Ströme dieselbe Drehphase (h = 1 ganz): bosonisch.
+   Fermionisch (h halbzahlig) ist nur die Klasse v, und sie trägt (10,1)+(1,6), keine Generation.
+   In der fermionischen Fassung ohne GSO-Summe gibt es die 128 auf einem gewöhnlichen Ring (NS, er berandet
+   eine Scheibe) gar nicht; in der bosonischen E8-Fassung existiert sie mit h = 1. In keinem Fall ist sie
+   fermionisch.
+
+   4c. Elemente von E8, die mit SO(10) vertauschen (H = (c,c,c,c,c+d, h6,h7,h8), h in Z/16)
+     Gitterpunkte: 131072, alle mit SO(10) vertauschend (nachgeprüft: True); das Gitter
+     enthält alle Elemente, deren Phasen auf der 128 Vielfache von 2 pi/32 sind.
+     Elemente mit 3 + 1 und relativem Vorzeichen auf der 4: 256; davon Involutionen: 0; kleinste Ordnung auf der 248: 8
+     Teilungen der 4 durch Involutionen (Ordnung <= 2 auf der 248): [(2, 2), (4,)]
+     E8 hat triviales Zentrum: J mit J^2 = -1 kann auf keiner E8-Darstellung ein E8-Element sein; auf den
+     248 ist J eine Involution (Z12). Involutionen geben auf mu und -mu dieselbe Phase, trennen also 16 und
+     16b nicht, und sie teilen die 4 nur als 4 + 0 oder 2 + 2. Die Z18-Sortierung (Familien gegen
+     Nahtmode mit Vorzeichen) ist auf der (16,4) kein Element der Ordnung 2, sondern mindestens 8.
+
+   4d. Symmetrie der E8-Klammer 128 x 128 -> 120 (Sym^2 und Lambda^2 der 128 unter SO(16))
+     Sym^2(128) = {1: 1, 1820: 1, 6435: 1};  Lambda^2(128) = {120: 1, 8008: 1}
+     Eine fermionische 128 bräuchte eine symmetrische Klammer (Superalgebra so(16) + 128). Die gibt es nicht:
+     Die 128 als Fermionen ist mit der E8-Struktur unverträglich.
+
+   4e. Chiralität mit Fluss auf einer geschlossenen inneren Fläche (SO(10) ungebrochen)
+     128 selbstkonjugiert: True; als 4D-Weylfelder #16 = 4, #16b = 4: vektorartig
+     Gewichte der 4 summieren zu null (jede Cartan-Richtung von SU(4)): True; U(1)_X'-Ladungen [-3, 1, 1, 1]
+     Index auf einer Fläche = Fluss x Ladung. Netto #16 - #16b = n x (Spur der Ladung über die 4) = 0.
+     Mit U(1)_X'-Fluss n: (16,3)_1 gibt 3n Familien, (16,1)_-3 gibt -3n, also 3n Anti-Familien.
+     Gibt es H in R^8 mit H.w = 1 auf allen 64 Gewichten der (16,4)? Rang [W | 1] = 9, Rang W = 8: nein
+     Der C''-Index 3 (Grad 3 = deg K^(1/2) + deg O(D)) koppelt alle vier Komponenten gleich und braucht eine
+     U(1) außerhalb von E8 (oben: keine solche Richtung in R^8).
+
+   4f. T^2/Z4-Orbifold ohne Fluss, komplexes 6D-Weylfeld in der 128 (Spinorphase e^(+-i pi/4)),
+       Eichzwirn P (vertauscht mit SO(10)), Fermionzahlphase eta = e^(2 pi i m/32).
+     Volumen mit E8-Eichbosonen (P^4 = 1 auf 248): erreichbare Netto-#16 = [-4, -2, 0, 2, 4]
+     Volumen nur mit Spin(16)-Eichbosonen (P^4 = 1 auf 120): erreichbare Netto-#16 = [-6, -4, -2, 0, 2, 4, 6]
+     Beispiel für 4 mit E8: H = ('0', '0', '0', '0', '0', '1/2', '1/2', '1/2'), eta-Exponent m = 12/32, Ordnung von P = 4
+     Grund: Das 6D-Weylfeld ist komplex, die 128 aber reell. (eta P)^4 = -1 muss auf (16,4) und (16b,4b)
+     zugleich gelten; das erzwingt m = 0 mod 4 und Zwirnphasen p_j = 0 mod 4 auf der 4. Mit det = 1 auf der
+     4 (sum p_j = 0 mod 32) ist die Netto-Zahl dann gerade.
+     Mit E8-Bosonen im Volumen ist 4 erreichbar (P = Zentrum von SU(4) auf der 4): die ganze (16,4),
+     also vier Familien mit gleichem Charakter, nicht drei mit {-1, i, -i}. Drei bräuchten eine halbe
+     Zählung (Majorana-Weyl in 6D gibt es für eine reelle Darstellung nicht) oder Fixpunktfelder.
+
+5. Getrennte Zuordnung (Option 3): 4D-Inhalt und Anomalien
+
+   Linkshändige Weylfelder in 4D:
+     F_k in 16 von SO(10), k = 0,1,2 (leicht, ungepaart; Charaktere {-1, i, -i} der Vierteldrehung, C'')
+     P_a in (10,1) + (1,6) von SO(10) x SO(6), a = 1..16 (schwer; Masse Phi P P, Phi komplex, Singulett)
+   Bosonen: SO(10)-Eichfelder (45), Phi (J-Ladung 2), Higgs 10_H und 126_H für die SM-Brechung (nicht Thema).
+   SO(10)^3 (Summe (h.w)^3, generisches h): 16 -> 0, 10 -> 0; Gegenprobe 5 von SU(5) -> 504
+   SM je Generation: {'Y^3': Fraction(0, 1), 'Y-grav': Fraction(0, 1), 'SU3^2 Y': Fraction(0, 1), 'SU2^2 Y': Fraction(0, 1), 'SU3^3': Fraction(0, 1)}; SU(2)-Dubletts: 4 (gerade: kein Witten-Defekt)
+   X = 5(B-L) - 4Y: Spur 0, Spur X^3 0; nu_X = #(X=1) - #(X=3) mod 4 über drei Generationen = 48 = 0 mod 16
+   Eltern: reell. SO(6)^3 für die 6: 0 (Gegenprobe 4: -63); SO(10)^3 für die 10: 0.
+   Wäre SU(3)_fam aus SU(4) geeicht: kubische Anomalie der (16,3) = 16 x A(3) ~ 288 != 0.
+
+   Gemeinsames Spin-Z4: J = z_X^(-1) (x) R_Paar, z_X = exp(i pi X/2) (Zentrum von Spin(10)),
+   R_Paar dreht (psi, chi) der Eltern (Orientierung je Block so, dass xi+ auf allen 16 J = +i hat).
+   J^2 = -1 auf allen Fermionen: True; J^2 = +1 auf 45, 10_H, 126_H, Phi: True; xi+ hat J = +i auf allen 16: True; Familien J = ['-1j']
+   nu_J = n(+i) - n(-i): Paarmodell -48 = 0 mod 16; partnerfreie Fassung -32 = 0 mod 16
+   Eine skalare 16_H hätte J^2 = (-1-0j): mit Spin-Z4 unverträglich (B-L-Brechung über 126_H).
+   Nullmoden im minimalen SO(10)-Instanton: 16 -> 4, 10 -> 2. Z4_fam (Charaktere i^q, q = 2,1,3):
+   sum q n_0 = 24 = 0 mod 4; Z4_fam-Gravitation sum q dim = 96 = 0 mod 4
+
+6. Urteil
+
+   Obstruktion für jede Vereinigung, konsistente Zuordnung nur getrennt. (i) Die Naht-16 (Vektor von SO(16), Klassen (2,0)+(0,2) der D5+A3-Verklebung) liegt in keinem E8-Multiplett; kein Automorphismus, keine Trialität, keine andere maximale Untergruppe bildet sie auf eine Generations-16 ab (Satz R: reell bleibt reell). (ii) Ein reelles Multiplett mit Paarstruktur J gibt xi- = konj(xi+): Familien = 3 x konj(Naht); mit Naht 16_v sind die Z18-Familien 3 x [(10,1)+(1,6)], vektorartig; Familien 3 x 16 erzwingen Naht 16b mit so(32)_1 statt E8. (iii) Das Wörterbuch Ströme -> Fermionen stimmt nur in den Quantenzahlen (128 = gerader Fockraum der 16 Nullmoden, (16,4) = (16,3)+(16,1)); es scheitert an der Statistik (h ganz, J^2 = +1, E8-Klammer antisymmetrisch) und an der Chiralität (Fluss: (16,1) hebt (16,3) auf; Z4-Orbifold netto stets gerade, also nie 3). (iv) Konsistent ist die getrennte Zuordnung: 3 x 16 leicht, 16 Eltern in (10,1)+(1,6) schwer, anomaliefrei, mit gemeinsamem Spin-Z4 J = z_X^-1 R_Paar (nu_J = 0 mod 16). Die Zahl 16 steht zweimal für Z16 (zwei Spin-Z4-Zählungen) und einmal für 2^(10/2-1); kein Objekt wird doppelt benutzt, aber keines folgt aus dem anderen.
+
+   Verbleibende Annahmen der getrennten Zuordnung: zwei Multipletts als direkte Summe; Phi koppelt nur an
+   die Eltern (ersetzt den J-Projektor aus Z18); Familien koppeln an K(D) (C''); 16 Eltern aus der Forderung
+   E8 auf der Naht; SO(10) als Eichgruppe; Orientierung von R_Paar je Block (10 gegen 6) gewählt.
+
+Zusammenfassung der Prüfungen
+   bestanden: E8: det Cartan = 1 (Gewichtsgitter = Wurzelgitter, Zentrum trivial), Diagramm ohne Symmetrie, 248 irreduzibel
+   bestanden: E8 > SO(16): 248 = 120 + 128
+   bestanden: SO(16) > SO(10) x SO(6): 16 = (10,1)+(1,6), 120 = (45,1)+(1,15)+(10,6), 128 = (16,4)+(16b,4b)
+   bestanden: (16,4) = (16,3)_1 + (16,1)_-3; 248 unter SO(10) x SU(3) x U(1) vollständig
+   bestanden: E8 > E6 x SU(3): 248 = (78,1)+(1,8)+(27,3)+(27b,3b); 27 = 16_1 + 10_-2 + 1_4
+   bestanden: (16,3) aus E6 x SU(3) und aus SO(16) sind dieselben 48 Gewichte; (16,1) liegt in (78,1)
+   bestanden: E8 > SU(5) x SU(5)': 248 = (24,1)+(1,24')+(10,5')+(10b,5'b)+(5b,10')+(5,10'b); Generation auf drei Terme verteilt
+   bestanden: E8 > E7 x SU(2): 248 = (133,1)+(1,3)+(56,2); die (16,4) verteilt sich auf beide Teile
+   bestanden: Generation = Lambda^gerade C^5: genau Q, u^c, d^c, L, e^c, nu^c; X = 1 mod 4 auf allen 16
+   bestanden: Verklebung: alle 248 Gewichte in der Diagonale c5 + c3 = 0; Naht-Eltern (2,0),(0,2) außerhalb, Generation innerhalb
+   bestanden: exp(2 pi i (1/2)^8) ist trivial in E8 und -1 auf dem Vektor 16: 16_v ist keine Darstellung der E8-Untergruppe Spin(16)/Z2
+   bestanden: Trialität ist E8-Automorphismus, bildet 16_v auf (8s,1)+(1,8s) ab (wieder nicht im E8-Gitter, Norm 1)
+   bestanden: Reelle 16-dim Darstellungen von Spin(10) sind genau 16 x 1 und 10 + 6 x 1; die 16 ist komplex
+   bestanden: SM-Generation nicht selbstkonjugiert (chiral): keine reelle 16 kann sie tragen
+   bestanden: J-Satz: für reelles W und reelles J im Kommutanten ist xi- = konj(xi+) (21 Zufallsproben)
+   bestanden: Familien = 3 x 16 erzwingt Naht in 16b: 32 MW, c = 16, 496 Ströme = so(32), h_R = 2, kein E8
+   bestanden: Clifford: die 128 ist der gerade Fockraum der 16 Naht-Nullmoden; Generation = Lambda^gerade C^5 der (10,1)-Moden
+   bestanden: Nebenklassen: Klasse v hat h in Z+1/2, Klassen 0, s, c haben h ganz; SO(10)-Spinoren nur in s, c
+   bestanden: Kein SO(10)-vertauschendes Element der Ordnung <= 2 teilt die 4 als 3 + 1 mit Vorzeichen; kleinste Ordnung 8
+   bestanden: 120 liegt in Lambda^2(128), nicht in Sym^2(128): die Klammer [128,128] -> 120 ist antisymmetrisch
+   bestanden: 128 vektorartig (4 x 16 + 4 x 16b); Fluss in SU(4): netto 0, die (16,1) trägt genau die Gegenchiralität (3n - 3n); gleiche Ladung auf ganzer (16,4) liegt nicht in E8
+   bestanden: Orbifold T^2/Z4 (Konstantmoden, alle mit SO(10) vertauschenden Zwirne): netto #16 stets gerade, nie 3, auch ohne 128-Bosonen
+   bestanden: SO(10)^3-Anomalie verschwindet für 16 und 10 (Gegenprobe: die 5 hat sie)
+   bestanden: Leichter Inhalt anomaliefrei: SM-Spuren 0, Dubletts gerade, tr X = tr X^3 = 0, nu_X = 48 = 0 mod 16
+   bestanden: Eltern (10,1)+(1,6): alle kubischen Anomalien 0 (reell), auch bei geeichter SO(6) (Gegenprobe 4 != 0)
+   bestanden: Gemeinsames Spin-Z4 J = z_X^-1 (x) R_Paar: J^2 = (-1)^F auf allen Feldern, nu_J = 0 mod 16 (beide Fassungen)
+   bestanden: Z4_fam der Familiencharaktere ist von SO(10)-Instantonen und Gravitation nicht gebrochen (Ibanez-Ross)
+Befunde (negativ oder begrenzend, nicht erzwungen)
+   ja: Naht-16 (Vektor von SO(16)) ist in keiner E8-Darstellung enthalten
+   ja: kein Automorphismus, keine Trialität, keine Untergruppenwahl verbindet Naht-16 und Generations-16
+   ja: ein reelles Multiplett mit Paarstruktur J liefert Familien = 3 x konj(Naht), nie Naht reell und Familien chiral
+   ja: Spinorströme (128 > (16,3)) sind relativ zum Ringgrundzustand bosonisch (h ganz)
+   ja: E8-Klammer verbietet eine fermionische 128 (keine Superalgebra so(16) + 128)
+   ja: glatter Fluss in E8 mit ungebrochener SO(10): die vierte Familie (16,1) hebt die drei (16,3) auf
+   ja: Z4-Orbifold der 128 gibt nie drei Familien (netto stets gerade)
+   ja: SU(3)_fam ist mit 3 x 16 allein nicht eichbar (16 x A(3) != 0)
+   ja: skalare 16_H ist mit dem gemeinsamen Spin-Z4 unverträglich
+   ja: Spin x_Z2 Spin(10) ((-1)^F = z_X^2) ist durch die Eltern verletzt (X gerade auf Fermionen)
+   ja: Option 3 bleibt eine direkte Summe zweier Multipletts (Naht-Eltern und Familien)

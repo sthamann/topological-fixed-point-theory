@@ -1,0 +1,209 @@
+Z22: Prinzip U — Deck-Z4 als Untergruppe der inneren Drehung U(1)_J
+Masse m = 0,6, Wilson r = 1, Querschnitt mit Kernradius 3,5 wie Z7.
+
+0. Ladungen unter U(1)_J
+
+   J = exp(pi T/2) = [[0, 1], [-1, 0]]: psi -> chi -> -psi wie Z7.
+   T^T v = i q v: xi+ hat q = 1, xi- hat q = -1.
+   Ladungen der drei Bilinearen (Eigenwerte von ad_T / i): [-2, 0, 2]
+   xi+ xi+ hat +2, xi- xi- hat -2, xi+ xi- = (psi psi + chi chi)/2 = [[1/2, 0], [0, 1/2]] hat 0.
+   psi chi = (I/2) xi+xi+ + (-I/2) xi-xi- + (0) xi+xi-: Ladung +2 und -2 je zur Hälfte.
+   Phi (Ladung -2) darf an ['xi+xi+'] koppeln, Phi* (Ladung +2) an ['xi-xi-'].
+   Die allgemeinste U(1)_J-invariante Kopplung ist y Phi xi+xi+ + y' Phi* xi-xi- + W xi+xi- + h.c.
+   Satz: Erhält eine Ladung W xi+xi- (q_p + q_m = 0) und Phi xi+xi+ (q_Phi + 2 q_p = 0), so hat Phi* xi-xi-
+   die Ladung -q_Phi + 2 q_m = 0. Nichtabelsch gilt dasselbe: W verlangt xi- ~ konj(xi+), also
+   Phi* (x) Sym^2(xi-) = konj(Phi (x) Sym^2(xi+)). Keine Symmetrie, die Wilson zulässt, trennt y' von y.
+   Wilson induziert für xi- die Masse M_eff = -W^2/Phi (Schur): Phase +2.442 = pi - phi0 (+2.442), also Phi*-artig.
+   Im Volumen gilt E_min(k_z) = sqrt(sin^2 k_z + s^2) mit s = leichter Singulärwert (Abweichung 5.6e-17);
+   s m / W^2 bei k_z = 0,05/0,1/0,3/0,8: [1.     0.9999 0.9945 0.8258]. xi- bleibt am Knoten masselos, s ~ k^4/m.
+
+   Windungen im eta-Rahmen (eta_pm = e^{-+i phi/4} xi_pm, Holonomie i auf xi+):
+   Delta+ = Phi e^{i phi/2}: w+ = nu + 1/2. G: Delta- ~ Phi e^{-i phi/2}, w- = nu - 1/2. U mit y': Delta- ~ Phi* e^{-i phi/2},
+   w- = -nu - 1/2. Vorhergesagter Index = Summe der Windungen der massiven Arten (det M am Knoten).
+      G ausgerichtet   w+ = +1, w- = +0, Index +1
+      U0 ausgerichtet  w+ = +1, w- = --, Index +1
+      Uy ausgerichtet  w+ = +1, w- = -1, Index +0
+      G gegen          w+ = +0, w- = -1, Index -1
+      U0 gegen         w+ = +0, w- = --, Index +0
+      Uy gegen         w+ = +0, w- = +0, Index +0
+   (ausgerichtet: Halbwindung nu = +1/2 im Sinn der Holonomie; gegen: nu = -1/2, gleiche Gradientenenergie nu^2)
+
+3. Paarung und Familienmassen im Z18-Kanal
+
+   Z18-Identität q = f2^2 - f0^2: Rest 0. Kanäle aus Z18: <q,q> = Q, <q,f2^2> = Q/2, <q,f0^2> = -Q/2,
+   alle anderen Familienkanäle 0; Naht-Familie-Kanäle verschwinden (sqrt q deckungerade, q deckgerade).
+   Eichbedingung (Z18, eps = +1): Naht in xi+, Familien f0, f1, f2 in xi-.
+   G (psi chi):      Familienmassen / Nahtmasse = [0.  0.5 0.5] (Z18-Datei: [0.0, 0.5, 0.5])
+   U, y' = 0:        [0. 0. 0.]
+   U, y' = 0.3:      [0.   0.15 0.15] = |y'| x {0, 1/2, 1/2}
+   Das Profil von Phi* ist ebenfalls ~ q (reelle Charaktere von q), daher derselbe Kanal mit Faktor y'.
+
+4. Gitter: Phasenpotential, Erhaltung von Q_J, Reflexionspositivität
+
+   Hamiltonsch G (Z9, m_minus = m)      V - V_min = 0.0882 0.0748 0.0432 0.0125 0.0000 0.0125 0.0432 0.0748 0.0882  (Spannweite 8.8e-02)
+   Hamiltonsch U (m_minus = 0)          V - V_min = 0.0000 0.0000 0.0000 0.0000 0.0000 0.0000 0.0000 0.0000 0.0000  (Spannweite 0.0e+00)
+   Hamiltonsch U mit y' = 0,6 (Phi*)    V - V_min = 0.0000 0.0000 0.0000 0.0000 0.0000 0.0000 0.0000 0.0000 0.0000  (Spannweite 0.0e+00)
+   Euklidisch (Z19, W-Form, 8^4): G Spannweite 0.0830 (Z19: 0,083), U Spannweite 0.0e+00
+
+   Eigener dünnbesetzter Builder gegen Z7-build (m_minus = m): größte Differenz 0.0e+00
+   Defektgitter 12x12, Viertelfluss: max |[H, Q_J]| ohne Phi = 0.0e+00
+   e^(i a Q_J) H(phi0) e^(-i a Q_J) - H(phi0 + 2a): U 4.5e-16, U mit y' 4.5e-16, G 0.81
+   Also ist das Potential der gleichförmigen Phase exakt flach: Drehungen sind unitär äquivalent.
+   Die Z9-Barriere stammt aus Phi xi-xi- (Gesamtladung -4); unter U fehlt dieser Term.
+
+   Reflexionspositivität (Link, OS-Form wie Z19, 4 Zeitschichten, 6 Raumimpulse):
+      Wilson einzeln r=1.0   OS-Minimum über Phasen 0, pi/2, pi, 2: -3.77e-12
+      Wilson einzeln r=0.5   OS-Minimum über Phasen 0, pi/2, pi, 2: -1.65e-12
+      Wilson einzeln r=2.0   OS-Minimum über Phasen 0, pi/2, pi, 2: -1.13e-01
+      U r=1.0                OS-Minimum über Phasen 0, pi/2, pi, 2: -6.54e-12 -6.52e-12 -6.58e-12 -6.80e-12
+      U r=0.5                OS-Minimum über Phasen 0, pi/2, pi, 2: -1.07e-12 -1.07e-12 -1.08e-12 -1.05e-12
+      U r=2.0                OS-Minimum über Phasen 0, pi/2, pi, 2: -1.17e-01 -1.17e-01 -1.17e-01 -1.17e-01
+      U y'=0,6 r=1.0         OS-Minimum über Phasen 0, pi/2, pi, 2: -4.73e-12 -4.56e-12 -4.77e-12 -4.75e-12
+      U y'=0,6 r=0.5         OS-Minimum über Phasen 0, pi/2, pi, 2: -3.90e-13 -4.01e-13 -3.88e-13 -4.08e-13
+      U y'=0,6 r=2.0         OS-Minimum über Phasen 0, pi/2, pi, 2: -2.68e-01 -2.68e-01 -2.68e-01 -2.68e-01
+      G r=1.0                OS-Minimum über Phasen 0, pi/2, pi, 2: -2.82e-12 -1.64e-11 -2.44e-12 -1.15e-11
+      G r=2.0                OS-Minimum über Phasen 0, pi/2, pi, 2: -6.65e-01 -4.29e-01 -1.57e-01 -3.29e-01
+   Argument: Das Wilson-Glied ist ein Dirac-Wilson-Term für Psi = (xi+, xi-^c) mit Fermionzahl U(1)_J;
+   Phi steht nur auf einem Platz und ist unter Theta symmetrisch (Osterwalder-Seiler). U(1)_J ist
+   vektorartig und vertauscht mit Theta, deshalb hängt das OS-Spektrum nicht von der Phase ab.
+
+I. Index der Naht mit lückenlosem xi-
+
+   Netto chirale Kernzweige (Z7-Methode, Kernprojektor > 0,5, |v| > 0,2), L = 14 und 22:
+      G ausgerichtet   netto +1/+1 (vorhergesagt +1); Kern v = [1.0]; Rand -1
+      G gegen          netto -1/-1 (vorhergesagt -1); Kern v = [-1.0]; Rand +1
+      U0 ausgerichtet  netto +1/+1 (vorhergesagt +1); Kern v = [1.0]; Rand -1
+      U0 gegen         netto +0/+0 (vorhergesagt +0); Kern v = []; Rand +0
+      Uy ausgerichtet  netto +0/+0 (vorhergesagt +0); Kern v = [-0.933, 0.933]; Rand +0
+      Uy gegen         netto +0/+0 (vorhergesagt +0); Kern v = []; Rand +0
+
+   U0 ausgerichtet: Größe und Masse
+      L = 14: netto +1, Kernprojektor [0.887], v = [1.0]; Kern-Rand-Aufspaltung bei k_z = 0: U0 0.0476, G 3.3e-03
+      L = 22: netto +1, Kernprojektor [0.857], v = [1.0]; Kern-Rand-Aufspaltung bei k_z = 0: U0 0.0293, G 8.5e-05
+      L = 30: netto +1, Kernprojektor [0.838], v = [1.0]; Kern-Rand-Aufspaltung bei k_z = 0: U0 0.0232
+      L = 38: netto +1, Kernprojektor [0.823], v = [1.0]; Kern-Rand-Aufspaltung bei k_z = 0: U0 0.0195
+      L = 22, m = 0.4: netto +1, Kernprojektor [0.76]
+      L = 22, m = 0.9: netto +1, Kernprojektor [0.906]
+   Die Aufspaltung fällt unter U0 wie L^-0.89 (Potenz), unter G exponentiell (3.3e-03 -> 8.5e-05).
+
+   Kontrollmassen für eta- (Grenzwert m_minus -> 0):
+      G-artig eps (bricht U(1)_J)        m_minus = 0,6/0,3/0,1/0,03: netto (L = 14, 30) [1, 1]  [1, 1]  [1, 1]  [1, 1]
+      U-artig y' Phi* (U(1)_J-erlaubt)   m_minus = 0,6/0,3/0,1/0,03: netto (L = 14, 30) [0, 0]  [0, 0]  [0, 1]  [1, 1]
+   Bei kleinem y' liegt die Gegenmode (xi-, v = -1) im Abstand ~ 1/(y' m) außerhalb des Kerns. Die Naht ist
+   nur bis zu diesem Abstand chiral. Der Grenzwert m_minus -> 0 hängt von der Richtung ab: G-artig 1, U-artig 0.
+   Am physischen Knoten ist det M = Delta+ Delta- - W(0)^2 = 0 für m_minus = 0: Der Index ist dort nicht
+   topologisch definiert; er gilt nur in der Klasse y' = 0.
+
+   Hybridisierung mit dem xi--Kontinuum (k_z = 0,3; Schwelle E_thr = sqrt(sin^2 k_z + s^2)):
+      sin k_z = 0.29552, E_thr = 0.29554 (Abstand 1.8e-05)
+      U0 ausgerichtet: L=14: E=0.30401, Kern 0.844, xi- fern 0.011; L=22: E=0.29908, Kern 0.791, xi- fern 0.044; L=30: E=0.29773, Kern 0.755, xi- fern 0.077; L=38: E=0.29708, Kern 0.726, xi- fern 0.108
+      G ausgerichtet: L=14: E=0.29558, Kern 0.914, xi- fern 0.000; L=22: E=0.29552, Kern 0.914, xi- fern 0.000; L=30: E=0.29552, Kern 0.914, xi- fern 0.000; L=38: E=0.29552, Kern 0.914, xi- fern 0.000
+   Unter U0 sitzt die Nahtmode an der Kontinuumsschwelle; ihr Kerngewicht fällt um 0.118 von L = 14 bis 38,
+   ihr fernes xi--Gewicht wächst. Unter G bleibt es konstant (Änderung 1.9e-04).
+
+   Orientierung: Fermionische Vakuumenergie je Längeneinheit (k_z-Mittel über 8 Punkte)
+      L = 12, m = 0.6: E(ausgerichtet) - E(gegen) = +0.00367 gesamt, +0.00359 im Kern
+      L = 14, m = 0.6: E(ausgerichtet) - E(gegen) = +0.00367 gesamt, +0.00359 im Kern
+      L = 12, m = 0.9: E(ausgerichtet) - E(gegen) = +0.00616 gesamt, +0.00611 im Kern
+   Beide Texturen haben dieselbe Gradientenenergie von Phi (nu^2 = 1/4). Die Fermionen heben die Entartung:
+   die Orientierung ohne Nahtmode ist billiger (je Paar und Gitterlänge 0.0037 bei m = 0,6 und 0.0062 bei m = 0,9; 16 Paare: x 16).
+   Der Unterschied sitzt im Kern und hängt nicht von L ab.
+
+1. Eine Naht
+
+   Deck-Holonomie als U(1)_J-Element exp(i pi Q_J / 2) (Viertelfluss): xi+ -> i, xi- -> -i, Phi -> -1
+   Z4-wertige Schläuche mit Gesamtholonomie i (bis 4 Schläuche): Minimum (1,) mit Kosten 0.25;
+   Schläuche mit Holonomie -1 erzwingen keine Nullstelle (nu = 0). Die Zahl der Schläuche mit Nullstelle ist
+   immer ungerade.
+   Wäre die Holonomie kontinuierlich in U(1)_J: n Bruchschläuche mit je pi/(2n) kosten sum nu^2 = [0.25, 0.125, 0.0625, 0.03125].
+   Die Kosten fallen; ohne Z4-Quantisierung zerfließt der Schlauch. U(1)_J selbst quantisiert nicht; das tut
+   nur die Deck-Struktur (Strukturgruppe Z4, Eingabe aus Z20).
+   Geeichte U(1)_J: Mit einem Kondensat der Ladung 2 ist das Flussquant pi (Fermionholonomie -1). Ein
+   Viertelfluss wäre nicht stabil (Meißner). U muss als globale Symmetrie gelesen werden (Argument).
+   Z11-Parität: Die Polfaser schneidet 300 zufällige geschlossene Flächen in S^3 [0, 2, 4] mal: stets
+   gerade, weil H_2(S^3) = 0 (jede Fläche berandet). Die Paarregel von Z11 ist für einen geschlossenen Schlauch
+   in S^3 also von selbst erfüllt. Ungerade wäre nur der Durchstoß durch die Basissphäre; dort lebt Phi im
+   internen Zweig aber nicht.
+
+2. Ein Block: legt U die Zahl N der 16er-Sätze fest?
+
+   U(1)_J^3 = 0, U(1)_J-Gravitation = 0, U(1)_J-G-G = 0 (Paare vektorartig: Psi = (xi+, xi-^c)).
+   Spin-Z4: xi+ Ladung 1, xi- Ladung 3: nu = n1 - n3 = 0. Leichter Sektor allein (xi-): nu = -16N mod 16 = 0. Phi (Ladung 2) bricht Z4 -> Z2, also ist im Infraroten nichts anzupassen.
+   Nahtgitter D_8N^+: Klebvektor (1/2)^(8N) hat Norm 2N, gerade für N = 1..4: {8: True, 16: True, 24: True, 32: True}. Jedes N gibt ein gerades
+   unimodulares Gitter (N = 1: E8; N = 2: D16^+, N = 3: D24^+ wie Z17). c_- = 8N ist stets in 8Z.
+   Unter U koppeln alle Paare an Phi; die Zahl der windenden 16er-Sätze ist die Zahl der Sätze im Multiplett.
+
+D. Darstellungen: Phi xi+_a xi+_b braucht eine symmetrische invariante Form auf dem Index a
+
+   Spin(10): Clifford-Rest 0e+00, 45 Erzeuger auf der 16 unabhängig: True.
+   16 (x) 16: symmetrische Invarianten 0, antisymmetrische 0. 16 (x) 16-quer: 1. Hom(16, 16-quer): 0.
+   SO(16)-Vektor: symmetrische Invarianten 1 (delta_ab), antisymmetrische 0.
+   u(5) = Kommutant von X in so(10): Dimension 25; su(5) = [u(5), u(5)]: 24. SU(5)-invariante
+   symmetrische Formen auf 16: 1, Rang 1; mit U(1)_X: 0.
+   Folgen:
+   - U braucht psi und chi in derselben Darstellung R (sonst gibt es keine G-äquivariante Drehung; Hom(16, 16-quer) = 0).
+   - Ein Singulett-Phi und das Wilson-Glied brauchen eine Invariante in R x R: R reell (SO(16)-Vektor).
+   - Dann trägt xi- dieselbe reelle R: Die Familien sind vektorartig, ihre Majoranamasse ist eichinvariant und
+     nur durch U(1)_J (also durch y' = 0) verboten. xi- kann nicht die chirale SM-Generation (16 von Spin(10)) sein.
+   - Mit R = 16 von Spin(10) müsste Phi in 126-quer liegen; seine SU(5)-Richtung paart 1 von 16 Komponenten:
+     Je 16er-Satz windet eine Mode statt 16, also keine c = 8 je Satz. Außerdem fehlte das Wilson-Glied.
+
+Urteil je Entscheidung
+   1_eine_naht: Lesart (wie Z20, verschärft): Die Holonomie ist ein Viertelfluss von U(1)_J; Phi erhält -1 und muss verschwinden; mit Z4-wertigen Holonomien ist ein Schlauch minimal, verträglich mit Z11 (H_2(S^3) = 0). Neu: U(1)_J quantisiert die Holonomie nicht (Z4-Deckstruktur bleibt Eingabe, U(1)_J global), und von den zwei gleich teuren Halbwindungen trägt nur die ausgerichtete eine Nahtmode; die Fermionenergie bevorzugt die andere.
+   2_ein_block: offen: U(1)_J ist vektorartig, alle Anomalien und Spin-Z4 verschwinden für jedes N; D_8N^+ ist für jedes N gerade unimodular. 'E8 auf der Naht' bleibt eine eigene Forderung.
+   3_paarung: Lesart, auf eine Zahl reduziert: U schließt psi chi aus (nicht kovariant) und lässt für Phi nur xi+xi+ zu; U(1)_J erlaubt aber Phi* xi-xi- (y'), und kein Symmetrieargument trennt y' von y, solange das Wilson-Glied erlaubt ist. Bei y' = 0 sind die Familien exakt masselos, bei y' != 0 erhalten sie |y'| x {0, 1/2, 1/2} und die Naht wird nicht chiral. Darstellungen: Singulett-Phi verlangt reelles R, xi- ist dann vektorartig und nicht die SM-Generation.
+   4_gitter: unter U hergeleitet: Wilson-Glied ist U(1)_J-neutral, das Phasenpotential exakt flach (Hamilton und euklidisch), [H, Q_J] = 0, und die Paarung ist für Wilson r <= 1 link-reflexionspositiv für alle Phasen. Keine Wand, keine Positivitätsverletzung.
+   index: Lesart: Mit y' = 0 und ausgerichteter Halbwindung zählt der Kern netto eine chirale Majorana-Weyl-Mode je Paar (L = 14 ... 38, m = 0,4 ... 0,9). Sie ist nicht topologisch geschützt (det M am Knoten = 0): U(1)_J-erlaubtes y' > 0 gibt netto 0 jenseits ~1/(y' m). Sie hybridisiert mit dem lückenlosen xi- (Kerngewicht fällt mit L, Kern-Rand-Kopplung als Potenz).
+
+Verbleibende Eingaben
+   - y' = 0: keine Kopplung Phi* xi- xi- (nicht durch U(1)_J geschützt; Holomorphie oder eine eigene U(1)_- nötig)
+   - Orientierung: Halbwindung von Phi mit der Deck-Holonomie ausgerichtet (Fermionenergie bevorzugt die Gegenrichtung)
+   - Deck-Holonomie Z4-wertig und physisch, U(1)_J global (aus Z20; U(1)_J quantisiert nicht)
+   - keine erzwungene Reziprozität der Konfiguration (Z20)
+   - reelle Darstellung R der Paare (SO(16)-Vektor); SM-Generation nicht aus xi-
+   - N = 1 ('E8 auf der Naht')
+
+Urteil: Prinzip U löst Entscheidung 4 (flaches Potential, Wilson positiv, keine Wand) und schließt psi chi aus. Es löst Entscheidung 3 nicht ganz: U(1)_J erlaubt Phi* xi-xi-, und erst y' = 0 macht die Familien masselos und die Naht chiral; dann ist der Index eine Lesart ohne topologischen Schutz, mit Hybridisierung ins lückenlose xi-. Entscheidung 1 bleibt Lesart mit einer neuen Orientierungswahl, die die Fermionenergie gegen die Naht entscheidet. Entscheidung 2 bleibt offen. Die Darstellungen verlangen ein reelles R: xi- ist dann nicht die SM-Generation.
+
+(Rechenzeit 64 s)
+
+Zusammenfassung
+   bestanden: U(1)_J-Ladungen der Bilinearen: xi+xi+ +2, xi-xi- -2, xi+xi- (Wilson) 0
+   bestanden: psi chi (G) ist nicht U(1)_J-kovariant: Anteile +2 und -2 gleich groß
+   bestanden: Phi koppelt nur an xi+xi+; U(1)_J lässt genau zwei Yukawas zu (Phi xi+xi+, Phi* xi-xi-)
+   bestanden: Satz: jede Ladung, die W xi+xi- und Phi xi+xi+ erhält, erhält Phi* xi-xi-
+   bestanden: freies Gitter: xi- am Knoten masselos, induzierte Masse W^2/m ~ k^4 mit Phase von Phi*
+   bestanden: Z18 reproduziert: psi chi gibt Familienmassen {0, 1/2, 1/2} der Nahtmasse
+   bestanden: U mit y' = 0: alle drei Familien exakt masselos, Naht massiv
+   bestanden: Phasenpotential: Z9-Barriere 0,0882 reproduziert; U und U mit y' exakt flach (< 1e-12)
+   bestanden: Euklidisch: U flach, G mit Z19-Barriere
+   bestanden: Builder identisch mit Z7-build
+   bestanden: Q_J erhalten ohne Phi; mit Phi dreht Q_J die Phase (U, U mit y'), bei G nicht
+   bestanden: Z19 reproduziert: Wilson r <= 1 link-positiv, r = 2 nicht
+   bestanden: U-Paarung mit Wilson r <= 1: link-positiv für alle Phasen (OS-Form hermitesch)
+   bestanden: OS-Spektrum unter U phasenunabhängig (auch r = 2), unter G nicht
+   bestanden: Zählung wie vorhergesagt: G +1/-1, U0 +1/0, U mit y' 0/0
+   bestanden: U0 ausgerichtet: netto eine chirale Mode für L = 14 ... 38 und m = 0,4/0,6/0,9
+   bestanden: G-artige Kontrollmasse: netto 1 bis eps = 0,03; U-artiges y' = 0,6/0,3: netto 0
+   bestanden: Holonomie: xi+ -> i, xi- -> -i, Phi -> -1 (erzwungene Nullstelle); stimmt mit J^T B J = -B (Z20)
+   bestanden: Z4-Holonomien: minimal genau ein Schlauch (Holonomie i, nu = 1/2); Zahl der Nullstellen-Schläuche ungerade
+   bestanden: Spin(10)-16: keine Invariante in 16 x 16 (weder Phi xi+xi+ als Singulett noch W xi+xi-); 16 x 16-quer: genau eine
+   bestanden: SO(16)-Vektor: genau eine symmetrische Invariante
+   bestanden: SU(5)-invariante symmetrische Form auf 16: Dimension 1, Rang 1 (126-quer-Richtung)
+Befunde
+   ja: U(1)_J verbietet Phi* xi- xi- nicht (y' bleibt frei)
+   ja: keine Symmetrie trennt y' von y, solange das Wilson-Glied erlaubt ist
+   ja: mit y' != 0 erhalten die Familien |y'| x {0, 1/2, 1/2} der Nahtmasse
+   ja: G mit Wilson r <= 1 ist ebenfalls positiv: Positivität trennt U nicht von G, U entfernt die Barriere
+   ja: Gegenorientierung (nu = -1/2) unter U ohne Nahtmode, bei gleicher Gradientenenergie
+   ja: mit y' != 0 ist die Naht nicht chiral (netto 0)
+   ja: Kern-Rand-Kopplung über das lückenlose xi- fällt nur als Potenz
+   ja: Index unter U nicht topologisch geschützt (det M am Knoten = 0; U(1)_J-erlaubtes y' -> 0+ gibt 0)
+   ja: U0: Nahtmode hybridisiert mit dem lückenlosen xi- (Kerngewicht fällt mit L, xi--Schwanz wächst)
+   ja: Fermionenergie bevorzugt die Orientierung ohne Nahtmode
+   ja: kontinuierliche U(1)_J quantisiert die Holonomie nicht (Teilung senkt die Kosten)
+   ja: geeichte U(1)_J trüge keinen stabilen Viertelfluss (Argument, nicht gerechnet)
+   ja: U(1)_J-Anomalien, Spin-Z4 und Klebung legen N nicht fest
+   ja: E8 auf der Naht bleibt eine eigene Forderung (N = 1)
+   ja: Singulett-Phi verlangt reelle Darstellung; xi- dann vektorartig, nicht die chirale SM-Generation
+   ja: mit Spin(10)-16 und Phi in 126-quer windet nur 1 von 16 Komponenten

@@ -127,8 +127,8 @@ Ursprung sollte beides zugleich liefern.
 
 ### Kandidat H6: Ursprung von P1 aus einer hintergrundfreien Naht (Exploration 23.11.)
 
-Quelle: `experiments/exploration/2026-11-23-phasenraum-f5-holocode/VERDICT.md` (Stand H6h12),
-Skripte `n1`, `v1`, `y1`, `z1`–`z20`, Lean-Vertrag `experiments/theory-contracts/h6-exakte-teile-20261123/`; Atlasproblem `problem:c3-p1-p2-shared-origin-reconciliation`,
+Quelle: `experiments/exploration/2026-11-23-phasenraum-f5-holocode/VERDICT.md` (Stand H6h13),
+Skripte `n1`, `v1`, `y1`, `z1`–`z24`, Lean-Vertrag `experiments/theory-contracts/h6-exakte-teile-20261123/`; Atlasproblem `problem:c3-p1-p2-shared-origin-reconciliation`,
 Befunde mit Präfix `h6`. Nichts davon ist im Ledger befördert. Prüfstand mit 20 Kriterien: 15
 hergeleitet, 5 unter benannter Lesart, keines gescheitert, offen oder gesetzt.
 
@@ -157,9 +157,13 @@ hergeleitet, 5 unter benannter Lesart, keines gescheitert, offen oder gesetzt.
     Sockel ohne Randterm); die genaue Zahl hängt am Regulator. [N]
   - Die Naht ist ein verdrillter Defekt mit einer chiralen Mode je Fermion mit Spin-ℤ₄-Ladung 1.
     16 schwere reelle Fermionen (10,1)+(1,6) geben c = 8; der Schnitt ist genau bei ν ∈ 16ℤ
-    topologisch unsichtbar. Am Schnitt gilt eine Abwägung: Wilson-Regulator mit Wand und
-    Reflexionspositivität, oder flache Ginsparg–Wilson-Majoranaformen ohne Wand, die bei gedrehter
-    Phase die Positivität verletzen; eine lokale wandfreie positive Form ist nicht gefunden. [N]
+    topologisch unsichtbar. Die Wand am Schnitt ist unter G kein Gitterartefakt: Die Phasenbarriere
+    ist der relevante Operator Λ² Re(Φ²) (ΔV = 0,254 m², auch für die lokale GJ-Form). Satz: Eine
+    exakte ortslokale U(1) mit geladenem Φ lässt einem gegappten Wirbel keinen Index
+    (Nielsen–Ninomiya). Geschützte Naht, lokale positive Transfermatrix und flache Phase ohne
+    Abstimmung schließen sich daher aus. Der Standardweg sind zwei abgestimmte Gegenterme
+    (Re Φ², Re Φ⁴) wie die kritische Masse bei Wilson-QCD; U(1)_J ist flach, schützt den Index
+    aber nicht (Z22, Z24). [N/E]
   - Gerechnet ist der Zufluss der SO(2)-Ladung und die Gravitationsanomalie: c = 0,4994 und
     h_R = 1/16 je Paar, also c = 8 und h_R = 1 für 16 Paare. Die Volumenwand trägt die Chernzahl 1
     je Windung, also c_Wand = c_Naht. Der Fluss in Krümmung ist nicht gerechnet. [N/E]
@@ -171,10 +175,15 @@ hergeleitet, 5 unter benannter Lesart, keines gescheitert, offen oder gesetzt.
     Torus hat genau 4 Verzweigungspunkte; mit Vierteldrehung ist s = a z⁴ + e, also j = 1728,
     τ = i. Die äquivariante Abbildung T: H⁰(O(D)) → H⁰(K(D)) macht die Familiencharaktere zum
     nichttrivialen Teil des Fünferträgers. [E]
-  - Gemeinsamer Operator: Ein Multiplett auf dem Nahttorus mit geeichtem Deck erzwingt J² = −1, gibt
-    3 deckgerade Familien und 1 deckungerade Nahtmode aus einem Bündel O(R) und ordnet über die
-    Eichbedingung ξ₊ der Naht und ξ₋ den Familien zu. Die Paarung bleibt Eingabe: Mit ψχ aus G
-    bekommen die Familien Massen 0, ½, ½ mal die Nahtmasse (exakte Obstruktion). [E/N, Lesart]
+  - Naht-16 und Generations-16 lassen sich nicht vereinigen (Z23): Die Naht-16 liegt in keinem
+    E₈-Multiplett, und ein reelles Multiplett mit Paarstruktur J gibt Familien = 3 × konj(Naht),
+    also vektorartig. Konsistent ist nur die direkte Summe: Familien 3 × 16 (leicht), Eltern
+    (10,1)+(1,6) (schwer), anomaliefrei mit gemeinsamem Spin-ℤ₄ J (ν ≡ 0 mod 16). Ein Singulett-Φ
+    kann die chiralen Familien nicht paaren (16 ⊗ 16 ohne Invariante); damit entfällt die
+    Familienmassen-Obstruktion des gemeinsamen Operators aus Z18. [E]
+  - TOE-Lückenkarte (Z21): TFPT.TOE.COMPLETE.01 hat acht Tore, alle [O]; H6 trägt fast nur zu T1
+    und T2 bei. Am meisten blockieren die lokale wechselwirkende 3+1D-Theorie (T3/T5) und chirale
+    Materie ohne Spiegel (T4).
   - Satzzahl: Gleichförmig drei Sätze widersprechen α unter der Lesart EM1. Offen bleibt der Zweig
     mit zwei verborgenen Sätzen; entscheidend ist c₋/k. [N/C]
   - a/ℓ_P mit vollem Feldinhalt: im H6-Schema etwa 10,8; über Regulatoren hinweg nicht festgelegt. [N]
@@ -189,7 +198,9 @@ hergeleitet, 5 unter benannter Lesart, keines gescheitert, offen oder gesetzt.
   - J folgt nicht aus der Modenzahl, sondern aus der Blattstruktur.
   - Die Einheitswindung erzwingt nicht genau eine Naht.
   - Ein Elternoperator mit einem Multiplett liefert kein E₈.
-  - Die Wand am Schnitt ist kein allgemeiner Zwang, sondern hängt am Wilson-Regulator.
+  - Die Wand am Schnitt hängt nicht am Wilson-Regulator allein: Unter G ist sie für jede lokale
+    Form ein relevanter Operator (Z24).
+  - Ein gemeinsames Multiplett für Naht und Familien (Z18) liefert keine chiralen Familien (Z23).
   - Die ℤ₁₆-Bedingung erzwingt die 16 nur in der partnerfreien Fassung.
   - Die Untergrenze a/ℓ_P ≥ 3,3 gilt nur für die gerechneten Regulatoren.
 - **Offen:**
@@ -199,12 +210,13 @@ hergeleitet, 5 unter benannter Lesart, keines gescheitert, offen oder gesetzt.
     Zweig erzwingt eine physische Deck-Holonomie auf S³ einen Flussschlauch, um den Φ verschwinden und
     um π winden muss (G folgt), minimal genau einen auf einer Polfaser (Z20). Einen Block
     wählt nur die Forderung „E₈ auf der Naht“ (sonst D₂₄⁺).
-  - Warum Naht- und Materiemultiplett getrennt an M und O(D) koppeln.
+  - Warum es neben den drei Familien die 16 schweren Eltern gibt (die direkte Summe ist erzwungen,
+    ihr Grund nicht).
   - c₋/k der Naht (Satzzahl).
   - Der gravitative Fluss in Krümmung.
   - Die Valenzformel in Lean.
   - Nichtperturbative Universalität, chirale Gitterformulierung und Reflexionspositivität für einen
-    chiralen Regulator.
+    chiralen Regulator; Entscheidung 4 ist dieses Problem selbst (Z24).
   - θ₁₃ und δ aus TFPTs Kanälen (sin²θ₁₃ = 0,0231; 1,1σ bis 2,2σ je nach Datensatz laut externer
     Prüfung; δ = 240° ist ein zugewiesener Texturwert).
   - Ein gemeinsamer Elternoperator.

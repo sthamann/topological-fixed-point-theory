@@ -1,6 +1,125 @@
 # Urteil
 
-## Aktueller Stand: H6h12 — der Deck-interne Zweig von v957 (`z20_deck_intern.py`)
+## Aktueller Stand: H6h13 — die vier Entscheidungen und die TOE-Lückenkarte (`z21`–`z24`)
+
+Bilanz unverändert bei 15 P und 5 L von 20. Drei Fragen liefen parallel und wurden danach selbst
+nachgerechnet: z21 (Lückenkarte), z22 (Prinzip U(1)_J) und z23 (die zwei 16er). Alle drei liefern
+identische Ausgaben; die JSON von z22 weicht nur in der 15. Stelle ab (BLAS). z24 ist eine eigene
+Rechnung, die erst beim Zusammenlegen von z22 und z23 nötig wurde.
+
+**In einem Satz:**
+- Entscheidung 3 löst sich auf.
+- Entscheidung 4 ist das Gitter-Chiralitätsproblem selbst; kein Prinzip löst sie ohne Abstimmung.
+- Entscheidung 1 bleibt eine Lesart mit genauer Eingabeliste.
+- Entscheidung 2 bleibt offen.
+
+**1. Die zwei 16er (`z23`, 27 Prüfungen, 11 Befunde).**
+- **Keine Vereinigung.** Die Naht-16 (Vektor von SO(16)) liegt in keinem E₈-Multiplett:
+  exp(2πi·(½)⁸) ist in E₈ trivial, auf 16_v aber −1. Kein Automorphismus, keine Trialität und keine
+  Wahl der Untergruppe führt sie in eine Generations-16 über. Grund: Reell bleibt reell, und die
+  Generation ist nicht selbstkonjugiert.
+- **J-Satz.** Ein reelles Multiplett mit Paarstruktur J gibt ξ₋ = konj(ξ₊). Die Familien aus Z18
+  wären also 3 × [(10,1)+(1,6)], vektorartig. Umgekehrt erzwingen Familien 3 × 16 eine Naht in 16b,
+  und die gibt so(32)₁ statt E₈.
+- **Wörterbuch Ströme → Fermionen.** Die 128 ist der gerade Fockraum der 16 Nullmoden und enthält
+  (16,3). Die Quantenzahlen stimmen also, das Wörterbuch scheitert aber zweifach:
+  - an der Statistik: h ist ganzzahlig, und die E₈-Klammer ist antisymmetrisch;
+  - an der Chiralität: Unter Fluss hebt die vierte (16,1) die drei (16,3) auf, und das ℤ₄-Orbifold
+    gibt netto stets eine gerade Zahl, nie 3.
+- **Konsistent ist nur die direkte Summe.**
+  - Familien F_k in der 16: leicht, mit den Charakteren {−1, i, −i}.
+  - Eltern P_a in (10,1)+(1,6): schwer, über Φ P P.
+  - Das Ganze ist anomaliefrei und trägt ein gemeinsames Spin-ℤ₄ J = z_X⁻¹ ⊗ R_Paar mit ν ≡ 0 mod 16.
+
+**2. Prinzip U(1)_J (`z22`, 22 Prüfungen, 16 Befunde).** Hypothese: Das interne Deck ist ℤ₄ ⊂ U(1)_J.
+- **Paarung.** ψχ = (i/2)(ξ₊ξ₊ − ξ₋ξ₋) ist nicht kovariant, Φ koppelt nur an ξ₊ξ₊. U(1)_J erlaubt
+  aber y′ Φ\* ξ₋ξ₋. Satz: Jede Symmetrie, die das Wilson-Glied ξ₊ξ₋ und Φξ₊ξ₊ erhält, erhält auch
+  Φ\*ξ₋ξ₋.
+- **Gitter.** Das Phasenpotential ist exakt flach, und Wilson r ≤ 1 ist für alle Phasen linkpositiv.
+- **Index.** Mit y′ = 0 zählt der Kern netto eine Mode je Paar (L = 14 … 38). Geschützt ist sie nicht:
+  - det M am Knoten ist 0, ξ₋ bleibt lückenlos;
+  - die Nahtmode hybridisiert, das Kerngewicht fällt von 0,84 auf 0,73;
+  - jedes y′ > 0 gibt netto 0.
+- **Eine Naht.**
+  - Mit ℤ₄-wertigen Holonomien ist genau ein Schlauch minimal, die Zahl der
+    Nullstellen-Schläuche ist ungerade, und die Z11-Parität gilt automatisch.
+  - Neu: U(1)_J quantisiert die Holonomie nicht.
+  - Unter U bevorzugt die Fermionenergie die Orientierung ohne Mode (+0,0037 je Paar). Unter G
+    tritt das Problem nicht auf: Beide Orientierungen tragen eine Mode (+1 bzw. −1), die
+    Orientierung legt nur das Vorzeichen der Chiralität fest.
+- **Darstellungen.** Ein Singulett-Φ verlangt ein reelles R. Für die Spin(10)-16 hat 16 ⊗ 16 keine
+  Invariante.
+- **Ein Block.** Weder die U(1)_J-Anomalien noch Spin-ℤ₄ noch die Klebung legen N fest.
+
+**3. Die Wand unter G (`z24`, 11 Prüfungen, eigene Rechnung).** Nach z23 braucht der
+Eltern-Sektor allein eine voll gegappte Paarung mit geschütztem Index, also G. Damit kehrt die Frage
+aus Z19 zurück: Ist die Wand ein Gitterartefakt?
+- **Kein Artefakt.** Hamiltonsch gilt ΔV = 0,254 m², konvergiert auf 4·10⁻⁷. Euklidisch ist der
+  Exponent 2,00, für die lokale GJ-Form ebenfalls 2,00. Die Fourier-Harmonischen gehen wie m², m⁴
+  und m⁶. Das ist der relevante Operator Λ² Re(Φ²): J-gerade, von G nicht verboten. In physischen
+  Einheiten wächst ΔV/M⁴ wie (Ma)⁻².
+- **Erklärung.** Die Kontinuumstheorie von G hat eine axiale U(1)_A: ξ₊ und ξ₋ tragen beide die
+  Ladung +1, die Symmetrie ist gravitativ anomal, und daher ist der Index geschützt. Wilson bricht
+  sie so, wie bei Wilson-QCD die chirale Symmetrie gebrochen wird. Zum Wiederherstellen braucht es
+  zwei abgestimmte Gegenterme, Re Φ² (relevant) und Re Φ⁴ (marginal), analog zur kritischen Masse.
+- **Satz.** Eine exakte, ortslokale U(1), unter der Φ geladen ist, lässt einem gegappten Wirbel netto
+  den Index 0. Der Grund: det M(k) windet an allen Ecken gleich, und Σχ_c = 0 (Nielsen–Ninomiya).
+  Geprüft an drei Modellen:
+  - G: Index 2 je Umdrehung, also 1 je Halbwindung;
+  - U mit y′: Index 0;
+  - ein anomal geladenes Modell (+1, +1, −1): Index 0, mit k-unabhängiger Windung.
+- **Korrektur zu z22.** „U löst Entscheidung 4 vollständig“ gilt nur im Gitterteil. Die flache Phase
+  kommt dort von einer vektorartigen U(1)_J, und eine solche kann den Index nach dem Satz nicht
+  schützen.
+
+**Was das für die vier Entscheidungen heißt.**
+
+| Entscheidung | Stand H6h13 | Was bleibt |
+|---|---|---|
+| 1: genau eine Naht | Lesart: Z20 und Z22 geben genau einen Schlauch als Minimum, die Parität stimmt | Deck intern, Holonomie physisch und ℤ₄-wertig, das Reziproke spontan gebrochen; empirisch N_ν (LEP) |
+| 2: genau ein Block | offen | die Forderung „E₈ auf der Naht“ (N = 1); keine Rechnung legt N fest |
+| 3: Paarung nur auf der Nahtkomponente | aufgelöst | Die Frage entstand nur im gemeinsamen Multiplett (Z18), das Z23 ausschließt. Getrennt kann ein Singulett-Φ die chiralen Familien gar nicht paaren (16 ⊗ 16 ohne Invariante); die Familienmassen 0, ½, ½ entfallen. Preis: kein gemeinsamer Operator. Gemeinsam bleiben J, die Abbildung T und die Geometrie (Marken, Deck, μ₄). |
+| 4: Wand oder Positivität | als Gitter-Chiralitätsproblem erkannt | Geschützte Naht, lokale positive Transfermatrix und flache Phase ohne Abstimmung schließen sich aus. Zur Wahl stehen: G mit zwei abgestimmten Gegentermen (der Standardweg), U mit ungeschütztem Index oder nichtlokale bzw. nicht positive Formen (Z19). Bei Ma ~ 1 ist die Abstimmung eine physische Wahl. |
+
+**4. TOE-Lückenkarte (`z21_toe_luecken.md`, Zensus `z21_ledger_zensus.py`, 14 Prüfungen).**
+- **Zensus.** Das Ledger hat 784 aktive Zeilen (E 192, C 216, O 325). Nur 38 der offenen sind ganz
+  offen.
+- **Der Dachvertrag.** TFPT.TOE.COMPLETE.01 [O] zerlegt die Vollständigkeit in acht Tore T1–T8. Alle
+  acht sind [O]. H6 trägt fast nur zu T1 (Ursprung von P1) und T2 (Naht = (E₈)₁) bei. Die Bilanz
+  15 P misst also T1/T2-Struktur, nicht TOE-Vollständigkeit.
+- **Was am meisten blockiert, in dieser Reihenfolge:**
+  1. S2: von der 2D-Naht zur lokalen, wechselwirkenden 3+1D-Theorie (T3/T5);
+  2. S3: chirale Materie ohne Spiegelgeneration (T4);
+  3. S0: Ursprung (T1);
+  4. S5: Gravitation über Jacobson hinaus (T7);
+  5. S1: E₈ auf Netzebene (T2);
+  6. S4: Kopplungen, Higgs, Flavour (T6);
+  7. S6: Anfangszustand (T8);
+  8. S7: Statistik.
+- **Durch Rechnung allein nicht schließbar:**
+  - die Einheit v_geo;
+  - die Rahmenprämissen;
+  - die Forderung „E₈ auf der Naht“;
+  - die Wahl zwischen D und einem mikroskopischen Spin-2;
+  - eine nichtentropische Anfangszustandswahl;
+  - die absolute Neutrinoskala;
+  - δ_PMNS und θ₂₃;
+  - die Kosmologiegabel;
+  - α_s.
+- **Querbefunde:**
+  - Z20s Einzelnaht steht in Spannung zur räumlichen Linse S³/ℤ₄ von CCC.SEAM.CROSSOVER.01 (D1).
+  - FLAV.STRONGCP.02 braucht Reflexionspositivität, gilt also im G-Zweig mit abgestimmten
+    Gegentermen.
+  - sin²θ_W = 3/8 an der Gitterskala trifft auf den [X]-Befund, dass reine SM-Läufe nicht vereinigen.
+- **Bester Ertrag je Aufwand:**
+  - der H6-RG-Test (zwei Schleifen von M_Z bis zur Gitterskala, SM gegen Pati–Salam);
+  - Lüschers projizierte Weylfelder auf Reflexionspositivität;
+  - Sakharov gegen Jacobson (macht a/ℓ_P zur Vorhersage oder widerlegt D);
+  - der explizite H6-Hamiltonian für T3.
+
+  Die D3-Suche, die z21 noch empfahl, ist durch z23 und z22 erledigt.
+
+## Davor: H6h12 — der Deck-interne Zweig von v957 (`z20_deck_intern.py`)
 
 v957 (CCC.SEAM.KINEMATICS.01) lässt eine Gabel offen: Das Deck D = diag(i, −i) wirkt entweder als
 Raumquotient (Linse X = S³/ℤ₄) oder als Strukturgruppe eines internen Bündels über S³. Z17 zeigte,

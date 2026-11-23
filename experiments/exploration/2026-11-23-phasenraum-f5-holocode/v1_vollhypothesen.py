@@ -745,6 +745,28 @@ if "H6h2" in H and z1p.exists() and z2p.exists():
                                                              "winden (G folgt); Uhr legt ihn auf eine Polfaser, die die vier Markenfasern "
                                                              "einmal verschlingen; minimal genau einer bei spontan gebrochenem Reziproken")
                                         facts["F31_deck_internal"] = z20["urteil"]
+                                        zr = {n: Path(__file__).with_name(f"z{n}_ergebnis.json") for n in (22, 23, 24)}
+                                        if all(p.exists() for p in zr.values()):
+                                            R = {n: json.loads(p.read_text()) for n, p in zr.items()}
+                                            okr = {n: all(R[n]["checks"].values()) for n in R}
+                                            H["H6h13"] = dict(H["H6h12"])
+                                            H["H6h13"]["K16"] = (LES if okr[24] else F,
+                                                                 "[physisches Gitter] Entscheidung 4 ist das Gitter-Chiralitätsproblem (Z24): unter G "
+                                                                 "ist die Phasenbarriere relevant (0,254 m^2, auch GJ), Harmonische m^2, m^4, m^6, also "
+                                                                 "zwei abgestimmte Gegenterme Re Phi^2, Re Phi^4 wie die kritische Masse bei Wilson-QCD; "
+                                                                 "Satz: exakte ortslokale U(1) gibt dem Wirbel Index 0 (U(1)_J, Z22: flach, aber "
+                                                                 "Index ungeschützt); Wilson r <= 1 bleibt positiv")
+                                            H["H6h13"]["K19"] = (LES if okr[22] else F,
+                                                                 "[v957 Deck intern] Flussschlauch erzwungen, G folgt (Z20); Z4-Holonomien: genau ein "
+                                                                 "Schlauch minimal, Zahl der Nullstellen-Schläuche ungerade, Z11-Parität automatisch "
+                                                                 "(Z22); offen: warum das Reziproke spontan bricht; empirisch N_nu (LEP) für k = 1")
+                                            H["H6h13"]["K20"] = (LES if okr[23] else F,
+                                                                 "[Z23] ein gemeinsames Multiplett ist ausgeschlossen: reelles J gibt Familien = "
+                                                                 "3 x konj(Naht), vektorartig; konsistent nur Naht-Eltern 16_v und Familien 3 x 16 "
+                                                                 "getrennt, gemeinsam Spin-Z4 J = z_X^-1 R_Paar (nu = 0 mod 16), Abbildung T und "
+                                                                 "Geometrie; Phi kann die Familien nicht paaren (16 x 16 ohne Invariante, Z22), "
+                                                                 "die Familienmassen-Obstruktion aus Z18 entfällt")
+                                            facts["F32_four_decisions"] = {n: R[n]["urteil"] for n in R}
 
 order = [f"K{i}" for i in range(1, 21)]
 print("Gesamttabelle (P = hergeleitet, L = unter benannter Lesart, F = FAIL, O = OFFEN, E = EINGABE)\n")
