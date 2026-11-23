@@ -1,0 +1,63 @@
+1. v957 nachgebaut
+
+   Basispunkt z = 0.0049-0.8630j
+   Deck:  z -> -0.0049+0.8630j  (= -z: True)
+   Uhr:   z -> -0.8630-0.0049j  (= -i z: True)
+   Rezipr.: z -> -0.0066-1.1588j  (= -1/z: True)
+   Das Deck hebt die Blattinvolution z -> -z der Basis mit D^2 = -1 (Spinorvorzeichen) auf S^3.
+   Gauß-Verschlingung Polfaser (z=0) mit den vier Markenfasern: [1. 1. 1. 1.]
+   Verschlingung der beiden Polfasern: +1.000
+
+2. Räumlicher Zweig (Deck als Raumquotient, X = S^3/Z4)
+
+   Monome z0^a z1^b haben Hopf-Ladung k = a + b und Deck-Charakter i^(a-b).
+   k = 0: Charaktere i^m mit m in [0]; deckinvariantes Monom vorhanden: True
+   k = 1: Charaktere i^m mit m in [1, 3]; deckinvariantes Monom vorhanden: False
+   k = 2: Charaktere i^m mit m in [0, 2]; deckinvariantes Monom vorhanden: True
+   k = 3: Charaktere i^m mit m in [1, 3]; deckinvariantes Monom vorhanden: False
+   k = 4: Charaktere i^m mit m in [0, 2]; deckinvariantes Monom vorhanden: True
+   Ein deckinvariantes Feld mit k = 2, etwa a z0 z1 + b ..., hat generisch zwei Nullfasern: Nähte kommen
+   paarweise (Z17). Eine einzelne Naht ist im räumlichen Zweig unmöglich.
+
+3. Interner Zweig (Deck als Strukturgruppe eines internen Bündels über S^3)
+
+   pi_1(S^3) = 0: Ein flaches internes Z4-Bündel ohne Defekte ist trivial. Soll die v957-Holonomie
+   chi(D) = i physisch sein, muss sie um eine Defektlinie liegen: pi_1(S^3 minus Kreis) = Z erlaubt
+   jede Meridian-Holonomie, auch J mit J^2 = -1 = (-1)^F.
+   Masse psi chi unter J: J^T M J = [[0, -1], [-1, 0]] = -M, also trägt Phi die J-Ladung 2.
+   Randwindung eines Felds mit Monodromie -1: in allen 200 Proben halbzahlig (ja)
+   Eine stetige nirgends verschwindende Funktion auf der Scheibe hat ganzzahlige Randwindung. Also muss Phi
+   auf dem Schlauch verschwinden und um pi (mal ungerade) winden: genau der verdrillte Defekt aus G.
+   Nach Z7 trägt er eine chirale Majorana-Weyl Mode je Paar; 16 Paare geben c = 8.
+
+4. Lage und Zahl der Schläuche
+
+   Unter der Uhr (z -> -i z) feste Basispunkte: ['0', 'unendlich']
+   Die Marken bilden eine Uhrenbahn der Länge 4; ein einzelner uhreninvarianter Schlauch muss eine
+   Polfaser sein. Dort trägt v957 genau die volle mu4-Holonomie chi(D) = i.
+   Das Reziproke (z -> -1/z) vertauscht die Pole. Wird es von der Konfiguration verlangt, braucht es
+   beide Polfasern (eine Hopf-Verschlingung, zwei Nähte). Die Einzelnaht-Zustände bilden dagegen ein
+   Dublett unter dem Reziproken: Der Grundzustand wählt einen Pol und bricht das Reziproke spontan.
+   Kosten in Einheiten der Nahtwirkung: {'eine Polnaht': 1, 'beide Polnähte': 2}; minimal ist eine Naht.
+
+5. Bilanz der Zweige gegen H6
+
+   Zweig                                  Nähte  G hergeleitet                           c    N_fam
+   räumlich (Linse)                        2      nein (Phi braucht räumliche Monodromie)  16   6
+   intern, Reziprokes verlangt             2      ja                                      16   6
+   intern, Reziprokes spontan gebrochen    1      ja                                       8   3
+   (c und N_fam unter der Lesart: je Naht ein 16er-Satz und drei Familien nach C'')
+
+Urteil: Lesart, deutlich gestärkt: Im Deck-internen Zweig erzwingt eine physische Deck-Holonomie auf dem einfach zusammenhängenden S^3 mindestens einen Flussschlauch; um ihn wechselt Phi (J-Ladung 2) das Vorzeichen und muss dort verschwinden: Der verdrillte Defekt aus G folgt. Uhrensymmetrie legt ihn auf eine Polfaser (volle mu4-Holonomie, die vier Markenfasern verschlingen ihn einmal); minimal ist genau einer, mit spontan gebrochenem Reziproken. Eingaben: Deck intern, Deck-Holonomie physisch, keine erzwungene Reziprozität der Konfiguration.
+
+Zusammenfassung
+   bestanden: Deck = Halbdrehung, Uhr = Vierteldrehung, Reziprokes = -1/z
+   bestanden: D^2 = -1, D frei auf S^3
+   bestanden: jede Markenfaser verschlingt die Polfaser einmal
+   bestanden: Polfasern bilden eine Hopf-Verschlingung
+   bestanden: k = 1 nicht invariant, kleinstes invariantes k > 0 ist 2
+   bestanden: Phi hat J-Ladung 2
+   bestanden: halbzahlige Windung, also Nullstelle im Inneren
+   bestanden: uhreninvariante Fasern sind nur die Polfasern
+   bestanden: minimale Konfiguration: genau ein Schlauch
+   bestanden: nur intern mit gebrochenem Reziproken: eine Naht, c = 8, drei Familien

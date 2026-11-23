@@ -1,6 +1,55 @@
 # Urteil
 
-## Aktueller Stand: H6h11 — die drei offenen Verbindungen (`z17`, `z18`, `z19`)
+## Aktueller Stand: H6h12 — der Deck-interne Zweig von v957 (`z20_deck_intern.py`)
+
+v957 (CCC.SEAM.KINEMATICS.01) lässt eine Gabel offen: Das Deck D = diag(i, −i) wirkt entweder als
+Raumquotient (Linse X = S³/ℤ₄) oder als Strukturgruppe eines internen Bündels über S³. Z17 zeigte,
+dass im räumlichen Zweig eine einzelne Naht unmöglich ist. Z20 rechnet den internen Zweig; alle zehn
+Prüfungen bestehen.
+
+**Nachgebaut aus v957.**
+- Das Deck ist die Halbdrehung z → −z der Nahtsphäre mit D² = −1, die Uhr die Vierteldrehung, das
+  Reziproke z → −1/z.
+- D wirkt frei auf S³.
+- Jede der vier Markenfasern verschlingt die Polfaser genau einmal, und die beiden Polfasern bilden
+  eine Hopf-Verschlingung (Gauß-Integral ±1,000).
+
+**Räumlicher Zweig.** Monome z₀ᵃ z₁ᵇ haben Hopf-Ladung k = a + b und Deck-Charakter i^{a−b}. Bei k = 1
+gibt es kein invariantes Monom, das kleinste invariante k > 0 ist 2. Generisch entstehen also zwei
+Nullfasern: Nähte kommen paarweise.
+
+**Interner Zweig.**
+- **Flussschlauch erzwungen:** π₁(S³) = 0, also ist ein flaches internes ℤ₄-Bündel ohne Defekte
+  trivial. Soll die Holonomie χ(D) = i aus v957 physisch sein, muss sie um eine Defektlinie liegen,
+  einen Flussschlauch. Das Komplement eines Kreises erlaubt jede Meridian-Holonomie, auch J mit
+  J² = −1 = (−1)^F.
+- **G folgt:** Φ ψχ ist unter J ungerade (Jᵀ M J = −M), also trägt Φ die J-Ladung 2 und wechselt um
+  den Schlauch das Vorzeichen. Eine stetige Funktion mit dieser Monodromie hat halbzahlige Randwindung
+  (in 200 von 200 Proben), muss also im Inneren verschwinden. Φ verschwindet auf dem Schlauch und
+  windet um π: **Das ist genau der verdrillte Defekt aus G, jetzt hergeleitet statt gesetzt.**
+- **Lage:** Unter der Uhr sind nur die Pole fest. Ein einzelner uhreninvarianter Schlauch liegt also
+  auf einer Polfaser, wo v957 genau die volle μ₄-Holonomie χ(D) = i führt.
+- **Zahl:** Verlangt man das Reziproke von der Konfiguration, braucht es beide Polfasern (zwei Nähte,
+  Hopf-verschlungen). Die Zustände mit einer Naht bilden aber ein Dublett unter dem Reziproken; der
+  Grundzustand wählt einen Pol und bricht das Reziproke spontan. Minimal ist genau eine Naht.
+
+| Zweig | Nähte | G hergeleitet | c | N_fam |
+|---|---|---|---|---|
+| räumlich (Linse) | 2 | nein | 16 | 6 |
+| intern, Reziprokes verlangt | 2 | ja | 16 | 6 |
+| intern, Reziprokes spontan gebrochen | 1 | ja | 8 | 3 |
+
+(c und N_fam unter der Lesart „je Naht ein 16er-Satz und drei Familien nach C″“.)
+
+**Urteil: Lesart, deutlich gestärkt.** Der interne Zweig leitet den verdrillten Defekt her und
+erlaubt genau eine Naht. Eingaben sind:
+- das Deck wirkt intern;
+- seine Holonomie ist physisch (der v522-Umlauf);
+- die Konfiguration muss das Reziproke nicht selbst tragen.
+
+Die spontane Wahl eines Pols ist eine Wahl zwischen den beiden Äonen-Enden, also eine Zeitrichtung.
+
+## Davor: H6h11 — die drei offenen Verbindungen (`z17`, `z18`, `z19`)
 
 Bilanz unverändert bei 15 P und 5 L von 20. Die drei Verbindungen, die H6h10 als offen nannte, wurden
 parallel gerechnet und danach selbst nachgeprüft. Alle drei Skripte laufen reproduzierbar mit

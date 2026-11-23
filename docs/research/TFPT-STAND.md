@@ -127,8 +127,8 @@ Ursprung sollte beides zugleich liefern.
 
 ### Kandidat H6: Ursprung von P1 aus einer hintergrundfreien Naht (Exploration 23.11.)
 
-Quelle: `experiments/exploration/2026-11-23-phasenraum-f5-holocode/VERDICT.md` (Stand H6h11),
-Skripte `n1`, `v1`, `y1`, `z1`–`z19`, Lean-Vertrag `experiments/theory-contracts/h6-exakte-teile-20261123/`; Atlasproblem `problem:c3-p1-p2-shared-origin-reconciliation`,
+Quelle: `experiments/exploration/2026-11-23-phasenraum-f5-holocode/VERDICT.md` (Stand H6h12),
+Skripte `n1`, `v1`, `y1`, `z1`–`z20`, Lean-Vertrag `experiments/theory-contracts/h6-exakte-teile-20261123/`; Atlasproblem `problem:c3-p1-p2-shared-origin-reconciliation`,
 Befunde mit Präfix `h6`. Nichts davon ist im Ledger befördert. Prüfstand mit 20 Kriterien: 15
 hergeleitet, 5 unter benannter Lesart, keines gescheitert, offen oder gesetzt.
 
@@ -195,7 +195,9 @@ hergeleitet, 5 unter benannter Lesart, keines gescheitert, offen oder gesetzt.
 - **Offen:**
   - Was die primitive Ladung bzw. den Sektor 1 und genau einen windenden Block wählt: Keine
     Grundzustandsregel gefunden; Lesarten sind ein Ordnungsfeld ohne Mittelwert oder N_fam = 3k
-    mit LEP. TFPTs Hopf-Lift (v957) mit Deck im Raum verbietet eine einzelne Naht. Einen Block
+    mit LEP. TFPTs Hopf-Lift (v957) mit Deck im Raum verbietet eine einzelne Naht; im Deck-internen
+    Zweig erzwingt eine physische Deck-Holonomie auf S³ einen Flussschlauch, um den Φ verschwinden und
+    um π winden muss (G folgt), minimal genau einen auf einer Polfaser (Z20). Einen Block
     wählt nur die Forderung „E₈ auf der Naht“ (sonst D₂₄⁺).
   - Warum Naht- und Materiemultiplett getrennt an M und O(D) koppeln.
   - c₋/k der Naht (Satzzahl).

@@ -735,6 +735,16 @@ if "H6h2" in H and z1p.exists() and z2p.exists():
                                                          "O(R), 3 gerade Familien + 1 ungerade Nahtmode, Zuordnung über die Eichbedingung, 16 MW, E8; "
                                                          "Paarung bleibt Eingabe und widerspricht psi chi aus G (Familienmassen 0, 1/2, 1/2)")
                                     facts["F30_open_connections"] = {n: Q[n].get("urteil") for n in Q}
+                                    z20p = Path(__file__).with_name("z20_ergebnis.json")
+                                    if z20p.exists():
+                                        z20 = json.loads(z20p.read_text())
+                                        H["H6h12"] = dict(H["H6h11"])
+                                        H["H6h12"]["K19"] = (LES if all(z20["checks"].values()) else F,
+                                                             "[v957 Deck intern] physische Deck-Holonomie auf einfach zusammenhängendem S^3 "
+                                                             "erzwingt einen Flussschlauch; Phi (J-Ladung 2) muss dort verschwinden und um pi "
+                                                             "winden (G folgt); Uhr legt ihn auf eine Polfaser, die die vier Markenfasern "
+                                                             "einmal verschlingen; minimal genau einer bei spontan gebrochenem Reziproken")
+                                        facts["F31_deck_internal"] = z20["urteil"]
 
 order = [f"K{i}" for i in range(1, 21)]
 print("Gesamttabelle (P = hergeleitet, L = unter benannter Lesart, F = FAIL, O = OFFEN, E = EINGABE)\n")
