@@ -11,6 +11,7 @@ Gesamttabelle (P = hergeleitet, L = unter benannter Lesart, F = FAIL, O = OFFEN,
    H6h2    P    P    P    P    P    P    P    P    P    P    P    P    L    P    P    O    O    L    14    2    0    2    0
    H6h3    P    P    P    P    P    P    P    P    P    P    P    P    L    P    P    O    L    L    14    3    0    1    0
    H6h4    P    P    P    P    P    P    P    P    P    P    P    P    L    P    P    O    L    L    14    3    0    1    0
+   H6h5    P    P    P    P    P    P    P    P    P    P    P    P    L    P    P    L    L    L    14    4    0    0    0
 
 H1:
    K1 EINGABE: Blattinvolution und flache Naht vorausgesetzt
@@ -105,6 +106,11 @@ H6h4:
    K16 OFFEN: freier Sektor läuft logarithmisch; wechselwirkender Limes und Wiederherstellung von SO(4) nicht gezeigt; Gitterabstand mindestens drei Plancklängen
    K17 LESART: [F] T-Phase exp(-2 pi i/3) kompensiert durch invertierbare 3D E8 Phase (Rand c = 8, T^2-Hilbertraum eindimensional, bricht die Vierteldrehung nicht); Alternative drei E8 Blöcke, c = 24
    K18 LESART: S4 gibt TBM als führende Ordnung; TFPT-Kanäle: sin^2 theta12 = 0.3067, sin^2 theta13 = phi0 exp(-tr Y^2) = 0.0231 mit tr Y^2 = 5/6 aus dem 3+2-Split (E), etwa 2 sigma gegen Daten (JUNO entscheidet); delta = 240 Grad = Argument der T-Phase, nicht hergeleitet
+H6h5:
+   K13 LESART: [D] Jacobson wie TFPT. Gegentest: kappa = 0.0983 je Dirac-Geschmack und Gitterfläche; drei Generationen geben a/l_P >= 3.07; die Gitterskala ist nicht die Planckskala
+   K16 LESART: [physisches Gitter] Universalität im Infraroten perturbativ: c = 1 für jede Art (Vierteldrehung zwischen Zeit- und Raumachse), Vakuumpolarisation Zeit = Raum (-0.252432), Richtungsabweichung ~ q^2 (Dimension 6); ausgezeichnete Zeit gäbe c_gamma^2 = 1.122 (Dimension 4); OS über T^2; U(1) Landau-Pol 1.7e+41 GeV. Nicht gezeigt: nichtperturbativ, chirale Gitterformulierung
+   K17 LESART: [A*, K1] c = 8 mit F entschieden: Operatorlesart (c = 24) widerspricht dem KMS-Zustand (K6) und TFPTs Familien in einem E8; ein E8 trägt genau drei Spinstruktursektoren (S3); die 3D Wand ist in 4D genau bei c in 8Z unsichtbar, also Lesart: E8 Phase auf dem Verzweigungsschnitt der zwei Blätter
+   K18 LESART: S4 gibt TBM als führende Ordnung; TFPT-Kanäle: sin^2 theta12 = 0.3067, sin^2 theta13 = phi0 exp(-tr Y^2) = 0.0231 mit tr Y^2 = 5/6 aus dem 3+2-Split (E), etwa 2 sigma gegen Daten (JUNO entscheidet); delta = 240 Grad = Argument der T-Phase, nicht hergeleitet
 
 Prämissen von H6h:
    A: keine ausgezeichneten Zyklen (zeitneutral und basisunabhängig)
@@ -167,3 +173,5 @@ Fakten:
    F19_entanglement_density: {'kappa_naive_dirac': 0.7865746774262862, 'kappa_per_dirac_taste': 0.09832183467828577, 'a_over_lP_three_generations_no_doublers': 3.0722786542101668, 'a_over_lP_three_generations_naive': 8.689716280346756, 'tastes_for_quarter': 2.542670209704825}
    F20_stress_free_selection: {'checks': {'Identität': True, 'nur tau = i stationär': True, 'Energie null bei i': True, 'Sattel': True, 'E8^3 nur i': True, 'Leech auch rho': True, 'Boson auch rho': True}, 'e6_zeros': [[0.0, 1.0]], 'boson_critical': [[0.0, 1.0], [0.5, 0.866025]], 'dirac_AA_critical': [[0.0, 1.0]], 'e8cubed_critical': [[0.0, 1.0]], 'leech_critical': [[0.0, 1.0], [0.5, 0.866025]], 'hessian_at_i': [9.578535929089053, -9.578535868881952]}
    F21_stability: {'checks': {'E8 Koeffizienten': True, 'Verdrillung null ist Maximum': True, 'Energie null bei y = 1': True, 'F_yy = -Varianz': True, 'log Z konvex': True, 'S konkav': True, 'S(0) = log 12': True, 'E8^3 Nullniveau 744': True, 'E8^3 Energie null bei i': True}, 'Fxx': 9.578536008802985, 'Fyy': -9.578535898985216, 'var_L0_at_i': 0.24262714871145152, 'S0': 2.4849097155305175, 'e8cubed_zero_level': 744}
+   F22_fork: {'checks': {'KMS-Zustand kein Eigenzustand': True, 'S auf Sektoren': True, 'T auf Sektoren': True, '248 Zerlegung': True, 'Wand unsichtbar genau bei c in 8Z': True}, 'S_on_sectors': {'2': 4, '3': 3, '4': 2}, 'T_on_sectors': {'2': 2, '3': 4, '4': 3}, 'decision': 'c = 8 mit F'}
+   F23_continuum: {'checks': {'c = 1 für naives Fermion': True, 'c = 1 für Skalar (Laplace)': True, 'Zeit gleich Raum isotrop': True, 'Diagonalabweichung ~ q^2': True, 'eine Art: Photon folgt bis auf Gitteranteil': True, 'zwei Arten: Fehlanpassung': True, 'Transfer T^2 positiv': True, 'Landau-Pol über Gitterskala': True}, 'pi33_isotropic': {'Zeitachse': [-0.25243202662274594, -0.24573291902954728], 'Raumachse': [-0.252432026622741, -0.24573291902954728], 'Diagonale': [-0.2529362022538321, -0.24767410027148884]}, 'anisotropic': {'1.0': [-0.25243202662274594, -0.252432026622741], '0.9': [-0.2179238066020211, -0.27550091514002933]}, 'c_gamma2_two_species': 1.1224118092535467, 'landau_pole_GeV': 1.687968076088729e+41}

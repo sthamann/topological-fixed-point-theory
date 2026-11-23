@@ -1,6 +1,64 @@
 # Urteil
 
-## Aktueller Stand: Stabilität der Lage τ = i (`z4_stabilitaet.py`)
+## Aktueller Stand: H6h5 — Gabel entschieden, Kontinuum (`z5_gabel.py`, `z6_kontinuum.py`)
+
+```
+        K1 K2 K3 K4 K5 K6 K7 K8 K9 K10 K11 K12 K13 K14 K15 K16 K17 K18    P  L  F  O  E
+   H6h4  P  P  P  P  P  P  P  P  P  P   P   P   L   P   P   O   L   L    14  3  0  1  0
+   H6h5  P  P  P  P  P  P  P  P  P  P   P   P   L   P   P   L   L   L    14  4  0  0  0
+```
+Erstmals ist kein Kriterium mehr offen. Vier stehen unter benannter Lesart: Gravitation (D),
+Kontinuum (physisches Gitter, perturbativ), Anomalie (F) und Neutrinomischung (TFPT-Kanäle).
+
+**Gabel c = 8 gegen c = 24: entschieden für c = 8 mit F.** Alle fünf Prüfungen bestehen.
+1. Die Operatorlesart H|ψ⟩ = 0 widerspricht H6 selbst. Der KMS-Zustand bei β = L hat Var(L₀) = 0,2426,
+   ist also kein Eigenzustand. Unter H|ψ⟩ = 0 wäre e^{−βH} auf allen physischen Zuständen eins, und β,
+   die Kragenbreite L/2 und die Zeitneutralität aus Z3 und Z4 wären unbestimmt (K6 fiele).
+2. Ein E₈ trägt genau drei Spinstruktursektoren, die Terme θ₂⁸, θ₃⁸, θ₄⁸ der GSO-Summe. S hält (A,A)
+   fest und tauscht AP mit PA; T tauscht (A,A) mit PA, mit der gemeinsamen Phase e^{−2πi/3}. Bis auf
+   diese Phase wirkt SL(2,ℤ) als S₃ = SL(2, ℤ/2) auf genau drei Objekten, passend zu C′. E₈³ hätte neun
+   Sektoren. TFPT bettet die Familien als SU(3)-Triplett in ein E₈ ein: 248 = 78 + 8 + 2·27·3.
+3. **Neu: Die 3D Wand ist genau bei c ∈ 8ℤ unsichtbar.** Verschiebt man sie über ein 4D Gebiet, ändert
+   sich die Phase um exp(2πi c σ/8) (Anomaliepolynom (c/24)p₁, ∫p₁ = 3σ). Weil die GSO-Summe die Naht
+   spinstrukturfrei macht, zählen alle orientierten 4-Mannigfaltigkeiten, und c = 8 ist der kleinste
+   Wert mit trivialer Phase. Das ist dieselbe 16 wie in Z1. Lesart: Die zwei Blätter von P1 sind
+   entlang eines 3D Schnitts verklebt, der an der Naht endet. Trägt der Schnitt die invertierbare E₈
+   Phase, ist seine Lage unbeobachtbar wie ein Dirac-String. F ist dann keine zusätzliche Struktur,
+   sondern der Verzweigungsschnitt der zwei Blätter.
+
+**Kontinuum (K16).** Das Gitter ist physisch (Z2: a ≥ 3 ℓ_P). Verlangt ist daher kein Limes a → 0,
+sondern Universalität im Infraroten. Alle acht Prüfungen bestehen.
+- **Lorentz ohne Feinabstimmung.** Auf dem isotropen Gitter ist die Lichtgeschwindigkeit für jede Art
+  und jede Richtung exakt eins. Die Abweichung ist ~ p² (Dimension 6) und richtungsabhängig, zum
+  Beispiel −1/3 entlang der Achse und −2/9 entlang der Raumdiagonale für das naive Fermion. Die
+  Ein-Schleifen-Vakuumpolarisation ist entlang Zeit- und Raumachse gleich (−0,252432). Entlang der
+  Diagonale weicht sie um 5·10⁻⁴ ab und skaliert mit q² (Verhältnis 0,260 gegen 0,25).
+- **Gegenprobe mit ausgezeichneter Zeit.** Mit einem eigenen Zeitsprung ν je Art bekommt jede Art ihre
+  eigene Geschwindigkeit, und das induzierte Photon liegt dazwischen: Zwei Arten mit ν = 1 und 0,9
+  geben c_γ² = 1,122 gegen 1 und 1,235. Das ist Lorentzverletzung bei Dimension 4, nur durch
+  Feinabstimmung zu beheben. Schon eine einzelne Art bekommt einen nicht-universellen Gitteranteil von
+  etwa 2 %. **Die Gleichwertigkeit der vier Achsen, die die Kritik als Hindernis für Lorentz las, ist
+  genau die Bedingung für Lorentz ohne Feinabstimmung.** Die Vierteldrehung zwischen Zeit- und
+  Raumachse verbietet jedes ν ≠ 1 in jeder Ordnung.
+- **Reflexionspositivität.** Naive Fermionen haben die Transfereigenwerte ±e^{−E}. T ist nicht positiv,
+  T² schon (G(t+2)/G(t) = e^{−2E} exakt). Die OS-Rekonstruktion läuft über Doppelschritte; der
+  Zeitverdoppler ist eine eigene Art.
+- **Größenordnungen.** Quadratische Lorentzverletzung setzt bei etwa 2–7·10¹⁸ GeV ein; bei 100 TeV ist
+  δv ~ 10⁻²⁷. Die Beobachtungsschranken liegen viele Größenordnungen darunter. Der Landau-Pol von
+  U(1)_Y liegt bei etwa 10⁴¹ GeV, weit über der Gitterskala. Weil das Gitter physisch ist, ist die
+  Trivialität von U(1) kein Hindernis; die nichtabelschen Faktoren sind asymptotisch frei.
+
+**Nicht gezeigt.**
+- Nichtperturbative Universalität (Confinement, Higgs-Sektor).
+- Die chirale Gitterformulierung. Naive Fermionen haben 16 Geschmäcker in Paaren entgegengesetzter
+  Chiralität (Nielsen–Ninomiya). Ein Weg aus der Literatur, hier nicht gerechnet: die Spiegelpartner
+  symmetrisch massiv machen. Das geht nur, wenn die ℤ₁₆-Anomalie einer Generation verschwindet, also
+  mit 16 Weyl-Fermionen je Generation einschließlich ν_R.
+
+**Prämissen von H6h5:** A\*, C′, D, E und F. F ist jetzt an K1 gebunden: Es ist die E₈ Phase auf dem
+Verzweigungsschnitt.
+
+## Davor: Stabilität der Lage τ = i (`z4_stabilitaet.py`)
 
 **Ergebnis: Die Lage ist stabil. Der Sattel aus Z3 ist keine Instabilität**, sondern die gewöhnliche
 Struktur zweier konjugierter Paare. Alle neun Prüfungen bestehen.

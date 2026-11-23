@@ -599,6 +599,25 @@ if "H6h2" in H and z1p.exists() and z2p.exists():
                                      f"Temperatur ist die Krümmung -(2 pi)^2 Var = {z4['Fyy']:+.3f} (positive Wärmekapazität), "
                                      f"mikrokanonisch S(E) konkav mit E = 0 bei beta = L")
             facts["F21_stability"] = z4
+        z5p, z6p = Path(__file__).with_name("z5_ergebnis.json"), Path(__file__).with_name("z6_ergebnis.json")
+        if z5p.exists() and z6p.exists():
+            z5 = json.loads(z5p.read_text())
+            z6 = json.loads(z6p.read_text())
+            ok5, ok6 = all(z5["checks"].values()), all(z6["checks"].values())
+            H["H6h5"] = dict(H["H6h4"])
+            H["H6h5"]["K17"] = (LES if ok5 else F,
+                                "[A*, K1] c = 8 mit F entschieden: Operatorlesart (c = 24) widerspricht dem KMS-Zustand (K6) und "
+                                "TFPTs Familien in einem E8; ein E8 trägt genau drei Spinstruktursektoren (S3); die 3D Wand ist "
+                                "in 4D genau bei c in 8Z unsichtbar, also Lesart: E8 Phase auf dem Verzweigungsschnitt der zwei Blätter")
+            iso = z6["pi33_isotropic"]
+            H["H6h5"]["K16"] = (LES if ok6 else F,
+                                f"[physisches Gitter] Universalität im Infraroten perturbativ: c = 1 für jede Art (Vierteldrehung "
+                                f"zwischen Zeit- und Raumachse), Vakuumpolarisation Zeit = Raum ({iso['Zeitachse'][0]:+.6f}), "
+                                f"Richtungsabweichung ~ q^2 (Dimension 6); ausgezeichnete Zeit gäbe c_gamma^2 = "
+                                f"{z6['c_gamma2_two_species']:.3f} (Dimension 4); OS über T^2; U(1) Landau-Pol "
+                                f"{z6['landau_pole_GeV']:.1e} GeV. Nicht gezeigt: nichtperturbativ, chirale Gitterformulierung")
+            facts["F22_fork"] = z5
+            facts["F23_continuum"] = z6
 
 order = [f"K{i}" for i in range(1, 19)]
 print("Gesamttabelle (P = hergeleitet, L = unter benannter Lesart, F = FAIL, O = OFFEN, E = EINGABE)\n")
