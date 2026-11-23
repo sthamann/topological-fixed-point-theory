@@ -1,6 +1,56 @@
 # Urteil
 
-## Aktueller Stand: H6h6 — Ursprung der Naht (`z7_ursprung_naht.py`)
+## Aktueller Stand: H6h7 — die 16 und die Zahl der Sätze (`z8_sechzehn_und_saetze.py`)
+
+Die Bilanz bleibt bei 14 P und 5 L von 19. Es gibt aber eine Prämisse weniger: F (E₈ Phase auf dem
+Schnitt) ist jetzt eine Lesart innerhalb von G. Die Prämissen sind **A\*, C′, D, E, G**. Alle sechs
+Prüfungen bestehen; zwei davon sind reine Arithmetik (c = ν/2 und die Minimalität).
+
+**Was gezählt wird.** Im Paarmodell aus Z7 windet nur ξ₊ = (ψ − iχ)/√2. ξ₊ trägt unter J die Phase i,
+ist also ein Weyl-Fermion mit Spin-ℤ₄-Ladung 1 (J² = (−1)^F). Der Partner ξ₋ (Ladung −1) windet
+nicht; das Gitter braucht ihn nur, damit ein J-invariantes Wilson-Glied die Verdoppler entfernt. ν
+Fermionen mit Ladung 1 geben c = ν/2. Der Schnitt ist genau bei c ∈ 8ℤ unsichtbar (Z5), also bei
+ν ∈ 16ℤ. **Das ist dieselbe Bedingung wie die ℤ₁₆-Anomaliefreiheit von Spin-ℤ₄** (Garcia-Etxebarria und
+Montero 2019).
+
+**Welche 16?**
+- *Die Standardmodell-Generation hat die richtige Zahl.* Mit X = 5(B−L) − 4Y gilt X ≡ 1 mod 4 für alle 16
+  Weyl-Fermionen einschließlich ν^c. Ohne ν^c wären es 15, also anomal.
+- *Sie bildet die Naht trotzdem nicht.* In einer Generation ist der einzige eichinvariante
+  Majorana-Bilinear ν^c ν^c. Nur ν^c kann am Defekt eine windende Masse tragen: eine Mode je
+  Generation, drei Generationen geben c = 3/2. Die leichten SM-Fermionen scheiden auf der Ebene von
+  Bilinearen aus (Wechselwirkungen, etwa symmetrische Massenerzeugung, sind nicht geprüft).
+- *Ein reelles 16-Plett funktioniert.* Für den Vektor von SO(16) ist die Masse Φ ψ_a ψ_a mit
+  komplexem Singulett Φ eichinvariant. Φ trägt ℤ₄-Ladung 2, und **sein Vorzeichen ist das Blatt**.
+  Alle 16 winden, also c = 8 und ν = 16, anomaliefrei. Unter SO(16) ⊃ SO(10) × SO(6) ist 16 =
+  (10,1) + (1,6). Das sind genau die Quantenzahlen der 16 Nahtmoden in E₈ ⊃ SO(16): Die 4D Eltern
+  tragen dieselben Quantenzahlen wie die Nahtfermionen. Sie sind schwer und vektorartig, ohne
+  Eichanomalie.
+- *Wo die Generationen sitzen.* E₈ = 120 + 128 unter SO(16), und 128 = (16,4) + (16̄,4̄). Mit SU(4) ⊃
+  SU(3) × U(1) wird (16,4) zu (16,3) + (16,1). Die SM-Generationen sind Zustände im Spinorteil des
+  Nahtkerns, nicht seine 16 Fermionen. Das passt zu TFPTs Familien in einem E₈.
+
+**Zahl der Sätze: n = 1.**
+
+| n | c | ν | Naht allein T-invariant | mit Zufluss | Familiencharaktere aus der Naht |
+|---|---|---|---|---|---|
+| 1 | 8 | 16 | nein (e^{−2πi/3}) | ja | 3 Sektoren, {−1, i, −i} |
+| 2 | 16 | 32 | nein | ja | 6 Sektoren |
+| 3 | 24 | 48 | ja | ja | 9 Sektoren |
+
+Unter G ist die Naht nie allein. Die schweren 4D Fermionen, deren Masse am Defekt windet, liefern den
+Zufluss (Callan–Harvey), deshalb wird strenge T-Invarianz der Naht für sich nicht verlangt. Das
+kleinste n mit unsichtbarem Schnitt ist dann 1. Nur bei n = 1 trägt die Naht genau drei
+Spinstruktursektoren mit {−1, i, −i}. n = 3 wäre die kleinste Zahl ohne Zufluss, verlöre aber die
+Familiencharaktere und passt nicht zu TFPTs einem E₈.
+
+**Nicht gezeigt.**
+- Der Callan–Harvey-Zufluss ist hier nicht gerechnet.
+- Warum es genau ein schweres reelles 16-Plett gibt.
+- Warum der Grundzustand einen geschlossenen Defekt enthält.
+- Ob Wechselwirkungen die SM-Generation selbst zur Quelle machen könnten.
+
+## Davor: H6h6 — Ursprung der Naht (`z7_ursprung_naht.py`)
 
 ```
         K1 … K15 K16 K17 K18 K19    P  L  F  O  E

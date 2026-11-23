@@ -632,6 +632,21 @@ if "H6h2" in H and z1p.exists() and z2p.exists():
                                     "Gitterindex: eine chirale Majorana-Weyl Mode je Paar mit Lichtgeschwindigkeit (robust), "
                                     "16 Paare geben c = 8; die Verdoppler liefern sie nicht. Offen: Identität der 16 Paare")
                 facts["F24_seam_origin"] = z7
+                z8p = Path(__file__).with_name("z8_ergebnis.json")
+                if z8p.exists():
+                    z8 = json.loads(z8p.read_text())
+                    ok8 = all(z8["checks"].values())
+                    H["H6h7"] = dict(H["H6h6"])
+                    H["H6h7"]["K17"] = (LES if ok8 else F,
+                                        "[G] n = 1 Satz, c = 8; die T-Phase gleicht der Zufluss der schweren 4D Fermionen aus "
+                                        "(Callan-Harvey, Lesart); Schnitt unsichtbar <=> nu in 16Z <=> Z16-Anomalie null; "
+                                        "F ist keine eigene Prämisse mehr")
+                    H["H6h7"]["K19"] = (LES if ok8 else F,
+                                        "[G] Naht = verdrillter Defekt (Index: eine Mode je Fermion mit Spin-Z4-Ladung 1); die 16 "
+                                        "sind ein schweres reelles 16-Plett (10,1)+(1,6), dieselben Quantenzahlen wie die Nahtmoden "
+                                        "in E8 > SO(16); die leichten SM-Fermionen scheiden aus (eichinvariant windet nur nu^c); "
+                                        "die SM-Generationen liegen als (16,3) im Spinorteil von E8")
+                    facts["F25_sixteen_and_sets"] = z8
 
 order = [f"K{i}" for i in range(1, 20)]
 print("Gesamttabelle (P = hergeleitet, L = unter benannter Lesart, F = FAIL, O = OFFEN, E = EINGABE)\n")
