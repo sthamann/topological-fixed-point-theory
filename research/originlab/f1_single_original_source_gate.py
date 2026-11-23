@@ -24,9 +24,10 @@ def original_packet():
     native=json.loads(NATIVE.read_text(encoding="utf-8"))
     r113=R113.read_text(encoding="utf-8")
     scan=PHASESCAN.read_text(encoding="utf-8")
-    require(native["whole_source_bundle"] is None and
-            native["coordinate_role"]=="spatial_tangential_circle_NOT_OS_time",
-            "original physical packet or source time changed")
+    # A whole source bundle may appear later; report it for review instead of failing.
+    bundle_present=native.get("whole_source_bundle") is not None
+    require(native["coordinate_role"]=="spatial_tangential_circle_NOT_OS_time",
+            "original source time changed")
     require("C_{j,t}^{00}(b_out,b_in)" in r113 and
             "<Ω_F,Γ(R_j[b])Ω_F>=1" in r113 and
             "P_adm Q_A[B] P_adm" in r113,
@@ -36,7 +37,8 @@ def original_packet():
             "conditional phase-scan source distinction changed")
     return {
       "domain":native["domain_id"],
-      "full_original_source_packet_present":False,
+      "full_original_source_packet_present":bundle_present,
+      "source_packet_review_required":bundle_present,
       "original_spatial_coordinate_is_OS_time":False,
       "original_source_operator":"Q[b]=s[b]*Gamma(R[b])",
       "original_pre_projector_zero_fermion_cap":"1",

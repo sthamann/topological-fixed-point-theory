@@ -262,11 +262,13 @@ def original_source_gate():
         "original-paper-source-reconciliation-20261102/"
         "contribution_20261106Q/domain/native-diagnostic-v1.json")
     j=json.loads(source.read_text(encoding="utf-8"))
-    require(j["whole_source_bundle"] is None
-            and j["coordinate_role"]=="spatial_tangential_circle_NOT_OS_time",
-            "native R113 source gate changed: review physical source now")
+    # A native bundle is reported for review; its absence is the current state, not a requirement.
+    require(j["coordinate_role"]=="spatial_tangential_circle_NOT_OS_time",
+            "native R113 source time changed: review physical source now")
+    bundle=j.get("whole_source_bundle")
     return {
-        "native_R113_source_bundle":None,
+        "native_R113_source_bundle":bundle,
+        "native_R113_source_review_required":bundle is not None,
         "diagnostic_circle_is_physical_OS_time":False,
         "fully_derived_p1_and_f1":False,
     }

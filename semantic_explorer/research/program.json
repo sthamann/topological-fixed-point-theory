@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "revision": "f6a2711ebdca29ca2b4dc6f3",
+  "revision": "201053e2d37264736f94e99d",
   "premises": [
     {
       "id": "premise:declared-p1-p2",
@@ -7480,6 +7480,17 @@
       "statement": {
         "de": "Verwendet werden die bezeichneten Originalmatrizen J₀, σ und C(±i), das feste sichtbare Y im E8 Wurzelchart sowie P₃ ausschließlich in der bedingten Erweiterung.",
         "en": "Use the specified original matrices J₀, σ and C(±i), the fixed visible Y in the E8 root chart, and P₃ only in the conditional extension."
+      }
+    },
+    {
+      "id": "premise:original-source-routes-scoped-20261123",
+      "title": {
+        "de": "Originalquellenverträge sind Routentests",
+        "en": "Original source contracts are route tests"
+      },
+      "statement": {
+        "de": "Ein ursprünglicher Quellvertrag wie R113 prüft nur die Behauptung, dass genau diese Originalquelle ihre markierten Endpunktwerte liefert. Er ist keine Voraussetzung einer fundamentalen Lösung, von F1 oder eines anderen Ursprungsmodells; verpflichtend ist er nur für ein Ergebnis, das behauptet, diese Originalquelle zu sein.",
+        "en": "An original source contract such as R113 tests only the claim that this specific original source yields its marked endpoint values. It is no prerequisite of a fundamental solution, of F1 or of another origin model; it is required only for a result that claims to be that original source."
       }
     }
   ],
@@ -123208,6 +123219,190 @@
           "explanation": {
             "de": "Die gemeinsame Auswahl von Quelle, Darstellung und P1/P2 Anschluss bleibt der fehlende Herkunftsschritt.",
             "en": "Joint selection of the source, representation and P1/P2 bridge remains the missing origin step."
+          }
+        }
+      ]
+    },
+    {
+      "id": "problem:f1-acceptance-routes-20261123",
+      "title": {
+        "de": "F1 Abnahme: R113 als eingeschränkte Route statt Türsteher",
+        "en": "F1 acceptance: R113 as a scoped route, not a gatekeeper"
+      },
+      "question": {
+        "de": "Welche Prüfwege und Gates gelten für ein neues Ursprungsmodell, und welche Rolle hat der blockierte ursprüngliche R113 Aufruf in OriginLab und in den Agentenregeln?",
+        "en": "Which acceptance paths and gates apply to a new origin model, and what role does the blocked original R113 call play in OriginLab and in the agent rules?"
+      },
+      "topics": [
+        "topic:origin",
+        "topic:validation"
+      ],
+      "goals": [],
+      "accepted_premise_ids": [
+        "premise:original-source-routes-scoped-20261123"
+      ],
+      "findings": [
+        {
+          "id": "finding:f1-acceptance-routes-20261123-r113-blocks-own-route",
+          "title": {
+            "de": "Fehlende R113 Werte blockieren nur G3 ihrer eigenen Route",
+            "en": "Missing R113 values block only G3 of their own route"
+          },
+          "statement": {
+            "de": "evidence_gates.assess setzt bei blockiertem Originalaufruf G3 mit route=original_source auf BLOCKED. G4 behält seinen eigenen Status NOT_TESTED und vermerkt die Abhängigkeit nur unter route_dependencies.original_source. Vorher wurde G4 für jedes Modell auf BLOCKED gesetzt. Die Statuswerte PASS, CANDIDATE_PASS, PARTIAL, BLOCKED, NOT_TESTED, NOT_APPLICABLE und REFUTED haben getrennte Bedeutungen. Der Test test_missing_original_source_blocks_only_its_own_route prüft das.",
+            "en": "When the original call is blocked, evidence_gates.assess sets G3 with route=original_source to BLOCKED. G4 keeps its own status NOT_TESTED and records the dependency only under route_dependencies.original_source. Before, G4 was set to BLOCKED for every model. The statuses PASS, CANDIDATE_PASS, PARTIAL, BLOCKED, NOT_TESTED, NOT_APPLICABLE and REFUTED have separate meanings. The test test_missing_original_source_blocks_only_its_own_route checks this."
+          },
+          "status": "established_scoped",
+          "premise_ids": [
+            "premise:original-source-routes-scoped-20261123"
+          ],
+          "scope": {
+            "de": "Software der OriginLab Gatebewertung ab 23. November 2026; keine physikalische Aussage, frühere R113 Befunde bleiben in ihrem Geltungsbereich unverändert.",
+            "en": "Software of the OriginLab gate assessment from 23 November 2026; no physical claim, earlier R113 findings stay unchanged in their scope."
+          },
+          "sources": [
+            {
+              "path": "research/originlab/evidence_gates.py",
+              "sha256": "a856cabeacb9a4322218a98ce03785c5d8c0fd56804f83bc47fe66a949fbdd6f",
+              "line_start": 1,
+              "line_end": 77
+            },
+            {
+              "path": "research/originlab/test_f1_solution.py",
+              "sha256": "d3979256a4bb57ef850bd3e32af214b6af08dbe76a06187b60a449f183b2d6f2",
+              "line_start": 83,
+              "line_end": 102
+            }
+          ],
+          "attempt_ids": []
+        },
+        {
+          "id": "finding:f1-acceptance-routes-20261123-candidate-contract-path",
+          "title": {
+            "de": "Leerer nativer Vertrag ist fehlende Abnahmekonfiguration; Kandidatenvertrag als Prüfweg",
+            "en": "Empty native contract is a missing acceptance configuration; candidate contract as acceptance path"
+          },
+          "statement": {
+            "de": "f1_native_contract.json registriert keinen Vertrag und trägt jetzt contract_status NOT_CONFIGURED; der Arbeitsauftrag markiert das als missing_acceptance_configuration statt als Forschungsergebnis. Ein neues Ursprungsmodell schreibt einen eigenen Lean Vertrag mit Prädikaten G0 bis G7 und läuft mit --f1-contract und --f1-contract-sha256. Ein geprüfter Beweis ergibt F1_CONTRACT_PROVED, physical_status CANDIDATE_PROVED und CANDIDATE_PASS auf allen acht Gates bei physical_solution false; erst die Registrierung nach Prüfung macht ihn nativ.",
+            "en": "f1_native_contract.json registers no contract and now carries contract_status NOT_CONFIGURED; the work order marks this as missing_acceptance_configuration instead of a research result. A new origin model writes its own Lean contract with predicates G0 to G7 and runs with --f1-contract and --f1-contract-sha256. A checked proof gives F1_CONTRACT_PROVED, physical_status CANDIDATE_PROVED and CANDIDATE_PASS on all eight gates with physical_solution false; only registration after review makes it native."
+          },
+          "status": "established_scoped",
+          "premise_ids": [
+            "premise:original-source-routes-scoped-20261123"
+          ],
+          "scope": {
+            "de": "Abnahmesoftware von OriginLab; ein Kandidatenbeweis ist keine physikalische Lösung und keine Ledgeränderung.",
+            "en": "OriginLab acceptance software; a candidate proof is no physical solution and no ledger change."
+          },
+          "sources": [
+            {
+              "path": "research/originlab/f1_native_contract.json",
+              "sha256": "26c5192f20d2ea14e7e7787b80cede0ef5d08ac808c02f2e6c3d06c255905e61",
+              "line_start": 1,
+              "line_end": 4
+            },
+            {
+              "path": "research/originlab/F1-CANDIDATE-CONTRACT.md",
+              "sha256": "ff6e080307fc9b4e05b4debf124b589826ab885d98685ea22b8aa6e1328ed2a0",
+              "line_start": 1,
+              "line_end": 68
+            },
+            {
+              "path": "research/originlab/autonomy.py",
+              "sha256": "7b338d7b961b6b08866e97029acafbae44b939c7de68d9213e7985600253208d",
+              "line_start": 644,
+              "line_end": 668
+            }
+          ],
+          "attempt_ids": []
+        },
+        {
+          "id": "finding:f1-acceptance-routes-20261123-search-order",
+          "title": {
+            "de": "Quellfreie Spuren vor R113; Gesamtzustand nicht mehr aus R113 abgeleitet",
+            "en": "Source-free lanes before R113; overall state no longer derived from R113"
+          },
+          "statement": {
+            "de": "main.py startet R113 nicht mehr vor allen anderen Spuren; genesis_foreign, genesis_rules und structure_scenarios laufen zuerst, im Supervisor mit Priorität 100 vor den Originalquellenspuren mit 99. Der Gesamtzustand der autonomen Suche folgt der Abnahme (OPEN, CANDIDATE_PROVED, F1_PROVED); der R113 Status steht getrennt als original_source_route_state. Die offenen R113 Eingaben heißen original_route_open_inputs und sind kein nächster Schritt. Der Laufkontext erfasst alle Atlasprobleme statt fünf Originalquellenprobleme.",
+            "en": "main.py no longer runs R113 before all other lanes; genesis_foreign, genesis_rules and structure_scenarios run first, in the supervisor with priority 100 ahead of the original-source lanes at 99. The overall state of the autonomous search follows acceptance (OPEN, CANDIDATE_PROVED, F1_PROVED); the R113 status is reported separately as original_source_route_state. The open R113 inputs are named original_route_open_inputs and are no next step. The run context fingerprints all Atlas problems instead of five original-source problems."
+          },
+          "status": "established_scoped",
+          "premise_ids": [
+            "premise:original-source-routes-scoped-20261123"
+          ],
+          "scope": {
+            "de": "Suchreihenfolge und Berichtsfelder von OriginLab; sie ändern keine Rechnung einer Spur.",
+            "en": "Search order and report fields of OriginLab; they change no computation of any lane."
+          },
+          "sources": [
+            {
+              "path": "research/originlab/main.py",
+              "sha256": "6cd6a7e8d2b4d342985b05b78629bb7f38219d3e3360242ae861b4ee0954882f",
+              "line_start": 463,
+              "line_end": 552
+            },
+            {
+              "path": "research/originlab/autonomy.py",
+              "sha256": "7b338d7b961b6b08866e97029acafbae44b939c7de68d9213e7985600253208d",
+              "line_start": 468,
+              "line_end": 480
+            }
+          ],
+          "attempt_ids": []
+        },
+        {
+          "id": "finding:f1-acceptance-routes-20261123-agent-rules",
+          "title": {
+            "de": "Agentenregeln und Suchbrief behandeln R113 als eine Route",
+            "en": "Agent rules and search brief treat R113 as one route"
+          },
+          "statement": {
+            "de": "AGENTS.md hält die Entscheidung vom 23. November 2026 fest: fehlende R113 Werte sind nie Grund, dass ein anderer Kandidat offen bleibt, und nie der vorgegebene nächste Schritt. Grundlagenprüfungen gehören zum Explorationsmodus. Der Suchbrief für die Szenariomodelle beginnt mit der physikalischen Aufgabe ohne TFPT Begriffe und führt R113 als eine Route; die Vorschlagsregel verlangt die vier Marken nur von einem Szenario, das die Originalquelle sein will.",
+            "en": "AGENTS.md records the decision of 23 November 2026: missing R113 values are never the reason another candidate stays open, and never the default next step. Reviews of foundations belong to Exploration mode. The search brief for the scenario models opens with the physical task without TFPT terms and lists R113 as one route; the proposal rule asks for the four marks only from a scenario that claims to be the original source."
+          },
+          "status": "established_scoped",
+          "premise_ids": [
+            "premise:original-source-routes-scoped-20261123"
+          ],
+          "scope": {
+            "de": "Methodische Entscheidung des Nutzers und Agentenregeln; keine physikalische Aussage.",
+            "en": "Methodological user decision and agent rules; no physical claim."
+          },
+          "sources": [
+            {
+              "path": "AGENTS.md",
+              "sha256": "cfac22a4e75574c68d8f28bd07145aea767e49a2a8dd44c8aa8e721885747fca",
+              "line_start": 43,
+              "line_end": 62
+            },
+            {
+              "path": "research/originlab/THEORY-BRIEF.md",
+              "sha256": "75b7b5c030b5b7e57aaaf49ad740df1f1a9054200dac9cc846c55d9b75fa42a4",
+              "line_start": 14,
+              "line_end": 101
+            }
+          ],
+          "attempt_ids": []
+        }
+      ],
+      "tasks": [],
+      "strategies": [],
+      "reviewed_attempt_ids": [],
+      "connections": [
+        {
+          "id": "connection:f1-acceptance-routes-20261123-session-synthesis",
+          "target_problem_id": "problem:f1-session-synthesis-20261113",
+          "kind": "constrains_under",
+          "premise_ids": [
+            "premise:original-source-routes-scoped-20261123"
+          ],
+          "finding_ids": [
+            "finding:f1-acceptance-routes-20261123-r113-blocks-own-route",
+            "finding:f1-acceptance-routes-20261123-search-order"
+          ],
+          "explanation": {
+            "de": "Die R113 Befunde dort bleiben gültig, gelten aber für die Route der Originalquelle; sie blockieren kein anderes Ursprungsmodell.",
+            "en": "The R113 findings there remain valid but apply to the original-source route; they block no other origin model."
           }
         }
       ]

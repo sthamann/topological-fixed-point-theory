@@ -3,9 +3,27 @@
 Orientation for the scenario search, compiled 17 November 2026 from the
 overall context map, the origin probes of 12 November, the consolidation of
 12 November, the results register up to E8MIDDLEBLOCKS20261116 and Atlas
-revision `ee840e2befc8167fbec170ed`. It is a reading aid. The ledger, the
-Atlas findings and the cited originals decide. Every value below holds in
-the setting of its source.
+revision `ee840e2befc8167fbec170ed`; revised 23 November 2026 so that no
+single route, in particular the original R113 endpoint route, counts as the
+open problem of the theory. It is a reading aid. The ledger, the Atlas
+findings and the cited originals decide. Every value below holds in the
+setting of its source. Newer records are in the Atlas (problems dated 20 to
+23 November), which the proposal step receives as the compiled record, and
+in `experiments/exploration/`; they are not summarised here.
+
+## The task in plain terms (read first)
+
+Find one rule or process, with no fitted constant, from which the observed
+physics follows: three generations of sixteen chiral states each with the
+Standard Model charges, the gauge group SU(3) × SU(2) × U(1), the
+fine-structure constant α⁻¹ ≈ 137.036, a 3+1 dimensional Lorentzian spacetime
+with local causal structure and a continuum limit, a physical state and time,
+and gravity as a massless spin-two field with universal coupling. State the
+rule first in its own terms. Compare it with the TFPT record below only after
+it is stated: the record is the test of a candidate, not its starting point.
+A rule that reaches the targets by another construction than the existing
+TFPT objects is admissible. Where it contradicts a recorded identification,
+say which one and why; recorded identifications can be wrong.
 
 ## What the theory already derives
 
@@ -43,29 +61,37 @@ acyclic. A scenario may use the loop as a selection principle only when it
 states which class of alternatives the loop is compared against and shows
 that the loop singles out one member.
 
-## The actual open problem
+## What is open
 
-All quantitative physical claims need one common source that is executed,
-not only read. The record shows the same gap in 55 of 246 progress
-entries: the original weighted reflected form, the absolute empty
-reference and the physical time map. Concretely, the four marks
-Z0, ZU, ZY, ZUY of the R113 endpoint are not produced by any original call.
+A complete solution has four parts: the origin of the two declared inputs
+P1 and P2 without a new free choice, one common physical source that is
+executed and not only read (state and time), 3+1 spacetime with a continuum
+limit, and gravity. Every route below is one way to attack these parts.
 
-Reviewed findings say why further reading of the existing inputs cannot
-close this. P1, P2 and E8 leave the four marks undetermined in the checked
-classes: isospectral gluings with equal single marks, two unimodular
-closures over one D8 stage, the v252/v88 pair with equal spectrum and
-opposite CP sign. The E8 current algebra and the 96-dimensional spectral
-triple are different algebras, and no (10,6) current preserves the space
-of three families.
+**The original R113 route is one route, not the gate.** It tests whether the
+specific original source of the November contracts produces its four endpoint
+marks Z0, ZU, ZY, ZUY. That call is blocked: no original operation returns the
+four values (55 of 246 progress entries record this gap). The block is a
+scoped result about that source. It is no evidence against other origin
+models and no prerequisite for them. A scenario has to produce the R113 marks
+only if it claims to be that original source. Do not cite the missing R113
+values as the reason a different scenario stays open; name the concrete map
+it lacks instead.
 
-What an origin rule has to determine: the operations, their composition
+Reviewed findings in the original route's scope: P1, P2 and E8 leave the
+four marks undetermined in the checked classes (isospectral gluings with
+equal single marks, two unimodular closures over one D8 stage, the v252/v88
+pair with equal spectrum and opposite CP sign). The E8 current algebra and
+the 96-dimensional spectral triple are different algebras, and no (10,6)
+current preserves the space of three families.
+
+What any origin rule has to determine: the operations, their composition
 and the differences that can be read from them, on open transitions. It
 must say when two histories carry the same charged end lines, the same
 local places and the same future answers. It must not insert the marked
 end lines or the three space directions as the result to be forced.
 
-The smallest decisive proof named in the consolidation: from the one-sided
+One route named in the consolidation of 12 November: from a one-sided
 source rule obtain a local generating charged field with adjoint, domain
 and fusion; reuse the conditional closure theorems of the E8 net and the
 D5 ⊕ A3 dictionary; then check the compensated three-region word and the
@@ -120,7 +146,7 @@ flavour lattice A8 or the fixed point A11.
 - A11, seed and fixed point: φ0 = 1/(6π) + 3/(256π⁴),
   α⁻¹ = 137.0359992168407, transfer spectrum {1, (2/3)⁶, (1/3)⁶}.
 
-## Session of 17 and 18 November 2026 on the four seam marks (summary)
+## Session of 17 and 18 November 2026 on the four seam marks (original route, summary)
 
 Full text of all 47 rounds: `SESSION-FOUR-MARKS-20261118.md`. Scripts and
 outputs: `experiments/theory-contracts/originlab-four-marks-session-20261118/`.
@@ -146,7 +172,8 @@ Atlas: `problem:four-marks-quartic-and-free-seam-source`.
 - Under one named assumption (the original boundary form is a vector
   state on two sides of the seam with the recorded reflection) the form,
   its reference, the mirror, the cuts, the cap and the sign are fixed and
-  the recorded R113 consumer accepts the result. The candidate needs
+  the recorded R113 consumer accepts the result. This concerns the
+  original route only. The candidate needs
   Majorana neutrinos and a non-zero lightest mass.
 - Excluded in their frames: marks as level-four cusps; the fermion
   determinant as origin of the negative mixed answer; the native Higgs

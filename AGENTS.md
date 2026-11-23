@@ -11,7 +11,9 @@ Every research session runs in exactly one of two modes. Decide from the user's
 words; when unclear, ask once.
 
 **Exploration** — the user asks for new ideas, a fresh approach, creativity,
-"völlig neu", "anders", "Neuansatz", a broad search or a complete solution.
+"völlig neu", "anders", "Neuansatz", a broad search, a complete solution, or
+asks whether the research has run aground ("verrannt", "festgefahren",
+"Grundannahmen prüfen").
 Goal: a complete TFPT solution (one principle that yields the inputs P1 and P2,
 reproduces the existing results and supplies state, time, 3+1 and gravity).
 Read [`docs/research/TFPT-STAND.md`](docs/research/TFPT-STAND.md) (what works,
@@ -31,6 +33,33 @@ them only for a specific ID.
 Neither mode turns an automatic "Nächster Schritt" from the last contract into an
 obligation. Before a new contract in either mode, check in one line whether it is
 just another variant of the last three contracts; if so, pick something else.
+
+**Review of foundations** (part of Exploration): when the user asks whether the
+work has run aground, list which recorded identifications, gates or search
+defaults a result depends on, and check each one against its source instead of
+assuming it. Recorded identifications can be wrong; a new principle may
+reclassify them, provided it says which one and why.
+
+## Original source routes are not gates — user decision of 2026-11-23
+
+R113 and the other original source contracts of November 2026 test one specific
+claim: that the original source of those contracts yields its marked endpoint
+values. They are scoped tests of that route, not prerequisites of a fundamental
+solution, of F1, or of any other origin model.
+
+- Never cite missing R113 values (Z0, ZU, ZY, ZUY, the blocked fibre packet, the
+  absolute empty reference) as the reason a different candidate stays open, and
+  never propose "unblock R113" as the default next step. Name the concrete map the
+  candidate lacks instead.
+- R113 is required only when a result claims to be that original source or claims
+  its specific physical identification.
+- A new principle must reproduce the established results (`TFPT-STAND.md`) or
+  reclassify their scope explicitly; it need not reuse the R113 computation.
+- OriginLab reports the R113 call as the `original_source` route; its block does
+  not block other routes. New origin models are checked through their own
+  candidate contract (`research/originlab/F1-CANDIDATE-CONTRACT.md`). The empty
+  native contract in `f1_native_contract.json` is a missing acceptance
+  configuration, not a research result.
 
 ## Scientific discipline (both modes)
 

@@ -64,9 +64,9 @@ class P1PhysicalNecessityTests(unittest.TestCase):
         self.assertFalse(x["effective_bounce_is_pregeometric_P1_derivation"])
         self.assertFalse(x["repeated_rank_one_projection_generates_nontrivial_clock"])
 
-    def test_native_original_source_absence_is_preserved(self):
+    def test_native_original_source_state_is_reported(self):
         x=self.r["original_source"]
-        self.assertIsNone(x["native_R113_source_bundle"])
+        self.assertEqual(x["native_R113_source_bundle"] is not None,x["native_R113_source_review_required"])
         self.assertFalse(x["diagnostic_circle_is_physical_OS_time"])
         self.assertFalse(self.r["F1_solved"])
 

@@ -11,7 +11,8 @@ class F1SingleOriginalSourceTests(unittest.TestCase):
 
     def test_original_R113_domain_is_not_physical_Q0_or_OS_time(self):
         r=self.r["original_native_status"]
-        self.assertFalse(r["full_original_source_packet_present"])
+        # Reflects the current domain file; a new bundle is flagged for review, not rejected.
+        self.assertEqual(r["full_original_source_packet_present"],r["source_packet_review_required"])
         self.assertFalse(r["original_spatial_coordinate_is_OS_time"])
         self.assertEqual(r["original_pre_projector_zero_fermion_cap"],"1")
         self.assertFalse(r["conditional_center_trace_is_original_empty_cap"])

@@ -17,6 +17,10 @@ Read the repository `AGENTS.md` and pick the mode first.
   (`search_knowledge`, `list_attempts`), which exclusion applies and under which
   exact premises. A scoped exclusion only blocks the idea if its premises really
   match; a different premise makes the idea legitimate.
+- **Original source routes:** many records end with "the original R113 call stays
+  blocked". That is scoped to the original source of those contracts. It is never
+  a gate for another origin model or for F1, and never the default next step
+  (user decision of 2026-11-23, `AGENTS.md`).
 - **Continuation:** `graph_status`, `theory_overview`, then
   `research_state(query, lang, max_chars=12000)` for the named task, together with
   the top of `PLAN.md` and the compact `progress.json`.

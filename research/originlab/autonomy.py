@@ -467,33 +467,35 @@ def execute(spec,root):
 
 
 def specifications(resolution,domain,toolchain,focus,seed_research=True,packets=()):
-    yield 100,{"lane":"r113","domain":str(domain)}
+    # Independent generators first: they need no TFPT source and no original R113 call.
+    yield 100,{"lane":"genesis_foreign"}
+    yield 100,{"lane":"genesis_rules"}
+    yield 100,{"lane":"structure_scenarios"}
+    yield 100,{"lane":"atlas_scenarios"}
+    # The original R113 source is one route among others, tested but not the gatekeeper.
+    yield 99,{"lane":"r113","domain":str(domain)}
     for entry in packets:
-        yield 100,{"lane":"discovered_original_packet","domain":str(domain),"entry":entry}
-    yield 100,{"lane":"r113_synthesis","domain":str(domain)}
-    yield 99,{"lane":"atlas_scenarios"}
-    yield 99,{"lane":"structure_scenarios"}
-    yield 99,{"lane":"genesis_rules"}
-    yield 99,{"lane":"genesis_foreign"}
+        yield 99,{"lane":"discovered_original_packet","domain":str(domain),"entry":entry}
+    yield 99,{"lane":"r113_synthesis","domain":str(domain)}
     yield 99,{"lane":"q0_rule_search","domain":str(domain),"depth":min(resolution-1,4)}
     yield 98,{"lane":"p1_origin_hypotheses"}
     yield 98,{"lane":"coherent_origin","stage":resolution-1}
-    yield 100,{"lane":"source_bridge"}
+    yield 99,{"lane":"source_bridge"}
     yield 99,{"lane":"colour_ward"}
     yield 99,{"lane":"weak_source"}
     yield 99,{"lane":"weak_folded_clock"}
     yield 99,{"lane":"p1_field_search"}
     yield 99,{"lane":"weak_return_rank"}
     yield 98,{"lane":"four_mark_geometry"}
-    yield 100,{"lane":"original_affine_time"}
-    yield 100,{"lane":"original_folded_time"}
+    yield 99,{"lane":"original_affine_time"}
+    yield 99,{"lane":"original_folded_time"}
     yield 97,{"lane":"f1_solution","domain":str(domain),"stage":resolution-1,"toolchain":toolchain}
     if seed_research:
         yield 97,{"lane":"proof_search","toolchain":toolchain}
         for campaign in registered_origin_campaigns():
             yield 89,{"lane":"registered_origin_campaign","campaign":campaign}
         yield 98,{"lane":"marked_search"}
-        yield 100,{"lane":"original_affine_return"}
+        yield 99,{"lane":"original_affine_return"}
         yield 99,{"lane":"complete_mark_graphs"}
         for weight,parity in ((0,[1,1]),(1,[1,1]),(2,[1,1]),(4,[1,1]),(1,[1,-1])):
             yield 95,{"lane":"clifford_sewing","input":{"reference_weight":weight,"parity_signs":parity}}
@@ -644,13 +646,20 @@ def work_order(original,complete,discovered,errors,backend=None):
     if complete.get("formal_acceptance_registered") is False:
         items.append({
             "id":"native_acceptance_contract","blocks":sorted(native_registry()["gates"]),
-            "reason":"No pinned native F1 contract is registered. Every stage returns the search bound.",
+            "kind":"missing_acceptance_configuration",
+            "reason":"No pinned native F1 contract is registered. This is a missing acceptance "
+                     "configuration, not a research result: every stage returns the search bound.",
             "open_gate_statements":{gate:row["open"] for gate,row in native_registry()["gates"].items()},
+            "candidate_path":"A new origin model writes its own contract (F1-CANDIDATE-CONTRACT.md) and "
+                             "runs main.py --campaign f1_solution --f1-contract FILE --f1-contract-sha256 SHA. "
+                             "A checked proof reports CANDIDATE_PROVED on all eight gates.",
             "pickup":"Register {file, sha256} as 'contract' in f1_native_contract.json. "
                      "The engine digest changes and the supervisor opens a new epoch."})
     if original.get("status")=="BLOCKED":
         items.append({
-            "id":"original_source_packet","blocks":["G3","G4"],
+            "id":"original_source_packet","blocks":["G3"],"route":"original_source",
+            "route_scope":"Blocks G3 of the original R113 route and, through it, that route's G4. "
+                          "It blocks no gate of another origin model.",
             "reason":original.get("reason") or "The native consumer received no original source operation.",
             "first_operation":original.get("first_operation"),"missing":original.get("missing",[]),
             "obligations":original.get("obligations",{}),"rejected_packets":discovered.get("rejected",[]),
@@ -849,11 +858,16 @@ def search_round(args,db,out,epoch,resolution,context,domain,focus,extras,dsl,hi
     original_replays = [row for row in rows if row["spec"]["lane"]=="discovered_original_packet"]
     r113_evidence,source_choice = discovered_source_evidence(original,original_replays)
     physical = assess(r113_evidence,results.get("r113_synthesis"),complete)
+    # The overall state follows the acceptance evidence. The original R113 source is one
+    # route and reports its own state; its missing values do not define the frontier.
+    original_route_state = ("SOURCE_REVIEW_REQUIRED" if source_choice else
+                            {"BLOCKED":"SOURCE_REQUIRED","EXACT_SUPPLIED_CONTRACTION":"OPEN",
+                             "ORIGINAL_NATIVE_VALUES_REQUIRE_REVIEW":"SOURCE_REVIEW_REQUIRED"}
+                            .get(original.get("status"),"NOT_RUN" if not original else "ERROR"))
     frontier = {
         "state":("F1_PROVED" if physical["physical_solution"] else
-                 "SOURCE_REVIEW_REQUIRED" if source_choice else
-                 {"BLOCKED":"SOURCE_REQUIRED","EXACT_SUPPLIED_CONTRACTION":"OPEN",
-                 "ORIGINAL_NATIVE_VALUES_REQUIRE_REVIEW":"SOURCE_REVIEW_REQUIRED"}.get(original.get("status"),"ERROR")),
+                 "CANDIDATE_PROVED" if physical["physical_status"]=="CANDIDATE_PROVED" else "OPEN"),
+        "original_source_route_state":original_route_state,
         "atlas_revision":context["atlas_revision"],
         "discovered_original_sources":context["discovered_original_sources"],
         "registered_origin_campaigns":[{"campaign":row["spec"]["campaign"], "result":row["result"],

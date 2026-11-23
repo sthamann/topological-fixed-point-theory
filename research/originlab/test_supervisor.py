@@ -39,7 +39,9 @@ class SupervisorTests(unittest.TestCase):
         self.assertEqual([item["id"] for item in order["items"]],
                          ["native_acceptance_contract","original_source_packet"])
         self.assertEqual(len(order["items"][0]["open_gate_statements"]),8)
-        self.assertEqual(order["items"][1]["blocks"],["G3","G4"])
+        self.assertEqual(order["items"][1]["blocks"],["G3"])
+        self.assertEqual(order["items"][1]["route"],"original_source")
+        self.assertEqual(order["items"][0]["kind"],"missing_acceptance_configuration")
 
     def test_a_registered_contract_and_backend_make_the_proof_reachable(self):
         failed = [{"spec":{"lane":"scenario"},"result":{"error_type":"TimeoutExpired"}}]

@@ -37,8 +37,10 @@ of at most 6 objects. Use no tools. Each object has:
                   whose only consequence is one value that an existing script already produces, is
                   rejected.
 Use only record ids that appear below, plus your own hypothesis ids. At least two of your scenarios
-must introduce a new premise: the reviewed record says the declared inputs leave the four endpoint
-marks undetermined, so a missing rule is expected. Read the theory brief first. Prefer scenarios that join contexts without a recorded link, that
+must introduce a new premise: the reviewed record has no derived origin for the declared inputs, so
+a missing rule is expected. The original R113 endpoint route is one route among others; a scenario
+need not produce its four marks unless it claims to be that original source. Read the theory brief
+first. Prefer scenarios that join contexts without a recorded link, that
 address several open tasks through one shared input, and that differ from the earlier scenarios.
 Study the earlier scenarios: each lists its rule and why its test ended as it did. Do not repeat
 a rule that failed for vagueness or inconsistency; state a sharper one or a different one. A rule

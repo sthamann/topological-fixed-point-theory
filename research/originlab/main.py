@@ -66,19 +66,15 @@ def atomic_json(path, payload):
 
 
 def atlas_inputs(data):
-    ids = {"problem:f1-session-synthesis-20261113",
-           "problem:originlab-double-cell-parity-20261114",
-           "problem:originlab-affine-neutral-return-20261114",
-           "problem:automatic-origin-response-decision",
-           "problem:original-joint-short-time-kernel-20261105"}
+    """Compact fingerprint of every Atlas problem, not of a few original-source problems."""
+    from hashlib import sha256
     return {
         problem["id"]: {
-            "findings":[{"id":f["id"],"status":f["status"],"premise_ids":f.get("premise_ids",[]),
-                         "sources":[s for s in f.get("sources",[]) if isinstance(s,dict)]}
-                        for f in problem.get("findings",[])],
+            "sha256":sha256(json.dumps(problem,sort_keys=True,ensure_ascii=False).encode()).hexdigest(),
+            "findings":len(problem.get("findings",[])),
             "open_tasks":[t["id"] for t in problem.get("tasks",[]) if t.get("status") == "open"],
         }
-        for problem in data["problems"] if problem["id"] in ids
+        for problem in data["problems"]
     }
 
 
@@ -466,11 +462,11 @@ def one_round(args, directory, index, retained, prior_questions, manifest):
         atomic_json(directory/f"{campaign}.json",result)
         print(f"{campaign}: {result['status']}",flush=True)
 
-    # Start with the original R113 path before running independent search lanes.
-    independent = [c for c in args.campaign if c != "f1"]
-    if "r113" in independent:
-        independent.remove("r113")
-        record("r113",lambda:execute("r113",args.repo,args,[],[],[]))
+    # All lanes are independent; the original R113 route is one of them, not a first gate.
+    # Source-free generators run first so that no lane is primed by the original source result.
+    first = ("genesis_foreign","genesis_rules","structure_scenarios")
+    independent = sorted((c for c in args.campaign if c != "f1"),
+                         key=lambda c:first.index(c) if c in first else len(first))
     if args.jobs == 1:
         for c in independent:
             record(c,lambda:execute(c,args.repo,args,proposal_rows,retained,prior_questions))
@@ -491,7 +487,10 @@ def one_round(args, directory, index, retained, prior_questions, manifest):
                         complete_contract=complete or None,
                         source_status=(source_result or {}).get("status","NOT_RUN"),
                         atlas_problem="problem:f1-session-synthesis-20261113",
-                        next_original_inputs=[
+                        physical_status=evidence["physical_status"],
+                        # Inputs of the original R113 route only. They are no prerequisite
+                        # for another origin model and are not the next step of the search.
+                        original_route_open_inputs=[
                             "absolute weighted endpoint Gram and bound empty reference",
                             "same-source four oriented operations and charged primitive loop dictionary",
                             "original charged ordered field-to-word map",
@@ -543,14 +542,17 @@ def one_round(args, directory, index, retained, prior_questions, manifest):
     complete = outcomes.get("f1_solution",{})
     evidence = assess(outcomes.get("r113") or complete.get("original_source"),
                       outcomes.get("r113_synthesis"),complete)
-    next_action = ("Review the exact finite controls and their original-source follow-up."
+    next_action = ("Review the exact finite controls in their stated scopes."
                    if args.finite_controls_only else
-                   "Produce the original marked endpoint packet or equivalent weighted "
-                   "form before claiming physical transfer or regional time.")
-    if complete.get("status") in ("F1_PROVED","F1_CONTRACT_PROVED"):
+                   "Review the lanes that changed in this round. No lane result, including the "
+                   "original R113 route, sets the next research step.")
+    if complete.get("status") == "F1_CONTRACT_PROVED":
+        next_action = "Review the candidate contract and decide whether to register it as the native contract."
+    if complete.get("status") == "F1_PROVED":
         next_action = "Replay the common-model proof against the pinned contract."
     summary = dict(round=index,created_at=datetime.now(timezone.utc).isoformat(),
                    context=manifest,gates=evidence["gates"],physical_solution=evidence["physical_solution"],
+                   physical_status=evidence["physical_status"],
                    complete_contract_status=complete.get("status","NOT_RUN"),
                    outcomes={k:v["status"] for k,v in outcomes.items()},
                    pending_experiments=p0.get("questions",[])[:3],

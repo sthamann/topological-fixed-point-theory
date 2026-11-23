@@ -45,7 +45,24 @@ python3 -B research/originlab/autonomy.py --out /tmp/originlab-f1 --until-proved
 
 `f1_proof_reachable` is false while `f1_native_contract.json` registers no
 contract or the Lean backend is absent. In that configuration no stage
-returns `F1_PROVED`.
+returns `F1_PROVED`. The work order marks the missing contract as
+`missing_acceptance_configuration`: a configuration gap, not a research
+result. A new origin model is checked through its own candidate contract
+and reaches `CANDIDATE_PROVED`; see `F1-CANDIDATE-CONTRACT.md`.
+
+## Routes and the original R113 source
+
+The original R113 endpoint call is one route (`original_source`). Since
+23 November 2026 it runs after the source-free generators
+(`genesis_foreign`, `genesis_rules`, `structure_scenarios`,
+`atlas_scenarios`) in both `main.py` and the supervisor. The frontier
+`state` follows the acceptance evidence (`OPEN`, `CANDIDATE_PROVED`,
+`F1_PROVED`); the R113 status is reported separately as
+`original_source_route_state`. A missing R113 packet blocks G3 of that
+route only; G4 records the dependency under `route_dependencies` and keeps
+its own status. Its open inputs are listed as `original_route_open_inputs`
+and are not the next step of the search. `main.py` fingerprints every
+Atlas problem in its run context, not only the original-source problems.
 
 `work-order.json` also carries a computed completeness audit: for each
 gate the registered acceptance predicate and the presence of its scoped
@@ -94,7 +111,9 @@ python3 -B research/originlab/autonomy.py --out /tmp/originlab-f1 --until-proved
 ```
 
 With `--scenario-model` each stage runs three model steps. All prompts
-carry `THEORY-BRIEF.md`.
+carry `THEORY-BRIEF.md`. The brief opens with the task in plain physical
+terms and treats the R113 route as one route among others; a scenario
+needs the R113 marks only if it claims to be that original source.
 
 1. Proposal. A tool-free call receives the compiled record and earlier
    verdicts and returns up to six scenarios. A scenario may add a rule

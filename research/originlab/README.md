@@ -7,6 +7,14 @@ are neither imported nor executed. Historical certificates supply benchmark
 data. The original-source lane calls the native R113 consumer directly.
 The native domain and canonical Atlas supply original provenance.
 
+**Routes (23 November 2026).** The original R113 endpoint call is one route
+(`original_source`), not the gate of the search. Source-free generators run
+first; a missing R113 packet blocks G3 of its own route only and no gate of
+another origin model. Many sections below report that a lane "supplies no
+R113 mark": that is a scoped statement about the original route, not a
+defect of the lane. A new origin model is checked through its own candidate
+contract ([F1-CANDIDATE-CONTRACT.md](F1-CANDIDATE-CONTRACT.md)).
+
 ## Foreign universes, 20 November 2026 (Exploration mode)
 
 `foreign_universes.py` runs the same rule search in universes without TFPT vocabulary: all 142 connected graphs
@@ -114,8 +122,9 @@ python3 -B research/originlab/main.py --out research/originlab/runs/first
 python3 -B research/originlab/main.py --out research/originlab/runs/first --resume --rounds 2
 ```
 
-The default run executes R113, the calibration and model campaigns, P0
-search and an F1 frontier report. For one lane, use `--campaign`. A run records exact
+The default run executes the source-free generators first, then the
+original R113 route, the calibration and model campaigns, P0 search and an
+F1 frontier report. For one lane, use `--campaign`. A run records exact
 witnesses, hypotheses, source hashes, the current local Atlas program
 revision, bounds, versions, and seeds. A blocked source is an ordinary
 scientific outcome. An exception produces an ERROR lane and a nonzero exit.

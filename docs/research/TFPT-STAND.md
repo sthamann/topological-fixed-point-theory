@@ -1,6 +1,9 @@
 # TFPT: Was funktioniert, was fehlt, was eine vollständige Lösung wäre
 
-Kompakter Stand vom 20. November 2026 für Explorations- und Lösungssitzungen. Er ersetzt
+Kompakter Stand vom 20. November 2026 (Abschnitt 5 ergänzt am 23. November) für
+Explorations- und Lösungssitzungen. Neuere Befunde stehen in den Atlasproblemen mit Datum
+ab 20261120 und unter `experiments/exploration/`; dieser Stand wird nicht automatisch
+fortgeschrieben. Er ersetzt
 keine Originalquelle. Statuskürzel: **E** exakt unter genannten Voraussetzungen, **C** bedingte
 physikalische Identifikation, **N** numerischer Vergleich, **O** offene Herleitung. Maßgeblich
 bleiben `verification/status_ledger.csv`, die Papiere unter `documents/` und der Atlas.
@@ -97,6 +100,12 @@ bedingt, nichts befördert.
 - **Gravitation:** Flächennormierung und lokaler Boost/Horizontfluss (`map:area-normalization`,
   `map:local-boost`).
 - **Restflavor:** absolute Quarkamplitude, Neutrinozweig, Phasen.
+
+**Was nicht fehlt:** Die vier R113 Endpunktwerte (Z0, ZU, ZY, ZUY) der ursprünglichen
+Quellverträge sind ein Test, ob *diese* Originalquelle ihre markierten Antworten liefert.
+Diese Route ist blockiert; das ist ein eingeschränkter Befund über sie, keine Lücke der
+Theorie und keine Voraussetzung für einen anderen Ursprung (Entscheidung vom
+23. November 2026, `AGENTS.md`).
 
 ## 6. Was ausgeschlossen ist (immer mit Geltungsbereich)
 

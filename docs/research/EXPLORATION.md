@@ -39,11 +39,30 @@ weiterzubauen.
 7. **Abgleich.** Mit Atlas und Prüfkatalog: schon versucht? Unter welchen genauen
    Voraussetzungen ausgeschlossen? Ein Ausschluss trifft nur bei übereinstimmenden
    Voraussetzungen. Welche vorhandenen Ergebnisse trägt der Ansatz, welche bricht er?
+   Widerspricht er einer bisherigen Identifikation, diese benennen und prüfen, statt
+   den Ansatz deshalb zu verwerfen.
 8. **Urteil** in `VERDICT.md`: **Kandidat**, **verworfen** oder **offen**, mit Stufe (unten),
    freien Parametern, Basislinie, stärkstem Einwand und erster freier Wahl.
 
 Explorationsergebnisse werden nicht automatisch in PLAN, progress oder Atlas übernommen;
 das entscheidet eine Fortsetzungssitzung oder der Nutzer.
+
+## Keine Türsteher aus alten Quellverträgen (Entscheidung vom 23. November 2026)
+
+R113 und die übrigen ursprünglichen Quellverträge prüfen, ob *die* Originalquelle der
+Novemberverträge ihre markierten Endpunktwerte liefert. Für einen neuen Ansatz sind sie
+kein Abnahmekriterium: Ein Ansatz bleibt nicht deshalb „offen“, weil er keine R113
+Werte (Z0, ZU, ZY, ZUY, Faserpaket, absolute Leerreferenz) erzeugt. Maßstab sind die
+Stufen unten und die Ergebnisse aus `TFPT-STAND.md`. R113 wird nur dann zur Pflicht,
+wenn ein Ansatz behauptet, genau diese Originalquelle zu sein. Ein formaler Prüfweg für
+neue Ursprungsmodelle steht in `research/originlab/F1-CANDIDATE-CONTRACT.md`.
+
+## Grundlagenprüfung
+
+Fragt der Nutzer, ob sich die Forschung verrannt hat, gehört das in diesen Modus. Dann
+zusätzlich: die Annahmen, Prüfgrenzen und Suchvorgaben auflisten, von denen das letzte
+Ergebnis abhängt (Identifikationen, Gates, Standardreihenfolgen in OriginLab, Regeln), jede
+an ihrer Quelle prüfen und festhalten, welche nur für eine Route gelten.
 
 ## Stufen einer Lösung
 
@@ -91,4 +110,5 @@ Körpern · Lernende Systeme. Die Liste ist eine Anregung, keine Grenze.
 
 `research/originlab/genesis_rules.py --foreign` sucht Regeln in Universen ohne TFPT Vokabular
 (Graphen, Automaten, Polytope) und bewertet nach den gemessenen Zielgrößen mit
-Zufallsbasislinie. Neue Universen dort ergänzen.
+Zufallsbasislinie. Neue Universen dort ergänzen. Diese quellfreien Spuren laufen in
+`main.py` und im Supervisor vor der R113 Route.

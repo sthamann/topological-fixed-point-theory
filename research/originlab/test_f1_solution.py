@@ -80,6 +80,27 @@ def test_coherent_search_joins_real_contractions_and_keeps_shells_disjoint():
     assert not stage2["physical_solution"]
 
 
+def test_missing_original_source_blocks_only_its_own_route():
+    report = assess({"status":"BLOCKED","missing":["original_blocked_fiber_packet"]})
+    assert report["gates"]["G3"]["status"] == "BLOCKED"
+    assert report["gates"]["G3"]["route"] == "original_source"
+    assert report["gates"]["G4"]["status"] == "NOT_TESTED"
+    assert report["gates"]["G4"]["route_dependencies"]["original_source"]["blocked_by"] == ["G3"]
+    assert all(row["status"] == "NOT_TESTED" for gate,row in report["gates"].items() if gate != "G3")
+
+
+def test_checked_candidate_contract_reaches_candidate_pass_without_promotion():
+    complete = {"status":"F1_CONTRACT_PROVED","physical_solution":False,"contract_sha256":"c"*64,
+                "same_model_gates":{gate:f"Candidate.{gate}" for gate in GATES},
+                "proof":{"status":"PROVED","certificate_sha256":"d"*64}}
+    report = assess({"status":"BLOCKED"},complete=complete)
+    assert report["physical_status"] == "CANDIDATE_PROVED"
+    assert not report["physical_solution"]
+    assert all(row["status"] == "CANDIDATE_PASS" for row in report["gates"].values())
+    incomplete = {**complete,"same_model_gates":{"G0":"Candidate.G0"}}
+    assert assess({},complete=incomplete)["physical_status"] == "OPEN"
+
+
 def test_proof_contract_cannot_promote_external_or_incomplete_receipt():
     assert not assess({},complete={"status":"F1_CONTRACT_PROVED","physical_solution":True})["physical_solution"]
     assert not assess({},complete={"status":"F1_PROVED","physical_solution":True,

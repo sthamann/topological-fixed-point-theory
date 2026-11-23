@@ -142,6 +142,8 @@ def search_native(root, domain, depth, hypotheses, toolchain, seconds, stage):
         anchors["affine_return"] = affine_return(root)
     return {"status":"NATIVE_SEARCH_BOUND_REACHED","physical_solution":False,
             "formal_acceptance_registered":False,
+            "acceptance_configuration":native_registry().get("contract_status","NOT_CONFIGURED"),
+            "candidate_contract_path":"F1-CANDIDATE-CONTRACT.md",
             "native_gate_sources":native_registry()["gates"],
             "original_source":source,"original_anchors":anchors,
             "q0_rule_search":q0,"p1_origins":search_p1(**(hypotheses or {})),
