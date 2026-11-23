@@ -1,6 +1,6 @@
 # TFPT: Was funktioniert, was fehlt, was eine vollständige Lösung wäre
 
-Kompakter Stand vom 20. November 2026, ergänzt am 23. November (Befunde 20.–23. November und Abschnitt 5), für
+Kompakter Stand vom 20. November 2026, ergänzt am 23. November (Befunde 20.–23. November, Kandidat H6 und Abschnitt 5), für
 Explorations- und Lösungssitzungen. Neuere Befunde stehen in den Atlasproblemen mit Datum
 ab 20261120 und unter `experiments/exploration/`; dieser Stand wird nicht automatisch
 fortgeschrieben. Er ersetzt
@@ -125,6 +125,54 @@ die **Vier** kommt (μ₄, vier Marken, d = 4, Viertelzählung in c₃) und welc
 **Minimalität** verlangt (kleinstes anomaliefreies N, kleinste Klebelösung). Ein neuer
 Ursprung sollte beides zugleich liefern.
 
+### Kandidat H6: Ursprung von P1 aus einer hintergrundfreien Naht (Exploration 23.11.)
+
+Quelle: `experiments/exploration/2026-11-23-phasenraum-f5-holocode/VERDICT.md` (Stand H6h8),
+Skripte `n1`, `v1`, `y1`, `z1`–`z10`; Atlasproblem `problem:c3-p1-p2-shared-origin-reconciliation`,
+Befunde mit Präfix `h6`. Nichts davon ist im Ledger befördert. Prüfstand mit 19 Kriterien: 14
+hergeleitet, 5 unter benannter Lesart, keines gescheitert, offen oder gesetzt.
+
+- **Prämissen:**
+  - **A\*:** Die Naht hat keine Hintergrundgeometrie; Basiswechsel sind Symmetrien, die Form
+    erfüllt ⟨T⟩ = 0.
+  - **C″:** Die Familien sind der chirale Index der vier Marken.
+  - **D:** Gravitation als Zustandsgleichung (Jacobson).
+  - **E:** Die Teilung 3+2 ist lokal.
+  - **G:** Die Naht ist ein verdrillter Defekt eines Paarungsmassenfelds.
+- **Was folgt:**
+  - Basiswechsel als Symmetrie geben die GSO-Summe. Nur 16 Majorana-Weyl haben Twistgewicht 1,
+    also E₈ (c = 8) mit flachem (P,P) Sektor. [E]
+  - ⟨T⟩ = 0 heißt E₆(τ) = 0, also τ = i als einzige stationäre Form. Stabil ist sie, weil der
+    Sattel Verdrillung (Impuls) und Temperatur (Energie, positive Wärmekapazität) trennt.
+    Zeitneutralität und KMS-Zustand bei β = L folgen, ebenso Kragenbreite L/2 und μ₄ als
+    Stabilisator. [E]
+  - Die gelifte Vierteldrehung gibt c₃ = 1/(8π) je Spinorsektor exakt, ohne Fixpunktkorrektur. [E]
+  - Die vier Marken bei μ₄ geben den Fünferträger H⁰(O(D)) mit Halbdrehung 3+2 und den chiralen
+    Familienindex H⁰(K(D)) = 3 (ker D₋ = 0) mit Charakteren {−1, i, −i}. [E]
+  - Λ²₊ = Λ²(Familien), also d = 4; Lipschitzgitter ℤ⁴ mit gleichwertigen Achsen. [E/C]
+  - Lorentz bei Dimension ≤ 4 ohne Feinabstimmung; Reflexionspositivität über T². [E, perturbativ]
+  - Yang–Mills aus Fermionschleifen über die lokale 3+2-Verbindung, sin²θ_W = 3/8 an der
+    Gitterskala. [E im Modell]
+  - Unter D liegt der Gitterabstand bei mindestens 3 ℓ_P (Verschränkungsdichte 0,0983 je
+    Dirac-Geschmack). [N]
+  - Die Naht ist ein verdrillter Defekt mit einer chiralen Mode je Fermion mit Spin-ℤ₄-Ladung 1.
+    16 schwere reelle Fermionen (10,1)+(1,6) geben c = 8; der Schnitt ist genau bei ν ∈ 16ℤ
+    topologisch unsichtbar (ℤ₁₆-Bedingung), auf dem Gitter aber eine Domänenwand. [N/E]
+  - Gerechnet ist der Zufluss der SO(2)-Ladung; der gravitative Zufluss nicht.
+- **Zurückgenommen oder korrigiert:**
+  - Ein „Gitter in Planckeinheiten“ gibt es nicht.
+  - Die Gabel c = 8 gegen 24 ist nur gegen die Operatorlesart entschieden.
+  - Die Familiencharaktere legen die Satzzahl nicht fest.
+  - J folgt nicht aus der Modenzahl, sondern aus der Blattstruktur.
+- **Offen:**
+  - Was den Defekt im Grundzustand erzwingt (nichttriviales Massenbündel oder Defektsumme).
+  - Warum die Fermionen an K^{1/2} ⊗ O(D) koppeln.
+  - Der gravitative Zufluss.
+  - Die Satzzahl, über das Niveau eines gemeinsamen E₈ Stroms.
+  - Nichtperturbative Universalität und die chirale Gitterformulierung.
+  - θ₁₃ und δ aus TFPTs Kanälen (sin²θ₁₃ = 0,0231, etwa 2σ).
+  - Ein gemeinsamer Elternoperator.
+
 ## 4. Wiederkehrende Muster und Verbindungen
 
 - **Dieselbe Vier überall:** vier Marken, μ₄, Z₄ Glue, Nahtnormierung, 4 = 3 + 1.
@@ -161,7 +209,9 @@ Suche ist damit allein der Ursprung von P1.**
 quadratische Lage der Marken (μ₄, τ = i; im Original ausdrücklich zusätzlich genannt; KERNSYM:
 einziger symmetrieerzwungener kritischer Punkt, aber Sattel, kein Minimum), die Viertelzählung
 in der Wärmespurlesart von c₃, Zustand und Zeit (die operative Saat, bisher bedingt) und warum
-die Naht überhaupt eine flache zweiblättrige Fläche ist.
+die Naht überhaupt eine flache zweiblättrige Fläche ist. Kandidat H6 (Abschnitt 3) leitet diese
+Punkte unter den Prämissen A\*, C″, D, E, G her; offen bleibt dort vor allem, was den Defekt im
+Grundzustand erzwingt.
 
 **Was nicht fehlt:** Die vier R113 Endpunktwerte (Z0, ZU, ZY, ZUY) der ursprünglichen
 Quellverträge sind ein Test, ob *diese* Originalquelle ihre markierten Antworten liefert.
