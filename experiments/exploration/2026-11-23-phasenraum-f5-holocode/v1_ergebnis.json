@@ -439,6 +439,57 @@
    ],
    "decision_sets": 1,
    "seam_parents": "reelles 16-Plett (10,1)+(1,6), Spin-Z4-Ladung 1"
+  },
+  "F26_inflow_wall": {
+   "checks": {
+    "Q erhalten": true,
+    "Kern verliert genau eine Mode": true,
+    "Kern und Rand tauschen aus": true,
+    "stetiger Ausgleich": true,
+    "Energie hängt von der Phase ab": true,
+    "Periode 2 pi in phi0": true
+   },
+   "core_jump": -0.8998511189479643,
+   "core_mode_weight": 0.9220378724226823,
+   "phase_potential": [
+    0.08824050827152075,
+    0.07483458984343283,
+    0.04318423804543947,
+    0.012468562664817107,
+    0.0,
+    0.012468562664817107,
+    0.04318423804543947,
+    0.07483458984343283,
+    0.08824050827152075
+   ],
+   "barrier": 0.08824050827152075
+  },
+  "F27_review_two": {
+   "checks": {
+    "ohne J ebenfalls eine Mode": true,
+    "Index = n+ + n-": true,
+    "Familien {-1, i, -i} aus dem Index": true,
+    "Träger 3 + 2": true,
+    "3 x 16 = 48": true,
+    "nur N = 16 gibt Gewicht 1": true,
+    "Gegenbeispiel bestätigt": true,
+    "KMS-Zustand ohne 1/R-Term (aus Z4)": true
+   },
+   "counts": {
+    "mit J (1, 0, Viertelfluss)": 1,
+    "ohne J (1, 0, kein Fluss)": 1,
+    "gewöhnlich (1, 1)": 2,
+    "nur J (0, 0, Viertelfluss)": 0
+   },
+   "family_index_eigs": [
+    "(-1+0j)",
+    "-1j",
+    "1j"
+   ],
+   "carrier_half_turn": {
+    "1": 3,
+    "-1": 2
+   }
   }
  },
  "scorecard": {
@@ -1454,6 +1505,84 @@
    "K19": [
     "LESART",
     "[G] Naht = verdrillter Defekt (Index: eine Mode je Fermion mit Spin-Z4-Ladung 1); die 16 sind ein schweres reelles 16-Plett (10,1)+(1,6), dieselben Quantenzahlen wie die Nahtmoden in E8 > SO(16); die leichten SM-Fermionen scheiden aus (eichinvariant windet nur nu^c); die SM-Generationen liegen als (16,3) im Spinorteil von E8"
+   ]
+  },
+  "H6h8": {
+   "K2": [
+    "PASS",
+    "[A*] stationäre Nahtform <T> = 0: d log chi_E8/d tau = -(2 pi i/3) E6/E4, einzige Nullstelle im Fundamentalbereich [[0.0, 1.0]]; Gesamtenergie dort null, beide Rekonstruktionen gleich; ohne Orientierungsvoraussetzung; Gegenproben Boson [[0.0, 1.0], [0.5, 0.866025]], Leech [[0.0, 1.0], [0.5, 0.866025]]; stabil: Verdrillung null ist Maximum von |Z| (F_xx = +9.579), längs der Temperatur ist die Krümmung -(2 pi)^2 Var = -9.579 (positive Wärmekapazität), mikrokanonisch S(E) konkav mit E = 0 bei beta = L"
+   ],
+   "K3": [
+    "PASS",
+    "[C] H^1 der Marken muss als mu4-Modul gleich Lambda^2_+ x sign sein: zyklisch [(-1+0j), -1j, 1j] = [(-1-0j), (-0-1j), (-0+1j)], Zentrum auf Marke [(-1+0j), (1+0j), (1+0j)]: Viertelpunkt erzwungen"
+   ],
+   "K4": [
+    "PASS",
+    "KMS in beiden Zyklen und invertierbar: (A,A)"
+   ],
+   "K5": [
+    "PASS",
+    "[A] gelifte Vierteldrehung g~^4 = -1; jeder der vier spinoriellen Sektoren trägt exakt 1/4 jedes Eigenraums; c3 je Sektor = 0.039788735773 = 1/(8 pi)"
+   ],
+   "K6": [
+    "PASS",
+    "4D Lipschitz-Gitter: Q8 transitiv auf den Achsen True, (A,A,A,A) invariant und invertierbar True; Breite L/2 aus 2D"
+   ],
+   "K8": [
+    "PASS",
+    "aus K1 bis K3 über P2.PARTITION.01 (TFPT, exakt)"
+   ],
+   "K1": [
+    "PASS",
+    "Pi-Drehung (-1 in Q8) gibt zwei Blätter und vier 2-Torsionspunkte der Naht"
+   ],
+   "K7": [
+    "PASS",
+    "[A] Basisunabhängigkeit: GSO-Summe nur für N = 0 mod 16 modular {8: {'S': True, 'T_bis_auf_Phase': False, 'Phase/2pi': None}, 16: {'S': True, 'T_bis_auf_Phase': True, 'Phase/2pi': -0.3333333333333333}, 24: {'S': True, 'T_bis_auf_Phase': False, 'Phase/2pi': None}, 32: {'S': True, 'T_bis_auf_Phase': True, 'Phase/2pi': 0.3333333333333333}, 48: {'S': True, 'T_bis_auf_Phase': True, 'Phase/2pi': -3.3676576258638635e-27}}; kleinstes N = 16, (P,P) mit 8 komplexen Nullmoden, flach für jede Breite"
+   ],
+   "K9": [
+    "PASS",
+    "[C''] drei Familien = chiraler Index der vier Marken: H^0(K(D)) = H^0(O(2)) = 3, ker D- = 0 (Spin-Dirac an K^(1/2) x O(D) = O(3)); Materie H^0(K(D)) x Lambda^gerade H^0(O(D)) = 3 x 16 = 48"
+   ],
+   "K10": [
+    "PASS",
+    "[Marken] z -> i z auf den logarithmischen Differentialen: ['(-1+0j)', '-1j', '1j']; dieselben Marken geben H^0(O(D)) = 5 mit Halbdrehung 3 + 2 (TFPTs Träger)"
+   ],
+   "K11": [
+    "PASS",
+    "[A, F] E8 = kleinstes N mit T-Kovarianz (N = 16); strenge Invarianz erst bei N = 48"
+   ],
+   "K12": [
+    "PASS",
+    "[A, C'] chirale 2-Formen = Lambda^2(Familien) (Charaktere für alle 24 Elemente gleich); drei chirale Mittelformen nur in d = 4; Lipschitz; Re + Im = 1 + 3 (euklidisch, Lorentz per OS)"
+   ],
+   "K13": [
+    "LESART",
+    "[D] Jacobson wie TFPT. Gegentest: kappa = 0.0983 je Dirac-Geschmack und Gitterfläche; drei Generationen geben a/l_P >= 3.07; die Gitterskala ist nicht die Planckskala"
+   ],
+   "K14": [
+    "PASS",
+    "keine freie Konstante; die Form der Naht ist nicht gewählt, sondern ihre Bewegungsgleichung; a/l_P = 2 sqrt(kappa_gesamt) berechenbar, noch nicht berechnet"
+   ],
+   "K15": [
+    "PASS",
+    "[E] Verbindung aus dem lokalen 3+2-Split eichkovariant; Fermionschleifen induzieren F^2: quadratisch True, positiv True, eichinvariant True, Lauf 0.287 (Kontinuum 0.270); Dynkin {'SU3': 2.0, 'SU2': 2.0, 'U1_GUT': 1.9999999999999998} -> sin^2 theta_W = 3/8 an der Gitterskala"
+   ],
+   "K16": [
+    "LESART",
+    "[physisches Gitter] Universalität im Infraroten perturbativ: c = 1 für jede Art (Vierteldrehung zwischen Zeit- und Raumachse), Vakuumpolarisation Zeit = Raum (-0.252432), Richtungsabweichung ~ q^2 (Dimension 6); ausgezeichnete Zeit gäbe c_gamma^2 = 1.122 (Dimension 4); OS über T^2; U(1) Landau-Pol 1.7e+41 GeV. Nicht gezeigt: nichtperturbativ, chirale Gitterformulierung"
+   ],
+   "K17": [
+    "LESART",
+    "[G] Zufluss der SO(2)-Ladung gerechnet: Kern verliert beim Nulldurchgang genau eine Mode (Sprung/Gewicht 0.976), Rand gewinnt sie, Volumen gleicht stetig aus; gravitativer Zufluss nicht gerechnet; Schnitt topologisch unsichtbar, energetisch Wand (Phasenbarriere 0.088 je Zelle)"
+   ],
+   "K18": [
+    "LESART",
+    "S4 gibt TBM als führende Ordnung; TFPT-Kanäle: sin^2 theta12 = 0.3067, sin^2 theta13 = phi0 exp(-tr Y^2) = 0.0231 mit tr Y^2 = 5/6 aus dem 3+2-Split (E), etwa 2 sigma gegen Daten (JUNO entscheidet); delta = 240 Grad = Argument der T-Phase, nicht hergeleitet"
+   ],
+   "K19": [
+    "LESART",
+    "[G] Index = Windung von det M an der physischen Ecke (n+ + n-), unabhängig von J; J wird durch die Blattstruktur gewählt (eine zweiwertige Masse), nicht durch die Zählung; die 16 = schweres reelles 16-Plett; ein Defekt im Grundzustand ist im freien Modell nicht erzwungen (Lesart: Fluktuationen auf Gitterskala)"
    ]
   }
  }

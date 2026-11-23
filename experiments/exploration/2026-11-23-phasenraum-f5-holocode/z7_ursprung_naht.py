@@ -43,7 +43,7 @@ def build(L, kz, n_plus, n_minus, flux, m=0.6, rw=1.0, copies=1):
     xs, ys = np.meshgrid(np.arange(L), np.arange(L), indexing="ij")
     phi = np.arctan2(ys - c, xs - c)
     rad = np.hypot(xs - c, ys - c)
-    prof = np.tanh(rad / 1.5)
+    prof = np.ones_like(rad) if MASS.get("uniform") else np.tanh(rad / 1.5)
     ns = 2 * copies
     dim = L * L * ns * 2
     idx = lambda x, y, a, s: ((x * L + y) * ns + a) * 2 + s

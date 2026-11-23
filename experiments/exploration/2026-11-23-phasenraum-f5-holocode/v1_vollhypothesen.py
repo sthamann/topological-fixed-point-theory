@@ -647,6 +647,31 @@ if "H6h2" in H and z1p.exists() and z2p.exists():
                                         "in E8 > SO(16); die leichten SM-Fermionen scheiden aus (eichinvariant windet nur nu^c); "
                                         "die SM-Generationen liegen als (16,3) im Spinorteil von E8")
                     facts["F25_sixteen_and_sets"] = z8
+                    z9p, z10p = Path(__file__).with_name("z9_ergebnis.json"), Path(__file__).with_name("z10_ergebnis.json")
+                    if z9p.exists() and z10p.exists():
+                        z9 = json.loads(z9p.read_text())
+                        z10 = json.loads(z10p.read_text())
+                        ok9, ok10 = all(z9["checks"].values()), all(z10["checks"].values())
+                        H["H6h8"] = dict(H["H6h7"])
+                        H["H6h8"]["K9"] = (P if ok10 else F,
+                                           "[C''] drei Familien = chiraler Index der vier Marken: H^0(K(D)) = H^0(O(2)) = 3, "
+                                           "ker D- = 0 (Spin-Dirac an K^(1/2) x O(D) = O(3)); Materie H^0(K(D)) x Lambda^gerade "
+                                           "H^0(O(D)) = 3 x 16 = 48")
+                        H["H6h8"]["K10"] = (P if ok10 else F,
+                                            f"[Marken] z -> i z auf den logarithmischen Differentialen: {z10['family_index_eigs']}; "
+                                            "dieselben Marken geben H^0(O(D)) = 5 mit Halbdrehung 3 + 2 (TFPTs Träger)")
+                        H["H6h8"]["K17"] = (LES if ok9 else F,
+                                            f"[G] Zufluss der SO(2)-Ladung gerechnet: Kern verliert beim Nulldurchgang genau eine Mode "
+                                            f"(Sprung/Gewicht {abs(z9['core_jump']) / z9['core_mode_weight']:.3f}), Rand gewinnt sie, Volumen "
+                                            "gleicht stetig aus; gravitativer Zufluss nicht gerechnet; Schnitt topologisch unsichtbar, "
+                                            f"energetisch Wand (Phasenbarriere {z9['barrier']:.3f} je Zelle)")
+                        H["H6h8"]["K19"] = (LES if ok10 else F,
+                                            "[G] Index = Windung von det M an der physischen Ecke (n+ + n-), unabhängig von J; J "
+                                            "wird durch die Blattstruktur gewählt (eine zweiwertige Masse), nicht durch die Zählung; "
+                                            "die 16 = schweres reelles 16-Plett; ein Defekt im Grundzustand ist im freien Modell "
+                                            "nicht erzwungen (Lesart: Fluktuationen auf Gitterskala)")
+                        facts["F26_inflow_wall"] = z9
+                        facts["F27_review_two"] = z10
 
 order = [f"K{i}" for i in range(1, 20)]
 print("Gesamttabelle (P = hergeleitet, L = unter benannter Lesart, F = FAIL, O = OFFEN, E = EINGABE)\n")

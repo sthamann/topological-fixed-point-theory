@@ -1,6 +1,88 @@
 # Urteil
 
-## Aktueller Stand: H6h7 — die 16 und die Zahl der Sätze (`z8_sechzehn_und_saetze.py`)
+## Aktueller Stand: H6h8 — Zufluss, Grundzustand, zweite Kritik (`z9_zufluss_grundzustand.py`, `z10_kritik_zwei.py`)
+
+Bilanz unverändert: 14 P und 5 L von 19, nichts gescheitert, offen oder gesetzt. Geändert haben sich
+die Grundlagen von K9, K10, K17 und K19, und drei frühere Aussagen werden zurückgenommen. Alle
+Prüfungen in Z9 (6) und Z10 (8) bestehen.
+
+**Zufluss (Z9, Teil A).** Zwei Komponenten des reellen 16-Pletts bilden eine exakte SO(2)-Ladung
+([H, Q] = 0). Im Sektor Q = +1 ist eine Verschiebung von k_z ein SO(2)-Eichfeld entlang der Naht. Die
+Zahl der besetzten Zustände bleibt konstant (576).
+- Beim Nulldurchgang verliert der Kern genau eine geladene Mode (Sprung −0,900 bei Kerngewicht
+  0,922, Verhältnis 0,976).
+- Der äußere Rand gewinnt sie (+0,930).
+- Über die übrige Periode gleicht das lückenhafte Volumen stetig aus (+0,900).
+
+Das ist der Zufluss für die SO(2)-Ladung. Der gravitative Zufluss (c = 8) ist nicht gerechnet.
+
+**Explizite Brechung und Wand (Z9, Teil B, neu).** Das Wilson-Glied, das Nielsen–Ninomiya erzwingt,
+bricht die U(1) der Paarungsphase. Die Energiedichte hängt von der relativen Phase ab:
+- Periode π in der Massenphase (J-Symmetrie).
+- Minimum bei φ₀ = π, Barriere 0,088 je Gitterzelle.
+
+Der Defekt dreht die Phase einmal herum und muss über die Barriere, also **berandet er eine
+Domänenwand. Die Wand ist der Verzweigungsschnitt.** Korrektur zu H6h5: Der Schnitt ist nur
+topologisch unsichtbar (Anomaliephase, c ∈ 8ℤ), energetisch ist er eine Wand mit Spannung auf
+Gitterskala. Wie bei Axionen mit Domänenwandzahl 1 enden Wände auf Nähten, und Nähte beranden Wände.
+Der frühere Vergleich mit der Phase 0 (negative Defektenergie, mit der Fläche wachsend) war ein
+Vergleich mit dem Maximum. Die Kritik hat dieselben Zahlen unabhängig erhalten und gegen die Phase π
+positive Werte gefunden.
+
+**Grundzustand.** Im freien Modell erzwingt nichts einen Defekt: Er kostet Kern- und Wandenergie, und
+der homogene Zustand ist erlaubt. Es gibt zwei Wege.
+- Topologisch: Ein nichttriviales Bündel des Massenfelds (c₁ ≠ 0) erzwingt eine Nullstellenfläche
+  [Σ] = PD(c₁). Was c₁ ≠ 0 erzwingt, ist offen.
+- Als Fluktuation: Die euklidische Summe über Defektflächen gewichtet mit
+  exp(−σ_W V − σ_N A)·χ_E₈(i). Flächen mit Wirkung unter log 12 sind nicht unterdrückt, also
+  Nähte auf Gitterskala.
+
+Die Kritik meldet ein Zusatzmodell auf S³ mit erzwungener Nulllinie oberhalb von δ_c = 2 − √(8/3) ≈
+0,367. Die Arithmetik ist geprüft; das Modell liegt nicht vor.
+
+**Zweite Kritik, Punkt für Punkt (Z10).**
+1. *J folgt nicht aus der Modenzahl.* **Richtig.** Auch ohne J trägt der Defekt (1, 0) genau eine Mode
+   mit v = 1. Der Index ist die Windung von det M an der physischen Ecke, n₊ + n₋. Die Verdoppler
+   tragen wegen W ≥ 2r_w > m nichts bei, und ohne Wilson-Glied heben sie sich auf. J leistet etwas
+   anderes: Mit J genügt eine einzige komplexe Masse, deren Phase um π windet. Die Masse ist dann
+   zweiwertig (Φ → −Φ); das sind die zwei Blätter auf Bosonischem, und auf Fermionen wirkt μ₄. J wird
+   durch die Blattstruktur von P1 gewählt, nicht durch die Zählung. Die Klassifikation über ein
+   Energiefenster ist durch die Windungsinvariante ersetzt.
+2. *Die Familiencharaktere entscheiden die Satzzahl nicht.* **Richtig.** Bei drei identischen Sätzen
+   ist der Unterraum „alle tragen dasselbe Label“ invariant und hat dieselben Eigenwerte {−1, i, −i}.
+   Die Behauptung aus Z8 ist zurückgenommen. n = 1 stützt sich nur noch auf Minimalität mit Zufluss und
+   auf TFPTs ein E₈. Unterscheiden könnte das Niveau eines gemeinsamen E₈ Stroms (1 gegen 3).
+3. *Familien als chiraler Index der vier Marken.* **Bestanden und übernommen.** Für D = μ₄ auf CP¹
+   gilt H⁰(K(D)) = H⁰(O(2)) mit Dimension 3 und h¹ = 0. Spin-Dirac an K^{1/2} ⊗ O(D) = O(3) hat
+   ker D₊ = 3 und ker D₋ = 0. Die Vierteldrehung z → iz wirkt auf ω = P(z) dz/(z⁴ − 1) als
+   P(z) ↦ i P(iz), mit Eigenwerten **genau {−1, i, −i}**. Dieselben Marken geben H⁰(O(D)) mit
+   Dimension 5 (TFPTs Fünferträger), und die Halbdrehung teilt ihn exakt **3 + 2**.
+   Λ^gerade ℂ⁵ = 1 + 10 + 5 = 16, also Materie = H⁰(K(D)) ⊗ Λ^gerade H⁰(O(D)) mit 48 Komponenten. Das
+   ersetzt C′ (Spinstrukturen) durch **C″: Familien sind der chirale Index der vier Marken**. Er ist
+   topologisch geschützt und kommt ohne Wahl des Drehzentrums aus. Offen ist, warum die physischen
+   Fermionen an dieses Bündel koppeln.
+4. *Zwei verschiedene 16.* **Richtig und jetzt getrennt.** Die 16 der Naht sind ein schweres reelles
+   16-Plett (Vektor von SO(16)); die 16 einer Generation sind Λ^gerade des Fünferträgers (komplexer
+   Spin(10)-Spinor).
+5. *Twistgewicht h_R = N/16.* **Bestanden.** Nur N = 16 gibt Ramond-Grundzustände vom Gewicht 1, also
+   128 Spinorströme und 120 + 128 = 248. Das wählt Blöcke aus 16 und schließt eine gemeinsame 48er-Summe
+   aus (h_R = 3). Zwischen einem und drei Blöcken entscheidet es nicht.
+6. *Stabilisierung einer Schleife durch (h − c/24)/R.* Im Ramond-Grundzustand ist der Koeffizient +2/3.
+   Im KMS-Zustand von H6 ist er null (Z4: ⟨L₀⟩ = c/24). Die Stabilisierung gilt also nur für eine
+   andere Zustandswahl.
+7. *Raum mal periodische Zeit.* Der Torus setzt euklidisch periodische Zeit voraus. In H6 ist das der
+   KMS-Zustand (K6); das ist eine Prämisse, keine versteckte Annahme.
+
+**Prämissen von H6h8:** A\*, C″, D, E, G.
+
+**Offen.**
+- Was ein nichttriviales Massenbündel erzwingt, oder eine Rechnung zur Defektsumme.
+- Der gravitative Zufluss aus der Fermiondeterminante.
+- Die Kopplung der physischen Fermionen an K^{1/2} ⊗ O(D).
+- Die Satzzahl über das Niveau eines gemeinsamen E₈ Stroms.
+- Ein gemeinsamer Elternoperator für Naht, E₈ und Materie.
+
+## Davor: H6h7 — die 16 und die Zahl der Sätze (`z8_sechzehn_und_saetze.py`)
 
 Die Bilanz bleibt bei 14 P und 5 L von 19. Es gibt aber eine Prämisse weniger: F (E₈ Phase auf dem
 Schnitt) ist jetzt eine Lesart innerhalb von G. Die Prämissen sind **A\*, C′, D, E, G**. Alle sechs
