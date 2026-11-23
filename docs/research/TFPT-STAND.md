@@ -149,10 +149,19 @@ Ursprung sollte beides zugleich liefern.
   `map:local-boost`).
 - **Restflavor:** absolute Quarkamplitude, Neutrinozweig, Phasen.
 
-**Nach dem 23. November noch Eingabe** (für P2 und die Fermionstruktur): N = 5 über
-Minimalität; 10 + 6 in den 16 reellen Moden (D₅ ⊕ A₃, die Fockspur wählt 8 + 8); die spurfreie
-Quelle mit einem Konzentrationsgrenzwert; d = 4 mit μ₄. Für P1: die Viertelzählung, die
-c₃ = 1/(8π) gibt, und die Wahl der Spinstruktur; Zustand und Zeit mit unendlicher Umgebung.
+**P2 folgt aus P1.** Aus der markierten Viermarkennaht von P1 folgen die drei logarithmischen
+Richtungen, der Fünferträger H⁰(O(D)) und seine Teilung 3 + 2 exakt; der Anker a = (1,1,2) ist
+die einzige Zerlegung von 4 in drei positive Teile und gibt g_car = 5, |ℤ₂| = 2, N_fam = 3
+(P2.PARTITION.01, AX.P2.01, Atlas `pattern:fourmark-three-five-normalization`). Die Zuordnung
+zur physischen Eichwirkung ist eine eigene Frage innerhalb dieser Herleitung. **Der Kern der
+Suche ist damit allein der Ursprung von P1.**
+
+**Was an P1 noch Eingabe ist.** Die flache Sphäre mit zwei Blättern erzwingt vier Marken
+(Gauß–Bonnet, Defizit π je Marke) und c₃ = 1/(|ℤ₂|·2π·χ(S²)) = 1/(8π). Offen sind: die
+quadratische Lage der Marken (μ₄, τ = i; im Original ausdrücklich zusätzlich genannt; KERNSYM:
+einziger symmetrieerzwungener kritischer Punkt, aber Sattel, kein Minimum), die Viertelzählung
+in der Wärmespurlesart von c₃, Zustand und Zeit (die operative Saat, bisher bedingt) und warum
+die Naht überhaupt eine flache zweiblättrige Fläche ist.
 
 **Was nicht fehlt:** Die vier R113 Endpunktwerte (Z0, ZU, ZY, ZUY) der ursprünglichen
 Quellverträge sind ein Test, ob *diese* Originalquelle ihre markierten Antworten liefert.

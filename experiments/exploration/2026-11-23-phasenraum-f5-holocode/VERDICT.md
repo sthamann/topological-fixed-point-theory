@@ -1,6 +1,6 @@
 # Urteil
 
-Gerechnet am 23. November 2026 mit `.venv/bin/python` (numpy, scipy, sympy). Sieben Skripte,
+Gerechnet am 23. November 2026 mit `.venv/bin/python` (numpy, scipy, sympy, mpmath). Acht Skripte,
 alle mit Rückgabewert 0; Ausgaben in `ausgabe_*.txt`. PLAN, progress, Ledger und Atlas sind
 unberührt. Ausgangspunkt war der konsolidierte Stand in `docs/research/TFPT-STAND.md`
 (Abschnitt „Befunde 20.–23. November“): Die offenen Eingaben laufen auf „woher die Vier“ und
@@ -10,7 +10,8 @@ unberührt. Ausgangspunkt war der konsolidierte Stand in `docs/research/TFPT-STA
 
 | Nr | Urteil | Stufe | Erste freie Wahl |
 |---|---|---|---|
-| **G Gaußscher Torus ℂ/ℤ[i] (Hauptergebnis)** | **Kandidat** | **3 unter benannten Lesarten** (P1-Normierung und P2 aus einem Objekt) | Startklasse CM-Torus; Plätze = Torsionsstück; c₃ als Weylterm pro Einheitenbahn |
+| **N Zeitneutrale Fermionnaht (Ursprung von P1)** | **Kandidat** | 1 für P1: Lage der Marken, Viertelzählung in c₃, Zustand; nicht 2, weil Naht und zwei Blätter Eingabe bleiben | Prinzip „keine vorab ausgezeichnete Zeitrichtung“ |
+| **G Gaußscher Torus ℂ/ℤ[i]** | **Kandidat, korrigiert**: P2-Teil ist Doppelherleitung (P2 folgt aus P1) | 1 für P1 (Lage der Marken, c₃) | Startklasse CM-Torus; Auswahl über eine P2-Regel |
 | W Weil-Darstellung von SL(2, 𝔽₅) | **Kandidat** | 2 für P2 unter benannter Lesart | Auswahlregel „fermionischer Teil = treues SU(2) Dublett“; Lesart „fünf Plätze = Ortsbasis eines Fünfersystems“ |
 | W2 Clifford-Gruppe eines Fünfersystems | Uhrenrelation **bestätigt**, sechs Fasern **verworfen** | – | – |
 | W3 die 16 unter 2I | **bestätigt**, exakt | – | – |
@@ -22,8 +23,66 @@ unberührt. Ausgangspunkt war der konsolidierte Stand in `docs/research/TFPT-STA
 | K Familien als étale Kohomologie (Nachtrag) | Test **bestanden**, aber nicht unabhängig; Frobeniusgleichheit **neu** | 1 | siehe Abschnitt K |
 
 Keine vollständige Lösung (Stufe 4 fehlt: physische Zeit und Zustand, 3 + 1, Kontinuum,
-Gravitation). Was sich ändert: G erzeugt P2 und die Normierung von P1 aus einem einzigen Objekt,
-ausgewählt durch eine einzige physikalische Forderung.
+Gravitation).
+
+**Korrektur (Hinweis des Nutzers, mit Quellen geprüft).** P2 folgt in TFPT bereits aus P1: Aus der
+markierten Viermarkennaht folgen Fünferträger und Teilung 3 + 2 exakt (P2.PARTITION.01,
+AX.P2.01). W, F und der P2-Teil von G sind daher eine zweite Herleitung von schon Hergeleitetem,
+kein neuer Ursprung. Was von G bleibt, ist die P1-Seite: die quadratische Lage der Marken und
+c₃ aus demselben Torus. Dort wählt G den Torus aber über eine P2-Regel (Spinordublett im
+Weil-Oszillator); eine Begründung von der P1-Seite selbst fehlt. Daran setzt Abschnitt N an.
+
+## N: Ursprung von P1 — die zeitneutrale Fermionnaht (`n1_zeitneutrale_naht.py`)
+
+**Prinzip.** Die Naht ist eine geschlossene, orientierte, flache 2D-Fläche mit freien Fermionen,
+und sie zeichnet **keine Zeitrichtung** aus: Rekonstruiert man nach Osterwalder–Schrader entlang
+jedes ihrer beiden Basiszyklen ein Quantensystem, entsteht dasselbe orientierte thermische
+System. Jede Rekonstruktion soll ein echter KMS-Zustand sein (Fermionen in der Zeit
+antiperiodisch) mit invertierbarem Hamiltonoperator (keine Nullmoden). Zeit kommt dann aus dem
+Zustand, nicht aus der Geometrie.
+
+**Befund (exakt bis auf die Gittersuche).**
+- Rekonstruktion A hat (β/L, Drall/L) = (Im τ, Re τ), die orientierte Vertauschung B hat
+  (Im τ/|τ|², −Re τ/|τ|²). Gleichheit erzwingt |τ| = 1 und Re τ = 0, also **τ = i**. Zusammen mit
+  KMS und Invertierbarkeit bleibt im ganzen Fundamentalbereich nur **τ = i mit Spinstruktur
+  (A, A)**. Lässt man Parität zu, bleibt die ganze rhombische Familie |τ| = 1; die Orientierung
+  von P1 ist also tragend. Am hexagonalen Punkt wechselt der Drall das Vorzeichen.
+- Die Zeitneutralitätsgruppe ist die Vierteldrehung S, Ordnung 4 = μ₄. Kein Impuls in (ℤ+½)²
+  ist unter ihr fix, alle Bahnen haben Länge 4. Die bisher gewählte **Viertelzählung ist damit
+  exakt die Zählung zeitneutraler Bahnen**, und c₃ = (Diracrang 2)/(4π · |μ₄|) = **1/(8π)** ohne
+  Wahl einer Fläche (s·Bahnzahl → 0,039788735773). Mit Parität wäre es 1/(4π), ohne Neutralität
+  1/(2π).
+- **Zustand und Zeit.** KMS-Zustand der Diracfermionen bei selbstdualer Temperatur β = L,
+  Einteilchenenergien 2π|n + ½|/L, Lücke π/L. Zeit ist jeder der beiden Zyklen; die zwei Wahlen
+  sind durch μ₄ äquivalent. Die Zustandssumme am Fixpunkt ist exakt Z(i) = |θ₃(i)/η(i)|² = 2.
+
+**Was neu ist.** Bekannt waren: τ = i als einziger symmetrieerzwungener kritischer Punkt (KERNSYM,
+dort ist die Symmetrie τ ↦ −1/τ vorausgesetzt und τ = i nur Sattel), die Wahl (−,−) durch
+Viertelinvarianz und fehlende Nullmoden, und 1/(8π) aus einer gewählten Viertelzählung (alles
+23.11. oder früher). N ersetzt die zusätzlich genannte quadratische Lage und die gewählte
+Viertelzählung durch **eine** physikalische Forderung und liefert dazu einen Zustand mit Zeit.
+Energieminimierung leistet das nicht (KERNSYM: Sattel).
+
+**Stufe.** Kandidat, Stufe 1 für P1: Lage der Marken (μ₄, τ = i), Spinstruktur, Viertelzählung
+und Normierung c₃, KMS-Zustand. Nicht Stufe 2, weil die Naht selbst (flach, 2D, Fermionen) und
+die zwei Blätter mit den vier Marken Eingabe bleiben. Die Blattinvolution der Marken ist eine
+π-Drehung um eine Marke; ihr Zentrum liegt um eine halbe Periode neben dem Zentrum der
+Vierteldrehung, sie ist also nicht einfach μ₄².
+
+**Basislinie.** Die Rechnung ist elementare Gittergeometrie; die Stärke liegt im Prinzip. Die
+Zahlen 4 und 1/(8π) folgen ohne Anpassung; die Gegenproben (Parität zugelassen, keine
+Neutralität) geben andere Werte.
+
+**Stärkster Einwand.** „Keine vorab ausgezeichnete Zeit“ ist eine Prämisse (Nähe zur
+Thermal-Time-Hypothese von Connes und Rovelli), keine Herleitung. Und ob der KMS-Zustand bei
+β = L die operative Saat des Originals ist (Fockzustand der Calderón-Polarisation, Erzeuger
+|B_Σ|), ist nicht geprüft.
+
+**Kleinster nächster Test (Kern).** Den KMS-Zustand bei β = L auf der quadratischen Naht mit dem
+Fockzustand der ursprünglichen Calderón-Polarisation vergleichen: gleiche Zweipunktfunktion auf
+einer Normalhälfte? Abbruch, wenn sie sich unterscheiden. Parallel verfolgt eine andere Sitzung
+„P1 aus positiver, verlustfreier Nahtverklebung“; beide Wege zielen auf dieselbe Lücke und
+sollten vor einer Atlasübernahme abgeglichen werden.
 
 ## G: Ein Objekt für P1 und P2 — der Gaußsche Torus ℂ/ℤ[i] (`g1_gauss_torus.py`)
 
