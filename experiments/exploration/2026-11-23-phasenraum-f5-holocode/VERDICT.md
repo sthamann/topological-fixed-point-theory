@@ -1,6 +1,6 @@
 # Urteil
 
-Gerechnet am 23. November 2026 mit `.venv/bin/python` (numpy, scipy, sympy, mpmath). Acht Skripte,
+Gerechnet am 23. November 2026 mit `.venv/bin/python` (numpy, scipy, sympy, mpmath). Neun Skripte,
 alle mit Rückgabewert 0; Ausgaben in `ausgabe_*.txt`. PLAN, progress, Ledger und Atlas sind
 unberührt. Ausgangspunkt war der konsolidierte Stand in `docs/research/TFPT-STAND.md`
 (Abschnitt „Befunde 20.–23. November“): Die offenen Eingaben laufen auf „woher die Vier“ und
@@ -78,11 +78,50 @@ Thermal-Time-Hypothese von Connes und Rovelli), keine Herleitung. Und ob der KMS
 β = L die operative Saat des Originals ist (Fockzustand der Calderón-Polarisation, Erzeuger
 |B_Σ|), ist nicht geprüft.
 
-**Kleinster nächster Test (Kern).** Den KMS-Zustand bei β = L auf der quadratischen Naht mit dem
-Fockzustand der ursprünglichen Calderón-Polarisation vergleichen: gleiche Zweipunktfunktion auf
-einer Normalhälfte? Abbruch, wenn sie sich unterscheiden. Parallel verfolgt eine andere Sitzung
-„P1 aus positiver, verlustfreier Nahtverklebung“; beide Wege zielen auf dieselbe Lücke und
-sollten vor einer Atlasübernahme abgeglichen werden.
+### N gegen die operative Saat des Originals (`c1_vergleich_zustand.py`)
+
+**Wie das Original den Zustand baut** (KERNSIX20261120 Schritte 1, 3, 4; P1BIND20261120). Die Naht
+Σ ist der Raum, die Zeit läuft normal dazu. Kragen D = γ_n(∂_n + B), Polarisation = Calderón-
+Projektor P_C, auf den zwei Normalhälften flach. Der Randzustand eines Kragens der Breite ℓ ist
+rein; auf einer Fläche ist er thermisch für B bei β = 2ℓ. Breite null gibt den flachen
+Kernzustand C = ½, aus dem die aufgezeichneten Zahlen des E₈ Worts stammen. **ℓ ist im Original
+frei.** Nullmoden von B bleiben für jede Breite flach; dort lebt das E₈ Wort.
+
+Der Vergleich verlangt, N auf die volle euklidische Geometrie zu heben: thermischer Kreis 2ℓ mal
+Naht T²(L, L), Fermionen überall antiperiodisch. N in seiner ersten Form (Zeit innerhalb der Naht)
+war eine andere Schnittrichtung derselben Geometrie.
+
+**Befund.**
+1. Die Rekonstruktion entlang des thermischen Kreises und die entlang eines Nahtzyklus sind genau
+   bei **2ℓ = L** dasselbe System (Spektren β·λ identisch; Abweichung bei ℓ = 0,25…1,0 sonst
+   8,7 bis 36). Zeitneutralität **legt die offene Breite des Originals fest**.
+2. Damit wird die im Original freie Größe T/λ₁ = 1/(2ℓλ₁) zu **1/(√2 π) = 0,2251** (λ₁ = √2 π/L).
+   Die Verschränkung der beiden Kragenflächen ist endlich, **S = 0,5154**, ohne Abschneiden;
+   der flache Kernzustand hätte log 2 je Mode.
+3. Bei (A, A) hat das geometrische B **keine Nullmoden** (nur (P, P) hat zwei).
+4. Lage der Marken: Die mit λ₁ normierte Spektralwirkung hat am Quadrat in der rechteckigen
+   Familie ein Minimum, unter Verdrillung einen Sattel (−0,33 bei Re τ = ±0,1), wie KERNSIX
+   Schritt 4. N schließt die Verdrillung durch die orientierte Zeitneutralität aus und braucht
+   keine Minimierung.
+
+**Urteil: gemischt, mit scharfer Gabel.**
+- *Übereinstimmung:* Der zeitneutrale Zustand ist genau der Kragenzustand des Originals (rein,
+  auf jeder Fläche thermisch für B), und N liefert die im Original fehlende Breite ℓ = L/2.
+- *Abweichung:* Die aufgezeichneten E₈ Zahlen stammen aus dem flachen Zustand der Breite null.
+  Den schließt N für jeden Mode aus, der an das geometrische B koppelt, und bei (A, A) gibt es
+  keine geometrischen Nullmoden. Die Abbruchregel greift damit für den flachen Sektor, nicht für
+  den Zustand als Ganzes.
+- *Gabel:* Beide passen nur zusammen, wenn das E₈ Wort auf Nullmoden eines **inneren, nicht an
+  die Nahtgeometrie gekoppelten Teils** von B sitzt (B = B_geom ⊕ B_int statt Tensorprodukt).
+  Das Original lässt das offen: P1BIND liest B als den endlichen D_F, KERNSIX modelliert B als
+  Dirac auf der Naht. Diese Frage entscheidet, ob N trägt.
+
+**Kleinster nächster Test (Kern).** Im Original nachlesen, ob B_Σ die geometrische Naht und den
+inneren Teil als direkte Summe oder als Tensorprodukt trägt, und ob die Nullmoden von D_F auch bei
+eingeschalteter Nahtgeometrie Nullmoden bleiben. Tensorprodukt mit invertierbarem geometrischem
+Teil: N ist mit dem E₈ Wort unverträglich. Direkte Summe: N trägt und fixiert die Breite.
+Parallel verfolgt eine andere Sitzung „P1 aus positiver, verlustfreier Nahtverklebung“; beide
+Wege zielen auf dieselbe Lücke und sollten vor einer Atlasübernahme abgeglichen werden.
 
 ## G: Ein Objekt für P1 und P2 — der Gaußsche Torus ℂ/ℤ[i] (`g1_gauss_torus.py`)
 
