@@ -1,0 +1,72 @@
+1  Spuridentitaeten auf dem Fockraum von fuenf Moden
+  [ok] Tr_32 e^{-T Sigma^} = 2^5 prod cosh y_i  (Summe y = 0)
+  [ok] Tr_32 (-1)^F e^{-T Sigma^} = 2^5 prod sinh y_i -- prod (1 - e^{-2y}) = 2^5 prod sinh y bei Summe y = 0
+  [ok] Tr_16 = 16 (prod cosh + sigma prod sinh) mit sigma = 1
+   Damit Tr_16 = 16 * prod cosh y * (1 + (1) prod tanh y) > 0, da |prod tanh| < 1.
+
+2  Vollstaendiges antiperiodisches Paarprodukt = det cosh
+  [ok] prod_n (1 + x^2/((n+1/2)pi)^2 / 4 ...) = cosh(x) bei x=0.3 -- 1.04533847 vs 1.04533851
+  [ok] prod_n (1 + x^2/((n+1/2)pi)^2 / 4 ...) = cosh(x) bei x=1.0 -- 1.54307985 vs 1.54308063
+  [ok] prod_n (1 + x^2/((n+1/2)pi)^2 / 4 ...) = cosh(x) bei x=2.5 -- 6.13227006 vs 6.13228948
+
+3  Globale Minima
+   Quelle: Tr_32 (antiperiodisch)
+     rho=0.12: 3+2 (Mehrheit positiv)     [-4.9934 -4.9934  3.3289  3.3289  3.3289]  Gamma=-6.538188
+     rho=0.20: 3+2 (Mehrheit positiv)     [-2.9326 -2.9326  1.9551  1.9551  1.9551]  Gamma=-2.596420
+     rho=0.30: 3+2 (Mehrheit positiv)     [-1.7716 -1.7716  1.181   1.181   1.181 ]  Gamma=-0.809241
+     rho=0.40: 3+2 (Mehrheit negativ)     [-0.6819 -0.6819 -0.6819  1.0228  1.0228]  Gamma=-0.156928
+     rho=0.45: 3+2 (Mehrheit positiv)     [-0.667  -0.667   0.4447  0.4447  0.4447]  Gamma=-0.035324
+     rho=0.49: 3+2 (Mehrheit positiv)     [-0.2816 -0.2816  0.1877  0.1877  0.1877]  Gamma=-0.001309
+   Quelle: Tr_16 (gerader Teil)
+     rho=0.12: 3+2 (Mehrheit positiv)     [-5.     -5.      3.3333  3.3333  3.3333]  Gamma=-7.227416
+     rho=0.20: 3+2 (Mehrheit positiv)     [-2.9973 -2.9973  1.9982  1.9982  1.9982]  Gamma=-3.228700
+     rho=0.30: 3+2 (Mehrheit positiv)     [-1.9645 -1.9645  1.3097  1.3097  1.3097]  Gamma=-1.250770
+     rho=0.40: 3+2 (Mehrheit positiv)     [-1.3482 -1.3482  0.8988  0.8988  0.8988]  Gamma=-0.340751
+     rho=0.45: 3+2 (Mehrheit positiv)     [-1.0401 -1.0401  0.6934  0.6934  0.6934]  Gamma=-0.099422
+     rho=0.49: 3+2 (Mehrheit positiv)     [-0.4648 -0.4648  0.3099  0.3099  0.3099]  Gamma=-0.002684
+   Quelle: Tr_16' (ungerader Teil)
+     rho=0.12: 3+2 (Mehrheit negativ)     [-3.3333 -3.3333 -3.3333  5.      5.    ]  Gamma=-7.227416
+     rho=0.20: 3+2 (Mehrheit negativ)     [-1.9982 -1.9982 -1.9982  2.9973  2.9973]  Gamma=-3.228700
+     rho=0.30: 3+2 (Mehrheit negativ)     [-1.3097 -1.3097 -1.3097  1.9645  1.9645]  Gamma=-1.250770
+     rho=0.40: 3+2 (Mehrheit negativ)     [-0.8988 -0.8988 -0.8988  1.3482  1.3482]  Gamma=-0.340751
+     rho=0.45: 3+2 (Mehrheit negativ)     [-0.6934 -0.6934 -0.6934  1.0401  1.0401]  Gamma=-0.099422
+     rho=0.49: 3+2 (Mehrheit negativ)     [-0.3099 -0.3099 -0.3099  0.4648  0.4648]  Gamma=-0.002684
+   Quelle: Felddet. 16, cosh
+     rho=0.12: 4+1 (Mehrheit positiv)     [-6.6003  1.6501  1.6501  1.6501  1.6501]  Gamma=-4.105007
+     rho=0.20: 4+1 (Mehrheit negativ)     [-0.9482 -0.9482 -0.9482 -0.9482  3.7927]  Gamma=-1.566748
+     rho=0.30: 4+1 (Mehrheit negativ)     [-0.5583 -0.5583 -0.5583 -0.5583  2.2333]  Gamma=-0.470197
+     rho=0.40: 4+1 (Mehrheit negativ)     [-0.3155 -0.3155 -0.3155 -0.3155  1.2619]  Gamma=-0.088465
+     rho=0.45: 4+1 (Mehrheit negativ)     [-0.2037 -0.2037 -0.2037 -0.2037  0.8149]  Gamma=-0.019645
+     rho=0.49: 4+1 (Mehrheit negativ)     [-0.0853 -0.0853 -0.0853 -0.0853  0.3413]  Gamma=-0.000721
+   Quelle: Felddet. 16, log(1+w^2)
+     rho=0.12: 4+1 (Mehrheit positiv)     [-4.4374  1.1093  1.1093  1.1093  1.1093]  Gamma=-3.765521
+     rho=0.20: 4+1 (Mehrheit positiv)     [-3.1903  0.7976  0.7976  0.7976  0.7976]  Gamma=-2.355264
+     rho=0.30: 4+1 (Mehrheit positiv)     [-2.3712  0.5928  0.5928  0.5928  0.5928]  Gamma=-1.408194
+     rho=0.40: 4+1 (Mehrheit positiv)     [-1.8582  0.4645  0.4645  0.4645  0.4645]  Gamma=-0.854986
+     rho=0.45: 4+1 (Mehrheit negativ)     [-0.415 -0.415 -0.415 -0.415  1.66 ]  Gamma=-0.661910
+     rho=0.49: 4+1 (Mehrheit positiv)     [-1.5199  0.38    0.38    0.38    0.38  ]  Gamma=-0.535620
+  [ok] Tr_32 waehlt 3+2 auf dem ganzen Gitter
+  [ok] Tr_16 waehlt 3+2 auf dem ganzen Gitter
+  [ok] Tr_16 legt das Vorzeichen fest: Mehrheit positiv = Sigma ~ +(2,2,2,-3,-3) = -6Y; Tr_16' die Gegenbahn -- 3+2 (Mehrheit positiv)
+  [ok] Felddeterminante ueber 16 waehlt nicht 3+2 (Gegenprobe)
+
+4  Basislinie: N Moden, volle Fockspur, rho = 0.3
+     N=2: 1+1
+     N=3: 2+1
+     N=4: 2+2
+     N=5: 3+2 (Mehrheit negativ)
+     N=6: 3+3
+     N=7: 4+3
+     N=8: 4+4
+     N=9: 5+4
+   Die volle Fockspur waehlt jeweils die balancierteste Zweierteilung; fuer N = 5 ist das 3+2.
+
+5  Ordnung der Vorzeichenauswahl
+  [ok] log(1 + prod tanh(t y)) = t^5 y1..y5 + O(t^7)
+   Bis zur vierten Ordnung sind Tr_32 und Tr_16 gleich (Form 3+2 aus tr Sigma^4).
+   Die Projektion auf die 16 traegt erst mit det(Sigma) in fuenfter Ordnung bei und waehlt so
+   eine der beiden Bahnen +-(2,2,2,-3,-3), die die Determinantenquelle allein nicht trennt.
+   det auf (2, 2, 2, -3, -3): 72
+   det auf (-2, -2, -2, 3, 3): -72
+
+GESAMT: alle Pruefungen bestanden
