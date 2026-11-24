@@ -1,4 +1,4 @@
-# TFPT aus der Vogelperspektive (Stand H6h35, 24. November 2026)
+# TFPT aus der Vogelperspektive (Stand H6h36, 24. November 2026)
 
 ## Neueste Zusammenführung (H6h35, `z72`–`z74`, `PRUEFUNG-BESTAND-H6h35.md`)
 
@@ -23,9 +23,10 @@ Die Lösung, so weit sie trägt, als eine Kette aus der originalen Naht:
 
 Offen, genau benannt:
 - **(a) I_pos aus den Antworten.**
-- **(b) Oszillatornormierung.**
-  - Es fehlt ein Prinzip, das Toeplitz → CCR erzwingt, analog zu „Leiter statt Band“ (z58).
-  - Dieselbe Frage ist „bosonische Paare für ν = 1“, denn fermionische Paare geben ein Determinantenwort ≠ 0.
+- **(b) Oszillatornormierung: seit H6h36 bedingt gelöst (z76).**
+  - Der zustandserhaltende Zweipfadkanal (Teilchen hoch, Loch runter) erzwingt die Schwinger-CCR-Gewichte.
+  - Kanal mit Petz-Rückkanal gibt exakt den Casimir der Sphäre, ℓ(ℓ+1).
+  - Offen ist, ihn aus der vollen Dynamik (höhere Sektoren) zu gewinnen.
 - **(c) Vakuum gegen thermisch.** Die Zeit lebt im Vakuumsektor, das Original ist thermisch. Wie beide zusammenhängen, ist
   offen; nicht über „modular ⇒ BW“ (GRAV.NONCIRCULAR.01).
 - **(d) Nichtlineare volle Gravitation und Flächennormierung.**

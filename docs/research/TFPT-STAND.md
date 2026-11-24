@@ -1,7 +1,7 @@
 # TFPT: Was funktioniert, was fehlt, was eine vollständige Lösung wäre
 
 Kompakter Stand vom 20. November 2026, ergänzt am 23. und 24. November (Befunde 20.–24. November, Kandidat H6 bis
-H6h35, Leitlinie „Rekonstruktion statt Auswahl“ und Abschnitt 5), für Explorations- und Lösungssitzungen. Seit 24. November
+H6h36, Leitlinie „Rekonstruktion statt Auswahl“ und Abschnitt 5), für Explorations- und Lösungssitzungen. Seit 24. November
 liegen die Explorationszweige vom 20. November in main (Quaternionrahmen, Fibonacci-Uhr, Vertauschung und Auslese, fremde
 und operative Ursprünge, Projekt Genesis, die Vertragsserie vom 14./15. Oktober); ihre Befunde stehen in ihren Verzeichnissen
 unter `experiments/`. Nicht zusammengeführt ist `codex/c3-p1-p2-abgleich-20261105` (121 Konflikte mit dem heutigen Stand). Neuere Befunde stehen in den Atlasproblemen mit Datum
@@ -168,9 +168,9 @@ Ursprung sollte beides zugleich liefern.
 
 ### Kandidat H6: Ursprung von P1 aus einer hintergrundfreien Naht (Exploration 23.11.)
 
-Quelle: `experiments/exploration/2026-11-23-phasenraum-f5-holocode/VERDICT.md` (Stand H6h35),
-Skripte `n1`, `v1`, `y1`, `z1`–`z74`, Lean-Vertrag `experiments/theory-contracts/h6-exakte-teile-20261123/`; Atlasproblem `problem:c3-p1-p2-shared-origin-reconciliation`,
-Befunde mit Präfix `h6`. Nichts davon ist im Ledger befördert. Prüfstand mit 20 Kriterien (Stand H6h35): 13
+Quelle: `experiments/exploration/2026-11-23-phasenraum-f5-holocode/VERDICT.md` (Stand H6h36),
+Skripte `n1`, `v1`, `y1`, `z1`–`z76`, Lean-Vertrag `experiments/theory-contracts/h6-exakte-teile-20261123/`; Atlasproblem `problem:c3-p1-p2-shared-origin-reconciliation`,
+Befunde mit Präfix `h6`. Nichts davon ist im Ledger befördert. Prüfstand mit 20 Kriterien (Stand H6h36): 13
 hergeleitet, 7 unter benannter Lesart, keines gescheitert, offen oder gesetzt. K12 (3+1) zählt seit der Leitlinie
 „Rekonstruktion statt Auswahl“ nur als Lesart: d = 4 folgt kinematisch, nicht aus den Antworten (Z60).
 
@@ -454,6 +454,11 @@ hergeleitet, 7 unter benannter Lesart, keines gescheitert, offen oder gesetzt. K
     - Die Standardform liefert J = †, Herm(2), V ⊕ V̄* und die Form (2,2); T′ ⇔ I_pos.
     - R ist Ladungsdrehung mal Parität, also schließen Spinbrücke und Neutralität sich aus; mit Uhrenquotient m = 1.
     - Der Kern det(I − ZW†)⁻¹ ist durch die Hardy- und Stromauslesung erzwungen. [E/C]
+  - Zweipfadkanal (Z76, H6h36, vierte externe Analyse):
+    - Die Erhaltung des Originalzustands erzwingt zwischen den Paarschalen die Schwinger-CCR-Gewichte p_k = (k+1)/(m+1).
+    - Kanal mit Petz-Rückkanal gibt exakt den Sphären-Casimir ℓ(ℓ+1).
+    - K/π ≡ Q_a − Q_b mod 4.
+    - Damit ist die Oszillatornormierung bedingt gelöst, als zustandsbalancierte Auslesung. [E/C]
   - Instantonen (Z33): Unter Spin(10) hat ein Einheitsinstanton 4 Eltern- und 12
     Familiennullmoden; mit gesättigten Familiennullmoden entsteht Re[e^{iθ}Φ² C_fam], die Wand ist
     also auch im Kontinuum möglich, bei nackter SO(10) aber ~10⁻¹⁶⁴ unterdrückt. [N]

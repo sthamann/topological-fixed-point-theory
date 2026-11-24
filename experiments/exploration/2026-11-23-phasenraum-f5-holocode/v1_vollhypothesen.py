@@ -1257,6 +1257,15 @@ if "H6h2" in H and z1p.exists() and z2p.exists():
                                                                                                                                                          "Stromauslesung erzwungen; 4D-Inhalt gezählt, "
                                                                                                                                                          "Gruppe Lesart (Toeplitz statt CCR, Z73)")
                                                                                                                                     facts["F54_synthesis"] = {n: T21[n]["urteil"] for n in T21}
+                                                                                                                                    z76p = Path(__file__).with_name("z76_ergebnis.json")
+                                                                                                                                    if z76p.exists():
+                                                                                                                                        T22 = json.loads(z76p.read_text())
+                                                                                                                                        H["H6h36"] = dict(H["H6h35"])
+                                                                                                                                        H["H6h36"]["K12"] = (LES if all(T22["checks"].values()) else F,
+                                                                                                                                                             H["H6h35"]["K12"][1] + "; Oszillatornormierung "
+                                                                                                                                                             "durch Zustandserhaltung erzwungen, Petz-Kanal "
+                                                                                                                                                             "gibt Sphären-Casimir l(l+1) (Z76)")
+                                                                                                                                        facts["F55_two_path_channel"] = T22["urteil"]
 
 order = [f"K{i}" for i in range(1, 21)]
 print("Gesamttabelle (P = hergeleitet, L = unter benannter Lesart, F = FAIL, O = OFFEN, E = EINGABE)\n")

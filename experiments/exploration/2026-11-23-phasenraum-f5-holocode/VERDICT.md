@@ -1,6 +1,41 @@
 # Urteil
 
-## Aktueller Stand: H6h35 — Zusammenführung: Zeit, 4D-Inhalt, T′ ⇔ I_pos, Kern ν = 1 (`z72`–`z74`)
+## Aktueller Stand: H6h36 — Zustandsbalancierter Zweipfadkanal: Oszillatornormierung und Sphäre (`z76`)
+
+**Bilanz:** unverändert 13 P und 7 L von 20. K12 ist präzisiert.
+
+**Anlass:** die vierte externe Analyse „Weiterentwicklung von H6h34“. Ihr Paket liegt nicht im Repo; z76 rechnet
+unabhängig nach (5 Prüfungen).
+
+**In einem Satz:** Die in H6h35 fehlende Oszillatornormierung (Lücke (b)) ist bedingt durch den Originalzustand erzwungen.
+Kanal und Petz-Rückkanal geben exakt den Laplace der quantisierten Sphäre.
+
+**Ergebnisse:**
+- **Ladungsuhr.** K/π ≡ Q_a − Q_b (mod 4). Damit sind ρ₁ (geladene Feldalgebra) und ρ₄ (neutrale Algebra ℂ[z⁴]) zwei
+  Auflösungen desselben Prozesses (deckt sich mit z74).
+- **Zweipfadkanal.**
+  - Zwischen den Paarschalen H_m → H_{m+1} gibt es die beiden nativen Elementarschritte, Teilchen hoch und Loch runter.
+  - Die Forderung, den Originalzustand zu erhalten (auf H_m der Spurzustand, z73), legt die Gewichte eindeutig fest:
+    p_k = (k+1)/(m+1), q_k = (m−k)/(m+1).
+  - Die Krausamplituden sind genau die Schwinger-CCR-Gewichte √(k+1), √(m−k).
+- **Sphäre.** m(m+1)(I − R∘Φ) ist exakt der Casimir Σ[J_a,[J_a,·]] zu Spin (m−1)/2. Die Eigenwerte sind ℓ(ℓ+1) mit
+  Vielfachheit 2ℓ+1 (m = 5: 25 Richtungen).
+- **Verdichtung.** n Schritte haben 2ⁿ Pfadfolgen, aber Krausrang n+1.
+- **Standard, als bedingt geführt:** die Klich-Determinante für Mehrpunktantworten; der Einstein-Dreipunktvertex mit
+  Konstruierbarkeit der Baumgravitation (unter lokaler unitärer 4D-Streuung). G folgt nicht.
+
+**Grenze:** Der native Stromoperator koppelt auch an weitere Paare. Der Kanal ist eine zustandsbalancierte Auslesung, nicht
+die ganze Dynamik.
+
+**Offen:**
+- I_pos;
+- die Beziehung von Vakuum und thermischem Original;
+- die Gewinnung des Kanals aus der vollen Dynamik einschließlich höherer Sektoren;
+- die nichtlineare Gravitation mit Kopplung;
+- die Mehrpunktantworten (z75 am Nutzungslimit abgebrochen);
+- der Restflavor.
+
+## Davor: H6h35 — Zusammenführung: Zeit, 4D-Inhalt, T′ ⇔ I_pos, Kern ν = 1 (`z72`–`z74`)
 
 **Bilanz:** unverändert 13 P und 7 L von 20. K6 und K12 sind präzisiert.
 

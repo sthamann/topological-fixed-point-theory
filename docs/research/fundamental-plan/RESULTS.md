@@ -7903,3 +7903,18 @@ Im H6-Ordner gerechnet, alles nachgeprüft und reproduziert:
 - der Restflavor.
 
 **Prüfstand:** 13 P, 7 L. Atlas-Revision da001fdcabcc80b1da998c54. Ledger unverändert, nichts befördert.
+
+## H6H36-20261124 · Zustandsbalancierter Zweipfadkanal: Oszillatornormierung und Sphäre (bedingt)
+
+`z76_zweipfadkanal.py` (5 von 5) prüft die vierte externe Analyse.
+
+**Exakt:**
+- **Ladungsuhr.** K/π ≡ Q_a − Q_b mod 4.
+- **Gewichte.** Die Erhaltung des Originalzustands legt die Gewichte des Zweipfadkanals H_m → H_{m+1} eindeutig fest:
+  p_k = (k+1)/(m+1), q_k = (m−k)/(m+1). Das sind die Schwinger-CCR-Gewichte.
+- **Sphäre.** m(m+1)(I − R∘Φ) = Σ[J_a,[J_a,·]] mit Eigenwerten ℓ(ℓ+1).
+- **Verdichtung.** Der Krausrang ist n+1.
+
+**Grenze:** Der Kanal ist eine zustandsbalancierte Auslesung; der native Strom koppelt an weitere Paare.
+
+**Prüfstand:** 13 P, 7 L. Atlas-Revision a88864e7fd34b90e4575bf1b. Ledger unverändert, nichts befördert.

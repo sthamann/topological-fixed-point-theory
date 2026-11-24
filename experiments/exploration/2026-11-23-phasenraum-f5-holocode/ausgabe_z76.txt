@@ -1,0 +1,22 @@
+Teil 1: Ladungsuhr
+   [ok] K/pi = 4(E_a(Q_a) + E_b(Q_b)) + 4 N_osc mit E_alpha(Q) = Q^2/2 + (alpha - 1/2)Q ist kongruent Q_a - Q_b mod 4 (alle |Q| <= 12): die modulare Vierteldrehung misst die Ladungsdifferenz der beiden Quarter
+   [Befund: ja] rho_1 (geladene Feldalgebra, Lücke pi) und rho_4 (neutrale Algebra C[z^4] = C[z]^Z4, Lücke 4 pi) sind zwei Auflösungen desselben Prozesses, keine konkurrierenden Lösungen (deckt sich mit z74); die Zuordnung der vier Marken zur Quotientengeometrie bleibt offen
+
+Teil 2: Zustandserhaltender Zweipfadkanal H_m -> H_(m+1)
+   [ok] für m = 2..7 legt die Forderung 'Phi bildet den Originalzustand auf H_m (Spurzustand) auf den auf H_(m+1) ab' die Gewichte eindeutig fest: p_k = (k+1)/(m+1), q_k = (m-k)/(m+1)
+   [ok] die Krausamplituden sind sqrt(k+1)/sqrt(m+1) und sqrt(m-k)/sqrt(m+1), genau die Schwinger-Oszillatorgewichte (CCR) der Teilchen- und Lochleiter, und der Kanal ist spurerhaltend
+
+Teil 3: Petz-Rückkanal und Winkeloperator
+/Users/stefanhamann/Projekte/tfpt-theoryv4/experiments/exploration/2026-11-23-phasenraum-f5-holocode/z76_zweipfadkanal.py:102: ComplexWarning: Casting complex values to real discards the imaginary part
+  S[:, a] = fn(E.reshape(n, n)).reshape(-1)
+   [ok] m(m+1)(I - R Phi) ist exakt der Casimir-Superoperator Summe [J_a,[J_a, .]] zu Spin (m-1)/2 (m = 2..7), Eigenwerte l(l+1) mit Vielfachheit 2l+1, l = 0..m-1 (m = 5: 0, 2, 6, 12, 20 auf 1+3+5+7+9 = 25 Richtungen)
+
+Teil 4: Zusammengesetzte Kanäle
+   [ok] n Schritte H_2 -> H_(2+n): 2^n Pfadfolgen, Krausrang n+1 (n = 1, 2, 3, 4, 6): die Pfadinformation verdichtet sich auf die Zahl der Teilchenschritte
+   [Befund: ja] Die Oszillatornormierung (offener Punkt (b) aus H6h35) folgt bedingt: Mit den beiden nativen Elementarschritten als Krausstruktur erzwingt die Erhaltung des Originalzustands die Schwinger-CCR-Gewichte, und Kanal mit Petz-Rückkanal gibt die su(2)-Casimir-Struktur der Sphäre. Einschränkung (wie die Analyse selbst): Der native Stromoperator koppelt auch an weitere Paare; der Kanal ist eine zustandsbalancierte Auslesung, nicht die ganze Dynamik
+   [Befund: ja] Die vierte Analyse nennt außerdem die Klich-Determinante für Mehrpunktantworten (Standard) und den Einstein-Dreipunktvertex mit Konstruierbarkeit der Baumgravitation (Standard unter lokaler unitärer 4D-Streuung); beides ist bedingt, G folgt nicht
+
+Urteil
+   Die vierte externe Analyse hält in den geprüften Punkten. K/pi ist kongruent Q_a - Q_b mod 4, also sind rho_1 und rho_4 zwei Auflösungen desselben Prozesses. Der Zweipfadkanal zwischen den Paarschalen mit Teilchen- und Lochschritt ist durch die Erhaltung des Originalzustands eindeutig: p_k = (k+1)/(m+1), q_k = (m-k)/(m+1). Seine Krausamplituden sind genau die Schwinger-CCR-Gewichte, und Kanal mit Petz-Rückkanal gibt exakt den Casimir m(m+1)(I - R Phi) = Summe [J_a,[J_a, .]] mit l(l+1). Damit ist die in H6h35 fehlende Oszillatornormierung bedingt durch den Zustand erzwungen; offen bleibt, dass der Kanal nur eine zustandsbalancierte Auslesung der vollen Dynamik ist.
+
+Alle Prüfungen bestanden: True (5/5)

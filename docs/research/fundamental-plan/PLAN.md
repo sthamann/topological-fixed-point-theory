@@ -29,6 +29,15 @@ Topologie festlegen und Mehrdeutigkeiten mit dem nächsten Prinzip schließen. S
 Originale haben Spektraldimension 1 (Quelle) bzw. kompakt 8 (E₈-Naht). Gebraucht wird eine originale Antwort mit d = 4,
 nichtkompakt und reflexionspositiv. Prüfstand seit H6h32: 13 P, 7 L (K12 als Lesart).
 
+**H6h36 (Zweipfadkanal, `z76`).**
+- Die Oszillatornormierung ist bedingt durch den Originalzustand erzwungen.
+- Kanal mit Petz-Rückkanal gibt die Sphäre ℓ(ℓ+1).
+- Als Nächstes:
+  - I_pos;
+  - Vakuum gegen thermisch;
+  - den Kanal aus der vollen Dynamik gewinnen;
+  - Mehrpunktantworten und Spin 2 (Agent z75 nach dem Limit-Reset).
+
 **H6h35 (Zusammenführung).**
 - Die 3+1-Kinematik hängt an I_pos (= T′).
 - Der Feldkern ν = 1 ist erzwungen.
