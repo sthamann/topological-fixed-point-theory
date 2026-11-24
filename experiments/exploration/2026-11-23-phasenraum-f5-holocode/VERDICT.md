@@ -1,6 +1,152 @@
 # Urteil
 
-## Aktueller Stand: H6h20 — Auswertungsgeometrie, Spinsektoren und die Flussnaht (`z37`, `z38`)
+## Aktueller Stand: H6h21 — Zufluss, Gitterzigarre und gemeinsamer Ursprung (`z39`, `z40`)
+
+Bilanz unverändert 14 P und 6 L von 20; K13, K15, K16 und K20 sind präzisiert, kein Status ändert sich.
+Anlass sind die externen Vorschläge „H6h21: dynamische Flussnaht mit topologischem Zufluss“ und „H6h22:
+gemeinsamer Ursprung“ vom 24.11. Selbst nachgerechnet: `z39` mit 44 und `z40` mit 41 Prüfungen,
+einschließlich einer eigenen Gitterzigarre.
+
+**In einem Satz:**
+- Die Flussnaht ist jetzt durchgerechnet: Normaldrehung, Anomaliematrix, E₈-Chern–Simons-Zufluss,
+  exakte Rückwirkung und Gitterzigarre (Wilson und Overlap).
+- Sie trägt aber **Spin(10) nicht auf Niveau 1**: Der komplexe Fluss lässt von Spin(10) nur U(5) übrig,
+  und komplexe Multipletts geben nur gerade Niveaus.
+- Die Randverbindung ∇_t kann nicht zugleich die schwache Eichverbindung sein.
+- Der Hardy-Kern ist der kleinste positive Punkt ν = 1 eines 2×2-Matrixkerns, und genau dort gilt die
+  masselose Wellengleichung in 3+1.
+- Spin 2 braucht eine positive Spektraldarstellung; der ganze Formfaktor der Ledgerzeilen erfüllt sie
+  nicht.
+
+**1. Flussnaht mit Zufluss (`z39`).**
+- **Normaldrehung.** Auf der Zigarre ist u_j = sinh^j ρ cosh^{−N} ρ genau für 0 < j < N normierbar. Die
+  Flüsse 2 + 6×1 + 0 geben acht Moden mit Drehimpulsen b = (3/2, 1/2⁷) und Ladung q = (1⁸). Daraus folgt
+  die Anomaliematrix [[8, 5], [5, 4]] und I₄ = 4x² + 5xy + 2y² − p₁/3. Neben k = c = 8 muss der Zufluss
+  also auch die Normaldrehung und ihre gemischte Antwort tragen.
+- **Zwei E₈-Verklebungen.**
+  - Die gerade Spinorverklebung gibt nur den 112 D₈-Wurzeln ganzzahlige b-Ladung, die ungerade allen 240.
+  - b liegt nur im ungeraden Gitter, und dort ist q primitiv (im geraden ist q = 2s).
+  - **Einschränkung:** Die Auswahl ist invariant unter Lifts b + αq (α ganz), kehrt sich aber um, wenn eine
+    einzelne Kanal-U(1) in die Drehung gemischt wird (b + e₁). Sie ist also bedingt.
+  - Ein Vorzeichenwechsel auf einer A₃-Koordinate bildet die gerade auf die ungerade Verklebung ab, lässt
+    alle 40 D₅-Wurzeln fest und macht aus (16,4) + (16̄,4̄) die Paarung (16,4̄) + (16̄,4).
+  - **Neu:** q-neutral sind in der ungeraden Verklebung nur 56 Wurzeln (su(8)), in der geraden 126 (E₇).
+    Von den 40 D₅-Wurzeln sind nur die 20 Wurzeln e_i − e_j neutral: Der Flusshintergrund lässt von
+    Spin(10) nur **U(5)** übrig.
+- **Zufluss.** Eine Basis des ungeraden Gitters (gespiegelte Bourbaki-Wurzeln) hat Gram-Determinante 1
+  und Signatur 8. Die ganzzahligen Kopplungen l_q = (−3, 2, 0⁶) und l_b = (−1, 2, −1, 0⁵) geben
+  l^T K⁻¹ l = [[8, 5], [5, 4]], also genau die Anomaliematrix. Im geraden Gitter ist l_b nicht
+  ganzzahlig. Ein E₈-Chern–Simons-Term ist damit ein quantisierter Zufluss ohne Paarungsfeld. Seine
+  Herleitung aus der zweiten TFPT-Blatthälfte fehlt.
+- **Rückwirkung.** In der Modellklasse e^{−2Φ}[R + 4(∇Φ)² + 4Λ − (ℓ²/4)ΣF²] gilt:
+  - f = (1 − y)(R² + Cy) mit y = e^{−2κx}, κ = 1/(R² + C) und C = 5ℓ², Φ = −κx, B_i = 2κN_i y und
+    Λ = κ²R² erfüllen alle elf Euler–Lagrange-Gleichungen identisch; Gegenproben (C = 4ℓ², Λ um 1 %
+    verschoben) scheitern.
+  - Die Spitze ist glatt (f′(0) = 2), das Ende zylindrisch, die Flüsse sind N_i; C = 0 ist die
+    Z38-Zigarre.
+  - Λ = R²/(R² + 5ℓ²)² ist bei R² = 5ℓ² maximal (1/(20ℓ²)), darunter gibt es zwei Zweige.
+  - Die Modenzahl hängt nur an Spitze und Ende. Sie bleibt unter Rückwirkung N, geprüft über Exponenten
+    und numerische Normen für vier (R², C).
+  - Die Dilatonwirkung ist **nicht** aus TFPT hergeleitet. G multipliziert die ganze Wirkung und bleibt
+    frei.
+- **Gitterzigarre (eigene Rechnung).** Der Aufbau: Ein 2D-Wilson-Dirac auf (ρ, θ) mit M Winkelpunkten,
+  Eichlinks und metrischen Faktoren, radial h = 2/M, Dirichlet an Spitze und Rand. Wegen der Drehsymmetrie
+  zerfällt er exakt in Blöcke nach j. Die Ergebnisse:
+  - **Wilson:** Ab M = 32 gibt es genau N reelle Moden unter der Kontinuumslücke ½ mit Chiralität
+    > 0,97, ab M = 64 > 0,99. Die größte Gittermasse bei N = 2 fällt linear: 0,330, 0,175, 0,092 für
+    M = 32, 64, 128. Die niedrigste Mode deckt sich zu 99,86 % mit der Kontinuumsnullmode. Bei M = 16
+    liegt die j = ½-Mode für N = 2 noch über ½.
+  - **Overlap:** Der Index −Tr sign(H_W)/2 ist in allen 36 Fällen (M = 16, 24, 32; vier Wilson-Massen;
+    N = 0, 1, 2) exakt N. Es gibt genau N exakte Nullmoden mit Chiralität +1 in j = ½ … N − ½, und
+    min|H_W| ≈ ½.
+  - **Rückgewirkte Geometrie** (C = R²): dieselben Zahlen.
+
+  Die TFPT-Verteilung hat damit Gesamtindex 8.
+- **APS.** Die Ladungen (−9, −5, −1, 7, 8) haben Σq = Σq³ = 0. Bei f = −1/17 ist der Nahtindex trotzdem 1;
+  die Eta-Invariante aus der Hurwitz-Zeta deckt sich mit der direkten Zählung. Bei ganzzahligem Fluss ist
+  der Index 0. Globale Anomaliefreiheit schließt einen chiralen Nahtsektor auf dem nichtkompakten Kragen
+  also nicht aus. Das qualifiziert die Aussage aus H6h20, eine anomaliefreie U(1) lösche die reduzierte
+  Anomalie: Das gilt nur bei ganzzahligem Fluss.
+- **Elternoperator.** I₆ = ((x+z)³ − x³)/6 − z p₁/24 = z(x²/2 + xz/2 + z²/6 − p₁/24) hat keinen reinen
+  Eichterm. Die Reduktion gibt k = c = 8, aber nicht den b-Anteil.
+
+**2. Gemeinsamer Ursprung (`z40`).**
+- **Spin(10)-Niveaus.** Ein komplexes chirales Multiplett hat das Stromniveau Σ(w·α)²/2: 2, 16, 56, 4, 4
+  für 10, 45, 120, 16, 16̄ (auch 210 ist gerade). Mit der Produktregel l(R⊗S) = dim S·l(R) + dim R·l(S)
+  ist jedes komplexe Niveau gerade. Niveau 1 braucht eine reelle Majorana-Struktur, z. B. zehn
+  Majorana-Fermionen im reellen Vektor. Zusammen mit dem U(5)-Befund aus z39 folgt: **G′ trägt c = 8 und
+  das E₈-Gitter, aber nicht Spin(10)₁ als Symmetrie des Elternoperators.** Nötig sind Majorana-Eltern oder
+  eine erst auf der Naht entstehende Symmetrie.
+- **Schwaches Dublett.** Ein Operator auf W = H⁰(O(1)), der alle Kerne der Auswertung erhält, ist skalar.
+  Zwei Schnitte tragen also keine lokale SU(2). Im Eulerbündel O² ≅ ℂ² ⊗ O (H⁰ ≅ H⁰(O(1))) wirkt SU(2)
+  fasertreu.
+- **Eichspektrum und Polarisation.**
+  - Die Quadratur bestätigt den adjungierten Laplace zu ∇_t mit dem Block [[L + 2t², −2t√L],
+    [−2t√L, L − 1 + t²]] und dem Eigenwert L − 1 + t² (Abweichung 9·10⁻¹³ für J ≤ 4).
+  - Das J = 1-Triplett ist nur bei t = 1 masselos, das J = 0-Singulett nur bei t = 0.
+  - Ein massives Dublett mit M(P) = m(2P − I) induziert Γ_pol = (1/8π)∫tr(∇(2P − I))² = 2t²
+    (Schleifenintegral 1/(4π), ∫tr(dP)² = 4π). Damit hat V(t) = a(1−t²)² − 2 log t + 3t² für jedes a ≥ 0
+    genau ein Minimum in (0, 1), bei a = 1 t* = 1/√2.
+  - Dort ist das Triplett massiv (m²R² = 0,114). Stabilisierter Kanal und masselose SU(2) schließen sich
+    aus, die schwache Verbindung muss also unabhängig sein (wie Y1/Z28).
+  - Den Sektor mit M(P) hat TFPT noch nicht.
+- **Kleber.** |s₅|² = 5/4 und |s₃|² = 3/4. 5k₅ + 3k₃ = 8 hat genau die positive Lösung (1, 1); bloße
+  Ganzzahligkeit (≡ 0 mod 8) ließe (k, k) für jedes k zu.
+- **Matrixkern.**
+  - Der Rang-1-Schnitt von det(I − ZW†)^{−ν} ist der Hardy-Kern.
+  - In zweiter Ordnung steht ν(ν+1)/2 h₂ + ν(ν−1)/2 e₂ (e₂ = det).
+  - Die Cayley-Identität gibt det(∂) det(A)^{−ν} = ν(ν−1) det(A)^{−ν−1}: die masselose Wellengleichung
+    gilt genau bei ν = 1 (und 0).
+  - Der Wallach-Test mit der binären Ikosaedergruppe (120 Elemente, mittelt j = 1..5 exakt weg) gibt bei
+    ν = ½ die Testform r⁴ν(ν−1)/2 < 0.
+  - Weitere Prüfungen: die Gaußidentität 1/det A (auch komplex), det(λλ†) = 0 und
+    det(λλ† + μμ†) = |λ₁μ₂ − λ₂μ₁|² (zwei freie Quanten sind nicht masselos, außer kollinear),
+    K₂ = 24/det A · Sym⁴(A⁻¹) (exakt diagonal, Monte Carlo 1,5 %).
+  - **Lesart:** Der Hardy-Kern ist der erste Wallach-Punkt, die Leiterdarstellung von U(2,2) des
+    masselosen Skalars. Das ist bekannte Mathematik, aber ein konkreter positiver 3+1-Anschluss. Er bleibt
+    frei; die Wechselwirkung fehlt.
+- **Raumzeit.**
+  - Mit vier tetraedrischen Nullrichtungen gilt m² = [(Σp_i)² − 3Σp_i²]/4; (1,0,0,0) und (0,0,1,1) sind
+    trotz positiver p_i raumartig. Vier unabhängige Hardy-Translationen reichen also nicht; nötig ist ein
+    gemeinsamer Impuls im Kegel Herm(2)₊.
+  - Die Lichtkegelkompression T(a) = e^{−iam²/p₊}/(1 + iaσ²/p₊) hat den Defekt |T(2) − T(1)²| = 1/√20,
+    unabhängig von m.
+  - Der behauptete Anschluss an die älteren Gedächtnisrechnungen (R022, R059, R060) ist **nicht** geprüft.
+- **Familien.** E₋ = O(−1) + 3O hat h⁰ = 3 und h¹ = 0, also Index 3 ohne Spiegel; E₊ = O(1) + 3O hat
+  h⁰ = 5. Eine Generation Λ^gerade ℂ⁵ mit V₄-Hyperladung hat alle Anomalien 0 und 4 Dubletts; 3 × 16 = 48
+  Weyl-Felder. Das ist ein freies Modell; das nichtperturbative Maß fehlt. Kikukawa (arXiv:1710.11618,
+  PTEP 2019) konstruiert ein eichinvariantes Overlap-Maß für die 16 von SO(10) mit SO(10)-invarianten
+  't-Hooft-Vertizes; die Lokalität in der Eichfeldabhängigkeit ist dort offen (Abstract geprüft).
+- **Spin 2.** Eine positive Spektraldarstellung C = Z/Q² + ∫dρ/(Q² + s) verlangt Q²C ≥ Z (geprüft an 20
+  Zufallsmaßen). Z e^{−Q²/M²}/Q² verletzt das für jedes Q² > 0. Ein positiver Kandidat ist
+  Z/Q² + r/(Q² + M²) mit C⁻¹ = Q²/Z − rQ⁴/(M²Z²) + O(Q⁶).
+  **Querbezug zum Ledger (nur lesend):** GRAV.SPIN2.UNITARITY.01, GRAV.KMS.HESSIAN.01, QGAMB.IDG.01,
+  GRAV.AMPLITUDE.01 (nennt P(p²) = e^{−p²/M²}/p²), GRAV.LOOP.FINITE.01, GRAV.NONLOCAL.01 und
+  GRAV.SPIN2.EMERGENCE.01 sichern **Polfreiheit**, nicht Spektralpositivität. Als physischer positiver
+  Spin-2-Propagator gelesen ist dieser Formfaktor ausgeschlossen. Ob die Zeilen einen Vermerk bekommen,
+  ist eine Ledgerentscheidung; die Zeilen sind unverändert.
+
+**3. Korrekturen an den Analysen.**
+- Die Gitterzigarren-Tabellen der achten Analyse waren nach ihrer eigenen Folgeanalyse unbelegt. Sie sind
+  durch die eigene Rechnung ersetzt; die Zahlen weichen ab (z. B. M = 16, N = 2).
+- Die GSO-Auswahl durch die Normaldrehung ist bedingt (Spinlift, siehe oben).
+- „Ein E₈-Block im freien Modell“ gilt als c = 8 mit Index 8. D₅,₁ + A₃,₁ mit Spin(10) auf dem
+  Elternoperator gilt für komplexen Fluss **nicht**.
+- Der fermionische Polarisationsterm ist ein Mechanismus. Er setzt einen massiven Sektor mit M(P) voraus
+  und verträgt sich nur mit einer eigenen schwachen Verbindung.
+- Die freie Spin-2-Kinematik λ^{⊗4} ist die bekannte Penrose-Darstellung und keine Dynamik.
+
+**4. Was das für H6 heißt.**
+- G′ ist jetzt ein gerechnetes Modell: Index, Zufluss, Rückwirkung und Gitter. Die genaue offene Frage
+  lautet: Woher kommen Spin(10)₁ bzw. reelle Nahteltern, wenn der Fluss komplex ist?
+- Die schwache Verbindung ist unabhängig von ∇_t: Y1/Z28 und jetzt auch das Spektrum sagen das.
+- Ein freier positiver 3+1-Kern (ν = 1) und die gemeinsame Spektralbedingung liegen vor; die
+  wechselwirkende Realisierung fehlt.
+- G folgt nicht aus Topologie oder Anomalien, und Spin 2 muss positiv-spektral sein.
+- Der offene Kern bleibt die eine Prozessregel Z[J, A, g, Φ], aus der Naht, Eichwirkung und metrische
+  Variation gemeinsam folgen.
+
+## Davor: H6h20 — Auswertungsgeometrie, Spinsektoren und die Flussnaht (`z37`, `z38`)
 
 Bilanz unverändert 14 P und 6 L von 20; K14 ist bestärkt, K16 und K19 haben eine neue Lesart. Anlass
 sind die externen Vorschläge H6h20 und H6h21 vom 24.11. Selbst nachgerechnet: `z37` mit 17 und `z38` mit

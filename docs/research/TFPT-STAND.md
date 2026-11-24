@@ -127,8 +127,8 @@ Ursprung sollte beides zugleich liefern.
 
 ### Kandidat H6: Ursprung von P1 aus einer hintergrundfreien Naht (Exploration 23.11.)
 
-Quelle: `experiments/exploration/2026-11-23-phasenraum-f5-holocode/VERDICT.md` (Stand H6h20),
-Skripte `n1`, `v1`, `y1`, `z1`–`z38`, Lean-Vertrag `experiments/theory-contracts/h6-exakte-teile-20261123/`; Atlasproblem `problem:c3-p1-p2-shared-origin-reconciliation`,
+Quelle: `experiments/exploration/2026-11-23-phasenraum-f5-holocode/VERDICT.md` (Stand H6h21),
+Skripte `n1`, `v1`, `y1`, `z1`–`z40`, Lean-Vertrag `experiments/theory-contracts/h6-exakte-teile-20261123/`; Atlasproblem `problem:c3-p1-p2-shared-origin-reconciliation`,
 Befunde mit Präfix `h6`. Nichts davon ist im Ledger befördert. Prüfstand mit 20 Kriterien: 14
 hergeleitet, 6 unter benannter Lesart, keines gescheitert, offen oder gesetzt.
 
@@ -253,6 +253,26 @@ hergeleitet, 6 unter benannter Lesart, keines gescheitert, offen oder gesetzt.
     Niveau 8 und c₋ = 8; auf dem Gitter hält ihr Index ohne exakte chirale Symmetrie (Wilson
     Chiralitätssumme N, Overlap N exakte Nullmoden). Damit entfällt für die Naht die Wand aus
     Entscheidung 4; offen sind Zufluss, Gitterzigarre und Rückwirkung. [E/N]
+  - Zufluss und Gitterzigarre (Z39): Die acht Moden tragen Normaldrehimpulse b = (3/2, 1/2⁷), die
+    Anomaliematrix ist [[8, 5], [5, 4]] (I₄ = 4x² + 5xy + 2y² − p₁/3). Ganzzahlige b-Ladung auf allen
+    240 Wurzeln hat nur die ungerade Spinorverklebung (dort ist q primitiv); die Auswahl hängt am
+    Spinlift. Ein E₈-Chern–Simons-Gitter mit ganzzahligen l_q, l_b reproduziert die Anomaliematrix
+    (Zufluss ohne Paarungsfeld). Die Rückwirkung f = (1 − y)(R² + Cy) löst die gekoppelten
+    Dilaton-Maxwell-Gleichungen exakt (Modellklasse, nicht aus TFPT). Eigene Gitterzigarre: Overlap-Index
+    N in 36 Fällen mit exakten Nullmoden der Chiralität +1, Wilson-Massen linear gegen null, auch
+    rückgewirkt. APS: Eine 4D-anomaliefreie U(1) kann bei gebrochenem Fluss Nahtindex 1 haben. q-neutral
+    sind nur 20 der 40 D₅-Wurzeln: Der Flusshintergrund lässt von Spin(10) nur U(5). [E/N]
+  - Gemeinsamer Ursprung (Z40): Komplexe chirale Spin(10)-Multipletts haben gerade Stromniveaus
+    (2, 16, 56, 4, 4), also kein Spin(10)₁ aus komplexem Fluss (dafür Majorana-Eltern oder eine
+    Nahtsymmetrie). Zwei Schnitte von O(1) tragen keine lokale SU(2), erst O² der Euler-Folge. Das
+    Triplett von ∇_t ist nur bei t = 1 masselos; ein fermionischer Polarisationsterm (Γ = 2t²)
+    stabilisiert t* = 1/√2 (a = 1), dort ist es massiv: Rand- und schwache Verbindung sind verschieden.
+    5k₅ + 3k₃ = 8 hat genau (1, 1). Der Hardy-Kern ist der kleinste positive Wallach-Punkt ν = 1 von
+    det(I − ZW†)^{−ν}, genau dort gilt die masselose Wellengleichung (Cayley); vier tetraedrische
+    Translationen brauchen die gemeinsame Bedingung (Σp)² ≥ 3Σp². E₋ = O(−1) + 3O gibt Familienindex 3
+    ohne Spiegel, eine Generation mit V₄-Hyperladung ist anomaliefrei. Spin 2: Positivität verlangt
+    Q²C ≥ Z; der ganze Formfaktor e^{−p²/M²}/p² der GRAV-/QGAMB-Ledgerzeilen verletzt das (Querbezug,
+    Ledger unverändert). [E/N]
   - Instantonen (Z33): Unter Spin(10) hat ein Einheitsinstanton 4 Eltern- und 12
     Familiennullmoden; mit gesättigten Familiennullmoden entsteht Re[e^{iθ}Φ² C_fam], die Wand ist
     also auch im Kontinuum möglich, bei nackter SO(10) aber ~10⁻¹⁶⁴ unterdrückt. [N]
@@ -303,6 +323,10 @@ hergeleitet, 6 unter benannter Lesart, keines gescheitert, offen oder gesetzt.
     durch v1036 (`verification/v1036_ps_proton_real45.py`, Bericht in
     `experiments/theory-contracts/ps-proton-real45-20261124/`); PS.THRESHOLD.02 und PS.PROTON.02
     sind im Ledger korrigiert (24.11.), die abhängigen Zeilen noch nicht.
+  - Die Gitterzigarren-Tabellen der achten externen Analyse waren unbelegt; ersetzt durch Z39. Die
+    GSO-Auswahl durch die Normaldrehung ist bedingt (Spinlift). „Ein E₈-Block im freien Flussmodell“
+    gilt als c = 8, nicht als Spin(10)₁ auf dem Elternoperator (Z39, Z40). Dass eine anomaliefreie U(1)
+    die reduzierte Anomalie löscht (H6h20), gilt nur bei ganzzahligem Fluss (Z39, APS).
 - **Offen:**
   - Was die primitive Ladung bzw. den Sektor 1 und genau einen windenden Block wählt: Keine
     Grundzustandsregel gefunden; Lesarten sind ein Ordnungsfeld ohne Mittelwert oder N_fam = 3k
@@ -325,19 +349,28 @@ hergeleitet, 6 unter benannter Lesart, keines gescheitert, offen oder gesetzt.
   - Ein gemeinsamer Elternoperator.
   - Ob H6s Dynamik das Kondensat s^⊗4 und eine unabhängige Spin(10)-Elternverbindung erzeugt, und ob
     ein Ladung-4-Kondensat den Nahtindex c = 8 erhält (das hängt mit Entscheidung 2 zusammen).
-  - Für die Flussnaht G′: Zufluss bzw. relative Theorie für k = c = 8, die Zigarre auf dem Gitter und die
-    Rückwirkung; dazu ein Term der Polarisation, der den Rang-1-Kanal auswählt.
+  - Für die Flussnaht G′ (Zufluss, Rückwirkung und Gitterzigarre sind gerechnet, Z39): woher Spin(10)₁
+    bzw. reelle Nahteltern kommen, wenn der Fluss komplex ist; die Herleitung von E₈-Zufluss und
+    Dilatonwirkung aus der zweiten TFPT-Blatthälfte; die Wahl des Spinlifts; ein TFPT-Sektor mit
+    M(P) = m(2P − I), der den Rang-1-Kanal stabilisiert, neben einer eigenen schwachen Verbindung (Z40).
   - Ein Operator ∂̄ + ∂̄† auf O(1) ⊕ 6O ⊕ O(−1), geprüft am originalen Randoperator (Calderón-
     Hauptsymbol, relativer Index, Nullmoden mit Ladungen, c_W < 17/2, relative Determinante), und die
     Entscheidung, wie der Spin(10)-Lift (w₂ = 1) aufgelöst wird.
   - Vier positive, kommutierende Translationen aus halbseitigen modularen Inklusionen lokaler
-    Typ-III-Algebren (das E₈-Netz liefert eine lichtartige) und der 't-Hooft-Vertex mit den
+    Typ-III-Algebren (das E₈-Netz liefert eine lichtartige); sie müssen einen gemeinsamen Impuls in
+    Herm(2)₊ auslesen ((Σp)² ≥ 3Σp², Z40), freier Kandidat ist der Matrixkern bei ν = 1. Dazu der
+    't-Hooft-Vertex mit den
     TFPT-Yukawas (Sättigung der Familiennullmoden, Bezug zu θ).
   - Die Prozessalgebra (Toeplitz/Hardy) als Regler statt eines festen Gitters: Das feste Gitter bricht
     sowohl die axiale Symmetrie (Wand) als auch die Diffeomorphismen (Z24, Z29, Z31). Dazu gehören
     die Identifikation des Hardy-Kerns mit dem P1-Kern und die Unimodularität der Indexabbildung.
   - Eine Regel für den Gesamtkoeffizienten G, Gitterkanten, die die Metrik selbst definiert, und das
     Soldering von Herm(2) bzw. Λ²F an die Raumzeitverschiebungen.
+  - Ein positiv-spektraler Spin-2-Sektor (Q²C ≥ Z) statt eines bloß polfreien Formfaktors; ob die
+    GRAV-/QGAMB-Zeilen mit dem ganzen Formfaktor einen Positivitätsvermerk bekommen, ist eine
+    Ledgerentscheidung (Z40).
+  - Die eine Prozessregel Z[J, A, g, Φ], aus der Naht, Eichwirkung und metrische Variation gemeinsam
+    folgen.
 
 ## 4. Wiederkehrende Muster und Verbindungen
 

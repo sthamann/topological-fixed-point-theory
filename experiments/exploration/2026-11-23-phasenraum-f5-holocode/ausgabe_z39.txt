@@ -1,0 +1,118 @@
+Teil 1: Zigarrennullmoden, Normaldrehimpulse und Anomaliematrix
+   N = 0: normierbare j = []
+   N = 1: normierbare j = ['1/2']
+   N = 2: normierbare j = ['1/2', '3/2']
+   N = 3: normierbare j = ['1/2', '3/2', '5/2']
+   [ok] Zigarre: u_j = sinh^j cosh^-N normierbar genau für 0 < j < N, also N Moden pro Flussquant
+   [ok] u_j löst A_j u = (d_rho - (j coth rho - N tanh rho)) u = 0
+   Flüsse [2, 1, 1, 1, 1, 1, 1, 0]: 8 Moden, Normaldrehimpulse b = ['3/2', '1/2', '1/2', '1/2', '1/2', '1/2', '1/2', '1/2'], Ladungen q = [1, 1, 1, 1, 1, 1, 1, 1]
+   [ok] acht Moden mit b = (3/2, 1/2^7) und q = (1^8)
+   Anomaliematrix K = [['8', '5'], ['5', '4']]
+   [ok] Anomaliematrix [[8,5],[5,4]] (Sum q^2, Sum q b, Sum b^2)
+   I_4 = -p1/3 + 4*x**2 + 5*x*y + 2*y**2
+   [ok] I_4 = 4x^2 + 5xy + 2y^2 - p_1/3 (c = 8)
+
+Teil 2: Die zwei E8-Verklebungen und die Normaldrehung
+   [ok] beide Verklebungen: 240 Wurzeln der Norm 2
+   ganzzahlige b-Ladung: gerade Verklebung 112/240, ungerade 240/240
+   [ok] gerade Verklebung: nur die 112 D8-Wurzeln haben ganzzahlige b-Ladung, alle 128 Spinorgewichte halbzahlig
+   [ok] ungerade Verklebung: alle 240 Wurzeln ganzzahlige b-Ladung
+   [ok] b liegt im ungeraden Gitter, nicht im geraden
+   [ok] q = (1^8) ist im ungeraden Gitter primitiv (q/k nicht im Gitter für k = 2..8), im geraden ist q = 2s
+   ganzzahlige Wurzeln (gerade, ungerade) für andere Lifts: {'b-2q': (112, 240), 'b-1q': (112, 240), 'b+1q': (112, 240), 'b+2q': (112, 240), 'b+e1': (240, 112)}
+   [ok] Auswahl unabhängig von Lifts b + alpha q (alpha ganz), die Spin-Statistik erhalten (Fermionladungen halbzahlig)
+   [ok] ein Lift mit ungerader Verschiebung in nur einem Kanal (b + e_1) kehrt die Auswahl um
+   [Befund: ja] Die Normaldrehung wählt die ungerade Verklebung nur, wenn keine einzelne Kanal-U(1) in die Drehung gemischt wird
+   q-Ladungen der Wurzeln: gerade {-4: 1, -2: 56, 0: 126, 2: 56, 4: 1}; ungerade {-3: 8, -2: 28, -1: 56, 0: 56, 1: 56, 2: 28, 3: 8}
+   [ok] q-neutral: gerade Verklebung 126 Wurzeln (E7), ungerade 56 (A7 = su(8))
+   q-neutrale Wurzeln: D5 20/40, A3 6/12
+   [ok] q-neutral in D5 nur die 20 Wurzeln e_i - e_j: der Flusshintergrund lässt von Spin(10) nur U(5) übrig (A3: U(3))
+   [ok] Vorzeichenwechsel auf einer A3-Koordinate bildet die gerade auf die ungerade Verklebung ab und lässt alle 40 D5-Wurzeln fest
+   [ok] dabei wird (16,4) + (16b,4b) zu (16,4b) + (16b,4)
+
+Teil 3: Zufluss als E8-Chern-Simons-Gitter
+   [ok] Basis des geraden und des ungeraden Gitters aus Wurzeln (Bourbaki, bzw. gespiegelt): Gram det 1, alle Wurzeln im Gitter
+   [ok] Gram-Matrix positiv definit (Signatur 8), gerade Diagonale
+   l_q = [-3, 2, 0, 0, 0, 0, 0, 0], l_b = [-1, 2, -1, 0, 0, 0, 0, 0]; l^T K^-1 l = [[8, 5], [5, 4]]
+   [ok] ganzzahlige Kopplungsvektoren l_q, l_b im ungeraden Gitter mit l^T K^-1 l = [[8,5],[5,4]] (Anomaliematrix)
+   [ok] im geraden Gitter ist l_b nicht ganzzahlig (b koppelt dort nicht an ein ganzes CS-Niveau)
+
+Teil 4: Rückwirkung der Flussfelder auf den Kragen
+   [ok] alle elf Euler-Lagrange-Gleichungen (h, f, Phi, acht Eichfelder) verschwinden identisch
+   [ok] Gegenproben: C = 4 l^2 oder Lambda um 1 % verschoben verletzen die Gleichungen
+   [ok] C = l^2 Sum N_i^2 / 2 = 5 l^2 (Sum N_i^2 = 10)
+   [ok] glatte Spitze f(0) = 0, f'(0) = 2; zylindrisches Ende f -> R^2
+   [ok] Fluss: 2 pi Int B_i dx = 2 pi N_i (B_i = 2 kappa N_i y)
+   [ok] Grenzfall C = 0: f = R^2 tanh^2(rho/R), Phi = -log cosh(rho/R), B = N K -- die Zigarre aus Z38
+   [ok] Lambda(R^2) = R^2/(R^2+C)^2 maximal genau bei R^2 = C, Lambda_max = 1/(4C) = 1/(20 l^2); darunter zwei Zweige
+   normierbare j auf der rückgewirkten Geometrie: {'R2=1.0,C=0.0': {0: [], 1: [0.5], 2: [0.5, 1.5]}, 'R2=1.0,C=1.0': {0: [], 1: [0.5], 2: [0.5, 1.5]}, 'R2=1.0,C=4.0': {0: [], 1: [0.5], 2: [0.5, 1.5]}, 'R2=4.0,C=1.0': {0: [], 1: [0.5], 2: [0.5, 1.5]}}
+   [ok] Rückwirkung ändert die Modenzahl nicht: normierbar genau 0 < j < N (Exponenten und numerische Normen) für vier (R^2, C)
+   [Befund: ja] Die klassische Rückwirkung ist in dieser Modellklasse exakt lösbar; die Dilatonwirkung ist nicht aus TFPT hergeleitet
+
+Teil 5: Gitterzigarre -- Wilson und Overlap (eigene Rechnung)
+   Überlapp der Wilson-Mode (M = 64, N = 1, j = 1/2) mit der Kontinuumsnullmode sinh^1/2 / cosh: 0.99858
+   [ok] die niedrigste Wilson-Mode ist die Kontinuumsnullmode u_j (Überlapp > 0.99, oberer Chiralitätsanteil)
+   Wilson zigarre, M = 16, h = 0.12500, N = 0: reelle Moden |lambda| < 1/2: []; sigma_min außerhalb |j| <= N+2: 6.913
+   Wilson zigarre, M = 16, h = 0.12500, N = 1: reelle Moden |lambda| < 1/2: [(0.5, 0.20797, 0.9532)]; sigma_min außerhalb |j| <= N+2: 6.914
+   Wilson zigarre, M = 16, h = 0.12500, N = 2: reelle Moden |lambda| < 1/2: [(1.5, 0.20988, 0.9551)]; sigma_min außerhalb |j| <= N+2: 6.914
+   Wilson zigarre, M = 32, h = 0.06250, N = 0: reelle Moden |lambda| < 1/2: []; sigma_min außerhalb |j| <= N+2: 4.867
+   Wilson zigarre, M = 32, h = 0.06250, N = 1: reelle Moden |lambda| < 1/2: [(0.5, 0.11161, 0.9831)]; sigma_min außerhalb |j| <= N+2: 4.867
+   Wilson zigarre, M = 32, h = 0.06250, N = 2: reelle Moden |lambda| < 1/2: [(0.5, 0.33034, 0.9789), (1.5, 0.10767, 0.9869)]; sigma_min außerhalb |j| <= N+2: 4.868
+   Wilson zigarre, M = 64, h = 0.03125, N = 0: reelle Moden |lambda| < 1/2: []; sigma_min außerhalb |j| <= N+2: 3.914
+   Wilson zigarre, M = 64, h = 0.03125, N = 1: reelle Moden |lambda| < 1/2: [(0.5, 0.05913, 0.9943)]; sigma_min außerhalb |j| <= N+2: 3.915
+   Wilson zigarre, M = 64, h = 0.03125, N = 2: reelle Moden |lambda| < 1/2: [(0.5, 0.17516, 0.9923), (1.5, 0.05425, 0.9966)]; sigma_min außerhalb |j| <= N+2: 3.915
+   Wilson zigarre, M = 128, h = 0.01562, N = 0: reelle Moden |lambda| < 1/2: []; sigma_min außerhalb |j| <= N+2: None
+   Wilson zigarre, M = 128, h = 0.01562, N = 1: reelle Moden |lambda| < 1/2: [(0.5, 0.03109, 0.9982)]; sigma_min außerhalb |j| <= N+2: None
+   Wilson zigarre, M = 128, h = 0.01562, N = 2: reelle Moden |lambda| < 1/2: [(0.5, 0.09211, 0.9974), (1.5, 0.02718, 0.9991)]; sigma_min außerhalb |j| <= N+2: None
+   Wilson rueckgewirkt_C=R2, M = 32, h = 0.06250, N = 0: reelle Moden |lambda| < 1/2: []; sigma_min außerhalb |j| <= N+2: 4.867
+   Wilson rueckgewirkt_C=R2, M = 32, h = 0.06250, N = 1: reelle Moden |lambda| < 1/2: [(0.5, 0.07129, 0.9899)]; sigma_min außerhalb |j| <= N+2: 4.87
+   Wilson rueckgewirkt_C=R2, M = 32, h = 0.06250, N = 2: reelle Moden |lambda| < 1/2: [(0.5, 0.20191, 0.9847), (1.5, 0.0703, 0.9909)]; sigma_min außerhalb |j| <= N+2: 4.871
+   Wilson rueckgewirkt_C=R2, M = 64, h = 0.03125, N = 0: reelle Moden |lambda| < 1/2: []; sigma_min außerhalb |j| <= N+2: 3.914
+   Wilson rueckgewirkt_C=R2, M = 64, h = 0.03125, N = 1: reelle Moden |lambda| < 1/2: [(0.5, 0.03737, 0.9967)]; sigma_min außerhalb |j| <= N+2: 3.917
+   Wilson rueckgewirkt_C=R2, M = 64, h = 0.03125, N = 2: reelle Moden |lambda| < 1/2: [(0.5, 0.10609, 0.9948), (1.5, 0.0354, 0.9976)]; sigma_min außerhalb |j| <= N+2: 3.918
+   [ok] Wilson: ab M = 32 genau N reelle Moden unter der Kontinuumslücke 1/2 (N = 0, 1, 2), auf Zigarre und rückgewirkter Geometrie
+   [ok] Wilson: diese Moden haben Chiralität > 0.97 ab M = 64 (positive Transversalchiralität)
+   größte Gittermasse (Zigarre, N = 2): {32: 0.33034156, 64: 0.17515673, 128: 0.09211232}
+   [ok] Wilson-Gittermassen fallen linear mit h: Verhältnis bei Halbierung zwischen 1.7 und 2.3
+   [ok] Wilson: alle übrigen Winkelsektoren haben sigma_min > 1 (keine versteckten niedrigen Moden, M <= 64)
+   Overlap zigarre, M = 16, N = 0: Index für mu h = 0.5/0.8/1.0/1.3: [0.0, 0.0, 0.0, 0.0]; min|H_W| = 0.4968; Nullmoden (j, Chiralität): []
+   Overlap zigarre, M = 16, N = 1: Index für mu h = 0.5/0.8/1.0/1.3: [1.0, 1.0, 1.0, 1.0]; min|H_W| = 0.4968; Nullmoden (j, Chiralität): [(0.5, 1.0)]
+   Overlap zigarre, M = 16, N = 2: Index für mu h = 0.5/0.8/1.0/1.3: [2.0, 2.0, 2.0, 2.0]; min|H_W| = 0.4968; Nullmoden (j, Chiralität): [(0.5, 1.0), (1.5, 1.0)]
+   Overlap zigarre, M = 24, N = 0: Index für mu h = 0.5/0.8/1.0/1.3: [0.0, 0.0, 0.0, 0.0]; min|H_W| = 0.4986; Nullmoden (j, Chiralität): []
+   Overlap zigarre, M = 24, N = 1: Index für mu h = 0.5/0.8/1.0/1.3: [1.0, 1.0, 1.0, 1.0]; min|H_W| = 0.4986; Nullmoden (j, Chiralität): [(0.5, 1.0)]
+   Overlap zigarre, M = 24, N = 2: Index für mu h = 0.5/0.8/1.0/1.3: [2.0, 2.0, 2.0, 2.0]; min|H_W| = 0.4986; Nullmoden (j, Chiralität): [(0.5, 1.0), (1.5, 1.0)]
+   Overlap zigarre, M = 32, N = 0: Index für mu h = 0.5/0.8/1.0/1.3: [0.0, 0.0, 0.0, 0.0]; min|H_W| = 0.4992; Nullmoden (j, Chiralität): []
+   Overlap zigarre, M = 32, N = 1: Index für mu h = 0.5/0.8/1.0/1.3: [1.0, 1.0, 1.0, 1.0]; min|H_W| = 0.4992; Nullmoden (j, Chiralität): [(0.5, 1.0)]
+   Overlap zigarre, M = 32, N = 2: Index für mu h = 0.5/0.8/1.0/1.3: [2.0, 2.0, 2.0, 2.0]; min|H_W| = 0.4992; Nullmoden (j, Chiralität): [(0.5, 1.0), (1.5, 1.0)]
+   Overlap rueckgewirkt_C=R2, M = 24, N = 0: Index für mu h = 0.5/0.8/1.0/1.3: [0.0, 0.0, 0.0, 0.0]; min|H_W| = 0.4986; Nullmoden (j, Chiralität): []
+   Overlap rueckgewirkt_C=R2, M = 24, N = 1: Index für mu h = 0.5/0.8/1.0/1.3: [1.0, 1.0, 1.0, 1.0]; min|H_W| = 0.4986; Nullmoden (j, Chiralität): [(0.5, 1.0)]
+   Overlap rueckgewirkt_C=R2, M = 24, N = 2: Index für mu h = 0.5/0.8/1.0/1.3: [2.0, 2.0, 2.0, 2.0]; min|H_W| = 0.4986; Nullmoden (j, Chiralität): [(0.5, 1.0), (1.5, 1.0)]
+   [ok] Overlap: Index -Tr sign(H_W)/2 = N in allen 36 Fällen (drei Auflösungen, vier Wilson-Massen, N = 0, 1, 2)
+   [ok] Overlap: genau N exakte Nullmoden (|lambda| < 1e-8) mit Chiralität +1 in den Sektoren j = 1/2 .. N - 1/2
+   [ok] Overlap auf der rückgewirkten Geometrie (C = R^2): Index N für alle vier Massen
+   [ok] H_W bleibt lückenhaft (min|H_W| > 0.4), der Overlap-Index ist wohldefiniert
+   TFPT-Flussverteilung [2, 1, 1, 1, 1, 1, 1, 0]: Overlap-Gesamtindex = 8
+   [Befund: ja] Die Gitterzigarre bestätigt N Moden pro Flussquant mit Wilson (linear verschwindende Masse) und Overlap (exakt)
+
+Teil 6: APS-Index auf dem nichtkompakten Kragen
+   [ok] Ladungen (-9,-5,-1,7,8): Sum q = Sum q^3 = 0 (4D anomaliefrei, auch gemischt gravitativ)
+   Q =  -9: Qf =   9/17, eta =  -16/17 (numerisch -0.941176), APS = Qf - eta/2 = 1, direkt gezählt 1
+   Q =  -5: Qf =   5/17, eta =   10/17 (numerisch +0.588235), APS = Qf - eta/2 = 0, direkt gezählt 0
+   Q =  -1: Qf =   1/17, eta =    2/17 (numerisch +0.117647), APS = Qf - eta/2 = 0, direkt gezählt 0
+   Q =   7: Qf =  -7/17, eta =  -14/17 (numerisch -0.823529), APS = Qf - eta/2 = 0, direkt gezählt 0
+   Q =   8: Qf =  -8/17, eta =  -16/17 (numerisch -0.941176), APS = Qf - eta/2 = 0, direkt gezählt 0
+   [ok] APS-Index Qf - eta/2 = round(Qf) = direkte Modenzählung für jede Ladung; Eta aus der Hurwitz-Zeta
+   [ok] bei f = -1/17 ist der Nahtindex 1, obwohl Sum Q f = 0
+   [ok] für ganzzahlige Flüsse ist der Nahtindex f Sum Q = 0 (kompakter Fall)
+   [Befund: ja] Globale 4D-Anomaliefreiheit schließt einen chiralen Nahtsektor auf dem nichtkompakten Kragen nicht aus (Eta-Invariante am Rand)
+
+Teil 7: 4D-Elternoperator ohne Vektoreichanomalie
+   [ok] I_6 = ((x+z)^3 - x^3)/6 - z p_1/24 = z (x^2/2 + xz/2 + z^2/6 - p_1/24)
+   [ok] kein reiner x^3-Term: die physische Vektorsymmetrie ist anomaliefrei
+   [ok] Reduktion über den Kragen (Flüsse 2 + 6 x 1 + 0, z nur transversal): I_4 = 4x^2 - p_1/3, also k = c = 8
+   [Befund: ja] Der Elternoperator reproduziert den (q,q)-Eintrag und c, nicht aber die Normaldrehung b (die braucht die Kragengeometrie)
+
+Urteil
+   Die achte Analyse rechnet sich in allen geprüften Punkten nach, mit zwei Einschränkungen. Die Flüsse 2 + 6 x 1 + 0 geben auf der Zigarre acht Moden mit Normaldrehimpulsen b = (3/2, 1/2^7); mit q = (1^8) folgt die Anomaliematrix [[8,5],[5,4]] und I_4 = 4x^2 + 5xy + 2y^2 - p_1/3. Die ungerade Spinorverklebung von D8 gibt allen 240 Wurzeln ganzzahlige b-Ladung, die gerade nur den 112 D8-Wurzeln; b liegt nur im ungeraden Gitter, q ist dort primitiv. Einschränkung 1: Die Auswahl ist invariant unter Lifts b + alpha q, kehrt sich aber um, wenn eine einzelne Kanal-U(1) in die Drehung gemischt wird. Ein E8-Chern-Simons-Gitter mit ganzzahligen Kopplungen l_q, l_b reproduziert die Anomaliematrix exakt (im geraden Gitter ist l_b nicht ganzzahlig). Neu: q-neutral sind im ungeraden Gitter nur 56 Wurzeln (su(8)), im geraden 126 (E7), und von den 40 D5-Wurzeln nur 20 -- der Flusshintergrund lässt von Spin(10) nur U(5) übrig. Die Rückwirkungslösung f = (1-y)(R^2+Cy) erfüllt alle elf Euler-Lagrange-Gleichungen exakt, mit glatter Spitze, Zylinderende, Flüssen N_i und der Z38-Zigarre als Grenzfall C = 0; Lambda ist bei R^2 = C maximal. Die Modenzahl hängt nur an Spitze und Ende. Einschränkung 2: Die Gitterzigarren-Tabellen der Analyse waren nach ihrer eigenen Folgeanalyse unbelegt; die eigene Rechnung (exakte Blockzerlegung, Wilson und Overlap) gibt jetzt N Moden mit linear fallender Wilson-Masse, Overlap-Index N in 36 Fällen und exakte Nullmoden der Chiralität +1, auch auf der rückgewirkten Geometrie. Das APS-Beispiel (-9,-5,-1,7,8) bei f = -1/17 hat Nahtindex 1 trotz Anomaliefreiheit; der Elternoperator mit I_6 = z(...) gibt k = c = 8 ohne Vektoreichanomalie, aber nicht den b-Anteil. Offen bleiben die Herleitung von Zufluss und Dilatonwirkung aus dem TFPT-Masteroperator und die Wahl des Spinlifts.
+
+Alle Prüfungen bestanden: True (44/44)

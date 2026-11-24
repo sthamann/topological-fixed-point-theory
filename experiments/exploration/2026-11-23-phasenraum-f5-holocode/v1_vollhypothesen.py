@@ -918,6 +918,36 @@ if "H6h2" in H and z1p.exists() and z2p.exists():
                                                                                              "Euler-Folge (Z37), bricht aber die Decksymmetrie; J = delta (i T_a) "
                                                                                              "mit J^2 = -1 aus dem (A,A)-Thetamodell (Z38)")
                                                                         facts["F39_evaluation_flux_seam"] = {n: T7[n]["urteil"] for n in T7}
+                                                                        zx = {n: Path(__file__).with_name(f"z{n}_ergebnis.json") for n in (39, 40)}
+                                                                        if all(p.exists() for p in zx.values()):
+                                                                            T8 = {n: json.loads(p.read_text()) for n, p in zx.items()}
+                                                                            ok8 = {n: all(T8[n]["checks"].values()) for n in T8}
+                                                                            H["H6h21"] = dict(H["H6h20"])
+                                                                            H["H6h21"]["K13"] = (LES if ok8[40] else F,
+                                                                                                 "[D] Jacobson; G bleibt frei (Topologie und Anomalien fixieren den "
+                                                                                                 "Einstein-Hilbert-Koeffizienten nicht); Spin 2 braucht eine positive "
+                                                                                                 "Spektraldarstellung Q^2 C >= Z, die der ganze Formfaktor "
+                                                                                                 "e^{-p^2/M^2}/p^2 verletzt (Z40); freier masseloser Kern bei nu = 1 "
+                                                                                                 "(Wallach, Cayley), kein zusammengesetzter masseloser Spin-2-Pol")
+                                                                            H["H6h21"]["K15"] = (LES if ok8[40] else F,
+                                                                                                 "[unabhängige Elternverbindung] zwei Schnitte von O(1) tragen keine "
+                                                                                                 "lokale SU(2), erst O^2 der Euler-Folge; das Triplett von nabla_t ist "
+                                                                                                 "nur bei t = 1 masselos, der fermionisch stabilisierte Kanal liegt bei "
+                                                                                                 "t = 1/sqrt 2 (Z40): Randverbindung und schwache Verbindung sind "
+                                                                                                 "verschieden; Werte gegen Daten wie H6h20")
+                                                                            H["H6h21"]["K16"] = (LES if ok8[39] and ok8[40] else F,
+                                                                                                 "[Flussnaht G'] Gitterzigarre: Overlap-Index N in 36 Fällen, Wilson-"
+                                                                                                 "Massen linear -> 0, auch rückgewirkt; exakte Rückwirkungslösung; "
+                                                                                                 "Zufluss als E8-CS mit Anomaliematrix [[8,5],[5,4]] (Z39); aber "
+                                                                                                 "komplexer Fluss gibt Spin(10) nur auf geradem Niveau und lässt U(5) "
+                                                                                                 "übrig (Z39, Z40): Niveau 1 braucht Majorana-Eltern oder eine "
+                                                                                                 "Nahtsymmetrie")
+                                                                            H["H6h21"]["K20"] = (LES if ok8[40] else F,
+                                                                                                 "[ein Bündel] Deckhälften E_+ = O(1) + 3 O (h^0 = 5) und E_- = O(-1) "
+                                                                                                 "+ 3 O (h^0 = 3, h^1 = 0): Familienoperator mit Index 3 ohne Spiegel, "
+                                                                                                 "eine Generation mit V4-Hyperladung anomaliefrei (Z40); 3 x 16 = 48 "
+                                                                                                 "Weyl-Felder im freien Modell")
+                                                                            facts["F40_inflow_common_origin"] = {n: T8[n]["urteil"] for n in T8}
 
 order = [f"K{i}" for i in range(1, 21)]
 print("Gesamttabelle (P = hergeleitet, L = unter benannter Lesart, F = FAIL, O = OFFEN, E = EINGABE)\n")
