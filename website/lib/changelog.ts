@@ -42,6 +42,25 @@ export const CHANGELOG_MACROS: Record<string, string> =
 
 export const CHANGELOG: ChangelogEntry[] = [
   {
+    "date": "2026-11-24",
+    "dateLabel": "2026-11-24",
+    "heading": [
+      {
+        "k": "t",
+        "v": ": Pati–Salam proton-decay verdict corrected ("
+      },
+      {
+        "k": "c",
+        "v": "v1036"
+      },
+      {
+        "k": "t",
+        "v": ")"
+      }
+    ],
+    "items": []
+  },
+  {
     "date": "2026-11-06",
     "dateLabel": "2026-11-06",
     "heading": [

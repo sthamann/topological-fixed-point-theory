@@ -4,6 +4,26 @@
 
 Exact ledger statuses remain at the linked original rows and in registry.json. Citations are source links, not proof certification.
 
+## 2026-06-18 (QG.AMB.01 Tier-B made concrete: the seam-Calder\'on [formula in source] match, v277)
+
+[documents/changelog/sections/018-source.tex:15-26](../../../../documents/changelog/sections/018-source.tex#L15) · `section:f1a0b6f25c4c201d4774` · subsection
+
+v277_seam_calderon_e8_match.py ( QGAMB.TIERB.01) reduces Tier-B to ONE bit. \ the full [formula in source] matching target is computed and matches: [formula in source] , [formula in source] , the holomorphic character [formula in source] with a single primary and exactly [formula in source] weight-1 currents ( [formula in source] roots). \ the discriminator is holomorphy — the [formula in source] counterexample [form
+
+Explicit source references:
+
+- [verification/v277_seam_calderon_e8_match.py](../../../../verification/v277_seam_calderon_e8_match.py#L1) · explicit_script_identifier
+- [QGAMB.TIERB.01](../../../../verification/status_ledger.csv#L371) · explicit_claim_identifier · original status at linked ledger row
+- [verification/v276_qgeo_flat_closes_commutator.py](../../../../verification/v276_qgeo_flat_closes_commutator.py#L1) · explicit_script_identifier
+- [verification/v260_k3_kummer_unification.py](../../../../verification/v260_k3_kummer_unification.py#L1) · explicit_script_identifier
+- [QG.AMB.01](../../../../verification/status_ledger.csv#L47) · explicit_claim_identifier · original status at linked ledger row
+
+Navigation joins (both sources name the same Python identifier; statement equivalence is not inferred):
+
+- [(* ==== v277: seam-Calderon -> (E8)_1 matching certificate (QGAMB.TIERB.01) ==== v276 (flat-pillowcase commutator, numerical) is Python-only; v277's exact lattice discriminator (det E8 vs det D8) + the (E8)_1 character 248 are mirrored. *)](../../../../verification/wolfram/tfpt_readouts_extension.wl#L2120)
+- [(* ==== v260: one Kummer/K3 carries seam + carrier-16 + E8 (ARCH.K3.01) ==== *)](../../../../verification/wolfram/tfpt_readouts_extension.wl#L2033)
+- [experiments/lean4-carrier-rigidity/TfptCarrier/SeamDeckClosure.lean](../../../../experiments/lean4-carrier-rigidity/TfptCarrier/SeamDeckClosure.lean#L1)
+
 ## 2026-06-18 (QGEO.SYM.01 narrowed: the flat pillowcase closes the commutator to all orders, v276)
 
 [documents/changelog/sections/018-source.tex:27-40](../../../../documents/changelog/sections/018-source.tex#L27) · `section:25e03edabfb4b9161f7f` · subsection
@@ -2065,22 +2085,6 @@ Explicit source references:
 
 - [COSMO.NSTAR.01](../../../../verification/status_ledger.csv#L160) · explicit_claim_identifier · original status at linked ledger row
 - [verification/v86_nstar_reheating.py](../../../../verification/v86_nstar_reheating.py#L1) · explicit_script_identifier
-
-Navigation joins (both sources name the same Python identifier; statement equivalence is not inferred):
-
-- [(* ---- (v86) reheating arithmetic (scale chain; pivot solve stays Python) ---- *)](../../../../verification/wolfram/tfpt_readouts_extension.wl#L84)
-
-## 2026-06-12 (marker simplification to 4 classes + status reconciliation)
-
-[documents/changelog/sections/023-source.tex:242-263](../../../../documents/changelog/sections/023-source.tex#L242) · `section:4f6387455280982ea775` · subsection
-
-Four-class display markers. The reader-facing marker system is collapsed from eleven symbols to four: \ exact / machine-proven (identity, Lie/lattice, formalised, numerical FP), \ conditional (physical / bridge / readout under named hypotheses), \ open / axiom, and \ kill test. tex-artefacts/tfpt_style.tex defines mE/ mC/ mO/ mX and keeps the legacy tI tX names as aliases that render their class. All marker call-site
-
-Explicit source references:
-
-- [COSMO.NSTAR.01](../../../../verification/status_ledger.csv#L160) · explicit_claim_identifier · original status at linked ledger row
-- [verification/v86_nstar_reheating.py](../../../../verification/v86_nstar_reheating.py#L1) · explicit_script_identifier
-- [verification/status_ledger.csv](../../../../verification/status_ledger.csv#L1) · explicit_file_citation
 
 Navigation joins (both sources name the same Python identifier; statement equivalence is not inferred):
 

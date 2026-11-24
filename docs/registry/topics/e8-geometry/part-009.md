@@ -696,7 +696,7 @@ Explicit source references:
 
 ## Front matter / support
 
-[tex-artefacts/verification.tex:1-738](../../../../tex-artefacts/verification.tex#L1) · `section:ab9e7e520130ecc7da7c` · frontmatter
+[tex-artefacts/verification.tex:1-739](../../../../tex-artefacts/verification.tex#L1) · `section:ab9e7e520130ecc7da7c` · frontmatter
 
 @p3.5cmY@ Script & What it machine-checks \\ Script & What it machine-checks (continued) \\ 2r@ continued on next page\\ v1_ e8_ glue.py & glue theorem [formula in source] : [formula in source] , [formula in source] , [formula in source] , [formula in source] \\ v2_ carrier_ pascal.py & [formula in source] unique Pascal solution; [formula in source] , [formula in source] , [formula in source] , [formula in source] ,
 
@@ -847,6 +847,7 @@ Explicit source references:
 - [verification/v384_residual_certification.py](../../../../verification/v384_residual_certification.py#L1) · explicit_file_citation
 - [verification/v621_interacting_semigroup.py](../../../../verification/v621_interacting_semigroup.py#L1) · explicit_file_citation
 - [SEAM.KRONHEIMER.01](../../../../verification/status_ledger.csv#L540) · explicit_claim_identifier · original status at linked ledger row
+- [PS.THRESHOLD.02](../../../../verification/status_ledger.csv#L358) · explicit_claim_identifier · original status at linked ledger row
 - [verification/v814_k5_sixstep_transport.py](../../../../verification/v814_k5_sixstep_transport.py#L1) · explicit_file_citation
 - [verification/v347_seam_closure_modes.py](../../../../verification/v347_seam_closure_modes.py#L1) · explicit_script_identifier
 - [SEAM.CCC.01](../../../../verification/status_ledger.csv#L551) · explicit_claim_identifier · original status at linked ledger row
@@ -1297,6 +1298,7 @@ Explicit source references:
 - [verification/v853_bent_css_mangoldt.py](../../../../verification/v853_bent_css_mangoldt.py#L1) · explicit_file_citation
 - [verification/v387_corrections_gap.py](../../../../verification/v387_corrections_gap.py#L1) · explicit_file_citation
 - [verification/v238_modular_lindblad_dynamics.py](../../../../verification/v238_modular_lindblad_dynamics.py#L1) · explicit_script_identifier
+- [verification/v1036_ps_proton_real45.py](../../../../verification/v1036_ps_proton_real45.py#L1) · explicit_script_identifier
 - [verification/v256_orientability_poincare.py](../../../../verification/v256_orientability_poincare.py#L1) · explicit_file_citation
 - [TFPT.TOE.COMPLETE.01](../../../../verification/status_ledger.csv#L764) · explicit_claim_identifier · original status at linked ledger row
 - [verification/v533_ftransfer_disc7_norm.py](../../../../verification/v533_ftransfer_disc7_norm.py#L1) · explicit_script_identifier

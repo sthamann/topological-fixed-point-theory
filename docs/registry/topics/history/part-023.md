@@ -4,6 +4,40 @@
 
 Exact ledger statuses remain at the linked original rows and in registry.json. Citations are source links, not proof certification.
 
+## 2026-06-25 (The (LTO-RP) reduction of the keystone SEAM.EQUIV.01: v424)
+
+[documents/changelog/sections/012-source.tex:305-328](../../../../documents/changelog/sections/012-source.tex#L305) · `section:debae20192b75c7a987d` · subsection
+
+New module v424 ( SEAM.EQUIV.LTORP.01). An honest MMST-style reduction of the one open keystone — SEAM.EQUIV.01's intrinsic Bisognano–Wichmann lemma (the v308/ v309 residual) — to the recent commuting-projector theorem of Naaijkens–Penneys–Wallick ( arXiv:2605.10693, [NPW26]), with the central mapping corrected. \ the [formula in source] clock is a modular symmetry ( [formula in source] , v309/ v199), not the flow —
+
+Explicit source references:
+
+- [verification/v89_carrier_index_lemma.py](../../../../verification/v89_carrier_index_lemma.py#L1) · explicit_script_identifier
+- [verification/run_all.py](../../../../verification/run_all.py#L1) · explicit_file_citation
+- [verification/v281_holomorphy_modular_data.py](../../../../verification/v281_holomorphy_modular_data.py#L1) · explicit_script_identifier
+- [SEAM.EQUIV.01](../../../../verification/status_ledger.csv#L381) · explicit_claim_identifier · original status at linked ledger row
+- [verification/v308_seam_equiv_chain.py](../../../../verification/v308_seam_equiv_chain.py#L1) · explicit_script_identifier
+- [verification/v309_modular_bedrock.py](../../../../verification/v309_modular_bedrock.py#L1) · explicit_script_identifier
+- [verification/v199_seam_state_invariance.py](../../../../verification/v199_seam_state_invariance.py#L1) · explicit_script_identifier
+- [SEAM.EQUIV.LTORP.01](../../../../verification/status_ledger.csv#L491) · explicit_claim_identifier · original status at linked ledger row
+- [verification/v424_seam_lto_rp_reduction.py](../../../../verification/v424_seam_lto_rp_reduction.py#L1) · explicit_script_identifier
+
+Navigation joins (both sources name the same Python identifier; statement equivalence is not inferred):
+
+- [experiments/lean4-carrier-rigidity/TfptCarrier/AxiomCheck.lean](../../../../experiments/lean4-carrier-rigidity/TfptCarrier/AxiomCheck.lean#L1)
+- [(* ---- (v89) carrier index lemma ---- *)](../../../../verification/wolfram/tfpt_readouts_extension.wl#L118)
+- [experiments/lean4-carrier-rigidity/TfptCarrier/SeamApplicabilityLedger.lean](../../../../experiments/lean4-carrier-rigidity/TfptCarrier/SeamApplicabilityLedger.lean#L1)
+- [experiments/lean4-carrier-rigidity/TfptCarrier.lean](../../../../experiments/lean4-carrier-rigidity/TfptCarrier.lean#L1)
+- [experiments/lean4-carrier-rigidity/TfptCarrier/GlueUniqueness.lean](../../../../experiments/lean4-carrier-rigidity/TfptCarrier/GlueUniqueness.lean#L1)
+- [experiments/lean4-carrier-rigidity/TfptCarrier/AuditCheck.lean](../../../../experiments/lean4-carrier-rigidity/TfptCarrier/AuditCheck.lean#L1)
+- [(* ---- (v199) QGEO.STATE.01: [rho,H]=0 <=> H is mu4-character-block-diagonal ---- *)](../../../../verification/wolfram/tfpt_readouts_extension.wl#L1649)
+- [experiments/lean4-carrier-rigidity/TfptCarrier/SeamEquivChain.lean](../../../../experiments/lean4-carrier-rigidity/TfptCarrier/SeamEquivChain.lean#L1)
+- [experiments/lean4-carrier-rigidity/TfptCarrier/CartanDeterminants.lean](../../../../experiments/lean4-carrier-rigidity/TfptCarrier/CartanDeterminants.lean#L1)
+- [experiments/theory-contracts/original-paper-source-reconciliation-20261102/shorttime_20261105J/shorttime20261105J_lean/BWKeystoneCurrent.lean](../../../../experiments/theory-contracts/original-paper-source-reconciliation-20261102/shorttime_20261105J/shorttime20261105J_lean/BWKeystoneCurrent.lean#L1)
+- [experiments/lean4-carrier-rigidity/TfptCarrier/BWKeystone.lean](../../../../experiments/lean4-carrier-rigidity/TfptCarrier/BWKeystone.lean#L1)
+- [(* ==== v281: anyon-condensation tower + Gauss-Milgram (QGAMB.MODULAR.01) ==== *)](../../../../verification/wolfram/tfpt_readouts_extension.wl#L2154)
+- [experiments/lean4-carrier-rigidity/TfptCarrier/Mu4Commutation.lean](../../../../experiments/lean4-carrier-rigidity/TfptCarrier/Mu4Commutation.lean#L1)
+
 ## 2026-06-25 (No-Ambient-Dependency: no frozen readout is computed from QG.AMB.01: v423)
 
 [documents/changelog/sections/012-source.tex:329-351](../../../../documents/changelog/sections/012-source.tex#L329) · `section:2ee299d2f97d03685885` · subsection
@@ -2693,23 +2727,3 @@ Explicit source references:
 Navigation joins (both sources name the same Python identifier; statement equivalence is not inferred):
 
 - [(* ==== v278: S_pert -> S_phys LSZ bridge, one-loop optical theorem (QFT4D.SPERT.04) ==== *)](../../../../verification/wolfram/tfpt_readouts_extension.wl#L2142)
-
-## 2026-06-18 (QG.AMB.01 Tier-B made concrete: the seam-Calder\'on [formula in source] match, v277)
-
-[documents/changelog/sections/018-source.tex:15-26](../../../../documents/changelog/sections/018-source.tex#L15) · `section:f1a0b6f25c4c201d4774` · subsection
-
-v277_seam_calderon_e8_match.py ( QGAMB.TIERB.01) reduces Tier-B to ONE bit. \ the full [formula in source] matching target is computed and matches: [formula in source] , [formula in source] , the holomorphic character [formula in source] with a single primary and exactly [formula in source] weight-1 currents ( [formula in source] roots). \ the discriminator is holomorphy — the [formula in source] counterexample [form
-
-Explicit source references:
-
-- [verification/v277_seam_calderon_e8_match.py](../../../../verification/v277_seam_calderon_e8_match.py#L1) · explicit_script_identifier
-- [QGAMB.TIERB.01](../../../../verification/status_ledger.csv#L371) · explicit_claim_identifier · original status at linked ledger row
-- [verification/v276_qgeo_flat_closes_commutator.py](../../../../verification/v276_qgeo_flat_closes_commutator.py#L1) · explicit_script_identifier
-- [verification/v260_k3_kummer_unification.py](../../../../verification/v260_k3_kummer_unification.py#L1) · explicit_script_identifier
-- [QG.AMB.01](../../../../verification/status_ledger.csv#L47) · explicit_claim_identifier · original status at linked ledger row
-
-Navigation joins (both sources name the same Python identifier; statement equivalence is not inferred):
-
-- [(* ==== v277: seam-Calderon -> (E8)_1 matching certificate (QGAMB.TIERB.01) ==== v276 (flat-pillowcase commutator, numerical) is Python-only; v277's exact lattice discriminator (det E8 vs det D8) + the (E8)_1 character 248 are mirrored. *)](../../../../verification/wolfram/tfpt_readouts_extension.wl#L2120)
-- [(* ==== v260: one Kummer/K3 carries seam + carrier-16 + E8 (ARCH.K3.01) ==== *)](../../../../verification/wolfram/tfpt_readouts_extension.wl#L2033)
-- [experiments/lean4-carrier-rigidity/TfptCarrier/SeamDeckClosure.lean](../../../../experiments/lean4-carrier-rigidity/TfptCarrier/SeamDeckClosure.lean#L1)

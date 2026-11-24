@@ -222,8 +222,9 @@ hergeleitet, 6 unter benannter Lesart, keines gescheitert, offen oder gesetzt.
   - sin²θ_W = 3/8 ist bei H6 nicht induziert mit den Daten verträglich, sondern nur von einer nackten
     SO(10) geerbt (Z25). Nebenbefund: v266 zählt (15,1,1) komplex; mit der einen reellen 45 aus E₈
     und zwei Schleifen sind beide v266-Inhalte von Super-K ausgeschlossen. Unabhängig bestätigt
-    durch v1036 (`experiments/theory-contracts/ps-proton-real45-20261124/`, mit Vorschlag für die
-    Ledgerzeilen); PS.THRESHOLD.02 und PS.PROTON.02 sind im Ledger noch unverändert.
+    durch v1036 (`verification/v1036_ps_proton_real45.py`, Bericht in
+    `experiments/theory-contracts/ps-proton-real45-20261124/`); PS.THRESHOLD.02 und PS.PROTON.02
+    sind im Ledger korrigiert (24.11.), die abhängigen Zeilen noch nicht.
 - **Offen:**
   - Was die primitive Ladung bzw. den Sektor 1 und genau einen windenden Block wählt: Keine
     Grundzustandsregel gefunden; Lesarten sind ein Ordnungsfeld ohne Mittelwert oder N_fam = 3k

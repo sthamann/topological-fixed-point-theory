@@ -4,6 +4,22 @@
 
 Exact ledger statuses remain at the linked original rows and in registry.json. Citations are source links, not proof certification.
 
+## 2026-06-12 (marker simplification to 4 classes + status reconciliation)
+
+[documents/changelog/sections/023-source.tex:242-263](../../../../documents/changelog/sections/023-source.tex#L242) · `section:4f6387455280982ea775` · subsection
+
+Four-class display markers. The reader-facing marker system is collapsed from eleven symbols to four: \ exact / machine-proven (identity, Lie/lattice, formalised, numerical FP), \ conditional (physical / bridge / readout under named hypotheses), \ open / axiom, and \ kill test. tex-artefacts/tfpt_style.tex defines mE/ mC/ mO/ mX and keeps the legacy tI tX names as aliases that render their class. All marker call-site
+
+Explicit source references:
+
+- [COSMO.NSTAR.01](../../../../verification/status_ledger.csv#L160) · explicit_claim_identifier · original status at linked ledger row
+- [verification/v86_nstar_reheating.py](../../../../verification/v86_nstar_reheating.py#L1) · explicit_script_identifier
+- [verification/status_ledger.csv](../../../../verification/status_ledger.csv#L1) · explicit_file_citation
+
+Navigation joins (both sources name the same Python identifier; statement equivalence is not inferred):
+
+- [(* ---- (v86) reheating arithmetic (scale chain; pivot solve stays Python) ---- *)](../../../../verification/wolfram/tfpt_readouts_extension.wl#L84)
+
 ## 2026-06-12 (version system, predictions/K5, readability pass B3)
 
 [documents/changelog/sections/023-source.tex:264-302](../../../../documents/changelog/sections/023-source.tex#L264) · `section:9b652b6d86057eb55f7d` · subsection
@@ -1208,9 +1224,3 @@ Aus [formula in source] folgt [formula in source] . Die historischen Größen [f
 [experiments/theory-contracts/universalraum-paired-release-20260914/source-v1.1/TFPT_Universalraum_LaTeX_2026-09-14/chapters/09_physik.tex:120-145](../../../../experiments/theory-contracts/universalraum-paired-release-20260914/source-v1.1/TFPT_Universalraum_LaTeX_2026-09-14/chapters/09_physik.tex#L120) · `section:3f6a01c46b3817e1dabe` · section
 
 Der historische Quellmassenansatz lautet Die sektorabhängigen [formula in source] sind nicht automatisch eins. Die Restklassenmatrix mit Zeilen [formula in source] , [formula in source] , [formula in source] hat Determinante acht und charakteristisches Polynom [formula in source] . Das sind interne Daten, keine direkte Massenmessung.
-
-## Die übrigen Zweige bleiben Teil des Bildes
-
-[experiments/theory-contracts/universalraum-paired-release-20260914/source-v1.1/TFPT_Universalraum_LaTeX_2026-09-14/chapters/09_physik.tex:161-176](../../../../experiments/theory-contracts/universalraum-paired-release-20260914/source-v1.1/TFPT_Universalraum_LaTeX_2026-09-14/chapters/09_physik.tex#L161) · `section:80e152b444bb49d10954` · section
-
-L41mmL46mmL63mm Zweig& Historischer Quellwert& Offener Anteil\\ Starke CP-Phase& [formula in source] im Pfaffian-Zweig&Positives physisches Maß und nichtperturbativer Transfer.\\ Elektrische Dipolmomente&Führend null oder stark unterdrückt&Keine pauschale Null sämtlicher SM-Beiträge.\\ Axion& [formula in source] GeV; [formula in source] eV&Externe Planckskala und QCD-Massenrelation.\\ Neutrinomassen&Summe um [formula

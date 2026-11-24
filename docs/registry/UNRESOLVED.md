@@ -2,7 +2,7 @@
 
 Generated source-navigation diagnostics; unresolved means no unique local target was asserted. Historical/moved-project references may be intentional. Absence of a citation is not absence of a proof.
 
-Unresolved explicit citation groups: **4098**. Evidence entities without incoming indexed citation: **1500**.
+Unresolved explicit citation groups: **4098**. Evidence entities without incoming indexed citation: **1611**.
 
 The full precise list (section IDs, physical lines, tokens, candidates) is in `registry.json` → `diagnostics`. This page groups repeated tokens for readability.
 

@@ -803,7 +803,7 @@ Navigation joins (both sources name the same Python identifier; statement equiva
 
 ## Front matter / support
 
-[documents/tfpt_research_contracts/sections/004-source.tex:1-394](../../../../documents/tfpt_research_contracts/sections/004-source.tex#L1) · `section:a153934887244824336d` · frontmatter
+[documents/tfpt_research_contracts/sections/004-source.tex:1-404](../../../../documents/tfpt_research_contracts/sections/004-source.tex#L1) · `section:a153934887244824336d` · frontmatter
 
 (xxi) The lattice Sugawara current algebra ( v454_seam_edge_virasoro.py): testing the cited MMST ``Koo–Saleur generators [formula in source] continuum Virasoro with the correct [formula in source] '' fact on the edge algebra, not just its central charge. The critical free-fermion ring has the Affleck–Cardy Casimir energy [formula in source] fitting [formula in source] ( [formula in source] per Majorana, [formula in s
 
@@ -923,6 +923,7 @@ Explicit source references:
 - [SEAM.CLOCK.RIGIDITY.01](../../../../verification/status_ledger.csv#L570) · explicit_claim_identifier · original status at linked ledger row
 - [verification/v1_e8_glue.py](../../../../verification/v1_e8_glue.py#L1) · explicit_script_identifier
 - [TfptCarrier.SeamResidualAxiom.glue_locality_integers](../../../../experiments/lean4-carrier-rigidity/TfptCarrier/SeamResidualAxiom.lean#L195) · explicit_lean_symbol
+- [verification/v1036_ps_proton_real45.py](../../../../verification/v1036_ps_proton_real45.py#L1) · explicit_file_citation
 - [TfptCarrier.SeamResidualAxiom.collar_invariants](../../../../experiments/lean4-carrier-rigidity/TfptCarrier/SeamResidualAxiom.lean#L258) · explicit_lean_symbol
 - [SEAM.EQUIV.01](../../../../verification/status_ledger.csv#L381) · explicit_claim_identifier · original status at linked ledger row
 

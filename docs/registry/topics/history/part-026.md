@@ -4,6 +4,12 @@
 
 Exact ledger statuses remain at the linked original rows and in registry.json. Citations are source links, not proof certification.
 
+## Die übrigen Zweige bleiben Teil des Bildes
+
+[experiments/theory-contracts/universalraum-paired-release-20260914/source-v1.1/TFPT_Universalraum_LaTeX_2026-09-14/chapters/09_physik.tex:161-176](../../../../experiments/theory-contracts/universalraum-paired-release-20260914/source-v1.1/TFPT_Universalraum_LaTeX_2026-09-14/chapters/09_physik.tex#L161) · `section:80e152b444bb49d10954` · section
+
+L41mmL46mmL63mm Zweig& Historischer Quellwert& Offener Anteil\\ Starke CP-Phase& [formula in source] im Pfaffian-Zweig&Positives physisches Maß und nichtperturbativer Transfer.\\ Elektrische Dipolmomente&Führend null oder stark unterdrückt&Keine pauschale Null sämtlicher SM-Beiträge.\\ Axion& [formula in source] GeV; [formula in source] eV&Externe Planckskala und QCD-Massenrelation.\\ Neutrinomassen&Summe um [formula
+
 ## Zuse und Wolfram: eine Verwandtschaft ohne Rangordnung
 
 [experiments/theory-contracts/universalraum-paired-release-20260914/source-v1.1/TFPT_Universalraum_LaTeX_2026-09-14/chapters/10_ausblick.tex:2-15](../../../../experiments/theory-contracts/universalraum-paired-release-20260914/source-v1.1/TFPT_Universalraum_LaTeX_2026-09-14/chapters/10_ausblick.tex#L2) · `section:4a91dc99b94bb4d1e454` · section

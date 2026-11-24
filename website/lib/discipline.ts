@@ -67,20 +67,20 @@ export const DISCIPLINE: DisciplineStats =
     "retired": 5,
     "dist": {
       "E": 192,
-      "C": 217,
+      "C": 216,
       "O": 329,
-      "X": 39,
+      "X": 40,
       "AXIOM": 2,
       "OTHER": 10
     },
-    "killRows": 262
+    "killRows": 263
   },
   "suite": {
-    "modules": 707,
-    "checkSites": 8231,
-    "mustfailOccurrences": 3344,
-    "mustfailModules": 302,
-    "eMarks": 3704,
+    "modules": 708,
+    "checkSites": 8240,
+    "mustfailOccurrences": 3346,
+    "mustfailModules": 303,
+    "eMarks": 3713,
     "cMarks": 1411,
     "seededModules": 81,
     "sympyModules": 443
@@ -111,7 +111,7 @@ export const DISCIPLINE: DisciplineStats =
   "anchors": {
     "recomputed": 3,
     "citations": {
-      "Jacobi": 17,
+      "Jacobi": 18,
       "Construction A": 10,
       "Shephard": 2
     },

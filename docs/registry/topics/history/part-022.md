@@ -4,6 +4,20 @@
 
 Exact ledger statuses remain at the linked original rows and in registry.json. Citations are source links, not proof certification.
 
+## =150 2026-07-23 (IX) (website entry redesign: narrative home, honesty band, proof strip, guided-tour route — editorial only, NO new modules, NO marker moves)
+
+[documents/changelog/sections/003-source.tex:202-208](../../../../documents/changelog/sections/003-source.tex#L202) · `section:d7de69fc09310845215e` · subsection
+
+Website home. Slim one-viewport hero (proof strip: 523 machine-checked modules [formula in source] Wolfram mirror [formula in source] Lean carrier [formula in source] 0 external replications yet; copyable python run_all.py [formula in source] ALL CHECKS PASSED; CTA trio film / browser check / kill board). Narrative order: Hero [formula in source] IntroVideo ( \#intro-video kept) [formula in source] In one breath [for
+
+Explicit source references:
+
+- [verification/v529_seam_interacting_toy_fk.py](../../../../verification/v529_seam_interacting_toy_fk.py#L1) · explicit_script_identifier
+
+Navigation joins (both sources name the same Python identifier; statement equivalence is not inferred):
+
+- [(* ==== v529 round: SEAM.INT.FKTOY.01 -- interacting FK toy / Kill-Test-2 shadow. Exact mirrors: (i) Z8 integer identities; (ii) straddle combinatorics; (iii) FK binomial ladder multiplicities. 256-dim spectra Python-only. ==== *)](../../../../verification/wolfram/tfpt_readouts_extension.wl#L8246)
+
 ## =150 2026-07-23 (VIII) (prominence pass — the v519–v529 breakthroughs lifted into the FRAME texts of the papers and the website data layer; purely editorial, NO new modules, NO marker moves — (1) tfpt_5_redteam gains the seam round Target G: the ten-test side-blind scoreboard on the alignment bit ( v512/ v521/ v525/ v529) and the first firing kill test of the programme — the interacting straddle law ( v529), documented as a named threat AND the first hard selection principle for [formula in source] , fenced at toy level; (2) the bit-reduction statements in tfpt_1, tfpt_2 and origin_theory extended from the v512 state to the current state (ten side-blind tests, the twist-class definition with gauge-robust order parameter, ``in principle interferometrically readable'', v528 — the bit stays formal input); (3) the thermal seam lifted into the origin_theory horizon chapter (new keybox: [formula in source] measured, temperature the third leg of [formula in source] , v526) and into the tfpt_horizon_readouts head keybox; (4) tfpt_3 title/keybox now carry the thirty-step story and ``the measure chain is derived'' ( v520/ v523) prominently; (5) tfpt_research_contracts title/intro keybox now show the executed stages of CELEST.SEAM.01 (M1–M3, [formula in source] -chains decided, [formula in source] derived) and WOIT.OS.TWISTOR.01 ( [formula in source] executed, [formula in source] next under the straddle constraint); both contracts stay Open)
 
 [documents/changelog/sections/003-source.tex:209-230](../../../../documents/changelog/sections/003-source.tex#L209) · `section:8b84d2fb55ac4a48656b` · subsection
@@ -2750,37 +2764,3 @@ Navigation joins (both sources name the same Python identifier; statement equiva
 - [(* ---- (v99) Koide flow time ---- *)](../../../../verification/wolfram/tfpt_readouts_extension.wl#L304)
 - [experiments/lean4-carrier-rigidity/TfptCarrier/SpectralGapAttractor.lean](../../../../experiments/lean4-carrier-rigidity/TfptCarrier/SpectralGapAttractor.lean#L1)
 - [(* v320 GALOIS.CP.PREDICT.01 -- the falsifiable CP lock *)](../../../../verification/wolfram/tfpt_readouts_extension.wl#L2216)
-
-## 2026-06-25 (The (LTO-RP) reduction of the keystone SEAM.EQUIV.01: v424)
-
-[documents/changelog/sections/012-source.tex:305-328](../../../../documents/changelog/sections/012-source.tex#L305) · `section:debae20192b75c7a987d` · subsection
-
-New module v424 ( SEAM.EQUIV.LTORP.01). An honest MMST-style reduction of the one open keystone — SEAM.EQUIV.01's intrinsic Bisognano–Wichmann lemma (the v308/ v309 residual) — to the recent commuting-projector theorem of Naaijkens–Penneys–Wallick ( arXiv:2605.10693, [NPW26]), with the central mapping corrected. \ the [formula in source] clock is a modular symmetry ( [formula in source] , v309/ v199), not the flow —
-
-Explicit source references:
-
-- [verification/v89_carrier_index_lemma.py](../../../../verification/v89_carrier_index_lemma.py#L1) · explicit_script_identifier
-- [verification/run_all.py](../../../../verification/run_all.py#L1) · explicit_file_citation
-- [verification/v281_holomorphy_modular_data.py](../../../../verification/v281_holomorphy_modular_data.py#L1) · explicit_script_identifier
-- [SEAM.EQUIV.01](../../../../verification/status_ledger.csv#L381) · explicit_claim_identifier · original status at linked ledger row
-- [verification/v308_seam_equiv_chain.py](../../../../verification/v308_seam_equiv_chain.py#L1) · explicit_script_identifier
-- [verification/v309_modular_bedrock.py](../../../../verification/v309_modular_bedrock.py#L1) · explicit_script_identifier
-- [verification/v199_seam_state_invariance.py](../../../../verification/v199_seam_state_invariance.py#L1) · explicit_script_identifier
-- [SEAM.EQUIV.LTORP.01](../../../../verification/status_ledger.csv#L491) · explicit_claim_identifier · original status at linked ledger row
-- [verification/v424_seam_lto_rp_reduction.py](../../../../verification/v424_seam_lto_rp_reduction.py#L1) · explicit_script_identifier
-
-Navigation joins (both sources name the same Python identifier; statement equivalence is not inferred):
-
-- [experiments/lean4-carrier-rigidity/TfptCarrier/AxiomCheck.lean](../../../../experiments/lean4-carrier-rigidity/TfptCarrier/AxiomCheck.lean#L1)
-- [(* ---- (v89) carrier index lemma ---- *)](../../../../verification/wolfram/tfpt_readouts_extension.wl#L118)
-- [experiments/lean4-carrier-rigidity/TfptCarrier/SeamApplicabilityLedger.lean](../../../../experiments/lean4-carrier-rigidity/TfptCarrier/SeamApplicabilityLedger.lean#L1)
-- [experiments/lean4-carrier-rigidity/TfptCarrier.lean](../../../../experiments/lean4-carrier-rigidity/TfptCarrier.lean#L1)
-- [experiments/lean4-carrier-rigidity/TfptCarrier/GlueUniqueness.lean](../../../../experiments/lean4-carrier-rigidity/TfptCarrier/GlueUniqueness.lean#L1)
-- [experiments/lean4-carrier-rigidity/TfptCarrier/AuditCheck.lean](../../../../experiments/lean4-carrier-rigidity/TfptCarrier/AuditCheck.lean#L1)
-- [(* ---- (v199) QGEO.STATE.01: [rho,H]=0 <=> H is mu4-character-block-diagonal ---- *)](../../../../verification/wolfram/tfpt_readouts_extension.wl#L1649)
-- [experiments/lean4-carrier-rigidity/TfptCarrier/SeamEquivChain.lean](../../../../experiments/lean4-carrier-rigidity/TfptCarrier/SeamEquivChain.lean#L1)
-- [experiments/lean4-carrier-rigidity/TfptCarrier/CartanDeterminants.lean](../../../../experiments/lean4-carrier-rigidity/TfptCarrier/CartanDeterminants.lean#L1)
-- [experiments/theory-contracts/original-paper-source-reconciliation-20261102/shorttime_20261105J/shorttime20261105J_lean/BWKeystoneCurrent.lean](../../../../experiments/theory-contracts/original-paper-source-reconciliation-20261102/shorttime_20261105J/shorttime20261105J_lean/BWKeystoneCurrent.lean#L1)
-- [experiments/lean4-carrier-rigidity/TfptCarrier/BWKeystone.lean](../../../../experiments/lean4-carrier-rigidity/TfptCarrier/BWKeystone.lean#L1)
-- [(* ==== v281: anyon-condensation tower + Gauss-Milgram (QGAMB.MODULAR.01) ==== *)](../../../../verification/wolfram/tfpt_readouts_extension.wl#L2154)
-- [experiments/lean4-carrier-rigidity/TfptCarrier/Mu4Commutation.lean](../../../../experiments/lean4-carrier-rigidity/TfptCarrier/Mu4Commutation.lean#L1)

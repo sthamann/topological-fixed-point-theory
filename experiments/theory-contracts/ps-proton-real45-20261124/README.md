@@ -3,15 +3,17 @@
 Anlass: Der H6-RG-Test z25 (`experiments/exploration/2026-11-23-phasenraum-f5-holocode/z25_rg_test.py`,
 Commit 4ac3cc23f) hat nebenbei gefunden, dass `v266_ps_threshold_proton.py` die SU(4)-Adjungierte
 (15,1,1) doppelt zählt. Dieser Bericht prüft das unabhängig und schlägt neue Ledgertexte vor.
-**Das Ledger ist nicht geändert; die Entscheidung liegt beim Nutzer.**
+**Umgesetzt am 24.11.2026 (Freigabe durch den Nutzer):** PS.THRESHOLD.02 und PS.PROTON.02 tragen die
+Texte aus Abschnitt 5, v1036 ist als `verification/v1036_ps_proton_real45.py` registriert (run_all.py,
+script_registry.csv, Changelog, Zitat in `tfpt_research_contracts`). Die abhängigen Zeilen aus
+Abschnitt 6 sind noch nicht geändert.
 
-Prüfskript: [`v1036_ps_proton_real45.py`](v1036_ps_proton_real45.py) in diesem Ordner, Ausgabe
-[`ausgabe_v1036.txt`](ausgabe_v1036.txt); eigene Gruppentheorie (Brüche) und eigene Löser, keine
-Übernahme aus z25. Das Skript liegt bis zur Ledgerentscheidung bewusst nicht unter `verification/`
-(siehe Abschnitt 7); es lädt `tfpt_constants` von dort.
+Prüfskript: [`verification/v1036_ps_proton_real45.py`](../../../verification/v1036_ps_proton_real45.py),
+Ausgabe [`ausgabe_v1036.txt`](ausgabe_v1036.txt); eigene Gruppentheorie (Brüche) und eigene Löser,
+keine Übernahme aus z25.
 
 ```bash
-.venv/bin/python -B experiments/theory-contracts/ps-proton-real45-20261124/v1036_ps_proton_real45.py   # 9 passed, 0 failed, ~11 s
+cd verification && ../.venv/bin/python -B v1036_ps_proton_real45.py   # 9 passed, 0 failed, ~11 s
 ```
 
 ## Urteil
@@ -184,7 +186,7 @@ Weitere Stellen ohne Ledger, die die alten Zahlen tragen:
 - `docs/research/TFPT-STAND.md` (Z. 223–225, „Prüfung offen“): kann nach der Entscheidung auf diesen
   Bericht verweisen.
 
-## 7. Einbindung von v1036 (nach der Ledgerentscheidung)
+## 7. Einbindung von v1036 (am 24.11. ausgeführt)
 
 Unter `verification/` meldete `audit_sync.py` v1036 als „nicht in run_all.py registriert“, und
 `website/lib/discipline.ts` wurde veraltet. Die Registrierung setzt voraus, dass eine Ledgerzeile
