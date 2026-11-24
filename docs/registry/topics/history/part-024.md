@@ -4,6 +4,24 @@
 
 Exact ledger statuses remain at the linked original rows and in registry.json. Citations are source links, not proof certification.
 
+## 2026-06-18 (4D QFT: the [formula in source] LSZ bridge [formula in source] one-loop unitarity, v278)
+
+[documents/changelog/sections/018-source.tex:1-14](../../../../documents/changelog/sections/018-source.tex#L1) · `section:4972356a38c52e50cf39` · subsection
+
+v278_lsz_bridge_unitarity.py ( QFT4D.SPERT.04) connects the perturbative S-matrix to the physical asymptotic one and verifies one-loop unitarity. \ LSZ bridge: the EG [formula in source] -products of [formula in source] ( v269) are the OS Wick-rotated correlators ( v240), so amputate [formula in source] on-shell-residue gives [formula in source] ; \ the gap [formula in source] gives Haag–Ruelle asymptotic states. \ o
+
+Explicit source references:
+
+- [verification/v240_gns_os_reconstruction.py](../../../../verification/v240_gns_os_reconstruction.py#L1) · explicit_script_identifier
+- [verification/v269_spert_paqft_skeleton.py](../../../../verification/v269_spert_paqft_skeleton.py#L1) · explicit_script_identifier
+- [QFT4D.SPERT.04](../../../../verification/status_ledger.csv#L372) · explicit_claim_identifier · original status at linked ledger row
+- [verification/v278_lsz_bridge_unitarity.py](../../../../verification/v278_lsz_bridge_unitarity.py#L1) · explicit_script_identifier
+- [QG.AMB.01](../../../../verification/status_ledger.csv#L47) · explicit_claim_identifier · original status at linked ledger row
+
+Navigation joins (both sources name the same Python identifier; statement equivalence is not inferred):
+
+- [(* ==== v278: S_pert -> S_phys LSZ bridge, one-loop optical theorem (QFT4D.SPERT.04) ==== *)](../../../../verification/wolfram/tfpt_readouts_extension.wl#L2142)
+
 ## 2026-06-18 (QG.AMB.01 Tier-B made concrete: the seam-Calder\'on [formula in source] match, v277)
 
 [documents/changelog/sections/018-source.tex:15-26](../../../../documents/changelog/sections/018-source.tex#L15) · `section:f1a0b6f25c4c201d4774` · subsection
@@ -2074,18 +2092,3 @@ Navigation joins (both sources name the same Python identifier; statement equiva
 [documents/changelog/sections/023-source.tex:202-220](../../../../documents/changelog/sections/023-source.tex#L202) · `section:958f74ef121b831419d8` · subsection
 
 Shared header/footer on tfpt_3. tfpt_3_e8_audit_bootstrap dropped its custom footmarkers footer (the post-collapse four- \ artefact) and inherits the shared tfpt_style header/footer with the version stamp; the box-orphan needspace guards are kept. Fewer boxes, embedded in text. Narrative/commentary callouts converted to run-in bold paragraphs (boxed one-line formulas to keyeq): tfpt_3 from [formula in source] to [for
-
-## 2026-06-12 (tfpt_1 / tfpt_2 style alignment + box reduction)
-
-[documents/changelog/sections/023-source.tex:221-241](../../../../documents/changelog/sections/023-source.tex#L221) · `section:5cb9ec06306c576c2af2` · subsection
-
-Shared header/footer everywhere. tfpt_1_architecture_e8 dropped its custom footmarkers footer (which after the marker collapse showed four redundant ) and now inherits the shared tfpt_style header/footer with the version stamp, identical to every other document. Fewer boxes, embedded in text. The narrative/commentary callouts of both documents are converted to run-in bold paragraphs (and the boxed one-line formulas t
-
-Explicit source references:
-
-- [COSMO.NSTAR.01](../../../../verification/status_ledger.csv#L160) · explicit_claim_identifier · original status at linked ledger row
-- [verification/v86_nstar_reheating.py](../../../../verification/v86_nstar_reheating.py#L1) · explicit_script_identifier
-
-Navigation joins (both sources name the same Python identifier; statement equivalence is not inferred):
-
-- [(* ---- (v86) reheating arithmetic (scale chain; pivot solve stays Python) ---- *)](../../../../verification/wolfram/tfpt_readouts_extension.wl#L84)

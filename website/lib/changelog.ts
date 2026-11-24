@@ -47,6 +47,25 @@ export const CHANGELOG: ChangelogEntry[] = [
     "heading": [
       {
         "k": "t",
+        "v": ": positivity note for the entire-form-factor spin-2 rows ("
+      },
+      {
+        "k": "c",
+        "v": "v1037"
+      },
+      {
+        "k": "t",
+        "v": ")"
+      }
+    ],
+    "items": []
+  },
+  {
+    "date": "2026-11-24",
+    "dateLabel": "2026-11-24",
+    "heading": [
+      {
+        "k": "t",
         "v": ": Pati–Salam proton-decay verdict corrected ("
       },
       {

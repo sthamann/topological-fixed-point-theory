@@ -4,6 +4,12 @@
 
 Exact ledger statuses remain at the linked original rows and in registry.json. Citations are source links, not proof certification.
 
+## 8.1 Ein überprüfbarer Unterbestimmtheitssatz
+
+[documents/experiments--theory-contracts--universalraum-spin-lift-basics-20260915--tmp--pdfs--TFPT_Universalraum_Spinlift_Hauptdokument_2026-09-15_v1.6.10/sections/020-subsection-8-die-fundamentale-frage-was-fehlt.tex:4-32](../../../../documents/experiments--theory-contracts--universalraum-spin-lift-basics-20260915--tmp--pdfs--TFPT_Universalraum_Spinlift_Hauptdokument_2026-09-15_v1.6.10/sections/020-subsection-8-die-fundamentale-frage-was-fehlt.tex#L4) · `section:7f06ec0c70ab2a24d278` · subsubsection
+
+Betrachte bei festem W dieselbe Familie [formula in source] . Alle diese Hamiltonoperatoren besitzen die gleiche innere Quellsymmetrie, dieselbe Ladungserhaltung und denselben kommutierenden endlichen Clock. Dennoch unterscheiden sie sich dynamisch. Schon für dieselbe gefüllte Referenz F ist die dimensionslose Momentenkombination
+
 ## TFPT / Universalraum: Clock, gemeinsame Quelle und tatsächlicher Transport
 
 [documents/experiments--theory-contracts--universalraum-spin-lift-basics-20260915--tmp--pdfs--TFPT_Universalraum_Spinlift_Hauptdokument_2026-09-15_v1.6.10/sections/022-subsection-b7-abgleich-des-zuletzt-eingesandten-berichts.tex:95-98](../../../../documents/experiments--theory-contracts--universalraum-spin-lift-basics-20260915--tmp--pdfs--TFPT_Universalraum_Spinlift_Hauptdokument_2026-09-15_v1.6.10/sections/022-subsection-b7-abgleich-des-zuletzt-eingesandten-berichts.tex#L95) · `section:64fffe38c59f934adfa5` · section
@@ -2487,9 +2493,3 @@ Die alte Architektur benutzt die [formula in source] -Spinorstruktur und den [fo
 [documents/tfpt_explorer--docs--session-2026-09-28--TFPT_Gesamtsynthese_2026-09-28/sections/003-subsection-wo-die-ergebnisse-der-sitzung-in-dieses-bild-.tex:100-101](../../../../documents/tfpt_explorer--docs--session-2026-09-28--TFPT_Gesamtsynthese_2026-09-28/sections/003-subsection-wo-die-ergebnisse-der-sitzung-in-dieses-bild-.tex#L100) · `section:38a70245f636d0b354c2` · section
 
 No opening prose excerpt; see the source.
-
-## Mehrere Uhren können dieselbe Struktur ablesen
-
-[documents/tfpt_explorer--docs--session-2026-09-28--TFPT_Gesamtsynthese_2026-09-28/sections/003-subsection-wo-die-ergebnisse-der-sitzung-in-dieses-bild-.tex:102-114](../../../../documents/tfpt_explorer--docs--session-2026-09-28--TFPT_Gesamtsynthese_2026-09-28/sections/003-subsection-wo-die-ergebnisse-der-sitzung-in-dieses-bild-.tex#L102) · `section:4ee6daaa9dc2f790fafa` · subsection
-
-Die ursprünglichen Clock-Strukturen enthalten mit den Exponenten [formula in source] . Daneben steht die vierfache Markierung. [formula in source] ist keine Untergruppe eines zyklischen 30-Taktes. Der tatsächliche Anschluss verwendet unter anderem eine Wirkung der Form Die komplexe Reflexionsgruppe [formula in source] hat Ordnung [formula in source] , sechzig Reflexionen und Invariantengrade [formula in source] . Die

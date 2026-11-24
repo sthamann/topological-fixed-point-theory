@@ -4,6 +4,49 @@
 
 Exact ledger statuses remain at the linked original rows and in registry.json. Citations are source links, not proof certification.
 
+## 2026-06-17 (The Modular Spectral Closure: Dirac as covariance induction, the modular cutoff, the Kummer/K3 unification, and the assembly certificate, v258– v261)
+
+[documents/changelog/sections/018-source.tex:268-310](../../../../documents/changelog/sections/018-source.tex#L268) · `section:ca7f6aced60b17ae6709` · subsection
+
+v258_dirac_covariance_induction.py ( PS.DIRAC.03) closes the ``posited Yukawa vs derived operator'' gap of v250/ v252. The finite Dirac operator [formula in source] is the modular/covariance induction of the boundary seam quasi-free (KMS, [formula in source] ) state: a Gaussian state is fixed by its covariance [formula in source] (a positive contraction) with one-particle modular Hamiltonian [formula in source] (Arak
+
+Explicit source references:
+
+- [verification/v260_k3_kummer_unification.py](../../../../verification/v260_k3_kummer_unification.py#L1) · explicit_file_citation
+- [verification/v239_kms_thermal_time.py](../../../../verification/v239_kms_thermal_time.py#L1) · explicit_script_identifier
+- [PS.SPECACT.02](../../../../verification/status_ledger.csv#L345) · explicit_claim_identifier · original status at linked ledger row
+- [verification/v214_seam_pillowcase.py](../../../../verification/v214_seam_pillowcase.py#L1) · explicit_script_identifier
+- [PS.DIRAC.03](../../../../verification/status_ledger.csv#L344) · explicit_claim_identifier · original status at linked ledger row
+- [verification/v261_modular_spectral_closure.py](../../../../verification/v261_modular_spectral_closure.py#L1) · explicit_script_identifier
+- [verification/v1_e8_glue.py](../../../../verification/v1_e8_glue.py#L1) · explicit_script_identifier
+- [verification/v252_full_finite_triple.py](../../../../verification/v252_full_finite_triple.py#L1) · explicit_script_identifier
+- [verification/v232_e8_kleinian_seam.py](../../../../verification/v232_e8_kleinian_seam.py#L1) · explicit_script_identifier
+- [QG.AMB.01](../../../../verification/status_ledger.csv#L47) · explicit_claim_identifier · original status at linked ledger row
+- [verification/v18_quark_yukawa.py](../../../../verification/v18_quark_yukawa.py#L1) · explicit_script_identifier
+- [verification/v197_rr_carrier_clifford_d5.py](../../../../verification/v197_rr_carrier_clifford_d5.py#L1) · explicit_script_identifier
+- [verification/v253_kappa_scalaron_ps.py](../../../../verification/v253_kappa_scalaron_ps.py#L1) · explicit_script_identifier
+- [verification/v58_seam_horizon_chain.py](../../../../verification/v58_seam_horizon_chain.py#L1) · explicit_script_identifier
+- [verification/v238_modular_lindblad_dynamics.py](../../../../verification/v238_modular_lindblad_dynamics.py#L1) · explicit_script_identifier
+- [verification/v255_spectral_action_expansion.py](../../../../verification/v255_spectral_action_expansion.py#L1) · explicit_script_identifier
+- [verification/v259_modular_cutoff_kappa.py](../../../../verification/v259_modular_cutoff_kappa.py#L1) · explicit_file_citation
+- [verification/v258_dirac_covariance_induction.py](../../../../verification/v258_dirac_covariance_induction.py#L1) · explicit_script_identifier
+- [QFT.MSC.01](../../../../verification/status_ledger.csv#L347) · explicit_claim_identifier · original status at linked ledger row
+- [verification/v236_brieskorn_capstone.py](../../../../verification/v236_brieskorn_capstone.py#L1) · explicit_script_identifier
+- [verification/v250_dirac_triple_contract.py](../../../../verification/v250_dirac_triple_contract.py#L1) · explicit_script_identifier
+- [ARCH.K3.01](../../../../verification/status_ledger.csv#L346) · explicit_claim_identifier · original status at linked ledger row
+- [QGEO.SYM.01](../../../../verification/status_ledger.csv#L261) · explicit_claim_identifier · original status at linked ledger row
+
+Navigation joins (both sources name the same Python identifier; statement equivalence is not inferred):
+
+- [(* ---- (v197) ARCH.RRCAR.02: even Clifford of the 5-dim carrier = the D5 half-spinor ---- *)](../../../../verification/wolfram/tfpt_readouts_extension.wl#L1631)
+- [(* ==== v259: the modular/KMS spectral-action cutoff fixes f_2/f_0 = 1 (PS.SPECACT.02) ==== v258 (Dirac as covariance induction) is numerical matrix-log linear algebra -> Python-only. *)](../../../../verification/wolfram/tfpt_readouts_extension.wl#L2014)
+- [(* ---- (v58) seam-horizon chain: one-sided Gauss-Bonnet, KMS, S_BH, RT in seam units ---- *)](../../../../verification/wolfram/tfpt_readouts.wl#L270)
+- [(* ==== v232: the seam as the E8 Kleinian singularity (du Val resolution + link) ==== *)](../../../../verification/wolfram/tfpt_readouts_extension.wl#L1895)
+- [(* ==== v236: the (2,3,5) Brieskorn singularity generates the skeleton ==== *)](../../../../verification/wolfram/tfpt_readouts_extension.wl#L1975)
+- [(* ==== v260: one Kummer/K3 carries seam + carrier-16 + E8 (ARCH.K3.01) ==== *)](../../../../verification/wolfram/tfpt_readouts_extension.wl#L2033)
+- [(* ---- (v1) E8 glue arithmetic ---- *)](../../../../verification/wolfram/tfpt_readouts.wl#L46)
+- [(* ---- (v214) QGEO.PILLOW.01: pillowcase reduction -- cross-ratio 2 => j=1728 => order-4 CM ---- *)](../../../../verification/wolfram/tfpt_readouts_extension.wl#L1727)
+
 ## 2026-06-17 (The static [formula in source] dynamic flip: modular flow [formula in source] a recovery Lindblad generator, v238)
 
 [documents/changelog/sections/019-source.tex:86-105](../../../../documents/changelog/sections/019-source.tex#L86) · `section:9f084ccace7baa00bf8d` · subsection
@@ -1469,9 +1512,3 @@ Explicit source references:
 Navigation joins (both sources name the same Python identifier; statement equivalence is not inferred):
 
 - [(* ==== v522 round: WOIT.BETA1.GSO.01 -- "the clock is time-like, GSO is the gauge datum": the Z8/NS tower + Ramond control, the invariant- dimension chain, the time-like reflection census, the exact Hermiticity witness of the clock insertion, the GSO 2-torsion census and the family-A tower-normalisation failure. The 40-digit GSO-fixed RP inertia certificates ((29,0,0)/(8,0,0)/(7,9,6)/(17,12,0)) are Python-only by the suite convention. Mirrors v522. ==== *)](../../../../verification/wolfram/tfpt_readouts_extension.wl#L7610)
-
-## Hecke-Index = Jones-Index.
-
-[documents/experiments--theory-contracts--universalraum-fable-kernfragen-20260910--fable-runde3--paper--tfpt_anschluss_zellen_seam_2026-09-14/sections/001-section-evidenzkonvention-und-abgrenzung.tex:146-147](../../../../documents/experiments--theory-contracts--universalraum-fable-kernfragen-20260910--fable-runde3--paper--tfpt_anschluss_zellen_seam_2026-09-14/sections/001-section-evidenzkonvention-und-abgrenzung.tex#L146) · `section:5da3c2dfd59709ee909c` · paragraph
-
-Mit [formula in source] (Kawahigashi–Longo–Müger), die das Repo für den Glue-Index 4 benutzt, gilt für jedes injektive [formula in source] : [formula in source] = Hecke-Überlagerungsindex von [formula in source] auf [formula in source] (Zählfunktion [formula in source] , Pol bei [formula in source] ). Pimsner–Popa macht [formula in source] zur bedingten Entropie; das Vakuum ist unter den Dualgruppen-Automorphismen fe

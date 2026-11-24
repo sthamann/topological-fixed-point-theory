@@ -4,6 +4,12 @@
 
 Exact ledger statuses remain at the linked original rows and in registry.json. Citations are source links, not proof certification.
 
+## Flavor und Massenschemata
+
+[experiments/theory-contracts/universalraum-paired-release-20260914/source-v1.1/TFPT_Universalraum_LaTeX_2026-09-14/chapters/09_physik.tex:120-145](../../../../experiments/theory-contracts/universalraum-paired-release-20260914/source-v1.1/TFPT_Universalraum_LaTeX_2026-09-14/chapters/09_physik.tex#L120) · `section:3f6a01c46b3817e1dabe` · section
+
+Der historische Quellmassenansatz lautet Die sektorabhängigen [formula in source] sind nicht automatisch eins. Die Restklassenmatrix mit Zeilen [formula in source] , [formula in source] , [formula in source] hat Determinante acht und charakteristisches Polynom [formula in source] . Das sind interne Daten, keine direkte Massenmessung.
+
 ## Die übrigen Zweige bleiben Teil des Bildes
 
 [experiments/theory-contracts/universalraum-paired-release-20260914/source-v1.1/TFPT_Universalraum_LaTeX_2026-09-14/chapters/09_physik.tex:161-176](../../../../experiments/theory-contracts/universalraum-paired-release-20260914/source-v1.1/TFPT_Universalraum_LaTeX_2026-09-14/chapters/09_physik.tex#L161) · `section:80e152b444bb49d10954` · section

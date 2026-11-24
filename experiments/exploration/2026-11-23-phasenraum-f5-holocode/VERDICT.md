@@ -123,8 +123,9 @@ einschließlich einer eigenen Gitterzigarre.
   **Querbezug zum Ledger (nur lesend):** GRAV.SPIN2.UNITARITY.01, GRAV.KMS.HESSIAN.01, QGAMB.IDG.01,
   GRAV.AMPLITUDE.01 (nennt P(p²) = e^{−p²/M²}/p²), GRAV.LOOP.FINITE.01, GRAV.NONLOCAL.01 und
   GRAV.SPIN2.EMERGENCE.01 sichern **Polfreiheit**, nicht Spektralpositivität. Als physischer positiver
-  Spin-2-Propagator gelesen ist dieser Formfaktor ausgeschlossen. Ob die Zeilen einen Vermerk bekommen,
-  ist eine Ledgerentscheidung; die Zeilen sind unverändert.
+  Spin-2-Propagator gelesen ist dieser Formfaktor ausgeschlossen. **Nachtrag 24.11.:** Mit Freigabe tragen
+  die sieben Zeilen jetzt einen Positivitätsvermerk (`verification/v1037_spin2_positivity.py`, 9/9;
+  Bericht in `experiments/theory-contracts/spin2-positivity-20261124/`); ihre Polaussagen bleiben.
 
 **3. Korrekturen an den Analysen.**
 - Die Gitterzigarren-Tabellen der achten Analyse waren nach ihrer eigenen Folgeanalyse unbelegt. Sie sind

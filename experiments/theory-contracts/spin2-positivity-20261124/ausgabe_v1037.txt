@@ -1,0 +1,10 @@
+  [PASS] KL INEQUALITY [E]: C = Z/Q^2 + Int drho/(Q^2+s), rho >= 0, gives Q^2 C >= Z and C - Z/Q^2 >= 0 (50 random positive measures, Q^2 in [1e-4, 1e4])
+  [PASS] SINGLE POLE = Z/Q^2 [E]: with rho = 0 the KL form is exactly Z/Q^2; the entire factor gives C - Z/Q^2 = (e^{-u} - 1)/Q^2 < 0 everywhere, so it is not 'a single positive-residue pole' spectrally
+  [PASS] ENTIRE FORM FACTOR VIOLATES KL [X]: Q^2 P = e^{-Q^2/M^2} < 1 = Z for every Q^2 > 0; likewise for any a(u) > 1 on u > 0 ({'e^u': True, '1+u+u^2': True, 'cosh(u)+u': True})
+  [PASS] INVERSE PROPAGATOR SIGN [E]: KL gives C^{-1} = Q^2/Z - I1 Q^4/Z^2 + ... (Q^4 coefficient -I1/Z**2 <= 0); the entire factor gives +Q^4/(M^2 Z) (coefficient 1/(M2*Z) > 0), the Stelle/R+R^2 sign
+  [PASS] POSITIVE CONTROL [E]: C = Z/Q^2 + r/(Q^2+M^2) has C^{-1} = Q^2/Z - r Q^4/(M^2 Z^2) + O(Q^6) and satisfies Q^2 C >= Z
+  [PASS] GHOST CONTROL [E]: the Stelle truncation 1/Q^2 - 1/(Q^2+M^2) (negative weight) gives Q^2 C = M^2/(Q^2+M^2) < Z too: removing the ghost pole does not restore positivity
+  [PASS] TIMELIKE GROWTH [E]: at p^2 = -s the entire propagator grows like e^{s/M^2}/s ([2.72, 29.68, 2202.65, 24258259.77]), a KL control stays O(1/s) below its support ([0.9857, 0.1844, 0.0825, 0.0267]); the entire factor has no cut, hence no spectral density
+  [PASS] LEDGER ROWS (read-only) [E]: all seven rows exist and rest on the entire form factor; GRAV.AMPLITUDE.01 names P(p^2)=e^{-p^2/M^2}/p^2
+  [PASS] SCOPE [O]: the pole statements (one pole at p^2=0, residue 1, no Stelle ghost) and the power counting stand; the reading as a positive KL / reflection-positive spin-2 propagator and the inference 'single pole => Im A >= 0 => unitarity' beyond the pole do not; a positive spin-2 sector needs a positive spectral measure
+--- v1037 spin-2 positivity: entire form factor is pole-free but not Kaellen-Lehmann positive: 9 passed, 0 failed ---

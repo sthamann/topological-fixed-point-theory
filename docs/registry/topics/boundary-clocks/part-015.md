@@ -4,6 +4,12 @@
 
 Exact ledger statuses remain at the linked original rows and in registry.json. Citations are source links, not proof certification.
 
+## Front matter / support
+
+[tex-artefacts/tfpt_figures.tex:1-150](../../../../tex-artefacts/tfpt_figures.tex#L1) · `section:69f23a2d25227e7c0e79` · frontmatter
+
+\\[2pt] [formula in source] — the unique even unimodular rank- [formula in source] glue \ [E] exact (lattice).
+
 ## Modular theory and algebraic quantum field theory.
 
 [tex-artefacts/tfpt_references.tex:20-42](../../../../tex-artefacts/tfpt_references.tex#L20) · `section:945c2cb0147875f1d49f` · paragraph

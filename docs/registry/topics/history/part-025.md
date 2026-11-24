@@ -4,6 +4,21 @@
 
 Exact ledger statuses remain at the linked original rows and in registry.json. Citations are source links, not proof certification.
 
+## 2026-06-12 (tfpt_1 / tfpt_2 style alignment + box reduction)
+
+[documents/changelog/sections/023-source.tex:221-241](../../../../documents/changelog/sections/023-source.tex#L221) · `section:5cb9ec06306c576c2af2` · subsection
+
+Shared header/footer everywhere. tfpt_1_architecture_e8 dropped its custom footmarkers footer (which after the marker collapse showed four redundant ) and now inherits the shared tfpt_style header/footer with the version stamp, identical to every other document. Fewer boxes, embedded in text. The narrative/commentary callouts of both documents are converted to run-in bold paragraphs (and the boxed one-line formulas t
+
+Explicit source references:
+
+- [COSMO.NSTAR.01](../../../../verification/status_ledger.csv#L160) · explicit_claim_identifier · original status at linked ledger row
+- [verification/v86_nstar_reheating.py](../../../../verification/v86_nstar_reheating.py#L1) · explicit_script_identifier
+
+Navigation joins (both sources name the same Python identifier; statement equivalence is not inferred):
+
+- [(* ---- (v86) reheating arithmetic (scale chain; pivot solve stays Python) ---- *)](../../../../verification/wolfram/tfpt_readouts_extension.wl#L84)
+
 ## 2026-06-12 (marker simplification to 4 classes + status reconciliation)
 
 [documents/changelog/sections/023-source.tex:242-263](../../../../documents/changelog/sections/023-source.tex#L242) · `section:4f6387455280982ea775` · subsection
@@ -1218,9 +1233,3 @@ Die historische Kurzfassung nennt [formula in source] und einen fünfteiligen Tr
 [experiments/theory-contracts/universalraum-paired-release-20260914/source-v1.1/TFPT_Universalraum_LaTeX_2026-09-14/chapters/06_zeit_echo.tex:58-62](../../../../experiments/theory-contracts/universalraum-paired-release-20260914/source-v1.1/TFPT_Universalraum_LaTeX_2026-09-14/chapters/06_zeit_echo.tex#L58) · `section:0cac91ff575e48441883` · section
 
 Aus [formula in source] folgt [formula in source] . Die historischen Größen [formula in source] und [formula in source] beschreiben deshalb sechsfach wiederholte Faktoren [formula in source] und [formula in source] . Eine physikalische Rate ist erst [formula in source] für einen festgelegten Schritt [formula in source] .
-
-## Flavor und Massenschemata
-
-[experiments/theory-contracts/universalraum-paired-release-20260914/source-v1.1/TFPT_Universalraum_LaTeX_2026-09-14/chapters/09_physik.tex:120-145](../../../../experiments/theory-contracts/universalraum-paired-release-20260914/source-v1.1/TFPT_Universalraum_LaTeX_2026-09-14/chapters/09_physik.tex#L120) · `section:3f6a01c46b3817e1dabe` · section
-
-Der historische Quellmassenansatz lautet Die sektorabhängigen [formula in source] sind nicht automatisch eins. Die Restklassenmatrix mit Zeilen [formula in source] , [formula in source] , [formula in source] hat Determinante acht und charakteristisches Polynom [formula in source] . Das sind interne Daten, keine direkte Massenmessung.

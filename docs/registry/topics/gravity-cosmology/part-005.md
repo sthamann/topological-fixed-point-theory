@@ -915,7 +915,7 @@ Navigation joins (both sources name the same Python identifier; statement equiva
 
 ## Appendix: computational verification
 
-[documents/tfpt_4_frontier/sections/004-source.tex:200-215](../../../../documents/tfpt_4_frontier/sections/004-source.tex#L200) · `section:0c7b2f5d7f77f90fe85c` · section
+[documents/tfpt_4_frontier/sections/004-source.tex:203-218](../../../../documents/tfpt_4_frontier/sections/004-source.tex#L203) · `section:0c7b2f5d7f77f90fe85c` · section
 
 These are the frontier items: most carry \ (open) or \ (conditional) and are therefore not part of the pass/fail suite. The one quantitative handle that is reproduced is [formula in source] (whence the [formula in source] order) in verification/v7_gravity_cosmo.py. The [formula in source] structure and the gap-decoupling of the physical QG sector are machine-checked ( v28_gravity_fR.py, v36_spectral_action_g2.py); th
 

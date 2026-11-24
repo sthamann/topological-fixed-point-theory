@@ -4,6 +4,39 @@
 
 Exact ledger statuses remain at the linked original rows and in registry.json. Citations are source links, not proof certification.
 
+## 2026-06-25 (Three closure-strategy modules v425– v427 [formula in source] the Safeguards paper)
+
+[documents/changelog/sections/012-source.tex:268-304](../../../../documents/changelog/sections/012-source.tex#L268) · `section:f6d50ad015506eb0de3c` · subsection
+
+v425 ( DYN.TRANSFER.UNIVERSAL.01) — the single-flow reduction of [formula in source] . The four frontier transfers do not each need a separate external solver: their dynamics is the ONE native flow (the seam modular/recovery semigroup, v238/ v240, gap [formula in source] ) restricted to each sector. \ the v99 Koide generator linearised at [formula in source] has rate [formula in source] , time- [formula in source] co
+
+Explicit source references:
+
+- [verification/v383_dynamics_universal.py](../../../../verification/v383_dynamics_universal.py#L1) · explicit_script_identifier
+- [verification/v427_overdet_witness_map.py](../../../../verification/v427_overdet_witness_map.py#L1) · explicit_script_identifier
+- [verification/v238_modular_lindblad_dynamics.py](../../../../verification/v238_modular_lindblad_dynamics.py#L1) · explicit_script_identifier
+- [verification/v99_koide_flow_time.py](../../../../verification/v99_koide_flow_time.py#L1) · explicit_script_identifier
+- [verification/make_docs_map.py](../../../../verification/make_docs_map.py#L1) · explicit_file_citation
+- [verification/v305_witness_independence.py](../../../../verification/v305_witness_independence.py#L1) · explicit_script_identifier
+- [verification/run_all.py](../../../../verification/run_all.py#L1) · explicit_file_citation
+- [verification/make_manifest.py](../../../../verification/make_manifest.py#L1) · explicit_file_citation
+- [verification/v425_dyn_transfer_universal.py](../../../../verification/v425_dyn_transfer_universal.py#L1) · explicit_script_identifier
+- [SEAM.EQUIV.LTORP.KMS.01](../../../../verification/status_ledger.csv#L493) · explicit_claim_identifier · original status at linked ledger row
+- [verification/v426_seam_lto_rp_kms.py](../../../../verification/v426_seam_lto_rp_kms.py#L1) · explicit_script_identifier
+- [SEAM.EQUIV.01](../../../../verification/status_ledger.csv#L381) · explicit_claim_identifier · original status at linked ledger row
+- [verification/v424_seam_lto_rp_reduction.py](../../../../verification/v424_seam_lto_rp_reduction.py#L1) · explicit_script_identifier
+- [OVERDET.WITNESS.MAP.01](../../../../verification/status_ledger.csv#L494) · explicit_claim_identifier · original status at linked ledger row
+- [DYN.TRANSFER.UNIVERSAL.01](../../../../verification/status_ledger.csv#L492) · explicit_claim_identifier · original status at linked ledger row
+- [verification/v320_galois_cp_relation.py](../../../../verification/v320_galois_cp_relation.py#L1) · explicit_script_identifier
+- [verification/v240_gns_os_reconstruction.py](../../../../verification/v240_gns_os_reconstruction.py#L1) · explicit_script_identifier
+
+Navigation joins (both sources name the same Python identifier; statement equivalence is not inferred):
+
+- [experiments/lean4-carrier-rigidity/TfptCarrier/SeamApplicabilityLedger.lean](../../../../experiments/lean4-carrier-rigidity/TfptCarrier/SeamApplicabilityLedger.lean#L1)
+- [(* ---- (v99) Koide flow time ---- *)](../../../../verification/wolfram/tfpt_readouts_extension.wl#L304)
+- [experiments/lean4-carrier-rigidity/TfptCarrier/SpectralGapAttractor.lean](../../../../experiments/lean4-carrier-rigidity/TfptCarrier/SpectralGapAttractor.lean#L1)
+- [(* v320 GALOIS.CP.PREDICT.01 -- the falsifiable CP lock *)](../../../../verification/wolfram/tfpt_readouts_extension.wl#L2216)
+
 ## 2026-06-25 (The (LTO-RP) reduction of the keystone SEAM.EQUIV.01: v424)
 
 [documents/changelog/sections/012-source.tex:305-328](../../../../documents/changelog/sections/012-source.tex#L305) · `section:debae20192b75c7a987d` · subsection
@@ -2709,21 +2742,3 @@ Explicit source references:
 Navigation joins (both sources name the same Python identifier; statement equivalence is not inferred):
 
 - [experiments/lean4-carrier-rigidity/TfptCarrier/SeamDeckClosure.lean](../../../../experiments/lean4-carrier-rigidity/TfptCarrier/SeamDeckClosure.lean#L1)
-
-## 2026-06-18 (4D QFT: the [formula in source] LSZ bridge [formula in source] one-loop unitarity, v278)
-
-[documents/changelog/sections/018-source.tex:1-14](../../../../documents/changelog/sections/018-source.tex#L1) · `section:4972356a38c52e50cf39` · subsection
-
-v278_lsz_bridge_unitarity.py ( QFT4D.SPERT.04) connects the perturbative S-matrix to the physical asymptotic one and verifies one-loop unitarity. \ LSZ bridge: the EG [formula in source] -products of [formula in source] ( v269) are the OS Wick-rotated correlators ( v240), so amputate [formula in source] on-shell-residue gives [formula in source] ; \ the gap [formula in source] gives Haag–Ruelle asymptotic states. \ o
-
-Explicit source references:
-
-- [verification/v240_gns_os_reconstruction.py](../../../../verification/v240_gns_os_reconstruction.py#L1) · explicit_script_identifier
-- [verification/v269_spert_paqft_skeleton.py](../../../../verification/v269_spert_paqft_skeleton.py#L1) · explicit_script_identifier
-- [QFT4D.SPERT.04](../../../../verification/status_ledger.csv#L372) · explicit_claim_identifier · original status at linked ledger row
-- [verification/v278_lsz_bridge_unitarity.py](../../../../verification/v278_lsz_bridge_unitarity.py#L1) · explicit_script_identifier
-- [QG.AMB.01](../../../../verification/status_ledger.csv#L47) · explicit_claim_identifier · original status at linked ledger row
-
-Navigation joins (both sources name the same Python identifier; statement equivalence is not inferred):
-
-- [(* ==== v278: S_pert -> S_phys LSZ bridge, one-loop optical theorem (QFT4D.SPERT.04) ==== *)](../../../../verification/wolfram/tfpt_readouts_extension.wl#L2142)

@@ -4,6 +4,12 @@
 
 Exact ledger statuses remain at the linked original rows and in registry.json. Citations are source links, not proof certification.
 
+## Mehrere Uhren können dieselbe Struktur ablesen
+
+[documents/tfpt_explorer--docs--session-2026-09-28--TFPT_Gesamtsynthese_2026-09-28/sections/003-subsection-wo-die-ergebnisse-der-sitzung-in-dieses-bild-.tex:102-114](../../../../documents/tfpt_explorer--docs--session-2026-09-28--TFPT_Gesamtsynthese_2026-09-28/sections/003-subsection-wo-die-ergebnisse-der-sitzung-in-dieses-bild-.tex#L102) · `section:4ee6daaa9dc2f790fafa` · subsection
+
+Die ursprünglichen Clock-Strukturen enthalten mit den Exponenten [formula in source] . Daneben steht die vierfache Markierung. [formula in source] ist keine Untergruppe eines zyklischen 30-Taktes. Der tatsächliche Anschluss verwendet unter anderem eine Wirkung der Form Die komplexe Reflexionsgruppe [formula in source] hat Ordnung [formula in source] , sechzig Reflexionen und Invariantengrade [formula in source] . Die
+
 ## Der ganze endliche Operator besitzt bereits ein gemeinsames Wörterbuch
 
 [documents/tfpt_explorer--docs--session-2026-09-28--TFPT_Gesamtsynthese_2026-09-28/sections/004-subsection-auch-die-skalen-besitzen-einen-gemeinsamen-va.tex:183-202](../../../../documents/tfpt_explorer--docs--session-2026-09-28--TFPT_Gesamtsynthese_2026-09-28/sections/004-subsection-auch-die-skalen-besitzen-einen-gemeinsamen-va.tex#L183) · `section:7462e3e53c3e50ebcad8` · subsection
@@ -3045,39 +3051,3 @@ Explicit source references:
 - [DIMENSION.UPLIFT.FIREWALL.01](../../../../verification/status_ledger.csv#L739) · explicit_claim_identifier · original status at linked ledger row
 - [CHIRAL4D.NOMIRROR.01](../../../../verification/status_ledger.csv#L746) · explicit_claim_identifier · original status at linked ledger row
 - [SEAM.BULK4D.RECON.01](../../../../verification/status_ledger.csv#L740) · explicit_claim_identifier · original status at linked ledger row
-
-## Research Contract — SEAM.BULK4D.RECON.01 (from seam data to a 4D local quantum theory)
-
-[experiments/theory-contracts/universalraum-fable-kernfragen-20260910/context/fortsetzung/source-snapshots/tfpt/tfpt_research_contracts.tex:12633-12686](../../../../experiments/theory-contracts/universalraum-fable-kernfragen-20260910/context/fortsetzung/source-snapshots/tfpt/tfpt_research_contracts.tex#L12633) · `section:73dd631de817637ce12d` · section
-
-Typing. A research contract \ (ledger row SEAM.BULK4D.RECON.01: Open, research contract), not a claim. It makes explicit the theorem that was previously only implicit between the SEAM.EQUIV.01 conclusion (a chiral [formula in source] boundary object) and the WOIT.OS.TWISTOR.01 goal statement (a Poincar\'e-covariant, causal, chiral 4D theory): the missing seam [formula in source] bulk reconstruction is a theorem of it
-
-Explicit source references:
-
-- [verification/v378_seam_s3_modular.py](../../../../verification/v378_seam_s3_modular.py#L1) · explicit_script_identifier
-- [SEAM.EQUIV.01](../../../../verification/status_ledger.csv#L381) · explicit_claim_identifier · original status at linked ledger row
-- [verification/v957_ccc_crossover_kinematics.py](../../../../verification/v957_ccc_crossover_kinematics.py#L1) · explicit_script_identifier
-- [DIMENSION.UPLIFT.FIREWALL.01](../../../../verification/status_ledger.csv#L739) · explicit_claim_identifier · original status at linked ledger row
-- [WOIT.OS.TWISTOR.01](../../../../verification/status_ledger.csv#L585) · explicit_claim_identifier · original status at linked ledger row
-- [SEAM.BULK4D.RECON.01](../../../../verification/status_ledger.csv#L740) · explicit_claim_identifier · original status at linked ledger row
-- [verification/v125_glue_qsystem.py](../../../../verification/v125_glue_qsystem.py#L1) · explicit_script_identifier
-- [verification/v379_seam_s3_rp.py](../../../../verification/v379_seam_s3_rp.py#L1) · explicit_script_identifier
-- [verification/v302_seam_gap.py](../../../../verification/v302_seam_gap.py#L1) · explicit_script_identifier
-- [verification/v377_seam_s3_e8character.py](../../../../verification/v377_seam_s3_e8character.py#L1) · explicit_script_identifier
-- [verification/v1020_spectator_sector_obstruction.py](../../../../verification/v1020_spectator_sector_obstruction.py#L1) · explicit_file_citation
-- [verification/v154_simple_current_theorem.py](../../../../verification/v154_simple_current_theorem.py#L1) · explicit_script_identifier
-- [verification/v524_woit_beta2_os_quotient.py](../../../../verification/v524_woit_beta2_os_quotient.py#L1) · explicit_script_identifier
-- [verification/v519_woit_theta_rp_free.py](../../../../verification/v519_woit_theta_rp_free.py#L1) · explicit_script_identifier
-- [BULK.PRIME_COMPLETION.01](../../../../verification/status_ledger.csv#L773) · explicit_claim_identifier · original status at linked ledger row
-
-Navigation joins (both sources name the same Python identifier; statement equivalence is not inferred):
-
-- [(* ---- (v125) glue Q-system ---- *)](../../../../verification/wolfram/tfpt_readouts_extension.wl#L872)
-- [experiments/lean4-carrier-rigidity/TfptCarrier/SeamScalingLimit.lean](../../../../experiments/lean4-carrier-rigidity/TfptCarrier/SeamScalingLimit.lean#L1)
-- [(* ==== v524 round: WOIT.BETA2.OS.01 -- "the OS quotient of the free system made explicit" (verdict SUCCESS, [C]-typed per contract precision (iii)). Four exact mirrors: (i) the euclidean-rotation preconditions (alpha_1^N = (-1)^F wrap arithmetic at N = 16 and N = 8) + the exact PD certificate identity sin^2(3pi/8) - sin(pi/8) sin(5pi/8) = 1/2; (ii) the Klein-Landau one-particle transfer forms tau_k on the shrinking domains at N = 16, k = 1..7: exactly Hermitian, odd k with exactly ZERO diagonal (the C(even) = 0 checkerboard), even k = 2j obeying the exact square identity tau_2j(a, b) = <alpha_j a, alpha_j b> entrywise; (iii) the clock identities (C(9) = C(7), C(11) = C(5), the transparency product formula sin(7pi/16) - sin(5pi/16) = 2 cos(3pi/8) sin(pi/16) > 0) + the N = 8 compressed clock spectrum EXACTLY {1, sqrt(2)-1} = {1, 1/delta_S} via the generalized eigenvalues of (tau_2, G) on the one-particle domain, with sin(pi/8)/sin(3pi/8) = sqrt(2)-1; (iv) the pre-declared KMS witnesses (C(1)/C(3) = 1 + sqrt(2) = delta_S at N = 8; -(C5-C7)((C3-C7)+(C5-C7)) < 0 exactly at N = 16, i.e. det(G - tau_4) < 0 on the odd one-particle clock block). The 37x37/16x16 H_phys Grams, the 40-digit inertia certificates, the spectral projections and the reconstructed rotation group are numerical (mpmath eighe), Python-only, flagged here. Mirrors v524. ==== *)](../../../../verification/wolfram/tfpt_readouts_extension.wl#L7966)
-- [experiments/lean4-carrier-rigidity/TfptCarrier/SeamEquivChain.lean](../../../../experiments/lean4-carrier-rigidity/TfptCarrier/SeamEquivChain.lean#L1)
-- [experiments/lean4-carrier-rigidity/TfptCarrier/SeamResidualAxiom.lean](../../../../experiments/lean4-carrier-rigidity/TfptCarrier/SeamResidualAxiom.lean#L1)
-- [experiments/theory-contracts/original-paper-source-reconciliation-20261102/shorttime_20261105J/shorttime20261105J_lean/SeamScalingLimitCurrent.lean](../../../../experiments/theory-contracts/original-paper-source-reconciliation-20261102/shorttime_20261105J/shorttime20261105J_lean/SeamScalingLimitCurrent.lean#L1)
-- [(* ---- (v154) Simple-Current Extension Theorem ---- *)](../../../../verification/wolfram/tfpt_readouts_extension.wl#L1381)
-- [experiments/lean4-carrier-rigidity/TfptCarrier/SeamApplicabilityLedger.lean](../../../../experiments/lean4-carrier-rigidity/TfptCarrier/SeamApplicabilityLedger.lean#L1)
-- [(* ==== v519 round: WOIT.THETA.FREE.01 -- the WOIT-alpha milestone of the OS twistor bridge: the real structure exists (two-family classification, mu4 torsor, Z8/C^4/Cl(16) levels) and the exact free-RP preconditions + site-cut degeneration + continuum control. The 40-digit positive- definiteness inertia certificates of the bond-cut Grams (R3/R5) are Python-only by the suite convention (mpmath eigh at dps 40). Mirrors v519. ==== *)](../../../../verification/wolfram/tfpt_readouts_extension.wl#L7078)

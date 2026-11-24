@@ -271,8 +271,8 @@ hergeleitet, 6 unter benannter Lesart, keines gescheitert, offen oder gesetzt.
     det(I − ZW†)^{−ν}, genau dort gilt die masselose Wellengleichung (Cayley); vier tetraedrische
     Translationen brauchen die gemeinsame Bedingung (Σp)² ≥ 3Σp². E₋ = O(−1) + 3O gibt Familienindex 3
     ohne Spiegel, eine Generation mit V₄-Hyperladung ist anomaliefrei. Spin 2: Positivität verlangt
-    Q²C ≥ Z; der ganze Formfaktor e^{−p²/M²}/p² der GRAV-/QGAMB-Ledgerzeilen verletzt das (Querbezug,
-    Ledger unverändert). [E/N]
+    Q²C ≥ Z; der ganze Formfaktor e^{−p²/M²}/p² der GRAV-/QGAMB-Ledgerzeilen verletzt das. Die sieben
+    Zeilen tragen seit 24.11. einen Positivitätsvermerk (v1037). [E/N]
   - Instantonen (Z33): Unter Spin(10) hat ein Einheitsinstanton 4 Eltern- und 12
     Familiennullmoden; mit gesättigten Familiennullmoden entsteht Re[e^{iθ}Φ² C_fam], die Wand ist
     also auch im Kontinuum möglich, bei nackter SO(10) aber ~10⁻¹⁶⁴ unterdrückt. [N]
@@ -366,9 +366,8 @@ hergeleitet, 6 unter benannter Lesart, keines gescheitert, offen oder gesetzt.
     die Identifikation des Hardy-Kerns mit dem P1-Kern und die Unimodularität der Indexabbildung.
   - Eine Regel für den Gesamtkoeffizienten G, Gitterkanten, die die Metrik selbst definiert, und das
     Soldering von Herm(2) bzw. Λ²F an die Raumzeitverschiebungen.
-  - Ein positiv-spektraler Spin-2-Sektor (Q²C ≥ Z) statt eines bloß polfreien Formfaktors; ob die
-    GRAV-/QGAMB-Zeilen mit dem ganzen Formfaktor einen Positivitätsvermerk bekommen, ist eine
-    Ledgerentscheidung (Z40).
+  - Ein positiv-spektraler Spin-2-Sektor (Q²C ≥ Z) statt eines bloß polfreien Formfaktors; die
+    GRAV-/QGAMB-Zeilen mit dem ganzen Formfaktor tragen dazu seit 24.11. einen Vermerk (v1037, Z40).
   - Die eine Prozessregel Z[J, A, g, Φ], aus der Naht, Eichwirkung und metrische Variation gemeinsam
     folgen.
 

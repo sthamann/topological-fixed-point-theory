@@ -4,6 +4,12 @@
 
 Exact ledger statuses remain at the linked original rows and in registry.json. Citations are source links, not proof certification.
 
+## Warum Spektren und Einzelbilder nicht genügten
+
+[experiments/theory-contracts/universalraum-five-source-frontier-20260914/baseline-v1.3/chapters/01_idee.tex:67-71](../../../../experiments/theory-contracts/universalraum-five-source-frontier-20260914/baseline-v1.3/chapters/01_idee.tex#L67) · `section:53cd7350646974a52932` · section
+
+Die älteren, in S09 zusammengefassten Untersuchungen fanden mehrere Räume, die man nicht einfach gleichsetzen darf: eine Kommutantenalgebra, einen Majorana-/Fockraum, einen festen Teilchensektor, eine verdoppelte Familienbeschreibung und eingeschränkte Kanalmodelle. Manche lokalen Ansichten ließen verschiedene gemeinsame Dynamiken zu. Andere Tests konnten unter engeren Voraussetzungen ausgewählte Zustände bestimmen.
+
 ## Kontext und Quantenzustand als zwei Auslesungen
 
 [experiments/theory-contracts/universalraum-five-source-frontier-20260914/baseline-v1.3/chapters/03_prozess.tex:20-55](../../../../experiments/theory-contracts/universalraum-five-source-frontier-20260914/baseline-v1.3/chapters/03_prozess.tex#L20) · `section:07562212c420bc603ab7` · section
@@ -637,9 +643,3 @@ tocsectionMaster statement Five carrier slots give [formula in source] ,\ four f
 [experiments/theory-contracts/universalraum-paired-release-20260914/main-v1.3/chapters/01_idee.tex:67-71](../../../../experiments/theory-contracts/universalraum-paired-release-20260914/main-v1.3/chapters/01_idee.tex#L67) · `section:6704f5d643f1dd86cf8d` · section
 
 Die älteren, in S09 zusammengefassten Untersuchungen fanden mehrere Räume, die man nicht einfach gleichsetzen darf: eine Kommutantenalgebra, einen Majorana-/Fockraum, einen festen Teilchensektor, eine verdoppelte Familienbeschreibung und eingeschränkte Kanalmodelle. Manche lokalen Ansichten ließen verschiedene gemeinsame Dynamiken zu. Andere Tests konnten unter engeren Voraussetzungen ausgewählte Zustände bestimmen.
-
-## Kontext und Quantenzustand als zwei Auslesungen
-
-[experiments/theory-contracts/universalraum-paired-release-20260914/main-v1.3/chapters/03_prozess.tex:20-55](../../../../experiments/theory-contracts/universalraum-paired-release-20260914/main-v1.3/chapters/03_prozess.tex#L20) · `section:f1e113cb6191e4b25610` · section
-
-Die Matrix [formula in source] summiert die vier Ergebnisgewichte jedes Kontexts. Die Matrix [formula in source] liest die 15 nichttrivialen Pauli-Erwartungswerte aus. Mit [formula in source] lauten ihre Einträge Für [formula in source] und [formula in source] ergibt sich exakt Der Systemschatten entwickelt sich somit als depolarisierender Kanal Die Dämpfung [formula in source] entsteht aus der Kontextkombinatorik. B

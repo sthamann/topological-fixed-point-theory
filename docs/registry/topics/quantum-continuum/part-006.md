@@ -4,6 +4,20 @@
 
 Exact ledger statuses remain at the linked original rows and in registry.json. Citations are source links, not proof certification.
 
+## Layer 6d — Yukawa Stage D (primary trilinear form)
+
+[documents/experiments--lean4-carrier-rigidity--note_carrier_rigidity_lean4/sections/003-subsection-layer-6b-yukawa-stage-b-algebraic-content.tex:89-201](../../../../documents/experiments--lean4-carrier-rigidity--note_carrier_rigidity_lean4/sections/003-subsection-layer-6b-yukawa-stage-b-algebraic-content.tex#L89) · `section:80f5430a98e66833b910` · subsection
+
+For every alternating trilinear form [formula in source] , the associated contraction map [formula in source] is constructible as a LinearMap. The Lean construction uses exteriorPower.alternatingMapLinearEquiv (to convert between [formula in source] and the space of [formula in source] -valued alternating maps on [formula in source] ) and AlternatingMap.curryLeft (to split off the first argument).
+
+Explicit source references:
+
+- [verification/v9_neutrino_texture.py](../../../../verification/v9_neutrino_texture.py#L1) · explicit_script_identifier
+
+Navigation joins (both sources name the same Python identifier; statement equivalence is not inferred):
+
+- [experiments/lean4-carrier-rigidity/TfptCarrier/YukawaStageDExistence.lean](../../../../experiments/lean4-carrier-rigidity/TfptCarrier/YukawaStageDExistence.lean#L1)
+
 ## Chain A — trace identity.
 
 [documents/experiments--lean4-carrier-rigidity--note_carrier_rigidity_lean4/sections/003-subsection-layer-6b-yukawa-stage-b-algebraic-content.tex:256-281](../../../../documents/experiments--lean4-carrier-rigidity--note_carrier_rigidity_lean4/sections/003-subsection-layer-6b-yukawa-stage-b-algebraic-content.tex#L256) · `section:35a557d0d4bb41900f4f` · paragraph
@@ -1571,7 +1585,7 @@ Navigation joins (both sources name the same Python identifier; statement equiva
 
 ## Appendix: computational verification
 
-[documents/tfpt_4_frontier/sections/004-source.tex:200-215](../../../../documents/tfpt_4_frontier/sections/004-source.tex#L200) · `section:0c7b2f5d7f77f90fe85c` · section
+[documents/tfpt_4_frontier/sections/004-source.tex:203-218](../../../../documents/tfpt_4_frontier/sections/004-source.tex#L203) · `section:0c7b2f5d7f77f90fe85c` · section
 
 These are the frontier items: most carry \ (open) or \ (conditional) and are therefore not part of the pass/fail suite. The one quantitative handle that is reproduced is [formula in source] (whence the [formula in source] order) in verification/v7_gravity_cosmo.py. The [formula in source] structure and the gap-decoupling of the physical QG sector are machine-checked ( v28_gravity_fR.py, v36_spectral_action_g2.py); th
 
@@ -1747,111 +1761,3 @@ Navigation joins (both sources name the same Python identifier; statement equiva
 
 - [experiments/lean4-carrier-rigidity/TfptCarrier/HiggsTopForm.lean](../../../../experiments/lean4-carrier-rigidity/TfptCarrier/HiggsTopForm.lean#L1)
 - [experiments/lean4-carrier-rigidity/TfptCarrier/CalderonProjector.lean](../../../../experiments/lean4-carrier-rigidity/TfptCarrier/CalderonProjector.lean#L1)
-
-## Front matter / support
-
-[documents/tfpt_research_contracts/sections/001-source.tex:1-160](../../../../documents/tfpt_research_contracts/sections/001-source.tex#L1) · `section:8d1e955857da6655fadd` · frontmatter
-
-After the compiler closure the entire residual is [formula in source] This note turns the two genuine research gates into contracts: a numbered chain of lemmas, the single theorem that closes each gate, and — for every step — whether it is machine-certifiable today. [formula in source] (Koide, [formula in source] , axion relic scale, [formula in source] ) is not a gate: those are deliberately typed QFT/cosmology inte
-
-Explicit source references:
-
-- [verification/v519_woit_theta_rp_free.py](../../../../verification/v519_woit_theta_rp_free.py#L1) · explicit_script_identifier
-- [verification/v384_residual_certification.py](../../../../verification/v384_residual_certification.py#L1) · explicit_file_citation
-- [RES.COXETER.SYMMETRY.01](../../../../verification/status_ledger.csv#L465) · explicit_claim_identifier · original status at linked ledger row
-- [verification/v508_celestial_wp5e_gamma_pairing.py](../../../../verification/v508_celestial_wp5e_gamma_pairing.py#L1) · explicit_script_identifier
-- [verification/v374_ftransfer_qcd.py](../../../../verification/v374_ftransfer_qcd.py#L1) · explicit_script_identifier
-- [verification/v89_carrier_index_lemma.py](../../../../verification/v89_carrier_index_lemma.py#L1) · explicit_script_identifier
-- [verification/v529_seam_interacting_toy_fk.py](../../../../verification/v529_seam_interacting_toy_fk.py#L1) · explicit_script_identifier
-- [QGEO.SYM.01](../../../../verification/status_ledger.csv#L261) · explicit_claim_identifier · original status at linked ledger row
-- [verification/v518_celestial_wp5e_delta1_derived_kill.py](../../../../verification/v518_celestial_wp5e_delta1_derived_kill.py#L1) · explicit_script_identifier
-- [verification/v383_dynamics_universal.py](../../../../verification/v383_dynamics_universal.py#L1) · explicit_script_identifier
-- [verification/v113_quasifree_kernel.py](../../../../verification/v113_quasifree_kernel.py#L1) · explicit_file_citation
-- [verification/v517_celestial_wp5e_m3_a0_uplift.py](../../../../verification/v517_celestial_wp5e_m3_a0_uplift.py#L1) · explicit_script_identifier
-- [verification/v258_dirac_covariance_induction.py](../../../../verification/v258_dirac_covariance_induction.py#L1) · explicit_script_identifier
-- [verification/v533_ftransfer_disc7_norm.py](../../../../verification/v533_ftransfer_disc7_norm.py#L1) · explicit_file_citation
-- [GATE.METRIC.05](../../../../verification/status_ledger.csv#L161) · explicit_claim_identifier · original status at linked ledger row
-- [verification/v224_diamond_ftransfer_path.py](../../../../verification/v224_diamond_ftransfer_path.py#L1) · explicit_file_citation
-- [FORM.COXETER.PRIME2.01](../../../../verification/status_ledger.csv#L466) · explicit_claim_identifier · original status at linked ledger row
-- [verification/v75_upoint_to_vgeo.py](../../../../verification/v75_upoint_to_vgeo.py#L1) · explicit_script_identifier
-- [RESIDUAL.CERTIFICATION.01](../../../../verification/status_ledger.csv#L447) · explicit_claim_identifier · original status at linked ledger row
-- [verification/v261_modular_spectral_closure.py](../../../../verification/v261_modular_spectral_closure.py#L1) · explicit_script_identifier
-- [verification/v71_simple_r_bridge.py](../../../../verification/v71_simple_r_bridge.py#L1) · explicit_script_identifier
-- [verification/v336_continuum_limit.py](../../../../verification/v336_continuum_limit.py#L1) · explicit_script_identifier
-- [TFPT.TOE.COMPLETE.01](../../../../verification/status_ledger.csv#L764) · explicit_claim_identifier · original status at linked ledger row
-- [verification/v515_celestial_wp5e_m1_omega_n.py](../../../../verification/v515_celestial_wp5e_m1_omega_n.py#L1) · explicit_script_identifier
-- [verification/v49_readout_rigidity.py](../../../../verification/v49_readout_rigidity.py#L1) · explicit_script_identifier
-- [verification/v382_alpha_quillen_exact.py](../../../../verification/v382_alpha_quillen_exact.py#L1) · explicit_script_identifier
-- [verification/v565_woit_beta3_pt_duality.py](../../../../verification/v565_woit_beta3_pt_duality.py#L1) · explicit_script_identifier
-- [verification/v524_woit_beta2_os_quotient.py](../../../../verification/v524_woit_beta2_os_quotient.py#L1) · explicit_script_identifier
-- [verification/v259_modular_cutoff_kappa.py](../../../../verification/v259_modular_cutoff_kappa.py#L1) · explicit_script_identifier
-- [verification/v520_celestial_wp5e_measure_decision.py](../../../../verification/v520_celestial_wp5e_measure_decision.py#L1) · explicit_script_identifier
-- [verification/v522_woit_beta1_gso_gauge.py](../../../../verification/v522_woit_beta1_gso_gauge.py#L1) · explicit_script_identifier
-- [verification/v92_glue_uniqueness.py](../../../../verification/v92_glue_uniqueness.py#L1) · explicit_script_identifier
-- [verification/v472_quillen_detline_moduli.py](../../../../verification/v472_quillen_detline_moduli.py#L1) · explicit_script_identifier
-- [verification/v153_no_unit_theorem.py](../../../../verification/v153_no_unit_theorem.py#L1) · explicit_script_identifier
-- [CONTRACT.F.01](../../../../verification/status_ledger.csv#L302) · explicit_claim_identifier · original status at linked ledger row
-- [verification/v523_celestial_wp5e_wm_derived.py](../../../../verification/v523_celestial_wp5e_wm_derived.py#L1) · explicit_script_identifier
-- [verification/v394_coxeter_atoms.py](../../../../verification/v394_coxeter_atoms.py#L1) · explicit_file_citation
-- [ALPHA.QUILLEN.EXACT.01](../../../../verification/status_ledger.csv#L445) · explicit_claim_identifier · original status at linked ledger row
-- [verification/v371_ftransfer_pole.py](../../../../verification/v371_ftransfer_pole.py#L1) · explicit_script_identifier
-- [verification/v632_ftransfer_pgl2.py](../../../../verification/v632_ftransfer_pgl2.py#L1) · explicit_file_citation
-- [verification/v187_ftransfer_laws.py](../../../../verification/v187_ftransfer_laws.py#L1) · explicit_script_identifier
-- [verification/v68_seeley_dewitt_residual.py](../../../../verification/v68_seeley_dewitt_residual.py#L1) · explicit_script_identifier
-- [CELEST.SEAM.01](../../../../verification/status_ledger.csv#L556) · explicit_claim_identifier · original status at linked ledger row
-- [verification/v409_coxeter_prime2_lemma.py](../../../../verification/v409_coxeter_prime2_lemma.py#L1) · explicit_file_citation
-- [WOIT.OS.TWISTOR.01](../../../../verification/status_ledger.csv#L585) · explicit_claim_identifier · original status at linked ledger row
-- [verification/v469_seam_crossedproduct_route.py](../../../../verification/v469_seam_crossedproduct_route.py#L1) · explicit_script_identifier
-- [SEAM.EQUIV.01](../../../../verification/status_ledger.csv#L381) · explicit_claim_identifier · original status at linked ledger row
-- [verification/v973_seam_route_narrowing.py](../../../../verification/v973_seam_route_narrowing.py#L1) · explicit_file_citation
-- [verification/v390_prime2_facet.py](../../../../verification/v390_prime2_facet.py#L1) · explicit_script_identifier
-- [verification/v364_vgeo_sharpen.py](../../../../verification/v364_vgeo_sharpen.py#L1) · explicit_script_identifier
-- [verification/v369_qgamb_redundancy.py](../../../../verification/v369_qgamb_redundancy.py#L1) · explicit_script_identifier
-- [verification/v534_seam_straddle_cone.py](../../../../verification/v534_seam_straddle_cone.py#L1) · explicit_script_identifier
-- [verification/v972_seam_interaction_front.py](../../../../verification/v972_seam_interaction_front.py#L1) · explicit_file_citation
-- [experiments/lean4-carrier-rigidity/TfptCarrier/CoxeterPrime2.lean](../../../../experiments/lean4-carrier-rigidity/TfptCarrier/CoxeterPrime2.lean#L1) · explicit_file_citation
-- [verification/v260_k3_kummer_unification.py](../../../../verification/v260_k3_kummer_unification.py#L1) · explicit_script_identifier
-- [verification/v470_alpha_inflow_level.py](../../../../verification/v470_alpha_inflow_level.py#L1) · explicit_script_identifier
-- [QG.AMB.01](../../../../verification/status_ledger.csv#L47) · explicit_claim_identifier · original status at linked ledger row
-
-Navigation joins (both sources name the same Python identifier; statement equivalence is not inferred):
-
-- [(* ---- (v113) quasi-free kernel ---- *)](../../../../verification/wolfram/tfpt_readouts_extension.wl#L608)
-- [experiments/lean4-carrier-rigidity/TfptCarrier/AuditContract.lean](../../../../experiments/lean4-carrier-rigidity/TfptCarrier/AuditContract.lean#L1)
-- [(* ==== v522 round: WOIT.BETA1.GSO.01 -- "the clock is time-like, GSO is the gauge datum": the Z8/NS tower + Ramond control, the invariant- dimension chain, the time-like reflection census, the exact Hermiticity witness of the clock insertion, the GSO 2-torsion census and the family-A tower-normalisation failure. The 40-digit GSO-fixed RP inertia certificates ((29,0,0)/(8,0,0)/(7,9,6)/(17,12,0)) are Python-only by the suite convention. Mirrors v522. ==== *)](../../../../verification/wolfram/tfpt_readouts_extension.wl#L7610)
-- [(* ---- (v49) Readout Rigidity: c_u/c_d constant on the selector stratum ---- *)](../../../../verification/wolfram/tfpt_readouts.wl#L202)
-- [experiments/lean4-carrier-rigidity/TfptCarrier/AuditCheck.lean](../../../../experiments/lean4-carrier-rigidity/TfptCarrier/AuditCheck.lean#L1)
-- [(* ---- (v153) No-Unit Theorem ---- *)](../../../../verification/wolfram/tfpt_readouts_extension.wl#L1369)
-- [(* ---- (v68) Seeley-DeWitt a2 for the carrier; 1/G UV-sensitive => k=c3/2 is a normalization ---- *)](../../../../verification/wolfram/tfpt_readouts.wl#L322)
-- [(* ---- (v92) glue uniqueness ---- *)](../../../../verification/wolfram/tfpt_readouts_extension.wl#L151)
-- [experiments/lean4-carrier-rigidity/TfptCarrier/SpectralGapAttractor.lean](../../../../experiments/lean4-carrier-rigidity/TfptCarrier/SpectralGapAttractor.lean#L1)
-- [experiments/lean4-carrier-rigidity/TfptCarrier/SeamEdgeChern.lean](../../../../experiments/lean4-carrier-rigidity/TfptCarrier/SeamEdgeChern.lean#L1)
-- [experiments/lean4-carrier-rigidity/TfptCarrier/SeamScalingLimit.lean](../../../../experiments/lean4-carrier-rigidity/TfptCarrier/SeamScalingLimit.lean#L1)
-- [experiments/lean4-carrier-rigidity/TfptCarrier.lean](../../../../experiments/lean4-carrier-rigidity/TfptCarrier.lean#L1)
-- [experiments/lean4-carrier-rigidity/TfptCarrier/CoxeterPrime2.lean](../../../../experiments/lean4-carrier-rigidity/TfptCarrier/CoxeterPrime2.lean#L1)
-- [experiments/lean4-carrier-rigidity/TfptCarrier/SeamApplicabilityLedger.lean](../../../../experiments/lean4-carrier-rigidity/TfptCarrier/SeamApplicabilityLedger.lean#L1)
-- [experiments/theory-contracts/original-paper-source-reconciliation-20261102/shorttime_20261105J/shorttime20261105J_lean/SeamScalingLimitCurrent.lean](../../../../experiments/theory-contracts/original-paper-source-reconciliation-20261102/shorttime_20261105J/shorttime20261105J_lean/SeamScalingLimitCurrent.lean#L1)
-- [(* ==== v534 round: SEAM.STRADDLE.CONE.01 -- the RP cone on the interacting FK quartets (the first dynamical selection of the alignment bit). Exact mirrors: the stabilizer census of the mark family, the pi/2 partition + straddle incidence, the reflection-closure signs of the straddling quartets, and the equivariant Fix rays (uniform on m=2..6, NS-wrap-twisted on m=1,7). The 256-dim Fock spectra, the PT Gram corrections and the finite-g survival scan are Python-only (numpy), flagged per GATE.WOLFRAM.02. ==== *)](../../../../verification/wolfram/tfpt_readouts_extension.wl#L8402)
-- [(* ==== v524 round: WOIT.BETA2.OS.01 -- "the OS quotient of the free system made explicit" (verdict SUCCESS, [C]-typed per contract precision (iii)). Four exact mirrors: (i) the euclidean-rotation preconditions (alpha_1^N = (-1)^F wrap arithmetic at N = 16 and N = 8) + the exact PD certificate identity sin^2(3pi/8) - sin(pi/8) sin(5pi/8) = 1/2; (ii) the Klein-Landau one-particle transfer forms tau_k on the shrinking domains at N = 16, k = 1..7: exactly Hermitian, odd k with exactly ZERO diagonal (the C(even) = 0 checkerboard), even k = 2j obeying the exact square identity tau_2j(a, b) = <alpha_j a, alpha_j b> entrywise; (iii) the clock identities (C(9) = C(7), C(11) = C(5), the transparency product formula sin(7pi/16) - sin(5pi/16) = 2 cos(3pi/8) sin(pi/16) > 0) + the N = 8 compressed clock spectrum EXACTLY {1, sqrt(2)-1} = {1, 1/delta_S} via the generalized eigenvalues of (tau_2, G) on the one-particle domain, with sin(pi/8)/sin(3pi/8) = sqrt(2)-1; (iv) the pre-declared KMS witnesses (C(1)/C(3) = 1 + sqrt(2) = delta_S at N = 8; -(C5-C7)((C3-C7)+(C5-C7)) < 0 exactly at N = 16, i.e. det(G - tau_4) < 0 on the odd one-particle clock block). The 37x37/16x16 H_phys Grams, the 40-digit inertia certificates, the spectral projections and the reconstructed rotation group are numerical (mpmath eighe), Python-only, flagged here. Mirrors v524. ==== *)](../../../../verification/wolfram/tfpt_readouts_extension.wl#L7966)
-- [(* v469 (ii): KLM mu-index + the 16-fold-way pin *)](../../../../verification/wolfram/tfpt_readouts_extension.wl#L2937)
-- [(* ==== v518 round: CELEST.WP5E.DELTA1.01 -- "the delta-1 chain decided: the derived chiral measure kills the delta-1 route" (delta-1b/1c/1d consolidated; an honest, decided NEGATIVE result with the v516 tension stated). Six exact mirrors: (i) the 16-component Weil system of the D5 (+) A3 discriminant module Z4 x Z4 with q = (5x^2 + 3y^2)/8 -- Gauss sums 2 zeta_8^5 x 2 zeta_8^3 = 4 = sqrt(16) (signature 0 mod 8 = rank E8), S symmetric + unitary, S^2 = C, (ST)^3 = S^2, S^4 = 1, T^8 = 1, tensor split S = S_D5 (x) S_A3 with factor signatures e(-5/8), e(-3/8); (ii) the two invariant Lagrangians (diagonal H and anti-diagonal H', both S- and T-fixed = two E8 gluings), 6 isotropic classes, P_H S P_H = (1/4) J and 3/4 of every S-image weight on the 12 shifted classes (why the naive 4-character rule fails); (iii) the KOBOUNDARY TEST on the recorded exact transport phases (t_p, s_p) of the dressed gauge blocks M = G[a,b] eta^{-8}: the SL(2,Z) relation defects c_{S^4}, c_{(ST)^3 S^-2}, c_{[S^2,T]} are (1, 1, 1) EXACTLY on all 15 sector pairs -- the mu4 multiplier system is a CHARACTER of the orbit stabilisers, not a genuine 2-cocycle; (iv) the Gamma_1(4) CHARACTER FORMULA lambda(gamma) = i^{2B + C/4} on the recorded loop matrices (all in Gamma_1(4), exact integer check), with all four equivalent monomial solutions agreeing; (v) the T-FIX MECHANISM: v502 vacuum energies E_b exact, the f1 f3 dressing shifts every T-fixed node by e(2E + 2E) = e(-1/6) and (-1) x e(-1/6) = e(1/3) = chi_4(T) UNIFORMLY, while f1f2f3 demands {chi_3, chi_4} and f2 demands {chi_5, chi_6} (inconsistent: only the twisted fibre block supplies one character); (vi) the misassignment controls (wrong form (x^2+y^2)/4: |Gauss|^2 = 64 != 16 and S^2 != C exactly; wrong signature sigma = e(-1/4): S^2 = e(-1/2) C exactly). The Harvey-Moore integrals, the SVD contraction solves, the theta covariance certificates and the block transport measurements are numerical (mpmath 30+ digits / numpy) and stay Python-only, flagged here. Mirrors v518. ==== *)](../../../../verification/wolfram/tfpt_readouts_extension.wl#L6877)
-- [(* ---- (v75) Gate 1: U_point -> v_geo. lepton product 32/9; (ratios,product)<=>(individuals) bijection ---- *)](../../../../verification/wolfram/tfpt_readouts.wl#L366)
-- [(* ==== v533 round: FTR.DISC7.NORM.01 -- the disc -7 norm line. Exact mirrors: norm identity, translation, norms (2,4,14,32), constant discriminant -7, vertex, negative controls. ==== *)](../../../../verification/wolfram/tfpt_readouts_extension.wl#L8373)
-- [(* ---- (v89) carrier index lemma ---- *)](../../../../verification/wolfram/tfpt_readouts_extension.wl#L118)
-- [(* ==== v260: one Kummer/K3 carries seam + carrier-16 + E8 (ARCH.K3.01) ==== *)](../../../../verification/wolfram/tfpt_readouts_extension.wl#L2033)
-- [experiments/lean4-carrier-rigidity/TfptCarrier/GlueUniqueness.lean](../../../../experiments/lean4-carrier-rigidity/TfptCarrier/GlueUniqueness.lean#L1)
-- [(* ==== v470 round: the alpha^3 level / embedding-index rigidity -- the exact k_Y = 5/3 arithmetic (tr Y^2 / tr T3^2 over the 5bar), the b1 conversion (3/5)(41/6) = 41/10, and the carrier decomposition 41/6 = 20/3 + 1/6; mirrors v470 (the FHS Chern and the alpha^-1 root re-verification are numerical, Python-only). ==== *)](../../../../verification/wolfram/tfpt_readouts_extension.wl#L2943)
-- [(* ==== v517 round: CELEST.WP5E.M3.01 -- "the a0 uplift": milestone M3 of the CELEST.SEAM.01 back-reaction programme executed (SUCCESS on the preregistered v514 S8.3 criterion). Six exact mirrors: (i) the GH multipole ledger (selection rule m = 0 mod 4, (4, +-4) amplitude (35/16) sin^4 th) + the twistor family at general orbit phase (e1 = e3 = 0, a2 = 4 z0 zb0 zeta^2, a0(zeta), v515 slice), (ii) the kernel bridge (null coordinate: any kernel harmonic; residue V-ledger identity 1/(2r); source flux -4 pi per centre), (iii) the asymptotic kernel log (coefficient 4 = |mu4|, first seam correction a0/eta^4, exact m-grading, GLT tower p_{4k} = 4(-a0)^k with the n = 0 mod 4 selection rule, no log x power terms), (iv) the exceptional-locus log (chi(0) = log a0 = 4 log t0 + i(4 phi0 + pi), modulus response 1 at the locus vs power-law at infinity), (v) the period response (linear in t0, d log Pi/d log a0 = 1/4 = 1/|mu4|, integrated monodromy i = one Coxeter clock step, centre permutation, a0-rigid node support, K4 discriminants ~ t0^2), and (vi) the negative controls ((4,0) clock-invariant, Z2/EH reads 2 on every dial, k = 3/5 orbits move the coefficient, the forbidden family fails both dials). The contour-transform typing itself is the [C] GLT dictionary; the BM kernel anchor is already mirrored in the v515 round. Mirrors v517. ==== *)](../../../../verification/wolfram/tfpt_readouts_extension.wl#L6679)
-- [(* ---- (v71) SIMPLE R-bridge: selector stratum derived => ratios are integer Plucker, no monodromy ---- *)](../../../../verification/wolfram/tfpt_readouts.wl#L343)
-- [(* ==== v529 round: SEAM.INT.FKTOY.01 -- interacting FK toy / Kill-Test-2 shadow. Exact mirrors: (i) Z8 integer identities; (ii) straddle combinatorics; (iii) FK binomial ladder multiplicities. 256-dim spectra Python-only. ==== *)](../../../../verification/wolfram/tfpt_readouts_extension.wl#L8246)
-- [(* ==== v523 round: CELEST.WP5E.WM.01 -- "the constructive w_m derivation": the residual [O] of v516/v520 closed at the fibre-zero-mode level (verdict ERFOLG; the typed premises TP-REG/TP-Q/TP-NUM/TP-CH are the [C] fence, a typing, not mirrorable). Five exact mirrors: (i) the equivariant mode ledger = the closed form 1/((1-q i^j)(1-q i^{-j})) at every order n <= 40 with the Abel value (1/2, 1/4, 1/2) = 1/det_j, Dedekind sum 5/4 and product 16; (ii) the zeta-determinant route (reflection formula symbolic, det_zeta = 4 sin^2(pi j/4) = det_j, Quillen split det Delta = det_j^2, the unique REAL POSITIVE section, the diag(i,i) control breaking realness and the conjugation pairing); (iii) the derived-weight contact vectors + per-sector Okubo squares + total 45<x,x>^2 + psi certificates on the 240 glue roots + the Z2/EH anchor; (iv) the consistency chain w = 4h = -4 ch2 with the T3 budget c = 4 and the two wrong-weight negative controls (1/det^2 leftovers (2, 12) + Quillen contradiction; 1/|1-i^j| irrational with T5/T3 leftovers in Q(sqrt2)); (v) the k = 3, 5 cyclotomic wandering controls w_m = m(k-m)/2 = k h_m. The (C,2) Cesaro truncation means, the Hurwitz/Lerch 40-digit certificates and the delta-1f stripped block limits are numerical (mpmath), Python-only, flagged here. Mirrors v523. ==== *)](../../../../verification/wolfram/tfpt_readouts_extension.wl#L7793)
-- [(* ==== v259: the modular/KMS spectral-action cutoff fixes f_2/f_0 = 1 (PS.SPECACT.02) ==== v258 (Dirac as covariance induction) is numerical matrix-log linear algebra -> Python-only. *)](../../../../verification/wolfram/tfpt_readouts_extension.wl#L2014)
-- [(* ==== v469 round: the net-level crossed-product certification -- the LR locality integers (h_s(SO(16)_1) = 16/16 = 1 in Z; the mu4 glue h(J^k) = {1,1,1} all integer), the KLM mu-index arithmetic (4/2^2 = 1 and 16/4^2 = 1, both holomorphic) and the Kitaev 16-fold-way pin (nu = 16 x |C| = 16 = 0 mod 16, c_- = nu/2 = 8 = g_car+N_fam); mirrors v469 (the FHS Chern itself is numerical, Python-only). ==== *)](../../../../verification/wolfram/tfpt_readouts_extension.wl#L2924)
-- [experiments/lean4-carrier-rigidity/TfptCarrier/SeamResidualAxiom.lean](../../../../experiments/lean4-carrier-rigidity/TfptCarrier/SeamResidualAxiom.lean#L1)
-- [(* v224 diamond F_transfer path: sheet axis curved, winding axis flat, Plucker steps *)](../../../../verification/wolfram/tfpt_readouts_extension.wl#L1849)
-- [(* ==== v520 round: CELEST.WP5E.MEASURE.01 -- "the WP5e BCOV measure question decided at probe level" (delta-1e + delta-1f consolidated): the exact Weil data, the invariant-subspace forcing, the character arithmetic behind the two constructive sources (F-independence + Quillen pairing), the completion/contact/psi and Z2-anchor targets, the level-1 4-design of BOTH Lagrangian gluings, and the exact negative controls. The Harvey-Moore integrals, SVD memberships and J-weighted closures are numerical (mpmath/numpy) and stay Python-only by the suite convention. Mirrors v520. ==== *)](../../../../verification/wolfram/tfpt_readouts_extension.wl#L7271)
-- [(* ==== v508 round: CELEST.WP5E.GAMMA.01 -- WP5e-gamma "the sphere-axion pairing check", an honest rigid NEGATIVE result (the exchange route for pairing the three twisted sphere axions with the rigid 32 T3 residual of the v505 Atiyah-Bott ledger is killed with a certificate). Exact content mirrored: (i) the VERTEX-SPACE DIMS -- the W(D5) x W(A3)-invariant quadratics on the 8-dim glue Cartan have bidegree dims (1,0,1), total 2 = span{s5, s3}, and the invariant quartics have bidegree dims (2,0,1,0,2), total 5 = span{P1,P2,P3,T5,T3} (Weyl nullspace arithmetic, generator by generator); (ii) the TWISTED QUADRATICS + the K^(0) = -15 K^(2) collapse (the two even-sector quadratics are PARALLEL); (iii) the PRODUCT THEOREM -- (a s5 + b s3)(c s5 + d s3) = ac P1 + (ad+bc) P2 + bd P3 identically (zero T5/T3 content of every exchange image); (iv) the RANK-3 CERTIFICATE -- channels E13 = (16,-96,144,0,0), E22 = (16,32,16,0,0), E00 = 225 E22, exchange matrix rank 2 with kernel 0, rank([M | A_fix]) = 3, annihilator certificate (Phi_T5, Phi_T3, Phi_P)(A_fix) = (0, 32, 72), and the naturalness images (25/4,-11/2,97/4,0,0) / (12,-40,76,0,0) with certificate (0,0); (v) the SO(16) AB SUM (15,-18,-15,-4,40) -- T5 does not even cancel, odd classes empty; (vi) the D8 NATIVE QUARTIC 16 T8 + 12 s8^2 with Killing 28 s8 -- no T3 structure. Mirrors v508. ==== *)](../../../../verification/wolfram/tfpt_readouts_extension.wl#L4785)
-- [(* v469 (i): the LR locality integers of both extension routes *)](../../../../verification/wolfram/tfpt_readouts_extension.wl#L2930)
-- [experiments/lean4-carrier-rigidity/TfptCarrier/AxiomCheck.lean](../../../../experiments/lean4-carrier-rigidity/TfptCarrier/AxiomCheck.lean#L1)
-- [(* ==== v519 round: WOIT.THETA.FREE.01 -- the WOIT-alpha milestone of the OS twistor bridge: the real structure exists (two-family classification, mu4 torsor, Z8/C^4/Cl(16) levels) and the exact free-RP preconditions + site-cut degeneration + continuum control. The 40-digit positive- definiteness inertia certificates of the bond-cut Grams (R3/R5) are Python-only by the suite convention (mpmath eigh at dps 40). Mirrors v519. ==== *)](../../../../verification/wolfram/tfpt_readouts_extension.wl#L7078)
-- [(* ==== v515 round: CELEST.WP5E.M1.01 -- "the A3 Omega_N": milestone M1 of the CELEST.SEAM.01 back-reaction programme executed (SUCCESS on the preregistered v514 S8.1 criterion). Eight exact mirrors: (i) the residue-form identities (cover pullback 4 = |mu4|, clock phase i, weight ledger, EH anchor 2 = |Z2|), (ii) the twistor family closed (XY = Z^4 + 4 t0^2 la^2 Z^2 - t0^4 (1 - la^4)^2, O(2) reality, seam fibre = v493, self-mirror, CY-compatible clock lift), (iii) the period reduction + lockstep + clock covariance, (iv) the collision ledger (12 nodes exactly on the 8 eighth roots of unity, antipodal double nodes, clock orbits), (v) the BM anchor (2 pi i)^2 + the lens forcing N in 4Z, (vi) the source curve (four lines, K4 connectivity, forced uniform flux), (vii) the conifold nodes (Hessian det 512 t0^6, quadric rank 4, transversality), and (viii) the KILL probe + negative controls (forbidden family 0/24 vs 8/24, twelfth-root support, EH charge 2, diag(i,i) collapse). The exterior-derivative identity dK = 0 and the generic-profile sphere parametrisation stay Python-side in v515 (dict-based exterior algebra). Mirrors v515. ==== *)](../../../../verification/wolfram/tfpt_readouts_extension.wl#L6272)

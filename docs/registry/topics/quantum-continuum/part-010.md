@@ -4,6 +4,12 @@
 
 Exact ledger statuses remain at the linked original rows and in registry.json. Citations are source links, not proof certification.
 
+## Modular theory and algebraic quantum field theory.
+
+[tex-artefacts/tfpt_references.tex:20-42](../../../../tex-artefacts/tfpt_references.tex#L20) · `section:945c2cb0147875f1d49f` · paragraph
+
+M. Takesaki, Tomita's Theory of Modular Hilbert Algebras and its Applications, Lecture Notes in Math.\ 128, Springer (1970). J. J. Bisognano, E. H. Wichmann, On the duality condition for a Hermitian scalar field / for quantum fields, J. Math.\ Phys.\ 16 (1975) 985–1007; 17 (1976) 303–321. K. Osterwalder, R. Schrader, Axioms for Euclidean Green's functions I, II, Comm.\ Math.\ Phys.\ 31 (1973) 83–112; 42 (1975) 281–30
+
 ## Conformal nets, vertex operator algebras and lattice constructions.
 
 [tex-artefacts/tfpt_references.tex:43-71](../../../../tex-artefacts/tfpt_references.tex#L43) · `section:419291db9b3bf697f68f` · paragraph

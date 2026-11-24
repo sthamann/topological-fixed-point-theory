@@ -4,6 +4,12 @@
 
 Exact ledger statuses remain at the linked original rows and in registry.json. Citations are source links, not proof certification.
 
+## Kontext und Quantenzustand als zwei Auslesungen
+
+[experiments/theory-contracts/universalraum-paired-release-20260914/main-v1.3/chapters/03_prozess.tex:20-55](../../../../experiments/theory-contracts/universalraum-paired-release-20260914/main-v1.3/chapters/03_prozess.tex#L20) · `section:f1e113cb6191e4b25610` · section
+
+Die Matrix [formula in source] summiert die vier Ergebnisgewichte jedes Kontexts. Die Matrix [formula in source] liest die 15 nichttrivialen Pauli-Erwartungswerte aus. Mit [formula in source] lauten ihre Einträge Für [formula in source] und [formula in source] ergibt sich exakt Der Systemschatten entwickelt sich somit als depolarisierender Kanal Die Dämpfung [formula in source] entsteht aus der Kontextkombinatorik. B
+
 ## Allgemeine Kontextblöcke brauchen eine andere Beschreibung
 
 [experiments/theory-contracts/universalraum-paired-release-20260914/main-v1.3/chapters/03_prozess.tex:114-147](../../../../experiments/theory-contracts/universalraum-paired-release-20260914/main-v1.3/chapters/03_prozess.tex#L114) · `section:560dc1cd2e54859e8ebb` · section
@@ -743,9 +749,3 @@ Eine gemeinsame Abschätzung der sechs Farbkanäle verbessert die C16-Stabilitä
 [tex-artefacts/tfpt_references.tex:12-19](../../../../tex-artefacts/tfpt_references.tex#L12) · `section:9b7566c9c30ded1c66be` · section
 
 The TFPT discrete core (the two axioms, the [formula in source] glue, the integer skeleton) is self-contained and machine-checked. Its bridges to continuum/AQFT physics, to gravity and to the lattice/singularity picture build on established mathematics, listed here by topic; the body refers to these by author name.
-
-## Modular theory and algebraic quantum field theory.
-
-[tex-artefacts/tfpt_references.tex:20-42](../../../../tex-artefacts/tfpt_references.tex#L20) · `section:945c2cb0147875f1d49f` · paragraph
-
-M. Takesaki, Tomita's Theory of Modular Hilbert Algebras and its Applications, Lecture Notes in Math.\ 128, Springer (1970). J. J. Bisognano, E. H. Wichmann, On the duality condition for a Hermitian scalar field / for quantum fields, J. Math.\ Phys.\ 16 (1975) 985–1007; 17 (1976) 303–321. K. Osterwalder, R. Schrader, Axioms for Euclidean Green's functions I, II, Comm.\ Math.\ Phys.\ 31 (1973) 83–112; 42 (1975) 281–30

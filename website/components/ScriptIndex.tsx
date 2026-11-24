@@ -605,6 +605,7 @@ const CLUSTERS: Cluster[] = [
       { file: "v1033_charged_disorder.py", what: "Auxiliary Z4 flux corners and twist weight/parity obstruction; MMST open; full repository required" },
       { file: "v1034_parent_mirror.py", what: "Factorized mirror gap and bare-hopping relative-bound obstruction; no interacting gap theorem; full repository required" },
       { file: "v1035_matter_coupling.py", what: "Physical Fourier Ward propagation for prescribed sources and dynamical-source obstructions; universal quantum coupling open" },
+      { file: "v1037_spin2_positivity.py", what: "Positivity note for the entire-form-factor spin-2 rows (v304/v370/v380/v386/v389/v400): Kaellen-Lehmann positivity needs Q^2 C >= Z and a non-positive Q^4 coefficient in C^-1; e^{-p^2/M^2}/p^2 is pole-free but violates both; a spectral density that is only the pole is exactly Z/p^2" },
     ],
   },
   {

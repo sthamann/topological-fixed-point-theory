@@ -4,6 +4,35 @@
 
 Exact ledger statuses remain at the linked original rows and in registry.json. Citations are source links, not proof certification.
 
+## 2026-07-21 (III) (CELEST.SEAM.01 WP3 [formula in source] WP4 executed and promoted: v495 Green–Schwarz alignment (verdict B, honestly non-selective) [formula in source] v496 character-vs-S-algebra type mismatch (verdict B(ii), boundary-limit shadow); contract now WP1–WP4 done, WP5 ; no gate closes, no marker moves, SEAM.EQUIV.01 untouched)
+
+[documents/changelog/sections/007-source.tex:269-309](../../../../documents/changelog/sections/007-source.tex#L269) · `section:fe8d8923981b24e85222` · subsection
+
+v495_celestial_wp3_gs_alignment.py ( CELEST.WP3.01, 25 checks, exact Fraction/sympy). The pre-registered WP3 ``alignment test only'': the Okubo coefficient [formula in source] is derived as an exact polynomial identity for all 8 algebras on Costello's list (sl [formula in source] , sl [formula in source] , g [formula in source] , so [formula in source] , f [formula in source] , e [formula in source] , e [formula in s
+
+Explicit source references:
+
+- [CELEST.WP4.01](../../../../verification/status_ledger.csv#L559) · explicit_claim_identifier · original status at linked ledger row
+- [verification/v495_celestial_wp3_gs_alignment.py](../../../../verification/v495_celestial_wp3_gs_alignment.py#L1) · explicit_script_identifier
+- [verification/v449_seam_mmst_uniform.py](../../../../verification/v449_seam_mmst_uniform.py#L1) · explicit_script_identifier
+- [CELEST.SEAM.01](../../../../verification/status_ledger.csv#L556) · explicit_claim_identifier · original status at linked ledger row
+- [verification/v496_celestial_wp4_character_shadow.py](../../../../verification/v496_celestial_wp4_character_shadow.py#L1) · explicit_script_identifier
+- [verification/wolfram/tfpt_readouts_extension.wl](../../../../verification/wolfram/tfpt_readouts_extension.wl#L1) · explicit_file_citation
+- [SEAM.EQUIV.01](../../../../verification/status_ledger.csv#L381) · explicit_claim_identifier · original status at linked ledger row
+- [verification/v492_celestial_z4_orbifold.py](../../../../verification/v492_celestial_z4_orbifold.py#L1) · explicit_script_identifier
+- [verification/v336_continuum_limit.py](../../../../verification/v336_continuum_limit.py#L1) · explicit_script_identifier
+- [CELEST.WP3.01](../../../../verification/status_ledger.csv#L558) · explicit_claim_identifier · original status at linked ledger row
+
+Navigation joins (both sources name the same Python identifier; statement equivalence is not inferred):
+
+- [experiments/lean4-carrier-rigidity/TfptCarrier/SeamEdgeChern.lean](../../../../experiments/lean4-carrier-rigidity/TfptCarrier/SeamEdgeChern.lean#L1)
+- [experiments/lean4-carrier-rigidity/TfptCarrier/AxiomCheck.lean](../../../../experiments/lean4-carrier-rigidity/TfptCarrier/AxiomCheck.lean#L1)
+- [(* ==== v496 round: CELEST.WP4.01 -- the (E8)_1 character E4/eta^8 vs the glue-equivariant E8[C^2] S-algebra (WP4 of CELEST.SEAM.01, the type mismatch head-on). Exact content mirrored: the character coefficients through q^6 with the q j = E4^3/eta^24 cross-check; the equivariant Hilbert series (60+128t+60t^2)/(1-t^2)^2 with the quadratic cumulative count 31 s^2 + 92 s + 60 and the SU(2)_+ slice; the two-sided jet-Fock mismatch f = (1,128,8436,381056) with strictly increasing f_n/chi_n (n = 1..12); the level-2 null ideal 27000 = 30^3 = h_vee^3; the boundary bridges (mu4 period sum 248, 248 not a tower dimension, loop Fock 897266); mirrors v496. ==== *)](../../../../verification/wolfram/tfpt_readouts_extension.wl#L3258)
+- [experiments/lean4-carrier-rigidity/TfptCarrier/SeamScalingLimit.lean](../../../../experiments/lean4-carrier-rigidity/TfptCarrier/SeamScalingLimit.lean#L1)
+- [(* ==== v495 round: CELEST.WP3.01 -- the Green-Schwarz axion coefficient lambda_g (Costello) vs c3 = 1/(8 pi) (WP3 of CELEST.SEAM.01, alignment test only). Exact content mirrored: the Deligne closed form lambda~^2 = 10 h_vee^2/(dim+2) = h_vee + 6 for all 8 algebras on Costello's list, with the dimension formula dim = 2(5h_vee-6)(h_vee+1)/(h_vee+6) and the fundamental-index values (h_vee+6)/i^2; the E8 alignment (kappa/c3)^2 = lambda^2/3 = 12 = |mu4| N_fam resp. 1/300 with kappa/c3 itself irrational; the so8 factor-2 slip (exact 3, printed 3/2); the look-elsewhere pass counts (smooth 8/8, lambda-integrality 2/8 = {sl3, e8}, g_car | h_vee 1/8 = {e8}, phi(h_vee) = rank 4/8, phi(h) = rank 5/8) and the e8 exponents = totatives of 30; mirrors v495. The Okubo root-sum identity itself is polynomial (verified in Python from explicit root systems); its arithmetic consequence lambda~^2 = h_vee + 6 is mirrored here. ==== *)](../../../../verification/wolfram/tfpt_readouts_extension.wl#L3210)
+- [experiments/lean4-carrier-rigidity/TfptCarrier/SeamApplicabilityLedger.lean](../../../../experiments/lean4-carrier-rigidity/TfptCarrier/SeamApplicabilityLedger.lean#L1)
+- [experiments/theory-contracts/original-paper-source-reconciliation-20261102/shorttime_20261105J/shorttime20261105J_lean/SeamScalingLimitCurrent.lean](../../../../experiments/theory-contracts/original-paper-source-reconciliation-20261102/shorttime_20261105J/shorttime20261105J_lean/SeamScalingLimitCurrent.lean#L1)
+
 ## 2026-07-21 (II) (PG.06b FULL: the complete NICER Vela archive reduced — the first X-ray [formula in source] leg of the recovery-comb search, verdict data_limited; the old PG.06b ``pipeline proven'' fold corrected on record; experiments level only — no verification module, no gate closes, no marker moves)
 
 [documents/changelog/sections/007-source.tex:310-342](../../../../documents/changelog/sections/007-source.tex#L310) · `section:e2d9ada460279647968e` · subsection
@@ -2884,46 +2913,3 @@ Explicit source references:
 - [verification/v258_dirac_covariance_induction.py](../../../../verification/v258_dirac_covariance_induction.py#L1) · explicit_script_identifier
 - [verification/v261_modular_spectral_closure.py](../../../../verification/v261_modular_spectral_closure.py#L1) · explicit_script_identifier
 - [QGEO.SYM.01](../../../../verification/status_ledger.csv#L261) · explicit_claim_identifier · original status at linked ledger row
-
-## 2026-06-17 (The Modular Spectral Closure: Dirac as covariance induction, the modular cutoff, the Kummer/K3 unification, and the assembly certificate, v258– v261)
-
-[documents/changelog/sections/018-source.tex:268-310](../../../../documents/changelog/sections/018-source.tex#L268) · `section:ca7f6aced60b17ae6709` · subsection
-
-v258_dirac_covariance_induction.py ( PS.DIRAC.03) closes the ``posited Yukawa vs derived operator'' gap of v250/ v252. The finite Dirac operator [formula in source] is the modular/covariance induction of the boundary seam quasi-free (KMS, [formula in source] ) state: a Gaussian state is fixed by its covariance [formula in source] (a positive contraction) with one-particle modular Hamiltonian [formula in source] (Arak
-
-Explicit source references:
-
-- [verification/v260_k3_kummer_unification.py](../../../../verification/v260_k3_kummer_unification.py#L1) · explicit_file_citation
-- [verification/v239_kms_thermal_time.py](../../../../verification/v239_kms_thermal_time.py#L1) · explicit_script_identifier
-- [PS.SPECACT.02](../../../../verification/status_ledger.csv#L345) · explicit_claim_identifier · original status at linked ledger row
-- [verification/v214_seam_pillowcase.py](../../../../verification/v214_seam_pillowcase.py#L1) · explicit_script_identifier
-- [PS.DIRAC.03](../../../../verification/status_ledger.csv#L344) · explicit_claim_identifier · original status at linked ledger row
-- [verification/v261_modular_spectral_closure.py](../../../../verification/v261_modular_spectral_closure.py#L1) · explicit_script_identifier
-- [verification/v1_e8_glue.py](../../../../verification/v1_e8_glue.py#L1) · explicit_script_identifier
-- [verification/v252_full_finite_triple.py](../../../../verification/v252_full_finite_triple.py#L1) · explicit_script_identifier
-- [verification/v232_e8_kleinian_seam.py](../../../../verification/v232_e8_kleinian_seam.py#L1) · explicit_script_identifier
-- [QG.AMB.01](../../../../verification/status_ledger.csv#L47) · explicit_claim_identifier · original status at linked ledger row
-- [verification/v18_quark_yukawa.py](../../../../verification/v18_quark_yukawa.py#L1) · explicit_script_identifier
-- [verification/v197_rr_carrier_clifford_d5.py](../../../../verification/v197_rr_carrier_clifford_d5.py#L1) · explicit_script_identifier
-- [verification/v253_kappa_scalaron_ps.py](../../../../verification/v253_kappa_scalaron_ps.py#L1) · explicit_script_identifier
-- [verification/v58_seam_horizon_chain.py](../../../../verification/v58_seam_horizon_chain.py#L1) · explicit_script_identifier
-- [verification/v238_modular_lindblad_dynamics.py](../../../../verification/v238_modular_lindblad_dynamics.py#L1) · explicit_script_identifier
-- [verification/v255_spectral_action_expansion.py](../../../../verification/v255_spectral_action_expansion.py#L1) · explicit_script_identifier
-- [verification/v259_modular_cutoff_kappa.py](../../../../verification/v259_modular_cutoff_kappa.py#L1) · explicit_file_citation
-- [verification/v258_dirac_covariance_induction.py](../../../../verification/v258_dirac_covariance_induction.py#L1) · explicit_script_identifier
-- [QFT.MSC.01](../../../../verification/status_ledger.csv#L347) · explicit_claim_identifier · original status at linked ledger row
-- [verification/v236_brieskorn_capstone.py](../../../../verification/v236_brieskorn_capstone.py#L1) · explicit_script_identifier
-- [verification/v250_dirac_triple_contract.py](../../../../verification/v250_dirac_triple_contract.py#L1) · explicit_script_identifier
-- [ARCH.K3.01](../../../../verification/status_ledger.csv#L346) · explicit_claim_identifier · original status at linked ledger row
-- [QGEO.SYM.01](../../../../verification/status_ledger.csv#L261) · explicit_claim_identifier · original status at linked ledger row
-
-Navigation joins (both sources name the same Python identifier; statement equivalence is not inferred):
-
-- [(* ---- (v197) ARCH.RRCAR.02: even Clifford of the 5-dim carrier = the D5 half-spinor ---- *)](../../../../verification/wolfram/tfpt_readouts_extension.wl#L1631)
-- [(* ==== v259: the modular/KMS spectral-action cutoff fixes f_2/f_0 = 1 (PS.SPECACT.02) ==== v258 (Dirac as covariance induction) is numerical matrix-log linear algebra -> Python-only. *)](../../../../verification/wolfram/tfpt_readouts_extension.wl#L2014)
-- [(* ---- (v58) seam-horizon chain: one-sided Gauss-Bonnet, KMS, S_BH, RT in seam units ---- *)](../../../../verification/wolfram/tfpt_readouts.wl#L270)
-- [(* ==== v232: the seam as the E8 Kleinian singularity (du Val resolution + link) ==== *)](../../../../verification/wolfram/tfpt_readouts_extension.wl#L1895)
-- [(* ==== v236: the (2,3,5) Brieskorn singularity generates the skeleton ==== *)](../../../../verification/wolfram/tfpt_readouts_extension.wl#L1975)
-- [(* ==== v260: one Kummer/K3 carries seam + carrier-16 + E8 (ARCH.K3.01) ==== *)](../../../../verification/wolfram/tfpt_readouts_extension.wl#L2033)
-- [(* ---- (v1) E8 glue arithmetic ---- *)](../../../../verification/wolfram/tfpt_readouts.wl#L46)
-- [(* ---- (v214) QGEO.PILLOW.01: pillowcase reduction -- cross-ratio 2 => j=1728 => order-4 CM ---- *)](../../../../verification/wolfram/tfpt_readouts_extension.wl#L1727)

@@ -2670,7 +2670,7 @@ Navigation joins (both sources name the same Python identifier; statement equiva
 
 ## Summary
 
-[documents/tfpt_4_frontier/sections/004-source.tex:141-199](../../../../documents/tfpt_4_frontier/sections/004-source.tex#L141) · `section:a5afdfe2d50d9975d56b` · section
+[documents/tfpt_4_frontier/sections/004-source.tex:141-202](../../../../documents/tfpt_4_frontier/sections/004-source.tex#L141) · `section:a5afdfe2d50d9975d56b` · section
 
 tocsectionSummary @p2.9cmcY@ Item & Status & Honest handle / what is missing \\ [formula in source] & & downstream readout [formula in source] from closed [formula in source] ; leptogenesis interface, cleanest scenario [formula in source] , [formula in source] (shared decuple, no seesaw scale) \\ [formula in source] & & cross-sector (QCD scale / closed [formula in source] ); typed runnable solver with [formula in sou
 
@@ -2681,6 +2681,7 @@ Explicit source references:
 - [verification/v371_ftransfer_pole.py](../../../../verification/v371_ftransfer_pole.py#L1) · explicit_file_citation
 - [verification/v374_ftransfer_qcd.py](../../../../verification/v374_ftransfer_qcd.py#L1) · explicit_file_citation
 - [verification/v472_quillen_detline_moduli.py](../../../../verification/v472_quillen_detline_moduli.py#L1) · explicit_script_identifier
+- [verification/v1037_spin2_positivity.py](../../../../verification/v1037_spin2_positivity.py#L1) · explicit_file_citation
 - [verification/v369_qgamb_redundancy.py](../../../../verification/v369_qgamb_redundancy.py#L1) · explicit_script_identifier
 - [verification/v386_grav_amplitude.py](../../../../verification/v386_grav_amplitude.py#L1) · explicit_file_citation
 - [verification/v359_grav_nonlinear_einstein.py](../../../../verification/v359_grav_nonlinear_einstein.py#L1) · explicit_script_identifier

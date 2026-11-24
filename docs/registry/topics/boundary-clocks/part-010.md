@@ -4,6 +4,12 @@
 
 Exact ledger statuses remain at the linked original rows and in registry.json. Citations are source links, not proof certification.
 
+## Hecke-Index = Jones-Index.
+
+[documents/experiments--theory-contracts--universalraum-fable-kernfragen-20260910--fable-runde3--paper--tfpt_anschluss_zellen_seam_2026-09-14/sections/001-section-evidenzkonvention-und-abgrenzung.tex:146-147](../../../../documents/experiments--theory-contracts--universalraum-fable-kernfragen-20260910--fable-runde3--paper--tfpt_anschluss_zellen_seam_2026-09-14/sections/001-section-evidenzkonvention-und-abgrenzung.tex#L146) · `section:5da3c2dfd59709ee909c` · paragraph
+
+Mit [formula in source] (Kawahigashi–Longo–Müger), die das Repo für den Glue-Index 4 benutzt, gilt für jedes injektive [formula in source] : [formula in source] = Hecke-Überlagerungsindex von [formula in source] auf [formula in source] (Zählfunktion [formula in source] , Pol bei [formula in source] ). Pimsner–Popa macht [formula in source] zur bedingten Entropie; das Vakuum ist unter den Dualgruppen-Automorphismen fe
+
 ## Grenzen und offene Punkte
 
 [documents/experiments--theory-contracts--universalraum-fable-kernfragen-20260910--fable-runde3--paper--tfpt_anschluss_zellen_seam_2026-09-14/sections/001-section-evidenzkonvention-und-abgrenzung.tex:148-156](../../../../documents/experiments--theory-contracts--universalraum-fable-kernfragen-20260910--fable-runde3--paper--tfpt_anschluss_zellen_seam_2026-09-14/sections/001-section-evidenzkonvention-und-abgrenzung.tex#L148) · `section:eb1aa8a2e4d55b3cc2c4` · section
@@ -659,9 +665,3 @@ In §7 sollte „ein positiver Unterschied`` durch „eine nichtverschwindende D
 [documents/experiments--theory-contracts--universalraum-spin-lift-basics-20260915--tmp--pdfs--TFPT_Universalraum_Spinlift_Hauptdokument_2026-09-15_v1.6.10/sections/019-subsubsection-3-2-nicht-nur-gez-hlt-die-vier-zust-nde-un.tex:321-338](../../../../documents/experiments--theory-contracts--universalraum-spin-lift-basics-20260915--tmp--pdfs--TFPT_Universalraum_Spinlift_Hauptdokument_2026-09-15_v1.6.10/sections/019-subsubsection-3-2-nicht-nur-gez-hlt-die-vier-zust-nde-un.tex#L321) · `section:6f0cddb427528526467a` · subsubsection
 
 Ohne die zusätzlich gewährten Gruppenkontrollen erhalten X, Nb, der Clock und alle Modenbesetzungen weiterhin mindestens eine nichtskalare Farb-Cartanladung. Jede Komposition dieser Operatoren behält diese Erhaltung. Die alleinige Erlaubnis, mehr Moden zu unterscheiden, hebt das Hindernis also nicht auf.
-
-## 8.1 Ein überprüfbarer Unterbestimmtheitssatz
-
-[documents/experiments--theory-contracts--universalraum-spin-lift-basics-20260915--tmp--pdfs--TFPT_Universalraum_Spinlift_Hauptdokument_2026-09-15_v1.6.10/sections/020-subsection-8-die-fundamentale-frage-was-fehlt.tex:4-32](../../../../documents/experiments--theory-contracts--universalraum-spin-lift-basics-20260915--tmp--pdfs--TFPT_Universalraum_Spinlift_Hauptdokument_2026-09-15_v1.6.10/sections/020-subsection-8-die-fundamentale-frage-was-fehlt.tex#L4) · `section:7f06ec0c70ab2a24d278` · subsubsection
-
-Betrachte bei festem W dieselbe Familie [formula in source] . Alle diese Hamiltonoperatoren besitzen die gleiche innere Quellsymmetrie, dieselbe Ladungserhaltung und denselben kommutierenden endlichen Clock. Dennoch unterscheiden sie sich dynamisch. Schon für dieselbe gefüllte Referenz F ist die dimensionslose Momentenkombination

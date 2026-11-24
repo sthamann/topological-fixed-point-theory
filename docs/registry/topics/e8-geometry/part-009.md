@@ -696,7 +696,7 @@ Explicit source references:
 
 ## Front matter / support
 
-[tex-artefacts/verification.tex:1-739](../../../../tex-artefacts/verification.tex#L1) · `section:ab9e7e520130ecc7da7c` · frontmatter
+[tex-artefacts/verification.tex:1-740](../../../../tex-artefacts/verification.tex#L1) · `section:ab9e7e520130ecc7da7c` · frontmatter
 
 @p3.5cmY@ Script & What it machine-checks \\ Script & What it machine-checks (continued) \\ 2r@ continued on next page\\ v1_ e8_ glue.py & glue theorem [formula in source] : [formula in source] , [formula in source] , [formula in source] , [formula in source] \\ v2_ carrier_ pascal.py & [formula in source] unique Pascal solution; [formula in source] , [formula in source] , [formula in source] , [formula in source] ,
 
@@ -889,6 +889,7 @@ Explicit source references:
 - [verification/v497_celestial_wp5a_null_ideal.py](../../../../verification/v497_celestial_wp5a_null_ideal.py#L1) · explicit_script_identifier
 - [QGEO.SYM.03](../../../../verification/status_ledger.csv#L370) · explicit_claim_identifier · original status at linked ledger row
 - [verification/v479_kronheimer_quiver_bridge.py](../../../../verification/v479_kronheimer_quiver_bridge.py#L1) · explicit_file_citation
+- [verification/v400_grav_nonlocal_action.py](../../../../verification/v400_grav_nonlocal_action.py#L1) · explicit_script_identifier
 - [E8.GAUSSIAN.CODE.01](../../../../verification/status_ledger.csv#L662) · explicit_claim_identifier · original status at linked ledger row
 - [verification/v722_phys_ramified_ns_r.py](../../../../verification/v722_phys_ramified_ns_r.py#L1) · explicit_file_citation
 - [verification/v388_corrections_budget.py](../../../../verification/v388_corrections_budget.py#L1) · explicit_file_citation
@@ -1330,6 +1331,7 @@ Explicit source references:
 - [verification/v796_duad_syntheme_bridge.py](../../../../verification/v796_duad_syntheme_bridge.py#L1) · explicit_file_citation
 - [verification/v329_os_gap_reduction.py](../../../../verification/v329_os_gap_reduction.py#L1) · explicit_script_identifier
 - [verification/v11_unique_KQ.py](../../../../verification/v11_unique_KQ.py#L1) · explicit_file_citation
+- [verification/v389_grav_loop_finiteness.py](../../../../verification/v389_grav_loop_finiteness.py#L1) · explicit_script_identifier
 - [verification/v115_anchor_residue.py](../../../../verification/v115_anchor_residue.py#L1) · explicit_file_citation
 - [QGEO.SUBPRIN.01](../../../../verification/status_ledger.csv#L273) · explicit_claim_identifier · original status at linked ledger row
 - [SEAM.BIT.ORIGIN.01](../../../../verification/status_ledger.csv#L571) · explicit_claim_identifier · original status at linked ledger row
@@ -1484,6 +1486,7 @@ Explicit source references:
 - [verification/v993_minimal_defect_selector.py](../../../../verification/v993_minimal_defect_selector.py#L1) · explicit_file_citation
 - [verification/v114_torsion_delta.py](../../../../verification/v114_torsion_delta.py#L1) · explicit_file_citation
 - [verification/v184_etaB_anchored_boltzmann.py](../../../../verification/v184_etaB_anchored_boltzmann.py#L1) · explicit_script_identifier
+- [verification/v1037_spin2_positivity.py](../../../../verification/v1037_spin2_positivity.py#L1) · explicit_file_citation
 - [verification/v988_psi_lambda_reduction.py](../../../../verification/v988_psi_lambda_reduction.py#L1) · explicit_file_citation
 - [verification/v269_spert_paqft_skeleton.py](../../../../verification/v269_spert_paqft_skeleton.py#L1) · explicit_script_identifier
 - [verification/v204_muon_seam_g2.py](../../../../verification/v204_muon_seam_g2.py#L1) · explicit_file_citation
@@ -1581,7 +1584,6 @@ Explicit source references:
 - [verification/v187_ftransfer_laws.py](../../../../verification/v187_ftransfer_laws.py#L1) · explicit_script_identifier
 - [verification/v227_degree_exponent_channel_split.py](../../../../verification/v227_degree_exponent_channel_split.py#L1) · explicit_script_identifier
 - [verification/v172_trace_anomaly_seed.py](../../../../verification/v172_trace_anomaly_seed.py#L1) · explicit_file_citation
-- [verification/v389_grav_loop_finiteness.py](../../../../verification/v389_grav_loop_finiteness.py#L1) · explicit_file_citation
 - [verification/v1004_milnor_frobenius_gray.py](../../../../verification/v1004_milnor_frobenius_gray.py#L1) · explicit_file_citation
 - [verification/v446_seam_clock_invariance.py](../../../../verification/v446_seam_clock_invariance.py#L1) · explicit_file_citation
 - [verification/v782_e8_transition_bus.py](../../../../verification/v782_e8_transition_bus.py#L1) · explicit_script_identifier
@@ -1632,7 +1634,6 @@ Explicit source references:
 - [verification/wolfram/tfpt_readouts_extension.wl](../../../../verification/wolfram/tfpt_readouts_extension.wl#L1) · explicit_file_citation
 - [CHIRAL4D.MIRROR.DET16.01](../../../../verification/status_ledger.csv#L766) · explicit_claim_identifier · original status at linked ledger row
 - [SEAM.EQUIV.CONTINUUM.LR.01](../../../../verification/status_ledger.csv#L497) · explicit_claim_identifier · original status at linked ledger row
-- [verification/v400_grav_nonlocal_action.py](../../../../verification/v400_grav_nonlocal_action.py#L1) · explicit_file_citation
 - [verification/v483_pillowcase_exact_traces.py](../../../../verification/v483_pillowcase_exact_traces.py#L1) · explicit_file_citation
 - [SEAM.EQUIV.B01](../../../../verification/status_ledger.csv#L383) · explicit_claim_identifier · original status at linked ledger row
 - [verification/v173_pfaffian_cp_car.py](../../../../verification/v173_pfaffian_cp_car.py#L1) · explicit_file_citation

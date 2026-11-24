@@ -4,6 +4,36 @@
 
 Exact ledger statuses remain at the linked original rows and in registry.json. Citations are source links, not proof certification.
 
+## =150 2026-07-23 (X) ( v530– v533 — the external review round promoted: center quotient compiler, Coxeter Stage A tensor clock, dual-degree modular checksum [formula in source] , sheet-transfer disc [formula in source] norm line; every identity machine-confirmed exactly before promotion (probe [formula in source] ); NO marker moves)
+
+[documents/changelog/sections/003-source.tex:149-201](../../../../documents/changelog/sections/003-source.tex#L149) · `section:bc972235a8e75d6dcfea` · subsection
+
+New module v530 ( DIAMOND.CENTER.QUOTIENT.01). The Sheet-Diamond center [formula in source] carries the fixed primitive line [formula in source] ( [formula in source] ), and the induced operator on [formula in source] is exactly the atom matrix [formula in source] \ with [formula in source] , [formula in source] , [formula in source] , [formula in source] , [formula in source] , [formula in source] . The center self-
+
+Explicit source references:
+
+- [verification/v414_center_resolvent_portal.py](../../../../verification/v414_center_resolvent_portal.py#L1) · explicit_script_identifier
+- [experiments/next.txt](../../../../experiments/next.txt#L1) · explicit_file_citation
+- [verification/wolfram/tfpt_readouts_extension.wl](../../../../verification/wolfram/tfpt_readouts_extension.wl#L1) · explicit_file_citation
+- [E8.DEGREE.MODULAR.01](../../../../verification/status_ledger.csv#L600) · explicit_claim_identifier · original status at linked ledger row
+- [verification/v530_center_quotient_compiler.py](../../../../verification/v530_center_quotient_compiler.py#L1) · explicit_script_identifier
+- [verification/v533_ftransfer_disc7_norm.py](../../../../verification/v533_ftransfer_disc7_norm.py#L1) · explicit_script_identifier
+- [COX.STAGEA.TENSOR.01](../../../../verification/status_ledger.csv#L599) · explicit_claim_identifier · original status at linked ledger row
+- [verification/v532_e8_degree_modular_checksum.py](../../../../verification/v532_e8_degree_modular_checksum.py#L1) · explicit_script_identifier
+- [FTR.DISC7.NORM.01](../../../../verification/status_ledger.csv#L601) · explicit_claim_identifier · original status at linked ledger row
+- [verification/v531_coxeter_tensor_stage_a.py](../../../../verification/v531_coxeter_tensor_stage_a.py#L1) · explicit_script_identifier
+- [verification/v529_seam_interacting_toy_fk.py](../../../../verification/v529_seam_interacting_toy_fk.py#L1) · explicit_script_identifier
+- [DIAMOND.CENTER.QUOTIENT.01](../../../../verification/status_ledger.csv#L598) · explicit_claim_identifier · original status at linked ledger row
+
+Navigation joins (both sources name the same Python identifier; statement equivalence is not inferred):
+
+- [(* ==== v529 round: SEAM.INT.FKTOY.01 -- interacting FK toy / Kill-Test-2 shadow. Exact mirrors: (i) Z8 integer identities; (ii) straddle combinatorics; (iii) FK binomial ladder multiplicities. 256-dim spectra Python-only. ==== *)](../../../../verification/wolfram/tfpt_readouts_extension.wl#L8246)
+- [(* ==== v530 round: DIAMOND.CENTER.QUOTIENT.01 -- the center quotient compiler. Exact mirrors: fixed line, unimodular quotient = atom matrix, invariants, self-coding row sums, CP code, resolvent factorisation, K/Q controls. ==== *)](../../../../verification/wolfram/tfpt_readouts_extension.wl#L8264)
+- [(* ==== v532 round: E8.DEGREE.MODULAR.01 -- the dual-degree checksum 744. Exact mirrors: dual products, j-series constant 744, D16 control, non-heterotic controls, prime-totative fingerprint. ==== *)](../../../../verification/wolfram/tfpt_readouts_extension.wl#L8335)
+- [(* v414: the center C is a resolvent portal G2 -> F4 -> E8 *)](../../../../verification/wolfram/tfpt_readouts_extension.wl#L2442)
+- [(* ==== v533 round: FTR.DISC7.NORM.01 -- the disc -7 norm line. Exact mirrors: norm identity, translation, norms (2,4,14,32), constant discriminant -7, vertex, negative controls. ==== *)](../../../../verification/wolfram/tfpt_readouts_extension.wl#L8373)
+- [(* ==== v531 round: COX.STAGEA.TENSOR.01 -- the Stage A tensor clock. Exact mirrors: order 30, chi = Phi30, Ramanujan trace tomography, honest Phi15 scope, coprimality controls. ==== *)](../../../../verification/wolfram/tfpt_readouts_extension.wl#L8301)
+
 ## =150 2026-07-23 (IX) (website entry redesign: narrative home, honesty band, proof strip, guided-tour route — editorial only, NO new modules, NO marker moves)
 
 [documents/changelog/sections/003-source.tex:202-208](../../../../documents/changelog/sections/003-source.tex#L202) · `section:d7de69fc09310845215e` · subsection
@@ -2731,36 +2761,3 @@ Explicit source references:
 Navigation joins (both sources name the same Python identifier; statement equivalence is not inferred):
 
 - [(* ---- (v99) Koide flow time ---- *)](../../../../verification/wolfram/tfpt_readouts_extension.wl#L304)
-
-## 2026-06-25 (Three closure-strategy modules v425– v427 [formula in source] the Safeguards paper)
-
-[documents/changelog/sections/012-source.tex:268-304](../../../../documents/changelog/sections/012-source.tex#L268) · `section:f6d50ad015506eb0de3c` · subsection
-
-v425 ( DYN.TRANSFER.UNIVERSAL.01) — the single-flow reduction of [formula in source] . The four frontier transfers do not each need a separate external solver: their dynamics is the ONE native flow (the seam modular/recovery semigroup, v238/ v240, gap [formula in source] ) restricted to each sector. \ the v99 Koide generator linearised at [formula in source] has rate [formula in source] , time- [formula in source] co
-
-Explicit source references:
-
-- [verification/v383_dynamics_universal.py](../../../../verification/v383_dynamics_universal.py#L1) · explicit_script_identifier
-- [verification/v427_overdet_witness_map.py](../../../../verification/v427_overdet_witness_map.py#L1) · explicit_script_identifier
-- [verification/v238_modular_lindblad_dynamics.py](../../../../verification/v238_modular_lindblad_dynamics.py#L1) · explicit_script_identifier
-- [verification/v99_koide_flow_time.py](../../../../verification/v99_koide_flow_time.py#L1) · explicit_script_identifier
-- [verification/make_docs_map.py](../../../../verification/make_docs_map.py#L1) · explicit_file_citation
-- [verification/v305_witness_independence.py](../../../../verification/v305_witness_independence.py#L1) · explicit_script_identifier
-- [verification/run_all.py](../../../../verification/run_all.py#L1) · explicit_file_citation
-- [verification/make_manifest.py](../../../../verification/make_manifest.py#L1) · explicit_file_citation
-- [verification/v425_dyn_transfer_universal.py](../../../../verification/v425_dyn_transfer_universal.py#L1) · explicit_script_identifier
-- [SEAM.EQUIV.LTORP.KMS.01](../../../../verification/status_ledger.csv#L493) · explicit_claim_identifier · original status at linked ledger row
-- [verification/v426_seam_lto_rp_kms.py](../../../../verification/v426_seam_lto_rp_kms.py#L1) · explicit_script_identifier
-- [SEAM.EQUIV.01](../../../../verification/status_ledger.csv#L381) · explicit_claim_identifier · original status at linked ledger row
-- [verification/v424_seam_lto_rp_reduction.py](../../../../verification/v424_seam_lto_rp_reduction.py#L1) · explicit_script_identifier
-- [OVERDET.WITNESS.MAP.01](../../../../verification/status_ledger.csv#L494) · explicit_claim_identifier · original status at linked ledger row
-- [DYN.TRANSFER.UNIVERSAL.01](../../../../verification/status_ledger.csv#L492) · explicit_claim_identifier · original status at linked ledger row
-- [verification/v320_galois_cp_relation.py](../../../../verification/v320_galois_cp_relation.py#L1) · explicit_script_identifier
-- [verification/v240_gns_os_reconstruction.py](../../../../verification/v240_gns_os_reconstruction.py#L1) · explicit_script_identifier
-
-Navigation joins (both sources name the same Python identifier; statement equivalence is not inferred):
-
-- [experiments/lean4-carrier-rigidity/TfptCarrier/SeamApplicabilityLedger.lean](../../../../experiments/lean4-carrier-rigidity/TfptCarrier/SeamApplicabilityLedger.lean#L1)
-- [(* ---- (v99) Koide flow time ---- *)](../../../../verification/wolfram/tfpt_readouts_extension.wl#L304)
-- [experiments/lean4-carrier-rigidity/TfptCarrier/SpectralGapAttractor.lean](../../../../experiments/lean4-carrier-rigidity/TfptCarrier/SpectralGapAttractor.lean#L1)
-- [(* v320 GALOIS.CP.PREDICT.01 -- the falsifiable CP lock *)](../../../../verification/wolfram/tfpt_readouts_extension.wl#L2216)

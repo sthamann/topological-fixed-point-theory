@@ -740,6 +740,7 @@ MODULES = [
     ("v1034_parent_mirror", 'Factorized mirror gap and bare-hopping relative-bound obstruction; no interacting gap theorem; full repository required'),
     ("v1035_matter_coupling", 'Physical Fourier Ward propagation for prescribed sources and dynamical-source obstructions; universal quantum coupling open'),
     ("v1036_ps_proton_real45", 'PS.THRESHOLD.02/PS.PROTON.02 recount with the single real 45 of the E8 hull: v266 counted the (15,1,1) complex; real 45 -> tau_p 2.2e34 yr (1L, band only) and 1.1e33 yr (2L, excluded); 2L E8 scan leaves 101 split-multiplet contents in the kappa band, all within Hyper-K reach'),
+    ("v1037_spin2_positivity", 'Positivity note for the entire-form-factor spin-2 rows (v304/v370/v380/v386/v389/v400): Kaellen-Lehmann positivity needs Q^2 C >= Z and a non-positive Q^4 coefficient in C^-1; e^{-p^2/M^2}/p^2 is pole-free but violates both (Q^2 P = e^{-u} < Z); a spectral density that is only the pole is exactly Z/p^2; ghost and positive controls'),
 ]
 
 
