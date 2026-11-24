@@ -127,8 +127,8 @@ Ursprung sollte beides zugleich liefern.
 
 ### Kandidat H6: Ursprung von P1 aus einer hintergrundfreien Naht (Exploration 23.11.)
 
-Quelle: `experiments/exploration/2026-11-23-phasenraum-f5-holocode/VERDICT.md` (Stand H6h21),
-Skripte `n1`, `v1`, `y1`, `z1`–`z40`, Lean-Vertrag `experiments/theory-contracts/h6-exakte-teile-20261123/`; Atlasproblem `problem:c3-p1-p2-shared-origin-reconciliation`,
+Quelle: `experiments/exploration/2026-11-23-phasenraum-f5-holocode/VERDICT.md` (Stand H6h22),
+Skripte `n1`, `v1`, `y1`, `z1`–`z41`, Lean-Vertrag `experiments/theory-contracts/h6-exakte-teile-20261123/`; Atlasproblem `problem:c3-p1-p2-shared-origin-reconciliation`,
 Befunde mit Präfix `h6`. Nichts davon ist im Ledger befördert. Prüfstand mit 20 Kriterien: 14
 hergeleitet, 6 unter benannter Lesart, keines gescheitert, offen oder gesetzt.
 
@@ -273,6 +273,13 @@ hergeleitet, 6 unter benannter Lesart, keines gescheitert, offen oder gesetzt.
     ohne Spiegel, eine Generation mit V₄-Hyperladung ist anomaliefrei. Spin 2: Positivität verlangt
     Q²C ≥ Z; der ganze Formfaktor e^{−p²/M²}/p² der GRAV-/QGAMB-Ledgerzeilen verletzt das. Die sieben
     Zeilen tragen seit 24.11. einen Positivitätsvermerk (v1037). [E/N]
+  - Altbestand und Graviton der Spektralwirkung (Z41): Der Altbestand hat eine reelle 16-Majorana-Naht mit
+    Zufluss (SEAM.S3, p+ip × 16, c = 8); sie trägt Spin(10)₁ ohne U(1) und ersetzt die komplexe Flussnaht.
+    Sein Masterfunktional, Tr e^{−D²/Λ²} mit Naht-KMS-Abschneider, gibt für Spin 2 den Kinetikfaktor
+    a(x) = 1 + 12x g(x) = 1 − 3x/10 + x²/28 − … (Barvinsky–Vilkovisky), nicht e^x: tachyonischer Geist bei
+    p_E² ≈ 6,77 Λ² (Residuum −2,59) und komplexe Polpaare; jeder getestete vollständig monotone Abschneider
+    zeigt dasselbe. Positiv ist der Wallach-Kern (Wallach-Menge = 4D-Unitaritätsschranke Δ ≥ 1, Helizität 2 bei
+    Δ = 3). M(P) ist die Yukawa-Kopplung an die Higgsrichtung, Γ_pol ihr Fubini–Study-Term. [E/N]
   - Instantonen (Z33): Unter Spin(10) hat ein Einheitsinstanton 4 Eltern- und 12
     Familiennullmoden; mit gesättigten Familiennullmoden entsteht Re[e^{iθ}Φ² C_fam], die Wand ist
     also auch im Kontinuum möglich, bei nackter SO(10) aber ~10⁻¹⁶⁴ unterdrückt. [N]
@@ -327,6 +334,9 @@ hergeleitet, 6 unter benannter Lesart, keines gescheitert, offen oder gesetzt.
     GSO-Auswahl durch die Normaldrehung ist bedingt (Spinlift). „Ein E₈-Block im freien Flussmodell“
     gilt als c = 8, nicht als Spin(10)₁ auf dem Elternoperator (Z39, Z40). Dass eine anomaliefreie U(1)
     die reduzierte Anomalie löscht (H6h20), gilt nur bei ganzzahligem Fluss (Z39, APS).
+  - GRAV.KMS.HESSIAN.01 identifiziert den resummierten Spin-2-Hessian mit e^u [C]; die tatsächliche
+    Wärmeleitungs-Resummation von Tr e^{−D²/Λ²} gibt a = 1 − 3x/10 + … mit euklidischer Nullstelle (Z41).
+    Ledger unverändert; ein Vermerk ist eine eigene Entscheidung.
 - **Offen:**
   - Was die primitive Ladung bzw. den Sektor 1 und genau einen windenden Block wählt: Keine
     Grundzustandsregel gefunden; Lesarten sind ein Ordnungsfeld ohne Mittelwert oder N_fam = 3k
@@ -367,7 +377,10 @@ hergeleitet, 6 unter benannter Lesart, keines gescheitert, offen oder gesetzt.
   - Eine Regel für den Gesamtkoeffizienten G, Gitterkanten, die die Metrik selbst definiert, und das
     Soldering von Herm(2) bzw. Λ²F an die Raumzeitverschiebungen.
   - Ein positiv-spektraler Spin-2-Sektor (Q²C ≥ Z) statt eines bloß polfreien Formfaktors; die
-    GRAV-/QGAMB-Zeilen mit dem ganzen Formfaktor tragen dazu seit 24.11. einen Vermerk (v1037, Z40).
+    GRAV-/QGAMB-Zeilen mit dem ganzen Formfaktor tragen dazu seit 24.11. einen Vermerk (v1037, Z40). Das
+    Spektralwirkungs-Graviton mit vollständig monotonem Abschneider ist nicht positiv (Z41); gesucht ist ein
+    Spin-2-Sektor in Wallach-Form oder ein anderer Abschneider.
+  - Die 4D-Einbettung der reellen Majorana-Chern-Naht (Blatt mit Kante) und ihre μ₄-Kondensation.
   - Die eine Prozessregel Z[J, A, g, Φ], aus der Naht, Eichwirkung und metrische Variation gemeinsam
     folgen.
 

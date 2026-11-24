@@ -1,0 +1,46 @@
+Teil 1: Das Spin-2-Graviton der Spektralwirkung mit Naht-KMS-Abschneider
+   [ok] Formfaktoren: f_Ric(0) = 1/60, f_Omega(0) = 1/12 (lokale a_2-Koeffizienten)
+   [ok] Dirac a_2: Koeffizient von Ric^2 (nach Riemann-Elimination) = -1/10, wie -(7 Riem^2 + 8 Ric^2 - 5 R^2)/360 mit Riem^2 -> 4Ric^2 - R^2
+   [ok] Einstein-Hilbert: (1/(16 pi^2 s)) tr(R/6 - U) = -R/(48 pi^2 s) (positives G, euklidisch)
+   a(x) = 1 + 12 x g(x) = -x**3/360 + x**2/28 - 3*x/10 + 1 + ...
+   [ok] Reihe a(x) = 1 - 3x/10 + x^2/28 - x^3/360 + O(x^4)
+   euklidische Nullstelle x* = 6.7681 (p_E^2 = 6.768 Lambda^2), Residuum von 1/(x a) dort -2.5934; min a = -0.1863
+   [ok] Q^2 C = 1/a >= Z = 1 auf 0 < x < x* (notwendige Källén-Lehmann-Bedingung dort erfüllt)
+   [ok] a hat eine euklidische Nullstelle bei x* = 6.768 mit negativem Residuum: tachyonischer massiver Spin-2-Geist; darüber C < 0
+   Pole von 1/(x a) mit |x| < 130: [0j, (6.768+0j), (6.677-32.99j), (6.677+32.99j), (7.735+58.758j), (7.735-58.758j), (8.422-84.152j)] ... (10 insgesamt, 8 komplex)
+   [ok] Pole: Graviton bei 0 (Residuum 1), reeller Geist bei x*, dazu komplex-konjugierte Paare (6.68 +- 32.99 i, 7.73 +- 58.76 i, ...)
+   [ok] Vergleich: der Ledger-Ansatz a = e^{x} ist nullstellenfrei und wächst, der berechnete Faktor fällt (a'(0) = -3/10 statt +1)
+   euklidische Nullstellen für vollständig monotone Abschneider: {'e^-u (KMS)': 6.768, '(1+u)^-2': 22.875, '(1+u)^-3': 5.599, '(1+u)^-5': 2.137, 'log-normal': 28.819}
+   [ok] jeder getestete vollständig monotone Abschneider (positives Laplace-Maß) gibt eine euklidische Spin-2-Nullstelle; a(p^2) ist ein positives Mittel von a(s p^2), und x a(x) -> -6
+   [Befund: ja] Die tatsächliche Wärmeleitungs-Resummation entkoppelt den Spin-2-Geist nicht: GRAV.KMS.HESSIAN.01s [C]-Identifikation a = e^u hält für Tr e^{-D^2/Lambda^2} nicht
+
+Teil 2: Positivität über den Wallach-Parameter (Källén-Lehmann und 4D-Unitaritätsschranke)
+   [ok] Int_{|c|^2 < ab} (ab - |c|^2)^{s-2} d^2c = pi (ab)^{s-1}/(s-1)
+   [ok] Gindikin: Int_{Herm(2)+} e^{-tr PY} det(P)^{s-2} dP = pi Gamma(s) Gamma(s-1) det(Y)^-s (s > 1)
+   [ok] numerisch (Y nicht diagonal, unitär diagonalisiert): Integral = pi Gamma(s)Gamma(s-1)/det Y^s für s = 2, 2.5, 3
+   Gewicht in m^2 < 0.05 von (m^2)^(s-2)/Gamma(s-1) (Normierung Int_0^1 -> 1/Gamma(s)): {1.5: 0.25231325220201595, 1.1: 0.7790338459603233, 1.01: 0.9760250618344322}
+   [ok] Spektraldichte rho(m^2) ~ (m^2)^{s-2}: bei s -> 1 wandert das Gewicht nach m^2 = 0 (Grenzmaß lambda lambda^+, masselos)
+   [ok] Källén-Lehmann: (p^2)^{Delta-2} = (sin(pi(Delta-1))/pi) Int (m^2)^{Delta-2}/(p^2+m^2) dm^2 mit positiver Dichte für Delta in (1,2)
+   [ok] unter der Schranke (Delta = 1/2) ist (m^2)^{Delta-2} bei 0 nicht integrierbar: keine positive Darstellung (= Wallach-Lücke 0 < nu < 1)
+   [Befund: ja] Wallach-Menge {0} u [1, oo) von U(2,2) = 4D-Unitaritätsschranke Delta >= 1; nu = 1 ist ihr Rand mit Nullzustand det(d) = 0 (freies Feld)
+   [ok] Helizität-2-Kern Sym^4(X^-1)/det X = Sym^4(adj X)/det(X)^5 ist homogen vom Grad -6, also Delta = 3 = j + 2 (Schranke für (2,0))
+   Röhrengebiet, 6 Punkte: kleinster Eigenwert der Helizität-2-Gram-Matrix -6.25e-15 (Größenordnung 6.92e+00)
+   [ok] Helizität-2-Kern K_2 ist auf dem Röhrengebiet positiv definit (Gaußdarstellung mit |lambda^4><lambda^4|): positiver freier Spin-2-Sektor
+   [Befund: ja] Der positive Ersatz für den Formfaktor ist der Wallach-Kern: nu = 1 gibt den reinen Pol (Q^2 C = Z), nu > 1 ein positives Massenkontinuum
+
+Teil 3: Reelle Naht aus dem Altbestand (SEAM.S3) gegen die komplexe Flussnaht
+   [ok] Majorana-Naht ohne U(1)-Ladung: alle 40 D5-Wurzeln bleiben Ströme; mit Flussladung q nur 20 (U(5))
+   [ok] Kommutant der Flussladung in so(16): u(8) (64 von 120 Richtungen); die reelle Naht trägt das ganze so(16)_1 ⊃ so(10)_1 + so(6)_1
+   [ok] Niveau 1 für zehn reelle Majorana-Fermionen im Vektor (komplexes Niveau 2, halbiert)
+   [Befund: ja] Die reelle 16-Majorana-Naht (p+ip x 16, SEAM.S3.LATTICE/INFLOW) trägt Spin(10)_1 und den Zufluss ohne U(1); ihre Chiralität kommt aus der Chernphase, nicht aus einem geladenen Wirbel
+
+Teil 4: M(P) als Yukawa-Kopplung an die Higgsrichtung
+   [ok] P = H^ H^+ ist ein Rang-1-Projektor; 2P - 1 hat die Eigenwerte +1 (Higgsrichtung) und -1 (orthogonal): Dublettspaltung
+   [ok] tr(dP)^2 = 2(|dH^|^2 - |H^+ dH^|^2) (Fubini-Study, an drei Punkten exakt ausgewertet): Gamma_pol ist der eichinvariante Kinetikterm der Higgsrichtung
+   [ok] in 4D ist der induzierte Koeffizient m^2/(16 pi^2) log(Lambda^2/m^2): Higgs-Wellenfunktion aus der Yukawa-Spur (Altbestand A = 4 Y_2)
+   [Befund: ja] Der für t* nötige Sektor M(P) ist im Altbestand die Yukawa/Higgs-Fluktuation; der Koeffizient folgt aus Tr Y^+ Y
+
+Urteil
+   Der Altbestand enthält Gegenstücke zu mehreren offenen Punkten, und eines davon kehrt sich gegen seine eigene Lesart. Das gemeinsame Masterfunktional ist dort die Spektralwirkung eines Dirac-Operators mit Naht-KMS-Abschneider e^{-u}. Ihr tatsächlicher Spin-2-Kinetikfaktor aus dem nichtlokalen Wärmeleitungskern ist a(x) = 1 + 12 x g(x) = 1 - 3x/10 + x^2/28 - ..., nicht e^{x}: Q^2 C >= Z gilt nur bis x* = 6.768 Lambda^2, dort liegt ein reeller euklidischer Pol mit negativem Residuum (tachyonischer Spin-2-Geist), dazu eine unendliche Folge komplexer Polpaare; jeder getestete vollständig monotone Abschneider zeigt dasselbe. Die Resummation entkoppelt den Geist also nicht; die [C]-Identifikation in GRAV.KMS.HESSIAN.01 hält für Tr e^{-D^2/Lambda^2} nicht. Die positive Gegenseite ist der Wallach-Kern: det(P)^{s-2} dP hat die Laplace-Transformierte pi Gamma(s)Gamma(s-1) det(Y)^-s, die Spektraldichte (m^2)^{s-2} konzentriert sich bei s -> 1 auf m^2 = 0, die Wallach-Menge ist die 4D-Unitaritätsschranke Delta >= 1, und der Helizität-2-Kern (Delta = 3) ist auf dem Röhrengebiet positiv. Die reelle 16-Majorana-Naht des Altbestands (SEAM.S3) trägt Spin(10)_1 und den Zufluss ohne U(1); die komplexe Flussnaht nicht. Der Sektor M(P) ist die Yukawa-Kopplung an die Higgsrichtung, Gamma_pol ihr Fubini-Study-Kinetikterm.
+
+Alle Prüfungen bestanden: True (23/23)

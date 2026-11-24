@@ -1,6 +1,85 @@
 # Urteil
 
-## Aktueller Stand: H6h21 — Zufluss, Gitterzigarre und gemeinsamer Ursprung (`z39`, `z40`)
+## Aktueller Stand: H6h22 — Abgleich mit dem Altbestand und das Graviton der Spektralwirkung (`z41`)
+
+Bilanz unverändert 14 P und 6 L von 20; K13, K15 und K16 sind präzisiert. Anlass ist der Auftrag, den
+Altbestand nach Lösungen der offenen Punkte zu durchsuchen. Gesucht wurde mit dem Atlas; selbst gerechnet
+ist `z41` mit 23 Prüfungen. Dazu kommt der Ledgervermerk v1037 vom selben Tag.
+
+**In einem Satz:**
+- Der Altbestand hat für mehrere offene Punkte schon Bausteine, vor allem eine **reelle 16-Majorana-Naht
+  mit Zufluss** (SEAM.S3). Sie trägt Spin(10)₁ ohne U(1) und löst damit das Niveau-Problem der komplexen
+  Flussnaht.
+- Sein Masterfunktional, die Spektralwirkung mit dem Naht-KMS-Abschneider, hat aber ein **tachyonisches
+  Spin-2-Geistfeld**: Die Resummation entkoppelt den Geist nicht.
+- Die positive Gegenseite ist der Wallach-Kern. Seine Positivität ist genau die 4D-Unitaritätsschranke.
+
+**1. Was der Altbestand zu den offenen Punkten schon hat.**
+
+| Offener Punkt | Altbestand (Atlas) | Stand dort | Folge für H6 |
+| --- | --- | --- | --- |
+| Zufluss, zweite Blatthälfte | SEAM.S3.INFLOW.01 (v368), SEAM.S3.LATTICE.01 (v367) | 16 × p+ip, c₋ = 8, det K 4 → 1; Rand vom invertierbaren Bulk erzwungen [E]; μ₄-Kondensation [C]; Kontinuum [O] | Der E₈-CS-Zufluss aus z39 hat hier eine reelle Gitterform ohne U(1) |
+| Spin(10)₁, reelle Eltern | Vertrag mixed-current-origin (14.10.), SEAM.EQUIV.LATTICEVOA.01, v462 | komplexe U(1)-Fockklasse hat keinen geladenen Gewicht-1-Strom (h = m²/32 + N); E₈ braucht reelle CAR-Kopien | bestätigt z39/z40 unabhängig |
+| vier Translationen | SEAM.EQUIV.BW.HSMI.01; Befunde „original four cuts …“ und „e8 relative sewing …“ | Borchers-Route bedingt; Halbseitigkeit aus den vier Originalschnitten ausgeschlossen; absolute Modularzeit zweiseitig | Translationen kommen nicht aus 1D-Inklusionen, sondern aus der Matrixvariable (z40) |
+| Twistor, 3+1 | WOIT.OS.TWISTOR.01 (v519/v522/v524) | Θ-Realstruktur auf 16 Majorana, freie RP; wechselwirkend [O] | der Matrixkern ν = 1 ist die freie Twistor-Kinematik dieses Vertrags |
+| G | GRAV.ENTROPY.EQUILIBRIUM.01, GRAV.NONLINEAR.01, Firewall GRAV.NONCIRCULAR.01 | 8π = 1/c₃ unter Jacobson/BW-Prämissen; Einheit v_geo und Zustandsgleichungsstatus offen | unter Prämisse D ist der Koeffizient bedingt fest; die Skala bleibt offen (wie z27) |
+| Spin 2 | GRAV.SPIN2.EMERGENCE.01, GRAV.PARENT.GAP.NO_GO.01, Vermerk v1037 | offen; gleichmäßige Lücke schließt masseloses Spin 2 aus | siehe Abschnitt 2 |
+| Masterfunktional | CONTRACT.QFT4D.01 (v244), QFT.MSC.01 (v261), PS.NCG.FLUCT.01 (v254) | Spektralwirkung eines Dirac-Operators; innere Fluktuation = Higgs-Dublett | Kandidat für Z[J, A, g, Φ]; sein Spin-2-Sektor scheitert (Abschnitt 2) |
+| Sektor M(P) | Befund „whole original Higgs moments …“ | Tr(dΦ)² = A·kin, A = 4 Y₂ | M(P) ist die Yukawa-Kopplung an die Higgsrichtung (Abschnitt 4) |
+| Gedächtnis | Befunde „full memory Schur reconstruction“, „68-dimensional word memory“ | Schur/Feshbach erhält jedes Wort | die Lichtkegelkompression aus z40 ist ein Feshbach-Fall (nicht nachgerechnet) |
+| T4 | CHIRAL4D.NOMIRROR.01 | offen (SMG-Spielzeug, faktorisierte Spiegellücke) | unverändert |
+| schwaches Bündel | Befund „matrix clutch degree …“ | schwache Determinantenklasse Index 1 (U(2)-Kupplung Grad 1) | steht neben z37 (triviales Dublett, Windung in der Polarisation) |
+
+**2. Das Spin-2-Graviton der Spektralwirkung (`z41`, Teil 1).**
+- Rechnung: Tr e^{−sD²} für Dirac-Spinoren, quadratisch in TT-Fluktuationen, mit den nichtlokalen
+  Formfaktoren von Barvinsky–Vilkovisky (f_Ric, f_Ω). Gegenproben sind a₂ (Ric²-Koeffizient −1/10) und der
+  EH-Term −R/(48π²s).
+- Ergebnis: **a(x) = 1 + 12x·g(x) = 1 − 3x/10 + x²/28 − x³/360 + …**, x = s·p². Das ist nicht e^x;
+  schon die Steigung hat das Gegenvorzeichen.
+- Q²C ≥ Z gilt nur bis **x\* = 6,768**, also p_E² ≈ 6,77 Λ². Dort liegt ein reeller euklidischer Pol mit
+  Residuum −2,59 (tachyonischer massiver Spin-2-Geist), darüber ist C < 0. Dazu kommt eine unendliche Folge
+  komplex-konjugierter Polpaare (6,68 ± 32,99 i, 7,73 ± 58,76 i, …).
+- Jeder getestete vollständig monotone Abschneider zeigt eine euklidische Nullstelle: (1+u)⁻² bei 22,9,
+  (1+u)⁻³ bei 5,6, (1+u)⁻⁵ bei 2,1, log-normal bei 28,8. Grund: a(p²) ist ein positives Mittel von a(s·p²),
+  und x·a(x) → −6.
+- **Folge:** GRAV.KMS.HESSIAN.01 identifiziert den resummierten Hessian [C] mit e^u. Für Tr e^{−D²/Λ²}
+  gilt das nicht. Die tatsächliche Resummation verschiebt die Stelle-Nullstelle von 10/3 nach 6,77,
+  entkoppelt sie aber nicht. Das betrifft auch GRAV.NONLOCAL.01 (IR-Projektion a = 1 + u + …). Ein
+  Ledgervermerk dazu ist eine eigene Entscheidung; das Ledger ist hier unverändert.
+
+**3. Positivität über den Wallach-Parameter (`z41`, Teil 2).**
+- det(P)^{s−2} dP auf Herm(2)₊ hat die Laplace-Transformierte π Γ(s)Γ(s−1) det(Y)^{−s} (symbolisch und
+  numerisch). Die Spektraldichte ist ρ(m²) ~ (m²)^{s−2}; bei s → 1 sitzt sie auf m² = 0.
+- Källén–Lehmann gilt für Δ ∈ (1, 2) mit positiver Dichte; unter Δ = 1 gibt es keine positive Darstellung.
+  Die Wallach-Menge {0} ∪ [1, ∞) ist also die **4D-Unitaritätsschranke Δ ≥ 1**, und ν = 1 ist ihr Rand mit
+  dem Nullzustand det(∂) = 0 (Cayley).
+- Der Helizität-2-Kern Sym⁴(X⁻¹)/det X ist homogen vom Grad −6. Er hat damit Δ = 3, genau die Schranke für
+  (2, 0), und ist auf dem Röhrengebiet positiv definit.
+- **Folge:** Der positive Ersatz für den Formfaktor ist der Wallach-Kern: ν = 1 als reiner Pol (Q²C = Z),
+  ν > 1 als positives Massenkontinuum. Ein Spin-2-Sektor muss diese Form haben.
+
+**4. Reelle Naht und Higgsrichtung (`z41`, Teile 3 und 4).**
+- Ohne U(1)-Ladung bleiben alle 40 D₅-Wurzeln Ströme; mit der Flussladung q nur 20. Zehn reelle Majorana
+  im Vektor geben Niveau 1. Die reelle 16-Majorana-Naht des Altbestands trägt also Spin(10)₁ und den
+  Zufluss; ihre Chiralität kommt aus der Chernphase, nicht aus einem geladenen Wirbel.
+- P = ĤĤ† ist der Projektor auf die Higgsrichtung. 2P − 1 spaltet das Dublett, und
+  tr(dP)² = 2(|dĤ|² − |Ĥ†dĤ|²) ist der Fubini–Study-Kinetikterm. Γ_pol aus z40 ist damit die
+  fermionisch induzierte Higgsrichtungs-Kinetik; im 4D-Koeffizienten steht m²/(16π²)·log(Λ²/m²) bzw. der
+  Altbestand-Koeffizient A = 4Y₂.
+
+**5. Was das für H6 heißt.**
+- **Nahtprämisse:** Statt der komplexen Flussnaht G′ passt die reelle Majorana-Chern-Naht des Altbestands
+  (SEAM.S3). Offen bleiben ihre 4D-Einbettung (eine Chernphase in 2+1D, deren Rand die Naht ist: Blatt mit
+  Kante) und die μ₄-Kondensation, beide [C] im Altbestand.
+- **Gravitation:** Das Masterfunktional des Altbestands gibt mit dem KMS-Abschneider kein positives
+  Graviton. Positiv wäre ein Spin-2-Sektor in Wallach-Form; G bleibt frei.
+- **Eichsektor:** Der stabilisierende Sektor M(P) ist der Higgs-Yukawa-Sektor. Dass dort das Triplett
+  massiv wird (z40), ist dann der Higgs-Mechanismus in der inneren Geometrie, kein Widerspruch. Offen ist
+  die Zuordnung der Skalen.
+- **Offen bleibt die eine Prozessregel Z[J, A, g, Φ].** Der Altbestand-Kandidat (Spektralwirkung) braucht
+  einen Abschneider, der nicht vollständig monoton ist, oder einen anderen Spin-2-Ursprung.
+
+## Davor: H6h21 — Zufluss, Gitterzigarre und gemeinsamer Ursprung (`z39`, `z40`)
 
 Bilanz unverändert 14 P und 6 L von 20; K13, K15, K16 und K20 sind präzisiert, kein Status ändert sich.
 Anlass sind die externen Vorschläge „H6h21: dynamische Flussnaht mit topologischem Zufluss“ und „H6h22:

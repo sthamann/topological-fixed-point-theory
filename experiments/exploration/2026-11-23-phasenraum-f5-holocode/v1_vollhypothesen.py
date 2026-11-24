@@ -948,6 +948,28 @@ if "H6h2" in H and z1p.exists() and z2p.exists():
                                                                                                  "eine Generation mit V4-Hyperladung anomaliefrei (Z40); 3 x 16 = 48 "
                                                                                                  "Weyl-Felder im freien Modell")
                                                                             facts["F40_inflow_common_origin"] = {n: T8[n]["urteil"] for n in T8}
+                                                                            z41p = Path(__file__).with_name("z41_ergebnis.json")
+                                                                            if z41p.exists():
+                                                                                Z41 = json.loads(z41p.read_text())
+                                                                                ok41 = all(Z41["checks"].values())
+                                                                                H["H6h22"] = dict(H["H6h21"])
+                                                                                H["H6h22"]["K13"] = (LES if ok41 and ok8[40] else F,
+                                                                                                     "[D] Jacobson; G frei; das Graviton der Altbestand-Spektralwirkung "
+                                                                                                     "Tr e^{-D^2/Lambda^2} hat a(x) = 1 - 3x/10 + ... mit tachyonischem "
+                                                                                                     "Geist bei x* = 6.77 und komplexen Polen (Z41), nicht e^x; positiver "
+                                                                                                     "Ersatz ist der Wallach-Kern (nu = 1 reiner Pol, Helizität 2 bei "
+                                                                                                     "Delta = 3 positiv)")
+                                                                                H["H6h22"]["K15"] = (LES if ok41 and ok8[40] else F,
+                                                                                                     "[unabhängige Elternverbindung] Randverbindung != schwache "
+                                                                                                     "Verbindung (Z40); der stabilisierende Sektor M(P) ist die "
+                                                                                                     "Yukawa-Kopplung an die Higgsrichtung, Gamma_pol ihr "
+                                                                                                     "Fubini-Study-Term (Z41, Altbestand A = 4 Y_2)")
+                                                                                H["H6h22"]["K16"] = (LES if ok41 and ok8[39] else F,
+                                                                                                     "[reelle Naht] die 16-Majorana-Naht des Altbestands (SEAM.S3, p+ip "
+                                                                                                     "x 16, c = 8) trägt Spin(10)_1 und den Zufluss ohne U(1); die "
+                                                                                                     "komplexe Flussnaht G' nur U(5) (Z39-Z41); offen: 4D-Einbettung der "
+                                                                                                     "Chernphase und mu4-Kondensation (beide [C] im Altbestand)")
+                                                                                facts["F41_old_stock_spin2"] = Z41["urteil"]
 
 order = [f"K{i}" for i in range(1, 21)]
 print("Gesamttabelle (P = hergeleitet, L = unter benannter Lesart, F = FAIL, O = OFFEN, E = EINGABE)\n")
