@@ -45,7 +45,20 @@ Spektrum, frühe Antworten genügen nicht (Atlas, Gegenbeispiel vom 23.11.).
   oder ein quaternionischer D₄-Block mit einem Modulus, der ihn groß macht. Beides ist im Bestand nicht als Antwort des
   Originals vorhanden.
 
-**5. Prüfstand.**
+**5. Abgleich mit dem neuen Paket `2026-11-24-h6-common-parent-synthesis`.**
+Das Paket kommt aus einer anderen Sitzung (Commit `a767c857b`). Sein vorbereiteter Atlaspatch ist unverändert angewendet:
+14 Befunde und 5 Prämissen, Revision `414abd19ab49e59c96b5bcb6`.
+- **Wilson-Halbraum.** A_q(k) = (S⁺ − w(k))(I − qS⁴) mit w = Σᵢ(1 − cos kᵢ) über drei transversale Impulse.
+  - Es gibt genau eine masselose Weyl-Ecke bei k = 0; die anderen sieben Ecken haben w ≥ 2.
+  - Das ist der nächste Kandidat für die fehlende d = 4-Antwort: drei Richtungen plus die Tiefe, chiral ohne Spiegellücke.
+  - Unter der Leitlinie ist die k-Abhängigkeit aber eingesetzt (Wilson-Schablone), nicht aus Antworten des Originals
+    rekonstruiert, und der Kontinuumsbereich ist dort nicht konstruiert.
+- **Familienindex.** Der naive Diracindex der Familienlinie ist unter den U(5)-Fock-Annahmen 8 mod 16, keine volle 16.
+  Die Familienzahl 3 aus E₋ (z58) bleibt, der Inhalt je Familie aus einem Index ist nicht gezeigt.
+- **Bestätigt:** Die γ₅-Spur gibt das Flächenpotential t = 1 (z57), ist aber indefinit. Zur Spiegellücke (z56) gibt es
+  keinen Satz bei endlichem J.
+
+**6. Prüfstand.**
 - **K12 → L.** d = 4 folgt bisher nur kinematisch (Λ²₊ = Λ²(Familien), H6h3). Nach der Leitlinie reicht das nicht als
   Herleitung.
 - **Bilanz:** 13 P und 7 L. Das ist keine neue Schwäche der Theorie, sondern der ehrliche Maßstab der neuen Leitlinie.

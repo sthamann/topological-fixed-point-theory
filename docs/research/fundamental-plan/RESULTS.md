@@ -7807,3 +7807,9 @@ Abschnitt H6h32). Die Zahl der Raumzeitrichtungen ist die Spektraldimension (Wey
 **Gebraucht für 3+1:** eine originale Antwort mit d = 4, nichtkompakt und reflexionspositiv.
 
 **Prüfstand:** K12 zählt unter der Leitlinie als Lesart, Bilanz 13 P, 7 L. Atlas-Revision 066e08b7acd38d4d0de02fbc. Ledger unverändert, nichts befördert.
+
+**Nachtrag H6H32:** Das Paket `experiments/exploration/2026-11-24-h6-common-parent-synthesis` (andere Sitzung) ist in den
+Atlas übernommen; sein vorbereiteter Patch wurde unverändert angewendet (Revision 414abd19ab49e59c96b5bcb6).
+- Sein Wilson-Halbraum (drei transversale Impulse, eine Weyl-Ecke) ist der nächste Kandidat für die d = 4-Antwort,
+  aber eingesetzt, nicht rekonstruiert.
+- Der naive Familienindex ist 8 mod 16.

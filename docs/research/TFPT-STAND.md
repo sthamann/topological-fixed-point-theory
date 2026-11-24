@@ -391,6 +391,14 @@ hergeleitet, 7 unter benannter Lesart, keines gescheitert, offen oder gesetzt. K
     Spektrum vier vertauschender Generatoren (das gäbe d = 4). Das E₈-Ladungsgitter hat d = 8 und enthält D₄ ⊕ D₄
     (Hurwitz-Quaternionen, Index 4), ist aber kompakt und starr (248 Ströme vom Gewicht (1,0), keine Moduli). Kein
     vorhandenes Original rekonstruiert ein nichtkompaktes 3+1; K12 zählt deshalb seit H6h32 als Lesart. [E/N]
+  - Gemeinsamer Elternoperator (Paket `2026-11-24-h6-common-parent-synthesis`, andere Sitzung, 40/40, 187/187, 201/201):
+    - Der Wilson-Halbraum A_q(k) = (S⁺ − w(k))(I − qS⁴) über drei transversale Impulse hat genau eine masselose
+      Weyl-Ecke. Er ist der nächste Kandidat für die d = 4-Antwort, aber seine k-Abhängigkeit ist eingesetzt, nicht
+      rekonstruiert.
+    - Der gewichtete Stern hat einen expliziten Verflechter B U = V A_q.
+    - Der naive Familienlinien-Index ist 8 mod 16 (keine volle 16).
+    - Die γ₅-Spur gibt t = 1, ist aber indefinit.
+    - Zur endlichen Spiegellücke gibt es keinen Satz bei endlichem J. [E/N]
   - Instantonen (Z33): Unter Spin(10) hat ein Einheitsinstanton 4 Eltern- und 12
     Familiennullmoden; mit gesättigten Familiennullmoden entsteht Re[e^{iθ}Φ² C_fam], die Wand ist
     also auch im Kontinuum möglich, bei nackter SO(10) aber ~10⁻¹⁶⁴ unterdrückt. [N]
