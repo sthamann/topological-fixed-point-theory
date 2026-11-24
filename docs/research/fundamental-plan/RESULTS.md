@@ -7741,3 +7741,20 @@ die E8 Gittersumme gibt 8·c₃. (B) Der Schritt 1+i ist der Frobenius der Kurve
 (D) Die 120 Einheitsquaternionen der Symmetrie der 5-Torsion spannen mit der Form 2(a ± b) ein gerades Gitter der
 Determinante 1 auf, also E8. **Nicht gezeigt:** D5 + A3, Familienzahl, phi_0, d_top, alpha, Massen, Raum, Zeit,
 Gravitation. Keine fundamentale Lösung, nichts befördert, kein Ledgerwechsel, kein Atlaseintrag, kein Commit.
+
+## PSREAL4520261124 · Nachzählung von PS.THRESHOLD.02 und PS.PROTON.02 mit der einen reellen 45 (Fehler bestätigt, Ledger unverändert)
+
+Ordner `experiments/theory-contracts/ps-proton-real45-20261124` (`README.md`, `v1036_ps_proton_real45.py` 9 von 9,
+Ausgabe `ausgabe_v1036.txt`). Anlass: Nebenbefund von z25 (H6h14). **Bestätigt:** `v266` zählt die SU(4)-Adjungierte
+(15,1,1) komplex (Δb₄ = 4/3, zwei reelle Adjungierte); die 248 enthält genau eine (15,1,1), in der reellen (45,1),
+also Δb₄ = (1/6)·T(15) = 2/3. Eigene Gruppentheorie (Brüche, gegen SM-b_i und -b_ij kalibriert), gleiche Eingaben,
+Baum-Matching, τ_p-Formel und ×3-Band wie `v266`. **Reelle 45:** eine Schleife M_PS = 4,11·10¹³ (κ = 1,34),
+M_GUT = 3,61·10¹⁵ GeV, α_U⁻¹ = 45,25, τ_p = 2,2·10³⁴ a (Band überdeckt Super-K, die `v266`-Regel τ/3 > Super-K ist
+verletzt); zwei Schleifen (SM mit y_t, PS-Eichterme; der PS-Top-Yukawa fällt heraus) M_GUT = 1,73·10¹⁵ GeV,
+τ_p = 1,1·10³³ a, ausgeschlossen auch am oberen Bandende. Auch die `v266`-Zählung fällt in zwei Schleifen (7,2·10³³ a,
+Bandende 2,2·10³⁴ a). Scan von 13 440 E₈-Inhalten in zwei Schleifen: bei κ ∈ [1; 1,7] 101 im Band (11 zentral),
+τ_p = 0,87–3,5·10³⁴ a, alle mit reeller (15,1,1) und mindestens vier leichten (6,1,1), alle in Hyper-K-Reichweite.
+Alle z25-Referenzzahlen reproduziert; Vorbefund fable-runde3 §11 (11. 9.) zählte ebenfalls komplex. Vorgeschlagene
+Ledgertexte und abhängige Zeilen (PS.UVBRANCH.01, QFT4D.FORK.01, PRED.LIVE.01 mit `v283`, PS.RGTEST.01, PS.KAPPA.01,
+PS.E8BRANCH.01) im Bericht. **Nicht geändert:** Ledger (am 24. 11. vom Nutzer nicht freigegeben), `v266`, `v283`.
+Atlasbefund `finding:v1036-ps-proton-real-45-recount-v266-survivor-excluded-20261124`. Nichts befördert.
