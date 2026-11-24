@@ -1133,6 +1133,33 @@ if "H6h2" in H and z1p.exists() and z2p.exists():
                                                                                                                                  "Solarsummenregel (> 3.5 sigma, Z55); offen "
                                                                                                                                  "bleibt Z2 x CP mit freiem Winkel")
                                                                                                             facts["F48_kms_tfd_fourpoint_flavour"] = {n: T15[n]["urteil"] for n in T15}
+                                                                                                            zr = {n: Path(__file__).with_name(f"z{n}_ergebnis.json") for n in (56, 57)}
+                                                                                                            if all(p.exists() for p in zr.values()):
+                                                                                                                T16 = {n: json.loads(p.read_text()) for n, p in zr.items()}
+                                                                                                                ok16 = {n: all(T16[n]["checks"].values()) for n in T16}
+                                                                                                                H["H6h30"] = dict(H["H6h29"])
+                                                                                                                H["H6h30"]["K13"] = (LES if ok16[57] and ok15[54] and ok15[55] else F,
+                                                                                                                                     "[D] Jacobson; Plebanski-Flächenregel "
+                                                                                                                                     "(Kante quadratisch in B_p - B_k) gibt "
+                                                                                                                                     "t = 1 exakt (Z57); Zustand durch KMS, "
+                                                                                                                                     "Band oder Leiter, t_n je Tiefe (Z54, Z55); "
+                                                                                                                                     "G = v_geo^-2 im Bestand; Wahl der "
+                                                                                                                                     "Grundvariablen, Quellregel und Tiefe offen")
+                                                                                                                H["H6h30"]["K16"] = (LES if ok16[56] and ok14[53] else F,
+                                                                                                                                     "[reelle Naht] lokaler quartischer "
+                                                                                                                                     "Spiegeloperator auf 16 Spin(10)-Fermionen x 2: "
+                                                                                                                                     "H = J(C2(Spin10) - C2(Spin11)), eindeutiger "
+                                                                                                                                     "Singulett, Lücke 9J, Fermionlücke 29J/2, "
+                                                                                                                                     "nichtgaußsche Vierpunktantwort (Z56); starke "
+                                                                                                                                     "Projektion lässt 7 naive Knoten, 4D-Einbettung "
+                                                                                                                                     "offen")
+                                                                                                                H["H6h30"]["K18"] = (LES if ok16[57] and ok15[55] else F,
+                                                                                                                                     "Familien: TM1-Spalte (2/3, 1/6, 1/6) steckt in "
+                                                                                                                                     "den originalen Clocks F_C, F_J, Winkel an "
+                                                                                                                                     "freiem gamma; die eingefrorenen Werte (0.3067, "
+                                                                                                                                     "0.0231) brechen TM1 und liegen näher an NuFIT "
+                                                                                                                                     "6.1 (Z57); Brechungsgewicht offen")
+                                                                                                                facts["F49_mirror_spin11_area_clocks"] = {n: T16[n]["urteil"] for n in T16}
 
 order = [f"K{i}" for i in range(1, 21)]
 print("Gesamttabelle (P = hergeleitet, L = unter benannter Lesart, F = FAIL, O = OFFEN, E = EINGABE)\n")

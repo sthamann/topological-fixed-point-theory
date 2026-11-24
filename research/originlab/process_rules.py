@@ -480,6 +480,10 @@ def edge_forms():
             clauses.add("bilinear_measure")
         if y == 2*x:
             clauses.add("mean_measure")
+        area = np.array([1, 0, -2/6, 0, 1])                   # (a^2 - b^2)^2: Kantenwirkung quadratisch in den Plebanski-Flaechen
+        area = area/(area[1] + 2*area[2] + area[3])
+        if np.allclose(beta, area, atol=1e-12):
+            clauses.add("quadratic_in_area")                   # z57
         t = 2*(beta[0] - BETA_V[0])                      # beta = BETA_V + (t/2) BETA_DET
         out.append({"name": name, "beta": beta, "t": t, "edge_degree": deg, "clauses": clauses})
     return out
@@ -910,7 +914,7 @@ def run(root=None, transfer=True, state=True, metric=True, *, certified=False, s
 
         ef = edge_forms()
         pool = ["flat_background", "fierz_pauli_mass", "undirected_edge", "cubic_as_V", "cubic_in_edge_variable",
-                "bilinear_measure", "mean_measure"]
+                "bilinear_measure", "mean_measure", "quadratic_in_area"]
         res = search(ef, pool, lambda o: 0, lambda o: o["name"])
         res["derived"] = {o["name"]: {"t": o["t"], "edge_degree": o["edge_degree"], "beta": o["beta"],
                                       "clauses": sorted(o["clauses"])} for o in ef}

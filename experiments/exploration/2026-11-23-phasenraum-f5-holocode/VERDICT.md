@@ -1,6 +1,96 @@
 # Urteil
 
-## Aktueller Stand: H6h29 — Prüfung des externen Zweigs zu H6h27: KMS, Leiteroperator, Vierpunktantwort, Flavourhindernis (`z54`, `z55`)
+## Aktueller Stand: H6h30 — Zweig zusammengeführt, exakte Spiegellücke, Flächenregel, Clock-Familien (`z56`, `z57`)
+
+Bilanz unverändert 14 P und 6 L von 20; K13, K16 und K18 sind präzisiert. Auftrag: alles auf main, alle Lösungen finden,
+das Suchprogramm erweitern. Dazu kam die externe Analyse „Ein neuer exakt lösbarer Wechselwirkungsoperator“ auf Basis
+H6h28. Ihre Prüfskripte liegen nicht im Repo; alle Zahlen sind unabhängig nachgerechnet. Selbst gerechnet: `z56` mit 13
+und `z57` mit 14 Prüfungen.
+
+**In einem Satz:**
+- Der externe Zweig ist in main (Merge `a7b1ef933` auf origin, mit zertifiziertem Wiederholungsmodus). Alle
+  OriginLab-Tests sind grün.
+- Für die 16 Spin(10)-Fermionen gibt es einen exakt lösbaren lokalen Spiegeloperator: eindeutiger symmetrischer
+  Grundzustand, Lücke 9J, nichtgaußsche Vierpunktantwort.
+- Die Plebański-Flächenregel legt t = 1 fest.
+- Die TM1-Spalte steckt in den originalen Clocks.
+- Offen bleiben die 4D-Einbettung, die gemeinsame Quellregel und die Familiengewichte.
+
+**1. Zusammenführung (Merge `a7b1ef933` auf origin).**
+- **Was übernommen wurde.** Der Zweig `research/h6h27-source-dynamics-20261124` ist in main: KMS-Zustand, Polarphase,
+  Leiteroperator, gewichteter Stern, Vierpunktantwort, Flavourhindernis, zertifizierte OriginLab-Module.
+- **Bauart.** Die Zusammenführung auf origin behält die bisherige Lane `run()` unverändert; so reproduzieren z43–z55
+  ihre historischen Ausgaben. Die korrigierte Semantik läuft über `run(certified=True)` (`process_rules_certified.py`):
+  - getrennte Mikroantwort und Feldkovarianz mit polnormierten Quellen;
+  - deterministische Ordnung der minimalen Regeln;
+  - das Spiegelgewicht auch für das Transfergedächtnis bei q = 1/√2.
+- **Korrektur zu z46.** Im zertifizierten Modus wählen die längsten Regeln ohne Skalenkonvention zwei Prozesse
+  (nachgerechnet): originaler Zustand (q = e^{−2π}) und Spiegelblatt (q = 1/√2). Die Aussage „genau einer“ aus H6h25
+  gilt nur für die historische Lane.
+- **Neue Prüfskripte.** Origin bringt die Prüfskripte der Analyse mit (`2026-11-24-pair-and-refinement`, 43/43 und
+  87/87): Paar-Hamiltonoperator, Clock-Kompression, Flächenpotential, Tetradenverfeinerung. Unten sind die Kernaussagen
+  unabhängig nachgerechnet.
+
+**2. Exakte lokale Spiegellücke (`z56`).**
+- **Paarmatrizen.** Es gibt zehn symmetrische 16 × 16-Matrizen M_A mit M_A⁺M_B + M_B⁺M_A = 2δ_AB (Blöcke von CΓ_A,
+  Fehler 0). Der Operator H = −(J/4)Σ(B_A + B_A⁺)² mit B_A⁺ = a⁺M_A b⁺ ist nach der Teilchen-Loch-Abbildung
+  −JΣX_A² = J(C₂(Spin(10)) − C₂(Spin(11))).
+- **Kleinere Fälle voll diagonalisiert.**
+  - Spin(6) → Spin(7): 256 Zustände.
+  - Spin(8) → Spin(9): Halbfüllung mit 12 870 Zuständen.
+  - Ergebnis in beiden Fällen: eindeutiger Grundzustand, E₀ = −k′(k′ + N − 2)J, Lücke (N − 2)J und Fermionlücke aus
+    Casimir-Differenzen (5,5J bzw. 9J). Die Formeln stimmen exakt.
+- **Spin(11) ohne den 2³²-Fockraum.** Die Darstellung (8,0,0,0,0) wird exakt als Polynome auf S¹⁰ realisiert (geeicht an
+  N = 7, 9).
+  - Energie und Lücken: E₀ = −136J, Lücke 9J (die Spin(9)-Singulettkette trägt exakt j(j+8)), Fermionlücke 29/2·J.
+  - Momente: ⟨X_A X_B⟩ = 68/5, Vierpunktfunktion mit α = 782/5 und β = 714/5, ⟨X₁⁴⟩ = 442. Das verbundene vierte Moment
+    −2822/25 zeigt eine nichtgaußsche Antwort.
+  - Quellenergie: E(h) = −(68/45)h² + (17323/182250)h⁴, auf 12 Stellen.
+- **Starker Grenzfall.** Die naive Dispersion hat acht Knoten mit Chiralitäten 1+, 3−, 3+, 1−. Die starke Projektion
+  lässt also sieben Zusatzknoten stehen. Nachgeprüft ist nur diese Knotenbilanz, nicht der ganze Elternraum der
+  Analyse.
+- **E₈-Paarkanäle.** X ↦ (1/16)Σ M_A Xᵀ M_A⁺ hat auf End(16) = 1 ⊕ 45 ⊕ 210 genau die Eigenwerte 5/8, −3/8, 1/8.
+- **Grenze:** Die Wechselwirkung ist eine Zusatzregel, nicht aus der Naht abgeleitet. Die 4D-Einbettung ohne
+  Zusatzknoten ist offen.
+
+**3. Plebański-Flächenregel (`z57`, Teil 1; Lane-Klausel `quadratic_in_area`).**
+- Ist die Kantenwirkung quadratisch in B_p − B_k (B = e∧e), ist das Potential −3/2 + e₂/2 − (3/2)e₄ = V + ½det(I − X),
+  also **t = 1**.
+- Die volle Epsilon-Kontraktion ist für 24 zufällige Vielbeinpaare exakt −64 mal dieses Potential (Streuung 7·10⁻¹⁵).
+  Auf dem konformen Teilraum gilt V = −(3/2)(a² − b²)².
+- Das ist dieselbe Form wie das arithmetische Mittel aus H6h28. Die Lane wählt sie mit „quadratisch in den Flächen“
+  allein.
+- Damit hängt t nur noch an der Wahl der Grundvariablen: Flächen geben t = 1, Vielbeine mit Minimalgrad t = 4. Flächen
+  passen zum älteren Plebański-Ansatz. Die Simplizität der gemittelten Fläche bleibt eine Zusatzbedingung.
+
+**4. Familien aus den originalen Clocks (`z57`, Teil 2–3).**
+- **Gemeinsame Nulllinie.** F_C und F_J (Kompression aus `compiler-integral-triality-20260918`, laut Analyse) vernichten
+  beide u = (0,1,1)/√2. In der zyklischen Dreierbasis trägt u genau die TM1-Gewichte (2/3, 1/6, 1/6), und
+  |[F_C, F_J]|² = 1/64.
+- **Winkel.** Im Rest gilt tan2θ = 2√2/(3 + 16γ). γ = 1/8 gibt 14,748° und sin²θ₁₃ = 0,021602; 15° verlangte
+  γ = (2√6 − 3)/16. γ ist nicht hergeleitet.
+- **Phase.** i[F_C, F_J] vernichtet u ebenfalls: Er gibt eine Phase, bricht TM1 aber nicht.
+- **Eingefrorene Werte.** sin²θ₁₂ = 1/3 − φ₀/2 = 0,306747 und sin²θ₁₃ = φ₀e^{−5/6} = 0,023108 sind kein TM1 (TM1 verlangte
+  0,317563). δ = 240° ist ein zugewiesener Texturwert.
+  - Gegen NuFIT 6.1 (0,3088 ± 0,0067) liegt TFPT 0,3σ ab, TM1 bei 15° 1,4σ.
+  - Die Familienregel muss TM1 also leicht brechen, laut Analyse über die inverse Coxeter-Kompression. Ein Gewicht dafür
+    fehlt.
+- **G.** 8πG = 1/(c₃v_geo²) mit c₃ = 1/(8π) gibt G = v_geo⁻².
+
+**5. Was offen bleibt.**
+- **Materie:**
+  - die 4D-Einbettung der Spiegellücke ohne Zusatzknoten (bei endlicher Kopplung oder mit anderem Elternoperator);
+  - die Herleitung des Spiegeloperators aus der Naht;
+  - die Nahtkondensation.
+- **Gravitation:**
+  - Flächen statt Vielbeine als Grundvariablen;
+  - die mikroskopische Quellregel, die W⁽²⁾, W⁽³⁾ und W⁽⁴⁾ festlegt;
+  - die Tiefe;
+  - die Wahl zwischen Band und Leiter.
+- **Familien:** γ und das Brechungsgewicht aus derselben Quelle.
+- **Bilanz:** Die Bilanz steigt nicht. Es sind bedingte Lösungen von Teilproblemen.
+
+## Davor: H6h29 — Prüfung des externen Zweigs zu H6h27: KMS, Leiteroperator, Vierpunktantwort, Flavourhindernis (`z54`, `z55`)
 
 Bilanz unverändert 14 P und 6 L von 20; K13 und K18 sind präzisiert. Anlass ist die externe Analyse zu H6h27 auf dem
 Zweig `research/h6h27-source-dynamics-20261124` (Commit `252bac7a`). Er liegt jetzt auf origin, ist aber **nicht** in main
@@ -308,7 +398,10 @@ Aussagen sind als Behauptungen geprüft. Selbst gerechnet: `z46` mit 24 und `z47
   - Die Masselosigkeit ist topologisch geschützt (Index +1).
   - Universelle Kopplung verlangt eine einzige Randquelle.
   - Das Gedächtnis darf nur im Spin-2-Kanal sitzen.
-- Ohne die Skalenkonvention wählen acht Prinzipien genau einen Prozess, jetzt mit Spin 2 im originalen Zustand.
+- Ohne die Skalenkonvention wählen acht Prinzipien genau einen Prozess, jetzt mit Spin 2 im originalen Zustand. (Korrektur
+  H6h30: Im zertifizierten Modus `run(certified=True)` gilt das Spiegelgewicht auch für das Transfergedächtnis bei
+  q = 1/√2; dort wählen die längsten Regeln zwei Prozesse, originaler Zustand und Spiegelblatt. `z46` bleibt der
+  historische Lauf.)
 
 **1. Gegenprüfung des externen Laufs (`z46`, Teil 0).**
 - **32er-Naht:** stimmt. Die längste Regel lässt die reelle 16er- und 32er-Naht zu; 16 gewinnt erst durch die
@@ -365,7 +458,7 @@ Aussagen sind als Behauptungen geprüft. Selbst gerechnet: `z46` mit 24 und `z47
 - **Spin-2-Slot:** enthält jetzt auch die Gedächtnisse bei e^{−2π} und 1/√2. Für kleine q wird 1/H − 1/x in
   geschlossener Form 2q²/(Z[√((x+a)(x+b)) + x + Z]) geprüft; vorher verschluckte Rundung die Positivität.
 - **Skalenfreie Suche:** ohne das Prinzip `dirac_spin2`, 72 576 Prozesse.
-  - Acht Prinzipien wählen genau einen Prozess: Hardy, Kovarianz, Positivität, originaler Zustand,
+  - Acht Prinzipien wählen genau einen Prozess (H6h30: zwei, siehe oben): Hardy, Kovarianz, Positivität, originaler Zustand,
     Orientierungsumkehr, reelle Naht, Familienmischung, Familienuhr.
   - Gewählt: Kern ν = 1, Transfergedächtnis bei e^{−2π}, reelle 16er-Naht mit umgekehrtem Blatt, Z₃ × Z₄.
   - Mit E8-Naht statt Positivität braucht diese Regel keine Größenordnung.

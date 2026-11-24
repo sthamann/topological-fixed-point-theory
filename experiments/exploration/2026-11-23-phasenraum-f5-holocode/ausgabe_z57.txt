@@ -1,0 +1,38 @@
+Teil 1: Plebański-Flächenregel
+   beta der Flächenregel (Fierz-Pauli-normiert): [-1.5, -0.0, 0.5, -0.0, -1.5], t = 1.0
+   [ok] Flächenregel = (-3/2) + e_2/2 - (3/2) e_4 = V + (1/2) det(I - X): t = 1
+   volle Epsilon-Kontraktion / HR-Potential für 24 zufällige Vielbeinpaare: Mittel -64.000000, relative Streuung 6.8e-15
+   [ok] die volle Kontraktion eps eps (B_p - B_k)(B_p - B_k) ist für alle 24 Paare ein fester Vielfacher des HR-Potentials mit t = 1
+   konformer Teilraum e_p = a I, e_k = b I: V = -3*(a - b)**2*(a + b)**2/2
+   [ok] auf dem konformen Teilraum ist V_1 = -(3/2)(a^2 - b^2)^2
+   Lane edge_forms: ['cubic_as_V', 'fierz_pauli_mass', 'flat_background', 'mean_measure', 'quadratic_in_area', 'undirected_edge']
+   [ok] in der Lane wählt 'quadratisch in den Flächen' allein die Mittelform (t = 1); sie ist identisch mit dem arithmetischen Mittel
+   [ok] die Flächenform ist flach und ungerichtet (Taylor bis Ordnung vier)
+   [Befund: ja] Mit Flächen (Plebański) als Grundvariablen ist t = 1 die natürliche Regel; mit Vielbeinen und Minimalgrad wäre es t = 4. Die Wahl der Grundvariablen ist damit die eine offene Entscheidung; die Simplizität der gemittelten Fläche bleibt außerhalb des konformen Teilraums eine Zusatzbedingung
+
+Teil 2: Familienmischung aus den originalen Clocks
+   [ok] F_C und F_J vernichten beide u = (0,1,1)/sqrt 2, kommutieren auf dem Rest aber nicht (|[F_C, F_J]|_HS^2 = 1/64)
+   Gewichte von u in der zyklischen Dreierbasis: [2/3, 1/6, 1/6]
+   [ok] in der zyklischen Dreierbasis trägt u genau die TM1-Gewichte (2/3, 1/6, 1/6)
+   [ok] im Rest {e_1, (0,1,-1)/sqrt 2} ist H_F = [[13/16 + gamma, sqrt 2/16], [sqrt 2/16, 10/16]]
+   [ok] tan 2 theta = 2 sqrt 2/(3 + 16 gamma)
+   gamma = 1/8: theta = 14.748 Grad, sin^2 theta13 = 0.021602; theta = 15 Grad verlangte gamma = -3/16 + sqrt(6)/8 = 0.1187
+   [ok] gamma = 1/8 gibt theta = 14.748 Grad und sin^2 theta13 = 0.021602 (Angabe der Analyse); gamma bleibt eine freie Zahl
+   [ok] i[F_C, F_J] ist hermitesch und vernichtet u: er liefert eine Phase im Rest, bricht die TM1-Spalte aber nicht
+   [Befund: ja] Die TM1-Struktur steckt in den originalen Clocks (gemeinsame Nulllinie mit Gewichten 2/3, 1/6, 1/6); der Winkel hängt an einem relativen Gewicht gamma, das nicht hergeleitet ist. Die Zuordnung des Stromindexraums zu den Leptonfamilien und die Kompression aus dem Zertifikat sind aus der Analyse übernommen
+
+Teil 3: Eingefrorene Vorhersagen
+   eingefroren: sin^2 theta12 = 0.306747 (1/3 - phi0/2), sin^2 theta13 = 0.023108 (phi0 e^-5/6); TM1 verlangte 0.317563; delta = 240 Grad (assigned)
+   [ok] die eingefrorenen Werte sind kein TM1 (Abstand 0.0108 in sin^2 theta12); delta = 240 Grad ist ein zugewiesener Texturwert, nicht die mu-tau-Reflexion
+   NuFIT 6.1 sin^2 theta12 = 0.3088 +- 0.0067: TFPT 0.31 sigma, TM1(15 Grad) 1.39 sigma
+   [ok] der eingefrorene TFPT-Wert 0.3067 liegt näher an NuFIT 6.1 (0.3 sigma) als TM1 bei 15 Grad (1.4 sigma): exaktes TM1 nicht erzwingen
+   [Befund: ja] Die vollständige Familienregel muss TM1 aus den Clocks leicht brechen (der Analyse zufolge über die inverse Coxeter-Kompression, die die Nulllinie nicht erhält) und dabei die eingefrorenen Werte tragen; ein Gewicht dafür ist nicht hergeleitet
+
+Teil 4: G
+   [ok] 8 pi G = 1/(c3 v_geo^2) mit c3 = 1/(8 pi) gibt G = v_geo^-2
+   [Befund: ja] G ist damit im Bestand relativ zur Einheit v_geo festgelegt; ein dimensionsloses Verhältnis wie M_Pl/m_e braucht die gemeinsame Zuordnung von Geometrie- und Materieskala
+
+Urteil
+   Drei Punkte der Analyse halten und präzisieren den Stand. Die Plebański-Flächenregel (Kantenwirkung quadratisch in B_p - B_k) gibt exakt das Potential (-3/2) + e_2/2 - (3/2) e_4, also t = 1; die volle Epsilon-Kontraktion ist für 24 zufällige Vielbeinpaare ein fester Vielfacher davon, und auf dem konformen Teilraum ist V = -(3/2)(a^2 - b^2)^2. Das ist dieselbe Form wie das arithmetische Mittel; die Lane wählt sie mit 'quadratisch in den Flächen'. Die originalen Clocks F_C, F_J haben eine gemeinsame Nulllinie mit TM1-Gewichten (2/3, 1/6, 1/6), der Winkel hängt an einem freien Gewicht gamma (gamma = 1/8 gibt 14.748 Grad), und i[F_C, F_J] gibt eine Phase ohne TM1-Brechung. Die eingefrorenen Werte 0.306747 und 0.023108 sind kein TM1; sie liegen näher an NuFIT 6.1, also muss die Familienregel TM1 leicht brechen. G = v_geo^-2 folgt aus 8 pi = 1/c3.
+
+Alle Prüfungen bestanden: True (14/14)

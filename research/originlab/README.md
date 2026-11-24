@@ -77,6 +77,11 @@ endpoint: t = 4, squares: t = -2). Only Q = e_p e_k is at most cubic in the edge
 `flavour_groups(..., neutrinos="cyclic")` repeats the Delta(6 n^2) search for Dirac neutrinos; it gives no mixed TM1 pattern
 either. These additions do not change earlier universes.
 
+Seventh run (area rule, H6 exploration z56/z57): after the merge of research/h6h27-source-dynamics-20261124 (default
+lane unchanged, corrected semantics in `run(certified=True)`, where the scale-free search selects two processes: original
+state and mirror sheet at q = 1/sqrt2), `edge_forms` gains the clause `quadratic_in_area`: an edge action quadratic in the difference of the
+Plebanski two-forms B = e ^ e gives (-3/2) + e_2/2 - (3/2) e_4, i.e. t = 1, the same form as the arithmetic mean.
+
 ```bash
 .venv/bin/python -B research/originlab/process_rules.py > /tmp/process-rules.json
 .venv/bin/python -B research/originlab/main.py --campaign process_rules --jobs 1 --out /tmp/originlab-process

@@ -191,6 +191,8 @@ class ProcessRules(unittest.TestCase):
         self.assertEqual(sorted(ts.values()), [-2.0, 0.0, 1.0, 4.0])
         low = [k for k, v in forms.items() if v["edge_degree"] <= 3]
         self.assertEqual(low, ["Q = e_p e_k (one vielbein of each endpoint)"])
+        area = [k for k, v in forms.items() if "quadratic_in_area" in v["clauses"]]
+        self.assertEqual(area, ["Q = (e_p + e_k)^2 (arithmetic mean)"])      # Plebanski area rule = t = 1 (z57)
 
     def test_dirac_residuals_give_no_tm1_either(self):
         fg = flavour_groups(ns=(2, 4), neutrinos="cyclic")

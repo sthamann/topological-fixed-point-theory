@@ -127,8 +127,8 @@ Ursprung sollte beides zugleich liefern.
 
 ### Kandidat H6: Ursprung von P1 aus einer hintergrundfreien Naht (Exploration 23.11.)
 
-Quelle: `experiments/exploration/2026-11-23-phasenraum-f5-holocode/VERDICT.md` (Stand H6h29),
-Skripte `n1`, `v1`, `y1`, `z1`–`z55`, Lean-Vertrag `experiments/theory-contracts/h6-exakte-teile-20261123/`; Atlasproblem `problem:c3-p1-p2-shared-origin-reconciliation`,
+Quelle: `experiments/exploration/2026-11-23-phasenraum-f5-holocode/VERDICT.md` (Stand H6h30),
+Skripte `n1`, `v1`, `y1`, `z1`–`z57`, Lean-Vertrag `experiments/theory-contracts/h6-exakte-teile-20261123/`; Atlasproblem `problem:c3-p1-p2-shared-origin-reconciliation`,
 Befunde mit Präfix `h6`. Nichts davon ist im Ledger befördert. Prüfstand mit 20 Kriterien: 14
 hergeleitet, 6 unter benannter Lesart, keines gescheitert, offen oder gesetzt.
 
@@ -303,7 +303,7 @@ hergeleitet, 6 unter benannter Lesart, keines gescheitert, offen oder gesetzt.
     Quarter-Gaußquelle (Calderón/Szegő, b = 4π) hat ω(J₋₁J₁) = 1/(e^{4π} − 1); als Leiterbesetzung des Nullvektors
     gelesen folgt q = e^{−2π}, der Hardy-Zustand gibt q = 0. Spin 2 ist dann ein Einsteinpol mit Gewicht 1 − e^{−4π}
     plus eine schmale massive Linie mit Gewicht 3,5·10⁻⁶. Ohne die Skalenkonvention wählen acht Prinzipien genau
-    diesen Prozess. Ward-Struktur: Der masselose Pol ist durch den Fredholmindex +1 geschützt (G nicht); Weinbergs
+    diesen Prozess (Korrektur H6h30: im zertifizierten Modus zusammen mit dem Spiegelblatt bei q = 1/√2 zwei Prozesse). Ward-Struktur: Der masselose Pol ist durch den Fredholmindex +1 geschützt (G nicht); Weinbergs
     Softbedingung verlangt eine einzige Randquelle; Ward plus Positivität lassen das Gedächtnis nur im Spin-2-Kanal
     (W F(□) W, linearisiert ½k⁴hP²h), der Spurkanal bleibt Einstein. Gegenprüfung eines externen Laufs: 32er-Naht nur
     über die Größenordnung ausgeschlossen; Z₃ × Z₄ exakt (2 − √3)/6 = TM2 bei 15°; die Daten passen zu TM1 bei 15°
@@ -338,6 +338,15 @@ hergeleitet, 6 unter benannter Lesart, keines gescheitert, offen oder gesetzt.
     Vierteldrehung setzt nur die Arme gleich, je Tiefe bleibt ein t_n. G skaliert ohne Normregel frei. TM1 bei 15° mit
     Z₃, Majorana-Klein und μ-τ-Reflexion ist in jeder endlichen Gruppe ausgeschlossen (Spuren −(2 ∓ √3)/4 nicht
     ganz); TM2 verletzt die Solarsummenregel (> 3,5σ gegen NuFIT 6.1). [E/N]
+  - Zusammenführung, Spiegellücke, Flächenregel, Clock-Familien (Z56, Z57; der externe Zweig ist in main, Merge
+    a7b1ef933 mit zertifiziertem Modus run(certified=True); dort wählt die skalenfreie Suche zwei Prozesse, originaler
+    Zustand und Spiegelblatt bei q = 1/√2, Korrektur zu Z46): Der lokale Spiegeloperator H = −(J/4)Σ(B_A + B_A⁺)² auf 16 Spin(10)-Fermionen × 2 ist
+    J(C₂(Spin(10)) − C₂(Spin(11))); für Spin(7) und Spin(9) voll diagonalisiert, für Spin(11) über eine exakte
+    Polynomrealisierung: eindeutiger Singulett, E₀ = −136J, Lücke 9J, Fermionlücke 29J/2, ⟨X_A X_B⟩ = 68/5, nichtgaußsche
+    Vierpunktantwort (verbunden −2822/25), E(h) bis h⁴; die starke Projektion lässt sieben naive Knoten. Die
+    Plebański-Flächenregel (Kante quadratisch in B_p − B_k) gibt t = 1 (Epsilon-Kontraktion = −64 × HR-Potential). Die
+    originalen Clocks F_C, F_J tragen die TM1-Spalte (2/3, 1/6, 1/6), der Winkel hängt an einem freien Gewicht; die
+    eingefrorenen Werte brechen TM1 und liegen näher an NuFIT 6.1; G = v_geo⁻². [E/N]
   - Instantonen (Z33): Unter Spin(10) hat ein Einheitsinstanton 4 Eltern- und 12
     Familiennullmoden; mit gesättigten Familiennullmoden entsteht Re[e^{iθ}Φ² C_fam], die Wand ist
     also auch im Kontinuum möglich, bei nackter SO(10) aber ~10⁻¹⁶⁴ unterdrückt. [N]
