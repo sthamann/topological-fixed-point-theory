@@ -1085,6 +1085,32 @@ if "H6h2" in H and z1p.exists() and z2p.exists():
                                                                                                                          "zu endlicher Tiefe (Z51); offen t, mu, M_c (G) "
                                                                                                                          "und die Gaußquantisierung")
                                                                                                     facts["F46_metric_star_and_quartic"] = {n: T13[n]["urteil"] for n in T13}
+                                                                                                    zt = {n: Path(__file__).with_name(f"z{n}_ergebnis.json") for n in (52, 53)}
+                                                                                                    if all(p.exists() for p in zt.values()):
+                                                                                                        T14 = {n: json.loads(p.read_text()) for n, p in zt.items()}
+                                                                                                        ok14 = {n: all(T14[n]["checks"].values()) for n in T14}
+                                                                                                        H["H6h28"] = dict(H["H6h27"])
+                                                                                                        H["H6h28"]["K13"] = (LES if ok14[52] and ok13[50] and ok13[51] else F,
+                                                                                                                             "[D] Jacobson; metrischer Stern mit "
+                                                                                                                             "ungerichteten Kanten; t ist die Form der "
+                                                                                                                             "Endpunkt-Quadratform Q in eps(D D Q) (Z52); "
+                                                                                                                             "Nahtskala ~ Planck: unterhalb Einstein mit G "
+                                                                                                                             "aus GRAV.NONLINEAR.01 plus Scalaron, der "
+                                                                                                                             "Ward-verträglich ist; t und Planck-nahe "
+                                                                                                                             "Dynamik offen")
+                                                                                                        H["H6h28"]["K16"] = (LES if ok14[53] and ok13[50] else F,
+                                                                                                                             "[reelle Naht] 16 Majorana, Kitaev nu = 16 = 0 "
+                                                                                                                             "mod 16; eine Familie mit nu_R hat 16 Weyl mit "
+                                                                                                                             "Spin-Z4 (X = 1 mod 4), alle Anomalien null, "
+                                                                                                                             "16 = 0 mod 16 (ohne nu_R 15): Spiegel können "
+                                                                                                                             "ohne Brechung gegappt werden, 4D-Dynamik offen "
+                                                                                                                             "(Z53); Gaußzustand folgt aus freier Naht")
+                                                                                                        H["H6h28"]["K18"] = (LES if ok14[53] and ok12[49] else F,
+                                                                                                                             "Familien: Delta(6 n^2) gibt weder mit Majorana- "
+                                                                                                                             "noch mit Dirac-Resten TM1 (Z49, Z53); TM1 bei "
+                                                                                                                             "15 Grad mit mu-tau-Reflexion passt (delta = "
+                                                                                                                             "+-pi/2), braucht Brechung oder CP-Regel")
+                                                                                                        facts["F47_gravity_closed_and_matter"] = {n: T14[n]["urteil"] for n in T14}
 
 order = [f"K{i}" for i in range(1, 21)]
 print("Gesamttabelle (P = hergeleitet, L = unter benannter Lesart, F = FAIL, O = OFFEN, E = EINGABE)\n")

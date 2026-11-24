@@ -1,6 +1,74 @@
 # Urteil
 
-## Aktueller Stand: H6h27 — metrischer Stern, Korrekturen, die eine quartische Zahl (`z50`, `z51`)
+## Aktueller Stand: H6h28 — Gravitation bis zur Nahtskala, Spiegelbilanz, Gaußzustand (`z52`, `z53`)
+
+Bilanz unverändert 14 P und 6 L von 20; K13, K16 und K18 sind präzisiert. Auftrag: alles Offene lösen. Selbst gerechnet:
+`z52` mit 9 und `z53` mit 7 Prüfungen, die Lane `process_rules` mit einem Kantenform-Universum und einer Dirac-Option
+(21 Tests). Gelöst ist damit nicht alles; was offen bleibt, steht in Abschnitt 4.
+
+**In einem Satz:**
+- Die quartische Zahl t ist die Form einer Quadratform der Endpunkt-Vielbeine. Für zugängliche Energien spielt sie keine
+  Rolle: Gravitation ist bis zur Nahtskala Einstein plus der Scalaron des Bestands, und beides ist Ward-verträglich.
+- Die Gaußquantisierung folgt aus der freien Naht.
+- Eine Familie mit ν_R erfüllt die mod-16-Bedingung, unter der Spiegel ohne Symmetriebrechung eine Lücke bekommen können.
+- TM1 ist auch mit Dirac-Neutrinos kein Restsymmetriemuster.
+
+**1. Die quartische Zahl (`z52`, Teil 1, Lane `edge_forms`).**
+- **Satz.** Jedes flache, ungerichtete Fierz-Pauli-Potential ist ε(D∧D∧Q(e_p, e_k)) mit D = e_p − e_k und
+  Q = x(e_p² + e_k²) + y·e_p e_k.
+  - Jede solche Form liegt auf der Familie V_t (Abstand 9·10⁻¹⁶), und jedes t wird erreicht.
+  - Mit z51 (die Familie ist genau die Menge der ungerichteten, flachen Potentiale) folgt: t misst die Form von Q.
+- **Natürliche Formen.**
+  - V: Q = e_p² + e_p e_k + e_k², t = 0.
+  - Arithmetisches Mittel: Q = (e_p + e_k)², t = 1.
+  - Ein Vielbein je Endpunkt: Q = e_p e_k, t = 4.
+  - Quadrate: Q = e_p² + e_k², t = −2.
+- **Minimalgrad.** Nur Q = e_p e_k ist höchstens kubisch in der Kantenvariable Y = I − X; das Mittel wählt t = 1.
+- **Folge.** Aus dem freien Transfer folgt keine dieser Regeln; t bleibt eine Regelwahl.
+
+**2. Gravitation bis zur Nahtskala (`z52`, Teil 2–3).**
+- **Bestand.** GRAV.NONLINEAR.01 legt die Einstein-Kopplung parameterfrei fest (8π = 1/c₃ in der Einheit v_geo,
+  Jacobson-Lesart). GRAV.GAPCORR.01 setzt die Nahtskala auf v_geo ~ M_Pl und führt den R²-Scalaron bei
+  c₃^{7/2}·M̄ = 3,06·10¹³ GeV (nachgerechnet).
+- **Arme stark gekoppelt.** Ist ein Übertragungsschritt eine Quartereinheit der Naht, liegt μ bei der Nahtskala. Im
+  originalen Zustand ist dann keine Armstufe schwach gekoppelt (q/2 = 9,3·10⁻⁴ < μ/M_c).
+- **Darunter** bleibt Einstein mit M_eff = M_c(1 + 1,7·10⁻⁶).
+- **Scalaron.** Er ist ein gesunder Spinnull-Pol (Residuum T²/6 ≥ 0, statisch 1 + e^{−Mr}/3), also genau die
+  Gewichtung, die die Ward-Bedingung aus z47 im Spurkanal erlaubt.
+- **Folge.** Für zugängliche Energien ist die Gravitation unter den Prämissen festgelegt: D, freie Naht, Zuordnung
+  Nahtskala ~ Planck. t und die massive Linie wirken erst an der Nahtskala.
+
+**3. Materie (`z53`).**
+- **Gaußzustand aus der freien Naht.** Der KMS-Zustand eines quadratischen Majorana-Hamiltonoperators erfüllt Wick exakt
+  (Abweichung 2·10⁻¹⁶, mit Quartikterm 0,05). Die Prämisse der elliptischen Quelle ist damit die Prämisse „freie Naht auf
+  zwei Kopien“ des Bestands plus KMS.
+- **Z₁₆-Bilanz.**
+  - Eine Familie mit ν_R hat 16 Weyl-Fermionen mit X = 5(B−L) − 4Y ∈ {1, −3, 5}, alle 1 mod 4. Also wirkt
+    exp(iπX/2) als i, und sein Quadrat ist die Fermionparität (Spin-Z₄).
+  - Alle störungstheoretischen Anomalien verschwinden (X, X³, X–SU(3)², X–SU(2)², X–Y², X²–Y, Y, Y³).
+  - Die globale Zahl ist 16 ≡ 0 mod 16, ohne ν_R 15; für drei Familien 0 gegen 13.
+  - Nach der Klassifikation (García-Etxebarria/Montero) ist das die notwendige Bedingung für Spiegel ohne
+    Symmetriebrechung. Dieselbe mod-16-Bilanz trägt die 16er-Naht (Kitaev ν = 16, keine Anyonen).
+- **Spielzeug 0+1 D (Fidkowski–Kitaev).** Mit nur quartischer Wechselwirkung bleiben 4 Majoranas entartet. 8 Majoranas
+  bekommen in 30 von 30 Zufallsfällen einen eindeutigen Grundzustand mit Lücke.
+- **Was nicht gezeigt ist:** die Dynamik der Spiegellücke in 4D.
+- **Flavour mit Dirac-Neutrinos.** Zyklische Reste auf beiden Seiten in Δ(24), Δ(96), Δ(384) geben 42 Muster, kein
+  gemischtes TM1 und keinen Datentreffer. TM1 bei 15° braucht eine Brechung oder eine CP-Regel.
+
+**4. Was offen bleibt.**
+- **Gravitation:**
+  - die Regel für die Quadratform Q (t);
+  - die Dynamik an der Nahtskala;
+  - die Prämisse D;
+  - die Zuordnung Nahtskala ~ Planck.
+- **Materie:**
+  - die Dynamik der Spiegellücke in 4D und das lokale chirale Maß;
+  - die Kondensation (μ₄) und die 4D-Einbettung der Naht;
+  - der Familienmechanismus (TM1 bei 15°, δ = ±π/2).
+- **Bilanz:** Die Bilanz steigt dadurch nicht. Es sind Präzisierungen unter benannten Prämissen, keine Herleitungen aus
+  P1.
+
+## Davor: H6h27 — metrischer Stern, Korrekturen, die eine quartische Zahl (`z50`, `z51`)
 
 Bilanz unverändert 14 P und 6 L von 20; K13 ist präzisiert. Anlass ist die externe Analyse vom 24.11. zu H6h24
 (metrischer Stern, Ward, Zustand, Flavour). Ihr Zweig `research/h6h24-metric-process-20261124` und das Prüfpaket liegen

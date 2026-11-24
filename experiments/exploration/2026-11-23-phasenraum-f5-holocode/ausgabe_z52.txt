@@ -1,0 +1,32 @@
+Teil 1: Kantenform und die quartische Zahl
+   zufällige Formen Q: t-Werte [-2.818, -3.6065, -4.0531, 0.5114, 0.7064, 0.229], Abstand zur Familie V_t 8.9e-16
+   [ok] jede Form eps(D ^ D ^ Q) mit symmetrischem Q liegt auf der Familie V_t = V + (t/2) det(I - X), mit t = 2 x/(-(2x + y)/6) + 4 (nach Massennormierung)
+   [ok] umgekehrt erreicht jede Zahl t eine Form Q (x = (t - 4)/2, y = -6 - 2x): die Familie V_t ist genau die Menge der Kantenformen
+   [ok] Gegenprobe mit einer zufälligen Form: flach und ungerichtet (Taylor bis Ordnung vier)
+      Q = e_p^2 + e_p e_k + e_k^2 (V)                t =  0.00, Grad in Y = 4, ['cubic_as_V', 'fierz_pauli_mass', 'flat_background', 'undirected_edge']
+      Q = (e_p + e_k)^2 (arithmetic mean)            t =  1.00, Grad in Y = 4, ['cubic_as_V', 'fierz_pauli_mass', 'flat_background', 'mean_measure', 'undirected_edge']
+      Q = e_p e_k (one vielbein of each endpoint)    t =  4.00, Grad in Y = 3, ['bilinear_measure', 'cubic_as_V', 'cubic_in_edge_variable', 'fierz_pauli_mass', 'flat_background', 'undirected_edge']
+      Q = e_p^2 + e_k^2 (squares)                    t = -2.00, Grad in Y = 4, ['cubic_as_V', 'fierz_pauli_mass', 'flat_background', 'undirected_edge']
+   [ok] in der Lane wählt 'höchstens kubisch in der Kantenvariable' allein genau Q = e_p e_k (t = 4); das Mittel wählt t = 1
+   [Befund: ja] t ist die Form der Endpunkt-Quadratform Q; die naheliegenden Regeln wählen verschiedene t (Minimalgrad in Y: t = 4, arithmetisches Mittel: t = 1, V: t = 0). Aus dem freien Transfer folgt keine; t bleibt eine Regelwahl
+
+Teil 2: Skala und G aus dem Bestand
+   mu/M_c = 1: erste Armstufe M_(j,0)/M_c = q/2 = 9.34e-04 -> schwach gekoppelt: False
+   mu/M_c = 0.1: erste Armstufe M_(j,0)/M_c = q/2 = 9.34e-04 -> schwach gekoppelt: False
+   mu/M_c = 0.001: erste Armstufe M_(j,0)/M_c = q/2 = 9.34e-04 -> schwach gekoppelt: False
+   [ok] liegt mu bei der Nahtskala (mu/M_c ~ 1 bis 1e-3), ist im originalen Zustand keine Armstufe schwach gekoppelt (q/2 = 9.3e-4)
+   [ok] unterhalb der Nahtskala bleibt Einstein mit M_eff = M_c sqrt(Sum q^(2n)) = M_c (1 + 1.74e-6)
+   GRAV.NONLINEAR.01: 8 pi G mit 8 pi = 1/c3 in der Einheit v_geo; GRAV.GAPCORR.01: Scalaron M = c3^(7/2) Mbar = 3.060e+13 GeV
+   [ok] der Scalaron des Bestands liegt bei c3^(7/2) Mbar = 3.06e13 GeV (Ledger-Wert reproduziert)
+   [Befund: ja] Für zugängliche Energien ist die Gravitation damit festgelegt: Einstein mit G aus GRAV.NONLINEAR.01 plus Scalaron; die massive Linie (Gewicht 3.5e-6) und t wirken erst an der Nahtskala, wo die Arme stark koppeln
+
+Teil 3: Scalaron und Ward-Bedingung
+   [ok] am Scalaron-Pol (rho2 = 0, rho0 = -1) ist das Residuum (1/6) T^2 positiv semidefinit: gesunder Skalar
+   statisch: Newton (TT - T^2/2 -> 1/2) plus Scalaron (T^2/6) gibt den Faktor 1.3333 = 1 + 1/3 e^(-M r)
+   [ok] das ist die bekannte Starobinsky-Korrektur V = -GM/r (1 + e^(-M r)/3)
+   [Befund: ja] Die Ward-Bedingung aus z47 (Gedächtnis nur im Spin-2-Kanal, Spurkanal Einstein oder gesunder Skalar) verträgt sich mit dem R^2-Scalaron des Bestands; er ist genau die erlaubte Spinnull-Gewichtung
+
+Urteil
+   Die quartische Zahl des metrischen Sterns ist die Form einer Quadratform: Jedes flache, ungerichtete Fierz-Pauli-Potential ist eps(D ^ D ^ Q(e_p, e_k)), und t misst Q (V: t = 0, Mittel: t = 1, ein Vielbein je Endpunkt: t = 4, Quadrate: t = -2). Nur Q = e_p e_k ist höchstens kubisch in der Kantenvariable; welche Regel gilt, folgt aus dem freien Transfer nicht. Für zugängliche Energien spielt t keine Rolle: Nach dem Bestand liegt die Nahtskala bei v_geo ~ M_Pl, dort koppeln die Arme im originalen Zustand stark (q/2 = 9.3e-4), und darunter bleibt Einstein mit M_eff = M_c (1 + 1.7e-6) und G aus GRAV.NONLINEAR.01, dazu der Scalaron des Bestands (3.06e13 GeV). Dieser ist ein gesunder Spinnull-Pol und genau die Gewichtung, die die Ward-Bedingung im Spurkanal erlaubt. Die Gravitation ist damit unter den Prämissen (D, freie Naht, Zuordnung von Nahtskala und Planckskala) bis zur Nahtskala festgelegt; t und die Planck-nahe Dynamik bleiben offen.
+
+Alle Prüfungen bestanden: True (9/9)

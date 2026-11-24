@@ -4,7 +4,7 @@ from fractions import Fraction as Fr
 from autonomy import execute, specifications
 import numpy as np
 
-from process_rules import (Q_DIRAC, Q_ORIGINAL, flavour_groups, flavour_pairs, hardy_rect, metric_star, ladder_occupation, matrix_kernels, original_current_norm,
+from process_rules import (BETA_DET, BETA_V, Q_DIRAC, Q_ORIGINAL, edge_form_beta, flavour_groups, flavour_pairs, hardy_rect, metric_star, ladder_occupation, matrix_kernels, original_current_norm,
                            q_rules, readouts, run, schur_coefficient, seam_layers, spin2_kernels, transfer_processes)
 
 
@@ -180,6 +180,22 @@ class ProcessRules(unittest.TestCase):
         self.assertNotIn("metric_potentials", self.h6h26["universes"])
         self.assertEqual(self.h6h26["universes"]["readouts"]["minimal_empty_rules"],
                          self.h6h24["universes"]["readouts"]["minimal_empty_rules"])
+
+    def test_quartic_number_is_the_shape_of_the_endpoint_form(self):
+        for x, y in ((1, 1), (1, 2), (0, 1), (1, 0), (0.3, -1.1)):
+            beta = np.array(edge_form_beta(x, y))
+            t = 2*(beta[0] - BETA_V[0])
+            self.assertTrue(np.allclose(beta, np.array(BETA_V) + t/2*np.array(BETA_DET), atol=1e-12))
+        forms = self.result["universes"]["edge_forms"]["derived"]
+        ts = {k.split(" (")[0]: round(v["t"], 9) for k, v in forms.items()}
+        self.assertEqual(sorted(ts.values()), [-2.0, 0.0, 1.0, 4.0])
+        low = [k for k, v in forms.items() if v["edge_degree"] <= 3]
+        self.assertEqual(low, ["Q = e_p e_k (one vielbein of each endpoint)"])
+
+    def test_dirac_residuals_give_no_tm1_either(self):
+        fg = flavour_groups(ns=(2, 4), neutrinos="cyclic")
+        self.assertFalse(any("tm1" in o["clauses"] for o in fg if "mixes" in o["clauses"]))
+        self.assertFalse(any("fits_data" in o["clauses"] for o in fg))
 
     def test_nothing_is_promoted_and_the_lane_is_registered(self):
         self.assertFalse(self.result["physical_solution"])

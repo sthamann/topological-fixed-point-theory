@@ -70,6 +70,13 @@ universal. `metric_potentials` computes Taylor data to fourth order of six Hassa
 background, Fierz-Pauli mass and an undirected edge (same potential read from either metric) leave exactly V and
 V +- det(I - X)/2 open, i.e. one quartic number. `run(metric=False)` reproduces the fourth run.
 
+Sixth run (edge forms, H6 exploration z52/z53): every flat, undirected Fierz-Pauli potential is eps(D ^ D ^ Q(e_p, e_k))
+with D = e_p - e_k and a symmetric quadratic form Q of the endpoint vielbeins (`edge_form_beta`). The quartic number t
+measures the shape of Q; `edge_forms` holds four natural shapes (V: t = 0, arithmetic mean: t = 1, one vielbein of each
+endpoint: t = 4, squares: t = -2). Only Q = e_p e_k is at most cubic in the edge variable Y = I - X (`edge_degree`).
+`flavour_groups(..., neutrinos="cyclic")` repeats the Delta(6 n^2) search for Dirac neutrinos; it gives no mixed TM1 pattern
+either. These additions do not change earlier universes.
+
 ```bash
 .venv/bin/python -B research/originlab/process_rules.py > /tmp/process-rules.json
 .venv/bin/python -B research/originlab/main.py --campaign process_rules --jobs 1 --out /tmp/originlab-process

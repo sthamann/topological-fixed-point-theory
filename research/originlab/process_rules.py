@@ -424,6 +424,67 @@ def metric_potentials():
     return out
 
 
+def edge_form_beta(x, y):
+    """eps(D ^ D ^ Q(e_p, e_k)) with D = e_p - e_k and Q = x (e_p^2 + e_k^2) + y e_p e_k, written in the Hassan-Rosen basis:
+    eps(e_p^(4-n) e_k^n) is proportional to e_n(X) sqrt(g)/C(4, n); normalised to unit Fierz-Pauli mass (z52)."""
+    c = (x, y - 2*x, 2*x - 2*y, y - 2*x, x)
+    beta = [c[n]/[1, 4, 6, 4, 1][n] for n in range(5)]
+    mass = beta[1] + 2*beta[2] + beta[3]
+    return tuple(b/mass for b in beta)
+
+
+def edge_degree(beta, seed=52):
+    """Degree in the edge variable Y = I - X of Sum beta_n e_n(I - s Y): fitted polynomial in s for a random symmetric Y."""
+    rng = np.random.default_rng(seed)
+    Y = rng.normal(size=(4, 4))
+    Y = (Y + Y.T)/2
+    ss = np.linspace(-0.5, 0.5, 9)
+    vals = []
+    for sv in ss:
+        lam = np.linalg.eigvalsh(np.eye(4) - sv*Y)
+        e = [1, sum(lam), sum(lam[i]*lam[j] for i in range(4) for j in range(i + 1, 4)),
+             sum(lam[i]*lam[j]*lam[k] for i in range(4) for j in range(i + 1, 4) for k in range(j + 1, 4)), np.prod(lam)]
+        vals.append(sum(b*en for b, en in zip(beta, e)))
+    co = np.polynomial.polynomial.polyfit(ss, vals, 6)
+    return max([k for k in range(7) if abs(co[k]) > 1e-9] or [0])
+
+
+def edge_forms():
+    """Undirected flat Fierz-Pauli potentials as eps(D ^ D ^ Q): which endpoint form Q, which quartic number t?"""
+    rng = np.random.default_rng(52)
+    pairs = []
+    for _ in range(2):
+        A, B = rng.normal(size=(4, 4)), rng.normal(size=(4, 4))
+        pairs.append(((A + A.T)/2, (B + B.T)/2))
+    forms = (("Q = e_p^2 + e_p e_k + e_k^2 (V)", 1, 1), ("Q = (e_p + e_k)^2 (arithmetic mean)", 1, 2),
+             ("Q = e_p e_k (one vielbein of each endpoint)", 0, 1), ("Q = e_p^2 + e_k^2 (squares)", 1, 0))
+    ref = [potential_taylor(BETA_V, A, B) for A, B in pairs]
+    out = []
+    for name, x, y in forms:
+        beta = edge_form_beta(x, y)
+        co = [potential_taylor(beta, A, B) for A, B in pairs]
+        sw = [potential_taylor(beta, B, A) for A, B in pairs]
+        clauses = set()
+        if all(abs(c[0]) < 1e-12 and abs(c[1]) < 1e-12 for c in co):
+            clauses.add("flat_background")
+        if all(abs(c[2] - r[2]) < 1e-10 for c, r in zip(co, ref)):
+            clauses.add("fierz_pauli_mass")
+        if all(np.allclose(c, w, atol=1e-10) for c, w in zip(co, sw)):
+            clauses.add("undirected_edge")
+        if all(abs(c[3] - r[3]) < 1e-10 for c, r in zip(co, ref)):
+            clauses.add("cubic_as_V")
+        deg = edge_degree(beta)
+        if deg <= 3:
+            clauses.add("cubic_in_edge_variable")
+        if x == 0:
+            clauses.add("bilinear_measure")
+        if y == 2*x:
+            clauses.add("mean_measure")
+        t = 2*(beta[0] - BETA_V[0])                      # beta = BETA_V + (t/2) BETA_DET
+        out.append({"name": name, "beta": beta, "t": t, "edge_degree": deg, "clauses": clauses})
+    return out
+
+
 def q_rules():
     """Candidate states of the quarter transfer: which rule fixes q? Every clause is computed from q."""
     omega = original_current_norm()
@@ -641,7 +702,7 @@ def _angles_fit(P):
     return False
 
 
-def flavour_groups(ns=(2, 3, 4, 6, 8)):
+def flavour_groups(ns=(2, 3, 4, 6, 8), neutrinos="klein"):
     """Residual symmetries in Delta(6 n^2): Klein group for Majorana neutrinos, cyclic group with three distinct
     eigenvalues for charged leptons; |U|^2 of the two eigenbases."""
     out = []
@@ -658,6 +719,9 @@ def flavour_groups(ns=(2, 3, 4, 6, 8)):
             order[g] = k
         inv = [g for g in els if order[g] == 2 and not np.allclose(M[g], -np.eye(3))]
         klein, seen = [], set()
+        if neutrinos == "cyclic":                       # Dirac neutrinos: any cyclic group with three distinct eigenvalues (z53)
+            klein = [B for g in els if order[g] >= 2 for B in [_joint_basis([M[g]])] if B is not None]
+            inv = []
         for g1, g2 in combinations(inv, 2):
             if mul(g1, g2) == mul(g2, g1):
                 key = frozenset([g1, g2, mul(g1, g2)])
@@ -776,6 +840,7 @@ RECORD = {
                     "n=8 complex reversed": "the complex flux seam G' of z39 (U(1) charge, no Spin(10)_1)"},
     "flavour_groups": {},
     "metric_potentials": {"V": "Hassan-Rosen potential (-4 + e1 + e3 - 4 e4)/2 of the metric star (z50)"},
+    "edge_forms": {},
     "flavour_pairs": {"(('0', '1/3', '2/3'), ('1/2', '1/3', '1/6'), ('1/2', '1/3', '1/6'))":
                       "tri-bimaximal mixing (S4 leading order of the TFPT flavour channels, K18)"},
 }
@@ -838,6 +903,15 @@ def run(root=None, transfer=True, state=True, metric=True):
                              "nullity": st["nullity"],
                              "eta_over_M_spread": float(np.ptp(st["eta"]/st["M"])/np.mean(st["eta"]/st["M"]))}
         out["metric_star"] = diag
+
+        ef = edge_forms()
+        pool = ["flat_background", "fierz_pauli_mass", "undirected_edge", "cubic_as_V", "cubic_in_edge_variable",
+                "bilinear_measure", "mean_measure"]
+        res = search(ef, pool, lambda o: 0, lambda o: o["name"])
+        res["derived"] = {o["name"]: {"t": o["t"], "edge_degree": o["edge_degree"], "beta": o["beta"],
+                                      "clauses": sorted(o["clauses"])} for o in ef}
+        res["bound"] = "four endpoint forms Q in eps(D ^ D ^ Q); Taylor data to fourth order, degree in Y = I - X"
+        out["universes"]["edge_forms"] = res
 
     if transfer and state:
         qr = q_rules()
