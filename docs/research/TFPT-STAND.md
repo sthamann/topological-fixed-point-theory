@@ -1,7 +1,7 @@
 # TFPT: Was funktioniert, was fehlt, was eine vollständige Lösung wäre
 
 Kompakter Stand vom 20. November 2026, ergänzt am 23. und 24. November (Befunde 20.–24. November, Kandidat H6 bis
-H6h31, Leitlinie „Rekonstruktion statt Auswahl“ und Abschnitt 5), für Explorations- und Lösungssitzungen. Seit 24. November
+H6h32, Leitlinie „Rekonstruktion statt Auswahl“ und Abschnitt 5), für Explorations- und Lösungssitzungen. Seit 24. November
 liegen die Explorationszweige vom 20. November in main (Quaternionrahmen, Fibonacci-Uhr, Vertauschung und Auslese, fremde
 und operative Ursprünge, Projekt Genesis, die Vertragsserie vom 14./15. Oktober); ihre Befunde stehen in ihren Verzeichnissen
 unter `experiments/`. Nicht zusammengeführt ist `codex/c3-p1-p2-abgleich-20261105` (121 Konflikte mit dem heutigen Stand). Neuere Befunde stehen in den Atlasproblemen mit Datum
@@ -38,7 +38,9 @@ Erster Schritt (Z58):
 - Die Chiralität folgt aus Indizes, ohne Spiegellücke.
 - In 2D ist auch der Tensorkanal rekonstruiert (Z59, c = 1 je Quarter).
 
-Offen sind der Tensorkanal und die Rekonstruktion von 3+1 aus 4D-Antworten.
+Offen sind der Tensorkanal und die Rekonstruktion von 3+1 aus 4D-Antworten. Z60 schärft das: Die Zahl der Richtungen
+ist die Spektraldimension (Weyl-Gesetz) einer Antwort. Die Quelle hat d = 1, die E₈-Naht kompakt und starr d = 8 = 4 + 4.
+Gebraucht wird eine originale Antwort mit d = 4, nichtkompakt und reflexionspositiv.
 
 ## 2. Die gesetzten Eingaben
 
@@ -146,10 +148,11 @@ Ursprung sollte beides zugleich liefern.
 
 ### Kandidat H6: Ursprung von P1 aus einer hintergrundfreien Naht (Exploration 23.11.)
 
-Quelle: `experiments/exploration/2026-11-23-phasenraum-f5-holocode/VERDICT.md` (Stand H6h31),
-Skripte `n1`, `v1`, `y1`, `z1`–`z59`, Lean-Vertrag `experiments/theory-contracts/h6-exakte-teile-20261123/`; Atlasproblem `problem:c3-p1-p2-shared-origin-reconciliation`,
-Befunde mit Präfix `h6`. Nichts davon ist im Ledger befördert. Prüfstand mit 20 Kriterien: 14
-hergeleitet, 6 unter benannter Lesart, keines gescheitert, offen oder gesetzt.
+Quelle: `experiments/exploration/2026-11-23-phasenraum-f5-holocode/VERDICT.md` (Stand H6h32),
+Skripte `n1`, `v1`, `y1`, `z1`–`z60`, Lean-Vertrag `experiments/theory-contracts/h6-exakte-teile-20261123/`; Atlasproblem `problem:c3-p1-p2-shared-origin-reconciliation`,
+Befunde mit Präfix `h6`. Nichts davon ist im Ledger befördert. Prüfstand mit 20 Kriterien (Stand H6h32): 13
+hergeleitet, 7 unter benannter Lesart, keines gescheitert, offen oder gesetzt. K12 (3+1) zählt seit der Leitlinie
+„Rekonstruktion statt Auswahl“ nur als Lesart: d = 4 folgt kinematisch, nicht aus den Antworten (Z60).
 
 - **Prämissen:**
   - **A\*:** Die Naht hat keine Hintergrundgeometrie; Basiswechsel sind Symmetrien, die Form
@@ -383,6 +386,11 @@ hergeleitet, 6 unter benannter Lesart, keines gescheitert, offen oder gesetzt.
     Twistgewicht 1/32, also die ganze induzierte Gravitation der Naht (Polyakov-Wirkung mit c). Die Quelle trägt aber nur
     eine lichtartige Translation; die vier Marken geben die Nullrichtungen von R^{1,3}, nicht die Dynamik. Offen:
     4D-Tensorkanal, 3+1-Rekonstruktion, Familiengewichte. [E/N]
+  - Spektraldimension (Z60): Die Zahl der Richtungen, die Antworten rekonstruieren, ist ihre Weyl-Dimension. Die
+    Quarterquelle hat d = 1; ihre Viererstruktur ist eine Graduierung derselben Kette (direkte Summe), kein gemeinsames
+    Spektrum vier vertauschender Generatoren (das gäbe d = 4). Das E₈-Ladungsgitter hat d = 8 und enthält D₄ ⊕ D₄
+    (Hurwitz-Quaternionen, Index 4), ist aber kompakt und starr (248 Ströme vom Gewicht (1,0), keine Moduli). Kein
+    vorhandenes Original rekonstruiert ein nichtkompaktes 3+1; K12 zählt deshalb seit H6h32 als Lesart. [E/N]
   - Instantonen (Z33): Unter Spin(10) hat ein Einheitsinstanton 4 Eltern- und 12
     Familiennullmoden; mit gesättigten Familiennullmoden entsteht Re[e^{iθ}Φ² C_fam], die Wand ist
     also auch im Kontinuum möglich, bei nackter SO(10) aber ~10⁻¹⁶⁴ unterdrückt. [N]

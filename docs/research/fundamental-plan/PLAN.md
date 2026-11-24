@@ -25,7 +25,9 @@ Topologie festlegen und Mehrdeutigkeiten mit dem nächsten Prinzip schließen. S
 - Die Chiralität folgt aus Indizes.
 - In 2D ist auch der Tensorkanal rekonstruiert (`z59`): c = 1 je Quarter aus den Virasoro-Antworten.
 
-**Offen:** Tensorkanal in 4D, Rekonstruktion von 3+1, Familiengewichte.
+**Offen:** Tensorkanal in 4D, Rekonstruktion von 3+1, Familiengewichte. Zu 3+1 (`z60`): Die Antworten der vorhandenen
+Originale haben Spektraldimension 1 (Quelle) bzw. kompakt 8 (E₈-Naht). Gebraucht wird eine originale Antwort mit d = 4,
+nichtkompakt und reflexionspositiv. Prüfstand seit H6h32: 13 P, 7 L (K12 als Lesart).
 
 **Zusammenführung.** Seit 24. November sind die Zweige vom 20. November in main;
 `codex/c3-p1-p2-abgleich-20261105` ist nicht zusammengeführt (121 Konflikte).

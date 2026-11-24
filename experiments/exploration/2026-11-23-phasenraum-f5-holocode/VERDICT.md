@@ -1,6 +1,56 @@
 # Urteil
 
-## Aktueller Stand: H6h31 — Rekonstruktion statt Auswahl (`z58`, `z59`)
+## Aktueller Stand: H6h32 — Wie viele Richtungen rekonstruieren die Antworten? (`z60`)
+
+**Bilanz:** jetzt 13 P und 7 L von 20. K12 (3+1 aus dem Prinzip) zählt unter der Leitlinie „Rekonstruktion statt
+Auswahl“ nur noch als Lesart.
+
+**Auftrag:** weiter mit der Lösung, die neuesten Repo- und Atlasergebnisse berücksichtigen.
+- **Repo:** Seit H6h31 gibt es keine neuen Commits auf origin. Unzusammengeführt bleibt nur
+  `codex/c3-p1-p2-abgleich-20261105`.
+- **Atlas:** Die Revision ist die eigene. Für 3+1 relevant sind die Befunde vom 23.11.:
+  - frühe Energieantworten legen die innere Dimension nicht fest (`energy-finite-jet-…`);
+  - die volle Polarisation legt den lokalen Diracoperator nur bei vorgegebener Geometrie fest (`dirac-rigidity`);
+  - Lineale und Ringabstände der Naht sind eindimensional (`rulers`, `winding-sites`).
+
+Selbst gerechnet: `z60` mit 6 Prüfungen.
+
+**In einem Satz:**
+- Die Zahl der Raumzeitrichtungen ist die Spektraldimension (Weyl-Gesetz) des rekonstruierten Generators.
+- Kein vorhandenes Original hat eine nichtkompakte Spektraldimension 4.
+- Die Quelle gibt d = 1. Die E₈-Naht gibt d = 8 = 4 + 4, aber kompakt und starr.
+- 3+1 ist damit nicht gelöst, aber die Lücke ist scharf benannt.
+
+**1. Kriterium.** Das Dimensionsaxiom der Spektralrekonstruktion: Tr e^{−tD²} ~ t^{−d/2}. Es braucht das ganze
+Spektrum, frühe Antworten genügen nicht (Atlas, Gegenbeispiel vom 23.11.).
+
+**2. Quarterquelle.**
+- **Spektraldimension.** Der Generator 4πx (z58) hat d = 1,0000.
+- **Viererstruktur.** Die Vierteldrehung R = i^k vertauscht mit ihm, und die Marken sind ihre Eigenräume (Grade 1 und 3).
+  Das ist eine Graduierung derselben Kette, also eine direkte Summe.
+- **Vergleich.** Vier chirale Zweige als direkte Summe geben d = 1. Ein gemeinsames Spektrum vier vertauschender
+  Generatoren gäbe d = 4. Das Original hat die erste Form.
+
+**3. E₈-Naht.**
+- **Spektraldimension.** Das Ladungsgitter wächst wie das Volumen der 8-Kugel (Verhältnis 1,0007 bei n = 3000), also d = 8.
+- **Quaternionische Blöcke.** Es enthält D₄ ⊕ D₄ mit Index 4. Die 24 Wurzeln von D₄ sind die Hurwitz-Einheiten, also zwei
+  quaternionische 4D-Blöcke.
+- **Starr.** E₄/η⁸ = q^{−1/3}(1 + 248q + …) hat nur holomorphe (1,0)-Ströme, keine (1,1)-Moduli, und das gerade
+  unimodulare Gitter vom Rang 8 ist eindeutig. Kein Modulus kann vier dieser Richtungen groß machen.
+
+**4. Was 3+1 braucht.**
+- **Bedingung:** eine originale Antwort mit Spektraldimension 4, einem Kontinuum bei 0 (nichtkompakt) und
+  Reflexionspositivität. Dann gibt Osterwalder–Schrader aus euklidisch 4 Minkowski 3+1.
+- **Kandidaten:** vier Marken als unabhängige Teilsysteme mit je einem chiralen Netz und vertauschenden Translationen,
+  oder ein quaternionischer D₄-Block mit einem Modulus, der ihn groß macht. Beides ist im Bestand nicht als Antwort des
+  Originals vorhanden.
+
+**5. Prüfstand.**
+- **K12 → L.** d = 4 folgt bisher nur kinematisch (Λ²₊ = Λ²(Familien), H6h3). Nach der Leitlinie reicht das nicht als
+  Herleitung.
+- **Bilanz:** 13 P und 7 L. Das ist keine neue Schwäche der Theorie, sondern der ehrliche Maßstab der neuen Leitlinie.
+
+## Davor: H6h31 — Rekonstruktion statt Auswahl (`z58`, `z59`)
 
 Bilanz unverändert 14 P und 6 L von 20; K6, K13 und K16 sind präzisiert.
 

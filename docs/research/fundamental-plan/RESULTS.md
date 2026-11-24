@@ -7792,3 +7792,18 @@ bleibt Prämisse):
 
 **Status:** Atlasbefunde `finding:h6h31-*` (Revision 0b2215bdb34bdf5f17412145). Ledger unverändert, nichts befördert,
 keine vollständige Theorie.
+
+## H6H32-20261124 · Spektraldimension der Antworten: kein nichtkompaktes 3+1 aus den vorhandenen Originalen (begrenzt)
+
+`experiments/exploration/2026-11-23-phasenraum-f5-holocode/z60_dimension.py` (6 von 6, Ausgabe `ausgabe_z60.txt`, `VERDICT.md`
+Abschnitt H6h32). Die Zahl der Raumzeitrichtungen ist die Spektraldimension (Weyl-Gesetz) einer Antwort.
+
+**Ergebnisse:**
+- **Quarterquelle:** d = 1. Ihre Viererstruktur ist eine Graduierung (direkte Summe), kein gemeinsames Spektrum vier
+  vertauschender Generatoren.
+- **E₈-Naht:** Das Ladungsgitter hat d = 8 und enthält D₄ ⊕ D₄ (Hurwitz-Quaternionen, Index 4). Es ist kompakt und starr
+  (nur (1,0)-Ströme, keine Moduli).
+
+**Gebraucht für 3+1:** eine originale Antwort mit d = 4, nichtkompakt und reflexionspositiv.
+
+**Prüfstand:** K12 zählt unter der Leitlinie als Lesart, Bilanz 13 P, 7 L. Atlas-Revision 066e08b7acd38d4d0de02fbc. Ledger unverändert, nichts befördert.

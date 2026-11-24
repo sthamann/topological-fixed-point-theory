@@ -1186,6 +1186,19 @@ if "H6h2" in H and z1p.exists() and z2p.exists():
                                                                                                                                          "Z56 als Alternative; 4D-Regulierung (GW) und "
                                                                                                                                          "OS-Rekonstruktion offen")
                                                                                                                     facts["F50_reconstruction"] = T17["urteil"]
+                                                                                                                    z60p = Path(__file__).with_name("z60_ergebnis.json")
+                                                                                                                    if z60p.exists():
+                                                                                                                        T18 = json.loads(z60p.read_text())
+                                                                                                                        ok18 = all(T18["checks"].values())
+                                                                                                                        H["H6h32"] = dict(H["H6h31"])
+                                                                                                                        H["H6h32"]["K12"] = (LES if ok18 else F,
+                                                                                                                                             "[Leitlinie Rekonstruktion] d = 4 folgt nur "
+                                                                                                                                             "kinematisch (Lambda^2_+ = Lambda^2(Familien), H6h3); "
+                                                                                                                                             "die Antworten der Originale haben Weyl-Dimension "
+                                                                                                                                             "1 (Quelle) bzw. kompakt 8 = 4 + 4 (E8-Naht, starr); "
+                                                                                                                                             "gebraucht: originale Antwort mit d = 4, "
+                                                                                                                                             "nichtkompakt, reflexionspositiv (Z60)")
+                                                                                                                        facts["F51_spectral_dimension"] = T18["urteil"]
 
 order = [f"K{i}" for i in range(1, 21)]
 print("Gesamttabelle (P = hergeleitet, L = unter benannter Lesart, F = FAIL, O = OFFEN, E = EINGABE)\n")
