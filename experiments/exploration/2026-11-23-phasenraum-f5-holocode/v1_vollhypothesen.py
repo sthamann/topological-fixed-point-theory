@@ -1280,6 +1280,15 @@ if "H6h2" in H and z1p.exists() and z2p.exists():
                                                                                                                                                                  "relative Zustände exp(iP(X)) Omega, X exakt aus "
                                                                                                                                                                  "der gemischten Korrelation (Z78)")
                                                                                                                                             facts["F56_araki_woods"] = T23["urteil"]
+                                                                                                                                            z75p = Path(__file__).with_name("z75_ergebnis.json")
+                                                                                                                                            if z75p.exists():
+                                                                                                                                                T24 = json.loads(z75p.read_text())
+                                                                                                                                                H["H6h39"] = dict(H["H6h38"])
+                                                                                                                                                H["H6h39"]["K13"] = (LES if all(T24["checks"].values()) else F,
+                                                                                                                                                                     H["H6h38"]["K13"][1] + "; kein Graviton aus T(z) "
+                                                                                                                                                                     "(Delta = 2), Helizität +-2 nur als Vierquanten"
+                                                                                                                                                                     "kompositum ohne kovariante T-Kopplung (Z75)")
+                                                                                                                                                facts["F57_multipoint_spin2"] = T24.get("urteil", "")
 
 order = [f"K{i}" for i in range(1, 21)]
 print("Gesamttabelle (P = hergeleitet, L = unter benannter Lesart, F = FAIL, O = OFFEN, E = EINGABE)\n")

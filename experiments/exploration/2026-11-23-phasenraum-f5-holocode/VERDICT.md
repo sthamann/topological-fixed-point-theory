@@ -1,6 +1,41 @@
 # Urteil
 
-## Aktueller Stand: H6h38 — Vakuum gegen thermisch beantwortet, Orte aus Korrelationen (`z78`)
+## Aktueller Stand: H6h39 — Mehrpunktantworten und Spin 2: gescoptes Negativ für „Graviton aus der Virasoro-Antwort“ (`z75`)
+
+**Bilanz:** unverändert 13 P und 7 L von 20. K13 ist präzisiert.
+
+**Hintergrund:** Der Agent z75 wurde nach dem Nutzungslimit fortgesetzt (29 Prüfungen, reproduziert).
+
+**Ergebnisse:**
+- **Mehrpunktantworten [E].**
+  - Für su(N) ⊂ u(8) ⊂ so(16)₁ ⊂ E₈ gilt im Original, im NS-Zustand und im Vakuum exakt ⟨J^aJ^bJ^c⟩ = A·f^{abc}, ohne
+    d-Anteil; die Ward-Identität gilt.
+  - Die verbundene Vierpunktantwort ist nichtabelsch ungleich null und abelsch null.
+  - Es gibt Nullvektoren auf Niveau 1. Stufe 2 hat 2076 (so(16)₁) bzw. 4124 Zustände (E₈₁), freie Felder gäben 7380
+    bzw. 31124.
+- **Keine freien 4D-Felder [E].**
+  - Keine skalare 4D-Lesart trägt f^{abc}, für kein Δ (Bose-Symmetrie).
+  - Möglich sind nur zusammengesetzte Vektorströme J^a_μ mit Δ = 3. Die Spinorströme von E₈ haben keine 4D-Lesart.
+- **Spin 2 aus T(z): negativ [E].**
+  - T hat den Einteilchencharakter q²/(1−q). Er teilt den Paarraum mit J, also gibt die Tomita-Verdopplung T dieselben
+    K-Typen (j,j) wie dem Strom.
+  - Der 4D-Spin-2-Charakter ist Σ2(n²−4)qⁿ. Keine Stufe stimmt überein (niedrigste Energie 2 statt 3); T entspricht Δ = 2.
+- **Araki-Woods-Dubleton.**
+  - Die Helizität ±2 bei E = 3 stimmt mathematisch.
+  - D = N_d − N_e ist aber der Modulgenerator des Originals, nicht seine Energie. Die Zustände mit D = ±4 sind Komposita aus
+    mindestens vier Stromquanten.
+  - Jede Mode m gibt eine volle Kopie aller Helizitäten (Speziesproblem).
+- **Weinberg–Witten.** Der Sektor mit Helizität ±2 koppelt an keinen kovarianten T^μν. Umgangen ist die Prämisse eines
+  lokalen kovarianten T^μν; der Dubleton hat nur globale SU(2,2)-Erzeuger.
+
+**Folge:** Ein Graviton entsteht weder aus der Virasoro-Antwort noch als lokales Teilchen des Dubletons. Die
+Gravitationsfrage bleibt bei:
+- der linearen googly-Struktur (z65);
+- der lokalen Eichstruktur;
+- dem kubischen Vertex;
+- dem Speziesproblem.
+
+## Davor: H6h38 — Vakuum gegen thermisch beantwortet, Orte aus Korrelationen (`z78`)
 
 **Bilanz:** unverändert 13 P und 7 L von 20. K6 und K12 sind präzisiert.
 

@@ -7940,3 +7940,15 @@ Im H6-Ordner gerechnet, alles nachgeprüft und reproduziert:
 - **Offen:** Ob der Quarterindex das Dublett der Naht trägt.
 
 **Prüfstand:** 13 P, 7 L. Atlas-Revision 4ae66169db99e4910c2b865b. Ledger unverändert, nichts befördert.
+
+## H6H39-20261124 · Mehrpunktantworten und Spin 2: gescoptes Negativ für „Graviton aus der Virasoro-Antwort“
+
+`z75_mehrpunkt_spin2.py` (29 von 29, Agentenlauf nach dem Nutzungslimit fortgesetzt).
+- **Mehrpunktantworten.** ⟨JJJ⟩ = A·f^{abc}; die verbundene Vierpunktantwort ist nichtabelsch ungleich null; es gibt
+  Nullvektoren.
+- **Keine freien 4D-Felder.** Keine skalare 4D-Lesart ist möglich.
+- **Kein Graviton aus T(z).** T bildet auf Δ = 2 ab, nicht auf Spin 2 (4D-Spin-2-Charakter Σ2(n²−4)qⁿ).
+- **Helizität ±2 im Dubleton.** Sie ist ein Vierquantenkompositum mit D als Modulgenerator, ohne kovariante T^μν-Kopplung
+  (Weinberg–Witten), und es gibt eine Kopie je Mode m.
+
+**Prüfstand:** 13 P, 7 L. Atlas-Revision 8942e17087acfd04a8385286. Ledger unverändert, nichts befördert.

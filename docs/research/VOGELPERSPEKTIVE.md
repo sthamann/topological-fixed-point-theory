@@ -1,4 +1,4 @@
-# TFPT aus der Vogelperspektive (Stand H6h38, 24. November 2026)
+# TFPT aus der Vogelperspektive (Stand H6h39, 24. November 2026)
 
 ## Neueste Zusammenführung (H6h35, `z72`–`z74`, `PRUEFUNG-BESTAND-H6h35.md`)
 
@@ -35,7 +35,11 @@ Offen, genau benannt:
   - Die Lagen X sind aus der gemischten Korrelation exakt auslesbar. Das ist ein konkreter Kandidat für I_pos.
   - Eine thermische Fortsetzung des Kanals ist vorgeschlagen, aber nicht als zustandserhaltend belegt (z77).
 - **(d) Nichtlineare volle Gravitation und Flächennormierung.**
-- **(e) Mehrpunktantworten und Spin 2.** Der Agentenlauf brach am Nutzungslimit ab.
+- **(e) Mehrpunktantworten und Spin 2: seit H6h39 gerechnet (z75).**
+  - Die nichtabelschen Antworten sind exakt und nicht gaußsch; eine skalare 4D-Lesart ist ausgeschlossen.
+  - Ein Graviton folgt nicht aus T(z). Helizität ±2 gibt es nur als Kompositum im Araki-Woods-Dubleton, ohne kovariante
+    Kopplung, und mit einem Speziesproblem.
+  - Gravitation bleibt offen: lokale Eichstruktur und kubischer Vertex.
 - **(f) Restflavor.**
 
 **Firewalls:** 3+1-Aussagen bleiben nach DIMENSION.UPLIFT.FIREWALL.01 typisiert. P₀ gilt als Vakuumgröße, nicht als
