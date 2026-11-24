@@ -1,6 +1,97 @@
 # Urteil
 
-## Aktueller Stand: H6h23 — Richtungsentscheid und Prozesssuche mit dem Suchprogramm (`z42`, `z43`)
+## Aktueller Stand: H6h24 — gemeinsame Übergangsfamilie und ausgebaute Prozesssuche (`z44`, `z45`)
+
+Bilanz unverändert 14 P und 6 L von 20; K13, K15, K16 und K20 sind präzisiert. Anlass ist die elfte externe Analyse
+vom 24.11. (Übergangsfamilie a_q, positiver Kern, Paaralgebra, Spin^c, Higgs) mit dem Auftrag, den Altbestand zu
+durchsuchen und das Suchprogramm auszubauen. Selbst gerechnet: `z44` mit 24 und `z45` mit 15 Prüfungen; die Lane
+`process_rules` hat zwei neue Universen, zwei neue Prinzipien und 12 Tests.
+
+**In einem Satz:**
+- Die Analyse hält in allen geprüften Punkten.
+- Eine Übertragung a_q(z) = z⁻¹(1 − q z⁴) trägt Bündel, Index und einen positiven Spin-2-Kern zugleich. Sie legt q
+  aber nicht fest, und ein masseloser, universell gekoppelter Pol folgt aus ihr nicht.
+- Die ausgebaute Prozesssuche wählt mit neun lasttragenden Prinzipien einen Prozess, in dem das Spin-2-Gedächtnis
+  aus derselben Übertragung kommt. q ist dort nur durch die Dirac-Zahl a = 3/10 festgelegt.
+
+**1. Prüfung der Analyse (`z44`).**
+- **Übergangsfunktion.**
+  - a_q(iz) = −i a_q(z) und det g_q = 1.
+  - g_q zerfällt in einen innen holomorph invertierbaren Faktor mal diag(z, I₆, 1/z). Das Bündel ist für jedes
+    0 < q < 1 O(1) + 6O + O(−1), mit den Hälften h⁰ = 5 und 3.
+- **Hardy-Kompression.**
+  - A_q = S†(I − qS⁴) hat Index +1 mit Nullvektor η_q = √(1 − q²) Σ qⁿ|4n⟩.
+  - L_q = A_q†A_q = (1 + q²)I − q(S⁴ + S†⁴) − |0⟩⟨0|, und L_q kommutiert mit der Vierteldrehung R.
+- **Geschlossener Kern.**
+  - C_q(x) = [√((x + a)(x + b)) − x + 1 − q²]/(2x) mit a, b = (1 ∓ q)²; Abweichung zur direkten Inversion 9·10⁻¹⁵.
+  - Spektral: Pol 1 − q² bei null plus Marchenko-Pastur-Band mit Gewicht q²; C⁻¹ ist vollständig Bernstein.
+  - Die verbundene Vakuumantwort hat keinen masselosen Pol. Die Residuenmatrix der Quellen |4i⟩ hat Rang 1, aber
+    verschiedene Kopplungen (1 − q²)q^{2i}: kohärent, nicht universell.
+- **Paaralgebra.** Die vier Markenpaarkanäle schließen mit Adjunkten zu Dimension 10 = sp(4, ℝ) (2+1). Erst mit der
+  einseitigen Blattaktion L(A) = a†Aa wird es 15 = su(2, 2) (3+1).
+- **Determinantenwort.** Es hat im Kern K + ε det Z det W̄ das Normquadrat 4ε, im Hardy-Kern 0. Die fermionische
+  Abkürzung B_ij† = f_i†f_{j+2}† gibt 4 statt 0 und ist deshalb nicht der Hardy-Kern.
+- **Familien und Spin^c.**
+  - 4 + 4 → 5 + 3 durch eine balancierte elementare Modifikation.
+  - 5 + 3 ist eine Dolbeault-Zählung (ind ∂̄_E = rk + deg). Als Spinindex entsteht sie erst mit F = E ⊗ O(1): dann
+    gibt es keine negativen Moden und c₁ = 8 ist gerade (gemeinsamer Spin-Lift; einzeln ungerade).
+  - O(−4) + 3O hat h⁰ = 3, aber auch h¹ = 3 Spiegel.
+- **Higgs.** |Dn|² = ½tr(DP)² + |n†Dn|². Bei n = (0, 1) gibt der Projektorteil nur die W-Masse, die Z-Masse kommt aus
+  der Hopf-Phase. M(P) allein reicht also nicht; der volle Yukawa-Operator M(H) mit Verbindung muss bleiben.
+
+**2. Altbestand: Zustand, Norm, Quellen.**
+- **Fester Zustand.** Die Calderón/Szegő-Quelle liefert auf jedem Quarter einen festen Gibbszustand
+  (`finding:actual-elliptic-gaussian-source-determines-full-quarter-current-functional`). Dass er q festlegt, ist
+  nicht gezeigt.
+- **Energie nicht eindeutig.** Die positiven Kandidaten L_t lassen den Energieoperator offen; das verallgemeinerte
+  Energieproblem hat auf allen 35 Quellrichtungen denselben Wert
+  (`finding:native-root-gram-spectrum-is-not-canonical-source-energy-selection`). Das ist dieselbe Lücke wie das
+  freie q.
+- **Normierung und Universalität getrennt.** Wärmekern und A unterscheiden sich bei gleicher Referenz
+  (Z₀-Verhältnis 2,17, `finding:three-hypotheses-20261110-metric-and-universality`).
+- **Schur-Gedächtnis.** Es ist im Altbestand schon da: A(z)⁻¹ = 4 − z − g²/(4 − z) aus einem verborgenen Fockmodus
+  (`finding:quadratic-fock-hidden-mode-positive-memory-20261123`).
+- **Ward.** GRAV.LINEAR.SOURCE.WARD.01 gibt die lineare Kopplung nur für vorgeschriebene erhaltene Quellen [E];
+  die dynamische Kopplung ist [O].
+
+**3. Ausbau des Suchprogramms (`process_rules`, `z45`).**
+- **Übergangsuniversum** (40 Kandidaten a(z) = z^{−d}(1 − q z^k)).
+  - Vierteldrehungskovarianz gilt genau für k ∈ {4, 8}. Ein Kern in einem Grad gilt genau für d = 1, k ∈ {4, 8}.
+  - Die volle Strukturregel wählt d = 1, k = 4 und lässt alle fünf q offen. Keine Regel ist eindeutig.
+  - Korrektur beim Bau: Die erste Fassung las den Kern aus einer abgeschnittenen Matrix mit Scheinnullraum. Jetzt
+    wird die quadratische Kompression benutzt, deren Kern exakt die Dimension d hat (Test ergänzt).
+- **Ausleseuniversum** (10 Quellabbildungen). Die minimalen leeren Regeln sind {masseloser Pol, verbunden} und
+  {universelles Residuum}. Ein masseloses, universell gekoppeltes Spin-2-Feld braucht also eine Ward-/Eichstruktur,
+  keine Nullmode der Übertragung.
+- **Spin-2-Gedächtnis exakt.**
+  - H/x = 1 − a x + b x² − …, mit a = q²/(1 − q²)², b = q²(1 + q²)/(1 − q²)⁴ und b/a² = (1 + q²)/q² > 1.
+  - a = 3/10 hat in (0, 1) genau die Lösung q² = (8 − √55)/3 ≈ 0,1946. Dort ist b = (33 + 3√55)/100 ≈ 0,553.
+  - Bei gleichem a trennt der nächste Koeffizient die Kerne: Spektralwirkung 1/28 (< a², nicht positiv),
+    Schur-Kern 9/50, Transfergedächtnis 0,553.
+  - Das τ = i-Nomen e^{−π} gibt a ≈ 0,0019. Nomen und Dirac-Korrektur passen in einer Übertragung nicht zusammen.
+- **Ganzer Prozess** (67 200 Prozesse, 2048 Regeln).
+  - Neu sind die Prinzipien Orientierungsumkehr und „eine Übertragung“.
+  - Die längste minimale Regel hat **neun Prinzipien**: Hardy, Kovarianz, Positivität, Dirac-Spin-2, eine
+    Übertragung, Orientierungsumkehr, reelle Naht, Familienmischung, Familienuhr. Sie wählen Kern ν = 1,
+    Transfergedächtnis bei q_dirac, 16 reelle Majorana mit umgekehrtem Blatt und Z₃ × Z₄.
+  - Jedes Prinzip trägt Last. Ohne „eine Übertragung“ fällt die Auswahl zurück auf den Schur-Kern (mehrdeutig),
+    ohne Dirac-Spin-2 wird q mehrdeutig. Das Spiegelblatt-Prinzip wird nicht mehr gebraucht.
+  - `run(transfer=False)` reproduziert den Stand H6h23 exakt; `z43` ist darauf festgelegt.
+
+**4. Was das für H6 heißt.**
+- **Gravitation:** Es gibt jetzt zwei positive Spin-2-Kandidaten mit a = 3/10, die sich in b unterscheiden. Die
+  Übertragung liefert die Form, nicht die Zahl: q kommt nur aus der Dirac-Korrektur. Der masselose universelle Pol
+  braucht eine Ward-Struktur.
+- **Higgs:** M(H) statt M(P); die Z-Masse sitzt in der Hopf-Phase.
+- **Familien:** 5 + 3 ist eine Spin^c-Zählung mit gemeinsamem Spin-Lift.
+- **Offen:**
+  - eine Zustands-/Normregel, die q festlegt (im Altbestand dieselbe Lücke wie bei L_t);
+  - die Ward-Struktur für universelle Kopplung;
+  - die kleine Familienbrechung;
+  - G.
+- **Grenze:** Das ist eine Auswahl unter gewählten Prinzipien, keine Herleitung.
+
+## Davor: H6h23 — Richtungsentscheid und Prozesssuche mit dem Suchprogramm (`z42`, `z43`)
 
 Bilanz unverändert 14 P und 6 L von 20; K13, K16 und K18 sind präzisiert. Anlass sind die externe Analyse
 „H6h23: ein grundlegender Richtungsentscheid“ vom 24.11. und die Frage, ob das Suchprogramm in umgebauter Form den

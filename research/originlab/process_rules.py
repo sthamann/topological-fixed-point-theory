@@ -12,6 +12,11 @@ solutions decide EMPTY, UNIQUE or AMBIGUOUS. The universes are the open slots of
                   reversely oriented.
   flavour_pairs   pairs of residual symmetries (abelian subgroups of S4 with three distinct characters on the
                   family triplet); their eigenbases give a mixing pattern.
+  transfer_processes  Hardy transfer functions a(z) = z^-d (1 - q z^k) and their compressions S^{+d}(1 - q S^k) (z44).
+  readouts        source maps of the primitive quarter transfer: which pole, connected or not, which residues (z44).
+
+The spin-2 slot also holds the Marchenko-Pastur memory of the quarter transfer for several q. `run(transfer=False)`
+reproduces the lane as of H6h23 (z43): no transfer universes, no transfer memory, nine composed principles.
 
 Only one clause carries a number: `dirac_low_energy` asks for the first correction a = 3/10 of the Dirac heat kernel
 (a structural property of the Dirac operator with the e^-u cutoff, z41). Record structures are named afterwards in
@@ -143,7 +148,16 @@ def h_step(x):
     return np.array(out)
 
 
-def spin2_kernels():
+Q_DIRAC = float(np.sqrt((8 - np.sqrt(55))/3))      # q^2/(1-q^2)^2 = 3/10
+
+
+def transfer_kernel(qv):
+    """Boundary response of A_q = S^+(1 - q S^4): C_q(x) = [sqrt((x+a)(x+b)) - x + 1 - q^2]/(2x), a, b = (1 -+ q)^2 (z44)."""
+    a_, b_ = (1 - qv)**2, (1 + qv)**2
+    return lambda x: (np.sqrt((np.asarray(x, float) + a_)*(np.asarray(x, float) + b_)) - np.asarray(x, float) + 1 - qv**2)/(2*np.asarray(x, float))
+
+
+def spin2_kernels(transfer=True):
     rat = lambda num_den: (lambda x: num_den(np.asarray(x, float)))
     cands = [
         {"name": "Einstein H = x", "H": rat(lambda x: x), "poles": 1, "schur": None},
@@ -160,6 +174,10 @@ def spin2_kernels():
                           "poles": 2, "schur": (w, m)})
     cands.append({"name": "Schur two channels w=1/4,1/4 m=5/3,10/3",
                   "H": rat(lambda x: x - 0.25*x*x/(x + 5/3) - 0.25*x*x/(x + 10/3)), "poles": 3, "schur": "two"})
+    for label, qv in (("1/4", 0.25), ("1/2", 0.5), ("3/4", 0.75), ("q_dirac", Q_DIRAC), ("e^-pi", float(np.exp(-np.pi))))[:5*transfer]:
+        Cq = transfer_kernel(qv)
+        cands.append({"name": f"transfer memory q={label}", "H": (lambda C, Z: lambda x: Z/C(x))(Cq, 1 - qv**2), "poles": 50,
+                      "schur": None, "transfer": True})
     xs = np.geomspace(1e-3, 1e4, 900)
     out = []
     for c in cands:
@@ -180,13 +198,89 @@ def spin2_kernels():
             clauses.add("dirac_low_energy")
         if isinstance(c["schur"], tuple) and c["schur"][0]/(1 - c["schur"][0]) == 1:
             clauses.add("mirror_weight")
-        if c["poles"] < 99 and "e^x" not in c["name"]:
+        if c["poles"] <= 3 and "e^x" not in c["name"]:
             clauses.add("rational")
+        if c.get("transfer"):
+            clauses.add("transfer_memory")
         zero = None
         if np.any(H <= 0):
             k = int(np.argmax(H <= 0))
             zero = float(xs[k])
         out.append({"name": c["name"], "poles": c["poles"], "clauses": clauses, "a": round(a, 6), "first_zero_near": zero})
+    return out
+
+
+# ---------------------------------------------------------------- B2: transfer functions and readouts
+Q_VALUES = (("1/4", 0.25), ("1/2", 0.5), ("3/4", 0.75), ("e^-pi", float(np.exp(-np.pi))), ("e^-2pi", float(np.exp(-2*np.pi))))
+
+
+def _compression(d, k, qv, n=400):
+    S = np.diag(np.ones(n - 1), -1)
+    return np.linalg.matrix_power(S.T, d) @ (np.eye(n) - qv*np.linalg.matrix_power(S, k))
+
+
+def transfer_processes():
+    """Transfer functions a(z) = z^-d (1 - q z^k) on the Hardy space; compression A = S^{+d}(1 - q S^k).
+
+    The square truncation is exact for the kernel: 1 - q S^k is unit lower triangular, so ker A = (1 - q S^k)^-1 ker S^{+d}
+    has dimension d with no truncation artefact. The cokernel vanishes on the Hardy space (S^+ onto, 1 - q S^k invertible
+    for q < 1), so the index is the kernel dimension.
+    """
+    out = []
+    zs = np.exp(1j*np.array([0.3, 1.1, 2.0]))*0.9
+    for d in (1, 2):
+        for k in (2, 3, 4, 8):
+            for qi, (label, qv) in enumerate(Q_VALUES):
+                a = lambda z: z**(-d)*(1 - qv*z**k)
+                ratios = [a(1j*zz)/a(zz) for zz in zs]
+                clauses = set()
+                if max(abs(r - ratios[0]) for r in ratios) < 1e-12:
+                    clauses.add("quarter_covariant")
+                A = _compression(d, k, qv, n=120)
+                _, sv, vh = np.linalg.svd(A)
+                kernel_dim = int(np.sum(sv < 1e-10))
+                if kernel_dim == 1:
+                    clauses.add("index_one")
+                grades = {n % 4 for vec in vh[len(sv) - kernel_dim:] for n in np.nonzero(np.abs(vec) > 1e-8)[0]}
+                if kernel_dim and len(grades) == 1:
+                    clauses.add("kernel_one_grade")
+                if label in ("1/4", "1/2", "3/4"):
+                    clauses.add("rational_pole_weight")
+                if label.startswith("e^"):
+                    clauses.add("tau_i_nome")
+                out.append({"d": d, "k": k, "q": label, "qi": qi, "clauses": clauses, "kernel_dim": kernel_dim,
+                            "kernel_grades": sorted(int(g) for g in grades)})
+    return out
+
+
+def readouts():
+    """Readouts of the primitive quarter transfer (d = 1, k = 4): which source map gives which pole."""
+    out = []
+    for label, qv in (("1/2", 0.5), ("e^-pi", float(np.exp(-np.pi)))):
+        Z = 1 - qv**2
+        C = transfer_kernel(qv)
+        kinds = {
+            "boundary source |0>": {"pole": Z, "multi": False, "connected": False, "relativistic": False, "residues": [Z]},
+            "connected vacuum response": {"pole": 0.0, "multi": False, "connected": True, "relativistic": False, "residues": [0.0]},
+            "4D field, one source": {"pole": Z, "multi": False, "connected": False, "relativistic": True, "residues": [Z]},
+            "4D field, sources |4j>": {"pole": Z, "multi": True, "connected": False, "relativistic": True,
+                                       "residues": [Z*qv**(2*j) for j in range(4)]},
+            "4D field connected, sources |4j>": {"pole": 0.0, "multi": True, "connected": True, "relativistic": True,
+                                                 "residues": [0.0]*4},
+        }
+        for kind, r in kinds.items():
+            clauses = {"kl_positive"}                       # every readout is a resolvent of the positive L_q (z44)
+            if r["pole"] > 1e-12:
+                clauses.add("massless_pole")
+            if r["connected"]:
+                clauses.add("connected")
+            if r["relativistic"]:
+                clauses.add("relativistic")
+            if r["multi"]:
+                clauses.add("several_sources")
+                if max(r["residues"]) - min(r["residues"]) < 1e-12 and r["residues"][0] > 0:
+                    clauses.add("universal_residue")
+            out.append({"q": label, "kind": kind, "clauses": clauses, "size": len(r["residues"])})
     return out
 
 
@@ -325,13 +419,16 @@ PRINCIPLES = {
     "e8_seam": "the seam has chiral central charge 8",
     "family_mixing": "two residual family symmetries mix all three families (no zero entry)",
     "family_clock": "one residual family symmetry is the quarter-turn clock Z4 (characters -1, i, -i)",
+    "orientation_reversal": "the second sheet half reverses the chiral orientation (8 - 8 = 0)",
+    "one_transfer": "the spin-2 kernel is the memory of the same quarter-turn Hardy transfer that gives the bundle and the index",
 }
+TRANSFER_PRINCIPLES = ("orientation_reversal", "one_transfer")      # added with the transfer universes (z45)
 
 
-def composed_process():
+def composed_process(transfer=True):
     """Whole processes: one kernel, one spin-2 kernel, one seam with c in {4, 5, 8, 16}, one flavour pair."""
     ks = matrix_kernels()
-    s2 = spin2_kernels()
+    s2 = spin2_kernels(transfer)
     sl = [o for o in seam_layers() if o["n"] in (8, 10, 16, 32)]
     fp = [f for f in flavour_pairs() if f["pair"].split(" x ")[0] <= f["pair"].split(" x ")[1]]   # unordered: (A, B) ~ (B, A)^T
     out = []
@@ -358,6 +455,10 @@ def composed_process():
                         c.add("family_mixing")
                     if "Z4" in f["pair"]:
                         c.add("family_clock")
+                    if transfer and "sheet_neutral" in z["clauses"]:
+                        c.add("orientation_reversal")
+                    if "transfer_memory" in t["clauses"]:
+                        c.add("one_transfer")
                     out.append({"clauses": c, "size": float(k["nu"]) + t["poles"] + z["n"] + f["index"],
                                 "label": f"kernel nu={k['nu']} eps={k['eps']} | spin2 {t['name']} | seam n={z['n']} {z['kind']} "
                                          f"{z['orient']} | flavour {f['pair']} {f['pattern']}"})
@@ -366,7 +467,10 @@ def composed_process():
 
 RECORD = {
     "matrix_kernels": {"nu=1 eps=0": "the Hardy determinant kernel det(I - W^+ Z)^-1 (z40/z42: massless, Wallach edge, oscillator pairs)"},
-    "spin2_kernels": {"Schur w=1/2 m=5/3": "positive memory kernel C = 1/x + 1/(x + 10/3) of H6h23/z42 (keeps a = 3/10)",
+    "transfer_processes": {"d=1 k=4 q=1/4": "the quarter-turn transfer a_q(z) = z^-1(1 - q z^4) of the eleventh analysis (z44)"},
+    "readouts": {},
+    "spin2_kernels": {"transfer memory q=q_dirac": "Marchenko-Pastur memory of the quarter transfer with q^2/(1-q^2)^2 = 3/10 (z45)",
+                      "Schur w=1/2 m=5/3": "positive memory kernel C = 1/x + 1/(x + 10/3) of H6h23/z42 (keeps a = 3/10)",
                       "Einstein H = x": "pure Einstein graviton (Jacobson reading, premise D)"},
     "seam_layers": {"n=16 real reversed": "SEAM.S3 (p+ip x 16, c = 8) with an orientation-reversing second sheet half (z41/z42)",
                     "n=8 complex reversed": "the complex flux seam G' of z39 (U(1) charge, no Spin(10)_1)"},
@@ -375,7 +479,8 @@ RECORD = {
 }
 
 
-def run(root=None):
+def run(root=None, transfer=True):
+    """transfer=False reproduces the lane as of H6h23 (z43): no transfer universes, no transfer memory, nine principles."""
     out = {"status": "PROCESS_RULES_SEARCHED", "physical_solution": False, "scope": SCOPE, "universes": {}}
     mk = matrix_kernels()
     res = search(mk, ["positive", "hardy_slice", "wave_equation", "conformally_covariant"],
@@ -384,13 +489,31 @@ def run(root=None):
     res["bound"] = "nu in {0, 1/2, 1, 3/2, 2, 3}, eps in {0, 1}; Schur channels up to degree 8"
     out["universes"]["matrix_kernels"] = res
 
-    sk = spin2_kernels()
-    res = search(sk, ["no_euclidean_zero", "kallen_lehmann", "dirac_low_energy", "mirror_weight", "rational"],
+    sk = spin2_kernels(transfer)
+    res = search(sk, ["no_euclidean_zero", "kallen_lehmann", "dirac_low_energy", "mirror_weight", "rational"]
+                 + ["transfer_memory"]*transfer,
                  lambda o: o["poles"], lambda o: o["name"])
     res["derived"] = {o["name"]: {"a": o["a"], "first_zero_near": o["first_zero_near"], "clauses": sorted(o["clauses"])} for o in sk}
     res["bound"] = ("Dirac spectral action with e^-u, step and (1+u)^-3; x e^x; Stelle and Dirac local truncations; Einstein; "
                     "Schur H = x - w x^2/(x + m) on a 3 x 4 grid and one two-channel kernel; x in [1e-3, 1e4]")
     out["universes"]["spin2_kernels"] = res
+
+    if transfer:
+        tp = transfer_processes()
+        res = search(tp, ["quarter_covariant", "index_one", "kernel_one_grade", "rational_pole_weight", "tau_i_nome"],
+                     lambda o: (o["d"], o["k"]), lambda o: f"d={o['d']} k={o['k']} q={o['q']}")
+        res["bound"] = "a(z) = z^-d (1 - q z^k), d in {1, 2}, k in {2, 3, 4, 8}, q in {1/4, 1/2, 3/4, e^-pi, e^-2pi}"
+        out["universes"]["transfer_processes"] = res
+
+        ro = readouts()
+        res = search(ro, ["massless_pole", "kl_positive", "connected", "relativistic", "several_sources", "universal_residue"],
+                     lambda o: o["size"], lambda o: f"q={o['q']} {o['kind']}")
+        pool = ["massless_pole", "kl_positive", "connected", "relativistic", "several_sources", "universal_residue"]
+        empty = [set(r) for k in range(1, len(pool) + 1) for r in combinations(pool, k)
+                 if not any(set(r) <= o["clauses"] for o in ro)]
+        res["minimal_empty_rules"] = sorted(sorted(r) for r in empty if not any(e < r for e in empty))
+        res["bound"] = "readouts of the primitive quarter transfer at q = 1/2 and e^-pi"
+        out["universes"]["readouts"] = res
 
     sl = seam_layers()
     res = search(sl, ["c_eight", "anyon_free", "spin10_level_one", "sheet_neutral", "u1_free"],
@@ -405,11 +528,12 @@ def run(root=None):
     res["bound"] = "ordered pairs of abelian subgroups of S4 with three distinct characters on the standard triplet"
     out["universes"]["flavour_pairs"] = res
 
-    cp = composed_process()
-    res = search(cp, list(PRINCIPLES), lambda o: o["size"], lambda o: o["label"])
+    principles = {k: v for k, v in PRINCIPLES.items() if transfer or k not in TRANSFER_PRINCIPLES}
+    cp = composed_process(transfer)
+    res = search(cp, list(principles), lambda o: o["size"], lambda o: o["label"])
     longest = max(len(r["minimal_rules"][0]) for r in res["unique_selections"]) if res["unique_selections"] else 0
     full = [r for r in res["unique_selections"] if len(r["minimal_rules"][0]) == longest]
-    out["composed_process"] = {"principles": PRINCIPLES, "objects": res["objects"], "rules": res["rules"],
+    out["composed_process"] = {"principles": principles, "objects": res["objects"], "rules": res["rules"],
                                "verdicts": res["verdicts"], "longest_minimal_rule": longest,
                                "selected_by_the_longest_rules": full,
                                "unique_selections": res["unique_selections"][:40],

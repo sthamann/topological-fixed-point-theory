@@ -1,0 +1,45 @@
+Teil 1: Übergangsfunktion und Bündel
+   [ok] a_q(iz) = -i a_q(z) (Vierteldrehung in der Kompositionsregel)
+   [ok] det g_q = 1
+   [ok] g_q = diag((1 - q z^4)^-1, I_6, 1 - q z^4) diag(z, I_6, 1/z); der erste Faktor ist für |z| <= 1, q < 1 holomorph invertierbar
+   [ok] Bündel O(1) + 6O + O(-1) für jedes 0 < q < 1; Hälften E_+ = O(1) + 3O (h^0 = 5), E_- = O(-1) + 3O (h^0 = 3, h^1 = 0)
+
+Teil 2: Hardy-Kompression, Index und positiver Operator
+   [ok] A_q = S^+ - q S^3 und L_q = (1+q^2) I - q(S^4 + S^+4) - |0><0| (außerhalb des Abschneiderandes exakt)
+   [ok] eta_q = sqrt(1-q^2) Sum q^n |4n> ist normiert und liegt im Kern von A_q
+   [ok] A A^+ >= (1-q)^2 > 0 (Kokern null): Index +1, genau ein komplexer Nullkanal
+   [ok] R A_q R^+ = -i A_q und [R, L_q] = 0 für R|n> = i^n |n>
+
+Teil 3: Geschlossener positiver Kern
+   größte Abweichung direkte Inversion gegen geschlossene Form: 8.9e-15
+   [ok] C_q(x) = [sqrt((x+a)(x+b)) - x + 1 - q^2]/(2x) stimmt mit der direkten Inversion überein (q = 1/4, 1/2, 3/4)
+   [ok] x C^2 + (x + q^2 - 1) C - 1 = 0
+   [ok] Spektraldarstellung: Pol 1 - q^2 bei 0, Marchenko-Pastur-Band mit Gewicht q^2, C^-1 = x + Int x/(x+s) rho ds
+   [ok] Polgewichte 15/16, 3/4, 7/16 für q = 1/4, 1/2, 3/4
+   verbundene Antwort (x, direkt, Formel): [(0.001, np.float64(0.24955654), np.float64(0.24955654)), (0.1, np.float64(0.21344197), np.float64(0.21344197)), (1.0, np.float64(0.09958666), np.float64(0.09958666))]
+   [ok] verbundene Vakuumantwort C_conn = (1-q^2) C - (1-q^2)^2/x stimmt, und x C_conn -> 0 (kein masseloser Pol)
+   [ok] Residuenmatrix der Quellen |4i>: R_ij = (1-q^2) q^(i+j), Rang 1, aber verschiedene Kopplungen (nicht universell)
+   [Befund: ja] Bündeltyp, Vierteldrehung, Index und Positivität wählen q nicht; die Prozessregel muss Zustand, Norm und Quellen festlegen
+
+Teil 4: Paaralgebra und Raumzeitdimension
+   reeller Abschluss: Paarkanäle der Marken 10, mit einseitiger Blattaktion L(sigma) 15
+   [ok] vier Paarkanäle + Adjunkte schließen zu Dimension 10 = sp(4,R) ~ so(3,2) (2+1); mit L(A) = a^+ A a zu 15 = su(2,2) (3+1)
+   [ok] [L(sigma_x), B^+(sigma_y)] = i B^+(sigma_z) (die fehlende Richtung)
+   [ok] Determinantenwort (B11 B22 - B12 B21)^+ Omega: Normquadrat 4 eps im Kern K + eps det Z conj det W, 0 im Hardy-Kern
+   [ok] fermionische Abkürzung B_ij^+ = f_i^+ f_(j+2)^+: das Determinantenwort hat Normquadrat 4 statt 0
+
+Teil 5: Familien, Spin^c und Spin-Lift
+   [ok] balancierte elementare Modifikation: E_- (rk 4, deg -1) -> O^4 -> E_+ (deg +1): chi = 3 + 5 aus 4 + 4
+   [ok] ind dbar_E = rk + deg (5, 3), Spin-Dirac nur deg (1, -1): 5 + 3 ist eine Dolbeault/Spin^c-Zählung
+   [ok] F_+- = E_+- x O(1): Spinindex 5 und 3, keine negativen Moden; c_1 = 5 + 3 = 8 gerade (gemeinsamer Spin-Lift, einzeln ungerade)
+   [ok] O(-4) + 3O: h^0 = 3, aber h^1 = 3 (drei Spiegel); wer nur h^0 zählt, übersieht sie
+
+Teil 6: Higgsprojektor und Z-Masse
+   [ok] |Dn|^2 = (1/2) tr(DP)^2 + |n^+ Dn|^2
+   [ok] bei n = (0,1): (1/2) tr(DP)^2 = g^2 (W1^2 + W2^2)/4 (nur W), |n^+ Dn|^2 = (g W3 - g' B)^2/4 (Z aus der Hopf-Phase)
+   [Befund: ja] M(P) allein enthält die Z-Masse nicht; der volle Yukawa-Operator M(H) samt Verbindung muss erhalten bleiben
+
+Urteil
+   Die elfte Analyse hält in allen geprüften Punkten. a_q(z) = z^-1(1 - q z^4) trägt die Vierteldrehung (a_q(iz) = -i a_q), hat Determinante 1 und gibt für jedes q das Bündel O(1) + 6O + O(-1). Die Hardy-Kompression A_q = S^+(I - q S^4) hat Index +1 mit Nullvektor sqrt(1-q^2) Sum q^n |4n>, L_q = A^+ A ist positiv und kommutiert mit R. Der Randkern C_q = [sqrt((x+a)(x+b)) - x + 1 - q^2]/(2x) stimmt mit der direkten Inversion bis 1e-10 überein, ist Pol 1 - q^2 plus Marchenko-Pastur-Band und hat C^-1 vollständig Bernstein. Die verbundene Vakuumantwort hat keinen masselosen Pol, die Residuen sind Rang 1, aber nicht universell, und die Polgewichte hängen von q ab: Die Struktur wählt q nicht. Die Paarkanäle der Marken schließen zu sp(4,R) (2+1), mit der einseitigen Blattaktion zu su(2,2) (3+1); das Determinantenwort trennt K von K + eps det det (4 eps), die fermionische Abkürzung scheitert (4). 4 + 4 -> 5 + 3 ist eine balancierte Modifikation, 5 + 3 eine Spin^c-Zählung, F = E x O(1) gibt sie im Spin-Dirac mit c_1 = 8. |Dn|^2 = (1/2) tr(DP)^2 + |n^+ Dn|^2: die Z-Masse sitzt in der Hopf-Phase, also braucht es den vollen Yukawa-Operator M(H).
+
+Alle Prüfungen bestanden: True (24/24)

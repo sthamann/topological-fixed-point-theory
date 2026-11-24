@@ -2,13 +2,15 @@ import unittest
 from fractions import Fraction as Fr
 
 from autonomy import execute, specifications
-from process_rules import flavour_pairs, matrix_kernels, run, schur_coefficient, seam_layers, spin2_kernels
+from process_rules import (Q_DIRAC, flavour_pairs, matrix_kernels, readouts, run, schur_coefficient, seam_layers,
+                           spin2_kernels, transfer_processes)
 
 
 class ProcessRules(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
         cls.result = run()
+        cls.h6h23 = run(transfer=False)
 
     def selected(self, universe):
         return {row["selected"]: row for row in self.result["universes"][universe]["unique_selections"]}
@@ -38,8 +40,33 @@ class ProcessRules(unittest.TestCase):
     def test_positive_dirac_kernel_needs_the_mirror_weight(self):
         rows = self.selected("spin2_kernels")
         self.assertIn(["dirac_low_energy", "mirror_weight"], rows["Schur w=1/2 m=5/3"]["minimal_rules"])
-        ambiguous = [o["name"] for o in spin2_kernels() if {"dirac_low_energy", "kallen_lehmann"} <= o["clauses"]]
+        ambiguous = [o["name"] for o in spin2_kernels(False) if {"dirac_low_energy", "kallen_lehmann"} <= o["clauses"]]
         self.assertEqual(len(ambiguous), 3)
+        ambiguous = [o["name"] for o in spin2_kernels() if {"dirac_low_energy", "kallen_lehmann"} <= o["clauses"]]
+        self.assertEqual(len(ambiguous), 4)
+
+    def test_transfer_memory_keeps_the_dirac_correction_only_at_q_dirac(self):
+        self.assertAlmostEqual(Q_DIRAC**2/(1 - Q_DIRAC**2)**2, 0.3, places=12)
+        memories = {o["name"]: o for o in spin2_kernels() if "transfer_memory" in o["clauses"]}
+        self.assertEqual(len(memories), 5)
+        self.assertTrue(all("kallen_lehmann" in o["clauses"] for o in memories.values()))
+        self.assertEqual([n for n, o in memories.items() if "dirac_low_energy" in o["clauses"]], ["transfer memory q=q_dirac"])
+        rows = self.selected("spin2_kernels")
+        self.assertIn(["dirac_low_energy", "transfer_memory"], rows["transfer memory q=q_dirac"]["minimal_rules"])
+
+    def test_transfer_structure_fixes_the_quarter_turn_but_not_q(self):
+        tp = transfer_processes()
+        quarter = {(o["d"], o["k"]) for o in tp if {"quarter_covariant", "kernel_one_grade"} <= o["clauses"]}
+        self.assertEqual(quarter, {(1, 4), (1, 8)})
+        self.assertTrue(all(o["kernel_dim"] == o["d"] for o in tp))
+        one_grade = {(o["d"], o["k"]) for o in tp if "kernel_one_grade" in o["clauses"]}
+        self.assertEqual(one_grade, {(1, 4), (1, 8)})
+        self.assertEqual(self.result["universes"]["transfer_processes"]["verdicts"]["UNIQUE"], 0)
+
+    def test_no_rank_one_readout_is_massless_and_connected_or_universal(self):
+        self.assertEqual(len(readouts()), 10)
+        empty = self.result["universes"]["readouts"]["minimal_empty_rules"]
+        self.assertEqual(empty, [["connected", "massless_pole"], ["universal_residue"]])
 
     def test_real_seam_needs_spin10_level_one(self):
         rows = self.selected("seam_layers")
@@ -55,7 +82,7 @@ class ProcessRules(unittest.TestCase):
         self.assertIn(("Z3 x Z4", clock), patterns)
 
     def test_whole_process_needs_eight_load_bearing_principles(self):
-        comp = self.result["composed_process"]
+        comp = self.h6h23["composed_process"]
         self.assertEqual(comp["longest_minimal_rule"], 8)
         chosen = {r["selected"] for r in comp["selected_by_the_longest_rules"]}
         self.assertEqual(len(chosen), 1)
@@ -63,6 +90,19 @@ class ProcessRules(unittest.TestCase):
         for part in ("kernel nu=1 eps=0", "spin2 Schur w=1/2 m=5/3", "seam n=16 real reversed", "flavour Z3 x Z4"):
             self.assertIn(part, label)
         row = comp["selected_by_the_longest_rules"][0]
+        self.assertTrue(all(v[1] != [label] for v in row["ablation"].values()))
+
+    def test_one_transfer_process_needs_nine_load_bearing_principles(self):
+        comp = self.result["composed_process"]
+        self.assertEqual(comp["longest_minimal_rule"], 9)
+        chosen = {r["selected"] for r in comp["selected_by_the_longest_rules"]}
+        self.assertEqual(len(chosen), 1)
+        label = chosen.pop()
+        for part in ("kernel nu=1 eps=0", "spin2 transfer memory q=q_dirac", "seam n=16 real reversed", "flavour Z3 x Z4"):
+            self.assertIn(part, label)
+        row = comp["selected_by_the_longest_rules"][0]
+        self.assertIn("one_transfer", row["minimal_rules"][0])
+        self.assertNotIn("mirror_sheet", row["minimal_rules"][0])
         self.assertTrue(all(v[1] != [label] for v in row["ablation"].values()))
 
     def test_nothing_is_promoted_and_the_lane_is_registered(self):

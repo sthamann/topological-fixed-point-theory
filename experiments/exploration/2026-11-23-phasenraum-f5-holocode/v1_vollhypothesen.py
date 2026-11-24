@@ -993,6 +993,35 @@ if "H6h2" in H and z1p.exists() and z2p.exists():
                                                                                                          "sigma (Z43): die Familienregel braucht eine kleine Brechung "
                                                                                                          "(TFPT-Kanal phi0 e^-5/6 = 0.0231)")
                                                                                     facts["F42_direction_and_process_search"] = {n: T9[n]["urteil"] for n in T9}
+                                                                                    zz = {n: Path(__file__).with_name(f"z{n}_ergebnis.json") for n in (44, 45)}
+                                                                                    if all(p.exists() for p in zz.values()):
+                                                                                        T10 = {n: json.loads(p.read_text()) for n, p in zz.items()}
+                                                                                        ok10 = {n: all(T10[n]["checks"].values()) for n in T10}
+                                                                                        H["H6h24"] = dict(H["H6h23"])
+                                                                                        H["H6h24"]["K13"] = (LES if ok10[44] and ok10[45] and ok9[42] else F,
+                                                                                                             "[D] Jacobson; positiver Spin-2-Kern als Gedächtnis "
+                                                                                                             "derselben Viertelübertragung: H/x = 1 - a x + b x^2, a = "
+                                                                                                             "q^2/(1-q^2)^2; a = 3/10 bei q^2 = (8 - sqrt 55)/3, dann b = "
+                                                                                                             "0.553 (Schur 9/50, Spektralwirkung 1/28 nicht positiv); "
+                                                                                                             "masseloser universeller Pol braucht Ward-Struktur, kein "
+                                                                                                             "Rang-eins-Auslesen (Z44, Z45)")
+                                                                                        H["H6h24"]["K15"] = (LES if ok10[44] and ok41 else F,
+                                                                                                             "[unabhängige Elternverbindung] Randverbindung != schwache "
+                                                                                                             "Verbindung (Z40); |Dn|^2 = tr(DP)^2/2 + |n^+ Dn|^2: M(P) "
+                                                                                                             "gibt nur die W-Masse, die Z-Masse kommt aus der Hopf-Phase; "
+                                                                                                             "der volle Yukawa-Operator M(H) muss bleiben (Z44)")
+                                                                                        H["H6h24"]["K16"] = (LES if ok10[45] and ok9[42] else F,
+                                                                                                             "[reelle Naht] Chernschicht x 16 (c = 8), zweite Blatthälfte "
+                                                                                                             "orientierungsumkehrend (Z42); die Prozesssuche mit "
+                                                                                                             "gemeinsamer Übertragung wählt sie mit Spin(10)_1 und "
+                                                                                                             "Orientierungsumkehr, ohne Spiegelblatt-Prinzip (Z45)")
+                                                                                        H["H6h24"]["K20"] = (LES if ok10[44] and ok8[40] else F,
+                                                                                                             "[ein Bündel, Spin^c] 4 + 4 -> 5 + 3 durch balancierte "
+                                                                                                             "Modifikation; 5 + 3 ist eine Dolbeault-Zählung, als "
+                                                                                                             "Spin-Index erst mit F = E x O(1) (keine negativen Moden, "
+                                                                                                             "c_1 = 8 gerade: gemeinsamer Spin-Lift, Z44); 3 x 16 = 48 "
+                                                                                                             "Weyl-Felder im freien Modell")
+                                                                                        facts["F43_transfer_family_and_search"] = {n: T10[n]["urteil"] for n in T10}
 
 order = [f"K{i}" for i in range(1, 21)]
 print("Gesamttabelle (P = hergeleitet, L = unter benannter Lesart, F = FAIL, O = OFFEN, E = EINGABE)\n")

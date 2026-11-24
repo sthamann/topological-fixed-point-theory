@@ -1,0 +1,56 @@
+Teil 1: Übergangsuniversum a(z) = z^-d (1 - q z^k)
+   40 Kandidaten, 32 Regeln, Urteile {'EMPTY': 8, 'UNIQUE': 0, 'AMBIGUOUS': 24}
+   Vierteldrehung a(iz) ~ a(z): (d, k) in [(1, 4), (1, 8), (2, 4), (2, 8)]; Kern in einem Grad: [(1, 4), (1, 8)]
+   [ok] Vierteldrehungskovarianz gilt genau für k in {4, 8}; Kern in einem Grad genau für d = 1 und k in {4, 8}
+   Regel Vierteldrehung + Index eins + ein Grad: kleinster Prozess d, k = (1, 4), offen bleibt q in ['1/2', '1/4', '3/4', 'e^-2pi', 'e^-pi']
+   [ok] die vollständige Strukturregel wählt d = 1, k = 4 und lässt alle fünf q offen; keine Regel des Pools ist eindeutig
+   [ok] auch die tau = i-Nomen e^-pi, e^-2pi bleiben zu zweit: der Pool kennt keine Zahl, die q festlegt
+
+Teil 2: Auslesen der primitiven Viertelübertragung
+   q = 1/2    boundary source |0>                ['kl_positive', 'massless_pole']
+   q = 1/2    connected vacuum response          ['connected', 'kl_positive']
+   q = 1/2    4D field, one source               ['kl_positive', 'massless_pole', 'relativistic']
+   q = 1/2    4D field, sources |4j>             ['kl_positive', 'massless_pole', 'relativistic', 'several_sources']
+   q = 1/2    4D field connected, sources |4j>   ['connected', 'kl_positive', 'relativistic', 'several_sources']
+   minimale leere Regeln: [['connected', 'massless_pole'], ['universal_residue']]
+   [ok] minimale leere Regeln sind genau {masseloser Pol, verbunden} und {universelles Residuum}
+   [ok] Residuenmatrix der Quellen |4i> hat Rang 1 mit Diagonale (1-q^2) q^(2i): kohärent, aber nicht universell
+   [Befund: ja] Ein masseloses, universell gekoppeltes Spin-2-Feld folgt nicht aus einem Rang-eins-Auslesen der Übertragung; es braucht eine Ward-/Eichstruktur (im Altbestand: GRAV.LINEAR.SOURCE.WARD.01 nur für vorgeschriebene Quellen)
+
+Teil 3: Spin-2-Gedächtnis der Übergangsfamilie exakt
+   H/x = 1 - a x + b x^2 - c x^3:  a = q**2/((q - 1)**2*(q + 1)**2),  b = q**2*(q**2 + 1)/((q - 1)**4*(q + 1)**4),  c = q**2*(q**4 + 3*q**2 + 1)/((q - 1)**6*(q + 1)**6)
+   [ok] a(q) = q^2/(1-q^2)^2 und b(q) = q^2 (1+q^2)/(1-q^2)^4, also b/a^2 = (1+q^2)/q^2 > 1 (Källén-Lehmann b >= a^2)
+   a = 3/10 bei q^2 = (8 - sqrt 55)/3 = 0.194601 (q = 0.441135); dort b = 3*sqrt(55)/100 + 33/100 = 0.552486
+   [ok] q^2 = (8 - sqrt 55)/3 ist die einzige Lösung in (0, 1) von q^2/(1-q^2)^2 = 3/10, und Q_DIRAC der Lane ist genau dieses q
+   numerisch aus der geschlossenen Randantwort: a = 0.299984, b = 0.5445
+   [ok] die geschlossene Randantwort der Lane gibt dieselben a und b
+   nächster Koeffizient b: Spektralwirkung 1/28 = 0.0357 (b < a^2 = 0.09, nicht positiv), Schurkern 9/50 = 0.1800, Transfergedächtnis 0.5525
+   [ok] bei gleichem a = 3/10 trennen sich die drei Kerne im nächsten Koeffizienten: 1/28 < a^2 < 9/50 < b_transfer
+   [ok] das tau = i-Nomen e^-pi gibt a = 0.0019, nicht 3/10: Vierteldrehungsnomen und Dirac-Korrektur passen in einer Übertragung nicht zusammen
+   [ok] alle fünf Transfergedächtnisse sind Källén-Lehmann-positiv; nur q_dirac trägt dirac_low_energy
+
+Teil 4: Ganzer Prozess mit der gemeinsamen Übertragung
+   67200 Prozesse, 2048 Regeln, Urteile {'EMPTY': 512, 'UNIQUE': 50, 'AMBIGUOUS': 1486}
+   längste minimale Regel (9 Prinzipien): ['covariance', 'dirac_spin2', 'family_clock', 'family_mixing', 'hardy', 'one_transfer', 'orientation_reversal', 'positivity', 'real_seam']
+   gewählt: kernel nu=1 eps=0 | spin2 transfer memory q=q_dirac | seam n=16 real reversed | flavour Z3 x Z4 (('2/45', '1/3', '28/45'), ('1/3', '1/3', '1/3'), ('28/45', '1/3', '2/45'))
+      ohne covariance          : AMBIGUOUS ["kernel nu=1 eps=0 | spin2 transfer memory q=q_dirac | seam n=16 real reversed | flavour Z3 x Z4 (('2/45', '1/3', '28/45'), ('1/3', '1/3', 
+      ohne dirac_spin2         : AMBIGUOUS ["kernel nu=1 eps=0 | spin2 transfer memory q=1/2 | seam n=16 real reversed | flavour Z3 x Z4 (('2/45', '1/3', '28/45'), ('1/3', '1/3', '1/3
+      ohne family_clock        : AMBIGUOUS ["kernel nu=1 eps=0 | spin2 transfer memory q=q_dirac | seam n=16 real reversed | flavour V4 x Z3 (('1/3', '1/3', '1/3'), ('1/3', '1/3', '1/
+      ohne family_mixing       : AMBIGUOUS ["kernel nu=1 eps=0 | spin2 transfer memory q=q_dirac | seam n=16 real reversed | flavour V4 x Z4 (('0', '0', '1'), ('1/2', '1/2', '0'), ('1
+      ohne hardy               : UNIQUE    ["kernel nu=0 eps=0 | spin2 transfer memory q=q_dirac | seam n=16 real reversed | flavour Z3 x Z4 (('2/45', '1/3', '28/45'), ('1/3', '1/3', 
+      ohne one_transfer        : AMBIGUOUS ["kernel nu=1 eps=0 | spin2 Schur w=1/2 m=5/3 | seam n=16 real reversed | flavour Z3 x Z4 (('2/45', '1/3', '28/45'), ('1/3', '1/3', '1/3'), 
+      ohne orientation_reversal: AMBIGUOUS ["kernel nu=1 eps=0 | spin2 transfer memory q=q_dirac | seam n=16 real reversed | flavour Z3 x Z4 (('2/45', '1/3', '28/45'), ('1/3', '1/3', 
+      ohne positivity          : UNIQUE    ["kernel nu=1 eps=0 | spin2 transfer memory q=q_dirac | seam n=10 real reversed | flavour Z3 x Z4 (('2/45', '1/3', '28/45'), ('1/3', '1/3', 
+      ohne real_seam           : UNIQUE    ["kernel nu=1 eps=0 | spin2 transfer memory q=q_dirac | seam n=8 complex reversed | flavour Z3 x Z4 (('2/45', '1/3', '28/45'), ('1/3', '1/3'
+   [ok] neun Prinzipien wählen genau einen ganzen Prozess: Kern nu = 1, Transfergedächtnis q_dirac, 16 reelle Majorana mit umgekehrtem Blatt, Flavour Z3 x Z4
+   [ok] jedes der neun Prinzipien trägt Last; das Spiegelblatt gehört nicht dazu (Orientierungsumkehr plus eine Übertragung ersetzen es)
+   [ok] ohne Transferuniversen reproduziert die Lane den Stand H6h23 (acht Prinzipien, Schurkern)
+   Auswahlen, die einen Rekordbaustein treffen: {'matrix_kernels': 'nu=1 eps=0', 'spin2_kernels': 'transfer memory q=q_dirac', 'seam_layers': 'n=16 real reversed'}
+   [ok] im Spin-2-Universum wählt Dirac-Korrektur plus Transfergedächtnis eindeutig q_dirac (Rekordtreffer)
+   [Befund: ja] q wird nur durch die eine Zahl a = 3/10 festgelegt; keine Strukturklausel der Übertragung wählt q
+   [Befund: ja] Transfergedächtnis und Schurkern sind bei a = 3/10 im nächsten Koeffizienten unterscheidbar (b = 0.553 gegen 0.18); beide sind positiv, die Spektralwirkung (1/28) nicht
+
+Urteil
+   Die ausgebaute Prozesssuche bestätigt die elfte Analyse und schärft sie. Im Übergangsuniversum legen Vierteldrehung, Index eins und ein Kerngrad d = 1, k = 4 fest, q aber nie. Im Ausleseuniversum ist kein Rang-eins-Auslesen zugleich masselos und verbunden und keines universell gekoppelt: Das Graviton braucht eine Ward-/Eichstruktur, keine Nullmode der Übertragung. Das Spin-2-Gedächtnis der Übertragung ist exakt H/x = 1 - a x + b x^2 mit a = q^2/(1-q^2)^2 und b/a^2 = (1+q^2)/q^2; a = 3/10 legt q^2 = (8 - sqrt 55)/3 fest, dann ist b = 0.553, gegen 9/50 beim Schurkern und 1/28 bei der (nicht positiven) Spektralwirkung. Das tau = i-Nomen e^-pi gibt a = 0.0019; Nomen und Dirac-Korrektur passen in einer Übertragung nicht zusammen. Im zusammengesetzten Universum (67 200 Prozesse) wählen neun lasttragende Prinzipien genau einen Prozess: Kern nu = 1, Transfergedächtnis bei q_dirac, 16 reelle Majorana mit umgekehrtem Blatt, Flavour Z3 x Z4; das Spiegelblatt wird durch Orientierungsumkehr und eine gemeinsame Übertragung ersetzt. q bleibt eine Zahl aus der Dirac-Korrektur, keine Herleitung.
+
+Alle Prüfungen bestanden: True (15/15)

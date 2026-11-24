@@ -37,7 +37,7 @@ def befund(name, val):
     say(f"   [Befund: {'ja' if val else 'nein'}] {name}")
 
 
-res = run()
+res = run(transfer=False)          # Lane-Stand H6h23; der Ausbau mit Transferfamilie steht in z45
 U = res["universes"]
 sel = lambda u: {r["selected"]: r for r in U[u]["unique_selections"]}
 

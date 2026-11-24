@@ -31,6 +31,16 @@ nu = 1, spin-2 kernel C = 1/x + 1/(x + 10/3), sixteen real Majorana layers with 
 Z3 x Z4. One principle (mirror sheet) fixes two slots. The selection is a statement about the universes and the chosen
 principles, not a derivation; the flavour slot is compared with data outside the lane (H6 exploration z43).
 
+Second run (transfer extension, H6 exploration z44/z45): two new universes and two new principles. `transfer_processes`
+enumerates a(z) = z^-d (1 - q z^k) on the Hardy space (40 candidates); quarter-turn covariance plus a kernel in one
+grade fixes d = 1 and k in {4, 8}, but no clause fixes q (no UNIQUE verdict). `readouts` lists ten source maps of the
+primitive quarter transfer; its minimal empty rules are {massless pole, connected} and {universal residue}: no rank-one
+readout gives a massless, connected or universally coupled pole. The spin-2 slot gains the Marchenko-Pastur memory of
+the transfer for five q; only q^2 = (8 - sqrt 55)/3 keeps a = 3/10. With `orientation_reversal` and `one_transfer`
+the composed universe (67 200 processes) has a longest minimal rule of nine load-bearing principles; it selects
+kernel nu = 1, the transfer memory at that q, the reversed real 16-layer seam and Z3 x Z4, and no longer needs the
+mirror-sheet principle. `run(transfer=False)` reproduces the first run exactly.
+
 ```bash
 .venv/bin/python -B research/originlab/process_rules.py > /tmp/process-rules.json
 .venv/bin/python -B research/originlab/main.py --campaign process_rules --jobs 1 --out /tmp/originlab-process

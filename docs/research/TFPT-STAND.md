@@ -127,8 +127,8 @@ Ursprung sollte beides zugleich liefern.
 
 ### Kandidat H6: Ursprung von P1 aus einer hintergrundfreien Naht (Exploration 23.11.)
 
-Quelle: `experiments/exploration/2026-11-23-phasenraum-f5-holocode/VERDICT.md` (Stand H6h23),
-Skripte `n1`, `v1`, `y1`, `z1`–`z43`, Lean-Vertrag `experiments/theory-contracts/h6-exakte-teile-20261123/`; Atlasproblem `problem:c3-p1-p2-shared-origin-reconciliation`,
+Quelle: `experiments/exploration/2026-11-23-phasenraum-f5-holocode/VERDICT.md` (Stand H6h24),
+Skripte `n1`, `v1`, `y1`, `z1`–`z45`, Lean-Vertrag `experiments/theory-contracts/h6-exakte-teile-20261123/`; Atlasproblem `problem:c3-p1-p2-shared-origin-reconciliation`,
 Befunde mit Präfix `h6`. Nichts davon ist im Ledger befördert. Prüfstand mit 20 Kriterien: 14
 hergeleitet, 6 unter benannter Lesart, keines gescheitert, offen oder gesetzt.
 
@@ -288,6 +288,16 @@ hergeleitet, 6 unter benannter Lesart, keines gescheitert, offen oder gesetzt.
     hebt die quadratische G-Divergenz auf (48 − 48). Die neue OriginLab-Lane `process_rules` sucht über 53 760 ganze
     Prozesse: Acht lasttragende Prinzipien wählen Kern ν = 1, Spin-2-Gedächtnis, reelle 16er-Naht mit umgekehrtem
     Blatt und Familienpaar Z₃ × Z₄; kein exaktes Restsymmetriemuster passt zu den Neutrinodaten. [E/N]
+  - Übergangsfamilie und ausgebaute Prozesssuche (Z44, Z45): a_q(z) = z⁻¹(1 − q z⁴) gibt für jedes q das Bündel
+    O(1) + 6O + O(−1), die Hardy-Kompression S†(I − qS⁴) mit Index +1 und den positiven Randkern C_q (Pol 1 − q²
+    plus Marchenko-Pastur-Band). Ihr Spin-2-Gedächtnis ist exakt H/x = 1 − a x + b x² mit a = q²/(1 − q²)²,
+    b/a² = (1 + q²)/q²; a = 3/10 verlangt q² = (8 − √55)/3, dann b ≈ 0,553 (Schur-Kern 9/50, Spektralwirkung 1/28).
+    Kein Rang-eins-Auslesen ist masselos und verbunden oder universell gekoppelt; das Graviton braucht eine
+    Ward-Struktur. Die Paarkanäle schließen zu sp(4, ℝ), erst mit einseitiger Blattaktion zu su(2, 2); 5 + 3 ist
+    eine Spin^c-Zählung (F = E ⊗ O(1), c₁ = 8); die Z-Masse sitzt in der Hopf-Phase, also bleibt M(H). Die Lane
+    `process_rules` hat Übergangs- und Ausleseuniversen: Struktur legt d = 1, k = 4 fest, q nie; neun lasttragende
+    Prinzipien (mit „eine Übertragung“ und Orientierungsumkehr, ohne Spiegelblatt) wählen über 67 200 Prozesse
+    Kern ν = 1, Transfergedächtnis, reelle 16er-Naht und Z₃ × Z₄. [E/N]
   - Instantonen (Z33): Unter Spin(10) hat ein Einheitsinstanton 4 Eltern- und 12
     Familiennullmoden; mit gesättigten Familiennullmoden entsteht Re[e^{iθ}Φ² C_fam], die Wand ist
     also auch im Kontinuum möglich, bei nackter SO(10) aber ~10⁻¹⁶⁴ unterdrückt. [N]
@@ -389,9 +399,10 @@ hergeleitet, 6 unter benannter Lesart, keines gescheitert, offen oder gesetzt.
     Spektralwirkungs-Graviton mit vollständig monotonem Abschneider ist nicht positiv (Z41); gesucht ist ein
     Spin-2-Sektor in Wallach-Form oder ein anderer Abschneider.
   - Die 4D-Einbettung der reellen Majorana-Chern-Naht (Blatt mit Kante) und ihre μ₄-Kondensation.
-  - Die Herkunft der Prinzipien, die die Prozesssuche verlangt (Z43): konforme Kovarianz des Kerns, Spiegelblatt
-    (umgekehrt und gleichgewichtig) und die Familienorientierung samt kleiner Brechung; dazu die Parameter des
-    positiven Spin-2-Gedächtnisses aus der Prozessalgebra.
+  - Die Herkunft der Prinzipien, die die Prozesssuche verlangt (Z43, Z45): konforme Kovarianz des Kerns,
+    Orientierungsumkehr, eine gemeinsame Übertragung und die Familienorientierung samt kleiner Brechung; dazu eine
+    Zustands-/Normregel, die q der Übertragung festlegt (bisher nur über a = 3/10; das τ = i-Nomen e^{−π} gibt
+    a ≈ 0,002), und eine Ward-Struktur für den masselosen, universell gekoppelten Spin-2-Pol.
   - Die eine Prozessregel Z[J, A, g, Φ], aus der Naht, Eichwirkung und metrische Variation gemeinsam
     folgen.
 
