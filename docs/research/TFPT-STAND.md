@@ -425,12 +425,49 @@ hergeleitet, 6 unter benannter Lesart, keines gescheitert, offen oder gesetzt.
   - Die 4D-Einbettung der reellen Majorana-Chern-Naht (Blatt mit Kante) und ihre μ₄-Kondensation.
   - Die Herkunft der Prinzipien, die die Prozesssuche verlangt (Z43, Z45): konforme Kovarianz des Kerns,
     Orientierungsumkehr, eine gemeinsame Übertragung und die Familienorientierung (TM1 statt TM2 bei 15°); dazu die
-    Gaußquantisierung der Quelle als letzte Prämisse der Zustandsregel (die Zuordnung J₋₁ = S⁴ ist hergeleitet, Z48),
-    die Skala μ, M_c (also G), die quartische Zahl t des metrischen Sterns (die kubische Ordnung legen ungerichtete
-    Kanten fest, Z51), die verbundene Vierpunktantwort der Quellen, die t sichtbar macht, und der Mechanismus für TM1
+    die physische KMS Zeit und Stromalgebra der Zustandsregel (Z48 verschiebt Modenetiketten; die Polarphase
+    von J₋₁, nicht J₋₁ selbst, ist ein Hardy Shift; siehe Ergänzung unten),
+    die Skala μ, M_c (also G), die quartischen Zahlen t_n des metrischen Sterns (die kubische Ordnung legen ungerichtete
+    Kanten fest, Z51; ein gemeinsames t über die Tiefe braucht Homogenität), der mikroskopische Abgleich der
+    inzwischen berechneten verbundenen Vierpunktantwort und der Mechanismus für TM1
     bei 15° (Z46–Z51).
   - Die eine Prozessregel Z[J, A, g, Φ], aus der Naht, Eichwirkung und metrische Variation gemeinsam
     folgen.
+
+### Ergänzende Quellenprüfung nach H6h27, 24. November 2026
+
+Quelle: `experiments/exploration/2026-11-24-h6h26-source-dynamics/VERDICT.md`, mit den
+Einzelbeweisen unter `proofs` und der bestehenden OriginLab Lane. Ausgangsstände
+`0172a74bd` und `b5cc3d407` sind zusammengeführt. 153 gezielte Tests bestehen. Keine
+Ledgerbeförderung und keine Behauptung einer vollständig bestimmten physischen Theorie.
+
+- Volle KMS auf einem festgelegten regulären Stromoszillator erzwingt den Gaußzustand und
+  bei βω = 4π die kanonische Thermofeldamplitude q = exp(−2π). Ein gleiches Besetzungsmoment
+  genügt nicht; ein exaktes positives Gegenbeispiel ist angegeben. Physische Zeit und
+  Identifikation der Blattalgebren bleiben Voraussetzungen.
+- J₋₁ besitzt die Fockgewichte √(n+1), der Hardy Shift nicht. Der quadratische Zweimodenparent
+  ist unter relativer Ladungserhaltung und Blatttausch K = λA†(N+1)A. Er besitzt denselben
+  Grundzustand wie λA†A, aber eine diskrete Leiter statt eines Bandes. Alle vier metrischen
+  Sektoren und die universelle Nullmode sind berechnet; die räumliche Identifikation bleibt bedingt.
+- Ungerichtete HR Paarpotentiale lassen je Kante einen Quartikparameter frei. μ₄ setzt
+  die vier Arme bei gleicher Tiefe gleich, lässt aber eine Folge t_n offen. Die exakte
+  Klassifikation verwendet die vollständigen Koeffizienten, keine zufälligen Taylorproben.
+- Die Änderung der verbundenen Vierpunktantwort physischer TT Randquellen ist explizit.
+  Im flachen unendlichen Stern ist sie eine erzeugende Funktion der t_n. Bei gemeinsamem
+  t ist ihr IR Faktor proportional zu t r/(1−r), im gewichteten Stern zu t Li₃(r), mit
+  r = q². Reine Nullmodenbeine sehen diesen Kontakt nicht. Die mikroskopische Vierpunktfunktion
+  zur Bestimmung der Parameter fehlt weiterhin.
+- Der endliche gewichtete Stern besitzt einen positiven abgeschnittenen Oszillatorparent
+  samt korrekter Enddiagonale. Die geänderte CCR am Endpunkt ist sichtbar. Die Tiefe wird
+  dadurch nicht gewählt. Fünf Lagen im TeV Beispiel erfüllen nur eine lokale Mindestschwelle;
+  ein kleiner räumlicher Nullmodenschwanz begrenzt nicht sämtliche Quanteneffekte.
+- Die exakte direkte Flavourroute mit geladenem Z₃, voller Majorana Klein Restsymmetrie,
+  μτ Reflexion und TM1 bei 15 Grad scheitert für jede endliche Gruppengröße an der
+  algebraischen Ganzheit von Gruppenspuren. Z₂ plus CP ist nicht ausgeschlossen, wählt
+  den Winkel aber nicht. In NuFIT 6.1 NO mit IC24/SK passt von ±90 Grad nur 270 Grad in
+  den marginalen 3σ Bereich; kein gemeinsamer Fit wird behauptet.
+- G bleibt unter einer exakten Normierungsgegenfamilie frei. Nahtkondensation, lokales
+  chirales 4D Maß und eine gemeinsame wechselwirkende Prozessregel sind nicht geschlossen.
 
 ## 4. Wiederkehrende Muster und Verbindungen
 

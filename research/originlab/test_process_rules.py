@@ -68,10 +68,19 @@ class ProcessRules(unittest.TestCase):
         self.assertEqual(one_grade, {(1, 4), (1, 8)})
         self.assertEqual(self.result["universes"]["transfer_processes"]["verdicts"]["UNIQUE"], 0)
 
-    def test_no_rank_one_readout_is_massless_and_connected_or_universal(self):
-        self.assertEqual(len(readouts()), 10)
-        empty = self.h6h26["universes"]["readouts"]["minimal_empty_rules"]   # scoped statement of z45, corrected in z50
-        self.assertEqual(empty, [["connected", "massless_pole"], ["universal_residue"]])
+    def test_field_centering_preserves_particle_pole_but_source_map_is_input(self):
+        self.assertEqual(len(readouts()), 12)
+        empty = self.h6h26["universes"]["readouts"]["minimal_empty_rules"]
+        self.assertEqual(empty, [])
+        for row in readouts():
+            if row["interpretation"] == "Hamilton_vacuum":
+                self.assertNotIn("massless_pole", row["clauses"])
+            if row["interpretation"] == "Gaussian_field":
+                self.assertIn("massless_pole", row["clauses"])
+            if "universal_residue" in row["clauses"]:
+                self.assertTrue(row["source_normalization_is_input"])
+            self.assertFalse(row["gravitational_ward_identity"])
+            self.assertFalse(row["physical_source_map_derived"])
 
     def test_real_seam_needs_spin10_level_one(self):
         rows = self.selected("seam_layers")
@@ -128,15 +137,20 @@ class ProcessRules(unittest.TestCase):
             self.assertIn(pair, empty)
         self.assertEqual(len(q_rules()), 7)
 
-    def test_scale_free_search_selects_the_original_state_process(self):
+    def test_scale_free_rules_separate_thermal_state_and_equal_weight(self):
         free = self.result["composed_process"]["without_scale_convention"]
         self.assertEqual(free["longest_minimal_rule"], 8)
         chosen = {r["selected"] for r in free["selected_by_the_longest_rules"]}
-        self.assertEqual(len(chosen), 1)
-        label = chosen.pop()
+        self.assertEqual(len(chosen), 2)
+        row = next(r for r in free["selected_by_the_longest_rules"] if "q=e^-2pi" in r["selected"])
+        label = row["selected"]
         for part in ("kernel nu=1 eps=0", "spin2 transfer memory q=e^-2pi", "seam n=16 real reversed", "flavour Z3 x Z4"):
             self.assertIn(part, label)
-        ties = free["selected_by_the_longest_rules"][0]["tie_sets_without_size"]
+        self.assertTrue(all("original_state" in rule for rule in row["minimal_rules"]))
+        mirror = next(r for r in free["selected_by_the_longest_rules"] if "q=1/sqrt2" in r["selected"])
+        self.assertTrue(all("mirror_sheet" in rule for rule in mirror["minimal_rules"]))
+        self.assertIn("mirror_weight", next(o["clauses"] for o in spin2_kernels() if o["name"].endswith("q=1/sqrt2")))
+        ties = row["tie_sets_without_size"]
         sizes = sorted(len(v) for v in ties.values())
         self.assertEqual(sizes, [1, 2])                   # with e8_seam no size tie; with positivity n = 16 and 32 tie
         two = [v for v in ties.values() if len(v) == 2][0]
@@ -183,6 +197,8 @@ class ProcessRules(unittest.TestCase):
 
     def test_nothing_is_promoted_and_the_lane_is_registered(self):
         self.assertFalse(self.result["physical_solution"])
+        self.assertFalse(self.result["global_process_unique"])
+        self.assertTrue(self.result["source_dynamics"]["all_checks_pass"])
         self.assertIn({"lane": "process_rules"}, [spec for _, spec in specifications(2, ".", None, None)])
         self.assertEqual(execute({"lane": "process_rules"}, ".")["status"], "PROCESS_RULES_SEARCHED")
 

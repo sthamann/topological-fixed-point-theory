@@ -17,6 +17,27 @@ contract ([F1-CANDIDATE-CONTRACT.md](F1-CANDIDATE-CONTRACT.md)).
 
 ## Process rule search, 24 November 2026
 
+**Current certificate update after H6h27.** The paragraphs below describe the historical
+search stages. The current switches preserve candidate classes, not byte-identical old
+JSON after mathematical corrections. The original result files remain unchanged.
+The new [source and dynamics report](../../experiments/exploration/2026-11-24-h6h26-source-dynamics/VERDICT.md)
+records the full KMS condition, the distinction between current raising and the Hardy
+shift, and the positive quadratic parent with weight n+1. Its full metric star has a
+discrete spectrum, with three additional interlacing sectors. The same lane now computes
+physical connected boundary four-point differences, exact local depth certificates,
+and group-independent obstructions to the specified exact TM1 pattern.
+
+Clauses for the analytic kernels, transfer index and HR potential class use exact
+certificates. Taylor and finite spectral probes are diagnostics. Source centering is
+separated from Hamilton-vacuum subtraction. The historical cost and actual pole count
+are separate, and every selection reports all matches as well as minimum-cost matches.
+Correctly applying mirror weight to the transfer at q=1/sqrt(2) leaves two selected
+families in the old scale-free comparison. A single physical process is not claimed.
+Undirected HR edges leave one quartic parameter per edge; C4 relates the arms at fixed
+depth, while a common parameter across depths is an additional homogeneity rule.
+The new parent comparison still calls genesis_rules.search. It does not add a second
+search engine. Validation: 153 targeted tests, including the merged H6h27 tests.
+
 `process_rules.py` turns the genesis engine (`genesis_rules.search`) on the open slots of the TFPT process instead of
 on number-free structures. Four universes hold computed candidates: positive matrix kernels det(I - W^+ Z)^-nu with an
 optional det Z conj det W term, spin-2 inverse propagators (Dirac spectral action with three cutoffs, the ledger's entire
@@ -39,7 +60,7 @@ readout gives a massless, connected or universally coupled pole. The spin-2 slot
 the transfer for five q; only q^2 = (8 - sqrt 55)/3 keeps a = 3/10. With `orientation_reversal` and `one_transfer`
 the composed universe (67 200 processes) has a longest minimal rule of nine load-bearing principles; it selects
 kernel nu = 1, the transfer memory at that q, the reversed real 16-layer seam and Z3 x Z4, and no longer needs the
-mirror-sheet principle. `run(transfer=False)` reproduces the first run exactly.
+mirror-sheet principle. `run(transfer=False)` restricts the current lane to those first-run candidate classes.
 
 Third run (state rule, H6 exploration z46/z47): the number a = 3/10 behind `dirac_spin2` is a scale convention
 (a = (3/10) f(0)/Int f in units of the cutoff), so it fixes no q. A new universe `q_rules` holds seven candidate states of
@@ -51,7 +72,7 @@ whole-process search without `dirac_spin2` (72 576 processes). Eight principles 
 memory in the original state, the reversed real 16-layer seam and Z3 x Z4. Without the state rule the choice falls back to
 pure Einstein. The longest rules now report their tie set before the size order: n = 16 and n = 32 tie unless the E8-seam
 principle is used. Flavour patterns are printed exactly in Q(sqrt 2, sqrt 3); the first runs printed (2 - sqrt 3)/6 as 2/45.
-`run(state=False)` reproduces the second run.
+`run(state=False)` restricts the current lane to the second-run candidate classes.
 
 Fourth run (larger family groups, H6 exploration z48/z49): `flavour_groups` enumerates residual symmetries in Delta(6 n^2),
 n in {2, 3, 4, 6, 8}, with a Klein group for Majorana neutrinos and a cyclic group with three distinct eigenvalues for the
@@ -68,7 +89,7 @@ to `vacuum_subtracted` (the zero-mode-removed microscopic response of z44) and a
 covariance (p^2 + mu^2 L)^-1, which is connected and massless, and the metric star with minimal node sources, which is
 universal. `metric_potentials` computes Taylor data to fourth order of six Hassan-Rosen potentials with mpmath: flat
 background, Fierz-Pauli mass and an undirected edge (same potential read from either metric) leave exactly V and
-V +- det(I - X)/2 open, i.e. one quartic number. `run(metric=False)` reproduces the fourth run.
+V +- det(I - X)/2 open, i.e. one quartic number per edge. `run(metric=False)` omits this metric stage.
 
 ```bash
 .venv/bin/python -B research/originlab/process_rules.py > /tmp/process-rules.json
