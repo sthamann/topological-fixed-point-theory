@@ -873,6 +873,31 @@ if "H6h2" in H and z1p.exists() and z2p.exists():
                                                                                      "mit Kleber 5/4 + 3/4 = 2; Stresssättigung: c_W < 17/2 erzwingt V_E8 "
                                                                                      "(Satz vom 12.11.)")
                                                                 facts["F37_source_reconciliation"] = Z34["urteil"]
+                                                                zv = {n: Path(__file__).with_name(f"z{n}_ergebnis.json") for n in (35, 36)}
+                                                                if all(p.exists() for p in zv.values()):
+                                                                    T6 = {n: json.loads(p.read_text()) for n, p in zv.items()}
+                                                                    ok6b = {n: all(T6[n]["checks"].values()) for n in T6}
+                                                                    H["H6h19"] = dict(H["H6h18"])
+                                                                    H["H6h19"]["K8"] = (P if ok34 and ok6b[36] else F,
+                                                                                        "[GESAMT2, Z34, Z36] P2 = V4-Schnitt: schwach {1 - z^4, z^2} ist der "
+                                                                                        "Kern jeder V4-Abbildung Träger -> Familien; Ladungen, sin^2 theta_W = "
+                                                                                        "3/8 und G_SM (12) unverändert; V4 wird eine diskrete Farbdrehung")
+                                                                    H["H6h19"]["K11"] = (P if ok6b[35] else F,
+                                                                                         "[A] lokales E8-Netz (Z32); die 16 Nahteltern tragen so(10)_1 + "
+                                                                                         "so(6)_1 = D5 + A3 mit c = 5 + 3, Kleber 5/8 + 3/8 = 1 (Z35): "
+                                                                                         "Voraussetzungen der Stresssättigung erfüllt, offen c_W < 17/2 der "
+                                                                                         "ganzen Quelle")
+                                                                    H["H6h19"]["K20"] = (LES if ok6b[35] else F,
+                                                                                         "[ein Bündel] die acht Schnitte von L = r^* O(1) (Deckhälften 5 + 3) "
+                                                                                         "sind reell genau die 16 Nahteltern (10,1) + (1,6); (1,6) trägt den "
+                                                                                         "Familienraum C^3 (Z35); Familien 3 x 16 bleiben eigene Multipletts "
+                                                                                         "(Z23), gemeinsam Spin-Z4 J, T und Geometrie")
+                                                                    H["H6h19"]["K19"] = (LES if ok6b[35] else F,
+                                                                                         "[Irreduzibilität] Toeplitz-Defekt vom Rang 1 (Z30), trivialer "
+                                                                                         "Kommutant (Z31); der Rang-1-Kanal zwischen O(1) und O(-1) macht den "
+                                                                                         "Randoperator invertierbar mit einfachem lambda_1^+ wie die Saatlinie "
+                                                                                         "des nativen Originals (Z35)")
+                                                                    facts["F38_boundary_and_v4"] = {n: T6[n]["urteil"] for n in T6}
 
 order = [f"K{i}" for i in range(1, 21)]
 print("Gesamttabelle (P = hergeleitet, L = unter benannter Lesart, F = FAIL, O = OFFEN, E = EINGABE)\n")

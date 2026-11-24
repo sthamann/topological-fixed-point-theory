@@ -1,6 +1,82 @@
 # Urteil
 
-## Aktueller Stand: H6h18 — Abgleich mit dem Originalbestand: der richtige 3+2-Schnitt, die Bündel, der Randkern (`z34`)
+## Aktueller Stand: H6h19 — Randoperator-Abgleich und H6 auf dem V₄-Schnitt (`z35`, `z36`)
+
+Bilanz unverändert 14 P und 6 L von 20. K8, K11, K19 und K20 sind präzisiert. Selbst gerechnet: `z35`
+mit 14 und `z36` mit 13 Prüfungen. Der native Operator aus P1BIND wurde dabei mit dem unveränderten
+Assembler geladen.
+
+**In einem Satz:** Die acht geometrischen Moden des Bündels O(1) + 6O + O(−1) sind reell genau die 16
+Nahteltern aus z23, mit Strömen D₅ + A₃ bei c = 5 + 3. Der originale Randkern verlangt die gepaarte
+Form mit einem Rang-1-Kanal, und das passt zum einfachen λ₁⁺ des Originals. Auf dem V₄-Schnitt bleibt
+alles Dimensionsabhängige gleich, und die Abbildung Träger → Familien ist festgelegt.
+
+**1. Randoperator-Abgleich (`z35`).**
+- **Axiome des originalen Kerns** (P1BIND): G ist eine Involution, D ist ungerade und invertierbar,
+  ι_C = sign(D), die Polarisation ist auf beiden G-Hälften flach und lagrangesch, λ₁⁺ ist einfach.
+- **Einseitig** hat ∂̄ auf E = O(1) ⊕ 6O ⊕ O(−1) den Index 8 = h⁰(E). Das sind genau die 8 komplexen
+  bzw. 16 reellen chiralen Nahtmoden, also nicht balanciert.
+- **Zweiseitig** (M₊ ∪ M₊^op, über den Schnitt gekoppelt) sind alle Axiome erfüllt, aber λ₁ ist
+  achtfach.
+- **Spin-Dirac auf K^{1/2} ⊗ E** hat den Index c₁(E) = 0 und genau eine Nullmode in O(1) (G = +) und eine
+  in O(−1) (G = −). Mit einem **Rang-1-Kanal** μ zwischen beiden sind alle Axiome erfüllt, und
+  λ₁⁺ = μ ist einfach.
+- **Native Kontrolle:** Der aufgezeichnete D_F (96) hat λ₁⁺ = 0,0852 mit Vielfachheit 1. Die „zwölf
+  Eigenlinien“ sind die sechs einfachen Werte mit beiden Vorzeichen. Das Original passt also zur
+  gepaarten Form, nicht zur achtfachen. Die Saatlinie des Kerns ist der Kanal zwischen O(1) und O(−1);
+  das ist derselbe Rang-1-Kanal wie in U = [[S, |0⟩⟨0|], [0, S†]] (z34).
+- **Die 16 Nahteltern.** Die Deckhälften tragen 5 und 3 Moden, reell 10 + 6 = (10,1) + (1,6). Das sind
+  genau die Eltern aus z23, und der Familienraum ℂ³ ist ihre (1,6)-Komponente.
+  - Ihre Ströme sind so(10)₁ + so(6)₁ = D₅ + A₃ mit c = 45/9 + 15/5 = 5 + 3.
+  - Die Spinorgewichte sind 5/8 + 3/8 = 1, also gibt der Kleber Gewicht-1-Ströme (16,4) + (16̄,4̄), und es
+    gilt 248 = 120 + 128.
+  - Damit sind die Voraussetzungen der Stresssättigung für diesen Inhalt erfüllt, mit c_W = 8 < 17/2.
+    Offen bleibt nur, ob die ganze Quelle keinen weiteren Sektor hat.
+- **Hauptsymbol.** Der Calderón-Projektor mit Masse und Kragen (Moden p ∈ ℤ + ¼ wie R081/R083)
+  unterscheidet sich vom Hardy-Projektor um einen Hilbert-Schmidt-Operator. Er hat denselben
+  Toeplitz-Index −1, Tr(P_C − U P_C U*) = 1 für alle getesteten m und ℓ.
+
+**2. H6 auf dem V₄-Schnitt (`z36`).**
+- **Die Teilung.** Schwach = {1 − z⁴, z²} und Farbe = {z, z³, 1 + z⁴} sind orthogonal.
+- **Was gleich bleibt:**
+  - Y = 1/12 + (5/12)(2P_{V₄} − 1) mit den Eigenwerten −1/3 und 1/2, tr Y² = 5/6;
+  - Λ^gerade ℂ⁵ trägt genau die SM-Ladungen einer Generation;
+  - sin²θ_W = tr T₃²/tr Q² = (1/2)/(4/3) = 3/8;
+  - der Stabilisator des reinen Spinors mit der V₄-Teilung ist G_SM (12).
+- **Was neu festgelegt ist:**
+  - Die V₄-äquivarianten Abbildungen Träger → Familien bilden einen dreidimensionalen Raum. Jede
+    generische ist surjektiv, und ihr Kern ist genau das V₄-Dublett.
+  - Die μ₄-Abbildung aus z16 war eine andere Wahl. Unter D₄ gibt es keine surjektive äquivariante
+    Abbildung (Dimension 1, Rang 2).
+  - Farbe ≅ Λ²F unter D₄ (expliziter Verflechter) und Farbe ≅ F unter V₄ (über die V₄-Abbildung T).
+- **Endliche Symmetrien in der Eichgruppe:**
+  - V₄ wirkt auf dem Dublett trivial und auf der Farbe mit det 1. V₄ liegt also in SU(3)_Farbe; die
+    Markengruppe ist eine diskrete Farbdrehung.
+  - Die Vierteldrehung erhält die Teilung, hat aber auf dem Dublett det −1. Sie liegt in U(2) × SU(3),
+    nicht in S(U(2) × U(3)).
+  - Unter der alten Halbdrehungs-Teilung war die Halbdrehung ein zentrales Hyperladungselement.
+- Der Lean-Vertrag formalisiert die Halbdrehung diag(1, −1, 1, −1, 1). Das bleibt als Satz richtig, ist
+  aber nicht mehr die physische Teilung. Ein Lean-Satz für den V₄-Schnitt steht aus.
+
+**3. Wie die Stücke jetzt zusammenhängen.**
+- Ein Objekt, die (ℤ₂)³-Überlagerung der Sphäre mit den vier Marken, trägt das selbstduale Bündel
+  L = r^*O(1).
+- Seine acht Schnitte sind die 16 reellen Nahtfermionen. Die V₄-Auslesung teilt sie in
+  schwach (2) + Farbe (3) = Träger (5) und Familien (3).
+- Die Ströme dieser 16 sind D₅ + A₃, mit dem Kleber E₈ bei c = 8.
+- Der Randoperator ist invertierbar über einen einzigen Rang-1-Kanal zwischen O(1) und O(−1). Das ist
+  zugleich die primitive Windung (Toeplitz −1) und die Saatlinie des Originals.
+- Die Farbe ist dieselbe Darstellung wie die Plebański-Zweiformen Λ²F.
+
+**4. Was offen bleibt.**
+- Dass die ganze Quelle keinen weiteren Sektor hat (c_W < 17/2).
+- Die Herleitung des Rang-1-Kanals und des Bündels aus der Dynamik.
+- Die wechselwirkende 3+1D-Theorie mit Entscheidung 4 (Gitter und Chiralität).
+- Raumzeittranslationen aus lokalen Typ-III-Algebren.
+- G und ein masseloses Spin 2.
+- Die Auflösung des Spin(10)-Lifts (w₂ = 1).
+
+## Davor: H6h18 — Abgleich mit dem Originalbestand: der richtige 3+2-Schnitt, die Bündel, der Randkern (`z34`)
 
 Bilanz unverändert 14 P und 6 L von 20; K8 und K11 sind präzisiert. Anlass sind zwei externe
 Rückwärtsanalysen vom 24.11.: Ältere TFPT-Ergebnisse enthalten Teile der neuen H6-Bausteine schon.

@@ -127,8 +127,8 @@ Ursprung sollte beides zugleich liefern.
 
 ### Kandidat H6: Ursprung von P1 aus einer hintergrundfreien Naht (Exploration 23.11.)
 
-Quelle: `experiments/exploration/2026-11-23-phasenraum-f5-holocode/VERDICT.md` (Stand H6h18),
-Skripte `n1`, `v1`, `y1`, `z1`–`z34`, Lean-Vertrag `experiments/theory-contracts/h6-exakte-teile-20261123/`; Atlasproblem `problem:c3-p1-p2-shared-origin-reconciliation`,
+Quelle: `experiments/exploration/2026-11-23-phasenraum-f5-holocode/VERDICT.md` (Stand H6h19),
+Skripte `n1`, `v1`, `y1`, `z1`–`z36`, Lean-Vertrag `experiments/theory-contracts/h6-exakte-teile-20261123/`; Atlasproblem `problem:c3-p1-p2-shared-origin-reconciliation`,
 Befunde mit Präfix `h6`. Nichts davon ist im Ledger befördert. Prüfstand mit 20 Kriterien: 14
 hergeleitet, 6 unter benannter Lesart, keines gescheitert, offen oder gesetzt.
 
@@ -232,6 +232,15 @@ hergeleitet, 6 unter benannter Lesart, keines gescheitert, offen oder gesetzt.
     Träger in Ran(P_prim) liegt (Typfehler; Träger braucht eine eigene Auslesung, etwa 2P_{V₄} − 1).
     Die Stresssättigung (12.11.) macht „ein E₈-Block“ zur Schranke c_W < 17/2. (c₁(L₂), c₁(L₃)) =
     (1, 0) gibt w₂ = 1, also keinen Spin(10)-Lift; E₈ enthält (Spin(10) × SU(4))/ℤ₄. [E/N]
+  - Randoperator und Nahtinhalt (Z35): Die acht Schnitte von L = r^*O(1) (Deckhälften 5 + 3) sind
+    reell genau die 16 Nahteltern (10,1) + (1,6); ihre Ströme so(10)₁ + so(6)₁ = D₅ + A₃ mit
+    c = 5 + 3 und Kleber 5/8 + 3/8 = 1 erfüllen die Voraussetzungen der Stresssättigung. Der originale
+    Randkern (ungerade, invertierbar, flach) verlangt den Spin-Dirac auf K^{1/2} ⊗ E mit einem
+    Rang-1-Kanal zwischen O(1) und O(−1); das passt zum einfachen λ₁⁺ = 0,0852 des nativen
+    Originals. Calderón- und Hardy-Projektor haben denselben Toeplitz-Index −1. [E/N]
+  - V₄-Umstellung (Z36): Ladungen, sin²θ_W = 3/8 und G_SM bleiben; die V₄-äquivariante Abbildung
+    Träger → Familien hat genau das V₄-Dublett als Kern; V₄ wird eine diskrete Farbdrehung in SU(3),
+    die Vierteldrehung wirkt auf dem Dublett mit det −1. [E]
   - Instantonen (Z33): Unter Spin(10) hat ein Einheitsinstanton 4 Eltern- und 12
     Familiennullmoden; mit gesättigten Familiennullmoden entsteht Re[e^{iθ}Φ² C_fam], die Wand ist
     also auch im Kontinuum möglich, bei nackter SO(10) aber ~10⁻¹⁶⁴ unterdrückt. [N]
