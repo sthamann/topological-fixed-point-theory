@@ -1,0 +1,68 @@
+Teil 1: Bausteine
+   Matrixkern: 12 Kandidaten, Urteile {'EMPTY': 0, 'UNIQUE': 12, 'AMBIGUOUS': 4}
+   [ok] nu = 1, eps = 0 wird durch Hardy-Schnitt plus Wellengleichung oder plus Kovarianz eindeutig gewählt; Hardy allein lässt den det-Term offen
+   Spin 2: 20 Kandidaten; Spektralwirkung: {'spectral action e^-u': 6.775217600398139, 'spectral action step': 3.36707277164996, 'spectral action (1+u)^-3': 5.663161598282121} (erste Nullstelle, Gitter)
+   [ok] alle drei Spektralwirkungen haben eine euklidische Nullstelle, der Ledger-Ansatz x e^x ist nicht Källén-Lehmann-positiv
+   [ok] Dirac-Korrektur plus Spiegelgewicht wählt eindeutig C = 1/x + 1/(x + 10/3); ohne Spiegelgewicht drei positive Kandidaten
+   [ok] die reelle 16-Majorana-Naht mit umgekehrtem zweitem Blatt braucht Spin(10)_1; ohne diese Klausel gewinnt die komplexe Flussnaht (8 komplexe Lagen)
+   Flavourmuster (Paar, |U|^2, |J|):
+      ("V4 x V4'", "(('0', '0', '1'), ('1/2', '1/2', '0'), ('1/2', '1/2', '0'))", 0.0)
+      ('V4 x Z3', "(('1/3', '1/3', '1/3'), ('1/3', '1/3', '1/3'), ('1/3', '1/3', '1/3'))", 0.096225045)
+      ('V4 x Z4', "(('0', '0', '1'), ('1/2', '1/2', '0'), ('1/2', '1/2', '0'))", 0.0)
+      ("V4' x V4", "(('0', '0', '1'), ('1/2', '1/2', '0'), ('1/2', '1/2', '0'))", 0.0)
+      ("V4' x V4'", "(('0', '1/2', '1/2'), ('1/2', '1/4', '1/4'), ('1/2', '1/4', '1/4'))", 0.0)
+      ("V4' x Z3", "(('0', '1/2', '1/2'), ('1/3', '1/3', '1/3'), ('2/3', '1/6', '1/6'))", 0.0)
+      ("V4' x Z4", "(('0', '0', '1'), ('1/2', '1/2', '0'), ('1/2', '1/2', '0'))", 0.0)
+      ("V4' x Z4", "(('0', '1/2', '1/2'), ('1/2', '1/4', '1/4'), ('1/2', '1/4', '1/4'))", 0.0)
+      ('Z3 x V4', "(('1/3', '1/3', '1/3'), ('1/3', '1/3', '1/3'), ('1/3', '1/3', '1/3'))", 0.096225045)
+      ("Z3 x V4'", "(('0', '1/3', '2/3'), ('1/2', '1/3', '1/6'), ('1/2', '1/3', '1/6'))", 0.0)
+      ('Z3 x Z3', "(('1/9', '4/9', '4/9'), ('4/9', '1/9', '4/9'), ('4/9', '4/9', '1/9'))", 0.0)
+      ('Z3 x Z4', "(('2/45', '1/3', '28/45'), ('1/3', '1/3', '1/3'), ('28/45', '1/3', '2/45'))", 0.0)
+      ('Z4 x V4', "(('0', '0', '1'), ('1/2', '1/2', '0'), ('1/2', '1/2', '0'))", 0.0)
+      ("Z4 x V4'", "(('0', '0', '1'), ('1/2', '1/2', '0'), ('1/2', '1/2', '0'))", 0.0)
+      ("Z4 x V4'", "(('0', '1/2', '1/2'), ('1/2', '1/4', '1/4'), ('1/2', '1/4', '1/4'))", 0.0)
+      ('Z4 x Z3', "(('2/45', '1/3', '28/45'), ('1/3', '1/3', '1/3'), ('28/45', '1/3', '2/45'))", 0.0)
+      ('Z4 x Z4', "(('0', '1/2', '1/2'), ('1/2', '1/4', '1/4'), ('1/2', '1/4', '1/4'))", 0.0)
+   [ok] TBM entsteht als Z3 x V4' (mit Null, theta13 = 0); Z3 x Z4 mit der Familienuhr gibt keine Null (2/45, 1/3, 28/45)
+
+Teil 2: Ganzer Prozess
+   53760 Prozesse, 512 Regeln, Urteile {'EMPTY': 0, 'UNIQUE': 14, 'AMBIGUOUS': 498}
+   längste minimale Regel: 8 Prinzipien: [['covariance', 'dirac_spin2', 'family_clock', 'family_mixing', 'hardy', 'mirror_sheet', 'positivity', 'real_seam'], ['covariance', 'dirac_spin2', 'e8_seam', 'family_clock', 'family_mixing', 'hardy', 'mirror_sheet', 'real_seam']]
+   gewählt: kernel nu=1 eps=0 | spin2 Schur w=1/2 m=5/3 | seam n=16 real reversed | flavour Z3 x Z4 (('2/45', '1/3', '28/45'), ('1/3', '1/3', '1/3'), ('28/45', '1/3', '2/45'))
+      ohne covariance    : AMBIGUOUS ["kernel nu=1 eps=0 | spin2 Schur w=1/2 m=5/3 | seam n=16 real reversed | flavour Z3 x Z4 (('2/45', '1/3', '28/45'), ('1/3', '1/3', '1/3'), ('28/45', 
+      ohne dirac_spin2   : AMBIGUOUS ["kernel nu=1 eps=0 | spin2 Schur w=1/2 m=10/3 | seam n=16 real reversed | flavour Z3 x Z4 (('2/45', '1/3', '28/45'), ('1/3', '1/3', '1/3'), ('28/45',
+      ohne family_clock  : AMBIGUOUS ["kernel nu=1 eps=0 | spin2 Schur w=1/2 m=5/3 | seam n=16 real reversed | flavour V4 x Z3 (('1/3', '1/3', '1/3'), ('1/3', '1/3', '1/3'), ('1/3', '1/3'
+      ohne family_mixing : AMBIGUOUS ["kernel nu=1 eps=0 | spin2 Schur w=1/2 m=5/3 | seam n=16 real reversed | flavour V4 x Z4 (('0', '0', '1'), ('1/2', '1/2', '0'), ('1/2', '1/2', '0'))"
+      ohne hardy         : UNIQUE    ["kernel nu=0 eps=0 | spin2 Schur w=1/2 m=5/3 | seam n=16 real reversed | flavour Z3 x Z4 (('2/45', '1/3', '28/45'), ('1/3', '1/3', '1/3'), ('28/45', 
+      ohne mirror_sheet  : AMBIGUOUS ["kernel nu=1 eps=0 | spin2 Schur w=1/2 m=5/3 | seam n=16 real reversed | flavour Z3 x Z4 (('2/45', '1/3', '28/45'), ('1/3', '1/3', '1/3'), ('28/45', 
+      ohne positivity    : UNIQUE    ["kernel nu=1 eps=0 | spin2 Schur w=1/2 m=5/3 | seam n=10 real reversed | flavour Z3 x Z4 (('2/45', '1/3', '28/45'), ('1/3', '1/3', '1/3'), ('28/45', 
+      ohne real_seam     : UNIQUE    ["kernel nu=1 eps=0 | spin2 Schur w=1/2 m=5/3 | seam n=8 complex reversed | flavour Z3 x Z4 (('2/45', '1/3', '28/45'), ('1/3', '1/3', '1/3'), ('28/45'
+   [ok] acht Prinzipien wählen genau einen ganzen Prozess: Kern nu = 1, C = 1/x + 1/(x+10/3), 16 reelle Majorana mit umgekehrtem Blatt, Flavour Z3 x Z4
+   [ok] jedes der acht Prinzipien trägt Last (Weglassen ändert die Auswahl oder macht sie mehrdeutig)
+   [Befund: ja] Das Prinzip 'Spiegelblatt' (zweite Blatthälfte umgekehrt und gleichgewichtig) legt Naht und Spin-2-Kern zugleich fest
+
+Teil 3: Flavour gegen Daten (außerhalb der Lane)
+   V4 x V4'   mögliche sin^2 theta13: [0.0, 0.5, 1.0]  -> passt nicht
+   V4 x Z3    mögliche sin^2 theta13: [0.3333]  -> passt nicht
+   V4 x Z4    mögliche sin^2 theta13: [0.0, 0.5, 1.0]  -> passt nicht
+   V4' x V4   mögliche sin^2 theta13: [0.0, 0.5, 1.0]  -> passt nicht
+   V4' x V4'  mögliche sin^2 theta13: [0.0, 0.25, 0.5]  -> passt nicht
+   V4' x Z3   mögliche sin^2 theta13: [0.0, 0.1667, 0.3333, 0.5, 0.6667]  -> passt nicht
+   V4' x Z4   mögliche sin^2 theta13: [0.0, 0.5, 1.0]  -> passt nicht
+   V4' x Z4   mögliche sin^2 theta13: [0.0, 0.25, 0.5]  -> passt nicht
+   Z3 x V4    mögliche sin^2 theta13: [0.3333]  -> passt nicht
+   Z3 x V4'   mögliche sin^2 theta13: [0.0, 0.1667, 0.3333, 0.5, 0.6667]  -> passt nicht
+   Z3 x Z3    mögliche sin^2 theta13: [0.1111, 0.4444]  -> passt nicht
+   Z3 x Z4    mögliche sin^2 theta13: [0.0444, 0.3333, 0.6222]  -> passt nicht
+   Z4 x V4    mögliche sin^2 theta13: [0.0, 0.5, 1.0]  -> passt nicht
+   Z4 x V4'   mögliche sin^2 theta13: [0.0, 0.5, 1.0]  -> passt nicht
+   Z4 x V4'   mögliche sin^2 theta13: [0.0, 0.25, 0.5]  -> passt nicht
+   Z4 x Z3    mögliche sin^2 theta13: [0.0444, 0.3333, 0.6222]  -> passt nicht
+   Z4 x Z4    mögliche sin^2 theta13: [0.0, 0.25, 0.5]  -> passt nicht
+   [ok] kein exaktes Restsymmetriemuster der nichtentarteten abelschen S4-Untergruppen passt in die 3-sigma-Bereiche (theta13: 0, 2/45 = 0.044, 1/9, 1/4, 1/3, ... gegen 0.020-0.024)
+   [Befund: ja] Die Familienregel braucht eine kleine Brechung der Restsymmetrie (TFPT: phi0-Korrekturen, sin^2 theta13 = phi0 e^{-5/6}); die Prozesssuche findet die Orientierung, nicht die Brechung
+
+Urteil
+   Das Suchprogramm lässt sich für die Prozesssuche umbauen: Die neue OriginLab-Lane process_rules nutzt dieselbe Regelsuche wie die Genesis-Lane und läuft in etwa drei Sekunden. In den Bausteinen wählt Hardy plus Wellengleichung oder Kovarianz den Kern nu = 1; die Spektralwirkungen fallen alle durch, Dirac-Korrektur plus Spiegelgewicht wählt C = 1/x + 1/(x + 10/3); die reelle 16er-Naht braucht Spin(10)_1, sonst gewinnt die komplexe Flussnaht; TBM entsteht als Z3 x V4' nur mit theta13 = 0. Im zusammengesetzten Universum (53 760 Prozesse) wählen acht lasttragende Prinzipien genau einen Prozess: Kern nu = 1, Spin 2 mit gleichgewichtigem verborgenem Kanal bei 10/3, 16 reelle Majorana mit umgekehrtem zweitem Blatt, Flavour Z3 x Z4. Das Spiegelblatt fixiert dabei zwei Bausteine. Gegen die Daten passt kein exaktes S4-Restsymmetriemuster (Z3 x Z4 gibt sin^2 theta13 = 2/45, doppelt zu groß): Die Familienregel braucht eine kleine Brechung. Das ist eine Auswahl unter gewählten Prinzipien, keine Herleitung.
+
+Alle Prüfungen bestanden: True (8/8)

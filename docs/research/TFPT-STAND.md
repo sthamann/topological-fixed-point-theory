@@ -127,8 +127,8 @@ Ursprung sollte beides zugleich liefern.
 
 ### Kandidat H6: Ursprung von P1 aus einer hintergrundfreien Naht (Exploration 23.11.)
 
-Quelle: `experiments/exploration/2026-11-23-phasenraum-f5-holocode/VERDICT.md` (Stand H6h22),
-Skripte `n1`, `v1`, `y1`, `z1`–`z41`, Lean-Vertrag `experiments/theory-contracts/h6-exakte-teile-20261123/`; Atlasproblem `problem:c3-p1-p2-shared-origin-reconciliation`,
+Quelle: `experiments/exploration/2026-11-23-phasenraum-f5-holocode/VERDICT.md` (Stand H6h23),
+Skripte `n1`, `v1`, `y1`, `z1`–`z43`, Lean-Vertrag `experiments/theory-contracts/h6-exakte-teile-20261123/`; Atlasproblem `problem:c3-p1-p2-shared-origin-reconciliation`,
 Befunde mit Präfix `h6`. Nichts davon ist im Ledger befördert. Prüfstand mit 20 Kriterien: 14
 hergeleitet, 6 unter benannter Lesart, keines gescheitert, offen oder gesetzt.
 
@@ -280,6 +280,14 @@ hergeleitet, 6 unter benannter Lesart, keines gescheitert, offen oder gesetzt.
     p_E² ≈ 6,77 Λ² (Residuum −2,59) und komplexe Polpaare; jeder getestete vollständig monotone Abschneider
     zeigt dasselbe. Positiv ist der Wallach-Kern (Wallach-Menge = 4D-Unitaritätsschranke Δ ≥ 1, Helizität 2 bei
     Δ = 3). M(P) ist die Yukawa-Kopplung an die Higgsrichtung, Γ_pol ihr Fubini–Study-Term. [E/N]
+  - Richtungsentscheid und Prozesssuche (Z42, Z43): Die Dirac-Spektralwirkung erfüllt für jeden Abschneider die
+    Summenregel ∫H_f/x^{3/2} = 0 und scheidet als fundamentale Gravitationsdynamik aus (auch mit κx; schon
+    b = 1/28 < a² verletzt die Positivität); positiv ist ein Schur-Gedächtnis C = 1/x + 1/(x + 10/3). Die zweite
+    Blatthälfte muss orientierungsumkehrend sein (8 − 8 = 0); zwei Bosonenpaare geben den Matrixkern exakt, der aber
+    eine weitere Regel braucht; die Hopf-Windung der Higgsrichtung braucht ein verdrilltes Bündel; der SM-Inhalt
+    hebt die quadratische G-Divergenz auf (48 − 48). Die neue OriginLab-Lane `process_rules` sucht über 53 760 ganze
+    Prozesse: Acht lasttragende Prinzipien wählen Kern ν = 1, Spin-2-Gedächtnis, reelle 16er-Naht mit umgekehrtem
+    Blatt und Familienpaar Z₃ × Z₄; kein exaktes Restsymmetriemuster passt zu den Neutrinodaten. [E/N]
   - Instantonen (Z33): Unter Spin(10) hat ein Einheitsinstanton 4 Eltern- und 12
     Familiennullmoden; mit gesättigten Familiennullmoden entsteht Re[e^{iθ}Φ² C_fam], die Wand ist
     also auch im Kontinuum möglich, bei nackter SO(10) aber ~10⁻¹⁶⁴ unterdrückt. [N]
@@ -381,6 +389,9 @@ hergeleitet, 6 unter benannter Lesart, keines gescheitert, offen oder gesetzt.
     Spektralwirkungs-Graviton mit vollständig monotonem Abschneider ist nicht positiv (Z41); gesucht ist ein
     Spin-2-Sektor in Wallach-Form oder ein anderer Abschneider.
   - Die 4D-Einbettung der reellen Majorana-Chern-Naht (Blatt mit Kante) und ihre μ₄-Kondensation.
+  - Die Herkunft der Prinzipien, die die Prozesssuche verlangt (Z43): konforme Kovarianz des Kerns, Spiegelblatt
+    (umgekehrt und gleichgewichtig) und die Familienorientierung samt kleiner Brechung; dazu die Parameter des
+    positiven Spin-2-Gedächtnisses aus der Prozessalgebra.
   - Die eine Prozessregel Z[J, A, g, Φ], aus der Naht, Eichwirkung und metrische Variation gemeinsam
     folgen.
 

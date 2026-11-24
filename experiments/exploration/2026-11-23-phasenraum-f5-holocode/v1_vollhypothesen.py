@@ -970,6 +970,29 @@ if "H6h2" in H and z1p.exists() and z2p.exists():
                                                                                                      "komplexe Flussnaht G' nur U(5) (Z39-Z41); offen: 4D-Einbettung der "
                                                                                                      "Chernphase und mu4-Kondensation (beide [C] im Altbestand)")
                                                                                 facts["F41_old_stock_spin2"] = Z41["urteil"]
+                                                                                zy = {n: Path(__file__).with_name(f"z{n}_ergebnis.json") for n in (42, 43)}
+                                                                                if all(p.exists() for p in zy.values()):
+                                                                                    T9 = {n: json.loads(p.read_text()) for n, p in zy.items()}
+                                                                                    ok9 = {n: all(T9[n]["checks"].values()) for n in T9}
+                                                                                    H["H6h23"] = dict(H["H6h22"])
+                                                                                    H["H6h23"]["K13"] = (LES if ok9[42] and ok41 else F,
+                                                                                                         "[D] Jacobson; die Dirac-Spektralwirkung ist für jeden "
+                                                                                                         "Abschneider ausgeschlossen (Summenregel Int H/x^1.5 = 0, auch "
+                                                                                                         "mit kappa x; b = 1/28 < a^2 = 9/100, Z42); positiver Ersatz: "
+                                                                                                         "Schur-Gedächtnis C = 1/x + 1/(x+10/3); G aus dem Teilcheninhalt "
+                                                                                                         "nicht bestimmt (48 - 48 = 0)")
+                                                                                    H["H6h23"]["K16"] = (LES if ok9[42] and ok9[43] else F,
+                                                                                                         "[reelle Naht] Chernschicht x 16 (c = 8, Rand E = sin k), E8 aus "
+                                                                                                         "D8 + s; die zweite Blatthälfte muss orientierungsumkehrend sein "
+                                                                                                         "(8 - 8 = 0, Z42); die Prozesssuche wählt die reelle Naht nur mit "
+                                                                                                         "der Klausel Spin(10)_1 (Z43)")
+                                                                                    H["H6h23"]["K18"] = (LES if ok9[42] and ok9[43] else F,
+                                                                                                         "S4: gleiche Restsymmetrie gibt keine Mischung; die Prozesssuche "
+                                                                                                         "findet TBM (Z3 x V4') nur mit theta13 = 0 und mit der Familienuhr "
+                                                                                                         "Z3 x Z4 sin^2 theta13 = 2/45; kein exaktes Muster passt in 3 "
+                                                                                                         "sigma (Z43): die Familienregel braucht eine kleine Brechung "
+                                                                                                         "(TFPT-Kanal phi0 e^-5/6 = 0.0231)")
+                                                                                    facts["F42_direction_and_process_search"] = {n: T9[n]["urteil"] for n in T9}
 
 order = [f"K{i}" for i in range(1, 21)]
 print("Gesamttabelle (P = hergeleitet, L = unter benannter Lesart, F = FAIL, O = OFFEN, E = EINGABE)\n")

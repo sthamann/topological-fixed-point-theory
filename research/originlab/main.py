@@ -50,6 +50,8 @@ FINITE_CONTROLS += ("genesis_rules",)
 CAMPAIGNS += ("genesis_rules",)
 FINITE_CONTROLS += ("genesis_foreign",)
 CAMPAIGNS += ("genesis_foreign",)
+FINITE_CONTROLS += ("process_rules",)
+CAMPAIGNS += ("process_rules",)
 
 
 def atomic_json(path, payload):
@@ -332,6 +334,9 @@ def execute(campaign, root, args, suggestion_rows, retained_rows, prior_question
     if campaign == "genesis_foreign":
         from foreign_universes import run as foreign_run
         return foreign_run(root)
+    if campaign == "process_rules":
+        from process_rules import run as process_run
+        return process_run(root)
     if campaign == "f1_klein_phase_space_double":
         from f1_klein_phase_space_double import controls
         return controls()
@@ -464,7 +469,7 @@ def one_round(args, directory, index, retained, prior_questions, manifest):
 
     # All lanes are independent; the original R113 route is one of them, not a first gate.
     # Source-free generators run first so that no lane is primed by the original source result.
-    first = ("genesis_foreign","genesis_rules","structure_scenarios")
+    first = ("genesis_foreign","genesis_rules","process_rules","structure_scenarios")
     independent = sorted((c for c in args.campaign if c != "f1"),
                          key=lambda c:first.index(c) if c in first else len(first))
     if args.jobs == 1:

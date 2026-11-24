@@ -1,6 +1,86 @@
 # Urteil
 
-## Aktueller Stand: H6h22 — Abgleich mit dem Altbestand und das Graviton der Spektralwirkung (`z41`)
+## Aktueller Stand: H6h23 — Richtungsentscheid und Prozesssuche mit dem Suchprogramm (`z42`, `z43`)
+
+Bilanz unverändert 14 P und 6 L von 20; K13, K16 und K18 sind präzisiert. Anlass sind die externe Analyse
+„H6h23: ein grundlegender Richtungsentscheid“ vom 24.11. und die Frage, ob das Suchprogramm in umgebauter Form den
+TFPT-Prozess schnell absuchen kann. Selbst gerechnet: `z42` mit 27 und `z43` mit 8 Prüfungen, dazu die neue
+OriginLab-Lane `process_rules` mit 8 Tests.
+
+**In einem Satz:**
+- Die Dirac-Spektralwirkung scheidet als fundamentale Gravitationsdynamik aus, für **jeden** Abschneider.
+- Das Suchprogramm lässt sich umbauen. Die neue Lane `process_rules` sucht in drei Sekunden über 53 760 ganze
+  Prozesse und findet mit acht lasttragenden Prinzipien genau einen: Kern ν = 1, positives
+  Spin-2-Gedächtnis, reelle 16er-Naht mit umgekehrtem zweitem Blatt, Familienpaar Z₃ × Z₄.
+- Der Flavour-Teil passt in dieser exakten Form nicht zu den Daten.
+
+**1. Prüfung der Analyse (`z42`).**
+- **Summenregel.**
+  - a(x) = (3 + 12/x)F(x) − 12/x ist derselbe Faktor wie in z41.
+  - Die Identität H_f = 3x∫F₁ + 12[J − J(0)] = 6[J − J(0)] − 12xJ′ gilt numerisch für fünf Abschneider, auch mit
+    Vorzeichenwechsel.
+  - ∫₀^X H_f/x^{3/2} dx ist exakt der Randterm −12[J(X) − J(0)]/√X, der wie X^{−1/2} gegen null geht.
+  - Euklidische Nullstellen: e^{−u} bei 6,768; Stufe bei 10/3; (1 − u)₊⁴ bei 1,146; mit Vorzeichenwechsel zwei
+    (1,485 und 25,58 bzw. 0,326 und 18,52).
+  - Folge: Kein Abschneider gibt einen positiven Spin-2-Kern, auch nicht mit einem Zusatzterm κx (vollständige
+    Bernstein-Funktion).
+- **Koeffizienten.** H = x − ax² + bx³ gibt C = 1/x + a + (a² − b)x + …, also muss b ≥ a² gelten. TFPT hat
+  b = 1/28 < 9/100, C = 1/x + 3/10 + 19/350·x: Die Positivität ist schon in dieser Ordnung verletzt.
+- **Schur-Ersatz.** H = x − w x²/(x + m) ist positiv genau für 0 < w < 1. w = 1/2, m = 5/3 gibt
+  C = 1/x + 1/(x + 10/3) und behält a = 3/10. Das ist eine Einparameterfamilie, keine Herleitung.
+- **Reelle Chernschicht.**
+  - QWZ-Chernzahlen 0, −1, +1, 0 für m = −3, −1, 1, 3 auf 16², 32², 64².
+  - Rand bei m = −1: E = sin k, Abfall 1 − cos k, Spinor (1, i). Mit 16 Kopien ist c = 8.
+  - Zwei gleich orientierte Schnitte gäben 16; die zweite Blatthälfte muss also **orientierungsumkehrend** sein.
+- **Paarzustände.**
+  - Zwei Bosonenpaare geben ⟨W|Z⟩ = Σ_k h_k(W†Z) = 1/det(I − W†Z) mit dem Hardy-Kern auf jedem Rang-1-Schnitt.
+  - Die Marken erzeugen M₂(ℂ) über −2i[P_x, P_y] = σ_z.
+  - K + ε det Z ·det W̄ ist ebenso positiv und auf Rang 1 gleich. Der Kern braucht also eine weitere Regel.
+- **Higgs.**
+  - M M† = (I − P)⊗Y_uY_u† + P⊗Y_dY_d† = I⊗A + (2P − I)⊗B gilt exakt.
+  - Ein überall nichtverschwindendes globales Dublett hat Chernzahl 0. Die Hopf-Windung braucht also ein
+    verdrilltes Bündel; das passt zur Altbestand-Klasse „schwache Determinantenlinie vom Grad 1“.
+- **G.** Die a₁-Gewichte sind Skalar 1 − 6ξ, Weyl +1 und Vektor mit Geistern −4. Der SM-Inhalt mit ν_R gibt
+  48 − 48 = 0, Rest 4(1 − 6ξ). Der Teilcheninhalt legt G nicht fest.
+- **Spiegellücke.** Wegen Q_ij ≤ Q_i + Q_j gilt H_mir ≥ (J − 96|t|) ΣQ_i; ein Zweiplatzmodell bestätigt das.
+- **Flavour.**
+  - Kommutanten S₄ → 1, V₄ → 3, Z₄ → 3, wobei der Vierzyklus die Familiencharaktere −1, i, −i hat.
+  - Gleiche Restsymmetrie heißt: keine Mischung.
+
+**2. Das umgebaute Suchprogramm (`research/originlab/process_rules.py`, `z43`).**
+- **Aufbau.** Die Lane nutzt die Regelsuche der Genesis-Lane (`genesis_rules.search`) auf den offenen Bausteinen des
+  Prozesses. Sie ist in `main.py` und `autonomy.py` als quellfreier Generator eingehängt und hat eigene Tests.
+- **Bausteine.**
+  - **Matrixkern:** Hardy plus Wellengleichung oder Kovarianz wählt ν = 1, ε = 0. Hardy allein lässt den det-Term
+    offen.
+  - **Spin 2:** Alle Spektralwirkungen und der Ledger-Ansatz x e^x fallen durch. Positiv und mit a = 3/10 sind drei
+    Schur-Kerne. Erst das Spiegelgewicht (verborgener Kanal mit gleichem Residuum) wählt C = 1/x + 1/(x + 10/3).
+  - **Naht:** Die reelle 16er-Naht mit umgekehrtem Blatt braucht die Klausel Spin(10)₁. Ohne sie gewinnt die
+    einfachere komplexe Flussnaht.
+  - **Flavour:** TBM entsteht als Z₃ × V₄′, aber nur mit θ₁₃ = 0. Die Familienuhr Z₃ × Z₄ gibt keine Null:
+    (2/45, 1/3, 28/45).
+- **Ganzer Prozess.** Das zusammengesetzte Universum hat 53 760 Prozesse und 512 Regeln. Die längste minimale Regel
+  hat **acht Prinzipien**: Hardy, Kovarianz, Positivität, Dirac-Spin-2, Spiegelblatt, reelle Naht, Familienmischung,
+  Familienuhr. Sie wählen genau einen Prozess.
+  - Jedes Prinzip trägt Last. Ohne Hardy wird ν = 0 gewählt, ohne reelle Naht die komplexe 8er-Naht, ohne Positivität
+    eine 10er-Naht; ohne die übrigen wird die Auswahl mehrdeutig.
+  - **Spiegelblatt** (zweite Blatthälfte umgekehrt und gleichgewichtig) legt zwei Bausteine zugleich fest.
+- **Daten (außerhalb der Lane).** Kein exaktes Restsymmetriemuster der nichtentarteten abelschen S₄-Untergruppen passt
+  in die ungefähren 3σ-Bereiche (NuFIT 6.0, gerundet). Z₃ × Z₄ gibt sin²θ₁₃ = 2/45 ≈ 0,044, etwa doppelt zu groß. Die
+  Familienregel braucht eine kleine Brechung, wie TFPTs Kanal φ₀e^{−5/6} = 0,0231.
+
+**3. Was das für H6 heißt.**
+- **Gravitation:** Die Spektralwirkung bleibt höchstens eine effektive Entwicklung. Fundamental ist ein positiver
+  Prozess mit Gedächtnis (Schur/Feshbach). Dessen Parameter müssen aus der Prozessalgebra kommen.
+- **Struktur des TFPT-Prozesses:** Die Suche zeigt, welche Prinzipien er liefern muss. Vier davon stehen schon im
+  Bestand: Hardy (Toeplitz-Index), Positivität, Dirac-Korrektur, reelle Naht (SEAM.S3). Neu als Forderung sind
+  Kovarianz, Spiegelblatt und die Familienorientierung samt Brechung.
+- **Suchprogramm:** Es ist jetzt ein Werkzeug zum Absuchen ganzer Prozesse. Neue Kandidaten oder Prinzipien sind je
+  ein Enumerator bzw. eine Klausel.
+- **Grenze:** Das ist eine Auswahl unter gewählten Prinzipien, keine Herleitung. Die Prinzipien selbst müssen aus der
+  Prozessregel Z[J, A, g, Φ] folgen.
+
+## Davor: H6h22 — Abgleich mit dem Altbestand und das Graviton der Spektralwirkung (`z41`)
 
 Bilanz unverändert 14 P und 6 L von 20; K13, K15 und K16 sind präzisiert. Anlass ist der Auftrag, den
 Altbestand nach Lösungen der offenen Punkte zu durchsuchen. Gesucht wurde mit dem Atlas; selbst gerechnet

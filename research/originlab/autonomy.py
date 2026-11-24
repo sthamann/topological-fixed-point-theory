@@ -207,6 +207,9 @@ def execute(spec,root):
     if lane=="genesis_foreign":
         from foreign_universes import run
         return run(root)
+    if lane=="process_rules":
+        from process_rules import run
+        return run(root)
     if lane=="scenario_proposals":
         from scenario_model import propose
         catalogue = {name:{"required":sorted(need),"optional":sorted(extra)}
@@ -470,6 +473,7 @@ def specifications(resolution,domain,toolchain,focus,seed_research=True,packets=
     # Independent generators first: they need no TFPT source and no original R113 call.
     yield 100,{"lane":"genesis_foreign"}
     yield 100,{"lane":"genesis_rules"}
+    yield 100,{"lane":"process_rules"}
     yield 100,{"lane":"structure_scenarios"}
     yield 100,{"lane":"atlas_scenarios"}
     # The original R113 source is one route among others, tested but not the gatekeeper.

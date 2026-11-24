@@ -54,7 +54,7 @@ and reaches `CANDIDATE_PROVED`; see `F1-CANDIDATE-CONTRACT.md`.
 
 The original R113 endpoint call is one route (`original_source`). Since
 23 November 2026 it runs after the source-free generators
-(`genesis_foreign`, `genesis_rules`, `structure_scenarios`,
+(`genesis_foreign`, `genesis_rules`, `process_rules`, `structure_scenarios`,
 `atlas_scenarios`) in both `main.py` and the supervisor. The frontier
 `state` follows the acceptance evidence (`OPEN`, `CANDIDATE_PROVED`,
 `F1_PROVED`); the R113 status is reported separately as

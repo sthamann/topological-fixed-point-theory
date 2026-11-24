@@ -1,0 +1,63 @@
+Teil 1: Summenregel der Spektralwirkung
+   [ok] a(x) = (3 + 12/x) F(x) - 12/x ist derselbe Faktor wie 1 + 12 x g(x) aus Z41
+   e^-u            : Identität H = 6(J-J0) - 12 x J' bis 2.4e-10; Int_0^60^2 H/x^1.5 = +0.1997, Randterm +0.1999; euklidische Nullstellen [6.7681]
+   Stufe 1_[0,1]   : Identität H = 6(J-J0) - 12 x J' bis 1.2e-05; Int_0^60^2 H/x^1.5 = +0.0998, Randterm +0.1000; euklidische Nullstellen [3.3333]
+   (1-u)_+^4       : Identität H = 6(J-J0) - 12 x J' bis 7.0e-07; Int_0^60^2 H/x^1.5 = +0.0067, Randterm +0.0067; euklidische Nullstellen [1.1461]
+   (1-u/1.5) e^-u  : Identität H = 6(J-J0) - 12 x J' bis 2.6e-10; Int_0^60^2 H/x^1.5 = -0.0666, Randterm -0.0666; euklidische Nullstellen [1.4853, 25.5813]
+   (1-u/1.1) e^-u  : Identität H = 6(J-J0) - 12 x J' bis 2.9e-10; Int_0^60^2 H/x^1.5 = -0.1634, Randterm -0.1634; euklidische Nullstellen [0.3264, 18.5182]
+   [ok] partielle Integration: 3x Int F_1 + 12 [J - J(0)] = 6 [J - J(0)] - 12 x J' für alle fünf Abschneider (< 2e-5, Differenzenquotient)
+   [ok] Summenregel: Int_0^X H/x^{3/2} dx = -12 [J(X) - J(0)]/sqrt X (Randterm, -> 0 wie X^{-1/2}); numerisch bis X = 3600 auf 1e-3 genau
+   [ok] jede Variante hat eine euklidische Nullstelle; e^-u bei 6.768, Stufe bei 10/3, (1-u)_+^4 bei 1.146, mit Vorzeichenwechsel zwei Nullstellen (1.485 und 25.58; 0.326 und 18.52)
+   [Befund: ja] Innerhalb der Dirac-Spektralwirkung kann kein Abschneider (auch mit Vorzeichenwechsel) einen positiven Spin-2-Kern geben
+
+Teil 2: Koeffizientenbedingung und positiver Schur-Ersatz
+   [ok] H = x - a x^2 + b x^3: C = 1/x + a + (a^2 - b) x + ...; vollständige Monotonie des Restes verlangt b >= a^2
+   [ok] TFPT: C = 1/x + 3/10 + 19/350 x + ...: b = 1/28 < a^2 = 9/100, die Positivität ist schon in dieser Ordnung verletzt
+   [ok] Schur: H = x - w x^2/(x+m) gibt C = 1/x + (w/(1-w))/(x + m/(1-w)), positiv genau für 0 < w < 1
+   [ok] w = 1/2, m = 5/3: C = 1/x + 1/(x + 10/3), H = x - 3x^2/10 + 9x^3/50 + ...; b = 9/50 >= a^2 = 9/100
+   [ok] die Matrix [[x, x/sqrt2],[x/sqrt2, x+5/3]] ist für x > 0 positiv und ihr Schur-Komplement ist H
+   [ok] Einparameterfamilie: a = w/m = 3/10 legt nur m = 10 w/3 fest; die Polmasse m/(1-w) ist nicht eindeutig (w = 1/2 gibt 10/3)
+
+Teil 3: Reelle Chernschicht und E8-Kondensation
+   Chernzahlen: {'m=-3,N=16': 0, 'm=-3,N=32': 0, 'm=-3,N=64': 0, 'm=-1,N=16': -1, 'm=-1,N=32': -1, 'm=-1,N=64': -1, 'm=1,N=16': 1, 'm=1,N=32': 1, 'm=1,N=64': 1, 'm=3,N=16': 0, 'm=3,N=32': 0, 'm=3,N=64': 0}
+   [ok] Chernzahlen 0, -1, +1, 0 für m = -3, -1, 1, 3 auf 16^2, 32^2, 64^2 (Vorzeichen = Orientierung)
+   Randzustand m = -1 (offene Kante): (E, |psi_n+1/psi_n|, Spinor 2. Komp.) = {0.3: (0.29552020666133944, 0.04466351087439157, (-1.759446142877541e-15+0.9999999999999982j)), 0.8: (0.7173560908995225, 0.3032932906528351, (-2.376809669950073e-16+0.9999999999999986j)), 1.2: (0.932039085967225, 0.6376422455233235, (-1.298563593128781e-16+1.0000000000000029j))}
+   [ok] Randzustand bei m = -1: E = sin k, Abfall |psi_{n+1}/psi_n| = 1 - cos k, Spinor ~ (1, i)
+   [ok] 16 reelle Kopien: |c_-| = 16/2 = 8; Gewichte der D8-Sektoren 0, 1/2, 1, 1; 112 + 128 = 240 Wurzeln
+   [ok] zwei gleich orientierte E8-Schnitte geben c = 16 != 0, orientierungsumkehrend 8 - 8 = 0
+   [Befund: ja] Die zweite Blatthälfte muss die chirale Orientierung umkehren (E8 <-> E8-bar), sonst ist ein Z2-Schnitt inkonsistent
+
+Teil 4: Marken, Paarzustände und der Matrixkern
+   [ok] -2i [P_x+, P_y+] = sigma_z: die vier Marken erzeugen M_2(C) (Herm(2) = span{I, sx, sy, sz})
+   Fehler der Paarzustands-Reihe gegen 1/det(I - W^+ Z): {2: '2.27e-02', 4: '1.87e-03', 8: '1.28e-05', 12: '8.69e-08', 30: '1.11e-16'}
+   [ok] <W|Z> = Sum_k h_k(W^+ Z) = 1/det(I - W^+ Z) (Bosonen a_i, b_j; Cauchy-Identität), Fehler fällt geometrisch
+   [ok] Rang-1-Schnitt Z = z P_i, W = w P_i gibt 1/(1 - z conj w) (Hardy) für jede der vier Marken
+   [ok] Nicht-Eindeutigkeit: K + eps det Z conj det W ist positiv (eps = 0.7) und auf Rang-1-Matrizen gleich K
+   [Befund: ja] Hardy auf allen Rang-1-Schnitten legt den Matrixkern nicht fest; dazu braucht es eine weitere Regel (z. B. Kovarianz)
+
+Teil 5: Yukawa-Projektoridentität und globale Windung
+   [ok] M M^+ = (I-P) x Y_u Y_u^+ + P x Y_d Y_d^+ = I x A + (2P - I) x B (nichtkommutierende komplexe Yukawas)
+   [ok] Hopf-Projektor: Berry-Krümmung F = (1/2) sin theta, (1/2pi) Int F = 1 (Chernzahl 1)
+   [ok] ein überall nichtverschwindendes globales Dublett H trivialisiert seine Linie: P = HH^+/|H|^2 hat Chernzahl 0, nie 1
+   [Befund: ja] Die geometrische Higgsrichtung braucht ein verdrilltes Eichbündel (oder einen eigenen Projektor); das passt zur Altbestand-Klasse 'schwache Determinantenlinie vom Grad 1'
+
+Teil 6: Induzierte Newtonkonstante
+   [ok] Gewichte aus a_1 = tr(R/6 - U): Skalar 1 - 6 xi, Weyl-Fermion +1, Eichvektor mit Geistern -4
+   [ok] SM mit nu_R: 4 Higgs, 48 Weyl, 12 Vektoren: 48 - 48 = 0, Rest 4(1 - 6 xi), bei xi = 1/6 null
+   [Befund: ja] Der Teilcheninhalt legt G nicht fest (quadratische Divergenz hebt sich nahezu auf); Jacobson eta = 1/(4G) braucht eine unabhängige Entropiedichte
+
+Teil 7: Spiegellücke
+   [ok] Q_ij = Q_i + Q_j - Q_i Q_j <= Q_i + Q_j und Q T Q >= -||T|| Q; kubisch Grad 6: H >= (J - 6 * 16 |t|) Sum Q_i
+   Zweiplatzmodell (2 Moden je Platz), J = 1: (Grundenergie, Lücke) = {0.005: (np.float64(4.216737291526446e-16), np.float64(0.9999750006249676)), 0.02: (np.float64(1.4208056274618754e-16), np.float64(0.9996001598721276)), 0.05: (np.float64(3.220355622883216e-16), np.float64(0.9975062189439545))}
+   [ok] Zweiplatzmodell: Grundenergie 0, Lücke über der Schranke J - 2 * modes * |t| (Grad 1)
+
+Teil 8: Flavour-Kommutanten in S4
+   Kommutantendimensionen auf dem Familientriplett: {'S4': np.int64(1), 'V4': np.int64(3), 'Z4': np.int64(3)}; Eigenwerte des Vierzyklus [-1.+0.j  0.-1.j  0.+1.j]
+   [ok] Kommutanten S4 -> 1, V4 -> 3, Z4 -> 3; Vierzyklus mit -1, i, -i (die Familiencharaktere)
+   [ok] zwei V4-invariante Massenoperatoren kommutieren: keine Mischung ohne zweite, anders orientierte Symmetrie
+   [Befund: ja] Flavourmischung verlangt zwei verschieden orientierte Restsymmetrien; die relative Orientierung ist die fehlende Regel
+
+Urteil
+   Die zehnte Analyse hält in allen geprüften Punkten. Die Dirac-Spektralwirkung erfüllt für jeden Abschneider die Summenregel Int H_f/x^{3/2} = 0 (partielle Integration H = 6[J - J(0)] - 12 x J', numerisch für fünf Abschneider, auch mit Vorzeichenwechsel); ihr Spin-2-Kern wird also immer negativ, auch mit einem Zusatzterm kappa x. Schon die Niedrigenergiekoeffizienten verletzen b >= a^2 (1/28 < 9/100). Der Schur-Ersatz C = 1/x + 1/(x + 10/3) ist positiv und behält a = 3/10, ist aber eine Einparameterfamilie. Die reelle Chernschicht (QWZ, Chern +-1, Rand E = sin k mit Profil (1 - cos k)^n) gibt mit 16 Kopien c = 8; zwei Schnitte gleicher Orientierung geben 16, die zweite Blatthälfte muss umkehren. Die Paarzustände zweier Bosonenpaare geben exakt 1/det(I - W^+ Z) mit dem Hardy-Kern auf jedem Rang-1-Schnitt; der Kern ist ohne weitere Regel nicht eindeutig. M M^+ = I x A + (2P - I) x B gilt exakt; ein globales Dublett hat Chernzahl 0, die Hopf-Windung braucht ein verdrilltes Bündel. Der SM-Inhalt hebt die quadratische G-Divergenz bis auf 4(1 - 6 xi) auf. Die Spiegellücke J - 96|t| folgt aus Q_ij <= Q_i + Q_j. Gleiche Restsymmetrie heißt keine Mischung.
+
+Alle Prüfungen bestanden: True (27/27)

@@ -15,6 +15,30 @@ R113 mark": that is a scoped statement about the original route, not a
 defect of the lane. A new origin model is checked through its own candidate
 contract ([F1-CANDIDATE-CONTRACT.md](F1-CANDIDATE-CONTRACT.md)).
 
+## Process rule search, 24 November 2026
+
+`process_rules.py` turns the genesis engine (`genesis_rules.search`) on the open slots of the TFPT process instead of
+on number-free structures. Four universes hold computed candidates: positive matrix kernels det(I - W^+ Z)^-nu with an
+optional det Z conj det W term, spin-2 inverse propagators (Dirac spectral action with three cutoffs, the ledger's entire
+ansatz, local truncations, Einstein, Schur complements of positive two-channel pencils), seam stacks of real or complex
+Chern layers with equally or reversely oriented second sheet half, and pairs of residual family symmetries in S4. A fifth,
+composed universe takes one candidate per slot (53 760 whole processes) and searches over nine cross-slot principles
+(Hardy slice, conformal covariance, positivity everywhere, Dirac spin-2 correction, mirror sheet, real seam, E8 seam,
+family mixing, family clock). Run time about three seconds.
+
+First run: the longest minimal rule has eight principles, each load bearing, and selects one whole process: kernel
+nu = 1, spin-2 kernel C = 1/x + 1/(x + 10/3), sixteen real Majorana layers with reversed second sheet, family pair
+Z3 x Z4. One principle (mirror sheet) fixes two slots. The selection is a statement about the universes and the chosen
+principles, not a derivation; the flavour slot is compared with data outside the lane (H6 exploration z43).
+
+```bash
+.venv/bin/python -B research/originlab/process_rules.py > /tmp/process-rules.json
+.venv/bin/python -B research/originlab/main.py --campaign process_rules --jobs 1 --out /tmp/originlab-process
+```
+
+A new slot is one enumerator with computed clauses, one `search(...)` call in `run`, and its clauses mapped onto the
+principles in `composed_process`. Tests: [test_process_rules.py](test_process_rules.py).
+
 ## Foreign universes, 20 November 2026 (Exploration mode)
 
 `foreign_universes.py` runs the same rule search in universes without TFPT vocabulary: all 142 connected graphs
