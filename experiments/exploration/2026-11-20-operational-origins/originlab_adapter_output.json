@@ -1,0 +1,204 @@
+{
+  "uses_existing_search": "research/originlab/genesis_rules.py::search",
+  "sector_rules": {
+    "objects": 36,
+    "clauses": [
+      "both_noncommutative",
+      "nonisomorphic"
+    ],
+    "rules": 4,
+    "verdicts": {
+      "EMPTY": 0,
+      "UNIQUE": 4,
+      "AMBIGUOUS": 0
+    },
+    "unique_selections": [
+      {
+        "selected": [
+          1,
+          1
+        ],
+        "shortest_rule_length": 0,
+        "minimal_rules": [
+          []
+        ],
+        "ablation": {}
+      },
+      {
+        "selected": [
+          1,
+          2
+        ],
+        "shortest_rule_length": 1,
+        "minimal_rules": [
+          [
+            "nonisomorphic"
+          ]
+        ],
+        "ablation": {
+          "nonisomorphic without nonisomorphic": [
+            "UNIQUE",
+            [
+              [
+                1,
+                1
+              ]
+            ],
+            2
+          ]
+        }
+      },
+      {
+        "selected": [
+          2,
+          2
+        ],
+        "shortest_rule_length": 1,
+        "minimal_rules": [
+          [
+            "both_noncommutative"
+          ]
+        ],
+        "ablation": {
+          "both_noncommutative without both_noncommutative": [
+            "UNIQUE",
+            [
+              [
+                1,
+                1
+              ]
+            ],
+            2
+          ]
+        }
+      },
+      {
+        "selected": [
+          2,
+          3
+        ],
+        "shortest_rule_length": 2,
+        "minimal_rules": [
+          [
+            "both_noncommutative",
+            "nonisomorphic"
+          ]
+        ],
+        "ablation": {
+          "both_noncommutative+nonisomorphic without nonisomorphic": [
+            "UNIQUE",
+            [
+              [
+                2,
+                2
+              ]
+            ],
+            4
+          ],
+          "both_noncommutative+nonisomorphic without both_noncommutative": [
+            "UNIQUE",
+            [
+              [
+                1,
+                2
+              ]
+            ],
+            3
+          ]
+        }
+      }
+    ]
+  },
+  "cone_rules": {
+    "objects": 7,
+    "clauses": [
+      "nonzero_equivariant_bracket"
+    ],
+    "rules": 2,
+    "verdicts": {
+      "EMPTY": 0,
+      "UNIQUE": 2,
+      "AMBIGUOUS": 0
+    },
+    "unique_selections": [
+      {
+        "selected": 2,
+        "shortest_rule_length": 0,
+        "minimal_rules": [
+          []
+        ],
+        "ablation": {}
+      },
+      {
+        "selected": 3,
+        "shortest_rule_length": 1,
+        "minimal_rules": [
+          [
+            "nonzero_equivariant_bracket"
+          ]
+        ],
+        "ablation": {
+          "nonzero_equivariant_bracket without nonzero_equivariant_bracket": [
+            "UNIQUE",
+            [
+              2
+            ],
+            2
+          ]
+        }
+      }
+    ]
+  },
+  "packing_constraints": {
+    "objects": 40,
+    "clauses": [
+      "one_error_singleton_bound",
+      "perfect_nondegenerate_packing"
+    ],
+    "rules": 4,
+    "verdicts": {
+      "EMPTY": 0,
+      "UNIQUE": 2,
+      "AMBIGUOUS": 2
+    },
+    "unique_selections": [
+      {
+        "selected": [
+          5,
+          2
+        ],
+        "shortest_rule_length": 1,
+        "minimal_rules": [
+          [
+            "perfect_nondegenerate_packing"
+          ]
+        ],
+        "ablation": {
+          "perfect_nondegenerate_packing without perfect_nondegenerate_packing": [
+            "AMBIGUOUS",
+            [
+              [
+                1,
+                2
+              ],
+              [
+                1,
+                3
+              ],
+              [
+                1,
+                4
+              ],
+              [
+                1,
+                5
+              ]
+            ],
+            1
+          ]
+        }
+      }
+    ]
+  },
+  "scope": "finite rule ablation; conditional minimality, not physical selection"
+}
