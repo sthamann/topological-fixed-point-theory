@@ -1,0 +1,35 @@
+v1036  PS.THRESHOLD.02/PS.PROTON.02 recount: real 45 vs v266's complex (15,1,1), 1 and 2 loops
+  [PASS] CALIBRATION [E]: general formula gives SM b_i=(41/10,-19/6,-7) and the SM b_ij [[199/50,27/10,44/5],[9/10,35/6,12],[11/10,9/2,-26]] exactly; PS minimal ('-31/3', '-3', '-7/3') = v266 B_MIN (-31/3,-3,-7/3), two real (15,1,1) ('-9', '-3', '-7/3') = v266 B_45 (-9,-3,-7/3)
+  [PASS] COUNTING ERROR CONFIRMED [E]: Delta b4(real 15)=T(15)/6=2/3, Delta b4(complex 15)=4/3 = v266's B_45-B_MIN; the PS content of the 248 (dim 248) holds exactly 1 (15,1,1), inside the real (45,1) (v247; v266 check 5 itself says 'only ONE 45') -- v266 counts two real adjoints
+
+  one loop (v266 method):
+    minimal (v266)                       M_PS=4.189e+13 (kappa 1.37)  M_GUT=2.425e+15  aU^-1=45.06  tau_p=4.39e+33 yr  [1.5e+33..1.3e+34]  EXCLUDED (even x3 band top < Super-K)
+    +(15,1,1) complex (v266 = 2 real)    M_PS=4.016e+13 (kappa 1.31)  M_GUT=5.887e+15  aU^-1=45.48  tau_p=1.55e+35 yr  [5.2e+34..4.7e+35]  Super-K-safe (x3 band bottom > Super-K)
+    +(15,1,1) real (E8: one 45)          M_PS=4.111e+13 (kappa 1.34)  M_GUT=3.610e+15  aU^-1=45.25  tau_p=2.17e+34 yr  [7.2e+33..6.5e+34]  band-marginal (band straddles Super-K)
+  [PASS] ONE LOOP SIDE BY SIDE [E]: v266 reproduced (minimal M_PS=4.19e+13, M_GUT=2.43e+15; complex 15 M_PS=4.02e+13, M_GUT=5.89e+15); real 45: M_PS=4.11e+13 (kappa 1.34), M_GUT=3.61e+15, alpha_U^-1=45.25, tau_p=2.17e+34 yr
+  [PASS] ONE LOOP REAL 45 -- v266 CHECK 3 FAILS [X]: tau_p=2.17e+34 yr < Super-K 2.4e+34 centrally; band [7.2e+33, 6.5e+34] straddles the bound, so v266's rule 'tau/3 > Super-K' is violated (v266 had 1.55e+35 with the complex count); band-marginal, not proton-safe
+    alpha_s error (+-0.065 in alpha_3^-1), real 45, 1L: tau_p = 1.65e+34 ... 2.86e+34 yr
+
+  2L-SM + 1L-PS hybrid (experiment inputs): minimal M_PS=3.741e+13 M_GUT=1.291e+15 tau_p=3.43e+32; +(15,1,1) complex M_PS=3.606e+13 M_GUT=2.799e+15 tau_p=7.72e+33; +(15,1,1) real M_PS=3.680e+13 M_GUT=1.827e+15 tau_p=1.39e+33
+  [PASS] TWO-LOOP CALIBRATION [E]: hybrid reproduces experiments/gauge-unification/results/pati_salam.json (M_PS, M_GUT of minimal and complex-15 to 0.02%); RK4 chord-Newton vs scipy DOP853+fsolve (full 2L, real 45) agree to 1.6e-10
+
+  full two loops (SM 2L + y_t, PS 2L, tree matching):
+    minimal (v266)                       M_PS=3.692e+13 (kappa 1.21)  M_GUT=1.193e+15  aU^-1=44.44  tau_p=2.50e+32 yr  [8.3e+31..7.5e+32]  EXCLUDED (even x3 band top < Super-K)  (res 2e-14)
+    +(15,1,1) complex (v266 = 2 real)    M_PS=3.538e+13 (kappa 1.16)  M_GUT=2.753e+15  aU^-1=44.83  tau_p=7.21e+33 yr  [2.4e+33..2.2e+34]  EXCLUDED (even x3 band top < Super-K)  (res 1e-14)
+    +(15,1,1) real (E8: one 45)          M_PS=3.623e+13 (kappa 1.18)  M_GUT=1.729e+15  aU^-1=44.61  tau_p=1.11e+33 yr  [3.7e+32..3.3e+33]  EXCLUDED (even x3 band top < Super-K)  (res 0e+00)
+  [PASS] TWO LOOPS KILL BOTH v266 CONTENTS [X]: minimal tau_p=2.50e+32, complex 15 7.21e+33, real 45 1.11e+33 yr -- all below Super-K even at the top of the x3 band (the repository's own hybrid gave 7.7e+33 for the complex count)
+    alpha_s error, real 45, 2L: tau_p = 8.58e+32 ... 1.44e+33 yr (x3 band top 4.3e+33 < Super-K)
+  [PASS] PS TOP YUKAWA DROPS OUT [E]: the same pair counting gives the SM coefficients ('17/10', '3/2', '2') = (17/10,3/2,2) and for the PS bidoublet Yukawa ('4', '4', '4'), equal in all three PS factors -> no shift of M_PS, M_GUT; alpha_U^-1 moves by <= 0.0037
+
+  E8 content scan, two loops: 13440 contents, 13440 converged; Super-K-safe central 193, x3 band 556
+    kappa in [1.0, 1.7]: 7616 contents; Super-K-safe central 11, x3 band 101; band-safe tau_p = 8.74e+33 ... 3.55e+34 yr, kappa = 1.00 ... 1.43, band top max 1.06e+35 (Hyper-K 1.4e+35; band tops above 1e35: 4)
+    every band-safe kappa-band content has a15_r=1: True; t6_r >= 4; without the (15,1,1) the kappa-band maximum is tau_p=3.86e+33 yr (band top 1.16e+34)
+    one-loop scan for contrast: kappa-band Super-K-safe central 1331, x3 band 2902 (loop order decides)
+    largest M_GUT overall: 1.13e+16 GeV (kappa 0.38, tau_p 2.1e+36 yr); scan point = real-45 content: M_GUT=1.729e+15 (direct 1.729e+15)
+      central survivor: {'bd_r': 1, 't6_r': 6, 's412_c': 1, 'a15_r': 1}  kappa=1.13  M_GUT=4.09e+15  tau_p=3.55e+34 yr
+      central survivor: {'bd_r': 1, 't6_r': 6, 's412_c': 2, 's421_c': 1, 'a15_r': 1}  kappa=1.13  M_GUT=4.10e+15  tau_p=3.52e+34 yr
+      central survivor: {'bd_r': 1, 't6_r': 6, 's412_c': 3, 's421_c': 2, 'a15_r': 1}  kappa=1.13  M_GUT=4.12e+15  tau_p=3.50e+34 yr
+      central survivor: {'bd_r': 1, 't6_r': 6, 's412_c': 4, 's421_c': 3, 'a15_r': 1}  kappa=1.13  M_GUT=4.14e+15  tau_p=3.48e+34 yr
+  [PASS] E8 CONTENT SCAN [N]: two loops, 13440 contents (all converged: True); kappa in [1,1.7]: 11 Super-K-safe centrally, 101 in the x3 band, tau_p = 8.7e+33 ... 3.5e+34 yr at kappa <= 1.43; all of them need the real (15,1,1) AND >= 4 real (6,1,1) at M_PS (without the 15: max 3.9e+33 yr); minimal + real 15 is not among them; the band top 1.06e+35 stays under the Hyper-K reach 1.4e+35
+  [PASS] RESIDUALS [O]: tree matching at M_PS and M_GUT (no MS-bar threshold constants), step thresholds, split multiplets in the scan (survival hypothesis), the x3 hadronic band, and the gauging fork (QFT4D.FORK.01) stay open; none of them is a fit knob for the v266 verdict
+--- v1036 PS recount: v266 counts (15,1,1) complex; real 45 -> band-marginal (1L), excluded (2L): 9 passed, 0 failed ---

@@ -5,11 +5,13 @@ Commit 4ac3cc23f) hat nebenbei gefunden, dass `v266_ps_threshold_proton.py` die 
 (15,1,1) doppelt zählt. Dieser Bericht prüft das unabhängig und schlägt neue Ledgertexte vor.
 **Das Ledger ist nicht geändert; die Entscheidung liegt beim Nutzer.**
 
-Prüfskript: [`verification/v1036_ps_proton_real45.py`](../../../verification/v1036_ps_proton_real45.py),
-eigene Gruppentheorie (Brüche) und eigene Löser, keine Übernahme aus z25.
+Prüfskript: [`v1036_ps_proton_real45.py`](v1036_ps_proton_real45.py) in diesem Ordner, Ausgabe
+[`ausgabe_v1036.txt`](ausgabe_v1036.txt); eigene Gruppentheorie (Brüche) und eigene Löser, keine
+Übernahme aus z25. Das Skript liegt bis zur Ledgerentscheidung bewusst nicht unter `verification/`
+(siehe Abschnitt 7); es lädt `tfpt_constants` von dort.
 
 ```bash
-cd verification && ../.venv/bin/python -B v1036_ps_proton_real45.py   # 9 passed, 0 failed, ~11 s
+.venv/bin/python -B experiments/theory-contracts/ps-proton-real45-20261124/v1036_ps_proton_real45.py   # 9 passed, 0 failed, ~11 s
 ```
 
 ## Urteil
@@ -184,11 +186,14 @@ Weitere Stellen ohne Ledger, die die alten Zahlen tragen:
 
 ## 7. Einbindung von v1036 (nach der Ledgerentscheidung)
 
-`audit_sync.py` meldet v1036 jetzt als „nicht in run_all.py registriert“. Außerdem ist
-`website/lib/discipline.ts` veraltet, weil das Skript mitgezählt wird. Die Registrierung setzt voraus,
-dass eine Ledgerzeile v1036 nennt; `make_script_index.py` prüft das. Deshalb ist v1036 bewusst noch
-nicht registriert. Nach der Freigabe:
+Unter `verification/` meldete `audit_sync.py` v1036 als „nicht in run_all.py registriert“, und
+`website/lib/discipline.ts` wurde veraltet. Die Registrierung setzt voraus, dass eine Ledgerzeile
+v1036 nennt; `make_script_index.py` prüft das. Deshalb liegt das Skript bis zur Freigabe in diesem
+Ordner (Nummer v1036 reserviert), und das Audit von main bleibt bei den zwei älteren
+`F.wolfram`-Meldungen. Nach der Freigabe:
 
+0. Skript nach `verification/v1036_ps_proton_real45.py` zurückverschieben und die
+   `sys.path`-Zeile entfernen.
 1. Ledgerspalte `script` von PS.THRESHOLD.02 und PS.PROTON.02 auf
    `v266_ps_threshold_proton.py; v1036_ps_proton_real45.py` setzen.
 2. Eintrag in `verification/run_all.py` (`MODULES`) und Zeile in `verification/script_registry.csv`.

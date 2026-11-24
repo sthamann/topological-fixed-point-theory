@@ -67,7 +67,9 @@ import numpy as np
 from scipy.integrate import solve_ivp
 from scipy.optimize import fsolve
 
-from tfpt_constants import check, summary, reset, c3, Mbar
+import sys
+sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "..", "..", "verification"))
+from tfpt_constants import check, summary, reset, c3, Mbar  # noqa: E402  (lives in verification/)
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 PI = np.pi

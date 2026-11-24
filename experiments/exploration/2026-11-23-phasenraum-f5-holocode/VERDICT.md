@@ -35,6 +35,12 @@ a/ℓ_P = 1,65 / 10,8 / 14,3. Kalibriert gegen v246 und v266, zwei Schleifen mit
   Super-K. In zwei Schleifen sind beide v266-Inhalte ausgeschlossen (2,5·10³² und 7,2·10³³ a).
   Mit κ ∈ [1; 1,7] überleben 101 andere E₈-Inhalte mit τ_p = 0,9–3,5·10³⁴ a; Hyper-K entscheidet
   sie alle. Ledger nicht geändert.
+  **Unabhängig bestätigt (24.11., v1036):** eigene Gruppentheorie und eigene Löser in
+  `experiments/theory-contracts/ps-proton-real45-20261124/` (9 Prüfungen). Reelle 45: τ_p =
+  2,2·10³⁴ a in einer Schleife (nur im ×3-Band), 1,1·10³³ a in zwei Schleifen (ausgeschlossen);
+  alle 101 Überlebenden im κ-Band brauchen die reelle (15,1,1) und mindestens vier leichte
+  (6,1,1). Der Bericht enthält Vorschläge für PS.THRESHOLD.02, PS.PROTON.02 und die abhängigen
+  Zeilen; das Ledger entscheidet der Nutzer.
 - **Urteil:** H6s Lesart „an der Gitterskala induziert und gleich“ fällt in der gebauten Form.
   Überleben kann sie nur als nackte SO(10)-Gitterkopplung: Dann ist sin²θ_W = 3/8 von SO(10)
   geerbt, nicht induziert, und es braucht 45 Eichbosonen, die der 3+2-Split nicht liefert

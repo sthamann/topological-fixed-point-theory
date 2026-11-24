@@ -221,8 +221,9 @@ hergeleitet, 6 unter benannter Lesart, keines gescheitert, offen oder gesetzt.
   - Die Untergrenze a/ℓ_P ≥ 3,3 gilt nur für die gerechneten Regulatoren.
   - sin²θ_W = 3/8 ist bei H6 nicht induziert mit den Daten verträglich, sondern nur von einer nackten
     SO(10) geerbt (Z25). Nebenbefund: v266 zählt (15,1,1) komplex; mit der einen reellen 45 aus E₈
-    und zwei Schleifen sind beide v266-Inhalte von Super-K ausgeschlossen (PS.PROTON.02 im Ledger
-    unverändert, Prüfung offen).
+    und zwei Schleifen sind beide v266-Inhalte von Super-K ausgeschlossen. Unabhängig bestätigt
+    durch v1036 (`experiments/theory-contracts/ps-proton-real45-20261124/`, mit Vorschlag für die
+    Ledgerzeilen); PS.THRESHOLD.02 und PS.PROTON.02 sind im Ledger noch unverändert.
 - **Offen:**
   - Was die primitive Ladung bzw. den Sektor 1 und genau einen windenden Block wählt: Keine
     Grundzustandsregel gefunden; Lesarten sind ein Ordnungsfeld ohne Mittelwert oder N_fam = 3k
