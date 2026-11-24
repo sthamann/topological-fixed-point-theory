@@ -1,0 +1,56 @@
+{
+  "contract": "clock-charge-projection-test-20261014",
+  "date": "20261014",
+  "research_id": "UR.SEAM.CLOCK_CHARGE_PROJECTION_TEST.01",
+  "question": "Independent check: projection norms of the source charge q onto the D5 and A3 factors of the honest dressed clock, against the determinant-only packet formula.",
+  "summary_de": "E8_c: (6,2) fuer alle Kleidungen und Lifts; kein Determinanten-Paket liefert Familiennorm 2. Mit erhaltener Komposition C=g^2 quadrieren alle g-Lifts (Differenz in D8*/D8, Exponent 2) auf denselben Toruspunkt: s (4,4), c (6,2); (8,0) nur unabhaengiger C-Kontrolllift. s-Lemma: Familiennorm 4 = t^2(sum m^2-1) erzwingt |t|=2, m_A, ohne Einheits-Clutching; Traegerrichtung offen. SU(2)_1-Dublett-Buchhaltung bestaetigt.",
+  "verdict": "PARTIAL",
+  "verdict_enum": [
+    "PASS",
+    "PARTIAL",
+    "FAIL"
+  ],
+  "mathematical_verdict": "C_FAILS_JOINT_PROJECTION_TEST_ALL_INTEGRAL_CARRIERS; C_EQ_G2_FIXES_SQUARE_LIFT; S_LEMMA_SELECTS_M_A_WITHOUT_UNIT_CLUTCH; CARRIER_DIRECTION_OPEN",
+  "claims_tested": [
+    "UR.SEAM.WARD_CHIRALITY_VACUUM_NO_GO.01",
+    "UR.SOURCE.PACKET_WARD_LIFT_SELECTION.01"
+  ],
+  "claims_scoped_not_closed": [
+    "SEAM.SIMPLECURRENT.GENERATOR.01",
+    "SEAM.EQUIV.01"
+  ],
+  "gates": [
+    "T1",
+    "T2"
+  ],
+  "kills": [
+    "The c-chiral extension passes the joint clock/source-charge/packet projection test for some integral carrier direction",
+    "The (8,0) control lift is a square of the original g action",
+    "The minimal packet m_A needs the unit-clutch identification once C = g^2 in E8_s is granted"
+  ],
+  "checker": "checker.py",
+  "firewall": "experiments",
+  "promotion": false,
+  "complete_TFPT_solution": false,
+  "physical_gates_closed": [],
+  "assumptions": [
+    "Determinant-only packet formula with integral carrier U(1) cocharacter",
+    "Clock centraliser factors A3 (family) and D5 (carrier) as in the honest dressed fold clock"
+  ],
+  "not_derived": [
+    "Raw E8 algebra in the source",
+    "Joint physical state/event source",
+    "Selection of the dressed clock",
+    "Carrier direction"
+  ],
+  "relations": [
+    {
+      "target": "packet-ward-lift-selection-20261014",
+      "type": "references"
+    },
+    {
+      "target": "ward-chirality-vacuum-no-go-20261014",
+      "type": "references"
+    }
+  ]
+}
