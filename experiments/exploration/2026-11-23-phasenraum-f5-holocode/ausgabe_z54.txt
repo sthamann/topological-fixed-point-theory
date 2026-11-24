@@ -1,0 +1,33 @@
+Teil 1: KMS statt Mittelwert
+   thermisch: KMS-Defekt 1.4e-17, Wick-Defekt 5.6e-17; rho_alt: Spur 1.000000000000, min p 0.0000, Mittel 0.498960658973 (thermisch 0.498960658973), KMS-Defekt 0.130, Wick-Defekt 0.111
+   [ok] die volle KMS-Bedingung (p_(n+1) = e^-beta p_n auf allen Matrixeinheiten) legt den gaußschen Zustand (1-r) r^N fest
+   [ok] rho_alt = rho_beta + eps (P0 - 2 P1 + P2) ist positiv, normiert, hat dieselbe mittlere Besetzung und verletzt KMS und Wick
+   [Befund: ja] Präzisierung zu z46/z48: Der Mittelwertvergleich wählt q nur innerhalb der geometrischen Familie; die volle KMS-Bedingung des Stromoszillators rekonstruiert den Zustand und gibt dasselbe q = e^-beta/2 (bei beta = 4 pi: e^-2pi)
+
+Teil 2: Polarverschiebung
+   |J_-1^2 Omega|^2 = 2.000000; V = J_-1 (N+1)^(-1/2): |V^+ V - I| = 2.2e-16 (ohne Abschneiderand)
+   [ok] J_-1 ist auf der Besetzungsleiter keine Isometrie (|J_-1^2 Omega|^2 = 2); die Polarphase V ist der isometrische Schritt
+   [Befund: ja] Korrektur zu z48: 'J_-1 wirkt als S^4' gilt für die Einteilchen-Marken (r -> r+1, k -> k+4); auf der Besetzungsleiter des Thermofeldzustands ist der isometrische Schritt V = J_-1 (N+1)^(-1/2)
+
+Teil 3: Thermofeldoperator
+   [ok] d_L und d_R vernichten den Thermofeldzustand sqrt(1-q^2) Sum q^n |n,n> (bis auf den Abschneiderand)
+   Paarsektor: Kopplung nach außen 0.0e+00; H_Paar = 2.666667 A^+ (N+1) A (Abweichung 4.3e-14); 2/(1-q^2) = 2.666667
+   [ok] H = d_L^+ d_L + d_R^+ d_R erhält den Paarsektor und ist dort 2/(1-q^2) mal A^+ (N+1) A mit (A f)_n = q f_n - f_(n+1)
+   K_lambda (lambda = 1, q = 1/2): tiefste Eigenwerte [0.0, 0.75, 1.5, 2.25, 3.0, 3.75, 4.5, 5.25], Delta = 0.75
+   [ok] K_lambda = lambda A^+ (N+1) A hat das Spektrum Delta n mit Delta = lambda (1 - q^2): diskrete Leiter statt Band
+   [ok] die Randantwort ist (1-r) Sum r^n/(x + Delta n): positives Spektralmaß ausdrücklich
+   [Befund: ja] Der Zustand legt die Dynamik nicht fest: A^+ A (Band) und A^+ (N+1) A (Leiter) haben denselben geometrischen Grundzustand; erst 'quadratisch in den Strommoden' wählt die Leiter
+
+Teil 4: Gewichteter Stern
+   [ok] die Nullmode bleibt eta_v = M_v/M_eff (universell, eta_v/M_v = 1/M_eff)
+   [ok] der symmetrische Sektor (Zentrum plus Armmittel) ist genau die Leiter Delta n, Delta = 1 - q^2
+   tiefste Nicht-Leiter-Eigenwerte: [0.594, 0.594, 0.594, 1.4396, 1.4396, 1.4396]
+   [ok] die übrigen Sektoren liegen zwischen benachbarten Leiterstufen (verschränkt)
+   Moden unter der Schwelle 2 lambda (flach, gewichtet): {20: (65, 9), 40: (125, 9), 80: (249, 9)}
+   [ok] unter einer festen Schwelle wächst die Modenzahl beim flachen Stern mit der Tiefe, beim gewichteten nicht
+   [Befund: ja] Der gewichtete Stern ist der natürliche Kandidat, wenn die Dynamik quadratisch in den Strommoden ist: diskretes Spektrum, endlich viele leichte Moden, gleiche universelle Nullmode
+
+Urteil
+   Die externe Analyse hält in den nachgerechneten Punkten. Die volle KMS-Bedingung des Stromoszillators legt den gaußschen Zustand fest; gleiche mittlere Besetzung allein genügt nicht (rho_alt ist positiv, normiert, hat dasselbe Mittel und verletzt KMS und Wick). Korrektur zu z48: J_-1 ist auf der Besetzungsleiter keine Isometrie (|J_-1^2 Omega|^2 = 2), der isometrische Schritt ist V = J_-1 (N+1)^(-1/2). Der Thermofeldoperator d_L^+ d_L + d_R^+ d_R ist im Paarsektor 2/(1-q^2) A^+ (N+1) A: Spektrum Delta n, Randantwort (1-r) Sum r^n/(x + Delta n). Derselbe Zustand trägt also zwei Dynamiken (Band oder Leiter); quadratisch in den Strommoden wählt die Leiter. Im gewichteten Stern ist der symmetrische Sektor genau diese Leiter, die übrigen Sektoren liegen dazwischen, unter jeder Schwelle bleiben endlich viele Moden, und die Nullmode bleibt universell.
+
+Alle Prüfungen bestanden: True (11/11)

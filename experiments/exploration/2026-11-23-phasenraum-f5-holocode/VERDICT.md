@@ -1,6 +1,76 @@
 # Urteil
 
-## Aktueller Stand: H6h28 — Gravitation bis zur Nahtskala, Spiegelbilanz, Gaußzustand (`z52`, `z53`)
+## Aktueller Stand: H6h29 — Prüfung des externen Zweigs zu H6h27: KMS, Leiteroperator, Vierpunktantwort, Flavourhindernis (`z54`, `z55`)
+
+Bilanz unverändert 14 P und 6 L von 20; K13 und K18 sind präzisiert. Anlass ist die externe Analyse zu H6h27 auf dem
+Zweig `research/h6h27-source-dynamics-20261124` (Commit `252bac7a`). Er liegt jetzt auf origin, ist aber **nicht** in main
+zusammengeführt:
+- Ein Probemerge auf H6h28 hat nur einen Textkonflikt (TFPT-STAND), und alle 155 Lane-Tests bestehen.
+- Seine Änderungen an `process_rules.py` verändern aber die Ausgaben von z43 (Reihenfolge), z45, z46 und z50 (Auslese bzw.
+  Gleichstand). Die Zusammenführung braucht deshalb eine Entscheidung.
+
+Selbst gerechnet: `z54` mit 11 und `z55` mit 11 Prüfungen.
+
+**In einem Satz:** Die Analyse hält in allen nachgerechneten Punkten. Sie korrigiert z48 (J₋₁ ist auf der
+Besetzungsleiter nicht S⁴) und präzisiert H6h27/H6h28: Je Tiefe bleibt ein t_n frei. Im Flavour ist die direkte
+Realisierung von TM1 bei 15° in **jeder** endlichen Gruppe ausgeschlossen.
+
+**1. Zustand und Operator (`z54`).**
+- **KMS statt Mittelwert.**
+  - Die volle KMS-Bedingung des Stromoszillators erzwingt p_{n+1} = e^{−β}p_n, also den gaußschen Zustand (1 − r)r^N.
+  - Gleiche mittlere Besetzung genügt nicht: ρ_alt = ρ_β + ε(P₀ − 2P₁ + P₂) ist positiv und normiert, hat dasselbe
+    Mittel und verletzt KMS (0,13) und Wick (0,11).
+  - Das q = e^{−2π} aus z46 bleibt, die Begründung ist jetzt die KMS-Bedingung.
+- **Polarphase (Korrektur zu z48).** J₋₁ verschiebt die Einteilchen-Marken um 4, wirkt auf der Besetzungsleiter aber als
+  a⁺ mit Faktoren √(n+1) (|J₋₁²Ω|² = 2). Der isometrische Schritt ist V = J₋₁(N+1)^{−1/2}.
+- **Thermofeldoperator.**
+  - d_L, d_R vernichten den Thermofeldzustand.
+  - H = d_L⁺d_L + d_R⁺d_R erhält den Paarsektor und ist dort 2/(1 − q²)·A⁺(N+1)A mit (Af)_n = q f_n − f_{n+1}.
+  - K_λ = λA⁺(N+1)A hat das Spektrum Δn mit Δ = λ(1 − q²), eine **diskrete Leiter**. Die Randantwort ist
+    (1 − r)Σ rⁿ/(x + Δn), ein ausdrücklich positives Spektralmaß.
+  - Derselbe geometrische Zustand trägt also zwei Dynamiken: das Band A⁺A und die Leiter A⁺(N+1)A. Die Forderung
+    „quadratisch in den Strommoden“ wählt die Leiter.
+- **Gewichteter Stern** (Kantengewicht n + 1).
+  - Die Nullmode bleibt universell, und der symmetrische Sektor ist genau die Leiter.
+  - Die übrigen Sektoren liegen zwischen den Leiterstufen.
+  - Unter der Schwelle 2λ bleiben bei Tiefe 20, 40, 80 je 9 Moden (flach: 65, 125, 249).
+
+**2. Vierpunktantwort, Tiefen, G (`z55`).**
+- **Vierpunktantwort.** Mit R_{e,b} = G_{Kind,b}/(M_Kind M_b) − G_{Eltern,b}/(M_Eltern M_b) und k_e = λW_e M_Kind² gilt für
+  vier zentrale Quellen Σ_e k_e Π R = rP/((1 − rP)λ³M_c⁶) (drei Impulssätze, bis 10⁻¹⁰).
+  - Im gewichteten Stern bei p → 0 ist es Li₃(r) statt r/(1 − r).
+  - Tiefe n trägt genau (rP)^{n+1}. F(P) ist damit eine erzeugende Funktion der t_n: Eine mikroskopische Vierpunktantwort
+    mit passender Tensorstruktur und Quellnorm bestimmt alle t_n.
+- **Tiefen.**
+  - Die Vierteldrehung setzt nur die Arme gleich (4D → D Parameter).
+  - Metrische Homogenität (t_n = t) gibt rP/(1 − rP), Transferhomogenität (t_n ∝ rⁿ) gibt rP/(1 − r²P).
+- **G.** M_v → cM_v, k_e → c²k_e lässt den kanonischen Operator gleich und skaliert G mit 1/c². G braucht also eine
+  Normregel; im Bestand ist das die Einheit v_geo (GRAV.NONLINEAR.01, Lesart).
+  - Im unendlichen Stern gilt G = (1 − r)/(8πM_c²).
+
+**3. Flavour (`z55`).**
+- **Ganzzahligkeitshindernis.** Mit Z₃ geladen, Majorana-Klein und μ-τ-Reflexion gilt tr(T S_i) = 3|U_ei|² − 1.
+  - Für TM1 bei 15° sind das 1, −(2 − √3)/4 und −(2 + √3)/4. Das Minimalpolynom der beiden letzten ist 16z² + 16z + 1.
+  - Sie sind also keine ganzen algebraischen Zahlen und damit keine Spuren eines Elements einer endlichen Gruppe.
+  - Diese direkte Realisierung ist **in jeder endlichen Gruppe** ausgeschlossen; kein größerer Gruppenscan rettet sie.
+- **Familienuhr (TM2 bei 15°, Δ(96)).** Ihre Spuren tr(T S) sind 0 und ±i, also ganz. Sie entgeht dem Hindernis nur, weil
+  ihre Beträge nicht μ-τ-symmetrisch sind.
+- **Solarsummenregel.** Jedes TM2-Muster hat sin²θ₁₂ = 1/(3(1 − sin²θ₁₃)) > 1/3. NuFIT 6.1 (NO mit SK) gibt
+  0,3088 ± 0,0067 (arXiv:2603.29876), also mehr als 3,5σ Abstand. TM1 bei 15° (0,3181) liegt 1,4σ darüber.
+- **Offen** bleibt Z₂ × CP mit freiem Winkel. Laut Analyse passt nur δ = 270° in den NuFIT-6.1-Bereich.
+
+**4. Stand.**
+- **Gravitation.** Geschlossen ist sie nur innerhalb einer gewählten Operatorfamilie (Band oder Leiter) und unter einer
+  Homogenitätsregel für die t_n. Die Aussage „bis auf drei Zahlen“ aus H6h28 gilt nur unter diesen Wahlen.
+- **Was die vollständige Lösung braucht:** eine mikroskopische Quellregel. Sie muss W⁽²⁾, W⁽³⁾ und W⁽⁴⁾ gleich der
+  metrischen Antwort machen und legt damit Spektrum, Selbstkopplung und die t_n fest.
+- **Weiter offen:**
+  - Endtiefe und Skala;
+  - Nahtkondensation;
+  - lokales chirales Maß in 3+1D;
+  - Flavourausrichtung.
+
+## Davor: H6h28 — Gravitation bis zur Nahtskala, Spiegelbilanz, Gaußzustand (`z52`, `z53`)
 
 Bilanz unverändert 14 P und 6 L von 20; K13, K16 und K18 sind präzisiert. Auftrag: alles Offene lösen. Selbst gerechnet:
 `z52` mit 9 und `z53` mit 7 Prüfungen, die Lane `process_rules` mit einem Kantenform-Universum und einer Dirac-Option
@@ -127,7 +197,8 @@ dazu eine metrische Stufe der Lane `process_rules` (19 Tests).
 - **Zählung (neu, aus berechneten Taylorkoeffizienten).**
   - Flachheit beider Metriken ist zwei Bedingungen, die Fierz-Pauli-Masse eine. Es bleiben zwei Potentialrichtungen.
   - Eine **ungerichtete Kante** (gleiches Potential, ob von Eltern- oder Kindmetrik gelesen, β_n = β_{4−n}) lässt genau
-    eine, det(I − X). Die kubische Ordnung ist damit festgelegt; frei ist nur t.
+    eine, det(I − X). Die kubische Ordnung ist damit festgelegt; frei ist nur t. (Präzisierung H6h29: je Kante; die
+    Vierteldrehung setzt nur die Arme gleich, frei bleibt eine Zahl t_n je Tiefe, `z55`.)
 - **Ort des Rests.** In kanonischen Feldern ist t ein lokaler Viererkontakt (t/2) μ² det((Bh)_e)/M_e² auf den Zeilen des
   Vierteltransfers und wächst in der Tiefe wie q^{−2n}.
 - **Kopplungstiefe.** Ein Knoten ist schwach gekoppelt, solange M_(j,n) ≥ μ (Λ₃ ≥ μ). Im originalen Zustand kostet jede
@@ -165,7 +236,8 @@ Tests. Vollständig ist die Lösung damit nicht; die offenen Punkte stehen unten
 - **Energie.** Die originale Kovarianz (1 + e^{4π(r+α)})⁻¹ ist genau die Fermibesetzung 1/(1 + e^{πk}). Die
   Quarterenergie ist also L₀/4.
 - **J₋₁ = S⁴.** Der Strom J₋₁ = Σψ*_{r+1}ψ_r verschiebt jede Quartermode um eins, jede Hardy-Marke also um 4, und es
-  gilt [L₀/4, S⁴] = S⁴. Er wirkt als Übertragungsschritt.
+  gilt [L₀/4, S⁴] = S⁴. Er wirkt als Übertragungsschritt. (Korrektur H6h29: Das gilt auf den Einteilchen-Marken; auf
+  der Besetzungsleiter ist J₋₁ keine Isometrie, der Schritt ist die Polarphase J₋₁(N+1)^{−1/2}, `z54`.)
 - **Neutraler Sektor.** R A R⁺ = −iA, und der Kern liegt nur im Grad 0, dem neutralen Sektor der Ströme.
 - **Zustand.** Der Kompressionskern hat die Amplituden einer Thermofeld-Purifikation √(1 − x) x^{n/2} mit x = q²; der
   Partner ist die zweite Blatthälfte.

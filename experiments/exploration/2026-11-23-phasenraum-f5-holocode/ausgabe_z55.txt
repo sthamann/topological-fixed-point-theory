@@ -1,0 +1,38 @@
+Teil 1: Vierpunktantwort der Randquellen
+   flach, p^2/lambda = [1e-07, 1e-07, 1e-07, 1e-07]: Summe 0.3333330979, rP/(1 - rP) = 0.3333330963
+   flach, p^2/lambda = [0.3, 0.3, 0.3, 0.3]: Summe 0.0770798914, rP/(1 - rP) = 0.0770798914
+   flach, p^2/lambda = [0.1, 0.5, 1.2, 2.0]: Summe 0.0190710495, rP/(1 - rP) = 0.0190710495
+   [ok] flacher Stern: Sum_e k_e Prod R_(e,c) = rP/((1 - rP) lambda^3 M_c^6) (lambda = M_c = 1) für drei Impulssätze
+   gewichtet, p -> 0: Summe 0.2584612786, Li_3(r) = 0.2584613958; flach: r/(1-r) = 0.3333333333
+   [ok] gewichteter Stern bei p -> 0: Li_3(r) statt r/(1-r): der Operator ändert auch die nichtlineare Antwort
+   Beitrag einzelner Tiefen (gemessen, (rP)^(n+1)): [(0, np.float64(0.0332907976), np.float64(0.0332907976)), (1, np.float64(0.0011082772), np.float64(0.0011082772)), (2, np.float64(3.68954e-05), np.float64(3.68954e-05))]
+   [ok] die Tiefe n trägt genau (rP)^(n+1): F(P) = -(1/(2 lambda^3 M_c^6)) Sum t_n (rP)^(n+1) ist eine erzeugende Funktion
+   [Befund: ja] Eine mikroskopische Vierpunktantwort mit dieser Tensorstruktur und Quellnorm bestimmt alle t_n über die Koeffizienten von F(P); ihr Wert bei kleinen Impulsen bestimmt nur eine gewichtete Summe
+
+Teil 2: Tiefenparameter
+   Kanten bei 6 Tiefen: 24 freie t_e; Vierteldrehung (t_(j,n) = t_n): 6
+   [ok] die Vierteldrehung setzt die Arme gleich, nicht die Tiefen: 4D -> D Parameter
+   metrisch homogen (t_n = 1): 0.0344372408 = rP/(1-rP) 0.0344372408; transferhomogen (t_n = r^n): 0.0335701922 = rP/(1 - r^2 P) 0.0335701922
+   [ok] zwei Homogenitätsregeln geben verschiedene Erzeugende: rP/(1-rP) gegen rP/(1-r^2 P)
+
+Teil 3: G ohne Normregel frei
+   [ok] M_v -> c M_v, k_e -> c^2 k_e lässt den kanonischen Massenoperator gleich und skaliert G mit 1/c^2
+   [ok] im unendlichen Stern ist G = (1 - r)/(8 pi M_c^2)
+   [Befund: ja] G braucht eine physische Normregel; im Bestand ist das die Einheit v_geo mit 8 pi = 1/c3 (GRAV.NONLINEAR.01, Lesart)
+
+Teil 4: Flavour -- Ganzzahligkeitshindernis
+   tr(T S_i) = [(1-0j), (-0.066987-0j), (-0.933013-0j)], 3|U_ei|^2 - 1 = [1.0, -0.066987, -0.933013]
+   [ok] TM1 bei 15 Grad mit mu-tau-Reflexion: S_i bilden eine Klein-Gruppe, |U_mu i| = |U_tau i|, tr(T S_i) = 3|U_ei|^2 - 1
+   Minimalpolynome: [z - 1, 16*z**2 + 16*z + 1, 16*z**2 + 16*z + 1]
+   [ok] -(2 -+ sqrt 3)/4 haben das Minimalpolynom 16 z^2 + 16 z + 1 (normiert z^2 + z + 1/16): keine ganzen algebraischen Zahlen, also keine Spur eines Elements einer endlichen Gruppe
+   [Befund: ja] Die exakte direkte Realisierung von TM1 bei 15 Grad (Z3 geladen, Majorana-Klein, mu-tau-Reflexion) ist in jeder endlichen Gruppe ausgeschlossen; kein größerer Gruppenscan kann sie retten
+   Delta(96)-Familienuhr: |U|^2-Zeilen [[0.0447, 0.3333, 0.622], [0.3333, 0.3333, 0.3333], [0.0447, 0.3333, 0.622]]; tr(T S) = ['0', '-I', 'I'], Minimalpolynome [z, z**2 + 1, z**2 + 1]
+   [ok] in der Delta(96)-Familienuhr sind die Spuren tr(T S) ganze algebraische Zahlen, und ihre Beträge sind nicht mu-tau-symmetrisch -- deshalb entgeht TM2 bei 15 Grad dem Hindernis
+   TM2: sin^2 theta12 = 1/(3(1 - sin^2 theta13)) = [0.3401, 0.3405, 0.3408, 0.3412, 0.3415, 0.3419] > 1/3
+   [ok] TM2 hat sin^2 theta12 > 1/3 für jedes theta13 > 0; NuFIT 6.1 (NO mit SK): 0.3088 +- 0.0067 (arXiv:2603.29876), also mehr als 3.5 sigma; TM1 bei 15 Grad (0.3181) liegt 1.4 sigma darüber
+   [Befund: ja] Der Datenvergleich ist eindimensional, kein gemeinsamer Fit; bei TM1 mit mu-tau-Reflexion passt laut Analyse nur delta = 270 Grad in den NuFIT-6.1-Bereich 125-365 Grad
+
+Urteil
+   Die externe Analyse hält auch hier. Die t-abhängige Vierpunktantwort zentraler Quellen ist im flachen Stern rP/((1 - rP) lambda^3 M_c^6), im gewichteten bei p -> 0 Li_3(r)/(lambda^3 M_c^6); die Tiefe n trägt (rP)^(n+1), sodass eine mikroskopische Antwort mit passender Tensorstruktur alle t_n bestimmen könnte. Die Vierteldrehung setzt nur die Arme gleich; metrische und transferartige Homogenität geben verschiedene Erzeugende. G skaliert mit M_v -> c M_v bei gleichem kanonischem Operator, braucht also eine Normregel (im Bestand die Einheit v_geo). Im Flavour ist die exakte direkte Realisierung von TM1 bei 15 Grad mit mu-tau-Reflexion in jeder endlichen Gruppe ausgeschlossen: tr(T S_i) = 3|U_ei|^2 - 1 = -(2 -+ sqrt 3)/4 sind keine ganzen algebraischen Zahlen. Die Familienuhr entgeht dem nur, weil sie nicht mu-tau-symmetrisch ist, und verletzt dafür die Solarsummenregel (sin^2 theta12 > 1/3, mehr als 3.5 sigma gegen NuFIT 6.1).
+
+Alle Prüfungen bestanden: True (11/11)

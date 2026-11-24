@@ -127,8 +127,8 @@ Ursprung sollte beides zugleich liefern.
 
 ### Kandidat H6: Ursprung von P1 aus einer hintergrundfreien Naht (Exploration 23.11.)
 
-Quelle: `experiments/exploration/2026-11-23-phasenraum-f5-holocode/VERDICT.md` (Stand H6h28),
-Skripte `n1`, `v1`, `y1`, `z1`–`z53`, Lean-Vertrag `experiments/theory-contracts/h6-exakte-teile-20261123/`; Atlasproblem `problem:c3-p1-p2-shared-origin-reconciliation`,
+Quelle: `experiments/exploration/2026-11-23-phasenraum-f5-holocode/VERDICT.md` (Stand H6h29),
+Skripte `n1`, `v1`, `y1`, `z1`–`z55`, Lean-Vertrag `experiments/theory-contracts/h6-exakte-teile-20261123/`; Atlasproblem `problem:c3-p1-p2-shared-origin-reconciliation`,
 Befunde mit Präfix `h6`. Nichts davon ist im Ledger befördert. Prüfstand mit 20 Kriterien: 14
 hergeleitet, 6 unter benannter Lesart, keines gescheitert, offen oder gesetzt.
 
@@ -330,6 +330,14 @@ hergeleitet, 6 unter benannter Lesart, keines gescheitert, offen oder gesetzt.
     Freie-Naht-Prämisse. Eine Familie mit ν_R hat 16 Weyl mit Spin-Z₄ (X ≡ 1 mod 4), alle Anomalien null, 16 ≡ 0 mod 16
     (ohne ν_R 15): notwendige Bedingung für Spiegel ohne Brechung erfüllt; Spielzeug 0+1 D: 4 Majoranas entartet,
     8 gegappt. Δ(6n²) gibt auch mit Dirac-Neutrinos kein TM1. [E/N]
+  - Prüfung des externen Zweigs zu H6h27 (Z54, Z55; Zweig `research/h6h27-source-dynamics-20261124`, nicht in main):
+    Volle KMS legt den gaußschen Stromzustand fest (gleiches Mittel genügt nicht); J₋₁ ist auf der Besetzungsleiter
+    keine Isometrie, der Schritt ist die Polarphase (Korrektur zu Z48). Der Thermofeldoperator ist im Paarsektor
+    A⁺(N+1)A: diskrete Leiter Δn statt Band; der gewichtete Stern hat endlich viele leichte Moden. Die t-abhängige
+    Vierpunktantwort ist eine erzeugende Funktion Σ t_n (rP)^{n+1} (flach rP/(1 − rP), gewichtet Li₃(r) bei p → 0); die
+    Vierteldrehung setzt nur die Arme gleich, je Tiefe bleibt ein t_n. G skaliert ohne Normregel frei. TM1 bei 15° mit
+    Z₃, Majorana-Klein und μ-τ-Reflexion ist in jeder endlichen Gruppe ausgeschlossen (Spuren −(2 ∓ √3)/4 nicht
+    ganz); TM2 verletzt die Solarsummenregel (> 3,5σ gegen NuFIT 6.1). [E/N]
   - Instantonen (Z33): Unter Spin(10) hat ein Einheitsinstanton 4 Eltern- und 12
     Familiennullmoden; mit gesättigten Familiennullmoden entsteht Re[e^{iθ}Φ² C_fam], die Wand ist
     also auch im Kontinuum möglich, bei nackter SO(10) aber ~10⁻¹⁶⁴ unterdrückt. [N]
@@ -435,7 +443,8 @@ hergeleitet, 6 unter benannter Lesart, keines gescheitert, offen oder gesetzt.
     Orientierungsumkehr, eine gemeinsame Übertragung und die Familienorientierung (TM1 statt TM2 bei 15°); dazu die
     Gaußquantisierung der Quelle als letzte Prämisse der Zustandsregel (die Zuordnung J₋₁ = S⁴ ist hergeleitet, Z48),
     die Skala μ, M_c (also G), die quartische Zahl t des metrischen Sterns (die kubische Ordnung legen ungerichtete
-    Kanten fest, Z51; t ist die Form der Endpunkt-Quadratform Q, Z52) und die Dynamik an der Nahtskala; die Dynamik der
+    Kanten fest, Z51; t ist die Form der Endpunkt-Quadratform Q, Z52; je Tiefe ein t_n, über die Vierpunktantwort
+    bestimmbar, Z55), die Wahl zwischen Band- und Leiteroperator (Z54) und die Dynamik an der Nahtskala; die Dynamik der
     Spiegellücke in 4D (die mod-16-Bedingung ist erfüllt, Z53); der Mechanismus für TM1 bei 15° (Restsymmetrie allein
     reicht weder mit Majorana- noch mit Dirac-Neutrinos, Z49, Z53).
   - Die eine Prozessregel Z[J, A, g, Φ], aus der Naht, Eichwirkung und metrische Variation gemeinsam

@@ -1111,6 +1111,28 @@ if "H6h2" in H and z1p.exists() and z2p.exists():
                                                                                                                              "15 Grad mit mu-tau-Reflexion passt (delta = "
                                                                                                                              "+-pi/2), braucht Brechung oder CP-Regel")
                                                                                                         facts["F47_gravity_closed_and_matter"] = {n: T14[n]["urteil"] for n in T14}
+                                                                                                        zs = {n: Path(__file__).with_name(f"z{n}_ergebnis.json") for n in (54, 55)}
+                                                                                                        if all(p.exists() for p in zs.values()):
+                                                                                                            T15 = {n: json.loads(p.read_text()) for n, p in zs.items()}
+                                                                                                            ok15 = {n: all(T15[n]["checks"].values()) for n in T15}
+                                                                                                            H["H6h29"] = dict(H["H6h28"])
+                                                                                                            H["H6h29"]["K13"] = (LES if ok15[54] and ok15[55] and ok14[52] else F,
+                                                                                                                                 "[D] Jacobson; Zustand durch volle KMS "
+                                                                                                                                 "festgelegt (q = e^-2pi), isometrischer "
+                                                                                                                                 "Schritt ist die Polarphase, nicht J_-1; "
+                                                                                                                                 "derselbe Zustand trägt Band (A^+A) oder "
+                                                                                                                                 "Leiter (A^+(N+1)A) (Z54); je Tiefe ein t_n, "
+                                                                                                                                 "erzeugende Funktion der Vierpunktantwort "
+                                                                                                                                 "Sum t_n (rP)^(n+1) (Z55); Quellregel, Tiefe, "
+                                                                                                                                 "Homogenität und G-Norm offen")
+                                                                                                            H["H6h29"]["K18"] = (LES if ok15[55] and ok14[53] else F,
+                                                                                                                                 "Familien: direkte Realisierung von TM1 bei 15 "
+                                                                                                                                 "Grad (Z3, Majorana-Klein, mu-tau) in jeder "
+                                                                                                                                 "endlichen Gruppe ausgeschlossen (Spuren "
+                                                                                                                                 "-(2-+sqrt3)/4 nicht ganz); TM2 verletzt die "
+                                                                                                                                 "Solarsummenregel (> 3.5 sigma, Z55); offen "
+                                                                                                                                 "bleibt Z2 x CP mit freiem Winkel")
+                                                                                                            facts["F48_kms_tfd_fourpoint_flavour"] = {n: T15[n]["urteil"] for n in T15}
 
 order = [f"K{i}" for i in range(1, 21)]
 print("Gesamttabelle (P = hergeleitet, L = unter benannter Lesart, F = FAIL, O = OFFEN, E = EINGABE)\n")
