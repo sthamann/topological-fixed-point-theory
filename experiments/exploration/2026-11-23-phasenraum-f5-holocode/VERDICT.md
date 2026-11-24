@@ -1,6 +1,91 @@
 # Urteil
 
-## Aktueller Stand: H6h16 — Toeplitz-Ursprung, Anomalienbilanz und ein Prinzip für zwei Entscheidungen (`z30`, `z31`)
+## Aktueller Stand: H6h17 — vom Toeplitz-Index zum lokalen E₈-Netz; Regler, Instantonen, Markenrahmen (`z32`, `z33`)
+
+Bilanz unverändert 14 P und 6 L von 20. K11 ist bestärkt, K13 und K16 sind präzisiert. Zwei frühere
+Aussagen sind korrigiert (Abschnitt 4). Anlass ist die sechste externe Analyse vom 24.11.; selbst
+nachgerechnet sind `z32` mit 14 und `z33` mit 9 Prüfungen.
+
+**In einem Satz:**
+- Vom primitiven Index führt jetzt eine exakte Kette zur lokalen E₈-Naht ohne Gitter: Hardy-Kozyklus →
+  Stromniveau 1 → c = 8 → D₈ + s = E₈ → konformes Netz.
+- Der Halbgruppenregler ist kein physischer Schnitt.
+- Die Wand kann über Spin(10)-Instantonen auch im Kontinuum entstehen.
+- Raumzeittranslationen verlangen lokale Typ-III-Algebren, nicht den globalen Shift.
+
+**1. Index, Netz und Modularität (`z32`, 14 Prüfungen).**
+- **Topologie ohne Metrik.** Der graduierte Dirac-Operator D = [[0, S†], [S, 0]] hat genau eine
+  ungepaarte Nullmode. A = S f(N) mit f = (n+1)^α hat für jedes α den Index −1. Die spektrale
+  Dimension ist 1/α (2; 4/3; 1 auf 1 %), und [A, S] ist nur für α ≤ 1 beschränkt.
+  Irreduzibilität legt also die Topologie fest, nicht Dimension oder Metrik.
+- **Hardy-Kozyklus.** Tr(P U^m (1−P) U^{−m} P) = m ist der Schwinger-Term [J_m, J_{−m}] = m, also
+  Stromniveau 1. Außerdem gilt Σ_{j<m}(j + (1−m)/2)² = (m³ − m)/12, also c = 1 je komplexes Fermion,
+  exakt für m = 1 bis 48. Für 16 reelle Fermionen folgt c = 8; Sugawara für so(16)₁ gibt
+  120/15 = 8.
+- **E₈-Netz.** D₈ ∪ (D₈ + s) mit s = (½)⁸ ist gerade und unimodular (det 1) und hat 240 Wurzeln.
+  Für gerade Gitter gibt es lokale konforme Netze (Dong–Xu). Die E₈-Naht existiert damit auf Netzebene,
+  ohne Gitter, sobald die 16 reellen Fermionen (z5, z8) und die GSO-Erweiterung (A*) gegeben sind.
+  Offen bleibt ihre Herleitung als Rand des 4D-Systems (Tor T2, S1 in z21).
+- **Modularität.** Die Toeplitz-Algebra ist irreduzibel: Kommutant ℂ, schwache Hülle B(H), kein
+  separierender Vektor. Ein Gibbs-Zustand mit Punktspektrum hat eine fastperiodische modulare Gruppe
+  (Rückkehr bis auf 0,03). Er erlaubt also keine echte halbseitige modulare Inklusion.
+  - Raumzeittranslationen brauchen lokale Typ-III-Algebren mit zyklischem und separierendem Zustand
+    (Borchers, Wiesbrock, Araki–Zsidó).
+  - Das chirale E₈-Netz liefert genau eine lichtartige Translation. Vier, entlang der Tetraeder-
+    Nullrichtungen, sind die nächste Konstruktionsaufgabe.
+
+**2. Regler, Instantonen, Anomalien (`z33`, 9 Prüfungen).**
+- **Halbgruppenregler.** Der Propagator e^{−ε(p²+m²)}/(p²+m²) verletzt die Reflexionspositivität:
+  Die 2×2-Hankel-Matrizen C(t_i + t_j) haben für ε = 0,01 / 0,1 / 1 kleinste normierte Eigenwerte
+  −0,010 / −0,057 / −0,120, für ε = 0 sind sie positiv. Außerdem fällt x·C(x), während eine positive
+  Källén–Lehmann-Darstellung ein Steigen verlangt.
+  **Korrektur zu z31:** Der Halbgruppenregler ist nur als Eigenzeitregularisierung der effektiven
+  Wirkung zulässig (log det, Anomalien, induziertes G), nicht als endlicher physischer Schnitt.
+- **Instantonen.** Unter einer Wurzel-SU(2) von Spin(10) hat ein Einheitsinstanton 4 Eltern- und 12
+  Familiennullmoden. Die Eltern werden durch Φ² gesättigt.
+  - Sind die Familiennullmoden gesättigt (Yukawas, EW-Brechung), entsteht ein periodisches Potential
+    Re[e^{iθ}Φ² C_fam]. Die Wand ist dann auch ohne Gitter möglich, und die Nahtphase ist axionartig.
+  - Größe: Bei nackter SO(10) (α⁻¹ = 60 aus z25) ist der Beitrag ~10⁻¹⁶⁴, gegen den Gitteroperator
+    O(1) aus z24 vernachlässigbar. Bei induzierter starker Kopplung (α⁻¹ ≈ 4) wären es ~10⁻¹¹.
+  - Querbezug zu FLAV.STRONGCP.02, nicht gerechnet: Eine axionartige Nahtphase würde das Spin(10)-θ
+    relaxieren.
+- **Axiale Anomalien.** Spin(10)²·U(1)_A = 2 + 2Σr und Gravitation = 32 + 16Σr haben keine gemeinsame
+  Lösung (Σr = −1 gegen −2). Mit axial neutralen Familien (H6) bleibt die Spin(10)-Anomalie 2
+  (Instantonen brechen U(1)_A) und die gravitative 32 (c = 8). U(1)_A ist also keine anomaliefreie
+  interne Symmetrie; der Zufluss ist notwendiger Bestandteil.
+- **ξ.** 1/(4G_ind) = (1 − 6ξ)/(48πε²), während die flache Verschränkung nicht von ξ abhängt. Damit ist
+  R = 1/(1 − 6ξ): Die Halbgruppe legt ξ nicht fest, und ξ = 1/6 gäbe gar keinen Beitrag.
+
+**3. Markenrahmen (`z32`, Teil 5).** Ein festes Markenquadrat hat in der Oktaedergruppe nur D₄
+(8 Elemente); es gibt drei gleichwertige Quadrate, und D₄ lässt zwei invariante Formen zu (anisotrop).
+Erst das Mittel über die drei Rahmen, (1/3)Σ(I − e_a e_aᵀ) = (2/3)I, ist isotrop.
+
+**4. Korrekturen an früheren Runden.**
+- **Zu z29/z30:** Die isotrope Plebański-Simplizität folgt aus der *internen* S₄ auf Λ²F. Lötet man
+  Λ²F über ein festes Markenquadrat an die Raumrichtungen, bleibt geometrisch nur D₄. Die gemeinsame
+  geometrische Realisierung von Familiengruppe und Lorentzkegel (z30) gilt für das Oktaeder mit allen
+  drei Rahmen, nicht für die vier Marken allein.
+- **Zu z31:** „S_ent = A/(4G_ind) exakt“ gilt für den Wärmeleitungsregler als Regularisierung der
+  effektiven Wirkung und für ξ = 0. Ein positiver physischer Schnitt ist dieser Regler nicht.
+
+**5. Stand des Beweises (Ergänzung zu H6h16).**
+
+| Glied | Status |
+|---|---|
+| Irreduzibilität → Index −1 → Hardy-Kozyklus → Niveau 1 → c = 8 → E₈-Netz | E (Mathematik etabliert; 16 und GSO aus H6) |
+| Dimension, Metrik, c₃ aus dem Prozess | offen (d_spec frei) |
+| Halbgruppenregler | nur Eigenzeitregularisierung; kein physischer Schnitt |
+| Wand | Gitteroperator O(1) (z24) und Instantonen (~10⁻¹⁶⁴ bei nackter SO(10)); Entscheidung 4 |
+| Soldering | Weg benannt: vier positive, kommutierende Translationen aus halbseitigen modularen Inklusionen lokaler Typ-III-Algebren |
+| Isotropie | interne S₄ oder Mittel über drei Rahmen |
+
+Die nächsten Rechnungen sind:
+- der 't-Hooft-Vertex mit den TFPT-Yukawas (Sättigung der 12 Familiennullmoden, Größe und Phase des
+  Potentials, Bezug zu θ);
+- die modulare Rekonstruktion mehrerer Translationen aus Inklusionen im E₈-Netz bzw. im
+  Familiensektor.
+
+## Davor: H6h16 — Toeplitz-Ursprung, Anomalienbilanz und ein Prinzip für zwei Entscheidungen (`z30`, `z31`)
 
 Bilanz unverändert 14 P und 6 L von 20; K13, K16 und K19 sind präzisiert. Anlass ist die fünfte externe
 Analyse vom 24.11. Ihre Rechnungen sind selbst nachgerechnet: `z30` mit 17 und `z31` mit 16 Prüfungen.

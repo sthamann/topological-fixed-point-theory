@@ -127,8 +127,8 @@ Ursprung sollte beides zugleich liefern.
 
 ### Kandidat H6: Ursprung von P1 aus einer hintergrundfreien Naht (Exploration 23.11.)
 
-Quelle: `experiments/exploration/2026-11-23-phasenraum-f5-holocode/VERDICT.md` (Stand H6h16),
-Skripte `n1`, `v1`, `y1`, `z1`–`z31`, Lean-Vertrag `experiments/theory-contracts/h6-exakte-teile-20261123/`; Atlasproblem `problem:c3-p1-p2-shared-origin-reconciliation`,
+Quelle: `experiments/exploration/2026-11-23-phasenraum-f5-holocode/VERDICT.md` (Stand H6h17),
+Skripte `n1`, `v1`, `y1`, `z1`–`z33`, Lean-Vertrag `experiments/theory-contracts/h6-exakte-teile-20261123/`; Atlasproblem `problem:c3-p1-p2-shared-origin-reconciliation`,
 Befunde mit Präfix `h6`. Nichts davon ist im Ledger befördert. Prüfstand mit 20 Kriterien: 14
 hergeleitet, 6 unter benannter Lesart, keines gescheitert, offen oder gesetzt.
 
@@ -208,13 +208,24 @@ hergeleitet, 6 unter benannter Lesart, keines gescheitert, offen oder gesetzt.
     Defekt vom Rang 1 (Index −1). Ihre zweiseitige Vervollständigung trägt eine Spiegelung, die die
     Entwicklungsrichtung umkehrt, und J = RC mit J² = −1. Die vier Marken ergänzen sich als
     Qubit-Zustände über ihren Kommutator zu Herm(2); das Oktaeder trägt S₄ und die Tetraeder-
-    Nullvektoren die Signatur 1 + 3. [E unter der Prämisse Irreduzibilität]
+    Nullvektoren die Signatur 1 + 3. [E unter der Prämisse Irreduzibilität] Einschränkung (Z32): Ein
+    festes Markenquadrat hat nur D₄; geometrisch isotrop wird es erst über die drei Rahmen.
   - Anomalienbilanz (Z31): c = 8 auf der Naht verlangt die axiale, gravitativ anomale Ladung; eine
     direkte J-Fortsetzung gibt c ∈ 16ℤ und ein gerades Niveau. Ein Quartett-Kondensat ohne anomale
     Antwort trägt keine Nahtmoden. Der Bruch Re Φ² hat axiale Ladung 4 und trägt auch im
     Ladung-4-Weg die Wand. Entscheidung 1 (eine Naht) und 2 (ein Block) sind beide ein trivialer
     Kommutant, also eine einzige Prämisse (Irreduzibilität). Ein Halbgruppenregler macht
-    S_ent = A/(4G_ind) für minimal gekoppelte Felder exakt. [E/N]
+    S_ent = A/(4G_ind) für minimal gekoppelte Felder exakt, aber nur als Eigenzeitregularisierung;
+    als Propagatorschnitt verletzt er die Reflexionspositivität, und ξ bleibt frei (Z33). [E/N]
+  - Lokale E₈-Naht ohne Gitter (Z32): Der Hardy-Kozyklus Tr(P U^m (1−P) U^{−m} P) = m ist der
+    Schwinger-Term; er gibt Stromniveau 1 und c = 1 je komplexes Fermion, also c = 8 für 16 reelle.
+    D₈ + s ist gerade und unimodular, und es gibt das lokale konforme E₈-Netz. Die Kette
+    Index → Niveau → Anomalie → E₈-Netz ist damit exakt, unter den H6-Eingaben 16 und GSO. Der
+    globale Shift und ein diskreter Gibbs-Zustand tragen keine Raumzeittranslationen (keine echte
+    halbseitige modulare Inklusion). [E]
+  - Instantonen (Z33): Unter Spin(10) hat ein Einheitsinstanton 4 Eltern- und 12
+    Familiennullmoden; mit gesättigten Familiennullmoden entsteht Re[e^{iθ}Φ² C_fam], die Wand ist
+    also auch im Kontinuum möglich, bei nackter SO(10) aber ~10⁻¹⁶⁴ unterdrückt. [N]
   - TOE-Lückenkarte (Z21): TFPT.TOE.COMPLETE.01 hat acht Tore, alle [O]; H6 trägt fast nur zu T1
     und T2 bei. Am meisten blockieren die lokale wechselwirkende 3+1D-Theorie (T3/T5) und chirale
     Materie ohne Spiegel (T4).
@@ -243,6 +254,8 @@ hergeleitet, 6 unter benannter Lesart, keines gescheitert, offen oder gesetzt.
   - Craigs eichinvariantes Maß (arXiv:2610.09093) deckt den SU(5)-Zweig von TFPT ab, Spin(10) mit
     der 16 aber nicht; eine Übertragung über die Reduktion auf SU(2) benutzt Craig nicht (Z28).
   - Die Wardidentität allein macht a/ℓ_P nicht zur Vorhersage (Z29).
+  - Die geometrische S₄-Isotropie aus Z29/Z30 gilt nicht für ein festes Markenquadrat (nur D₄), und der
+    Halbgruppenregler ist kein physischer Propagatorschnitt (Z32, Z33).
   - Ein Ladung-4-Kondensat schützt den Nahtindex nicht automatisch; es braucht die anomale axiale
     Antwort, und deren Gitterbruch trägt auch dort die Wand (Z31).
   - Wandfrei ist nicht nur „nichtlokal oder positivitätsverletzend“ (Z19): Lüschers Weylfelder
@@ -278,6 +291,9 @@ hergeleitet, 6 unter benannter Lesart, keines gescheitert, offen oder gesetzt.
   - Ein gemeinsamer Elternoperator.
   - Ob H6s Dynamik das Kondensat s^⊗4 und eine unabhängige Spin(10)-Elternverbindung erzeugt, und ob
     ein Ladung-4-Kondensat den Nahtindex c = 8 erhält (das hängt mit Entscheidung 2 zusammen).
+  - Vier positive, kommutierende Translationen aus halbseitigen modularen Inklusionen lokaler
+    Typ-III-Algebren (das E₈-Netz liefert eine lichtartige) und der 't-Hooft-Vertex mit den
+    TFPT-Yukawas (Sättigung der Familiennullmoden, Bezug zu θ).
   - Die Prozessalgebra (Toeplitz/Hardy) als Regler statt eines festen Gitters: Das feste Gitter bricht
     sowohl die axiale Symmetrie (Wand) als auch die Diffeomorphismen (Z24, Z29, Z31). Dazu gehören
     die Identifikation des Hardy-Kerns mit dem P1-Kern und die Unimodularität der Indexabbildung.

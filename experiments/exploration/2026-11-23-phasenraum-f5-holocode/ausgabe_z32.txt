@@ -1,0 +1,41 @@
+Teil 1: graduierter Dirac-Operator und gewichteter Shift
+   [ok] {D, Gamma} = 0
+   [ok] D^2 = diag(I, I - |0><0|) (eine ungepaarte Nullmode)
+   A = S f(N), f = (n+1)^alpha: (injektiv, Kokern) {0.5: (1, 1), 0.75: (1, 1), 1.0: (1, 1), 1.5: (1, 1)}
+   [ok] Index von A = S f(N) ist -1 für alpha = 0,5; 0,75; 1; 1,5
+   spektrale Dimension (kleine t): {0.5: np.float64(2.0), 0.75: np.float64(1.3333), 1.0: np.float64(1.0)} (erwartet 1/alpha)
+   [ok] d_spec = 1/alpha (2; 4/3; 1) auf 1 %
+   sup |f(n+1) - f(n)| bis n = 2000 (= ||[A, S]||): {0.5: 0.414, 1.0: 1.0, 1.5: 67.074}
+   [ok] [A, S] beschränkt für alpha <= 1, wachsend für alpha > 1
+   [Befund: ja] Irreduzibilität und Index legen weder Dimension noch Metrik fest (d_spec = 1/alpha frei)
+
+Teil 2: Hardy-Kozyklus und Virasoro
+   Tr(P U^m (1-P) U^-m P) = {1: 1, 2: 2, 3: 3, 4: 4, 5: 5, 6: 6, 7: 7, 8: 8}
+   [ok] Hardy-Kozyklus = m (Moden, die den Schnitt überqueren) = Schwinger-Term [J_m, J_-m] = m
+   [ok] sum_{j<m} (j + (1-m)/2)^2 = (m^3 - m)/12 exakt für m = 1..48 (c = 1 je komplexes Fermion)
+   [ok] 8 komplexe = 16 reelle Fermionen: c = 8; Sugawara so(16)_1: 120/(1 + 14) = 8
+   [Befund: ja] Toeplitz-Index -> Stromniveau 1 -> chirale Anomalie ist eine exakte Kette (Segal-Kozyklus)
+
+Teil 3: E8 = D8 u (D8 + s)
+   det Gram = 1.0, Diagonale [2. 2. 2. 2. 2. 2. 2. 2.], Vektoren der Norm 2: 240
+   [ok] D8 + s gerade und unimodular (det 1), 240 Wurzeln (112 + 128) = E8
+   Für gerade positive Gitter gibt es unitäre lokale konforme Netze (Dong-Xu); das E8-Netz der Naht ist damit konstruiert,
+   sobald 16 reelle Fermionen und die GSO-Erweiterung gegeben sind. Offen: Herleitung als Rand des 4D-Systems.
+
+Teil 4: Modularität
+   [ok] Toeplitz (abgeschnitten): S, S^+ erzeugen M_K, Kommutant C (irreduzibel, schwache Hülle B(H))
+   [ok] kein separierender Vektor für B(H): es gibt A != 0 mit A xi = 0
+   Punktspektrum [np.float64(0.0), np.float64(1.0), np.float64(1.4142), np.float64(1.5708)]: Delta^(it) kehrt zurück, bei t = 11316.0 ist max |e^(it dE) - 1| = 0.032
+   [ok] fastperiodische modulare Gruppe (Rückkehr nahe I für großes t): keine echte halbseitige modulare Inklusion
+   [Befund: ja] Der globale Shift und ein diskreter Gibbs-Zustand reichen für Raumzeittranslationen nicht; nötig sind lokale Typ-III-Algebren
+
+Teil 5: Markenrahmen im Oktaeder
+   Stabilisator eines Markenquadrats: 8 Elemente; gleichwertige Quadrate: 3; D4-invariante Formen: 2
+   [ok] ein festes Markenquadrat hat nur D4 (8), drei gleichwertige Rahmen, D4 lässt 2 invariante Formen (anisotrop)
+   [ok] Mittel über die drei Rahmen: (1/3) sum (I - e_a e_a^T) = (2/3) I (isotrop)
+   [Befund: ja] Korrektur zu Z29/Z30: geometrische S4-Isotropie braucht die drei Rahmen (oder eine interne S4), nicht ein festes Quadrat
+
+Urteil
+   Die Rechnungen der Analyse stimmen. Der graduierte Dirac-Operator aus S hat genau eine ungepaarte Nullmode; A = S f(N) behält Index -1 für jedes alpha, die spektrale Dimension ist 1/alpha (2; 4/3; 1 auf 1 %), [A, S] bleibt nur für alpha <= 1 beschränkt: Irreduzibilität legt die Topologie fest, nicht die Metrik. Der Hardy-Kozyklus Tr(P U^m (1-P) U^-m P) = m ist der Schwinger-Term, und sum (j + (1-m)/2)^2 = (m^3 - m)/12 gibt c = 1 je komplexes Fermion (exakt bis m = 48), also c = 8 für 16 reelle und so(16)_1; mit s = (1/2)^8 ist D8 + s gerade, unimodular mit 240 Wurzeln, also E8, und dafür gibt es ein lokales konformes Netz ohne Gitter. Die Toeplitz-Algebra ist irreduzibel und hat keinen separierenden Vektor; ein Gibbs-Zustand mit Punktspektrum hat eine fastperiodische modulare Gruppe, also keine echte halbseitige Inklusion: Raumzeittranslationen brauchen lokale Typ-III-Algebren. Korrektur: Ein festes Markenquadrat hat im Oktaeder nur D4 (zwei invariante Formen); die geometrische S4-Isotropie aus Z29/Z30 verlangt die drei gleichwertigen Rahmen oder eine interne S4.
+
+Alle Prüfungen bestanden: True (14/14)

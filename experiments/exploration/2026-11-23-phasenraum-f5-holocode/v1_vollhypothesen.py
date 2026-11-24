@@ -837,6 +837,27 @@ if "H6h2" in H and z1p.exists() and z2p.exists():
                                                                              "Ladung (Z31); deren Bruch Re Phi^2 trägt auch im Ladung-4-Weg die Wand "
                                                                              "(N_DW = 1), also bleibt Entscheidung 4 der Engpass jedes Weges (Z24, Z26)")
                                                         facts["F35_toeplitz_anomaly"] = {n: T4[n]["urteil"] for n in T4}
+                                                        zu = {n: Path(__file__).with_name(f"z{n}_ergebnis.json") for n in (32, 33)}
+                                                        if all(p.exists() for p in zu.values()):
+                                                            T5 = {n: json.loads(p.read_text()) for n, p in zu.items()}
+                                                            ok5 = {n: all(T5[n]["checks"].values()) for n in T5}
+                                                            H["H6h17"] = dict(H["H6h16"])
+                                                            H["H6h17"]["K11"] = (P if ok5[32] else F,
+                                                                                 "[A] E8 = D8+ aus dem kleinsten modularen N = 16; der Hardy-"
+                                                                                 "Kozyklus gibt Stromniveau 1 und c = 1 je komplexes Fermion, "
+                                                                                 "D8 + s ist gerade unimodular: lokales E8-Netz ohne Gitter (Z32)")
+                                                            H["H6h17"]["K13"] = (LES if ok5[33] and ok5[32] else F,
+                                                                                 "[D] Jacobson; Plebanski-Isotropie aus der internen S4 (ein festes "
+                                                                                 "Markenquadrat hat nur D4, Z32); Halbgruppenregler nur als "
+                                                                                 "Eigenzeitregularisierung, als Propagatorschnitt verletzt er die "
+                                                                                 "Positivität, und xi bleibt frei (Z33); G, kovariante Kanten offen")
+                                                            H["H6h17"]["K16"] = (LES if ok5[33] else F,
+                                                                                 "[physisches Gitter mit zwei Gegentermen oder nichtultralokale "
+                                                                                 "Lüscher-GW-Wirkung] c = 8 braucht die axiale Anomalie (Z31); auch "
+                                                                                 "Spin(10)-Instantonen können Re[Phi^2 C_fam] erzeugen (4 + 12 "
+                                                                                 "Nullmoden, Z33), bei nackter SO(10) ~1e-164; Entscheidung 4 bleibt "
+                                                                                 "der Engpass")
+                                                            facts["F36_hardy_net_regulator"] = {n: T5[n]["urteil"] for n in T5}
 
 order = [f"K{i}" for i in range(1, 21)]
 print("Gesamttabelle (P = hergeleitet, L = unter benannter Lesart, F = FAIL, O = OFFEN, E = EINGABE)\n")

@@ -1,0 +1,37 @@
+Teil 1: exponentiell regulierter Propagator und Reflexionspositivität
+   eps = 0.0: kleinster normierter Eigenwert der 2x2-Hankel-Matrizen -5.87e-11
+   eps = 0.01: kleinster normierter Eigenwert der 2x2-Hankel-Matrizen -1.02e-02
+   eps = 0.1: kleinster normierter Eigenwert der 2x2-Hankel-Matrizen -5.71e-02
+   eps = 1.0: kleinster normierter Eigenwert der 2x2-Hankel-Matrizen -1.20e-01
+   [ok] eps = 0: Hankel-Matrizen positiv (bis Rundung)
+   [ok] eps > 0: negative Eigenwerte, also Reflexionspositivität verletzt
+   [ok] Stieltjes verlangt x C(x) nichtfallend; e^{-eps x} fällt, also keine positive Källén-Lehmann-Darstellung
+   Lesart: Der Wärmeleitungsregler ist als Eigenzeitregularisierung der effektiven Wirkung (log det, Anomalien,
+   Z31) zulässig, nicht als endlicher physischer Schnitt des Propagators.
+   [Befund: ja] Halbgruppenregler als physischer Propagatorschnitt verletzt Reflexionspositivität
+
+Teil 2: Instantonnullmoden unter einer Wurzel-SU(2) von Spin(10)
+   Dubletts (= Nullmoden je Einheitsinstanton, Weyl): {'Vektor 10': 2, 'Spinor 16': 4, 'Eltern (psi, chi je (10,1)+(1,6))': 4, 'drei Familien': 12, 'gesamt': 16}
+   [ok] 10 -> 2, 16 -> 4, Eltern 4, Familien 12, gesamt 16
+   [ok] Eltern-Nullmoden: zwei Einsetzungen der Paarung Phi psi chi sättigen 4, also Phi^2 im 't-Hooft-Vertex
+   Unterdrückung e^(-2 pi alpha^-1): {4.0: '1.2e-11', 23.0: '1.7e-63', 60.0: '1.9e-164'} (Z25: induziert 4 bzw. <= 23, nackt SO(10) 60)
+   [ok] bei nackter SO(10) (alpha^-1 = 60) ist der Instantonbeitrag ~1e-164 gegen den Gitteroperator O(1) (Z24)
+   Ungesättigte Familiennullmoden (masselose Familien) geben keinen Vakuumbeitrag; gesättigt (Yukawas, EW-Brechung) ein
+   periodisches Potential ~ Re[e^(i theta) Phi^2 C_fam]: die Nahtphase wäre axionartig, die Wand auch im Kontinuum möglich.
+   [Befund: ja] Wand im Kontinuum möglich über Spin(10)-Instantonen, aber nur bei gesättigten Familiennullmoden und stark unterdrückt
+
+Teil 3: axiale Anomalien (Eltern psi, chi axial +1, Familien r_1, r_2, r_3)
+   Spin(10)^2 U(1)_A: 2*r1 + 2*r2 + 2*r3 + 2 = 0 => sum r = -1; Gravitation: 16*r1 + 16*r2 + 16*r3 + 32 = 0 => sum r = -2
+   [ok] keine gemeinsame Lösung (sum r = -1 gegen -2)
+   sum r = -1: Spin(10)-Anteil 0, Gravitation 16; sum r = 0 (H6: Familien axial neutral): Spin(10)-Anteil 2, Gravitation 32
+   [ok] mit axial neutralen Familien: Spin(10)-Anomalie 2 (Instantonen brechen U(1)_A), Gravitation 32 (c = 8)
+   [Befund: ja] U(1)_A ist keine anomaliefreie interne Symmetrie; der Zufluss ist notwendiger Bestandteil
+
+Teil 4: nichtminimale Kopplung
+   1/(4 G_ind) = -(6*xi - 1)/(48*pi*epsilon**2), S_ent/A (flach) = 1/(48*pi*epsilon**2), R = S_ent / (A/4G) = -1/(6*xi - 1)
+   [ok] 1/(4 G_ind) = (1 - 6 xi)/(48 pi eps^2); R = 1/(1 - 6 xi); xi = 0 nötig, xi = 1/6 gibt keinen Beitrag
+
+Urteil
+   Ein exponentiell regulierter Propagator verletzt die Reflexionspositivität: Die 2x2-Hankel-Matrizen C(t_i + t_j) werden für eps > 0 indefinit (für eps = 0 positiv), und x C(x) fällt, eine positive Källén-Lehmann-Darstellung verlangt das Gegenteil. Der Wärmeleitungsregler aus Z31 ist daher nur als Eigenzeitregularisierung der effektiven Wirkung zulässig, nicht als physischer Schnitt. Unter einer Wurzel-SU(2) von Spin(10) hat ein Einheitsinstanton 4 Eltern- und 12 Familiennullmoden; die Eltern sättigt Phi^2, also kann ein periodisches Potential Re[e^(i theta) Phi^2 C_fam] entstehen, sobald die Familiennullmoden gesättigt sind: Die Wand ist auch ohne Gitter möglich, die Nahtphase axionartig. Bei nackter SO(10) (alpha^-1 = 60, Z25) ist der Beitrag ~1e-164, gegen den Gitteroperator aus Z24 vernachlässigbar. Die axiale Ladung kann mit einheitlich geladenen Familien nicht zugleich Spin(10)- und gravitativ anomaliefrei sein (sum r = -1 gegen -2); mit neutralen Familien bleibt die Spin(10)-Anomalie 2 und die gravitative 32 (c = 8). Nichtminimale Kopplung gibt 1/(4 G_ind) = (1 - 6 xi)/(48 pi eps^2), also R = 1/(1 - 6 xi); die Halbgruppe allein legt xi nicht fest.
+
+Alle Prüfungen bestanden: True (9/9)
