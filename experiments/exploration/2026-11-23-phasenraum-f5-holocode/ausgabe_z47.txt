@@ -1,0 +1,43 @@
+Teil 1: Index-Schutz des masselosen Pols
+   q = 0.5: ungestört Z = 0.75000000 (1 - q^2 = 0.75000000), Randgewicht des Nullvektors 8.7e-19, kleinster Singulärwert 0.501
+   q = 0.001867: ungestört Z = 0.99999651 (1 - q^2 = 0.99999651), Randgewicht des Nullvektors 1.2e-30, kleinster Singulärwert 0.998
+   24 Störungen (Symbol bis z^6 und Rang-6-Block): größtes Randgewicht 6.5e-08, kleinster Abstand 0.237, kleinster Nullstellenbetrag des Symbols 1.066
+   Polgewicht Z unter Störung: q = 1/2 von 0.5737 bis 0.7765; q = e^-2pi von 0.9602 bis 0.9868
+   [ok] ungestört ist Z = 1 - q^2 (Polgewicht des Randzustands im Nullvektor)
+   [ok] alle gestörten Symbole haben ihre Nullstellen außerhalb der Einheitsscheibe (Windung -1, Index +1 auch mit dem kompakten Block)
+   [ok] unter allen 24 Störungen bleibt ein normierbarer Nullvektor (Randgewicht < 1e-6, Gegenprobe ~ 1) mit Abstand > 0.2 zum übrigen Spektrum
+   [ok] x C(x) -> |<0|eta'>|^2: der masselose Pol der Randantwort bleibt, mit dem gestörten Gewicht
+   [ok] das Gewicht Z ändert sich unter der Störung (Masselosigkeit geschützt, Kopplung nicht)
+   [ok] Gegenprobe Windung 0 (ohne S^+): der 'Nullvektor' sitzt am Abschneiderand (Randgewicht ~ 1), kein Pol
+   [Befund: ja] Der masselose Spin-2-Pol ist topologisch geschützt (Fredholmindex +1), sein Residuum und damit G nicht
+
+Teil 2: Universalität (Weinbergs Softbedingung)
+   Bedingung Sum_i kappa_(Art i) p_i = 0 für 30 Prozesse mit drei Arten: Singulärwerte [17.3286 14.2294  0.    ]
+   [ok] die Softbedingung hat genau eine Lösung, kappa proportional zu (1, 1, 1): universelle Kopplung
+   Kopplungen der Leiterquellen |4j> an den Pol (q = e^-2pi): ['1.000e+00', '1.867e-03', '3.487e-06']
+   [ok] die Leiterquellen koppeln nicht universell (kappa_1/kappa_0 = e^-2pi = 0.0019): Materie auf tieferen Leiterstufen verletzte das Äquivalenzprinzip in Ordnung eins
+   [Befund: ja] Universell ist nur eine einzige erhaltene Quelle: alle Materie koppelt über den Randzustand |0> (die Naht); unter Störungen (Teil 1) renormiert sich dann nur G, universell
+
+Teil 3: Ward plus Positivität -- welcher Kanal darf das Gedächtnis tragen?
+   Trägheit (+, -, 0): masselos TT - T^2/2 (2, 0, 4); massiv TT - T^2/3 (5, 0, 1); massiv TT - T^2/2 (5, 1, 0)
+   [ok] masselos: TT - T^2/2 ist positiv vom Rang 2 (zwei Helizitäten), der Rest Eichrichtungen
+   [ok] massiv: TT - T^2/3 (Fierz-Pauli) ist positiv vom Rang 5
+   [ok] massiv mit gleichem Formfaktor in Spin 2 und Spin 0 (TT - T^2/2): ein negativer Eigenwert -1/2 auf der Spur (Skalargeist)
+   massiver Pol mit Spin-2-Gewicht 1 und Spin-0-Gewicht rho0: [(-0.3, (6, 0, 0)), (0.0, (5, 0, 1)), (0.2, (5, 1, 0))]
+   [ok] Residuum rho2 (TT - T^2/3) - (rho0/6) T^2 ist genau dann positiv, wenn rho0 <= 0
+   masseloser Pol mit Z2 = 1 und Spur-Residuum Z0: [(0.8, (3, 0, 3)), (1.0, (2, 0, 4)), (1.2, (2, 1, 3))]
+   [ok] Z0 = Z2 gibt den reinen Graviton (Rang 2); Z0 < Z2 einen zusätzlichen masselosen Skalar, Z0 > Z2 einen Geist
+   im originalen Zustand (z46): Bandgewicht 3.487e-06; mit gleichem Formfaktor in beiden Kanälen wäre das ein Skalargeist der Stärke 1.74e-06
+   [Befund: ja] Ward plus Positivität legen die Kanalstruktur fest: das Übertragungsgedächtnis nur im Spin-2-Kanal, der Spurkanal reiner Einsteinpol mit demselben Residuum 1 - q^2; gleiche Formfaktoren in beiden Kanälen sind ausgeschlossen, sobald massive Pole auftreten
+
+Teil 4: Kovariante Form -- Weyl-Quadrat trägt nur Spin 2
+   W.W/(k^4 h P2 h) über 8 Zufallsproben: [0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5]; R^2/(k^4 (theta.h)^2): [1. 1. 1. 1. 1. 1. 1. 1.]
+   [ok] linearisiertes W.W = (1/2) k^4 h P2 h (euklidisch, konstant über Proben); Eichmoden und reine Spur geben null
+   [ok] R^2 = k^4 (theta.h)^2 trägt nur den Spinnull-Kanal
+   [ok] P2 und P0 vernichten reine Eichmoden h = k xi + xi k: jeder Formfaktor F2 P2 + F0 P0 ist linear eichinvariant
+   [Befund: ja] Kovariante Realisierung: S = (1/16 pi G) Int sqrt g [R + W F(box) W] mit F aus dem Übertragungsgedächtnis trägt die Spinzwei-Erinnerung und lässt den Spurkanal Einstein; die nichtlineare Vervollständigung der massiven Linie (bimetrische Wechselwirkungen) ist nicht festgelegt
+
+Urteil
+   Die Ward-Struktur ist dreiteilig. Erstens ist der masselose Pol topologisch geschützt: Er ist der Nullvektor eines Fredholmoperators mit Index +1 und überlebt Symbol- und endlichrangige Störungen; sein Gewicht Z und damit G ändern sich. Zweitens verlangt Weinbergs Softbedingung gleiche Kopplungen; die Leiterquellen koppeln mit sqrt(Z) q^j, universell ist nur eine einzige Quelle, der Randzustand (Materie auf der Naht). Drittens erlauben Ward-Identität und Positivität das Gedächtnis nur im Spin-2-Kanal: ein massiver Pol mit gleichem Formfaktor in Spin 2 und Spin 0 trägt einen Skalargeist (-1/2 auf der Spur), und der Spurkanal muss reiner Einsteinpol mit demselben Residuum sein. Kovariant leistet das ein Term W F(box) W, denn das linearisierte Weyl-Quadrat ist (1/2) k^4 h P2 h. Offen bleiben die nichtlineare Vervollständigung der massiven Linie und warum alle Materie auf dem Randzustand sitzt.
+
+Alle Prüfungen bestanden: True (16/16)

@@ -39,7 +39,7 @@ def befund(name, val):
     say(f"   [Befund: {'ja' if val else 'nein'}] {name}")
 
 
-res = run()
+res = run(state=False)          # Lane-Stand H6h24; die Zustandsregel für q steht in z46
 U = res["universes"]
 
 # ------------------------------------------------------------------ Teil 1
@@ -122,7 +122,7 @@ check("bei gleichem a = 3/10 trennen sich die drei Kerne im nächsten Koeffizien
 a_pi = float(a_q.subs(q, sp.exp(-sp.pi)))
 check("das tau = i-Nomen e^-pi gibt a = 0.0019, nicht 3/10: Vierteldrehungsnomen und Dirac-Korrektur passen in einer "
       "Übertragung nicht zusammen", abs(a_pi - 0.00187) < 1e-5)
-sk = {o["name"]: o for o in spin2_kernels()}
+sk = {o["name"]: o for o in spin2_kernels(state=False)}
 check("alle fünf Transfergedächtnisse sind Källén-Lehmann-positiv; nur q_dirac trägt dirac_low_energy",
       all("kallen_lehmann" in o["clauses"] for n, o in sk.items() if n.startswith("transfer"))
       and [n for n, o in sk.items() if "dirac_low_energy" in o["clauses"] and n.startswith("transfer")] == ["transfer memory q=q_dirac"])

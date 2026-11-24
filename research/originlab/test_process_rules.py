@@ -2,8 +2,10 @@ import unittest
 from fractions import Fraction as Fr
 
 from autonomy import execute, specifications
-from process_rules import (Q_DIRAC, flavour_pairs, matrix_kernels, readouts, run, schur_coefficient, seam_layers,
-                           spin2_kernels, transfer_processes)
+import numpy as np
+
+from process_rules import (Q_DIRAC, Q_ORIGINAL, flavour_pairs, ladder_occupation, matrix_kernels, original_current_norm,
+                           q_rules, readouts, run, schur_coefficient, seam_layers, spin2_kernels, transfer_processes)
 
 
 class ProcessRules(unittest.TestCase):
@@ -11,6 +13,7 @@ class ProcessRules(unittest.TestCase):
     def setUpClass(cls):
         cls.result = run()
         cls.h6h23 = run(transfer=False)
+        cls.h6h24 = run(state=False)
 
     def selected(self, universe):
         return {row["selected"]: row for row in self.result["universes"][universe]["unique_selections"]}
@@ -47,8 +50,9 @@ class ProcessRules(unittest.TestCase):
 
     def test_transfer_memory_keeps_the_dirac_correction_only_at_q_dirac(self):
         self.assertAlmostEqual(Q_DIRAC**2/(1 - Q_DIRAC**2)**2, 0.3, places=12)
-        memories = {o["name"]: o for o in spin2_kernels() if "transfer_memory" in o["clauses"]}
+        memories = {o["name"]: o for o in spin2_kernels(state=False) if "transfer_memory" in o["clauses"]}
         self.assertEqual(len(memories), 5)
+        self.assertEqual(len([o for o in spin2_kernels() if "transfer_memory" in o["clauses"]]), 7)
         self.assertTrue(all("kallen_lehmann" in o["clauses"] for o in memories.values()))
         self.assertEqual([n for n, o in memories.items() if "dirac_low_energy" in o["clauses"]], ["transfer memory q=q_dirac"])
         rows = self.selected("spin2_kernels")
@@ -78,8 +82,8 @@ class ProcessRules(unittest.TestCase):
         patterns = {(o["pair"], o["pattern"]) for o in flavour_pairs()}
         tbm = (("0", "1/3", "2/3"), ("1/2", "1/3", "1/6"), ("1/2", "1/3", "1/6"))
         self.assertIn(("Z3 x V4'", tbm), patterns)
-        clock = (("2/45", "1/3", "28/45"), ("1/3", "1/3", "1/3"), ("28/45", "1/3", "2/45"))
-        self.assertIn(("Z3 x Z4", clock), patterns)
+        clock = (("1/3 - sqrt(3)/6", "1/3", "sqrt(3)/6 + 1/3"), ("1/3", "1/3", "1/3"), ("sqrt(3)/6 + 1/3", "1/3", "1/3 - sqrt(3)/6"))
+        self.assertIn(("Z3 x Z4", clock), patterns)           # (2 - sqrt 3)/6, printed as 2/45 before z46
 
     def test_whole_process_needs_eight_load_bearing_principles(self):
         comp = self.h6h23["composed_process"]
@@ -104,6 +108,38 @@ class ProcessRules(unittest.TestCase):
         self.assertIn("one_transfer", row["minimal_rules"][0])
         self.assertNotIn("mirror_sheet", row["minimal_rules"][0])
         self.assertTrue(all(v[1] != [label] for v in row["ablation"].values()))
+
+    def test_earlier_stage_is_reproduced(self):
+        self.assertEqual(self.h6h24["composed_process"]["objects"], 67200)
+        self.assertEqual(self.h6h24["composed_process"]["longest_minimal_rule"], 9)
+        self.assertNotIn("q_rules", self.h6h24["universes"])
+
+    def test_original_state_fixes_q(self):
+        omega = original_current_norm()
+        self.assertAlmostEqual(omega/(1/(np.exp(4*np.pi) - 1)), 1.0, places=10)
+        self.assertAlmostEqual(original_current_norm(alpha=0.75)/omega, 1.0, places=10)
+        self.assertAlmostEqual(ladder_occupation(Q_ORIGINAL)/omega, 1.0, places=8)
+        rows = {r["selected"]: r for r in self.result["universes"]["q_rules"]["unique_selections"]}
+        self.assertEqual(rows["e^-2pi"]["minimal_rules"], [["original_state"]])
+        self.assertEqual(rows["0 (Hardy state)"]["minimal_rules"], [["hardy_state"]])
+        empty = self.result["universes"]["q_rules"]["minimal_empty_rules"]
+        for pair in (["dirac_same_scale", "original_state"], ["equal_weight", "original_state"], ["hardy_state", "memory"]):
+            self.assertIn(pair, empty)
+        self.assertEqual(len(q_rules()), 7)
+
+    def test_scale_free_search_selects_the_original_state_process(self):
+        free = self.result["composed_process"]["without_scale_convention"]
+        self.assertEqual(free["longest_minimal_rule"], 8)
+        chosen = {r["selected"] for r in free["selected_by_the_longest_rules"]}
+        self.assertEqual(len(chosen), 1)
+        label = chosen.pop()
+        for part in ("kernel nu=1 eps=0", "spin2 transfer memory q=e^-2pi", "seam n=16 real reversed", "flavour Z3 x Z4"):
+            self.assertIn(part, label)
+        ties = free["selected_by_the_longest_rules"][0]["tie_sets_without_size"]
+        sizes = sorted(len(v) for v in ties.values())
+        self.assertEqual(sizes, [1, 2])                   # with e8_seam no size tie; with positivity n = 16 and 32 tie
+        two = [v for v in ties.values() if len(v) == 2][0]
+        self.assertTrue(any("seam n=32 real reversed" in t for t in two))
 
     def test_nothing_is_promoted_and_the_lane_is_registered(self):
         self.assertFalse(self.result["physical_solution"])

@@ -10,7 +10,7 @@ Teil 3  Datenprüfung außerhalb der Lane: Die Flavourmuster aller Restsymmetrie
 import json
 import sys
 from itertools import permutations
-from fractions import Fraction as Fr
+import sympy
 from pathlib import Path
 
 HERE = Path(__file__).parent
@@ -67,9 +67,10 @@ say("   Flavourmuster (Paar, |U|^2, |J|):")
 for p in pats:
     say(f"      {p}")
 tbm = "(('0', '1/3', '2/3'), ('1/2', '1/3', '1/6'), ('1/2', '1/3', '1/6'))"
-check("TBM entsteht als Z3 x V4' (mit Null, theta13 = 0); Z3 x Z4 mit der Familienuhr gibt keine Null (2/45, 1/3, 28/45)",
+check("TBM entsteht als Z3 x V4' (mit Null, theta13 = 0); Z3 x Z4 mit der Familienuhr gibt keine Null ((2 - sqrt 3)/6, 1/3, "
+      "(2 + sqrt 3)/6; bis z46 gerundet als 2/45 gedruckt)",
       any(p[0] == "Z3 x V4'" and p[1] == tbm for p in pats)
-      and any(p[0] == "Z3 x Z4" and "2/45" in p[1] for p in pats))
+      and any(p[0] == "Z3 x Z4" and "1/3 - sqrt(3)/6" in p[1] for p in pats))
 
 say("\nTeil 2: Ganzer Prozess")
 cp = res["composed_process"]
@@ -92,7 +93,7 @@ say("\nTeil 3: Flavour gegen Daten (außerhalb der Lane)")
 R12, R13, R23 = (0.27, 0.35), (0.020, 0.024), (0.43, 0.60)
 fits = []
 for pair, pat, J in pats:
-    rows = [[float(Fr(v)) for v in row] for row in eval(pat)]
+    rows = [[float(sympy.sympify(v)) for v in row] for row in eval(pat)]
     hit = None
     for rp in permutations(range(3)):
         for cpm in permutations(range(3)):
@@ -104,11 +105,11 @@ for pair, pat, J in pats:
             ok = R12[0] <= s12 <= R12[1] and R13[0] <= s13 <= R13[1] and R23[0] <= s23 <= R23[1]
             if ok:
                 hit = (s12, s13, s23)
-    s13_vals = sorted({float(Fr(v)) for row in eval(pat) for v in row})
+    s13_vals = sorted({float(sympy.sympify(v)) for row in eval(pat) for v in row})
     fits.append((pair, pat, hit, s13_vals))
     say(f"   {pair:10s} mögliche sin^2 theta13: {[round(v, 4) for v in s13_vals]}  -> {'passt' if hit else 'passt nicht'}")
 check("kein exaktes Restsymmetriemuster der nichtentarteten abelschen S4-Untergruppen passt in die 3-sigma-Bereiche "
-      "(theta13: 0, 2/45 = 0.044, 1/9, 1/4, 1/3, ... gegen 0.020-0.024)", all(f[2] is None for f in fits))
+      "(theta13: 0, (2 - sqrt 3)/6 = 0.0447, 1/9, 1/4, 1/3, ... gegen 0.020-0.024)", all(f[2] is None for f in fits))
 befund("Die Familienregel braucht eine kleine Brechung der Restsymmetrie (TFPT: phi0-Korrekturen, sin^2 theta13 = phi0 e^{-5/6}); "
        "die Prozesssuche findet die Orientierung, nicht die Brechung", True)
 ZAHLEN["prozess"] = best[0]["selected"]
@@ -122,7 +123,7 @@ urteil = ("Das Suchprogramm lässt sich für die Prozesssuche umbauen: Die neue 
           "als Z3 x V4' nur mit theta13 = 0. Im zusammengesetzten Universum (53 760 Prozesse) wählen acht lasttragende Prinzipien "
           "genau einen Prozess: Kern nu = 1, Spin 2 mit gleichgewichtigem verborgenem Kanal bei 10/3, 16 reelle Majorana mit "
           "umgekehrtem zweitem Blatt, Flavour Z3 x Z4. Das Spiegelblatt fixiert dabei zwei Bausteine. Gegen die Daten passt "
-          "kein exaktes S4-Restsymmetriemuster (Z3 x Z4 gibt sin^2 theta13 = 2/45, doppelt zu groß): Die Familienregel braucht "
+          "kein exaktes S4-Restsymmetriemuster (Z3 x Z4 gibt sin^2 theta13 = (2 - sqrt 3)/6 = 0.0447, doppelt zu groß): Die Familienregel braucht "
           "eine kleine Brechung. Das ist eine Auswahl unter gewählten Prinzipien, keine Herleitung.")
 say("\nUrteil\n   " + urteil)
 say(f"\nAlle Prüfungen bestanden: {all(CHECKS.values())} ({sum(CHECKS.values())}/{len(CHECKS)})")

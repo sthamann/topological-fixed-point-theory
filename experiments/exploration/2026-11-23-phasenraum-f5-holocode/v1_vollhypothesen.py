@@ -1022,6 +1022,32 @@ if "H6h2" in H and z1p.exists() and z2p.exists():
                                                                                                              "c_1 = 8 gerade: gemeinsamer Spin-Lift, Z44); 3 x 16 = 48 "
                                                                                                              "Weyl-Felder im freien Modell")
                                                                                         facts["F43_transfer_family_and_search"] = {n: T10[n]["urteil"] for n in T10}
+                                                                                        zw = {n: Path(__file__).with_name(f"z{n}_ergebnis.json") for n in (46, 47)}
+                                                                                        if all(p.exists() for p in zw.values()):
+                                                                                            T11 = {n: json.loads(p.read_text()) for n, p in zw.items()}
+                                                                                            ok11 = {n: all(T11[n]["checks"].values()) for n in T11}
+                                                                                            H["H6h25"] = dict(H["H6h24"])
+                                                                                            H["H6h25"]["K13"] = (LES if ok11[46] and ok11[47] and ok10[44] else F,
+                                                                                                                 "[D] Jacobson; Einsteinpol plus Gedächtnis derselben "
+                                                                                                                 "Viertelübertragung; q aus dem originalen Quarter-"
+                                                                                                                 "Gaußzustand: q = e^-2pi, verstecktes Gewicht e^-4pi "
+                                                                                                                 "(a = 3/10 nur Skalenkonvention, Z46); Masselosigkeit "
+                                                                                                                 "durch Index +1 geschützt, universell nur mit einer "
+                                                                                                                 "Randquelle, Gedächtnis nur im Spin-2-Kanal (W F W), "
+                                                                                                                 "Spurkanal Einstein (Z47); G und nichtlineare "
+                                                                                                                 "Vervollständigung offen")
+                                                                                            H["H6h25"]["K16"] = (LES if ok11[46] and ok10[45] else F,
+                                                                                                                 "[reelle Naht] Chernschicht x 16 (c = 8), zweite "
+                                                                                                                 "Blatthälfte orientierungsumkehrend (Z42); die "
+                                                                                                                 "Prozesssuche schließt die 32er-Naht nur über die "
+                                                                                                                 "Größenordnung aus, mit c = 8 eindeutig (Z46)")
+                                                                                            H["H6h25"]["K18"] = (LES if ok11[46] else F,
+                                                                                                                 "S4: Z3 x Z4 exakt (2 - sqrt 3)/6 = TM2 bei 15 Grad "
+                                                                                                                 "(nicht 2/45); die Daten passen zu TM1 bei 15 Grad "
+                                                                                                                 "(sin^2 theta13 = (2 - sqrt 3)/12 = 0.0223, sin^2 "
+                                                                                                                 "theta12 = 0.318, Phase um pi/2); warum die erste "
+                                                                                                                 "TBM-Spalte bleibt, ist offen (Z46)")
+                                                                                            facts["F44_q_rule_and_ward"] = {n: T11[n]["urteil"] for n in T11}
 
 order = [f"K{i}" for i in range(1, 21)]
 print("Gesamttabelle (P = hergeleitet, L = unter benannter Lesart, F = FAIL, O = OFFEN, E = EINGABE)\n")

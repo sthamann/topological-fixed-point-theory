@@ -1,6 +1,115 @@
 # Urteil
 
-## Aktueller Stand: H6h24 — gemeinsame Übergangsfamilie und ausgebaute Prozesssuche (`z44`, `z45`)
+## Aktueller Stand: H6h25 — q-Regel aus dem originalen Zustand und Ward-Struktur (`z46`, `z47`)
+
+Bilanz unverändert 14 P und 6 L von 20; K13, K16 und K18 sind präzisiert. Auftrag: erst eine Regel für q, dann die
+Ward-Struktur, dazu das Protokoll eines externen OriginLab-Laufs vom 24.11. Dieser Lauf liegt nicht auf origin; seine
+Aussagen sind als Behauptungen geprüft. Selbst gerechnet: `z46` mit 24 und `z47` mit 16 Prüfungen, die Lane
+`process_rules` mit einem Zustandsuniversum und 15 Tests.
+
+**In einem Satz:**
+- q ist eine Zustandsfrage. Die originale Quarter-Gaußquelle legt q = e^{−2π} fest. Die Dirac-Zahl a = 3/10, die in
+  H6h24 q festlegte, ist nur eine Skalenkonvention.
+- Ward-Struktur:
+  - Die Masselosigkeit ist topologisch geschützt (Index +1).
+  - Universelle Kopplung verlangt eine einzige Randquelle.
+  - Das Gedächtnis darf nur im Spin-2-Kanal sitzen.
+- Ohne die Skalenkonvention wählen acht Prinzipien genau einen Prozess, jetzt mit Spin 2 im originalen Zustand.
+
+**1. Gegenprüfung des externen Laufs (`z46`, Teil 0).**
+- **32er-Naht:** stimmt. Die längste Regel lässt die reelle 16er- und 32er-Naht zu; 16 gewinnt erst durch die
+  Größenordnung. Mit dem Prinzip E8-Naht (c = 8) statt Positivität bleibt genau ein Prozess. Die Lane gibt diese
+  Gleichstände jetzt mit aus.
+- **Flavourwert:** stimmt. Z₃ × Z₄ hat exakt den Eintrag (2 − √3)/6 = 0,04466, nicht 2/45; der Code hatte mit
+  `limit_denominator(48)` gerundet. Die Lane druckt jetzt exakte Werte in ℚ(√2, √3); `z43` ist angepasst.
+- **Familie mit erhaltener Z₂:** bestätigt und geschärft.
+  - Z₃ × Z₄ ist genau TM2 bei 15°.
+  - TM1 bei 15° gibt sin²θ₁₃ = (2 − √3)/12 = 0,0223 und sin²θ₁₂ = 0,318. Mit einer Phase um π/2 liegt es in
+    allen drei 3σ-Bereichen.
+  - Der Winkel steckt also schon in der Familienuhr, die Daten wollen ihn aber in der ersten statt der zweiten
+    TBM-Spalte. Warum, ist offen (wie im externen Lauf: 15° folgt nicht aus kanonischen Projektoren).
+- **Bimetrische Einbettung mit freier Wechselwirkung:** nicht nachgerechnet. Sie passt zu Teil 6 (nichtlineare
+  Vervollständigung offen).
+
+**2. Korrektur zu H6h24: a = 3/10 ist eine Skalenkonvention (`z46`, Teil 1).**
+- Allgemein gilt a = (3/10) f(0)/∫f und b = −f′(0)/(28∫f); die Lane-Kerne bestätigen das für e^{−u}, (1 + u)^{−3} und
+  die Stufe (a = 3/10, 3/5, 3/10).
+- a skaliert mit Λ². Jedes Transfergedächtnis trifft a = 3/10 mit passender Skala μ; q_dirac verlangt zusätzlich μ = Λ.
+- Skalenfrei ist nur b/a²: 25/63, 25/42 und 0, für alle drei Abschneider < 1. Keine positive Funktion trifft es.
+- Die Aussage „q durch die Dirac-Zahl festgelegt“ (H6h24) gilt also nur unter dieser Konvention.
+
+**3. Die q-Regel: der originale Zustand (`z46`, Teil 2).**
+- **Quelle:** `experiments/theory-contracts/native-arc-charge-source-interface-20261026/ELLIPTIC-CURRENT-SOURCE.txt`
+  (Atlas `finding:actual-elliptic-gaussian-source-determines-full-quarter-current-functional`).
+  - Die beschriftete Calderón/Szegő-Kovarianz hat auf jedem Quarter c_r = (1 + e^{4π(r+α)})⁻¹.
+  - Die Stromnorm ist ω(J₋₁J₁) = 1/(e^{4π} − 1) = 3,487·10⁻⁶ (Gl. 8). Der Hardy-Zustand hat J₁Ω = 0.
+- **Nachgerechnet:** Die Fermisumme Σ c_{r+1}(1 − c_r) gibt für α = 1/4 und 3/4 genau 1/(e^{4π} − 1).
+- **Regel:** Der Nullvektor η_q der Übertragung ist die Purifikation des untersten Strommodus.
+  - Seine Leiterbesetzung ist q²/(1 − q²). Gleichgesetzt mit der Stromnorm folgt eindeutig q² = e^{−4π}, also
+    q = e^{−2π}.
+  - Der Hardy-Zustand gibt q = 0, also kein Gedächtnis.
+  - Ordnet man den Schritt dem Strommodus m zu, wird q = e^{−2πm}; e^{−2π} ist der größte Wert.
+- **Prämissen:**
+  - die Zuordnung „Übertragungsschritt S⁴ = ein Quant von J₋₁“;
+  - die freie Gaußquantisierung, die die Quelle selbst als Prämisse führt; sie nennt b = 4π ausdrücklich keine
+    physikalische Temperatur.
+
+**4. Folgen für Spin 2.**
+- Einsteinpol mit Gewicht 1 − e^{−4π} = 0,9999965.
+- Das versteckte Band ist eine schmale Linie bei μ² (Breite 4q = 0,0075) mit Gewicht e^{−4π} = 3,5·10⁻⁶;
+  b/a² = 1 + e^{4π}.
+- Statisch wirkt die Linie wie ein Yukawa-Zusatz der Stärke α = 4,6·10⁻⁶ mit Reichweite 1/μ. Die Skala μ legt die
+  Regel nicht fest.
+
+**5. Lane (`process_rules`, `z46`, Teil 4).**
+- **Zustandsuniversum `q_rules`** (sieben Zustände; alle Klauseln aus q berechnet). Je eine Regel wählt je ein q:
+  - originaler Zustand → e^{−2π};
+  - Hardy → 0;
+  - gleiches Blattgewicht → 1/√2;
+  - Dirac bei gleicher Skala → q_dirac.
+  - Der originale Zustand verträgt sich weder mit dem gleichen Blattgewicht noch mit der Dirac-Zahl.
+- **Spin-2-Slot:** enthält jetzt auch die Gedächtnisse bei e^{−2π} und 1/√2. Für kleine q wird 1/H − 1/x in
+  geschlossener Form 2q²/(Z[√((x+a)(x+b)) + x + Z]) geprüft; vorher verschluckte Rundung die Positivität.
+- **Skalenfreie Suche:** ohne das Prinzip `dirac_spin2`, 72 576 Prozesse.
+  - Acht Prinzipien wählen genau einen Prozess: Hardy, Kovarianz, Positivität, originaler Zustand,
+    Orientierungsumkehr, reelle Naht, Familienmischung, Familienuhr.
+  - Gewählt: Kern ν = 1, Transfergedächtnis bei e^{−2π}, reelle 16er-Naht mit umgekehrtem Blatt, Z₃ × Z₄.
+  - Mit E8-Naht statt Positivität braucht diese Regel keine Größenordnung.
+  - Ohne die Zustandsregel fällt die Wahl auf reines Einstein (H = x).
+- **Stand H6h24 erhalten:** Mit der Dirac-Zahl bleibt der Lauf aus H6h24 (neun Prinzipien, q_dirac). `run(state=False)`
+  reproduziert ihn; `z45` ist darauf festgelegt.
+
+**6. Ward-Struktur (`z47`).**
+- **Index-Schutz.**
+  - Der masselose Pol ist der Nullvektor eines Fredholmoperators mit Index +1.
+  - 24 Störungen (Symbol bis z⁶ mit Nullstellen außerhalb der Scheibe, dazu ein Rang-6-Block) lassen einen
+    normierbaren Nullvektor und den Pol der Randantwort bestehen.
+  - Das Gewicht Z wandert dabei (q = 1/2: 0,57 bis 0,78). Masselosigkeit ist geschützt, G nicht. Gegenprobe
+    Windung 0: kein Pol.
+- **Universalität.** Weinbergs Softbedingung Σκ_i p_i = 0 hat für drei Arten genau die Lösung κ ∝ (1, 1, 1). Die
+  Leiterquellen |4j⟩ koppeln mit √Z q^j (Verhältnis e^{−2π}). Universell ist nur eine einzige Quelle, der Randzustand
+  |0⟩: Alle Materie muss auf der Naht koppeln.
+- **Ward plus Positivität.**
+  - Mit erhaltener Quelle ist die Amplitude T[C₂P² − C₀P⁰/2]T. Die Residuen sind positiv genau dann, wenn
+    ρ₀ ≤ 0 (massiv) und Z₀ = Z₂ (masselos, reiner Graviton vom Rang 2).
+  - Gleiche Formfaktoren in beiden Kanälen geben am massiven Pol einen Skalargeist −1/2 auf der Spur.
+  - Damit sitzt das Gedächtnis nur im Spin-2-Kanal, und der Spurkanal bleibt Einstein mit demselben Residuum.
+    Gleiche Formfaktoren in beiden Kanälen sind ausgeschlossen, sobald massive Pole auftreten.
+- **Kovariante Form.** Linearisiert ist W·W = ½k⁴ hP²h (konstant über Proben, null für Eich- und Spurmoden). Ein Term
+  W F(□) W trägt das Gedächtnis also diffeomorphismeninvariant nur im Spin-2-Kanal.
+
+**7. Was das für H6 heißt.**
+- **Gravitation:** R + W F(□) W mit F aus der Viertelübertragung im originalen Zustand. Das ist Einstein plus eine
+  massive Spin-2-Linie mit Gewicht 3,5·10⁻⁶ und ohne Geister in quadratischer Ordnung.
+- **Offen:**
+  - die Skala μ und G;
+  - die nichtlineare Vervollständigung der massiven Linie;
+  - warum alle Materie auf dem Randzustand sitzt;
+  - die Herleitung der Zuordnung S⁴ ↔ J₋₁ aus P1;
+  - warum die Familien TM1 statt TM2 bei 15° wählen.
+- **Grenze:** Das bleibt eine Auswahl unter benannten Prämissen, keine Herleitung aus P1.
+
+## Davor: H6h24 — gemeinsame Übergangsfamilie und ausgebaute Prozesssuche (`z44`, `z45`)
 
 Bilanz unverändert 14 P und 6 L von 20; K13, K15, K16 und K20 sind präzisiert. Anlass ist die elfte externe Analyse
 vom 24.11. (Übergangsfamilie a_q, positiver Kern, Paaralgebra, Spin^c, Higgs) mit dem Auftrag, den Altbestand zu
@@ -12,7 +121,8 @@ durchsuchen und das Suchprogramm auszubauen. Selbst gerechnet: `z44` mit 24 und 
 - Eine Übertragung a_q(z) = z⁻¹(1 − q z⁴) trägt Bündel, Index und einen positiven Spin-2-Kern zugleich. Sie legt q
   aber nicht fest, und ein masseloser, universell gekoppelter Pol folgt aus ihr nicht.
 - Die ausgebaute Prozesssuche wählt mit neun lasttragenden Prinzipien einen Prozess, in dem das Spin-2-Gedächtnis
-  aus derselben Übertragung kommt. q ist dort nur durch die Dirac-Zahl a = 3/10 festgelegt.
+  aus derselben Übertragung kommt. q ist dort nur durch die Dirac-Zahl a = 3/10 festgelegt. (Korrektur H6h25: Das gilt
+  nur bei gleicher Skala; a = 3/10 ist eine Skalenkonvention, q folgt aus dem Zustand, `z46`.)
 
 **1. Prüfung der Analyse (`z44`).**
 - **Übergangsfunktion.**
@@ -66,6 +176,7 @@ durchsuchen und das Suchprogramm auszubauen. Selbst gerechnet: `z44` mit 24 und 
 - **Spin-2-Gedächtnis exakt.**
   - H/x = 1 − a x + b x² − …, mit a = q²/(1 − q²)², b = q²(1 + q²)/(1 − q²)⁴ und b/a² = (1 + q²)/q² > 1.
   - a = 3/10 hat in (0, 1) genau die Lösung q² = (8 − √55)/3 ≈ 0,1946. Dort ist b = (33 + 3√55)/100 ≈ 0,553.
+    (H6h25: nur bei gleicher Skala μ = Λ.)
   - Bei gleichem a trennt der nächste Koeffizient die Kerne: Spektralwirkung 1/28 (< a², nicht positiv),
     Schur-Kern 9/50, Transfergedächtnis 0,553.
   - Das τ = i-Nomen e^{−π} gibt a ≈ 0,0019. Nomen und Dirac-Korrektur passen in einer Übertragung nicht zusammen.
@@ -149,7 +260,7 @@ OriginLab-Lane `process_rules` mit 8 Tests.
   - **Naht:** Die reelle 16er-Naht mit umgekehrtem Blatt braucht die Klausel Spin(10)₁. Ohne sie gewinnt die
     einfachere komplexe Flussnaht.
   - **Flavour:** TBM entsteht als Z₃ × V₄′, aber nur mit θ₁₃ = 0. Die Familienuhr Z₃ × Z₄ gibt keine Null:
-    (2/45, 1/3, 28/45).
+    (2/45, 1/3, 28/45). (Korrektur H6h25: exakt ((2 − √3)/6, 1/3, (2 + √3)/6); 2/45 war gerundet gedruckt.)
 - **Ganzer Prozess.** Das zusammengesetzte Universum hat 53 760 Prozesse und 512 Regeln. Die längste minimale Regel
   hat **acht Prinzipien**: Hardy, Kovarianz, Positivität, Dirac-Spin-2, Spiegelblatt, reelle Naht, Familienmischung,
   Familienuhr. Sie wählen genau einen Prozess.
@@ -157,7 +268,7 @@ OriginLab-Lane `process_rules` mit 8 Tests.
     eine 10er-Naht; ohne die übrigen wird die Auswahl mehrdeutig.
   - **Spiegelblatt** (zweite Blatthälfte umgekehrt und gleichgewichtig) legt zwei Bausteine zugleich fest.
 - **Daten (außerhalb der Lane).** Kein exaktes Restsymmetriemuster der nichtentarteten abelschen S₄-Untergruppen passt
-  in die ungefähren 3σ-Bereiche (NuFIT 6.0, gerundet). Z₃ × Z₄ gibt sin²θ₁₃ = 2/45 ≈ 0,044, etwa doppelt zu groß. Die
+  in die ungefähren 3σ-Bereiche (NuFIT 6.0, gerundet). Z₃ × Z₄ gibt sin²θ₁₃ = 2/45 ≈ 0,044 (exakt (2 − √3)/6 ≈ 0,0447, H6h25), etwa doppelt zu groß. Die
   Familienregel braucht eine kleine Brechung, wie TFPTs Kanal φ₀e^{−5/6} = 0,0231.
 
 **3. Was das für H6 heißt.**

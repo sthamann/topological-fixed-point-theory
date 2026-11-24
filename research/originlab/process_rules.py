@@ -32,7 +32,7 @@ import json
 import numpy as np
 import sympy
 from numpy.polynomial.legendre import leggauss
-from scipy.special import roots_genlaguerre
+from scipy.special import expit, roots_genlaguerre
 
 from genesis_rules import search
 
@@ -157,7 +157,29 @@ def transfer_kernel(qv):
     return lambda x: (np.sqrt((np.asarray(x, float) + a_)*(np.asarray(x, float) + b_)) - np.asarray(x, float) + 1 - qv**2)/(2*np.asarray(x, float))
 
 
-def spin2_kernels(transfer=True):
+def original_current_norm(alpha=0.25, b=4*np.pi, cut=40):
+    """omega(J_-1 J_1) in the original labelled quarter Gaussian state: c_r = (1 + e^{b(r + alpha)})^-1, b = 4 pi
+    (ELLIPTIC-CURRENT-SOURCE, native-arc-charge-source-interface-20261026, eq. 1 and 6), by the direct Fermi sum
+    Sum_r c_{r+1}(1 - c_r). The Hardy state has J_1 Omega = 0, i.e. norm 0."""
+    r = np.arange(-cut, cut, dtype=float)
+    c = lambda rr: expit(-b*(rr + alpha))
+    return float(np.sum(c(r + 1)*(1 - c(r))))
+
+
+def ladder_occupation(qv, n=200):
+    """Mean ladder level <n> of the normalised kernel vector of S^+(1 - q S^4) (computed from the compression)."""
+    if qv == 0:
+        return 0.0
+    A = _compression(1, 4, qv, n=n)
+    vec = np.linalg.svd(A)[2][-1]
+    w = np.abs(vec)**2/np.sum(np.abs(vec)**2)
+    return float(np.sum(np.arange(n)/4*w))
+
+
+Q_ORIGINAL = float(np.exp(-2*np.pi))                # ladder occupation q^2/(1-q^2) = omega(J_-1 J_1) = 1/(e^{4 pi} - 1)
+
+
+def spin2_kernels(transfer=True, state=True):
     rat = lambda num_den: (lambda x: num_den(np.asarray(x, float)))
     cands = [
         {"name": "Einstein H = x", "H": rat(lambda x: x), "poles": 1, "schur": None},
@@ -174,10 +196,16 @@ def spin2_kernels(transfer=True):
                           "poles": 2, "schur": (w, m)})
     cands.append({"name": "Schur two channels w=1/4,1/4 m=5/3,10/3",
                   "H": rat(lambda x: x - 0.25*x*x/(x + 5/3) - 0.25*x*x/(x + 10/3)), "poles": 3, "schur": "two"})
-    for label, qv in (("1/4", 0.25), ("1/2", 0.5), ("3/4", 0.75), ("q_dirac", Q_DIRAC), ("e^-pi", float(np.exp(-np.pi))))[:5*transfer]:
+    memories = (("1/4", 0.25), ("1/2", 0.5), ("3/4", 0.75), ("q_dirac", Q_DIRAC), ("e^-pi", float(np.exp(-np.pi))))
+    if state:
+        memories += (("e^-2pi", Q_ORIGINAL), ("1/sqrt2", float(np.sqrt(0.5))))
+    for label, qv in memories[:len(memories)*transfer]:
         Cq = transfer_kernel(qv)
+        # 1/H - 1/x = 2 q^2 / (Z [sqrt((x+a)(x+b)) + x + Z]): the closed form avoids cancellation for small q (z46)
+        R = (lambda qq, Z: lambda x: 2*qq**2/(Z*(np.sqrt((np.asarray(x, float) + (1 - qq)**2)*(np.asarray(x, float) + (1 + qq)**2))
+                                                + np.asarray(x, float) + Z)))(qv, 1 - qv**2)
         cands.append({"name": f"transfer memory q={label}", "H": (lambda C, Z: lambda x: Z/C(x))(Cq, 1 - qv**2), "poles": 50,
-                      "schur": None, "transfer": True})
+                      "schur": None, "transfer": True, "q": qv, "R": R})
     xs = np.geomspace(1e-3, 1e4, 900)
     out = []
     for c in cands:
@@ -185,7 +213,7 @@ def spin2_kernels(transfer=True):
         clauses = set()
         if np.all(H > 0):
             clauses.add("no_euclidean_zero")
-            R = 1/H - 1/xs
+            R = np.asarray(c["R"](xs), float) if "R" in c else 1/H - 1/xs
             dR = np.diff(R)/np.diff(xs)
             if np.all(R > -1e-12) and np.all(dR < 1e-12) and np.all(np.diff(dR)/np.diff(xs[:-1]) > -1e-9):
                 clauses.add("kallen_lehmann")
@@ -202,6 +230,8 @@ def spin2_kernels(transfer=True):
             clauses.add("rational")
         if c.get("transfer"):
             clauses.add("transfer_memory")
+            if state and abs(ladder_occupation(c["q"]) - original_current_norm())/original_current_norm() < 1e-6:
+                clauses.add("original_state")
         zero = None
         if np.any(H <= 0):
             k = int(np.argmax(H <= 0))
@@ -281,6 +311,36 @@ def readouts():
                 if max(r["residues"]) - min(r["residues"]) < 1e-12 and r["residues"][0] > 0:
                     clauses.add("universal_residue")
             out.append({"q": label, "kind": kind, "clauses": clauses, "size": len(r["residues"])})
+    return out
+
+
+def q_rules():
+    """Candidate states of the quarter transfer: which rule fixes q? Every clause is computed from q."""
+    omega = original_current_norm()
+    cands = (("0 (Hardy state)", 0.0), ("e^-2pi", Q_ORIGINAL), ("e^-4pi", float(np.exp(-4*np.pi))),
+             ("e^-pi", float(np.exp(-np.pi))), ("1/sqrt2", float(np.sqrt(0.5))), ("q_dirac", Q_DIRAC), ("1/2", 0.5))
+    out = []
+    for label, qv in cands:
+        occ = ladder_occupation(qv)
+        C = transfer_kernel(qv) if qv > 0 else (lambda x: 1/np.asarray(x, float))
+        residue = float(1e-7*C(1e-7))                       # weight of the massless pole
+        clauses = set()
+        if abs(occ - omega) < 1e-6*omega:
+            clauses.add("original_state")                  # kernel vector = purification of the lowest original current mode
+        if occ < 1e-15:
+            clauses.add("hardy_state")                     # J_1 Omega = 0
+        if 1 - residue > 1e-12:
+            clauses.add("memory")
+        if abs(residue - (1 - residue)) < 1e-6:
+            clauses.add("equal_weight")
+        if residue > 0.99:
+            clauses.add("einstein_dominant")
+        if qv > 0 and abs(qv**2/(1 - qv**2)**2 - 0.3) < 1e-9:
+            clauses.add("dirac_same_scale")
+        k = -np.log(qv)/np.pi if qv > 0 else 0
+        if qv > 0 and abs(k - round(k)) < 1e-9:
+            clauses.add("modular_nome")
+        out.append({"q": label, "value": qv, "clauses": clauses, "occupation": occ, "residue": residue})
     return out
 
 
@@ -366,6 +426,14 @@ def _kind(G):
     return None
 
 
+def _exact(v):
+    """Exact label in Q(sqrt 2, sqrt 3); the first run used limit_denominator(48), which printed (2 - sqrt 3)/6 as 2/45."""
+    e = sympy.nsimplify(float(v), [sympy.sqrt(2), sympy.sqrt(3)], tolerance=1e-8)
+    if abs(float(e) - float(v)) > 1e-8:
+        return repr(round(float(v), 9))
+    return str(e)
+
+
 def flavour_pairs():
     rep = _standard_rep()
     rng = np.random.default_rng(3)
@@ -403,7 +471,7 @@ def flavour_pairs():
                 clauses.add("cp_odd")
             if g1["G"] == g2["G"]:
                 clauses.add("same_group")
-            frac = tuple(tuple(str(Fr(v).limit_denominator(48)) for v in row) for row in canon)
+            frac = tuple(tuple(_exact(v) for v in row) for row in canon)
             out.append({"pair": f"{g1['kind']} x {g2['kind']}", "index": 24//len(g1["G"]) + 24//len(g2["G"]),
                         "pattern": frac, "jarlskog": round(float(J), 9), "clauses": clauses})
     return out
@@ -413,7 +481,8 @@ PRINCIPLES = {
     "hardy": "the kernel restricts to the Hardy kernel on every rank-one slice",
     "covariance": "the kernel is covariant under the conformal group U(2,2)",
     "positivity": "kernel positive, spin-2 kernel Kaellen-Lehmann positive, seam free of anyons (unitarity everywhere)",
-    "dirac_spin2": "the spin-2 kernel keeps the Dirac heat-kernel correction a = 3/10",
+    "dirac_spin2": "the spin-2 kernel keeps the Dirac heat-kernel correction a = 3/10 (in units of the e^-u cutoff: a scale "
+                   "convention, z46)",
     "mirror_sheet": "the second sheet half is a mirror copy: seam orientation reversed AND hidden spin-2 channel of equal weight",
     "real_seam": "the seam carries Spin(10) at level one (real Majorana layers)",
     "e8_seam": "the seam has chiral central charge 8",
@@ -421,14 +490,21 @@ PRINCIPLES = {
     "family_clock": "one residual family symmetry is the quarter-turn clock Z4 (characters -1, i, -i)",
     "orientation_reversal": "the second sheet half reverses the chiral orientation (8 - 8 = 0)",
     "one_transfer": "the spin-2 kernel is the memory of the same quarter-turn Hardy transfer that gives the bundle and the index",
+    "original_state": "q is fixed by the original quarter Gaussian state: the transfer's kernel vector purifies its lowest current mode",
 }
 TRANSFER_PRINCIPLES = ("orientation_reversal", "one_transfer")      # added with the transfer universes (z45)
+STATE_PRINCIPLES = ("original_state",)                               # added with the state rule for q (z46)
 
 
-def composed_process(transfer=True):
+def allowed_principles(transfer=True, state=True):
+    return {k: v for k, v in PRINCIPLES.items()
+            if (transfer or k not in TRANSFER_PRINCIPLES) and (state and transfer or k not in STATE_PRINCIPLES)}
+
+
+def composed_process(transfer=True, state=True):
     """Whole processes: one kernel, one spin-2 kernel, one seam with c in {4, 5, 8, 16}, one flavour pair."""
     ks = matrix_kernels()
-    s2 = spin2_kernels(transfer)
+    s2 = spin2_kernels(transfer, state)
     sl = [o for o in seam_layers() if o["n"] in (8, 10, 16, 32)]
     fp = [f for f in flavour_pairs() if f["pair"].split(" x ")[0] <= f["pair"].split(" x ")[1]]   # unordered: (A, B) ~ (B, A)^T
     out = []
@@ -459,6 +535,8 @@ def composed_process(transfer=True):
                         c.add("orientation_reversal")
                     if "transfer_memory" in t["clauses"]:
                         c.add("one_transfer")
+                    if "original_state" in t["clauses"]:
+                        c.add("original_state")
                     out.append({"clauses": c, "size": float(k["nu"]) + t["poles"] + z["n"] + f["index"],
                                 "label": f"kernel nu={k['nu']} eps={k['eps']} | spin2 {t['name']} | seam n={z['n']} {z['kind']} "
                                          f"{z['orient']} | flavour {f['pair']} {f['pattern']}"})
@@ -469,7 +547,9 @@ RECORD = {
     "matrix_kernels": {"nu=1 eps=0": "the Hardy determinant kernel det(I - W^+ Z)^-1 (z40/z42: massless, Wallach edge, oscillator pairs)"},
     "transfer_processes": {"d=1 k=4 q=1/4": "the quarter-turn transfer a_q(z) = z^-1(1 - q z^4) of the eleventh analysis (z44)"},
     "readouts": {},
+    "q_rules": {"e^-2pi": "transfer state = purification of the lowest current mode of the original quarter Gaussian state (z46)"},
     "spin2_kernels": {"transfer memory q=q_dirac": "Marchenko-Pastur memory of the quarter transfer with q^2/(1-q^2)^2 = 3/10 (z45)",
+                      "transfer memory q=e^-2pi": "transfer memory in the original quarter Gaussian state, hidden weight e^-4pi (z46)",
                       "Schur w=1/2 m=5/3": "positive memory kernel C = 1/x + 1/(x + 10/3) of H6h23/z42 (keeps a = 3/10)",
                       "Einstein H = x": "pure Einstein graviton (Jacobson reading, premise D)"},
     "seam_layers": {"n=16 real reversed": "SEAM.S3 (p+ip x 16, c = 8) with an orientation-reversing second sheet half (z41/z42)",
@@ -479,8 +559,8 @@ RECORD = {
 }
 
 
-def run(root=None, transfer=True):
-    """transfer=False reproduces the lane as of H6h23 (z43): no transfer universes, no transfer memory, nine principles."""
+def run(root=None, transfer=True, state=True):
+    """transfer=False reproduces the lane as of H6h23 (z43); state=False the lane as of H6h24 (z45), without the state rule."""
     out = {"status": "PROCESS_RULES_SEARCHED", "physical_solution": False, "scope": SCOPE, "universes": {}}
     mk = matrix_kernels()
     res = search(mk, ["positive", "hardy_slice", "wave_equation", "conformally_covariant"],
@@ -489,9 +569,9 @@ def run(root=None, transfer=True):
     res["bound"] = "nu in {0, 1/2, 1, 3/2, 2, 3}, eps in {0, 1}; Schur channels up to degree 8"
     out["universes"]["matrix_kernels"] = res
 
-    sk = spin2_kernels(transfer)
+    sk = spin2_kernels(transfer, state)
     res = search(sk, ["no_euclidean_zero", "kallen_lehmann", "dirac_low_energy", "mirror_weight", "rational"]
-                 + ["transfer_memory"]*transfer,
+                 + ["transfer_memory"]*transfer + ["original_state"]*(transfer and state),
                  lambda o: o["poles"], lambda o: o["name"])
     res["derived"] = {o["name"]: {"a": o["a"], "first_zero_near": o["first_zero_near"], "clauses": sorted(o["clauses"])} for o in sk}
     res["bound"] = ("Dirac spectral action with e^-u, step and (1+u)^-3; x e^x; Stelle and Dirac local truncations; Einstein; "
@@ -515,6 +595,20 @@ def run(root=None, transfer=True):
         res["bound"] = "readouts of the primitive quarter transfer at q = 1/2 and e^-pi"
         out["universes"]["readouts"] = res
 
+    if transfer and state:
+        qr = q_rules()
+        pool = ["original_state", "hardy_state", "memory", "equal_weight", "einstein_dominant", "dirac_same_scale",
+                "modular_nome"]
+        res = search(qr, pool, lambda o: 0, lambda o: o["q"])
+        empty = [set(r) for k in range(1, len(pool) + 1) for r in combinations(pool, k)
+                 if not any(set(r) <= o["clauses"] for o in qr)]
+        res["minimal_empty_rules"] = sorted(sorted(r) for r in empty if not any(e < r for e in empty))
+        res["derived"] = {o["q"]: {"occupation": o["occupation"], "massless_residue": o["residue"],
+                                   "clauses": sorted(o["clauses"])} for o in qr}
+        res["original_current_norm"] = original_current_norm()
+        res["bound"] = "seven candidate states of the quarter transfer; no size preference (ties stay AMBIGUOUS)"
+        out["universes"]["q_rules"] = res
+
     sl = seam_layers()
     res = search(sl, ["c_eight", "anyon_free", "spin10_level_one", "sheet_neutral", "u1_free"],
                  lambda o: o["n"], lambda o: f"n={o['n']} {o['kind']} {o['orient']}")
@@ -528,16 +622,31 @@ def run(root=None, transfer=True):
     res["bound"] = "ordered pairs of abelian subgroups of S4 with three distinct characters on the standard triplet"
     out["universes"]["flavour_pairs"] = res
 
-    principles = {k: v for k, v in PRINCIPLES.items() if transfer or k not in TRANSFER_PRINCIPLES}
-    cp = composed_process(transfer)
+    principles = allowed_principles(transfer, state)
+    cp = composed_process(transfer, state)
     res = search(cp, list(principles), lambda o: o["size"], lambda o: o["label"])
     longest = max(len(r["minimal_rules"][0]) for r in res["unique_selections"]) if res["unique_selections"] else 0
     full = [r for r in res["unique_selections"] if len(r["minimal_rules"][0]) == longest]
+    for r in full:                              # which objects satisfy the rule before the size order decides (z46)
+        ties = sorted((o for o in cp if set(r["minimal_rules"][0]) <= o["clauses"]), key=lambda o: o["size"])
+        r["tie_set_without_size"] = [o["label"] for o in ties]
     out["composed_process"] = {"principles": principles, "objects": res["objects"], "rules": res["rules"],
                                "verdicts": res["verdicts"], "longest_minimal_rule": longest,
                                "selected_by_the_longest_rules": full,
                                "unique_selections": res["unique_selections"][:40],
                                "bound": "all kernels, all spin-2 kernels, seams with 8, 10, 16, 32 layers, unordered flavour pairs"}
+    if transfer and state:
+        # the same search without the one principle that carries a scale convention (z46)
+        pool = [k for k in principles if k != "dirac_spin2"]
+        res = search(cp, pool, lambda o: o["size"], lambda o: o["label"])
+        top = max(len(r["minimal_rules"][0]) for r in res["unique_selections"])
+        best = [r for r in res["unique_selections"] if len(r["minimal_rules"][0]) == top]
+        for r in best:
+            r["tie_sets_without_size"] = {"+".join(m): [o["label"] for o in cp if set(m) <= o["clauses"]]
+                                          for m in r["minimal_rules"]}
+        out["composed_process"]["without_scale_convention"] = {
+            "principles": pool, "verdicts": res["verdicts"], "longest_minimal_rule": top,
+            "selected_by_the_longest_rules": best}
     met = []
     for key, res in out["universes"].items():
         for sel in res["unique_selections"]:

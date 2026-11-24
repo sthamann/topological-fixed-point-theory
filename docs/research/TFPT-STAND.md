@@ -127,8 +127,8 @@ Ursprung sollte beides zugleich liefern.
 
 ### Kandidat H6: Ursprung von P1 aus einer hintergrundfreien Naht (Exploration 23.11.)
 
-Quelle: `experiments/exploration/2026-11-23-phasenraum-f5-holocode/VERDICT.md` (Stand H6h24),
-Skripte `n1`, `v1`, `y1`, `z1`–`z45`, Lean-Vertrag `experiments/theory-contracts/h6-exakte-teile-20261123/`; Atlasproblem `problem:c3-p1-p2-shared-origin-reconciliation`,
+Quelle: `experiments/exploration/2026-11-23-phasenraum-f5-holocode/VERDICT.md` (Stand H6h25),
+Skripte `n1`, `v1`, `y1`, `z1`–`z47`, Lean-Vertrag `experiments/theory-contracts/h6-exakte-teile-20261123/`; Atlasproblem `problem:c3-p1-p2-shared-origin-reconciliation`,
 Befunde mit Präfix `h6`. Nichts davon ist im Ledger befördert. Prüfstand mit 20 Kriterien: 14
 hergeleitet, 6 unter benannter Lesart, keines gescheitert, offen oder gesetzt.
 
@@ -298,6 +298,16 @@ hergeleitet, 6 unter benannter Lesart, keines gescheitert, offen oder gesetzt.
     `process_rules` hat Übergangs- und Ausleseuniversen: Struktur legt d = 1, k = 4 fest, q nie; neun lasttragende
     Prinzipien (mit „eine Übertragung“ und Orientierungsumkehr, ohne Spiegelblatt) wählen über 67 200 Prozesse
     Kern ν = 1, Transfergedächtnis, reelle 16er-Naht und Z₃ × Z₄. [E/N]
+  - q-Regel und Ward-Struktur (Z46, Z47): a = 3/10 ist eine Skalenkonvention (a = (3/10) f(0)/∫f), skalenfrei ist nur
+    b/a² (25/63, 25/42, 0; für alle drei Abschneider < 1), also legt die Dirac-Zahl q nicht fest (Korrektur zu Z45). Die originale
+    Quarter-Gaußquelle (Calderón/Szegő, b = 4π) hat ω(J₋₁J₁) = 1/(e^{4π} − 1); als Leiterbesetzung des Nullvektors
+    gelesen folgt q = e^{−2π}, der Hardy-Zustand gibt q = 0. Spin 2 ist dann ein Einsteinpol mit Gewicht 1 − e^{−4π}
+    plus eine schmale massive Linie mit Gewicht 3,5·10⁻⁶. Ohne die Skalenkonvention wählen acht Prinzipien genau
+    diesen Prozess. Ward-Struktur: Der masselose Pol ist durch den Fredholmindex +1 geschützt (G nicht); Weinbergs
+    Softbedingung verlangt eine einzige Randquelle; Ward plus Positivität lassen das Gedächtnis nur im Spin-2-Kanal
+    (W F(□) W, linearisiert ½k⁴hP²h), der Spurkanal bleibt Einstein. Gegenprüfung eines externen Laufs: 32er-Naht nur
+    über die Größenordnung ausgeschlossen; Z₃ × Z₄ exakt (2 − √3)/6 = TM2 bei 15°; die Daten passen zu TM1 bei 15°
+    (sin²θ₁₃ = (2 − √3)/12), Herkunft offen. [E/N]
   - Instantonen (Z33): Unter Spin(10) hat ein Einheitsinstanton 4 Eltern- und 12
     Familiennullmoden; mit gesättigten Familiennullmoden entsteht Re[e^{iθ}Φ² C_fam], die Wand ist
     also auch im Kontinuum möglich, bei nackter SO(10) aber ~10⁻¹⁶⁴ unterdrückt. [N]
@@ -400,9 +410,10 @@ hergeleitet, 6 unter benannter Lesart, keines gescheitert, offen oder gesetzt.
     Spin-2-Sektor in Wallach-Form oder ein anderer Abschneider.
   - Die 4D-Einbettung der reellen Majorana-Chern-Naht (Blatt mit Kante) und ihre μ₄-Kondensation.
   - Die Herkunft der Prinzipien, die die Prozesssuche verlangt (Z43, Z45): konforme Kovarianz des Kerns,
-    Orientierungsumkehr, eine gemeinsame Übertragung und die Familienorientierung samt kleiner Brechung; dazu eine
-    Zustands-/Normregel, die q der Übertragung festlegt (bisher nur über a = 3/10; das τ = i-Nomen e^{−π} gibt
-    a ≈ 0,002), und eine Ward-Struktur für den masselosen, universell gekoppelten Spin-2-Pol.
+    Orientierungsumkehr, eine gemeinsame Übertragung und die Familienorientierung (TM1 statt TM2 bei 15°); dazu die
+    Herleitung der Zustandsregel q = e^{−2π} aus P1 (Zuordnung S⁴ ↔ J₋₁, Gaußquantisierung), die Skala μ und G, die
+    nichtlineare Vervollständigung der massiven Spin-2-Linie und warum alle Materie über den Randzustand koppelt (Z46,
+    Z47).
   - Die eine Prozessregel Z[J, A, g, Φ], aus der Naht, Eichwirkung und metrische Variation gemeinsam
     folgen.
 

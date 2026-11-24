@@ -1,0 +1,75 @@
+Teil 0: Gegenprüfung der externen OriginLab-Befunde
+   längste Regel (9 Prinzipien) vor der Größenordnung: 2 Prozesse
+      kernel nu=1 eps=0 | spin2 transfer memory q=q_dirac | seam n=16 real reversed | flavour Z3 x Z4 (('1/3 - sqrt(3)/6', '
+      kernel nu=1 eps=0 | spin2 transfer memory q=q_dirac | seam n=32 real reversed | flavour Z3 x Z4 (('1/3 - sqrt(3)/6', '
+   [ok] die längste Regel lässt die reelle 16er- und 32er-Naht zu; 16 gewinnt erst durch die Größenordnung
+   [ok] mit dem Prinzip E8-Naht (c = 8) statt Positivität verschwindet der Gleichstand: genau ein Prozess
+   Z3 x Z4 exakt: ('1/3 - sqrt(3)/6', '1/3', 'sqrt(3)/6 + 1/3')  (kleinster Eintrag 0.0446581987; 2/45 = 0.0444444444)
+   [ok] der kleinste Eintrag von Z3 x Z4 ist (2 - sqrt 3)/6 = 0.0446582, nicht 2/45 (bisher gerundet gedruckt)
+   [ok] Z3 x Z4 ist genau TM2 bei 15 Grad (mittlere Spalte trimaximal, sin^2 theta13 = (2/3) sin^2 15 Grad)
+   TM1 bei 15 Grad: sin^2 theta13 = (2 - sqrt 3)/12 = 0.02233, sin^2 theta12 = 0.3181, bei phi = pi/2 sin^2 theta23 = 0.5000; passende Phasen: 194 von 721
+   [ok] TM1 bei 15 Grad (eine erhaltene Z2) liegt mit sin^2 theta13 = (2 - sqrt 3)/12 = 0.02233 und sin^2 theta12 = 0.318 in allen drei Bereichen, für ein Phasenintervall um phi = pi/2
+   [ok] TM2 bei 15 Grad (= Z3 x Z4) verfehlt theta13 um den Faktor zwei
+   [Befund: ja] Der Winkel 15 Grad steht schon in der Familienuhr (Z3 x Z4 = TM2 bei 15 Grad); die Daten verlangen ihn in TM1. Warum die erste statt der zweiten TBM-Spalte erhalten bleibt, ist nicht hergeleitet
+
+Teil 1: Korrektur zu z45 -- a = 3/10 ist eine Skalenkonvention
+   e^-u      a = 3/10  (num 0.30000), b = 1/28  (num 0.0357), b/a^2 = 25/63 
+   (1+u)^-3  a = 3/5   (num 0.60000), b = 3/14  (num 0.2133), b/a^2 = 25/42 
+   Stufe     a = 3/10  (num 0.30000), b = 0     (num 0.0000), b/a^2 = 0     
+   [ok] a = (3/10) f(0)/Int f und b = -f'(0)/(28 Int f) stimmen für e^-u, (1+u)^-3 und die Stufe mit dem Lane-Kern
+   [ok] a hängt vom Abschneider ab (3/10, 3/5, 3/10) und skaliert mit Lambda^2: eine Konvention, keine Zahl der Theorie
+   [ok] das skalenfreie b/a^2 ist abschneiderabhängig (25/63, 25/42, 0) und für alle drei < 1: kein positiver Kern trifft es
+   [ok] jedes Transfergedächtnis trifft a = 3/10 mit passender Skala mu^2 = a(q) Lambda^2/(3/10); q_dirac verlangt zusätzlich mu = Lambda
+   [Befund: ja] Korrektur zu z45/H6h24: 'q durch a = 3/10 festgelegt' gilt nur bei gleicher Skala mu = Lambda und e^-u-Normierung; die Dirac-Zahl ist keine Regel für q
+
+Teil 2: Zustandsregel aus der originalen Quarter-Gaußquelle
+   omega(J_-1 J_1) aus der Fermisumme: alpha = 1/4 3.487354517756e-06, alpha = 3/4 3.487354517793e-06; 1/(e^(4 pi) - 1) = 3.487354517808e-06
+   [ok] die Fermisumme Sum_r c_(r+1)(1 - c_r) mit c_r = (1 + e^(4 pi (r + alpha)))^-1 gibt für beide Quarter 1/(e^(4 pi) - 1) (Quelle: ELLIPTIC-CURRENT-SOURCE Gl. 6, 8)
+   [ok] <n> = Sum n (1-q^2) q^(2n) = q^2/(1-q^2) (numerisch für q = 1/2)
+   Leiterbesetzung von eta_q: <n> = q^2/(1 - q^2); gleichgesetzt mit omega: q^2 = [exp(-4*pi)]
+   [ok] <n> = q^2/(1-q^2) ist streng monoton: genau eine Lösung q^2 = e^(-4 pi), also q = e^(-2 pi)
+   [ok] die Lane misst dieselbe Besetzung am Nullvektor der Kompression (q = e^-2pi)
+   (dieselbe Dichtematrix mit Deckgenerator 2H und Normierung 2 pi: das Verhältnis hängt nicht an der Normierung)
+   [ok] der Hardy-Zustand (J_1 Omega = 0) gibt <n> = 0, also q = 0 und kein Gedächtnis
+   [ok] ordnet man den Leiterschritt dem Strommodus m zu, folgt q = e^(-2 pi m); das größte q ist e^(-2 pi)
+   [Befund: ja] q = e^-2pi folgt unter der Zuordnung 'Übertragungsschritt S^4 = ein Quant von J_-1' und der expliziten Prämisse der freien Gaußquantisierung; die Quelle selbst nennt b = 4 pi keine physikalische Temperatur
+
+Teil 3: Folgen für Spin 2
+   Einsteinpol-Gewicht 1 - e^(-4 pi) = 0.9999965127; verstecktes Band [0.99627, 1.00374] mu^2 mit Gewicht 3.4873e-06; b/a^2 = 1 + e^(4 pi) = 2.8675e+05
+   [ok] das Band ist eine schmale Linie bei mu^2 (Breite 4q = 0.0075) mit Gewicht e^(-4 pi) = 3.487e-6
+   [ok] x C(x) -> 1 - e^(-4 pi) bei x -> 0 (Residuum des masselosen Pols)
+   statischer Yukawa-Zusatz eines massiven Spin-2 (Faktor 4/3): alpha = 4.650e-06 bei Reichweite 1/mu
+   [Befund: ja] Im originalen Zustand ist die Gravitation Einstein bis auf eine massive Spin-2-Linie mit Kopplung 4.6e-6; die Skala mu legt die Zustandsregel nicht fest
+
+Teil 4: Zustandsuniversum und skalenfreie Prozesssuche
+   q_rules: 7 Zustände, Urteile {'EMPTY': 106, 'UNIQUE': 14, 'AMBIGUOUS': 8}
+      0 (Hardy state)  <n> = 0.000e+00  Polgewicht = 1.0000000  ['einstein_dominant', 'hardy_state']
+      e^-2pi           <n> = 3.487e-06  Polgewicht = 0.9999965  ['einstein_dominant', 'memory', 'modular_nome', 'original_state']
+      e^-4pi           <n> = 1.216e-11  Polgewicht = 1.0000000  ['einstein_dominant', 'memory', 'modular_nome']
+      e^-pi            <n> = 1.871e-03  Polgewicht = 0.9981326  ['einstein_dominant', 'memory', 'modular_nome']
+      1/sqrt2          <n> = 1.000e+00  Polgewicht = 0.5000001  ['equal_weight', 'memory']
+      q_dirac          <n> = 2.416e-01  Polgewicht = 0.8053995  ['dirac_same_scale', 'memory']
+      1/2              <n> = 3.333e-01  Polgewicht = 0.7500000  ['memory']
+   eindeutige Auswahlen: {'0 (Hardy state)': [['hardy_state']], '1/sqrt2': [['equal_weight']], 'e^-2pi': [['original_state']], 'q_dirac': [['dirac_same_scale']]}
+   [ok] je eine Zustandsregel wählt je ein q: originaler Zustand -> e^-2pi, Hardy -> 0, Gleichgewicht -> 1/sqrt 2, Dirac bei gleicher Skala -> q_dirac
+   [ok] originaler Zustand verträgt sich weder mit gleichem Blattgewicht noch mit der Dirac-Zahl bei gleicher Skala
+   ohne dirac_spin2: längste Regel 8 Prinzipien [['covariance', 'family_clock', 'family_mixing', 'hardy', 'orientation_reversal', 'original_state', 'positivity', 'real_seam'], ['covariance', 'e8_seam', 'family_clock', 'family_mixing', 'hardy', 'orientation_reversal', 'original_state', 'real_seam']]
+   gewählt: kernel nu=1 eps=0 | spin2 transfer memory q=e^-2pi | seam n=16 real reversed | flavour Z3 x Z4 (('1/3 - sqrt(3)/6', '1/3', 'sqrt(3)/6 + 1/3'), ('1/3',
+      ohne covariance          : AMBIGUOUS ["kernel nu=1 eps=0 | spin2 transfer memory q=e^-2pi | seam n=16 real reversed | flavour Z3 x Z4 (('1/3 - sqrt
+      ohne family_clock        : AMBIGUOUS ["kernel nu=1 eps=0 | spin2 transfer memory q=e^-2pi | seam n=16 real reversed | flavour V4 x Z3 (('1/3', '1/3
+      ohne family_mixing       : AMBIGUOUS ["kernel nu=1 eps=0 | spin2 transfer memory q=e^-2pi | seam n=16 real reversed | flavour V4 x Z4 (('0', '0', '
+      ohne hardy               : UNIQUE    ["kernel nu=0 eps=0 | spin2 transfer memory q=e^-2pi | seam n=16 real reversed | flavour Z3 x Z4 (('1/3 - sqrt
+      ohne orientation_reversal: AMBIGUOUS ["kernel nu=1 eps=0 | spin2 transfer memory q=e^-2pi | seam n=16 real reversed | flavour Z3 x Z4 (('1/3 - sqrt
+      ohne original_state      : UNIQUE    ["kernel nu=1 eps=0 | spin2 Einstein H = x | seam n=16 real reversed | flavour Z3 x Z4 (('1/3 - sqrt(3)/6', '1
+      ohne positivity          : UNIQUE    ["kernel nu=1 eps=0 | spin2 transfer memory q=e^-2pi | seam n=10 real reversed | flavour Z3 x Z4 (('1/3 - sqrt
+      ohne real_seam           : UNIQUE    ["kernel nu=1 eps=0 | spin2 transfer memory q=e^-2pi | seam n=8 complex reversed | flavour Z3 x Z4 (('1/3 - sq
+   [ok] ohne die Skalenkonvention wählen acht Prinzipien genau einen Prozess: Kern nu = 1, Transfergedächtnis im originalen Zustand, reelle 16er-Naht mit umgekehrtem Blatt, Z3 x Z4
+   [ok] eine der beiden minimalen Regeln (mit E8-Naht) braucht keine Größenordnung mehr
+   [ok] ohne die Zustandsregel fällt die Auswahl auf reines Einstein (H = x, Hardy-Zustand) zurück
+   [ok] mit der Dirac-Zahl bleibt der Lauf aus z45 (neun Prinzipien, q_dirac) erhalten
+   [Befund: ja] Die Wahl zwischen q_dirac und e^-2pi ist eine Wahl zwischen einer Skalenkonvention und einem originalen Zustand; der Zustand ist die tragfähigere Regel, bleibt aber eine Prämisse (nicht aus P1 hergeleitet)
+
+Urteil
+   Die q-Regel ist eine Zustandsregel. Die Dirac-Zahl a = 3/10 legt q nicht fest: a = (3/10) f(0)/Int f hängt vom Abschneider ab und skaliert mit Lambda^2; skalenfrei ist nur b/a^2 (25/63, 25/42, 0), immer < 1. Die originale Quarter-Gaußquelle (Calderón/Szegő, b = 4 pi) hat die Stromnorm omega(J_-1 J_1) = 1/(e^{4 pi} - 1); setzt man die Leiterbesetzung q^2/(1-q^2) des Nullvektors gleich, folgt eindeutig q = e^{-2 pi}, der Hardy-Zustand gibt q = 0. Damit ist Spin 2 ein Einsteinpol mit Gewicht 1 - e^{-4 pi} und eine schmale massive Linie mit Gewicht 3.5e-6 (Yukawa-Stärke 4.6e-6, Reichweite offen). Ohne die Skalenkonvention wählen acht Prinzipien genau diesen Prozess (Kern nu = 1, Transfergedächtnis im originalen Zustand, reelle 16er-Naht, Z3 x Z4); ohne Zustandsregel fällt die Wahl auf reines Einstein. Gegenprüfung: Die 32er-Naht ist nur durch die Größenordnung ausgeschlossen (mit E8-Naht nicht mehr), Z3 x Z4 gibt exakt (2 - sqrt 3)/6 und ist TM2 bei 15 Grad; die Daten passen zu TM1 bei 15 Grad, dessen Herkunft offen ist. Die Zuordnung Leiterschritt = J_-1 und die Gaußquantisierung bleiben Prämissen.
+
+Alle Prüfungen bestanden: True (24/24)

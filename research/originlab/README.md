@@ -41,6 +41,18 @@ the composed universe (67 200 processes) has a longest minimal rule of nine load
 kernel nu = 1, the transfer memory at that q, the reversed real 16-layer seam and Z3 x Z4, and no longer needs the
 mirror-sheet principle. `run(transfer=False)` reproduces the first run exactly.
 
+Third run (state rule, H6 exploration z46/z47): the number a = 3/10 behind `dirac_spin2` is a scale convention
+(a = (3/10) f(0)/Int f in units of the cutoff), so it fixes no q. A new universe `q_rules` holds seven candidate states of
+the transfer, with every clause computed from q. The original quarter Gaussian state (Calderon/Szego, b = 4 pi) has the
+current norm omega(J_-1 J_1) = 1/(e^{4 pi} - 1); matching the ladder occupation q^2/(1-q^2) of the transfer's kernel vector
+gives q = e^-2pi (clause `original_state`), and the Hardy state gives q = 0. The spin-2 slot gains the memories at e^-2pi
+and 1/sqrt 2, and a stable closed form of 1/H - 1/x for small q. `composed_process.without_scale_convention` repeats the
+whole-process search without `dirac_spin2` (72 576 processes). Eight principles then select kernel nu = 1, the transfer
+memory in the original state, the reversed real 16-layer seam and Z3 x Z4. Without the state rule the choice falls back to
+pure Einstein. The longest rules now report their tie set before the size order: n = 16 and n = 32 tie unless the E8-seam
+principle is used. Flavour patterns are printed exactly in Q(sqrt 2, sqrt 3); the first runs printed (2 - sqrt 3)/6 as 2/45.
+`run(state=False)` reproduces the second run.
+
 ```bash
 .venv/bin/python -B research/originlab/process_rules.py > /tmp/process-rules.json
 .venv/bin/python -B research/originlab/main.py --campaign process_rules --jobs 1 --out /tmp/originlab-process
