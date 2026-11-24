@@ -1199,6 +1199,24 @@ if "H6h2" in H and z1p.exists() and z2p.exists():
                                                                                                                                              "gebraucht: originale Antwort mit d = 4, "
                                                                                                                                              "nichtkompakt, reflexionspositiv (Z60)")
                                                                                                                         facts["F51_spectral_dimension"] = T18["urteil"]
+                                                                                                                        z61p = Path(__file__).with_name("z61_ergebnis.json")
+                                                                                                                        z62p = Path(__file__).with_name("z62_ergebnis.json")
+                                                                                                                        if z61p.exists() and z62p.exists():
+                                                                                                                            T19 = {n: json.loads(p.read_text()) for n, p in ((61, z61p), (62, z62p))}
+                                                                                                                            ok19 = all(all(T19[n]["checks"].values()) for n in T19)
+                                                                                                                            H["H6h33"] = dict(H["H6h32"])
+                                                                                                                            H["H6h33"]["K12"] = (LES if ok19 else F,
+                                                                                                                                                 "[Lesart Standardform + T] Kausalstruktur 3+1 = "
+                                                                                                                                                 "Tomita-Standardform eines Dublettzustands "
+                                                                                                                                                 "(Herm(2), Zukunftskegel, Naht = Himmelssphäre, "
+                                                                                                                                                 "nur n = 2, Z62); Orte = Lagen der Naht als "
+                                                                                                                                                 "Twistorgerade (Z61); offen: Dublettzustand aus "
+                                                                                                                                                 "dem Original, T aus P1 (O(1)+O(-1))")
+                                                                                                                            H["H6h33"]["K13"] = (LES if ok19 else F,
+                                                                                                                                                 H["H6h32"]["K13"][1] + "; masselose Feldgleichungen "
+                                                                                                                                                 "und selbstduales Graviton aus Holomorphie unter T "
+                                                                                                                                                 "(Z61); nicht-selbstdualer Teil offen")
+                                                                                                                            facts["F52_bird_eye"] = {n: T19[n]["urteil"] for n in T19}
 
 order = [f"K{i}" for i in range(1, 21)]
 print("Gesamttabelle (P = hergeleitet, L = unter benannter Lesart, F = FAIL, O = OFFEN, E = EINGABE)\n")

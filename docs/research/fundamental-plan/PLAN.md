@@ -29,6 +29,14 @@ Topologie festlegen und Mehrdeutigkeiten mit dem nächsten Prinzip schließen. S
 Originale haben Spektraldimension 1 (Quelle) bzw. kompakt 8 (E₈-Naht). Gebraucht wird eine originale Antwort mit d = 4,
 nichtkompakt und reflexionspositiv. Prüfstand seit H6h32: 13 P, 7 L (K12 als Lesart).
 
+**Vogelperspektive (H6h33, `docs/research/VOGELPERSPEKTIVE.md`).**
+- TFPTs Grundzahlen sind die Twistordaten eines Raumzeitpunkts.
+- Die Kausalstruktur von 3+1 ist die Standardform eines Dublettzustands, und die Naht ist die Himmelssphäre (`z62`).
+- Unter der Lesart T sind die Orte die Lagen der Naht, und die Feldgleichungen folgen aus Holomorphie (`z61`).
+- Am meisten hängt jetzt an zwei Fragen:
+  - Legt die originale Kovarianz den Dublettzustand fest?
+  - Trägt der Purifikationspartner das zweite O(1)?
+
 **Zusammenführung.** Seit 24. November sind die Zweige vom 20. November in main;
 `codex/c3-p1-p2-abgleich-20261105` ist nicht zusammengeführt (121 Konflikte).
 

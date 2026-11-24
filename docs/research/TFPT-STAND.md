@@ -1,7 +1,7 @@
 # TFPT: Was funktioniert, was fehlt, was eine vollständige Lösung wäre
 
 Kompakter Stand vom 20. November 2026, ergänzt am 23. und 24. November (Befunde 20.–24. November, Kandidat H6 bis
-H6h32, Leitlinie „Rekonstruktion statt Auswahl“ und Abschnitt 5), für Explorations- und Lösungssitzungen. Seit 24. November
+H6h33, Leitlinie „Rekonstruktion statt Auswahl“ und Abschnitt 5), für Explorations- und Lösungssitzungen. Seit 24. November
 liegen die Explorationszweige vom 20. November in main (Quaternionrahmen, Fibonacci-Uhr, Vertauschung und Auslese, fremde
 und operative Ursprünge, Projekt Genesis, die Vertragsserie vom 14./15. Oktober); ihre Befunde stehen in ihren Verzeichnissen
 unter `experiments/`. Nicht zusammengeführt ist `codex/c3-p1-p2-abgleich-20261105` (121 Konflikte mit dem heutigen Stand). Neuere Befunde stehen in den Atlasproblemen mit Datum
@@ -41,6 +41,14 @@ Erster Schritt (Z58):
 Offen sind der Tensorkanal und die Rekonstruktion von 3+1 aus 4D-Antworten. Z60 schärft das: Die Zahl der Richtungen
 ist die Spektraldimension (Weyl-Gesetz) einer Antwort. Die Quelle hat d = 1, die E₈-Naht kompakt und starr d = 8 = 4 + 4.
 Gebraucht wird eine originale Antwort mit d = 4, nichtkompakt und reflexionspositiv.
+
+**Gesamtbild (Vogelperspektive, 24. November):** [`VOGELPERSPEKTIVE.md`](VOGELPERSPEKTIVE.md).
+- Die Grundzahlen 5, 3, 2, 4 sind die Twistordaten eines Raumzeitpunkts.
+- Die Kausalstruktur von 3+1 ist die Tomita-Standardform eines Dublettzustands, und die Naht ist die Himmelssphäre (Z62).
+- Unter der Lesart T (Naht = Twistorgerade) sind die Orte die Lagen der Naht, und die masselosen Feldgleichungen folgen aus
+  Holomorphie (Z61).
+- Offen sind der Dublettzustand aus dem Original, T selbst, der nicht-selbstduale Teil der Gravitation, Wechselwirkung,
+  Gewichte und Skalen.
 
 ## 2. Die gesetzten Eingaben
 
@@ -148,8 +156,8 @@ Ursprung sollte beides zugleich liefern.
 
 ### Kandidat H6: Ursprung von P1 aus einer hintergrundfreien Naht (Exploration 23.11.)
 
-Quelle: `experiments/exploration/2026-11-23-phasenraum-f5-holocode/VERDICT.md` (Stand H6h32),
-Skripte `n1`, `v1`, `y1`, `z1`–`z60`, Lean-Vertrag `experiments/theory-contracts/h6-exakte-teile-20261123/`; Atlasproblem `problem:c3-p1-p2-shared-origin-reconciliation`,
+Quelle: `experiments/exploration/2026-11-23-phasenraum-f5-holocode/VERDICT.md` (Stand H6h33),
+Skripte `n1`, `v1`, `y1`, `z1`–`z62`, Lean-Vertrag `experiments/theory-contracts/h6-exakte-teile-20261123/`; Atlasproblem `problem:c3-p1-p2-shared-origin-reconciliation`,
 Befunde mit Präfix `h6`. Nichts davon ist im Ledger befördert. Prüfstand mit 20 Kriterien (Stand H6h32): 13
 hergeleitet, 7 unter benannter Lesart, keines gescheitert, offen oder gesetzt. K12 (3+1) zählt seit der Leitlinie
 „Rekonstruktion statt Auswahl“ nur als Lesart: d = 4 folgt kinematisch, nicht aus den Antworten (Z60).
@@ -399,6 +407,17 @@ hergeleitet, 7 unter benannter Lesart, keines gescheitert, offen oder gesetzt. K
     - Der naive Familienlinien-Index ist 8 mod 16 (keine volle 16).
     - Die γ₅-Spur gibt t = 1, ist aber indefinit.
     - Zur endlichen Spiegellücke gibt es keinen Satz bei endlichem J. [E/N]
+  - Vogelperspektive (Z61, Z62, `docs/research/VOGELPERSPEKTIVE.md`):
+    - h⁰(O(4)) = 5 (Träger = Weylspinor), h⁰(O(2)) = 3 (Familien = Λ²₊), h⁰(O(1)) = 2 (Spinor), h⁰(O(1) ⊗ ℂ²) = 4
+      (Raumzeit).
+    - Die vier Marken sind die Nullrichtungen eines Spin-2-Zustands im Träger. Die Weierstrass-Invarianten der
+      Doppelüberlagerung sind g₂ = I und g₃ = J; τ = i heißt also J = 0, und die H6-Marken sind (|2⟩ − |−2⟩)/√2.
+    - Die Standardform eines Dublettzustands hat Herm(2) = R^{1,3} mit dem Zukunftskegel als natürlichem Kegel. Nur n = 2
+      gibt einen Lorentzkegel.
+    - Unter T (Naht = Twistorgerade) sind die Orte die Lagen der Naht. Holomorphe Twistorfunktionen geben exakt □φ = 0, die
+      Weyl-Gleichung und das selbstduale Graviton.
+    - Lücken: Die verzweigten Blätter geben O(1) ⊕ O(−1) statt O(1) ⊕ O(1), der Dublettzustand ist nicht aus dem Original
+      hergeleitet, und der nicht-selbstduale Teil fehlt. [E/L]
   - Instantonen (Z33): Unter Spin(10) hat ein Einheitsinstanton 4 Eltern- und 12
     Familiennullmoden; mit gesättigten Familiennullmoden entsteht Re[e^{iθ}Φ² C_fam], die Wand ist
     also auch im Kontinuum möglich, bei nackter SO(10) aber ~10⁻¹⁶⁴ unterdrückt. [N]

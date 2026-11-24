@@ -7813,3 +7813,26 @@ Atlas übernommen; sein vorbereiteter Patch wurde unverändert angewendet (Revis
 - Sein Wilson-Halbraum (drei transversale Impulse, eine Weyl-Ecke) ist der nächste Kandidat für die d = 4-Antwort,
   aber eingesetzt, nicht rekonstruiert.
 - Der naive Familienindex ist 8 mod 16.
+
+## H6H33-20261124 · Vogelperspektive: Naht als Himmelssphäre und Twistorgerade (Architektur, bedingt)
+
+`z61_twistornaht.py` (12 von 12) und `z62_standardform.py` (5 von 5) im H6-Ordner; Gesamtbild in
+`docs/research/VOGELPERSPEKTIVE.md`.
+
+**Exakt:**
+- **Twistordaten.** h⁰(O(4)) = 5, h⁰(O(2)) = 3, h⁰(O(1)) = 2, h⁰(O(1) ⊗ ℂ²) = 4 mit h¹ = 0.
+- **Marken als Spin-2-Zustand.** Die Weierstrass-Invarianten der Doppelüberlagerung sind die Weyl-Invarianten I und J;
+  τ = i heißt J = 0. Die H6-Marken sind der Spin-2-Zustand (|2⟩ − |−2⟩)/√2.
+- **Nur 3+1.** Die Standardform eines Dublettzustands hat Herm(2) = R^{1,3} mit dem Zukunftskegel. Nur n = 2 gibt einen
+  Lorentzkegel.
+- **Feldgleichungen aus Holomorphie:** Spin 0, Weyl 1/2 und das selbstduale Graviton.
+
+**Lesart T (Naht = Twistorgerade):** Die Orte sind die Lagen der Naht.
+
+**Offen:**
+- Dublettzustand aus dem Original;
+- T aus P1 (die verzweigten Blätter geben O(1) ⊕ O(−1));
+- der nicht-selbstduale Teil der Gravitation;
+- Wechselwirkung, Familiengewichte, Skalen und die 16 je Familie.
+
+**Prüfstand:** 13 P, 7 L. Atlas-Revision 07de10f6082872db9a33da59. Ledger unverändert, nichts befördert.

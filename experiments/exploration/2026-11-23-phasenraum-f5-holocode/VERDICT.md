@@ -1,6 +1,66 @@
 # Urteil
 
-## Aktueller Stand: H6h32 — Wie viele Richtungen rekonstruieren die Antworten? (`z60`)
+## Aktueller Stand: H6h33 — Vogelperspektive: Naht als Himmelssphäre und Twistorgerade (`z61`, `z62`)
+
+Bilanz unverändert 13 P und 7 L von 20. K12 und K13 sind präzisiert.
+
+**Auftrag:** die volle Lösung erarbeiten, dafür aus der Vogelperspektive alles durchdenken.
+
+Das Gesamtbild steht in [`docs/research/VOGELPERSPEKTIVE.md`](../../../docs/research/VOGELPERSPEKTIVE.md). Selbst gerechnet:
+`z61` mit 12 und `z62` mit 5 Prüfungen.
+
+**In einem Satz:**
+- TFPTs Grundzahlen sind die Twistordaten eines Raumzeitpunkts: 5 = h⁰(O(4)), 3 = h⁰(O(2)), 2 = h⁰(O(1)),
+  4 = h⁰(O(1) ⊗ ℂ²).
+- Die Kausalstruktur von 3+1 ist die Tomita-Standardform eines Zustands auf dem Dublett der Naht, und die Naht ist die
+  Himmelssphäre.
+- Unter der Lesart T (Naht = Twistorgerade) ist die Raumzeit der Raum der Nahtlagen; die masselosen Feldgleichungen folgen
+  aus Holomorphie.
+- Offen sind der Dublettzustand aus dem Original, T selbst, der nicht-selbstduale Teil der Gravitation, Wechselwirkung,
+  Gewichte und Skalen.
+
+**1. Twistornaht (`z61`).**
+- **Zahlen.** h⁰(O(4)) = 5 (Träger = Weylspinor), h⁰(O(2)) = 3 (Familien = Λ²₊ = holomorphe Vektorfelder der Naht),
+  h⁰(O(1)) = 2 (Spinor).
+- **Normalenbündel.** O(1) ⊗ ℂ² hat h⁰ = 4 und h¹ = 0: eine vollständige 4-dimensionale Familie von Nähten.
+- **Lücke zu T.** Die verzweigte Doppelüberlagerung gibt r_* r^* O(1) = O(1) ⊕ O(−1), also nur 2 Deformationen.
+- **Orte.** L_x und L_y schneiden sich genau für det(x − y) = 0. Herm(2) hat die Signatur (1,3), Dichtematrizen liegen im
+  Zukunftskegel. Die quaternionische Form ist euklidisch, und die Antipodenabbildung erhält die H6-Marken.
+- **Spin 2.** Für 50 zufällige Weylspinoren gilt j(Kreuzverhältnis) = 1728 I³/(I³ − 27J²); die Weierstrass-Invarianten der
+  Doppelüberlagerung sind also g₂ = I und g₃ = J.
+  - H6-Marken 1 − z⁴: J = 0, also τ = i; das Tetraeder hat I = 0.
+  - Die H6-Marken sind die Majorana-Sterne des Spin-2-Zustands (|2⟩ − |−2⟩)/√2.
+- **Holomorphie.** Twistorfunktionen vom Grad −2, −3 und −6 geben exakt (sympy, an komplexen Punkten) □φ = 0, die
+  Weyl-Gleichung (eine Chiralität) und die Bianchi-Gleichung des selbstdualen Gravitons.
+- **Grenze:** Als Aussage über die Hintergrundkrümmung wäre J = 0 falsch (Typ D, flacher Raum). Die Marken gehören zu einem
+  Zustand im Träger.
+
+**2. Standardform des Dubletts (`z62`).**
+- **Kegel.** Für einen treuen Zustand auf M_n(ℂ) gilt: J x = x⁺, und der natürliche Kegel ist genau der Kegel der positiven
+  Matrizen (n = 2, 3).
+- **Nur n = 2.** Ein Lorentzkegel entsteht nur für n = 2, denn 2(n − 1) = n² − 2. Dann ist Herm(2) = R^{1,3}, der Kegel ist
+  der Zukunftslichtkegel, reine Zustände sind Nullstrahlen, und die Naht CP¹ ist die Himmelssphäre.
+- **Gruppen.** SL(2,ℂ) wirkt als Lorentzgruppe und auf der Naht als Möbiusgruppe. Der Modulfluss ist eine Drehung im
+  Ruhesystem des Zustands.
+- **Grenze:** Dass der Originalzustand diesen Dublettzustand festlegt, ist nicht gezeigt.
+
+**3. Prüfstand.**
+- **K12** bleibt L, jetzt als „Standardform plus T“ statt einer Zählung.
+- **K13** nennt die Feldgleichungen aus Holomorphie.
+- **Bilanz** 13 P, 7 L.
+
+**4. Was fehlt** (Einzelheiten in VOGELPERSPEKTIVE.md, Abschnitt 4):
+- (A) Dublettzustand aus dem Original;
+- (B) T aus P1;
+- (C) nicht-selbstdualer Teil der Gravitation;
+- (D) Wechselwirkung, Massen, E₈;
+- (E) Familiengewichte;
+- (F) G und Skalen;
+- (G) Inhalt je Familie.
+
+**Stand:** Eine vollständige Theorie ist das nicht.
+
+## Davor: H6h32 — Wie viele Richtungen rekonstruieren die Antworten? (`z60`)
 
 **Bilanz:** jetzt 13 P und 7 L von 20. K12 (3+1 aus dem Prinzip) zählt unter der Leitlinie „Rekonstruktion statt
 Auswahl“ nur noch als Lesart.
