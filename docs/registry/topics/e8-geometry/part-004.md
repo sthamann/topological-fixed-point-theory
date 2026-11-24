@@ -580,7 +580,6 @@ Explicit source references:
 - [verification/status_ledger.csv](../../../../verification/status_ledger.csv#L1) · explicit_file_citation
 - [verification/v481_seesaw_carrier_ladder.py](../../../../verification/v481_seesaw_carrier_ladder.py#L1) · explicit_script_identifier
 - [verification/v407_dn_pairings_omega.py](../../../../verification/v407_dn_pairings_omega.py#L1) · explicit_script_identifier
-- [verification/run_all.py](../../../../verification/run_all.py#L1) · explicit_file_citation
 - [verification/v1_e8_glue.py](../../../../verification/v1_e8_glue.py#L1) · explicit_file_citation
 - [verification/README.md](../../../../verification/README.md#L1) · explicit_file_citation
 - [verification/v302_seam_gap.py](../../../../verification/v302_seam_gap.py#L1) · explicit_script_identifier
@@ -904,7 +903,6 @@ Explicit source references:
 - [verification/v54_seam_horizon_keystones.py](../../../../verification/v54_seam_horizon_keystones.py#L1) · explicit_file_citation
 - [verification/v56_unique_attractor.py](../../../../verification/v56_unique_attractor.py#L1) · explicit_file_citation
 - [verification/v55_coxeter_cycle.py](../../../../verification/v55_coxeter_cycle.py#L1) · explicit_file_citation
-- [verification/run_all.py](../../../../verification/run_all.py#L1) · explicit_file_citation
 - [verification/wolfram/tfpt_readouts.wl](../../../../verification/wolfram/tfpt_readouts.wl#L1) · explicit_file_citation
 - [verification/make_figures.py](../../../../verification/make_figures.py#L1) · explicit_file_citation
 - [verification/v53_compiler_core.py](../../../../verification/v53_compiler_core.py#L1) · explicit_file_citation

@@ -500,7 +500,6 @@ Explicit source references:
 - [verification/v3_em_alpha.py](../../../../verification/v3_em_alpha.py#L1) · explicit_file_citation
 - [verification/v4_flavor_matrix.py](../../../../verification/v4_flavor_matrix.py#L1) · explicit_file_citation
 - [verification/v7_gravity_cosmo.py](../../../../verification/v7_gravity_cosmo.py#L1) · explicit_file_citation
-- [verification/run_all.py](../../../../verification/run_all.py#L1) · explicit_file_citation
 - [verification/README.md](../../../../verification/README.md#L1) · explicit_file_citation
 
 Navigation joins (both sources name the same Python identifier; statement equivalence is not inferred):
@@ -2240,7 +2239,6 @@ Explicit source references:
 - [TfptCarrier.SeamEquivChain.kitaev_invertibility](../../../../experiments/lean4-carrier-rigidity/TfptCarrier/SeamEquivChain.lean#L52) · explicit_lean_symbol
 - [experiments/lean4-carrier-rigidity/TfptCarrier/BWKeystone.lean](../../../../experiments/lean4-carrier-rigidity/TfptCarrier/BWKeystone.lean#L1) · explicit_file_citation
 - [verification/v994_mmst_criteria_battery.py](../../../../verification/v994_mmst_criteria_battery.py#L1) · explicit_file_citation
-- [verification/run_all.py](../../../../verification/run_all.py#L1) · explicit_file_citation
 - [verification/v378_seam_s3_modular.py](../../../../verification/v378_seam_s3_modular.py#L1) · explicit_script_identifier
 - [verification/v376_seam_s3_centralcharge.py](../../../../verification/v376_seam_s3_centralcharge.py#L1) · explicit_script_identifier
 - [verification/v281_holomorphy_modular_data.py](../../../../verification/v281_holomorphy_modular_data.py#L1) · explicit_script_identifier
@@ -2363,7 +2361,6 @@ Typing. The third hand-off document: the terminal open statements of the prime-f
 
 Explicit source references:
 
-- [verification/run_all.py](../../../../verification/run_all.py#L1) · explicit_file_citation
 - [verification/status_ledger.csv](../../../../verification/status_ledger.csv#L1) · explicit_file_citation
 
 ## Certifiability and recommended order

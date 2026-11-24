@@ -812,7 +812,6 @@ Explicit source references:
 - [verification/v53_compiler_core.py](../../../../verification/v53_compiler_core.py#L1) · explicit_file_citation
 - [verification/wolfram/tfpt_readouts.wl](../../../../verification/wolfram/tfpt_readouts.wl#L1) · explicit_file_citation
 - [verification/make_figures.py](../../../../verification/make_figures.py#L1) · explicit_file_citation
-- [verification/run_all.py](../../../../verification/run_all.py#L1) · explicit_file_citation
 
 Navigation joins (both sources name the same Python identifier; statement equivalence is not inferred):
 
@@ -1403,7 +1402,6 @@ Explicit source references:
 - [verification/v3_em_alpha.py](../../../../verification/v3_em_alpha.py#L1) · explicit_file_citation
 - [verification/v4_flavor_matrix.py](../../../../verification/v4_flavor_matrix.py#L1) · explicit_file_citation
 - [verification/v7_gravity_cosmo.py](../../../../verification/v7_gravity_cosmo.py#L1) · explicit_file_citation
-- [verification/run_all.py](../../../../verification/run_all.py#L1) · explicit_file_citation
 - [verification/README.md](../../../../verification/README.md#L1) · explicit_file_citation
 
 Navigation joins (both sources name the same Python identifier; statement equivalence is not inferred):

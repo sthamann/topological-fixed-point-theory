@@ -7765,3 +7765,30 @@ PS.PROTON.02 im Ledger korrigiert (Texte aus Abschnitt 5 des Berichts). `v1036` 
 `tfpt_research_contracts`); `v266` ist als abgelöst markiert. Die Zeile „Nicht geändert: Ledger“ oben gilt damit
 nicht mehr. Weiter unverändert: die abhängigen Zeilen PS.UVBRANCH.01, QFT4D.FORK.01, PRED.LIVE.01 (mit `v283`),
 PS.RGTEST.01, PS.KAPPA.01, PS.E8BRANCH.01. Atlas nach Offline-Refresh ledgeraktuell (Revision 11716332).
+
+## H6H31-20261124 · Rekonstruktion statt Auswahl (Leitlinie; Dynamik und Chiralität aus den Antworten des Originals, bedingt)
+
+Ordner `experiments/exploration/2026-11-23-phasenraum-f5-holocode` (`z58_rekonstruktion.py` 24 von 24, Ausgabe
+`ausgabe_z58.txt`, `VERDICT.md` Abschnitt H6h31). Anlass ist die Nutzerentscheidung vom 24.11.: keine weiteren
+Auswahlprinzipien; die Dynamik wird aus den vollständigen Antworten des Originals rekonstruiert, und Chiralität darf aus
+Indizes kommen.
+
+**Exakt bzw. numerisch** aus der Calderón/Szegő-Quarterkovarianz allein (quasifrei wie im Original; die Quasifreiheit
+bleibt Prämisse):
+- **Generator und Antworten.** Modularer Einteilchengenerator 4πx; Stromantworten m/(e^{4πm} − 1), CCR, Dispersion 4πm.
+- **Gaußsche Struktur.** Sugawara, Wick und das Jacobi-Tripelprodukt: Thetaverteilung der Ladung mal gaußsche Oszillatoren.
+  Der Modulgenerator hat Spektrum in πℕ.
+- **Leiter statt Band.** Das Band ist nicht spurklasse und nicht quadratisch. Unter Modulfluss und modularer Konjugation
+  bleibt genau die Leiter, 4π je Quant (OriginLab `reconstructed_dynamics`).
+- **Spurkanal.** Der Propagator ist die Fisher-Information κ₂ = 0,798; der Thetasektor dominiert (Faktor 724) und ist
+  stark nichtgaußsch.
+- **E₈-Naht** bei τ = i: Modulantworten 0, E₄/6, E₄/(4π), 3E₄/(8π²) − E₄²/27.
+- **Chiralität aus Indizes:** ein chiraler Zweig, Toeplitz-Index +1 mit Restmischung q^Tiefe, Familienindex 3 ohne
+  Spiegel.
+- **Tensorkanal in 2D** (`z59` 6 von 6): Die Virasoro-Antworten geben c = 1 je Quarter und das Twistgewicht 1/32, also
+  die induzierte 2D-Gravitation der Naht. Die Quelle trägt nur eine lichtartige Translation.
+
+**Offen:** Tensorkanal und t_n, Rekonstruktion von 3+1, Familiengewichte.
+
+**Status:** Atlasbefunde `finding:h6h31-*` (Revision 0b2215bdb34bdf5f17412145). Ledger unverändert, nichts befördert,
+keine vollständige Theorie.

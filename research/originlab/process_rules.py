@@ -179,6 +179,42 @@ def ladder_occupation(qv, n=200):
 Q_ORIGINAL = float(np.exp(-2*np.pi))                # ladder occupation q^2/(1-q^2) = omega(J_-1 J_1) = 1/(e^{4 pi} - 1)
 
 
+def reconstructed_dynamics(qv=Q_ORIGINAL, n=40, sizes=(100, 200)):
+    """Reconstruction instead of selection (H6 exploration z58): which pair-sector generator the state's responses allow.
+
+    Candidates: the band A^+A and the ladder A^+(N+1)A, (Af)_n = q f_n - f_{n+1}; both annihilate the thermofield state.
+    Computed clauses:
+      'quadratic'   -- the operator lies in the span of pair-sector restrictions of quadratic two-mode operators that
+                       commute with the modular flow N_L - N_R (identity, N, and the pair hop with entries n + 1);
+      'trace_class' -- Tr e^-L stays bounded when the truncation doubles (a band continuum makes it grow linearly).
+    A modular generator of the Gaussian original state needs both (Tomita: K = -log rho, quadratic by Wick/Sugawara).
+    Not wired into run(); the historical lane outputs stay unchanged.
+    """
+    def ops(m):
+        A = np.zeros((m + 1, m + 1))
+        for k in range(m + 1):
+            A[k, k] = qv
+            if k < m:
+                A[k, k + 1] = -1.0
+        return {"band A^+A": (A.T @ A)[:m, :m],
+                "ladder A^+(N+1)A": (A.T @ np.diag(np.arange(1, m + 2)) @ A)[:m, :m]}
+    hop = np.diag(np.arange(1, n, dtype=float), -1)
+    span = np.array([np.eye(n).ravel(), np.diag(np.arange(n, dtype=float)).ravel(), (hop + hop.T).ravel()]).T
+    out = []
+    for name, L in ops(n).items():
+        coef, *_ = np.linalg.lstsq(span, L.ravel(), rcond=None)
+        resid = float(np.linalg.norm(span @ coef - L.ravel())/np.linalg.norm(L))
+        tr = [float(np.exp(-np.linalg.eigvalsh(ops(m)[name])).sum()) for m in sizes]
+        clauses = set()
+        if resid < 1e-10:
+            clauses.add("quadratic")
+        if abs(tr[1]/tr[0] - 1) < 1e-6:
+            clauses.add("trace_class")
+        out.append({"name": name, "clauses": sorted(clauses), "residual": resid, "trace_exp": tr,
+                    "modular": clauses == {"quadratic", "trace_class"}})
+    return out
+
+
 def spin2_kernels(transfer=True, state=True):
     rat = lambda num_den: (lambda x: num_den(np.asarray(x, float)))
     cands = [

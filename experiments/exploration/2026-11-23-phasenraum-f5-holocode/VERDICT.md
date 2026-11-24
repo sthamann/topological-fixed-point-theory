@@ -1,6 +1,125 @@
 # Urteil
 
-## Aktueller Stand: H6h30 — Zweig zusammengeführt, exakte Spiegellücke, Flächenregel, Clock-Familien (`z56`, `z57`)
+## Aktueller Stand: H6h31 — Rekonstruktion statt Auswahl (`z58`, `z59`)
+
+Bilanz unverändert 14 P und 6 L von 20; K6, K13 und K16 sind präzisiert.
+
+**Auftrag (24.11.):** Den bisherigen Weg nicht fortsetzen. Er wählte Theorien über Bedingungen an Kinematik, Symmetrie und
+Topologie aus, fand einen passenden Operator, stellte dessen Mehrdeutigkeit fest und ergänzte das nächste Auswahlprinzip.
+Stattdessen:
+- die gravitative und materielle Dynamik aus den vollständigen Antworten des originalen Prozesses rekonstruieren;
+- chirale Materie nicht zwingend aus gegappten Spiegeln eines voll diskretisierten Fermionoperators gewinnen.
+
+Dazu alles zusammenführen. Sieben Explorationszweige vom 20.11. sind in main und gepusht (`685c77851` … `ad02f1edd`).
+`codex/c3-p1-p2-abgleich-20261105` ist nicht zusammengeführt (121 Konflikte, Stand Oktober).
+
+Selbst gerechnet: `z58` mit 24 und `z59` mit 6 Prüfungen. Die OriginLab-Lane hat die Funktion `reconstructed_dynamics`
+mit Test; alle 558 OriginLab-Tests sind grün.
+
+**In einem Satz:**
+- Aus der originalen Calderón/Szegő-Kovarianz allein (quasifrei wie im Original) folgen der Modulgenerator, die CCR, die gaußsche Struktur der Ströme
+  und die Leiter statt des Bands.
+- Der Propagator des Spurkanals ist die Fisher-Information des Originals.
+- Chirale Materie kommt aus Indizes, ohne Spiegellücke.
+- In 2D ist auch der Tensorkanal rekonstruiert (c = 1 je Quarter), damit die ganze induzierte Gravitation der Naht.
+- Offen bleiben der Tensorkanal in 4D, die Rekonstruktion von 3+1 und die Familiengewichte.
+
+**1. Antworten → Generator (Tomita, Osterwalder–Schrader).**
+- **Einzige Eingabe:** die Kovarianz c(x) = 1/(1 + e^{4πx}), x = r + α, α = 1/4, 3/4 (z46).
+- **Einteilchengenerator.** Der modulare Einteilchengenerator h = log((1 − C)/C) ist exakt 4πx.
+- **Antworten.**
+  - Stromantworten: ω(J₋ₘJₘ) = m/(e^{4πm} − 1) (Teleskopsumme).
+  - Kommutator: m, also folgt die CCR.
+  - KMS-Verhältnis: e^{4πm}, also die lineare Dispersion ω_m = 4πm.
+- Zeitrichtung und Skala kommen damit aus dem Zustand (thermische Zeit).
+
+**2. Gaußsche Antworten → quadratischer Generator.**
+- **Sugawara.** Auf dem Fockraum gilt exakt L₀ = Σ J₋ₘJₘ + Q²/2 + (α − ½)Q, geprüft auf allen Zuständen mit L₀ ≤ 3.
+- **Wick bei β = 2** (14 Moden, Abschneidefehler ~10⁻⁴):
+  - ⟨J₋₁²J₁²⟩ = 2⟨J₋₁J₁⟩²;
+  - ⟨J₋₂J₋₁J₁J₂⟩ = ⟨J₋₁J₁⟩⟨J₋₂J₂⟩.
+- **Jacobi-Tripelprodukt bei β = 4π.** Der originale Zustand faktorisiert exakt in die Thetaverteilung der Ladung und
+  gaußsche thermische Oszillatoren.
+- **Spektrum.** Der volle Modulgenerator hat sein Spektrum in πℕ: eine Leiter mit Stufe π, der Modulfluss hat Periode 2.
+  Die niedrigste Anregung ist der geladene Twistzustand mit L₀ = 1/4 (Lücke π), nicht das Stromquant (4π).
+- **Folge:** „Quadratisch in den Strommoden“ ist kein Auswahlprinzip mehr, sondern eine Folge.
+- **Voraussetzung bleibt:** Das Original ist quasifrei (freie Naht, z53). Daraus folgt die gaußsche Struktur der Ströme;
+  die Quasifreiheit selbst ist nicht hergeleitet.
+
+**3. Band oder Leiter: entschieden.**
+- **Paarsektor.** Im Zweimoden-Fockraum (q = 0,3 und e^{−2π}) erhält H = d_L⁺d_L + d_R⁺d_R den Paarsektor, vernichtet den
+  Thermofeldzustand und ist dort 2/(1 − q²)·A⁺(N+1)A.
+- **Eindeutigkeit.** Quadratische hermitesche Zweimodenoperatoren, die mit dem Modulfluss N_L − N_R kommutieren und den
+  Thermofeldzustand vernichten, gibt es genau zwei. Mit der modularen Konjugation J (L ↔ R) bleibt genau einer:
+  d_L⁺d_L + d_R⁺d_R.
+- **Leiter, nicht Band.**
+  - Auf dem Paarsektor liegt die Leiter A⁺(N+1)A im Spann der quadratischen Einschränkungen (Residuum 2·10⁻¹⁶). Das Band
+    A⁺A liegt nicht darin (Residuum 0,226, konstante Nebendiagonale −q).
+  - Das Band hat ein Kontinuum; Tr e^{−L} wächst linear mit der Abschneidung (37, 74, 148 bei 100, 200, 400 Moden). Es ist
+    also kein Modulgenerator irgendeines normalen Zustands.
+- **Skala:** 4π je Quant, 8π je Paaranregung, also λ = 8π/(1 − q²); Einheit ist β = L der Naht.
+- **OriginLab:** `reconstructed_dynamics(q)` berechnet die Klauseln `quadratic` und `trace_class`. Nur die Leiter hat
+  beide; die Funktion ist nicht in `run()` verdrahtet, die historischen Ausgaben bleiben gleich.
+
+**4. Gravitationsantwort aus der relativen Entropie (statt entworfener Propagatoren).**
+- **Antwortfunktional.** W(J) = log Tr e^{−(1−J)K}. Die relative Entropie ist S = κ₂J²/2 + κ₃J³/3 + κ₄J⁴/8 + O(J⁵).
+- **Propagator.** Der quadratische Kern ist die Fisher-Information κ₂ = 0,7982 > 0, positiv durch Konvexität und nicht
+  entworfen.
+- **Kopplungen.**
+  - κ₃ = 2,395, κ₄ = 7,184.
+  - Legendre-Wirkung: Γ₂ = 1,253, Γ₃ = −4,709, Γ₄ = 35,39.
+- **Thetasektor.** Er dominiert κ₂ um den Faktor 724 und ist stark nichtgaußsch (standardisierte vierte Kumulante 11,0).
+- **E₈-Naht.** Modulantworten von log(E₄/η⁸) bei τ = i, gegen q-Reihen geprüft: D = 0 (⟨T⟩ = 0), D² = E₄/6,
+  D³ = E₄/(4π), D⁴ = 3E₄/(8π²) − E₄²/27.
+- **Grenze:** Das ist der Spurkanal. Die Tensorstruktur (Spin 2 in 4D) und damit die t_n stehen nicht in diesem skalaren
+  Funktional.
+
+**5. Chiralität aus dem Index, ohne Spiegellücke.**
+- **Spektrale Asymmetrie.** Der rekonstruierte Generator hat η(α) = 1 − 2α (±½); α → α + 1 ist Spektralfluss 1.
+- **Kein Spiegelpartner.** Die Dispersion 4πx hat genau einen Nulldurchgang und keine Brillouinzone. Die
+  Nielsen–Ninomiya-Voraussetzung (periodische Gitterdispersion, stets gerade Zahl) ist nicht erfüllt.
+- **Toeplitz-Index.** Das Symbol z⁻¹(1 − qz⁴) hat Windung −1, also Index A_q = +1. Der Nullvektor ist η_q = Σ q^j|4j⟩.
+  Die Restmischung bei endlicher Tiefe fällt je vier Marken um q, bei q = e^{−2π} genau q, q², q³.
+- **Familien.** E₋ = O(−1) + 3O hat h⁰ = 3 und h¹ = 0: drei chirale Nullmoden ohne Spiegel. O(−4) + 3O hätte drei Spiegel.
+- **Anomalie:** Z₁₆ ist erfüllt.
+- **Folge:** Die Spiegellücke aus z56 ist eine Alternative, keine Voraussetzung. Wird 4D doch gegittert, braucht es einen
+  Ginsparg–Wilson-Operator (Lüscher), keine Spiegellücke.
+
+**6. Tensorkanal in 2D und Raumzeitrichtungen (`z59`).**
+- **Virasoro-Antworten.** Aus der Kovarianz folgt D_m = ω([L_m, L₋ₘ]) = Σ(x + m/2)²(c(x) − c(x + m)). Für m = 1..5 hat
+  das exakt die Form 2m(⟨L₀⟩ + h) + (c/12)(m³ − m).
+- **Rekonstruiert:** die Zentralladung c = 1 je Quarter und das Twistgewicht h = (α − ½)²/2 = 1/32 (bis 10⁻³⁵).
+  c/2 ist die spurfreie Antwort ⟨TT⟩.
+- **Gravitation der Naht in 2D.** Spurkanal (Fisher-Information) und Tensorkanal (c) sind beide Antworten des Originals
+  und positiv. Die induzierte Wirkung ist die Polyakov-Wirkung mit diesem c, die Weyl-Anomalie −cR/(24π). Die
+  Gram-Matrix der Stromkorrelation in modularer Zeit ist positiv (Reflexionspositivität).
+- **Raumzeitrichtungen.**
+  - Die Antworten der Quelle hängen nur von x und einer modularen Zeit ab. Sie rekonstruieren genau eine lichtartige
+    Translation.
+  - Die vier Marken geben vier Tetraeder-Nullrichtungen, die R^{1,3} aufspannen. Positive Beiträge längs dieser
+    Richtungen geben stets einen zukunftsgerichteten Impuls, M² = (4/3)((Σp)² − Σp²).
+  - Das ist Kinematik: Vier vertauschende positive Translationen aus Antworten sind nicht gezeigt.
+
+**7. Bilanz.**
+- **Folgt:**
+  - volle KMS;
+  - „quadratisch“;
+  - Band oder Leiter (Leiter);
+  - Leiterskala;
+  - positiver Propagator und Kopplungen im Spurkanal;
+  - Chiralität;
+  - q = e^{−2π} (z46);
+  - Tensorkanal und induzierte Gravitation in 2D (z59).
+- **Ohne originale Kovarianz:** Für q = 1/√2 (Spiegelblatt, „gleiches Gewicht“) ist im Bestand keine originale
+  Kovarianz benannt.
+- **Offen:**
+  - der Tensorkanal und die t_n (sie brauchen die 4D-Antworten mit Tensorstruktur);
+  - die Rekonstruktion von 3+1: Die Quelle trägt eine lichtartige Translation, gebraucht werden vier vertauschende
+    (Osterwalder–Schrader aus 4D-Antworten);
+  - die Familiengewichte (γ, TM1-Brechung).
+- **Stand:** Eine vollständige Theorie ist das nicht.
+
+## Davor: H6h30 — Zweig zusammengeführt, exakte Spiegellücke, Flächenregel, Clock-Familien (`z56`, `z57`)
 
 Bilanz unverändert 14 P und 6 L von 20; K13, K16 und K18 sind präzisiert. Auftrag: alles auf main, alle Lösungen finden,
 das Suchprogramm erweitern. Dazu kam die externe Analyse „Ein neuer exakt lösbarer Wechselwirkungsoperator“ auf Basis

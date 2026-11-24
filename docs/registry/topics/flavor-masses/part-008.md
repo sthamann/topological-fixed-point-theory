@@ -398,7 +398,6 @@ Explicit source references:
 - [verification/v6_bootstrap.py](../../../../verification/v6_bootstrap.py#L1) · explicit_file_citation
 - [verification/v1_e8_glue.py](../../../../verification/v1_e8_glue.py#L1) · explicit_file_citation
 - [verification/README.md](../../../../verification/README.md#L1) · explicit_file_citation
-- [verification/run_all.py](../../../../verification/run_all.py#L1) · explicit_file_citation
 - [verification/v4_flavor_matrix.py](../../../../verification/v4_flavor_matrix.py#L1) · explicit_file_citation
 - [verification/v5_e8_cascade.py](../../../../verification/v5_e8_cascade.py#L1) · explicit_file_citation
 
@@ -826,7 +825,6 @@ Explicit source references:
 
 - [verification/v4_flavor_matrix.py](../../../../verification/v4_flavor_matrix.py#L1) · explicit_file_citation
 - [verification/README.md](../../../../verification/README.md#L1) · explicit_file_citation
-- [verification/run_all.py](../../../../verification/run_all.py#L1) · explicit_file_citation
 - [verification/v6_bootstrap.py](../../../../verification/v6_bootstrap.py#L1) · explicit_file_citation
 - [verification/v5_e8_cascade.py](../../../../verification/v5_e8_cascade.py#L1) · explicit_file_citation
 - [verification/v1_e8_glue.py](../../../../verification/v1_e8_glue.py#L1) · explicit_file_citation

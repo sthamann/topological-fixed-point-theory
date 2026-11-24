@@ -660,7 +660,6 @@ Explicit source references:
 
 - [verification/v4_flavor_matrix.py](../../../../verification/v4_flavor_matrix.py#L1) · explicit_file_citation
 - [verification/README.md](../../../../verification/README.md#L1) · explicit_file_citation
-- [verification/run_all.py](../../../../verification/run_all.py#L1) · explicit_file_citation
 - [verification/v3_em_alpha.py](../../../../verification/v3_em_alpha.py#L1) · explicit_file_citation
 - [verification/v7_gravity_cosmo.py](../../../../verification/v7_gravity_cosmo.py#L1) · explicit_file_citation
 - [verification/v2_carrier_pascal.py](../../../../verification/v2_carrier_pascal.py#L1) · explicit_file_citation
@@ -922,7 +921,6 @@ These are the frontier items: most carry \ (open) or \ (conditional) and are the
 Explicit source references:
 
 - [verification/v28_gravity_fR.py](../../../../verification/v28_gravity_fR.py#L1) · explicit_file_citation
-- [verification/run_all.py](../../../../verification/run_all.py#L1) · explicit_file_citation
 - [verification/README.md](../../../../verification/README.md#L1) · explicit_file_citation
 - [verification/v7_gravity_cosmo.py](../../../../verification/v7_gravity_cosmo.py#L1) · explicit_file_citation
 - [verification/v369_qgamb_redundancy.py](../../../../verification/v369_qgamb_redundancy.py#L1) · explicit_script_identifier

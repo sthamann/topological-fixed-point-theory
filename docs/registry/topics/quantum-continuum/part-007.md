@@ -1003,7 +1003,6 @@ Explicit source references:
 - [verification/v368_seam_s3_inflow.py](../../../../verification/v368_seam_s3_inflow.py#L1) · explicit_script_identifier
 - [verification/v469_seam_crossedproduct_route.py](../../../../verification/v469_seam_crossedproduct_route.py#L1) · explicit_script_identifier
 - [SEAM.BULK4D.RECON.01](../../../../verification/status_ledger.csv#L740) · explicit_claim_identifier · original status at linked ledger row
-- [verification/run_all.py](../../../../verification/run_all.py#L1) · explicit_file_citation
 - [verification/v356_continuum_mmst_applicability.py](../../../../verification/v356_continuum_mmst_applicability.py#L1) · explicit_file_citation
 - [TfptCarrier.SeamEquivChain.kitaev_invertibility](../../../../experiments/lean4-carrier-rigidity/TfptCarrier/SeamEquivChain.lean#L52) · explicit_lean_symbol
 - [SEAM.EQUIV.01](../../../../verification/status_ledger.csv#L381) · explicit_claim_identifier · original status at linked ledger row
@@ -2485,7 +2484,6 @@ Explicit source references:
 - [SEAM.BULK4D.RECON.01](../../../../verification/status_ledger.csv#L740) · explicit_claim_identifier · original status at linked ledger row
 - [verification/v301_route_a_invertible.py](../../../../verification/v301_route_a_invertible.py#L1) · explicit_script_identifier
 - [TfptCarrier.SeamScalingLimit.ChiralCFT_c8](../../../../experiments/lean4-carrier-rigidity/TfptCarrier/SeamScalingLimit.lean#L68) · explicit_lean_symbol
-- [verification/run_all.py](../../../../verification/run_all.py#L1) · explicit_file_citation
 - [verification/v336_continuum_limit.py](../../../../verification/v336_continuum_limit.py#L1) · explicit_script_identifier
 - [verification/v216_marks_gauss_bonnet.py](../../../../verification/v216_marks_gauss_bonnet.py#L1) · explicit_script_identifier
 - [TfptCarrier.SeamScalingLimit.adamo_holomorphic_e8](../../../../experiments/lean4-carrier-rigidity/TfptCarrier/SeamScalingLimit.lean#L87) · explicit_lean_symbol
@@ -4060,7 +4058,6 @@ Explicit source references:
 - [TfptCarrier.SeamEquivChain.kitaev_invertibility](../../../../experiments/lean4-carrier-rigidity/TfptCarrier/SeamEquivChain.lean#L52) · explicit_lean_symbol
 - [experiments/lean4-carrier-rigidity/TfptCarrier/BWKeystone.lean](../../../../experiments/lean4-carrier-rigidity/TfptCarrier/BWKeystone.lean#L1) · explicit_file_citation
 - [verification/v994_mmst_criteria_battery.py](../../../../verification/v994_mmst_criteria_battery.py#L1) · explicit_file_citation
-- [verification/run_all.py](../../../../verification/run_all.py#L1) · explicit_file_citation
 - [verification/v378_seam_s3_modular.py](../../../../verification/v378_seam_s3_modular.py#L1) · explicit_script_identifier
 - [verification/v376_seam_s3_centralcharge.py](../../../../verification/v376_seam_s3_centralcharge.py#L1) · explicit_script_identifier
 - [verification/v281_holomorphy_modular_data.py](../../../../verification/v281_holomorphy_modular_data.py#L1) · explicit_script_identifier

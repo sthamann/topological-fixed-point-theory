@@ -938,7 +938,6 @@ Explicit source references:
 - [verification/v54_seam_horizon_keystones.py](../../../../verification/v54_seam_horizon_keystones.py#L1) · explicit_file_citation
 - [verification/v56_unique_attractor.py](../../../../verification/v56_unique_attractor.py#L1) · explicit_file_citation
 - [verification/v55_coxeter_cycle.py](../../../../verification/v55_coxeter_cycle.py#L1) · explicit_file_citation
-- [verification/run_all.py](../../../../verification/run_all.py#L1) · explicit_file_citation
 - [verification/wolfram/tfpt_readouts.wl](../../../../verification/wolfram/tfpt_readouts.wl#L1) · explicit_file_citation
 - [verification/make_figures.py](../../../../verification/make_figures.py#L1) · explicit_file_citation
 - [verification/v53_compiler_core.py](../../../../verification/v53_compiler_core.py#L1) · explicit_file_citation
@@ -1657,7 +1656,6 @@ Explicit source references:
 
 - [verification/v4_flavor_matrix.py](../../../../verification/v4_flavor_matrix.py#L1) · explicit_file_citation
 - [verification/README.md](../../../../verification/README.md#L1) · explicit_file_citation
-- [verification/run_all.py](../../../../verification/run_all.py#L1) · explicit_file_citation
 - [verification/v3_em_alpha.py](../../../../verification/v3_em_alpha.py#L1) · explicit_file_citation
 - [verification/v7_gravity_cosmo.py](../../../../verification/v7_gravity_cosmo.py#L1) · explicit_file_citation
 - [verification/v2_carrier_pascal.py](../../../../verification/v2_carrier_pascal.py#L1) · explicit_file_citation

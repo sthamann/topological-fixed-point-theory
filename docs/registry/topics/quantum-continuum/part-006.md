@@ -1592,7 +1592,6 @@ These are the frontier items: most carry \ (open) or \ (conditional) and are the
 Explicit source references:
 
 - [verification/v28_gravity_fR.py](../../../../verification/v28_gravity_fR.py#L1) · explicit_file_citation
-- [verification/run_all.py](../../../../verification/run_all.py#L1) · explicit_file_citation
 - [verification/README.md](../../../../verification/README.md#L1) · explicit_file_citation
 - [verification/v7_gravity_cosmo.py](../../../../verification/v7_gravity_cosmo.py#L1) · explicit_file_citation
 - [verification/v369_qgamb_redundancy.py](../../../../verification/v369_qgamb_redundancy.py#L1) · explicit_script_identifier

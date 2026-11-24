@@ -4,7 +4,7 @@ from fractions import Fraction as Fr
 from autonomy import execute, specifications
 import numpy as np
 
-from process_rules import (BETA_DET, BETA_V, Q_DIRAC, Q_ORIGINAL, edge_form_beta, flavour_groups, flavour_pairs, hardy_rect, metric_star, ladder_occupation, matrix_kernels, original_current_norm,
+from process_rules import (BETA_DET, BETA_V, Q_DIRAC, Q_ORIGINAL, edge_form_beta, reconstructed_dynamics, flavour_groups, flavour_pairs, hardy_rect, metric_star, ladder_occupation, matrix_kernels, original_current_norm,
                            q_rules, readouts, run, schur_coefficient, seam_layers, spin2_kernels, transfer_processes)
 
 
@@ -193,6 +193,13 @@ class ProcessRules(unittest.TestCase):
         self.assertEqual(low, ["Q = e_p e_k (one vielbein of each endpoint)"])
         area = [k for k, v in forms.items() if "quadratic_in_area" in v["clauses"]]
         self.assertEqual(area, ["Q = (e_p + e_k)^2 (arithmetic mean)"])      # Plebanski area rule = t = 1 (z57)
+
+    def test_reconstruction_decides_band_against_ladder(self):
+        for qv in (0.3, Q_ORIGINAL):                                      # z58: only the ladder can be modular
+            res = {o["name"]: o for o in reconstructed_dynamics(qv)}
+            self.assertTrue(res["ladder A^+(N+1)A"]["modular"])
+            self.assertEqual(res["band A^+A"]["clauses"], [])
+            self.assertGreater(res["band A^+A"]["trace_exp"][1]/res["band A^+A"]["trace_exp"][0], 1.9)
 
     def test_dirac_residuals_give_no_tm1_either(self):
         fg = flavour_groups(ns=(2, 4), neutrinos="cyclic")

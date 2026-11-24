@@ -9,6 +9,27 @@ liest diesen Abschnitt, das kompakte `progress.json` (Historie in
 eines Eintrags ist ein Vorschlag, keine Pflicht für die folgende Sitzung.
 Explorationsergebnisse liegen unter `experiments/exploration/`.
 
+## 24. November: Leitlinie Rekonstruktion statt Auswahl (H6h31, Nutzerentscheidung)
+
+**Was sich ändert.** Keine weiteren Auswahlprinzipien, die eine Theorie über Bedingungen an Kinematik, Symmetrie oder
+Topologie festlegen und Mehrdeutigkeiten mit dem nächsten Prinzip schließen. Stattdessen:
+- **Dynamik:** Gravitative und materielle Dynamik werden aus den vollständigen Antworten des originalen Prozesses
+  rekonstruiert (GNS, Osterwalder–Schrader, Tomita–Takesaki), nicht aus frei entworfenen positiven Propagatoren.
+- **Chiralität:** Chirale Materie darf aus Indizes kommen, ohne gegappte Spiegel eines voll diskretisierten
+  Fermionoperators.
+
+**Erster Schritt** (`experiments/exploration/2026-11-23-phasenraum-f5-holocode/z58_rekonstruktion.py`, 24 Prüfungen):
+- Aus der Calderón/Szegő-Kovarianz allein (quasifrei wie im Original) folgen Modulgenerator, CCR, gaußsche Ströme und die Leiter statt des Bands
+  (OriginLab `reconstructed_dynamics`).
+- Der Spurkanal-Propagator ist die Fisher-Information des Originals.
+- Die Chiralität folgt aus Indizes.
+- In 2D ist auch der Tensorkanal rekonstruiert (`z59`): c = 1 je Quarter aus den Virasoro-Antworten.
+
+**Offen:** Tensorkanal in 4D, Rekonstruktion von 3+1, Familiengewichte.
+
+**Zusammenführung.** Seit 24. November sind die Zweige vom 20. November in main;
+`codex/c3-p1-p2-abgleich-20261105` ist nicht zusammengeführt (121 Konflikte).
+
 ## 20. November: Neuansatz am singulären Punkt (NEUSING20261120)
 
 Auf Auftrag von vorn begonnen. Am quadratischen Torus existiert ein nicht umkehrbarer Schritt, der auf die

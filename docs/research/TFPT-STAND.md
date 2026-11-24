@@ -1,7 +1,10 @@
 # TFPT: Was funktioniert, was fehlt, was eine vollständige Lösung wäre
 
-Kompakter Stand vom 20. November 2026, ergänzt am 23. November (Befunde 20.–23. November, Kandidat H6 und Abschnitt 5), für
-Explorations- und Lösungssitzungen. Neuere Befunde stehen in den Atlasproblemen mit Datum
+Kompakter Stand vom 20. November 2026, ergänzt am 23. und 24. November (Befunde 20.–24. November, Kandidat H6 bis
+H6h31, Leitlinie „Rekonstruktion statt Auswahl“ und Abschnitt 5), für Explorations- und Lösungssitzungen. Seit 24. November
+liegen die Explorationszweige vom 20. November in main (Quaternionrahmen, Fibonacci-Uhr, Vertauschung und Auslese, fremde
+und operative Ursprünge, Projekt Genesis, die Vertragsserie vom 14./15. Oktober); ihre Befunde stehen in ihren Verzeichnissen
+unter `experiments/`. Nicht zusammengeführt ist `codex/c3-p1-p2-abgleich-20261105` (121 Konflikte mit dem heutigen Stand). Neuere Befunde stehen in den Atlasproblemen mit Datum
 ab 20261120 und unter `experiments/exploration/`; dieser Stand wird nicht automatisch
 fortgeschrieben. Er ersetzt
 keine Originalquelle. Statuskürzel: **E** exakt unter genannten Voraussetzungen, **C** bedingte
@@ -20,6 +23,22 @@ Lösung**: ein einziges Prinzip oder ein einziger Prozess, aus dem
 
 Teillösungen zählen, wenn sie mindestens eine Eingabe ohne neue freie Wahl erzeugen und
 die Ergebnisse unverändert tragen. Atlasziel: `map:toe-goal`, `map:ur-to-tfpt`.
+
+**Leitlinie seit 24. November: Rekonstruktion statt Auswahl.** Bedingungen an Kinematik, Symmetrie und Topologie legen
+eine Theorie nicht fest. Der bisherige Weg fand zu ihnen einen passenden Operator, stellte dessen Mehrdeutigkeit fest und
+ergänzte das nächste Auswahlprinzip. Das wird nicht fortgesetzt. Stattdessen gilt:
+- **Dynamik:** Gravitative und materielle Dynamik werden aus den vollständigen Antworten des originalen Prozesses
+  rekonstruiert (GNS, Osterwalder–Schrader, Tomita–Takesaki), nicht aus frei entworfenen positiven Propagatoren.
+- **Chiralität:** Chirale Materie darf aus Indizes kommen. Sie muss nicht aus gegappten Spiegeln eines voll diskretisierten
+  Fermionoperators entstehen.
+
+Erster Schritt (Z58):
+- Aus der Calderón/Szegő-Kovarianz allein (quasifrei wie im Original) folgen Modulgenerator, CCR, gaußsche Ströme und die Leiter statt des Bands.
+- Der Spurkanal-Propagator ist die Fisher-Information des Originals.
+- Die Chiralität folgt aus Indizes, ohne Spiegellücke.
+- In 2D ist auch der Tensorkanal rekonstruiert (Z59, c = 1 je Quarter).
+
+Offen sind der Tensorkanal und die Rekonstruktion von 3+1 aus 4D-Antworten.
 
 ## 2. Die gesetzten Eingaben
 
@@ -127,8 +146,8 @@ Ursprung sollte beides zugleich liefern.
 
 ### Kandidat H6: Ursprung von P1 aus einer hintergrundfreien Naht (Exploration 23.11.)
 
-Quelle: `experiments/exploration/2026-11-23-phasenraum-f5-holocode/VERDICT.md` (Stand H6h30),
-Skripte `n1`, `v1`, `y1`, `z1`–`z57`, Lean-Vertrag `experiments/theory-contracts/h6-exakte-teile-20261123/`; Atlasproblem `problem:c3-p1-p2-shared-origin-reconciliation`,
+Quelle: `experiments/exploration/2026-11-23-phasenraum-f5-holocode/VERDICT.md` (Stand H6h31),
+Skripte `n1`, `v1`, `y1`, `z1`–`z59`, Lean-Vertrag `experiments/theory-contracts/h6-exakte-teile-20261123/`; Atlasproblem `problem:c3-p1-p2-shared-origin-reconciliation`,
 Befunde mit Präfix `h6`. Nichts davon ist im Ledger befördert. Prüfstand mit 20 Kriterien: 14
 hergeleitet, 6 unter benannter Lesart, keines gescheitert, offen oder gesetzt.
 
@@ -309,8 +328,10 @@ hergeleitet, 6 unter benannter Lesart, keines gescheitert, offen oder gesetzt.
     über die Größenordnung ausgeschlossen; Z₃ × Z₄ exakt (2 − √3)/6 = TM2 bei 15°; die Daten passen zu TM1 bei 15°
     (sin²θ₁₃ = (2 − √3)/12), Herkunft offen. [E/N]
   - Zuordnung, Quelle, Bimetrik, Familiengruppen (Z48, Z49): Die Quarterzwiste α = 1/4, 3/4 sind die Vierteldrehungsgrade
-    der Hardy-Marken k = 4(r + α); die originale Kovarianz ist 1/(1 + e^{πk}), und J₋₁ wirkt als Übertragungsschritt S⁴.
-    Damit ist die Zuordnung hinter q = e^{−2π} hergeleitet (Prämisse bleibt die Gaußquantisierung). Ward verlangt
+    der Hardy-Marken k = 4(r + α); die originale Kovarianz ist 1/(1 + e^{πk}), und J₋₁ wirkt auf den Einteilchen-Marken als
+    Übertragungsschritt S⁴ (Korrektur Z54: auf der Besetzungsleiter ist der Schritt die Polarphase J₋₁(N+1)^{−1/2}).
+    Damit ist die Zuordnung hinter q = e^{−2π} hergeleitet (Prämisse bleibt die Gaußquantisierung; seit Z58 folgt die
+    gaußsche Struktur der Ströme aus der quasifreien Originalkovarianz, die Quasifreiheit selbst bleibt Prämisse). Ward verlangt
     Minimalkopplung über die Noetherladung |0⟩; Quarter-Harmonische gäben eine EP-Verletzung e^{−2π}|Δh|. Nichtlinear
     passt eine Bimetrik mit (M_f/M_g)² = 1/(e^{4π} − 1); kubische und quartische Kopplungen bleiben frei. Δ(6n²) mit
     Majorana-Klein-Resten gibt bis n = 16 nur TM2 bei diskreten Winkeln, keinen im θ₁₃-Fenster; Δ(96) macht die
@@ -330,7 +351,7 @@ hergeleitet, 6 unter benannter Lesart, keines gescheitert, offen oder gesetzt.
     Freie-Naht-Prämisse. Eine Familie mit ν_R hat 16 Weyl mit Spin-Z₄ (X ≡ 1 mod 4), alle Anomalien null, 16 ≡ 0 mod 16
     (ohne ν_R 15): notwendige Bedingung für Spiegel ohne Brechung erfüllt; Spielzeug 0+1 D: 4 Majoranas entartet,
     8 gegappt. Δ(6n²) gibt auch mit Dirac-Neutrinos kein TM1. [E/N]
-  - Prüfung des externen Zweigs zu H6h27 (Z54, Z55; Zweig `research/h6h27-source-dynamics-20261124`, nicht in main):
+  - Prüfung des externen Zweigs zu H6h27 (Z54, Z55; Zweig `research/h6h27-source-dynamics-20261124`, inzwischen in main):
     Volle KMS legt den gaußschen Stromzustand fest (gleiches Mittel genügt nicht); J₋₁ ist auf der Besetzungsleiter
     keine Isometrie, der Schritt ist die Polarphase (Korrektur zu Z48). Der Thermofeldoperator ist im Paarsektor
     A⁺(N+1)A: diskrete Leiter Δn statt Band; der gewichtete Stern hat endlich viele leichte Moden. Die t-abhängige
@@ -347,6 +368,21 @@ hergeleitet, 6 unter benannter Lesart, keines gescheitert, offen oder gesetzt.
     Plebański-Flächenregel (Kante quadratisch in B_p − B_k) gibt t = 1 (Epsilon-Kontraktion = −64 × HR-Potential). Die
     originalen Clocks F_C, F_J tragen die TM1-Spalte (2/3, 1/6, 1/6), der Winkel hängt an einem freien Gewicht; die
     eingefrorenen Werte brechen TM1 und liegen näher an NuFIT 6.1; G = v_geo⁻². [E/N]
+  - Rekonstruktion statt Auswahl (Z58, Leitlinie aus Abschnitt 1): Aus der originalen quasifreien Kovarianz
+    c(x) = 1/(1 + e^{4πx}), x = r + α, folgt ohne weitere Eingabe der modulare Einteilchengenerator 4πx. Die Stromantworten m/(e^{4πm} − 1),
+    Kommutator m und KMS-Verhältnis e^{4πm} geben CCR und die lineare Dispersion 4πm. Sugawara, Wick und das
+    Jacobi-Tripelprodukt zeigen: Der Zustand ist Thetaverteilung der Ladung mal gaußsche Oszillatoren, der Modulgenerator ist
+    quadratisch in den Strömen plus eine Ladungsfunktion, sein Spektrum liegt in πℕ. Damit ist Band gegen Leiter
+    entschieden: Das Band A⁺A ist nicht spurklasse und keine Einschränkung eines quadratischen Zweimodenoperators. Unter
+    Modulfluss und modularer Konjugation bleibt genau die Leiter, 4π je Quant (OriginLab `reconstructed_dynamics`). Der
+    Spurkanal-Propagator ist die Fisher-Information κ₂ = 0,798 der relativen Entropie, die Kopplungen sind κ₃, κ₄; der
+    Thetasektor dominiert (Faktor 724) und ist stark nichtgaußsch. Die E₈-Naht hat bei τ = i die Modulantworten
+    0, E₄/6, E₄/(4π), 3E₄/(8π²) − E₄²/27. Chiralität ohne Spiegellücke: ein chiraler Zweig, Spektralfluss 1,
+    Toeplitz-Index +1 mit Restmischung q^Tiefe, Familienindex 3 ohne Spiegel, Z₁₆ erfüllt. In 2D ist auch der
+    Tensorkanal rekonstruiert (Z59): Die Virasoro-Antworten ω([L_m, L₋ₘ]) der Kovarianz geben c = 1 je Quarter und das
+    Twistgewicht 1/32, also die ganze induzierte Gravitation der Naht (Polyakov-Wirkung mit c). Die Quelle trägt aber nur
+    eine lichtartige Translation; die vier Marken geben die Nullrichtungen von R^{1,3}, nicht die Dynamik. Offen:
+    4D-Tensorkanal, 3+1-Rekonstruktion, Familiengewichte. [E/N]
   - Instantonen (Z33): Unter Spin(10) hat ein Einheitsinstanton 4 Eltern- und 12
     Familiennullmoden; mit gesättigten Familiennullmoden entsteht Re[e^{iθ}Φ² C_fam], die Wand ist
     also auch im Kontinuum möglich, bei nackter SO(10) aber ~10⁻¹⁶⁴ unterdrückt. [N]
@@ -450,10 +486,12 @@ hergeleitet, 6 unter benannter Lesart, keines gescheitert, offen oder gesetzt.
   - Die 4D-Einbettung der reellen Majorana-Chern-Naht (Blatt mit Kante) und ihre μ₄-Kondensation.
   - Die Herkunft der Prinzipien, die die Prozesssuche verlangt (Z43, Z45): konforme Kovarianz des Kerns,
     Orientierungsumkehr, eine gemeinsame Übertragung und die Familienorientierung (TM1 statt TM2 bei 15°); dazu die
-    Gaußquantisierung der Quelle als letzte Prämisse der Zustandsregel (die Zuordnung J₋₁ = S⁴ ist hergeleitet, Z48),
+    Gaußquantisierung der Quelle als letzte Prämisse der Zustandsregel (seit Z58 für die Ströme aus der quasifreien Originalkovarianz
+    gefolgert, die Quasifreiheit selbst bleibt Prämisse; J₋₁ = S⁴ gilt auf den Einteilchen-Marken, auf der Besetzungsleiter ist der Schritt die Polarphase, Z48, Z54),
     die Skala μ, M_c (also G), die quartische Zahl t des metrischen Sterns (die kubische Ordnung legen ungerichtete
     Kanten fest, Z51; t ist die Form der Endpunkt-Quadratform Q, Z52; je Tiefe ein t_n, über die Vierpunktantwort
-    bestimmbar, Z55), die Wahl zwischen Band- und Leiteroperator (Z54) und die Dynamik an der Nahtskala; die Dynamik der
+    bestimmbar, Z55), die Wahl zwischen Band- und Leiteroperator (Z54; seit Z58 durch Rekonstruktion entschieden: Leiter) und die
+    Dynamik an der Nahtskala; die Dynamik der
     Spiegellücke in 4D (die mod-16-Bedingung ist erfüllt, Z53); der Mechanismus für TM1 bei 15° (Restsymmetrie allein
     reicht weder mit Majorana- noch mit Dirac-Neutrinos, Z49, Z53).
   - Die eine Prozessregel Z[J, A, g, Φ], aus der Naht, Eichwirkung und metrische Variation gemeinsam

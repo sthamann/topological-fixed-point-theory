@@ -2,7 +2,7 @@
 
 Generated source-navigation diagnostics; unresolved means no unique local target was asserted. Historical/moved-project references may be intentional. Absence of a citation is not absence of a proof.
 
-Unresolved explicit citation groups: **4098**. Evidence entities without incoming indexed citation: **1611**.
+Unresolved explicit citation groups: **4118**. Evidence entities without incoming indexed citation: **1611**.
 
 The full precise list (section IDs, physical lines, tokens, candidates) is in `registry.json` → `diagnostics`. This page groups repeated tokens for readability.
 
@@ -183,6 +183,7 @@ The full precise list (section IDs, physical lines, tokens, candidates) is in `r
 | ambiguous_file_citation | `out_unified/engineering/pmns_full_closure_gate_v28/results.json` | 1 |
 | ambiguous_file_citation | `protocol_normal.json` | 2 |
 | ambiguous_file_citation | `protocol_optimized.json` | 2 |
+| ambiguous_file_citation | `pythonverification/run_all.py` | 19 |
 | ambiguous_file_citation | `release_manifest.json` | 1 |
 | ambiguous_file_citation | `replay.py` | 37 |
 | ambiguous_file_citation | `replay_manifest.json` | 14 |
@@ -203,6 +204,7 @@ The full precise list (section IDs, physical lines, tokens, candidates) is in `r
 | ambiguous_file_citation | `t1_fixed.py` | 4 |
 | ambiguous_file_citation | `t5_twobank.py` | 4 |
 | ambiguous_file_citation | `t5_varresp.py` | 4 |
+| ambiguous_file_citation | `tfpt-suite/run_all.py` | 1 |
 | ambiguous_file_citation | `theoryv3/out/axion_dm_audit/results.json` | 5 |
 | ambiguous_file_citation | `theoryv3/out/dark_energy_exponential_audit/results.json` | 5 |
 | ambiguous_file_citation | `theoryv3/out/defect_partition_g5_audit/results.json` | 5 |

@@ -82,6 +82,13 @@ lane unchanged, corrected semantics in `run(certified=True)`, where the scale-fr
 state and mirror sheet at q = 1/sqrt2), `edge_forms` gains the clause `quadratic_in_area`: an edge action quadratic in the difference of the
 Plebanski two-forms B = e ^ e gives (-3/2) + e_2/2 - (3/2) e_4, i.e. t = 1, the same form as the arithmetic mean.
 
+Eighth run (reconstruction instead of selection, H6 exploration z58): `reconstructed_dynamics(q)` decides band against
+ladder from two computed clauses instead of a chosen principle. `quadratic` (the generator lies in the span of
+pair-sector restrictions of quadratic two-mode operators commuting with the modular flow) and `trace_class` (Tr e^-L
+bounded under refinement) hold for the ladder A^+(N+1)A and fail for the band A^+A, for q = 0.3 and q = e^-2pi. Only an
+operator with both can be the modular generator of the Gaussian original state. The function is not wired into `run()`,
+so the historical outputs of z43-z57 stay unchanged.
+
 ```bash
 .venv/bin/python -B research/originlab/process_rules.py > /tmp/process-rules.json
 .venv/bin/python -B research/originlab/main.py --campaign process_rules --jobs 1 --out /tmp/originlab-process

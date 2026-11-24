@@ -13,7 +13,6 @@ These are the frontier items: most carry \ (open) or \ (conditional) and are the
 Explicit source references:
 
 - [verification/v28_gravity_fR.py](../../../../verification/v28_gravity_fR.py#L1) · explicit_file_citation
-- [verification/run_all.py](../../../../verification/run_all.py#L1) · explicit_file_citation
 - [verification/README.md](../../../../verification/README.md#L1) · explicit_file_citation
 - [verification/v7_gravity_cosmo.py](../../../../verification/v7_gravity_cosmo.py#L1) · explicit_file_citation
 - [verification/v369_qgamb_redundancy.py](../../../../verification/v369_qgamb_redundancy.py#L1) · explicit_script_identifier
@@ -1508,7 +1507,6 @@ Explicit source references:
 - [verification/v368_seam_s3_inflow.py](../../../../verification/v368_seam_s3_inflow.py#L1) · explicit_script_identifier
 - [verification/v469_seam_crossedproduct_route.py](../../../../verification/v469_seam_crossedproduct_route.py#L1) · explicit_script_identifier
 - [SEAM.BULK4D.RECON.01](../../../../verification/status_ledger.csv#L740) · explicit_claim_identifier · original status at linked ledger row
-- [verification/run_all.py](../../../../verification/run_all.py#L1) · explicit_file_citation
 - [verification/v356_continuum_mmst_applicability.py](../../../../verification/v356_continuum_mmst_applicability.py#L1) · explicit_file_citation
 - [TfptCarrier.SeamEquivChain.kitaev_invertibility](../../../../experiments/lean4-carrier-rigidity/TfptCarrier/SeamEquivChain.lean#L52) · explicit_lean_symbol
 - [SEAM.EQUIV.01](../../../../verification/status_ledger.csv#L381) · explicit_claim_identifier · original status at linked ledger row
@@ -2235,7 +2233,6 @@ Explicit source references:
 - [verification/v53_compiler_core.py](../../../../verification/v53_compiler_core.py#L1) · explicit_file_citation
 - [verification/wolfram/tfpt_readouts.wl](../../../../verification/wolfram/tfpt_readouts.wl#L1) · explicit_file_citation
 - [verification/make_figures.py](../../../../verification/make_figures.py#L1) · explicit_file_citation
-- [verification/run_all.py](../../../../verification/run_all.py#L1) · explicit_file_citation
 
 Navigation joins (both sources name the same Python identifier; statement equivalence is not inferred):
 

@@ -173,7 +173,6 @@ Explicit source references:
 - [SEAM.BULK4D.RECON.01](../../../../verification/status_ledger.csv#L740) · explicit_claim_identifier · original status at linked ledger row
 - [verification/v301_route_a_invertible.py](../../../../verification/v301_route_a_invertible.py#L1) · explicit_script_identifier
 - [TfptCarrier.SeamScalingLimit.ChiralCFT_c8](../../../../experiments/lean4-carrier-rigidity/TfptCarrier/SeamScalingLimit.lean#L68) · explicit_lean_symbol
-- [verification/run_all.py](../../../../verification/run_all.py#L1) · explicit_file_citation
 - [verification/v336_continuum_limit.py](../../../../verification/v336_continuum_limit.py#L1) · explicit_script_identifier
 - [verification/v216_marks_gauss_bonnet.py](../../../../verification/v216_marks_gauss_bonnet.py#L1) · explicit_script_identifier
 - [TfptCarrier.SeamScalingLimit.adamo_holomorphic_e8](../../../../experiments/lean4-carrier-rigidity/TfptCarrier/SeamScalingLimit.lean#L87) · explicit_lean_symbol
@@ -267,7 +266,6 @@ Typing. The third hand-off document: the terminal open statements of the prime-f
 Explicit source references:
 
 - [verification/status_ledger.csv](../../../../verification/status_ledger.csv#L1) · explicit_file_citation
-- [verification/run_all.py](../../../../verification/run_all.py#L1) · explicit_file_citation
 
 ## Certifiability and recommended order
 
@@ -1415,7 +1413,6 @@ Explicit source references:
 - [verification/v3_em_alpha.py](../../../../verification/v3_em_alpha.py#L1) · explicit_file_citation
 - [verification/v7_gravity_cosmo.py](../../../../verification/v7_gravity_cosmo.py#L1) · explicit_file_citation
 - [verification/README.md](../../../../verification/README.md#L1) · explicit_file_citation
-- [verification/run_all.py](../../../../verification/run_all.py#L1) · explicit_file_citation
 
 Navigation joins (both sources name the same Python identifier; statement equivalence is not inferred):
 

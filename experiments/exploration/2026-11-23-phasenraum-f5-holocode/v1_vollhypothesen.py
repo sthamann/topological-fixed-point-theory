@@ -1160,6 +1160,32 @@ if "H6h2" in H and z1p.exists() and z2p.exists():
                                                                                                                                      "0.0231) brechen TM1 und liegen näher an NuFIT "
                                                                                                                                      "6.1 (Z57); Brechungsgewicht offen")
                                                                                                                 facts["F49_mirror_spin11_area_clocks"] = {n: T16[n]["urteil"] for n in T16}
+                                                                                                                z58p = Path(__file__).with_name("z58_ergebnis.json")
+                                                                                                                if z58p.exists():
+                                                                                                                    T17 = json.loads(z58p.read_text())
+                                                                                                                    ok17 = all(T17["checks"].values())
+                                                                                                                    z59p = Path(__file__).with_name("z59_ergebnis.json")
+                                                                                                                    ok17 = ok17 and z59p.exists() and all(json.loads(z59p.read_text())["checks"].values())
+                                                                                                                    H["H6h31"] = dict(H["H6h30"])
+                                                                                                                    H["H6h31"]["K6"] = (H["H6h30"]["K6"][0] if ok17 else F,
+                                                                                                                                        H["H6h30"]["K6"][1] + "; Zeit als Modulfluss aus der "
+                                                                                                                                        "originalen Kovarianz rekonstruiert (K = 4 pi L_0, "
+                                                                                                                                        "Spektrum in pi N, Z58)")
+                                                                                                                    H["H6h31"]["K13"] = (LES if ok17 and ok16[57] else F,
+                                                                                                                                         "[D] Jacobson; Rekonstruktion statt Auswahl (Z58): "
+                                                                                                                                         "Leiter statt Band folgt (Band nicht spurklasse, "
+                                                                                                                                         "nicht quadratisch), Spurkanal-Propagator = "
+                                                                                                                                         "Fisher-Information des Originals, Kopplungen = "
+                                                                                                                                         "Energiekumulanten; 2D-Tensorkanal c = 1 je "
+                                                                                                                                         "Quarter (Z59); Flächenregel t = 1 (Z57); "
+                                                                                                                                         "Tensorkanal und 3+1-Rekonstruktion offen")
+                                                                                                                    H["H6h31"]["K16"] = (LES if ok17 and ok16[56] else F,
+                                                                                                                                         "[Index statt Spiegellücke] ein chiraler Zweig, "
+                                                                                                                                         "Toeplitz-Index +1 mit Restmischung q^Tiefe, "
+                                                                                                                                         "Familienindex 3 ohne Spiegel (Z58); Spiegellücke "
+                                                                                                                                         "Z56 als Alternative; 4D-Regulierung (GW) und "
+                                                                                                                                         "OS-Rekonstruktion offen")
+                                                                                                                    facts["F50_reconstruction"] = T17["urteil"]
 
 order = [f"K{i}" for i in range(1, 21)]
 print("Gesamttabelle (P = hergeleitet, L = unter benannter Lesart, F = FAIL, O = OFFEN, E = EINGABE)\n")

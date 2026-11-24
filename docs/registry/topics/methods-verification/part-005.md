@@ -62,10 +62,6 @@ The spin-lift argument fixes the [formula in source] deficit factor robustly, an
 
 Replication package: All numerical results can be reproduced using the TFPT verification suite (v2.8).
 
-Explicit source references:
-
-- [verification/run_all.py](../../../../verification/run_all.py#L1) · explicit_file_citation
-
 ## Reference snapshot pinning.
 
 [documents/archive--paper-latex--tfpt-theory-fullv28/sections/013-section-texorpdfstring-seam-gluing-and-the-eta-invariant.tex:349-356](../../../../documents/archive--paper-latex--tfpt-theory-fullv28/sections/013-section-texorpdfstring-seam-gluing-and-the-eta-invariant.tex#L349) · `section:8682b8e9897e94a66fb4` · paragraph
