@@ -1,6 +1,83 @@
 # Urteil
 
-## Aktueller Stand: H6h25 — q-Regel aus dem originalen Zustand und Ward-Struktur (`z46`, `z47`)
+## Aktueller Stand: H6h26 — Herleitung der Zuordnung, Quelle des Gravitons, Bimetrik, größere Familiengruppen (`z48`, `z49`)
+
+Bilanz unverändert 14 P und 6 L von 20; K13 und K18 sind präzisiert. Auftrag: weiter bis zur vollständigen Lösung.
+Selbst gerechnet: `z48` mit 14 und `z49` mit 7 Prüfungen, die Lane `process_rules` mit einem Gruppenuniversum und 16
+Tests. Vollständig ist die Lösung damit nicht; die offenen Punkte stehen unten.
+
+**In einem Satz:**
+- Die Zuordnung hinter q = e^{−2π} ist jetzt hergeleitet: Der Strom J₋₁ wirkt als Übertragungsschritt S⁴. Einzige
+  Prämisse für den Zustand bleibt die freie Gaußquantisierung der Quelle.
+- Der masselose Pol koppelt nur an die Noetherladung |0⟩.
+- Nichtlinear passt eine geisterfreie Bimetrik mit (M_f/M_g)² = 1/(e^{4π} − 1).
+- Größere Familiengruppen lösen die Flavourfrage nicht. TM1 bei 15° mit μ-τ-Reflexion passt zu den Daten und sagt
+  δ = ±π/2 voraus; sein Mechanismus ist offen.
+
+**1. Herleitung der Zuordnung (`z48`, Teil 1–2).**
+- **Zwiste = Grade.** Die originalen Quarterzwiste α = 1/4, 3/4 sind die Vierteldrehungsgrade 1 und 3 der Hardy-Marken
+  k = 4(r + α). Der Zwist e^{2πiα} ist der Charakter i^k.
+- **Energie.** Die originale Kovarianz (1 + e^{4π(r+α)})⁻¹ ist genau die Fermibesetzung 1/(1 + e^{πk}). Die
+  Quarterenergie ist also L₀/4.
+- **J₋₁ = S⁴.** Der Strom J₋₁ = Σψ*_{r+1}ψ_r verschiebt jede Quartermode um eins, jede Hardy-Marke also um 4, und es
+  gilt [L₀/4, S⁴] = S⁴. Er wirkt als Übertragungsschritt.
+- **Neutraler Sektor.** R A R⁺ = −iA, und der Kern liegt nur im Grad 0, dem neutralen Sektor der Ströme.
+- **Zustand.** Der Kompressionskern hat die Amplituden einer Thermofeld-Purifikation √(1 − x) x^{n/2} mit x = q²; der
+  Partner ist die zweite Blatthälfte.
+  - Mit der Stromnorm ω = 1/(e^{4π} − 1) folgt x = ω/(1 + ω) = e^{−4π}.
+  - Eine fermionische Lesart der Grad-0-Leiter passt nicht: Die Nullmode wäre halb besetzt, und die Verhältnisse wären
+    nicht fest.
+- **Folge.** Die Zuordnung aus z46 ist keine freie Wahl mehr, sobald die Vierteldrehung der Übertragung die der Marken
+  ist.
+
+**2. Quelle des Gravitons (`z48`, Teil 3).**
+- Unter Drehung der Naht ist nur die Fourier-Nullmode einer Dichte erhalten.
+- Ward verlangt Minimalkopplung über diese Ladung |0⟩: Alle Arten koppeln dann mit √(1 − q²), universell. Die Leiterzustände
+  |4j⟩ sind Multipole derselben Dichte, keine eigenen Quellen.
+- Hätte die Quellabbildung Quarter-Harmonische, wäre das Äquivalenzprinzip um η = e^{−2π}|Δh| verletzt. MICROSCOPE
+  verlangt dann |Δh| < 5·10⁻¹².
+- Damit ist die offene Frage aus H6h25 („warum alle Materie auf dem Randzustand“) beantwortet: Es ist die Ladung,
+  nicht ein Ort.
+
+**3. Nichtlineare Form (`z48`, Teil 4).**
+- **Zwei Metriken.** Mit Fierz-Pauli-Mischung ist der massive Anteil exakt M_f²/(M_g² + M_f²) (symbolisch).
+- **Massenverhältnis.** Das Gewicht e^{−4π} verlangt (M_f/M_g)² = 1/(e^{4π} − 1), genau die originale Stromnorm; also
+  M_f/M_g = 0,0019.
+- **Tauschsymmetrie.** Gleiches Blattgewicht hieße M_f = M_g, die austauschsymmetrische Bimetrik. Der originale Zustand
+  bricht diesen Tausch stark.
+- **Offen:**
+  - Die kubischen und quartischen Potentialparameter bleiben frei; nach der Literatur sind das zwei Kombinationen. Das
+    habe ich nicht selbst hergeleitet, es passt aber zum externen Befund „freie Wechselwirkung“.
+  - Die Skala μ liegt bei der Nahtskala; bei Gitter- bzw. Planckskala ist die Linie unbeobachtbar.
+
+**4. Größere Familiengruppen (`z49`, Lane `flavour_groups`).**
+- **Durchsucht.** Δ(6n²) mit Klein-Gruppe für Majorana-Neutrinos und zyklischem Rest für geladene Leptonen, n = 2 bis 16.
+- **Nur TM2.** Es entstehen nur TM2-Muster bei diskreten Winkeln (3,75°, 6°, 7,5°, 11,25°, 12°, 15°). Keines trifft
+  das θ₁₃-Fenster; die nächsten Werte sind 0,0114 und 0,0254. {mischt, TM1} ist leer.
+- **Δ(96).** Die Vierteldrehung erweitert S₄ zu Δ(96). Dort ist die Familienuhr (TM2 bei 15°) mit einer Klein-Gruppe
+  vorhanden, also Majorana-verträglich. In S₄ allein braucht sie eine Z₄ auf einer Seite.
+- **TM1 bei 15°.** Es gibt sin²θ₁₃ = (2 − √3)/12 = 0,0223 und sin²θ₁₂ = 0,318.
+  - Mit der Phase π/2 (μ-τ-Reflexion) ist θ₂₃ maximal und δ = ±π/2. Das ist eine scharfe Vorhersage.
+  - Es kommt in keiner dieser Gruppen vor; mit Z₂ × CP bliebe der Winkel frei.
+- **Lane.** Die exakten Labels erkennen jetzt Fehlanpassungen mit großen Nennern und drucken dann Dezimalzahlen.
+
+**5. Was das für H6 heißt.**
+- **Gravitation:** Unter den genannten Prämissen (darunter D, Jacobson) bleiben im Gravitationsteil drei Punkte offen:
+  - die Gaußquantisierung als Prämisse der Quelle,
+  - die Skala μ und G,
+  - die kubischen und quartischen Kopplungen.
+  Die Kette dahin:
+  - Einsteinpol plus massive Linie (3,5·10⁻⁶);
+  - Masselosigkeit durch den Index geschützt;
+  - universelle Kopplung über die Noetherladung;
+  - Gedächtnis nur im Weyl-Kanal;
+  - nichtlinear eine Bimetrik mit festgelegtem Massenverhältnis.
+- **Familien:** Der Mechanismus, der die Viertel-15°-Drehung in die (2,3)- statt in die (1,3)-Ebene legt, fehlt.
+  Restsymmetrie allein reicht nicht.
+- **Grenze:** Das bleibt bedingt und explorativ, nicht im Ledger. Eine vollständige TOE ist es nicht; die übrigen Tore
+  (lokale wechselwirkende 3+1D-Theorie, chirale Materie ohne Spiegel) sind hier nicht bearbeitet.
+
+## Davor: H6h25 — q-Regel aus dem originalen Zustand und Ward-Struktur (`z46`, `z47`)
 
 Bilanz unverändert 14 P und 6 L von 20; K13, K16 und K18 sind präzisiert. Auftrag: erst eine Regel für q, dann die
 Ward-Struktur, dazu das Protokoll eines externen OriginLab-Laufs vom 24.11. Dieser Lauf liegt nicht auf origin; seine

@@ -53,6 +53,13 @@ pure Einstein. The longest rules now report their tie set before the size order:
 principle is used. Flavour patterns are printed exactly in Q(sqrt 2, sqrt 3); the first runs printed (2 - sqrt 3)/6 as 2/45.
 `run(state=False)` reproduces the second run.
 
+Fourth run (larger family groups, H6 exploration z48/z49): `flavour_groups` enumerates residual symmetries in Delta(6 n^2),
+n in {2, 3, 4, 6, 8}, with a Klein group for Majorana neutrinos and a cyclic group with three distinct eigenvalues for the
+charged leptons (27 patterns). Every mixing pattern is TM2 (trimaximal middle column) at discrete angles; none meets the
+rounded 3-sigma ranges, and {mixes, tm1} is empty. Delta(96), the smallest of these groups with the quarter phases i, carries
+the family clock (TM2 at 15 degrees) with a Klein group, which S4 alone does not. Exact labels now reject large-denominator
+fits and fall back to decimals.
+
 ```bash
 .venv/bin/python -B research/originlab/process_rules.py > /tmp/process-rules.json
 .venv/bin/python -B research/originlab/main.py --campaign process_rules --jobs 1 --out /tmp/originlab-process

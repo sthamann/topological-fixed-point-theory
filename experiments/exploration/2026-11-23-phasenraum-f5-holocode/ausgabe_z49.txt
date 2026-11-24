@@ -1,0 +1,35 @@
+Teil 1: Lane-Universum flavour_groups
+   27 Muster, 128 Regeln, Urteile {'EMPTY': 108, 'UNIQUE': 14, 'AMBIGUOUS': 6}
+      Delta(24)   (('1/3', '1/3', '1/3'), ('1/3', '1/3', '1/3'), ('1/3', '1/3', '1/3'))  ['mixes', 'tm2']
+      Delta(96)   (('1/3 - sqrt(3)/6', '1/3', 'sqrt(3)/6 + 1/3'), ('1/3', '1/3', '1/3'), ('sqrt(3)/6 + 1/3', '1/3'  ['clock_pattern', 'mixes', 'quarter_phases', 'tm2']
+      Delta(96)   (('1/3', '1/3', '1/3'), ('1/3', '1/3', '1/3'), ('1/3', '1/3', '1/3'))  ['mixes', 'quarter_phases', 'tm2']
+      Delta(216)  (('1/3', '1/3', '1/3'), ('1/3', '1/3', '1/3'), ('1/3', '1/3', '1/3'))  ['mixes', 'tm2']
+      Delta(384)  (('0.011358058', '1/3', '0.655308609'), ('0.419606348', '1/3', '0.247060318'), ('sqrt(2)/6 + 1/3  ['mixes', 'quarter_phases', 'tm2']
+      Delta(384)  (('1/3 - sqrt(3)/6', '1/3', 'sqrt(3)/6 + 1/3'), ('1/3', '1/3', '1/3'), ('sqrt(3)/6 + 1/3', '1/3'  ['clock_pattern', 'mixes', 'quarter_phases', 'tm2']
+      Delta(384)  (('1/3', '1/3', '1/3'), ('1/3', '1/3', '1/3'), ('1/3', '1/3', '1/3'))  ['mixes', 'quarter_phases', 'tm2']
+   minimale leere Regeln: [['clock_pattern', 'tm1'], ['fits_data'], ['mixes', 'tm1'], ['theta13_window']]
+   [ok] kein Klein-x-zyklisches Muster in Delta(24) bis Delta(384) trifft die 3-sigma-Bereiche oder das theta13-Fenster
+   [ok] TM1 kommt nur ohne Mischung vor (TBM mit theta13 = 0): {mixes, tm1} ist leer
+
+Teil 2: Vierteldrehung -> Delta(96)
+   [ok] Delta(24) = S4 hat mit Klein-Neutrinos keine Familienuhr (TM2 bei 15 Grad); erst Delta(96) mit den Phasen i hat sie
+   Delta(96): (('1/3 - sqrt(3)/6', '1/3', 'sqrt(3)/6 + 1/3'), ('1/3', '1/3', '1/3'), ('sqrt(3)/6 + 1/3', '1/3', '1/3 - sqrt(3)/6'))  (geladene Leptonen Ordnung [3])
+   [Befund: ja] Das Z3 x Z4-Muster der S4-Lane braucht dort eine Z4 auf einer Seite, also keine Majorana-Klein-Gruppe; in Delta(96) entsteht dasselbe Muster mit Klein-Neutrinos -- die Vierteldrehung macht die Familienuhr Majorana-verträglich
+
+Teil 3: Weitere n
+   sin^2 theta13 aller gemischten TM2-Muster bis n = 16: [0.00285, 0.00728, 0.01136, 0.02537, 0.02882, 0.04466, 0.33333]
+   [ok] alle gemischten Muster bis Delta(1536) sind TM2 (mittlere Spalte trimaximal), keins TM1
+   [ok] kein TM2-Winkel liegt im Fenster 0.020-0.024 (nächste Werte 0.0114 und 0.0254 bei Delta(384), Delta(1536))
+   zugehörige TM2-Winkel (Grad): [3.75, 6.0, 7.5, 11.25, 12.0, 15.0]
+
+Teil 4: TM1 bei 15 Grad
+   TM1(15 Grad): sin^2 theta13 = 0.02233, sin^2 theta12 = 0.3181; TM2(15 Grad): sin^2 theta13 = 0.04466
+   [ok] TM1 bei 15 Grad liegt im theta13-Fenster und im theta12-Bereich; es ist genau die Hälfte der Familienuhr
+   TM1(15 Grad) mit Phase pi/2: sin^2 theta23 = 0.5000, Jarlskog -0.0340, |sin delta| = 1.0000
+   [ok] mit der Phase pi/2 (mu-tau-Reflexion) ist theta23 maximal und delta = +-pi/2: TM1(15 Grad) wird eine scharfe Vorhersage für die CP-Phase
+   [Befund: ja] Reine Restsymmetrie in Delta(6 n^2) (n bis 16) gibt TM1 bei 15 Grad nicht; mit Z2 x CP bliebe der Winkel frei. Die datenpassende Familie braucht eine weitere Regel, die die Viertel-15-Grad-Drehung in die (2,3)- statt in die (1,3)-Ebene legt
+
+Urteil
+   Größere Familiengruppen lösen die Flavourfrage nicht. In Delta(6 n^2) mit Klein-Neutrinos (Majorana) und zyklischen Leptonresten entstehen bis n = 16 nur TM2-Muster mit diskreten Winkeln; keines trifft das theta13-Fenster (nächste Werte 0.0114 und 0.0254). Die Vierteldrehung erweitert S4 zu Delta(96): Dort ist die Familienuhr TM2 bei 15 Grad Majorana-verträglich, aber mit sin^2 theta13 = 0.0447 doppelt zu groß. TM1 bei 15 Grad passt zu den Daten (0.0223), kommt aber in keiner dieser Gruppen vor; mit Z2 x CP bliebe der Winkel frei. Die Familienregel braucht also einen Mechanismus jenseits reiner Restsymmetrie.
+
+Alle Prüfungen bestanden: True (7/7)

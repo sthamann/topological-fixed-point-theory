@@ -429,7 +429,9 @@ def _kind(G):
 def _exact(v):
     """Exact label in Q(sqrt 2, sqrt 3); the first run used limit_denominator(48), which printed (2 - sqrt 3)/6 as 2/45."""
     e = sympy.nsimplify(float(v), [sympy.sqrt(2), sympy.sqrt(3)], tolerance=1e-8)
-    if abs(float(e) - float(v)) > 1e-8:
+    small = (len(sympy.Add.make_args(e)) <= 2
+             and all(r.q <= 12 and abs(r.p) <= 12 for r in e.atoms(sympy.Rational)))
+    if abs(float(e) - float(v)) > 1e-8 or not small:          # no spurious large-denominator fits (z49)
         return repr(round(float(v), 9))
     return str(e)
 
@@ -474,6 +476,114 @@ def flavour_pairs():
             frac = tuple(tuple(_exact(v) for v in row) for row in canon)
             out.append({"pair": f"{g1['kind']} x {g2['kind']}", "index": 24//len(g1["G"]) + 24//len(g2["G"]),
                         "pattern": frac, "jarlskog": round(float(J), 9), "clauses": clauses})
+    return out
+
+
+# ---------------------------------------------------------------- D2: larger family groups (z49)
+DATA_RANGES = ((0.27, 0.35), (0.020, 0.024), (0.43, 0.60))     # approximate 3-sigma, NuFIT 6.0 normal ordering, rounded (z43)
+
+
+def delta_group(n):
+    """Delta(6 n^2) in its faithful 3-dim representation: monomial matrices (perm, phase exponents of e^{i pi/n})."""
+    N2 = 2*n
+
+    def mul(g, h):
+        pg, xg = g
+        ph, xh = h
+        return (tuple(pg[ph[j]] for j in range(3)), tuple((xh[j] + xg[ph[j]]) % N2 for j in range(3)))
+    gens = [((1, 2, 0), (0, 0, 0)), ((2, 1, 0), (n, n, n)), ((0, 1, 2), (2, N2 - 2, 0)), ((0, 1, 2), (0, 2, N2 - 2))]
+    e = ((0, 1, 2), (0, 0, 0))
+    G, frontier = {e}, [e]
+    while frontier:
+        new = []
+        for x in frontier:
+            for g in gens:
+                y = mul(g, x)
+                if y not in G:
+                    G.add(y)
+                    new.append(y)
+        frontier = new
+    mat = lambda g: np.array([[np.exp(1j*np.pi*g[1][j]/n) if g[0][j] == i else 0 for j in range(3)] for i in range(3)])
+    return G, mul, e, mat
+
+
+def _joint_basis(mats, seed=1):
+    rng = np.random.default_rng(seed)
+    gen = sum((rng.normal() + 1j*rng.normal())*M for M in mats)
+    ev, vec = np.linalg.eig(gen)
+    if min(abs(ev[i] - ev[j]) for i in range(3) for j in range(i+1, 3)) < 1e-6:
+        return None
+    return vec/np.linalg.norm(vec, axis=0)
+
+
+def _angles_fit(P):
+    """Some row/column assignment puts sin^2 theta12, theta13, theta23 into DATA_RANGES."""
+    (r12, r13, r23) = DATA_RANGES
+    for rp in permutations(range(3)):
+        for cp_ in permutations(range(3)):
+            M = [[P[r][c] for c in cp_] for r in rp]
+            s13 = M[0][2]
+            if s13 >= 1:
+                continue
+            s12, s23 = M[0][1]/(1 - s13), M[1][2]/(1 - s13)
+            if r12[0] <= s12 <= r12[1] and r13[0] <= s13 <= r13[1] and r23[0] <= s23 <= r23[1]:
+                return True
+    return False
+
+
+def flavour_groups(ns=(2, 3, 4, 6, 8)):
+    """Residual symmetries in Delta(6 n^2): Klein group for Majorana neutrinos, cyclic group with three distinct
+    eigenvalues for charged leptons; |U|^2 of the two eigenbases."""
+    out = []
+    clock = None
+    for n in ns:
+        G, mul, e, mat = delta_group(n)
+        els = sorted(G)
+        M = {g: mat(g) for g in els}
+        order = {}
+        for g in els:
+            k, x = 1, g
+            while x != e:
+                x, k = mul(g, x), k + 1
+            order[g] = k
+        inv = [g for g in els if order[g] == 2 and not np.allclose(M[g], -np.eye(3))]
+        klein, seen = [], set()
+        for g1, g2 in combinations(inv, 2):
+            if mul(g1, g2) == mul(g2, g1):
+                key = frozenset([g1, g2, mul(g1, g2)])
+                B = _joint_basis([M[g1], M[g2]])
+                if key not in seen and B is not None:
+                    seen.add(key)
+                    klein.append(B)
+        cyc = [(order[g], B) for g in els if order[g] >= 3 for B in [_joint_basis([M[g]])] if B is not None]
+        pats = {}
+        for Bn in klein:
+            for o, Bl in cyc:
+                P = np.abs(Bl.conj().T @ Bn)**2
+                canon = min(tuple(tuple(round(float(P[r][c]), 9) for c in cp_) for r in rp)
+                            for rp in permutations(range(3)) for cp_ in permutations(range(3)))
+                pats.setdefault(canon, set()).add(o)
+        for canon, orders in sorted(pats.items()):
+            flat = [v for row in canon for v in row]
+            cols = [tuple(canon[r][c] for r in range(3)) for c in range(3)]
+            clauses = set()
+            if all(v > 1e-9 for v in flat):
+                clauses.add("mixes")
+            if any(sorted(col) == sorted((2/3, 1/6, 1/6)) or np.allclose(sorted(col), sorted((2/3, 1/6, 1/6)), atol=1e-8)
+                   for col in cols):
+                clauses.add("tm1")
+            if any(np.allclose(col, 1/3, atol=1e-8) for col in cols):
+                clauses.add("tm2")
+            if any(DATA_RANGES[1][0] <= v <= DATA_RANGES[1][1] for v in flat):
+                clauses.add("theta13_window")
+            if _angles_fit(canon):
+                clauses.add("fits_data")
+            if n % 4 == 0:
+                clauses.add("quarter_phases")
+            if any(abs(v - (2 - np.sqrt(3))/6) < 1e-8 for v in flat) and "tm2" in clauses:
+                clauses.add("clock_pattern")                 # Z3 x Z4 of the S4 lane = TM2 at 15 degrees (z46)
+            out.append({"n": n, "group": f"Delta({6*n*n})", "pattern": tuple(tuple(_exact(v) for v in row) for row in canon),
+                        "charged_lepton_orders": sorted(orders), "clauses": clauses})
     return out
 
 
@@ -554,6 +664,7 @@ RECORD = {
                       "Einstein H = x": "pure Einstein graviton (Jacobson reading, premise D)"},
     "seam_layers": {"n=16 real reversed": "SEAM.S3 (p+ip x 16, c = 8) with an orientation-reversing second sheet half (z41/z42)",
                     "n=8 complex reversed": "the complex flux seam G' of z39 (U(1) charge, no Spin(10)_1)"},
+    "flavour_groups": {},
     "flavour_pairs": {"(('0', '1/3', '2/3'), ('1/2', '1/3', '1/6'), ('1/2', '1/3', '1/6'))":
                       "tri-bimaximal mixing (S4 leading order of the TFPT flavour channels, K18)"},
 }
@@ -608,6 +719,18 @@ def run(root=None, transfer=True, state=True):
         res["original_current_norm"] = original_current_norm()
         res["bound"] = "seven candidate states of the quarter transfer; no size preference (ties stay AMBIGUOUS)"
         out["universes"]["q_rules"] = res
+
+    if transfer and state:
+        fg = flavour_groups()
+        pool = ["mixes", "tm1", "tm2", "theta13_window", "fits_data", "quarter_phases", "clock_pattern"]
+        res = search(fg, pool, lambda o: o["n"], lambda o: f"{o['group']} {o['pattern']}")
+        empty = [set(r) for k in range(1, len(pool) + 1) for r in combinations(pool, k)
+                 if not any(set(r) <= o["clauses"] for o in fg)]
+        res["minimal_empty_rules"] = sorted(sorted(r) for r in empty if not any(e < r for e in empty))
+        res["derived"] = {"patterns": [(o["group"], str(o["pattern"]), sorted(o["clauses"])) for o in fg]}
+        res["bound"] = ("Delta(6 n^2), n in {2, 3, 4, 6, 8}: Klein residual group for Majorana neutrinos, cyclic residual "
+                        "group with three distinct eigenvalues for charged leptons; data ranges rounded (z43)")
+        out["universes"]["flavour_groups"] = res
 
     sl = seam_layers()
     res = search(sl, ["c_eight", "anyon_free", "spin10_level_one", "sheet_neutral", "u1_free"],

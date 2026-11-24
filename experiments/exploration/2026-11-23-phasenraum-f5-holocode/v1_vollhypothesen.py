@@ -1048,6 +1048,28 @@ if "H6h2" in H and z1p.exists() and z2p.exists():
                                                                                                                  "theta12 = 0.318, Phase um pi/2); warum die erste "
                                                                                                                  "TBM-Spalte bleibt, ist offen (Z46)")
                                                                                             facts["F44_q_rule_and_ward"] = {n: T11[n]["urteil"] for n in T11}
+                                                                                            zv = {n: Path(__file__).with_name(f"z{n}_ergebnis.json") for n in (48, 49)}
+                                                                                            if all(p.exists() for p in zv.values()):
+                                                                                                T12 = {n: json.loads(p.read_text()) for n, p in zv.items()}
+                                                                                                ok12 = {n: all(T12[n]["checks"].values()) for n in T12}
+                                                                                                H["H6h26"] = dict(H["H6h25"])
+                                                                                                H["H6h26"]["K13"] = (LES if ok12[48] and ok11[46] and ok11[47] else F,
+                                                                                                                     "[D] Jacobson; Einsteinpol plus Gedächtnis der "
+                                                                                                                     "Viertelübertragung im originalen Zustand, q = "
+                                                                                                                     "e^-2pi: die Zuordnung J_-1 = S^4 folgt aus den "
+                                                                                                                     "Quarterzwisten (Z48); Masselosigkeit durch Index "
+                                                                                                                     "geschützt, Quelle = Noetherladung |0>, Gedächtnis "
+                                                                                                                     "nur im Spin-2-Kanal (Z47, Z48); nichtlinear "
+                                                                                                                     "Bimetrik mit (M_f/M_g)^2 = 1/(e^{4 pi} - 1); "
+                                                                                                                     "G, Skala und Gaußquantisierung offen")
+                                                                                                H["H6h26"]["K18"] = (LES if ok12[49] and ok11[46] else F,
+                                                                                                                     "Familien: Delta(6 n^2) mit Majorana-Klein-Resten "
+                                                                                                                     "gibt bis n = 16 nur TM2 bei diskreten Winkeln, "
+                                                                                                                     "keiner im theta13-Fenster; Delta(96) macht die "
+                                                                                                                     "Familienuhr (TM2, 15 Grad) Majorana-verträglich; "
+                                                                                                                     "TM1 bei 15 Grad mit mu-tau-Reflexion passt "
+                                                                                                                     "(delta = +-pi/2), Mechanismus offen (Z49)")
+                                                                                                facts["F45_assignment_and_flavour_groups"] = {n: T12[n]["urteil"] for n in T12}
 
 order = [f"K{i}" for i in range(1, 21)]
 print("Gesamttabelle (P = hergeleitet, L = unter benannter Lesart, F = FAIL, O = OFFEN, E = EINGABE)\n")

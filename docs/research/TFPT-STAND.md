@@ -127,8 +127,8 @@ Ursprung sollte beides zugleich liefern.
 
 ### Kandidat H6: Ursprung von P1 aus einer hintergrundfreien Naht (Exploration 23.11.)
 
-Quelle: `experiments/exploration/2026-11-23-phasenraum-f5-holocode/VERDICT.md` (Stand H6h25),
-Skripte `n1`, `v1`, `y1`, `z1`–`z47`, Lean-Vertrag `experiments/theory-contracts/h6-exakte-teile-20261123/`; Atlasproblem `problem:c3-p1-p2-shared-origin-reconciliation`,
+Quelle: `experiments/exploration/2026-11-23-phasenraum-f5-holocode/VERDICT.md` (Stand H6h26),
+Skripte `n1`, `v1`, `y1`, `z1`–`z49`, Lean-Vertrag `experiments/theory-contracts/h6-exakte-teile-20261123/`; Atlasproblem `problem:c3-p1-p2-shared-origin-reconciliation`,
 Befunde mit Präfix `h6`. Nichts davon ist im Ledger befördert. Prüfstand mit 20 Kriterien: 14
 hergeleitet, 6 unter benannter Lesart, keines gescheitert, offen oder gesetzt.
 
@@ -308,6 +308,13 @@ hergeleitet, 6 unter benannter Lesart, keines gescheitert, offen oder gesetzt.
     (W F(□) W, linearisiert ½k⁴hP²h), der Spurkanal bleibt Einstein. Gegenprüfung eines externen Laufs: 32er-Naht nur
     über die Größenordnung ausgeschlossen; Z₃ × Z₄ exakt (2 − √3)/6 = TM2 bei 15°; die Daten passen zu TM1 bei 15°
     (sin²θ₁₃ = (2 − √3)/12), Herkunft offen. [E/N]
+  - Zuordnung, Quelle, Bimetrik, Familiengruppen (Z48, Z49): Die Quarterzwiste α = 1/4, 3/4 sind die Vierteldrehungsgrade
+    der Hardy-Marken k = 4(r + α); die originale Kovarianz ist 1/(1 + e^{πk}), und J₋₁ wirkt als Übertragungsschritt S⁴.
+    Damit ist die Zuordnung hinter q = e^{−2π} hergeleitet (Prämisse bleibt die Gaußquantisierung). Ward verlangt
+    Minimalkopplung über die Noetherladung |0⟩; Quarter-Harmonische gäben eine EP-Verletzung e^{−2π}|Δh|. Nichtlinear
+    passt eine Bimetrik mit (M_f/M_g)² = 1/(e^{4π} − 1); kubische und quartische Kopplungen bleiben frei. Δ(6n²) mit
+    Majorana-Klein-Resten gibt bis n = 16 nur TM2 bei diskreten Winkeln, keinen im θ₁₃-Fenster; Δ(96) macht die
+    Familienuhr Majorana-verträglich; TM1 bei 15° mit μ-τ-Reflexion passt (δ = ±π/2), Mechanismus offen. [E/N]
   - Instantonen (Z33): Unter Spin(10) hat ein Einheitsinstanton 4 Eltern- und 12
     Familiennullmoden; mit gesättigten Familiennullmoden entsteht Re[e^{iθ}Φ² C_fam], die Wand ist
     also auch im Kontinuum möglich, bei nackter SO(10) aber ~10⁻¹⁶⁴ unterdrückt. [N]
@@ -411,9 +418,8 @@ hergeleitet, 6 unter benannter Lesart, keines gescheitert, offen oder gesetzt.
   - Die 4D-Einbettung der reellen Majorana-Chern-Naht (Blatt mit Kante) und ihre μ₄-Kondensation.
   - Die Herkunft der Prinzipien, die die Prozesssuche verlangt (Z43, Z45): konforme Kovarianz des Kerns,
     Orientierungsumkehr, eine gemeinsame Übertragung und die Familienorientierung (TM1 statt TM2 bei 15°); dazu die
-    Herleitung der Zustandsregel q = e^{−2π} aus P1 (Zuordnung S⁴ ↔ J₋₁, Gaußquantisierung), die Skala μ und G, die
-    nichtlineare Vervollständigung der massiven Spin-2-Linie und warum alle Materie über den Randzustand koppelt (Z46,
-    Z47).
+    Gaußquantisierung der Quelle als letzte Prämisse der Zustandsregel (die Zuordnung J₋₁ = S⁴ ist hergeleitet, Z48),
+    die Skala μ und G, die kubischen und quartischen Kopplungen der Bimetrik und der Mechanismus für TM1 bei 15° (Z46–Z49).
   - Die eine Prozessregel Z[J, A, g, Φ], aus der Naht, Eichwirkung und metrische Variation gemeinsam
     folgen.
 

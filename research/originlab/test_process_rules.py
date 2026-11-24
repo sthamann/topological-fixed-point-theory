@@ -4,7 +4,7 @@ from fractions import Fraction as Fr
 from autonomy import execute, specifications
 import numpy as np
 
-from process_rules import (Q_DIRAC, Q_ORIGINAL, flavour_pairs, ladder_occupation, matrix_kernels, original_current_norm,
+from process_rules import (Q_DIRAC, Q_ORIGINAL, flavour_groups, flavour_pairs, ladder_occupation, matrix_kernels, original_current_norm,
                            q_rules, readouts, run, schur_coefficient, seam_layers, spin2_kernels, transfer_processes)
 
 
@@ -140,6 +140,17 @@ class ProcessRules(unittest.TestCase):
         self.assertEqual(sizes, [1, 2])                   # with e8_seam no size tie; with positivity n = 16 and 32 tie
         two = [v for v in ties.values() if len(v) == 2][0]
         self.assertTrue(any("seam n=32 real reversed" in t for t in two))
+
+    def test_delta_groups_give_only_tm2_and_no_data_fit(self):
+        fg = flavour_groups(ns=(2, 4, 8))
+        self.assertFalse(any("clock_pattern" in o["clauses"] for o in fg if o["n"] == 2))
+        self.assertTrue(any("clock_pattern" in o["clauses"] for o in fg if o["n"] == 4))
+        mixed = [o for o in fg if "mixes" in o["clauses"]]
+        self.assertTrue(all("tm2" in o["clauses"] and "tm1" not in o["clauses"] for o in mixed))
+        self.assertTrue(any("0.011358058" in o["pattern"][0] for o in mixed))   # no spurious exact label
+        empty = self.result["universes"]["flavour_groups"]["minimal_empty_rules"]
+        for rule in (["fits_data"], ["theta13_window"], ["mixes", "tm1"]):
+            self.assertIn(rule, empty)
 
     def test_nothing_is_promoted_and_the_lane_is_registered(self):
         self.assertFalse(self.result["physical_solution"])
