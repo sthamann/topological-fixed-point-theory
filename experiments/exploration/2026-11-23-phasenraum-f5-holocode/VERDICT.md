@@ -1,6 +1,113 @@
 # Urteil
 
-## Aktueller Stand: H6h14 — drei falsifizierende Tests (`z25` RG, `z26` Lüscher, `z27` Sakharov)
+## Aktueller Stand: H6h15 — projektive Spinorordnung und Gravitationsstruktur (`z28`, `z29`)
+
+Bilanz unverändert 14 P und 6 L von 20; K13, K15 und K19 sind präzisiert, nicht befördert. Anlass ist
+die vierte externe Analyse vom 24.11. Ihre Rechnungen sind hier selbst nachgerechnet: `z28` mit 23 und
+`z29` mit 17 Prüfungen. Craigs Abschnitt 11 ist an der Quelle gelesen.
+
+**In einem Satz:**
+- Der 3+2-Träger wird als Ordnungsparameter einer Spin(10)-Theorie konsistent. Die Viererholonomie
+  folgt dann aus der kleinsten zentrumerhaltenden Spinorpotenz, statt eingegeben zu werden.
+- Die Familiengruppe erzwingt die isotrope Plebański-Struktur.
+- Gravitation braucht aber Kanten, die die Metrik selbst definiert, und eine eigene Regel für G.
+
+**1. Spinorordnung (`z28`, 23 Prüfungen).** Spin(10) explizit auf dem Fockraum Λ^gerade ℂ⁵: 45
+Generatoren, Abschluss geprüft.
+- **Stabilisatoren.** Für den reinen Spinor s (das Fockvakuum) gilt:
+  - Linie [s]: Stabilisator u(5), Dimension 25;
+  - s selbst: su(5), Dimension 24;
+  - zusätzlich die 3+2-Teilung: G_SM, Dimension 12.
+
+  Gebrochen sind 21 + 12 = 33 Richtungen. Damit ist P2 als Ordnungsparameter lesbar; Gr(3,5) hat
+  genau die 12 Goldstone-Richtungen von SU(5) → G_SM.
+- **Viererholonomie.** Das Zentrum z von Spin(10) wirkt auf die 16 als −i. Die kleinste invariante
+  Potenz ist Q = s^⊗4 (Darstellung V(4ω₅), Dimension 2772). Es gilt Stab(Q) = SU(5) × ℤ₄, mit
+  3+2-Teilung G_SM × ℤ₄. Weil π₁(Spin(10)) = 0, folgt π₁ = π₀(H) = ℤ₄.
+  - Mit U(1)_D und R = s ⊗ u⁻¹ ist π₁ = ℤ mit der Auslese n mod 4.
+  - Die interne Holonomie aus z20 wäre damit eine Folge des Symmetriebruchs, *falls* Q kondensiert.
+    Das ist nicht gezeigt.
+- **Wand, gruppentheoretisch.** Ein J-ungerades Paarungsfeld (Ladung 2) mit Vakuumwert lässt von ℤ₄ nur
+  ℤ₂ übrig. Um die primitive Naht braucht es dann eine halbe Windung, also eine Wand (z24) oder
+  logarithmisch divergente Energie. Ein Kondensat der Ladung 4 (Φ² bzw. Vierfermion) hat eine ganze
+  Windung und ist ohne Wand verträglich.
+  - Offen ist, ob die Naht dann ihren Index (c = 8) behält. Mit ν = 16 ≡ 0 mod 16 ist der Elternsektor
+    wechselwirkend trivialisierbar. Ob ein Zufluss die c = 8 trotzdem erzwingt, ist nicht gerechnet,
+    und genau diese Frage hängt mit Entscheidung 2 zusammen.
+- **y1-Verbindung.** g†dg (Maurer–Cartan) ist flach; der projizierte Block hat F₃ = X₁†X₂ − X₂†X₁, nur
+  aus ersten Ableitungen. Daher kommt die Rangschranke 47 < 72. Eine unabhängige Elternverbindung
+  erreicht alle Krümmungen (Rang 78 in u(3) ⊕ u(2)). Das kinematische Problem ist gelöst; Herkunft und
+  Werte der Kopplungen nicht (z25: nur SO(10) an 1/a ist mit den Daten verträglich).
+- **Craig (arXiv:2610.09093, Abschnitt 11.1, an der Quelle gelesen).** Bedingungen: kubische
+  Anomaliefreiheit, und unter einem SU(2), das auf zwei Farben wirkt, gerade Vielfachheit der
+  halbzahligen Spins.
+  - TFPT unter SU(5), 3(10 + 5̄ + 1) + (5 + 5̄) + 6·1: Anomalie 0, Dubletts 4 je Generation und 2 für
+    die Eltern, zusammen 14. **Der SU(5)-Zweig von TFPT ist abgedeckt.**
+  - **Spin(10) mit der 16 deckt Craig ausdrücklich nicht ab.** Die 16 hat unter einer Wurzel-SU(2) vier
+    Dubletts, und Spin(10)/SU(2) ist 4-zusammenhängend; beides stimmt. Eine Bündelreduktion benutzt
+    Craig aber nicht (global: Zylinder [0,1] × S¹, Basis T⁴ × S¹). Die Behauptung der Analyse, der
+    topologische Teil sei damit auf Spin(10) übertragen, trägt also nicht.
+
+**2. Gravitationsstruktur (`z29`, 17 Prüfungen).**
+- **Simplizität aus der Familiengruppe.** Auf Λ²F lässt μ₄ zwei invariante symmetrische Formen zu,
+  die volle S₄ nur eine, nämlich δ_ij. Das ist die isotrope Plebański-Simplizität.
+- **Urbantke, symbolisch.** Für B^i = a dt∧dx^i + (b/2)ε^{ijk}dx^j∧dx^k gilt
+  g̃ = 12·diag(a³, ab², ab², ab²) und B^i∧B^j = 2ab δ^{ij}.
+  - Reelle a, b geben die euklidische Signatur, a = i, b = 1 die lorentzsche.
+  - Die Realitätsbedingung B^i ∧ conj(B^j) = 0 bedeutet Re(a b̄) = 0. Sie folgt nicht aus S₄.
+- **Positiver Kegel.** Jede quadratische Form, die auf allen Rang-1-Richtungen von Herm(2) verschwindet,
+  ist ein Vielfaches von det = Minkowskiform (Lösungsraum eindimensional), und X ≥ 0 ⇔ t ≥ |x|. Die
+  Signatur ist damit aus dem Operatorkegel rekonstruierbar. Offen ist das Soldering, also warum diese
+  Operatorrichtungen die Raumzeitverschiebungen sind.
+- **Wardidentität, symbolisch.** q^μ K_{μν,ρσ} = 0 erzwingt m₁ = m₂ = 0. Lokal bleibt genau ein freier
+  Koeffizient mit den Verhältnissen 1 : −1 : −½ : 1, also linearisiertes Einstein–Hilbert
+  (Fierz–Pauli, masselos). ξRφ² ist kovariant und verschiebt G, denn a₁ = (1/6 − ξ)R.
+  - **Die Wardidentität legt G also nicht fest.** Der kovariante Teil der z27-Mehrdeutigkeit
+    (Skalar: R = 1,42 entspricht ξ = −0,005) bleibt damit bestehen.
+  - **Korrektur meiner Erwartung aus H6h14:** Die Wardidentität macht a/ℓ_P nicht allein zur Vorhersage.
+- **Longitudinaler Test auf dem z27-Gitter.** Geprüft wird eine reine Koordinatenänderung
+  z' = z + (ε/k) sin kz, also die flache Metrik g_zz = (1 + ε cos kz)². Die Vakuumantwort konvergiert
+  gegen C_long = (1/8)⟨3p̂_z²/ω − p̂_z⁴/ω³⟩:
+  - m = 0: Gitter, extrapoliert, 0,251265 = analytisch 0,251265;
+  - m = 0,5: 0,24782 gegen 0,24789; das ist der Wert 0,247893 der externen Analyse.
+
+  Ein kovarianter Gegenterm hebt das nicht auf, denn √g Λ ist invariant. Ein festes Gitter verletzt die
+  Diffeomorphismensymmetrie also schon im Langwellenlimit; die Abschneidung wird anisotrop.
+
+**3. Lean für τ = i ohne Valenzformel.** Mathlib 5e932f97 (die Version des H6-Lean-Vertrags) hat
+`PeriodPair`, ℘ und ℘' mit Potenzreihen, Meromorphie und Polordnung, die Summen G_n, g₂, g₃ und
+℘'² = 4℘³ − g₂℘ − g₃ (`derivWeierstrassP_sq`). Es fehlen:
+- die Laurent-Rekursion, also G_{2k} als Polynom in G₄, G₆ (daraus folgt: g₃ = 0 ⇒ G_{2k} = 0 für
+  ungerades k ⇒ ℘_{iΛ} = ℘_Λ ⇒ iΛ = Λ);
+- das Gitterlemma iΛ = Λ ⇒ Λ = ωℤ[i] (kürzester Vektor, Überdeckungsradius 1/√2 von ℤ[i]).
+
+Kein Code ist geschrieben oder kompiliert.
+
+**4. Was das für die vollständige Lösung heißt.**
+- **Gelöst (kinematisch bzw. algebraisch):**
+  - P2 als Ordnungsparameter statt Quelle der Eichdynamik;
+  - die Rangschranke von y1;
+  - ℤ₄ aus der Spinorpotenz statt als Eingabe;
+  - die Wand als Folge eines geladenen Bilinears;
+  - die isotrope Simplizität aus S₄;
+  - Lorentz aus dem Operatorkegel;
+  - die Spin-2-Struktur aus der Wardidentität.
+- **Neu offen und entscheidend:**
+  - (a) Erzeugt H6s Dynamik das Kondensat Q = s^⊗4 und eine unabhängige Spin(10)-Elternverbindung?
+  - (b) Behält ein Ladung-4-Kondensat (symmetrische Massenerzeugung) den Nahtindex? Das ist zugleich
+    Entscheidung 2.
+  - (c) Welche Regel legt den Gesamtkoeffizienten (G) fest, wenn die Wardidentität es nicht tut?
+  - (d) Kanten, die die Metrik selbst definiert, statt eines festen Gitters.
+  - (e) Das Soldering von Herm(2) bzw. Λ²F an die Raumzeitverschiebungen.
+- **Vorsicht vor dem Zirkel:** Spin(10) und der Fünferträger folgen in H6 erst aus P1. Die Spinorordnung
+  ist also bisher eine Selbstkonsistenzlösung, keine unabhängige Herkunft.
+
+**5. Bilanz.** K15, K13 und K19 bleiben L, mit präzisierter Lesart:
+- K15: P2 als Ordnungsparameter mit nackter Spin(10)-Elternverbindung;
+- K13: Plebański-Struktur, aber G offen und Gitterkanten nicht kovariant;
+- K19: ℤ₄ aus s^⊗4, sofern Q kondensiert; die Wand nur bei J-ungeradem ⟨Φ⟩.
+
+## Davor: H6h14 — drei falsifizierende Tests (`z25` RG, `z26` Lüscher, `z27` Sakharov)
 
 Bilanz jetzt 14 P und 6 L von 20: K15 fällt von P auf L. Die drei Tests liefen parallel und wurden
 danach selbst nachgerechnet; Text und JSON sind identisch bis auf Laufzeitangaben.

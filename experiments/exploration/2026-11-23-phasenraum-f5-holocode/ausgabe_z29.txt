@@ -1,0 +1,50 @@
+Teil 1: invariante Formen auf Lambda^2 F
+   [ok] eigentliche Würfelgruppe hat 24 Elemente, alle mit det = 1
+   [ok] mu4 (Vierteldrehung): 2 invariante symmetrische Formen
+   [ok] S4 (24 Elemente): 1 invariante Form, also delta_ij
+
+Teil 2: Urbantke-Metrik und Simplizität
+   [ok] Urbantke: g~ = c diag(a^3, a b^2, a b^2, a b^2)
+   Normierung c = 12; g~ = 12 diag(a^3, a b^2, a b^2, a b^2)
+   [ok] Simplizität: B^i ^ B^j = 2ab delta^ij vol (bis auf Normierung der Volumenform)
+   B^i ^ B^j = (2*a*b) delta^ij
+   [ok] a = i, b = 1: Signatur (-,+,+,+)
+   [ok] a, b reell: euklidisch (+,+,+,+)
+   [ok] Realitätsbedingung B^i ^ conj(B^j) = 0 <=> Re(a conj b) = 0
+   B^1 ^ conj(B^1) = 2*(ai*bi + ar*br)
+   [Befund: ja] Familiengruppe S4 erzwingt die isotrope Simplizität; die Lorentzsche Phase folgt nicht aus S4
+
+Teil 3: positiver Kegel von Herm(2)
+   [ok] quadratische Formen auf allen Rang-1-Richtungen null: Lösungsraum 1-dimensional
+   [ok] ... und proportional zu diag(1, -1, -1, -1)
+   [ok] Positivität X >= 0 <=> t >= |x| (Zukunftskegel)
+
+Teil 4: Wardidentität für den quadratischen Operator
+   Lösungen: [{c1: c4 + c5, c2: -c4, c3: -c4/2 - c5/2, m1: 0, m2: 0}]
+   [ok] Wardidentität erzwingt m1 = m2 = 0 (keine impulsunabhängigen Terme)
+   [ok] lokal (c5 = 0): genau ein freier Gesamtkoeffizient (linearisiertes Einstein-Hilbert, Fierz-Pauli masselos)
+   Verhältnisse c1 : c2 : c3 : c4 = [1, -1, -1/2, 1]
+   [Befund: ja] Die Wardidentität legt die Spin-2-Struktur fest, aber nicht den Gesamtkoeffizienten (also nicht G)
+
+Teil 5: nichtminimale Kopplung
+   Wärmekern a_1 = (1/6 - xi) R für (-Box + m^2 + xi R): induziertes 1/(16 pi G) proportional zu 1/6 - xi
+   [ok] xi R phi^2 ist diffeomorphismusinvariant und verschiebt G (a_1 hängt von xi ab)
+   Z27: R = 1,42 des Skalars entspricht xi = -0.0050; dieser Teil der Kopplungsmehrdeutigkeit ist kovariant
+   [ok] Z27-Äquivalent xi* liegt nahe 0 (kovarianter, Ward-verträglicher Anteil der Mehrdeutigkeit)
+
+Teil 6: longitudinaler Test (reine Koordinatenänderung) auf dem Z27-Gitter, Skalar, Kopplung K
+   analytisch C_long = (1/8) <3 p_z^2/w - p_z^4/w^3>: m = 0: 0.251265 (N = 96), 0.251265 (N = 160); m = 0,5: 0.247892; m = 1: 0.238434
+   Gitter m = 0,5 (L_z = 64): 0.247823 gegen analytisch 0.247892 (Wert der externen Analyse 0,247893)
+   Gitter (L_perp = 24, Modulation j = 1): Koeffizient von eps^2 je Platz {16: np.float64(0.250156), 32: np.float64(0.250988), 64: np.float64(0.251196)}
+   Extrapolation k -> 0 (Richardson): 0.251265
+   [ok] Gitterantwort auf reine Koordinatenänderung ist positiv und konvergiert gegen C_long (auf 2 %)
+   [ok] C_long > 0 für m = 0; 0,5; 1 (keine kovariante Regel K)
+   [Befund: ja] Festes Gitter verletzt die longitudinale Wardidentität schon bei k -> 0 (Abschneideanisotropie)
+   Lesart: Bei festen Koordinatenkanten ändert die Koordinatenänderung den eigentlichen Gitterabstand; die
+   Vakuumenergie hängt von ihm ab. Kein kovarianter Gegenterm (sqrt(g) Lambda ist invariant) hebt das auf;
+   es braucht nichtkovariante Gegenterme oder Kanten, die die Metrik selbst definiert.
+
+Urteil
+   Die Familiengruppe S4 lässt auf Lambda^2 F nur die isotrope Form delta_ij zu (mu4 allein zwei), also die Plebanski-Simplizität B^i ^ B^j ~ delta^ij. Für B^i = a dt^dx^i + (b/2) eps dx^dx ist die Urbantke-Metrik c diag(a^3, ab^2, ab^2, ab^2): reell euklidisch, mit a = i lorentzsch; die Realitätsbedingung B^i ^ conj B^j = 0 heißt Re(a conj b) = 0 und folgt nicht aus S4. Der positive Kegel von Herm(2) legt die Minkowskiform eindeutig fest (eine quadratische Form verschwindet auf allen Rang-1-Richtungen nur als Vielfaches von det). Die Wardidentität erzwingt verschwindende Massenterme und die Fierz-Pauli-Struktur mit genau einem freien Gesamtkoeffizienten; xi R phi^2 ist kovariant und verschiebt G, also legt die Wardidentität G nicht fest. Auf dem festen Z27-Gitter verletzt schon eine reine Koordinatenänderung die Wardidentität: Die Vakuumantwort konvergiert gegen C_long = (1/8)<3 p_z^2/w - p_z^4/w^3> > 0. Für Gravitation braucht H6 also Kanten, die die Metrik selbst definiert, und eine eigene Regel für den Gesamtkoeffizienten.
+
+Alle Prüfungen bestanden: True (17/17)

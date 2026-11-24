@@ -1,0 +1,66 @@
+Teil 1: Spin(10) auf Lambda^gerade C^5
+   [ok] Kanonische Antivertauschung {a_i, a_j^+} = delta_ij
+   [ok] 45 antihermitesche Generatoren, linear unabhängig
+   [ok] Kommutatoren schließen (Lie-Algebra der Dimension 45 = so(10))
+   [ok] Generatoren erhalten die Fermionparität (16 = gerader Teil)
+
+Teil 2: Stabilisatoren
+   dim Stab([s]) = 25 (u(5)), dim Stab(s) = 24 (su(5)), dim Stab(s, 3+2) = 12, dim Stab([s], 3+2) = 13
+   [ok] Stab der reinen Spinorlinie: 25 = dim u(5)
+   [ok] Stab des reinen Spinors: 24 = dim su(5)
+   [ok] Stab von s und 3+2-Teilung: 12 = dim(su3 + su2 + u1)
+   gebrochen: Spin(10) -> SU(5) 21, SU(5) -> G_SM 12, zusammen 33, ungebrochen 12
+
+Teil 3: Zentrum und Spinorpotenzen
+   [ok] z = exp(i pi (N - 5/2)) liegt in exp(span): Generator i sum(a^+a - 1/2) ist einer der 45
+   [ok] z wirkt auf den Vektor als -1 (Ad_z a_i^+ = -a_i^+)
+   [ok] z wirkt auf die 16 als Skalar -i (Ordnung 4)
+   z auf s^(x)k: {1: -1j, 2: (-1+0j), 3: 1j, 4: (1+0j)}
+   [ok] kleinste zentrumerhaltende Spinorpotenz k = 4
+   dim V(k w5) = {1: 16, 2: 126, 3: 672, 4: 2772}
+   [ok] dim V(w5) = 16, V(4 w5) = 2772
+
+Teil 4: Stab(Q), Q = s^(x)4, und Fundamentalgruppen
+   Lie-Stabilisator von Q: X.Q = 4c Q + (Terme mit dem zu s senkrechten Teil von X s), also X.Q = 0 <=> X s = 0.
+   [ok] Lie(Stab Q) = Lie(Stab s) = su(5), Dimension 24
+   Gruppe: g Q = Q <=> g s = zeta s mit zeta^4 = 1. Stab([s]) ist die zusammenhängende Doppelüberlagerung von U(5)
+   mit Charakter lambda (lambda^2 = det A); lambda^-1(1) = SU(5), lambda^-1(mu4) hat vier Komponenten, z liegt in
+   der Komponente lambda = -i und ist zentral: Stab(Q) = SU(5) x <z> = SU(5) x Z4; mit 3+2: G_SM x Z4.
+   [ok] z^m auf s trifft alle vier Charaktere von mu4 (Komponentengruppe Z4)
+   pi_1(Spin(10)) = 0 => pi_1(Spin(10)/H) = pi_0(H) (lange exakte Sequenz). H = G_SM x Z4 => pi_1 = Z4.
+   Mit U(1)_D und R = s (x) u^-1: H = {(h z^n, (-i)^n)}, pi_1(Spin(10) x U(1)/H) ist eine Erweiterung von Z4 durch
+   pi_1(U(1)) = Z; der Weg zu (z, -i) ist eine Viertelwurzel des U(1)_D-Generators, also pi_1 = Z, Auslese n mod 4.
+   [ok] Viermal der n = 1-Weg: (z^4, (-i)^4) = (1, 1) und U(1)_D-Windung 1
+
+Teil 5: Ordnungsfeld der Ladung q unter der primitiven Viererholonomie i
+   Kovariante Eindeutigkeit verlangt die Phasenwindung w = q/4 (mod 1). Endliche Spannung ohne Wand nur bei w ganz.
+   q = 1: w = 1/4; minimale Gradientendichte ~ min_nu (nu - w)^2 = 1/16
+   q = 2: w = 1/2; minimale Gradientendichte ~ min_nu (nu - w)^2 = 1/4
+   q = 4: w = 1; minimale Gradientendichte ~ min_nu (nu - w)^2 = 0
+   [ok] Phi (Ladung 2, J-ungerade): halbe Windung, also Wand (gepinnte Phase) oder log-divergente Energie
+   [ok] Ladung 4 (Phi^2 bzw. Vierfermion-Kondensat): ganze Windung, primitive Holonomie ohne Wand verträglich
+   [Befund: ja] Wandproblem aus Z24 auch gruppentheoretisch: <Phi> != 0 lässt von Z4 nur Z2
+   [Befund: ja] Symmetrische Massenerzeugung mit Ladung-4-Kondensat erhält die primitive Holonomie
+
+Teil 6: y1 -- zusammengesetzte gegen unabhängige Verbindung
+   [ok] Maurer-Cartan-Verbindung g^+dg ist flach
+   [ok] projizierter Block: F_3 = X_1^+ X_2 - X_2^+ X_1 (nur aus ersten Ableitungen)
+   Elternverbindung: Bildrang der projizierten Krümmung 78 (u(3)+u(2), 6 x 13 = 78)
+   [ok] unabhängige Elternverbindung erreicht alle Krümmungen (Rang 78 >= 72 der SM-Komponenten)
+   [Befund: ja] y1 benutzt die flache Maurer-Cartan-Struktur; mit unabhängiger Elternverbindung entfällt die Rangschranke
+
+Teil 7: Craigs Bedingungen (Abschnitt 11.1) und Spin(10)
+   TFPT unter SU(5): 3(10 + 5b + 1) + (5 + 5b) + 6 x 1 (Eltern (10,1)+(1,6)); kubische Anomalie 0; Dubletts unter SU(2) auf zwei Farben: je Generation 4, Eltern 2, gesamt 14
+   [ok] Craig (129): kubische SU(5)-Anomalie 0
+   [ok] Craig (130): Spin-1/2-Vielfachheit gerade (je Generation 4, Eltern 2, gesamt 14)
+   [ok] Spin(10)-16 unter einer Wurzel-SU(2): 4 Dubletts + 8 Singuletts
+   Spin(10)/SU(2) (Wurzeleinbettung, Index 1): pi_1 = pi_2 = 0, pi_3 = coker(Z -> Z iso) = 0, pi_4 eingebettet in
+   ker(pi_3) = 0. Also 4-zusammenhängend; das ist richtig, wird von Craig aber nicht benutzt (keine Bündelreduktion;
+   global: Zylinder [0,1] x S^1, Basis T^4 x S^1). Spin(10) mit der 16 ist bei Craig ausdrücklich nicht abgedeckt.
+   [Befund: ja] Craigs Maß deckt den SU(5)-Zweig von TFPT ab (Bedingungen 11.1 erfüllt)
+   [Befund: nein] Craigs Maß deckt Spin(10) mit der 16 ab
+
+Urteil
+   Die Spinorordnung trägt: Der reine Spinor s im Fockraum Lambda^gerade C^5 hat den Stabilisator su(5) (24), seine Linie u(5) (25), mit der 3+2-Teilung bleibt G_SM (12); gebrochen sind 21 + 12 = 33 Richtungen. Das Zentrum z wirkt auf die 16 als -i; s^(x)4 ist die kleinste zentrumerhaltende Potenz (V(4 w5), Dimension 2772), Stab = SU(5) x Z4 bzw. G_SM x Z4, also pi_1 = Z4 aus dem Symmetriebruch statt als Eingabe; mit U(1)_D und R = s (x) u^-1 ist pi_1 = Z mit Auslese mod 4. Ein J-ungerades Paarungsfeld (Ladung 2) mit Vakuumwert lässt nur Z2 übrig und verlangt um die primitive Naht eine halbe Windung, also eine Wand (Z24) oder log-divergente Energie; ein Ladung-4-Kondensat (symmetrische Massenerzeugung) ist mit der primitiven Holonomie verträglich. Die Rangschranke von y1 (47 < 72) gehört zur flachen Maurer-Cartan-Struktur; eine unabhängige Elternverbindung hebt sie auf. Craigs Bedingungen (11.1) erfüllt der SU(5)-Zweig von TFPT; Spin(10) mit der 16 deckt Craig nicht ab, und die Bündelreduktion auf SU(2) kommt in seiner Konstruktion nicht vor. Offen: ob TFPT das Kondensat und die Elternverbindung dynamisch erzeugt.
+
+Alle Prüfungen bestanden: True (23/23)

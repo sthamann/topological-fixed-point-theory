@@ -127,8 +127,8 @@ Ursprung sollte beides zugleich liefern.
 
 ### Kandidat H6: Ursprung von P1 aus einer hintergrundfreien Naht (Exploration 23.11.)
 
-Quelle: `experiments/exploration/2026-11-23-phasenraum-f5-holocode/VERDICT.md` (Stand H6h14),
-Skripte `n1`, `v1`, `y1`, `z1`–`z27`, Lean-Vertrag `experiments/theory-contracts/h6-exakte-teile-20261123/`; Atlasproblem `problem:c3-p1-p2-shared-origin-reconciliation`,
+Quelle: `experiments/exploration/2026-11-23-phasenraum-f5-holocode/VERDICT.md` (Stand H6h15),
+Skripte `n1`, `v1`, `y1`, `z1`–`z29`, Lean-Vertrag `experiments/theory-contracts/h6-exakte-teile-20261123/`; Atlasproblem `problem:c3-p1-p2-shared-origin-reconciliation`,
 Befunde mit Präfix `h6`. Nichts davon ist im Ledger befördert. Prüfstand mit 20 Kriterien: 14
 hergeleitet, 6 unter benannter Lesart, keines gescheitert, offen oder gesetzt.
 
@@ -192,6 +192,18 @@ hergeleitet, 6 unter benannter Lesart, keines gescheitert, offen oder gesetzt.
     (10,1)+(1,6) (schwer), anomaliefrei mit gemeinsamem Spin-ℤ₄ J (ν ≡ 0 mod 16). Ein Singulett-Φ
     kann die chiralen Familien nicht paaren (16 ⊗ 16 ohne Invariante); damit entfällt die
     Familienmassen-Obstruktion des gemeinsamen Operators aus Z18. [E]
+  - Spinorordnung (Z28): Der reine Spinor s im Fockraum Λ^gerade ℂ⁵ hat den Stabilisator SU(5),
+    mit 3+2-Teilung G_SM (33 von 45 Richtungen gebrochen). P2 ist damit als Ordnungsparameter
+    lesbar. Die kleinste zentrumerhaltende Potenz s^⊗4 hat den Stabilisator G_SM × ℤ₄, also
+    π₁ = ℤ₄: Die interne Viererholonomie folgt aus dem Symmetriebruch, falls s^⊗4 kondensiert. Ein
+    J-ungerades ⟨Φ⟩ lässt nur ℤ₂ (Wand); ein Ladung-4-Kondensat ist ohne Wand verträglich. Die
+    Rangschranke der zusammengesetzten Verbindung (47 < 72) fällt mit einer unabhängigen
+    Elternverbindung. [E algebraisch, Dynamik offen]
+  - Gravitationsstruktur (Z29): Die Familiengruppe S₄ lässt auf Λ²F nur δ_ij zu, also die
+    isotrope Plebański-Simplizität; die Urbantke-Metrik ist lorentzsch nur mit Re(a b̄) = 0. Der
+    positive Kegel von Herm(2) legt die Minkowskiform fest. Die Wardidentität erzwingt die
+    Spin-2-Struktur, aber nicht G (ξRφ² ist kovariant); auf dem festen Gitter verletzt schon eine
+    reine Koordinatenänderung die Wardidentität (C_long = 0,2513 bei m = 0). [E/N]
   - TOE-Lückenkarte (Z21): TFPT.TOE.COMPLETE.01 hat acht Tore, alle [O]; H6 trägt fast nur zu T1
     und T2 bei. Am meisten blockieren die lokale wechselwirkende 3+1D-Theorie (T3/T5) und chirale
     Materie ohne Spiegel (T4).
@@ -217,6 +229,9 @@ hergeleitet, 6 unter benannter Lesart, keines gescheitert, offen oder gesetzt.
   - Die Wand am Schnitt hängt nicht am Wilson-Regulator allein: Unter G ist sie für jede lokale
     Form ein relevanter Operator (Z24).
   - Ein gemeinsames Multiplett für Naht und Familien (Z18) liefert keine chiralen Familien (Z23).
+  - Craigs eichinvariantes Maß (arXiv:2610.09093) deckt den SU(5)-Zweig von TFPT ab, Spin(10) mit
+    der 16 aber nicht; eine Übertragung über die Reduktion auf SU(2) benutzt Craig nicht (Z28).
+  - Die Wardidentität allein macht a/ℓ_P nicht zur Vorhersage (Z29).
   - Wandfrei ist nicht nur „nichtlokal oder positivitätsverletzend“ (Z19): Lüschers Weylfelder
     sind wandfrei und auf einer eingeschränkten Algebra positiv, wenn man auf χ = (1 − D/2)ψ
     reflektiert (Z26); lokale Reflexionspositivität auf der vollen Algebra haben sie nicht (Lu–Shao).
@@ -248,6 +263,10 @@ hergeleitet, 6 unter benannter Lesart, keines gescheitert, offen oder gesetzt.
   - θ₁₃ und δ aus TFPTs Kanälen (sin²θ₁₃ = 0,0231; 1,1σ bis 2,2σ je nach Datensatz laut externer
     Prüfung; δ = 240° ist ein zugewiesener Texturwert).
   - Ein gemeinsamer Elternoperator.
+  - Ob H6s Dynamik das Kondensat s^⊗4 und eine unabhängige Spin(10)-Elternverbindung erzeugt, und ob
+    ein Ladung-4-Kondensat den Nahtindex c = 8 erhält (das hängt mit Entscheidung 2 zusammen).
+  - Eine Regel für den Gesamtkoeffizienten G, Gitterkanten, die die Metrik selbst definiert, und das
+    Soldering von Herm(2) bzw. Λ²F an die Raumzeitverschiebungen.
 
 ## 4. Wiederkehrende Muster und Verbindungen
 

@@ -792,6 +792,29 @@ if "H6h2" in H and z1p.exists() and z2p.exists():
                                                                      "Ankervariablen, ohne Abstimmung; Preis potenzartig nichtlokale Wirkung in "
                                                                      "chi bzw. Transfer mit Kontinuum, unter QFT4D.LATTICE.FUNDAMENTAL.01 unzulässig")
                                                 facts["F33_three_tests"] = {n: T3[n]["urteil"] for n in T3}
+                                                zs = {n: Path(__file__).with_name(f"z{n}_ergebnis.json") for n in (28, 29)}
+                                                if all(p.exists() for p in zs.values()):
+                                                    S2 = {n: json.loads(p.read_text()) for n, p in zs.items()}
+                                                    oks = {n: all(S2[n]["checks"].values()) for n in S2}
+                                                    H["H6h15"] = dict(H["H6h14"])
+                                                    H["H6h15"]["K15"] = (LES if oks[28] and okt[25] else F,
+                                                                         "[nackte Spin(10)-Elternverbindung, P2 als Ordnungsparameter] reiner "
+                                                                         "Spinor s plus 3+2-Teilung lassen G_SM (Stab 24 -> 12, 33 gebrochen, Z28); "
+                                                                         "die Rangschranke von y1 (47 < 72) kommt aus der flachen Maurer-Cartan-"
+                                                                         "Struktur und entfällt mit unabhängiger Elternverbindung; Werte gegen Daten "
+                                                                         "nur mit SO(10) an 1/a (Z25), Hyper-K entscheidet")
+                                                    H["H6h15"]["K13"] = (LES if oks[29] and okt[27] else F,
+                                                                         "[D] Jacobson; S4 erzwingt die isotrope Plebanski-Simplizität, Urbantke "
+                                                                         "gibt Lorentz nur mit Re(a conj b) = 0 (Z29); festes Gitter verletzt die "
+                                                                         "longitudinale Wardidentität (C_long = 0,2513 bei m = 0), die Wardidentität "
+                                                                         "legt G nicht fest (xi R phi^2); a/l_P keine Vorhersage (Z27)")
+                                                    H["H6h15"]["K19"] = (LES if oks[28] else F,
+                                                                         "[v957 Deck intern] Flussschlauch erzwungen, G folgt (Z20), ein Schlauch "
+                                                                         "minimal (Z22); die Z4-Holonomie folgt als pi_1(Spin(10)/(G_SM x Z4)) = Z4 "
+                                                                         "aus der kleinsten zentrumerhaltenden Spinorpotenz s^4 (Z28), sofern sie "
+                                                                         "kondensiert; ein J-ungerades <Phi> lässt nur Z2 (Wand), ein Ladung-4-"
+                                                                         "Kondensat nicht; offen: Reziprokes, Kondensation")
+                                                    facts["F34_spinor_order_gravity"] = {n: S2[n]["urteil"] for n in S2}
 
 order = [f"K{i}" for i in range(1, 21)]
 print("Gesamttabelle (P = hergeleitet, L = unter benannter Lesart, F = FAIL, O = OFFEN, E = EINGABE)\n")
