@@ -1,4 +1,42 @@
-# TFPT aus der Vogelperspektive (Stand H6h34, 24. November 2026)
+# TFPT aus der Vogelperspektive (Stand H6h35, 24. November 2026)
+
+## Neueste Zusammenführung (H6h35, `z72`–`z74`, `PRUEFUNG-BESTAND-H6h35.md`)
+
+Die Lösung, so weit sie trägt, als eine Kette aus der originalen Naht:
+1. **Naht und Zustand.** Die quasifreie Calderón/Szegő-Kovarianz ist KMS bei β = 4π. Daraus folgen die TFPT-Uhr L₀
+   (elliptisch, periodisch), die Leiter und die 2D-Kanäle; am KMS-Punkt gilt ⟨T⟩ = 0. [E]
+2. **Holomorphe Twistorgerade.** π_*(η ⊗ π*O(2)) = O(1) ⊕ O(1) mit dem kanonischen η = (A,A) − (P,P). [E]
+3. **3+1-Kinematik.**
+   - Der Dublettzustand ρ₁ (Windungszahl m = 1 nach der Uhrenquotient-Regel) und seine Tomita-Standardform liefern J = †,
+     Herm(2) = R^{1,3}, die Zeitorientierung, V ⊕ V̄* und die Twistorform (2,2). [E]
+   - Die eine verbleibende Prämisse ist I_pos, gleichwertig zu T′: Die Lagen der Naht sind die dualen GNS-Vektoren. [C]
+4. **Felder.** Hardy- und Stromauslesung erzwingen zusammen den Kern det(I − ZW†)⁻¹ (ν = 1). Daraus folgen die
+   SU(2,2)-Leiterdarstellung und die masselosen Gleichungen. [E unter bi-U(2) = T′]
+5. **Zeit.** Die kontinuierliche, positive Zeittranslation ist die parabolische Wiesbrock-Differenz der Modulgeneratoren
+   geschachtelter Nahtbögen, exakt im Vakuumsektor der Uhr. Im thermischen Original gibt es keine halbseitigen Inklusionen.
+   [E, eindimensional]
+6. **Teilcheninhalt in 4D.** Die Zählung Σm²qᵐ (konformer 4D-Skalar) ist nativ. Die Gruppe (su(2), SU(2,2)) ist eine
+   Lesart, denn die nativen Heber sind Toeplitz statt Oszillatoren. [E Zählung, L Gruppe]
+7. **Gravitation.** Linear gibt es beide Helizitäten, nichtlinear gilt die googly-Dualität; aus dem eigenen Spektrum folgt
+   keine Skala. [E/O]
+8. **Gelöste Bausteine** (Teilchen, Flavour, Massen, α, E₈) bleiben unverändert.
+
+Offen, genau benannt:
+- **(a) I_pos aus den Antworten.**
+- **(b) Oszillatornormierung.**
+  - Es fehlt ein Prinzip, das Toeplitz → CCR erzwingt, analog zu „Leiter statt Band“ (z58).
+  - Dieselbe Frage ist „bosonische Paare für ν = 1“, denn fermionische Paare geben ein Determinantenwort ≠ 0.
+- **(c) Vakuum gegen thermisch.** Die Zeit lebt im Vakuumsektor, das Original ist thermisch. Wie beide zusammenhängen, ist
+  offen; nicht über „modular ⇒ BW“ (GRAV.NONCIRCULAR.01).
+- **(d) Nichtlineare volle Gravitation und Flächennormierung.**
+- **(e) Mehrpunktantworten und Spin 2.** Der Agentenlauf brach am Nutzungslimit ab.
+- **(f) Restflavor.**
+
+**Firewalls:** 3+1-Aussagen bleiben nach DIMENSION.UPLIFT.FIREWALL.01 typisiert. P₀ gilt als Vakuumgröße, nicht als
+Folge des Modulflusses.
+
+## Stand H6h34 (Einzelheiten)
+
 
 Gesamtbild nach den Rechnungen `z58`–`z70` in `experiments/exploration/2026-11-23-phasenraum-f5-holocode/`, dem
 Bestandsbericht `PRUEFUNG-BESTAND-H6h34.md` dort und dem Atlas. Maßgeblich bleiben Ledger und Originalquellen.

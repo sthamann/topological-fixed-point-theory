@@ -29,6 +29,14 @@ Topologie festlegen und Mehrdeutigkeiten mit dem nächsten Prinzip schließen. S
 Originale haben Spektraldimension 1 (Quelle) bzw. kompakt 8 (E₈-Naht). Gebraucht wird eine originale Antwort mit d = 4,
 nichtkompakt und reflexionspositiv. Prüfstand seit H6h32: 13 P, 7 L (K12 als Lesart).
 
+**H6h35 (Zusammenführung).**
+- Die 3+1-Kinematik hängt an I_pos (= T′).
+- Der Feldkern ν = 1 ist erzwungen.
+- Die Zeit ist die parabolische Wiesbrock-Translation im Vakuumsektor.
+- Der 4D-Inhalt ist gezählt, die Gruppe ist Lesart.
+- Nächster Schritt: die Oszillatornormierung (Toeplitz → CCR, gleichbedeutend mit bosonischen Paaren) nach dem Muster
+  „Leiter statt Band“; danach I_pos und die Beziehung von Vakuum und thermischem Original.
+
 **H6h34 (parallele Agenten, `docs/research/VOGELPERSPEKTIVE.md`).**
 - Holomorph ist die Naht kanonisch eine Twistorgerade (Spinstruktur, Z64, Z70).
 - Lorentzisch nur über das konjugierte Partnerdublett: Prämisse T′.

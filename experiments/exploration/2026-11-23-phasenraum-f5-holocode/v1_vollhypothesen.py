@@ -1242,6 +1242,21 @@ if "H6h2" in H and z1p.exists() and z2p.exists():
                                                                                                                                                      "nichtlineare volle Gravitation und "
                                                                                                                                                      "Flächennormierung offen")
                                                                                                                                 facts["F53_parallel_agents"] = {n: T20[n]["urteil"] for n in T20}
+                                                                                                                                zs35 = {n: Path(__file__).with_name(f"z{n}_ergebnis.json") for n in (72, 73, 74)}
+                                                                                                                                if all(p.exists() for p in zs35.values()):
+                                                                                                                                    T21 = {n: json.loads(p.read_text()) for n, p in zs35.items()}
+                                                                                                                                    ok21 = all(all(T21[n]["checks"].values()) for n in T21)
+                                                                                                                                    H["H6h35"] = dict(H["H6h34"])
+                                                                                                                                    H["H6h35"]["K6"] = (H["H6h34"]["K6"][0] if ok21 else F,
+                                                                                                                                                        H["H6h34"]["K6"][1] + "; Zeittranslation = parabolische "
+                                                                                                                                                        "Wiesbrock-Differenz im Vakuumsektor (Z72)")
+                                                                                                                                    H["H6h35"]["K12"] = (LES if ok21 else F,
+                                                                                                                                                         "[Lesart I_pos = T'] Standardform von End(V) mit "
+                                                                                                                                                         "rho_1 gibt J, Herm(2), V + V-bar*, Form (2,2) "
+                                                                                                                                                         "(Z74); Kern det(I - ZW^+)^-1 aus Hardy- und "
+                                                                                                                                                         "Stromauslesung erzwungen; 4D-Inhalt gezählt, "
+                                                                                                                                                         "Gruppe Lesart (Toeplitz statt CCR, Z73)")
+                                                                                                                                    facts["F54_synthesis"] = {n: T21[n]["urteil"] for n in T21}
 
 order = [f"K{i}" for i in range(1, 21)]
 print("Gesamttabelle (P = hergeleitet, L = unter benannter Lesart, F = FAIL, O = OFFEN, E = EINGABE)\n")

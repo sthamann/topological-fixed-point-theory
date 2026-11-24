@@ -1,7 +1,7 @@
 # TFPT: Was funktioniert, was fehlt, was eine vollständige Lösung wäre
 
 Kompakter Stand vom 20. November 2026, ergänzt am 23. und 24. November (Befunde 20.–24. November, Kandidat H6 bis
-H6h34, Leitlinie „Rekonstruktion statt Auswahl“ und Abschnitt 5), für Explorations- und Lösungssitzungen. Seit 24. November
+H6h35, Leitlinie „Rekonstruktion statt Auswahl“ und Abschnitt 5), für Explorations- und Lösungssitzungen. Seit 24. November
 liegen die Explorationszweige vom 20. November in main (Quaternionrahmen, Fibonacci-Uhr, Vertauschung und Auslese, fremde
 und operative Ursprünge, Projekt Genesis, die Vertragsserie vom 14./15. Oktober); ihre Befunde stehen in ihren Verzeichnissen
 unter `experiments/`. Nicht zusammengeführt ist `codex/c3-p1-p2-abgleich-20261105` (121 Konflikte mit dem heutigen Stand). Neuere Befunde stehen in den Atlasproblemen mit Datum
@@ -42,7 +42,15 @@ Offen sind der Tensorkanal und die Rekonstruktion von 3+1 aus 4D-Antworten. Z60 
 ist die Spektraldimension (Weyl-Gesetz) einer Antwort. Die Quelle hat d = 1, die E₈-Naht kompakt und starr d = 8 = 4 + 4.
 Gebraucht wird eine originale Antwort mit d = 4, nichtkompakt und reflexionspositiv.
 
-**Gesamtbild (Vogelperspektive, Stand H6h34):** [`VOGELPERSPEKTIVE.md`](VOGELPERSPEKTIVE.md).
+**Gesamtbild (Vogelperspektive, Stand H6h35):** [`VOGELPERSPEKTIVE.md`](VOGELPERSPEKTIVE.md).
+- H6h35, die Zusammenführung:
+  - Die 3+1-Kinematik hängt an einer Aussage I_pos, gleichwertig zu T′.
+  - Der Feldkern ν = 1 ist durch zwei Auslesungen erzwungen (Z74).
+  - Die kontinuierliche Zeit ist die parabolische Wiesbrock-Translation im Vakuumsektor; im thermischen Original gibt es sie
+    nicht (Z72).
+  - Der 4D-Inhalt ist gezählt, die Gruppe ist Lesart (Z73).
+  - Offen: I_pos, die Oszillatornormierung (Toeplitz → CCR), Vakuum gegen thermisch, die nichtlineare Gravitation, die
+    Mehrpunktantworten und der Restflavor.
 - Gelöste Bausteine (Abschnitt 3: Teilchen, Flavour, Massen, α, E₈) werden übernommen, nicht neu aufgemacht.
 - Holomorph ist die Naht kanonisch eine Twistorgerade: π_*(η ⊗ π*O(2)) = O(1) ⊕ O(1), mit η = (A,A) − (P,P) als einziger
   vierteldrehungsinvarianter 2-Torsion (Z64, Z70).
@@ -160,9 +168,9 @@ Ursprung sollte beides zugleich liefern.
 
 ### Kandidat H6: Ursprung von P1 aus einer hintergrundfreien Naht (Exploration 23.11.)
 
-Quelle: `experiments/exploration/2026-11-23-phasenraum-f5-holocode/VERDICT.md` (Stand H6h34),
-Skripte `n1`, `v1`, `y1`, `z1`–`z71`, Lean-Vertrag `experiments/theory-contracts/h6-exakte-teile-20261123/`; Atlasproblem `problem:c3-p1-p2-shared-origin-reconciliation`,
-Befunde mit Präfix `h6`. Nichts davon ist im Ledger befördert. Prüfstand mit 20 Kriterien (Stand H6h34): 13
+Quelle: `experiments/exploration/2026-11-23-phasenraum-f5-holocode/VERDICT.md` (Stand H6h35),
+Skripte `n1`, `v1`, `y1`, `z1`–`z74`, Lean-Vertrag `experiments/theory-contracts/h6-exakte-teile-20261123/`; Atlasproblem `problem:c3-p1-p2-shared-origin-reconciliation`,
+Befunde mit Präfix `h6`. Nichts davon ist im Ledger befördert. Prüfstand mit 20 Kriterien (Stand H6h35): 13
 hergeleitet, 7 unter benannter Lesart, keines gescheitert, offen oder gesetzt. K12 (3+1) zählt seit der Leitlinie
 „Rekonstruktion statt Auswahl“ nur als Lesart: d = 4 folgt kinematisch, nicht aus den Antworten (Z60).
 
@@ -438,6 +446,14 @@ hergeleitet, 7 unter benannter Lesart, keines gescheitert, offen oder gesetzt. K
       - Die lokale Modulzeit auf Nahtbögen ist dicht und nicht periodisch.
       - Die 4D-Fortsetzung stimmt auf der Linie, ist aber nicht erzwungen (der Nahtwinkel gibt die 2D-Identität).
       - Zwei maximal inkompatible binäre Beobachtungen geben τ = i und das kanonische η. [E/C]
+  - Zusammenführung (Z72–Z74, H6h35):
+    - L₀ ist elliptisch (die Uhr), P₀ parabolisch mit Spektrum [0, ∞). Im Vakuum der Uhr bilden Nahtbögen halbseitige
+      modulare Inklusionen, und die Wiesbrock-Differenz ist P₀; im Original (β = 4π) nicht (Leckage 9·10⁻⁴).
+    - D_m = D₁·sin(mγ)/sin γ ist eine Teleskopsumme. Σm²qᵐ ist nativ, eine su(2) auf den Paarräumen nicht (Toeplitz statt
+      CCR).
+    - Die Standardform liefert J = †, Herm(2), V ⊕ V̄* und die Form (2,2); T′ ⇔ I_pos.
+    - R ist Ladungsdrehung mal Parität, also schließen Spinbrücke und Neutralität sich aus; mit Uhrenquotient m = 1.
+    - Der Kern det(I − ZW†)⁻¹ ist durch die Hardy- und Stromauslesung erzwungen. [E/C]
   - Instantonen (Z33): Unter Spin(10) hat ein Einheitsinstanton 4 Eltern- und 12
     Familiennullmoden; mit gesättigten Familiennullmoden entsteht Re[e^{iθ}Φ² C_fam], die Wand ist
     also auch im Kontinuum möglich, bei nackter SO(10) aber ~10⁻¹⁶⁴ unterdrückt. [N]

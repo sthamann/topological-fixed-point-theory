@@ -1,0 +1,489 @@
+{
+ "checks": {
+  "[E] D_m(gamma) sin(gamma) = D_1(gamma) sin(m gamma) gilt exakt für ein BELIEBIGES Besetzungsprofil (16 freie Symbole c_k, m = 1..6, sympy): die Faktorisierung ist eine Teleskopsumme, keine Eigenschaft des Zustands; bei T = 0 (Stufe) ist D_1 = e^{2 i alpha gamma} und die m Paare tragen je Gewicht 1 mit w - alpha = -j..j": true,
+  "[E] numerisch für das Original: beide Sektoren, beta in {1, 2 pi, 4 pi, 8 pi}, m = 1..10, vier Winkel (einer komplex), 50 Stellen: max |D_m sin(gamma) - D_1 sin(m gamma)| = 5.37e-50": true,
+  "[E] W(tau, gamma) = sum_m (D_m/D_1)(gamma) g_m(tau) mit den nativen D_m: W(tau, 0) ist die Stromantwort aus z58, und d^2_gamma W(tau, 0) = -(1/3)(d^2_tau - 1) W(tau, 0) gilt (beide Sektoren, drei tau, rel. 2.13e-49); ohne Normierung durch D_1 (Phase e^(2 i alpha gamma), thermische Verschmierung) verfehlt sie die Identität (rel. >= 0.484)": true,
+  "[E] dieselben Daten zweidimensional: u = sin(gamma) W ist harmonisch in (tau, gamma) (Dirichlet bei gamma = 0, pi), W erfüllt die S^3-Zonalgleichung (d^2_tau + d^2_gamma + 2 cot(gamma) d_gamma - 1) W = 0, und d_gamma(sin(gamma) W) ist exakt die native Nahtwinkelantwort W2(tau, gamma) aus z71; W selbst ist nicht 2D-harmonisch (drei Punkte, 50 Stellen)": true,
+  "[E] J_{-m} Omega = sum von genau m orthonormalen Ein-Paar-Zuständen psi*_{r+m} psi_r Omega (Loch r in (-m, 0)), alle mit L_0 = m (m = 1..7, beide Sektoren): H_m ist m-dimensional": true,
+  "[E] No-go für Bilineare: P_m psi*_a psi_b P_m = 0 für alle a != b im Fenster (22 Moden, m = 1..6); nur die Besetzungszahlen wirken (diagonal), Paarbildner psi psi, psi* psi* wechseln die Ladung. Also komprimiert JEDE Bilinearform (J_n, L_n, W-Moden, beliebige Gewichte) auf H_m diagonal und erzeugt nur eine abelsche Algebra -- kein Heber oder Senker": true,
+  "[E] native Cartan-Größe: H = (L_0^Teilchen - L_0^Loch)/2 + 1/2 - alpha ist auf H_m diagonal mit den Gewichten -j..j, genau die bilokalen Gewichte (2r + m + 1)/2 - alpha (m = 1..7, beide Sektoren)": true,
+  "[E] Stromhüpfen: E_+ = X_p X_h^+ (Produkt der Hardy-Hälften von J_{-1} und J_1) lässt H_m exakt invariant, hebt w um 1 mit |Koeffizient| = 1 und ist genau der hebende Teil von P_m J_{-1} J_1 P_m; es schließt (bis auf eine Skala) zu su(2) mit Spin (m-1)/2 genau für m = 2, 3 und für kein m = 4..7 ([E_+, E_-] = P_oben - P_unten statt 2H)": true,
+  "[E] Möbiushüpfen: P_m L_{-1} L_1 P_m (Virasoro-Gewicht 1/2 im Quartersektor) hat die Hüpfamplituden (r + 1/2)(p + 1/2) (Loch r, Teilchen p vor dem Schritt) und schließt nur für m = 2 zu su(2) (m = 2..7, beide Sektoren)": true,
+  "[E] allgemein: Ein Hüpfen mit Amplitude h(n_1) = Polynom vom Grad <= 2 in der Paarlage (umfasst alle Produkte affiner Teilchen- und Lochgewichte, also Strom, Möbius und Mischungen, mal jeder Funktion von L_0) schließt bei m = 6 nie zu su(2): einzige Lösung h = 0 (sympy, [{c: 0, h0: 0, h1: 0, h2: 0}]). Einzelne Stufen lassen sich abstimmen (m = 4: 8 reelle, irrationale Gewichtungen), das ist stufenweise Auswahl, keine Rekonstruktion": true,
+  "[E] Dicke-su(2) der m disjunkten Paare (Fensterteil von J_{-m}, J_m, nativ mit Hardy-Schnitt): schließt exakt, [T_+, T_-] = 2 T_z auf allen 2^m Zuständen, wechselt aber die Paarzahl; H_m ist ihr Ein-Flip-Gewichtsraum und zerfällt in Spin m/2 (einmal) und Spin m/2 - 1 ((m-1)-mal), nicht in Spin (m-1)/2 (m = 2..6)": true,
+  "[L] Erst mit eingesetzten Schwinger-Gewichten, E_+ = (sum sqrt(n_1+1) psi*_{k+1} psi_k)(sum sqrt(n_2) psi*_k psi_{k+1}) (Teilchen- und Lochleiter als Oszillatorleitern gelesen), schließt das Hüpfen für alle m = 2..7 exakt zu su(2) mit Casimir j(j+1), j = (m-1)/2": true,
+  "[E] sum_{m>=1} m^2 q^m = q(1+q)/(1-q)^3 (Koeffizienten bis q^40 exakt)": true,
+  "[E] 4D-Skalar auf R x S^3: harmonische Polynome vom Grad n auf R^4 haben den Toruscharakter chi_{n/2}(a) chi_{n/2}(b) (n = 0..6, sympy), Dimension (n+1)^2, Delta_{S^3} = -n(n+2) und konforme Energie sqrt(n(n+2) + 1) = n + 1: K-Typen (j, j) bei 2j + 1; Erzeugende sum chi chi q^(n+1) = q(1 - q^2)/prod(1 - q x_i)": true,
+  "[E] die verdoppelte native Auslese des Originals (beta = 4 pi, beide Sektoren), sum_m q^m (D_m/D_1)(a) (D_m/D_1)(b), ist exakt der volle Toruscharakter des 4D-Skalars q(1 - q^2)/prod(1 - q x_i) (Abweichung 9.44e-52): Übereinstimmung auf Torusebene (U(1) x U(1))": true,
+  "[E; su(2) aus der Lesart] Standardform eines treuen Zustands auf End(C^m) (Spurzustand und Nicht-Spurzustand, m = 2..5): m^2-dimensional, S = J Delta^(1/2) mit J x = x^+, J bildet die Links- auf die Rechtswirkung ab; mit dem su(2) der Lesart haben Links- und Rechtscasimir j(j+1), also (j) x (j-quer) = K-Typ (j, j), und die Einheit ist der Diagonalsinglett (Zonalvektor)": true,
+  "[E] die Kompression des Originalzustands (quasifrei, KMS) auf H_m ist exakt der Spurzustand: alle m Paarzustände haben relativ zum Vakuum das Gewicht e^{-beta m} (sympy, beliebiges beta, m = 1..6, beide Sektoren); der TFD-Anteil in H_m x H_m-quer ist der maximal verschränkte Vektor, Delta = 1 auf End(H_m): innerhalb einer Stufe keine Modulzeit": true,
+  "[E] die Kubo-Gewichte c_r(1 - c_{r+m}) der Paare (die Gewichte von D_m) sind der Spurzustand bis auf Kanteneffekte: die Paarkante an der Fermikante trägt 1/(1 + e^-pi) = 95,8576 %, außerhalb des Fensters liegen e^-pi/(1 + e^-pi) = 4,1424 % (die rho_1-Gewichte aus z63), Summe exakt m/(1 - e^{-4 pi m}); Spurabstand ~ 0,04/m": true,
+  "[E] Twistorraum V + V-quer* mit Sigma((omega, pi)) = omega.pi-quer + pi.omega-quer: Signatur (2,2), su(2,2) hat Dimension 15, die Translationen omega -> omega + i x pi (x in Herm(2)) sind abelsch und liegen in su(2,2), reelle Punkte geben Nullgeraden; die Naht P(V) = {pi = 0} ist eine Nullgerade (Punkt im Unendlichen) und translationsfest": true,
+  "[E] Oszillatorquantisierung Z = (omega, pi) = ((a - b^+)/sqrt2, (a + b^+)/sqrt2), Z-quer = Sigma Z^+: [Z^alpha, Z-quer_beta] = delta, alle übrigen Kommutatoren 0, und die 16 Bilineare Z^alpha Z-quer_beta schließen zu u(2,2) (alle 256 Kommutatoren, abgeschnittener Fockraum 8^4, Innenbereich)": true,
+  "[E] P_(AA') = pi-quer_A pi_(A'): [P_mu, P_nu] = 0, det P = P^2 = 0 (5.3e-15, 1.1e-14), P^0 = (1/2) sum pi_A^+ pi_A >= 0 (Kompression im Helizität-0-Sektor, kleinster Eigenwert 0.097), P erhält die Helizität (N_a - N_b)/2, und E = P^0 + K^0 = (N_a + N_b)/2 + 1 ist der konforme Hamiltonoperator; [E, P^0] != 0": true,
+  "[E] K-Typen im Helizität-0-Sektor (N_a = N_b = n <= 7): E = n + 1 mit Vielfachheit (n+1)^2, Casimir links = rechts = j(j+1) mit j = n/2, also (j, j) bei 2j + 1: Charakter sum (n+1)^2 q^(n+1) = q(1+q)/(1-q)^3 wie in Teil 3": true,
+  "[E] native Heber X_p (Teilchen hoch), X_h (Loch tiefer) sind die Hardy-Hälften von J_{-1}: vertauschende Isometrien mit X^+ X = 1, X X^+ = 1 - P_0 (Toeplitz, q = 0). R_(AA') = X_A (x) X-quer_(A') auf dem verdoppelten Paarraum vertauschen, det R = 0, und R hebt m und m-quer um 1 wie a_A^+ b_(A')^+; aber [R_11', R_11'^+] = -(P_0 (x) 1 + 1 (x) P_0 - P_0 (x) P_0) hat die Eigenwerte [-1.0, 0.0], der Oszillator dagegen -(N_a1 + N_b1 + 1) mit [-13.0, -12.0, -11.0, -10.0]...: die nativen Heber schließen nicht zu su(2,2)": true
+ },
+ "befunde": {
+  "Teil 1 (E): Die Faktorisierung ist kinematisch (für jedes Profil). Die Identität gilt nur für das durch D_1 normierte W. Die S^3-Zonalform ist dieselbe Information wie eine 2D-Dirichlet-Antwort im Spreizwinkel, W = (1/sin(gamma)) int_0^gamma W2 dtheta. Die Linien- und Bilokaldaten entscheiden also nicht zwischen 2D und 4D: Nur Klassenfunktionen (ein Winkel von S^3) sind nativ": true,
+  "Teil 2: Native schließende Operatoren gibt es nicht. (E) Bilineare sind auf H_m diagonal; die natürlichen quartischen Heber (Strom, Möbius) schließen nur für m <= 3 bzw. m = 2 (wie beim gleichförmigen Hüpfen ohne perfekten Zustandstransfer ab N = 4). Allgemein scheitert jede feste Polynomgewichtung vom Grad d ab m = 2d + 2, denn h^2 = c (n+1)(m-1-n) an m - 1 > 2d Punkten erzwingt eine Polynomidentität mit einfachen Nullstellen rechts. (E) Die einzige native su(2) aus Bilinearen ist die Dicke-su(2) der Paarbesetzung, und die steht quer zu H_m. (L) su(2) mit Spin (m-1)/2 verlangt die Gewichte sqrt((j-w)(j+w+1)) = sqrt(n_1+1) sqrt(n_2), also eine Oszillatorlesart der Teilchen- und Lochleitern, die das Original nicht liefert: das su(2) ist eine Lesart": true,
+  "Teil 3 (E): Die Zählung stimmt: m^2 = dim End(H_m), sum m^2 q^m ist der Einteilchencharakter des 4D-Skalars, und die verdoppelte Auslese gibt sogar den vollen Toruscharakter. Der Originalzustand auf H_m ist exakt der Spurzustand (alle Paare entartet in L_0); seine Tomita-Verdopplung hat Delta = 1. Die Einheit von End(H_m) entspricht in der su(2)-Lesart der Zonalfunktion chi_j, also gerade der bilokalen Auslese. (j, j) als SU(2) x SU(2)-Darstellung setzt das su(2) aus Teil 2 voraus (L)": true,
+  "Teil 4 (E): Die 4D-Leiterdarstellung ist auf dem verdoppelten Paarraum realisierbar: gleiche Graduierung, gleiche Vielfachheiten. Mit Naht = {pi = 0} ist P bilinear im Partnerdublett pi aus V-quer* (nach Inversion vertauschen P und K). Die Translationen brauchen dafür die CCR-Normierung a^+ = X sqrt(N+1), und die Heber des Originals sind Toeplitz-Isometrien (q = 0). In der 4D-Lesart ist L_0 des Originals der konforme Hamiltonoperator E = P^0 + K^0 (ganzzahlig, periodisch, verträglich mit z70); P^0 selbst verlangt die nicht nativen nichtkompakten Erzeuger": true,
+  "Urteil: Die 4D-Struktur ist im Original auf der Ebene von Zählung und Torus nativ (E), nicht auf der Ebene der Gruppe. Das su(2) auf dem Paarraum und damit SU(2) x SU(2) und SU(2,2) sind Lesarten (L). Die masselose 4D-Darstellung ist mit dem Original verträglich, aber nicht aus ihm rekonstruiert": true
+ },
+ "zahlen": {
+  "faktorisierung_max_residuum": "5.3722e-50",
+  "W_identitaet": {
+   "normiert_max_rel": "2.1319e-49",
+   "linie_gleich_stromantwort_max_rel": "1.3541e-51",
+   "unnormiert_min_rel_abweichung": "0.48421"
+  },
+  "zweiD_aequivalenz": {
+   "laplace_sin_W": "2.2541e-65",
+   "S3_zonal": "4.2326e-51",
+   "d_gamma(sin W) - W2": "1.8065e-51",
+   "laplace_W_selbst_min": "0.99674"
+  },
+  "stromhuepfen_su2_test": {
+   "2": {
+    "verhaeltnisse": [
+     "1"
+    ],
+    "schliesst": true
+   },
+   "3": {
+    "verhaeltnisse": [
+     "1/2",
+     "1/2"
+    ],
+    "schliesst": true
+   },
+   "4": {
+    "verhaeltnisse": [
+     "1/3",
+     "1/4",
+     "1/3"
+    ],
+    "schliesst": false
+   },
+   "5": {
+    "verhaeltnisse": [
+     "1/4",
+     "1/6",
+     "1/6",
+     "1/4"
+    ],
+    "schliesst": false
+   },
+   "6": {
+    "verhaeltnisse": [
+     "1/5",
+     "1/8",
+     "1/9",
+     "1/8",
+     "1/5"
+    ],
+    "schliesst": false
+   },
+   "7": {
+    "verhaeltnisse": [
+     "1/6",
+     "1/10",
+     "1/12",
+     "1/12",
+     "1/10",
+     "1/6"
+    ],
+    "schliesst": false
+   }
+  },
+  "moebiushuepfen_su2_test": {
+   "m=2, alpha=1/4": {
+    "verhaeltnisse": [
+     "225/256"
+    ],
+    "schliesst": true
+   },
+   "m=2, alpha=3/4": {
+    "verhaeltnisse": [
+     "225/256"
+    ],
+    "schliesst": true
+   },
+   "m=3, alpha=1/4": {
+    "verhaeltnisse": [
+     "729/512",
+     "1225/512"
+    ],
+    "schliesst": false
+   },
+   "m=3, alpha=3/4": {
+    "verhaeltnisse": [
+     "1225/512",
+     "729/512"
+    ],
+    "schliesst": false
+   },
+   "m=4, alpha=1/4": {
+    "verhaeltnisse": [
+     "507/256",
+     "3969/1024",
+     "3025/768"
+    ],
+    "schliesst": false
+   },
+   "m=4, alpha=3/4": {
+    "verhaeltnisse": [
+     "3025/768",
+     "3969/1024",
+     "507/256"
+    ],
+    "schliesst": false
+   },
+   "m=5, alpha=1/4": {
+    "verhaeltnisse": [
+     "2601/1024",
+     "8281/1536",
+     "3267/512",
+     "5625/1024"
+    ],
+    "schliesst": false
+   },
+   "m=5, alpha=3/4": {
+    "verhaeltnisse": [
+     "5625/1024",
+     "3267/512",
+     "8281/1536",
+     "2601/1024"
+    ],
+    "schliesst": false
+   },
+   "m=6, alpha=1/4": {
+    "verhaeltnisse": [
+     "3969/1280",
+     "14161/2048",
+     "20449/2304",
+     "18225/2048",
+     "1805/256"
+    ],
+    "schliesst": false
+   },
+   "m=6, alpha=3/4": {
+    "verhaeltnisse": [
+     "1805/256",
+     "18225/2048",
+     "20449/2304",
+     "14161/2048",
+     "3969/1280"
+    ],
+    "schliesst": false
+   },
+   "m=7, alpha=1/4": {
+    "verhaeltnisse": [
+     "1875/512",
+     "21609/2560",
+     "34969/3072",
+     "12675/1024",
+     "29241/2560",
+     "13225/1536"
+    ],
+    "schliesst": false
+   },
+   "m=7, alpha=3/4": {
+    "verhaeltnisse": [
+     "13225/1536",
+     "29241/2560",
+     "12675/1024",
+     "34969/3072",
+     "21609/2560",
+     "1875/512"
+    ],
+    "schliesst": false
+   }
+  },
+  "polynomgewichte": {
+   "m=6, Grad<=2: Loesungen": [
+    "{c: 0, h0: 0, h1: 0, h2: 0}"
+   ],
+   "m=4, affin x affin: reelle Abstimmungen": [
+    {
+     "b": -0.2679491924311227,
+     "g": -0.2113248654051871
+    },
+    {
+     "b": -3.732050807568877,
+     "g": -0.7886751345948129
+    },
+    {
+     "b": -0.5773502691896257,
+     "g": -0.36602540378443865
+    },
+    {
+     "b": 0.5773502691896257,
+     "g": 1.3660254037844386
+    },
+    {
+     "b": -0.6036052008325401,
+     "g": -0.2838701486168476
+    },
+    {
+     "b": 1.9130062775910432,
+     "g": -0.7444420148961202
+    },
+    {
+     "b": -0.3963947991674599,
+     "g": -0.376405115497984
+    },
+    {
+     "b": -2.9130062775910432,
+     "g": -2.095282720989048
+    }
+   ]
+  },
+  "dicke_casimir_auf_H_m": {
+   "2": [
+    0.0,
+    2.0
+   ],
+   "3": [
+    0.75,
+    0.75,
+    3.75
+   ],
+   "4": [
+    2.0,
+    2.0,
+    2.0,
+    6.0
+   ],
+   "5": [
+    3.75,
+    3.75,
+    3.75,
+    3.75,
+    8.75
+   ],
+   "6": [
+    6.0,
+    6.0,
+    6.0,
+    6.0,
+    6.0,
+    12.0
+   ]
+  },
+  "torus_charakter_abweichung": "9.4385e-52",
+  "kubo_gewichte": {
+   "alpha=0.25, m=1": {
+    "fenster_gewichte": [
+     "0.95849882"
+    ],
+    "ausserhalb": "0.04150467",
+    "spurabstand": "0.0415045"
+   },
+   "alpha=0.25, m=2": {
+    "fenster_gewichte": [
+     "0.95857617",
+     "0.99991916"
+    ],
+    "ausserhalb": "0.041504676",
+    "spurabstand": "0.0207523"
+   },
+   "alpha=0.25, m=3": {
+    "fenster_gewichte": [
+     "0.95857617",
+     "0.99999985",
+     "0.99991931"
+    ],
+    "ausserhalb": "0.041504676",
+    "spurabstand": "0.0138349"
+   },
+   "alpha=0.25, m=4": {
+    "fenster_gewichte": [
+     "0.95857617",
+     "0.99999985",
+     "1.0",
+     "0.99991931"
+    ],
+    "ausserhalb": "0.041504676",
+    "spurabstand": "0.0103762"
+   },
+   "alpha=0.25, m=5": {
+    "fenster_gewichte": [
+     "0.95857617",
+     "0.99999985",
+     "1.0",
+     "1.0",
+     "0.99991931"
+    ],
+    "ausserhalb": "0.041504676",
+    "spurabstand": "0.00830094"
+   },
+   "alpha=0.25, m=6": {
+    "fenster_gewichte": [
+     "0.95857617",
+     "0.99999985",
+     "1.0",
+     "1.0",
+     "1.0",
+     "0.99991931"
+    ],
+    "ausserhalb": "0.041504676",
+    "spurabstand": "0.00691745"
+   },
+   "alpha=0.75, m=1": {
+    "fenster_gewichte": [
+     "0.95849882"
+    ],
+    "ausserhalb": "0.04150467",
+    "spurabstand": "0.0415045"
+   },
+   "alpha=0.75, m=2": {
+    "fenster_gewichte": [
+     "0.99991916",
+     "0.95857617"
+    ],
+    "ausserhalb": "0.041504676",
+    "spurabstand": "0.0207523"
+   },
+   "alpha=0.75, m=3": {
+    "fenster_gewichte": [
+     "0.99991931",
+     "0.99999985",
+     "0.95857617"
+    ],
+    "ausserhalb": "0.041504676",
+    "spurabstand": "0.0138349"
+   },
+   "alpha=0.75, m=4": {
+    "fenster_gewichte": [
+     "0.99991931",
+     "1.0",
+     "0.99999985",
+     "0.95857617"
+    ],
+    "ausserhalb": "0.041504676",
+    "spurabstand": "0.0103762"
+   },
+   "alpha=0.75, m=5": {
+    "fenster_gewichte": [
+     "0.99991931",
+     "1.0",
+     "1.0",
+     "0.99999985",
+     "0.95857617"
+    ],
+    "ausserhalb": "0.041504676",
+    "spurabstand": "0.00830094"
+   },
+   "alpha=0.75, m=6": {
+    "fenster_gewichte": [
+     "0.99991931",
+     "1.0",
+     "1.0",
+     "1.0",
+     "0.99999985",
+     "0.95857617"
+    ],
+    "ausserhalb": "0.041504676",
+    "spurabstand": "0.00691745"
+   }
+  },
+  "randverhaeltnis_unten_oben_alpha1/4 (q = e^-pi)": {
+   "2": "(1+q^3)(1+q^5)/((1+q)(1+q^7)) = 0.9586536687",
+   "3": "(1+q^3)(1+q^9)/((1+q)(1+q^11)) = 0.9586535245",
+   "4": "(1+q^3)(1+q^13)/((1+q)(1+q^15)) = 0.9586535245"
+  },
+  "rho1_gewichte": [
+   "0.95857617",
+   "0.041423832"
+  ],
+  "P_tests": {
+   "det_P": 5.329070518200751e-15,
+   "P^2": 1.0658141036401503e-14,
+   "P0_min_eig_kompression": 0.09652183828018111,
+   "[E, P0]_max": 1.75
+  },
+  "K_typen_helizitaet0": {
+   "0": {
+    "dim": 1,
+    "(j,j) bei E = n+1": true
+   },
+   "1": {
+    "dim": 4,
+    "(j,j) bei E = n+1": true
+   },
+   "2": {
+    "dim": 9,
+    "(j,j) bei E = n+1": true
+   },
+   "3": {
+    "dim": 16,
+    "(j,j) bei E = n+1": true
+   },
+   "4": {
+    "dim": 25,
+    "(j,j) bei E = n+1": true
+   },
+   "5": {
+    "dim": 36,
+    "(j,j) bei E = n+1": true
+   },
+   "6": {
+    "dim": 49,
+    "(j,j) bei E = n+1": true
+   },
+   "7": {
+    "dim": 64,
+    "(j,j) bei E = n+1": true
+   }
+  },
+  "vergleich_hebekommutator": {
+   "nativ_[R,R^+]_eigenwerte": [
+    -1.0,
+    0.0
+   ],
+   "oszillator_[E+,E-]_eigenwerte": [
+    -13.0,
+    -12.0,
+    -11.0,
+    -10.0,
+    -9.0,
+    -8.0,
+    -7.0,
+    -6.0,
+    -5.0,
+    -4.0,
+    -3.0,
+    -2.0,
+    -1.0
+   ]
+  },
+  "status": {
+   "E": [
+    "Paarraum H_m (dim m), J_{-m} Omega = Summe der m Paare, L_0 = m",
+    "bilokale Faktorisierung D_m = D_1 chi_j (Teleskopsumme, für jedes Profil; nicht zustandsspezifisch)",
+    "normiertes W erfüllt die S^3-Identität; äquivalent: sin(gamma) W ist 2D-harmonisch, d_gamma(sin W) = W2 (z71)",
+    "native U(1)-Gewichte w - alpha = -j..j (Cartan) und voller Toruscharakter der verdoppelten Auslese",
+    "No-go: jede Bilinearform komprimiert auf H_m diagonal",
+    "Strom- bzw. Möbiushüpfen schließt nur für m <= 3 bzw. m = 2; keine feste Polynomgewichtung schließt für alle m (Grad <= 2: nie bei m = 6); Dicke-su(2) steht quer zu H_m",
+    "KMS-Kompression auf H_m = Spurzustand exakt; Kubo-Gewichte = Spurzustand bis auf rho_1-Kanten (4,1424 %)",
+    "SU(2,2) auf V + V-quer*: [P, P] = 0, P^0 >= 0, P^2 = 0, K-Typen (j, j) bei 2j + 1, Charakter = sum m^2 q^m",
+    "native Heber: Toeplitz (X^+X = 1), [R, R^+] = Randprojektoren statt -(N + N + 1)"
+   ],
+   "C": [
+    "4D-Lesart unter T' (Naht = P(V) = {pi = 0} in P(V + V-quer*), Gerade des Punkts im Unendlichen): Translationen bilinear im Partnerdublett (nach Inversion vertauschen P und K)"
+   ],
+   "L": [
+    "su(2) mit Spin (m-1)/2 auf H_m (Schwinger-/Oszillatorgewichte eingesetzt)",
+    "(j, j) als SU(2) x SU(2)-K-Typ und die S^3-Gruppenwirkung",
+    "su(2,2)-Translationen mit CCR-Normierung auf dem verdoppelten Paarraum"
+   ],
+   "O": [
+    "ein Prinzip des Originals, das die Oszillatornormierung sqrt(n+1) der Teilchen- und Lochleitern erzwingt",
+    "Nichtzonale S^3-Daten (zwei weitere Winkel) aus Antworten des Originals"
+   ]
+  }
+ },
+ "urteil": "Die externe Behauptung hält auf der Ebene von Zählung und Torus, nicht auf der Ebene der Gruppe. Exakt und nativ sind: der m-dimensionale Paarraum H_m von J_{-m} Omega mit den bilokalen Gewichten -j..j; die Faktorisierung D_m = D_1 sin(m gamma)/sin(gamma), die aber eine Teleskopsumme ist und für jedes Besetzungsprofil gilt; die S^3-Identität des normierten W, die exakt einer 2D-Dirichlet-Antwort (sin(gamma) W harmonisch, d_gamma(sin W) = W2 aus z71) gleichwertig ist; die Kompression des Originalzustands auf H_m, die exakt der Spurzustand ist; und der volle Toruscharakter: sum m^2 q^m und die verdoppelte Auslese sind der Einteilchencharakter des konformen 4D-Skalars. Nicht nativ ist das su(2): Jede Bilinearform komprimiert auf H_m diagonal, das native Strom- und Möbiushüpfen schließt nur für m <= 3 bzw. m = 2, keine feste Polynomgewichtung schließt für alle m, und die Dicke-su(2) der Paare steht quer zu H_m. Spin (m-1)/2 für alle m verlangt die Oszillatorgewichte sqrt(n_1+1) sqrt(n_2). Ebenso sind die nativen Heber Toeplitz-Isometrien (q = 0) statt CCR-Oszillatoren, und ihre Kommutatoren sind Randprojektoren statt u(2) + u(2). Die SU(2,2)-Leiterdarstellung auf V + V-quer* ist korrekt ([P, P] = 0, P^0 >= 0, P^2 = 0, K-Typen (j, j) bei 2j + 1) und auf dem verdoppelten Paarraum realisierbar. Sie ist mit dem Original verträglich, aber nicht aus ihm rekonstruiert; die fehlende Zutat ist die Oszillatornormierung der Teilchen- und Lochleitern."
+}

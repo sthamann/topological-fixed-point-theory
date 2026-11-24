@@ -7879,3 +7879,27 @@ Die externe Analyse „Der nächste Schritt“ (Spinbrücke) ist unabhängig bes
 - Zwei maximal inkompatible binäre Beobachtungen geben τ = i (p = ½) und das kanonische η.
 
 **Prüfstand:** 13 P, 7 L. Atlas-Revision 7114eb296d62f303591f7068. Ledger unverändert, nichts befördert.
+
+## H6H35-20261124 · Zusammenführung: Zeit, 4D-Inhalt, T′ ⇔ I_pos, Kern ν = 1 (bedingt)
+
+Im H6-Ordner gerechnet, alles nachgeprüft und reproduziert:
+- `z72` (21), `z73` (23), `z74` (25);
+- `PRUEFUNG-BESTAND-H6h35.md`.
+
+**Exakt:**
+- **Zeit:** P₀ ist parabolisch mit Spektrum [0, ∞). Im Vakuum der Uhr ist die Wiesbrock-Differenz geschachtelter Nahtbögen
+  P₀; im thermischen Original gibt es keine halbseitigen Inklusionen.
+- **Teilchen-Loch-Paare:** Σm²qᵐ ist nativ, eine su(2) auf den Paarräumen nicht (Toeplitz statt CCR).
+- **Standardform:** Sie liefert J, Herm(2), V ⊕ V̄* und die Form (2,2); T′ ⇔ I_pos.
+- **Windungszahl:** Spinbrücke und Neutralität schließen sich aus; mit Uhrenquotient m = 1.
+- **Kern:** det(I − ZW†)⁻¹ ist durch die Hardy- und Stromauslesung erzwungen.
+
+**Offen:**
+- I_pos;
+- die Oszillatornormierung (gleichbedeutend mit bosonischen Paaren);
+- Vakuum gegen thermisch;
+- die nichtlineare Gravitation;
+- die Mehrpunktantworten (Agent am Nutzungslimit abgebrochen);
+- der Restflavor.
+
+**Prüfstand:** 13 P, 7 L. Atlas-Revision da001fdcabcc80b1da998c54. Ledger unverändert, nichts befördert.

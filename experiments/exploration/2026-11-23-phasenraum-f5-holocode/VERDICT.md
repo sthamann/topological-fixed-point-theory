@@ -1,6 +1,97 @@
 # Urteil
 
-## Aktueller Stand: H6h34 — Parallele Agenten: Dublettzustand, Spinbrücke, T′, Googly, Skalen, Bestandsprüfung (`z63`–`z71`)
+## Aktueller Stand: H6h35 — Zusammenführung: Zeit, 4D-Inhalt, T′ ⇔ I_pos, Kern ν = 1 (`z72`–`z74`)
+
+**Bilanz:** unverändert 13 P und 7 L von 20. K6 und K12 sind präzisiert.
+
+**Auftrag:** mit mehreren Agenten weitermachen und alles zur vollen Lösung zusammenführen. Dazu kam die dritte externe
+Analyse (P₀, bilokale Winkelantwort, m², vier Translationen, Kern).
+
+**Gerechnet und nachgeprüft:**
+- z72 (21), z73 (23), z74 (25), alle reproduziert;
+- `PRUEFUNG-BESTAND-H6h35.md`.
+
+Der Agent zu Mehrpunktantworten und Spin 2 ist am Nutzungslimit abgebrochen und hat noch kein Ergebnis.
+
+**In einem Satz:**
+- Die 3+1-Kinematik hängt jetzt an genau einer Aussage I_pos. Sie ist gleichwertig zu T′: Die Lagen der Naht sind die
+  dualen GNS-Vektoren des Dublettzustands.
+- Die Felder folgen eindeutig aus zwei Auslesungen (ν = 1).
+- Die kontinuierliche Zeit existiert im Vakuumsektor der Uhr, nicht im thermischen Original.
+- Der 4D-Teilcheninhalt ist gezählt, seine Gruppe aber noch eine Lesart.
+
+**1. Zeit (z72).**
+- **Zwei Generatoren.** L₀ (die TFPT-Uhr) ist elliptisch mit Spektrum {1, 2, …}. P₀ = L₀ + (L₋₁+L₁)/2 ist parabolisch:
+  Laguerre-Jacobi-Matrix, absolut stetiges Spektrum [0, ∞), keine eigene Skala.
+- **Im Vakuum der Uhr** (β = ∞):
+  - Nahtbögen mit gemeinsamem Endpunkt bilden halbseitige modulare Inklusionen.
+  - Die Wiesbrock-Differenz (K_J − K_I)/2π ist genau der positive parabolische Generator. Gitter: Hislop–Longo ≤ 1,2·10⁻³,
+    Wiesbrock 5·10⁻⁵.
+- **Im Original** (β = 4π) scheitern die Inklusionen: global exakt (Periodizität, Takesaki), auf Bögen numerisch (Leckage
+  9·10⁻⁴ gegen 7·10⁻¹⁸ im Vakuum).
+- **Folge:** Die physikalische Zeittranslation braucht den Vakuumsektor.
+- **Typisierung:** Alles ist eindimensional. Die Richtung ist Zustand → Inklusion → Translation, kein „modular ⇒ Lorentz“.
+  Der Bestand v438 ist damit präzisiert.
+
+**2. 4D-Inhalt aus Teilchen-Loch-Paaren (z73).**
+- **Faktorisierung.** D_m = D₁·sin(mγ)/sin γ gilt exakt, ist aber eine Teleskopsumme, gültig für jedes Profil.
+- **S³-Identität.** Sie ist gleichwertig zu einer 2D-Antwort (∂_γ(sin γ·W) = native Nahtwinkelantwort).
+- **Nativ sind:** die Zählung Σm²qᵐ = q(1+q)/(1−q)³ (Einteilchencharakter des konformen 4D-Skalars) und der volle
+  Toruscharakter.
+- **Keine native su(2).** Kein Operator des Originals schließt auf den Paarräumen zu su(2). Die nativen Heber sind
+  Toeplitz-Isometrien statt Oszillatoren.
+- **Folge:** SU(2,2) auf V ⊕ V̄* (P = π̄π, P² = 0, K-Typen (j,j)) ist verträglich, aber nicht rekonstruiert.
+
+**3. T′, Windungszahl, Kern (z74).**
+- **T′ aus Tomita.**
+  - Die Standardform von End(V) mit ρ_m liefert kanonisch: J = †, Herm(2) = R^{1,3}, die Zeitorientierung aus dem Kegel, den
+    Spinormodul V ⊕ V̄*, die Twistorform der Signatur (2,2) und die Geraden L_x.
+  - Die Lorentzsignatur entsteht genau dann, wenn die Realstruktur die Blätter tauscht.
+  - Strikt hergeleitet ist T′ nicht. Genau gilt T′ ⇔ I_pos: Die Nahtlagen sind äquivariant die dualen GNS-Vektoren.
+- **Windungszahl.**
+  - Satz: R = Δ^{−i/2} ist auf jedem Quartersektor Ladungsdrehung mal Parität. Deshalb schließen sich Spinbrücke und
+    Neutralität für jedes m aus.
+  - Ohne Neutralität bleibt m ∈ {1, 3}; mit der Uhrenquotient-Regel m = 1.
+  - Neutral ist dann das Trägerdublett (ρ₄ = Sym⁴ρ₁).
+- **Kern.**
+  - Im ganzen positiven U(2)×U(2)-invarianten Kegel erzwingen Hardy- und Stromauslesung zusammen den Kern
+    det(I − ZW†)⁻¹, also ν = 1. Eine Auslesung allein reicht nicht.
+  - Daraus folgen die SU(2,2)-Kovarianz, die Leiterdarstellung und Masselosigkeit genau bei ν = 1. Die Dimension 4 ist
+    Eingabe.
+
+**4. Bestand (Prüfagent).**
+- **Vorbestand:** P₀ ist v438 (Ledger [E]); m² und SU(2,2) sind z40/z41/z44; E₈ und die Familien sind Bestand.
+- **Firewalls.** DIMENSION.UPLIFT.FIREWALL.01 blockiert die 3+1-Schlüsse aus (1)–(3) in der Form der externen Analyse. Der
+  Kernsatz ist als Satz auf der Matrixkugel zulässig. P₀ ist als Annahme bzw. als Vakuumgröße zu führen.
+- **Spannungen:**
+  - Der thermische Originalzustand ist nicht P₀-invariant.
+  - Fermionische Paare geben ein Determinantenwort ≠ 0; ν = 1 braucht bosonische Paare.
+  - In der Möbiusfamilie der Naht gibt es nur eine vertauschende Translation.
+- **Nebenbefund:** Das μ₄-Mittel der vier Marken-Paraboliken ist genau L₀.
+
+**5. Zusammenführung: die Lösung, so weit sie trägt.**
+1. **Naht und Zustand:** Die quasifreie Kovarianz ist KMS bei β = 4π. Daraus folgen die Uhr L₀, die Leiter und die
+   2D-Kanäle. [E]
+2. **Holomorphe Twistorgerade:** über das kanonische η. [E]
+3. **3+1-Kinematik:** aus der Standardform des Dublettzustands ρ₁ (m = 1). [E] Dazu I_pos = T′. [C]
+4. **Felder:** Der Kern det(I − ZW†)⁻¹ ist eindeutig, mit SU(2,2) und den masselosen Gleichungen. [E unter bi-U(2) = T′]
+5. **Zeit:** die parabolische Wiesbrock-Translation im Vakuumsektor. [E, 1D] Das Original ist thermisch. [O: Beziehung]
+6. **Gravitation:** linear beide Helizitäten; nichtlinear googly; keine Skala aus dem eigenen Spektrum. [E/O]
+7. **Gelöste Bausteine:** Teilchen, Flavour, Massen, α und E₈ unverändert.
+
+**6. Was offen ist** (genau benannt; (b) und (d) sind dieselbe Frage):
+- **(a)** I_pos aus den Antworten des Originals.
+- **(b)** Ein Prinzip, das die Oszillatornormierung erzwingt (Toeplitz → CCR). Analog zur Entscheidung Leiter statt Band in
+  z58 würde es SU(2,2) nativ machen.
+- **(c)** Wie Vakuumsektor und thermisches Original zusammenhängen. Die Zeittranslation lebt im Vakuum.
+- **(d)** Bosonische statt fermionischer Paare für ν = 1 (Determinantenwort).
+- **(e)** Die nichtlineare volle Gravitation und die Flächennormierung.
+- **(f)** Mehrpunktantworten und Spin 2: Der Agent lief ins Nutzungslimit.
+- **(g)** Restflavor.
+
+**Stand:** Eine vollständige Theorie ist das nicht.
+
+## Davor: H6h34 — Parallele Agenten: Dublettzustand, Spinbrücke, T′, Googly, Skalen, Bestandsprüfung (`z63`–`z71`)
 
 **Bilanz:** unverändert 13 P und 7 L von 20. K6, K12 und K13 sind präzisiert.
 
