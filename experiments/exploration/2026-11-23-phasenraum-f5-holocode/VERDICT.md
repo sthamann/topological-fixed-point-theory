@@ -1,6 +1,102 @@
 # Urteil
 
-## Aktueller Stand: H6h15 — projektive Spinorordnung und Gravitationsstruktur (`z28`, `z29`)
+## Aktueller Stand: H6h16 — Toeplitz-Ursprung, Anomalienbilanz und ein Prinzip für zwei Entscheidungen (`z30`, `z31`)
+
+Bilanz unverändert 14 P und 6 L von 20; K13, K16 und K19 sind präzisiert. Anlass ist die fünfte externe
+Analyse vom 24.11. Ihre Rechnungen sind selbst nachgerechnet: `z30` mit 17 und `z31` mit 16 Prüfungen.
+
+**In einem Satz:**
+- Die Einheitswindung, die zwei Seiten und J² = −1 lassen sich aus einer irreduziblen Isometrie
+  gewinnen.
+- Die Marken ergänzen sich zu Herm(2).
+- c = 8 auf der Naht verlangt die axiale, gravitativ anomale Ladung. Damit trägt jeder Weg die Wand,
+  und Entscheidung 4 bleibt der Engpass.
+- Entscheidung 1 und 2 sind beide Fälle eines trivialen Kommutanten.
+
+**1. Toeplitz-Ursprung (`z30`, 17 Prüfungen).**
+- **Wold.** Eine irreduzible nichtunitäre Isometrie ist der einseitige Shift: SS† = I − |0⟩⟨0|,
+  Index −1. Eine Vielfachheit m gäbe einen Defekt vom Rang m und zerfiele. Der Toeplitz-Index ist
+  −wind (numerisch für die Windungen −2 bis 2 bestätigt).
+- **Zweiseitige Vervollständigung**, exakt für N = 8 bis 128: R U R = U⁻¹, {R, C} = 0, J = RC mit
+  J² = −1, D² = C, D U D† = iU, D̃⁴ = −1 und J D̃ J⁻¹ = D̃⁻¹. Die Halbraumprojektion hat an den beiden
+  Schnitten die Defekte +1 und −1.
+- **Spektralparameter.** Die Bahn {1, i, −1, −i} gibt w² = z⁴ − 1 mit j = 1728, also τ = i;
+  außerdem h⁰(K(D)) = 3 und h⁰(O(D)) = 5 mit 3 + 2.
+- **Marken als Operatoren.**
+  - Die vier Marken (I ± σ_x)/2 und (I ± σ_y)/2 haben Rang 3.
+  - −2i[P₁, P₂] = σ_z ergänzt sie zu Herm(2), Rang 4.
+  - {0, ∞, ±1, ±i} sind die Oktaederecken; die 24 Drehungen wirken treu als S₄ auf den
+    Raumdiagonalen.
+  - Die Tetraeder-Nullvektoren haben die Minkowski-Gram-Eigenwerte {1, −⅓, −⅓, −⅓}, und A₄ erhält das
+    Tetraeder.
+- **Grenzen.**
+  - Irreduzibilität ist eine neue Prämisse; sie ersetzt die gesetzte Einheitswindung.
+  - J² = −1 gilt für jedes Paar antivertauschender Involutionen. Die Gleichsetzung mit H6s J ist eine
+    Lesart.
+  - Hardy-Kern = P1-Kern und das Soldering sind offen.
+
+**2. Anomalienbilanz und E₈ (`z31`, 16 Prüfungen).**
+- **Ausschluss der direkten J-Fortsetzung.** Mit q₊ = 1 + 4a, q₋ = −1 + 4b trägt der primitive
+  Wirbel eines Ladung-4-Kondensats c = 16(a + b), nie 8, und das Spin(10)-Niveau ist gerade.
+  Aufgezählt: 6561 Kombinationen, davon 110 mit c = 8, keine mit Niveau 1.
+- **Nur die axiale Ladung (+1, +1)** gibt c = 8 und Niveau 1. Das ist H6s G (z13: c = 1/2 je Paar;
+  z24: Index 2 für G, 0 für die vektorartige U).
+- **Gegenmodell.** Der Quartettzustand |0⟩ + r e^{iθ}(P†)²|0⟩ ist ℤ₄-symmetrisch mit ⟨P⟩ = 0,
+  ⟨P²⟩ ≠ 0 und Lücke 1, also ein Produktzustand ohne Nahtmoden. Den Index trägt die anomale Antwort,
+  nicht der Ordnungsparameter.
+- **Neu: Die Wand bleibt auch im axialen Ladung-4-Weg.** Der relevante Operator Re Φ² aus z24 hat
+  axiale Ladung 4, ist also unter dem axialen ℤ₄ invariant, pinnt aber arg Φ²: N_DW = 1. Jeder Weg zu
+  c = 8 braucht die axiale Symmetrie, und deren Gitterbruch ist die Wand. **Entscheidung 4 ist damit
+  der gemeinsame Engpass von Wand, E₈-Zufluss und Chiralität.**
+- **Bosonische Klasse.** Aus (ST)³ = S² folgt c ∈ 8ℤ für holomorphe bosonische Theorien, und E₈ ist
+  das kleinste gerade unimodulare Gitter. Fermionisch wäre der Generator c = 1/2. Unter A* (GSO-Summe)
+  ist die Naht bosonisch, und „genau ein Block“ ist äquivalent dazu, dass die Indexabbildung
+  unimodular ist. Diese Unimodularität ist selbst noch herzuleiten.
+
+**3. Ein Prinzip für Entscheidung 1 und 2: trivialer Kommutant.**
+- Ein Shift der Vielfachheit m hat den Kommutanten M_m (Dimension 1, 4, 9 für m = 1, 2, 3). Eine
+  einzige Naht heißt also: trivialer Kommutant.
+- Verborgene Sätze sind per Definition der Kommutant der sichtbaren Algebra. Relativ zu einer E₈-
+  Stromalgebra hat der Rest c = 8(N − 1) und die Norm (c − 8)/2. Ein einziger Block heißt also
+  ebenfalls: trivialer Kommutant.
+- Damit werden zwei Lesarten (z17/z20/z22 und z14) zu **einer** Prämisse: Der Ursprungsprozess wirkt
+  irreduzibel.
+- **Grenze:** Mehr Fermionen in einer einzigen Clifford-Algebra wirken ebenfalls irreduzibel
+  (Cl(2n) hat Kommutant ℂ). Das Prinzip zählt also nicht die Fermionen; die 16 kommen weiter aus z5
+  und z8. Und welche Algebra der Ursprungsprozess ist, bleibt zu zeigen.
+
+**4. Spektralwirkung.** f_λ = e^{−s}(1 + λs) gibt f₀ = 1 und f₂ = 1 + λ: Eich- und
+Gravitationsnormierung sind unabhängig. Verlangt man eine Halbgruppe f(s + t) = f(s)f(t), bleibt nur
+e^{−κs}, und κ geht in Λ auf. In diesem Wärmeleitungsregler gilt S_ent/A = 1/(48πε²) = 1/(4G_ind) für
+den minimal gekoppelten Skalar exakt.
+- Die Mehrdeutigkeit der Gitterkopplung aus z27 schrumpft dann auf eine Skala und den Randterm der
+  Eichfelder (Kabat bzw. Donnelly–Wall).
+- Das Halbgruppenprinzip ist eine Prämisse, passend zur KMS- bzw. Prozesslesart.
+
+**5. Stand des Beweises.**
+
+| Glied | Status |
+|---|---|
+| A* → GSO-Summe, E₈ bei c = 8, τ = i | E (τ = i klassisch; Lean ohne Valenzformel: Laurent-Rekursion und ℤ[i]-Gitterlemma fehlen) |
+| Irreduzibilität → Einheitswindung, eine Naht, kein verborgener Satz | E unter der neuen Prämisse I |
+| C″ → drei Familien, {−1, i, −i}, S₄; Marken → Herm(2); S₄ → isotrope Plebański-Simplizität | E |
+| G (axial anomal) → c = 8 Zufluss | E im freien Modell (z13, z31) |
+| Wand und Chiralität ← Bruch der axialen Symmetrie auf dem Gitter | **Engpass** (Entscheidung 4) |
+| Eichgruppe: P2 als Ordnungsparameter mit Spin(10)-Elternverbindung | E algebraisch; Werte nur mit SO(10) an 1/a (z25) |
+| Gravitation: Spin 2 aus der Wardidentität, Regler aus der Halbgruppe | Struktur E; G, kovariante Kanten, Soldering offen |
+| Dynamik, die diesen Zustand auswählt | offen |
+
+Gemeinsamer Nenner der offenen Glieder ist das **feste Gitter**: Es bricht die axiale Symmetrie (Wand,
+z24) und die Diffeomorphismen (z29), und die Auswege sind nichtlokal (z26). Der nächste fundamentale
+Schritt ist deshalb, das feste Gitter durch die Prozessalgebra selbst zu ersetzen. Konkret heißt das,
+die Toeplitz-/Hardy-Struktur als Regler zu benutzen, statt sie in ein starres Gitter einzusetzen.
+
+**6. Bilanz.** 14 P und 6 L. Es wurde nichts befördert, und das Ledger ist unverändert.
+- K19 beruht jetzt auf der Prämisse Irreduzibilität.
+- K13 nennt den Halbgruppenregler.
+- K16 benennt Entscheidung 4 als Engpass jedes Weges.
+
+## Davor: H6h15 — projektive Spinorordnung und Gravitationsstruktur (`z28`, `z29`)
 
 Bilanz unverändert 14 P und 6 L von 20; K13, K15 und K19 sind präzisiert, nicht befördert. Anlass ist
 die vierte externe Analyse vom 24.11. Ihre Rechnungen sind hier selbst nachgerechnet: `z28` mit 23 und

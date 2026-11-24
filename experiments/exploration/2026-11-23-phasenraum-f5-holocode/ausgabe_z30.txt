@@ -1,0 +1,45 @@
+Teil 1: irreduzible Isometrie und Toeplitz-Index
+   [ok] S^+ S = I auf dem Bereich n < M-1 (Abschneidung nur am fernen Rand)
+   [ok] S S^+ = I - |0><0| (bis auf den fernen Rand)
+   Vielfachheit m = 1: Rang des Defekts I - S S^+ = 1
+   Vielfachheit m = 2: Rang des Defekts I - S S^+ = 2
+   Vielfachheit m = 3: Rang des Defekts I - S S^+ = 3
+   [ok] Defektrang = Vielfachheit; irreduzibel (keine reduzierenden Teilräume) <=> m = 1, Index -1
+   Toeplitz-Index (Kern - Kokern) je Windung: {-2: np.int64(2), -1: np.int64(1), 0: np.int64(0), 1: np.int64(-1), 2: np.int64(-2)}
+   [ok] ind T_f = -wind(f) für glatte Symbole der Windung -2..2
+   [Befund: ja] Einheitswindung folgt aus Irreduzibilität einer nichtunitären Isometrie (Prämisse: der Ursprungsprozess ist eine)
+
+Teil 2: zweiseitige Vervollständigung, Spiegelung, Spin-Z4
+   N =   8: Relationsverletzungen 0; U P U^+ - P hat die Eigenwerte +1 und -1 je einmal: (1, -1)
+   N =  16: Relationsverletzungen 0; U P U^+ - P hat die Eigenwerte +1 und -1 je einmal: (1, -1)
+   N =  32: Relationsverletzungen 0; U P U^+ - P hat die Eigenwerte +1 und -1 je einmal: (1, -1)
+   N =  64: Relationsverletzungen 0; U P U^+ - P hat die Eigenwerte +1 und -1 je einmal: (1, -1)
+   N = 128: Relationsverletzungen 0; U P U^+ - P hat die Eigenwerte +1 und -1 je einmal: (1, -1)
+   [ok] R U R = U^-1, {R, C} = 0, J^2 = -1, D^2 = C, D U D^+ = i U, D~^4 = -1, J D~ J^-1 = D~^-1 (N = 8..128)
+   [ok] Halbraumprojektion: je ein Defekt +1 und -1 an den beiden Schnitten (Summe 0 im endlichen System)
+   Hinweis: J^2 = -1 gilt für jedes Paar antivertauschender Involutionen; die Gleichsetzung mit H6s J (psi -> chi -> -psi)
+   ist eine Lesart, keine Herleitung.
+
+Teil 3: Spektralparameter, vier Marken, Torus, Träger
+   [ok] Bahn der Vierteldrehung z -> iz durch 1: {1, i, -1, -i}
+   Doppelverhältnis lambda = 2.000000+0.000000j, j = 1728.000000
+   [ok] w^2 = z^4 - 1 hat j = 1728, also tau = i
+   [ok] h^0(O(D)) = 5, h^0(K(D)) = 3 (Riemann-Roch auf P^1, deg D = 4)
+   [ok] Halbdrehung z -> -z teilt H^0(O(D)) = <1, z, ..., z^4> in 3 + 2
+
+Teil 4: Marken als Operatoren
+   Rang: vier Marken 3, mit Kommutator 4, sechs Richtungen 4
+   [ok] Marken = (I +- sigma_x)/2, (I +- sigma_y)/2
+   [ok] Rang 3 -> mit -2i[P1, P2] = sigma_z Rang 4 = Herm(2)
+   [ok] sechs Punkte {0, oo, +-1, +-i} = Oktaederecken (+-e_x, +-e_y, +-e_z)
+   [ok] 24 Drehungen, treu auf den vier Raumdiagonalen: Bild = alle 24 Permutationen (S4)
+   Minkowski-Gram der Tetraeder-Nullvektoren: Eigenwerte [-0.33333333 -0.33333333 -0.33333333  1.        ]
+   [ok] X_i Rang 1 und positiv (lichtartig, zukunftsgerichtet)
+   [ok] Gram-Eigenwerte {1, -1/3, -1/3, -1/3}: linear unabhängig, Signatur 1 + 3
+   [ok] 12 Drehungen erhalten das Tetraeder (A4), 12 tauschen es mit dem dualen
+   [Befund: ja] Familiengruppe S4, Tetraederpaar und Lorentzkegel haben eine gemeinsame Realisierung auf Herm(2)
+
+Urteil
+   Die Operatorkonstruktionen stimmen. Eine irreduzible nichtunitäre Isometrie ist nach Wold der einseitige Shift; ihr Defekt hat Rang 1 (Vielfachheit m gäbe Rang m und zerfiele), also Index -1, und der Toeplitz-Index ist -wind (numerisch für Windung -2..2). In der zweiseitigen Vervollständigung gelten R U R = U^-1, {R, C} = 0, J = RC mit J^2 = -1, D^2 = C, D U D^+ = iU, D~^4 = -1 und J D~ J^-1 = D~^-1 für N = 8 bis 128; die Halbraumprojektion hat an den beiden Schnitten die Defekte +1 und -1. Die Bahn der Vierteldrehung gibt w^2 = z^4 - 1 mit j = 1728 (tau = i), h^0(K(D)) = 3 und h^0(O(D)) = 5 mit 3 + 2. Als Qubit-Zustände haben die vier Marken Rang 3; ihr Kommutator ergänzt sigma_z zu Herm(2) (Rang 4), die sechs Punkte {0, oo, +-1, +-i} sind das Oktaeder, dessen Drehgruppe treu als S4 auf den Raumdiagonalen wirkt; die Tetraeder-Nullvektoren haben Minkowski-Gram {1, -1/3, -1/3, -1/3}. Grenzen: Irreduzibilität ist eine neue Prämisse statt der Einheitswindung; J^2 = -1 gilt für jedes Paar antivertauschender Involutionen, die Gleichsetzung mit H6s J ist eine Lesart; die Identifikation des Hardy-Kerns mit dem P1-Kern und das Soldering der Operatorrichtungen an physische Verschiebungen sind offen.
+
+Alle Prüfungen bestanden: True (17/17)

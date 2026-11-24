@@ -815,6 +815,28 @@ if "H6h2" in H and z1p.exists() and z2p.exists():
                                                                          "kondensiert; ein J-ungerades <Phi> lässt nur Z2 (Wand), ein Ladung-4-"
                                                                          "Kondensat nicht; offen: Reziprokes, Kondensation")
                                                     facts["F34_spinor_order_gravity"] = {n: S2[n]["urteil"] for n in S2}
+                                                    zt = {n: Path(__file__).with_name(f"z{n}_ergebnis.json") for n in (30, 31)}
+                                                    if all(p.exists() for p in zt.values()):
+                                                        T4 = {n: json.loads(p.read_text()) for n, p in zt.items()}
+                                                        ok4 = {n: all(T4[n]["checks"].values()) for n in T4}
+                                                        H["H6h16"] = dict(H["H6h15"])
+                                                        H["H6h16"]["K19"] = (LES if ok4[30] and ok4[31] else F,
+                                                                             "[Irreduzibilität des Ursprungsprozesses] eine irreduzible "
+                                                                             "nichtunitäre Isometrie ist der einseitige Shift mit Defekt vom Rang 1 "
+                                                                             "(Z30); Vielfachheit m hätte den Kommutanten M_m, verborgene Sätze wären "
+                                                                             "der Kommutant der sichtbaren E8-Ströme (Z31): ein Prinzip für eine Naht "
+                                                                             "und einen Block; Flussschlauch und G wie Z20, Z22")
+                                                        H["H6h16"]["K13"] = (LES if ok4[31] and oks[29] else F,
+                                                                             "[D] Jacobson; Plebanski-Isotropie aus S4 (Z29); ein Halbgruppenregler "
+                                                                             "e^(-kappa s) legt die Reglerfunktion fest und macht S_ent = A/(4 G_ind) "
+                                                                             "für minimal gekoppelte Felder exakt (Z31); offen: eine Skala, der "
+                                                                             "Eich-Randterm, kovariante Gitterkanten")
+                                                        H["H6h16"]["K16"] = (LES if ok4[31] else F,
+                                                                             "[physisches Gitter mit zwei Gegentermen oder nichtultralokale Lüscher-"
+                                                                             "GW-Wirkung] c = 8 auf der Naht verlangt die axiale, gravitativ anomale "
+                                                                             "Ladung (Z31); deren Bruch Re Phi^2 trägt auch im Ladung-4-Weg die Wand "
+                                                                             "(N_DW = 1), also bleibt Entscheidung 4 der Engpass jedes Weges (Z24, Z26)")
+                                                        facts["F35_toeplitz_anomaly"] = {n: T4[n]["urteil"] for n in T4}
 
 order = [f"K{i}" for i in range(1, 21)]
 print("Gesamttabelle (P = hergeleitet, L = unter benannter Lesart, F = FAIL, O = OFFEN, E = EINGABE)\n")

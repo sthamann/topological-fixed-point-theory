@@ -1,0 +1,64 @@
+Teil 1: Anomalienbilanz auf dem primitiven Wirbel eines Ladung-4-Kondensats
+   direkte J-Fortsetzung, a, b in [-4, 4]: 6561 Kombinationen, c = 8: 110, c = 8 und k = 1: 0
+   [ok] Aufzählung: 6561 Kombinationen, 110 mit c = 8, 0 mit c = 8 und k = 1
+   Teilbarkeit: 16 gleiche Paare geben c = 16 (a + b), also nie 8; k = 2 (a + b) ist stets gerade, nie 1.
+   [ok] 16 gleiche Paare: c in 16Z; Niveau k in 2Z (für alle ganzen a, b)
+   axial (+1, +1): c = 8, k = 1; direkt J (+1, -1): c = 0, k = 0
+   [ok] axial (+1, +1): c = 8, k = 1 (E8 bzw. so(16)_1); direkt (+1, -1): c = 0, k = 0
+   Anker: Z13 verdrillter Defekt c = 0.4961 je Paar (16 Paare: 7.94); Z24 Ecken-Index {'G (psi chi + Wilson)': 2, "U mit y' = 0,6": 0, 'anomal (+1,+1,-1)': 0}
+   [ok] Anker Z13: c je Paar = 1/2 = (1/4)(q_+ + q_-) mit axialen Ladungen
+   [ok] Anker Z24/Z22: G (axial, gravitativ anomal) Index 2 je Umdrehung, U (vektorartig wie J) Index 0
+   [Befund: ja] Ladung-4-Kondensat der J-Ladung schützt E8 nicht (c in 16Z, k gerade)
+   [Befund: ja] Nur die axiale, gravitativ anomale Ladung gibt c = 8 und k = 1
+
+Teil 2: Gegenmodell (Quartettordnung ohne Nahtmoden)
+   2 Komponenten: Z4 True, |<P>| = 0.0e+00, |<P^2>| = 0.9459, Lücke 1.000, Grundzustand 1-fach
+   3 Komponenten: Z4 True, |<P>| = 0.0e+00, |<P^2>| = 1.2209, Lücke 1.000, Grundzustand 1-fach
+   4 Komponenten: Z4 True, |<P>| = 0.0e+00, |<P^2>| = 1.3166, Lücke 1.000, Grundzustand 1-fach
+   [ok] Quartettzustand: Z4-invariant, <P> = 0, <P^2> != 0, Lücke 1, eindeutiger Grundzustand
+   16 Komponenten analytisch: ||(P^+)^2 |0>||^2 = 4 C(16,2) = 480, also <P^2> = r e^(i theta) 480 / (1 + r^2 480) != 0
+   [ok] 16 Komponenten: <P^2> != 0 für r != 0 (Norm 480)
+   Ein Produkt solcher lokaler Zustände mit räumlich windender Phase und r = 0 am Kern bleibt überall gelückt und ist
+   ein Produktzustand: Seine chirale Zentralladung ist 0. Ordnungsparameter und Komponentenzahl schützen den Index nicht;
+   ihn trägt erst die gravitativ anomale Antwort (Teil 1).
+   [Befund: ja] Quartettordnung mit 16 Komponenten allein erzwingt keine Nahtmoden
+
+Teil 3: bosonische invertierbare chirale Phasen
+   (ST)^3 = e^(-2 pi i c/8) = 1 für c in [8, 16, 24]
+   [ok] holomorphe bosonische Theorie: c in 8Z (kleinstes positives c = 8)
+   [ok] E8-Cartanmatrix: gerade, positiv definit, det = 1 (gerades unimodulares Gitter in Dimension 8)
+   Fermionisch ist der Generator c = 1/2 (ein Majorana-Weyl). Unter A* summiert die Naht über Spinstrukturen (GSO, Z5),
+   ist also bosonisch; dann ist E8 (c = 8) der Generator, und eine unimodulare Indexabbildung Z -> Z gibt |m| = 1.
+   [Befund: ja] 'Genau ein E8-Block' ist äquivalent zur Unimodularität der Abbildung primitiver Index -> bosonische Klasse
+
+Teil 4: axiales Ladung-4-Kondensat und der relevante Operator Re Phi^2
+   Re Phi^2 hat axiale Ladung 4 (Phi: 2); als Potential in arg(Phi^2): 1 Minimum je 2 pi
+   [ok] Re Phi^2 ist unter axialem Z4 invariant, pinnt aber arg(Phi^2): N_DW = 1 am primitiven Phi^2-Wirbel
+   [Befund: ja] Auch der axiale Ladung-4-Weg trägt die Wand, solange Re Phi^2 nicht abgestimmt (Z24) oder verboten (Z26) ist
+
+Teil 5: Spektralwirkung und Halbgruppenregler
+   f_lambda: f_0 = 1, f_2 = lambda + 1
+   [ok] f_0 = 1 und f_2 = 1 + lambda: Eich- und Gravitationsnormierung unabhängig
+   [ok] e^{-kappa s} erfüllt f(s + t) = f(s) f(t); Cauchy mit Stetigkeit, Positivität und f(0) = 1 lässt nur diese Familie
+   Halbgruppe: f_2 / f_0 = 1/kappa, kappa geht in Lambda auf; frei bleibt eine Skala.
+   Skalar: S/A = 1/(48*pi*epsilon**2), 1/(4 G_ind) = 1/(48*pi*epsilon**2)
+   [ok] Wärmeleitungsregler: S_ent = A/(4 G_ind) für den minimal gekoppelten Skalar exakt
+   Z27-Kalibrierung: Vektoren nur mit Kabats Kontaktterm R = 1, ohne ihn R = -1/2. Im Halbgruppenregler bleiben also
+   eine Skala (Lambda bzw. a/l_P) und der Randterm der Eichfelder; die Kopplungsregel des Gitters entfällt.
+   [Befund: ja] Ein Halbgruppenregler reduziert die Z27-Mehrdeutigkeit auf Lambda und den Eich-Randterm
+
+Teil 6: Ein Prinzip für Entscheidung 1 und 2? Trivialer Kommutant
+   Shift der Vielfachheit m (abgeschnitten, mit Adjungierter): Kommutantendimension {1: np.int64(1), 2: np.int64(4), 3: np.int64(9)}
+   [ok] Kommutant des Shifts der Vielfachheit m ist M_m (Dimension m^2): trivial genau für m = 1 (eine Naht)
+   Clifford Cl(2n) auf dem Spinor (2^n): Kommutantendimension {2: np.int64(1), 4: np.int64(1), 6: np.int64(1)}; für 16 Majorana gilt dasselbe (Spinor 2^8)
+   [ok] 2n Majorana-Komponenten wirken irreduzibel (Kommutant C): die 16 Eltern sind keine Vielfachheit
+   N E8-Blöcke relativ zu einer E8-Stromalgebra: (c_Rest, ||L^Rest_-2|0>||^2) = {1: (0, Fraction(0, 1)), 2: (8, Fraction(4, 1)), 3: (16, Fraction(8, 1))}
+   [ok] Kommutant (Coset) einer E8-Stromalgebra trivial genau für N = 1 (c_Rest = 0)
+   [Befund: ja] Entscheidung 1 (eine Naht) und 2 (ein E8-Block) sind beide trivialer Kommutant des Ursprungsprozesses
+   Grenze: Das ist ein Prinzip (Irreduzibilität, kein verborgener Sektor), keine Herleitung; es ersetzt zwei Lesarten
+   durch eine Prämisse. Welche Algebra der Ursprungsprozess ist, bleibt zu zeigen.
+
+Urteil
+   Die Anomalienbilanz der Analyse stimmt: Bei direkter Fortsetzung von J (q_+ = 1 + 4a, q_- = -1 + 4b) trägt der primitive Wirbel eines Ladung-4-Kondensats c = 16(a + b), nie 8, und das Spin(10)-Niveau ist gerade (6561 Kombinationen, 110 mit c = 8, keine mit Niveau 1). Nur die axiale, gravitativ anomale Ladung (+1, +1) gibt c = 8 und Niveau 1; das ist genau H6s G (Z13: c = 1/2 je Paar; Z24: Index 2 gegen 0 für U). Das Quartett-Gegenmodell ist richtig: Z4-symmetrisch, <P> = 0, <P^2> != 0, Lücke 1, also ohne Nahtmoden; den Index trägt die anomale Antwort, nicht der Ordnungsparameter. Bosonische holomorphe Theorien haben c in 8Z, E8 ist der Generator; unter A* (GSO) ist die Naht bosonisch, und 'genau ein Block' ist äquivalent zur Unimodularität der Indexabbildung, die selbst noch herzuleiten ist. Neu: Auch der axiale Ladung-4-Weg trägt die Wand, denn der relevante Operator Re Phi^2 aus Z24 hat axiale Ladung 4 und pinnt arg(Phi^2) (N_DW = 1); Entscheidung 4 bleibt der Engpass jedes Weges. Ein Halbgruppenregler e^{-kappa s} legt die Reglerfunktion fest und macht S_ent = A/(4 G_ind) für minimal gekoppelte Felder exakt; offen bleiben eine Skala und der Eich-Randterm. Entscheidung 1 und 2 sind beide ein trivialer Kommutant: Ein Shift der Vielfachheit m hat den Kommutanten M_m, N E8-Blöcke haben relativ zu einer Stromalgebra den Coset c = 8(N - 1); die 16 Eltern wirken irreduzibel (Clifford) und sind keine Vielfachheit. Irreduzibilität des Ursprungsprozesses wäre damit eine Prämisse für beide Entscheidungen.
+
+Alle Prüfungen bestanden: True (16/16)
