@@ -1,4 +1,4 @@
-# TFPT aus der Vogelperspektive (Stand H6h37, 24. November 2026)
+# TFPT aus der Vogelperspektive (Stand H6h38, 24. November 2026)
 
 ## Neueste Zusammenführung (H6h35, `z72`–`z74`, `PRUEFUNG-BESTAND-H6h35.md`)
 
@@ -30,6 +30,9 @@ Offen, genau benannt:
 - **(c) Vakuum gegen thermisch.** Die Zeit lebt im Vakuumsektor, das Original ist thermisch. Wie beide zusammenhängen, ist
   offen; nicht über „modular ⇒ BW“ (GRAV.NONCIRCULAR.01).
   - Auch die Sphäre ist exakt eine Vakuumgröße (z76, z77).
+  - **Seit H6h38 strukturell beantwortet (z78):** Das Vakuum der Araki-Woods-Oszillatoren aus Strom und Tomita-Partner ist
+    die Purifikation des thermischen Originals. Dort leben die vertauschenden Translationen (P² = 0).
+  - Die Lagen X sind aus der gemischten Korrelation exakt auslesbar. Das ist ein konkreter Kandidat für I_pos.
   - Eine thermische Fortsetzung des Kanals ist vorgeschlagen, aber nicht als zustandserhaltend belegt (z77).
 - **(d) Nichtlineare volle Gravitation und Flächennormierung.**
 - **(e) Mehrpunktantworten und Spin 2.** Der Agentenlauf brach am Nutzungslimit ab.

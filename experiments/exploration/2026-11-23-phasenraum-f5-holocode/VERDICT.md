@@ -1,6 +1,36 @@
 # Urteil
 
-## Aktueller Stand: H6h37 — Fünfte externe Analyse: der thermische Relativkanal, teilweise bestätigt (`z77`)
+## Aktueller Stand: H6h38 — Vakuum gegen thermisch beantwortet, Orte aus Korrelationen (`z78`)
+
+**Bilanz:** unverändert 13 P und 7 L von 20. K6 und K12 sind präzisiert.
+
+**Anlass:** die sechste externe Analyse „Eine neue Brücke zur vierdimensionalen Physik“ und der Auftrag „alles“. Der
+Mehrpunkt/Spin-2-Agent (z75) ist wieder gestartet.
+
+**Prüfung (z78, 5 Prüfungen, exakt symbolisch und numerisch):**
+- **Araki-Woods.** Aus den nativen Stromoszillatoren a_i der beiden Quarter und ihren Tomita-Partnern b_i sind
+  d_i = (a_i − q b_i⁺)/√(1−q²) und e_i = (b_i − q a_i⁺)/√(1−q²) kanonisch. Sie vernichten die Purifikation des thermischen
+  Originals.
+- **Translationen.** c_i = d_i + e_i⁺ = κ(a_i + b_i⁺) mit κ² = (1−q)/(1+q) vertauscht mit allen c_j⁺. Deshalb vertauschen
+  die P_μ = ½ c⁺σ_μ c, es gilt P₀ ≥ 0 und P² = 0.
+- **Orte.** Für |X⟩ = exp(iP(X))Ω gilt exakt (M_X − M_X⁺)/i = X mit (M_X)_ij = ⟨a_i b_j⟩; der Vorfaktor
+  κ²(1 + 2n̄ + 2⟨ab⟩) ist für jedes q genau 1. Die linke Algebra allein sieht nur X², erst die Beziehung zum Partner trägt
+  die Lage.
+
+**Folgen:**
+- **(c) Vakuum gegen thermisch ist strukturell beantwortet.** Die positiven Translationen und ihr Vakuum leben in der
+  Araki-Woods-Darstellung, deren Vakuum die Purifikation des Originals ist. Die linke thermische Algebra allein hat keine
+  halbseitigen Inklusionen (z72); das ist kein Widerspruch.
+- **I_pos hat einen konkreten Kandidaten:** Die Lagen sind die relativen Zustände exp(iP(X))Ω, ausgelesen über die gemischte
+  Korrelation.
+
+**Offen:**
+- dass der Quarterindex der Oszillatoren das Dublett der Naht ist und die Lorentzwirkung darauf nativ ist (Lesart);
+- dass diese Zustandsvariationen die physischen Deformationen von P1 sind;
+- die Mehrpunktantworten: Die Analyse meldet für die geometrischen Paaroperatoren andere vierte Momente als für den Strom;
+  nicht nachgerechnet.
+
+## Davor: H6h37 — Fünfte externe Analyse: der thermische Relativkanal, teilweise bestätigt (`z77`)
 
 **Bilanz:** unverändert 13 P und 7 L von 20.
 

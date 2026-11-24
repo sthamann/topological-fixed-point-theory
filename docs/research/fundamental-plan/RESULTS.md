@@ -7929,3 +7929,14 @@ Im H6-Ordner gerechnet, alles nachgeprüft und reproduziert:
 - **Nicht reproduziert:** die thermischen Aufspaltungswerte.
 
 **Prüfstand:** 13 P, 7 L. Atlas-Revision 5816c59bf737679a6a5b552f. Ledger unverändert, nichts befördert.
+
+## H6H38-20261124 · Vakuum gegen thermisch beantwortet, Orte aus Korrelationen (bedingt)
+
+`z78_araki_woods_orte.py` (5 von 5) prüft die sechste externe Analyse.
+- **Araki-Woods.** Die Oszillatoren aus Strom und Tomita-Partner sind kanonisch, ihr Vakuum ist die Purifikation des
+  thermischen Originals.
+- **Translationen.** c = κ(a + b⁺) gibt vertauschende P_μ mit P² = 0 und P₀ ≥ 0.
+- **Orte.** Die Lagen X sind aus der gemischten Korrelation exakt auslesbar, (M_X − M_X⁺)/i = X, unabhängig von q.
+- **Offen:** Ob der Quarterindex das Dublett der Naht trägt.
+
+**Prüfstand:** 13 P, 7 L. Atlas-Revision 4ae66169db99e4910c2b865b. Ledger unverändert, nichts befördert.

@@ -1266,6 +1266,20 @@ if "H6h2" in H and z1p.exists() and z2p.exists():
                                                                                                                                                              "durch Zustandserhaltung erzwungen, Petz-Kanal "
                                                                                                                                                              "gibt Sphären-Casimir l(l+1) (Z76)")
                                                                                                                                         facts["F55_two_path_channel"] = T22["urteil"]
+                                                                                                                                        z78p = Path(__file__).with_name("z78_ergebnis.json")
+                                                                                                                                        if z78p.exists():
+                                                                                                                                            T23 = json.loads(z78p.read_text())
+                                                                                                                                            ok23 = all(T23["checks"].values())
+                                                                                                                                            H["H6h38"] = dict(H["H6h36"])
+                                                                                                                                            H["H6h38"]["K6"] = (H["H6h36"]["K6"][0] if ok23 else F,
+                                                                                                                                                                H["H6h36"]["K6"][1] + "; positive Translationen in der "
+                                                                                                                                                                "Araki-Woods-Darstellung, deren Vakuum die "
+                                                                                                                                                                "Purifikation des Originals ist (Z78)")
+                                                                                                                                            H["H6h38"]["K12"] = (LES if ok23 else F,
+                                                                                                                                                                 H["H6h36"]["K12"][1] + "; I_pos-Kandidat: Lagen = "
+                                                                                                                                                                 "relative Zustände exp(iP(X)) Omega, X exakt aus "
+                                                                                                                                                                 "der gemischten Korrelation (Z78)")
+                                                                                                                                            facts["F56_araki_woods"] = T23["urteil"]
 
 order = [f"K{i}" for i in range(1, 21)]
 print("Gesamttabelle (P = hergeleitet, L = unter benannter Lesart, F = FAIL, O = OFFEN, E = EINGABE)\n")
