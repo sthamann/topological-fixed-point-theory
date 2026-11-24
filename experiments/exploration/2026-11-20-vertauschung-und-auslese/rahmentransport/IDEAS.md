@@ -1,0 +1,12 @@
+# Geprüfte Fortsetzung
+
+| Ansatz und erste zusätzliche Wahl | Messgröße und Basislinie | Urteil |
+|---|---|---|
+| Der Messrahmen wird entlang des gesamten Wegs mitgeführt. | Komposition im mitbewegten Rahmen stimmt exakt mit der ursprünglichen Kanalantwort überein. Festhalten des ursprünglichen Dreierlesers am Zwischenpunkt ergibt im Mittel 7/18 beim zweiten Markenkontakt und 2/5 beim Halbkreis. | KANDIDAT, Stufe 1. Die ursprüngliche Quelle muss den Rahmen tatsächlich mitführen. |
+| Der Rahmen hängt nur von der aktuellen Marke ab. | Keine der 15 spurlosen Dimensionen ist invariant unter allen 15 Dreieckswirkungen. Auch unter ihren geraden Produkten ist der invariante Rang null. | VERWORFEN für die vollständige ursprüngliche Achsenmessung. |
+| Ein positives ganzes Dreieck soll Windung eins haben. | In der Klasse aller nichtnegativen momentanen Kongruenzgeneratoren mit fester Phasenreferenz ist die kleinste ungerade Windung drei. Die gesamte Klasse, nicht nur ein Test einzelner Generatoren, wird durch die Längenschranke erfasst. | VERWORFEN für Windung eins. |
+| Großkreisumlauf über zwei Marken. | Die Längenschranke ist scharf. Ein Halbumlauf des reellen Normalenvektors erreicht Windung eins. Der Rangzweiprojektor realisiert den symmetrischen Generator. Eine ausdrücklich an den Vergleich angepasste Achse realisiert zusätzlich die bekannte signierte Vierteldrehung am Endpunkt. | KANDIDAT, Stufe 1. Identität des lokalen Pfaffschen Stroms mit dem ursprünglichen Randfunktional offen. |
+| Kohärent kontrollierte Überlagerung zweier Teilumläufe. | Alle 15 Paare haben bei gleicher Endphase Portwerte 3/5 und 2/5. Bei Dekohärenz in der Spur 1/2. Nur das tatsächlich gewichtete Protokoll gibt die Lücke 1/24, gleich häufige Paare geben Lücke null. | KANDIDAT, Stufe 1. Die Naht muss kohärente Alternativen mit gleicher Referenz bereitstellen. |
+| Interne Phasenreferenz bei festem Partikelgrad zwei. | Für alle sechs Ausflüge lässt sich die relative Windung lesen, wenn ihre passive Kramersfläche bekannt ist. Ein und derselbe reine Referenzzustand hat höchstens 1/2 Überlappungswahrscheinlichkeit im schlechtesten Zweig. Der normierte Ausgangsbivektor erreicht diese Grenze. | KANDIDAT, Stufe 1 für die registrierte Referenz. Eine gemeinsame passive Referenz im selben Register ist VERWORFEN. |
+
+[Beweise und physische Reichweite](VERDICT.md) · [Tatsächlich ausgeführter Code](AUSGABE.md)
