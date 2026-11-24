@@ -8,8 +8,10 @@ danach selbst nachgerechnet; Text und JSON sind identisch bis auf Laufzeitangabe
 **In einem Satz:**
 - Der RG-Test trifft H6: „an der Gitterskala induziert und gleich“ fällt gegen die Daten; es bleibt
   nur eine nackte SO(10) an der Gitterskala, und dann entscheidet Hyper-K.
-- Lüschers Weylfelder sind reflexionspositiv, auch bei gedrehter Phase und mit exakter J. Das gibt
-  Entscheidung 4 einen zweiten Weg ohne Abstimmung, aber mit nichtlokalem Transfer.
+- Lüschers Weylfelder sind auf einer eingeschränkten Algebra bzw. unter einer nichtlokalen Reflexion
+  positiv, dann auch bei gedrehter Phase und mit exakter J; auf der vollen lokalen Feldalgebra nicht
+  (Einordnung vom 24.11. nach Lu–Shao). Das gibt Entscheidung 4 einen zweiten Weg ohne Abstimmung,
+  aber nichtlokal.
 - Sakharov gegen Jacobson entscheidet nicht; die Gitter-Metrikkopplung ist die fehlende Größe.
 
 **1. RG-Test (`z25`, 21 Prüfungen).** Frage: Passen die gemessenen Kopplungen zu H6s Aussage aus
@@ -58,6 +60,12 @@ gegen Wilson (r = 1 positiv, r = 2 nicht) und den vollen Overlap (positiv).
 - **Feinheit.** Θ bildet Lüschers Raum (P̂₋, P₊) nicht auf sich ab, die Abweichung ist ‖D‖/2. Exakt
   gilt S_W = P₊/2·δ + P₋D⁻¹P₊: Die ganze Abweichung ist ein Kontaktterm, und die Ankeralgebra
   {ψ̄P₊, P₋(1 − D/2)ψ} ist abgeschlossen und positiv.
+- **Einordnung vom 24.11.** Lu und Shao (arXiv:2611.20084, 2026) zeigen, dass freie Overlap-Weylfelder
+  bei endlichem Gitterabstand unter keiner Reflexion positiv sind, die die Lokalität respektiert.
+  z26 widerspricht dem nicht, sondern reproduziert es: Die Kontaktasymmetrie 1/2 der vollen
+  Komponenten ist diese Verletzung, und die positiven Fälle benutzen die Ankeralgebra bzw. Θ_W, das in
+  ψ-Variablen nichtlokal ist. „Positiv“ heißt in z26 also: positiv auf einer eingeschränkten
+  Observablenalgebra, nicht lokale Hamiltondynamik auf der vollen Algebra.
 - **Gedrehte Phase.** Die Lüscher-Paarung mit Phase θ ist genau die GW-chirale Drehung. Die
   Reflexion auf ψ (Θ_D, wie z19) verletzt dort die Positivität, linear in am (z19-Wert in 4D
   reproduziert). Die Reflexion auf χ = (1 − D/2)ψ (Θ_W) ist für jedes θ, m und L positiv, weil die

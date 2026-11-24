@@ -168,8 +168,10 @@ hergeleitet, 6 unter benannter Lesart, keines gescheitert, offen oder gesetzt.
     (Nielsen–Ninomiya). Geschützte Naht, lokale positive Transfermatrix und flache Phase ohne
     Abstimmung schließen sich daher aus. Der lokale Weg sind zwei abgestimmte Gegenterme
     (Re Φ², Re Φ⁴) wie die kritische Masse bei Wilson-QCD; U(1)_J ist flach, schützt den Index
-    aber nicht (Z22, Z24). Der nichtlokale Weg ist positiv (Z26): Lüschers projizierte Weylfelder
-    sind reflexionspositiv, bei gedrehter Phase unter der Reflexion auf χ = (1 − D/2)ψ; die Phase
+    aber nicht (Z22, Z24). Der nichtlokale Weg ist eingeschränkt positiv (Z26): Lüschers projizierte
+    Weylfelder sind auf der Ankeralgebra reflexionspositiv, bei gedrehter Phase unter der Reflexion
+    auf χ = (1 − D/2)ψ, auf der vollen lokalen Feldalgebra aber nicht (wie Lu–Shao,
+    arXiv:2611.20084); die Phase
     ist flach, der Index gleich der Windung, und H6s J ist in diesen Variablen exakt. Preis: Die
     Wirkung in χ ist potenzartig nichtlokal und der Transfer hat ein Kontinuum, unter der strengen
     Gitterlesart (lokale hermitesche H) also unzulässig. [N/E, frei]
@@ -216,7 +218,8 @@ hergeleitet, 6 unter benannter Lesart, keines gescheitert, offen oder gesetzt.
     Form ein relevanter Operator (Z24).
   - Ein gemeinsames Multiplett für Naht und Familien (Z18) liefert keine chiralen Familien (Z23).
   - Wandfrei ist nicht nur „nichtlokal oder positivitätsverletzend“ (Z19): Lüschers Weylfelder
-    sind wandfrei und positiv, wenn man auf χ = (1 − D/2)ψ reflektiert (Z26).
+    sind wandfrei und auf einer eingeschränkten Algebra positiv, wenn man auf χ = (1 − D/2)ψ
+    reflektiert (Z26); lokale Reflexionspositivität auf der vollen Algebra haben sie nicht (Lu–Shao).
   - Die ℤ₁₆-Bedingung erzwingt die 16 nur in der partnerfreien Fassung.
   - Die Untergrenze a/ℓ_P ≥ 3,3 gilt nur für die gerechneten Regulatoren.
   - sin²θ_W = 3/8 ist bei H6 nicht induziert mit den Daten verträglich, sondern nur von einer nackten

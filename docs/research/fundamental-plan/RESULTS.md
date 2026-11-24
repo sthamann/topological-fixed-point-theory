@@ -7758,3 +7758,10 @@ Alle z25-Referenzzahlen reproduziert; Vorbefund fable-runde3 §11 (11. 9.) zähl
 Ledgertexte und abhängige Zeilen (PS.UVBRANCH.01, QFT4D.FORK.01, PRED.LIVE.01 mit `v283`, PS.RGTEST.01, PS.KAPPA.01,
 PS.E8BRANCH.01) im Bericht. **Nicht geändert:** Ledger (am 24. 11. vom Nutzer nicht freigegeben), `v266`, `v283`.
 Atlasbefund `finding:v1036-ps-proton-real-45-recount-v266-survivor-excluded-20261124`. Nichts befördert.
+
+**Nachtrag 24. 11. (Commit 132301f7e):** Nach ausdrücklicher Freigabe durch den Nutzer sind PS.THRESHOLD.02 und
+PS.PROTON.02 im Ledger korrigiert (Texte aus Abschnitt 5 des Berichts). `v1036` liegt jetzt unter
+`verification/v1036_ps_proton_real45.py` und ist registriert (run_all, script_registry, Changelog, Zitat in
+`tfpt_research_contracts`); `v266` ist als abgelöst markiert. Die Zeile „Nicht geändert: Ledger“ oben gilt damit
+nicht mehr. Weiter unverändert: die abhängigen Zeilen PS.UVBRANCH.01, QFT4D.FORK.01, PRED.LIVE.01 (mit `v283`),
+PS.RGTEST.01, PS.KAPPA.01, PS.E8BRANCH.01. Atlas nach Offline-Refresh ledgeraktuell (Revision 11716332).
