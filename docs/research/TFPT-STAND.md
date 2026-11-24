@@ -127,8 +127,8 @@ Ursprung sollte beides zugleich liefern.
 
 ### Kandidat H6: Ursprung von P1 aus einer hintergrundfreien Naht (Exploration 23.11.)
 
-Quelle: `experiments/exploration/2026-11-23-phasenraum-f5-holocode/VERDICT.md` (Stand H6h17),
-Skripte `n1`, `v1`, `y1`, `z1`–`z33`, Lean-Vertrag `experiments/theory-contracts/h6-exakte-teile-20261123/`; Atlasproblem `problem:c3-p1-p2-shared-origin-reconciliation`,
+Quelle: `experiments/exploration/2026-11-23-phasenraum-f5-holocode/VERDICT.md` (Stand H6h18),
+Skripte `n1`, `v1`, `y1`, `z1`–`z34`, Lean-Vertrag `experiments/theory-contracts/h6-exakte-teile-20261123/`; Atlasproblem `problem:c3-p1-p2-shared-origin-reconciliation`,
 Befunde mit Präfix `h6`. Nichts davon ist im Ledger befördert. Prüfstand mit 20 Kriterien: 14
 hergeleitet, 6 unter benannter Lesart, keines gescheitert, offen oder gesetzt.
 
@@ -147,8 +147,11 @@ hergeleitet, 6 unter benannter Lesart, keines gescheitert, offen oder gesetzt.
     Zeitneutralität und KMS-Zustand bei β = L folgen, ebenso Kragenbreite L/2 und μ₄ als
     Stabilisator. [E]
   - Die gelifte Vierteldrehung gibt c₃ = 1/(8π) je Spinorsektor exakt, ohne Fixpunktkorrektur. [E]
-  - Die vier Marken bei μ₄ geben den Fünferträger H⁰(O(D)) mit Halbdrehung 3+2 und den chiralen
-    Familienindex H⁰(K(D)) = 3 (ker D₋ = 0) mit Charakteren {−1, i, −i}. [E]
+  - Die vier Marken bei μ₄ geben den Fünferträger H⁰(O(D)) und den chiralen Familienindex
+    H⁰(K(D)) = 3 (ker D₋ = 0) mit Charakteren {−1, i, −i}. [E] Der physische 3+2-Schnitt ist der
+    V₄-Schnitt der Marken (GESAMT2, Z34): schwach = V₄-invariant {1 − z⁴, z²}, Farbe = Familien als
+    V₄-Darstellung und = Λ²F als D₄-Darstellung. Halbdrehung (Z10) und T-Kern (Z16) geben dieselben
+    Dimensionen, aber nicht den äquivarianten Teilraum (4 von 5 Hyperladungen verschieden). [E]
   - Λ²₊ = Λ²(Familien), also d = 4; Lipschitzgitter ℤ⁴ mit gleichwertigen Achsen. [E/C]
   - Lorentz bei Dimension ≤ 4 ohne Feinabstimmung; Reflexionspositivität über T². [E, perturbativ]
   - Yang–Mills aus Fermionschleifen über die lokale 3+2-Verbindung. [E im Modell] Die Lesart, die
@@ -184,8 +187,8 @@ hergeleitet, 6 unter benannter Lesart, keines gescheitert, offen oder gesetzt.
     unter einer Hopf-U(1) auf S³ erzwingt genau eine Naht; offen ist die Ladungswahl. [E/N]
   - Geometrischer Ursprung der Marken: Eine verzweigte Doppelüberlagerung w² = s(z) der Sphäre mit
     Torus hat genau 4 Verzweigungspunkte; mit Vierteldrehung ist s = a z⁴ + e, also j = 1728,
-    τ = i. Die äquivariante Abbildung T: H⁰(O(D)) → H⁰(K(D)) macht die Familiencharaktere zum
-    nichttrivialen Teil des Fünferträgers. [E]
+    τ = i. Die μ₄-äquivariante Abbildung T: H⁰(O(D)) → H⁰(K(D)) macht die Familiencharaktere zum
+    nichttrivialen Teil des Fünferträgers [E]; ihr Kern {1, z⁴} ist aber nicht das V₄-Dublett (Z34).
   - Naht-16 und Generations-16 lassen sich nicht vereinigen (Z23): Die Naht-16 liegt in keinem
     E₈-Multiplett, und ein reelles Multiplett mit Paarstruktur J gibt Familien = 3 × konj(Naht),
     also vektorartig. Konsistent ist nur die direkte Summe: Familien 3 × 16 (leicht), Eltern
@@ -223,6 +226,12 @@ hergeleitet, 6 unter benannter Lesart, keines gescheitert, offen oder gesetzt.
     Index → Niveau → Anomalie → E₈-Netz ist damit exakt, unter den H6-Eingaben 16 und GSO. Der
     globale Shift und ein diskreter Gibbs-Zustand tragen keine Raumzeittranslationen (keine echte
     halbseitige modulare Inklusion). [E]
+  - Originalbestand (Z34): Die (ℤ₂)³-Überlagerung trägt r_* r^* O(1) = O(1) ⊕ 6O ⊕ O(−1), mit den
+    Deckhälften 5 + 3 (schwach, Farbe | Familien), E₋ ≅ E₊^∨ und O(−1) als Gegenpart ohne Nullmode;
+    relative Selbstdualität zwingt L = r^*O(1). Im Randkern ist ε_car = ι_C|car = +1, wenn der
+    Träger in Ran(P_prim) liegt (Typfehler; Träger braucht eine eigene Auslesung, etwa 2P_{V₄} − 1).
+    Die Stresssättigung (12.11.) macht „ein E₈-Block“ zur Schranke c_W < 17/2. (c₁(L₂), c₁(L₃)) =
+    (1, 0) gibt w₂ = 1, also keinen Spin(10)-Lift; E₈ enthält (Spin(10) × SU(4))/ℤ₄. [E/N]
   - Instantonen (Z33): Unter Spin(10) hat ein Einheitsinstanton 4 Eltern- und 12
     Familiennullmoden; mit gesättigten Familiennullmoden entsteht Re[e^{iθ}Φ² C_fam], die Wand ist
     also auch im Kontinuum möglich, bei nackter SO(10) aber ~10⁻¹⁶⁴ unterdrückt. [N]
@@ -254,6 +263,8 @@ hergeleitet, 6 unter benannter Lesart, keines gescheitert, offen oder gesetzt.
   - Craigs eichinvariantes Maß (arXiv:2610.09093) deckt den SU(5)-Zweig von TFPT ab, Spin(10) mit
     der 16 aber nicht; eine Übertragung über die Reduktion auf SU(2) benutzt Craig nicht (Z28).
   - Die Wardidentität allein macht a/ℓ_P nicht zur Vorhersage (Z29).
+  - Der 3+2-Schnitt der Halbdrehung (Z10) und der T-Kern (Z16) sind nicht der äquivariante
+    V₄-Schnitt des Originals (Z34).
   - Die geometrische S₄-Isotropie aus Z29/Z30 gilt nicht für ein festes Markenquadrat (nur D₄), und der
     Halbgruppenregler ist kein physischer Propagatorschnitt (Z32, Z33).
   - Ein Ladung-4-Kondensat schützt den Nahtindex nicht automatisch; es braucht die anomale axiale
@@ -291,6 +302,9 @@ hergeleitet, 6 unter benannter Lesart, keines gescheitert, offen oder gesetzt.
   - Ein gemeinsamer Elternoperator.
   - Ob H6s Dynamik das Kondensat s^⊗4 und eine unabhängige Spin(10)-Elternverbindung erzeugt, und ob
     ein Ladung-4-Kondensat den Nahtindex c = 8 erhält (das hängt mit Entscheidung 2 zusammen).
+  - Ein Operator ∂̄ + ∂̄† auf O(1) ⊕ 6O ⊕ O(−1), geprüft am originalen Randoperator (Calderón-
+    Hauptsymbol, relativer Index, Nullmoden mit Ladungen, c_W < 17/2, relative Determinante), und die
+    Entscheidung, wie der Spin(10)-Lift (w₂ = 1) aufgelöst wird.
   - Vier positive, kommutierende Translationen aus halbseitigen modularen Inklusionen lokaler
     Typ-III-Algebren (das E₈-Netz liefert eine lichtartige) und der 't-Hooft-Vertex mit den
     TFPT-Yukawas (Sättigung der Familiennullmoden, Bezug zu θ).

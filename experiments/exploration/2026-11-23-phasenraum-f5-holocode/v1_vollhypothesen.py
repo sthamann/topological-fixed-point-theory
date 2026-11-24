@@ -858,6 +858,21 @@ if "H6h2" in H and z1p.exists() and z2p.exists():
                                                                                  "Nullmoden, Z33), bei nackter SO(10) ~1e-164; Entscheidung 4 bleibt "
                                                                                  "der Engpass")
                                                             facts["F36_hardy_net_regulator"] = {n: T5[n]["urteil"] for n in T5}
+                                                            z34p = Path(__file__).with_name("z34_ergebnis.json")
+                                                            if z34p.exists():
+                                                                Z34 = json.loads(z34p.read_text())
+                                                                ok34 = all(Z34["checks"].values())
+                                                                H["H6h18"] = dict(H["H6h17"])
+                                                                H["H6h18"]["K8"] = (P if ok34 else F,
+                                                                                    "[GESAMT2, Z34] P2 über die Kleinsche Gruppe V4 der Marken: "
+                                                                                    "schwach = V4-invariant {1 - z^4, z^2}, Farbe = Familien als "
+                                                                                    "V4-Darstellung und = Lambda^2 F als D4-Darstellung; Halbdrehung (Z10) "
+                                                                                    "und T-Kern (Z16) geben dieselben Dimensionen, nicht den Teilraum")
+                                                                H["H6h18"]["K11"] = (P if ok34 and ok5[32] else F,
+                                                                                     "[A] lokales E8-Netz aus Hardy-Kozyklus und D8 + s (Z32); D5 + A3 "
+                                                                                     "mit Kleber 5/4 + 3/4 = 2; Stresssättigung: c_W < 17/2 erzwingt V_E8 "
+                                                                                     "(Satz vom 12.11.)")
+                                                                facts["F37_source_reconciliation"] = Z34["urteil"]
 
 order = [f"K{i}" for i in range(1, 21)]
 print("Gesamttabelle (P = hergeleitet, L = unter benannter Lesart, F = FAIL, O = OFFEN, E = EINGABE)\n")

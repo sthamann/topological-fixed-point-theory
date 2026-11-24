@@ -629,7 +629,8 @@
   "F36_hardy_net_regulator": {
    "32": "Die Rechnungen der Analyse stimmen. Der graduierte Dirac-Operator aus S hat genau eine ungepaarte Nullmode; A = S f(N) behält Index -1 für jedes alpha, die spektrale Dimension ist 1/alpha (2; 4/3; 1 auf 1 %), [A, S] bleibt nur für alpha <= 1 beschränkt: Irreduzibilität legt die Topologie fest, nicht die Metrik. Der Hardy-Kozyklus Tr(P U^m (1-P) U^-m P) = m ist der Schwinger-Term, und sum (j + (1-m)/2)^2 = (m^3 - m)/12 gibt c = 1 je komplexes Fermion (exakt bis m = 48), also c = 8 für 16 reelle und so(16)_1; mit s = (1/2)^8 ist D8 + s gerade, unimodular mit 240 Wurzeln, also E8, und dafür gibt es ein lokales konformes Netz ohne Gitter. Die Toeplitz-Algebra ist irreduzibel und hat keinen separierenden Vektor; ein Gibbs-Zustand mit Punktspektrum hat eine fastperiodische modulare Gruppe, also keine echte halbseitige Inklusion: Raumzeittranslationen brauchen lokale Typ-III-Algebren. Korrektur: Ein festes Markenquadrat hat im Oktaeder nur D4 (zwei invariante Formen); die geometrische S4-Isotropie aus Z29/Z30 verlangt die drei gleichwertigen Rahmen oder eine interne S4.",
    "33": "Ein exponentiell regulierter Propagator verletzt die Reflexionspositivität: Die 2x2-Hankel-Matrizen C(t_i + t_j) werden für eps > 0 indefinit (für eps = 0 positiv), und x C(x) fällt, eine positive Källén-Lehmann-Darstellung verlangt das Gegenteil. Der Wärmeleitungsregler aus Z31 ist daher nur als Eigenzeitregularisierung der effektiven Wirkung zulässig, nicht als physischer Schnitt. Unter einer Wurzel-SU(2) von Spin(10) hat ein Einheitsinstanton 4 Eltern- und 12 Familiennullmoden; die Eltern sättigt Phi^2, also kann ein periodisches Potential Re[e^(i theta) Phi^2 C_fam] entstehen, sobald die Familiennullmoden gesättigt sind: Die Wand ist auch ohne Gitter möglich, die Nahtphase axionartig. Bei nackter SO(10) (alpha^-1 = 60, Z25) ist der Beitrag ~1e-164, gegen den Gitteroperator aus Z24 vernachlässigbar. Die axiale Ladung kann mit einheitlich geladenen Familien nicht zugleich Spin(10)- und gravitativ anomaliefrei sein (sum r = -1 gegen -2); mit neutralen Familien bleibt die Spin(10)-Anomalie 2 und die gravitative 32 (c = 8). Nichtminimale Kopplung gibt 1/(4 G_ind) = (1 - 6 xi)/(48 pi eps^2), also R = 1/(1 - 6 xi); die Halbgruppe allein legt xi nicht fest."
-  }
+  },
+  "F37_source_reconciliation": "H6 benutzt bisher zwei verschiedene 3+2-Schnitte: Z10 trennt nach der Halbdrehung (schwach {z, z^3}), Z16 nach dem Kern der äquivarianten Abbildung T (schwach {1, z^4}). Keiner ist der V4-Schnitt aus GESAMT2 (schwach {1 - z^4, z^2}). Nur dieser erfüllt die äquivarianten Bedingungen des Originals unter V4 (det schwach und det Farbe trivial, Farbe = Familien als V4-Darstellung), und seine Farbe ist als D4-Darstellung genau Lambda^2 F, das Plebanski-Tripel aus Z29. Halbdrehung und V4 geben verschiedene Hyperladungen auf 4 von 5 Richtungen, die Dubletts schneiden sich trivial. Die (Z2)^3-Überlagerung trägt r_* r^* O(1) = O(1) + 6 O + O(-1) mit Deckhälften 5 + 3 und E_- = E_+^v; relative Selbstdualität zwingt L = r^* O(1). U = [[S, |0><0|], [0, S^+]] ist unitär mit G U G = U^+ und einem Rang-1-Kanal; die ausgeglichene Windung hat Index 0 wie in R084. Im Randkern ist eps_car = iota_C|car gleich +1, wenn der Träger in Ran(P_prim) liegt: Naht- und Trägerpolarisation müssen verschiedene Auslesungen sein. (c_1(L_2), c_1(L_3)) = (1, 0) gibt w_2 = 1, also keinen Spin(10)-Lift; E8 enthält (Spin(10) x SU(4))/Z4. Die Stresssättigung macht 'ein Block' zu einer messbaren Schranke c_W < 17/2."
  },
  "scorecard": {
   "H1": {
@@ -2480,6 +2481,88 @@
    "K11": [
     "PASS",
     "[A] E8 = D8+ aus dem kleinsten modularen N = 16; der Hardy-Kozyklus gibt Stromniveau 1 und c = 1 je komplexes Fermion, D8 + s ist gerade unimodular: lokales E8-Netz ohne Gitter (Z32)"
+   ],
+   "K12": [
+    "PASS",
+    "[A, C'] chirale 2-Formen = Lambda^2(Familien) (Charaktere für alle 24 Elemente gleich); drei chirale Mittelformen nur in d = 4; Lipschitz; Re + Im = 1 + 3 (euklidisch, Lorentz per OS)"
+   ],
+   "K13": [
+    "LESART",
+    "[D] Jacobson; Plebanski-Isotropie aus der internen S4 (ein festes Markenquadrat hat nur D4, Z32); Halbgruppenregler nur als Eigenzeitregularisierung, als Propagatorschnitt verletzt er die Positivität, und xi bleibt frei (Z33); G, kovariante Kanten offen"
+   ],
+   "K14": [
+    "PASS",
+    "keine freie Konstante; die Form der Naht ist nicht gewählt, sondern ihre Bewegungsgleichung; a/l_P = 2 sqrt(kappa_gesamt) berechenbar, noch nicht berechnet"
+   ],
+   "K15": [
+    "LESART",
+    "[nackte Spin(10)-Elternverbindung, P2 als Ordnungsparameter] reiner Spinor s plus 3+2-Teilung lassen G_SM (Stab 24 -> 12, 33 gebrochen, Z28); die Rangschranke von y1 (47 < 72) kommt aus der flachen Maurer-Cartan-Struktur und entfällt mit unabhängiger Elternverbindung; Werte gegen Daten nur mit SO(10) an 1/a (Z25), Hyper-K entscheidet"
+   ],
+   "K16": [
+    "LESART",
+    "[physisches Gitter mit zwei Gegentermen oder nichtultralokale Lüscher-GW-Wirkung] c = 8 braucht die axiale Anomalie (Z31); auch Spin(10)-Instantonen können Re[Phi^2 C_fam] erzeugen (4 + 12 Nullmoden, Z33), bei nackter SO(10) ~1e-164; Entscheidung 4 bleibt der Engpass"
+   ],
+   "K17": [
+    "PASS",
+    "[G] Gravitationsanomalie gerechnet (Z13); Wand gegen Positivität (Z19): lokale Majoranaformen haben eine Barriere (Wilson 0,083, GJ 0,007), wandfrei nur nichtlokal oder um den Preis der Positivität"
+   ],
+   "K18": [
+    "LESART",
+    "S4 gibt TBM als führende Ordnung; TFPT-Kanäle: sin^2 theta12 = 0.3067, sin^2 theta13 = phi0 exp(-tr Y^2) = 0.0231 mit tr Y^2 = 5/6 aus dem 3+2-Split (E), etwa 2 sigma gegen Daten (JUNO entscheidet); delta = 240 Grad = Argument der T-Phase, nicht hergeleitet"
+   ],
+   "K19": [
+    "LESART",
+    "[Irreduzibilität des Ursprungsprozesses] eine irreduzible nichtunitäre Isometrie ist der einseitige Shift mit Defekt vom Rang 1 (Z30); Vielfachheit m hätte den Kommutanten M_m, verborgene Sätze wären der Kommutant der sichtbaren E8-Ströme (Z31): ein Prinzip für eine Naht und einen Block; Flussschlauch und G wie Z20, Z22"
+   ],
+   "K20": [
+    "LESART",
+    "[Z23] ein gemeinsames Multiplett ist ausgeschlossen: reelles J gibt Familien = 3 x konj(Naht), vektorartig; konsistent nur Naht-Eltern 16_v und Familien 3 x 16 getrennt, gemeinsam Spin-Z4 J = z_X^-1 R_Paar (nu = 0 mod 16), Abbildung T und Geometrie; Phi kann die Familien nicht paaren (16 x 16 ohne Invariante, Z22), die Familienmassen-Obstruktion aus Z18 entfällt"
+   ]
+  },
+  "H6h18": {
+   "K2": [
+    "PASS",
+    "[A*] stationäre Nahtform <T> = 0: d log chi_E8/d tau = -(2 pi i/3) E6/E4, einzige Nullstelle im Fundamentalbereich [[0.0, 1.0]]; Gesamtenergie dort null, beide Rekonstruktionen gleich; ohne Orientierungsvoraussetzung; Gegenproben Boson [[0.0, 1.0], [0.5, 0.866025]], Leech [[0.0, 1.0], [0.5, 0.866025]]; stabil: Verdrillung null ist Maximum von |Z| (F_xx = +9.579), längs der Temperatur ist die Krümmung -(2 pi)^2 Var = -9.579 (positive Wärmekapazität), mikrokanonisch S(E) konkav mit E = 0 bei beta = L"
+   ],
+   "K3": [
+    "PASS",
+    "[C] H^1 der Marken muss als mu4-Modul gleich Lambda^2_+ x sign sein: zyklisch [(-1+0j), -1j, 1j] = [(-1-0j), (-0-1j), (-0+1j)], Zentrum auf Marke [(-1+0j), (1+0j), (1+0j)]: Viertelpunkt erzwungen"
+   ],
+   "K4": [
+    "PASS",
+    "KMS in beiden Zyklen und invertierbar: (A,A)"
+   ],
+   "K5": [
+    "PASS",
+    "[A] gelifte Vierteldrehung g~^4 = -1; jeder der vier spinoriellen Sektoren trägt exakt 1/4 jedes Eigenraums; c3 je Sektor = 0.039788735773 = 1/(8 pi)"
+   ],
+   "K6": [
+    "PASS",
+    "4D Lipschitz-Gitter: Q8 transitiv auf den Achsen True, (A,A,A,A) invariant und invertierbar True; Breite L/2 aus 2D"
+   ],
+   "K8": [
+    "PASS",
+    "[GESAMT2, Z34] P2 über die Kleinsche Gruppe V4 der Marken: schwach = V4-invariant {1 - z^4, z^2}, Farbe = Familien als V4-Darstellung und = Lambda^2 F als D4-Darstellung; Halbdrehung (Z10) und T-Kern (Z16) geben dieselben Dimensionen, nicht den Teilraum"
+   ],
+   "K1": [
+    "PASS",
+    "Pi-Drehung (-1 in Q8) gibt zwei Blätter und vier 2-Torsionspunkte der Naht"
+   ],
+   "K7": [
+    "PASS",
+    "[A] Basisunabhängigkeit: GSO-Summe nur für N = 0 mod 16 modular {8: {'S': True, 'T_bis_auf_Phase': False, 'Phase/2pi': None}, 16: {'S': True, 'T_bis_auf_Phase': True, 'Phase/2pi': -0.3333333333333333}, 24: {'S': True, 'T_bis_auf_Phase': False, 'Phase/2pi': None}, 32: {'S': True, 'T_bis_auf_Phase': True, 'Phase/2pi': 0.3333333333333333}, 48: {'S': True, 'T_bis_auf_Phase': True, 'Phase/2pi': -3.3676576258638635e-27}}; kleinstes N = 16, (P,P) mit 8 komplexen Nullmoden, flach für jede Breite"
+   ],
+   "K9": [
+    "PASS",
+    "[C''] drei Familien = chiraler Index der vier Marken: H^0(K(D)) = H^0(O(2)) = 3, ker D- = 0 (Spin-Dirac an K^(1/2) x O(D) = O(3)); Materie H^0(K(D)) x Lambda^gerade H^0(O(D)) = 3 x 16 = 48"
+   ],
+   "K10": [
+    "PASS",
+    "[Marken] z -> i z auf den logarithmischen Differentialen: ['(-1+0j)', '-1j', '1j']; dieselben Marken geben H^0(O(D)) = 5 mit Halbdrehung 3 + 2 (TFPTs Träger)"
+   ],
+   "K11": [
+    "PASS",
+    "[A] lokales E8-Netz aus Hardy-Kozyklus und D8 + s (Z32); D5 + A3 mit Kleber 5/4 + 3/4 = 2; Stresssättigung: c_W < 17/2 erzwingt V_E8 (Satz vom 12.11.)"
    ],
    "K12": [
     "PASS",

@@ -1,6 +1,105 @@
 # Urteil
 
-## Aktueller Stand: H6h17 — vom Toeplitz-Index zum lokalen E₈-Netz; Regler, Instantonen, Markenrahmen (`z32`, `z33`)
+## Aktueller Stand: H6h18 — Abgleich mit dem Originalbestand: der richtige 3+2-Schnitt, die Bündel, der Randkern (`z34`)
+
+Bilanz unverändert 14 P und 6 L von 20; K8 und K11 sind präzisiert. Anlass sind zwei externe
+Rückwärtsanalysen vom 24.11.: Ältere TFPT-Ergebnisse enthalten Teile der neuen H6-Bausteine schon.
+- **An der Quelle gelesen:** GESAMT2 (`check_gesamt_v4.py`, selbst gelaufen: 29/29), der Randkern 001
+  (Zeilen 168–285), P1BIND, R059–R061, R083/R084, die Stresssättigung (PROOF.txt) und v991
+  (gelaufen: 11/11).
+- **Nur als Verweise übernommen, nicht erneut gerechnet:** v999, v1013 und v1024.
+- **Eigene Nachrechnung:** `z34` mit 21 Prüfungen.
+
+**In einem Satz:** H6 hat für P2 zwei verschiedene 3+2-Schnitte benutzt, und keiner ist der
+äquivariante V₄-Schnitt des Originals. Dessen Farbe ist genau Λ²F. Die Bündel der Überlagerung sind
+O(1) + 6O + O(−1). Im Randkern fällt die Trägerpolarisation als Einschränkung von ι_C mit sich selbst
+zusammen.
+
+**1. Welcher 3+2-Schnitt?** Auf dem Fünferträger f = Q/(z⁴ − 1) mit den Marken μ₄ gibt es unter der
+Diedergruppe D₄ genau vier invariante Dubletts:
+- (A) Halbdrehung ungerade, {z, z³}: so trennt z10;
+- (B) Kern der Abbildung T, {1, z⁴}: so trennt z16;
+- (C) V₄-invariant, {1 − z⁴, z²}: so trennt GESAMT2;
+- (D) {1 + z⁴, z²}.
+
+Ergebnisse:
+- **Nur (C)** erfüllt die äquivarianten Bedingungen des Originals unter V₄: det(schwach) und
+  det(Farbe) sind trivial, und die Farbe ist als V₄-Darstellung gleich den Familien.
+- Die Farbe von (C) ist als D₄-Darstellung **genau Λ²F**, also das Plebański-Tripel aus z29. Farbe und
+  die Raumzweiformen haben damit dieselbe endliche Symmetriestruktur; physikalisch gleichgesetzt sind
+  sie nicht.
+- (A) besteht den Test nicht; das ist GESAMT2s „Paritätslesart“. (B) gibt Farbe = Familien nur unter
+  μ₄.
+- (A) und (C) geben auf 4 von 5 Richtungen verschiedene Hyperladungen, und ihre Dubletts schneiden sich
+  trivial.
+- Grenze: Unter der Vierteldrehung hat das Dublett (C) die Determinante −1. Die volle D₄ erfüllt also
+  kein Kandidat in allen Bedingungen; V₄ ist die Gruppe, unter der das Original seine Bedingungen
+  stellt.
+- **Korrektur:** H6s P2 ist der V₄-Schnitt (C) mit Y = 1/12 + (5/12)(2P_{V₄} − 1). Die Halbdrehung (z10)
+  und der T-Kern (z16) geben dieselben Dimensionen, aber nicht den äquivarianten Teilraum.
+  Ergebnisse, die nur Dimensionen benutzen, bleiben gültig: sin²θ_W = 3/8, Dynkin-Summen, die
+  Stabilisatoren aus z28 und tr Y² = 5/6.
+
+**2. Bündel der Überlagerung.** Die (ℤ₂)³-Überlagerung r: E → P¹ (Halbperioden E[2] und Deck) hat Grad 8
+und vier Verzweigungspunkte mit 16 Fixpunkten, also Genus 1.
+- Aus den Monodromien folgt r_* r^* O(1) = O(1) ⊕ 6O ⊕ O(−1).
+  - Deckhälfte +1: O(1) ⊕ 3O mit 5 Schnitten (zwei V₄-triviale, die schwach sind, und drei Farben).
+  - Deckhälfte −1: O(−1) ⊕ 3O mit 3 Schnitten (die Familien); O(−1) ist ein topologischer Gegenpart
+    ohne Nullmode.
+- c₁ = 0 und E₋ ≅ E₊^∨: global ausgeglichen, sichtbar asymmetrisch (5 + 3).
+- Relative Selbstdualität L² ≅ K_{E/B} = r^*O(2) zwingt L = r^*O(1), also Grad 8 und genau acht Schnitte.
+- Ob diese Bündel die des physischen Randoperators sind, ist offen (Prüfung des Calderón-Hauptsymbols).
+
+**3. Randkern: ein Typfehler im Original.** Im Original gilt P_prim = P_{Σ,+} P_gap mit
+P_{Σ,+} = (1 + ι_C)/2, und der Trägerblock wird „nach der primitiven Kompression“ gewählt. Dann ist
+ε_car = ι_C|_car = +1, und E₋ = ker(ε_car + 1) ist leer: Es gibt keinen Farbblock. Naht- und
+Trägerpolarisation müssen also verschiedene Auslesungen sein. GESAMT2 benutzt für den Träger 2P_{V₄} − 1.
+Dabei vermerkt es selbst, dass das dieselbe Form hat, aber nicht derselbe Operator ist. Das
+Archivmanuskript ist nicht geändert.
+
+**4. Toeplitz und Calderón.** U = [[S, |0⟩⟨0|], [0, S†]] ist unitär, es gilt G U G = U†, und zwischen
+den beiden Seiten gibt es genau einen Rang-1-Kanal. Die ausgeglichene Windung S ⊕ S† hat den Index 0.
+Das erklärt R084: Der ganze gekoppelte Quarkkreis hebt sich auf, die Einzelkanäle tragen −1 bzw. −18.
+Die primitive Windung braucht also eine orientierte relative Auslesung.
+
+**5. Spin(10) und E₈.** (c₁(L₂), c₁(L₃)) = (1, 0) gibt w₂ = c₁ mod 2 = 1, also keinen Spin(10)-Lift; ein
+Spin^c-Lift ist möglich. Das Diagonal-ℤ₄ (z, −i·I₄) wirkt trivial auf 248, also enthält E₈ die Gruppe
+(Spin(10) × SU(4))/ℤ₄. Daraus ergeben sich zwei Auflösungen:
+- Entweder gehört die Windung nur zur Determinantenlinie,
+- oder die Familien-SU(4) kompensiert die Obstruktion über die Verklebung in E₈.
+
+Die Kleber D₅ + A₃ haben q = 5/4 + 3/4 = 2 und h = 5/8 + 3/8 = 1.
+
+**6. Was der Bestand schon trägt.**
+- **Stresssättigung (12.11.):** Mit D₅- und A₃-Strömen auf Niveau 1 und c_W < 17/2 folgt W = V_E8, denn
+  unitäre Restsektoren haben c = 0 oder c ≥ ½. Entscheidung 2 wird damit eine **messbare Schranke**
+  statt der Prämisse aus z31. Für die freie H6-Naht ist c = 8 (z13, z32); zu zeigen ist die Schranke für
+  die ganze Quelle.
+- **P1BIND:** Die zwei antivertauschenden Involutionen G und ι_C des Originalkerns erzeugen Herm(2).
+  Die Qubit-Struktur aus z30 steckt also schon im P1-Kern.
+- **R059–R061:** Ein Möbius-Standardpaar und ein lokaler CAR-Modulargenerator sind vorhanden. Die
+  Möbiuszeit des Vakuums ist aber nicht die elliptische Quarterquelle. Nach den Regionaltests vom
+  12. und 14.11. geben die Möbiusbewegungen höchstens eine kommutierende Richtung; das passt zu z32.
+- **v991:** Bulkladung, Nahtwindung, Transport und Chernzahl sind +1, bei Umkehrung −1. Das gilt im
+  endlichen 2+1D-Modell; 4D ist offen.
+- **v1024** (GRAV.PARENT.GAP.NO_GO.01): Ein gleichmäßig gelückter Elter hat kein masseloses Spin 2. Die
+  Naht darf geschützt sein, der Gesamtprozess muss masselose Anregungen haben.
+
+**7. Stand des Beweises (Ergänzung).**
+
+| Glied | Status |
+|---|---|
+| P2 = V₄-Schnitt, Farbe = Λ²F (D₄), Farbe = Familien (V₄) | E |
+| Bündel O(1) + 6O + O(−1) aus relativer Selbstdualität | E (algebraisch); Gleichheit mit dem Randoperator offen |
+| ein E₈-Block | auf c_W < 17/2 reduziert (Stresssättigung) |
+| Trägerpolarisation | Original korrekturbedürftig (Typfehler); V₄-Auslesung als Kandidat |
+| Spin(10)-Lift | w₂ = 1: Auflösung über E₈-Kleber oder Trennung von Determinantenlinie und Eichbündel |
+
+Der nächste gemeinsame Test ist ein Operator D_geo = ∂̄_E + ∂̄_E† auf O(1) ⊕ 6O ⊕ O(−1). Er ist am
+originalen Randoperator zu prüfen: Calderón-Hauptsymbol, relativer Index, Deck- und Familienwirkung,
+Nullmoden mit Ladungen, Stresskorrelation (c_W < 17/2) und relative Determinante.
+
+## Davor: H6h17 — vom Toeplitz-Index zum lokalen E₈-Netz; Regler, Instantonen, Markenrahmen (`z32`, `z33`)
 
 Bilanz unverändert 14 P und 6 L von 20. K11 ist bestärkt, K13 und K16 sind präzisiert. Zwei frühere
 Aussagen sind korrigiert (Abschnitt 4). Anlass ist die sechste externe Analyse vom 24.11.; selbst

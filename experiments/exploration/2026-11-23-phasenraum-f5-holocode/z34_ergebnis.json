@@ -1,0 +1,74 @@
+{
+ "checks": {
+  "alle vier Dubletts sind D4-invariant": true,
+  "(C) V4-Schnitt: det schwach und det Farbe trivial unter V4, Farbe = F unter V4 (GESAMT2 bestätigt)": true,
+  "(C) Farbe = Lambda^2 F als D4-Darstellung (Plebanski-Tripel aus Z29)": true,
+  "(A) Halbdrehung: Farbe ist unter V4 nicht F, det schwach unter V4 nicht trivial (Paritätslesart fällt)": true,
+  "(B) Kern von T: Farbe = F nur unter mu4, nicht unter V4": true,
+  "Halbdrehung und V4 geben verschiedene Hyperladungen auf 4 von 5 Richtungen, Dubletts schneiden sich trivial": true,
+  "r_* r^* O(1) = O(1) + 6 O + O(-1): Deckhälften O(1)+3O (5 Schnitte) und O(-1)+3O (3 Schnitte), c_1 = 0": true,
+  "V4-Charaktere: Deck +1 zweimal trivial + je einmal nichttrivial, Deck -1 je einmal nichttrivial (wie GESAMT2)": true,
+  "Dualität: E_- = E_+^v (O(1) <-> O(-1), Charaktere gepaart)": true,
+  "relative Selbstdualität: L^2 = K_{E/B} = r^* O(2) mit L = r^* M zwingt M = O(1), Grad 8, h^0 = 8 auf Genus 1": true,
+  "Riemann-Hurwitz: (Z2)^3-Überlagerung Grad 8 mit 4 Verzweigungspunkten (16 Fixpunkte) hat Genus 1": true,
+  "U = [[S, |0><0|], [0, S^+]] unitär (fern vom Abschneiderand)": true,
+  "G U G = U^+ und genau ein Rang-1-Kanal |0><0| zwischen den Seiten": true,
+  "ausgeglichene Windung S (+) S^+ hat Index -1 + 1 = 0 (wie R084: beide Orientierungen heben sich auf)": true,
+  "Original: P_prim = P_{Sigma,+} P_gap, P_{Sigma,+} = (1 + iota_C)/2, eps_car = iota_C|car, Träger nach der Kompression": true,
+  "liegt der Träger in Ran(P_prim), ist eps_car = +1: E_- = 0, kein Farbblock (Typfehler im Original)": true,
+  "w_2(V_R) = c_1(V) mod 2 = 1 für (c_1(L_2), c_1(L_3)) = (1, 0): kein Spin(10)-Lift, Spin^c möglich": true,
+  "das Diagonal-Z4 (z, -i I_4) wirkt trivial auf 248 = (45,1)+(1,15)+(10,6)+(16,4)+(16b,4b): E8 enthält (Spin(10) x SU(4))/Z4": true,
+  "D5 + A3: Kleberklassen q = 5/4 + 3/4 = 2 (E8-Wurzel), h = 5/8 + 3/8 = 1": true,
+  "G, iota_C antivertauschende Involutionen: Y = i G iota_C hermitesch, (G iota_C)^2 = -1, span{1, G, iota, Y} = Herm(2)": true,
+  "Stresssättigung: unitäre Restsektoren haben c = 0 oder c >= 1/2, also c_W < 17/2 => kein Rest => V_E8 (D5, A3 Niveau 1)": true
+ },
+ "befunde": {
+  "H6 benutzt zwei verschiedene 3+2-Schnitte (Z10 Halbdrehung, Z16 Kern von T); keiner ist der V4-Schnitt des Originals": true,
+  "Naht- und Trägerpolarisation müssen verschiedene Auslesungen sein; GESAMT2 nimmt 2 P_V4 - 1 für den Träger": true
+ },
+ "zahlen": {
+  "kandidaten": {
+   "A Halbdrehung ungerade {z, z^3} (Z10)": {
+    "det_schwach_trivial_D4": false,
+    "det_schwach_trivial_V4": false,
+    "det_farbe_trivial_D4": false,
+    "det_farbe_trivial_V4": false,
+    "farbe_gleich_F_D4": false,
+    "farbe_gleich_F_V4": false,
+    "farbe_gleich_L2F_D4": false,
+    "farbe_gleich_F_mu4": false
+   },
+   "B Kern von T {1, z^4} (Z16)": {
+    "det_schwach_trivial_D4": false,
+    "det_schwach_trivial_V4": false,
+    "det_farbe_trivial_D4": false,
+    "det_farbe_trivial_V4": false,
+    "farbe_gleich_F_D4": false,
+    "farbe_gleich_F_V4": false,
+    "farbe_gleich_L2F_D4": false,
+    "farbe_gleich_F_mu4": true
+   },
+   "C V4-invariant {1 - z^4, z^2} (GESAMT2)": {
+    "det_schwach_trivial_D4": false,
+    "det_schwach_trivial_V4": true,
+    "det_farbe_trivial_D4": true,
+    "det_farbe_trivial_V4": true,
+    "farbe_gleich_F_D4": false,
+    "farbe_gleich_F_V4": true,
+    "farbe_gleich_L2F_D4": true,
+    "farbe_gleich_F_mu4": false
+   },
+   "D {1 + z^4, z^2}": {
+    "det_schwach_trivial_D4": false,
+    "det_schwach_trivial_V4": false,
+    "det_farbe_trivial_D4": false,
+    "det_farbe_trivial_V4": false,
+    "farbe_gleich_F_D4": false,
+    "farbe_gleich_F_V4": false,
+    "farbe_gleich_L2F_D4": false,
+    "farbe_gleich_F_mu4": false
+   }
+  }
+ },
+ "urteil": "H6 benutzt bisher zwei verschiedene 3+2-Schnitte: Z10 trennt nach der Halbdrehung (schwach {z, z^3}), Z16 nach dem Kern der äquivarianten Abbildung T (schwach {1, z^4}). Keiner ist der V4-Schnitt aus GESAMT2 (schwach {1 - z^4, z^2}). Nur dieser erfüllt die äquivarianten Bedingungen des Originals unter V4 (det schwach und det Farbe trivial, Farbe = Familien als V4-Darstellung), und seine Farbe ist als D4-Darstellung genau Lambda^2 F, das Plebanski-Tripel aus Z29. Halbdrehung und V4 geben verschiedene Hyperladungen auf 4 von 5 Richtungen, die Dubletts schneiden sich trivial. Die (Z2)^3-Überlagerung trägt r_* r^* O(1) = O(1) + 6 O + O(-1) mit Deckhälften 5 + 3 und E_- = E_+^v; relative Selbstdualität zwingt L = r^* O(1). U = [[S, |0><0|], [0, S^+]] ist unitär mit G U G = U^+ und einem Rang-1-Kanal; die ausgeglichene Windung hat Index 0 wie in R084. Im Randkern ist eps_car = iota_C|car gleich +1, wenn der Träger in Ran(P_prim) liegt: Naht- und Trägerpolarisation müssen verschiedene Auslesungen sein. (c_1(L_2), c_1(L_3)) = (1, 0) gibt w_2 = 1, also keinen Spin(10)-Lift; E8 enthält (Spin(10) x SU(4))/Z4. Die Stresssättigung macht 'ein Block' zu einer messbaren Schranke c_W < 17/2."
+}
