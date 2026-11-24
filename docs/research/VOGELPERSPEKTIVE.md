@@ -1,4 +1,4 @@
-# TFPT aus der Vogelperspektive (Stand H6h36, 24. November 2026)
+# TFPT aus der Vogelperspektive (Stand H6h37, 24. November 2026)
 
 ## Neueste Zusammenführung (H6h35, `z72`–`z74`, `PRUEFUNG-BESTAND-H6h35.md`)
 
@@ -29,6 +29,8 @@ Offen, genau benannt:
   - Offen ist, ihn aus der vollen Dynamik (höhere Sektoren) zu gewinnen.
 - **(c) Vakuum gegen thermisch.** Die Zeit lebt im Vakuumsektor, das Original ist thermisch. Wie beide zusammenhängen, ist
   offen; nicht über „modular ⇒ BW“ (GRAV.NONCIRCULAR.01).
+  - Auch die Sphäre ist exakt eine Vakuumgröße (z76, z77).
+  - Eine thermische Fortsetzung des Kanals ist vorgeschlagen, aber nicht als zustandserhaltend belegt (z77).
 - **(d) Nichtlineare volle Gravitation und Flächennormierung.**
 - **(e) Mehrpunktantworten und Spin 2.** Der Agentenlauf brach am Nutzungslimit ab.
 - **(f) Restflavor.**

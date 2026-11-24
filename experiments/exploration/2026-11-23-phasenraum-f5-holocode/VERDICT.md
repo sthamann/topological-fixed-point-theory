@@ -1,6 +1,29 @@
 # Urteil
 
-## Aktueller Stand: H6h36 — Zustandsbalancierter Zweipfadkanal: Oszillatornormierung und Sphäre (`z76`)
+## Aktueller Stand: H6h37 — Fünfte externe Analyse: der thermische Relativkanal, teilweise bestätigt (`z77`)
+
+**Bilanz:** unverändert 13 P und 7 L von 20.
+
+**Anlass:** die externe Analyse „Der vollständige relative Antwortkanal“; ihr Paket liegt nicht im Repo.
+
+**Prüfung (z77, 4 Prüfungen):**
+- **Hält:** [J₋₁, B_{r,m}] = B_{r,m+1} − B_{r−1,m+1} gilt als Operatoridentität auf dem vollen Fockraum. Die
+  Mehrpaaranteile kürzen sich im Kommutator (für Bilineare ist das allgemein so).
+- **Hält nicht wie behauptet:**
+  - Die thermische Formel p_m(r) = Σ(j+1)w(r+j)/((m+1)Σw(r+j)) erfüllt die einfache normierte Zustandserhaltung zwischen den
+    Schalen für m ≥ 2 nicht (relatives Residuum bis 0,94).
+  - Sie ist der thermische Mittelwert der Vakuumgewichte über die Lage der Fermikante und geht im Vakuum exakt in die
+    Gewichte aus z76 über.
+  - Ihre Eindeutigkeit hängt an einer Konditionierung, die ohne das Paket nicht nachvollziehbar ist.
+- **Vakuum:** Das Petz-Spektrum ist exakt ℓ(ℓ+1) (m = 2: 0, 2, 2, 2).
+- **Nicht reproduziert:** die thermischen Werte der Analyse (0; 1,9864; 1,9864; 2,0281).
+- **Nicht nachgerechnet:** die Young-Gitter-Lesart der höheren Paare (Plancherel) und die Wahl des Instruments (kohärent
+  gegen gemessen).
+
+**Folge für (c) „Vakuum gegen thermisch“:** Die Sphäre ist eine Vakuumgröße. Dass das thermische Original sie mit kleinem
+Gedächtnisanteil trägt, ist plausibel, aber nicht belegt.
+
+## Davor: H6h36 — Zustandsbalancierter Zweipfadkanal: Oszillatornormierung und Sphäre (`z76`)
 
 **Bilanz:** unverändert 13 P und 7 L von 20. K12 ist präzisiert.
 

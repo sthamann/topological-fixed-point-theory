@@ -7918,3 +7918,14 @@ Im H6-Ordner gerechnet, alles nachgeprüft und reproduziert:
 **Grenze:** Der Kanal ist eine zustandsbalancierte Auslesung; der native Strom koppelt an weitere Paare.
 
 **Prüfstand:** 13 P, 7 L. Atlas-Revision a88864e7fd34b90e4575bf1b. Ledger unverändert, nichts befördert.
+
+## H6H37-20261124 · Fünfte externe Analyse: thermischer Relativkanal, teilweise bestätigt
+
+`z77_thermischer_kanal.py` (4 von 4).
+- **Hält:** Die Kommutatoridentität [J₋₁, B_{r,m}] = B_{r,m+1} − B_{r−1,m+1} gilt exakt.
+- **Hält nicht wie behauptet:** Die thermische Kanalformel der Analyse ist der Kantenmittelwert der Vakuumgewichte und
+  erfüllt die einfache Zustandserhaltung für m ≥ 2 nicht.
+- **Vakuum:** Das Petz-Spektrum ist exakt ℓ(ℓ+1).
+- **Nicht reproduziert:** die thermischen Aufspaltungswerte.
+
+**Prüfstand:** 13 P, 7 L. Atlas-Revision 5816c59bf737679a6a5b552f. Ledger unverändert, nichts befördert.
