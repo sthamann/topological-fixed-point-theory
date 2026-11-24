@@ -1,0 +1,3 @@
+# Research question
+
+Can the native H6 quarter transfer serve as a common mathematical parent for the free chiral boundary and the existing metric star, rather than constructing unrelated sectors? Test the exact intertwiner, the index and spectral bounds, the finite atomic mirror counterexample, the E8 projective lift and Clifford area readout. Keep the native H6h31 reconstruction of the current channel separate from the candidate radial stress channel. Success means explicit operator identities in a declared model; stop short of claiming a common interacting physical source without a proof of the dynamical gauge measure, four translations, nonlinear positivity and microscopic identification. The model inputs and exclusions are preserved in VERDICT.md.
