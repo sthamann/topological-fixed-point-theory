@@ -20,6 +20,16 @@ class GenesisRules(unittest.TestCase):
         found = search(objects, ["a", "b", "c"], lambda o: o["n"], lambda o: f"{o['n']}{sorted(o['clauses'])}")
         self.assertEqual(found["verdicts"], {"EMPTY": 4, "UNIQUE": 2, "AMBIGUOUS": 2})
 
+    def test_minimum_is_not_mistaken_for_unique_satisfying_object(self):
+        objects = [{"n": 1, "clauses": {"a"}}, {"n": 2, "clauses": {"a"}}]
+        result = genesis_rules.search_certified(objects, ["a"], lambda o: o["n"], lambda o: str(o["n"]))
+        row = result["unique_selections"][0]
+        support = row["selection_support"][0]
+        self.assertEqual(support["matching_labels"], 2)
+        self.assertEqual(support["minimal_labels"], 1)
+        self.assertTrue(support["requires_size_minimization"])
+
+
     def test_self_dual_doubly_even_selects_one_code_of_length_eight(self):
         row = self.selected("codes")["n=8 k=4 weights (1, 0, 0, 0, 14, 0, 0, 0, 1)"]
         self.assertIn(["doubly_even", "self_dual"], row["minimal_rules"])

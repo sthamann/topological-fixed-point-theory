@@ -846,9 +846,13 @@ RECORD = {
 }
 
 
-def run(root=None, transfer=True, state=True, metric=True):
+def run(root=None, transfer=True, state=True, metric=True, *, certified=False, source_dynamics=True):
     """transfer=False reproduces the lane as of H6h23 (z43); state=False the lane as of H6h24 (z45), without the state rule;
     metric=False the lane as of H6h26 (z46-z49), without the metric stage of z50."""
+    if certified:
+        from process_rules_certified import run as certified_run
+        return certified_run(root=root, transfer=transfer, state=state, metric=metric,
+                             source_dynamics=source_dynamics)
     metric = metric and transfer and state
     out = {"status": "PROCESS_RULES_SEARCHED", "physical_solution": False, "scope": SCOPE, "universes": {}}
     mk = matrix_kernels()
@@ -991,5 +995,7 @@ def run(root=None, transfer=True, state=True, metric=True):
 
 
 if __name__ == "__main__":
-    argparse.ArgumentParser().parse_args()
-    print(json.dumps(run(), indent=1, default=str, ensure_ascii=False))
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--certified", action="store_true", help="replay H6h27 certified source-dynamics mode")
+    args = parser.parse_args()
+    print(json.dumps(run(certified=args.certified), indent=1, default=str, ensure_ascii=False))

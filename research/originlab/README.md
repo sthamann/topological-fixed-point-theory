@@ -1640,3 +1640,8 @@ quarter predictions. A stationary mixture of those quarters is determined
 by two entries and tested on the other entries. The clock job also checks the original gauge average
 and whether the marked opposite spinor module can keep the same background.
 See [the marked folded time derivation](FOLDED-TIME-PROOF.txt).
+
+
+### Certified source dynamics integration (2026-11-24)
+
+The H6h27 research branch is integrated while preserving the current H6h29 historical outputs. Existing `process_rules.run()` and stage flags keep the historical main implementation, including the H6h28 edge forms and Dirac option. Use `python process_rules.py --certified` or `process_rules.run(certified=True)` for the certified H6h27 implementation and its exact certificates, source dynamics, weighted metric star and four-point audit. This is a versioned replay mode of the same lane, not a new physical selection rule. The default genesis output is preserved; `search_certified` adds matching counts, cost dependence and deterministic rule ordering. The branch's original validation and proof reports are preserved; `experiments/exploration/2026-11-24-h6h26-source-dynamics/run_audit.py --lane` selects the certified mode explicitly. No full post-merge suite or registry/Atlas refresh is claimed.

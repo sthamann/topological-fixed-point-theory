@@ -517,3 +517,8 @@ den Weg wieder.
   `origin_theory`. Ledger: `verification/status_ledger.csv`; Vorhersagen:
   `verification/predictions_frozen.json`.
 - **Gesamtbild der Prozessidee:** `docs/research/fundamental-plan/GESAMTBILD.md`.
+
+
+### Integration of the certified research branch and further exploration (24 November)
+
+The H6h27 research branch (252bac7a) is integrated with versioned certified replay, preserving the existing H6h29 main lane and its historical outputs. See `experiments/exploration/2026-11-24-h6h26-source-dynamics/` and OriginLab README. New independent exploratory checks in `experiments/exploration/2026-11-24-pair-and-refinement/` reran with 43/43 and 87/87 grouped checks. Local quartic mirror parents, clock compressions, and diagonal geodesic refinement are candidates, not physical T1–T8 closure. Ledger and frozen predictions unchanged; generated registry and Atlas not refreshed in the integration session.

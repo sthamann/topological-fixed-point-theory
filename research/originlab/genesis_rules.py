@@ -62,6 +62,54 @@ def search(objects, pool, size, label):
             "unique_selections": sorted(summary, key=lambda r: (r["shortest_rule_length"], str(r["selected"])))}
 
 
+def search_certified(objects, pool, size, label):
+    """All rules over the clause pool. objects: dicts with 'clauses' (set), size(obj) sortable, label(obj) hashable."""
+    rules = []
+    for rule in powerset(pool):
+        hits = [o for o in objects if rule <= o["clauses"]]
+        if not hits:
+            rules.append({"rule": sorted(rule), "verdict": "EMPTY", "selected": [], "size": None,
+                          "matching_objects": 0, "matching_labels": 0, "minimal_objects": 0})
+            continue
+        least = min(size(o) for o in hits)
+        minimal_hits = [o for o in hits if size(o) == least]
+        chosen = sorted({label(o) for o in minimal_hits})
+        rules.append({"rule": sorted(rule), "verdict": "UNIQUE" if len(chosen) == 1 else "AMBIGUOUS",
+                      "selected": chosen[:12], "selected_count": len(chosen), "size": least,
+                      "matching_objects": len(hits), "matching_labels": len({label(o) for o in hits}),
+                      "minimal_objects": len(minimal_hits)})
+    by_rule = {frozenset(r["rule"]): r for r in rules}
+    selections = {}
+    for row in rules:
+        if row["verdict"] != "UNIQUE":
+            continue
+        selections.setdefault(row["selected"][0], []).append(frozenset(row["rule"]))
+    summary = []
+    for chosen, makers in selections.items():
+        short = min(len(m) for m in makers)
+        minimal = sorted((m for m in makers if not any(o < m for o in makers)),
+                         key=lambda m: (len(m), tuple(sorted(m))))
+        bearing = {}
+        for m in minimal:
+            for clause in sorted(m):
+                other = by_rule[m-{clause}]
+                bearing[f"{'+'.join(sorted(m))} without {clause}"] = (
+                    other["verdict"], other["selected"][:4], other["size"])
+        summary.append({"selected": chosen, "shortest_rule_length": short,
+                        "minimal_rules": [sorted(m) for m in minimal], "ablation": bearing,
+                        "selection_support": [{"rule": sorted(m),
+                            "matching_objects": by_rule[m]["matching_objects"],
+                            "matching_labels": by_rule[m]["matching_labels"],
+                            "minimal_objects": by_rule[m]["minimal_objects"],
+                            "minimal_labels": by_rule[m]["selected_count"],
+                            "requires_size_minimization": by_rule[m]["matching_labels"] > 1}
+                            for m in minimal]})
+    counts = {v: sum(r["verdict"] == v for r in rules) for v in ("EMPTY", "UNIQUE", "AMBIGUOUS")}
+    return {"objects": len(objects), "clauses": list(pool), "rules": len(rules), "verdicts": counts,
+            "selection_semantics": "minimum size, then distinct labels; not all satisfying objects",
+            "unique_selections": sorted(summary, key=lambda r: (r["shortest_rule_length"], str(r["selected"])))}
+
+
 # ---------------------------------------------------------------- A: binary codes (distinctions that test each other)
 def subspaces(n, k):
     """Every k-dimensional subspace of F_2^n as a tuple of row bitmasks in reduced echelon form."""
