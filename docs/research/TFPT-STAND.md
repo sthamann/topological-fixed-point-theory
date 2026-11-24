@@ -127,8 +127,8 @@ Ursprung sollte beides zugleich liefern.
 
 ### Kandidat H6: Ursprung von P1 aus einer hintergrundfreien Naht (Exploration 23.11.)
 
-Quelle: `experiments/exploration/2026-11-23-phasenraum-f5-holocode/VERDICT.md` (Stand H6h19),
-Skripte `n1`, `v1`, `y1`, `z1`–`z36`, Lean-Vertrag `experiments/theory-contracts/h6-exakte-teile-20261123/`; Atlasproblem `problem:c3-p1-p2-shared-origin-reconciliation`,
+Quelle: `experiments/exploration/2026-11-23-phasenraum-f5-holocode/VERDICT.md` (Stand H6h20),
+Skripte `n1`, `v1`, `y1`, `z1`–`z38`, Lean-Vertrag `experiments/theory-contracts/h6-exakte-teile-20261123/`; Atlasproblem `problem:c3-p1-p2-shared-origin-reconciliation`,
 Befunde mit Präfix `h6`. Nichts davon ist im Ledger befördert. Prüfstand mit 20 Kriterien: 14
 hergeleitet, 6 unter benannter Lesart, keines gescheitert, offen oder gesetzt.
 
@@ -236,11 +236,23 @@ hergeleitet, 6 unter benannter Lesart, keines gescheitert, offen oder gesetzt.
     reell genau die 16 Nahteltern (10,1) + (1,6); ihre Ströme so(10)₁ + so(6)₁ = D₅ + A₃ mit
     c = 5 + 3 und Kleber 5/8 + 3/8 = 1 erfüllen die Voraussetzungen der Stresssättigung. Der originale
     Randkern (ungerade, invertierbar, flach) verlangt den Spin-Dirac auf K^{1/2} ⊗ E mit einem
-    Rang-1-Kanal zwischen O(1) und O(−1); das passt zum einfachen λ₁⁺ = 0,0852 des nativen
-    Originals. Calderón- und Hardy-Projektor haben denselben Toeplitz-Index −1. [E/N]
+    Rang-1-Kanal zwischen O(1) und O(−1). Das einfache λ₁⁺ = 0,0852 des nativen Operators ist nur
+    Konsistenz: Die Fixture hat diagnostische Zufalls-Yukawas (rng252), die zweite Vielfachheit weicht
+    ab, und der Kanal bricht die Decksymmetrie (Z37). Calderón- und Hardy-Projektor haben denselben
+    Toeplitz-Index −1. [E/N]
   - V₄-Umstellung (Z36): Ladungen, sin²θ_W = 3/8 und G_SM bleiben; die V₄-äquivariante Abbildung
     Träger → Familien hat genau das V₄-Dublett als Kern; V₄ wird eine diskrete Farbdrehung in SU(3),
     die Vierteldrehung wirkt auf dem Dublett mit det −1. [E]
+  - Auswertungsgeometrie (Z37): Der Rang-1-Kanal ist die kanonische Erweiterungsklasse der
+    Euler-Folge 0 → O(−1) → ℂ² ⊗ O → O(1) → 0; das volle Dublett ist trivial, die Windung sitzt in der
+    Polarisation (Spin(10)-Lift möglich). Yang–Mills plus Fermiondeterminante (log det = 4 log t − 2t²)
+    wählen stets t = 1: Die gewöhnliche Wirkung wählt den Kanal nicht. [E/N]
+  - Flussnaht (Z38): Vierteldrehung und Twistgewicht 1 erzwingen V₄, acht Schnitte und 16 Majorana;
+    5 + 3 lebt im periodischen Spinsektor, J² = −1 im (A,A)-Thetamodell. Eine Flussnaht auf der Zigarre
+    (Ricci-Soliton) trägt mit den Flüssen 2 + 6 × 1 + 0 genau acht chirale Moden (flach nur 1), mit
+    Niveau 8 und c₋ = 8; auf dem Gitter hält ihr Index ohne exakte chirale Symmetrie (Wilson
+    Chiralitätssumme N, Overlap N exakte Nullmoden). Damit entfällt für die Naht die Wand aus
+    Entscheidung 4; offen sind Zufluss, Gitterzigarre und Rückwirkung. [E/N]
   - Instantonen (Z33): Unter Spin(10) hat ein Einheitsinstanton 4 Eltern- und 12
     Familiennullmoden; mit gesättigten Familiennullmoden entsteht Re[e^{iθ}Φ² C_fam], die Wand ist
     also auch im Kontinuum möglich, bei nackter SO(10) aber ~10⁻¹⁶⁴ unterdrückt. [N]
@@ -272,6 +284,8 @@ hergeleitet, 6 unter benannter Lesart, keines gescheitert, offen oder gesetzt.
   - Craigs eichinvariantes Maß (arXiv:2610.09093) deckt den SU(5)-Zweig von TFPT ab, Spin(10) mit
     der 16 aber nicht; eine Übertragung über die Reduktion auf SU(2) benutzt Craig nicht (Z28).
   - Die Wardidentität allein macht a/ℓ_P nicht zur Vorhersage (Z29).
+  - Z35s nativer Vergleich ist nur Konsistenz mit einer Diagnosefixture, und sein Rang-1-Kanal bricht
+    die Decksymmetrie (Z37).
   - Der 3+2-Schnitt der Halbdrehung (Z10) und der T-Kern (Z16) sind nicht der äquivariante
     V₄-Schnitt des Originals (Z34).
   - Die geometrische S₄-Isotropie aus Z29/Z30 gilt nicht für ein festes Markenquadrat (nur D₄), und der
@@ -311,6 +325,8 @@ hergeleitet, 6 unter benannter Lesart, keines gescheitert, offen oder gesetzt.
   - Ein gemeinsamer Elternoperator.
   - Ob H6s Dynamik das Kondensat s^⊗4 und eine unabhängige Spin(10)-Elternverbindung erzeugt, und ob
     ein Ladung-4-Kondensat den Nahtindex c = 8 erhält (das hängt mit Entscheidung 2 zusammen).
+  - Für die Flussnaht G′: Zufluss bzw. relative Theorie für k = c = 8, die Zigarre auf dem Gitter und die
+    Rückwirkung; dazu ein Term der Polarisation, der den Rang-1-Kanal auswählt.
   - Ein Operator ∂̄ + ∂̄† auf O(1) ⊕ 6O ⊕ O(−1), geprüft am originalen Randoperator (Calderón-
     Hauptsymbol, relativer Index, Nullmoden mit Ladungen, c_W < 17/2, relative Determinante), und die
     Entscheidung, wie der Spin(10)-Lift (w₂ = 1) aufgelöst wird.

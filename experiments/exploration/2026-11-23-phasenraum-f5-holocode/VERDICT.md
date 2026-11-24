@@ -1,6 +1,91 @@
 # Urteil
 
-## Aktueller Stand: H6h19 — Randoperator-Abgleich und H6 auf dem V₄-Schnitt (`z35`, `z36`)
+## Aktueller Stand: H6h20 — Auswertungsgeometrie, Spinsektoren und die Flussnaht (`z37`, `z38`)
+
+Bilanz unverändert 14 P und 6 L von 20; K14 ist bestärkt, K16 und K19 haben eine neue Lesart. Anlass
+sind die externen Vorschläge H6h20 und H6h21 vom 24.11. Selbst nachgerechnet: `z37` mit 17 und `z38` mit
+17 Prüfungen. Dazu kommt ein eigener Gittertest.
+
+**In einem Satz:**
+- Der Rang-1-Kanal ist die kanonische Erweiterungsklasse der Euler-Folge, bricht aber die Decksymmetrie.
+- Die gewöhnliche Wirkung wählt ihn nicht.
+- Vierteldrehung und Twistgewicht 1 erzwingen V₄ und 16 Majorana.
+- 5 + 3 lebt im periodischen Spinsektor.
+- Eine **Flussnaht** trägt die acht chiralen Moden ohne Paarungsfeld und ohne Wand, und ihr Index hält
+  auf dem Gitter.
+
+**1. Auswertungsgeometrie (`z37`).**
+- **Euler-Folge.** 0 → O(−1) → ℂ² ⊗ O → O(1) → 0: O(−1) ist der Kern der Auswertung des schwachen Dubletts.
+  Mit K^{1/2} verdrillt ist der Verbindungshomomorphismus H⁰(O) → H¹(O(−2)) ein Isomorphismus. Der
+  Rang-1-Kanal ist damit die kanonische Erweiterungsklasse und keine freie Wahl; seine Stärke ist offen.
+- **Spin(10)-Lift.** Das volle Dublett ℂ² ⊗ O ist trivial (c₁ = 0). Die Windung sitzt in der
+  Polarisation, nicht im Eichbündel. Ein Spin(10)-Lift des ganzen Trägers ist so möglich; dafür muss
+  L₂ = O(1) als Determinantenlinie der Auswertung gelesen werden.
+- **Verbindungsfamilie.** ∇_t = d + (1−t)[P, dP] hat F_t = (1 − t²) dP∧dP. Das Spektrum ist λ₀ = t und
+  λ_{J,±} = (√(4J(J+1)+t²) ± t)/2, jeweils (2J+1)-fach. Bei t = 1 ist das der freie Dirac (Eigenwert 1
+  vierfach, 2 achtfach), bei t = 0 die Monopolspektren ±1.
+- **ζ-Determinante.** log det D_t² = 4 log t − 2t² + const; numerisch −0,0799 / −0,5 / −1,28 gegen −2t².
+  **a(1 − t²)² − 2 log t + t² hat sein Minimum stets bei t = 1.** Yang–Mills plus Fermiondeterminante
+  wählen den primitiven Kanal also nicht. Es fehlt eine eigene Antwort der Polarisation.
+- **Determinantentwist.** Mit E₃ ⊗ det F ≅ F^∨ ≅ F hat die Vierteldrehung auf dem Träger Determinante +1,
+  und Farbe → Familien ist D₄-äquivariant vom Rang 3. Der Twist ändert die Viertelwirkung auf der Farbe;
+  er ist gegen Uhren- und Flavoroperatoren zu prüfen.
+- **Korrekturen zu z35:**
+  - (i) native-diagnostic-v1 ist eine **Diagnosefixture**: `input_role` „NOT_physical“, Yukawas aus
+    rng252. Die zweite Vielfachheit weicht ab (Geometrie 12, Fixture 6). Das einfache λ₁⁺ ist daher nur
+    Konsistenz, kein Identitätsbeweis.
+  - (ii) Die beiden Nullmoden tragen entgegengesetzte Deckcharaktere, ind_ℤ₂ = [1] − [sgn] ≠ 0. Eine
+    deckinvariante invertierbare Störung ist ausgeschlossen; der Rang-1-Kanal **bricht** die
+    Decksymmetrie.
+
+**2. Spinsektoren und Auswahl (`z38`).**
+- **Auswahl der Überlagerung.** Grad 2d, 4d Majorana, Twistgewicht d/4. Aus h = 1 folgt d = 4. Von den
+  sieben Untergruppen der Ordnung 4 (sechs zyklisch) ist nur V₄ = E[2] unter der Vierteldrehung
+  invariant. Vierteldrehung und Twistgewicht 1 erzwingen also V₄, acht Schnitte und 16 Majorana; z5 und
+  z34 sind damit verbunden.
+- **Thetamodell vom Grad 8.**
+  - Nur die periodisch-periodische Spinstruktur gibt die Deckzerlegung 5 + 3; alle anderen geben 4 + 4.
+  - In (A,A) gilt T_a² = −1 und δ T_a δ⁻¹ = −T_a, und J = δ(iT_a) hat J² = −1. Das ist H6s Spin-ℤ₄ aus der
+    Spinstruktur.
+  - (A,A) ist die einzige gerade Struktur, die die Vierteldrehung festhält.
+  - 5 + 3 (Träger | Familien) lebt also im periodischen Sektor mit seinen Nullmoden, der Zustand im
+    (A,A)-Sektor: zwei GSO-Sektoren derselben Naht.
+- **Anomalie und E₈.**
+  - Die Flüsse 2 + 6×1 + 0 geben I₄ = 4x² − p₁/3, also U(1)-Niveau 8 und c₋ = 8.
+  - Unter s = (½)⁸ zerfallen die E₈-Wurzeln in 1 + 56 + 126 + 56 + 1; die 126 neutralen bilden E₇.
+  - q = 2s ist nicht primitiv. Der Fluss erhält Spin(10) nicht ganz und ist von der Materieladung zu
+    trennen.
+- **Lokalisierung.** Auf der flachen Ebene trägt Fluss N nur N − 1 Moden (Aharonov–Casher, insgesamt 1),
+  auf der **Zigarre** ds² = dρ² + R² tanh²(ρ/R) dθ² dagegen N, insgesamt **8**. Die Normintegrale 2π, 2π/3
+  und 4π/3 sind exakt.
+- **Die Zigarre:**
+  - Sie ist ein Ricci-Soliton mit Φ = −log cosh(ρ/R) und K = 2 sech²/R².
+  - B = N·K hat den Fluss N und erfüllt die dilatongewichtete Maxwellgleichung (e^{−2Φ}B = 2N/R²).
+  - Der antiperiodische Kreis im Unendlichen gibt die Lücke 1/(2R).
+- **Eigener Gittertest.** Auf dem 2D-Torus mit N Flussquanten (L = 12, 14) gilt:
+  - **Wilson-Dirac** hat die Chiralitätssumme der physischen reellen Eigenwerte −N, ohne exakte chirale
+    Symmetrie.
+  - **Overlap** hat genau N exakte Nullmoden und Index −N.
+
+  Die Chiralität der Flussnaht ist also ein **Transversalindex**. Sie braucht kein geladenes
+  Paarungsfeld und keine exakte ortslokale U(1). Der Satz aus z24 (geladenes Φ bei exakter U(1) gibt
+  Index 0) greift nicht, und die Wand aus z24/z31/z33 entfällt mit Φ.
+
+**3. Was das für H6 heißt.**
+- Neben G (Paarungsdefekt) gibt es jetzt eine Prämisse **G′ (geometrische Flussnaht auf dem Kragen)**.
+  Sie vermeidet die Wand und den Engpass Entscheidung 4 *für die Naht*. Die Chiralität kommt aus einem
+  vektorartigen Operator mit Fluss, wie bei Domänenwandfermionen. T4, chirale 4D-Materie, ist davon
+  getrennt und bleibt offen.
+- **Was G′ verlangt:**
+  - einen Zufluss bzw. eine Gegenseite für k = c = 8: Ist der Fluss eine dynamische, anomaliefreie U(1),
+    verschwindet die reduzierte Anomalie; nötig ist eine relative Theorie, etwa die zweite Seite der
+    global neutralen Struktur oder APS-η;
+  - die Gitterzigarre, denn bisher ist nur der kompakte Torus gerechnet;
+  - die Rückwirkung von Fluss und Feldern auf die Geometrie.
+- **Gewöhnliche Wirkung.** Sie wählt weder t < 1 noch den Kanal, verlangt also einen eigenen Term der
+  Polarisation aus der TFPT-Quelle.
+
+## Davor: H6h19 — Randoperator-Abgleich und H6 auf dem V₄-Schnitt (`z35`, `z36`)
 
 Bilanz unverändert 14 P und 6 L von 20. K8, K11, K19 und K20 sind präzisiert. Selbst gerechnet: `z35`
 mit 14 und `z36` mit 13 Prüfungen. Der native Operator aus P1BIND wurde dabei mit dem unveränderten

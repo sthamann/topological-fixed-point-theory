@@ -1,0 +1,56 @@
+Teil 1: Auswahl der Überlagerung
+   d = 1: Grad 2, h^0(L) = 2, 4 Majorana, Twistgewicht 1/4
+   d = 2: Grad 4, h^0(L) = 4, 8 Majorana, Twistgewicht 1/2
+   d = 3: Grad 6, h^0(L) = 6, 12 Majorana, Twistgewicht 3/4
+   d = 4: Grad 8, h^0(L) = 8, 16 Majorana, Twistgewicht 1
+   d = 5: Grad 10, h^0(L) = 10, 20 Majorana, Twistgewicht 5/4
+   d = 8: Grad 16, h^0(L) = 16, 32 Majorana, Twistgewicht 2
+   [ok] Twistgewicht h = d/4 = 1 genau für d = 4 (16 Majorana, acht Schnitte)
+   Untergruppen der Ordnung 4: 7 (zyklisch 6); unter i invariant: [[(0, 0), (0, 2), (2, 0), (2, 2)]]
+   [ok] sieben Untergruppen der Ordnung 4 (sechs zyklisch), nur V4 = E[2] ist unter der Vierteldrehung invariant
+   [ok] Aut(Z4) = {+1, -1}: kein Automorphismus mit Quadrat -1 (k^2 = -1 mod 4 unlösbar)
+   [Befund: ja] Vierteldrehung + Twistgewicht 1 erzwingen V4, acht Schnitte und 16 Majorana (Z5, Z34 verbunden)
+
+Teil 2: Thetamodell vom Grad 8 für die vier Spinstrukturen
+   (P,P): Deck 5 + 3, T1^2 = +1, T2^2 = +1, delta T delta^-1 = -T: False
+   (A,P): Deck 4 + 4, T1^2 = -1, T2^2 = +1, delta T delta^-1 = -T: False
+   (P,A): Deck 4 + 4, T1^2 = +1, T2^2 = -1, delta T delta^-1 = -T: False
+   (A,A): Deck 4 + 4, T1^2 = -1, T2^2 = -1, delta T delta^-1 = -T: True
+   [ok] periodisch-periodisch: Deck 5 + 3 (Träger | Familien); alle anderen 4 + 4
+   [ok] (A,A): T_a^2 = -1, delta T_a delta^-1 = -T_a; C_a = i T_a Involution, {delta, C_a} = 0, J = delta C_a mit J^2 = -1
+   [ok] Vierteldrehung vertauscht die Perioden: (alpha, beta) -> (beta, alpha); von den geraden Strukturen bleibt nur (A,A)
+   Spin-Dirac-Nullmoden H^.(E, M): M trivial (periodisch-periodisch) 1 + 1, M nichttrivial 0 (Riemann-Roch, Grad 0).
+   [Befund: ja] 5 + 3 lebt im periodischen Sektor (Nullmoden), der Zustand im (A,A)-Sektor (4 + 4): verschiedene GSO-Sektoren
+
+Teil 3: Anomalie und E8
+   Flüsse [2, 1, 1, 1, 1, 1, 1, 0]: I_4 = -p1/3 + 4*x**2
+   [ok] I_4 = 4 x^2 - p_1/3, also U(1)-Niveau 8 und c_- = 8
+   E8-Wurzeln: 240; Ladungen unter s: {Fraction(-2, 1): 1, Fraction(-1, 1): 56, Fraction(0, 1): 126, Fraction(1, 1): 56, Fraction(2, 1): 1}; neutrale Wurzeln 126, Rang 7
+   [ok] 240 Wurzeln, Histogramm {-2: 1, -1: 56, 0: 126, 1: 56, 2: 1}; 126 neutrale Wurzeln vom Rang 7 = E7
+   [ok] q = (1,...,1) = 2 s hat |q|^2 = 8 (Niveau 8) und ist nicht primitiv; s selbst ist eine E8-Wurzel
+   [Befund: ja] Zentralisator des primitiven Flusses ist e7 + u(1); der Fluss erhält Spin(10) nicht ganz
+
+Teil 4: Lokalisierung -- flache Ebene gegen Zigarre
+   [ok] Aharonov-Casher: flache Ebene N - 1; Zigarre N normierbare Moden (k < N - 1/2)
+   TFPT-Flüsse [2, 1, 1, 1, 1, 1, 1, 0]: flach 1, Zigarre 8
+   [ok] mit den Flüssen 2 + 6 x 1 + 0: flach 1 Mode, auf der Zigarre 8
+   Normintegrale int |psi_k|^2 dA: N=1,k=0: 6.2831853072 (exakt 6.2831853072), N=2,k=0: 2.0943951024 (exakt 2.0943951024), N=2,k=1: 4.1887902048 (exakt 4.1887902048), N=3,k=2: 3.3510321638 (exakt 3.3510321638)
+   [ok] Normintegrale 2 pi (N=1), 2 pi/3 und 4 pi/3 (N=2) exakt, numerisch auf 1e-9
+
+Teil 5: Zigarrengeometrie
+   [ok] K = (2/R^2) sech^2(rho/R); Ricci + 2 Hess(Phi) = 0 in beiden Komponenten
+   [ok] int K dA = 2 pi; B = N K hat Fluss N; e^{-2 Phi} B = 2N/R^2 konstant (dilatongewichtete Maxwellgleichung)
+   [ok] asymptotischer Kreis antiperiodisch: Moden (n + 1/2)/R, Lücke 1/(2R)
+
+Teil 6: Gitter -- Flussindex ohne exakte chirale Symmetrie
+   L = 12, N = 1: Wilson reelle Eigenwerte < 1: 1, Chiralitätssumme -1; Overlap Nullmoden 1, Index -Tr(sign H)/2 = -1
+   L = 12, N = 2: Wilson reelle Eigenwerte < 1: 2, Chiralitätssumme -2; Overlap Nullmoden 2, Index -Tr(sign H)/2 = -2
+   L = 14, N = 3: Wilson reelle Eigenwerte < 1: 3, Chiralitätssumme -3; Overlap Nullmoden 3, Index -Tr(sign H)/2 = -3
+   [ok] Wilson-Dirac: Chiralitätssumme der physischen reellen Eigenwerte = +-N (ohne exakte chirale Symmetrie)
+   [ok] Overlap: genau N exakte Nullmoden, Index |N| (exakt)
+   [Befund: ja] Die Chiralität der Flussnaht ist ein Transversalindex; sie braucht kein geladenes Phi und keine exakte ortslokale U(1)
+
+Urteil
+   Twistgewicht 1 verlangt d = 4 Translationen, und von den sieben Untergruppen der Ordnung 4 des quadratischen Torus ist nur V4 = E[2] unter der Vierteldrehung invariant: Vierteldrehung und h = 1 erzwingen V4, acht Schnitte und 16 Majorana. Im Thetamodell vom Grad 8 gibt nur die periodisch-periodische Spinstruktur die Deckzerlegung 5 + 3, die anderen 4 + 4; in (A,A) gilt T_a^2 = -1, delta T_a delta^-1 = -T_a, und J = delta (i T_a) hat J^2 = -1, (A,A) ist die einzige gerade Struktur, die die Vierteldrehung festhält. Die Flüsse 2 + 6 x 1 + 0 geben I_4 = 4 x^2 - p_1/3, also Niveau 8 und c_- = 8; unter s = (1/2)^8 zerfallen die E8-Wurzeln in 1 + 56 + 126 + 56 + 1, die neutralen bilden E7. Auf der flachen Ebene trägt Fluss N nur N - 1 Moden (insgesamt 1), auf der Zigarre N (insgesamt 8, Normintegrale exakt). Die Zigarre ist ein Ricci-Soliton mit Phi = -log cosh, B = N K hat Fluss N und erfüllt die dilatongewichtete Maxwellgleichung, der antiperiodische Kreis gibt die Lücke 1/(2R). Eigener Gittertest: Wilson-Dirac trägt mit N Flussquanten die Chiralitätssumme N, Overlap genau N exakte Nullmoden. Die Chiralität der Flussnaht ist ein Transversalindex ohne geladenes Paarungsfeld; der Satz aus Z24 (exakte ortslokale U(1) mit geladenem Phi gibt Index 0) greift hier nicht. Offen: Zufluss bzw. Gegenseite für die Anomalie, Gitterzigarre, Rückwirkung.
+
+Alle Prüfungen bestanden: True (17/17)

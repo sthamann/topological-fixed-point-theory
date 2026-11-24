@@ -898,6 +898,26 @@ if "H6h2" in H and z1p.exists() and z2p.exists():
                                                                                          "Randoperator invertierbar mit einfachem lambda_1^+ wie die Saatlinie "
                                                                                          "des nativen Originals (Z35)")
                                                                     facts["F38_boundary_and_v4"] = {n: T6[n]["urteil"] for n in T6}
+                                                                    zw = {n: Path(__file__).with_name(f"z{n}_ergebnis.json") for n in (37, 38)}
+                                                                    if all(p.exists() for p in zw.values()):
+                                                                        T7 = {n: json.loads(p.read_text()) for n, p in zw.items()}
+                                                                        ok7 = {n: all(T7[n]["checks"].values()) for n in T7}
+                                                                        H["H6h20"] = dict(H["H6h19"])
+                                                                        H["H6h20"]["K14"] = (P if ok7[38] else F,
+                                                                                             "keine Konstante; Vierteldrehung und Twistgewicht 1 erzwingen V4, "
+                                                                                             "acht Schnitte und 16 Majorana (von sieben Untergruppen der "
+                                                                                             "Ordnung 4 ist nur E[2] invariant, Z38)")
+                                                                        H["H6h20"]["K16"] = (LES if ok7[38] else F,
+                                                                                             "[Flussnaht G' statt Paarungsdefekt G] die Chiralität der Naht ist "
+                                                                                             "ein Transversalindex: Wilson-Dirac trägt mit N Flussquanten die "
+                                                                                             "Chiralitätssumme N, Overlap N exakte Nullmoden, ohne geladenes Phi "
+                                                                                             "und ohne Wand (Z38); offen: Zufluss für k = c = 8, Gitterzigarre, "
+                                                                                             "wechselwirkender Limes")
+                                                                        H["H6h20"]["K19"] = (LES if ok7[37] and ok7[38] else F,
+                                                                                             "[Irreduzibilität] Rang-1-Kanal = kanonische Erweiterungsklasse der "
+                                                                                             "Euler-Folge (Z37), bricht aber die Decksymmetrie; J = delta (i T_a) "
+                                                                                             "mit J^2 = -1 aus dem (A,A)-Thetamodell (Z38)")
+                                                                        facts["F39_evaluation_flux_seam"] = {n: T7[n]["urteil"] for n in T7}
 
 order = [f"K{i}" for i in range(1, 21)]
 print("Gesamttabelle (P = hergeleitet, L = unter benannter Lesart, F = FAIL, O = OFFEN, E = EINGABE)\n")
