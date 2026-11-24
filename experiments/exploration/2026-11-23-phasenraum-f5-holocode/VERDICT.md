@@ -1,6 +1,83 @@
 # Urteil
 
-## Aktueller Stand: H6h26 — Herleitung der Zuordnung, Quelle des Gravitons, Bimetrik, größere Familiengruppen (`z48`, `z49`)
+## Aktueller Stand: H6h27 — metrischer Stern, Korrekturen, die eine quartische Zahl (`z50`, `z51`)
+
+Bilanz unverändert 14 P und 6 L von 20; K13 ist präzisiert. Anlass ist die externe Analyse vom 24.11. zu H6h24
+(metrischer Stern, Ward, Zustand, Flavour). Ihr Zweig `research/h6h24-metric-process-20261124` und das Prüfpaket liegen
+hier nicht vor; alle Aussagen sind unabhängig nachgerechnet. Selbst gerechnet: `z50` mit 24 und `z51` mit 10 Prüfungen,
+dazu eine metrische Stufe der Lane `process_rules` (19 Tests).
+
+**In einem Satz:**
+- Der vollständige Vierteltransfer ist der Massenoperator eines endlichen metrischen Sterns mit universell gekoppeltem
+  masselosen Kanal. Gravitation hat damit eine ausdrückliche nichtlineare Wirkung.
+- Ungerichtete Kanten legen deren Wechselwirkung bis auf eine quartische Zahl t fest.
+- Drei frühere Aussagen sind korrigiert.
+
+**1. Metrischer Stern (`z50`, Teil 1).**
+- **Aufbau.** Eine Zentralmetrik plus vier Arme mit je m Metriken. Die Einsteingewichte sind M_c und M_(j,n) =
+  (M_c/2) q^(n+1), die Kantensteifigkeit ist μ² M_Kind², das Potential V = (−4 + e₁ + e₃ − 4e₄)/2.
+- **Äquivalenz.** Der kanonische Massenoperator μ² B⁺B ist exakt unitär äquivalent zum rechteckigen Vierteltransfer:
+  B U = V A_rect (Fehler 0 bei q = 1/2 und e^{−2π}).
+  - Die Armdrehung geht in R|k⟩ = i^k|k⟩ über.
+  - A_rect (4m × (4m+1)) ist surjektiv mit genau einem Nullvektor. Das ist kein Abschneideartefakt wie beim
+    quadratischen Shift.
+- **Universalität.** Die Nullmode ist η_v = M_v/M_eff mit M_eff² = M_c² Σ q^{2n}. Mit minimalen Knotenquellen gilt
+  η_v/M_v = 1/M_eff an jedem Knoten.
+  - Massive Kopplungen hängen vom Knoten ab.
+  - Die Einstein-Kopplung masselos-masselos-massiv verschwindet.
+- **Grenzfall.** Die Zentrumsresolvente geht mit m → ∞ in C_q über (m = 16: bis 10⁻¹⁰).
+- **Damit** gehören Quellenregel, positive Masse und gemeinsame Diffeomorphie zu einer Wirkung; G_eff = 1/(8πM_eff²)
+  bleibt frei.
+
+**2. Korrekturen (`z50`, Teil 3–5).**
+- **„Kein Auslesen ist masselos und verbunden“ (z44/z45)** betraf nur die vakuumsubtrahierte Mikroantwort. Die zentrierte
+  Feldkovarianz (p² + μ²L)⁻¹ ist verbunden und masselos.
+  - In der Lane heißt die alte Klausel jetzt `vacuum_subtracted`; leer bleiben nur Regeln mit ihr.
+  - Auch die Universalität ist mit der Quellnorm 1/M_v der Wirkung erreicht.
+- **„Keine Nullstelle“ ist kein Positivitätszertifikat.** H = 2x + h_exp ist auf der ganzen Achse positiv, verletzt aber
+  die Schranke x C(x) ≤ 1/κ, die jede positive Darstellung erfüllt. Die Verletzung liegt genau dort, wo h_exp < 0 ist.
+  - Die Summenregel erzwingt solche Stellen. Damit ist die flache Dirac-Profilklasse auch mit Einstein-Zusatz
+    ausgeschlossen, jetzt mit Zertifikat.
+- **Freie relative Skala.** Mit ihr trifft jedes q die Zahl 3/10: λ(q) = 10q²/(3(1 − q²)²).
+  - q² = 1/2 mit λ = 20/3 gibt b = 27/100 und dasselbe massive Gesamtgewicht wie der Schur-Spiegel. Die leere
+    Schnittmenge im Zustandsuniversum gilt nur bei fester Skala.
+  - Skalenfrei bleibt b/a² = (1 + r)/r.
+- **Flavour.**
+  - Eine ungebrochene volle Majorana-Z₄ erlaubt nur M₁₁ und M₂₃, also entartete Massen.
+  - Die Z₃ × Z₄-Tabelle ist symmetrisch; beide Rollenverteilungen geben dieselben |U|² und unterscheiden sich in der
+    Majorana-Verträglichkeit.
+  - TM1 bei 15° liegt im NuFIT-6.1-Bereich 0,02064–0,02418 (Zahlen aus der Analyse).
+- **G durch Zustand und Ward nicht festgelegt.** Der Faktor e^{−γ∫√gR − Λ∫√g} lässt normierte Materiekorrelationen auf
+  festem Hintergrund gleich (logisch geprüft).
+
+**3. Die freie Wechselwirkung (`z50` Teil 2, `z51`).**
+- **Quartische Gegenfamilie (bestätigt).** V_t = V + (t/2) det(I − X) stimmt mit V bis zur kubischen Ordnung überein,
+  quartisch nicht: Δc₄ = (t/2) det(B − A)/16.
+  - Längs der masselosen Richtung verschwindet jedes dieser Potentiale. Die masselose Vierpunktamplitude ist daher reines
+    Einstein mit M_eff und sieht t nicht.
+  - Unterscheiden können erst Amplituden mit massiven Beinen.
+- **Zählung (neu, aus berechneten Taylorkoeffizienten).**
+  - Flachheit beider Metriken ist zwei Bedingungen, die Fierz-Pauli-Masse eine. Es bleiben zwei Potentialrichtungen.
+  - Eine **ungerichtete Kante** (gleiches Potential, ob von Eltern- oder Kindmetrik gelesen, β_n = β_{4−n}) lässt genau
+    eine, det(I − X). Die kubische Ordnung ist damit festgelegt; frei ist nur t.
+- **Ort des Rests.** In kanonischen Feldern ist t ein lokaler Viererkontakt (t/2) μ² det((Bh)_e)/M_e² auf den Zeilen des
+  Vierteltransfers und wächst in der Tiefe wie q^{−2n}.
+- **Kopplungstiefe.** Ein Knoten ist schwach gekoppelt, solange M_(j,n) ≥ μ (Λ₃ ≥ μ). Im originalen Zustand kostet jede
+  Stufe e^{2π} = 535.
+  - Bei μ/M_c = 10⁻¹⁶ (TeV gegen Planck) sind es fünf Stufen, bei 10⁻³ keine.
+  - Jenseits davon liegt Gewicht ≤ q¹² = 1,8·10⁻³³. Der unendliche Hardy-Grenzfall ist eine lineare Aussage.
+
+**4. Was das für H6 heißt.**
+- **Gravitation** ist jetzt eine ausdrückliche bedingte Konstruktion:
+  - Zustand q = e^{−2π}, Übertragung, Ward;
+  - metrischer Stern mit ungerichteten Kanten;
+  - offen nur M_c (also G), μ und die quartische Zahl t, dazu die Prämissen D und Gaußquantisierung.
+- **Der nächste trennende Gegenstand** ist die verbundene Vierpunktantwort der Quellen über massive Austausche. Dort wird
+  t sichtbar.
+- **Grenze:** Das ist eine bedingte Lösung des gravitativen Teilproblems, keine vollständige TFPT-Lösung. Die Bilanz
+  steigt dadurch nicht. Naht- und Kondensationsdynamik, das lokale chirale 4D-Maß und der Familienmechanismus sind offen.
+
+## Davor: H6h26 — Herleitung der Zuordnung, Quelle des Gravitons, Bimetrik, größere Familiengruppen (`z48`, `z49`)
 
 Bilanz unverändert 14 P und 6 L von 20; K13 und K18 sind präzisiert. Auftrag: weiter bis zur vollständigen Lösung.
 Selbst gerechnet: `z48` mit 14 und `z49` mit 7 Prüfungen, die Lane `process_rules` mit einem Gruppenuniversum und 16

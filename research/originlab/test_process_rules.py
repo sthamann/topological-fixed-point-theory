@@ -4,7 +4,7 @@ from fractions import Fraction as Fr
 from autonomy import execute, specifications
 import numpy as np
 
-from process_rules import (Q_DIRAC, Q_ORIGINAL, flavour_groups, flavour_pairs, ladder_occupation, matrix_kernels, original_current_norm,
+from process_rules import (Q_DIRAC, Q_ORIGINAL, flavour_groups, flavour_pairs, hardy_rect, metric_star, ladder_occupation, matrix_kernels, original_current_norm,
                            q_rules, readouts, run, schur_coefficient, seam_layers, spin2_kernels, transfer_processes)
 
 
@@ -14,6 +14,7 @@ class ProcessRules(unittest.TestCase):
         cls.result = run()
         cls.h6h23 = run(transfer=False)
         cls.h6h24 = run(state=False)
+        cls.h6h26 = run(metric=False)
 
     def selected(self, universe):
         return {row["selected"]: row for row in self.result["universes"][universe]["unique_selections"]}
@@ -69,7 +70,7 @@ class ProcessRules(unittest.TestCase):
 
     def test_no_rank_one_readout_is_massless_and_connected_or_universal(self):
         self.assertEqual(len(readouts()), 10)
-        empty = self.result["universes"]["readouts"]["minimal_empty_rules"]
+        empty = self.h6h26["universes"]["readouts"]["minimal_empty_rules"]   # scoped statement of z45, corrected in z50
         self.assertEqual(empty, [["connected", "massless_pole"], ["universal_residue"]])
 
     def test_real_seam_needs_spin10_level_one(self):
@@ -151,6 +152,34 @@ class ProcessRules(unittest.TestCase):
         empty = self.result["universes"]["flavour_groups"]["minimal_empty_rules"]
         for rule in (["fits_data"], ["theta13_window"], ["mixes", "tm1"]):
             self.assertIn(rule, empty)
+
+    def test_metric_star_is_the_quarter_transfer(self):
+        for qv in (0.5, Q_ORIGINAL):
+            st, A = metric_star(qv, 5), hardy_rect(qv, 5)
+            self.assertTrue(np.allclose(np.sort(st["sv"]), np.sort(np.linalg.svd(A, compute_uv=False)), atol=1e-12))
+            self.assertEqual(st["nullity"], 1)
+            ratio = st["eta"]/st["M"]
+            self.assertLess(np.ptp(ratio)/np.mean(ratio), 1e-12)
+            self.assertAlmostEqual(st["svd_kernel_overlap"], 1.0, places=10)
+        self.assertTrue(all(v["singular_values_agree"] for v in self.result["metric_star"].values()))
+
+    def test_only_the_quartic_number_is_free_with_undirected_edges(self):
+        pots = self.result["universes"]["metric_potentials"]
+        self.assertEqual(pots["tie_flat_mass_undirected"], ["V", "V + det(I-X)/2", "V - det(I-X)/2"])
+        d = pots["derived"]
+        self.assertIn("cubic_as_V", d["V + det(I-X)/2"]["clauses"])
+        self.assertNotIn("quartic_as_V", d["V + det(I-X)/2"]["clauses"])
+        self.assertNotIn("cubic_as_V", d["V + cubic/2"]["clauses"])
+        self.assertNotIn("undirected_edge", d["V + cubic/2"]["clauses"])
+
+    def test_field_covariance_is_connected_and_massless(self):
+        empty = self.result["universes"]["readouts"]["minimal_empty_rules"]
+        self.assertNotIn(["field_connected", "massless_pole"], empty)
+        self.assertNotIn(["universal_residue"], empty)
+        self.assertTrue(all("vacuum_subtracted" in r for r in empty))
+        self.assertNotIn("metric_potentials", self.h6h26["universes"])
+        self.assertEqual(self.h6h26["universes"]["readouts"]["minimal_empty_rules"],
+                         self.h6h24["universes"]["readouts"]["minimal_empty_rules"])
 
     def test_nothing_is_promoted_and_the_lane_is_registered(self):
         self.assertFalse(self.result["physical_solution"])

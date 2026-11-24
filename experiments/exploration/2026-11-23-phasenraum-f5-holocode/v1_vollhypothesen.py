@@ -1070,6 +1070,21 @@ if "H6h2" in H and z1p.exists() and z2p.exists():
                                                                                                                      "TM1 bei 15 Grad mit mu-tau-Reflexion passt "
                                                                                                                      "(delta = +-pi/2), Mechanismus offen (Z49)")
                                                                                                 facts["F45_assignment_and_flavour_groups"] = {n: T12[n]["urteil"] for n in T12}
+                                                                                                zu = {n: Path(__file__).with_name(f"z{n}_ergebnis.json") for n in (50, 51)}
+                                                                                                if all(p.exists() for p in zu.values()):
+                                                                                                    T13 = {n: json.loads(p.read_text()) for n, p in zu.items()}
+                                                                                                    ok13 = {n: all(T13[n]["checks"].values()) for n in T13}
+                                                                                                    H["H6h27"] = dict(H["H6h26"])
+                                                                                                    H["H6h27"]["K13"] = (LES if ok13[50] and ok13[51] and ok12[48] else F,
+                                                                                                                         "[D] Jacobson; der Vierteltransfer ist der "
+                                                                                                                         "Massenoperator eines endlichen metrischen "
+                                                                                                                         "Sterns (B U = V A_rect), minimale Knotenquellen "
+                                                                                                                         "koppeln universell (Z50); ungerichtete Kanten "
+                                                                                                                         "legen die kubische Ordnung fest, frei bleibt "
+                                                                                                                         "eine quartische Zahl t; schwach gekoppelt bis "
+                                                                                                                         "zu endlicher Tiefe (Z51); offen t, mu, M_c (G) "
+                                                                                                                         "und die Gaußquantisierung")
+                                                                                                    facts["F46_metric_star_and_quartic"] = {n: T13[n]["urteil"] for n in T13}
 
 order = [f"K{i}" for i in range(1, 21)]
 print("Gesamttabelle (P = hergeleitet, L = unter benannter Lesart, F = FAIL, O = OFFEN, E = EINGABE)\n")

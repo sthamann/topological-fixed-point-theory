@@ -1,0 +1,33 @@
+Teil 1: Zählung der freien Potentialrichtungen
+   Rang der Kaulquappenbedingungen c1 = 0: 2; mit c0 = 0: 2
+   [ok] Flachheit ist genau zwei Bedingungen (Lambda_g = Lambda_f = 0); c0 = 0 folgt daraus
+   [ok] auf den drei flachen Richtungen ist der quadratische Term reine Fierz-Pauli-Form tr D^2 - (tr D)^2 (gleicher Koeffizient auf allen Paaren); nicht flache Richtungen haben Zusatzterme
+   Flachheit plus feste Masse: Rang 3, freie Richtungen 2
+   [ok] Flachheit plus Fierz-Pauli-Masse lassen zwei Richtungen frei
+   [ok] mit ungerichteter Kante (beta_n = beta_(4-n)) bleibt genau eine Richtung, und sie ist det(I - X)
+   [ok] längs dieser Richtung ändert sich die kubische Ordnung nicht, die quartische schon
+   Lane: flach + Masse + ungerichtet lässt ['V', 'V + det(I-X)/2', 'V - det(I-X)/2'] offen
+   [ok] in der Lane lassen flach, Fierz-Pauli-Masse und ungerichtete Kante genau V und V +- det(I-X)/2 offen
+   [Befund: ja] Ungerichtete Kanten legen die kubische Wechselwirkung fest; die quartische Zahl t bleibt die einzige freie Potentialzahl je Kante
+
+Teil 2: Der quartische Rest sitzt auf den Transferkanten
+   Delta c4 gegen (t/2) det(B - A)/16 bei t = 1: [(-0.0638687916, np.float64(-0.0638687916)), (0.0940725092, np.float64(0.0940725092)), (-0.2542319822, np.float64(-0.2542319822))]
+   [ok] Delta c4 = (t/2) det(B - A)/16, alle niedrigeren Ordnungen gleich
+   [ok] in kanonischen Feldern (g_v = eta + 2 h_v/M_v, kappa = mu^2 M_k^2) ist das (t/2) mu^2 det((B h)_e)/M_e^2: B - A = -2 (B h)_e/M_e, det(-2 X/M)/16 = det(X)/M^4
+   [Befund: ja] Die einzige freie Wechselwirkungszahl ist ein lokaler Viererkontakt auf den Zeilen des Vierteltransfers, gewichtet mit 1/M_e^2; er wächst in der Tiefe wie q^(-2n)
+
+Teil 3: Kopplungstiefe
+   q = e^-2pi  mu/M_c = 1e-03: schwach gekoppelte Armstufen n <= -1
+   q = e^-2pi  mu/M_c = 1e-10: schwach gekoppelte Armstufen n <= 2
+   q = e^-2pi  mu/M_c = 1e-16: schwach gekoppelte Armstufen n <= 4
+   q = 1/2     mu/M_c = 1e-03: schwach gekoppelte Armstufen n <= 7
+   q = 1/2     mu/M_c = 1e-10: schwach gekoppelte Armstufen n <= 31
+   q = 1/2     mu/M_c = 1e-16: schwach gekoppelte Armstufen n <= 51
+   [ok] im originalen Zustand kostet jede Stufe den Faktor 1/q = e^{2 pi} = 535: bei mu/M_c = 1e-16 (TeV gegen Planck) sind es fünf Stufen, bei mu/M_c = 1e-3 keine
+   [ok] was jenseits dieser Tiefe stark koppelt, trägt im originalen Zustand höchstens das Gewicht q^(2(n_max+1)) (fünf Stufen: q^12 = 1.8e-33)
+   [Befund: ja] Der unendliche Hardy-Grenzfall ist eine lineare Aussage; nichtlinear ist der Stern bis zu einer endlichen Tiefe schwach gekoppelt. Im originalen Zustand liegt praktisch das ganze versteckte Gewicht in den ersten Stufen
+
+Urteil
+   Ungerichtete Kanten legen die Wechselwirkung des metrischen Sterns bis auf eine Zahl fest. Aus berechneten Taylorkoeffizienten folgt: Flachheit beider Metriken ist zwei Bedingungen, die Fierz-Pauli-Masse eine; es bleiben zwei Potentialrichtungen. Liest man jede Kante gleich von Eltern- und Kindmetrik (beta_n = beta_(4-n)), bleibt genau eine, det(I - X): Die kubische Ordnung ist fest, frei ist nur die quartische Zahl t. Sie ist ein lokaler Viererkontakt (t/2) mu^2 det((B h)_e)/M_e^2 auf den Zeilen des Vierteltransfers und wächst in der Tiefe wie q^(-2n). Daher ist der Stern nichtlinear nur bis zu einer endlichen Tiefe schwach gekoppelt; im originalen Zustand kostet jede Stufe e^{2 pi}, bei TeV gegen Planck sind es fünf Stufen, und jenseits davon liegt kein nennenswertes Gewicht. Offen bleiben t, mu und M_c (also G).
+
+Alle Prüfungen bestanden: True (10/10)

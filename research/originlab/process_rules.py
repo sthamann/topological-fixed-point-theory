@@ -283,8 +283,13 @@ def transfer_processes():
     return out
 
 
-def readouts():
-    """Readouts of the primitive quarter transfer (d = 1, k = 4): which source map gives which pole."""
+def readouts(metric=False):
+    """Readouts of the primitive quarter transfer (d = 1, k = 4): which source map gives which pole.
+
+    The clause `connected` of the first runs means the vacuum-subtracted microscopic response (z44: the zero-mode part
+    removed), not the connected covariance of a centred field. With metric=True (z50) it is renamed `vacuum_subtracted`,
+    and two computed readouts are added: the centred 4D field covariance (p^2 + mu^2 L)^-1, which is connected and keeps the
+    massless pole, and the metric star with minimal node sources, whose massless residues are universal."""
     out = []
     for label, qv in (("1/2", 0.5), ("e^-pi", float(np.exp(-np.pi)))):
         Z = 1 - qv**2
@@ -310,7 +315,112 @@ def readouts():
                 clauses.add("several_sources")
                 if max(r["residues"]) - min(r["residues"]) < 1e-12 and r["residues"][0] > 0:
                     clauses.add("universal_residue")
+            if metric and "connected" in clauses:
+                clauses.discard("connected")
+                clauses.add("vacuum_subtracted")
             out.append({"q": label, "kind": kind, "clauses": clauses, "size": len(r["residues"])})
+        if metric:
+            pole = float(1e-9*C(1e-9))                     # x C(x) at x -> 0: residue of the centred field covariance
+            out.append({"q": label, "kind": "4D field covariance (p^2 + mu^2 L)^-1, centred", "size": 1,
+                        "clauses": {"kl_positive", "relativistic", "field_connected"} | ({"massless_pole"} if pole > 1e-12 else set())})
+            star = metric_star(qv, 6)
+            res_ = [(star["eta"][v]/star["M"][v])**2 for v in range(len(star["M"]))]
+            cl = {"kl_positive", "relativistic", "field_connected", "several_sources"}
+            if star["nullity"] == 1:
+                cl.add("massless_pole")
+            if max(res_) - min(res_) < 1e-12*max(res_):
+                cl.add("universal_residue")
+            out.append({"q": label, "kind": "metric star, minimal node sources", "size": len(res_), "clauses": cl})
+    return out
+
+
+# ---------------------------------------------------------------- B3: metric star and potentials (z50)
+def metric_star(qv, m, Mc=1.0):
+    """Central metric plus four arms of m metrics; Einstein weights M_c and M_(j,n) = (M_c/2) q^(n+1); edge stiffness
+    mu^2 M_child^2. Canonical mass operator mu^2 B^+ B with (Bh)_(j,0) = (q/2) h_c - h_(j,0), (Bh)_(j,n) = q h_(j,n-1) - h_(j,n)."""
+    nodes = ["c"] + [(j, n) for j in range(4) for n in range(m)]
+    idx = {v: i for i, v in enumerate(nodes)}
+    B = np.zeros((4*m, 1 + 4*m))
+    for e, (j, n) in enumerate((j, n) for j in range(4) for n in range(m)):
+        B[e, idx["c"] if n == 0 else idx[(j, n - 1)]] = qv/2 if n == 0 else qv
+        B[e, idx[(j, n)]] = -1
+    M = np.array([Mc] + [Mc/2*qv**(n + 1) for j in range(4) for n in range(m)])
+    _, sv, vh = np.linalg.svd(B)
+    # the kernel vector is M itself (B M = 0 exactly); the SVD vector loses relative precision on deep nodes for small q
+    assert np.max(np.abs(B @ M)) < 1e-14*np.max(np.abs(M))
+    eta = M/np.linalg.norm(M)
+    return {"B": B, "M": M, "nodes": nodes, "eta": eta, "nullity": int(B.shape[1] - np.sum(sv > 1e-12)), "sv": sv,
+            "svd_kernel_overlap": float(abs(vh[-1] @ eta))}
+
+
+def hardy_rect(qv, m):
+    """Finite rectangular quarter transfer: rows 0..4m-1, columns 0..4m, (A h)_k = h_(k+1) - q h_(k-3)."""
+    A = np.zeros((4*m, 4*m + 1))
+    for k in range(4*m):
+        A[k, k + 1] = 1
+        if k >= 3:
+            A[k, k - 3] = -qv
+    return A
+
+
+BETA_V = (-2.0, 0.5, 0.0, 0.5, -2.0)          # V(X) = (-4 + e1 + e3 - 4 e4)/2: flat for both metrics, unit Fierz-Pauli mass
+BETA_DET = (1.0, -1.0, 1.0, -1.0, 1.0)        # det(I - X) = Sum (-1)^n e_n(X): starts at fourth order
+BETA_CUB = (-2.0, 1.0, 0.0, -1.0, 2.0)        # keeps flatness and mass, changes the cubic vertex
+
+
+def potential_taylor(beta, A, B, order=4, dps=40):
+    """Taylor coefficients in eps of sqrt(det g) Sum_n beta_n e_n(sqrt(g^-1 f)), g = I + eps A, f = I + eps B (Euclidean)."""
+    import mpmath as mp
+    mp.mp.dps = dps
+    Am, Bm = mp.matrix(A.tolist()), mp.matrix(B.tolist())
+
+    def F(eps):
+        g = mp.eye(4) + eps*Am
+        f = mp.eye(4) + eps*Bm
+        w, Vg = mp.eigsy(g)
+        gih = Vg*mp.diag([1/mp.sqrt(x) for x in w])*Vg.T
+        lam, _ = mp.eigsy(gih*f*gih)
+        x = [mp.sqrt(v) for v in lam]
+        e = [mp.mpf(1), sum(x), sum(x[i]*x[j] for i in range(4) for j in range(i + 1, 4)),
+             sum(x[i]*x[j]*x[k] for i in range(4) for j in range(i + 1, 4) for k in range(j + 1, 4)), x[0]*x[1]*x[2]*x[3]]
+        return mp.sqrt(mp.fprod(w))*sum(mp.mpf(b)*en for b, en in zip(beta, e))
+    return [float(c) for c in mp.taylor(F, 0, order)]
+
+
+def metric_potentials():
+    """Hassan-Rosen potentials around V: which data fix the interaction? Clauses are computed Taylor coefficients."""
+    rng = np.random.default_rng(50)
+    pairs = []
+    for _ in range(2):
+        A, B = rng.normal(size=(4, 4)), rng.normal(size=(4, 4))
+        pairs.append(((A + A.T)/2, (B + B.T)/2))
+    cands = (("V", BETA_V), ("V + det(I-X)/2", tuple(v + d/2 for v, d in zip(BETA_V, BETA_DET))),
+             ("V - det(I-X)/2", tuple(v - d/2 for v, d in zip(BETA_V, BETA_DET))),
+             ("V + cubic/2", tuple(v + c/2 for v, c in zip(BETA_V, BETA_CUB))),
+             ("V + cubic/2 + det(I-X)/2", tuple(v + c/2 + d/2 for v, c, d in zip(BETA_V, BETA_CUB, BETA_DET))),
+             ("beta1 only", (0.0, 1.0, 0.0, 0.0, 0.0)))
+    ref = [potential_taylor(BETA_V, A, B) for A, B in pairs]
+    out = []
+    for name, beta in cands:
+        co = [potential_taylor(beta, A, B) for A, B in pairs]
+        diag = potential_taylor(beta, pairs[0][0], pairs[0][0])          # common direction: all metrics equal
+        swap = [potential_taylor(beta, B, A) for A, B in pairs]          # edge read from the child: g <-> f
+        clauses = set()
+        if all(np.allclose(c, w, atol=1e-10) for c, w in zip(co, swap)):
+            clauses.add("undirected_edge")
+        if all(abs(c[0]) < 1e-12 and abs(c[1]) < 1e-12 for c in co):
+            clauses.add("flat_background")
+        fp = [c[2]/(np.trace((A - B) @ (A - B)) - np.trace(A - B)**2) for c, (A, B) in zip(co, pairs)]
+        fp_ref = [c[2]/(np.trace((A - B) @ (A - B)) - np.trace(A - B)**2) for c, (A, B) in zip(ref, pairs)]
+        if all(abs(x - y) < 1e-10 for x, y in zip(fp, fp_ref)) and abs(fp[0] - fp[1]) < 1e-10:
+            clauses.add("fierz_pauli_mass")
+        if all(abs(d) < 1e-12 for d in diag):
+            clauses.add("massless_direction_free")
+        if all(abs(c[3] - r[3]) < 1e-10 for c, r in zip(co, ref)):
+            clauses.add("cubic_as_V")
+        if all(abs(c[4] - r[4]) < 1e-10 for c, r in zip(co, ref)):
+            clauses.add("quartic_as_V")
+        out.append({"name": name, "beta": beta, "clauses": clauses, "taylor": co})
     return out
 
 
@@ -665,13 +775,16 @@ RECORD = {
     "seam_layers": {"n=16 real reversed": "SEAM.S3 (p+ip x 16, c = 8) with an orientation-reversing second sheet half (z41/z42)",
                     "n=8 complex reversed": "the complex flux seam G' of z39 (U(1) charge, no Spin(10)_1)"},
     "flavour_groups": {},
+    "metric_potentials": {"V": "Hassan-Rosen potential (-4 + e1 + e3 - 4 e4)/2 of the metric star (z50)"},
     "flavour_pairs": {"(('0', '1/3', '2/3'), ('1/2', '1/3', '1/6'), ('1/2', '1/3', '1/6'))":
                       "tri-bimaximal mixing (S4 leading order of the TFPT flavour channels, K18)"},
 }
 
 
-def run(root=None, transfer=True, state=True):
-    """transfer=False reproduces the lane as of H6h23 (z43); state=False the lane as of H6h24 (z45), without the state rule."""
+def run(root=None, transfer=True, state=True, metric=True):
+    """transfer=False reproduces the lane as of H6h23 (z43); state=False the lane as of H6h24 (z45), without the state rule;
+    metric=False the lane as of H6h26 (z46-z49), without the metric stage of z50."""
+    metric = metric and transfer and state
     out = {"status": "PROCESS_RULES_SEARCHED", "physical_solution": False, "scope": SCOPE, "universes": {}}
     mk = matrix_kernels()
     res = search(mk, ["positive", "hardy_slice", "wave_equation", "conformally_covariant"],
@@ -696,15 +809,35 @@ def run(root=None, transfer=True, state=True):
         res["bound"] = "a(z) = z^-d (1 - q z^k), d in {1, 2}, k in {2, 3, 4, 8}, q in {1/4, 1/2, 3/4, e^-pi, e^-2pi}"
         out["universes"]["transfer_processes"] = res
 
-        ro = readouts()
-        res = search(ro, ["massless_pole", "kl_positive", "connected", "relativistic", "several_sources", "universal_residue"],
-                     lambda o: o["size"], lambda o: f"q={o['q']} {o['kind']}")
-        pool = ["massless_pole", "kl_positive", "connected", "relativistic", "several_sources", "universal_residue"]
+        ro = readouts(metric)
+        pool = (["massless_pole", "kl_positive", "vacuum_subtracted", "field_connected", "relativistic", "several_sources",
+                 "universal_residue"] if metric else
+                ["massless_pole", "kl_positive", "connected", "relativistic", "several_sources", "universal_residue"])
+        res = search(ro, pool, lambda o: o["size"], lambda o: f"q={o['q']} {o['kind']}")
         empty = [set(r) for k in range(1, len(pool) + 1) for r in combinations(pool, k)
                  if not any(set(r) <= o["clauses"] for o in ro)]
         res["minimal_empty_rules"] = sorted(sorted(r) for r in empty if not any(e < r for e in empty))
         res["bound"] = "readouts of the primitive quarter transfer at q = 1/2 and e^-pi"
         out["universes"]["readouts"] = res
+
+    if metric:
+        mp_ = metric_potentials()
+        pool = ["flat_background", "fierz_pauli_mass", "massless_direction_free", "undirected_edge", "cubic_as_V", "quartic_as_V"]
+        res = search(mp_, pool, lambda o: 0, lambda o: o["name"])
+        res["tie_flat_mass_undirected"] = sorted(o["name"] for o in mp_
+                                                 if {"flat_background", "fierz_pauli_mass", "undirected_edge"} <= o["clauses"])
+        res["derived"] = {o["name"]: {"beta": o["beta"], "clauses": sorted(o["clauses"]),
+                                      "taylor_first_pair": o["taylor"][0]} for o in mp_}
+        res["bound"] = "six Hassan-Rosen potentials around V; Taylor data to fourth order on two random perturbation pairs"
+        out["universes"]["metric_potentials"] = res
+        diag = {}
+        for qv in (0.5, Q_ORIGINAL):
+            st, A = metric_star(qv, 6), hardy_rect(qv, 6)
+            sa = np.linalg.svd(A, compute_uv=False)
+            diag[str(qv)] = {"singular_values_agree": bool(np.allclose(np.sort(st["sv"]), np.sort(sa), atol=1e-12)),
+                             "nullity": st["nullity"],
+                             "eta_over_M_spread": float(np.ptp(st["eta"]/st["M"])/np.mean(st["eta"]/st["M"]))}
+        out["metric_star"] = diag
 
     if transfer and state:
         qr = q_rules()

@@ -60,6 +60,16 @@ rounded 3-sigma ranges, and {mixes, tm1} is empty. Delta(96), the smallest of th
 the family clock (TM2 at 15 degrees) with a Klein group, which S4 alone does not. Exact labels now reject large-denominator
 fits and fall back to decimals.
 
+Fifth run (metric stage, H6 exploration z50/z51): `metric_star(q, m)` builds a central metric with four arms of m metrics
+(Einstein weights M_c and (M_c/2) q^(n+1), edge stiffness mu^2 M_child^2). Its canonical mass operator is unitarily
+equivalent to the rectangular quarter transfer `hardy_rect(q, m)`, with exactly one kernel vector eta_v = M_v/M_eff, so
+minimal node sources couple universally (eta_v/M_v = 1/M_eff). `readouts(metric=True)` renames the old clause `connected`
+to `vacuum_subtracted` (the zero-mode-removed microscopic response of z44) and adds two computed readouts: the centred field
+covariance (p^2 + mu^2 L)^-1, which is connected and massless, and the metric star with minimal node sources, which is
+universal. `metric_potentials` computes Taylor data to fourth order of six Hassan-Rosen potentials with mpmath: flat
+background, Fierz-Pauli mass and an undirected edge (same potential read from either metric) leave exactly V and
+V +- det(I - X)/2 open, i.e. one quartic number. `run(metric=False)` reproduces the fourth run.
+
 ```bash
 .venv/bin/python -B research/originlab/process_rules.py > /tmp/process-rules.json
 .venv/bin/python -B research/originlab/main.py --campaign process_rules --jobs 1 --out /tmp/originlab-process

@@ -127,8 +127,8 @@ Ursprung sollte beides zugleich liefern.
 
 ### Kandidat H6: Ursprung von P1 aus einer hintergrundfreien Naht (Exploration 23.11.)
 
-Quelle: `experiments/exploration/2026-11-23-phasenraum-f5-holocode/VERDICT.md` (Stand H6h26),
-Skripte `n1`, `v1`, `y1`, `z1`–`z49`, Lean-Vertrag `experiments/theory-contracts/h6-exakte-teile-20261123/`; Atlasproblem `problem:c3-p1-p2-shared-origin-reconciliation`,
+Quelle: `experiments/exploration/2026-11-23-phasenraum-f5-holocode/VERDICT.md` (Stand H6h27),
+Skripte `n1`, `v1`, `y1`, `z1`–`z51`, Lean-Vertrag `experiments/theory-contracts/h6-exakte-teile-20261123/`; Atlasproblem `problem:c3-p1-p2-shared-origin-reconciliation`,
 Befunde mit Präfix `h6`. Nichts davon ist im Ledger befördert. Prüfstand mit 20 Kriterien: 14
 hergeleitet, 6 unter benannter Lesart, keines gescheitert, offen oder gesetzt.
 
@@ -315,6 +315,13 @@ hergeleitet, 6 unter benannter Lesart, keines gescheitert, offen oder gesetzt.
     passt eine Bimetrik mit (M_f/M_g)² = 1/(e^{4π} − 1); kubische und quartische Kopplungen bleiben frei. Δ(6n²) mit
     Majorana-Klein-Resten gibt bis n = 16 nur TM2 bei diskreten Winkeln, keinen im θ₁₃-Fenster; Δ(96) macht die
     Familienuhr Majorana-verträglich; TM1 bei 15° mit μ-τ-Reflexion passt (δ = ±π/2), Mechanismus offen. [E/N]
+  - Metrischer Stern und quartischer Rest (Z50, Z51): Der Vierteltransfer ist exakt der Massenoperator eines endlichen
+    metrischen Sterns (Zentrum plus vier Arme, M_(j,n) = (M_c/2) q^(n+1), Potential (−4 + e₁ + e₃ − 4e₄)/2; B U = V A_rect,
+    ein Nullvektor); minimale Knotenquellen koppeln universell (η_v/M_v = 1/M_eff). Korrigiert: Die zentrierte
+    Feldkovarianz ist verbunden und masselos; „keine Nullstelle“ ist kein Positivitätszertifikat (Schranke xC ≤ 1/κ
+    schließt die Dirac-Profilklasse auch mit Einstein-Zusatz aus); mit freier Skala trifft jedes q die Zahl 3/10.
+    Ungerichtete Kanten legen die kubische Ordnung fest; frei bleibt eine quartische Zahl t, ein Viererkontakt auf den
+    Transferkanten, der in der Tiefe wie q^{−2n} wächst; schwach gekoppelt bis zu endlicher Tiefe. [E/N]
   - Instantonen (Z33): Unter Spin(10) hat ein Einheitsinstanton 4 Eltern- und 12
     Familiennullmoden; mit gesättigten Familiennullmoden entsteht Re[e^{iθ}Φ² C_fam], die Wand ist
     also auch im Kontinuum möglich, bei nackter SO(10) aber ~10⁻¹⁶⁴ unterdrückt. [N]
@@ -419,7 +426,9 @@ hergeleitet, 6 unter benannter Lesart, keines gescheitert, offen oder gesetzt.
   - Die Herkunft der Prinzipien, die die Prozesssuche verlangt (Z43, Z45): konforme Kovarianz des Kerns,
     Orientierungsumkehr, eine gemeinsame Übertragung und die Familienorientierung (TM1 statt TM2 bei 15°); dazu die
     Gaußquantisierung der Quelle als letzte Prämisse der Zustandsregel (die Zuordnung J₋₁ = S⁴ ist hergeleitet, Z48),
-    die Skala μ und G, die kubischen und quartischen Kopplungen der Bimetrik und der Mechanismus für TM1 bei 15° (Z46–Z49).
+    die Skala μ, M_c (also G), die quartische Zahl t des metrischen Sterns (die kubische Ordnung legen ungerichtete
+    Kanten fest, Z51), die verbundene Vierpunktantwort der Quellen, die t sichtbar macht, und der Mechanismus für TM1
+    bei 15° (Z46–Z51).
   - Die eine Prozessregel Z[J, A, g, Φ], aus der Naht, Eichwirkung und metrische Variation gemeinsam
     folgen.
 
