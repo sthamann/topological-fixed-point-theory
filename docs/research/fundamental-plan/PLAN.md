@@ -29,6 +29,17 @@ Topologie festlegen und Mehrdeutigkeiten mit dem nächsten Prinzip schließen. S
 Originale haben Spektraldimension 1 (Quelle) bzw. kompakt 8 (E₈-Naht). Gebraucht wird eine originale Antwort mit d = 4,
 nichtkompakt und reflexionspositiv. Prüfstand seit H6h32: 13 P, 7 L (K12 als Lesart).
 
+**H6h34 (parallele Agenten, `docs/research/VOGELPERSPEKTIVE.md`).**
+- Holomorph ist die Naht kanonisch eine Twistorgerade (Spinstruktur, Z64, Z70).
+- Lorentzisch nur über das konjugierte Partnerdublett: Prämisse T′.
+- Der Dublettzustand ist ρ_m, m offen (Z63).
+- Linear gibt es beide Helizitäten, nichtlinear googly (Z65).
+- Der Modulfluss ist keine Zeittranslation, das eigene Spektrum legt keine Skala fest (Z68).
+- Gelöste Bausteine (Flavour, Massen, α, Teilchen) werden nicht wieder aufgemacht.
+- Nächster Schritt:
+  - T′ aus der Tomita-Konjugation des Originalzustands;
+  - m aus der Verträglichkeit mit der Spinbrücke.
+
 **Vogelperspektive (H6h33, `docs/research/VOGELPERSPEKTIVE.md`).**
 - TFPTs Grundzahlen sind die Twistordaten eines Raumzeitpunkts.
 - Die Kausalstruktur von 3+1 ist die Standardform eines Dublettzustands, und die Naht ist die Himmelssphäre (`z62`).

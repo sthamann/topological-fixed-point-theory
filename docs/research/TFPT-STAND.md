@@ -1,7 +1,7 @@
 # TFPT: Was funktioniert, was fehlt, was eine vollständige Lösung wäre
 
 Kompakter Stand vom 20. November 2026, ergänzt am 23. und 24. November (Befunde 20.–24. November, Kandidat H6 bis
-H6h33, Leitlinie „Rekonstruktion statt Auswahl“ und Abschnitt 5), für Explorations- und Lösungssitzungen. Seit 24. November
+H6h34, Leitlinie „Rekonstruktion statt Auswahl“ und Abschnitt 5), für Explorations- und Lösungssitzungen. Seit 24. November
 liegen die Explorationszweige vom 20. November in main (Quaternionrahmen, Fibonacci-Uhr, Vertauschung und Auslese, fremde
 und operative Ursprünge, Projekt Genesis, die Vertragsserie vom 14./15. Oktober); ihre Befunde stehen in ihren Verzeichnissen
 unter `experiments/`. Nicht zusammengeführt ist `codex/c3-p1-p2-abgleich-20261105` (121 Konflikte mit dem heutigen Stand). Neuere Befunde stehen in den Atlasproblemen mit Datum
@@ -42,13 +42,17 @@ Offen sind der Tensorkanal und die Rekonstruktion von 3+1 aus 4D-Antworten. Z60 
 ist die Spektraldimension (Weyl-Gesetz) einer Antwort. Die Quelle hat d = 1, die E₈-Naht kompakt und starr d = 8 = 4 + 4.
 Gebraucht wird eine originale Antwort mit d = 4, nichtkompakt und reflexionspositiv.
 
-**Gesamtbild (Vogelperspektive, 24. November):** [`VOGELPERSPEKTIVE.md`](VOGELPERSPEKTIVE.md).
-- Die Grundzahlen 5, 3, 2, 4 sind die Twistordaten eines Raumzeitpunkts.
-- Die Kausalstruktur von 3+1 ist die Tomita-Standardform eines Dublettzustands, und die Naht ist die Himmelssphäre (Z62).
-- Unter der Lesart T (Naht = Twistorgerade) sind die Orte die Lagen der Naht, und die masselosen Feldgleichungen folgen aus
-  Holomorphie (Z61).
-- Offen sind der Dublettzustand aus dem Original, T selbst, der nicht-selbstduale Teil der Gravitation, Wechselwirkung,
-  Gewichte und Skalen.
+**Gesamtbild (Vogelperspektive, Stand H6h34):** [`VOGELPERSPEKTIVE.md`](VOGELPERSPEKTIVE.md).
+- Gelöste Bausteine (Abschnitt 3: Teilchen, Flavour, Massen, α, E₈) werden übernommen, nicht neu aufgemacht.
+- Holomorph ist die Naht kanonisch eine Twistorgerade: π_*(η ⊗ π*O(2)) = O(1) ⊕ O(1), mit η = (A,A) − (P,P) als einziger
+  vierteldrehungsinvarianter 2-Torsion (Z64, Z70).
+- Lorentzisch wird sie nur über das konjugierte Partnerdublett. Das ist die Prämisse T′: Naht = P(V) ⊂ P(V ⊕ V̄*).
+- Der Dublettzustand ist ρ_m, eindeutig je Windungszahl m; m selbst ist offen (Z63).
+- Linear gibt es beide Gravitonhelizitäten; nichtlinear ist die Lage googly-dual (Z65).
+- Der globale Modulfluss ist keine physikalische Zeittranslation (Z70). Die lokale Modulzeit auf Nahtbögen ist kontinuierlich
+  (Z71). Das eigene Spektrum legt keine Skala fest (Z68).
+- Vorbestand und Firewalls stehen in `experiments/exploration/2026-11-23-phasenraum-f5-holocode/PRUEFUNG-BESTAND-H6h34.md`.
+- Offen: T′, m, die physikalische Zeit, die nichtlineare volle Gravitation, die Flächennormierung und der Restflavor.
 
 ## 2. Die gesetzten Eingaben
 
@@ -156,9 +160,9 @@ Ursprung sollte beides zugleich liefern.
 
 ### Kandidat H6: Ursprung von P1 aus einer hintergrundfreien Naht (Exploration 23.11.)
 
-Quelle: `experiments/exploration/2026-11-23-phasenraum-f5-holocode/VERDICT.md` (Stand H6h33),
-Skripte `n1`, `v1`, `y1`, `z1`–`z62`, Lean-Vertrag `experiments/theory-contracts/h6-exakte-teile-20261123/`; Atlasproblem `problem:c3-p1-p2-shared-origin-reconciliation`,
-Befunde mit Präfix `h6`. Nichts davon ist im Ledger befördert. Prüfstand mit 20 Kriterien (Stand H6h32): 13
+Quelle: `experiments/exploration/2026-11-23-phasenraum-f5-holocode/VERDICT.md` (Stand H6h34),
+Skripte `n1`, `v1`, `y1`, `z1`–`z71`, Lean-Vertrag `experiments/theory-contracts/h6-exakte-teile-20261123/`; Atlasproblem `problem:c3-p1-p2-shared-origin-reconciliation`,
+Befunde mit Präfix `h6`. Nichts davon ist im Ledger befördert. Prüfstand mit 20 Kriterien (Stand H6h34): 13
 hergeleitet, 7 unter benannter Lesart, keines gescheitert, offen oder gesetzt. K12 (3+1) zählt seit der Leitlinie
 „Rekonstruktion statt Auswahl“ nur als Lesart: d = 4 folgt kinematisch, nicht aus den Antworten (Z60).
 
@@ -407,7 +411,8 @@ hergeleitet, 7 unter benannter Lesart, keines gescheitert, offen oder gesetzt. K
     - Der naive Familienlinien-Index ist 8 mod 16 (keine volle 16).
     - Die γ₅-Spur gibt t = 1, ist aber indefinit.
     - Zur endlichen Spiegellücke gibt es keinen Satz bei endlichem J. [E/N]
-  - Vogelperspektive (Z61, Z62, `docs/research/VOGELPERSPEKTIVE.md`):
+  - Vogelperspektive (Z61, Z62, `docs/research/VOGELPERSPEKTIVE.md`; korrigiert in H6h34: Vorbestand CELEST.SEAM.01 und
+    WOIT.OS.TWISTOR.01; das schwache Dublett ist nicht H⁰(O(1)); Familien ≅ Λ²₊ ⊗ χ_q):
     - h⁰(O(4)) = 5 (Träger = Weylspinor), h⁰(O(2)) = 3 (Familien = Λ²₊), h⁰(O(1)) = 2 (Spinor), h⁰(O(1) ⊗ ℂ²) = 4
       (Raumzeit).
     - Die vier Marken sind die Nullrichtungen eines Spin-2-Zustands im Träger. Die Weierstrass-Invarianten der
@@ -418,6 +423,21 @@ hergeleitet, 7 unter benannter Lesart, keines gescheitert, offen oder gesetzt. K
       Weyl-Gleichung und das selbstduale Graviton.
     - Lücken: Die verzweigten Blätter geben O(1) ⊕ O(−1) statt O(1) ⊕ O(1), der Dublettzustand ist nicht aus dem Original
       hergeleitet, und der nicht-selbstduale Teil fehlt. [E/L]
+  - Parallele Agenten (Z63–Z70, H6h34):
+    - Der Dublettzustand ist ρ_m = diag(1, e^{−πm})/(1 + e^{−πm}), eindeutig, treu, KMS und basispunktfrei. Neutral ist nur
+      m = 4, getrennte Marken verlangen ungerades m.
+    - Satz: π_*M ist balanciert, außer für Pullbacks; z61s O(1) ⊕ O(−1) ist der Sprungfall, der das schwache Dublett trägt.
+    - Das kanonische η = (A,A) − (P,P) gibt O(1) ⊕ O(1); die Spinbrücke der externen Analyse ist bestätigt.
+    - Die Signatur (1,3) kommt nur über V̄*, die Naht selbst gibt (2,2) oder (4,0). Damit ist T äquivalent zu T′.
+    - Linear tragen beide Blätter beide Helizitäten; nichtlinear gilt die googly-Dualität. Penroses Deformationen tragen Ψ.
+    - Der periodische Modulfluss ist keine Zeittranslation. Aus dem eigenen Spektrum folgt keine Skala; am KMS-Punkt gilt
+      ⟨T⟩ = 0, S = ln 2/4 je Quarter.
+    - Der H6-Spin-2-Zustand gibt keine Flavourgewichte; Flavour bleibt Bestand.
+    - OriginLab `reconstruction_search` (14 Tests).
+    - Zweite externe Analyse (Z71):
+      - Die lokale Modulzeit auf Nahtbögen ist dicht und nicht periodisch.
+      - Die 4D-Fortsetzung stimmt auf der Linie, ist aber nicht erzwungen (der Nahtwinkel gibt die 2D-Identität).
+      - Zwei maximal inkompatible binäre Beobachtungen geben τ = i und das kanonische η. [E/C]
   - Instantonen (Z33): Unter Spin(10) hat ein Einheitsinstanton 4 Eltern- und 12
     Familiennullmoden; mit gesättigten Familiennullmoden entsteht Re[e^{iθ}Φ² C_fam], die Wand ist
     also auch im Kontinuum möglich, bei nackter SO(10) aber ~10⁻¹⁶⁴ unterdrückt. [N]

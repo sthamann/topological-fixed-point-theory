@@ -1217,6 +1217,31 @@ if "H6h2" in H and z1p.exists() and z2p.exists():
                                                                                                                                                  "und selbstduales Graviton aus Holomorphie unter T "
                                                                                                                                                  "(Z61); nicht-selbstdualer Teil offen")
                                                                                                                             facts["F52_bird_eye"] = {n: T19[n]["urteil"] for n in T19}
+                                                                                                                            zs = {n: Path(__file__).with_name(f"z{n}_ergebnis.json") for n in (63, 64, 65, 67, 68, 70, 71)}
+                                                                                                                            if all(p.exists() for p in zs.values()):
+                                                                                                                                T20 = {n: json.loads(p.read_text()) for n, p in zs.items()}
+                                                                                                                                ok20 = all(all(T20[n]["checks"].values()) for n in T20)
+                                                                                                                                H["H6h34"] = dict(H["H6h33"])
+                                                                                                                                H["H6h34"]["K6"] = (H["H6h33"]["K6"][0] if ok20 else F,
+                                                                                                                                                    H["H6h33"]["K6"][1] + "; typisiert (Z70): thermische "
+                                                                                                                                                    "Zeit der Naht, periodisch; keine Raumzeit-"
+                                                                                                                                                    "Zeittranslation; lokale Modulzeit auf "
+                                                                                                                                                    "Nahtbögen kontinuierlich (Z71)")
+                                                                                                                                H["H6h34"]["K12"] = (LES if ok20 else F,
+                                                                                                                                                     "[Lesart T'] holomorph kanonisch: pi_*(eta x "
+                                                                                                                                                     "pi^*O(2)) = O(1)+O(1), eta = (A,A)-(P,P) "
+                                                                                                                                                     "(Z64, Z70); Signatur (1,3) nur über das "
+                                                                                                                                                     "konjugierte Partnerdublett (T': Naht = P(V) in "
+                                                                                                                                                     "P(V + V-bar*)); Dublettzustand rho_m eindeutig "
+                                                                                                                                                     "je m, m offen (Z63)")
+                                                                                                                                H["H6h34"]["K13"] = (LES if ok20 else F,
+                                                                                                                                                     "[D] Jacobson; beide Helizitäten linear über "
+                                                                                                                                                     "PT und PT* (Z65), nichtlinear googly-dual; "
+                                                                                                                                                     "keine Skala aus dem eigenen Spektrum, <T> = 0 "
+                                                                                                                                                     "am KMS-Punkt (Z68); Flächenregel t = 1 (Z57); "
+                                                                                                                                                     "nichtlineare volle Gravitation und "
+                                                                                                                                                     "Flächennormierung offen")
+                                                                                                                                facts["F53_parallel_agents"] = {n: T20[n]["urteil"] for n in T20}
 
 order = [f"K{i}" for i in range(1, 21)]
 print("Gesamttabelle (P = hergeleitet, L = unter benannter Lesart, F = FAIL, O = OFFEN, E = EINGABE)\n")

@@ -1,0 +1,61 @@
+Teil 0: Werkzeuge
+   [ok] Übergangsmatrix-Werkzeug: Spaltungstyp von O(a) + O(b) für sechs Paare richtig und stabil (Nmax 14 -> 18)
+   [ok] Riemann-Roch auf E (Geschlecht 1): l(D) = deg D für deg >= 1, 0 für deg < 0, in {0, 1} für deg 0, an 80 Zufallsdivisoren auf den Sonderpunkten; stabil unter Ansatzvergrößerung
+   [ok] lineare Äquivalenzen: 2 p_a ~ inf+ + inf- ~ o+ + o- (= pi^* O(1)); Komplementärpaare äquivalent, die drei Paarklassen verschieden; 2 inf+ ~ 2 o+ ~ p_1 + p_-1 (antipodal), also inf+ - inf- ~ p_-1 - p_1
+
+Teil 1: Doppelüberlagerung pi: E -> P^1 (z61-Klasse, Satz 'Sprung genau beim Pullback', Spinstrukturen)
+   [ok] z61-Klasse: pi_* pi^* O(k) = O(k) + O(k-2) für k = -1..3 (Projektionsformel); jeder Twist mit O(j) der Naht verschiebt beide Summanden, die Lücke 2 bleibt: kein Bündel 'Blätter mit zurückgezogenem Bündel' ist O(1) + O(1)
+   [ok] Satz: für M auf E vom Grad 2k ist pi_* M = O(k-1) + O(k-1) genau dann, wenn M nicht pi^* O(k) ist, sonst O(k) + O(k-2) (11 Pullbacks, 20 andere, Grad 0/2/4; ungerader Grad stets O(k) + O(k-1)): der einzige Sprungpunkt jeder Gradklasse ist das zurückgezogene Bündel
+   [ok] Spinstrukturen von E (K_E = O): theta = O hat die Nullmode h0 = 1 und T_C (x) pi_* theta = O(2) + O; die drei geraden theta (h0 = 0, Szegő-Kern existiert) geben T_C (x) pi_* theta = O(1) + O(1)
+   [ok] Szegő bei tau = i: theta_1(0) = 0 (ungerade, kein Kern), theta_2(0) = theta_4(0) != theta_3(0) (Jacobi erfüllt); die Vierteldrehung hält genau einen nichttrivialen 2-Torsionspunkt fest, und auf E bildet sie die Seitenklassen aufeinander ab und hält die antipodale fest: eta_* = O(p_1 - p_-1) = O(inf+ - inf-) ist die vierteldrehungsfeste gerade Struktur
+   [ok] Kandidat (3) mit Verzweigungsdivisor: pi_*(pi^* O(1) (x) O(R)) = O(3) + O(1) (Grad 4); pi_* L mit deg L = 2 hat stets Grad 0: beide verfehlen Grad 2, erst die halbe Verzweigung (relative Spinstruktur) mit T_C trifft O(1) + O(1)
+   [ok] Deck-Eigenteile: pi_* O = O (gerade) + O(-2) (ungerade); pi_* eta = O(-1) + O(-1) mit je einem Rang-1-Teil pro Deckparität: die Decktransformation wirkt auf jeder Faser eines geraden Sektors als diag(1, -1), nicht skalar
+
+Teil 2: (Z2)^3-Überlagerung r: E' -> P^1 (Bestand z34) und ihre Sektoren
+   [ok] D4 = <z -> iz, z -> 1/z> hat Ordnung 8 auf den Marken; V4 = {1, r^2, rs, r^3 s} besteht aus den drei Doppeltranspositionen (Kleingruppe)
+   [ok] Monodromie (z34) und E-Rechnung stimmen überein: Charaktere <-> gerade Markenmengen S, Linienbündel O(-|S|/2); V4-Sektoren = Zerlegungen {S, S^c}: trivial O + O(-2) = pi_* O, sonst O(-1) + O(-1) = pi_* eta_c; r_* r^* O(1) = O(1) + 6 O + O(-1)
+   [ok] kein O(1) + O(1) in r_* L (L = r^* O(1)): Hom(O(1), r_* L) = H0(r_* L (-1)) ist eindimensional, und nur ein Charakter trägt O(1): weder eine Einbettung noch eine deckäquivariante Surjektion r_* L -> O(1) + O(1) existiert
+   [ok] Klassifikation der 28 deckinvarianten Rang-2-Unterbündel von r_* L^k: O(1) + O(1) nur für k = 2 (L^2 = r^* O(2) = K_{E/B}) und genau für zwei Paarcharaktere (15); D4-invariant sind nur zwei: der triviale Sektor O(2) + O und der antipodale Sektor {p_1, p_-1 | p_i, p_-i} = O(1) + O(1)
+   [ok] h0(L^2) = 16 = 4 + 4 + 4 + 4: jeder V4-Sektor von r_* K_{E/B} hat vier Schnitte; nur die drei nichttrivialen sind balanciert (Twistortyp), der triviale ist O(2) + O
+   [ok] relative Selbstdualität L^2 = K_{E/B} ohne die Annahme L = r^* M: drei weitere Lösungen L' = r^* O(1) (x) eta; über die Isogenie ist r_* L' = O(1) (x) Summe_c pi_*(xi eta_c) mit xi = O(inf+ - p_1) der Ordnung 4: alle vier Blöcke O + O, also r_* L' = 8 O (balanciert, kein O(1)-Summand, kein schwaches Dublett; passt zu 4 + 4 außerhalb (P,P) in z38)
+
+Teil 3: Hecke-Modifikationen von O(1) + O(-1) = O(1) (x) pi_* O_E an den Marken
+   [ok] Hecke längs der ungeraden (zweiten Blatt-)Geraden an S: Basisrechnung = E-Rechnung O(1) (x) pi_* O_E(S) für alle 16 Teilmengen (h0-Folgen gleich); Ergebnis O(1) + O(|S| - 1), also O(1) + O(1) genau für |S| = 2
+   [ok] an zwei Marken hängt das Ergebnis von den Geraden ab: O(1) + O(1), solange keine die gerade Richtung (Fasern des destabilisierenden O(1)) ist; sonst O(2) + O bzw. O(3) + O(-1): auch die kanonische gerade Wahl springt
+   [ok] keine der sechs Zweiermengen ist unter V4 oder D4 fest (die Modifikation selbst ist nie symmetrisch); fest sind nur Zerlegungen: alle drei unter V4, unter D4 genau die antipodale. Da S und S^c dasselbe Linienbündel auf E geben, ist die Isomorphieklasse O(1) + O(1) kanonisch, die Einbettung eine binäre Wahl
+
+Teil 4: Partner, Dublett und Lorentzkovarianz
+   [ok] Jetbündel aus Übergangsfunktionen: J^1(O) = O + O(-2), J^1(O(k)) = O(k-1) + O(k-1) für k >= 1; also J^1(O(2)) = J^1(T_C) = J^1(K(D)) = O(1) + O(1) = O(1) (x) H0(O(1)) (Kandidat 4, kanonisch, nur aus P1)
+   [ok] Euler-Kanal (Rang-1-Kanal z35/z37 = Erweiterungsklasse in H1(O(-2))): ohne Kanal O(1) + O(-1) (z61-Sektor), mit Kanal O + O = V (x) O (volles Dublett trivial); O(1) (x) (Dublett) = O(1) + O(1), ohne Kanal O(2) + O
+   [ok] Grad des Partners (Windungszahlen der Rahmen auf |z| = 1): tautologische Linie -1, ihre Konjugierte +1 (nur glatt), über die Antipodenabbildung holomorph gemacht wieder -1 (Rahmen (-z, 1)), das konjugierte Dublett V-bar (x) O hat Grad 0; O(1) (x) V-bar = O(1) + O(1): der Partner liefert Vielfachheit 2, keine zweite Windung
+   [ok] Lorentzkriterium für N = O(1) (x) W, H0 = Hom(V, W), x -> rho_W(g) x g^-1, 200 zufällige g in SL(2,C): nur W = V-bar^* erhält die reelle Form Herm(2) und hat reellen Charakter |tr g|^2 (Lorentzvektor (1/2,1/2)); W = V gibt 3 + 1 (invarianter Vektor, nur Drehungen), W = C^2 zwei chirale Dubletts
+   [ok] Schur: die gehobene Markensymmetrie (Q8 aus V4, Ordnung 8; binär-dihedral aus D4, Ordnung 16) wirkt irreduzibel auf V, der Raum invarianter Hermitescher Formen ist eindimensional; es ist die Hardy-Form der Kreislinie durch die Marken (Gram = 1 auf {1, z}); Kontrolle: die Drehung allein lässt zwei Formen zu
+   [ok] Blattblindheit: Lorentzkovarianz mit dem Deck als innerer, mit SL(2,C) vertauschender Symmetrie verlangt nach Schur (Kommutant von V-bar^* ist 1-dimensional) skalare Deckwirkung auf N; in r_* L^k ist jeder der acht Charaktere einfach (Teil 2) und in jedem geraden Sektor wirkt das Deck als diag(1, -1) (Teil 1), das mit keinem Boost-Element vertauscht: kein Überlagerungssektor ist ein lorentzkovariantes Normalenbündel
+   [Befund: ja] Für T' braucht es weder Zustand noch Hermitesche Form: Hom(V, V-bar^*) sind die Sesquilinearformen auf V, ihre reelle Form die Hermiteschen Formen, der Kegel die positiven; das alles ist kanonisch. Die Markensymmetrie erzwingt nur die Hermitesche Form h (Hardy-Form), also die Identifikation mit End(V) aus z62 und ein Ruhesystem der Marken. Welchen Punkt des Kegels der Dublettzustand (Lücke A) wählt, legt sie nicht fest, sobald der Zustand sie bricht
+
+Teil 5: Bilanz -- welche Konstruktion gibt O(1) + O(1)?
+   z61: O(1) (x) pi_* O_E = [r_* L]_trivial | (1, -1) | kanonisch | nein (Grad 0, Lücke 2)
+   O(1) (x) [r_* L]_trivial = [r_* K_{E/B}]_trivial | (2, 0) | kanonisch | nein (Nullmodensektor (P,P), schwaches Dublett)
+   (3) T_C (x) pi_* theta, theta gerade (Szegő) | (1, 1) | Klasse kanonisch, D4 hält genau eta_* fest | holomorph ja
+   (5) [r_* K_{E/B}]_antipodal = Farbe_c* + Familie_c*, (x) O(1) | (1, 1) | einziger D4-invarianter balancierter Sektor | holomorph ja, nicht lorentzkovariant (Deck nicht skalar)
+   (5) Unter-/Quotientenbündel von r_* L, E+, E- | - | - | nein (kein O(1)+O(1), keine äquivariante Surjektion)
+   (2) Hecke an zwei Marken (ungerade Gerade) | (1, 1) | nur Isomorphieklasse (Zerlegung) | holomorph ja
+   (2) Hecke an 0, 1, 3, 4 Marken oder längs gerader Geraden | O(1)+O(|S|-1) bzw. springend | - | nein
+   (4) O(1) (x) H0(O(1)) = J^1(O(2)) = O(1) (x) [Euler-Dublett] | (1, 1) | kanonisch aus P1 | holomorph ja, aber 3 + 1 (keine Boosts)
+   (1) O(1) (x) V-bar^* (Purifikationspartner) | (1, 1) | kanonisch, keine Wahl | einziger lorentzkovarianter Kandidat; als Normalenbündel Prämisse T'
+
+   [E] Spaltungstyp: O(1) + O(1) ist kein Hindernis: es entsteht kanonisch in den Szegő-Sektoren (gerade Spin-strukturen), aus J^1(O(2)) = O(1) (x) Euler-Dublett und aus O(1) (x) V-bar^*
+   [E] z61-Klasse: No-go: Blätter mit zurückgezogenem Bündel geben stets O(k) + O(k-2); der Pullback ist der einzige Sprungpunkt jeder Gradklasse, und genau er trägt das schwache Dublett (5 + 3)
+   [E] Kanonischer Überlagerungssektor: in r_* K_{E/B} ist der antipodale Sektor der einzige D4-invariante balancierte; seine Faser ist intern (Farbe_c*, Familie_c*)
+   [E] Lorentzkovarianz: für N = O(1) (x) W ist H0(N) genau dann der Lorentzvektor, wenn W = V-bar^* (Charakter |tr g|^2); SL(2)-äquivariante holomorphe Konstruktionen geben 3 + 1 oder chirale Dubletts; jeder Überlagerungssektor scheitert an der Blattblindheit (Schur), sofern das Deck als innere Symmetrie mit der Lorentzwirkung vertauscht
+   [E] Hermitesche Form: durch die Markensymmetrie bis auf Skala erzwungen (Q8 bzw. 2D4 irreduzibel): Hardy-Form
+   [C] Lesart T: folgt vollständig unter der einen Prämisse T': die Naht ist P(V) in P(V + V-bar^*), also N = O(1) (x) V-bar^*; T' ist kanonisch (keine Wahl, einziger lorentzkovarianter Kandidat der Form O(1) (x) W), aber nicht aus den Daten abgeleitet
+   [L] Faser S_* = (Farbe_c*, Familie_c*) als zweiter Spinor: nur holomorphe Koinzidenz; als Raumzeitspinor ausgeschlossen (Deck nicht skalar)
+   [O] Nahtlagen als Antworten: dass die Naht überhaupt deformiert (eine Einbettung in eine 3-Mannigfaltigkeit), ist aus keiner Antwort des Originals rekonstruiert
+   [Befund: ja] Das zweite O(1) ist kein Gradproblem und kein Problem der Blätter: Es muss blattblind sein, und der einzige blattblinde, lorentzkovariante Träger ist das konjugierte Dublett V-bar^* des Partners
+   [Befund: ja] Spannung im Bestand: Der Sektor, der 5 + 3 und das schwache Dublett trägt (Pullback, (P,P)), ist genau der, in dem T scheitert; die Sektoren mit Szegő-Kern sind balanciert, haben aber kein Dublett (4 + 4)
+
+Urteil
+   Das zweite O(1) der Lesart T ist kein Grad- oder Spaltungsproblem: O(1) + O(1) entsteht kanonisch aus den TFPT-Daten, nämlich als T_C (x) pi_* theta für jede gerade Spinstruktur von E (Szegő-Sektor), als einziger D4-invarianter balancierter Sektor von r_* K_{E/B} (antipodal: Farbe_c* + Familie_c*), als J^1(O(2)) = O(1) (x) Euler-Dublett und als O(1) (x) V-bar^*. Exakt ausgeschlossen ist die z61-Klasse: Blätter mit zurückgezogenem Bündel geben stets O(k) + O(k-2), weil der Pullback der einzige Sprungpunkt ist; derselbe Sprung trägt das schwache Dublett (5 + 3). Entscheidend ist die Lorentzkovarianz: Unter N = O(1) (x) W ist H0(N) nur für W = V-bar^* der Lorentzvektor; holomorphe Konstruktionen geben 3 + 1 ohne Boosts, und kein Überlagerungssektor ist blattblind (Deck nicht skalar, Schur, mit dem Deck als innerer Symmetrie). Die Hermitesche Form ist durch die Markensymmetrie erzwungen. Damit bleibt T bedingt (C) mit genau einer kanonischen Prämisse T': Die Naht ist P(V) in P(V + V-bar^*), ihre Normalenrichtungen sind das konjugierte Dublett des Partners. T' folgt nicht aus den Daten; ausgeschlossen ist es auch nicht.
+
+Alle Prüfungen bestanden: True (24/24)

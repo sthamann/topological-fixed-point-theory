@@ -7836,3 +7836,46 @@ Atlas übernommen; sein vorbereiteter Patch wurde unverändert angewendet (Revis
 - Wechselwirkung, Familiengewichte, Skalen und die 16 je Familie.
 
 **Prüfstand:** 13 P, 7 L. Atlas-Revision 07de10f6082872db9a33da59. Ledger unverändert, nichts befördert.
+
+## H6H34-20261124 · Parallele Agenten: Dublettzustand, Spinbrücke, T′, Googly, Skalen, Bestandsprüfung (bedingt)
+
+Im H6-Ordner gerechnet, alles nachgeprüft und reproduziert:
+- z63 (25), z64 (24), z65 (21), z67 (29), z68 (19), z70 (6);
+- OriginLab `reconstruction_search` (14 Tests);
+- `PRUEFUNG-BESTAND-H6h34.md`.
+
+Die externe Analyse „Der nächste Schritt“ (Spinbrücke) ist unabhängig bestätigt.
+
+**Exakt:**
+- **Dublettzustand.** ρ_m ist der einzige treue KMS-Zustand auf End(H⁰(O(1))) je Windungszahl m.
+- **Satz zu Bildbündeln.** π_*M ist balanciert außer für Pullbacks.
+- **Holomorphe Twistorgerade.** π_*(η ⊗ π*O(2)) = O(1) ⊕ O(1) mit kanonischem η = (A,A) − (P,P).
+- **Signatur.** (1,3) kommt nur über das konjugierte Partnerdublett.
+- **Gravitation.** Linear gibt es beide Helizitäten; nichtlinear googly-dual.
+- **Zeit.** Der periodische Modulfluss ist keine Zeittranslation.
+- **Skalen.** Keine Skala aus dem eigenen Spektrum. Am KMS-Punkt gilt ⟨T⟩ = 0 und S = ln 2/4 je Quarter.
+
+**Bedingt:** Lesart T ist äquivalent zur Prämisse T′ (Naht = P(V) ⊂ P(V ⊕ V̄*)).
+
+**Korrekturen an H6h33:**
+- Vorbestand: CELEST.SEAM.01, WOIT.OS.TWISTOR.01, v493, VERDICT_CAUSAL, E8.STANDARDFORM.CHART.01.
+- Das schwache Dublett ist nicht H⁰(O(1)).
+- Familien ≅ Λ²₊ ⊗ χ_q.
+- z61 und z62 sind Kinematik im Sinn der Firewalls.
+
+**Nutzerkorrektur:** Flavour, Massen und Teilcheninhalt sind gelöste Bausteine und keine Lücken.
+
+**Offen:**
+- T′;
+- die Windungszahl m;
+- die physikalische Zeit;
+- die nichtlineare volle Gravitation;
+- die Flächennormierung;
+- der Restflavor.
+
+**Zweite externe Analyse „Weiterentwicklung von H6h33“ (`z71`, 4 von 4):**
+- Die lokale Modulzeit auf Nahtbögen ist dicht und nicht periodisch.
+- Die S³-Fortsetzung stimmt auf der Linie, ist aber nicht erzwungen (längs des Nahtwinkels gilt die 2D-Identität).
+- Zwei maximal inkompatible binäre Beobachtungen geben τ = i (p = ½) und das kanonische η.
+
+**Prüfstand:** 13 P, 7 L. Atlas-Revision 7114eb296d62f303591f7068. Ledger unverändert, nichts befördert.

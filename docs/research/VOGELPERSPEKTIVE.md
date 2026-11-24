@@ -1,8 +1,8 @@
-# TFPT aus der Vogelperspektive (24. November 2026)
+# TFPT aus der Vogelperspektive (Stand H6h34, 24. November 2026)
 
-Gesamtbild nach H6h33. Grundlage sind die Rechnungen `z58`–`z62` in
-`experiments/exploration/2026-11-23-phasenraum-f5-holocode/`, der Stand in `TFPT-STAND.md` und der Atlas. Maßgeblich
-bleiben Ledger und Originalquellen. Statuskürzel wie in `TFPT-STAND.md`:
+Gesamtbild nach den Rechnungen `z58`–`z70` in `experiments/exploration/2026-11-23-phasenraum-f5-holocode/`, dem
+Bestandsbericht `PRUEFUNG-BESTAND-H6h34.md` dort und dem Atlas. Maßgeblich bleiben Ledger und Originalquellen.
+Statuskürzel:
 - **E:** exakt unter genannten Voraussetzungen;
 - **C:** bedingt;
 - **L:** Lesart;
@@ -10,108 +10,106 @@ bleiben Ledger und Originalquellen. Statuskürzel wie in `TFPT-STAND.md`:
 
 ## Kurzfassung
 
-Fast alles, was TFPT bisher hat, passt in ein Bild: eine holomorphe Naht und ihre Antworten.
-- **Die Naht.** Sie ist eine Sphäre CP¹ mit Einheitswindung O(1), zwei Blättern, Szegő-Polarisation und einem
-  KMS-Zustand.
-- **Grundzahlen.** 5, 3, 2 und 4 sind die Twistordaten eines Raumzeitpunkts: der Weylspinor, die selbstdualen
-  Zweiformen, der Spinor und die Raumzeit selbst.
-- **Kausalstruktur.** Die Kausalstruktur von 3+1 ist die Tomita-Standardform eines Zustands auf dem Dublett der Naht.
-- **Feldgleichungen** folgen aus Holomorphie.
+- **Gelöste Bausteine:** TFPT hat viel bereits gelöst (TFPT-STAND §3): 16 je Generation, E₈ und Clocks, φ₀ und die
+  Massenformel, α, Mischungswinkel und CKM, die Readouts des Ledgers. Diese Bausteine werden übernommen und nicht neu
+  aufgemacht.
+- **Was hier offen ist:** der Ursprung von P1 und die physikalische Brücke, also Zustand und Zeit, 3+1 und Gravitation.
+- **Das Bild dazu:** eine holomorphe Naht mit ihren Antworten. Es ist jetzt dichter:
+  - Holomorph ist die Naht kanonisch eine Twistorgerade, über die Spinstruktur ihrer Doppelüberlagerung.
+  - Lorentzisch wird sie nur über das konjugierte Partnerdublett, das ist die eine Prämisse T′.
+  - Der Dublettzustand folgt aus dem Original bis auf die Windungszahl m.
+  - Beide Gravitonhelizitäten gibt es linear.
+- **Offen:** T′ selbst, m, die physikalische Zeit, die nichtlineare volle Gravitation und die Flächennormierung. Eine
+  vollständige Theorie ist das nicht.
 
-Offen sind vier Dinge:
-- dass der Originalzustand diesen Dublettzustand festlegt;
-- dass die Naht wirklich eine Twistorgerade ist (Lesart T);
-- der nicht-selbstduale Teil der Gravitation;
-- Wechselwirkung, Gewichte und Skalen.
+## 1. Vorbestand und Firewalls
 
-Eine vollständige Theorie ist das noch nicht. Es ist eine geschlossene Architektur mit benannten Lücken.
+**Nicht neu.** Die Twistor- und Himmelssphären-Lesart steht im Bestand:
+- CELEST.SEAM.01, WOIT.OS.TWISTOR.01 (sieben Kill-Tests) und SEAM.EQUIV.TWISTOR.01, alle [O]; PT′ = Tot(O(1) ⊕ O(1))
+  gesetzt in v514;
+- Naht als Himmelssphäre (v180);
+- τ = i ⇔ J = 0 (v493, CELEST.WP2.01, Pauli-Quadrupol);
+- Herm(2)-Kegel (compiler-cone-object-audit, VERDICT_CAUSAL);
+- E₈-Karte = Standardform von M₂(ℂ) (E8.STANDARDFORM.CHART.01);
+- Hardy-Kern und Wellengleichung (z40, z41).
 
-## 1. Das eine Bild: Naht und Antworten
+Neu sind die Rekonstruktion aus Antworten (z58–z60), die kanonische Herkunft von O(1) ⊕ O(1) (z64, z70), der
+Dublettzustand (z63), die Reduktion von T auf T′ und die googly-Dualität der Blätter (z65).
 
-| Antwortart | Was sie liefert | Rechnung | Status |
-|---|---|---|---|
-| innere Antworten (auf der Naht) | Zeit als Modulfluss, CCR, Leiter, gaußsche Ströme, Spur- und Tensorkanal in 2D, Chiralität aus Indizes | z58, z59 | E (Original quasifrei) |
-| Zustandsstruktur (Tomita) | Kegel von 3+1, Signatur, Lorentzgruppe, Naht = Himmelssphäre | z62 | E, Dublettzustand L |
-| äußere Antworten (Lagen der Naht) | Orte: 4D-Raumzeit als Raum der Nahtlagen, Nullabstand = gemeinsamer Nahtpunkt | z61 | L (Lesart T) |
-| holomorphe Antworten (Penrose) | masselose Feldgleichungen für Spin 0, Weyl 1/2, selbstduales Graviton | z61 | E unter T |
+**Bindend:**
+- DIMENSION.UPLIFT.FIREWALL.01: Kinematik schließt keine 3+1-Aussage.
+- GRAV.NONCIRCULAR.01: nie „modular ⇒ Lorentz ⇒ BW“.
+- GRAV.WEINBERG.WITTEN.01: Das Graviton ist ein Eichfeld ohne kovarianten Energietensor.
 
-Die inneren Antworten allein ergeben nur eine Richtung (z60: Spektraldimension 1, die E₈-Naht kompakt 8 = 4 + 4). Die
-vier Raumzeitrichtungen kommen aus den beiden anderen Ebenen, nicht aus dem Inneren der Naht.
+## 2. Wörterbuch (korrigiert)
 
-## 2. Wörterbuch
-
-| TFPT | Bedeutung im Gesamtbild | Status |
+| TFPT | Bedeutung | Status |
 |---|---|---|
-| Naht CP¹ | Raum der reinen Zustände des Dubletts V; Himmelssphäre eines Punkts; Twistorgerade | E (Standardform), L (T) |
-| Einheitswindung O(1) | Tautologischer Dual, H⁰(O(1)) = 2 = Spinor bzw. Dublett (Euler-Folge im Bestand) | E |
-| Fünferträger H⁰(O(D)) = H⁰(O(4)) = 5 | Komponenten eines Spin-2-Objekts (Weylspinor, Spin-2-Zustand) | E (Zahl), L (Deutung) |
-| Familien H⁰(K(D)) = H⁰(O(2)) = 3 | Λ²₊ = holomorphe Vektorfelder der Naht = selbstdualer Teil der Lorentzalgebra | E (Zahl), L |
-| vier Marken | Hauptnullrichtungen (Majorana-Sterne) eines Spin-2-Zustands; „dieselbe Vier“ = 2s für s = 2 | E (Mathematik), L |
-| Doppelüberlagerung, τ | Kurve w² = Ψ(z); ihre Weierstrass-Invarianten sind g₂ = I und g₃ = J von Ψ | E |
-| τ = i (⟨T⟩ = 0, E₆ = 0) | J(Ψ) = 0; die H6-Marken sind der Zustand (\|2⟩ − \|−2⟩)/√2 | E |
-| Szegő-/Hardy-Projektion | positive Frequenz, also holomorphe Fortsetzbarkeit | E (Struktur) |
-| KMS bei β = 4π | Zeit = Modulfluss (thermische Zeit) | E (z58) |
-| Chiralität | Grad der Twistorfunktion bzw. Index; keine Spiegellücke nötig | E (z58, z61) |
-| c₃ = 1/(8π) | 1/(2 Blätter · 4π Raumwinkel der Himmelssphäre) | L |
+| Naht CP¹, Variable z = S | Raum der reinen Zustände des Spinors V = H⁰(O(1))^*; Himmelssphäre | E |
+| H⁰(O(1)) = 2 | Spinor V, **nicht** das schwache Dublett (das ist {1 − z⁴, z²} ⊂ H⁰(O(4)), Z34) | E |
+| Träger H⁰(O(4)) = 5 | Spin-2-Raum, mit D₄-Twist χ_q (quaternion-frames) | E/L |
+| Familien H⁰(K(D)) = 3 | Λ²₊ ⊗ χ_q: selbstduale Zweiformen mit Charakter-Twist | E/L |
+| vier Marken | Majorana-Sterne des Spin-2-Zustands (\|2⟩ − \|−2⟩)/√2; J = 0 ⇔ τ = i, dazu das Ausrichtungsbit | E |
+| Spinstrukturen (A,A), (P,P) | ihre Differenz η = (1+i)/2 ist die einzige vierteldrehungsinvariante 2-Torsion | E |
+| π_*(η ⊗ π*O(2)) | O(1) ⊕ O(1), also die holomorphe Twistorgerade | E |
+| Partnerdublett V̄* (Tomita) | einzige Quelle der Signatur (1,3) | E (Satz), C (T′) |
+| Originalzustand | ρ_m = diag(1, e^{−πm})/(1 + e^{−πm}) auf End(V) | E je m, m offen |
+| Modulfluss | thermische Zeit der Naht, periodisch; keine Raumzeit-Zeittranslation | E |
+| zwei Blätter | PT und PT*: linear beide Helizitäten, nichtlinear googly-dual | E linear, O nichtlinear |
 
-**Was das Wörterbuch nicht sagt.** Die Marken gehören zu einem Zustand im Träger, nicht zur klassischen
-Hintergrundkrümmung. Für den Hintergrund wäre J = 0 falsch: Schwarzschild ist Typ D, der flache Raum hat Ψ = 0.
+## 3. Die Kette
 
-## 3. Die Kette, wie sie jetzt aussieht
+1. **Naht.** P1: Sphäre mit Einheitswindung, vier Marken bei τ = i, Doppelüberlagerung E mit den Spinstrukturen
+   (A,A) und (P,P). [E, Bestand]
+2. **Zustand und thermische Zeit.** Die quasifreie Calderón/Szegő-Kovarianz ist KMS bei β = 4π. Daraus folgen der
+   Modulgenerator 4πL₀, gaußsche Ströme, die Leiter und der 2D-Spur- und Tensorkanal; am KMS-Punkt gilt ⟨T⟩ = 0.
+   [E, z58, z59, z68]
+3. **Holomorphe Raumzeit.** π_*(η ⊗ π*O(2)) = O(1) ⊕ O(1) mit dem kanonischen η. Die Naht bewegt sich in einer
+   vollständigen 4-dimensionalen komplexen Familie. [E, z64, z70]
+4. **Lorentzform.** Die Signatur (1,3) kommt nur über das konjugierte Partnerdublett: T′, Naht = P(V) ⊂ P(V ⊕ V̄*). Der
+   Dublettzustand ρ_m (z63) gibt den Zeitpfeil im Kegel. [C: T′; m offen]
+5. **Felder.** Holomorphie gibt die masselosen Gleichungen; positive Frequenz ist die Szegő-Bedingung. [E unter T′, z61]
+6. **Gravitation.**
+   - Linear tragen die beiden Blätter (PT, PT*) beide Helizitäten.
+   - Nichtlinear ist jedes Blatt das Graviton des anderen (googly); beide zusammen verlangen Daten um die
+     Ambitwistorquadrik. [E linear, O nichtlinear, z65]
+7. **Gelöste Bausteine.** Teilchen, Flavour, Massen, α und E₈ werden unverändert übernommen. [Bestand]
 
-1. **Naht (P1).** Sphäre mit Einheitswindung O(1). Die Euler-Folge macht sie zu P(V) mit V = H⁰(O(1))^* = ℂ². [E]
-2. **Zustand.** Der Originalzustand ist KMS bei β = 4π. Sein Modulfluss ist die Zeit; Leiter und Spurkanal folgen. [E, z58]
-3. **3+1-Kegel.** Ein treuer Zustand auf End(V) hat die Standardform Herm(2) = R^{1,3}.
-   - Der natürliche Kegel ist der Zukunftslichtkegel, die reinen Zustände sind die Nullstrahlen.
-   - Die Naht ist die Himmelssphäre; SL(2,ℂ) wirkt als Lorentzgruppe.
-   - Ein Lorentzkegel entsteht nur für n = 2, also gerade 3+1. [E, z62; dass das Original diesen Zustand festlegt: O]
-4. **Orte.** Die Raumzeitpunkte sind die Lagen der Naht als Twistorgerade L_x = P(Graph x) in P(V ⊕ V′). Die Raumzeit
-   ist der Raum der Blattabgleiche Hom(V, V′): d = 4 und nichtkompakt. [L: T, z61]
-5. **Dynamik.** Holomorphe Twistorfunktionen geben exakt die masselosen Feldgleichungen; positive Frequenz ist die
-   Szegő-Bedingung. Deformationen des Twistorraums geben das selbstduale Graviton (Penrose). [E unter T, z61]
-6. **Träger, Familien, Marken.** H⁰(O(4)) = 5, H⁰(O(2)) = 3, vier Nullrichtungen eines Spin-2-Zustands; τ = i heißt
-   J = 0. [E/L]
-7. **Bestand.** E₈, c₃ = 1/(8π), 3+2 und Λ²₊ = Λ²(Familien) bleiben wie in H6 hergeleitet; Λ²₊ ist jetzt H⁰(O(2)) auf
-   der Himmelssphäre.
+## 4. Was wirklich offen ist
 
-## 4. Was fehlt, genau benannt
+- **(1) T′:** Warum geht das Partnerdublett konjugiert ein (V̄*)? Kandidat ist die Tomita-Konjugation des Originalzustands;
+  dann wäre T′ eine Folge von (2).
+- **(2) Die Windungszahl m:**
+  - Neutral ist nur m = 4, getrennte Marken verlangen ungerades m, und kein neutrales Dublett trennt die Marken.
+  - Die externe Analyse arbeitet mit ρ₁.
+- **(3) Physikalische Zeit:**
+  - Der globale Modulfluss ist periodisch, also keine Zeittranslation (z70).
+  - Die lokale Modulzeit desselben Zustands auf Nahtbögen ist kontinuierlich (z71).
+  - Es fehlen die lokalen Translationsbeziehungen (halbseitige Inklusionen bzw. Kozyklen).
+- **(4) Nichtlineare volle Gravitation:** Gebraucht werden Daten in der formalen Umgebung der Ambitwistorquadrik (für
+  Yang–Mills dritte Ordnung).
+- **(5) Flächennormierung:** G und dimensionslose Skalen aus Antworten. Das eigene Spektrum ist dilatationsinvariant.
+- **(6) Restflavor:** absolute Quarkamplitude, Neutrinozweig, Phasen (TFPT-STAND §5).
+- **Ursprungskandidat für P1 (z71, externe Analyse):** zwei maximal inkompatible binäre Beobachtungen. Sie geben die vier
+  Marken mit τ = i (genau bei p = ½), die Vierteldrehung als Clifford-Drehung und das kanonische η als Paarung nach
+  Beobachtung. Der Zustand bleibt offen: Das Gleichgewicht ist der Spurzustand.
+- **4D-Fortsetzung (z71):** Die S³-Fortsetzung stimmt auf der Linie, ist aber nicht erzwungen. Längs des Nahtwinkels gilt die
+  2D-Identität.
 
-- **(A) Dublettzustand aus dem Original.** Gesucht: ein treuer Zustand auf End(H⁰(O(1))), den die
-  Calderón/Szegő-Kovarianz selbst festlegt, etwa über das Hardy-Skalarprodukt und die KMS-Gewichte. Ohne ihn ist Schritt 3
-  Kinematik.
-- **(B) Lesart T aus P1.**
-  - Eine Twistorgerade hat das Normalenbündel O(1) ⊕ O(1). Die verzweigte Doppelüberlagerung gibt aber
-    O(1) ⊗ (O ⊕ O(−2)) = O(1) ⊕ O(−1) (z61).
-  - Komplexe Konjugation erhält den Grad und löst das nicht.
-  - Das zweite O(1) muss das Dublett des Purifikationspartners tragen (V′ = V̄ in der Standardform). Das ist zu zeigen.
-- **(C) Nicht-selbstdualer Teil der Gravitation.** Aus einer Chiralität folgt nur das selbstduale Graviton
-  (googly-Problem). Kandidat: Das zweite Blatt trägt die duale Chiralität, also Ambitwistoren. Die vollen Gleichungen
-  verlangen dort eine Erweiterung dritter Ordnung (bekannt für Yang–Mills).
-- **(D) Wechselwirkung, Massen, Rolle von E₈.** Offen.
-- **(E) Familiengewichte γ und TM1-Brechung.**
-  - Prüfbare Idee: Der Weylzustand wirkt auf Λ²₊ = H⁰(O(2)) mit Eigenwerten, die sich zu null addieren.
-  - Bei J = 0 sind sie (λ, −λ, 0): eine Familie mit Eigenwert 0, zwei mit ±λ.
-  - Nicht gerechnet.
-- **(F) G und Skalen.** G bleibt eine Einheit (v_geo). Dimensionslose Verhältnisse brauchen eine skalentragende Antwort.
-- **(G) Inhalt je Familie.** Der naive Familienindex ist 8 mod 16 (Paket `2026-11-24-h6-common-parent-synthesis`). Drei
-  Familien folgen aus E₋, die 16 je Familie aus einem Index nicht.
+## 5. Prüfstand und Suchprogramm
 
-## 5. Einordnung
-
-- **Bekannte Physik.** Die Bausteine sind bekannt:
-  - Twistoren, Penrose-Transformation, nichtlineares Graviton und Ward (Penrose, Ward);
-  - Himmelssphäre und Lorentzgruppe als Möbiusgruppe;
-  - die Ur-Alternative (von Weizsäcker);
-  - Petrov-Invarianten.
-- **Neu ist die Zuordnung.** TFPTs Originalobjekte (Naht, Einheitswindung, Marken, τ, Träger, Familien, KMS-Zustand)
-  sind genau diese Daten. Damit wird aus mehreren Auswahlprinzipien eine einzige Architektur.
-- **Prüfstand:** unverändert 13 hergeleitet, 7 unter Lesart. K12 ist jetzt Lesart „Standardform plus T“ statt einer
-  Zählung. Ledger unverändert.
+- **Prüfstand:** 13 hergeleitet, 7 unter Lesart.
+  - K12 ist Lesart unter T′ mit ρ_m.
+  - K6 ist als thermische Zeit der Naht typisiert.
+  - K13 zählt linear beide Helizitäten.
+- **Suchprogramm:** OriginLab `reconstruction_search` (Neunter Lauf) zählt Normalenbündel und Dublettzustände mit
+  berechneten Klauseln auf. Ledger unverändert.
 
 ## 6. Nächster entscheidender Schritt
 
-Am meisten hängt an (A) und (B) zusammen:
-- Legt die originale Kovarianz einen treuen Zustand auf dem Dublett H⁰(O(1)) fest?
-- Trägt sein Purifikationspartner das zweite O(1)?
+(1) und (2) zusammen:
+- **T′ aus Tomita:** Gibt die Tomita-Konjugation des Originalzustands genau das konjugierte Partnerdublett V̄*?
+- **m aus T′:** Welches m macht ρ_m mit der Spinbrücke (vier getrennte Marken, η antipodal) verträglich?
 
-Wenn ja, sind 3+1-Kegel, Orte und Feldgleichungen aus dem Original rekonstruiert. Dann bleiben (C)–(G).
+Wenn beides gelingt, sind 3+1-Kegel, Orte und Feldgleichungen aus dem Original rekonstruiert. Dann bleiben die
+physikalische Zeit, die nichtlineare Gravitation und die Flächennormierung.

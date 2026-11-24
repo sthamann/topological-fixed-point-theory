@@ -1,0 +1,198 @@
+import json
+import time
+import unittest
+from fractions import Fraction as Fr
+from math import gcd
+
+import sympy as sp
+
+from reconstruction_search import (CHARACTERS, DOUBLE_COVER, M_VALUES, QUARTERS, U, Z, cover_genus, cov,
+                                   doublet_state_candidates, exceptional_orbits, fock_multiplicities, fock_patterns,
+                                   invariants, mark_symmetries, normal_bundle_candidates, original_symmetries, pushforward,
+                                   run_reconstruction, spin1_matrix, spin2_family_candidates, symmetry_structure, v4_pencil,
+                                   _weight)
+
+TOMITA, EULER = "O(1) x Vbar (Tomita partner)", "O(1) x H^0(O(1)) (Euler bundle)"
+POLES = "Hecke O(-1) -> O(-1)(D), D = {0,oo}"
+RHO = {1: "diag(1, exp(-pi))/trace", 2: "diag(1, exp(-2*pi))/trace", 3: "diag(1, exp(-3*pi))/trace",
+       4: "diag(1, exp(-4*pi))/trace"}
+
+
+class ReconstructionSearch(unittest.TestCase):
+    @classmethod
+    def setUpClass(cls):
+        start = time.perf_counter()
+        cls.result = run_reconstruction()
+        cls.seconds = time.perf_counter() - start
+        cls.bundles = {o["name"]: o for o in normal_bundle_candidates()}
+        cls.states = doublet_state_candidates()
+
+    def universe(self, name):
+        return self.result["universes"][name]
+
+    # ------------------------------------------------------------ marks
+    def test_mark_symmetries_are_d4_with_the_regular_klein_group_of_h6(self):
+        info = symmetry_structure()
+        self.assertEqual((info["group"], info["order"], info["abelian"]), ("D4", 8, False))
+        self.assertEqual(info["element_orders"], [1, 2, 2, 2, 2, 2, 4, 4])
+        self.assertTrue(info["regular_klein_is_group"])
+        self.assertEqual(sorted(info["regular_klein_group"]), ["z -> -I/z", "z -> -z", "z -> I/z", "z -> z"])   # z36's V4
+        self.assertIn("z -> I*z", [e["name"] for e in mark_symmetries()])
+
+    def test_the_clock_fixed_poles_are_the_only_exceptional_orbit_of_size_two(self):
+        orbits = exceptional_orbits()
+        self.assertEqual([len(o) for o in orbits], [2, 4, 4])
+        self.assertEqual(orbits[0], ["0", "oo"])
+        self.assertIn(["-1", "-I", "1", "I"], orbits)
+
+    # ------------------------------------------------------------ (B) normal bundles
+    def test_double_cover_bundle_splits_as_o1_plus_o_minus1(self):
+        self.assertEqual(pushforward(DOUBLE_COVER, 0), [0, -2])          # r_*O_E = O + O(-2)
+        self.assertEqual(pushforward(DOUBLE_COVER), [1, -1])             # O(1) x r_*O_E = O(1) + O(-1)
+        self.assertEqual(self.bundles["O(1) x r_*O_E (double cover)"]["degrees"], [1, -1])
+        self.assertEqual((cover_genus(DOUBLE_COVER), cover_genus(CHARACTERS)), (1, 1))
+        self.assertEqual(self.universe("normal_bundles")["cover_genus"]["h1(r_*O_E)"], 1)          # = genus
+        self.assertEqual(self.universe("normal_bundles")["cover_genus"]["h1(r_*O_C)"], 1)
+
+    def test_z2_cubed_cover_and_its_halves(self):
+        self.assertEqual(pushforward(CHARACTERS), [1, 0, 0, 0, 0, 0, 0, -1])        # O(1) + 6 O + O(-1) (z34)
+        plus = self.bundles["E+ under the point involution at mark 1"]
+        minus = self.bundles["E- under the point involution at mark 1"]
+        self.assertEqual((plus["degrees"], plus["h0"]), ([1, 0, 0, 0], 5))
+        self.assertEqual((minus["degrees"], minus["h0"], minus["h1"]), ([0, 0, 0, -1], 3, 0))
+        self.assertEqual(sorted(-a for a in plus["degrees"]), sorted(minus["degrees"]))   # E- = E+^dual
+        self.assertEqual(plus["orbit_size"], 4)                    # the deck involution is one of four point involutions
+        self.assertNotIn("choice_free", plus["clauses"])
+        self.assertIn("mark_symmetric", plus["clauses"])           # no modification divisor
+        central = self.bundles["E+ under the half period {1,-1}|{i,-i}"]
+        self.assertEqual((central["degrees"], central["orbit_size"]), ([1, 0, 0, -1], 1))
+        self.assertEqual(self.bundles["E+ under the half period {1,i}|{-1,-i}"]["orbit_size"], 2)
+
+    def test_only_bundles_of_type_o1_plus_o1_are_twistor_lines(self):
+        for name, b in self.bundles.items():
+            self.assertEqual("twistor_line" in b["clauses"], b["degrees"] == [1, 1], name)
+            if b["degrees"] == [1, 1]:
+                self.assertEqual((b["h0"], b["h1"]), (4, 0))              # complete four-parameter family (Kodaira)
+        hecke = {n: b for n, b in self.bundles.items() if n.startswith("Hecke")}
+        self.assertEqual(len(hecke), 18)                                  # 15 mark subsets and 3 pole subsets
+        for name, b in hecke.items():
+            self.assertEqual("twistor_line" in b["clauses"], name.split("{")[1].count(",") == 1, name)
+
+    def test_choice_free_twistor_lines(self):
+        q = self.universe("normal_bundles")["questions"]
+        self.assertEqual(q["twistor_line+choice_free"]["survivors"], [POLES, EULER, TOMITA])
+        self.assertEqual(q["twistor_line+choice_free"]["verdict"], "AMBIGUOUS")
+        self.assertEqual(q["twistor_line+mark_symmetric"]["survivors"], [POLES, EULER, TOMITA])
+        self.assertEqual(len(q["twistor_line"]["survivors"]), 9)
+        orbits = self.result["summary"]["normal_bundles"]["cover_derived_twistor_lines"]
+        self.assertEqual(sorted(orbits.values()), [1, 2, 2, 4, 4, 4, 4])  # two marks: orbits 2 and 4; the poles: 1
+        answers = self.result["answers"]
+        self.assertEqual(answers["cover_derived_choice_free_twistor_lines"], [POLES])
+        self.assertFalse(answers["choice_free_twistor_line_from_a_mark_divisor"])
+        self.assertEqual(self.bundles["Hecke O(-1) -> O(-1)(D), D = {0}"]["orbit_size"], 2)     # one pole is a choice
+
+    def test_lorentz_cone_needs_the_conjugate_doublet(self):
+        self.assertEqual(self.result["summary"]["normal_bundles"]["lorentz_cone"], [TOMITA])
+        self.assertEqual(self.universe("normal_bundles")["selected"], {TOMITA: [["lorentz_cone"]]})
+        for name in (EULER, POLES):
+            sig = {(r["type"], tuple(sorted(r["signature"]))) for r in self.bundles[name]["reality"]}
+            self.assertEqual(sig, {("real", (2, 2)), ("quaternionic", (0, 4))}, name)   # Kleinian or Euclidean only
+        tomita = sorted(tuple(r["signature"]) for r in self.bundles[TOMITA]["reality"] if r["type"] == "hermitian")
+        self.assertEqual(tomita, [(1, 3), (3, 1)])
+        self.assertEqual(self.result["summary"]["normal_bundles"]["seam_reality_signatures"], [[0, 4], [2, 2]])
+        self.assertTrue(self.result["answers"]["lorentzian_real_form_only_with_conjugate_doublet"])
+
+    # ------------------------------------------------------------ (A) doublet states
+    def test_original_covariance_symmetries(self):
+        sym = original_symmetries()
+        self.assertTrue(sym["mirror x -> -x with particle-hole"])
+        self.assertTrue(sym["quarter rotation z -> iz"])
+        self.assertFalse(sym["reflection x -> -x"])
+        self.assertFalse(sym["shift x -> x + 1"])
+        self.assertFalse(sym["sector exchange x -> x + 1/2"])
+        for x in (Fr(1, 4), Fr(-3, 4), Fr(7, 4)):
+            self.assertEqual(sp.cancel(cov(x)/(1 - cov(x)) - U**int(-4*x)), 0)     # c/(1 - c) = e^{-pi k}, k = 4x
+
+    def test_fock_state_of_each_sector_is_boltzmann_in_the_mark(self):
+        for a in QUARTERS:
+            counted, formula = fock_multiplicities(a)
+            self.assertEqual(counted, formula)                                     # bosonization (Jacobi)
+            self.assertEqual(counted, [1, 1, 0, 1, 1, 1, 1, 1, 2])                 # mark 2 is empty in each sector
+            for s in fock_patterns(a):
+                self.assertEqual(sp.cancel(_weight(s["flips"]) - U**-s["M"]), 0)   # weight e^{-pi M} relative to Omega
+
+    def test_rho_m_is_faithful_kms_and_base_point_independent_for_every_m(self):
+        derived = self.universe("doublet_states")["derived"]["rho_m"]
+        for m in M_VALUES:
+            corners = [s for s in self.states if s["construction"] == f"Fock corner, m = {m}"]
+            self.assertTrue(corners)
+            for s in corners:
+                self.assertEqual(s["label"], RHO[m])                                 # diag(1, e^{-pi m})/(1 + e^{-pi m})
+                self.assertTrue({"faithful", "kms", "base_point_independent", "symmetric"} <= s["clauses"])
+                self.assertEqual(s["r_order"], 4//gcd(m, 4))
+                self.assertEqual("neutral" in s["clauses"], m == 4)
+                self.assertEqual("marks_separated" in s["clauses"], m % 2 == 1)
+            self.assertEqual(derived[str(m)]["state"], RHO[m])
+        self.assertEqual(self.universe("doublet_states")["derived"]["one_particle_pairs_exist_for_m"], [2, 4])
+        for m in (2, 4):                                                             # N=1 corners of mode pairs agree
+            pairs = [s for s in self.states if s["construction"] == f"N=1 corner of a mode pair, m = {m}"]
+            self.assertEqual({s["label"] for s in pairs}, {RHO[m]})
+        self.assertTrue(self.result["answers"]["rho_m_faithful_kms_base_point_independent_for_every_m"])
+        rho1 = next(s for s in self.states if s["construction"] == "Fock corner, m = 1")
+        self.assertEqual(rho1["base"], ["alpha = 1/4", "Omega (M=0, Q=0)", "particle 1/4 (M=1, Q=1)"])   # twist state
+
+    def test_one_particle_restrictions_are_never_kms(self):
+        rows = [s for s in self.states if s["construction"].startswith("one-particle")]
+        self.assertEqual(len(rows), 16)
+        self.assertTrue(all("faithful" in s["clauses"] and "kms" not in s["clauses"] for s in rows))
+        self.assertEqual([s["base"] for s in rows if "symmetric" in s["clauses"]], [["-1/4", "1/4"]])
+        fermi = next(s for s in rows if s["base"] == ["-1/4", "1/4"])
+        self.assertEqual(fermi["label"], RHO[1])          # c(1/4) + c(-1/4) = 1: the matrix of rho_1, not KMS for gap 2 pi
+        hardy = [s for s in self.states if "Hardy" in s["construction"]]
+        self.assertTrue(all("faithful" not in s["clauses"] and "kms" not in s["clauses"] for s in hardy))
+
+    def test_doublet_search_leaves_m_open_and_separated_marks_are_charged(self):
+        u = self.universe("doublet_states")
+        q = u["questions"]
+        tie = q["faithful+kms+symmetric+base_point_independent"]
+        self.assertEqual((tie["verdict"], tie["survivors"]), ("AMBIGUOUS", [RHO[2], RHO[3], RHO[4], RHO[1]]))
+        self.assertEqual(q["kms+neutral"]["survivors"], [RHO[4]])
+        self.assertEqual(q["kms+mirror_closed"]["survivors"], [RHO[2]])
+        self.assertEqual(q["kms+marks_separated"]["survivors"], [RHO[3], RHO[1]])
+        self.assertEqual(u["minimal_empty_rules"], [["marks_separated", "mirror_closed"], ["marks_separated", "neutral"],
+                                                    ["mirror_closed", "neutral"]])
+        self.assertIn(["kms", "neutral"], u["selected"][RHO[4]])
+        self.assertIn(["kms", "mirror_closed"], u["selected"][RHO[2]])
+        self.assertNotIn(RHO[1], u["selected"])
+        answers = self.result["answers"]
+        self.assertFalse(answers["doublet_state_fixed_by_faithful_kms_symmetric_base_point_independent"])
+        self.assertEqual(answers["doublet_states_left_by_faithful_kms_symmetric_base_point_independent"], 4)
+        self.assertFalse(answers["neutral_doublet_with_separated_marks_exists"])
+
+    # ------------------------------------------------------------ spin-2 pencil (minimal)
+    def test_spin2_pencil_minimal(self):
+        a = sp.symbols("a0:5")
+        psi = sum(c*Z**k for k, c in enumerate(a))
+        M = spin1_matrix(psi)
+        I_, J_, _ = invariants(psi)
+        lam = sp.Symbol("lam")
+        self.assertEqual(sp.expand(M.charpoly(lam).as_expr() - (lam**3 - I_*lam - 2*J_)), 0)   # tr 0, 2I, 2J
+        self.assertEqual(sp.Matrix([[sp.expand(p).coeff(Z, k) for k in range(5)] for p in v4_pencil()]
+                                   + [[1, 0, 0, 0, -1], [0, 0, 1, 0, 0]]).rank(), 2)         # span{1 - z^4, z^2}
+        h6 = next(o for o in spin2_family_candidates()[0] if o["t"] == "0")
+        self.assertEqual((h6["quartic"], h6["I"], h6["J"], h6["eigenvalues"]), ("1 - z**4", "-1", "0", ["-I", "0", "I"]))
+        self.assertEqual(h6["kernel_phi00_phi01_phi11"], [["0", "1", "0"]])
+        self.assertEqual(self.universe("spin2_family")["equivalent_clauses"], [["j_zero", "zero_eigenvalue"]])
+
+    # ------------------------------------------------------------ run
+    def test_run_is_fast_deterministic_and_promotes_nothing(self):
+        self.assertLess(self.seconds, 20)
+        self.assertFalse(self.result["physical_solution"])
+        self.assertEqual(self.result["status"], "RECONSTRUCTION_SEARCHED")
+        text = json.dumps(self.result, sort_keys=True, allow_nan=False)
+        self.assertEqual(text, json.dumps(run_reconstruction(), sort_keys=True, allow_nan=False))
+        self.assertEqual(self.result["objects_enumerated"], 54 + 66 + 10)
+
+
+if __name__ == "__main__":
+    unittest.main()

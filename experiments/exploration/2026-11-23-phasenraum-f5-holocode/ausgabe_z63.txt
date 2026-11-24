@@ -1,0 +1,73 @@
+Teil 1: Kandidaten auf W_x = span{e_x, e_(x+1)} (Schnitte 1, z von O(1) im Wörterbuch z = S^4)
+   [ok] der Zweimoden-Fockzustand des Originals reproduziert <a_i^+ a_j> = diag(c(x), c(x+1)) (20 Paare, beide Sektoren); A -> dGamma(A) ist auf dem N=1-Sektor die Identität, also End(W) = N=1-Ecke (ohne Wahl)
+   (i) C_W/Tr: treu True, beta_eff in [0.000000, 1.000000] über x in [-5+alpha, 4+alpha], beide Sektoren
+   (i') (1 - C_W)/Tr: treu True, beta_eff in [-1.000000, 0.000000] über x in [-5+alpha, 4+alpha], beide Sektoren
+   (ii) N=1-Ecke: treu True, beta_eff in [1.000000, 1.000000] über x in [-5+alpha, 4+alpha], beide Sektoren
+   (vii) gerade Ecke {|00>, |11>}: treu True, beta_eff in [-8.500000, 10.500000] über x in [-5+alpha, 4+alpha], beide Sektoren
+   [ok] (ii) die N=1-Ecke ist für alle 20 Paare (beide Seiten der Fermikante, beide Sektoren) dieselbe treue Dichtematrix diag(1, e^(-4 pi))/(1 + e^(-4 pi)) (rel. Abweichung 3.2e-11): basispunkt- und sektorfrei, beta_eff = 1
+   [ok] (i) C_W/Tr hängt vom Basispunkt ab (beta_eff von ~0 tief im Fermisee bis ~1 weit oben) und am Hardy-Basispunkt x = alpha vom Sektor: beta_eff = 0.996633 (alpha = 1/4) gegen 0.999994 (alpha = 3/4); über der Fermikante 0.2534 bzw. 0.7466: kein Zustand auf H0(O(1)) ohne Wahl
+   [ok] (i') und (vii) sind ebenso basispunktabhängig (gerade Ecke: beta_eff = 2x + 1)
+   (iv) Hardy-Produkt <s, s'> = sum_x w(x) conj(s_x) s'_x auf {x, x+1}, Gewicht aus dem KMS-Zustand:
+      1 (reines Hardy-Produkt): basispunktfrei True, beta_eff 0.0
+      c (Fermi): basispunktfrei False, beta_eff [0.0, 1.0]
+      1 - c (Loch): basispunktfrei False, beta_eff [-1.0, 0.0]
+      c(1 - c) (Fluktuation): basispunktfrei False, beta_eff [-1.0, 1.0]
+      e^{-h} (Boltzmann = Modularoperator): basispunktfrei True, beta_eff 1.0
+      e^{+h} (gespiegelt): basispunktfrei True, beta_eff -1.0
+      e^{-h/2} (halber Modularoperator): basispunktfrei True, beta_eff 0.5
+   [ok] (iv) basispunktfrei sind genau die Exponentialgewichte e^{-s h} (s = 0, 1, -1, 1/2), also KMS-Zustände bei beta = s; die Temperatur des Originals (beta = 1) lässt genau eines: e^{-h}, und das ist (ii)
+
+Teil 2: Eindeutigkeit (KMS) und Verträglichkeit mit dem Modulfluss des Originals
+   [ok] die KMS-Bedingung (beta = 1) für den eingeschränkten Generator h_W = 4 pi diag(x, x+1) hat auf End(W) genau eine Lösung, rho = diag(1, e^(-4 pi))/(1 + e^(-4 pi)); die Konstante 4 pi x fällt aus der Bedingung heraus (Basispunkt); ebenso eindeutig für 10 zufällige Generatoren (n = 2, 3)
+   [ok] die N=1-Projektion liegt im Zentralisator des Originalzustands ([rho_F, P_1] = 0), und der Modulfluss der Ecke ist die Einschränkung des Originalflusses (Pedersen-Takesaki), Drehrate 4 pi
+   [ok] C_W/Tr hat dagegen die Drehrate log(c_x/c_(x+1)): am Hardy-Basispunkt 12.5241 bzw. 12.566290, über der Fermikante 3.1838 bzw. 9.3826 statt 4 pi = 12.566371: sein Modulfluss ist nicht die Zeit des Originals
+
+Teil 3: Symmetrien des Originals
+   [ok] die Vierteldrehung R (Charakter i^k, k = 4x) ist der Modulfluss bei t = -1/2: e^{i h/2} = i^k auf allen Moden; auf W_x = {x, x+1} ist R skalar (i^k = i^(k+4)) und stellt keine Bedingung
+   [ok] modulflussinvariante Zustände auf End(W) bilden nur die Familie diag(p, 1 - p) (Kommutante von h_W hat Dimension 2): der Fluss legt die Achse fest, die Länge legt erst KMS fest
+   [ok] Spiegel x -> -x (Sektor alpha -> 1 - alpha) allein bildet den Dublettzustand auf seine Blochumkehr ab (w -> 1/w, Hardy-Pol <-> Gegenpol: Pfeil der Modulzeit); zusammen mit dem Teilchen-Loch-Tausch (c(-x) = 1 - c(x), auf N=1 der Tausch) ist er eine Symmetrie und erhält den Zustand
+   [ok] der Spurzustand ist unter allen diesen Abbildungen invariant und treu, aber KMS nur bei beta = 0 (kein Modulfluss auf End(V)); die Temperatur des Originals schließt ihn aus
+
+Teil 4: Weitere Dubletts und die Abhängigkeit vom Wörterbuch
+   [ok] (iii) Fermipaar k = -1 (x = -1/4, alpha = 3/4) und k = +1 (x = +1/4, alpha = 1/4): N=1-Ecke = Gibbs mit Lücke 2 pi; R wirkt darauf als Halbdrehung (projektive Ordnung 2); kein Bild von {1, z} unter z = S^4 (Abstand 1/2, zwei Sektoren), wohl aber unter z = S^2
+   [ok] (iii') Teilchen bei k = +1 und Loch bei k = -1 sind gleich besetzt (c(1/4) = 1 - c(-1/4)), das Sektordublett hat gleiche Thetagewichte (Q -> -Q): beides gibt den Spurzustand (KMS nur bei beta = 0)
+   [ok] Fockzustand jedes Sektors (256 Besetzungsmuster): Gewicht relativ zu Omega ist genau e^{-pi M} mit der Marke M = 4 Delta L0 (KMS des vollen Modulgenerators); Vielfachheiten der Marken 0..8 = Bosonisierung (Jacobi) [1, 1, 0, 1, 1, 1, 1, 1, 2]: Marke 2 ist in einem Sektor leer
+   [ok] (v) Fock-Ecke {Omega, Twistzustand} (Marken 0 und 1, je einfach; alpha = 1/4: Teilchen bei x = 1/4, alpha = 3/4: Loch bei x = -1/4): Gewichtsverhältnis e^(-pi) in beiden Sektoren, also Gibbs mit Lücke pi; {Omega, J_-1 Omega} (Marken 0, 4) gibt e^(-4 pi)
+   [ok] (vi) Stromleiter: q^2 = omega/(1 + omega) aus der gemessenen Stromnorm (z48) gibt auf {|0>, |4>} = {1, z} die Ecke diag(1, q^2)/(1 + q^2) = rho_4; die Ein-Quant-Ecke benachbarter Strommoden {m, m+1} (Besetzungen aus den Fermisummen, m = 1..4) hat ebenfalls das Verhältnis e^(-4 pi)
+   Allgemein: m Hardy-Marken je Einheitswindung (z = S^m) geben auf V_m = H0(O(1)) die Lücke pi m:
+      m = 1: Lücke 1 pi, R auf P(V_m) projektive Ordnung 4, R-Bahn von [1:1]: 4 Punkt(e)
+      m = 2: Lücke 2 pi, R auf P(V_m) projektive Ordnung 2, R-Bahn von [1:1]: 2 Punkt(e)
+      m = 4: Lücke 4 pi, R auf P(V_m) projektive Ordnung 1, R-Bahn von [1:1]: 1 Punkt(e)
+   [ok] R wirkt auf P(V_m) mit Ordnung 4/ggT(m, 4) = 4, 2, 1 für m = 1, 2, 4; vier getrennte Marken {1, i, -1, -i} als R-Bahn gibt es nur für m ungerade (Twistornaht); im Wörterbuch z = S^4 ist R auf der Naht trivial und die vier Marken (zeta^4 = 1) fallen auf den einen Punkt w = 1
+   [ok] Sym^4 rho_1 auf dem Träger H0(O(4)) eingeschränkt auf das R-invariante Dublett {1, zeta^4} = H0(O_w(1)) ist rho_4 (ebenso Sym^2 rho_1 auf {1, zeta^2} = rho_2): die Zustände der verschiedenen Nähte sind verträglich; der H6-Markenzustand 1 - zeta^4 liegt in diesem Dublett auf dem Äquator der Zustandsachse (Erwartung 0.500)
+   [ok] die vier Marken brechen die kontinuierliche Modulrotation der Naht (zeta -> e^{-i pi t} zeta) genau auf <R>: invariant nur für t in [0.0, 0.5, 1.0, 1.5] (Periode 2)
+   [ok] Ladungsbuchhaltung der Matrixeinheiten |b><a| von End(V): neutral je Quartersektor und gerade (also im Bereich der Stromantworten) nur für m = 4; m = 2 verschiebt Ladung zwischen den Sektoren, m = 1 ist ungerade und geladen
+   [ok] No-go: auf dem fermionischen Einteilchenraum (ungerade Marken) ist R^2 = -1; jedes R-invariante Dublett (200 zufällige) hat projektive R-Ordnung in [1, 2]: die Vierteldrehung der vier Marken ist auf keinem Dublett aus zwei Originalmoden R
+
+Teil 5: Standardform des kanonischen Dublettzustands (sqrt(rho) in Herm(2) = R^(1,3))
+   m = 4 (Wörterbuch z = S^4): rho = diag(0.9999965127, 3.487330e-06), Blochlänge 0.9999930253 = tanh 2 pi, Reinheit 0.9999930254
+      sqrt(rho) = t + z sigma_3 mit (t, z) = (0.50093285, 0.49906541); Rapidität 3.1415926536 = pi, gamma = cosh pi = 11.591953
+      det sqrt(rho) = 1.867436e-03 = 1/(2 cosh 2 pi), Minkowski-Länge 0.043214, Entropie 4.731e-05
+      Modulfluss: Drehung um die Achse mit 12.566371 = 4 pi je Moduleinheit, Periode 0.5000; Aberration: die Naht liegt im Ruhesystem 4.949 Grad vom Gegenpol
+   m = 1: Blochlänge 0.917152, Rapidität 0.785398 = 1 pi/4, gamma 1.3246, det sqrt(rho) 0.199268, Modulwinkel 3.141593 je Einheit, Periode 2.000
+   m = 2: Blochlänge 0.996272, Rapidität 1.570796 = 2 pi/4, gamma 2.5092, det sqrt(rho) 0.043133, Modulwinkel 6.283185 je Einheit, Periode 1.000
+   [ok] Standardform für m = 4, 1, 2: Blochlänge tanh(pi m/2), Rapidität von sqrt(rho) gegen das Hardy-System pi m/4, det sqrt(rho) = 1/(2 cosh(pi m/2)), Boost g in SL(2,C) ins Ruhesystem, Modulfluss = Drehung um die Achse mit pi m je Moduleinheit (Periode 2/m), Aberration 2 arctan e^{-pi m/4}, Schmidt-Verhältnis e^{-pi m/2}
+   [ok] für m = 4 ist das Schmidt-Verhältnis von sqrt(rho) genau q = e^(-2 pi) aus z46, und die Purifikation (|1>|1> + q|z>|z>)/sqrt(1 + q^2) ist der auf zwei Glieder gekürzte Übertragungs-Nullvektor eta_q
+   [ok] der Modulfluss bewegt die Punkte der Naht P(V) als Drehung w -> e^{is} w (s = x-Zeit, t = -s/(4 pi)): die Zeit des Originals ist die Drehung der Naht um ihre Polachse; der dominante reine Zustand ist der Schnitt 1 = <1, .> = Auswertung bei w = 0 (Szegő-Reproduktion), der Szegő-Kreis |w| = 1 ist der Äquator
+   [Befund: ja] Der kanonische Dublettzustand ist fast rein (1 - Blochlänge = 7e-6): sein Beobachter bewegt sich gegen das Hardy-System mit Rapidität pi (gamma = 11,6) zum Hardy-Pol w = 0; in seinem Ruhesystem liegt der Szegő-Kreis innerhalb von 5 Grad um den Gegenpol
+
+Teil 6: Bilanz
+   (i) C_W/Tr, (1 - C_W)/Tr: treu, aber basispunkt- und sektorabhängig, nicht KMS: nicht kanonisch
+   (ii) N=1-Ecke {x, x+1}: treu, basispunkt- und sektorfrei, einzige KMS-Lösung: rho_4 (kanonisch für m = 4)
+   (iii) Fermipaar k = -1, +1: treu, KMS mit Lücke 2 pi (rho_2), gehört zum Wörterbuch z = S^2, Sektorladung
+   (iii') Teilchen/Loch, Sektordublett: Spurzustand: treu, symmetrisch, KMS nur bei beta = 0
+   (iv) Hardy-Produkt mit Gewicht: basispunktfrei nur e^{-s h}; KMS bei beta = 1 nur e^{-h} = (ii)
+   (v) Fock-Ecke {Omega, Twistzustand}: treu, KMS mit Lücke pi (rho_1), Twistornaht m = 1, ungerade und geladen
+   (vi) Stromleiter {|0>, |4>}, Strommoden: rho_4, gleich (ii), Schmidt-Verhältnis q = e^(-2 pi)
+   (vii) gerade Ecke {|00>, |11>}: basispunktabhängig (beta_eff = 2x + 1)
+   [Befund: ja] Ohne Wörterbuch bleibt genau eine diskrete Freiheit: die Zahl m der Hardy-Marken je Einheitswindung. Sie steckt nicht im Zustand, sondern in der Zuordnung der Naht; ein freier kontinuierlicher Parameter bleibt nicht
+
+Urteil
+   Lücke (A) ist bedingt gelöst. Exakt: Für jede Naht, deren Einheitswindung m Hardy-Marken umfasst, legt das Original auf End(H0(O(1))) genau einen treuen Zustand fest, der KMS für den eingeschränkten rekonstruierten Generator ist: rho_m = diag(1, e^{-pi m})/(1 + e^{-pi m}) in der Hardy-Basis (1, z). Er ist basispunkt- und sektorfrei und gleich der Ecke des Originalzustands; R = Delta^(-i/2) und Spiegel mit Teilchen-Loch-Tausch erhalten ihn, der Spiegel allein kehrt ihn um. Die Einteilchenkovarianz selbst (C/Tr C) ist dagegen basispunkt- und sektorabhängig und nicht KMS. Im Wörterbuch des Auftrags (z = S^4, m = 4) ist rho = diag(1, e^{-4 pi})/(1 + e^{-4 pi}): Blochlänge tanh 2 pi, sqrt(rho) hat gegen das Hardy-System die Rapidität pi (gamma = cosh pi), det sqrt(rho) = 1/(2 cosh 2 pi), der Modulfluss ist die Drehung der Naht um die Polachse (4 pi je Moduleinheit, 1 je Einheit x-Zeit), und das Schmidt-Verhältnis ist q = e^{-2 pi}. Bedingt ist das Wörterbuch: Die Twistornaht mit vier getrennten Marken verlangt m ungerade (R ist dort die Vierteldrehung von P(V)); das gibt rho_1 mit Lücke pi auf {Omega, Twistzustand}, außerhalb der neutralen Stromantworten. Beide Zustände sind verträglich: rho_4 ist Sym^4 rho_1 auf dem R-invarianten Dublett. Welche Naht die Himmelssphäre ist, bleibt offen und hängt mit (B) zusammen.
+
+Alle Prüfungen bestanden: True (25/25)

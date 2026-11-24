@@ -1,6 +1,151 @@
 # Urteil
 
-## Aktueller Stand: H6h33 — Vogelperspektive: Naht als Himmelssphäre und Twistorgerade (`z61`, `z62`)
+## Aktueller Stand: H6h34 — Parallele Agenten: Dublettzustand, Spinbrücke, T′, Googly, Skalen, Bestandsprüfung (`z63`–`z71`)
+
+**Bilanz:** unverändert 13 P und 7 L von 20. K6, K12 und K13 sind präzisiert.
+
+**Auftrag:**
+- alle Punkte mit parallelen Agenten bearbeiten;
+- das Suchprogramm optimiert erweitern;
+- Paper, Experimente, Verifikationen, Atlas und Repo erneut prüfen.
+
+Dazu kam die externe Analyse „Der nächste Schritt zur vollständigen Theorie“ (Spinbrücke, Ausschluss der periodischen Zeit).
+Ihr Paket liegt nicht im Repo; alles ist unabhängig nachgerechnet (z70).
+
+**Korrektur durch den Nutzer:** Mischungswinkel und Massenmatrix sind gelöst. Flavour, Massen, Teilcheninhalt und die
+Ledger-Readouts sind gelöste Bausteine, keine Lücken. Die Agenten zu Massen/Wechselwirkung und zu „16 je Familie“ sind
+gestoppt.
+
+**Selbst und von Agenten gerechnet, alles nachgeprüft und reproduziert:**
+- z63 (25), z64 (24), z65 (21), z67 (29), z68 (19), z70 (6);
+- OriginLab `reconstruction_search` (14 Tests);
+- der Bestandsbericht `PRUEFUNG-BESTAND-H6h34.md`.
+
+**In einem Satz:**
+- Holomorph ist die Twistornaht jetzt kanonisch aus TFPT-Daten (Spinstruktur der Doppelüberlagerung).
+- Lorentzisch wird sie nur über das konjugierte Partnerdublett, das ist eine Prämisse T′.
+- Der Dublettzustand ist bis auf die diskrete Windungszahl m festgelegt.
+- Beide Helizitäten gibt es linear, nichtlinear nur über Kreuz.
+- Die Zeit der Raumzeit ist nicht der periodische Modulfluss, und das eigene Spektrum legt keine Skala fest.
+
+**1. Bestand (Prüfagent).** Kein etabliertes Ergebnis widerspricht der Architektur, aber vieles ist nicht neu.
+- **Vorbestand:**
+  - CELEST.SEAM.01, WOIT.OS.TWISTOR.01 (sieben Kill-Tests) und SEAM.EQUIV.TWISTOR.01 [O];
+  - PT′ = Tot(O(1) ⊕ O(1)) gesetzt (v514);
+  - Naht = Himmelssphäre (v180);
+  - τ = i ⇔ J = 0 (v493, CELEST.WP2.01, Pauli-Quadrupol);
+  - Herm(2)-Kegel (compiler-cone-object-audit, VERDICT_CAUSAL: „nicht neu“);
+  - E₈-Karte = Standardform von M₂(ℂ) (E8.STANDARDFORM.CHART.01);
+  - Hardy-Kern bei ν = 1 gibt die Wellengleichung (z40).
+- **Firewalls:**
+  - DIMENSION.UPLIFT.FIREWALL.01: Kinematische Uplifts schließen nichts, auch z61/z62 nicht.
+  - GRAV.NONCIRCULAR.01: nie „modular ⇒ Lorentz ⇒ BW“.
+  - GRAV.WEINBERG.WITTEN.01: vor Spin-2-Aussagen die umgangene Prämisse nennen; hier: Das Graviton ist ein Eichfeld ohne
+    kovarianten Energietensor.
+- **Spannungen:**
+  - Familien ≅ Λ²₊ gilt nur mit dem Charakter-Twist χ_q.
+  - Träger = Spin 2 braucht den D₄-Twist.
+  - J = 0 reicht nicht (Ausrichtungsbit).
+  - Der Modulfluss auf End(V) ist eine Drehung.
+  - Die Nahtgerade in v565 gehört zu einem komplexen Punkt.
+  - Die Fermionen gehören auf die Doppelüberlagerung (NS gegen R).
+  - Das schwache Dublett ist nicht H⁰(O(1)), sondern {1 − z⁴, z²} im Träger.
+
+**2. (A) Dublettzustand (z63, OriginLab).**
+- **Eindeutiger Zustand.** Umfasst die Einheitswindung m Hardy-Marken, so legt das Original genau einen treuen KMS-Zustand
+  auf End(H⁰(O(1))) fest: ρ_m = diag(1, e^{−πm})/(1 + e^{−πm}). Er hängt nicht vom Basispunkt ab und ist die N=1-Ecke des
+  Originals.
+- **m bleibt offen.** Nur m = 4 ist neutral, getrennte Marken brauchen ungerades m. Kein neutrales Dublett trennt die
+  Marken.
+- **Quarterdublett der externen Analyse.** Die Gewichte 4,1424 % / 95,8576 % sind ρ₁; KMS ist es auf {Ω, Twistzustand}.
+- **Wörterbuch.** Die Nahtvariable ist z = S. w = z⁴ ist die Quotientenvariable, in der die Marken zusammenfallen.
+
+**3. (B) Zweites O(1) (z64, z70, OriginLab).**
+- **Satz:**
+  - Das Bild π_*M eines Bündels vom Grad 2k ist O(k−1)²; nur für M ≅ π*O(k) ist es O(k) ⊕ O(k−2).
+  - Die z61-Konstruktion ist genau dieser Sprungfall, und der trägt das schwache Dublett (5 + 3).
+- **Holomorph kanonisch.**
+  - π_*(η ⊗ π*O(2)) = O(1) ⊕ O(1), wobei η die einzige vierteldrehungsinvariante 2-Torsion ist: Antipodenpaarung,
+    η = (A,A) − (P,P) = (1+i)/2.
+  - Beide Spinstrukturen sind Bestand. Die externe Spinbrücke hält.
+  - Weitere wahlfreie Konstruktionen: Euler-Bündel, Tomita-Partner, Anhebung an den Uhrpolen {0, ∞}.
+  - Divisoren aus Marken sind nie wahlfrei.
+- **Lorentzisch nur über V̄*.**
+  - Die eigenen Realstrukturen der Naht geben nur die Signaturen (2,2) oder (4,0).
+  - Die Signatur (1,3) gibt nur N = O(1) ⊗ V̄*, das konjugierte Partnerdublett.
+  - Damit ist T äquivalent zur einen kanonischen Prämisse T′: Die Naht ist P(V) ⊂ P(V ⊕ V̄*).
+
+**4. (C) Zweite Helizität (z65).**
+- **Linear.** Grad −6 auf PT gibt Ψ̃, auf PT* gibt er Ψ. h⁺ + h⁻ löst R⁽¹⁾ = 0 exakt mit beiden Weylhälften.
+- **Nichtlinear (googly-Dualität).**
+  - Das Grad-(−6)-Feld eines Blatts zerstört dieses Blatt und ist ein Graviton des anderen (Kerr-Schild exakt).
+  - Beide zusammen lassen nur die Ambitwistorquadrik übrig.
+- **Tomita.** Die Twistor-Realstruktur induziert die Tomita-Konjugation x ↦ x†.
+- **Korrektur zu z61:** Penroses Deformationen von PT tragen Ψ (H¹(O(2))), nicht das Grad-(−6)-Feld.
+- **Offen:** nichtlinear beide Helizitäten. Dafür werden Daten in der formalen Umgebung der Quadrik gebraucht.
+
+**5. Zeit (z70, externe Analyse).**
+- spec(K) ⊂ πℤ heißt, der Modulfluss ist periodisch (Periode 2).
+- Ein diskretes, Lorentz-invariantes Spektrum positiver Energie ist trivial.
+- Der Modulfluss ist also keine physikalische Zeittranslation; die Zeit der Raumzeit muss aus relativen Modulflüssen
+  (Kozyklen) oder aus T′ kommen.
+
+**6. (F) Skalen (z68).**
+- **Keine Skala aus dem eigenen Spektrum.** Die Antworten sind dilatationsinvariant, und der 2D-Einstein-Hilbert-Term ist
+  topologisch. Nur der Endlichgrößenteil der Sakharov-Summen ist reglerfrei.
+- **Exakt am KMS-Punkt:** Thermische Energie und Casimirenergie heben sich auf (⟨T⟩ = 0), und S = ln 2/4 je Quarter.
+- **Rest:** Unter Prämisse D bleibt die Fläche je Naht offen. Die dimensionslosen Readouts des Ledgers bleiben unberührt.
+
+**7. Flavour (z67), nur Verträglichkeit.**
+- Die Weylmatrix des H6-Spin-2-Zustands hat die Eigenwerte (24i, −24i, 0) und gibt keine Flavourgewichte.
+- Flavour bleibt der gelöste TFPT-Baustein.
+
+**8. Suchprogramm.** Neues OriginLab-Modul `reconstruction_search` (exakt, deterministisch, 2 s, 14 Tests). Es findet:
+- drei wahlfreie Twistorgeraden;
+- (1,3) nur mit V̄*;
+- ρ_m je m, m selbst offen.
+
+Die Spinstruktur-Konstruktion aus z70 ist eine vierte wahlfreie Twistorgerade.
+
+**9. Korrekturen an H6h33.**
+- „Neu ist die Zuordnung“ ist zurückgenommen (Vorbestand oben).
+- Das schwache Dublett ist nicht H⁰(O(1)); H⁰(O(1)) ist der Spinor V.
+- Familien ≅ Λ²₊ ⊗ χ_q.
+- Penroses Deformationen tragen Ψ.
+- z61/z62 sind Kinematik im Sinn der Firewall.
+
+**10. Prüfstand.**
+- **K6:** P, aber typisiert als thermische Zeit der Naht. Die Raumzeit-Zeittranslation ist nicht der Modulfluss.
+- **K12:** L unter T′ mit ρ_m (m offen).
+- **K13:** L; linear beide Helizitäten, nichtlinear googly.
+- **Bilanz:** 13 P, 7 L.
+
+**11. Zweite externe Analyse „Weiterentwicklung von H6h33“ (z71, 4 Prüfungen).**
+- **Lokale Modulzeit.** Dieselbe Kovarianz auf einem Nahtbogen hat ein lokales Modulspektrum, das mit der Auflösung dicht
+  wird und nicht auf dem π-Gitter liegt. Der spektrale Widerspruch zur periodischen Uhr ist damit aufgelöst. Als
+  physikalische Zeit verlangt sie noch lokale Translationsbeziehungen.
+- **4D-Fortsetzung.**
+  - W(τ, 0) auf S³ ist exakt die Stromantwort.
+  - Dieselbe Linienantwort hat aber die native 2D-Antwort längs des Nahtwinkels, und dort gilt ∂²_θW = −∂²_τW statt der
+    vorgeschlagenen 4D-Identität.
+  - Die Dimension ist durch die Quelle also nicht erzwungen. Erzwungen wäre sie, wenn T′ die Querrichtungen liefert.
+- **Ursprung.**
+  - Zwei binäre Beobachtungen mit Überlapp p geben das Kreuzverhältnis −(1−p)/p, harmonisch (τ = i) genau bei p = ½,
+    also bei maximaler Inkompatibilität.
+  - Die Paarung nach Beobachtung ist das kanonische η.
+  - Das gleichgewichtete Gemisch ist der Spurzustand; der Zustand bleibt offen.
+- **Nicht wieder aufgemacht:** Familien und 16 je Familie sind gelöste Bausteine.
+
+**12. Offen** (nur die echten Lücken nach TFPT-STAND §5):
+- Ursprung von P1 einschließlich T′ (warum das Partnerdublett konjugiert eingeht);
+- physikalische Zeit: Spektral ist sie durch die lokale Modulzeit möglich (z71); es fehlen die lokalen
+  Translationsbeziehungen;
+- die Windungszahl m;
+- nichtlinear volle Gravitation;
+- Flächennormierung;
+- Restflavor (Neutrinozweig, Phasen, absolute Quarkamplitude).
+
+## Davor: H6h33 — Vogelperspektive: Naht als Himmelssphäre und Twistorgerade (`z61`, `z62`)
 
 Bilanz unverändert 13 P und 7 L von 20. K12 und K13 sind präzisiert.
 

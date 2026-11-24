@@ -1,0 +1,20 @@
+Teil 1: Lokale Modulzeit auf einem Nahtbogen
+   {128: {'anzahl_in_|eps|<4pi': 12, 'median_abstand': 1.898324803894984, 'anteil_nahe_pi_Z': 0.0}, 256: {'anzahl_in_|eps|<4pi': 14, 'median_abstand': 1.6617080506354762, 'anteil_nahe_pi_Z': 0.0}, 512: {'anzahl_in_|eps|<4pi': 16, 'median_abstand': 1.5302766725334465, 'anteil_nahe_pi_Z': 0.125}}
+   [ok] global ist das Kovarianzspektrum exakt c(x), also Modulenergien 4 pi x (Abstand 4 pi) -- auf dem halben Bogen wächst die Zahl lokaler Modulenergien in |eps| < 4 pi mit der Auflösung (128, 256, 512 Punkte), der mittlere Abstand sinkt, und die Werte liegen nicht auf dem pi-Gitter: das lokale Spektrum wird dicht
+   [Befund: ja] Die externe Analyse hält in diesem Punkt: Die lokale Modulzeit desselben Zustands ist nicht periodisch; damit ist der spektrale Widerspruch zur periodischen globalen Uhr aufgelöst. Dass sie die physikalische Zeit ist, verlangt noch lokale Translationsbeziehungen (halbseitige Inklusionen)
+
+Teil 2: Die 4D-Fortsetzung und die native Querantwort
+/Users/stefanhamann/Projekte/tfpt-theoryv4/experiments/exploration/2026-11-23-phasenraum-f5-holocode/z71_lokale_zeit_4d.py:93: RuntimeWarning: overflow encountered in exp
+  dn = ms/(np.exp(B*ms) - 1)
+   [ok] W4(tau, 0) = W2(tau, 0) = thermische Stromantwort aus z58 (vier tau-Werte): die Linienantwort unterscheidet S^3 und die Naht nicht
+   [ok] je Mode gilt für S^3: d^2_gamma (sin m gamma/sin gamma)|_0 = -(1/3)(m^2 - 1) m, also die vorgeschlagene Identität d^2_gamma W = -(1/3)(d^2_tau - 1) W; für den nativen Nahtwinkel gilt stattdessen d^2_theta W = -d^2_tau W (2D-Welle), die 4D-Identität verfehlt
+   [Befund: ja] Die native Querantwort der Quelle ist zweidimensional (Nahtwinkel). Die 4D-Fortsetzung braucht eine Winkelvariable, die das Original nicht hat; sie ist eine konsistente Fortsetzung, aber nicht erzwungen (wie die Analyse selbst einräumt). Erzwungen wäre sie, wenn T' die Querrichtungen als Lagen der Naht liefert
+
+Teil 3: Ursprung aus zwei binären Beobachtungen
+   [ok] zwei binäre Beobachtungen mit Überlapp p: die vier Ausgänge haben das Kreuzverhältnis -(1-p)/p (reell, ein Großkreis), harmonisch (tau = i) genau bei p = 1/2, also maximal inkompatibel; das gleichgewichtete Gemisch ist immer I/2
+   [Befund: ja] Die Paarung nach Beobachtung ({a, a-perp | b, b-perp}) ist die Antipodenpaarung, also das kanonische eta aus z70; die Clifford-Drehung a -> b -> a-perp -> b-perp ist die Vierteldrehung. Der Ursprungskandidat erklärt Marken, tau = i und eta; der Zustand bleibt offen: Das gleichgewichtete Gemisch ist der Spurzustand ohne Modulzeit, der Originalzustand braucht das Gewicht rho_m (z63)
+
+Urteil
+   Die zweite externe Analyse hält in ihren prüfbaren Kernpunkten, mit einer Einschränkung. Die lokale Modulzeit desselben Originalzustands auf einem Nahtbogen hat ein dicht werdendes Spektrum ohne pi-Gitter, also löst sie den spektralen Widerspruch zur periodischen globalen Uhr. Die S^3-Fortsetzung W(tau, gamma) reproduziert die Stromantwort exakt auf der Linie gamma = 0, aber dieselbe Linienantwort hat die native 2D-Fortsetzung längs des Nahtwinkels, und für diesen gilt die 2D-Wellenidentität statt der vorgeschlagenen 4D-Identität: Die Dimension ist durch die Quelle nicht erzwungen. Der Ursprungskandidat 'zwei maximal inkompatible binäre Beobachtungen' gibt tau = i genau bei p = 1/2 und als Paarung das kanonische eta; der Zustand bleibt offen.
+
+Alle Prüfungen bestanden: True (4/4)

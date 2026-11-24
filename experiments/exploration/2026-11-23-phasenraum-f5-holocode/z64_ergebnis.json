@@ -1,0 +1,878 @@
+{
+ "checks": {
+  "Übergangsmatrix-Werkzeug: Spaltungstyp von O(a) + O(b) für sechs Paare richtig und stabil (Nmax 14 -> 18)": true,
+  "Riemann-Roch auf E (Geschlecht 1): l(D) = deg D für deg >= 1, 0 für deg < 0, in {0, 1} für deg 0, an 80 Zufallsdivisoren auf den Sonderpunkten; stabil unter Ansatzvergrößerung": true,
+  "lineare Äquivalenzen: 2 p_a ~ inf+ + inf- ~ o+ + o- (= pi^* O(1)); Komplementärpaare äquivalent, die drei Paarklassen verschieden; 2 inf+ ~ 2 o+ ~ p_1 + p_-1 (antipodal), also inf+ - inf- ~ p_-1 - p_1": true,
+  "z61-Klasse: pi_* pi^* O(k) = O(k) + O(k-2) für k = -1..3 (Projektionsformel); jeder Twist mit O(j) der Naht verschiebt beide Summanden, die Lücke 2 bleibt: kein Bündel 'Blätter mit zurückgezogenem Bündel' ist O(1) + O(1)": true,
+  "Satz: für M auf E vom Grad 2k ist pi_* M = O(k-1) + O(k-1) genau dann, wenn M nicht pi^* O(k) ist, sonst O(k) + O(k-2) (11 Pullbacks, 20 andere, Grad 0/2/4; ungerader Grad stets O(k) + O(k-1)): der einzige Sprungpunkt jeder Gradklasse ist das zurückgezogene Bündel": true,
+  "Spinstrukturen von E (K_E = O): theta = O hat die Nullmode h0 = 1 und T_C (x) pi_* theta = O(2) + O; die drei geraden theta (h0 = 0, Szegő-Kern existiert) geben T_C (x) pi_* theta = O(1) + O(1)": true,
+  "Szegő bei tau = i: theta_1(0) = 0 (ungerade, kein Kern), theta_2(0) = theta_4(0) != theta_3(0) (Jacobi erfüllt); die Vierteldrehung hält genau einen nichttrivialen 2-Torsionspunkt fest, und auf E bildet sie die Seitenklassen aufeinander ab und hält die antipodale fest: eta_* = O(p_1 - p_-1) = O(inf+ - inf-) ist die vierteldrehungsfeste gerade Struktur": true,
+  "Kandidat (3) mit Verzweigungsdivisor: pi_*(pi^* O(1) (x) O(R)) = O(3) + O(1) (Grad 4); pi_* L mit deg L = 2 hat stets Grad 0: beide verfehlen Grad 2, erst die halbe Verzweigung (relative Spinstruktur) mit T_C trifft O(1) + O(1)": true,
+  "Deck-Eigenteile: pi_* O = O (gerade) + O(-2) (ungerade); pi_* eta = O(-1) + O(-1) mit je einem Rang-1-Teil pro Deckparität: die Decktransformation wirkt auf jeder Faser eines geraden Sektors als diag(1, -1), nicht skalar": true,
+  "D4 = <z -> iz, z -> 1/z> hat Ordnung 8 auf den Marken; V4 = {1, r^2, rs, r^3 s} besteht aus den drei Doppeltranspositionen (Kleingruppe)": true,
+  "Monodromie (z34) und E-Rechnung stimmen überein: Charaktere <-> gerade Markenmengen S, Linienbündel O(-|S|/2); V4-Sektoren = Zerlegungen {S, S^c}: trivial O + O(-2) = pi_* O, sonst O(-1) + O(-1) = pi_* eta_c; r_* r^* O(1) = O(1) + 6 O + O(-1)": true,
+  "kein O(1) + O(1) in r_* L (L = r^* O(1)): Hom(O(1), r_* L) = H0(r_* L (-1)) ist eindimensional, und nur ein Charakter trägt O(1): weder eine Einbettung noch eine deckäquivariante Surjektion r_* L -> O(1) + O(1) existiert": true,
+  "Klassifikation der 28 deckinvarianten Rang-2-Unterbündel von r_* L^k: O(1) + O(1) nur für k = 2 (L^2 = r^* O(2) = K_{E/B}) und genau für zwei Paarcharaktere (15); D4-invariant sind nur zwei: der triviale Sektor O(2) + O und der antipodale Sektor {p_1, p_-1 | p_i, p_-i} = O(1) + O(1)": true,
+  "h0(L^2) = 16 = 4 + 4 + 4 + 4: jeder V4-Sektor von r_* K_{E/B} hat vier Schnitte; nur die drei nichttrivialen sind balanciert (Twistortyp), der triviale ist O(2) + O": true,
+  "relative Selbstdualität L^2 = K_{E/B} ohne die Annahme L = r^* M: drei weitere Lösungen L' = r^* O(1) (x) eta; über die Isogenie ist r_* L' = O(1) (x) Summe_c pi_*(xi eta_c) mit xi = O(inf+ - p_1) der Ordnung 4: alle vier Blöcke O + O, also r_* L' = 8 O (balanciert, kein O(1)-Summand, kein schwaches Dublett; passt zu 4 + 4 außerhalb (P,P) in z38)": true,
+  "Hecke längs der ungeraden (zweiten Blatt-)Geraden an S: Basisrechnung = E-Rechnung O(1) (x) pi_* O_E(S) für alle 16 Teilmengen (h0-Folgen gleich); Ergebnis O(1) + O(|S| - 1), also O(1) + O(1) genau für |S| = 2": true,
+  "an zwei Marken hängt das Ergebnis von den Geraden ab: O(1) + O(1), solange keine die gerade Richtung (Fasern des destabilisierenden O(1)) ist; sonst O(2) + O bzw. O(3) + O(-1): auch die kanonische gerade Wahl springt": true,
+  "keine der sechs Zweiermengen ist unter V4 oder D4 fest (die Modifikation selbst ist nie symmetrisch); fest sind nur Zerlegungen: alle drei unter V4, unter D4 genau die antipodale. Da S und S^c dasselbe Linienbündel auf E geben, ist die Isomorphieklasse O(1) + O(1) kanonisch, die Einbettung eine binäre Wahl": true,
+  "Jetbündel aus Übergangsfunktionen: J^1(O) = O + O(-2), J^1(O(k)) = O(k-1) + O(k-1) für k >= 1; also J^1(O(2)) = J^1(T_C) = J^1(K(D)) = O(1) + O(1) = O(1) (x) H0(O(1)) (Kandidat 4, kanonisch, nur aus P1)": true,
+  "Euler-Kanal (Rang-1-Kanal z35/z37 = Erweiterungsklasse in H1(O(-2))): ohne Kanal O(1) + O(-1) (z61-Sektor), mit Kanal O + O = V (x) O (volles Dublett trivial); O(1) (x) (Dublett) = O(1) + O(1), ohne Kanal O(2) + O": true,
+  "Grad des Partners (Windungszahlen der Rahmen auf |z| = 1): tautologische Linie -1, ihre Konjugierte +1 (nur glatt), über die Antipodenabbildung holomorph gemacht wieder -1 (Rahmen (-z, 1)), das konjugierte Dublett V-bar (x) O hat Grad 0; O(1) (x) V-bar = O(1) + O(1): der Partner liefert Vielfachheit 2, keine zweite Windung": true,
+  "Lorentzkriterium für N = O(1) (x) W, H0 = Hom(V, W), x -> rho_W(g) x g^-1, 200 zufällige g in SL(2,C): nur W = V-bar^* erhält die reelle Form Herm(2) und hat reellen Charakter |tr g|^2 (Lorentzvektor (1/2,1/2)); W = V gibt 3 + 1 (invarianter Vektor, nur Drehungen), W = C^2 zwei chirale Dubletts": true,
+  "Schur: die gehobene Markensymmetrie (Q8 aus V4, Ordnung 8; binär-dihedral aus D4, Ordnung 16) wirkt irreduzibel auf V, der Raum invarianter Hermitescher Formen ist eindimensional; es ist die Hardy-Form der Kreislinie durch die Marken (Gram = 1 auf {1, z}); Kontrolle: die Drehung allein lässt zwei Formen zu": true,
+  "Blattblindheit: Lorentzkovarianz mit dem Deck als innerer, mit SL(2,C) vertauschender Symmetrie verlangt nach Schur (Kommutant von V-bar^* ist 1-dimensional) skalare Deckwirkung auf N; in r_* L^k ist jeder der acht Charaktere einfach (Teil 2) und in jedem geraden Sektor wirkt das Deck als diag(1, -1) (Teil 1), das mit keinem Boost-Element vertauscht: kein Überlagerungssektor ist ein lorentzkovariantes Normalenbündel": true
+ },
+ "befunde": {
+  "Für T' braucht es weder Zustand noch Hermitesche Form: Hom(V, V-bar^*) sind die Sesquilinearformen auf V, ihre reelle Form die Hermiteschen Formen, der Kegel die positiven; das alles ist kanonisch. Die Markensymmetrie erzwingt nur die Hermitesche Form h (Hardy-Form), also die Identifikation mit End(V) aus z62 und ein Ruhesystem der Marken. Welchen Punkt des Kegels der Dublettzustand (Lücke A) wählt, legt sie nicht fest, sobald der Zustand sie bricht": true,
+  "Das zweite O(1) ist kein Gradproblem und kein Problem der Blätter: Es muss blattblind sein, und der einzige blattblinde, lorentzkovariante Träger ist das konjugierte Dublett V-bar^* des Partners": true,
+  "Spannung im Bestand: Der Sektor, der 5 + 3 und das schwache Dublett trägt (Pullback, (P,P)), ist genau der, in dem T scheitert; die Sektoren mit Szegő-Kern sind balanciert, haben aber kein Dublett (4 + 4)": true
+ },
+ "status": {
+  "Spaltungstyp": {
+   "status": "E",
+   "aussage": "O(1) + O(1) ist kein Hindernis: es entsteht kanonisch in den Szegő-Sektoren (gerade Spin-strukturen), aus J^1(O(2)) = O(1) (x) Euler-Dublett und aus O(1) (x) V-bar^*"
+  },
+  "z61-Klasse": {
+   "status": "E",
+   "aussage": "No-go: Blätter mit zurückgezogenem Bündel geben stets O(k) + O(k-2); der Pullback ist der einzige Sprungpunkt jeder Gradklasse, und genau er trägt das schwache Dublett (5 + 3)"
+  },
+  "Kanonischer Überlagerungssektor": {
+   "status": "E",
+   "aussage": "in r_* K_{E/B} ist der antipodale Sektor der einzige D4-invariante balancierte; seine Faser ist intern (Farbe_c*, Familie_c*)"
+  },
+  "Lorentzkovarianz": {
+   "status": "E",
+   "aussage": "für N = O(1) (x) W ist H0(N) genau dann der Lorentzvektor, wenn W = V-bar^* (Charakter |tr g|^2); SL(2)-äquivariante holomorphe Konstruktionen geben 3 + 1 oder chirale Dubletts; jeder Überlagerungssektor scheitert an der Blattblindheit (Schur), sofern das Deck als innere Symmetrie mit der Lorentzwirkung vertauscht"
+  },
+  "Hermitesche Form": {
+   "status": "E",
+   "aussage": "durch die Markensymmetrie bis auf Skala erzwungen (Q8 bzw. 2D4 irreduzibel): Hardy-Form"
+  },
+  "Lesart T": {
+   "status": "C",
+   "aussage": "folgt vollständig unter der einen Prämisse T': die Naht ist P(V) in P(V + V-bar^*), also N = O(1) (x) V-bar^*; T' ist kanonisch (keine Wahl, einziger lorentzkovarianter Kandidat der Form O(1) (x) W), aber nicht aus den Daten abgeleitet"
+  },
+  "Faser S_* = (Farbe_c*, Familie_c*) als zweiter Spinor": {
+   "status": "L",
+   "aussage": "nur holomorphe Koinzidenz; als Raumzeitspinor ausgeschlossen (Deck nicht skalar)"
+  },
+  "Nahtlagen als Antworten": {
+   "status": "O",
+   "aussage": "dass die Naht überhaupt deformiert (eine Einbettung in eine 3-Mannigfaltigkeit), ist aus keiner Antwort des Originals rekonstruiert"
+  }
+ },
+ "zahlen": {
+  "aequivalenzen": {
+   "2 inf+ ~": [
+    "antipodal"
+   ],
+   "2 o+ ~": [
+    "antipodal"
+   ]
+  },
+  "pi_pi^*O(k)": {
+   "-1": [
+    -1,
+    -3
+   ],
+   "0": [
+    0,
+    -2
+   ],
+   "1": [
+    1,
+    -1
+   ],
+   "2": [
+    2,
+    0
+   ],
+   "3": [
+    3,
+    1
+   ]
+  },
+  "satz_sprung_pullback": {
+   "{}": {
+    "grad": 0,
+    "pullback": true,
+    "spaltung": [
+     0,
+     -2
+    ]
+   },
+   "{'p1': 1, 'pm1': -1}": {
+    "grad": 0,
+    "pullback": false,
+    "spaltung": [
+     -1,
+     -1
+    ]
+   },
+   "{'p1': 1, 'pi': -1}": {
+    "grad": 0,
+    "pullback": false,
+    "spaltung": [
+     -1,
+     -1
+    ]
+   },
+   "{'p1': 1, 'pmi': -1}": {
+    "grad": 0,
+    "pullback": false,
+    "spaltung": [
+     -1,
+     -1
+    ]
+   },
+   "{'inf+': 1, 'inf-': -1}": {
+    "grad": 0,
+    "pullback": false,
+    "spaltung": [
+     -1,
+     -1
+    ]
+   },
+   "{'inf+': 1, 'p1': -1}": {
+    "grad": 0,
+    "pullback": false,
+    "spaltung": [
+     -1,
+     -1
+    ]
+   },
+   "{'o+': 1, 'p1': -1}": {
+    "grad": 0,
+    "pullback": false,
+    "spaltung": [
+     -1,
+     -1
+    ]
+   },
+   "{'o+': 1, 'o-': -1}": {
+    "grad": 0,
+    "pullback": false,
+    "spaltung": [
+     -1,
+     -1
+    ]
+   },
+   "{'inf+': 1, 'o+': -1}": {
+    "grad": 0,
+    "pullback": false,
+    "spaltung": [
+     -1,
+     -1
+    ]
+   },
+   "{'p1': 2, 'inf+': -1, 'inf-': -1}": {
+    "grad": 0,
+    "pullback": true,
+    "spaltung": [
+     0,
+     -2
+    ]
+   },
+   "{'o+': 1, 'o-': 1, 'inf+': -1, 'inf-': -1}": {
+    "grad": 0,
+    "pullback": true,
+    "spaltung": [
+     0,
+     -2
+    ]
+   },
+   "{'p1': 1, 'pm1': 1, 'pi': -1, 'pmi': -1}": {
+    "grad": 0,
+    "pullback": true,
+    "spaltung": [
+     0,
+     -2
+    ]
+   },
+   "{'inf+': 1, 'inf-': 1}": {
+    "grad": 2,
+    "pullback": true,
+    "spaltung": [
+     1,
+     -1
+    ]
+   },
+   "{'p1': 2}": {
+    "grad": 2,
+    "pullback": true,
+    "spaltung": [
+     1,
+     -1
+    ]
+   },
+   "{'o+': 1, 'o-': 1}": {
+    "grad": 2,
+    "pullback": true,
+    "spaltung": [
+     1,
+     -1
+    ]
+   },
+   "{'p1': 1, 'pm1': 1}": {
+    "grad": 2,
+    "pullback": false,
+    "spaltung": [
+     0,
+     0
+    ]
+   },
+   "{'p1': 1, 'pi': 1}": {
+    "grad": 2,
+    "pullback": false,
+    "spaltung": [
+     0,
+     0
+    ]
+   },
+   "{'p1': 1, 'pmi': 1}": {
+    "grad": 2,
+    "pullback": false,
+    "spaltung": [
+     0,
+     0
+    ]
+   },
+   "{'inf+': 2}": {
+    "grad": 2,
+    "pullback": false,
+    "spaltung": [
+     0,
+     0
+    ]
+   },
+   "{'inf+': 1, 'o+': 1}": {
+    "grad": 2,
+    "pullback": false,
+    "spaltung": [
+     0,
+     0
+    ]
+   },
+   "{'o+': 1, 'p1': 1}": {
+    "grad": 2,
+    "pullback": false,
+    "spaltung": [
+     0,
+     0
+    ]
+   },
+   "{'o+': 2}": {
+    "grad": 2,
+    "pullback": false,
+    "spaltung": [
+     0,
+     0
+    ]
+   },
+   "{'inf+': 1, 'p1': 1}": {
+    "grad": 2,
+    "pullback": false,
+    "spaltung": [
+     0,
+     0
+    ]
+   },
+   "{'inf+': 2, 'inf-': 2}": {
+    "grad": 4,
+    "pullback": true,
+    "spaltung": [
+     2,
+     0
+    ]
+   },
+   "{'p1': 1, 'pi': 1, 'pm1': 1, 'pmi': 1}": {
+    "grad": 4,
+    "pullback": true,
+    "spaltung": [
+     2,
+     0
+    ]
+   },
+   "{'inf+': 1, 'inf-': 1, 'p1': 1, 'pm1': 1}": {
+    "grad": 4,
+    "pullback": false,
+    "spaltung": [
+     1,
+     1
+    ]
+   },
+   "{'inf+': 1, 'inf-': 1, 'p1': 1, 'pi': 1}": {
+    "grad": 4,
+    "pullback": false,
+    "spaltung": [
+     1,
+     1
+    ]
+   },
+   "{'inf+': 4}": {
+    "grad": 4,
+    "pullback": true,
+    "spaltung": [
+     2,
+     0
+    ]
+   },
+   "{'inf+': 2, 'o+': 2}": {
+    "grad": 4,
+    "pullback": true,
+    "spaltung": [
+     2,
+     0
+    ]
+   },
+   "{'p1': 3, 'o+': 1}": {
+    "grad": 4,
+    "pullback": false,
+    "spaltung": [
+     1,
+     1
+    ]
+   },
+   "{'inf+': 1, 'inf-': 1, 'o+': 2}": {
+    "grad": 4,
+    "pullback": false,
+    "spaltung": [
+     1,
+     1
+    ]
+   }
+  },
+  "spinstrukturen_E0": {
+   "O (ungerade, P,P)": {
+    "h0(theta)": 1,
+    "T_C (x) pi_* theta": [
+     2,
+     0
+    ]
+   },
+   "eta_antipodal": {
+    "h0(theta)": 0,
+    "T_C (x) pi_* theta": [
+     1,
+     1
+    ]
+   },
+   "eta_seite1": {
+    "h0(theta)": 0,
+    "T_C (x) pi_* theta": [
+     1,
+     1
+    ]
+   },
+   "eta_seite2": {
+    "h0(theta)": 0,
+    "T_C (x) pi_* theta": [
+     1,
+     1
+    ]
+   }
+  },
+  "theta_tau_i": {
+   "theta1(0)": "3.91888609497e-35",
+   "theta2(0)": "0.913579138156",
+   "theta3(0)": "1.08643481121",
+   "theta4(0)": "0.913579138156"
+  },
+  "deck_eigenteile": {
+   "O": [
+    [
+     0
+    ],
+    [
+     -2
+    ]
+   ],
+   "eta_antipodal": [
+    [
+     -1
+    ],
+    [
+     -1
+    ]
+   ],
+   "eta_seite1": [
+    [
+     -1
+    ],
+    [
+     -1
+    ]
+   ]
+  },
+  "sektoren_r_O": {
+   "(1, 1)": {
+    "S+": [],
+    "S-": [
+     0,
+     1,
+     2,
+     3
+    ],
+    "E0": [
+     0,
+     -2
+    ]
+   },
+   "(1, -1)": {
+    "S+": [
+     2,
+     3
+    ],
+    "S-": [
+     0,
+     1
+    ],
+    "E0": [
+     -1,
+     -1
+    ]
+   },
+   "(-1, 1)": {
+    "S+": [
+     1,
+     3
+    ],
+    "S-": [
+     0,
+     2
+    ],
+    "E0": [
+     -1,
+     -1
+    ]
+   },
+   "(-1, -1)": {
+    "S+": [
+     1,
+     2
+    ],
+    "S-": [
+     0,
+     3
+    ],
+    "E0": [
+     -1,
+     -1
+    ]
+   }
+  },
+  "klassifikation_r_L^k": {
+   "1": {
+    "paare": 28,
+    "balanciert_grad2": 0,
+    "D4_invariant": [
+     [
+      [
+       [],
+       [
+        0,
+        1,
+        2,
+        3
+       ]
+      ],
+      [
+       1,
+       -1
+      ]
+     ],
+     [
+      [
+       [
+        0,
+        2
+       ],
+       [
+        1,
+        3
+       ]
+      ],
+      [
+       0,
+       0
+      ]
+     ]
+    ],
+    "D4_inv_balanciert": []
+   },
+   "2": {
+    "paare": 28,
+    "balanciert_grad2": 15,
+    "D4_invariant": [
+     [
+      [
+       [],
+       [
+        0,
+        1,
+        2,
+        3
+       ]
+      ],
+      [
+       2,
+       0
+      ]
+     ],
+     [
+      [
+       [
+        0,
+        2
+       ],
+       [
+        1,
+        3
+       ]
+      ],
+      [
+       1,
+       1
+      ]
+     ]
+    ],
+    "D4_inv_balanciert": [
+     [
+      [
+       0,
+       2
+      ],
+      [
+       1,
+       3
+      ]
+     ]
+    ]
+   },
+   "3": {
+    "paare": 28,
+    "balanciert_grad2": 0,
+    "D4_invariant": [
+     [
+      [
+       [],
+       [
+        0,
+        1,
+        2,
+        3
+       ]
+      ],
+      [
+       3,
+       1
+      ]
+     ],
+     [
+      [
+       [
+        0,
+        2
+       ],
+       [
+        1,
+        3
+       ]
+      ],
+      [
+       2,
+       2
+      ]
+     ]
+    ],
+    "D4_inv_balanciert": []
+   }
+  },
+  "nicht_pullback_spinlift": {
+   "O": [
+    0,
+    0
+   ],
+   "pi-p1": [
+    0,
+    0
+   ],
+   "pm1-p1": [
+    0,
+    0
+   ],
+   "pmi-p1": [
+    0,
+    0
+   ]
+  },
+  "hecke_ungerade": {
+   "leer": [
+    1,
+    -1
+   ],
+   "p1": [
+    1,
+    0
+   ],
+   "pi": [
+    1,
+    0
+   ],
+   "pm1": [
+    1,
+    0
+   ],
+   "pmi": [
+    1,
+    0
+   ],
+   "p1+pi": [
+    1,
+    1
+   ],
+   "p1+pm1": [
+    1,
+    1
+   ],
+   "p1+pmi": [
+    1,
+    1
+   ],
+   "pi+pm1": [
+    1,
+    1
+   ],
+   "pi+pmi": [
+    1,
+    1
+   ],
+   "pm1+pmi": [
+    1,
+    1
+   ],
+   "p1+pi+pm1": [
+    2,
+    1
+   ],
+   "p1+pi+pmi": [
+    2,
+    1
+   ],
+   "p1+pm1+pmi": [
+    2,
+    1
+   ],
+   "pi+pm1+pmi": [
+    2,
+    1
+   ],
+   "p1+pi+pm1+pmi": [
+    3,
+    1
+   ]
+  },
+  "hecke_geraden_zwei_marken": {
+   "ungerade/ungerade": [
+    1,
+    1
+   ],
+   "ungerade/generisch": [
+    1,
+    1
+   ],
+   "ungerade/gerade": [
+    2,
+    0
+   ],
+   "generisch/ungerade": [
+    1,
+    1
+   ],
+   "generisch/generisch": [
+    1,
+    1
+   ],
+   "generisch/gerade": [
+    2,
+    0
+   ],
+   "gerade/ungerade": [
+    2,
+    0
+   ],
+   "gerade/generisch": [
+    2,
+    0
+   ],
+   "gerade/gerade": [
+    3,
+    -1
+   ]
+  },
+  "hecke_symmetrie": {
+   "2-Mengen fest unter V4": 0,
+   "unter D4": 0,
+   "Zerlegungen fest unter D4": [
+    [
+     [
+      0,
+      2
+     ],
+     [
+      1,
+      3
+     ]
+    ]
+   ],
+   "unter V4": 3
+  },
+  "jets": {
+   "0": [
+    0,
+    -2
+   ],
+   "1": [
+    0,
+    0
+   ],
+   "2": [
+    1,
+    1
+   ],
+   "3": [
+    2,
+    2
+   ],
+   "4": [
+    3,
+    3
+   ]
+  },
+  "euler_kanal": {
+   "0": [
+    [
+     1,
+     -1
+    ],
+    [
+     2,
+     0
+    ]
+   ],
+   "1": [
+    [
+     0,
+     0
+    ],
+    [
+     1,
+     1
+    ]
+   ],
+   "3": [
+    [
+     0,
+     0
+    ],
+    [
+     1,
+     1
+    ]
+   ]
+  },
+  "grade_partner": {
+   "tautologisch l": -1,
+   "konjugiert l-bar (glatt)": 1,
+   "sigma^* l-bar (holomorph)": -1,
+   "V-bar (x) O": 0
+  },
+  "lorentzkriterium": {
+   "C^2 (trivial)": {
+    "Herm(2) erhalten": false,
+    "Charakter reell": false,
+    "invariante Vektoren": 0,
+    "Kommutant": 4
+   },
+   "V": {
+    "Herm(2) erhalten": false,
+    "Charakter reell": false,
+    "invariante Vektoren": 1,
+    "Kommutant": 1
+   },
+   "V-bar^*": {
+    "Herm(2) erhalten": true,
+    "Charakter reell": true,
+    "invariante Vektoren": 0,
+    "Kommutant": 1
+   }
+  },
+  "schur": {
+   "Q8 (V4 gehoben)": 1,
+   "2D4 (D4 gehoben)": 1,
+   "<r> allein": 2,
+   "|Q8|": 8,
+   "|2D4|": 16
+  },
+  "tafel": [
+   {
+    "konstruktion": "z61: O(1) (x) pi_* O_E = [r_* L]_trivial",
+    "spaltung": "(1, -1)",
+    "kanonisch": "kanonisch",
+    "ergebnis": "nein (Grad 0, Lücke 2)"
+   },
+   {
+    "konstruktion": "O(1) (x) [r_* L]_trivial = [r_* K_{E/B}]_trivial",
+    "spaltung": "(2, 0)",
+    "kanonisch": "kanonisch",
+    "ergebnis": "nein (Nullmodensektor (P,P), schwaches Dublett)"
+   },
+   {
+    "konstruktion": "(3) T_C (x) pi_* theta, theta gerade (Szegő)",
+    "spaltung": "(1, 1)",
+    "kanonisch": "Klasse kanonisch, D4 hält genau eta_* fest",
+    "ergebnis": "holomorph ja"
+   },
+   {
+    "konstruktion": "(5) [r_* K_{E/B}]_antipodal = Farbe_c* + Familie_c*, (x) O(1)",
+    "spaltung": "(1, 1)",
+    "kanonisch": "einziger D4-invarianter balancierter Sektor",
+    "ergebnis": "holomorph ja, nicht lorentzkovariant (Deck nicht skalar)"
+   },
+   {
+    "konstruktion": "(5) Unter-/Quotientenbündel von r_* L, E+, E-",
+    "spaltung": "-",
+    "kanonisch": "-",
+    "ergebnis": "nein (kein O(1)+O(1), keine äquivariante Surjektion)"
+   },
+   {
+    "konstruktion": "(2) Hecke an zwei Marken (ungerade Gerade)",
+    "spaltung": "(1, 1)",
+    "kanonisch": "nur Isomorphieklasse (Zerlegung)",
+    "ergebnis": "holomorph ja"
+   },
+   {
+    "konstruktion": "(2) Hecke an 0, 1, 3, 4 Marken oder längs gerader Geraden",
+    "spaltung": "O(1)+O(|S|-1) bzw. springend",
+    "kanonisch": "-",
+    "ergebnis": "nein"
+   },
+   {
+    "konstruktion": "(4) O(1) (x) H0(O(1)) = J^1(O(2)) = O(1) (x) [Euler-Dublett]",
+    "spaltung": "(1, 1)",
+    "kanonisch": "kanonisch aus P1",
+    "ergebnis": "holomorph ja, aber 3 + 1 (keine Boosts)"
+   },
+   {
+    "konstruktion": "(1) O(1) (x) V-bar^* (Purifikationspartner)",
+    "spaltung": "(1, 1)",
+    "kanonisch": "kanonisch, keine Wahl",
+    "ergebnis": "einziger lorentzkovarianter Kandidat; als Normalenbündel Prämisse T'"
+   }
+  ]
+ },
+ "urteil": "Das zweite O(1) der Lesart T ist kein Grad- oder Spaltungsproblem: O(1) + O(1) entsteht kanonisch aus den TFPT-Daten, nämlich als T_C (x) pi_* theta für jede gerade Spinstruktur von E (Szegő-Sektor), als einziger D4-invarianter balancierter Sektor von r_* K_{E/B} (antipodal: Farbe_c* + Familie_c*), als J^1(O(2)) = O(1) (x) Euler-Dublett und als O(1) (x) V-bar^*. Exakt ausgeschlossen ist die z61-Klasse: Blätter mit zurückgezogenem Bündel geben stets O(k) + O(k-2), weil der Pullback der einzige Sprungpunkt ist; derselbe Sprung trägt das schwache Dublett (5 + 3). Entscheidend ist die Lorentzkovarianz: Unter N = O(1) (x) W ist H0(N) nur für W = V-bar^* der Lorentzvektor; holomorphe Konstruktionen geben 3 + 1 ohne Boosts, und kein Überlagerungssektor ist blattblind (Deck nicht skalar, Schur, mit dem Deck als innerer Symmetrie). Die Hermitesche Form ist durch die Markensymmetrie erzwungen. Damit bleibt T bedingt (C) mit genau einer kanonischen Prämisse T': Die Naht ist P(V) in P(V + V-bar^*), ihre Normalenrichtungen sind das konjugierte Dublett des Partners. T' folgt nicht aus den Daten; ausgeschlossen ist es auch nicht."
+}

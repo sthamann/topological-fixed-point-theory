@@ -1,0 +1,135 @@
+Teil 1: die Weylmatrix Q exakt
+   [ok] allgemeine Quartik: tr Q = 0, tr Q^2 = 1152 I, det Q = 27648 J (exakte Polynomidentitäten). Also gilt bei J = 0 stets Eigenwerte (lambda, -lambda, 0)
+   [ok] Q ist symmetrisch bezüglich der invarianten Form (Q^T B = B Q, allgemein) und SL(2)-kovariant: (g.F, g.G)^(2) = g.(F, G)^(2) und T_g^T B T_g = B für ein zufälliges g in SL(2, Q)
+   H6-Zustand 1 - z^4 = y^4 - x^4: Komponenten m = -2..2: [sqrt(2)/2, 0, 0, 0, -sqrt(2)/2]; Sterne [-1, -I, 1, I]; I = -1, J = 0
+   Q(H6) in der Basis P = (1, z, z^2): [[0, 0, 24], [0, 0, 0], [-24, 0, 0]], Eigenwerte {-24*I: 1, 24*I: 1, 0: 1}
+   [ok] H6: Psi = -(|2> - |-2>)/sqrt2 (derselbe Strahl), Sterne = mu4, I = -1, J = 0; Q hat genau die Eigenwerte (24i, -24i, 0)
+   Normierungen: Weyl Q/24 hat tr = 2I (-2); Einheitszustand: Eigenwerte [-0.707107, 0.0, 0.707107] i; Clebsch-Gordan-Kopplung (2 x 1 -> 1): [-0.547723, 0.0, 0.547723] i (= +-sqrt(3/10)), proportional zu Q mit Faktor sqrt(30)/240
+   [ok] drei Normierungen (Überschiebung, Weyl, Clebsch-Gordan) geben dieselbe Matrix bis auf einen Faktor: Nur Verhältnisse und Eigenvektoren von Q sind zustandsbestimmt, die absolute Skala nicht
+   Büschel A + B z^4: Q = [[0, 0, 24*A], [0, 0, 0], [24*B, 0, 0]], charakteristisches Polynom lambda*(576*A*B - lambda**2), J = 0; mit B = A s^2, s = r e^(i varphi): Eigenvektoren 1 +- s z^2 mit Gewichten [1/(r**2 + 1), r**2/(r**2 + 1)] auf den Familien (1, z^2); gleich genau für r = [1]
+   [ok] mu4-Büschel A + B z^4: J = 0 für alle A, B; Q z = 0 für alle A, B (Nullfamilie immer P = z); +-lambda = +-24 A s auf 1 +- s z^2 (s^2 = B/A) -- gleiche Gewichte 1/2 auf den Familien 1 und z^2 genau für |A| = |B| (H6: Marken auf dem Einheitskreis)
+   V4-Dublett (1 - z^4) + t z^2: Q = [[4*t, 0, 24], [0, -8*t, 0], [-24, 0, 4*t]]; Eigenwerte auf (1 + i z^2, z, 1 - i z^2): [4*t + 24*I, -8*t, 4*t - 24*I]; J = -t*(t**2 + 36)/216
+   J = 0 genau für t in [-6*I, 0, 6*I]; Nullfamilie je t (0 = 1 + i z^2, 1 = z, 2 = 1 - i z^2): {'0': [1], '6*I': [2], '-6*I': [0]}; Sternradien bei t = 6i: [0.414213562, 2.414213562]
+   [ok] V4-Büschel: Q ist für jedes t diagonal in derselben Basis (1 + i z^2, z, 1 - i z^2) mit Eigenwerten (4t + 24i, -8t, 4t - 24i); J = -t(t^2 + 36)/216 verschwindet genau bei t = 0, +-6i. Bei t = 0 ist die Nullfamilie z; bei t = +-6i wandert sie zu 1 -+ i z^2, und die Sterne liegen nicht mehr auf dem Einheitskreis (nicht die H6-Marken)
+   [Befund: ja] Q ist exakt und zustandsbestimmt bis auf einen Faktor. Bei J = 0 (tau = i) hat es die Eigenwerte (lambda, -lambda, 0); welche Familie die Null trägt, legt die Lage des Marken-Quadrats fest
+
+Teil 2: H6-Familienbasis, Symmetrie, Residuen
+   Vierteldrehung r auf (1, z, z^2): [[I, 0, 0], [0, -1, 0], [0, 0, -I]]; Charakter der Vertauschung Q rho(g) = chi rho(g) Q: {'r': -1, 'r2': 1, 's': -1, 'rs': 1, 'r3s': 1}
+   [ok] Familiencharaktere aus dem Rückzug P -> i P(iz): (i, -1, -i) auf (1, z, z^2), also {-1, i, -i}; der Zustand 1 - z^4 (die konstante Trägerfunktion) ist unter ganz D4 invariant
+   [ok] Q antivertauscht mit der Vierteldrehung (chi(r) = -1) und vertauscht mit V4 = {r^2, rs, r^3 s} (chi = 1): Q bildet die Familie i auf -i ab, und die Familie mit Charakter -1 muss auf den Eigenraum +1 gehen, den es nicht gibt -- Q z = 0 ist durch Symmetrie erzwungen
+   V4-Charaktere (r^2, rs) von (1 + i z^2, z, 1 - i z^2): [(-1, 1), (1, -1), (-1, -1)]; Q-Eigenwerte darauf: [24*I, 0, -24*I]
+   [ok] die Eigenfamilien von Q sind genau die V4-Charakterbasis (drei verschiedene nichttriviale Charaktere = 'Farbe = Familien als V4-Darstellung', Z34): Nullfamilie z, +-24i auf 1 +- i z^2, also je gleiche Gewichte 1/2 auf den Familien i und -i
+   Q in der H6-Familienbasis (Charaktere -1, i, -i): [[0, 0, 0], [0, 0, 24], [0, -24, 0]]; hermitesch normiert Q/(24i): [[0, 0, 0], [0, 0, -I], [0, I, 0]]
+   Residuenmuster der Eigenfamilien auf den Marken (1, i, -1, -i): [(1, 1, -1, -1), (1, -1, 1, -1), (1, -1, -1, 1)]
+   [ok] Residuenabbildung: Bild = summenfreie Funktionen auf den Marken (Rang 3, Residuensatz). Die Eigenfamilien von Q gehen auf die drei reellen Paarungsmuster; die Nullfamilie auf (1, -1, 1, -1), die Antipodenpaarung {1, -1} | {i, -i}
+   [Befund: ja] Die H6-Familienbasis (Charaktere) ist nicht die Eigenbasis von Q: Q mischt die Familien i und -i maximal und lässt die Familie -1 als Nullfamilie stehen. Die Eigenbasis ist die reelle V4-Basis der drei Markenpaarungen
+
+Teil 3: Wörterbuch zum z57-Raum (festgelegt vor jedem Datenvergleich)
+   [ok] die Vierteldrehung wirkt auf den Residuen als zyklische Verschiebung der Marken, verträglich mit dem Rückzug der Familien (S Res = Res rho(r))
+   alle 48 Gitterisometrien A3 (summenfrei auf den Marken) -> D3 (Koordinaten e5, e6, e7):
+     mu4-Achse e5, Q/(24i) = diag(0, -1, 1), Drehsinn auf (e6, e7): J, diagonal: True -- 4 Abbildungen
+     mu4-Achse e5, Q/(24i) = diag(0, -1, 1), Drehsinn auf (e6, e7): J^-1, diagonal: True -- 4 Abbildungen
+     mu4-Achse e5, Q/(24i) = diag(0, 1, -1), Drehsinn auf (e6, e7): J, diagonal: True -- 4 Abbildungen
+     mu4-Achse e5, Q/(24i) = diag(0, 1, -1), Drehsinn auf (e6, e7): J^-1, diagonal: True -- 4 Abbildungen
+     mu4-Achse e6, Q/(24i) = diag(-1, 0, 1), Drehsinn auf (e6, e7): None, diagonal: True -- 8 Abbildungen
+     mu4-Achse e6, Q/(24i) = diag(1, 0, -1), Drehsinn auf (e6, e7): None, diagonal: True -- 8 Abbildungen
+     mu4-Achse e7, Q/(24i) = diag(-1, 1, 0), Drehsinn auf (e6, e7): None, diagonal: True -- 8 Abbildungen
+     mu4-Achse e7, Q/(24i) = diag(1, -1, 0), Drehsinn auf (e6, e7): None, diagonal: True -- 8 Abbildungen
+   [ok] alle 48 Abbildungen sind Gitterisometrien (Wurzeln e_i - e_j -> +-e_a +- e_b). Für jede ist Q diagonal in den Koordinaten (e5, e6, e7), null auf der mu4-Achse und +-24i auf den beiden anderen; je Achse 16 Abbildungen
+   [ok] J-verträglich (mu4-Achse = e5, die Richtung von F_J, und Drehsinn wie J auf (e6, e7)) sind 8 Abbildungen; sie geben beide Vorzeichen von Q (je 4). Das Vorzeichen ist also nicht festgelegt -- wie beim Strahl Psi = -Psi
+   Festgelegt: W1 = Residuen + Isometrie (Marken 1, i, -1, -i -> Ecken [[1, 1, 1], [-1, 1, -1], [1, -1, -1], [-1, -1, 1]]), Q_H = Q/(24i) = diag(0, 1, -1) in (e5, e6, e7); Vorzeichen frei (kappa reell, beide Vorzeichen)
+   Q_H in der zyklischen Dreierbasis (z57, e = f_0): [[0, sqrt(3)*I/3, -sqrt(3)*I/3], [-sqrt(3)*I/3, 0, sqrt(3)*I/3], [sqrt(3)*I/3, -sqrt(3)*I/3, 0]]
+   [ok] in der zyklischen Dreierbasis ist Q_H = (i/sqrt3)(S - S^T) mit der zyklischen Verschiebung S: nullte Diagonale, rein imaginär-antisymmetrisch (hermitesch)
+   [ok] Beziehungen im z57-Raum: Q_H F_J = F_J Q_H = 0, tr(Q_H F_J) = tr(Q_H F_C) = 0, [Q_H, F_C] != 0; Q_H u = w; w hat keinen e-Anteil (|<f_0|w>|^2 = 0), e5 ist trimaximal (1/3), u trägt 2/3; in der TBM-Basis (u, e5, w) hat Q_H nur den Eintrag u-w (Diagonale null); Q_H^2 = I - F_J
+   [ok] V4-Dublett unter W1: Q(alpha(1 - z^4) + beta z^2) = 24i alpha Q_H + beta (4 I - 12 F_J). Das F_J-Gewicht steckt genau im z^2-Anteil des Zustands
+   [ok] Gegenprobe M2 (Muster auf e5, u, w gedreht, um 45 Grad gegen W1): Q/(24i) = |u><u| - |w><w|, erhält u (TM1) und ist ein reiner gamma-Term; M2 ist aber keine Gitterabbildung (Wurzel e_1 - e_i -> nicht ganzzahlig)
+   [Befund: ja] Unter dem gittertreuen, J-verträglichen Wörterbuch W1 ist Q orthogonal zur J-Clock (Q F_J = 0) und koppelt nur die TM1-Spalte u an w: Es ist die TM2-Richtung (die trimaximale Spalte e5 bleibt unberührt). Das Quadrat Q^2 = I - F_J und der z^2-Anteil des Zustands sind reine gamma-Terme
+
+Teil 4: Vorhersagen mit festem Protokoll
+   Woerterbuch: W1: Residuen H0(K(D)) -> summenfrei(Marken) = A3, Isometrie A3 = D3 auf (e5, e6, e7), mu4-Achse = e5 (J-verträglich); Q_H = Q/(24i) = diag(0, 1, -1); Vorzeichen frei (kappa reell)
+   Flavourbasis: zyklische Dreierbasis aus z57 (e = f_0, mu = f_1, tau = f_2), bedingt wie in z57
+   Familienoperator: H = F_C + gamma F_J + kappa Q_H (F_C, F_J aus z57)
+   Etiketten: nu3 = Spalte mit kleinstem |U_e|^2, nu1 = übrige mit größtem |U_e|^2 (datenartig, ohne Eigenwerte)
+   Lesarten: {'R0': 'Beitrag von Q zu gamma', 'R1': 'gamma := Q-Gewicht auf der F_J-Richtung (= 0), kappa an s13 angepasst', "R1'": 'gamma = 1/8 (Analyse), kappa an s13 angepasst', 'R2': 'gamma und kappa frei (reine Anpassung)', 'R3': 'Q selbst als Massenoperator', 'R4': "phasenfreies Gewicht kappa' Q^2 >= 0"}
+   Daten: eingefroren sin^2 theta12 = 1/3 - phi0/2, sin^2 theta13 = phi0 e^(-5/6), theta23 = 45 Grad und delta = 240 Grad zugewiesen; NuFIT 6.1 (NO) sin^2 theta12 = 0.3088 +- 0.0067; sin^2 theta13 (NuFIT 6.0) aus predictions_frozen.json
+   Reihenfolge: Wörterbuch und Lesarten aus der Struktur (Teil 3) vor dem Datenvergleich; Prototypen liefen vorher, daher werden alle Lesarten und Wörterbücher gezählt
+
+   Daten: eingefroren s12 = 0.306747, s13 = 0.023108, s23 = 0.5 (zugewiesen), delta = 240 Grad (zugewiesen); TM1 bei diesem s13: s12 = 0.317563; NuFIT 6.1: 0.3088 +- 0.0067; NuFIT 6.0 s13 = 0.02195 +- 0.00058
+
+   (a) gamma
+   R0: Q_H hat auf e5 (F_J-Richtung) das Gewicht 0; reines TM1 mit gamma = 0: theta = 21.657 Grad, s13 = 0.045399 (eingefroren 0.023108)
+   [ok] R0: Q liefert bei tau = i (J = 0) kein gamma: Q_H F_J = 0. Reines TM1 mit gamma = 0 gibt theta = 21.66 Grad und s13 = 0.0454, etwa das Doppelte des eingefrorenen Werts
+   reines TM1 bräuchte für das eingefrorene s13 gamma* = 0.11223 (15 Grad: 0.11869, Analyse 1/8); Spiegelast gamma -> -3/8 - gamma (theta -> 90 Grad - theta, nu2 und nu3 vertauscht): -0.48723
+   [ok] Gegenprobe: gamma* reproduziert im reinen Clock-Operator das eingefrorene s13, und der Spiegelwert -3/8 - gamma* gibt dieselben Beträge (z57 liest die Eigenwerte nicht): gamma ist in z57 nur bis auf diese Spiegelung bestimmt
+   R4: kappa' Q_H^2 = kappa' (I - F_J), also gamma_eff = -kappa'. Direkter Ast (kappa' < 3/16): s13 für kappa' = [0.0, 0.05, 0.1, 0.15]: [0.0454, 0.06434, 0.09273, 0.13208]; Lösungen kappa' >= 0 für das eingefrorene s13: [0.48723], s12 = [0.317563]
+   [ok] R4: Das phasenfreie Gewicht kappa' Q^2 (kappa' >= 0) ist ein reiner gamma-Term mit gamma_eff = -kappa' und erhält TM1. Auf dem direkten Ast wächst s13 von 0.0454 weg; die einzige Lösung liegt auf dem Spiegelast bei kappa' = 3/8 + gamma* und gibt genau TM1 (s12 = 0.317563): angepasst, keine Brechung, keine Vorhersage
+   z^2-Beimischung t = i s (hermitesch, gamma_eff = -kappa s/2): J = I*s*(s - 6)*(s + 6)/216, null genau für s in [-6, 0, 6]
+   [ok] Ein gamma != 0 aus dem Zustand verlangt einen z^2-Anteil s mit J != 0 (also tau != i); die einzigen weiteren Nullstellen s = +-6 sind andere Quadrate mit verschobener Nullfamilie (nicht die H6-Marken)
+   [Befund: ja] (a) Q legt gamma nicht fest: linear ist gamma_Q = 0 (Q F_J = 0), das Quadrat ist ein gamma-Term freier Größe (passt nur angepasst und nur auf dem Spiegelast), und ein z^2-Anteil des Zustands bräuchte J != 0. Weder 1/8 noch (2 sqrt6 - 3)/16 folgt aus dem Spin-2-Zustand
+
+   (b) TM1-Brechung
+   eingefrorene erste Spalte (delta = 240 Grad): [0.677233, 0.126333, 0.196434], mit mu-tau-Reflexion: [0.677233, 0.161384, 0.161384]; TM1 (2/3, 1/6, 1/6); nötig: Delta|U_e1|^2 = +0.010566, Delta s12 = -0.010816
+   [ok] Die eingefrorenen Werte verlangen |U_e1|^2 = c12^2 c13^2 = 0.677233 > 2/3 (Delta +0.010566) und s12 um 0.010816 unter TM1; die mu-tau-Asymmetrie der Spalte kommt allein vom zugewiesenen delta
+   R1 (H = F_C + kappa Q_H): alle Lösungen kappa in [-1, 1] für s13 = eingefroren: [(-0.571463, 0.470826), (-0.404043, 0.485392), (0.049871, 0.313627), (0.405032, 0.418841)]
+   R1, einzige Lösung im NuFIT-3-sigma-Bereich: kappa = 0.049871, s12 = 0.313627 (+0.72 sigma), |U_e1|^2 = 0.670512, erste Spalte [0.67051, 0.16474, 0.16474], s23 = 0.500000, sin delta = +1.000000; nu1 in (u, e5, w) = [0.99674, 0.00869, -0.08025]; Anteil an der nötigen Brechung 36.4 %
+   [ok] R1: von vier Lösungen liegt genau eine im NuFIT-3-sigma-Bereich (kappa = 0.0499). Sie bricht TM1 in die richtige Richtung, aber nur zu etwa 36 %: s12 = 0.3136 liegt zwischen eingefroren (0.3067) und TM1 (0.3176)
+   [ok] R1 ist mu-tau-reflexionssymmetrisch (s23 = 1/2, |sin delta| = 1): Das folgt aus der Reellheit von H in den Koordinaten, nicht aus Q; delta = 240 Grad (zugewiesen) ist so nicht erreichbar
+   R1 mit s13 aus NuFIT 6.0 (0.02195 -+ 0.00058): s12 = [0.314956, 0.314502, 0.314059]
+   R1' (gamma = 1/8 fest): Lösungen [(-0.686642, 0.453212), (-0.535651, 0.48207), (-0.003835, 0.318156), (0.572668, 0.467469)]; nächste kappa = -0.003835, s12 = 0.318156
+   [ok] R1': Mit gamma = 1/8 braucht es nur kappa = -0.0038, und s12 = 0.3182 bleibt praktisch TM1 -- Q bricht dort nichts Nennenswertes
+   R2 (gamma, kappa frei, an s12 und s13 eingefroren angepasst): 8 Lösungen [(-0.560218, 0.020646), (-0.823792, 0.059803), (-1.24455, -0.167752), (-0.796721, -0.199412), (-2.92454, 2.460331), (-3.025529, 2.471382), (-4.260184, -3.69734), (-4.176191, -3.70502)]; am nächsten an 1/8 oder dessen Spiegelwert -1/2: (-0.560218, 0.020646) (Abstand 0.060)
+   [ok] R2 passt exakt, aber nicht eindeutig (mehrere Lösungen), und jede braucht kappa != 0 neben einem verschobenen gamma: Das ist eine Anpassung mit zwei Parametern an zwei Zahlen, keine Vorhersage
+   Alternative R1 mit W1-Achse e6: Lösungen [(-0.65893, 0.07435), (-0.61681, 0.06498), (-0.43879, 0.49939), (-0.20173, 0.36047), (0.0389, 0.31516), (0.37738, 0.35195)]; im 3-sigma-Bereich: [(0.0389, 0.31516)]
+   Alternative R1 mit W1-Achse e7: Lösungen [(-0.62276, 0.13346), (-0.57865, 0.12713)]; im 3-sigma-Bereich: []
+   Alternative R1 mit M2 (nicht gittertreu): Lösungen [(-0.48723, 0.31756), (0.11223, 0.31756)]; im 3-sigma-Bereich: [(-0.48723, 0.31756), (0.11223, 0.31756)]
+   [ok] M2: Q ist dort genau der gamma-Term (Lösungen kappa = gamma* und Spiegelwert -3/8 - gamma*), beide mit s12 = TM1 = 0.317563 -- keine Brechung
+   [Befund: ja] (b) Unter W1 bricht Q TM1 in der TM2-Richtung (u -> w). Mit gamma = 0 aus (a) und einem angepassten kappa entsteht die Summenregel s12 = 0.3136 bei s13 = 0.023108: richtige Richtung, ein Drittel der eingefrorenen Brechung. Mit freiem gamma ist alles Anpassung
+
+   (c) Massenmuster der Nullfamilie gegen +-lambda
+   R3 W0 (0, 1, 2): Nullfamilie hat Flavourgewichte [1.0, 0.0, 0.0]; NO False, IO False
+   R3 W0 (0, 2, 1): Nullfamilie hat Flavourgewichte [1.0, 0.0, 0.0]; NO False, IO False
+   R3 W0 (1, 0, 2): Nullfamilie hat Flavourgewichte [0.0, 1.0, 0.0]; NO False, IO False
+   R3 W0 (1, 2, 0): Nullfamilie hat Flavourgewichte [0.0, 1.0, 0.0]; NO False, IO False
+   R3 W0 (2, 0, 1): Nullfamilie hat Flavourgewichte [0.0, 0.0, 1.0]; NO False, IO False
+   R3 W0 (2, 1, 0): Nullfamilie hat Flavourgewichte [0.0, 0.0, 1.0]; NO False, IO False
+   R3 W1 Achse e5: Nullfamilie hat Flavourgewichte [0.3333, 0.3333, 0.3333]; NO False, IO False
+   R3 W1 Achse e6: Nullfamilie hat Flavourgewichte [0.3333, 0.3333, 0.3333]; NO False, IO False
+   R3 W1 Achse e7: Nullfamilie hat Flavourgewichte [0.3333, 0.3333, 0.3333]; NO False, IO False
+   R3 M2: Nullfamilie hat Flavourgewichte [0.3333, 0.3333, 0.3333]; NO False, IO False
+   [ok] R3: Als Massenoperator passt Q in keinem der 10 Wörterbücher: Die Nullfamilie ist entweder eine reine Flavourrichtung (W0) oder trimaximal 1/3 (jede Gitterabbildung, M2); gebraucht wären |U_e|^2 = 0.677 (NO, m1 = 0) oder 0.023 (IO, m3 = 0)
+   Majorana-Lesart M = B Q (symmetrisch) in SU(2)-orthonormalen Koordinaten: [[-24, 0, 0], [0, 0, 0], [0, 0, 24]], Takagi-Werte [24.0, 24.0, 0.0]; Operator-Lesart |Eigenwerte| [24.0, 24.0, 0.0]
+   [ok] in beiden Lesarten (Operator Q, Majorana-Form B Q) sind die Massen (24, 24, 0): Das Paar ist entartet (pseudo-Dirac, Typ L_e - L_mu - L_tau, umgekehrte Ordnung mit m3 = 0), Delta m^2 im Paar ist exakt null; der Nullzustand ist in beiden die Familie z, die Mischung im entarteten Paar ist unbestimmt
+   Nebenbefund: Die Eigenwerte von H (R1) als Massen gelesen gäben Delta m^2_klein/Delta m^2_groß = 0.490, weit weg von der beobachteten Kleinheit (Größenordnung 10^-2); z57 liest sie nicht als Massen
+   [Befund: ja] (c) Q gibt kein brauchbares Massenmuster: In W1 ist die Nullfamilie e5 die trimaximale TBM-Spalte nu2, die nie masselos sein kann (m2 > m1 >= 0), und Q hat in der TBM-Basis die Diagonale null (keine Aufspaltung erster Ordnung)
+
+Teil 5: Bilanz
+   Look-elsewhere: 18 Konfigurationen aus Lesart und Wörterbuch ausgewertet, dazu 3 Normierungen und 48 Gitterabbildungen (6 verschiedene Q, J-verträglich 8 mit beiden Vorzeichen)
+     R0 / W1: gamma_Q = 0; TM1 mit gamma = 0: s13 = 0.04540
+     R4 / W1: nur Spiegelast kappa' = 0.48723, s12 = TM1
+     R1 / W1 (Achse e5, beide Vorzeichen): 4 Lösungen, 1 im 3-sigma-Bereich: s12 = 0.3136
+     R1' / W1: kappa = -0.0038, s12 = 0.3182 (TM1-nah)
+     R2 / W1: 8 exakte Anpassungen, nächst an 1/8 bzw. -1/2: (-0.560218, 0.020646)
+     R1 / W1-Achse e6: im 3-sigma-Bereich: [(0.0389, 0.31516)]
+     R1 / W1-Achse e7: im 3-sigma-Bereich: []
+     R1 / M2 (nicht gittertreu): im 3-sigma-Bereich: [(-0.48723, 0.31756), (0.11223, 0.31756)]
+     R3 / W0 (0, 1, 2): Nullfamilie [1.0, 0.0, 0.0], NO False, IO False
+     R3 / W0 (0, 2, 1): Nullfamilie [1.0, 0.0, 0.0], NO False, IO False
+     R3 / W0 (1, 0, 2): Nullfamilie [0.0, 1.0, 0.0], NO False, IO False
+     R3 / W0 (1, 2, 0): Nullfamilie [0.0, 1.0, 0.0], NO False, IO False
+     R3 / W0 (2, 0, 1): Nullfamilie [0.0, 0.0, 1.0], NO False, IO False
+     R3 / W0 (2, 1, 0): Nullfamilie [0.0, 0.0, 1.0], NO False, IO False
+     R3 / W1 Achse e5: Nullfamilie [0.333, 0.333, 0.333], NO False, IO False
+     R3 / W1 Achse e6: Nullfamilie [0.333, 0.333, 0.333], NO False, IO False
+     R3 / W1 Achse e7: Nullfamilie [0.333, 0.333, 0.333], NO False, IO False
+     R3 / M2: Nullfamilie [0.333, 0.333, 0.333], NO False, IO False
+   E: Q exakt; tr Q^2 = 1152 I, det Q = 27648 J; bei J = 0 Eigenwerte (lambda, -lambda, 0); die Nullfamilie ist durch die Vierteldrehung erzwungen (Charakter -1, P = z); die Eigenfamilien sind die V4-Basis = die drei Markenpaarungen
+   E unter W1: Q diagonal in den E8-Familienkoordinaten, null auf der mu4-Achse e5; Q F_J = 0, Q^2 = I - F_J, Q u = w; in der zyklischen Basis Q = (i/sqrt3)(S - S^T)
+   C: (a) linear gamma = 0; Q^2 = I - F_J ist ein gamma-Term freier Größe (passt nur angepasst, auf dem Spiegelast); ein z^2-Anteil bräuchte J != 0: Q legt gamma nicht fest
+   L: (b) R1: gamma = 0, kappa an s13 angepasst: s12 = 0.3136 (NuFIT 6.1 +0.7 sigma, TM1 +1.3 sigma, eingefroren -0.3 sigma); richtige Richtung, 36 % der eingefrorenen Brechung
+   E negativ: (c) Q als Massenoperator in allen 10 Wörterbüchern ausgeschlossen; entartetes Paar
+   O: relative Skala kappa zwischen Weylmatrix und Coxeter-Clock (keine Normregel), Phase, das Wörterbuch selbst (z57-Raum = H6-Familien; zyklische Leptonbasis), delta = 240 Grad
+
+Urteil
+   Die Weylmatrix des H6-Spin-2-Zustands auf den Familien ist exakt: Bei J = 0 hat sie die Eigenwerte (lambda, -lambda, 0), die Nullfamilie ist durch die Vierteldrehung erzwungen (Charakter -1), und die Eigenfamilien sind die drei Markenpaarungen (V4-Basis). Unter jeder Gitterabbildung A3 = D3 ist Q diagonal in den E8-Familienkoordinaten; im J-verträglichen Wörterbuch gilt Q F_J = 0, Q^2 = I - F_J und Q u = w. Damit legt der Zustand gamma nicht fest (linear 0, quadratisch ein gamma-Term freier Größe, ein z^2-Anteil bräuchte J != 0); linear gibt er nur eine TM2-artige Kopplung der TM1-Spalte. Mit gamma = 0 und einem angepassten Faktor kappa = 0.0499 folgt die Summenregel s12 = 0.3136 bei s13 = 0.023108: zwischen TM1 (0.3176) und dem eingefrorenen Wert (0.3067), NuFIT 6.1 +0.7 sigma, aber nur 36 % der eingefrorenen Brechung und eine Lesart unter 18 ausgewerteten. Als Massenoperator ist Q ausgeschlossen. Nichts davon reproduziert die eingefrorenen Werte ohne Anpassung; die Idee (E) gibt die Familiengewichte nicht.
+
+Alle Prüfungen bestanden: True (29/29)

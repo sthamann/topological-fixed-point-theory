@@ -89,9 +89,54 @@ bounded under refinement) hold for the ladder A^+(N+1)A and fail for the band A^
 operator with both can be the modular generator of the Gaussian original state. The function is not wired into `run()`,
 so the historical outputs of z43-z57 stay unchanged.
 
+Ninth run (reconstruction search, H6 exploration H6h34): `reconstruction_search.py` turns the same engine on the open gaps
+(A) and (B) of docs/research/VOGELPERSPEKTIVE.md. It uses no size order: every candidate has size 0, so a tie stays
+AMBIGUOUS and is reported with its survivors. The symmetries of the four marks are computed from the three-point theorem:
+D4 of order 8, whose fixed-point-free Klein subgroup {±z, ±i/z} is the V4 of z36. Its exceptional orbits are the poles
+{0, ∞} (the fixed points of the clock z → iz, the only orbit of size 2), the marks and the diagonal square. Conventions:
+the seam variable of z44, z48 and z61 is z = S (one Hardy mark k = 4x per unit winding); z = S⁴ is the quotient
+variable w = z⁴, on which the clock acts trivially and the four marks fall onto w = 1. Run time under 2 seconds, exact
+arithmetic (Gaussian rationals, rational functions of u = e^pi).
+- `normal_bundles` (54 bundles, gap B): O(1) ⊗ r_*O for the double cover E and the (Z2)^3 cover C from their characters,
+  the halves of the latter under all seven deck involutions, duals, the Euler bundle O(1) ⊗ H⁰(O(1)), the Tomita partner
+  O(1) ⊗ V̄, and Hecke modifications O(-1) → O(-1)(D) of the anti-invariant summand at the 15 mark subsets and at the
+  three subsets of the poles. r_*O_E = O ⊕ O(-2), so O(1) ⊗ r_*O_E = O(1) ⊕ O(-1); h¹(r_*O) = 1 = genus for both
+  covers. Only O(1) ⊕ O(1) carries `twistor_line`. Three candidates are `twistor_line` and `choice_free` (a tie): the
+  Euler bundle, the Tomita partner, and the double-cover bundle with its anti-invariant summand raised at the poles,
+  O(1) ⊕ O(-1)(0 + ∞). No mark divisor gives a choice-free twistor line: two marks have orbits 2 (antipodal pairs) or
+  4. The deck halves E± of z34 need one of the four point involutions (orbit 4); only the halves under the central half
+  period {1,-1}|{i,-i} are choice-free (O(1) ⊕ 2O ⊕ O(-1) and 4O). The mark-preserving antiholomorphic involutions of
+  the seam (five real, one antipodal) give the null cone of H⁰(N) the signature (2,2) or (4,0), also for the pole
+  modification; only the Hermitian pairing V* ⊗ V̄ gives (1,3). So `lorentz_cone` alone selects O(1) ⊗ V̄. A Hermitian
+  form on V, i.e. a faithful doublet state, would identify the Euler bundle with it; that is gap (A).
+- `doublet_states` (66 states, gap A), enumerated by m = 1..4, the number of Hardy marks spanned by the unit winding
+  (z = S^m): N = 1 corners and one-particle restrictions of mode pairs (x, x + m/4), and corners of the Fock state of one
+  quarter sector at marks M0 and M0 + m. The covariance c(x) = 1/(1 + e^{4 pi x}) is invariant under the mirror x → -x
+  with particle-hole conjugation and under the clock, not under reflection, shift or sector exchange. The Fock state of
+  each sector is exactly e^{-pi M} relative to the sea (level counts 1, 1, 0, 1, 1, 1, 1, 1, 2 = bosonization). For
+  every m the corners give one state rho_m = diag(1, e^{-pi m})/(1 + e^{-pi m}): faithful, KMS for the restricted
+  modular generator, base-point independent (all sectors, base marks and level states). For m = 1 it is the corner
+  {Omega, twist state}, as the gap-A analysis found; mode pairs exist only for even m and give rho_2 and rho_4.
+  One-particle restrictions are never KMS (Fermi-Dirac, not Gibbs). The clauses {faithful, kms, symmetric,
+  base_point_independent} therefore leave four states, rho_1 to rho_4: the original fixes the state for each m, not m.
+  Computed properties of the doublet separate them. `neutral` (End(V) keeps the charge of each quarter sector and the
+  parity, i.e. lies among the current responses) holds only for m = 4. `marks_separated` (the clock has projective order
+  4 on P(V)) holds only for odd m. `mirror_closed` holds only for the Fermi pair -1/4, 1/4 (m = 2). Minimal rules:
+  {kms, neutral} gives rho_4 and {kms, mirror_closed} gives rho_2; {kms, marks_separated} leaves rho_1 and rho_3 tied.
+  The three pairs of these clauses are the minimal empty rules: no neutral doublet has separated marks. The one-particle
+  restriction of the Fermi pair has the matrix of rho_1 (c(1/4) + c(-1/4) = 1) but is not KMS for its own gap 2 pi.
+- `spin2_family` (minimal, 10 quartics of the V4 pencil 1 - z⁴ + t z²; no flavour reading, no data comparison): the
+  spin-1 matrix on H⁰(O(2)) has characteristic polynomial λ³ - Iλ - 2J for every quartic, so `j_zero` and
+  `zero_eigenvalue` coincide; 1 - z⁴ has I = -1, J = 0 and eigenvalues (i, -i, 0).
+
+The lane is not registered in `autonomy.py` or `main.py`; `run = run_reconstruction` is ready for that, and
+`process_rules.run()` is unchanged. Nothing is promoted (`physical_solution` false). Tests:
+[test_reconstruction_search.py](test_reconstruction_search.py).
+
 ```bash
 .venv/bin/python -B research/originlab/process_rules.py > /tmp/process-rules.json
 .venv/bin/python -B research/originlab/main.py --campaign process_rules --jobs 1 --out /tmp/originlab-process
+.venv/bin/python -B research/originlab/reconstruction_search.py > /tmp/reconstruction-search.json
 ```
 
 A new slot is one enumerator with computed clauses, one `search(...)` call in `run`, and its clauses mapped onto the
