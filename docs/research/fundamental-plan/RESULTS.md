@@ -7952,3 +7952,25 @@ Im H6-Ordner gerechnet, alles nachgeprüft und reproduziert:
   (Weinberg–Witten), und es gibt eine Kopie je Mode m.
 
 **Prüfstand:** 13 P, 7 L. Atlas-Revision 8942e17087acfd04a8385286. Ledger unverändert, nichts befördert.
+
+## H6H40-20261125 · Quarterindex als Dublett: kinematisch ja, Nahtdublett nein; Analysen 7 und 8, Korrektur von H6H37
+
+`z79_quarterindex_dublett.py` (15 von 15) und `z80_analysen_7_8.py` (29 von 29, Agentenlauf, reproduziert).
+- **Kinematik.** Beide Quarter haben dieselbe Stromantwort, der Oszillatorzustand ist U(2)-invariant. Mit den
+  Tomita-Partnern entsteht der Twistorraum mit CCR-Form (2,2). Der Kommutant von τ = (Ad J)⁺ ist gl(2,ℂ): Lorentz,
+  Dilatation und Modulfluss als Zentrum. Die Orte sind Twistortranslationen mit dem ν = 1-Kern aus z74.
+- **Markensymmetrie.** Die Vierteldrehung hat Ordnung 4 auf dem Nahtdublett V₁ und Ordnung 2 auf dem fermionischen
+  Quarterpaar und dem η-Dublett der Spinbrücke; beide sind gleich. Auf den Oszillatoren hat sie Ordnung 1.
+- **Ortsräume.** Auf H⁰(N) = V* ⊗ η wirkt sie euklidisch, nie lorentzsch. T′ ist nicht markenverträglich. I_pos für die
+  markierte Naht bleibt offen.
+- **Korrektur H6H37.** z77 hatte die Übergänge vertauscht. Richtig zugeordnet ist der thermische Zweipfadkanal bei jeder
+  Temperatur exakt zustandserhaltend, und kantenaufgelöst gibt Petz ℓ(ℓ+1).
+- **Analysen 7 und 8.**
+  - Das Minkowski-Intervall ist aus dem Überlapp der Relativzustände auslesbar: s² = det(Y − X).
+  - Die Wurzel des Kerns ist nicht positiv (Wallach), und zusammengesetzter Spin 2 hat keinen Pol.
+  - Cl₂ folgt aus der Vorzeichensymmetrie, bedingt auf ihre Implementierung in derselben irreduziblen Darstellung.
+  - Flavour bleibt gelöst.
+- **OriginLab.** Neue Universen `doublet_identifications` und `position_spaces`. Die Regel „native R + lorentzverträglich +
+  markiert“ ist leer. Die volle Suite hat 575 Tests, alle grün.
+
+**Prüfstand:** 13 P, 7 L. Atlas-Revision 5eee39379ee4d7407e9884ad. Ledger unverändert, nichts befördert.

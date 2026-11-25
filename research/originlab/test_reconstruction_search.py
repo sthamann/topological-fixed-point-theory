@@ -6,7 +6,8 @@ from math import gcd
 
 import sympy as sp
 
-from reconstruction_search import (CHARACTERS, DOUBLE_COVER, M_VALUES, QUARTERS, U, Z, cover_genus, cov,
+from reconstruction_search import (ETA_SPINOR, QUARTER_PAIR, SEAM_DOUBLET, SPIN_BRIDGE, _transport,
+                                   CHARACTERS, DOUBLE_COVER, M_VALUES, QUARTERS, U, Z, cover_genus, cov,
                                    doublet_state_candidates, exceptional_orbits, fock_multiplicities, fock_patterns,
                                    invariants, mark_symmetries, normal_bundle_candidates, original_symmetries, pushforward,
                                    run_reconstruction, spin1_matrix, spin2_family_candidates, symmetry_structure, v4_pencil,
@@ -29,6 +30,28 @@ class ReconstructionSearch(unittest.TestCase):
 
     def universe(self, name):
         return self.result["universes"][name]
+
+    # ------------------------------------------------------------ doublet identifications (H6h40, z79)
+    def test_transport_on_the_eta_doublet_is_exact(self):
+        self.assertEqual(_transport(0, -1), sp.Matrix([[0, -1], [1, 0]]))       # spinor lift: square -1, det 1
+        self.assertEqual(_transport(0, 1), sp.Matrix([[0, 1], [1, 0]]))
+        self.assertEqual(_transport(0, 0), sp.diag(1, -1))                       # deck (z64: not scalar)
+
+    def test_quarter_pair_is_the_eta_doublet_and_not_the_seam_doublet(self):
+        q = self.universe("doublet_identifications")["questions"]
+        self.assertEqual(q["r_equivalent_to_seam"]["survivors"], [SEAM_DOUBLET])
+        self.assertEqual(sorted(q["spinor+r_equivalent_to_quarter_pair"]["survivors"]), sorted([ETA_SPINOR, QUARTER_PAIR]))
+        d = self.universe("doublet_identifications")["derived"]
+        self.assertEqual(d[SEAM_DOUBLET]["turns_of_16"], [0, 4])                 # diag(1, i): projective order 4
+        self.assertIn("projective_order_1", d["quarter oscillators (a_1, a_2), every mode m"]["clauses"])
+
+    def test_spin_bridge_positions_are_euclidean_and_no_native_marked_space_is_lorentzian(self):
+        u = self.universe("position_spaces")
+        self.assertEqual(u["derived"][SPIN_BRIDGE]["turns_of_16"], [0, 4, 8, 12])  # regular representation of mu_4
+        self.assertTrue(u["derived"][SPIN_BRIDGE]["factorises_as_vstar_x_eta"])
+        self.assertEqual(u["questions"]["native_r+lorentz_compatible+marked"]["verdict"], "EMPTY")
+        self.assertEqual(u["questions"]["native_r+euclidean_compatible+marked"]["survivors"], [SPIN_BRIDGE])
+        self.assertTrue(self.result["answers"]["quarter_pair_is_the_eta_doublet_not_the_seam_doublet"])
 
     # ------------------------------------------------------------ marks
     def test_mark_symmetries_are_d4_with_the_regular_klein_group_of_h6(self):
@@ -191,7 +214,7 @@ class ReconstructionSearch(unittest.TestCase):
         self.assertEqual(self.result["status"], "RECONSTRUCTION_SEARCHED")
         text = json.dumps(self.result, sort_keys=True, allow_nan=False)
         self.assertEqual(text, json.dumps(run_reconstruction(), sort_keys=True, allow_nan=False))
-        self.assertEqual(self.result["objects_enumerated"], 54 + 66 + 10)
+        self.assertEqual(self.result["objects_enumerated"], 54 + 66 + 10 + 6 + 4)   # + doublets and position spaces (H6h40)
 
 
 if __name__ == "__main__":

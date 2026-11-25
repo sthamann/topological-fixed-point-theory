@@ -22,6 +22,10 @@ docs/research/VOGELPERSPEKTIVE.md:
   spin2_family    minimal: quartics of the pencil fixed by the Klein group V4 of the marks through the H6 marks 1 - z^4
                   (z61 Teil 3), with the invariants I, J and the spin-1 matrix on H^0(O(2)). No flavour reading and no
                   data comparison: flavour is settled in TFPT and is not searched here.
+  doublet_identifications, position_spaces  (H6h40, z79) the quarter rotation R of the marks (character i^k on the
+                  Hardy mark k) on the seam doublet, the quarter pair, the quarter oscillators and the eta doublet of the
+                  spin bridge (exact transport on E: w^2 = 1 - z^4), and on the four-dimensional position spaces built
+                  from them; clauses: projective order, spinor, R-equivalence, Lorentz or Euclidean compatibility.
 
 Exactness: marks and Moebius maps in Gaussian rationals; doublet states are rational functions of u = e^pi (u is
 transcendental by Gelfond's theorem, so a rational identity in u holds at u = e^pi exactly when it holds identically);
@@ -689,6 +693,127 @@ def spin2_family_candidates():
 
 
 # ---------------------------------------------------------------- search over each universe
+# ---------------------------------------------------------------- doublet identifications (H6 exploration H6h40, z79)
+F_ETA = (sp.Integer(0), 1/(Z**2 - 1))          # F = w/(z^2 - 1) on E: w^2 = 1 - z^4, div F = R_i + R_-i - R_1 - R_-1
+
+
+def _hmul(f, g):
+    """Product of functions a + b w on E (w^2 = 1 - z^4), stored as pairs (a, b) of rational functions of z."""
+    return (sp.cancel(f[0]*g[0] + f[1]*g[1]*(1 - Z**4)), sp.cancel(f[0]*g[1] + f[1]*g[0]))
+
+
+def _hpull(f, sign):
+    """f o g^-1 for the quarter rotation g: (z, w) -> (i z, sign w); sign = 0 is the deck (z, w) -> (z, -w)."""
+    if sign == 0:
+        return (f[0], -f[1])
+    return (sp.cancel(f[0].subs(Z, -sp.I*Z)), sp.cancel(sign*f[1].subs(Z, -sp.I*Z)))
+
+
+def _hcoords(f, d):
+    """Coordinates of f in the basis 1, .., z^d, F, .., z^d F of L(D); None if f is not in L(D)."""
+    a, b = sp.cancel(f[0]), sp.cancel(f[1]*(Z**2 - 1))
+    if not (a.is_polynomial(Z) and b.is_polynomial(Z)) or sp.degree(a, Z) > d or sp.degree(b, Z) > d:
+        return None
+    pa, pb = sp.Poly(a, Z), sp.Poly(b, Z)
+    return [pa.coeff_monomial(Z**k) for k in range(d + 1)] + [pb.coeff_monomial(Z**k) for k in range(d + 1)]
+
+
+def _transport(d, sign):
+    """Quarter rotation (sign = +-1, lift w -> sign w) or deck (sign = 0) on L(D): d = 0 gives the eta doublet
+    H^0(E, eta (x) pi^*O(1)) = L(R_1 + R_-1), d = 1 the sections H^0(N) = L(R_1 + R_-1 + oo_+ + oo_-) of the spin
+    bridge N = pi_*(eta (x) pi^*O(2)) (z70). A section s goes to F (s o g^-1), since g(D) - D = div F."""
+    basis = [(Z**k, sp.Integer(0)) for k in range(d + 1)] + [(sp.Integer(0), Z**k/(Z**2 - 1)) for k in range(d + 1)]
+    cols = []
+    for s in basis:
+        img = _hpull(s, 0) if sign == 0 else _hmul(F_ETA, _hpull(s, sign))
+        c = _hcoords(img, d)
+        if c is None:
+            raise ValueError("the transport leaves L(D)")
+        cols.append(c)
+    return sp.Matrix(cols).T
+
+
+def _kron(A, B):
+    return sp.Matrix(A.rows*B.rows, A.cols*B.cols, lambda i, j: A[i // B.rows, j // B.cols]*B[i % B.rows, j % B.cols])
+
+
+def _proj_order(M):
+    P = sp.eye(M.rows)
+    for k in range(1, 17):
+        P = (P*M).applyfunc(sp.expand)
+        if (P - P[0, 0]*sp.eye(M.rows)).is_zero_matrix:
+            return k
+    return None
+
+
+def _turns(M):
+    """Eigenvalues of M as exponents k of e^(2 pi i k/16); M^16 = I is checked exactly, floats only read off k."""
+    if not ((M**16).applyfunc(sp.expand) - sp.eye(M.rows)).is_zero_matrix:
+        raise ValueError("not of order dividing 16")
+    ks = np.angle(np.linalg.eigvals(np.array(M.evalf(), dtype=complex)))*16/(2*np.pi)
+    if np.abs(ks - np.round(ks)).max() > 1e-9:
+        raise ValueError("eigenvalue is not a 16th root of unity")
+    return sorted(int(round(k)) % 16 for k in ks)
+
+
+def _same_up_to_phase(s, t):
+    return any(sorted((k + p) % 16 for k in s) == sorted(t) for p in range(16))
+
+
+def _lorentz_compatible(t):
+    """Spectrum (up to phase) of g (x) conj(g) for g = diag(l, 1/l): {1, 1, l^2, l^-2}."""
+    return any(_same_up_to_phase(t, [0, 0, (2*l) % 16, (-2*l) % 16]) for l in range(16))
+
+
+def _euclidean_compatible(t):
+    """Spectrum (up to phase) of g (x) h for g = diag(l, 1/l), h = diag(m, 1/m) in SU(2) x SU(2)."""
+    return any(_same_up_to_phase(t, [(a*l + b*m) % 16 for a in (1, -1) for b in (1, -1)])
+               for l in range(16) for m in range(16))
+
+
+SEAM_DOUBLET = "seam doublet V_1 (Fock corner {Omega, psi*_1/4 Omega}, rho_1)"
+QUARTER_PAIR = "quarter pair (one-particle modes x = +1/4, -1/4)"
+QUARTER_OSC = "quarter oscillators (a_1, a_2), every mode m"
+ETA_SPINOR = "eta doublet H^0(E, eta (x) pi^*O(1)), lift w -> -w"
+SPIN_BRIDGE = "spin bridge H^0(N) = L(R_1 + R_-1 + oo_+ + oo_-)"
+
+
+def doublet_identification_candidates():
+    """Doublets on which the quarter rotation R of the marks acts (character i^k on the Hardy mark k), and the
+    four-dimensional position spaces built from them. Returns (doublets, position spaces)."""
+    hardy = lambda k0, k1: sp.diag(sp.I**k0, sp.I**k1)
+    eta = {"-": _transport(0, -1), "+": _transport(0, 1), "deck": _transport(0, 0)}
+    vstar = sp.diag(1, -sp.I)                    # H^0(O(1)) = span{1, z}: s -> s o g^-1, z -> -i z
+    doublets = [(SEAM_DOUBLET, hardy(0, 1)), (QUARTER_PAIR, hardy(1, -1)), (QUARTER_OSC, hardy(4, 4)),
+                (ETA_SPINOR, eta["-"]), ("eta doublet, lift w -> w", eta["+"]), ("eta doublet, deck", eta["deck"])]
+    seam, pair = _turns(hardy(0, 1)), _turns(hardy(1, -1))
+    ds = []
+    for name, M in doublets:
+        t = _turns(M)
+        cl = {f"projective_order_{_proj_order(M)}"}
+        if sp.expand(M.det()) == 1 and (M*M + sp.eye(2)).applyfunc(sp.expand).is_zero_matrix:
+            cl.add("spinor")
+        if _same_up_to_phase(t, seam):
+            cl.add("r_equivalent_to_seam")
+        if _same_up_to_phase(t, pair):
+            cl.add("r_equivalent_to_quarter_pair")
+        ds.append({"label": name, "matrix": str(M.tolist()), "turns": t, "clauses": cl})
+    N = _transport(1, -1)
+    spaces = [("Tomita reading T': Hom(V, Vbar^*) = V^* (x) Vbar^*", _kron(vstar, vstar.conjugate()), False),
+              (SPIN_BRIDGE, N, True),
+              ("relative states of z78: Herm of the quarter oscillators", _kron(hardy(4, 4), hardy(4, 4).conjugate()), True),
+              ("Herm of the quarter pair", _kron(hardy(1, -1), hardy(1, -1).conjugate()), True)]
+    ps = []
+    for name, M, native in spaces:
+        t = _turns(M)
+        cl = {c for c, ok in (("native_r", native), ("lorentz_compatible", _lorentz_compatible(t)),
+                              ("euclidean_compatible", _euclidean_compatible(t)),
+                              ("marked", any((a - b) % 16 in (4, 12) for a in t for b in t))) if ok}
+        ps.append({"label": name, "matrix": str(M.tolist()), "turns": t, "clauses": cl,
+                   "factorises_as_vstar_x_eta": _same_up_to_phase(t, _turns(_kron(vstar, eta["-"])))})
+    return ds, ps
+
+
 def _rules_report(objects, pool, label):
     res = search(objects, pool, lambda o: 0, label)
     hits = {frozenset(r): sorted({label(o) for o in objects if set(r) <= o["clauses"]}) for r in powerset(pool)}
@@ -713,6 +838,9 @@ BUNDLE_POOL = ["twistor_line", "mark_symmetric", "choice_free", "lorentz_cone"]
 DOUBLET_POOL = ["faithful", "kms", "symmetric", "base_point_independent", "mirror_closed", "marks_separated", "neutral"]
 SPIN2_POOL = ["j_zero", "i_zero", "zero_eigenvalue", "nondegenerate", "d4_fixed"]
 DOUBLET_QUESTION = ["faithful", "kms", "symmetric", "base_point_independent"]
+IDENT_POOL = ["spinor", "r_equivalent_to_seam", "r_equivalent_to_quarter_pair", "projective_order_1",
+              "projective_order_2", "projective_order_4"]
+POSITION_POOL = ["native_r", "lorentz_compatible", "euclidean_compatible", "marked"]
 
 
 def run_reconstruction(root=None):
@@ -772,6 +900,25 @@ def run_reconstruction(root=None):
     res["bound"] = "V4 pencil 1 - z^4 + t z^2 at all zeros of I, J, I^3 - 27 J^2 along the pencil, t = +-1, and z^2"
     out["universes"]["spin2_family"] = res
 
+    di, ps = doublet_identification_candidates()
+    res, hits_i = _rules_report(di, IDENT_POOL, lambda o: o["label"])
+    res["questions"] = {"r_equivalent_to_seam": _question(hits_i, ["r_equivalent_to_seam"]),
+                        "spinor+r_equivalent_to_quarter_pair": _question(hits_i, ["spinor", "r_equivalent_to_quarter_pair"]),
+                        "r_equivalent_to_quarter_pair": _question(hits_i, ["r_equivalent_to_quarter_pair"])}
+    res["derived"] = {o["label"]: {"turns_of_16": o["turns"], "matrix": o["matrix"], "clauses": sorted(o["clauses"])}
+                      for o in di}
+    res["bound"] = ("R on the seam doublet (Fock corner), the one-particle quarter pair, the current oscillators of both "
+                    "quarters, and the eta doublet of the spin bridge (both lifts of z -> iz and the deck), exact on E")
+    out["universes"]["doublet_identifications"] = res
+    res, hits_p = _rules_report(ps, POSITION_POOL, lambda o: o["label"])
+    res["questions"] = {"native_r+lorentz_compatible+marked": _question(hits_p, ["native_r", "lorentz_compatible", "marked"]),
+                        "native_r+euclidean_compatible+marked": _question(hits_p, ["native_r", "euclidean_compatible",
+                                                                                     "marked"])}
+    res["derived"] = {o["label"]: {"turns_of_16": o["turns"], "clauses": sorted(o["clauses"]),
+                                   "factorises_as_vstar_x_eta": o["factorises_as_vstar_x_eta"]} for o in ps}
+    res["bound"] = ("Tomita reading T' (R induced on Vbar^*), the spin-bridge sections H^0(N) (native R), Herm of the quarter "
+                    "oscillators (z78) and of the quarter pair; Lorentz: g (x) conj g, Euclidean: SU(2) x SU(2)")
+    out["universes"]["position_spaces"] = res
     h6 = next(o for o in s2 if o["t"] == "0")
     dq = out["universes"]["doublet_states"]["questions"]["+".join(DOUBLET_QUESTION)]
     bq = out["universes"]["normal_bundles"]["questions"]["twistor_line+choice_free"]
@@ -788,7 +935,13 @@ def run_reconstruction(root=None):
         "doublet_state_fixed_by_faithful_kms_symmetric_base_point_independent": dq["verdict"] == "UNIQUE",
         "doublet_states_left_by_faithful_kms_symmetric_base_point_independent": len(dq["survivors"]),
         "neutral_doublet_with_separated_marks_exists": bool(hits_d[frozenset(["neutral", "marks_separated"])]),
-        "h6_has_j_zero_and_a_vanishing_spin1_eigenvalue": {"j_zero", "zero_eigenvalue"} <= h6["clauses"]}
+        "h6_has_j_zero_and_a_vanishing_spin1_eigenvalue": {"j_zero", "zero_eigenvalue"} <= h6["clauses"],
+        "quarter_pair_is_the_eta_doublet_not_the_seam_doublet": (
+            hits_i[frozenset(["r_equivalent_to_seam"])] == [SEAM_DOUBLET]
+            and sorted(hits_i[frozenset(["spinor", "r_equivalent_to_quarter_pair"])]) == sorted([QUARTER_PAIR, ETA_SPINOR])),
+        "no_native_marked_lorentzian_position_space": not hits_p[frozenset(["native_r", "lorentz_compatible", "marked"])],
+        "spin_bridge_positions_euclidean_not_lorentzian": hits_p[frozenset(["native_r", "euclidean_compatible",
+                                                                             "marked"])] == [SPIN_BRIDGE]}
     out["summary"] = {
         "normal_bundles": {
             "twistor_line_and_choice_free": bq["survivors"],

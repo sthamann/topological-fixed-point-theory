@@ -1,7 +1,7 @@
 # TFPT: Was funktioniert, was fehlt, was eine vollständige Lösung wäre
 
 Kompakter Stand vom 20. November 2026, ergänzt am 23. und 24. November (Befunde 20.–24. November, Kandidat H6 bis
-H6h39, Leitlinie „Rekonstruktion statt Auswahl“ und Abschnitt 5), für Explorations- und Lösungssitzungen. Seit 24. November
+H6h40, Leitlinie „Rekonstruktion statt Auswahl“ und Abschnitt 5), für Explorations- und Lösungssitzungen. Seit 24. November
 liegen die Explorationszweige vom 20. November in main (Quaternionrahmen, Fibonacci-Uhr, Vertauschung und Auslese, fremde
 und operative Ursprünge, Projekt Genesis, die Vertragsserie vom 14./15. Oktober); ihre Befunde stehen in ihren Verzeichnissen
 unter `experiments/`. Nicht zusammengeführt ist `codex/c3-p1-p2-abgleich-20261105` (121 Konflikte mit dem heutigen Stand). Neuere Befunde stehen in den Atlasproblemen mit Datum
@@ -168,9 +168,9 @@ Ursprung sollte beides zugleich liefern.
 
 ### Kandidat H6: Ursprung von P1 aus einer hintergrundfreien Naht (Exploration 23.11.)
 
-Quelle: `experiments/exploration/2026-11-23-phasenraum-f5-holocode/VERDICT.md` (Stand H6h39),
-Skripte `n1`, `v1`, `y1`, `z1`–`z78`, Lean-Vertrag `experiments/theory-contracts/h6-exakte-teile-20261123/`; Atlasproblem `problem:c3-p1-p2-shared-origin-reconciliation`,
-Befunde mit Präfix `h6`. Nichts davon ist im Ledger befördert. Prüfstand mit 20 Kriterien (Stand H6h39): 13
+Quelle: `experiments/exploration/2026-11-23-phasenraum-f5-holocode/VERDICT.md` (Stand H6h40),
+Skripte `n1`, `v1`, `y1`, `z1`–`z80`, Lean-Vertrag `experiments/theory-contracts/h6-exakte-teile-20261123/`; Atlasproblem `problem:c3-p1-p2-shared-origin-reconciliation`,
+Befunde mit Präfix `h6`. Nichts davon ist im Ledger befördert. Prüfstand mit 20 Kriterien (Stand H6h40): 13
 hergeleitet, 7 unter benannter Lesart, keines gescheitert, offen oder gesetzt. K12 (3+1) zählt seit der Leitlinie
 „Rekonstruktion statt Auswahl“ nur als Lesart: d = 4 folgt kinematisch, nicht aus den Antworten (Z60).
 
@@ -459,11 +459,12 @@ hergeleitet, 7 unter benannter Lesart, keines gescheitert, offen oder gesetzt. K
     - Kanal mit Petz-Rückkanal gibt exakt den Sphären-Casimir ℓ(ℓ+1).
     - K/π ≡ Q_a − Q_b mod 4.
     - Damit ist die Oszillatornormierung bedingt gelöst, als zustandsbalancierte Auslesung. [E/C]
-  - Thermischer Kanal (Z77, H6h37, fünfte externe Analyse):
+  - Thermischer Kanal (Z77, H6h37, fünfte externe Analyse; korrigiert in Z80, H6h40):
     - [J₋₁, B_{r,m}] = B_{r,m+1} − B_{r−1,m+1} gilt exakt.
-    - Die thermische Formel der Analyse ist der Kantenmittelwert der Vakuumgewichte und nicht die einfache
-      Zustandserhaltung.
-    - Die Sphäre bleibt eine Vakuumgröße. [E]
+    - Z77 hatte die Übergänge vertauscht. Richtig zugeordnet (die Formel der Analyse ist das Gewicht „Loch runter“) ist der
+      thermische Zweipfadkanal bei jeder Temperatur exakt zustandserhaltend, eindeutig unter den beschränkten Lösungen. [E]
+    - Kantenaufgelöst (Mischung verschobener Vakua der Einteilchendaten) gibt Petz ℓ(ℓ+1) bei jeder Temperatur; der
+      quasifreie Zustand selbst ist keine solche Mischung. [E]
   - Araki-Woods und Orte (Z78, H6h38, sechste externe Analyse):
     - Die Oszillatoren d, e aus Strom und Tomita-Partner sind kanonisch, und ihr Vakuum ist die Purifikation des
       thermischen Originals.
@@ -477,6 +478,19 @@ hergeleitet, 7 unter benannter Lesart, keines gescheitert, offen oder gesetzt. K
     - Helizität ±2 gibt es nur als Vierquantenkompositum im Araki-Woods-Dubleton, ohne kovariante T^μν-Kopplung
       (Weinberg–Witten), mit einem Speziesproblem.
     - Gescoptes Negativ für „Graviton aus der Virasoro-Antwort“. [E]
+  - Quarterindex als Dublett (Z79, H6h40):
+    - Kinematisch ist der Quarterindex ein vollwertiges Spinordublett. Beide Quarter haben dieselbe Stromantwort, der
+      Oszillatorzustand ist U(2)-invariant.
+    - Mit dem Tomita-Partner entsteht der Twistorraum mit CCR-Form (2,2). Der Kommutant von τ = (Ad J)⁺ in SU(2,2) ist die
+      Lorentzgruppe mit Dilatation; das Zentrum ist der Modulfluss.
+    - Die Orte sind Twistortranslationen zum Röhrenpunkt κ²(I − iXᵀ), mit dem ν = 1-Kern. [E]
+    - Das Nahtdublett ist er nicht: Die Vierteldrehung der Marken hat auf V₁ Ordnung 4, auf dem fermionischen Quarterpaar 2
+      und auf den Oszillatoren 1. Auf Fermionebene ist der Quarterindex genau das η-Dublett der Spinbrücke. [E]
+    - Auf H⁰(N) = V* ⊗ η wirkt die Markensymmetrie euklidisch, nie lorentzsch; T′ (η = V̄*) ist nicht
+      markenverträglich. I_pos für die markierte Naht bleibt offen. [E/O]
+  - Analysen 7 und 8 (Z80, H6h40): Überlapp der Relativzustände 1/det(I − (i/2)(Y − X)), daraus s² = det(Y − X). Die Wurzel
+    des Kerns ist nicht positiv (Wallach), zusammengesetzter Spin 2 hat keinen Pol, und Cl₂ folgt aus der
+    Vorzeichensymmetrie (bedingt). [E/C]
   - Instantonen (Z33): Unter Spin(10) hat ein Einheitsinstanton 4 Eltern- und 12
     Familiennullmoden; mit gesättigten Familiennullmoden entsteht Re[e^{iθ}Φ² C_fam], die Wand ist
     also auch im Kontinuum möglich, bei nackter SO(10) aber ~10⁻¹⁶⁴ unterdrückt. [N]

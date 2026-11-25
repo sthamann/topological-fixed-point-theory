@@ -1,0 +1,301 @@
+{
+ "checks": {
+  "symbolisch für allgemeines w (Symbole w_0..w_m, m = 2..10): mit u_m(r) = Summe_j (m-j) w(r+j)/((m+1) W_m(r)) für 'Teilchen hoch' und 1 - u für 'Loch runter' gilt u(r) W_m(r) + (1 - u(r+1)) W_m(r+1) = m/(m+1) W_(m+1)(r) exakt": true,
+  "die Formel der fünften Analyse p = Summe (j+1) w(r+j)/((m+1) W_m(r)) ist identisch 1 - u, also genau das Gewicht 'Loch runter'; als 'Teilchen hoch' eingesetzt (z77) bleibt das Residuum [(1-m)(w_0 + w_m) + 2 Summe w_1..w_(m-1)]/(m+1) != 0": true,
+  "numerisch (mpmath, 50 Stellen; beta = 2, 4 pi, 60; alpha = 1/4, 1/2, 3/4; m = 2..12; alle r mit |r| <= m + 8): maximales relatives Residuum 5.1e-51, und u liegt stets in [1/(m+1), m/(m+1)] c [0, 1]. Zum Vergleich in der wörtlichen z77-Schleife: alte Zuordnung Residuum 0.9377 (z77: 0,94), richtige Zuordnung 3.4e-16": true,
+  "Vakuumgrenzfall (exakt, m = 2..8): u -> (k+1)/(m+1) und 1 - u -> (m-k)/(m+1) mit k = r + m (Teilchenlage, Etikett von z76). Die z77-Formel geht bei beta = 400 in (m-k)/(m+1) über, das Lochgewicht von z76; z77 hat mit k = Kantenlage -r-1 = m-1-k verglichen, also gespiegelt (18 Paare mit (k+1)/(m+1) != (m-k)/(m+1), m = 2..6)": true,
+  "Eindeutigkeit (beta = 4 pi, alpha = 1/4, m = 3, 260 Stellen): die Rekursion ist erster Ordnung, jede Lösung ist u + C/W_m(r) (C = delta W_m(r0), r0 = -2, exakt bestätigt); 1/W_3 wächst bis 10^165 bei r = 30, eine Störung delta = +-1e-12 verlässt [0, 1] auf beiden Seiten (innerste Austrittsstellen r = {'1.0e-12': [-6, 2], '-1.0e-12': [-6, 2]}): die beschränkte Lösung in [0, 1] ist eindeutig u": true,
+  "mit der alten Zuordnung reproduziert die Rechnung z77 Teil 3 wörtlich (0; 1,9802; 1,9802; 3,9589): gleiche Konstruktion": true,
+  "mit der richtigen Zuordnung (u für Teilchen hoch) ergibt dieselbe Auslesung [0.0, 1.9794, 1.9794, 2.0398]: Null, ein Dublett knapp unter 2 und ein Singulett knapp über 2, alle innerhalb 0,05 von l(l+1) = (0, 2, 2, 2); das alte Singulett 3,96 war ein Artefakt der Vertauschung": true,
+  "die Werte der Analyse (0; 1,9864; 1,9864; 2,0281) sind auch mit richtiger Zuordnung in keiner natürlichen Variante reproduziert (kleinste maximale Abweichung 0.0117); selbst mit beta angepasst ans Dublett (beta = 4.551 pi) wird das Singulett 2.0266 statt 2,0281": true,
+  "alpha = 3/4 gibt exakt dasselbe Spektrum wie alpha = 1/4 (Teilchen-Loch-Spiegelung x -> -x der Kovarianz)": true,
+  "exakt bis 9e-102 (beta = 2, 4 pi; alpha = 1/4, 3/4; m = 2..6): c(x) = Summe_e w(e) [x <= e] (Fermiseen mit Kante zwischen e und e+1), W_m(r) = Mischung der Vakuumpaargewichte, u_m(r) = Mittel der verschobenen z76-Gewichte (r + m - e)/(m+1) unter P(e | r), und der Ausgang der verschobenen z76-Kanäle ist m/(m+1) W_(m+1): die thermische Zustandserhaltung aus Teil 1 ist die w-Mittelung der Vakuumidentität": true,
+  "Petz je Kantenkomponente (direkte Summe der verschobenen z76-Kanäle, fünf Kanten, Gewichte w(e) bei beta = 2, 4 pi und zufällig; m = 2, 3, 4): m(m+1)(I - R Phi) hat exakt l(l+1) mit Vielfachheit 5(2l+1), unabhängig von Gewichten und Temperatur; kein Übersprechen zwischen den Kanten": true,
+  "Gegenbeispiel auf dem Fockraum (10 Moden, beta = 2, alpha = 1/4): Mischung und quasifreier Zustand haben dieselben c(x) und dieselben Kommutatorgewichte w([B^+, B]) = W_m(r), aber für x < y ist Cov(n_x, n_y) = c(y)(1 - c(x)) in der Mischung (bis 0.069) und 0 im quasifreien Zustand; w(B^+ B) ist W_m(r) gegen c(r)(1 - c(r+m)): der volle thermische Zustand ist nicht die Mischung": true,
+  "Fockraum (14 Moden, Kanten e = 5, 6, 7; m = 2..5): J_-1 psi*_(r+m) psi_r |FS_e> = (Teilchen hoch, Amplitude +1) - (Loch runter, -1) + (neues Paar an der Kante, Norm 1 für innere Paare, 0 an den Schalenenden); Ladung e+1 je Kante (Superauswahl: verschiedene Kanten sind verschiedene Ladungssektoren); das Muster ist translationsinvariant": true,
+  "Anteil 1/(m+1), Zähldefinitionen: (b) die nativen Zweipfadübergänge erreichen die beiden Schalenenden von H_(m+1) nur über einen Pfad; das fehlende Quadratgewicht ist je Kante 2 von 2(m+1), thermisch über alle Kanten summiert exakt 1/(m+1) (beta = 2, 4 pi; alpha = 1/4, 3/4); (c) die Gewichtsbilanz m gegen m+1 gibt 1/(m+1) für jeden spurerhaltenden Kanal, auch für die falsche z77-Zuordnung": true,
+  "Anteil 1/(m+1), dynamische Definitionen nicht: (a) der Mehrpaaranteil von |J_-1 Paar>^2 (Paarbildung an der Kante) ist (m-2)/(3m-2) (nur bei m = 4 zufällig 1/5), (d) der Hilbert-Schmidt-Anteil des nativen J_-1 außerhalb der Kraus-Hülle ist ein anderer Wert": true,
+  "die U(1)-invarianten reellen Quadriken auf C^2 = R^4 (Kommutante der komplexen Struktur in den symmetrischen 4x4) haben Dimension 4 und sind genau Re-Formen c^+ X c mit X in Herm(2) (Rang 4); det(t + x.sigma) = t^2 - x^2 - y^2 - z^2": true,
+  "auf dem Fockraum (vier Moden a_1, a_2, b_1, b_2, je 12 Stufen; q = 0,2, e^-2pi, 0,35; je vier zufällige X, Y) gilt <X|Y> = <Omega| e^(-i P(X)) e^(i P(Y)) |Omega> = 1/det(I - (i/2)(Y - X)) mit maximalem Fehler 1.1e-09, und 4(1 - Re 1/<X|Y>) = det(Y - X) bis 5.7e-09: unabhängig von q (c ist standard-komplex-gaußsch)": true,
+  "symbolisch: K = 1/det(I - (i/2)Z) = 4/(r^2 - (t + 2i)^2), also 16 pi^2 mal die masselose 4D-Wightmanfunktion 1/(4 pi^2 (r^2 - t^2)) bei der imaginären Zeitverschiebung t -> t + 2i, und s^2 = 4(1 - Re 1/K) = det(Z) = t^2 - r^2; numerisch (50 Paare) ist K = 16 det(I - Z_Y Z_X^+)^-1/(det(Y + 2i) conj det(X + 2i)) mit Z_X = Cayley(X + iI), |Z| <= 0.940 < 1: der Kern nu = 1 aus z74 an den Röhrenpunkten X + iI": true,
+  "aus E[exp(i tr(QZ)/2)] = det(I - iZ/2)^-nu folgt (Reihenentwicklung, det Q = q_0^2 - |q|^2 als Box auf der charakteristischen Funktion) E[det Q] = nu*(nu - 1), E[(det Q)^2] = nu**2*(nu - 1)*(nu + 1); bei nu = 1/2 also -1/4 und -3/16 < 0: kein positives Maß; bei nu = 1 beide 0 (Q = c c^+ hat Rang eins)": true,
+  "Gramtest: die Neun-Punkt-Schablone der Form (det Q)^2 (h = 0,05) gibt -0.1860 -> -3/16 bei nu = 1/2 und ist negativ für nu = 1/4, 1/2, 3/4, nichtnegativ für nu = 1, 3/2, 2; 60 Zufallspunkte: kleinster Eigenwert -0.285 für K^(1/2), 3.2e-03 >= 0 für K": true,
+  "Spin-2-Projektor Pi^(2)(p) ist idempotent, hat Spur 5 und annulliert p_mu und eta_mu nu (Verbesserungsterm)": true,
+  "Zweiteilchen-Phasenraum (s = 0,01..10, Ruhesystem und Boost v = 0,7): die Spin-2-Spektraldichte von <T T> ist rho_2(s) = s^2/(240 pi) theta(s), Lorentz-invariant und unabhängig von der Verbesserung; Spin 0: s^2/(24 pi) für das minimale T, 0 für das verbesserte (xi = 1/6)": true,
+  "kein isolierter masseloser Pol: das Spektralgewicht in [0, eps] ist eps^3/(720 pi) (eps = 1; 0,1; 0,01: 4.42e-04, 4.42e-07, 4.42e-10) und geht gegen 0, ohne delta(s)-Anteil": true,
+  "phi_ABCD = c_A c_B c_C c_D e^(i p.x) mit p = c c^+ (null) löst die masselose Spin-2-Gleichung (d_0 + sigma.grad) phi = 0 (100 zufällige c, x; Residuum 5.6e-16; der Gegenoperator gibt >= 2.00, der Test trennt)": true,
+  "Helizität 2: c -> e^(i theta) c lässt p fest und gibt phi -> e^(4 i theta) phi; die Drehung um p um chi (kleine Gruppe) gibt phi -> e^(-2 i chi) phi, also |h| = 2 (Fehler 8.8e-15); Lorentzkovarianz phi_(Mc)(Lambda x) = M^(x4) phi_c(x) für 100 zufällige M in SL(2,C) (Fehler 3.5e-14)": true,
+  "irreduzible Darstellungen von <A, B | A^2 = B^2 = I>: in 2D ist {A, B} = 2 cos(theta) I zentral (Schur); die Automorphie A -> -A, B -> B ist in derselben Darstellung genau dann unitär implementierbar, wenn theta = pi/2 (Intertwinergleichungen, 61 Winkel: lösbar nur bei [0.5] pi), in 1D nie: also AB + BA = 0": true,
+  "bei AB + BA = 0: I, A, B, AB spannen M_2(C) (Cl_2(C) = M_2(C)), (AB)^2 = -I; die vier Marken (Eigenvektoren von A und B) haben das Kreuzverhältnis -(1-p)/p mit p = cos^2(theta/2), also -1 (harmonisch, j = 1728, tau = i) und Überlapp p = 1/2": true,
+  "Zustände: invariant unter beiden Vorzeichenspiegelungen (A -> -A und B -> -B, implementiert durch B bzw. A) ist nur I/2 (Lösungsraum Dimension 1), deren Modulfluss trivial ist; invariant nur unter A -> -A bleibt rho = (I + bB)/2 (Dimension 2) mit nichttrivialem Modulfluss (b = 0,4: |sigma_t(A) - A| = 1.16)": true,
+  "für 20 Haar-zufällige U in U(3): |U_ai|^2 = Tr(P_a Q_i), Im Tr(P_a Q_i P_b Q_j) = Im(U_ai U_bj U_aj* U_bi*), |J| gleich für alle a != b, i != j und invariant unter Umphasung; Standardparametrisierung: J = c12 s12 c23 s23 c13^2 s13 sin delta = 3.172e-05 wird exakt ausgelesen (Jarlskog)": true
+ },
+ "befunde": {
+  "Das Negativ von z77/H6h37 ('hält nicht wie behauptet', Residuum 0,94) war unsere Fehlzuordnung: Die Formel der fünften Analyse ist das Gewicht 'Loch runter', z77 hat sie als 'Teilchen hoch' eingesetzt und den Vakuumvergleich mit dem gespiegelten Etikett k = Kantenlage geführt. Korrigiert ist der thermische Zweipfadkanal bei jeder Temperatur exakt zustandserhaltend, eindeutig und geht im Vakuum in z76 über": true,
+  "Qualitativ stimmt das korrigierte Spektrum mit der Analyse überein (Null, Dublett knapp unter 2, Singulett knapp über 2, Summe nahe 6); die vierstelligen Werte hängen an einer nicht dokumentierten Konditionierung. Breitere Abschneidungen sind keine Sphärenauslesung mehr (zusätzliche Moden, niedrigere Werte)": true,
+  "Die Mischungslesart der Analyse 8 hält für die Einteilchendaten exakt (c, W_m, u_m, Kanalausgang) und kantenaufgelöst gibt Petz l(l+1) bei jeder Temperatur. Sie ist aber eine Darstellung der Einteilchendaten, nicht des Zustands: Der quasifreie Zustand hat dieselben c und Kommutatorgewichte, aber keine Kantenkorrelationen. Die über die Kante vergröberte Auslesung (Teil 2) ist nicht exakt l(l+1)": true,
+  "Die Zahl 1/(m+1) ist ohne Definition der Analyse nur als Zählidentität reproduziert (2m native Pfade auf 2(m+1) Plätze, bzw. Gewicht m gegen m+1); als dynamische Aussage über J_-1 (Mehrpaaranteil) gilt sie nicht": true,
+  "Neu als Verbindung: Die Überlappe der relativen Zustände aus z78 sind exakt der Kern nu = 1 det(I - Z W^+)^-1 aus z74 in Röhrenkoordinaten (Cayley der Punkte X + iI, bis auf den Automorphiefaktor), und der Minkowskiabstand det(Y - X) ist aus dem Überlapp auslesbar. Offen bleibt wie in z78, dass der Quarterindex das Dublett der Naht trägt und die Lorentzwirkung darauf nativ ist": true,
+  "Das ist die Wallach-Menge der 2x2-Matrixkugel (nu in {0, 1} oder nu > 1, also {0} u [1, oo)); nu = 1 ist der kleinste nichttriviale Punkt. Schon im Bestand: 'Wallach' in z40 (4x, Ikosaeder-Test negativ bei nu = 1/2), z41 (9x, Wallach-Menge = 4D-Unitaritätsschranke) und z74 (2x, (nu)_m >= 0 nur auf der Wallach-Menge); das Moment -3/16 ist eine neue Darstellung, kein neuer Befund": true,
+  "Deckt sich mit z75 (T(z) der Naht gibt kein Graviton; im Sugawara-Bild landet T bei phi^2 und dem zusammengesetzten T_mu nu mit Delta = 4, kein (2,0) bei Delta = 3) und mit v1 H6h21 ('kein zusammengesetzter masseloser Spin-2-Pol'): zusammengesetzte Spin-2-Zustände eines freien Feldes bilden ein Kontinuum s^2, ein Teilchen fehlt; Weinberg-Witten verbietet ohnehin ein masseloses Spin-2-Teilchen mit kovariantem erhaltenem T_mu nu. Nichts Neues": true,
+  "Standard-Spinor-Helizität (Penrose; masselose Felder als Produkte von Nullspinoren), linear. z65 hat bereits beide Helizitäten linear aus beiden Blättern (Penrose-Transformation, Bianchi exakt) und das nichtlineare googly-Problem; die Ebene Welle ist die Impulsform derselben linearen Lösungen. Lokale freie Felder über modulare Lokalisierung (Brunetti-Guido-Longo) sind ebenfalls Standard und keine TFPT-Dynamik. Nichts Neues": true,
+  "Gegenüber z71 Teil 3 (zwei binäre Beobachtungen, harmonisch genau bei p = 1/2, dort gesetzt) folgt p = 1/2 hier aus der Vorzeichensymmetrie des Gesetzes, sofern sie in derselben irreduziblen Darstellung implementiert ist; diese Prämisse ist nicht hergeleitet. Der Zustand darf die volle Vorzeichengruppe nicht teilen (sonst Spurzustand ohne Modulzeit, wie das gleichgewichtete Gemisch in z71); er braucht das Gewicht rho_m (z63)": true,
+  "Standard (Jarlskog 1985): die Identitäten gelten für jedes unitäre U und legen nichts fest. Flavour, Massen, alpha, die 16 und E8 sind gelöste Bausteine (TFPT-STAND §3) und werden nicht neu geöffnet. Beim Flavour führt TFPT-STAND §5 als offen nur 'Restflavor: absolute Quarkamplitude, Neutrinozweig, Phasen'; keine dieser Größen folgt aus den Auslesungsidentitäten, am Stand ändert sich nichts": true,
+  "Die Kette 'Verschränkungsgleichgewicht => Einstein' (Jacobson 1995/2015) setzt das Gleichgewicht der Verschränkungsentropie kleiner Kugeln und die Flächennormierung (Entropiedichte 1/(4 G)) voraus; beides ist hier nicht hergeleitet (GRAV.ENTROPY.EQUILIBRIUM.01 bleibt bedingt, die Flächennormierung steht in TFPT-STAND §5). Firewall GRAV.NONCIRCULAR.01: kein Schluss 'modular => Bisognano-Wichmann'; BW gilt erst in einem lokalen Poincaré-kovarianten Netz mit Vakuum, nie umgekehrt aus einem Modulfluss": true
+ },
+ "zahlen": {
+  "residuum_neu_max": 5.1076100386158865e-51,
+  "residuum_z77_alt": 0.9377434293169359,
+  "residuum_z77_schleife_neu": 3.369552773679924e-16,
+  "eindeutigkeit": {
+   "abweichung_delta_0": 1.6776395860145893e-97,
+   "verlassen_von_[0,1]_bei_r": {
+    "1.0e-12": [
+     -6,
+     2
+    ],
+    "-1.0e-12": [
+     -6,
+     2
+    ]
+   },
+   "log10_1/W_3(30)": 165.0895388148628
+  },
+  "petz_m2_beta4pi_alpha1/4": {
+   "z77_alte_zuordnung": [
+    0.0,
+    1.980161,
+    1.980161,
+    3.95893
+   ],
+   "richtige_zuordnung": [
+    0.0,
+    1.979359,
+    1.979359,
+    2.039802
+   ],
+   "analyse": [
+    0.0,
+    1.9864,
+    1.9864,
+    2.0281
+   ]
+  },
+  "petz_varianten_(niedrigste_vier,_max_abweichung)": {
+   "alpha = 1/4, Zeilen -2..-1 (z77)": [
+    [
+     0.0,
+     1.9794,
+     1.9794,
+     2.0398
+    ],
+    0.01170197307901999
+   ],
+   "alpha = 3/4, Zeilen -2..-1": [
+    [
+     0.0,
+     1.9794,
+     1.9794,
+     2.0398
+    ],
+    0.011701973079020878
+   ],
+   "alpha = 1/2, Zeilen -2..-1": [
+    [
+     0.0,
+     1.9981,
+     1.9981,
+     2.0037
+    ],
+    0.024365127561362332
+   ],
+   "alpha = 1/4, Zeilen -3..-1": [
+    [
+     0.0,
+     1.8484,
+     1.8484,
+     1.9961
+    ],
+    0.1380169521832848
+   ],
+   "alpha = 1/4, Zeilen -2..0": [
+    [
+     0.0,
+     1.2944,
+     1.2944,
+     1.7551
+    ],
+    0.6919826511002667
+   ],
+   "alpha = 1/4, Zeilen -3..0": [
+    [
+     0.0,
+     1.2824,
+     1.2824,
+     1.7548
+    ],
+    0.7039717496916851
+   ],
+   "alpha = 1/4, Petz bzgl. exaktem Zielzustand W_3": [
+    [
+     0.0407,
+     1.9996,
+     1.9996,
+     2.0804
+    ],
+    0.05230427544941607
+   ],
+   "alpha = 1/4, Spurreferenz I/2, thermisches u": [
+    [
+     0.0,
+     1.9794,
+     1.9794,
+     2.0407
+    ],
+    0.012573972083030238
+   ]
+  },
+  "beta_angepasst_an_dublett": {
+   "beta/pi": 4.550825040962093,
+   "spektrum": [
+    0.0,
+    1.9864,
+    1.9864,
+    2.0266
+   ]
+  },
+  "mischung_max_abweichung": 9.482553709610895e-102,
+  "kovarianz_mischung_max_(beta=2)": 0.06887305426370377,
+  "anteil_1/(m+1)_definitionen": {
+   "2": {
+    "(a)_mehrpaaranteil": 0.0,
+    "(b)_pfaddefizit_schalenenden": 0.333333,
+    "(b)_thermisch_ueber_alle_kanten": 0.333333333333,
+    "(c)_gewichtsbilanz_neu/alt": [
+     0.333333333333,
+     0.333333333333
+    ],
+    "(d)_HS_ausserhalb_kraus": 0.028595,
+    "1/(m+1)": 0.333333
+   },
+   "3": {
+    "(a)_mehrpaaranteil": 0.142857,
+    "(b)_pfaddefizit_schalenenden": 0.25,
+    "(b)_thermisch_ueber_alle_kanten": 0.25,
+    "(c)_gewichtsbilanz_neu/alt": [
+     0.25,
+     0.25
+    ],
+    "(d)_HS_ausserhalb_kraus": 0.044916,
+    "1/(m+1)": 0.25
+   },
+   "4": {
+    "(a)_mehrpaaranteil": 0.2,
+    "(b)_pfaddefizit_schalenenden": 0.2,
+    "(b)_thermisch_ueber_alle_kanten": 0.2,
+    "(c)_gewichtsbilanz_neu/alt": [
+     0.2,
+     0.2
+    ],
+    "(d)_HS_ausserhalb_kraus": 0.055586,
+    "1/(m+1)": 0.2
+   },
+   "5": {
+    "(a)_mehrpaaranteil": 0.230769,
+    "(b)_pfaddefizit_schalenenden": 0.166667,
+    "(b)_thermisch_ueber_alle_kanten": 0.166666666667,
+    "(c)_gewichtsbilanz_neu/alt": [
+     0.166666666667,
+     0.166666666667
+    ],
+    "(d)_HS_ausserhalb_kraus": 0.063153,
+    "1/(m+1)": 0.166667
+   }
+  },
+  "relativ_ueberlapp_max_fehler": 1.1474371218798847e-09,
+  "relativ_s2_max_fehler": 5.7456310820214185e-09,
+  "momente": {
+   "E[det Q]": "nu*(nu - 1)",
+   "E[(det Q)^2]": "nu**2*(nu - 1)*(nu + 1)"
+  },
+  "gram_schablone_h0.05": {
+   "0.25": -0.058032408231373026,
+   "0.5": -0.18603921710258933,
+   "0.75": -0.24419350493828418,
+   "1.0": 1.1643834341359206e-05,
+   "1.5": 2.7860306521449307,
+   "2.0": 11.865999984586438
+  },
+  "gram_zufall_60_min_max": {
+   "0.5": [
+    -0.2847312414994716,
+    38.188022403120705
+   ],
+   "1.0": [
+    0.0032432911832803056,
+    25.71858995129829
+   ]
+  },
+  "wallach_im_bestand": {
+   "z40_gemeinsamer_ursprung.py": 4,
+   "z41_altbestand_spin2.py": 9,
+   "z74_tprime_m_kern.py": 2
+  },
+  "spin2_dichte_rho2/s^2_(ruhe,_boost,_spin0_minimal,_spin0_verbessert)": {
+   "0.01": [
+    0.0013262911924324687,
+    0.0013262911924324687,
+    0.013262911924324687,
+    1.1641901254023611e-34
+   ],
+   "0.1": [
+    0.0013262911924324494,
+    0.0013262911924324502,
+    0.013262911924324494,
+    1.3766466808037587e-34
+   ],
+   "1.0": [
+    0.0013262911924324637,
+    0.0013262911924324665,
+    0.013262911924324633,
+    8.015583326886866e-35
+   ],
+   "10.0": [
+    0.0013262911924324672,
+    0.001326291192432468,
+    0.013262911924324671,
+    2.050202001530404e-34
+   ]
+  },
+  "spin2_gewicht_in_[0,eps]": {
+   "1.0": 0.000442097064144154,
+   "0.1": 4.42097064144154e-07,
+   "0.01": 4.420970641441541e-10
+  },
+  "spin2_ebene_welle": {
+   "weyl_residuum": 5.581584288767495e-16,
+   "gegenoperator_min": 1.9999999999999993,
+   "phase": 4.477147065083258e-15,
+   "kleine_gruppe": 8.776363779040835e-15,
+   "lorentz": 3.4657740303127146e-14
+  },
+  "kreuzverhaeltnis_ueberlapp": {
+   "0.3333": [
+    "(-0.333333333333-0j)",
+    0.75
+   ],
+   "0.5": [
+    "(-1-0j)",
+    0.5
+   ],
+   "0.6667": [
+    "(-3-0j)",
+    0.25
+   ]
+  },
+  "tfpt_stand_5_restflavor": [
+   "Restflavor: absolute Quarkamplitude, Neutrinozweig, Phasen"
+  ]
+ },
+ "urteil": "Die siebte Analyse hat in ihrem Hauptpunkt recht: Die thermische Zuordnung in z77 war vertauscht. Mit u_m(r) = Summe (m-j) w(r+j)/((m+1) W_m(r)) für 'Teilchen hoch' und 1 - u für 'Loch runter' gilt u W_m(r) + (1 - u(r+1)) W_m(r+1) = m/(m+1) W_(m+1)(r) exakt für jedes w (symbolisch m = 2..10, numerisch bei jeder Temperatur), die Formel der fünften Analyse ist genau das Lochgewicht 1 - u, der Vakuumgrenzfall ist z76 und die beschränkte Lösung ist eindeutig. Das Negativ von z77/H6h37 (Residuum 0,94, 'hält nicht wie behauptet') war unsere Fehlzuordnung; korrigiert ist der thermische Zweipfadkanal bei jeder Temperatur exakt zustandserhaltend. Der Petz-Rückkanal auf den zentralen Paaren gibt korrigiert (0; 1,9794; 1,9794; 2,0398) statt (0; 1,9802; 1,9802; 3,9589), nahe l(l+1); die Werte der Analyse (0; 1,9864; 1,9864; 2,0281) sind nicht exakt reproduziert. Die Mischung verschobener Vakua (Analyse 8) gilt exakt für die Einteilchendaten, und kantenaufgelöst gibt Petz l(l+1) bei jeder Temperatur; der quasifreie Zustand ist aber nicht diese Mischung (Cov(n_x, n_y) = c(y)(1 - c(x)) gegen 0), und der Anteil 1/(m+1) ergibt sich nur als Zählidentität, nicht als Mehrpaaranteil von J_-1 ((m-2)/(3m-2)). Die relativen Zustände aus z78 haben den Überlapp 1/det(I - (i/2)(Y - X)) = 4/(r^2 - (t + 2i)^2), daraus s^2 = det(Y - X); das ist der Kern nu = 1 aus z74 an den Röhrenpunkten X + iI. Die Wurzel des Kerns ist nicht positiv (E[(det Q)^2] = -3/16), das ist die bekannte Wallach-Menge. Zusammengesetzter Spin 2 eines freien Skalars ist ein Kontinuum s^2/(240 pi) ohne Pol, wie z75. Die Spin-2-Ebene-Welle ist Standard-Spinor-Helizität, linear, nichts Neues gegenüber z65. Die Vorzeichensymmetrie A -> -A erzwingt in einer irreduziblen Darstellung AB + BA = 0, also Cl_2(C) = M_2(C), tau = i und p = 1/2; gegenüber z71 folgt p = 1/2 damit aus einer Symmetrie statt gesetzt zu sein, bedingt auf diese Prämisse. Die Flavourauslesung ist Standard und ändert TFPT-STAND §5 nicht; die Jacobson-Kette bleibt bedingt."
+}

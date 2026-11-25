@@ -1,4 +1,4 @@
-# TFPT aus der Vogelperspektive (Stand H6h39, 24. November 2026)
+# TFPT aus der Vogelperspektive (Stand H6h40, 25. November 2026)
 
 ## Neueste Zusammenführung (H6h35, `z72`–`z74`, `PRUEFUNG-BESTAND-H6h35.md`)
 
@@ -10,6 +10,8 @@ Die Lösung, so weit sie trägt, als eine Kette aus der originalen Naht:
    - Der Dublettzustand ρ₁ (Windungszahl m = 1 nach der Uhrenquotient-Regel) und seine Tomita-Standardform liefern J = †,
      Herm(2) = R^{1,3}, die Zeitorientierung, V ⊕ V̄* und die Twistorform (2,2). [E]
    - Die eine verbleibende Prämisse ist I_pos, gleichwertig zu T′: Die Lagen der Naht sind die dualen GNS-Vektoren. [C]
+   - Seit H6h40 (z79): Die Quarteroszillatoren mit Tomita-Partner tragen diese Kinematik ohne T′, aber mit einer runden
+     Himmelssphäre ohne Marken. Die Markensymmetrie verträgt sich auf H⁰(N) nur mit der euklidischen Realform. [E]
 4. **Felder.** Hardy- und Stromauslesung erzwingen zusammen den Kern det(I − ZW†)⁻¹ (ν = 1). Daraus folgen die
    SU(2,2)-Leiterdarstellung und die masselosen Gleichungen. [E unter bi-U(2) = T′]
 5. **Zeit.** Die kontinuierliche, positive Zeittranslation ist die parabolische Wiesbrock-Differenz der Modulgeneratoren
@@ -22,18 +24,24 @@ Die Lösung, so weit sie trägt, als eine Kette aus der originalen Naht:
 8. **Gelöste Bausteine** (Teilchen, Flavour, Massen, α, E₈) bleiben unverändert.
 
 Offen, genau benannt:
-- **(a) I_pos aus den Antworten.**
+- **(a) I_pos aus den Antworten: seit H6h40 präzisiert (z79).**
+  - Kinematisch erfüllt der Quarterindex alles, was T′ verlangt: Twistorraum mit CCR-Form (2,2), Lorentzgruppe als
+    Kommutant von τ = (Ad J)⁺, Orte als Twistortranslationen, Kern ν = 1.
+  - Er ist aber nicht das Nahtdublett. Die Vierteldrehung der Marken hat Ordnung 4 auf V₁, Ordnung 2 auf dem η-Dublett
+    und dem fermionischen Quarterpaar (beide gleich) und Ordnung 1 auf den Oszillatoren.
+  - Auf H⁰(N) = V* ⊗ η wirkt sie euklidisch; T′ (η = V̄*) ist nicht markenverträglich.
+  - Offen: I_pos für die markierte Naht, oder die Lorentzform per Osterwalder-Schrader aus der euklidischen Struktur.
 - **(b) Oszillatornormierung: seit H6h36 bedingt gelöst (z76).**
   - Der zustandserhaltende Zweipfadkanal (Teilchen hoch, Loch runter) erzwingt die Schwinger-CCR-Gewichte.
   - Kanal mit Petz-Rückkanal gibt exakt den Casimir der Sphäre, ℓ(ℓ+1).
   - Offen ist, ihn aus der vollen Dynamik (höhere Sektoren) zu gewinnen.
 - **(c) Vakuum gegen thermisch.** Die Zeit lebt im Vakuumsektor, das Original ist thermisch. Wie beide zusammenhängen, ist
   offen; nicht über „modular ⇒ BW“ (GRAV.NONCIRCULAR.01).
-  - Auch die Sphäre ist exakt eine Vakuumgröße (z76, z77).
+  - Die Sphäre ist exakt im Vakuum und kantenaufgelöst bei jeder Temperatur (z76, z80).
   - **Seit H6h38 strukturell beantwortet (z78):** Das Vakuum der Araki-Woods-Oszillatoren aus Strom und Tomita-Partner ist
     die Purifikation des thermischen Originals. Dort leben die vertauschenden Translationen (P² = 0).
   - Die Lagen X sind aus der gemischten Korrelation exakt auslesbar. Das ist ein konkreter Kandidat für I_pos.
-  - Eine thermische Fortsetzung des Kanals ist vorgeschlagen, aber nicht als zustandserhaltend belegt (z77).
+  - Der thermische Zweipfadkanal ist seit H6h40 exakt zustandserhaltend (z80; z77 hatte die Übergänge vertauscht).
 - **(d) Nichtlineare volle Gravitation und Flächennormierung.**
 - **(e) Mehrpunktantworten und Spin 2: seit H6h39 gerechnet (z75).**
   - Die nichtabelschen Antworten sind exakt und nicht gaußsch; eine skalare 4D-Lesart ist ausgeschlossen.

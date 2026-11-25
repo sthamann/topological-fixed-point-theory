@@ -133,6 +133,17 @@ The lane is not registered in `autonomy.py` or `main.py`; `run = run_reconstruct
 `process_rules.run()` is unchanged. Nothing is promoted (`physical_solution` false). Tests:
 [test_reconstruction_search.py](test_reconstruction_search.py).
 
+Tenth run (doublet identifications, H6 exploration H6h40, z79): two more universes of `reconstruction_search.py` test whether the quarter index of the original can be the seam doublet. The quarter rotation R of the marks acts with the character i^k on the Hardy mark k. It is computed exactly on six doublets and on four position spaces. On E: w² = 1 - z⁴ it acts by transport s → F·(s∘g⁻¹), F = w/(z² - 1), on L(R₁ + R₋₁) and on L(R₁ + R₋₁ + ∞₊ + ∞₋).
+- `doublet_identifications`:
+  - Only the seam doublet V₁ (Fock corner, ρ₁) carries R with projective order 4.
+  - The one-particle quarter pair x = ±1/4 and the η doublet of the spin bridge carry it with order 2. With the lift w → -w they are the same spinor {i, -i}.
+  - The quarter oscillators carry R with order 1.
+- `position_spaces`:
+  - On the spin-bridge sections H⁰(N), R has the regular spectrum {1, i, -1, -i} = V* ⊗ η. That is an SU(2) × SU(2) (Euclidean) element, never g ⊗ ḡ (Lorentz).
+  - The rule `native_r + lorentz_compatible + marked` is EMPTY.
+  - Only the Tomita reading T′ is Lorentzian and marked, and there R on V̄* is imposed rather than native.
+Run time stays at a few seconds; three new tests.
+
 ```bash
 .venv/bin/python -B research/originlab/process_rules.py > /tmp/process-rules.json
 .venv/bin/python -B research/originlab/main.py --campaign process_rules --jobs 1 --out /tmp/originlab-process

@@ -1289,6 +1289,20 @@ if "H6h2" in H and z1p.exists() and z2p.exists():
                                                                                                                                                                      "(Delta = 2), Helizität +-2 nur als Vierquanten"
                                                                                                                                                                      "kompositum ohne kovariante T-Kopplung (Z75)")
                                                                                                                                                 facts["F57_multipoint_spin2"] = T24.get("urteil", "")
+                                                                                                                                                z79p, z80p = Path(__file__).with_name("z79_ergebnis.json"), Path(__file__).with_name("z80_ergebnis.json")
+                                                                                                                                                if z79p.exists() and z80p.exists():
+                                                                                                                                                    T25, T26 = json.loads(z79p.read_text()), json.loads(z80p.read_text())
+                                                                                                                                                    ok25 = all(T25["checks"].values()) and all(T26["checks"].values())
+                                                                                                                                                    H["H6h40"] = dict(H["H6h39"])
+                                                                                                                                                    H["H6h40"]["K12"] = (LES if ok25 else F,
+                                                                                                                                                                         H["H6h39"]["K12"][1] + "; Quarterindex kinematisch Spinor"
+                                                                                                                                                                         "dublett (Twistorraum mit Tomita-Partner, Lorentz = "
+                                                                                                                                                                         "Kommutant von tau), nicht das Nahtdublett: R hat "
+                                                                                                                                                                         "Ordnung 4/2/1 auf V_1/eta/Oszillatoren, H0(N) "
+                                                                                                                                                                         "markensymmetrisch euklidisch, T' nicht markenverträglich "
+                                                                                                                                                                         "(Z79); thermischer Zweipfadkanal exakt (Z80)")
+                                                                                                                                                    facts["F58_quarter_index"] = T25["urteil"]
+                                                                                                                                                    facts["F59_analyses_7_8"] = T26["urteil"]
 
 order = [f"K{i}" for i in range(1, 21)]
 print("Gesamttabelle (P = hergeleitet, L = unter benannter Lesart, F = FAIL, O = OFFEN, E = EINGABE)\n")

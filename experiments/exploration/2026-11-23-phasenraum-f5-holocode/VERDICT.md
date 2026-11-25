@@ -1,6 +1,82 @@
 # Urteil
 
-## Aktueller Stand: H6h39 — Mehrpunktantworten und Spin 2: gescoptes Negativ für „Graviton aus der Virasoro-Antwort“ (`z75`)
+## Aktueller Stand: H6h40 — Quarterindex als Dublett: kinematisch ja, Nahtdublett nein (`z79`); Analysen 7 und 8, Korrektur von H6h37 (`z80`)
+
+**Bilanz:** unverändert 13 P und 7 L von 20. K12 ist präzisiert.
+
+**Auftrag:** „Quarterindex als Dublett“ (Wahl des Nutzers) und die siebte und achte externe Analyse („check auch“).
+
+**z79 (15 Prüfungen, exakt und numerisch):**
+- **Kinematik [E].**
+  - Beide Quarter haben dieselbe Stromantwort: Σ c(x)(1 − c(x+m)) = m/(1 − e^{−4πm}) ist eine Teleskopsumme, für jedes α.
+    Darum ist der Oszillatorzustand U(2)-invariant. Kontrolle: Verschiedene Besetzungen ließen nur u(1) ⊕ u(1).
+  - Mit den Tomita-Partnern b_i bilden die a_i den Twistorraum T = span{a_i, b_i⁺}. Seine CCR-Form hat die Signatur (2,2).
+  - τ(A) = (JAJ)⁺ ist eine lineare, antiisometrische Involution. Ihre Eigenräume, die π-Ebene (a + b⁺) und die ω-Ebene
+    (a − b⁺), sind null und zueinander dual.
+  - Der Kommutant von τ in u(2,2) ist gl(2,ℂ): Lorentz, Dilatation und das Zentrum. Das Zentrum ist der Modulfluss
+    (Helizitätsphase). Es lässt alle Orte fest; der Modulfluss ist also keine Raumzeitbewegung.
+  - e^{iP(X)} ist die Twistortranslation. |X⟩ gehört zum Röhrenpunkt M_X = κ²(I − iXᵀ) mit Re M_X = κ²I, und die
+    Überlappung ist der ν = 1-Kern aus z74.
+  - SL(2,ℂ) wirkt nativ als Bogoliubov-Abbildung π → gπ, ω → (g⁺)⁻¹ω. Drehungen erhalten Ω, sind also exakte Symmetrien
+    des Originals. Boosts verschieben das KMS-Ruhesystem.
+- **Markensymmetrie [E].** Die Vierteldrehung R = e^{2πiL₀} der Marken hat
+  - auf dem Nahtdublett V₁ = {Ω, ψ*₁/₄Ω} (Zustand ρ₁) die projektive Ordnung 4;
+  - auf dem fermionischen Quarterpaar x = ±1/4 die Ordnung 2 (seine Einteilchenkovarianz ist ebenfalls ρ₁);
+  - auf den Quarteroszillatoren die Ordnung 1.
+  - Das η-Dublett der Spinbrücke ist H⁰(E, η ⊗ π*O(1)) = span{1, w/(u² − 1)}. Darauf wirken Vierteldrehung und Deck nur
+    als Halbdrehungen (Kleinsche Vierergruppe). Die Spinorhebung w → −w hat genau die Eigenwerte {i, −i} des Quarterpaars.
+  - {1, 3} ist das einzige μ₄-Dublett in SU(2) mit g² = −1: Die Quarterzwiste sind das Spinordublett der Vierteldrehung.
+- **Ortsräume [E].**
+  - Auf den Schnitten H⁰(N) der Spinbrücke hat R das reguläre Spektrum {1, i, −1, −i} = V* ⊗ η. Das ist ein euklidisches
+    Element von SU(2) × SU(2) (Viertel auf V*, Halb auf η) und nie ein Lorentzelement.
+  - T′ gäbe {1, 1, i, −i}, die Orte aus z78 {1, 1, 1, 1}, das Quarterpaar {1, 1, −1, −1}.
+  - Im Suchprogramm ist die Regel „native R + lorentzverträglich + markiert“ leer.
+
+**Folgen:**
+- **3+1 lorentzsch folgt aus dem Quarterindex als Kinematik**, ohne T′: Quarteroszillatoren mit Tomita-Partner tragen
+  V ⊕ V̄*, Σ, die Lorentzgruppe, die Orte und den Kern. Ihre Himmelssphäre ist aber rund und trägt keine Marken.
+- **Der Quarterindex ist nicht das Nahtdublett.** Auf Fermionebene ist er das η-Dublett, der zweite Spinorfaktor von
+  H⁰(N) = V* ⊗ η.
+- **T′ ist nicht markenverträglich.** Mit der nativen Vierteldrehung verträgt sich nur die quaternionische (euklidische)
+  Realform; die lorentzsche Identifikation η = V̄* bricht sie. Das schärft die Blattblindheit aus z64: Es scheitert
+  schon die Vierteldrehung selbst, nicht nur das Deck.
+- **I_pos für die markierte Naht bleibt offen.** Die Marken liegen im Ladungssektor (K/π ≡ Q_a − Q_b mod 4), die Orte im
+  Oszillatorsektor, und beide faktorisieren (z58).
+- **Neuer offener Weg:** die Lorentzform per Osterwalder-Schrader-Rekonstruktion aus der nativen euklidischen Struktur
+  statt über T′. Nicht gerechnet.
+
+**z80 (29 Prüfungen; Agent, von mir reproduziert):**
+- **Korrektur von H6h37 [E].**
+  - z77 hatte die beiden Übergänge vertauscht. Richtig ist u_m(r) = Σ(m−j)w(r+j)/((m+1)W_m(r)) für „Teilchen hoch“ und
+    1 − u für „Loch runter“.
+  - Dann gilt die Zustandserhaltung exakt für jedes w: symbolisch für m = 2..10, numerisch mit Residuum 5·10⁻⁵¹ bei
+    allen Temperaturen.
+  - Die Formel der fünften Analyse ist genau das Lochgewicht. Der Vakuumgrenzfall ist z76, und die beschränkte Lösung ist
+    eindeutig.
+  - Der thermische Zweipfadkanal ist damit bei jeder Temperatur exakt zustandserhaltend.
+- **Petz thermisch.** Korrigiert ergibt sich (0; 1,9794; 1,9794; 2,0398) statt (0; 1,9802; 1,9802; 3,9589). Die Werte der
+  Analyse (0; 1,9864; 1,9864; 2,0281) sind nicht genau reproduziert (beste Variante 0,0117 daneben).
+- **Mischung verschobener Vakua (Analyse 8).**
+  - Sie gilt exakt für die Einteilchendaten (c, W_m, u_m, Kanalausgang). Kantenaufgelöst gibt Petz ℓ(ℓ+1) bei jeder
+    Temperatur.
+  - Der quasifreie Zustand ist nicht diese Mischung: Cov(n_x, n_y) = c(y)(1 − c(x)) statt 0.
+  - Der Anteil 1/(m+1) gilt nur als Zählidentität; der Mehrpaaranteil von J₋₁ ist (m−2)/(3m−2).
+- **Relativzustände.** ⟨X|Y⟩ = 1/det(I − (i/2)(Y − X)) = 4/(r² − (t+2i)²) (Fockraum, Fehler 1,1·10⁻⁹). Daraus folgt
+  s² = 4(1 − Re 1/K) = det(Y − X): Das Minkowski-Intervall ist aus dem Überlapp auslesbar. Das ist der ν = 1-Kern aus z74.
+- **Bekannt oder Standard:**
+  - Die Wurzel des Kerns ist nicht positiv (E[(det Q)²] = −3/16, Wallach-Menge; schon in z40, z41, z74).
+  - Zusammengesetzter Spin 2 eines freien Skalars ist ein Kontinuum s²/(240π) ohne Pol (wie z75).
+  - Spin-2-Ebenen-Wellen c⁴e^{ipx} sind lineare Standard-Spinorhelizität (wie z65).
+  - Die Jarlskog-Identitäten sind Standard; Flavour ist gelöst, TFPT-STAND §5 bleibt unverändert.
+  - Die Jacobson-Kette ist nicht hergeleitet (GRAV.NONCIRCULAR.01).
+- **Cl₂ aus der Vorzeichensymmetrie (bedingt).** Ist A → −A in derselben irreduziblen Darstellung implementiert, folgt
+  AB + BA = 0, also Cl₂(ℂ) = M₂(ℂ), τ = i und p = 1/2. Gegenüber z71 folgt p = 1/2 damit aus einer Symmetrie statt gesetzt
+  zu sein. Ein Zustand, der unter beiden Spiegelungen invariant ist, ist der Spurzustand.
+
+**Folge für (b) und (c):** Der thermische Kanal ist nicht mehr offen. Die Sphäre ℓ(ℓ+1) ist kantenaufgelöst bei jeder
+Temperatur exakt; über die Kante gemittelt ist sie leicht aufgespalten.
+
+## Davor: H6h39 — Mehrpunktantworten und Spin 2: gescoptes Negativ für „Graviton aus der Virasoro-Antwort“ (`z75`)
 
 **Bilanz:** unverändert 13 P und 7 L von 20. K13 ist präzisiert.
 
@@ -66,6 +142,10 @@ Mehrpunkt/Spin-2-Agent (z75) ist wieder gestartet.
   nicht nachgerechnet.
 
 ## Davor: H6h37 — Fünfte externe Analyse: der thermische Relativkanal, teilweise bestätigt (`z77`)
+
+**Korrektur (H6h40, z80):** Das Negativ unten beruht auf einer vertauschten Zuordnung in z77: Die Formel der Analyse ist
+das Gewicht „Loch runter“, nicht „Teilchen hoch“. Richtig zugeordnet ist der Kanal bei jeder Temperatur exakt
+zustandserhaltend, und Petz gibt (0; 1,9794; 1,9794; 2,0398). Der Text bleibt als Verlauf stehen.
 
 **Bilanz:** unverändert 13 P und 7 L von 20.
 

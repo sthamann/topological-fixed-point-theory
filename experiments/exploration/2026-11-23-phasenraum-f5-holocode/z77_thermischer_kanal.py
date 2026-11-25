@@ -1,5 +1,9 @@
 """Z77: Prüfung der fünften externen Analyse 'Der vollständige relative Antwortkanal' (24.11.).
 
+KORREKTUR (H6h40, z80): Teil 2 und Teil 3 setzen die Formel der Analyse als 'Teilchen hoch' ein; sie ist das Gewicht
+'Loch runter'. Richtig zugeordnet ist der Kanal bei jeder Temperatur exakt zustandserhaltend (z80). Die Rechnung
+bleibt als Verlauf unverändert.
+
 Teil 1  [J_-1, B_(r,m)] = B_(r,m+1) - B_(r-1,m+1) für B_(r,m) = psi*_(r+m) psi_r gilt als Operatoridentität auf dem vollen
         endlichen Fockraum (die Mehrpaaranteile kürzen sich im Kommutator).
 Teil 2  Thermischer Zweipfadkanal: Die Formel der Analyse p_m(r) = Summe_j (j+1) w(r+j)/((m+1) Summe_j w(r+j)) ist der
