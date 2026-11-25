@@ -1,7 +1,7 @@
 # TFPT: Was funktioniert, was fehlt, was eine vollständige Lösung wäre
 
 Kompakter Stand vom 20. November 2026, ergänzt am 23. und 24. November (Befunde 20.–24. November, Kandidat H6 bis
-H6h40, Leitlinie „Rekonstruktion statt Auswahl“ und Abschnitt 5), für Explorations- und Lösungssitzungen. Seit 24. November
+H6h41, Leitlinie „Rekonstruktion statt Auswahl“ und Abschnitt 5), für Explorations- und Lösungssitzungen. Seit 24. November
 liegen die Explorationszweige vom 20. November in main (Quaternionrahmen, Fibonacci-Uhr, Vertauschung und Auslese, fremde
 und operative Ursprünge, Projekt Genesis, die Vertragsserie vom 14./15. Oktober); ihre Befunde stehen in ihren Verzeichnissen
 unter `experiments/`. Nicht zusammengeführt ist `codex/c3-p1-p2-abgleich-20261105` (121 Konflikte mit dem heutigen Stand). Neuere Befunde stehen in den Atlasproblemen mit Datum
@@ -41,6 +41,9 @@ Erster Schritt (Z58):
 Offen sind der Tensorkanal und die Rekonstruktion von 3+1 aus 4D-Antworten. Z60 schärft das: Die Zahl der Richtungen
 ist die Spektraldimension (Weyl-Gesetz) einer Antwort. Die Quelle hat d = 1, die E₈-Naht kompakt und starr d = 8 = 4 + 4.
 Gebraucht wird eine originale Antwort mit d = 4, nichtkompakt und reflexionspositiv.
+
+**Gesamtstand und Strategien (Stand H6h41):** [`GESAMTSTAND-UND-STRATEGIEN.md`](GESAMTSTAND-UND-STRATEGIEN.md), mit
+Tor-Karte T1–T8, Kriterien K12–K20 und sieben Strategien (S1–S7).
 
 **Gesamtbild (Vogelperspektive, Stand H6h35):** [`VOGELPERSPEKTIVE.md`](VOGELPERSPEKTIVE.md).
 - H6h35, die Zusammenführung:
@@ -168,8 +171,8 @@ Ursprung sollte beides zugleich liefern.
 
 ### Kandidat H6: Ursprung von P1 aus einer hintergrundfreien Naht (Exploration 23.11.)
 
-Quelle: `experiments/exploration/2026-11-23-phasenraum-f5-holocode/VERDICT.md` (Stand H6h40),
-Skripte `n1`, `v1`, `y1`, `z1`–`z80`, Lean-Vertrag `experiments/theory-contracts/h6-exakte-teile-20261123/`; Atlasproblem `problem:c3-p1-p2-shared-origin-reconciliation`,
+Quelle: `experiments/exploration/2026-11-23-phasenraum-f5-holocode/VERDICT.md` (Stand H6h41),
+Skripte `n1`, `v1`, `y1`, `z1`–`z81`, Lean-Vertrag `experiments/theory-contracts/h6-exakte-teile-20261123/`; Atlasproblem `problem:c3-p1-p2-shared-origin-reconciliation`,
 Befunde mit Präfix `h6`. Nichts davon ist im Ledger befördert. Prüfstand mit 20 Kriterien (Stand H6h40): 13
 hergeleitet, 7 unter benannter Lesart, keines gescheitert, offen oder gesetzt. K12 (3+1) zählt seit der Leitlinie
 „Rekonstruktion statt Auswahl“ nur als Lesart: d = 4 folgt kinematisch, nicht aus den Antworten (Z60).
@@ -491,6 +494,10 @@ hergeleitet, 7 unter benannter Lesart, keines gescheitert, offen oder gesetzt. K
   - Analysen 7 und 8 (Z80, H6h40): Überlapp der Relativzustände 1/det(I − (i/2)(Y − X)), daraus s² = det(Y − X). Die Wurzel
     des Kerns ist nicht positiv (Wallach), zusammengesetzter Spin 2 hat keinen Pol, und Cl₂ folgt aus der
     Vorzeichensymmetrie (bedingt). [E/C]
+  - Vorprüfung (Z81, H6h41):
+    - R = i^(Q_a − Q_b), R² = (−1)^F: Die Uhr ist ein Spin-ℤ₄-Erzeuger. [E]
+    - Die Einteilchendaten sind die Saatfamilie {ρ_m, m ungerade} auf Fermipaaren. [E]
+    - Die Marken liegen über einem Punkt der physischen Windung. [E]
   - Instantonen (Z33): Unter Spin(10) hat ein Einheitsinstanton 4 Eltern- und 12
     Familiennullmoden; mit gesättigten Familiennullmoden entsteht Re[e^{iθ}Φ² C_fam], die Wand ist
     also auch im Kontinuum möglich, bei nackter SO(10) aber ~10⁻¹⁶⁴ unterdrückt. [N]

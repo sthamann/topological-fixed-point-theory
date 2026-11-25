@@ -7974,3 +7974,18 @@ Im H6-Ordner gerechnet, alles nachgeprüft und reproduziert:
   markiert“ ist leer. Die volle Suite hat 575 Tests, alle grün.
 
 **Prüfstand:** 13 P, 7 L. Atlas-Revision 5eee39379ee4d7407e9884ad. Ledger unverändert, nichts befördert.
+
+## H6H41-20261125 · Gesamtstand und Strategien zur Gesamtlösung; Vorprüfung
+
+`docs/research/GESAMTSTAND-UND-STRATEGIEN.md` fasst den ganzen Stand zusammen: gelöste Bausteine, Prüfstand, die
+Rekonstruktionskette z58–z81 und die Tor-Karte T1–T8. Es nennt drei Lehren und sieben Strategien.
+`z81_vorpruefung_strategien.py` (3 von 3) sichert drei Grundlagen exakt:
+- **Uhr.** R = i^(Q_a − Q_b), R² = (−1)^F: ein Spin-ℤ₄-Erzeuger, von derselben Art wie die ℤ₄ der Kette μ₄ → 16.
+- **Saatfamilie.** Die Einteilchendaten sind {ρ_m, m ungerade} auf den Fermipaaren (x, −x).
+- **Marken.** Sie liegen über einem Punkt der physischen Windung; die Uhr ist ihre Deckdrehung.
+
+**Strategien:** S1 Zwei Faktoren (innen Ladungsgitter, außen Oszillatoren), S2 radiale Quantisierung (Moden als
+Energiestufen, su(2,2) aus Kanal und Partner), S3 euklidisch zuerst mit OS, S4 Gravitation als Deformation des Außenraums
+(Gegenhypothese S4b), S5 Universalität und Flächennormierung, S6 Ursprung der Saat, S7 Szenario-Suche.
+
+**Prüfstand:** 13 P, 7 L. Atlas-Revision 28da028602102719b6fa129e. Ledger unverändert, nichts befördert.

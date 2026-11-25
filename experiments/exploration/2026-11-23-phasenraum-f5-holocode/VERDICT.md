@@ -1,6 +1,31 @@
 # Urteil
 
-## Aktueller Stand: H6h40 — Quarterindex als Dublett: kinematisch ja, Nahtdublett nein (`z79`); Analysen 7 und 8, Korrektur von H6h37 (`z80`)
+## Aktueller Stand: H6h41 — Gesamtstand und Strategien zur Gesamtlösung; Vorprüfung (`z81`)
+
+**Bilanz:** unverändert 13 P und 7 L von 20.
+
+**Auftrag:** den Gesamtstatus genauer erklären und neue Strategien zur Gesamtlösung entwickeln. Ergebnis:
+[`docs/research/GESAMTSTAND-UND-STRATEGIEN.md`](../../../docs/research/GESAMTSTAND-UND-STRATEGIEN.md).
+
+**Vorprüfung (z81, 3 Prüfungen, exakt):**
+- **Uhr.** R = e^{2πiL₀} = i^(Q_a − Q_b) auf allen Ladungssektoren, mit beliebigem Oszillatorinhalt. Daraus R² = (−1)^F und
+  R⁴ = 1: R ist ein Spin-ℤ₄-Erzeuger, von derselben Art wie die ℤ₄ der Kette μ₄ → 16.
+- **Saatfamilie.** Auf jedem Fermipaar (x, −x), x = m/4 mit ungeradem m, ist die normierte Kovarianz genau ρ_m. R wirkt
+  dort mit Quadrat −1. Die Einteilchendaten des Originals sind die Saatfamilie {ρ_m, m ungerade}.
+- **Marken.** Die vier Marken liegen über einem Punkt w = S⁴ = 1 der physischen Windung; die Uhr ist ihre Deckdrehung.
+
+**Strategien (im Dokument mit ersten Rechnungen, Erfolg und Abbruch):**
+- **S1 Zwei Faktoren:** innen das Ladungsgitter (Marken, Uhr, 16, E₈, Flavour), außen die Oszillatoren (Raumzeit),
+  Kopplung über Vertexoperatoren.
+- **S2 Radiale Quantisierung:** Die Moden sind Energiestufen eines Felds auf ℝ × S³. su(2,2) soll aus Zweipfadkanal und
+  Partner entstehen.
+- **S3 Euklidisch zuerst:** native Reflexion und Osterwalder–Schrader, als Fortsetzung von WOIT.OS.TWISTOR.01.
+- **S4 Gravitation als Deformation des Außenraums.** Gegenhypothese S4b: Marken = Weylkrümmung.
+- **S5 Universalität und Flächennormierung** aus der Verschränkung der Purifikation.
+- **S6 Ursprung der Saat ρ₁.**
+- **S7 Szenario-Suche** im Suchprogramm.
+
+## Davor: H6h40 — Quarterindex als Dublett: kinematisch ja, Nahtdublett nein (`z79`); Analysen 7 und 8, Korrektur von H6h37 (`z80`)
 
 **Bilanz:** unverändert 13 P und 7 L von 20. K12 ist präzisiert.
 
