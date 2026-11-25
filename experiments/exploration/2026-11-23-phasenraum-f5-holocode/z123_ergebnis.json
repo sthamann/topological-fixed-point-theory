@@ -1,0 +1,440 @@
+{
+ "checks": {
+  "[E] (a) Modell z85/z114: Die 16 Weyl-geordneten Bilineare E^al_be = (Z^al Z-quer_be + Z-quer_be Z^al)/2 erfüllen auf dem Sektor D = -2 die gl(4)-Relationen [E^a_b, E^c_d] = delta^a_d E^c_b - delta^c_b E^a_d (256 Paare, Defekt 2e-14); J (Tausch d <-> e) ist eine Involution, erhält die Stufe, kehrt D um und bildet die Homogenität n = -D - 2 auf -n - 4 ab (alle Zustände der Sektoren D = -4..4 bis Stufe 6). a (n = 0) und b (n = -4) sind genau ein J-Paar; je Stufe k haben beide (k + 1)(k + 3) Zustände ([3, 8, 15, 24]...). In der Konvention von z114 (n = D - 2) ist die Rolle von a und b vertauscht, die Paarung unten ist symmetrisch und davon unabhängig": true,
+  "[E] (b) omega(psi, phi) = <J psi|phi> = psi^T W phi ist bilinear und symmetrisch (Defekt 0e+00), paart a nur mit b (omega(a, a) = 0) und nur gleiche Stufen (außerhalb 0); je Stufe ist der Block eine Permutation, alle Singulärwerte 1 (Abweichung 0e+00, Ränge [3, 8, 15, 24, 35, 48, 63] = volle Dimension): nichtentartet, mit Betrag 1 auf Fock-normierten Zuständen. Negativkontrollen: Die Hilbertform <psi|phi> und die reine Konjugation psi^T phi verschwinden zwischen a und b (gemeinsame Basisvektoren 0, Matrix 0); erst J verbindet die beiden Sektoren": true,
+  "[E] (c) Exakte Operatoridentität für alle 16 Weyl-geordneten Erzeuger: J E^al_be J = -(E^(tau al)_(tau be))^+ mit tau = (1 3)(2 4) (Defekt 2e-15, beide Richtungen a <-> b, alle Eingänge bis Stufe 5). Gleichwertig: omega ist tau-verdreht invariant, omega(E psi, phi) + omega(psi, tau(E) phi) = 0, ohne Zentralterm (die Weyl-Ordnung nimmt die Verschiebung delta_(al be) auf)": true,
+  "[E negativ] (c) Die naive Aussage J X J = -X^+ (also omega(X psi, phi) + omega(psi, X phi) = 0) gilt für keinen der 16 Basis-Erzeuger einzeln (min. Defekt 4.00) und genau auf einem Unterraum der Dimension 8 (Rang 8), und dieser ist exakt der tau-symmetrische Teil x = tau x tau (Defekt 7e-16). Die Energie H = (N_d + N_e + 2)/2 ist tau-ungerade: omega(H psi, phi) + omega(psi, H phi) = 2E omega = 4 auf Stufe 0. No-go: Zwischen zwei Sektoren positiver Energie gibt es keine su(2,2)-invariante Bilinearform ((E + E') beta = 0 erzwingt beta = 0); T2s Formulierung J X J = -X^+ ist für su(2,2) unmöglich": true,
+  "[E] (c) Realform: tau ist genau Theta_(1,0,0,0) aus z84 (Defekt 0e+00), tau^2 = 1 und tau eta tau = -eta (antiisometrisch, nicht in U(2,2)). In den z85/z111-Koordinaten ist tau = diag(1, -1) auf (pi, omega), also omega -> -omega: die Punktspiegelung x -> -x (Defekt 5e-16); I_pi ist Eigenraum zu -1, I_omega zu +1 (Defekte 0e+00, 0e+00). Reelle Dimensionen: u(2,2) 16 = 8 (tau-gerade) + 8 (tau-ungerade); tau-gerade sind Lorentz, Dilatation und u(1) (der Stabilisator von I_pi und I_omega: True), tau-ungerade Translationen und spezielle konforme Abbildungen ({'Translation omega -> omega + a pi': 'ungerade', 'spezielle konforme pi -> pi + c omega': 'ungerade', 'Lorentz/Dilatation (blockdiagonal)': 'gerade'}; die Translation erhält I_pi, nicht I_omega: True, False). Also ist J die CPT-Abbildung der Leiter: J U(g) J = U(tau g tau), mit U(g) für Lorentz und Dilatation vertauschend, Translationen umkehrend": true,
+  "[E] (d) Klassifikation (Stufen <= 3, 50 x 50 = 2500 Unbekannte, alle 16 Erzeuger): sigma-verdreht invariante Bilinearformen beta(X psi, phi) + beta(psi, sigma(X) phi) = 0 zwischen a und b gibt es für sigma = id 0, für das innere, isometrische Ad eta 0, für das äußere, eta-umkehrende Ad tau genau 1, und die ist die Tomita-Paarung (Überlapp 1.000000000000). Ein anderes Bahnelement Theta_n (z84) gibt ebenfalls eine Form (Dimension 1), aber nicht omega (Überlapp 0.003): Die b-a-Kinetik ist bis auf den Faktor eindeutig, sobald die Spiegelung gewählt ist, und J gehört genau zu Theta_1 = tau": true,
+  "[E/L] (e) Čech-Bild (exakt, Brüche): Für alle 7225 Basispaare bis Stufe 4 ist omega(psi, phi) = Res(Č psi . tau^* Č phi), das Residuum bei (z1 z2 z3 z4)^-1 des Produkts der a-Klasse (Pole in z1, z2) mit der tau-gespiegelten b-Klasse (Pole in z3, z4) (Defekt 0e+00); ohne tau^* gibt es kein einziges Residuum (0). Die Residuenpaarung selbst ist exakt invariant: Res((E F) G) + Res(F (E G)) = 0 für alle 16 Weyl-geordneten Erzeuger -z^al d_be - delta/2 und sechs zufällige Paare F in H^1(O(0)), G in H^1(O(-4)) (Defekt 0, Res(F G) = ['7', '-14', '-10']...). Das ist die holomorphe sl(4,C)-Invarianz der Serre-Paarung O(0) x O(-4) -> O(-4) = K_PT, also (Lesart, eindeutig bis auf den Faktor) der On-shell-Gestalt von int D^3Z tr(b dbar a): Die Tomita-Paarung ist diese Paarung nach der Spiegelung tau = Theta_1": true,
+  "[E] (a) Kohärente Zustände Psi_W = exp(W_ab d_a^+ e_b^+) Psi_0 (Fockreihe bis Stufe 26, sechs zufällige komplexe W1, W2, u, v): Hilbertkerne <Psi_W1|Psi_W2> = det(1 - W1^+ W2)^-1 (Skalar) und 2 (v^T (1 - W1-quer W2^T)^-1 u-quer)^2/det(...) (D = +2), Tomitakerne omega(Psi_W1, Psi_W2) = det(1 - W1 W2)^-1 und omega(Psi^a_(W1,u), Psi^b_(W2,v)) = 2 (u^T (1 - W2 W1)^-1 v)^2/det(1 - W1 W2) (max rel. Abweichungen {'Hilbert D = 0': '2e-15', 'Tomita D = 0': '3e-16', 'Hilbert D = +2': '3e-15', 'Tomita a-b': '1e-15'}): Der Tomitakern ist holomorph in beiden Argumenten, der Hilbertkern antiholomorph im ersten": true,
+  "[E] (a) Das Čech-Bild des kohärenten Zustands ist der Elementarzustand von z111: Č(Psi_W) = 1/((z1 - (W z')_1)(z2 - (W z')_2)), z' = (z3, z4), also 1/((A.Z)(B.Z)) mit zwei Ebenen durch die Gerade {z = W z'} (Koeffizienten bis Stufe 6 gegen die Taylorreihe, Defekt 6e-17). Die Fock-Normierung (Omega <-> 1/(z1 z2)) legt die Büschelwahl fest, die in z111 offen war: <ab> = 1": true,
+  "[E] (b) OS-Struktur, ein Kern G und zwei Spiegelungen: J Psi_W = Psi_(W^+) (Fockreihe, Defekt 1e-17), also J = theta o tau mit theta: W -> W^-+ (in der Röhre Y -> Y^+, die Konjugation zwischen zukünftiger und vergangener Röhre; auf dem euklidischen Schnitt W = r u, u in SU(2), die radiale Inversion r u -> u/r, z84s reflexionspositive Spiegelung) und tau: W -> W^-1 (Y -> -Y; euklidisch r u -> u^+/r) (Defekt 9e-16). Die Hilbertform ist G an der theta-Spiegelung: -4 <Psi_Y1|Psi_Y2>/(det(Y1^+ - i) det(Y2 + i)) = 1/det(Y1^+ - Y2) (Defekt 1e-15); die Tomita-Paarung ist derselbe Kern an der tau-Spiegelung (unten). theta macht die positive Hilbertform (OS), tau = theta J die bilineare Kinetik; zurückgespiegelt bleibt in beiden Fällen der holomorphe Propagator G": true,
+  "[E] (b) Penrose-Transformation des Elementarzustands Č(Psi_W) auf der Geraden L_M = {z = M z'} (Konturintegral wie z111, 64 Punkte) mal det M ist für zwölf zufällige Paare (W, M) gleich der Tomita-Paarung omega(Psi_(tau.M), Psi_W) mit dem gespiegelten Punktzustand tau.M = M^-1 aus der Fockreihe (Verhältnis -1.000000+0.000000j, Streuung 1e-15): Die Auswertung am Punkt M ist die Tomita-Paarung mit dem tau-gespiegelten kohärenten Zustand. Ungespiegelte Lesart (Punkt = M^-1) streut um 2.73. Mit z111: Das ist der Cauchykern -1/(<ab> det(M - W)) mit <ab> = 1": true,
+  "[E] (b) Röhrenform (Fockreihe, acht Paare X1 in der unteren, X2 in der oberen Röhre): Nach Abzug der konformen Gewichte ist der OS-Kern G(X1, X2) = omega(Psi_(-X1), Psi_X2) genau 1/det(X1 - X2) (Defekt 7e-16) und im a-b-Sektor (u~ (X2 - X1)^-1 v~)^2/det(X1 - X2) mit u~ = (i - X1)^T u, v~ = (X2 + i) v (Defekt 4e-15); er hängt nur von X1 - X2 ab (gemeinsame komplexe Translation: 6e-16). Ungespiegelt (Orte Y1 = -X1, Y2) ist der Kern 1/det(Y1 + Y2) und nicht translationsinvariant (0.75): Erst die Rückspiegelung mit tau (= theta J) macht aus der Tomita-Paarung den Propagator, holomorph in beiden Punkten, zwischen vergangener und zukünftiger Röhre": true,
+  "[E] (c) CSW-Eichung mit Z* = (0, eta) auf I_pi (z111): Der Träger von dbar^-1 = int ds dt/(s t) t^4 delta-quer^4(Z* + s Z1 + t Z2) zwischen L_x und L_y ist das eine Punktpaar mit lambda_1 || lambda_2 (Defekt 4e-16) und s lambda_1 = -(x - y)^-1 eta (Defekt 2e-15); die holomorphe Jacobi-Determinante ist s t det(x - y) (Verhältnis -1.000-0.000j, Streuung 8e-16), mit t = -s also das Gewicht 1/det(x - y), der Cauchy-Penrose-Kern von z111. Der OS-Tomita-Kern des a-b-Sektors ist exakt (u~ . lambda*)^2/det(x - y) mit diesem lambda* bei eta = v~ (Streuung 2e-12); mit einer anderen Referenz streut das Verhältnis um 309.29. Kontrolle Z* außerhalb I_pi: lambda_1, lambda_2 nicht parallel (min |<l1 l2>| 0.19), lambda* nicht translationsinvariant (0.60). Der a-b-Kern hat also genau die Gestalt von dbar^-1 in CSW-Eichung (Gewicht 1/det(x - y), Auswertung bei lambda* = (x - y)^-1 eta), mit der b-Polarisation v~ als Referenz": true,
+  "[E] (d) Impulsraum: Mit D = u_A v_B d/dx_(AB) gilt exakt (u x^-1 v)^2/det x = D^2(1/det x)/2 (sympy), und die euklidische Fouriertransformation von 1/|x|^2 ist 4 pi^2/|P|^2 (Hankel, z111: P^2 FT = ['39.4784176044', '39.4784176044', '39.4784176044'], 4 pi^2 = 39.4784176044). Also ist der a-b-Kern im Impulsraum -2 pi^2 (u.P.v)^2/P^2 = -2 pi^2 <u lambda_P>^2/P^2 mit lambda_P = P|v]: genau der CSW-Propagator 1/P^2 mit der Off-shell-Fortsetzung P|eta] und eta = v; auf der Schale P = lambda lambda~ zerfällt der Zähler in <u lambda>^2 [lambda~ v]^2, das Produkt der beiden Helizitäts-Wellenfunktionen (Defekt 1e-13)": true,
+  "[E] (e) Faktorisierung legt die Normierung fest und nur sie: Für alle zehn 5-Punkt-NMHV-Lagen (je drei Kinematikpunkte, eta auf I_pi) ist A_CSW(N, c_V, g)/(c_V g^(n-2) A_BCFW) = c_V N exakt (Defekt 4e-12 über k = 1, 2, 3, c_V = +-1, N = +-1, 2), unabhängig von g: Das Niveau steckt ganz in g = -k^(-1/2) und kürzt sich aus N heraus. Der Nahtkoeffizient von z110 ist von dieser Form (sympy, n = 3..8): -k (-1)^n k^(-n/2) = c_V g^(n-2) mit c_V = -1, g = -k^(-1/2). Faktorisierung verlangt c_V N = 1. Das Vorzeichen ist Konvention: N = -1 ist dasselbe wie die Umphasung der negativen Helizität, A -> (-1)^(n_- - 2) A (alle 20 Lagen, Defekt 3e-13); physikalisch ist |c_V N| = 1": true,
+  "[E/C] (e) Native Kandidaten für |N| bei |c_V| = 1 (z110 unter P_norm): Die Tomita-Paarung gibt |N| = 1, weil J antiunitär ist (alle Singulärwerte 1, Teil 1b); ihre Phase legt J Omega = Omega fest (e^(i theta) J verletzt das für theta != 0: [0.0, 0.495, 2.0]), betrifft aber nur das konventionelle Vorzeichen. Erfüllt: ['Tomita (J antiunitär, J Omega = Omega)', 'Niveau k = 1 im Propagator']. Die KMS-Gewichte scheitern: modular q^(+-2) = e^(-+4 pi) = 3.49e-06 bzw. 2.87e+05, an der Naht 1 - c(1/4) = 0.9586, und die thermische Bildsumme auf S^1_(4 pi) x S^3 (z84) weicht ortsabhängig vom Vakuumkern ab (['2.4e-06', '4.2e-05', '4.8e-04', '1.0e-02']), ist also gar kein konstanter Faktor. Die Uhr ist auf a und b gleich 1 (D = -2: [1.0], D = +2: [1.0], Skalar D = 0: [-1.0]) und gibt weder Betrag noch Vorzeichen. Das Niveau kürzt sich (k = 1 erfüllt nur zufällig, k = 2 nicht). 4 pi^2 aus z111 ist das Fouriermaß, keine Zustandsnormierung: Im Ortsraum hat der kohärente Kern den Faktor -1/4, das kanonisch normierte Feld 1/(4 pi^2), ihr Verhältnis pi^2 ist die Feldnormierung des Punktzustands": true,
+  "[E/C] (a) Zusammenbau mit der nativen Paarung (Vertizes c_V g^(n-2) PT unter T und P_N4 mit g = -1 aus k = 1, Austausch = OS-Tomita-Kern: a <-> b, N = 1, lambda_P = P eta mit eta aus I_pi): Alle 6 MHV- und 4 Dreiminus-Lagen bei vier Punkten und alle 10 MHV- und 10 NMHV-Lagen bei fünf Punkten (je drei Kinematikpunkte, je drei eta) stimmen mit BCFW (Kopplung g^(n-2)) überein: max rel. 4e-13; die Dreiminus-Amplituden bei vier Punkten verschwinden durch Aufhebung zweier Austauschdiagramme (Rest 3e-14 der Diagrammgröße), MHV hat keine Austauschdiagramme ([0]), 5-Punkt-NMHV [4, 5] je Lage und ist die Anti-MHV-Formel [ab]^4/([12]...[51]) (4e-14); die Summe hängt nicht von eta ab (3e-14). Vorzeichenkonvention: Die Orientierung des P_N4-Maßes nimmt das Schleifenvorzeichen c_V = -1 aus z110 auf (Teil 2e)": true,
+  "[E negativ] (b) Falsche Paarungen scheitern. Paarung ohne J (die Hilbertform bzw. psi^T phi lebt nur innerhalb eines Sektors, a mit a und b mit b, also gleiche Helizitätsmarke an beiden Enden): MHV bekommt unechte Austauschdiagramme ([2, 4] je Lage; 4 Punkte [1, 2]) und verfehlt Parke-Taylor um 15.4 bis 5.2e+08, NMHV verliert alle Diagramme ([0]) und gibt 0 (Abweichung 1.00). Ungespiegelte Tomita-Paarung (ohne tau: Kern G(x + y), Impulsträger P_L = P_R gegen P_L = -P_R): kein Austauschdiagramm überlebt ([0]), NMHV = 0 (Abweichung 1.00); MHV bleibt richtig, weil es keinen Austausch braucht (2e-14)": true,
+  "[E negativ] (c) Falsche Normierungen verfehlen alle NMHV-Lagen um genau |N - 1|: KMS modular 1.0000, KMS der Naht 0.0414, Fouriermaß 4 pi^2 38.48, N = -1 ohne Umphasung 2.00. Eine eigene Referenz je Austausch (die b-Polarisation v~ des Tomita-Kerns lokal statt eines globalen Punktes auf I_pi) verfehlt um 0.24 bis 1629.68: Die Tomita-Kinetik braucht zusätzlich die globale CSW-Eichung aus I_pi (z111)": true
+ },
+ "befunde": {
+  "Teil 1: Die Tomita-Paarung ist die native a-b-Kinetik bis auf die Spiegelung tau. omega = <J psi|phi> ist nichtentartet mit Betrag 1 je Stufe und verbindet genau Homogenität 0 mit -4. Die richtige Realform-Aussage ist J E J = -(tau E tau)^+ für alle 16 Erzeuger mit tau = Theta_1 (z84) = Punktspiegelung x -> -x; J ist die CPT-Abbildung der Leiter. Naiv invariant ist omega nur unter Lorentz + Dilatation + u(1) (Dimension 8), und eine unverdrehte su(2,2)-invariante Paarung zwischen Sektoren positiver Energie gibt es nicht (No-go); die verdrehte gibt es genau einmal, und sie ist omega. Im Čech-Bild ist omega die Residuen-(Serre-)Paarung O(0) x O(-4) nach tau^*, die exakt sl(4)-invariant und bis auf den Faktor eindeutig ist, also (Lesart) die On-shell-Gestalt von int tr(b dbar a)": true,
+  "Teil 2: Die OS-Struktur macht aus der Tomita-Paarung den Propagator: J = theta o tau, die Hilbertform ist der Kern G an der OS-Spiegelung theta, die Tomita-Paarung derselbe Kern an tau. Die Penrose-Transformation ist die Tomita-Paarung mit dem tau-gespiegelten Punktzustand; in der Röhre ist der Kern 1/det(X1 - X2) (Skalar) bzw. (u~ (X2 - X1)^-1 v~)^2/det(X1 - X2) (a-b), translationsinvariant; das ist z111s Cauchykern mit <ab> = 1 und, für a-b, genau die Gestalt von dbar^-1 in CSW-Eichung mit eta = v~ (delta-quer-Lokalisierung, Gewicht 1/det(x - y)); im Impulsraum <u lambda_P>^2/P^2 mit lambda_P = P|v]. Die Normierung ist kein freier Parameter: Faktorisierung verlangt |c_V N| = 1, und |N| = 1 kommt aus der Antiunitarität von J (unter P_norm, |c_V| = 1). Niveau (kürzt sich), KMS (e^(-+4 pi), 0,959), Uhr (trivial auf a und b) und Tomita-Phase (nur Vorzeichenkonvention) fixieren den Betrag nicht": true
+ },
+ "zahlen": {
+  "modell": {
+   "Stufendimensionen D = -2, +2 (k = 0..6)": {
+    "-2": [
+     3,
+     8,
+     15,
+     24,
+     35,
+     48,
+     63
+    ],
+    "2": [
+     3,
+     8,
+     15,
+     24,
+     35,
+     48,
+     63
+    ]
+   },
+   "gl(4)-Relationen (256 Paare, innen)": 1.7763568394002505e-14,
+   "Zustände je Sektor bis Stufe 6": 196
+  },
+  "nichtentartung": {
+   "Singulärwerte je Stufe - 1 (max)": 0.0,
+   "Rang je Stufe": [
+    3,
+    8,
+    15,
+    24,
+    35,
+    48,
+    63
+   ],
+   "omega(a, a)": 0.0,
+   "Hilbert <a|b>: gemeinsame Basisvektoren": 0,
+   "reine Konjugation psi^T phi zwischen a und b": 0.0
+  },
+  "realform": {
+   "J E J + (tau E tau)^+ (16 Erzeuger, max)": 1.7763568394002505e-15,
+   "naiv J X J = -X^+: Rang, Kern": [
+    8,
+    8
+   ],
+   "Kern tau-symmetrisch (Defekt)": 6.661338147750939e-16,
+   "naiver Defekt je Basis-Erzeuger (min)": 4.0,
+   "Energie: omega(H psi, phi) + omega(psi, H phi) auf Stufe 0": 4.0,
+   "Energie E auf Stufe 0": 2.0
+  },
+  "tau": {
+   "tau^2 - 1": 0.0,
+   "tau eta tau + eta": 0.0,
+   "tau - Theta_(1,0,0,0)": 0.0,
+   "tau in (pi, omega)": [
+    [
+     1.0,
+     0.0,
+     -0.0,
+     0.0
+    ],
+    [
+     0.0,
+     1.0,
+     0.0,
+     -0.0
+    ],
+    [
+     -0.0,
+     0.0,
+     -1.0,
+     0.0
+    ],
+    [
+     0.0,
+     -0.0,
+     0.0,
+     -1.0
+    ]
+   ],
+   "I_pi Eigenwert -1 (Defekt)": 0.0,
+   "I_omega Eigenwert +1 (Defekt)": 0.0,
+   "x -> -x (Defekt)": 4.761397251272158e-16,
+   "reelle Dimensionen u(2,2), tau-gerade, tau-ungerade": [
+    "16",
+    "8",
+    "8"
+   ],
+   "Parität der Erzeuger": {
+    "Translation omega -> omega + a pi": "ungerade",
+    "spezielle konforme pi -> pi + c omega": "ungerade",
+    "Lorentz/Dilatation (blockdiagonal)": "gerade"
+   },
+   "Lorentz erhält I_pi, I_omega; Translation erhält I_pi; Translation erhält I_omega": [
+    "True",
+    "True",
+    "False"
+   ]
+  },
+  "klassifikation": {
+   "sigma = id": {
+    "Dimension": 0,
+    "Überlapp mit omega": null,
+    "Spektrallücke": 0.1877934272300465,
+    "Gleichungen x Unbekannte": [
+     32704,
+     2500
+    ]
+   },
+   "sigma = Ad eta (inner, Isometrie)": {
+    "Dimension": 0,
+    "Überlapp mit omega": null,
+    "Spektrallücke": 0.1877934272300465,
+    "Gleichungen x Unbekannte": [
+     32704,
+     2500
+    ]
+   },
+   "sigma = Ad tau (Theta_1)": {
+    "Dimension": 1,
+    "Überlapp mit omega": 0.9999999999999994,
+    "Spektrallücke": 0.04614148969964105,
+    "Gleichungen x Unbekannte": [
+     30400,
+     2500
+    ]
+   },
+   "sigma = Ad Theta_n (n zufällig auf S^3)": {
+    "Dimension": 1,
+    "Überlapp mit omega": 0.0030610195350715876,
+    "Spektrallücke": 0.04614148969964058,
+    "Gleichungen x Unbekannte": [
+     30400,
+     2500
+    ]
+   }
+  },
+  "cech": {
+   "omega - Res(Č psi . tau^* Č phi) (max, Paare)": [
+    0.0,
+    7225
+   ],
+   "Res ohne tau^*: Paare mit Residuum": 0,
+   "Invarianzdefekt Res(E F G) + Res(F E G) (exakt)": "0",
+   "Res(F G) der Stichproben": [
+    "7",
+    "-14",
+    "-10",
+    "-15",
+    "-13",
+    "-1"
+   ]
+  },
+  "kohaerent": {
+   "Hilbert D = 0": 1.8917599470894454e-15,
+   "Tomita D = 0": 3.3307891627086205e-16,
+   "Hilbert D = +2": 3.2302608487354595e-15,
+   "Tomita a-b": 1.1469101008619257e-15,
+   "Stufen der Reihe": 26
+  },
+  "elementarzustand": 5.721958498152797e-17,
+  "os_struktur": {
+   "J Psi_W - Psi_(W^+) (Fock)": 1.3877787807814457e-17,
+   "Hilbertkern gegen 1/det(Y1^+ - Y2)": 1.4874131295125643e-15,
+   "theta(r u) = u/r, tau(r u) = u^+/r (Defekt)": 8.886119947416683e-16
+  },
+  "penrose_gegen_tomita": {
+   "Verhältnis (gespiegelt)": "(-1+0j)",
+   "Streuung gespiegelt": 1.1352539890152929e-15,
+   "Streuung ungespiegelt": 2.7289616327912185
+  },
+  "roehre": {
+   "g det(X1 - X2) - 1": 6.714518359601267e-16,
+   "a-b gegen (u~ (X2 - X1)^-1 v~)^2/det": 4.378177539522682e-15,
+   "Translation gespiegelt": 5.619450044721468e-16,
+   "Translation ungespiegelt": 0.7507069960030243
+  },
+  "csw_lokalisierung": {
+   "parallel (I_pi)": 3.8985622466845e-16,
+   "lambda* - (x - y)^-1 eta": 1.7763568394002505e-15,
+   "Jacobi/(s t det(x - y))": "(-1-0j)",
+   "Jacobi-Streuung": 8.238056723600277e-16,
+   "a-b-Kern/((u~.lambda*)^2/det)": "(1+0j)",
+   "Streuung (eta = v~)": 2.393479640143888e-12,
+   "Streuung (eta zufällig)": 309.2877003745912,
+   "min |<l1 l2>| außerhalb I_pi": 0.1857077999562036,
+   "Translationsdefekt außerhalb I_pi": 0.6016612074855682
+  },
+  "impulsraum": {
+   "D^2(1/det x) = 2 (v^T x^-1 u)^2/det x (sympy)": true,
+   "P^2 FT[1/|x|^2] für |P| = 0.5, 1, 2": [
+    39.4784176044,
+    39.4784176044,
+    39.4784176044
+   ],
+   "4 pi^2": 39.4784176044,
+   "On-shell-Faktorisierung (u P v)^2 = <u l>^2 [l~ v]^2": 1.2710574864626038e-13
+  },
+  "faktorisierung": {
+   "z110: -k (-1)^n k^(-n/2) = -(-k^(-1/2))^(n-2), n = 3..8": true,
+   "A_CSW/(c_V g^(n-2) A_BCFW) = c_V N (max Defekt, k = 1, 2, 3; c_V, N = +-1, 2)": 3.5031135342594234e-12,
+   "Umphasung: N = -1 <=> (-1)^(n_- - 2) (max rel.)": 2.6028450482406074e-13,
+   "Beispiele (k, c_V, N) -> Verhältnis": {
+    "(1, 1.0, 1.0)": "(1-0j)",
+    "(1, 1.0, -1.0)": "(-1+0j)",
+    "(1, 1.0, 2.0)": "(2-0j)",
+    "(1, -1.0, 1.0)": "(-1-0j)",
+    "(1, -1.0, -1.0)": "(1-0j)",
+    "(1, -1.0, 2.0)": "(-2+0j)"
+   }
+  },
+  "native_kandidaten": {
+   "|N|": {
+    "Tomita (J antiunitär, J Omega = Omega)": 1.0,
+    "KMS modular Delta^(1/2) = q^D auf b": 3.487342e-06,
+    "KMS modular Delta^(-1/2)": 286751.31313665316,
+    "KMS der Naht 1 - c(1/4)": 0.958576167834,
+    "Niveau k = 1 im Propagator": 1.0,
+    "Niveau k = 2 im Propagator": 2.0,
+    "z111 4 pi^2": 39.478417604357
+   },
+   "|c_V N| = 1 erfüllt": {
+    "Tomita (J antiunitär, J Omega = Omega)": true,
+    "KMS modular Delta^(1/2) = q^D auf b": false,
+    "KMS modular Delta^(-1/2)": false,
+    "KMS der Naht 1 - c(1/4)": false,
+    "Niveau k = 1 im Propagator": true,
+    "Niveau k = 2 im Propagator": false,
+    "z111 4 pi^2": false
+   },
+   "Uhr Z_SU = exp(i pi (E + 2 J3_R)) je Sektor D": {
+    "-2": [
+     1.0
+    ],
+    "0": [
+     -1.0
+    ],
+    "2": [
+     1.0
+    ]
+   },
+   "|e^(i theta) - 1| (J_theta Omega = Omega?)": {
+    "0.0": 0.0,
+    "0.5": 0.4948079185090459,
+    "3.141592653589793": 2.0
+   },
+   "Ortsraum: kohärenter Kern -1/4, kanonisch 1/(4 pi^2), Verhältnis": 9.8696044011,
+   "thermische Bildsumme bei beta = 4 pi / Vakuum - 1 (z84, vier Punkte)": [
+    2.4462e-06,
+    4.2172e-05,
+    0.00047837,
+    0.010033
+   ]
+  },
+  "zusammenbau_nativ": {
+   "n = 4, negative = 3": {
+    "max rel. Abweichung": 2.8e-14,
+    "eta-Streuung": 2.9e-14,
+    "Austauschdiagramme": [
+     2
+    ],
+    "Fälle": 12
+   },
+   "n = 4, negative = 2": {
+    "max rel. Abweichung": 3.1e-14,
+    "eta-Streuung": 0.0,
+    "Austauschdiagramme": [
+     0
+    ],
+    "Fälle": 18
+   },
+   "n = 5, negative = 3": {
+    "max rel. Abweichung": 3.61e-13,
+    "eta-Streuung": 1.1e-14,
+    "Austauschdiagramme": [
+     4,
+     5
+    ],
+    "Fälle": 30
+   },
+   "n = 5, negative = 2": {
+    "max rel. Abweichung": 1.8e-14,
+    "eta-Streuung": 0.0,
+    "Austauschdiagramme": [
+     0
+    ],
+    "Fälle": 30
+   },
+   "5-Punkt-NMHV gegen Anti-MHV-Formel": 4.3e-14
+  },
+  "kontrollen_paarung": {
+   "hilbert, n = 4, negative = 2": {
+    "max": 787534.417348,
+    "min": 0.0,
+    "Diagramme": [
+     1,
+     2
+    ]
+   },
+   "hilbert, n = 4, negative = 3": {
+    "max": 0.0,
+    "min": 0.0,
+    "Diagramme": [
+     0
+    ]
+   },
+   "hilbert, n = 5, negative = 2": {
+    "max": 519616573.71112,
+    "min": 15.4125,
+    "Diagramme": [
+     2,
+     4
+    ]
+   },
+   "hilbert, n = 5, negative = 3": {
+    "max": 1.0,
+    "min": 1.0,
+    "Diagramme": [
+     0
+    ]
+   },
+   "ungespiegelt, n = 4, negative = 2": {
+    "max": 0.0,
+    "min": 0.0,
+    "Diagramme": [
+     0
+    ]
+   },
+   "ungespiegelt, n = 4, negative = 3": {
+    "max": 0.0,
+    "min": 0.0,
+    "Diagramme": [
+     0
+    ]
+   },
+   "ungespiegelt, n = 5, negative = 2": {
+    "max": 0.0,
+    "min": 0.0,
+    "Diagramme": [
+     0
+    ]
+   },
+   "ungespiegelt, n = 5, negative = 3": {
+    "max": 1.0,
+    "min": 1.0,
+    "Diagramme": [
+     0
+    ]
+   }
+  },
+  "kontrollen_normierung_referenz": {
+   "KMS modular e^(-4 pi)": [
+    0.999997,
+    0.999997
+   ],
+   "KMS der Naht 1 - c(1/4)": [
+    0.041424,
+    0.041424
+   ],
+   "Fouriermaß 4 pi^2": [
+    38.478418,
+    38.478418
+   ],
+   "Tomita-Phase pi (N = -1) ohne Umphasung": [
+    2.0,
+    2.0
+   ],
+   "Referenz je Austausch (min, max)": [
+    0.241974,
+    1629.680072
+   ]
+  },
+  "status": {
+   "Paarung": [
+    "E",
+    "omega = <J psi|phi> nichtentartet zwischen a (n = 0, D = -2) und b (n = -4, D = +2), Betrag 1 je Stufe, symmetrisch; Hilbertform und reine Konjugation verbinden a und b nicht"
+   ],
+   "Realform": [
+    "E",
+    "J E J = -(tau E tau)^+ für alle 16 Weyl-geordneten Erzeuger; tau = Theta_1 (z84) = Punktspiegelung x -> -x, J = CPT der Leiter; naiv invariant nur Lorentz + Dilatation + u(1) (8); No-go für unverdrehte Invarianz"
+   ],
+   "Eindeutigkeit": [
+    "E",
+    "verdreht invariante a-b-Formen: id 0, Ad eta 0, Ad tau 1 (= omega), Ad Theta_n 1 (nicht omega)"
+   ],
+   "Čech-Bild": [
+    "E/L",
+    "omega = Res(Č psi . tau^* Č phi) exakt; die Residuen-(Serre-)Paarung O(0) x O(-4) ist exakt sl(4)-invariant und bis auf den Faktor eindeutig, also die On-shell-Gestalt von int D^3Z tr(b dbar a) (Lesart)"
+   ],
+   "OS-Fortsetzung": [
+    "E",
+    "J = theta o tau (theta: OS-Spiegelung, euklidisch radiale Inversion); Hilbertform = G o theta, omega = G o tau; Penrose-Transformation = omega mit gespiegeltem Punktzustand; Röhrenkern 1/det(X1 - X2) bzw. (u~ (X2 - X1)^-1 v~)^2/det(X1 - X2), translationsinvariant; ungespiegelt 1/det(Y1 + Y2) nicht"
+   ],
+   "CSW-Propagator": [
+    "E",
+    "dbar^-1 in CSW-Eichung zwischen L_x, L_y: Träger lambda* = (x - y)^-1 eta, Gewicht 1/det(x - y); a-b-Kern hat genau diese Gestalt mit eta = v~; Impulsraum <u lambda_P>^2/P^2, lambda_P = P|v]; eine globale Referenz (I_pi) ist zusätzlich nötig"
+   ],
+   "Normierung": [
+    "E/C",
+    "Faktorisierung: c_V N = 1, Vorzeichen = Umphasung; |N| = 1 aus der Antiunitarität von J, |c_V| = 1 unter P_norm (z110); Niveau kürzt sich, KMS e^(-+4 pi) bzw. 0,959 falsch, Uhr trivial, Tomita-Phase nur Konvention, 4 pi^2 Fouriermaß"
+   ],
+   "Zusammenbau": [
+    "E/C",
+    "CSW = BCFW für alle 4- und 5-Punkt-MHV- und NMHV-Lagen mit nativer Paarung, unter T (Vertizes), P_N4 (Zähler, Orientierung nimmt c_V = -1 auf) und P_norm; Hilbert- und ungespiegelte Paarung, falsche Normierung und lokale Referenz scheitern"
+   ],
+   "Austausch selbst": [
+    "O",
+    "dass zwischen zwei Nähten tatsächlich ein gaußsches Feld mit dieser Kovarianz ausgetauscht wird, liefert keine native Struktur (z111: gemeinsame CAR ohne Kreuzkern); Prämisse P_X statt P_BF"
+   ]
+  }
+ },
+ "urteil": "Die Kinetik des Austauschfeldes ist nativ bis auf die Spiegelung, und die Spiegelung ist selbst nativ: Die Tomita-Paarung omega(psi, phi) = <J psi|phi> ist die b-a-Kinetik, aber nicht in der Form J X J = -X^+, die für su(2,2) unmöglich ist (zwischen zwei Sektoren positiver Energie gibt es keine invariante Bilinearform). Exakt gilt J E J = -(tau E tau)^+ für alle 16 Weyl-geordneten Erzeuger, mit tau = Theta_1 aus z84, der Punktspiegelung x -> -x; J ist die CPT-Abbildung der Leiter, naiv invariant nur unter Lorentz, Dilatation und u(1). Die tau-verdreht invariante a-b-Form ist eindeutig und gleich omega (innere Verdrehung oder keine: 0 Lösungen, anderes Theta_n: eine andere Form), sie ist nichtentartet mit Betrag 1 je Stufe, und im Čech-Bild ist sie genau die Residuen-(Serre-)Paarung O(0) x O(-4) nach tau^*, die exakt sl(4)-invariant ist, also (Lesart, eindeutig bis auf den Faktor) die On-shell-Gestalt von int D^3Z tr(b dbar a). Die OS-Fortsetzung liefert den Propagator: J = theta o tau mit der OS-Spiegelung theta (Röhrenkonjugation, euklidisch die radiale Inversion aus z84); die Hilbertform ist der holomorphe Kern G an der theta-Spiegelung, die Tomita-Paarung derselbe Kern an der tau-Spiegelung. Die Penrose-Transformation ist die Tomita-Paarung mit dem tau-gespiegelten Punktzustand, in der Röhre ist der Kern 1/det(X1 - X2) (z111s Cauchykern, jetzt mit der Büschelnormierung <ab> = 1 aus der Fock-Normierung) und im a-b-Sektor (u~ (X2 - X1)^-1 v~)^2/det(X1 - X2), genau die Gestalt von dbar^-1 in CSW-Eichung zwischen zwei Geraden (Träger lambda* = (x - y)^-1 eta, Gewicht 1/det(x - y)) mit der Referenz eta = b-Polarisation; im Impulsraum <u lambda_P>^2/P^2 mit lambda_P = P|v] (4 pi^2/P^2 aus z111 ist nur das Fouriermaß). Die Normierung ist kein freier Parameter mehr: Faktorisierung verlangt c_V N = 1, das Vorzeichen ist eine Umphasung der negativen Helizität, und |N| = 1 folgt aus der Antiunitarität von J, sobald die Vertexzustände Fock-normiert sind (P_norm aus z110, |c_V| = 1). Von den vorgeschlagenen nativen Größen fixiert keine den Betrag: Das Niveau kürzt sich (es bestimmt nur g = -k^(-1/2)), die KMS-Gewichte geben e^(-+4 pi) bzw. 1 - c(1/4) = 0,959 und scheitern, die Uhr ist auf a und b gleich 1, die Tomita-Phase legt J Omega = Omega nur das konventionelle Vorzeichen fest. Zusammengebaut (Nahtvertizes unter T und P_N4, Tomita-Kinetik, I_pi-Eichung) entsteht CSW exakt: alle 4- und 5-Punkt-MHV- und NMHV-Lagen stimmen mit BCFW überein, die Dreiminus-Amplituden bei vier Punkten heben sich weg, die Summe ist eta-unabhängig. Die Paarung ohne J (Hilbertform innerhalb eines Sektors, gleiche Helizität an beiden Enden) erzeugt unechte MHV-Diagramme und tötet NMHV, die ungespiegelte Tomita-Paarung hat den falschen Impulsträger, eine lokale Referenz je Austausch scheitert. Urteil: bedingt nativ mit benannten Prämissen. Nativ (E) sind Form, Eindeutigkeit, Spiegelung und Propagator, der Betrag der Normierung unter P_norm (E/C); Prämissen bleiben T (Naht = Gerade, Vertizes), P_N4 (Zähler, dessen Orientierung das Vorzeichen aufnimmt), P_norm und neu P_X: dass zwischen zwei Nähten tatsächlich ein freies Feld mit dieser Kovarianz ausgetauscht wird; die gemeinsame CAR hat weiterhin keinen Kreuzkern (z111). P_BF aus z111 schrumpft damit auf P_X: Kinetik und Normierung sind nicht mehr frei. Folgen: K15 bleibt L, präzisiert: Yang-Mills-Bäume = Nahtvertizes (T, P_N4) + Tomita-Kinetik (nativ) + I_pi (nativ) + P_X. Die Szenarioachse Wechselwirkung behält den bedingten Wert 'CSW-Komposition', jetzt mit den Prämissen T, P_N4, P_norm, P_X und ohne freie Normierung. Nichts ist befördert."
+}

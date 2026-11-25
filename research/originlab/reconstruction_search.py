@@ -1005,6 +1005,20 @@ EVIDENCE = [
      "of the clock, equivalently the Z4 mutual phase i^(Q_A Q_B); with the free energy the gate is trivial, so it needs "
      "the spin-blind charge energy as native seam response; continuum and cubic vertex open",
      lambda d: _check_named(d, "Transferdrehung B_theta") and _check_named(d, "Auf dem Sektor N = 2")),
+    # H6h50: wave V (z121, z123, z124)
+    ("interaction", "local coherent transfer gate", "conditional", "z121_ergebnis.json", "natively trivial: E^nat is "
+     "one-body in all four readings of the seam modes; under P_null (composition sees only the charge lattice) the gate is "
+     "the square root of the seam exchange, U^2 = -Gamma(pi); only theta = pi/2 is forced, every phase is leak-free and "
+     "gives the XXX family R(u), u = 1 needs P_viertel; the brickwork is the integrable Destri-de Vega light-cone lattice "
+     "(su(2)_1 reading); three seams give a T-odd f-channel c s_A.(s_B x s_C), no production, no phi^3",
+     lambda d: _check_named(d, "Vier Lesarten der zwei Moden je Naht") and _check_named(d, "Inhomogene Transfermatrix")
+     and _check_named(d, "Drei Nähte A, B, C")),
+    ("interaction", "twistor action from seam currents (T)", "conditional", "z124_ergebnis.json", "the kinetic half is "
+     "native in form, uniqueness and normalisation modulus: the Tomita pairing with J E J = -(tau E tau)^+ gives the CSW "
+     "propagator and CSW = BCFW (z123), leaving P_X; the numerator <ij>^4 has no native source (no native degree twist, the "
+     "Pati-Salam quartet lacks homogeneity +1), and the multi-trace sector is conformal supergravity of equal strength "
+     "(z124): pure Yang-Mills is not natively reachable on this route",
+     lambda d: _check_named(d, "Ladungsanomalie im gaußschen") and _check_named(d, "Der native Doppelspuranteil bei n = 4")),
 ]
 
 # results that feed a clause instead of an axis value: (clause, result file, meaning, predicate)
@@ -1016,6 +1030,101 @@ CLAUSE_EVIDENCE = [
      "P_RJ and its mirror are J-covariant; under T, P_GSO, K2 and P_RJ the net index is 3 per 16",
      lambda d: _check_named(d, "Alle 256 Linienregeln") and _check_named(d, "Nullmodenzählung je 16 unter P_RJ")),
 ]
+
+
+# H6h50: the premises a scenario still rests on. Each value names what its reading assumes (a supported value only if it
+# needs one); a conditional value without entry keeps its own name, so nothing drops out silently. One bit under two
+# names counts once (P_IF = P_glue, z117, z122). A recorded implication replaces a premise when its result holds.
+VALUE_PREMISES = {
+    ("spinor_index", "step type"): ("I_step",),
+    ("marks", "internal spin-Z4"): ("P_lift",),
+    ("time", "parabolic Wiesbrock"): ("P_vac",),
+    ("time", "OS reconstruction"): ("P_vac",),
+    ("time", "radial conformal"): ("I_step",),
+    ("modes", "energy levels"): ("I_step",),
+    ("gravity", "P0-graded two-seam composition"): ("P_G", "P_curv"),
+    ("gravity", "MacDowell-Mansouri: modular Cartan connection"): ("P_R", "P_pair", "P_G", "P_curv"),
+    ("gravity", "double copy of seam amplitudes (P_diag)"): ("T", "P_diag", "P_G"),
+    ("origin", "seed rho_1 + spin-Z4"): ("A*", "P_sym"),
+    ("origin", "two binary observations"): ("A*", "P_sym"),
+    ("statistics", "clock-twisted lift (P_GSO)"): ("P_CAR", "P_GSO"),
+    ("statistics", "Z4 glue on the spinor module (P_glue)"): ("P_IF",),
+    ("interaction", "chosen two-body term"): ("P_2body",),
+    ("interaction", "twistor action from seam currents (T)"): ("T", "P_N4", "P_norm", "P_X"),          # z123, z124
+    ("interaction", "local coherent transfer gate"): ("P_null", "P_viertel", "P_ord"),               # z121
+}
+CLAUSE_PREMISES = {"twistor_line_index": ("T", "K2", "P_RJ")}
+# (condition on the scenario, premise replaced, replacement, result file, meaning, predicate on the result json)
+IMPLICATIONS = [
+    (lambda sc: True, "P_RJ", ("P_IF",), "z122_ergebnis.json", "the native pairing P_IF forces the line rule P_RJ with "
+     "fixed sign (256 -> 16 -> 3 -> 1 rules)",
+     lambda d: _check_named(d, "[E, bedingt] Native Paarung als Bedingung") and _check_named(d, "[E unter P_IF] Vorzeichen")),
+    (lambda sc: sc["interaction"] == "local coherent transfer gate", "P_sym", ("P_univ",), "z125_ergebnis.json",
+     "a nontrivial leak-free composition under seam-parity superselection forces the quarter turn, i.e. P_sym",
+     lambda d: _check_named(d, "Superauswahl durch Z4-Gradierungen") and _check_named(d, "[C] Auftragskriterien")),
+]
+PREMISE_MEANING = {
+    "A*": "seam premise: no background geometry, base changes are symmetries and <T> = 0 (H6h4); gives P_tn (z107)",
+    "P_sym": "the quarter turn A -> B -> -A of the two binary operations is inner, tau = i (z80, z94)",
+    "P_univ": "every physical composition conserves the fermion parity of each seam, the pair clock is superselected (z125)",
+    "I_step": "identification doubled diagonal step = native single step: spinor index = step type, modes = levels (z83)",
+    "P_lift": "the clock is the Z4 of the 16 on the carrier through a spinor lift branch (z82)",
+    "P_vac": "physical time is read in the vacuum sector; the thermal original has no positive continuous time (z72, z84)",
+    "P_CAR": "shared CAR of the seams (z106)",
+    "P_GSO": "clock-twisted lift G = U_2pi R^2 = +1 (z97); not modular-native, per seam incompatible with a summed U_2pi "
+             "(z113)",
+    "P_RJ": "J-covariant line rule: R = +-i couple through opposite Tomita lines (z114)",
+    "P_IF": "native pairing Ad Z_SU = Ad R on fermions (z122), the same bit as the spinor-module glue P_glue (z117)",
+    "T": "hypothesis T: the seam is a twistor line with current algebra (z110-z112, z114)",
+    "K2": "product coupling of the family zero modes with the twistor line (z114)",
+    "P_N4": "four Grassmann-odd O(1) directions for the numerator <ij>^4 (z110); no native degree twist or quartet (z124)",
+    "P_norm": "4D states normalised by the current two-point function (z110, z123)",
+    "P_X": "a free field with the native Tomita kinetic form is exchanged between seams (z123; replaces P_BF of z111)",
+    "P_null": "the composition sees only the charge lattice (inner energy Q^2/2, not the oscillators); natively the gate "
+              "is trivial (z121)",
+    "P_viertel": "the gate phase is phi = pi/2 (u = 1, the self-dual point of the XXX family); only theta is forced (z121)",
+    "P_ord": "distinguishable, ordered seams in the chain (z121)",
+    "P_2body": "a chosen two-body term with chosen coupling (z99)",
+    "P_G": "the value of the gravitational coupling: g (z98), the length L (z112) or the weight 2 c_3 (z118)",
+    "P_curv": "a non-orbit family carrying curvature with fixed coefficient (z100, z115)",
+    "P_R": "the clock is the trace weight on the internal factor only (z118)",
+    "P_pair": "pairing bit: the light-cone sector of the zero mode fixes the sign of the action (z118)",
+    "P_diag": "sheet-diagonal double copy (z112)",
+}
+
+
+def _implications(root):
+    out = []
+    for cond, old, new, fname, meaning, pred in IMPLICATIONS:
+        path = root / fname
+        ok = path.exists() and pred(json.loads(path.read_text()))
+        out.append({"replaces": old, "by": list(new), "source": fname, "meaning": meaning, "holds": ok, "_cond": cond})
+    return out
+
+
+# premises that set a free continuous number (K14: no free parameters) weigh before any discrete premise
+FREE_PARAMETER_PREMISES = frozenset({"P_2body", "P_G"})
+
+
+def _premise_closure(objects, rule):
+    """Premises of the scenarios that satisfy a rule: first the fewest free parameters, then the fewest premises any of
+    them needs, the sets that achieve it, how many survivors need each premise, and the clauses no survivor reaches."""
+    surv = [o for o in objects if set(rule) <= o["clauses"]]
+    out = {"rule": list(rule), "survivors": len(surv)}
+    if not surv:
+        return out
+    key = lambda o: (len(o["premises"] & FREE_PARAMETER_PREMISES), len(o["premises"]))
+    least = min(key(o) for o in surv)
+    count = {}
+    for o in surv:
+        for p in o["premises"]:
+            count[p] = count.get(p, 0) + 1
+    return out | {"least_free_parameters": least[0], "least_premises": least[1],
+                  "minimal_premise_sets": sorted({tuple(sorted(o["premises"])) for o in surv if key(o) == least}),
+                  "best": sorted(o["label"] for o in surv if key(o) == least),
+                  "premise_frequency": dict(sorted(count.items())),
+                  "meaning": {p: PREMISE_MEANING.get(p, "unnamed (conditional value without entry)") for p in sorted(count)},
+                  "clauses_no_survivor_has": [c for c in SCENARIO_POOL if not any(c in o["clauses"] for o in surv)]}
 
 
 def _clause_evidence(root):
@@ -1047,6 +1156,7 @@ def scenario_candidates(root=None):
     ev = _evidence(root)
     cev = _clause_evidence(root)
     holds = lambda clause: cev.get(clause, {}).get("status") == "conditional"
+    impl = _implications(root)
     hardy = lambda k0, k1: sp.diag(sp.I**k0, sp.I**k1)
     doublet = {"quarter oscillators": hardy(4, 4), "step type": hardy(4, 4),     # J_-1 = S^4: integer L_0 steps
                "eta doublet": _transport(0, -1), "seam doublet V_1": hardy(0, 1)}
@@ -1086,8 +1196,20 @@ def scenario_candidates(root=None):
                                                                        and holds("twistor_line_index"))),
             ("interacting", st["interaction"] in ("supported", "conditional")),
             ("modular_statistics", holds("modular_statistics") and MODULAR_STATISTICS[sc["statistics"]])) if ok}
-        objs.append({"label": " | ".join(combo), "scenario": sc, "status": st, "clauses": cl})
+        prem = set()
+        for a, v in sc.items():
+            if (a, v) in VALUE_PREMISES:
+                prem.update(VALUE_PREMISES[(a, v)])
+            elif st[a] == "conditional":
+                prem.add(f"{a}: {v}")
+        if sc["statistics"] == "clock-twisted lift (P_GSO)" and "chiral_matter" in cl:
+            prem.update(CLAUSE_PREMISES["twistor_line_index"])
+        for im in impl:
+            if im["holds"] and im["replaces"] in prem and im["_cond"](sc):
+                prem = (prem - {im["replaces"]}) | set(im["by"])
+        objs.append({"label": " | ".join(combo), "scenario": sc, "status": st, "clauses": cl, "premises": frozenset(prem)})
     return objs, {"evidence": {f"{a}: {v}": e for (a, v), e in sorted(ev.items())}, "clause_evidence": cev,
+                  "implications": [{k: v for k, v in im.items() if k != "_cond"} for im in impl],
                   "r_order": r_order, "native_lorentz": native_lorentz}
 
 
@@ -1273,6 +1395,7 @@ def run_reconstruction(root=None):
                         "admissible+modular_statistics": _question(hits_c, ["admissible", "modular_statistics"]),
                         "admissible+graviton": _question(hits_c, ["admissible", "graviton"])}
     best = max(len(o["clauses"]) for o in sc)
+    res["premise_closure"] = _premise_closure(sc, matter + ["chiral_matter"])
     res["derived"] = sc_info | {"most_clauses": best,
                                 "best_scenarios": sorted(o["label"] for o in sc if len(o["clauses"]) == best)[:40],
                                 "values_in_base_survivors": {a: sorted({o["scenario"][a] for o in sc if set(base) <= o["clauses"]})

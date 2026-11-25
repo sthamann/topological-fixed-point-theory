@@ -7,7 +7,7 @@ from math import gcd
 import sympy as sp
 
 from reconstruction_search import (ETA_SPINOR, QUARTER_PAIR, SEAM_DOUBLET, SPIN_BRIDGE, _transport,
-                                   scenario_candidates,
+                                   PREMISE_MEANING, scenario_candidates,
                                    CHARACTERS, DOUBLE_COVER, M_VALUES, QUARTERS, U, Z, cover_genus, cov,
                                    doublet_state_candidates, exceptional_orbits, fock_multiplicities, fock_patterns,
                                    invariants, mark_symmetries, normal_bundle_candidates, original_symmetries, pushforward,
@@ -114,6 +114,23 @@ class ReconstructionSearch(unittest.TestCase):
         self.assertEqual(ev["gravity: moved algebra at fixed state"]["status"], "excluded")
         self.assertEqual({k: v["status"] for k, v in info["clause_evidence"].items()},
                          {"modular_statistics": "conditional", "twistor_line_index": "conditional"})
+
+    def test_premise_closure_names_what_the_best_candidate_still_assumes(self):
+        u = self.universe("scenarios")
+        pc = u["premise_closure"]
+        # free parameters weigh first (K14): the chosen two-body term loses to the coherent gate, which trades P_sym for
+        # P_univ (z125) and needs P_null, P_viertel, P_ord (z121); chirality costs one bit P_IF on both routes (z117, z122)
+        self.assertEqual((pc["survivors"], pc["least_free_parameters"], pc["least_premises"]), (108, 1, 10))
+        self.assertEqual(pc["minimal_premise_sets"],
+                         [("A*", "I_step", "P_G", "P_IF", "P_curv", "P_lift", "P_null", "P_ord", "P_univ", "P_viertel")])
+        self.assertEqual(pc["clauses_no_survivor_has"], ["graviton", "modular_statistics"])
+        self.assertEqual({i["replaces"]: i["holds"] for i in u["derived"]["implications"]}, {"P_RJ": True, "P_sym": True})
+        for p in pc["premise_frequency"]:
+            self.assertIn(p, PREMISE_MEANING)                       # every premise is named, none dropped silently
+        sc, _ = scenario_candidates()
+        for o in sc:
+            if o["scenario"]["statistics"] == "Z4 glue on the spinor module (P_glue)":
+                self.assertIn("P_IF", o["premises"])
 
     def test_scenario_base_survivors_place_the_marks_only_where_coherence_allows(self):
         sc, _ = scenario_candidates()

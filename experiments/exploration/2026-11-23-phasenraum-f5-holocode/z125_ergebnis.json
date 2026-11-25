@@ -1,0 +1,781 @@
+{
+ "checks": {
+  "[E] Einanregungssektor zweier Nähte (z120-Modell, zwei Arten als Vielfachheit): A = -iR = Nahtparität (die Uhr R = i^(Q_A - Q_B) bis auf i) und B = B_theta^+ A B_theta sind Binäroperationen (True) mit {A, B} = 2 cos theta (13 Winkel, Abweichung 1e-15): der Transferwinkel ist der Winkel von z94. z94-Intertwinertest auf der irreduziblen 2D-Darstellung (eine Art): Tausch 61 von 61, Vorzeichen [0.5], Viertel [0.5]; B_theta selbst implementiert A -> B -> -A genau bei theta/pi = [0.5]; Gamma = -iAB ist der Transfergenerator 2 J_x (Abweichung 3e-16): die Energieachse von z94 ist das Hüpfen, der Modulfluss der Saat die Transferdrehung; Marken j = 1728.0 (pi/2) bzw. 3905.8 (pi/3)": true,
+  "[E] Leckformel der Zweianregungskomposition U = B_theta^+ e^(-i phi H_Q) B_theta (37 Winkel x 7 Phasen phi): ||(1 - P) U P|| = |1/2 {A,B}| |1/2 [A,B]| |v_P - v_D| = |cos theta| |sin theta| |1 - e^(-i phi)| (Abweichung 6e-16); Kontrolle: mit 2 theta bzw. theta/2 statt theta weicht sie um 1.000 bzw. 1.000 ab (der Winkel ist derselbe, kein Vielfaches). Leckfrei (phi = pi/2, 181 Winkel) genau bei theta/pi = [0.0, 0.5, 1.0]: A und B vertauschen (kein Transfer) oder antivertauschen (P_sym); bei pi/3 Leckage 0.612372": true,
+  "[E] gleichwertige Formen auf dem ganzen Fockraum (16 Zustände, 181 Winkel): [U, (-1)^F_A] = 0 bei theta/pi = [0.0, 0.5, 1.0], [U, R] = 0 bei [0.0, 0.5, 1.0], [R, B^+ R B] = 0 auf N = 2 bei [0.0, 0.5, 1.0]. Bei pi/2 antivertauschen R und B^+ R B auf N = 1 (Rest 1e-15) und vertauschen auf N = 2 (Rest 7e-16): Spinor gegen Vektor der Transfer-SU(2), R^2 = (-1)^N; die Nahtparität ist die Halbdrehung um die Nahtachse": true,
+  "[E] Paarsatz (symbolisch, beliebiges diagonales Phasengesetz v_AA, v_AB, v_BA, v_BB, Transferwinkel theta_k, theta_l): die vier Leckamplituden sind <AA|U|AB> = -i[c_k^2 (v_AA - v_AB) + s_k^2 (v_BA - v_BB)] s_l c_l usw. (c = cos theta/2, s = sin theta/2; 20 Zufallspunkte, Abweichung 8e-16; Fockraum-Querprobe 3e-16). Kohärenter Austausch bei Leckfreiheit nur in den Fällen ['(pi/2, pi/2)', '(pi/2, 3*pi/2)'] von 7; bei (pi/2, pi/2) ist der Lösungsraum genau v_AA = v_BB, v_AB = v_BA (True) und das Gatter v_D P_+ + v_P P_- (True). Satz (aus den geschlossenen Formen: für sin theta_k sin theta_l != 0 zwei 2x2-Systeme mit Determinanten cos theta_k und cos theta_l; für sin = 0 bleibt U diagonal): leckfreier nichttrivialer Austausch <=> beide Winkel = pi/2 mod pi und nahtsymmetrisches Gesetz mit v_D != v_P": true,
+  "[E] Energieleiter (zwei Nähte, drei Niveaus x = 1/4, 5/4, 9/4, Fockraum 64): leckfrei mit kohärentem Austausch für phi = pi/5, pi/2, 2 genau bei theta/pi = [0.5] (auch mit nahtsymmetrischen Niveauenergien: [0.5]), bei phi = 2 pi nie ([], Kontrolle); Amplituden t_k: (1,3,5) [0.5, 1.5], (1,2,1) [], (1,1,2) [] (theta in [0, 2 pi]): jedes ausgetauschte Niveau braucht theta t_k = pi/2 mod pi. Vorspannung (Gesetz nicht nahtsymmetrisch) 0,3 und 1: [], [] (keine Komposition), bei pi wieder [0.5] (pi ist nahtsymmetrisch mod 2 pi)": true,
+  "[E] zwei Arten mit Ladungen q_k, q_l (Gesetz e^(-i phi (Q_A^2 + Q_B^2)/2) R^kappa, 24 Fälle, 181 Winkel): leckfreier Austausch genau bei theta = pi/2 für (1,1), (1,-1), (1,3), (3,-1) mit und ohne Uhr; (1,2) ohne Uhr bei pi/2, mit Uhr nie (gemischte Parität: i^(q_k - q_l) != i^(q_l - q_k), das Gesetz ist nicht nahtsymmetrisch); (2,2) bei phi = pi/2 nie (Austauschphase 4 phi = 2 pi trivial), bei phi = 1 bei pi/2. Austauschphase v_D/v_P = e^(-i phi q_k q_l) aus den Gatter-Eigenwerten (True): bilinear in den Ladungen, die Z4-Wechselphase i^(Q_A Q_B) von z120 allgemein": true,
+  "[E] drei Nähte (je zwei Arten, N = 3, eine Anregung je Naht, Gesetz e^(-i phi sum Q^2/2)): paarweiser Transfer A-B mit Austausch genau bei theta/pi = [0.5]; zyklischer Dreinahttransfer e^(-i theta h_zykl) leckfrei mit Austausch bei theta/pi = [0.2222, 0.4444] (= 2/9, 4/9), dort |u_ij|^2 = 1/3 (True): komplexe Hadamard-Matrix (Klasse F_3); F_3 selbst leckfrei (phi = pi/2: Leckage 9e-16), Gatter v_P auf 4 und v_D auf 4 Zuständen (v_P-Raum = artensymmetrisch S = 3/2: Abstand 1e-15); 40 zufällige U(3): Leckage >= 0.459; leckfrei <=> [P_h, P_(u^+ h u)] = 0 im Raum der Matrizen (14 Fälle: True), also u monomial, Paar-Viertel mit Zuschauer oder |u_ij|^2 = 1/3": true,
+  "[E] 'Eine Anregung je Naht' auf N = 2: dieselbe Zustandsmenge wie ungerade Parität jeder Naht, Paaruhr R = +1 und Ladungsenergie H_Q = 1 (True). Mit Ladungen (1,-1) und (1,3) trennt im gemischten Artenblock (der Transfer erhält die Arten; gleiche Arten sind Transfer-Singuletts) die Nahtparität weiter (True, True), die Paaruhr auch (True, True); bei geraden Ladungen (2,2) trennt die Paaruhr nicht (False), die Parität schon (True). Der native Zustand besetzt den Doppelsektor (z93: der Ladungssektor ist Teil des Zustands; Gewicht e^(-4 pi) = 3.487e-06 > 0): Leckfreiheit muss auf allen Sektoren gelten": true,
+  "[E] Superauswahl durch Z4-Gradierungen i^(a Q_A + b Q_B) auf dem ganzen Fockraum (16 x 181 Winkel, phi = pi/2): die Vierteldrehung erzwingen genau (a, b) = [(0, 2), (1, 3), (2, 0), (3, 1)] (b - a = 2 mod 4: Nahtparitäten (-1)^F_A, (-1)^F_B und Paaruhr i^(+-(Q_A - Q_B)) = i^(-+N) (-1)^F_A); nichts fordern die 4 Gradierungen mit a = b (Gesamtladung, Gesamtparität, Produktuhr i^N); jede nichttriviale Komposition verbieten die übrigen 8 (darunter die Nahtuhr i^Q_A) und die Nahtladung Q_A selbst ([0.0, 1.0]): Bei pi/2 mischt U (2,0) und (0,2) mit |sin(phi/2)| = 0.7071, verträglich mit z108 (erhaltene Einzeldynamik heißt Produkt)": true,
+  "[E] Nahtparität allgemein (zwei Nähte, drei Arten, Fockraum 64, drei zufällige nahtsymmetrische Gesetze g(Q_A) + g(Q_B) + h Q_A Q_B): bei pi/2 ist [U, (-1)^F_A] = 0 (max 3e-15), bei pi/3 und 0,4 nicht (min 3.375): (-1)^F_A ~ e^(i pi J_z) und U = f(J_y^2) ist unter der Halbdrehung invariant. Die Ladungsenergie (z105s Kriterium 'vertauscht mit E') bleibt dagegen nur auf N <= 2 erhalten, auf N = 3 (Transferspin 3/2) nicht (3.464): 'auf der Schale' ist nur auf dem Zweianregungssektor gleichwertig, die native Form ist die Parität": true,
+  "[E] drei Nähte (Fockraum 64) unter Nahtparität: Paar-Vierteldrehung erhält alle drei Paritäten ([0.0, 0.0, 0.0]), Paar pi/3 nicht ([3.464102, 3.464102, 0.0]), F_3 und zyklisches Hadamard verletzen alle drei ([5.333333, 5.333333, 5.333333], [5.333333, 5.333333, 5.333333]; sie mischen (2,0,1), (1,2,0), (0,1,2)): die Nahtparität wählt die paarweise Komposition und damit tau = i statt der Z3-Struktur": true,
+  "[E] Tomita: Naht A (zwei Moden, K_A = pi Q_A) mit Partner B in der Reinigung; der Tomita-Operator gibt Delta = rho_A (x) rho_B^-1 (Abweichung 7e-15) und Delta^(-i/2) ~ i^(Q_A - Q_B) (Phasenspanne 3e-16), nicht i^(Q_A + Q_B) (Spanne 6.283): die erzwingende Paaruhr ist die Moduluhr des Original-Partner-Paars. Einzeltransfer c_A^+ c_B: gesamtgerade (Rest 0e+00), aber ungerade in der Nahtparität (Antikommutator-Rest 0e+00); z105-Doppeltransfer: nahtgerade (Rest 0e+00). Die globale Univalenz (z106: dieselbe gerade Algebra) lässt Einzeltransfers zu; die Nahtparität ist eine eigene Prämisse, die z105s Kopplungen erfüllen": true,
+  "[E] Verträglichkeit: z107s spannungsfreier Fall theta = pi/3 (A* gilt, j = 3905.8) ist als Komposition undicht (Leckage 0.612372 = |cos||sin||1 - e^(-i pi/2)|): A* und Komposition sind unabhängig. Die leckfreie Menge ist für phi = pi/5, pi/3, pi/2, 2, pi dieselbe ({(0.0, 0.5, 1.0)}) und hängt vom Zustand nicht ab: die Komposition legt theta fest, nicht beta oder g, gibt also P_sym, nicht P_tn/P_clock (z94: unabhängig)": true,
+  "[E] Gaußzustand: mittlere Modulenergie sum_(m ungerade) m y^m/(1 + y^m) = 1/24 bei y = e^-pi (Abweichung -8.35e-53), also <T> ~ E_0 + <e>/2 = 0 mit dem Casimir E_0 = -1/24; der Inhalt q^(-1/24) prod (1 + q^(m/2))^2 ist S-invariant (Defekt 2.4e-51): A*(a) und A*(b) gelten (z107)": true,
+  "[E] Kandidat aus z94 (sechs Saaten, y^(|n| + 4 f(n)), gleiche Einzelbesetzungen): geometrische (Einteilchen-) Energie 0.248542993 = Gauß 0.248542993, also blind; Modulenergie des eigenen Gesetzestorus 0.09030358975: mit dem zustandsunabhängigen Casimir -1/24 ist <T> ~ (0.0903036 - 0.248543)/2 != 0, A*(b) scheitert. Das Polynom D(y) = y Z' Z_0 - Z' y Z_0' ist ganzzahlig (True, Grad 28) und nicht null, also (Gelfond) D(e^-pi) != 0. Ein pro Zustand gewählter Casimir (0.037453035 statt -1/24) machte A*(b) leer": true,
+  "[E] A*(a) auf den Kandidaten (Inhalt = Gaußschwanz x Fensterquotient R = Z'/Z, S-Invarianz heißt log R(t) - log R(1/t) = 2 pi c (t - 1/t) für alle t; Minimax über c, acht Werte t): Kandidat z94 Defekt 0.04587, reelle Nicht-Spektrenmischung (1,3,5) (L1 = 32.7) Defekt 0.004458; Kontrollen: globale Verschiebung y^4 Z Defekt 4.3e-50 bei c = -2.0 (Casimir gleicht aus), Original 0.0. Lemma: f(t) = e^(-2 pi c t) R(e^(-pi t)) ist meromorph in t und (bis auf den Faktor) 2i-periodisch; f(t) = f(1/t) macht f bei unendlich meromorph, also rational, also konstant: R = y^(4k), Isospektralität, für jedes n und ohne Ganzzahligkeit": true,
+  "[E] Fenster n = 2..5 (die 74 Tupel aus z107, exakt bei Y = 3/7): Restklassenkern der Ladungsidentitäten 2n - 3 = [1, 3, 5, 7]; mit der Energieidentität (Z'/Z)' = 0 bleiben [1, 1, 2, 4] = 1 + verborgen, verborgen = [0, 0, 1, 3] (Umverteilungen innerhalb der Blöcke, die Z' nicht ändern). Die Energie tilgt also jede spektral sichtbare Richtung außer dem Original; die verborgenen nimmt der Max-Entropie-Schritt (gleiche Einteilchendaten + isospektral => rho' = rho_0)": true,
+  "[E] Variante B2 braucht Ganzzahligkeit: in der reellen Relaxation von z107 nimmt das Energiefunktional f(w) = sum (e - E_0) y^e w auf Nicht-Spektrenmischungen beide Vorzeichen an (max/min: (1, 3, 5): 0.000258461 / -8.55204e+33, (3, 5, 7): 0.000798476 / -6.91598e+33); die Lösungsmenge ist konvex, also gibt es reelle nicht isospektrale Lösungen mit exakt gleicher Energie für ['(1, 3, 5)', '(3, 5, 7)']. Einseitig ist ['(1, 3, 7)'] (Nicht-Spektrenmischungen nur mit negativen Exponenten und f < 0, Maximum f = 0 am Original), reell starr ['(1, 5, 9)'] (Kontrolle). Mit ganzzahligen Vielfachheiten wird die eine Gleichung über Gelfond zur Polynomidentität (wie beim Kandidaten aus z94)": true,
+  "[C] Auftragskriterien: Identifikation wörtlich (Teil 1), Leckfreiheit für zwei Nähte allgemein und für drei Nähte mit benanntem Gegenbeispiel (Teil 2), Nativität auf eine benannte Superauswahl P_univ zurückgeführt und mit z107/z94 verträglich (Teil 3), Energieroute mit präzisen Annahmen über den Torusinhalt (Teil 4)": true
+ },
+ "befunde": {
+  "E: Die Identifikation ist wörtlich. Der Einanregungssektor zweier Nähte ist die irreduzible 2D-Darstellung von z94; A ist die Nahtparität (-iR), B ihr Bild unter der kohärenten Übertragung, Gamma = -iAB der Transfergenerator, der Saat-Modulfluss die Transferdrehung. z120s Leckfreiheit ist die Aussage '|1/2 {A,B}| |1/2 [A,B]| = 0': A und B vertauschen oder antivertauschen; nichttrivial bleibt nur {A, B} = 0, also P_sym mit tau = i (j = 1728)": true,
+  "E/C: Für zwei Nähte ist die Vierteldrehung der einzige nichttriviale leckfreie Transfer, für jede Leiter, Artenzahl, Ladung und jede Phase phi außerhalb 2 pi Z, sofern das Gesetz nahtsymmetrisch ist (sonst gibt es keinen); mit niveauabhängigen Amplituden braucht jedes ausgetauschte Niveau die Vierteldrehung. Drei Nähte: paarweise wieder pi/2, echte Dreinahttransfers lassen zusätzlich die Hadamard-Klasse F_3 zu (zyklisch theta = 2 pi/9): ein Gegenbeispiel zum wörtlichen Winkel, nicht zum Prinzip. Gemeinsam ist die gegenseitige Unverzerrtheit von Nahtbasis und übertragener Nahtbasis; für zwei Nähte ist das {A, B} = 0": true,
+  "C: Unter den geprüften Superauswahloptionen (alle Z4-Gradierungen, Nahtladung; der native Zustand besetzt alle Ladungssektoren, z93) ist Leckfreiheit genau unter der Nahtparität P_univ nativ: physikalische Kompositionen erhalten die Fermionparität jeder Naht (für zwei Nähte mit ungeraden Ladungen gleichwertig: die Paaruhr i^(Q_A - Q_B) = Delta^(-i/2) des Original-Partner-Paars ist superselektiert; das sind z108s Bedingungen 'Uhr und Parität erhalten'). Dann gilt: nichttriviale kohärente Komposition + P_univ => nahtsymmetrisches Gesetz (Vorzeichensymmetrie A -> -A), paarweise Komposition, theta = pi/2 => {A, B} = 0 auf dem Einanregungssektor => P_sym (Cl_2, tau = i). P_univ liegt zwischen den Rahmenoptionen: feinere Superauswahl (Nahtladung, Nahtuhr) verbietet jede Komposition (z108, z93), gröbere (Gesamtladung, Gesamtparität, Produktuhr) fordert nichts; aus der globalen Univalenz folgt sie nicht (z106), z105s native Zweinahtterme erfüllen sie": true,
+  "E/C: S(n) folgt für jedes n aus A*, wenn A* auf den tatsächlichen Modulinhalt wirkt. Nötig ist: (T1) der Inhalt des Nahttorus ist die Modul-Zustandssumme Tr e^(-t K') des tatsächlichen Zustands (Gesetzestorus = Modultorus wie z94/z107, K' durch die Uhr normiert: ganze Exponenten = Q_- mod 4, also dasselbe tau_Gesetz), nicht die geometrische Einteilchenenergie (die ist blind); (T2) entweder B1: A*(a) gilt für diesen Inhalt (S-Invarianz mit irgendeinem Casimir) -- dann ist jeder Fensterkandidat mit Gaußschwanz isospektral, ohne Ganzzahligkeit; oder B2: der Casimir ist die zustandsunabhängige Vakuumgröße -1/24 und A*(b) gilt -- dann gleiche Modulenergie, mit ganzzahligen Vielfachheiten über Gelfond Z' = Z, für jedes n. Ein pro Zustand gewählter Casimir macht A*(b) leer; reelle Vielfachheiten genügen B2 nicht. Danach schließt Max-Entropie (z94)": true
+ },
+ "zahlen": {
+  "identifikation": {
+   "max |{A,B} - 2 cos theta|": 9.930136612989092e-16,
+   "z94-Intertwiner (theta/pi)": {
+    "Tausch A<->B": "61 von 61",
+    "Vorzeichen A->-A": [
+     0.5
+    ],
+    "Viertel A->B->-A": [
+     0.5
+    ]
+   },
+   "B_theta implementiert A -> B -> -A bei theta/pi": [
+    0.5
+   ],
+   "|Gamma -+ 2 J_x| bei pi/2": 3.1401849173675503e-16,
+   "j(Marken)": {
+    "pi/2": 1728.0000000000005,
+    "pi/3": 3905.777777777778
+   }
+  },
+  "leckformel": {
+   "max Abweichung |cos||sin||1 - e^-i phi|": 5.551115123125783e-16,
+   "Kontrolle 2 theta": 0.9999999999999999,
+   "Kontrolle theta/2": 0.9999999999999999,
+   "leckfrei (phi = pi/2) theta/pi": [
+    0.0,
+    0.5,
+    1.0
+   ],
+   "Leckage bei pi/3": 0.6123724356957944
+  },
+  "paarsatz": {
+   "Fälle (theta_k, theta_l)": {
+    "(pi/2, pi/2)": {
+     "Lösungsraum": 2,
+     "kohärenter Austausch": true
+    },
+    "(pi/2, 3*pi/2)": {
+     "Lösungsraum": 2,
+     "kohärenter Austausch": true
+    },
+    "(pi/2, pi/3)": {
+     "Lösungsraum": 1,
+     "kohärenter Austausch": false
+    },
+    "(pi/3, pi/3)": {
+     "Lösungsraum": 1,
+     "kohärenter Austausch": false
+    },
+    "(pi/2, pi)": {
+     "Lösungsraum": 2,
+     "kohärenter Austausch": false
+    },
+    "(pi/3, 2*pi/3)": {
+     "Lösungsraum": 1,
+     "kohärenter Austausch": false
+    },
+    "(pi/4, pi/4)": {
+     "Lösungsraum": 1,
+     "kohärenter Austausch": false
+    }
+   },
+   "pi/2, pi/2: Lösungsraum nahtsymmetrisch": true,
+   "Gatter v_D P_+ + v_P P_-": true,
+   "geschlossene Form Abweichung": 8.455206652451151e-16,
+   "Querprobe Fockraum |U|": 3.3306690738754696e-16
+  },
+  "leiter_amplituden_vorspannung": {
+   "Leiter (3 Niveaus) leckfrei/Austausch": {
+    "phi = 0.6283": [
+     [
+      0.0,
+      0.5,
+      1.0
+     ],
+     [
+      0.5
+     ]
+    ],
+    "phi = 1.5708": [
+     [
+      0.0,
+      0.5,
+      1.0
+     ],
+     [
+      0.5
+     ]
+    ],
+    "phi = 2.0000": [
+     [
+      0.0,
+      0.5,
+      1.0
+     ],
+     [
+      0.5
+     ]
+    ],
+    "phi = 6.2832": [
+     [
+      0.0,
+      0.0056,
+      0.0111,
+      0.0167,
+      0.0222,
+      0.0278,
+      0.0333,
+      0.0389,
+      0.0444,
+      0.05,
+      0.0556,
+      0.0611,
+      0.0667,
+      0.0722,
+      0.0778,
+      0.0833,
+      0.0889,
+      0.0944,
+      0.1,
+      0.1056,
+      0.1111,
+      0.1167,
+      0.1222,
+      0.1278,
+      0.1333,
+      0.1389,
+      0.1444,
+      0.15,
+      0.1556,
+      0.1611,
+      0.1667,
+      0.1722,
+      0.1778,
+      0.1833,
+      0.1889,
+      0.1944,
+      0.2,
+      0.2056,
+      0.2111,
+      0.2167,
+      0.2222,
+      0.2278,
+      0.2333,
+      0.2389,
+      0.2444,
+      0.25,
+      0.2556,
+      0.2611,
+      0.2667,
+      0.2722,
+      0.2778,
+      0.2833,
+      0.2889,
+      0.2944,
+      0.3,
+      0.3056,
+      0.3111,
+      0.3167,
+      0.3222,
+      0.3278,
+      0.3333,
+      0.3389,
+      0.3444,
+      0.35,
+      0.3556,
+      0.3611,
+      0.3667,
+      0.3722,
+      0.3778,
+      0.3833,
+      0.3889,
+      0.3944,
+      0.4,
+      0.4056,
+      0.4111,
+      0.4167,
+      0.4222,
+      0.4278,
+      0.4333,
+      0.4389,
+      0.4444,
+      0.45,
+      0.4556,
+      0.4611,
+      0.4667,
+      0.4722,
+      0.4778,
+      0.4833,
+      0.4889,
+      0.4944,
+      0.5,
+      0.5056,
+      0.5111,
+      0.5167,
+      0.5222,
+      0.5278,
+      0.5333,
+      0.5389,
+      0.5444,
+      0.55,
+      0.5556,
+      0.5611,
+      0.5667,
+      0.5722,
+      0.5778,
+      0.5833,
+      0.5889,
+      0.5944,
+      0.6,
+      0.6056,
+      0.6111,
+      0.6167,
+      0.6222,
+      0.6278,
+      0.6333,
+      0.6389,
+      0.6444,
+      0.65,
+      0.6556,
+      0.6611,
+      0.6667,
+      0.6722,
+      0.6778,
+      0.6833,
+      0.6889,
+      0.6944,
+      0.7,
+      0.7056,
+      0.7111,
+      0.7167,
+      0.7222,
+      0.7278,
+      0.7333,
+      0.7389,
+      0.7444,
+      0.75,
+      0.7556,
+      0.7611,
+      0.7667,
+      0.7722,
+      0.7778,
+      0.7833,
+      0.7889,
+      0.7944,
+      0.8,
+      0.8056,
+      0.8111,
+      0.8167,
+      0.8222,
+      0.8278,
+      0.8333,
+      0.8389,
+      0.8444,
+      0.85,
+      0.8556,
+      0.8611,
+      0.8667,
+      0.8722,
+      0.8778,
+      0.8833,
+      0.8889,
+      0.8944,
+      0.9,
+      0.9056,
+      0.9111,
+      0.9167,
+      0.9222,
+      0.9278,
+      0.9333,
+      0.9389,
+      0.9444,
+      0.95,
+      0.9556,
+      0.9611,
+      0.9667,
+      0.9722,
+      0.9778,
+      0.9833,
+      0.9889,
+      0.9944,
+      1.0
+     ],
+     []
+    ]
+   },
+   "mit Niveauenergien": {
+    "phi = 0.6283": [
+     [
+      0.0,
+      0.5,
+      1.0
+     ],
+     [
+      0.5
+     ]
+    ],
+    "phi = 1.5708": [
+     [
+      0.0,
+      0.5,
+      1.0
+     ],
+     [
+      0.5
+     ]
+    ]
+   },
+   "Amplituden t (theta in [0, 2 pi])": {
+    "[1, 3, 5]": [
+     [
+      0.0,
+      0.5,
+      1.0,
+      1.5,
+      2.0
+     ],
+     [
+      0.5,
+      1.5
+     ]
+    ],
+    "[1, 2, 1]": [
+     [
+      0.0,
+      1.0,
+      2.0
+     ],
+     []
+    ],
+    "[1, 1, 2]": [
+     [
+      0.0,
+      1.0,
+      2.0
+     ],
+     []
+    ]
+   },
+   "Vorspannung": {
+    "0.3000": [
+     [
+      0.0,
+      1.0
+     ],
+     []
+    ],
+    "1.0000": [
+     [
+      0.0,
+      1.0
+     ],
+     []
+    ],
+    "3.1416": [
+     [
+      0.0,
+      0.5,
+      1.0
+     ],
+     [
+      0.5
+     ]
+    ]
+   }
+  },
+  "ladungen": {
+   "leckfreier Austausch theta/pi": {
+    "q = [1, 1], kappa = 0, phi = 1.5708": [
+     0.5
+    ],
+    "q = [1, 1], kappa = 0, phi = 1.0000": [
+     0.5
+    ],
+    "q = [1, 1], kappa = 1, phi = 1.5708": [
+     0.5
+    ],
+    "q = [1, 1], kappa = 1, phi = 1.0000": [
+     0.5
+    ],
+    "q = [1, -1], kappa = 0, phi = 1.5708": [
+     0.5
+    ],
+    "q = [1, -1], kappa = 0, phi = 1.0000": [
+     0.5
+    ],
+    "q = [1, -1], kappa = 1, phi = 1.5708": [
+     0.5
+    ],
+    "q = [1, -1], kappa = 1, phi = 1.0000": [
+     0.5
+    ],
+    "q = [1, 3], kappa = 0, phi = 1.5708": [
+     0.5
+    ],
+    "q = [1, 3], kappa = 0, phi = 1.0000": [
+     0.5
+    ],
+    "q = [1, 3], kappa = 1, phi = 1.5708": [
+     0.5
+    ],
+    "q = [1, 3], kappa = 1, phi = 1.0000": [
+     0.5
+    ],
+    "q = [3, -1], kappa = 0, phi = 1.5708": [
+     0.5
+    ],
+    "q = [3, -1], kappa = 0, phi = 1.0000": [
+     0.5
+    ],
+    "q = [3, -1], kappa = 1, phi = 1.5708": [
+     0.5
+    ],
+    "q = [3, -1], kappa = 1, phi = 1.0000": [
+     0.5
+    ],
+    "q = [1, 2], kappa = 0, phi = 1.5708": [
+     0.5
+    ],
+    "q = [1, 2], kappa = 0, phi = 1.0000": [
+     0.5
+    ],
+    "q = [1, 2], kappa = 1, phi = 1.5708": [],
+    "q = [1, 2], kappa = 1, phi = 1.0000": [],
+    "q = [2, 2], kappa = 0, phi = 1.5708": [],
+    "q = [2, 2], kappa = 0, phi = 1.0000": [
+     0.5
+    ],
+    "q = [2, 2], kappa = 1, phi = 1.5708": [],
+    "q = [2, 2], kappa = 1, phi = 1.0000": [
+     0.5
+    ]
+   }
+  },
+  "drei_naehte": {
+   "paarweise theta/pi": [
+    0.5
+   ],
+   "zyklisch theta/pi": [
+    0.2222,
+    0.4444
+   ],
+   "zyklisch Hadamard": true,
+   "F_3": {
+    "1.5708": {
+     "Leckage": 8.640048115172202e-16,
+     "Austausch": 0.9428090415820637,
+     "Eigenwerte v_P": 4,
+     "Eigenwerte v_D": 4
+    },
+    "1.0000": {
+     "Leckage": 9.007967295283053e-16,
+     "Austausch": 0.6392340514722709,
+     "Eigenwerte v_P": 4,
+     "Eigenwerte v_D": 4
+    }
+   },
+   "zufällig min Leckage": 0.45858422247723785,
+   "Kriterium [P_h, P_h'] = 0 <=> leckfrei": true
+  },
+  "sektoren": {
+   "N = 2: Parität = Uhr = H_Q-Niveau = eine je Naht": true,
+   "Trennung je Ladung": {
+    "[1, -1]": {
+     "Parität": true,
+     "Paaruhr": true
+    },
+    "[1, 3]": {
+     "Parität": true,
+     "Paaruhr": true
+    },
+    "[2, 2]": {
+     "Parität": true,
+     "Paaruhr": false
+    }
+   },
+   "KMS-Gewicht (2,0) relativ (1,1) bei beta = 4 pi, E = Q^2/2": 3.4873423562089956e-06
+  },
+  "superauswahl_z4": {
+   "erzwingt pi/2": [
+    "(0, 2)",
+    "(1, 3)",
+    "(2, 0)",
+    "(3, 1)"
+   ],
+   "leer": [
+    "(0, 0)",
+    "(1, 1)",
+    "(2, 2)",
+    "(3, 3)"
+   ],
+   "verbietet jede Komposition": [
+    "(0, 1)",
+    "(0, 3)",
+    "(1, 0)",
+    "(1, 2)",
+    "(2, 1)",
+    "(2, 3)",
+    "(3, 0)",
+    "(3, 2)"
+   ],
+   "Nahtladung Q_A": [
+    0.0,
+    1.0
+   ],
+   "|<0,2|U|2,0>| bei pi/2": 0.7071067811865476
+  },
+  "drei_arten": {
+   "||[U, (-1)^F_A]|| (Gesetz, theta)": {
+    "(0, 1.5708)": 2.9632987327918834e-15,
+    "(0, 1.0472)": 4.490252454993723,
+    "(0, 0.4)": 3.7194173914418394,
+    "(1, 1.5708)": 2.2158161525794273e-15,
+    "(1, 1.0472)": 4.074753967780094,
+    "(1, 0.4)": 3.375246921084108,
+    "(2, 1.5708)": 2.9876605470830137e-15,
+    "(2, 1.0472)": 5.306924383147028,
+    "(2, 0.4)": 4.395892445600012
+   },
+   "||[U, H_Q]|| je N bei pi/2": {
+    "0": 0.0,
+    "1": 0.0,
+    "2": 4.902612130890298e-16,
+    "3": 3.4641016151377553,
+    "4": 4.902612130890298e-16,
+    "5": 0.0,
+    "6": 0.0
+   }
+  },
+  "drei_naehte_paritaet": {
+   "Paar pi/2": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "Paar pi/3": [
+    3.464102,
+    3.464102,
+    0.0
+   ],
+   "F_3": [
+    5.333333,
+    5.333333,
+    5.333333
+   ],
+   "zyklisch 2 pi/9": [
+    5.333333,
+    5.333333,
+    5.333333
+   ]
+  },
+  "tomita_transfer": {
+   "|Delta - rho_A (x) rho_B^-1|": 7.105434147096226e-15,
+   "Phasenspanne Delta^(-i/2) i^-(Q_A-Q_B)": 3.216245299353273e-16,
+   "Phasenspanne Delta^(-i/2) i^-(Q_A+Q_B)": 6.283185307179586,
+   "Einzeltransfer gesamtgerade": 0.0,
+   "Einzeltransfer antivertauscht mit (-1)^F_A": 0.0,
+   "Doppeltransfer vertauscht": 0.0
+  },
+  "vertraeglichkeit": {
+   "leckfrei je phi": {
+    "0.6283": [
+     0.0,
+     0.5,
+     1.0
+    ],
+    "1.0472": [
+     0.0,
+     0.5,
+     1.0
+    ],
+    "1.5708": [
+     0.0,
+     0.5,
+     1.0
+    ],
+    "2.0000": [
+     0.0,
+     0.5,
+     1.0
+    ],
+    "3.1416": [
+     0.0,
+     0.5,
+     1.0
+    ]
+   },
+   "Leckage theta = pi/3 (z107 spannungsfrei)": 0.6123724356957944,
+   "j(pi/2)": 1728.0000000000005,
+   "j(pi/3)": 3905.777777777778
+  },
+  "gauss": {
+   "sum m y^m/(1 + y^m) - 1/24": "-8.3524e-53",
+   "S-Defekt Inhalt": "2.44e-51"
+  },
+  "kandidat_z94": {
+   "<e> modular": "0.0903035897497",
+   "<e> geometrisch (Einteilchen)": "0.248542992998",
+   "<e> Gauß": "0.248542992998",
+   "D(y) ganzzahlig, Grad": [
+    true,
+    "28"
+   ],
+   "Casimir, der <T> = 0 erzwingen würde": "0.03745303496"
+  },
+  "s_defekt": {
+   "Kandidat z94": [
+    "0.0674065",
+    "0.0458708"
+   ],
+   "Verschiebung y^4 Z": [
+    "-2.0",
+    "4.28e-50"
+   ],
+   "Original": [
+    "0.0",
+    "0.0"
+   ],
+   "reelle Ecke (1,3,5)": [
+    "-1.50055",
+    "0.00445817",
+    32.743
+   ]
+  },
+  "restklassenkern_energie": {
+   "2": {
+    "Tupel": 21,
+    "(Ladung, mit Energie, verborgen)": [
+     [
+      1,
+      1,
+      0
+     ]
+    ]
+   },
+   "3": {
+    "Tupel": 35,
+    "(Ladung, mit Energie, verborgen)": [
+     [
+      3,
+      1,
+      0
+     ]
+    ]
+   },
+   "4": {
+    "Tupel": 15,
+    "(Ladung, mit Energie, verborgen)": [
+     [
+      5,
+      2,
+      1
+     ]
+    ]
+   },
+   "5": {
+    "Tupel": 3,
+    "(Ladung, mit Energie, verborgen)": [
+     [
+      7,
+      4,
+      3
+     ]
+    ]
+   }
+  },
+  "reell_mit_energie": {
+   "Tabelle": {
+    "(1, 3, 5)": {
+     "max f (Fenster e >= 0)": "0.000258461",
+     "L1 bei max": 32.743,
+     "min f (Fenster -24)": "-8.55204e+33",
+     "L1 bei min": 87.318
+    },
+    "(3, 5, 7)": {
+     "max f (Fenster e >= 0)": "0.000798476",
+     "L1 bei max": 46.151,
+     "min f (Fenster -24)": "-6.91598e+33",
+     "L1 bei min": 95.467
+    },
+    "(1, 3, 7)": {
+     "max f (Fenster e >= 0)": "1.5441e-24",
+     "L1 bei max": 0.0,
+     "min f (Fenster -24)": "-1.94769e+32",
+     "L1 bei min": 38.952
+    },
+    "(1, 5, 9)": {
+     "max f (Fenster e >= 0)": "-2.61907e-25",
+     "L1 bei max": 0.0,
+     "min f (Fenster -24)": "-4.26389e-25",
+     "L1 bei min": 0.0
+    }
+   },
+   "zweiseitig (Gegenbeispiel zu B2 reell)": [
+    "(1, 3, 5)",
+    "(3, 5, 7)"
+   ],
+   "einseitig (max f = 0 am Original)": [
+    "(1, 3, 7)"
+   ],
+   "reell starr": [
+    "(1, 5, 9)"
+   ]
+  },
+  "status": {
+   "Identifikation Transfer = z94-Binäroperationen": [
+    "E",
+    "A = -iR (Nahtparität), B = B_theta^+ A B_theta, {A, B} = 2 cos theta, Gamma = 2 J_x; Leckage |1/2{A,B}||1/2[A,B]||v_P - v_D|"
+   ],
+   "Paarsatz zwei Nähte": [
+    "E",
+    "leckfreier Austausch <=> theta_k = theta_l = pi/2 mod pi und nahtsymmetrisches Gesetz, v_D != v_P; Gatter v_D P_+ + v_P P_-; Leiter, Arten, Ladungen, phi"
+   ],
+   "drei Nähte": [
+    "E (Gegenbeispiel zum Winkel)",
+    "paarweise pi/2; Dreinahttransfer: Hadamard-Klasse F_3 (zyklisch 2 pi/9)"
+   ],
+   "Nativität der Leckfreiheit": [
+    "C",
+    "genau unter P_univ (Nahtparität / Paaruhr Delta^(-i/2)); feiner verbietet, gröber fordert nichts; nicht aus globaler Univalenz (z106)"
+   ],
+   "P_sym aus Komposition": [
+    "C unter P_univ",
+    "nichttriviale kohärente Komposition + P_univ => paarweise, theta = pi/2, nahtsymmetrisches Gesetz => P_sym"
+   ],
+   "Verträglichkeit z107, z94": [
+    "E",
+    "theta = pi/3 spannungsfrei, aber undicht; Komposition phi- und zustandsblind: kein P_tn/P_clock"
+   ],
+   "S(n) über A*": [
+    "E unter A* auf dem Modulinhalt",
+    "B1 (S-Invarianz): jedes n, ohne Ganzzahligkeit; B2 (fester Casimir, <T> = 0): jedes n mit Ganzzahligkeit (Gelfond)"
+   ],
+   "S(n) ohne A*": [
+    "O (unverändert, z107)",
+    "arithmetisch ab n = 3"
+   ],
+   "K19 Existenz der Naht": [
+    "L",
+    "nicht hergeleitet; die Komposition setzt zwei Nähte (Original und Partner) voraus"
+   ]
+  },
+  "praemissen": {
+   "A* (Nahtprämisse)": "(a) S-Invarianz des Inhalts, (b) <T> = 0; gibt P_tn (z107) und, auf den Modulinhalt des tatsächlichen Zustands angewandt, S(n) für jedes n",
+   "Existenz einer nichttrivialen kohärenten Komposition": "zwei Nähte tauschen Anregungen kohärent aus (U nicht diagonal)",
+   "P_univ (neu benannt)": "physikalische Kompositionen erhalten die Fermionparität jeder Naht; für zwei Nähte = Paaruhr i^(Q_A - Q_B) = Delta^(-i/2) superselektiert",
+   "Rahmen": "Hardy-Naht, Viertelzählung, CAR; die Ladungssuperauswahl je Naht gilt für die Einzelnaht, nicht für die Komposition (z108)"
+  },
+  "laufzeit_s": 3.3
+ },
+ "urteil": "Der Ursprung reduziert sich in gescopter Form auf A* und die Existenz einer nichttrivialen kohärenten Komposition, mit einer benannten Superauswahlprämisse P_univ. (1) Die Identifikation ist wörtlich: Auf dem Einanregungssektor zweier Nähte (der irreduziblen 2D-Darstellung von z94) ist A = -iR die Nahtparität und B = B_theta^+ A B_theta ihr Bild unter der Übertragung; {A, B} = 2 cos theta, Gamma = -iAB ist der Transfergenerator 2 J_x, der Saat-Modulfluss die Transferdrehung, und B_theta implementiert A -> B -> -A genau bei pi/2. Die Leckage der Zweianregungskomposition ist |1/2 {A,B}| |1/2 [A,B]| |v_P - v_D| = |cos theta sin theta| |1 - e^(-i phi)|: z120s Leckfreiheit heißt wörtlich, dass A und B vertauschen (kein Transfer) oder antivertauschen (P_sym). (2) Allgemein für zwei Nähte (symbolischer Paarsatz, Fockraum-Querproben): leckfreier kohärenter Austausch genau dann, wenn jeder ausgetauschte Modus eine Vierteldrehung erfährt und das Phasengesetz nahtsymmetrisch ist (v_AA = v_BB, v_AB = v_BA, v_D != v_P); das Gatter ist v_D P_+ + v_P P_-, bei quadratischer Ladungsenergie mit Austauschphase phi q_k q_l. Leiter, Arten, allgemeine Ladungen und jedes phi außerhalb 2 pi Z ändern nichts; ohne Nahtsymmetrie (Vorspannung, gemischte Ladungsparität mit Uhr) gibt es keine Komposition, mit niveauabhängigen Amplituden braucht jedes Niveau die Vierteldrehung. Drei Nähte sind ein Gegenbeispiel zum wörtlichen Winkel: neben der paarweisen Vierteldrehung ist die Hadamard-Klasse F_3 leckfrei (zyklisch bei theta = 2 pi/9), mit Gatter v_P P_(S=3/2) + v_D P_(S=1/2); das gemeinsame Prinzip ist die gegenseitige Unverzerrtheit von Nahtbasis und übertragener Basis. (3) Unter den geprüften Superauswahloptionen ist die Leckfreiheit genau unter P_univ nativ: Physikalische Kompositionen erhalten die Fermionparität jeder Naht, für zwei Nähte mit ungeraden Ladungen gleichwertig die Paaruhr i^(Q_A - Q_B), die der Tomita-Operator als Delta^(-i/2) des Original-Partner-Paars liefert. Unter allen Z4-Gradierungen i^(a Q_A + b Q_B) erzwingen genau die mit b - a = 2 mod 4 die Vierteldrehung; feinere Superauswahl (Nahtladung, Nahtuhr) verbietet jede Komposition, weil der native Zustand den Doppelsektor besetzt (z93) und U dort (2,0) mit (0,2) mischt, verträglich mit z108; gröbere fordert nichts. Die Parität bleibt für jede Artenzahl erhalten, die Ladungsenergie (z105s 'auf der Schale') nur auf dem Zweianregungssektor. Unter P_univ verletzen F_3 und das zyklische Hadamard die Nahtparitäten, die Paar-Vierteldrehung nicht: P_univ wählt paarweise Komposition und tau = i. Also: nichttriviale kohärente Komposition + P_univ => nahtsymmetrisches Gesetz und {A, B} = 0 => P_sym. P_univ folgt nicht aus der globalen Univalenz (Einzeltransfers sind gesamtgerade, z106), wird aber von z105s nativen Zweinahttermen erfüllt. Verträglich mit z107 (theta = pi/3 ist spannungsfrei, aber undicht) und z94 (die Komposition ist phi- und zustandsblind, gibt also P_sym, nicht P_clock). (4) Energieroute: S(n) folgt für jedes n aus A*, wenn A* auf den Modulinhalt Tr e^(-t K') des tatsächlichen Zustands wirkt (nicht auf die geometrische Einteilchenenergie, die für Kandidaten mit gleichen Rändern blind ist). Variante B1 (S-Invarianz des Kandidateninhalts): Der Fensterquotient muss ein Monom sein, jeder Kandidat ist isospektral, ohne Ganzzahligkeit (Defekte 0,05 beim z94-Kandidaten, Kontrollen 0). Variante B2 (zustandsunabhängiger Casimir -1/24 und <T> = 0): gleiche Modulenergie, mit ganzzahligen Vielfachheiten über Gelfond Z' = Z; in den Fenstern n = 2..5 sinkt der Restklassenkern von 2n - 3 auf 1 + verborgen (0, 0, 1, 3), die verborgenen Richtungen nimmt Max-Entropie. Reell genügt B2 nicht ((1,3,5), (3,5,7)). Damit ist z107s Hindernis unter A* umgangen. K19 bleibt L: Die Komposition setzt zwei Nähte voraus. Nichts befördert, Ledger unverändert."
+}

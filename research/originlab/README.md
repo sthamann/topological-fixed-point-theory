@@ -227,6 +227,19 @@ Result:
   positivity per seam when the 2π rotation is summed (z113), and P_glue has not been tested against modular summation.
 - One test replaced (H6h47 → H6h49).
 
+Premise closure (H6h50): every scenario carries the named premises its values still assume (`VALUE_PREMISES`,
+`CLAUSE_PREMISES`; meanings in `PREMISE_MEANING`). A conditional value without entry keeps its own name, so nothing
+drops out silently, and one bit under two names counts once (P_IF = P_glue, z117, z122). `IMPLICATIONS` replace a
+premise when their result holds: z122 replaces the line rule P_RJ by the pairing bit P_IF, and z125 replaces P_sym by the
+parity superselection P_univ whenever the interaction is the local coherent transfer gate. The report `premise_closure`
+lists, for the rule matter + chiral matter, the fewest free parameters (`FREE_PARAMETER_PREMISES`, weighed first because
+of K14), then the fewest premises any survivor needs, the sets that achieve it, how often each premise is needed and the
+clauses no survivor reaches.
+- **Result (with z121, z123, z124):** of the 108 survivors the best have one free parameter (P_G, the value of G) and
+  10 premises: A*, I_step, P_lift, P_IF, P_curv, P_G and, for the coherent transfer gate, P_univ (in place of P_sym),
+  P_null, P_viertel and P_ord. The chosen two-body term needs fewer premises but a second free coupling. No survivor
+  reaches graviton or modular statistics. One new test.
+
 ```bash
 .venv/bin/python -B research/originlab/process_rules.py > /tmp/process-rules.json
 .venv/bin/python -B research/originlab/main.py --campaign process_rules --jobs 1 --out /tmp/originlab-process
