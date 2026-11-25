@@ -826,8 +826,8 @@ SCENARIO_AXES = {
     "marks": ["internal spin-Z4", "Euclidean Weyl curvature", "celestial sphere"],
     "time": ["modular flow", "parabolic Wiesbrock", "OS reconstruction", "radial conformal"],
     "modes": ["species", "energy levels"],
-    "gravity": ["composite spin 2", "Virasoro T(z)", "twistor deformation", "entanglement: original|partner cut",
-                "entanglement: spatial cut"],
+    "gravity": ["composite spin 2", "Virasoro T(z)", "twistor deformation: native sources",
+                "twistor deformation: radial channel", "entanglement: original|partner cut", "entanglement: spatial cut"],
     "origin": ["seed rho_1 + spin-Z4", "two binary observations"],
 }
 
@@ -872,6 +872,13 @@ EVIDENCE = [
     ("spinor_index", "step type", "conditional", "z83_ergebnis.json", "spinor index of the radial su(2,2): the two native "
      "step types (particle up, hole down); the clock R is 1 on both (R-neutral spacetime); matter spin open",
      lambda d: _check_named(d, "[E] Uhr: R = e^{2 pi i L_0}")),
+    ("gravity", "twistor deformation: native sources", "excluded", "z85_ergebnis.json", "Gaussian data, vertex operators, "
+     "non-abelian currents and the charge sector give no universal degree-2 class; the native second order is Heisenberg, "
+     "not the Plebanski-Penrose bracket, hence not the Einstein vertex; the D = +-4 sector is uniformly gapped (scoped)",
+     lambda d: _check_named(d, "(c) die Plebanski-Penrose-Klammer") and _check_named(d, "GRAV.PARENT.GAP.NO_GO.01")),
+    ("marks", "Euclidean Weyl curvature", "excluded", "z85_ergebnis.json", "the H6 state is the quadrupole diag(a, -a, 0) and "
+     "changes sign under the quarter turn; an R-invariant Weyl quadrupole is type D with J != 0 (Bianchi IX, Tod form)",
+     lambda d: _check_named(d, "Entscheidungstest S4b")),
     ("origin", "two binary observations", "conditional", "z80_ergebnis.json", "sign symmetry of the law forces Cl_2 = M_2, "
      "tau = i, p = 1/2 if implemented in the same irreducible representation",
      lambda d: _check_named(d, "irreduzible Darstellungen von <A, B")),

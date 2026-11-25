@@ -8014,3 +8014,23 @@ Parallele Agentenläufe, alle von mir reproduziert:
 S3 (z84) und S4 (z85) rechnen noch.
 
 **Prüfstand:** 13 P, 7 L (K12, K13, K19 präzisiert). Atlas-Revision 8e0b47e07e07bdd4e19849a3. Ledger unverändert, nichts befördert.
+
+## H6H43-20261125 · S4: Gravitation als Deformation gescopt negativ, Marken nicht Weylkrümmung
+
+`z85_deformation_aussenraum.py` (23 von 23, Agentenlauf mit dem Quadrupoltest der neunten Analyse, reproduziert).
+- **Wörterbuch.**
+  - Die Homogenität der Twistorfunktionen ist der Modulgrad, und die Tomita-Konjugation ist die Twistorkonjugation.
+  - Die Fockbasis ist die Menge der Penrose-Elementarzustände.
+- **Native Quellen.** Weder gaußsche Daten noch Vertexoperatoren, Ströme oder der Ladungssektor geben eine universelle
+  Grad-2-Klasse. Die zweite Ordnung ist Heisenberg, nicht Einstein. Der Sektor D = ±4 ist gegappt.
+- **S4b.** Die Marken sind keine Weylkrümmung:
+  - Quadrupol Q → −Q unter der Vierteldrehung;
+  - Bianchi IX, Tods Form.
+
+  Sie sind Hitchins vier Punkte, ein Symmetriedatum.
+- **Szenario-Suche.** 1152 Szenarien, davon bleiben 8. Offen ist die Gravitation über den radialen Kanal oder einen
+  räumlichen Schnitt.
+
+S3 (z84) rechnet noch.
+
+**Prüfstand:** 13 P, 7 L (K13 präzisiert). Atlas-Revision ddf297dac6298de0604b5b2a. Ledger unverändert, nichts befördert.

@@ -1,6 +1,47 @@
 # Urteil
 
-## Aktueller Stand: H6h42 — Vier Strategien gerechnet, Szenario-Suche, Analyse 9 (`z82`, `z83`, `z86`, `z87`, `z88`)
+## Aktueller Stand: H6h43 — S4: Gravitation als Deformation gescopt negativ, Marken nicht Weylkrümmung (`z85`)
+
+**Bilanz:** unverändert 13 P und 7 L von 20. K13 ist präzisiert.
+
+**S4 (z85, 23 Prüfungen; Agent mit dem Quadrupoltest der neunten Analyse, reproduziert):**
+- **Wörterbuch des Außenraums [E]:**
+  - Die Homogenität der Twistorfunktionen ist der Modulgrad: Υ = −(N_a − N_b) − 2. Die Projektivierung ist der Quotient
+    nach dem komplexifizierten Modulfluss.
+  - Die Tomita-Konjugation ist die Twistorkonjugation (Grad n → −n − 4). Penrose-Seite (Grad 2) und googly-Seite (Grad −6)
+    sind Tomita-Partner.
+  - Die Fockbasis ist genau die Menge der Penrose-Elementarzustände: 1680 Vergleiche, mit Negativkontrolle.
+  - Das Vakuum Ω ist die Klasse [1/(z₁z₂)].
+  - Grad 2 hat Helizität −2, der Skalar hat Grad −2. Der Casimir ist 3(h² − 1) in jedem Sektor. Helizität ±2 ist ein
+    Einteilchensektor mit mindestens vier Quanten (vgl. z83).
+- **Native Quellen: keine Einstein-Gravitation [E negativ]:**
+  - (a) Gaußsche Daten bleiben bei |D| ≤ 2, der Sektor |D| = 4 ist leer.
+  - (b) Vertexoperatoren erreichen D = ±4 erst in vierter Ordnung. Die Penrose-Klasse ist gegen die googly-Klasse um
+    q⁴ = e^{−8πm} unterdrückt, und die Kopplung ist nicht universell.
+  - (c) Die native zweite Ordnung der nichtabelschen Ströme ist Heisenberg, W(a)W(b) = e^{i Im a·b̄}W(a+b). Sie ist nicht
+    die Plebański-Penrose-Klammer (explizit ≠ 0), also nicht der Einstein-Vertex. Die native Seite liefert nur die
+    Farbhälfte f^abc.
+  - (d) Rein innere Operatoren vertauschen mit P_μ. Sie haben nur Impulsübertrag null.
+  - Der Sektor D = ±4 ist gleichmäßig gegappt (|K| ≥ 16π), es gibt keine kritische Folge (GRAV.PARENT.GAP.NO_GO.01).
+- **S4b ausgeschlossen [E]:**
+  - Der H6-Zustand ist der Quadrupol diag(a, −a, 0), und die Vierteldrehung kehrt sein Vorzeichen um. Ein R-invarianter
+    Weylquadrupol hat Typ D mit J ≠ 0.
+  - Bianchi IX: Isometrisches R erzwingt a₁ = a₂. Tods Form ist verifiziert. J ≡ 0 mit W₊ ≠ 0 kommt nicht vor (exakte
+    Resultanten und Numerik).
+  - **Lesart [E/L]:** Die H6-Marken sind Hitchins vier Punkte, also der Schnitt der Twistorgeraden über m_H6 ∈ S⁴ mit der
+    Diskriminantenfläche. Das ist ein Datum der Symmetriewirkung, keine Krümmung.
+
+**Folgen:**
+- **S4 und S4b:** Für die nativen Quellen greift das Abbruchkriterium von S4. S4b ist ausgeschlossen; die Entscheidung gegen
+  S1 fällt für S1: Die Marken sind innen.
+- **Offen [O]:** eine native Poissonstruktur auf den ω-Fasern, also eine Abbildung aus zwei Einteilchensektoren in einen
+  dritten mit dem Kern ∝ [ab]. Zu prüfen im radialen Leiterkanal aus z83, alternativ über einen räumlichen Schnitt.
+- **Szenario-Suche:** 1152 Szenarien. Es bleiben 8. Für die Gravitation gibt es nur noch die Deformation über den radialen
+  Kanal oder die Verschränkung eines räumlichen Schnitts; beide hängen an der Struktur aus S2.
+
+S3 (z84) rechnet noch.
+
+## Davor: H6h42 — Vier Strategien gerechnet, Szenario-Suche, Analyse 9 (`z82`, `z83`, `z86`, `z87`, `z88`)
 
 **Bilanz:** unverändert 13 P und 7 L von 20. K12, K13 und K19 sind präzisiert.
 

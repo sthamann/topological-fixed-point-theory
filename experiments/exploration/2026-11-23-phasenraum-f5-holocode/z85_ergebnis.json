@@ -1,0 +1,427 @@
+{
+ "checks": {
+  "a_i = (d_i + q e_i^+)/s und b_i = (e_i + q d_i^+)/s erfüllen die CCR und a_i Omega = q b_i^+ Omega (Purifikation, <a^+ a> = 0.098901 = q^2/(1-q^2)); die Twistoroperatoren Z = (d_1, d_2, e_1^+, e_2^+) aus span{a_i, b_i^+} (z79) mit Z-quer = (d_1^+, d_2^+, -e_1, -e_2) erfüllen [Z^alpha, Z-quer_beta] = delta, [Z, Z] = 0 (Fockraum 8^4, alle Zustände bis Stufe 4)": true,
+  "Homogenität = Modulgrad: Upsilon = -Z^alpha Z-quer_alpha = -(N_d - N_e) - 2 = -(N_a - N_b) - 2 als Operatoridentität, [D, Z^alpha] = -Z^alpha; mit Delta^(1/2) = q^D (KMS geprüft) ist K = -2 log q (N_a - N_b), nativ q = e^{-2 pi m}: Upsilon = -K/(4 pi m) - 2. Die Tomita-Konjugation (a <-> b) gibt J D J = -D, also n -> -n - 4 (Twistorkonjugation)": true,
+  "Fockbasis = Penroses Elementarzustände: |n1 n2; m1 m2> <-> sqrt(n1! n2!/(m1! m2!)) z3^m1 z4^m2/(z1^(n1+1) z2^(n2+1)) auf U1 n U2 modulo Korändern verflicht Z^alpha (Multiplikation), Z-quer_beta (-d/dz^beta) und alle 16 Bilineare Z^alpha Z-quer_beta von u(2,2) exakt (1680 Vergleiche auf allen 70 Zuständen bis Stufe 4); d_i Omega = 0 ist die Korandbedingung (z_i/z_i = 1 hat keinen Pol in z_i)": true,
+  "Negativkontrolle: mit der Normierung sqrt(n! m!) statt sqrt(n!/m!) scheitert die Verflechtung (der Test trennt)": true,
+  "Koordinaten: d_i = (kappa pi_i + omega_i/kappa)/sqrt2, e_i^+ = (kappa pi_i - omega_i/kappa)/sqrt2 (pi, omega aus z79); die Vakuumklasse [1/(z1 z2)] (Homogenität -2) hat die Penrose-Transformierte phi = 2*kappa**2/det(x - i kappa^2 I): das skalare Elementarzustandsfeld mit Zentrum i kappa^2 I im Vorwärtstubus (z79: Re M = kappa^2 I); nativ kappa^2 = tanh(pi m) = 0.99627208 für m = 1": true,
+  "Wörterbuch n = -D - 2 = -2h - 2: die Elementarzustände vom Grad n bilden genau den Fock-Sektor D = N_d - N_e = -n - 2 mit den 4D-K-Typ-Dimensionen (k+1)(k+1+|D|) und niedrigster Energie 1 + |D|/2 (k = 0..5, alle sieben Grade); n = 2 (Graviton, Kodaira-Spencer) ist D = -4, n = -6 ist D = +4 (Tomita-Bild), der Skalar ist n = -2 (D = 0), n = 0 ist Helizität -1": true,
+  "Kodaira-Spencer: V_h = eps^AB (dh/d omega^B) d/d omega^A hat das Euler-Gewicht n_h - 2 (rationale h mit Polen, n_h = -6, -2, 0, 2, 4): nur Hamiltonfunktionen vom Grad 2 geben Vektorfelder auf PT; ein polynomiales h vom Grad 2 gibt omega -> omega + y pi (Translation, global, also trivial in H1)": true,
+  "su(2,2)-Casimir C2 = sum E^a_b E^b_a - (tr E)^2/4 = 3(h^2 - 1) mit h = D/2 auf jedem Sektor D = -6..6 (alle Zustände mit Besetzung <= 5 und Stufe <= 6, Residuum 1.4e-14): jeder D-Sektor ist ein irreduzibler masseloser Einteilchensektor, Helizität +-2 eingeschlossen; das ist dieselbe Leiter wie in S2/z83 (h = (m - m-quer)/2, Casimir 3(h^2 - 1)/8 in der dortigen Normierung, niedrigster K-Typ bei E = |h| + 1)": true,
+  "(a) gaußsch: alle 8 linearen und 36 quadratischen Oszillatormonome auf Omega haben nur D in {-2..2} (max |D| = 2), der Sektor |D| = 4 bleibt exakt leer; die nativen Gaußdaten sind D-neutral: alle 16 nichtverschwindenden Zweipunktfunktionen <X Y> (X, Y aus a, a^+, b, b^+) haben Delta D = 0, und P_mu = (1/2) c^+ sigma_mu c, Lorentz, Dilatation und K vertauschen mit D (P^2 = 0 exakt)": true,
+  "(b) der Oszillatorfaktor eines Vertexoperators wirkt als W(alpha) = D_d(alpha/s) (x) D_e(-q alpha-quer/s) auf Omega (Fockraum 10^4, q = 0,3, drei zufällige alpha, Treue 1 - 2.0e-10); in erster Ordnung (Erzeuger auf Omega) nur D = +-1 (Helizität +-1/2); die niedrigsten K-Typen von D = +4 und D = -4 haben exakt die Amplituden e^{-(1+q^2)|alpha|^2/(2 s^2)} |alpha|^4/(s^4 sqrt24) bzw. q^4 mal das: der Grad-2-Sektor wird erst in vierter Ordnung erreicht": true,
+  "(b) nativ ist a(D = -4)/a(D = +4) = q^4 = e^(-8 pi m) (1.21616e-11 für m = 1): Penroses Grad-2-Klasse ist gegen das googly-Bild KMS-unterdrückt. Nicht universell: a(+4)/h schwankt über die Ladungssektoren zwischen 0.0408 und 0.3 (h = |Q|^2/2), die Polarisation ist der Ladungsvektor (Überlapp (1,0)|(0,1) = 0.0e+00, (1,1)|(1,-1) = 6.5e-16, (1,0)|(1,1) = 0.2500 = 1/4), und das Mittel über die Nahtlage theta (Phase e^(4 i m theta)) verschwindet (2.4e-19)": true,
+  "(c) Frenkel-Kac: die Wurzelströme von so(4)_1 sind Verschiebungen mit |alpha|^2 = 2 (h = 1): gleicher Betrag des D = +4-Anteils für alle vier Wurzeln, aber su(2)_L und su(2)_R polarisieren orthogonal (Überlapp 4.5e-15, innerhalb su(2)_L 1.0000); die native Komposition ist Heisenberg: W(a)W(b) = e^(i Im a.b-quer) W(a + b) (Residuum 1.4e-09, Abschneidegrenze 10 Stufen), für reelle orthogonale a, b ist der Kommutator null (4.7e-17)": true,
+  "(c) die Plebanski-Penrose-Klammer zweier Grad-2-Klassen ist {h_a, h_b} = (2/kappa^2) [a b] A^3 B^3 (z3/(z1^3 z2^2) + z4/(z1^2 z2^3) + 4/(z1^2 z2^2)) (symbolisch exakt): Grad 2, Pole in z1 und z2 (nichttriviale Klasse, Fock-Sektor D = -4 mit N_d = 2, 3 statt 0), antisymmetrisch und != 0 für a = (1,0), b = (0,1), wo der native Kommutator verschwindet: die zweite Ordnung der nativen Quellen ist nicht der Einstein-Vertex": true,
+  "(d) sektoraufgelöst (fermionischer Fockraum, 14 bzw. 16 Moden, Quarter alpha = 1/4): <J_-1 J_1>_Q = 1/(e^beta - 1) und <J_-2 J_2>_Q = 2/(e^(2 beta) - 1) in jedem Ladungssektor Q = -2..2 (beta = 4 pi: rel. Abweichung 7.3e-15; beta = 3: 3.2e-06 -> 1.6e-07 mit einem Modenpaar mehr, Abschneidefehler ~ e^(-beta R)), obwohl die Ladung selbst stark nichtgaußsch ist (Exzess-Kurtosis 19.2, Thetaverteilung); Q und die Uhr R = e^(2 pi i L_0) vertauschen mit allen Strommoden, also mit P_mu": true,
+  "GRAV.PARENT.GAP.NO_GO.01: im Sektor D = +-4 ist die Modulfrequenz |K| = 16 pi m >= 16 pi = 50.2655 für alle Moden m >= 1 (kein m -> 0, keine kritische Folge), die konforme Energie ist >= 3; die Masselosigkeit P^2 = 0 gilt dort wie in jedem Sektor (7.1e-15), ist also kinematisch und kein Pol der nativen Dynamik": true,
+  "Entscheidungstest S4b (Koordinator, gerechnet): der H6-Zustand (|2> - |-2>)/sqrt2 ist der Quadrupol diag(a, -a, 0) (Eigenwerte [-0.707107, 0.0, 0.707107] bis auf die Phase i; für 1 - z^4 ist I = -1, J = 0, hier normiert I = -1/2); die Vierteldrehung um die Markenachse gibt R Q R^T = -Q; der R-invariante Unterraum des Spin-2-Raums ist eindimensional (m = 0, diag(a, a, -2a)) mit I^3 = 27 J^2 != 0, also Typ D; in der Oktaedergruppe hat Q den Tensorstabilisator D2 (4 Drehungen) und den Satzstabilisator D4 (8)": true,
+  "Bianchi-IX-Krümmung nach Cartan (allgemeine a_i(t), N(t), Jets): W+, W- und der spurfreie Ricci sind diagonal in e0^ei +- ej^ek; Kontrollen: rund (a1 = a2 = a3) ist konform flach, Euler-Kreisel und Halphen (Gibbons-Pope, Atiyah-Hitchin) sind Ricci-flach mit W+ = 0 und W- != 0 ({'Euler-Kreisel': True, 'Halphen': True})": true,
+  "R als Isometrie (Vierteldrehung sigma_1 -> sigma_2 -> -sigma_1) verlangt a1 = a2; dann ist für beliebige a(t), N(t) in beiden Hälften W = diag(lambda, lambda, -2 lambda), also Typ D oder O; J = det W = -2*lambda**3 verschwindet nur für W = 0: harmonische Marken (J = 0, Typ I) und isometrisches R schließen sich in Bianchi IX aus": true,
+  "Tods Form g0 = dx^2/(x(1-x)) + sigma_1^2/Omega_1^2 + (1-x) sigma_2^2/Omega_2^2 + x sigma_3^2/Omega_3^2 mit Omega_1' = -Omega_2 Omega_3/(x(1-x)), Omega_2' = -Omega_3 Omega_1/x, Omega_3' = -Omega_1 Omega_2/(1-x): W- = 0 exakt (symbolisch auf dem Fluss), I0 = Omega_1^2 - Omega_2^2 - Omega_3^2 ist Erhaltungsgröße, W+ = diag(lambda_k) mit Summe 0; an einem triaxialen Punkt drei verschiedene Eigenwerte ['190403/275625', '356519/275625', '-546922/275625'] (Typ I)": true,
+  "exakt: für jedes k haben Res_x(N_k, X N_k) und Res_x(N_k, X^2 N_k) nur die gemeinsamen Faktoren ['P1', 'P1 + P2', 'P1 + P3', 'P1 - P2', 'P1 - P3', 'P2', 'P2**2 + P3**2', 'P3'] (Grad <= 2): entartet (Omega_i = 0), nicht reell (Omega_2^2 + Omega_3^2) oder nicht flussinvariant (Omega_1 = +-Omega_2, +-Omega_3); eine zweidimensionale invariante Familie mit lambda_k = 0 gibt es nicht": true,
+  "numerisch (fsolve, dann mpmath mit 40 Stellen nachpoliert): 61 Punkte der Kurve C = {N_k = X N_k = X^2 N_k = 0}; wo W+ deutlich != 0 ist (18 Punkte), ist X^3 N_k != 0 (relativ >= 1.2e-6), die Kurve also nicht invariant; X^3 N_k verschwindet nur zusammen mit ganz W+ (35 Punkte, alle auf I0 = -1/4: konform flach, Typ O; 8 Punkte nahe daran mit entarteter Konvergenz): J = 0 entlang einer Lösung gibt es nur konform flach [N]": true,
+  "entlang 8 beschränkter triaxialer Lösungen auf (0,04; 0,96) wechselt J/(I/2)^(3/2) das Vorzeichen nur an isolierten Stellen ([5, 4, 3, 1, 6, 3, 1, 3] Nullstellen) und erreicht dazwischen den Typ-D-Rand (max 0.385): harmonische Marken (J = 0, tau = i) liegen auf einzelnen Bahnen, nicht überall": true,
+  "Hitchins vier Punkte: im Büschel f + t sigma(f) binärer Kubiken (Twistorgerade der S^4 in P(Sym^3 C^2)) haben die vier entarteten Glieder ihre Doppelwurzeln genau in den Wurzeln der Jacobi-Quartik J(f, sigma f) (5 Zufallsgeraden, Fehler < 1e-9), und diese Quartik ist antipodisch reell (ein Punkt der S^4 = S(Sym^4 R)); es gibt eine Gerade mit J(f, sigma f) ~ u^4 - v^4 (Fehler 2.0e-15): die H6-Marken sind die vier Punkte, in denen die Twistorgerade über m_H6 die Diskriminantenfläche der SL(2,C)-Bahnen trifft": true
+ },
+ "befunde": {
+  "E: Der Außenraum von z79 ist als Fockraum die Elementarzustandsdarstellung der Twistortheorie: Fockvektoren = Čech-Klassen, Vernichtung = Korand, Homogenität = -(Modulgenerator)/(4 pi m) - 2, Tomita J = Konjugation n -> -n - 4. Eine Kodaira-Spencer-Klasse erster Ordnung (Penroses selbstduales Graviton, Grad 2) ist genau ein Vektor im Sektor D = N_a - N_b = -4, also Modulfrequenz K = -16 pi m; das googly-Gegenstück (Grad -6) ist sein Tomita-Bild D = +4": true,
+  "E/C: Die Helizität-2-Sektoren existieren kinematisch als Einteilchensektoren (z75, z83, hier): D = -4 trägt die Kodaira-Spencer-Klassen vom Grad 2, D = +4 die googly-Klassen vom Grad -6. Gerealisiert sind sie mit mindestens vier Oszillatorquanten, wie in jeder Twistorquantisierung. Die Frage von S4 ist daher nicht, ob der Sektor existiert, sondern ob eine native Quelle ihn mit universeller Kopplung bevölkert und ob die zweite Ordnung Einstein ist": true,
+  "E (a): Der gaußsche Sektor allein deformiert nichts. Seine nativen Daten sind modular invariant (D = 0) und erzeugen nur u(2,2), also projektive Abbildungen von PT (Translationen, Lorentz, Dilatation): globale, triviale Klassen. Selbst die nicht nativen Quetscher erreichen in erster Ordnung nur |D| = 2 (Helizität +-1), nie den Grad 2": true,
+  "E (b): Vertexoperatoren (Ladung x Oszillator) sind auf dem Außenraum Twistorverschiebungen. Sie erreichen den Grad-2-Sektor nur in vierter Ordnung, als Produkt von vier Helizität-1/2-Quanten, mit Amplitude ~ h^2 e^{-c h} statt ~ Energie, mit dem Ladungsvektor als Polarisationsspinor und mit dem Tomita-Gewicht q^4: Eine Grad-2-Klasse entsteht, aber nicht universell": true,
+  "E/L (c): Die Nichtabelschheit von <J J J> = A f^abc (z75) sitzt im Kozyklus des Ladungsgitters (innen); außen sind die Ströme Verschiebungen, und deren Algebra ist die Heisenberg-Algebra mit zentralem Kommutator. Die native Seite liefert damit die Farbhälfte eines Doppelkopie-Schemas (f^abc), nicht die kinematische Hälfte (die Poissonklammer auf den omega-Fasern), die die Gravitation braucht": true,
+  "E (d): Die Kumulanten des Ladungssektors tragen keine Außendaten. Jeder rein innere Operator vertauscht mit P_mu, hat also nur Impulsübertrag null und kann keinen propagierenden masselosen Spin-2-Pol erzeugen (Hinweis des Koordinators, hier gerechnet); auf dem Außenraum wirkt er als c-Zahl im Sektor D = 0. Gravitation müsste aus einer gemischten Antwort innen/außen ((b), (c)) oder aus einem eigenen geometrischen Sektor kommen": true,
+  "E/L: Im Sinn von GRAV.PARENT.GAP.NO_GO.01 ist der native Elterngenerator (Modulgenerator je Mode) auf dem Graviton-Sektor gleichmäßig gegappt; einen masselosen Spin-2-Pol der nativen Dynamik gibt es damit nicht. Die Čech-Koränder sind die lineare Eichfreiheit des Grad-2-Sektors (kinematisch), aber ohne kritische Folge; der zugelassene Ausweg (kritische Folge mit lokalen Tensor-Eichbedingungen) wird von keiner der Quellen (a)-(d) geliefert": true,
+  "E: S4b in der Form 'Marken = invariante selbstduale Weylkrümmung an einem Fixpunkt von R' ist ausgeschlossen. Eine Isometrie erhält W; die Vierteldrehung kehrt das Vorzeichen des H6-Quadrupols um (Eigenwert e^{-i pi m/2} = -1 auf m = +-2), ein R-invariantes W ist axialsymmetrisch (Typ D, J != 0) oder null. Die Marken haben als Satz D4, als Tensor nur D2": true,
+  "E/N: In der SU(2)-symmetrischen Klasse (Bianchi IX, Tods Form) ist J = 0 mit W+ != 0 kein Dauerzustand: Die harmonische Konfiguration (tau = i) tritt auf einzelnen Bahnen auf, die Lösung läuft durch sie hindurch. J identisch null kommt nur konform flach vor (Niveau I0 = -1/4; Lesart: die runde S^4 mit der irreduziblen SO(3)-Wirkung auf Sym_0(3))": true,
+  "E (z65 + hier): Die Krümmungsquartik einer halbflachen Metrik liegt nie auf ihren eigenen Twistorgeraden: In Tods Form verschwindet W- (die Hälfte der Twistorfaser), die Marken einer Quartik von W+ sitzen auf der anderen Sphäre. Liest man die Naht als Twistorgerade, so lässt eine Weylquartik vom H6-Typ dort nach z65 (R(m_pi, m_pi) = 4 Psi~(pi^4)) nur die vier Marken als ungehinderte alpha-Ebenen übrig: Die Gerade selbst überlebt die Krümmung nicht": true,
+  "L/C: Die tragfähige Lesart von S4b ist eine Symmetrielesart, keine Krümmungslesart: In SO(3)-invarianten selbstdualen Einsteinräumen (Hitchin, Painlevé VI) trifft jede Twistorgerade den antikanonischen Divisor der entarteten Bahnen in vier Punkten; für die runde S^4 sind das genau die Wurzeln der Quartik, die den Punkt darstellt, und die H6-Marken gehören zum Punkt m_H6 auf der harmonischen Bahn. Das sind Daten der Symmetriewirkung, sie variieren mit der Bahn (Kreuzverhältnis = Bahnparameter) und sind harmonisch nur auf einer Bahn": true,
+  "E/L Gegenprobe S1: R ist auf den Außenoszillatoren trivial und innen ein Spin-Z4-Erzeuger (z79, z81). S4b verlangt R als Raumzeitsymmetrie: an Fixpunkten unmöglich (Quadrupol wechselt das Vorzeichen), als freie Isometrie erzwingt R Typ D. Die Entscheidung fällt damit für S1: Die Marken sind innen": true
+ },
+ "zahlen": {
+  "verflechtung_vergleiche": 1680,
+  "vakuumklasse": {
+   "phi*det(x - i kappa^2)": "2*kappa**2",
+   "kappa^2 nativ (m=1)": "0.996272076221",
+   "tanh(pi)": "0.996272076221"
+  },
+  "woerterbuch": [
+   {
+    "D = N_d - N_e": -4,
+    "Homogenität n": 2,
+    "Helizität h": -2.0,
+    "E_min": 3.0,
+    "K-Typen k=0..5": [
+     5,
+     12,
+     21,
+     32,
+     45,
+     60
+    ],
+    "Rolle": "Penrose-Deformation von PT: H1(PT, O(2)), Psi_ABCD (z65: Helizität -2), Kodaira-Spencer-Klasse"
+   },
+   {
+    "D = N_d - N_e": -2,
+    "Homogenität n": 0,
+    "Helizität h": -1.0,
+    "E_min": 2.0,
+    "K-Typen k=0..5": [
+     3,
+     8,
+     15,
+     24,
+     35,
+     48
+    ],
+    "Rolle": "Helizität -1 (ASD-Maxwell bzw. Wards Bündeldeformation), NICHT der Skalar"
+   },
+   {
+    "D = N_d - N_e": -1,
+    "Homogenität n": -1,
+    "Helizität h": -0.5,
+    "E_min": 1.5,
+    "K-Typen k=0..5": [
+     2,
+     6,
+     12,
+     20,
+     30,
+     42
+    ],
+    "Rolle": "Helizität -1/2 (Weyl, eine Chiralität)"
+   },
+   {
+    "D = N_d - N_e": 0,
+    "Homogenität n": -2,
+    "Helizität h": 0.0,
+    "E_min": 1.0,
+    "K-Typen k=0..5": [
+     1,
+     4,
+     9,
+     16,
+     25,
+     36
+    ],
+    "Rolle": "Skalar (konformer Skalar), Sektor des Vakuums Omega"
+   },
+   {
+    "D = N_d - N_e": 1,
+    "Homogenität n": -3,
+    "Helizität h": 0.5,
+    "E_min": 1.5,
+    "K-Typen k=0..5": [
+     2,
+     6,
+     12,
+     20,
+     30,
+     42
+    ],
+    "Rolle": "Helizität +1/2 (z61: Grad -3)"
+   },
+   {
+    "D = N_d - N_e": 2,
+    "Homogenität n": -4,
+    "Helizität h": 1.0,
+    "E_min": 2.0,
+    "K-Typen k=0..5": [
+     3,
+     8,
+     15,
+     24,
+     35,
+     48
+    ],
+    "Rolle": "Maxwell phi_A'B' (Helizität +1)"
+   },
+   {
+    "D = N_d - N_e": 4,
+    "Homogenität n": -6,
+    "Helizität h": 2.0,
+    "E_min": 3.0,
+    "K-Typen k=0..5": [
+     5,
+     12,
+     21,
+     32,
+     45,
+     60
+    ],
+    "Rolle": "Psi~_A'B'C'D' (z61, Helizität +2); googly: Deformation von PT* = Tomita-Partner (z65)"
+   }
+  ],
+  "euler_gewicht_V_h": {
+   "-6": [
+    "-8"
+   ],
+   "-2": [
+    "-4"
+   ],
+   "0": [
+    "-2"
+   ],
+   "2": [
+    "0"
+   ],
+   "4": [
+    "2"
+   ]
+  },
+  "casimir_su22": {
+   "Formel": "C2 = sum E^a_b E^b_a - (tr E)^2/4 = 3(h^2 - 1), h = D/2",
+   "Residuum": 1.4210854715202004e-14,
+   "geprüfte D-Sektoren": [
+    -6,
+    -5,
+    -4,
+    -3,
+    -2,
+    -1,
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6
+   ],
+   "z83 (S2)": "3(h^2 - 1)/8 in der dortigen Erzeugernormierung"
+  },
+  "vertex_grad2": {
+   "a(-4)/a(+4) = q^4 = e^{-8 pi m}": {
+    "1": "1.21616e-11",
+    "2": "1.47903e-22",
+    "3": "1.79874e-33"
+   },
+   "Ladungssektoren m=1": {
+    "(1, 0)": {
+     "a(+4)": 0.12380798423087544,
+     "a(+4)/h": 0.24761596846175088,
+     "h": 0.5,
+     "E(Q)": 0.25
+    },
+    "(0, 1)": {
+     "a(+4)": 0.12380798423087544,
+     "a(+4)/h": 0.24761596846175088,
+     "h": 0.5,
+     "E(Q)": 0.75
+    },
+    "(1, 1)": {
+     "a(+4)": 0.3003723059064322,
+     "a(+4)/h": 0.3003723059064322,
+     "h": 1.0,
+     "E(Q)": 1.0
+    },
+    "(1, -1)": {
+     "a(+4)": 0.3003723059064322,
+     "a(+4)/h": 0.3003723059064322,
+     "h": 1.0,
+     "E(Q)": 0.5
+    },
+    "(2, 0)": {
+     "a(+4)": 0.4420001013280918,
+     "a(+4)/h": 0.2210000506640459,
+     "h": 2.0,
+     "E(Q)": 1.5
+    },
+    "(2, 1)": {
+     "a(+4)": 0.4188838720939802,
+     "a(+4)/h": 0.16755354883759208,
+     "h": 2.5,
+     "E(Q)": 2.25
+    },
+    "(3, 0)": {
+     "a(+4)": 0.18367228447345024,
+     "a(+4)/h": 0.04081606321632228,
+     "h": 4.5,
+     "E(Q)": 3.75
+    }
+   },
+   "Polarisation_Überlapp": {
+    "(1,0)|(0,1)": 0.0,
+    "(1,1)|(1,-1)": 6.522560269672792e-16,
+    "(1,0)|(1,1)": 0.24999999999999947
+   },
+   "theta_mittel_norm": 2.376580089453429e-19
+  },
+  "zweite_ordnung": {
+   "Klammer {h_a, h_b}": "2*(al1*be2 - al2*be1)*(al1*z3 + al2*z4)**3*(be1*z3 + be2*z4)**3*(4*z1*z2 + z1*z4 + z2*z3)/(kappa**2*z1**3*z2**3)",
+   "nativer Kommutator reell orthogonal": 4.6518985305119664e-17,
+   "Weyl-Relation Residuum": 1.3769364023570961e-09,
+   "Wurzelbeträge D=+4": {
+    "E_L": 0.0035737090356749357,
+    "F_L": 0.0035737090356749357,
+    "E_R": 0.0035737090356749357,
+    "F_R": 0.0035737090356749357
+   },
+   "Überlapp su2_L|su2_R": 4.476914631767281e-15
+  },
+  "ladungssektor": {
+   "beta = 12.57, R = 7": {
+    "max rel. Abweichung über Q = -2..2": 7.327471962526033e-15,
+    "<J_-1 J_1>_Q": [
+     3.487354517808143e-06,
+     3.4873545178081054e-06,
+     3.4873545178081185e-06,
+     3.487354517808118e-06,
+     3.487354517808118e-06
+    ]
+   },
+   "Ladung bei 4 pi": {
+    "Exzess-Kurtosis": 19.15707179797044,
+    "Theta-Abweichung": 6.938893903907228e-18
+   },
+   "beta = 3, R = 7": {
+    "max rel. Abweichung über Q = -2..2": 3.2250762592722637e-06,
+    "<J_-1 J_1>_Q": [
+     0.05239568046319225,
+     0.052395695691292536,
+     0.05239569641179724,
+     0.052395695691292536,
+     0.052395680463192346
+    ]
+   },
+   "beta = 3, R = 8": {
+    "max rel. Abweichung über Q = -2..2": 1.605671335891401e-07,
+    "<J_-1 J_1>_Q": [
+     0.05239569569326577,
+     0.05239569645142809,
+     0.052395696487299956,
+     0.05239569645142813,
+     0.05239569569326565
+    ]
+   }
+  },
+  "h6_quadrupol": {
+   "Eigenwerte (bis Phase i)": [
+    -0.7071067811865475,
+    0.0,
+    0.7071067811865471
+   ],
+   "I, J H6": [
+    -0.4999999999999999,
+    0.0
+   ],
+   "R-invarianter Unterraum": 1,
+   "I, J invariant": [
+    "(0.4999999999999999+5.507816461106375e-34j)",
+    "(-0.06804138174397714+2.248556654435413e-34j)"
+   ],
+   "Stabilisator Tensor/Satz (Oktaedergruppe)": [
+    4,
+    8
+   ]
+  },
+  "J_null_invarianz": {
+   "Punkte auf C = {N = XN = X^2N = 0}": 61,
+   "X^3N = 0 und W+ = 0 (I0 = -1/4)": 35,
+   "nahe Typ O": 8,
+   "nicht invariant": 18,
+   "unklar": 0,
+   "min |X^3 N| rel (nicht inv.)": "1.151e-6"
+  },
+  "J_entlang_loesungen": {
+   "beschränkte Lösungen": 8,
+   "(Nullstellen, max|J|/(I/2)^1.5, min Sprung)": [
+    [
+     5,
+     0.3848947886120956,
+     0.004491544769722671
+    ],
+    [
+     4,
+     0.3848986760030143,
+     0.0013805077382082588
+    ],
+    [
+     3,
+     0.3848996047750214,
+     0.0008033981531330124
+    ],
+    [
+     1,
+     0.3849001710442697,
+     0.0038953040457766156
+    ],
+    [
+     6,
+     0.38490012146481356,
+     0.0008584874526229981
+    ],
+    [
+     3,
+     0.3849001746916325,
+     0.0012274452193614684
+    ],
+    [
+     1,
+     0.3849001794009371,
+     0.002648680862277165
+    ],
+    [
+     3,
+     0.3849001519893125,
+     0.0025716068099265023
+    ]
+   ]
+  },
+  "hitchin_vier_punkte": {
+   "Kubik f der H6-Geraden": [
+    "(-0.24265873+0.24027117j)",
+    "(0.56412631-0.28621847j)",
+    "(0.41616187+0.42029726j)",
+    "(-0.16524831-0.32569848j)"
+   ],
+   "Doppelwurzeln = Wurzeln der Jacobi-Quartik (Fehler)": 2.0244550196148e-15
+  },
+  "status": {
+   "Außenraum = Elementarzustände": [
+    "E",
+    "Fockvektoren = Čech-Klassen, Homogenität = -K/(4 pi m) - 2, Tomita J = n -> -n - 4, Casimir 3(h^2 - 1) je Sektor; Kodaira-Spencer-Klassen = Sektor D = -4"
+   ],
+   "S4 (a) gaußscher Sektor": [
+    "E, negativ",
+    "nur D = 0 (u(2,2), triviale Klassen), keine Deformation"
+   ],
+   "S4 (b) Vertexoperatoren": [
+    "E, negativ für Universalität",
+    "Grad-2-Klassen erst in vierter Ordnung, Amplitude ~ h^2 e^{-ch}, Polarisation = Ladungsvektor, KMS-Gewicht q^4 = e^{-8 pi m} gegen googly"
+   ],
+   "S4 (c) nichtabelsche Ströme": [
+    "E, negativ",
+    "Verschiebungen mit |alpha|^2 = 2, su(2)_L und su(2)_R orthogonal polarisiert; f^abc innen; native zweite Ordnung Heisenberg, nicht die Plebanski-Penrose-Klammer"
+   ],
+   "S4 (d) Ladungssektor": [
+    "E, negativ",
+    "Außendaten in jedem Sektor gleich, innere Operatoren vertauschen mit P_mu"
+   ],
+   "GRAV.PARENT.GAP.NO_GO.01": [
+    "E",
+    "nativer Generator auf D = +-4 gleichmäßig gegappt (|K| >= 16 pi), keine kritische Folge"
+   ],
+   "S4b Fixpunkt": [
+    "E, ausgeschlossen",
+    "R-invariantes W ist Typ D oder null; H6 hat J = 0"
+   ],
+   "S4b Bianchi IX": [
+    "E/N, ausgeschlossen",
+    "isometrisches R => Typ D/O; J = 0 nur auf Bahnen, J identisch null nur konform flach"
+   ],
+   "S4b Twistorgerade": [
+    "E, ausgeschlossen",
+    "Krümmungsquartik nicht auf der eigenen Twistorgeraden (googly, z65)"
+   ],
+   "Hitchins vier Punkte": [
+    "E/L",
+    "H6-Marken = Schnitt der Twistorgeraden über m_H6 mit der Diskriminantenfläche; Symmetriedatum"
+   ],
+   "Gravitation nichtlinear, G, Universalität": [
+    "O",
+    "braucht eine native Poissonstruktur auf den omega-Fasern oder einen eigenen geometrischen Sektor; hier nicht vorhanden"
+   ]
+  }
+ },
+ "urteil": "Der Außenraum aus den Quarteroszillatoren mit Tomita-Partner ist als Fockraum genau die Elementarzustandsdarstellung der Twistortheorie: Fockvektoren sind Čech-Klassen, Vernichtung ist Korand, die Homogenität ist der negative Modulgenerator (n = -K/(4 pi m) - 2), die Tomita-Konjugation ist die Twistorkonjugation n -> -n - 4, und jeder Sektor D = 2h ist ein masseloser Einteilchensektor mit Casimir 3(h^2 - 1), Helizität +-2 eingeschlossen (wie S2/z83). Eine Kodaira-Spencer-Klasse erster Ordnung ist ein Vektor im Sektor D = -4. Keine native Quelle bevölkert ihn universell: Der gaußsche Sektor bleibt bei D = 0; Vertexoperatoren und nichtabelsche Ströme sind Twistorverschiebungen und erreichen den Grad-2-Sektor erst in vierter Ordnung, mit Amplitude ~ h^2 e^{-ch}, dem Ladungsvektor als Polarisation und dem KMS-Gewicht q^4 = e^{-8 pi m} gegen das googly-Bild; der Ladungssektor trägt keine Außendaten und hat nur Impulsübertrag null. Die native zweite Ordnung ist die Heisenberg-Komposition mit zentralem Kommutator, nicht die Plebanski-Penrose-Klammer {h_a, h_b} ~ [a b], die der Einstein-Vertex verlangt; der native Generator ist auf dem Graviton-Sektor gleichmäßig gegappt (GRAV.PARENT.GAP.NO_GO.01). S4 ist damit für die Quellen (a)-(d) gescopt negativ: Die Klasse koppelt nicht universell und die zweite Ordnung ist nicht Einstein. S4b ist in der getesteten Form ausgeschlossen: Ein R-invariantes Weyl-W an einem Fixpunkt ist axialsymmetrisch (Typ D) oder null, isometrisches R erzwingt in Bianchi IX Typ D/O, in Tods Form (W- = 0 exakt verifiziert) ist J = 0 nur auf einzelnen Bahnen und identisch nur konform flach, und die Krümmungsquartik liegt nie auf der eigenen Twistorgeraden. Tragfähig bleibt eine Symmetrielesart: Die H6-Marken sind die vier Punkte, in denen die Twistorgerade über dem Punkt m_H6 der S^4 die Diskriminantenfläche der SL(2,C)-Bahnen trifft (Hitchin). Die Entscheidung S1 gegen S4b fällt für S1: Die Marken sind innen."
+}

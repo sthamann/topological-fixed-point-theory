@@ -337,7 +337,7 @@ Jede Strategie nennt Idee, Anlass, erste Rechnungen, Erfolg, Abbruch und die Tor
 | S1 Zwei Faktoren | z82 (24/24) | R ist auf dem Träger die ℤ₄ der 16 (Zentrum von Spin(10), bis auf Eichung); Spin und Statistik innen exakt; das Original erreicht nur die „2“; mit den Quarter-Oszillatoren als Lorentzgruppe haben Fermionen kein 2π-Vorzeichen | E, teilweise |
 | S2 radiale Quantisierung | z83 (20/20) | su(2,2) schließt mit den Tomita-Wurzeln des nativen Hebers L^nat; ν = 1-Leiter; jede Helizität einmal; Minkowskienergie [0, ∞); Moden = Energiestufen | C (eine Identifikation) |
 | S3 euklidisch, OS | z84 | rechnet noch; mit Hinweis auf die radiale Spinorreflexion Θ_n | offen |
-| S4 Deformation | z85 | rechnet noch; mit dem Quadrupoltest gegen S4b | offen |
+| S4 Deformation | z85 (23/23) | native Quellen geben keine universelle Grad-2-Klasse, zweite Ordnung Heisenberg statt Einstein; S4b ausgeschlossen, Marken = Hitchins vier Punkte (Symmetriedatum) | E negativ (H6h43) |
 | S5 Verschränkung | z86 (29/29) | keine Flächennormierung aus Original\|Partner (Typ I, kein Horizont); eine Uhr für alle Sektoren | E negativ |
 | S6 Saat | z87 (26/26) | Saat ρ₁ + Spin-ℤ₄ + CAR; Ursprung auf P_sym und P_clock eingegrenzt; Gaußprämisse aus P_clock in allen Abschneidungen | E / C |
 | S7 Szenarien | OriginLab `scenarios` | von 960 Szenarien bleiben 8, alle mit Schrittart-Spinor, inneren Marken, parabolischer Zeit, Energiestufen und Saat ρ₁ | Steuerung |

@@ -1322,6 +1322,15 @@ if "H6h2" in H and z1p.exists() and z2p.exists():
                                                                                                                                                                              "P_sym und P_clock eingegrenzt (Z87); R = Z4 der 16 auf dem Träger, "
                                                                                                                                                                              "im Original nur die 2 (Z82)")
                                                                                                                                                         facts["F60_strategies_s1_s2_s5_s6"] = {n: T27[n]["urteil"] for n in T27}
+                                                                                                                                                        z85p = Path(__file__).with_name("z85_ergebnis.json")
+                                                                                                                                                        if z85p.exists():
+                                                                                                                                                            T28 = json.loads(z85p.read_text())
+                                                                                                                                                            H["H6h43"] = dict(H["H6h42"])
+                                                                                                                                                            H["H6h43"]["K13"] = (LES if all(T28["checks"].values()) else F,
+                                                                                                                                                                                 H["H6h42"]["K13"][1] + "; native Quellen geben keine universelle "
+                                                                                                                                                                                 "Grad-2-Klasse, zweite Ordnung Heisenberg statt Einstein, Marken "
+                                                                                                                                                                                 "keine Weylkrümmung (Z85)")
+                                                                                                                                                            facts["F61_deformation_outer_space"] = T28["urteil"]
 
 order = [f"K{i}" for i in range(1, 21)]
 print("Gesamttabelle (P = hergeleitet, L = unter benannter Lesart, F = FAIL, O = OFFEN, E = EINGABE)\n")
