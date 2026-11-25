@@ -1,6 +1,187 @@
 # Urteil
 
-## Aktueller Stand: H6h46 — F6: Starrheit trägt die Nichtentartung, P_clock ⇔ P_tn; Korrektur zu z95 (`z94`, `z95`)
+## Aktueller Stand: H6h47 — Folgeschritte G1–G3 und zwölfte Analyse: Kinematik nativ, Dynamik offen (`z96`–`z99`)
+
+**Bilanz:** unverändert 13 P und 7 L von 20. K12, K13 und K15 sind präzisiert.
+
+**Auftrag:** „Ja und das hier berücksichtigen“. Gemeint sind die Folgeschritte 1–3 aus H6h45/H6h46 und die zwölfte
+externe Analyse (Gravitation als Dynamik der Verbindung von Original und Gegenstruktur, MacDowell–Mansouri). Alles ist
+gerechnet und reproduziert.
+
+**Zwölfte externe Analyse (z96, 18 Prüfungen, selbst gerechnet):** Alle gerechneten Aussagen stimmen. Eingeordnet:
+- **Clifford-Projektionen [E]:**
+  - 25/25 Cliffordrelationen. F₊ ist selbstdual, F₋ antiselbstdual, c₂ = −1 und +1. Die Dichte ist exakt
+    6/(π²(1+|x|²)⁴), also das BPST-Instanton.
+  - Das ist die quaternionische Hopf- bzw. Twistorfaserung CP³ → S⁴ (Instanton und Anti-Instanton). Die
+    entgegengesetzten Ladungen erzwingt schon die Whitney-Summe P₊ + P₋ = trivial; sie sind kein eigener Befund über eine
+    Gegenstruktur.
+  - Die runde S⁴ braucht eine euklidische quaternionische Struktur j (j² = −1). Nativ sind die (2,2)-Form und τ [O].
+- **[Q_a, Q_b] = σM_ab [E]:** gilt, das Vorzeichen ist Konvention. Invariant gilt:
+  - Die Wahl, deren Q₀ die kompakte konforme Energie E ist, gibt so(3,2), also AdS. Das ist die E-invariante Wahl aus z89.
+  - Die andere Wahl gibt so(4,1), also dS. Ihr Q₀ ist der Modulgenerator eines Doppelkegels (Hislop–Longo).
+  - Der Radius ist unter der Dilatation konjugiert, also eine Einheitenwahl.
+- **Plebański [E/O]:**
+  - Die 27 Relationen gelten (162/162 an sechs Vierbeinen), *Σ₊ = iΣ₊.
+  - Das ist die bekannte Richtung: Aus einem reellen Vierbein folgen die Relationen. In z29 ist es der Lorentzpunkt
+    a = i, b = −1.
+  - Offen bleibt die Umkehrung: Warum trägt die Naht ein reelles Lorentzvierbein?
+- **MacDowell–Mansouri [E]:** Die Zerlegung hat genau drei Terme. Daraus folgen Λ = −3σ/ℓ² und b = ℓ²/(64πGσ).
+  - Der Eulerterm ergibt auf S⁴ 32π²χ. Sein Gewicht |b|·32π²χ = πℓ²/G ist genau die de-Sitter-Entropie.
+  - Die Wirkung ist eine Wahl. Die Algebra erlaubt sie, erzwingt sie aber nicht.
+- **Λ–G-Relation:**
+  - ℓ²/G = 32π³e^{2/α} und |b| = (π²/2)e^{2/α} stimmen symbolisch [E].
+  - Sie sind COSMO.LAM.01 in neuen Variablen, ohne zusätzlichen Inhalt (ℓ = 1,03·10⁶¹ ℓ_Pl, 17,6 Mrd. Lichtjahre).
+  - Das Vorzeichen verlangt dS, die native E-invariante Wahl ist aber AdS [O].
+  - Eine zweite Skala G fehlt nativ (z90).
+- **Gewichte [E/L]:** 99,9996513 % und 0,0003487 % stehen schon in z47/z48. Die Hassan–Rosen-Lesart
+  M_f/M_g = 1/√(e^{4π} − 1) = 0,0018674 ebenfalls; die Residuen sind symbolisch nachgerechnet.
+- **Neuer Kandidat [C]:** Das Vorzeichen von Λ hängt daran, welche Zeit in Q₀ steht:
+  - die radiale Energie gibt AdS;
+  - die modulare Zeit einer Kappe gibt dS.
+
+**G2 Phase, Kopplung und MacDowell–Mansouri (z98, 11 Prüfungen; Agent, reproduziert):**
+- **Phase von I [E negativ]:**
+  - Θ₁ = τ fixiert die Modulphase nicht. Alle nativen Daten sind Modul-U(1)-invariant: KMS-Zustand, J, Δ^{it}, τ, Θ_n,
+    P, K, E und die CCR-Form. I_π trägt die Ladung 2.
+  - Die Phase ist eine Eichrichtung der freien Theorie: Jede Gravitonamplitude bekommt denselben Faktor e^{4iθ}.
+  - Realstrukturen, die sie fixieren würden, kommen in Modulbahnen. Die lorentzsche Realität legt die Phase nur relativ zu
+    einer Volumenform fest (U(2,2) → SU(2,2)).
+- **Kopplung g [E negativ]:**
+  - Die OS-Form zweiter Ordnung G₀ + |g|²V⁺e^{−tE}V ist für jedes g und jede Phase positiv.
+  - Positivität fixiert nur die Realität: Der Spiegelvertex muss der adjungierte sein. |g| fixiert sie nicht.
+- **MacDowell–Mansouri nativ [E]:**
+  - [Q_m, Q_n] = σM_mn gilt exakt mit den nativen P und K. span{Q^σ, Lorentz} = Der(I_π − σI_ω), das ist genau das
+    Büschel aus z89.
+  - Nativ ist σ = +1: so(3,2) mit Q₀ = E, also AdS.
+  - Präzisierung von z89: Der Radius ist die halbe Vakuumgröße, l = Im x_Vak/2, also Λ = −12/R_Vak². z89s Λ̂ ist Λ/12.
+  - τ = Θ₁ ist die Punktspiegelung dieses AdS₄.
+- **Modulare Berry-Verbindung [E/C]:**
+  - Der Modulgenerator ist auf T zentral, und der Connes-Kozyklus ist flach. Das bestätigt die Negativkontrolle der Analyse.
+  - Nicht trivial ist allein die Familie der Tomita-Konjugationen J_g. Sie ist AdS₄, ihre Nullmoden-Verbindung ist
+    Levi-Civita, und die MacDowell–Mansouri-Krümmung verschwindet (F = 0).
+  - Das ist Kinematik eines starren Vakuums, keine Dynamik.
+- **Plebański aus zwei Blättern [C]:**
+  - Σ₊ ist die ε-Kontraktion auf dem Originalindex (= I_π). Σ₋ = JΣ₊J = conj(Σ₊) ist die des Partners. Das flache Vierbein
+    kommt aus P_μ = ½(JcJ)σ_μc.
+  - Die Simplizität der reellen Form fixiert die Phase nur bis Z₄. Es gibt vier Sektoren, ±e∧e und ±*(e∧e).
+  - Die native Drehung U_{π/4} bildet den Gravitations- auf den topologischen Sektor ab. Die Sektorwahl ist daher eine
+    Prämisse.
+- **Skalen [E bedingt, O nativ]:**
+  - Die Λ–G-Relation ist eine bedingte Identität. Das native σ = +1 gibt Λ < 0.
+  - dS bräuchte den hyperbolischen, spektral symmetrischen Erzeuger (P₀ − K₀)/2.
+  - Nötig wäre G/R_Vak² = e^{−2/α}/(128π³) ≈ 10^{−122,6}. Nativ ist das nicht erreichbar.
+
+**G1 Verklebung von Spin und Statistik (z97, 11 Prüfungen; Agent, reproduziert):**
+- **Regel und Abschluss [E]:** G = U_2π ⊗ R², also (−1)^{2h} = R², auf Ladungsgitter ⊗ radialer Standardform
+  (784 Paarzustände).
+  - G ist zentral. Die Projektion schließt exakt unter su(2,2) und unter Fusion.
+  - Es bleiben die ganzen Helizitäten mit R = ±1 und die halben mit R = ±i. Der Sektor h = ±½ hat die Weyl-Zählung
+    n(n+1).
+  - Die Regel ist aber vektorartig: Index 0 je R-Klasse, beide Helizitäten. Sie gibt Spin-Statistik, keine Chiralität.
+- **Vertexoperatoren [E negativ]:** Die nativen schließen nicht.
+  - Nackte Ladungsschritte sind G-ungerade.
+  - ψ*_r erhält die Regel nur in den Sektoren mit r − Q ungerade.
+  - Die Kantenmode ψ*_Q, das tiefste Fermion des Originals, und der einseitige Heber L^nat_{−1} werden verworfen.
+- **Gekleidete Vertizes [E]:** Ψ_a = V⁺ ⊗ S_a erhält G.
+  - Die Schrittart S_a ist ein (½, 0)-Spinor mit E + ½ und h + ½. Sie macht aus dem Skalar den Weyl-Tiefstgewichtszustand
+    (3/2, ½) mit R = i.
+  - Das Produkt zweier gekleideter Vertizes ist der radiale Heber P_ab.
+  - Die Verklebung ist genau diese Paarung: Die Schrittart ist der Spinorindex, die Ladung trägt die Statistik.
+- **Austausch [E/O]:** Im Original stimmt das Vorzeichen (CAR). Die native bosonische Nahtkomposition (z91) setzt zwei
+  Weyl-Quanten an der Schwelle in j = 1 statt j = 0. Über Nähte hinweg braucht es eine gradierte Komposition.
+- **Herkunft [E negativ]:**
+  - Tomita J ist verträglich, aber nur in der Fassung G_tot = U_2π(−1)^{F+F̄}, die den KMS-Vektor festhält. J wählt nichts
+    aus.
+  - Kein Element von Modulgruppe mal Ladungsdrehungen ist G. Der Term Q²/2 verhindert es; das passende Element hat auf den
+    Ladungen die Ordnung 8.
+  - Die η-Spinstruktur ist rein innen und lässt zwei zentrale Hebungen offen (U ⊗ R^k, k = 0, 2).
+- **E₈-Kleber [C, im Konflikt]:**
+  - z_X · z_A3 = 1 gilt auf allen 240 Wurzeln.
+  - Neu: Das Zentrum der radialen SU(2,2) wirkt als Z_SU = i^{2h−2} mit Z_SU² = U_2π.
+  - Unter P_A3 (A3 = komplexifizierte radiale su(2,2)) gibt der Kleber R = Z_SU^{−1}, also die Regel. Dazu kommt eine
+    chirale Z₄-Regel mit SO(10)-Inhalt: 45 Vektoren, 10 Skalare, die 16 mit einer Helizität.
+  - P_A3 verbietet aber die neutrale radiale Skalarleiter aus z83 und deutet das Familiengitter A3 des gelösten
+    Flavourblocks um.
+- **Urteil:** bedingt mit der Prämisse P_GSO, nicht nativ. Die physikalische 2π-Drehung ist dann die mit der Uhr verdrehte
+  Hebung, die Symmetriegruppe Spin ×_{Z₂} Z₄.
+  - Folge für T4: Spin-Statistik ja, Chiralität nur mit P_A3.
+
+**G3 Wechselwirkung über Vertexoperatoren (z99, 19 Prüfungen; Agent, reproduziert):**
+- **Geteilte Hülle [E negativ]:**
+  - Wörtlich geteilt, also der Vertexoperator der einen Naht mit dem Oszillatorfeld der anderen, ist sie nichtlokal
+    (Austauschquotient −w/z).
+  - Konsistent geteilt geht nur g = ±1. Dann ist die Relativladung ein Nullvektor ohne Oszillatorinhalt, ohne 4D-Wirkung.
+- **Vertexroute = Stromroute [E, neu]:** Die einzige lokale, nichtentartete Kopplung zweier Nähte ist das Gitter ℤ² mit
+  zwei Hüllen.
+  - Ihr Ladungstransfer e^{i(φ₁−φ₂)} = ψ*₁ψ₂ ist exakt der su(2)₁-Strom (Frenkel–Kac).
+  - Die Transfersektoren sind weitere Leitern mit Δ = 1. Die Einteilchenleiter wird u(2)-adjungiert.
+- **Drei- und Vierpunkt [E]:**
+  - Paarfelder haben exakt verschwindende Dreipunktantworten (Paarparität).
+  - Ströme geben ±2 mit f-Struktur ohne d-Anteil, aber nur als 1→1-Formfaktor oder als sl(2,ℝ)-Fusion D₁ × D₁ → D₂. Das
+    ist kein kovarianter skalarer 4D-Vertex; das No-go aus z91 hält.
+  - Vierpunktantworten sind nur statistisch: Konstituententausch −1, Pauli 0 statt 2, Singulett −2/N.
+- **Δ = 1 ist starr [E]:**
+  - E^nat ist einkörperig und additiv (188 Zweipaarzustände).
+  - Mehrfachtransfer kostet nur Pauli (Q² statt Q). Eine Nullmodenkopplung ist ein chemisches Potential.
+- **Radiusdeformation [E negativ/C, neu]:**
+  - Die einzige exakt marginale Deformation ist das Relativboson über den Tomita-Partner; sie ist nicht nativ.
+  - Sie verschiebt die Kreuzzweige auf e^{±2θ}, behält aber die kurzen Vielfachheiten (k+1)².
+  - Einer unitären 4D-Skalarleiter mit Δ > 1 fehlen dann die □-Nachkommen 1, 4, 10, 20. Für λ ≠ 0 gibt es keine unitäre
+    4D-Lesart.
+- **Strom-Strom-Kopplung [C]:** Σff = 4δ, sie läuft (das 2D-Gegenstück asymptotischer Freiheit). Sie ist aber gewählt und
+  einkörperig.
+- **Eichfeldlesart [E kinematisch/L]:**
+  - Es gibt u(2)-adjungierte Helizität-±1-Leitern mit den Maxwell-K-Typen.
+  - Es gibt keinen energieadditiven kubischen Vertex.
+  - Nach Flato–Fronsdal geben zwei Leitern nur Ströme mit Δ = s + 2, also die Vektorkomposita aus z75, keine Gluonen.
+- **Was fehlt [E/O]:**
+  - Jeder Bilinearoperator gibt nur unverbundene 1→2-Anteile.
+  - Die kleinste verbundene Amplitude kommt vom Vierfermionterm, dem Doppeltransfer e^{2i(φ₁−φ₂)} (h = 4), mit gewählter
+    Kopplung.
+  - Gesucht ist ein Zweikörperterm, der Ein- und Zweipaarschicht mischt und die langen Vielfachheiten liefert.
+
+**Szenario-Suche (OriginLab, `scenarios`):**
+- Neu sind die Achsen Statistik und Wechselwirkung und der Gravitationswert „MacDowell–Mansouri als modulare
+  Cartan-Verbindung“. Das ergibt 13 824 Szenarien.
+- 12 zulässige Szenarien erfüllen alles außer Graviton und Chiralität. Alle haben:
+  - Schrittart als Spinorindex, innere Marken und Moden als Energiestufen;
+  - die Uhr-verdrehte Statistik P_GSO und einen gewählten Zweikörperterm;
+  - als Gravitation MacDowell–Mansouri oder die P₀-graduierte Komposition.
+- Die minimalen leeren Regeln nennen genau, was fehlt:
+  - [graviton]: Kein Gravitationswert ist gestützt.
+  - [admissible, chiral_matter]: Chiralität gibt es nur mit dem ausgeschlossenen P_A3.
+
+**Was die Runde bedeutet:**
+- **Gravitation:** Die Kinematik ist jetzt vollständig nativ:
+  - das AdS-Vakuum als flache Cartan-Verbindung;
+  - Σ±, das flache Vierbein, τ als Punktspiegelung;
+  - I bis auf die Phase.
+
+  Nicht nativ sind die Dynamik, die Phase, g bzw. G bzw. b, der Plebański-Sektor und das dS-Vorzeichen.
+- **Materie:** Spin-Statistik gibt es mit einer benannten Prämisse, Chiralität nicht.
+- **Wechselwirkung:** Nativ gibt es keine. Vertexoperatoren sind Ströme, und Δ = 1 ist starr.
+- **Gemeinsames Muster:** Alle nativen Strukturen sind frei, also gaußsch, einkörperig oder flach. Gravitationsdynamik und
+  Wechselwirkung verlangen beide dasselbe Fehlende: eine nicht gaußsche Zweikörperstruktur mit festem Koeffizienten. Für die
+  Gravitation ist das die Krümmung F ≠ 0 mit festem b, für die Wechselwirkung die verbundene 1→2-Amplitude mit festem g.
+
+**Nächste Schritte:**
+1. **Gemeinsame Quelle für Krümmung und Wechselwirkung:** Gesucht ist ein nativ nicht gaußscher Zustand, z. B. ein
+   Kondensat (D = −4), der kollektive Zustand aus z94 (N = 6) oder ein Kompositzustand aus z91. Zu prüfen ist an seiner
+   Tomita-Familie:
+   - Gibt sie F ≠ 0 mit festem quadratischem Koeffizienten, also b bzw. G?
+   - Gibt derselbe Zustand verbundene 1→2-Amplituden mit festem g?
+
+   Beides zusammen wäre der gemeinsame Elternprozess (K20).
+2. **Zweikörperterm:** Liefert der Doppeltransfer mit dem Tomita-Partner die fehlenden □-Nachkommen mit unitären
+   Vorzeichen?
+3. **Chiralität:** eine Z₄-Fassung ohne Skalarkonflikt, mit der Skalarleiter im Sektor R = −1 und dem Boson aus z92. Sonst
+   wird T4 als gescoptes Negativ festgehalten.
+4. **Kleinere Prüfungen:**
+   - Gibt eine gemeinsame CAR über die Nähte die gradierte Komposition?
+   - Wählt eine native Orientierung den Gravitationssektor?
+   - Gibt Q₀ als modulare Zeit einer Kappe dS?
+
+## Davor: H6h46 — F6: Starrheit trägt die Nichtentartung, P_clock ⇔ P_tn; Korrektur zu z95 (`z94`, `z95`)
 
 **Bilanz:** unverändert 13 P und 7 L von 20. K19 ist präzisiert.
 

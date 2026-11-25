@@ -1,7 +1,7 @@
 # TFPT: Was funktioniert, was fehlt, was eine vollständige Lösung wäre
 
 Kompakter Stand vom 20. November 2026, ergänzt am 23. und 24. November (Befunde 20.–24. November, Kandidat H6 bis
-H6h46, Leitlinie „Rekonstruktion statt Auswahl“ und Abschnitt 5), für Explorations- und Lösungssitzungen. Seit 24. November
+H6h47, Leitlinie „Rekonstruktion statt Auswahl“ und Abschnitt 5), für Explorations- und Lösungssitzungen. Seit 24. November
 liegen die Explorationszweige vom 20. November in main (Quaternionrahmen, Fibonacci-Uhr, Vertauschung und Auslese, fremde
 und operative Ursprünge, Projekt Genesis, die Vertragsserie vom 14./15. Oktober); ihre Befunde stehen in ihren Verzeichnissen
 unter `experiments/`. Nicht zusammengeführt ist `codex/c3-p1-p2-abgleich-20261105` (121 Konflikte mit dem heutigen Stand). Neuere Befunde stehen in den Atlasproblemen mit Datum
@@ -42,7 +42,7 @@ Offen sind der Tensorkanal und die Rekonstruktion von 3+1 aus 4D-Antworten. Z60 
 ist die Spektraldimension (Weyl-Gesetz) einer Antwort. Die Quelle hat d = 1, die E₈-Naht kompakt und starr d = 8 = 4 + 4.
 Gebraucht wird eine originale Antwort mit d = 4, nichtkompakt und reflexionspositiv.
 
-**Gesamtstand und Strategien (Stand H6h46):** [`GESAMTSTAND-UND-STRATEGIEN.md`](GESAMTSTAND-UND-STRATEGIEN.md), mit
+**Gesamtstand und Strategien (Stand H6h47):** [`GESAMTSTAND-UND-STRATEGIEN.md`](GESAMTSTAND-UND-STRATEGIEN.md), mit
 Tor-Karte T1–T8, Kriterien K12–K20 und sieben Strategien (S1–S7).
 
 **Gesamtbild (Vogelperspektive, Stand H6h35):** [`VOGELPERSPEKTIVE.md`](VOGELPERSPEKTIVE.md).
@@ -171,9 +171,9 @@ Ursprung sollte beides zugleich liefern.
 
 ### Kandidat H6: Ursprung von P1 aus einer hintergrundfreien Naht (Exploration 23.11.)
 
-Quelle: `experiments/exploration/2026-11-23-phasenraum-f5-holocode/VERDICT.md` (Stand H6h46),
-Skripte `n1`, `v1`, `y1`, `z1`–`z95`, Lean-Vertrag `experiments/theory-contracts/h6-exakte-teile-20261123/`; Atlasproblem `problem:c3-p1-p2-shared-origin-reconciliation`,
-Befunde mit Präfix `h6`. Nichts davon ist im Ledger befördert. Prüfstand mit 20 Kriterien (Stand H6h46): 13
+Quelle: `experiments/exploration/2026-11-23-phasenraum-f5-holocode/VERDICT.md` (Stand H6h47),
+Skripte `n1`, `v1`, `y1`, `z1`–`z99`, Lean-Vertrag `experiments/theory-contracts/h6-exakte-teile-20261123/`; Atlasproblem `problem:c3-p1-p2-shared-origin-reconciliation`,
+Befunde mit Präfix `h6`. Nichts davon ist im Ledger befördert. Prüfstand mit 20 Kriterien (Stand H6h47): 13
 hergeleitet, 7 unter benannter Lesart, keines gescheitert, offen oder gesetzt. K12 (3+1) zählt seit der Leitlinie
 „Rekonstruktion statt Auswahl“ nur als Lesart: d = 4 folgt kinematisch, nicht aus den Antworten (Z60).
 
@@ -537,6 +537,18 @@ hergeleitet, 7 unter benannter Lesart, keines gescheitert, offen oder gesetzt. K
       Paare erschöpfend in Fenstern. [E/O]
     - P_clock folgt nicht aus P_sym. Es ist gleichwertig zur Zeitneutralität des Gesetzes P_tn (Modulzeit-Torus
       selbstdual). Zwei unabhängige Ursprungsprämissen bleiben: P_sym und P_tn. [E]
+  - Folgeschritte G1–G3 und zwölfte Analyse (Z96–Z99, H6h47):
+    - Zwölfte Analyse (MacDowell–Mansouri, Plebański, Clifford, Λ–G) hält in den Rechnungen. Die Clifford-Projektionen sind
+      Instanton und Anti-Instanton der Twistorfaserung; die Λ–G-Relation ist COSMO.LAM.01 in neuen Variablen. [E]
+    - Gravitation: Die Kinematik ist nativ – MacDowell–Mansouri-Algebra (AdS, Radius halbe Vakuumgröße), τ als
+      Punktspiegelung, Σ± aus Original und Partner, Tomita-Familie als flaches Vakuum (F = 0). Die Phase von I ist eine
+      Eichrichtung, Positivität fixiert g nicht, der Plebański-Sektor ist nur bis Z₄ fest, nativ ist AdS statt dS. [E/C]
+    - Spin-Statistik: Die Regel (−1)^{2h} = R² schließt unter su(2,2), Fusion und gekleideten Vertizes (Schrittart ×
+      Ladungsschritt), ist aber nicht nativ (Prämisse P_GSO) und vektorartig. Chiralität nur über den E₈-Kleber mit
+      P_A3, im Konflikt mit der Skalarleiter und dem Familiengitter A3. [E/C]
+    - Wechselwirkung: Vertexoperatoren sind auf Niveau 1 die su(2)₁-Ströme; Δ = 1 ist starr; eine verbundene 1→2-Amplitude
+      braucht einen gewählten Zweikörperterm (Doppeltransfer, h = 4). [E negativ/O]
+    - Szenario-Suche mit acht Achsen (13 824): 12 Szenarien erfüllen alles außer Graviton und Chiralität. [E]
   - Instantonen (Z33): Unter Spin(10) hat ein Einheitsinstanton 4 Eltern- und 12
     Familiennullmoden; mit gesättigten Familiennullmoden entsteht Re[e^{iθ}Φ² C_fam], die Wand ist
     also auch im Kontinuum möglich, bei nackter SO(10) aber ~10⁻¹⁶⁴ unterdrückt. [N]

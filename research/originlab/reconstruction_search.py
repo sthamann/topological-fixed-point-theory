@@ -29,6 +29,8 @@ docs/research/VOGELPERSPEKTIVE.md:
   scenarios       (H6h42, S7) whole-theory scenarios: every combination of spinor index, role of the marks, time,
                   modes, gravity and origin, with clauses computed from the doublet/position universes and from recorded
                   exploration results (EVIDENCE: result file, named check, meaning); pending evidence gives no clause.
+                  Since H6h47 also the statistics of matter (lift of the 2 pi rotation, z92, z97) and the interaction
+                  (z91, z99), with clauses spin_statistics, chiral_matter and interacting.
 
 Exactness: marks and Moebius maps in Gaussian rationals; doublet states are rational functions of u = e^pi (u is
 transcendental by Gelfond's theorem, so a rational identity in u holds at u = e^pi exactly when it holds identically);
@@ -828,9 +830,15 @@ SCENARIO_AXES = {
     "modes": ["species", "energy levels"],
     "gravity": ["composite spin 2", "Virasoro T(z)", "twistor deformation: native sources",
                 "twistor deformation: radial channel", "entanglement: original|partner cut", "entanglement: spatial cut",
-                "P0-graded two-seam composition"],
+                "P0-graded two-seam composition", "MacDowell-Mansouri: modular Cartan connection"],
     "origin": ["seed rho_1 + spin-Z4", "two binary observations"],
+    "statistics": ["untwisted lift", "clock-twisted lift (P_GSO)", "E8 glue with A3 = conformal (P_A3)"],
+    "interaction": ["fusion over even or linear algebras", "vertex operators = level-1 currents", "chosen two-body term"],
 }
+# the statistics rules of z97 live on charge lattice (x) radial standard form (step type = spinor index, modes = levels)
+RADIAL_STATISTICS = ("clock-twisted lift (P_GSO)", "E8 glue with A3 = conformal (P_A3)")
+CHIRAL_STATISTICS = {"untwisted lift": False, "clock-twisted lift (P_GSO)": False,       # z97: index 0 per R class
+                     "E8 glue with A3 = conformal (P_A3)": True}                         # z97: chiral Z4, 16 one helicity
 
 
 def _check_named(d, fragment):
@@ -904,6 +912,44 @@ EVIDENCE = [
     ("origin", "two binary observations", "conditional", "z80_ergebnis.json", "sign symmetry of the law forces Cl_2 = M_2, "
      "tau = i, p = 1/2 if implemented in the same irreducible representation",
      lambda d: _check_named(d, "irreduzible Darstellungen von <A, B")),
+    # H6h47: follow-up round G1-G3 and the twelfth external analysis (z96 checks it independently)
+    ("gravity", "P0-graded two-seam composition", "conditional", "z98_ergebnis.json", "the phase of I is a gauge direction "
+     "(all native data are modular-U(1) invariant, Theta_1 = tau fixes nothing); the second-order OS form is positive for "
+     "every g and phase, so positivity fixes reality, not |g|; g stays free",
+     lambda d: _check_named(d, "Modul-U(1) gegen die nativen Daten") and _check_named(d, "Reflexionspositivität zweiter Ordnung")),
+    ("gravity", "MacDowell-Mansouri: modular Cartan connection", "conditional", "z98_ergebnis.json", "the (A)dS algebra of "
+     "Q = (P + sigma K)/2 is native (z89's pencil, sigma = +1, so(3,2) with Q_0 = E, radius = half the vacuum size); the "
+     "family of Tomita conjugations is AdS4 with the Levi-Civita connection and flat MacDowell-Mansouri curvature F = 0 "
+     "(rigid vacuum); the two sheets give Sigma_+, Sigma_- and a flat tetrad; missing: a non-flat deformation with fixed b, "
+     "the Plebanski sector (fixed only up to Z4) and the dS sign",
+     lambda d: _check_named(d, "MacDowell-Mansouri-Algebra nativ") and _check_named(d, "tau als Punktspiegelung von AdS4")
+     and _check_named(d, "Plebanski aus zwei Blättern") and _check_named(d, "Vorzeichen und Skala")),
+    ("statistics", "untwisted lift", "excluded", "z92_ergebnis.json", "with the untwisted radial 2 pi rotation the "
+     "half-integer helicity sectors are R-bosons; no native Lorentz action whose -1 is R^2 carries the vertex operators",
+     lambda d: _check_named(d, "auf der ganzen Leiter ist L_0 = m") and _check_named(d, "Vertexoperatoren (274 Paare")),
+    ("statistics", "clock-twisted lift (P_GSO)", "conditional", "z97_ergebnis.json", "G = U_2pi R^2 is central and closes "
+     "under su(2,2), fusion and the dressed vertices (charge step x step type, the step type is the spinor index); not "
+     "native (Tomita J only compatible, no modular element equals G, eta leaves two lifts); vector-like (index 0 per R "
+     "class); across seams it needs a graded composition",
+     lambda d: _check_named(d, "[E] Definition: auf Ladungsgitter") and _check_named(d, "[E] gekleidete Vertizes")
+     and _check_named(d, "[E] Fusion: G ist multiplikativ") and _check_named(d, "[negativ, E] Modulgruppe bei beta = 4 pi")),
+    ("statistics", "E8 glue with A3 = conformal (P_A3)", "excluded", "z97_ergebnis.json", "reading A3 as the complexified "
+     "radial su(2,2) gives the rule and a chiral Z4 rule (the 16 with one helicity), but forbids the neutral radial scalar "
+     "ladder of z83 and reinterprets the solved family lattice A3 (scoped)",
+     lambda d: _check_named(d, "[C, mit Konflikt] Liest man A3")),
+    ("interaction", "fusion over even or linear algebras", "excluded", "z91_ergebnis.json", "no native fusion over even or "
+     "linear shared algebras gives a connected 4D three-point structure; cubic vertices between scalar ladders vanish",
+     lambda d: _check_named(d, "(ii-d) Kubische Vertizes")),
+    ("interaction", "vertex operators = level-1 currents", "excluded", "z99_ergebnis.json", "a literally shared envelope is "
+     "non-local or empty; the only local coupling of two seams (lattice Z^2) transfers the su(2)_1 current, so vertex and "
+     "current routes coincide; connected three-points only as form factors or sl(2,R) fusion, no covariant scalar 4D "
+     "vertex; Delta = 1 rigid, the marginal radius deformation lacks the long-multiplet descendants (scoped)",
+     lambda d: _check_named(d, "(a) Wörtlich geteilte Hülle") and _check_named(d, "(b) Frenkel-Kac")
+     and _check_named(d, "(c) Delta = 1 bleibt") and _check_named(d, "(c-ii) Die verschobene Kreuzleiter")),
+    ("interaction", "chosen two-body term", "conditional", "z99_ergebnis.json", "every native bilinear gives only "
+     "disconnected 1->2 parts; the smallest connected 1->2 amplitude is the four-fermion double transfer "
+     "e^{2i(phi_1 - phi_2)} (h = 4) with a chosen coupling; whether it supplies the long-multiplet descendants is open",
+     lambda d: _check_named(d, "(e) Jeder Bilinearoperator")),
 ]
 
 
@@ -943,7 +989,9 @@ def scenario_candidates(root=None):
             or (sc["marks"] == "internal spin-Z4" and r_order[sc["spinor_index"]] != 1)
             or (sc["marks"] == "Euclidean Weyl curvature" and (sc["spinor_index"] != "eta doublet"
                                                                 or sc["time"] != "OS reconstruction"))
-            or (sc["modes"] == "energy levels" and sc["spinor_index"] != "step type"))
+            or (sc["modes"] == "energy levels" and sc["spinor_index"] != "step type")
+            or (sc["statistics"] in RADIAL_STATISTICS and (sc["spinor_index"] != "step type"
+                                                          or sc["modes"] != "energy levels")))
         lorentzian = native_lorentz[sc["spinor_index"]] or (sc["time"] == "OS reconstruction"
                                                             and st["time"] == "supported")
         cl = {c for c, ok in (
@@ -953,7 +1001,10 @@ def scenario_candidates(root=None):
             ("one_field", sc["modes"] == "energy levels" and st["modes"] in ("supported", "conditional")),
             ("graviton", st["gravity"] == "supported"),
             ("origin_reduced", st["origin"] in ("supported", "conditional")),
-            ("marks_placed", st["marks"] in ("supported", "conditional"))) if ok}
+            ("marks_placed", st["marks"] in ("supported", "conditional")),
+            ("spin_statistics", st["statistics"] in ("supported", "conditional")),
+            ("chiral_matter", CHIRAL_STATISTICS[sc["statistics"]]),
+            ("interacting", st["interaction"] in ("supported", "conditional"))) if ok}
         objs.append({"label": " | ".join(combo), "scenario": sc, "status": st, "clauses": cl})
     return objs, {"evidence": {f"{a}: {v}": e for (a, v), e in sorted(ev.items())}, "r_order": r_order,
                   "native_lorentz": native_lorentz}
@@ -987,7 +1038,7 @@ IDENT_POOL = ["spinor", "r_equivalent_to_seam", "r_equivalent_to_quarter_pair", 
               "projective_order_2", "projective_order_4"]
 POSITION_POOL = ["native_r", "lorentz_compatible", "euclidean_compatible", "marked"]
 SCENARIO_POOL = ["admissible", "coherent", "lorentzian_native", "positive_time", "one_field", "graviton",
-                 "origin_reduced", "marks_placed"]
+                 "origin_reduced", "marks_placed", "spin_statistics", "chiral_matter", "interacting"]
 
 
 def run_reconstruction(root=None):
@@ -1069,13 +1120,18 @@ def run_reconstruction(root=None):
     sc, sc_info = scenario_candidates(root)
     res, hits_c = _rules_report(sc, SCENARIO_POOL, lambda o: o["label"])
     base = ["admissible", "coherent", "lorentzian_native", "positive_time"]
-    res["questions"] = {"complete": _question(hits_c, SCENARIO_POOL), "+".join(base): _question(hits_c, base)}
+    matter = base + ["one_field", "spin_statistics", "interacting"]
+    res["questions"] = {"complete": _question(hits_c, SCENARIO_POOL), "+".join(base): _question(hits_c, base),
+                        "+".join(matter): _question(hits_c, matter),
+                        "admissible+chiral_matter": _question(hits_c, ["admissible", "chiral_matter"]),
+                        "admissible+graviton": _question(hits_c, ["admissible", "graviton"])}
     best = max(len(o["clauses"]) for o in sc)
     res["derived"] = sc_info | {"most_clauses": best,
                                 "best_scenarios": sorted(o["label"] for o in sc if len(o["clauses"]) == best)[:40],
                                 "values_in_base_survivors": {a: sorted({o["scenario"][a] for o in sc if set(base) <= o["clauses"]})
                                                              for a in SCENARIO_AXES}}
-    res["bound"] = ("product of six axes (spinor index, role of the marks, time, modes, gravity, origin) = "
+    res["bound"] = ("product of eight axes (spinor index, role of the marks, time, modes, gravity, origin, statistics, "
+                    "interaction) = "
                     f"{len(sc)} scenarios; clauses from OriginLab's R orders and position spaces and from the recorded "
                     "results named in EVIDENCE; pending evidence gives no clause")
     out["universes"]["scenarios"] = res

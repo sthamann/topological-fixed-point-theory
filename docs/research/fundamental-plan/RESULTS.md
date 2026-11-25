@@ -8089,3 +8089,30 @@ F6 (z94) rechnet noch.
   zwei unabhängige Ursprungsprämissen: P_sym und P_tn.
 
 **Prüfstand:** 13 P, 7 L (K19 präzisiert). Atlas-Revision 736302f723543836a9598933. Ledger unverändert, nichts befördert.
+
+## H6H47-20261125 · Folgeschritte G1–G3 und zwölfte Analyse: Kinematik nativ, Dynamik offen
+
+`z96_analyse12_mm.py` (18 von 18, selbst gerechnet), `z97_gso_verklebung.py` (11 von 11), `z98_kopplung_mm.py`
+(11 von 11), `z99_vertex_wechselwirkung.py` (19 von 19); die Agentenläufe sind reproduziert.
+- **Zwölfte Analyse.** Alle Rechnungen stimmen.
+  - Die Clifford-Projektionen sind Instanton und Anti-Instanton der Twistorfaserung CP³ → S⁴; die entgegengesetzten
+    Ladungen erzwingt die Whitney-Summe.
+  - Die Λ–G-Relation ℓ²/G = 32π³e^{2/α} ist COSMO.LAM.01 in MacDowell–Mansouri-Variablen. Ihr Vorzeichen verlangt dS, nativ
+    ist AdS.
+- **G2 Gravitation.** Kinematik nativ, Dynamik nicht.
+  - Nativ: die MacDowell–Mansouri-Algebra (AdS, Radius halbe Vakuumgröße), τ als Punktspiegelung, Σ± aus Original und
+    Partner, die Tomita-Familie als flaches Vakuum (F = 0).
+  - Nicht nativ: Die Phase von I ist eine Eichrichtung, Positivität fixiert g nicht, und der Plebański-Sektor ist nur bis
+    Z₄ fest.
+- **G1 Spin-Statistik.** Die Regel (−1)^{2h} = R² schließt unter su(2,2), Fusion und gekleideten Vertizes (Schrittart ×
+  Ladungsschritt).
+  - Sie ist nicht nativ (Prämisse P_GSO) und vektorartig.
+  - Chiralität gäbe es nur mit P_A3, im Konflikt mit der Skalarleiter und dem Familiengitter A3.
+- **G3 Wechselwirkung.** Nativ gibt es keine.
+  - Vertexoperatoren sind auf Niveau 1 die su(2)₁-Ströme, und Δ = 1 ist starr.
+  - Eine verbundene 1→2-Amplitude braucht einen gewählten Zweikörperterm.
+- **Szenario-Suche.** Neu sind die Achsen Statistik und Wechselwirkung, zusammen 13 824 Szenarien.
+  - 12 erfüllen alles außer Graviton und Chiralität.
+  - Die minimalen leeren Regeln sind [graviton] und [admissible, chiral_matter].
+
+**Prüfstand:** 13 P, 7 L (K12, K13, K15 präzisiert). Atlas-Revision 96956691923c256e503e46a2. Ledger unverändert, nichts befördert.

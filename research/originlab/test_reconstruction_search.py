@@ -57,7 +57,7 @@ class ReconstructionSearch(unittest.TestCase):
     # ------------------------------------------------------------ whole-theory scenarios (H6h42, S7)
     def test_scenarios_enumerate_all_axes_and_respect_recorded_exclusions(self):
         u = self.universe("scenarios")
-        self.assertEqual(u["objects"], 4*3*4*2*7*2)
+        self.assertEqual(u["objects"], 4*3*4*2*8*2*3*3)                  # + statistics and interaction (H6h47)
         sc, info = scenario_candidates()
         for o in sc:
             if (o["scenario"]["time"] == "modular flow" or o["scenario"]["spinor_index"] == "quarter oscillators"
@@ -67,6 +67,30 @@ class ReconstructionSearch(unittest.TestCase):
         self.assertEqual(info["r_order"], {"quarter oscillators": 1, "step type": 1, "eta doublet": 2, "seam doublet V_1": 4})
         self.assertEqual(info["native_lorentz"], {"quarter oscillators": True, "step type": True, "eta doublet": False,
                                                   "seam doublet V_1": False})
+
+    def test_scenarios_h6h47_leave_exactly_graviton_and_chirality_open(self):
+        u = self.universe("scenarios")
+        self.assertEqual(u["minimal_empty_rules"], [["graviton"], ["admissible", "chiral_matter"],
+                                                    ["chiral_matter", "spin_statistics"]])
+        q = u["questions"]["admissible+coherent+lorentzian_native+positive_time+one_field+spin_statistics+interacting"]
+        self.assertEqual((q["verdict"], len(q["survivors"])), ("AMBIGUOUS", 12))
+        self.assertEqual(u["questions"]["admissible+chiral_matter"]["verdict"], "EMPTY")
+        self.assertEqual(u["questions"]["admissible+graviton"]["verdict"], "EMPTY")
+        vals = u["derived"]["values_in_base_survivors"]
+        self.assertEqual(vals["statistics"], ["clock-twisted lift (P_GSO)"])                 # z97, conditional
+        self.assertEqual(vals["interaction"], ["chosen two-body term"])                     # z99, conditional
+        self.assertEqual(vals["gravity"], ["MacDowell-Mansouri: modular Cartan connection",  # z98, flat vacuum only
+                                           "P0-graded two-seam composition"])
+        sc, info = scenario_candidates()
+        for o in sc:
+            if o["scenario"]["statistics"] != "untwisted lift" and o["scenario"]["spinor_index"] != "step type":
+                self.assertNotIn("coherent", o["clauses"])
+            if o["scenario"]["statistics"] == "untwisted lift" or o["scenario"]["interaction"] != "chosen two-body term":
+                self.assertNotIn("admissible", o["clauses"])
+        ev = info["evidence"]
+        self.assertEqual(ev["statistics: E8 glue with A3 = conformal (P_A3)"]["status"], "excluded")
+        self.assertEqual(ev["interaction: vertex operators = level-1 currents"]["status"], "excluded")
+        self.assertEqual(ev["gravity: MacDowell-Mansouri: modular Cartan connection"]["status"], "conditional")
 
     def test_scenario_base_survivors_place_the_marks_only_where_coherence_allows(self):
         sc, _ = scenario_candidates()
@@ -239,7 +263,7 @@ class ReconstructionSearch(unittest.TestCase):
         self.assertEqual(self.result["status"], "RECONSTRUCTION_SEARCHED")
         text = json.dumps(self.result, sort_keys=True, allow_nan=False)
         self.assertEqual(text, json.dumps(run_reconstruction(), sort_keys=True, allow_nan=False))
-        self.assertEqual(self.result["objects_enumerated"], 54 + 66 + 10 + 6 + 4 + 1344)   # + doublets and position spaces (H6h40)
+        self.assertEqual(self.result["objects_enumerated"], 54 + 66 + 10 + 6 + 4 + 13824)  # + doublets and position spaces (H6h40)
 
 
 if __name__ == "__main__":

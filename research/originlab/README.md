@@ -172,6 +172,30 @@ Gravity is the open axis. Since H6h43 (z85) the deformation from the native sour
 excluded. Since H6h45 (z89, z90) the radial channel (only AdS) and the spatial cut (no G) are excluded as well; the only
 open gravity value is the P₀-graded two-seam composition, conditional; no scenario has a confirmed graviton. Two new tests.
 
+Twelfth run (H6h47, follow-up round G1–G3 and the twelfth external analysis): the universe `scenarios` has eight axes.
+- **New axes:**
+  - statistics of matter: untwisted lift, clock-twisted lift (P_GSO), E₈ glue with A3 = conformal (P_A3);
+  - interaction: fusion over even or linear algebras, vertex operators = level-1 currents, chosen two-body term.
+- **New gravity value:** MacDowell–Mansouri as a modular Cartan connection.
+- **New clauses:** spin_statistics, chiral_matter, interacting. Statistics rules from z97 cohere only with step type and
+  energy levels.
+- **New evidence:** z92, z91, z97, z98, z99. The z98 entry also replaces the z89 meaning of the P₀-graded composition (the
+  phase of I is a gauge direction; positivity does not fix g).
+- **Size:** 4·3·4·2·8·2·3·3 = 13824 scenarios; the full run takes about 6 s.
+
+Result:
+- **12 admissible scenarios** satisfy everything except graviton and chirality. Rule: admissible + coherent +
+  native-Lorentzian + positive time + one field + spin-statistics + interaction. All 12 have:
+  - spinor index = step type, internal marks, modes = energy levels;
+  - statistics = clock-twisted lift (P_GSO);
+  - interaction = chosen two-body term;
+  - gravity = MacDowell–Mansouri (flat vacuum only) or the P₀-graded composition;
+  - time = OS reconstruction, parabolic Wiesbrock or radial conformal;
+  - either origin.
+- **The minimal empty rules name exactly what is missing:** [graviton] (no gravity value is supported),
+  [admissible, chiral_matter] (chirality only with the excluded P_A3) and [chiral_matter, spin_statistics].
+- One new test.
+
 ```bash
 .venv/bin/python -B research/originlab/process_rules.py > /tmp/process-rules.json
 .venv/bin/python -B research/originlab/main.py --campaign process_rules --jobs 1 --out /tmp/originlab-process

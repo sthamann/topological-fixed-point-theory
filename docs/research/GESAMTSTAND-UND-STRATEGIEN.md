@@ -1,6 +1,6 @@
-# TFPT: Gesamtstand und Strategien zur Gesamtlösung (Stand H6h46, 25. November 2026)
+# TFPT: Gesamtstand und Strategien zur Gesamtlösung (Stand H6h47, 25. November 2026)
 
-Neu: Abschnitt 12 hält die Folgerunde fest (F1–F6, Analysen 10 und 11).
+Neu: Abschnitt 13 hält die Folgeschritte G1–G3 und die zwölfte Analyse fest. Abschnitt 12 enthält die Folgerunde F1–F6 mit den Analysen 10 und 11.
 
 Dieses Dokument fasst den ganzen Stand zusammen: gelöste Bausteine, Ursprung, Rekonstruktion und offene Tore. Daraus
 entwickelt es neue Strategien. Maßgeblich bleiben Ledger und Originalquellen. Nichts hier ist befördert; Explorationsbefunde
@@ -448,3 +448,58 @@ Offen ist allein die Gravitation, mit genau zwei Wegen.
 5. **Ursprung schließen:**
    - S(n) für verschiedene m mit der Nichtentartung beweisen (z94);
    - P_tn aus ⟨T⟩ = 0 (A*, E₆(τ) = 0) herleiten. Dann bliebe eine einzige Prämisse.
+
+## 13. Folgeschritte G1–G3 und zwölfte Analyse (H6h47)
+
+| Schritt | Rechnung | Ergebnis | Status |
+|---|---|---|---|
+| Analyse 12 (MacDowell–Mansouri, Plebański, Clifford, Λ–G) | z96 (18/18) | alle Rechnungen bestätigt; Clifford-Paar = Instanton/Anti-Instanton der Twistorfaserung (Ladungen durch Whitney-Summe erzwungen); Λ–G-Relation = COSMO.LAM.01 in neuen Variablen; Vorzeichen verlangt dS, nativ ist AdS | E / O |
+| G1 Spin-Statistik-Verklebung | z97 (11/11) | (−1)^{2h} = R² schließt unter su(2,2), Fusion und gekleideten Vertizes (Schrittart × Ladungsschritt); nicht nativ (Prämisse P_GSO); vektorartig; Chiralität nur mit P_A3 (E₈-Kleber, A3 = Raumzeitalgebra), im Konflikt | C / E negativ |
+| G2 Phase, Kopplung, MacDowell–Mansouri | z98 (11/11) | Phase von I Eichrichtung, Positivität fixiert g nicht; MM-Algebra nativ (AdS, Radius halbe Vakuumgröße); Tomita-Familie = flaches MM-Vakuum; Σ± aus Original und Partner; Plebański-Sektor nur bis Z₄ | E / C / E negativ |
+| G3 Wechselwirkung über Vertexoperatoren | z99 (19/19) | Vertexroute = su(2)₁-Strom; Δ = 1 starr; marginale Deformation ohne lange Vielfachheiten; verbundene 1→2-Amplitude erst mit gewähltem Zweikörperterm | E negativ / O |
+| Szenario-Suche | OriginLab (13 824) | 12 Szenarien erfüllen alles außer Graviton und Chiralität; minimale leere Regeln [graviton], [admissible, chiral_matter] | E |
+
+### Was die Runde bedeutet
+
+- **Die Kinematik der Gravitation ist nativ, ihre Dynamik nicht.**
+  - Nativ sind:
+    - die MacDowell–Mansouri-Algebra mit dem AdS-Vakuum als flacher Cartan-Verbindung;
+    - τ als Punktspiegelung;
+    - Σ± aus Original und Partner;
+    - das flache Vierbein;
+    - I bis auf die Phase.
+  - Nicht nativ sind:
+    - die Phase von I und die Kopplung g (also G bzw. b);
+    - der Plebański-Sektor, also Gravitation oder topologisch;
+    - das dS-Vorzeichen;
+    - jede Krümmung F ≠ 0.
+- **Spin-Statistik gibt es mit einer Prämisse, Chiralität nicht.**
+  - Die Verklebung ist die Paarung „Ladungsschritt × Schrittart“.
+  - Die Regel braucht P_GSO und gibt Dirac-Paare.
+  - Chirale Materie verlangt die Z₄-Fassung des E₈-Klebers. Diese kollidiert in der Lesart P_A3 mit der Skalarleiter und
+    mit dem gelösten Familiengitter.
+- **Wechselwirkung gibt es nativ nicht.**
+  - Vertexoperatoren und Ströme sind auf Niveau 1 dieselbe Struktur.
+  - Alle nativen Operatoren sind einkörperig, und Δ = 1 bleibt starr.
+- **Gemeinsamer Engpass.** Gravitationsdynamik (F ≠ 0 mit festem b) und Wechselwirkung (verbundene 1→2-Amplitude mit
+  festem g) verlangen dasselbe Fehlende: eine nicht gaußsche Zweikörperstruktur mit festem Koeffizienten. Das passt zum
+  offenen Kriterium K20, dem gemeinsamen Elternoperator.
+
+### Nächste Schritte (aus den Rechnungen)
+
+1. **Gemeinsame Quelle für Krümmung und Wechselwirkung:** Gesucht ist ein nativ nicht gaußscher Zustand, z. B.:
+   - das Kondensat D = −4 (z89);
+   - der kollektive Zustand identischer Saaten ab N = 6 (z94);
+   - ein Kompositzustand (z91).
+
+   Zu prüfen ist an seiner Tomita-Familie:
+   - Ist F ≠ 0, mit festem quadratischem Koeffizienten (b, G)?
+   - Gibt derselbe Zustand verbundene 1→2-Amplituden mit festem g?
+2. **Zweikörperterm:** Liefert der Doppeltransfer e^{2i(φ₁−φ₂)} zusammen mit dem Tomita-Partner die fehlenden
+   □-Nachkommen mit unitären Vorzeichen?
+3. **Chiralität:** Gesucht ist eine Z₄-Fassung ohne Skalarkonflikt: die Skalarleiter im Sektor R = −1, gekleidet mit dem
+   tiefsten R = −1-Boson aus z92. Sonst wird T4 als gescoptes Negativ festgehalten.
+4. **Kleinere Prüfungen:**
+   - gradierte Nahtkomposition aus einer gemeinsamen CAR;
+   - native Orientierung für den Gravitationssektor;
+   - Q₀ als modulare Zeit einer Kappe (dS-Vorzeichen).
