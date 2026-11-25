@@ -15,6 +15,47 @@ Prämissen) haben nur gelesen.
 Uhrhebung, z134 konforme Gravitation, z138 Spin-2-Pol, z139 Ordnung, z140 Maßbilanz, z141 Relativentropie-Wirkung, z142
 ρ⋆, z143). Ihre Teildateien sind nicht reproduziert und gehen in keine Aussage ein.
 
+**Nachtrag, Schritt 1 nach H6h50: Sind Nähte Sektoren eines Netzes und das Gatter ihre Statistik? (z145, 26 Prüfungen,
+selbst gerechnet): streng nein. P_uhr ist jetzt in drei gleichwertigen Formen benannt; im E₈-Bild ist das Gatter die
+4π-Drehung des D₅-Faktors [L].**
+- **Natives Netz [E negativ]:**
+  - Eicht man die Uhr des Nahtfermions, bleibt das Gitter 4ℤ mit der Sektorgruppe ℤ₁₆ und q(n) = n²/32. Die Naht mit
+    Ladung Q ist der Sektor n = 4Q − 1; sein Twist ist bis auf eine Konstante die Uhr i^Q.
+  - Die Monodromie zweier Nähte ist ein Produkt von Einnahtfunktionen, ohne Term in Q_A·Q_B. Aus „Nähte sind Sektoren“
+    folgt also das triviale Gatter. Fermionische Transfereinheiten komponieren frei.
+  - Das bestätigt z121 (Gatter nativ trivial) und z144 (Zopfrelation nur einkörperig) von der Netzseite.
+- **Was das wechselwirkende Gatter verlangt [E]:**
+  - Eine transferierte Einheit mit Gewicht ungerade/8 (Viertelpaar 1/8, die 4 von SU(4) 3/8, die 16 von Spin(10) 5/8).
+    Fermion (1/2) und Strom (1) geben die Wechselphase 1.
+  - Gleichwertig „Ladung um Fluss“: i^(Q_A·Q_B) = R_B^(Q_A), die Uhr der einen Naht, gesteuert durch die Ladung der
+    anderen.
+  - Im Fockmodell: Die zirkularen Moden d_± = (c_A ∓ i·c_B)/√2 sind die Eigenmoden der Vierteldrehung P_sym, B ist der
+    Basiswechsel dorthin. Das Gatter ist U = e^(−iπN²/4)·i^(Q₊Q₋), die gesteuerte Uhr zwischen den zirkularen Moden.
+  - Dasselbe als Paarphase: U = e^(−iπN/4)·(−i)^P mit P = Zahl der Paare von Anregungen in derselben zirkularen Mode.
+- **P_uhr in drei gleichwertigen Formen [E]:**
+  - Die Phase ist eine Funktion der Uhrwerte (z144).
+  - Clifford-Bedingung: Das Gatter bildet einen Einheitstransfer X auf X mal Uhrwert ab (U·X·U† = −i·X·Γ⁻¹ bei π/2).
+  - Die Laufzeit des Ladungsgitters ist ein Vielfaches von β/8. β = 4π ist genau die Periode von e^(−itH_Q).
+- **Quadratische Formen [E/C]:**
+  - Die acht Uhrgatter U(kπ/2) bilden eine ℤ₈. Für ungerades k tragen sie die vier nichtentarteten Formen c·a²/8 auf ℤ₄:
+    k = 1, 3, 5, 7 ↔ D₇, D₅, A₃, D₁. Dort ist S unitär und (ST)³ = S²; für gerades k ist die Form entartet (Rang 1, 2).
+  - Unter P_lift ist die Form die von D₅. Das z120-Gatter ist bis auf die zentrale Parität der Twist des A₃-Faktors und
+    der inverse Twist des D₅-Faktors. Die zwei Zeitrichtungen des Gatters sind die zwei Faktoren der E₈-Verklebung.
+- **Anomalie [E]:** Fünfeck und Sechseck verlangen den Assoziator (−1)^(a·Übertrag(b,c)), Klasse 2 in H³(ℤ₄, U(1)), für
+  alle vier Formen. Die Uhr einer einzelnen Naht ist anomal, die gemeinsame Uhr eines Paars nicht.
+- **E₈-Bild [E, Einordnung L]:**
+  - Die 2π-Drehung des D₅-Faktors allein ist entlang einer Kette von Klebewurzeln (16,4) nur das halbe Gatter.
+  - Das z120-Gatter entspricht der relativen Drehung (D₅ um 2π gegen A₃), also der 4π-Drehung des D₅-Faktors: kein
+    freier Winkel, kein Oszillatoranteil, Niveauabgleich N ≡ 0 mod 4 von selbst.
+  - Auf den Klassen ist sie i^(a²) = i^a·(−1)^(a(a−1)/2): Uhr mal Vorzeichen der Umkehrung von a Fermionen. Nativ ist die
+    4π-Drehung nur (−1)^F.
+  - Das ist ein Mechanismus für P_uhr nur in der Lesart „zirkulare Moden = Faktoren D₅ und A₃, Transfer = Klebestrom“.
+    Hergeleitet ist die Lesart nicht.
+- **Dynamik [E negativ]:** Statistikphasen vertauschen, alle Fusionsräume sind eindimensional. Der Transfer B und jede
+  Kettendynamik liegen außerhalb des Prinzips. K15 wird nicht berührt.
+- **Folge:** P_uhr bleibt Prämisse; die neun Prämissen sind unverändert. Der Ein-Prinzip-Kandidat aus R2 ist in der
+  strengen Form geschlossen. Offen ist die E₈-Lesart: ob die komponierenden Objekte die Verklebungsfaktoren sind.
+
 **Neunzehnte externe Analyse (z144, 67 Prüfungen, selbst gerechnet): Die gerechneten Aussagen stimmen. Die Zopfrelation
 legt das wechselwirkende Gatter nicht fest; die Phase folgt aber aus der Uhr.**
 - **Gitter [E]:**

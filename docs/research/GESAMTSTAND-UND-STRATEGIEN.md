@@ -602,6 +602,14 @@ Offen ist allein die Gravitation, mit genau zwei Wegen.
 | G2 induzierte Gravitation | z137 (19/19) | Vorzeichen AdS, G·Λ = −3π/(4cL); legt P_G nicht fest | E / N |
 | Analyse 19 | z144 (67/67) | P_uhr trägt P_null und P_viertel; Zopfrelation nur einkörperig; zwei isomorphe Verklebungen | E / C / L |
 
+### Nachtrag z145: Netzprinzip für P_uhr
+
+Geprüft wurde, ob P_uhr daraus folgt, dass Nähte Sektoren eines Netzes sind und das Gatter ihre Statistik ist. Streng
+gilt das nicht: Im nativen Netz (Uhr geeicht, Sektorgruppe ℤ₁₆) ist die Statistik der Nähte ein Produkt von Uhren, das
+Gatter also trivial. Das wechselwirkende Gatter verlangt eine transferierte Einheit mit Gewicht ungerade/8. Es ist die
+gesteuerte Uhr zwischen den Eigenmoden der Vierteldrehung P_sym und gleichwertig eine Paarphase. Im E₈-Bild ist es die
+4π-Drehung des D₅-Faktors gegen A₃, ohne freien Winkel; das ist eine Lesart. P_uhr bleibt Prämisse, Dynamik folgt nicht.
+
 ### Was die Runde bedeutet
 
 - **Der Kandidat** braucht neun Prämissen: A*, I_step, P_lift, P_IF, P_univ, P_uhr, P_ord, P_curv und P_G als freie

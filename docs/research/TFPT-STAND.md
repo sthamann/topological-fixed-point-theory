@@ -581,6 +581,10 @@ hergeleitet, 7 unter benannter Lesart, keines gescheitert, offen oder gesetzt. K
       integrabel (su(2)₁-Lesart). P_null ist gleichwertig mit P_sl2. Die eine Prämisse P_uhr („die Kompositionsphase ist
       eine Funktion der Uhrwerte“) trägt P_null und P_viertel; die Wechselphase ist der Bicharakter i^(Q_A·Q_B) der
       Uhrgruppe, derselbe wie bei D₅. Ab Transferspin 2 ist nur φ ∈ (π/2)ℤ leckfrei. [E/C]
+    - Netzprinzip (Z145): „Nähte sind Sektoren, das Gatter ist ihre Statistik“ gibt nativ nur das triviale Gatter
+      (Sektorgruppe ℤ₁₆, Statistik linear). Das wechselwirkende Gatter verlangt eine Einheit mit Gewicht ungerade/8;
+      es ist die gesteuerte Uhr zwischen den Eigenmoden von P_sym, gleichwertig eine Paarphase −i je Paar. Im E₈-Bild
+      ist es die 4π-Drehung des D₅-Faktors (Lesart). P_uhr bleibt Prämisse. [E negativ, E, L]
     - Zopfrelation: Sie gilt nur für einkörperige Operatoren (Nahtuhr und Strahlteiler = Ising-Zopfmatrizen). Das
       wechselwirkende Gatter verletzt sie mit Defekt √(3/8). Die Defektstruktur ist endlich (Clifford-Typ). [E]
     - Eichdynamik: Plakettenstruktur und sin²θ_W = 3/8 sind nativ, die absolute Kopplung und die Linkdynamik nicht.
