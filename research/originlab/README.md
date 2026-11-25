@@ -196,6 +196,37 @@ Result:
   [admissible, chiral_matter] (chirality only with the excluded P_A3) and [chiral_matter, spin_statistics].
 - One new test.
 
+Thirteenth run (H6h49, deep wave T1–T6, U1–U3 and the eighteenth external analysis):
+- **Faster rules:** `_rules_report` computes every rule on bit masks (one bit per object, in label order) instead of
+  set comparisons. The output is identical to the previous implementation (checked on the H6h47 universe); the full run
+  takes about 2.5 s.
+- **New values:**
+  - gravity: double copy of seam amplitudes (P_diag), conditional (z112); moved algebra at fixed state, excluded (z115);
+  - statistics: Z4 glue on the spinor module (P_glue), conditional and chiral (z117: the native Tomita J_H6 is the
+    Majorana–Weyl structure of Cl(3,11) on the index cut; gluing, total chirality and the z97 rule on spinors are one bit);
+  - interaction: twistor action from seam currents (T), conditional (z110, z111); transfer exchange (twirl), excluded as
+    an interaction because it is a number-conserving modular weight without vertex (z119, z120); local coherent transfer
+    gate, conditional (z120).
+- **New evidence:** z107 (the origin rests on P_sym). z113 replaces the meaning of P_GSO: it is not modular-native. z118
+  replaces the meaning of MacDowell–Mansouri: the clock-weighted index trace gives the ε term, the weight choice is the
+  P_vol pair choice, and G needs the weight 2c₃ put in.
+- **Clause evidence:** `CLAUSE_EVIDENCE` feeds clauses instead of axis values.
+  - `modular_statistics` (z113): the statistics rule is compatible with modular invariance and positivity per seam when
+    the 2π rotation is summed. Only the untwisted lift is, and it carries no spinors.
+  - `twistor_line_index` (z114): under P_GSO the twistor-line index with P_RJ gives index 3 per 16, so `chiral_matter`
+    holds conditionally (premises T, K2, P_RJ) for P_GSO.
+- **Size:** 4·3·4·2·10·2·4·6 = 46080 scenarios, 12 clauses, 4096 rules.
+
+Result:
+- **108 admissible scenarios** satisfy everything except graviton and modular statistics, chiral matter included. Rule:
+  admissible + coherent + native-Lorentzian + positive time + one field + spin-statistics + interaction (+ chiral matter).
+  All 108 have statistics = P_GSO or P_glue; interaction = chosen two-body term, local coherent transfer gate or twistor
+  action; gravity = MacDowell–Mansouri, P₀-graded composition or double copy.
+- **Minimal empty rules:** [graviton]; [admissible, modular_statistics], [chiral_matter, modular_statistics] and
+  [modular_statistics, spin_statistics]. Chirality is no longer the blocker. The statistics rule is: P_GSO fails
+  positivity per seam when the 2π rotation is summed (z113), and P_glue has not been tested against modular summation.
+- One test replaced (H6h47 → H6h49).
+
 ```bash
 .venv/bin/python -B research/originlab/process_rules.py > /tmp/process-rules.json
 .venv/bin/python -B research/originlab/main.py --campaign process_rules --jobs 1 --out /tmp/originlab-process

@@ -46,7 +46,7 @@ import json
 import numpy as np
 import sympy as sp
 
-from genesis_rules import powerset, search
+from genesis_rules import powerset
 
 SCOPE = ("finite exhaustive enumeration of reconstruction candidates for the open gaps (A) and (B) with computed clauses "
          "and no size order; a unique minimal rule names what the universe and its clause pool fix, not physics")
@@ -830,15 +830,25 @@ SCENARIO_AXES = {
     "modes": ["species", "energy levels"],
     "gravity": ["composite spin 2", "Virasoro T(z)", "twistor deformation: native sources",
                 "twistor deformation: radial channel", "entanglement: original|partner cut", "entanglement: spatial cut",
-                "P0-graded two-seam composition", "MacDowell-Mansouri: modular Cartan connection"],
+                "P0-graded two-seam composition", "MacDowell-Mansouri: modular Cartan connection",
+                "double copy of seam amplitudes (P_diag)", "moved algebra at fixed state"],
     "origin": ["seed rho_1 + spin-Z4", "two binary observations"],
-    "statistics": ["untwisted lift", "clock-twisted lift (P_GSO)", "E8 glue with A3 = conformal (P_A3)"],
-    "interaction": ["fusion over even or linear algebras", "vertex operators = level-1 currents", "chosen two-body term"],
+    "statistics": ["untwisted lift", "clock-twisted lift (P_GSO)", "E8 glue with A3 = conformal (P_A3)",
+                   "Z4 glue on the spinor module (P_glue)"],
+    "interaction": ["fusion over even or linear algebras", "vertex operators = level-1 currents", "chosen two-body term",
+                    "twistor action from seam currents (T)", "transfer exchange (twirl)", "local coherent transfer gate"],
 }
 # the statistics rules of z97 live on charge lattice (x) radial standard form (step type = spinor index, modes = levels)
-RADIAL_STATISTICS = ("clock-twisted lift (P_GSO)", "E8 glue with A3 = conformal (P_A3)")
+RADIAL_STATISTICS = ("clock-twisted lift (P_GSO)", "E8 glue with A3 = conformal (P_A3)",
+                     "Z4 glue on the spinor module (P_glue)")
 CHIRAL_STATISTICS = {"untwisted lift": False, "clock-twisted lift (P_GSO)": False,       # z97: index 0 per R class
-                     "E8 glue with A3 = conformal (P_A3)": True}                         # z97: chiral Z4, 16 one helicity
+                     "E8 glue with A3 = conformal (P_A3)": True,                         # z97: chiral Z4, 16 one helicity
+                     "Z4 glue on the spinor module (P_glue)": True}                      # z117: one chiral 16 with the cut
+# z113 (H6h49): summing the 2 pi rotation U_2pi over the seam torus, modular invariance plus positivity per seam keeps
+# only U = +1 (no spinors); the per-seam rule G = U R^2 = +1 has negative long-seam multiplicities, and no lift is
+# compatible with (E8)_1, where the clock is frozen; the spinor-module glue of z117 was not tested there (no clause)
+MODULAR_STATISTICS = {"untwisted lift": True, "clock-twisted lift (P_GSO)": False,
+                      "E8 glue with A3 = conformal (P_A3)": False, "Z4 glue on the spinor module (P_glue)": False}
 
 
 def _check_named(d, fragment):
@@ -950,7 +960,72 @@ EVIDENCE = [
      "disconnected 1->2 parts; the smallest connected 1->2 amplitude is the four-fermion double transfer "
      "e^{2i(phi_1 - phi_2)} (h = 4) with a chosen coupling; whether it supplies the long-multiplet descendants is open",
      lambda d: _check_named(d, "(e) Jeder Bilinearoperator")),
+    # H6h48/H6h49: origin on P_sym (z107), deep wave T1-T6 and U3 (z110-z115, z119), eighteenth analysis (z120)
+    ("origin", "seed rho_1 + spin-Z4", "conditional", "z107_ergebnis.json", "P_tn follows from the seam premise A* without "
+     "circularity (law torus = seam torus, the only stress-free point is beta = 4 pi); the origin rests on P_sym; S(3) holds "
+     "iff one pair splits off, rigidity from n = 3 on is arithmetic",
+     lambda d: _check_named(d, "N8-Kriterien") and _check_named(d, "Nichtzirkularität (Prämissen)")),
+    ("gravity", "double copy of seam amplitudes (P_diag)", "conditional", "z112_ergebnis.json", "one native infinity "
+     "twistor gives both brackets; Hodges = KLT for n = 3..6; original x partner gives only the dilaton-axion part, the "
+     "sheet-diagonal form needs P_diag; G reduces to one missing length L = kappa/(2 g^2), the Lambda-G relation to a second",
+     lambda d: _check_named(d, "Hodges = KLT") and _check_named(d, "Prämissenabtastung")),
+    ("gravity", "MacDowell-Mansouri: modular Cartan connection", "conditional", "z118_ergebnis.json", "the (A)dS algebra "
+     "is native (z98); the clock-weighted index trace over the joint spinor gives the MacDowell-Mansouri term 64 eps: the "
+     "admissible weights are span{Gamma_2, R}, the weight choice is the P_vol pair choice (premise P_R: the clock acts on the "
+     "internal factor only) and one pairing bit fixes the sign; Lambda = -12/R_vac^2 (AdS); the trace gives integers only, "
+     "G follows only with the weight 2 c_3 put in",
+     lambda d: _check_named(d, "MacDowell-Mansouri in der Spur") and _check_named(d, "Normierung (sympy)")),
+    ("statistics", "Z4 glue on the spinor module (P_glue)", "conditional", "z117_ergebnis.json", "the native Tomita "
+     "J_H6 is the Majorana-Weyl structure of Lorentz x internal Cl(3,11) on the index cut; gluing I_T = I_F, total "
+     "chirality +1 and the z97 rule R = Z_SU^-1 restricted to the spinor module are one condition (one bit P_glue, symmetry "
+     "(SU(2,2) x Spin(10))/Z4_diag); with the cut one chiral 16 remains; whether the neutral scalar ladder stays outside "
+     "the spinor module is open",
+     lambda d: _check_named(d, "Verklebung = Gesamtchiralität = Z4-Regel") and _check_named(d, "Schnitt und Helizität")),
+    ("gravity", "moved algebra at fixed state", "excluded", "z115_ergebnis.json", "the family J(M_g, Omega) is an orbit of "
+     "the state's stabiliser (compact dual U(2)), flat in its own model; the quadratic response vanishes on the family "
+     "directions, condensates spread over the orbit with a free amplitude (scoped)",
+     lambda d: _check_named(d, "Lage: Jedes J(M_g, Omega)") and _check_named(d, "Quadratische Antwort im Vakuum")),
+    ("statistics", "clock-twisted lift (P_GSO)", "conditional", "z113_ergebnis.json", "G = U_2pi R^2 closes (z97) but is "
+     "not modular-native: modular invariance forces only R = Rbar and (-1)^(F + Fbar) = +1, U_2pi is no modular "
+     "transformation (its twisted sectors are long seams); if U_2pi is summed, per-seam G = +1 violates positivity "
+     "(only a diagonal two-seam rule survives)",
+     lambda d: _check_named(d, "U_2pi ist keine Modultransformation") and
+     _check_named(d, "Positivität der vollständigen Zustandssumme")),
+    ("interaction", "twistor action from seam currents (T)", "conditional", "z111_ergebnis.json", "under T (seam = "
+     "twistor line) the su(2)_1 seam currents give the Parke-Taylor denominator with coefficient fixed by the level "
+     "(z110); the CSW reference spinor is native from I_pi; missing: a free exchange field on twistor space (kinetic "
+     "term, P_BF), the numerator <ij>^4 (P_N4) and a suppression of the multi-trace terms",
+     lambda d: _check_named(d, "CSW = BCFW") and _check_named(d, "eta aus I_pi")),
+    ("interaction", "transfer exchange (twirl)", "excluded", "z119_ergebnis.json", "averaging over the transfer group "
+     "(P_twirl) gives a number-conserving modular weight log(dim W/f) (log 3 = log dim isospin 1), no vertex, gamma = 0; "
+     "the global average gives no consistent family of local states (z120); as an interaction mechanism excluded (scoped)",
+     lambda d: _check_named(d, "(b-ii) Vergleich z105/z108") and _check_named(d, "(c-ii) Keine verbundene 1->2-Amplitude")),
+    ("interaction", "local coherent transfer gate", "conditional", "z120_ergebnis.json", "U = P_T - i P_S (the XXX "
+     "R-matrix at u = 1) on one excitation per seam; leak-freeness forces the quarter turn (= P_sym), the phase is the root "
+     "of the clock, equivalently the Z4 mutual phase i^(Q_A Q_B); with the free energy the gate is trivial, so it needs "
+     "the spin-blind charge energy as native seam response; continuum and cubic vertex open",
+     lambda d: _check_named(d, "Transferdrehung B_theta") and _check_named(d, "Auf dem Sektor N = 2")),
 ]
+
+# results that feed a clause instead of an axis value: (clause, result file, meaning, predicate)
+CLAUSE_EVIDENCE = [
+    ("modular_statistics", "z113_ergebnis.json", "statistics rule compatible with modular invariance and positivity "
+     "per seam when the 2 pi rotation is summed (MODULAR_STATISTICS)",
+     lambda d: _check_named(d, "Positivität der vollständigen Zustandssumme")),
+    ("twistor_line_index", "z114_ergebnis.json", "chirality as index on the twistor lines: among 256 line rules only "
+     "P_RJ and its mirror are J-covariant; under T, P_GSO, K2 and P_RJ the net index is 3 per 16",
+     lambda d: _check_named(d, "Alle 256 Linienregeln") and _check_named(d, "Nullmodenzählung je 16 unter P_RJ")),
+]
+
+
+def _clause_evidence(root):
+    out = {}
+    for clause, fname, meaning, pred in CLAUSE_EVIDENCE:
+        path = root / fname
+        if path.exists():
+            out[clause] = {"status": "conditional" if pred(json.loads(path.read_text())) else "contradicted",
+                           "source": fname, "meaning": meaning}
+    return out
 
 
 def _evidence(root):
@@ -965,10 +1040,13 @@ def _evidence(root):
 
 
 def scenario_candidates(root=None):
-    """All combinations of the six axes with clauses computed from OriginLab's own universes (R orders, Lorentz or
-    Euclidean position spaces) and from recorded exploration results (EVIDENCE). Pending evidence gives no clause."""
+    """All combinations of the eight axes with clauses computed from OriginLab's own universes (R orders, Lorentz or
+    Euclidean position spaces) and from recorded exploration results (EVIDENCE, CLAUSE_EVIDENCE). Pending evidence gives
+    no clause."""
     root = EXPLORATION if root is None else _Path(root)
     ev = _evidence(root)
+    cev = _clause_evidence(root)
+    holds = lambda clause: cev.get(clause, {}).get("status") == "conditional"
     hardy = lambda k0, k1: sp.diag(sp.I**k0, sp.I**k1)
     doublet = {"quarter oscillators": hardy(4, 4), "step type": hardy(4, 4),     # J_-1 = S^4: integer L_0 steps
                "eta doublet": _transport(0, -1), "seam doublet V_1": hardy(0, 1)}
@@ -1003,23 +1081,90 @@ def scenario_candidates(root=None):
             ("origin_reduced", st["origin"] in ("supported", "conditional")),
             ("marks_placed", st["marks"] in ("supported", "conditional")),
             ("spin_statistics", st["statistics"] in ("supported", "conditional")),
-            ("chiral_matter", CHIRAL_STATISTICS[sc["statistics"]]),
-            ("interacting", st["interaction"] in ("supported", "conditional"))) if ok}
+            # z114 (H6h49): under P_GSO the twistor-line index with P_RJ gives net index 3 per 16 (premises T, K2, P_RJ)
+            ("chiral_matter", CHIRAL_STATISTICS[sc["statistics"]] or (sc["statistics"] == "clock-twisted lift (P_GSO)"
+                                                                       and holds("twistor_line_index"))),
+            ("interacting", st["interaction"] in ("supported", "conditional")),
+            ("modular_statistics", holds("modular_statistics") and MODULAR_STATISTICS[sc["statistics"]])) if ok}
         objs.append({"label": " | ".join(combo), "scenario": sc, "status": st, "clauses": cl})
-    return objs, {"evidence": {f"{a}: {v}": e for (a, v), e in sorted(ev.items())}, "r_order": r_order,
-                  "native_lorentz": native_lorentz}
+    return objs, {"evidence": {f"{a}: {v}": e for (a, v), e in sorted(ev.items())}, "clause_evidence": cev,
+                  "r_order": r_order, "native_lorentz": native_lorentz}
+
+
+class _Survivors:
+    """Sorted distinct labels of the objects that satisfy a rule, read lazily from the rule's bit mask."""
+
+    def __init__(self, masks, labels):
+        self._masks, self._labels = masks, labels
+
+    def labels(self, m, limit=None):
+        out = []
+        while m and (limit is None or len(out) < limit):
+            low = m & -m
+            name = self._labels[low.bit_length() - 1]
+            if not out or out[-1] != name:
+                out.append(name)
+            m ^= low
+        return out
+
+    def __getitem__(self, rule):
+        return self.labels(self._masks[frozenset(rule)])
 
 
 def _rules_report(objects, pool, label):
-    res = search(objects, pool, lambda o: 0, label)
-    hits = {frozenset(r): sorted({label(o) for o in objects if set(r) <= o["clauses"]}) for r in powerset(pool)}
-    nonempty = [r for r, h in hits.items() if h]
-    empty = [r for r, h in hits.items() if not h]
-    order = lambda r: (len(r), sorted(r))
-    res["maximal_rules"] = [{"rule": sorted(r), "survivors": hits[r]}
-                            for r in sorted(nonempty, key=order) if not any(r < s for s in nonempty)]
-    res["minimal_empty_rules"] = [sorted(r) for r in sorted(empty, key=order) if not any(e < r for e in empty)]
-    ext = {c: tuple(i for i, o in enumerate(objects) if c in o["clauses"]) for c in pool}
+    """All rules over the clause pool, as genesis_rules.search with constant size, computed on bit masks: bit p is the
+    p-th object in label order, so the set bits of a rule's mask list its survivors sorted, duplicates adjacent."""
+    labels = [label(o) for o in objects]
+    order = sorted(range(len(objects)), key=lambda i: labels[i])
+    lab = [labels[i] for i in order]
+    unique_labels = len(set(lab)) == len(lab)
+    ext = {c: 0 for c in pool}
+    for p, i in enumerate(order):
+        for c in objects[i]["clauses"]:
+            if c in ext:
+                ext[c] |= 1 << p
+    rules = powerset(pool)
+    masks = {}
+    for r in rules:
+        m = (1 << len(objects)) - 1
+        for c in r:
+            m &= ext[c]
+        masks[r] = m
+    hits = _Survivors(masks, lab)
+    rows = []
+    for r in rules:
+        m = masks[r]
+        if not m:
+            rows.append({"rule": sorted(r), "verdict": "EMPTY", "selected": [], "size": None})
+            continue
+        count = m.bit_count() if unique_labels else len(hits.labels(m))
+        rows.append({"rule": sorted(r), "verdict": "UNIQUE" if count == 1 else "AMBIGUOUS",
+                     "selected": hits.labels(m, 12), "selected_count": count, "size": 0})
+    by_rule = {frozenset(row["rule"]): row for row in rows}
+    selections = {}
+    for row in rows:
+        if row["verdict"] == "UNIQUE":
+            selections.setdefault(row["selected"][0], []).append(frozenset(row["rule"]))
+    summary = []
+    for chosen, makers in selections.items():
+        minimal = [m for m in makers if not any(o < m for o in makers)]
+        bearing = {}
+        for m in minimal:
+            for clause in m:
+                other = by_rule[m - {clause}]
+                bearing[f"{'+'.join(sorted(m))} without {clause}"] = (other["verdict"], other["selected"][:4], other["size"])
+        summary.append({"selected": chosen, "shortest_rule_length": min(len(m) for m in makers),
+                        "minimal_rules": [sorted(m) for m in minimal], "ablation": bearing})
+    res = {"objects": len(objects), "clauses": list(pool), "rules": len(rules),
+           "verdicts": {v: sum(row["verdict"] == v for row in rows) for v in ("EMPTY", "UNIQUE", "AMBIGUOUS")},
+           "unique_selections": sorted(summary, key=lambda s: (s["shortest_rule_length"], str(s["selected"])))}
+    order_key = lambda r: (len(r), sorted(r))
+    # monotone in the rule: maximal non-empty = every one-clause extension empty, minimal empty = every one-clause
+    # reduction non-empty
+    res["maximal_rules"] = [{"rule": sorted(r), "survivors": hits[r]} for r in sorted(rules, key=order_key)
+                            if masks[r] and not any(masks[r | {c}] for c in pool if c not in r)]
+    res["minimal_empty_rules"] = [sorted(r) for r in sorted(rules, key=order_key)
+                                  if not masks[r] and all(masks[r - {c}] for c in r)]
     res["equivalent_clauses"] = [[a, b] for a, b in combinations(pool, 2) if ext[a] == ext[b]]
     res["selected"] = {s["selected"]: s["minimal_rules"] for s in res["unique_selections"]}
     return res, hits
@@ -1038,7 +1183,7 @@ IDENT_POOL = ["spinor", "r_equivalent_to_seam", "r_equivalent_to_quarter_pair", 
               "projective_order_2", "projective_order_4"]
 POSITION_POOL = ["native_r", "lorentz_compatible", "euclidean_compatible", "marked"]
 SCENARIO_POOL = ["admissible", "coherent", "lorentzian_native", "positive_time", "one_field", "graviton",
-                 "origin_reduced", "marks_placed", "spin_statistics", "chiral_matter", "interacting"]
+                 "origin_reduced", "marks_placed", "spin_statistics", "chiral_matter", "interacting", "modular_statistics"]
 
 
 def run_reconstruction(root=None):
@@ -1123,7 +1268,9 @@ def run_reconstruction(root=None):
     matter = base + ["one_field", "spin_statistics", "interacting"]
     res["questions"] = {"complete": _question(hits_c, SCENARIO_POOL), "+".join(base): _question(hits_c, base),
                         "+".join(matter): _question(hits_c, matter),
+                        "+".join(matter + ["chiral_matter"]): _question(hits_c, matter + ["chiral_matter"]),
                         "admissible+chiral_matter": _question(hits_c, ["admissible", "chiral_matter"]),
+                        "admissible+modular_statistics": _question(hits_c, ["admissible", "modular_statistics"]),
                         "admissible+graviton": _question(hits_c, ["admissible", "graviton"])}
     best = max(len(o["clauses"]) for o in sc)
     res["derived"] = sc_info | {"most_clauses": best,

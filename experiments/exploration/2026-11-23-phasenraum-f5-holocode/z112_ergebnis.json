@@ -1,0 +1,472 @@
+{
+ "checks": {
+  "c-Algebra und Impulseigenzustände (Fock 8^4): c_i und c_j^+ vertauschen paarweise, P_mu = (1/2) c^+ sigma_mu c vertauscht mit c und c^+, also sind die Impulseigenzustände die gemeinsamen Eigenzustände der kommutativen c-Algebra mit Spektrum lambda in C^2: p_mu = (1/2) lambda^+ sigma_mu lambda, sum p_mu sigma_mu = lambda lambda^+, p^2 = 0, p_0 = |lambda|^2/2 > 0 (sechs Stichproben). J c J = c^+ (der Partnerspinor ist das J-Bild, lambda~ = conj(lambda)), J P_mu J = P_mu und J D J = -D (J spiegelt die Modulladung); U_theta = e^(i theta D) gibt U c U^+ = e^(-i theta) c und hält das KMS-Vakuum fest; der KMS-Zustand normiert die c-Ebene, <c_i^+ c_j> = delta_ij": true,
+  "Native Infinity-Twistoren und ihre Klammern (Twistoren auf Geraden L_x mit Inzidenz w = i x c, 5 Punkte x, je 6 Paare): Der untere Twistor *I_pi gibt genau die Winkelklammer, *I_pi(Z_i, Z_j) = <ij> = eps(c-Eigenwerte) mit Koeffizient 1 und translationsinvariant; *I_omega gibt -det(x) <ij> (ortsabhängig, Inversionsbild); das AdS-Büschel *(I_pi - I_omega) gibt Omega(x) <ij> mit Omega = 1 + det x, genau z98s konformer Faktor, der am Vakuumpunkt x = i 1 verschwindet (0.0e+00). Der obere Twistor I_pi (Poissonklammer) gibt auf ebenen Wellen exp(l~ . w) genau die eckige Klammer der c^+-Eigenwerte, B_(I_pi)(f_i, f_j) = eps(mu~_i, mu~_j) f_i f_j mit Koeffizient 1 (mu~ = -2 l~, also 4 [l~ l~']), und I_omega gibt dort 0; auf c-Wellen exp(nu . c) ist es umgekehrt: I_omega gibt die Klammer der omega''^+-Eigenwerte (Eigenzustände von K_mu), I_pi gibt 0": true,
+  "KMS-Normierung und Modulphase: Mit den nativen p_mu = (1/2) eta lambda^+ sigma_mu lambda (eta = -1 für die zwei einlaufenden Beine, Summe der p_mu = 0 auf 1.8e-15) gilt <ij>[ij] = 2 p_i.p_j (Minkowski) für alle 10 Paare ohne freien Faktor, und [ij] = eta_i eta_j conj<ij> (J-Paarung). Die Modulphase U_theta wirkt auf allen Beinen zugleich als lambda -> e^(i theta) lambda, lambda~ -> e^(-i theta) lambda~: <ij> trägt die Ladung 2, [ij] die Ladung -2, alle p_i und s_ij sind invariant. Die Modulphase von I ist also die gemeinsame Kleingruppenphase aller Beine": true,
+  "Impulserhaltung und Dreipunktkinematik: Auf komplexer und nativ reeller Kinematik (n = 4, 5, 6) ist sum lambda_i lambda~_i = 0 (Rest 7.1e-15), sum_j <ij>[jk] = 0 für alle i, k (rel. 9.5e-16) und sum_j s_ij = 0 (rel. 7.9e-16). Für n = 3 erzwingt die J-Paarung (lambda~ = +-conj(lambda)) Kollinearität: alle <ij> verschwinden (rel. 4.0e-17); die MHV-Dreipunktkinematik braucht lambda~ unabhängig von conj(lambda) (alle [ij] = 0, <12><23><31> = 16.100 != 0), also eine komplexifizierte, nicht J-gepaarte Kinematik": true,
+  "Hodges' reduzierte Determinante mit nativen Klammern: Für n = 4, 5, 6 auf je 4 komplexen und 3 nativ reellen Kinematikpunkten, allen C(n,3)^2 Streichungen von Zeilen und Spalten und je 3 Referenzpaaren (x, y) (10836 Auswertungen) ist M_n = <12>^8 det'(Phi) eindeutig, max. rel. Streuung 1.0e-12; ohne Impulserhaltung (Rest 1e-3 an einem Bein) hängt sie von der Wahl ab (Streuung {4: 0.004, 5: 0.74, 6: 0.0096}): Die native Rang-2-Bedingung sum lambda lambda~ = 0 trägt die Wohldefiniertheit (n = 3: Phi ist leer, det' = 1/(<12><23><31>)^2)": true,
+  "Hodges = KLT: Mit s_ij = <ij>[ij] und dem Impulskern S[sigma~|sigma]_1 (Vergleichsziel) ist M_n^Hodges = (-1)^(n+1) sum A(n-1, n, sigma~, 1) S A(1, sigma, n-1, n) aus Parke-Taylor auf beiden Seiten für n = 3, 4, 5, 6 (5 komplexe und, ab n = 4, 3 nativ reelle Punkte; (n-3)!^2 = 1, 1, 4, 36 Terme), max |Hodges/KLT - 1| = 6.4e-13; M_3 = <12>^6/(<23>^2 <31>^2) = A_3^2 (rel. 3.0e-16)": true,
+  "Helizitäts- und Modulladungen: Unter der Kleingruppe eines Beins (lambda -> e^(i a) lambda, lambda~ -> e^(-i a) lambda~) trägt M_n die Ladung q = +4 an den Beinen negativer und -4 an denen positiver Helizität, genau das Doppelte der Parke-Taylor-Ladung +-2 (n = 4, 5, 6, nativ reell). Die globale Modulladung ist Q(M_n) = 16 - 4n: Q(M_3) = 4.000000 (z98s Faktor e^(4 i theta) des kubischen Vertex), Q(M_4) = 0 (die Phase fällt heraus), Q(M_5) = -4.000000, Q(M_6) = -8.000000": true,
+  "Original x Partner je Bein (nativ reelle Kinematik, je 3 Punkte): Die J-Paarung desselben Zustands, A_rechts = conj(A_links) (J antiunitär, Partner mit gespiegelter Helizität), gibt im KLT-Produkt je Bein die Ladung 0: für n = 4 (ein einziger KLT-Term) eine reelle, helizitätsneutrale Amplitude (q_i = [-0.0, -0.0, 0.0, -0.0]) vom selben Betrag wie Hodges, aber mit anderer Phase und Helizität (|Mix/Hodges|, arg = [[1.0, 2.6708], [1.0, -0.8667], [1.0, 0.369]]); für n = 5 und 6 ist sie exakt null (|Mix|/sum|Terme| = [5.32e-17, 3.68e-17, 6.57e-17], [9.23e-18, 1.43e-17, 0.0]). Die blattdiagonale Paarung, A_rechts = conj(Anti-MHV) = Partnerbild des helizitätsgespiegelten Zustands, ist auf J-gepaarter Kinematik exakt Parke-Taylor (rel. 1.1e-13 gegen Hodges): Nur sie gibt die Gravitation": true,
+  "Linearisierte Krümmung der Doppelkopie-Produkte (drei reelle Nullimpulse, Polarisationen mit Referenzspinoren): Originalblatt x Originalblatt (Helizität -1 x -1) ist reiner Weyl, Ricci = 0, *C = -1j C, Modulladung 4; Partner x Partner ist reiner Weyl der anderen Dualität (*C = 1j C, Ladung -4); Original x Partner hat Weyl = 0 (8.9e-16), R = 0 und Ricci = c p_mu p_nu != 0: reiner spurfreier Ricci Phi, modulneutral. Die Feldstärke des Originalblatts liegt im Spann von z98s Sigma_- (eps auf dem Partnerindex), die des Partnerblatts im Spann von Sigma_+ (Reste [1.9e-16, 1.0, 1.9e-16, 1.0]): Gravitonen sind Sigma_- x Sigma_- und Sigma_+ x Sigma_+, das gemischte Sigma_+ x Sigma_- ist Phi": true,
+  "Dimension der Doppelkopie-Kopplung: Unter p -> rho^2 p skalieren Parke-Taylor mit Massendimension 4 - n, Hodges' M_n mit 2 und der Impulskern mit 2(n - 3) (n = 3..6 exakt: {3: {'[A_n]': 1.0, '[M_n]': 2.0, '[S]': 0.0}, 4: {'[A_n]': -0.0, '[M_n]': 2.0, '[S]': 2.0}, 5: {'[A_n]': -1.0, '[M_n]': 2.0, '[S]': 4.0}, 6: {'[A_n]': -2.0, '[M_n]': 2.0, '[S]': 6.0}}), also KLT(A, A) mit 2 wie M_n. Mit den vollen Kopplungen (A g^(n-2), M (kappa/2)^(n-2), beide mit Massendimension 4 - n) gilt M_voll = (kappa/(2 g^2))^(n-2) KLT(A_voll, A_voll): Die Doppelkopie fixiert nur das Verhältnis L = kappa/(2 g^2), und L ist eine Länge. Ohne eine Längenskala (in Strings alpha') folgt kappa nicht aus g": true,
+  "Native Länge: Die Dilatation (S4 auf T) gibt P_mu das Gewicht -2 und K_mu +2, die kompakte Energie E = (P_0 + K_0)/2 hat kein Gewicht (Rest 1.00). Auf Fock 8^4 ist der native Erzeuger Dil = sum (d^+ e^+ - e d) mit [Dil, c] = -c und [Dil, omega''] = omega'' (Zweimodenstauchung); das KMS-Vakuum ist Grundzustand von E (E Omega = Omega), aber nicht dilatationsinvariant (||Dil Omega|| = 1.4142), und im gestauchten Vakuum ist <c^+ c> = 1.221403 = e^(2 s) statt 1. Die KMS-Normierung |I| = 1 und die Vakuumgröße R_Vak sind also ein und dasselbe Skalendatum; eine zweite native Länge gibt es nicht (z98: l = R_Vak/2)": true,
+  "Prämissenabtastung (Prämisse P_L: L = kappa/(2 g^2) ist eine native Länge mal O(1), g^2 aus dem Niveau k = 1 in vier Normierungen, L in drei nativen Fassungen): G/R_Vak^2 = g^4 (L/R_Vak)^2/(8 pi) liegt zwischen 10^-2.00 und 10^0.80, also R_Vak = 0.40 bis 10.03 Planck-Längen. Das Lambda-G-Ziel verlangt G/R_Vak^2 = e^(-2/alpha)/(128 pi^3) = 10^-122.63 (R_Vak = 10^61.31 l_Pl), also L/R_Vak = 10^-61.71 bis 10^-60.61: eine zweite, um rund 60 Größenordnungen kleinere Länge, die nativ nicht vorkommt. Abstand der nativen Fassungen zum Ziel mindestens 120.6 Größenordnungen": true
+ },
+ "befunde": {
+  "E: Nativ ist <ij> = eps(c_i, c_j), die eps-Form auf dem Originalindex (z98: I_pi = Sigma_+-Kontraktion), und [ij] = eps(c_i^+, c_j^+) = eps(J c_i J, J c_j J), die Poissonklammer B_(I_pi) = m_Z o (eps c^+ (x) c^+) aus z89, also die eps-Form des Tomita-Partners. Ein und derselbe native Bivektor I_pi liefert beide Klammern: unten (Hodge) die Winkel-, oben (Poisson) die eckige Klammer, beide mit Koeffizient 1. I_omega gehört zu den K-Eigenzuständen (Inversion), und das native AdS-Büschel I_pi - I_omega reskaliert die Winkelklammer auf L_x mit Omega(x) = 1 + det x": true,
+  "E: Die Bausteine der Gravitationsamplituden sind nativ und ohne freien Faktor normiert: <ij> aus dem Original, [ij] aus dem Partner (J-Bild), s_ij = <ij>[ij] = 2 p_i.p_j mit den nativen P_mu, Impulserhaltung als Rang-2-Bedingung sum lambda lambda~ = 0. Die Modulphase ist die globale Kleingruppenphase (keine Observable). Für n = 3 braucht es die komplexifizierte Kinematik, in der die J-Paarung lambda~ = +-conj(lambda) aufgehoben ist": true,
+  "E (gescoptes Negativ für die wörtliche Hypothese T): Original x Tomita-Partner je Bein ist nicht die Gravitations-Doppelkopie. Weil J die Helizität spiegelt (D -> -D), ist das je Bein J-gepaarte Produkt modulneutral: Es gibt den Dilaton-Axion-Sektor (Plebanski: spurfreier Ricci Phi = Sigma_+ x Sigma_-), für n = 4 eine helizitätsneutrale Amplitude und für n >= 5 exakt null, nie ein Graviton. Gerade Phi setzt die Vakuum-Einsteingleichung null": true,
+  "C (Hypothese T in blattdiagonaler Fassung T'): Die Doppelkopie ist blattdiagonal. Gravitonen sind Original x Original (Weyl Sigma_- x Sigma_-) und Partner x Partner (Sigma_+ x Sigma_+); die rechte Kopie eines Beins ist das Partnerbild des helizitätsgespiegelten Zustands, auf J-gepaarter Kinematik numerisch gleich Parke-Taylor. Die Tomita-Paarung Original x Partner tritt genau an drei Stellen auf: im Impuls P_mu = (1/2)(J c J) sigma c, im KLT-Kern s_ij = <ij>[ij] und in Hodges' Phi_ij = [ij]/<ij> (Poissonklammer des Partners über dem Propagator des Originals). Prämisse P_diag: die blattdiagonale Paarung (gleiche Helizität links und rechts je Bein), nicht aus J, das nur die gespiegelte liefert": true,
+  "E/O: Die Doppelkopie fixiert kappa nicht. Sie bestimmt nur L = kappa/(2 g^2), eine Länge; nativ gibt es genau eine Länge, das Vakuum (die KMS-Normierung von |I| ist dasselbe Datum), und der Koeffizient des Poissonvertex relativ zur Fock-Normierung bleibt frei (z89, z98). Mit jeder nativen O(1)-Fassung (Prämisse P_L) ist das Vakuum planckgroß; das Lambda-G-Ziel G/R_Vak^2 = 10^(-122,6) ist damit unverträglich und verlangt eine zweite Länge L ~ 10^(-60,6) R_Vak, also e^(-1/alpha) als nichtperturbativen Faktor, den keine Doppelkopie-Normierung enthält. Dazu bleibt das native Vorzeichen AdS (z98)": true,
+  "L: Holografisch gelesen ist pi l^2/G die Zahl der Freiheitsgrade (de-Sitter-Entropie, z96, z109). Unter P_L liegt sie zwischen 0.12 und 79.0 für eine Naht; das Ziel verlangt 10^122.52, also ebenso viele native Freiheitsgrade (vgl. z88: viele Teilchen brauchen viele Nähte). Das ist eine Zählforderung, keine Herleitung": true
+ },
+ "zahlen": {
+  "c_algebra": {
+   "Fock": "8^4",
+   "<Omega|c_i^+ c_j|Omega>": [
+    [
+     1.0,
+     0.0
+    ],
+    [
+     0.0,
+     1.0
+    ]
+   ],
+   "U_theta c U_theta^+ = e^(-i theta) c": true,
+   "J c J = c^+, J P J = P": true,
+   "p_0 = |lambda|^2/2 (Stichproben)": [
+    2.977405,
+    0.869405,
+    2.896001,
+    2.128376,
+    5.455026,
+    1.237573
+   ]
+  },
+  "klammern": {
+   "*I_pi(Z_i, Z_j)/<ij>": 1.0,
+   "*I_omega(Z_i, Z_j)/(<ij> det x)": -1.0,
+   "*(I_pi - I_omega)(Z_i, Z_j)/(<ij> (1 + det x))": 1.0,
+   "Vakuumpunkt x = i 1: *(I_pi - I_omega)": 0.0,
+   "B_(I_pi)(e^(l~ w), e^(l~' w)) = eps(mu~, mu~'), mu~ = c^+-Eigenwert = -2 l~": true,
+   "B_(I_omega) auf c-Wellen = eps der omega''^+-Eigenwerte (K-Spinoren)": true
+  },
+  "normierung_kms": {
+   "s_ij = <ij>[ij] = 2 p_i.p_j (n = 5, reell)": true,
+   "[ij] = eta_i eta_j conj<ij>": true,
+   "Modulphase: <ij> Ladung, [ij] Ladung": [
+    2,
+    -2
+   ]
+  },
+  "impulserhaltung": {
+   "Rest sum lambda lambda~": 7.105477495334027e-15,
+   "sum_j <ij>[jk] (rel.)": 9.4947566424279e-16,
+   "sum_j s_ij (rel.)": 7.919544549669204e-16,
+   "n = 3 reell: max |<ij>|/|lambda|^2": 4.002206461478561e-17,
+   "n = 3 komplex: max |[ij]|, |<12><23><31>|": [
+    5.594315114139762e-17,
+    16.09960191625099
+   ]
+  },
+  "hodges_unabhaengigkeit": {
+   "max. rel. Streuung (n: Wert)": {
+    "4": 1.1983954933019429e-14,
+    "5": 2.898474629325881e-13,
+    "6": 1.031364698116019e-12
+   },
+   "Auswertungen": 10836,
+   "Negativkontrolle (Impulsrest 1e-3)": {
+    "4": 0.004041543583537126,
+    "5": 0.7428249928817741,
+    "6": 0.009615372948653094
+   }
+  },
+  "hodges_klt": {
+   "max |Hodges/KLT - 1| (n: Wert)": {
+    "3": 1.7122728738822903e-16,
+    "4": 6.232347412421313e-15,
+    "5": 9.35341255646874e-15,
+    "6": 6.444888211755991e-13
+   },
+   "M_3 = <12>^6/(<23>^2 <31>^2)": 2.9687972654716987e-16,
+   "KLT-Terme (n - 3)!^2": {
+    "3": 1,
+    "4": 1,
+    "5": 4,
+    "6": 36
+   }
+  },
+  "ladungen": {
+   "4": {
+    "q_i Gravitation": [
+     4.0,
+     4.0,
+     -4.0,
+     -4.0
+    ],
+    "q_i Eich": [
+     2.0,
+     2.0,
+     -2.0,
+     -2.0
+    ],
+    "Q global": 0.0
+   },
+   "5": {
+    "q_i Gravitation": [
+     4.0,
+     4.0,
+     -4.0,
+     -4.0,
+     -4.0
+    ],
+    "q_i Eich": [
+     2.0,
+     2.0,
+     -2.0,
+     -2.0,
+     -2.0
+    ],
+    "Q global": -4.0
+   },
+   "6": {
+    "q_i Gravitation": [
+     4.0,
+     4.0,
+     -4.0,
+     -4.0,
+     -4.0,
+     -4.0
+    ],
+    "q_i Eich": [
+     2.0,
+     2.0,
+     -2.0,
+     -2.0,
+     -2.0,
+     -2.0
+    ],
+    "Q global": -8.0
+   },
+   "3": {
+    "Q global": 4.0
+   }
+  },
+  "original_partner": {
+   "4": {
+    "max |Hodges/blattdiagonal - 1|": 2.359272977847207e-15,
+    "|Mix|/sum|Terme|": [
+     1.0,
+     1.0,
+     1.0
+    ],
+    "q_i Mix (n = 4)": [
+     -0.0,
+     -0.0,
+     0.0,
+     -0.0
+    ],
+    "|Mix/Hodges|, arg (n = 4)": [
+     [
+      1.0,
+      2.6708
+     ],
+     [
+      1.0,
+      -0.8667
+     ],
+     [
+      1.0,
+      0.369
+     ]
+    ]
+   },
+   "5": {
+    "max |Hodges/blattdiagonal - 1|": 5.5106629238122766e-15,
+    "|Mix|/sum|Terme|": [
+     5.32e-17,
+     3.68e-17,
+     6.57e-17
+    ],
+    "q_i Mix (n = 4)": null,
+    "|Mix/Hodges|, arg (n = 4)": null
+   },
+   "6": {
+    "max |Hodges/blattdiagonal - 1|": 1.057372915486236e-13,
+    "|Mix|/sum|Terme|": [
+     9.23e-18,
+     1.43e-17,
+     0.0
+    ],
+    "q_i Mix (n = 4)": null,
+    "|Mix/Hodges|, arg (n = 4)": null
+   }
+  },
+  "kruemmung": {
+   "0": {
+    "OO": {
+     "|R|": 1.9049124981580068,
+     "|Ricci|": 4.965068306494546e-16,
+     "R": 1.1102230246251565e-16,
+     "|Weyl|": 1.9049124981580068,
+     "*C/C": "-1j",
+     "Ricci - c p p": 4.809227168014852e-16,
+     "Modulladung": 4.0
+    },
+    "PP": {
+     "|R|": 1.9049124981580068,
+     "|Ricci|": 4.965068306494546e-16,
+     "R": 2.7755575615628914e-16,
+     "|Weyl|": 1.9049124981580068,
+     "*C/C": "1j",
+     "Ricci - c p p": 4.912844909132431e-16,
+     "Modulladung": -4.0
+    },
+    "OP": {
+     "|R|": 3.8098249963160136,
+     "|Ricci|": 8.487997612378194,
+     "R": 2.7075344618287248e-15,
+     "|Weyl|": 8.882434003577642e-16,
+     "*C/C": "0j",
+     "Ricci - c p p": 1.7763682141113668e-15,
+     "Modulladung": 0.0
+    },
+    "Spann F_O in Sigma_- / Sigma_+, F_P in Sigma_+ / Sigma_-": [
+     1.9e-16,
+     1.0,
+     1.9e-16,
+     1.0
+    ]
+   },
+   "1": {
+    "OO": {
+     "|R|": 0.6354975446435133,
+     "|Ricci|": 3.0539017265942247e-16,
+     "R": 1.9291780535142527e-16,
+     "|Weyl|": 0.6354975446435133,
+     "*C/C": "(-0-1j)",
+     "Ricci - c p p": 2.2358960136129277e-16,
+     "Modulladung": 4.0
+    },
+    "PP": {
+     "|R|": 0.6354975446435136,
+     "|Ricci|": 2.45228796256662e-16,
+     "R": 2.280617143682994e-16,
+     "|Weyl|": 0.6354975446435136,
+     "*C/C": "(-0+1j)",
+     "Ricci - c p p": 2.350510955563636e-16,
+     "Modulladung": -4.0
+    },
+    "OP": {
+     "|R|": 1.270995089287027,
+     "|Ricci|": 2.5420209111089607,
+     "R": 2.2732758410072793e-16,
+     "|Weyl|": 4.533869795011297e-16,
+     "*C/C": "0j",
+     "Ricci - c p p": 1.3323169375565513e-15,
+     "Modulladung": -0.0
+    },
+    "Spann F_O in Sigma_- / Sigma_+, F_P in Sigma_+ / Sigma_-": [
+     3e-16,
+     1.0,
+     1.8e-16,
+     1.0
+    ]
+   },
+   "2": {
+    "OO": {
+     "|R|": 0.5785383037668286,
+     "|Ricci|": 2.482534153247273e-16,
+     "R": 1.2509268882771003e-16,
+     "|Weyl|": 0.5785383037668284,
+     "*C/C": "-1j",
+     "Ricci - c p p": 2.5287344475977526e-16,
+     "Modulladung": 4.0
+    },
+    "PP": {
+     "|R|": 0.5785383037668286,
+     "|Ricci|": 2.7755575615628914e-16,
+     "R": 1.559322466582485e-16,
+     "|Weyl|": 0.5785383037668284,
+     "*C/C": "1j",
+     "Ricci - c p p": 2.441100577364126e-16,
+     "Modulladung": -4.0
+    },
+    "OP": {
+     "|R|": 1.1570766075336572,
+     "|Ricci|": 2.324427393915284,
+     "R": 1.7765596119822756e-15,
+     "|Weyl|": 3.425436605533557e-16,
+     "*C/C": "0j",
+     "Ricci - c p p": 5.557540896431494e-16,
+     "Modulladung": -0.0
+    },
+    "Spann F_O in Sigma_- / Sigma_+, F_P in Sigma_+ / Sigma_-": [
+     1.7e-16,
+     1.0,
+     1.7e-16,
+     1.0
+    ]
+   }
+  },
+  "dimension": {
+   "Exponenten (Massendimension)": {
+    "3": {
+     "[A_n]": 1.0,
+     "[M_n]": 2.0,
+     "[S]": 0.0
+    },
+    "4": {
+     "[A_n]": -0.0,
+     "[M_n]": 2.0,
+     "[S]": 2.0
+    },
+    "5": {
+     "[A_n]": -1.0,
+     "[M_n]": 2.0,
+     "[S]": 4.0
+    },
+    "6": {
+     "[A_n]": -2.0,
+     "[M_n]": 2.0,
+     "[S]": 6.0
+    }
+   },
+   "volle Amplituden": "A = g^(n-2) A, M = (kappa/2)^(n-2) M, [M_voll] = 4 - n",
+   "L = kappa/(2 g^2)": "Massendimension -1"
+  },
+  "native_laenge": {
+   "Dilatationsgewicht von P, K (S4)": [
+    -2.0,
+    2.0
+   ],
+   "[Dil, E] nicht proportional zu E (Rest)": 1.0,
+   "||Dil Omega||": 1.4142135623730951,
+   "<c^+ c> im gestauchten Vakuum (s = 0,1)": 1.221402758,
+   "e^(2 s)": 1.221402758,
+   "l (z98)": "R_Vak/2",
+   "R_Vak in CCR-Einheiten (m = 1)": 0.99627207622075
+  },
+  "prämissen_G": {
+   "Ziel log10 G/R_Vak^2": -122.6266,
+   "Kandidaten": {
+    "g^2 = 1/k, L = l = R_Vak/2": {
+     "log10 G/R_Vak^2": -2.0023,
+     "R_Vak/l_Pl": 10.0265
+    },
+    "g^2 = 1/k, L = R_Vak": {
+     "log10 G/R_Vak^2": -1.4002,
+     "R_Vak/l_Pl": 5.0133
+    },
+    "g^2 = 1/k, L = CCR-Einheit R_Vak/tanh(pi)": {
+     "log10 G/R_Vak^2": -1.397,
+     "R_Vak/l_Pl": 4.9946
+    },
+    "g^2 = 2/k, L = l = R_Vak/2": {
+     "log10 G/R_Vak^2": -1.4002,
+     "R_Vak/l_Pl": 5.0133
+    },
+    "g^2 = 2/k, L = R_Vak": {
+     "log10 G/R_Vak^2": -0.7982,
+     "R_Vak/l_Pl": 2.5066
+    },
+    "g^2 = 2/k, L = CCR-Einheit R_Vak/tanh(pi)": {
+     "log10 G/R_Vak^2": -0.7949,
+     "R_Vak/l_Pl": 2.4973
+    },
+    "g^2 = 2 pi/k, L = l = R_Vak/2": {
+     "log10 G/R_Vak^2": -0.4059,
+     "R_Vak/l_Pl": 1.5958
+    },
+    "g^2 = 2 pi/k, L = R_Vak": {
+     "log10 G/R_Vak^2": 0.1961,
+     "R_Vak/l_Pl": 0.7979
+    },
+    "g^2 = 2 pi/k, L = CCR-Einheit R_Vak/tanh(pi)": {
+     "log10 G/R_Vak^2": 0.1994,
+     "R_Vak/l_Pl": 0.7949
+    },
+    "g^2 = 4 pi/k, L = l = R_Vak/2": {
+     "log10 G/R_Vak^2": 0.1961,
+     "R_Vak/l_Pl": 0.7979
+    },
+    "g^2 = 4 pi/k, L = R_Vak": {
+     "log10 G/R_Vak^2": 0.7982,
+     "R_Vak/l_Pl": 0.3989
+    },
+    "g^2 = 4 pi/k, L = CCR-Einheit R_Vak/tanh(pi)": {
+     "log10 G/R_Vak^2": 0.8014,
+     "R_Vak/l_Pl": 0.3975
+    }
+   },
+   "Spanne log10 G/R_Vak^2": [
+    -2.0023,
+    0.8014
+   ],
+   "Spanne R_Vak/l_Pl": [
+    0.3975,
+    10.0265
+   ],
+   "Ziel log10 R_Vak/l_Pl": 61.3133,
+   "nötiges log10 L/R_Vak je g^2": {
+    "1/k": -60.6132,
+    "2/k": -60.9142,
+    "2 pi/k": -61.4114,
+    "4 pi/k": -61.7124
+   },
+   "de-Sitter-Lesart pi l^2/G": {
+    "P_L (min, max)": [
+     0.1241,
+     78.9569
+    ],
+    "Ziel log10 pi l^2/G": 122.5217
+   }
+  },
+  "status": {
+   "Winkelklammer": [
+    "E",
+    "<ij> = *I_pi(Z_i, Z_j) = eps(c-Eigenwerte), Originalindex, Koeffizient 1, translationsinvariant"
+   ],
+   "eckige Klammer": [
+    "E",
+    "[ij] = B_(I_pi) = eps(c^+-Eigenwerte) = eps des Partners (J-Bild), Koeffizient 1"
+   ],
+   "I_omega, AdS-Büschel": [
+    "E",
+    "*I_omega = -det(x) <ij> auf L_x (K-Eigenzustände); *(I_pi - I_omega) = Omega(x) <ij>, Omega = 1 + det x (z98), null am Vakuumpunkt"
+   ],
+   "Normierung": [
+    "E",
+    "s_ij = <ij>[ij] = 2 p_i.p_j mit nativem P_mu, kein freier Faktor; Modulphase = globale Kleingruppe"
+   ],
+   "Hodges MHV": [
+    "E (Vergleichsziel)",
+    "n = 3..6 eindeutig (Streichungen, Referenzspinoren), Negativkontrolle ohne Impulserhaltung"
+   ],
+   "Hodges = KLT": [
+    "E (Vergleichsziel)",
+    "Impulskern mit Parke-Taylor, Verhältnis 1 für n = 3..6, komplex und nativ reell"
+   ],
+   "Ladungen": [
+    "E",
+    "je Bein +-4 = 2 x Eich, global Q(M_n) = 16 - 4n (n = 3: e^(4 i theta) wie z98, n = 4: 0)"
+   ],
+   "Original x Partner je Bein": [
+    "E, gescoptes Negativ",
+    "modulneutral: Phi (Dilaton-Axion), n = 4 helizitätsneutral, n >= 5 null; nie Graviton"
+   ],
+   "blattdiagonale Doppelkopie": [
+    "C",
+    "Original x Original, Partner x Partner; Tomita-Paarung im Impuls, im KLT-Kern und in Phi_ij; Prämisse P_diag"
+   ],
+   "kappa, G": [
+    "O",
+    "Doppelkopie fixiert nur L = kappa/(2 g^2) (Länge); native Länge nur R_Vak; P_L gibt planckgroßes Vakuum, unverträglich mit dem Lambda-G-Ziel 10^(-122,6)"
+   ]
+  }
+ },
+ "urteil": "Hypothese T ist in ihrer wörtlichen Form gescopt verneint, in blattdiagonaler Fassung bedingt tragfähig; G bleibt offen. (1) Native Klammern [E]: Die Impulseigenzustände sind die gemeinsamen Eigenzustände der kommutativen c-Algebra (lambda = c-Eigenwert, p_mu = (1/2) lambda^+ sigma_mu lambda), der Partnerspinor ist das J-Bild (J c J = c^+). Ein einziger nativer Bivektor I_pi liefert beide Klammern mit Koeffizient 1: unten (Hodge) <ij> = *I_pi(Z_i, Z_j) = eps(c_i, c_j) auf dem Originalindex, oben (Poisson) [ij] = eps(c_i^+, c_j^+), die eps-Form des Tomita-Partners. I_omega gibt -det(x) <ij> auf der Geraden L_x und gehört zu den K-Eigenzuständen; das native AdS-Büschel I_pi - I_omega gibt Omega(x) <ij> mit Omega = 1 + det x, z98s konformen Faktor. Mit dem KMS-normierten c gilt s_ij = <ij>[ij] = 2 p_i.p_j ohne freien Faktor; die Modulphase ist die globale Kleingruppenphase (<ij> Ladung 2, [ij] Ladung -2). Für n = 3 braucht es komplexe, nicht J-gepaarte Kinematik. (2) Gravitation MHV [E als Vergleichsziel]: Mit diesen Klammern ist Hodges' reduzierte Determinante für n = 3..6 eindeutig (alle Streichungen, Referenzspinoren; ohne Impulserhaltung nicht) und gleich der KLT-Doppelkopie aus Parke-Taylor (Verhältnis 1, komplex und nativ reell). Die Ladungen verdoppeln sich je Bein (+-4 = 2 x +-2), global Q(M_n) = 16 - 4n, also e^(4 i theta) für den kubischen Vertex wie in z98 und Phasenfreiheit bei n = 4. Native Frage: Die J-Paarung desselben Zustands (rechte Kopie = conj der linken) ist je Bein modulneutral und gibt den Dilaton-Axion-Sektor, für n = 4 eine reelle, helizitätsneutrale Amplitude vom Betrag der Gravitonamplitude, für n >= 5 exakt null; linearisiert ist Original x Partner reiner spurfreier Ricci Phi = Sigma_+ x Sigma_- (Weyl = 0), genau die Komponente, die die Vakuum-Einsteingleichung null setzt. Gravitonen sind blattdiagonal: Original x Original (Weyl in Sigma_- x Sigma_-) und Partner x Partner (Sigma_+ x Sigma_+); die rechte Kopie eines Beins ist das Partnerbild des helizitätsgespiegelten Zustands, auf J-gepaarter Kinematik gleich Parke-Taylor. Die Tomita-Paarung tritt im Impuls, im KLT-Kern s_ij und in Phi_ij = [ij]/<ij> auf, nicht als zweite Eichkopie. Die Original-Partner-Struktur realisiert also nicht genau diese Doppelkopie, sondern ihren Kern; die Doppelkopie selbst braucht P_diag (gleiche Helizität links und rechts je Bein). (3) Normierung von G [E/O]: Die Doppelkopie fixiert nur L = kappa/(2 g^2), eine Länge (Skalierung exakt). Nativ gibt es eine Länge, das Vakuum; die KMS-Normierung von |I| ist dasselbe Datum (im gestauchten Vakuum ist <c^+ c> = e^(2 s)), und der Vertexkoeffizient bleibt frei. Unter jeder nativen O(1)-Prämisse P_L (g^2 aus dem Niveau 1, L = R_Vak/2, R_Vak oder die CCR-Einheit) ist G/R_Vak^2 = 10^(-2,0) bis 10^(0,8), das Vakuum also planckgroß; das Lambda-G-Ziel 10^(-122,6) verlangt eine zweite Länge L ~ 10^(-60,6) R_Vak, die nicht nativ ist, und dazu dS statt des nativen AdS. Verträglich wäre P_L nur, wenn R_Vak die Planck- und nicht die Hubbleskala ist. (4) Folgen: K13 bleibt L; die absolute Normierung der Metrik ist auf ein einziges fehlendes Datum reduziert, die Länge L = kappa/(2 g^2) (gleichwertig b bzw. G), die nicht aus der Doppelkopie folgt. Szenarioachse Gravitation: neuer Wert 'blattdiagonale Doppelkopie mit Tomita-Kern' (bedingt, P_diag und G frei bzw. P_L); 'Original x Partner' ist als Gravitonquelle ausgeschlossen und gehört zum Dilaton-Axion-Wert. T7: MHV-Baumgravitation ist aus nativen Klammern reproduziert, als Kinematik ohne native Dynamik; T6: kappa bzw. G ist keine Folge von g und Niveau. Nichts ist befördert."
+}

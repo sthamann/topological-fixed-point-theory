@@ -8136,3 +8136,19 @@ Agentenläufe z100–z107 (alle reproduziert), eigene Prüfungen z108, z109, z11
 - **Spin-Statistik:** Über Nähte gilt sie unter P_CAR mit P_GSO.
 
 **Prüfstand:** 13 P, 7 L (K13, K15, K16, K19 präzisiert). Atlas-Revision 4475787b4e0e057aa0da879f. Ledger unverändert, nichts befördert.
+
+## H6H49-20261125 · Tiefe Welle T1–T6, U1–U3 und achtzehnte Analyse
+
+Agentenläufe z110–z115 und z117–z119 (alle reproduziert), eigene Prüfung z120.
+- **Wechselwirkung:** Das lokale Transfergatter P_T − i·P_S hat erzwungene Winkel. Die Vierteldrehung ist P_sym, die Phase
+  die Wurzel der Uhr bzw. i^(Q_A·Q_B). Die globale Mittelung und der Transferaustausch geben keine Wechselwirkung.
+- **Hypothese T:** Parke–Taylor-Nenner nativ (k = 1). Es fehlen Zähler (P_N4), Austauschfeld (P_BF) und Trennung der
+  Mehrspurterme. Hodges = KLT aus nativen Klammern.
+- **Statistik:** P_GSO folgt nicht aus Modulinvarianz und ist pro Naht mit Modulsummation unverträglich.
+- **Chiralität:** Zwei bedingte Wege mit je einem Bit, P_RJ (Twistorindex, 3 je 16) und P_glue (gemeinsame
+  Clifford-Struktur).
+- **Gravitation:** Die Uhrspur gibt MacDowell–Mansouri unter P_R; G braucht das Gewicht 2c₃ von Hand. Bewegte Algebra
+  bleibt flach.
+- **Szenario-Suche:** 46 080 Szenarien; 108 erfüllen alles außer Graviton und modular konsistenter Statistik.
+
+**Prüfstand:** 13 P, 7 L (K13, K15, K16, K19 präzisiert). Atlas-Revision 4fe8d713fac851fc02a42226. Ledger unverändert, nichts befördert.

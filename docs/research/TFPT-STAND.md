@@ -1,7 +1,7 @@
 # TFPT: Was funktioniert, was fehlt, was eine vollständige Lösung wäre
 
 Kompakter Stand vom 20. November 2026, ergänzt am 23. und 24. November (Befunde 20.–24. November, Kandidat H6 bis
-H6h48, Leitlinie „Rekonstruktion statt Auswahl“ und Abschnitt 5), für Explorations- und Lösungssitzungen. Seit 24. November
+H6h49, Leitlinie „Rekonstruktion statt Auswahl“ und Abschnitt 5), für Explorations- und Lösungssitzungen. Seit 24. November
 liegen die Explorationszweige vom 20. November in main (Quaternionrahmen, Fibonacci-Uhr, Vertauschung und Auslese, fremde
 und operative Ursprünge, Projekt Genesis, die Vertragsserie vom 14./15. Oktober); ihre Befunde stehen in ihren Verzeichnissen
 unter `experiments/`. Nicht zusammengeführt ist `codex/c3-p1-p2-abgleich-20261105` (121 Konflikte mit dem heutigen Stand). Neuere Befunde stehen in den Atlasproblemen mit Datum
@@ -42,7 +42,7 @@ Offen sind der Tensorkanal und die Rekonstruktion von 3+1 aus 4D-Antworten. Z60 
 ist die Spektraldimension (Weyl-Gesetz) einer Antwort. Die Quelle hat d = 1, die E₈-Naht kompakt und starr d = 8 = 4 + 4.
 Gebraucht wird eine originale Antwort mit d = 4, nichtkompakt und reflexionspositiv.
 
-**Gesamtstand und Strategien (Stand H6h48):** [`GESAMTSTAND-UND-STRATEGIEN.md`](GESAMTSTAND-UND-STRATEGIEN.md), mit
+**Gesamtstand und Strategien (Stand H6h49):** [`GESAMTSTAND-UND-STRATEGIEN.md`](GESAMTSTAND-UND-STRATEGIEN.md), mit
 Tor-Karte T1–T8, Kriterien K12–K20 und sieben Strategien (S1–S7).
 
 **Gesamtbild (Vogelperspektive, Stand H6h35):** [`VOGELPERSPEKTIVE.md`](VOGELPERSPEKTIVE.md).
@@ -171,9 +171,9 @@ Ursprung sollte beides zugleich liefern.
 
 ### Kandidat H6: Ursprung von P1 aus einer hintergrundfreien Naht (Exploration 23.11.)
 
-Quelle: `experiments/exploration/2026-11-23-phasenraum-f5-holocode/VERDICT.md` (Stand H6h48),
-Skripte `n1`, `v1`, `y1`, `z1`–`z109`, `z116`, Lean-Vertrag `experiments/theory-contracts/h6-exakte-teile-20261123/`; Atlasproblem `problem:c3-p1-p2-shared-origin-reconciliation`,
-Befunde mit Präfix `h6`. Nichts davon ist im Ledger befördert. Prüfstand mit 20 Kriterien (Stand H6h48): 13
+Quelle: `experiments/exploration/2026-11-23-phasenraum-f5-holocode/VERDICT.md` (Stand H6h49),
+Skripte `n1`, `v1`, `y1`, `z1`–`z120`, Lean-Vertrag `experiments/theory-contracts/h6-exakte-teile-20261123/`; Atlasproblem `problem:c3-p1-p2-shared-origin-reconciliation`,
+Befunde mit Präfix `h6`. Nichts davon ist im Ledger befördert. Prüfstand mit 20 Kriterien (Stand H6h49): 13
 hergeleitet, 7 unter benannter Lesart, keines gescheitert, offen oder gesetzt. K12 (3+1) zählt seit der Leitlinie
 „Rekonstruktion statt Auswahl“ nur als Lesart: d = 4 folgt kinematisch, nicht aus den Antworten (Z60).
 
@@ -562,6 +562,20 @@ hergeleitet, 7 unter benannter Lesart, keines gescheitert, offen oder gesetzt. K
       - Die Spur mit der Uhr R = iΓ₁₁ gibt ε, der Nahtindex wählt einen Sektor (Kandidat). [E/C]
     - Chiralität: Der Klebeweg ist geschlossen. Die gemeinsame reelle Clifford-Struktur Cl(3,11) gibt eine Majorana-Weyl-16
       je Generation; nativ ist das offen. Spin-Statistik über Nähte gilt unter P_CAR mit P_GSO. [E/C]
+  - Tiefe Welle T1–T6, U1–U3 und achtzehnte Analyse (Z110–Z120, H6h49):
+    - Wechselwirkung: Das lokale Transfergatter P_T − i·P_S hat erzwungene Winkel. Leckfreiheit lässt nur die
+      Vierteldrehung (= P_sym), die Phase ist die Wurzel der Uhr bzw. die ℤ₄-Wechselphase i^(Q_A·Q_B). Mit der freien
+      Energie wäre es trivial. Die globale Mittelung gibt keine konsistente Familie. [E/C]
+    - Hypothese T: Die Nahtströme geben die Parke–Taylor-Nenner exakt (k = 1). Es fehlen der Zähler (P_N4), das
+      Austauschfeld (P_BF) und eine Trennung der Mehrspurterme. Hodges = KLT aus nativen Klammern, G an einer Länge L.
+      [E/C]
+    - Statistik: P_GSO folgt nicht aus Modulinvarianz und ist pro Naht mit Modulsummation unverträglich. Vier chirale Nähte
+      geben genau (E₈)₁. [E negativ]
+    - Chiralität: Zwei bedingte Wege mit je einem Bit, der Twistorindex mit P_RJ (3 je 16) und die gemeinsame
+      Clifford-Struktur mit P_glue (J_H6 = Majorana-Weyl auf dem Indexschnitt). [C]
+    - Gravitation: Die Uhrspur gibt MacDowell–Mansouri; die Gewichtswahl ist P_vol. G braucht das Gewicht 2c₃ von Hand.
+      Bewegte Algebra bei festem Zustand bleibt flach. [E/C, E negativ]
+    - Szenario-Suche (46 080 Szenarien): 108 erfüllen alles außer Graviton und modular konsistenter Statistik. [E]
   - Instantonen (Z33): Unter Spin(10) hat ein Einheitsinstanton 4 Eltern- und 12
     Familiennullmoden; mit gesättigten Familiennullmoden entsteht Re[e^{iθ}Φ² C_fam], die Wand ist
     also auch im Kontinuum möglich, bei nackter SO(10) aber ~10⁻¹⁶⁴ unterdrückt. [N]

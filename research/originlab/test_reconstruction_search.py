@@ -57,40 +57,63 @@ class ReconstructionSearch(unittest.TestCase):
     # ------------------------------------------------------------ whole-theory scenarios (H6h42, S7)
     def test_scenarios_enumerate_all_axes_and_respect_recorded_exclusions(self):
         u = self.universe("scenarios")
-        self.assertEqual(u["objects"], 4*3*4*2*8*2*3*3)                  # + statistics and interaction (H6h47)
+        self.assertEqual(u["objects"], 4*3*4*2*10*2*4*6)                 # + gravity, statistics, interaction (H6h49)
         sc, info = scenario_candidates()
         for o in sc:
             if (o["scenario"]["time"] == "modular flow" or o["scenario"]["spinor_index"] == "quarter oscillators"
                     or o["scenario"]["gravity"] in ("composite spin 2", "Virasoro T(z)",
-                                                    "entanglement: original|partner cut")):
+                                                    "entanglement: original|partner cut", "moved algebra at fixed state")
+                    or o["scenario"]["interaction"] == "transfer exchange (twirl)"):
                 self.assertNotIn("admissible", o["clauses"])
         self.assertEqual(info["r_order"], {"quarter oscillators": 1, "step type": 1, "eta doublet": 2, "seam doublet V_1": 4})
         self.assertEqual(info["native_lorentz"], {"quarter oscillators": True, "step type": True, "eta doublet": False,
                                                   "seam doublet V_1": False})
 
-    def test_scenarios_h6h47_leave_exactly_graviton_and_chirality_open(self):
+    def test_scenarios_h6h49_leave_graviton_and_modular_statistics_open(self):
         u = self.universe("scenarios")
-        self.assertEqual(u["minimal_empty_rules"], [["graviton"], ["admissible", "chiral_matter"],
-                                                    ["chiral_matter", "spin_statistics"]])
-        q = u["questions"]["admissible+coherent+lorentzian_native+positive_time+one_field+spin_statistics+interacting"]
-        self.assertEqual((q["verdict"], len(q["survivors"])), ("AMBIGUOUS", 12))
-        self.assertEqual(u["questions"]["admissible+chiral_matter"]["verdict"], "EMPTY")
+        # H6h47 left graviton and chirality open; with the twistor-line index (z114) chirality is conditional under
+        # P_GSO, and the new blocker is the modular consistency of the statistics rule (z113)
+        self.assertEqual(u["minimal_empty_rules"], [["graviton"], ["admissible", "modular_statistics"],
+                                                    ["chiral_matter", "modular_statistics"],
+                                                    ["modular_statistics", "spin_statistics"]])
+        matter = "admissible+coherent+lorentzian_native+positive_time+one_field+spin_statistics+interacting"
+        for name in (matter, matter + "+chiral_matter"):
+            q = u["questions"][name]
+            self.assertEqual((q["verdict"], len(q["survivors"])), ("AMBIGUOUS", 108))
+        self.assertEqual(u["questions"]["admissible+chiral_matter"]["verdict"], "AMBIGUOUS")
+        self.assertEqual(u["questions"]["admissible+modular_statistics"]["verdict"], "EMPTY")
         self.assertEqual(u["questions"]["admissible+graviton"]["verdict"], "EMPTY")
         vals = u["derived"]["values_in_base_survivors"]
-        self.assertEqual(vals["statistics"], ["clock-twisted lift (P_GSO)"])                 # z97, conditional
-        self.assertEqual(vals["interaction"], ["chosen two-body term"])                     # z99, conditional
+        self.assertEqual(vals["statistics"], ["Z4 glue on the spinor module (P_glue)",       # z117, one bit
+                                              "clock-twisted lift (P_GSO)"])                 # z97/z113, conditional
+        self.assertEqual(vals["interaction"], ["chosen two-body term", "local coherent transfer gate",
+                                               "twistor action from seam currents (T)"])    # z99, z120, z110/z111
         self.assertEqual(vals["gravity"], ["MacDowell-Mansouri: modular Cartan connection",  # z98, flat vacuum only
-                                           "P0-graded two-seam composition"])
+                                           "P0-graded two-seam composition",
+                                           "double copy of seam amplitudes (P_diag)"])      # z112
         sc, info = scenario_candidates()
+        excluded_interaction = ("fusion over even or linear algebras", "vertex operators = level-1 currents",
+                                "transfer exchange (twirl)")
         for o in sc:
             if o["scenario"]["statistics"] != "untwisted lift" and o["scenario"]["spinor_index"] != "step type":
                 self.assertNotIn("coherent", o["clauses"])
-            if o["scenario"]["statistics"] == "untwisted lift" or o["scenario"]["interaction"] != "chosen two-body term":
+            if o["scenario"]["statistics"] == "untwisted lift" or o["scenario"]["interaction"] in excluded_interaction:
                 self.assertNotIn("admissible", o["clauses"])
+            if o["scenario"]["statistics"] in ("clock-twisted lift (P_GSO)", "Z4 glue on the spinor module (P_glue)"):
+                self.assertIn("chiral_matter", o["clauses"])                               # z114 (T, K2, P_RJ), z117
+                self.assertNotIn("modular_statistics", o["clauses"])                       # z113, not tested for P_glue
         ev = info["evidence"]
         self.assertEqual(ev["statistics: E8 glue with A3 = conformal (P_A3)"]["status"], "excluded")
+        self.assertEqual(ev["statistics: clock-twisted lift (P_GSO)"]["source"], "z113_ergebnis.json")
         self.assertEqual(ev["interaction: vertex operators = level-1 currents"]["status"], "excluded")
+        self.assertEqual(ev["interaction: transfer exchange (twirl)"]["status"], "excluded")
+        self.assertEqual(ev["interaction: local coherent transfer gate"]["status"], "conditional")
         self.assertEqual(ev["gravity: MacDowell-Mansouri: modular Cartan connection"]["status"], "conditional")
+        self.assertEqual(ev["gravity: MacDowell-Mansouri: modular Cartan connection"]["source"], "z118_ergebnis.json")
+        self.assertEqual(ev["statistics: Z4 glue on the spinor module (P_glue)"]["status"], "conditional")
+        self.assertEqual(ev["gravity: moved algebra at fixed state"]["status"], "excluded")
+        self.assertEqual({k: v["status"] for k, v in info["clause_evidence"].items()},
+                         {"modular_statistics": "conditional", "twistor_line_index": "conditional"})
 
     def test_scenario_base_survivors_place_the_marks_only_where_coherence_allows(self):
         sc, _ = scenario_candidates()
@@ -263,7 +286,7 @@ class ReconstructionSearch(unittest.TestCase):
         self.assertEqual(self.result["status"], "RECONSTRUCTION_SEARCHED")
         text = json.dumps(self.result, sort_keys=True, allow_nan=False)
         self.assertEqual(text, json.dumps(run_reconstruction(), sort_keys=True, allow_nan=False))
-        self.assertEqual(self.result["objects_enumerated"], 54 + 66 + 10 + 6 + 4 + 13824)  # + doublets and position spaces (H6h40)
+        self.assertEqual(self.result["objects_enumerated"], 54 + 66 + 10 + 6 + 4 + 46080)  # + doublets and position spaces (H6h40)
 
 
 if __name__ == "__main__":

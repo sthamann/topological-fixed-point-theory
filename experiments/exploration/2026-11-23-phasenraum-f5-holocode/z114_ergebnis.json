@@ -1,0 +1,1052 @@
+{
+ "checks": {
+  "[E] O(n) auf CP^1, n = -6..4: Cech-Kohomologie (Laurent-Monome, Rang von delta) gibt h^0 = max(0, n + 1), h^1 = max(0, -n - 1), Index n + 1 (Riemann-Roch) und Serre h^1(O(n)) = h^0(O(-n - 2)); der analytische d-quer-Operator auf spingewichteten Kugelfunktionen hat dieselben Kern- und Kokerndimensionen (SVD, zwei Abschneider j <= |n|/2 + 5, + 8, stabil). Einziges azyklisches Bündel: O(-1)": true,
+  "[E, benutzt] Gelöste Familienblöcke reproduziert: E_- = O(-1) + 3 O hat h^0 = 3, h^1 = 0 (Familienindex 3 ohne Spiegel; gerechnet 3, 0). H^0(K(D)) mit D = vier Marken bei mu4: z^k dz/(z^4 - 1) ist genau für k = [0, 1, 2] ein Schnitt (regulär bei unendlich), mit den mu4-Charakteren ['-1', '-I', 'I'] = {-1, i, -i}; der vierte Kandidat (k = 3, Charakter 1) hat bei unendlich einen Pol (Residuensumme an den Marken 1 != 0; für k = 0, 1, 2 ist sie ['0', '0', '0'])": true,
+  "[E] Twistorgerade allein: Index von O(2h - 2) ist 2h - 1 (h = -1, -1/2, 0, 1/2, 1: [-3, -2, -1, 0, 1]). Über alle |h| <= 3 hat genau eine Helizität keine Kohomologie auf der Geraden: h = ['1/2'] (Konvention z97) bzw. h = ['-1/2'] (Penrose-Konvention O(-2h - 2), das J-Bild). Die einzige Nullstelle des affinen Index liegt an einer Weyl-Helizität; Skalar O(-2) (h^1 = 1) und beide Vektorslots (O(0): h^0 = 1; O(-4): h^1 = 3) sind nicht azyklisch": true,
+  "[E] K1 (Naht = Twistorgerade, E_- (x) O(2h - 2)): (h^0, h^1) für h = -1, -1/2, 0, 1/2, 1 = [(0, 13), (0, 9), (0, 5), (0, 1), (3, 0)], Index 8h - 5. Nullmoden (h^0 > 0) des Familienbündels gibt es nur bei h = ['1'] (Homogenität 0, der |h| = 1-Slot; passend zu Familien = Lambda^2_+ aus z61); an beiden Weyl-Slots hat E_- nur Kokern (h^1 = 1 bei +1/2, 9 bei -1/2). Der Familienindex 3 ist ein Index des Vektorslots, nicht des Weyl-Slots": true,
+  "[E] Asymmetriesatz: für jedes F gilt ind(F, h) - ind(F, -h) = 4h rang F und ind(F, h) + ind(F, -h) = 2 grad F - 2 rang F. Der Familienindex (über den Grad) steht nur im geraden Teil; die Helizitätsasymmetrie ist familienblind: E_-, E_+ = E_-^v und das triviale 4 O haben dieselbe Asymmetrie (8, 8, 8 bei h = 1/2). Affines Gesetz (Indexform des Leiterquotienten aus z102): ind(1/2) - ind(-1/2) = ind(1) - ind(0) = 2 rang F für alle F ([(2, 2), (8, 8), (8, 8), (8, 8), (6, 6), (8, 8), (8, 8)])": true,
+  "[negativ, E] E_- am azyklischen Slot: E_- (x) O(-1) = O(-2) + 3 O(-1) hat (h^0, h^1) = (0, 1), also eine Spiegelmode aus dem O(-1)-Summanden; chi(E_- (x) O(k)) = 4k + 3 ist für k = -12..12 nie 0 (min |chi| = 1): keine Geradenverdrillung gibt E_- den Spiegelindex 0. Am Skalarslot verschiebt der O(-1)-Summand die Helizität um -1/2: E_- (x) O(-2) = O(-3) + 3 O(-2) gibt (0, 5), die familienneutrale Skalarleiter (F = O) bleibt mit (0, 1) unberührt. E_- ist starr: h^1(End E_-) = 0 (End E_- = 10 O + 3 O(1) + 3 O(-1)), also auf jeder Geraden L_x vom selben Spaltungstyp; der Index ist auf allen L_x derselbe": true,
+  "[E] K2 (Familiennullmoden der Naht mal Twistorgerade, Künneth): Index = chi(F) (2h - 1) exakt für alle F und h. Für E_-: (H^0, H^1, H^2) bei h = -1/2 (chiraler Slot) = (0, 6, 0) (drei Weyl, je 2 Komponenten, kein H^2, weil h^1(E_-) = 0), bei h = +1/2 (Spiegelslot) = (0, 0, 0) (alle Kohomologie verschwindet). Kontrollen: die Spiegelfamilie O(-4) + 3 O (z58) gibt am chiralen Slot (0, 6, 6), Index 0 (Familienspiegel entgegengesetzter Parität); das triviale 3 O gibt (0, 6, 0) wie E_-; das Serre-Dual E_-^v (x) K (Gegenorientierung, chi = -3) gibt (0, 0, 6), Parität gekippt. Skalarslot: E_- verdreifacht ((0, 3, 0)), F = O nicht ((0, 1, 0))": true,
+  "[E] Explizite Penrose-Transformation: |m, mquer, k, kquer> -> omega_0^k omega_1^(m-1-k) pi_0^(-1-kquer) pi_1^(-1-(mquer-1-kquer)) sqrt(kquer! (mquer-1-kquer)!/(k! (m-1-k)!)) ist eine Cech-Klasse in H^1(PT', O(n)) mit n = m - mquer - 2 = 2h - 2. Alle 17 Erzeuger der Standardform (z83/z97, CCR, M = 5, 225 Zustände, 17 nicht null) sind exakt die Twistor-Differentialoperatoren P = -omega^a d/dpi_b, K = pi_b d/domega^a, A = omega^a d/domega^b, B = -d/dpi_a o pi_b, E = (omega.d_omega - pi.d_pi)/2 auf Klassen modulo Korändern (max. Abweichung 9e-16). Das Zentrum Z_SU = exp(i pi (E + 2 J3_R)) aus z97 ist genau der Homogenitätscharakter i^n (Fehler 3e-15). Die Konvention z97 ist damit die Realisierung mit Geraden P(pi), pi = Partnerseite. Beide Weyl-Leitern existieren: Weyl-Zählung bei E = N + 1/2 für h = +1/2 [2, 6, 12, 20], für h = -1/2 [2, 6, 12, 20]": true,
+  "[E] Linienrestriktion H^1(PT', O(2h - 2)) -> H^1(L_x, O(2h - 2)) an x = 0 (die Naht) und drei zufälligen komplexen x: Rang je h = -3/2..3/2 [[4], [3], [2], [1], [0], [0], [0]], unabhängig von x und gleich h^1(L, O(2h - 2)), surjektiv; die Klassen selbst sind für jedes h vorhanden ([154, 133, 112, 91, 70, 50, 32] bis omega-Grad 5). Felddaten auf der Geraden haben genau die Helizitäten h <= 0 (ein Halbraum): der Spiegel h = +1/2 und auch der Vektor h = +1 haben auf keiner Geraden Daten (ihre Felder kommen erst aus Normalenableitungen der Ordnung 2h). Das J-Bild (Geraden P(omega) der Originalseite) sieht genau h >= 0 ([[0], [0], [0], [1], [2], [3], [4]])": true,
+  "[negativ, E] Artinhalt (Leitern auf PT', K-Typen aus der Cech-Zählung bis E = 3 bestätigt): mit E_- verdrillt wird ein Weyl-Paar zu {h: Vielfachheit} = {-1: 1, -1/2: 3, 0: 1, 1/2: 3}: drei Familien je Helizität +-1/2 und eine um -1/2 verschobene Kopie mit ganzer Helizität (der O(-1)-Summand, unter P_GSO im Sektor R = +-i verworfen). Auf der vollen Standardform ist die Verdrillung eine Umbenennung: jede Helizität kommt rang F mal vor ({'E_-': [4], '4 O': [4], 'E_+ = E_-^v': [4]}), der Netto-Weyl-Index ist auf jeder Energie 0 ([0, 0, 0, 0, 0, 0]...). Im Produkt K2 ist der Inhalt chi(F) mal die Standardform, ebenso vektorartig. Familienbündel und triviale Kontrollen unterscheiden sich nur in der Vielfachheit": true,
+  "[negativ, E] Universelle Nahtgerade (alle Sektoren über dieselbe Gerade P(pi), P_GSO, Familienvielfachheit aus K2): N16 = -3, N16q = 3: 16 und 16q liegen bei derselben Helizität, also Eichchiralität 0 (CPT verlangt N16q = N16); unter dem Restriktionskriterium sieht die Naht den R-neutralen Vektor nur mit h = -1 (beide Vektoren: False), unter dem Indexkriterium (h^0 - h^1 != 0) beide (True), aber ebenfalls ohne Eichchiralität (False). Über alle 4 universellen Regeln: chiral 0 bzw. 0. Die Linienchiralität ist eine reine Helizitätsauswahl, gleich für 16 und 16q; die Halbraumauswahl, die h = +-1/2 trennt, trennt auch h = +-1 (Indexform des Leiterquotienten), der Skalar liegt auf dem Rand und bleibt": true,
+  "[E, bedingt] Alle 256 Linienregeln (jeder Z4-Sektor koppelt über die Originalgerade P(omega), die Partnergerade P(pi), beide oder keine), Feldsichtbarkeit aus den gerechneten Restriktionsrängen, P_GSO, Vielfachheit aus K2: chiral (16 bei einer Helizität, Spiegel 0, 16q CPT-gegengleich), mit R-neutraler Skalarleiter und beiden Vektorhelizitäten, alle Sektoren koppelnd: 6 Regeln (Indexkriterium: 18); J-kovariant (J: R -> R^-1, Original <-> Partner) davon genau 2 (Index: 2): R = +-1 über beide Geraden, R = i und R = -i über entgegengesetzte Geraden (P_RJ und seine Gegenorientierung), N16 = [3, -3]. J-Kovarianz erzwingt für die J-selbstgepaarten Sektoren R = +-1 beide Geraden; einseitig dürfen nur die Uhrsektoren R = +-i sein, und genau sie sind die Fermionen (R^2 = (-1)^F)": true,
+  "[E unter P_RJ] Nullmodenzählung je 16 unter P_RJ (R = i über die Originalgerade, Penrose-Konvention O(-2h - 2), Produkt K2): chiraler Slot h = +1/2 (H^0, H^1, H^2) = (0, 6, 0) (drei Weyl, Netto-Index 3 = Familienindex 3 mal Twistorindex), Spiegelslot h = -1/2 (0, 0, 0) (Index 0, keine Mode); die 16q CPT-gegengleich über die Partnergerade; R-neutrale Skalarleiter und beide Vektorhelizitäten über beide Geraden. Kontrollen: triviales 4 O gibt 4 statt 3, die Spiegelfamilie 0, die Gegenorientierung -3 (Index kippt mit der Orientierung), das Serre-Dual -3. In der Verdrillung K1 statt des Produkts hat E_- am Spiegelslot (h^0, h^1) = (0, 1) (eine Mode aus O(-1)) und am chiralen (0, 9): Spiegelindex 0 gibt nur K2": true
+ },
+ "befunde": {
+  "Teil 1: Die Twistorgerade ist für sich chiral: der Index 2h - 1 verschwindet genau an einer Weyl-Helizität (O(-1) azyklisch), Skalar und Vektoren behalten Kohomologie. Der Familienindex 3 ist helizitätsblind: in der Verdrillung (K1) liegen seine Nullmoden am Vektorslot und die Asymmetrie ist 4h rang F, unabhängig vom Grad; E_- hat dort sogar eine Spiegelmode. Erst im Produkt (K2) gilt Index = Familienindex mal Twistorindex, mit drei Weyl am chiralen und null am Spiegelslot; dafür ist h^1(E_-) = 0 nötig, aber das triviale 3 O leistet dasselbe": true,
+  "Teil 2: Die radiale Standardform ist exakt die Cech-Kohomologie von PT' (Penrose-Transformation explizit, Z_SU = Homogenitätscharakter); ihr Artinhalt bleibt mit jedem Familienbündel vektorartig. Chiral ist nur, was die Naht über ihre Gerade sieht: ein Halbraum der Helizitäten, mit universeller Gerade gleich für 16 und 16q (Eichchiralität 0). Chiralität mit Skalarleiter und beiden Vektorhelizitäten verlangt eine sektorabhängige Geradenwahl; J-kovariant ist genau P_RJ (Uhrsektoren R = +-i auf entgegengesetzten Tomita-Geraden, R = +-1 auf beiden), dann Netto-Index 3 je 16 mit azyklischem Spiegelslot": true
+ },
+ "zahlen": {
+  "O(n) auf CP^1 (h0, h1)": {
+   "-6": [
+    0,
+    5
+   ],
+   "-5": [
+    0,
+    4
+   ],
+   "-4": [
+    0,
+    3
+   ],
+   "-3": [
+    0,
+    2
+   ],
+   "-2": [
+    0,
+    1
+   ],
+   "-1": [
+    0,
+    0
+   ],
+   "0": [
+    1,
+    0
+   ],
+   "1": [
+    2,
+    0
+   ],
+   "2": [
+    3,
+    0
+   ],
+   "3": [
+    4,
+    0
+   ],
+   "4": [
+    5,
+    0
+   ]
+  },
+  "Familienblöcke": {
+   "E_- (h0, h1)": [
+    3,
+    0
+   ],
+   "H^0(K(D)) = p(z) dz/(z^4 - 1)": {
+    "0": {
+     "Residuen an den Marken": [
+      "1/4",
+      "I/4",
+      "-1/4",
+      "-I/4"
+     ],
+     "Residuensumme": "0",
+     "regulär bei unendlich": true,
+     "mu4-Charakter": "I"
+    },
+    "1": {
+     "Residuen an den Marken": [
+      "1/4",
+      "-1/4",
+      "1/4",
+      "-1/4"
+     ],
+     "Residuensumme": "0",
+     "regulär bei unendlich": true,
+     "mu4-Charakter": "-1"
+    },
+    "2": {
+     "Residuen an den Marken": [
+      "1/4",
+      "-I/4",
+      "-1/4",
+      "I/4"
+     ],
+     "Residuensumme": "0",
+     "regulär bei unendlich": true,
+     "mu4-Charakter": "-I"
+    },
+    "3": {
+     "Residuen an den Marken": [
+      "1/4",
+      "1/4",
+      "1/4",
+      "1/4"
+     ],
+     "Residuensumme": "1",
+     "regulär bei unendlich": false,
+     "mu4-Charakter": "1"
+    }
+   }
+  },
+  "Twistorgerade allein (h0, h1) je Helizität": {
+   "-3": {
+    "z97 O(2h-2)": [
+     0,
+     7
+    ],
+    "Penrose O(-2h-2)": [
+     5,
+     0
+    ]
+   },
+   "-5/2": {
+    "z97 O(2h-2)": [
+     0,
+     6
+    ],
+    "Penrose O(-2h-2)": [
+     4,
+     0
+    ]
+   },
+   "-2": {
+    "z97 O(2h-2)": [
+     0,
+     5
+    ],
+    "Penrose O(-2h-2)": [
+     3,
+     0
+    ]
+   },
+   "-3/2": {
+    "z97 O(2h-2)": [
+     0,
+     4
+    ],
+    "Penrose O(-2h-2)": [
+     2,
+     0
+    ]
+   },
+   "-1": {
+    "z97 O(2h-2)": [
+     0,
+     3
+    ],
+    "Penrose O(-2h-2)": [
+     1,
+     0
+    ]
+   },
+   "-1/2": {
+    "z97 O(2h-2)": [
+     0,
+     2
+    ],
+    "Penrose O(-2h-2)": [
+     0,
+     0
+    ]
+   },
+   "0": {
+    "z97 O(2h-2)": [
+     0,
+     1
+    ],
+    "Penrose O(-2h-2)": [
+     0,
+     1
+    ]
+   },
+   "1/2": {
+    "z97 O(2h-2)": [
+     0,
+     0
+    ],
+    "Penrose O(-2h-2)": [
+     0,
+     2
+    ]
+   },
+   "1": {
+    "z97 O(2h-2)": [
+     1,
+     0
+    ],
+    "Penrose O(-2h-2)": [
+     0,
+     3
+    ]
+   },
+   "3/2": {
+    "z97 O(2h-2)": [
+     2,
+     0
+    ],
+    "Penrose O(-2h-2)": [
+     0,
+     4
+    ]
+   },
+   "2": {
+    "z97 O(2h-2)": [
+     3,
+     0
+    ],
+    "Penrose O(-2h-2)": [
+     0,
+     5
+    ]
+   },
+   "5/2": {
+    "z97 O(2h-2)": [
+     4,
+     0
+    ],
+    "Penrose O(-2h-2)": [
+     0,
+     6
+    ]
+   },
+   "3": {
+    "z97 O(2h-2)": [
+     5,
+     0
+    ],
+    "Penrose O(-2h-2)": [
+     0,
+     7
+    ]
+   }
+  },
+  "K1 Verdrillung F (x) O(2h-2): (h0, h1)": {
+   "O": {
+    "-1": [
+     0,
+     3
+    ],
+    "-1/2": [
+     0,
+     2
+    ],
+    "0": [
+     0,
+     1
+    ],
+    "1/2": [
+     0,
+     0
+    ],
+    "1": [
+     1,
+     0
+    ]
+   },
+   "E_-": {
+    "-1": [
+     0,
+     13
+    ],
+    "-1/2": [
+     0,
+     9
+    ],
+    "0": [
+     0,
+     5
+    ],
+    "1/2": [
+     0,
+     1
+    ],
+    "1": [
+     3,
+     0
+    ]
+   },
+   "E_+ = E_-^v": {
+    "-1": [
+     0,
+     11
+    ],
+    "-1/2": [
+     0,
+     7
+    ],
+    "0": [
+     0,
+     3
+    ],
+    "1/2": [
+     1,
+     0
+    ],
+    "1": [
+     5,
+     0
+    ]
+   },
+   "4 O": {
+    "-1": [
+     0,
+     12
+    ],
+    "-1/2": [
+     0,
+     8
+    ],
+    "0": [
+     0,
+     4
+    ],
+    "1/2": [
+     0,
+     0
+    ],
+    "1": [
+     4,
+     0
+    ]
+   },
+   "3 O": {
+    "-1": [
+     0,
+     9
+    ],
+    "-1/2": [
+     0,
+     6
+    ],
+    "0": [
+     0,
+     3
+    ],
+    "1/2": [
+     0,
+     0
+    ],
+    "1": [
+     3,
+     0
+    ]
+   },
+   "Spiegelfamilie O(-4) + 3 O": {
+    "-1": [
+     0,
+     16
+    ],
+    "-1/2": [
+     0,
+     12
+    ],
+    "0": [
+     0,
+     8
+    ],
+    "1/2": [
+     0,
+     4
+    ],
+    "1": [
+     3,
+     3
+    ]
+   },
+   "E_-^v (x) K": {
+    "-1": [
+     0,
+     19
+    ],
+    "-1/2": [
+     0,
+     15
+    ],
+    "0": [
+     0,
+     11
+    ],
+    "1/2": [
+     0,
+     7
+    ],
+    "1": [
+     0,
+     3
+    ]
+   }
+  },
+  "Asymmetrie ind(h) - ind(-h)": {
+   "O": {
+    "1/2": 2,
+    "1": 4
+   },
+   "E_-": {
+    "1/2": 8,
+    "1": 16
+   },
+   "E_+ = E_-^v": {
+    "1/2": 8,
+    "1": 16
+   },
+   "4 O": {
+    "1/2": 8,
+    "1": 16
+   },
+   "3 O": {
+    "1/2": 6,
+    "1": 12
+   },
+   "Spiegelfamilie O(-4) + 3 O": {
+    "1/2": 8,
+    "1": 16
+   },
+   "E_-^v (x) K": {
+    "1/2": 8,
+    "1": 16
+   }
+  },
+  "gerader Teil ind(h) + ind(-h)": {
+   "O": {
+    "1/2": -2,
+    "1": -2
+   },
+   "E_-": {
+    "1/2": -10,
+    "1": -10
+   },
+   "E_+ = E_-^v": {
+    "1/2": -6,
+    "1": -6
+   },
+   "4 O": {
+    "1/2": -8,
+    "1": -8
+   },
+   "3 O": {
+    "1/2": -6,
+    "1": -6
+   },
+   "Spiegelfamilie O(-4) + 3 O": {
+    "1/2": -16,
+    "1": -16
+   },
+   "E_-^v (x) K": {
+    "1/2": -22,
+    "1": -22
+   }
+  },
+  "K2 Produkt (H0, H1, H2) auf Naht x L": {
+   "O": {
+    "-1": [
+     0,
+     3,
+     0
+    ],
+    "-1/2": [
+     0,
+     2,
+     0
+    ],
+    "0": [
+     0,
+     1,
+     0
+    ],
+    "1/2": [
+     0,
+     0,
+     0
+    ],
+    "1": [
+     1,
+     0,
+     0
+    ]
+   },
+   "E_-": {
+    "-1": [
+     0,
+     9,
+     0
+    ],
+    "-1/2": [
+     0,
+     6,
+     0
+    ],
+    "0": [
+     0,
+     3,
+     0
+    ],
+    "1/2": [
+     0,
+     0,
+     0
+    ],
+    "1": [
+     3,
+     0,
+     0
+    ]
+   },
+   "E_+ = E_-^v": {
+    "-1": [
+     0,
+     15,
+     0
+    ],
+    "-1/2": [
+     0,
+     10,
+     0
+    ],
+    "0": [
+     0,
+     5,
+     0
+    ],
+    "1/2": [
+     0,
+     0,
+     0
+    ],
+    "1": [
+     5,
+     0,
+     0
+    ]
+   },
+   "4 O": {
+    "-1": [
+     0,
+     12,
+     0
+    ],
+    "-1/2": [
+     0,
+     8,
+     0
+    ],
+    "0": [
+     0,
+     4,
+     0
+    ],
+    "1/2": [
+     0,
+     0,
+     0
+    ],
+    "1": [
+     4,
+     0,
+     0
+    ]
+   },
+   "3 O": {
+    "-1": [
+     0,
+     9,
+     0
+    ],
+    "-1/2": [
+     0,
+     6,
+     0
+    ],
+    "0": [
+     0,
+     3,
+     0
+    ],
+    "1/2": [
+     0,
+     0,
+     0
+    ],
+    "1": [
+     3,
+     0,
+     0
+    ]
+   },
+   "Spiegelfamilie O(-4) + 3 O": {
+    "-1": [
+     0,
+     9,
+     9
+    ],
+    "-1/2": [
+     0,
+     6,
+     6
+    ],
+    "0": [
+     0,
+     3,
+     3
+    ],
+    "1/2": [
+     0,
+     0,
+     0
+    ],
+    "1": [
+     3,
+     3,
+     0
+    ]
+   },
+   "E_-^v (x) K": {
+    "-1": [
+     0,
+     0,
+     9
+    ],
+    "-1/2": [
+     0,
+     0,
+     6
+    ],
+    "0": [
+     0,
+     0,
+     3
+    ],
+    "1/2": [
+     0,
+     0,
+     0
+    ],
+    "1": [
+     0,
+     3,
+     0
+    ]
+   }
+  },
+  "chi(F)": {
+   "O": 1,
+   "E_-": 3,
+   "E_+ = E_-^v": 5,
+   "4 O": 4,
+   "3 O": 3,
+   "Spiegelfamilie O(-4) + 3 O": 0,
+   "E_-^v (x) K": -3
+  },
+  "Penrose-Transformation": {
+   "Zustände (M = 5)": 225,
+   "max |Twistor - z83| je Erzeuger": {
+    "P_00": 4.440892098500626e-16,
+    "K_00": 4.440892098500626e-16,
+    "A_00": 4.440892098500626e-16,
+    "B_00": 8.881784197001252e-16,
+    "P_01": 4.440892098500626e-16,
+    "K_01": 4.440892098500626e-16,
+    "A_01": 4.440892098500626e-16,
+    "B_01": 4.440892098500626e-16,
+    "P_10": 4.440892098500626e-16,
+    "K_10": 4.440892098500626e-16,
+    "A_10": 4.440892098500626e-16,
+    "B_10": 4.440892098500626e-16,
+    "P_11": 4.440892098500626e-16,
+    "K_11": 4.440892098500626e-16,
+    "A_11": 4.440892098500626e-16,
+    "B_11": 8.881784197001252e-16,
+    "E": 4.440892098500626e-16
+   },
+   "Z_SU - i^n": 2.6948419387607653e-15,
+   "Weyl-Zählung bei E = N + 1/2, N = 1..4": {
+    "1/2": [
+     2,
+     6,
+     12,
+     20
+    ],
+    "-1/2": [
+     2,
+     6,
+     12,
+     20
+    ]
+   }
+  },
+  "Linienrestriktion": {
+   "Rang auf P(pi) (Partner)": {
+    "-3/2": [
+     4
+    ],
+    "-1": [
+     3
+    ],
+    "-1/2": [
+     2
+    ],
+    "0": [
+     1
+    ],
+    "1/2": [
+     0
+    ],
+    "1": [
+     0
+    ],
+    "3/2": [
+     0
+    ]
+   },
+   "Rang auf P(omega) (Original, J-Bild)": {
+    "-3/2": [
+     0
+    ],
+    "-1": [
+     0
+    ],
+    "-1/2": [
+     0
+    ],
+    "0": [
+     1
+    ],
+    "1/2": [
+     2
+    ],
+    "1": [
+     3
+    ],
+    "3/2": [
+     4
+    ]
+   },
+   "Klassen auf PT' (omega-Grad <= 5)": {
+    "-3/2": 154,
+    "-1": 133,
+    "-1/2": 112,
+    "0": 91,
+    "1/2": 70,
+    "1": 50,
+    "3/2": 32
+   }
+  },
+  "Artinhalt": {
+   "Weyl-Basis, K1": {
+    "E_-": {
+     "-1": 1,
+     "-1/2": 3,
+     "0": 1,
+     "1/2": 3
+    },
+    "4 O": {
+     "-1/2": 4,
+     "1/2": 4
+    },
+    "E_+ = E_-^v": {
+     "-1/2": 3,
+     "0": 1,
+     "1/2": 3,
+     "1": 1
+    }
+   },
+   "volle Standardform, K1: Vielfachheiten |h| <= 3/2": {
+    "E_-": [
+     4
+    ],
+    "4 O": [
+     4
+    ],
+    "E_+ = E_-^v": [
+     4
+    ]
+   },
+   "netto Weyl-Index je Energie (volle Standardform)": {
+    "E_-": [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    "4 O": [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    "E_+ = E_-^v": [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ]
+   }
+  },
+  "Linienregeln": {
+   "Restriktion": {
+    "Regeln": 256,
+    "chiral": 32,
+    "chiral, Skalar, beide Vektoren, alle koppeln": 6,
+    "davon J-kovariant": 2,
+    "universelle Regeln chiral": 0,
+    "J-kovariante Lösungen": [
+     {
+      "R = 1": [
+       "o",
+       "p"
+      ],
+      "R = i": [
+       "o"
+      ],
+      "R = -1": [
+       "o",
+       "p"
+      ],
+      "R = -i": [
+       "p"
+      ],
+      "N16": 3
+     },
+     {
+      "R = 1": [
+       "o",
+       "p"
+      ],
+      "R = i": [
+       "p"
+      ],
+      "R = -1": [
+       "o",
+       "p"
+      ],
+      "R = -i": [
+       "o"
+      ],
+      "N16": -3
+     }
+    ]
+   },
+   "Index": {
+    "Regeln": 256,
+    "chiral": 32,
+    "chiral, Skalar, beide Vektoren, alle koppeln": 18,
+    "davon J-kovariant": 2,
+    "universelle Regeln chiral": 0,
+    "J-kovariante Lösungen": [
+     {
+      "R = 1": [
+       "o",
+       "p"
+      ],
+      "R = i": [
+       "o"
+      ],
+      "R = -1": [
+       "o",
+       "p"
+      ],
+      "R = -i": [
+       "p"
+      ],
+      "N16": 3
+     },
+     {
+      "R = 1": [
+       "o",
+       "p"
+      ],
+      "R = i": [
+       "p"
+      ],
+      "R = -1": [
+       "o",
+       "p"
+      ],
+      "R = -i": [
+       "o"
+      ],
+      "N16": -3
+     }
+    ]
+   }
+  },
+  "universelle Partnergerade": {
+   "Restriktion": {
+    "N16": -3,
+    "N16q": 3,
+    "chiral": false,
+    "skalar": true,
+    "vektor": false,
+    "alle": true,
+    "J": false,
+    "universell": true
+   },
+   "Index": {
+    "N16": -3,
+    "N16q": 3,
+    "chiral": false,
+    "skalar": true,
+    "vektor": true,
+    "alle": true,
+    "J": false,
+    "universell": true
+   }
+  },
+  "P_RJ": {
+   "Regel": {
+    "R = 1": [
+     "o",
+     "p"
+    ],
+    "R = i": [
+     "o"
+    ],
+    "R = -1": [
+     "o",
+     "p"
+    ],
+    "R = -i": [
+     "p"
+    ]
+   },
+   "Bewertung": {
+    "N16": 3,
+    "N16q": 3,
+    "chiral": true,
+    "skalar": true,
+    "vektor": true,
+    "alle": true,
+    "J": true,
+    "universell": false
+   },
+   "Familienvielfachheit je Sektor (K2)": {
+    "R = 1": 1,
+    "R = i": 3,
+    "R = -1": 3,
+    "R = -i": 3
+   },
+   "16 auf der Originalgeraden, K2 (H0, H1, H2)": {
+    "1/2": [
+     0,
+     6,
+     0
+    ],
+    "-1/2": [
+     0,
+     0,
+     0
+    ]
+   },
+   "Kontrollen N16": {
+    "triviales 4 O": 4,
+    "Spiegelfamilie O(-4) + 3 O": 0,
+    "Gegenorientierung (P_RJ gespiegelt)": -3,
+    "Serre-Dual E_-^v (x) K": -3
+   },
+   "K1 statt K2 (h0, h1) Spiegel/chiral": [
+    [
+     0,
+     1
+    ],
+    [
+     0,
+     9
+    ]
+   ]
+  },
+  "status": {
+   "Index auf der Twistorgeraden": [
+    "E",
+    "2h - 1, einzige Nullstelle h = +1/2 (O(-1)), Skalar und Vektoren nicht azyklisch"
+   ],
+   "Penrose-Transformation der Leiter": [
+    "E",
+    "Standardform = Cech-H^1(PT', O(m - mquer - 2)), 17 Erzeuger exakt, Z_SU = i^n; Konvention z97 = Geraden P(pi) der Partnerseite"
+   ],
+   "Familienindex in der Verdrillung K1": [
+    "E (negativ)",
+    "Nullmoden nur am Vektorslot, Asymmetrie 4h rang F familienblind, Spiegelmode aus O(-1)"
+   ],
+   "Familienindex im Produkt K2": [
+    "E",
+    "Index = chi(E_-) (2h - 1), drei Weyl am chiralen, null am Spiegelslot; h^1(E_-) = 0 nötig, 3 O leistet dasselbe"
+   ],
+   "Artinhalt (Spektrum)": [
+    "E (negativ)",
+    "vektorartig mit jedem Familienbündel; Spiegelleiter existiert"
+   ],
+   "universelle Nahtgerade": [
+    "E (negativ)",
+    "Halbraum h <= 0: 16 und 16q gleich (Eichchiralität 0), Vektor nur selbstdual gesehen"
+   ],
+   "Linienregel P_RJ": [
+    "C (neue Prämisse)",
+    "J-kovariant, einzig (bis Orientierung) mit Chiralität, Skalarleiter, beiden Vektoren; Netto-Index 3 je 16"
+   ],
+   "Kontrollen": [
+    "E",
+    "triviales 4 O: 4; Spiegelfamilie: 0; Gegenorientierung: -3; K1 statt K2: Spiegelmode"
+   ],
+   "Chiralität als Index gesamt": [
+    "bedingt",
+    "nativ: Twistor-Azyklizität und Familienindex; Prämissen T, P_GSO, Produktkopplung K2, P_RJ; als Spektralaussage nein"
+   ]
+  },
+  "T5_urteil_kurz": {
+   "Urteil": "bedingt (Prämissen T, P_GSO, K2, P_RJ); nicht nativ; als Spektralaussage gescoptes Negativ",
+   "T4": "Indexroute trennt die Weyl-Helizitäten ohne die Skalarleiter zu verlieren; Eichchiralität nur mit sektorabhängiger Geradenwahl P_RJ, das Spiegelpaar bleibt als nahtsterile Leiter; offen: wählt die Uhr R die Tomita-Seite nativ?",
+   "K16": "Linienindex holomorph und exakt, kein Spiegelproblem auf der Geraden; K16 bleibt L",
+   "chiral_matter": "neuer Wert 'Twistorlinienindex mit P_RJ' (bedingt) neben P_A3; universelle Gerade: nicht chiral"
+  }
+ },
+ "urteil": "T5 ist bedingt, nicht nativ, und als Aussage über das Spektrum ein gescoptes Negativ. (1) Die Twistorgerade ist für sich chiral: Der Dolbeault-Index von O(2h - 2) ist 2h - 1 und verschwindet nur bei h = +1/2, denn O(-1) ist das einzige azyklische Bündel auf CP^1 (Cech und analytischer d-quer-Operator gleich). Die Nullstelle liegt an einer Weyl-Helizität; Skalar (h^1 = 1) und beide Vektorslots (h^0 = 1, h^1 = 3) behalten Kohomologie. In der Penrose-Konvention O(-2h - 2) liegt sie bei h = -1/2; die Konventionen sind J-Bilder (Geraden der Partner- bzw. Originalseite). (2) Der Familienindex 3 ist helizitätsblind. Verdrillt (K1: Naht = Twistorgerade, E_- (x) O(2h - 2)) liegen seine Nullmoden nur am Vektorslot h = +1 (Homogenität 0, passend zu Familien = Lambda^2_+), die Asymmetrie ind(h) - ind(-h) = 4h rang F hängt nicht vom Grad ab (E_-, E_+ und 4 O gleich), und E_- hat am Spiegelslot eine Mode aus O(-1) (chi = 4k + 3 nie 0). Erst im Produkt (K2: Familiennullmoden mal Twistorgerade) gilt Index = chi(E_-) (2h - 1): drei Weyl am chiralen Slot (h^1 = 6, h^2 = 0), am Spiegelslot verschwindet alle Kohomologie. Dafür ist die Spiegelfreiheit h^1(E_-) = 0 nötig (O(-4) + 3 O gibt Index 0), das triviale 3 O leistet aber dasselbe. (3) Explizite Penrose-Transformation: Die radiale Standardform ist exakt Cech-H^1(PT', O(m - mquer - 2)); alle 17 Erzeuger sind die Twistor-Differentialoperatoren auf Klassen modulo Korändern, und Z_SU aus z97 ist der Homogenitätscharakter i^n. Beide Weyl-Leitern existieren (n(n+1) beidseitig), mit jedem Familienbündel bleibt der Artinhalt vektorartig (Netto-Weyl-Index 0 auf jeder Energie). Chiral ist nur, was eine Gerade sieht: Die Restriktion hat Rang h^1(L, O(2h - 2)), also Felddaten genau für h <= 0, ein Halbraum. Er trennt mit h = +-1/2 auch h = +-1 (Indexform des Leiterquotienten aus z102); der Skalar liegt auf dem Rand und bleibt, von den Vektoren fehlt nur eine Helizität (beim Zentrumskleber aus z102 fiel die Skalarleiter weg, mit dem Viertelwinkel die R-neutralen Vektoren ganz). (4) Mit einer universellen Nahtgeraden liegen 16 und 16q bei derselben Helizität: Eichchiralität 0, und der R-neutrale Vektor wird nur selbstdual gesehen. Von allen 256 Linienregeln (Sektor -> Original-, Partnergerade, beide, keine) geben Chiralität, R-neutrale Skalarleiter und beide Vektorhelizitäten zusammen 6, wenn jeder Sektor an die Naht koppelt; J-kovariant sind genau 2, die Regel P_RJ und ihre Gegenorientierung: die Uhrsektoren R = +-i (die Fermionen, R^2 = (-1)^F) koppeln über entgegengesetzte Tomita-Geraden, die J-selbstgepaarten Sektoren R = +-1 über beide. Unter P_RJ, P_GSO und K2 hat jede 16 Netto-Index 3 (Familienindex mal Twistorindex), der Spiegelslot ist azyklisch, Skalarleiter und beide Vektorhelizitäten bleiben. Kontrollen: triviales 4 O gibt 4, die Spiegelfamilie 0, die Gegenorientierung -3, die Verdrillung K1 statt K2 eine Spiegelmode. Folge für T4: Die Indexroute löst den Konflikt aus z102 auf der Geraden (sie trennt die Weyl-Helizitäten, ohne Skalare zu verlieren), gibt Eichchiralität aber nur mit der neuen, J-kovarianten Prämisse P_RJ; das Spiegelpaar (16 bei h = -1/2, 16q bei h = +1/2) bleibt als Leiter im Spektrum und ist nur nahtsteril (am Spiegelslot verschwindet alle Kohomologie der Sektorgeraden). Offen ist, ob die Uhr R die Tomita-Seite nativ wählt; das ist die reduzierte Form von T4. Folge für K16: Auf der Geraden gibt es kein Spiegelproblem, der Index ist holomorph und exakt; die Frage verlagert sich in die Kopplung des Spiegels im Spektrum, K16 bleibt L. Folge für chiral_matter: Die Szenario-Suche kann neben P_A3 den Wert 'Twistorlinienindex mit P_RJ' führen, bedingt; mit universeller Geraden ist er nicht chiral. Nichts ist befördert; 3+1-Aussagen bleiben Kinematik der Einpaarschicht."
+}

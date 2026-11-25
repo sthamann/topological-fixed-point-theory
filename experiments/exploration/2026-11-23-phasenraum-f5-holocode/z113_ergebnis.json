@@ -1,0 +1,648 @@
+{
+ "checks": {
+  "[E] Bausteine (mpmath, 25 Stellen, drei Testpunkte): theta[a;b](tau + 1) = e^(-i pi a(a+1)) theta[a; a+b+1/2], theta[a;b](-1/tau) = sqrt(-i tau) e^(2 pi i ab) theta[b;-a], theta[a;b+1] = e^(2 pi i a) theta[a;b], eta(-1/tau) = sqrt(-i tau) eta, eta(tau+1) = e^(i pi/12) eta, eta(tau + 1/2) = e^(i pi/24) eta(2tau)^3/(eta(tau) eta(4tau)) und die Oszillatorspur mit (-1)^N = q^(-1/24)/prod(1 - (-q)^n) = e^(i pi/24)/eta(tau + 1/2); größter Fehler 8e-26": true,
+  "[E] Ladungssektor als Spektralfluss: (Q - 1/4)^2/2 - 1/32 = E_lad(1/4, Q) und (Q + 1/4)^2/2 - 1/32 = E_lad(3/4, Q) exakt (|Q| <= 8). Die Uhr ist die 2D-Drehung: e^(2 pi i L_0) = i^(Q_a - Q_b) = R und e^(4 pi i L_0) = (-1)^(Q_a + Q_b) = R^2 exakt auf allen Ladungen (z83 Teil 5), und auf den Spuren bildet T die Spur ohne Einschub auf die mit R ab (Element 2 = Lage von R 2), T^2 auf die mit R^2 (Element 4 = Lage von R^2 4). Die Bahn hat 6 Elemente (T-Zyklen [1, 1, 4]): R^2 = (-1)^F ist auf dem Original eine Modultransformation, wie (-1)^F = T im NS-Sektor des Vergleichsziels": true,
+  "[E] Spinstrukturen: |theta_3/eta|^2 ist S-invariant (rel. Abweichung 4e-26, z94); ihre Bahn hat genau 3 Elemente, NS-NS, NS mit (-1)^F und R-NS; R mit (-1)^F verschwindet (|theta_1| = 1e-26, Nullmode). Die Spinstruktursumme ist eine Bahnsumme, ihr relatives Vorzeichen ist festgelegt": true,
+  "[E] U_2pi auf der Einpaarschicht H_m (x) H-quer_mquer (L_0^osc = m in beiden Quartersektoren, z83): (-1)^(m - mquer) = (-1)^(2h) = e^(2 pi i E), ungerade genau für halbzahlige h; Weyl-Zählung h = +-1/2 bei E = n + 1/2: [2, 6, 12, 20, 30] = n(n+1) (z97). Fortgesetzt ist U_2pi = (-1)^(L_0^osc - L-quer_0^osc), multiplikativ, weil L_0^osc die Summe der Paarenergien ist": true,
+  "[E, entscheidend] U_2pi ist keine Modultransformation der Naht: Der Einschub ist auf den Oszillatoren tau -> tau + 1/2; h_U liegt nicht in der Bahn von h_1 (6 Elemente), seine Bahn hat 24 Elemente mit T-Zyklen [4, 4, 4, 4, 4, 4]. Das S-Bild der Oszillatorspur mit U ist exakt sqrt2 (-i tau)^(-1/2) eta(tau) eta(tau/4)/eta(tau/2)^3 (Fehler 3e-27), Moden in Z/4: Die verdrehten Sektoren der 2 pi-Drehung sind lange Nähte (4-fache Überlagerung des Kreises, Hecke-Sektoren). Die volle geometrische halbe Drehung hat eine eigene Bahn (24 Elemente, T-Zyklen [1, 1, 1, 1, 4, 16])": true,
+  "[E] Kalibrierung 16 -> E8 (gelöst, nur benutzt): Für n komplexe chirale Fermionen ist die Bahn von (theta_3/eta)^n {theta_3, theta_4, theta_2}^n; eine widerspruchsfreie Summe mit dem GSO-Vorzeichen +1 für die Spur mit (-1)^F und nicht verschwindender Summe gibt es genau für n in [8, 16] (16 bzw. 32 Majorana-Weyl, Charakter T = -c/24); n = 4 ist widerspruchsfrei, aber die Summe verschwindet (Jacobi), n = 2 ist anomal, n = 12 nur mit umgekehrtem Vorzeichen. Dort erzwingt die Modulinvarianz die Projektion, weil (-1)^F = T in der Bahn liegt": true,
+  "[E] Chirales Original (Ladung und Oszillatoren, c = 2 je Naht) über N Nähte: Die Bahnsumme ist genau für N = 0 mod 4 widerspruchsfrei (N = 1..8: [4, 8]), also c = 8 mal k. Bei N = 4 ist die Uhrensumme exakt (E8)_1: Z_Uhr/Z_E8 = 1 (Abweichung 1e-25, Koeffizienten 1, 248, 4124, ...). Ihre Koeffizienten {'R': '1/4', 'R2': '1/2', 'R3': '3/4'} (Phase/2 pi von R, R^2, R^3) projizieren auf R = -i: Auf der c = 8-Naht ist die Uhr eingefroren, R^2 = -1, also G = U R^2 = -U": true,
+  "[E] U-Summe auf der c = 8-Naht: Die Bahnsumme von h_U^4 mit dem E8-Charakter ist genau proportional zu Z_E8 (Faktor -16.0, Abweichung 8e-24; der Raum dieser Modulfunktionen ist eindimensional). Z_E8 + beta Z_U = (1 - 16 beta) Z_E8 hat für keine Projektion beta = +-1 ein einfaches Vakuum: Keine Hebung der 2 pi-Drehung ist auf (E8)_1 modulverträglich, die Cartanströme (U = -1) und die Gitterströme (U = +1) liegen in einem Multiplett. Relative Koeffizienten in der U-Bahn: {'UR': '1/4', 'UR2': '1/2', 'UR3': '3/4'}": true,
+  "[E] Nichtchirale Naht, Bahn der Spur ohne Einschub (6 Elemente, Charakter trivial): Sie enthält R R-quer^-1 und (-1)^(F+F-quer) mit festem Koeffizienten {'1': '0', '(-1)^(F+Fq)': '0', 'R Rq^-1': '0'} (Phase/2 pi). Die Modulinvarianz erzwingt also Niveaugleichheit R = R-quer und die Gesamtparität (-1)^(F+F-quer) = +1, J-kovariant; das ist die native GSO-Projektion der Naht. Keine Hebung der 2 pi-Drehung (U (x) 1, G, G_tot, U R R-quer) liegt in dieser Bahn, für N = 1, 2, 4: Ihr Koeffizient ist frei, die Modulinvarianz erzwingt keine von ihnen": true,
+  "[E] Die Hebungen ordnen sich in zwei getrennte Bahnen (je 24 Elemente, Charakter trivial und (1/2, 1/2)): Bahn(U (x) 1) enthält ['G_tot = U (-1)^(F+Fq)', 'U (x) 1', 'U R Rq^-1'] mit Koeffizient 0, also G_tot = U auf allen niveaugleichen Zuständen (dort ist F + F-quer gerade): Die J-kovariante Fassung der Regel ist die unverdrehte Hebung. Bahn(G) enthält ['G = U R^2 (einseitig)', 'U R Rq'], getrennt von Bahn(U). Das einseitige R^2 allein ist anomal für N = 1 ([]), für N = 2 nur mit Charakter ['T 1/2, S 1/2'], frei erst bei N = 4 (['T 0, S 0'])": true,
+  "[E] Gegenprobe: direkte Bahnbestimmung der nichtchiralen Spuren gibt dieselben Größen {'1': 6, 'U (x) 1': 24, 'G = U R^2 (einseitig)': 24} wie die Zusammensetzung aus den holomorphen Faktorbahnen": true,
+  "[E, entscheidend] Positivität der vollständigen Zustandssumme Z_1 + beta Z_X (Untergrund: Bahnsumme ohne Einschub; beta = +1 heißt Projektion X = +1, beta = -1 X = -1; geprüft an allen Spinmoden |s| <= 5 bei Y = 0,35, 0,6, 1,0): Die unverdrehte Hebung U (x) 1 (gleich G_tot auf niveaugleichen Zuständen) ist für N = 1..4 nur mit U = +1 eine Hilbertraumspur, also ohne halbzahlige Helizitäten. Die Uhr-verdrehte Hebung G = U R^2 mit G = +1 (P_GSO) gibt bei N = 1 negative Vielfachheiten in den langen Nähten; konsistent ist dort nur G = -1 (Spin gegen Statistik vertauscht). Bei N = 2 (diagonal, G_1 G_2 = +1) ist G = +1 konsistent, bei N = 3 und 4 kein Vorzeichen. Die geometrische halbe Drehung ist bei N = 1 mit +1 konsistent": true,
+  "[E] Robustheit: Wirkt U_2pi nur auf einer radialen Leiter (Oszillatoren eines Quarters je Seite, wie die eine Standardform in z97; Bahnen 6 und 24), ist das Muster gleich: N = 1 nur U = +1 oder G = -1, N = 2 U = +1 oder G = +1": true
+ },
+ "befunde": {
+  "Teil 1: Auf dem Original sind die Uhr R und R^2 = (-1)^F die 2D-Drehungen T und T^2, also Modultransformationen; die Spinstruktursumme ist eine Bahnsumme. Die 4D-2 pi-Drehung ist dagegen die halbe Drehung der Oszillatoren, keine Modultransformation; ihre Sektoren sind lange Nähte": true,
+  "Teil 2: Die Modulinvarianz erzwingt auf der Naht nur Niveaugleichheit R = R-quer und die Gesamtparität (-1)^(F+F-quer) = +1. Keine Hebung der 2 pi-Drehung liegt in der Bahn der Spur ohne Einschub. Verlangt man die Summe über die 2 pi-Drehung, dann lassen Modulinvarianz und Positivität pro Naht nur U = +1 (keine Spinoren) oder G = -1 (vertauschte Statistik) zu. P_GSO pro Naht ist ausgeschlossen und nur diagonal über zwei Nähte verträglich; auf der c = 8-Naht ist die Uhr eingefroren und keine Hebung verträglich": true
+ },
+ "zahlen": {
+  "transformationsgesetze_max_fehler": 7.788822480900581e-26,
+  "ladungssektor": {
+   "Bahn h_1 (Original, Ladung + Oszillatoren)": 6,
+   "T-Zyklen": [
+    1,
+    1,
+    4
+   ],
+   "Lage der Einschübe": {
+    "1": [
+     "B0",
+     0,
+     "0"
+    ],
+    "R": [
+     "B0",
+     2,
+     "1/48"
+    ],
+    "R2": [
+     "B0",
+     4,
+     "1/24"
+    ],
+    "R3": [
+     "B0",
+     3,
+     "43/48"
+    ],
+    "U": [
+     "BU",
+     0,
+     "0"
+    ],
+    "UR": [
+     "BU",
+     2,
+     "1/48"
+    ],
+    "UR2": [
+     "BU",
+     5,
+     "1/24"
+    ],
+    "UR3": [
+     "BU",
+     10,
+     "1/16"
+    ]
+   },
+   "T h_1 -> Element": 2,
+   "T^2 h_1 -> Element": 4
+  },
+  "spinstrukturen": {
+   "S-Abweichung |theta3/eta|^2": 3.8963395755132606e-26,
+   "Bahn": 3,
+   "NS mit (-1)^F, R ohne Einschub in der Bahn": [
+    true,
+    true
+   ],
+   "|theta_1| (R mit (-1)^F)": 1.0300601368184246e-26
+  },
+  "U_2pi": {
+   "Weyl-Zählung h = +-1/2 bei E = n + 1/2": [
+    2,
+    6,
+    12,
+    20,
+    30
+   ],
+   "Bahn h_U": 24,
+   "T-Zyklen h_U": [
+    4,
+    4,
+    4,
+    4,
+    4,
+    4
+   ],
+   "h_U in Bahn(h_1)": false,
+   "Bahn geometrische halbe Drehung": 24,
+   "T-Zyklen geometrisch": [
+    1,
+    1,
+    1,
+    1,
+    4,
+    16
+   ],
+   "S-Bild osz_U = sqrt2 (-i tau)^-1/2 eta(tau) eta(tau/4)/eta(tau/2)^3, Fehler": 3.2311742677852644e-27
+  },
+  "kalibrierung_16_E8 (n komplexe Fermionen)": {
+   "2": [],
+   "4": [
+    {
+     "chi": "T 1/3",
+     "lambda (-1)^F": "1/2",
+     "Summe": 3.6004039834367405e-25
+    }
+   ],
+   "8": [
+    {
+     "chi": "T 2/3",
+     "lambda (-1)^F": "0",
+     "Summe": 23.377004729466847
+    }
+   ],
+   "12": [
+    {
+     "chi": "T 0",
+     "lambda (-1)^F": "1/2",
+     "Summe": 48.0
+    }
+   ],
+   "16": [
+    {
+     "chi": "T 1/3",
+     "lambda (-1)^F": "0",
+     "Summe": 273.24217506075763
+    }
+   ]
+  },
+  "chirales_original": {
+   "Charaktere je N": {
+    "1": [],
+    "2": [],
+    "3": [],
+    "4": [
+     "T 2/3, S 0"
+    ],
+    "5": [],
+    "6": [],
+    "7": [],
+    "8": [
+     "T 1/3, S 0"
+    ]
+   },
+   "anomaliefrei für N": [
+    4,
+    8
+   ],
+   "Uhrensumme N = 4 / Z_E8": [
+    "(1+9.82179550401121e-27j)",
+    "(1+9.437800493772135e-26j)",
+    "(1+7.530319494306248e-26j)"
+   ],
+   "relative Koeffizienten (Phase/2pi) von R, R^2, R^3 bei N = 4": {
+    "R": "1/4",
+    "R2": "1/2",
+    "R3": "3/4"
+   },
+   "U-Bahnsumme N = 4 / Z_E8": "(-16-1.947231424364547e-24j)",
+   "Abweichung": 7.657527406982597e-24,
+   "relative Koeffizienten UR, UR^2, UR^3 bei N = 4": {
+    "UR": "1/4",
+    "UR2": "1/2",
+    "UR3": "3/4"
+   }
+  },
+  "nichtchirale_naht": {
+   "1": {
+    "1": {
+     "Bahn": 6,
+     "Charaktere": [
+      "T 0, S 0"
+     ],
+     "enthält (rel. Koeffizient)": {
+      "1": "0",
+      "(-1)^(F+Fq)": "0",
+      "R Rq^-1": "0"
+     }
+    },
+    "(-1)^(F+Fq)": {
+     "Bahn": 6,
+     "Charaktere": [
+      "T 0, S 0"
+     ],
+     "enthält (rel. Koeffizient)": {
+      "1": "0",
+      "(-1)^(F+Fq)": "0",
+      "R Rq^-1": "0"
+     }
+    },
+    "R Rq^-1": {
+     "Bahn": 6,
+     "Charaktere": [
+      "T 0, S 0"
+     ],
+     "enthält (rel. Koeffizient)": {
+      "1": "0",
+      "(-1)^(F+Fq)": "0",
+      "R Rq^-1": "0"
+     }
+    },
+    "U (x) 1": {
+     "Bahn": 24,
+     "Charaktere": [
+      "T 0, S 0",
+      "T 1/2, S 1/2"
+     ],
+     "enthält (rel. Koeffizient)": {
+      "U (x) 1": "0",
+      "G_tot = U (-1)^(F+Fq)": "0",
+      "U R Rq^-1": "0"
+     }
+    },
+    "G_tot = U (-1)^(F+Fq)": {
+     "Bahn": 24,
+     "Charaktere": [
+      "T 0, S 0",
+      "T 1/2, S 1/2"
+     ],
+     "enthält (rel. Koeffizient)": {
+      "U (x) 1": "0",
+      "G_tot = U (-1)^(F+Fq)": "0",
+      "U R Rq^-1": "0"
+     }
+    },
+    "U R Rq^-1": {
+     "Bahn": 24,
+     "Charaktere": [
+      "T 0, S 0",
+      "T 1/2, S 1/2"
+     ],
+     "enthält (rel. Koeffizient)": {
+      "U (x) 1": "0",
+      "G_tot = U (-1)^(F+Fq)": "0",
+      "U R Rq^-1": "0"
+     }
+    },
+    "G = U R^2 (einseitig)": {
+     "Bahn": 24,
+     "Charaktere": [
+      "T 0, S 0",
+      "T 1/2, S 1/2"
+     ],
+     "enthält (rel. Koeffizient)": {
+      "G = U R^2 (einseitig)": "0",
+      "U R Rq": "0"
+     }
+    },
+    "U R Rq": {
+     "Bahn": 24,
+     "Charaktere": [
+      "T 0, S 0",
+      "T 1/2, S 1/2"
+     ],
+     "enthält (rel. Koeffizient)": {
+      "G = U R^2 (einseitig)": "0",
+      "U R Rq": "0"
+     }
+    },
+    "R^2 einseitig": {
+     "Bahn": 6,
+     "Charaktere": [],
+     "enthält (rel. Koeffizient)": {
+      "R^2 einseitig": "in Bahn, anomal"
+     }
+    },
+    "U R einseitig": {
+     "Bahn": 24,
+     "Charaktere": [],
+     "enthält (rel. Koeffizient)": {
+      "U R einseitig": "in Bahn, anomal"
+     }
+    }
+   },
+   "2": {
+    "1": {
+     "Bahn": 6,
+     "Charaktere": [
+      "T 0, S 0"
+     ],
+     "enthält (rel. Koeffizient)": {
+      "1": "0",
+      "(-1)^(F+Fq)": "0",
+      "R Rq^-1": "0"
+     }
+    },
+    "(-1)^(F+Fq)": {
+     "Bahn": 6,
+     "Charaktere": [
+      "T 0, S 0"
+     ],
+     "enthält (rel. Koeffizient)": {
+      "1": "0",
+      "(-1)^(F+Fq)": "0",
+      "R Rq^-1": "0"
+     }
+    },
+    "R Rq^-1": {
+     "Bahn": 6,
+     "Charaktere": [
+      "T 0, S 0"
+     ],
+     "enthält (rel. Koeffizient)": {
+      "1": "0",
+      "(-1)^(F+Fq)": "0",
+      "R Rq^-1": "0"
+     }
+    },
+    "U (x) 1": {
+     "Bahn": 24,
+     "Charaktere": [
+      "T 0, S 0",
+      "T 1/2, S 1/2"
+     ],
+     "enthält (rel. Koeffizient)": {
+      "U (x) 1": "0",
+      "G_tot = U (-1)^(F+Fq)": "0",
+      "U R Rq^-1": "0"
+     }
+    },
+    "G_tot = U (-1)^(F+Fq)": {
+     "Bahn": 24,
+     "Charaktere": [
+      "T 0, S 0",
+      "T 1/2, S 1/2"
+     ],
+     "enthält (rel. Koeffizient)": {
+      "U (x) 1": "0",
+      "G_tot = U (-1)^(F+Fq)": "0",
+      "U R Rq^-1": "0"
+     }
+    },
+    "U R Rq^-1": {
+     "Bahn": 24,
+     "Charaktere": [
+      "T 0, S 0",
+      "T 1/2, S 1/2"
+     ],
+     "enthält (rel. Koeffizient)": {
+      "U (x) 1": "0",
+      "G_tot = U (-1)^(F+Fq)": "0",
+      "U R Rq^-1": "0"
+     }
+    },
+    "G = U R^2 (einseitig)": {
+     "Bahn": 24,
+     "Charaktere": [
+      "T 0, S 0",
+      "T 1/2, S 1/2"
+     ],
+     "enthält (rel. Koeffizient)": {
+      "G = U R^2 (einseitig)": "0",
+      "U R Rq": "0"
+     }
+    },
+    "U R Rq": {
+     "Bahn": 24,
+     "Charaktere": [
+      "T 0, S 0",
+      "T 1/2, S 1/2"
+     ],
+     "enthält (rel. Koeffizient)": {
+      "G = U R^2 (einseitig)": "0",
+      "U R Rq": "0"
+     }
+    },
+    "R^2 einseitig": {
+     "Bahn": 6,
+     "Charaktere": [
+      "T 1/2, S 1/2"
+     ],
+     "enthält (rel. Koeffizient)": {
+      "R^2 einseitig": "in Bahn, anomal"
+     }
+    },
+    "U R einseitig": {
+     "Bahn": 24,
+     "Charaktere": [],
+     "enthält (rel. Koeffizient)": {
+      "U R einseitig": "in Bahn, anomal"
+     }
+    }
+   },
+   "4": {
+    "1": {
+     "Bahn": 6,
+     "Charaktere": [
+      "T 0, S 0"
+     ],
+     "enthält (rel. Koeffizient)": {
+      "1": "0",
+      "(-1)^(F+Fq)": "0",
+      "R Rq^-1": "0"
+     }
+    },
+    "(-1)^(F+Fq)": {
+     "Bahn": 6,
+     "Charaktere": [
+      "T 0, S 0"
+     ],
+     "enthält (rel. Koeffizient)": {
+      "1": "0",
+      "(-1)^(F+Fq)": "0",
+      "R Rq^-1": "0"
+     }
+    },
+    "R Rq^-1": {
+     "Bahn": 6,
+     "Charaktere": [
+      "T 0, S 0"
+     ],
+     "enthält (rel. Koeffizient)": {
+      "1": "0",
+      "(-1)^(F+Fq)": "0",
+      "R Rq^-1": "0"
+     }
+    },
+    "U (x) 1": {
+     "Bahn": 24,
+     "Charaktere": [
+      "T 0, S 0",
+      "T 1/2, S 1/2"
+     ],
+     "enthält (rel. Koeffizient)": {
+      "U (x) 1": "0",
+      "G_tot = U (-1)^(F+Fq)": "0",
+      "U R Rq^-1": "0"
+     }
+    },
+    "G_tot = U (-1)^(F+Fq)": {
+     "Bahn": 24,
+     "Charaktere": [
+      "T 0, S 0",
+      "T 1/2, S 1/2"
+     ],
+     "enthält (rel. Koeffizient)": {
+      "U (x) 1": "0",
+      "G_tot = U (-1)^(F+Fq)": "0",
+      "U R Rq^-1": "0"
+     }
+    },
+    "U R Rq^-1": {
+     "Bahn": 24,
+     "Charaktere": [
+      "T 0, S 0",
+      "T 1/2, S 1/2"
+     ],
+     "enthält (rel. Koeffizient)": {
+      "U (x) 1": "0",
+      "G_tot = U (-1)^(F+Fq)": "0",
+      "U R Rq^-1": "0"
+     }
+    },
+    "G = U R^2 (einseitig)": {
+     "Bahn": 24,
+     "Charaktere": [
+      "T 0, S 0",
+      "T 1/2, S 1/2"
+     ],
+     "enthält (rel. Koeffizient)": {
+      "G = U R^2 (einseitig)": "0",
+      "U R Rq": "0"
+     }
+    },
+    "U R Rq": {
+     "Bahn": 24,
+     "Charaktere": [
+      "T 0, S 0",
+      "T 1/2, S 1/2"
+     ],
+     "enthält (rel. Koeffizient)": {
+      "G = U R^2 (einseitig)": "0",
+      "U R Rq": "0"
+     }
+    },
+    "R^2 einseitig": {
+     "Bahn": 6,
+     "Charaktere": [
+      "T 0, S 0"
+     ],
+     "enthält (rel. Koeffizient)": {
+      "R^2 einseitig": "0"
+     }
+    },
+    "U R einseitig": {
+     "Bahn": 24,
+     "Charaktere": [
+      "T 0, S 0",
+      "T 1/2, S 1/2"
+     ],
+     "enthält (rel. Koeffizient)": {
+      "U R einseitig": "0"
+     }
+    }
+   }
+  },
+  "gegenprobe_direkte_bahn": {
+   "1": 6,
+   "U (x) 1": 24,
+   "G = U R^2 (einseitig)": 24
+  },
+  "positivitaet (min normierter Spinmode, Y = 0.35, 0.6, 1.0, |s| <= 5)": {
+   "1": {
+    "Z_1 allein": 1.2691688888751667e-12,
+    "U (x) 1": {
+     "beta = +1": 2.1944363786248417e-09,
+     "beta = -1": -226.74790799232767
+    },
+    "G = U R^2": {
+     "beta = +1": -222.69372975356166,
+     "beta = -1": 2.1940994699346813e-09
+    }
+   },
+   "2": {
+    "Z_1 allein": 2.8477129933686322e-11,
+    "U (x) 1": {
+     "beta = +1": 4.795013045253344e-07,
+     "beta = -1": -78435.62399391222
+    },
+    "G = U R^2": {
+     "beta = +1": 4.633594602477649e-07,
+     "beta = -1": -77983.29774621403
+    }
+   },
+   "3": {
+    "Z_1 allein": 2.4030311878200946e-10,
+    "U (x) 1": {
+     "beta = +1": 2.877602056999885e-05,
+     "beta = -1": -18822687.832586125
+    },
+    "G = U R^2": {
+     "beta = +1": -18615205.737790756,
+     "beta = -1": -11.282862314727195
+    }
+   },
+   "4": {
+    "Z_1 allein": 1.2463026233792063e-09,
+    "U (x) 1": {
+     "beta = +1": 0.00100047827360486,
+     "beta = -1": -4100351008.445813
+    },
+    "G = U R^2": {
+     "beta = +1": -82.32551862752672,
+     "beta = -1": -4024922914.992072
+    }
+   },
+   "geometrisch N = 1": {
+    "beta = +1": 1.3694279159772557e-08,
+    "beta = -1": -1871.6624213316607
+   }
+  },
+  "positivitaet_eine_leiter": {
+   "Bahnen": [
+    6,
+    24
+   ],
+   "N": {
+    "1": {
+     "U (x) 1": {
+      "beta = +1": 5.3133699261236987e-11,
+      "beta = -1": -9.727722297321483
+     },
+     "G = U R^2": {
+      "beta = +1": -6.130483760981429,
+      "beta = -1": 5.1784306737754005e-11
+     }
+    },
+    "2": {
+     "U (x) 1": {
+      "beta = +1": 2.8286890252944115e-09,
+      "beta = -1": -58.0360394803352
+     },
+     "G = U R^2": {
+      "beta = +1": 2.8002286786754256e-09,
+      "beta = -1": -54.89668065689988
+     }
+    }
+   }
+  },
+  "status": {
+   "Uhr und R^2 auf dem Original": [
+    "E",
+    "e^(2 pi i L_0) = R, e^(4 pi i L_0) = R^2: T und T^2 sind Modultransformationen; Bahn 6, T-Zyklen [1, 1, 4]"
+   ],
+   "U_2pi auf dem Torus": [
+    "E",
+    "halbe Drehung der Oszillatoren, keine Modultransformation; Bahn 24, T-Zyklen [4]^6, S-Bild eta(tau) eta(tau/4)/eta(tau/2)^3: lange Nähte"
+   ],
+   "Kalibrierung 16 -> E8": [
+    "E",
+    "GSO-Vorzeichen +1 erzwungen genau für 16 und 32 Majorana-Weyl"
+   ],
+   "chirales Original": [
+    "E",
+    "anomaliefrei genau für N = 0 mod 4; N = 4: Uhrensumme = (E8)_1, R = -i eingefroren, G = -U"
+   ],
+   "U-Summe auf (E8)_1": [
+    "E (negativ)",
+    "U-Bahnsumme = -16 Z_E8: keine Projektion mit einfachem Vakuum"
+   ],
+   "native Projektion der Naht": [
+    "E",
+    "Niveaugleichheit R = R-quer und (-1)^(F+F-quer) = +1, Koeffizienten erzwungen, J-kovariant"
+   ],
+   "Hebungen der 2 pi-Drehung": [
+    "E (negativ als Herleitung)",
+    "keine in der Bahn der Spur ohne Einschub: nie erzwungen"
+   ],
+   "G_tot (J-kovariant)": [
+    "E",
+    "in Bahn(U); auf niveaugleichen Zuständen gleich U: die unverdrehte Hebung"
+   ],
+   "Positivität pro Naht": [
+    "E (negativ für P_GSO)",
+    "U = +1 oder G = -1 zulässig, G = +1 (P_GSO) negativ in den langen Nähten; robust bei einer Leiter"
+   ],
+   "N-Abhängigkeit": [
+    "E",
+    "G = +1 nur diagonal bei N = 2; N = 3, 4 kein Vorzeichen; U = +1 für N = 1..4"
+   ],
+   "P_GSO gesamt": [
+    "nein (nicht nativ)",
+    "nicht aus Modulinvarianz mit P_CAR; pro Naht im Widerspruch zu Modulinvarianz und Positivität; verträglich nur als diagonale Zweinahtregel"
+   ]
+  },
+  "urteil_kurz": {
+   "P_GSO": "nicht nativ; pro Naht durch Modulinvarianz + Positivität ausgeschlossen",
+   "native Projektion": "R = R-quer und (-1)^(F+F-quer) = +1",
+   "erzwungene Hebung bei Rotationssumme": "unverdreht (U = +1) oder vertauscht (G = -1)",
+   "Chiralität": "unberührt (nichtchirale Naht vektorartig; chirales Original nur als (E8)_1 mit eingefrorener Uhr)"
+  }
+ },
+ "urteil": "T4 (Folgt P_GSO aus der Modulinvarianz der Zustandssumme über N Nähte?): nein. Auf dem Original ist die Uhr die 2D-Drehung: e^(2 pi i L_0) = R und e^(4 pi i L_0) = R^2 = (-1)^F gelten exakt, die Spuren mit R und R^2 liegen in der Bahn der Spur ohne Einschub, wie (-1)^F = T im NS-Sektor des Vergleichsziels. Die 4D-2 pi-Drehung U_2pi = (-1)^(m - mquer) ist dagegen die halbe Drehung der Oszillatoren (tau -> tau + 1/2) und keine Modultransformation. Ihre Spur hat eine eigene Bahn mit 24 Elementen; die verdrehten Sektoren sind lange Nähte mit Moden in Z/4 (S-Bild sqrt2 eta(tau) eta(tau/4)/eta(tau/2)^3). Die Kalibrierung reproduziert 16 -> E8: Dort erzwingt die Bahnsumme das GSO-Vorzeichen für 16 und 32 Majorana-Weyl. Das chirale Original ist genau für N = 0 mod 4 Nähte anomaliefrei; bei N = 4 (c = 8) ist seine Uhrensumme exakt (E8)_1, die Uhr ist dort auf R = -i eingefroren, also G = -U, und die U-Bahnsumme ist -16 Z_E8, so dass keine Hebung der 2 pi-Drehung mit einfachem Vakuum verträglich ist. Auf der nichtchiralen Naht (Original mit Partner) erzwingt die Modulinvarianz genau die Niveaugleichheit R = R-quer und die Gesamtparität (-1)^(F+F-quer) = +1 mit festen Koeffizienten. Das ist die native, J-kovariante GSO-Projektion der Naht. Keine Hebung der 2 pi-Drehung liegt in dieser Bahn, für N = 1, 2, 4; ihr Koeffizient ist frei, erzwungen wird keine. G_tot = U_2pi (-1)^(F+F-quer) liegt in der Bahn von U (x) 1 und ist auf niveaugleichen Zuständen gleich U: Die J-kovariante Fassung aus z97 ist die unverdrehte Hebung. Die einseitige Hebung G = U R^2 hat eine eigene, anomaliefreie Bahn. Verlangt man die Summe über die 2 pi-Drehung, entscheidet die Positivität der vollständigen Zustandssumme. Pro Naht (N = 1) sind nur U = +1 (keine halbzahligen Helizitäten) oder G = -1 (Spin gegen R^2-Statistik vertauscht) Hilbertraumspuren; G = +1, also P_GSO, gibt negative Vielfachheiten in den langen Nähten. Das gilt auch, wenn U nur auf einer radialen Leiter wirkt. Diagonal über zwei Nähte (G_1 G_2 = +1) ist G = +1 verträglich, bei N = 3 und 4 kein Vorzeichen; U = +1 ist für N = 1..4 verträglich. P_CAR ändert die Spuren nicht, weil alle Einschübe gerade sind. Urteil: P_GSO ist nicht nativ und folgt nicht aus Modulinvarianz mit P_CAR. Als Regel pro Naht steht P_GSO sogar im Widerspruch zu Modulinvarianz und Positivität, sobald über die 2 pi-Drehung summiert wird; verträglich ist sie nur als diagonale Zweinahtregel, die nicht die Regel pro Zustand aus z97 ist. Folge für die Statistikachse der Szenario-Suche: Der Wert 'Uhr-verdrehte Statistik P_GSO' ist durch die Modulinvarianz nicht gestützt. Wer die Torussumme verlangt, bekommt pro Naht 'U = +1' (keine Spinoren) oder 'G = -1'; die native Projektion ist R = R-quer mit (-1)^(F+F-quer) = +1. Folge für T4: Die Chiralität bleibt getrennt und offen; die nichtchirale Naht ist vektorartig, das chirale Original ist nur als (E8)_1 mit eingefrorener Uhr konsistent. Nichts ist befördert; 3+1-Aussagen bleiben Kinematik der Einpaarschicht."
+}

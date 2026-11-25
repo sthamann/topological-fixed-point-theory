@@ -1,4 +1,4 @@
-# TFPT: Gesamtstand und Strategien zur Gesamtlösung (Stand H6h48, 25. November 2026)
+# TFPT: Gesamtstand und Strategien zur Gesamtlösung (Stand H6h49, 25. November 2026)
 
 Neu: Abschnitt 14 hält die Folgerunde N1–N8 und die Analysen 13–17 fest; die tiefere Welle (T1–T6, U1–U3) läuft. Abschnitt 13: G1–G3 und Analyse 12; Abschnitt 12: F1–F6 mit den Analysen 10 und 11.
 
@@ -546,3 +546,39 @@ Offen ist allein die Gravitation, mit genau zwei Wegen.
   - erzeugt Tomita die gemeinsame Clifford-Struktur?
   - D_⊥ und die Spur mit Uhr als Wirkung, Gewicht 2c₃;
   - Transferaustausch und Petz-Prinzip statt P_koh.
+
+## 15. Tiefe Welle T1–T6, U1–U3 und achtzehnte Analyse (H6h49)
+
+| Schritt | Rechnung | Ergebnis | Status |
+|---|---|---|---|
+| T1 Parke–Taylor aus Nahtströmen | z110 (16/16) | Nenner exakt, Koeffizient durch k = 1 fest; Zähler braucht P_N4; Mehrspurterme ungedämpft | C |
+| T2 CSW-Komposition | z111 (18/18) | η nativ aus I_π; es fehlt genau ein Austauschfeld (kinetischer Term, P_BF) | C |
+| T3 Hodges und G | z112 (12/12) | Hodges = KLT aus nativen Klammern; Blattdiagonale braucht P_diag; G an einer Länge L | C |
+| T4 P_GSO aus Modulinvarianz | z113 (13/13) | nein; pro Naht mit Modulsummation unverträglich; vier chirale Nähte geben (E₈)₁ | E negativ |
+| T5 Chiralität als Twistorindex | z114 (13/13) | nur P_RJ (mit Spiegel) ist J-kovariant; Index 3 je 16 | C |
+| T6 Krümmung bei bewegter Algebra | z115 (9/9) | Familie flach (kompaktes Dual U(2)) | E negativ |
+| U1 Tomita und Clifford | z117 (15/15) | J_H6 = Majorana-Weyl auf dem Indexschnitt; Chiralität mit einem Bit P_glue | C |
+| U2 Uhrspur als Wirkung | z118 (11/11) | MacDowell–Mansouri unter P_R; Gewichtswahl = P_vol; G nur mit 2c₃ von Hand | C / E negativ |
+| U3 Austausch und Petz | z119 (13/13) | Austausch = modulares Gewicht ohne Vertex; P_koh = P_Torus + P_Petz | C |
+| Analyse 18 | z120 (7/7) | Energie-Eindeutigkeit; lokales Gatter P_T − i·P_S mit erzwungenen Winkeln; ein Weylpunkt; Tr A² | E / C |
+
+### Was die Runde bedeutet
+
+- **Vorwärtsregel:** Das lokale Transfergatter hat keine freien Winkel. Leckfreiheit erzwingt die Vierteldrehung, also
+  P_sym; die Phase ist die Wurzel der Uhr, gleichwertig die ℤ₄-Wechselphase i^(Q_A·Q_B). Ursprungsprämisse und
+  Wechselwirkungsregel sind dieselbe Aussage. Offen ist, ob die spinblinde Ladungsenergie die native Nahtantwort ist.
+- **Hypothese T** trägt Nenner, Farbe, Doppelkopie und Chiralität als Index. Es fehlen kinetischer Term, Zähler und eine
+  Trennung der Mehrspurterme.
+- **Chiralität** hat zwei bedingte Wege mit je einem Bit (P_RJ, P_glue); beide sind die ℤ₄-Regel auf Spinoren.
+- **Statistik** ist der neue Engpass: P_GSO ist nicht modular nativ. Die Szenario-Suche (46 080 Szenarien) lässt 108
+  Szenarien, die alles außer Graviton und modular konsistenter Statistik erfüllen.
+- **Gravitation:** Kinematik, Klammern und die MacDowell–Mansouri-Spur sind nativ bis auf je ein Bit. Dynamik braucht eine
+  inhomogene Familie, G eine Länge.
+
+### Laufende Welle V1–V5 (z121–z125)
+
+- V1: Gatter → Kette → Kontinuum, Dreinahtvertex; ist der Kreuzterm Q_A·Q_B nativ?
+- V2: P_RJ aus den gekleideten Vertizes (z97).
+- V3a: kinetischer Term als Tomita-Paarung zwischen D = ∓2.
+- V3b: Zähler ⟨ij⟩⁴ (Gradtwist, Pati–Salam-Quartett) und Mehrspurterme.
+- V5: P_sym aus kohärenter Komposition; S(n) über die Energie.
