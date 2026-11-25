@@ -1,0 +1,586 @@
+{
+ "checks": {
+  "[E] (a) Kovarianz: Für m = 2..8 ist j' x j-quer (j = (m-1)/2, j' = m/2) multiplizitätsfrei mit den Spins s = 1/2..m-1/2; jeder extremale Kanal Phi_s (Clebsch-Gordan, exakt spurerhaltend) hat eine kovariante Choi-Matrix vom Rang 2s+1 im s-Isotypenteil. Die kovarianten CP-Abbildungen sind also genau Summe lambda_s Phi_s mit lambda_s >= 0, spurerhaltend für Summe lambda_s = 1": true,
+  "[E] (a) Eindeutigkeit: Die nativen Übergänge p_k, q_k legen lambda = (1, 0, .., 0) eindeutig fest (lineares System, exakt, m = 2..8). Schon die Forderung 'nur die beiden Nachbarschritte' (k -> k+1, k -> k) mit Spurerhaltung erzwingt s = 1/2; die Übergangswahrscheinlichkeiten (k+1)/(m+1), (m-k)/(m+1) und damit die Zustandserhaltung folgen dann von selbst": true,
+  "[E] (a) Phi_1/2 ist der native Kanal aus z76: Krausamplituden zum Quadrat (k+1)/(m+1) und (m-k)/(m+1), je Krausoperator ein festes Vorzeichen; Krausrang 2, kleinste mögliche Umgebung Spin 1/2 (s muss halbzahlig sein). Die Stinespring-Isometrie ist (a_1^+ (x) |runter> - a_2^+ (x) |hoch>)/sqrt(N + 2) mit den Schwinger-Oszillatoren n_1 = k, n_2 = m-1-k. Polarisation: Phi_s^+(J'_z) = c_s J_z mit c_s = (j(j+1) + j'(j'+1) - s(s+1))/(2j(j+1)), streng fallend in s, maximal c_1/2 = (m+2)/(m+1)": true,
+  "[E negativ] (b) Der dekohärente Kanal (sqrt(p_k)|k+1><k| und sqrt(q_k)|k><k| einzeln, Krausrang 2m) hat dieselben Übergänge und ist wie der native Kanal spurerhaltend, zustandserhaltend (I/m -> I/(m+1)), J-reell (Phi(X-quer) = Phi(X)-quer), Petz-symmetrisch (R Phi selbstadjungiert im KMS-Skalarprodukt der Spurzustände), spiegelverträglich (k -> m-1-k mit Tausch der Schrittarten) und torusverträglich (Phase von N_1). Er ist aber nicht SU(2)-kovariant (Abweichung > 0,05, m = 2..8), der native Kanal schon (< 1e-12). Vollständige Positivität und Tomita-Symmetrie entscheiden die Fortsetzung also nicht": true,
+  "[E] Petz-Komposit: m(m+1)(1 - R Phi) ist für den kohärenten Kanal der volle Casimir-Superoperator (l(l+1) mit Vielfachheit 2l+1, z76). Beim dekohärenten Kanal bleibt nur der zonale Teil: auf den Diagonalen derselbe Block mit l(l+1), l = 0..m-1, je einmal; auf allen Kohärenzen die Konstante m(m+1). Der Petz-Rückkanal ist also keine unabhängige Quelle des su(2): Er trägt es nur, wenn der Kanal kohärent ist": true,
+  "[E negativ] (i) Native Symmetrien auf H_m: Uhr R = e^{2 pi i L_0} = 1 und Modulfluss e^{-i beta t L_0} sind auf H_m Phasen (L_0 = m, z83), der Cartan-Torus e^{i theta N_1} kommt aus dem Hardy-Schnitt (z73), der Spiegel x -> -x ist das Weyl-Element (M N_1 M = m - 1 - N_1), Tomita-J ist auf dem Diagonalsektor die Konjugation der reellen Basis. Zusammen erzeugen sie eine abelsche Lie-Algebra der Dimension 2 (mal Z_2), kein su(2) (m = 2..8)": true,
+  "[E] (i) Nimmt man den Casimir C der L^nat-sl(2,R) auf H_m hinzu, erzeugen die nativen hermiteschen Operatoren ganz u(m) (Dimension m^2: {2: 4, 3: 9, 4: 16, 5: 25, 6: 36, 7: 49, 8: 64}). Ein su(2) ist darin enthalten, aber nicht ausgezeichnet: 'aus nativen Operatoren gebaut' ist ohne Auswahlregel leer": true,
+  "[E negativ] (ii) Native Hüpfer auf H_m mit der nativen Cartan-Größe: das Stromhüpfen (Toeplitz-Hälften von J_-1, Amplitude 1) und das Möbiushüpfen L^p_-1 L^h_1 aus den Hardy-Hälften von L^nat (Amplitude (n_1 + 1) n_2) erzeugen für m = 2, 3 su(2) (Dimension 3), ab m = 4 aber so(m) (m ungerade) bzw. sp(m) (m gerade), Dimension m(m-1)/2 bzw. m(m+1)/2: die Algebren, die die vom Spiegel k -> m-2-k induzierte Bilinearform erhalten. Nur die Schwinger-Amplituden sqrt((n_1 + 1) n_2) bleiben für alle m bei 3": true,
+  "[E] (iii) Polare Familie: Mit L^p_-1 = V_1 |L^p_-1| und L^h_1 = |L^h_1| V_2^+ (polare Zerlegung der nativen Fermionleitern D_1/2) hat E_+(t) = V_1 |L^p|^t |L^h|^t V_2^+ die Amplitude ((n_1 + 1) n_2)^t; für t = 0 (Toeplitz), 1/4, 1/2, 3/4, 1 (Möbius) schließt sie für alle m = 2..8 genau bei t = 1/2. Mit getrennten Exponenten t_1, t_2 ist (2 t_1 - 1) log(n_1 + 1) + (2 t_2 - 1) log n_2 = const auf den m - 1 Stufen nur für t_1 = t_2 = 1/2 lösbar (Rang 3 für m = 4..8: {4: 3, 5: 3, 6: 3, 7: 3, 8: 3}; m = 6 numerisch: {(0.5, 0.5): 3, (0.5, 0.6): 35, (0.4, 0.5): 35, (0.3, 0.7): 35}). Die CCR sind genau die Wurzel der nativen Amplituden": true,
+  "[E] (iv) Native Raten: Mit den nativen Heberamplituden (n_1 + 1, n_2 + 1) gilt [L_1, L_-1] = 2 L_0 (m = 2..8), und der Casimir C = L_0(L_0 - 1) - L_-1 L_1 der L^nat-sl(2,R) ist auf H_m exakt die Einschränkung des su(2)-Casimir-Superoperators Summe [J_a,[J_a, .]] (Spin (m-1)/2) auf die Diagonalen |k><k| (der Diagonalen auf Diagonalen abbildet), mit Nebendiagonale -(n_1 + 1) n_2 und Spektrum l(l+1), l = 0..m-1, je einmal. Ohne jede Wurzel: Die Raten |J_+|^2 sind nativ, das su(2) ist ihre kohärente Wurzel": true,
+  "[E] (v) Symmetriealgebra des Kanals: Für den kohärenten Kanal ist {(X, X'): Phi o ad_X = ad_X' o Phi} genau sl(2, C) plus die zwei trivialen Richtungen (Dimension 5, m = 2..8): das su(2) ist aus dem Kanal selbst ablesbar, nicht eingesetzt. Beim dekohärenten Kanal sind es die Diagonalen beider Seiten (abelsch, 2m + 1), bei der k-abhängigen Mischung mit Krausrang 2 nur die trivialen Richtungen (ab m = 3)": true,
+  "[E] (vi) Krausrang 2 allein genügt nicht: Die Familie mit k-abhängigem Mischwinkel (u(k) entlang theta_k, d(k+1) senkrecht zu u(k)) ist spurerhaltend, hat die nativen Übergänge und Krausrang 2, ist aber nicht torusverträglich und nicht eichäquivalent zum nativen Kanal (Beträge der Choi-Einträge verschieden; konstanter Winkel = Umgebungsdrehung = nativer Kanal). Torusverträglich mit Rang 2 heißt dagegen: je ein Krausoperator pro Gewicht (Schrittart), beliebige Phasen, und diagonale Eichungen führen ihn exakt in den nativen Kanal über (m = 2..8). Pfadverdichtung: n Schritte haben Krausrang n + 1 nur im kohärenten Fall ({'kohaerent': [2, 3, 4], 'misch': [2, 4, 8], 'dekohaerent': [6, 9, 12]})": true,
+  "[E] (i) Exakte Zählung bis E = 60 (ganzzahlig): Die N-fache symmetrische Potenz von (Vakuum + Einteilchenleiter Summe m^2 q^m), also N ununterscheidbare Nähte mit je höchstens einem Teilchen, stimmt mit dem 4D-Fockcharakter prod (1 - q^m)^(-m^2) für alle E <= N überein (N = 5, 10, 20, 40, 59); bei E = N + 1 fehlt genau ein Zustand (N + 1 Teilchen auf m = 1). Der volle freie Fockraum ist Sym^N für N -> unendlich": true,
+  "[E negativ] (i) Ohne Symmetrisierung (unterscheidbare Nähte, (1 + Summe m^2 q^m)^N) gibt es zu viele Zustände: N = 10 hat bei E = 2 85 statt 5 und bei E = 10 23456204 statt 8813; fermionisch (prod (1 + q^m)^(m^2)) zu wenige: 4 statt 5 bei E = 2. Nur die bosonische Zusammensetzung gibt den freien 4D-Fockraum": true,
+  "[E] (i) Statistik: Liegen die Fermionen aller Nähte in einer gemeinsamen CAR (Jordan-Wigner, zwei Nähte), so vertauschen die Paaranregungen (Einteilchenzustände der Leiter) verschiedener Nähte, und der Nahttausch hat auf B_1 B_2 Omega den Eigenwert +1, auf einzelnen Fermionen -1. Die bosonische Symmetrisierung ist damit die native Statistik; dass die Nähte ununterscheidbar sind (Prämisse P_ident), bleibt eine Setzung": true,
+  "[E] (i) Endlich viele hartkernige Nähte (je höchstens ein Quant, symmetrisiert = Spin N/2, Kollektivfeld x = (J_+ + J_-)/sqrt(2N) im Vakuum |N/2, -N/2>): kappa_2 = 1/2, kappa_3 = 0, kappa_4 = -1/(2N) (N = 1..12). Die endliche Zusammensetzung ist gerade nichtgaußsch von der Ordnung 1/N (eine statistische Wechselwirkung, die für N -> unendlich verschwindet), nie kubisch": true,
+  "[E] (ii-a) Ladung/Uhr: Das relative Tensorprodukt über C[Q] identifiziert die Ladungen (Q_1 = Q_2); das gefundene Ladungsgesetz ist exakt das bei 2 beta (Abweichung < 1e-35), seine dritte Kumulante 0.001854 ist innen und war schon in einer Naht da (0.03634, z58). Über C[R] (R = i^Q) bleibt Q_1 = Q_2 mod 4 (1 - Korrelation = 1.27e-18). Der Oszillator-, also 4D-Teil bleibt exakt das Produkt (Gesamtmodell Ladung (x) Oszillator, reduzierter Zustand = Produkt, <x_1 x_2> = 0, alle dritten Momente 0): keine Korrelation und keine Dreipunktstruktur in 4D; R = 1 auf der ganzen Leiter (z83)": true,
+  "[E] (ii-b) c-Algebra (z78: c = kappa (a + b^+), vertauscht mit c^+): Im Purifikationszustand gilt <c^+c> = <cc^+> = 1 und <exp(i(t c^+ + t-quer c))> = e^{-|t|^2} (Fockraum bis n = 40, q = 1/2 und q = e^{-2 pi}): c ist eine klassische komplexe Gaußvariable. (Re c, Im c) ~ (x_a + x_b, p_a - p_b) spannen eine Lagrange-Ebene, die c-Algebra ist maximal abelsch, jede Naht ist L^2 ihres Spektrums mit Vielfachheit 1. Das relative Tensorprodukt verschmilzt daher zwei Nähte zu einer: Gesetz ~ p_1 p_2, E|c|^2 = 1/2, log-Dichte quadratisch, kappa_4 = 0. Keine neue Freiheit, keine Kumulante ab Ordnung 3": true,
+  "[E] (ii-c) Impulse: P^(1) = P^(2) heißt c^(2) = e^{i phi} c^(1) (Rang eins, P^2 = 0 bleibt). Weil jede Naht U(1)-invariant ist, ist phi gleichverteilt: die Kreuzkovarianz <c^(1) c^(2)-quer> verschwindet (Integral e^{-i phi} = 0), ebenso alle ungeraden Momente (c -> -c). Die verbundene Kreuz-Vierpunktsumme Cov(|c^(1)|^2, |c^(2)|^2) ist dagegen {'U(1)-Haarmass auf der Faser (d^3P/P_0)': 1/2, 'Bogenlänge (Lebesgue)': 5/8} (für zwei Bezugsmaße), während sie bei der c-Fusion (gaußsch) 0 ist: Die Impulsfusion ist eine gerade, nichtgaußsche Zwangskorrelation über eine einzige globale Variable, keine kubische Struktur": true,
+  "[E] (ii-d) L^nat-sl(2,R): Auf der abgeschnittenen Einpaarschicht (+)_(m <= 8) H_m ist der Raum der Verflechter (Kommutant von L_0, L^nat_(+-1)) 8-dimensional und genau von den Spektralprojektoren des Casimir aufgespannt (je ein D_h, h = 1..8). Das relative Tensorprodukt über U(sl(2,R)) paart also (h, n) zwischen den Nähten; mit dem KMS-Regulator q^{L_0} ist die Paarung T = 1 genau der Einpaaranteil der Purifikation (z83): Die Tomita-Verdopplung ist selbst eine sl(2,R)-Fusion, eine Verschränkung ohne Vertex": true,
+  "[E negativ] (ii-d) Kubische Vertizes: sl(2,R) allein erlaubt D_1 x D_1 -> D_2 (Produkt der Tiefstgewichte); das Bild, der Tiefstgewichtsvektor (1, -1)/sqrt(2) von H_2, ist in der su(2)-Lesart sigma_z mit l = 1, aus l = 0 (x) l = 0. Ein so(4)- und energieverträglicher kubischer Vertex zwischen Skalarleitern verschwindet immer, weil (j_1, j_1) x (j_2, j_2) den K-Typ (j_3, j_3) der Zielschale m_1 + m_2 nicht enthält (j_1 + j_2 < j_3, m_1, m_2 <= 40). Und auf der Unitaritätsgrenze Delta = 1 (Box phi = 0) ist die konforme Struktur <phi phi phi> nicht harmonisch (Box = -0.183760 != 0 am Testpunkt), also C_phiphiphi = 0, während <phi phi :phi^2:> harmonisch bleibt (Box = 0): freie Felder haben keine verbundene Dreipunktfunktion": true,
+  "[E] (iii-1) Diagonale E8-Komposition: c((E8)_2) = 31/2, Coset c = 1/2 (Ising), c_rel(N) = 8N(N-1)/(N+30) (symbolisch), nicht in Z/2 für N = [3, 4, 5, 6, 7, 8, 9] (dort kein Sektor freier Felder). T_rel = (1/32)(T_1 + T_2 - Summe J_1 J_2) und Summe J_1 J_2 = T_diag - 31 T_rel, also T_1 + T_2 + g Summe J_1 J_2 = (1+g) T_diag + (1-31g) T_rel: zwei vertauschende Sektoren, die freie Summe T_1 + T_2 selbst bleibt unverändert. Der Mischterm besteht aus 8 Cartan-Bilinearen (in den Oszillatoren gaußsch) und 240 Wurzeltermen E_1^alpha E_2^-alpha (Vertexoperatoren mit Ladungsübertrag alpha; Wurzelsystem geprüft: Norm 2, ganzzahlig, negationsabgeschlossen, Rang 8). Nullmoden-Abschneidung mit A_1 (gleiche Coset-Struktur): der Mischterm ist (C_12 - C_1 - C_2)/2, sein Grundzustand das Singulett, nicht gaußsch (gamma^2 != gamma), mit verbundener Kreuz-Dreipunktfunktion <S_1^x S_1^y S_2^z> = -i/8 ~ f^abc bei verschwindenden Einpunktfunktionen; in Cartan-Richtung <S_1^z S_1^z S_2^z> = 0, und der Cartan-Teil allein hat Slater-Grundzustände": true,
+  "[E] (iii-2) Relative Paritätsphase W_12 = (-1)^(n_1 n_2) (Jordan-Wigner, zwei Nähte zu je 4 Moden): Sie ist genau der Unterschied zwischen fermionischem und gewöhnlichem Nahttausch (U_ferm = U_gew W_12); mit R_i = i^(Q_i) gilt für R~ = (R_1 R_2) W_12 exakt R~^2 = (-1)^(n_1 + n_2) und R~^4 = 1. Als Operator ist W_12 nichtgaußsch (W c_1 W = c_1 (-1)^(n_2), relativer Abstand zum linearen Spann 1.00), vertauscht aber mit allen nahtlokalen geraden Operatoren (Paare, Ströme) und ist auf jedem Sektor fester Gesamtladung N die gaußsche Uhrpotenz (-1)^((N+1) n_1) = R_1^(2(N+1)). Unter Ladungsauswahl ist W_12 eine native Uhrpotenz, die die graduierte Zusammensetzung (Statistik) festlegt, keine Wechselwirkung": true,
+  "[E] (iii-3) Lokal frei, kollektiv korreliert: Jede ganzzahlige, mit L_0 vertauschende Größe K im Modulhamiltonoperator, rho_K ~ e^{-4 pi (L_0 + K)}, lässt die Uhridentität exakt bestehen (rho_K^{-i/2} = Phase mal R auf vier Quartermoden, Abweichung 4e-15), weil e^{2 pi i K} = 1; mit K = n_0 n_2 + 2 n_1 n_3 - n_0 n_1 n_2 ist rho_K nichtgaußsch (Cov(n_0, n_2) = -1.582e-03) und sein Modulfluss für t = 0,3 wechselwirkend (Ad rho^{it} c_0 nicht proportional zu c_0), bei t = -1/2 aber genau Ad R. Die freie Dynamik vertauscht mit rho_K, die verbundenen Korrelationen werden mit freien Phasen transportiert (<c_0^+(t) c_0 c_2^+(s) c_2>_c = e^{i(e_0 t + e_2 s)} Cov), nicht erzeugt: ein Zustand, keine Wechselwirkung. Die Uhr legt K nicht fest; ob exakt freie Ränder erreichbar sind (hier weichen sie um 1.6e-03 ab; die Analyse nennt sechs Saaten), prüft F6": true
+ },
+ "befunde": {
+  "Teil 2: SU(2) auf den Paarschalen ist bedingt nativ. Nativ (E) sind die Cartan-Größe, der Torus, das Weyl-Element und die Raten |J_+|^2 = (n_1 + 1) n_2 als Casimir der L^nat-sl(2,R). Kein natives Operatorprodukt und kein natives Symmetriedatum ist selbst das su(2); die polare Familie schließt nur bei der Wurzel t = 1/2. Die verbleibende Prämisse ist genau eine, P_koh: Die Umgebung des Elementarschritts registriert nur die Schrittart (Krausrang 2, ein torusgewichteter Krausoperator je nativer Schrittart), nicht die Lage k. Unter P_koh mit Spurerhaltung und Zustandserhaltung (z76) ist der Kanal eindeutig Phi_1/2; daraus folgen das su(2) als seine Symmetriealgebra, die CCR als sqrt(L_0 + 1) mal Krausamplitude und die Identifikation aus z83, ohne die Ziel-CCR vorauszusetzen": true,
+  "Teil 3: Der freie 4D-Fockraum entsteht als bosonische Zusammensetzung N -> unendlich vieler gleicher Nähte, jede im Vakuum oder mit einem Teilchen der Leiter; die Statistik ist nativ, die Ununterscheidbarkeit eine Prämisse. Keine der nativen geteilten Algebren erzeugt Wechselwirkung: Ladung und Uhr wirken nur innen, die c-Algebra ist linear (gaußsch, sie verschmilzt die Nähte), Impulse und sl(2,R) sind gerade (Zwangskorrelationen, Tomita-Paarung). Eine verbundene Dreipunktstruktur braucht eine geteilte Struktur, die weder gerade noch linear ist und die Unitaritätsgrenze verlässt; die nativen Kandidaten dafür sind die geladenen Vertexoperatoren (Fusion der Ladungssektoren nach Ladungsaddition) und die nichtabelschen Stromantworten (z75)": true,
+  "(iii) Einordnung der drei Kandidaten. (1) Diagonale E8: bedingt nativ (verlangt Naht = (E8)_1, Tor T2; das E8-Gitter selbst ist gelöst), als Zerlegung parameterfrei. Nichtgaußsch sind nur der Wurzelteil (Vertexoperatoren) und die Cosets (ab N = 3 kein Freifeldsektor): echte Wechselwirkung, aber im inneren 2D-Sektor; auf den Cartan-Oszillatoren gaußsch und paritätsgerade, also keine kubische 4D-Struktur; T_1 + T_2 bleibt, eine Kopplung g gewichtet nur zwei vertauschende Sektoren um. (2) W_12: nativ (aus R und (-1)^F), nichtgaußsch nur über Ladungssektoren hinweg; unter Ladungsauswahl eine gaußsche Uhrpotenz, sie legt die Statistik der Zusammensetzung fest, keine Wechselwirkung. (3) Lokal frei, kollektiv korreliert: eine Freiheit K, die die Uhr nicht sieht, also nicht nativ ausgewählt; ein nichtgaußscher Zustand der freien Dynamik, keine Wechselwirkung über den freien Fockraum hinaus. Echte (innere) Wechselwirkung bringt nur (1), und zwar über die Vertexoperatoren, wie in (ii) vermutet": true
+ },
+ "zahlen": {
+  "lambda_aus_nativen_uebergaengen": {
+   "2": [
+    "1",
+    "0"
+   ],
+   "3": [
+    "1",
+    "0",
+    "0"
+   ],
+   "4": [
+    "1",
+    "0",
+    "0",
+    "0"
+   ],
+   "5": [
+    "1",
+    "0",
+    "0",
+    "0",
+    "0"
+   ],
+   "6": [
+    "1",
+    "0",
+    "0",
+    "0",
+    "0",
+    "0"
+   ],
+   "7": [
+    "1",
+    "0",
+    "0",
+    "0",
+    "0",
+    "0",
+    "0"
+   ],
+   "8": [
+    "1",
+    "0",
+    "0",
+    "0",
+    "0",
+    "0",
+    "0",
+    "0"
+   ]
+  },
+  "lambda_nur_nachbarschritte": {
+   "2": [
+    "1",
+    "0"
+   ],
+   "3": [
+    "1",
+    "0",
+    "0"
+   ],
+   "4": [
+    "1",
+    "0",
+    "0",
+    "0"
+   ],
+   "5": [
+    "1",
+    "0",
+    "0",
+    "0",
+    "0"
+   ],
+   "6": [
+    "1",
+    "0",
+    "0",
+    "0",
+    "0",
+    "0"
+   ],
+   "7": [
+    "1",
+    "0",
+    "0",
+    "0",
+    "0",
+    "0",
+    "0"
+   ],
+   "8": [
+    "1",
+    "0",
+    "0",
+    "0",
+    "0",
+    "0",
+    "0",
+    "0"
+   ]
+  },
+  "polarisation_c_s": {
+   "2": {
+    "1/2": "4/3",
+    "3/2": "-2/3"
+   },
+   "5": {
+    "1/2": "7/6",
+    "3/2": "11/12",
+    "5/2": "1/2",
+    "7/2": "-1/12",
+    "9/2": "-5/6"
+   },
+   "8": {
+    "1/2": "10/9",
+    "3/2": "64/63",
+    "5/2": "6/7",
+    "7/2": "40/63",
+    "9/2": "22/63",
+    "11/2": "0",
+    "13/2": "-26/63",
+    "15/2": "-8/9"
+   }
+  },
+  "su2_abweichung_und_krausrang": {
+   "m=2, nat": [
+    1.1102230246251565e-16,
+    2
+   ],
+   "m=2, dek": [
+    0.6795141163162203,
+    4
+   ],
+   "m=5, nat": [
+    9.155133597044475e-16,
+    2
+   ],
+   "m=5, dek": [
+    2.805418825312578,
+    10
+   ],
+   "m=8, nat": [
+    1.3322676295501878e-15,
+    2
+   ],
+   "m=8, dek": [
+    5.7498760428067,
+    16
+   ]
+  },
+  "native_symmetrien_liedim": {
+   "2": 2,
+   "3": 2,
+   "4": 2,
+   "5": 2,
+   "6": 2,
+   "7": 2,
+   "8": 2
+  },
+  "native_operatoren_mit_sl2_casimir_liedim": {
+   "2": 4,
+   "3": 9,
+   "4": 16,
+   "5": 25,
+   "6": 36,
+   "7": 49,
+   "8": 64
+  },
+  "huepfer_liedim": {
+   "Strom (Toeplitz, z73)": {
+    "2": 3,
+    "3": 3,
+    "4": 10,
+    "5": 10,
+    "6": 21,
+    "7": 21,
+    "8": 36
+   },
+   "Möbius L^p_-1 L^h_1 (aus L^nat)": {
+    "2": 3,
+    "3": 3,
+    "4": 10,
+    "5": 10,
+    "6": 21,
+    "7": 21,
+    "8": 36
+   },
+   "Schwinger (CCR)": {
+    "2": 3,
+    "3": 3,
+    "4": 3,
+    "5": 3,
+    "6": 3,
+    "7": 3,
+    "8": 3
+   }
+  },
+  "polare_familie_liedim": {
+   "0.0": {
+    "2": 3,
+    "3": 3,
+    "4": 10,
+    "5": 10,
+    "6": 21,
+    "7": 21,
+    "8": 36
+   },
+   "0.25": {
+    "2": 3,
+    "3": 3,
+    "4": 10,
+    "5": 10,
+    "6": 21,
+    "7": 21,
+    "8": 36
+   },
+   "0.5": {
+    "2": 3,
+    "3": 3,
+    "4": 3,
+    "5": 3,
+    "6": 3,
+    "7": 3,
+    "8": 3
+   },
+   "0.75": {
+    "2": 3,
+    "3": 3,
+    "4": 10,
+    "5": 10,
+    "6": 21,
+    "7": 21,
+    "8": 36
+   },
+   "1.0": {
+    "2": 3,
+    "3": 3,
+    "4": 10,
+    "5": 10,
+    "6": 21,
+    "7": 21,
+    "8": 36
+   }
+  },
+  "getrennte_exponenten_m6": {
+   "(0.5, 0.5)": 3,
+   "(0.5, 0.6)": 35,
+   "(0.4, 0.5)": 35,
+   "(0.3, 0.7)": 35
+  },
+  "symmetriealgebra_dimension": {
+   "2": {
+    "kohaerent": 5,
+    "dekohaerent": 5,
+    "misch": 2
+   },
+   "3": {
+    "kohaerent": 5,
+    "dekohaerent": 7,
+    "misch": 2
+   },
+   "4": {
+    "kohaerent": 5,
+    "dekohaerent": 9,
+    "misch": 2
+   },
+   "5": {
+    "kohaerent": 5,
+    "dekohaerent": 11,
+    "misch": 2
+   },
+   "6": {
+    "kohaerent": 5,
+    "dekohaerent": 13,
+    "misch": 2
+   },
+   "7": {
+    "kohaerent": 5,
+    "dekohaerent": 15,
+    "misch": 2
+   },
+   "8": {
+    "kohaerent": 5,
+    "dekohaerent": 17,
+    "misch": 2
+   }
+  },
+  "pfadverdichtung_krausrang_m3_n123": {
+   "kohaerent": [
+    2,
+    3,
+    4
+   ],
+   "misch": [
+    2,
+    4,
+    8
+   ],
+   "dekohaerent": [
+    6,
+    9,
+    12
+   ]
+  },
+  "zaehlung": {
+   "fock_E0..15": [
+    1,
+    1,
+    5,
+    14,
+    40,
+    101,
+    266,
+    649,
+    1593,
+    3765,
+    8813,
+    20168,
+    45649,
+    101591,
+    223654,
+    486046
+   ],
+   "fock_E60": 1589409103562271352,
+   "defizit_Sym^N_bei_E=N+1": {
+    "5": 1,
+    "10": 1,
+    "20": 1,
+    "40": 1,
+    "59": 1
+   },
+   "ohne_Symmetrisierung_N10_E2_E10": [
+    85,
+    23456204
+   ],
+   "fock_E2_E10": [
+    5,
+    8813
+   ],
+   "fermionisch_E2_E10": [
+    4,
+    5972
+   ]
+  },
+  "hartkern_kumulanten_N": {
+   "1": [
+    0.5,
+    0.0,
+    -0.5
+   ],
+   "2": [
+    0.5,
+    0.0,
+    -0.25
+   ],
+   "3": [
+    0.5,
+    0.0,
+    -0.166666666667
+   ],
+   "4": [
+    0.5,
+    0.0,
+    -0.125
+   ],
+   "5": [
+    0.5,
+    0.0,
+    -0.1
+   ],
+   "6": [
+    0.5,
+    0.0,
+    -0.083333333333
+   ],
+   "7": [
+    0.5,
+    0.0,
+    -0.071428571429
+   ],
+   "8": [
+    0.5,
+    0.0,
+    -0.0625
+   ],
+   "9": [
+    0.5,
+    0.0,
+    -0.055555555556
+   ],
+   "10": [
+    0.5,
+    0.0,
+    -0.05
+   ],
+   "11": [
+    0.5,
+    0.0,
+    -0.045454545455
+   ],
+   "12": [
+    0.5,
+    0.0,
+    -0.041666666667
+   ]
+  },
+  "ladung": {
+   "kumulanten_einzeln(k1..k4)": [
+    "0.04134329",
+    "0.039788736",
+    "0.036337669",
+    "0.030328394"
+   ],
+   "kumulanten_fusion(k1..k4)": [
+    "0.0018639554",
+    "0.001860494",
+    "0.0018535453",
+    "0.0018397256"
+   ],
+   "uhr_fusion_mod4_korrelation": "1.0"
+  },
+  "c_algebra": {
+   "0.5": {
+    "<c^+c>, <cc^+>": [
+     0.9999999999999997,
+     0.9999999999999997
+    ],
+    "|charakteristische Funktion - e^{-|t|^2}|": [
+     0.0,
+     2.2204750205170093e-16
+    ]
+   },
+   "0.0018674427317079893": {
+    "<c^+c>, <cc^+>": [
+     1.0,
+     1.0
+    ],
+    "|charakteristische Funktion - e^{-|t|^2}|": [
+     0.0,
+     4.44092194763429e-16
+    ]
+   }
+  },
+  "c_fusion": {
+   "E|c|^2": "1/2",
+   "kappa_4(Re c)": "0"
+  },
+  "impulsfusion_verbundene_kreuz_vierpunktsumme": {
+   "U(1)-Haarmass auf der Faser (d^3P/P_0)": "1/2",
+   "Bogenlänge (Lebesgue)": "5/8"
+  },
+  "sl2_fusion": {
+   "kommutant_dim_M8": 8,
+   "tiefstgewicht_D2_in_H2": [
+    -0.707106781187,
+    0.707106781187
+   ],
+   "box_phi_phi_phi_am_punkt": "-0.183759556122",
+   "box_phi_phi_phi2": "0"
+  },
+  "e8_diagonal": {
+   "c_rel(N), N = 1..10": {
+    "1": "0",
+    "2": "1/2",
+    "3": "16/11",
+    "4": "48/17",
+    "5": "32/7",
+    "6": "20/3",
+    "7": "336/37",
+    "8": "224/19",
+    "9": "192/13",
+    "10": "18"
+   },
+   "c_nicht_in_Z/2": [
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9
+   ],
+   "su2_proxy_<S1x S1y S2z>": "-0.125j",
+   "<S1z S1z S2z>": 0.0
+  },
+  "kollektiv": {
+   "uhr_abweichung": 3.607600578636486e-15,
+   "Cov(n_0, n_2)": -0.001582136455700375,
+   "modulfluss_t0.3_rest": 2.3296031814720815,
+   "randabweichung_n_0_hier": 0.0016476746210091278
+  },
+  "status": {
+   "(a) kovariante Eindeutigkeit": [
+    "E",
+    "unter SU(2)-Kovarianz ist die CPTP-Fortsetzung eindeutig Phi_1/2 = z76; schon 'nur Nachbarschritte' genügt; Krausrang 2, Umgebung Spin 1/2 = Schwinger-Paar, maximale Polarisation (m + 2)/(m + 1)"
+   ],
+   "(b) CP und Tomita reichen nicht": [
+    "E (negativ)",
+    "der dekohärente Kanal erfüllt Übergänge, CPTP, Zustandserhaltung, J-Realität, Petz-Symmetrie, Spiegel und Torus, ist aber nicht kovariant; Petz gibt dort nur den zonalen Teil"
+   ],
+   "native Raten": [
+    "E",
+    "Casimir der L^nat-sl(2,R) auf H_m = su(2)-Casimir-Superoperator auf den Diagonalen, ohne Wurzel"
+   ],
+   "su(2) als nativer Operator": [
+    "E (negativ)",
+    "Uhr, Modulphase, Torus, Spiegel, Tomita abelsch mal Z_2; Strom- und Möbiushüpfer schließen nur für m <= 3; polare Familie nur bei t = 1/2; native Operatoren erzeugen u(m) ohne Auszeichnung"
+   ],
+   "Symmetriealgebra des Kanals": [
+    "E",
+    "kohärent genau su(2) (plus triviale Richtungen), dekohärent abelsch, Mischfamilie trivial"
+   ],
+   "Identifikation 'verdoppelter Diagonalschritt = L^nat'": [
+    "C",
+    "eindeutig unter P_koh; dann folgen Phi_1/2, su(2), CCR und z83 ohne Ziel-CCR"
+   ],
+   "Prämisse P_koh": [
+    "O",
+    "Krausrang 2 mit einem torusgewichteten Krausoperator je nativer Schrittart (die Umgebung registriert nur die Schrittart); nicht aus CP, Tomita, Spiegel, Torus, Petz oder Uhr herleitbar"
+   ],
+   "freier 4D-Fockraum": [
+    "E / C",
+    "Sym^N(Vakuum + Einteilchenleiter) = prod (1 - q^m)^(-m^2) exakt bis E = N; Statistik nativ (+1); P_ident (ununterscheidbare Nähte) und N -> unendlich gesetzt"
+   ],
+   "Fusion über native Algebren": [
+    "E (negativ)",
+    "Ladung/Uhr nur innen; c-Algebra gaußsch und verschmelzend; Impulse und sl(2,R) gerade Zwangskorrelationen bzw. Tomita-Paarung; keine verbundene Dreipunktstruktur"
+   ],
+   "kubischer Vertex": [
+    "E (negativ)",
+    "so(4) x E-verträgliche Vertizes zwischen Skalarleitern verschwinden (K-Typ); Delta = 1 verbietet <phi phi phi>; sl(2,R)-Vertizes brechen so(4)"
+   ],
+   "diagonale E8-Komposition": [
+    "C / E",
+    "bedingt nativ (Naht = (E8)_1, T2); Mischterm = 8 gaußsche Cartan-Bilineare + 240 Vertexterme; Cosets ab N = 3 nicht frei: innere Wechselwirkung; auf den Cartan-Oszillatoren paritätsgerade, keine kubische 4D-Struktur"
+   ],
+   "relative Paritätsphase W_12": [
+    "E",
+    "nativ (R, (-1)^F); unter Ladungsauswahl die gaußsche Uhrpotenz R_1^(2(N+1)); Statistik der Zusammensetzung, keine Wechselwirkung"
+   ],
+   "lokal frei, kollektiv korreliert": [
+    "E / O",
+    "ganzzahliges K für die Uhr unsichtbar, also nicht nativ ausgewählt; Zustand der freien Dynamik, keine Wechselwirkung; freie Ränder: F6"
+   ],
+   "Wechselwirkung": [
+    "O",
+    "braucht eine geteilte Struktur, die weder gerade noch linear ist und Delta = 1 verlässt: Vertexoperatoren (Ladungsfusion, auch der Wurzelteil der diagonalen E8) oder nichtabelsche Ströme (z75)"
+   ]
+  }
+ },
+ "urteil": "F3 ist bedingt beantwortet. Die zehnte Analyse hält: Unter SU(2)-Kovarianz ist die vollständig positive, spurerhaltende Fortsetzung des nativen Kanals eindeutig (m = 2..8 exakt über Clebsch-Gordan; die kovarianten Kanäle sind der Kegel über m extremalen Phi_s, und schon 'nur die beiden Nachbarschritte' erzwingt s = 1/2). Phi_1/2 ist der Kanal aus z76 mit Krausrang 2, Umgebung Spin 1/2 = Schwinger-Paar und maximaler Polarisation (m+2)/(m+1). Vollständige Positivität und Tomita-Symmetrie reichen nicht: Der dekohärente Kanal mit denselben Übergängen erfüllt auch Zustandserhaltung, J-Realität, Petz-Symmetrie, Spiegel und Torus, ist aber nicht kovariant. Nativ ist SU(2) auf den Paarschalen nicht als Operator: Uhr, Modulphase, Torus, Spiegel und Tomita geben nur eine abelsche Algebra mal Z_2, Strom- und Möbiushüpfer schließen nur für m <= 3, die polare Familie nur bei der Wurzel t = 1/2, und die nativen Operatoren zusammen erzeugen ganz u(m) ohne Auszeichnung. Nativ sind aber die Raten: Der Casimir der L^nat-sl(2,R) auf H_m ist exakt der su(2)-Casimir-Superoperator auf den Diagonalen, mit |J_+|^2 = (n_1 + 1) n_2. Das su(2) ist ihre kohärente Wurzel, und die einzige verbleibende Prämisse ist P_koh: Die Umgebung des Elementarschritts registriert nur die Schrittart (Krausrang 2, ein torusgewichteter Krausoperator je Schrittart). Unter P_koh ist der Kanal bis auf Eichung eindeutig, sein Symmetriealgebra ist genau su(2), und die Identifikation aus z83 folgt ohne Ziel-CCR (C). Krausrang 2 allein genügt nicht (k-abhängige Mischung), Pfadverdichtung n + 1 unterscheidet. Zusammensetzung: Die bosonische symmetrische Potenz von N gleichen Nähten mit Vakuum oder einem Teilchen gibt prod (1 - q^m)^(-m^2) exakt bis E = N (bis E = 60 gezählt); ohne Symmetrisierung zu viele, fermionisch zu wenige Zustände; das Austauschvorzeichen der Paare ist in einer gemeinsamen CAR +1, die Ununterscheidbarkeit bleibt Prämisse; endliches N gibt nur eine gerade 1/N-Nichtgaußizität. Wechselwirkung erzeugt keine native Fusion: Ladung und Uhr wirken nur innen, die c-Algebra ist maximal abelsch und linear und verschmilzt zwei Nähte gaußsch, Impulse und sl(2,R) geben gerade Zwangskorrelationen bzw. die Tomita-Paarung. Kubische Vertizes zwischen Skalarleitern verbietet schon so(4) mit Energieerhaltung (K-Typ), und auf der Unitaritätsgrenze Delta = 1 verschwindet <phi phi phi>. Die Wechselwirkung muss also aus einer geteilten Struktur kommen, die weder gerade noch linear ist und Delta = 1 verlässt; die nativen Kandidaten sind die Vertexoperatoren der Ladungssektoren und die nichtabelschen Stromantworten. Von den Kandidaten der elften Analyse ist die diagonale E8-Komposition bedingt nativ (Naht = (E8)_1) und bringt echte, aber innere Wechselwirkung: Ihr Mischterm ist auf den Cartan-Oszillatoren gaußsch und paritätsgerade, nichtgaußsch nur im Vertexteil, und die Cosets sind ab N = 3 keine freien Felder; T_1 + T_2 + g Summe J_1 J_2 zerfällt in zwei vertauschende Sektoren. Die relative Paritätsphase W_12 ist nativ, aber unter Ladungsauswahl eine gaußsche Uhrpotenz und legt nur die Statistik fest. 'Lokal frei, kollektiv korreliert' beruht auf einer ganzzahligen Größe K, die die Uhr nicht sieht; es ist eine Zustandswahl unter freier Dynamik, keine Wechselwirkung. Nichts davon ist befördert."
+}

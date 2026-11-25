@@ -1,0 +1,31 @@
+Teil 1: Klassische Bitgesetze
+   [ok] 16 Verknüpfungen, 6 assoziativ und kommutativ, 2 Gruppen (XOR, XNOR); von 24 reversiblen Zweibitoperationen vertauschen 2 mit R (x) R (Identität, Tausch)
+
+Teil 2: Quantengesetze mit erhaltener Uhr und Tauschsymmetrie
+   [ok] hermitesche Erzeuger, die mit R (x) R und dem Tausch vertauschen: Dimension 4 (= 3 + globale Phase: Uhr n_1 + n_2, Hüpfen, n_1 n_2), also die Blockform diag(a, [[b, c], [c, b]], d)
+   {'gatter': 64, 'gaussisch': 16, 'zopfrelation': 17, 'zopf_nichtgaussisch': 12}
+   [ok] U^4 = 1 bis auf Phase: 64 Gatter, davon 16 gaußsch (Matchgate det A = det B) und 48 nichtgaußsch (die Analyse: 64, 16, 48)
+   [ok] Zopfrelation (Yang-Baxter in Zopfform) erfüllen 17 Gatter, davon 12 nichtgaußsch (die Analyse nennt 17 und 12)
+
+Teil 3: Kollektive Nichtgaußizität identischer Saaten (Randverteilungen und Uhr exakt)
+   [ok] mit symmetrischen f (nur von der Teilchenzahl abhängig, |f| <= 2) gibt es für N = 2..8 keine nichttriviale Lösung: die kollektive Struktur braucht eine Zerlegung, die die Moden unterscheidet
+   [ok] Zustände diagonal in der Besetzungsbasis (ganzzahlige Suche, f in {-1, 0, 1}, Vakuum fest): für N = 2..7 keine nichttriviale Lösung; in diesem Sinn ist die Komposition identischer Saaten starr
+   gleichmäßige Projektoren: erstes N = 9, {'N': 9, 'verschobene_dimensionen': {'k=2,f=1': 3, 'k=3,f=2': 6, 'k=4,f=1': 8, 'k=4,f=2': 1, 'k=5,f=1': 9, 'k=6,f=-1': 1, 'k=6,f=1': 6, 'k=8,f=1': 4, 'k=9,f=1': 1}, 'S': np.float64(1.5329952527935347), 'S_Produkt': np.float64(1.5519875473132618)}
+   [ok] teilchenzahlerhaltend mit gleichmäßigen Projektoren (realisierbar: jeder Sektor hat eine Orthonormalbasis aus zyklischen Fourierzuständen mit gleicher Besetzung aller Moden): keine Lösung für N <= 8, exakte Lösung bei N = 9 (Randverteilungen symbolisch gleich der Saat, Uhr exakt, Entropie kleiner als das Produkt); die lineare Lockerung (notwendige Bedingung für beliebige teilchenzahlerhaltende Zustände) ist ab N = 5 zulässig, Realisierbarkeit dort nicht gezeigt
+   [Befund: ja] Die Analyse hält qualitativ, nicht in der Zahl: Identische Saaten können kollektiv nichtgaußsch sein, mit exakt freien Randverteilungen und exakter Uhr (Exponentenkollisionen modulo 4). Die genannte Schwelle N = 6 ist nicht reproduziert: diagonal starr bis 7, gleichmäßig erst ab 9, allgemein (lineare Lockerung) möglich ab 5. Ob das die Starrheit aus z87 (verschiedene m, Ladungsauswahl) berührt, prüft F6 (z94); nativ ist ein solcher Zustand nicht (z91: eine Wahl, die die Uhr nicht sieht)
+
+Teil 4: Relative Paritätsphase
+   [ok] W_12 = (-1)^(n_1 n_2) ist genau der Unterschied zwischen fermionischem und gewöhnlichem Tausch (SW_f = SW W); R~ = (R (x) R) W erfüllt R~^2 = (-1)^(n_1 + n_2) und R~^4 = 1
+
+Teil 5: E8-Komposition
+   [ok] c((E8)_1) = 8, c((E8)_2) = 31/2, relativer Sektor 16 - 31/2 = 1/2 (Ising); T_rel = (T_1 + T_2 - Summe J_1^a J_2^a)/32 aus den Sugawara-Normierungen; c_rel(N) = 8N(N-1)/(N+30)
+   [ok] E8: 240 Wurzeln der Norm 2; in E8 + E8(-1) (Signatur (8,8)) hat jede Diagonale (v, v) die Norm 0, die Diagonale ist isotrop vom Rang 8 = 8, also maximal
+
+Teil 6: Double Cover, Purifikation, Twistgewicht
+   [ok] auf dem Quadrattorus gilt J R J = R^-1 (256 Punkte modulo Z + iZ), J hat die Fixkreise Im z = [np.float64(0.25), np.float64(0.75)]; Purifikation (|00> + e^-pi/2 |11>)/sqrt(1 + e^-pi): <X (x) X> = 0.398537; Twistgewicht c/24 (n - 1/n) bei n = 2, c = 8: 1/2
+   [Befund: ja] Die elfte Analyse hält in den gerechneten Punkten; die physikalischen Lesarten (E8-Coset als Kompositionsgesetz, Marken als Twistoperatoren, Double Cover als konjugiertes Paar) sind Kandidaten und gehen an F1, F3, F4 und F6
+
+Urteil
+   Die elfte externe Analyse hält in den gerechneten Punkten. Von 16 Bitgesetzen sind 6 assoziativ und kommutativ, 2 sind Gruppen; von 24 reversiblen Zweibitoperationen vertragen sich nur Identität und Tausch mit der Uhr. Uhr- und tauscherhaltende Quantengesetze bilden eine dreiparametrige Klasse (Uhr, Hüpfen, n_1 n_2), mit U^4 = 1 gibt es 64, davon 16 gaußsch. Identische Saaten können kollektiv nichtgaußsch sein (exakt realisiert ab N = 9 mit gleichmäßigen Projektoren; diagonal starr bis N = 7; die genannte Schwelle N = 6 ist nicht reproduziert). E8-Komposition: relativer Sektor c = 1/2, T_rel = (T_1 + T_2 - Summe J_1 J_2)/32; E8 + E8(-1) hat eine isotrope Diagonale vom Rang 8. J R J = R^-1 auf dem Torus, Purifikation <X X> = 0,398537, Twistgewicht 1/2. Die physikalischen Lesarten bleiben Kandidaten.
+
+Alle Prüfungen bestanden: True (11/11)

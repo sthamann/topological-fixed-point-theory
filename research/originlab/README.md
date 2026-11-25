@@ -151,13 +151,13 @@ Eleventh run (whole-theory scenarios, H6 exploration H6h42, strategy S7): the un
 - time: modular flow, parabolic Wiesbrock, OS reconstruction, radial conformal;
 - modes: species or energy levels;
 - gravity: composite spin 2, Virasoro T(z), twistor deformation from the native sources, twistor deformation through the
-  radial channel, entanglement of the cut original|partner, entanglement of a spatial cut;
+  radial channel, entanglement of the cut original|partner, entanglement of a spatial cut, P₀-graded two-seam composition;
 - origin: seed ρ₁ + spin-ℤ₄, two binary observations.
 
-That gives 1152 scenarios (since H6h43).
+That gives 1344 scenarios (since H6h45).
 - **Computed clauses:** R orders and native Lorentz compatibility come from the doublet and position universes.
 - **Recorded clauses:** `EVIDENCE` lists result files of the exploration scripts (z70, z72, z75, z80, z82, z83, z84, z85,
-  z86, z87),
+  z86, z87, z89, z90),
   each with a named check and its meaning. A missing file leaves a value pending; nothing is entered by hand.
 
 With the evidence of H6h42, the rule native-Lorentzian + positive time + one field + reduced origin + placed marks keeps 8
@@ -169,7 +169,8 @@ scenarios. All of them have:
 - origin = seed ρ₁ (or its two-observation form).
 
 Gravity is the open axis. Since H6h43 (z85) the deformation from the native sources and marks as Weyl curvature are
-excluded; open are the deformation through the radial channel and the entanglement of a spatial cut. Two new tests.
+excluded. Since H6h45 (z89, z90) the radial channel (only AdS) and the spatial cut (no G) are excluded as well; the only
+open gravity value is the P₀-graded two-seam composition, conditional; no scenario has a confirmed graviton. Two new tests.
 
 ```bash
 .venv/bin/python -B research/originlab/process_rules.py > /tmp/process-rules.json

@@ -57,7 +57,7 @@ class ReconstructionSearch(unittest.TestCase):
     # ------------------------------------------------------------ whole-theory scenarios (H6h42, S7)
     def test_scenarios_enumerate_all_axes_and_respect_recorded_exclusions(self):
         u = self.universe("scenarios")
-        self.assertEqual(u["objects"], 4*3*4*2*6*2)
+        self.assertEqual(u["objects"], 4*3*4*2*7*2)
         sc, info = scenario_candidates()
         for o in sc:
             if (o["scenario"]["time"] == "modular flow" or o["scenario"]["spinor_index"] == "quarter oscillators"
@@ -239,7 +239,7 @@ class ReconstructionSearch(unittest.TestCase):
         self.assertEqual(self.result["status"], "RECONSTRUCTION_SEARCHED")
         text = json.dumps(self.result, sort_keys=True, allow_nan=False)
         self.assertEqual(text, json.dumps(run_reconstruction(), sort_keys=True, allow_nan=False))
-        self.assertEqual(self.result["objects_enumerated"], 54 + 66 + 10 + 6 + 4 + 1152)   # + doublets and position spaces (H6h40)
+        self.assertEqual(self.result["objects_enumerated"], 54 + 66 + 10 + 6 + 4 + 1344)   # + doublets and position spaces (H6h40)
 
 
 if __name__ == "__main__":

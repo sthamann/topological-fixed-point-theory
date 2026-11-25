@@ -1,6 +1,76 @@
 # Urteil
 
-## Aktueller Stand: H6h44 — S3 Osterwalder-Schrader und Abschluss der parallelen Runde (`z84`)
+## Aktueller Stand: H6h45 — Folgerunde: Gravitation, Schnitt, Komposition, Materiespin, Kugel; Analysen 10 und 11 (`z89`–`z93`, `z95`)
+
+**Bilanz:** unverändert 13 P und 7 L von 20. K12 und K13 sind präzisiert.
+
+**Auftrag:** „mach weiter mit allen follow ups“, mit der zehnten und der elften externen Analyse. F1–F5 sind gerechnet, F6
+(z94) rechnet noch.
+
+**F1 Gravitation über den Infinity Twistor (z89, 17 Prüfungen):**
+- **Auswahlregel der zehnten Analyse [E]:** Sie stimmt, ist aber nicht gravitationsspezifisch. Jeder masselose kubische
+  Vertex verschiebt den Grad D, auch Yang–Mills. Eine su(2,2)-äquivariante Fusion H ⊗ H → H gibt es für keinen Sektor.
+- **Infinity Twistor [C]:**
+  - I_π (ε auf der π-Ebene) ist bis auf seine Modulphase nativ. Er ist der Fernpunkt der nativen P_μ, und mit ihm kommt die
+    Plebański-Penrose-Klammer aus z85 exakt heraus.
+  - Neue Identität: ½c⁺c = E + (P⁰ + K⁰)/2, also die parabolische Zeit aus z83.
+- **Radialer Kanal [E negativ]:** Er gibt nur AdS (so(3,2)) mit dem Krümmungsradius der Vakuumgröße, keine flache
+  Einstein-Gravitation.
+- **Native Kompositionen [E negativ]:** Sie erzeugen die Klammer nicht. Die Fusion über die c-Algebra ist der kollineare
+  Ort, an dem I verschwindet.
+  - Die Klammer zerfällt exakt in B = m_Z ∘ (ε c⁺ ⊗ c⁺): zwei getrennte Nähte, ε-gekoppelt, dann holomorphe Fusion.
+- **G bleibt frei:** Der Koeffizient g ist nicht fixiert. P₀ ist lückenlos, eine kritische Folge existiert.
+
+**F2 Räumlicher Schnitt (z90, 17 Prüfungen) [E negativ]:**
+- Die nativen Gewichte q^m regulieren das Ultraviolette nicht.
+- Native Abschneidungen geben ein Flächengesetz, dessen Koeffizient von der Lokalisierung abhängt (17 % Unterschied).
+  Universal ist nur der Logarithmus −1/90.
+- Beim erzwungenen ξ = 1/6 verschwindet das induzierte 1/G (Sakharov). Das radiale Feld induziert kein Newton-G.
+- Hinweis zum Ledger: GRAV.ENTROPY.EQUILIBRIUM.01 („universeller Flächenkoeffizient = c = 8“) gilt nur in 1+1 D. Das
+  Ledger bleibt unverändert.
+
+**F3 Identifikation und Komposition (z91, 24 Prüfungen):**
+- **Zehnte Analyse (a), (b) [E]:** Der SU(2)-kovariante, vollständig positive Kanal ist eindeutig der z76-Kanal (Kraus-Rang
+  2, Spin-½-Umgebung). Ein dekohärenter Kanal mit denselben Übergängen existiert.
+- **SU(2) ist nicht nativ [E negativ]:** Kein nativer Operator erzeugt sie. Nativ sind die Raten |J₊|²: Der
+  L^nat-Casimir ist der su(2)-Casimir auf den Diagonalen.
+- **Verbleibende Prämisse P_koh:** Die Umgebung eines Schritts merkt sich nur die Schrittart.
+- **Freier 4D-Fockraum [E unter P_ident]:** Sym^N der Einteilchenleiter gibt ∏(1 − qᵐ)^{−m²} exakt bis E = N. Bosonische
+  Statistik der Nähte ist nativ (Paartausch +1), die Ununterscheidbarkeit ist Prämisse.
+- **Keine 4D-Wechselwirkung aus Fusion [E negativ]:** Keine native Fusion über gerade oder lineare Algebren liefert sie.
+  - Kubische Vertizes zwischen skalaren Leitern verschwinden.
+  - Wechselwirkung braucht Vertexoperatoren oder nichtabelsche Ströme.
+- **Elfte Analyse:** Die diagonale E₈-Komposition sind zwei vertauschende Sektoren (innen, 2D). W₁₂ ist nativ, aber
+  Statistik, keine Wechselwirkung.
+
+**F4 Materiespin und die „3“ (z92, 14 Prüfungen):**
+- **Die „3“ [E]:** Sym²(span(u³v, uv³))/(uv)² ist exakt der R² = +1-Raum. Physikalisch ist es aber das schwache Triplett,
+  nicht die Farbe. Kein SU(5)-, E₈- oder Paaroperator macht daraus die Farbe; die „3“ kommt aus dem gelösten Träger.
+- **Verklebung [E negativ]:** Die halbzahligen Helizitäten der radialen Leiter sind R-Bosonen.
+  - Neu: E^nat = [L^nat₁, L^nat₋₁]/2 = L₀^osc + Q²/2, also e^{2πiE^nat} = (−1)^Q = R² exakt. Die Statistik steckt im Q²/2
+    der radialen Energie.
+  - Jede kovariante Fortsetzung scheitert an diesem Term.
+  - Nötig wäre eine GSO-artige Regel (−1)^{2h} = R² (neue Struktur).
+- **Elfte Analyse, Twistfelder an den Marken:** Das Gewicht 1/2 stimmt, passt aber nicht zur Verklebung (ℤ₈ statt ℤ₄).
+
+**F5 Kugel D(V, η) (z93, 11 Prüfungen) [E negativ]:**
+- Der Ladungssektor gibt keinen Kugelkern, nur einen flachen Thetakern. Liouville, Fourierträger und Nullstellensatz
+  schließen jedes ν aus.
+- ν = 1 kommt allein aus den Oszillatoren (bosonische Paarzustände).
+- P1 ist eine Wahl. D(V, η) gehört nach innen, als Symmetriedatum, und die punktweise Lesart T′ ist kinematisch.
+
+**Elfte externe Analyse (z95, 11 Prüfungen):**
+- **Bestätigt:**
+  - die Bitgesetze, die Uhrklasse (3 Parameter), U⁴ = 1 (64 Gatter, davon 16 gaußsch) und die Zopfrelation (17 Gatter,
+    davon 12 nichtgaußsch);
+  - die E₈-Coset-Identitäten, die isotrope Diagonale vom Rang 8, J R J = R⁻¹, die Purifikation und das Twistgewicht 1/2.
+- **Nur qualitativ:** Identische Saaten können kollektiv nichtgaußsch sein. Exakt realisiert ist das ab N = 9 mit
+  gleichmäßigen Projektoren; diagonal sind die Zustände bis N = 7 starr. Die genannte Schwelle N = 6 ist nicht reproduziert.
+
+**Szenario-Suche:** 1344 Szenarien, 6 überleben. Die Gravitationsachse hat nur noch die P₀-graduierte Komposition zweier
+Nähte; sie ist bedingt, und kein Szenario hat ein bestätigtes Graviton.
+
+## Davor: H6h44 — S3 Osterwalder-Schrader und Abschluss der parallelen Runde (`z84`)
 
 **Bilanz:** unverändert 13 P und 7 L von 20. K12 ist präzisiert.
 

@@ -1,0 +1,413 @@
+{
+ "checks": {
+  "Kegel: Tr K(C_n) - n Tr K(R^2) = (1/12)(1/n - n) aus der Bildsumme der Orbifolds C/Z_N (Summe_k 1/(4 sin^2(pi k/N)) = (N^2 - 1)/12, N = 2..40 auf 1e-40, n = 1/N); mit dem Querfaktor A/(4 pi s) und ln Z_n = (1/2) int ds/s f(s) Tr K_n folgt S = A I[f]/(48 pi), I[f] = int_0^inf f(s) s^-2 ds (minimal gekoppelt)": true,
+  "Profile (symbolisch): I[f] eps^2 = 1 (scharf, Q1, P2), 2 (Q2, Brownsche Konvention), 1/2 (P3), 2 ln 2 (Pauli-Villars); alle zulässig (f -> 1 für s -> inf, f = o(s) für s -> 0). Die externe Aussage stimmt: Q1/Q2 und P3/P2 haben dieselbe Nennlänge eps und unterscheiden sich um den Faktor 2, ebenso dasselbe scharfe Profil unter den Konventionen s = eps^2 und sigma^2 = 2s = eps^2. Der Flächenkoeffizient ist ein lineares Funktional des Profils, kein Datum des Felds": true,
+  "universeller Logarithmus, dreifach und regulatorfrei: zeta(0) des konformen Laplace auf S^4 ist -1/90 über die Hurwitz-Fortsetzung (Eigenwerte (l+1)(l+2), Entartung (l+1)(l+2)(2l+3)/6) und über a_2 = (1/180)(Riem^2 - Ric^2) (xi = 1/6 tilgt R^2); CHM: der Wärmeleitungskern von -Laplace - 1 auf H^3 ist am Punkt der flache (4 pi t)^{-3/2} (Lösung der Wärmeleitungsgleichung symbolisch), also s(T = 1/2 pi) = (2 pi^2/45) T^3 = 1/(180 pi), und das Volumen pi (sinh 2u - 2u) mit u = ln(2R/eps) gibt den Logkoeffizienten -1/90 = -4a, a = 1/360": true,
+  "CHM-Schnitt als weiterer Regulator: S = R^2/(90 eps^2) - (1/90) ln(2R/eps) - eps^2/(1440 R^2) exakt, also Flächenkoeffizient 1/(360 pi) je eps^-2 gegen 1/(48 pi) beim scharfen Eigenzeitprofil (Verhältnis 2/15); unter eps -> lambda eps skaliert der Flächenterm mit lambda^-2, der Logterm verschiebt nur die Konstante": true,
+  "[E] Leiterfeld je S^2-Kanal l: -u'' + l(l+1) u/sin^2 chi mit Frequenzen m = l+1, l+2, ... (Summe_l (2l+1) = m^2); die ganzzahlige Leiter E = m erzwingt xi = 1/6 (n(n+2) + 6 xi = (n+1)^2 für alle n). Native Abschneidung m <= M exakt als Gauß-Gegenbauer-Knotengitter (Isometrie, Fehler 3.9e-13 bei M = 128) und als Kappen-Gram (volle Sphäre = Einheit, 6.6e-14); Projektorkern m sin(m gamma)/(2 pi^2 sin gamma), Vakuumkorrelator mit Dämpfung e^{-eps m} = 1/(8 pi^2 (cosh eps - cos gamma)) (1e-40), für eps -> 0 der flache 1/(4 pi^2 (2 sin(gamma/2))^2)": true,
+  "[E] native Gewichte als Regulatorlänge: e^{-eps m} ist die euklidische Zeitspaltung eps; nativ eps = 2 pi, 4 pi, 8 pi > pi (größter geodätischer Abstand auf S^3). Der so regulierte Korrelator ist über die ganze S^3 flach: relative Variation 2/(cosh eps - 1) = 0.0075, 1.39e-5, 4.86e-11. Ein Flächengesetz braucht eps << min(theta, pi - theta) <= pi/2; die nativen Gewichte liegen auf der falschen Seite (Krümmungsskala, nicht UV)": true,
+  "[E] Reinheit: Kappe und Komplement (Gauß-Knoten, theta = pi/3, M = 64) haben dieselbe Entropie, und die Kappe theta gleicht der Gegenkappe pi - theta (Knotensymmetrie x -> -x)": true,
+  "[E/C] native Abschneidung m <= M gibt ein Flächengesetz: S = c2 sin^2 theta M^2 + c1 M + c0 mit theta-unabhängigem c2 (Streuung über theta = pi/6..pi/2: Gauß 1.2%, Slepian 0.7%), A = 4 pi sin^2 theta; bedingt nur durch die S2-Identifikation von z83 und die Fockquantisierung": true,
+  "[E] der Koeffizient hängt an der Lokalisierung derselben nativen Abschneidung: c2 = 0.0321 (Gauß-Knoten) gegen 0.0376 (Slepian-Teilung), Verhältnis 1.173; in Einheiten des Wärmeleitungskerns bei eps = 1/M: 0.385 bzw. 0.452 x 1/(48 pi). Auch die Nennlänge selbst ist unscharf: der lineare Term entspricht M -> M + delta mit delta = +0.96 (Gauß) und -0.19 (Slepian)": true,
+  "[E] KMS-Gewichte regulieren nicht: Delta S = S_beta - S_vak der Kappe theta = pi/3 ist UV-endlich (M = 64 -> 96 ändert < 5 %) und von der Lokalisierung unabhängig (Gauß/Slepian < 3 % bei M = 96): beta = 2 pi (tau = i, q^m): 1.502e-03; beta = 4 pi (KMS Original): 2.788e-06; beta = 8 pi (beta' z83): 9.692e-12, gegen S_vak = 224.9 bei M = 96. Der Flächenterm bleibt der der Abschneidung; die Gewichte e^{-beta m} geben nur einen endlichen thermischen Rest (ganze S^3: 0.0138, 4.73e-5, 3.18e-10)": true,
+  "[E] native Schwelle q^M >= delta gibt M = ln(1/delta)/(2 pi) <= 14 auch bei delta = 1e-40; S(pi/2) wächst mit M(delta)^2 (0.34 bei M = 3 bis 6.9 bei M = 14), und für M <= 7 streut S/(sin^2 theta M^2) über theta = pi/6..pi/2 um mehr als 10 % (kleine Kappen unter der Auflösung haben S = 0): kein festes S/A, die Zahl hängt an der willkürlichen Schwelle": true,
+  "[E] Modulgenerator der Kappe (Hislop-Longo für das freie konforme Netz; hyperbolisches Element der radialen sl(2,R), die mit den Drehungen um den Kappenmittelpunkt vertauscht; s-Welle = D_1): die Abschneidungen von (L_1 + L_-1)/2 haben Eigenwertabstände bei 0 von 0.562, 0.445, 0.370, 0.317 für N = 100..6400 (Abstand x ln N fast konstant, max/N -> 1): Spektrum R, kontinuierlich. Die diskreten q^m = e^{-2 pi m} sind Boltzmanngewichte von 2 pi E (elliptisch, global), nicht des Modulhamiltonoperators der Kappe (Typ III_1, S unendlich)": true,
+  "[E] die Divergenz sitzt nicht im Modulspektrum: die Entropiedichte bei T = 1/(2 pi) ist UV-endlich, int dlambda lambda^2/(2 pi^2) s_B(e^{-2 pi lambda}) = 1/(180 pi) (1e-30), Modulenergien lambda > 3 tragen nur 6.2e-6 davon (< 1e-4); divergent ist das H^3-Volumen am Schnitt. Ein Schnitt in Modulenergie (native Gewichte) reguliert daher nichts. Im Modulrahmen ist S/A_mod -> s/2 = 1/(360 pi) = a/pi fest (V/A -> 1/2 auf H^3)": true,
+  "Normierung: 8 pi G = 1/c3 gibt G = 1, 1/(4G) = 1/4 je v_geo-Fläche. S/A = 1/4 verlangt eps^2 = 4 G I[f] eps^2/(48 pi): eps^2/c3 = 2/3 (scharf/Q1/P2), 4/3 (Q2/Brown), 1/3 (P3), 4*log(2)/3 (Pauli-Villars), 4/45 (CHM); Streuung Faktor 15, Pauli-Villars irrational (ln 2). Die nativen Abschneidungen geben eps in Einheiten des S^3-Radius, dessen Verhältnis zu v_geo das Repo nicht kennt: es gibt keinen regulatorfreien Vergleich": true,
+  "[E] induzierte Kopplung gegen Entropie (Sakharov, Susskind-Uglum): 1/(4 G_ind) = (1 - 6 xi) I[f]/(48 pi) aus a_1 = (1/6 - xi) R, und die Kegelentropie mit Kontaktterm (int_Kegel R = 4 pi (1 - n) A) ist (1 - 6 xi) A I[f]/(48 pi): S_Kegel = A/(4 G_ind) für jedes Profil und jedes xi, der Regulator kürzt sich. Die Hilbertraum-Verschränkung ist am flachen Schnitt xi-unabhängig, A I[f]/(48 pi); sie gleicht A/(4 G_ind) nur bei xi = 0": true,
+  "[E] beim nativen xi = 1/6 (erzwungen durch E = m) ist 1/G_ind = 0 und S_Kegel = 0 für jedes Profil, während die Verschränkung der Kappe (Teil 2) einen Flächenterm c2 = 0.0321 bzw. 0.0376 trägt: S_ent/(A/4 G_ind) ist unendlich. Das Leiterfeld induziert keine Newtonkopplung; die regulatorfreie Gleichung S = A/(4G) gibt es für dieses Feld nicht": true,
+  "pi-Kommensurabilität: 1/(48 pi) = c3/6 exakt, aber Q2 gibt c3/3, P3 c3/12, Pauli-Villars (ln 2/3) c3 und CHM (1/45) c3: die 'Relation' zu c3 folgt dem Profil, nicht dem Feld, und zählt nicht": true
+ },
+ "befunde": {
+  "zeta- und dimensionale Regularisierung setzen skalenfreie Potenzdivergenzen null: dort ist der Flächenkoeffizient 0. Zwischen 0 und jedem positiven Wert ist alles durch Wahl des Profils erreichbar": true,
+  "Teil 1: Die externe Analyse ist bestätigt. Fest ist nur der Logarithmus -1/90 = -4a; der Flächenkoeffizient ist I[f]/(48 pi), ein Funktional des Regulatorprofils (0 bis beliebig; Faktor 2 bei gleicher Nennlänge; CHM 2/15 des scharfen Werts). Ein Flächengesetz mit fester Zahl braucht also einen ausgezeichneten Regulator": true,
+  "Der universelle Logarithmus -1/90 ist in diesen Daten nicht auflösbar: frei gefittete Logkoeffizienten streuen von -2.3 bis +1.7 (Knotensprünge, Entartung mit dem linearen Term); er bleibt die analytische Aussage aus Teil 1": true,
+  "Modulschnitt: Die einzige feste Zahl ist S/A_mod = a/pi, die Anomalie a im Modulrahmen. A_mod = 4 pi sinh^2 u_max ist die H^3-Fläche des Schnitts in Einheiten des Kappenradius, keine physikalische Fläche: bei nativ festem, dimensionslosem u_max ist S = (sinh 2u - 2u)/180 unabhängig von der Kappengröße (kein Flächengesetz); ein Flächengesetz entsteht erst mit u_max = ln(2R/eps), also wieder mit einer Länge eps (und der Konvention 2R/eps gegen R/eps: Faktor 4)": true,
+  "Teil 2: Im rekonstruierten Leiterfeld gibt jede native Abschneidung m <= M ein Flächengesetz in M, aber mit einem Koeffizienten, der an der Lokalisierung hängt (Gauß 0,0321, Slepian 0,0376 je sin^2 theta M^2, 17 %), und mit unscharfer Nennlänge (M + delta). Die nativen Gewichte q^m, e^{-4 pi m}, e^{-8 pi m} sind keine UV-Regulatoren: als Länge liegen sie über dem Durchmesser der S^3, als KMS-Zustand ändern sie nur einen endlichen Rest, als Schwelle geben sie M <= 14 ohne Flächengesetz; der Modulschnitt fixiert nur a/pi in Modulfläche. S/A ist nicht fest": true,
+  "Dimensionstypisierung (DIMENSION.UPLIFT.FIREWALL.01, F2): Der Satz in GRAV.ENTROPY.EQUILIBRIUM.01 'der universelle Flächen-/Verschränkungskoeffizient einer CFT ist ihre Zentralladung (c = 8)' gilt nur in 1+1D (S = (c/3) ln L/eps, keine Fläche). In 3+1D ist der Flächenkoeffizient nicht universell (Teil 1: Profil, Teil 2: Lokalisierung); universell ist der Logkoeffizient -4a (a = 1/360 je reellem Skalar), und c = 8 ist die chirale Zentralladung der Naht. Der Satz ist für die 4D-Entropiedichte gescopt negativ (Ledger unverändert)": true,
+  "a/pi = 1/4 ist für freie Felder unmöglich (a ist rational, pi transzendent); der Vergleich wäre ohnehin sinnlos, weil A_mod keine physikalische Fläche ist": true,
+  "Was für G fehlt, genau: (i) eine native UV-Länge eps in Einheiten der Kappe und von l_P (die nativen Gewichte geben beta >= 2 pi, die Krümmungsskala); (ii) ein ausgezeichnetes Regulatorprofil bzw. eine ausgezeichnete Lokalisierung (Faktor 2 bzw. 17 %); (iii) eine Bedeutung für 'S = A/4G': induziert geht das nur mit Materie mit a_1 != 0 im selben Regulator, das Leiterfeld hat a_1 = 0; (iv) alternativ eine native Zellzählung, etwa Nähte je Fläche mit ln 2/2 je Naht (z86): dafür wäre die Dichte 1/(2 ln 2) = 0.721348 je G-Fläche nötig, die nichts im Repo liefert": true,
+  "F2 gegen seine Frage: Ist S/A mit den nativen Gewichten als Regulator fest und unabhängig von den Details? Nein, zweifach: die nativen Gewichte regulieren das UV nicht (Krümmungsskala), und jede native Abschneidung, die es tut, hat einen lokalisierungsabhängigen Koeffizienten. Der Weg zu G über die Kappe bleibt offen; die Bedingung dafür ist jetzt scharf: eine native Länge plus ein ausgezeichnetes Profil plus eine Bedeutung": true
+ },
+ "zahlen": {
+  "profile_I_mal_eps2": {
+   "scharf s >= eps^2": "1",
+   "scharf, Brownsche Konvention s >= eps^2/2 (sigma^2 = 2s)": "2",
+   "Q1 = e^{-eps^2/s}": "1",
+   "Q2 = e^{-eps^2/s}(1 + eps^2/s)": "2",
+   "P2 = 1 - (1 + s/eps^2) e^{-s/eps^2}": "1",
+   "P3 = 1 - (1 + s/eps^2 + s^2/(2 eps^4)) e^{-s/eps^2}": "1/2",
+   "Pauli-Villars (1 - e^{-s/eps^2})^2 (Massen 1/eps, sqrt2/eps)": "log(4)"
+  },
+  "profile_S_mal_eps2_durch_A": {
+   "scharf s >= eps^2": "0.006631456",
+   "scharf, Brownsche Konvention s >= eps^2/2 (sigma^2 = 2s)": "0.013262912",
+   "Q1 = e^{-eps^2/s}": "0.006631456",
+   "Q2 = e^{-eps^2/s}(1 + eps^2/s)": "0.013262912",
+   "P2 = 1 - (1 + s/eps^2) e^{-s/eps^2}": "0.006631456",
+   "P3 = 1 - (1 + s/eps^2 + s^2/(2 eps^4)) e^{-s/eps^2}": "0.003315728",
+   "Pauli-Villars (1 - e^{-s/eps^2})^2 (Massen 1/eps, sqrt2/eps)": "0.00919315"
+  },
+  "universell": {
+   "zeta(0) S^4 (Hurwitz)": "-1/90",
+   "zeta(0) S^4 (a_2)": "-1/90",
+   "-4a (a = 1/360)": "-1/90",
+   "s(T=1/2pi) auf H^3": "1/(180*pi)",
+   "S_CHM": "R**2/(90*epsilon**2) - log(R)/90 + log(epsilon)/90 - log(2)/90 - epsilon**2/(1440*R**2)",
+   "CHM-Flächenkoeffizient je eps^-2": "1/(360*pi)",
+   "CHM/Wärmeleitungskern (scharf)": "2/15"
+  },
+  "native_daempfung_relative_variation_G_ueber_S3": {
+   "2 pi (q^m, tau = i)": "0.007498",
+   "4 pi (KMS Original)": "1.395e-5",
+   "8 pi (beta' aus z83)": "4.865e-11"
+  },
+  "kappe_scharfe_abschneidung": {
+   "M": [
+    32,
+    44,
+    56,
+    68,
+    80,
+    92,
+    104,
+    116,
+    128
+   ],
+   "S_Gauss(theta=pi/6,pi/4,pi/3,pi/2)": {
+    "32": [
+     8.2701,
+     17.2107,
+     25.8608,
+     34.5218
+    ],
+    "44": [
+     15.7178,
+     31.7909,
+     48.1522,
+     64.4457
+    ],
+    "56": [
+     25.2116,
+     51.6598,
+     77.7355,
+     103.592
+    ],
+    "68": [
+     37.2363,
+     75.2158,
+     113.9016,
+     151.9587
+    ],
+    "80": [
+     51.879,
+     104.2905,
+     157.1524,
+     209.5446
+    ],
+    "92": [
+     68.7524,
+     137.5531,
+     206.8134,
+     276.3491
+    ],
+    "104": [
+     87.5929,
+     175.5065,
+     264.0963,
+     352.3717
+    ],
+    "116": [
+     108.7347,
+     217.7509,
+     328.2094,
+     437.6121
+    ],
+    "128": [
+     132.692,
+     264.9848,
+     398.6149,
+     532.0701
+    ]
+   },
+   "S_Slepian(theta=pi/6,pi/4,pi/3,pi/2)": {
+    "32": [
+     9.3794,
+     19.1669,
+     28.8868,
+     38.6865
+    ],
+    "44": [
+     18.0912,
+     36.1726,
+     54.6962,
+     72.973
+    ],
+    "56": [
+     29.0763,
+     58.5243,
+     88.2247,
+     118.09
+    ],
+    "68": [
+     42.7773,
+     86.6302,
+     130.4525,
+     174.0543
+    ],
+    "80": [
+     59.5008,
+     119.5886,
+     180.471,
+     240.879
+    ],
+    "92": [
+     78.7874,
+     158.6964,
+     238.5977,
+     318.5739
+    ],
+    "104": [
+     100.487,
+     202.7386,
+     304.8144,
+     407.1476
+    ],
+    "116": [
+     125.331,
+     252.1379,
+     379.4486,
+     506.6069
+    ],
+    "128": [
+     152.6294,
+     307.1756,
+     462.1045,
+     616.9579
+    ]
+   },
+   "c2 je theta (S = c2 sin^2 theta M^2 + c1 M + c0)": {
+    "Gauss": [
+     0.032356,
+     0.031987,
+     0.031966,
+     0.03201
+    ],
+    "Slepian": [
+     0.03749,
+     0.037628,
+     0.03767,
+     0.037736
+    ]
+   },
+   "c2 Mittel": {
+    "Gauss": 0.03208,
+    "Slepian": 0.037631
+   },
+   "theta-Streuung c2": {
+    "Gauss": 0.0121,
+    "Slepian": 0.0065
+   },
+   "S/A je eps^-2 mit eps = 1/M (c2/4 pi)": {
+    "Gauss": 0.002553,
+    "Slepian": 0.002995
+   },
+   "Verhältnis zu 1/(48 pi) (12 c2)": {
+    "Gauss": 0.385,
+    "Slepian": 0.4516
+   },
+   "c1 (theta = pi/2)": {
+    "Gauss": 0.0612,
+    "Slepian": -0.0146
+   },
+   "effektive Verschiebung der Abschneidung delta = c1/(2 c2)": {
+    "Gauss": 0.956,
+    "Slepian": -0.193
+   },
+   "Logkoeffizient aus 4-Parameter-Fit (theta = pi/6..pi/2)": {
+    "Gauss": [
+     -2.185,
+     -2.29,
+     -0.195,
+     -0.075
+    ],
+    "Slepian": [
+     1.726,
+     -1.544,
+     1.187,
+     1.006
+    ]
+   },
+   "max Fitrest (3 Parameter)": {
+    "Gauss": 0.301,
+    "Slepian": 0.22
+   }
+  },
+  "kms_dS_kappe_pi/3": {
+   "2 pi (tau = i, q^m)": {
+    "32": [
+     "1.3442e-03",
+     "1.5227e-03"
+    ],
+    "64": [
+     "1.4618e-03",
+     "1.4762e-03"
+    ],
+    "96": [
+     "1.5022e-03",
+     "1.4881e-03"
+    ]
+   },
+   "4 pi (KMS Original)": {
+    "32": [
+     "2.4917e-06",
+     "2.8266e-06"
+    ],
+    "64": [
+     "2.7114e-06",
+     "2.7391e-06"
+    ],
+    "96": [
+     "2.7885e-06",
+     "2.7617e-06"
+    ]
+   },
+   "8 pi (beta' z83)": {
+    "32": [
+     "8.7113e-12",
+     "9.8765e-12"
+    ],
+    "64": [
+     "9.4786e-12",
+     "9.5639e-12"
+    ],
+    "96": [
+     "9.6918e-12",
+     "9.6065e-12"
+    ]
+   }
+  },
+  "kms_S_thermisch_ganze_S3": {
+   "2 pi (tau = i, q^m)": "0.013815",
+   "4 pi (KMS Original)": "4.7312e-5",
+   "8 pi (beta' z83)": "3.17815e-10"
+  },
+  "schwellenabschneidung": {
+   "1e-10": {
+    "M": 3,
+    "S/(sin^2 theta M^2), theta = pi/6, pi/4, pi/3, pi/2": [
+     0.0,
+     0.0,
+     0.0251,
+     0.038
+    ],
+    "S(pi/2)": 0.3423
+   },
+   "1e-16": {
+    "M": 5,
+    "S/(sin^2 theta M^2), theta = pi/6, pi/4, pi/3, pi/2": [
+     0.0,
+     0.0366,
+     0.0368,
+     0.0383
+    ],
+    "S(pi/2)": 0.9575
+   },
+   "1e-20": {
+    "M": 7,
+    "S/(sin^2 theta M^2), theta = pi/6, pi/4, pi/3, pi/2": [
+     0.0162,
+     0.0323,
+     0.034,
+     0.0374
+    ],
+    "S(pi/2)": 1.8345
+   },
+   "1e-40": {
+    "M": 14,
+    "S/(sin^2 theta M^2), theta = pi/6, pi/4, pi/3, pi/2": [
+     0.0305,
+     0.0315,
+     0.035,
+     0.0354
+    ],
+    "S(pi/2)": 6.9404
+   }
+  },
+  "modulspektrum_D1": {
+   "100": {
+    "Abstand bei 0": 0.5619,
+    "Abstand x ln N": 2.588,
+    "max/N": 0.925
+   },
+   "400": {
+    "Abstand bei 0": 0.4451,
+    "Abstand x ln N": 2.667,
+    "max/N": 0.968
+   },
+   "1600": {
+    "Abstand bei 0": 0.3697,
+    "Abstand x ln N": 2.728,
+    "max/N": 0.987
+   },
+   "6400": {
+    "Abstand bei 0": 0.3167,
+    "Abstand x ln N": 2.776,
+    "max/N": 0.995
+   }
+  },
+  "modulschnitt": {
+   "s(1/2pi) aus der Plancherel-Dichte": "0.0017683882565766148419",
+   "1/(180 pi)": "0.0017683882565766148419",
+   "relativer Anteil der Modulenergien lambda > 3": "6.23e-6",
+   "S/A_mod (u -> inf)": "1/(360*pi)",
+   "a/pi": "1/(360*pi)"
+  },
+  "noetiges_eps2_durch_c3_fuer_S/A=1/4": {
+   "scharf/Q1/P2": "2/3",
+   "Q2/Brown": "4/3",
+   "P3": "1/3",
+   "Pauli-Villars": "4*log(2)/3",
+   "CHM": "4/45"
+  },
+  "status": {
+   "Regulatorabhängigkeit des Flächenkoeffizienten": [
+    "E",
+    "S = A I[f]/(48 pi); Faktor 2 bei gleicher Nennlänge (Q1/Q2, P2/P3, Brownsche Konvention), Pauli-Villars 2 ln 2, CHM 2/15, zeta 0: externe Analyse bestätigt"
+   ],
+   "universeller Teil": [
+    "E",
+    "Logkoeffizient -1/90 = -4a, a = 1/360 (zeta(0) auf S^4 doppelt, CHM); in der nativen Abschneidung numerisch nicht aufgelöst"
+   ],
+   "Flächengesetz in nativer Abschneidung m <= M": [
+    "E/C",
+    "c2 = 0,0321 (Gauß) bzw. 0,0376 (Slepian) je sin^2 theta M^2, theta-unabhängig < 2 %, lokalisierungsabhängig 17 %; bedingt durch S2 (z83, C) und Fockquantisierung"
+   ],
+   "native Gewichte q^m, KMS 4 pi, beta' 8 pi als Regulator": [
+    "E (negativ)",
+    "Länge > Durchmesser der S^3; KMS-Rest UV-endlich (1,5e-03, 2,8e-06, 9,7e-12); Schwelle M <= 14 ohne Flächengesetz"
+   ],
+   "Modulschnitt": [
+    "E",
+    "Modulspektrum kontinuierlich (Typ III_1), Dichte 1/(180 pi) endlich, Divergenz im H^3-Volumen; S/A_mod = a/pi fest, A_mod keine physikalische Fläche"
+   ],
+   "induzierte Newtonkopplung des Leiterfelds": [
+    "E (negativ)",
+    "xi = 1/6 aus E = m, a_1 = 0, 1/G_ind = 0 und S_Kegel = 0 für jedes Profil; S_ent != 0"
+   ],
+   "Vergleich mit 1/(4G) = 1/4": [
+    "O",
+    "nötiges eps^2/c3 in {4/45, 1/3, 2/3, (4/3) ln 2, 4/3}: ohne native Länge keine Bedeutung; 1/(48 pi) = c3/6 ist pi-Kommensurabilität"
+   ],
+   "Ledger-Satz 'Flächenkoeffizient = Zentralladung'": [
+    "E (negativ, 4D)",
+    "nur 1+1D; in 4D universell ist a, nicht die Fläche"
+   ],
+   "G über einen räumlichen Schnitt": [
+    "O",
+    "braucht native UV-Länge, Profil und eine Bedeutung (a_1 != 0 im selben Regulator oder native Zellzählung)"
+   ]
+  }
+ },
+ "urteil": "F2 ist in der gestellten Form gescopt negativ. Die zehnte externe Analyse stimmt: Für den freien konformen Skalar ist der Flächenkoeffizient I[f]/(48 pi), ein lineares Funktional des Regulatorprofils (Faktor 2 bei gleicher Nennlänge, Pauli-Villars 2 ln 2, CHM-Schnitt 2/15 des scharfen Werts, zeta-Regularisierung 0); regulatorfrei ist nur der Logarithmus -1/90 = -4a, dreifach bestätigt (zeta(0) des konformen Laplace auf S^4 über Hurwitz und a_2, CHM-Entropiedichte 1/(180 pi) auf H^3 mal Logterm des Volumens). Im Leiterfeld von z83 (E = m erzwingt xi = 1/6) gibt jede native Abschneidung m <= M ein echtes Flächengesetz S = c2 sin^2 theta M^2 + ..., theta-unabhängig auf 2 %, aber c2 hängt an der Lokalisierung derselben Abschneidung: 0,0321 mit den Gauß-Gegenbauer-Knoten (exakte Isometrie), 0,0376 mit der Slepian-Teilung (17 %), und die Nennlänge ist selbst unscharf (M + delta, delta = +1,0 bzw. -0,2). Die nativen Gewichte sind keine UV-Regulatoren: als Zeitspaltung eps = 2 pi, 4 pi, 8 pi liegen sie über dem Durchmesser pi der S^3 (der regulierte Korrelator ist auf 0,75 % flach), als KMS-Zustände bei tau = i, beta = 4 pi und beta' = 8 pi ändern sie die Kappe nur um einen UV-endlichen, lokalisierungsfreien Rest (1,5e-03, 2,8e-06, 9,7e-12), als Schwelle q^M >= delta geben sie M <= 14 ohne Flächengesetz. Der Modulschnitt (Hislop-Longo nach dem Netz, GRAV.NONCIRCULAR.01 eingehalten) zeigt den Grund: das Modulspektrum der Kappe ist kontinuierlich (Typ III_1), die Entropiedichte bei T = 1/(2 pi) ist endlich, die Divergenz sitzt im H^3-Volumen am Schnitt, also im Ort, nicht in der Energie; fest ist dort nur S/A_mod = a/pi in Modulfläche, die keine physikalische Fläche ist. Für G heißt das: Ohne native UV-Länge und ausgezeichnetes Profil gibt es keinen Vergleich mit 1/(4G) = 1/4 (8 pi G = 1/c3); die nötigen eps^2/c3 streuen um den Faktor 15, und 1/(48 pi) = c3/6 ist bloße pi-Kommensurabilität. Der Sakharov-Weg, auf dem sich der Regulator kürzt (S_Kegel = A/(4 G_ind) für jedes Profil), ist für das Leiterfeld selbst verschlossen: bei xi = 1/6 ist a_1 = 0, also 1/G_ind = 0, während die Kappe verschränkt ist. Der Ledger-Satz 'universeller Flächenkoeffizient = Zentralladung c = 8' ist 1+1D-typisiert und für die 4D-Entropiedichte gescopt negativ. Offen und jetzt scharf gestellt: G über einen räumlichen Schnitt braucht eine native UV-Länge, ein ausgezeichnetes Profil und eine Bedeutung (Materie mit a_1 != 0 im selben Regulator oder eine native Zellzählung, z. B. Nähte je Fläche mit Dichte 1/(2 ln 2))."
+}

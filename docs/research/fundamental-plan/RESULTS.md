@@ -8053,3 +8053,26 @@ S3 (z84) rechnet noch.
   - Offen ist allein die Gravitation: der radiale Kanal (Poissonklammer) oder ein räumlicher Schnitt.
 
 **Prüfstand:** 13 P, 7 L (K12 präzisiert). Atlas-Revision 9775dcba49e91227cc4dc4e7. Ledger unverändert, nichts befördert.
+
+## H6H45-20261125 · Folgerunde: Gravitation, Schnitt, Komposition, Materiespin, Kugel; Analysen 10 und 11
+
+Parallele Agentenläufe z89–z93 (alle reproduziert) und `z95_analyse11_komposition.py` (11 von 11).
+- **F1 (z89, 17/17).**
+  - Der Infinity Twistor ist bis auf die Modulphase nativ, und die Einstein-Klammer kommt exakt heraus.
+  - Native Kompositionen erzeugen sie nicht. Der radiale Kanal gibt nur AdS, und G bleibt frei.
+- **F2 (z90, 17/17).** Ein räumlicher Schnitt fixiert G nicht; beim erzwungenen ξ = 1/6 ist das induzierte 1/G = 0.
+- **F3 (z91, 24/24).**
+  - Die Identifikation hängt nur noch an P_koh.
+  - Der freie 4D-Fockraum folgt aus bosonischer Komposition (P_ident).
+  - Keine native Fusion gibt eine Wechselwirkung.
+- **F4 (z92, 14/14).**
+  - Die „3“ ist nur algebraisch, das schwache Triplett.
+  - Es gibt keine native Verklebung; die Statistik steckt im Q²/2.
+- **F5 (z93, 11/11).** Der Ladungssektor liefert keinen Kugelkern. P1 ist eine Wahl, und D(V, η) gehört nach innen.
+- **Analyse 11 (z95).** Ihre Rechnungen sind bestätigt. Das Sechs-Saaten-Beispiel hält nur qualitativ: exakt ab N = 9.
+- **Szenario-Suche.** 1344 Szenarien, davon 6 übrig. Für die Gravitation bleibt nur die P₀-graduierte Komposition zweier
+  Nähte, bedingt.
+
+F6 (z94) rechnet noch.
+
+**Prüfstand:** 13 P, 7 L (K12, K13 präzisiert). Atlas-Revision ff48351d51c00b3dce399bea. Ledger unverändert, nichts befördert.

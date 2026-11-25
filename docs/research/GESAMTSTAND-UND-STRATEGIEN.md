@@ -1,7 +1,6 @@
-# TFPT: Gesamtstand und Strategien zur Gesamtlösung (Stand H6h44, 25. November 2026)
+# TFPT: Gesamtstand und Strategien zur Gesamtlösung (Stand H6h45, 25. November 2026)
 
-Neu: Abschnitt 10 hält die Ergebnisse der ersten parallelen Runde fest (S1–S7 und Analyse 9), Abschnitt 11 die
-entscheidenden nächsten Rechnungen.
+Neu: Abschnitt 12 hält die Folgerunde fest (F1–F5, Analysen 10 und 11). F6 rechnet noch.
 
 Dieses Dokument fasst den ganzen Stand zusammen: gelöste Bausteine, Ursprung, Rekonstruktion und offene Tore. Daraus
 entwickelt es neue Strategien. Maßgeblich bleiben Ledger und Originalquellen. Nichts hier ist befördert; Explorationsbefunde
@@ -405,3 +404,45 @@ Offen ist allein die Gravitation, mit genau zwei Wegen.
 6. **Starrheit.**
    - Den Gaußzustand aus P_clock für beliebig viele Fermipaare beweisen.
    - Prüfen, ob P_clock aus P_sym folgt (Tausch A ↔ B, τ → −1/τ).
+
+## 12. Folgerunde (H6h45)
+
+| Folgeschritt | Rechnung | Ergebnis | Status |
+|---|---|---|---|
+| F1 Gravitation über den Infinity Twistor | z89 (17/17) | I_π bis auf die Modulphase nativ, Einstein-Klammer exakt; native Kompositionen erzeugen sie nicht; radialer Kanal nur AdS; G frei | C / E negativ |
+| F2 Räumlicher Schnitt | z90 (17/17) | native Gewichte regulieren nicht; Flächenkoeffizient lokalisierungsabhängig; induziertes 1/G = 0 bei ξ = 1/6 | E negativ |
+| F3 Identifikation und Komposition | z91 (24/24) | eine Prämisse P_koh; freier 4D-Fockraum aus bosonischer Komposition (P_ident); keine native Fusion gibt Wechselwirkung | C / E negativ |
+| F4 Materiespin und die „3“ | z92 (14/14) | „3“ nur algebraisch (schwaches Triplett); keine native Verklebung; Statistik im Q²/2 der radialen Energie | E negativ |
+| F5 Kugel D(V, η) | z93 (11/11) | kein Kugelkern aus dem Ladungssektor; P1 ist eine Wahl; D(V, η) innen | E negativ |
+| F6 Starrheit, P_clock aus P_sym | z94 | rechnet noch | offen |
+| Analyse 11 | z95 (11/11) | Rechnungen bestätigt; kollektive Nichtgaußizität identischer Saaten exakt ab N = 9 | E |
+
+### Was die Folgerunde bedeutet
+
+- **Kinematik ist abgeschlossen, Dynamik fehlt.**
+  - Die freie 4D-Theorie steht, unter P_koh und P_ident: radiale Leiter, Vielteilchenraum aus bosonischer Komposition,
+    parabolische Zeit, Infinity Twistor bis auf die Phase.
+  - Jede Wechselwirkung braucht etwas, das keine native gerade oder lineare Struktur liefert: Vertexoperatoren,
+    nichtabelsche Ströme oder eine Komposition mit fester Kopplung.
+- **Gravitation ist auf einen Weg eingegrenzt.**
+  - Die Einstein-Klammer ist da, sobald I und eine Kopplung g gegeben sind.
+  - Nativ fehlen die Phase von I und g. Der radiale Kanal gibt AdS mit dem Radius der Vakuumgröße.
+  - Weder ein räumlicher Schnitt noch die Verschränkung Original|Partner gibt G.
+- **Materie bleibt innen.**
+  - Die „3“ kommt aus dem gelösten Träger.
+  - Die Statistik steckt im Q²/2 des Ladungsgitters.
+  - Eine Verklebung mit dem 4D-Spin braucht eine neue Regel vom GSO-Typ.
+
+### Nächste Schritte (aus den Rechnungen)
+
+1. **Phase von I und Kopplung g:**
+   - Fixiert die native OS-Spiegelung Θ₁ = τ (z84) die Modulphase von I?
+   - Ist der P₀-graduierte kubische Vertex dann reflexionspositiv, und fixiert die Positivität g?
+2. **P_koh herleiten:** Hat die natürliche unitäre Dilatation des Schritts L^nat im gemeinsamen CAR genau das
+   zweidimensionale Hardy-Halbregister als Umgebung?
+3. **Wechselwirkung über Vertexoperatoren:**
+   - die Ladungs-Vertexfusion zweier Nähte über die gemeinsame Oszillatorhülle;
+   - verschiebt sie Δ des zusammengesetzten 4D-Felds von 1 weg?
+4. **GSO-artige Regel:** (−1)^{2h} = R² auf Ladung ⊗ Paarzuständen. Schließt sie unter su(2,2) und den Vertexoperatoren,
+   und folgt sie aus J bei β = 4π oder aus dem ℤ₄-Kleber von E₈?
+5. **F6 abwarten:** allgemeine Starrheit und P_clock aus P_sym.

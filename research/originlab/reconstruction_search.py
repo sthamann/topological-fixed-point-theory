@@ -827,7 +827,8 @@ SCENARIO_AXES = {
     "time": ["modular flow", "parabolic Wiesbrock", "OS reconstruction", "radial conformal"],
     "modes": ["species", "energy levels"],
     "gravity": ["composite spin 2", "Virasoro T(z)", "twistor deformation: native sources",
-                "twistor deformation: radial channel", "entanglement: original|partner cut", "entanglement: spatial cut"],
+                "twistor deformation: radial channel", "entanglement: original|partner cut", "entanglement: spatial cut",
+                "P0-graded two-seam composition"],
     "origin": ["seed rho_1 + spin-Z4", "two binary observations"],
 }
 
@@ -886,6 +887,16 @@ EVIDENCE = [
     ("marks", "celestial sphere", "excluded", "z84_ergebnis.json", "no factor-swapping map normalises <R> (Satz B) and R has no "
      "fixed point on U(2): no mark-invariant Minkowski chart, T' holds only pointwise",
      lambda d: _check_named(d, "Satz B: eine faktortauschende") and _check_named(d, "auf D(V, eta) ist R = (g_V, g_eta)")),
+    ("gravity", "twistor deformation: radial channel", "excluded", "z89_ergebnis.json", "the E-invariant (radial) bivector in "
+     "the Lorentz pencil gives only AdS with curvature radius equal to the vacuum size; no flat Einstein bracket, no G (scoped)",
+     lambda d: _check_named(d, "Lorentzbüschel") and _check_named(d, "Skala des radialen Kanals")),
+    ("gravity", "entanglement: spatial cut", "excluded", "z90_ergebnis.json", "native weights do not regulate the UV, the area "
+     "coefficient depends on the localisation, and at the forced xi = 1/6 the induced 1/G vanishes (scoped)",
+     lambda d: _check_named(d, "beim nativen xi = 1/6")),
+    ("gravity", "P0-graded two-seam composition", "conditional", "z89_ergebnis.json", "the infinity twistor I_pi is native up "
+     "to its modular phase and reproduces the Plebanski-Penrose bracket exactly; P_0 is gapless (critical sequence); missing: "
+     "a native composition rule with fixed coefficient g and a fixed phase of I",
+     lambda d: _check_named(d, "Kritische Folge (GRAV.PARENT.GAP.NO_GO.01)") and _check_named(d, "Universalität bei gegebenem I")),
     ("origin", "two binary observations", "conditional", "z80_ergebnis.json", "sign symmetry of the law forces Cl_2 = M_2, "
      "tau = i, p = 1/2 if implemented in the same irreducible representation",
      lambda d: _check_named(d, "irreduzible Darstellungen von <A, B")),

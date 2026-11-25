@@ -1340,6 +1340,20 @@ if "H6h2" in H and z1p.exists() and z2p.exists():
                                                                                                                                                                                      "OS gibt für das thermische Original den Modulfluss, positive Zeit "
                                                                                                                                                                                      "nur im Vakuumsektor; T' nur punktweise, R ohne Fixpunkt (Z84)")
                                                                                                                                                                 facts["F62_euclidean_os"] = T29["urteil"]
+                                                                                                                                                                zs45 = {n: Path(__file__).with_name(f"z{n}_ergebnis.json") for n in (89, 90, 91, 92, 93, 95)}
+                                                                                                                                                                if all(p_.exists() for p_ in zs45.values()):
+                                                                                                                                                                    T30 = {n: json.loads(p_.read_text()) for n, p_ in zs45.items()}
+                                                                                                                                                                    ok30 = all(all(T30[n]["checks"].values()) for n in T30)
+                                                                                                                                                                    H["H6h45"] = dict(H["H6h44"])
+                                                                                                                                                                    H["H6h45"]["K12"] = (LES if ok30 else F,
+                                                                                                                                                                                         H["H6h44"]["K12"][1] + "; Identifikation nur noch unter P_koh, freier "
+                                                                                                                                                                                         "4D-Fockraum aus bosonischer Komposition (P_ident), keine native "
+                                                                                                                                                                                         "Fusion gibt Wechselwirkung (Z91)")
+                                                                                                                                                                    H["H6h45"]["K13"] = (LES if ok30 else F,
+                                                                                                                                                                                         H["H6h44"]["K13"][1] + "; Infinity Twistor bis auf die Phase nativ, "
+                                                                                                                                                                                         "Einstein-Klammer exakt, radialer Kanal nur AdS, G frei (Z89); kein G "
+                                                                                                                                                                                         "aus räumlichem Schnitt, induziertes 1/G = 0 (Z90)")
+                                                                                                                                                                    facts["F63_followups"] = {n: T30[n]["urteil"] for n in T30}
 
 order = [f"K{i}" for i in range(1, 21)]
 print("Gesamttabelle (P = hergeleitet, L = unter benannter Lesart, F = FAIL, O = OFFEN, E = EINGABE)\n")
