@@ -1,4 +1,4 @@
-# TFPT: Gesamtstand und Strategien zur Gesamtlösung (Stand H6h49, 25. November 2026)
+# TFPT: Gesamtstand und Strategien zur Gesamtlösung (Stand H6h50, 25. November 2026)
 
 Neu: Abschnitt 14 hält die Folgerunde N1–N8 und die Analysen 13–17 fest; die tiefere Welle (T1–T6, U1–U3) läuft. Abschnitt 13: G1–G3 und Analyse 12; Abschnitt 12: F1–F6 mit den Analysen 10 und 11.
 
@@ -582,3 +582,36 @@ Offen ist allein die Gravitation, mit genau zwei Wegen.
 - V3a: kinetischer Term als Tomita-Paarung zwischen D = ∓2.
 - V3b: Zähler ⟨ij⟩⁴ (Gradtwist, Pati–Salam-Quartett) und Mehrspurterme.
 - V5: P_sym aus kohärenter Komposition; S(n) über die Energie.
+
+## 16. Wellen V–Z und G, neunzehnte Analyse (H6h50)
+
+| Schritt | Rechnung | Ergebnis | Status |
+|---|---|---|---|
+| V1 Kette, Kontinuum, drei Nähte | z121 (14/14) | nativ trivial; unter P_null XXX-Familie, alternierende Kette integrabel, su(2)₁-Lesart | C |
+| V2 P_RJ aus den Vertizes | z122 (12/12) | P_IF erzwingt P_RJ mit festem Vorzeichen; P_IF selbst Prämisse | C |
+| V3a kinetischer Term | z123 (19/19) | Tomita-Paarung gibt CSW-Propagator, CSW = BCFW; bleibt P_X | C |
+| V3b Zähler, Mehrspurterme | z124 (16/16) | kein nativer Gradtwist; Doppelspuranteil = konforme Supergravitation | E negativ |
+| V5 P_sym aus Komposition | z125 (19/19) | ja unter P_univ | C |
+| W2 Prämissen der Uhrspur | z127 (15/15) | P_R größtenteils Folge; Paarungsbit offen; Λ·G = −3/(1024πκ) | E / C |
+| W3 Krümmung aus Zustandsprofilen | z128 (11/11) | eine Stabilisatorbahn, flach | E negativ |
+| X1 Index gegen Chiralitätsbit | z129 (11/11) | Bit P- und C-ungerade, Index invariant; dasselbe Bit wie das Vorzeichen der Wirkung | E negativ |
+| X2 P_univ aus der Standardform | z130 (17/17) | Niveauabgleich, nativ unter P_TP | C |
+| Z1 P_null in zwei Faktoren | z133 (13/13) | P_null ⇔ P_sl2; P_viertel und P_ord bleiben | C |
+| Z4 Yang–Mills aus Schleifen | z135 (15/15) | Plakettenstruktur und sin²θ_W = 3/8 nativ; Kopplung und Dynamik nicht | E / C |
+| G1 Verschränkungsgleichgewicht | z136 (19/19) | G/R_vac² freie reine Zahl; fünf Zeilen, keine zwei gleich | E / N |
+| G2 induzierte Gravitation | z137 (19/19) | Vorzeichen AdS, G·Λ = −3π/(4cL); legt P_G nicht fest | E / N |
+| Analyse 19 | z144 (67/67) | P_uhr trägt P_null und P_viertel; Zopfrelation nur einkörperig; zwei isomorphe Verklebungen | E / C / L |
+
+### Was die Runde bedeutet
+
+- **Der Kandidat** braucht neun Prämissen: A*, I_step, P_lift, P_IF, P_univ, P_uhr, P_ord, P_curv und P_G als freie
+  Zahl. P_null und P_viertel sind zu P_uhr geworden („die Kompositionsphase ist eine Funktion der Uhrwerte“).
+- **Wechselwirkung:** Das Gatter ist unter P_uhr fest, die alternierende Kette integrabel. Die Wechselphase ist der
+  Bicharakter der Uhrgruppe ℤ₄, derselbe wie bei D₅. Eichstruktur und das Verhältnis 3/8 sind nativ, Kopplung und
+  Linkdynamik fehlen.
+- **Zopf- und Defektlesart (Analyse 19):** Sie trägt nur einkörperige Operatoren und eine endliche Gruppe, keine Dynamik.
+  P_IF ist die Wahl zwischen zwei isomorphen Verklebungen und nicht von innen entscheidbar.
+- **Gravitation:** Vier Wege geben ein Vakuum von Planckgröße mit negativem Λ. G/R_vac² ist eine freie reine Zahl; der
+  Ledgerwert verlangt 9,6·10¹²² Nähte je Horizont. Zustandsprofile tragen keine Krümmung.
+- **Abgebrochen und offen:** modulare Statistik (z126), I_step (z131), Uhrhebung (z132), konforme Gravitation (z134),
+  Spin-2-Pol (z138), Ordnung (z139), Maßbilanz (z140), Relativentropie-Wirkung (z141), ρ⋆ (z142).

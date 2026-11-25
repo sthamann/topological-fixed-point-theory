@@ -109,7 +109,8 @@ class ReconstructionSearch(unittest.TestCase):
         self.assertEqual(ev["interaction: transfer exchange (twirl)"]["status"], "excluded")
         self.assertEqual(ev["interaction: local coherent transfer gate"]["status"], "conditional")
         self.assertEqual(ev["gravity: MacDowell-Mansouri: modular Cartan connection"]["status"], "conditional")
-        self.assertEqual(ev["gravity: MacDowell-Mansouri: modular Cartan connection"]["source"], "z118_ergebnis.json")
+        self.assertEqual(ev["gravity: MacDowell-Mansouri: modular Cartan connection"]["source"], "z136_ergebnis.json")
+        self.assertEqual(ev["interaction: local coherent transfer gate"]["source"], "z144_ergebnis.json")
         self.assertEqual(ev["statistics: Z4 glue on the spinor module (P_glue)"]["status"], "conditional")
         self.assertEqual(ev["gravity: moved algebra at fixed state"]["status"], "excluded")
         self.assertEqual({k: v["status"] for k, v in info["clause_evidence"].items()},
@@ -119,12 +120,17 @@ class ReconstructionSearch(unittest.TestCase):
         u = self.universe("scenarios")
         pc = u["premise_closure"]
         # free parameters weigh first (K14): the chosen two-body term loses to the coherent gate, which trades P_sym for
-        # P_univ (z125) and needs P_null, P_viertel, P_ord (z121); chirality costs one bit P_IF on both routes (z117, z122)
-        self.assertEqual((pc["survivors"], pc["least_free_parameters"], pc["least_premises"]), (108, 1, 10))
+        # P_univ (z125) and needs P_ord (z121) and P_uhr, which replaces P_null and P_viertel (z144); chirality costs one
+        # bit P_IF on both routes (z117, z122)
+        self.assertEqual((pc["survivors"], pc["least_free_parameters"], pc["least_premises"]), (108, 1, 9))
         self.assertEqual(pc["minimal_premise_sets"],
-                         [("A*", "I_step", "P_G", "P_IF", "P_curv", "P_lift", "P_null", "P_ord", "P_univ", "P_viertel")])
+                         [("A*", "I_step", "P_G", "P_IF", "P_curv", "P_lift", "P_ord", "P_uhr", "P_univ")])
         self.assertEqual(pc["clauses_no_survivor_has"], ["graviton", "modular_statistics"])
-        self.assertEqual({i["replaces"]: i["holds"] for i in u["derived"]["implications"]}, {"P_RJ": True, "P_sym": True})
+        self.assertEqual({i["replaces"]: i["holds"] for i in u["derived"]["implications"]},
+                         {"P_RJ": True, "P_sym": True, "P_null": True, "P_viertel": True, "P_R": True, "P_pair": True})
+        mm = [o for o in scenario_candidates()[0]
+              if o["scenario"]["gravity"] == "MacDowell-Mansouri: modular Cartan connection"]
+        self.assertTrue(all({"P_mod", "P_idx", "P_IF"} <= o["premises"] and not {"P_R", "P_pair"} & o["premises"] for o in mm))
         for p in pc["premise_frequency"]:
             self.assertIn(p, PREMISE_MEANING)                       # every premise is named, none dropped silently
         sc, _ = scenario_candidates()

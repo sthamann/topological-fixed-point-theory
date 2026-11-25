@@ -1,0 +1,505 @@
+{
+ "checks": {
+  "[E] Native Leiter (z83): der Kern det(I - Z^+ W)^-1 mit Z = x_0 + i x.sigma ist (1 - 2 x.y + x^2 y^2)^-1 (Rest 0), also der Zweipunktkern einer skalaren Primären mit Delta = 1. Gram der Zustände P^a|phi> aus seinen Taylorkoeffizienten: Ränge der Stufen 0..3 = [1, 4, 9, 16] = (k + 1)^2 (z83: Summe m^2 q^m), P^2|phi> ist Nullvektor. Die Norm <P^2 phi|P^2 phi> = 32*Delta*(Delta - 1) verschwindet für Delta > 0 nur bei Delta = 1: die nativen Vielfachheiten legen Delta = 1 fest. Negativkontrolle Delta = 3/2: Ränge [1, 4, 10, 20] (keine Nullvektoren, lange Darstellung)": true,
+  "[E] Zwei native Leitern, Stufe 2 (E = 4): Gram-Rang 34 von 36 (zwei Nullvektoren P_i^2), Kern von K_ges (orthogonal zu P_ges mal Stufe 1) Dimension 11, modulo Null 9 = eine symmetrisch-spurfreie Spin-2-Primäre (Rang der neun T_mn: 9). Die Primärbedingung legt die Bilineare fest: T_mn ~ x1_m x1_n + x2_m x2_n - 2 (x1_m x2_n + x1_n x2_m) - Spur, also P_1 P_1 - 4 P_1 P_2 + P_2 P_2 (Gegenbauer s = 2), d. h. T ~ (2/3) d phi d phi - (1/3) phi dd phi - Spur: der verbesserte Spannungstensor. Symmetrisch im Leitertausch (True), Verhältnis der Normen n_00/n_01 = 3/2 = Pi_00,00/Pi_01,01 (Spin-2-Projektor)": true,
+  "[E] Erhaltung: die vier Zustände P_ges^m T_mn (Stufe 3) haben Norm ['0', '0', '0', '0']: die native Bilineare ist erhalten und hat E = Delta = 4 = s + 2 (Flato-Fronsdal, z75/z99). Negativkontrolle über die Leiterdimension: für Delta_phi = 5/4, 3/2, 2, 3 existiert die Spin-2-Primäre ebenfalls (r = ['2', '9/5', '5/3', '3/2', '4/3']), liegt aber bei E = 2 Delta_phi + 2 = ['4', '9/2', '5', '6', '8'] und ist nicht erhalten: |div T|^2/|T_01|^2 = {'1': 0, '5/4': 9/2, '3/2': 9, '2': 18, '3': 36} = 9 (Delta_T - 4) (True, alle vier Komponenten gleich: True). Eine nicht erhaltene Spin-2-Bilineare hat nie Delta = 4. Zweite Kontrolle bei Delta_phi = 1: die unverbesserte Bilineare d phi d phi und der Nachkomme dd(phi^2) liegen auch bei E = 4, werden von K aber nicht annulliert (True, True)": true,
+  "[E] C_T aus der nativen Normierung: der Überlapp von T_01 mit dem Zweiteilchen-Kohärenzzustand ist 8 (y1 - y2)_0 (y1 - y2)_1 (hängt nur von y_12 ab, wie die Dreipunktstruktur verlangt), die Norm 48 (N = 1). Die Ward-Identität (T erzeugt die Dilatation mit Delta = 1; Winkelintegral 3*pi**2/2) normiert T unabhängig von der Feldnormierung: C_T = 2 a_W^2 n/o^2 = 1/(3*pi**4) = d/((d - 1) S_d^2) = 1/(3*pi**4), c = pi^4 C_T/40 = 1/120. Je reeller nativer Leiter also genau der Wert des freien reellen Skalars": true,
+  "[E] Gegenprobe im Ortsraum (Wick, sympy exakt an zwei Punkten, vier Komponenten): mit dem verbesserten Spannungstensor (xi = 1/6) ist <T_mn(x) T_rs(0)> x^8/I_mn,rs = ['16*N**2/3'] für alle acht Auswertungen, also eine einzige Konstante C_T = (16/3) N^2; die Dilatationsladung Q = -Int_(S^3) n x T auf phi(0) ist unabhängig vom Radius und gleich 4 pi^2 N Delta ([1.0, 1.0, 1.0] in Einheiten 4 pi^2 N bei r = 0,5, 1, 2): Delta = 1 verlangt N = 1/(4 pi^2), damit C_T = 1/(3*pi**4) wie im Zustandsbild. Negativkontrolle xi = 0: die Verhältnisse ['428/79', '32', '32', '-10112/209'] N^2 sind keine gemeinsame Konstante, und die Ladung ist [0.0, 0.0, 0.0] statt 1 (der unverbesserte Tensor erzeugt nur den Bahnanteil x.d, nicht Delta)": true,
+  "[E] Freie Felder in derselben Konvention (Wick im Ortsraum, sympy exakt; Clifford-Relationen True): C_T in Einheiten des reellen Skalars 1/(3 pi^4): {Skalar: 1, Weyl: 3, Dirac: 6, Maxwell: 12}, jeweils eine Konstante über die geprüften Komponenten; also c = 1/120, 1/40, 1/10. Die native Leiter trägt 1 Einheit (reeller Skalar), ein Weyl-Fermion 3, ein Eichboson 12": true,
+  "[E] a aus den Spektren auf S^4 (Hurwitz-Zeta, exakt): zeta(0) = -1/90 (konformer Skalar), 11/90 (D^2 des Dirac-Fermions), -31/45 (Maxwell: transversal 19/30, longitudinal ohne Nullmode, zwei Geister); mit Int <T> = -4 a: a = 1/360 (reeller Skalar), 11/720 (Weyl), 31/180 (Vektor). Numerische Gegenprobe über die Wärmespur (Konstante der Entwicklung bei kleinem t, alle vier Spektren): max. Abweichung 3.9e-8. Lokale Gegenprobe für den Skalar: b_4 = (1/180)(Riem^2 - Ric^2) = c W^2 - a E_4 gibt a = 1/360, c = 1/120 (dasselbe c wie aus C_T in Teil 1, dasselbe a wie aus zeta(0); auf S^4 -1/90). Negativkontrolle: der minimal gekoppelte Skalar hat 29/90, kein konformes a": true,
+  "[E] Anomaliekoeffizienten je Lesart (Summen der freien Werte): (i) (a, c) = (1/360, 1/120), (ii) (11/15, 6/5), (iii) (14/5, 12/5); c - a wechselt zwischen (ii) und (iii) das Vorzeichen (7/15, -2/5). Welche Lesart nativ ist, entscheidet die Rechnung nicht: (i) ist der eigene Einteilcheninhalt einer Naht in der Lesart von z83 [C], (ii) und (iii) sind die gelösten Blöcke als 4D-Felder gelesen [L]": true,
+  "[E/L] Universell ist allein der Logarithmus: Gamma_ind = -(L/(16 pi^2)) Int (c W^2 - a E_4), L = ln(Abschneide-/IR-Skala), also d alpha_W/d ln mu = c/(16 pi^2) für S = alpha_W Int W^2. Der Einstein-Hilbert-Term hängt am Regler: im Wärmekern (Res_(s=1) derselben S^4-Spektren, Einheiten des minimalen Skalars) zählen konformer Skalar, Weyl, Vektor 0, 1, -4: Lesart (i) gibt 0, (ii) 48, (iii) 0 (48 Weyl gegen 12 Vektoren heben sich in diesem Regler auf; nur eine Regleraussage). Auf dem H6-Gitter (z27, nur gelesen) läuft der Skalar-Koeffizient sigma je Kopplungsregel von -2.976 bis 0.642 (Vorzeichenwechsel), R_gesamt von -4.64 bis 2.29, a/l_P von 7.1 bis 56.3": true,
+  "[E] Punktweise auf Einstein-Räumen (sympy, Schwarzschild-(A)dS mit f = 1 - 2m/r - Lambda r^2/3: Ric = Lambda g, Rest 0): W^2 = 48*m**2/r**6 und E_4 - W^2 = 8*Lambda**2/3 = 8 Lambda^2/3. Also Int W^2 = 32 pi^2 chi - (8 Lambda^2/3) Vol und S_EH = -(Lambda/(8 pi G)) Vol = (3/(64 pi G Lambda)) (Int W^2 - 32 pi^2 chi): auf Einstein-Lösungen ist die Einstein-Wirkung die Weyl-Wirkung mit alpha_W = 3/(64 pi G Lambda) plus Euler-Term (Maldacena; Anderson). Für AdS (Lambda = -3/l^2) alpha_W = -l^2/(64 pi G), für dS +l^2/(64 pi G)": true,
+  "[E] Auswertungen: renormiertes Volumen von H^4 (Konstante der Entwicklung in e^rho; nur die Potenzen e^(+-3 rho), e^(+-rho), 1, kein Logarithmus: True) = 4*pi**2/3, damit Int W^2 = 32 pi^2 - 24 Vol_ren = 0 (AdS4 ist konform flach) und S_ren = pi*l**2/(2*G); S^4: Int W^2 = 0, S = -pi*l**2/G = -S_dS. Mit W != 0: die direkt regularisierte Wirkung des AdS-Schwarzschild-Lochs (Hintergrundabzug, Limes) ist pi*r_p**2*(l - r_p)*(l + r_p)/(G*(l**2 + 3*r_p**2)) (Hawking-Page), und I = (pi l^2/(2G)) chi - k (l^2/G) Int W^2 mit chi = 2 und Int W^2 = 64*pi**2*(l**2 + r_p**2)**2/(l**2*(l**2 + 3*r_p**2)) verlangt genau k = [1/(64*pi)] = 1/(64 pi), für jedes r_+. Die reine Zahl ist also l^2/G = 64 pi |alpha_W|": true,
+  "[C] Reine Zahlen unter P_ind (nackter Weyl-Koeffizient null an der Nahtskala) und P_Neumann (Einschränkung auf Einstein-Lösungen): alpha_W = -L*c/(16*pi**2), also G Lambda = -3*pi/(4*L*c) und l^2/G = 4*L*c/pi; mit l = R_Vak/2 und Lambda = -12/R_Vak^2 (konsistent: True) G = pi*R_Vak**2/(16*L*c). Je e-Faltung: (i) l^2/G = 1/30 L/pi = 0.01061 L, (ii) 24/5 L/pi = 1.5279 L, (iii) 48/5 L/pi = 3.0558 L; G Lambda = -282.74/L, -1.9635/L, -0.9817/L. L ist nicht nativ: eine Zahl entsteht erst mit einer Abschneideskala": true,
+  "[E] Brücke zu z118: mit dessen Zahlen (c_1 = 64, c_0 = 16, c_2 = 384) ist die MacDowell-Mansouri-Dichte auf Einstein-Räumen genau c_0 W^2 (Rest 0): die Uhrspur ist dort die Weyl-Wirkung mit alpha_W = 16 kappa je Index, also l^2/G = 1024 pi kappa je Index (z98: b = l^2/(64 pi G)). Das gesetzte Gewicht 2 c_3 heißt kappa = vl**2/(1024*pi) und l^2/G = vl**2 = (v_geo l)^2: keine reine Zahl, solange v_geo l nicht bestimmt ist; das Ledgerziel 32 pi^3 e^(2/alpha) wäre kappa = 10^118.52. Induziert wäre kappa = c L/(256 pi^2): 3.30e-06 L, 4.75e-04 L, 9.50e-04 L; ganzzahliges kappa = 1 verlangt c L = 256 pi^2 = 2526.6": true,
+  "[E] Uhrspurgewicht auf N Nähten: im Tensorprodukt der Fockräume (gemeinsame CAR, z106) ist der Einteilchenoperator die direkte Summe der A_q; ihr Index ist N = 1..6: [1, 2, 3, 4, 5, 6], unverändert unter nahtmischenden Unitären und kompakter Kopplung an den Marken: [1, 2, 3, 4, 5, 6] (echte Nullmoden: Gewicht am Abschneiderand < 1e-8: True). Mit dem inneren Faktor von z118 ist die Uhrspur 64 N: additiv. Kontrollen: q = 2 gibt nur eine Scheinnullmode am Abschneiderand (Gewicht 0.750); das graduierte Produkt zweier Nähte (Dirac-Operator des Produktraums) hat Index 1 = 1 x 1 (Nullmode = zm x zm, Überlapp 1.000000): multiplikativ, zählt nicht. Additivität ist die Lesart 'direkte Summe unterscheidbarer Nähte' (P_ord)": true,
+  "[E] Entropie: je Quarter Summe über die Niveaus pi k (k ungerade, beta = 4 pi) = ln 2/4, je Naht ln 2/2 (Abweichung < 1e-30; z68), im Produktzustand von N Nähten N ln 2/2. Die Kette von z121 (N Backsteinschritte, N = 2..10, unitär auf den Originalen) lässt den Produktzustand gleicher Nähte exakt invariant (|F rho F^+ - rho| < 1e-12: True; die Gatter sind a + b P, der Zustand ist tauschsymmetrisch): Gesamt- und alle Blockentropien bleiben additiv, S(N/2)/((N/2) s_1) = [1.0, 1.0, 1.0, 1.0, 1.0]. Kontrolle mit gestaffelten Nähten (p = 1/(1 + e^-pi), 1/(1 + e^-3pi), ein Backsteinschritt): die Gesamtentropie bleibt die Summe ([1.0, 1.0, 1.0, 1.0, 1.0]), die einer einzelnen Naht nicht ([0.005, 0.327, 0.327, 0.327, 0.327] s): additiv ist dann nur die Summe": true,
+  "[E] C_T auf N Nähten: für N unterscheidbare Leitern (P_ord) enthält der Zweiteilchenraum N (N + 1)/2 = [1, 3, 6, 10, 21] erhaltene Spin-2-Ströme T_ij (N = 1, 2, 3, 4, 6); der Spannungstensor ist das Singulett T_ges = Summe T_ii mit C_T(N)/C_T(1) = [1.0, 2.0, 3.0, 4.0, 6.0]: additiv, c = N c_1 (für entkoppelte Arten nach Konstruktion). T_ges ist unter dem Artentausch invariant (True), T_11 - T_22 nicht (Änderung 2); das Gatter a + b P von z121 ändert C_T also nicht. Unter P_ident (N Quanten derselben Leiter) bleibt C_T = C_T(1): c gehört zum Netz, nicht zur Besetzung. Die einheitliche Uhr vertauscht mit der Kette (True), eine Uhr auf einer einzelnen Naht nicht (Kommutator 0.707)": true,
+  "[E/N] Die Kette selbst zählt nicht mit: ihr Vakuum (Floquet-Eigenzustand bei u = 1, stetig aus dem Heisenberg-Grundzustand verfolgt: True; Werte wie z121 auf 1e-4: True) hat zwischen den Nähten die Verschränkung S(N/2) = [1.2272, 1.3835, 1.4204, 1.5024] (N = 6, 8, 10, 12), also (c/3) ln N mit c_2D = 1.136 (Heisenberg 0.975): logarithmisch, nicht proportional zu N. Die 2D-Zentralladung der Kette ist eine Zahl der Ordnung 1 für die ganze Kette und nicht der 4D-Koeffizient c; additiv in N ist nur der Leiterinhalt": true,
+  "[E/C] Vergleichsziel (Ledger 'Numerical', kein hergeleiteter Eingang): rho_Lambda/Mbar^4 = 48 c_3^2 e^(-2/alpha), 48 c_3^2 = 3/(4*pi**2), gleichwertig l^2/G = 32*pi**3*exp(2*ainv) = 32 pi^3 e^(2/alpha) = 10^122.025 (z98: 122.025), S_dS = 32 pi^4 e^(2/alpha) = 10^122.522. Mit l^2/G = (4 c_1/pi) L N verlangt es N L = 8 pi^4 e^(2/alpha)/c_1: 10^124.00 (Leiter), 10^123.52 (Weyl), 10^121.84 (3 x 16), 10^121.54 (mit Eichbosonen). Eine Gleichung für das Produkt N L: jede Nahtzahl passt bei geeignetem L, eine Vorhersage ist das nicht. Die nötige Entropie je Naht ist S_dS/N = 4 c_1 L (zielunabhängig); ln 2/2 je Naht (z68) hieße L = 10.3972 = 15 ln 2 (Leiter) bzw. 0.0722 (3 x 16), ohne native Herkunft. Reine Flächenzählung mit ln 2/2 je Naht: N = 10^122.98": true,
+  "[E] Kann e^(2/alpha) oder 48 c_3^2 aus einer nativen Zählung kommen? (1) e^(2/alpha) = 10^119.028 ist als additive Zahl N keine Zählung mit Mechanismus; als Dimension wäre es 2^M mit M = 395.40231, bzw. 790.80463 Nähte zu ln 2/2 oder 110.29469 E8-Nähte zu ln 12: keine ganze Zahl (Abstände [0.402, 0.195, 0.295]), und eine Dimension ist multiplikativ, die drei nativen Größen sind additiv. (2) c_3^2 = 1/(64 pi^2) ist exakt der Einschleifenfaktor des quartischen Vakuumterms je reellem Freiheitsgrad (1/(64*pi**2)); 48 c_3^2 wäre der Betrag für 48 reelle bosonische Freiheitsgrade, 48 Weyl-Fermionen haben 96 mit negativem Vorzeichen: Faktor 2 (dieselbe Dirac-/Majorana-Weyl-Zweideutigkeit wie in z118) und Vorzeichen fehlen, und der quartische Term ist der am wenigsten universelle. (3) Liest man 48 als Zahl N_W der Weyl-Fermionen, so fällt l^2/G in der Ledgerform wie N_W^-1, induziert wächst es wie N_W^1: entgegengesetzte Abhängigkeit vom Inhalt": true
+ },
+ "befunde": {
+  "E/C: Der native Spannungstensor existiert als erhaltene Delta = 4-Bilineare zweier Leitern mit C_T = 1/(3 pi^4) je reeller Leiter (c = 1/120), fest durch die Ward-Identität und die nativen Vielfachheiten (Delta = 1). Er ist ein zusammengesetzter Strom (z75: kein Graviton, Helizität +-2 nur als Komposita); die 4D-Lesart der Leiter als lokales Feld ist die Prämisse von z83/z90 (P_netz)": true,
+  "E/L: Der induzierte Einstein-Hilbert-Koeffizient ist nicht festgelegt (Regler und Metrikkopplung, z27; im Wärmekern für (i) und (iii) sogar null). Fest ist nur c vor dem Weyl^2-Logarithmus": true,
+  "E/C: Das Vorzeichen ist nicht frei. Mit c > 0 (Unitarität) und L > 0 ist der induzierte Weyl-Koeffizient negativ und sign(G Lambda) = sign(alpha_W) = -1: induzierte Gravitation aus unitärer Materie gibt bei G > 0 genau AdS. Das passt zum nativen Vorzeichen (z98, z104, z118) und widerspricht der Beobachtung (Lambda > 0); dS bräuchte einen positiven nackten Weyl-Koeffizienten (nicht induziert) oder c < 0": true,
+  "E/C: Unter P_ord (unterscheidbare, geordnete Nähte als direkte Summe) sind alle drei nativen Größen additiv: Uhrspur 64 N, Entropie N ln 2/2, C_T = N C_T(1); die Kette von z121 ändert keine davon. Unter P_ident oder im graduierten Produkt zählt nichts (C_T = C_T(1), Index 1). Dann ist l^2/G = (4 c_1/pi) L N: proportional zur Nahtzahl": true,
+  "E/O: Unter der Zählung bleibt als Prämisse genau das Produkt N L (N nicht nativ festgelegt, L nicht nativ: es gibt keine native Abschneide-zu-Vakuum-Skala). Der beobachtete Betrag G Lambda = 10^-121.55 verlangt c_ges L = 8 pi^4 e^(2/alpha) = 10^121.92; mit nativem Inhalt der Ordnung 1 und L der Ordnung 1 bis 300 ist l^2/G von der Ordnung 0,01 bis 10^3, also G von der Ordnung R_Vak^2: um rund 120 Größenordnungen verfehlt. Das Vorzeichen ist nativ AdS (Lambda < 0), beobachtet ist Lambda > 0: Konflikt, den die Zählung nicht behebt. Weder e^(2/alpha) noch 48 c_3^2 kommen aus einer nativen Zählung": true
+ },
+ "zahlen": {
+  "leiter": {
+   "det(I - Z^+ W) - (1 - 2 x.y + x^2 y^2)": "0",
+   "Ränge der Stufen 0..3 (Delta = 1)": [
+    1,
+    4,
+    9,
+    16
+   ],
+   "Ränge (Delta = 3/2)": [
+    1,
+    4,
+    10,
+    20
+   ],
+   "<P^2 phi|P^2 phi>(Delta)": "32*Delta*(Delta - 1)"
+  },
+  "spin2": {
+   "Rang Stufe 2 (von 36)": 34,
+   "dim Kern von K": 11,
+   "Primäre modulo Null": 9,
+   "r in x1x1 + x2x2 - r (x1x2 + x2x1)": "2",
+   "Rang der T_mn": 9,
+   "n_00/n_01": "3/2",
+   "Norm der Divergenz": [
+    "0",
+    "0",
+    "0",
+    "0"
+   ]
+  },
+  "erhaltung": {
+   "|div T|^2/|T_01|^2 je Delta": {
+    "1": "0",
+    "5/4": "9/2",
+    "3/2": "9",
+    "2": "18",
+    "3": "36"
+   },
+   "E der Spin-2-Primären je Delta": {
+    "1": "4",
+    "5/4": "9/2",
+    "3/2": "5",
+    "2": "6",
+    "3": "8"
+   },
+   "r je Delta": {
+    "1": "2",
+    "5/4": "9/5",
+    "3/2": "5/3",
+    "2": "3/2",
+    "3": "4/3"
+   }
+  },
+  "C_T_zustand": {
+   "Überlapp o_0 (Koeffizient von y12_0 y12_1)": "8",
+   "Norm n_0": "48",
+   "Ward-Koeffizient d Delta/((d-1) S_d)": "2/(3*pi**2)",
+   "C_T": "1/(3*pi**4)",
+   "c = pi^4 C_T/40": "1/120"
+  },
+  "C_T_ortsraum": {
+   "<TT> x^8/I, xi = 1/6 (2 Punkte x 4 Komponenten)": [
+    "16*N**2/3"
+   ],
+   "xi = 0": [
+    "428*N**2/79",
+    "32*N**2",
+    "32*N**2",
+    "-10112*N**2/209"
+   ],
+   "C_T bei N = 1/(4 pi^2)": "1/(3*pi**4)",
+   "Ladung Q/(4 pi^2 N), xi = 1/6, r = 0,5/1/2": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "|Ladung|, xi = 0": [
+    0.0,
+    0.0,
+    0.0
+   ]
+  },
+  "C_T_frei": {
+   "C_T in Einheiten 1/(3 pi^4)": {
+    "reeller Skalar": "1",
+    "Weyl-Fermion": "3",
+    "Dirac-Fermion": "6",
+    "Maxwell-Feld": "12"
+   },
+   "c = pi^4 C_T/40": {
+    "reeller Skalar": "1/120",
+    "Weyl-Fermion": "1/40",
+    "Dirac-Fermion": "1/20",
+    "Maxwell-Feld": "1/10"
+   },
+   "native Leiter": "1 (reeller Skalar)"
+  },
+  "anomalie_a": {
+   "zeta(0) [Wärmekernkoeffizient mit Nullmoden]": {
+    "konformer Skalar": "-1/90",
+    "minimaler Skalar": "29/90",
+    "Dirac D^2": "11/90",
+    "transversaler Vektor": "19/30"
+   },
+   "Res_(s=1)": {
+    "konformer Skalar": "0",
+    "minimaler Skalar": "1/3",
+    "Dirac D^2": "-2/3",
+    "transversaler Vektor": "-1"
+   },
+   "Maxwell lokal": "-31/45",
+   "a": {
+    "skalar": "1/360",
+    "weyl": "11/720",
+    "vektor": "31/180"
+   },
+   "numerisch (Wärmespur, Richardson) max. Abweichung": "3.9e-8",
+   "b_4 = (1/180)(Riem^2 - Ric^2) = c W^2 - a E_4": {
+    "a": "1/360",
+    "c": "1/120"
+   }
+  },
+  "lesarten": {
+   "(i) eine native Leiter (reeller Skalar, z83)": {
+    "a": "1/360",
+    "c": "1/120",
+    "c - a": "1/180",
+    "Einstein-Hilbert-Zählung (Wärmekern)": 0
+   },
+   "(i') Quarterpaar als C-Paar (komplexer Skalar)": {
+    "a": "1/180",
+    "c": "1/60",
+    "c - a": "1/90",
+    "Einstein-Hilbert-Zählung (Wärmekern)": 0
+   },
+   "(ii) 3 x 16 Weyl-Fermionen": {
+    "a": "11/15",
+    "c": "6/5",
+    "c - a": "7/15",
+    "Einstein-Hilbert-Zählung (Wärmekern)": 48
+   },
+   "(iii) (ii) + 12 Eichbosonen (SU(3) x SU(2) x U(1), wie z27)": {
+    "a": "14/5",
+    "c": "12/5",
+    "c - a": "-2/5",
+    "Einstein-Hilbert-Zählung (Wärmekern)": 0
+   },
+   "(iii-H) (iii) + Higgs-Dublett (4 reelle Skalare)": {
+    "a": "253/90",
+    "c": "73/30",
+    "c - a": "-17/45",
+    "Einstein-Hilbert-Zählung (Wärmekern)": 4
+   },
+   "(iii-45) (ii) + 45 Eichbosonen (Spin(10))": {
+    "a": "509/60",
+    "c": "57/10",
+    "c - a": "-167/60",
+    "Einstein-Hilbert-Zählung (Wärmekern)": -132
+   },
+   "(iii-248) (ii) + 248 Eichbosonen (E8)": {
+    "a": "391/9",
+    "c": "26",
+    "c - a": "-157/9",
+    "Einstein-Hilbert-Zählung (Wärmekern)": -944
+   }
+  },
+  "einstein_hilbert": {
+   "Wärmekern-Einheiten (minimaler Skalar = 1)": {
+    "konformer Skalar": "0",
+    "minimaler Skalar": "1",
+    "Weyl": "1",
+    "Vektor": "-4"
+   },
+   "z27 sigma = a^2/(4 G_ind), Skalar je Kopplungsregel": {
+    "D_kov": -2.976101,
+    "D_no": 0.149263,
+    "K": 0.017086,
+    "P_kov": 0.642159,
+    "P_no": 0.017086
+   },
+   "z27 R_gesamt über alle Regeln": [
+    -4.6419,
+    2.2878
+   ],
+   "z27 a/l_P bei R = 1": [
+    7.136,
+    56.252
+   ]
+  },
+  "einstein_identitaet": {
+   "Ric - Lambda g": "0",
+   "W^2": "48*m**2/r**6",
+   "E_4 - W^2": "8*Lambda**2/3"
+  },
+  "maldacena": {
+   "Vol_ren(H^4), l = 1": "4*pi**2/3",
+   "Int W^2 (AdS4)": "0",
+   "S_ren(AdS4)": "pi*l**2/(2*G)",
+   "Int W^2 (S^4)": "0",
+   "S(S^4)": "-pi*l**2/G",
+   "I_Hawking-Page": "pi*r_p**2*(l - r_p)*(l + r_p)/(G*(l**2 + 3*r_p**2))",
+   "Int W^2 (AdS-Schwarzschild)": "64*pi**2*(l**2 + r_p**2)**2/(l**2*(l**2 + 3*r_p**2))",
+   "k aus Hawking-Page": [
+    "1/(64*pi)"
+   ],
+   "alpha_W": "3/(64 pi G Lambda)",
+   "l^2/G": "64 pi |alpha_W|"
+  },
+  "reine_zahlen": {
+   "alpha_W induziert": "-L*c/(16*pi**2)",
+   "G Lambda": "-3*pi/(4*L*c)",
+   "l^2/G": "4*L*c/pi",
+   "G nativ (l = R_Vak/2)": "pi*R_Vak**2/(16*L*c)",
+   "je Lesart": {
+    "(i) eine native Leiter (reeller Skalar, z83)": {
+     "l^2/G je e-Faltung (L = 1)": 0.01061,
+     "l^2/G bei L = 2 pi": 0.066667,
+     "G Lambda mal L": -282.743339,
+     "G/R_Vak^2 mal L": 23.561945,
+     "l^2/G exakt": "1/30 L/pi",
+     "G Lambda exakt": "-90 pi/L"
+    },
+    "(i') Quarterpaar als C-Paar (komplexer Skalar)": {
+     "l^2/G je e-Faltung (L = 1)": 0.021221,
+     "l^2/G bei L = 2 pi": 0.133333,
+     "G Lambda mal L": -141.371669,
+     "G/R_Vak^2 mal L": 11.780972,
+     "l^2/G exakt": "1/15 L/pi",
+     "G Lambda exakt": "-45 pi/L"
+    },
+    "(ii) 3 x 16 Weyl-Fermionen": {
+     "l^2/G je e-Faltung (L = 1)": 1.527887,
+     "l^2/G bei L = 2 pi": 9.6,
+     "G Lambda mal L": -1.963495,
+     "G/R_Vak^2 mal L": 0.163625,
+     "l^2/G exakt": "24/5 L/pi",
+     "G Lambda exakt": "-5/8 pi/L"
+    },
+    "(iii) (ii) + 12 Eichbosonen (SU(3) x SU(2) x U(1), wie z27)": {
+     "l^2/G je e-Faltung (L = 1)": 3.055775,
+     "l^2/G bei L = 2 pi": 19.2,
+     "G Lambda mal L": -0.981748,
+     "G/R_Vak^2 mal L": 0.081812,
+     "l^2/G exakt": "48/5 L/pi",
+     "G Lambda exakt": "-5/16 pi/L"
+    },
+    "(iii-H) (iii) + Higgs-Dublett (4 reelle Skalare)": {
+     "l^2/G je e-Faltung (L = 1)": 3.098216,
+     "l^2/G bei L = 2 pi": 19.466667,
+     "G Lambda mal L": -0.968299,
+     "G/R_Vak^2 mal L": 0.080692,
+     "l^2/G exakt": "146/15 L/pi",
+     "G Lambda exakt": "-45/146 pi/L"
+    },
+    "(iii-45) (ii) + 45 Eichbosonen (Spin(10))": {
+     "l^2/G je e-Faltung (L = 1)": 7.257465,
+     "l^2/G bei L = 2 pi": 45.6,
+     "G Lambda mal L": -0.413367,
+     "G/R_Vak^2 mal L": 0.034447,
+     "l^2/G exakt": "114/5 L/pi",
+     "G Lambda exakt": "-5/38 pi/L"
+    },
+    "(iii-248) (ii) + 248 Eichbosonen (E8)": {
+     "l^2/G je e-Faltung (L = 1)": 33.104228,
+     "l^2/G bei L = 2 pi": 208.0,
+     "G Lambda mal L": -0.090623,
+     "G/R_Vak^2 mal L": 0.007552,
+     "l^2/G exakt": "104 L/pi",
+     "G Lambda exakt": "-3/104 pi/L"
+    }
+   }
+  },
+  "z118": {
+   "c_0, c_1, c_2": [
+    16,
+    64,
+    384
+   ],
+   "MM-Dichte - c_0 W^2 auf Einstein-Räumen": "0",
+   "l^2/G je Index": "1024 pi kappa",
+   "kappa mit Gewicht 2 c_3": "vl**2/(1024*pi)",
+   "l^2/G mit 2 c_3": "vl**2",
+   "log10 kappa für das Ledgerziel": 118.51710629640768,
+   "kappa induziert je e-Faltung": {
+    "(i) eine native Leiter (reeller Skalar, z83)": 3.3e-06,
+    "(ii) 3 x 16 Weyl-Fermionen": 0.00047494,
+    "(iii) (ii) + 12 Eichbosonen (SU(3) x SU(2) x U(1), wie z27)": 0.00094989
+   }
+  },
+  "uhrspur_N": {
+   "Index direkte Summe (frei, gekoppelt)": {
+    "1": [
+     1,
+     1
+    ],
+    "2": [
+     2,
+     2
+    ],
+    "3": [
+     3,
+     3
+    ],
+    "4": [
+     4,
+     4
+    ],
+    "5": [
+     5,
+     5
+    ],
+    "6": [
+     6,
+     6
+    ]
+   },
+   "Gewicht der Nullmoden am Abschneiderand < 1e-8": true,
+   "Kontrolle q = 2: (Kern, Kokern, Randgewicht)": [
+    1,
+    0,
+    0.750046
+   ],
+   "Index des graduierten Produkts zweier Nähte": 1,
+   "Überlapp seiner Nullmode mit zm x zm": 1.0,
+   "Uhrspur": "64 N (direkte Summe) gegen 64 (graduiertes Produkt)"
+  },
+  "entropie_N": {
+   "je Quarter": "0.17328679513998632735",
+   "je Naht": "0.34657359027997265471",
+   "ln 2/2": "0.34657359027997265471",
+   "Kette (N Schritte), gleiche Nähte: S_ges/Summe, S(N/2)/Summe": {
+    "2": [
+     1.0,
+     1.0
+    ],
+    "4": [
+     1.0,
+     1.0
+    ],
+    "6": [
+     1.0,
+     1.0
+    ],
+    "8": [
+     1.0,
+     1.0
+    ],
+    "10": [
+     1.0,
+     1.0
+    ]
+   },
+   "Kontrolle gestaffelt: S_ges/Summe, S(Naht 0)/s, S(N/2)/Summe": {
+    "2": [
+     1.0,
+     0.00488,
+     0.00488
+    ],
+    "4": [
+     1.0,
+     0.32739,
+     1.14393
+    ],
+    "6": [
+     1.0,
+     0.32739,
+     0.78385
+    ],
+    "8": [
+     1.0,
+     0.32739,
+     1.09147
+    ],
+    "10": [
+     1.0,
+     0.32739,
+     0.86263
+    ]
+   }
+  },
+  "C_T_N": {
+   "C_T(N)/C_T(1), unterscheidbare Leitern": {
+    "1": 1.0,
+    "2": 2.0,
+    "3": 3.0,
+    "4": 4.0,
+    "6": 6.0
+   },
+   "Zahl der erhaltenen Spin-2-Ströme im Zweiteilchenraum": {
+    "1": 1,
+    "2": 3,
+    "3": 6,
+    "4": 10,
+    "6": 21
+   },
+   "Artentausch: Änderung von T_ges, T_11 - T_22": [
+    0.0,
+    2.0
+   ],
+   "[F, Uhr^(xN)] < 1e-12, [F, Uhr auf einer Naht]": [
+    true,
+    0.707107
+   ],
+   "Kette S(N/2): Vakuum": {
+    "6": 1.2272,
+    "8": 1.38353,
+    "10": 1.42036,
+    "12": 1.50237
+   },
+   "Kette S(N/2): Heisenberg": {
+    "6": 0.95901,
+    "8": 1.05117,
+    "10": 1.1241,
+    "12": 1.18422
+   },
+   "c_2D aus (c/3) ln N: Vakuum, Heisenberg": [
+    1.1359,
+    0.9747
+   ],
+   "Abweichung von z121 (S Vakuum) < 1e-4": true
+  },
+  "vergleichsziel": {
+   "log10 e^(2/alpha)": 119.02795652933932,
+   "log10 l^2/G (Ziel)": 122.02455612574163,
+   "z98": 122.02455612574163,
+   "log10 S_dS (Ziel)": 122.52170599843576,
+   "48 c_3^2": "3/(4*pi**2)",
+   "l^2/G aus rho_Lambda": "32*pi**3*exp(2*ainv)",
+   "log10 N L je Einheit": {
+    "native Leiter": 123.9988,
+    "ein Weyl-Fermion": 123.5217,
+    "eine 16": 122.3176,
+    "3 x 16": 121.8405,
+    "3 x 16 + 12 Eichbosonen": 121.5394
+   },
+   "nötige Entropie je Naht S_dS/N": {
+    "native Leiter": "1/30 L",
+    "ein Weyl-Fermion": "1/10 L",
+    "eine 16": "8/5 L",
+    "3 x 16": "24/5 L",
+    "3 x 16 + 12 Eichbosonen": "48/5 L"
+   },
+   "L, damit S_dS/N = ln 2/2": {
+    "native Leiter": 10.397208,
+    "ein Weyl-Fermion": 3.465736,
+    "eine 16": 0.216608,
+    "3 x 16": 0.072203,
+    "3 x 16 + 12 Eichbosonen": 0.036101
+   },
+   "log10 N bei ln 2/2 je Naht (Flächenzählung)": 122.9819105330546,
+   "e^(2/alpha) als Dimension": {
+    "2/(alpha ln 2)": "395.402313",
+    "(2/alpha)/(ln 2/2)": "790.804626",
+    "(2/alpha)/ln 12": "110.294686"
+   },
+   "Coleman-Weinberg-Koeffizient je reellem Freiheitsgrad": "1/(64*pi**2)",
+   "c_3^2": "1/(64*pi**2)",
+   "Exponent d ln(l^2/G)/d ln N_W: Ledgerform, induziert": [
+    "-1",
+    "1"
+   ]
+  }
+ },
+ "urteil": "Induzierte Gravitation ersetzt P_G bedingt durch eine Zählung, beseitigt die Prämisse aber nicht; nichts ist befördert, eine vollständige Theorie wird nicht behauptet. (1) Der native Spannungstensor existiert: Aus dem nativen Kern det(I - Z^+ W)^-1 folgt Delta = 1, die Spin-2-Primäre zweier Leitern ist P_1P_1 - 4 P_1P_2 + P_2P_2, erhalten und bei Delta = 4; die Ward-Identität gibt C_T = 1/(3 pi^4), c = 1/120 je reeller Leiter, im Ortsraum gegengerechnet (Skalar : Weyl : Maxwell = 1 : 3 : 12). Nicht erhaltene Bilineare liegen nie bei Delta = 4 (|div T|^2 = 9 (Delta_T - 4) |T|^2). (2) Induzierte Wirkung: (a, c) = (1/360, 1/120) für eine Leiter, (11/15, 6/5) für 3 x 16 Weyl, (14/5, 12/5) mit zwölf Eichbosonen. Universell ist nur Gamma = -(L/(16 pi^2)) Int (c W^2 - a E_4); der Einstein-Hilbert-Koeffizient ist reglerabhängig (z27: Vorzeichenwechsel je Metrikkopplung; Wärmekern: null für die Leiter und für 48 Weyl + 12 Vektoren) und wird nicht als fest ausgegeben. (3) Auf Einstein-Lösungen ist die Einstein-Wirkung die Weyl-Wirkung mit alpha_W = 3/(64 pi G Lambda) plus Euler (geprüft an AdS4, S^4 und Hawking-Page), dieselbe Zahl wie z98s b und z118s Uhrspur (16 W^2 je Index). Rein induziert folgt l^2/G = (4 c/pi) L und G Lambda = -3 pi/(4 c L): je e-Faltung 0,0106 (Leiter), 1,528 (3 x 16), 3,056 (mit Eichbosonen); G Lambda = -282,7/L, -1,963/L, -0,982/L. Das Vorzeichen ist zwingend AdS, in Übereinstimmung mit dem nativen Vorzeichen (z104, z118) und im Widerspruch zur Beobachtung. (4) Unter P_ord sind Uhrspur (64 N), Entropie (N ln 2/2) und C_T (N C_T(1)) additiv, und die Kette von z121 ändert keine der drei; ihre eigene 2D-Zentralladung (c nahe 1) zählt nicht mit. Dann ist l^2/G = (4 c_1/pi) L N: die Kopplung in Einheiten des Vakuumradius zählt Nähte. Unter P_ident oder im graduierten Produkt zählt nichts. Das Vergleichsziel l^2/G = 32 pi^3 e^(2/alpha) (Ledger 'Numerical') verlangt N L c_1 = 8 pi^4 e^(2/alpha), rund 10^122 bis 10^124 für N L; die nötige Entropie je Naht wäre 4 c_1 L, und ln 2/2 passt nur mit einem nicht nativen L = 15 ln 2. Weder e^(2/alpha) noch 48 c_3^2 kommen aus einer Zählung: e^(2/alpha) ist keine ganze Dimension und wäre multiplikativ, 48 c_3^2 trifft den quartischen Einschleifenfaktor nur bis auf Faktor 2 und Vorzeichen, und l^2/G hängt in der Ledgerform umgekehrt vom Inhalt ab wie in der induzierten Form. Einordnung für P_G: (a) bedingt, mit Rest (c), nicht (b). Der universelle Teil macht aus der Kopplung das Produkt Inhalt mal Logarithmus, c_ges L mit c_ges = N c_1 unter P_ord; der eigentliche Einstein-Hilbert-Koeffizient bleibt frei. Aus dem einen freien Parameter werden zwei nicht native Größen (N und L), fest wird keine Zahl. Prämissen der Route: P_netz (die Leitern bzw. die gelösten Blöcke als lokales 3+1-Netz mit T_mn), P_ord (unterscheidbare Nähte als direkte Summe), P_ind (kein nackter Weyl- und Einstein-Term an der Nahtskala), P_cut (Abschneideskala, L), P_dyn (die Metrik ist dynamisch und nicht nur Quelle) und P_Neumann (Maldacenas Randbedingung auf einem (A)dS-Hintergrund); Hypothese T (z124) ersetzt P_ind durch eine feste konforme Kopplung, deren Zahl hier nicht berechnet ist. Graviton: Der universelle Teil liefert nur die metrische Antwort <T T> ~ c p^4 ln p^2 ohne masselosen Pol; zwei Helizitäten entstehen erst unter P_dyn und P_Neumann um (A)dS, nicht nativ. Mit nativem Inhalt der Ordnung 1 ist G von der Ordnung R_Vak^2, rund 120 Größenordnungen neben dem Vergleichsziel und mit dem falschen Vorzeichen von Lambda.",
+ "bilanz": [
+  "[E] nativer Spannungstensor: erhaltene Delta = 4-Bilineare P_1P_1 - 4 P_1P_2 + P_2P_2 zweier Leitern, C_T = 1/(3 pi^4), c = 1/120 je reeller Leiter (Ward-Identität; Delta = 1 aus den nativen Vielfachheiten); Komposit, kein Graviton",
+  "[E] freie Vergleichswerte in derselben Konvention: C_T Skalar : Weyl : Maxwell = 1 : 3 : 12; a = 1/360, 11/720, 31/180",
+  "[E/L] Lesarten: (i) (1/360, 1/120), (ii) (11/15, 6/5), (iii) (14/5, 12/5); welche nativ ist, bleibt Lesart",
+  "[E/L] universell nur der Weyl^2-Logarithmus mit c; Einstein-Hilbert nicht fest (z27; Wärmekern: (i) 0, (ii) 48, (iii) 0)",
+  "[E] Maldacena: alpha_W = 3/(64 pi G Lambda), l^2/G = 64 pi |alpha_W| (AdS4, S^4, Hawking-Page); z118s Uhrspur = 16 W^2 je Index auf Einstein-Räumen",
+  "[C] induziert: l^2/G = (4 c/pi) L, G Lambda = -3 pi/(4 c L); Vorzeichen zwingend AdS; L nicht nativ",
+  "[E/C] N Nähte: Uhrspur 64 N, Entropie N ln 2/2, C_T = N C_T(1) unter P_ord; Kette ändert nichts; unter P_ident oder im graduierten Produkt keine Zählung",
+  "[E/O] Vergleichsziel 32 pi^3 e^(2/alpha): verlangt N L c_1 = 8 pi^4 e^(2/alpha); e^(2/alpha) und 48 c_3^2 nicht aus einer Zählung; entgegengesetzte Abhängigkeit vom Inhalt; Vorzeichen falsch"
+ ]
+}

@@ -239,6 +239,14 @@ clauses no survivor reaches.
   10 premises: A*, I_step, P_lift, P_IF, P_curv, P_G and, for the coherent transfer gate, P_univ (in place of P_sym),
   P_null, P_viertel and P_ord. The chosen two-body term needs fewer premises but a second free coupling. No survivor
   reaches graviton or modular statistics. One new test.
+- **Update (z127-z137, z144):** four more implications. P_uhr (the composition phase is a function of the seam clock
+  values) replaces P_null and P_viertel for the coherent gate: such a phase has no oscillator part and phi in (pi/2)Z,
+  and of these k = 0 is trivial, k = 2 the one-body exchange and k = +-1 the interacting gate; from transfer spin 2 on
+  the same phases are exactly the ones that keep the pair sector leak-free (z144). For the MacDowell-Mansouri route P_R
+  becomes the reading choices P_mod, P_idx (z127) and the pairing bit P_pair is the chirality bit P_IF (z129). The best
+  survivors now have one free parameter and 9 premises: A*, I_step, P_lift, P_IF, P_curv, P_G, P_univ, P_uhr, P_ord.
+  P_G stays a free pure number G/R_vac^2: clock trace, entanglement equilibrium, induced gravity and double copy give
+  rows that do not agree (z127, z136, z137). Still no survivor reaches graviton or modular statistics. Test updated.
 
 ```bash
 .venv/bin/python -B research/originlab/process_rules.py > /tmp/process-rules.json

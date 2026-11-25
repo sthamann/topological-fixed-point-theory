@@ -1,7 +1,7 @@
 # TFPT: Was funktioniert, was fehlt, was eine vollständige Lösung wäre
 
 Kompakter Stand vom 20. November 2026, ergänzt am 23. und 24. November (Befunde 20.–24. November, Kandidat H6 bis
-H6h49, Leitlinie „Rekonstruktion statt Auswahl“ und Abschnitt 5), für Explorations- und Lösungssitzungen. Seit 24. November
+H6h50, Leitlinie „Rekonstruktion statt Auswahl“ und Abschnitt 5), für Explorations- und Lösungssitzungen. Seit 24. November
 liegen die Explorationszweige vom 20. November in main (Quaternionrahmen, Fibonacci-Uhr, Vertauschung und Auslese, fremde
 und operative Ursprünge, Projekt Genesis, die Vertragsserie vom 14./15. Oktober); ihre Befunde stehen in ihren Verzeichnissen
 unter `experiments/`. Nicht zusammengeführt ist `codex/c3-p1-p2-abgleich-20261105` (121 Konflikte mit dem heutigen Stand). Neuere Befunde stehen in den Atlasproblemen mit Datum
@@ -42,7 +42,7 @@ Offen sind der Tensorkanal und die Rekonstruktion von 3+1 aus 4D-Antworten. Z60 
 ist die Spektraldimension (Weyl-Gesetz) einer Antwort. Die Quelle hat d = 1, die E₈-Naht kompakt und starr d = 8 = 4 + 4.
 Gebraucht wird eine originale Antwort mit d = 4, nichtkompakt und reflexionspositiv.
 
-**Gesamtstand und Strategien (Stand H6h49):** [`GESAMTSTAND-UND-STRATEGIEN.md`](GESAMTSTAND-UND-STRATEGIEN.md), mit
+**Gesamtstand und Strategien (Stand H6h50):** [`GESAMTSTAND-UND-STRATEGIEN.md`](GESAMTSTAND-UND-STRATEGIEN.md), mit
 Tor-Karte T1–T8, Kriterien K12–K20 und sieben Strategien (S1–S7).
 
 **Gesamtbild (Vogelperspektive, Stand H6h35):** [`VOGELPERSPEKTIVE.md`](VOGELPERSPEKTIVE.md).
@@ -171,9 +171,9 @@ Ursprung sollte beides zugleich liefern.
 
 ### Kandidat H6: Ursprung von P1 aus einer hintergrundfreien Naht (Exploration 23.11.)
 
-Quelle: `experiments/exploration/2026-11-23-phasenraum-f5-holocode/VERDICT.md` (Stand H6h49),
-Skripte `n1`, `v1`, `y1`, `z1`–`z120`, Lean-Vertrag `experiments/theory-contracts/h6-exakte-teile-20261123/`; Atlasproblem `problem:c3-p1-p2-shared-origin-reconciliation`,
-Befunde mit Präfix `h6`. Nichts davon ist im Ledger befördert. Prüfstand mit 20 Kriterien (Stand H6h49): 13
+Quelle: `experiments/exploration/2026-11-23-phasenraum-f5-holocode/VERDICT.md` (Stand H6h50),
+Skripte `n1`, `v1`, `y1`, `z1`–`z144`, Lean-Vertrag `experiments/theory-contracts/h6-exakte-teile-20261123/`; Atlasproblem `problem:c3-p1-p2-shared-origin-reconciliation`,
+Befunde mit Präfix `h6`. Nichts davon ist im Ledger befördert. Prüfstand mit 20 Kriterien (Stand H6h50): 13
 hergeleitet, 7 unter benannter Lesart, keines gescheitert, offen oder gesetzt. K12 (3+1) zählt seit der Leitlinie
 „Rekonstruktion statt Auswahl“ nur als Lesart: d = 4 folgt kinematisch, nicht aus den Antworten (Z60).
 
@@ -576,6 +576,24 @@ hergeleitet, 7 unter benannter Lesart, keines gescheitert, offen oder gesetzt. K
     - Gravitation: Die Uhrspur gibt MacDowell–Mansouri; die Gewichtswahl ist P_vol. G braucht das Gewicht 2c₃ von Hand.
       Bewegte Algebra bei festem Zustand bleibt flach. [E/C, E negativ]
     - Szenario-Suche (46 080 Szenarien): 108 erfüllen alles außer Graviton und modular konsistenter Statistik. [E]
+  - Wellen V–Z und G, neunzehnte Analyse (Z121–Z125, Z127–Z130, Z133, Z135–Z137, Z144, H6h50):
+    - Wechselwirkung: Nativ ist das Gatter trivial. Unter P_null ist es die XXX-Familie; die alternierende Kette ist
+      integrabel (su(2)₁-Lesart). P_null ist gleichwertig mit P_sl2. Die eine Prämisse P_uhr („die Kompositionsphase ist
+      eine Funktion der Uhrwerte“) trägt P_null und P_viertel; die Wechselphase ist der Bicharakter i^(Q_A·Q_B) der
+      Uhrgruppe, derselbe wie bei D₅. Ab Transferspin 2 ist nur φ ∈ (π/2)ℤ leckfrei. [E/C]
+    - Zopfrelation: Sie gilt nur für einkörperige Operatoren (Nahtuhr und Strahlteiler = Ising-Zopfmatrizen). Das
+      wechselwirkende Gatter verletzt sie mit Defekt √(3/8). Die Defektstruktur ist endlich (Clifford-Typ). [E]
+    - Eichdynamik: Plakettenstruktur und sin²θ_W = 3/8 sind nativ, die absolute Kopplung und die Linkdynamik nicht.
+      Reines Yang–Mills ist auf dem Twistorweg nicht erreichbar. [E/C, E negativ]
+    - Chiralität: P_IF erzwingt P_RJ. Der Indexweg zum Bit ist geschlossen; P_IF ist P- und C-ungerade und die Wahl
+      zwischen zwei isomorphen Verklebungen D₅ + A₃ → E₈. [E/C, L]
+    - Ursprung: P_sym folgt aus kohärenter Komposition unter P_univ; P_univ ist als Niveauabgleich nativ, wenn die
+      zweite Naht der Tomita-Partner ist (P_TP). [E/C]
+    - Gravitation: Vier Wege (Uhrspur, Verschränkungsgleichgewicht, induzierte Gravitation, Doppelkopie) geben ein
+      Vakuum von Planckgröße mit negativem Λ. G/R_vac² bleibt eine freie reine Zahl; keine zwei Wege stimmen überein.
+      Zustandsprofile tragen keine Krümmung. [E/N, E negativ]
+    - Szenario-Suche: Der beste Kandidat braucht neun Prämissen (A*, I_step, P_lift, P_IF, P_univ, P_uhr, P_ord,
+      P_curv, P_G) und einen freien Parameter. Graviton und modulare Statistik erreicht weiter keiner. [E]
   - Instantonen (Z33): Unter Spin(10) hat ein Einheitsinstanton 4 Eltern- und 12
     Familiennullmoden; mit gesättigten Familiennullmoden entsteht Re[e^{iθ}Φ² C_fam], die Wand ist
     also auch im Kontinuum möglich, bei nackter SO(10) aber ~10⁻¹⁶⁴ unterdrückt. [N]

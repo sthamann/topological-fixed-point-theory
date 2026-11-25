@@ -1,0 +1,710 @@
+{
+ "checks": {
+  "[E] Zustandsscheibe: Die SO(3)-invarianten reinen Gaußzustände sind die Ebenen P_z = [1, z 1] (Vernichter d_i + z e_i^+), |z| < 1 (Invarianz 3e-16; nicht skalare Kontrollebene bewegt sich um 0.022). Die radiale sl(2,R) wirkt mit skalaren Blöcken (Abweichung 0e+00) als Möbiusgruppe der Scheibe (Formelfehler 3e-16): E dreht um den Ursprung (z -> e^(it) z, 1e-16), die Kappe Q^- verschiebt den Ursprung nach -i tanh(t/2) (Bild -0.336375544j) mit den Randfixpunkten [-1j, (-0+1j)], D nach -tanh(t/2) mit [(-1+0j), (1+0j)], P_0 ist parabolisch mit dem doppelten Fixpunkt (1.000000021+0j). Die Fixpunkte von Q^- und D sind zusammen genau z^4 = 1, die Marken bzw. Spitzen der tau-Eigenkappen (z104). Das Vakuum Omega sitzt im Ursprung, die Algebra M im Punkt z = 0.25 = q auf der D-Achse. Relative Lage: Lambda = lambda 1 mit lambda = (z_A - z_P)/(1 - conj(z_A) z_P) (20 Zufallspaare, 3e-16), der Schmidtwert ist der pseudohyperbolische Abstand |lambda| (3e-16); ein nicht SO(3)-invariantes Paar spaltet die Schmidtwerte auf (0.472)": true,
+  "[E/C] Native Profile: (K1a) Das Kappenfeld hat |xi_Q|^2 = (r - t - 1)*(r - t + 1)*(r + t - 1)*(r + t + 1)/4; im Vakuum (KMS bei beta = 2 pi bezüglich K_cap, z104) ist die lokale Temperatur auf dem Schnitt t = 0 T(r) = 1/(2 pi |xi_Q|) = 1/(pi*Abs(r**2 - 1)) (sympy, T(0) = 1/pi): ein natives radiales Profil, bedingt auf das freie Netz; als lokales q braucht es eine gewählte Nahtfrequenz. (K1b) Die mit der Wiesbrock-Zeit P_0 = E + Q^- verschobenen Algebren N_a sehen den festen Nahtzustand mit q(a)^2 = (q^2 + x^2 (1 - q)^2)/(1 + x^2 (1 - q)^2), x = a/2 (Fehler 3e-16 bei q = 0,25 und nativem q), q(a) -> 1 (bei a = 10^4: 0.999999966): ein natives Profil ohne freien Parameter, das zum parabolischen Fixpunkt z = 1 hin maximal verschränkt (lokale Temperatur divergiert, Tolman-artig); J bleibt dabei auf dem AdS-Uhrkreis (beta skalar 0e+00, |iota - 4| 4e-14). (K2) Das Fockvakuum der Markenalgebra M_(pi/2) (Viertelmarke, z83) ist U(e^(pi E/2)) |0_a 0_b> und hat die Vernichter d + i q e^+ (Fock 8e-10; Kontrolle d - i q e^+: 0.512), also den Scheibenpunkt i q (3e-17; exakter Gaußvektor exp(-a^+ Gamma b^+) |0> bis auf die Phase gleich, 8e-10 im tiefen Block); die uhrgedrehten Algebren M_phi sehen es mit q(phi) = q |e^(i phi) - i|/|1 - i q^2 e^(-i phi)| (Fehler 7e-17; Werte [0.35286, 0.24147, 0.09784, 0.00027, 0.23242, 0.47059]), mit einem Verschränkungshorizont an der eigenen Marke phi = pi/2. Der kappenverschobene Zustand U(e^(s Q^-)) Omega sitzt bei -i tanh(s/2) (1e-16); s ist frei": true,
+  "[E] q-Blindheit (K1): tau(M_q, Omega_q) = S4 für jedes q (11 Werte, auch nativ: 1e-15); eine Familie lokaler Gleichgewichte x -> (U(g_x) M_q(x) U^*, U(g_x) Omega_q(x)) mit beliebigem Profil q(x) hat genau die Bahnfamilie R_x^-1 S4 R_x (5e-14): die native AdS-Bahn, nach z100 Maurer-Cartan-flach. Das Profil sitzt allein in Delta: Der Fock-Modulgenerator K_a = -log rho_a erfüllt [K_a, a_i] = -sum L_ij a_j mit L = omega 1 (L = [2.772589, 2.772589], omega = 2 log(1/q) = 2.772589, Fitrest 3e-16, a^+-Anteil 0e+00): ein Skalar je Ort, zentral auf T, ohne Verbindung. Kontrolle: Eine Kippung des Zustands längs der Kappe (statt einer q-Änderung) bewegt J (0.106); eine Kippung längs eines Boosts nicht (2e-16), weil Lorentz mit tau_0 vertauscht": true,
+  "[E] Struktur von Conj_Omega: k_big n so(3,2) = so(3) + <E> (Dimension 4), k_big n so(4,1) = so(3) + <Q^-_1, Q^-_2, Q^-_3> = so(4) (Dimension 6); E, Q^-_k und die Drehungen sind blockdiagonal (Nebenblock 1e-16), Q^+_k, die Kappe Q^-_0 und die Boosts sind Quetscher (Nebenblock >= 0.387). Die Tangente der Vakuumfamilie bei tau_0 ist dtau(E) = -[E, tau_0], dtau(Q^+_k) = c [Q^-_k, tau_0] mit c = coth(2r) = 2.1250 (Rest 4e-12; cos der Hauptwinkel gegen span{[E, tau_0], [Q^-_k, tau_0]} [1.0, 1.0, 1.0, 1.0], gegen die AdS-Bahn [1.0, 0.0, 0.0, 0.0]): Die AdS-Translationen der Algebra werden auf die dS-Raumtranslationen der kompakten Dualen abgebildet. Conj_Omega = (S^1_E x S^3_(Q^-))/Z_2 ist der kompaktifizierte Einsteinzylinder mit Zeit aus AdS und Raum aus dS. Reduzierte Cartan-Verbindung A = P_g(dW W^-1) mit Rahmen in K_big: im AdS-Modell |F| = 0.9787 = P[B, B] (Rest 2e-07), ganz im Lorentzteil (die S^3-Berry-Krümmung von z115, |R| = 0.9787), Torsion 8e-09, Lötform vom Rang 1 (nur E); im dS-Modell |F| = 3e-07, Lötform vom Rang 3 (nur Q^-_k). In keinem der beiden Modelle ist die Familie eine vierdimensionale Cartan-Geometrie; im eigenen Modell ist sie Maurer-Cartan-flach (3e-07)": true,
+  "[E] Gaußsches Lagelemma: Für psi = U(h) Omega gilt tau(M_g, psi) = R_h^-1 tau(M_(h^-1 g), Omega) R_h (Kappenzustand und Zufallstranslat, 2e-15): Die Familie ist die Vakuumfamilie über der verschobenen Nebenklasse h^-1 G, konjugiert. In der zustandsangepassten Basis [P; P^perp] hat jedes Glied die Form [[0, beta], [beta^+, 0]], beta in U(2) (4e-15); der Rang ist überall 4 ({'Markenvakuum (z = i q)': [4, 4, 4, 4], 'Kappenzustand (s = 0,3)': [4, 4, 4, 4], 'Zufallstranslat U(h) Omega': [4, 4, 4, 4]}): Die Familie ist offen in Conj_psi, einer einzigen Bahn der Stabilisatorgruppe K_big^psi = U(2) x U(2). iota variiert ({'Markenvakuum (z = i q)': [-4.751, 3.251], 'Kappenzustand (s = 0,3)': [-4.562, 2.233], 'Zufallstranslat U(h) Omega': [-4.026, -3.692]}): kein nativer Rahmen. Eigenes Modell (Markenvakuum, Rahmen in K_big^psi): Maurer-Cartan 2e-07, Berry-Krümmung |R| = 0.6907 = [e, e] (Rest 3e-08), Torsion 2e-07. Ein Ortsprofil innerhalb der reinen Gaußzustände ändert also nur die Karte g -> beta, nie die Geometrie": true,
+  "[E] q-Gradient: Bei g = 1 bewegen im Vakuum 4 Richtungen J und 3 (die Boosts) das Spektrum, gemeinsam 7, Überlappung 0; beim Markenvakuum und beim Kappenzustand sind es 4 und 4, gemeinsam 7, Überlappung 1 bzw. 1: genau eine Richtung (die Uhr, SO(3)-invariant) bewegt J und q zugleich. Quadratische Antwort (Fock, BKM): im Vakuum null auf E und Q (3e-20), beim Markenvakuum nicht (E 0.2490, Q 1.1245). Induziert auf der Familie (Minimum über den Kern der J-Bewegung, relativ zur Spurmetrik von U(2)): Vakuum Rang 0 (max |mu| 8e-37), Markenvakuum Rang 1 mit mu = 1.011796 bei q = 0,25 und mu/q^2 = 16.000300 (q = 0,05), 15.999999996 (nativ, mu = 5.5797e-05 = 16 e^(-4 pi) bis O(q^4)): fest, ohne freien Parameter; Kappenzustand Rang 1 mit mu = 0.00505, 0.02077, 0.09218 für s = 0,05; 0,1; 0,2 (Verhältnis 4.114 ~ 4): quadratisch in der freien Kappenzeit. Der q-Gradient ist eine Form vom Rang 1 längs der Uhr auf einer Familie, deren eigene Krümmung null ist (2.3): Er kann keinen Koeffizienten b einer vierdimensionalen Krümmung festlegen": true,
+  "[E] Komposita (K3, diagonale Wirkung): Zwei Nähte an antipodalen Marken (0, pi) geben Rang 4 (4, [4, 4]) mit beta_2 = -det(beta_1) beta_1^-1 (3e-15), dem Graphen einer Isometrie von U(2): homogen, flach. Nähte an verschiedenen Orten entfalten sich: Viertelmarken, alle vier Marken und Vakuum + Kappenpartner haben Rang [7, 7, 7] bei g = 1 und an Zufallspunkten = dim G/SO(3), Kern genau die Drehungen (cos >= 1.000000000), iota_ges variiert (Spannweite >= 1.324): weder Bahn der Bewegungs- noch der Stabilisatorgruppe (Rang 7 < 4n), aber ohne vierdimensionales Modell; die Lage der Marken ist nativ fest. Ein q-Gefälle zwischen zwei Nähten am selben Ort hat bei g = 1 Rang 4, an Zufallspunkten [7, 7]: es entfaltet sich ebenfalls. Auf dem globalen AdS-Schnitt e^(phi E) e^(rho n.Q) ist jede Naht exakt das verzerrte Produkt dphi^2 + theta'^2 drho^2 + sin^2 theta dOmega^2 mit tan theta = c sinh rho (Fehler 2e-10; Querfaktor konstant 0.463885159 = |r x n|^2 des Drehgenerators 0.463885159, also Einheitssphäre); das Komposit hat den Skalar R_3(rho) = [3.0, 3.0, 3.0, 3.0, 3.0] bei gleichem q (S^1 x S^3, konform flach) und [3.694586, 3.329571, 2.852666, 2.971296, 2.999455] bei q = 0,25 und 0,5: ortsabhängige Krümmung (S^1 x M^3 mit nicht konstanter Krümmung, Weyl != 0), deren Größe das q-Gefälle ist. Nativ tragen alle Nähte dasselbe q = e^(-2 pi)": true,
+  "[E] Z4-Überlagerung (K4): Die Vierteluhr permutiert die vier Markenebenen zyklisch (3e-17); mit der Uhrphase <Omega|psi_k> > 0 ist psi_Z4 ~ Summe_k psi_k (exakte Gaußvektoren) Z4-invariant (Fock, tiefer Block 9e-06; Achteldrehung als Kontrolle 5e-03) und weicht vom Vakuum genau um den Vierpaarterm ab: lambda = 0.0087343 gegen sqrt(5) q^4 = 0.0087346, 1 - |<Omega|psi>|^2 = 7.62816e-05 gegen 5 q^8 = 7.62939e-05. Bei g = 1 ist sie in Standardform (Koeffizientenmatrix diagonal 0e+00, reell 0e+00, positiv >= 5.9e-08), also hält Lorentz J fest wie bei jedem Standardzustand (Rang 4, Kern = Lorentz, cos >= 1.000000000). An generischen Punkten (exakte Gaußkomponenten mit Phasenverfolgung, Konsistenz 4e-07) entfaltet sich die Familie: Rang [7, 7] (Vakuum am selben Punkt 4), neue Singulärwerte [1.1986, 1.0944, 0.8991] (NV = 13: Abweichung 1e-06), linear in der Beimischung (Verhältnis [2.0007, 2.0024, 2.0036] bei Verdopplung von eps): der (a2)-Mechanismus von z115, aber mit nativ fester Amplitude sqrt(5) q^4, bei nativem q sqrt(5) e^(-8 pi) = 2.72e-11, von der Ordnung der Kappen-Nichtinvarianz des Originals (z104). Fest, aber siebendimensional: kein vierdimensionales Modell": true,
+  "[E/C] dS-Bahn: span{Lorentz, Q^-_mu} liegt in Der(I_pi + I_omega) (Rest 2e-15; Kontrolle Q^+: 1.000), der Stabilisator von tau_0 in so(4,1) hat Dimension 6 (Lorentz), Ad tau_0 = -1 auf Q^- (0e+00) und +1 auf Lorentz (3e-15): das symmetrische Paar von dS4. [[Q_a, Q_b], Q_c] = k (B_bc Q_a - B_ac Q_b) mit k = 1.000000 (Rest 0e+00) wie bei AdS (k = 1.000000), aber mit umgekehrter Spurform B|Q^- = [1.0, -1.0, -1.0, -1.0] gegen B|Q^+ = [-1.0, 1.0, 1.0, 1.0]: bei gleich normierter Signatur (Zeit negativ) ist die Schnittkrümmung +1.000000 gegen -1.000000, also K_phys = +4.0 gegen -4.0 mit l = 1/2: Lambda = +12/R_Vak^2 (dS) gegen -12/R_Vak^2 (AdS), das Vorzeichen ist die Klasse der Zeit (z104) schon auf der Tomita-Bahn. iota_dS = tr(tau I' tau^T I'^-1), I' = I_pi + I_omega, ist SO(4,1)-invariant (4e-15) und auf der dS-Bahn 4 (9e-16); iota_AdS variiert dort (Spannweite 7.014). Die Bahnfamilie mit Rahmen in SO(4,1) ist Maurer-Cartan (5e-10), R = [e, e] (Rest 2e-10), Torsion 3e-10: das flache MacDowell-Mansouri-Vakuum der dS-Klasse. Lambda ist unter P_cap fest (l = R_Vak/2), b = -R_Vak^2/(256 pi G) nicht (G offen, z104)": true,
+  "[E] Naht gegen Kappenfluss: Für jede Naht (Typ-I-Faktor, gaußscher treuer Zustand; hier das Vakuum und ein Zufallszustand U(h) Omega) ist der Modulhamiltonoperator K_a = -log rho_a eine ladungserhaltende Quadratik: [K_a, a_i] = -sum L_ij a_j mit L hermitesch (1e-16; Fitrest 3e-08, a^+-Anteil 9e-13; Eigenwerte [4.412499, 1.986861]), also wirkt Delta^(it) auf T unimodular (elliptisch, kompakt). Der Kappenfluss e^(s Q^-) hat auf T die Eigenwerte e^(+-s/2) (|.| = [1.648721, 0.606531, 1.648721, 0.606531] bei s = 1; die Uhr: [1.0, 1.0, 1.0, 1.0]): hyperbolisch. Keine Naht hat die Modulzeit P_cap; die Kappe ist ein Typ-III-Faktor des Netzes (z104, bedingt auf das freie Netz). Dort ist das Vakuum unter der konformen Gruppe invariant, die Kappenfamilie J(A(g O_1), Omega_4D) also eine Bahn der Zustandsstabilisatorgruppe und nach z100 flach [C/L]": true,
+  "[E/L] Feste Familie in der dS-Klasse: SO(4) = so(3) + <Q^-_k> hält Omega fest (1e-16), längs SO(4) ist J(M_g, Omega) die Bahnfamilie (2e-16): die Raumkugel S^3 wird exakt abgebildet. Längs der Kappe ist beta = e^(i phi) 1 (skalar, 0e+00) mit tan|phi| = c sinh s, c = coth(2r) (Fehler 2e-15 bei q = 0,25 und nativ, c = 267.7468 = cosh 2 pi): dieselbe Kartenfunktion wie der AdS-Raum in z115, jetzt auf dem Zeitkreis; |phi| < pi/2 für alle s. Dabei läuft die Familie auf dem AdS-Uhrkreis (|iota_AdS - 4| 3e-14), während iota_dS variiert ([3.653254, -0.406391, -2.894496, -3.867548, -3.997622]): kein nativer dS-Rahmen. Rang über so(4,1) [4, 4, 4, 4], Kern bei g = 1 Lorentz (6e-10); die quadratische Antwort lebt nur auf den Boosts (Eigenwerte [2.0, 2.0, 2.0]) und ist auf Q^-_mu null (5e-18). Skalenverhältnis kappa_dS = (dphi/ds) cosh s = c cosh^2 s/(1 + c^2 sinh^2 s) (Formelfehler 4e-08), konform genau für c = 1: Defekt 4.7e-07 bei q = 0,999, 0.005 bei 0,9, 0.637 bei 0,25, 0.9960 nativ (kappa ~ coth^2 s/c). Im Grenzfall q -> 1 ist die Familie die konforme Kompaktifizierung von dS4 im Einsteinstreifen |phi| < pi/2 (Penrose-Quadrat), Spiegel von z115s AdS-Halbzylinder: AdS halbiert den Raum, dS die Zeit [L]": true
+ },
+ "befunde": {
+  "E/C: Native inhomogene Zustände existieren. Nativ ohne freien Parameter sind das Wiesbrock-Profil q(a) (fester Nahtzustand, mit P_0 verschobene Algebren) und die Markenvakua (Fockvakua der Markenalgebren, unter z83s Markenidentifikation; eine Zustandswahl: unverschränkt statt KMS) mit dem Uhrprofil q(phi) und Horizont an der eigenen Marke; nativ bedingt auf das Netz ist das Hislop-Longo-Profil T(r) = 1/(pi (1 - r^2)), dessen Übersetzung in ein lokales q eine Nahtfrequenz wählt; frei ist die Kappenzeit s des kappenverschobenen Zustands. Komposita (K3) und die Z4-Überlagerung der Markenvakua (K4) folgen in Teil 2": true,
+  "E (Teil 2): Kein natives Profil gibt eine gekrümmte vierdimensionale Familie mit festem Koeffizienten. Lokale Gleichgewichte (K1) sind q-blind und geben die flache Bahn. Jedes reine Gaußprofil (Markenvakuum, Kappenzustand, jedes Translat) liegt offen in Conj_psi = U(2), einer Stabilisatorbahn: flach, ohne nativen Rahmen; der Ort ändert nur die Karte und koppelt J an das Spektrum (q-Gradient längs der Uhr, BKM vom Rang 1: fest 16 e^(-4 pi) beim Markenvakuum, frei ~ s^2 beim Kappenzustand). Die Struktur dahinter: Conj_Omega = S^1_E x S^3_(Q^-), Zeit aus AdS, Raum aus dS; reduziert ist die Lötform im AdS-Modell vom Rang 1, im dS-Modell vom Rang 3. Familien, die weder Bahn der Bewegungs- noch der Stabilisatorgruppe sind, entstehen erst mit mehreren Orten oder einem q-Gefälle (Komposita) bzw. mit Nichtgaußizität (Z4-Überlagerung mit nativer Amplitude sqrt(5) e^(-8 pi)); sie entfalten sich auf Rang 7 = dim G/SO(3) und haben kein vierdimensionales Modell. Ortsabhängige Krümmung zeigt sich nur auf dem globalen AdS-Schnitt eines Komposits mit q-Gefälle, mit dem Gefälle als Koeffizient; nativ gibt es kein zweites q": true,
+  "E/C (Teil 3): Relativ zur Kappe entsteht keine dS-Krümmung. Die Tomita-Bahn unter SO(4,1) ist dS4 mit Lambda = +12/R_Vak^2 unter P_cap, flach als Cartan-Geometrie (F = 0); b bleibt frei (G offen). Keine Naht trägt den hyperbolischen Kappenfluss; im Typ-III-Netz ist das Vakuum konform invariant und die Kappenfamilie eine Bahn. Die feste Familie der Naht in der dS-Klasse ist dieselbe kompakte Duale U(2): SO(4) hält Omega fest (S^3 exakt), die Kappenzeit wird mit tan phi = c sinh s auf den halben Uhrkreis gestaucht; für q -> 1 ist das die konforme Kompaktifizierung von dS4. Das Vorzeichen von Lambda entscheidet, welcher Faktor des Einsteinzylinders halbiert wird (Raum bei AdS, Zeit bei dS), nicht eine Krümmung": true
+ },
+ "zahlen": {
+  "scheibe": {
+   "SO(3)-Invarianz von P_z": 3.1401849173675503e-16,
+   "Kontrolle nicht skalare Ebene": 0.0220992764376746,
+   "Möbius": {
+    "E": {
+     "Blockabweichung": 0.0,
+     "Möbius-Fehler": 2.2887833992611187e-16,
+     "Fixpunkte": [],
+     "Bild von 0": "0j"
+    },
+    "Q^-": {
+     "Blockabweichung": 0.0,
+     "Möbius-Fehler": 3.1401849173675503e-16,
+     "Fixpunkte": [
+      "-1j",
+      "(-0+1j)"
+     ],
+     "Bild von 0": "-0.336375544j"
+    },
+    "D": {
+     "Blockabweichung": 0.0,
+     "Möbius-Fehler": 1.2412670766236366e-16,
+     "Fixpunkte": [
+      "(1+0j)",
+      "(-1+0j)"
+     ],
+     "Bild von 0": "(-0.336375544+0j)"
+    },
+    "P_0": {
+     "Blockabweichung": 0.0,
+     "Möbius-Fehler": 1.138360651264128e-16,
+     "Fixpunkte": [
+      "(1.000000021+0j)",
+      "(0.999999979-0j)"
+     ],
+     "Bild von 0": "(0.109131403-0.311804009j)"
+    }
+   },
+   "E dreht z -> e^(it) z": 1.1102230246251565e-16,
+   "Algebra M im Punkt": "(0.25+0j)",
+   "|Lambda - lambda 1|, lambda = (z_A - z_P)/(1 - conj(z_A) z_P)": 3.376611507232129e-16,
+   "Schmidtwerte": 3.3306690738754696e-16,
+   "Aufspaltung nicht invariantes Paar": 0.4716981132075473
+  },
+  "profile": {
+   "|xi_Q|^2": "(r - t - 1)*(r - t + 1)*(r + t - 1)*(r + t + 1)/4",
+   "T(r) bei t = 0": "1/(pi*Abs(r**2 - 1))",
+   "Wiesbrock q(a)^2 = (q^2 + x^2 (1-q)^2)/(1 + x^2 (1-q)^2)": {
+    "0.25": {
+     "Formelfehler q(a)": 3.3306690738754696e-16,
+     "beta skalar": 0.0,
+     "|iota - 4|": 2.2232198742534223e-15,
+     "q(a = 10^4)": 0.9999999664412492
+    },
+    "0.0018674427317079893": {
+     "Formelfehler q(a)": 3.3306690738754696e-16,
+     "beta skalar": 0.0,
+     "|iota - 4|": 3.7425550644265514e-14,
+     "q(a = 10^4)": 0.9999999797894055
+    }
+   },
+   "Markenvakuum: |(d + i q e^+) psi|": [
+    7.83418796508373e-10,
+    7.834187562595767e-10
+   ],
+   "Kontrolle |(d - i q e^+) psi|": 0.5122816224104654,
+   "Markenebene z = i q": 2.7755575615628914e-17,
+   "exakter Gaußvektor gegen U(e^(pi E/2)) |0> (tiefer Block)": 7.541444488186807e-10,
+   "Profil q(phi) (phi = 0; 0,6; 1,2; pi/2 - 10^-3; 2,5; -pi/2)": [
+    0.3528648731129847,
+    0.24146899060583868,
+    0.09784182979658805,
+    0.00026666664607404196,
+    0.2324246915426955,
+    0.47058823529411764
+   ],
+   "Profilformelfehler": 6.938893903907228e-17,
+   "Kappenzustand z_s = -i tanh(s/2)": 1.1102230246251565e-16
+  },
+  "q_blind": {
+   "|tau(M_q, Omega_q) - S4| (11 Werte von q)": 1.1414075309572095e-15,
+   "lokales Gleichgewicht gegen Bahn": 5.1154096410737794e-14,
+   "Einteilchen-Modulgenerator L (Fock)": [
+    [
+     "(2.772588722-0j)",
+     "-0j"
+    ],
+    [
+     "-0j",
+     "(2.772588722-0j)"
+    ]
+   ],
+   "omega = 2 log(1/q)": 2.772588722239781,
+   "Fitrest, a^+-Anteil": [
+    2.507077798209126e-16,
+    0.0
+   ],
+   "Kontrolle: Zustandskippung längs der Kappe": 0.10578866146920213,
+   "Zustandskippung längs eines Boosts (vertauscht mit tau_0)": 2.307851958082343e-16
+  },
+  "esu": {
+   "dim k_big n so(3,2), k_big n so(4,1)": [
+    4,
+    6
+   ],
+   "E in k_big n so(3,2)": 1.6774512853727768e-15,
+   "Q^-_k in k_big n so(4,1)": 1.6368558628554748e-15,
+   "blockdiagonal (E, Q^-_k, Drehungen): max Nebenblock": 1.3648169314478152e-16,
+   "Quetscher (Q^+_k, Q^-_0, Boosts): min Nebenblock": 0.3865134032831146,
+   "Tangente: Koeffizienten in (E, Q^-_1..3)": [
+    [
+     -1.0,
+     0.0,
+     0.0,
+     -0.0
+    ],
+    [
+     0.0,
+     2.125,
+     0.0,
+     0.0
+    ],
+    [
+     0.0,
+     0.0,
+     2.125,
+     0.0
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     2.125
+    ]
+   ],
+   "cos Hauptwinkel gegen ESU": [
+    1.0,
+    1.0,
+    1.0,
+    1.0
+   ],
+   "cos Hauptwinkel gegen AdS-Bahn": [
+    1.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "dim Komplemente": [
+    6,
+    6
+   ],
+   "reduziert AdS": {
+    "|F|": 0.9786530060744035,
+    "|F - P[B, B]|": 2.1862644605796788e-07,
+    "Lorentzteil": 2.0409361082566915,
+    "Torsion (Translationsteil)": 8.18022516580664e-09,
+    "Lötform-Singulärwerte": [
+     1.097766711,
+     0.0,
+     0.0,
+     0.0
+    ],
+    "Lötrang": 1
+   },
+   "reduziert dS": {
+    "|F|": 2.880471851041122e-07,
+    "|F - P[B, B]|": 2.880471851041122e-07,
+    "Lorentzteil": 4.4218610846999014e-07,
+    "Torsion (Translationsteil)": 3.3446121691649283e-07,
+    "Lötform-Singulärwerte": [
+     1.601932236,
+     1.533430954,
+     1.218869943,
+     0.0
+    ],
+    "Lötrang": 3
+   },
+   "eigenes Modell (Rahmen in K_big)": {
+    "|F_MC|": 2.921374413760657e-07,
+    "|R|": 0.9786530019844331,
+    "|R - [e, e]|": 2.1453647866777105e-07,
+    "|T|": 1.8415420139950397e-07
+   }
+  },
+  "lagelemma": {
+   "Zustände": {
+    "Markenvakuum (z = i q)": {
+     "Kovarianz": 0.0,
+     "Conj-Form": 2.220446049250313e-15,
+     "Rang (g = 1, drei Zufallspunkte)": [
+      4,
+      4,
+      4,
+      4
+     ],
+     "iota min/max": [
+      -4.751340261818053,
+      3.250636778072712
+     ]
+    },
+    "Kappenzustand (s = 0,3)": {
+     "Kovarianz": 2.004992162807495e-15,
+     "Conj-Form": 1.5681900222830336e-15,
+     "Rang (g = 1, drei Zufallspunkte)": [
+      4,
+      4,
+      4,
+      4
+     ],
+     "iota min/max": [
+      -4.562270468173182,
+      2.232723641874723
+     ]
+    },
+    "Zufallstranslat U(h) Omega": {
+     "Kovarianz": 1.4432899320127035e-15,
+     "Conj-Form": 3.552713678800501e-15,
+     "Rang (g = 1, drei Zufallspunkte)": [
+      4,
+      4,
+      4,
+      4
+     ],
+     "iota min/max": [
+      -4.026182979991763,
+      -3.692346898965304
+     ]
+    }
+   },
+   "Schleife Markenvakuum (Rahmen in K_big^psi)": {
+    "|F_MC|": 1.856568573887919e-07,
+    "|R|": 0.6906747412408741,
+    "|R - [e, e]|": 2.790330777648005e-08,
+    "|T|": 1.5775457582192545e-07
+   }
+  },
+  "q_gradient": {
+   "Rang J / Spektrum / gemeinsam": {
+    "Vakuum": [
+     4,
+     3,
+     7
+    ],
+    "Markenvakuum": [
+     4,
+     4,
+     7
+    ],
+    "Kappenzustand s = 0,3": [
+     4,
+     4,
+     7
+    ]
+   },
+   "BKM Vakuum auf E, Q": 3.174832832322269e-20,
+   "BKM Markenvakuum diag (L0..L5, E, Q1..Q3)": [
+    0.003867,
+    1.026002,
+    0.337275,
+    1.115095,
+    0.885514,
+    0.005787,
+    0.249027,
+    1.124514,
+    1.124514,
+    1.124514
+   ],
+   "mu Vakuum": [
+    -2.396605733752482e-39,
+    1.9801393879741744e-37,
+    5.711964808442169e-37,
+    8.357632595363943e-37
+   ],
+   "mu Markenvakuum (q = 0,25)": [
+    -6.219510371874513e-17,
+    -4.992382328947886e-17,
+    3.41030224319143e-17,
+    1.0117955410847348
+   ],
+   "mu Kappenzustand (s = 0,05; 0,1; 0,2)": {
+    "0.05": [
+     -6.375416457381064e-19,
+     4.112473646783107e-19,
+     1.4893437870281659e-18,
+     0.005048076799932439
+    ],
+    "0.1": [
+     -5.5025805513959256e-18,
+     -5.427970649310447e-18,
+     -8.579662725848344e-20,
+     0.02076755085277001
+    ],
+    "0.2": [
+     -1.1234960063442287e-17,
+     -2.3346770285048637e-18,
+     3.709602036591001e-18,
+     0.09217590307959439
+    ]
+   },
+   "mu/q^2 Markenvakuum (q = 0,05; nativ)": [
+    16.000299994416746,
+    15.999999995814205
+   ],
+   "mu Markenvakuum nativ": 5.579747768474666e-05
+  },
+  "komposita": {
+   "Familien": {
+    "antipodale Marken (0, pi)": {
+     "Rang g = 1": 4,
+     "Rang Zufall": [
+      4,
+      4
+     ],
+     "iota_ges Spannweite": 10.673547466529522,
+     "cos Kern gegen Drehungen (g = 1)": null
+    },
+    "Viertelmarken (0, pi/2)": {
+     "Rang g = 1": 7,
+     "Rang Zufall": [
+      7,
+      7
+     ],
+     "iota_ges Spannweite": 1.3237247670810968,
+     "cos Kern gegen Drehungen (g = 1)": 1.0
+    },
+    "vier Marken": {
+     "Rang g = 1": 7,
+     "Rang Zufall": [
+      7,
+      7
+     ],
+     "iota_ges Spannweite": 17.967215104324968,
+     "cos Kern gegen Drehungen (g = 1)": 1.0000000000000002
+    },
+    "Vakuum + Kappenpartner (s = 0,3)": {
+     "Rang g = 1": 7,
+     "Rang Zufall": [
+      7,
+      7
+     ],
+     "iota_ges Spannweite": 3.4699776004753753,
+     "cos Kern gegen Drehungen (g = 1)": 1.0
+    },
+    "q-Gefälle (q = 0,25 und 0,5, ein Ort)": {
+     "Rang g = 1": 4,
+     "Rang Zufall": [
+      7,
+      7
+     ],
+     "iota_ges Spannweite": 3.0093133203492224,
+     "cos Kern gegen Drehungen (g = 1)": null
+    }
+   },
+   "antipodal: |beta_2 + det(beta_1) beta_1^-1|": 2.8201631687442355e-15,
+   "q-Gefälle: Fehler des verzerrten Produkts": 1.6259527058082313e-10,
+   "Querfaktor (konstant)": [
+    0.4638851587541816,
+    0.4638851588960332
+   ],
+   "|r x n|^2 des Drehgenerators (unabhängig)": 0.4638851588225536,
+   "R_3(rho) gleiche q (rho = 0,05; 0,3; 1; 2; 4)": [
+    2.999999999999989,
+    3.0,
+    2.9999999999999964,
+    2.999999999999928,
+    3.000000000000197
+   ],
+   "R_3(rho) q-Gefälle": [
+    3.6945855904791562,
+    3.329570846665104,
+    2.8526662967426266,
+    2.971296104305594,
+    2.9994546069723933
+   ]
+  },
+  "z4_katze": {
+   "Vierteluhr permutiert die Markenebenen": 2.7755575615628914e-17,
+   "lambda = |psi - <Omega|psi> Omega|/|<Omega|psi>|": 0.008734268734695723,
+   "sqrt(5) q^4": 0.008734640537108554,
+   "1 - |<Omega|psi>|^2": 7.628163099904217e-05,
+   "5 q^8": 7.62939453125e-05,
+   "Z4-Invarianz (Fock, tiefer Block)": 9.295694637435481e-06,
+   "Kontrolle Achteldrehung": 0.004724995443816578,
+   "Standardform: Nebendiagonale, min Diagonale, Imaginärteil": [
+    0.0,
+    5.8810158377914674e-08,
+    0.0
+   ],
+   "Singulärwerte g = 1": [
+    31.254762617,
+    31.254762617,
+    31.254762617,
+    20.745433326,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "cos Kern gegen Lorentz (g = 1)": 0.9999999999999998,
+   "Singulärwerte an zwei Zufallspunkten": [
+    [
+     29.890931,
+     26.472239,
+     23.815178,
+     21.087056,
+     1.198611,
+     1.094429,
+     0.899056,
+     0.0,
+     0.0,
+     0.0
+    ],
+    [
+     32.997135,
+     30.403766,
+     29.418004,
+     20.587236,
+     1.82208,
+     1.57144,
+     1.494016,
+     0.0,
+     0.0,
+     0.0
+    ]
+   ],
+   "Phasenkonsistenz | |r| - 1 |": 3.807154040913474e-07,
+   "Vakuum am selben Punkt": [
+    30.174140997,
+    26.530409225,
+    24.193520092,
+    21.105523266,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "neue Richtungen eps = 0,05 / 0,1": [
+    [
+     0.05999147646087719,
+     0.05408575747860451,
+     0.04391739972949494
+    ],
+    [
+     0.12002294663566114,
+     0.10830075682104648,
+     0.08799346676012905
+    ]
+   ],
+   "Linearität (0,1 / 0,05)": [
+    2.0006666566030065,
+    2.0023895729645385,
+    2.0036128573667034
+   ],
+   "Konvergenz NV = 11 gegen 13": 1.3744597833209582e-06,
+   "native Amplitude sqrt(5) e^(-8 pi)": 2.7194067514457897e-11
+  },
+  "ds_bahn": {
+   "SO41 in Der(I_pi + I_omega)": 2.4507333211684096e-15,
+   "Kontrolle Q^+ nicht darin": 1.0,
+   "Stabilisator von tau_0": 6,
+   "Ad tau = -1 auf Q^-": 0.0,
+   "Lorentz gerade": 3.219646771412954e-15,
+   "B|Q^+, k, Rest, K": [
+    [
+     -1.0,
+     1.0,
+     1.0,
+     1.0
+    ],
+    1.0,
+    0.0,
+    -1.0
+   ],
+   "B|Q^-, k, Rest, K": [
+    [
+     1.0,
+     -1.0,
+     -1.0,
+     -1.0
+    ],
+    1.0,
+    0.0,
+    1.0
+   ],
+   "iota_dS invariant": 4.002966042486721e-15,
+   "iota_dS - 4 auf der dS-Bahn": 9.485749680535094e-16,
+   "Kontrolle: iota_AdS auf der dS-Bahn (Spannweite)": 7.013553329621244,
+   "Schleife dS-Bahn (Rahmen in SO(4,1))": {
+    "|F_MC|": 4.500578211946454e-10,
+    "|R|": 0.48094998038898445,
+    "|R - [e, e]|": 1.8515256970357026e-10,
+    "|T|": 3.4444594400946953e-10
+   }
+  },
+  "naht_gegen_kappe": {
+   "zufällige Naht: L": [
+    [
+     "(3.853368+0j)",
+     "(0.887418+0.506075j)"
+    ],
+    [
+     "(0.887418-0.506075j)",
+     "(2.545992+0j)"
+    ]
+   ],
+   "|L - L^+|": 1.4432899320127033e-16,
+   "Eigenwerte L": [
+    "(4.412499-0j)",
+    "(1.986861+0j)"
+   ],
+   "Fitrest, a^+-Anteil": [
+    3.478407294509846e-08,
+    9.355966418561971e-13
+   ],
+   "|Eigenwerte| von e^(Q^-)": [
+    1.648721271,
+    0.60653066,
+    1.648721271,
+    0.60653066
+   ],
+   "|Eigenwerte| von e^(E)": [
+    1.0,
+    1.0,
+    1.0,
+    1.0
+   ]
+  },
+  "ds_feste_familie": {
+   "SO(4) hält Omega fest": 1.0099249148418259e-16,
+   "längs SO(4): fest = Bahn": 2.220446049250313e-16,
+   "Kappenkarte": {
+    "0.25": {
+     "c": 2.125,
+     "|phi| - atan(c sinh s)": 1.9984014443252818e-15,
+     "beta skalar": 0.0,
+     "|iota_AdS - 4|": 4.002966042486721e-15,
+     "iota_dS (s = 0,1 .. 4)": [
+      3.653254,
+      -0.406391,
+      -2.894496,
+      -3.867548,
+      -3.997622
+     ]
+    },
+    "0.0018674427317079893": {
+     "c": 267.7467614837482,
+     "|phi| - atan(c sinh s)": 4.440892098500626e-16,
+     "beta skalar": 0.0,
+     "|iota_AdS - 4|": 2.7533536139223204e-14,
+     "iota_dS (s = 0,1 .. 4)": [
+      -3.988893,
+      -3.999589,
+      -3.999919,
+      -3.999992,
+      -4.0
+     ]
+    }
+   },
+   "Rang über so(4,1)": [
+    4,
+    4,
+    4,
+    4
+   ],
+   "max |dtau| auf Lorentz": 5.551672143411599e-10,
+   "BKM-Eigenwerte (so(4,1))": [
+    -0.0,
+    -0.0,
+    -0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    2.0,
+    2.0,
+    2.0
+   ],
+   "BKM auf Q^-_mu": 5.392180386348869e-18,
+   "Konformität": {
+    "0.999": {
+     "kappa_dS (s = 0,3; 1; 2)": [
+      1.000000419776198,
+      0.9999999286420975,
+      0.9999995345862069
+     ],
+     "Formel c cosh^2 s/(1 + c^2 sinh^2 s)": [
+      1.0000004155524576,
+      0.9999999198941372,
+      0.9999995702212132
+     ],
+     "Defekt max |kappa - 1|": 4.6541379306042074e-07,
+     "Formelfehler": 3.5635006279122194e-08
+    },
+    "0.9": {
+     "kappa_dS (s = 0,3; 1; 2)": [
+      1.004605658815852,
+      0.9990987484391536,
+      0.9952499562744255
+     ],
+     "Formel c cosh^2 s/(1 + c^2 sinh^2 s)": [
+      1.0046056588363153,
+      0.9990987484481665,
+      0.9952499556832755
+     ],
+     "Defekt max |kappa - 1|": 0.0047500437255745265,
+     "Formelfehler": 5.911500178257256e-10
+    },
+    "0.25": {
+     "kappa_dS (s = 0,3; 1; 2)": [
+      1.6366969880064979,
+      0.6992080379467308,
+      0.49797958628719874
+     ],
+     "Formel c cosh^2 s/(1 + c^2 sinh^2 s)": [
+      1.6366969879945952,
+      0.6992080379244965,
+      0.4979795862232154
+     ],
+     "Defekt max |kappa - 1|": 0.6366969880064979,
+     "Formelfehler": 6.398331864332363e-11
+    },
+    "0.0018674427317079893": {
+     "kappa_dS (s = 0,3; 1; 2)": [
+      0.0440039714596886,
+      0.006439085329626215,
+      0.004018800057542498
+     ],
+     "Formel c cosh^2 s/(1 + c^2 sinh^2 s)": [
+      0.04400397141747582,
+      0.006439085344434681,
+      0.004018800013900873
+     ],
+     "Defekt max |kappa - 1|": 0.9959811999424575,
+     "Formelfehler": 4.3641625036006104e-11
+    }
+   }
+  },
+  "status": {
+   "Zustandsscheibe": [
+    "E",
+    "SO(3)-invariante Gaußzustände = Scheibe; radiale sl(2,R) = Möbiusgruppe; Fixpunkte von Q^- und D = Marken z^4 = 1; Schmidtwert = pseudohyperbolischer Abstand"
+   ],
+   "native Profile": [
+    "E/C",
+    "Wiesbrock-Profil q(a) und Markenvakua nativ (q(phi) mit Horizont); Hislop-Longo T(r) bedingt auf das Netz; Kappenzeit s frei"
+   ],
+   "q-Blindheit": [
+    "E",
+    "J(M_q, Omega_q) = J für jedes q: lokales Gleichgewicht = native Bahn (flach); Profil nur im zentralen Modulgenerator"
+   ],
+   "ESU-Struktur": [
+    "E",
+    "Conj_Omega = S^1_E x S^3_(Q^-); dtau(Q^+_k) = c [Q^-_k, tau_0]; Lötform AdS Rang 1, dS Rang 3"
+   ],
+   "Gaußsches Lagelemma": [
+    "E, negativ",
+    "jedes reine Gaußprofil offen in Conj_psi = U(2), Stabilisatorbahn: flach, kein nativer Rahmen; Ort ändert nur die Karte"
+   ],
+   "q-Gradient": [
+    "E",
+    "eine Richtung (Uhr) bewegt J und q; induzierte BKM Rang 1: 16 e^(-4 pi) fest (Markenvakuum), ~ s^2 frei (Kappenzustand); keine Krümmung zu normieren"
+   ],
+   "Komposita": [
+    "E, negativ",
+    "verschiedene Orte bzw. q-Gefälle: Rang 7, kein 4D-Modell; antipodal: Isometriegraph; q-Gefälle auf dem AdS-Schnitt: R_3(rho) ortsabhängig, Größe = Gefälle (nicht nativ)"
+   ],
+   "Z4-Überlagerung": [
+    "E",
+    "native Amplitude sqrt(5) q^4 = sqrt(5) e^(-8 pi); bei g = 1 Standardform (Rang 4), generisch Rang 7, kein 4D-Modell"
+   ],
+   "dS-Bahn": [
+    "E/C",
+    "so(4,1) = Der(I_pi + I_omega), dS4, Lambda = +12/R_Vak^2 unter P_cap, F = 0, b frei"
+   ],
+   "Naht gegen Kappe": [
+    "E",
+    "Nahtmodulfluss elliptisch, Kappe hyperbolisch: P_cap braucht das Typ-III-Netz"
+   ],
+   "feste Familie dS": [
+    "E/L",
+    "SO(4) fixiert Omega; Kappenzeit tan phi = c sinh s auf dem Uhrbogen; q -> 1: dS4 im Einsteinstreifen; Lambda-Vorzeichen halbiert Zeit statt Raum"
+   ]
+  }
+ },
+ "urteil": "Der Folgeauftrag zu T6 ist beantwortet: gescoptes Negativ für native Quellen, mit neuer exakter Struktur und einem benannten bedingten Mechanismus. (1) Native inhomogene Zustände gibt es. Die SO(3)-invarianten reinen Gaußzustände bilden eine Scheibe, auf der die radiale sl(2,R) als Möbiusgruppe wirkt: Die Uhr E dreht um das Vakuum, die Kappe Q^- und die Dilatation D verschieben längs senkrechter Durchmesser, deren Randfixpunkte zusammen genau die Marken z^4 = 1 sind; die Algebra M sitzt bei z = q, und der Schmidtwert eines Paares ist der pseudohyperbolische Abstand. Nativ ohne freien Parameter sind das Wiesbrock-Profil q(a)^2 = (q^2 + x^2 (1 - q)^2)/(1 + x^2 (1 - q)^2) der mit P_0 verschobenen Algebren und die Markenvakua (Fockvakua der Markenalgebren) mit dem Uhrprofil q(phi) und Horizont an der eigenen Marke; das Hislop-Longo-Profil T(r) = 1/(pi (1 - r^2)) ist nativ bedingt auf das Netz, seine Übersetzung in ein lokales q eine Wahl; die Kappenzeit eines verschobenen Zustands ist frei. (2) Keines dieser Profile krümmt die Familie J(M_g, psi). J ist q-blind: Ein lokales Gleichgewicht mit beliebigem Temperaturprofil hat die native Bahnfamilie, flach nach z100; das Profil sitzt nur im zentralen Modulgenerator. Jedes reine Gaußprofil gibt eine Familie, die offen in Conj_psi = U(2) liegt (Rang 4), einer einzigen Bahn der Stabilisatorgruppe: Das Lagelemma tau(M_g, U(h) Omega) = R_h^-1 tau(M_(h^-1 g), Omega) R_h zeigt, dass der Ort nur die Karte verschiebt. Struktur: Conj_Omega ist der kompaktifizierte Einsteinzylinder (S^1_E x S^3_(Q^-))/Z_2, Zeit aus der AdS-Uhr, Raum aus den dS-Raumtranslationen; die Algebra-Translationen Q^+_k werden mit dem Faktor coth(2r) auf Q^-_k abgebildet. Reduziert auf das AdS-Modell hat die Familie eine Lötform vom Rang 1 und als Krümmung nur die S^3-Berry-Krümmung, auf das dS-Modell Rang 3 und F = 0: in keinem Modell eine Cartan-Geometrie; iota variiert, ein nativer Rahmen fehlt. Der q-Gradient ist real, aber schwach: Bei inhomogenen Gaußzuständen bewegt genau eine Richtung (die Uhr) J und das Spektrum zugleich, die quadratische Antwort induziert auf der Familie eine Form vom Rang 1, fest 16 e^(-4 pi) beim Markenvakuum und ~ s^2 frei beim Kappenzustand; sie hat keine Krümmung zu normieren. (3) Familien, die weder Bahn der Bewegungs- noch der Stabilisatorgruppe sind, entstehen erst mit mehreren Orten (Komposita an Viertelmarken, mit Kappenpartner), mit einem q-Gefälle zwischen Nähten oder mit Nichtgaußizität (Z4-Überlagerung der Markenvakua, native Amplitude sqrt(5) e^(-8 pi), von der Ordnung der Kappen-Nichtinvarianz in z104). Alle entfalten sich auf Rang 7 = dim G/SO(3) und haben kein vierdimensionales Modell, F_MM im AdS-Modell bleibt undefiniert. Ortsabhängige Krümmung zeigt sich nur auf dem globalen AdS-Schnitt eines Komposits mit q-Gefälle (S^1 x M^3, R_3(rho) variiert, Weyl != 0), mit dem Gefälle als Koeffizient; nativ tragen alle Nähte dasselbe q, und gleiche Nähte geben S^1 x S^3, konform flach. (4) Kappe: Unter P_cap ist die Tomita-Bahn unter SO(4,1) = Der(I_pi + I_omega) dS4 mit Lambda = +12/R_Vak^2, flach (F = 0); die Schnittkrümmung kehrt gegenüber AdS das Vorzeichen um, b bleibt frei. Keine Naht trägt den hyperbolischen Kappenfluss (Nahtmodulfluss elliptisch), die Kappe ist ein Typ-III-Faktor des Netzes, wo das Vakuum konform invariant und die Kappenfamilie eine Bahn ist. Die feste Familie der Naht in der dS-Klasse ist dieselbe U(2): SO(4) hält Omega fest, die Raumkugel wird exakt abgebildet, die Kappenzeit mit tan phi = coth(2r) sinh s auf den halben Uhrkreis; für q -> 1 ist das die konforme Kompaktifizierung von dS4 im Einsteinstreifen, Spiegel der AdS-Halbzylinder-Karte von z115. Das Lambda-Vorzeichen entscheidet, welcher Faktor halbiert wird, nicht eine Krümmung. Urteil: gescoptes Negativ. Ein natives Zustandsprofil liefert keine Quelle gravitativer Dynamik mit festem b; bedingt (Prämisse P_dq: Nähte mit verschiedenem q am selben Ort) entsteht ortsabhängige euklidische Krümmung, aber nur auf einem gewählten Schnitt, ohne vierdimensionales Modell der vollen Familie und mit dem q-Gefälle als freiem Koeffizienten. Folgen: K13 bleibt L, präzisiert: Die Familie J(M_g, psi) bei festem Zustand liegt für jeden Zustand in Conj_psi, einer Bahn der Stabilisatorgruppe (gaußsch geprüft; in jeder endlichen Abschneidung allgemein, weil je zwei antiunitäre Involutionen mit festem psi durch eine psi festhaltende Unitäre konjugiert sind), mit Rahmen dort ist ihre Verbindung stets Maurer-Cartan. Krümmung kann nur als induzierte Geometrie einer echten Teilfamilie entstehen, und jede solche Familie, die hier vorkommt (Komposita, Nichtgaußizität), entfaltet sich auf Rang 7. Ein Ortsprofil allein krümmt also keine vierdimensionale Familie; dafür braucht es eine Dynamik, die Algebra und Zustand nicht durch Gruppenelemente verbindet, ein zweites q gibt Krümmung nur auf einem gewählten Schnitt. Für die Gravitationsachse der Szenario-Suche: Der Wert 'Krümmung aus inhomogenem Profil' ist kein gestützter Gravitationswert; 'q-Gefälle zwischen Nähten' ist höchstens ein bedingter Wert mit der Prämisse P_dq und ohne 4D-Modell. Nichts ist befördert."
+}

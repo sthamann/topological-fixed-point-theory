@@ -1,0 +1,671 @@
+{
+ "checks": {
+  "[E] Link U im Transferstrom J^+ = sum c+_(A,m) U_(m m') c_(B,m') (Fockraum zweier Nähte, z120): Gamma(h_A + h_B) U(U) Gamma^+ = U(h_A U h_B^+) (Abweichung 2e-15; mit h_B U h_A^+ verfehlt um 2.310); eine Einzelbindung ist reine Eichung, U(U) = Gamma_B(U^+) U(1) Gamma_B(U^+)^+ (1e-15). Auf dem physikalischen Raum (eine Anregung je Naht) ist das Gatter -i R(1)(U) = -i (1 + i P(U))/(1 + i) mit dem Etikettentausch samt Transport P(U)|a>_A|b>_B = |U b>_A |U^+ a>_B (4e-16; mit U^+ statt U 1.988); auf einer Anregung allein bleibt es auch mit Link die reine Phase e^(-i pi/4) (3e-16). Der Einteilchentransfer ist also die Vierteldrehung B selbst (Mischwinkel pi/4, z120 Teil 4), der Etikettenaustausch das z120/z121-Gatter": true,
+  "[E] 2D-Netz der Vierteldrehungen (Torus 4 x 4, bipartit, vier Teilschichten in der Folge +x, +y, -x, -y wie das RLBL-Floquetnetz, Link in jedem Sprung): Der Rückkehrblock ist <x|F|x> = cos^4 theta 1 + sin^4 theta U_p(x) (max Abweichung 4e-16 für U(16) zufällig, SU(2)_L c 16, U(1)_Y c 16, SU(2) auf dem Dublett), der Pfad mit vier Sprüngen umläuft eine Plakette, jede der 16 Plaketten genau einmal je Periode und alle mit derselben Orientierung (orientierte Flächen [-1.0]). Also Tr F[U] = N d cos^4 theta + sin^4 theta sum_p Tr U_p (max 1e-14) und Re Tr(F[1] - F[U]) = sin^4 theta sum_p Re Tr(1 - U_p) (2e-15): genau die fundamentale Wilson-Funktion, additiv, mit kappa = sin^4(pi/4) = 1/4 je Periode. Eichkovarianz F[U^h] = H F[U] H^+ (3e-15). Kontrollen: Die Schrittfolge +x, -x, +y, -y schließt keine Schleife (Spurantwort 0e+00, Rückkehrblock = cos^4, 0e+00); reine Eichlinks h_x h_y^+ geben keine Antwort (4e-15)": true,
+  "[E] Elementarer Austauschring (vier Nähte in zyklischer Folge, Gatter -i R(1)(U), eine Anregung je Naht, Etiketten in C^d): (Tr F[U] - Tr F[1])/d^4 = (d^2 - |Tr g|^2)/(4 d^4) = W(g) exakt (d = 2, 3 dicht gegen Permutationsentwicklung 9e-16, Abweichung von W 6e-17; d = 16: U(16) 4e-18, SU(2)_L 3e-19; U(1)_Y bei phi = 0.001, 0.3, 1 gleich W (True), Antwort/phi^2 = 0.0002034505 = 5/24576 = 0.0002034505). Grund: Nur der Term mit allen vier Täuschen sieht die Holonomie (jede echte Teilmenge ist ein Baum), und seine Permutation [[0], [1, 3, 2]] hat zwei Zyklen mit den Windungen [-1, 1]: ein Etikett läuft um, die drei anderen laufen gegen es um, also Tr g Tr g^-1 = |Tr g|^2 = chi_(V x V-quer)(g); der Vorfaktor ist (i/(1 + i))^4 = -1/4, und 1/d^4 normiert auf den gemischten Etikettenzustand der vier Nähte (Tr F[1] = -(d^4 - 5 d^2 + 4 i (d^3 - d))/4, 0e+00). Andere Gatterfolge (01, 23, 12, 30): wieder W (1e-17). Der Einzelanregungsring gibt dagegen Tr F = 4 cos^2 theta d + sin^4 theta Tr g (7e-15): fundamental": true,
+  "[E] W(g) = Re Tr_(V x V-quer)(1 - g x g-quer)/(4 d^4) identisch (2e-18; d = 2, 4, 16): eine Wilson-Wirkung in der Darstellung V x V-quer = adjungiert + Singulett, nicht in der fundamentalen. Folgen: zentrumsblind, W(e^(0.7 i) g) = W(g) (0e+00), während die fundamentale Funktion sich um bis zu 0.334 ändert; auf dem Dublett ist W(-1) = 0 gegen Re Tr(1 - (-1)) = 4: W sieht SO(3), nicht SU(2). Quadratisch gilt W = Re Tr_V(1 - g)/(2 d^3) + O(A^4) für Tr A = 0 (Abweichung bei eps = 1e-3: 4e-06), die quartischen Terme unterscheiden sich: (W/fund - 1)/eps^2 = [-0.1633, -0.9301, -4.1017] = -Tr A^2/(4 d) = [-0.1633, -0.9301, -4.102] (d = 2, 4, 16)": true,
+  "[E] 3 x 3-Gitter (neun Nähte, vier Plaketten, zwölf Gatter in derselben Teilschichtfolge, d = 2; dichter Fockraum 512 gegen Permutationsentwicklung 3e-14): Eine einzelne Plakette mit Holonomie g gibt im Austauschnetz exakt c (|Tr g|^2 - d^2) mit c = (0.71875+0.375j) (Fitrest 2e-13, Anteile Tr g und Tr g* 2e-14; zentrumsblind 2e-13), also wieder V x V-quer, aber mit komplexem, geometrieabhängigem Koeffizienten. Zwei Plaketten sind nicht additiv: gemischte Differenz f(g1, g2) - f(g1, 1) - f(1, g2) + f(1, 1) = 1.6511 (diagonal) und 0.3942 (benachbart) gegen die Einplakettenantwort 2.9678: ein Schleifengas mit Produkten von Plaketten. Im Term 'alle tauschen' umläuft je ein Etikett jede der vier Plaketten (Zykluslängen [1, 1, 1, 1, 5], Flächen [-1.0, -1.0, -1.0, -1.0, 4.0]), und die fünf Randetiketten umlaufen gemeinsam das ganze Gitter gegenläufig: vier Plakettenspuren mal eine Randschleife, Gesamtwindung null (True). Kontrolle: Das Einzelanregungsnetz auf demselben Gitter ist additiv (3e-17)": true,
+  "[E] 3D-Anordnung (Torus 6^3, Teilperioden xy, yz, zx mit je +a, +b, -a, -b, jede Richtung zweimal je Periode; Zeilenform gegen dichte Matrix 4e-16): Für 24 Partnerlinks ohne gemeinsame Plakette mit dem Link k1 ist die gemischte Differenz nicht null; ihr Maximum relativ zu Partnern mit gemeinsamer Plakette ist 0.741 bei theta = pi/4 und 0.0024 bei theta = pi/16 (fällt wie sin^4). Ein Pfad umläuft in einer Periode Plaketten verschiedener Ebenen nacheinander (Gewicht sin^8 cos^4 gegen sin^4 cos^8 der Einzelplakette, bei pi/4 beide 0.015625): Bei der nativen Vierteldrehung ist die 3D-Antwort keine reine Plakettenwirkung, nur im Grenzfall kleiner Winkel. Kontrolle 2D-Torus: ohne gemeinsame Plakette exakt null (0e+00)": true,
+  "[E] Der orientierungsungerade Teil der Netzspur ist sin^4 theta sum_p Im Tr U_p (alle Plaketten gleich orientiert). Auf der 16 verschwindet er für jedes Spin(10)-Feld bis zur vierten Ordnung: Tr_16 X = Tr_16 X^3 = 0 (so(10) hat keine kubische Invariante; Stichproben max 2e-14, Clifford 0e+00), und die fünfte Ordnung ist die Pfaffsche: Tr_16 X^5 = -60.000000 Pf(omega), Tr_16-quer X^5 = 60.000000 Pf(omega) (Streuung 2e-13, Pf^2 = det bis 2e-15): das Vorzeichen ist die Chiralität. Hyperladung exakt: Tr Y = 0, Tr Y^3 = 0 (Anomaliefreiheit), Tr Y^5 = 5/9; Im Tr_16 e^(i phi Y)/phi^5 = 0.004630 -> Tr Y^5/120 = 0.004630. Im Kontinuum ist der Term O(a^10), irrelevant. Kontrolle: ein zufälliges su(16)-Element hat |Tr X^3| = 26.98": true,
+  "[E] Kette der alternierenden Transfers (z120 Teil 4, Ring mit 8 Nähten, zufällige U(2)-Links): Tr F^n hängt für n = 1, 2, 3 nicht von den Links ab (1e-15); erst bei n = L/2 = 4 erscheint die Polyakov-Windung (1.0699), und sie verschwindet bei reiner Eichung (9e-16). In 1+1D hat das Netz keine Plakette. Die Materie reagiert aber auf zeitartige Plaketten, wenn die Links sich von Periode zu Periode ändern: Mit flachen Links e^(i a_t) ist Tr(F[a_2] F[a_1]) bei a_1 = a_2 = 0.8 gleich dem Wert ohne Feld (9e-16), bei a_1 = 0, a_2 = 0.8 nicht (1.2132), und es zählt nur a_2 - a_1 = elektrischer Fluss (4e-16). Die Zeitabhängigkeit der Links liefert das Netz nicht (Teil 3a)": true,
+  "[E] Naiver Kontinuumslimes für S = kappa_s sum_(räuml. p) Re Tr_R(1 - U_p) + kappa_t sum_(zeitart. p) Re Tr_R(1 - U_p) auf einem anisotropen 4D-Gitter (a_s, a_t, xi = a_s/a_t; R = Hyperladung der 16, T_R = Tr Y^2 = 10/3; glatte magnetische und elektrische Testfelder): S_lat/S_kont -> 1 mit 1/g^2 = kappa_s T_R xi (magnetisch) und kappa_t T_R/xi (elektrisch); Abweichungen [0.003209, 0.000803, 0.000201, 0.000803] für (N_s, N_t) = ['N_s = 32, N_t = 64', 'N_s = 64, N_t = 128', 'N_s = 128, N_t = 256', 'N_s = 128, N_t = 64'], Ordnung 2.00 (a^2). Isotrop (xi = 1): 1/g^2 = kappa T_R; Lorentzinvarianz verlangt kappa_s xi = kappa_t/xi, also g^2 = 1/(T_R sqrt(kappa_s kappa_t))": true,
+  "[E] Spuren über die 16 (Lambda^gerade C^5, z82): Tr_16(T_a T_b) = 2 delta_ab für SU(3) und SU(2) (Diagonalen [2.0], [2.0], Nebendiagonale 0e+00, Mischspuren mit Y 0e+00), Tr_16 Y^2 = 10/3 = 3.333333333333: Tr Y^2 : Tr T_3^2 = 10/3 : 2 = 5/3, die SU(5)-Normierung. Jede Spurantwort über die vollständige 16 gibt 1/g_i^2 = lambda k_i mit dem induzierten Niveau k_i = 2 Tr_16 T_i^2 = 4, 4, 4 (SU(3), SU(2), U(1)_Y GUT-normiert) aus den Niveau-1-Nahtströmen, also g_3 = g_2 = g_1 und sin^2 theta_W = Tr T_3^2/(Tr T_3^2 + Tr Y^2) = 3/8, unabhängig von theta. In der W-Lesart ist T_(V x V-quer) = 2 d T_V für spurfreie Erzeuger ([(64.0, 64.0), (64.0, 64.0), (106.666667, 106.666667)]), dasselbe Verhältnis (0.375000000000). Je Schleife und phi^2: W gibt SU(3) lambda_3/2 0.0001220703, SU(3) lambda_8/2 0.0001220703, SU(2) T_3 0.0001220703, U(1) Y 0.0002034505 (= 1/8192 für die nichtabelschen Erzeuger, 5/24576 für Y), die Netzspur 0.250000, 0.250000, 0.250000, 0.416667 (= 1/4 bzw. 5/12); das Verhältnis Y : T ist in beiden 1.666667 = 5/3. Kontrollen: der Träger 5 (vollständiges SU(5)-Multiplett) gibt wieder 3/8; nur die Dubletts Q, L als Etiketten geben 3/4: Das Verhältnis 3/8 hängt an der Vollständigkeit der Etiketten, nicht an einer Wahl. Vergleich: gemessen sin^2 theta_W(M_Z) = 0.23122; 3/8 gilt nur an der Anpassungsskala, der Weg dorthin ist das Laufen (z25)": true,
+  "[C/L] Absolutwert nicht nativ: Mit denselben nativen Daten (d = 16, theta = pi/4, k = 1, also k_i = 4) geben die drei Lesarten 1/g_U^2 = lambda k_i = 0.5, 0.000244141, 4 (Spanne Faktor 16384); alpha_em^-1 an der Anpassungsskala (sin^2 theta_W = 3/8, ohne Laufen) = 16.7552, 0.0082, 134.0413 gegen alpha^-1 = 137.03599921684: kein Treffer innerhalb 1 %. Am nächsten liegt R3 mit 128 pi/3 = 134.0413 (2.2 % daneben), aber als Wert vor jedem Laufen und für eine Generation (drei Generationen: Faktor 3); das ist keine Übereinstimmung. Das z25-Fenster alpha_U^-1(1/a) = 60 ... 74 trifft keine Lesart, auch nicht mit drei Generationen (R1: 6.28 bzw. 18.85, R3: 50.27 bzw. 150.80); R1 ist wie die y1-Induktion zu stark": true,
+  "[E] Z4-Quantenlinks (die Uhr Z4 als Linkgruppe; Ring aus vier Nähten mit einer Anregung, Linkraum C^4 je Kante, 1024 Zustände, Netz als gesteuertes Gatter): F vertauscht mit allen Linkoperatoren U_e (0e+00) und mit dem Gauß-Gesetz G_x = (Linkverschiebungen an x) x (Ladungsphase an x) (0e+00), nicht mit den Verschiebungen X_e (22.63). Die Besetzungen der Linkkonfigurationen bleiben über 12 Perioden exakt (2e-17), nur die Kohärenzen zerfallen (Reinheit 0.3206): Das Netz misst den Fluss, es bewegt ihn nicht. Kontrolle: mit einem elektrischen Term e^(-0.3 i sum (X_e + X_e^+)) ändern sich die Besetzungen um bis zu 0.0339": true,
+  "[E] Osterwalder-Seiler-Kriterium: Die Transfermatrix der Linkvariablen (temporale Eichung) ist positiv, wenn das zeitartige Plakettengewicht positiv definit ist, also nichtnegative Charakterkoeffizienten hat (für die Faltung auf einer Kante ist das auch notwendig). U(1) mit e^(kappa cos): Koeffizienten = I_n(kappa) (2e-16), min 5.31e-09 > 0 für kappa = +1/4, -0.126 < 0 für -1/4; SU(2) fundamental min 3.81e-10 gegen -0.255; adjungiert e^(|Tr U|^2/4) und W-Gewicht e^(-W): ganzzahlige Koeffizienten min 2.40e-09 > 0. Positiv ist also jedes Gewicht e^(kappa chi) mit kappa > 0 und einer positiven Summe von Charakteren chi, fundamental wie adjungiert. Beim adjungierten und beim W-Gewicht sind alle halbzahligen Koeffizienten null (1e-16): Fundamentale (Dublett-)Wilson-Schleifen verschwinden, die Theorie sieht nur SO(3). Fundamental bei kappa = 1/4 ist die 1+1D-Stringspannung 2.090 (starke Kopplung)": true,
+  "[E] Vorzeichen (Fluss auf dem Ring, kleine Holonomie): Das Einzelanregungsnetz ist in beiden Lesarten diamagnetisch, Re Delta Tr F < 0 und Delta |Tr F| < 0 für d = 2, 3, 16 ([(-0.01338, -0.01328), (-0.0274, -0.02672), (-1.34079, -1.3399)]): kappa > 0, reflexionspositiv. Der Austauschring gewinnt dagegen Spur, Re Delta Tr F = +d^4 W > 0 für alle d ([0.04928, 0.12479, 35.46568]), und der Betrag |Tr F| steigt bei d = 2, fällt aber bei d = 3, 16 ([0.00829, -0.04355, -34.372]), weil Re Tr F[1] = -(d^4 - 5 d^2)/4 bei d^2 = 5 das Vorzeichen wechselt. Das Vorzeichen einer Wirkung aus W ist also eine Lesart (P_exp), nicht nativ; in der linearen Lesart wäre kappa < 0": true,
+  "[N/L] Das 2D-Netz hat bei der nativen Vierteldrehung zwei verschiedene masselose Sektoren: Die Lücke bei eps = pi schließt sich nur bei theta = pi/4 (min Abstand zu pi bei theta/pi = 1/16 ... 7/16, Gitter 161^2: [2.3562, 1.5708, 0.7854, 0.0, 0.7854, 1.5708, 2.3562]) in einem isotropen Kegel bei k = 0 mit Steigung [1.414214, 1.414214, 1.414214, 1.414214, 1.414214] = sqrt 2 Plätze je Periode; bei eps = 0 liegt für jedes theta die genestete Linie |k_x| + |k_y| = pi (max |eps| 2e-16; Quersteigung bei theta = pi/4 1.414214), eine Fermilinie des Quadratgitters, nicht lorentzartig. Ein einziger nativer Lichtkegel, der xi festlegen könnte, existiert nicht": true
+ },
+ "befunde": {
+  "E: Die Schleifenantwort W(g) der achtzehnten Analyse ist rekonstruiert: Sie ist die Einperioden-Spurantwort des elementaren Austauschrings mit dem nativen Gatter, normiert auf den Etikettenzustand. Ihre Form |Tr g|^2 kommt daher, dass bei voller Besetzung jedes Umlaufen eines Etiketts einen Gegenumlauf der anderen erzwingt. Das Einzelanregungsnetz gibt dagegen die fundamentale Spur Tr g. Beide sind Plakettenfunktionen; sie unterscheiden sich in Darstellung, Normierung und Vorzeichen": true,
+  "E (gescopt negativ): Sum_p W(U_p) ist nicht das Gitterfunktional des Austauschnetzes. W ist exakt nur für den isolierten Ring; auf dem Gitter koppeln die Plaketten (Schleifengas, Produktterme gleicher Ordnung, komplexe Koeffizienten). Eine Wilson-Wirkung als Summe über Plaketten liefert nur das Einzelanregungsnetz, und zwar in der fundamentalen Darstellung": true,
+  "C: Nativ ist das Verhältnis (k_3 = k_2 = k_1 = 4, sin^2 theta_W = 3/8 an der Anpassungsskala), nicht der Betrag. lambda hängt an der Lesart der Antwort als Wirkung (P_exp: Spur je Periode, je Etikettenzustand oder Stromnormierung P_norm) und an der Anisotropie xi; diese Wahl verschiebt 1/g^2 über vier Größenordnungen. Mit z25 überlebt 'gleich an 1/a' nur als nackte SO(10)-Gitterkopplung": true,
+  "E/C: Das Netz liefert eine eichinvariante, statische Funktion der Links (Fluss wird gemessen, nicht bewegt). Eine reflexionspositive Transfermatrix mit Links als Variablen braucht vier Zutaten, die das Netz nicht hat: (1) P_link: Links als eigene Freiheitsgrade mit Haarmaß; (2) P_E: einen elektrischen Term bzw. zeitartige Plaketten mit kappa_t > 0. Je Periode hat das Netz nur räumliche Zyklen (in 1+1D gar keine); auf zeitabhängige Links reagiert die Materie über Mehrperiodenschleifen (Teil 1h), erzeugt sie aber nicht. Mit P_link würde ein elektrischer Term höchstens induziert (Sakharov-Weg von y1), und dessen Wert an 1/a ist nach z25 zu stark; (3) P_exp: die Regel Antwort -> Wirkung mit Vorzeichen und Koeffizient (für W lesartabhängig); (4) xi bzw. P_Lorentz, denn g^2 = 1/(T_R sqrt(kappa_s kappa_t)) und das Netz hat keinen einzigen Lichtkegel. In 3D kommt (5) hinzu: Bei theta = pi/4 ist die Antwort keine reine Plakettenwirkung. Die native Reflexion (z84) ist die thermische Klasse; eine Gitterspiegelebene für Linkvariablen gehört nicht dazu": true
+ },
+ "zahlen": {
+  "fock_gatter": {
+   "Kovarianz": 2.463459786095301e-15,
+   "Kontrolle falsch transformiert": 2.309909358329344,
+   "Einzelbindung reine Eichung": 1.1483398800494232e-15,
+   "(1,1): Abstand zu -i R(1)(U)": 4.454964430487685e-16,
+   "(1,1): Kontrolle U^+ statt U": 1.9880454061827393,
+   "eine Anregung: Abstand zu e^(-i pi/4)": 2.646420019284609e-16
+  },
+  "netz_2d": {
+   "Fälle": {
+    "U(16) zufällig": {
+     "Rückkehrblock": 4.483049665995391e-16,
+     "Plaketten": 16,
+     "orientierte Flächen": [
+      -1.0
+     ],
+     "Spur": 7.108895957933346e-15,
+     "Unitarität": 1.2156023983843897e-14
+    },
+    "SU(2)_L c 16": {
+     "Rückkehrblock": 2.3387263717801085e-16,
+     "Plaketten": 16,
+     "orientierte Flächen": [
+      -1.0
+     ],
+     "Spur": 1.422396751169702e-14,
+     "Unitarität": 3.219251594917513e-15
+    },
+    "U(1)_Y c 16": {
+     "Rückkehrblock": 3.390840864445248e-16,
+     "Plaketten": 16,
+     "orientierte Flächen": [
+      -1.0
+     ],
+     "Spur": 1.4238583238573986e-14,
+     "Unitarität": 3.5425063918464756e-15
+    },
+    "SU(2) auf dem Dublett": {
+     "Rückkehrblock": 1.294666329493633e-16,
+     "Plaketten": 16,
+     "orientierte Flächen": [
+      -1.0
+     ],
+     "Spur": 1.387778780781447e-17,
+     "Unitarität": 2.222276680408798e-15
+    }
+   },
+   "Kovarianz F[U^h] = H F H^+": 2.644602491919826e-15,
+   "Kontrolle Schrittfolge (+x, -x, +y, -y): Spurantwort": 0.0,
+   "Kontrolle Schrittfolge: Rückkehrblock - cos^4": 0.0,
+   "Kontrolle reine Eichlinks: Spurantwort": 3.55563008675371e-15,
+   "Re Tr(F[1] - F[U]) - sin^4 sum Re Tr(1 - U_p)": 1.7763568394002505e-15,
+   "kappa = sin^4(pi/4)": 0.24999999999999992
+  },
+  "austauschring": {
+   "d = 2, 3": {
+    "2": {
+     "dicht gegen Permutation": 2.220446049250313e-16,
+     "(Tr F[U] - Tr F[1])/d^4 - W": 6.245004513516506e-17,
+     "W": 0.054417859313335724,
+     "Tr F[1]": [
+      1.0,
+      -6.0
+     ]
+    },
+    "3": {
+     "dicht gegen Permutation": 8.881784197001252e-16,
+     "(Tr F[U] - Tr F[1])/d^4 - W": 3.469446951953614e-18,
+     "W": 0.02173688967116047,
+     "Tr F[1]": [
+      -9.0,
+      -24.0
+     ]
+    }
+   },
+   "d = 16: |Antwort/d^4 - W|": {
+    "U(16) zufällig": 4.119968255444917e-18,
+    "SU(2)_L c 16": 3.2526065174565133e-19
+   },
+   "U(1)_Y: (Antwort/d^4, W) je phi": {
+    "0.001": [
+     2.0345050644188234e-10,
+     0.0,
+     2.0345050102087148e-10
+    ],
+    "0.3": [
+     1.8153073900989414e-05,
+     0.0,
+     1.8153073900990715e-05
+    ],
+    "1.0": [
+     0.00018501283459423923,
+     0.0,
+     0.00018501283459424465
+    ]
+   },
+   "U(1)_Y: Antwort/(d^4 phi^2) bei phi = 1e-3": 0.00020345050644188234,
+   "5/24576": 0.00020345052083333334,
+   "Windungen der Zyklen (alle Täusche)": [
+    -1,
+    1
+   ],
+   "Zyklen (alle Täusche)": [
+    [
+     0
+    ],
+    [
+     1,
+     3,
+     2
+    ]
+   ],
+   "andere Gatterfolge: |Antwort - W|": 1.3877787807814457e-17,
+   "Einzelanregungsring: |Tr F - (4 cos^2 d + sin^4 Tr g)|": {
+    "2": 8.887897670879587e-16,
+    "16": 7.105427357601002e-15
+   },
+   "Tr F[1] = -(d^4 - 5 d^2 + 4 i (d^3 - d))/4: max Abweichung": 0.0
+  },
+  "W_gegen_Wilson": {
+   "W - Re Tr_(V x V-quer)(1 - g x g-quer)/(4 d^4)": 1.734723475976807e-18,
+   "Zentrum: |W(zg) - W(g)|, |Delta Re Tr(1 - g)|": [
+    [
+     0.0,
+     0.11665436896762804
+    ],
+    [
+     0.0,
+     0.20777870659544728
+    ],
+    [
+     0.0,
+     0.33445010872001824
+    ]
+   ],
+   "SU(2): W(-1), Re Tr(1 - (-1))": [
+    0.0,
+    4.0
+   ],
+   "quadratisch: W/(Re Tr(1 - g)/(2 d^3)) - 1 bei eps = 1e-3": [
+    1.6319393059127663e-07,
+    9.301046770548993e-07,
+    4.10200759626278e-06
+   ],
+   "quartisch: (W/fund - 1)/eps^2 bei eps = 0.01, 0.005; -Tr A^2/(4 d)": [
+    [
+     -0.16327327937326608,
+     -0.16327383687286812,
+     -0.16327417293145657
+    ],
+    [
+     -0.9300541511325644,
+     -0.9300851653781805,
+     -0.9300956183975243
+    ],
+    [
+     -4.100922643792693,
+     -4.1017390828956835,
+     -4.1020112449355
+    ]
+   ]
+  },
+  "gitter_3x3": {
+   "dicht gegen Permutation (512 Zustände)": 2.864289338439558e-14,
+   "Einplakettenantwort = c (|Tr g|^2 - d^2): c": [
+    0.7187500000000018,
+    0.37500000000000283
+   ],
+   "Anteile Tr g, Tr g*": [
+    2.22745254224624e-14,
+    2.2871712655394853e-14
+   ],
+   "Fitrest": 2.2815204712988615e-13,
+   "zentrumsblind": 1.9539925233402755e-13,
+   "gemischte Differenzen": {
+    "Einzelanregung (0, 0)-(1, 1)": 2.7755575615628914e-17,
+    "Austausch (0, 0)-(1, 1)": 1.6510966000733591,
+    "Einzelanregung (0, 0)-(1, 0)": 0.0,
+    "Austausch (0, 0)-(1, 0)": 0.39424309104764
+   },
+   "Einplakettenantwort |f(g1) - f(1)|": 2.967777278683898,
+   "alle tauschen: (Zykluslänge, orientierte Fläche, Plakette)": [
+    [
+     1,
+     -1.0,
+     [
+      "(0, 0)"
+     ]
+    ],
+    [
+     1,
+     -1.0,
+     [
+      "(0, 1)"
+     ]
+    ],
+    [
+     1,
+     -1.0,
+     [
+      "(1, 0)"
+     ]
+    ],
+    [
+     1,
+     -1.0,
+     [
+      "(1, 1)"
+     ]
+    ],
+    [
+     5,
+     4.0,
+     []
+    ]
+   ]
+  },
+  "netz_3d": {
+   "Teilperioden": "xy, yz, zx (je +a, +b, -a, -b), Torus 6^3, d = 1",
+   "Zeilenform gegen dichte Floquetmatrix": 4.440892098500626e-16,
+   "max gemischte Differenz (mit, ohne gemeinsame Plakette, Zahl ohne != 0) je theta/pi": {
+    "0.25": [
+     0.17763762741153244,
+     0.1316176141039207,
+     24
+    ],
+    "0.0625": [
+     0.005035174537044393,
+     1.2273357387968496e-05,
+     24
+    ]
+   },
+   "Verhältnis ohne/mit bei theta = pi/4": 0.740933190911195,
+   "bei theta = pi/16": 0.0024375237238891934,
+   "sin^4 cos^8 (Plakette), sin^8 cos^4 (Plakettenpaar) bei pi/4": [
+    0.015625,
+    0.015624999999999993
+   ],
+   "2D-Torus: ohne gemeinsame Plakette": 0.0
+  },
+  "chiral": {
+   "Clifford": 0.0,
+   "so(10) Stichproben": [
+    {
+     "herm": 0.0,
+     "Tr X": 0.0,
+     "Tr X^3": 6.661338147750939e-15,
+     "Tr X^5/Pf (16)": -60.00000000000009,
+     "Tr X^5/Pf (16-quer)": 60.000000000000064,
+     "Pf^2 - det": 1.9429999119939787e-15
+    },
+    {
+     "herm": 0.0,
+     "Tr X": 2.220446049250313e-16,
+     "Tr X^3": 7.549516567451064e-15,
+     "Tr X^5/Pf (16)": -60.000000000000114,
+     "Tr X^5/Pf (16-quer)": 59.99999999999996,
+     "Pf^2 - det": 1.3186599143192087e-15
+    },
+    {
+     "herm": 0.0,
+     "Tr X": 0.0,
+     "Tr X^3": 5.10702591327572e-15,
+     "Tr X^5/Pf (16)": -59.999999999999964,
+     "Tr X^5/Pf (16-quer)": 59.999999999999964,
+     "Pf^2 - det": 1.567380946346621e-15
+    },
+    {
+     "herm": 0.0,
+     "Tr X": 0.0,
+     "Tr X^3": 1.8459695833281555e-14,
+     "Tr X^5/Pf (16)": -59.9999999999999,
+     "Tr X^5/Pf (16-quer)": 60.000000000000064,
+     "Pf^2 - det": 8.593101298324713e-16
+    }
+   ],
+   "Tr Y^k (k = 1, 2, 3, 5)": {
+    "1": "0",
+    "2": "10/3",
+    "3": "0",
+    "5": "5/9"
+   },
+   "Im Tr_16 e^(i phi Y)/phi^5 bei phi = 0.01": 0.0046296647071564214,
+   "Tr Y^5/120": 0.004629629629629629,
+   "Kontrolle su(16): |Tr X^3|": 26.9820154096666
+  },
+  "kette_1d": {
+   "|Tr F^n[U] - Tr F^n[1]|": {
+    "1": 0.0,
+    "2": 1.3322676295501878e-15,
+    "3": 9.068377930900904e-16,
+    "4": 1.0698824696112164
+   },
+   "n = 4, Polyakov-Schleife trivial (reine Eichung)": 8.881865260331354e-16,
+   "zwei Perioden, flache Links: statisch a = a' = 0.8": 8.881784197001252e-16,
+   "zwei Perioden: a = 0 -> 0.8 (elektrischer Fluss)": 1.2131731626113385,
+   "zwei Perioden: nur a' - a zählt": 4.441074414441008e-16
+  },
+  "kontinuum": {
+   "S_lat/S_kont (magnetisch, elektrisch)": {
+    "N_s = 32, N_t = 64": [
+     0.9967910555571877,
+     0.9991969900588803
+    ],
+    "N_s = 64, N_t = 128": [
+     0.9991970481025602,
+     0.9997992142344129
+    ],
+    "N_s = 128, N_t = 256": [
+     0.9997992204906604,
+     0.9999497939276543
+    ],
+    "N_s = 128, N_t = 64": [
+     0.9997992204906604,
+     0.9991970632477742
+    ]
+   },
+   "Konvergenzordnung": 1.9987133444323255
+  },
+  "verhaeltnisse": {
+   "Tr_16 T_a T_b SU(3) (Diagonale)": [
+    2.0,
+    2.0,
+    2.0,
+    2.0,
+    2.0,
+    2.0,
+    2.0,
+    2.0000000000000004
+   ],
+   "Tr_16 T_a T_b SU(2) (Diagonale)": [
+    2.0,
+    2.0,
+    2.0
+   ],
+   "Tr_16 Y^2": 3.333333333333333,
+   "Nebendiagonale max": 0.0,
+   "Mischspuren Tr(T Y)": 0.0,
+   "Niveaus k_i = 2 Tr_16 T_i^2": {
+    "SU(3)": "4",
+    "SU(2)": "4",
+    "U(1)_Y (GUT, T_1 = sqrt(3/5) Y)": "4"
+   },
+   "sin^2 theta_W (16)": "3/8",
+   "W-Lesart: T_(V x V-quer) = 2 d T_V": [
+    [
+     64.00000000000001,
+     64.00000000000001
+    ],
+    [
+     64.0,
+     64.0
+    ],
+    [
+     106.66666666666666,
+     106.66666666666666
+    ]
+   ],
+   "sin^2 theta_W (W-Lesart)": 0.375,
+   "Träger-5": "3/8",
+   "nur Dubletts (Q, L)": "3/4",
+   "nur Farbträger (Q, u^c, d^c): Tr Y^2": "11/6",
+   "je Schleife/phi^2 (W, Netzspur kappa = 1/4)": {
+    "SU(3) lambda_3/2": [
+     0.00012207030622869014,
+     0.2499999947058739
+    ],
+    "SU(3) lambda_8/2": [
+     0.00012207030622869014,
+     0.2499999947058739
+    ],
+    "SU(2) T_3": [
+     0.00012207030622869014,
+     0.2499999947058739
+    ],
+    "U(1) Y": [
+     0.00020345050102087148,
+     0.41666664823969396
+    ]
+   },
+   "sin^2 theta_W(M_Z) gemessen (nur Vergleich)": 0.23122
+  },
+  "absolutwert": {
+   "Lesarten": {
+    "R1 Netzspur je Periode (kappa = sin^4 theta, P_exp, xi = 1)": {
+     "lambda": 0.12499999999999996,
+     "1/g_U^2": 0.49999999999999983,
+     "beta_lat (Wilson, xi = 1): SU(3) 6/g^2, SU(2) 4/g^2, U(1)_Y 1/g_Y^2": [
+      2.999999999999999,
+      1.9999999999999993,
+      0.833333333333333
+     ],
+     "alpha_U^-1": 6.2831853071795845,
+     "alpha_U^-1 drei Generationen": [
+      18.84955592153875
+     ],
+     "alpha_em^-1 (sin^2 = 3/8, ohne Laufen)": 16.75516081914556,
+     "alpha^-1/alpha_em^-1": 8.178733746336446
+    },
+    "R2 W je Etikettenzustand (kappa = 1/(4 d^4) auf V x V-quer, d = 16)": {
+     "lambda": 6.103515625e-05,
+     "1/g_U^2": 0.000244140625,
+     "beta_lat (Wilson, xi = 1): SU(3) 6/g^2, SU(2) 4/g^2, U(1)_Y 1/g_Y^2": [
+      0.00146484375,
+      0.0009765625,
+      0.0004069010416666667
+     ],
+     "alpha_U^-1": 0.0030679615757712823,
+     "alpha_U^-1 drei Generationen": [
+      0.0003408846195301425,
+      0.009203884727313847
+     ],
+     "alpha_em^-1 (sin^2 = 3/8, ohne Laufen)": 0.008181230868723419,
+     "alpha^-1/alpha_em^-1": 16750.04671249704
+    },
+    "R3 Niveau k = 1 mit P_norm (z110: g_eff^2 = 1/k)": {
+     "lambda": 1.0,
+     "1/g_U^2": 4.0,
+     "beta_lat (Wilson, xi = 1): SU(3) 6/g^2, SU(2) 4/g^2, U(1)_Y 1/g_Y^2": [
+      24.0,
+      16.0,
+      6.666666666666667
+     ],
+     "alpha_U^-1": 50.26548245743669,
+     "alpha_U^-1 drei Generationen": [
+      150.79644737231007
+     ],
+     "alpha_em^-1 (sin^2 = 3/8, ohne Laufen)": 134.0412865531645,
+     "alpha^-1/alpha_em^-1": 1.0223417182920556
+    }
+   },
+   "Spanne 1/g^2 (max/min)": 16384.0,
+   "Treffer alpha^-1 innerhalb 1 %": [],
+   "im z25-Fenster alpha_U^-1(1/a) = 60 ... 74": [],
+   "alpha^-1 (gelöst, nur Vergleich)": 137.03599921684
+  },
+  "quantenlinks_z4": {
+   "||[F, U_e]||": 0.0,
+   "||[F, X_e]||": 22.627416997969522,
+   "||[F, G_x]||": 0.0,
+   "Besetzungsänderung statisch (12 Perioden)": 2.42861286636753e-17,
+   "mit elektrischem Term e^(-0.3 i sum(X + X^+))": 0.03385696728019185,
+   "Reinheit des reduzierten Linkzustands nach 12 Perioden": 0.32062200367491955
+  },
+  "reflexionspositivitaet": {
+   "Koeffizienten": {
+    "U(1) fundamental kappa = +1/4": [
+     5.310028455135507e-09,
+     2.549761644737858e-07,
+     1.0204356608440462e-05,
+     0.0003267943876356372,
+     0.007853269659864479,
+     0.1259791089454679,
+     1.0156861412236078,
+     0.1259791089454679,
+     0.007853269659864479,
+     0.0003267943876356372,
+     1.0204356608440462e-05,
+     2.549761644737858e-07,
+     5.310028455135507e-09
+    ],
+    "U(1) fundamental kappa = -1/4": [
+     5.310028482891083e-09,
+     -2.5497616452929694e-07,
+     1.0204356608433524e-05,
+     -0.0003267943876356996,
+     0.007853269659864492,
+     -0.12597910894546796,
+     1.0156861412236078,
+     -0.12597910894546796,
+     0.007853269659864492,
+     -0.0003267943876356996,
+     1.0204356608433524e-05,
+     -2.5497616452929694e-07,
+     5.310028482891083e-09
+    ],
+    "SU(2) fundamental kappa = +1/4": [
+     1.031577221563644,
+     0.2552491934219205,
+     0.03174134362788564,
+     0.0026368887976774003,
+     0.00016446342626211252,
+     8.210966223304306e-06,
+     3.417425141760688e-07,
+     1.219451162270957e-08,
+     3.8081413890334037e-10
+    ],
+    "SU(2) fundamental kappa = -1/4": [
+     1.031577221563644,
+     -0.2552491934219205,
+     0.03174134362788564,
+     -0.0026368887976774003,
+     0.0001644634262620917,
+     -8.210966223304306e-06,
+     3.417425141587216e-07,
+     -1.2194511664342933e-08,
+     3.808140920658065e-10
+    ],
+    "SU(2) adjungiert e^(+|Tr U|^2/4)": [
+     1.3281918274867606,
+     -1.1102230246251565e-16,
+     0.3725914800749587,
+     -5.551115123125783e-17,
+     0.04824329444881334,
+     -1.3877787807814457e-17,
+     0.004089333951082935,
+     -4.163336342344337e-17,
+     0.0002581606981181539
+    ],
+    "SU(2) W-Gewicht e^(-W)": [
+     0.9543237600975252,
+     5.551115123125783e-17,
+     0.015027793797023792,
+     0.0,
+     0.00011770797307174286,
+     -5.551115123125783e-17,
+     6.138522726933937e-07,
+     -1.3877787807814457e-17,
+     2.399711752226752e-09
+    ]
+   },
+   "min je Gewicht": {
+    "U(1) fundamental kappa = +1/4": 5.310028455135507e-09,
+    "U(1) fundamental kappa = -1/4": -0.12597910894546796,
+    "SU(2) fundamental kappa = +1/4": 3.8081413890334037e-10,
+    "SU(2) fundamental kappa = -1/4": -0.2552491934219205,
+    "SU(2) adjungiert e^(+|Tr U|^2/4)": -1.1102230246251565e-16,
+    "SU(2) W-Gewicht e^(-W)": -5.551115123125783e-17
+   },
+   "Bessel I_n(1/4)": 2.220446049250313e-16,
+   "halbzahlige Koeffizienten adjungiert/W": 1.1102230246251565e-16,
+   "Stringspannung 1+1D, fundamental, kappa = 1/4": 2.089751076550212
+  },
+  "vorzeichen": {
+   "2": {
+    "Austausch: Re Delta Tr F": 0.04927645567898731,
+    "Austausch: Delta |Tr F|": 0.008294937862975083,
+    "Einzelanregung: Re Delta Tr F": -0.013379972366966086,
+    "Einzelanregung: Delta |Tr F|": -0.013281699599970942
+   },
+   "3": {
+    "Austausch: Re Delta Tr F": 0.12479078027663348,
+    "Austausch: Delta |Tr F|": -0.04355019012448125,
+    "Einzelanregung: Re Delta Tr F": -0.027403064082070827,
+    "Einzelanregung: Delta |Tr F|": -0.02672211373455191
+   },
+   "16": {
+    "Austausch: Re Delta Tr F": 35.46568440000374,
+    "Austausch: Delta |Tr F|": -34.37199869077449,
+    "Einzelanregung: Re Delta Tr F": -1.34079304160349,
+    "Einzelanregung: Delta |Tr F|": -1.339895784383799
+   }
+  },
+  "lichtkegel_2d": {
+   "min Abstand zu eps = pi je theta/pi": {
+    "1/16": 2.356194490192345,
+    "2/16": 1.5707963267948966,
+    "3/16": 0.7853981633974487,
+    "4/16": 0.0,
+    "5/16": 0.7853981633974478,
+    "6/16": 1.5707963267948961,
+    "7/16": 2.356194490192345
+   },
+   "eps = 0 auf |k_x| + |k_y| = pi: max |eps|": {
+    "1/16": 1.908195823574488e-17,
+    "2/16": 5.566208372247925e-17,
+    "3/16": 1.0453014276914232e-16,
+    "4/16": 1.2246467991473515e-16,
+    "5/16": 1.0453014276914235e-16,
+    "6/16": 1.6653345369377348e-16,
+    "7/16": 1.1102230246251568e-16
+   },
+   "Kegel bei eps = pi, k = 0: Steigung je Richtung": [
+    1.414213562076494,
+    1.4142135622252638,
+    1.4142135623718133,
+    1.414213562076494,
+    1.4142135623718133
+   ],
+   "eps = 0-Linie: Quersteigung": 1.4142135623705887
+  },
+  "bilanz": [
+   {
+    "status": "E",
+    "aussage": "Link im Transferstrom: z120-Gatter eichkovariant, Einzelbindung reine Eichung; auf einer Anregung je Naht -i R(1)(U) mit Etikettentransport, auf einer Anregung die Vierteldrehung B"
+   },
+   {
+    "status": "E",
+    "aussage": "2D-Netz der Vierteldrehungen: <x|F|x> = cos^4 + sin^4 U_p, jede Plakette einmal je Periode, gleich orientiert; Re Tr(F[1] - F[U]) = sin^4 theta sum_p Re Tr(1 - U_p): fundamentale Wilson-Funktion, kappa = 1/4, additiv"
+   },
+   {
+    "status": "E",
+    "aussage": "Austauschring: (Tr F[U] - Tr F[1])/d^4 = W(g) exakt; |Tr g|^2 aus Umlauf und Gegenumlauf; 5/24576 phi^2 für Y; Normierung 1/(4 d^4) = (i/(1+i))^4 mal Etikettennormierung"
+   },
+   {
+    "status": "E",
+    "aussage": "W = adjungierte Wilson-Wirkung (V x V-quer): zentrumsblind, auf dem Dublett SO(3); quadratisch = fundamentale mit 1/(2 d^3)"
+   },
+   {
+    "status": "E (negativ)",
+    "aussage": "Austauschnetz auf dem Gitter: Schleifengas, nicht additiv, komplexe Koeffizienten; sum_p W(U_p) ist nicht sein Funktional"
+   },
+   {
+    "status": "E (negativ, gescopt)",
+    "aussage": "3D mit Ebenenteilperioden: bei theta = pi/4 längere Schleifen gleichen Gewichts; reine Plakettenwirkung nur für kleine Winkel"
+   },
+   {
+    "status": "E",
+    "aussage": "Orientierungsungerader Teil auf der 16: Tr X = Tr X^3 = 0 für so(10), Tr X^5 = -+60 Pf; Tr Y^5 = 5/9; im Kontinuum irrelevant"
+   },
+   {
+    "status": "E (negativ)",
+    "aussage": "1D-Kette: keine Plakette, nur Polyakov-Windungen; zeitartige Plaketten sieht die Materie erst über zwei Perioden mit zeitabhängigen Links (nur a_2 - a_1 zählt), die das Netz nicht erzeugt"
+   },
+   {
+    "status": "E",
+    "aussage": "Kontinuum: 1/g^2 = kappa_s T_R xi = kappa_t T_R/xi; Lorentz: g^2 = 1/(T_R sqrt(kappa_s kappa_t))"
+   },
+   {
+    "status": "E",
+    "aussage": "Verhältnis nativ: k_i = 2 Tr_16 T_i^2 = 4 für SU(3), SU(2), U(1)_Y (GUT), sin^2 theta_W = 3/8 in jeder Lesart; an die Vollständigkeit der Etiketten gebunden (Dubletts allein: 3/4)"
+   },
+   {
+    "status": "C/L (negativ)",
+    "aussage": "Absolutwert: lambda je Lesart 1/8 (Netzspur), 1/16384 (W), 1 (P_norm): 1/g_U^2 = 1/2, 1/4096, 4; kein Treffer bei alpha^-1, keiner im z25-Fenster"
+   },
+   {
+    "status": "E",
+    "aussage": "Dynamik: Netz statisch (misst den Fluss), Gauß-Gesetz exakt; RP für kappa > 0 fundamental wie adjungiert; adjungiert ohne halbzahlige Charaktere"
+   },
+   {
+    "status": "E",
+    "aussage": "Vorzeichen: Einzelanregungsnetz diamagnetisch; Austauschring lesartabhängig (d = 2 gegen d = 3, 16)"
+   },
+   {
+    "status": "N/L",
+    "aussage": "Lichtkegel: Kegel bei eps = pi nur bei theta = pi/4 (Steigung sqrt 2), Fermilinie bei eps = 0 für alle theta"
+   },
+   {
+    "status": "O",
+    "aussage": "native Herkunft von P_link, P_E, P_exp und xi; eine 3D-Anordnung mit reiner Plakettenantwort"
+   }
+  ]
+ },
+ "urteil": "Yang-Mills mit fester Kopplung ist aus den Schleifen des Transfernetzes nicht nativ; der Weg ist bedingt, mit gescopten Negativen. Nativ und exakt ist die Plakettenstruktur. Mit dem Link im Transferstrom ist jedes z120-Gatter eichkovariant. Im 2D-Netz der Vierteldrehungen (vier Teilschichten +x, +y, -x, -y) ist der Rückkehrblock cos^4 theta + sin^4 theta U_p, jede Plakette wird einmal je Periode umlaufen, und Re Tr(F[1] - F[U]) = (1/4) sum_p Re Tr(1 - U_p) ist genau die fundamentale Wilson-Funktion. Die Schleifenantwort W(g) = (d^2 - |Tr g|^2)/(4 d^4) der achtzehnten Analyse ist rekonstruiert: Sie ist die Einperioden-Spurantwort des elementaren Austauschrings mit dem nativen Gatter -i R(1), je Etikettenzustand normiert. Bei voller Besetzung erzwingt jeder Umlauf eines Etiketts einen Gegenumlauf, daher |Tr g|^2. W ist damit eine adjungierte Wilson-Wirkung: zentrumsblind, auf dem Dublett SO(3), quadratisch gleich der fundamentalen mit dem Faktor 1/(2 d^3) und für die Hyperladung der 16 genau 5/24576 phi^2. Auf dem Gitter ist das Austauschnetz aber ein nicht additives Schleifengas, und in 3D trägt die Vierteldrehung längere Schleifen gleichen Gewichts. Der orientierungsungerade Teil verschwindet auf der 16 bis zur fünften Ordnung (so(10) ohne kubische Invariante, dann die Pfaffsche). Nativ ist auch das Verhältnis der Kopplungen: Jede Spurantwort über die vollständige 16 gibt 1/g_i^2 = lambda k_i mit k_i = 2 Tr_16 T_i^2 = 4 für alle drei Faktoren, also sin^2 theta_W = 3/8 an der Anpassungsskala; das ist Tr Y^2 : Tr T_3^2 = 10/3 : 2, die SU(5)-Normierung. Nicht nativ ist der Betrag: lambda = 1/8 (Netzspur je Periode), 1/16384 (W) oder 1 (Niveau mit P_norm) gibt 1/g_U^2 = 1/2, 1/4096, 4. Keine Lesart trifft alpha^-1 = 137,036 (R3 gibt 128 pi/3 = 134,04 vor jedem Laufen und für eine Generation, keine Übereinstimmung), keine das z25-Fenster 60 ... 74. Dynamik gibt es nicht: Das Netz vertauscht mit allen Linkoperatoren, es misst den Fluss, bewegt ihn aber nicht. Je Periode hat es nur räumliche Zyklen, in 1+1D gar keine; auf zeitabhängige Links reagiert die Materie über Mehrperiodenschleifen, aber die Zeitabhängigkeit erzeugt das Netz nicht. Eine reflexionspositive Transfermatrix entsteht für kappa > 0 (fundamental wie adjungiert), aber nur mit den Prämissen P_link (Links mit Haarmaß), P_E (elektrischer Term, kappa_t > 0), P_exp (Antwort -> Wirkung mit Vorzeichen; für W lesartabhängig) und xi bzw. P_Lorentz (g^2 = 1/(T_R sqrt(kappa_s kappa_t)); das Netz hat keinen einzigen Lichtkegel). Für K15 heißt das: bleibt L, präzisiert. Die Plakettenstruktur und das Verhältnis 3/8 sind nativ, die Kopplung ist frei, die Dynamik fehlt. Die Szenarioachse 'Wechselwirkung' erhält den Wert 'Gitter-Yang-Mills aus Transferschleifen: bedingt auf P_link + P_E + P_exp, Verhältnis nativ, Betrag frei'; mit z25 nur als nackte SO(10)-Gitterkopplung datenverträglich. Nichts ist befördert."
+}

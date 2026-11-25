@@ -1,6 +1,464 @@
 # Urteil
 
-## Aktueller Stand: H6h49 — Tiefe Welle T1–T6, U1–U3 und achtzehnte Analyse: Vorwärtsregel mit erzwungenen Winkeln, Hypothese T bedingt, P_GSO nicht modular (`z110`–`z120`)
+## Aktueller Stand: H6h50 — Wellen V–Z und G, neunzehnte Analyse: neun Prämissen, G bleibt eine freie Zahl (`z121`–`z125`, `z127`–`z130`, `z133`, `z135`–`z137`, `z144`)
+
+**Bilanz:** unverändert 13 P und 7 L von 20. K13, K15 und K19 sind weiter präzisiert. Der beste Kandidat der
+Szenario-Suche braucht jetzt neun statt zehn Prämissen und weiter einen freien Parameter (G).
+
+**Auftrag:** Welle V1–V5 aus H6h49, dann „neue Strategien und Recherche über Paper, Verifikationen und Experimente, um
+auch G, Graviton und alle fehlenden Teile fundamental zu lösen“, die Frage nach Maßen aus der Geometrie und die
+neunzehnte externe Analyse („Ein neuer fundamentaler Lösungsweg“). Dreizehn Agentenläufe sind reproduziert (Ausgaben
+unter zwei Hash-Startwerten identisch), die neunzehnte Analyse ist selbst gerechnet. Zwei Recherchen (R1 Gravitation, R2
+Prämissen) haben nur gelesen.
+
+**Nicht abgeschlossen:** Zehn weitere Rechnungen wurden abgebrochen (z126 modulare Statistik, z131 I_step, z132
+Uhrhebung, z134 konforme Gravitation, z138 Spin-2-Pol, z139 Ordnung, z140 Maßbilanz, z141 Relativentropie-Wirkung, z142
+ρ⋆, z143). Ihre Teildateien sind nicht reproduziert und gehen in keine Aussage ein.
+
+**Neunzehnte externe Analyse (z144, 67 Prüfungen, selbst gerechnet): Die gerechneten Aussagen stimmen. Die Zopfrelation
+legt das wechselwirkende Gatter nicht fest; die Phase folgt aber aus der Uhr.**
+- **Gitter [E]:**
+  - D₅ und A₃ haben die Diskriminantengruppe ℤ₄ mit q = 5a²/8 und 3a²/8, die Bicharaktere sind i^(ab) und i^(−ab). Von
+    den vier ℤ₄-Paarungen i^(k·ab) sind nur diese nichtentartet (Rang 1, 4, 2, 4).
+  - q = (5x² + 3y²)/8 hat sechs isotrope Elemente und genau zwei Lagrangesche, ⟨(1,1)⟩ und ⟨(1,3)⟩. Beide geben 240
+    Wurzeln (52 + 60 + 64 + 64), also E₈. Sie sind gegenseitig nichtlokal und werden durch y → −y oder x → −x getauscht.
+  - D₈ = D₅ + A₃ + ⟨(2,2)⟩ hat die Klassen 1, s, c, v mit q = 0, 0, 0, 1/2: der torische Code. Die fermionische
+    Erweiterung um v gibt 16 = 10 + 6 Vektoren der Norm 1.
+- **Zopfalgebra [E]:** Modell A (Tausch): Defekt (1+z)²(1−z)/8·(S₁₂ − S₂₃), bei z = −i Norm √(3/8), Nullstellen nur
+  z = ±1. Modell B (antikommutierende Paritäten): Defekt (1−z)(1+z²)/4·(A − B), Nullstellen 1, i, −i.
+- **Weitere Punkte [E]:** √2 − 1 ist Hadamard-Fixpunkt, Ising-Blockverhältnis bei x = 1/2 und C(3)/C(1) aus v526.
+  R†MR = M und F†MF = M erzwingen M = m·1. Der Doppelpol (a + bt)e^(−ωt) hat det = −b²(t₁−t₂)²e^(−2ω(t₁+t₂)) < 0, ist
+  also nicht reflexionspositiv. Aus ρ_Λ ∝ e^(−2/α) folgt 1 + w = −(2/(3Hα))·α̇/α; mit der Uhrenschranke 10⁻¹⁸ pro Jahr
+  ist |1 + w| ≤ 1,3·10⁻⁶. Der in der Analyse genannte DESI-Wert ist nicht geprüft.
+- **Nativ, zwei Nähte [E]:**
+  - Die Nahtuhr ist die Vierteldrehung des Transferrahmens: R_A = e^(iπN/4)·e^(iπJ_z/2); Γ_z = e^(iπJ_z) ist die Paaruhr.
+    Bei gerader Gesamtladung sind Γ_x, Γ_y, Γ_z eine Kleinsche Vierergruppe, bei ungerader Quaternionen.
+  - Das z120-Gatter ist e^(−iφN²/4)·e^(−iφJ_y²). Bei φ = π/2 ist die Wechselphase der Bicharakter i^(Q_A·Q_B), derselbe
+    wie B_D5 (die Uhr erzeugt das Zentrum ℤ₄ von Spin(10)).
+  - Von den Phasen φ = kπ/2 ist k = 0 trivial, k = 2 der einkörperige Nahttausch, k = ±1 die Wechselwirkung. Das ist
+    dieselbe Einteilung wie der Rang der Paarung.
+- **P_uhr [C, neu]:** In der nativen Familie e^(−i(φH_Q + χL₀^osc)) ist die Phase genau dann eine Funktion der Uhrwerte
+  (Q mod 4), wenn φ ∈ (π/2)ℤ und χ ≡ 0 gilt. Die eine Prämisse P_uhr („die Kompositionsphase ist eine Funktion der
+  Uhrwerte“) trägt damit P_null (= P_sl2 aus z133) und, für ein wechselwirkendes Gatter, P_viertel.
+- **Geltungsbereich von z121 [E, Korrektur]:** „Jede Phase ist leckfrei, die Phase ist frei“ gilt nur bei einer Anregung
+  je Naht (Transferspin bis 3/2). Ab Transferspin 2, im Fermifenster y = −2..1 schon im Sektor Q_A = Q_B = 0, leckt der
+  Paarsektor nach (Q+2, Q−2), und das Gatter verlässt die XXX-Familie, außer für φ ∈ (π/2)ℤ. Die Paaruhr verbietet
+  dieses Leck nicht. Die strenge Leckfreiheit P_Q („Nahtladungen werden höchstens getauscht, nie umverteilt“) ist dort
+  gleichwertig zu P_uhr.
+- **Zopfrelation nativ [E]:**
+  - Nahtuhr und Strahlteiler erfüllen R·T(θ)·R = T(θ)·R·T(θ) genau für θ = ±π/2 (alle Transferspins). Im
+    Ein-Fermion-Sektor sind sie die Ising-Zopfmatrizen: R_A = diag(1, i), B = e^(−iπ/4)·H·R_A·H. Das ist eine zweite
+    Begründung der Vierteldrehung neben der Leckfreiheit.
+  - Das wechselwirkende Gatter ist Modell A: Seine Monodromie ist der Nahttausch, die Tausche erzeugen S₃. Der Zopfdefekt
+    ist im ausgeglichenen Sektor genau √(3/8), mit Nullstellen nur bei φ = 0, π. Auch die einkörperige Wurzel des Tauschs
+    zopft nicht.
+  - Yang–Baxter mit Spektralparameter (z121) bestätigt sich im Mehrmodenmodell. Neu: Mit den vollen Gattern faktorisieren
+    drei Nähte nur bei Nahtladungen gleich modulo 4 (Niveauabgleich, z130); sonst brechen die Phasen e^(−iπN²/8) sie.
+    Vier Nähte: Die alternierende Komposition vertauscht mit allen Transfermatrizen, die Treppenordnung nicht.
+- **Schalter zwischen den Verklebungen [E/L]:**
+  - Modell B gibt es nativ als Nahtparität gegen Schalterparität S = iγ₂γ₃. Die Uhr ist dann selbst das Gatter mit
+    z = i, und die Zopfrelation erzwingt z = i für den Schalter.
+  - Der ladungserhaltende Teil des Schalters ist der z120-Strahlteiler. Der Rest ist Paarerzeugung, gerade unter der
+    Paaruhr (verträglich mit P_TP). Die erzeugte Gruppe hat projektive Ordnung 192: Clifford-Typ, keine lokale Dynamik.
+  - Die Ladungskonjugation ist keine Symmetrie des Viertels (α = 1/4 → 3/4). Die Uhr tauscht die beiden
+    Schalterklassen; sie unterscheiden sich um die Nahtparität (s ↔ c bis auf v).
+  - Lesart: P_IF ist die Wahl zwischen zwei isomorphen Verklebungen. Kein inneres Kriterium kann sie treffen (wie z129).
+- **Nicht nativ [N]:** Der KMS-Zustand hat die Paaramplitude e^(−π/2) = 0,2079, nicht √2 − 1. Der Hadamard-Fixpunkt
+  gehört zum Achterkreis von v526.
+- **Folge:** P_null und P_viertel werden zu P_uhr. P_IF bleibt ein Bit, ist aber eine Wahl zwischen isomorphen Lösungen.
+  P_ord bleibt. Die Defektstruktur der Analyse trägt keine neue Dynamik. G berührt die Analyse nicht.
+
+**V2 P_RJ aus den gekleideten Vertizes (z122, 12 Prüfungen; Agent, reproduziert): bedingt auf ein Bit P_IF, nicht nativ.**
+- **Kein Mechanismus schließt die falschen Vertizes aus [E negativ]:**
+  - Alle vier Typen sind G-gerade. Sie unterscheiden sich nur im Z₄-Charakter X = R·i^(−2h): +1 für die nativen, −1 für
+    die falschen.
+  - Gemeinsame CAR: Alle 64 Kreuzantikommutatoren verschwinden für beide Sorten gleich. Der Blatttausch Θ (m ↔ m̄) ändert
+    weder Moden noch G, R, E oder P₀, vertauscht aber die beiden Paarungen. Jedes Kriterium aus diesen Daten ist blind.
+  - Modeninhalt: Der falsche Vertex V⁻⊗S_a ist selbst eine native G-gerade Mode des Originals (L₀ = 7/4 gegen 5/4).
+    Modeninhalt allein gibt die universelle Gerade, nicht chiral.
+  - Tomita: J bildet jeden Elementarvertex auf sein Gegenstück ab; beide Paarungen sind J-abgeschlossen.
+  - Energie und Lokalität: E und P₀ sehen die Helizität nicht. Modulpositivität wählt die universelle Gerade. Die
+    Ladungsenergie ordnet die Klassen (Boltzmannfaktor e^(−2π)), schließt aber nichts aus.
+- **Die native Paarung ist eine Prämisse, P_IF:**
+  - P_IF heißt Ad Z_SU = Ad R auf den gekleideten Vertizes, mit Z_SU = i^(2h−2). Das ist eine der beiden Verklebungen
+    I_T = ±I_F aus z116 und gleichwertig zu X = 1 auf jedem Einzelquant.
+  - Ihre ganzzahlige Hebung N = T − 2h ist erhalten, und G = (−1)^N ist P_GSO.
+  - Auf Fermionen ist P_IF gleich P_A3, auf Bosonen entgegengesetzt.
+- **P_IF erzwingt P_RJ mit festem Vorzeichen [E unter P_IF]:** 256 → 16 → 3 → 1 Linienregeln. R = i (die 16) koppelt über
+  die Originalgerade, R = −i über die Partnergerade; mit K2 ist N16 = +3. Kontrollen: Spiegelpaarung −3; P_GSO allein,
+  Modeninhalt und Modulpositivität geben je 0 chirale Regeln.
+- **Spektrum [E negativ]:** Die native Vertexalgebra erreicht vom Vakuum genau den Sektor N = 0 (817 von 817 Zuständen im
+  Fenster): native Leitern, neutrale Skalarleiter, R = −1 bei h = ±1. Der Spiegel liegt im Sektor X = −1, zusammen mit den
+  R-neutralen Vektoren. Ψ₀ bildet den tiefsten neutralen Vektor auf die Spiegel-16 ab: Der Spiegel ist die native
+  Kleidung der neutralen Vektorleiter. Die Projektion auf X = 1 entfernt beides; das ist der z102-Konflikt in
+  Vertexform.
+- **Einordnung:** P_IF ist dasselbe Bit wie P_glue aus z117 (die Z₄-Regel auf Fermionen). Beide Chiralitätswege hängen
+  damit an einem einzigen Bit.
+- **Reproduktion:** Die Ausgabe hing von der Hash-Reihenfolge einer Menge ab. Die Iteration ist jetzt sortiert; die
+  Ergebnisse sind unverändert und für drei Hash-Seeds identisch.
+- **Nächster Schritt (Vorschlag aus V2):** prüfen, ob der Nahtindex +1 von A_q (z116) das Bit Ad Z_SU = +Ad R nativ
+  festlegt.
+
+**V5 P_sym aus kohärenter Komposition (z125, 19 Prüfungen; Agent, reproduziert): ja, unter einer Paritätsauswahl P_univ.**
+- **Die Gleichsetzung ist wörtlich [E]:**
+  - Der Einanregungssektor zweier Nähte ist die irreduzible 2D-Darstellung aus z94: A = −iR ist die Nahtparität,
+    B = B_θ†AB_θ, {A,B} = 2 cos θ. Γ = −iAB ist der Transfererzeuger 2J_x.
+  - Leckformel: Leck = |cos θ sin θ|·|1 − e^(−iφ)|. Leckfreiheit heißt genau, dass A und B vertauschen (kein Transfer)
+    oder antivertauschen (P_sym).
+- **Allgemeiner Paarsatz [E]:**
+  - Leckfreier kohärenter Austausch gilt genau dann, wenn jede ausgetauschte Mode eine Vierteldrehung erhält und das
+    Phasengesetz nahtsymmetrisch ist. Das gilt für Energieleitern, beliebige Spezies, allgemeine Ladungen und jedes
+    φ ∉ 2πℤ.
+  - Mit einer Bevorzugung einer Naht gibt es keine leckfreie Komposition.
+- **Drei Nähte [E]:** Neben der paarweisen Vierteldrehung ist auch die komplexe Hadamard-Klasse leckfrei (F₃, zyklischer
+  Transfer bei θ = 2π/9). Gemeinsames Prinzip: Nahtbasis und ihr Transferbild sind gegenseitig unverzerrt.
+- **Nativität [C]:**
+  - Von den 16 Z₄-Gradierungen i^(aQ_A + bQ_B) als Superauswahl erzwingen genau die mit b − a ≡ 2 mod 4
+    (Nahtparität, Paaruhr) θ = π/2. Mit a = b wird nichts erzwungen; die übrigen verbieten jede Komposition.
+  - Die Prämisse P_univ: Jede physikalische Komposition erhält die Fermionparität jeder Naht. Gleichwertig ist die Paaruhr
+    i^(Q_A − Q_B) superausgewählt; nach Tomita ist sie Δ^(−i/2) des Paars.
+  - P_univ schließt die Dreinaht-Hadamard-Klasse aus, wählt also paarweise Komposition und τ = i. Aus globaler Univalenz
+    folgt P_univ nicht.
+- **Energieweg zu S(n) [E unter A*]:** Wirkt A* auf den modularen Inhalt des Kandidaten selbst, schließt S(n) für alle n.
+  - B1: S-Invarianz macht jeden Fensterkandidaten isospektral.
+  - B2: Zustandsunabhängiger Casimir −1/24 und ⟨T⟩ = 0 geben gleiche Modulenergie. Mit ganzzahligen Vielfachheiten folgt
+    über Gelfond Z′ = Z. Auf den 74 z107-Tupeln fällt der Kern von 2n − 3 auf 1 plus verborgene Teile (0, 0, 1, 3), die Z′
+    nicht ändern.
+  - Ganzzahligkeit ist wesentlich: Reelle Relaxationen haben nichtisospektrale Lösungen gleicher Energie.
+  - Die arithmetische Obstruktion aus z107 ist damit umgangen.
+- **Folge:** Ursprung = A* + Existenz einer nichttrivialen kohärenten Komposition + P_univ, dazu der Rahmen. P_sym ist
+  unter P_univ keine eigene Prämisse mehr. K19 bleibt L und verengt sich auf „eine Naht existiert und komponiert
+  kohärent mit ihrem Partner“.
+- **Nächster Schritt (Vorschlag aus V5):** P_univ aus der Tomita-Struktur entscheiden. Frage: Ist jeder native
+  Zwischennaht-Operator in jeder Nahtparität gerade (z99/z105-Vertizes, z116-Transfers, z120-Sandwich, jeweils mit
+  J-Bild)?
+
+**V3b Zähler und Mehrspurterme (z124, 16 Prüfungen; Agent, reproduziert): drei gescopte Negative.**
+- **Gradtwist [E negativ]:** Bindet man die Nahtladung an K⁻¹ = O(2), ist das der topologische Twist T → T + a∂J mit a = 1
+  (c′ = c − 12a²k; ψ ∈ O(1), ψ* ∈ O(−3), Index 2, Nullmoden θ^α λ_α). Nativ gibt es ihn nicht:
+  - Ohne Twist ist der Index in allen Rahmen 0.
+  - Die Uhr sieht nur L₀ mod 1 und ist für ganzzahlige Twists blind.
+  - Quarterrahmen und Spin-ℤ₄ sind flache ℤ/4-Holonomien vom Grad 0.
+  - Tomita J kehrt den Twist um; native Verbindungen sind flach.
+  - Zusätzlich: Der Quarterrahmen macht den Zähler zu ⟨ij⟩⁴ z_i z_j. Und dieselben Fermionen können wegen der
+    Ladungsanomalie nicht zugleich Nenner und Zähler tragen.
+- **Pati–Salam-Quartett [E negativ]:** 16 = (4,2,1) + (4̄,1,2) hat die Form der N = 4-Superladungen, aber die Farben kommen
+  nativ nur mit Homogenität 0, −1 oder −2 vor, nie +1. Der nötige Twist würde die elektrische Ladung drehen und die gelöste
+  16 verletzen. Die η sind zwar hilfsweise (zwei η⁴-Einschübe geben genau ⟨ij⟩⁴), P_N4 bleibt aber unverändert.
+- **Mehrspurterme [E negativ]:**
+  - Relatives Gewicht k^(c−1), nativ k = 1; M Nahtpaare geben Niveau M und verstärken die Mehrspurterme.
+  - Uhr- und GSO-Projektoren lassen den ganzen Strommodul intakt.
+  - Die su(2)-Spurstrukturen haben Rang 3: Einfach- und Doppelspur sind nicht trennbar, die Teilamplituden mit
+    Zweinaht-Farbe nicht einmal wohldefiniert.
+- **n = 4 [E, neu]:** Der native Doppelspuranteil ist exakt konforme Supergravitation: s²·A = 4·T_ab·T_cd (Weyl-Graviton,
+  Propagator 1/p⁴) bzw. 4·(F·F)(F·F), Stärke k = 1 relativ zu Yang–Mills. Das ist nicht Einstein.
+- **Folge:** K15 bleibt L, präzisiert: Nenner und Farbe sind nativ, reines Yang–Mills nicht. K13: Unter T + P_N4 ist der
+  native Gravitationssektor konforme Gravitation ohne Längenskala, passend zu z112 (keine native Länge für G).
+- **Nächster Schritt (Vorschlag aus V3b):** Einstein-Einschränkung der konformen Gravitation mit dem nativen
+  AdS-Unendlichkeitstwistor I_AdS = I_π − I_ω (Maldacena 2011, Adamo–Mason): Wird 1/s² zu 1/s mit festem κ?
+
+**V1 Kohärente Komposition: Kette, Kontinuum, drei Nähte (z121, 14 Prüfungen; Agent, reproduziert): bedingt, nicht nativ.**
+- **Nativ ist das Gatter trivial [E]:** In allen vier Lesarten der zwei Moden je Naht (Quarterpaar, zwei Stufen eines
+  Fermions, zwei Spezies, η-Dublett) ist E^nat (z92, z105) einkörperig und vertauscht mit dem Nullmodentransfer. Das
+  Gatter ist dann ein Produkt von Einnahtphasen (Operator-Schmidtrang 1).
+- **Ladungsgitter [E]:** Eine Spezies U(1)₁ hat die Energien 0, 1/2, 2 ohne Dublett. Zwei Spezies sind U(2)₁ = u(1) + su(2)₁
+  mit Hubbard-Term 0, also trivialem Gatter. Ein spinblindes U(1)₁ mit Dublett ist nicht nativ; es ist z99s entartete
+  Hülle mit g = 1. Das z120-Gatter ist genau der Nullmodenteil der Lesart „zwei Stufen eines Fermions“ ohne L₀^osc.
+- **Korrektur zu z120 [E]:** Erzwungen ist nur der Winkel θ = π/2. Bei θ = π/2 ist jede Phase φ leckfrei und gibt die ganze
+  XXX-Familie R(u) mit u = tan(φ/2). Der Wert u = 1 (φ = π/2) ist eine Prämisse. Die Gleichung e^(−iπH_Q/2) = −i R^(−1/2)
+  aus z120 gilt für φ = π/2; sie erzwingt φ nicht.
+- **Prämissen für eine exakte Regel ohne freien Parameter:** P_null (die Komposition sieht nur das Ladungsgitter), P_sym
+  (die Vierteldrehung), P_viertel (φ = π/2, u = 1; das Vorzeichen der Wurzel legt die Zeitrichtung fest), P_ord
+  (unterscheidbare, geordnete Nähte). Unter P_ident wäre die Kette für zwei Nähte trivial und ab drei leer.
+- **Neu [E]:**
+  - Unter P_null ist das Gatter die Wurzel des kanonischen Nahttauschs: U² = −Γ(π); i^(Q_A Q_B) ist eine Wurzel des
+    Klein-Kozyklus W₁₂ (z106).
+  - Die Kette ist integrabel: genau das Destri–de-Vega-Lichtkegelgitter bei Θ = 1/2. Transfermatrizen vertauschen
+    untereinander und mit F (L = 4..12); zwei lokale Erhaltungsgrößen; Niveaustatistik ⟨r⟩ = 0,386 (Poisson) gegen 0,535
+    und 0,608 in den Kontrollen.
+  - Einmagnon-Dispersion cos ε = (1 − cos k)/2; lineare Berührung bei k = π.
+  - Kontinuum [N/L]: Lücke ~ 1/L, x_eff ≈ 0,43–0,47, Verschränkung c ≈ 1,14; Lesart su(2)₁-WZW im Infraroten.
+- **Drei Nähte [E]:** Der verbundene Teil ist c·s_A·(s_B × s_C) mit c = ±4 arccos(3/4)/√7 ≈ ±1,0927: ein T-ungerader
+  f-Kanal, kein φ³. Keine verbundene 1→2-Amplitude, keine Nachkommen; λ = 0, γ = 0, verträglich mit z99/z105.
+- **Folge:** Die Komposition gibt eine feste, integrable, nicht gaußsche, nichtabelsche Wechselwirkung zwischen geordneten
+  Nähten, ohne Teilchenerzeugung. K15 bleibt offen.
+- **Nächster Schritt (Vorschlag aus V1):** P_null in der Zwei-Faktor-Architektur aus z82 entscheiden (Ladungsgitter
+  innen, Oszillatoren außen).
+
+**V3a Kinetischer Term der Twistorwirkung (z123, 19 Prüfungen; Agent, reproduziert): nativ in Form, Eindeutigkeit und
+Normierungsbetrag; der Austausch selbst bleibt Prämisse.**
+- **J X J = −X† [E negativ]:** Zwischen zwei Sektoren positiver Energie gibt es keine su(2,2)-invariante Bilinearform.
+- **Richtig ist J E J = −(τEτ)† [E]** für alle 16 Erzeuger. τ ist z84s Punktspiegelung x → −x, J ist also die
+  CPT-Abbildung der Leiter; J = θ∘τ mit der OS-Spiegelung θ. Die τ-verdrillte invariante a–b-Form ist eindeutig und gleich
+  ω = ⟨Jψ|φ⟩.
+- **Paarung und Kern [E]:**
+  - ω ist nicht entartet und paart genau n = 0 mit n = −4.
+  - Čech-Bild: ω = Res(Čψ · τ*Čφ), die Serre-Paarung O(0) × O(−4), exakt sl(4)-invariant. Die Lesart als ∫tr(b∂̄a) ist
+    [L].
+  - Ein Kern, zwei Spiegelungen: Hilbertform = G∘θ, Tomita-Paarung = G∘τ. Die Fock-Kohärenzzustände sind z111s
+    Elementarzustände; das legt ⟨ab⟩ = 1 fest.
+  - Der a–b-Kern hat genau die Form von ∂̄⁻¹ in CSW-Eichung.
+- **Normierung:** Faktorisierung fixiert c_V·N = 1, |N| = 1 folgt aus der Antiunitarität von J (unter P_norm). Niveau,
+  KMS-Gewichte, Uhr und Tomita-Phase fixieren sie nicht.
+- **Zusammenbau [E]:** CSW = BCFW für alle 4- und 5-Punkt-MHV- und NMHV-Konfigurationen (Abweichung 3·10⁻¹¹);
+  Falschpaarungen scheitern.
+- **Restprämissen des Twistorwegs:** T, P_N4, P_norm und neu P_X (ein freies Feld mit dieser Kovarianz wird tatsächlich
+  zwischen Nähten ausgetauscht). P_BF aus z111 schrumpft zu P_X.
+
+**W2 Prämissen der Uhrspur (z127, 15 Prüfungen; Agent, reproduziert): P_R größtenteils Folge, Paarungsbit und Normierung offen.**
+- **P_R [E neu]:**
+  - Die endlichen modularen Gewichte auf S⁺ sind genau ±R (Uhrgruppe des Originals) und ±iΓ₂ (Lichtkegeldilatation des Vakuums,
+    topologischer Sektor). Es gibt keine endliche Holst-Mischung. Die Gewichtswahl folgt also aus „das Gewicht ist ein
+    modulares Element des Originals“ plus Endlichkeit.
+  - Die Nullmode der Naht ist exakt die KMS-Leiter bei β = 4π auf den Marken k = 4j. Dort ist Δ^(−i/2) = R die Identität, und
+    nur für β ∈ 4πℤ (Kontrollen 2π, 6π, 4,04π scheitern). Der äquivariante Index der vollen modularen Uhr ist damit 64ε, ohne
+    Einschränkung auf den inneren Faktor.
+  - Bei endlichem s bleibt das Negativ aus z118: Die Wärmespur hängt in Ordnung 10⁻⁶ von s ab.
+  - Von P_R bleiben zwei Lesewahlen: P_mod (Gewicht aus dem Modulfluss des Originals) und P_idx (Wirkung = äquivarianter Index).
+- **Paarungsbit [E negativ]:** Die KMS-Richtung legt es nicht fest.
+  - β > 0 fixiert die Uhrrichtung und den Index +1 des Senkschritts.
+  - Die native halbe Drehung ι = e^(πE) erhält alle KMS-Daten und kehrt Paarung, Wick-Richtung, Kappenspitze, Zeitrichtung,
+    γ₅, das Vorzeichen des ε-Terms und τ gemeinsam um. Paarung = KMS-Richtung × Kappenorientierung.
+  - Native Form des Bits: die τ-Parität der Nullmodenebene.
+  - **Korrektur:** z117 und z118 setzen dieses Bit stillschweigend entgegengesetzt (die Konventionen unterscheiden sich um
+    den Hodge-Stern, uneigentlich auf ℝ^{4,2}).
+- **Gewicht 2c₃ [E negativ]:** Als Spurgewicht ist es nicht nativ.
+  - Endliche modulare Gewichte geben 64 × Einheitsphase × Index; KMS-, Ward- und Indexgewichte liegen in [1 − q², 1].
+  - Nativ ist 2c₃ als Dichte (2c₃∮K = 1 auf der zweiblättrigen Naht), als KMS-Temperatur 1/β und als führender
+    2D-Wärmekernkoeffizient. Die globale Spur sieht nur das Integral, also 1.
+- **Normierung [E neu]:** In MacDowell–Mansouri bindet das Spurgewicht κ beide Größen: Λ·G = −3/(1024πκ) und
+  G/R_vak² = 1/(4096πκ).
+  - Jedes native Gewicht gibt |Λ·G| zwischen 10⁻³ und 10⁻²: AdS mit Krümmung auf der Planck-Skala.
+  - Mit 2c₃ und G = v⁻² folgt R_vak = 32 v_geo⁻¹ und Λ·G = −3/256.
+  - Das Ledger-Λ (v60) bräuchte κ = (π²/32)e^(2/α) ≈ 10^118,5.
+- **Folge:** K13 bleibt L. Die Klausel „Graviton“ bleibt leer. Offen sind P_mod/P_idx, das Paarungsbit, κ (trägt die
+  Hierarchie), das dS-Vorzeichen (P_cap) und ein dynamisches Vierbein.
+
+**X2 P_univ aus der Standardform (z130, 17 Prüfungen; Agent, reproduziert): nativ in der Partnerlesart, sonst Prämisse.**
+- **Native Form:** P_univ ist Niveauanpassung (die Paaruhr), nicht Nahtparität. Die beiden Algebren unterscheiden sich
+  (Dimension 72 gegen 64) und fallen bei erhaltenem N zusammen. Strikte Nahtparität würde die Purifikation selbst verbieten
+  (⟨(−1)^{Q_A}⟩_Ω = 0,841).
+- **Mechanismus [E]:** die 2π-Drehung der verdoppelten Naht.
+  - Mit dem Viertelversatz bei β = 4π ist Δ^(−i/2) = i^(Q_A−Q_B) = R·R̄⁻¹ = e^(2πi(L₀−L̄₀)); ohne Versatz nur (−1)^F.
+  - Die native Projektion aus z113 (R = R̄, (−1)^{F+F̄} = +1) setzt diese Drehung auf physikalischen Zuständen auf 1. Ω liegt
+    darin, jedes Tomita-Objekt erhält den Raum, und der Einzeltransfer hat kein physikalisches Matrixelement.
+  - Für N-erhaltende Kompositionen ist das gleichwertig zur Nahtparität auf geradem N. Die Familie aus z125 erhält den Raum
+    genau bei θ/π ∈ {0, ½, 1}.
+- **Was nicht trägt:** Die Kommutanten-/Koszul-Struktur schließt den Transfer nicht aus (T = m′m liegt in (M∨M′)^gerade,
+  Dimension 128 gegen 64). Die Erzeuger selbst (su(2)₁-Ströme E^±) sind ungerade je Naht.
+- **Neue Prämisse P_TP:** Die zweite Naht der Komposition ist der Tomita-Partner (entgegengesetzte Chiralität). Unter P_TP
+  entfällt P_univ. Für zwei gleichchirale Nähte (z99) bleibt P_univ Prämisse.
+- **Korrektur zu z125:** Dort sind zwei Lesarten gemischt. „Leckfrei auf allen Sektoren“ gehört zur Lesart zweier
+  unabhängiger Nähte; der Tomita-Vektor hat kein Gewicht auf Q_A ≠ Q_B.
+- **K19:** Der zweite Kompositionspartner ist der GNS-Partner jedes treuen Zustands. Eine Naht mit KMS-Zustand genügt.
+- **Vorbehalt:** Unter P_TP ist das Gatter eine holomorph–antiholomorphe Kopplung innerhalb einer verdoppelten Naht, nicht
+  die gleichchirale Zwei-Hüllen-Kopplung aus z99. Die Entscheidung fällt auf N = 2.
+
+**W3 Krümmung aus inhomogenen Zuständen (z128, 11 Prüfungen; Agent, reproduziert): nein für native Quellen [E negativ].**
+- **Zustandsscheibe [E]:** Die SO(3)-invarianten reinen Gaußzustände bilden eine Scheibe |z| < 1, auf der die radiale
+  sl(2,ℝ) durch Möbiusabbildungen wirkt. Die Fixpunkte von Q⁻ und D zusammen sind genau z⁴ = 1, die Marken aus z104.
+- **J ist q-blind [E]:** τ(M_q, Ω_q) ist für jedes q dasselbe. Jedes Profil im lokalen Gleichgewicht (Tolman) gibt exakt die
+  flache native Bahn; das Profil steht nur im zentralen Modulgenerator ω = 2 log(1/q).
+- **Lemma [E]:** τ(M_g, U(h)Ω) = R_h⁻¹ τ(M_{h⁻¹g}, Ω) R_h. Jedes reine Gaußprofil liegt offen in Conj_ψ ≅ U(2), einer Bahn des
+  Stabilisators, und ist in seinem Modell flach. Der Ort wechselt nur die Karte.
+- **Native Profile [E/C]:** Wiesbrock-Profil q(a)² = (q² + x²(1−q)²)/(1 + x²(1−q)²) und Markenvakua, beide ohne freie Größe.
+  Die Hislop–Longo-Temperatur T(r) = 1/(π(1−r²)) ist nur unter dem Netz nativ.
+- **q-Gradient [E]:** Genau eine Richtung (die Uhr) bewegt J und Spektrum zugleich. Die BKM-Antwort ist eine Form vom Rang 1,
+  beim Markenvakuum 16q² ≈ 5,6·10⁻⁵. Sie hat keine Krümmung, die sie normieren könnte.
+- **Komposita [E]:** Antipodale Marken geben den Graphen einer Isometrie (flach). Vier Marken, Viertelmarken und ein
+  verschobener Partner haben überall Rang 7 und kein 4D-Modell. Die ℤ₄-Überlagerung der vier Markenvakua hat die nativ feste
+  Amplitude √5·q⁴ = √5·e^(−8π) ≈ 2,7·10⁻¹¹.
+- **Bedingter Mechanismus (P_dq):** Zwei Nähte am selben Ort mit verschiedenem q geben auf dem globalen AdS-Schnitt ein
+  verzerrtes Produkt S¹ × M³ mit ortsabhängiger Krümmung (Weyl ≠ 0). Das gilt nur auf einem gewählten Schnitt, und die
+  q-Differenz ist ein freier Koeffizient.
+- **Kappe und dS [E/C]:** so(4,1) = Der(I_π + I_ω); die τ-Bahn ist dS₄ mit F = 0, das Krümmungsvorzeichen kehrt sich um
+  (Λ = ±12/R²). Keine Naht trägt den hyperbolischen Kappenfluss (Nahtflüsse sind elliptisch); die Kappe braucht das
+  Typ-III-Netz. Das Vorzeichen von Λ entscheidet, welcher Faktor halbiert wird, es erzeugt keine Krümmung.
+- **Folge:** K13 bleibt L, schärfer. Für jeden Zustand liegt J(M_g, ψ) in einer Stabilisatorbahn und ist Maurer–Cartan-flach.
+  Krümmung kann nur induzierte Geometrie einer echten Teilfamilie sein, und jede gefundene entfaltet sich auf Rang 7. Ein
+  Profil allein krümmt keine 4D-Familie. Nötig ist eine Dynamik, die Algebra und Zustand nicht durch Gruppenelemente
+  verbindet.
+
+**X1 Legt der Nahtindex das Chiralitätsbit fest? (z129, 11 Prüfungen; Agent, reproduziert): nein [E negativ].**
+- **Nullmode [E]:** Der Kern von D_⊥ ist genau Schnitt ⊗ Nullmode, die τ-Kopie (1+τ_W)/2 mit J_H6 = +J_MW. Die Nullmode
+  sitzt nur auf Marken k ≡ 0 mod 4, ihre Uhr ist R = 1. Der äquivariante Index von A_q ist der triviale Charakter.
+- **Sektorinhalt (2176 Dimensionen, volle Diagonalisierung):** Der Kern ist 128 = 4 × 32, je ein Block für (T,16), (T,16̄),
+  (T*,16), (T*,16̄). Der Index bezüglich Γ_tot ist 0, beide Weyl-Sektoren von Cl(3,11) tragen Index 64. Die Nullmode wählt
+  keinen Sektor.
+- **Blatttausch Θ [E neu]:** Θ = Γ(Q_C)Γ₇ mit einem raumartigen Einheitsvektor Q_C, also eine räumliche Spiegelung
+  (Paritätsklasse). Θ vertauscht mit γ±, τ_W, Schnitt, D_⊥, den Marken, beiden Uhren und dem Wick-Kompensator und tauscht
+  S⁺ mit S⁻. Θ kehrt den Index nicht um.
+- **Symmetrietyp:** Das Klebebit ist P-ungerade, C-ungerade und CP-gerade, wie die Chiralität des Standardmodells. Der
+  Nahtindex ist unter P, C und CP invariant und kann das Bit deshalb nicht festlegen.
+- **Paarungsbit aus z118:** Es zerfällt in Hardy-Orientierung × Zuordnung, und die Zuordnung ist die Wick-Richtung.
+  Hardy-Orientierung und Uhrrichtung sind ein Datum. Das MacDowell–Mansouri-Vorzeichen ist 64 × Γ_tot × Schnitt × Uhr und
+  unter Θ ungerade, also durch den Index so wenig festgelegt wie Γ_tot.
+- **Vorzeichenwarnung:** In den Konventionen von z117 ist die native Paarung P_IF gleich Γ_tot = −1, also das dortige S⁻.
+  z117 hat I_T = iΓ₇, das Inverse von z122s I_T = Ad Z_SU. „P_IF = P_glue“ gilt als ein Bit, die Etiketten S± sind
+  vertauscht.
+- **Einziger verbliebener Kandidat mit richtigem Symmetrietyp:** die Seitenlokalität mit Energieordnung bei α = 1/4 aus
+  z122 (nativ L₀ = 5/4, Spiegel 7/4). Sie ordnet die beiden Paarungen, schließt den Spiegel aber nicht aus.
+- **Folge:** chiral_matter bleibt bedingt an P_IF + T + K2. Der Weg über den Nahtindex ist geschlossen.
+
+**G1 Verschränkungsgleichgewicht nativ (z136, 19 Prüfungen; Agent, reproduziert): G ist eine freie reine Zahl, keine Einheit.**
+- **Modulfluss [E]:** Die native su(2,2) enthält den Hislop–Longo-Erzeuger richtig normiert: K_cap = 2π·Q⁻, Doppelkegel
+  um x = 0 (Fixpunkt von τ), Radius 1·R_vak, Oberflächengravitation 1, CHM-Gewicht (1−r²)/2.
+- **Aber [E negativ]:** Der Modulgenerator des Nahtzustands ist K = 4π·E (elliptisch). Er ist zu keinem reellen Vielfachen
+  eines Doppelkegel-Erzeugers konjugiert, weder in SU(2,2) noch in SL(4,ℂ). Die einzige Verbindung ist das Wick-Element
+  W = e^(iπD/2), das nicht in U(2,2) liegt: W·K_Naht·W⁻¹ = 2i·K_cap.
+- **Faktor 2:** auf Gruppenebene der Spinor-Halbwinkel (Perioden 2π auf Vektoren, 4π auf Twistoren, 8π auf Viertelmoden);
+  als Erzeugerwahl 4π·L₀ = 2π·L₀^NS; auf Zustandsebene ein echter Unterschied (β = 4π gehört zum elliptischen Erzeuger).
+- **Brandmauer (GRAV.NONCIRCULAR.01):** Aus dem Zustand hergeleitet ist nur der 1D-Peschel-Test auf der Halbnaht. Das Vakuum
+  ist geometrisch (Rest 8·10⁻⁵), der Nahtzustand nicht (Rest 0,33). Die Lokalität eines 4D-Netzes bleibt Import;
+  QGEO.MODHAM.01 ist nicht geschlossen.
+- **Erstes Gesetz [E]:** δS = δ⟨K⟩ gilt nativ, die relative Entropie ist die Fisher-Information > 0. Das gilt für das
+  globale K = 4π·L₀, nicht für einen Doppelkegel.
+- **Überbestimmungstabelle für G/R_vak²:** Keine zwei Zeilen stimmen exakt überein.
+  - z118 als reines Spurgewicht w: 1/(4096πw), also 7,8·10⁻⁵ (w = 1) oder 1/1024 (w = 2c₃).
+  - Ledger 8πG = 1/c₃: definiert nur die Einheit.
+  - COSMO.LAM.01: e^(−2/α)/(128π³) = 2,36·10⁻¹²³ (Vergleichsziel, dS).
+  - Flächenzustand: 1,1616·(l/R)², l frei.
+  - z112: 0,00995 bis 6,33.
+  - Jacobson π/s₀ (flacher Rahmen): 9,06 (Naht, s₀ = ln 2/2), 18,1 (Viertel), 1,26 (E₈-Naht), 0,378 (48 Viertel); im
+    dS-Rahmen ein Viertel davon; im nativen AdS-Rahmen ist die Fläche unendlich.
+- **2c₃ aus z118** ist nicht die native Entropiedichte. Es bräuchte S_dS = 256π, das 2320,6-Fache der Nahtentropie
+  (irrational, keine ganze Nahtzahl).
+- **Gegen COSMO.LAM.01:** Der Jacobson-Wert ist 10^122,98 größer. Der Faktor ist exakt 32π⁴e^(2/α)/s₀ = 9,6·10¹²², die Zahl
+  der Nähte je Horizont, die das Ziel bräuchte. Dafür gibt es keinen nativen Mechanismus, und das Vorzeichen ist umgekehrt.
+- **Einstufung:** No-Unit nimmt eine Länge auf, H6 hat zwei (R_vak und √G). N_G = G/R_vak² bleibt frei. Kleinste
+  verbleibende Prämisse P_η: eine native endliche Entropie je Fläche der Bifurkationssphäre, in einem Rahmen mit endlicher
+  Fläche.
+- **Physikalisch:** R_vak/ℓ_P = 0,24 bis 3,25, also ein Vakuum von Planck-Größe mit negativem Λ. Jacobsons Bereich
+  ℓ_P ≪ Ball ≪ Krümmungsradius ist dann leer. Das widerspricht der Beobachtung nur, wenn R_vak als kosmologischer Radius
+  gelesen wird.
+
+**Z1 Folgt P_null aus der Zwei-Faktor-Architektur? (z133, 13 Prüfungen; Agent, reproduziert): nein, P_null ⇔ P_sl2 [C].**
+- **Modell:** Zwei Nähte, je ein Dirac-Fermion mit α = 1/4; Fenster E^nat ≤ 4 mit 242 Zuständen, abgeschlossen unter
+  Transfer, E^nat und H_Q. Jede Naht wird über ihr Maya-Diagramm in inneres Q (Q²/2, Uhr i^Q) und äußeres λ (L₀^osc)
+  zerlegt.
+- **Inneres und äußeres Gatter sind invers [E neu]:** U_in·U_out = U_voll = e^(−iπE^nat/2), ein Produkt von
+  Einnahtphasen. „Innen“ gegen „außen“ ist die Wahl des Wurzelvorzeichens, also der Zeitrichtung.
+- **U_in respektiert die Zerlegung nicht [E]:** Die Transfer-Nullmode ist ein Vertexoperator.
+  - Bei ungerader Gesamtladung wandert Energie vom Gitter zu den Oszillatoren (⟨H_Q⟩ 2,5 → 1,0, ⟨L₀^osc⟩ 0 → 1,5,
+    E^nat erhalten). Das ist der in z125 gesehene Bruch von H_Q auf N = 3.
+  - Bei gerader Gesamtladung ist U_in die Wurzel des vollen Nahttauschs von Gitter und Oszillatoren.
+  - Auf dem physikalischen Sektor Q_A = Q_B ist es leckfrei und gleich 1_innen ⊗ √SWAP auf den Oszillatoren. Das Gatter aus
+    z120 wirkt also auf dem äußeren Faktor.
+- **Satz [E]:** Ein rein inneres Gatter (V ⊗ 1), das mit L^nat_{±1} vertauscht, ist diagonal in (Q_A, Q_B). Bei
+  superselektierter Gesamtladung ist es einkörperig und wechselwirkt nicht.
+- **Was U_in auszeichnet [E]:** Nur U_in vertauscht strikt mit der nativen sl(2). In der Phasenfamilie
+  e^(−iπ(H_Q + b·L₀^osc)/2) gilt das genau für b ∈ 4ℤ. P_null ist dort gleichwertig zu **P_sl2**: Die Komposition enthält
+  keine freie konforme Zeit.
+- **P_viertel bleibt Prämisse [C]:** Weder die Modulperiode noch der Viertelschritt der Uhr wählt φ (die Gatterphase ist
+  eine quadratische Gauß-Summe, die Uhr linear). Uhrordnung 4, Selbstdualität und „U² = Tausch“ wählen alle u = ±1, die zwei
+  Zeitrichtungen; das sind Umformulierungen derselben Prämisse.
+- **Korrektur zu z121:** U² = −Γ(π) gilt nur bei gerader Gesamtladung, auf dem ganzen geraden Sektor mit dem uhrgedrehten
+  Tausch Γ_y, mit dem reellen Γ_x nur auf Q_A = Q_B.
+- **P_ord bleibt nötig [E]:** [U_AB, U_BC] ≠ 0.
+- **Folge für K15:** Das Gatter bleibt bedingt an P_sl2, P_viertel und P_ord und gilt im Paarsektor gerader Gesamtladung.
+  Es ist eine Wechselwirkung zwischen den äußeren (Oszillator-)Faktoren zweier Nähte, ausgelöst durch die Gitterenergie.
+
+**G2 Induzierte Gravitation und Nahtzählung (z137, 19 Prüfungen; Agent, reproduziert): legt P_G nicht fest [E/C].**
+- **Nativer Spannungstensor [E]:** Der Spin-2-Primär zweier Leitern ist P₁P₁ − 4P₁P₂ + P₂P₂, erhalten bei Δ = 4. Die
+  Ward-Identität gibt C_T = 1/(3π⁴), c = 1/120 je reeller Leiter. Skalar : Weyl : Maxwell = 1 : 3 : 12.
+- **Reine Zahlen:** Mit ⟨T⟩ = (cW² − aE₄)/16π² und L = ln(Abschneideskala/IR) ist ℓ²/G = (4c/π)·L und
+  G·Λ = −3π/(4cL) (Relation geprüft auf AdS₄, S⁴ und Hawking–Page).
+  - Eine Leiter: (a, c) = (1/360, 1/120), G·Λ = −282,7/L.
+  - 3 × 16 Weyl: (11/15, 6/5), G·Λ = −1,963/L.
+  - Dazu 12 Eichbosonen: (14/5, 12/5), G·Λ = −0,982/L.
+- **Vorzeichen:** Mit c > 0 und L > 0 folgt zwingend AdS. Das passt zum nativen Vorzeichen und widerspricht der Beobachtung.
+- **Einstein–Hilbert-Term:** nicht festgelegt (z27: Vorzeichenwechsel je nach Metrikkopplung).
+- **Brücke zu z118:** Auf Einstein-Räumen ist die Uhrspur exakt 16·W² je Index, also ℓ²/G = 1024π·κ je Index.
+- **N-Skalierung [E]:** Unter P_ord (unterscheidbare Nähte als direkte Summe) sind Uhrspur (64N), Entropie (N·ln 2/2) und
+  C_T additiv; die Kette aus z121 ändert das nicht. Unter P_ident oder dem graduierten Produkt zählt nichts. Also
+  ℓ²/G = (4c₁/π)·L·N.
+- **Ledger-Ziel (COSMO.LAM.01):** verlangt N·L·c₁ = 8π⁴e^(2/α), also N·L ≈ 10^124 (Leitern) bzw. 10^121,8 (3 × 16). Das ist
+  eine Gleichung für ein Produkt und sagt nichts vorher.
+  - e^(2/α) ist keine Zählung: 2/(α·ln 2) = 395,40 ist nicht ganz, und eine Dimension wäre multiplikativ, die nativen Größen
+    sind additiv.
+  - 48c₃²: c₃² ist genau der Einschleifenfaktor 1/(64π²), aber 48 Weyl-Fermionen geben 96 Komponenten mit negativem
+    Vorzeichen (Faktor 2 und Vorzeichen daneben). Die Ledger-Form skaliert wie N_W⁻¹, die induzierte wie N_W⁺¹.
+- **Graviton:** nur eine effektive Metrikantwort (⟨TT⟩ ~ c·p⁴·ln p², kein masseloser Pol). Zwei Helizitäten erst unter
+  P_dyn + P_Neumann.
+- **Einstufung:** Die eine freie Kopplung wird zum Produkt zweier nicht nativer Größen (Inhaltszahl × Abschneidelogarithmus).
+  Prämissen: P_netz, P_ord, P_ind, P_cut, P_dyn, P_Neumann.
+
+**Z4 Yang–Mills aus den Schleifen des Transfernetzes (z135, 15 Prüfungen; Agent, reproduziert): Struktur nativ, Kopplung und Dynamik nicht [E/C].**
+- **Eichkovarianz [E]:** Mit einem Link U im Transferstrom J⁺ = Σ c⁺_A U c_B ist das Gatter aus z120 eichkovariant; eine
+  einzelne Bindung ist reine Eichung. Mit je einer Anregung je Naht ist es exakt −i·R(1)(U).
+- **2D-Viertelrotationsnetz [E]:** Vier Teilschichten (+x, +y, −x, −y). Der Rückkehrblock ist ⟨x|F|x⟩ = cos⁴θ + sin⁴θ·U_p;
+  der Realteil der Spur ist exakt das fundamentale Wilson-Funktional ¼ Σ_p Re Tr(1 − U_p), additiv.
+- **W rekonstruiert [E]:** W(g) = (d² − |Tr g|²)/(4d⁴) ist die Einperiodenantwort des Elementarrings aus vier Nähten, mit
+  1/4 aus (i/(1+i))⁴ = −1/4. W ist die adjungierte Wilson-Wirkung, blind für das Zentrum, und stimmt mit der fundamentalen
+  nur in O(A²) überein. Auf einem Gitter ist das Austauschnetz ein nichtadditives Schleifengas; Σ_p W(U_p) ist nicht sein
+  Funktional. W ist also nicht das native Yang–Mills-Funktional.
+- **Kopplungsverhältnis nativ [E]:** Jede Spurantwort über die volle 16 gibt 1/g_i² = λ·k_i mit k_i = 2 Tr₁₆T_i² = 4 für
+  SU(3), SU(2) und U(1)_Y, also sin²θ_W = 3/8 an der Anpassungsskala, unabhängig von θ und vom Netz. Das ruht darauf, dass
+  die Marken ein vollständiges Multiplett sind (Kontrolle nur mit Dubletts: 3/4).
+- **Absolutwert nicht nativ [C/L]:** Dieselben Daten (d = 16, θ = π/4, k = 1) geben drei Lesarten über einen Faktor 16384:
+  Netzspur je Periode 1/g_U² = 1/2 (α_em⁻¹ = 16,76), W je Markenzustand 1/4096, Niveau mit P_norm 4 (α_em⁻¹ = 128π/3 =
+  134,04). Keine liegt innerhalb 1 % von 137,036 und keine im Fenster 60–74 aus z25. Das ist kein Treffer.
+- **Dynamik fehlt [E]:** Als ℤ₄-Quantenlinks vertauscht das Netz mit allen Linkoperatoren und dem Gauß-Gesetz; die
+  Linkbesetzungen sind exakt eingefroren. Das Netz misst den Fluss und bewegt ihn nicht.
+- **Ungerader Anteil auf der 16 [E]:** verschwindet bis zur vierten Ordnung; die fünfte ist Tr₁₆X⁵ = −60 Pf(ω), auf der
+  16̄ mit umgekehrtem Vorzeichen (Chiralität).
+- **1D-Kette [E negativ]:** hat keine Plakette. In 3D ist die Antwort bei θ = π/4 keine reine Plakettenwirkung.
+- **Was für Yang–Mills fehlt:** P_link (Links als eigene Freiheitsgrade mit Haar-Maß), P_E (elektrischer Term), P_exp
+  (Regel Antwort → Wirkung mit Vorzeichen und Koeffizient), ξ bzw. P_Lorentz (Anisotropie Raum/Zeit).
+- **Folge:** K15 bleibt L, geschärft: Plakettenstruktur und das Verhältnis 3/8 sind nativ, die Kopplung ist frei, die
+  Dynamik fehlt.
+
+**Recherchen (nur gelesen, nichts gerechnet).**
+- **R1 Gravitation:**
+  - Der Bestand leitet G nirgends her. „8π = 1/c₃“ setzt immer zuerst G = 1.
+  - Jeder native Weg gibt G/R_vac² von der Ordnung 1; das Ziel ist 10^(−122,63).
+  - Ungerechnet sind ρ⋆ aus tfpt-42 (G_N·λ_Σ² = π/(4ρ⋆)), die Relativentropie-Wirkung mit nativen Tomita-Daten und Λ als
+    Rest der Zeitklasse.
+  - Widersprüche im Bestand: v60 gegen v206 für ρ_Λ (3,8 %), β als 1, 2π, 4π und 8π, Spezieszahl 16, 32, 48 und 96,
+    mindestens sieben Lesarten von c₃ = 1/(8π), das Vorzeichen von Λ.
+- **R2 Prämissen:**
+  - Reduzierbar erschienen P_null, P_viertel, P_univ, P_lift und die modulare Statistik; auf dem jetzigen Stand nicht
+    reduzierbar A*, I_step, das Vorzeichen von P_IF und P_ord.
+  - Bestandsstücke: v241 (Trägerform (5x² + 3y²)/8, Lagrangesche ⟨(1,1)⟩), v243 (Monodromie-S-Matrix), FORM.GLUE.01 (Lean).
+  - Ein-Prinzip-Kandidat: Nähte sind lokalisierte Sektoren eines graduiert-lokalen Netzes über einer geordneten
+    Indexmenge, das Gatter ist ihr Statistikoperator. z144 stützt die Hälfte davon: Die Wechselphase ist der Bicharakter
+    der Uhrgruppe.
+
+**Maße aus der Geometrie (Frage vom 25.11., aus Ledger und H6-Bestand beantwortet).**
+- Reine Zahlen liefert die Struktur, eine Einheit nicht: Das No-Unit-Theorem (v153, v78, v274, v364, v725) verlangt genau
+  einen dimensionsbehafteten Anker.
+- COSMO.LAM.01: ρ_Λ/M̄⁴ = (3/4π²)·e^(−2/α) = 7,125·10⁻¹²¹ (2,2375 meV gegen 2,24 beobachtet), Status Numerical.
+- H6 z96: ℓ²/G = 32π³·e^(2/α), also ℓ = 1,03·10⁶¹ Plancklängen. Nativ ist das nicht erreicht.
+- H6 hat zwei Längen, R_vac und √G. Ihr Verhältnis ist eine freie reine Zahl (z136); „G ist nur die Einheit“ ist
+  widerlegt.
+
+**Korrekturen an früheren Ergebnissen.**
+- z120 → z121: Erzwungen ist nur der Winkel θ. z121 → z144: Die Phase ist nur bei einer Anregung je Naht frei.
+- z121 → z133: U² = −Γ(π) gilt nur bei gerader Gesamtladung.
+- z125 → z130: Dort sind zwei Lesarten gemischt; die native Form von P_univ ist der Niveauabgleich.
+- z117 gegen z118: Das Paarungsbit ist entgegengesetzt gesetzt (z127). z117 gegen z122: S± sind entgegengesetzt
+  benannt (z129).
+- z120: W(g) ist die adjungierte Wirkung, nicht das native Yang–Mills-Funktional (z135).
+
+**Was die Welle bedeutet.**
+- **Der Kandidat (eine Gesamthypothese, neun Prämissen):** A*, I_step, P_lift, P_IF, P_univ, P_uhr, P_ord, P_curv und
+  P_G als freie Zahl. Vorher zehn: P_null und P_viertel sind zu P_uhr geworden.
+  - P_univ ist unter P_TP nativ (Niveauabgleich, z130).
+  - P_IF ist ein Bit zwischen zwei isomorphen Lösungen (z129, z144). Der Indexweg ist geschlossen.
+  - P_ord bleibt: Die alternierende Schichtung ist integrabel, die Treppenordnung nicht.
+- **Wechselwirkung (K15):** Das Gatter ist unter P_uhr fest. Seine Schleifen geben die Plakettenstruktur und sin²θ_W = 3/8
+  nativ; die absolute Kopplung und die Linkdynamik fehlen (z135). Reines Yang–Mills ist auf dem Twistorweg nicht
+  erreichbar (z124).
+- **Gravitation (K13):**
+  - Vier Wege sind gerechnet: Uhrspur (z127), Verschränkungsgleichgewicht (z136), induzierte Gravitation (z137),
+    Doppelkopie (z112). Alle geben ein Vakuum von Planckgröße mit negativem Λ; keiner legt G/R_vac² fest.
+  - Krümmung aus Zustandsprofilen ist ausgeschlossen (z128). Ein Graviton gibt es nur als effektive metrische Antwort.
+  - Die Klauseln „Graviton“ und „modulare Statistik“ erreicht weiterhin kein Überlebender der Szenario-Suche.
+- **Offen bleibt:** eine Begründung für P_uhr (oder P_Q), die Ordnung der Komposition, eine Familie mit Krümmung, die
+  Zahl G/R_vac², der Kontinuumslimes mit Eichdynamik und die abgebrochenen Rechnungen (Relativentropie-Wirkung, ρ⋆,
+  Spin-2-Pol, modulare Statistik, I_step).
+
+## Davor: H6h49 — Tiefe Welle T1–T6, U1–U3 und achtzehnte Analyse: Vorwärtsregel mit erzwungenen Winkeln, Hypothese T bedingt, P_GSO nicht modular (`z110`–`z120`)
 
 **Bilanz:** unverändert 13 P und 7 L von 20. K13, K15, K16 und K19 sind weiter präzisiert.
 

@@ -1019,6 +1019,42 @@ EVIDENCE = [
      "Pati-Salam quartet lacks homogeneity +1), and the multi-trace sector is conformal supergravity of equal strength "
      "(z124): pure Yang-Mills is not natively reachable on this route",
      lambda d: _check_named(d, "Ladungsanomalie im gaußschen") and _check_named(d, "Der native Doppelspuranteil bei n = 4")),
+    # H6h50: waves W-Z and G (z127-z137) and the nineteenth analysis (z144); the last entry per value is the current one
+    ("statistics", "Z4 glue on the spinor module (P_glue)", "conditional", "z129_ergebnis.json", "the index route to the "
+     "bit is closed: the leaf swap is a spatial mirror, the bit P_IF is P-odd, C-odd and CP-even while the seam index is "
+     "invariant; the MacDowell-Mansouri sign is the same bit. In the lattice reading (z144) the bit is the choice between "
+     "the two isomorphic gluings D5 + A3 -> E8, exchanged by the charge conjugation of one side",
+     lambda d: all(d["checks"].values())),
+    ("gravity", "MacDowell-Mansouri: modular Cartan connection", "conditional", "z127_ergebnis.json", "premises of the "
+     "clock trace: P_R is mostly a consequence (the finite modular weights on S+ are +-R and +-i Gamma_2, the zero mode is "
+     "the KMS ladder), left are the reading choices P_mod and P_idx; the pairing bit is not fixed by the KMS direction "
+     "(the native half-turn keeps all KMS data and flips it); Lambda G = -3/(1024 pi kappa)",
+     lambda d: all(d["checks"].values())),
+    ("gravity", "MacDowell-Mansouri: modular Cartan connection", "conditional", "z136_ergebnis.json", "G/R_vac^2 stays a "
+     "free pure number: clock trace (z127), entanglement equilibrium (z136: K_cap = 2 pi Q^- native, but the seam K is "
+     "elliptic and the first law holds only globally), induced gravity (z137: sign necessarily AdS, G Lambda = -3 pi/(4 c L), "
+     "no graviton pole) and the double copy (z112) give rows that do not agree, all of Planck size; the ledger value needs "
+     "9.6e122 seams per horizon. State profiles carry no curvature (z128, one stabiliser orbit); the sign of the action is "
+     "the chirality bit P_IF (z129)",
+     lambda d: all(d["checks"].values())),
+    ("interaction", "local coherent transfer gate", "conditional", "z133_ergebnis.json", "P_null does not follow from the "
+     "two-factor split of z82; in the phase family it is equivalent to P_sl2 (the gate commutes strictly with the native "
+     "sl(2), b in 4Z); on Q_A = Q_B the gate is 1 (x) sqrt(SWAP) on the oscillators; U^2 = exchange only at even total "
+     "charge; P_viertel and P_ord stay", lambda d: all(d["checks"].values())),
+    ("interaction", "local coherent transfer gate", "conditional", "z135_ergebnis.json", "loops of the gate: gauge "
+     "covariance and the fundamental Wilson functional of the 2D quarter-rotation network are native, sin^2 theta_W = 3/8 "
+     "at the matching scale; the absolute coupling (three readings over a factor 16384) and link dynamics are not",
+     lambda d: all(d["checks"].values())),
+    ("interaction", "local coherent transfer gate", "conditional", "z144_ergebnis.json", "nineteenth analysis: the mutual "
+     "phase of the gate at phi = pi/2 is the Z4 bicharacter i^(Q_A Q_B) = B_D5 on the clock values; a composition phase is "
+     "a function of the clock values exactly for phi in (pi/2)Z without oscillator part (P_uhr, containing P_sl2), and from "
+     "transfer spin 2 on only these phases keep the pair sector Q_A = Q_B leak-free and inside the XXX family (z121's "
+     "'every phase is leak-free' holds for one excitation per seam); k = 0 trivial, k = 2 the one-body exchange, k = +-1 "
+     "interacting. The constant braid relation holds only for one-body operators (seam clock and beam splitter = Ising "
+     "braid matrices, finite Clifford-type group), the interacting gate violates it with defect sqrt(3/8); Yang-Baxter "
+     "with spectral parameter (z121) needs level matching mod 4 for the full gates",
+     lambda d: _check_named(d, "Funktion der Uhrwerte (Q mod 4)") and _check_named(d, "Leckfreiheit des Paarsektors")
+     and _check_named(d, "verletzt die Zopfrelation; im ausgeglichenen Sektor")),
 ]
 
 # results that feed a clause instead of an axis value: (clause, result file, meaning, predicate)
@@ -1062,11 +1098,28 @@ IMPLICATIONS = [
     (lambda sc: sc["interaction"] == "local coherent transfer gate", "P_sym", ("P_univ",), "z125_ergebnis.json",
      "a nontrivial leak-free composition under seam-parity superselection forces the quarter turn, i.e. P_sym",
      lambda d: _check_named(d, "Superauswahl durch Z4-Gradierungen") and _check_named(d, "[C] Auftragskriterien")),
+    (lambda sc: sc["interaction"] == "local coherent transfer gate", "P_null", ("P_uhr",), "z144_ergebnis.json",
+     "a composition phase that is a function of the clock values has no oscillator part (chi = 0 mod 2 pi), which is "
+     "P_sl2 = P_null in the phase family of z133",
+     lambda d: _check_named(d, "Funktion der Uhrwerte (Q mod 4)")),
+    (lambda sc: sc["interaction"] == "local coherent transfer gate", "P_viertel", ("P_uhr",), "z144_ergebnis.json",
+     "a composition phase that is a function of the clock values has phi in (pi/2)Z; k = 0 is trivial and k = 2 the "
+     "one-body exchange, so an interacting gate has phi = +-pi/2 (equivalently: strict leak-freedom P_Q from transfer "
+     "spin 2 on)",
+     lambda d: _check_named(d, "Funktion der Uhrwerte (Q mod 4)") and _check_named(d, "Leckfreiheit des Paarsektors")
+     and _check_named(d, "k gerade: das Gatter normalisiert")),
+    (lambda sc: sc["gravity"] == "MacDowell-Mansouri: modular Cartan connection", "P_R", ("P_mod", "P_idx"),
+     "z127_ergebnis.json", "the clock as trace weight follows from the finite modular weights and the KMS ladder up to "
+     "the reading choices P_mod and P_idx", lambda d: all(d["checks"].values())),
+    (lambda sc: sc["gravity"] == "MacDowell-Mansouri: modular Cartan connection", "P_pair", ("P_IF",),
+     "z129_ergebnis.json", "the sign of the MacDowell-Mansouri action is odd under the leaf swap: the same bit as "
+     "chirality", lambda d: all(d["checks"].values())),
 ]
 PREMISE_MEANING = {
     "A*": "seam premise: no background geometry, base changes are symmetries and <T> = 0 (H6h4); gives P_tn (z107)",
     "P_sym": "the quarter turn A -> B -> -A of the two binary operations is inner, tau = i (z80, z94)",
-    "P_univ": "every physical composition conserves the fermion parity of each seam, the pair clock is superselected (z125)",
+    "P_univ": "every physical composition conserves the fermion parity of each seam, the pair clock is superselected (z125); "
+              "its native form is level matching, native when the second seam is the Tomita partner (P_TP, z130)",
     "I_step": "identification doubled diagonal step = native single step: spinor index = step type, modes = levels (z83)",
     "P_lift": "the clock is the Z4 of the 16 on the carrier through a spinor lift branch (z82)",
     "P_vac": "physical time is read in the vacuum sector; the thermal original has no positive continuous time (z72, z84)",
@@ -1074,19 +1127,28 @@ PREMISE_MEANING = {
     "P_GSO": "clock-twisted lift G = U_2pi R^2 = +1 (z97); not modular-native, per seam incompatible with a summed U_2pi "
              "(z113)",
     "P_RJ": "J-covariant line rule: R = +-i couple through opposite Tomita lines (z114)",
-    "P_IF": "native pairing Ad Z_SU = Ad R on fermions (z122), the same bit as the spinor-module glue P_glue (z117)",
+    "P_IF": "native pairing Ad Z_SU = Ad R on fermions (z122), the same bit as the spinor-module glue P_glue (z117) and as "
+            "the sign of the MacDowell-Mansouri action (z129); P- and C-odd, not fixed by the index (z129); in the lattice "
+            "reading the choice between two isomorphic gluings D5 + A3 -> E8 (z144)",
     "T": "hypothesis T: the seam is a twistor line with current algebra (z110-z112, z114)",
     "K2": "product coupling of the family zero modes with the twistor line (z114)",
     "P_N4": "four Grassmann-odd O(1) directions for the numerator <ij>^4 (z110); no native degree twist or quartet (z124)",
     "P_norm": "4D states normalised by the current two-point function (z110, z123)",
     "P_X": "a free field with the native Tomita kinetic form is exchanged between seams (z123; replaces P_BF of z111)",
     "P_null": "the composition sees only the charge lattice (inner energy Q^2/2, not the oscillators); natively the gate "
-              "is trivial (z121)",
+              "is trivial (z121); in the phase family equivalent to P_sl2, strict commutation with the native sl(2) (z133)",
+    "P_uhr": "the composition phase is a function of the seam clock values (it brings no phase independent of the clock); "
+             "gives P_null and, for an interacting gate, P_viertel; equivalent from transfer spin 2 on to strict "
+             "leak-freedom P_Q: seam charges are exchanged at most, never redistributed (z144)",
+    "P_mod": "reading choice of the clock trace: which modular weight is traced (z127)",
+    "P_idx": "reading choice of the clock trace: the index convention of the zero-mode plane (z127)",
     "P_viertel": "the gate phase is phi = pi/2 (u = 1, the self-dual point of the XXX family); only theta is forced (z121)",
     "P_ord": "distinguishable, ordered seams in the chain (z121)",
     "P_2body": "a chosen two-body term with chosen coupling (z99)",
-    "P_G": "the value of the gravitational coupling: g (z98), the length L (z112) or the weight 2 c_3 (z118)",
-    "P_curv": "a non-orbit family carrying curvature with fixed coefficient (z100, z115)",
+    "P_G": "the value of the gravitational coupling: g (z98), the length L (z112) or the weight 2 c_3 (z118); a free pure "
+           "number G/R_vac^2 that no native route fixes (z127, z136, z137), minimal form P_eta (a finite entropy per area)",
+    "P_curv": "a non-orbit family carrying curvature with fixed coefficient (z100, z115); state profiles do not give one "
+              "(z128)",
     "P_R": "the clock is the trace weight on the internal factor only (z118)",
     "P_pair": "pairing bit: the light-cone sector of the zero mode fixes the sign of the action (z118)",
     "P_diag": "sheet-diagonal double copy (z112)",
