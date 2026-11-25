@@ -1331,6 +1331,15 @@ if "H6h2" in H and z1p.exists() and z2p.exists():
                                                                                                                                                                                  "Grad-2-Klasse, zweite Ordnung Heisenberg statt Einstein, Marken "
                                                                                                                                                                                  "keine Weylkrümmung (Z85)")
                                                                                                                                                             facts["F61_deformation_outer_space"] = T28["urteil"]
+                                                                                                                                                            z84p = Path(__file__).with_name("z84_ergebnis.json")
+                                                                                                                                                            if z84p.exists():
+                                                                                                                                                                T29 = json.loads(z84p.read_text())
+                                                                                                                                                                H["H6h44"] = dict(H["H6h43"])
+                                                                                                                                                                H["H6h44"]["K12"] = (LES if all(T29["checks"].values()) else F,
+                                                                                                                                                                                     H["H6h43"]["K12"][1] + "; native reflexionspositive Spiegelungen, "
+                                                                                                                                                                                     "OS gibt für das thermische Original den Modulfluss, positive Zeit "
+                                                                                                                                                                                     "nur im Vakuumsektor; T' nur punktweise, R ohne Fixpunkt (Z84)")
+                                                                                                                                                                facts["F62_euclidean_os"] = T29["urteil"]
 
 order = [f"K{i}" for i in range(1, 21)]
 print("Gesamttabelle (P = hergeleitet, L = unter benannter Lesart, F = FAIL, O = OFFEN, E = EINGABE)\n")

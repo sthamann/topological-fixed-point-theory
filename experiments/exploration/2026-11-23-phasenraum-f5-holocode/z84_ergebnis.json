@@ -1,0 +1,537 @@
+{
+ "checks": {
+  "R = OriginLab _transport(1, -1) auf H0(N) (Basis 1, z, F, zF) stimmt mit der eigenen Transportroutine überein, ist ein Produkt g_V (x) g_eta (Realignment-Rang 1) mit projektiven Ordnungen 4 auf V^* = span{1, z} und 2 auf eta = span{1, F} (z79: Viertel auf V^*, Halb auf eta)": true,
+  "alle zwölf Hebungen sind antiholomorphe Involutionen von E (w^2 = 1 - z^4 exakt erhalten, sigma^2 = id), und für jede ist der Multiplikator g mit div g = sigma(D) - D erzwungen: genau einer der Kandidaten {1, z, 1/z, F, zF} hält H0(N) fest (Geraden durch Marken: 1; Diagonalen: F; Schwarz und Antipoden: z)": true,
+  "Satz A (Zensus): jede Hebung wirkt als Produkt a (x) b auf V^* (x) eta (Realignment-Rang 1), vertauscht die Faktoren also nie, und normalisiert das Deck; A R A^-1 = {'D': ['R^3'], 'A': ['R Deck']}: Familie D invertiert die Vierteldrehung, Familie A zentralisiert sie auf der Sphäre (auf E tauscht sie die Spinorhebung w -> -w gegen die Hebung w -> w), wie v519 auf dem Gitter (Familie D invertiert die Uhr, Familie A zentralisiert sie)": true,
+  "reelle Formen auf H0(N): die zwölf Hebungen geben nur die Signatur (2,2) (reell (x) reell) oder keinen reellen Schnitt (A^2 = -1, quaternionisch (x) reell); gefunden ['(2,2)', 'kein reeller Schnitt']. Weder die euklidische (4,0) noch die lorentzsche (1,3) Form entsteht; die Antipoden sind auf V^* quaternionisch, auf eta reell (A^2 = -1 für beide Hebungen), die Schwarz-Spiegelung reell (x) reell (2,2)": true,
+  "Satz B: eine faktortauschende (anti)lineare Abbildung theta konjugiert R = g_V (x) g_eta in ein Produkt mit den projektiven Ordnungen (2, 4); die Potenzen R^k haben [(1, 1), (2, 1), (4, 2)], also normalisiert keine solche theta die Markengruppe <R>; ebenso gibt es keinen projektiven R-Verflechter eta -> V^* (Eigenwertverhältnisse ['(-1+0j)'] gegen ['(-0+1j)', '-1j']). Kontrolle unter der Prämisse T': auf End V = V (x) V-quer^* hat Ad R die Ordnungen (4, 4), J: X -> X^+ vertauscht die Faktoren (Tauschrang 1) und zentralisiert Ad R": true,
+  "Teilchen-Loch = thermische Spiegelung: g_x(beta - tau) = g_-x(tau) mit g_x(tau) = e^(-tau x)(1 - c(x)) für x in +-{1/4, 3/4, 5/4, 9/4} und sechs tau (rel. Defekt 3e-40, 40 Stellen), äquivalent zu KMS und c(-x) = 1 - c(x); Kontrolle: mit Besetzungen bei beta' = 3 pi und Spiegelung bei beta/2 = 2 pi verfehlt (min. rel. Abweichung 0.54)": true,
+  "Standardform (fünf Moden beider Quartersektoren, Fockraum 32, Hilbert-Schmidt 1024): die OS-Form der Spiegelung tau -> beta - tau ist das Standard-Skalarprodukt der Vektoren Phi(A, tau) = e^-(beta/2 - tau)H A e^-tau H; die Verschiebung tau -> tau + s ist Delta^(-s/beta); J (X -> X^+) bildet Phi(A, tau) auf Phi(A^+, beta/2 - tau) ab, ist also die Spiegelung an beta/4; J zentralisiert R = Delta^(-i/2) = Ad e^(2 pi i L_0), die modenerhaltende Konjugation K (Familie D) invertiert R": true,
+  "thermische Spiegelung, Fermion: die OS-Gram-Matrix <psi^*(theta p_i) psi(p_j)> aus der euklidischen Zweipunktfunktion (14 Punkte auf Naht x halbem Kreis, Quarter 1/4 und 3/4) ist hermitesch und positiv definit (Trägheit (14, 0, 0), (14, 0, 0), min. Eigenwert 9.6e-12); Kontrollen: periodische Fortsetzung (falsche Spinstruktur) negativ definit (0, 14, 0), Drehung um beta/2 statt Spiegelung nicht hermitesch (Defekt 1.02), über den Spiegel gespreizte Punkte indefinit (7, 7, 0): RP wählt die antiperiodische Struktur (KMS)": true,
+  "Strom J (h = 1) mit periodischer Fortsetzung: Gram positiv definit (12, 0, 0), antiperiodisch negativ definit (0, 12, 0); Zweiteilchen-Operatoren psi(p) psi(q) über Wick (Slater-Determinanten der Einteilchenform, 10 Paare): positiv definit (10, 0, 0). Die thermische Spiegelung ist auf allen geprüften Sektoren des Originals reflexionspositiv, und RP wählt Bose-periodisch / Fermi-antiperiodisch (Spin-Statistik)": true,
+  "radiale Inversion theta(Z) = (Z^+)^-1 (bildet die Kugel auf ihr Äußeres ab, Fixmenge U(2)): det(I - Z W^+)^-1 = det(theta W - Z)^-1 det(W^+)^-1, die Kugel-Gram ist also die OS-Form (rel. Defekt 3e-41); 24 Punkte: nu = 1 und 3/2 positiv definit ((24, 0, 0), (24, 0, 0)), nu = 1/2 (außerhalb der Wallach-Menge) indefinit (23, 1, 0) (min. -2.6e-02), Antipoden Z -> -(Z^+)^-1 (fixpunktfrei) indefinit (12, 12, 0)": true,
+  "Halbraumspiegelung x_0 -> -x_0 auf dem euklidischen Schnitt (20 Punkte, x_0 > 0): |x - theta y|^(-2 nu) für nu = 1 positiv definit (20, 0, 0), nu = 1/2 (unter der Unitaritätsschranke) indefinit (19, 1, 0); über Cayley ist sie dieselbe Spiegelung wie die radiale Inversion: det(I - Z_i Z_j^+)^-1 = det(X_i + i) conj det(X_j + i)/4 |x_i - theta x_j|^-2 (rel. Defekt 2e-41), also Kongruenz und gleiche Trägheit": true,
+  "Theta_n = [[0, Q(n)], [Q(n)^+, 0]] mit Q(n) = n_0 I + i n.sigma, n in S^3 (acht zufällige n): Theta_n^2 = I, antiisometrisch für die CCR-Form diag(1, 1, -1, -1) von z79, Spin(4)-kovariant (diag(g_L, g_R) Theta_n diag(g_L, g_R)^-1 = Theta_n' mit Q(n') = g_L Q(n) g_R^+), und Theta_(1,0,0,0) ist genau z79s tau (a_i <-> b_i^+): die Theta_n sind die U(2) x U(2)-Bahn von tau, die Clifford-Multiplikation mit der Normalen n": true,
+  "radial gespiegelter Weyl-Spinor (Theta psi(x) = |x|^-3 Q(x/|x|)^+ psi(x/|x|^2), Propagator Q(x - y)/|x - y|^4, 12 Punkte, 24 x 24): hermitesch, positiv semidefinit (24, 0, 0) (min. 3.6e-03), Blöcke = (I - X_i^+ X_j)/det(I - X_i^+ X_j)^2 (Defekt 9e-41); skalarer Vakuumkern radial (12, 0, 0); Antipoden x -> -x/|x|^2 indefinit (Weyl (12, 12, 0), Skalar (7, 5, 0)): die Behauptungen der externen Analyse halten": true,
+  "thermischer 4D-Kern bei beta = 4 pi auf S^1_beta x S^3 (konformer Skalar, Bildsumme von 1/(2(cosh tau - cos gamma))), Spiegelung tau -> -tau = radiale Inversion, 16 Punkte: positiv definit (16, 0, 0); Kontrolle Drehung um beta/2: indefinit (8, 8, 0)": true,
+  "thermische OS-Rekonstruktion (Quarter 1/4, Trunkierung auf sechs Moden, OS-Vektoren auf der Naht bei tau = beta/8, Verschiebung s = beta/8): der rekonstruierte Transfer hat die Eigenwerte e^(-s x), der Generator also das Spektrum [-2.75, -1.75, -0.75, 0.25, 1.25, 2.25] = Z + 1/4 beidseitig (Abweichung 2e-31); max. Eigenwert 75.2 > 1, keine Kontraktion; e^(-2iK) = 1 mit K = 4 pi x (periodisch, z72): die Rekonstruktion gibt genau den Modulfluss zurück. Vakuumlimes (1 - c -> theta(x)): Rang 3, Generator [0.25, 1.25, 2.25] positiv und diskret (L_0 der Naht, die Uhr)": true,
+  "radiale OS-Rekonstruktion des nu = 1-Kerns: Transfer = Dilatation Z -> e^-t Z; im OS-Vektor von Z = 0,6 U gilt exakt <Phi, T(t) Phi>/<Phi, Phi> = sum_n (n+1)(1 - r^2)^2 r^(2n) e^(-nt) (Defekt 1e-41), ein reines Punktmaß; auf 30 kleinen Punkten (|Z| = 0,01) liegen die rekonstruierten Generatorwerte in den Clustern 0 (1x), 1 (4x), 2 (9x), 3 (16x, Trunkierungsrand): L_0 = D + 1 mit Spektrum {1, 2, 3, ...} und Vielfachheiten m^2 (z73/z83), e^(2 pi i D) = 1: positiv, aber elliptisch (eine Uhr)": true,
+  "Halbraum-Transfer x_0 -> x_0 + t derselben Spiegelung: <Phi_x, T(t) Phi_x>/<Phi_x, Phi_x> = (2 x_0)^2/(2 x_0 + t)^2 ist die Laplace-Transformierte der stetigen Dichte (2 x_0)^2 E e^(-2 x_0 E) auf (0, inf) (Gamma(2), Defekt 6e-42); bei x_0 = 1, dem Cayley-Bild des Kugelzentrums, ist es (1 + t/2)^-2 = z72s Gesetz (1 - it/2)^(-2h) für h = 1 (Defekt 0e+00); die Kompressionen auf N = 6, 10, 14 Punkten der Zeitachse sind Kontraktionen (Eigenwerte in (0, 1)), und 1 - max fällt ([0.162, 0.113, 0.0864]): P_0 >= 0 ohne Lücke, der parabolische Generator von z72": true,
+  "Röhrenkoordinaten: rho(X) = X^+ (Lorentz, Fixmenge Herm(2), det-Signatur (1, 3)), J_A(X) = -(adj X)^+ (Euklid, Fixmenge i x_0 + x.sigma, Signatur (0, 4)), I(X) = -adj X (holomorphe Zeitspiegelung x_0 -> -x_0); exakt rho = J_A o I, alle drei involutiv; Nullebenen: {'rho (Lorentz)': 'tauscht', 'J_A (Euklid)': 'erhält', 'I (Inversion)': 'tauscht'}; die radiale Inversion (Z^+)^-1 der Kugel ist unter Cayley genau rho. Lorentz = Euklid o OS-Spiegelung: wo die Euklidstruktur und die Spiegelung nativ sind, folgt die faktortauschende Lorentzform": true,
+  "die Markengruppe <R, iota, Deck> (iota: z -> 1/z, Hebung erzwungen mit g = z) lässt auf H0(N) genau 1 hermitesche Form zu; sie ist definit (Eigenwerte [0.5, 0.5, 0.5, 0.5]) und ein Produkt h_V (x) h_eta (Realignment-Rang 1): V^* und eta tragen native unitäre Strukturen, die Kugel D(V, eta) = {Z in Hom(V, eta): Z^+ Z < I} existiert nativ bis auf eine Dilatationsskala": true,
+  "auf D(V, eta) ist R = (g_V, g_eta) bi-unitär und kommutiert mit der radialen Inversion rho(Z) = (Z^+)^-1; das Differential von rho in jedem Randpunkt U ist antilinear, faktortauschend und hat auf T_U U(2) die Lorentzsignatur (1,3) (T' in U, mit eta = V über U); fixpunktfrei auf U(2) für jede Phasennormierung (Eigenwertverhältnisse von g_eta und g_V verschieden): {'R^1': True, 'R^1 Deck': True, 'R^2': True, 'R^2 Deck': False, 'R^3': True, 'R^3 Deck': True}. R selbst hat keinen Fixpunkt; nur die Halbdrehung mit Deck R^2 Deck hat welche. Kein Randpunkt ist unter <R> fest, also gibt es keine markeninvariante Minkowski-Karte und keine konstante, markeninvariante Identifikation T'": true,
+  "Theta_n ist nativ nur als Bahn: der Stabilisator von tau = Theta_1 in u(2) + u(2) hat Dimension 4 (die Diagonale, dieselbe u(2), die z79 als Symmetrie des Oszillatorzustands findet), der Zustand wählt also n = 1; auf der markierten Spinbrücke bildet R jedes Theta_n auf Theta_(R n) mit R n != n ab (keine Fixpunkte auf S^3), die Familie ist R-kovariant, kein Mitglied R-invariant": true
+ },
+ "befunde": {
+  "Folge aus Satz A und B: Eine OS-Reflexion, die V^* und eta vertauscht (wie es die euklidische Orientierungsumkehr für die beiden Chiralitäten verlangt) und dabei die Marken respektiert, gibt es als konstante Abbildung auf H0(N) nicht; jede geometrische Spiegelung der Naht erhält die Faktoren. Auf V (x) V-quer^* (T' gesetzt) existiert sie: J": true,
+  "Eine Klasse: theta_cut (tau -> beta - tau, Spiegel tau = 0 und beta/2) definiert das Skalarprodukt (die S- bzw. +-Struktur), J ist die Spiegelung an beta/4 (bildet die Naht tau = 0 auf die Partnernaht tau = beta/2 ab), theta_cut o J = Drehung um beta/2 = Delta^(1/2) (wie v524/v565: theta_cut ~ Metrik, theta_perp ~ Theta_phys). Auf Einteilchenpropagatoren ist theta_cut der Teilchen-Loch-Spiegel x -> -x (KMS-Identität); sein Schatten auf der Naht (u = e^(i theta - tau) -> 1/conj u) ist die Schwarz-Spiegelung am Markenkreis: Produkt auf H0(N), Signatur (2,2), zentralisiert R. Kein Mitglied der Klasse vertauscht V^* und eta": true,
+  "Abbruchkriterium von S3 für das Original: Die einzige native reflexionspositive Spiegelung des KMS-Zustands (die thermische Klasse aus Teil 1) rekonstruiert den Liouville-Operator, also den periodischen Modulfluss (Klein-Landau, Tomita); positive Zeit entsteht erst im Vakuumlimes, und dort als diskrete Uhr L_0": true,
+  "Auf dem Vakuumkern nu = 1 ist die radiale Inversion dieselbe Spiegelung wie die Halbraumspiegelung (Cayley); der rekonstruierte Hilbertraum ist derselbe. Verschieden ist nur der Transfer: Dilatation um das Kugelzentrum (das KMS-Ruhesystem kappa^2 I von z79) gibt die Uhr L_0, Translation zu einem Randpunkt gibt P_0. Die Wahl dieses Randpunkts ist z72s t*; die Spiegelung allein legt ihn nicht fest": true,
+  "T' als Folge der radialen Spiegelung: ja punktweise, nein markeninvariant. Die radiale Inversion vertauscht in jedem Randpunkt U (Minkowskipunkt) die beiden Spinorfaktoren über U und erzeugt dort die Lorentzform; sie ist mit R verträglich, aber R verschiebt jeden Punkt. z79s Negativbefund betrifft die konstante Identifikation eta = V-quer^*, die nach Satz B unmöglich bleibt; die konforme (kompakte) Lorentzstruktur auf U(2) ist dagegen markenverträglich. Prämissen: (P1) der nu = 1-Kern gehört zur Spinbrücken-Kugel D(V, eta) (Identifikation mit den Auslesungen der Oszillatorkugel, z74), (P2) eine Dilatationsskala": true,
+  "Bezug WOIT.OS.TWISTOR.01 (v519/v522/v524/v565, nur gelesen): (1) Die Familien stimmen überein: Spiegelungen an Geraden (Familie D) invertieren R, Schwarz-Spiegelung und Antipoden (Familie A) zentralisieren R. (2) Für das Original ist die native RP-Spiegelung aber die thermische Klasse, deren Nahtschatten Familie A ist (Schwarz am Markenkreis): Die euklidische Zeit des KMS-Zustands ist der radiale/thermische Kreis, R = Delta^(-i/2) ist reelle Modulzeit und wird zentralisiert. v519 liest dagegen den Nahtwinkel als euklidische Zeit (Präzision (iii)); beide sind reflexionspositiv und beantworten verschiedene Fragen. (3) v524s Befund 'kompakte euklidische Zeit rekonstruiert eine KMS-Darstellung' gilt hier exakt: OS auf dem thermischen Kreis = Tomita, Transfer = Delta^(-s/beta). (4) v565s Rollentrennung (Metrik vs. absteigender Spiegel) entspricht theta_cut vs. J. (5) Neu für Kill-Test (7) auf freier Ebene: Auf H0(N) ist keine markenverträgliche Abbildung faktortauschend (Satz B), und R hat auf dem kompaktifizierten Minkowskiraum U(2) keinen Fixpunkt. Keine Ledgeränderung": true
+ },
+ "zahlen": {
+  "R_auf_H0N": {
+   "matrix": "[[0, 0, -1, 0], [0, 0, 0, I], [1, 0, 0, 0], [0, -I, 0, 0]]",
+   "projektive Ordnung V^*": 4,
+   "projektive Ordnung eta": 2
+  },
+  "zensus_H0N": {
+   "D: z -> 1 conj z (Gerade durch +-1), Hebung +1": {
+    "g": "1",
+    "A^2": 1,
+    "Produktrang": 1,
+    "Tauschrang": 4,
+    "R": "R^3",
+    "reeller Schnitt": "(2,2)",
+    "Familie": "D"
+   },
+   "D: z -> 1 conj z (Gerade durch +-1), Hebung -1": {
+    "g": "1",
+    "A^2": 1,
+    "Produktrang": 1,
+    "Tauschrang": 4,
+    "R": "R^3",
+    "reeller Schnitt": "(2,2)",
+    "Familie": "D"
+   },
+   "D: z -> I conj z (Diagonale arg = pi/4), Hebung +1": {
+    "g": "F",
+    "A^2": 1,
+    "Produktrang": 1,
+    "Tauschrang": 4,
+    "R": "R^3",
+    "reeller Schnitt": "(2,2)",
+    "Familie": "D"
+   },
+   "D: z -> I conj z (Diagonale arg = pi/4), Hebung -1": {
+    "g": "F",
+    "A^2": -1,
+    "Produktrang": 1,
+    "Tauschrang": 4,
+    "R": "R^3",
+    "reeller Schnitt": "kein reeller Schnitt",
+    "Familie": "D"
+   },
+   "D: z -> -1 conj z (Gerade durch +-i), Hebung +1": {
+    "g": "1",
+    "A^2": 1,
+    "Produktrang": 1,
+    "Tauschrang": 4,
+    "R": "R^3",
+    "reeller Schnitt": "(2,2)",
+    "Familie": "D"
+   },
+   "D: z -> -1 conj z (Gerade durch +-i), Hebung -1": {
+    "g": "1",
+    "A^2": 1,
+    "Produktrang": 1,
+    "Tauschrang": 4,
+    "R": "R^3",
+    "reeller Schnitt": "(2,2)",
+    "Familie": "D"
+   },
+   "D: z -> -I conj z (Diagonale arg = -pi/4), Hebung +1": {
+    "g": "F",
+    "A^2": 1,
+    "Produktrang": 1,
+    "Tauschrang": 4,
+    "R": "R^3",
+    "reeller Schnitt": "(2,2)",
+    "Familie": "D"
+   },
+   "D: z -> -I conj z (Diagonale arg = -pi/4), Hebung -1": {
+    "g": "F",
+    "A^2": -1,
+    "Produktrang": 1,
+    "Tauschrang": 4,
+    "R": "R^3",
+    "reeller Schnitt": "kein reeller Schnitt",
+    "Familie": "D"
+   },
+   "A: Schwarz am Markenkreis z -> 1/conj z (Teilchen-Loch, thermischer Schatten), Hebung +1": {
+    "g": "z",
+    "A^2": 1,
+    "Produktrang": 1,
+    "Tauschrang": 4,
+    "R": "R Deck",
+    "reeller Schnitt": "(2,2)",
+    "Familie": "A"
+   },
+   "A: Schwarz am Markenkreis z -> 1/conj z (Teilchen-Loch, thermischer Schatten), Hebung -1": {
+    "g": "z",
+    "A^2": 1,
+    "Produktrang": 1,
+    "Tauschrang": 4,
+    "R": "R Deck",
+    "reeller Schnitt": "(2,2)",
+    "Familie": "A"
+   },
+   "A: Antipoden z -> -1/conj z, Hebung +1": {
+    "g": "z",
+    "A^2": -1,
+    "Produktrang": 1,
+    "Tauschrang": 4,
+    "R": "R Deck",
+    "reeller Schnitt": "kein reeller Schnitt",
+    "Familie": "A"
+   },
+   "A: Antipoden z -> -1/conj z, Hebung -1": {
+    "g": "z",
+    "A^2": -1,
+    "Produktrang": 1,
+    "Tauschrang": 4,
+    "R": "R Deck",
+    "reeller Schnitt": "kein reeller Schnitt",
+    "Familie": "A"
+   }
+  },
+  "satz_B": {
+   "Ordnungen (V^*, eta) von R^k": {
+    "0": [
+     1,
+     1
+    ],
+    "1": [
+     4,
+     2
+    ],
+    "2": [
+     2,
+     1
+    ],
+    "3": [
+     4,
+     2
+    ],
+    "4": [
+     1,
+     1
+    ],
+    "5": [
+     4,
+     2
+    ],
+    "6": [
+     2,
+     1
+    ],
+    "7": [
+     4,
+     2
+    ]
+   },
+   "getauscht": [
+    2,
+    4
+   ],
+   "Eigenwertverhältnisse V^*": [
+    "(-0+1j)",
+    "-1j"
+   ],
+   "eta": [
+    "(-1+0j)"
+   ]
+  },
+  "kms_identitaet": {
+   "rel_defekt_beta_4pi": 2.66e-40,
+   "kontrolle_beta_3pi_min": 0.544
+  },
+  "laufzeit_teil1_s": 0.12,
+  "rp_thermisch_fermion": {
+   "A_1/4": {
+    "herm_defekt": 0.0,
+    "min_eig": 9.612e-12,
+    "max_eig": 2.521,
+    "inertia": [
+     14,
+     0,
+     0
+    ]
+   },
+   "A_3/4": {
+    "herm_defekt": 0.0,
+    "min_eig": 1.139e-11,
+    "max_eig": 4.858,
+    "inertia": [
+     14,
+     0,
+     0
+    ]
+   },
+   "P_1/4": {
+    "herm_defekt": 0.0,
+    "min_eig": -2.521,
+    "max_eig": -9.612e-12,
+    "inertia": [
+     0,
+     14,
+     0
+    ]
+   },
+   "Drehung_1/4": {
+    "herm_defekt": 1.02,
+    "min_eig": -0.3157,
+    "max_eig": 3.083,
+    "inertia": [
+     7,
+     7,
+     0
+    ]
+   },
+   "gespreizt_1/4": {
+    "herm_defekt": 0.0,
+    "min_eig": -4.012,
+    "max_eig": 3.595,
+    "inertia": [
+     7,
+     7,
+     0
+    ]
+   }
+  },
+  "rp_thermisch_strom_zweiteilchen": {
+   "Strom": {
+    "herm_defekt": 0.0,
+    "min_eig": 1.971e-10,
+    "max_eig": 0.8536,
+    "inertia": [
+     12,
+     0,
+     0
+    ]
+   },
+   "Strom antiperiodisch": {
+    "herm_defekt": 0.0,
+    "min_eig": -0.8536,
+    "max_eig": -1.971e-10,
+    "inertia": [
+     0,
+     12,
+     0
+    ]
+   },
+   "psi psi (Wick)": {
+    "herm_defekt": 0.0,
+    "min_eig": 1.645e-06,
+    "max_eig": 0.3825,
+    "inertia": [
+     10,
+     0,
+     0
+    ]
+   }
+  },
+  "rp_kugel": {
+   "0.5": {
+    "herm_defekt": 0.0,
+    "min_eig": -0.02561,
+    "max_eig": 25.19,
+    "inertia": [
+     23,
+     1,
+     0
+    ]
+   },
+   "1": {
+    "herm_defekt": 0.0,
+    "min_eig": 0.01105,
+    "max_eig": 27.49,
+    "inertia": [
+     24,
+     0,
+     0
+    ]
+   },
+   "1.5": {
+    "herm_defekt": 0.0,
+    "min_eig": 0.02738,
+    "max_eig": 35.74,
+    "inertia": [
+     24,
+     0,
+     0
+    ]
+   },
+   "Antipoden": {
+    "herm_defekt": 0.0,
+    "min_eig": -5.605,
+    "max_eig": 23.13,
+    "inertia": [
+     12,
+     12,
+     0
+    ]
+   },
+   "os_identitaet_rel": 2.73e-41
+  },
+  "rp_halbraum": {
+   "0.5": {
+    "herm_defekt": 0.0,
+    "min_eig": -0.0001728,
+    "max_eig": 9.643,
+    "inertia": [
+     19,
+     1,
+     0
+    ]
+   },
+   "1": {
+    "herm_defekt": 0.0,
+    "min_eig": 0.001015,
+    "max_eig": 5.744,
+    "inertia": [
+     20,
+     0,
+     0
+    ]
+   },
+   "cayley_kongruenz_rel": 2.41e-41
+  },
+  "rp_weyl_skalar_radial": {
+   "Weyl radial": {
+    "herm_defekt": 2.93e-41,
+    "min_eig": 0.003568,
+    "max_eig": 12.97,
+    "inertia": [
+     24,
+     0,
+     0
+    ]
+   },
+   "Weyl Antipoden": {
+    "herm_defekt": 7.02e-41,
+    "min_eig": -11.59,
+    "max_eig": 2.315,
+    "inertia": [
+     12,
+     12,
+     0
+    ]
+   },
+   "Skalar radial": {
+    "herm_defekt": 0.0,
+    "min_eig": 0.002931,
+    "max_eig": 12.51,
+    "inertia": [
+     12,
+     0,
+     0
+    ]
+   },
+   "Skalar Antipoden": {
+    "herm_defekt": 0.0,
+    "min_eig": -1.311,
+    "max_eig": 11.7,
+    "inertia": [
+     7,
+     5,
+     0
+    ]
+   },
+   "geschlossene_Form_Defekt": 9.26e-41
+  },
+  "rp_thermisch_4d": {
+   "Spiegelung": {
+    "herm_defekt": 0.0,
+    "min_eig": 1.487e-06,
+    "max_eig": 0.9731,
+    "inertia": [
+     16,
+     0,
+     0
+    ]
+   },
+   "Drehung": {
+    "herm_defekt": 1.13e-40,
+    "min_eig": -0.5617,
+    "max_eig": 0.6221,
+    "inertia": [
+     8,
+     8,
+     0
+    ]
+   }
+  },
+  "laufzeit_bis_teil2_s": 9.64,
+  "os_thermisch": {
+   "generator_thermisch": [
+    -2.75,
+    -1.75,
+    -0.75,
+    0.25,
+    1.25,
+    2.25
+   ],
+   "max_lambda": 75.165,
+   "generator_vakuumlimes": [
+    0.25,
+    1.25,
+    2.25
+   ],
+   "rang_vakuumlimes": 3,
+   "max|e^(-2iK) - 1|": 3.84e-30
+  },
+  "os_radial": {
+   "spektralgesetz_defekt": 1.15e-41,
+   "D_rekonstruiert": [
+    9.18e-17,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    2.0,
+    2.0,
+    2.0,
+    2.0,
+    2.0,
+    2.0,
+    2.0,
+    2.0,
+    2.0,
+    3.0,
+    3.0,
+    3.0,
+    3.0,
+    3.0,
+    3.0,
+    3.0,
+    3.0,
+    3.0,
+    3.0,
+    3.0,
+    3.0,
+    3.0,
+    3.001,
+    3.004,
+    3.053
+   ]
+  },
+  "os_halbraum": {
+   "gamma_gesetz_defekt": 5.74e-42,
+   "z72_h1_defekt": 0.0,
+   "kompressionen": {
+    "6": {
+     "min": 0.0003961,
+     "1 - max": 0.1625,
+     "rang": 6
+    },
+    "10": {
+     "min": 1.058e-06,
+     "1 - max": 0.1128,
+     "rang": 10
+    },
+    "14": {
+     "min": 2.58e-09,
+     "1 - max": 0.08637,
+     "rang": 14
+    }
+   }
+  },
+  "laufzeit_bis_teil3_s": 10.8,
+  "realformen_roehre": {
+   "Nullebenen": {
+    "rho (Lorentz)": "tauscht",
+    "J_A (Euklid)": "erhält",
+    "I (Inversion)": "tauscht"
+   },
+   "Signatur Fix(rho)": [
+    1,
+    3
+   ],
+   "Signatur Fix(J_A)": [
+    0,
+    4
+   ]
+  },
+  "spinbruecke_kugel": {
+   "R frei auf U(2)": {
+    "R^1": true,
+    "R^1 Deck": true,
+    "R^2": true,
+    "R^2 Deck": false,
+    "R^3": true,
+    "R^3 Deck": true
+   }
+  },
+  "laufzeit_bis_teil4_s": 10.8,
+  "status": {
+   "Satz A: geometrische Spiegelungen der Naht wirken auf H0(N) = V^* (x) eta als Produkt (nie Faktortausch)": "E",
+   "reelle Formen auf H0(N) aus markentreuen Spiegelungen: nur (2,2) oder keine; weder (4,0) noch (1,3)": "E",
+   "Satz B: keine faktortauschende (anti)lineare Abbildung normalisiert <R> (Ordnungen 4 und 2); unter T' tut es J": "E",
+   "Tomita-J, thermische Spiegelung, Teilchen-Loch-Spiegel: eine Klasse; RP auf Fermion, Strom, Zweiteilchen": "E",
+   "OS-Rekonstruktion des Originals (KMS, beta = 4 pi): Liouville-Operator, zweiseitig, periodisch = Modulfluss": "E (Abbruchkriterium von S3 für das Original)",
+   "nu = 1-Kern: radiale Inversion = Halbraumspiegelung (Cayley), RP genau auf der Wallach-Menge (nu = 1/2 indefinit)": "E",
+   "radialer Transfer: L_0 = D + 1, Spektrum {1, 2, 3, ...}, Vielfachheiten m^2 (diskret, Uhr)": "E",
+   "Halbraum-Transfer: P_0 >= 0 stetig ohne Lücke, Gamma(2)-Gesetz = z72 (h = 1)": "E",
+   "Theta_n (externe Analyse): Theta^2 = I, Spin(4)-kovariant, RP für Skalar, Weyl und thermischen 4D-Kern; Antipoden indefinit; nativ als U(2) x U(2)-Bahn von z79s tau": "E",
+   "Lorentz = Euklid o Inversion (rho = J_A o I) mit Faktortausch": "E",
+   "Spinbrücken-Kugel D(V, eta) mit nativer bi-unitärer Struktur; rho kommutiert mit R; T' punktweise in jedem Randpunkt": "C (Prämissen P1: nu = 1-Kern auf D(V, eta); P2: Dilatationsskala)",
+   "markeninvariantes T' (konstante Identifikation eta = V-quer^*)": "E (negativ)",
+   "markeninvariante Minkowski-Karte bzw. markeninvariantes P_0 (Randpunkt t*)": "E (negativ: R ohne Fixpunkt auf U(2))",
+   "Wahl des Randpunkts t* für die stetige Zeit, Dynamik, Wechselwirkung, 3+1-Schließung": "O"
+  },
+  "laufzeit_gesamt_s": 10.8
+ },
+ "urteil": "S3 hält geteilt. (1) Native reflexionspositive Spiegelungen gibt es: die thermische Klasse des Originals (Tomita-J = Spiegelung an beta/4, theta_cut = Spiegelung an 0 und beta/2, auf Einteilchenpropagatoren der Teilchen-Loch-Spiegel x -> -x, KMS-Identität 3e-40) ist auf Fermion, Strom und Zweiteilchen positiv definit (40 Stellen), und RP wählt Fermi-antiperiodisch und Bose-periodisch; auf dem Vakuumkern nu = 1 ist die radiale Inversion (Z^+)^-1 die OS-Form (positiv für nu = 1, 3/2, indefinit für nu = 1/2 und für die Antipoden). (2) Die Rekonstruktion des Originals gibt genau den Modulfluss zurück (Generator [-2.75, -1.75, -0.75, 0.25, 1.25, 2.25], zweiseitig, e^(-2iK) = 1): das Abbruchkriterium von S3 greift für den KMS-Zustand. Positive Zeit entsteht nur im Vakuumsektor: dieselbe Spiegelung gibt mit dem Dilatationstransfer die Uhr L_0 (Spektrum 1, 2, 3, ... mit Vielfachheiten 1, 4, 9, 16) und mit dem Halbraumtransfer P_0 (stetig auf [0, inf), Gamma(2)-Gesetz = z72 mit h = 1). Der Randpunkt t* bleibt Wahl. (3) T' als konstante, markeninvariante Aussage folgt nicht: Alle zwölf markentreuen antiholomorphen Involutionen der Naht wirken auf H0(N) = V^* (x) eta als Produkt und geben nur die Signatur (2,2) oder keinen reellen Schnitt; keine faktortauschende Abbildung normalisiert R (projektive Ordnungen 4 und 2), während J unter der Prämisse T' auf V (x) V-quer^* tauscht und R zentralisiert. (4) Die externe Theta_n ist richtig gerechnet (Theta^2 = I, Spin(4)-kovariant, RP für Skalar, Weyl-Spinor und den thermischen 4D-Kern, Antipoden indefinit) und nativ als U(2) x U(2)-Bahn von z79s tau; der Oszillatorzustand wählt tau = Theta_1. Auf der Spinbrücke trägt die Markengruppe eine eindeutige bi-unitäre Form, die Kugel D(V, eta) existiert, die radiale Inversion kommutiert mit R und erzeugt in jedem Randpunkt die Lorentzform mit Faktortausch (T' punktweise); R hat aber auf U(2) keinen Fixpunkt, also gibt es keine markeninvariante Minkowski-Karte und kein markeninvariantes T'. Die Marken wirken als fixpunktfreie konforme Abbildung, nicht als Lorentztransformation. Prämissen: nu = 1-Kern auf D(V, eta) (P1), eine Dilatationsskala (P2). Nichts befördert; Ledger unverändert."
+}

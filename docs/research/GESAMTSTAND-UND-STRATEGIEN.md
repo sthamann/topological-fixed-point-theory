@@ -1,7 +1,7 @@
-# TFPT: Gesamtstand und Strategien zur Gesamtlösung (Stand H6h42, 25. November 2026)
+# TFPT: Gesamtstand und Strategien zur Gesamtlösung (Stand H6h44, 25. November 2026)
 
-Neu: Abschnitt 10 hält die Ergebnisse der ersten parallelen Runde fest (S1, S2, S5, S6, S7, Analyse 9). S3 und S4
-rechnen noch.
+Neu: Abschnitt 10 hält die Ergebnisse der ersten parallelen Runde fest (S1–S7 und Analyse 9), Abschnitt 11 die
+entscheidenden nächsten Rechnungen.
 
 Dieses Dokument fasst den ganzen Stand zusammen: gelöste Bausteine, Ursprung, Rekonstruktion und offene Tore. Daraus
 entwickelt es neue Strategien. Maßgeblich bleiben Ledger und Originalquellen. Nichts hier ist befördert; Explorationsbefunde
@@ -336,7 +336,7 @@ Jede Strategie nennt Idee, Anlass, erste Rechnungen, Erfolg, Abbruch und die Tor
 |---|---|---|---|
 | S1 Zwei Faktoren | z82 (24/24) | R ist auf dem Träger die ℤ₄ der 16 (Zentrum von Spin(10), bis auf Eichung); Spin und Statistik innen exakt; das Original erreicht nur die „2“; mit den Quarter-Oszillatoren als Lorentzgruppe haben Fermionen kein 2π-Vorzeichen | E, teilweise |
 | S2 radiale Quantisierung | z83 (20/20) | su(2,2) schließt mit den Tomita-Wurzeln des nativen Hebers L^nat; ν = 1-Leiter; jede Helizität einmal; Minkowskienergie [0, ∞); Moden = Energiestufen | C (eine Identifikation) |
-| S3 euklidisch, OS | z84 | rechnet noch; mit Hinweis auf die radiale Spinorreflexion Θ_n | offen |
+| S3 euklidisch, OS | z84 (21/21) | native reflexionspositive Spiegelungen; für das thermische Original gibt OS den Modulfluss zurück, positive Zeit nur im Vakuumsektor; T′ nur punktweise, R ohne Fixpunkt auf U(2) | E / C (H6h44) |
 | S4 Deformation | z85 (23/23) | native Quellen geben keine universelle Grad-2-Klasse, zweite Ordnung Heisenberg statt Einstein; S4b ausgeschlossen, Marken = Hitchins vier Punkte (Symmetriedatum) | E negativ (H6h43) |
 | S5 Verschränkung | z86 (29/29) | keine Flächennormierung aus Original\|Partner (Typ I, kein Horizont); eine Uhr für alle Sektoren | E negativ |
 | S6 Saat | z87 (26/26) | Saat ρ₁ + Spin-ℤ₄ + CAR; Ursprung auf P_sym und P_clock eingegrenzt; Gaußprämisse aus P_clock in allen Abschneidungen | E / C |
@@ -373,4 +373,35 @@ Jede Strategie nennt Idee, Anlass, erste Rechnungen, Erfolg, Abbruch und die Tor
 4. **S6:**
    - die Starrheit (Gaußzustand aus P_clock) für beliebig viele Fermipaare beweisen;
    - prüfen, ob P_clock aus P_sym über den Tausch A ↔ B folgt (τ → −1/τ, Zeitneutralität).
-5. **S3 und S4:** abwarten, dann einbauen (H6h43).
+5. **S3 und S4:** eingebaut (H6h43, H6h44).
+
+## 11. Bilanz der Runde und die entscheidenden nächsten Rechnungen (H6h44)
+
+**Was die Runde festgelegt hat.** Die Szenario-Suche lässt von 1152 ganzen Szenarien 12 übrig, alle mit derselben
+Architektur:
+- **Raumzeit:** die radiale ν = 1-Leiter aus dem nativen Heber L^nat. Der Spinorindex ist die Art des Elementarschritts.
+- **Zeit:** parabolisch, im Vakuumsektor. Wiesbrock, radiale Quantisierung und OS-Halbraum geben dieselbe Zeit.
+- **Innen:** Marken und Uhr R, ein Spin-ℤ₄. Die Marken sind ein Symmetriedatum (Hitchins vier Punkte), weder Krümmung noch
+  Himmelssphäre.
+- **Ursprung:** Saat ρ₁ + Spin-ℤ₄ + CAR mit den Prämissen P_sym und P_clock.
+- **Viele Teilchen:** eine Zusammensetzung vieler Nähte. Eine Naht trägt die Einteilchenleiter.
+
+Offen ist allein die Gravitation, mit genau zwei Wegen.
+
+**Die entscheidenden nächsten Rechnungen**, nach Hebelwirkung:
+1. **Gravitation über den radialen Kanal.**
+   - Gibt die native Komposition zweier Helizität-(−2)-Sektoren in einen dritten (D = −4 ⊗ D = −4 → D = −4) auf der radialen
+     Leiter die Plebański-Penrose-Klammer {h_a, h_b} aus z85?
+   - Wenn ja, ist das der kubische Einstein-Vertex, nativ.
+2. **Gravitation über einen räumlichen Schnitt.**
+   - Die Vakuumverschränkung einer Kappe von S³ im rekonstruierten Feld, mit den nativen Gewichten qᵐ als Regulator.
+   - Ist S/A regulatorunabhängig? Das wäre der Weg zu G, ohne Bisognano–Wichmann vorauszusetzen.
+3. **Identifikationsprinzip und Zusammensetzung.**
+   - „Verdoppelter Diagonalschritt = L^nat“ als einzige vollständig positive, J-symmetrische Fortsetzung herleiten.
+   - Dann die zweite Quantisierung als Zusammensetzung vieler Nähte prüfen.
+4. **Materiespin.** Die Verklebung Spin ×_{ℤ₂} ℤ₄: Tragen die Fermipaare einer Stufe K-Typen (j, j ± ½) mit −1 ↦ R²? Und
+   wo liegt die „3“?
+5. **P1 für die Kugel D(V, η).** Den Wallach-Parameter ν von D(V, η) aus den Antworten des Ladungssektors lesen.
+6. **Starrheit.**
+   - Den Gaußzustand aus P_clock für beliebig viele Fermipaare beweisen.
+   - Prüfen, ob P_clock aus P_sym folgt (Tausch A ↔ B, τ → −1/τ).

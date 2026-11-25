@@ -879,6 +879,13 @@ EVIDENCE = [
     ("marks", "Euclidean Weyl curvature", "excluded", "z85_ergebnis.json", "the H6 state is the quadrupole diag(a, -a, 0) and "
      "changes sign under the quarter turn; an R-invariant Weyl quadrupole is type D with J != 0 (Bianchi IX, Tod form)",
      lambda d: _check_named(d, "Entscheidungstest S4b")),
+    ("time", "OS reconstruction", "conditional", "z84_ergebnis.json", "native reflection-positive reflections exist; for the "
+     "thermal original the OS reconstruction returns the modular flow; a positive continuous time arises only in the vacuum "
+     "sector with a boundary point t* (as z72)",
+     lambda d: _check_named(d, "thermische OS-Rekonstruktion") and _check_named(d, "Halbraum-Transfer x_0 -> x_0 + t")),
+    ("marks", "celestial sphere", "excluded", "z84_ergebnis.json", "no factor-swapping map normalises <R> (Satz B) and R has no "
+     "fixed point on U(2): no mark-invariant Minkowski chart, T' holds only pointwise",
+     lambda d: _check_named(d, "Satz B: eine faktortauschende") and _check_named(d, "auf D(V, eta) ist R = (g_V, g_eta)")),
     ("origin", "two binary observations", "conditional", "z80_ergebnis.json", "sign symmetry of the law forces Cl_2 = M_2, "
      "tau = i, p = 1/2 if implemented in the same irreducible representation",
      lambda d: _check_named(d, "irreduzible Darstellungen von <A, B")),

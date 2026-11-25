@@ -8034,3 +8034,22 @@ S3 (z84) und S4 (z85) rechnen noch.
 S3 (z84) rechnet noch.
 
 **Prüfstand:** 13 P, 7 L (K13 präzisiert). Atlas-Revision ddf297dac6298de0604b5b2a. Ledger unverändert, nichts befördert.
+
+## H6H44-20261125 · S3 Osterwalder-Schrader; Abschluss der parallelen Runde
+
+`z84_euklidisch_os.py` (21 von 21, Agentenlauf mit der radialen Spinorreflexion der neunten Analyse, reproduziert).
+- **Spiegelungen.**
+  - Native reflexionspositive Spiegelungen gibt es: Tomita-J, die thermische Spiegelung, die radiale Inversion des
+    ν = 1-Kerns und Θ_n (die Bahn von τ aus z79).
+  - Satz A: Geometrische Spiegelungen tauschen die Spinorfaktoren nie.
+  - Satz B: Keine Faktorvertauschung normalisiert ⟨R⟩.
+- **OS-Rekonstruktion.**
+  - Für das thermische Original liefert sie genau den Modulfluss.
+  - Positive kontinuierliche Zeit entsteht nur im Vakuumsektor; der Randpunkt t* bleibt eine Wahl.
+- **T′.** Es gilt nur punktweise auf der nativen Kugel D(V, η); R hat auf U(2) keinen Fixpunkt.
+- **Bilanz der Runde.**
+  - 12 von 1152 Szenarien bleiben, alle mit radialer Leiter (Schrittart-Spinor), parabolischer Vakuumzeit, inneren Marken
+    und Saat-Ursprung.
+  - Offen ist allein die Gravitation: der radiale Kanal (Poissonklammer) oder ein räumlicher Schnitt.
+
+**Prüfstand:** 13 P, 7 L (K12 präzisiert). Atlas-Revision 9775dcba49e91227cc4dc4e7. Ledger unverändert, nichts befördert.

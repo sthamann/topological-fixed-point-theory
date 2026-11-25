@@ -1,6 +1,53 @@
 # Urteil
 
-## Aktueller Stand: H6h43 — S4: Gravitation als Deformation gescopt negativ, Marken nicht Weylkrümmung (`z85`)
+## Aktueller Stand: H6h44 — S3 Osterwalder-Schrader und Abschluss der parallelen Runde (`z84`)
+
+**Bilanz:** unverändert 13 P und 7 L von 20. K12 ist präzisiert.
+
+**S3 (z84, 21 Prüfungen; Agent mit der radialen Spinorreflexion der neunten Analyse, reproduziert):**
+- **Reflexionspositivität [E]:**
+  - Tomita-J, die thermische Spiegelung bei β/2 und der Teilchen-Loch-Spiegel sind eine Klasse.
+  - Das Original ist reflexionspositiv: Fermionen antiperiodisch, Strom periodisch, Zweiteilchenzustände; Gegenproben
+    indefinit.
+  - Der ν-Kern ist unter der radialen Inversion Z → (Z†)⁻¹ genau die OS-Form: positiv für ν = 1 und 3/2, indefinit für
+    ν = 1/2.
+  - Die radiale Spinorreflexion Θ_n der neunten Analyse ist bestätigt: Weyl- und Skalarkern positiv, antipodal indefinit.
+  - Θ_n ist nativ als Bahn: Θ₁ = τ aus z79, und der Oszillatorzustand wählt Θ₁.
+- **Satz A [E]:** Jede geometrische Spiegelung wirkt auf H⁰(N) = V* ⊗ η als Produkt und tauscht die Faktoren nie.
+- **Satz B [E]:** Keine faktortauschende Abbildung normalisiert ⟨R⟩.
+- **OS-Rekonstruktion:**
+  - Für das thermische Original liefert sie genau den Modulfluss (Generator in ℤ + 1/4, e^{−2iK} = 1); das
+    Abbruchkriterium greift dort [E negativ].
+  - Im Vakuumsektor gibt die radiale Dilatation L₀ mit den Vielfachheiten m².
+  - Der Halbraumtransfer derselben Spiegelung gibt P₀ ≥ 0 kontinuierlich mit dem Gamma-Gesetz aus z72. Der Randpunkt t*
+    bleibt dabei eine Wahl [E].
+- **T′ [C]:**
+  - Die Markengruppe lässt auf H⁰(N) genau eine hermitesche Form zu, die Kugel D(V, η) ist also nativ bis auf eine Skala.
+  - Die radiale Inversion vertauscht dort an jedem Randpunkt die Faktoren mit Signatur (1,3). T′ gilt damit punktweise.
+  - R hat auf U(2) keinen Fixpunkt. Also gibt es keine markeninvariante Minkowskikarte und kein konstantes T′.
+  - Prämissen: (P1) der ν = 1-Kern gehört zu D(V, η); (P2) eine Dilatationsskala.
+
+**Bilanz der parallelen Runde (S1–S7, z82–z88):**
+- **Raumzeit:** die radiale ν = 1-Leiter aus dem nativen paarerhaltenden Heber L^nat, mit der Schrittart als Spinorindex
+  (z83, bedingt).
+  - Die positive Zeit ist parabolisch und lebt im Vakuumsektor, von drei Seiten bestätigt: Wiesbrock (z72), radial (z83),
+    OS-Halbraum (z84).
+  - Das thermische Original selbst trägt nur die Uhr (z84).
+- **Innen:** Marken und Uhr R (Spin-ℤ₄, R² = (−1)^F, auf dem Träger die ℤ₄ der 16, z82).
+  - Die Marken sind Hitchins vier Punkte, keine Krümmung (z85).
+  - Sie sind auch keine Himmelssphäre, weil R auf U(2) keinen Fixpunkt hat (z84).
+- **Materie:** Spin und Statistik gelten innen exakt. Offen sind die Verklebung Spin ×_{ℤ₂} ℤ₄ und die „3“ (z82).
+- **Viele Teilchen:** Sie passen nicht in eine Naht (z88) und brauchen eine Zusammensetzung vieler Nähte.
+- **Ursprung:** Saat ρ₁ + Spin-ℤ₄ + CAR mit den Prämissen P_sym und P_clock (z87); die Leiter folgt aus der
+  Hardy-Invarianz (z88).
+- **Gravitation:**
+  - Die nativen Quellen geben keinen Einstein-Vertex (z85).
+  - Der Schnitt Original|Partner gibt keine Fläche (z86).
+  - Offen sind der radiale Kanal (Poissonklammer) und ein räumlicher Schnitt.
+- **Szenario-Suche:** 1152 Szenarien, 12 überleben. Sie haben alle dieselbe Architektur; offen ist nur die Gravitation mit
+  zwei Wegen.
+
+## Davor: H6h43 — S4: Gravitation als Deformation gescopt negativ, Marken nicht Weylkrümmung (`z85`)
 
 **Bilanz:** unverändert 13 P und 7 L von 20. K13 ist präzisiert.
 

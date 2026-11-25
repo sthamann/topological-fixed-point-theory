@@ -156,8 +156,8 @@ Eleventh run (whole-theory scenarios, H6 exploration H6h42, strategy S7): the un
 
 That gives 1152 scenarios (since H6h43).
 - **Computed clauses:** R orders and native Lorentz compatibility come from the doublet and position universes.
-- **Recorded clauses:** `EVIDENCE` lists result files of the exploration scripts (z70, z72, z75, z80, z82, z83, z85, z86,
-  z87),
+- **Recorded clauses:** `EVIDENCE` lists result files of the exploration scripts (z70, z72, z75, z80, z82, z83, z84, z85,
+  z86, z87),
   each with a named check and its meaning. A missing file leaves a value pending; nothing is entered by hand.
 
 With the evidence of H6h42, the rule native-Lorentzian + positive time + one field + reduced origin + placed marks keeps 8
