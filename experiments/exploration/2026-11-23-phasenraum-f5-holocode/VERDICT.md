@@ -216,6 +216,8 @@ und liefert Ordnung, Partner und Hamiltonoperator [N; Prämisse P_CTM].**
   elektrische Energie ist quadratisch in den Ladungen wie das z145-Gatter) und vier Dimensionen (gestaffelte =
   Kähler–Dirac-Fermionen haben 2⁴ = 16 Komponenten je Zelle und eine ℤ₄-Anomalie, die sich nach Butt/Catterall/Pradhan/
   Toga, arXiv:2101.01026, bei 16 Weyl-Fermionen aufhebt; nicht gerechnet).
+  Berichtigt durch z154 (Schritt 3, B1): Die 16 der Literatur sind 16 Weyl-Fermionen aus vier reduzierten Feldern,
+  nicht die 2⁴ Komponenten einer Zelle; beide Folgerechnungen sind gerechnet (z154, z155).
 
 **Zwanzigste externe Analyse („Das Austauschgatter steckt in E₈; dieselbe Struktur erzeugt positive Krümmung“; z153, 30
 Prüfungen, selbst gerechnet): Alle gerechneten Aussagen stimmen, keine ersetzt eine Prämisse [E].**
@@ -281,6 +283,183 @@ Prüfungen, selbst gerechnet): Alle gerechneten Aussagen stimmen, keine ersetzt 
     4D-Chern–Simons-Klasse (braucht fünf neue Prämissen).
 - **Prämissen des Kandidaten:** unverändert A*, I_step, P_lift, P_IF, P_univ, P_uhr, P_ord, P_curv, P_G. OriginLab ist
   nicht geändert, weil keine Prämisse entfällt.
+
+**Nachtrag, Schritt 3 nach H6h50: Welle B, die vier Folgerechnungen zu Welle A (z154–z157; vier Agentenläufe,
+reproduziert): Der Spin-2-Sektor existiert nativ mit positiver Norm, die Form des Gatters ist ein Gauß-Gesetz, der
+Viertelwinkel ist eine Invariante der Kurve τ = i; keine Prämisse entfällt [E/C].**
+
+**Bilanz:** unverändert 13 P und 7 L von 20, neun Prämissen, eine freie Zahl. Alle vier Skripte laufen unter
+PYTHONHASHSEED 0 und 7 byteweise gleich (154 Prüfungen zusammen).
+
+**B1 Gitterlesart in vier Dimensionen (z154, 48 Prüfungen; Agent, reproduziert): Die 16 ist keine Kähler–Dirac-Zelle;
+verträglich ist nur eine Lesart mit neuer Prämisse P_KD, und die Vier folgt auch dann nicht nativ [E, gescopt].**
+- **Formeninhalt [E]:** 16|SU(4)⊂SU(5) = 1 + 4 + 6 + 4̄ + 1, unter SO(4) nach Formengrad 1 + (2,2) + (3,1) + (1,3) +
+  (2,2) + 1. Die diagonale Spin(4) in Spin(4)×Spin(6) gibt denselben Inhalt.
+- **Als innere Zelle unverträglich [E]:** Die verdrillte Drehgruppe läge in Spin(10) und mischte Farb- und schwache
+  Plätze; höchstens einer der zwölf Standardmodell-Erzeuger vertauscht mit ihr, von su(3) keiner. Eine Zelle sind zudem
+  nur 8 Weyl-Fermionen.
+- **Verträgliche Lesart B [E, C: P_KD]:** Lorentz bleibt außen, Geschmacksgruppe ist die schwache Spin(4) =
+  SU(2)_L×SU(2)_R, Kopiengruppe die Farb-SU(4). Dann ist der Indexkern K aus z150 exakt Λ^gerade⊗4 + Λ^ungerade⊗4̄,
+  also vier reduzierte Kähler–Dirac-Felder; der volle Träger T16 ist das nicht. Die Farbe bleibt unberührt, SU(2)_L
+  liegt aber ganz in der verdrillten Gruppe.
+- **Die ℤ₄ [E]:** Die Kähler–Dirac-ℤ₄ ist nicht die Uhr und nicht zu ihr konjugiert (Eigenwerte 8×i, 8×−i gegen 16×i).
+  In Lesart B ist sie die inverse Uhr mal dem Zentrum von SU(2)_L, also Uhr modulo Eichtransformation. Für k reduzierte
+  Felder ist ν(Uhr) = 4k; Uhr und Kähler–Dirac-Anomalie verlangen beide k ≡ 0 mod 4, also 16 Weyl-Fermionen.
+- **Dimension [E, C]:** Weyl_d⊗16 ist nur für d = 4 und d = 8 ein Satz reduzierter Kähler–Dirac-Felder; die native
+  Platzteilung 3 + 2 lässt d = 4. Die Vier wäre die reelle Dimension der zwei schwachen Plätze. Die Verdrillung selbst
+  ist nicht nativ: Nach z150 vertauscht so(3,2) mit allen Eichgeneratoren.
+- **Halbraum [E/N negativ, gescopt]:** Im Halbraum eines hyperkubischen gestaffelten Gitters ist je Querimpuls
+  M² = m² + 4t_⊥²Σsin²k, und der Leiterabstand 4πK′/K wächst streng mit M. Für D > 1 gibt es ein Kontinuum von
+  Abständen (2D-Streifen 48×8: 4π, 4,39π, 4,68π; D = 3: 4π bis 5,12π). Die native Leiter gibt es nur für D = 1 oder
+  ohne Querhüpfen. Gilt für ebenen Schnitt, Nächste-Nachbar-Hüpfen, halbe Füllung.
+- **Native 4D-Leiter [E/N negativ, gescopt]:** Σm²qᵐ = q(1+q)/(1−q)³ ist die Monombasis der S³-Harmonischen, also ein
+  Exponentengitter von Oszillatoren. Drei Ortsgitter-Kandidaten (gestaffeltes Fermion im Oktant, massiver Skalar,
+  Produktstrukturen) passen nicht, und Gittergruppen haben höchstens Irrep-Dimension 2, 3 oder 8, erzwingen also die
+  Entartung m² nicht. Kein Unmöglichkeitsbeweis für alle Gittermodelle.
+- **Korrektur zu z152 (Ausblick) und N1:** Die 16 der Literatur sind 16 Weyl-Fermionen aus vier reduzierten Feldern
+  (zwei Zellen, 32 Komponenten), nicht die 2⁴ Komponenten einer Zelle. Der Satz im Ausblick von z152 ist in diesem
+  Punkt falsch; das Skript bleibt unverändert, maßgeblich ist z154.
+- **Folge:** K12 bleibt Lesart. P_KD käme als zehnte Prämisse hinzu und ersetzt keine. P_CTM bleibt auf 1+1 Dimensionen
+  beschränkt. Nächster Test: ob der native Indexoperator auf K (z118) die Form d − δ hat (antikommutiert mit
+  γ₅⊗schwache Chiralität, ändert den Formengrad um ±1); wenn nicht, ist P_KD geschlossen.
+
+**B2 Geeichte Uhr auf der Kette (z155, 39 Prüfungen; Agent, reproduziert): Die Form des Gatters folgt aus dem
+Gauß-Gesetz, Wechselwirkung und Winkel folgen nicht, und als Dynamik zerstört die Eichung die Naht [E/N].**
+- **Form [E, C: P_eich, P_schnitt]:** Jeder Link ist ein Schnitt, E_l = F + Q_l. Die Energie des Schnittlinks ist eine
+  Funktion der Nahtladung allein, ohne Oszillatoranteil. Zwei Nähte mit je einem Schnittlink geben exakt
+  H_Q = (Q_A² + Q_B²)/2, und B†e^(−itH_el)B = e^(−ig²t(FN+F²))·U(φ = g²t). Das ist P_null als Folge der Eichung, wenn
+  das Feld nur auf den Schnittlinks lebt. Innere Links streuen bei fester Ladung (0,11 g²).
+- **Wechselwirkung [E negativ]:** Der Kreuzterm Q_A·Q_B kommt nur von Links, die beide Ladungen sehen, als (Q_A+Q_B)²,
+  und ist zentral. In der Nahtbasis hat die elektrische Phase Operator-Schmidt-Rang 1 (triviales Gatter). Das Gatter
+  ist elektrisch erst in den zirkularen Moden; den Basiswechsel B (P_sym) liefert die Eichung nicht.
+- **Hintergrundfeld [E/N]:** F₀ = ∓1/4 ist kein θ = π/2. Es ist der Versatz zwischen halber Füllung und Dirac-See,
+  dieselbe Zahl wie der Leiterversatz 1/4 aus z152, in Standardlesart θ = 0 mit Massenverschiebung g²a/8. Die
+  Symmetrie CT lässt genau F₀ = ±1/4 zu (P_CT, ein Bit). (Q − 1/4)²/2 = L₀ + 1/32: Die Konstante aus z113 wird nicht
+  reproduziert; bei g²t = 2π ist e^(−itH_el) = e^(−2πi/32)·R⁻¹.
+- **Reine ℤ₄ [E]:** Von 4096 Phasenfunktionen auf ℤ₄ sind 16 quadratisch, 8 nichtentartet. e^(−iτE²/2) hängt genau für
+  τ ∈ (π/2)ℤ nur von E mod 4 ab. „Quadratisch“ ist eine eigene Prämisse (P_Z4quad); dann ist der Winkel diskret (acht
+  Werte, vier wechselwirkend).
+- **Winkel [E/N negativ]:** Kein natives Datum der Kette legt g² fest. Der Modulfluss vertauscht immer mit der Uhr,
+  ist ihr aber nur bei g² = 0 gleich (dξ/dg² = 0,093; 0,696; 0,578 für die Niveaus π, 3π, 4π). P_viertel ist
+  g²·T = π/2, eine Bedingung an zwei neue Größen. Das Villain-Gewicht auf ℤ₄ ist genau bei a = π/2 = β/8 selbstdual
+  (τ = i der Uhr-Thetafunktionen), das Gatter ist deren T-Matrix; das legt nur den euklidischen Schritt fest.
+- **Die Naht bleibt nicht die Naht [N, 12 Plätze]:** Bei g = 0 reproduziert die exakte Diagonalisierung die Naht
+  (Z = 1,043298). Bei g² = 1: Niveaus 1,029π und 3,201π, Versatz 0,2432, Paar − (p+h) = −0,061π. Kein g² im Raster bis
+  8 stellt die Leiter her, auch nicht mit freier Masse, freiem Feld und Dimerisierung (bis g² = 4, lokale Suche).
+  Endliche-Größe-Effekte unter 3·10⁻³π. In der geprüften Familie liegt die Naht bei g² = 0.
+- **Folge:** P_uhr bleibt Prämisse. Es würde durch P_eich + P_schnitt + P_Z4quad + P_schritt ersetzt (Eichterm als
+  Kompositionsschritt, nicht als Zustandsdynamik), also mehr statt weniger. Gewonnen ist eine Lesart: P_null ist das
+  Gauß-Gesetz, und P_viertel ist Eichkopplung mal Schrittdauer, also dieselbe offene Zahl wie die Kopplung von K15.
+  Nächster Test: ob die geeichte Schrittkette (Transferschicht × e^(−i(π/2)H_el)) das Destri–de-Vega-Gitter aus z121
+  ist und die Naht ihr stationärer Zustand.
+
+**B3 Spin 2 im Dubleton-Sektor (z156, 22 Prüfungen; Agent, reproduziert): Der Sektor D(3,2) existiert mit positiver
+Norm und Energie; Auswahl der Kopie und Kopplung sind nicht nativ [E/C].**
+- **Darstellung [E]:** Die Leiterdarstellung der Helizität s der su(2,2) ist unter der nativen so(3,2) für s ≠ 0
+  irreduzibel und gleich D(s+1, s); s = 0 gibt D(1,0) ⊕ D(2,0) (z104). Geprüft für s = 0, ½, 1, 3/2, 2, 3 über
+  Charaktere bis Stufe 9 und exakte Ränge (genau ein tiefstes Gewicht). Der Sektor D = ±4 des z75-Dubletons ist je
+  D(3,2): Gram-Form der ersten Stufe 0, 4, 10 wie in z148 bei E₀ = 3, Casimir 6, Dimensionen n² − 4. Das Ergebnis
+  hängt nicht von der Wahl der so(3,2) mit kompaktem E ab. Die Literaturaussage (Angelopoulos–Flato–Fronsdal–
+  Sternheimer) ist damit nachgerechnet.
+- **Norm und Energie [E]:** Die Fock-Form ist positiv definit, alle Erzeuger sind hermitesch, E₀ = 3. Die Nullrichtung
+  der Eichung fehlt identisch, teilweise masselose Zustände kommen nicht vor.
+- **Der Einwand aus z75 ist geklärt [E]:** D = N_a − N_b ist der zweiseitige Modulgenerator, das Zentrum der u(2,2),
+  also die Helizität, nicht die Energie. Die so(3,2)-Energie ist ein anderer Operator. Es gibt zwei ausgezeichnete:
+  E_de (Ω ist ihr tiefster Zustand, z89) und E_ab = N_a + 1 − D/2, auf D = +4 die einseitige Uhr L₀/m − 1. Beide sind
+  durch die native Dilatation mit Faktor coth(πm) konjugiert; D(3,2) gilt für beide.
+- **Wirkung auf das Original [E negativ]:** Die sechs nichtkompakten Erzeuger erhalten das Original in keinem Rahmen
+  (Stabilisatordimensionen 7/3/3). Die so(3,2) wirkt auf der Purifikation (Original + Partner), also in der Lesart T2
+  mit physikalischem Partner (P_TP oder P_CTM). In der Thermofeldlesart T1 gibt es kein D(3,2).
+- **Vielfachheit [E]:** Je Dubleton tritt D(3,2) zweimal auf (D = ±4). Die so(3,2) wirkt exakt als sp(4,ℝ) diagonal
+  auf zwei Singleton-Kopien; der Fockcharakter ist (Di + Rac)², D ist die duale O(2)-Ladung. Je Mode und Strompaar
+  gibt es einen Dubleton (für m ≤ M und ein Paar 2M Kopien, mal 28 Koordinatenpaare der acht Cartan-Ströme). Eine
+  gemeinsame so(3,2) über N Dubletons gibt D(3,2) mit Vielfachheit 2, 0, 0; Spin 2 beginnt dann bei E₀ = N + 2.
+- **Auswahl [E negativ / C]:** Uhr, Niveauabgleich und Modulgewicht (e^(−16πm)) wählen keine Kopie. Modulinvariant
+  sind nur die zwei chiralen Kopien, und J tauscht sie. Nötig sind P_mode (eine Mode), P_paar (zwei Ströme samt ihrer
+  SU(2)), P_chir (eine der zwei Kopien) und die Einteilchenlesart P_1T.
+- **Kopplung [E/C]:** Der Sektor passt als Zustandsraum der D(3,2)-Mode aus z148 (Δ = 3, masselos, eich- und
+  geistfrei). Er ist aber frei: Kein Erzeuger verbindet Ω mit D = ±4, Hom(D(3,2)⊗D(3,2), D(3,2)) = 0, es gibt keinen
+  invarianten Vektor. Die Norm ist 1 für jedes κ und legt G nicht fest; das Paarungsbit wird b > 0 nur als
+  Konsistenzbedingung. Weinberg–Witten verbietet den Sektor nicht, verlangt aber Kopplung als Eichfeld [L].
+- **Folge:** P_pos wird Folge, sofern der ausgetauschte Sektor der Dubleton ist. P_X bleibt und wird enger: nicht mehr
+  „ein Sektor D(3,2) tritt hinzu“, sondern „der vorhandene Sektor wird zwischen Nähten ausgetauscht“. P_dyn, P_h2,
+  P_curv und P_G sind unverändert. K13 bleibt L, die Klausel „graviton“ bleibt leer. Nächster Test: die
+  Zwei-Naht-Antwort des Vierstromoperators (a⁺)⁴ im Kanal D = ±4 unter dem z120-Gatter bzw. der z152-Kette, gegen die
+  Linienantwort einer Primären mit Δ = 3; ist sie null oder faktorisiert sie zu Δ = 4, ist P_X für den Dubleton
+  widerlegt.
+
+**B4 Elliptische Klasse auf der Markenkurve (z157, 45 Prüfungen; Agent, reproduziert): Die Nahtkette liegt wörtlich auf
+E_i: w² = 1 − z⁴; der Viertelwinkel ist dort eine Invariante der komplexen Multiplikation, das wechselwirkende Gatter
+legt die Kurve aber nicht fest [E/N, C: P_aut, P_lam].**
+- **Kette auf der Kurve [E/N]:** Die Ising-Form (Querfeld √2) ist die halbe XY-Kette am Freie-Fermionen-Punkt des
+  Acht-Vertex-Modells; dieser Punkt ist der 2-Torsionspunkt des Kreuzungsparameters λ. Das invariante Gitter der
+  R-Matrix ist genau bei Feld √2 quadratisch (j = 1728). Für die Ladungskette (Hüpfen t, Wechselpotential m) ist die
+  Dispersionskurve in s = i·sin q wörtlich w² = 1 − s⁴ genau bei m = 2t; die R-Matrix besteht aus lemniskatischen
+  Funktionen (Grenzfall der Bazhanov–Stroganov-Familie, k² = −1), Yang–Baxter-Gleichung und [T, H] = 0 sind geprüft.
+  Sie liegt nicht in der symmetrischen Belavin-Klasse (unsymmetrische Gewichte, U(1)-Ladung).
+- **Boost und Periode [E/N]:** Der Erzeuger der Spektralverschiebung ist der Gitter-Boost, K = 2λ·Boost. Die Konstante
+  c = ϖ = 2,6220575543 aus z152 ist die Periode von dq/ε über den Lückenzyklus (50 Stellen). Volle Modulperiode =
+  voller Periodenvektor, Kreuzung = 2-Torsion, isotrope Ecke = 4-Torsion, Uhr Δ^(−i/2) = imaginärer 2-Torsionspunkt.
+  Präzisierung zu z152 D3b: 2∫₀¹dz/√(1−z⁴) = ϖ ist die halbe geschlossene Periode; das Periodengitter von dz/w ist
+  (1+i)ϖ·ℤ[i].
+- **ℤ₄-Automorphie [E]:** z → iz wirkt als Hadamard-Dualität mit Drehung von Spektral- und Kreuzungsparameter,
+  R(iu; iλ) ∝ (H⊗H)R(u; λ)(H⊗H). Am Uhrpunkt u = iλ ist die R-Matrix der Nahtkette in der Ladungsform die Paaruhr
+  diag(−i, i), in der Ising-Form e^(iπ/4·XX)e^(iπ/8·YY) (Ordnung 8, Quadrat ≠ Tausch, frei in den Fermionen). Sie ist
+  weder (1+iP)/(1+i) noch die gesteuerte Uhr. Die 4-Torsionspunkte geben keine Uhrwerte.
+- **Neu [E]:** Auf E_i gilt für jeden Kreuzungsparameter λ am Punkt u = iλ: Das Gatter ist unitär und die
+  Zweikörperinvariante um die feste Achse ist δ_y = (1−i)/(1+i) = −i, also c₂ = π/8 (Beweis über
+  sl((1±i)x) = (1±i)·sl(x)/sl′(x)). Bei anderem Modul (k = 0,3) gilt das nicht; ein unitäres Gatter am Automorphiebild
+  der Kreuzung gibt es nur auf E_i, und sein Wert ist dann ∓i. Die Familie u = iλ hat zwei Enden: λ → 0 gibt das
+  z120-Gatter (1+iP)/(1+i) (Abstand quadratisch in λ), λ = K die freie Nahtkette. Uhrwerte um alle drei Achsen gibt
+  es nur an diesen Enden.
+- **Gegen z151 [E/L]:** Auf E_i ist die native Quartik das Quadrat der polfreien Form, Φ_M = (dz/w)². Die Form aus z151
+  hat dort vier Pole; die elliptische Klasse ist also nicht der Rückzug der Twistorreduktion. Sie trägt nur sl(2) mit
+  der Kleinschen Vierergruppe. Von den fünf Prämissen der rationalen Klasse entfallen vier (P_Ω, P_red, P_rand, P_GS),
+  fünf andere kommen hinzu (P_wurzel, P_buendel, P_aut, P_platz, P_lam neben P_spek): sechs statt fünf.
+- **Folge:** P_viertel wäre durch P_aut ersetzt (der Abstand der Linienscharen ist das Aut(E_i)-Bild der Kreuzung),
+  nicht hergeleitet. P_uhr, P_ord und die neun Prämissen bleiben. K15 und K16 sind nicht berührt (am 2-Torsionspunkt
+  gibt es keinen Kontinuumslimes). Nächster Test: die Shastry-artige Kopplung zweier lemniskatischer
+  Ladungsketten-R-Matrizen (ob das Gatter am Uhrpunkt i^(Q_A·Q_B) trägt) und der Skalierungslimes λ → 0.
+
+**Was die Welle bedeutet.**
+- **Zustand und Gatter sind zwei Enden [E/N]:** Zwei unabhängige Rechnungen sagen dasselbe. Die Naht als Zustand ist
+  frei: In der geeichten Kette liegt sie bei g² = 0 (z155), in der elliptischen Familie am freien Ende λ = K (z157).
+  Das wechselwirkende Gatter ist kein Teil der Dynamik, die den Nahtzustand festlegt, sondern ein eigener Schritt der
+  Komposition, mit einer eigenen Zahl (g²·T bzw. λ → 0). Das passt zu z152, wo zwei verschachtelte Nähte den freien
+  Hamiltonoperator festlegen. Die Hoffnung, P_uhr aus der Kette selbst zu gewinnen, ist damit gescopt negativ.
+- **Der Viertelwinkel hat eine gemeinsame Quelle [E, Lesart]:** In z155 ist das Villain-Gewicht auf ℤ₄ genau bei
+  a = π/2 = β/8 selbstdual (τ = i der Uhr-Thetafunktionen); in z157 ist das Viertel der Multiplikator (1−i)/(1+i) der
+  komplexen Multiplikation auf E_i. Beides ist die Ordnung-4-Automorphie von τ = i. Der Winkel ist damit nativ
+  ausgezeichnet, aber erst unter einer benannten Zuordnung (P_aut oder P_Z4quad). P_viertel ist enger, nicht weg.
+- **P_null ist ein Gauß-Gesetz [E, C]:** Dass das Gatter nur von den Uhrwerten abhängt, folgt aus „die Uhr ist
+  geeicht, das Feld lebt auf den Schnittlinks“. P_viertel ist dann Eichkopplung mal Schrittdauer, also dieselbe offene
+  Zahl wie die Kopplung von K15. Das verbindet zwei Lücken, schließt aber keine.
+- **Graviton [E/C]:** Die Frage aus Welle A ist beantwortet. Der Sektor D(3,2) ist im Dubleton vorhanden, unitär, mit
+  positiver Energie, ohne Eich- und Geistzustände; P_pos ist Folge. Offen sind Auswahl (P_mode, P_paar, P_chir, P_1T)
+  und Austausch (P_X in enger Form). Die so(3,2) wirkt auf der Purifikation; der physikalische Partner, den die
+  Gitterlesart liefert (P_CTM), ist dafür nötig. Die Klausel „graviton“ bleibt leer.
+- **Vier Dimensionen [E]:** Aus der Gitterlesart folgt die Vier nicht. Die 16 ist keine Kähler–Dirac-Zelle, ein
+  hyperkubischer Halbraum trägt die native Leiter nicht, und die native 4D-Leiter ist eine Oszillatorleiter. K12 bleibt
+  bei der kinematischen Lesart (Twistoren); unter P_KD wäre die Vier die reelle Dimension der zwei schwachen Plätze.
+- **G:** nicht berührt. z156 bestätigt nur, dass die Norm des Spin-2-Sektors G nicht festlegt.
+- **Neue Lesart für die nächste Runde [L, nicht gerechnet]:** Nach z156 ist der Dubleton exakt (Di + Rac)², der
+  Zwei-Singleton-Raum von Flato und Fronsdal; masselose AdS₄-Teilchen sind dort Paare von Singletons. Das ist die
+  Kinematik der Dualität zwischen freien Randfeldern und Höherer-Spin-Gravitation. In ihr wäre ℓ²/G proportional zur
+  Zahl der Singleton-Arten (über den Zweipunktkoeffizienten des Randstromtensors) und die Auswahl der Kopie eine
+  Singulett-Bedingung. Zu prüfen ist, ob die zweite Quantisierung des Singletons (P_1T) nativ ist; ohne sie bleibt es
+  eine Lesart. Als Zahl wäre G dann eine Anzahl, was z137 für e^(2/α) verneint hat; der Weg ist deshalb eher ein Test
+  für P_X als für P_G.
+- **Bewertung der Strategien:**
+  - Abgeschlossen (gescopt negativ): vier Dimensionen aus einem hyperkubischen Gitter; P_uhr aus der geeichten Kette
+    als Hamiltonoperator; Gatter aus den Torsionspunkten der freien Kurve.
+  - Weiterführen: (a) Zwei-Naht-Antwort im Kanal D = ±4 (entscheidet P_X für den Dubleton); (b) geeichte Schrittkette
+    gegen das Destri–de-Vega-Gitter aus z121 (ob die Naht stationär bleibt); (c) Kopplung zweier lemniskatischer
+    Ketten am Uhrpunkt (ob i^(Q_A·Q_B) entsteht) und der Limes λ → 0; (d) Indexoperator auf K gegen d − δ (schließt
+    oder stützt P_KD).
+  - Zurückstellen: weitere Gitter für K12; weitere Zeilen für G.
+- **Prämissen des Kandidaten:** unverändert A*, I_step, P_lift, P_IF, P_univ, P_uhr, P_ord, P_curv, P_G. Enger gefasst:
+  P_curv (über P_X in enger Form, P_pos ist Folge), P_uhr (P_null ist unter P_eich + P_schnitt ein Gauß-Gesetz,
+  P_viertel unter P_aut eine Invariante von τ = i). OriginLab ist nicht geändert, weil keine Prämisse entfällt.
 
 **Neunzehnte externe Analyse (z144, 67 Prüfungen, selbst gerechnet): Die gerechneten Aussagen stimmen. Die Zopfrelation
 legt das wechselwirkende Gatter nicht fest; die Phase folgt aber aus der Uhr.**

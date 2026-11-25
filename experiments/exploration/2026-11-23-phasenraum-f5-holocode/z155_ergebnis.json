@@ -1,0 +1,653 @@
+{
+ "checks": {
+  "A1 [E] Gauß-Gesetz eliminiert (symbolisch, 7 Plätze): H_el/g^2 = (1/2) sum_l (F + Q_l)^2 mit Q_l = Ladung links von Link l. Der Koeffizient von q_k q_k' ist die Zahl der Links rechts von beiden Plätzen (lineares Coulomb-Potential), der von F q_k die Zahl der Links rechts von k": true,
+  "A2 [E] Zwei Gebiete A links von B: Der gemischte Teil ist Q_A (n_aus Q_B + D_B). Der Kreuzterm Q_A Q_B hat den Koeffizienten g^2 mal n_aus = Zahl der Links rechts von beiden Gebieten (Außenlinks); D_B ist das Dipolmoment von B um sein rechtes Ende, keine Funktion der Ladung": true,
+  "A2 [E] Die Links zwischen A und B tragen (F + Q_A + Lückenladung)^2: nur Q_A, kein Q_B und kein Kreuzterm. Endet die offene Kette an B (n_aus = 0), gibt es keinen Term Q_A Q_B": true,
+  "A3 [E] Ring mit Fluss: Gauß verlangt Q_A + Q_B = 0; H_el/g^2 = (n_1 (E_0 + Q_A)^2 + n_2 E_0^2)/2 mit der Windungszahl E_0 als einziger neuer Marke. Auch hier nur eine Variable je Link, kein unabhängiger Term Q_A Q_B": true,
+  "A4 [E] Zwei Nähte, jede mit eigenem Schnittlink (Feld F + Q_A bzw. F + Q_B): B^+ e^(-i t H_el) B = e^(-i g^2 t (F N + F^2)) U(phi = g^2 t) für jedes F. Die elektrische Entwicklung ist die Phase des z120-Gatters; das Hintergrundfeld geht nur in eine zentrale Phase der Gesamtladung": true,
+  "A4 [E] In der Nahtbasis ist e^(-i phi H_Q) ein Produkt von Einnahtphasen (Operator-Schmidt-Rang 1): Die geeichte Nahtladung allein gibt das triviale Gatter (wie z121, z145). Rang des Gatters mit B-Sandwich: 32": true,
+  "A4 [E] Das Gatter ist elektrisch in den zirkularen Moden: U(phi) = e^(-i phi N^2/4) e^(-i phi J_y^2), J_y = (Q_+ - Q_-)/2. Geeicht ist dabei die Ladung der Vierteldrehung P_sym = e^(i pi J_y), nicht die Nahtladung; das Gatter vertauscht mit P_sym und mit der Paaruhr e^(i pi J_z) der Nähte (P_univ)": true,
+  "A4 [E] Ein gemeinsamer Link zwischen A und B: B^+ e^(-i t g^2 (F + Q_A)^2/2) B ist das Gatter (phi = g^2 t/2, Faktor 2 gegenüber zwei Links) genau bei symmetrischem Feld F = -N/2. Mit F = -1/4 bleibt die einkörperige Drehung e^(-i phi (N - 1/2) J_y), die nicht in der Uhrgruppe liegt": true,
+  "A4 [E] Außenlink (F + Q_A + Q_B)^2: vertauscht mit dem Transfer B und ist in jedem Sektor fester Gesamtladung eine Zahl. Der Kreuzterm Q_A Q_B aus dem Gauß-Gesetz wechselwirkt also nicht": true,
+  "A5 [E] Schnittlink: (F + Q_A)^2/2 ist bei fester Nahtladung eine Zahl (Spanne 0). Das ist P_null für den Link zwischen Naht und Partner, eine Folge des Gauß-Gesetzes": true,
+  "A5 [N] Innere Links der Naht: Ihre elektrische Energie ist bei fester Nahtladung keine Zahl (Spanne und Streuung im nativen Zustand > 0). Der Rest ist nur null, wenn das Feld allein auf den Schnittlinks lebt (P_schnitt)": true,
+  "B1 [N] Gerader Schnitt: Leiter pi (4Z + 1) (Naht), wahrscheinlichste Teilchenzahl j/2. Ungerader Schnitt: gespiegelte Leiter pi (4Z + 3) (Partner), Teilchenzahl (j + 1)/2 (vier Niveaus, 1e-5)": true,
+  "B1 [E] Pauli-Summe über die Leiter (|Q| <= 8): tiefstes Niveau bei Ladung Q ist 4 pi ((Q_gl - 1/4)^2/2 - 1/32) mit Q_gl = Ladung gegen den gleichmäßigen Hintergrund (n - 1/2), an geraden und an ungeraden Schnitten. Das sind die zwei z113-Formeln (Q - 1/4)^2/2 - 1/32 und (Q + 1/4)^2/2 - 1/32 in einer Variablen": true,
+  "B1 [N] Exakte Diagonalisierung (12 Plätze, g = 0, Schnitte nach 5, 6, 7 Plätzen): tiefstes Niveau je Ladung auf der Parabel mit Scheitel Q_gl = +1/4 (5e-4)": true,
+  "B1 [N] Umgekehrtes Vorzeichen des Wechselpotentials (m = +2t): Scheitel bei Q_gl = -1/4. Das Vorzeichen des Viertels folgt dem von m (z152: m = -+2t)": true,
+  "B2 [E] Mit F0 = -1/4 ist H_el/g^2 auf dem Schnittlink (Q - 1/4)^2/2 = L_0^Ladung + 1/32 = (4Q - 1)^2/32, das Gewicht des Z_16-Sektors n = 4Q - 1 aus z145. Die Form der z113-Formel ist reproduziert, die Konstante nicht: H_el >= g^2/32 (Feldenergie F^2/2 des Hintergrunds), z113 hat 0 bei Q = 0. Bei g^2 t = 2 pi gilt e^(-i t H_el) = e^(-2 pi i/32) R^-1: die Uhr bis auf die Twistkonstante aus z145": true,
+  "B3 [E] Identität auf allen neutralen Besetzungen (8 und 10 Plätze, vier Werte F0): gleichmäßiger Hintergrund mit Randfeld F0 = Kogut-Susskind-Hintergrund mit theta/2pi = F0 + 1/4, plus (g^2/8) sum (-1)^n n_n, plus Konstante. F0 = -1/4 ist also theta = 0 mit der Massenverschiebung g^2 a/8, F0 = +1/4 ist theta = pi; ein gleichmäßiges Feld theta = pi/2 wäre F0 = 0": true,
+  "B3 [N] Gegenprobe im Spektrum (10 Plätze, g^2 = 1,3): H(gleichmäßig, F0 = -1/4, m) und H(gestaffelt, theta = 0, m + g^2/8) haben dasselbe Spektrum bis auf eine Konstante (1e-10)": true,
+  "B4 [E] Das Gauß-Gesetz mit gleichmäßigem Hintergrund ist unter Ladungskonjugation mal Verschiebung um einen Platz (E_l -> -E_(l+1)) genau für F0 = +-1/4 mod 1 invariant: zwei Klassen (theta = 0 und theta = pi), kein Kontinuum": true,
+  "B4 [E] Native Klasse: Im Zustand größter Amplitude (bevorzugte Plätze besetzt) trägt mit F0 = -1/4 jeder Link das Feld -+1/4 (kleinste Feldenergie, theta = 0). Der Scheitel +1/4 der nativen Parabel (B1) ist dieses F0": true,
+  "B5 [E] Modulo 1 ist (Q - 1/4)^2/2 = 1/32 + Q/4 eine Funktion auf Z_4 und linear: Auf Z_4 wohldefiniert ist von der quadratischen Energie mit Viertelversatz nur die Entwicklung über g^2 t = 2 pi, und die ist die Uhr": true,
+  "B5 [E] Die quadratische Phase e^(-i tau E^2/2) hängt genau für tau in (pi/2) Z nur von E mod 4 ab (ohne Versatz strikt, mit Versatz 1/4 bis auf eine Konstante i^k je Umlauf). Für eine Z_4-Eichtheorie mit quadratischem Feldgesetz ist die Schrittphase also auf acht Werte quantisiert: die acht Uhrgatter aus z145": true,
+  "B5 [E] Von 4096 Phasenfunktionen auf Z_4 sind 16 quadratisch und 8 nichtentartet (vier Formen mal Charakter). Die Clifford-Bedingung (Transfer -> Transfer mal ein Uhrelement, z145) gilt genau für die quadratischen": true,
+  "B5 [E] Die vierte Potenz eines nichtentarteten Gatters ist die Parität R^2, nie die Uhr R: Gatter (quadratisch) und Uhr (linear, vom Viertelversatz) sind nicht Viertel- und Vollperiode derselben Energiefunktion auf Z_4 (wie z133: Gauß-Summe gegen lineare Uhr)": true,
+  "C1 [E] Auf der geeichten Kette (8 Plätze, F0 = -1/4) gilt e^(-i t H_el) X_l e^(i t H_el) = Konstante mal X_l R_l^k (ein einzelnes Uhrelement) genau für g^2 t = k pi/2 (X_l = Hüpfen über Link l, R_l = Uhr des Schnitts l; Kontrollen 0,3; 0,7; pi/4; 1; 2). P_viertel heißt in Eichsprache g^2 t = pi/2 mod pi: 'Ladung um Fluss' aus z145": true,
+  "C2 [E] Der Modulfluss vertauscht für jedes g^2 mit der Uhr (||[rho_A, R_A]|| < 1e-12 bei g^2 = 0, 1, 5), weil die Nahtladung erhalten ist. Das quantisiert g^2 nicht": true,
+  "C2 [N] Die native Gleichung 'Modulfluss über die halbe Periode = Uhr' (e^(iK/2) = Konstante mal R, also Niveaus = pi Q mod 4 pi) bricht in erster Ordnung in g^2: d xi/d g^2 = 0,093; 0,696; 0,578 für die Niveaus pi, 3 pi, 4 pi, nicht proportional zu den Niveaus und nicht additiv (Teilchen plus Loch ungleich Paar)": true,
+  "C2 [N] Boost-Gewicht: Die Antwort der Niveaus folgt dem mit dem Abstand gewichteten elektrischen Term (Korrelation > 0,95), aber nicht exakt (Faktor alpha zwischen 0,5 und 0,8). Der Schnittlink selbst trägt wenig Gewicht (gamma unter einem Fünftel von alpha c, dem Gewicht des ersten inneren Links); 'nur Schnittlink' scheitert (Rest > 0,3). Die Ladungsenergie (Q - 1/4)^2 des Schnitts geht also kaum in den eigenen Modulgenerator ein; die Modulperiode sieht g^2 vor allem über das Innere und quantisiert es nicht": true,
+  "C3 [E] Die freie Kette hat keine eigene Periode: E_max/E_min = sqrt(2) ist irrational (z152: kappa = 1/sqrt(2)). Die Laufzeit T des elektrischen Schritts ist eine zweite neue Größe; fest ist durch P_viertel nur das Produkt g^2 T = pi/2 (ein gemeinsamer Link: pi). Lesart ohne Stütze: gleiche Schrittdauer für Transfer (2 t T = pi/2) und Feld gäbe g^2 = 2t, also g a = 1 neben m a = 1": true,
+  "C4 [E] Selbstdualität: Das uhrperiodisierte Gewicht w_a(E) = sum_n e^(-a (E - 4n)^2/2) ist genau für a = 2 pi/4 = pi/2 seine eigene Z_4-Fourier-Transformierte (40 Stellen; ein Vorzeichenwechsel auf 0,3 <= a <= 5,7). pi/2 = beta/8 mit beta = 4 pi: das KMS-Gewicht des Ladungsgitters über ein Achtel der Periode": true,
+  "C4 [E] Einordnung: w_(pi/2)(k) ist die Thetafunktion der Stufe 2 mit Gewichten k^2/8 bei tau = i. S wirkt auf diesen vier Funktionen als Z_4-Fourier-Transformation, tau = i ist ihr Fixpunkt. Das Gatter e^(-i (pi/2) Q^2/2) ist die inverse T-Matrix (tau -> tau + 1) derselben Funktionen (40 Stellen). Die native Selbstdualität tau = i legt also den euklidischen Schritt fest; dass der reelle Schritt ein ganzer Dehn-Twist ist, ist P_viertel": true,
+  "C4 [E] Für eine allgemeine ladungskonjugationssymmetrische Energie auf Z_4 ist die selbstduale Menge eine Linie, 2 w(1) + w(2) = w(0). Das Villain-Gewicht trifft sie bei a = pi/2, die Kosinus-Energie bei w(1)/w(0) = sqrt(2) - 1 (zwei Ising-Modelle; der Hadamard-Fixpunkt aus z144). Erst quadratisch plus selbstdual legt den Winkel fest": true,
+  "D1 [N] g = 0, 12 Plätze: Vielteilchenniveaus pi (1, 3, 4, 5, 6) für (Q=+1, Q=-1, Paar, zweites Q=+1, Q=+2) auf 2e-3 und Zustandssumme 2^(1/4) e^(-pi/24) = 1,043298 auf 1e-5: Die halbe freie Kette ist die Naht (z152)": true,
+  "D1 [N] Endliche Größe: Zwischen 8, 10 und 12 Plätzen ändern sich p, h, ph bei g^2 = 1 um weniger als 3e-3 pi (Korrelationslänge 0,567 Plätze); die Deformation durch g^2 ist zehn- bis hundertmal größer": true,
+  "D2 [N] Native Lesart (F0 = -1/4): Mit g^2 wachsen p und h monoton, der Versatz p/(p+h) fällt monoton unter 1/4 (0,2432 bei g^2 = 1), die Zustandssumme fällt. Die Leiter pi (4Z + 1) deformiert sich glatt": true,
+  "D2 [N] Nicht quasifrei: Paar - (p + h) ist für jedes g^2 > 0 negativ und fällt monoton, in allen vier Lesarten. Die Steigung bei g = 0 ist in allen dieselbe (-0,067 pi je g^2): Der Zweikörperanteil hängt in erster Ordnung nicht vom Hintergrundfeld ab": true,
+  "D2 [N] 'Modulfluss = Uhr' verlangt p = 1 mod 4. In allen vier Lesarten liegt p für 0 < g^2 <= 8 strikt zwischen 1,005 und 1,7: kein g^2 > 0 im Raster stellt die Gleichung wieder her": true,
+  "D3 [N] Stellt man die Masse nach, so dass das erste Niveau pi bleibt, weichen die anderen ab: h = 3,03 bis 3,62 statt 3, monoton in g^2. Mit m = -1,872 bei g^2 = 1": true,
+  "D4 [N] Auch mit Masse, Hintergrundfeld und Dimerisierung als freien Stellgrößen lassen sich die fünf ersten Niveaus für g^2 > 0 nicht treffen (kleinste Quadrate, lokale Suche ab dem nativen Punkt): Der kleinste Rest wächst monoton mit g^2 (0,010 pi bei g^2 = 0,25) und ist nur bei g^2 = 0 auf dem Niveau der endlichen Größe (< 1e-3). Die Nichtadditivität Paar - (p + h) < 0 bleibt, weil sie ein Zweikörpereffekt ist": true
+ },
+ "befunde": {
+  "A Geometrie": "E",
+  "A Form": "bedingt",
+  "B Viertel": "bedingt",
+  "B Z_4": "E",
+  "C Winkel": "nein (nativ), bedingt (diskret unter benannten Prämissen)",
+  "D Naht": "nein"
+ },
+ "zahlen": {
+  "Operator-Schmidt-Rang: elektrische Phase in Nahtbasis, Gatter": [
+   1,
+   32
+  ],
+  "ein gemeinsamer Link, F = -1/4: Abstand der Restdrehung von der Uhrgruppe (N = 2)": 0.117157,
+  "Rest: Q_A -> [Mittel, Streuung, Spanne Schnittlink, Spanne innere Links] der elektrischen Energie / g^2": {
+   "-1": [
+    0.44803,
+    0.12442,
+    0.0,
+    6.25
+   ],
+   "0": [
+    0.20974,
+    0.11087,
+    0.0,
+    3.5
+   ],
+   "1": [
+    0.20201,
+    0.10909,
+    0.0,
+    3.25
+   ]
+  },
+  "ED N = 12, g = 0: Schnitt -> [Q_gl, xi_min/4pi gemessen, Parabel]": {
+   "5": [
+    [
+     -0.5,
+     0.24999,
+     0.25
+    ],
+    [
+     0.5,
+     0.0,
+     0.0
+    ],
+    [
+     1.5,
+     0.75009,
+     0.75
+    ]
+   ],
+   "6": [
+    [
+     -1.0,
+     0.74997,
+     0.75
+    ],
+    [
+     0.0,
+     0.0,
+     0.0
+    ],
+    [
+     1.0,
+     0.25,
+     0.25
+    ]
+   ],
+   "7": [
+    [
+     -0.5,
+     0.24999,
+     0.25
+    ],
+    [
+     0.5,
+     0.0,
+     0.0
+    ],
+    [
+     1.5,
+     0.75009,
+     0.75
+    ]
+   ]
+  },
+  "CT-symmetrische Randfelder F0 in (1/16) Z, |F0| <= 1/2": [
+   "-1/4",
+   "1/4"
+  ],
+  "quadratische Phase e^(-i tau E^2/2) hängt nur von E mod 4 ab: tau = j pi/8 -> (j, Phase je Umlauf / 2 pi, ohne Versatz strikt)": [
+   [
+    0,
+    "0",
+    true
+   ],
+   [
+    4,
+    "1/4",
+    true
+   ],
+   [
+    8,
+    "1/2",
+    true
+   ],
+   [
+    12,
+    "3/4",
+    true
+   ],
+   [
+    16,
+    "0",
+    true
+   ]
+  ],
+  "Funktionen auf Z_4 (16. Einheitswurzeln): alle, quadratisch, nichtentartet": [
+   4096,
+   16,
+   8
+  ],
+  "Clifford auf der Kette: kleinster relativer Abstand zu einem Uhrelement außerhalb (pi/2) Z": 0.18818,
+  "erste Ordnung: Niveau/pi bei g = 0": [
+   1.0,
+   2.9999,
+   3.9999,
+   5.0015,
+   6.0015,
+   6.9864
+  ],
+  "erste Ordnung: d xi / d g^2 (exakt)": [
+   0.0926,
+   0.6964,
+   0.5781,
+   2.1021,
+   2.4444,
+   4.4955
+  ],
+  "erste Ordnung: Erwartung c sum d E_d^2/2 (Boost-Gewicht, Schnittlink mit Gewicht 0)": [
+   -0.0162,
+   0.6323,
+   0.6108,
+   3.1685,
+   3.266,
+   6.6833
+  ],
+  "erste Ordnung: Erwartung (F + Q_A)^2/2 (nur Schnittlink)": [
+   0.25,
+   0.75,
+   0.0,
+   0.25,
+   1.5,
+   0.75
+  ],
+  "erste Ordnung: d/dg^2 von (xi_ph - xi_p - xi_h) und von (xi_h - 3 xi_p)": [
+   -0.2109,
+   0.4185
+  ],
+  "Anpassung d xi/d g^2 = alpha Boost + gamma Schnitt: alpha, gamma, relativer Rest": [
+   0.643,
+   0.264,
+   0.039
+  ],
+  "Anpassung nur Schnittlink: relativer Rest; Korrelation mit Boost-Term": [
+   0.634,
+   0.998
+  ],
+  "selbstduales Villain-Gewicht auf Z_4: a": "1.57079632679489661923132169164",
+  "dort w(1)/w(0), w(2)/w(0)": [
+   "0.456786383137055",
+   "0.0864272337258898"
+  ],
+  "endliche Größe: N -> [p, h, ph bei g^2 = 0], [bei g^2 = 1] (Einheit pi)": {
+   "8": [
+    [
+     1.00028,
+     2.99583,
+     3.99611
+    ],
+    [
+     1.02884,
+     3.19856,
+     4.16654
+    ]
+   ],
+   "10": [
+    [
+     1.00015,
+     2.99786,
+     3.998
+    ],
+    [
+     1.02876,
+     3.19967,
+     4.1676
+    ]
+   ],
+   "12": [
+    [
+     1.00001,
+     2.99988,
+     3.99989
+    ],
+    [
+     1.02868,
+     3.20078,
+     4.16866
+    ]
+   ]
+  },
+  "Raster 12 Plätze: [g^2, p, h, Versatz, Paar - (p+h), zweites Q=+1, Q=+2, Z] (Niveaus in pi)": {
+   "gleich, F0 = -0.25": [
+    [
+     0.0,
+     1.0,
+     2.9999,
+     0.25,
+     0.0,
+     5.0015,
+     6.0015,
+     1.0433
+    ],
+    [
+     0.25,
+     1.0073,
+     3.0538,
+     0.248,
+     -0.0163,
+     5.1616,
+     6.1875,
+     1.0423
+    ],
+    [
+     0.5,
+     1.0145,
+     3.105,
+     0.2463,
+     -0.0319,
+     5.3094,
+     6.3588,
+     1.04135
+    ],
+    [
+     1.0,
+     1.0287,
+     3.2008,
+     0.2432,
+     -0.0608,
+     5.5762,
+     6.6671,
+     1.03954
+    ],
+    [
+     2.0,
+     1.0561,
+     3.3719,
+     0.2385,
+     -0.1115,
+     6.0279,
+     7.1871,
+     1.03626
+    ],
+    [
+     4.0,
+     1.1078,
+     3.6591,
+     0.2324,
+     -0.1921,
+     6.7334,
+     7.9956,
+     1.03081
+    ],
+    [
+     8.0,
+     1.2018,
+     4.1072,
+     0.2264,
+     -0.3018,
+     7.7442,
+     9.1511,
+     1.02293
+    ]
+   ],
+   "gleich, F0 = 0.25": [
+    [
+     0.0,
+     1.0,
+     2.9999,
+     0.25,
+     0.0,
+     5.0015,
+     6.0015,
+     1.0433
+    ],
+    [
+     0.25,
+     1.0272,
+     2.9665,
+     0.2572,
+     -0.0168,
+     5.3612,
+     6.4059,
+     1.03977
+    ],
+    [
+     0.5,
+     1.0533,
+     2.9335,
+     0.2642,
+     -0.0335,
+     5.671,
+     6.7558,
+     1.03666
+    ],
+    [
+     1.0,
+     1.1026,
+     2.8678,
+     0.2777,
+     -0.0672,
+     6.1922,
+     7.3481,
+     1.03143
+    ],
+    [
+     2.0,
+     1.1925,
+     2.7369,
+     0.3035,
+     -0.1352,
+     6.9977,
+     8.2745,
+     1.0238
+    ],
+    [
+     4.0,
+     1.3483,
+     2.466,
+     0.3535,
+     -0.2746,
+     8.1274,
+     9.6088,
+     1.01491
+    ],
+    [
+     8.0,
+     1.618,
+     1.8233,
+     0.4702,
+     -0.5814,
+     9.0399,
+     11.4281,
+     1.00958
+    ]
+   ],
+   "gleich, F0 = 0.0": [
+    [
+     0.0,
+     1.0,
+     2.9999,
+     0.25,
+     0.0,
+     5.0015,
+     6.0015,
+     1.0433
+    ],
+    [
+     0.25,
+     1.0173,
+     3.0108,
+     0.2526,
+     -0.0166,
+     5.2634,
+     6.2987,
+     1.04101
+    ],
+    [
+     0.5,
+     1.0341,
+     3.0217,
+     0.255,
+     -0.0327,
+     5.4963,
+     6.5634,
+     1.03891
+    ],
+    [
+     1.0,
+     1.0661,
+     3.0432,
+     0.2594,
+     -0.0638,
+     5.9005,
+     7.0237,
+     1.03518
+    ],
+    [
+     2.0,
+     1.1255,
+     3.0852,
+     0.2673,
+     -0.122,
+     6.5495,
+     7.7662,
+     1.0292
+    ],
+    [
+     4.0,
+     1.2296,
+     3.1645,
+     0.2798,
+     -0.2254,
+     7.5005,
+     8.8643,
+     1.02105
+    ],
+    [
+     8.0,
+     1.398,
+     3.3037,
+     0.2973,
+     -0.3945,
+     8.7717,
+     10.3531,
+     1.01241
+    ]
+   ],
+   "gestaffelt, F0 = 0.0": [
+    [
+     0.0,
+     1.0,
+     2.9999,
+     0.25,
+     0.0,
+     5.0015,
+     6.0015,
+     1.0433
+    ],
+    [
+     0.25,
+     1.0144,
+     3.0746,
+     0.2481,
+     -0.0162,
+     5.1954,
+     6.2281,
+     1.04137
+    ],
+    [
+     0.5,
+     1.0284,
+     3.1454,
+     0.2464,
+     -0.0312,
+     5.374,
+     6.4364,
+     1.03958
+    ],
+    [
+     1.0,
+     1.0557,
+     3.2775,
+     0.2436,
+     -0.0583,
+     5.696,
+     6.8109,
+     1.03631
+    ],
+    [
+     2.0,
+     1.1075,
+     3.5127,
+     0.2397,
+     -0.1034,
+     6.2407,
+     7.4423,
+     1.03084
+    ],
+    [
+     4.0,
+     1.2016,
+     3.9043,
+     0.2353,
+     -0.1687,
+     7.0898,
+     8.4236,
+     1.02294
+    ],
+    [
+     8.0,
+     1.3603,
+     4.5022,
+     0.232,
+     -0.2463,
+     8.2962,
+     9.8176,
+     1.01393
+    ]
+   ]
+  },
+  "d/dg^2 von Paar - (p + h) bei g = 0, vier Lesarten (Einheit pi)": [
+   -0.0671,
+   -0.0671,
+   -0.0671,
+   -0.0671
+  ],
+  "Masse nachgestellt: [g^2, m, h, Paar, zweites Q=+1, Q=+2] (Niveaus in pi)": [
+   [
+    0.25,
+    -1.9678,
+    3.0322,
+    4.0156,
+    5.1265,
+    6.1453
+   ],
+   [
+    0.5,
+    -1.9357,
+    3.0628,
+    4.0302,
+    5.2419,
+    6.2777
+   ],
+   [
+    1.0,
+    -1.8718,
+    3.1196,
+    4.056,
+    5.4496,
+    6.5155
+   ],
+   [
+    2.0,
+    -1.7447,
+    3.2194,
+    4.0983,
+    5.7981,
+    6.9127
+   ],
+   [
+    4.0,
+    -1.4921,
+    3.3811,
+    4.1586,
+    6.3259,
+    7.5161
+   ],
+   [
+    8.0,
+    -0.9897,
+    3.6167,
+    4.2301,
+    7.0207,
+    8.338
+   ]
+  ],
+  "m, F0, t2 frei: [g^2, kleinster Rest von fünf Niveaus in pi, m, F0, t2/t1, Paar - (p+h)]": [
+   [
+    0.0,
+    0.0005,
+    -2.0,
+    null,
+    1.0,
+    0.0
+   ],
+   [
+    0.25,
+    0.0098,
+    -1.85,
+    -0.46,
+    0.95,
+    -0.017
+   ],
+   [
+    0.5,
+    0.0201,
+    -1.71,
+    -0.46,
+    0.89,
+    -0.035
+   ],
+   [
+    1.0,
+    0.045,
+    -1.45,
+    -0.46,
+    0.81,
+    -0.073
+   ],
+   [
+    2.0,
+    0.1165,
+    -1.04,
+    -0.44,
+    0.7,
+    -0.153
+   ],
+   [
+    4.0,
+    0.3003,
+    -0.6,
+    -0.4,
+    0.73,
+    -0.286
+   ]
+  ]
+ },
+ "urteil": "Bedingt, und ohne Gewinn in der Zählung. (1) Die Form folgt: Das Gauß-Gesetz macht das Feld auf dem Schnittlink zur Nahtladung plus Hintergrund, seine Energie ist eine Funktion der Ladung ohne Oszillatoranteil, und zwei Schnittlinks geben exakt H_Q = (Q_A^2 + Q_B^2)/2. Das ist P_null, unter P_eich mit der Geometrie P_schnitt. (2) Die Wechselwirkung folgt nicht aus der Eichung: Der Kreuzterm Q_A Q_B des Gauß-Gesetzes ist zentral, in der Nahtbasis ist die geeichte Uhr ein Produkt von Einnahtphasen. Das Gatter ist elektrisch in den zirkularen Moden, also bezüglich der Ladung der Vierteldrehung P_sym; der Basiswechsel B bleibt Prämisse. (3) Das Viertel im Hintergrund ist auf der Kette nativ bis auf ein Bit: F0 = -+1/4 ist der Versatz zwischen halber Füllung und Dirac-See, dieselbe Zahl wie der Leiterversatz aus z152, in Standardlesart theta = 0 mit der Massenverschiebung g^2 a/8. Die Idee 'theta = pi/2' ist damit korrigiert. Die z113-Formel wird bis auf 1/32 je Link reproduziert, und bei g^2 t = 2 pi ist die elektrische Entwicklung die Uhr mal der Twistkonstante aus z145. (4) Der Winkel folgt nicht nativ. g^2 T = pi/2 ist eine Bedingung an zwei neue Größen; weder Modulperiode noch Boost-Gewicht noch eine Zeit der freien Kette legt sie fest. Diskret wird der Winkel erst unter der benannten Prämisse P_Z4quad (Z_4-Eichgruppe mit quadratischem Feldgesetz: acht Werte, vier wechselwirkend). Die Selbstdualität tau = i legt nur den euklidischen Schritt fest (a = pi/2 = beta/8); das Gatter ist die T-Matrix derselben Uhr-Thetafunktionen. Beides sind Umformulierungen von P_viertel, keine Herleitung. (5) Als Dynamik ist die Eichung mit der Naht unverträglich: Im Grundzustand der geeichten Kette deformiert sich die Leiter pi (4Z + 1) schon in erster Ordnung in g^2, die Niveaus sind nicht mehr additiv, und kein g^2 im Raster bis 8 stellt sie wieder her (12 Plätze; mit freier Masse, freiem Feld und Dimerisierung bis g^2 = 4 geprüft, lokale Suche). In der geprüften Familie liegt die Naht bei g^2 = 0; der elektrische Term kann nur ein Schritt der Komposition sein. (6) Für den Kandidaten: P_uhr bleibt Prämisse, die neun Prämissen sind unverändert. Gewonnen ist eine physikalische Lesart (P_null ist das Gauß-Gesetz, P_viertel ist die Eichkopplung mal Schrittdauer und damit dieselbe offene Zahl wie die Kopplung von K15) und ein scharfes Negativ für die geeichte Kette als Hamiltonoperator der Naht. K13 ist nicht berührt. Nichts ist befördert."
+}

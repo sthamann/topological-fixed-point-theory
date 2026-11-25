@@ -604,6 +604,21 @@ hergeleitet, 7 unter benannter Lesart, keines gescheitert, offen oder gesetzt. K
         gleichmäßigen Hüpfen. Der Modulgenerator ist der Gitter-Boost, mit der Lemniskatenkonstante statt π; zwei
         verschachtelte Nähte geben den Hamiltonoperator. Die Kette ist frei und 1+1-dimensional; P_uhr, K12, K13 und
         P_G sind nicht berührt.
+    - Welle B nach H6h50 (Z154–Z157): vier Folgerechnungen, keine Prämisse entfällt; Zustand und Gatter sind zwei
+      Enden.
+      - Vier Dimensionen (Z154): Die 16 ist keine Kähler–Dirac-Zelle. Verträglich ist nur die Lesart mit Lorentz außen
+        und schwacher Spin(4) als Geschmack (Indexkern K = vier reduzierte Kähler–Dirac-Felder, neue Prämisse P_KD).
+        Ein hyperkubischer Halbraum trägt die native Leiter nicht (Abstände 4π bis 5,12π in drei Dimensionen). K12
+        bleibt Lesart. Der Ausblick von Z152 („2⁴ = 16 je Zelle“) ist berichtigt.
+      - Geeichte Uhr (Z155): Das Gauß-Gesetz gibt exakt H_Q = (Q_A² + Q_B²)/2 ohne Oszillatoranteil (P_null unter
+        P_eich + P_schnitt). Wechselwirkung und Winkel folgen nicht; als Dynamik verformt die Eichung die Naht schon in
+        erster Ordnung, die Naht liegt bei g² = 0. P_viertel ist Eichkopplung mal Schrittdauer.
+      - Spin 2 (Z156): Der Sektor D = ±4 des Dubletons ist unter der nativen so(3,2) genau D(3,2), unitär, E₀ = 3,
+        ohne Eich- und Geistzustände; P_pos ist Folge. Nicht nativ sind Auswahl der Kopie (P_mode, P_paar, P_chir,
+        P_1T) und Austausch (P_X); die so(3,2) wirkt auf der Purifikation. Der Dubleton ist exakt (Di + Rac)².
+      - Elliptische Klasse (Z157): Die Nahtkette liegt wörtlich auf w² = 1 − z⁴; c = ϖ ist die Periode über den
+        Lückenzyklus. Auf dieser Kurve ist am Automorphiebild der Kreuzung für jeden Kreuzungsparameter δ_y = −i; das
+        Z120-Gatter ist das rationale Ende λ → 0, die Naht das freie Ende. P_viertel wird P_aut, nicht hergeleitet.
     - Zopfrelation: Sie gilt nur für einkörperige Operatoren (Nahtuhr und Strahlteiler = Ising-Zopfmatrizen). Das
       wechselwirkende Gatter verletzt sie mit Defekt √(3/8). Die Defektstruktur ist endlich (Clifford-Typ). [E]
     - Eichdynamik: Plakettenstruktur und sin²θ_W = 3/8 sind nativ, die absolute Kopplung und die Linkdynamik nicht.

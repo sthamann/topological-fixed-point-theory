@@ -624,6 +624,26 @@ gesteuerte Uhr zwischen den Eigenmoden der Vierteldrehung P_sym und gleichwertig
   (b) geeichte Uhr auf der Kette; (c) D(3,2) im Dubleton-Sektor; (d) elliptische 4D-Chern–Simons-Klasse auf der
   Markenkurve w² = 1 − z⁴. Zurückgestellt: weitere G-Zeilen aus Normierungen, weitere E₈-Gatter.
 
+### Nachtrag z154–z157: Welle B, die vier Folgerechnungen
+
+- **Vier Dimensionen (z154):** gescopt negativ. Die 16 ist keine Kähler–Dirac-Zelle, ein hyperkubischer Halbraum
+  trägt die native Leiter nicht. Verträglich ist nur die Lesart mit neuer Prämisse P_KD (Lorentz mit schwacher Spin(4)
+  verdrillt); auch dann folgt die Vier nicht nativ.
+- **Geeichte Uhr (z155):** P_null ist ein Gauß-Gesetz (unter P_eich + P_schnitt). Wechselwirkung und Winkel folgen
+  nicht. Als Hamiltonoperator zerstört die Eichung die Naht; die Naht liegt bei g² = 0.
+- **Spin 2 (z156):** D(3,2) ist im Dubleton vorhanden, unitär, mit positiver Energie; P_pos ist Folge. Offen: Auswahl
+  der Kopie und Austausch zwischen Nähten (P_X in enger Form). Der Dubleton ist exakt (Di + Rac)².
+- **Elliptische Klasse (z157):** Die Nahtkette liegt wörtlich auf der Markenkurve. Der Viertelwinkel ist dort eine
+  Invariante der komplexen Multiplikation (δ_y = −i für jeden Kreuzungsparameter), unter P_aut. Das z120-Gatter ist das
+  rationale Ende der Familie, die Naht das freie.
+- **Gemeinsamer Befund:** Der Nahtzustand ist frei, das Gatter ist ein eigener Kompositionsschritt mit eigener Zahl.
+  P_uhr folgt nicht aus der Kette selbst. Der Viertelwinkel hat in beiden Rechnungen dieselbe Quelle, die
+  Ordnung-4-Automorphie von τ = i.
+- **Strategie danach:** (a) Zwei-Naht-Antwort im Kanal D = ±4 (entscheidet P_X für den Dubleton); (b) geeichte
+  Schrittkette gegen das Destri–de-Vega-Gitter aus z121; (c) Kopplung zweier lemniskatischer Ketten am Uhrpunkt und
+  der Limes λ → 0; (d) Indexoperator auf K gegen d − δ (P_KD); (e) Singleton-Lesart: zweite Quantisierung des
+  Singletons und Höhere-Spin-Dualität als Test für P_X. Zurückgestellt: weitere Gitter für K12, weitere G-Zeilen.
+
 ### Was die Runde bedeutet
 
 - **Der Kandidat** braucht neun Prämissen: A*, I_step, P_lift, P_IF, P_univ, P_uhr, P_ord, P_curv und P_G als freie
