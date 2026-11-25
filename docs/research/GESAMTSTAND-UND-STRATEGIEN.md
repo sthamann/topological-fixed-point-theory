@@ -1,6 +1,6 @@
-# TFPT: Gesamtstand und Strategien zur Gesamtlösung (Stand H6h47, 25. November 2026)
+# TFPT: Gesamtstand und Strategien zur Gesamtlösung (Stand H6h48, 25. November 2026)
 
-Neu: Abschnitt 13 hält die Folgeschritte G1–G3 und die zwölfte Analyse fest. Abschnitt 12 enthält die Folgerunde F1–F6 mit den Analysen 10 und 11.
+Neu: Abschnitt 14 hält die Folgerunde N1–N8 und die Analysen 13–17 fest; die tiefere Welle (T1–T6, U1–U3) läuft. Abschnitt 13: G1–G3 und Analyse 12; Abschnitt 12: F1–F6 mit den Analysen 10 und 11.
 
 Dieses Dokument fasst den ganzen Stand zusammen: gelöste Bausteine, Ursprung, Rekonstruktion und offene Tore. Daraus
 entwickelt es neue Strategien. Maßgeblich bleiben Ledger und Originalquellen. Nichts hier ist befördert; Explorationsbefunde
@@ -503,3 +503,46 @@ Offen ist allein die Gravitation, mit genau zwei Wegen.
    - gradierte Nahtkomposition aus einer gemeinsamen CAR;
    - native Orientierung für den Gravitationssektor;
    - Q₀ als modulare Zeit einer Kappe (dS-Vorzeichen).
+
+## 14. Folgerunde N1–N8 und Analysen 13–17 (H6h48)
+
+| Schritt | Rechnung | Ergebnis | Status |
+|---|---|---|---|
+| N1 eine Quelle für Krümmung und Wechselwirkung | z100 (10/10) | Maurer-Cartan-Lemma: keine native Tomita-Bahn ist gekrümmt; kubischer Vertex braucht ungerade Ladung und Nichtgaußizität | E negativ |
+| N2 kollektiver Zustand aus sechs Saaten | z101 (13/13) | vollständig klassifiziert (6·10¹³), ganzzahlige Mehrkörperterme, keine Dynamik; J zustandsunabhängig | E negativ |
+| N3 Chiralität aus E₈ ⊕ E₈ | z102 (11/11) | Klebeweg geschlossen (Coset-Satz, familienblind) | E negativ |
+| N4 Orientierung und Sektor | z103 (13/13) | keine native Orientierung wählt; minimale Prämisse P_vol (ein Bit) | E negativ |
+| N5 Λ > 0 aus der Kappenzeit | z104 (13/13) | Vorzeichen von Λ = Klasse der Zeit; positive Zeit heißt Λ ≤ 0; dS nur mit P_cap | C |
+| N6 Zweikörperterm und induziertes G | z105 (15/15) | keine □-Nachkommen, λ nicht fixiert, G regulatorgebunden | E negativ |
+| N7 gemeinsame CAR | z106 (13/13) | gradierte Komposition unter P_CAR; Spin-Statistik mit P_GSO | E / C |
+| N8 Ursprung | z107 (12/12) | P_tn folgt aus A*, nicht zirkulär; Ursprung auf P_sym; S(3) auf Abspaltung reduziert | E / O |
+| Analyse 13 | z108 (11/11) | Kompositionssatz, kompensierte Rotation, Rekombinationsnorm 32Δ(Δ−1), Varianzschranke | E / C |
+| Analysen 14 und 15 | z109 (9/9) | Starrheit aus einer Frequenz, inverse Rekonstruktion, Achter-Konstruktion, Wilson-Dirac-Grade, modulare Eindeutigkeit | E / C |
+| Analysen 16 und 17 | z116 (10/10) | Cl(3,11)-Majorana-Weyl-16, Uhr = Zentrum von Spin(10), Spur mit Uhr = ε, Nahtindex wählt einen Sektor, Austausch log 3 | E algebraisch, C nativ |
+
+### Was die Runde bedeutet
+
+- **Ursprung:** Er ruht nur noch auf P_sym; P_tn und P_clock folgen aus A*.
+- **Jede offene Eigenschaft hat jetzt eine präzise mathematische Form:**
+  - Wechselwirkung: Rekombination □φ = λφ³ über drei Nähte;
+  - Gravitationsdynamik: eine Nicht-Bahn-Familie und die absolute Normierung;
+  - Λ-Vorzeichen: die Klasse der Zeit;
+  - Sektor: ein Bit;
+  - Chiralität: der Index der vollen Algebra.
+- **Neuer Kandidat für drei Lücken zugleich:** die gemeinsame reelle Clifford-Struktur mit der Uhr als Zentrum von
+  Spin(10). Sie würde Chiralität, Gravitationssektor und Spin-Verklebung liefern. Offen ist, ob die native Quelle sie erzeugt.
+- **Zweite Hypothese:** die Naht als Twistorgerade mit Stromalgebra (Parke–Taylor, CSW, Hodges).
+
+### Laufende tiefe Welle
+
+- **T1–T6 (z110–z115):**
+  - Parke–Taylor aus den Nahtströmen;
+  - CSW-Komposition;
+  - Hodges und Normierung von G;
+  - P_GSO aus Modulinvarianz;
+  - Chiralität als Twistorindex;
+  - Krümmung bei bewegter Algebra.
+- **U1–U3 (z117–z119):**
+  - erzeugt Tomita die gemeinsame Clifford-Struktur?
+  - D_⊥ und die Spur mit Uhr als Wirkung, Gewicht 2c₃;
+  - Transferaustausch und Petz-Prinzip statt P_koh.

@@ -1,0 +1,579 @@
+{
+ "checks": {
+  "Reproduktion z94 (N = 6, f aus z94_ergebnis.json): Multimengen je Saat exakt (True), Uhr e = |n| mod 4 exakt (True), Randfehler 8e-53 bei 50 Stellen, 15 von 15 Paarkorrelationen != 0, S = 0.372041 gegen S_Produkt = 1.034658, f in [-1, 5], 51 Konfigurationen verschoben (wie z94)": true,
+  "Struktursatz (jedes N): Die Randbedingung je Saat lautet stufenweise #{b in A_L: b_k = 1} = #{b in A_(L-1): b_k = 0}; aus A_0 = {0} folgt induktiv, dass jede Stufe jede Saat gleich oft enthält, gamma_L-mal mit gamma_(L+1) = n_L - gamma_L (an z94 geprüft: True, gamma = [0, 1, 1, 2, 2, 1, 1, 2, 2]...); unterste Stufe {0}, oberste {1^N}, keine Lücke (True), also e <= 2^N - 1 und die Lösungsmenge endlich. Vollständige Suche ohne Fenster: N = 2..5 haben genau eine Lösung, das Produkt (True; z94 hatte |f| <= 8). Profilsuche (notwendige Anzahlbedingungen): N = 2..5 nur das Produktprofil, N = 6 genau zwei Profile mit e_max = [6, 22]; N = 7: 2, N = 8: 721 Profile (Realisierbarkeit ab N = 7 nicht geprüft)": true,
+  "Klassifikation N = 6 (exakt): Das kollektive Profil n_L = 1, 2, 3, 4, 3, 2, 3, 4, 3, ..., 2, 1 (e_max = 22) ist erzwungen, gamma = 1 auf allen Stufen 4j+1, 4j+2 und 2 auf 4j+3, 4j+4: Stufe 4j+1 = {e_k, 1 - e_k}, 4j+2 = perfektes Matching, 4j+3 = vier Tripel mit jeder Saat zweimal, 4j+4 = Komplemente eines Matchings. Die Restklassen mod 4 entkoppeln, also ist jede Lösung eine freie Wahl aus Modenfolge (6!), zwei geordneten 1-Faktorisierungen von K6 (6 x 5!) und einer geordneten Partition der 20 Tripel in fünf 2-reguläre Quadrupel (1350 x 5!, aus 75 Quadrupeln): 6.0466e+13 kollektive Lösungen. z94 hat genau diese Form und wird nachgebaut (True); 300 Zufallslösungen sind exakt (Multimengen und Uhr), 300 von 300 Störungen (Tausch zweier Konfigurationen gleichen Gewichts zwischen Stufen, Uhr bleibt) verletzen die Ränder": true,
+  "Isospektral und universell (exakt, z94 und 300 Zufallslösungen): Alle kollektiven Lösungen haben dasselbe Stufenprofil, also dasselbe Spektrum (S = 0.372041 für alle), und sogar dieselbe gemeinsame Verteilung von (|n|, e) (True): P(M = w), F_w = [0, 15, 30, 40, 30, 9, 4] und die S_6-invarianten Ordnungssummen der Möbiuskoeffizienten sum_(|S|=k) c_S = [15, -45, 70, -60, 24, 0] (k = 1..6) sind universell (True). log rho - log rho_Produkt = -4 pi sum_S c_S n_S (+ const) mit ganzen c_S (True): k = 1..5 treten in jeder Lösung auf, k = 6 nie (c_123456 = 0: True); der Einkörperteil ist stets eine Treppe c_k = Permutation von 0..5 (True), die Fünfkörperkoeffizienten sind universell c_S = 4 für alle sechs Fünfermengen (True; aus der Regularität: (15 - j_k) - 20 + 20 - 10 + (j_k - 1) = 4), die Ordnungen 2..4 hängen von der Lösung ab. Exakt P(M = 5) = P(M = 1) = 0.039560 (Produkt: Verhältnis y^4)": true,
+  "Symmetrie: Die S_6 wirkt frei (Stabilisatorgrößen {1: 101} bei z94 und 100 Lösungen; Beweis: die Stufen 4j+1 ordnen die Saaten), die Komplementspiegelung e -> 22 - e(1 - n) bildet Lösungen auf Lösungen ab (True) und kehrt die Modenfolge um ([5, 1, 2, 3, 4, 0] -> [0, 4, 3, 2, 1, 5]); 0 der 101 Lösungen sind unter Spiegelung mal Permutation invariant. Die Uhr gilt für jede Lösung exakt (Abweichung 5e-50); das S_6-Mittel hat exakte Ränder (2e-52), verletzt aber die Uhr (Abweichung 0.866): S_N-Symmetrie und Uhr schließen sich für kollektive Zustände aus, das Produkt ist der einzige symmetrische": true,
+  "Kumulanten: Das transversale Kollektivfeld von z91, x = sum sigma_x/sqrt(2N), hat in jedem Diagonalzustand kappa_2 = 1/2, kappa_3 = 0, kappa_4 = -1/(2N) = -0.083333 (Produkt, z94, drei Lösungen; nur gepaarte Umklappungen zählen): Es sieht die kollektive Korrelation nicht. Das longitudinale Feld M = sum n_i sieht sie universell: kappa_1 = 0.248543 (= N p, Ränder), kappa_2 = 0.99012 gegen 0.23825, kappa_3 = 4.2806 gegen 0.21851, kappa_4 = 17.306 gegen 0.18149; standardisiert kappa_4/kappa_2^2 = 17.653 gegen 3.197 im Produkt (unabhängige Saaten, reine Statistik) und -2/N = -0.3333 für x (z91)": true,
+  "z99-Kriterium radial (sechs Nähte, Stufen m = 1, 2, Dimension 4096): Der Zweiquantenanteil von X b+_A Omega - b+_A X Omega verschwindet für alle 295 nativen Einkörperoperatoren (Energie, Heber 'Teilchen hoch'/'Loch runter', Transfer zwischen Nähten; max 0e+00) und für den modularen Hamiltonoperator K_koll = pi E + 4 pi f(n) (z94 und fünf Lösungen; max 0e+00): K_koll ist je Naht besetzungsdiagonal. Er hat verbundene 2->2-Diagonalamplituden (Dichte-Dichte) genau 4 pi c_ij (True; 10 von 15 Paaren bei z94), ohne Transfer. Kontrolle: b+_1 b+_2 b_0 gibt verbunden 1": true,
+  "Modulfluss (Helizitätsphase, nicht Zeit): sigma_t(b+_k) = rho^(it) b+_k rho^(-it) ist mit den Zuschauerbesetzungen gekleidet; seine verbundene 1->2-Amplitude im Sinn von z99 ist exakt |e^(-4 pi i t c_ki) - 1| (Abweichung 7e-15), bei t = 0,1, 0,25, 0,37 bis 2.0000, bei den Uhrzeiten t = 1/2, 1, 3/2 null (1e-14); im Produkt für alle t null (1e-16). Auf dem Vakuum hat der Erzeuger der Saat k die Modulfrequenz pi (1 + 4 j_k) = pi x [1, 5, 9, 13, 17, 21]: sechs 'gleiche' Saaten mit sechs Modulenergien": true,
+  "Drei- und Vierpunkt (Saaten auf m = 1, Nähte bosonisch komponiert): Paarfeld-Dreipunkte verschwinden exakt (1728 Wörter, max 0e+00, Nahtzahl). Verbunden und über die Statistik hinaus sind nur Dichteantworten: <b_i n_j b+_i>_c = -C_ij (True), 20 von 20 Dichte-Dreipunkten kappa(n_i, n_j, n_k) != 0. Singulett-Vierpunkt (Phi = sum b_i/sqrt N): Vakuum -0.333333 = -2/N (z99), Produkt -0.306289 = -2(1-p)^2/N, kollektiv -0.264519: Überschuss Xi = (2/N^2) sum_(i != j) C_ij = 0.041771 (Formel 0.041771), universell über 20 Lösungen (Streuung 2e-15), positiv und 0.136 der statistischen Größe": true,
+  "Transport, nicht Erzeugung: Unter der freien radialen Dynamik h = E + lambda (Heber + Senker) je Naht (lambda = 0.35, |g(t)| = 0.981, 0.830, 0.711) ist G_c(t)/g(t)^2 für t = (0.4, 1.3, 2.2) konstant gleich dem statischen Wert, kollektiv (6e-13) wie im Produkt (4e-13): Der Überschuss Xi wird mit dem freien Propagator transportiert, mit festem Koeffizienten. Mit einem Zweikörperterm g (Heber_i Heber_j + h.c.), g = 0.6, ändert sich der Quotient (0.714 bzw. 0.605): Erzeugung braucht Dynamik": true,
+  "J ist zustandsunabhängig (Araki, Standardform): Die polare Zerlegung S = J Delta^(1/2) der Tomita-Operatoren im verdoppelten Saatraum (2016 reelle 4 x 4-Blöcke |a, b>, |b, a>) gibt für Produkt, z94 und zwei Lösungen dieselbe J = Tausch mal Konjugation (max Abweichung 2e-16), während Delta verschieden ist (max |log Delta^(1/2)| = 3.0 pi gegen 11.0 pi); J vertauscht mit jeder Einkörperunitären U x U-quer (2e-14). Die Tomita-Familie J_g = U(g) J U(g)^-1 hängt also nur von der Gruppe ab: für den kollektiven Zustand dieselbe wie in z98 (AdS4, Levi-Civita, MM-Krümmung |F_A| = 1e-11)": true,
+  "Einkörperfamilie (Fermilesart von z94: sechs Saaten in gemeinsamer CAR, Erzeuger c_i^+ c_j): Der Stabilisator des modularen Hamiltonoperators in u(6) hat die Dimension {'Produkt': 36, 'z94': 6, 'Lösung 1': 6, 'Lösung 2': 6, 'Lösung 3': 6} (Produkt: ganz u(6), kollektiv: nur der Cartan-Teil, weil keine Transposition f festhält); die Bahn U(6)/T^6 hat die Dimension 30, mit Ladungsauswahl je Quarter (U(3) x U(3), Stabilisator 6) die Dimension 12: kontinuierliche Moduli isospektraler Zustände mit denselben Einteilchendaten (|Gamma - p 1| = 1e-17) und exakter Uhr ([U, R] = 0e+00), nicht diagonal (0.012). Auf der Bahn (z98-Konstruktion, g = e^(sX) e^(tY)): Maurer-Cartan-Krümmung 1e-10, Berry-Krümmung der Nullmoden F_Gamma = -P_h[e, e] != 0 (0.952, Rest 1e-10), Torsion -P_m[e, e] != 0 (0.654, Rest 9e-11): reduktiv, nicht symmetrisch, als Cartan-Geometrie flach": true,
+  "Connes-Kozyklus (D rho_koll : D rho_prod)_t = e^(-4 pi i t f(n)) bis auf Phase: ein Charakter mit ganzen Ladungen f (4e-15), abelsch und flach; trivial genau zu den Uhrzeiten (|u - 1| bei t = 1/2, 1: 1e-15, 2e-15), sonst nicht (t = 0,1: 1.902, t = 1/4: 2)": true
+ },
+ "befunde": {
+  "E: Die Schwelle N = 6 ist 5 + 1. Auf Stufe 1 muss jede Saat genau einmal überdeckt werden, mit Blöcken der Größe 1 mod 4 (Uhr). Bis N = 5 gibt es nur Einzelquanten (ein Fünferblock wäre 1^5 selbst, also die Spitze), und jede Restklasse mod 4 enthält außer 0 und 1^N nur ein Gewicht: Jede Stufe ist voll, der Zustand das Produkt. Ab N = 6 darf ein Fünferkompositum auf derselben Modulstufe sitzen wie ein Einzelquant (5 = 1 mod 4)": true,
+  "E: Die Nichtgaußizität hat ein festes, quantisiertes Spektrum (eindeutig für N = 6) und ganzzahlige Vielkörperkoeffizienten in Einheiten 4 pi; frei ist nur ihre Lage, eine diskrete Wahl aus 6.05e13 Lösungen. Lesart: Einkörperig sind die sechs Saaten zu einer Treppe 4 pi j (j = 0..5) verstimmt, vielkörperig ist das kompensiert; führend ist das Fünferkompositum 1 - e_k mit dem Modulgewicht eines Einzelquants (e = 1)": true,
+  "E: Einkörperig unsichtbar (Ränder, Uhr, Einteilchendaten, transversales Feld von z91), zweikörperig sichtbar: alle 15 Paarkorrelationen, die Zahlverteilung P(M) und die longitudinalen Kumulanten. 'Lokal unsichtbar' gilt nur für eine Saat allein": true,
+  "E/L: Die kollektive Struktur wirkt wie eine verborgene Wechselwirkung genau im Modulfluss: Er kleidet jeden Erzeuger mit den Besetzungen der anderen Nähte (Frequenzen pi (1 + 4j), j ganz) und erzeugt dabei verbundene 1->2-Amplituden mit festen ganzzahligen Ladungen c_ki. Zu den Uhrzeiten t in Z/2 verschwindet die Kleidung exakt, die Uhr sieht nichts. Der Modulfluss ist aber Uhr und Helizitätsphase, nicht die Zeit (GRAV.NONCIRCULAR.01)": true,
+  "E/C: In der radialen Lesart ist die kollektive Nichtgaußizität eine feste Anfangskorrelation der Nahtbesetzungen: keine verbundene 1->2-Amplitude im Erzeuger der Zeit (K_koll und alle nativen Operatoren sind je Naht zahlerhaltend), verbundene Dichteantworten mit festem, quantisiertem Koeffizienten (Singulett-Überschuss Xi universell), vom freien Propagator transportiert. Wechselwirkung im Sinn von z99 zeigt nur der Modulfluss, und nur außerhalb der Uhrzeiten": true,
+  "E: Keine native Tomita-Familie des kollektiven Zustands trägt Krümmung. J ist zustandsunabhängig, also ist die z98-Familie dieselbe (F = 0); die Nichtgaußizität steckt allein in Delta. Gruppenbahnen von Delta sind homogen und als Cartan-Geometrie flach (unter U(6) eine reduktive, nicht symmetrische Bahn mit Torsion); die relative Modulkette ist ein Charakter, der zu den Uhrzeiten trivial ist; die Diagonalfamilie ist diskret. F != 0 bräuchte eine nicht homogene, stetige Familie mit ortsabhängigem Koeffizienten, also Dynamik": true
+ },
+ "zahlen": {
+  "z94_reproduktion": {
+   "Randfehler (50 Stellen)": 8.352389719038111e-53,
+   "Paarkorrelationen != 0": 15,
+   "S": 0.37204101758576896,
+   "S_Produkt": 1.0346583648755079,
+   "f-Bereich": [
+    -1,
+    5
+   ],
+   "verschobene Konfigurationen": 51
+  },
+  "struktursatz": {
+   "gamma_L (z94)": [
+    0,
+    1,
+    1,
+    2,
+    2,
+    1,
+    1,
+    2,
+    2,
+    1,
+    1,
+    2,
+    2,
+    1,
+    1,
+    2,
+    2,
+    1,
+    1,
+    2,
+    2,
+    1,
+    1,
+    0
+   ],
+   "Stufengrößen n_L (z94)": [
+    1,
+    2,
+    3,
+    4,
+    3,
+    2,
+    3,
+    4,
+    3,
+    2,
+    3,
+    4,
+    3,
+    2,
+    3,
+    4,
+    3,
+    2,
+    3,
+    4,
+    3,
+    2,
+    1
+   ],
+   "vollständige Suche ohne Fenster N = 2..5 (Lösungen)": {
+    "2": 1,
+    "3": 1,
+    "4": 1,
+    "5": 1
+   },
+   "Profilsuche (notwendige Anzahlen)": {
+    "2": {
+     "Profile": 1,
+     "e_max": [
+      2
+     ]
+    },
+    "3": {
+     "Profile": 1,
+     "e_max": [
+      3
+     ]
+    },
+    "4": {
+     "Profile": 1,
+     "e_max": [
+      4
+     ]
+    },
+    "5": {
+     "Profile": 1,
+     "e_max": [
+      5
+     ]
+    },
+    "6": {
+     "Profile": 2,
+     "e_max": [
+      6,
+      22
+     ]
+    },
+    "7": {
+     "Profile": 2,
+     "e_max": [
+      7,
+      23
+     ]
+    },
+    "8": {
+     "Profile": 721,
+     "e_max": [
+      8,
+      16,
+      24,
+      32
+     ]
+    }
+   },
+   "kollektives Profil N = 6": [
+    1,
+    2,
+    3,
+    4,
+    3,
+    2,
+    3,
+    4,
+    3,
+    2,
+    3,
+    4,
+    3,
+    2,
+    3,
+    4,
+    3,
+    2,
+    3,
+    4,
+    3,
+    2,
+    1
+   ]
+  },
+  "klassifikation_N6": {
+   "perfekte Matchings K6": 15,
+   "1-Faktorisierungen K6": 6,
+   "2-reguläre Tripelquadrupel": 75,
+   "Tripelpartitionen in fünf Quadrupel": 1350,
+   "kollektive Lösungen (f(0) = 0)": 60466176000000,
+   "z94: Modenfolge der Stufen 4j+1": [
+    5,
+    1,
+    2,
+    3,
+    4,
+    0
+   ],
+   "Stichprobe exakt": "300/300",
+   "Störungen (Tausch zwischen Stufen) verletzen die Ränder": "300/300"
+  },
+  "universell": {
+   "Stufenprofil n_L": [
+    1,
+    2,
+    3,
+    4,
+    3,
+    2,
+    3,
+    4,
+    3,
+    2,
+    3,
+    4,
+    3,
+    2,
+    3,
+    4,
+    3,
+    2,
+    3,
+    4,
+    3,
+    2,
+    1
+   ],
+   "S (aus dem Profil)": 0.37204101758576896,
+   "F_w = Summe f über |n| = w": [
+    0,
+    15,
+    30,
+    40,
+    30,
+    9,
+    4
+   ],
+   "Ordnungssummen sum_(|S|=k) c_S, k = 1..6": [
+    15,
+    -45,
+    70,
+    -60,
+    24,
+    0
+   ],
+   "P(M = w) kollektiv": [
+    0.915445979249942,
+    0.0395601456819776,
+    0.005128646706011707,
+    0.00029550522607647297,
+    9.577454014639682e-06,
+    0.0395601456819776,
+    8.817651638288695e-31
+   ],
+   "P(M = 5)/P(M = 1)": 1.0,
+   "Möbius z94: Zahl der c_S != 0 je k": [
+    5,
+    10,
+    18,
+    14,
+    6,
+    0
+   ],
+   "Stichprobe: Zahl der c_S != 0 je k (min, max)": {
+    "1": [
+     5,
+     5
+    ],
+    "2": [
+     10,
+     15
+    ],
+    "3": [
+     15,
+     20
+    ],
+    "4": [
+     10,
+     15
+    ],
+    "5": [
+     6,
+     6
+    ],
+    "6": [
+     0,
+     0
+    ]
+   },
+   "Stichprobe: Koeffizientenbereich je k": {
+    "1": [
+     0,
+     5
+    ],
+    "2": [
+     -9,
+     3
+    ],
+    "3": [
+     -6,
+     13
+    ],
+    "4": [
+     -16,
+     9
+    ],
+    "5": [
+     4,
+     4
+    ],
+    "6": [
+     0,
+     0
+    ]
+   }
+  },
+  "symmetrie": {
+   "S_6-Stabilisator (z94 und 100 Lösungen)": {
+    "1": 101
+   },
+   "Komplementspiegelung e -> 22 - e(1 - n) ist Lösung": "True",
+   "Lösungen mit Stabilisator in S_6 x Spiegelung": 0,
+   "z94: Modenfolge vorher / nach Spiegelung": [
+    [
+     5,
+     1,
+     2,
+     3,
+     4,
+     0
+    ],
+    [
+     0,
+     4,
+     3,
+     2,
+     1,
+     5
+    ]
+   ],
+   "S_6-Mittel: Randfehler": 1.6704779438076223e-52,
+   "S_6-Mittel: Uhrabweichung": 0.8662175721163257,
+   "kollektiv: Uhrabweichung": 5.477340265706079e-50
+  },
+  "kumulanten": {
+   "transversal x = sum sigma_x/sqrt(2N) (kappa_2, kappa_3, kappa_4)": {
+    "Produkt": [
+     0.5,
+     0.0,
+     -0.08333333333333
+    ],
+    "z94": [
+     0.5,
+     0.0,
+     -0.08333333333333
+    ],
+    "Lösung 1": [
+     0.5,
+     0.0,
+     -0.08333333333333
+    ],
+    "Lösung 2": [
+     0.5,
+     0.0,
+     -0.08333333333333
+    ],
+    "Lösung 3": [
+     0.5,
+     0.0,
+     -0.08333333333333
+    ]
+   },
+   "-1/(2N)": -0.08333333333333333,
+   "longitudinal M: kappa_1..4 Produkt": [
+    0.24854299299817695,
+    0.238247389770095,
+    0.2185091499942741,
+    0.18148557103783142
+   ],
+   "longitudinal M: kappa_1..4 kollektiv": [
+    0.24854299299817695,
+    0.9901175414858949,
+    4.2805853959493945,
+    17.305666188628905
+   ],
+   "standardisiert kollektiv kappa_3/kappa_2^1.5, kappa_4/kappa_2^2": [
+    4.344832449035277,
+    17.65284925958093
+   ],
+   "standardisiert Produkt": [
+    1.8790026854266353,
+    3.1973177585071735
+   ],
+   "sum_(i != j) C_ij": 0.7518701517158
+  },
+  "z99_kriterium_radial": {
+   "Dimension": 4096,
+   "native Einkörperoperatoren": 295,
+   "max verbunden 1->2 nativ": 0.0,
+   "max verbunden 1->2 K_koll (z94 + 5)": 0.0,
+   "Kontrolle b+_1 b+_2 b_0": 1.0,
+   "K_koll 2->2 diagonal verbunden / 4 pi (z94)": {
+    "01": -6.0,
+    "02": -3.0,
+    "03": -6.0,
+    "04": -8.0,
+    "05": -2.0,
+    "12": 0.0,
+    "13": 0.0,
+    "14": -3.0,
+    "15": 0.0,
+    "23": -4.0,
+    "24": -6.0,
+    "25": 0.0,
+    "34": -4.0,
+    "35": -3.0,
+    "45": -0.0
+   }
+  },
+  "modulfluss": {
+   "max |verbunden 1->2| von sigma_t(b+_k), generisch": {
+    "0.1": 1.9021130325903073,
+    "0.25": 2.0,
+    "0.37": 1.9960534568565433
+   },
+   "Uhrzeiten t in Z/2": {
+    "0.5": 2.572996239482618e-15,
+    "1.0": 5.145992478965236e-15,
+    "1.5": 1.0044579675554649e-14
+   },
+   "Abweichung von |e^(-4 pi i t c_ki) - 1|": 7.105427357601002e-15,
+   "Produkt (alle t)": 1.2412670766236366e-16,
+   "Modulfrequenzen der Erzeuger auf dem Vakuum (Einheiten pi)": [
+    1,
+    5,
+    9,
+    13,
+    17,
+    21
+   ]
+  },
+  "drei_vierpunkt": {
+   "Paarfeld-Dreipunkt max (1728 Wörter)": 0.0,
+   "<b_i n_j b+_i>_c = -C_ij": true,
+   "Dichte-Dreipunkt kappa(n_i, n_j, n_k) != 0 (von 20)": 20,
+   "Dichte-Dreipunkt Bereich": [
+    -0.001576838207910213,
+    0.03485346687738177
+   ],
+   "Singulett-Vierpunkt Vakuum": -0.33333333333333326,
+   "Produkt": -0.3062894231795399,
+   "kollektiv (z94)": -0.2645188591953289,
+   "Überschuss Xi = (2/N^2) sum_(i != j) C_ij": 0.04177056398421097,
+   "Xi Formel": 0.041770563984211105,
+   "Streuung über 20 Lösungen": 1.9984014443252818e-15,
+   "Statistik -2(1-p)^2/N": -0.30628942317954044
+  },
+  "transport": {
+   "lambda (Leitermischung)": 0.35,
+   "g (Zweikörperterm)": 0.6,
+   "t": [
+    0.4,
+    1.3,
+    2.2
+   ],
+   "|G_c(t)/g(t)^2 - G_c(0)|": {
+    "frei, kollektiv": 6.056087739613624e-13,
+    "frei, Produkt": 4.310262955418034e-13,
+    "Zweikörper, kollektiv": 0.7135829461785663,
+    "Zweikörper, Produkt": 0.6046837317903975
+   },
+   "|g(t)|": [
+    0.9807262682692066,
+    0.8302236402130286,
+    0.7108525569461736
+   ]
+  },
+  "tomita": {
+   "max |J - Tausch-Konjugation| je Zustand": {
+    "Produkt": 2.220446049250313e-16,
+    "z94": 2.220446049250313e-16,
+    "Lösung 1": 2.220446049250313e-16,
+    "Lösung 2": 2.220446049250313e-16
+   },
+   "max |log Delta^(1/2)| je Zustand": {
+    "Produkt": 9.42477796076938,
+    "z94": 34.55751918948773,
+    "Lösung 1": 34.55751918948773,
+    "Lösung 2": 34.55751918948773
+   },
+   "Kovarianz J (U x U-quer) = (U x U-quer) J": 1.9676021325177904e-14,
+   "z98: |F_A|, |F_Gamma|": [
+    1.4313328300374906e-11,
+    0.5433948191065594
+   ]
+  },
+  "einkoerperfamilie": {
+   "Stabilisator in u(6) (Dimension)": {
+    "Produkt": 36,
+    "z94": 6,
+    "Lösung 1": 6,
+    "Lösung 2": 6,
+    "Lösung 3": 6
+   },
+   "Bahn U(6)/T^6 (Dimension)": 30,
+   "Stabilisator in u(3) + u(3) (Ladungsauswahl je Quarter)": {
+    "Produkt": 18,
+    "z94": 6
+   },
+   "Bahn unter U(3) x U(3) (Dimension)": 12,
+   "Bahnzustand: max |Gamma - p 1|": 1.3985787785349405e-17,
+   "Bahnzustand: Uhrabweichung": 0.0,
+   "Bahnzustand: Nichtdiagonale": 0.012000724032198594,
+   "|F_A| (Maurer-Cartan)": 1.0880528991475403e-10,
+   "|F_Gamma|": 0.9518759956028687,
+   "|F_Gamma + P_h[e, e]|": 1.0880528991475403e-10,
+   "|Torsion|": 0.653755608222703,
+   "|Torsion + P_m[e, e]|": 8.862244019693993e-11
+  },
+  "connes_kozyklus": {
+   "max |u_t - 1| (normiert)": {
+    "0.1": 1.902113032590307,
+    "0.25": 2.0,
+    "0.5": 1.2246467991473533e-15,
+    "1.0": 2.4492935982947065e-15
+   },
+   "Charakter u_(s+t) = u_s u_t": 3.563539207208429e-15,
+   "Ladungen f (ganzzahlig)": [
+    -1,
+    0,
+    1,
+    2,
+    3,
+    4,
+    5
+   ]
+  },
+  "status": {
+   "Familie N = 6": [
+    "E",
+    "vollständig klassifiziert: erzwungenes Profil, 6.047e+13 Lösungen = Modenfolge x zwei geordnete 1-Faktorisierungen von K6 x Tripelpartition; N = 2..5 nur das Produkt (ohne Fenster)"
+   ],
+   "Schwelle N = 6": [
+    "E",
+    "5 + 1: Fünferkompositum auf der Modulstufe eines Einzelquants (5 = 1 mod 4)"
+   ],
+   "Spektrum und S_6-invariante Daten": [
+    "E",
+    "eindeutig (isospektral), S = 0,3720, P(M = 5) = P(M = 1), Ordnungssummen (15, -45, 70, -60, 24, 0)"
+   ],
+   "k-Körper-Zerlegung": [
+    "E",
+    "k = 1..5 in jeder Lösung, k = 6 nie; ganzzahlig in Einheiten 4 pi; Einkörperteil = Treppe, Fünfkörperteil universell c_S = 4, Ordnungen 2..4 lösungsabhängig"
+   ],
+   "Symmetrie": [
+    "E",
+    "Uhr exakt; S_6 frei (kein Stabilisator), Komplementspiegelung; S_6-Mittel verletzt die Uhr"
+   ],
+   "Kollektivfeld": [
+    "E",
+    "transversal (z91) blind: -1/(2N) für jeden Diagonalzustand; longitudinal universell sichtbar"
+   ],
+   "verbundene 1->2 (Zeit)": [
+    "E, negativ",
+    "K_koll und native Einkörperoperatoren je Naht zahlerhaltend"
+   ],
+   "Modulfluss": [
+    "E/L",
+    "kleidet Erzeuger, verbundene 1->2-Amplitude |e^(-4 pi i t c) - 1|, null zu den Uhrzeiten"
+   ],
+   "Drei- und Vierpunkt": [
+    "E",
+    "Paarfelder null; Dichteantworten verbunden; Singulett-Überschuss Xi universell, fest"
+   ],
+   "Transport": [
+    "E",
+    "freie radiale Dynamik transportiert Xi, ein Zweikörperterm verändert es"
+   ],
+   "Tomita-Familie und F": [
+    "E, negativ",
+    "J zustandsunabhängig, z98-Familie identisch, F = 0; U(6)-Bahn flach mit Torsion"
+   ],
+   "Moduli": [
+    "E",
+    "U(6)-Bahn der Dimension 30 (mit Ladungsauswahl je Quarter 12): isospektral, Einteilchendaten und Uhr exakt, nicht diagonal"
+   ],
+   "Auswahl": [
+    "E/O",
+    "Maximalentropie wählt das Produkt (S = 1,0347 gegen 0,3720); ein natives Auswahlprinzip für eine kollektive Lösung ist nicht bekannt"
+   ]
+  }
+ },
+ "urteil": "H2 trägt nur als Zustandsstruktur, nicht als Wechselwirkung (bedingt, nicht nativ). (1) Die Familie ist vollständig bestimmt: Für N gleiche Saaten ist jede Stufe A_L = {n: e(n) = L} gleichmäßig überdeckt (gamma_(L+1) = n_L - gamma_L), die Stufen sind lückenlos, die Lösungsmenge endlich. N = 2..5 haben ohne Fenster nur das Produkt. Die Schwelle N = 6 ist 5 + 1: Die Uhr mod 4 erlaubt ein Fünferkompositum auf der Modulstufe eines Einzelquants. Für N = 6 ist das Stufenprofil erzwungen; jede der 6,05e13 kollektiven Lösungen ist eine Wahl von Modenfolge, zwei geordneten 1-Faktorisierungen von K6 und einer geordneten Partition der 20 Tripel in 2-reguläre Quadrupel, z94 ist eine davon. Alle sind isospektral (S = 0,3720), und alle S_6-invarianten Daten sind universell: P(M), die Ordnungssummen der Möbiuskoeffizienten (15, -45, 70, -60, 24, 0), P(M = 5) = P(M = 1). log rho - log rho_Produkt = -4 pi sum c_S n_S hat ganze Koeffizienten mit k = 1..5, nie k = 6; der Einkörperteil ist eine Treppe 4 pi j (j = 0..5), die vielkörperig kompensiert wird, und der Fünfkörperteil ist universell (c_S = 4 für jede Fünfermenge). Die Uhr gilt exakt, die S_6 wirkt frei, und das S_6-Mittel verletzt die Uhr: Kollektivität bricht die Saatsymmetrie notwendig. Das transversale Kollektivfeld von z91 ist blind (kappa_4 = -1/(2N) für jeden Diagonalzustand), das longitudinale sieht die Korrelation universell. 'Lokal unsichtbar' gilt nur für eine einzelne Saat; alle 15 Paarkorrelationen sind sichtbar. (2) Radial gelesen ist die Struktur eine feste Anfangskorrelation der Nahtbesetzungen: Der modulare Hamiltonoperator und alle nativen Einkörperoperatoren sind je Naht zahlerhaltend, also keine verbundene 1->2-Amplitude (z99-Kriterium exakt null); K_koll hat nur Dichte-Dichte-Terme 4 pi c_ij ohne Transfer. Verbundene Drei- und Vierpunktantworten über die Statistik hinaus gibt es nur im Dichtekanal; der Singulett-Vierpunkt erhält zum statistischen -2(1-p)^2/N einen universellen, festen Überschuss Xi = (2/N^2) sum C_ij, den die freie radiale Dynamik transportiert und erst ein Zweikörperterm verändert. Wechselwirkungsartig ist allein der Modulfluss: Er kleidet die Erzeuger mit den Zuschauerbesetzungen (Frequenzen pi (1 + 4j)) und hat verbundene 1->2-Amplituden |e^(-4 pi i t c_ki) - 1|, die zu den Uhrzeiten exakt verschwinden; nach GRAV.NONCIRCULAR.01 ist er aber Uhr und Helizitätsphase, nicht Zeit. (3) Die Tomita-Familie gibt kein F != 0: J ist zustandsunabhängig, also ist die z98-Familie identisch (AdS4, F = 0); die Nichtgaußizität steckt nur in Delta. Unter der Einkörpergruppe U(6) bildet der kollektive Zustand eine 30-dimensionale Bahn isospektraler, exakter Zustände (mit Ladungsauswahl je Quarter 12-dimensional; neue stetige Moduli außerhalb der Diagonalfamilie), deren Cartan-Verbindung flach ist (reduktiv, nicht symmetrisch, mit Torsion); der Connes-Kozyklus ist ein Charakter mit ganzen Ladungen f, trivial zu den Uhrzeiten. Urteil H2: verborgene Wechselwirkung nein als Dynamik [E, gescoptes Negativ]; als Zustand mit festem, quantisiertem Spektrum und universellem Singulett-Überschuss ja, aber nicht nativ gewählt (Maximalentropie wählt das Produkt, die Lage ist eine diskrete Wahl plus U(6)-Moduli) [C mit einer Auswahlprämisse]. Folgen: K20 erhält keinen gemeinsamen Elternprozess, weder F != 0 noch eine verbundene 1->2-Amplitude in der Zeit; der Zustand liefert aber einen nativen Mechanismus für feste, ganzzahlige Vielkörperkoeffizienten (Uhr mod 4), der in eine Dynamik übertragen werden müsste. T3/T5 bleiben offen: Eine quasilokale wechselwirkende Hamiltonfamilie folgt nicht. Nichts ist befördert."
+}

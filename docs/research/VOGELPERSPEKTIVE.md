@@ -1,4 +1,4 @@
-# TFPT aus der Vogelperspektive (Stand H6h47, 25. November 2026)
+# TFPT aus der Vogelperspektive (Stand H6h48, 25. November 2026)
 
 **Neuester Gesamtstand mit Strategien:** [`GESAMTSTAND-UND-STRATEGIEN.md`](GESAMTSTAND-UND-STRATEGIEN.md). Das sind
 Tor-Karte, offene Kriterien, drei Lehren und sieben Strategien (S1–S7) mit ersten Rechnungen, Erfolg und Abbruch.

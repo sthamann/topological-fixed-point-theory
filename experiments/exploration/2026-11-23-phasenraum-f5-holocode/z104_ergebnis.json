@@ -1,0 +1,567 @@
+{
+ "checks": {
+  "[E] Radiale sl(2,R) und Kappengenerator (Fock 8^4, Twistorraum): Q_0^- = (P_0 - K_0)/2 = (1/2) Summe_i (d_i^+ e_i^+ + e_i d_i) ist die Zweimoden-Quetschung von Original (d) und Partner (e), E = (P_0 + K_0)/2, P_0 = E + Q^-; mit D = (i/2)(K_- - K_+) gilt [E, Q^-] = i D, [D, E] = i Q^-, [Q^-, D] = -i E (su(1,1)), D ist die Dilatation ([D, P_mu] = i P_mu, [D, K_mu] = -i K_mu, vertauscht mit M_mn); Twistorbilder exakt ([X, Z] = -i M_X Z). Klassen: E elliptisch (Eigenwerte +-i/2, tr = -1), Q^- und D hyperbolisch (+-1/2, tr = +1), P_0 nilpotent (parabolisch, tr = 0); Signatur (2, 1, 0). In der Vektordarstellung auf R^(4,2) hat Q^- die Eigenwerte [-1.0, 0.0, 0.0, 0.0, 0.0, 1.0] (reell: Boost mit Eigenwert +-1 auf zwei Nullstrahlen, den Spitzen), E die Eigenwerte i x [-1.0, 0.0, 0.0, 0.0, 0.0, 1.0]: Die Hislop-Longo-Normierung ist damit K_cap = 2 pi Q^-": true,
+  "[E] Eigenebenen und Horizont (Inzidenz omega'' = i x c, sympy exakt): Die Eigenebenen von E sind (2,2)-definit (Gram [1.0, 1.0], [-1.0, -1.0]) und gehören zu den komplexen Punkten x^0 = +-i (Vakuumpunkte): keine reelle Kappe. Die Eigenebenen von Q^- sind null (totalisotrop) und gehören zu den reellen Punkten x = (+-1, 0, 0, 0): die Spitzen des Doppelkegels O_1 = {|t| + r < 1}; die von D sind null mit den Punkten 0 und unendlich (Lichtkegel V_+); P_0 ist nilpotent mit dem einzigen (doppelten) Fixpunkt unendlich. Vektorfelder (P_0 = d_t): xi_Q = ((1 - t^2 - |x|^2)/2, -t x), xi_E = ((1 + t^2 + |x|^2)/2, t x), xi_D = -x, xi_K0 = (t^2 + |x|^2, 2 t x); |xi_Q|^2 = (r - t - 1)*(r - t + 1)*(r + t - 1)*(r + t + 1)/4 verschwindet genau auf dem Rand von O_1 (Killinghorizont, zukunftsgerichtet innen), |xi_E|^2 = (r**2 - 2*r*t + t**2 + 1)*(r**2 + 2*r*t + t**2 + 1)/4 > 0 überall (kein Horizont, keine Kappe)": true,
+  "[E] Native Kappe aus E und tau: so(3) = Lorentz cap C(E) (dim 3); der Zentralisator von so(3) in u(2,2) ist die radiale sl(2,R) plus Zentrum (dim 4, spurfrei 3); tau = Theta_1 wirkt darauf als E -> -E, Q^- -> -Q^-, D -> D (und +1 auf Lorentz), auf Punkten als x -> -x (Fixpunkte 0 und unendlich). Der tau-ungerade Teil ist span{E, Q^-}; Killing-orthogonal zu E bleibt genau eine Richtung, normiert +-Q^-: die Kappe O_1 (Halbsphäre der S^3 zur Uhrzeit 0 um den tau-Fixpunkt, Spitzen t = +-Im x_Vak) ist durch (E, tau) bis auf die Orientierung (O_1 oder O_1') bestimmt. Der tau-gerade Teil gibt +-D: der Lichtkegel V_+- mit den tau-Fixpunkten als Spitzen. Ohne tau bilden die zulässigen Kappen die E-Bahn cos theta Q^- + sin theta D (alle Halbsphären-Rauten am Zentrum); E allein legt keine Kappe fest (elliptisch, komplexe Fixpunkte), Ad(e^(pi E/2)) Q^- = D": true,
+  "[E/C] Marken: Auf der Zentrumsweltlinie in Uhrzeit theta (t = tan(theta/2), E = Drehung) sind die Felder exakt die der Naht in z72-Konvention: E = 1, Q^- = cos theta (H_1), D = -sin theta (H_2 bis aufs Vorzeichen), P_0 = 1 + cos theta, K_0 = 1 - cos theta (30 Stellen). Nullstellen auf [0, 2 pi): E keine, Q^- {pi/2, 3 pi/2} (Spitzen t = +-1), D {0, pi} (Punkte 0, unendlich = tau-Fixpunkte), P_0 {pi}, K_0 {0}. Unter z83s Identifikation (Nahtdrehung = Uhr, Marken z^4 = 1 bei theta = k pi/2, tau wirkt als theta -> -theta) [C] sind die vier Marken genau die Spitzen der beiden tau-Eigenkappen: Antipodenpaar {1, -1} = V_+-, Paar {i, -i} = O_1, O_1'. Die Vierteldrehung vertauscht die Paare (D <-> Q^-): Die Marken liefern die Spitzenmenge, unterscheiden die Kappen aber nicht; das tut tau": true,
+  "[E, C nach dem Netz] Vakuum auf der Kappenachse (Hislop-Longo in der erlaubten Reihenfolge: freies konformes Netz des Leiterfelds aus z83/z90, dann der Satz): Der Kappenfluss ist auf der Achse t = tanh(u/2); die Vakuum-Wightmanfunktion des Leiterfelds (Delta = 1) im Rahmen der Modulzeit u ist exakt 1/(16 pi^2 sinh^2((u1 - u2)/2)): stationär und KMS mit G(v - 2 pi i) = G(v), analytisch im Streifen -2 pi < Im v < 0 (|G| <= 0.006 auf der Mittellinie, Pol bei v = -2 pi i): beta = 2 pi in u, also KMS bei beta = 1 bezüglich K_cap = 2 pi Q^-. Im dS-Rahmen g = eta/(1 - det x)^2 (z98, sigma = -1) ist die Eigenzeit des Zentrumsbeobachters tau_p = artanh t = u/2, die Zweipunktfunktion die Bunch-Davies-Form H^2/(16 pi^2 sinh^2(H dtau/2)) mit H = 1/l = 2: T_GH = 1/(2 pi l) = 1/pi": true,
+  "[E] Original gegen Kappenfluss: Der Modulgenerator des Originals auf Fock 8^4 ist die Ladung N_d - N_e (z98: D, zentral), sie vertauscht mit E, Q^-, der Dilatation, P, K, M und ist auf dem Skalarsektor null, wo Q^- nicht verschwindet (|Q^-| = 5.292): Q^- ist keine Funktion des Originalgenerators, dessen Fluss periodisch ist (ganzzahliges Spektrum; z70: spec K in pi Z). Als 4D-Zustand (Produktlesart z83: KMS bezüglich E bei beta' = 8 pi, Bildsumme in Uhrzeit) ist die Achsen-Zweipunktfunktion im Rahmen u nicht stationär: relative Änderung unter u -> u +- 1,2 = 5.376e-12, 4.879e-12 (Ordnung e^(-8 pi) = 1.22e-11), das Vakuum dagegen 1.0e-40: Das Original ist unter dem Kappenfluss nicht invariant, also für ihn bei keinem beta KMS": true,
+  "[E] Exakte Beziehungen: K_cap = 2 pi Q^- = 2 pi (P_0 - E); mit der Uhr des Originals K_Uhr = beta L_0 = 4 pi E (z72) gilt K_cap + K_Uhr/2 = 2 pi P_0, der Faktor 1/2 ist 2 pi/beta. Die Dilatation verschiebt die Kappe: Ad(e^(theta D)) Q^- = (R P_0 - K_0/R)/2 mit Spitzen t = +-R (R = e^theta, numerisch [-5.47394739, 5.47394739]), und (2/R) Q^-_R = P_0 - K_0/R^2 -> P_0: z72s parabolische Zeit ist der flache Grenzfall der Kappenzeit, P_0 = lim K_(O_R)/(pi R) (l = R/2, Lambda = 12/R^2 -> 0)": true,
+  "[E] dS-Darstellung auf der radialen Leiter (Skalarsektor N_d = N_e, E = 1, 2, 3; Fock 8^4): span{Q^-_a, M_ab} ist so(4,1) (Killingform: 6 kompakte Richtungen; so(3,2): 4), die Darstellung ist unitär (hermitesche Erzeuger). Die kanonischen Casimire beider Unteralgebren sind auf dem ganzen Skalarsektor konstant und gleich: C_K = -0.333333333333 (AdS), -0.333333333333 (dS), vertauschen mit allen zehn Erzeugern; geeicht an der Twistor- (Spinor-)Darstellung, wo C_K = 0.416666666667 = 5/12 und C_phys = 5/2 ist, gilt C_phys = 6 C_K = -2.000000 = E_0(E_0 - 3) für E_0 = 1 und 2 (AdS: D(1,0) + D(2,0)) und = Delta(Delta - 3) mit Delta = [1, 2] für dS. Die maximal kompakte so(4) der so(4,1) ist die K-Typ-so(4) der su(2,2) (Kommutant von E, dim 6): ihr Casimir ist auf den Stufen E = 1, 2, 3 konstant (0.000, 0.750, 2.000; Verhältnis 8/3 wie (j, j) mit j = 0, 1/2, 1), jeder sphärische K-Typ (j, j) kommt genau einmal vor. Also: die irreduzible sphärische Komplementärserie mit Delta = 1 (äquivalent 2), m^2 l^2 = Delta(3 - Delta) = 2 = 12 xi mit xi = 1/6 (konform gekoppelter Skalar, Bunch-Davies); die Hauptserie (Delta(3 - Delta) >= 9/4) ist ausgeschlossen": true,
+  "[E] Spektrum der Kappenenergie Q^- = K_cap/(2 pi): Auf dem Skalarsektor sind die Tiefstgewichte der radialen sl(2,R) (Kern von K_-) bei E = 1, 2, 3 genau die Drehimpulse l = 0, 1, 2 (dim 1, 3, 5, J^2 = l(l+1)): die Leiter ist Summe_l D_(l+1) x (2l+1), die Kettenelemente <n+1|Q^-|n> = sqrt((n+1)(n+2h))/2 exakt. Auf D_h gilt <0|e^(-i s Q^-)|0> = cosh(s/2)^(-2h) (h = 1, 2, 3; N = 4000, Fehler < 1e-10), Fourier-Partner der normierten, geraden Dichte rho_h(lambda) = 2^(2h)|Gamma(h + i lambda)|^2/(2 pi Gamma(2h)) (mpmath, 1e-20): absolut stetig auf ganz R, symmetrisch; (-1)^(N_d) kehrt Q^- und D um, E nicht. Abschneidungen von D_1: Abstand bei 0 = 0.431, 0.360, 0.310 (N = 500, 2000, 8000), Spektrum symmetrisch [-7964, 7964]. Vergleich: E diskret {h, h+1, ...}, P_0 = [0, inf) (Gamma-Gesetz, z72/z83), Q^- = R ohne Grundzustand": true,
+  "[E] Lambda als Funktion der Zeitwahl (sympy): Für Q_0 = a E + b Q^-, also Q_mu = ((a+b) P_mu + (a-b) K_mu)/2, lassen die vier Q_mu genau Omega = 1 + ((a-b)/(a+b)) det x invariant, und der Ricci-Skalar gibt Lambda = -12 (a-b)/(a+b) in Einheiten Im x_Vak = 1: (a=1, b=0) -> -12, (a=3/4, b=1/4) -> -6, (a=1/2, b=1/2) -> 0, (a=1/4, b=3/4) -> 6, (a=0, b=1) -> 12; sign Lambda = sign tr(Q_0^2): elliptisch -> AdS, parabolisch -> flach, hyperbolisch -> dS. Positivität auf D_1: inf spec(a L_0 + b H_1) = h sqrt(a^2 - b^2) für a > |b| (0.866025), -> 0+ für a = b ([0.009131, 0.002291, 0.000573]), unbeschränkt nach unten für |b| > a ([-92.749417, -388.127524, -1580.812699]): positive Zeit <=> Lambda <= 0": true,
+  "[E] Temperatur in Nahteinheiten: Am Kappenzentrum ist d tau_Uhr/du = sech u = 1, also beta_dS = 2 pi in Uhrzeit (Einheiten von E = L_0, in denen das Original beta = 4 pi hat) und pi in dS-Eigenzeit (T_GH = 1/pi bei l = Im x_Vak/2); Verhältnisse beta_Original/beta_dS = 2, beta'/beta_dS = 4. Mechanismustest: In der Vektordarstellung ist exp(2 pi V_E) = 1 (Uhr periodisch in reeller Zeit) und exp(2 pi i V_Q) = 1 (Kappe periodisch in imaginärer Zeit: beta = 2 pi ist geometrisch), aber exp(4 pi i V_E) != 1 (|.| = 2.87e+05): beta = 4 pi ist keine Periode der Uhr, sondern eine Zustandswahl. Die Wickabbildung Ad(e^(i pi D/2)) E = i Q^- verbindet genau die reelle 2 pi der Uhr mit der imaginären 2 pi der Kappe. Euklidische Schnitte (Gauss-Bonnet, sympy): dS/Kappe S^4 mit E_4 = 24/l**4, chi = 2; Original S^1_beta x S^3 mit E_4 = 0, chi = 0": true,
+  "[E] Auswahltabelle der Zeitkandidaten (positiv = Spektrum auf D_1 nach unten beschränkt; Kappenmodul = normierter Boost M^2 = 1/4 mit Null-Eigenebenen, also reellen Spitzen, und spektral umkehrbar; MM-Zeit = tau-ungerade und so(3)-invariant, also Q_0 einer Lorentz-kovarianten Familie; Uhr des Originals = proportional zu E): MM-Zeit und Kappenmodul -> ['Q^-'] (Lambda = +12/R_Vak^2), MM-Zeit und positiv -> ['E', 'P_0'] (Lambda = -12/R_Vak^2 bzw. 0), MM-Zeit und Uhr des Originals -> ['E'] (AdS), positiv und Kappenmodul -> [] (leer: Modulgeneratoren sind spektral symmetrisch, J log Delta J = -log Delta, also nie positiv; für die Kappe, Typ III_1, ist das Spektrum ganz R). H5 ist damit genau die Prämisse P_cap: 'Q_0 ist die Modulzeit der nativen Kappe im Vakuumsektor'": true,
+  "[E bedingt] H5-Kinematik: Mit Q_0 = Q^- (P_cap) ist die MM-Algebra so(4,1), Lambda = 3/l^2 = 12/R_Vak**2 > 0 mit l = R_Vak/2 (Spiegelbild von z98s -12/R_Vak^2), b = l^2/(64 pi G sigma) = -R_Vak**2/(256*pi*G) < 0, und das Eulergewicht |b| 32 pi^2 chi(S^4) = pi*R_Vak**2/(4*G) ist die dS-Entropie (glatter Schnitt S^4 der Kappe, Teil 2). Das Lambda-G-Ziel (v60 nur gelesen) bleibt eine bedingte Identität: G/R_Vak^2 = e^(-2/alpha)/(128 pi^3) (10^-122.63) <=> l^2/G = 32*pi**3*exp(2/alpha) <=> S_dS = 32*pi**4*exp(2/alpha) (10^122.52); H5 behebt nur das Vorzeichen, G bleibt nativ unbestimmt (z90)": true
+ },
+ "befunde": {
+  "E/C: Eine native Kappe existiert: O_1, die Halbsphäre der S^3 zur Uhrzeit 0 um den tau-Fixpunkt (Doppelkegel mit den Spitzen t = +-Im x_Vak, den reellen 'Wick-Partnern' der Vakuumpunkte x^0 = +-i), eindeutig aus (E, tau) bis auf die Orientierung; ihr Modulgenerator in Hislop-Longo-Normierung ist K_cap = 2 pi Q^-. E allein gibt keine Kappe, tau allein nur das Zentrum (und mit D den Lichtkegel V_+), die Marken liefern unter z83s Identifikation die vier Spitzen beider tau-Eigenkappen": true,
+  "E/C: Der Kappenfluss ist der Modulfluss des Vakuumsektors (Hislop-Longo, bedingt auf das freie Netz des Leiterfelds), nicht der des Originals: Dessen Modulgenerator ist zentral (Helizität/Ladung, periodisch) bzw. einseitig die Uhr 4 pi E, und sein Zustand ist unter dem Kappenfluss nicht invariant (Abweichung der Ordnung e^(-8 pi)). Alle drei Zeiten liegen in einer radialen sl(2,R): Uhr E elliptisch, Minkowskizeit P_0 = E + Q^- parabolisch (flacher Grenzfall der Kappen), Kappenzeit Q^- hyperbolisch": true,
+  "E: Die Gibbons-Hawking-Temperatur der nativen Kappe ist T = 1/pi in Vakuumeinheiten (Eigenzeit, l = 1/2) bzw. 1/(2 pi) in Uhrzeit am Kappenzentrum. Zu beta = 4 pi gibt es nur eine Zahlbeziehung (Faktor 2, Produktlesart Faktor 4), keinen Mechanismus: Die 2 pi der Kappe ist die imaginäre Periode eines hyperbolischen Erzeugers (glatter euklidischer Schnitt S^4, chi = 2, universell nach Hislop-Longo), die 4 pi des Originals ist ein KMS-Datum des elliptischen Erzeugers ohne imaginäre Periode (euklidischer Schnitt S^1 x S^3, chi = 0, MM-Eulerterm null). Native Wick-Dualität gibt es nur zwischen der reellen Uhrperiode 2 pi und der Kappenperiode 2 pi": true
+ },
+ "zahlen": {
+  "radiale_sl2": {
+   "Twistor-Eigenwerte": {
+    "E": [
+     "(-0-0.5j)",
+     "(-0-0.5j)",
+     "0.5j",
+     "0.5j"
+    ],
+    "Q^-": [
+     "(-0.5+0j)",
+     "(-0.5+0j)",
+     "(0.5+0j)",
+     "(0.5+0j)"
+    ],
+    "D": [
+     "(-0.5+0j)",
+     "(-0.5+0j)",
+     "(0.5+0j)",
+     "(0.5+0j)"
+    ]
+   },
+   "Vektordarstellung (R^(4,2)): Q^- reell, E imaginär": {
+    "E": [
+     -1.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ],
+    "Q^-": [
+     -1.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   },
+   "Spurform tr(M^2)": {
+    "E": -1.0,
+    "Q^-": 1.0,
+    "D": 1.0,
+    "P_0": 0.0
+   },
+   "Signatur span{E, Q^-, D}": "(2, 1, 0)",
+   "Q^- als Quetschung": "(1/2) Summe (d_i^+ e_i^+ + e_i d_i)",
+   "K_cap": "2 pi Q^-"
+  },
+  "eigenebenen": {
+   "E": [
+    {
+     "Eigenwert": "(-0-0.5j)",
+     "Gram (2,2)-Form": [
+      1.0,
+      1.0
+     ],
+     "Punkt x^mu": "[-1j, 0j, 0j, 0j]"
+    },
+    {
+     "Eigenwert": "0.5j",
+     "Gram (2,2)-Form": [
+      -1.0,
+      -1.0
+     ],
+     "Punkt x^mu": "[1j, 0j, 0j, 0j]"
+    }
+   ],
+   "Q^-": [
+    {
+     "Eigenwert": "(0.5+0j)",
+     "Gram (2,2)-Form": [
+      0.0,
+      0.0
+     ],
+     "Punkt x^mu": "[(-1-0j), 0j, 0j, 0j]"
+    },
+    {
+     "Eigenwert": "(-0.5+0j)",
+     "Gram (2,2)-Form": [
+      0.0,
+      0.0
+     ],
+     "Punkt x^mu": "[(1-0j), 0j, 0j, -0j]"
+    }
+   ],
+   "D": [
+    {
+     "Eigenwert": "(0.5+0j)",
+     "Gram (2,2)-Form": [
+      0.0,
+      0.0
+     ],
+     "Punkt x^mu": "unendlich"
+    },
+    {
+     "Eigenwert": "(-0.5+0j)",
+     "Gram (2,2)-Form": [
+      -0.0,
+      -0.0
+     ],
+     "Punkt x^mu": "[0j, 0j, 0j, 0j]"
+    }
+   ],
+   "P_0": "Kern 2-dim, eine Ebene = Punkt unendlich (parabolisch, ein doppelter Fixpunkt)"
+  },
+  "vektorfelder": {
+   "E": [
+    "x0**2/2 + x1**2/2 + x2**2/2 + x3**2/2 + 1/2",
+    "x0*x1",
+    "x0*x2",
+    "x0*x3"
+   ],
+   "Q^-": [
+    "-x0**2/2 - x1**2/2 - x2**2/2 - x3**2/2 + 1/2",
+    "-x0*x1",
+    "-x0*x2",
+    "-x0*x3"
+   ],
+   "D": [
+    "-x0",
+    "-x1",
+    "-x2",
+    "-x3"
+   ],
+   "P_0": [
+    "1",
+    "0",
+    "0",
+    "0"
+   ],
+   "K_0": [
+    "x0**2 + x1**2 + x2**2 + x3**2",
+    "2*x0*x1",
+    "2*x0*x2",
+    "2*x0*x3"
+   ]
+  },
+  "horizont": {
+   "|xi_Q|^2 (t, r)": "(r - t - 1)*(r - t + 1)*(r + t - 1)*(r + t + 1)/4",
+   "|xi_E|^2 (t, r)": "(r**2 - 2*r*t + t**2 + 1)*(r**2 + 2*r*t + t**2 + 1)/4"
+  },
+  "native_kappe": {
+   "dim so(3) = Lorentz cap C(E)": 3,
+   "dim Zentralisator von so(3) in u(2,2)": 4,
+   "dim in su(2,2)": 3,
+   "tau-ungerade": "span{E, Q^-}",
+   "tau-gerade": "span{D}",
+   "Killing-orthogonal zu E und tau-ungerade": "+-Q^- (eindeutig)",
+   "Killing-orthogonal zu E": "span{Q^-, D}",
+   "E-Bahn": "Ad(e^(theta E)) Q^- = cos theta Q^- + sin theta D (Halbsphären-Rauten am Zentrum)"
+  },
+  "marken": {
+   "Felder in Uhrzeit": {
+    "E": "1",
+    "Q^-": "cos theta",
+    "D": "-sin theta",
+    "P_0": "1 + cos theta",
+    "K_0": "1 - cos theta"
+   },
+   "Nullstellen": {
+    "E": [],
+    "Q^-": [
+     "3*pi/2",
+     "pi/2"
+    ],
+    "D": [
+     "0",
+     "pi"
+    ],
+    "P_0": [
+     "pi"
+    ],
+    "K_0": [
+     "0"
+    ]
+   },
+   "Marken z^4 = 1": "theta in {0, pi/2, pi, 3 pi/2}"
+  },
+  "vakuum_kms": {
+   "Fluss auf der Achse": "t = tanh(u/2)",
+   "F(u1, u2)": "1/(16 pi^2 sinh^2((u1 - u2)/2))",
+   "KMS-Streifenbreite (u)": "2 pi",
+   "max|G| auf Im v = -pi": 0.006332573977646111,
+   "|G| bei v = -2 pi i": 253302959105844.44,
+   "Eigenzeit dS": "tau_p = artanh t = u/2",
+   "W_dS": "H^2/(16 pi^2 sinh^2(H dtau/2)), H = 2",
+   "T_GH (Vakuumeinheiten)": "1/pi"
+  },
+  "original": {
+   "[N_d - N_e, alle Erzeuger]": 0.0,
+   "|Q^- auf Skalarsektor|": 5.291502622129181,
+   "max|N_d - N_e| auf Skalarsektor": 0.0,
+   "Vakuum: Abweichung von 1/(16 pi^2 sinh^2)": "0.0",
+   "Vakuum: Nichtstationarität": "1.01e-40",
+   "Original (beta' = 8 pi): Nichtstationarität (s = +1.2, -1.2)": [
+    "5.3755e-12",
+    "4.8785e-12"
+   ],
+   "e^(-8 pi)": "1.2162e-11"
+  },
+  "beziehungen": {
+   "K_cap": "2 pi (P_0 - E) = 2 pi P_0 - K_Uhr/2, K_Uhr = 4 pi E (z72: Uhr 4 pi L_0)",
+   "Dilatierte Kappe": "Q^-_R = (R P_0 - K_0/R)/2, Spitzen t = +-R, l = R/2, Lambda = 12/R^2",
+   "Spitzen bei R = e^1.7": [
+    -5.47394739,
+    5.47394739
+   ],
+   "Grenzwert": "P_0 = lim (2/R) Q^-_R = lim K_(O_R)/(pi R)"
+  },
+  "casimir": {
+   "C_Killing so(3,2) auf dem Skalar": -0.3333333333333333,
+   "C_Killing so(4,1) auf dem Skalar": -0.3333333333333333,
+   "C_Killing auf Twistoren (Spinor, beide Formen)": [
+    0.41666666666666663,
+    0.4166666666666668
+   ],
+   "Eichung": "Spinor C_phys = n(n-1)/8 = 5/2 = 6 x 5/12",
+   "Abweichung von konstant (AdS, dS)": [
+    8.326672684688674e-16,
+    4.440892098500626e-16
+   ],
+   "C_phys = 6 C_Killing": -2.0,
+   "AdS: E_0(E_0 - 3) = -2": "E_0 = 1, 2 (D(1,0) + D(2,0))",
+   "dS: Delta(Delta - 3) = -2": [
+    "1",
+    "2"
+   ],
+   "m^2 l^2 = Delta(3 - Delta)": 2,
+   "so(4)-Casimir je Stufe E = 1, 2, 3 (Wert, Abweichung, dim)": {
+    "1": [
+     3.761581922631319e-35,
+     0.0,
+     1
+    ],
+    "2": [
+     0.7500000000000001,
+     0.0,
+     4
+    ],
+    "3": [
+     2.0,
+     4.440892098500626e-16,
+     9
+    ]
+   },
+   "Hauptserie bräuchte Delta(3 - Delta) >= 9/4": true
+  },
+  "spektrum_Q": {
+   "so(3)-Struktur kappa": 1.0,
+   "Kern K_- je E (dim, J^2)": {
+    "1": [
+     1,
+     [
+      0.0
+     ]
+    ],
+    "2": [
+     3,
+     [
+      2.0,
+      2.0,
+      2.0
+     ]
+    ],
+    "3": [
+     5,
+     [
+      6.0,
+      6.0,
+      6.0,
+      6.0,
+      6.0
+     ]
+    ]
+   },
+   "Kette (|amp|, soll, Rest)": {
+    "h=1, n=0": [
+     0.7071067811865475,
+     0.7071067811865476,
+     1.5700924586837752e-16
+    ],
+    "h=1, n=1": [
+     1.2247448713915892,
+     1.224744871391589,
+     2.7194799110210365e-16
+    ],
+    "h=2, n=0": [
+     1.0000000000000002,
+     1.0,
+     1.5700924586837752e-16
+    ]
+   },
+   "sech-Gesetz <0|e^(-i s H_1)|0> (Re, Im, cosh^(-2h)(s/2))": {
+    "h=1, s=0.5": [
+     0.940014848806376,
+     0.0,
+     0.940014848806378
+    ],
+    "h=1, s=1.5": [
+     0.5965858082813339,
+     0.0,
+     0.5965858082813313
+    ],
+    "h=1, s=3.0": [
+     0.18070663892365,
+     0.0,
+     0.18070663892364855
+    ],
+    "h=2, s=0.5": [
+     0.883627915976477,
+     0.0,
+     0.8836279159764776
+    ],
+    "h=2, s=1.5": [
+     0.3559146266426868,
+     0.0,
+     0.3559146266426894
+    ],
+    "h=2, s=3.0": [
+     0.03265488935108152,
+     0.0,
+     0.03265488935108189
+    ],
+    "h=3, s=0.5": [
+     0.8306233618377254,
+     0.0,
+     0.8306233618377233
+    ],
+    "h=3, s=1.5": [
+     0.21233361521477473,
+     0.0,
+     0.21233361521477714
+    ],
+    "h=3, s=3.0": [
+     0.005900955299057488,
+     0.0,
+     0.005900955299057651
+    ]
+   },
+   "Spektraldichte rho_h = 2^(2h)|Gamma(h + i lam)|^2/(2 pi Gamma(2h)), Fourier": {
+    "h=1, s=0.7": [
+     "0.886851493172436",
+     "0.886851493172436"
+    ],
+    "h=1, s=2.0": [
+     "0.419974341614026",
+     "0.419974341614026"
+    ],
+    "h=2, s=0.7": [
+     "0.78650557094218",
+     "0.78650557094218"
+    ],
+    "h=2, s=2.0": [
+     "0.176378447614135",
+     "0.176378447614135"
+    ]
+   },
+   "D_1-Abschneidung: (Abstand bei 0, min, max)": {
+    "500": [
+     0.4308790715585409,
+     -486.3333406757821,
+     486.33334067578124
+    ],
+    "2000": [
+     0.3599943037424353,
+     -1977.6605882379872,
+     1977.6605882379854
+    ],
+    "8000": [
+     0.3096280082597335,
+     -7963.912011875846,
+     7963.912011875839
+    ]
+   }
+  },
+  "lambda_zeitwahl": {
+   "a=1, b=0": {
+    "s (Omega = 1 + s det x)": "1",
+    "R": "-48",
+    "Lambda": "-12",
+    "tr Q_0^2": -1.0
+   },
+   "a=3/4, b=1/4": {
+    "s (Omega = 1 + s det x)": "1/2",
+    "R": "-24",
+    "Lambda": "-6",
+    "tr Q_0^2": -0.5
+   },
+   "a=1/2, b=1/2": {
+    "s (Omega = 1 + s det x)": "0",
+    "R": "0",
+    "Lambda": "0",
+    "tr Q_0^2": 0.0
+   },
+   "a=1/4, b=3/4": {
+    "s (Omega = 1 + s det x)": "-1/2",
+    "R": "24",
+    "Lambda": "6",
+    "tr Q_0^2": 0.5
+   },
+   "a=0, b=1": {
+    "s (Omega = 1 + s det x)": "-1",
+    "R": "48",
+    "Lambda": "12",
+    "tr Q_0^2": 1.0
+   }
+  },
+  "positivitaet_min_eig_D1 (N = 200, 800, 3200)": {
+   "a=1.0, b=0.5": [
+    0.866025,
+    0.866025,
+    0.866025
+   ],
+   "a=1.0, b=1.0": [
+    0.009131,
+    0.002291,
+    0.000573
+   ],
+   "a=1.0, b=1.5": [
+    -92.749417,
+    -388.127524,
+    -1580.812699
+   ]
+  },
+  "temperatur": {
+   "T_GH Vakuumeinheiten (Eigenzeit, l = 1/2)": "1/pi",
+   "beta_dS Eigenzeit": "pi",
+   "beta_dS Uhrzeit am Kappenzentrum": "2*pi",
+   "d tau_Uhr/du": "1/cosh(u)",
+   "beta_Original/beta_dS (Uhr)": "2",
+   "beta'/beta_dS (Uhr)": "4",
+   "Perioden": {
+    "exp(2 pi V_E) = 1 (reelle Periode der Uhr)": 2.4492935982947064e-16,
+    "exp(2 pi i V_Q) = 1 (imaginäre Periode der Kappe)": 4.3873220543036053e-16,
+    "exp(4 pi i V_E) - 1 (beta_Original imaginär)": 286750.31313665316,
+    "exp(4 pi V_Q) - 1 (reell)": 71687.82828329098,
+    "Twistor exp(2 pi M_E) = -1": 1.2246467991473532e-16
+   },
+   "Wick: Ad(e^(i pi D/2)) E = i Q^-": true,
+   "E_4 auf S^4 (Radius l)": "24/l**4",
+   "chi(S^4)": "2",
+   "E_4 auf S^1 x S^3": "0",
+   "chi(S^1 x S^3)": 0
+  },
+  "auswahltabelle": {
+   "E": {
+    "min spec auf D_1 (N = 1600)": 1.0,
+    "positiv": true,
+    "Kappen-Modulgenerator": false,
+    "MM-Zeit (tau-ungerade, so(3)-invariant)": "True",
+    "Uhr des Originals": "True",
+    "Lambda (Im x_Vak = 1)": -12.0
+   },
+   "P_0": {
+    "min spec auf D_1 (N = 1600)": 0.001146,
+    "positiv": true,
+    "Kappen-Modulgenerator": false,
+    "MM-Zeit (tau-ungerade, so(3)-invariant)": "True",
+    "Uhr des Originals": "False",
+    "Lambda (Im x_Vak = 1)": 0.0
+   },
+   "Q^-": {
+    "min spec auf D_1 (N = 1600)": -1579.339489,
+    "positiv": false,
+    "Kappen-Modulgenerator": true,
+    "MM-Zeit (tau-ungerade, so(3)-invariant)": "True",
+    "Uhr des Originals": "False",
+    "Lambda (Im x_Vak = 1)": 12.0
+   },
+   "D": {
+    "min spec auf D_1 (N = 1600)": -1579.339489,
+    "positiv": false,
+    "Kappen-Modulgenerator": true,
+    "MM-Zeit (tau-ungerade, so(3)-invariant)": "False",
+    "Uhr des Originals": "False",
+    "Lambda (Im x_Vak = 1)": null
+   }
+  },
+  "auswahl": {
+   "MM-Zeit und Kappenmodul": [
+    "Q^-"
+   ],
+   "MM-Zeit und positiv": [
+    "E",
+    "P_0"
+   ],
+   "MM-Zeit und Uhr des Originals": [
+    "E"
+   ],
+   "positiv und Kappenmodul": []
+  },
+  "h5_kinematik": {
+   "Lambda": "12/R_Vak**2",
+   "l": "R_Vak/2",
+   "b (sigma = -1)": "-R_Vak**2/(256*pi*G)",
+   "|b| 32 pi^2 chi(S^4)": "pi*R_Vak**2/(4*G)",
+   "Ziel G/R_Vak^2": "e^(-2/alpha)/(128 pi^3)",
+   "Ziel l^2/G": "32*pi**3*exp(2/alpha)",
+   "Ziel S_dS = pi l^2/G": "32*pi**4*exp(2/alpha)",
+   "log10 G/R_Vak^2": -122.62661611706959,
+   "log10 S_dS": 122.52170599843576,
+   "log10 l^2/G": 122.02455612574163
+  },
+  "status": {
+   "Kappengenerator": [
+    "E",
+    "K_cap = 2 pi Q^-, Q^- = (1/2) Summe (d^+ e^+ + e d) = Original-Partner-Quetschung, hyperbolisch in der radialen sl(2,R) {E, Q^-, D}; Spitzen t = +-1 (Null-Eigenebenen)"
+   ],
+   "native Kappe": [
+    "E/C",
+    "O_1 aus (E, tau) eindeutig bis auf Orientierung (Killing-orthogonal zu E, tau-ungerade); Marken = Spitzen von O_1 und V_+- unter z83s Identifikation [C]; E allein: keine Kappe"
+   ],
+   "Modulfluss nativ?": [
+    "C/E negativ",
+    "Vakuumsektor ja (Hislop-Longo nach dem Netz, KMS 2 pi exakt auf der Achse); Original nein (zentral/periodisch; nicht invariant, Abweichung ~e^(-8 pi))"
+   ],
+   "Beziehungen": [
+    "E",
+    "K_cap = 2 pi (P_0 - E) = 2 pi P_0 - K_Uhr/2; P_0 = lim K_(O_R)/(pi R) (flacher Grenzfall)"
+   ],
+   "dS-Darstellung": [
+    "E",
+    "so(4,1) auf dem Skalarsektor: Komplementärserie Delta = 1 (m^2 l^2 = 2, xi = 1/6), irreduzibel (K-Typen (j, j) je einmal); Casimir = AdS-Casimir"
+   ],
+   "Energiespektrum": [
+    "E",
+    "Q^- je l: D_(l+1), sech-Gesetz, Dichte 2^(2h)|Gamma(h + i lam)|^2/(2 pi Gamma(2h)), R symmetrisch"
+   ],
+   "Lambda und Zeitklasse": [
+    "E",
+    "Lambda = -12 (a-b)/(a+b) für Q_0 = a E + b Q^-; positive Zeit <=> Lambda <= 0"
+   ],
+   "Temperatur": [
+    "E/L",
+    "T_GH = 1/pi (Vakuumeinheiten), beta = 2 pi in Uhrzeit am Zentrum; zu beta = 4 pi nur Faktor 2, kein Mechanismus (S^4 gegen S^1 x S^3)"
+   ],
+   "H5": [
+    "C",
+    "bedingt mit P_cap (Zeit = Vakuum-Modulfluss der nativen Kappe), nicht nativ; Positivität und die Uhr des Originals wählen Lambda <= 0"
+   ]
+  }
+ },
+ "urteil": "H5 hält nur bedingt, nicht nativ. (1) Die Kappe ist nativ konstruierbar: Q_0^- = (P_0 - K_0)/2 ist auf dem Fockraum die Zweimoden-Quetschung (1/2) Summe (d^+ e^+ + e d) von Original und Partner, das hyperbolische Element der radialen sl(2,R) {E, Q^-, D}; seine Eigenebenen auf dem Twistorraum sind null und gehören zu den reellen Spitzen t = +-1, sein Feld ((1 - t^2 - |x|^2)/2, -t x) hat den Rand des Doppelkegels O_1 als Killinghorizont, und K_cap = 2 pi Q^- ist die Hislop-Longo-Normierung. O_1 ist durch die nativen Daten E und tau eindeutig bis auf die Orientierung bestimmt (tau-ungerade und Killing-orthogonal zu E in der radialen sl(2,R)): die Halbsphäre der S^3 zur Uhrzeit 0 um den tau-Fixpunkt, mit den Spitzen t = +-Im x_Vak als reellen Wick-Partnern der Vakuumpunkte. E allein gibt keine Kappe (definite Eigenebenen, kein Horizont); unter z83s Identifikation sind die vier Marken z^4 = 1 genau die Spitzen der beiden tau-Eigenkappen O_1 und V_+- [C]. (2) Ihr Modulfluss ist nativ nur im Vakuumsektor: Mit dem freien Netz des Leiterfelds (z83/z90, Hislop-Longo in der erlaubten Reihenfolge) ist die Achsen-Zweipunktfunktion im Kappenrahmen exakt 1/(16 pi^2 sinh^2(du/2)), stationär und KMS bei beta = 2 pi; das Original dagegen hat einen zentralen, periodischen Modulgenerator (Ladung N_d - N_e bzw. einseitig die Uhr 4 pi E) und ist unter dem Kappenfluss nicht invariant (Abweichung der Ordnung e^(-8 pi) in der Produktlesart), also für ihn bei keinem beta KMS. Exakt gilt K_cap = 2 pi (P_0 - E) = 2 pi P_0 - K_Uhr/2, und z72s parabolische Zeit ist der flache Grenzfall P_0 = lim K_(O_R)/(pi R). (3) dS-Kinematik: span{Q^-_a, M_ab} wirkt auf dem Skalarsektor der Leiter als irreduzible unitäre Komplementärserie von so(4,1) mit Delta = 1 (kanonischer Casimir gleich dem von so(3,2), C_phys = -2, m^2 l^2 = 2 = 12 xi, jeder K-Typ (j, j) einmal), also der konform gekoppelte Skalar im Bunch-Davies-Zustand. Die Kappenenergie hat je Drehimpuls l das Spektrum von D_(l+1): ganz R, absolut stetig, symmetrisch, mit der Dichte 2^(2h)|Gamma(h + i lambda)|^2/(2 pi Gamma(2h)) und dem sech-Gesetz cosh(s/2)^(-2h); keine Positivität. Die Gibbons-Hawking-Temperatur ist T = 1/pi in Vakuumeinheiten (l = 1/2) bzw. beta = 2 pi in Uhrzeit am Kappenzentrum; zu beta = 4 pi besteht nur der Zahlfaktor 2 (Produktlesart 4) ohne Mechanismus: Die 2 pi ist die imaginäre Periode des hyperbolischen Erzeugers (glatter Schnitt S^4, chi = 2), die 4 pi ist ein KMS-Datum des elliptischen ohne imaginäre Periode (Schnitt S^1 x S^3, chi = 0). (4) Exakt gilt Lambda = -12 (a-b)/(a+b)/R_Vak^2 für Q_0 = a E + b Q^-: Das Vorzeichen von Lambda ist die Konjugationsklasse der Zeit (elliptisch AdS, parabolisch flach, hyperbolisch dS), und positive Zeit ist genau Lambda <= 0. Die Auswahltabelle zeigt: MM-Zeit und Kappenmodul wählen allein Q^- (Lambda = +12/R_Vak^2), MM-Zeit und Positivität wählen E oder P_0, MM-Zeit und die Uhr des Originals wählen E (AdS); Positivität und Modularität schließen einander aus. H5 ist damit gleichwertig zur Prämisse P_cap: 'die physikalische Zeit ist der Vakuum-Modulfluss der nativen Kappe O_1', und sie verlangt den Verzicht auf eine positive Zeit. Folgen: K13 bleibt L, präzisiert um die exakte Zuordnung Vorzeichen von Lambda = Klasse der Zeit; das Lambda-G-Ziel G/R_Vak^2 = e^(-2/alpha)/(128 pi^3) bleibt unerreicht (H5 behebt nur das Vorzeichen; mit ihm wäre S_dS = pi l^2/G = 32 pi^4 e^(2/alpha) das Eulergewicht auf S^4, ohne natives G). Nichts ist befördert."
+}

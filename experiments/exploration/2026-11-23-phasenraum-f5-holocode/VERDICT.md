@@ -1,6 +1,144 @@
 # Urteil
 
-## Aktueller Stand: H6h47 — Folgeschritte G1–G3 und zwölfte Analyse: Kinematik nativ, Dynamik offen (`z96`–`z99`)
+## Aktueller Stand: H6h48 — Folgerunde N1–N8 und Analysen 13–17: Ursprung auf P_sym und A*, native Strukturen frei, gemeinsame Clifford-Struktur als Kandidat (`z100`–`z109`, `z116`)
+
+**Bilanz:** unverändert 13 P und 7 L von 20. K13, K15, K16 und K19 sind präzisiert.
+
+**Auftrag:** „Alle parallel“ (Folgeschritte 1–7 aus H6h47) sowie die dreizehnte bis siebzehnte externe Analyse („geh da
+tiefer rein“, „löse alles“). Acht Agentenläufe sind reproduziert, drei Prüfskripte selbst gerechnet. Die tiefere Welle läuft
+noch: T1–T6 (z110–z115) und U1–U3 (z117–z119).
+
+**Ursprung: P_tn folgt aus A* (z107, 12 Prüfungen; N8, reproduziert) [E unter A* und Rahmen].**
+- **Gesetzestorus = Nahttorus:** τ_law = iβ/(4π), Spinstruktur (A,A). Tr e^{−K_β} = q^{1/24}θ₃/η exakt (Jacobi bis p^80).
+- **Casimir:** Die S-Invarianz der (A,A)-Zustandssumme, also A*(a), erzwingt E₀ = −1/24.
+- **Spannung:**
+  - ⟨T⟩ ∝ (πi/12)(θ₂⁴ − θ₄⁴).
+  - E₆ = ½(θ₄⁴ − θ₂⁴)(θ₂⁴ + θ₃⁴)(θ₃⁴ + θ₄⁴) ist das Produkt der Spannungen der drei geraden Spinstrukturen; das Gesetz trägt
+    den (A,A)-Faktor.
+  - Auf der Achse ist E(y) streng monoton, also liegt die einzige Nullstelle bei y = 1. In der Halbebene sind es genau Γ_θ·i.
+- **Ergebnis:** β = 4π, also P_tn und über z94 P_clock.
+- **Nicht zirkulär:** Spannungsfrei und zeitneutral sind verschiedene Prädikate.
+  - Verdrillte Fermionen sind spannungsfrei bei y* = 1,023 bzw. 1,107.
+  - Ein falscher Casimir verschiebt den Punkt.
+  - Beide Prädikate fallen genau für S-invarianten Inhalt zusammen. A* und P_sym sind unabhängig.
+- **S(n):**
+  - Normalform Φ = ∏(1 + XY^{k_j})²: Nichtentartung heißt, die k_j sind verschieden.
+  - Partialbruch-Lemma: S(3) gilt genau dann, wenn ein Paar abspaltet.
+  - Alle 56 Tripel mit m₃ ≤ 15 sind im Fenster ganzzahlig starr.
+  - Obstruktion: Die reelle Relaxation ist für n = 3 nicht starr (23 von 56). Starrheit ab n = 3 ist also arithmetisch.
+- **Urteil:** Der Ursprung ruht auf P_sym allein, dazu A* und der Rahmen. K19 bleibt L.
+
+**Native Strukturen sind frei (z100, z101; N1, N2, reproduziert) [E negativ].**
+- **Maurer-Cartan-Lemma (z100):** Für jeden Zustand ist die Cartan-Verbindung einer nativen Tomita-Bahn flach. Kein
+  Zustand krümmt eine Bahn.
+- **Kubischer Vertex:** Er braucht ungerade Modulladung und Nichtgaußizität zugleich.
+  - Das Kondensat (a1) ist quasifrei.
+  - Das D = −4-Kondensat ist paritätsgerade.
+  - Der Kompositzustand (b) ist einkörperig.
+- **Kollektiver Zustand aus sechs Saaten (z101):**
+  - vollständig klassifiziert: 6,05·10¹³ Lösungen mit universellem Spektrum;
+  - ganzzahlige Mehrkörperterme mit Ordnungssummen (15, −45, 70, −60, 24, 0);
+  - die Schwelle 6 = 5 + 1 kommt von der mod-4-Uhr;
+  - keine verbundene 1→2-Amplitude;
+  - J ist zustandsunabhängig, also F = 0.
+  Die verborgene Wechselwirkung (H2) ist nur eine Zustandseigenschaft.
+
+**Wechselwirkung (z105, z108, z109; N6 reproduziert, Analysen 13–15) [E/C].**
+- **Doppeltransfer mit Tomita-Partner (z105):** Er mischt die Paarschichten, verschiebt aber nur p(k)² Zustände.
+  - Er liefert keine □-Nachkommen, und kein natives Kriterium fixiert λ (alle geben λ = 0).
+  - Das induzierte G ist regulatorgebunden.
+- **Rekombination (z108):** q/(1−q)⁴ = kurze Leiter + Skalar mit Δ = 3.
+  - Im Verma-Modul gilt |P²|Δ⟩|² = 32Δ(Δ−1).
+  - Gebraucht wird □φ = λφ³ über mindestens drei Nähte, mit γ = λ²/32.
+- **Kompositionssatz (z108):** Erhaltene Einzeldynamik heißt Produktzustand. Wechselwirkung liegt im nichtadditiven Teil
+  I_AB|C, dessen Erwartungswert die bedingte gegenseitige Information ist.
+- **Kollektive Konstruktionen (z108, z109):**
+  - Die kompensierte Rotation in zwölf Moden ist exakt, mit |K_AB| = 2π|sin 2θ| und Berry-Krümmung −sin 2θ.
+  - In der Achter-Konstruktion sind alle Zustände auf bis zu drei Moden winkelunabhängig.
+  - Eine dynamische Antwort fixiert den Winkel.
+  - Die inverse Rekonstruktion k_S = (1/2|S|)Στ(Γ_S[K,γ_i]γ_i) ist exakt.
+  - Was fehlt, ist die Vorwärtsregel.
+- **Isolierter Doppeltransfer (z109):** Er hält die thermischen Einzelbesetzungen nicht.
+- **Austausch über virtuelle Ladungstransfers (z116, Analyse 16) [C]:**
+  - Spin-Singulett = Isospin 1 der Transfer-SU(2) (z99).
+  - Die Mittelung über die Transfer-SU(2) gibt w_s = (1 + 2e^{−4π})/3 und die Kopplung log(3/(1 + 2e^{−4π})) ≈ log 3.
+  - Prämisse ist eine nicht beobachtbare Transferorientierung; Prüfung in z119.
+
+**Spin und Statistik (z106; N7 reproduziert) [E unter P_CAR].**
+- In der gemeinsamen CAR ist die Komposition gradiert: Gekleidete Quanten antikommutieren, und an der Schwelle bleibt j = 0.
+- Die gradierte Potenz zählt exakt den freien 4D-Fockraum aus Skalar und Weyl-Fermion.
+- Die CAR gibt R²-Statistik, erst P_GSO macht daraus Spin-Statistik.
+- Prämisse P_CAR: Hardy-Einteilchenkomposition, wie in z91 und z99.
+
+**Chiralität (z102, z109, z116) [E negativ / C].**
+- **Klebeweg geschlossen (z102):**
+  - Der Tomita-Kleber ist P_A3 in anderer Form.
+  - 16 ⊗ 4_fam ⊗ 4′ ist nicht ganzzahlig.
+  - Coset-Satz: Chiralität und neutrale Skalarleiter schließen sich aus.
+  - Der Kleber ist familienblind.
+- **Index aus der vollen Algebra (z109):** Wilson-Dirac-Eltern mit gleichen Hyperflächendaten haben verschiedene Grade. Der
+  Index muss aus der vollen Algebra kommen.
+- **Gemeinsame reelle Clifford-Struktur (z116, Analysen 16 und 17) [E algebraisch, C nativ]:**
+  - Cl(3,11) (Lorentz × Spin(10)) hat eine Majorana-Weyl-Realstruktur (J² = +1), Cl(13,1) nicht.
+  - S⁺ = (S_L ⊗ 16) ⊕ (S_R ⊗ 16̄), und J verbindet die Summanden. Das ist eine linkshändige Weyl-16 je Generation, ohne A3
+    umzudeuten.
+  - J_F (Produkt der fünf Majoranas) tauscht die Parität.
+  - R = iΓ₁₁ ist das Zentrum von Spin(10), also die Uhr der 16 (z82), und J R J⁻¹ = R.
+  - Cl(4,12) mit lichtartigem Schnitt gibt 2 × 16 komplexe Komponenten.
+  - Die balancierte Verklebung T ⊗_ℂ V₁₆ entfernt den Spiegelsummanden; Hyperladungen und b_Y = 41/6 bleiben.
+
+**Gravitation (z100, z103, z104, z109, z116) [E/C].**
+- **Sektor (z103):** Keine native Orientierung wählt den Gravitationssektor.
+  - Die nativen Sektorwirkungen erzeugen genau Z₄.
+  - Minimale Prämisse P_vol: ein Bit, die Orientierung der Volumenform relativ zu I.
+- **Uhr und Index (z116, Kandidat):**
+  - Tr_{S±}(Rγ_abγ_cd) = ±64ε_abcd, ohne Uhr nur die Metrik.
+  - Der Nahtindex A_q = S⁺(1 − qS⁴) (Index +1, Nullmode √(1−q²)Σqⁿ|4n⟩) mit D_⊥ = γ₋A + γ₊A⁺ macht daraus genau einen
+    ε-Beitrag.
+  - Damit würde die Uhr P_vol liefern; nativ ist das offen (z118).
+- **Λ-Vorzeichen (z104):**
+  - Exakte Regel: Das Vorzeichen von Λ ist die Konjugationsklasse der Zeit. Elliptisch gibt AdS, parabolisch flach,
+    hyperbolisch dS.
+  - **Positive Zeit heißt Λ ≤ 0.**
+  - dS braucht P_cap, die modulare Zeit der nativen Kappe O₁. Deren Spitzen tragen die Marken.
+- **Normierung von G (z109, z116):**
+  - Erste Variationen legen G nicht fest.
+  - Die Anomalie bräuchte a = S_dS = 32π⁴e^{2/α}, das Euler-Gewicht aus z96.
+  - Die gemischte Antwort 2εRee hat weder Euler- noch Volumenterm. Mit dem offenen Gewicht 2c₃ folgt G = v_geo⁻².
+  - Die Flächenregel (z57, t = 1) ist die quadratische Antwort derselben Spur.
+- **Weitere Prüfungen (z109, z116):**
+  - Der modulare Eindeutigkeitsweg ist tragfähig (Geschlecht 0), braucht aber den Skalarcharakter.
+  - Starrheit folgt auch aus einer einzigen Frequenz je Zweipunktantwort.
+  - Petz-Rekonstruierbarkeit: (m+1)/(2m) gegen (2m+1)/(3m²) als möglicher Ersatz für P_koh (z119).
+
+**Was die Runde bedeutet:**
+- Der Ursprung hat eine Prämisse weniger.
+- Alle nativen Einzelstrukturen sind frei: gaußsch, einkörperig, flach. Jede offene Eigenschaft hat jetzt eine präzise Form:
+  - Wechselwirkung = φ³-Rekombination über drei Nähte;
+  - Gravitationsdynamik = Nicht-Bahn-Familie und absolute Normierung;
+  - Λ-Vorzeichen = Klasse der Zeit;
+  - Sektor = ein Bit;
+  - Chiralität = Index der vollen Algebra.
+- Neu ist ein Kandidat, der drei Lücken zugleich schließen könnte: die gemeinsame reelle Clifford-Struktur mit der Uhr als
+  Zentrum von Spin(10). Sie gibt die chirale 16, über den Nahtindex den Einstein-Sektor (ε statt Metrik) und die
+  Spin-Verklebung. Offen ist, ob die native Quelle sie erzeugt oder nur mit ihr verträglich ist.
+- Zweite neue Hypothese T: die Naht als Twistorgerade mit Stromalgebra. MHV aus Parke–Taylor, Komposition als CSW,
+  Gravitation über Hodges.
+
+**Nächste Schritte (laufen):**
+- T1–T6 (z110–z115):
+  - Parke–Taylor;
+  - CSW;
+  - Hodges und G;
+  - P_GSO aus Modulinvarianz;
+  - Chiralität als Twistorindex;
+  - Krümmung bei bewegter Algebra.
+- U1–U3 (z117–z119):
+  - Tomita erzeugt die gemeinsame Clifford-Struktur?
+  - D_⊥ und die Spur mit Uhr als Wirkung, Gewicht 2c₃?
+  - Transferaustausch und Petz-Prinzip.
+
+## Davor: H6h47 — Folgeschritte G1–G3 und zwölfte Analyse: Kinematik nativ, Dynamik offen (`z96`–`z99`)
 
 **Bilanz:** unverändert 13 P und 7 L von 20. K12, K13 und K15 sind präzisiert.
 

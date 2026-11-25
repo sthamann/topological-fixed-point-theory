@@ -8116,3 +8116,23 @@ F6 (z94) rechnet noch.
   - Die minimalen leeren Regeln sind [graviton] und [admissible, chiral_matter].
 
 **Prüfstand:** 13 P, 7 L (K12, K13, K15 präzisiert). Atlas-Revision 96956691923c256e503e46a2. Ledger unverändert, nichts befördert.
+
+## H6H48-20261125 · Folgerunde N1–N8 und Analysen 13–17
+
+Agentenläufe z100–z107 (alle reproduziert), eigene Prüfungen z108, z109, z116.
+- **Ursprung:** P_tn folgt aus A*, nicht zirkulär. Der Ursprung ruht auf P_sym. S(3) ist auf die Abspaltung eines Paars
+  reduziert; Starrheit ab n = 3 ist arithmetisch.
+- **Native Strukturen sind frei:**
+  - Keine Tomita-Bahn ist gekrümmt (Maurer-Cartan).
+  - Der kollektive Zustand aus sechs Saaten hat keine Dynamik.
+  - Ein kubischer Vertex braucht ungerade Ladung und Nichtgaußizität.
+- **Wechselwirkung:** Gebraucht wird die Rekombination □φ = λφ³ über drei Nähte. Der Doppeltransfer genügt nicht. Die
+  Austauschkopplung log 3 aus der Transfer-SU(2) gilt unter einer Mittelungsprämisse.
+- **Gravitation:**
+  - Λ-Vorzeichen = Klasse der Zeit, positive Zeit heißt Λ ≤ 0.
+  - Der Sektor ist ein Bit, P_vol.
+  - Die Spur mit der Uhr gibt ε, der Nahtindex wählt einen Sektor (Kandidat).
+- **Chiralität:** Der Klebeweg ist geschlossen. Die gemeinsame reelle Clifford-Struktur Cl(3,11) ist Kandidat.
+- **Spin-Statistik:** Über Nähte gilt sie unter P_CAR mit P_GSO.
+
+**Prüfstand:** 13 P, 7 L (K13, K15, K16, K19 präzisiert). Atlas-Revision 4475787b4e0e057aa0da879f. Ledger unverändert, nichts befördert.

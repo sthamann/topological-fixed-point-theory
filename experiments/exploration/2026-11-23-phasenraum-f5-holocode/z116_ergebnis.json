@@ -1,0 +1,92 @@
+{
+ "checks": {
+  "Cliffordrelationen exakt für beide Signaturen ({'13,1': {'Clifford': True, 'Signatur': [13, 1], 'J^2': np.float64(-1.0), 'J vertauscht mit Chiralität': True}, '3,11': {'Clifford': True, 'Signatur': [3, 11], 'J^2': np.float64(1.0), 'J vertauscht mit Chiralität': True}}); Cl(3,11) hat eine Realstruktur mit J^2 = +1, die mit der Gesamtchiralität vertauscht (Majorana-Weyl, 3 - 11 = -8), Cl(13,1) nur J^2 = -1. S^+ zerfällt in (S_L x 16) mit Dimension 32 und (S_R x 16-quer) mit 32 (gemischt: 0); J bildet den ersten Summanden auf den zweiten ab (True): unabhängige Daten 2 x 16 komplex, eine Generation linkshändiger Weyl-16": true,
+  "fünf Moden aus den Majoranas von Cl(10) (CAR True); J_F = Produkt der fünf Majoranas a + a^+: J_F a_j J_F^-1 = a_j^+, J_F^2 = 1 (True), tauscht gerade und ungerade Parität (True), Gamma_11 = +-(-1)^F (True), also 16 = Lambda^gerade C^5. R = i Gamma_11 hat Ordnung 4 und vertauscht mit Spin(10) (True): das Zentrum von Spin(10), die Uhr der 16 (z82). Kombinierte Realstruktur (Lorentz-Konjugation x J_F, antilinear): J^2 = -1.0, vertauscht mit der Gesamtchiralität (True), J R J^-1 = R (True)": true,
+  "Tr_(S^+)(R gamma_ab gamma_cd) = c eps_abcd für alle 36 Paare mit c = {np.complex128(64+0j)} (und 0, wo eps = 0: True); auf S^- c = {np.complex128(-64+0j)}; ohne Uhr nur die metrische Kontraktion (nur für {a,b} = {c,d} ungleich 0: True, Tr(gamma_01 gamma_01) = 64.0)": true,
+  "Cl(4,12) auf 256 Dimensionen: Cliffordrelationen exakt (True, Signatur (4, 12)); Realstruktur aus Cl(4,2)-Faktor x Cl(10)-Faktor mit J^2 = 1, verträglich mit der Gesamtchiralität (True); lichtartige gamma_+- = (h_4 +- h_-1)/2 mit gamma^2 = 0 und {gamma_+, gamma_-} = 1 (True); P_+ = gamma_- gamma_+ halbiert S^+ auf 64 komplexe Dimensionen, ist Lorentz-invariant (True) und J-verträglich (True): mit J bleiben 64 reelle = 2 x 16 komplexe Komponenten": true,
+  "A_q = S^+(1 - q S^4), q = e^-2pi: auf rechteckigen Abschneidungen (N = 13 .. 65) Kern 1, Kokern 0 (True); der Nullvektor ist sqrt(1 - q^2) sum q^n |4n> (Abweichung max 4e-16); Tr e^(-s A^+A) - Tr e^(-s AA^+) = 1 für s = 0,3, 1, 4 (Fehler 4e-15); D_perp = gamma_- A + gamma_+ A^+ gibt D^2 = P_- A^+A + P_+ AA^+ (True). Die lichtartigen Sektoren tragen die Uhrspur mit entgegengesetztem Vorzeichen ((64+0j) und (-64+0j) bei eps_0123); die relative Spur ist für jedes s gleich (True): der Index +1 macht aus der Aufhebung genau einen Levi-Civita-Beitrag": true,
+  "reelles Tensorprodukt von T (C^4) und V_16 (C^16): reelle Dimension 256 = 128 (I_T (x) 1 = 1 (x) I_F, also T (x)_C V_16, komplex 64) + 128 (I_T (x) 1 = -1 (x) I_F, also T (x)_C V-quer): die balancierte Verklebung entfernt genau einen Summanden. Hyperladungen der 16 = Lambda^gerade C^5: sum Y = 0, sum Y^3 = 0, sum Y^2 = 10/3; drei Familien und ein Higgs-Dublett: b_Y = 41/6": true,
+  "Flächenregel: (1/16) eps (B_p - B_k)^2 = det e_p (3/2 - e_2/2 + 3 e_4/2) für 64 ganzzahlige Vielbeinpaare exakt (True), bis auf das Vorzeichen das z57-Potential (-3/2) + e_2/2 - (3/2) e_4, also t = 1; gemischte Antwort d/d lambda eps F^F bei lambda = 0 = 2*R*ee (eps R ^ e ^ e, ohne Euler- und Volumenterm); (2 c_3/4) v^2 = v^2/(16 pi) gibt G = v**(-2); Kopplungsgewichte an den Nahtzustand: ganzer Nullzustand 1, erster Randplatz 1 - e^-4pi = 0.99999651266, quartischer Überlapp 0.99999302533": true,
+  "zwei Nähte mit je zwei Moden, Sektor zweier Teilchen: die Transferströme E^+- = sum_s a_(A s)^+ a_(B s) bilden eine SU(2) (z99); Spin und Transfer-Isospin sind gekoppelt (Pauli): Spin-Singulett = Isospin 1, Spin-Triplett = Isospin 0 (True). Ladungsenergie Q^2/2: Doppelbesetzung kostet 1. Mittelung über die Transfer-SU(2) (Schur: Spur/Dimension) gibt w_Singulett = 0.3333356582 = (1 + 2 e^-4pi)/3 (Haar-Stichprobe 0.3333), w_Triplett = 1; Austauschterm log(3/(1 + 2 e^-4pi)) P_Singulett = 1.0986053, durch 4 pi 0.08742423; lokale Zustände maximal gemischt, <s_A^i s_B^j> = (1 - w)/(3 + w) delta = 0.199999 delta": true,
+  "Petz-Rückkanal (Referenz maximal gemischt), Verschränkungsfidelität: kohärenter Kanal (Krausrang 2, z91) {2: 0.75, 3: 0.666667, 5: 0.6, 8: 0.5625, 12: 0.541667} = (m+1)/(2m); dekohärenter Kanal mit denselben Übergängen {2: 0.416667, 3: 0.259259, 5: 0.146667, 8: 0.088542, 12: 0.05787} = (2m+1)/(3 m^2)": true,
+  "Überlappkern det(I - Z W^+)^-1 (nu = 1) auf acht Punkten der Einheitskugel: hermitesch und positiv (kleinster Eigenwert 8.00e-02); nach Reskalierung mit reellen Omega(Z) bleibt er positiv (3.62e-04): Die Positivität legt das Vorzeichen der Krümmung nicht fest; radiale AdS-Referenz und physikalisches Lambda sind zu trennen (vgl. z98, z104)": true
+ },
+ "befunde": {
+  "C: Die Austauschkopplung ist im Kern log 3 = log(dim Isospin 1): Sie kommt aus der Mittelung über die native Transfer-SU(2); die Ladungsenergie trägt nur die Korrektur e^-4pi (ohne Ladungsenergie wäre w = 1 und keine Wechselwirkung, bei unendlicher w = 1/3). Prämisse: die relative Transferorientierung zweier Nähte ist nicht beobachtbar (Mittelung). Eine 4D-Eichdynamik folgt daraus nicht": true,
+  "C: Die Zahlen der Analyse 16 stimmen; der kohärente Kanal erhält mehr rekonstruierbare Information als der dekohärente. Als Prinzip ('der Übergang vernichtet keine Information, die die Raten nicht erzwingen') könnte das P_koh ersetzen; dass die Quelle dieses Extremalprinzip erfüllt, ist offen": true
+ },
+ "zahlen": {
+  "clifford_14": {
+   "13,1": {
+    "Clifford": true,
+    "Signatur": [
+     13,
+     1
+    ],
+    "J^2": -1.0,
+    "J vertauscht mit Chiralität": true
+   },
+   "3,11": {
+    "Clifford": true,
+    "Signatur": [
+     3,
+     11
+    ],
+    "J^2": 1.0,
+    "J vertauscht mit Chiralität": true
+   }
+  },
+  "J_ges^2": -1.0,
+  "spur_mit_uhr": {
+   "S+ Konstante": [
+    "(64+0j)"
+   ],
+   "S- Konstante": [
+    "(-64+0j)"
+   ],
+   "ohne Uhr (a,b)=(c,d)": "(64+0j)"
+  },
+  "nahtindex": {
+   "Nullvektor-Abweichung": [
+    1.1102230246251565e-16,
+    1.2837799035092107e-16,
+    3.612769242928564e-16,
+    1.1102230246251565e-16
+   ],
+   "max |Spurdifferenz - 1|": 3.552713678800501e-15,
+   "Sektorspuren (P_-, P_+) mit Uhr, eps_0123": [
+    "(64+0j)",
+    "(-64+0j)"
+   ],
+   "relative Spur": {
+    "0.3": "(64+0j)",
+    "1.0": "(64+0j)",
+    "4.0": "(64+0j)"
+   }
+  },
+  "austausch": {
+   "w_Singulett exakt": 0.3333356582282374,
+   "Haar-Mittel (400)": 0.33331646705369744,
+   "log(3/(1+2e^-4pi))": 1.09860531400772,
+   "durch 4 pi": 0.08742423311567625,
+   "Korrelation": 0.19999916303841828
+  },
+  "petz": {
+   "kohärent": {
+    "2": 0.7499999999999999,
+    "3": 0.666666666666667,
+    "5": 0.5999999999999999,
+    "8": 0.5624999999999998,
+    "12": 0.541666666666667
+   },
+   "dekohärent": {
+    "2": 0.41666666666666663,
+    "3": 0.25925925925925936,
+    "5": 0.1466666666666666,
+    "8": 0.08854166666666664,
+    "12": 0.057870370370370405
+   }
+  }
+ },
+ "urteil": "Die sechzehnte und die siebzehnte externe Analyse halten in allen gerechneten Punkten. (1) Cl(3,11) auf 128 Dimensionen hat eine Realstruktur mit J^2 = +1, die mit der Gesamtchiralität vertauscht (Majorana-Weyl), Cl(13,1) nur J^2 = -1; S^+ = (S_L x 16) + (S_R x 16-quer), J verbindet die Summanden, also eine Generation linkshändiger Weyl-16. (2) Die Teilchen-Loch-Konjugation J_F (Produkt der fünf Majoranas) tauscht die Parität; R = i Gamma_11 ist das Zentrum von Spin(10), also die Uhr der 16 (z82), und J R J^-1 = R. (3) Tr_(S^+-)(R gamma_ab gamma_cd) = +-64 eps_abcd, ohne Uhr nur die Metrik. (4) Cl(4,12) auf 256 Dimensionen mit J^2 = 1, lichtartiger Schnitt Lorentz- und J-verträglich, 2 x 16 komplexe Komponenten. (5) Der Nahtindex A_q = S^+(1 - q S^4) (Index +1, Nullmode sqrt(1 - q^2) sum q^n |4n>) gibt mit D_perp = gamma_- A + gamma_+ A^+ eine relative Spur, die die entgegengesetzten Uhrspuren der lichtartigen Sektoren zu genau einem Levi-Civita-Beitrag macht. (6) Die komplex balancierte Verklebung T (x)_C V_16 entfernt einen Summanden; Hyperladungen und b_Y = 41/6 unverändert. (7) Die Flächenregel ist die aus z57 (t = 1); die gemischte Antwort ist 2 eps R e e ohne Euler- und Volumenterm; G = v_geo^-2 folgt aus dem Gewicht 2 c_3, das offen bleibt. (8) Die Austauschkopplung log(3/(1 + 2 e^-4pi)) folgt aus der Mittelung über die native Transfer-SU(2) (Spin-Singulett = Isospin 1); sie ist im Kern log 3. (9) Petz: (m+1)/(2m) gegen (2m+1)/(3 m^2). (10) Die Positivität des Überlappkerns legt die Krümmung nicht fest. Offen: dass der H6-Tomita-Operator die gemeinsame Realstruktur erzeugt, dass die native Quelle D_perp und die Spur mit Uhr als Wirkung liefert, die Verklebung I_T = I_F, das Gewicht 2 c_3 und die Mittelungsprämisse."
+}
