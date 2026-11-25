@@ -1,0 +1,77 @@
+Z152: Die Naht als Hälfte einer Gitterkette (Eckentransfer-Lesart)
+====================================================================================================
+
+Teil A  Das native Spektrum
+   [ok] A1 k in 4Z+1: |k| ist jede ungerade Zahl genau einmal
+   [ok] A1 Vorzeichen von k ist (-1)^l bei |k| = 2l+1 (Teilchen, Loch, Teilchen, ...)
+   [ok] A2 Zustandssumme prod(1 + e^(-(2l+1) pi)) = 2^(1/4) e^(-pi/24) (80 Stellen)
+   Zustandssumme 1.0432982626446870125, Entropie 0.17328679514 nat, mittlere Ladung 0.0413432895815
+   [Befund: E] Das Modulspektrum der Naht ist ein einziger Turm (2l+1) pi mit wechselnder Ladung. Das ist die Form einer Eckentransfermatrix: äquidistant, mit dem Abstand als einzigem Parameter.
+
+Teil B  Ohne Ladung: Ising-Kette im Querfeld, H = -sum sx sx - h sum sz
+   h = sqrt(2): Niveaus / pi = [1.0, 3.0, 5.0, 7.0]
+   [ok] B1 h = sqrt(2): Halbkette hat die Niveaus pi (1, 3, 5, 7) (1e-6)
+   h = 1.2: Niveau 0 / pi = 0.8306441, K'/K(1/h) = 0.8306441, Verhältnisse [1.0, 3.0, 5.0]
+   h = 2.0: Niveau 0 / pi = 1.2792616, K'/K(1/h) = 1.2792616, Verhältnisse [1.0, 3.0, 5.0]
+   h = 3.0: Niveau 0 / pi = 1.5634019, K'/K(1/h) = 1.5634019, Verhältnisse [1.0, 3.0, 5.0]
+   [ok] B2 ungeordnete Phase h > 1: Niveaus (2l+1) pi K'(k)/K(k) mit k = 1/h (drei Felder)
+   h = 1/sqrt(2): Niveaus / pi = [0.0, 2.0, 4.0, 6.0]
+   [ok] B3 geordnete Phase h < 1: gerader Turm mit Nullmode, also nicht die Naht
+   [ok] B4 Abstand pi <=> K' = K <=> k = 1/sqrt(2) (lemniskatischer Modul, tau = i)
+   [Befund: N; Struktur exakt nach Literatur] Die Ising-Kette im Querfeld h = sqrt(2) (ungeordnete Phase) hat als Halbkette genau das Modulspektrum der Naht. Der Abstand pi ist gleichwertig zu K' = K, also zum selbstdualen Modul tau = i. Die geordnete Phase scheidet aus (Nullmode). Diese Kette kennt aber die Ladung Q nicht.
+
+Teil C  Mit Ladung: Hüpfkette mit Dimerisierung t1, t2 und Wechselpotential m (Rice-Mele), halbe Füllung
+   t2/t1 = 0.5, m/t1 = 0.0: Abstand / pi = 2.558523, 4K'/K = 2.558523, Versatz a = 0.500000
+   t2/t1 = 0.5, m/t1 = 0.3: Abstand / pi = 2.717522, 4K'/K = 2.717522, Versatz a = 0.583294
+   t2/t1 = 0.2, m/t1 = 0.5: Abstand / pi = 4.098607, 4K'/K = 4.098607, Versatz a = 0.576445
+   t2/t1 = 0.3, m/t1 = -0.2: Abstand / pi = 3.325357, 4K'/K = 3.325357, Versatz a = 0.459334
+   t2/t1 = 0.7, m/t1 = 0.1: Abstand / pi = 2.052525, 4K'/K = 2.052525, Versatz a = 0.550792
+   t2/t1 = 1.0, m/t1 = -1.0: Abstand / pi = 2.941024, 4K'/K = 2.941024, Versatz a = 0.250000
+   t2/t1 = 1.0, m/t1 = -3.0: Abstand / pi = 4.804840, 4K'/K = 4.804840, Versatz a = 0.250000
+   [ok] C1 Leiter = Abstand (Z + a) mit Abstand 4 pi K'(kappa)/K(kappa), kappa' = E_min/E_max (sieben Punkte)
+   [ok] C2 ohne Wechselpotential (m = 0): Versatz a = 1/2 (Teilchen-Loch-symmetrisch)
+   gleichmäßiges Hüpfen (t1 = t2): Versatz a je m und -m: [[-0.5, 0.25, 0.75], [-1.0, 0.25, 0.75], [-2.0, 0.25, 0.75], [-3.0, 0.25, 0.75], [-5.0, 0.25, 0.75]]
+   [ok] C3 ohne Dimerisierung (t1 = t2): Versatz a = 1/4 für jedes m, 3/4 bei umgekehrtem Vorzeichen
+   Start (0.15, -0.3): t2/t1 = 1.00000000, m/t1 = -2.00000000, konvergiert = True
+   Start (0.3, -0.5): t2/t1 = 1.00000000, m/t1 = -2.00000000, konvergiert = True
+   Start (0.05, -0.1): t2/t1 = 1.00000000, m/t1 = -2.00000000, konvergiert = True
+   Start (0.5, -1.0): t2/t1 = 1.00000000, m/t1 = -2.00000000, konvergiert = True
+   Start (0.8, -3.0): t2/t1 = 1.00000000, m/t1 = -2.00000000, konvergiert = True
+   Start (0.15, 0.3): t2/t1 = 1.00000000, m/t1 = -2.00000000, konvergiert = True
+   [ok] C4 Die Nahtleiter pi (4Z + 1) legt die Kette eindeutig fest: t2 = t1, m = -2 t1 (sechs Startpunkte)
+   Kette t1 = t2, m = -2t, 56 Plätze, 90 Stellen: Niveaus / pi = ['1.0', '-3.0', '5.0', '-7.0', '9.0', '-11.0']
+   größte Abweichung der ersten acht Niveaus von (1, -3, 5, -7, 9, -11, 13, -15): 2.39e-14
+   [ok] C5 Hochgenau: Halbkette hat pi (1, -3, 5, -7, ...) = pi (4Z + 1), acht Niveaus auf 1e-13
+   [ok] C6 Umgekehrtes Vorzeichen (oder die andere Hälfte): gespiegelte Leiter pi (4Z + 3), der Partner mit Ladung -1
+   [ok] C7 Die Kette liegt am selbstdualen Punkt: E_min/E_max = 2t / (2 sqrt(2) t) = 1/sqrt(2) = kappa = kappa'
+   [ok] C8 Zerfallsrate der Korrelationen: cosh = 1 + m^2/(2 t^2) = 3, Länge 1/(2 arsinh 1) = 0,567 Plätze
+   [Befund: N (20 Stellen)] In der Familie der ladungserhaltenden Nächste-Nachbar-Ketten mit Zweiplatzzelle gibt es genau eine, deren Halbkette die Naht ist: gleichmäßiges Hüpfen t und Wechselpotential 2t. Das Viertel im Versatz ist keine Einstellung, es folgt aus der fehlenden Dimerisierung. Der Abstand 4 pi verlangt wieder kappa = kappa'. In Kontinuumssprache ist das das Kogut-Susskind-Gitterfermion mit Masse mal Gitterabstand = 1.
+
+Teil D  Der Modulgenerator als Gitter-Boost
+   Vorfaktor c = 2.622057554292119810465272; Lemniskatenkonstante = 2.62205755429211981046484
+   [ok] D1 Der Verschränkungsoperator ist tridiagonal (übernächste Nachbarn < 1e-9 nahe am Schnitt)
+   [ok] D2 K = c mal Summe (Abstand vom Schnitt) mal (lokale Energie): Bindungen bei 1, 2, 3, ..., Plätze bei 1/2, 3/2, ...
+   [ok] D3 c ist die Lemniskatenkonstante Gamma(1/4)^2 / (2 sqrt(2 pi)) = 2,62206 (statt pi im Kontinuum)
+   [ok] D3b c ist die reelle Periode der Markenkurve w^2 = 1 - z^4 (j = 1728, tau = i): c = 2 Integral_0^1 dz/sqrt(1 - z^4)
+   [ok] D4 Zwei verschachtelte Schnitte geben die Dynamik: K_(j+2) - K_j = 2c H auf dem gemeinsamen Teil
+   Kontrolle m = -t: c = 2.96882494684524, Formel 4 K(kappa')/E_max = 2.96882494684477
+   [ok] D5 Allgemein c = 4 K(kappa') / E_max (Kontrolle bei m = -t); für m -> 0 geht c gegen pi (Bisognano-Wichmann)
+   [Befund: N (18 Stellen)] Der Modulgenerator der Naht ist in dieser Lesart geometrisch: der Boost des Gitters um den Schnitt. Sein Spektrum ist diskret und sein Fluss periodisch, weil das Gitter eine kleinste Länge hat. Der elliptische Nahtfluss und der hyperbolische Fluss eines Kontinuumskeils sind derselbe Erzeuger bei verschiedenem Modul. Der Hamiltonoperator der Kette ist die Differenz der Modulgeneratoren zweier verschachtelter Nähte.
+
+Teil E  Bilanz
+   [E] Form: Das Modulspektrum der Naht, pi (4Z + 1), ist ein äquidistanter Turm mit wechselnder Ladung; Zustandssumme 2^(1/4) e^(-pi/24).
+   [N] Ohne Ladung: Die Ising-Kette im Querfeld sqrt(2) hat als Halbkette genau diesen Turm. Abstand pi <=> K' = K <=> tau = i.
+   [N] Mit Ladung, eindeutig: Unter den Hüpfketten mit Dimerisierung und Wechselpotential trägt genau eine die Naht als Hälfte: gleichmäßiges Hüpfen t, Wechselpotential 2t (20 Stellen). Das Viertel folgt aus der fehlenden Dimerisierung, der Abstand aus kappa = kappa'.
+   [N] Partner: Die andere Hälfte trägt die gespiegelte Leiter pi (4Z + 3): der Partner mit Ladung -1, wie im Paarmodell des Bestands (P_TP).
+   [N] Boost: K = c mal Gitter-Boost, exakt tridiagonal, c = Lemniskatenkonstante 2,62206. Der elliptische Nahtfluss ist der Boost eines Gitters.
+   [E] Markenkurve: Der Vorfaktor c ist die reelle Periode der elliptischen Kurve w^2 = 1 - z^4 der nativen Marken (Bestand: Spektralparameter-Bahn {1, i, -1, -i}, j = 1728). Auf ihr ist dz/w polfrei: Das wäre die elliptische Klasse der 4D-Chern-Simons-Lesart (z151 fand auf der Sphäre nur die trigonometrische). Nicht gerechnet.
+   [N] Dynamik aus zwei Nähten: K_(j+2) - K_j = 2c H: Zwei verschachtelte Nähte bestimmen den Hamiltonoperator mit Nächste-Nachbar-Transfer. Das ist die Gitterform der halbseitigen modularen Inklusion.
+   [C] Prämisse P_CTM: Die Naht ist die Hälfte einer ladungserhaltenden Nächste-Nachbar-Kette mit Zweiplatzzelle in ihrem Grundzustand. Die Eindeutigkeit gilt in dieser Familie; längere Reichweite ist nicht geprüft.
+   [E negativ] Wechselwirkung: Die Kette ist frei. Das wechselwirkende Gatter (P_uhr) folgt nicht.
+   [O] Kontinuum und 4D: Die Kette liegt bei Masse mal Gitterabstand = 1, Korrelationslänge 0,567 Plätze. Es gibt keinen Kontinuumslimes am nativen Punkt. Die Kette ist 1+1-dimensional; K12, K13 und P_G sind nicht berührt.
+   [L] Ausblick 4D: Gestaffelte Fermionen sind in vier Dimensionen Kähler-Dirac-Fermionen mit 2^4 = 16 Komponenten je Zelle und einer Z_4-Symmetrie, deren Anomalie sich nach der Literatur genau bei 16 Weyl-Fermionen aufhebt (dieselbe Bedingung wie Spin-Z_4 im Bestand). Ob die 16 der Naht diese Zelle ist, ist nicht gerechnet.
+
+Urteil
+   Die Naht lässt sich exakt als Hälfte eines lokalen Gittersystems lesen, und diese Lesart ist starr. (1) Das native Modulspektrum pi (4Z + 1) ist ein äquidistanter Turm, die Form einer Eckentransfermatrix. (2) Ohne Ladung trägt die Ising-Kette im Querfeld sqrt(2) diesen Turm; der Abstand pi ist gleichwertig zum selbstdualen Modul tau = i. (3) Mit Ladung gibt es in der Familie der Hüpfketten mit Dimerisierung und Wechselpotential genau eine Kette: gleichmäßiges Hüpfen t, Wechselpotential 2t. Das Viertel der Naht (x in Z + 1/4) ist dort keine Einstellung, es folgt aus der fehlenden Dimerisierung; der Abstand 4 pi verlangt E_min/E_max = 1/sqrt(2). Das ist das Kogut-Susskind-Gitterfermion in 1+1 Dimensionen mit Masse mal Gitterabstand = 1. (4) Der Modulgenerator ist der Gitter-Boost um den Schnitt, mit der Lemniskatenkonstante an der Stelle von pi. Damit ist der Widerspruch 'Nahtfluss elliptisch, Keilfluss hyperbolisch' (z136) aufgelöst: Es ist derselbe Erzeuger, das Gitter macht ihn periodisch. (5) Die andere Hälfte ist der Partner mit gespiegelter Leiter (P_TP), die Plätze geben die Ordnung (P_ord), und zwei verschachtelte Schnitte geben den Hamiltonoperator: K_(j+2) - K_j = 2c H. Die Aussage aus z145, Transfer und Kettendynamik lägen außerhalb, gilt für eine Naht; für zwei verschachtelte Nähte gilt sie in dieser Lesart nicht mehr. (6) Grenzen: Die Lesart ist eine Prämisse (P_CTM), keine Herleitung; die Eindeutigkeit ist numerisch und nur in der genannten Familie gezeigt. Die Kette ist frei, das wechselwirkende Gatter (P_uhr) folgt nicht. Sie ist 1+1-dimensional und hat am nativen Punkt keinen Kontinuumslimes; Gravitation, vier Dimensionen und G sind nicht berührt. Für den Kandidaten: P_ord und P_TP wären durch P_CTM ersetzt, die Zahl der Prämissen sinkt dadurch nicht sicher. Der Gewinn ist ein konkretes natives Gitter, auf dem sich Eichung der Uhr (Gitter-Schwinger-Modell) und die Frage nach vier Dimensionen rechnen lassen. Nichts ist befördert.
+
+Alle Prüfungen bestanden: True (21/21)

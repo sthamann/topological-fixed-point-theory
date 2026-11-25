@@ -610,6 +610,20 @@ Gatter also trivial. Das wechselwirkende Gatter verlangt eine transferierte Einh
 gesteuerte Uhr zwischen den Eigenmoden der Vierteldrehung P_sym und gleichwertig eine Paarphase. Im E₈-Bild ist es die
 4π-Drehung des D₅-Faktors gegen A₃, ohne freien Winkel; das ist eine Lesart. P_uhr bleibt Prämisse, Dynamik folgt nicht.
 
+### Nachtrag z146–z153: Welle A, zwei neue Strategien, zwanzigste Analyse
+
+- **G:** Drei weitere Wege (Relativentropie-Wirkung z146, ρ⋆ z147, gemeinsame Schleifenantwort z150) legen G nicht
+  fest. Der Faktor e^(−2/α) ist im Bestand eine Leiterformel, keine Dynamik. Einziger verbleibender Hebel: ein
+  nichtstörungsartiges Gewicht e^(−S) mit S = 2/α.
+- **Graviton (z148):** auf eine Prämisse reduziert, P_h2 oder P_X + P_pos. Test: D(3,2) im Dubleton-Sektor.
+- **Gatter:** E₈-Lesart (z149), 4D-Chern–Simons (z151) und der E₈-Code der zwanzigsten Analyse (z153) sparen keine
+  Prämisse. Die Gatterlinie ist ausgeschöpft.
+- **Gitterlesart (z152):** Die Naht ist die Hälfte genau einer ladungserhaltenden Nächste-Nachbar-Kette (Hüpfen t,
+  Wechselpotential 2t). Ordnung, Partner, Boost und Hamiltonoperator folgen unter P_CTM. Frei, 1+1-dimensional.
+- **Strategie danach:** (a) Gitterlesart in vier Dimensionen (Kähler–Dirac-Zelle, 16 Komponenten, ℤ₄-Anomalie);
+  (b) geeichte Uhr auf der Kette; (c) D(3,2) im Dubleton-Sektor; (d) elliptische 4D-Chern–Simons-Klasse auf der
+  Markenkurve w² = 1 − z⁴. Zurückgestellt: weitere G-Zeilen aus Normierungen, weitere E₈-Gatter.
+
 ### Was die Runde bedeutet
 
 - **Der Kandidat** braucht neun Prämissen: A*, I_step, P_lift, P_IF, P_univ, P_uhr, P_ord, P_curv und P_G als freie

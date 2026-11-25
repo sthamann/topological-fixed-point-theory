@@ -585,6 +585,25 @@ hergeleitet, 7 unter benannter Lesart, keines gescheitert, offen oder gesetzt. K
       (Sektorgruppe ℤ₁₆, Statistik linear). Das wechselwirkende Gatter verlangt eine Einheit mit Gewicht ungerade/8;
       es ist die gesteuerte Uhr zwischen den Eigenmoden von P_sym, gleichwertig eine Paarphase −i je Paar. Im E₈-Bild
       ist es die 4π-Drehung des D₅-Faktors (Lesart). P_uhr bleibt Prämisse. [E negativ, E, L]
+    - Welle A nach H6h50 (Z146–Z153): G bleibt frei, das Graviton hängt an einer benannten Prämisse, die Naht ist die
+      Hälfte einer eindeutigen Gitterkette.
+      - G: Relativentropie-Wirkung (Z146: exakt, aber ohne G und nicht die Einstein-Form), ρ⋆ aus tfpt-42 (Z147: nur
+        eine Umschreibung) und gemeinsame Schleifenantwort (Z150: nur für Yang–Mills-artige Gravitation 16π, dort
+        falsches Vorzeichen und Planckwert) legen G/R_Vak² nicht fest. Sieben Wege sind gerechnet.
+      - Graviton (Z148): Die Uhrspurwirkung gibt um AdS₄ exakt linearisierte Einstein-Gleichungen mit zwei Helizitäten
+        (D(3,2)), aber nur unter P_dyn. Der native Fockraum enthält kein D(3,2). Induzierter Propagator und konforme
+        Gravitation sind ohne Zusatz nicht unitär. Fehlende Prämisse: P_h2 oder gleichwertig P_X + P_pos.
+      - Gatter: Die E₈-Lesart trägt auf Operatorebene nur für N ≡ 0 mod 4 und spart keine Prämisse (Z149); die
+        4D-Chern–Simons-Einordnung ist exakt, passt aber nicht über die nativen Marken (Z151).
+      - Zwanzigste externe Analyse (Z153): 20 neutrale Wurzeln = zweite SU(5); der Twist der relativen Drehung ist 1 auf
+        112 und −i auf 128 Wurzeln; der Vier-Zustands-Code ist gewählt; die Krümmung 3/r² ist die runde S⁴ jedes ℝ⁵;
+        die Isotropie bis zur sechsten Ordnung gilt für jede Projektion von E₈ (7-Design).
+      - Neue Strategie (Z152) [N, Prämisse P_CTM]: Das Modulspektrum π(4ℤ + 1) ist das einer Eckentransfermatrix. Unter
+        den Hüpfketten mit Dimerisierung und Wechselpotential trägt genau eine die Naht als Hälfte: gleichmäßiges
+        Hüpfen t, Wechselpotential 2t (Kogut–Susskind-Fermion mit Masse × Gitterabstand = 1). Das Viertel folgt aus dem
+        gleichmäßigen Hüpfen. Der Modulgenerator ist der Gitter-Boost, mit der Lemniskatenkonstante statt π; zwei
+        verschachtelte Nähte geben den Hamiltonoperator. Die Kette ist frei und 1+1-dimensional; P_uhr, K12, K13 und
+        P_G sind nicht berührt.
     - Zopfrelation: Sie gilt nur für einkörperige Operatoren (Nahtuhr und Strahlteiler = Ising-Zopfmatrizen). Das
       wechselwirkende Gatter verletzt sie mit Defekt √(3/8). Die Defektstruktur ist endlich (Clifford-Typ). [E]
     - Eichdynamik: Plakettenstruktur und sin²θ_W = 3/8 sind nativ, die absolute Kopplung und die Linkdynamik nicht.

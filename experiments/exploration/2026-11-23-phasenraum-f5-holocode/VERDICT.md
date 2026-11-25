@@ -56,6 +56,232 @@ selbst gerechnet): streng nein. P_uhr ist jetzt in drei gleichwertigen Formen be
 - **Folge:** P_uhr bleibt Prämisse; die neun Prämissen sind unverändert. Der Ein-Prinzip-Kandidat aus R2 ist in der
   strengen Form geschlossen. Offen ist die E₈-Lesart: ob die komponierenden Objekte die Verklebungsfaktoren sind.
 
+**Nachtrag, Schritt 2 nach H6h50: Welle A, zwei neue Strategien und die zwanzigste externe Analyse (z146–z153; sechs
+Agentenläufe reproduziert, z152 und z153 selbst gerechnet): G bleibt auf drei weiteren Wegen frei, der Graviton-Pol ist
+auf eine benannte Prämisse reduziert, und die Naht ist exakt die Hälfte einer eindeutigen Gitterkette [N, P_CTM].**
+
+**Bilanz:** unverändert 13 P und 7 L von 20, neun Prämissen, eine freie Zahl. Die Rechnungen z146, z147 und z148 holen
+die abgebrochenen Läufe z141, z142 und z138 nach.
+
+**A1 Relativentropie-Wirkung des nativen Zustands (z146, 19 Prüfungen; Agent, reproduziert): legt G nicht fest
+[E negativ, gescopt].**
+- **Exakte Form [E]:** In der Thermofeldlesart gilt auf der ganzen Gruppe S(ρ_g‖ρ) = β⟨E⟩·(tr(g⁺g)/4 − 1). Die
+  Hesse-Matrix auf allen 15 Erzeugern ist β⟨E⟩·tr([E,X][E,Y]) und gleich der BKM-Form.
+- **Struktur [E]:** Der Kern ist der Stabilisator von E. Auf dem Nebenraum ist die Form positiv, Rang 8 (su(2,2)) bzw. 6
+  (so(3,2)), mit dem einen Eigenwert β⟨E⟩ = 12,5665459. Sie ist die Bergman-Metrik des Raums der Uhrweltlinien, nicht
+  die von AdS₄.
+- **Negativ [E]:** Der MacDowell–Mansouri-Anteil der Form ist null und sie ist nicht Lorentz-invariant. Umgekehrt ist
+  die native Familie gravitativ die triviale Störung (Rang 0 gegen 6). Die Form ist β mal Bewegungs- und Lageenergie
+  einer Masse, also Hollands–Wald für Materie.
+- **Wo G fehlt:** Es gibt keinen Horizontterm, und die halbeinfache native Algebra trägt keinen Zentralterm. G kann nur
+  über einen Zentralterm oder eine endliche Flächendichte eintreten.
+- **Kein Treffer:** Sechs neue Tabellenzeilen von 10^(−5,2) bis 10^(2,5), keine exakte Übereinstimmung mit z136. Die
+  nächste (Faktor 1,0000139) braucht drei Wahlen und hat die falsche Invarianz.
+- **Gilt für:** Gruppenbahn und Kegel der Modulgeneratoren. Neue Prämissennamen nur für die Tabelle (T1/T2, P_HW, P_FK).
+
+**A2 ρ⋆ und G aus tfpt-42 (z147, 30 Prüfungen; Agent, reproduziert): eine Umschreibung, kein Wert [E/C].**
+- **Bestand [E]:** ρ⋆ ist die stationäre Wurzel eines randnormierten Potentials, λ_Σ der erste positive Eigenwert des
+  Randoperators. 20 Quelldateien nennen ρ⋆, keine gibt eine Zahl. G·λ_Σ² = π/(4ρ⋆) ist G·χ₀² = π/4; das Manuskript nennt
+  das selbst eine Umschreibung.
+- **Nativ [E/C]:** ρ⋆(λ_Σ R_Vak)² ist exakt die dS-Entropie πR_Vak²/(4G). Die Frage nach ρ⋆ ist dieselbe wie die nach
+  P_η aus z136. Alle 63 Kandidatenpaarungen geben ein planckgroßes Vakuum (G/R_Vak² von 0,0156 bis 1463).
+- **Wurzelroute [C]:** Die Stationarität ist die Spur der Vakuum-Einsteingleichung, G/R_Vak² = π³κL̂/24, und λ_Σ fällt
+  heraus. Mit nativen Gewichten 0,000181 bis 0,726. Fest wäre das nur unter vier Prämissen (P_48, P_U, P_κ, P_vac)
+  statt einer freien Zahl, und das gedruckte Funktional hat einen Vorzeichenkonflikt (positive Wurzel nur für AdS, das
+  wirkungskonsistente Potential nur für dS).
+- **Überbestimmung [E]:** 2925 Paare aus alten und neuen Zeilen, 7 exakte Gleichheiten, alle tautologisch. Kein
+  zählender Treffer.
+- **Ledger-Ziel:** verlangt ρ⋆c² = 32π⁴e^(2/α); alle Kandidaten liegen mindestens 118 Größenordnungen daneben.
+- **Notiert, nicht geändert:** drei Unstimmigkeiten in tfpt-42 (Vorzeichen des gedruckten W, λ_Σ = χ_seed⁻¹ gegen
+  χ_seed als Masse, doppelt geführter Spektralradius von U_Σ).
+
+**A3 Spin-2-Pol und Vierbein (z148, 29 Prüfungen; Agent, reproduziert): Der Bestand allein hat keinen masselosen
+Spin-2-Pol; die fehlende Prämisse ist genau benannt [E/C].**
+- **Uhrspurwirkung um AdS₄ [E; Pol C unter P_dyn]:**
+  - Die quadratische Wirkung ist erster Ordnung mit 40 Feldern und 10 Eichfunktionen. Der Spinzusammenhang ist
+    Hilfsfeld; nach Elimination bleibt exakt die linearisierte Einstein-Gleichung mit Λ = −3/l².
+  - Zwei Freiheitsgrade, Helizität ±2, Darstellung D(3,2). Das Residuum ist 32πG = l²/(32κ), sein Vorzeichen ist das
+    Paarungsbit.
+- **Ohne P_dyn [E negativ]:** Die Hesse-Form verschwindet auf allen nativen (flachen) Richtungen. Der native Fockraum
+  enthält kein D(3,2). Spin 2 beginnt als massives Kompositum D(4,2), das Primärfeld aus z137.
+- **Induzierter Propagator [E/N]:** Π = (c/32π²)·p⁴·ln(p²/μ²). Ohne Baumterm gibt es keinen masselosen Pol und ein
+  Tachyon. Mit Baumterm gibt es den Pol, aber zusätzlich Tachyonen oder ein komplexes Polpaar; die Summenregel erzwingt
+  das. Nicht unitär, und die Abschneideskala bleibt frei (P_cut).
+- **Konforme Gravitation [E]:**
+  - Der Operator zerfällt in Graviton mal teilweise masseloses Feld mit umgekehrtem Vorzeichen.
+  - Die Neumann-Bedingung entfernt nur einen Teil; lorentzsch bleibt ein Geistturm. Erst mit Regularität im Inneren
+    (P_reg) bleibt die Einstein-Mode.
+  - Kein natives Datum erzwingt die Neumann-Bedingung: Die Randspiegelung ist uneigentlich, ihre Paritätssektoren
+    mischen Einstein- und Geistmoden.
+  - Bedingte Kopplung: G/R_Vak² = α_g·k/16. Mit den Lesarten aus z135 gibt das 0,0099, 0,0012 oder 20,4, also keine
+    feste Zahl.
+- **Neue Prämissennamen:** P_reg (Regularität), P_pos (der Spin-2-Sektor ist eine unitäre so(3,2)-Darstellung positiver
+  Energie; ersetzt P_Neumann + P_reg über E₀ ≥ 3), P_h2 (eine dynamische spurfreie transversale Vierbeinrichtung, die
+  linearisierte Form von P_curv).
+- **Für den Kandidaten:** P_curv ist nicht nativ ersetzbar, aber abschwächbar zu P_h2 oder gleichwertig P_X + P_pos.
+  Gelten beide Wege zugleich, so ist 64κ = 1/(g²k): P_G fiele mit der offenen Eichkopplung von K15 zusammen. Das ist
+  eine Konsistenzbedingung, keine Vorhersage.
+- **Korrektur zu z137:** „Zwei Helizitäten unter P_dyn + P_Neumann“ gilt lorentzsch nur mit P_reg oder P_pos dazu.
+
+**A4 E₈-Lesart des Gatters auf Operatorebene (z149, 40 Prüfungen; Agent, reproduziert): trägt bedingt, spart nichts
+[E/C].**
+- **Modell [E]:** Niveau-1-Modell mit 248 Zuständen und Kozykel; 9600 Kommutatoren stimmen.
+- **Das Gatter [E]:** W = e^(4πiL₀^D5) = (1+i)/2 + (1−i)/2·σ mit σ = e^(2πiH₁). Für alle 128 Klebewurzeln gilt
+  B_γ†WB_γ = e^(iπ(M+sJ_y)²/2).
+  - Gesamtladung N ≡ 0 mod 4: gleich dem z120-Gatter.
+  - N ≡ 2 mod 4: das Gatter in umgekehrter Zeitrichtung.
+  - N ungerade (die 56 Dubletts): eine zusätzliche einkörperige Tauschwurzel.
+  - Die 2π-Drehung allein ist ein ungleicher Teiltausch (Gewichte 0,146 und 0,854); ihr Quadrat ist das Gatter.
+- **Prämissen [E/C]:** Keine entfällt. P_uhr wird zur Wahl P_rel in der ℤ₈ der vollen Drehungen. P_univ ist nur in der
+  Faktorlesart eingebaut. P_ord und P_IF bleiben. Neu nötig: P_E8 (die komponierenden Objekte sind die
+  Verklebungsfaktoren) und P_N4.
+- **Gruppe oder Dynamik [E, Hülle O]:**
+  - W ist kein Automorphismus; W² = σ ist ein innerer der Ordnung 2 mit Fixalgebra so(16).
+  - Halbdrehungen erzeugen eine endliche Gruppe. Vierteldrehungen erzeugen eine unendliche, dicht in einer Gruppe vom
+    Typ Spin(16)/ℤ₂. Mit W verlässt die Gruppe E₈.
+  - Es entsteht weder Kette noch Netz, also keine Dynamik.
+- **Passung [L]:** Die Lesart passt zur Partnerlesart P_TP, nicht zu zwei gleichen Nähten.
+- **Korrektur zu z145 Teil D:** „Niveauabgleich N ≡ 0 mod 4 von selbst“ gilt für die Klassen der Faktoren, nicht für die
+  Multipletts der Klebe-su(2).
+
+**A5 Gemeinsame Schleifenantwort von Gravitation und Eichung (z150, 14 Prüfungen; Agent, reproduziert): keine native
+Zahl für MacDowell–Mansouri [E/C].**
+- **Träger [E]:** Zwei native 64-dimensionale Träger (Twistor ⊗ 16 mit voller so(3,2); der Indexkern mit Lorentz). Der
+  Rückkehrblock cos⁴θ + sin⁴θ·U_p gilt wörtlich. Das Netz ist nur pseudo-unitär.
+- **Ohne Einschub [E]:** 16 mal Killing-Form von so(3,2) plus 8δ_ij. Die Eichgewichte k_i = 16 und 3/8 bleiben. Der
+  erste Mischterm kommt in vierter Ordnung.
+- **Einstein-Dynamik [E]:** nur in zwei von vier Zellen (Hodge mit Skalartyp; Keil mit Chiralität, dort MM 4 : 16 : 96).
+  Die anderen zwei sind topologisch.
+- **Verhältnis [E/C]:** Für die Yang–Mills-artige Gravitation fällt λ heraus: (ℓ²/G) : (1/g²) = 16π, bei getrennten
+  Strömen 4π. Für MM bleibt 32π·ρ mit freiem ρ.
+- **Zahlenwert [N/C]:** Mit α_U aus dem Bestand G/R_Vak² = α_U/16 = 1,2·10⁻³, also planckgroß, 119,7 Größenordnungen über
+  dem Ledger-Ziel, und linear statt exponentiell in 1/α.
+- **Vorzeichen [E negativ]:** Mit nativer so(3,2) ist G < 0 oder die Eichfelder sind Geister.
+- **Neu nötig für 16π:** P_hodge, P_plain, P_gem. K13 und K15 bleiben L.
+
+**A6 4D-Chern–Simons-Lesart der Nahtkette (z151, 21 Prüfungen; Agent, reproduziert): exakte Einordnung, nicht über die
+nativen Marken [E/L].**
+- **Gatter [E]:** R(u) ist die rationale 4D-CS-R-Matrix 1 + ħP/z mit Δz = i·u·ħ. u = 1 ist der Fixpunkt von x → −1/x.
+  Wegen der Skalensymmetrie ist ħ keine neue freie Zahl, der Wert i wird aber nicht ausgezeichnet.
+- **Native Form [E]:** Ω = D³Z/(π₀⁴ − π₁⁴) hat Grad −4 und vier einfache Pole. Reduziert ist sie z·dz/(1 − z⁴), also
+  trigonometrisch, nie rational. Laut Literatur ist das selbstduales Yang–Mills in WZW₄-Form.
+- **Rationale Klasse [E]:** verlangt Doppelpole an den Uhrpolen und eine nicht euklidische Reduktion.
+- **Anomalie [E]:** Die Ein-Schleifen-Bedingung erfüllen nur su(2), su(3), so(8) und die exzeptionellen Algebren.
+  Spin(10), SU(4) und das Standardmodell mit Materie fallen durch.
+- **Folgen:** K13 nichts (die Literatur erreicht nur selbstduale und konforme Gravitation). K15 nicht gelöst (die
+  4D-Theorie wäre selbstduales Yang–Mills der Transfer-su(2), nicht unitär, ohne chirale Materie). Neue Prämissen
+  nötig: P_Ω, P_red, P_rand, P_spek, P_GS.
+- **Literatur [L]:** 15 Quellen mit arXiv-Nummer im Skript; über Auszüge gelesen, Gleichungsnummern nicht einzeln
+  gegengeprüft.
+
+**N1 Neue Strategie: Die Naht als Hälfte einer Gitterkette (z152, 21 Prüfungen, selbst gerechnet): Die Lesart ist starr
+und liefert Ordnung, Partner und Hamiltonoperator [N; Prämisse P_CTM].**
+- **Anlass:** z121, z144 und z145 enden gleich: Eine einzelne Naht ist frei, Ordnung, Transfer und Kettendynamik liegen
+  außerhalb. Frage: Gibt es ein lokales Gittersystem, dessen eine Hälfte genau die Naht ist?
+- **Form [E]:** Das native Modulspektrum 4πx, x ∈ ℤ + ¼, ist π·(4ℤ + 1), also jeder ungerade Wert (2l+1)π genau einmal,
+  mit wechselnder Ladung. Die Zustandssumme ist 2^(1/4)·e^(−π/24). Das ist die Form einer Eckentransfermatrix (Baxter):
+  äquidistant, der Abstand ist der einzige Parameter.
+- **Ohne Ladung [N]:** Die Ising-Kette im Querfeld h hat als Halbkette die Niveaus (2l+1)·πK′/K mit k = 1/h. Die Naht
+  verlangt K′ = K, also k = 1/√2 (τ = i) und h = √2. Die geordnete Phase scheidet aus (Nullmode).
+- **Mit Ladung, eindeutig [N, 20 Stellen]:**
+  - Hüpfketten mit Dimerisierung (t₁, t₂) und Wechselpotential m haben als Halbkette die Leiter Abstand·(ℤ + a).
+  - Der Abstand ist 4π·K′(κ)/K(κ) mit κ′ = E_min/E_max (sieben Punkte geprüft).
+  - Der Versatz ist a = ½ ohne Wechselpotential und a = ¼ (oder ¾) genau ohne Dimerisierung, für jedes m.
+  - Die Nahtleiter (Abstand 4π, Versatz ¼) hat genau eine Lösung: t₂ = t₁ = t und m = 2t. Dort ist
+    E_min/E_max = 1/√2, wieder der selbstduale Modul.
+  - Das Viertel der Naht ist in dieser Lesart keine Einstellung. Es folgt aus dem gleichmäßigen Hüpfen.
+  - In Kontinuumssprache: Kogut–Susskind-Gitterfermion in 1+1 Dimensionen mit Masse × Gitterabstand = 1.
+- **Partner [N]:** Die andere Hälfte trägt die gespiegelte Leiter π·(4ℤ + 3). Das ist der Partner mit Ladung −1 aus dem
+  Paarmodell (P_TP).
+- **Boost [N, 18 Stellen]:**
+  - Der Verschränkungsoperator ist exakt tridiagonal: K = c·Σ (Abstand vom Schnitt)·(lokale Energie).
+  - c ist die Lemniskatenkonstante Γ(¼)²/(2√(2π)) = 2,62206; allgemein c = 4K(κ′)/E_max, für m → 0 geht c gegen π
+    (Bisognano–Wichmann).
+  - c ist zugleich die reelle Periode 2∫₀¹dz/√(1 − z⁴) der elliptischen Kurve w² = 1 − z⁴ der nativen Marken
+    (j = 1728, τ = i) [E]. Auf ihr ist dz/w polfrei; das wäre die elliptische Klasse der 4D-Chern–Simons-Lesart, die
+    z151 auf der Sphäre nicht fand. Nicht gerechnet.
+  - Folge: Der elliptische Nahtfluss (z136: zu keinem Doppelkegel-Erzeuger konjugiert) ist der Boost eines Gitters.
+    Das Gitter macht ihn periodisch. Elliptisch und hyperbolisch sind derselbe Erzeuger bei verschiedenem Modul.
+- **Dynamik aus zwei Nähten [N]:** K_(j+2) − K_j = 2c·H. Zwei verschachtelte Nähte bestimmen den Hamiltonoperator mit
+  Nächste-Nachbar-Transfer. Das ist die Gitterform der halbseitigen modularen Inklusion. Die Aussage aus z145 (Transfer
+  und Kettendynamik liegen außerhalb) gilt für eine Naht, nicht für zwei verschachtelte.
+- **Grenzen:**
+  - P_CTM ist eine Prämisse: Die Naht ist die Hälfte einer ladungserhaltenden Nächste-Nachbar-Kette mit Zweiplatzzelle
+    in ihrem Grundzustand. Die Eindeutigkeit ist numerisch und gilt in dieser Familie.
+  - Die Kette ist frei. Das wechselwirkende Gatter (P_uhr) folgt nicht.
+  - Sie ist 1+1-dimensional, die Korrelationslänge ist 0,567 Plätze. Am nativen Punkt gibt es keinen Kontinuumslimes.
+    K12, K13 und P_G sind nicht berührt.
+- **Für den Kandidaten:** P_ord und P_TP wären durch P_CTM ersetzt; die Zahl der Prämissen sinkt dadurch nicht sicher.
+  Der Gewinn ist ein konkretes natives Gitter für zwei Folgerechnungen: die geeichte Uhr (Gitter-Schwinger-Modell, die
+  elektrische Energie ist quadratisch in den Ladungen wie das z145-Gatter) und vier Dimensionen (gestaffelte =
+  Kähler–Dirac-Fermionen haben 2⁴ = 16 Komponenten je Zelle und eine ℤ₄-Anomalie, die sich nach Butt/Catterall/Pradhan/
+  Toga, arXiv:2101.01026, bei 16 Weyl-Fermionen aufhebt; nicht gerechnet).
+
+**Zwanzigste externe Analyse („Das Austauschgatter steckt in E₈; dieselbe Struktur erzeugt positive Krümmung“; z153, 30
+Prüfungen, selbst gerechnet): Alle gerechneten Aussagen stimmen, keine ersetzt eine Prämisse [E].**
+- **Zentralisator [E, klassisch]:**
+  - Genau 20 E₈-Wurzeln sind gegenüber allen Standardmodell-Generatoren neutral: 12 Familienwurzeln (A₃) und 8
+    Klebewurzeln. Sie bilden A₄.
+  - Das ist die zweite SU(5) der bekannten Zerlegung E₈ ⊃ SU(5) × SU(5).
+  - Die acht Klebewurzeln sind die Richtung des rechtshändigen Neutrinos (SU(5)-Singulett der 16) mal der 4 von A₃. Sie
+    sind standardmodellneutral, tragen aber B − L (X = ±5/2).
+- **Gatterspektrum [E]:**
+  - Als Gruppenelement von E₈ ist die relative Drehung eine Involution: +1 auf 112 Wurzeln, −1 auf den 128
+    Klebewurzeln.
+  - Als Twist (z145) wirkt sie mit 1 auf 112 Wurzeln und mit −i auf den 128 Klebewurzeln. Der Twist ist keine
+    Automorphie; sein Quadrat ist die innere Involution, die D₈ in E₈ auszeichnet.
+  - Der Eigenwert −i ist also die Twistphase der Klebeklasse aus z145, jetzt auf der Ebene der 248 Ströme.
+- **Der vierdimensionale Code [E]:**
+  - Räume mit diag(1,1,1,−i) existieren im A₄-Sektor, auch mit Twist² = Familientransposition (drei feste Ströme plus
+    E₁₅ − E₂₅).
+  - Der Raum ist aus einer stetigen Familie gewählt (Gr(3,10) × P¹). Die Hebung der Permutationen ist gewählt: Unter
+    der Tits-Hebung ist der S₄-invariante Klebestrom nicht invariant.
+  - Die Zerlegung in zwei Qubits kommt nicht aus E₈. (I + iP)/(1 + i) und die gesteuerte Uhr haben dasselbe Spektrum,
+    aber Operator-Schmidt-Rang 4 gegen 2.
+  - Kein Alleinstellungsmerkmal: Die Tits-Hebung einer Familientransposition ist eine echte Automorphie der Ordnung 4
+    mit Eigenwerten 1, −1, i, −i (11, 2, 6, 6 auf gl(5)).
+- **Krümmung [E; Vorzeichen und Radius C]:**
+  - Alle 64 Komponentenwirkungen und R_μν = (3/r²)g_μν stimmen. Es ist die runde S⁴ der Hyperebenen eines ℝ⁵, mit
+    Levi-Civita-Verbindung. Das gilt für jeden fünfdimensionalen Raum, E₈ geht nicht ein.
+  - Das Vorzeichen ist die Wahl der kompakten reellen Form: Mit Signatur (4,1) gibt dieselbe Rechnung −(3/r²)g. Nativ
+    trägt H6 so(3,2) (z89).
+  - Radius frei, volle Cartan-Krümmung null (wie P_curv). Das sagt die Analyse selbst.
+- **Isotropie [E]:**
+  - 27 Punkte mit Gewichten 40, 128, 60, 12 und die Reihe 1 − k²/8 + k⁴/160 − k⁶/5760 stimmen.
+  - Der Grund ist allgemein: Σ(k·α)ⁿ = c_n|k|ⁿ für n = 2, 4, 6 gilt in allen acht Richtungen (c = 60, 36, 30). Die
+    Weylgruppe von E₈ hat zwischen Grad 2 und 8 keine Invariante, die Wurzeln sind ein sphärisches 7-Design. Die Reihe
+    ist das Sphärenmittel ₀F₁(; 4; −k²/2).
+  - Jede Projektion in jede Dimension ist also gleich isotrop (geprüft: D₅-Raum und ein gemischter 3-Raum). Die
+    Eigenschaft wählt weder A₃ noch drei Raumdimensionen.
+- **Neu und brauchbar:** der Twist als nicht multiplikative Wurzel einer inneren Automorphie, die B − L-Ladung der
+  neutralen Klebeströme, das 7-Design als Eigenschaft jedes E₈-Transfers.
+- **Für den Kandidaten:** K12, K13, K15, K16 und die neun Prämissen sind unverändert. Die Lücke zwischen Kleber und
+  Gatter ist nicht enger als nach z145: Phase ja, Prozess nein.
+
+**Was die Welle bedeutet.**
+- **G [E/C]:** Sieben Wege sind jetzt gerechnet (Uhrspur, Verschränkungsgleichgewicht, induzierte Gravitation,
+  Doppelkopie, Relativentropie-Wirkung, ρ⋆, gemeinsame Schleifenantwort). Jeder gibt entweder kein G oder eine
+  planckgroße Zahl, die von einer Wahl abhängt. Der Faktor e^(−2/α) des Ledgers ist im Bestand eine Leiterformel
+  (x¹⁰ über die zehn Kanten des Fünfer-Trägers, Paper 1), keine Herleitung aus Dynamik; H6 hat dafür kein Objekt.
+  Zwei Rechnungen (z147, z150) nennen unabhängig dasselbe als einzigen verbleibenden Hebel: ein nichtstörungsartiges
+  Gewicht e^(−S) mit S = 2/α.
+- **Graviton [E/C]:** Die Lücke ist jetzt eine einzige benannte Annahme, P_h2 oder gleichwertig P_X + P_pos. Der Test
+  dafür ist konkret: Trägt der Dubleton-Sektor aus z75 unter der nativen so(3,2) ein D(3,2) mit positiver Norm?
+- **Gatter [E]:** Die E₈-Lesart trägt auf Operatorebene nur bedingt und spart keine Prämisse (z149). Die zwanzigste
+  Analyse fügt dem nichts hinzu, was eine Prämisse ersetzt (z153). Die Gatterlinie ist damit auf vier Wegen
+  ausgeschöpft: Netzstatistik, E₈-Twist, 4D-Chern–Simons auf der Sphäre, E₈-Code.
+- **Neu und tragfähig [N]:** die Gitterlesart (z152). Sie ist die erste Stelle seit drei Runden, an der Ordnung, Partner
+  und ein Hamiltonoperator aus den nativen Daten folgen, statt gesetzt zu werden, wenn auch unter einer Prämisse
+  (P_CTM) und nur in 1+1 Dimensionen.
+- **Bewertung der Strategien:**
+  - Weiterführen: (a) Gitterlesart in vier Dimensionen (Kähler–Dirac-Zelle mit 16 Komponenten gegen die 16 der Naht);
+    (b) geeichte Uhr auf der Kette (ob der Viertelwinkel des Gatters aus der Periode folgt); (c) D(3,2) im
+    Dubleton-Sektor; (d) elliptische 4D-Chern–Simons-Klasse auf der Markenkurve w² = 1 − z⁴.
+  - Zurückstellen: weitere Zeilen für G aus Normierungen; weitere Gatter aus E₈-Unterräumen; die rationale
+    4D-Chern–Simons-Klasse (braucht fünf neue Prämissen).
+- **Prämissen des Kandidaten:** unverändert A*, I_step, P_lift, P_IF, P_univ, P_uhr, P_ord, P_curv, P_G. OriginLab ist
+  nicht geändert, weil keine Prämisse entfällt.
+
 **Neunzehnte externe Analyse (z144, 67 Prüfungen, selbst gerechnet): Die gerechneten Aussagen stimmen. Die Zopfrelation
 legt das wechselwirkende Gatter nicht fest; die Phase folgt aber aus der Uhr.**
 - **Gitter [E]:**

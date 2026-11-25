@@ -1,0 +1,382 @@
+{
+ "checks": {
+  "[E] Hintergrund: e^a = (l/z) dx^a mit omega^(a3) = -dx^a/z ist torsionsfrei, und die so(3,2)-Krümmung F^ab = R^ab + e^a ^ e^b/l^2 verschwindet identisch (alle 36 Komponenten). AdS4 ist der flache so(3,2)-Zusammenhang; die MacDowell-Mansouri-Dichte eps F ^ F und ihre erste Variation sind dort null": true,
+  "[E] Quadratische Wirkung: Weil F im Hintergrund verschwindet, ist L2 = b eps_abcd f^ab ^ f^cd mit f = D tau + (h ^ e - e ^ h)/l^2 exakt (keine zweite Variation von F nötig). Im (t, z)-Sektor hat L2/b 142 Monome in den 40 Feldern (16 h^a_mu, 24 tau^ab_mu). Die 40 Feldgleichungen sind von erster Ordnung (max. Ordnung 1); der Anteil eps d tau ^ d tau ist eine totale Ableitung und trägt nichts bei. In den tau-Gleichungen stehen keine Ableitungen von tau (True), in den h-Gleichungen keine von h (True)": true,
+  "[E] Eichfreiheit: Unter den zehn linearisierten so(3,2)-Transformationen delta h^a = D xi^a - lambda^a_b e^b, delta tau^ab = D lambda^ab - (xi^a e^b - xi^b e^a)/l^2 mit beliebigen Funktionen xi^a(t, z) (4) und lambda^ab(t, z) (6) ist f identisch null (True); alle 40 Feldgleichungen sind auf reiner Eichung erfüllt (True). Die vier xi sind auf der Torsionsfläche die Diffeomorphismen, die sechs lambda die lokale Lorentzgruppe": true,
+  "[E/C] Was der Bestand ohne dynamisches Vierbein liefert: Nach z115 und z128 liegt jede native Familie in einer Stabilisatorbahn und ist Maurer-Cartan-flach. Ihre Tangentialrichtungen bei AdS4 sind also reine Eichung, und auf reiner Eichung ist f = 0. Die Hesse-Form der Uhrspurwirkung verschwindet damit auf allen nativen Richtungen identisch: Die Wirkung ist auf dem nativen Konfigurationsraum konstant (Euler-Zahl) und definiert dort keinen Propagator. Ein Pol kann erst entstehen, wenn Richtungen mit f != 0 zugelassen und mit der Wirkung gewichtet werden (P_dyn)": true,
+  "[E] Der Spinzusammenhang ist ein Hilfsfeld: Die 24 tau-Gleichungen sind algebraisch in tau, ihre 24 x 24-Koeffizientenmatrix hat Rang 24 (Determinante 2^80/z^48 in Einheiten b^24). Sie sind die linearisierte Torsionsbedingung und legen tau eindeutig durch h und dessen erste Ableitungen fest. Eingesetzt bleiben 16 Gleichungen zweiter Ordnung für h (max. Ordnung 2)": true,
+  "[E] Nach Elimination von tau sind die 16 h-Gleichungen exakt die linearisierten Einstein-Gleichungen mit Lambda = -3/l^2: delta S/delta h^a_mu = (-8/l**2) b sqrt(-g) delta(G^(mu nu) + Lambda g^(mu nu)) e_(a nu) für delta g = e_a h^a + h^a e_a, Koeffizient für Koeffizient (119 Vergleiche; Hintergrund R_mn = Lambda g_mn: True). Mit delta S_EH/delta h = -(1/(8 pi G)) sqrt(-g) delta(G + Lambda g) e folgt 1/(16 pi G) = 4 b/l^2, also b = l^2/(64 pi G) (z96) und mit b = 16 kappa (z127: 64 kappa/l^2 = 1/(16 pi G)) G/R_Vak^2 = 1/(4096 pi kappa). Der antisymmetrische Teil von h fällt heraus (Lorentz-Eichung)": true,
+  "[E] Freiheitsgrade durch Jetzählung (formale Potenzreihen im Punkt z = l = 1, exakte Ränge über Q): Die Zahl der m-Jets von Lösungen modulo m-Jets reiner Eichung ist [9, 13, 17, 21, 25] für m = 0..4 (stabil gegen die Fortsetzungsordnung: N = 5 gibt [9, 13, 17, 21]). Der Zuwachs je Grad ist [4, 4, 4, 4]: vier freie Funktionen einer Variablen, also zwei Wellengleichungen zweiter Ordnung, zwei propagierende Freiheitsgrade. Von 40 Feldkomponenten bleiben nach 24 Hilfsfeldern, 10 Eichfunktionen und 4 Zwangsbedingungen genau 2": true,
+  "[E] Helizitäten: Unter der Drehung in der (x, y)-Ebene zerfallen die 40 Komponenten in die Ladungen 0, +-1, +-2 mit den Dimensionen 14, 20, 6 (Ladung 3: 0). Der Ladung-2-Sektor enthält 2 Vierbein- und 4 Zusammenhangskomponenten und keinen Eichparameter (die zehn Parameter tragen Ladung 0 und +-1). Seine Jetzählung ist [6, 10, 14, 18, 22] = 6 + 4 m, Zuwachs [4, 4, 4, 4]: genau zwei Wellengleichungen (je 2 m + 1 Jets des Felds und 2 weitere des Hilfsfelds). Der Zuwachs der Sektoren 0 und +-1 ist damit null; der konstante Rest 9 - 6 = 3 sind homogene Moden der (t, z)-Reduktion ohne Zuwachs. Die zwei Freiheitsgrade sind ein Dublett der Ladung 2: Helizität +2 und -2": true,
+  "[E] Helizität +-2 explizit: Für delta g_xy = (l^2/z^2) phi(t, z) (ebenso für delta g_xx - delta g_yy) ist delta S/delta phi = 4 b z^-2 (-phi_tt + phi_zz - (2/z) phi_z) (True; alle anderen Gleichungen sind identisch erfüllt: True). Das ist die Euler-Lagrange-Gleichung von L = 2 b z^-2 (phi_t^2 - phi_z^2), die masselose Wellengleichung auf AdS4. Exponenten am Rand: Delta*(Delta - 3) = 0, also Delta = 0 und Delta = 3 = s + 1, die Unitaritätsschranke des Spin 2 (masselose Darstellung D(3,2)); Moden (1 -+ i omega z) e^(+-i omega z) (True)": true,
+  "[C, P_dyn] Residuum: Der kinetische Koeffizient ist 2 b z^-2 mit b = l^2/(64 pi G) = 16 kappa. Für omega l >> 1 ist das lokal der Propagator 32 pi G/p^2 mit Residuum 32 pi G = l**2/(32*kappa) = R_Vak^2/(128 kappa). Positiv ist es genau für b > 0, also für kappa mal Orientierung > 0: Das Vorzeichen ist das Paarungsbit aus z118/z127 (tau-Parität des Schnitts), keine neue Größe. Mit kappa = 1 ist G/R_Vak^2 = 7.77124e-05, mit 2 c_3 0.000976562 (z127 reproduziert)": true,
+  "[E, neu] so(3,2)-Inhalt des nativen Fockraums (so(3,2) = Der(I_AdS) in su(2,2), E gemeinsam, SO(3) diagonal in SO(4)): Die native Leiter (Stufen (j, j), E = 2j + 1) zerfällt in [(1, 0), (2, 0)] = D(1,0) + D(2,0), den konform gekoppelten Skalar auf AdS4 mit beiden Randverhalten (so schon z104 über den Casimir; hier über Charaktere). Neu ist der Mehrleiterinhalt: In zwei Leitern sind die tiefsten Gewichte mit Spin 2 [(4, 2, 1), (5, 2, 2)] (E0, s, Vielfachheit): der erste liegt bei E0 = 4, das ist z137s Spin-2-Primär (Delta = 4), auf AdS4 ein massives Kompositum (m^2 l^2 = E0 (E0 - 3) = 4). Die masselose Darstellung D(3,2) hat die Vielfachheit [0, 0, 0] in 1, 2, 3 Leitern (Charaktere bis E = 7). Allgemein: n Quanten haben Spin <= E - n; Spin 2 bei E = 3 gibt es nur für n = 1, dort als Nachkomme von D(1,0). Der native Fockraum enthält kein D(3,2)": true,
+  "[E] Unitaritätsschranke der nativen so(3,2) (5 x 5-Realisierung: [E, L^+-] = +-L^+-, [L^-_i, L^+_j] = 2 delta_ij E - 2 i eps_ijk J_k: True): Über einem tiefsten Gewicht (E0, Spin 2) hat die Gram-Form der ersten Stufe die Eigenwerte 2 (E0 - 3), 2 (E0 - 1), 2 (E0 + 2) mit Vielfachheiten [3, 5, 7] (Minimalpolynom: True). Positiv ist sie genau für E0 >= 3 = s + 1; bei E0 = 3 entsteht der Nullvektor der Eichung (masselos), bei E0 = 2 und E0 = 1 gibt es Zustände negativer Norm. Ein unitärer Spin-2-Sektor positiver Energie beginnt also frühestens bei D(3,2)": true,
+  "[E] Koeffizient des Logarithmus: <T_xy(x) T_xy(0)> = C_T I_(xy,xy)/x^8 mit I_(xy,xy) = (1/2)(1 - 2 (x_1^2 + x_2^2)/x^2 + 8 x_1^2 x_2^2/x^4) hat für Impuls senkrecht zur (1,2)-Ebene die Fourier-Transformierte -(pi**2/640) C_T p^4 ln p^2 (analytische Fortsetzung im Exponenten, Polterm 1/epsilon). Mit c = pi^4 C_T/40 ist das -(c/(16 pi^2)) p^4 ln p^2, und die quadratische effektive Wirkung des Tensorkanals ist (1/2) h Pi h mit Pi(p^2) = (c/(32 pi^2)) p^4 ln(p^2/mu^2), gleich z137s Gamma = -(L/(16 pi^2)) c Int W^2. Nativ c = 1/120 je Leiter": true,
+  "[E] (a) Ohne Baumterm ist der resummierte Propagator D = (32 pi^2/c)/(p^4 ln(p^2/Lambda_W^2)). Bei p^2 = 0 gibt es keinen Pol: p^2 D geht gegen -oo (kein endliches Residuum), und D ist für p < Lambda_W negativ. Die einzige Polstelle liegt bei euklidischem p^2 = Lambda_W^2 (Residuum 1 in Einheiten 32 pi^2/(c Lambda_W^2)), also bei raumartigem Impuls: ein Tachyon. Die Spektraldichte auf dem zeitartigen Schnitt, (32 pi^2/c)/(s^2 (ln^2(s/Lambda_W^2) + pi^2)), ist positiv, aber bei s -> 0 nicht integrierbar; p^2 D ist nicht monoton wachsend, wie es ein positives Källén-Lehmann-Maß verlangt. Statisch gibt 1/k^4 das Potential -r/(8 pi) (Laplace davon: -1/(4*pi*r) = -1/(4 pi r)), kein 1/r-Gesetz. Der Bestand ohne Baumterm hat also keinen masselosen Spin-2-Pol (z137 bestätigt), sondern eine Antwort ohne Teilchendeutung": true,
+  "[E/N] (b) Mit Baumterm (P_dyn) ist D = 1/(p^2 g), g = 1/(32 pi G) + (c/(32 pi^2)) p^2 ln(p^2/Lambda_W^2). Bei p^2 = 0 liegt der masselose Pol mit Residuum 32 pi G > 0. Die weiteren Pole lösen x ln x = -a mit a = pi/(c G Lambda_W^2), exakt x = exp(W_k(-a)), auf dem Hauptblatt genau k = 0 und k = -1 (True; andere Zweige liegen daneben: True). Für a < 1/e = 0.367879 sind es zwei Tachyonen (a = 0,2: x = 0.771691 mit Residuum 1.7492 und x = 0.0786584 mit -8.24119, eines davon ein Geist), für a > 1/e ein konjugiert komplexes Paar (a = 5: x = -0.915439 +- 2.14004 i, Residuum -0.149485 -+ 0.0540794 i). Summenregel: Weil p^2 D im Unendlichen verschwindet, ist masseloses Residuum + Polresiduen + Integral der (positiven) Spektraldichte = 0, numerisch bestätigt für a = 0,2, 5, 1000. Das positive Graviton und das positive Kontinuum erzwingen also Pole mit negativem Realteil des Residuums: Das resummierte Spektrum ist für kein G und kein Lambda_W unitär; als Niederenergietheorie gilt es bis p^2 von der Ordnung des Polbetrags": true,
+  "[C] Native Zahlen für (b): Mit G = l^2/(1024 pi kappa) ist a = 1024 pi^2 kappa/(c (Lambda_W l)^2); für kappa = 1, c = 1/120 liegt die Schwelle a = 1/e bei Lambda_W l = 1815.67. Darunter (etwa Lambda_W l = 1: |p| l = 319.366) ist es das komplexe Paar, darüber (Lambda_W l = 10^4: |p| l = ['9938.8', '440.721']) zwei Tachyonen. Die Pole liegen bei p l >> 1, die flache Analyse ist dort selbstkonsistent. Welche Art vorliegt, entscheidet allein die freie Zahl Lambda_W l": true,
+  "[E/C] Die Skala des Logarithmus: mu ist eine Kontaktterm-Freiheit, mu -> mu e^sigma ist dasselbe wie alpha_0 -> alpha_0 + c sigma/(16 pi^2) (True). Invariant ist allein Lambda_W = mu_0 exp(-16 pi^2 alpha_0/c), die Skala, bei der der laufende Weyl-Koeffizient null wird; in (a) ist sie die Tachyonmasse. Nativ ist sie nicht: Die konforme Leiter trägt c, aber keinen Kontaktterm, und die einzige native Länge ist l = R_Vak/2 (z112), sodass Lambda_W l eine freie reine Zahl bleibt (P_cut). Setzt man den nativen Baumwert aus Teil C, alpha_0 = -1/(4 g^2 k) bei mu_0, so ist Lambda_W/mu_0 = exp(4 pi^2/(c g^2 k)) (log10: {'c = 1/120, g^2 k = 2': '1028.7', 'c = 1/120, g^2 k = 1/4': '8229.7', 'c = 6/5, g^2 k = 2': '7.1439', 'c = 6/5, g^2 k = 1/4': '57.151', 'c = 12/5, g^2 k = 2': '3.5719', 'c = 12/5, g^2 k = 1/4': '28.575'}): eine dimensionale Transmutation mit freiem mu_0 und freiem g, keine native Zahl": true,
+  "[E] Linearisierter Weyl-Operator auf AdS4 im Helizität-2-Sektor (delta g_xy = (l^2/z^2) phi; linearisierter Weyl-Tensor spurfrei: True): sqrt(-g) W^2 = (Box phi)^2 mit Box = d_z^2 - d_t^2 bis auf totale Ableitungen, Euler-Lagrange-Ausdruck 2 Box^2 phi ohne jede z-Abhängigkeit und ohne l (True): die Weyl-Invarianz, explizit. Mit dem masselosen AdS-Operator D_0 = z^2 (d_z^2 - (2/z) d_z - d_t^2) aus A5 gilt z^4 Box^2 = D_0 (D_0 + 2) (True): masseloses Graviton mal teilweise masseloses Spin-2-Feld mit m^2 l^2 = -2, Randexponenten (Delta - 2)*(Delta - 1) = 0, also Delta = 1, 2. Lorentzsch ist delta S_W/delta phi = -2 alpha_W z^-4 D_0 (D_0 + 2) phi": true,
+  "[E] Aus dem Doppelpol wird ein einfacher Pol, sobald l endlich ist: 1/(D_0 (D_0 + 2)) = -1/(2*(X + 2)) + 1/(2*X). Nahe der masselosen Schale ist der Weyl-Kern -4 alpha_W z^-4 D_0, der Einstein-Kern aus A5 ist 4 b z^-4 D_0. Der masselose Anteil der konformen Gravitation ist also Einstein-Gravitation mit b = -alpha_W, das heißt l^2/(64 pi G) = -alpha_W (z137: alpha_W = 3/(64 pi G Lambda)). Der teilweise masselose Anteil trägt das entgegengesetzte Vorzeichen (Geist relativ zum Graviton). Im flachen Grenzfall l -> unendlich verschmelzen beide Pole zu 1/p^4, und G alpha_W/l^2 = -1/(64 pi) lässt bei festem alpha_W kein endliches G übrig": true,
+  "[E, neu] Moden bei zeitartigem Randimpuls (phi ~ e^(-i omega t)): Der Lösungsraum von Box^2 phi = 0 ist vierdimensional (Wronski-Determinante 4*omega**4); alle vier Lösungen sind bei z = 0 analytisch, der Rand ist für die konforme Gravitation durchlässig. Einstein (D_0): cos + omega z sin (Delta = 0, gerade) und sin - omega z cos (Delta = 3, ungerade). Teilweise masselos (D_0 + 2): z cos (Delta = 1, ungerade) und z sin (Delta = 2, gerade). Die Neumann-Bedingung phi'(0) = 0 erfüllen ['Einstein gerade', 'Einstein ungerade', 'PM gerade']: Sie entfernt nur die Quelle des teilweise masselosen Felds (Delta = 1), nicht dessen Zustand mit Delta = 2. Lorentzsch bleibt mit Dirichlet + Neumann neben dem Graviton ein Geistturm mit Delta = 2. Die Neumann-Bedingung allein gibt also keine Einstein-Gravitation; es braucht eine zweite Bedingung": true,
+  "[E/C, P_Neumann + P_reg] Maldacenas Aussage in ihrem Geltungsbereich: Euklidisch und im Inneren regulär (P_reg) bleibt (a + b z) e^(-k z) (True); die Neumann-Bedingung gibt b = a*k, also genau die Einstein-Mode (1 + k z) e^(-k z) (True). Auf ihr ist die Weyl-Wirkung alpha_W Int (phi'' - k^2 phi)^2 dz = alpha_W (2*k**3), endlich ohne Gegenterm, und die Einstein-Wirkung 2 b Int z^-2 (phi'^2 + k^2 phi^2) dz hat nach Abzug des lokalen Terms k^2/epsilon den Wert 2 b (-k**3). Gleichheit verlangt alpha_W = -b = -l^2/(64 pi G), dieselbe Relation wie aus dem Kern. Für G > 0 braucht AdS also alpha_W < 0, dS alpha_W > 0": true,
+  "[E] Yang-Mills als Maßstab (exakt rational, (2,2)-Kinematik, su(2) mit X = sigma/2, 3 Punkte x 6 Helizitätslagen, zufällige Farben und Referenzspinoren): Die Baumamplitude aus L = -(1/4) F^a F^a (Kontaktterm + drei Austauschkanäle, als effektive Wirkung M = L_eff) ist eichinvariant (e_1 -> k_1 gibt 0) und gleich M = (1) g^2 Summe_sigma Tr(X_1 X_s2 X_s3 X_s4) <ij>^4/(<1 s2><s2 s3><s3 s4><s4 1>) in allen 18 Fällen. Das legt das Vorzeichen des Einspuranteils fest: Unitäres Yang-Mills hat +g^2 vor Parke-Taylor": true,
+  "[E] Weyl-Austausch im selben Maßstab: Mit S_L = -alpha_W Int W^2 (W^2 -> (1/2)(Box h)^2) und der Kopplung (1/2) h T ist M_W = T_ab.T_cd/(4 alpha_W s^2) (Maxwell-Spannungstensoren spurfrei: 0, erhalten: 0). Auf den 36 Fällen des Gravitonkanals ist <ij>^4/(<ab>^2 <cd>^2) = (4) T_ab.T_cd/s_ab^2 exakt (z124: 4), im Skalarkanal ist T.T = 0. Gegenprobe des Vorzeichens: Mit Einstein-Term ist der Kern s/(32 pi G) - alpha_W s^2, die massive Nullstelle liegt für alpha_W > 0 bei s = 1/(32 pi G alpha_W) > 0 (Stelles nicht tachyonischer Geist)": true,
+  "[E unter T, P_N4; neu] Native Stärke: Die Stromalgebra gibt je Schleife -Tr, also Einspur -k Summe Tr/PT und Doppelspur +k^2 Summe Tr Tr/(<ab>^2 <cd>^2) (z110, z124; das relative Vorzeichen ist i^2 aus zwei Kommutatoren und k > 0). Setzt man den Einspuranteil gleich unitärem Yang-Mills (N_0 (-k) = g^2), so ist der Doppelspuranteil -g^2 k Tr Tr 4 T.T/s^2 mit Tr(X_a X_b) = delta_ab/2, also 1/(4 alpha_W) = -g^2 k: alpha_W = (-1/4)/(g^2 k). Der native Weyl-Koeffizient ist negativ: Die konforme Gravitation des Doppelspursektors hat relativ zu Yang-Mills das Vorzeichen, bei dem der statische Austausch abstößt und die euklidische Weyl-Wirkung nach unten unbeschränkt ist. Genau dieses Vorzeichen verlangt AdS für G > 0": true,
+  "[C, P_Neumann + P_reg oder P_pos, dazu T, P_N4, P_X] Die Zahl: Aus alpha_W = -1/(4 g^2 k) und l^2/(64 pi G) = -alpha_W folgt G/l^2 = g2*k/(16*pi) und G/R_Vak^2 = g2*k/(64*pi): G > 0 auf dem nativen AdS, und die Gravitationskopplung in Einheiten des Vakuumradius ist die Eichkopplung mal Niveau, G/R_Vak^2 = alpha_g k/16 mit alpha_g = g^2/(4 pi). Mit k = 1 und den drei Lesarten von g aus z135: {'Netzspur je Periode, 1/g^2 = 1/2': '0.00994718', 'Niveau mit P_norm, 1/g^2 = 4': '0.0012434', 'W je Markenzustand, 1/g^2 = 1/4096': '20.3718'}; die Uhrspur gibt 7.77124e-05 (kappa = 1) und 0.000976562 (2 c_3). Keine zwei Werte stimmen überein. Beide Wege fallen genau dann zusammen, wenn kappa = 1/(64*g2*k), also 64 kappa = 1/(g^2 k): Das Uhrspurgewicht je Index wäre die inverse Eichkopplung. Das ist eine Konsistenzbedingung zwischen zwei freien Zahlen, keine Vorhersage. Aus '1/s^2' wird '1/s' mit festem Verhältnis zur Eichkopplung, aber nicht mit fester Zahl": true,
+  "[E] Geometrie der Randspiegelung: I_AdS = I_pi - I_omega gibt den Faktor Omega = (1 - x^2)/(2 l) (z98, z112); eta/Omega^2 ist AdS4 mit R_mn = -(3/l^2) g_mn (True), Rand x^2 = 1. Die Inversion x -> x/x^2 lässt den Rand punktweise fest, ist eine Isometrie (True) und kehrt Omega um (Omega -> -Omega/x^2: True): Sie ist die Spiegelung am konformen Rand, im Poincaré-Bild z -> -z, auf dem AdS-Hyperboloid die Antipodenabbildung. Auf R^(4,2) ist sie rho = diag(1,1,1,1,1,-1) mit Determinante -1, die Punktspiegelung tau (z84/z123) und die native Halbdrehung iota = e^(pi E) (z127) haben Determinante 1 und 1; es gilt rho = iota tau T projektiv (True) mit der Zeitspiegelung T (Wirkungen auf x nachgerechnet: True). Die Randspiegelung ist uneigentlich: Sie liegt nicht in der von tau, iota und so(3,2) erzeugten Gruppe und ist nativ nur antiunitär da, als iota J mit J = theta tau (theta = radiale Inversion, z84)": true,
+  "[E, negativ] Erzwingt ein natives Datum P_Neumann? Paritäten der vier Moden unter der Randspiegelung: {'Einstein gerade': 'gerade', 'Einstein ungerade': 'ungerade', 'PM ungerade': 'ungerade', 'PM gerade': 'gerade'}. Jeder Paritätssektor enthält eine Einstein- und eine teilweise masselose Mode; die Neumann-Bedingung ist keine Eigenbedingung von rho. tau und iota sind Isometrien von AdS4 und bilden jeden der beiden Lösungsräume (Kern von D_0, Kern von D_0 + 2) auf sich ab; sie stellen keine Randbedingung. J ist antiunitär und tauscht Algebra und Kommutante; aus J Omega = Omega folgt nur <d_n h> = 0 auf der Spiegelfläche, nicht d_n h = 0 als Zwangsbedingung (Schwankungen spiegelungsungerader Größen verschwinden in einem spiegelungsinvarianten Zustand nicht). Die Kappe gehört zum dS-Büschel I_pi + I_omega und wird von keiner Naht getragen (z128, z136). Der konforme Rand ist für das 4D-konforme Feld eine gewöhnliche Fläche (alle vier Moden analytisch in z). P_Neumann ist durch kein natives Datum erzwungen": true,
+  "[C, neu] Schwächere, nativ formulierbare Fassung: P_pos = 'der ausgetauschte Spin-2-Sektor ist eine unitäre Darstellung positiver Energie der nativen so(3,2)'. Nach A6 sind die teilweise masselosen Moden (tiefste Gewichte E0 = 1, 2 bei Spin 2) dann ausgeschlossen, es bleibt D(3,2); das ersetzt P_Neumann und P_reg zusammen und braucht nur Daten, die nativ sind (E >= 0, Hilbertraum, so(3,2) = Der(I_AdS)). Die Norm der Einstein-Moden in der Weyl-Form ist die Einstein-Norm mit b = -alpha_W (C1), positiv genau für alpha_W < 0: Das native Vorzeichen alpha_W = -1/(4 g^2 k) und das native AdS-Vorzeichen (z89, z104, z118) passen zusammen; auf dS wäre dieselbe Kopplung ein Geist. Erzwungen ist P_pos nicht: Nach A6 enthält der native Fockraum D(3,2) nicht, der Sektor muss also hinzutreten (P_X aus z123), und im flachen Grenzfall wird die Norm null": true,
+  "[E] OriginLab (nur gelesen): Die Klausel 'graviton' verlangt den Status 'supported' der Gravitationsachse (True). Nach z148 bleibt der Wert bedingt: Beide Wege zum Pol brauchen eine Prämisse, die den Sektor D(3,2) erst hinzufügt (P_dyn oder P_X), und die Kopplung bleibt frei. Die Klausel bleibt leer": true
+ },
+ "befunde": {
+  "Spin-2-Pol der Uhrspurwirkung": "bedingt (P_dyn)",
+  "Masseloser Spin-2-Zustand im Bestand ohne P_dyn": "nein",
+  "Induzierter Propagator": "kein masseloser Pol ohne Baumterm; mit Baumterm nicht unitär",
+  "Einstein-Pol aus der konformen Gravitation": "bedingt (P_Neumann + P_reg oder P_pos; T, P_N4, P_X)"
+ },
+ "zahlen": {
+  "A_einstein_abgleich": {
+   "Proportionalität E_h/(sqrt(-g) delta(G + Lambda g) e), Einheiten b": "-8/l**2",
+   "verglichene Koeffizienten": 119
+  },
+  "A_jetzaehlung": {
+   "voll: (Grad m, Lösungsjets, Eichjets, Differenz), N = 6": [
+    [
+     0,
+     36,
+     27,
+     9
+    ],
+    [
+     1,
+     70,
+     57,
+     13
+    ],
+    [
+     2,
+     114,
+     97,
+     17
+    ],
+    [
+     3,
+     168,
+     147,
+     21
+    ],
+    [
+     4,
+     232,
+     207,
+     25
+    ]
+   ],
+   "voll: dasselbe mit N = 5": [
+    [
+     0,
+     36,
+     27,
+     9
+    ],
+    [
+     1,
+     70,
+     57,
+     13
+    ],
+    [
+     2,
+     114,
+     97,
+     17
+    ],
+    [
+     3,
+     168,
+     147,
+     21
+    ]
+   ],
+   "Helizität +-2: (Grad m, Lösungsjets, 0, Differenz)": [
+    [
+     0,
+     6,
+     0,
+     6
+    ],
+    [
+     1,
+     10,
+     0,
+     10
+    ],
+    [
+     2,
+     14,
+     0,
+     14
+    ],
+    [
+     3,
+     18,
+     0,
+     18
+    ],
+    [
+     4,
+     22,
+     0,
+     22
+    ]
+   ],
+   "Helizitätsräume (Ladung: Dimension)": {
+    "0": 14,
+    "1": 20,
+    "2": 6,
+    "3": 0
+   }
+  },
+  "A_residuum": {
+   "kinetischer Koeffizient": "2 b z^-2 (phi_t^2 - phi_z^2), b = l^2/(64 pi G) = 16 kappa",
+   "Residuum im flachen Grenzfall omega l >> 1": "32 pi G = l^2/(32 kappa) = R_Vak^2/(128 kappa)",
+   "G/R_Vak^2 bei kappa = 1": "7.77124e-05",
+   "G/R_Vak^2 bei kappa = 2 c_3 = 1/(4 pi)": "0.000976562"
+  },
+  "A_so32_inhalt": {
+   "eine Leiter": [
+    [
+     1,
+     0,
+     1
+    ],
+    [
+     2,
+     0,
+     1
+    ]
+   ],
+   "zwei Leitern, tiefste Gewichte bis E = 5": [
+    [
+     2,
+     0,
+     1
+    ],
+    [
+     3,
+     1,
+     1
+    ],
+    [
+     3,
+     0,
+     2
+    ],
+    [
+     4,
+     2,
+     1
+    ],
+    [
+     4,
+     1,
+     2
+    ],
+    [
+     4,
+     0,
+     2
+    ],
+    [
+     5,
+     3,
+     1
+    ],
+    [
+     5,
+     2,
+     2
+    ],
+    [
+     5,
+     1,
+     2
+    ],
+    [
+     5,
+     0,
+     2
+    ]
+   ],
+   "drei Leitern, tiefste Gewichte bis E = 5": [
+    [
+     3,
+     0,
+     1
+    ],
+    [
+     4,
+     1,
+     2
+    ],
+    [
+     4,
+     0,
+     3
+    ],
+    [
+     5,
+     2,
+     3
+    ],
+    [
+     5,
+     1,
+     7
+    ],
+    [
+     5,
+     0,
+     6
+    ]
+   ],
+   "Vielfachheit von D(3,2) für 1, 2, 3 Leitern": [
+    0,
+    0,
+    0
+   ]
+  },
+  "B_pole": {
+   "0.2": {
+    "Pole x = p^2/Lambda_W^2": [
+     "0.771691 + 0 i",
+     "0.0786584 + 0 i"
+    ],
+    "Residuen": [
+     "1.7492 + 0 i",
+     "-8.24119 + 0 i"
+    ],
+    "masseloses Residuum 1/a": "5",
+    "Integral der Spektraldichte": "1.492",
+    "Summenregel (soll 0)": "0"
+   },
+   "5": {
+    "Pole x = p^2/Lambda_W^2": [
+     "-0.915439 + 2.14004 i",
+     "-0.915439 + -2.14004 i"
+    ],
+    "Residuen": [
+     "-0.149485 + -0.0540794 i",
+     "-0.149485 + 0.0540794 i"
+    ],
+    "masseloses Residuum 1/a": "0.2",
+    "Integral der Spektraldichte": "0.0989695",
+    "Summenregel (soll 0)": "0"
+   },
+   "1000": {
+    "Pole x = p^2/Lambda_W^2": [
+     "-153.178 + 79.2394 i",
+     "-153.178 + -79.2394 i"
+    ],
+    "Residuen": [
+     "-0.000863094 + -5.93066e-05 i",
+     "-0.000863094 + 5.93066e-05 i"
+    ],
+    "masseloses Residuum 1/a": "0.001",
+    "Integral der Spektraldichte": "0.000726188",
+    "Summenregel (soll 0)": "0"
+   }
+  },
+  "B_nativ": {
+   "Schwelle Lambda_W l für Tachyonen (kappa = 1, c = 1/120)": "1815.67",
+   "Fälle": {
+    "Lambda_W l = 1": {
+     "a": "1.21278e+06",
+     "Art": "komplexes Paar",
+     "|p| l der Pole": [
+      "319.366",
+      "319.366"
+     ]
+    },
+    "Lambda_W l = 100": {
+     "a": "121.278",
+     "Art": "komplexes Paar",
+     "|p| l der Pole": [
+      "537.805",
+      "537.805"
+     ]
+    },
+    "Lambda_W l = 10000": {
+     "a": "0.0121278",
+     "Art": "zwei Tachyonen",
+     "|p| l der Pole": [
+      "9938.8",
+      "440.721"
+     ]
+    }
+   }
+  },
+  "B_skala": {
+   "Lambda_W/mu_0 = exp(4 pi^2/(c g^2 k)), log10": {
+    "c = 1/120, g^2 k = 2": "1028.7",
+    "c = 1/120, g^2 k = 1/4": "8229.7",
+    "c = 6/5, g^2 k = 2": "7.1439",
+    "c = 6/5, g^2 k = 1/4": "57.151",
+    "c = 12/5, g^2 k = 2": "3.5719",
+    "c = 12/5, g^2 k = 1/4": "28.575"
+   }
+  },
+  "C_moden": {
+   "Einstein gerade": {
+    "löst D_0": "True",
+    "löst D_0 + 2": "False",
+    "führende Potenz": "0",
+    "phi'(0) = 0": "True",
+    "Parität unter z -> -z": "gerade"
+   },
+   "Einstein ungerade": {
+    "löst D_0": "True",
+    "löst D_0 + 2": "False",
+    "führende Potenz": "3",
+    "phi'(0) = 0": "True",
+    "Parität unter z -> -z": "ungerade"
+   },
+   "PM ungerade": {
+    "löst D_0": "False",
+    "löst D_0 + 2": "True",
+    "führende Potenz": "1",
+    "phi'(0) = 0": "False",
+    "Parität unter z -> -z": "ungerade"
+   },
+   "PM gerade": {
+    "löst D_0": "False",
+    "löst D_0 + 2": "True",
+    "führende Potenz": "2",
+    "phi'(0) = 0": "True",
+    "Parität unter z -> -z": "gerade"
+   }
+  },
+  "C_kopplung": {
+   "M_YM/(g^2 Summe Tr(X..) <ij>^4/PT), X = sigma/2": "1",
+   "<ij>^4/(<ab>^2 <cd>^2) / (T_ab.T_cd/s^2)": "4",
+   "Fälle im Gravitonkanal": 36,
+   "alpha_W g^2 k": "-1/4"
+  },
+  "C_G": {
+   "G/l^2": "g2*k/(16*pi)",
+   "G/R_Vak^2": "g2*k/(64*pi)",
+   "G/R_Vak^2 für die drei Lesarten von z135 (k = 1)": {
+    "Netzspur je Periode, 1/g^2 = 1/2": "0.00994718",
+    "Niveau mit P_norm, 1/g^2 = 4": "0.0012434",
+    "W je Markenzustand, 1/g^2 = 1/4096": "20.3718"
+   },
+   "zum Vergleich Uhrspur kappa = 1": "7.77124e-05",
+   "Uhrspur 2 c_3": "0.000976562",
+   "Abgleich beider Wege verlangt kappa =": "1/(64*g2*k)",
+   "Ziel COSMO.LAM.01 (z98, nur Vergleich)": "10^-122,63"
+  }
+ },
+ "urteil": "Der native Gravitationssektor von H6 hat keinen masselosen Spin-2-Pol; er hat zwei bedingte Wege dorthin, und für beide ist die fehlende Prämisse jetzt genau benannt. Nichts ist befördert. (1) Uhrspurwirkung: Um AdS4 ist die MacDowell-Mansouri-Wirkung exakt quadratisch in f = D tau + (h e - e h)/l^2. Der Spinzusammenhang ist ein Hilfsfeld, zehn Eichfunktionen fallen heraus, und es bleiben genau zwei Freiheitsgrade mit Helizität +-2, die masselose Darstellung D(3,2), mit Residuum 32 pi G = l^2/(32 kappa). Das Vorzeichen ist das Paarungsbit. Das alles gilt nur, wenn das Vierbein dynamisch ist (P_dyn). Ohne P_dyn verschwindet die Hesse-Form auf allen nativen Richtungen, weil jede native Familie flach ist, und der native Fockraum enthält unter so(3,2) kein D(3,2); der Spin-2-Primär aus z137 ist das massive Kompositum D(4,2). (2) Induzierter Propagator: Aus dem nativen <TT> folgt ohne Baumterm kein masseloser Pol, sondern ein Tachyon an der Logarithmusskala und ein lineares Potential. Mit dem Baumterm gibt es den masselosen Pol, aber die Summenregel erzwingt zusätzlich ein komplexes Polpaar oder zwei Tachyonen. Die Skala Lambda_W ist eine Kontaktterm-Freiheit und nicht nativ. (3) Konforme Gravitation: Auf AdS4 zerfällt der Doppelpol 1/s^2 in ein masseloses Graviton und ein teilweise masseloses Spin-2-Feld mit umgekehrtem Vorzeichen. Maldacenas Neumann-Bedingung entfernt davon nur das Randverhalten Delta = 1; lorentzsch bleibt ein Geistturm mit Delta = 2, und erst zusammen mit der Regularität im Inneren (P_reg) bleibt genau die Einstein-Mode. Der native Koeffizient ist alpha_W = -1/(4 g^2 k), negativ, also genau das Vorzeichen, das AdS für G > 0 braucht. Die Zahl ist G/R_Vak^2 = g^2 k/(64 pi): Aus 1/s^2 wird 1/s mit festem Verhältnis zur Eichkopplung, nicht mit fester Zahl; mit den drei Lesarten von g aus z135 liegt sie zwischen 0,0012 und 20, wieder ein Vakuum von Planck-Größe. Kein natives Datum erzwingt die Randbedingung: Die Randspiegelung ist uneigentlich und nativ nur antiunitär vorhanden, ihre Paritätssektoren mischen Einstein- und Geistmoden, tau und iota sind Isometrien. (4) Für K13 und die Klausel 'Graviton': Es fehlt in kleinster Form eine einzige Aussage, nämlich dass ein Sektor D(3,2) der nativen so(3,2) existiert und mit positiver Norm an die Nähte koppelt. Das sind zwei reelle Funktionen (ein Dublett der Helizität +-2), nicht ein ganzes Vierbein. P_dyn liefert sie über die Uhrspurwirkung, P_X + P_pos über den Doppelspursektor. P_curv ist damit nicht durch eine native Aussage ersetzbar, wohl aber durch eine schwächere: P_h2 = 'es gibt eine dynamische spurfreie transversale Richtung des Vierbeins mit f != 0', die linearisierte Form von P_curv, oder gleichwertig P_X + P_pos. Neu ist eine Bindung: Gelten beide Wege, so ist 64 kappa = 1/(g^2 k), und P_G fällt mit der offenen Eichkopplung von K15 zusammen. K13 bleibt L, die Klausel 'Graviton' bleibt leer."
+}
