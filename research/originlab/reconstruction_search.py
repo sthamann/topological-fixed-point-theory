@@ -897,6 +897,10 @@ EVIDENCE = [
      "to its modular phase and reproduces the Plebanski-Penrose bracket exactly; P_0 is gapless (critical sequence); missing: "
      "a native composition rule with fixed coefficient g and a fixed phase of I",
      lambda d: _check_named(d, "Kritische Folge (GRAV.PARENT.GAP.NO_GO.01)") and _check_named(d, "Universalität bei gegebenem I")),
+    ("origin", "seed rho_1 + spin-Z4", "conditional", "z94_ergebnis.json", "seed family and Fermi statistics forced (z87); "
+     "rigidity carried by non-degeneracy (S(2) proven, three and four pairs exhaustive in windows); P_clock equivalent to "
+     "time neutrality of the law P_tn; two independent premises P_sym and P_tn remain",
+     lambda d: _check_named(d, "F6-Kriterien") and _check_named(d, "Unabhängigkeit: P_sym ohne Zeitneutralität")),
     ("origin", "two binary observations", "conditional", "z80_ergebnis.json", "sign symmetry of the law forces Cl_2 = M_2, "
      "tau = i, p = 1/2 if implemented in the same irreducible representation",
      lambda d: _check_named(d, "irreduzible Darstellungen von <A, B")),

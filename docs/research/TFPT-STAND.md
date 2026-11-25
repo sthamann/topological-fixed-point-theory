@@ -1,7 +1,7 @@
 # TFPT: Was funktioniert, was fehlt, was eine vollständige Lösung wäre
 
 Kompakter Stand vom 20. November 2026, ergänzt am 23. und 24. November (Befunde 20.–24. November, Kandidat H6 bis
-H6h45, Leitlinie „Rekonstruktion statt Auswahl“ und Abschnitt 5), für Explorations- und Lösungssitzungen. Seit 24. November
+H6h46, Leitlinie „Rekonstruktion statt Auswahl“ und Abschnitt 5), für Explorations- und Lösungssitzungen. Seit 24. November
 liegen die Explorationszweige vom 20. November in main (Quaternionrahmen, Fibonacci-Uhr, Vertauschung und Auslese, fremde
 und operative Ursprünge, Projekt Genesis, die Vertragsserie vom 14./15. Oktober); ihre Befunde stehen in ihren Verzeichnissen
 unter `experiments/`. Nicht zusammengeführt ist `codex/c3-p1-p2-abgleich-20261105` (121 Konflikte mit dem heutigen Stand). Neuere Befunde stehen in den Atlasproblemen mit Datum
@@ -42,7 +42,7 @@ Offen sind der Tensorkanal und die Rekonstruktion von 3+1 aus 4D-Antworten. Z60 
 ist die Spektraldimension (Weyl-Gesetz) einer Antwort. Die Quelle hat d = 1, die E₈-Naht kompakt und starr d = 8 = 4 + 4.
 Gebraucht wird eine originale Antwort mit d = 4, nichtkompakt und reflexionspositiv.
 
-**Gesamtstand und Strategien (Stand H6h45):** [`GESAMTSTAND-UND-STRATEGIEN.md`](GESAMTSTAND-UND-STRATEGIEN.md), mit
+**Gesamtstand und Strategien (Stand H6h46):** [`GESAMTSTAND-UND-STRATEGIEN.md`](GESAMTSTAND-UND-STRATEGIEN.md), mit
 Tor-Karte T1–T8, Kriterien K12–K20 und sieben Strategien (S1–S7).
 
 **Gesamtbild (Vogelperspektive, Stand H6h35):** [`VOGELPERSPEKTIVE.md`](VOGELPERSPEKTIVE.md).
@@ -171,9 +171,9 @@ Ursprung sollte beides zugleich liefern.
 
 ### Kandidat H6: Ursprung von P1 aus einer hintergrundfreien Naht (Exploration 23.11.)
 
-Quelle: `experiments/exploration/2026-11-23-phasenraum-f5-holocode/VERDICT.md` (Stand H6h45),
+Quelle: `experiments/exploration/2026-11-23-phasenraum-f5-holocode/VERDICT.md` (Stand H6h46),
 Skripte `n1`, `v1`, `y1`, `z1`–`z95`, Lean-Vertrag `experiments/theory-contracts/h6-exakte-teile-20261123/`; Atlasproblem `problem:c3-p1-p2-shared-origin-reconciliation`,
-Befunde mit Präfix `h6`. Nichts davon ist im Ledger befördert. Prüfstand mit 20 Kriterien (Stand H6h45): 13
+Befunde mit Präfix `h6`. Nichts davon ist im Ledger befördert. Prüfstand mit 20 Kriterien (Stand H6h46): 13
 hergeleitet, 7 unter benannter Lesart, keines gescheitert, offen oder gesetzt. K12 (3+1) zählt seit der Leitlinie
 „Rekonstruktion statt Auswahl“ nur als Lesart: d = 4 folgt kinematisch, nicht aus den Antworten (Z60).
 
@@ -531,7 +531,12 @@ hergeleitet, 7 unter benannter Lesart, keines gescheitert, offen oder gesetzt. K
     - Die „3“ ist nur algebraisch. Es gibt keine native Verklebung von Spin und Uhr; die Statistik steckt im Q²/2.
       [E negativ]
     - Die Kugel D(V, η) hat keinen Kern aus dem Ladungssektor und gehört nach innen. [E negativ]
-    - Die elfte Analyse hält in den Rechnungen; das Sechs-Saaten-Beispiel nur qualitativ (exakt ab N = 9). [E]
+    - Die elfte Analyse hält in den Rechnungen, auch die Schwelle N = 6 für identische Saaten (Korrektur H6h46). [E]
+  - Starrheit und Ursprung (Z94, H6h46):
+    - Die Starrheit des Originals trägt die Nichtentartung, nicht die Ladungsauswahl. S(2) ist bewiesen, für drei und vier
+      Paare erschöpfend in Fenstern. [E/O]
+    - P_clock folgt nicht aus P_sym. Es ist gleichwertig zur Zeitneutralität des Gesetzes P_tn (Modulzeit-Torus
+      selbstdual). Zwei unabhängige Ursprungsprämissen bleiben: P_sym und P_tn. [E]
   - Instantonen (Z33): Unter Spin(10) hat ein Einheitsinstanton 4 Eltern- und 12
     Familiennullmoden; mit gesättigten Familiennullmoden entsteht Re[e^{iθ}Φ² C_fam], die Wand ist
     also auch im Kontinuum möglich, bei nackter SO(10) aber ~10⁻¹⁶⁴ unterdrückt. [N]

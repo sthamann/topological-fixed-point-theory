@@ -8076,3 +8076,16 @@ Parallele Agentenläufe z89–z93 (alle reproduziert) und `z95_analyse11_komposi
 F6 (z94) rechnet noch.
 
 **Prüfstand:** 13 P, 7 L (K12, K13 präzisiert). Atlas-Revision ff48351d51c00b3dce399bea. Ledger unverändert, nichts befördert.
+
+## H6H46-20261125 · F6: Starrheit trägt die Nichtentartung, P_clock ⇔ P_tn; Korrektur zu z95
+
+`z94_starrheit_psym.py` (19 von 19, Agentenlauf, reproduziert).
+- **Identische Saaten.** Ab N = 6 können sie kollektiv nichtgaußsch sein, mit exakten Randverteilungen und exakter Uhr.
+  Die elfte Analyse hat also recht. z95 ist korrigiert: Der erste Suchraum war zu eng.
+- **Starrheit.**
+  - Für das Original trägt sie die Nichtentartung, nicht die Ladungsauswahl.
+  - S(2) ist bewiesen; für drei und vier Paare ist die Suche in Fenstern erschöpfend.
+- **Ursprung.** P_clock folgt nicht aus P_sym, sondern ist gleichwertig zur Zeitneutralität des Gesetzes P_tn. Damit bleiben
+  zwei unabhängige Ursprungsprämissen: P_sym und P_tn.
+
+**Prüfstand:** 13 P, 7 L (K19 präzisiert). Atlas-Revision 736302f723543836a9598933. Ledger unverändert, nichts befördert.

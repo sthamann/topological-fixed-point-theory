@@ -1,0 +1,513 @@
+{
+ "checks": {
+  "Formulierung (vier Paare m = 1, 3, 5, 7, 256 Fockzustände): die Blockgewichte sind Phi(y, s) = prod_j (1 + s^eps_j y^m_j)^2 mit s^(Q_a - Q_b), eps_j = +-1 für m_j = +-1 mod 4; die Uhr R = e^(iK_0/2) ist die Funktionalgleichung Phi(iy, s) = Phi(y, is) (Exponent = Q_- mod 4 auf jedem Block); die Einteilchendaten geben <Q_a - Q_b> = d_s log Phi|_(s=1) = mu(y) = sum_j eps_j 2y^m_j/(1 + y^m_j) und <Q_a + Q_b> = 0 (symbolisch)": true,
+  "Uhrenidentität <-> Gitterspektrum (jedes n; hier zwei Paare): ein ladungsblockdiagonaler Zustand mit Eigenwerten y^e, e = Q_a - Q_b mod 4 je Block und beliebigen Eigenvektoren erfüllt rho^(-i/2) R^-1 ~ 1 (Rest 2e-16, auch nach Verschiebung eines Exponenten um 4: 2e-16); Verschiebung um 2 oder 1/2 verletzt sie (Rest 1.53, 0.64)": true,
+  "Max-Entropie-Form der Subadditivität (jedes n): K_0 = dGamma(4 pi x) ist ein Einteilchenoperator, also gilt bei gleichen Besetzungen S(rho'||rho_qf) = S(rho_qf) - S(rho') >= 0 (z87-Deformation: Abweichung 4e-17); ein Zustand mit anderen Besetzungen verletzt die Identität (Abweichung 4.14). Globale Isospektralität gibt S(rho') = S(rho_qf), also rho' = rho_qf": true,
+  "universelle Matrix bei Y = 1 (Zeilen q', (-1)^q', (q' - ni) i^q', (q' + ni)(-i)^q', q' = q - sum eps in [-n, n]; sie hängt nur von n ab, da mu(1) = sum eps, mu(+-i) = sum eps +- ni, y = -1 Pol): Rang {1: 2, 2: 4, 3: 4, 4: 4} für n = 1..4; für n = 2 also Rang 4 bei 5 Unbekannten für jede Zwei-Paar-Abschneidung": true,
+  "zwei Paare, alle 120 Abschneidungen 1 <= m_1 < m_2 <= 31 ungerade, exakt: Rang 4 bei Y = 1 und Y = 3/7, das Original P_q(Y) liegt im Kern, die Randblöcke Q_- = extrem haben Dimension 1. Also ist jede Lösung P'_q = R(Y) P_q mit einem R aus Q(Y), der Randblock (ein Eigenwert) erzwingt R = Y^k: blockisospektral bis auf die globale Verschiebung, für alle Exponenten (z87: vier Abschneidungen im Fenster -8..24)": true,
+  "für n >= 3 reicht die lineare Algebra nicht: Rang 4 bei 2n + 1 Unbekannten, Kern der Dimension 2n - 3 ((1, 3, 5): 3, (1, 3, 7): 3, (1, 5, 7): 3, (3, 5, 7): 3, (1, 3, 5, 7): 5); Positivität und Ganzzahligkeit müssen tragen": true,
+  "drei Paare, sechs Abschneidungen (1,3,5), (1,3,7), (1,5,7), (3,5,7), (1,3,9), (1,5,9), Exponentenfenster [-24, 2 sum m + 24], vollständig (HiGHS, Optimalität bewiesen; Q_- -Randproblem, eine Relaxation des vollen Problems): jede Lösung der Ladungsidentitäten hat Z' = y^(4k) Z, max L1-Abweichung 0. Das geht über z87 hinaus (dort bis vier Eigenwertzüge)": true,
+  "vier Paare (1, 3, 5, 7), Fenster [-4, 36]: für jedes der 33 besetzten Niveaus ist 'Z'_e <= Z_e - 1' unlösbar (HiGHS); da sum Z' = sum Z, hat jede Lösung Z' = Z bis auf die globale Verschiebung": true,
+  "notwendige Bedingung (zum Lückenlemma): keine echte Teilmenge des Originalspektrums erfüllt die Ladungsidentitäten (Status {'(1, 3)': 2, '(1, 3, 5)': 2, '(1, 3, 7)': 2, '(1, 3, 5, 7)': 2}, 2 = unlösbar); eine solche Teilmenge wäre um y^4 verschiebbar und ein Gegenbeispiel": true,
+  "Kontrolle (kann scheitern): ohne Viertelverfeinerung (Eigenwerte nur in y^Z, also bloße Periodizität Delta^(-2i) ~ 1) haben die Ladungsidentitäten schon für zwei Paare nicht isospektrale Lösungen (größtes zweites Moment bei festem ersten 2032 gegen 336); mit der Uhr R bleibt es 336: die Starrheit trägt die Uhr, nicht die Periodizität": true,
+  "die Außenbehauptung stimmt (exakt): N = 2..5 gleiche Saaten sind diagonal starr (|f| <= 8, Status {2: 2, 3: 2, 4: 2, 5: 2}, 2 = unlösbar); bei N = 6 gibt es einen nichtgaußschen diagonalen Zustand y^(|n| + 4 f(n)) mit f in [-1, 5], 51 verschobenen Konfigurationen: Randverteilungen exakt (Multimengen je Modus True, Fehler 8e-53 bei 50 Stellen), Uhr exakt (True), 15 von 15 Paarkorrelationen ungleich 0 (|C| zwischen 7.1e-05 und 4.0e-02), S = 0.3720 gegen S_Produkt = 1.0347 (nicht isospektral, Subadditivität greift nicht)": true,
+  "welche Prämisse rettet: drei Paare mit gleichem m sind dasselbe Gegenbeispiel (m = 1: die sechs Anregungsmoden; m = 3: f -> 3f, Multimengen True, Uhr True); Ladungssuperauswahl erfüllt jeder diagonale Zustand von selbst. Teilweise entartet (1,1), (1,1,3), (1,1,5), (1,3,3) und die Paarstruktur des Originals mit verschiedenen m, (1,3,5), (1,3,7), (1,5,9) mit |f| <= 6 und (1,3,5,7) mit |f| <= 2, haben keinen solchen Zustand (Status {'(1, 1)': 2, '(1, 1, 3)': 2, '(1, 1, 5)': 2, '(1, 3, 3)': 2}, {'(1, 3, 5)': 2, '(1, 3, 7)': 2, '(1, 5, 9)': 2, '(1, 3, 5, 7) |f|<=2': 2}; 2 = unlösbar); ohne Uhr gibt es ihn schon bei N = 3 Saaten ({3: 0, 4: 0, 5: 0}, 0 = gefunden)": true,
+  "Algebra-Seite (61 Winkel theta zwischen A und B in der irreduziblen 2D-Darstellung): der Tausch A <-> B ist immer innerlich (61 von 61, U = (A + B)/|A + B|), die Vorzeichenspiegelung und die Vierteldrehung A -> B -> -A nur bei theta = pi/2 ([0.5], [0.5]): P_sym ist dieselbe Aussage wie 'Vierteldrehung (komplexe Multiplikation mit i) innerlich'; der Tausch selbst trägt keine Information": true,
+  "Gesetz-Seite auf dem Qubit (gerade Zustände rho_g = (1 + tanh(g/2) Gamma)/2, zehn g): der Tausch bildet rho_g auf rho_-g ab (Zeitumkehr, sigma^-g_t = sigma^g_-t), invariant nur der Spurzustand g = 0 ohne Zeit (z80); die Vierteldrehung lässt jedes rho_g invariant und liegt für jedes g != 0 in der Modulgruppe, bei t_Q = -pi/(2g): Tausch-Kovarianz, Tausch-Invarianz und Vierteldrehung legen g nicht fest": true,
+  "komplexer Modulzeit-Torus des Gesetzes: reelle Antiperiode T_a = pi/|g| (kleinste, sigma_Ta = (-1)^F auf A, B), KMS-Antiperiode 1 (KMS bei beta = 1 geprüft), Spinstruktur (A, A), tau_Gesetz = i|g|/pi. Zeitneutralität im Sinn von n1 (beide Rekonstruktionen tau und -1/tau geben dieselben Daten) gilt genau bei g/pi in [-1.0, 1.0]; P_clock (sigma_-1/2 = Vierteldrehung) bei [-3.0, 1.0, 5.0, 9.0]; Schnitt [1.0]; g = -pi ist das Tauschbild (Partner, Orientierung)": true,
+  "Original (16 Quartermoden +-m/4, m <= 15; Uhr auf dem Fockraum zweier Paare): tau_Gesetz = i beta/(4 pi); zeitneutral genau bei beta/pi in [-4, 4], P_clock bei [4, 20], Schnitt [4]; beta = -4 pi ist das Bild unter der Modenspiegelung x -> -x (Partner, R -> R^-1). Die Zeitneutralität wählt beta = 4 pi allein, ohne den Uhrenquotienten (z74), den z87 gegen beta = 20 pi brauchte": true,
+  "S-Transformation: die NS-Zustandssumme |theta_3(tau)/eta(tau)|^2 ist für jedes tau = iy S-invariant (rel. Abweichung <= 0e+00 bei y = 0,5, 0,8, 1,25, 2): die Invarianz der Funktion wählt nichts aus, nur die Selbstdualität des einzelnen Gesetzestorus (tau = -1/tau) wählt tau = i": true,
+  "Unabhängigkeit: P_sym ohne Zeitneutralität ist möglich (theta = pi/2, Marken j = 1728, aber g = 2 pi gibt tau_Gesetz = 2 i); Zeitneutralität ohne P_sym ebenso (theta = pi/3: Lücke pi gibt tau_Gesetz = 1.0000 i, aber Marken mit j = 3905.8 != 1728, Vorzeichenspiegelung nicht innerlich). Unter P_sym ist Zeitneutralität dasselbe wie tau_Gesetz = tau_Marken ('Zeit = zweiter Zyklus', z87 Kette Schritt 4)": true,
+  "F6-Kriterien: Starrheit für die Originalstruktur ohne Gegenbeispiel (Satz für n = 2, Fenster für n = 3, 4), Außenbehauptung bestätigt, aber nur für entartete Paare; P_clock nicht aus P_sym, aber gleichwertig zu P_tn, das die Minimalität mitbringt; P_sym und P_tn voneinander unabhängig: zwei Prämissen in schärferer Form": true
+ },
+ "befunde": {
+  "Satz S(n) ist für jedes n auf eine kombinatorische Aussage reduziert: Uhrenidentität + Superauswahl geben Blockgewichte W'_B(y) in Z_>=0[y, 1/y] mit Exponenten = Q_- mod 4; die Ladungsmittel werden wegen der Transzendenz von e^pi zu Identitäten D(y) sum_B Q_-(B) W'_B = N(y) sum_B W'_B und sum_B Q_+(B) W'_B = 0 (mu = N/D gekürzt); S(n) gilt, sobald diese Identitäten Z'(y) = y^(4k) Z(y) erzwingen (dann Max-Entropie). Lückenlemma: Eine Lücke > G = max(deg N, deg D) zwischen besetzten Exponenten zerlegt jede Lösung in zwei Teillösungen": true,
+  "Zwei Paare sind allgemein starr (Satz, kein Fenster): Restklassenrang 4 universell, Kern über Q(Y) vom Original aufgespannt, Randblock der Dimension 1, dann Max-Entropie. Die Viertelverfeinerung (vier Restklassen) ist dabei wesentlich": true,
+  "Die Außenbehauptung ist richtig, widerspricht z87 aber nicht: Uhrenidentität + Ladungssuperauswahl + Einteilchendaten erzwingen den Gaußzustand NICHT allgemein (Gegenbeispiel: sechs Anregungsmoden gleicher Energie, also drei Paare mit gleichem m). Die Superauswahl rettet nichts; was in allen gerechneten Fällen rettet, ist die nicht entartete Paarstruktur des Originals: jedes ungerade m genau einmal, Teilchen und Loch in verschiedenen Quartersektoren (Rahmen der Viertelzählung). Diese Nichtentartung muss als Teil des Rahmens ausdrücklich genannt werden, und ein allgemeiner Beweis von S(n) muss sie benutzen": true,
+  "Allgemein (beliebig viele Paare mit verschiedenen m) bleibt S(n) offen: bewiesen für n = 2, vollständig im Fenster für sechs Drei-Paar-Abschneidungen (Fenster +-24) und (1, 3, 5, 7) (enges Fenster [-4, 36]), diagonal kollisionsfrei bis vier Paare; der lineare Weg endet bei Kern 2n - 3, das Gegenbeispiel mit entarteten Paaren zeigt, dass die Positivität allein nicht reicht": true,
+  "P_clock folgt nicht aus P_sym: P_sym ist eine Aussage über die Algebra (Vierteldrehung innerlich, Marken als Quadrat, tau_Marken = i) und lässt jede Lücke g zu; der Tausch A <-> B ist auf der Algebra immer innerlich und auf dem Gesetz die Zeitumkehr (rho_g -> rho_-g), legt also nichts fest": true,
+  "P_clock ist gleichwertig zur Zeitneutralität des Gesetzes P_tn (n1 auf dem komplexen Modulzeit-Torus: reelle Antiperiode = KMS-Antiperiode, tau_Gesetz = i), bis auf die Orientierung, die der Tausch A <-> B als Benennung (Original/Partner) festlegt. P_tn ist schärfer als P_clock: es enthält die Minimalität (g = pi statt pi(4Z+1), beta = 4 pi statt 4 pi(4Z+1)), für die z87 den Uhrenquotienten brauchte": true
+ },
+ "zahlen": {
+  "uhr_rest_gitterzustaende": {
+   "0.0": 2.1945193773042693e-16,
+   "4.0": 2.1011239266092986e-16,
+   "2.0": 1.5336392704733768,
+   "0.5": 0.6358256853655253
+  },
+  "universelle_Y1_matrix_rang": {
+   "1": 2,
+   "2": 4,
+   "3": 4,
+   "4": 4
+  },
+  "zwei_paare_gepruefte_abschneidungen": 120,
+  "restklassen_kern": {
+   "(1, 3, 5)": {
+    "Rang": 4,
+    "Unbekannte": 7,
+    "Kern": 3,
+    "Original_im_Kern": true
+   },
+   "(1, 3, 7)": {
+    "Rang": 4,
+    "Unbekannte": 7,
+    "Kern": 3,
+    "Original_im_Kern": true
+   },
+   "(1, 5, 7)": {
+    "Rang": 4,
+    "Unbekannte": 7,
+    "Kern": 3,
+    "Original_im_Kern": true
+   },
+   "(3, 5, 7)": {
+    "Rang": 4,
+    "Unbekannte": 7,
+    "Kern": 3,
+    "Original_im_Kern": true
+   },
+   "(1, 3, 5, 7)": {
+    "Rang": 4,
+    "Unbekannte": 9,
+    "Kern": 5,
+    "Original_im_Kern": true
+   }
+  },
+  "drei_paare_milp": {
+   "(1, 3, 5)": {
+    "Fenster": [
+     -24,
+     42
+    ],
+    "Variablen": 117,
+    "G": 7,
+    "max_L1": 2.5515014309197804e-13,
+    "status": 0,
+    "s": 0.6
+   },
+   "(1, 3, 7)": {
+    "Fenster": [
+     -24,
+     46
+    ],
+    "Variablen": 125,
+    "G": 9,
+    "max_L1": -0.0,
+    "status": 0,
+    "s": 0.3
+   },
+   "(1, 5, 7)": {
+    "Fenster": [
+     -24,
+     50
+    ],
+    "Variablen": 131,
+    "G": 11,
+    "max_L1": -1.1112592327814732e-12,
+    "status": 0,
+    "s": 0.6
+   },
+   "(3, 5, 7)": {
+    "Fenster": [
+     -24,
+     54
+    ],
+    "Variablen": 139,
+    "G": 13,
+    "max_L1": -4.04121180963557e-14,
+    "status": 0,
+    "s": 0.5
+   },
+   "(1, 3, 9)": {
+    "Fenster": [
+     -24,
+     50
+    ],
+    "Variablen": 131,
+    "G": 9,
+    "max_L1": -0.0,
+    "status": 0,
+    "s": 0.5
+   },
+   "(1, 5, 9)": {
+    "Fenster": [
+     -24,
+     54
+    ],
+    "Variablen": 139,
+    "G": 13,
+    "max_L1": -0.0,
+    "status": 0,
+    "s": 0.0
+   }
+  },
+  "vier_paare_defizit": {
+   "Fenster": [
+    -4,
+    36
+   ],
+   "Variablen": 93,
+   "G": 13,
+   "status_je_Niveau": {
+    "0": 2,
+    "1": 2,
+    "2": 2,
+    "3": 2,
+    "4": 2,
+    "5": 2,
+    "6": 2,
+    "7": 2,
+    "8": 2,
+    "9": 2,
+    "10": 2,
+    "11": 2,
+    "12": 2,
+    "13": 2,
+    "14": 2,
+    "15": 2,
+    "16": 2,
+    "17": 2,
+    "18": 2,
+    "19": 2,
+    "20": 2,
+    "21": 2,
+    "22": 2,
+    "23": 2,
+    "24": 2,
+    "25": 2,
+    "26": 2,
+    "27": 2,
+    "28": 2,
+    "29": 2,
+    "30": 2,
+    "31": 2,
+    "32": 2
+   },
+   "s": 63.8
+  },
+  "echte_teilloesungen_status": {
+   "(1, 3)": 2,
+   "(1, 3, 5)": 2,
+   "(1, 3, 7)": 2,
+   "(1, 3, 5, 7)": 2
+  },
+  "kontrolle_zweites_moment_(1,3)": {
+   "Original": 336,
+   "mit Uhr (mod 4)": 336.0,
+   "ohne Uhr (nur Gitter Z)": 2031.9999999999943
+  },
+  "aussenbehauptung_gleiche_saaten": {
+   "N = 2..5, |f| <= 8 (Status)": {
+    "2": 2,
+    "3": 2,
+    "4": 2,
+    "5": 2
+   },
+   "N = 6, |f| <= 5 (Status)": 0,
+   "Beispiel N = 6 (drei Paare m = 1)": {
+    "Multimengen_exakt": true,
+    "Uhr": true,
+    "max_Randfehler_50_Stellen": 8.352389719038111e-53,
+    "Paarkorrelationen_ungleich_0": 15,
+    "Paare": 15,
+    "min_|Paarkorrelation|": 7.081581983692859e-05,
+    "max_|Paarkorrelation|": 0.03963082328393069,
+    "S": 0.37204101758576896,
+    "S_Produkt": 1.0346583648755079,
+    "f_Bereich": [
+     -1,
+     5
+    ],
+    "verschobene_Konfigurationen": 51
+   },
+   "skaliert: drei Paare m = 3": {
+    "Multimengen_exakt": true,
+    "Uhr": true,
+    "max_Randfehler_50_Stellen": 0.0,
+    "Paarkorrelationen_ungleich_0": 15,
+    "Paare": 15,
+    "min_|Paarkorrelation|": 5.254212967544038e-13,
+    "max_|Paarkorrelation|": 8.068649379700226e-05,
+    "S": 0.0016826783831664046,
+    "S_Produkt": 0.0050472595385708625,
+    "f_Bereich": [
+     -1,
+     5
+    ],
+    "verschobene_Konfigurationen": 51
+   },
+   "ohne Uhr, Schritt 1 (Status)": {
+    "3": 0,
+    "4": 0,
+    "5": 0
+   },
+   "f(n) für N = 6": {
+    "000010": 4,
+    "000011": 4,
+    "000100": 3,
+    "000110": 3,
+    "000111": 1,
+    "001000": 2,
+    "001001": 2,
+    "001100": 1,
+    "001101": 2,
+    "001110": 4,
+    "001111": 3,
+    "010000": 1,
+    "010001": 1,
+    "010010": 2,
+    "010011": 2,
+    "010100": 4,
+    "010110": 4,
+    "010111": 4,
+    "011000": 3,
+    "011001": 1,
+    "011010": 3,
+    "011011": 1,
+    "011100": 3,
+    "011110": 2,
+    "011111": 4,
+    "100000": 5,
+    "100001": 3,
+    "100010": 1,
+    "100011": 3,
+    "100100": 2,
+    "100101": 3,
+    "100111": 2,
+    "101000": 4,
+    "101001": 4,
+    "101010": 2,
+    "101011": 4,
+    "101100": 1,
+    "101101": 1,
+    "110001": 4,
+    "110010": 1,
+    "110100": 2,
+    "110101": 3,
+    "110110": 1,
+    "110111": 1,
+    "111001": 2,
+    "111010": 3,
+    "111011": 2,
+    "111100": 4,
+    "111101": 3,
+    "111110": -1,
+    "111111": 4
+   }
+  },
+  "entartete_paare_diagonal_status": {
+   "(1, 1)": 2,
+   "(1, 1, 3)": 2,
+   "(1, 1, 5)": 2,
+   "(1, 3, 3)": 2
+  },
+  "originalpaare_diagonal_status": {
+   "(1, 3, 5)": 2,
+   "(1, 3, 7)": 2,
+   "(1, 5, 9)": 2,
+   "(1, 3, 5, 7) |f|<=2": 2
+  },
+  "algebra_implementierbar_bei_theta/pi": {
+   "Tausch A<->B": "61 von 61",
+   "Vorzeichen A->-A": [
+    0.5
+   ],
+   "Viertel A->B->-A": [
+    0.5
+   ]
+  },
+  "qubit_modultorus": {
+   "-3.0": {
+    "T_a": 0.333333,
+    "tau_Gesetz": "3 i",
+    "zeitneutral": false,
+    "P_clock": true,
+    "KMS_beta1": true,
+    "antiperiodisch": true
+   },
+   "-1.0": {
+    "T_a": 1.0,
+    "tau_Gesetz": "1 i",
+    "zeitneutral": true,
+    "P_clock": false,
+    "KMS_beta1": true,
+    "antiperiodisch": true
+   },
+   "-0.5": {
+    "T_a": 2.0,
+    "tau_Gesetz": "0.5 i",
+    "zeitneutral": false,
+    "P_clock": false,
+    "KMS_beta1": true,
+    "antiperiodisch": true
+   },
+   "0.25": {
+    "T_a": 4.0,
+    "tau_Gesetz": "0.25 i",
+    "zeitneutral": false,
+    "P_clock": false,
+    "KMS_beta1": true,
+    "antiperiodisch": true
+   },
+   "0.5": {
+    "T_a": 2.0,
+    "tau_Gesetz": "0.5 i",
+    "zeitneutral": false,
+    "P_clock": false,
+    "KMS_beta1": true,
+    "antiperiodisch": true
+   },
+   "1.0": {
+    "T_a": 1.0,
+    "tau_Gesetz": "1 i",
+    "zeitneutral": true,
+    "P_clock": true,
+    "KMS_beta1": true,
+    "antiperiodisch": true
+   },
+   "2.0": {
+    "T_a": 0.5,
+    "tau_Gesetz": "2 i",
+    "zeitneutral": false,
+    "P_clock": false,
+    "KMS_beta1": true,
+    "antiperiodisch": true
+   },
+   "3.0": {
+    "T_a": 0.333333,
+    "tau_Gesetz": "3 i",
+    "zeitneutral": false,
+    "P_clock": false,
+    "KMS_beta1": true,
+    "antiperiodisch": true
+   },
+   "5.0": {
+    "T_a": 0.2,
+    "tau_Gesetz": "5 i",
+    "zeitneutral": false,
+    "P_clock": true,
+    "KMS_beta1": true,
+    "antiperiodisch": true
+   },
+   "9.0": {
+    "T_a": 0.111111,
+    "tau_Gesetz": "9 i",
+    "zeitneutral": false,
+    "P_clock": true,
+    "KMS_beta1": true,
+    "antiperiodisch": true
+   }
+  },
+  "original_beta_scan": {
+   "beta = 2 pi": {
+    "T_a": 2.0,
+    "tau_Gesetz": 0.5,
+    "zeitneutral": false,
+    "P_clock": false,
+    "Delta^(-i/2)=R^-1": false
+   },
+   "beta = 4 pi": {
+    "T_a": 1.0,
+    "tau_Gesetz": 1.0,
+    "zeitneutral": true,
+    "P_clock": true,
+    "Delta^(-i/2)=R^-1": false
+   },
+   "beta = 8 pi": {
+    "T_a": 0.5,
+    "tau_Gesetz": 2.0,
+    "zeitneutral": false,
+    "P_clock": false,
+    "Delta^(-i/2)=R^-1": false
+   },
+   "beta = 12 pi": {
+    "T_a": 0.33333,
+    "tau_Gesetz": 3.0,
+    "zeitneutral": false,
+    "P_clock": false,
+    "Delta^(-i/2)=R^-1": true
+   },
+   "beta = 20 pi": {
+    "T_a": 0.2,
+    "tau_Gesetz": 5.0,
+    "zeitneutral": false,
+    "P_clock": true,
+    "Delta^(-i/2)=R^-1": false
+   },
+   "beta = 4.04 pi": {
+    "T_a": 0.9901,
+    "tau_Gesetz": 1.01,
+    "zeitneutral": false,
+    "P_clock": false,
+    "Delta^(-i/2)=R^-1": false
+   },
+   "beta = -4 pi": {
+    "T_a": 1.0,
+    "tau_Gesetz": 1.0,
+    "zeitneutral": true,
+    "P_clock": false,
+    "Delta^(-i/2)=R^-1": true
+   }
+  },
+  "Z_NS_S_invarianz_rel": {
+   "0.5": 0.0,
+   "0.8": 0.0,
+   "1.25": 0.0,
+   "2.0": 0.0
+  },
+  "unabhaengigkeit": {
+   "j(Marken) theta = pi/2": 1728.0000000000005,
+   "j(Marken) theta = pi/3": 3905.777777777778,
+   "tau_Gesetz bei P_sym und g = 2 pi": "2 i",
+   "tau_Gesetz bei theta = pi/3, Lücke pi": "1j"
+  },
+  "status": {
+   "Satz S(n), Reduktion (jedes n)": [
+    "E",
+    "Gitterspektrum je Ladungsblock, Identitäten über Z[y] (Gelfond), Max-Entropie: S(n) <=> Ladungsidentitäten erzwingen Z' = y^(4k) Z; Lückenlemma"
+   ],
+   "S(2) zwei Paare": [
+    "E (neu, allgemein)",
+    "alle ungeraden m_1 < m_2, alle Exponenten: Restklassenrang 4, Randblock"
+   ],
+   "S(3), S(4)": [
+    "E (im Fenster)",
+    "sechs Drei-Paar-Abschneidungen (Fenster +-24) und (1,3,5,7) (eng, [-4, 36]) vollständig; Kern 2n - 3"
+   ],
+   "S(n) allgemein (verschiedene m)": [
+    "O",
+    "Beweis muss die Nichtentartung benutzen; kein Gegenbeispiel"
+   ],
+   "Außenbehauptung gleiche Saaten": [
+    "E (bestätigt)",
+    "N = 6 gleiche Saaten = drei Paare mit gleichem m: exakter nichtgaußscher Zustand mit Uhr; N <= 5 starr; Originalstruktur frei"
+   ],
+   "P_clock aus P_sym": [
+    "E (negativ, gescopt)",
+    "P_sym lässt jede Lücke zu; Tausch = Zeitumkehr"
+   ],
+   "P_clock <=> P_tn": [
+    "E",
+    "Qubit und Original; P_tn enthält die Minimalität (Uhrenquotient)"
+   ],
+   "K19 Existenz der Naht": [
+    "L",
+    "unter P_tn ist die Naht der reelle Zyklus des Modulzeit-Torus, so lang wie der KMS-Zyklus; Existenz nicht hergeleitet"
+   ]
+  },
+  "praemissen": {
+   "P_sym": "zwei Binäroperationen, Vorzeichensymmetrie bzw. Vierteldrehung in derselben irreduziblen Darstellung (z80) -> Cl_2 = CAR, Marken als Quadrat, tau_Marken = i",
+   "P_tn (ersetzt P_clock)": "Zeitneutralität des Gesetzes: der komplexe Modulzeit-Torus (reelle Antiperiode x KMS-Antiperiode) ist selbstdual unter tau -> -1/tau, tau_Gesetz = i; gleichwertig P_clock + Uhrenquotient; unter P_sym gleich 'Zeit = zweiter Zyklus des Markentorus'",
+   "Rahmen": "Hardy/Szegő-Naht mit Drehung L_0 und Viertelzählung (jedes ungerade m genau einmal, nicht entartet: für die Starrheit nötig), Ladungssuperauswahl je Quarter",
+   "P_free": "Folge: allgemein für zwei Paare, im Fenster für drei und vier Paare; allgemein offen"
+  },
+  "praemissen_anzahl": {
+   "benannt": 2,
+   "davon neu gefasst": 1,
+   "Rahmen": 1,
+   "bedingt (P_free)": "Folge bis n = 2 allgemein, n = 3, 4 im Fenster"
+  }
+ },
+ "urteil": "F6 trägt in gescopter Form. (1) Starrheit: Satz S(n) ist für jedes n auf eine Aussage über Blockgewichte reduziert (Uhrenidentität = Funktionalgleichung Phi(iy, s) = Phi(y, is), Ladungsidentitäten über Z[y] wegen der Transzendenz von e^pi, dann Max-Entropie: K_0 ist Einteilchenoperator, S(rho'||rho_qf) = S(rho_qf) - S(rho')). Neu bewiesen ist S(2) für alle ungeraden m_1 < m_2 und alle Exponenten: Die vier Restklassen von y mod 4 geben ein lineares System über Q(Y), dessen universelle Matrix bei Y = 1 Rang 4 hat; der Kern ist vom Original aufgespannt, der Randblock (ein Eigenwert) erzwingt R = Y^k. Für n >= 3 hat das System einen Kern der Dimension 2n - 3; ganzzahlig vollständig im Exponentenfenster sind sechs Drei-Paar-Abschneidungen (+-24) und (1, 3, 5, 7) (eng, [-4, 36]) starr, und keine echte Teilmenge des Originalspektrums erfüllt die Identitäten. Ohne Viertelverfeinerung (bloße Periodizität) bricht die Starrheit schon bei zwei Paaren: Die Uhr R trägt sie. Die Behauptung der elften Außenanalyse stimmt exakt: Für N = 6 gleiche Saaten (drei Paare mit gleichem m) gibt es einen diagonalen nichtgaußschen Zustand y^(|n| + 4 f(n)) mit exakten Randverteilungen, exakter Uhr und allen 15 Paarkorrelationen ungleich 0; N <= 5 ist starr. Das widerspricht z87 nicht, denn dessen Abschneidungen haben verschiedene m; die Ladungssuperauswahl rettet nichts (diagonale Zustände erfüllen sie), es rettet die nicht entartete Paarstruktur des Originals (jedes m einmal, Teilchen und Loch in verschiedenen Quartern): teilweise entartete Strukturen und die Originalstruktur bis vier Paare haben keinen solchen Zustand. Die Uhrenidentität mit Superauswahl und Einteilchendaten genügt also nicht allgemein; S(n) für verschiedene m bleibt offen, ein Beweis muss die Nichtentartung benutzen. (2) P_clock folgt nicht aus P_sym: P_sym (Vierteldrehung innerlich, tau_Marken = i) lässt jede Lücke g zu; der Tausch A <-> B ist auf der Algebra stets innerlich und auf dem Gesetz die Zeitumkehr rho_g -> rho_-g. Gleichwertig zu P_clock ist die Zeitneutralität des Gesetzes P_tn im Sinn von n1: Der komplexe Modulzeit-Torus (reelle Antiperiode pi/|g|, KMS-Antiperiode 1) ist genau bei |g| = pi selbstdual, auf dem Original genau bei beta = 4 pi. P_tn ist schärfer als P_clock, denn es enthält die Minimalität, für die z87 den Uhrenquotienten brauchte; die Orientierung ist die Benennung Original/Partner. (3) Es bleiben zwei Ursprungsprämissen, P_sym und P_tn, die beiden Hälften derselben Symmetrie tau -> -1/tau (komplexe Multiplikation mit i) für Algebra und Gesetz, nachweislich unabhängig, dazu der Rahmen der Hardy-Naht mit Ladungssuperauswahl, in dem die Nichtentartung der Viertelzählung jetzt ausdrücklich gebraucht wird. P_free ist Folge für zwei Paare allgemein und für drei und vier Paare im Fenster. K19 wird nicht hergeleitet; unter P_tn ist die Naht der reelle Zyklus des Modulzeit-Torus, gleich lang wie der KMS-Zyklus."
+}

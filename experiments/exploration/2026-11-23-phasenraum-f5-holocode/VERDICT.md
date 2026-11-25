@@ -1,6 +1,43 @@
 # Urteil
 
-## Aktueller Stand: H6h45 — Folgerunde: Gravitation, Schnitt, Komposition, Materiespin, Kugel; Analysen 10 und 11 (`z89`–`z93`, `z95`)
+## Aktueller Stand: H6h46 — F6: Starrheit trägt die Nichtentartung, P_clock ⇔ P_tn; Korrektur zu z95 (`z94`, `z95`)
+
+**Bilanz:** unverändert 13 P und 7 L von 20. K19 ist präzisiert.
+
+**F6 (z94, 19 Prüfungen; Agent, reproduziert):**
+- **Gegenbeispiel der elften Analyse exakt [E]:**
+  - Für N = 6 identische Saaten gibt es einen diagonalen Zustand y^(|n|+4f(n)) mit f in [−1, 5] (51 von 64 Zuständen
+    verschoben). Alle Randverteilungen sind exakt, die Uhr ist exakt, alle 15 Paarkorrelationen sind ungleich null.
+  - S = 0,372 gegen 1,035 im Produkt: nicht isospektral.
+  - N = 2..5 sind diagonal starr (|f| ≤ 8).
+- **Was die Starrheit für das Original trägt [E]:**
+  - Die Ladungsauswahl ist es nicht, die erfüllt jeder diagonale Zustand.
+  - Es ist die Nichtentartung: Jedes ungerade m kommt genau einmal vor, Teilchen und Loch in verschiedenen Quartern.
+  - Entartete Strukturen (1,1), (1,1,3) usw. wurden geprüft, ebenso die Originalstrukturen (1,3,5), (1,3,7), (1,5,9) und
+    (1,3,5,7) in Fenstern. Keine hat ein Gegenbeispiel.
+- **Starrheit allgemein:**
+  - S(2) ist für alle ungeraden m₁ < m₂ und alle Exponenten bewiesen (Rang 4 bei Y = 1, 120 Abschneidungen) [E].
+  - Für n ≥ 3 hat der Kern die Dimension 2n − 3. Die erschöpfende Suche für drei und vier Paare findet nichts; der
+    allgemeine Satz ist offen [O].
+- **P_clock aus P_sym: nein [E].**
+  - Der Tausch A ↔ B ist innerlich und trägt keine Information. P_sym lässt die Lücke g frei.
+  - P_clock ist gleichwertig zur Zeitneutralität des Gesetzes P_tn: Der Modulzeit-Torus des Gesetzes ist selbstdual,
+    τ_law = i. P_tn schließt die Minimalität ein, die z87 noch über den Uhrenquotienten brauchte.
+  - P_sym und P_tn sind die beiden Hälften derselben Symmetrie τ → −1/τ, angewandt auf Algebra und Gesetz, und
+    nachweislich unabhängig.
+- **Ursprungsprämissen:**
+  - zwei: P_sym (τ_Marken = i) und P_tn (τ_Gesetz = i);
+  - dazu der Rahmen: Hardy-Naht, Ladungsauswahl und, ausdrücklich neu, Nichtentartung.
+  - K19 ist eingegrenzt, nicht hergeleitet.
+
+**Korrektur zu z95 (H6h45):** Meine diagonale Suche war mit |f| ≤ 1 bzw. 3 zu eng. Mit f ∈ [−2, 6] gibt es genau ab N = 6
+die exakte Lösung, die Schwelle der elften Analyse ist also bestätigt. z95 ist korrigiert (11 von 11).
+
+**Nächste Schritte:**
+- S(n) für verschiedene m mit der Nichtentartung beweisen.
+- P_tn aus ⟨T⟩ = 0 (H6 A*, E₆(τ) = 0) herleiten. Dann bliebe eine einzige Prämisse.
+
+## Davor: H6h45 — Folgerunde: Gravitation, Schnitt, Komposition, Materiespin, Kugel; Analysen 10 und 11 (`z89`–`z93`, `z95`)
 
 **Bilanz:** unverändert 13 P und 7 L von 20. K12 und K13 sind präzisiert.
 

@@ -1,6 +1,6 @@
-# TFPT: Gesamtstand und Strategien zur Gesamtlösung (Stand H6h45, 25. November 2026)
+# TFPT: Gesamtstand und Strategien zur Gesamtlösung (Stand H6h46, 25. November 2026)
 
-Neu: Abschnitt 12 hält die Folgerunde fest (F1–F5, Analysen 10 und 11). F6 rechnet noch.
+Neu: Abschnitt 12 hält die Folgerunde fest (F1–F6, Analysen 10 und 11).
 
 Dieses Dokument fasst den ganzen Stand zusammen: gelöste Bausteine, Ursprung, Rekonstruktion und offene Tore. Daraus
 entwickelt es neue Strategien. Maßgeblich bleiben Ledger und Originalquellen. Nichts hier ist befördert; Explorationsbefunde
@@ -414,8 +414,8 @@ Offen ist allein die Gravitation, mit genau zwei Wegen.
 | F3 Identifikation und Komposition | z91 (24/24) | eine Prämisse P_koh; freier 4D-Fockraum aus bosonischer Komposition (P_ident); keine native Fusion gibt Wechselwirkung | C / E negativ |
 | F4 Materiespin und die „3“ | z92 (14/14) | „3“ nur algebraisch (schwaches Triplett); keine native Verklebung; Statistik im Q²/2 der radialen Energie | E negativ |
 | F5 Kugel D(V, η) | z93 (11/11) | kein Kugelkern aus dem Ladungssektor; P1 ist eine Wahl; D(V, η) innen | E negativ |
-| F6 Starrheit, P_clock aus P_sym | z94 | rechnet noch | offen |
-| Analyse 11 | z95 (11/11) | Rechnungen bestätigt; kollektive Nichtgaußizität identischer Saaten exakt ab N = 9 | E |
+| F6 Starrheit, P_clock aus P_sym | z94 (19/19) | Starrheit des Originals trägt die Nichtentartung (S(2) bewiesen, 3 und 4 Paare in Fenstern); P_clock ⇔ P_tn (Zeitneutralität des Gesetzes), unabhängig von P_sym | E / O |
+| Analyse 11 | z95 (11/11) | Rechnungen bestätigt, auch die Schwelle N = 6 für identische Saaten (Korrektur H6h46) | E |
 
 ### Was die Folgerunde bedeutet
 
@@ -445,4 +445,6 @@ Offen ist allein die Gravitation, mit genau zwei Wegen.
    - verschiebt sie Δ des zusammengesetzten 4D-Felds von 1 weg?
 4. **GSO-artige Regel:** (−1)^{2h} = R² auf Ladung ⊗ Paarzuständen. Schließt sie unter su(2,2) und den Vertexoperatoren,
    und folgt sie aus J bei β = 4π oder aus dem ℤ₄-Kleber von E₈?
-5. **F6 abwarten:** allgemeine Starrheit und P_clock aus P_sym.
+5. **Ursprung schließen:**
+   - S(n) für verschiedene m mit der Nichtentartung beweisen (z94);
+   - P_tn aus ⟨T⟩ = 0 (A*, E₆(τ) = 0) herleiten. Dann bliebe eine einzige Prämisse.

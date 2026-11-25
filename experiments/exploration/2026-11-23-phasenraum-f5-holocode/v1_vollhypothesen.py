@@ -1354,6 +1354,15 @@ if "H6h2" in H and z1p.exists() and z2p.exists():
                                                                                                                                                                                          "Einstein-Klammer exakt, radialer Kanal nur AdS, G frei (Z89); kein G "
                                                                                                                                                                                          "aus räumlichem Schnitt, induziertes 1/G = 0 (Z90)")
                                                                                                                                                                     facts["F63_followups"] = {n: T30[n]["urteil"] for n in T30}
+                                                                                                                                                                    z94p = Path(__file__).with_name("z94_ergebnis.json")
+                                                                                                                                                                    if z94p.exists():
+                                                                                                                                                                        T31 = json.loads(z94p.read_text())
+                                                                                                                                                                        H["H6h46"] = dict(H["H6h45"])
+                                                                                                                                                                        H["H6h46"]["K19"] = (LES if all(T31["checks"].values()) else F,
+                                                                                                                                                                                             H["H6h45"]["K19"][1] + "; Starrheit trägt die Nichtentartung (S(2) "
+                                                                                                                                                                                             "bewiesen), P_clock gleichwertig zu P_tn, zwei unabhängige "
+                                                                                                                                                                                             "Prämissen P_sym und P_tn (Z94)")
+                                                                                                                                                                        facts["F64_rigidity_ptn"] = T31["urteil"]
 
 order = [f"K{i}" for i in range(1, 21)]
 print("Gesamttabelle (P = hergeleitet, L = unter benannter Lesart, F = FAIL, O = OFFEN, E = EINGABE)\n")

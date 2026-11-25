@@ -139,21 +139,21 @@ check("mit symmetrischen f (nur von der Teilchenzahl abhängig, |f| <= 2) gibt e
 from scipy.optimize import milp, LinearConstraint, Bounds
 
 
-def allgemein(N):
-    """ganzzahlige Suche: f: {0,1}^N -> {-1, 0, 1}, f(0) = 0, nichttrivial, Randverteilungen exakt (Multimengen)."""
+def allgemein(N, V=(-1, 0, 1)):
+    """ganzzahlige Suche: f: {0,1}^N -> V, f(0) = 0, nichttrivial, Randverteilungen exakt (Multimengen)."""
     zust = list(itertools.product((0, 1), repeat=N))
-    V = (-1, 0, 1)
-    nv = len(zust)*3
-    idx = lambda a, v: 3*a + (v + 1)
+    nV = len(V)
+    nv = len(zust)*nV
+    idx = lambda a, v: nV*a + V.index(v)
     A, lo, hi = [], [], []
     for a in range(len(zust)):                                   # eine Wahl je Zustand
         r = np.zeros(nv)
-        r[3*a:3*a + 3] = 1
+        r[nV*a:nV*a + nV] = 1
         A.append(r); lo.append(1); hi.append(1)
     r = np.zeros(nv); r[idx(0, 0)] = 1
     A.append(r); lo.append(1); hi.append(1)                      # f(0) = 0
     for i in range(N):
-        for E in range(-4, N + 6):
+        for E in range(4*min(V) - 1, N + 4*max(V) + 2):
             r = np.zeros(nv)
             for a, n in enumerate(zust):
                 k = sum(n)
@@ -166,7 +166,9 @@ def allgemein(N):
                 A.append(r); lo.append(0); hi.append(0)
     r = np.zeros(nv)
     for a in range(len(zust)):
-        r[idx(a, -1)] = r[idx(a, 1)] = 1
+        for v in V:
+            if v != 0:
+                r[idx(a, v)] = 1
     A.append(r); lo.append(1); hi.append(np.inf)                 # nichttrivial
     res = milp(c=r, constraints=LinearConstraint(np.array(A), lo, hi), integrality=np.ones(nv), bounds=Bounds(0, 1))
     if res.status != 0:
@@ -175,10 +177,34 @@ def allgemein(N):
     return {zust[a]: [v for v in V if x[idx(a, v)]][0] for a in range(len(zust))}
 
 
-tab = {N: allgemein(N) for N in range(2, 8)}
-ZAHLEN["diagonal_ganzzahlig"] = {N: (s_ is not None) for N, s_ in tab.items()}
-check("Zustände diagonal in der Besetzungsbasis (ganzzahlige Suche, f in {-1, 0, 1}, Vakuum fest): für N = 2..7 keine "
-      "nichttriviale Lösung; in diesem Sinn ist die Komposition identischer Saaten starr", all(s_ is None for s_ in tab.values()))
+eng = {N: allgemein(N) for N in range(2, 8)}
+weit_V = tuple(range(-2, 7))
+weit = {N: allgemein(N, weit_V) for N in range(2, 7)}
+ZAHLEN["diagonal_eng_f_-1_bis_1"] = {N: (s_ is not None) for N, s_ in eng.items()}
+ZAHLEN["diagonal_weit_f_-2_bis_6"] = {N: (s_ is not None) for N, s_ in weit.items()}
+ok6 = False
+if weit[6] is not None:
+    f6 = weit[6]
+    zust6 = list(f6)
+    w6 = {n: Y**(sum(n) + 4*f6[n]) for n in zust6}
+    Z6 = sum(w6.values())
+    rand6 = all(sp.simplify(sum(w6[n] for n in zust6 if n[i])/Z6 - Y/(1 + Y)) == 0 for i in range(6))
+    yv6 = float(sp.exp(-sp.pi))
+    pv6 = {n: float(w6[n].subs(Y, yv6)) for n in zust6}
+    Zv6 = sum(pv6.values())
+    p1_6 = yv6/(1 + yv6)
+    paare6 = [sum(pv6[n] for n in zust6 if n[i] and n[j])/Zv6 - p1_6**2 for i, j in itertools.combinations(range(6), 2)]
+    S6 = -sum(v/Zv6*np.log(v/Zv6) for v in pv6.values())
+    S6p = 6*(-(p1_6*np.log(p1_6) + (1 - p1_6)*np.log(1 - p1_6)))
+    ok6 = rand6 and S6 < S6p - 1e-12 and sum(abs(c_) > 1e-12 for c_ in paare6) == 15
+    ZAHLEN["sechs_saaten"] = {"f_bereich": [min(f6.values()), max(f6.values())],
+                              "verschobene_zustaende": sum(1 for v in f6.values() if v), "S": S6, "S_Produkt": S6p}
+    say(f"   sechs Saaten: {ZAHLEN['sechs_saaten']}")
+check("Zustände diagonal in der Besetzungsbasis (exakte ganzzahlige Suche, Vakuum fest): mit f in {-1, 0, 1} keine Lösung für "
+      "N = 2..7, mit f in [-2, 6] keine für N = 2..5, aber eine exakte für N = 6: alle Randverteilungen symbolisch gleich der "
+      "Saat, Uhr exakt, alle 15 Paarkorrelationen ungleich null, Entropie kleiner als das Produkt. Die Schwelle N = 6 der "
+      "Analyse ist bestätigt (Korrektur H6h46: der erste Suchraum war zu eng, nötig sind Verschiebungen bis f = 5, vgl. z94)",
+      all(s_ is None for s_ in eng.values()) and all(weit[N] is None for N in range(2, 6)) and ok6)
 
 from math import comb
 
@@ -256,11 +282,10 @@ check(f"teilchenzahlerhaltend mit gleichmäßigen Projektoren (realisierbar: jed
       f"exakte Lösung bei N = {erstes} (Randverteilungen symbolisch gleich der Saat, Uhr exakt, Entropie kleiner als das "
       "Produkt); die lineare Lockerung (notwendige Bedingung für beliebige teilchenzahlerhaltende Zustände) ist ab N = 5 "
       "zulässig, Realisierbarkeit dort nicht gezeigt", erstes == 9 and ok_ex and not lp[4] and lp[5])
-befund("Die Analyse hält qualitativ, nicht in der Zahl: Identische Saaten können kollektiv nichtgaußsch sein, mit exakt freien "
-       "Randverteilungen und exakter Uhr (Exponentenkollisionen modulo 4). Die genannte Schwelle N = 6 ist nicht reproduziert: "
-       "diagonal starr bis 7, gleichmäßig erst ab 9, allgemein (lineare Lockerung) möglich ab 5. Ob das die Starrheit aus z87 "
-       "(verschiedene m, Ladungsauswahl) berührt, prüft F6 (z94); nativ ist ein solcher Zustand nicht (z91: eine Wahl, die die "
-       "Uhr nicht sieht)", True)
+befund("Die Analyse hält auch in der Zahl: Identische Saaten können ab N = 6 kollektiv nichtgaußsch sein, mit exakt freien "
+       "Randverteilungen und exakter Uhr (Exponentenkollisionen modulo 4; diagonal mit Verschiebungen bis 5, gleichmäßig ab 9). "
+       "Für das Original (verschiedene m, jedes ungerade m einmal) bleibt die Starrheit in allen gerechneten Fällen (z94): Die "
+       "Nichtentartung trägt sie, nicht die Ladungsauswahl. Nativ ist ein solcher Zustand nicht (z91)", True)
 
 # ------------------------------------------------------------------ Teil 4
 say("\nTeil 4: Relative Paritätsphase")
@@ -327,8 +352,9 @@ befund("Die elfte Analyse hält in den gerechneten Punkten; die physikalischen L
 urteil = ("Die elfte externe Analyse hält in den gerechneten Punkten. Von 16 Bitgesetzen sind 6 assoziativ und kommutativ, 2 sind "
           "Gruppen; von 24 reversiblen Zweibitoperationen vertragen sich nur Identität und Tausch mit der Uhr. Uhr- und "
           "tauscherhaltende Quantengesetze bilden eine dreiparametrige Klasse (Uhr, Hüpfen, n_1 n_2), mit U^4 = 1 gibt es 64, "
-          "davon 16 gaußsch. Identische Saaten können kollektiv nichtgaußsch sein (exakt realisiert ab N = 9 mit gleichmäßigen "
-          "Projektoren; diagonal starr bis N = 7; die genannte Schwelle N = 6 ist nicht reproduziert). E8-Komposition: relativer Sektor c = 1/2, "
+          "davon 16 gaußsch. Identische Saaten können ab N = 6 kollektiv nichtgaußsch sein (diagonal, Verschiebungen bis 5; die "
+          "Schwelle der Analyse ist bestätigt, Korrektur H6h46); für das Original trägt die Nichtentartung die Starrheit (z94). "
+          "E8-Komposition: relativer Sektor c = 1/2, "
           "T_rel = (T_1 + T_2 - Summe J_1 J_2)/32; E8 + E8(-1) hat eine isotrope Diagonale vom Rang 8. J R J = R^-1 auf dem "
           "Torus, Purifikation <X X> = 0,398537, Twistgewicht 1/2. Die physikalischen Lesarten bleiben Kandidaten.")
 say("\nUrteil\n   " + urteil)
