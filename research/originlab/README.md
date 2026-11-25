@@ -144,6 +144,31 @@ Tenth run (doublet identifications, H6 exploration H6h40, z79): two more univers
   - Only the Tomita reading T′ is Lorentzian and marked, and there R on V̄* is imposed rather than native.
 Run time stays at a few seconds; three new tests.
 
+Eleventh run (whole-theory scenarios, H6 exploration H6h42, strategy S7): the universe `scenarios` of
+`reconstruction_search.py` enumerates every combination of six axes:
+- spinor index: quarter oscillators, step type, η doublet, seam doublet V₁;
+- role of the marks: internal spin-ℤ₄, Euclidean Weyl curvature, celestial sphere;
+- time: modular flow, parabolic Wiesbrock, OS reconstruction, radial conformal;
+- modes: species or energy levels;
+- gravity: composite spin 2, Virasoro T(z), twistor deformation, entanglement of the cut original|partner, entanglement of a
+  spatial cut;
+- origin: seed ρ₁ + spin-ℤ₄, two binary observations.
+
+That gives 960 scenarios.
+- **Computed clauses:** R orders and native Lorentz compatibility come from the doublet and position universes.
+- **Recorded clauses:** `EVIDENCE` lists result files of the exploration scripts (z70, z72, z75, z80, z82, z83, z86, z87),
+  each with a named check and its meaning. A missing file leaves a value pending; nothing is entered by hand.
+
+With the evidence of H6h42, the rule native-Lorentzian + positive time + one field + reduced origin + placed marks keeps 8
+scenarios. All of them have:
+- spinor index = step type;
+- marks internal;
+- time parabolic (radial or Wiesbrock);
+- modes = energy levels;
+- origin = seed ρ₁ (or its two-observation form).
+
+Gravity is the open axis (twistor deformation or spatial cut). Two new tests.
+
 ```bash
 .venv/bin/python -B research/originlab/process_rules.py > /tmp/process-rules.json
 .venv/bin/python -B research/originlab/main.py --campaign process_rules --jobs 1 --out /tmp/originlab-process

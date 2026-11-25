@@ -1,0 +1,17 @@
+Teil 1: Vielteilchenzählung bis E = 500 (Viertelschritte t = q^(1/4))
+   {'schwelle_volles_original': 36, 'schwelle_vier_tuerme': 12, 'log10_4D_durch_vier_tuerme_bei_E500': np.float64(51.49), 'log10_kumulativ_4D_durch_volles_original_bei_E500': np.float64(47.59), '4D_Zustaende_E500_log10': np.float64(95.44)}
+   [ok] exakte Zählung: Ab E = 36 hat der 4D-Skalar mehr Zustände mit Energie <= E als der volle Fockraum des Originals mit Partner und allen Ladungssektoren (und bleibt bis E = 500 darüber); gegen die vier reinen Türme ab E = 12, bei E = 500 um den Faktor 10^51.5 (die Analyse nennt etwa 10^51)
+   [Befund: ja] Eine energietreue Einbettung des vollen 4D-Fockraums in das Original (gleiche Uhr L_0) ist ausgeschlossen; die Einteilchenleiter aus z83 bleibt richtig. Die Vielteilchenstruktur der Raumzeit muss eine eigene Zusammensetzung sein (zweite Quantisierung über der Leiter, etwa viele Nähte oder Ereignisse), nicht die Mehrpaarsektoren einer Naht
+
+Teil 2: Asymptotik
+   [ok] log Z = 4 (pi^2/(6 beta) + ln(beta/2 pi)/2 - beta/24) exakt für vier chirale Türme (führend (2 pi^2/3)/beta) und log Z = pi^4/(45 beta^3) (1 + O(beta^4)) für den 4D-Skalar (beta = 0,05; 0,02): 1/beta gegen 1/beta^3
+
+Teil 3: Lineare Leiter aus der Erhaltung der analytischen Multiplikationsalgebra
+   [ok] e^{ith} S e^{-ith} ist genau dann wieder Toeplitz (konstant auf der Nebendiagonalen), wenn h_(n+1) - h_n konstant ist: linear ja, kubisch, gestört und zufällig nein
+   [ok] mit der Teilchen-Loch-Symmetrie h_(-n-1) = -h_n und der Saatlücke h_0 = pi folgt h_n = pi (2n + 1); das ist 4 pi x auf der verzahnten Leiter x in Z/2 + 1/4, also genau beide Quarter des Originals (die NS-Moden der Überlagerung aus z87)
+   [Befund: ja] Die neunte Analyse hält hier: Die gleichförmige Leiter folgt aus der Erhaltung der analytischen Multiplikationsalgebra unter dem Modulfluss. Das ist die Bedingung H aus z87 als Satz; sie bleibt eine benannte Prämisse, wird aber strukturell (Hardy-Invarianz statt Dispersion)
+
+Urteil
+   Die neunte externe Analyse hält in den hier geprüften Punkten. Exakte Zählung: Ab einer Schwelle hat der 4D-Skalar mehr Zustände mit Energie <= E als der volle Fockraum des Originals mit Partner und Ladungssektoren; eine energietreue Einbettung des vollen 4D-Fockraums ist ausgeschlossen, die Einteilchenleiter (z83) bleibt. log Z wächst wie (2 pi^2/3)/beta gegen pi^4/(45 beta^3). Die lineare Leiter h_n = pi (2n + 1) folgt aus der Erhaltung der analytischen Multiplikationsalgebra unter dem Modulfluss mit Teilchen-Loch-Symmetrie und Saatlücke. Die radiale Spinorreflexion und der Quadrupoltest gehen an die laufenden Rechnungen S3 und S4.
+
+Alle Prüfungen bestanden: True (4/4)

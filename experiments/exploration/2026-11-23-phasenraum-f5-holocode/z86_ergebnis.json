@@ -1,0 +1,315 @@
+{
+ "checks": {
+  "Spektrum: die modularen Einteilchenenergien 4 pi |x| eines Quarters sind pi l mit l ungerade, je einmal (Spektrum eines Majorana-NS-Fermions bei tau = i); beide Quarter zusammen geben jedes pi l zweimal, also Teilchen und Löcher eines komplexen NS-Fermions mit 2 pi k, k in N - 1/2: das Original ist spektral ein komplexes NS-Fermion bei tau = i (beta = L, KMS-Normierung 2 pi bezüglich L_0^NS = 2 L_0)": true,
+  "Fockraum (vier Moden a_1, a_2, b_1, b_2, je 10 Stufen, q = e^{-2 pi}): Omega wird von d_1 = (a_1 - q b_1^+)/sqrt(1 - q^2) vernichtet und hat die Schmidtentropie 9.462148e-05 = 2 s(nbar) der Stromoszillatoren m = 1 beider Quarter (Verschränkung Original|Partner = thermische Entropie des Originals)": true,
+  "Verschränkung von Omega: Summe der Fermionmoden-Entropien h(c(x)) beider Quarter = Ladungssektoren + Stromoszillatoren (Bosonisierung auf Entropieebene) = ln 2/2 je Naht und ln 2/4 je Quarter (auf 1e-45; z68 hatte die Summe)": true,
+  "theta_3(i) = pi^{1/4}/Gamma(3/4), eta(i) = Gamma(1/4)/(2 pi^{3/4}), eta(2i) = 2^{-3/8} eta(i), eta(4i) = Gamma(1/4) (sqrt2 - 1)^{1/4}/(2^{29/16} pi^{3/4}); E_2(i) = 3/pi, E_2(2i) = 3/(2 pi) + (3/8) theta_3(i)^4, E_4(2i) = (11/16) E_4(i), E_4(i) = (3/4) theta_3(i)^8 (gegen q-Reihen, 1e-45)": true,
+  "geschlossene Formen je Quarter: S_Ladung = ln theta_3(i) - (5/8) ln 2 + 1/4 + (pi/16) theta_3(i)^4, S_Osz = -ln eta(2i) - 1/4 - (pi/16) theta_3(i)^4 (Summe ln 2/4); <K_Ladung> = 1/4 - pi/8 + (pi/16) theta_3(i)^4, <K_Osz> = pi/6 - 1/4 - (pi/16) theta_3(i)^4 (Summe pi/24); für beide Quarter gleich": true,
+  "die Verschränkung sitzt im Ladungssektor: Oszillatoranteil < 3e-4 (beide Quarter 9,46e-5), getragen fast ganz von der untersten Fermionmode (2 pi k = pi, Twistzustand Q = +-1); die Stromoszillatoren, die in z78/z79 die Raumzeitkinematik tragen, sind mit ihren Partnern fast unverschränkt": true,
+  "Rényi aus dem Spektrum = (ln(theta_3/eta)(in) - n ln sqrt2)/(1 - n): S_2 = (7/8) ln 2 - (1/2) ln(1 + sqrt2), S_{1/2} = ln(1 + sqrt2) - (1/4) ln 2, S_inf = ln 2/2 - pi/12 (n = 3, 1/3, 5 numerisch), auf 1e-45": true,
+  "S-Dualität der Rényi-Entropien: S_{1/n} + n S_n = (n + 1) S_1 für das Original (S_1 = ln 2/2) und für jedes Quarter (ln 2/4), n = 2, 3, 3/2, 5 (auf 1e-45); für den Ladungssektor allein gilt sie nicht (Rest 6e-4 bis 0,11): sie ist eine Eigenschaft des ganzen Quarters (Weber f(i) = 2^{1/4}, S-invariant), nicht der Bosonisierungsfaktoren": true,
+  "Rényi-2 der Sektoren je Quarter: S_2(Ladung) = ln theta_3(i) = (1/4) ln pi - ln Gamma(3/4) (Reinheit 1/theta_3(i) = 0,920), S_2(Osz) = ln eta(4i) - 2 ln eta(2i)": true,
+  "Modulhamiltonoperator: <K> = pi/12 hebt die Casimirenergie 2 x 4 pi (-1/96) auf (<K'> = 0, z68); Kumulanten in geschlossener Form kappa_2 = pi^2 theta_3(i)^8/24 = Gamma(1/4)^8/(384 pi^4), kappa_3 = 3 kappa_2, kappa_4 = 9 kappa_2 (E_2-Terme heben sich auf; gegen Ableitungen und die z58-Zahlen 0,7982/2,3946/7,1839 geprüft)": true,
+  "kappa_3 = 3 kappa_2 ist eine Folge der S-Dualität (ln Z_voll(y) = ln Z_voll(1/y) ist gerade in ln y, also verschwinden erste und dritte Ableitung in ln y): ebenso für die E8-Naht (kappa_2 = pi^2 theta_3(i)^8/2, kappa_3/kappa_2 = 3), kappa_4/kappa_2 dagegen theorieabhängig (Original 9, E8 -3.77138)": true,
+  "Fisher-Information je Sektor in geschlossener Form: Ladung 2(1/8 + (pi/16) theta_3(i)^4) = 0,79711, Oszillatoren 2((pi^2/48) theta_3(i)^8 - (pi/16) theta_3(i)^4 - 1/8) = 1,1014e-3 (z58: 0,7971099 und 0,0011014; Verhältnis 724)": true,
+  "R1: Für jede S-invariante volle Zustandssumme ist d/dy ln Z_voll = 0 bei tau = i, also S = ln Z_voll(i): Quarter (Weber f(i) = 2^{1/4}) ln 2/4, Original (theta_3/eta = sqrt2) ln 2/2, E8-Naht (E_4/eta^8 = 12) ln 12": true,
+  "R2: Herkunft der ln 2: theta_2 theta_3 theta_4 = 2 eta^3 (die 2 ist die Entartung des Ramond-Grundzustands, eine komplexe Nullmode) und theta_2(i) = theta_4(i) = 2^{-1/4} theta_3(i) (lemniskatischer Modul k^2 = 1/2) geben (theta_3/eta)(i)^3 = 2^{3/2}": true,
+  "R3: als Zustandssumme ist die E8-Naht 16 Quarter (je ein Majorana-NS-Spektrum, Z_voll = 2^{1/4}) mit GSO-Projektion: Z_E8(i) = 16 x 3/4 mit dem GSO-Gewicht (1 + theta_2^8/theta_3^8 + theta_4^8/theta_3^8)/2 = 3/4 bei tau = i; also ln 12 = 16 (ln 2/4) + ln(3/4) (die Gleichsetzung der 16 Majoranas des Trägers mit 16 Quartern ist Lesart)": true,
+  "E8-Naht: Z_voll(2i) = 66 (E_4(2i) = (11/16) E_4(i), eta(2i)^8 = eta(i)^8/8), also S_2 = ln(24/11); S_inf = ln 12 - 2 pi/3; Rényi-Dualität S_{1/2} + 2 S_2 = 3 ln 12": true,
+  "PSLQ findet unter 14 nativen Zahlen x 8 TFPT-Zahlen (eta_B = 1/4 und t = 1 als Rationalitätstest) genau vier ganzzahlige Relationen: S = ln 2/2, S_Quarter = ln 2/4, S_E8 = ln 12 (abgeleitet, R1-R3) und <K> = pi/12 = (1/96)(1/c3); keine Relation mit c3, 48 c3^4, phi0, eta_B = 1/4, t = 1": true,
+  "Kontrolle der 1/4: bei beta = 4 pi hat nur der native Twist alpha = 1/4 eine rationale Entropie in Einheiten ln 2 (S/ln 2 = 0,6628; 1/4; 0,0784; 0,0392 für alpha = 1/8, 1/4, 3/8, 1/2; PSLQ nur bei 1/4); kein Gesetz S = alpha ln 2: die 1/4 kommt vom selbstdualen Punkt (Weber f(i) = 2^{1/4}), nicht aus mu_4. 'eta_B = 1/4 je Bit' wäre Zahlenspiel": true,
+  "Zahlenspielbasislinie: Die Familie p/q x Ziel^{+-1} (1274 Werte) trifft Zufallszahlen typisch auf 7.0e-03; kein Fasttreffer der zehn nicht abgeleiteten nativen Zahlen ist besser als 1 % der Zufallszahlen: Zahlennähe ist hier kein Befund": true,
+  "dieselbe Uhr: beta = 4 pi aus den KMS-Verhältnissen aller Sektoren (Ladung beider Quarter, Q = -3..3; Fermionmoden; Oszillatoren m = 1..6); Eötvös-Parameter max|beta_s/4 pi - 1| = 1.96e-48 (Kontrolle mit Oszillatoren bei 2 pi: 2/3)": true,
+  "erster Hauptsatz delta S = 4 pi delta<L_0> je Sektor (Ladung über die Fugazität, Oszillatoren m = 1, 2, einzelne Fermionmode): dS/d<L_0> = 4 pi auf 1e-40 mit derselben beta; der Rest zweiter Ordnung ist -S_rel < 0; Kontrolle: mit Oszillatoren bei 2 pi gäbe derselbe Test 2 pi": true,
+  "native Translationen |X> = e^{iP(X)} Omega (Fockraum = Gaußformel <a^+ a>_X = nbar + (kappa^2/4) X^2, drei zufällige X, 1e-7): delta S = 4 pi delta<N> mit derselben beta, Rest O(X^2) relativ (Verhältnis 4 bei Halbierung; -5e-5 bei |X| = 1e-4); das Linearitätsfenster ist |X| << q = e^{-2 pi} (Rest -0,27 bei |X| = 0,025)": true,
+  "zweite Ordnung ist nicht universell: Fisher-Information Ladung/Oszillatoren = 724, Besetzung des ersten angeregten Niveaus Ladung 0.0414 gegen Oszillator m = 1 3.49e-6 (Faktor > 1e4): gleiche lineare Kopplung, verschiedene Steifigkeit und verschiedene Linearitätsfenster": true,
+  "Moden: die Verschränkung ist UV-endlich (S - S_M = 6e-10, 2e-15, ... für M Oszillatormoden), S/M -> 0; die Zahl der Moden mit Entropie > eps wächst wie ln(1/eps)/(2 pi) ([4, 8, 15] für eps = 1e-10, 1e-20, 1e-40): S/Modenzahl hängt an der Abschneidung, nicht fest": true,
+  "Nahtlänge: S/(L/beta) = pi/6 (Cardy, c = 1) und C_E/S = 1 nur im extensiven Grenzfall (y = beta/L = 0,05 auf 1e-15); am nativen Punkt y = 1 ist S/(L/beta) = ln 2/2 = 0,662 x Cardy und C_E/S = 2,30, bei y = 2 0,054: kein festes Verhältnis, der native Punkt ist nicht extensiv; nativ ist nur y = 1 (tau = i), also ein Punkt und keine Familie von Flächen, über die eine Dichte normiert werden könnte": true,
+  "Zentralladung als Fläche: S/c = ln 2/2 für alle freien NS-Fermionen (Additivität der Kopien), aber E8 hat bei gleichem c = 8 ln 12/8 = 0,311 statt ln 16/8 = 0,347 (GSO nimmt ln(4/3)); kappa_2/c ebenso (0,798 gegen 1,197): bei tau = i legt c weder S noch kappa_2 fest (das gilt nur extensiv)": true,
+  "Orte (z78): S(|X>) wächst für große X wie 2 ln|det X| + 2 + 4 ln(kappa/2) (zeit-, raumartig und geboostet bei r = 1000 auf 1e-4), ist bei endlichem X keine Funktion von det X (bei |X| ~ 1 geboostet 0,65 gegen Ruhesystem 0,50 bei gleichem det X = 0,27; lichtartig S = 1,38 bei det X = 0) und für kleine X 2 pi kappa^2 (x_0^2 + |x|^2), die Euklidnorm im KMS-Ruhesystem: logarithmisch, kein Flächengesetz in s^2 = det X": true,
+  "Typfrage: spec K in pi N und Tr e^{-K} = sqrt2 e^{-pi/12} endlich (Produkt über ungerade l): der Originalfaktor ist Typ I, der Modulfluss periodisch (Periode 2), S endlich. Eine Horizontalgebra (Rindlerkeil) ist Typ III_1 mit kontinuierlichem Modulspektrum und flächendivergenter Entropie: der Schnitt Original|Partner ist ein Thermofeldschnitt, kein Horizont": true,
+  "S2-Lesart (Stufe m mit m^2 Zuständen = konformer Skalar auf R x S^3, z73): die Thermofeldentropie ist ein Volumengesetz, beta^3 S -> 4 pi^4/45 (Stefan-Boltzmann, Volumen 2 pi^2 R^3; Abweichung 4e-7 bei beta = 0,05), am nativen Punkt 4.73e-05: auch 4D gelesen entsteht keine Fläche": true
+ },
+ "befunde": {
+  "Am nativen Punkt ist die Verschränkung von Omega klein und innen: ein halbes Bit je Naht, zu 99,97 % im Ladungssektor (Uhr, Marken), 9,5e-5 in den Stromoszillatoren (Raumzeitkinematik). Die Kapazität C_E = Var K ist 2,30 S; im extensiven Grenzfall wäre sie S (Teil 4)": true,
+  "Die einzige Relation mit 1/c3 ist <K> = 1/(96 c3): pi-Kommensurabilität (Casimirenergie 2 pi c/24 gegen 8 pi) ohne Rechnung, die die 1/96 erklärt; sie zählt nicht. Von 1/c3 = 2 pi/eta (Ledger) ist der Faktor 2 pi nativ als KMS-Normierung bezüglich L_0^NS (tau = i, 1D-typisiert, keine BW-Aussage); eta = 1/4 hat in der Verschränkung von Omega kein Gegenstück": true,
+  "Arithmetische Klassen: S, S_2, S_{1/2}, S_E8, S_2(E8) sind Logarithmen algebraischer Zahlen; für algebraisches alpha > 0, alpha != 1 ist ln(alpha)/pi irrational (Gelfond-Schneider, e^pi transzendent), also ist keine davon ein rationales Vielfaches von 1/c3 oder c3. kappa_2 = Gamma(1/4)^8/(384 pi^4) ist über Q(pi) transzendent (Nesterenko 1996: pi und Gamma(1/4) algebraisch unabhängig), steht also in keiner algebraischen Relation zu c3, 48 c3^4 oder phi0": true,
+  "t = 1 (z57) ist ein Formkoeffizient der 4D-Plebański-Kantenwirkung; die Verschränkung von Omega trägt keine Flächenvariable, also gibt es keinen Vergleich. Die native '1' am Original ist der selbstduale Punkt beta/L = 1, ein anderes Objekt": true,
+  "Gleiche Uhr heißt: dS/d<L_0^s> = beta = 4 pi für jeden Sektor s exakt (Eötvös-Parameter 0). In jeder Gleichgewichtsbedingung der Form delta S_Original + delta S_X = 0 tritt die Energie aller Sektoren mit demselben Gewicht auf: universelle Kopplung erster Ordnung an die modulare Uhr (nullter Hauptsatz). Nicht daraus folgt: (a) ein Flächenterm S_X = eta A, (b) BW (K = 4 pi L_0 ist die KMS-Drehung der Naht, kein Boost), (c) der Wert 1/c3 oder G, (d) eine Tensorstruktur, (e) Universalität zweiter Ordnung": true,
+  "Kopien: N unabhängige Nähte tragen N ln 2/2 (Additivität). Das ist das einzige feste Verhältnis, eine Zählung ohne Geometrie; die Fläche je Naht (z68: A = 4 S l_P^2) liefert das Original nicht, und die E8-Naht bricht schon die Zählung (ln 12 statt 16 ln 2/4)": true,
+  "c3 als Flächeneinheit: S ist pi-frei, S c3^{+-1} ist nach Gelfond-Schneider irrational, und PSLQ findet keine Relation von S, S_n oder kappa_2 mit c3, 48 c3^4 oder phi0 (Teil 2); eine Fläche in Einheiten von c3 legt S/A nur mit einer neuen, nicht nativen Zahl fest": true,
+  "Eine Fläche entsteht aus einem Thermofeldschnitt nur, wenn er als Horizont gelesen wird (optisches Volumen ~ A/eps^2). Das verbietet GRAV.NONCIRCULAR.01, und es passt nicht zum Typ I mit diskretem Modulspektrum. Abbruchkriterium 2 von S5 greift damit für die Flächennormierung": true,
+  "S5 gegen seine Kriterien: Erfolg (native Entropiedichte trifft 1/c3 und die Flächennormierung ohne BW) nicht erreicht; Abbruchkriterium 1 (Verhältnis nicht fest) für jede geometrische Flächenwahl erfüllt; Abbruchkriterium 2 (Horizontlesart nötig) für die Flächennormierung erfüllt. Erhalten bleibt die exakte gleiche Uhr als Randbedingung für jede Gravitationsquelle (S4)": true
+ },
+ "zahlen": {
+  "entropie": {
+   "Naht (beide Quarter)": "ln 2/2 = 0.34657359027997265471",
+   "je Quarter": "ln 2/4",
+   "Ladung je Quarter": "0.173239484084398",
+   "Oszillatoren je Quarter": "4.73110555878938e-5",
+   "Oszillatoren beide Quarter": "9.46221111757877e-5",
+   "Anteil Ladung": "0.999726978299",
+   "Anteil Oszillatoren": "0.000273022"
+  },
+  "je_mode": {
+   "Oszillatoren": {
+    "m=1": {
+     "q_m": "0.00186744",
+     "s_m je Quarter": "4.7310738e-5"
+    },
+    "m=2": {
+     "q_m": "3.48734e-6",
+     "s_m je Quarter": "3.1781481e-10"
+    },
+    "m=3": {
+     "q_m": "6.51241e-9",
+     "s_m je Quarter": "1.6412878e-15"
+    },
+    "m=4": {
+     "q_m": "1.21616e-11",
+     "s_m je Quarter": "7.5823423e-21"
+    }
+   },
+   "NS-Fermionmoden 2 pi k (Teilchen + Loch)": {
+    "k=1/2": "0.34488612",
+    "k=3/2": "0.0016824198",
+    "k=5/2": "5.0358371e-6",
+    "k=7/2": "1.2940653e-8"
+   }
+  },
+  "renyi": {
+   "S_2": "(7/8) ln 2 - (1/2) ln(1+sqrt2) = 0.16581698948",
+   "S_1/2": "ln(1+sqrt2) - (1/4) ln 2 = 0.70808679188",
+   "S_inf": "ln 2/2 - pi/12 = 0.0847742024808",
+   "S_3": "0.127080607459",
+   "Dualitätsrest Ladung allein": {
+    "2": "-0.00361389",
+    "3": "-0.0230962",
+    "1.5": "-0.000580556",
+    "5": "-0.114279"
+   }
+  },
+  "modulhamilton": {
+   "<K>": "pi/12 = 0.261799387799",
+   "<K> + Casimir": "3.89e-62",
+   "<K_Ladung> beide": "0.261711740409",
+   "<K_Osz> beide": "8.764739e-5",
+   "kappa_n / (pi^2 theta_3(i)^8)": {
+    "2": "1/24",
+    "3": "1/8",
+    "4": "3/8",
+    "5": "5/4"
+   },
+   "kappa_2": "Gamma(1/4)^8/(384 pi^4) = 0.798211324915"
+  },
+  "kapazitaet": {
+   "C_E = Var K": "0.798211324915",
+   "C_E/S": "pi^2 theta_3(i)^8/(12 ln 2) = 2.30315104007"
+  },
+  "fisher_sektoren": {
+   "Ladung": "0.797109903807",
+   "Oszillatoren": "0.00110142110882",
+   "Verhältnis": "723.71"
+  },
+  "e8_naht": {
+   "S": "ln 12",
+   "S_2": "ln(24/11) = 0.78015855755",
+   "S_inf": "ln 12 - 2 pi/3 = 0.390511547395",
+   "kappa_2": "pi^2 theta_3(i)^8/2 = 9.57853589899",
+   "S/c": "0.310613331224"
+  },
+  "pslq": {
+   "S ~ ln 2": "[-2, 1, 0]",
+   "S je Quarter ~ ln 2": "[-4, 1, 0]",
+   "<K> ~ 1/c3 = 8 pi": "[-96, 1, 0]",
+   "S_E8 ~ ln 12": "[1, -1, 0]"
+  },
+  "twistkontrolle_S/ln2": {
+   "1/8": "0.6627989367",
+   "1/4": "0.25",
+   "3/8": "0.07838959737",
+   "1/2": "0.03917623511"
+  },
+  "basislinie": {
+   "S_2": {
+    "bester relativer Abstand": "5.10e-03",
+    "Anteil Zufallszahlen ebenso gut": "0.413"
+   },
+   "S_1/2": {
+    "bester relativer Abstand": "2.66e-03",
+    "Anteil Zufallszahlen ebenso gut": "0.255"
+   },
+   "S_inf": {
+    "bester relativer Abstand": "3.54e-03",
+    "Anteil Zufallszahlen ebenso gut": "0.315"
+   },
+   "kappa_2": {
+    "bester relativer Abstand": "2.24e-03",
+    "Anteil Zufallszahlen ebenso gut": "0.223"
+   },
+   "C_E/S": {
+    "bester relativer Abstand": "2.24e-03",
+    "Anteil Zufallszahlen ebenso gut": "0.223"
+   },
+   "S_Ladung je Quarter": {
+    "bester relativer Abstand": "2.73e-04",
+    "Anteil Zufallszahlen ebenso gut": "0.030"
+   },
+   "S_Osz beide": {
+    "bester relativer Abstand": "1.12e-02",
+    "Anteil Zufallszahlen ebenso gut": "0.629"
+   },
+   "S_2 Ladung": {
+    "bester relativer Abstand": "5.18e-03",
+    "Anteil Zufallszahlen ebenso gut": "0.417"
+   },
+   "S_2 E8": {
+    "bester relativer Abstand": "4.72e-04",
+    "Anteil Zufallszahlen ebenso gut": "0.052"
+   },
+   "S_inf E8": {
+    "bester relativer Abstand": "7.50e-03",
+    "Anteil Zufallszahlen ebenso gut": "0.519"
+   }
+  },
+  "erster_hauptsatz": {
+   "Ladung (Fugazität e^{mu Q})": {
+    "dS/d<L_0>": "12.566370614359172954",
+    "Rest bei 1e-3 (= -S_rel)": "-1.991e-8"
+   },
+   "Oszillator m=1": {
+    "dS/d<L_0>": "12.566370614359172954",
+    "Rest bei 1e-3 (= -S_rel)": "-1.745e-12"
+   },
+   "Oszillator m=2": {
+    "dS/d<L_0>": "12.566370614359172954",
+    "Rest bei 1e-3 (= -S_rel)": "-6.085e-18"
+   },
+   "Fermionmode x=1/4": {
+    "dS/d<L_0>": "12.566370614359172954",
+    "Rest bei 1e-3 (= -S_rel)": "-1.25e-5"
+   }
+  },
+  "translation_erster_hauptsatz_rest": {
+   "1e-4": "-5.093e-5",
+   "5e-5": "-1.274e-5",
+   "1e-3": "-0.00489",
+   "0.025": "-0.2741"
+  },
+  "moden_abschneidung": {
+   "S - S_M (M=1,2,3)": [
+    "6.36e-10",
+    "3.28e-15",
+    "1.52e-20"
+   ],
+   "NS-Moden mit Entropie > 1e-10, 1e-20, 1e-40": [
+    4,
+    8,
+    15
+   ]
+  },
+  "nahtlaenge_y=beta/L": {
+   "0.05": {
+    "S/(L/beta)": "0.5235987756",
+    "C_E/S": "1.0"
+   },
+   "0.2": {
+    "S/(L/beta)": "0.523597889",
+    "C_E/S": "1.0000265"
+   },
+   "1": {
+    "S/(L/beta)": "0.3465735903",
+    "C_E/S": "2.303151"
+   },
+   "2": {
+    "S/(L/beta)": "0.05430979382",
+    "C_E/S": "5.4098101"
+   }
+  },
+  "je_zentralladung_tau_i": {
+   "Majorana-NS (ein Quarter), c = 1/2": {
+    "S/c": "0.3465735903",
+    "kappa_2/c": "0.7982113249"
+   },
+   "Dirac-NS (Original), c = 1": {
+    "S/c": "0.3465735903",
+    "kappa_2/c": "0.7982113249"
+   },
+   "8 Dirac-NS (D8, 16 Quarter), c = 8": {
+    "S/c": "0.3465735903",
+    "kappa_2/c": "0.7982113249"
+   },
+   "E8-Naht, c = 8": {
+    "S/c": "0.3106133312",
+    "kappa_2/c": "1.197316987"
+   }
+  },
+  "orte_r=1": {
+   "geboostet det 0,27": "0.651615",
+   "Ruhesystem det 0,27": "0.501996",
+   "lichtartig I + sigma_3 (det 0)": "1.383757",
+   "X = 0": "9.462e-05"
+  },
+  "orte_r=1000": {
+   "zeitartig r I": {
+    "S": "26.850967",
+    "S - 2 ln|det X|": "-0.780054"
+   },
+   "raumartig r sigma_3": {
+    "S": "26.850967",
+    "S - 2 ln|det X|": "-0.780054"
+   },
+   "geboostet 0,6 I + 0,3 sigma_1": {
+    "S": "24.232321",
+    "S - 2 ln|det X|": "-0.780034"
+   },
+   "lichtartig r (I + sigma_3)": {
+    "S": "14.811823",
+    "S - 2 ln|det X|": "-"
+   }
+  },
+  "S2_lesart_4D": {
+   "beta^3 S/(4 pi^4/45)": {
+    "0.2": "0.99997187",
+    "0.1": "0.99999648",
+    "0.05": "0.99999956"
+   },
+   "S bei beta = 4 pi": "4.731201e-05"
+  },
+  "status": {
+   "Verschränkung von Omega": [
+    "E",
+    "ln 2/2 je Naht (z68), neu: Ladung/Oszillator-Aufteilung in geschlossener Form, Oszillatoranteil 2,7e-4, Rényi mit S-Dualität, kappa_n = r_n pi^2 theta_3(i)^8"
+   ],
+   "Relationen zu TFPT-Daten": [
+    "E",
+    "ln 2 (Ramond-Entartung bei k^2 = 1/2), ln 12 = 16 ln 2/4 + ln(3/4) (E8 = 16 Quarter mit GSO); keine Relation zu 1/c3, c3, 48 c3^4, phi0, eta_B, t (Gelfond-Schneider, Nesterenko, PSLQ, Basislinie)"
+   ],
+   "gleiche Uhr / universelle Kopplung erster Ordnung": [
+    "E",
+    "beta = 4 pi in allen Sektoren, Eötvös-Parameter 0, erster Hauptsatz je Sektor, Translationen eingeschlossen"
+   ],
+   "Universalität zweiter Ordnung": [
+    "E (negativ)",
+    "Fisher 724:1, Linearitätsfenster sektorabhängig"
+   ],
+   "native Fläche mit festem S/Fläche": [
+    "E (negativ)",
+    "Moden, Nahtlänge, c, Orte, c3 nicht fest; Kopien nur als Zählung"
+   ],
+   "Schnitt Original|Partner als Horizont": [
+    "E (negativ)",
+    "Typ I, diskretes Modulspektrum; zudem GRAV.NONCIRCULAR.01"
+   ],
+   "S als Majorana-Bindung (ln sqrt2)": [
+    "L",
+    "Zählung von Bindungen, keine Geometrie"
+   ],
+   "Flächennormierung, G, eta = 1/4": [
+    "O",
+    "braucht einen räumlichen Schnitt in einem rekonstruierten 4D-Netz"
+   ]
+  }
+ },
+ "urteil": "S5 ist in der gestellten Form gescopt verworfen. Die Verschränkung der Purifikation Omega zwischen Original und Tomita-Partner ist exakt und BW-frei berechenbar: ln 2/2 je Naht (z68), davon 99,97 % im Ladungssektor und nur 9,5e-5 in den Stromoszillatoren, die die Raumzeitkinematik tragen; die Teilsummen haben geschlossene Formen in theta_3(i), eta(2i), die Rényi-Entropien erfüllen S_{1/n} + n S_n = (n+1) ln 2/2, und die Kumulanten des Modulhamiltonoperators sind kappa_n = r_n pi^2 theta_3(i)^8 mit kappa_3 = 3 kappa_2 aus der S-Dualität. Exakte Relationen zu TFPT-Daten gibt es nur mit ln 2 (Ramond-Entartung am lemniskatischen Punkt) und ln 12 = 16 (ln 2/4) + ln(3/4) (E8-Naht = 16 Quarter mit GSO); zu 1/c3, c3, 48 c3^4, phi0, eta_B = 1/4 und t = 1 gibt es keine (Gelfond-Schneider, Nesterenko, PSLQ, Basislinie), <K> = 1/(96 c3) ist bloße pi-Kommensurabilität. Positiv und exakt ist die gleiche Uhr: beta = 4 pi in allen Sektoren (Eötvös-Parameter 0), der erste Hauptsatz gilt sektorweise mit derselben Kopplung, auch für die nativen Translationen e^{iP(X)} (Fenster |X| << e^{-2 pi}); das ist universelle Kopplung erster Ordnung an die modulare Uhr, aber ohne Flächenterm, ohne BW und ohne G, und zweiter Ordnung sektorabhängig (Fisher 724:1). Eine native Fläche mit festem S/Fläche gibt es nicht: Moden (abschneideabhängig), Nahtlänge (nur extensiv fest, der native Punkt hat C_E/S = 2,30), Zentralladung (E8 gegen D8 bei c = 8), Orte (2 ln|det X|) scheitern; fest ist nur die Zählung je Naht. Strukturgrund: Original|Partner ist ein Thermofeldschnitt einer Typ-I-Algebra mit diskretem Modulspektrum; seine Entropie ist thermisch (1D extensiv, in der S2-Lesart ein Volumengesetz), eine Fläche entstünde nur mit der verbotenen und hier unpassenden Horizontlesart. Die Flächennormierung braucht einen räumlichen Schnitt in einem rekonstruierten 4D-Netz."
+}

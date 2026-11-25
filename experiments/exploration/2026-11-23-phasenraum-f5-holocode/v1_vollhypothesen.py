@@ -1303,6 +1303,25 @@ if "H6h2" in H and z1p.exists() and z2p.exists():
                                                                                                                                                                          "(Z79); thermischer Zweipfadkanal exakt (Z80)")
                                                                                                                                                     facts["F58_quarter_index"] = T25["urteil"]
                                                                                                                                                     facts["F59_analyses_7_8"] = T26["urteil"]
+                                                                                                                                                    zs42 = {n: Path(__file__).with_name(f"z{n}_ergebnis.json") for n in (82, 83, 86, 87, 88)}
+                                                                                                                                                    if all(p_.exists() for p_ in zs42.values()):
+                                                                                                                                                        T27 = {n: json.loads(p_.read_text()) for n, p_ in zs42.items()}
+                                                                                                                                                        ok27 = all(all(T27[n]["checks"].values()) for n in T27)
+                                                                                                                                                        H["H6h42"] = dict(H["H6h40"])
+                                                                                                                                                        H["H6h42"]["K12"] = (LES if ok27 else F,
+                                                                                                                                                                             H["H6h40"]["K12"][1] + "; su(2,2) schließt mit den Tomita-"
+                                                                                                                                                                             "Wurzeln des nativen Hebers L^nat, Moden = Energiestufen, "
+                                                                                                                                                                             "Minkowskienergie [0, oo) (Z83, bedingt); voller 4D-Fockraum "
+                                                                                                                                                                             "nicht in einer Naht (Z88)")
+                                                                                                                                                        H["H6h42"]["K13"] = (LES if ok27 else F,
+                                                                                                                                                                             H["H6h40"]["K13"][1] + "; keine Flächennormierung aus der "
+                                                                                                                                                                             "Verschränkung Original|Partner (Typ I, Z86); eine Uhr für alle "
+                                                                                                                                                                             "Sektoren")
+                                                                                                                                                        H["H6h42"]["K19"] = (LES if ok27 else F,
+                                                                                                                                                                             H["H6h40"]["K19"][1] + "; Saat rho_1 + Spin-Z4 + CAR, Ursprung auf "
+                                                                                                                                                                             "P_sym und P_clock eingegrenzt (Z87); R = Z4 der 16 auf dem Träger, "
+                                                                                                                                                                             "im Original nur die 2 (Z82)")
+                                                                                                                                                        facts["F60_strategies_s1_s2_s5_s6"] = {n: T27[n]["urteil"] for n in T27}
 
 order = [f"K{i}" for i in range(1, 21)]
 print("Gesamttabelle (P = hergeleitet, L = unter benannter Lesart, F = FAIL, O = OFFEN, E = EINGABE)\n")

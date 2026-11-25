@@ -7989,3 +7989,28 @@ Energiestufen, su(2,2) aus Kanal und Partner), S3 euklidisch zuerst mit OS, S4 G
 (Gegenhypothese S4b), S5 Universalität und Flächennormierung, S6 Ursprung der Saat, S7 Szenario-Suche.
 
 **Prüfstand:** 13 P, 7 L. Atlas-Revision 28da028602102719b6fa129e. Ledger unverändert, nichts befördert.
+
+## H6H42-20261125 · Vier Strategien gerechnet, Szenario-Suche, Analyse 9
+
+Parallele Agentenläufe, alle von mir reproduziert:
+- **S2:** `z83_radiale_quantisierung.py` (20 von 20).
+  - su(2,2) schließt exakt mit den Tomita-Wurzeln des nativen paarerhaltenden Hebers L^nat.
+  - Das ergibt die ν = 1-Leiter; die Minkowskienergie hat das Spektrum [0, ∞).
+  - Die Moden sind Energiestufen. Bedingt, eine Identifikation.
+- **S1:** `z82_zwei_faktoren.py` (24 von 24).
+  - R ist auf dem Träger die ℤ₄ der 16; Spin und Statistik gelten innen exakt.
+  - Das Original erreicht nur die „2“; die Quarter-Oszillatoren geben Fermionen kein 2π-Vorzeichen.
+- **S5:** `z86_verschraenkung_flaeche.py` (29 von 29). Aus Original|Partner folgt keine Flächennormierung; es gibt eine Uhr
+  für alle Sektoren.
+- **S6:** `z87_ursprung_saat.py` (26 von 26).
+  - Saat ρ₁ + Spin-ℤ₄ + CAR.
+  - Der Ursprung ist auf P_sym und P_clock eingegrenzt.
+- **Analyse 9:** `z88_analyse9_zaehlung_leiter.py` (4 von 4).
+  - Der volle 4D-Fockraum passt energietreu nicht in eine Naht.
+  - Die lineare Leiter folgt aus der Hardy-Invarianz.
+- **S7:** OriginLab `scenarios`, 960 Szenarien. Davon bleiben 8, alle mit Schrittart-Spinor, inneren Marken, parabolischer
+  Zeit, Energiestufen und Saat ρ₁.
+
+S3 (z84) und S4 (z85) rechnen noch.
+
+**Prüfstand:** 13 P, 7 L (K12, K13, K19 präzisiert). Atlas-Revision 8e0b47e07e07bdd4e19849a3. Ledger unverändert, nichts befördert.

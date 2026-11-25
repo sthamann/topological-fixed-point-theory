@@ -1,0 +1,406 @@
+{
+ "checks": {
+  "R: z -> i z auf dem Träger H0(O(D)), e_m = z^m/(z^4 - 1), exakt: R e_m = i^m e_m (Viertelcharaktere 1, i, -1, -i, 1); R^2 hat die Eigenräume 3 (+1: e_0, e_2, e_4) und 2 (-1: e_1, e_3); Y = (I - 5R^2)/12 = diag(-1/3, 1/2, -1/3, 1/2, -1/3), tr Y = 0, tr Y^2 = 5/6": true,
+  "auf der 2 (R^2 = -1) ist R = diag(i, -i) mit det 1 und Quadrat -1: das Spinorelement von SU(2), derselbe mu4-Modul wie das fermionische Quarterpaar und das eta-Dublett (z79); auf der 3 ist R = diag(1, -1, 1) mit det -1": true,
+  "det R = i^(0+1+2+3+4) = -1, und R erhält beide 3+2-Schnitte: -R liegt in S(U(3) x U(2)) = G_SM (Bild in U(5)), im R^2-Schnitt sogar in SU(3) x SU(2) (Blockdeterminanten 1, 1), im V4-Schnitt mit Blockdeterminanten (-1, -1), also -R = h e^{i pi Y} mit h in SU(3) x SU(2). Modulo Eichgruppe ist R = -1_5": true,
+  "Spinorhebung R~ = det(R)^(-1/2) Lambda(R) auf Lambda^gerade C^5 (beide Zweige; Cauchy-Binet geprüft): R~ Lambda(-R)^(-1) ist auf allen 16 der Skalar -+i = z_X^(-+1), z_X = exp(i pi X/2) mit X = 5 - 2p = 1 mod 4, das Zentrum von Spin(10): die Vierteldrehung der Marken ist auf der 16 die anomalierelevante Spin-Z4, modulo G_SM": true,
+  "die naive Hebung Lambda(R) ist auf der 16 gleich Lambda(-R), also eichtrivial; eichinvariant sichtbar am G_SM-Singulett nu^c = Lambda^0: dort wirkt Lambda(R) als 1, R~ als +-i (z_X), jedes Lambda(g) mit g in SU(5) als 1": true,
+  "mod-16-Bilanz der Klasse von R (= z_X): alle 16 haben X = 1 mod 4, nu = 16 = 0 mod 16 je Familie, drei Familien 48 = 0 mod 16; ohne nu_R 15 (Anomalie): die Kette mu_4 -> 16 (a3, s4, z53) gilt für die Vierteldrehung der Marken": true,
+  "R^2 = exp(6 pi i Y) ist im R^2-Schnitt das Zentrum von SU(2)_L ((-1) auf den Dubletts), im V4-Schnitt ein SU(3)-Element: in beiden ein Eichelement. R~^2 = (-1)^F Lambda(R^2) und Lambda(R)^2 = Lambda(R^2): modulo Eichung ist R~^2 = (-1)^F (Spin-Z4), Lambda(R)^2 = +1. Überträgt man die Regel R^2 = (-1)^F des Originals auf die 16, wählt sie die Spinorhebung; R~ selbst hat auf Q und L gerade Ladungen (8 von 16), ist also erst als Klasse modulo G_SM eine Spin-Z4": true,
+  "Gegenproben: N Trägermoden mit Viertelcharakteren i^0..i^(N-1) tragen modulo SU(N) genau dann eine Spin-Z4-Klasse auf Lambda^gerade C^N, wenn det = -1 und N ungerade (bis 16: N = [5, 13], also N = 5 mod 8); N = 4 (det -1, aber N gerade) und verschobene Charaktere i^1..i^5 (det -i) nicht: das kleinste ist N = 5 = h0(O(D)) der Viermarkennaht": true,
+  "die Laurentreihen von e_m = z^m/(z^4 - 1) um 0 (Hardy-Hälfte k >= 0) und um unendlich (k < 0) tragen nur Hardy-Marken k = m mod 4: jede Trägermode ist eine Residuenklasse k mod 4 (e_0 und e_4 = 1 + e_0 beide in der Klasse 0)": true,
+  "die Einteilchenmoden des Originals (x in Z + 1/4, Z + 3/4, |x| <= 20) haben ungerade Hardy-Marken k = 4x; die Abbildung x -> e_(4x mod 4) ist R-äquivariant (e^{2 pi i x} = i^k = Charakter von e_(k mod 4)) und trifft genau e_1, e_3, also den R^2 = -1-Eigenraum (die 2); der dreidimensionale R^2 = +1-Eigenraum (e_0, e_2, e_4; Klassen k = 0, 2 mod 4, alpha = 0, 1/2) bleibt ohne Einteilchenquelle": true,
+  "CAR-Algebra des Originals (8 Moden aus beiden Quartern, alle 65536 Matrixeinheiten): Ad_R hat auf ungeraden (fermionischen) Operatoren genau die Charaktere {i, -i}, auf geraden genau {1, -1}. Keine fermionische Mode des Originals hat einen Charakter +-1 der 3": true,
+  "Determinantenschranke: det(R g) = -1 für jedes g in SU(5), fünf Charaktere mit Quadrat -1 gäben aber det^2 = -1. Über alle 256 diagonalen mu4-Eichelemente (in G_SM) bleibt mindestens 1 Charakter mit Quadrat +1 (nie 0); er kann in den Farb- oder in den Schwachblock gelegt werden (Minimum im Farbblock 0). Modulo Eichung sind also höchstens vier der fünf Trägermoden fermionisch, nie alle": true,
+  "Statistik der 16 bei exakten Trägercharakteren: Realisiert man die fünf Moden im Original als R-Eigenoperatoren mit den Charakteren 1, i, -1, -i, 1, dann ist für jede Referenzphase rho_0 des Zustands nu^c genau die Hälfte der 16 R^2-ungerade: im R^2-Schnitt haben die Dubletts Q, L die andere Statistik als nu^c, e^c, u^c, d^c (gescoptes Negativ); nur die Klasse z_X gibt allen 16 R^2 = -1": true,
+  "eta-Dublett span{1, w/(u^2 - 1)} exakt: die Spinorhebung (u, w) -> (-iu, -w) ist [[0, -1], [1, 0]] mit Eigenwerten {-i, i} und Quadrat -1 (2 pi-Drehung = -1); die andere Hebung (w -> w) ist [[0, 1], [1, 0]] mit Quadrat +1": true,
+  "auf allen 159201 Zuständen (Q_a, Q_b in [-10, 10], Oszillatorstufe <= 5 je Quarter; L_0, Teilchen und Löcher aus den Besetzungen): das Produkt der eta-Spinoreigenwerte über alle Quanten (Teilchen lambda, Loch lambda-quer; a <-> i, b <-> -i) ist gleich R = e^{2 pi i L_0} = i^(Q_a - Q_b), und sein Quadrat, die 2 pi-Drehung der 4D-Lesart, ist gleich (-1)^F: Fermionen sind genau die eta-Spinoren": true,
+  "alle 16 Zuordnungen (i^e_a, i^e_b) der Quartergrade durchgemustert: R treu nur [(1, 3)] (das eta-Spinordublett {1, 3}, eindeutig wie in z79), die Statistik treu nur für die vier ungeraden Paare [(1, 1), (1, 3), (3, 1), (3, 3)]; Gegenproben: das Nahtdublett V_1 (i, 1) verfehlt (-1)^F auf 47.6%, die skalare Zuordnung (i, i) verfehlt R auf 47.6% der Zustände": true,
+  "R = e^{i pi J_z} mit J_z = (Q_a - Q_b)/2: J_z ist genau auf den fermionischen Zuständen halbzahlig, e^{2 pi i J_z} = (-1)^F; die niedrigsten Fermisektoren haben J_z = +1/2 bei L_0 = 1/4 ((1, 0), (0, -1)) und J_z = -1/2 bei L_0 = 3/4 (ihre Konjugierten)": true,
+  "die volle eta-SU(2) (Drehung um pi/4 auf allen Paaren (x, -x)) ist im KMS-Zustand nicht implementierbar: die Powers-Stoermer-Summe wächst linear (X = 10, 20, 40: Verhältnisse ~2), nur der Torus (erzeugt von Q_a - Q_b, darin R) erhält den Zustand (Summe 0). Innen wirken also U(1) und Z4, keine Drehgruppe": true,
+  "Gegenprobe Außenbild (z79): die 2 pi-Drehung U = (-1)^(Zahl der Stromquanten) gibt dem Bosonzustand J_-1|0> das Vorzeichen -1 (R^2 = +1; 49 solche Bosonzustände bis Stufe 9), und auf den Fermimoden psi*_(n+1/4)|0> ist sie nicht definit: <U_alle> = 1, -1, 0, 0, ... (exakt 0 für n >= 2: gleich viele Permutationen mit gerader und ungerader Zyklenzahl), <U_1> = sum_(k<=n) (-2)^k/k! -> e^(-2). Da U|0> = |0>, ist U psi*_x U^-1 nicht +-psi*_x. Gescoptes Negativ: die Hülle eines Vertexoperators mischt beide Vorzeichen, die äußere Lorentzgruppe gibt Fermionen keine konsistente Helizität": true,
+  "in jedem Ladungssektor Q = -3..3 und für beide Quarter sind die fermionischen Matrixelemente von J_+-1, J_+-2, J_+-3 in der Maya-Basis exakt dieselben, und [J_m, J_-m] = m (m = 1, 2, 3): dieselbe Stromalgebra und derselbe Fockraum": true,
+  "bedingte KMS-Antworten je Sektor (beta = 4 pi und Kontrolle beta = 2, Stufe <= 14): <J_-m J_m>_Q, die verbundenen Vierpunktantworten <J_-1^2 J_1^2> - 2<J_-1 J_1>^2 und <J_-2 J_-1 J_1 J_2> - <J_-1 J_1><J_-2 J_2> sind in allen sieben Sektoren gleich (relativ 1e-13)": true,
+  "und stimmen mit der gaußschen Hülle überein: <J_-m J_m> = m/(e^{beta m} - 1), verbundene Vierpunktantworten 0 (beta = 4 pi relativ 1e-12, beta = 2 Abschneidefehler < 1e-6); die Kovarianz von Q^2 (innen) und J_-1 J_1 (außen) im vollen KMS-Zustand verschwindet (relativ 5e-16): der Zustand ist ein Produkt, die Materie sourct die Hülle nicht": true,
+  "Sugawara je Sektor, fermionisch: L_n = sum_x (x + n/2) psi*_x psi_(x+n) ist auf allen Zuständen gleich L_n^osc + (Q + alpha - 1/2) J_n (n = 1, 2, 3, beide Quarter, Fehler < 1e-12), und L_n^osc = sum J_-k J_(n+k) + ... ist in jedem Sektor dieselbe Matrix: T_osc ist universell, die Kopplung an den Sektor ist der lineare Term mu_Q J_n": true,
+  "Tensorantwort: <L_-n L_n>_Q = A_n + B_n/16 + 2 B_n E_alpha(Q) mit B_n = <J_-n J_n> (n = 1, 2, 3; beta = 4 pi und 2): nach Abzug von 2 B_n E(Q) bleibt in allen 14 Sektoren beider Quarter dieselbe Konstante (relativ 1e-12; (alpha - 1/2)^2 = 1/16 für beide Quarter); die lineare Antwort <J_-n L_n>_Q = mu_Q B_n ist ladungsproportional, der Kreuzterm <L_-n^osc J_n> verschwindet": true
+ },
+ "befunde": {
+  "Im R^2-Schnitt ist das Bild der Originalmoden das schwache Dublett (Y = 1/2); im V4-Schnitt (z34) liegt {z, z^3} in der Farbe. In beiden Schnitten fehlt der R^2 = +1-Eigenraum; was fehlt, sind die Quarterklassen alpha = 0 und 1/2": true,
+  "Die Charaktere der 3 (1, -1, 1) tragen im Original nur bosonische Sektoren (Q_a + Q_b gerade): Paare psi*_a psi*_b und die Ströme (k = 0), psi*_a psi_b, psi*_a psi*_a, psi*_b psi*_b (k = 2); die drei niedrigsten bosonischen Sektoren (0, 0), (1, -1), (1, 1) bei L_0 = 0, 1/2, 1 haben gerade die Charaktere 1, -1, 1 (Beobachtung, keine Zuordnung). Die 3 käme also aus Fermipaaren (Klassen alpha = 0 und 1/2), nicht aus Einteilchenmoden": true,
+  "Spin-Statistik gilt innen exakt (eta-Spinor, R^2 = (-1)^F, J_z = (Q_a - Q_b)/2 halbzahlig genau für Fermionen), außen nicht: die Lorentzgruppe aus z79 wirkt auf der Stromhülle, die R nicht sieht, und gibt Strombosonen halbzahlige Twistorhelizität. Eine Spin x_Z2 Z4-Verklebung (äußeres -1 = R^2) verlangte (-1)^(Zahl der Quanten) = (-1)^F auf allen Zuständen; die Vertexoperatoren des Originals verletzen sie": true,
+  "Universalität im genauen Sinn: Jeder Ladungssektor sieht denselben Oszillator-Fockraum, denselben Zustand und dasselbe T_osc; die Tensorantwort hängt vom inneren Inhalt nur über die innere Energie E(Q) ab, mit einem für beide Quarter gleichen Koeffizienten 2 B_n (Teleskopsumme, z79). Das ist eine äquivalenzprinzipartige Kopplung im 2D-Tensorkanal. Grenzen: Im KMS-Zustand ist die Kreuzkorrelation null (keine Quelle, G nicht bestimmt), die lineare Kopplung mu_Q J_n ist ladungs-, nicht energieproportional, und T(z) ist kein 4D-Spin 2 (z75)": true
+ },
+ "zahlen": {
+  "traeger_charaktere": [
+   "1",
+   "I",
+   "-1",
+   "-I",
+   "1"
+  ],
+  "minus_R_in_G_SM": {
+   "R^2-Schnitt (Y = (I - 5R^2)/12)": {
+    "Blockdet(-R) schwach, Farbe": [
+     "(1+0j)",
+     "(1+0j)"
+    ],
+    "e^{i pi Y} nötig": false
+   },
+   "V4-Schnitt (z34, z36)": {
+    "Blockdet(-R) schwach, Farbe": [
+     "(-1+0j)",
+     "(-1+0j)"
+    ],
+    "e^{i pi Y} nötig": true
+   }
+  },
+  "R_tilde_mal_Eichinverse_auf_16": {
+   "1j": "-1j",
+   "(-0-1j)": "(-0+1j)"
+  },
+  "ladungen_der_16": {
+   "nu^c": {
+    "Lambda(R)": [
+     0
+    ],
+    "R~ (Zweig i^X)": [
+     1
+    ],
+    "X mod 4": [
+     1
+    ]
+   },
+   "Q": {
+    "Lambda(R)": [
+     1,
+     1,
+     1,
+     3,
+     3,
+     3
+    ],
+    "R~ (Zweig i^X)": [
+     0,
+     0,
+     0,
+     2,
+     2,
+     2
+    ],
+    "X mod 4": [
+     1,
+     1,
+     1,
+     1,
+     1,
+     1
+    ]
+   },
+   "u^c": {
+    "Lambda(R)": [
+     0,
+     2,
+     2
+    ],
+    "R~ (Zweig i^X)": [
+     1,
+     3,
+     3
+    ],
+    "X mod 4": [
+     1,
+     1,
+     1
+    ]
+   },
+   "e^c": {
+    "Lambda(R)": [
+     0
+    ],
+    "R~ (Zweig i^X)": [
+     1
+    ],
+    "X mod 4": [
+     1
+    ]
+   },
+   "d^c": {
+    "Lambda(R)": [
+     0,
+     2,
+     2
+    ],
+    "R~ (Zweig i^X)": [
+     1,
+     3,
+     3
+    ],
+    "X mod 4": [
+     1,
+     1,
+     1
+    ]
+   },
+   "L": {
+    "Lambda(R)": [
+     1,
+     3
+    ],
+    "R~ (Zweig i^X)": [
+     0,
+     2
+    ],
+    "X mod 4": [
+     1,
+     1
+    ]
+   }
+  },
+  "nu_mod16": {
+   "eine Familie": 16,
+   "ohne nu^c": 15,
+   "drei Familien": 48
+  },
+  "N_mit_Spin_Z4_Klasse_bis_16": [
+   5,
+   13
+  ],
+  "determinantenschranke": {
+   "min. Charaktere mit Quadrat +1": 1,
+   "davon min. im Farbblock": 0
+  },
+  "niedrigste_Sektoren (L0, Q_a, Q_b, R)": {
+   "bosonisch": [
+    [
+     "0",
+     0,
+     0,
+     "1"
+    ],
+    [
+     "1/2",
+     1,
+     -1,
+     "-1"
+    ],
+    [
+     "1",
+     -1,
+     -1,
+     "1"
+    ],
+    [
+     "1",
+     1,
+     1,
+     "1"
+    ],
+    [
+     "3/2",
+     -1,
+     1,
+     "-1"
+    ]
+   ],
+   "fermionisch": [
+    [
+     "1/4",
+     0,
+     -1,
+     "i"
+    ],
+    [
+     "1/4",
+     1,
+     0,
+     "i"
+    ],
+    [
+     "3/4",
+     -1,
+     0,
+     "-i"
+    ],
+    [
+     "3/4",
+     0,
+     1,
+     "-i"
+    ],
+    [
+     "7/4",
+     1,
+     -2,
+     "-i"
+    ]
+   ]
+  },
+  "spin_statistik_zustaende": 159201,
+  "zuordnungen": {
+   "treu zu R": [
+    [
+     1,
+     3
+    ]
+   ],
+   "treu zur Statistik": [
+    [
+     1,
+     1
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     3,
+     1
+    ],
+    [
+     3,
+     3
+    ]
+   ],
+   "Nahtdublett: Statistik falsch (Anteil)": 0.47619047619047616,
+   "skalar (i, i): R falsch (Anteil)": 0.47619047619047616
+  },
+  "innere_Helizitaet_niedrigste_Fermisektoren (L0, Q_a, Q_b, J_z)": [
+   [
+    "1/4",
+    "0",
+    "-1",
+    "1/2"
+   ],
+   [
+    "1/4",
+    "1",
+    "0",
+    "1/2"
+   ],
+   [
+    "3/4",
+    "-1",
+    "0",
+    "-1/2"
+   ],
+   [
+    "3/4",
+    "0",
+    "1",
+    "-1/2"
+   ]
+  ],
+  "eta_SU2_HS_Summen": {
+   "10": 39.165373162810404,
+   "20": 79.1653731628104,
+   "40": 159.1653731628104
+  },
+  "aeussere_2pi_auf_psi*_(n+1/4)|0>": {
+   "<U_alle>": [
+    1.0,
+    -1.0,
+    0.0,
+    -0.0,
+    0.0,
+    -0.0,
+    0.0,
+    -0.0,
+    -0.0,
+    0.0
+   ],
+   "<U_1>": [
+    1.0,
+    -1.0,
+    1.0,
+    -0.333333333333,
+    0.333333333333,
+    0.066666666667,
+    0.155555555556,
+    0.130158730159,
+    0.136507936508,
+    0.135097001764
+   ]
+  },
+  "bosonische Oszillatorzustaende mit aeusserem Vorzeichen -1 (Stufe <= 9)": 49,
+  "stromantworten_je_Quarter_und_beta": {
+   "alpha=0.25, beta=12.566371": {
+    "<J_-1 J_1>": 3.4873545178081176e-06,
+    "<J_-2 J_2>": 2.4323113419114442e-11,
+    "verbunden 4pt (1,1)": 3.2311742677852644e-27,
+    "verbunden 4pt (1,2)": 2.465190328815662e-32
+   },
+   "alpha=0.25, beta=2.0": {
+    "<J_-1 J_1>": 0.1565176427031333,
+    "<J_-2 J_2>": 0.03731472068673619,
+    "verbunden 4pt (1,1)": -2.1681295647724141e-10,
+    "verbunden 4pt (1,2)": -9.444267937142037e-11
+   },
+   "alpha=0.75, beta=12.566371": {
+    "<J_-1 J_1>": 3.4873545178081176e-06,
+    "<J_-2 J_2>": 2.4323113419114442e-11,
+    "verbunden 4pt (1,1)": 3.2311742677852644e-27,
+    "verbunden 4pt (1,2)": 2.465190328815662e-32
+   },
+   "alpha=0.75, beta=2.0": {
+    "<J_-1 J_1>": 0.1565176427031333,
+    "<J_-2 J_2>": 0.03731472068673619,
+    "verbunden 4pt (1,1)": -2.1681295647724141e-10,
+    "verbunden 4pt (1,2)": -9.444267937142037e-11
+   }
+  },
+  "tensorantwort_konstante (<L_-n L_n>_Q - 2 B_n E(Q))": {
+   "n=1, beta=12.566371": 2.1798398081572045e-07,
+   "n=1, beta=2.0": 0.07329726008425787,
+   "n=2, beta=12.566371": 7.601142591295433e-12,
+   "n=2, beta=2.0": 0.02680317467086663,
+   "n=3, beta=12.566371": 9.277606955853066e-17,
+   "n=3, beta=2.0": 0.008460877263113885
+  },
+  "status": {
+   "R auf dem Träger = Z4 der 16": [
+    "E",
+    "R = (-1_5) g, g in G_SM; Spinorhebung = z_X mal Eichelement; nu = 16 = 0 mod 16; N = 5 ist das kleinste N mit dieser Eigenschaft (Teil 1.2-1.4)"
+   ],
+   "Hebung durch R^2 = (-1)^F gewählt": [
+    "E",
+    "nur die Spinorhebung erfüllt R^2 = (-1)^F modulo Eichung; die naive Hebung ist eichtrivial"
+   ],
+   "Original -> Träger (Hardy-Residuen)": [
+    "E",
+    "äquivariant, Bild = R^2 = -1-Eigenraum (die 2)"
+   ],
+   "die 3 aus dem Original": [
+    "E (negativ, gescopt)",
+    "keine fermionische Einteilchenquelle (Klassen alpha = 0, 1/2 fehlen); modulo Eichung höchstens 4 von 5 Moden fermionisch; mit exakten Trägercharakteren zerfällt die 16 statistisch 8/8"
+   ],
+   "Spin-Statistik innen": [
+    "E",
+    "eta-Spinor, R^2 = (-1)^F auf allen Sektoren |Q| <= 10; Zuordnung {1, 3} eindeutig"
+   ],
+   "4D-Helizität der Vertexoperatoren (Außenbild z79)": [
+    "E (negativ, gescopt)",
+    "äußeres 2 pi-Vorzeichen auf psi*_x|0> nicht definit, Strombosonen mit Vorzeichen -1"
+   ],
+   "Universalität der Hülle": [
+    "E",
+    "gleiche Stromalgebra, gleicher Zustand, gleiches T_osc; Tensorantwort nur über E(Q)"
+   ],
+   "universelle Kopplung als Gravitation": [
+    "O",
+    "keine Quelle im KMS-Zustand, G offen, 2D-Kanal statt 4D-Spin 2"
+   ],
+   "Verklebung innen/außen (Spin x_Z2 Z4)": [
+    "O",
+    "eine Lorentzwirkung mit -1 = R^2, die Vertexoperatoren kovariant lässt, fehlt"
+   ]
+  },
+  "S1_kriterien": {
+   "Abbruch 1 (R ist nicht die Z4 der 16)": "nicht ausgelöst auf dem Träger (Klasse modulo G_SM = z_X); im Original teilweise: R erreicht nur die 2",
+   "Abbruch 2 (keine konsistente 4D-Helizität der Vertexoperatoren)": "im Außenbild von z79 ausgelöst (gescopt); innen nur Vorzeichen und J_z, keine Drehgruppe",
+   "Erfolg 'Materie = Ladungsgitter x Spinor'": "teilweise: Spinorvorzeichen innen exakt, Helizität außen nicht",
+   "Erfolg 'Wechselwirkung = Vertexoperatoren mit universeller Hülle'": "Hülle universell (Teil 3), Kopplung nur über E(Q) bzw. Ladung, ohne Quelle"
+  }
+ },
+ "urteil": "S1 hält teilweise. Innen hält sie: Die Vierteldrehung der Marken auf dem Träger, R = diag(1, i, -1, -i, 1) mit det R = -1, ist R = (-1_5) g mit g in G_SM, ihre Spinorhebung auf Lambda^gerade C^5 ist z_X = exp(i pi X/2) mal Eichelement, also modulo Eichung genau die Spin-Z4 der 16 mit nu = 16 = 0 mod 16 (N = 5 ist das kleinste N mit dieser Eigenschaft); die naive Hebung wäre eichtrivial, und die Regel R^2 = (-1)^F des Originals wählt die Spinorhebung. Spin-Statistik gilt innen exakt: Auf allen Sektoren |Q_a|, |Q_b| <= 10 ist das Produkt der eta-Spinoreigenwerte R und sein Quadrat (-1)^F, mit eindeutiger Zuordnung {1, 3}; J_z = (Q_a - Q_b)/2 ist genau auf Fermionen halbzahlig. Die Hülle ist universell: dieselbe Stromalgebra, derselbe Zustand und dasselbe T_osc in jedem Sektor, und die Tensorantwort hängt nur über die innere Energie E(Q) mit quarterunabhängigem Koeffizienten ab. Nicht gehalten hat zweierlei. Erstens erreicht das Original über die Hardy-Residuen nur die 2 (R^2 = -1); die 3 hat keine fermionische Einteilchenquelle (es fehlen die Klassen alpha = 0, 1/2; modulo Eichung bleibt stets mindestens eine Trägermode R^2-gerade), und mit exakten Trägercharakteren zerfiele die 16 statistisch 8/8, R ist im Original also nur als Klasse modulo G_SM die Z4 der 16. Zweitens tragen die Vertexoperatoren im Außenbild von z79 keine konsistente Helizität: die äußere 2 pi-Drehung ist auf psi*_x|0> nicht definit (<U> = 0 ab n = 2) und gibt Strombosonen das Vorzeichen -1; innen gibt es nur Z4 und U(1), die volle eta-SU(2) ist im KMS-Zustand nicht implementierbar. Das Abbruchkriterium 'keine konsistente 4D-Helizität' ist damit für die wörtliche Fassung (Spin aus der äußeren Lorentzgruppe) erfüllt; offen bleibt eine Verklebung Spin x_Z2 Z4, die R^2 mit der äußeren 2 pi-Drehung identifiziert und die Vertexoperatoren kovariant lässt. Universelle Kopplung im Sinn der Gravitation (Quelle, G) folgt nicht. Nichts ist befördert; 3+1-Aussagen bleiben Kinematik bzw. Lesart."
+}

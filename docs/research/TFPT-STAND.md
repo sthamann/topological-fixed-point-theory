@@ -1,7 +1,7 @@
 # TFPT: Was funktioniert, was fehlt, was eine vollständige Lösung wäre
 
 Kompakter Stand vom 20. November 2026, ergänzt am 23. und 24. November (Befunde 20.–24. November, Kandidat H6 bis
-H6h41, Leitlinie „Rekonstruktion statt Auswahl“ und Abschnitt 5), für Explorations- und Lösungssitzungen. Seit 24. November
+H6h42, Leitlinie „Rekonstruktion statt Auswahl“ und Abschnitt 5), für Explorations- und Lösungssitzungen. Seit 24. November
 liegen die Explorationszweige vom 20. November in main (Quaternionrahmen, Fibonacci-Uhr, Vertauschung und Auslese, fremde
 und operative Ursprünge, Projekt Genesis, die Vertragsserie vom 14./15. Oktober); ihre Befunde stehen in ihren Verzeichnissen
 unter `experiments/`. Nicht zusammengeführt ist `codex/c3-p1-p2-abgleich-20261105` (121 Konflikte mit dem heutigen Stand). Neuere Befunde stehen in den Atlasproblemen mit Datum
@@ -42,7 +42,7 @@ Offen sind der Tensorkanal und die Rekonstruktion von 3+1 aus 4D-Antworten. Z60 
 ist die Spektraldimension (Weyl-Gesetz) einer Antwort. Die Quelle hat d = 1, die E₈-Naht kompakt und starr d = 8 = 4 + 4.
 Gebraucht wird eine originale Antwort mit d = 4, nichtkompakt und reflexionspositiv.
 
-**Gesamtstand und Strategien (Stand H6h41):** [`GESAMTSTAND-UND-STRATEGIEN.md`](GESAMTSTAND-UND-STRATEGIEN.md), mit
+**Gesamtstand und Strategien (Stand H6h42):** [`GESAMTSTAND-UND-STRATEGIEN.md`](GESAMTSTAND-UND-STRATEGIEN.md), mit
 Tor-Karte T1–T8, Kriterien K12–K20 und sieben Strategien (S1–S7).
 
 **Gesamtbild (Vogelperspektive, Stand H6h35):** [`VOGELPERSPEKTIVE.md`](VOGELPERSPEKTIVE.md).
@@ -171,9 +171,9 @@ Ursprung sollte beides zugleich liefern.
 
 ### Kandidat H6: Ursprung von P1 aus einer hintergrundfreien Naht (Exploration 23.11.)
 
-Quelle: `experiments/exploration/2026-11-23-phasenraum-f5-holocode/VERDICT.md` (Stand H6h41),
-Skripte `n1`, `v1`, `y1`, `z1`–`z81`, Lean-Vertrag `experiments/theory-contracts/h6-exakte-teile-20261123/`; Atlasproblem `problem:c3-p1-p2-shared-origin-reconciliation`,
-Befunde mit Präfix `h6`. Nichts davon ist im Ledger befördert. Prüfstand mit 20 Kriterien (Stand H6h40): 13
+Quelle: `experiments/exploration/2026-11-23-phasenraum-f5-holocode/VERDICT.md` (Stand H6h42),
+Skripte `n1`, `v1`, `y1`, `z1`–`z88`, Lean-Vertrag `experiments/theory-contracts/h6-exakte-teile-20261123/`; Atlasproblem `problem:c3-p1-p2-shared-origin-reconciliation`,
+Befunde mit Präfix `h6`. Nichts davon ist im Ledger befördert. Prüfstand mit 20 Kriterien (Stand H6h42): 13
 hergeleitet, 7 unter benannter Lesart, keines gescheitert, offen oder gesetzt. K12 (3+1) zählt seit der Leitlinie
 „Rekonstruktion statt Auswahl“ nur als Lesart: d = 4 folgt kinematisch, nicht aus den Antworten (Z60).
 
@@ -498,6 +498,21 @@ hergeleitet, 7 unter benannter Lesart, keines gescheitert, offen oder gesetzt. K
     - R = i^(Q_a − Q_b), R² = (−1)^F: Die Uhr ist ein Spin-ℤ₄-Erzeuger. [E]
     - Die Einteilchendaten sind die Saatfamilie {ρ_m, m ungerade} auf Fermipaaren. [E]
     - Die Marken liegen über einem Punkt der physischen Windung. [E]
+  - Strategien parallel gerechnet (Z82, Z83, Z86, Z87, Z88, H6h42):
+    - S2 (Z83): su(2,2) schließt mit den Tomita-Wurzeln des nativen paarerhaltenden Hebers L^nat = Σ(k+1)ψ*_{k+1}ψ_k.
+      Die Moden sind Energiestufen der ν = 1-Leiter, und die Minkowskienergie hat das Spektrum [0, ∞). Das Speziesproblem
+      verschwindet auf Einteilchenebene. [C, eine Identifikation]
+    - S1 (Z82): R ist auf dem Träger die ℤ₄ der 16 (Zentrum von Spin(10), bis auf Eichung), Spin und Statistik gelten innen
+      exakt. Das Original erreicht nur die „2“, und die Quarter-Oszillatoren geben Fermionen kein 2π-Vorzeichen.
+      [E, teilweise]
+    - S5 (Z86): keine Flächennormierung aus der Verschränkung Original|Partner (Typ I, kein Horizont); eine Uhr für alle
+      Sektoren. [E negativ]
+    - S6 (Z87): Saat ρ₁ + Spin-ℤ₄ + CAR; der Ursprung ist auf die Prämissen P_sym und P_clock eingegrenzt, die
+      Gaußprämisse folgt aus P_clock in allen gerechneten Abschneidungen. [E/C]
+    - Analyse 9 (Z88): Der volle 4D-Fockraum passt energietreu nicht in eine Naht (ab E = 36 mehr Zustände). Die lineare
+      Leiter folgt aus der Hardy-Invarianz des Modulflusses. [E]
+    - S7 (OriginLab `scenarios`): Von 960 Szenarien bleiben 8 mit Schrittart-Spinor, inneren Marken, parabolischer Zeit,
+      Energiestufen und Saat; die Gravitation ist offen.
   - Instantonen (Z33): Unter Spin(10) hat ein Einheitsinstanton 4 Eltern- und 12
     Familiennullmoden; mit gesättigten Familiennullmoden entsteht Re[e^{iθ}Φ² C_fam], die Wand ist
     also auch im Kontinuum möglich, bei nackter SO(10) aber ~10⁻¹⁶⁴ unterdrückt. [N]

@@ -1,6 +1,87 @@
 # Urteil
 
-## Aktueller Stand: H6h41 — Gesamtstand und Strategien zur Gesamtlösung; Vorprüfung (`z81`)
+## Aktueller Stand: H6h42 — Vier Strategien gerechnet, Szenario-Suche, Analyse 9 (`z82`, `z83`, `z86`, `z87`, `z88`)
+
+**Bilanz:** unverändert 13 P und 7 L von 20. K12, K13 und K19 sind präzisiert.
+
+**Auftrag:** „mach alle parallel“. S1 bis S6 laufen als Agenten, S7 ist im Suchprogramm gebaut, und die neunte externe
+Analyse ist geprüft. S3 (z84) und S4 (z85) rechnen noch; sie folgen als H6h43.
+
+**S2 Radiale Quantisierung (z83, 20 Prüfungen, bedingt) [C]:**
+- **Schluss:** su(2,2) schließt exakt mit den CCR-Schrittamplituden √(n_α+1). Die nackten ±1-Schritte (Toeplitz) und die
+  Kanalamplituden aus z76 schließen nicht [E negativ].
+- **Satz:** P = F(E)P^osc, K = G(E)K^osc schließt genau dann, wenn FG konstant ist [E].
+- **Nativer Operator:** L^nat_{±1} = L^(α)_{±1} − (α − ½)J_{±1} = Σ(k+1)ψ*_{k+1}ψ_k ist in beiden Quartern derselbe. Er
+  erhält die Paarzahl exakt, hat auf den Paarschalen die Amplituden n_α + 1 und erfüllt [L^nat_1, L^nat_{−1}] = 2L₀ [E].
+  - Die z76-Gewichte sind die L^nat-Amplituden geteilt durch L₀ der Zielschale.
+  - Die CCR-Schritte sind ihre Tomita-Wurzeln.
+- **Darstellung:** K-Typen (j, j) bei E = 2j + 1, Charakter Σm²qᵐ, Kohärenzkern det(I − Z†W)⁻¹: die ν = 1-Leiter.
+  - Mit ungleichen Stufen m ≠ m̄ enthält die Standardform jede masselose Helizität h = (m − m̄)/2 genau einmal.
+  - Die Minkowskienergie E + (P⁰ + K⁰)/2 ist parabolisch, ihr Spektrum ist [0, ∞) absolut stetig [E].
+- **Thermisch:** Original × Partner auf gleichen Stufen ist der CFT-Zustand auf S³ bei β′ = 8π. Die Purifikation ist ein
+  Kohärenzzustand, und ihr Modulfluss ist die Helizitätsphase [E].
+- **Uhr:** R = 1 auf beiden Schrittarten, die Raumzeit ist also R-neutral [E].
+- **Folge:** Das Speziesproblem verschwindet auf Einteilchenebene. Die Moden sind Energiestufen eines masselosen Skalars je
+  Quarter. Bedingung ist eine Identifikation: der verdoppelte Diagonalschritt ist der native Einzelschritt.
+
+**S1 Zwei Faktoren (z82, 24 Prüfungen, teilweise):**
+- **Träger:** R wirkt auf den fünf Trägerplätzen als diag(1, i, −1, −i, 1); R² teilt 3 + 2, Y = (I − 5R²)/12. Bis auf eine
+  Eichtransformation ist R ≡ −1₅, die Spinorhebung ist das Zentrum z_X von Spin(10): die ℤ₄ der 16. Die Bilanz mod 16
+  stimmt [E].
+- **Original:** Es erreicht nur die „2“ (ungerade Hardy-Marken, R² = −1), nicht die „3“ [E negativ].
+- **Innen:** Spin und Statistik gelten exakt. Auf 159 201 Zuständen ist R = i^(Q_a − Q_b) mit R² = (−1)^F; nur die Zuordnung
+  {1, 3} leistet das [E].
+- **Außen:** Mit der äußeren Lorentzgruppe aus z79 (Quarter-Oszillatoren) haben Vertexoperatoren kein festes
+  2π-Vorzeichen. Die volle η-SU(2) ist im KMS-Zustand nicht implementierbar [E negativ].
+- **Universalität:** Alle Sektoren teilen Hülle, Zustand und Spannungstensor. Den Tensorkanal sehen sie nur über ihre
+  Energie [E]; als Äquivalenzprinzip ist das eine Lesart [L].
+- **Offen:** die Verklebung Spin ×_{ℤ₂} ℤ₄.
+
+**S5 Verschränkung (z86, 29 Prüfungen) [E negativ]:**
+- **Verschränkung:** S(Original|Partner) = ln 2/2 je Naht. Davon trägt der Ladungsteil 99,7 %, die Oszillatoren nur
+  2,7·10⁻⁴.
+- **Neu in geschlossener Form:** Rényi-Entropien, die Sektorteilung, κ₂ = Γ(1/4)⁸/(384π⁴) sowie
+  ln 12 = 16·(ln 2/4) + ln(3/4).
+- **Keine Flächennormierung:** Der Schnitt ist ein thermischer Schnitt einer Typ-I-Algebra, kein Horizont. Es gibt kein
+  festes S/Fläche und keine Verbindung zu c₃ oder G.
+- **Was bleibt:** eine Uhr β = 4π für alle Sektoren, und der erste Hauptsatz gilt je Sektor.
+- **Nächster Weg zu G:** eine räumliche Kappe von S³ im rekonstruierten Feld (nach S2).
+
+**S6 Ursprung der Saat (z87, 26 Prüfungen, bedingt) [E/C]:**
+- **Saat:** ρ_m = ρ₁^m/Tr auf jedem Fermipaar. Unter zwölf Alternativen erfüllt nur das Original fünf Kriterien: KMS der
+  Drehuhr, Spin-ℤ₄, Uhrenidentität, Hardy-Kovarianz und Uhrenquotient.
+- **Statistik:** CAR ist erzwungen. Die Saat sind zwei Majoranas, und CCR verletzt die KMS-Positivität.
+- **Vervollständigung:**
+  - Ohne Uhrenidentität gibt es ungleiche Vervollständigungen, darunter einen treuen nichtgaußschen Zustand.
+  - Mit Δ^{−i/2} = R und Ladungsauswahl ist der quasifreie Zustand in allen gerechneten Abschneidungen erzwungen; der
+    allgemeine Beweis ist offen.
+- **Lücke der Saat:** Sie ist π mit g ∈ π(4ℤ + 1); τ = i wählt β = 4π.
+- **Verbleibende Prämissen:** P_sym (Vorzeichensymmetrie in derselben irreduziblen Darstellung) und P_clock (Δ^{−i/2} =
+  geometrische Vierteldrehung). K19 ist eingegrenzt, nicht hergeleitet.
+
+**Neunte externe Analyse (z88, 4 Prüfungen):**
+- **Zählung [E]:** Ab Energie 36 hat ein masseloser 4D-Skalar mehr Zustände mit Energie ≤ E als der volle Fockraum des
+  Originals mit Partner und allen Ladungssektoren; gegen vier reine Türme schon ab 12, bei E = 500 um den Faktor 10^51,5.
+  - log Z wächst wie 1/β gegen 1/β³.
+  - Eine energietreue Einbettung des vollen 4D-Fockraums in eine Naht ist ausgeschlossen. Die Vielteilchenstruktur der
+    Raumzeit muss eine eigene Zusammensetzung sein.
+- **Leiter [E unter Hardy-Invarianz]:** Erhält der Modulfluss die analytische Multiplikationsalgebra, ist die Leiter linear.
+  Mit der Teilchen-Loch-Symmetrie und der Saatlücke folgt h_n = π(2n + 1), also beide Quarter verzahnt.
+- **An S3 und S4 weitergegeben:** die ortsabhängige radiale Spinorreflexion Θ_n und der Quadrupoltest (Q → −Q unter der
+  Vierteldrehung).
+
+**S7 Szenario-Suche (OriginLab `scenarios`):**
+- 960 ganze Szenarien über sechs Achsen, mit Klauseln aus den Ergebnisdateien.
+- Nativ lorentzsch, positive Zeit, ein Feld, reduzierter Ursprung und platzierte Marken lassen 8 Szenarien übrig, alle mit
+  derselben Gestalt:
+  - Spinorindex = Schrittart;
+  - Marken innen (Spin-ℤ₄);
+  - Zeit parabolisch (radial oder Wiesbrock);
+  - Moden = Energiestufen;
+  - Ursprung = Saat ρ₁.
+- Die Gravitation entscheidet sich zwischen Twistordeformation (S4) und räumlichem Schnitt; beides ist offen.
+
+## Davor: H6h41 — Gesamtstand und Strategien zur Gesamtlösung; Vorprüfung (`z81`)
 
 **Bilanz:** unverändert 13 P und 7 L von 20.
 

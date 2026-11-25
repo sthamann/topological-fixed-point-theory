@@ -7,6 +7,7 @@ from math import gcd
 import sympy as sp
 
 from reconstruction_search import (ETA_SPINOR, QUARTER_PAIR, SEAM_DOUBLET, SPIN_BRIDGE, _transport,
+                                   scenario_candidates,
                                    CHARACTERS, DOUBLE_COVER, M_VALUES, QUARTERS, U, Z, cover_genus, cov,
                                    doublet_state_candidates, exceptional_orbits, fock_multiplicities, fock_patterns,
                                    invariants, mark_symmetries, normal_bundle_candidates, original_symmetries, pushforward,
@@ -52,6 +53,30 @@ class ReconstructionSearch(unittest.TestCase):
         self.assertEqual(u["questions"]["native_r+lorentz_compatible+marked"]["verdict"], "EMPTY")
         self.assertEqual(u["questions"]["native_r+euclidean_compatible+marked"]["survivors"], [SPIN_BRIDGE])
         self.assertTrue(self.result["answers"]["quarter_pair_is_the_eta_doublet_not_the_seam_doublet"])
+
+    # ------------------------------------------------------------ whole-theory scenarios (H6h42, S7)
+    def test_scenarios_enumerate_all_axes_and_respect_recorded_exclusions(self):
+        u = self.universe("scenarios")
+        self.assertEqual(u["objects"], 4*3*4*2*5*2)
+        sc, info = scenario_candidates()
+        for o in sc:
+            if (o["scenario"]["time"] == "modular flow" or o["scenario"]["spinor_index"] == "quarter oscillators"
+                    or o["scenario"]["gravity"] in ("composite spin 2", "Virasoro T(z)",
+                                                    "entanglement: original|partner cut")):
+                self.assertNotIn("admissible", o["clauses"])
+        self.assertEqual(info["r_order"], {"quarter oscillators": 1, "step type": 1, "eta doublet": 2, "seam doublet V_1": 4})
+        self.assertEqual(info["native_lorentz"], {"quarter oscillators": True, "step type": True, "eta doublet": False,
+                                                  "seam doublet V_1": False})
+
+    def test_scenario_base_survivors_place_the_marks_only_where_coherence_allows(self):
+        sc, _ = scenario_candidates()
+        base = {"admissible", "coherent", "lorentzian_native", "positive_time"}
+        for o in sc:
+            if base <= o["clauses"] and o["scenario"]["marks"] == "celestial sphere":
+                self.assertEqual(o["scenario"]["spinor_index"], "seam doublet V_1")
+                self.assertEqual(o["scenario"]["time"], "OS reconstruction")
+            if base <= o["clauses"] and o["scenario"]["marks"] == "internal spin-Z4":
+                self.assertIn(o["scenario"]["spinor_index"], ("quarter oscillators", "step type"))
 
     # ------------------------------------------------------------ marks
     def test_mark_symmetries_are_d4_with_the_regular_klein_group_of_h6(self):
@@ -214,7 +239,7 @@ class ReconstructionSearch(unittest.TestCase):
         self.assertEqual(self.result["status"], "RECONSTRUCTION_SEARCHED")
         text = json.dumps(self.result, sort_keys=True, allow_nan=False)
         self.assertEqual(text, json.dumps(run_reconstruction(), sort_keys=True, allow_nan=False))
-        self.assertEqual(self.result["objects_enumerated"], 54 + 66 + 10 + 6 + 4)   # + doublets and position spaces (H6h40)
+        self.assertEqual(self.result["objects_enumerated"], 54 + 66 + 10 + 6 + 4 + 960)   # + doublets and position spaces (H6h40)
 
 
 if __name__ == "__main__":

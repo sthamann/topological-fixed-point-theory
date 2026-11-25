@@ -26,6 +26,9 @@ docs/research/VOGELPERSPEKTIVE.md:
                   Hardy mark k) on the seam doublet, the quarter pair, the quarter oscillators and the eta doublet of the
                   spin bridge (exact transport on E: w^2 = 1 - z^4), and on the four-dimensional position spaces built
                   from them; clauses: projective order, spinor, R-equivalence, Lorentz or Euclidean compatibility.
+  scenarios       (H6h42, S7) whole-theory scenarios: every combination of spinor index, role of the marks, time,
+                  modes, gravity and origin, with clauses computed from the doublet/position universes and from recorded
+                  exploration results (EVIDENCE: result file, named check, meaning); pending evidence gives no clause.
 
 Exactness: marks and Moebius maps in Gaussian rationals; doublet states are rational functions of u = e^pi (u is
 transcendental by Gelfond's theorem, so a rational identity in u holds at u = e^pi exactly when it holds identically);
@@ -34,7 +37,7 @@ quartics in Q(i, sqrt 3). Floats only decide signs of a nondegenerate 4x4 form w
 """
 from fractions import Fraction as Fr
 from functools import lru_cache
-from itertools import combinations, permutations
+from itertools import combinations, permutations, product
 from math import gcd
 import json
 
@@ -814,6 +817,119 @@ def doublet_identification_candidates():
     return ds, ps
 
 
+# ---------------------------------------------------------------- whole-theory scenarios (H6 exploration H6h42, S7)
+from pathlib import Path as _Path
+
+EXPLORATION = _Path(__file__).resolve().parents[2] / "experiments/exploration/2026-11-23-phasenraum-f5-holocode"
+SCENARIO_AXES = {
+    "spinor_index": ["quarter oscillators", "step type", "eta doublet", "seam doublet V_1"],
+    "marks": ["internal spin-Z4", "Euclidean Weyl curvature", "celestial sphere"],
+    "time": ["modular flow", "parabolic Wiesbrock", "OS reconstruction", "radial conformal"],
+    "modes": ["species", "energy levels"],
+    "gravity": ["composite spin 2", "Virasoro T(z)", "twistor deformation", "entanglement: original|partner cut",
+                "entanglement: spatial cut"],
+    "origin": ["seed rho_1 + spin-Z4", "two binary observations"],
+}
+
+
+def _check_named(d, fragment):
+    hits = [v for k, v in d["checks"].items() if fragment in k]
+    if len(hits) != 1:
+        raise KeyError(f"check '{fragment}' found {len(hits)} times")
+    return bool(hits[0])
+
+
+# (axis, value, status, result file, meaning, predicate on the result json). A missing file leaves the value pending.
+EVIDENCE = [
+    ("time", "modular flow", "excluded", "z70_ergebnis.json", "spec(K) in pi Z: periodic modular flow, no time translation",
+     lambda d: _check_named(d, "spec(K) in pi Z gibt exp(2 i K) = 1")),
+    ("time", "parabolic Wiesbrock", "supported", "z72_ergebnis.json", "parabolic Wiesbrock difference in the vacuum sector, "
+     "spectrum [0, oo) (one-dimensional)", lambda d: all(d["checks"].values())),
+    ("gravity", "Virasoro T(z)", "excluded", "z75_ergebnis.json", "T(z) maps to Delta = 2 and (j, j), no spin-2 level",
+     lambda d: all(d["checks"].values())),
+    ("gravity", "composite spin 2", "excluded", "z80_ergebnis.json", "composite spin 2 of a free scalar: continuum, no pole",
+     lambda d: _check_named(d, "kein isolierter masseloser Pol")),
+    ("gravity", "entanglement: original|partner cut", "excluded", "z86_ergebnis.json", "the cut original|partner is a "
+     "thermofield cut of a type I factor with periodic modular flow: no fixed S/area, no horizon without BW (scoped)",
+     lambda d: _check_named(d, "Typfrage: spec K in pi N")),
+    ("marks", "internal spin-Z4", "conditional", "z82_ergebnis.json", "the clock is the Z4 of the 16 on the carrier modulo "
+     "G_SM (spinor lift z_X, mod-16 balance); in the original it reaches only the R^2 = -1 '2', not the '3'",
+     lambda d: _check_named(d, "mod-16-Bilanz der Klasse von R") and _check_named(d, "Spinorhebung R~ = det(R)^(-1/2)")),
+    ("spinor_index", "quarter oscillators", "excluded", "z82_ergebnis.json", "as spinor index of matter: vertex operators "
+     "carry no definite outer 2 pi sign under the quarter-oscillator Lorentz group of z79 (kill criterion 2 of S1, scoped)",
+     lambda d: _check_named(d, "Gegenprobe Außenbild (z79)")),
+    ("origin", "seed rho_1 + spin-Z4", "conditional", "z87_ergebnis.json", "seed family rho_m = rho_1^m/Tr and Fermi statistics "
+     "forced; only the original passes the five criteria; origin reduced to two named premises (P_sym, P_clock); the Gaussian "
+     "premise follows from P_clock in all computed truncations",
+     lambda d: _check_named(d, "nur das Original erfüllt alle fünf Kriterien") and _check_named(d, "S6-Kriterien")),
+    ("modes", "energy levels", "conditional", "z83_ergebnis.json", "su(2,2) closes exactly with the CCR step amplitudes, "
+     "the Tomita square roots of the native pair-conserving raiser L^nat; nu = 1 ladder; modes are energy levels E = L_0 = m "
+     "(one identification: doubled diagonal step = native single step)",
+     lambda d: _check_named(d, "[E] (iii) CCR-Amplituden") and _check_named(d, "[E] K-Typen: auf der Schale m")),
+    ("time", "radial conformal", "conditional", "z83_ergebnis.json", "Minkowski energy E + (P0 + K0)/2 of the radial su(2,2) "
+     "is parabolic with absolutely continuous spectrum [0, oo) (same identification)",
+     lambda d: _check_named(d, "[E] Minkowskienergie P^M_0")),
+    ("spinor_index", "step type", "conditional", "z83_ergebnis.json", "spinor index of the radial su(2,2): the two native "
+     "step types (particle up, hole down); the clock R is 1 on both (R-neutral spacetime); matter spin open",
+     lambda d: _check_named(d, "[E] Uhr: R = e^{2 pi i L_0}")),
+    ("origin", "two binary observations", "conditional", "z80_ergebnis.json", "sign symmetry of the law forces Cl_2 = M_2, "
+     "tau = i, p = 1/2 if implemented in the same irreducible representation",
+     lambda d: _check_named(d, "irreduzible Darstellungen von <A, B")),
+]
+
+
+def _evidence(root):
+    out = {}
+    for axis, value, status, fname, meaning, pred in EVIDENCE:
+        path = root / fname
+        if not path.exists():
+            continue
+        ok = pred(json.loads(path.read_text()))
+        out[(axis, value)] = {"status": status if ok else "contradicted", "source": fname, "meaning": meaning}
+    return out
+
+
+def scenario_candidates(root=None):
+    """All combinations of the six axes with clauses computed from OriginLab's own universes (R orders, Lorentz or
+    Euclidean position spaces) and from recorded exploration results (EVIDENCE). Pending evidence gives no clause."""
+    root = EXPLORATION if root is None else _Path(root)
+    ev = _evidence(root)
+    hardy = lambda k0, k1: sp.diag(sp.I**k0, sp.I**k1)
+    doublet = {"quarter oscillators": hardy(4, 4), "step type": hardy(4, 4),     # J_-1 = S^4: integer L_0 steps
+               "eta doublet": _transport(0, -1), "seam doublet V_1": hardy(0, 1)}
+    r_order = {k: _proj_order(M) for k, M in doublet.items()}
+    vstar = sp.diag(1, -sp.I)
+    space = {"quarter oscillators": (_kron(doublet["quarter oscillators"], doublet["quarter oscillators"].conjugate()), True),
+             "step type": (_kron(doublet["step type"], doublet["step type"].conjugate()), True),
+             "eta doublet": (_transport(1, -1), True),
+             "seam doublet V_1": (_kron(vstar, vstar.conjugate()), False)}             # T': R on Vbar^* imposed
+    native_lorentz = {k: native and _lorentz_compatible(_turns(M)) for k, (M, native) in space.items()}
+    status = lambda axis, value: ev.get((axis, value), {}).get("status", "pending")
+    objs = []
+    for combo in product(*SCENARIO_AXES.values()):
+        sc = dict(zip(SCENARIO_AXES, combo))
+        st = {a: status(a, v) for a, v in sc.items()}
+        coherent = not (
+            (sc["marks"] == "celestial sphere" and sc["spinor_index"] != "seam doublet V_1")
+            or (sc["marks"] == "internal spin-Z4" and r_order[sc["spinor_index"]] != 1)
+            or (sc["marks"] == "Euclidean Weyl curvature" and (sc["spinor_index"] != "eta doublet"
+                                                                or sc["time"] != "OS reconstruction"))
+            or (sc["modes"] == "energy levels" and sc["spinor_index"] != "step type"))
+        lorentzian = native_lorentz[sc["spinor_index"]] or (sc["time"] == "OS reconstruction"
+                                                            and st["time"] == "supported")
+        cl = {c for c, ok in (
+            ("admissible", "excluded" not in st.values() and "contradicted" not in st.values()),
+            ("coherent", coherent), ("lorentzian_native", lorentzian),
+            ("positive_time", st["time"] in ("supported", "conditional")),
+            ("one_field", sc["modes"] == "energy levels" and st["modes"] in ("supported", "conditional")),
+            ("graviton", st["gravity"] == "supported"),
+            ("origin_reduced", st["origin"] in ("supported", "conditional")),
+            ("marks_placed", st["marks"] in ("supported", "conditional"))) if ok}
+        objs.append({"label": " | ".join(combo), "scenario": sc, "status": st, "clauses": cl})
+    return objs, {"evidence": {f"{a}: {v}": e for (a, v), e in sorted(ev.items())}, "r_order": r_order,
+                  "native_lorentz": native_lorentz}
+
+
 def _rules_report(objects, pool, label):
     res = search(objects, pool, lambda o: 0, label)
     hits = {frozenset(r): sorted({label(o) for o in objects if set(r) <= o["clauses"]}) for r in powerset(pool)}
@@ -841,6 +957,8 @@ DOUBLET_QUESTION = ["faithful", "kms", "symmetric", "base_point_independent"]
 IDENT_POOL = ["spinor", "r_equivalent_to_seam", "r_equivalent_to_quarter_pair", "projective_order_1",
               "projective_order_2", "projective_order_4"]
 POSITION_POOL = ["native_r", "lorentz_compatible", "euclidean_compatible", "marked"]
+SCENARIO_POOL = ["admissible", "coherent", "lorentzian_native", "positive_time", "one_field", "graviton",
+                 "origin_reduced", "marks_placed"]
 
 
 def run_reconstruction(root=None):
@@ -919,6 +1037,19 @@ def run_reconstruction(root=None):
     res["bound"] = ("Tomita reading T' (R induced on Vbar^*), the spin-bridge sections H^0(N) (native R), Herm of the quarter "
                     "oscillators (z78) and of the quarter pair; Lorentz: g (x) conj g, Euclidean: SU(2) x SU(2)")
     out["universes"]["position_spaces"] = res
+    sc, sc_info = scenario_candidates(root)
+    res, hits_c = _rules_report(sc, SCENARIO_POOL, lambda o: o["label"])
+    base = ["admissible", "coherent", "lorentzian_native", "positive_time"]
+    res["questions"] = {"complete": _question(hits_c, SCENARIO_POOL), "+".join(base): _question(hits_c, base)}
+    best = max(len(o["clauses"]) for o in sc)
+    res["derived"] = sc_info | {"most_clauses": best,
+                                "best_scenarios": sorted(o["label"] for o in sc if len(o["clauses"]) == best)[:40],
+                                "values_in_base_survivors": {a: sorted({o["scenario"][a] for o in sc if set(base) <= o["clauses"]})
+                                                             for a in SCENARIO_AXES}}
+    res["bound"] = ("product of six axes (spinor index, role of the marks, time, modes, gravity, origin) = "
+                    f"{len(sc)} scenarios; clauses from OriginLab's R orders and position spaces and from the recorded "
+                    "results named in EVIDENCE; pending evidence gives no clause")
+    out["universes"]["scenarios"] = res
     h6 = next(o for o in s2 if o["t"] == "0")
     dq = out["universes"]["doublet_states"]["questions"]["+".join(DOUBLET_QUESTION)]
     bq = out["universes"]["normal_bundles"]["questions"]["twistor_line+choice_free"]
