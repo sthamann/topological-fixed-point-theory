@@ -677,6 +677,18 @@ hergeleitet, 7 unter benannter Lesart, keines gescheitert, offen oder gesetzt. K
         R² = (−1)^F graduiertes Paar (C = R²·UBU).
       - Stand: Pflichtenheft für das eine Objekt mit sechs Punkten; das Objekt selbst (Operator, Maß, Metrik der
         Linie, zweiter Sektor) fehlt. Keine volle Lösung.
+    - Externe Arbeit „Quantisierung der Gravitation vom Nullkegel“ (arXiv:2611.34924) gegen den Bestand (Z166):
+      ungeprüfte Literatur, fünf Formeln nachgerechnet, 15 Prüfungen.
+      - Hilft: Ihre Startwirkung ist die Form erster Ordnung aus Z165 minus Euler-Term. Positivität steht an den
+        Zuständen (Verkleben mit der Zeitspiegelung). Die Λ-Stufe wird zur Zustandszahl des kosmischen Diamanten:
+        log dim = 3π/(ΛG) = (3/8)/q(1/α) = 3,32·10¹²².
+      - Hilft nicht: G und Λ sind dort Eingaben. Ihre Nichtanalytizität ist ein Logarithmus, nicht e^(−2/α).
+        Keine Materie, keine Eichfelder, keine Twistoren.
+      - Neuer Ansatz: Die zwei Gravitonpolarisationen der Arbeit sind je Lichtstrahl ein Punkt τ der oberen
+        Halbebene. Scherungsfrei ist τ = i, der Punkt der Naht, mit der Uhr als Stabilisator. Der E₈-Charakter ist
+        dort stationär, sein Betrag gibt einen Sattel; der positive Teil muss aus der Linienmetrik kommen (M1).
+      - Offen: Boostperiode 2π gegen KMS 4π. Neue Strategien S-I bis S-IV und Rechnungen M5 bis M9 im
+        Gesamtstand, Nachtrag z166.
     - Zopfrelation: Sie gilt nur für einkörperige Operatoren (Nahtuhr und Strahlteiler = Ising-Zopfmatrizen). Das
       wechselwirkende Gatter verletzt sie mit Defekt √(3/8). Die Defektstruktur ist endlich (Clifford-Typ). [E]
     - Eichdynamik: Plakettenstruktur und sin²θ_W = 3/8 sind nativ, die absolute Kopplung und die Linkdynamik nicht.

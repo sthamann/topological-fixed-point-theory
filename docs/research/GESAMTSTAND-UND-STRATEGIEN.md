@@ -984,6 +984,92 @@ Determinante über dem Raum der Twistorgeraden vor. Alle acht gerechneten Aussag
 selbst fehlt: Operator, Zustandsraum, Maß, Metrik der Linie und die Auswahl des zweiten Sektors. Eine volle Lösung
 liegt nicht vor. Nichts ist befördert.
 
+### Nachtrag z166: externe Arbeit „Quantisierung der Gravitation vom Nullkegel“ gegen den Bestand
+
+**Anlass.** V. Chandrasekaran, „An algebraic quantization of gravity from the null cone“, arXiv:2611.34924
+(eingereicht am 25.11.2026). Geprüft ist, ob die Arbeit dem Kandidaten aus z165 hilft (z166, 15 Prüfungen,
+reproduziert).
+
+**Einordnung der Quelle.** Die Arbeit ist drei Tage alt und nicht begutachtet. Nach eigener Angabe wurden mehrere
+Rechnungen und Beweise zusammen mit einem Sprachmodell entwickelt. Sie zählt hier als ungeprüfte Literatur [Lit].
+Gelesen sind Einleitung, 3.1, 4.3, 4.4, Teile von 5.1 bis 5.3, Abschnitt 6 und der Anfang von Anhang E. Nachgerechnet
+sind fünf Formeln.
+
+**Was die Arbeit tut [Lit].**
+
+- Vakuumgravitation in vier Dimensionen mit Λ, Start von der Form erster Ordnung (Plebanski) mit Tetrade,
+  Spinzusammenhang und Zweiform B.
+- Die Zwangsbedingungen werden auf zwei sich schneidenden Nullkegeln eines Kausaldiamanten gelöst. Die Ecke S trägt
+  die Boostladung K = A/(8πG).
+- Gaußsche Zustände geben einen Hilbertraum, die Observablen eine Algebra vom Typ I. Summen über Zwischenzustände
+  konvergieren absolut (Cauchy–Schwarz).
+- Ein Diamant beschränkter Größe hat einen endlichdimensionalen Hilbertraum mit Dichteoperator e^(−A/(4Għ))/Z.
+- Entropie A/(4Għ) + log Z, Logarithmus-Koeffizient 106/45 für Schwarzschild; Einstein-Gleichungen mit Λ bis eine
+  Schleife.
+- G und Λ sind Eingaben. Es gibt keine Materie, keine Eichfelder, keine Spinoren oder Twistoren.
+
+**Nachgerechnet [E/N].**
+
+- Paaramplitude: Σ_k 2(Δq_k)⁴e^(−2ik/s) mit (Δq_k)² = 1/(2sk) ist Li₂(e^(−2i/s))/(2s²), s = A/(4Għ).
+- Entwickelt man zuerst in G, ist der Koeffizient dritter Ordnung −i·H_N, also log N. Summiert man zuerst, steht
+  dort (−log s + ln 2 − 1)/s³: endlich für jedes G > 0.
+- Boostgewicht e^(−2πK/ħ) = e^(−A/(4Għ)); S = ⟨s⟩ + log Z und dim = Z·Sp(ρe^s) für endliche Spektren.
+- q/(2(1 − q)) − 1/2 = 106/45 für q = 257/302. Die Herkunft von 257/302 ist nicht geprüft.
+
+**Brücken zum Bestand.**
+
+- **Dieselbe Gravitationsform [E]:** c·εFF mit F = R − (Λ/3)e∧e und c = −3/(64πGΛ) (z165) ist die Wirkung (3.8) der
+  Arbeit plus c mal Euler-Dichte. Die Arbeit quantisiert die Form, die Punkt 3 des Pflichtenhefts unter P_MM
+  verlangt.
+- **Positivität [Lit]:** Sie steht dort an den Zuständen: Präparation, verklebt mit ihrer Zeitspiegelung, als
+  Axiom; die Zwischensummen sind durch Normen beschränkt. Das ist die Form, die Punkt 5 nach der Korrektur von W3
+  verlangt.
+- **Λ-Stufe als Zustandszahl [E/L]:** Mit der Λ-Stufe des Ledgers ist das Boostgewicht des kosmischen Horizonts
+  s = 3π/(ΛG) = 32π⁴e^(2/α) = (3/8)/q(1/α) = 3,3243·10¹²². Gleichwertig: s·ρ_Λ/M̄⁴ = 24π² = (3/8)/c₃². Der
+  Schleifenparameter der Arbeit, 1/s, ist (8/3) mal das Nahtnomen am dualen Punkt.
+- **Hierarchie [E negativ]:** Die Nichtanalytizität der Arbeit ist ein Logarithmus. e^(−2/α) hat bei 0 lauter
+  verschwindende Ableitungen. Der Mechanismus „erst summieren, dann entwickeln“ erzeugt die Hierarchie nicht.
+- **Nahtfaktor [E/L]:** (1 − q)^(−5/4) = exp((5/4)Li₁(q)). Das ist eine Varianzsumme mit Gewichten 1/k; die
+  Paaramplitude der Arbeit ist dieselbe Summe mit 1/k². Formgleichheit, keine Herleitung.
+- **Offener Abgleich [O]:** Die Arbeit hat die Boostperiode 2π. Der KMS-Wert 4π des Viertelprozesses wäre in ihrer
+  Normierung e^(−2s), das Gewicht von Sp(ρ²).
+- **Scherung als Modul [E/L]:** Die konforme Metrik des Kegelschnitts ist |dx + τdy|²/Im τ mit τ = z² + i·e^(−z¹).
+  Die Feldraummetrik der zwei Polarisationen ist die Poincaré-Metrik der oberen Halbebene. Scherungsfrei ist τ = i,
+  der Punkt der Naht; sein Stabilisator ist S mit S⁴ = 1 und S² = −1, die Struktur der Uhr. Der E₈-Charakter
+  j^(1/3) ist dort stationär. log|χ|² ist harmonisch, die zweiten Ableitungen sind −19,157 und +19,157: ein Sattel.
+  Eine positive Normierung kann nur aus der Metrik der Determinantenlinie kommen.
+
+**Urteil.** Die Arbeit hilft beim Gravitationsteil (Punkt 3), bei der Positivität (Punkt 5, W3) und gibt der Λ-Stufe
+eine prüfbare Form. Sie hilft nicht bei den zwei freien reinen Zahlen, nicht bei der Hierarchie und nicht beim
+gemeinsamen Objekt mit Materie (T3 bis T8). Bilanz unverändert 13 P / 7 L. Keine volle Lösung, nichts befördert.
+
+**Neue Strategien aus dem Vergleich.**
+
+- **S-I, Graviton als Modul der Naht.** Das Graviton ist die Schwankung von τ um i, je Lichtstrahl. Die Uhr ist die
+  Symmetrie des scherungsfreien Punkts. Die Normierung des Gravitons käme aus derselben Linienmetrik wie der
+  Blatt-Term der α-Gleichung (M1): eine Krümmung, zwei Zahlen.
+- **S-II, Wechselwirkung aus der Zwangsbedingung.** Die Arbeit behält Gaußsche Zustände; die Nichtlinearität steckt
+  in der Uhrgleichung (Scherung verlängert die Laufstrecke). Die Diagnose aus z162 (native Daten Gaußsch) ist dann
+  kein Hindernis: Gesucht ist die Uhrgleichung der Naht, nicht ein nicht-Gaußscher Zustand.
+- **S-III, Verklebungsbit aus der Zeitrichtung.** Die Klebregel der Arbeit setzt die Summe der Randladungen mit
+  Außennormalen null. Die zwei Verklebungen ⟨(1,1)⟩ und ⟨(1,3)⟩ aus z144 unterscheiden sich durch ein Vorzeichen auf
+  einer Seite. Eine Zeitorientierung könnte P_IF ersetzen.
+- **S-IV, Λ als Zustandszahl.** log dim des kosmischen Diamanten = (3/8)/q(1/α) als Ziel einer Herleitung.
+
+**Neue Rechnungen.**
+
+1. **M5, Naht als Eckdaten.** Boostladung und Uhr der Arbeit gegen Uhr und KMS-Zustand der Naht; dabei der Abgleich
+   2π gegen 4π. Erfolg: Die Naht ist die Ecke S mit festem Gewicht je Fläche. Scheitert der Abgleich, trägt die
+   Brücke nicht.
+2. **M6, Zustandszahl.** Folgt log dim = (3/8)/q(1/α) aus der relativen Nahtantwort? Verbindet M2 mit W5.
+3. **M7, Graviton als Modul.** Zweite Ableitung der Nahtdeterminante mit Linienmetrik bei τ = i. Erfolg: eine
+   positive Form mit festem Koeffizienten; zusammen mit M1 ein festes Verhältnis von Eich- und
+   Gravitationsnormierung.
+4. **M8, Uhrgleichung.** Uhroperator der Naht mit der Fokussierungsgleichung; niedrigster Vertex gegen die
+   Spin-2-Form aus z164.
+5. **M9, Verklebungsbit.** Klebregel mit Außennormalen in der Gittersprache von z144: Wählt sie eine der zwei
+   Lagrangeschen Untergruppen?
+
 ### Was die Runde bedeutet
 
 - **Der Kandidat** braucht neun Prämissen: A*, I_step, P_lift, P_IF, P_univ, P_uhr, P_ord, P_curv und P_G als freie

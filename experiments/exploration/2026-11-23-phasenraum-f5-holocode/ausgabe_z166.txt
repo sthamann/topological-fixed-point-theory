@@ -1,0 +1,48 @@
+Z166: Nullkegel-Quantisierung der Gravitation (arXiv:2611.34924) gegen den Bestand
+====================================================================================================
+
+Teil A  Nachrechnung
+   A1 Paaramplitude: Varianz (Delta q_k)^2 = 1/(2 s k), Paarphase e^(-2ik/s), s = A/(4 G hbar)
+   [ok] A1 Summe über alle Radialmoden = Li_2(e^(-2i/s))/(2 s^2), für s = 3, 10, 50 auf 25 Stellen [N]; die Reihe konvergiert absolut für jedes s > 0, weil die Gewichte wie 1/k^2 fallen
+   [ok] A2 Entwickelt man bei endlicher Modenzahl N zuerst in g = 1/s, ist der Koeffizient von g^3 gleich -i H_N (harmonische Zahl), wächst also wie log N: die logarithmische Divergenz der Arbeit (4.34), hier für N = 7 [E]
+   [ok] A3 Summiert man zuerst, ist Im(Amplitude) = (-log s + ln 2 - 1)/s^3 + O(1/s^5) und Re(Amplitude) 2 s^2 = pi^2/6 - pi/s + 1/s^2 exakt: aus log N wird log s. Die Amplitude ist für jedes G > 0 endlich, ihre dritte Ableitung nach G divergiert bei G -> 0+ [N bei s = 10^6; die Realteilformel ist das Bernoulli-Polynom, E]
+   [ok] A4 Boostladung K = A/(8 pi G): halbe Drehung (i pi) gibt e^(-A/(8 G hbar)), zwei Kopien geben e^(-2 pi K/hbar) = e^(-A/(4 G hbar)) wie (5.23) [E]
+   [ok] A4b Für rho = e^(-s)/Z auf endlich vielen Zuständen gilt S = <s> + log Z (5.50) und dim = Z Sp(rho e^s) (5.39c): Der Flächenterm A/(4 G hbar) ist der Mittelwert des Boostgewichts, die Korrektur ist log Z [E, an einem Beispielspektrum N]
+   [ok] A5 Mit q = 257/302 (5.68, Lit) ist q/(2(1 - q)) - 1/2 = 106/45 (5.69) [E für die Arithmetik]; das ist Sens Koeffizient 212/45 je log des Horizontradius, also 106/45 je log der Fläche. Woher 257/302 kommt (Anhang D), ist hier nicht geprüft
+   -> A_nachrechnung: Die fünf nachgerechneten Formeln stimmen. Nicht geprüft: die Herleitung des reduzierten Phasenraums, die Typ-I-Aussage, der Beweis der endlichen Dimension (5.2), q = 257/302 und der Schleifenterm.
+
+Teil B  Brücken zum Bestand
+   B1 Startwirkung gegen die MacDowell-Mansouri-Form aus z165
+   [ok] B1 c eps F F mit F = R - (Lambda/3) e e und c = -3/(64 pi G Lambda) (z165 B1) ist genau die Wirkung (3.8) der Arbeit plus c mal Euler-Dichte: Die Arbeit quantisiert die Form, die der Kandidat unter P_MM verlangt, bis auf einen topologischen Term [E]
+   [ok] B1b (3.8) = (R - 2 Lambda)/(16 pi G) mal Volumenform, mit eps e e R = 2 R vol und eps e e e e = 24 vol [E]
+   B2 Lambda-Stufe als Zustandszahl
+   [ok] B2 Mit der Lambda-Stufe des Ledgers ist das Boostgewicht des kosmischen Horizonts s = A/(4G) = 3 pi/(Lambda G) = 32 pi^4 e^(2/alpha) = (3/8)/q(1/alpha) = 3,3243e122; gleichwertig s rho_Lambda/Mquer^4 = 24 pi^2 = (3/8)/c3^2. Der Schleifenparameter der Arbeit, 1/s, ist also (8/3) mal das Nahtnomen am dualen Punkt [E für die Identitäten; die Lambda-Stufe selbst bleibt Lesart des Ledgers]
+   s = 3.3243446e+122, 1/s = 3.0081118e-123, q(1/alpha) = 1.1280419e-123
+   B3 Art der Nichtanalytizität
+   [ok] B3 e^(-2/g) hat bei g -> 0+ lauter verschwindende Ableitungen (Taylorreihe null), die Paaramplitude dagegen eine Entwicklung mit Potenzen und einem log: verschiedene Arten. Der Mechanismus der Arbeit erzeugt die Hierarchie e^(-2/alpha) nicht [E]
+   B4 Nahtfaktor als Modensumme
+   [ok] B4 (1 - q)^(-5/4) = exp((5/4) Li_1(q)): Der Faktor der Nahtantwort ist die Exponentialfunktion einer Summe mit Gewichten 1/k, also einer Varianzsumme (Delta q_k)^2 ~ 1/k mit Faktor q je Modenzahl; die Paaramplitude der Arbeit ist dieselbe Summe mit 1/k^2 (zwei Kontraktionen). Formgleichheit, keine Herleitung: q ist dort eine Phase e^(-2i/s), bei uns reell 48 c3^4 e^(-2 alpha) [E für die Identität, L]
+   B5 Boostperiode
+   [ok] B5 Das Gewicht der Arbeit gehört zur Boostperiode 2 pi (zwei halbe Drehungen). Der KMS-Wert 4 pi des Viertelprozesses wäre in derselben Normierung e^(-2s), das Gewicht von Sp(rho^2). Ob 4 pi die doppelte Überlagerung (Spinoren, R^2 = (-1)^F) oder eine andere Normierung des Generators ist, ist ein offener Abgleich [E für die Arithmetik, O für die Zuordnung]
+   B6 Scherung als Modul: die Gravitonkoordinaten der Arbeit und der Punkt tau = i
+   [ok] B6a Die konforme Metrik (4.21a) der Arbeit ist |dx + tau dy|^2 / Im tau mit tau = z2 + i e^(-z1), det 1; ihre Feldraummetrik (4.21b) ist dz1^2 + e^(2 z1) dz2^2, die Poincaré-Metrik der oberen Halbebene. Der scherungsfreie Punkt z = 0 ist tau = i [E]
+   [ok] B6b tau = i ist Fixpunkt von S: tau -> -1/tau; S hat Ordnung 4 mit S^2 = -1, das auf tau trivial wirkt. Das ist die Struktur der Uhr (R von Ordnung 4, R^2 = (-1)^F) [E; Gleichsetzung mit der Uhr ist Lesart, L]
+   [ok] B6c Der E8-Charakter j^(1/3) ist bei tau = i stationär (j'(i) = 0, J(i) = 1). log |chi|^2 ist dort harmonisch: die zweiten Ableitungen in Re tau und Im tau sind entgegengesetzt gleich (Sattel, keine positive Form). Der positive Teil einer Graviton-Normierung kann nur aus der Metrik der Determinantenlinie kommen, also aus M1 [N für die Zahlen, E für die Harmonizität; Lesart als Graviton L]
+   Hesse-Einträge von log |chi|^2 bei tau = i: -19.157072 (Re tau), 19.157072 (Im tau)
+   -> B_bruecken: (1) Die Arbeit quantisiert genau die Gravitationsform des Kandidaten (erste Ordnung, Lambda ungleich null). (2) In ihrer Sprache ist die Lambda-Stufe eine Zustandszahl: log dim = (3/8)/q(1/alpha) für den kosmischen Diamanten. (3) Ihre Nichtanalytizität ist ein Logarithmus, unsere Hierarchie ist e^(-2/alpha): sie liefert die Hierarchie nicht. (4) G und Lambda sind dort Eingaben; die zwei freien reinen Zahlen bleiben frei.
+
+Teil C  Bilanz und Urteil
+   [E] Nachrechnung: Fünf Formeln der Arbeit stimmen: Paaramplitude, log-Divergenz bei Entwicklung, endlicher log s-Term, Boostgewicht und Entropieformel, Arithmetik des Koeffizienten 106/45.
+   [E] Pflichtenheft Punkt 3: Die Startwirkung der Arbeit ist die MacDowell-Mansouri-Form aus z165 minus Euler-Term. Für den Gravitationsteil des Kandidaten gibt es damit eine ausgearbeitete Vorlage.
+   [Lit] Pflichtenheft Punkt 5, W3: Positivität steht dort an den Zuständen: Präparation, verklebt mit ihrer Zeitspiegelung, und Cauchy-Schwarz für die Zwischensummen (Anhang E, Axiome). Das ist die Form, die z165 nach der Korrektur von W3 verlangt.
+   [E/L] W5: Lambda-Stufe als Zustandszahl des kosmischen Diamanten: log dim = (3/8)/q(1/alpha).
+   [E negativ] Hierarchie: Der Mechanismus der Arbeit (erst summieren, dann entwickeln) gibt einen log, nicht e^(-2/alpha).
+   [O] Zwei reine Zahlen: G und Lambda sind Eingaben der Arbeit. W1 (Kopplung) und die Zahl G Lambda bleiben offen.
+   [O] Materie: Keine Eichfelder, keine Fermionen, keine Spinoren oder Twistoren. T3 bis T8 (gemeinsamer Elter) werden nicht berührt.
+   [O] Abgleich: Boostperiode 2 pi der Arbeit gegen KMS 4 pi des Viertelprozesses.
+   [E/L] Graviton als Modul: Die zwei Polarisationen der Arbeit sind je Lichtstrahl ein Punkt tau der oberen Halbebene; scherungsfrei ist tau = i, der Punkt der Naht, mit der Uhr als Stabilisator. Der E8-Charakter ist dort stationär, sein Betrag gibt einen Sattel.
+
+Urteil
+   Die Arbeit hilft an drei Stellen und an den zwei entscheidenden nicht. Sie hilft, weil sie (1) genau die Gravitationsform quantisiert, die der Kandidat 'relative graduierte Determinante' verlangt (erste Ordnung mit Lambda ungleich null; ihre Wirkung ist unsere Form aus z165 minus Euler-Term), (2) die Positivität dort ansetzt, wo z165 sie nach der Korrektur von W3 hingelegt hat (Zustände und Zeitspiegelung, nicht der Vertex), und (3) eine Sprache liefert, in der die Lambda-Stufe des Ledgers eine prüfbare Zustandszahl ist: log dim des kosmischen Diamanten = (3/8)/q(1/alpha). Sie hilft nicht bei den zwei freien reinen Zahlen (G und Lambda sind dort Eingaben), nicht bei der Hierarchie (ihre Nichtanalytizität ist ein Logarithmus) und nicht beim fehlenden gemeinsamen Objekt: Sie enthält keine Materie, keine Eichfelder und keine Twistoren. Sie ist drei Tage alt, nicht begutachtet und teils mit einem Sprachmodell entwickelt; hier zählt sie als ungeprüfte Literatur, nur fünf Formeln sind nachgerechnet. Am Stand ändert sich nichts: 13 P / 7 L, keine volle Lösung, nichts befördert. Neu als Rechnungen: M5 (Naht als Eckdaten: Boostladung und Uhr der Arbeit gegen Uhr und KMS-Zustand der Naht, dabei der Abgleich 2 pi gegen 4 pi), M6 (Zustandszahl des kosmischen Diamanten aus der Nahtantwort), M7 (Graviton als Modul der Naht: zweite Ableitung der Nahtdeterminante mit Linienmetrik bei tau = i), M8 (Wechselwirkung aus der Uhrgleichung statt aus dem Zustand) und M9 (Verklebungsbit P_IF aus der Klebregel mit Außennormalen).
+
+Alle Prüfungen bestanden: True (15/15)

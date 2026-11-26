@@ -730,6 +730,34 @@ Yang–Mills-artige Form (Bestand z150), nicht über konforme Gravitation. W5 is
 Flusszahl bleibt eine Wahl. Pflichtenheft und nächste Rechnungen M1 bis M4 stehen in
 `docs/research/GESAMTSTAND-UND-STRATEGIEN.md`, Nachtrag z165.
 
+**Externe Arbeit zur Nullkegel-Quantisierung (z166, 15 Prüfungen, selbst gerechnet): Sie hilft beim Gravitationsteil
+und bei der Positivität, nicht bei den zwei freien Zahlen und nicht bei der Materie [E/L/Lit]. Keine volle Lösung.**
+
+**Quelle:** V. Chandrasekaran, arXiv:2611.34924 (25.11.2026); nicht begutachtet, teils mit einem Sprachmodell
+entwickelt; hier ungeprüfte Literatur. **Bilanz:** unverändert 13 P und 7 L von 20. Das Skript läuft unter
+PYTHONHASHSEED 0 und 7 byteweise gleich.
+
+**Nachrechnung [E/N].**
+- A1: Σ_k 2(Δq_k)⁴e^(−2ik/s) = Li₂(e^(−2i/s))/(2s²) für s = 3, 10, 50.
+- A2: Koeffizient von g³ (g = 1/s) bei N = 7 Moden ist −i·H₇: log-Divergenz bei Entwicklung vor der Summe.
+- A3: Im(Amplitude)·s³ + log s → ln 2 − 1; Re(Amplitude)·2s² = π²/6 − π/s + 1/s².
+- A4: e^(−πK/ħ) = e^(−A/(8Għ)), e^(−2πK/ħ) = e^(−A/(4Għ)); S = ⟨s⟩ + log Z, dim = Z·Sp(ρe^s).
+- A5: q = 257/302 gibt 106/45 (Sens 212/45 je log des Radius).
+
+**Brücken.**
+- B1 [E]: c·εFF (z165) = Wirkung (3.8) der Arbeit + c·Euler; (3.8) = (R − 2Λ)/(16πG).
+- B2 [E/L]: s = 3π/(ΛG) = 32π⁴e^(2/α) = (3/8)/q(1/α) = 3,3243·10¹²²; s·ρ_Λ/M̄⁴ = 24π² = (3/8)/c₃².
+- B3 [E negativ]: e^(−2/g) hat bei 0 verschwindende Ableitungen; die Amplitude der Arbeit einen log.
+- B4 [E/L]: (1 − q)^(−5/4) = exp((5/4)Li₁(q)); Formgleichheit mit der Modensumme.
+- B5 [O]: 4π entspricht e^(−2s), dem Gewicht von Sp(ρ²); Zuordnung offen.
+- B6 [E/L]: (4.21a) ist |dx + τdy|²/Im τ mit τ = z² + i·e^(−z¹); (4.21b) ist die Poincaré-Metrik; scherungsfrei
+  ist τ = i mit Stabilisator S (S⁴ = 1, S² = −1). j'(i) = 0; log|j^(1/3)|² hat dort die zweiten Ableitungen
+  −19,157 und +19,157 (harmonisch, Sattel).
+
+**Was das bedeutet.** Für Punkt 3 und Punkt 5 des Pflichtenhefts gibt es eine ausgearbeitete Vorlage. W1 und die
+Zahl GΛ bleiben offen. Strategien S-I bis S-IV und Rechnungen M5 bis M9 stehen in
+`docs/research/GESAMTSTAND-UND-STRATEGIEN.md`, Nachtrag z166.
+
 **Neunzehnte externe Analyse (z144, 67 Prüfungen, selbst gerechnet): Die gerechneten Aussagen stimmen. Die Zopfrelation
 legt das wechselwirkende Gatter nicht fest; die Phase folgt aber aus der Uhr.**
 - **Gitter [E]:**
