@@ -730,6 +730,52 @@ Yang–Mills-artige Form (Bestand z150), nicht über konforme Gravitation. W5 is
 Flusszahl bleibt eine Wahl. Pflichtenheft und nächste Rechnungen M1 bis M4 stehen in
 `docs/research/GESAMTSTAND-UND-STRATEGIEN.md`, Nachtrag z165.
 
+**Stufe 2 und 3 des Lösungswegs (z168, 15 Prüfungen, selbst gerechnet): Die Naht ist ein Boostzustand mit Ladung
+null und eigener Uhrgleichung; Hierarchie, Zustandszahl und Wechselwirkung liegen nicht in der einzelnen Naht
+[E/L, E negativ]. Keine volle Lösung.**
+
+**Bilanz:** unverändert 13 P und 7 L von 20. Das Skript läuft unter PYTHONHASHSEED 0 und 7 identisch.
+
+- A1 [E/N]: Sp e^(−2πK) mit K = L₀ − 1/3 über die Stufen 1, 248, 4124, 34752, … gibt 12 = j(i)^(1/3).
+- A2 [E]: Mit τ_law = iβ/(4π) ist β = 4π die Periode im Erzeuger H_Q = L₀/2; dasselbe Gewicht e^(−2πL₀) wie die
+  Boostperiode 2π. Der Abgleich aus z166 (B5) ist erledigt.
+- A3 [E]: ⟨K⟩ = −E₆/(3E₄) = 0 bei τ = i; S = log 12.
+- A4 [E, Zuordnung L]: ⟨K⟩(i/y) = −y²⟨K⟩(iy); Vorzeichenwechsel unter Spiegelung, Form der Eckbedingung.
+- B1, B2 [E, Lesart L]: Re K = −(ϖ⁴/π³)(y − 1) − (πE₄(i)/2)x² + …; Verdrillung quadratisch mit
+  Fokussierungsvorzeichen, Temperatur linear. S-II für eine Naht bestätigt, S-I nur zur Hälfte.
+- C0 [E]: e^(2πi·3Y) = Zentrum der schwachen SU(2) = anomale Involution von E₈ (Zentralisator E₇ × SU(2), 128
+  gerade und 112 ungerade Wurzeln, Norm 1/2).
+- C1, C1b [N, E negativ]: ‖Z‖² = 144, 72, 72, 0 in den vier Sektoren; die Null nur bei τ = i und nur für die anomale
+  Involution; ‖Z‖² = 76,6·|τ − i|². Keine Hierarchie aus Torsionssektoren.
+- C2 [E, Lesart L]: e^(−2/α) = exp(−(1/c₃)/e²), 1/c₃ = 8π = |ℤ₂|·2π·χ(S²).
+- C3 [N negativ]: M2: 0,2209 und 0,009508 gegen die Nahtantwort 1,1858·10⁻⁴.
+- C4 [N, E negativ]: M6: 1,338·10¹²² Nähte bei log 12 je Naht; die Zustandszahl folgt nicht aus der Naht.
+- D1, D2 [E, C unter P_TP, Zuordnung L]: Die zwei Lagrangeschen Untergruppen sind die Graphen von y = x und y = −x;
+  P_IF ist die Wahl der Spiegelung (J oder CJ).
+- D3 [E, Lesart L]: O(−1) ↔ Helizität −1/2 für die 16; Serre-Partner O(−3) ↔ +1/2.
+
+**Urteil:** Alles an einer einzelnen Naht Rechenbare ist gerechnet. Offen und nicht gerechnet: Wechselwirkung
+zwischen Geraden, M3, W3, Wert der Kopplung, G. Nächste Rechnungen M10 bis M12 in
+`docs/research/GESAMTSTAND-UND-STRATEGIEN.md`, Nachtrag z168.
+
+**Stufe 1 des Lösungswegs (z167, 15 Prüfungen, selbst gerechnet): Die Linienmetrik gibt Einheit und Verhältnisse,
+nicht die α-Gleichung; in Formrichtung ein Sattel [E, E negativ]. Keine volle Lösung.**
+
+**Bilanz:** unverändert 13 P und 7 L von 20. Das Skript läuft unter PYTHONHASHSEED 0 und 7 identisch.
+
+- A1–A3 [E]: Z(τ, z) = Θ_E8/η⁸, Z(i, 0) = 12; ‖Z‖² invariant unter Gitterverschiebungen und S. Bei τ = i wirkt S
+  als z → −iz (Spin 1) und dτ → −dτ (Spin 2); S = Uhr ist P_lift.
+- B1–B3 [E]: E₆(i) = 0, E₂(i) = 3/π, E₄(i) = 3ϖ⁴/π⁴; Γ = π|z|² isotrop, Spur 8π = 1/c₃.
+- B4 [E]: Γ₄ = −(ϖ⁴/12)·Re((z·z)²), Betrag 3,93901500269.
+- B5 [E]: Y·Y = 5/6, T₃·T₃ = 1/2, sin²θ_W = 3/8; Verhältnisse fest, gemeinsamer Wert nicht.
+- C1, C2 [E negativ]: Gewicht null, keine Krümmung in τ; Gitterfaktor +Poincaré, Oszillatorfaktor −Poincaré; Sattel.
+- D1–D3 [E]: Mit t = e²/c₃ ist die α-Gleichung t²(t − c₃) = b₁·ln(1/φ_seam) = det(t − c₃Π); t = 2,30470345485719.
+- D4 [E negativ]: Entscheidungstest negativ: Die Krümmung ist das Niveau, −2c₃³ ist keine Krümmung.
+- D5 [E]: e^(−2/α) = exp(−8π/e²).
+
+**Urteil:** Der Kandidat „relative graduierte Determinante“ (z165) ist nicht bestätigt. Offen: Ursprung der
+Kanalverschiebung um c₃ und der rechten Seite.
+
 **Externe Arbeit zur Nullkegel-Quantisierung (z166, 15 Prüfungen, selbst gerechnet): Sie hilft beim Gravitationsteil
 und bei der Positivität, nicht bei den zwei freien Zahlen und nicht bei der Materie [E/L/Lit]. Keine volle Lösung.**
 

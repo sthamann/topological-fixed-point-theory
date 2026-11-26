@@ -1070,6 +1070,143 @@ gemeinsamen Objekt mit Materie (T3 bis T8). Bilanz unverändert 13 P / 7 L. Kein
 5. **M9, Verklebungsbit.** Klebregel mit Außennormalen in der Gittersprache von z144: Wählt sie eine der zwei
    Lagrangeschen Untergruppen?
 
+### Nachtrag z167: Gesamtdeutung, Lösungsweg in drei Stufen und Stufe 1 (Linienmetrik)
+
+**Anlass.** Zwei Korrekturen am letzten Stand. Erstens: Der Ursprung der Naht ist der Hauptteil dieser Arbeit und
+weitgehend geleistet, er ist kein fehlendes Stück. Zweitens: Es fehlten eine Gesamtdeutung der bestandenen Prüfungen
+und ein einzelner Weg statt einer Liste von Strategien.
+
+**Ursprung der Naht, Stand.** Aus der einen Prämisse A* (keine Hintergrundgeometrie) folgen: vier Marken, τ = i
+(⟨T⟩ = 0 genau wenn E₆(τ) = 0), die Viertelgruppe μ₄, c₃ = 1/(8π), der KMS-Zustand mit seiner Zeit, die 16 und E₈,
+drei Familien, der Fünfer-Träger und P2. Das sind 13 der 20 Bankpunkte. Der Rest ist eng: was den Defekt im
+Grundzustand erzwingt (K19), ein gemeinsamer Elternoperator (K20) und die Saat aus zwei Ja/Nein-Schritten (S6,
+bedingt).
+
+**Prüfstand (gezählt am 26.11.2026 im Arbeitsverzeichnis, vor z167; einschließlich nicht eingecheckter Läufe).** 161 H6-Skripte mit zusammen 2838 Prüfungen, davon 2837 bestanden;
+die eine Ausnahme liegt im abgebrochenen, nicht eingecheckten Lauf z126. 21 externe Analysen sind selbst
+nachgerechnet. Das Ledger hat 789 Zeilen (784 aktiv), dazu 106 versionierte Lean-Dateien (215 im Arbeitsverzeichnis
+ohne Build-Ordner), der Prüfkatalog 707 Verifikationen und 16 eingefrorene Vorhersagen mit Abbruchkriterien (zum Beispiel α⁻¹ = 137,0359992168 gegen 137,035999177(21)).
+
+**Gesamtdeutung [L, Zusammenfassung des Bestands].**
+
+1. **Ein Objekt.** Alles Geprüfte hängt an einem Gegenstand: der Sphäre mit vier Marken, ihrer zweiblättrigen
+   Überlagerung (Torus bei τ = i) mit (E₈)₁ darauf. In der Raumzeit ist das die Twistorgerade, der Himmel eines
+   Punkts.
+2. **Drei Sorten Zahlen.** Jede bestätigte Zahl ist eine Zählung (Index: 16, 3, 5), eine Fixpunktbedingung (τ = i,
+   3/8, die Viertelgruppe) oder ein Anomaliekoeffizient (c₃, die Terme der α-Gleichung).
+3. **Ein Punkt ist exakt bekannt.** Die Theorie ist am symmetrischen Punkt vollständig bekannt. Dynamik ist die
+   Antwort auf Verformung. Die gescheiterten Versuche haben viele Nähte zusammengesetzt, statt eine zu verformen.
+4. **Verformungen sind Felder.** τ verformen: Gravitation. Das E₈-Bündel verdrillen: Eichfelder. Marken bewegen:
+   Flavour. Die Gerade verschieben: Raumzeitpunkt.
+5. **Eine Hälfte fehlt.** Die holomorphe Hälfte steht im Ledger (CELEST.SEAM.01). Allein gibt sie einen Sattel. Der
+   Spiegelpartner (Tomita) und die Metrik der Determinantenlinie sind der fehlende Kitt.
+
+**Lösungsweg in drei Stufen.** Stufe 1: die Linienmetrik am symmetrischen Punkt in allen Richtungen. Stufe 2: zwei
+Sektoren (Hierarchie e^(−2/α), G·Λ, Zustandszahl, 2π gegen 4π). Stufe 3: nichtlinear (Uhrgleichung, Verklebung,
+Materie, Positivität). Alle drei sind gerechnet, soweit eine einzelne Naht reicht (z167, z168).
+
+**Stufe 1 (z167, 15 Prüfungen, reproduziert).** Objekt: Z(τ, z) = Θ_E8(τ, z)/η⁸ mit der Norm
+‖Z‖² = |Z|²·exp(−2π y·y/Im τ), Γ = −log‖Z‖².
+
+- **Eichrichtung, zweite Ordnung [E]:** Γ = π|z|², isotrop, π = 1/(8c₃) je Cartan-Richtung, Spur 8π = 1/c₃. Die
+  Krümmung ist das Niveau der Stromalgebra. Sie legt Verhältnisse fest (Y·Y = 5/6, T₃·T₃ = 1/2, sin²θ_W = 3/8),
+  nicht den gemeinsamen Wert der Kopplung.
+- **Eichrichtung, vierte Ordnung [E]:** Γ₄ = −(ϖ⁴/12)·Re((z·z)²), ϖ die Lemniskatenkonstante; Wert 3,939015. Eine
+  reine Zahl mit der Anisotropie der Vierteldrehung.
+- **Formrichtung [E negativ]:** Z hat Gewicht null, also keine Krümmung in τ. Der Gitterfaktor (Im τ)⁴|Θ|² trägt
+  +Poincaré (Laplace +4), der Oszillatorfaktor η⁻⁸ trägt −Poincaré (Laplace −4), zusammen null. τ = i ist ein
+  Sattel. S-I (Graviton als Modul mit positiver Normierung aus der Linienmetrik) ist in dieser Form widerlegt.
+- **Helizitäten [E]:** Unter der geometrischen Vierteldrehung S hat z Spin 1 und dτ Spin 2. Die Gleichsetzung von S
+  mit der Uhr ist die Prämisse P_lift.
+- **α-Gleichung in Nahteinheiten [E]:** Mit t = e²/c₃ = 32π²α lautet die Gleichung des Ledgers exakt
+  **t²(t − c₃) = b₁·ln(1/φ_seam)**, t = 2,30470345485719. Die linke Seite ist det(t − c₃Π) über drei Kanäle mit einem
+  Rang-eins-Projektor Π. t ist e² mal Spur der Hesse-Form.
+- **Entscheidungstest [E negativ]:** Angekündigt war: Der Blatt-Term −2c₃³ kommt als Krümmung heraus, sonst ist der
+  Kandidat „alles ist zweite Ordnung der Linienmetrik“ in dieser Form erledigt. Ergebnis: negativ. Die Krümmung
+  liefert die Einheit 1/c₃ = 8π und die Variable t, nicht die Gleichung.
+- **Hierarchie [E]:** 2/α = 1/(c₃e²), also e^(−2/α) = exp(−8π/e²).
+
+**Urteil Stufe 1.** Neu und exakt: c₃ ist der Kehrwert der Gesamtkrümmung der Linie; die t-Form der α-Gleichung; die
+vierte Ordnung ϖ⁴/12. Negativ: Der Kandidat „relative graduierte Determinante“ ist nicht bestätigt. Offen bleibt
+enger: warum ein Kanal um c₃ verschoben ist und warum rechts b₁·ln(1/φ) steht.
+
+### Nachtrag z168: Stufe 2 und 3 (Naht als Ecke, Uhrgleichung, Sektoren, Verklebung, Materie)
+
+z168, 15 Prüfungen, reproduziert. Gerechnet sind M5, M6, M8 (für eine Naht), M9, M2 und W4.
+
+**M5, die Naht als Ecke.**
+
+- **Zustand [E]:** Bei τ = i ist die Zustandssumme Sp e^(−2πK) mit K = L₀ − 1/3. Die Summe der Stufen 1, 248, 4124,
+  34752, … mit Gewicht e^(−2π(n − 1/3)) gibt 12 = j(i)^(1/3).
+- **2π gegen 4π [E]:** Mit τ_law = iβ/(4π) aus dem Bestand ist q^(L₀) = e^(−βL₀/2). β = 4π ist die Periode im
+  Erzeuger H_Q = L₀/2 und gibt dasselbe Gewicht e^(−2πL₀) wie die Boostperiode 2π der Nullkegel-Arbeit. Der offene
+  Abgleich aus z166 ist damit erledigt: eine Erzeugerwahl, kein Faktor zwei.
+- **Boostladung [E]:** ⟨K⟩ = −E₆/(3E₄) = 0 bei τ = i; das ist ⟨T⟩ = 0 aus H6. Die Entropie ist S = log 12, ganz aus
+  log Z, ohne Flächenterm.
+- **Spiegelung [E, Zuordnung L]:** ⟨K⟩(i/y) = −y²·⟨K⟩(iy). Unter τ → −1/τ wechselt die Boostladung das Vorzeichen;
+  am Fixpunkt ist sie null. Das ist die Form der Eckbedingung der Arbeit (Boostladungen mit Außennormalen heben sich
+  auf). Lesart: Die symmetrische Naht ist eine Ecke mit mittlerer Fläche null, der Scheitel eines Lichtkegels,
+  passend zur Twistorgeraden als Himmel eines Punkts.
+
+**M8, die Uhrgleichung einer Naht [E, Lesart L].** K(τ) = −E₆/(3E₄) ist eine exakte nichtlineare Funktion. Um
+τ = i: Re K = −(πE₄(i)/3)·(y − 1) − (πE₄(i)/2)·x² + …, mit πE₄(i)/3 = ϖ⁴/π³ = 1,5245. Verdrillung x senkt die
+Boostladung quadratisch, ohne linearen Term: das Muster der Fokussierung. Die Temperaturrichtung y geht linear ein,
+wie ein Boost. Die Nichtlinearität steckt in der Funktion, der Zustand bleibt Gaußsch. S-II ist für eine Naht
+bestätigt. S-I passt nur zur Hälfte: Eine Richtung von τ verhält sich wie Scherung, die andere wie ein Boost. Eine
+Wechselwirkung zwischen verschiedenen Geraden ist das nicht.
+
+**Stufe 2, Hierarchie und Sektoren.**
+
+- **Schwaches Zentrum [E]:** Die Zwei-Torsion der Hyperladung, e^(2πi·3Y), ist auf der Naht das Zentrum der schwachen
+  SU(2): 3Y − T₃ liegt im E₈-Gitter. Ihr Zentralisator ist E₇ × SU(2) (128 gerade, 112 ungerade Wurzeln). Die
+  Verschiebung hat Norm 1/2; das ist die anomale Involution von E₈.
+- **Vier Sektoren [N, 25 Stellen]:** ‖Z‖² = 144 (unverdrillt), 72 und 72 (einfach verdrillt, exakt die Hälfte), 0
+  (doppelt verdrillt). Der doppelt verdrillte Sektor verschwindet nur bei τ = i (bei 1,2i ist er 2,47) und nur für
+  die anomale Involution (die D₈-Involution gibt 16).
+- **Folge [E negativ]:** Die Verhältnisse der Sektoren sind 1, 1/2, 1/2 und 0. Eine kleine endliche Zahl wie 10⁻¹²²
+  kommt als Verhältnis von Torsionssektoren bei festem τ = i nicht vor. Stufe 2 in der angekündigten Form ist negativ.
+- **Exponent [E, Lesart L]:** e^(−2/α) = exp(−(1/c₃)/e²) mit 1/c₃ = 8π = |ℤ₂|·2π·χ(S²). Das ist das Gewicht einer
+  Konfiguration mit Wirkung (Gesamtkrümmung der zweiblättrigen Naht)/e², linear in der Krümmung und skalenfrei. Die
+  Lesart ersetzt „Fluss 4 auf der Einheitssphäre“ aus z165.
+- **M2 [N negativ]:** Die relative Determinante der Markenmatrizen bei x = c₃ln2 ist 0,2209, −log det(1 − xC) ist
+  0,009508. Die Nahtantwort q(1 − q)^(−5/4) ist 1,1858·10⁻⁴. Nichts stimmt, auch nicht bis auf einfache Faktoren.
+- **M6 [N, E negativ]:** Mit log 12 je Naht braucht der Horizont 1,338·10¹²² Nähte; der Bestand nennt 9,6·10¹²², das
+  entspricht (ln 2)/2 je Naht. Die Zustandszahl folgt nicht aus der Naht. Sie bleibt die Zahl der Nähte je Fläche,
+  dieselbe freie Zahl wie G/R_vac².
+
+**Stufe 3, Verklebung und Materie.**
+
+- **M9 [E, bedingt unter P_TP, Zuordnung L]:** q(A₃) = −q(D₅) mod 1 auf ℤ₄. Die zwei Lagrangeschen Untergruppen sind
+  genau die Graphen der zwei Anti-Isometrien y = x und y = −x; sie unterscheiden sich um die Ladungskonjugation auf
+  einer Seite. Die Klebregel der Arbeit (zweite Seite = Zeitspiegelung der ersten, keine zusätzliche
+  Ladungskonjugation) gibt y = x. P_IF ist damit die Wahl der Spiegelung (J oder CJ). Unter P_TP (zweite Naht =
+  Tomita-Partner, z130) ist sie getroffen. Da P_univ unter P_TP schon nativ ist, sinkt die Prämissenzahl des
+  Kandidaten bedingt von neun auf acht (P_TP statt P_IF und P_univ). OriginLab bleibt unverändert, bis die Zuordnung
+  nicht mehr nur Lesart ist.
+- **W4 [E, Lesart L]:** Die 16 Fermionen der Naht sind Schnitte von K^(1/2) = O(−1). Nach Penrose gehört O(n) zur
+  Helizität −(n + 2)/2: einheitlich −1/2, der Serre-Partner O(−3) hat +1/2. Eichfeld O(0) und O(−4), Gravitation
+  O(2) und O(−6). Die Chiralität der 16 ist das Gewicht des Spinbündels der Naht.
+- **Nicht gerechnet [O]:** Wechselwirkung zwischen Geraden, Einstein-Form in Twistorvariablen (M3), Positivität über
+  mehrere Geraden (W3), der Vertex gegen die Spin-2-Form (zweiter Teil von M8).
+
+**Urteil nach allen drei Stufen.** Alles, was an einer einzelnen Naht rechenbar ist, ist gerechnet und stimmt in der
+Form. Eine Naht liefert Einheiten (1/c₃ = 8π), Verhältnisse (3/8), Vorzeichen (Fokussierung), Helizitäten, die
+Entropie log 12 und die Boostladung null. Die drei offenen Zahlen (gemeinsame Kopplung, G, Hierarchie) und die
+Wechselwirkung liegen nachweislich nicht in der einzelnen Naht. Sie liegen in der Kopplung zwischen Geraden. Bilanz
+unverändert 13 P / 7 L. Keine volle Lösung, nichts befördert.
+
+**Nächster Weg (Vorschlag, nicht gerechnet).**
+
+1. **M10, α-Gleichung als Verklebung zweier Halbnähte.** Ziel ist das Ledger-Ziel ALPHA.QUILLEN.EXACT.01: Die linke
+   Seite det(t − c₃Π) soll als Verklebungsformel (BFK) mit dem Sprungoperator R₀ der vier Marken entstehen. Erfolg:
+   Der verschobene Kanal und die rechte Seite haben einen Ursprung; dann ist der Wert der Kopplung eine Eigenschaft
+   der Verklebung, nicht der Naht. Abbruch: Die Verklebung gibt det′R₀ = 2¹⁶c₃³, aber keine Verschiebung um c₃.
+2. **M11, zwei Geraden.** Verbundene Korrelation der Boostladungen K zweier Nähte, die sich in einem Punkt treffen
+   (lichtartig getrennte Raumzeitpunkte). Erfolg: eine Form mit dem Vorzeichen der Anziehung und einem Koeffizienten
+   in Einheiten von c₃. Das ist die erste Rechnung, in der G überhaupt vorkommen kann.
+3. **M12, das anomale schwache Zentrum.** Was bedeutet das exakte Verschwinden des doppelt verdrillten Sektors bei
+   τ = i? Prüfen: Wählt es die globale Form der Eichgruppe (Quotient nach ℤ₆ oder nicht)?
+
 ### Was die Runde bedeutet
 
 - **Der Kandidat** braucht neun Prämissen: A*, I_step, P_lift, P_IF, P_univ, P_uhr, P_ord, P_curv und P_G als freie

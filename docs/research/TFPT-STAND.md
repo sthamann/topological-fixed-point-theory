@@ -689,6 +689,27 @@ hergeleitet, 7 unter benannter Lesart, keines gescheitert, offen oder gesetzt. K
         dort stationär, sein Betrag gibt einen Sattel; der positive Teil muss aus der Linienmetrik kommen (M1).
       - Offen: Boostperiode 2π gegen KMS 4π. Neue Strategien S-I bis S-IV und Rechnungen M5 bis M9 im
         Gesamtstand, Nachtrag z166.
+    - Gesamtdeutung und Lösungsweg in drei Stufen (Z167, Z168; je 15 Prüfungen): alles an einer einzelnen Naht
+      Rechenbare ist gerechnet.
+      - Deutung [L]: Ein Objekt (Sphäre mit vier Marken, Torus bei τ = i, (E₈)₁, = Twistorgerade). Alle bestätigten
+        Zahlen sind Zählungen, Fixpunktbedingungen oder Anomaliekoeffizienten. Die Theorie ist am symmetrischen
+        Punkt exakt bekannt; Dynamik ist die Antwort auf Verformung.
+      - Stufe 1, Linienmetrik (Z167): In Eichrichtung ist die Krümmung das Niveau, π = 1/(8c₃) je Richtung, Spur
+        8π = 1/c₃; vierte Ordnung −(ϖ⁴/12)·Re((z·z)²). In Formrichtung keine Krümmung, τ = i ist ein Sattel
+        (S-I in dieser Form widerlegt). Mit t = e²/c₃ lautet die α-Gleichung t²(t − c₃) = b₁·ln(1/φ_seam). Der
+        Entscheidungstest (Blatt-Term als Krümmung) ist negativ. [E, E negativ]
+      - Naht als Ecke (Z168): Zustand e^(−2πK)/12 mit K = L₀ − 1/3, ⟨K⟩ = 0, S = log 12. 2π gegen 4π ist eine
+        Erzeugerwahl (H_Q = L₀/2), kein Widerspruch. Unter τ → −1/τ wechselt K das Vorzeichen. [E, Lesart L]
+      - Uhrgleichung einer Naht (Z168): K(τ) = −E₆/(3E₄); Verdrillung quadratisch mit Fokussierungsvorzeichen,
+        Temperatur linear. Nichtlinearität ohne nicht-Gaußschen Zustand. [E, Lesart L]
+      - Sektoren (Z168): e^(2πi·3Y) ist das Zentrum der schwachen SU(2) und die anomale Involution von E₈
+        (E₇ × SU(2)). ‖Z‖² = 144, 72, 72, 0: Der doppelt verdrillte Sektor verschwindet genau bei τ = i. Keine
+        Hierarchie aus Torsionssektoren; M2 und die Zustandszahl aus der Naht sind negativ. [E, E negativ]
+      - Verklebung und Materie (Z168): P_IF ist die Wahl der Spiegelung (J oder CJ), unter P_TP getroffen; bedingt
+        acht statt neun Prämissen. Die 16 tragen als Schnitte von O(−1) einheitlich Helizität −1/2. [E/C, L]
+      - Stand: Die offenen Zahlen (gemeinsame Kopplung, G, Hierarchie) und die Wechselwirkung liegen nicht in der
+        einzelnen Naht, sondern in der Kopplung zwischen Geraden. Nächste Rechnungen M10 bis M12 im Gesamtstand,
+        Nachtrag z168. Keine volle Lösung.
     - Zopfrelation: Sie gilt nur für einkörperige Operatoren (Nahtuhr und Strahlteiler = Ising-Zopfmatrizen). Das
       wechselwirkende Gatter verletzt sie mit Defekt √(3/8). Die Defektstruktur ist endlich (Clifford-Typ). [E]
     - Eichdynamik: Plakettenstruktur und sin²θ_W = 3/8 sind nativ, die absolute Kopplung und die Linkdynamik nicht.
