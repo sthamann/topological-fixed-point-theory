@@ -248,6 +248,20 @@ clauses no survivor reaches.
   P_G stays a free pure number G/R_vac^2: clock trace, entanglement equilibrium, induced gravity and double copy give
   rows that do not agree (z127, z136, z137). Still no survivor reaches graviton or modular statistics. Test updated.
 
+Clock-sector search (H6h50, z170): `clock_sector_search.py` adds three finite universes behind the four clock sectors
+of (E8)_1, searched with `genesis_rules.search` at constant size (a rule is UNIQUE only if one label satisfies it).
+`clocks`: every conjugacy class of elements of order 2 to 8 of E8 from Kac coordinates (138 classes), with the exact
+trace on the 248, the fixed root system, the lowest twisted weight v.v/2 and the anomaly on the chiral factor. Result:
+the H6 clock (fixed system A3 + D5, multiplicities 60, 64, 60, 64, twisted ground weight 3/8, anomaly type 2) is the
+only class of order at most 5 with Tr R = 0 and the only class up to order 8 with Tr R = 0 and a semisimple fixed
+system. `completions`: every self-orthogonal subgroup of order 16 of A (+) A-bar for the discriminant group
+A = Z4 x Z4 of D5 + D3 with q = (5x^2 + 3y^2)/8 (27 left-right completions: 10 bosonic, 17 spin). The four bosonic
+graphs are the sign isometries (two bits). No completion contains both the holomorphic E8 currents and a local 16:
+next to E8 the 16 exists only in the clock-twisted sector. `responses`: exact power laws for the seam response
+q (1 - q)^(-5/4); the coherent kernel of the twisted 16 (h = 5/8) with F = q K is the only native candidate with the
+right insertion, the quartic measure of analysis 22 is not native. The insertion F = q K is a reading. No physical
+solution is claimed (`physical_solution: False`); tests in `test_clock_sector_search.py`.
+
 ```bash
 .venv/bin/python -B research/originlab/process_rules.py > /tmp/process-rules.json
 .venv/bin/python -B research/originlab/main.py --campaign process_rules --jobs 1 --out /tmp/originlab-process

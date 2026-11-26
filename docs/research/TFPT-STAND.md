@@ -710,6 +710,22 @@ hergeleitet, 7 unter benannter Lesart, keines gescheitert, offen oder gesetzt. K
       - Stand: Die offenen Zahlen (gemeinsame Kopplung, G, Hierarchie) und die Wechselwirkung liegen nicht in der
         einzelnen Naht, sondern in der Kopplung zwischen Geraden. Nächste Rechnungen M10 bis M12 im Gesamtstand,
         Nachtrag z168. Keine volle Lösung.
+    - Analysen 22 und 23 (Z169, 14 Prüfungen) und erweiterte Programmsuche (Z170, 12 Prüfungen; OriginLab
+      `clock_sector_search.py`):
+      - Uhrsektoren [E]: Sp(R·Q^(L₀−1/3)) = (η(2τ)/η(4τ))⁴. R-Sektor: h = 3/8 (vier Zustände, Spinor von A₃) und
+        h = 5/8 (die 16, Spinor von D₅); R²-Sektor: h = 1/2 (10 + 6). Sp R = 0, Sp R² = −8.
+      - Uhr eindeutig [E/C]: Unter 138 Klassen der Ordnung 2 bis 8 in E₈ hat bis Ordnung 5 nur die Uhr Spur null;
+        mit „kein U(1)-Rest“ bis Ordnung 8. SO(10) × SU(4) folgt aus Sp R = 0.
+      - Spiegel [E]: 27 Vervollständigungen der 16 Sektoren; die vollständigen bosonischen sind vier (zwei
+        Vorzeichenbits). Keine enthält E₈-Ströme und die 16 zugleich lokal: Neben E₈ ist die 16 ein Defektende.
+      - Potenz 5/4 [E, Einfügung L]: Kohärenzkern der 16, (1 − q)^(−2h) mit h = 5/8, positiv und nativ. Das
+        quartische Maß der Analyse 22 stimmt, ist aber nicht nativ.
+      - Grenzen [E]: Eine Rechnung bei festem τ sieht G nicht (kinetischer Koeffizient nötig). Die Zustandsmetrik
+        der E₈-Naht hat Krümmung +8/3 und ist keine Gravitonmetrik; die Nullkegelform ist die Kovarianz eines
+        bosonischen Gaußzustands. Der Uhrcharakter ist nicht die Nahtantwort (Faktor 56,82).
+      - Korrekturen: 106 versionierte Lean-Dateien; Scherungsfreiheit wählt τ = i nicht aus; 3,32·10¹²² ist log N.
+      - Stand: Uhr, Eichgruppe, Materie als Defekt, Verklebung und Antwortpotenz liegen in einem Objekt. Offen:
+        K19, Kopplung, G, Hierarchie, vier Dimensionen, zwei Bits. Keine volle Lösung.
     - Zopfrelation: Sie gilt nur für einkörperige Operatoren (Nahtuhr und Strahlteiler = Ising-Zopfmatrizen). Das
       wechselwirkende Gatter verletzt sie mit Defekt √(3/8). Die Defektstruktur ist endlich (Clifford-Typ). [E]
     - Eichdynamik: Plakettenstruktur und sin²θ_W = 3/8 sind nativ, die absolute Kopplung und die Linkdynamik nicht.

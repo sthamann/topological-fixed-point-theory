@@ -730,6 +730,37 @@ Yang–Mills-artige Form (Bestand z150), nicht über konforme Gravitation. W5 is
 Flusszahl bleibt eine Wahl. Pflichtenheft und nächste Rechnungen M1 bis M4 stehen in
 `docs/research/GESAMTSTAND-UND-STRATEGIEN.md`, Nachtrag z165.
 
+**Erweiterte Programmsuche hinter den vier Uhrsektoren (z170, 12 Prüfungen; OriginLab `clock_sector_search.py`):
+Die Uhr ist durch Sp R = 0 festgelegt, die 16 ist neben E₈ ein Defektende, die Potenz 5/4 hat einen nativen
+positiven Träger [E/C/L]. Keine volle Lösung.**
+
+**Bilanz:** unverändert 13 P und 7 L von 20. Das Skript läuft unter PYTHONHASHSEED 0 und 7 identisch.
+
+- A1–A3 [E, C für die Forderung]: 138 Klassen der Ordnung 2 bis 8 in E₈; Spur null haben fünf (Ordnung 4, 6, 6, 8,
+  8); „Spur null + Ordnung ≤ 4“ und „Spur null + halbeinfach“ wählen eindeutig die Uhr (A₃ + D₅, Typ 2).
+- B1, B2 [E]: 27 Spiegelvervollständigungen (10 bosonisch, 17 Spin); vier bosonische Graphen = zwei Vorzeichenbits.
+- B3 [E]: Keine enthält E₈-Ströme und eine lokale 16; neben E₈ ist die 16 ein Ende der Uhr-Defektlinie.
+- B4 [E, L]: Dimensionen der verdrillten Skalare 3/4 und 5/4 = die zwei Zahlen des α-Blocks.
+- C1–C3 [E, Einfügung L]: ‖L₋₁ⁿh‖² = n!(2h)ₙ, Kern (1 − q)^(−2h); für die 16 die Potenz 5/4. Einziger nativer
+  Kandidat mit passender Einfügung F = q·K. Gegenprobe: F = 4q·d/dq(1 − q)^(−1/4).
+- D1 [N]: ‖Z‖² der 16 Sektoren bei τ = i: 144; 64, 64, 16; 8; 32 ± 24√2.
+- D2 [E]: Grundniveau des Defekts +1/24, Vakuum −1/3: K19 bleibt offen.
+
+**Zweiundzwanzigste und dreiundzwanzigste externe Analyse (z169, 14 Prüfungen, selbst gerechnet): Rechnungen
+bestätigt; Uhrsektorenobjekt, Spurtrennung, Gaußbrücke und der Einwand zur Hesse-Form übernommen; Uhrcharakter als
+Nahtantwort und quartisches Maß nicht [E, E negativ].**
+
+- A1–A7 [E/N]: Vielfachheiten (60, 64, 60, 64), Sp R = 0, Sp R² = −8; Uhrcharakter (η(2τ)/η(4τ))⁴; Gewichte 3/8,
+  5/8, 1/2 mit (1, 4), (16, 1), 10 + 6; 80 und 12 Ladungspaare; festes Gitter D₅ + D₃; Faktor 56,82; Typ 4{2}.
+- B1–B3 [E]: quartisches Maß gibt (1 − q)^(−5/4), Einfügung fehlt; Sp Q⁴ = (Sp Q²)²/2; Kernmetrik 5/(16(1 − x)²).
+- C1 [N, E negativ]: Zustandsmetrik π²E₄(i)/6 = 2,39463397474630, Krümmung +8/3 gegen negative Formkrümmung.
+- C2 [E]: Var(Q_a) = 1/(4π), Var(T₃) = c₃; Kov(L₀, Q_a²) = 0,0568798966258652.
+- C3 [E]: Nullkegelform = 2 × Kovarianz eines reinen bosonischen Gaußzustands; Metrik 1/(8y²).
+- C4 [E]: Skalarkrümmung −(u′)²/2; eine konstante Verformung sieht G nicht.
+
+**Korrekturen:** 106 versionierte Lean-Dateien; Scherungsfreiheit wählt τ = i nicht aus (B6 aus z166 gilt nur im
+gewählten Rahmen); 3,32·10¹²² ist log N.
+
 **Stufe 2 und 3 des Lösungswegs (z168, 15 Prüfungen, selbst gerechnet): Die Naht ist ein Boostzustand mit Ladung
 null und eigener Uhrgleichung; Hierarchie, Zustandszahl und Wechselwirkung liegen nicht in der einzelnen Naht
 [E/L, E negativ]. Keine volle Lösung.**

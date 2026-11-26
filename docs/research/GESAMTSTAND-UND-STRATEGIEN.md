@@ -1207,6 +1207,96 @@ unverändert 13 P / 7 L. Keine volle Lösung, nichts befördert.
 3. **M12, das anomale schwache Zentrum.** Was bedeutet das exakte Verschwinden des doppelt verdrillten Sektors bei
    τ = i? Prüfen: Wählt es die globale Form der Eichgruppe (Quotient nach ℤ₆ oder nicht)?
 
+### Nachtrag z169: zweiundzwanzigste und dreiundzwanzigste externe Analyse
+
+Zwei externe Analysen vom 26.11.2026, als ungeprüfte Zuarbeit behandelt und selbst nachgerechnet (z169, 14 Prüfungen,
+reproduziert). Ihre Skripte lagen nicht vor.
+
+**Bestätigt und übernommen.**
+
+- **Uhrsektoren [E]:** Mit der Uhr R = e^(2πi v·P), v = (½,½,½,½,½,0,0,0), ist
+  Sp(R·Q^(L₀−1/3)) = (η(2τ)/η(4τ))⁴ = Q^(−1/3)·∏(1 + Q^(2n))^(−4). Der R-Sektor hat das Grundniveau h = 3/8 mit vier
+  Zuständen (Spinor von A₃) und darüber h = 5/8 mit 16 Zuständen (Spinor von D₅); der R²-Sektor hat h = 1/2 mit
+  10 + 6 Zuständen. Das feste Gitter ist D₅ + D₃. Als Ladungssummen gilt 16 × 16 → 10 (80 geordnete Paare) und
+  4 × 4 → 6 (12 Paare). Die Operatorprodukte selbst sind nicht nachgerechnet.
+- **Spuren [E]:** Sp R = 0, Sp R² = −8. Eine Spur mit eingesetzter Uhr und eine Superspur zur Parität R² sind
+  verschiedene Konstruktionen; das Pflichtenheft aus z165 muss sie trennen.
+- **Anomalie [E]:** Die Uhr ist auf dem chiralen E₈-Faktor anomal (Typ 4{2}), ihr Quadrat nicht.
+- **Hesse-Form reicht nicht [E]:** Für ds² = dz² + dt² + e^u dx² + e^(−u) dy² ist die Skalarkrümmung −(u′)²/2. Eine
+  konstante Verformung sieht den Einstein-Term nicht. G steht im kinetischen Koeffizienten Z von
+  Γ(p) = M + Z·p². Rechnungen bei festem τ (z167, z168) können G grundsätzlich nicht liefern.
+- **Zustandsmetrik gegen Nullkegelform [E negativ]:** Die Zustandsmetrik der E₈-Familie hat bei τ = i den Wert
+  π²E₄(i)/6 = 2,3946 und die Gaußkrümmung +8/3. Die Formmetrik der Nullkegel-Arbeit hat negative Krümmung. Die
+  direkte Gleichsetzung scheitert; das deckt sich mit z167.
+- **Gaußbrücke [E]:** Die Formmatrix der Nullkegel-Arbeit ist genau zweimal die Kovarianz des reinen Gaußzustands
+  ψ_τ(q) ∝ e^(iτq²/2); dessen Zustandsmetrik ist 1/(8y²). Das Paar ist bosonisch und in der Naht nicht hergeleitet.
+- **Ladungsschwankung [E]:** Var(Q_a) = 1/(4π) je Einheitsrichtung, also Var(T₃) = 1/(8π) = c₃ und Var(Y) = 5/(24π).
+
+**Nicht übernommen.**
+
+- **Uhrcharakter als Nahtantwort [N negativ]:** −log des Uhrcharakters beginnt bei Q² (4Q² + 2Q⁴ + (16/3)Q⁶), aber
+  die elektrische Auswertung liegt um den Faktor 56,82 neben der Nahtantwort.
+- **Quartisches Maß [E, nicht nativ]:** ∫e^(−(1−q)Q₄) über ℝ⁵ gibt (1 − q)^(−5/4). Die Rechnung stimmt; das Maß ist
+  nicht hergeleitet, und die logarithmische Ableitung ist (5/4)q/(1 − q), nicht die Nahtantwort.
+
+**Korrekturen an eigenen Angaben.**
+
+- 106 versionierte Lean-Dateien, nicht 215 (215 liegen im Arbeitsverzeichnis).
+- Scherungsfreiheit wählt τ = i nicht aus: Jedes entlang eines Strahls konstante τ ist scherungsfrei. Die Aussage
+  im Nachtrag z166 gilt nur für den gewählten Rahmen; die fehlende Identifikation ist die Markierung.
+- 3,32·10¹²² ist eine Entropie (log N), keine Zustandszahl.
+- „Aus einer Annahme“ ist zu stark: Neben A* stehen die benannten Prämissen des Kandidaten.
+
+### Nachtrag z170: erweiterte Programmsuche hinter den vier Uhrsektoren
+
+OriginLab hat ein neues Modul `research/originlab/clock_sector_search.py` mit drei endlichen, vollständig
+aufgezählten Universen und der vorhandenen Regelmaschine (z170, 12 Prüfungen, reproduziert; sechs Tests).
+
+**Universum Uhren.** Alle 138 Klassen von Elementen der Ordnung 2 bis 8 in E₈ (Kac-Koordinaten).
+
+- **Eindeutigkeit [E, C für die Forderung]:** Spur null auf den 248 haben genau fünf Klassen: die H6-Uhr
+  (Ordnung 4), zwei der Ordnung 6, zwei der Ordnung 8. Bei Ordnung 2, 3 und 5 gibt es keine. „Spur null und Ordnung
+  höchstens 4“ wählt eindeutig die Uhr, ebenso „Spur null und kein U(1)-Rest“ unter allen 138. SO(10) × SU(4) ist
+  damit Folge von Sp R = 0 (Volumenaufhebung, z165), keine Wahl.
+
+**Universum Spiegelvervollständigungen.** Alle selbstorthogonalen Untergruppen der Ordnung 16 in A ⊕ Ā,
+A = ℤ₄ × ℤ₄ mit q = (5x² + 3y²)/8.
+
+- **Anzahl [E]:** 27 Vervollständigungen, 10 bosonisch und 17 mit Spinstruktur.
+- **Zwei Bits [E]:** Die bosonischen, in denen jeder Sektor genau einmal vorkommt, sind genau die vier
+  Vorzeichen-Isometrien (x, y) → (±x, ±y). P_IF aus z144 ist das Verhältnis der beiden Vorzeichen.
+- **Ausschluss [E]:** Keine Vervollständigung enthält zugleich die holomorphen E₈-Ströme und die 16 als lokales Feld.
+  Wo links E₈ steht, gibt es keinen Uhrsektor. Neben E₈ existiert die 16 nur als Ende einer Uhr-Defektlinie. Die
+  Defektlesart der Naht folgt damit aus „E₈ und die 16 zugleich“. Offen bleibt, warum der Grundzustand den Defekt
+  enthält (K19): Sein Grundniveau liegt bei L₀ − 1/3 = +1/24, das Vakuum bei −1/3.
+- **Dimensionen [E, Gleichsetzung L]:** Die verdrillten Skalare haben die Dimensionen 3/4 (die 4) und 5/4 (die 16).
+  Das sind die zwei Zahlen des α-Blocks (c₃/φ_base = 3/4, Antwortpotenz 5/4).
+
+**Universum Antworten.**
+
+- **Nativer Träger der Potenz 5/4 [E, Einfügung L]:** Für einen Zustand niedrigsten Gewichts h ist
+  Σ‖L₋₁ⁿh‖²qⁿ/(n!)² = (1 − q)^(−2h). Für die 16 (h = 5/8) ist das (1 − q)^(−5/4): ein positiver Hilbertraum ohne
+  Zusatzmaß. Unter acht Kandidaten ist er der einzige, der nativ ist und mit F = q·K die Nahtantwort trifft.
+- **Gegenprobe [E]:** q(1 − q)^(−5/4) = 4q·d/dq (1 − q)^(−1/4) gilt auch. Die Potenz allein unterscheidet Lesarten
+  nicht.
+
+**Die 16 Sektoren bei τ = i [N, 25 Stellen].** ‖Z‖² = 144; 64, 64, 16; viermal 8; viermal 32 + 24√2; viermal
+24√2 − 32. Kein Uhrsektor verschwindet.
+
+**Urteil.** Uhr, Eichgruppe, Materie als Defekt, Verklebung und Antwortpotenz fügen sich in ein Objekt: die vier
+Uhrsektoren von E₈. Eine volle Lösung ist nicht gefunden. Offen: Auswahl des Defekts im Grundzustand (K19), Wert der
+Kopplung, G, Hierarchie, der Weg vom Sektorenobjekt zur vierdimensionalen Raumzeit, die zwei Bits. Bilanz unverändert
+13 P / 7 L. Nichts befördert.
+
+**Nächste Schritte der Suche (Vorschlag).**
+
+1. **M13, Defekt im Grundzustand.** Universum der Randbedingungen des Sektorenobjekts (Uhr in Raum- oder Zeitrichtung,
+   mit und ohne Spiegel) gegen die Forderung ⟨T⟩ = 0 und Positivität: Wählt eine Kombination den R-Sektor?
+2. **M14, kinetischer Koeffizient.** Γ(p) = M + Z·p² für die Verformung von τ entlang der Naht, mit dem
+   Sektorenobjekt als Zustandsraum. Erste Rechnung, in der G vorkommen kann.
+3. **M15, Einfügung.** Welche Observable des Sektorenobjekts gibt F = q·K? Kandidat: Zweipunktfunktion der 16 mit
+   einem Stromschritt.
+
 ### Was die Runde bedeutet
 
 - **Der Kandidat** braucht neun Prämissen: A*, I_step, P_lift, P_IF, P_univ, P_uhr, P_ord, P_curv und P_G als freie
