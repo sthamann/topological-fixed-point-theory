@@ -616,6 +616,54 @@ Familie, der Viertelwinkel ist ihr selbstdualer Punkt, und nur am anderen Ende g
 5. **No-Go festschreiben:** D1 und D2 als Regeln in OriginLab, damit die erschöpfte Linie nicht wieder aufgenommen
    wird.
 
+**Nachtrag, Schritt 5 nach H6h50: Gesamtdurchsicht des Bestands und Weg „zwei Hälften“ (z163, 22 Prüfungen, selbst
+gerechnet): Die H6-Rechnungen und das Twistor-Programm des Ledgers sind zwei Hälften derselben Struktur und wurden nie
+zusammengeführt. An vier geprüften Stellen sind sie verträglich [E/C/L]. Kein Treffer, nichts befördert.**
+
+**Bilanz:** unverändert 13 P und 7 L von 20. Das Skript läuft unter PYTHONHASHSEED 0 und 7 byteweise gleich.
+
+**Korrekturen an den Strategien aus Schritt 4.**
+- Strategie 3 („41/10 als Ziel“) ist gestrichen: b₁ = 41/10 ist im Ledger zweimal hergeleitet (Transportbudget
+  (4/5)·41/8; Hyperladungen Σ(2/3)Y_f² + (1/3)Y_s² = 41/6 über β = a₄).
+- G ist im Ledger keine freie Zahl (8πG = 1/c₃, GRAV.NONLINEAR.01, bedingt); die freie Zahl G/R_vac² ist die Λ-Stufe
+  der Wirkungsleiter. Offen ist der Mechanismus der Leiter, nicht ihr Wert.
+- Die Lücke laut Ledger (TFPT.TOE.COMPLETE.01) ist ein gemeinsamer 3+1-dimensionaler Elternteil für T3–T8. Die
+  Strategien 1, 2 und 6 leben auf der 1+1-Kette und sind zurückgestellt.
+
+**Z1 Anomalie der selbstdualen Hälfte [E; Bedeutung L].** Sp_adj X⁴ = λ²(X·X)² gilt für A₁, A₂, D₄, E₆, E₇, E₈ mit
+λ² = 10h²/(dim+2) = h + 6 (8, 9, 12, 18, 24, 36), nicht für so(10), su(4), su(5), su(3)+su(2). Im Bestand erfüllt nur
+E₈ die Bedingung; λ² = 36 ist der Wert aus CELEST.SEAM.01 (WP5e). Lesart [L, Costello 2021, nicht nachgerechnet]: Das
+ist die Konsistenzbedingung der holomorphen Eichtheorie auf dem Twistorraum.
+
+**Z2 Uhr-Graduierung und Statistik [E; Folgerung L].**
+- Klassen der Wurzeln unter h = (½⁵; 0³): (52, 64, 60, 64), mit Cartan-Teil (60, 64, 60, 64) wie im Vertrag (WP1).
+- Quartischer Teil je Klasse (p: so(10), q: su(4)): p₄-Koeffizienten 4, −8, 12, −8. Sie heben sich nur gemeinsam auf.
+- Mit der 16 als Weyl-Fermion (Klassen 1, 3) gibt keine Statistik der Klasse 2 ein Quadrat. Spin(10) mit n Weyl-16 und
+  m reellen 10 hat den Koeffizienten 4 + 2n + m.
+- Folge: In der Twistor-Hälfte sind alle 248 Komponenten Bosonen. Die chirale Materie muss von der Naht kommen
+  (ν(Uhr) = 16). Vorgabe für T4.
+
+**Z3 Vertexhälfte [E].**
+- Ward-Rekursion für Niveau k (su(2) bis 6 Punkte, su(3) bis 5 Punkte, 49 Fälle): Der zusammenhängende Teil ist exakt
+  linear in k und gleich −Σ Sp(T…T)/(z₁₂…z_n1), reine Einfachspur. Vollsymmetrische Invarianten fallen heraus; es
+  zählen nur f und k, also gilt das auch für (E₈)₁.
+- Der volle Korrelator hat k²-Terme; bei k = 1 ist der Mehrspurteil 0,42 des Einfachspurteils (Beispiel). Der
+  Mehrspureinwand aus z110 betrifft Z, nicht W = log Z.
+- Homogenität: ⟨ij⟩^p/(⟨12⟩…⟨n1⟩) hat je Bein den Grad −2 bzw. p − 2. Mit Maß (+2) und Feldgewicht w_b folgt
+  p = −w_b = 4 für den Serre-Partner O(−4) aus z123.
+- Folge [C unter P_TW]: P_N4 entfällt, P_BF wird zum Feld b der Ledger-Hälfte.
+
+**Z4 Wirkungsleiter [E/L, N negativ].** ρ_Λ/M̄⁴ = (3/4π²)e^(−2/α) = q(1/α)/c₃² mit q(α) = δ_top e^(−2α) aus der
+α-Gleichung. Die Hubble-Stufe ist Friedmann; die Leiter hat zwei unabhängige Stufen. Mit e·g = 4π ist α_m = 1/α. Die
+elektroschwache Stufe ist keine Potenz von q (36,85 gegen 28,31).
+
+**Was das bedeutet.** Rahmen P_TW: holomorpher Teil auf dem Twistorraum plus ∫d⁴x log det der Naht auf L_x. Darin ist
+die einzelne Naht Gaußsch (D1 bleibt), die vier Dimensionen sind der Raum der Geraden, das Graviton ist ein
+elementares Feld der holomorphen Hälfte. Prämissen dieses Kandidaten: A*, P_TW, P_SD, P_g, P_reell, P_inf, P_mat.
+Lösungswege W1 bis W6 mit erster Rechnung, Erfolgs- und Abbruchkriterium stehen in
+`docs/research/GESAMTSTAND-UND-STRATEGIEN.md`, Nachtrag z163. Zuerst W1 (Kopplung aus der Stationarität derselben
+Determinante) und W2 (Gravitationsvertex mit dem nativen Unendlichkeitstwistor).
+
 **Neunzehnte externe Analyse (z144, 67 Prüfungen, selbst gerechnet): Die gerechneten Aussagen stimmen. Die Zopfrelation
 legt das wechselwirkende Gatter nicht fest; die Phase folgt aber aus der Uhr.**
 - **Gitter [E]:**

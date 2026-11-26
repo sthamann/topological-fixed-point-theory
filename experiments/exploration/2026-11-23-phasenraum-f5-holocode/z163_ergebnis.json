@@ -1,0 +1,117 @@
+{
+ "checks": {
+  "A0 Wurzelzahlen: A1 2, A2 6, A3 12, A4 20, D4 24, D5 40, E6 72, E7 126, E8 240": true,
+  "A1 Die Bedingung gilt genau für A1, A2, D4, E6, E7, E8 (von den geprüften neun Algebren)": true,
+  "A2 lambda^2 = 10 h^2/(dim + 2) = h + 6 auf dieser Reihe: 8, 9, 12, 18, 24, 36": true,
+  "A3 E8: lambda^2 = 36 (der Wert im Vertrag CELEST.SEAM.01, WP5e)": true,
+  "A4 so(10), su(4), su(5) erfüllen die Bedingung nicht (echter quartischer Casimir)": true,
+  "A5 su(3) + su(2) (Standardmodell): kein einzelnes Quadrat (9 s^2 + 8 t^2, kein gemischter Term)": true,
+  "B1 Klassen (52, 64, 60, 64); mit dem Cartan-Teil (60, 64, 60, 64) wie im Vertrag (WP1)": true,
+  "B2 Klasse 0 = so(10) + su(4) (40 + 12 Wurzeln); Klasse 3 = -Klasse 1; Klasse 2 = -Klasse 2": true,
+  "B3 Summe = 36 (p2 + q2)^2: p4 und q4 heben sich nur über alle vier Klassen auf (4 - 8 + 12 - 8 = 0)": true,
+  "B4 Keine Uhr-Statistik gibt ein Quadrat: mit der 16 als Fermion bleibt ein quartischer Rest": true,
+  "B5 Spin(10) mit n Weyl-16 und m reellen 10: p4-Koeffizient 4 + 2 n + m > 0, nie null": true,
+  "B6 Eichung der Konvention: Sp_adj X^4 = 16 Sp_F X^4 für SU(2), = 18 Sp_F X^4 für SU(3) (N_f = 8 bzw. 9) [E]": true,
+  "C1 Zusammenhängender Teil ist exakt linear in k: W_n(k) = k W_n(1) für n = 3..6": true,
+  "C2 W_n(1) = -Summe über Ordnungen Sp(T...T)/(z_12 z_23 ... z_n1): reine Einfachspur": true,
+  "C3 Der volle Korrelator hat bei 4 Punkten einen k^2-Teil (Mehrspur), der zusammenhängende nicht": true,
+  "C4 Summe aller Ordnungen des Nenners ist null (n = 3..6): vollsymmetrische Invarianten (d-Tensoren) fallen heraus, es zählt nur f und k; das gilt damit auch für (E8)_1 ohne Fermiondarstellung": true,
+  "C5 Beine mit Gewicht 0 (Feld a): -2 + 2 (Maß) + 0 = 0; Beine mit Gewicht w_b: p - 2 + 2 + w_b = 0, also p = -w_b; für den Serre-Partner O(-4) aus z123 ist p = 4": true,
+  "D1 rho_Lambda/M^4 = (3/4 pi^2) e^(-2/alpha) = q(1/alpha)/c3^2 mit derselben Funktion q wie in der alpha-Gleichung [E, Identität der Ledgerformeln]": true,
+  "D2 Die Hubble-Stufe ist Friedmann: sqrt(rho_Lambda/(3 Omega_L M^4)) = e^(-1/alpha)/(2 pi sqrt(Omega_L)); die Leiter hat zwei unabhängige Stufen (elektroschwach, Lambda)": true,
+  "D3 Duale Kopplung: mit e g = 4 pi (n = 2) ist alpha_m = 1/alpha, mit e g = 2 pi (n = 1) ist alpha_m = 1/(4 alpha)": true,
+  "D4 Lambda-Stufe reproduziert (276,65)": true,
+  "D5 Gegenprobe [N negativ]: Die elektroschwache Stufe ist keine Potenz derselben Antwort (Abstand > 8)": true
+ },
+ "befunde": {
+  "A_anomalie": {
+   "A1 = su(2)": [
+    true,
+    "8"
+   ],
+   "A2 = su(3)": [
+    true,
+    "9"
+   ],
+   "A3 = su(4)": [
+    false,
+    "10"
+   ],
+   "A4 = su(5)": [
+    false,
+    "11"
+   ],
+   "D4 = so(8)": [
+    true,
+    "12"
+   ],
+   "D5 = so(10)": [
+    false,
+    "14"
+   ],
+   "E6": [
+    true,
+    "18"
+   ],
+   "E7": [
+    true,
+    "24"
+   ],
+   "E8": [
+    true,
+    "36"
+   ]
+  },
+  "B_statistik": {
+   "Klasse 2 reeller Skalar (1/2)": [
+    "18",
+    "0",
+    "14",
+    "0",
+    "-12"
+   ],
+   "Klasse 2 Eichboson (1)": [
+    "24",
+    "0",
+    "24",
+    "0",
+    "0"
+   ],
+   "Klasse 2 fehlt (0)": [
+    "12",
+    "0",
+    "4",
+    "0",
+    "-24"
+   ],
+   "Klasse 2 Weyl-Fermion (-1)": [
+    "0",
+    "0",
+    "-16",
+    "0",
+    "-48"
+   ]
+  },
+  "C_vertex": {
+   "linear_in_k": true,
+   "einfachspur": true,
+   "zaehler_p": 4
+  },
+  "D_leiter": {
+   "unabhaengige_stufen": 2,
+   "lambda_als_duale_antwort": true,
+   "ew_als_duale_antwort": false
+  }
+ },
+ "zahlen": {
+  "faelle": 49,
+  "abw_linear": 7e-16,
+  "abw_spur": 6.8e-16,
+  "mehrspur_zu_einfachspur_k1": 0.4203,
+  "A_Lambda": 276.649,
+  "A_EW_ledger": 36.85,
+  "A_EW_aus_q": 28.31,
+  "log10_q_dual": -122.948
+ },
+ "urteil": "Die beiden Programme passen an den geprüften Stellen zusammen. Das sind Verträglichkeitsprüfungen, kein Treffer aus Zahlen. (1) Die selbstduale Hälfte des Ledgers verlangt aus eigener Konsistenz E8 und schließt die kleineren Gruppen des Bestands aus; das ist ein vierdimensionaler Grund für E8, unabhängig von der Naht. (2) In dieser Hälfte müssen alle 248 Komponenten Bosonen sein. Die 16 kann dort nicht als Fermion sitzen; die chirale Materie muss von der Naht selbst kommen (nu(Uhr) = 16). Das ist eine harte Vorgabe für Tor T4 und kein Erfolg. (3) Der Nahtvertex ist das zusammenhängende Funktional log Z: Einfachspur, linear im Niveau, Zähler aus dem Gewicht. Damit entfallen P_N4 und der Mehrspureinwand aus z110, und P_BF wird zum Feld b der Ledger-Hälfte. (4) Nicht entschieden ist der Koeffizient, mit dem der Vertex in die Wirkung eingeht (die Kopplung), ebenso Signatur und Unitarität, der Gravitationsteil mit dem nativen Unendlichkeitstwistor und der Ort der Materie. (5) Die Wirkungsleiter hat nur zwei unabhängige Stufen. Die Lambda-Stufe hat die Form der Nahtantwort am dualen Punkt; die elektroschwache nicht. Das ist ein Kandidat für einen gemeinsamen vierdimensionalen Elternteil mit benannten nächsten Rechnungen, keine Herleitung. Nichts ist befördert."
+}

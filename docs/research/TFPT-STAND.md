@@ -634,6 +634,24 @@ hergeleitet, 7 unter benannter Lesart, keines gescheitert, offen oder gesetzt. K
         Anregung ein Dirac-Teilchen mit m·a = ε, und die Vakuumskala ist m·a = 4e^(−(π/2)cot(ε/2)) [L]. Das hat die
         Form der Ledger-Hierarchie e^(−1/α), verlangt aber ε = πα (P_eps), den antiferromagnetischen See (P_see) und
         trifft den Vorfaktor nicht (a²/G = 4·10² bis 1,6·10⁴ gegen nativ 0,2 bis 24). Kein Treffer, eine Umstellung.
+    - Gesamtdurchsicht und Weg „zwei Hälften“ (Z163): Die Strategien aus Z162 hatten den Ledger-Bestand nicht benutzt.
+      - Korrekturen: b₁ = 41/10 ist im Ledger zweimal hergeleitet und war kein offenes Ziel. G ist im Ledger keine
+        freie Zahl (8πG = 1/c₃, Λ aus der Leiter); offen ist der Mechanismus der Leiter. Das Ledger nennt die Lücke
+        selbst: ein gemeinsamer 3+1-dimensionaler Elternteil für T3–T8.
+      - Muster: Jede gelöste Zahl ist ein Index, eine Anomalie oder der stationäre Punkt einer Determinante. Alle
+        Fehlschläge setzen Nähte als Bausteine zusammen.
+      - Befund: Das Ledger hat die selbstduale Hälfte einer Twistortheorie (CELEST.SEAM.01, E₈, Axion, Niveau 1;
+        ausdrücklich ohne volle Gravitation). H6 hat die Vertexhälfte (Z110–Z112, Z123) und vermisst den kinetischen
+        Teil. Beide wurden nie zusammengeführt. Verbindende Struktur: die Twistorwirkung (Rahmen P_TW) [L].
+      - Prüfung (Z163, 22 Prüfungen): Die Anomaliebedingung Sp X⁴ = λ²(X·X)² gilt im Bestand nur für E₈ (λ² = 36),
+        nicht für Spin(10), SU(5), Pati–Salam oder das Standardmodell. Die 16 kann dort kein Fermion des Bündels sein;
+        die Materie muss von der Naht kommen. Der Nahtvertex ist log Z: Einfachspur, linear im Niveau, Zähler ⟨ij⟩⁴
+        aus dem Gewicht −4. P_N4 und der Mehrspureinwand entfallen. Die Λ-Stufe der Leiter ist die Nahtantwort q am
+        dualen Punkt; die elektroschwache Stufe nicht.
+      - Lösungswege: W1 Kopplung aus der Stationarität derselben Determinante (T6), W2 Gravitation aus derselben
+        Determinante mit dem nativen Unendlichkeitstwistor (T7), W3 Signatur und Positivität (T3, T5), W4 Materie von
+        der Naht (T4), W5 Leiter als duale Antwort, W6 Ursprung. Offen: Kopplung, Signatur, Gravitationsteil, Materie.
+        Verträglichkeit, kein Treffer; Einzelheiten in `GESAMTSTAND-UND-STRATEGIEN.md`, Nachtrag z163.
     - Zopfrelation: Sie gilt nur für einkörperige Operatoren (Nahtuhr und Strahlteiler = Ising-Zopfmatrizen). Das
       wechselwirkende Gatter verletzt sie mit Defekt √(3/8). Die Defektstruktur ist endlich (Clifford-Typ). [E]
     - Eichdynamik: Plakettenstruktur und sin²θ_W = 3/8 sind nativ, die absolute Kopplung und die Linkdynamik nicht.

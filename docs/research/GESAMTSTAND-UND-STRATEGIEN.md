@@ -713,6 +713,146 @@ gesteuerte Uhr zwischen den Eigenmoden der Vierteldrehung P_sym und gleichwertig
 ε = g²/4“ und einen Vorfaktor um. Ihr Wert liegt darin, dass sie die drei Diagnosen zugleich angeht und eine kleine
 entscheidende Rechnung hat. Aufgegeben wird die Linie „Prämisse aus der einzelnen Naht herleiten“.
 
+### Nachtrag z163: Gesamtdurchsicht des Bestands und fundamentale Lösungswege
+
+**Anlass.** Die Strategien S-A bis S-F stammen nur aus den H6-Rechnungen. Sie haben den Bestand des Ledgers nicht
+benutzt. Die Durchsicht von Ledger, Paper 1, Atlas und Exploration korrigiert vier Punkte:
+
+- **b₁ = 41/10 ist hergeleitet, zweimal.** Als (4/5)·41/8 aus dem Transportbudget des Flavour-Blocks und aus den
+  Hyperladungen der Träger, Σ(2/3)Y_f² + (1/3)Y_s² = 41/6, über den Satz β = a₄ (Paper 1, Abschnitt zur α-Schließung;
+  v434). S-C nannte das ein offenes Ziel. Das war falsch. S-C ist gestrichen; der Wert bleibt als Prüfstein für jede
+  Dynamik.
+- **G ist im Ledger keine freie Zahl.** Lokal gilt G_ab + Λg_ab = (1/c₃)T_ab mit 8πG = 1/c₃ (GRAV.NONLINEAR.01,
+  bedingt), Λ kommt aus der Wirkungsleiter. Die „freie Zahl G/R_vac²“ der H6-Rechnungen ist die Λ-Stufe dieser
+  Leiter. Offen ist ihr Mechanismus (die Wirkungsgrammatik e^(−qα⁻¹) hat den Status einer Identität), nicht ihr Wert.
+- **Das Ledger benennt die Lücke selbst** (TFPT.TOE.COMPLETE.01): „A single shared 3+1D parent satisfying T3–T8 is
+  still missing.“ Gesucht ist ein gemeinsamer vierdimensionaler Elternteil, nicht die Herleitung einzelner Prämissen.
+- **S-A, S-B und S-F leben auf der 1+1-Kette.** Sie fallen unter das Muster F2 unten und sind zurückgestellt.
+
+**Was trägt (Muster der Erfolge).**
+
+1. Jede gelöste Zahl ist ein Index, eine Anomalie oder ein Wärmekern-Koeffizient (16 = ν der Uhr, 8 = Rang,
+   41/10 = a₄, 5/4 und 3/4 = quadratische Formen von D₅ und A₃), oder sie ist der stationäre Punkt einer Determinante
+   an einem symmetrischen Punkt (α aus δ log det + Gegenterm + Nahtantwort = 0; τ = i; der D₄-feste polystabile Punkt).
+2. Keine gelöste Zahl stammt aus einer Zeitentwicklung mit Hamiltonoperator.
+3. Der Träger ist immer derselbe: die Naht als (E₈)₁ bei τ = i mit der Uhr ℤ₄, Niveau 1.
+
+Lehre: Das fundamentale Objekt ist eine Determinante über einem Raum von Hintergründen. „Dynamik“ ist die Abhängigkeit
+der Determinante vom Hintergrund.
+
+**Was scheitert (Muster der Fehlschläge).**
+
+- F1: Wechselwirkung aus der einzelnen Naht (zwölf Wege, D1).
+- F2: Kompositionsketten in einer Dimension (sieben Wege lassen die Skala frei, D2).
+- F3: vier Dimensionen aus Gitter oder Kähler–Dirac (z154, z161).
+- F4: zusammengesetztes Graviton und Elternteil mit Lücke (GRAV.PARENT.GAP.NO_GO.01, GRAV.WEINBERG.WITTEN.01, z158).
+- F5: Modulfluss als Zeit oder Boost (GRAV.NONCIRCULAR.01, Spannung W4).
+- F6: Auswahl statt Rekonstruktion; entropische Auswahl für T8; autonome endliche Dynamik.
+- F7: Twistor-String-Lesart der Naht (Mehrspurterme, konforme Supergravitation, fehlender kinetischer Term).
+
+Lehre: Alle Fehlschläge behandeln die Naht als Baustein, der mit anderen Nähten zusammengesetzt wird. Alle Erfolge
+behandeln sie als Funktional, das ausgewertet wird.
+
+**Befund der Durchsicht: zwei Hälften, die sich nie getroffen haben.**
+
+- **Ledger-Hälfte** (CELEST.SEAM.01, SEAM.EQUIV.TWISTOR.01, seit Juli 2026): holomorphe Theorie auf dem Twistorraum
+  von ℂ²/ℤ₄, Eichgruppe E₈, Axion aus der Anomalie, Niveau 1 aus der Flussquantisierung. Geltung laut Vertrag: „the
+  self-dual sector only, never full Einstein gravity“. Status: vorbereitet, nicht konstruiert.
+- **H6-Hälfte** (z110–z112, z123): Die Naht auf einer Twistorgeraden liefert die Vertizes. Es fehlen der kinetische
+  Teil (P_BF), der Zähler ⟨ij⟩⁴ (P_N4), und die Mehrspurterme stören.
+- Jede Seite nennt als fehlend, was die andere hat. Seit H6h34 hat keine H6-Rechnung das Ledger-Programm benutzt.
+- Die bekannte Struktur, die beide verbindet, ist die Twistorwirkung: holomorpher Teil plus Kopplung mal
+  ∫d⁴x (log det der Naht auf der Geraden L_x) [L, Mason 2005, Boels–Mason–Skinner 2007].
+
+**Erste Entscheidungsprüfung (z163, 22 Prüfungen, reproduziert).**
+
+- **Anomalie [E; Bedeutung L]:** Sp_adj X⁴ = λ²(X·X)² gilt für A₁, A₂, D₄, E₆, E₇, E₈ mit λ² = h∨ + 6
+  (8, 9, 12, 18, 24, 36), nicht für so(10), su(4), su(5), su(3)+su(2). Die selbstduale Hälfte verlangt im Bestand E₈
+  selbst; λ² = 36 ist der Wert des Vertrags. Das ist ein vierdimensionaler Grund für E₈, unabhängig von der Naht.
+- **Statistik [E; Folgerung L]:** Die Uhr-Klassen (60, 64, 60, 64) heben den quartischen Teil nur gemeinsam auf
+  (4 − 8 + 12 − 8 = 0). Mit der 16 als Fermion im Bündel bleibt immer ein Rest; Spin(10) mit n Weyl-16 und m
+  reellen 10 hat den Koeffizienten 4 + 2n + m. Die chirale Materie kann nicht aus dem Bündel kommen, sie muss von der
+  Naht selbst kommen (ν(Uhr) = 16). Das ist eine harte Vorgabe für T4, kein Erfolg.
+- **Vertex [E]:** Der zusammenhängende Teil der Stromkorrelatoren, W = log Z, ist exakt linear im Niveau und reine
+  Einfachspur (su(2) bis 6 Punkte, su(3) bis 5 Punkte; nur f und k gehen ein, also auch für (E₈)₁). Der Mehrspurteil
+  aus z110 gehört zu Z, nicht zu W. Der Zähler ⟨ij⟩^p folgt aus der Homogenität: p = −w_b = 4 für den Serre-Partner
+  O(−4) aus z123. P_N4 entfällt; P_BF wird zum Feld b der Ledger-Hälfte.
+- **Leiter [E/L, N negativ]:** Die Leiter hat zwei unabhängige Stufen; die Hubble-Stufe ist Friedmann. Die Λ-Stufe ist
+  exakt ρ_Λ/M̄⁴ = q(1/α)/c₃² mit derselben Funktion q(α) = δ_top e^(−2α) wie in der α-Gleichung, also die Nahtantwort
+  am dualen Punkt (e·g = 4π). Die elektroschwache Stufe ist keine Potenz davon (36,85 gegen 28,31). Ein Hinweis mit
+  einer Wahl, kein Mechanismus.
+
+**Der Kandidat für das eine Prinzip (Arbeitsname P_TW).** Ein Funktional Γ = holomorpher Teil auf dem Twistorraum
+(durch Anomaliefreiheit festgelegt: E₈, Axion, Niveau 1) + Summe über die Geraden von log det der Naht im Hintergrund.
+Kopplungen und Skalen sind stationäre Punkte desselben Funktionals, so wie α es im Ledger schon ist. Darin hätte jedes
+offene Stück einen Ort:
+
+- Vier Dimensionen: der Raum der Geraden (K12 wird wörtlich; der Ledger-Selektor DIMENSION.SELECTOR.4D.01 bleibt
+  bedingt).
+- Wechselwirkung: Abhängigkeit der Determinante vom Hintergrund. Die einzelne Naht bleibt Gaußsch, D1 ist erfüllt.
+- Spin 2: Abhängigkeit derselben Determinante von der komplexen Struktur. Das ist die Forderung von
+  GRAV.SPIN2.EMERGENCE.01; die universelle Kopplung wäre automatisch. Das Graviton ist ein elementares Feld der
+  holomorphen Hälfte, die No-Gos F4 greifen nicht.
+- Materie: die Naht (16 Majoranas), nicht das Bündel.
+- Prämissen dieses Kandidaten: A* (die Naht), P_TW (Twistorwirkung als Rahmen), P_SD (die Ledger-Hälfte existiert als
+  Quantentheorie; ihre eigenen Reste, der starre Rest „32 T₃“ und das Maß, bleiben), P_g (Koeffizient des Vertex),
+  P_reell (Signatur und Positivität), P_inf (Einstein statt konformer Gravitation), P_mat (Materie von der Naht).
+  Das sind nicht weniger Namen als zuvor. Der Unterschied: P_g, P_reell, P_inf und P_mat sind Rechenaufgaben mit
+  endlichem erstem Schritt, und die neun Prämissen der Kettenlesart (I_step, P_lift, P_IF, P_univ, P_uhr, P_ord,
+  P_curv, P_G) gehören zum 1+1-Bild und werden hier nicht gebraucht.
+
+**Lösungswege, nach Rang.**
+
+1. **W1, Kopplung aus Stationarität (T6).**
+   - Idee: Die α-Gleichung ist die Stationarität einer Determinante. Der Vertex der Twistorwirkung ist dieselbe
+     Determinante mit Hintergrund. Dann ist der Koeffizient des Vertex keine freie Kopplung.
+   - Grundlage: α-Block (gelöst), GAUGE.DETLINE.FIXPOINT.01 (offener Vertrag, sucht genau dieses Funktional), WP3 des
+     Celest-Vertrags (Axion-Koeffizient an c₃ ausgerichtet), z163 Teil C.
+   - Erste Rechnung: der abelsche Sektor. Hintergrund in Hyperladungsrichtung auf einer Geraden; Vergleich der drei
+     Terme von F_U(1) (Maxwell α³, Blatt −2c₃³α², Transportdeterminante mit 41) mit kinetischem Teil, Axionterm
+     (λ² = 36) und log det.
+   - Erfolg: Die drei Terme haben je ein Gegenstück. Dann ist P_g durch die α-Gleichung ersetzt, und
+     GAUGE.DETLINE.FIXPOINT.01 hat sein Funktional.
+   - Abbruch: kein Gegenstück für Blatt oder Transport. Dann gibt der Rahmen nur die Form, und der α-Block bleibt
+     getrennt.
+2. **W2, Gravitation aus derselben Determinante (T7).**
+   - Idee: Der nicht selbstduale Gravitationsvertex ist die Determinante aus z112 (Hodges) mit dem nativen
+     Unendlichkeitstwistor I_AdS = I_π − I_ω aus z123. Sein Koeffizient ist die reine Zahl Λ·G.
+   - Grundlage: z112, z123, GRAV.SPIN2.EMERGENCE.01, Λ-Stufe der Leiter; Einstein-Reduktion der konformen Gravitation
+     [L, Maldacena 2011, Adamo–Mason 2013].
+   - Erste Rechnung: Vertex mit dem nativen I_AdS. Verschwindet der Teil, der konforme von Einstein-Gravitation
+     trennt? Ist der Koeffizient Λ·G?
+   - Erfolg: Einstein-Vertizes mit Koeffizient Λ·G. Dann entfallen P_X, P_h2 und P_2Q, die Klausel „graviton“ von K13
+     ist gefüllt, und die freie Zahl ist die Λ-Stufe.
+   - Abbruch: nur konforme Gravitation (der Geist der Weyl²-Kürzung im Ledger). Dann bleibt Gravitation selbstdual und
+     der Rahmen liefert T7 nicht.
+3. **W3, Signatur und Positivität (T3, T5).**
+   - Idee: euklidisch zuerst. Reflexionspositivität des Vertexterms mit der nativen Spiegelung J = θ∘τ.
+   - Grundlage: WOIT.OS.TWISTOR.01, z123, alte Strategie S3. Hier muss die Spannung W6 aufgelöst werden: Im Bestand ist
+     die Nahtgerade nicht die Gerade eines reellen Punkts.
+   - Erste Rechnung: endliche Matrixprüfung der Positivität des Kerns ⟨JJ⟩·⟨12⟩⁴ auf gespiegelten Geradenpaaren.
+   - Abbruch: keine Positivität. Dann gibt der Rahmen Amplituden, aber keinen Hilbertraum.
+4. **W4, Materie von der Naht (T4).**
+   - Idee: Die 16 und die drei Familien sind Nullmoden der Naht im Orbifold-Hintergrund, keine Bündelkomponenten.
+   - Grundlage: z163 Teil B, ν(Uhr) = 16, die drei Sphären von H₂(ALE) im Vertrag, Spannung W1 (Familiencharaktere
+     {i, −1, −i} gegen {1, i, −i}).
+   - Erste Rechnung: Charaktere der Nullmoden unter Uhr und Verklebung; gibt es den Twist χ_q nativ?
+   - Abbruch: kein nativer Twist. Dann sind die Familien in diesem Rahmen nicht geometrisch.
+5. **W5, Leiter als duale Antwort (Skalen).** Schwächster Weg, gegen Zahlenspielerei markiert. Zu prüfen ist, ob die
+   α-Gleichung ein magnetisches Gegenstück hat, dessen Antwort q(1/α) ist, und ob n = 2 aus der Spin-ℤ₄-Struktur
+   folgt. Die elektroschwache Stufe braucht einen anderen Mechanismus.
+6. **W6, Ursprung (T1, T8).** Im Rahmen P_TW wird „warum diese Naht“ zu „warum dieser Twistorraum“: E₈ aus der
+   quartischen Bedingung, Niveau 1 aus dem Fluss, ℤ₄ aus dem Orbifold. Erst sinnvoll, wenn W1 oder W2 trägt.
+
+**Reihenfolge und Abbruchregel.** W1 und W2 zuerst, sie entscheiden, ob der Rahmen Zahlen liefert. Dann W3 und W4.
+Scheitern W1 und W2 beide, ist die Twistorwirkung als Elternteil geschlossen, und es bleibt der Gitterweg
+(SEAM.EQUIV.MMST.01). Nicht weiter verfolgt werden neue Kettenlesarten und jede Herleitung einer Prämisse aus der
+einzelnen Naht.
+
+**Ehrliche Einordnung.** z163 zeigt Verträglichkeit an vier Stellen, keinen Treffer aus Zahlen. Der Rahmen P_TW ist
+eine Annahme. Die Ledger-Hälfte ist selbst nicht konstruiert. Kopplung, Signatur, Gravitationsteil und Materie sind
+offen. Nichts ist befördert.
+
 ### Was die Runde bedeutet
 
 - **Der Kandidat** braucht neun Prämissen: A*, I_step, P_lift, P_IF, P_univ, P_uhr, P_ord, P_curv und P_G als freie
