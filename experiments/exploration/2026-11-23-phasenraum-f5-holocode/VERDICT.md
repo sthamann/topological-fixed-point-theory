@@ -730,6 +730,27 @@ Yang–Mills-artige Form (Bestand z150), nicht über konforme Gravitation. W5 is
 Flusszahl bleibt eine Wahl. Pflichtenheft und nächste Rechnungen M1 bis M4 stehen in
 `docs/research/GESAMTSTAND-UND-STRATEGIEN.md`, Nachtrag z165.
 
+**Neuordnung, Gesamtlösungs-Suche und Analysen 24, 25 (z171, 22 Prüfungen; OriginLab `whole_solution_search.py`):
+Ein Objekt trifft α und Λ; es ist eine Verdichtung, keine volle Lösung.**
+
+- A1 bis A5 [E]: Schalensummen mit R² (1, −16, 112, −448, 1136) = ϑ₄(q)⁸; W = −24 ln ϑ₄ = 48q + 48q² + 64q³ + 48q⁴;
+  Familienschalen 48, 336, 1056; −ln det(1 − Q) = 48q + 360q² + 1072q³.
+- A6 [N]: W bei q = e^(−2α) ist 3976 gegen das Ziel 2,93426; die elektrische Seite trifft nicht.
+- B1 bis B3 [E]: Π = (B + UCU)/8 = B(B − 2)/8, Rang eins, alternierender Kanal; det₃(t − λ²c₃Π) = t²(t − λ²c₃);
+  λ bleibt frei.
+- B4, B5 [E]: Y² = X³ + Q·X hat Diskriminante −64Q³, j = 1728, vier Fasern vom Typ III, Eulerzahl 12; v⁴ = Q(u) hat
+  Geschlecht 3.
+- C1 bis C7 [E/N]: 324 Objekte, 88 auswertbar; genau eines trifft α (1,9 σ) und Λ (1,128·10⁻¹²³): Materiesektor der
+  Uhr mit Familienprojektor, Kern aus dem D₅-Teil; daraus N = 48, b₁ = 41/10, Basis 4/3, Potenz 5/4. Nächster
+  Fehlversuch 96 σ; N = 47 oder 49: 34 000 σ; Potenz 1 oder 3/2: 47 und 51 σ.
+- D1 bis D4 [E/N]: det₃(t − c₃Π) = b₁ ln(1/φ_seam) hat die Wurzel α⁻¹ = 137,0359992168407; ρ_Λ/M_P⁴ = X(1/α) mit
+  X(x) = 48c₃⁴e^(−2x); dieselbe Drei in Determinante und Familienprojektor.
+
+**Was das bedeutet.** Die Zahlen des α-Blocks und der Λ-Stufe kommen aus einem Objekt. Eingabe bleiben die Form des
+Gesetzes, das Gewicht c₃⁴e^(−2x), der Skalaranteil 1/10, die Einfügungsform und die Wahl des D₅-Teils. Die offenen
+Zeilen ordnen sich zu zwei Fragen (Zusammensetzung der Nähte, Existenz der Naht). Näheres in
+`docs/research/GESAMTSTAND-UND-STRATEGIEN.md`, Nachtrag z171.
+
 **Erweiterte Programmsuche hinter den vier Uhrsektoren (z170, 12 Prüfungen; OriginLab `clock_sector_search.py`):
 Die Uhr ist durch Sp R = 0 festgelegt, die 16 ist neben E₈ ein Defektende, die Potenz 5/4 hat einen nativen
 positiven Träger [E/C/L]. Keine volle Lösung.**

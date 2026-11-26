@@ -1,0 +1,45 @@
+Teil A  Analyse 24: verdrillte Schalensummen, theta_4, Familienprojektor
+   [ok] A1 [E] Schalensummen mit R^2: 1, -16, 112, -448, 1136
+   [ok] A2 [E] Z_{R^2} = theta_4(q)^8 bis zur vierten Schale
+   [ok] A3 [E] W = -3 ln Z_{R^2} = -24 ln theta_4 = 48q + 48q^2 + 64q^3 + 48q^4
+   [ok] A4 [E] Familienprojektor im Materiesektor: Schalen 64 -> 48, 512 -> 336, 1792 -> 1056
+   [ok] A5 [E] -ln det(1 - Q) = 48q + 360q^2 + 1072q^3
+   [ok] A6 [N] elektrische Auswertung von W bei q = exp(-2 alpha) trifft ln(1/phi_seam) = 2,93426 nicht (W = 3976.38, mal c3^2 = 6.2952; W wächst wie 3 pi^2/alpha)
+   -> Analyse24: Die Gitterzahlen stimmen. W ist geschlossen -24 ln theta_4(q). Auf der magnetischen Seite ist nur die erste Schale geprüft (alle weiteren liegen unter 10^-238). Die elektrische Seite trifft die Funktion nicht. Die Zahlen 203,25 und 68395,7 der Analyse sind ohne Angabe des Auswertungspunkts nicht nachgerechnet; die Aussagen zu Chernklassen und Index auf CP^3 sind ohne Definition des Bündels nicht prüfbar.
+
+Teil B  Analyse 25: Projektor auf den alternierenden Kanal, Determinante, elliptische Fläche
+   [ok] B1 [E] Pi = (B + UCU)/8 = B(B - 2)/8 ist der Projektor vom Rang eins auf den alternierenden Kanal
+   [ok] B2 [E] auf den drei Richtungen mit Summe null: det(t - lambda^2 c3 Pi) = t^2 (t - lambda^2 c3)
+   [ok] B3 [E] die Ableitung des Logarithmus, 2/t + 1/(t - c3), ist nicht die kubische Gleichung; lambda bleibt frei
+   [ok] B4 [E] Y^2 = X^3 + Q X: Diskriminante -64 Q^3, j = 1728 überall
+   [ok] B5 [E] vier Fasern vom Typ III (Ordnung 3 der Diskriminante, Eulerzahl 3): Eulerzahl 12, rationale elliptische Fläche; die Kurve v^4 = Q(u) hat Geschlecht 3
+   -> Analyse25: Projektor, Determinante und Flächendaten stimmen. Die linke Seite der Alpha-Gleichung in t = e^2/c3 ist bei lambda = 1 die Determinante auf den drei Familienrichtungen; die Stärke lambda = 1 ist nicht erzwungen.
+
+Teil C  Gesamtlösungs-Suche: ein Objekt gegen die Messwerte
+   [ok] C1 [E] 324 Objekte, 88 bis zum Messwert auswertbar
+   [ok] C2 [N] genau ein Objekt trifft alpha und Lambda: Materiesektor der Uhr mit Familienprojektor (Spur und Determinante teilen die erste Schale)
+   [ok] C3 [E] aus dem Objekt: Anzahl 48, b1 = 41/10 (Fermionteil 4), Basis 4/3, Kernpotenz 5/4
+   [ok] C4 [N] alpha^-1 = 137,0359992168 (1,9 Sigma zum Messwert), rho_Lambda/M_P^4 = 1,128e-123 (Messwert 1,134e-123, 3 %)
+   [ok] C5 [N] Nullkontrolle: der nächste Fehlversuch (Kern aus dem A3-Teil, Potenz 3/4) liegt 96 Sigma daneben, alle anderen über 10^8 Sigma
+   [ok] C6 [N] Schärfe: N = 47 oder 49, Potenz 1 oder 3/2, b1 = 4 und Basis 1 verfehlen den Messwert jeweils um mehr als 40 Sigma
+   [ok] C7 [E] Regelmaschine: 'alpha gemessen' und 'positiv' wählen das Objekt eindeutig
+   -> Suche: Ein einziges Objekt trägt Anzahl 48, drei Familien, b1 und die Potenz 5/4 und trifft damit alpha und Lambda. Nicht hergeleitet und weiter Ledger-Eingabe: form of the alpha equation (cubic, -2 c3^3, 8 c3^6); weight c3^4 exp(-2x); scalar part 1/10 of b1; insertion form Q (1-Q)^(-2h); choice of the D5 factor for the kernel.
+
+Teil D  Eine Gleichung aus einem Objekt
+   [ok] D1 [N] det_3(t - c3 Pi) = b1 ln(1/phi_seam) mit t = alpha/(2 c3^2): Wurzel alpha^-1 = 137,0359992168407
+   [ok] D2 [E] dieselbe Funktion X(x) = 48 c3^4 exp(-2x): X(alpha) im Kern, X(1/alpha) = rho_Lambda/M_P^4; reduziert 7,125e-121 (COSMO.LAM.01), G Lambda = 8 pi X(1/alpha) = 3/(32 pi^3) exp(-2/alpha)
+   [ok] D3 [N] F(X(1/alpha)) und X(1/alpha) unterscheiden sich relativ um weniger als 10^-120: eine Antwort F(X(x)) trägt beide Seiten
+   [ok] D4 [E] die Drei ist beide Male dieselbe Darstellung: Summe-null-Richtungen der vier Marken (Determinante) und Standarddarstellung von S4 auf den vier Spinorgewichten von A3 (Familienprojektor, 64 -> 48)
+   -> Gleichung: det_3(t - c3 Pi) = [(2/5) Sp_Q(Y^2) + 1/10] ln(1/phi_seam), phi_seam = c3 Sp(P_1)/Sp(P_3 P_1) + F(X(alpha)), X(x) = Sp(P_3 P_1) c3^4 exp(-2x), F(z) = z (1-z)^(-2h_16); rho_Lambda/M_P^4 = F(X(1/alpha)). Das ist eine Verdichtung der gelösten Blöcke auf ein Objekt, keine Herleitung des Gesetzes.
+
+Teil E  Bilanz und Urteil
+   [E] Analyse 24: Gitterzahlen bestätigt; W = -24 ln theta_4; elektrische Seite trifft nicht.
+   [E] Analyse 25: Projektor, Determinante, elliptische Fläche bestätigt; lambda = 1 nicht erzwungen.
+   [N] Suche: ein Objekt von 324 trifft alpha und Lambda; nächster Fehlversuch 96 Sigma.
+   [E/L] ein Objekt: 48, drei Familien, 4/3, b1-Fermionteil 4 und 5/4 aus dem Materiesektor mit Familienprojektor; dieselbe Drei in der Determinante der linken Seite.
+   [O] offen: das Gesetz selbst (Determinante gleich b1 mal Logarithmus), das Gewicht c3^4 exp(-2x), der Skalaranteil 1/10, die Einfügungsform, die Wahl des D5-Teils; dazu unverändert Ursprung der Naht (K19, K20), 3+1, Kontinuum, Dynamik, Gravitation.
+
+Urteil
+   Die Programmsuche rechnet jetzt jedes Objekt bis zum Messwert durch. Von 324 Objekten aus Gitter, Uhr und Familiengruppe trifft genau eines alpha und Lambda: der Materiesektor der Uhr mit dem Familienprojektor. Es liefert die Anzahl 48, die drei Familien, die Basis 4/3, den Fermionteil von b1 und die Potenz 5/4, die im Ledger aus vier getrennten Quellen stammen. Die linke Seite der Alpha-Gleichung ist die Determinante auf denselben drei Richtungen. Damit stehen alpha und Lambda in einer Gleichung aus einem Objekt. Das ist eine Verdichtung, keine volle Lösung: Die Form des Gesetzes, das Gewicht und die Einfügung bleiben Eingabe, und der Ursprung der Naht, 3+1, Kontinuum, Dynamik und Gravitation sind unverändert offen. Nichts befördert.
+
+Alle Prüfungen bestanden: True (22/22)

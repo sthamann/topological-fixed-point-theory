@@ -726,6 +726,17 @@ hergeleitet, 7 unter benannter Lesart, keines gescheitert, offen oder gesetzt. K
       - Korrekturen: 106 versionierte Lean-Dateien; Scherungsfreiheit wählt τ = i nicht aus; 3,32·10¹²² ist log N.
       - Stand: Uhr, Eichgruppe, Materie als Defekt, Verklebung und Antwortpotenz liegen in einem Objekt. Offen:
         K19, Kopplung, G, Hierarchie, vier Dimensionen, zwei Bits. Keine volle Lösung.
+    - Neuordnung und Gesamtlösungs-Suche (Z171, 22 Prüfungen; OriginLab `whole_solution_search.py`):
+      - Die Suche rechnet jedes Objekt bis zum Messwert. Von 324 Objekten aus Gitter, Uhr und Familiengruppe trifft
+        genau eines α und Λ: der Materiesektor der Uhr mit Familienprojektor. Es liefert 48 = 16 × 3, drei Familien,
+        die Basis 4/3, den Fermionteil 4 von b₁ und die Potenz 5/4; nächster Fehlversuch 96 σ.
+      - Eine Gleichung [E/L]: det₃(t − c₃Π) = b₁·ln(1/φ_seam) auf den drei Summe-null-Richtungen der vier Marken;
+        ρ_Λ/M_P⁴ = X(1/α) mit derselben Funktion X(x) = 48c₃⁴e^(−2x) wie im α-Kern.
+      - Analysen 24 und 25: Z_{R²} = ϑ₄(q)⁸, W = −24 ln ϑ₄, Projektor Π, elliptische Fläche (Eulerzahl 12)
+        bestätigt; die volle Funktion W trifft die elektrische Seite nicht.
+      - Verdichtung, keine Herleitung: Form des Gesetzes, Gewicht c₃⁴e^(−2x) und Einfügung bleiben Eingabe. Die
+        offenen Zeilen ordnen sich zu zwei Fragen: Zusammensetzung der Nähte (3+1, Gravitation, Dynamik,
+        Kontinuum) und Existenz der Naht (K19, K20).
     - Zopfrelation: Sie gilt nur für einkörperige Operatoren (Nahtuhr und Strahlteiler = Ising-Zopfmatrizen). Das
       wechselwirkende Gatter verletzt sie mit Defekt √(3/8). Die Defektstruktur ist endlich (Clifford-Typ). [E]
     - Eichdynamik: Plakettenstruktur und sin²θ_W = 3/8 sind nativ, die absolute Kopplung und die Linkdynamik nicht.

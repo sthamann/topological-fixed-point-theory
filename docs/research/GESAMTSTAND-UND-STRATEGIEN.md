@@ -1297,6 +1297,77 @@ Kopplung, G, Hierarchie, der Weg vom Sektorenobjekt zur vierdimensionalen Raumze
 3. **M15, Einfügung.** Welche Observable des Sektorenobjekts gibt F = q·K? Kandidat: Zweipunktfunktion der 16 mit
    einem Stromschritt.
 
+### Nachtrag z171: Neuordnung, Gesamtlösungs-Suche und externe Analysen 24, 25
+
+Anlass: Die Runden z162 bis z170 haben sich im Kreis gedreht. Dieser Nachtrag ordnet neu, baut die Programmsuche um
+und prüft zwei weitere externe Analysen (z171, 22 Prüfungen, reproduziert; OriginLab `whole_solution_search.py`,
+sechs Tests, Laufzeit drei Sekunden).
+
+**Warum es im Kreis lief.** Jede Runde hat eine weitere Eigenschaft der *einen* Naht berechnet. Eine einzelne Naht
+liefert Einheiten, Verhältnisse, Vorzeichen und Helizitäten (z167 bis z170), aber weder die Newton-Konstante noch
+Dynamik noch 3+1; eine Rechnung bei festem τ sieht den Einstein-Koeffizienten nicht (z169). Die Programmsuche hat
+Klauseln sortiert und Regeln gezählt, aber kein Objekt bis zu einer Zahl der Welt durchgerechnet. „Zusammenklicken"
+war damit nicht prüfbar.
+
+**Neuordnung der offenen Punkte [L].** Die sieben offenen Zeilen der Prüfbank sind zwei Fragen und ein Rest:
+
+- **Zusammensetzung:** Wie setzen sich viele Nähte zu einem Netz zusammen? Daran hängen 3+1 (K12), Gravitation
+  (K13), Eichdynamik (K15) und Kontinuum (K16). Keine dieser Zeilen ist an einer Naht entscheidbar.
+- **Existenz:** Warum gibt es die Naht mit Defekt (K19), und was ist der gemeinsame Elternoperator (K20)?
+- **Rest:** Neutrinomischung (K18) gehört zum Restflavor.
+
+**Umbau der Programmsuche [E/N].** Die neue Suche rechnet jedes Objekt bis zum Messwert durch. Katalog: Auswahl nach
+Uhrklasse oder Uhreinfügung, Familienprojektion nach einer Darstellung der S₄ (Weylgruppe von A₃ auf den vier
+Spinorgewichten), drei Funktionale (Schalenspur, −ln der verdrillten Gittersumme, −ln det(1 − P·q^(L²/2))), eine oder
+drei Kopien, Kern aus dem D₅- oder A₃-Teil der Wurzel. Aus jedem Objekt werden berechnet: die Anzahl N der ersten
+Schale, der Fermionteil von b₁ als (2/5)·Sp(Y²), die Basis als Verhältnis ohne/mit Projektion und die Kernpotenz 2h.
+Daraus folgen über die Ledger-Gleichung α und über die Λ-Stufe ρ_Λ, verglichen mit α⁻¹ = 137,035999177(21) und
+ρ_Λ/M_P⁴ = 1,134·10⁻¹²³ (3 %).
+
+- Von 324 Objekten sind 88 auswertbar. **Genau eines trifft beide Messwerte:** der Materiesektor der Uhr (Klasse 1,
+  die (16, 4)) mit dem Familienprojektor auf die Standarddarstellung, Kern aus dem D₅-Teil. Spur und Determinante
+  teilen die erste Schale; die Regel „α gemessen + positiv" wählt die Determinante eindeutig.
+- Aus diesem einen Objekt kommen N = 48 = 16 × 3, die drei Familien, die Basis 4/3 = 64/48, der Fermionteil 4 von
+  b₁ = 41/10 und die Potenz 5/4 = 2h der 16. Im Ledger stammen diese Zahlen aus vier getrennten Quellen (zulässiges
+  Volumen 48, q(A₃), Trägerinhalt, q(D₅)).
+- Ergebnis: α⁻¹ = 137,0359992168 (1,9 σ), ρ_Λ/M_P⁴ = 1,128·10⁻¹²³.
+- Nullkontrolle: Der nächste Fehlversuch (Kern aus dem A₃-Teil, Potenz 3/4) liegt 96 σ daneben, alle übrigen über
+  10⁸ σ. Schärfe: N = 47 oder 49 verfehlt um 34 000 σ, Potenz 1 oder 3/2 um 47 und 51 σ, b₁ = 4 um 5·10⁷ σ.
+
+**Eine Gleichung aus einem Objekt [E/L].** Mit Q = P₃·P₁·q^(L²/2), t = α/(2c₃²) und dem Projektor Π auf den
+alternierenden Kanal der vier Marken (Analyse 25) lauten α-Gleichung und Λ-Stufe
+
+    det₃(t − c₃Π) = [(2/5)·Sp_Q(Y²) + 1/10] · ln(1/φ_seam),
+    φ_seam = c₃·Sp(P₁)/Sp(P₃P₁) + F(X(α)),   X(x) = Sp(P₃P₁)·c₃⁴·e^(−2x),   F(z) = z(1 − z)^(−2h₁₆),
+    ρ_Λ/M_P⁴ = F(X(1/α)).
+
+Die linke Seite ist t²(t − c₃), die Determinante auf den drei Richtungen mit Summe null der vier Marken. Das ist
+dieselbe Drei wie im Familienprojektor (Standarddarstellung der S₄). In unreduzierten Planck-Einheiten ist die
+Λ-Stufe dieselbe Funktion X wie im α-Kern, nur bei 1/α statt α ausgewertet; G·Λ = 8π·X(1/α).
+
+**Externe Analysen 24 und 25 (ungeprüfte Zuarbeit, selbst nachgerechnet).**
+
+- Bestätigt [E]: Schalensummen mit R²: 1, −16, 112, −448, 1136; Z_{R²} = ϑ₄(q)⁸; W = −3·ln Z_{R²} = −24·ln ϑ₄ =
+  48q + 48q² + 64q³ + 48q⁴; Familienschalen 48, 336, 1056; −ln det(1 − Q) = 48q + 360q² + 1072q³.
+- Bestätigt [E]: Π = (B + UCU)/8 = B(B − 2)/8 ist der Projektor vom Rang eins auf den alternierenden Kanal;
+  det₃(t − λ²c₃Π) = t²(t − λ²c₃); die Stärke λ = 1 ist nicht erzwungen. Elliptische Fläche Y² = X³ + Q·X:
+  Diskriminante −64Q³, j = 1728, vier Fasern vom Typ III, Eulerzahl 12; die Kurve v⁴ = Q(u) hat Geschlecht 3.
+- Negativ [N]: Die volle Funktion W trifft die elektrische Seite nicht. Bei q = e^(−2α) ist W = 3976 (wächst wie
+  3π²/α) gegen das Ziel ln(1/φ_seam) = 2,93426.
+- Nicht nachgerechnet: die Zahlen 203,25 und 68395,7 (Auswertungspunkt nicht angegeben), die Chernklassen und der
+  Index des Bündels auf CP³ (Definition fehlt), die Aussagen zum Sigma-Modell.
+
+**Was das ist und was nicht.** Die Zahlen des α-Blocks und der Λ-Stufe kommen aus einem Objekt und stehen in einer
+Gleichung; die Suche kann Kandidaten jetzt an Messwerten scheitern lassen. Es ist eine Verdichtung gelöster Blöcke,
+keine Herleitung. Eingabe bleiben: die Form des Gesetzes (Determinante gleich b₁ mal Logarithmus), das Gewicht
+c₃⁴·e^(−2x), der Skalaranteil 1/10, die Einfügungsform F und die Wahl des D₅-Teils. Die Fragen Zusammensetzung und
+Existenz sind unberührt. Prüfbank unverändert 13 P / 7 L. Keine volle Lösung, nichts befördert.
+
+**Nächster Schritt (ein Weg).** Dieselbe Suche auf die Frage Zusammensetzung richten: Katalog der Verklebungen
+zweier und mehrerer Nähte aus dem Bestand (Tomita-Partner P_TP, Twistorlinien-Familie, Produkt- und Faltungsnetze von
+Q), jede durchgerechnet bis zu drei Zahlen der Welt: spektrale Dimension 4 mit Reflexionspositivität, kinetischer
+Koeffizient Z in Γ(p) = M + Z·p² gegen den Einstein-Koeffizienten 8π = 1/c₃, und die Λ-Stufe.
+
 ### Was die Runde bedeutet
 
 - **Der Kandidat** braucht neun Prämissen: A*, I_step, P_lift, P_IF, P_univ, P_uhr, P_ord, P_curv und P_G als freie

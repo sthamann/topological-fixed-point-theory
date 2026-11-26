@@ -248,6 +248,16 @@ clauses no survivor reaches.
   P_G stays a free pure number G/R_vac^2: clock trace, entanglement equilibrium, induced gravity and double copy give
   rows that do not agree (z127, z136, z137). Still no survivor reaches graviton or modular statistics. Test updated.
 
+Whole-solution search (H6h50, z171): `whole_solution_search.py` evaluates every catalogue object to the measured
+values instead of sorting clauses. Catalogue: clock class or clock insertion, family projection by an irreducible
+representation of S4 (Weyl group of A3 on the four spinor weights), three functionals (shell trace, minus log of the
+twisted lattice sum, minus log of the Fredholm determinant), one or three copies, kernel from the D5 or the A3 part
+of the root. From each object it computes the count of the first shell, the fermionic part of b1 as (2/5) Tr Y^2,
+the base and the kernel power, then alpha from the ledger equation and the Lambda rung. Of 324 objects exactly one
+reaches alpha (1.9 sigma) and Lambda: the matter clock class with the family projector (48 = 16 x 3, b1 = 41/10,
+base 4/3, power 5/4); the nearest miss is 96 sigma away. The form of the alpha equation, the weight c3^4 exp(-2x),
+the scalar part 1/10 and the insertion form are ledger input and are not derived; `physical_solution` stays false.
+
 Clock-sector search (H6h50, z170): `clock_sector_search.py` adds three finite universes behind the four clock sectors
 of (E8)_1, searched with `genesis_rules.search` at constant size (a rule is UNIQUE only if one label satisfies it).
 `clocks`: every conjugacy class of elements of order 2 to 8 of E8 from Kac coordinates (138 classes), with the exact
