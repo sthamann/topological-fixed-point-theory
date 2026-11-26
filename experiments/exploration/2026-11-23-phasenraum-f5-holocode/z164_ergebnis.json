@@ -1,0 +1,76 @@
+{
+ "checks": {
+  "A1 Ausintegrieren von b: S_eff = (A^2/(4 V)) F^2; unter b -> s b ist nur A^2/V invariant [E]": true,
+  "A2 Berezin-Integral: int d^8 theta chi^4(s1) chi^4(s2) = +<12>^4, Koeffizient eins [E]": true,
+  "B1 Der Koeffizient 41/10 der alpha-Gleichung ist der Einschleifen-Koeffizient von U(1) (Bestand, v434)": true,
+  "B2 [N negativ] P_norm (1/g^2 = k = 1, also 1/alpha = 4 pi = 12,57 an der Nahtskala) verfehlt alle drei Kopplungen um den Faktor 2,7 bis 4,0": true,
+  "B3 [N, Hinweis] Die beiden nichtabelschen Kopplungen liegen bei M_Planck,red bei 1/g^2 = 3,9 bis 4,0 (16 pi auf 3,3 % und 0,7 %); U(1) nicht (2,73)": true,
+  "B4 [N] Auch mit dem Zweischleifen-Eichanteil bleiben SU(2) und SU(3) innerhalb von 5 % bei 16 pi; U(1) nicht": true,
+  "B5 [N negativ] Als exakte Gleichung an einer gemeinsamen Skala ist 1/alpha_2 = 1/alpha_3 = 16 pi nicht haltbar: Die Kurven schneiden sich bei 1/alpha = 47, nicht 50,3; die Vorhersagen für alpha_s und sin^2 theta_W liegen 4 bis 6 % daneben": true,
+  "C1 Serre-Paarung auf dem Twistorraum (K = O(-4)): O(w) mit O(-w-4); Helizität h hat Gewicht 2h - 2. Spin 1: 0 und -4; Spin 2: 2 und -6 [E]": true,
+  "C2 Reduzierte Hodges-Determinante: unabhängig von den gestrichenen Zeilen/Spalten und den Referenzspinoren (n = 5, 6) [N exakt bis Rundung]": true,
+  "C3 Sie skaliert je Bein mit t^-4 (Helizität +2). Für zwei Beine der Helizität -2 muss der Zähler t^+8 liefern: <ij>^8, ohne Supersymmetrie; allgemein <ij>^(4s) für Spin s (s = 1: 4, s = 2: 8)": true,
+  "D1 Auf L_x (omega = i x pi): I_omega = -det(x) I_pi, also (I_pi - I_omega) = (1 + det x) <12> wie in z112 [E]": true,
+  "D2 Die Metrik det(dx)/(1 + det x)^2 hat konstante Krümmung: euklidischer Schnitt S^4 mit R = 48, lorentzscher Schnitt AdS_4 mit R = -48; |Lambda| = 12 in nativen Einheiten (Radius 1/2) [E]": true,
+  "D3 I_pi - I_omega ist nicht entartet (Pfaffsche -1): Einstein-Typ mit Lambda ungleich null. Die Familie I_pi - eps^2 I_omega hat Pfaffsche -eps^2 und wird genau bei eps = 0 entartet (flacher Fall, Rang 2) [E]": true,
+  "D4 Mit I_pi - eps^2 I_omega ist der Faktor 1 + eps^2 det x, also |Lambda| = 12 eps^2 [E]": true
+ },
+ "befunde": {
+  "A_freie_zahl": 1,
+  "B_pnorm": {
+   "p_norm_widerlegt": true,
+   "hinweis_g2": "1/4"
+  },
+  "C_spin2": {
+   "zaehler": 8
+  },
+  "D_unendlich": {
+   "R_eukl": 48,
+   "R_lor": -48
+  }
+ },
+ "zahlen": {
+  "inv_alpha_mbar": {
+   "U(1) (GUT-Norm)": 34.34,
+   "SU(2)": 48.645,
+   "SU(3)": 50.613
+  },
+  "inv_g2_mbar": {
+   "U(1) (GUT-Norm)": 2.733,
+   "SU(2)": 3.871,
+   "SU(3)": 4.028
+  },
+  "abw_von_16pi": {
+   "U(1) (GUT-Norm)": -0.3168,
+   "SU(2)": -0.0322,
+   "SU(3)": 0.0069
+  },
+  "alpha_s_aus_16pi": 0.123,
+  "verschiebung_bei_M_Planck": {
+   "U(1) (GUT-Norm)": -1.05,
+   "SU(2)": 0.81,
+   "SU(3)": 1.8
+  },
+  "inv_alpha_mbar_2schleifen": [
+   34.087,
+   48.32,
+   51.068
+  ],
+  "abw_von_16pi_2schleifen": [
+   -0.3219,
+   -0.0387,
+   0.016
+  ],
+  "schnitt_skala_GeV": 9.67e+16,
+  "schnitt_inv_alpha": 47.02,
+  "sin2_aus_16pi": 0.2439,
+  "hodges_unabh": 1.8e-14,
+  "hodges_skalierung": 3.5e-14,
+  "log10_Lambda_G8pi": -120.15,
+  "log10_eps2": {
+   "0.2": -123.33,
+   "24.0": -121.25
+  }
+ },
+ "urteil": "Keiner der beiden Wege ist entschieden, aber beide sind schärfer gestellt. W1: Der Rahmen legt die Kopplung nicht fest. Er hat genau eine freie Zahl, und die naheliegende native Normierung (P_norm, g = 1 aus k = 1) ist gegen die Daten widerlegt. Die Daten verlangen für SU(2) und SU(3) an der reduzierten Planckmasse 1/g^2 nahe 4; das ist ein schwacher Hinweis mit einer gewählten ganzen Zahl, kein Treffer, und als exakte Gleichung ist er um 4 bis 6 % daneben. Dass die alpha-Gleichung die Stationarität desselben Funktionals ist, ist nicht gezeigt; das Erfolgskriterium von W1 ist nicht erfüllt, das Abbruchkriterium auch nicht. W2: Die Gewichte geben den Zähler <ij>^8 ohne Zusatzannahme, und der native Unendlichkeitstwistor ist vom Einstein-Typ. Damit ist die Form da. Die Zahl fehlt: Nativ ist die Krümmung von der Ordnung der Nahtlänge, und die flache Gravitation verlangt die Kontraktion eps^2, die genau die Lambda-Stufe der Leiter ist. Beide Wege enden bei derselben Art von Frage: Der Rahmen gibt Formen und Verhältnisse, die zwei reinen Zahlen (Kopplung und eps^2) kommen aus ihm allein nicht. Nichts ist befördert."
+}

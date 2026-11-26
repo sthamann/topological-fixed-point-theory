@@ -853,6 +853,68 @@ einzelnen Naht.
 eine Annahme. Die Ledger-Hälfte ist selbst nicht konstruiert. Kopplung, Signatur, Gravitationsteil und Materie sind
 offen. Nichts ist befördert.
 
+### Nachtrag z164: W1 und W2, erste Rechnungen
+
+**Ergebnis in einem Satz.** Der Rahmen P_TW liefert Formen und Verhältnisse, aber keine der beiden reinen Zahlen
+(Kopplung, Gravitationszahl). Keiner der beiden Wege ist entschieden; beide sind schärfer gestellt (z164, 14
+Prüfungen, reproduziert).
+
+**W1, Kopplung.**
+
+- **Struktur [E]:** Ausintegrieren von b gibt 1/g² ∝ A²/V (A: Koeffizient des holomorphen Teils, V: Koeffizient des
+  Vertex). Unter b → s·b ist nur diese Kombination invariant. Der Rahmen hat genau eine freie reine Zahl.
+- **Zähler als Integral [E; Lesart L]:** ∫d⁸θ χ⁴(σ₁)χ⁴(σ₂) = ⟨12⟩⁴ mit Koeffizient eins. Liest man b als oberste
+  Komponente eines Zusammenhangs, ist der Vertex genau ∫d⁴x d⁸θ log det mit dem Niveau k als Koeffizient.
+  Verhältnisse von Kopplungen sind dann Niveauverhältnisse und fest; der Gesamtwert nicht.
+- **P_norm ist widerlegt [N negativ]:** Der Bestand (z110) hatte unter P_norm g = k^(−1/2) = 1. Der Lauf des
+  Standardmodells bis zur reduzierten Planckmasse gibt 1/α = 34,3 (U(1), GUT-Norm), 48,6 (SU(2)), 50,6 (SU(3)), also
+  1/g² = 2,7 bis 4,0 statt 1.
+- **Hinweis, schwach [N]:** SU(2) und SU(3) liegen dort bei 1/g² = 3,9 bis 4,0, also 1/α nahe 16π = 2/c₃ (−3,2 % und
+  +0,7 %; mit Zweischleifen-Eichanteil −3,9 % und +1,6 %). Ein nativer Kandidat für die 4 ist die Quellladung
+  |μ₄| = 4 aus CELEST.WP5E.M1.01. Gegenproben: Als exakte Gleichung ist das nicht haltbar. Die Kurven schneiden sich
+  bei 1/α = 47 (10¹⁷ GeV), und die Vorhersagen wären α_s(M_Z) = 0,123 (+4 %) und sin²θ_W = 0,244 (+5,5 %). Eine ganze
+  Zahl und eine Skala sind gewählt, U(1) passt nicht.
+- **α-Gleichung [O]:** Für den kubischen Term und den Blatt-Term ist kein Gegenstück im Rahmen gerechnet. Das
+  Erfolgskriterium von W1 ist nicht erfüllt, das Abbruchkriterium auch nicht.
+- **Vorbestand:** Die einfache Übertragung der α-Grammatik auf SU(2) und SU(3) ist im Ledger schon ausgeschlossen
+  (GAUGE.DETLINE.FIXPOINT.01, v996). Der Weg über Niveaus ist davon verschieden, löst die Aufgabe aber nicht.
+
+**W2, Gravitation.**
+
+- **Gewichte [E]:** Serre-Paarung O(w) mit O(−w−4); Spin 2 hat die Gewichte 2 und −6. Die reduzierte
+  Hodges-Determinante ist unabhängig von der Wahl der gestrichenen Zeilen und Referenzspinoren und skaliert je Bein
+  mit t⁻⁴ (n = 5, 6). Der Zähler ist ⟨ij⟩⁸, allgemein ⟨ij⟩^(4s). Eine eigene Annahme ist dafür nicht nötig.
+- **Unendlichkeitstwistor [E]:** Auf L_x ist (I_π − I_ω) = (1 + det x)⟨12⟩. Die Metrik det(dx)/(1 + det x)² hat
+  konstante Krümmung: euklidisch S⁴ mit R = 48, lorentzsch AdS₄ mit R = −48, also |Λ| = 12 in nativen Einheiten. Die
+  Form ist nicht entartet (Pfaffsche −1). Das Abbruchkriterium „nur konforme Gravitation“ greift hier nicht.
+- **Die Zahl fehlt [E]:** Flache Einstein-Gravitation ist die Kontraktion I_π − ε²I_ω mit |Λ| = 12ε². Die freie Zahl
+  des Kandidaten ist genau ε². Mit der Leiter des Ledgers (Λ/M̄² = 10^−120,15) und nativen Längen wäre
+  ε² = 10^−123,3 bis 10^−121,3.
+- **Nicht nachgerechnet [L]:** Dass der Vertex der konformen Theorie auf Einstein-Zuständen den Einstein-Vertex mit
+  Koeffizient ∝ Λ·G gibt (Maldacena 2011, Adamo–Mason 2013).
+
+**Was daraus folgt.**
+
+- Beide Wege enden bei derselben Art von Frage. Die zwei reinen Zahlen sind im Ledger beide an α gebunden: die
+  Kopplung über die α-Gleichung, ε² über die Λ-Stufe q(1/α)/c₃². Der Engpass ist deshalb der offene Rest des α-Blocks
+  selbst: „warum diese Funktion“ (EM.WARD.01, ALPHA.QUILLEN.EXACT.01), laut Ledger eine Seite von SEAM.EQUIV.01.
+- **Lesart für diesen Rest [L, nicht geprüft]:** Der Rahmen hat drei Räume: die Gerade (2 reelle Dimensionen), die
+  Raumzeit (4) und den Twistorraum (6). Anomaliepolynome haben dort die Grade 2, 3 und 4. Die α-Gleichung hat die
+  Grade 3 (metrikunabhängig, „Chern-Niveau“), 2 (Randterm) und einen Logarithmus; ein Term vom Grad 4 fehlt, und
+  genau der wird im Rahmen vom Axion aufgehoben (z163). Das ist nachträglich gelesen und zählt erst, wenn die
+  Koeffizienten 1 und −2c₃³ daraus folgen.
+
+**Nächste Rechnungen, nach Rang.**
+
+1. **N0, die α-Funktion aus dem Rahmen.** Abstiegskette Twistorraum → Raumzeit → Gerade für den Hyperladungs-
+   Hintergrund: Folgen die Grade 3 und 2 mit den Koeffizienten 1 und −2c₃³, und der Gegenterm 8b₁c₃⁶? Erfolg: P_g
+   ist durch die α-Gleichung ersetzt. Abbruch: Die Koeffizienten folgen nicht; dann bleibt der Rahmen Form ohne Zahl.
+2. **N1, die 4.** Trägt die Quellladung |μ₄| = 4 (v515) als Niveau in den Vertex ein (k_eff = 4)? Eine endliche
+   Prüfung am Bestand des Vertrags. Wegen der Abweichung von 4 bis 6 % ist das nur mit Schwellen sinnvoll.
+3. **N2, Einstein-Reduktion selbst rechnen.** Der Drei- und Vierpunkt-Vertex der konformen Theorie auf
+   Einstein-Zuständen mit I_π − ε²I_ω; Koeffizient gegen Λ·G.
+4. **W3 und W4** (Positivität, Materie) wie geplant.
+
 ### Was die Runde bedeutet
 
 - **Der Kandidat** braucht neun Prämissen: A*, I_step, P_lift, P_IF, P_univ, P_uhr, P_ord, P_curv und P_G als freie

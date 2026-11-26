@@ -664,6 +664,40 @@ Lösungswege W1 bis W6 mit erster Rechnung, Erfolgs- und Abbruchkriterium stehen
 `docs/research/GESAMTSTAND-UND-STRATEGIEN.md`, Nachtrag z163. Zuerst W1 (Kopplung aus der Stationarität derselben
 Determinante) und W2 (Gravitationsvertex mit dem nativen Unendlichkeitstwistor).
 
+**Nachtrag, Schritt 6 nach H6h50: W1 (Kopplung) und W2 (Gravitationsvertex), erste Rechnungen (z164, 14 Prüfungen,
+selbst gerechnet): Der Rahmen P_TW liefert Formen und Verhältnisse, aber keine der beiden reinen Zahlen. P_norm ist
+gegen die Daten widerlegt. Der native Unendlichkeitstwistor ist vom Einstein-Typ [E/N/L]. Kein Treffer.**
+
+**Bilanz:** unverändert 13 P und 7 L von 20. Das Skript läuft unter PYTHONHASHSEED 0 und 7 byteweise gleich.
+
+**K1 Freie Zahlen [E].** S = A·(b, F) − V·(b, b) gibt nach Ausintegrieren von b die Wirkung (A²/4V)F². Unter
+b → s·b ist nur A²/V invariant: eine freie reine Zahl. ∫d⁸θ χ⁴(σ₁)χ⁴(σ₂) = +⟨12⟩⁴ mit Koeffizient eins; mit b als
+oberster Komponente eines Zusammenhangs ist der Koeffizient des Vertex das Niveau k [L].
+
+**K2 P_norm gegen die Daten [N negativ].** Einschleifen-Lauf des Standardmodells (b = 41/10, −19/6, −7; Eingaben PDG)
+bis zur reduzierten Planckmasse: 1/α = 34,34; 48,65; 50,61, also 1/g² = 2,73; 3,87; 4,03. P_norm aus z110 (g = 1 aus
+k = 1, 1/α = 4π) verfehlt alle drei um den Faktor 2,7 bis 4,0.
+
+**K3 Hinweis [N, schwach].** 1/α₂ und 1/α₃ liegen bei 16π = 2/c₃ auf −3,2 % und +0,7 % (Zweischleifen-Eichanteil:
+−3,9 %, +1,6 %). Gegenproben: Schnittpunkt der beiden Kurven bei 9,7·10¹⁶ GeV mit 1/α = 47,0; aus 16π folgten
+α_s(M_Z) = 0,1230 (+4 %) und sin²θ_W = 0,2439 (+5,5 %); die Wahl der Skala verschiebt um 0,8 bzw. 1,8; U(1) passt
+nicht (−32 %). Als exakte Gleichung nicht haltbar. Kandidat für die 4: Quellladung |μ₄| = 4 (CELEST.WP5E.M1.01),
+nicht hergeleitet.
+
+**K4 Spin 2 [E].** Serre-Paarung O(w) × O(−w−4): Spin 1 hat 0 und −4, Spin 2 hat 2 und −6. Die reduzierte
+Hodges-Determinante ist unabhängig von gestrichenen Zeilen, Spalten und Referenzspinoren (n = 5, 6, Abweichung unter
+10⁻⁸) und skaliert je Bein mit t⁻⁴. Zähler ⟨ij⟩⁸, allgemein ⟨ij⟩^(4s).
+
+**K5 Nativer Unendlichkeitstwistor [E].** Auf L_x gilt I_ω = −det(x)·I_π, also (I_π − I_ω) = (1 + det x)⟨12⟩ (wie
+z112). Die Metrik det(dx)/(1 + det x)² hat konstante Krümmung: euklidischer Schnitt S⁴ (R = 48), lorentzscher Schnitt
+AdS₄ (R = −48), |Λ| = 12 nativ. Pfaffsche −1, nicht entartet. I_π − ε²I_ω hat Pfaffsche −ε² und |Λ| = 12ε²; flach
+genau bei ε = 0. Mit der Leiter: ε² = 10^−123,3 bis 10^−121,3 für a²/G = 0,2 bis 24.
+
+**Was das bedeutet.** W1: weder Erfolg noch Abbruch; P_g bleibt, P_norm entfällt als Kandidat. W2: Die Form ist
+nativ (P_inf erfüllt), die Zahl ε² ist P_G in neuer Gestalt. Die Einstein-Reduktion des Vertex ist Literatur [L].
+Beide Zahlen hängen im Ledger an α; der Engpass ist ALPHA.QUILLEN.EXACT.01. Nächste Rechnungen N0 bis N2 stehen in
+`docs/research/GESAMTSTAND-UND-STRATEGIEN.md`, Nachtrag z164.
+
 **Neunzehnte externe Analyse (z144, 67 Prüfungen, selbst gerechnet): Die gerechneten Aussagen stimmen. Die Zopfrelation
 legt das wechselwirkende Gatter nicht fest; die Phase folgt aber aus der Uhr.**
 - **Gitter [E]:**

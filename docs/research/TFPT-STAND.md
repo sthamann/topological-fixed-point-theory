@@ -652,6 +652,18 @@ hergeleitet, 7 unter benannter Lesart, keines gescheitert, offen oder gesetzt. K
         Determinante mit dem nativen Unendlichkeitstwistor (T7), W3 Signatur und Positivität (T3, T5), W4 Materie von
         der Naht (T4), W5 Leiter als duale Antwort, W6 Ursprung. Offen: Kopplung, Signatur, Gravitationsteil, Materie.
         Verträglichkeit, kein Treffer; Einzelheiten in `GESAMTSTAND-UND-STRATEGIEN.md`, Nachtrag z163.
+    - W1 und W2, erste Rechnungen (Z164): Der Rahmen P_TW gibt Formen und Verhältnisse, aber keine der zwei Zahlen.
+      - Kopplung: Der Rahmen hat genau eine freie reine Zahl; Verhältnisse sind Niveauverhältnisse. Die native
+        Normierung g = 1 (P_norm, Z110) ist gegen die Daten widerlegt (1/g² = 2,7 bis 4,0 an der reduzierten
+        Planckmasse). SU(2) und SU(3) liegen dort nahe 1/α = 16π = 2/c₃; als exakte Gleichung ist das um 4 bis 6 %
+        daneben. Schwacher Hinweis, kein Treffer.
+      - Gravitation: Der Zähler ⟨ij⟩⁸ folgt aus den Gewichten (Serre-Partner O(−6)). Der native
+        Unendlichkeitstwistor ist vom Einstein-Typ mit |Λ| = 12 in nativen Einheiten; flache Gravitation ist die
+        Kontraktion mit ε², und ε² ist die freie Zahl (im Ledger die Λ-Stufe). Die Einstein-Reduktion des Vertex ist
+        Literatur, nicht nachgerechnet.
+      - Folge: Beide Zahlen hängen im Ledger an α. Der Engpass ist der offene Rest des α-Blocks („warum diese
+        Funktion“, ALPHA.QUILLEN.EXACT.01). Nächste Rechnung: die α-Funktion aus der Abstiegskette Twistorraum →
+        Raumzeit → Gerade.
     - Zopfrelation: Sie gilt nur für einkörperige Operatoren (Nahtuhr und Strahlteiler = Ising-Zopfmatrizen). Das
       wechselwirkende Gatter verletzt sie mit Defekt √(3/8). Die Defektstruktur ist endlich (Clifford-Typ). [E]
     - Eichdynamik: Plakettenstruktur und sin²θ_W = 3/8 sind nativ, die absolute Kopplung und die Linkdynamik nicht.
