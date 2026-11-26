@@ -461,6 +461,161 @@ legt die Kurve aber nicht fest [E/N, C: P_aut, P_lam].**
   P_curv (über P_X in enger Form, P_pos ist Folge), P_uhr (P_null ist unter P_eich + P_schnitt ein Gauß-Gesetz,
   P_viertel unter P_aut eine Invariante von τ = i). OriginLab ist nicht geändert, weil keine Prämisse entfällt.
 
+**Nachtrag, Schritt 4 nach H6h50: Welle C (z158–z161; vier Agentenläufe, reproduziert) und Neuausrichtung (z162,
+selbst gerechnet): Keine Prämisse entfällt, und der Grund ist jetzt benannt. Die nativen Daten sind Gaußsch, und
+P_viertel ist der selbstduale Punkt der Kompositionsfamilie, an dem es nur eine Skala gibt [E/C/L].**
+
+**Bilanz:** unverändert 13 P und 7 L von 20, neun Prämissen, eine freie Zahl. Alle fünf Skripte laufen unter
+PYTHONHASHSEED 0 und 7 byteweise gleich (126 Prüfungen in Welle C, 23 in z162). Geschlossen sind P_KD (z161), „P_uhr
+aus Stationarität“ (z159) und die Dichtekopplung zweier Ketten (z160). Korrigiert sind ein Kriterium aus z156 (durch
+z158) und eine Zuordnung in z159 (durch z162).
+
+**C1 Austausch des Spin-2-Sektors (z158, 27 Prüfungen; Agent, reproduziert): Der Sektor wird übertragen, aber nicht als
+Teilchen; das Kriterium aus z156 war falsch gestellt, P_X verlangt die zweite Quantisierung des Singletons [E/L].**
+- **Freier Transfer [E; thermisch N]:** B⁺J^A_(−m)B = (J^A + J^B)/2 + J^y. Der gemischte Transferstrom J^y gehört
+  keiner Naht und trägt die halbe Norm (¼ bleibt, ¼ geht nach B, ½ in J^y). Die Antworten für k Stromquanten im Vakuum
+  sind r₁ = ½, r₂ = (m+1)/4m, r₃ = (m+3)/8m, r₄ = 1/16 + 3/(8m) + 3/(16m²) − 1/(6m³) (m = 1: 11/24). Sie sind nicht
+  null und faktorisieren nur für m → ∞; die Abweichung ist die su(2)₁-Struktur der Transferströme. Die fünf Komponenten
+  des Quintetts werden verschieden übertragen. Bei β = 4π, m = 1: 0,5; 0,480; 0,470; 0,430.
+- **Gatter [E; thermisch N]:** Es vertauscht nur mit dem Gesamtstrom, nicht mit den Strommoden einer Naht. Bei gerader
+  Ladung ist U = e^(−iπQ²/8)·[(1−i)/2 + (1+i)/2·Γ_y]. Die Vakuumantwort ist (1+i)/2 für alle zwölf geprüften neutralen
+  Operatoren: Das Gatter überlagert „nichts“ und „ganze Naht getauscht“. Das faktorisiert nicht, unterscheidet aber
+  weder D noch Spin noch Mode. In der z152-Kette fällt jede Antwort wie (√2−1)^r.
+- **Dimension [E]:** Im Rahmen der Naht (Möbius) hat :J⁴: die Linienantwort 24·C(n+3,7), also Δ = 4. Im Rahmen der
+  so(3,2) geben die fünf tiefsten Zustände exakt C(n+2,5), also Δ = 3; das folgt allein aus E₀ = 3 = 1 + 4·½. Beides
+  gilt zugleich, für zwei verschiedene sl(2). Ein Wick-Produkt zweier Gewicht-½-Propagatoren ist exakt 6/(x−y)⁶.
+  **Korrektur zu z156:** „Faktorisiert ⇒ P_X widerlegt“ gilt nicht; die Linienantwort ist reine Darstellungstheorie.
+- **Singleton-Lesart [E/L]:**
+  - Sym²Rac und Λ²Di enthalten je genau ein D(3,2); der O(N)-Singulettsektor ist von N unabhängig (N = 1..7).
+  - Nativ ist das nicht: Unter gemeinsamer so(3,2) ist das Singulett der Kopiengruppe der Skalar D(N_c/2, 0); D(3,2)
+    ist das O(2)-Dublett. S₈, W(E₈) und O(8) wirken auf ein Strompaar als so(3,2)-Drehung; eine Artengruppe wäre neu.
+    Die Tomita-Konjugation tauscht die beiden Singletons, ein einzelner liegt in keiner Nahtalgebra.
+  - ℓ²/G = πN/32 [L], nativ 0,2 bis 24. Der Ledgerwert verlangt N = 1,08·10¹²³, das 16·ln2/π²-Fache der Nahtzahl;
+    kein Treffer.
+- **Folge:** P_X (eng) wird P_2Q + P_sing (Singleton als Randfeld mit invariantem Vakuum und N Arten; Singuletts
+  physikalisch). Dafür entfielen P_1T, P_mode, P_paar, P_chir; das sind zwei statt fünf Namen, aber P_2Q ist die
+  stärkere Annahme. P_G würde zur Anzahl P_N. K13 bleibt L, die Klausel „graviton“ bleibt leer. Nächster Test: ob es im
+  Bestand ein Objekt mit so(3,2)-invariantem Vakuum gibt, dessen Einteilchenraum ein einzelner Singleton ist. Ohne ein
+  solches Objekt ist der Dubleton-Weg für P_X geschlossen und es bleibt P_dyn oder P_h2.
+
+**C2 Geeichte Schrittkette (z159, 35 Prüfungen; Agent, reproduziert): Sie ist exakt das Destri–de-Vega-Gitter aus z121,
+und die Naht bleibt stationär, aber aus einem trivialen Grund; der Winkel folgt nicht [E].**
+- **Identifikation [E]:** F = B_g⁺EB_g·B_u⁺EB_u ist im neutralen Sektor gleich dem z121-Operator, ohne Basiswechsel,
+  Phase 1 (4 und 6 Nähte, 12 Moden). Zwei Geometrien:
+  - Stern (eigener Schnittlink je Naht zu einem gemeinsamen Partner, P_stern): jedes F₀, g²T = π/2.
+  - Kette (1+1-Gauß-Gesetz, ein Link je Nachbarpaar, P_kette0): nur neutraler Sektor, ganzes mittleres Feld, g²T = π;
+    der native Versatz ∓1/4 lässt das Singulett mit Wahrscheinlichkeit 1/2 lecken.
+  - Präzisierung zu z155: Die Sandwich-Form mit zwei eigenen Schnittlinks ist ein Stern, kein 1+1-Gauß-Gesetz.
+- **Stationarität [E]:** Das Produkt gleicher nativer Nähte ist invariant unter Schritt, Transferschicht und Gatter,
+  für jedes φ; die reduzierte Naht hat danach die Niveaus π und 3π. Grund: K = Σε_kN_k ist ein Cartan-Element der
+  Flavour-Symmetrie, mit der jede modendiagonale, ladungsdiagonale Komposition vertauscht. Integrabilität und Winkel
+  gehen nicht ein. Der native Zustand ist der unendlich heiße Zustand mit Feld 4π und liegt zu 0,844 (4 Nähte) auf dem
+  Bethe-Referenzzustand, nicht am Destri–de-Vega-Vakuum.
+- **Grenzen [E/N negativ]:** Naht neben gespiegelter Naht ist nicht stationär (Spurabstand 0,863 bzw. 0,0047 je
+  Schritt). Der Grundzustand der z152-Kette ist kein Eigenzustand des Schritts am Schnitt; mit Hüpfen über den Schnitt
+  geht die Leiter verloren (Niveaus 0,32π und 2,25π). Die Komposition ist eine zwischen gleichen Nähten, nicht zwischen
+  Naht und Gitterpartner. Im Tomita-Paar ist Ω Transfer-Singulett, UΩ = e^(−iφQ²)Ω: Die Naht bleibt, die Purifikation
+  dreht (Treue 0,920).
+- **Winkel [E negativ]:** Kein Stationaritätskriterium zeichnet π/2 aus: entweder alle Winkel oder nur 2πℤ. P_viertel
+  folgt nicht aus P_univ. Diskret wird der Winkel nur über P_Q bei gerader Paarladung ((π/2)ℤ; ungerade πℤ, wie z133),
+  also über P_uhr selbst. Präzisierung zu z144: P_Q ⟺ φ ∈ (π/2)ℤ gilt nur bei gerader Paarladung.
+- **Folge:** P_schritt ist konsistent (unter P_gleich: gleichchirale Nähte, modendiagonaler Transfer), spart aber
+  nichts. P_uhr wäre durch P_eich + P_stern + P_schritt und die Zahl g²T ersetzbar, also durch mehr. K15: Die Kopplung
+  bleibt offen und hängt von der Linkgeometrie ab (π/2 oder π). K16: bei Θ = 1/2 kein massiver Kontinuumslimes [L].
+- **Korrektur (z162):** z159 E1 schreibt Θ = cot(φ/2)/2 und legt den massiven Limes nach φ → 0. Für die Sandwich-Kette
+  gilt Θ = tan(φ/2)/2; beides stimmt nur bei φ = π/2 überein (siehe D).
+
+**C3 Indexoperator gegen d − δ (z161, 33 Prüfungen; Agent, reproduziert): P_KD ist geschlossen [E, gescopt].**
+- **Bestand [E]:** Mit Matrizen reproduziert (Ränge S⁺ 128, K 64, T16 64; Tr_K(Rγγγγ) = 64ε; Kommutanten
+  so(10)/Pati–Salam/SM = 2/4/14). Lesart B aus z154 ist bestätigt. Neu: N_form = 2 − (i/2)Σ η_a γ_a c_a ist ein
+  gemischter Erzeuger von so(16) und liegt nicht in so(4,2) + so(10), dem direkten Produkt des Bestands.
+- **Test [E]:** D_⊥ = γ₋A_q + γ₊A_q⁺ verschwindet auf K, vertauscht mit Γ_KD und N_form und ist ein Skalar der
+  verdrillten Gruppe: nicht d − δ. Auf K gibt es keinen Operator, der Lorentz-Vektor und Eich-Singulett ist. Der
+  induzierte Weyl-Operator γ^a p_a und die Translationen Π_a erfüllen alle drei Bedingungen, aber wörtlich für jede
+  Lötung, auch für die in z154 ausgeschlossene: Die Aussage ist tautologisch.
+- **Gegen die Verdrillung [E]:** (1) Die Uhr tauscht d und δ (R N_form R⁻¹ = 4 − N_form); die Lötung bricht R auf
+  R⁻¹c_L. (2) Lorentzsch ist nur so(3) reell; J bildet auf die konjugierte Verdrillung ab. (3) [Π_a, Π_b] = Σ_ab
+  unverdrillt; eine verdrillte so(3,2) braucht einen Farbvektor. (4) Mit N_form vertauscht vom Standardmodell nur
+  su(3) (8 von 12).
+- **Gitterseite [E/N]:** Die Uhr ist zentral und dreht nichts. Die Wilson-Fortsetzung des Bestands hat an den Ecken
+  w = 2p und behält eine Ecke ohne Geschmacksraum: das Gegenteil eines Kähler–Dirac-Gitters (gescopt auf die
+  eingesetzte Schablone und eine Naht).
+- **Folge:** ν(Uhr) = 16 steht ohne P_KD; die Kähler–Dirac-Lesart derselben 16 entfällt. K12 bleibt die kinematische
+  Lesart. P_KD wird keine zehnte Prämisse. Mit Inhalt bliebe nur P_loet (eine native Lötform im gemischten Teil von
+  so(16)), mit Folgen, die dem Bestand widersprechen (Uhrbruch, Verlust von SU(2)_L×U(1)_Y als innere Symmetrie).
+
+**C4 Kopplung lemniskatischer Ketten (z160, 31 Prüfungen; Agent, reproduziert): Die Dichtekopplung ist ein ionisches
+Hubbard-Modell und nicht integrabel; die zwei Viertel-Lesarten aus Welle B sind dieselbe Aussage [E/L].**
+- **Normalform [E]:** Die native R-Matrix B(u) liegt auf der lemniskatischen Kurve x² + y² + x²y² = 1.
+- **Dichtekopplung [E/N negativ]:** Zwei native Ketten mit Dichtekopplung U sind das ionische Hubbard-Modell. Es ist
+  für U ≠ 0 nicht integrabel, die Leiter bricht linear in U. Eine abelsche Verdrillung bleibt integrabel, ist aber
+  nichtlokal frei.
+- **Elliptische Familie [E/L]:** tan θ = slh²((1+k)λ/2), mit (c₁, c₂, c₃) = (π/8 + θ/2, π/8, π/8 − θ/2). Uhrwerte auf
+  allen Achsen gibt es nur bei λ = 0, K, 2K (Präzisierung zu z157 C14: λ = 2K ist der dritte Uhrpunkt). Masselos ist
+  die Familie nur an den rationalen Enden; dazwischen ist die Masse −ln k₁ → 8e^(−πK/λ) [L].
+- **Viertel [E]:** Die Lesarten aus z155 (Villain-Selbstdualität) und z157 (komplexe Multiplikation) sind dieselbe
+  Aussage: S der Weil-Darstellung bei τ = i, mit Eigenwert 1 im geraden und −i im ungeraden Sektor.
+- **Folge:** P_lam ist auf P_ladung zurückgeführt (welche Ladung die Kopplung trägt), neu ist P_schub. K15 und K16
+  bleiben offen. Die exponentiell kleine Masse 8e^(−πK/λ) ist die zweite unabhängige Stelle, an der die Familie eine
+  Skala der Form e^(−const/Kopplung) zeigt (siehe D).
+
+**D Neuausrichtung „Skala aus Kopplung“ (z162, 23 Prüfungen, selbst gerechnet): Sandwich und Durchgang sind eine
+Familie, der Viertelwinkel ist ihr selbstdualer Punkt, und nur am anderen Ende gibt es eine Hierarchie [E/C/L].**
+- **Zuordnung [E]:** Die Sandwich-Kette (Gatter ohne Tausch) ist t(−Θ)t(Θ)⁻¹ mit Θ = tan(φ/2)/2. Die Durchgangskette
+  (Gatter mal Tausch) ist das Inverse in der anderen Schichtfolge mit Θ = cot(φ/2)/2 (6 Plätze, Residuum < 10⁻¹⁰).
+  **Korrektur zu z159 E1:** Dort steht Θ = cot(φ/2)/2 für die Sandwich-Kette und der massive Limes bei φ → 0. Das
+  stimmt nur bei φ = π/2; z121 (Θ = τ/2) ist richtig. Die übrigen Aussagen von z159 hängen nicht daran.
+- **Dualität [E]:** Tausch·g(u) = Phase·g(−1/u); der Tausch bildet Θ auf 1/(4Θ) ab. Tausch·Gatter = Gatter⁻¹ gilt
+  genau für u² = 1. P_viertel ist also der selbstduale Punkt Θ = 1/2. Das ist die dritte Fassung derselben
+  Selbstdualität nach z155 und z157.
+- **Fermionsprache [E]:** Zwei Vierteltransfers sind B² = Tausch·R⁻¹ (R = i^N, die Uhr der Gesamtladung). Die
+  Durchgangs-Komposition ist B·E·B = Tausch·R⁻¹·(B⁺EB). Der Unterschied zum Sandwich sind zwei native Viertelschritte;
+  welche Form gilt, ist die Prämisse P_sym aus z120.
+- **Dirac-Teilchen [E]:** In der Durchgangskette hat ein Magnon über dem Referenzzustand die Quasienergie
+  ω = ε ± 2·arccos(cos(ε/2)·cos(K/2)), für kleines ε also ±√(ε² + K²): Masse m·a = ε, Lichtgeschwindigkeit eine Zelle je
+  Schritt (24 Plätze, Abweichung < 10⁻¹⁰). Der native Zustand e^(4πS^z)/Z ist ein verdünntes Magnongas der Dichte
+  1/(1 + e^(4π)) = 3,5·10⁻⁶ je Naht. Die Sandwich-Kette ist dieselbe Formel mit ε = π − φ.
+- **Gaußsches No-Go [E]:** Eine bilineare Entwicklung erzeugt aus einem Gaußschen Zustand keine Kumulante, das Gatter
+  schon (Betrag 0,0015 bis 0,021 bei den geprüften Winkeln). Auf dem Produkt gleicher nativer Nähte wirkt das Gatter für jedes
+  φ trivial. Der native Zustand kann den Winkel nicht messen.
+- **Skalen [L/N]:** Am selbstdualen Punkt ist m·a = 0,82: eine Skala. In der Durchgangskette ist die Vakuumskala
+  m·a = 4·e^(−(π/2)·cot(ε/2)) [L, Destri–de Vega]. Der Ledger-Exponent 1/α verlangt ε = 2·arctan(πα/2), also
+  ε/g² = 0,249989 mit g² = 4πα. Mit exakt ε = πα ist m·a = 4e^(−1/α)·1,006.
+- **Gegenproben [N, negativ]:**
+  - Von sechs naheliegenden Wahlen ε = c·α trifft genau eine (c = π). Die Empfindlichkeit ist d ln m/d ln ε = 137.
+  - Gegen R_vac·M̄ = 2πe^(1/α) verlangt der Vorfaktor a²/G zwischen 4·10² und 1,6·10⁴; die sieben nativen Wege geben
+    0,2 bis 24.
+  - Die zweite Ledgerskala A_EW verlangte den Rang N = 9,957; das ist keine ganze Zahl. Die Leiter 1:5:10 ist nicht
+    erklärt.
+- **Folge:** Unter P_durch (Komposition B·E·B), P_eps (ε = πα) und P_see (antiferromagnetisches Vakuum) würde P_G von
+  einer freien Zahl 10¹²³ zu einem Vorfaktor der Ordnung 10² bis 10⁴. Das ist eine Umformulierung mit prüfbarem
+  nächsten Schritt, keine Herleitung. P_viertel entfiele oder gälte nur am Gitterende.
+
+**Was die Welle bedeutet.**
+- **Warum keine Prämisse fällt [E]:** Zustand, modulare Erzeuger, Uhr und so(3,2) sind bilinear. Daraus folgt
+  Kinematik. Eine Kopplung beginnt am Gatter, und der native Zustand ist gegen dessen Winkel blind (z159, z162 D). Die
+  Linie „Prämisse X aus der einzelnen Naht herleiten“ ist nach zwölf Wegen in drei Wellen erschöpft.
+- **Warum G frei blieb [E/L]:** P_viertel legt die Kette auf Θ = 1/2. Dort gibt es keine Skalentrennung. Mit P_viertel
+  kann G/R_vac² nativ nur von der Ordnung eins sein; 10⁻¹²³ kommt dann nur über eine Anzahl herein (P_N aus z158).
+- **Was nie benutzt wurde:** Die gelösten Zahlen. Die offenen Zahlen des Kandidaten (Gatterwinkel, Kopplung von K15,
+  G/R_vac²) sind genau die Größen, für die das Ledger α und die Leiter e^(−A) hat.
+- **Graviton:** P_X (eng) heißt jetzt P_2Q + P_sing (z158). Der Dubleton-Weg ist offen, solange kein Objekt mit
+  so(3,2)-invariantem Vakuum und einem einzelnen Singleton als Einteilchenraum gezeigt ist.
+- **Vier Dimensionen:** P_KD ist geschlossen (z161). K12 bleibt bei der kinematischen Lesart.
+
+**Neue Strategien (Rangfolge; ausführlich in `docs/research/GESAMTSTAND-UND-STRATEGIEN.md`, Abschnitt 16).**
+1. **Skala aus Kopplung:** Kompositionsregel ändern statt Prämissen einzeln herleiten; α als Eingabe. Erste Rechnung:
+   Folgt ε = g²/4 aus der geeichten Uhr (Schrittdauer in Einheiten des Gauß-Gesetzes)? Abbruch, wenn die Normierung
+   frei ist.
+2. **Welcher Zustand ist die Welt:** Magnongas über dem Referenzzustand (Dirac, m·a = ε, keine Hierarchie) oder
+   antiferromagnetischer See (Hierarchie). Erste Rechnung: reduzierter Ein-Naht-Zustand des Sees gegen die nativen
+   Niveaus π und 3π.
+3. **Laufende Kopplung:** Der Koeffizient 41/10 der gelösten α-Gleichung als Ziel für die Vakuumpolarisation der
+   Durchgangskette.
+4. **Zählweg:** 10¹²³ als Zustandszahl eines Raums von 405 Qubits statt als Anzahl von Nähten.
+5. **No-Go festschreiben:** D1 und D2 als Regeln in OriginLab, damit die erschöpfte Linie nicht wieder aufgenommen
+   wird.
+
 **Neunzehnte externe Analyse (z144, 67 Prüfungen, selbst gerechnet): Die gerechneten Aussagen stimmen. Die Zopfrelation
 legt das wechselwirkende Gatter nicht fest; die Phase folgt aber aus der Uhr.**
 - **Gitter [E]:**

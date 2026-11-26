@@ -1,0 +1,578 @@
+{
+ "checks": {
+  "1.1 [E] 256 = Cl(4,2) x Cl(10): 16 antikommutierende Erzeuger, Signatur (4, 12) (Quadrate [1, 1, 1, 1, -1, -1] und zehnmal -1); Gamma_ges = h7 x Gamma_11; Ränge {'S+': 128, 'K': 64, \"K'\": 64, 'T16': 64, 'T16 cap K': 32}": true,
+  "1.2 [E] Bestand z118/z150: auf S^+ ist R = -i Gamma_2 gamma_5 = i (h7 x 1); auf K ist Gamma_2 = -1, R = i gamma_5 und gamma_5 = Gamma_11; auf T16 ist R = i und Gamma_2 = -gamma_5": true,
+  "1.3 [E] Kontrolle z118: Tr_K(R g_a g_b g_c g_d) = 64 eps_abcd und Tr_K(Gamma_2 ...) = -64 (eta_ad eta_bc - eta_ac eta_bd), alle 36 Paare exakt": true,
+  "1.4 [E] so(3,2) aus den Richtungen (0, 1, 2, 4, 5): Relationen exakt, [Pi_a, Pi_b] = Sigma_ab; alle zehn Erzeuger vertauschen mit der Uhr; mit Gamma_2 vertauschen genau die sechs Lorentz-Erzeuger (auf K wirkt nur Lorentz, wie z150)": true,
+  "1.5 [E] Eichgeneratoren auf dem Fockraum (CAR exakt, Hyperladungsspektrum der 16 wie z82/z150, sl(2)-Tripel SU(2)_L und SU(2)_R); Kommutantendimensionen auf der 32: {'so(10)': 2, 'Pati-Salam': 4, 'Standardmodell': 14, 'Farb-SU(4) allein': 32}; explizite Basen (so(10): 1, Gamma_11; Pati-Salam: dazu die schwache Chiralität; Standardmodell: 12 Projektoren und zwei Abbildungen zwischen nu^c und seinem Konjugierten) vertauschen und haben diesen Rang": true,
+  "1.6 [E] Verdrillte Gruppe (Lesart B): Lötung phi: gamma_a -> c_a = i kappa_a s_a g^w_a mit c_a^2 = eta_a (kappa = 1 räumlich, i zeitlich; Vorzeichen s = [1, 1, 1, -1], so gewählt, dass Lorentz-L mit SU(2)_L gepaart ist; das andere Vorzeichen paart L mit SU(2)_R); Sigma^tw_ab = Sigma_ab + c_a c_b / 2 bildet zwei vertauschende sl(2)-Tripel; der schwache Anteil des L-Tripels spannt SU(2)_L, der des R-Tripels SU(2)_R auf; chirale Lorentz-Tripel und die sechs Sigma_ab spannen dieselbe komplexe Algebra auf": true,
+  "1.7 [E] z154 mit Matrizen nachgerechnet: K = Lambda^gerade x 4 + Lambda^ungerade x 4-quer (vier reduzierte Kähler-Dirac-Felder); das Komplement K' = S^+ cap P_+ trägt die anderen Hälften (Lambda^ungerade x 4 + Lambda^gerade x 4-quer), S^+ also Lambda* x (4 + 4-quer); T16 ist nicht nach Formengrad sortiert": true,
+  "1.8 [E] Formengrad-Operator: eps_a = (gamma_a + i c_a)/2, iota_a = eta_a (gamma_a - i c_a)/2 erfüllen die Fock-Relationen, N_form = Summe eps_a iota_a = 2 - (i/2) Summe eta_a gamma_a c_a vertauscht mit der verdrillten Gruppe; Grade 0..4 auf K x 4: [4, 0, 24, 0, 4], auf K x 4-quer: [0, 16, 0, 16, 0], auf S^+: [8, 32, 48, 32, 8]; (-1)^N_form = Gamma_KD": true,
+  "1.9 [E] Gamma_KD = -Gamma_2 x Farbchiralität x Gamma_ges auf allen 256; auf S^+ also Gamma_KD = -Gamma_2 chi_c, auf K gleich chi_c: Der Reduktionsprojektor (1 + Gamma_KD chi_c)/2 des Kähler-Dirac-Felds ist auf S^+ genau der Indexprojektor P_-": true,
+  "2.1 [E] Lorentz-Vektoren in End(8) (Spinor von Cl(4,2)): Lösungsraum der Vektorbedingung hat Dimension 8; Basis gamma_a u mit u in {1, gamma_5} x {1, gamma_+, gamma_-, Gamma_2}": true,
+  "2.2 [E] Auf K selbst gibt es keinen Operator, der Lorentz-Vektor und Singulett unter so(10) oder Pati-Salam ist (K -> K: 0). Alle solchen Operatoren auf S^+ (4 bzw. 8 Multipletts) sind unter Gamma_2 ungerade: Sie bilden K auf K' ab (gamma_a gamma_-, 2 bzw. 4) und zurück (gamma_a gamma_+). Von K nach S^- führt gamma_a selbst nach K^- = S^- cap P_- (2 bzw. 4), nichts nach S^- cap P_+": true,
+  "2.3 [E] Nur unter dem Standardmodell allein gibt es zwei Vektor-Multipletts K -> K: Sie sitzen auf dem rechtshändigen Neutrino (nu^c und sein Konjugiertes sind dieselbe Standardmodell-Darstellung) und tragen die Uhrladung -1; die Uhr verbietet sie": true,
+  "2.4 [E] Uhrladungen auf der Spinorseite: R^2 = -1, also hat Ad R nur die Eigenwerte +1 und -1. Kein Operator auf den 256 trägt die Uhrladung -i des Viertelschritts; alle Vektor-Singuletts unter so(10) und Pati-Salam sind uhrneutral. Die Ladung -i sitzt allein im Markenfaktor A_q (z118)": true,
+  "2.5 [E/N] D_perp = gamma_- A_q + gamma_+ A_q^+ (z118): gamma_+ P_- = 0 und gamma_- P_+ = 0 exakt, A_q hat Index 1 mit der Nullmode Summe q^n |4n> (Rest 4e-22), R A_q R^-1 = -i A_q; der Kern von D_perp auf S^+ x Marken ist K x Nullmode, sein Kokern K^- x Nullmode (z129). D_perp verschwindet auf dem Indexkern": true,
+  "2.6 [E] D_perp gegen die drei Bedingungen: gamma_+- vertauschen mit Gamma_KD (D_perp ist Kähler-Dirac-gerade, nicht ungerade), mit N_form (Formengrad 0, nicht +-1) und mit der verdrillten Gruppe (Skalar, kein Vektor). D_perp antikommutiert nur mit der Indexgradierung Gamma_2. Das gilt für jede Lötung, weil gamma_+- mit jedem gamma_a g^w_b vertauschen": true,
+  "2.7 [E] Der induzierte vierdimensionale Operator gamma^a p_a: K x Nullmode -> K^- x Nullmode (Kern nach Kokern von D_perp) erfüllt alle drei Bedingungen: Er antikommutiert mit Gamma_KD, ist eps^a p_a + eta iota^a p_a mit Formengrad +1 und -1 (also d - delta bis auf Vorzeichenkonvention), und gamma_a ist ein Vektor der verdrillten Gruppe": true,
+  "2.8 [E] Tautologie: Dieselben drei Eigenschaften gelten wörtlich für jede Lötung, auch für die umgekehrte Orientierung, für eine andere Zuordnung der Richtungen und für eine Lötung an vier Farbrichtungen (die in z154 ausgeschlossene innere Zelle). Sie folgen aus {gamma_a, g_b} = 0 in Cl(4,12), nicht aus dem Operator. Jeder Dirac-Operator mit Eich-Singulett-Symbol ist unter jeder verdrillten Gruppe d - delta": true,
+  "2.9 [E] Dasselbe für die Vektor-Singuletts auf S^+: gamma_a gamma_+- und die so(3,2)-Translationen Pi_a sind Gamma_KD-ungerade mit reinem Formengrad +-1 und Vektoren der verdrillten Gruppe; die Varianten mit gamma_5 sind Gamma_KD-ungerade, aber mit Hodge-Stern (Grad p -> 4 - p +- 1). Auch das gilt für jede Lötung": true,
+  "2.10 [E] Was wirklich entscheidet: Unter verdrillter Gruppe x SU(4) gibt es auf den 256 genau 128 Vektor-Multipletts (Charaktere), davon sind 32 Lorentz-Vektor x schwaches Singulett (= Zählung 2.2 für Pati-Salam). Die übrigen 96 enthalten c_a, eps_a und eta_a iota_a (Index unten) einzeln: d und delta getrennt sind Vektoren der verdrillten Gruppe, aber keine Lorentz-Vektoren. Eine Stütze für P_KD wäre ein nativer Operator in diesen 96; die nativen (2.2) liegen alle in den 32": true,
+  "2.11 [E] so(16) = so(4,2) + so(10) + gemischt mit Dimensionen [15, 45, 60]; die Uhr wirkt auf so(4,2) + so(10) trivial und auf allen 60 gemischten Erzeugern mit -1. N_form - 2 liegt ganz im gemischten Teil: R N_form R^-1 = 4 - N_form. Die Uhr tauscht eps_a und eta_a iota_a (d und delta); auf K ist sie i gamma_5, der Hodge-Stern p -> 4 - p mal i. Der Formengrad ist keine uhrinvariante Größe, nur (-1)^p und |p - 2|": true,
+  "2.12 [E] Unter der Lötung überlebt von Uhr und Zentrum von SU(2)_L nur das Produkt: [R, N_form] != 0, [c_L, N_form] != 0, [R^-1 c_L, N_form] = 0, und auf K ist i Gamma_KD = R^-1 c_L (z154: Kähler-Dirac-Z_4 = Uhr^-1 mal Zentrum von SU(2)_L). P_KD als Lötung bricht also die Uhr selbst auf diese Kombination": true,
+  "2.13 [E] Eichgruppe: Mit N_form (und mit der verdrillten Gruppe) vertauschen vom Standardmodell genau die acht Erzeuger der Farbe, von so(10) die 15 von so(6), von so(3,2) keiner: {'von N_form im Standardmodell': 8, 'der verdrillten Gruppe im Standardmodell': 8, 'von N_form in so(10)': 15, 'der verdrillten Gruppe in so(10)': 15, 'von N_form in so(3,2)': 0}. SU(2)_L und die Hyperladung wären keine inneren Symmetrien mehr": true,
+  "2.14 [E] Reelle Form: Die verdrillte Algebra ist im nativen lorentzschen Rahmen (Nullpaar der Dilatation, Querraum (3,1)) nur komplex definiert. Ihr Schnitt mit so(3,1) + so(4)_schwach hat reelle Dimension 3: nur die Drehungen so(3), diagonal mit SU(2)_(L+R); die drei Boost-Erzeuger sind Boost + i mal kompakt. (so(3,1) ist einfach und nicht kompakt, es gibt keinen Homomorphismus in su(2) + su(2).) Im euklidischen Rahmen des komplexen Uhrpaars E (Querraum (4,0)) ist die Dimension 6, und K_E trägt denselben Inhalt; diese so(4) schneidet die native so(3,2) aber wieder nur in so(3) (Dimension 3)": true,
+  "2.15 [E] Realstruktur J (J^2 = 1, vertauscht mit allen 16 Erzeugern, erhält S^+, K, Gamma_2 und die Uhr): J lässt die reellen Lorentz- und schwachen Erzeuger fest, bildet die verdrillte Algebra aber auf die konjugierte Verdrillung ab (gemeinsamer Spann Dimension 9 statt 6; J-stabil sind nur die drei Drehungen). J tauscht gerade und ungerade Formen (J Gamma_KD J^-1 = -Gamma_KD, Dirac-Konjugation mit der Zeitrichtung). Im euklidischen Rahmen ist die verdrillte Gruppe J-stabil, aber der Träger K_E nicht (J tauscht K_E mit K'_E): In keinem der beiden Rahmen sind Träger und volle verdrillte Gruppe zugleich reell": true,
+  "2.16 [E] Native Gravitationsalgebra: Die Translationen Pi_a sind Vektoren unter Sigma und unter Sigma^tw, aber [Pi_a, Pi_b] = Sigma_ab ist die unverdrillte Lorentz-Algebra. Sigma^tw und Pi_a erzeugen so(3,2) + so(4)_schwach (Dimension 16), keine verdrillte so(3,2). Verdrillte Translationen Pi_a + x_a im direkten Produkt so(4,2) + so(10) bräuchten x_a im Teil (4,6) von so(10), also einen Farbvektor; su(3) hat dort keine Invariante (0 in (4,6), 0 in der 6). Die so(3,2) lässt sich nicht farbneutral verdrillen": true,
+  "2.17 [E] Gewichte: Die Euler-Struktur eps x eps (die Krümmungsform der Kähler-Dirac-Anomalie [L]) erscheint in der Mischspur Tr_K(W Sigma Sigma Sigma^w Sigma^w) nur mit dem Gewicht Gamma_KD; die nativen Gewichte 1, Gamma_2 (z118/z127) geben delta delta x delta delta, R gibt eps x delta delta. In zweiter Ordnung ändert die Verdrillung die Uhrspur nicht (16 = 64/4 mit und ohne Verdrillung), und mit Gamma_KD verschwindet sie: {'Tr_K(R Sigma_01 Sigma_24)': 16, 'Tr_K(R Sigma^tw_01 Sigma^tw_24)': 16, 'Tr_K(Gamma_KD Sigma^tw_01 Sigma^tw_24)': 0, 'Tr_K(Gamma_KD)': 0, 'Tr_K(-Gamma_2)': 64}. Der Index von D_perp bezüglich Gamma_2 ist 64, die Gamma_KD-Spur auf K ist 32 - 32 = 0": true,
+  "2.18 [E/N] Nullmode und Indexkern: Die Nullmode von A_q ist ein Markenvektor und unter beiden Gruppen ein Singulett. K enthält unter Lorentz keinen Skalar, unter der verdrillten Gruppe 8 (0- und 4-Formen mal 4). Auf ihnen hat die Uhr die Eigenwerte +i und -i je viermal (Spur 0, Spur von R^2 gleich -8): Die Uhr ist kein Element der verdrillten Gruppe mal Zentrum der Farbe, denn jedes solche Element wirkt dort als ein Skalar": true,
+  "3.1 [E] Native Vierteldrehung: Die Uhr R = i Gamma_11 vertauscht mit allen Lorentz-, so(3,2)- und so(10)-Erzeugern; sie dreht weder Lorentz- noch schwache Indizes. Eine Gitter-Vierteldrehung der verdrillten Gruppe, g = exp((pi/2) Sigma^tw_01), dreht gamma_0 -> gamma_1 und zugleich c_0 -> c_1, hat g^4 = 1 (die unverdrillte hat -1) und auf K die Eigenwerte {'1': 32, '-1': 0, 'i': 16, '-i': 16}; die Uhr hat {'i': 32, '-i': 32}. Die Vierteldrehung P_sym des Transfers wirkt auf den Nahtindex, die Marken auf den Markenfaktor: beide vertauschen mit der Spinorseite (direktes Produkt, z150)": true,
+  "3.2 [E] Gruppenstruktur: Auf dem gestaffelten Gitter ist die Verschiebung um einen Platz die zweite Clifford-Wirkung (Geschmacksmatrix) [L]; vier antikommutierende Einheitsschritte erzeugen eine nichtabelsche Gruppe der Ordnung 32. Die native diskrete Gruppe einer Naht ist die zyklische Uhr der Ordnung 4; ihr Erzeuger ist zentral. Vier antikommutierende native Viertelschritte gibt es nicht (ein Viertelschritt S^+, Uhrladung -i)": true,
+  "3.3 [E/N] Wilson-Fortsetzung A_q(k) = (S^+ - w(k))(1 - q S^4), w = Summe (1 - cos k_i): An den acht Ecken ist w = 2 p mit dem Eckengrad p = Zahl der Komponenten pi (Vielfachheiten [1, 3, 3, 1] wie Lambda^p(R^3)); der Index ist 1 für |w| < 1 und 0 sonst (Windung des Symbols), also genau 1 Nullmode bei p = 0; die sieben anderen Ecken haben Singulärwerte >= (w - 1)(1 - q). Der Wilson-Term ist an den Ecken das Doppelte des Formengrads im Geschmacksraum: Er hebt alles außer der 0-Form": true,
+  "3.4 [E] Gegenprobe: Ohne Wilson-Term (w = 0 an allen Ecken, naive oder gestaffelte Fortsetzung) trüge jede der acht Ecken eine Nullmode; diese Entartung ist der Geschmacksraum, auf dem Gitterdrehungen die Ecken permutieren und so Spin und Geschmack verriegeln [L]. Die Verschiebung k_i -> k_i + pi (Geschmacksmatrix im Impulsraum) ändert w um 2 cos k_i und ist in der Wilson-Fortsetzung keine Symmetrie; w ist unter der Würfelgruppe invariant, die masselose Ecke k = 0 ist ihr Fixpunkt und trägt keinen Geschmacksindex": true,
+  "4.1 [E] Z_4-Anomalie: K enthält 16 linkshändige Weyl-Felder (2_L, 16), alle mit Uhrladung 1: nu(Uhr) = 16 steht im Bestand ohne P_KD (z154, Prüfung 2.5). Die Kähler-Dirac-Z_4 i Gamma_KD hat darauf 8 mal +1 und 8 mal -1, also nu = 0; ihre Bedingung (vier reduzierte Felder) ist dieselbe Zahl 16 nur unter P_KD. Mit dem Schluss von P_KD entfällt eine zweite Lesart derselben 16, keine Aussage des Bestands": true,
+  "4.2 [E/L] K12, K15, K16: Die Vier als reelle Dimension der zwei schwachen Plätze (z154) verlangt die Lötung; sie ist nicht nativ und bricht die Uhr (2.12), also bleibt K12 kinematische Lesart. Für K15 hieße P_KD, dass SU(2)_L und Hyperladung keine inneren Symmetrien sind (2.13); ohne P_KD ist K15 nicht berührt. K16: Der Wilson-Halbraum des Bestands hat keinen Geschmacksraum (3.3); ein Kähler-Dirac-Kontinuumslimes wäre ein anderes Gitter als das im Bestand": true
+ },
+ "befunde": {
+  "1": "ja",
+  "2a": "nein (gescopt)",
+  "2b": "nein (gescopt) / tautologisch",
+  "2c": "nein (gescopt)",
+  "3": "nein (gescopt)",
+  "4": "bedingt"
+ },
+ "zahlen": {
+  "1.1 Clifford": {
+   "Quadrate der 16 Erzeuger": [
+    1,
+    1,
+    1,
+    1,
+    -1,
+    -1,
+    -1,
+    -1,
+    -1,
+    -1,
+    -1,
+    -1,
+    -1,
+    -1,
+    -1,
+    -1
+   ],
+   "Ränge": {
+    "S+": 128,
+    "K": 64,
+    "K'": 64,
+    "T16": 64,
+    "T16 cap K": 32
+   }
+  },
+  "1.5 Kommutanten auf der 32": {
+   "so(10)": 2,
+   "Pati-Salam": 4,
+   "Standardmodell": 14,
+   "Farb-SU(4) allein": 32
+  },
+  "1.6 Vorzeichen s_a der Referenzlötung": [
+   1,
+   1,
+   1,
+   -1
+  ],
+  "1.7 Inhalt unter verdrillter Spin(4) (Vielfachheit einschließlich der SU(4)-Dimension 4)": {
+   "K x 4": {
+    "(1,1)": 8,
+    "(1,3)": 4,
+    "(3,1)": 4
+   },
+   "K x 4-quer": {
+    "(2,2)": 8
+   },
+   "K' x 4": {
+    "(2,2)": 8
+   },
+   "K' x 4-quer": {
+    "(1,1)": 8,
+    "(1,3)": 4,
+    "(3,1)": 4
+   },
+   "T16 x 4": {
+    "(1,1)": 4,
+    "(2,2)": 4,
+    "(3,1)": 4
+   },
+   "T16 x 4-quer": {
+    "(1,1)": 4,
+    "(1,3)": 4,
+    "(2,2)": 4
+   }
+  },
+  "1.8 Formengrad N_form: Vielfachheiten der Grade 0..4": {
+   "K": [
+    4,
+    16,
+    24,
+    16,
+    4
+   ],
+   "K x 4": [
+    4,
+    0,
+    24,
+    0,
+    4
+   ],
+   "K x 4-quer": [
+    0,
+    16,
+    0,
+    16,
+    0
+   ],
+   "S+": [
+    8,
+    32,
+    48,
+    32,
+    8
+   ]
+  },
+  "2.2 Lorentz-Vektor x Eich-Singulett je Trägerpaar [gesamt, uhrneutral, Uhrladung -1]": {
+   "so(10)": {
+    "alle auf 256": 16,
+    "K -> K": [
+     0,
+     0,
+     0
+    ],
+    "K -> K'": [
+     2,
+     2,
+     0
+    ],
+    "K' -> K": [
+     2,
+     2,
+     0
+    ],
+    "S+ -> S+": [
+     4,
+     4,
+     0
+    ],
+    "K -> K-": [
+     2,
+     2,
+     0
+    ],
+    "K -> K'-": [
+     0,
+     0,
+     0
+    ],
+    "S+ -> S-": [
+     4,
+     4,
+     0
+    ],
+    "T16 -> T16": [
+     2,
+     2,
+     0
+    ]
+   },
+   "Pati-Salam": {
+    "alle auf 256": 32,
+    "K -> K": [
+     0,
+     0,
+     0
+    ],
+    "K -> K'": [
+     4,
+     4,
+     0
+    ],
+    "K' -> K": [
+     4,
+     4,
+     0
+    ],
+    "S+ -> S+": [
+     8,
+     8,
+     0
+    ],
+    "K -> K-": [
+     4,
+     4,
+     0
+    ],
+    "K -> K'-": [
+     0,
+     0,
+     0
+    ],
+    "S+ -> S-": [
+     8,
+     8,
+     0
+    ],
+    "T16 -> T16": [
+     4,
+     4,
+     0
+    ]
+   },
+   "Standardmodell": {
+    "alle auf 256": 112,
+    "K -> K": [
+     2,
+     0,
+     2
+    ],
+    "K -> K'": [
+     12,
+     12,
+     0
+    ],
+    "K' -> K": [
+     12,
+     12,
+     0
+    ],
+    "S+ -> S+": [
+     28,
+     24,
+     4
+    ],
+    "K -> K-": [
+     12,
+     12,
+     0
+    ],
+    "K -> K'-": [
+     2,
+     0,
+     2
+    ],
+    "S+ -> S-": [
+     28,
+     24,
+     4
+    ],
+    "T16 -> T16": [
+     12,
+     12,
+     0
+    ]
+   }
+  },
+  "2.5 Marken": {
+   "dim ker A_q": 1,
+   "dim ker A_q^+": 0,
+   "|A_q zm|": 0.0,
+   "Nullmode auf Marken 0 mod 4": true
+  },
+  "2.6 D_perp": {
+   "[gamma_+-, Gamma_KD] = 0": true,
+   "[gamma_+-, N_form] = 0": true,
+   "[gamma_+-, Sigma^tw] = 0": true,
+   "{gamma_+-, Gamma_2} = 0": true,
+   "[gamma_+-, gamma_5] = 0": true
+  },
+  "2.7 induzierter Weyl-Operator gamma^a p_a": {
+   "{gamma_a, Gamma_KD} = 0": true,
+   "gamma_a = eps_a + eta_a iota_a": true,
+   "[N_form, eps_a] = eps_a, [N_form, iota_a] = -iota_a": true,
+   "gamma_a Vektor unter Sigma^tw": true,
+   "gamma_a: K -> K^-": true
+  },
+  "2.8 Tautologieprobe: andere Lötungen": {
+   "umgekehrte Orientierung (Lorentz-L mit SU(2)_R)": {
+    "Fock": true,
+    "Grad +-1": true,
+    "antikommutiert mit (-1)^N": true,
+    "Vektor der verdrillten Gruppe": true,
+    "D_perp Grad 0": true,
+    "N auf K (Grade 0..4)": [
+     4,
+     16,
+     24,
+     16,
+     4
+    ],
+    "N vertauscht mit dem Standardmodell (Zahl der 12 Erzeuger)": 8
+   },
+   "andere Zuordnung der Richtungen": {
+    "Fock": true,
+    "Grad +-1": true,
+    "antikommutiert mit (-1)^N": true,
+    "Vektor der verdrillten Gruppe": true,
+    "D_perp Grad 0": true,
+    "N auf K (Grade 0..4)": [
+     4,
+     16,
+     24,
+     16,
+     4
+    ],
+    "N vertauscht mit dem Standardmodell (Zahl der 12 Erzeuger)": 8
+   },
+   "Lötung an vier Farbrichtungen (innere Zelle, Art A aus z154)": {
+    "Fock": true,
+    "Grad +-1": true,
+    "antikommutiert mit (-1)^N": true,
+    "Vektor der verdrillten Gruppe": true,
+    "D_perp Grad 0": true,
+    "N auf K (Grade 0..4)": [
+     4,
+     16,
+     24,
+     16,
+     4
+    ],
+    "N vertauscht mit dem Standardmodell (Zahl der 12 Erzeuger)": 3
+   }
+  },
+  "2.9 Vektor-Singuletts auf S^+ gegen N_form": {
+   "gamma_a gamma_-": {
+    "Gamma_KD-ungerade": true,
+    "reiner Grad +-1": true,
+    "Vektor verdrillt": true
+   },
+   "gamma_a gamma_+": {
+    "Gamma_KD-ungerade": true,
+    "reiner Grad +-1": true,
+    "Vektor verdrillt": true
+   },
+   "gamma_a gamma_- gamma_5": {
+    "Gamma_KD-ungerade": true,
+    "reiner Grad +-1": false,
+    "Vektor verdrillt": true
+   },
+   "gamma_a gamma_+ gamma_5": {
+    "Gamma_KD-ungerade": true,
+    "reiner Grad +-1": false,
+    "Vektor verdrillt": true
+   },
+   "Pi_a": {
+    "Gamma_KD-ungerade": true,
+    "reiner Grad +-1": true,
+    "Vektor verdrillt": true
+   }
+  },
+  "2.10 Vektoren der verdrillten Gruppe mit SU(4)-Invarianz auf 256": {
+   "verdrillt": 128,
+   "davon Lorentz-Vektor x schwaches Singulett": 32,
+   "c_a Vektor verdrillt": true,
+   "eps_a Vektor verdrillt": true,
+   "eta_a iota_a Vektor verdrillt": true,
+   "eps_a Lorentz-Vektor": false,
+   "c_a schwaches Singulett": false
+  },
+  "2.13 Zentralisatoren (Dimension)": {
+   "von N_form im Standardmodell": 8,
+   "der verdrillten Gruppe im Standardmodell": 8,
+   "von N_form in so(10)": 15,
+   "der verdrillten Gruppe in so(10)": 15,
+   "von N_form in so(3,2)": 0
+  },
+  "2.14 reelle Form": {
+   "reelle Dimension verdrillt cap (so(3,1) + so(4)), Dilatationspaar": 3,
+   "antihermitesche verdrillte Erzeuger (lorentzsch)": [
+    true,
+    true,
+    false,
+    true,
+    false,
+    false
+   ],
+   "reelle Dimension, euklidisches Uhrpaar": 6,
+   "Inhalt K_E": {
+    "K_E x 4": {
+     "(1,1)": 8,
+     "(1,3)": 4,
+     "(3,1)": 4
+    },
+    "K_E x 4-quer": {
+     "(2,2)": 8
+    }
+   },
+   "dim so(4)_E cap so(3,2)": 3
+  },
+  "2.15 Realstruktur J": {
+   "J Sigma J^-1 = Sigma (Lorentz reell)": true,
+   "J T J^-1 = T (schwach reell)": true,
+   "dim Spann(verdrillt, J verdrillt J^-1)": 9,
+   "J gamma_5 J^-1 = -gamma_5": true,
+   "J Gamma_KD J^-1 = -Gamma_KD": true,
+   "J N_form J^-1 = N_form + 1 - 2 n_t": true,
+   "J Gamma_2^E J^-1 = -Gamma_2^E": true,
+   "J K_E = K'_E": true,
+   "dim Spann(verdrillt_E, J verdrillt_E J^-1)": 6
+  },
+  "2.16 so(3,2) und Verdrillung": {
+   "dim der von Sigma^tw und Pi_a erzeugten Algebra": 16,
+   "dim so(3,2) + so(4)_schwach": 16,
+   "su(3)-Invarianten in (4,6)": 0,
+   "su(3)-Invarianten im Farbvektor 6": 0
+  },
+  "2.17 Gewichte": {
+   "Mischspur vierter Ordnung": {
+    "1": {
+     "delta delta x delta delta": "4",
+     "eps x delta delta": "0",
+     "delta delta x eps": "0",
+     "eps x eps": "0"
+    },
+    "Gamma_2": {
+     "delta delta x delta delta": "-4",
+     "eps x delta delta": "0",
+     "delta delta x eps": "0",
+     "eps x eps": "0"
+    },
+    "R": {
+     "delta delta x delta delta": "0",
+     "eps x delta delta": "-4",
+     "delta delta x eps": "0",
+     "eps x eps": "0"
+    },
+    "chi_w (= Zentrum von SU(2)_R)": {
+     "delta delta x delta delta": "0",
+     "eps x delta delta": "0",
+     "delta delta x eps": "4i",
+     "eps x eps": "0"
+    },
+    "Gamma_KD": {
+     "delta delta x delta delta": "0",
+     "eps x delta delta": "0",
+     "delta delta x eps": "0",
+     "eps x eps": "-4"
+    }
+   },
+   "zweite Ordnung": {
+    "Tr_K(R Sigma_01 Sigma_24)": 16,
+    "Tr_K(R Sigma^tw_01 Sigma^tw_24)": 16,
+    "Tr_K(Gamma_KD Sigma^tw_01 Sigma^tw_24)": 0,
+    "Tr_K(Gamma_KD)": 0,
+    "Tr_K(-Gamma_2)": 64
+   }
+  },
+  "2.18 Skalare im Indexkern": {
+   "verdrillte Singuletts in K": 8,
+   "Lorentz-Singuletts in K": 0,
+   "Spur der Uhr auf den verdrillten Singuletts": true,
+   "Spur von R^2": -8
+  },
+  "3.1 Vierteldrehungen auf K": {
+   "verdrillte Gitterdrehung: Eigenwerte": {
+    "1": 32,
+    "-1": 0,
+    "i": 16,
+    "-i": 16
+   },
+   "Uhr: Eigenwerte": {
+    "i": 32,
+    "-i": 32
+   }
+  },
+  "3.3 Wilson-Fortsetzung an den acht Ecken": {
+   "0": {
+    "Ecken": 1,
+    "Windung": -1,
+    "Index": 1,
+    "kleinster Singulärwert": 0.0,
+    "Schranke (w-1)(1-q)": -0.998133
+   },
+   "2": {
+    "Ecken": 3,
+    "Windung": 0,
+    "Index": 0,
+    "kleinster Singulärwert": 1.000729,
+    "Schranke (w-1)(1-q)": 0.998133
+   },
+   "4": {
+    "Ecken": 3,
+    "Windung": 0,
+    "Index": 0,
+    "kleinster Singulärwert": 2.996256,
+    "Schranke (w-1)(1-q)": 2.994398
+   },
+   "6": {
+    "Ecken": 1,
+    "Windung": 0,
+    "Index": 0,
+    "kleinster Singulärwert": 4.992429,
+    "Schranke (w-1)(1-q)": 4.990663
+   }
+  },
+  "4.1 Anomaliezahlen auf den linkshändigen Feldern von K": {
+   "Weyl-Felder": 16,
+   "nu(Uhr)": 16,
+   "Kähler-Dirac-Z_4: Ladung +1": 8,
+   "Ladung -1": 8
+  },
+  "Bilanz": [
+   {
+    "Status": "E",
+    "Thema": "Aufbau",
+    "Text": "256 = Cl(4,2) x Cl(10) mit 16 Erzeugern; S^+, K, T16, R, Gamma_2, so(3,2), Eichgeneratoren exakt wie z118/z150. Lesart B aus z154 mit Matrizen bestätigt: K = Lambda^gerade x 4 + Lambda^ungerade x 4-quer, K' die anderen Hälften. Neu: N_form = 2 - (i/2) Summe eta_a gamma_a c_a, ein gemischter Erzeuger von so(16), und Gamma_KD = -Gamma_2 chi_c Gamma_ges; der Reduktionsprojektor ist auf S^+ der Indexprojektor P_-."
+   },
+   {
+    "Status": "E negativ",
+    "Thema": "D_perp",
+    "Text": "Der native Indexoperator D_perp = gamma_- A_q + gamma_+ A_q^+ verschwindet auf K (K x Nullmode ist sein Kern), vertauscht mit Gamma_KD, hat Formengrad 0 und ist ein Skalar der verdrillten Gruppe. Er ist nicht d - delta, für keine Lötung."
+   },
+   {
+    "Status": "E, tautologisch",
+    "Thema": "induzierter Operator",
+    "Text": "gamma^a p_a: K -> K^- und die Translationen Pi_a: K <-> K' antikommutieren mit Gamma_KD, ändern den Formengrad um +-1 und sind Vektoren der verdrillten Gruppe. Dasselbe gilt für jede Lötung, auch für die in z154 ausgeschlossene innere Zelle. Die Eigenschaft folgt aus der Clifford-Algebra, nicht aus dem Operator."
+   },
+   {
+    "Status": "E",
+    "Thema": "Operatorraum",
+    "Text": "Auf K gibt es keinen Lorentz-Vektor, der Singulett unter so(10) oder Pati-Salam ist. Alle Vektor-Singuletts (16 bzw. 32 Multipletts auf den 256) sind uhrneutral; Uhrladung -i gibt es auf der Spinorseite nicht. Unter verdrillter Gruppe x SU(4) gäbe es 128 Vektor-Multipletts; die nativen liegen in den 32, die auch ohne Verdrillung Vektoren sind."
+   },
+   {
+    "Status": "E negativ",
+    "Thema": "native Daten gegen die Verdrillung",
+    "Text": "Uhr: tauscht d und delta, R N_form R^-1 = 4 - N_form, die Lötung bricht R auf R^-1 c_L. Reelle Form: lorentzsch nur so(3) reell, J bildet auf die konjugierte Verdrillung ab; euklidisch (Uhrpaar E) ist die Gruppe reell, der Träger aber nicht J-stabil. so(3,2): [Pi_a, Pi_b] ist die unverdrillte Sigma_ab, eine verdrillte so(3,2) im direkten Produkt braucht einen Farbvektor. Eichgruppe: Mit der Lötung vertauscht vom Standardmodell nur su(3)."
+   },
+   {
+    "Status": "E",
+    "Thema": "Gewichte",
+    "Text": "Die Euler-Struktur eps x eps erscheint in der Mischspur nur mit Gewicht Gamma_KD (= -i R^-1 c_L auf K), nicht mit den nativen Gewichten Gamma_2 und R. Die Uhrspur 64 eps ist unter der Verdrillung unverändert."
+   },
+   {
+    "Status": "E/N negativ",
+    "Thema": "Gitterseite",
+    "Text": "Die Uhr ist zentral und dreht nichts. Die Wilson-Fortsetzung hat w = 2 p an den Ecken: eine Nullmode bei p = 0, kein Geschmacksraum, das Gegenteil eines Kähler-Dirac-Gitters. Gescopt: eingesetzte Schablone, eine Naht."
+   },
+   {
+    "Status": "C",
+    "Thema": "Was von P_KD bleibt",
+    "Text": "Als Aussage über den Operator ist P_KD leer (tautologisch) oder falsch (D_perp). Mit Inhalt ist sie die Prämisse P_loet: Es gibt ein natives Datum im gemischten Teil (4, (2,2,1)) von so(16), eine Lötform Phi_am, die Lorentz x schwache Spin(4) auf die Diagonale bricht. P_loet hat Uhrladung -1, lässt vom Standardmodell nur die Farbe und verträgt sich reell nur mit dem euklidischen Uhrpaar (P_eukl)."
+   },
+   {
+    "Status": "L",
+    "Thema": "Literatur",
+    "Text": "Kähler 1962; Graf 1978; Becher-Joos 1982 und Banks-Dothan-Horn 1982 (Dirac-Kähler-Gleichung und Gitterfermionen); Golterman-Smit 1984, Kilcup-Sharpe 1987 (Symmetrien gestaffelter Fermionen, Verschiebung = Geschmacksmatrix); Callan-Harvey 1985, Kaplan 1992 (Nullmoden an der Wand); Witten 1988 (topologische Verdrillung); Butt-Catterall-Pradhan-Toga arXiv:2101.01026, Catterall arXiv:2209.03828, 2311.02487 (Anomalie proportional zur Euler-Zahl, reduzierte Felder, Pati-Salam). Aus dem Gedächtnis zitiert, nicht neu gelesen."
+   },
+   {
+    "Status": "-",
+    "Thema": "Prämissen des Kandidaten",
+    "Text": "A*, I_step, P_lift, P_IF, P_univ, P_uhr, P_ord, P_curv, P_G unverändert. P_KD kommt nicht als zehnte hinzu: In der Form von z154 ist sie geschlossen. P_loet und P_eukl sind benannt, aber keine Prämissen des Kandidaten."
+   },
+   {
+    "Status": "O",
+    "Thema": "Offen",
+    "Text": "Ob eine native Antwort (Zwei-Naht-Komposition, Klebeströme) einen Kanal im gemischten Teil (6,10) von so(16) mit nicht verschwindendem Erwartungswert trägt. Ob die aus Antworten rekonstruierte k-Abhängigkeit (statt der Wilson-Schablone) Ecken entartet lässt. Unter P_A3 trüge die Lötform die Quantenzahlen der E8-Ströme (10,6); nicht gerechnet."
+   }
+  ]
+ },
+ "urteil": "Nein, gescopt: P_KD ist in der Form von z154 geschlossen. (1) Der native Indexoperator D_perp = gamma_- A_q + gamma_+ A_q^+ hat nicht die Form d - delta. Er verschwindet auf dem Indexkern, vertauscht mit Gamma_KD = gamma_5 x schwache Chiralität, hat Formengrad 0 und ist unter der verdrillten Gruppe ein Skalar. Das gilt für jede Lötung von Lorentz- und inneren Richtungen. Auf K selbst gibt es überhaupt keinen Operator, der Lorentz-Vektor und Eich-Singulett ist. (2) Der induzierte vierdimensionale Operator gamma^a p_a von K nach K^- und die Translationen der so(3,2) erfüllen alle drei Bedingungen exakt, aber tautologisch: Sie gelten wörtlich für jede Lötung, auch für die in z154 ausgeschlossene innere Zelle, weil sie nur {gamma_a, g_b} = 0 benutzen. Die Kähler-Dirac-Struktur liegt ganz in der Wahl der Gruppe. (3) Was entscheidet, ist ein Datum außerhalb von Lorentz-Vektor x Eich-Singulett: die zweite Clifford-Wirkung c_a, d und delta getrennt, oder der Formengrad N_form = 2 - (i/2) Summe eta_a gamma_a c_a. N_form ist ein gemischter Erzeuger von so(16) und liegt nicht in so(4,2) + so(10), dem direkten Produkt des Bestands. Kein natives Datum liegt dort. (4) Vier native Daten sprechen gegen die verdrillte Gruppe als Drehgruppe: Die Uhr tauscht d und delta und kehrt den Formengrad um (auf K ist sie i mal Hodge-Stern); die Lötung bricht die Uhr auf R^-1 c_L. Lorentzsch ist die Verdrillung nur für so(3) reell, und J bildet sie auf die konjugierte ab; euklidisch ist der Träger nicht J-stabil. Die Translationen der so(3,2) schließen auf die unverdrillte Lorentz-Algebra, und eine verdrillte so(3,2) im direkten Produkt verlangt einen Farbvektor. Mit der Lötung vertauscht vom Standardmodell nur die Farbe. (5) Gitterseite: Die native Vierteldrehung ist zentral und dreht weder Lorentz- noch schwache Indizes. Die Wilson-Fortsetzung des Bestands hat an den Ecken w = 2 p, also den Formengrad als Masse, und behält eine Ecke ohne Geschmacksraum: das Gegenteil eines Kähler-Dirac-Gitters (gescopt auf die eingesetzte Schablone). (6) Folgen: Die Uhranomalie nu = 16 steht ohne P_KD; die Kähler-Dirac-Lesart derselben 16 entfällt. K12 bleibt kinematische Lesart, K15, K16 und K13 sind nicht berührt. Die neun Prämissen bleiben, P_KD wird keine zehnte. Was mit Inhalt bliebe, ist P_loet (eine native Lötform im gemischten Teil von so(16)), nicht unentscheidbar wie P_IF, sondern mit Folgen, die dem Bestand widersprechen (Uhrbruch, Verlust von SU(2)_L x U(1)_Y). Nächster Test: ob irgendeine native Antwort einen nicht verschwindenden Kanal (6,10) trägt; verschwindet er aus Symmetriegründen, ist auch P_loet geschlossen. Nichts ist befördert."
+}

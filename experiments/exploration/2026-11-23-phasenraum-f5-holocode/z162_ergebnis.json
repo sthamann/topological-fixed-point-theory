@@ -1,0 +1,68 @@
+{
+ "checks": {
+  "A1 [E] Sandwich-Kette (Gatter g(u) = (1 + iuP)/(1 + iu), u = tan(phi/2), ohne Tausch) = t(-Theta) t(Theta)^-1 mit Theta = tan(phi/2)/2, für phi = 0,4; 1,0; pi/2; 2,2 (Residuum < 1e-10)": true,
+  "A2 [E] Durchgangs-Kette (Gatter Tausch . g(u)) = Inverses desselben Operators in der anderen Schichtfolge mit Theta = cot(phi/2)/2 (Residuum < 1e-10)": true,
+  "A3 [E] Korrektur zu z159 E1: Die Zuordnung Theta = cot(phi/2)/2 passt für die Sandwich-Kette nur bei phi = pi/2 (kleinstes Residuum sonst 0,706); z121 (Theta = tau/2) ist richtig": true,
+  "A4 [E] Dualität: Tausch . g(u) = Phase . g(-1/u) (symbolisch); der Tausch bildet Theta auf 1/(4 Theta) ab": true,
+  "A5 [E] Tausch . g(u) ist proportional zu g(u)^-1 genau für u^2 = 1, also phi = +-pi/2: P_viertel ist der selbstduale Punkt Theta = 1/2 (Lösungen u = -1, 1)": true,
+  "B1 [E] Zwei Vierteltransfers: B^2 a_k B^-2 = i b_k; W = B^2 R (R = i^N) erfüllt W a W^-1 = b, W b W^-1 = a, W^2 = 1. Also B^2 = Tausch . R^-1": true,
+  "B2 [E] Durchgang B E B = Tausch . R^-1 . (B^+ E B); die Uhr ist zentral und vertauscht mit dem Gatter": true,
+  "B3 [E] Im neutralen Sektor (je Naht ein Teilchen) ist das Sandwich-Gatter unitär und hat die relative Phase e^(-i phi) zwischen den zwei Tauschsektoren: g(u) mit u = tan(phi/2), wie in z159": true,
+  "C1 [E] Quasienergie eines Magnons: omega = eps +- 2 arccos(cos(eps/2) cos(K/2)), K = Impuls der Zweinahtzelle (eps = 0,05; 0,2; 1,1; pi/2; Abweichung < 1e-10)": true,
+  "C2 [E] Für kleines eps ist das die Dirac-Dispersion omega - eps = +-sqrt(eps^2 + cos(eps/2) K^2 + ...): Masse m a = eps je Schritt, Lichtgeschwindigkeit eine Zelle je Schritt bis auf O(eps^2)": true,
+  "C3 [E] Der native Zustand e^(4 pi S^z)/Z (z159) ist ein verdünntes Magnongas: Dichte 1/(1 + e^(4 pi)) = 3,487e-06 je Naht": true,
+  "D1 [E] Gaußscher Zustand: kappa = 0; nach beliebiger bilinearer (quasifreier) Entwicklung weiter kappa = 0": true,
+  "D2 [E] Das Gatter erzeugt aus ungleichen Gaußschen Nähten kappa != 0 (phi = 0,4; 1,0; pi/2; 2,2: -0,00152, -0,00811, -0,01546, -0,02076): Es ist kein quasifreier Schritt": true,
+  "D3 [E] Auf dem Produkt gleicher nativer Nähte wirkt das Gatter für jedes phi trivial (z159): Der native Zustand kann den Winkel nicht messen": true,
+  "E1 [N] Bethe-Dichte des antiferromagnetischen Vakuums: rho(x) = 1/(2 cosh(pi x)) löst rho + K*rho = (1/2pi)/(x^2 + 1/4) mit K = (1/pi)/(1 + x^2) (vier Stützstellen, Abweichung < 1e-6)": true,
+  "E2 [L] Am selbstdualen Punkt Theta = 1/2 ist m a = 0,8198 (Kontinuumsformel 4 e^(-pi/2) = 0,8315): eine Skala, keine Trennung": true,
+  "E3 [N] Durchgangskette mit Theta = cot(eps/2)/2: pi Theta = 1/alpha verlangt eps = 2 arctan(pi alpha/2) = 0,02292431; mit g^2 = 4 pi alpha ist eps/g^2 = 0,249989 (ein Viertel bis auf 4e-5)": true,
+  "E4 [N] Mit exakt eps = pi alpha: m a = 4 e^(-1/alpha) mal 1,00602 (= e^(pi^2 alpha/12))": true,
+  "E5 [N] Gegenprobe gegen Zahlenspielerei: Von sechs naheliegenden Wahlen eps = c alpha trifft genau eine (c = pi) den Exponenten 1/alpha; der Treffer ist die Wahl einer Zahl, kein Beweis": true,
+  "E6 [N] Empfindlichkeit: d ln(m a)/d ln(eps) = 137,05; ein Prozent in eps ändert die Skala um den Faktor 3,94. Prüfbar ist die Lesart nur, wenn eps hergeleitet wird": true,
+  "E7 [C: P_eps, P_see] Gegen das Ledger R_vac M = 2 pi e^(1/alpha): Gitterabstand a M = 25,28 (R_vac = 1/m) oder 4,024 (R_vac = 2 pi/m), also a^2/G = 16067 oder 407. Die sieben nativen Wege geben 0,2 bis 24: Der Vorfaktor ist nicht getroffen; aus der freien Zahl 10^123 würde eine Zahl zwischen 10 und 10^5": true,
+  "E8 [N negativ] Leiter: Für SU(N)-Ketten ist der Exponent 2 pi Theta/N [L]. Bei festem Theta gäbe N = 2 den Exponenten 1/alpha; A_EW = 27,5259 verlangte N = 9,957, keine ganze Zahl und kein natives N": true,
+  "E9 [N] Zählweg zum Vergleich: R_vac^2/G = 32 pi^3 e^(2/alpha) ist die Dimension eines Raums von 405,4 Qubits; als Anzahl von Nähten (P_N aus z158) wäre es eine freie Zahl, als Zustandszahl eine endliche Aufgabe": true
+ },
+ "befunde": {
+  "A": "Theta = tan(phi/2)/2 (Sandwich), cot(phi/2)/2 (Durchgang)",
+  "B": "B^2 = Tausch . R^-1",
+  "C": "Dirac-Teilchen mit m a = eps",
+  "D": "Wechselwirkung liegt nicht in den nativen Daten",
+  "E": "selbstdual: eine Skala; schwache Kopplung: Hierarchie"
+ },
+ "zahlen": {
+  "A_residuen": {
+   "sandwich": "1.0e-15",
+   "durchgang": "1.1e-15",
+   "falsche_zuordnung_min": "0,706"
+  },
+  "C_magnondichte_nativ": "3,487e-06",
+  "D_kumulante_nach_gatter": [
+   "-0,00152",
+   "-0,00811",
+   "-0,01546",
+   "-0,02076"
+  ],
+  "E_ma_selbstdual": "0,8198",
+  "E_eps_stern": "0,02292431",
+  "E_T_stern": "0,249989",
+  "E_verhaeltnis_bei_eps_pi_alpha": "1,00602",
+  "E_exponent_je_wahl": {
+   "alpha": "3,1416",
+   "2 alpha": "1,5708",
+   "pi alpha": "1,0000",
+   "4 alpha": "0,7853",
+   "2 pi alpha": "0,4999",
+   "4 pi alpha": "0,2498"
+  },
+  "E_empfindlichkeit": "137,05",
+  "E_a2_durch_G": {
+   "R_vac = 1/m": "16067",
+   "R_vac = 2 pi/m": "407"
+  },
+  "E_gruppenrang_fuer_EW": "9,957",
+  "E_zaehlweg_bits": "405,4"
+ },
+ "urteil": "Die Diagnose trägt, die neue Strategie ist konsistent, aber kein Treffer. (1) Die Wellen A bis C konnten keine Prämisse entfernen, weil die nativen Daten Gaußsch sind: Wechselwirkung beginnt am Gatter, und der native Zustand ist gegen dessen Winkel blind. (2) P_viertel ist der selbstduale Punkt der Kompositionsfamilie. Dort gibt es eine einzige Skala; die freie Zahl G/R_vac^2 kann aus dem Kandidaten mit P_viertel grundsätzlich nicht als 10^-123 herauskommen, sondern nur über eine Anzahl (P_N). (3) Die Familie hat ein zweites Ende: die Durchgangs-Komposition B E B mit schwacher Phase eps. Sie ist vom Sandwich um zwei native Viertelschritte verschieden (Tausch mal inverse Uhr), ihre Anregung über dem Referenzzustand ist ein Dirac-Teilchen mit m a = eps, und ihre Vakuumskala ist exponentiell klein, m a = 4 e^(-(pi/2) cot(eps/2)). Das ist die Form der Ledger-Hierarchie e^(-1/alpha). (4) Der Preis: P_viertel entfällt oder gilt nur am Gitterende; neu sind P_durch, P_eps (eps = pi alpha, eine Zahl auf eine Zahl gelegt, Empfindlichkeit 137) und P_see. Der Vorfaktor ist um den Faktor 20 bis 8e4 nicht getroffen, die zweite Skala der Leiter gar nicht. (5) Für den Kandidaten heißt das: P_G lässt sich von einer freien Zahl 10^123 auf die Frage 'warum eps = g^2/4' und einen Vorfaktor der Ordnung 10^2 bis 10^4 umstellen. Das ist eine Umformulierung mit prüfbarem nächsten Schritt (eps aus der geeichten Uhr mit dem gelösten alpha), keine Herleitung. Nichts ist befördert."
+}

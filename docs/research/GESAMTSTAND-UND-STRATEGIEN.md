@@ -644,6 +644,75 @@ gesteuerte Uhr zwischen den Eigenmoden der Vierteldrehung P_sym und gleichwertig
   der Limes λ → 0; (d) Indexoperator auf K gegen d − δ (P_KD); (e) Singleton-Lesart: zweite Quantisierung des
   Singletons und Höhere-Spin-Dualität als Test für P_X. Zurückgestellt: weitere Gitter für K12, weitere G-Zeilen.
 
+### Nachtrag z158–z161: Welle C
+
+- **Spin-2-Austausch (z158):** Der freie Transfer überträgt den Sektor, aber als Stromüberlagerung, nicht als
+  Teilchen. „Faktorisiert ⇒ P_X widerlegt“ (z156) gilt nicht. P_X (eng) wird zu P_2Q + P_sing; die Zahl der Arten
+  wäre P_N, und der Ledgerwert verlangte N = 1,08·10¹²³.
+- **Geeichte Schrittkette (z159):** exakt das Destri–de-Vega-Gitter aus z121. Die native Naht ist für jeden Winkel
+  stationär, weil ihr modularer Erzeuger ein Cartan-Element der Flavour-Symmetrie ist. Der Winkel folgt nicht.
+- **Kopplung zweier Ketten (z160):** ionisches Hubbard-Modell, nicht integrabel. In der elliptischen Familie ist die
+  Masse zwischen den rationalen Enden 8e^(−πK/λ) [L].
+- **Indexoperator (z161):** P_KD ist geschlossen; vier native Daten sprechen gegen die Verdrillung.
+- **Gemeinsamer Befund:** wieder keine Prämisse weniger. Nach zwölf Wegen in drei Wellen ist das kein Zufall mehr.
+
+### Nachtrag z162: Diagnose und Neuausrichtung
+
+**Warum die bisherige Linie feststeckt.**
+
+- **D1, Gaußsche Daten [E]:** Zustand, modulare Erzeuger, Uhr und so(3,2) sind bilinear. Bilineare Entwicklung
+  erzeugt keine Kumulante. Wechselwirkung beginnt am Gatter, und der native Zustand ist gegen dessen Winkel blind.
+  Aus der einzelnen Naht folgt Kinematik, keine Kopplung.
+- **D2, selbstdualer Punkt [E/L]:** Sandwich (B⁺EB) und Durchgang (BEB) sind eine Familie, verschieden um
+  B² = Tausch·R⁻¹. Der Gitterparameter ist Θ = tan(φ/2)/2 bzw. cot(φ/2)/2. P_viertel ist der selbstduale Punkt
+  Θ = 1/2. Dort ist m·a = 0,82: eine Skala. G/R_vac² kann mit P_viertel nativ nur von der Ordnung eins sein.
+- **D3, ungenutzte Zahlen:** α und die Leiter e^(−A) wurden als „gelöst, nicht neu öffnen“ behandelt und deshalb nie
+  als Eingabe der Dynamik benutzt. Die offenen Zahlen des Kandidaten sind aber genau diese Größen.
+
+**Neue Strategien, nach Rang.** Jede ändert etwas an der Fragestellung, nicht nur an der geprüften Prämisse.
+
+1. **S-A, Skala aus Kopplung.**
+   - Idee: Die Hierarchie ist die dynamisch erzeugte Vakuumskala der Kompositionskette am schwach gekoppelten Ende,
+     m·a = 4e^(−(π/2)cot(ε/2)) [L]. Mit ε = πα ist das 4e^(−1/α)·1,006.
+   - Anders als bisher: Die Kompositionsregel wird geändert (Durchgang statt Sandwich), und α geht als Eingabe ein.
+   - Vorprüfung (z162): Form und Exponent passen unter P_durch, P_eps, P_see. Der Vorfaktor passt nicht (a²/G = 4·10²
+     bis 1,6·10⁴ gegen nativ 0,2 bis 24), die zweite Ledgerskala auch nicht (Rang 9,957).
+   - Entscheidende Rechnung: ε aus der geeichten Uhr (z155) mit g² = 4πα. Ist die Schrittdauer in Einheiten des
+     Gauß-Gesetzes ein Viertel, ohne Wahl?
+   - Erfolg: ε = g²/4 folgt. Dann wird P_G zu einem Vorfaktor, und P_viertel wird durch P_durch ersetzt.
+   - Abbruch: Die Normierung ist frei. Dann ist P_eps eine Zahl auf eine Zahl gelegt (Empfindlichkeit 137) und die
+     Strategie nur eine Umformulierung.
+   - Bewegt: P_uhr, P_G, K15, K16.
+2. **S-B, Zustand der Welt.**
+   - Idee: Über dem Referenzzustand ist die Anregung der Durchgangskette ein Dirac-Teilchen mit m·a = ε; der native
+     Zustand ist ein Magnongas der Dichte 3,5·10⁻⁶ je Naht. Die Hierarchie lebt dagegen im antiferromagnetischen See.
+   - Entscheidende Rechnung: reduzierter Ein-Naht-Zustand des Sees gegen die nativen Niveaus π und 3π.
+   - Erfolg: verträglich. Dann ist der See der Kandidat für den Tomita-Partner (P_see ersetzt P_IF-Teile).
+   - Abbruch: unverträglich. Dann lebt die Welt am Referenzzustand, S-A liefert die Dirac-Kinematik (K16), aber keine
+     Hierarchie.
+   - Bewegt: K16, T3 (ein Feld statt Arten), P_G.
+3. **S-C, laufende Kopplung als Ziel.**
+   - Idee: Die gelöste α-Gleichung enthält den Einschleifen-Koeffizienten b₁ = 41/10. Jede Dynamik des Kandidaten muss
+     ihn als Vakuumpolarisation liefern.
+   - Entscheidende Rechnung: Ladungsantwort der geeichten Durchgangskette mit dem Inhalt 3·16 plus Higgs.
+   - Abbruch: Am selbstdualen Punkt läuft nichts; wenn auch am schwachen Ende kein Logarithmus entsteht, ist die
+     1+1-Kette der falsche Träger der Eichdynamik (K15 braucht dann vier Dimensionen zuerst).
+   - Bewegt: K15, die Verbindung des Kandidaten zum α-Block.
+4. **S-D, Zählweg.**
+   - Idee: R_vac²/G = 32π³e^(2/α) ist die Dimension eines Raums von 405,4 Qubits. Als Anzahl von Nähten ist das eine
+     freie Zahl (P_N), als Zustandszahl eines endlichen Objekts eine endliche Aufgabe.
+   - Entscheidende Rechnung: Ist e^(2/α) im α-Block eine native Zustandssumme (die Randgleichung ist eine
+     Stationaritätsbedingung von log Z)?
+   - Abbruch: kein natives Objekt mit dieser Dimension. Gefahr der Zahlenspielerei ist hier am größten.
+5. **S-E, No-Go festschreiben.** D1 und D2 als Regeln in OriginLab: Szenarien, die eine Kopplung aus der einzelnen
+   Naht herleiten wollen, sind geschlossen; Szenarien mit P_viertel können G nicht erklären.
+6. **S-F, vier Dimensionen aus dem Kollektiv.** Zurückgestellt, bis S-A und S-B entschieden sind: Die Durchgangskette
+   ist ein 1+1-Lichtkegelgitter; 3+1 verlangte Durchgänge in drei unabhängigen Richtungen.
+
+**Ehrliche Einordnung.** S-A ist kein Treffer. Sie stellt P_G von einer freien Zahl 10¹²³ auf die Frage „warum
+ε = g²/4“ und einen Vorfaktor um. Ihr Wert liegt darin, dass sie die drei Diagnosen zugleich angeht und eine kleine
+entscheidende Rechnung hat. Aufgegeben wird die Linie „Prämisse aus der einzelnen Naht herleiten“.
+
 ### Was die Runde bedeutet
 
 - **Der Kandidat** braucht neun Prämissen: A*, I_step, P_lift, P_IF, P_univ, P_uhr, P_ord, P_curv und P_G als freie

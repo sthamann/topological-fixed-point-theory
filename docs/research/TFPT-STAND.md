@@ -619,6 +619,21 @@ hergeleitet, 7 unter benannter Lesart, keines gescheitert, offen oder gesetzt. K
       - Elliptische Klasse (Z157): Die Nahtkette liegt wörtlich auf w² = 1 − z⁴; c = ϖ ist die Periode über den
         Lückenzyklus. Auf dieser Kurve ist am Automorphiebild der Kreuzung für jeden Kreuzungsparameter δ_y = −i; das
         Z120-Gatter ist das rationale Ende λ → 0, die Naht das freie Ende. P_viertel wird P_aut, nicht hergeleitet.
+    - Welle C nach H6h50 (Z158–Z161) und Neuausrichtung (Z162): keine Prämisse entfällt; der Grund ist benannt.
+      - Spin-2-Austausch (Z158): Der Sektor wird übertragen, aber nicht als Teilchen. Das Kriterium aus Z156 war falsch
+        gestellt. P_X (eng) wird zu P_2Q + P_sing (zweite Quantisierung des Singletons), nicht nativ.
+      - Geeichte Schrittkette (Z159): Sie ist exakt das Destri–de-Vega-Gitter aus Z121. Die native Naht bleibt für
+        jeden Winkel stationär, aus einem trivialen Grund; der Winkel folgt nicht.
+      - Kopplung zweier Ketten (Z160): Die Dichtekopplung ist ein ionisches Hubbard-Modell, nicht integrabel. Die zwei
+        Viertel-Lesarten aus Welle B sind dieselbe Aussage (Weil-Darstellung bei τ = i).
+      - Indexoperator (Z161): P_KD ist geschlossen. Die 16 steht ohne Kähler–Dirac-Lesart.
+      - Diagnose (Z162): Die nativen Daten sind Gaußsch; eine Kopplung beginnt erst am Gatter, und der native Zustand
+        ist gegen dessen Winkel blind. P_viertel ist der selbstduale Punkt der Kompositionsfamilie (Θ = 1/2); dort
+        gibt es eine einzige Skala. Deshalb blieb G/R_vac² auf allen Wegen eine freie Zahl.
+      - Neue Strategie (Z162, bedingt): Am anderen Ende der Familie (Durchgangs-Komposition, schwache Phase ε) ist eine
+        Anregung ein Dirac-Teilchen mit m·a = ε, und die Vakuumskala ist m·a = 4e^(−(π/2)cot(ε/2)) [L]. Das hat die
+        Form der Ledger-Hierarchie e^(−1/α), verlangt aber ε = πα (P_eps), den antiferromagnetischen See (P_see) und
+        trifft den Vorfaktor nicht (a²/G = 4·10² bis 1,6·10⁴ gegen nativ 0,2 bis 24). Kein Treffer, eine Umstellung.
     - Zopfrelation: Sie gilt nur für einkörperige Operatoren (Nahtuhr und Strahlteiler = Ising-Zopfmatrizen). Das
       wechselwirkende Gatter verletzt sie mit Defekt √(3/8). Die Defektstruktur ist endlich (Clifford-Typ). [E]
     - Eichdynamik: Plakettenstruktur und sin²θ_W = 3/8 sind nativ, die absolute Kopplung und die Linkdynamik nicht.
