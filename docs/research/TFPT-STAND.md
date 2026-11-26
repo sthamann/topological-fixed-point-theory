@@ -737,6 +737,18 @@ hergeleitet, 7 unter benannter Lesart, keines gescheitert, offen oder gesetzt. K
       - Verdichtung, keine Herleitung: Form des Gesetzes, Gewicht c₃⁴e^(−2x) und Einfügung bleiben Eingabe. Die
         offenen Zeilen ordnen sich zu zwei Fragen: Zusammensetzung der Nähte (3+1, Gravitation, Dynamik,
         Kontinuum) und Existenz der Naht (K19, K20).
+    - Gesetz und Netz (Z172, 23 Prüfungen; OriginLab-Universen Gesetzesformen und Verklebungen):
+      - Gesetz [E]: Die α-Gleichung ist die Eigenwertgleichung eines Transferoperators auf den drei Paarungen der
+        vier Marken: α/(2c₃²) ist der Perron-Eigenwert von T = c₃Π + λC, λ³ = b₁·ln(1/φ_seam). Π ist die Paarung
+        gegenüberliegender Marken, C der Dreierzyklus bei einer festen Marke; auf den Thetakanälen von E₈ der von S
+        feste Kanal und die Gestalt von ST. Die Eindeutigkeit der Wurzel folgt aus Perron–Frobenius.
+      - Gesetzesform [N]: Von 1092 Transferoperatoren trifft nur dieser; nächster Fehlversuch 24 000 σ. Das native
+        modulare Umlaufgewicht eins gäbe α⁻¹ = 311,6.
+      - Netz [E/N]: Von 18 Verklebungen gibt nur die Naht mit genau einem Partner und Form (2, 2) ein reelles
+        lorentzsches Netz; vier Dimensionen folgen aus der Schnittbedingung 4(n − 3) = 2(n − 2). Euklidischer
+        Partner S⁴ mit gemeinsamem Schnitt S³. Das bestätigt die Verklebung aus Z79, liefert aber keine Skala.
+      - Offen: das Umlaufgewicht b₁·ln(1/φ_seam), die Stärke c₃, die Auswertung von X bei α und 1/α, der
+        Einstein-Koeffizient, T′. Keine volle Lösung.
     - Zopfrelation: Sie gilt nur für einkörperige Operatoren (Nahtuhr und Strahlteiler = Ising-Zopfmatrizen). Das
       wechselwirkende Gatter verletzt sie mit Defekt √(3/8). Die Defektstruktur ist endlich (Clifford-Typ). [E]
     - Eichdynamik: Plakettenstruktur und sin²θ_W = 3/8 sind nativ, die absolute Kopplung und die Linkdynamik nicht.

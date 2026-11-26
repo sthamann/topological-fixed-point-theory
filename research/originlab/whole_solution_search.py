@@ -16,6 +16,10 @@ alpha/2 (analysis 24) q = exp(-2/alpha).
 Targets: alpha^-1 = 137.035999177(21) and rho_Lambda / M_P^4 = 1.134e-123 (3 %), three families, b1 fermion part 4.
 Ledger input that the search does not derive: the form of the alpha equation, the weight c3^4 exp(-2x), the scalar
 part 1/10 of b1, the insertion form Q (1-Q)^(-2h) and the choice of the D5 part for the kernel.
+
+Two further universes (z172). Law forms: transfer operators on the three pairings of the four marks, alpha as
+k c3^2 times the largest real eigenvalue, solved self-consistently. Compositions: the seam doublet with partner
+doublets, the net of seams as the space of lines with a hermitian form or a quaternionic structure.
 """
 from fractions import Fraction as Fr
 from itertools import permutations, product
@@ -251,4 +255,187 @@ def run_whole_solution_search(nmax=SHELLS):
             "ledger_inputs_not_derived": ["form of the alpha equation (cubic, -2 c3^3, 8 c3^6)", "weight c3^4 exp(-2x)",
                                           "scalar part 1/10 of b1", "insertion form Q (1-Q)^(-2h)",
                                           "choice of the D5 factor for the kernel"],
+            "search": res}
+
+
+# ---------------------------------------------------------------------------------------------------------------
+# Law forms (z172): the alpha equation as the eigenvalue equation of a transfer operator on the three pairings of
+# the four marks. Basis: the pairings {01|23}, {02|13}, {03|12}; the second pairs opposite marks.
+
+PAIRINGS = ((1, 1, -1, -1), (1, -1, 1, -1), (1, -1, -1, 1))
+LAW_POOL = ["alpha_measured", "cyclic", "self_loop_opposite", "matter_trace", "seam_response", "irreducible",
+            "unit_e2_over_c3"]
+
+
+def pairing_action(perm):
+    """Matrix of a permutation of the four marks on the three pairing vectors (entries 0, 1, -1)."""
+    out = [[0] * 3 for _ in range(3)]
+    for j, v in enumerate(PAIRINGS):
+        w = [0] * 4
+        for i in range(4):
+            w[perm[i]] = v[i]
+        for i, u in enumerate(PAIRINGS):
+            out[i][j] = sum(a * b for a, b in zip(u, w)) // 4
+    return out
+
+
+def _perron(mat):
+    import numpy as np
+    ev = np.linalg.eigvals(np.array(mat, dtype=float))
+    real = [x.real for x in ev if abs(x.imag) < 1e-12]
+    return max(real) if real else None
+
+
+def law_form_candidates():
+    """T = d D + transport, alpha = k c3^2 * (largest real eigenvalue of T), solved self-consistently because the
+    seam response depends on alpha. The product of the transport weights around its cycle is W."""
+    q_top = 48 * C3 ** 4
+    b1 = 4.1
+
+    def weights(alpha):
+        seam = 4 * C3 / 3 + q_top * exp(-2 * alpha) * (1 - q_top * exp(-2 * alpha)) ** -1.25
+        return {"b1 ln(1/phi_seam)": b1 * log(1 / seam), "4 ln(1/phi_seam)": 4 * log(1 / seam),
+                "ln(1/phi_seam)": log(1 / seam), "b1 ln(1/phi_base)": b1 * log(3 / (4 * C3)),
+                "b1 ln(1/phi_0)": b1 * log(1 / (4 * C3 / 3 + q_top)), "b1 ln(1/phi_seam)/2pi": b1 * log(1 / seam) / (2 * pi),
+                "1 (modular)": 1.0}
+
+    diag = {"none": (0, 0, 0), "opposite": (0, 1, 0), "adjacent": (1, 0, 1), "all": (1, 1, 1)}
+    strength = {"c3/2": C3 / 2, "c3": C3, "2 c3": 2 * C3, "4 c3/3": 4 * C3 / 3}
+    transport = {"3-cycle": ((1, 0), (2, 1), (0, 2)), "swap adjacent": ((2, 0), (0, 2)),
+                 "swap with opposite": ((1, 0), (0, 1)), "identity": ((0, 0), (1, 1), (2, 2))}
+    objs = []
+    for dn, dv in diag.items():
+        for sn, sv in (strength.items() if dn != "none" else [("-", 0.0)]):
+            for tn, edges in transport.items():
+                for wn in weights(1 / 137.0):
+                    for k in (1, 2, 4):
+                        alpha = 1 / 137.0
+                        for _ in range(60):
+                            w = weights(alpha)[wn]
+                            lam = w if tn == "identity" else w ** (1.0 / len(edges))
+                            mat = [[sv * dv[i] if i == j else 0.0 for j in range(3)] for i in range(3)]
+                            for i, j in edges:
+                                mat[i][j] += lam
+                            t = _perron(mat)
+                            alpha = k * C3 ** 2 * t
+                        pull = (1 / alpha - ALPHA_INV_MEASURED) / ALPHA_INV_SIGMA
+                        cl = {c for c, ok in (
+                            ("alpha_measured", abs(pull) < 3), ("cyclic", tn == "3-cycle"),
+                            ("self_loop_opposite", dn == "opposite"), ("matter_trace", wn.startswith("b1")),
+                            ("seam_response", "phi_seam" in wn), ("irreducible", tn == "3-cycle"),
+                            ("unit_e2_over_c3", k == 2)) if ok}
+                        objs.append({"label": f"{sn} on {dn} | {tn} | {wn} | alpha = {k} c3^2 t",
+                                     "alpha_inverse": 1 / alpha, "alpha_pull_sigma": pull, "clauses": cl})
+    return objs
+
+
+def run_law_form_search():
+    objs = law_form_candidates()
+    res = search(objs, LAW_POOL, lambda o: 0, lambda o: o["label"])
+    hits = sorted(o["label"] for o in objs if "alpha_measured" in o["clauses"])
+    miss = sorted((o for o in objs if "alpha_measured" not in o["clauses"]), key=lambda o: abs(o["alpha_pull_sigma"]))
+    return {"status": "LAW_FORMS_SEARCHED", "physical_solution": False, "objects": len(objs), "hits": hits,
+            "nearest_miss": {o["label"]: o["alpha_pull_sigma"] for o in miss[:4]},
+            "not_derived": ["transport weight b1 ln(1/phi_seam) around the cycle", "why alpha is the eigenvalue",
+                            "strength c3 of the self-loop"], "search": res}
+
+
+# ---------------------------------------------------------------------------------------------------------------
+# Compositions (z172): a seam glued with partners. The seam doublet with k - 1 partner doublets spans C^(2k); the
+# net of seams is the space of lines of P(C^(2k)), with a hermitian form (p, q) or a quaternionic structure.
+
+COMP_POOL = ["net_dim_4", "real_slice", "lorentzian", "euclidean", "one_partner", "balanced_form"]
+
+
+def _klein():
+    """Basis e_ab of the two-forms on C^4, the Klein form and the duality star."""
+    pairs = [(0, 1), (0, 2), (0, 3), (1, 2), (1, 3), (2, 3)]
+    star = {(0, 1): ((2, 3), 1), (2, 3): ((0, 1), 1), (0, 2): ((1, 3), -1), (1, 3): ((0, 2), -1),
+            (0, 3): ((1, 2), 1), (1, 2): ((0, 3), 1)}
+    return pairs, star
+
+
+def _fixed_signature(*linear_parts):
+    """Signature of the Klein form on the common fixed space of the antilinear maps M_i o conj on the two-forms."""
+    import numpy as np
+    pairs, star = _klein()
+    qm = np.zeros((6, 6))
+    for a, (b, s) in star.items():
+        qm[pairs.index(a), pairs.index(b)] = s
+    rows = []
+    for m in linear_parts:
+        m = np.array(m, dtype=float)
+        rows.append(np.block([[m, np.zeros((6, 6))], [np.zeros((6, 6)), -m]]) - np.eye(12))
+    _, sv, vt = np.linalg.svd(np.vstack(rows))
+    null = vt[sum(s > 1e-9 for s in sv):].T
+    if null.shape[1] == 0:
+        return (0, 0)
+    gram = null.T @ np.block([[qm, np.zeros((6, 6))], [np.zeros((6, 6)), -qm]]) @ null
+    mixed = null.T @ np.block([[np.zeros((6, 6)), qm], [qm, np.zeros((6, 6))]]) @ null
+    assert abs(mixed).max() < 1e-9
+    ev = np.linalg.eigvalsh(gram)
+    return (int(sum(ev > 1e-9)), int(sum(ev < -1e-9)))
+
+
+def hermitian_part(signs):
+    """Linear part of omega -> star(Lambda^2 H conj(omega)) for H = diag(signs); squares to det H."""
+    pairs, star = _klein()
+    m = [[0] * 6 for _ in range(6)]
+    for a in pairs:
+        b, s = star[a]
+        m[pairs.index(b)][pairs.index(a)] = s * signs[a[0]] * signs[a[1]]
+    return m
+
+
+def quaternionic_part():
+    """Linear part of the map induced by j(e0) = e1, j(e1) = -e0, j(e2) = e3, j(e3) = -e2."""
+    pairs, _ = _klein()
+    img = {0: (1, 1), 1: (0, -1), 2: (3, 1), 3: (2, -1)}
+    m = [[0] * 6 for _ in range(6)]
+    for a in pairs:
+        (x, sx), (y, sy) = img[a[0]], img[a[1]]
+        s = sx * sy
+        if x > y:
+            x, y, s = y, x, -s
+        m[pairs.index((x, y))][pairs.index(a)] = s
+    return m
+
+
+def composition_candidates(kmax=4):
+    objs = []
+    for k in range(1, kmax + 1):
+        n = 2 * k
+        dim = 2 * (n - 2)                                                   # complex dimension of the space of lines
+        forms = [("hermitian", (n - q, q)) for q in range(0, k + 1)] + [("quaternionic", None)]
+        for kind, sig in forms:
+            if kind == "hermitian":
+                real_dim = 4 * (n - 3) if min(sig) >= 2 else None           # totally null two-planes
+            else:
+                real_dim = 4 * (k - 1)                                      # quaternionic lines, HP^(k-1)
+            real_slice = real_dim is not None and real_dim == dim and dim > 0
+            signature = None
+            if n == 4 and real_slice:
+                part = hermitian_part((1, 1, -1, -1)) if kind == "hermitian" else quaternionic_part()
+                signature = _fixed_signature(part)
+            cl = {c for c, ok in (
+                ("net_dim_4", dim == 4), ("real_slice", real_slice),
+                ("lorentzian", signature is not None and sorted(signature) == [2, 4]),
+                ("euclidean", signature is not None and sorted(signature) == [1, 5]),
+                ("one_partner", k == 2), ("balanced_form", kind == "hermitian" and sig[0] == sig[1])) if ok}
+            objs.append({"label": f"{k - 1} partner | {kind} {sig if sig else ''}".strip(), "net_dimension": dim,
+                         "real_dimension": real_dim, "klein_signature": signature, "clauses": cl})
+    return objs
+
+
+def run_composition_search():
+    objs = composition_candidates()
+    res = search(objs, COMP_POOL, lambda o: 0, lambda o: o["label"])
+    return {"status": "COMPOSITIONS_SEARCHED", "physical_solution": False, "objects": len(objs),
+            "lorentzian": [o["label"] for o in objs if "lorentzian" in o["clauses"]],
+            "euclidean": [o["label"] for o in objs if "euclidean" in o["clauses"]],
+            "real_slices": [o["label"] for o in objs if "real_slice" in o["clauses"]],
+            "signature_without_real_structure": {"(4,0)": _fixed_signature(hermitian_part((1, 1, 1, 1))),
+                                                 "(3,1)": _fixed_signature(hermitian_part((1, 1, 1, -1)))},
+            "common_slice": _fixed_signature(hermitian_part((1, 1, -1, -1)), quaternionic_part()),
+            "not_derived": ["Einstein coefficient", "scale (infinity twistor strength)", "premise T' / I_pos"],
             "search": res}

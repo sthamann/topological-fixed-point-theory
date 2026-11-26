@@ -730,6 +730,28 @@ Yang–Mills-artige Form (Bestand z150), nicht über konforme Gravitation. W5 is
 Flusszahl bleibt eine Wahl. Pflichtenheft und nächste Rechnungen M1 bis M4 stehen in
 `docs/research/GESAMTSTAND-UND-STRATEGIEN.md`, Nachtrag z165.
 
+**Gesetz als Eigenwertgleichung und Netz-Suche (z172, 23 Prüfungen; OriginLab-Universen Gesetzesformen und
+Verklebungen): Das Gesetz hat eine native Operatorform, das Netz ist eindeutig; hergeleitet ist das Gesetz nicht.**
+
+- A1 bis A6 [E]: Die drei Paarungen der vier Marken sind eine orthogonale Basis der Summe-null-Richtungen; S₄ wirkt
+  durch 24 vorzeichenbehaftete Permutationen. Π (Analyse 25) ist der Projektor auf {02|13}. Der Dreierzyklus bei
+  fester Marke vertauscht die Paarungen zyklisch und liegt nicht in D₄. det(t − c₃Π − λC) = t²(t − c₃) − λ³.
+- A7 bis A9 [N]: α = 2c₃² mal größter Eigenwert von T = c₃Π + λC mit λ³ = b₁·ln(1/φ_seam): α⁻¹ =
+  137,0359992168407, t = 2,30470345485719. T ist primitiv (T⁵ > 0), also genau ein positiver Eigenwert.
+  Erneuerungsform 1 = c₃z + b₁·ln(1/φ_seam)·z³.
+- A10 [E/N]: S hält θ₃⁸ fest und vertauscht θ₂⁸, θ₄⁸; T hält θ₂⁸ fest; ST ist ein Dreierzyklus mit Umlaufgewicht
+  eins.
+- B1 bis B5 [N]: 1092 Formen, eine trifft; nächster Fehlversuch 24 000 σ; mit modularem Gewicht eins α⁻¹ = 311,6;
+  mit dem Kanalverhältnis θ₃⁸/θ₂⁸ = 4 als Gewicht α⁻¹ = 175,7.
+- C1 bis C5 [E/N]: 18 Verklebungen; reeller Schnitt nur für n = 4; lorentzsch nur ein Partner mit Form (2, 2)
+  (Klein-Form (2, 4)); (4, 0) gibt (6, 0), (3, 1) keine reelle Struktur; quaternionisch gibt S⁴, gemeinsamer
+  Schnitt (1, 4).
+- D1 bis D3 [E/N]: ε²·G/a² = 4c₃³·e^(−2/α); Bereich wie z164; beide Zahlen aus derselben Funktion X.
+
+**Was das bedeutet.** Die offene Frage des α-Blocks ist auf einen Satz verkürzt: warum das Umlaufgewicht des
+Transports b₁·ln(1/φ_seam) ist. Das Netz bestätigt die Verklebung aus z79 als einzige im Katalog. Näheres in
+`docs/research/GESAMTSTAND-UND-STRATEGIEN.md`, Nachtrag z172.
+
 **Neuordnung, Gesamtlösungs-Suche und Analysen 24, 25 (z171, 22 Prüfungen; OriginLab `whole_solution_search.py`):
 Ein Objekt trifft α und Λ; es ist eine Verdichtung, keine volle Lösung.**
 

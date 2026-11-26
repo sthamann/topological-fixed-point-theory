@@ -1368,6 +1368,67 @@ zweier und mehrerer Nähte aus dem Bestand (Tomita-Partner P_TP, Twistorlinien-F
 Q), jede durchgerechnet bis zu drei Zahlen der Welt: spektrale Dimension 4 mit Reflexionspositivität, kinetischer
 Koeffizient Z in Γ(p) = M + Z·p² gegen den Einstein-Koeffizienten 8π = 1/c₃, und die Λ-Stufe.
 
+### Nachtrag z172: das Gesetz als Eigenwertgleichung und die Netz-Suche
+
+Beide Wege aus dem Nachtrag z171 sind gerechnet (z172, 23 Prüfungen, reproduziert; OriginLab
+`whole_solution_search.py` mit den Universen Gesetzesformen und Verklebungen, neun Tests).
+
+**Das Gesetz hat eine native Operatorform [E].** Die vier Marken haben drei Paarungen: {01|23}, {02|13}, {03|12}.
+Sie bilden eine orthogonale Basis der drei Richtungen mit Summe null. S₄ wirkt darauf durch vorzeichenbehaftete
+Permutationen; die Kleinsche Vierergruppe wirkt diagonal, der Quotient S₃ vertauscht die Paarungen.
+
+- Der Projektor Π der Analyse 25 ist der Projektor auf die Paarung gegenüberliegender Marken {02|13}. Die
+  Vierteldrehung der Marken hält sie fest und vertauscht die anderen beiden.
+- Der Dreierzyklus C, der eine Marke festhält (4 = 3 + 1), vertauscht die drei Paarungen zyklisch. Er liegt nicht
+  in der Symmetrie D₄ der Naht.
+- det(t − c₃Π − λC) = t²(t − c₃) − λ³. Die α-Gleichung ist damit genau die Aussage: **α/(2c₃²) ist der größte
+  Eigenwert des Transferoperators T = c₃Π + λC mit λ³ = b₁·ln(1/φ_seam).** Zahlen: t = 2,30470345485719,
+  λ = 2,29136347807815, α⁻¹ = 137,0359992168407.
+- T ist nichtnegativ und primitiv. Nach Perron–Frobenius gibt es genau einen positiven Eigenwert; die Eindeutigkeit
+  der Wurzel (Ledger EM.FP.01) ist damit eine Struktureigenschaft. Gleichwertig ist die Erneuerungsform
+  1 = c₃z + b₁·ln(1/φ_seam)·z³ bei z = c₃/e².
+- Dieselbe S₃ ist die Modulgruppe modulo Γ(2) auf den drei geraden Thetakanälen von E₈: S hält θ₃⁸ fest und
+  vertauscht θ₂⁸ und θ₄⁸, ST ist ein Dreierzyklus. Π ist also der von S festgehaltene Kanal, C die Gestalt von ST.
+
+**Gesetzesform-Suche [N].** 1092 Transferoperatoren aus denselben Bausteinen (Diagonale: keine, gegenüberliegende
+Paarung, benachbarte, alle; Stärke c₃/2, c₃, 2c₃, 4c₃/3; Transport: Dreierzyklus, zwei Vertauschungen, Identität;
+sieben Umlaufgewichte; drei Einheiten), jeder selbstkonsistent bis α gelöst. Genau einer trifft den Messwert, die
+Ledger-Form. Der nächste Fehlversuch (φ₀ statt φ_seam) liegt 24 000 σ daneben, alle anderen über 100 000 σ.
+Negativ: Mit dem nativen modularen Umlaufgewicht eins ((ST)³ = 1) käme α⁻¹ = 311,6. Die Gestalt des Transports
+ist modular, sein Gewicht nicht.
+
+**Netz-Suche [E/N].** Katalog: die Naht (ein Dublett) mit null bis drei Partnerdubletts, also ℂ²ᵏ, mit hermitescher
+Form (p, q) oder quaternionischer Struktur; das Netz der Nähte ist der Raum der Geraden.
+
+- Die Nullgeraden einer hermiteschen Form sind genau dann ein reeller Schnitt des Geradenraums, wenn
+  4(n − 3) = 2(n − 2), also n = 4: die Naht mit genau einem Partner. Die Dimension vier folgt hier aus der
+  Schnittbedingung.
+- Von 18 Verklebungen gibt genau eine ein lorentzsches Netz: ein Partner mit Form (2, 2). Die Klein-Form hat dann
+  Signatur (2, 4), das Netz die konforme Struktur 3+1.
+- Form (4, 0): Klein-Form (6, 0), keine reellen Geraden. Form (3, 1): keine reelle Struktur.
+- Quaternionische Struktur mit einem Partner: euklidisches Netz S⁴. Der gemeinsame Schnitt mit dem lorentzschen Netz
+  hat Klein-Form (1, 4), eine dreidimensionale Sphäre zum Zeitpunkt null.
+
+Das ist die Verklebung des Bestands (Tomita-Partner mit CCR-Form (2, 2), z79); die Modultheorie liefert genau einen
+Partner. Neu ist nur, dass die Suche sie als einzige findet und die Vier nicht voraussetzt. Die Firewall
+DIMENSION.UPLIFT.FIREWALL.01 und die Prämisse T′ (I_pos) bleiben bestehen.
+
+**Was Gesetz und Netz verbindet [E].** Das Netz gibt Dimension und Signatur, aber keine Zahl. Mit |Λ| = 12ε² in
+nativen Einheiten (z164) und der Λ-Stufe gilt ε²·G/a² = 4c₃³·e^(−2/α); das reproduziert den Bereich aus z164
+(ε² = 10^−123,3 bis 10^−121,2). Die freie Zahl des Netzes und die Kopplung sind Werte derselben Funktion X bei
+1/α und bei α.
+
+**Was offen bleibt.** Hergeleitet ist das Gesetz nicht. Eingabe bleiben das Umlaufgewicht b₁·ln(1/φ_seam), die
+Stärke c₃ der Schleife, warum α der Eigenwert ist und warum X bei α und bei 1/α gelesen wird. Das Netz liefert
+weder Skala noch Einstein-Koeffizient. Ursprung der Naht (K19, K20) unberührt. Prüfbank unverändert 13 P / 7 L.
+Keine volle Lösung, nichts befördert.
+
+**Nächster Schritt (ein Weg).** Das Umlaufgewicht herleiten. Zwei schnelle Kandidaten sind schon negativ: das
+modulare Gewicht eins (α⁻¹ = 311,6) und das Verhältnis der Thetakanäle bei τ = i, θ₃⁸/θ₂⁸ = 4 (α⁻¹ = 175,7). Der
+verbleibende Kandidat aus dem Bestand: b₁ ist der Wärmekern-Koeffizient a₄ des Trägers (ALPHA.QUILLEN.PROGRESS.03),
+also ist b₁·ln(1/φ_seam) der Einschleifen-Lauf der Hyperladung über das Skalenverhältnis φ_seam. Zu rechnen ist, ob
+ein Umlauf durch die drei Paarungen genau diesen Skalenschritt macht, mit Q aus z171 als Materieinhalt.
+
 ### Was die Runde bedeutet
 
 - **Der Kandidat** braucht neun Prämissen: A*, I_step, P_lift, P_IF, P_univ, P_uhr, P_ord, P_curv und P_G als freie

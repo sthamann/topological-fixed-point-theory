@@ -38,5 +38,26 @@ class WholeSolutionSearch(unittest.TestCase):
         self.assertEqual(len(self.r["ledger_inputs_not_derived"]), 5)
 
 
+class LawFormsAndCompositions(unittest.TestCase):
+    def test_pairing_action(self):
+        self.assertEqual(w.pairing_action((0, 2, 3, 1)), [[0, 0, 1], [1, 0, 0], [0, 1, 0]])
+        self.assertEqual(w.pairing_action((1, 2, 3, 0)), [[0, 0, 1], [0, -1, 0], [-1, 0, 0]])
+
+    def test_law_form_is_unique(self):
+        r = w.run_law_form_search()
+        self.assertEqual(r["objects"], 1092)
+        self.assertEqual(r["hits"], ["c3 on opposite | 3-cycle | b1 ln(1/phi_seam) | alpha = 2 c3^2 t"])
+        self.assertTrue(all(abs(v) > 1e4 for v in r["nearest_miss"].values()))
+        self.assertFalse(r["physical_solution"])
+
+    def test_compositions(self):
+        c = w.run_composition_search()
+        self.assertEqual(c["lorentzian"], ["1 partner | hermitian (2, 2)"])
+        self.assertEqual(c["euclidean"], ["1 partner | quaternionic"])
+        self.assertEqual(c["signature_without_real_structure"], {"(4,0)": (6, 0), "(3,1)": (0, 0)})
+        self.assertEqual(c["common_slice"], (1, 4))
+        self.assertFalse(c["physical_solution"])
+
+
 if __name__ == "__main__":
     unittest.main()

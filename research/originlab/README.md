@@ -248,6 +248,15 @@ clauses no survivor reaches.
   P_G stays a free pure number G/R_vac^2: clock trace, entanglement equilibrium, induced gravity and double copy give
   rows that do not agree (z127, z136, z137). Still no survivor reaches graviton or modular statistics. Test updated.
 
+Law forms and compositions (H6h50, z172): two further universes in `whole_solution_search.py`.
+`run_law_form_search()` enumerates 1092 transfer operators on the three pairings of the four marks (diagonal part,
+strength, transport, cycle weight, unit) and solves each self-consistently for alpha; exactly one reaches the
+measured value, T = c3 Pi + lambda C with lambda^3 = b1 ln(1/phi_seam), and the nearest miss is 24000 sigma away.
+`run_composition_search()` enumerates 18 gluings of the seam doublet with partner doublets (hermitian form or
+quaternionic structure) and computes the net of seams as the space of lines; only one partner with form (2,2) gives
+a real Lorentzian net, and it is four-dimensional. The cycle weight, the scale and the Einstein coefficient are not
+derived; `physical_solution` stays false.
+
 Whole-solution search (H6h50, z171): `whole_solution_search.py` evaluates every catalogue object to the measured
 values instead of sorting clauses. Catalogue: clock class or clock insertion, family projection by an irreducible
 representation of S4 (Weyl group of A3 on the four spinor weights), three functionals (shell trace, minus log of the
