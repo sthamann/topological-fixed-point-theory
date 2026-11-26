@@ -749,6 +749,14 @@ hergeleitet, 7 unter benannter Lesart, keines gescheitert, offen oder gesetzt. K
         Partner S⁴ mit gemeinsamem Schnitt S³. Das bestätigt die Verklebung aus Z79, liefert aber keine Skala.
       - Offen: das Umlaufgewicht b₁·ln(1/φ_seam), die Stärke c₃, die Auswertung von X bei α und 1/α, der
         Einstein-Koeffizient, T′. Keine volle Lösung.
+    - Kurskorrektur und Abstand zur Komplettlösung (Z173, 8 Prüfungen; OriginLab `complete_solution_distance`):
+      - α ist gelöst und kein Ziel; Z171 und Z172 bleiben als Verdichtung stehen.
+      - Komplettlösung heißt: alle zwölf Klauseln, nur A\*, keine freie Zahl, K19 und K20 geschlossen. Abstand der
+        besten Szenarien: 2 fehlende Klauseln, 1 freie Zahl, 7 Annahmen, dazu K19 und K20, zusammen elf Punkte.
+      - Fünf Fragen: Ursprung (K19, K20), Zusammensetzung (P_univ, P_uhr, P_ord), Zuordnung (I_step, P_lift),
+        Gravitation (P_curv, P_G, Graviton), Statistik (modulare Statistik). P_IF ist Konvention.
+      - Kernstrategie: alles aus der Standardform des Nahtzustands. Sie ist die diagonale der 27
+        Vervollständigungen (modular invariant, 16 als Skalar) und Kandidat für Statistik und Zusammensetzung.
     - Zopfrelation: Sie gilt nur für einkörperige Operatoren (Nahtuhr und Strahlteiler = Ising-Zopfmatrizen). Das
       wechselwirkende Gatter verletzt sie mit Defekt √(3/8). Die Defektstruktur ist endlich (Clifford-Typ). [E]
     - Eichdynamik: Plakettenstruktur und sin²θ_W = 3/8 sind nativ, die absolute Kopplung und die Linkdynamik nicht.

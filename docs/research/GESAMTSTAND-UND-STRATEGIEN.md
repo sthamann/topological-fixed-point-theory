@@ -1429,6 +1429,58 @@ verbleibende Kandidat aus dem Bestand: b₁ ist der Wärmekern-Koeffizient a₄ 
 also ist b₁·ln(1/φ_seam) der Einschleifen-Lauf der Hyperladung über das Skalenverhältnis φ_seam. Zu rechnen ist, ob
 ein Umlauf durch die drei Paarungen genau diesen Skalenschritt macht, mit Q aus z171 als Materieinhalt.
 
+### Nachtrag z173: Kurskorrektur, Abstand zur Komplettlösung und Kernstrategie
+
+**Kurskorrektur.** Die Nachträge z171 und z172 haben am α-Block gearbeitet. α ist ein gelöster Block und keine Lücke;
+die „nächsten Schritte" dort (Umlaufgewicht herleiten) sind keine Pflicht und werden nicht weiterverfolgt. Die
+Ergebnisse bleiben als Verdichtung stehen. Ziel ist die Komplettlösung.
+
+**Was die Komplettlösung ist [E].** In den Begriffen der Programmsuche: ein Szenario mit allen zwölf Klauseln, das
+allein auf der Annahme A\* steht, keine freie Zahl setzt und die Bankzeilen K19 und K20 schließt.
+
+**Abstand als Kennzahl (z173, 8 Prüfungen; OriginLab `complete_solution_distance`).** Die Programmsuche gibt jetzt
+für jeden Lauf den Abstand der besten Szenarien aus: fehlende Klauseln, freie Zahlen, Annahmen außer A\*.
+
+- Stand: **2 fehlende Klauseln, 1 freie Zahl, 7 Annahmen, dazu K19 und K20: elf offene Punkte.**
+- P_IF zählt nicht mehr als Annahme. Die zwei Verklebungen D₅ + A₃ → E₈ gehen durch Ladungskonjugation einer Seite
+  ineinander über und geben beide E₈ (z144, z168). Das Bit sagt nur, welche von zwei spiegelgleichen Welten links
+  heißt; es ist eine Konvention.
+- Kein offener Punkt liegt in einem gelösten Block.
+
+**Die elf Punkte in fünf Fragen.**
+
+| Frage | Punkte | Was sie schließt |
+| --- | --- | --- |
+| Ursprung | K19, K20 | Was erzwingt die Naht mit Defekt im Zustand des Ausgangsprozesses; ein Elternoperator für Naht, Uhr und Partner. |
+| Zusammensetzung | P_univ, P_uhr, P_ord | Wie zwei Nähte zusammenwirken: Paritätserhaltung, Phase als Funktion der Uhrwerte, Ordnung. |
+| Zuordnung | I_step, P_lift | Was auf der Naht was in der Physik ist: Schritt gleich Spinorindex, Uhr gleich ℤ₄ der 16. |
+| Gravitation | P_curv, P_G, Klausel Graviton | Krümmung mit festem Koeffizienten und die reine Zahl G/R_vak². |
+| Statistik | Klausel modulare Statistik | Eine Regel, die zugleich chiral und modular ist. |
+
+**Kernstrategie: eine Quelle.** Alles wird aus der Standardform des Nahtzustands rekonstruiert (GNS und
+Tomita–Takesaki), wie es die Leitlinie verlangt. Sie liefert in einem Stück den Partner, die Zeit, positive
+Vielfachheiten und eine Vervollständigung:
+
+- Die Standardform ⊕ H_a ⊗ H̄_a über die 16 Uhrsektoren ist genau eine der 27 Vervollständigungen aus z170, die
+  diagonale. Sie ist bosonisch, also modular invariant, mit allen 16 Sektoren [E].
+- Preis: Die 16 und die 4 sind dort Skalare (Dimension 5/4 und 3/4). Der Spin kommt dann aus der Helizität auf der
+  Geraden (z168), nicht aus der Statistik der Naht.
+- Derselbe Partner gibt das einzige reelle lorentzsche Netz des Katalogs (z172) und macht die Paritätserhaltung
+  nativ (z130).
+
+Damit ist die Standardform der gemeinsame Kandidat für Statistik und Zusammensetzung, also für vier der elf Punkte.
+Eingetragen ist er noch nicht.
+
+**Reihenfolge.**
+
+1. Standardform durchrechnen: Chiralität über den Linienindex, Uhrphase und Ordnung der Zusammensetzung. Erfolg
+   heißt bis zu vier Punkte weniger; Misserfolg schließt die diagonale Vervollständigung mit Geltungsbereich aus.
+2. Zuordnung: P_lift gegen Sp R = 0 tauschen (z170) und prüfen, ob Sp R = 0 aus A\* folgt (⟨T⟩ = 0).
+3. Gravitation: erster Hauptsatz der Standardform (z136) als Quelle des festen Koeffizienten.
+4. Ursprung: K19 und K20 mit dem, was 1 bis 3 übrig lassen.
+
+Prüfbank unverändert 13 P / 7 L. Keine Komplettlösung, nichts befördert.
+
 ### Was die Runde bedeutet
 
 - **Der Kandidat** braucht neun Prämissen: A*, I_step, P_lift, P_IF, P_univ, P_uhr, P_ord, P_curv und P_G als freie

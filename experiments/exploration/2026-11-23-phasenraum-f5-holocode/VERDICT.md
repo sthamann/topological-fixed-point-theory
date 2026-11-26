@@ -730,6 +730,21 @@ Yang–Mills-artige Form (Bestand z150), nicht über konforme Gravitation. W5 is
 Flusszahl bleibt eine Wahl. Pflichtenheft und nächste Rechnungen M1 bis M4 stehen in
 `docs/research/GESAMTSTAND-UND-STRATEGIEN.md`, Nachtrag z165.
 
+**Kurskorrektur und Abstand zur Komplettlösung (z173, 8 Prüfungen; OriginLab `complete_solution_distance`): elf
+offene Punkte in fünf Fragen; α ist kein Ziel.**
+
+- A1 bis A3 [E]: Ziel ist ein Szenario mit allen zwölf Klauseln, nur A\*, ohne freie Zahl, mit K19 und K20. Abstand
+  der besten der 108 Szenarien: 2 fehlende Klauseln (Graviton, modulare Statistik), 1 freie Zahl (P_G), 7 Annahmen.
+  P_IF ist Konvention (z144, z168).
+- B1, B2 [E]: fünf Fragen: Ursprung (K19, K20), Zusammensetzung (P_univ, P_uhr, P_ord), Zuordnung (I_step, P_lift),
+  Gravitation (P_curv, P_G, Graviton), Statistik. Kein Punkt liegt in einem gelösten Block.
+- C1 bis C3 [E/N]: Die Standardform des Nahtzustands ist die diagonale der 27 Vervollständigungen: bosonisch,
+  modular invariant, alle 16 Sektoren; die 16 und die 4 sind dort Skalare. Derselbe Partner gibt das einzige
+  lorentzsche Netz (z172).
+
+**Was das bedeutet.** Die Programmsuche misst ab jetzt jede Runde am Abstand zur Komplettlösung. Kernstrategie und
+Reihenfolge stehen in `docs/research/GESAMTSTAND-UND-STRATEGIEN.md`, Nachtrag z173.
+
 **Gesetz als Eigenwertgleichung und Netz-Suche (z172, 23 Prüfungen; OriginLab-Universen Gesetzesformen und
 Verklebungen): Das Gesetz hat eine native Operatorform, das Netz ist eindeutig; hergeleitet ist das Gesetz nicht.**
 

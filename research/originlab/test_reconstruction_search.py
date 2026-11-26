@@ -312,5 +312,19 @@ class ReconstructionSearch(unittest.TestCase):
         self.assertEqual(self.result["objects_enumerated"], 54 + 66 + 10 + 6 + 4 + 46080)  # + doublets and position spaces (H6h40)
 
 
+class CompleteSolutionDistance(unittest.TestCase):
+    def test_distance_and_frontier(self):
+        import reconstruction_search as rs
+        d = rs.complete_solution_distance()
+        self.assertFalse(d["complete"])
+        self.assertEqual(d["distance"], {"missing_clauses": 2, "free_numbers": 1, "premises_beyond_axiom": 7})
+        self.assertTrue(d["conventions"]["P_IF"]["holds"])
+        self.assertEqual(d["open_total"], 11)
+        self.assertEqual(d["by_question"], {"origin": ["K19", "K20"], "composition": ["P_ord", "P_uhr", "P_univ"],
+                                            "gravity": ["P_G", "P_curv", "graviton"],
+                                            "identification": ["I_step", "P_lift"],
+                                            "statistics": ["modular_statistics"]})
+
+
 if __name__ == "__main__":
     unittest.main()

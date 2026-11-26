@@ -1275,6 +1275,76 @@ def scenario_candidates(root=None):
                   "r_order": r_order, "native_lorentz": native_lorentz}
 
 
+# H6h50 (z173): the complete solution as the target of the same machine. A scenario is complete when it has every clause
+# of SCENARIO_POOL, rests on the axiom alone and sets no free number. The distance of a scenario is the triple (missing
+# clauses, free numbers, premises beyond the axiom). A convention is a bit whose two values give isomorphic scenarios;
+# it is reported, not counted.
+AXIOM = "A*"
+CONVENTIONS = [
+    ("P_IF", "z144_ergebnis.json", "the two gluings D5 + A3 -> E8 are exchanged by the charge conjugation of one side and "
+     "both give E8: the bit says which of two mirror-isomorphic worlds is called left",
+     lambda d: _check_named(d, "tauschen die beiden Lagrangeschen") and _check_named(d, "beide Verklebungen geben 240 Wurzeln")),
+]
+# what would close each open item, and what is recorded about it (question: composition, identification, gravity,
+# statistics); recorded candidates are not implications until a result shows them
+FRONTIER = {
+    "graviton": ("gravity", "a spin-2 response derived from the seam with fixed coefficient (a gravity value with status "
+                 "supported); closes together with P_curv and P_G"),
+    "modular_statistics": ("statistics", "a statistics rule that is chiral and modular; recorded candidate: the 16 as "
+                           "clock-defect endpoint of a left-right completion glued by the Tomita conjugation (z170, z130), "
+                           "not yet a scenario value"),
+    "I_step": ("identification", "the doubled diagonal step is the native single step as a theorem (z83)"),
+    "P_lift": ("identification", "the seam clock is the Z4 of the 16 as a theorem; recorded candidate: trace zero pins "
+               "the clock among the classes of E8 (z170), which trades P_lift for the requirement Tr R = 0"),
+    "P_univ": ("composition", "seam parity conserved by every composition as a theorem; native when the second seam is "
+               "the Tomita partner (z130); one partner is the only real Lorentzian net of the catalogue (z172)"),
+    "P_uhr": ("composition", "the composition phase is a function of the clock values as a theorem (z144)"),
+    "P_ord": ("composition", "ordered distinguishable seams as a theorem (z121)"),
+    "P_curv": ("gravity", "a family carrying curvature with fixed coefficient derived from the seam (z100, z115, z128)"),
+    "P_G": ("gravity", "the pure number G/R_vac^2 derived; recorded: one relation eps^2 G/a^2 = 4 c3^3 exp(-2/alpha) from "
+            "the native infinity twistor and the ledger rung (z164, z172), the second relation is missing"),
+}
+
+
+# rows of the H6 bench that the scenario pool does not carry as clauses
+BENCH_OPEN = {
+    "K19": ("origin", "what forces the seam with its defect in the state of the original process; the defect sector is "
+            "modularly required but not energetically preferred (z170)"),
+    "K20": ("origin", "one parent operator from which seam, clock and partner follow"),
+}
+
+
+def complete_solution_distance(root=None):
+    """Distance of the admissible coherent scenarios to the complete solution, the best scenarios and the open items."""
+    root = EXPLORATION if root is None else _Path(root)
+    sc, _ = scenario_candidates(root)
+    conv = {}
+    for name, fname, meaning, pred in CONVENTIONS:
+        path = root / fname
+        conv[name] = {"source": fname, "meaning": meaning, "holds": path.exists() and pred(json.loads(path.read_text()))}
+    not_counted = {AXIOM} | {k for k, v in conv.items() if v["holds"]}
+    rows = []
+    for o in sc:
+        if not {"admissible", "coherent"} <= o["clauses"]:
+            continue
+        missing = [c for c in SCENARIO_POOL if c not in o["clauses"]]
+        extra = o["premises"] - not_counted
+        rows.append(((len(missing), len(extra & FREE_PARAMETER_PREMISES), len(extra)), o["label"], missing, sorted(extra)))
+    least = min(r[0] for r in rows)
+    best = [r for r in rows if r[0] == least]
+    items = sorted({x for r in best for x in r[2] + r[3]})
+    by_question = {"origin": sorted(BENCH_OPEN)}
+    for x in items:
+        by_question.setdefault(FRONTIER.get(x, ("unnamed", ""))[0], []).append(x)
+    return {"target": "all clauses, axiom alone, no free number, bench rows K19 and K20 closed", "scenarios": len(rows),
+            "distance": {"missing_clauses": least[0], "free_numbers": least[1], "premises_beyond_axiom": least[2]},
+            "complete": least == (0, 0, 0) and not BENCH_OPEN, "best": [r[1] for r in best],
+            "open_items": {x: {"question": FRONTIER.get(x, ("unnamed", ""))[0], "closes_with": FRONTIER.get(x, ("", ""))[1],
+                               "recorded": PREMISE_MEANING.get(x, "clause of the scenario pool")} for x in items},
+            "bench_open": {k: {"question": q, "closes_with": t} for k, (q, t) in BENCH_OPEN.items()},
+            "open_total": len(items) + len(BENCH_OPEN), "by_question": by_question, "conventions": conv}
+
+
 class _Survivors:
     """Sorted distinct labels of the objects that satisfy a rule, read lazily from the rule's bit mask."""
 
@@ -1467,6 +1537,7 @@ def run_reconstruction(root=None):
                     f"{len(sc)} scenarios; clauses from OriginLab's R orders and position spaces and from the recorded "
                     "results named in EVIDENCE; pending evidence gives no clause")
     out["universes"]["scenarios"] = res
+    out["complete_solution"] = complete_solution_distance(root)
     h6 = next(o for o in s2 if o["t"] == "0")
     dq = out["universes"]["doublet_states"]["questions"]["+".join(DOUBLET_QUESTION)]
     bq = out["universes"]["normal_bundles"]["questions"]["twistor_line+choice_free"]
