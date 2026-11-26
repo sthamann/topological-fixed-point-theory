@@ -1132,6 +1132,12 @@ IMPLICATIONS = [
      "that fixes the vector; the quarter phase is the Klein twist of the graded standard form",
      lambda d: _check_named(d, "Uhrbahn der Standardvektoren") and _check_named(d, "Mit Oszillatoranteil")
      and _check_named(d, "Klein-Identität")),
+    (lambda sc: True, "P_lift", ("P_zentral",), "z175_ergebnis.json",
+     "among the mu_4 elements of the torus exactly 1, (-1)^F and the two lifts c, c^-1 commute with so(10) + so(6) of the "
+     "two deck halves; order 4 plus commuting gives the clock with Tr R = 0 and R^2 = (-1)^F, the lift branch is a "
+     "convention and 'modulo G_SM' is no longer a separate choice",
+     lambda d: _check_named(d, "A5 [E] Zentralisatorsatz") and _check_named(d, "A9 [E] Was P_lift")
+     and _check_named(d, "A4 [E] Die gewählte Klasse liefert")),
     (lambda sc: sc["gravity"] == "MacDowell-Mansouri: modular Cartan connection", "P_R", ("P_mod", "P_idx"),
      "z127_ergebnis.json", "the clock as trace weight follows from the finite modular weights and the KMS ladder up to "
      "the reading choices P_mod and P_idx", lambda d: all(d["checks"].values())),
@@ -1147,10 +1153,15 @@ PREMISE_MEANING = {
     "P_std": "the composition is a morphism of the graded standard form of one seam: its second seam is the Tomita "
              "partner, and it maps the standard vector into the clock orbit of a native standard vector (z130, z174); "
              "gives P_univ and P_uhr; not derived from A*, and the gate is then a holomorphic-antiholomorphic coupling",
-    "P_paar": "the statistics rule (the Z4 glue) is summed diagonally over a pair of seams, each with its partner; on one "
-              "pair it is anomalous, on four as a whole only exchanged statistics is positive (z174)",
+    "P_paar": "the statistics rule (the Z4 glue) is one-sided and summed diagonally over separately closed seams, each with "
+              "its partner; then anomaly, positivity and normal statistics leave exactly two pairs among N = 1..12 (z174, "
+              "z177; the same anomaly of order 2 in the sector object, z176); the pair is neither the sheet doubling of P1 "
+              "(z176) nor a cyclic gluing of two copies (z177)",
     "I_step": "identification doubled diagonal step = native single step: spinor index = step type, modes = levels (z83)",
     "P_lift": "the clock is the Z4 of the 16 on the carrier through a spinor lift branch (z82)",
+    "P_zentral": "the clock has order 4 and commutes with the base changes of the sections of both deck halves (so(10) + "
+                 "so(6) of the 16 seam parents, family-number U(1) included); gives R = c^+-1, Tr R = 0, R^2 = (-1)^F and "
+                 "the statement of P_lift (z175); not derived from A*, and Tr R = 0 does not follow from <T> = 0",
     "P_vac": "physical time is read in the vacuum sector; the thermal original has no positive continuous time (z72, z84)",
     "P_CAR": "shared CAR of the seams (z106)",
     "P_GSO": "clock-twisted lift G = U_2pi R^2 = +1 (z97); not modular-native, per seam incompatible with a summed U_2pi "
@@ -1318,22 +1329,29 @@ CONVENTIONS = [
 # statistics); recorded candidates are not implications until a result shows them
 FRONTIER = {
     "graviton": ("gravity", "a spin-2 response derived from the seam with fixed coefficient (a gravity value with status "
-                 "supported); closes together with P_curv and P_G"),
+                 "supported); closes together with P_curv and P_G; recorded: the glued single object has no clock-neutral "
+                 "spin 2, h = 2 with R = 1 exists only as a state of two objects (z177)"),
     "modular_statistics": ("statistics", "a statistics rule that is chiral and modular; recorded candidate: the 16 as "
                            "clock-defect endpoint of a left-right completion glued by the Tomita conjugation (z170, z130), "
                            "not yet a scenario value"),
     "I_step": ("identification", "the doubled diagonal step is the native single step as a theorem (z83)"),
     "P_lift": ("identification", "the seam clock is the Z4 of the 16 as a theorem; recorded candidate: trace zero pins "
                "the clock among the classes of E8 (z170), which trades P_lift for the requirement Tr R = 0"),
+    "P_zentral": ("identification", "centrality of the clock as a theorem: that 'base changes are symmetries' of A* also "
+                  "means the section bases of the two deck halves (z175); recorded: Tr R = 0 follows from centrality and "
+                  "from the mark count n = 4, not from <T> = 0"),
     "P_univ": ("composition", "seam parity conserved by every composition as a theorem; native when the second seam is "
                "the Tomita partner (z130); one partner is the only real Lorentzian net of the catalogue (z172)"),
     "P_uhr": ("composition", "the composition phase is a function of the clock values as a theorem (z144)"),
     "P_ord": ("composition", "ordered distinguishable seams as a theorem (z121)"),
     "P_std": ("composition", "the composition as a morphism of the graded standard form derived from A*; recorded: no "
               "member of the gate family that fixes the standard vector interacts, and the only non-product symmetry of "
-              "the standard form is the one-body side exchange (z174), so the interaction needs this premise"),
-    "P_paar": ("statistics", "why the glue is summed over exactly two seams; recorded: one pair is anomalous, two pairs are "
-               "modular and positive in the sector R = Z_SU^-1, four as a whole are not (z174)"),
+              "the standard form is the one-body side exchange (z174), so the interaction needs this premise; the "
+              "standard form of a pair of seams admits the interacting gate as a symmetry but selects neither angle nor "
+              "phase (z177)"),
+    "P_paar": ("statistics", "why the glue is one-sided and summed over separately closed seams; recorded: the number two "
+               "then follows (N = 2 alone among 1..12 has normal statistics, z177), the sheets of P1 and the cyclic gluing "
+               "are excluded as its source (z176, z177)"),
     "P_curv": ("gravity", "a family carrying curvature with fixed coefficient derived from the seam (z100, z115, z128)"),
     "P_G": ("gravity", "the pure number G/R_vac^2 derived; recorded: one relation eps^2 G/a^2 = 4 c3^3 exp(-2/alpha) from "
             "the native infinity twistor and the ledger rung (z164, z172), the second relation is missing"),
@@ -1343,9 +1361,89 @@ FRONTIER = {
 # rows of the H6 bench that the scenario pool does not carry as clauses
 BENCH_OPEN = {
     "K19": ("origin", "what forces the seam with its defect in the state of the original process; the defect sector is "
-            "modularly required but not energetically preferred (z170)"),
-    "K20": ("origin", "one parent operator from which seam, clock and partner follow"),
+            "modularly required but not energetically preferred (z170); no one-sided boundary condition selects it, and "
+            "under P_std and A* the state contains the clock-twisted sectors if superselection of the pair clock is read "
+            "as the gauge sum (z176)"),
+    "K20": ("origin", "one parent operator from which seam, clock and partner follow; recorded: (Delta, J) alone do not fix "
+            "the split seam | partner, and in the sector object T = rho^(-i) gives clock, defect and sheet exchange under "
+            "the same reading (z176)"),
 }
+
+
+# H6h50 (z175 to z177): candidates for one object behind several open items, each with a computed test. Verdicts:
+# "excluded" (the test fails, with the scope in the meaning), "holds" (the test passes and the content of the item
+# shrinks or is restated, the count stays), "reading" (the items close under a named reading that is not derived).
+# Only a derivation would change the distance; no row is one.
+UNIFICATION_CANDIDATES = [
+    ("pair of seams = the two sheets of P1", ("P_paar",), "z176_ergebnis.json", "excluded",
+     "the sheet exchange is the full charge conjugation S^2 = C, not R^2, not the one-sided conjugation and not the side "
+     "exchange; the two sheets give one torus trace",
+     lambda d: _check_named(d, "B1 [E] Blatttausch") and _check_named(d, "B3 [N")),
+    ("pair of seams = two cyclically glued copies (opening angle 4 pi, arXiv:2611.34924)", ("P_paar",),
+     "z177_ergebnis.json", "excluded",
+     "the cyclic gluing is consistent without clock and with G = U R^2, but has no consistent character with the Z4 glue",
+     lambda d: _check_named(d, "Zyklische Verklebung zweier Kopien")),
+    ("number of seams from anomaly, positivity and normal statistics", ("P_paar",), "z177_ergebnis.json", "holds",
+     "N = 2 alone among N = 1..12; what remains of P_paar is that the glue is one-sided and summed over separately "
+     "closed seams",
+     lambda d: _check_named(d, "Nahtzahl:")),
+    ("standard form of the pair of seams carries the composition", ("P_std", "P_ord"), "z177_ergebnis.json", "excluded",
+     "the pair admits the interacting gate as a symmetry of its standard form in the free quarter state but selects "
+     "neither angle nor phase and does not conserve the parity of each seam; the partner reading selects the phase and "
+     "carries no interaction (z174)",
+     lambda d: _check_named(d, "Kanonische Implementierung") and _check_named(d, "Wechselwirkung: Die Mitglieder")),
+    ("superselection of the pair clock = gauge sum", ("K19", "K20"), "z176_ergebnis.json", "reading",
+     "under P_std and A* the state then contains the clock-twisted sectors (diagonal completion with all 16 sectors) and "
+     "T = rho^(-i) is the parent of clock, defect and sheet exchange; the reading, the sector of the 16 and the split "
+     "seam | partner are put in",
+     lambda d: _check_named(d, "A7 [E, entscheidend] Eichsumme der Paaruhr") and _check_named(d, "C4 [E] Sektorenobjekt")
+     and _check_named(d, "C2 [E] (Delta, J) allein")),
+    ("defect as ground state of a boundary condition (M13)", ("K19",), "z176_ergebnis.json", "excluded",
+     "none of the 16 one-sided boundary conditions of the sector object has ground level zero or a positive state with "
+     "<T> = 0 in a twisted sector",
+     lambda d: _check_named(d, "A4 [") and _check_named(d, "A3 [E/N] Einseitige positive")),
+    ("trace zero of the clock from <T> = 0", ("P_lift",), "z175_ergebnis.json", "excluded",
+     "sector by sector the condition fails for all 138 classes of E8, pairwise it holds for all, and no class has a "
+     "vanishing ground-level balance",
+     lambda d: _check_named(d, "B3 [N]") and _check_named(d, "B4 [N]") and _check_named(d, "B6 [E]")),
+    ("clock from centrality (P_zentral)", ("P_lift",), "z175_ergebnis.json", "holds",
+     "order 4 and commuting with the base changes of both deck halves gives the clock, Tr R = 0 and R^2 = (-1)^F; the "
+     "premise is restated, the count stays",
+     lambda d: _check_named(d, "A5 [E] Zentralisatorsatz") and _check_named(d, "A6 [E] Markenzahl")),
+    ("step identification from the clock sectors", ("I_step",), "z175_ergebnis.json", "excluded",
+     "the clock is the identity on the doubled ladder, so no condition in clock values sees the shell factor, and a "
+     "single spinor index lies only in representations on which the clock is +-i",
+     lambda d: _check_named(d, "C2 [E, negativ]") and _check_named(d, "C3 [E, negativ]")),
+    ("corner of the null cone (arXiv:2611.34924) fixes the gravity items", ("P_G", "P_curv", "graviton"),
+     "z177_ergebnis.json", "excluded",
+     "G and Lambda are inputs there and the discrete area spectrum is an existence statement; the paper gives the "
+     "dictionary seam = corner (the clock is the boost by pi, 4 pi is the spinor period) and the test separate against "
+     "cyclic gluing",
+     lambda d: _check_named(d, "Abgleich 2 pi gegen 4 pi") and _check_named(d, "Wörterbuch im endlichen Modell")),
+    ("graviton as an excitation of one glued object", ("graviton",), "z177_ergebnis.json", "excluded",
+     "the spin table R = i^(2-2h) has clock-neutral states only at odd h; h = 2 with R = 1 exists only as a state of two "
+     "objects, which is the double-copy route",
+     lambda d: _check_named(d, "Erweiterte Spintabelle")),
+]
+
+
+def unification_candidates(root=None):
+    """Verdicts of the recorded unification candidates and the open items that would remain under the readings."""
+    root = EXPLORATION if root is None else _Path(root)
+    rows = []
+    for name, items, fname, verdict, meaning, pred in UNIFICATION_CANDIDATES:
+        path = root / fname
+        ok = path.exists() and pred(json.loads(path.read_text()))
+        rows.append({"candidate": name, "would_close": list(items), "source": fname,
+                     "verdict": verdict if ok else "pending", "meaning": meaning})
+    d = complete_solution_distance(root)
+    open_items = set(d["open_items"]) | set(d["bench_open"])
+    read = {x for r in rows if r["verdict"] == "reading" for x in r["would_close"]}
+    counts = {}
+    for r in rows:
+        counts[r["verdict"]] = counts.get(r["verdict"], 0) + 1
+    return {"candidates": rows, "counts": counts, "closed_by_derivation": [], "open_total": d["open_total"],
+            "open_under_readings": sorted(open_items - read), "open_total_under_readings": len(open_items - read)}
 
 
 def complete_solution_distance(root=None):
@@ -1572,6 +1670,7 @@ def run_reconstruction(root=None):
                     "results named in EVIDENCE; pending evidence gives no clause")
     out["universes"]["scenarios"] = res
     out["complete_solution"] = complete_solution_distance(root)
+    out["unification"] = unification_candidates(root)
     h6 = next(o for o in s2 if o["t"] == "0")
     dq = out["universes"]["doublet_states"]["questions"]["+".join(DOUBLET_QUESTION)]
     bq = out["universes"]["normal_bundles"]["questions"]["twistor_line+choice_free"]

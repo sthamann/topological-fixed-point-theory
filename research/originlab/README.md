@@ -248,6 +248,13 @@ clauses no survivor reaches.
   P_G stays a free pure number G/R_vac^2: clock trace, entanglement equilibrium, induced gravity and double copy give
   rows that do not agree (z127, z136, z137). Still no survivor reaches graviton or modular statistics. Test updated.
 
+Unification candidates (H6h50, z175 to z177): `reconstruction_search.unification_candidates()` lists eleven
+candidates for one object behind several open items, each with a computed test in z175, z176 or z177 and one of the
+verdicts excluded, holds (the content of the item shrinks, the count stays) or reading (closes the items under a
+reading that is not derived). Eight are excluded, two hold, one is a reading; none is a derivation, so the distance
+stays at ten open items. One implication replaces P_lift by P_zentral (z175: order 4 and commuting with the base
+changes of both deck halves gives the clock). `run_reconstruction()` reports the table under `unification`.
+
 Standard form for statistics and composition (H6h50, z174): the statistics axis has a fifth value, the Z4 glue
 summed over a pair of seams (premises P_IF, P_paar), with computed evidence from the modular test of z174 (anomalous
 on one pair seam + partner; on two pairs modular and positive for the eigenvalue -1, the sector R = Z_SU^-1). The

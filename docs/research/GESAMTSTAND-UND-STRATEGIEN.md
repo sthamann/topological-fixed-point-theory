@@ -1551,6 +1551,123 @@ gehört zu K19 und K20.
 **Nächster Schritt (Reihenfolge aus z173).** Schritt 2, die Zuordnung: P_lift gegen Sp R = 0 tauschen und prüfen, ob
 Sp R = 0 aus A\* folgt. Prüfbank unverändert 13 P / 7 L. Keine Komplettlösung, nichts befördert.
 
+### Nachtrag z175–z177: Schritt 2, Schritt 4, weitere Kandidaten und die Arbeit arXiv:2611.34924 nach z174
+
+**Anlass.** Drei Rechnungen liefen parallel: Schritt 2 der Reihenfolge (Zuordnung, z175, 21 Prüfungen), Schritt 4
+(Ursprung, z176, 16 Prüfungen) und eine Suche nach weiteren Kandidaten, die mehrere offene Punkte auf ein Objekt
+zurückführen, zusammen mit einer zweiten Durchsicht der Arbeit arXiv:2611.34924 (z177, 12 Prüfungen). Alle Prüfungen
+bestehen; z175, z176 und z177 sind reproduziert.
+
+**Ergebnis in einem Satz.** Kein offener Punkt ist geschlossen. Acht Wege sind mit Geltungsbereich ausgeschlossen,
+drei Punkte sind enger gefasst, und die Arbeit entscheidet den seit z166 offenen Abgleich 2π gegen 4π.
+
+**Schritt 2, Zuordnung (z175).**
+
+- **Sp R = 0 folgt nicht aus ⟨T⟩ = 0 [N/E negativ].** Sektorweise gilt ⟨T⟩ = 0 bei τ = i für keine der 138 Klassen
+  (kleinster Betrag 0,0344), paarweise gilt es für jede (S-Dualität). Keine Klasse hat eine verschwindende
+  Grundniveau-Bilanz; für die Uhr ist sie −1/12.
+- **P_lift wird zu P_zentral [E, C].** Unter den μ₄-Elementen des Torus vertauschen genau vier mit so(10) + so(6) der
+  beiden Deckhälften: 1, (−1)^F, c, c⁻¹. „Ordnung 4 und Vertauschen mit den Basiswechseln beider Hälften“ gibt also
+  die Uhr; Sp R = 0 und R² = (−1)^F sind Folgen. Der Hebungszweig ist Konvention. Die Zahl der Annahmen bleibt.
+- **Markenzahl [E].** Bei n Marken hat die Deckinvolution auf so(4n) die Spur 8 − 2n. Sie ist null genau bei n = 4.
+- **I_step bleibt [E negativ].** Die Uhr ist auf der verdoppelten Leiter die Eins. Keine Bedingung in Uhrwerten sieht
+  den Schalenfaktor; ein einzelner Spinorindex liegt nur in Darstellungen, auf denen die Uhr ±i ist.
+
+**Schritt 4, Ursprung (z176).**
+
+- **M13 negativ [E/N].** Keine der 16 einseitigen Randbedingungen des Sektorenobjekts wählt den Defekt als
+  Grundzustand. Grundniveaus: unverdrillt −1/3, R-verdrillt +1/24, R²-verdrillt +1/6, die 16 bei +7/24.
+- **Die Naht mit Partner [E].** Sie ist E₈ ⊗ Ē₈ ohne Uhrsektoren. Die Eichsumme über die Paaruhr ist anomaliefrei
+  und gibt genau die diagonale Vervollständigung mit allen 16 Sektoren.
+- **K19 und K20 [C, Lesart L].** Liest man „die Paaruhr ist superselektiert“ (P_std) als Eichsumme, dann enthält der
+  Zustand von A\* die uhrverdrillten Sektoren zwangsläufig, und T = ρ^(−i) ist Elternoperator von Uhr, Defekt und
+  Blatttausch. Die Lesart, der Sektor der 16 und die Teilung Naht | Partner sind hineingesteckt: (Δ, J) allein legen
+  die Teilung nicht fest (Kommutant der Dimension 32).
+- **Das Paar ist nicht die Blattverdopplung [E negativ].** Der Blatttausch ist S² = C, die volle
+  Ladungskonjugation. Er ist nicht R², nicht die einseitige Konjugation und nicht der Seitentausch. Die zwei Blätter
+  geben eine einzelne Torusspur.
+- **Dieselbe Anomalie im Sektorenobjekt [E].** Die einseitige Uhr hat eine Anomalie der Ordnung 2; isotrope
+  Hebungen gibt es nur für gerades N. Die Eichsumme über ein Paar ist wieder E₈ × E₈, über Kreuz verklebt.
+
+**Nahtzahl und Art der Verklebung (z177 Teil A).** Der Modultest aus z113 und z174 läuft jetzt mit einer robusten
+Auswertung (Thetafunktionen und η über die exakten Transformationsgesetze; die kleinsten Spinmoden aus z174 für N = 1
+bis 4 werden reproduziert).
+
+- **Genau zwei Paare [N, entscheidend].** Für N = 1 bis 12 ist die Verklebung für gerades N anomaliefrei. Normale
+  Statistik (Eigenwert −1) besteht nur für N = 2. Vertauschte Statistik besteht für N = 2, 4 und 6, danach nichts
+  mehr. Der Sektor des Skalarvakuums besteht nie.
+- **Nicht zyklisch [E/N].** Zwei Kopien zyklisch verklebt (eine Spur durch beide) bestehen ohne Uhr und mit
+  G = U R². Mit der ℤ₄-Verklebung gibt es keinen widerspruchsfreien Charakter. Das Paar besteht aus zwei getrennt
+  geschlossenen Nähten.
+- **Was von P_paar bleibt.** Die Zahl zwei ist keine Wahl mehr. Annahme bleibt, dass die Verklebung einseitig ist
+  und über getrennte Nähte summiert wird.
+
+**Standardform des Nahtpaars (z177 Teil B, endliches Modell).**
+
+- **Das Paar trägt die Wechselwirkung [E].** Die kanonische Implementierung W = U ⊗ JUJ des Gatters zwischen zwei
+  Nähten erhält Kegel und J. Im Zustand freier Quarter lässt sie den Standardvektor für alle 325 geprüften Gatter
+  fest, auch für die wechselwirkenden (φ = ±π/2).
+- **Es wählt nichts aus [E negativ].** Winkel und Phase bleiben frei, die Parität je Naht ist nicht erhalten. Die
+  Partnerlesart aus z174 wählt die Phase und trägt keine Wechselwirkung. Keine Lesart schließt die Zusammensetzung
+  allein; P_std und P_ord bleiben.
+
+**Die Arbeit arXiv:2611.34924, zweite Durchsicht (z177 Teil C).** In z166 fehlten Teile; jetzt sind die Abschnitte 1
+bis 6 und die Anhänge D und E gelesen. Die Arbeit bleibt ungeprüfte Literatur [Lit]. Nachgerechnet sind vier weitere
+Formeln: (5.29), (5.75), (5.76) und die Schranke (D.49).
+
+- **Was dort steht [Lit].** Die Präparation ist C = U·e^(−A/(8Għ))·P_D, also eine halbe Drehung, und C⁺C = e^(−s)
+  mit s = A/(4Għ). Zwei Ränder tragen H ⊗ H\*. Ein Diamant hat einen endlichdimensionalen Hilbertraum; die Fläche
+  ist diskret, ihre Eigenwerte werden nicht angegeben. Zwei Kopien, zyklisch geschlossen, haben an der Ecke den
+  Öffnungswinkel 4π. G und Λ sind Eingaben. Materie, Spinoren und eine ℤ₄-Graduierung kommen nicht vor.
+- **Wörterbuch [E].** Der Standardvektor Ω = vec(ρ^(1/2)) der Naht hat die Gewichte e^(−s/2) von C mit s = πQ, und
+  H ⊗ H\* mit J ist die Standardform aus z130 und z174. Die Uhr R = i^Q ist der Boost um π, R² der Boost um 2π.
+- **2π gegen 4π entschieden [E Arithmetik, L Lesart].** Mit der Spintabelle R = i^(2−2h) haben die Zustände
+  halbzahlige Boostgewichte K = 1 − h; die 16 hat K = 1/2. Der KMS-Wert 4π der Naht ist der Wert 2π der Arbeit in
+  der Normierung K = 2H: Ein Quarter hat die Energie 1/4 und das Boostgewicht 1/2, und 4π ist die Periode der
+  Spinoren. Die andere Lesart (die Naht als zwei zyklisch verklebte Kopien) gäbe der 16 das Gewicht 1/4 und ist
+  nach Teil A anomal.
+- **Kein neutrales Graviton im Einzelobjekt [E Arithmetik, L Lesart].** Uhrneutrale Zustände gibt es in der
+  verklebten Summe nur bei ungeradem h. Ein neutraler Zustand mit h = 2 existiert nur als Zustand zweier Objekte,
+  etwa zweier Vektoren. Das passt zum Weg Doppelkopie (P_diag, z112).
+- **Urteil.** Die Arbeit hilft beim Verständnis der Naht als Ecke und beim Abgleich der Temperaturen. Sie schließt
+  P_G, P_curv und die Graviton-Klausel nicht.
+
+**Kandidatentabelle (OriginLab `unification_candidates`).** Das Suchprogramm führt elf Kandidaten, jeder mit einer
+gerechneten Prüfung.
+
+| Kandidat | würde schließen | Urteil |
+| --- | --- | --- |
+| Nahtpaar = die zwei Blätter von P1 | P_paar | ausgeschlossen (z176) |
+| Nahtpaar = zwei zyklisch verklebte Kopien | P_paar | ausgeschlossen (z177) |
+| Nahtzahl aus Anomalie, Positivität, normaler Statistik | P_paar | gilt, Inhalt schrumpft (z177) |
+| Standardform des Paars trägt die Zusammensetzung | P_std, P_ord | ausgeschlossen (z177) |
+| Superauswahl der Paaruhr = Eichsumme | K19, K20 | Lesart, nicht hergeleitet (z176) |
+| Defekt als Grundzustand einer Randbedingung (M13) | K19 | ausgeschlossen (z176) |
+| Sp R = 0 aus ⟨T⟩ = 0 | P_lift | ausgeschlossen (z175) |
+| Uhr aus Zentralität (P_zentral) | P_lift | gilt, Annahme neu gefasst (z175) |
+| Schrittzuordnung aus den Uhrsektoren | I_step | ausgeschlossen (z175) |
+| Ecke des Nullkegels legt die Gravitation fest | P_G, P_curv, Graviton | ausgeschlossen (z177) |
+| Graviton als Anregung eines Objekts | Graviton | ausgeschlossen (z177) |
+
+**Abstand.** Unverändert 1 fehlende Klausel, 1 freie Zahl, 7 Annahmen, dazu K19 und K20: zehn offene Punkte.
+
+| Frage | Punkte | Änderung |
+| --- | --- | --- |
+| Ursprung | K19, K20 | unter einer Lesart auf P_std und A\* zurückgeführt, nicht geschlossen |
+| Zusammensetzung | P_std, P_ord | unverändert; zwei Lesarten, die Verschiedenes leisten |
+| Zuordnung | I_step, P_zentral | P_lift ist in P_zentral aufgegangen |
+| Gravitation | P_curv, P_G, Klausel Graviton | unverändert; das Graviton ist ein Zustand zweier Objekte |
+| Statistik | P_paar | die Zahl zwei folgt; es bleibt „einseitig und getrennt summiert“ |
+
+**Einordnung.** Die Runde hat keinen Punkt geschlossen. Sie hat das Bild an drei Stellen festgelegt. Das Nahtpaar
+ist ein Paar getrennter Nähte und keine Verdopplung einer Naht. Die Wechselwirkung liegt im Paar, die Auswahl der
+Phase beim Partner. Die Ursprungsfrage hängt an einer einzigen Lesart.
+
+**Nächster Schritt.** Die Lesart „Superauswahl der Paaruhr = Eichsumme“ prüfen: Ist unter den 27
+Vervollständigungen aus z170 genau eine, deren unverdrillter Anteil die uhrneutrale Algebra ist? Dann folgten K19
+und K20 aus P_std und A\*, und es blieben acht Punkte. Prüfbank unverändert 13 P / 7 L. Keine Komplettlösung,
+nichts befördert.
+
 ### Was die Runde bedeutet
 
 - **Der Kandidat** braucht neun Prämissen: A*, I_step, P_lift, P_IF, P_univ, P_uhr, P_ord, P_curv und P_G als freie

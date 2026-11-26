@@ -767,6 +767,19 @@ hergeleitet, 7 unter benannter Lesart, keines gescheitert, offen oder gesetzt. K
         modulinvariant und positiv genau im Sektor R = Z_SU⁻¹ mit normaler Statistik (Vektoren uhrneutral, Skalare
         bei R = −1, Weyl-Fermionen bei R = ±i) und in einem Sektor mit vertauschter Statistik. Neue Annahme P_paar.
       - Abstand: 1 fehlende Klausel, 1 freie Zahl, 7 Annahmen, dazu K19 und K20, zusammen zehn Punkte.
+    - Schritte 2 und 4, weitere Kandidaten und arXiv:2611.34924 (Z175–Z177; 21, 16 und 12 Prüfungen): kein Punkt
+      geschlossen, Abstand weiter zehn.
+      - Zuordnung (Z175): Sp R = 0 folgt nicht aus ⟨T⟩ = 0. P_lift wird zu P_zentral (Ordnung 4 und Vertauschen mit
+        den Basiswechseln beider Deckhälften gibt die Uhr). I_step bleibt.
+      - Ursprung (Z176): Kein Randwert wählt den Defekt als Grundzustand. K19 und K20 folgen aus P_std und A\* nur
+        unter der Lesart „Superauswahl der Paaruhr = Eichsumme“. Das Nahtpaar ist nicht die Blattverdopplung.
+      - Nahtpaar (Z177): Normale Statistik besteht den Modultest nur für genau zwei Paare (N = 1 bis 12). Die
+        zyklische Verklebung zweier Kopien ist anomal. Die Standardform des Paars trägt die Wechselwirkung, wählt
+        aber weder Winkel noch Phase.
+      - Die Arbeit (Z177): Standardform mit Partner als Hilbertraum zweier Ränder; die Uhr ist der Boost um π, und
+        4π ist die Periode der Spinoren (Abgleich aus Z166 entschieden). G und Λ bleiben dort Eingaben.
+      - Graviton: Die verklebte Summe hat uhrneutrale Zustände nur bei ungeradem h; ein neutrales h = 2 gibt es nur
+        als Zustand zweier Objekte.
     - Zopfrelation: Sie gilt nur für einkörperige Operatoren (Nahtuhr und Strahlteiler = Ising-Zopfmatrizen). Das
       wechselwirkende Gatter verletzt sie mit Defekt √(3/8). Die Defektstruktur ist endlich (Clifford-Typ). [E]
     - Eichdynamik: Plakettenstruktur und sin²θ_W = 3/8 sind nativ, die absolute Kopplung und die Linkdynamik nicht.

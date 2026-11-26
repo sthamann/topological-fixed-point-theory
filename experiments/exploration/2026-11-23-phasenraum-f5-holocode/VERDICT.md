@@ -730,6 +730,22 @@ Yang–Mills-artige Form (Bestand z150), nicht über konforme Gravitation. W5 is
 Flusszahl bleibt eine Wahl. Pflichtenheft und nächste Rechnungen M1 bis M4 stehen in
 `docs/research/GESAMTSTAND-UND-STRATEGIEN.md`, Nachtrag z165.
 
+**Schritte 2 und 4, weitere Kandidaten und arXiv:2611.34924 (z175–z177; 21, 16 und 12 Prüfungen, reproduziert;
+OriginLab `unification_candidates`): kein offener Punkt geschlossen, acht Wege ausgeschlossen [E/N, E negativ].
+Zehn offene Punkte. Keine volle Lösung.**
+
+- Zuordnung (z175): Sp R = 0 folgt nicht aus ⟨T⟩ = 0 (sektorweise für keine der 138 Klassen, paarweise für alle).
+  P_lift wird zu P_zentral; I_step bleibt.
+- Ursprung (z176): M13 negativ. K19 und K20 folgen aus P_std und A\* nur unter der Lesart „Superauswahl der
+  Paaruhr = Eichsumme“. Das Nahtpaar ist nicht die Blattverdopplung von P1.
+- Nahtpaar (z177): Normale Statistik nur für N = 2 unter N = 1 bis 12; die zyklische Verklebung ist anomal. Die
+  Standardform des Paars trägt die Wechselwirkung und wählt nichts aus.
+- arXiv:2611.34924 (z177): vier Formeln nachgerechnet; Wörterbuch Naht = Ecke; 4π ist die Periode der Spinoren. G
+  und Λ sind dort Eingaben.
+- Graviton (z177): kein uhrneutraler Zustand mit h = 2 im Einzelobjekt.
+
+Einzelheiten: `docs/research/GESAMTSTAND-UND-STRATEGIEN.md`, Nachtrag z175–z177.
+
 **Schritt 1: Standardform für Statistik und Zusammensetzung (z174, 17 Prüfungen, selbst gerechnet; OriginLab
 `reconstruction_search`): P_univ und P_uhr fallen in P_std zusammen; die ℤ₄-Verklebung ist über zwei Nahtpaare
 modular und positiv, über eines anomal [E/N, E negativ]. Zehn offene Punkte statt elf. Keine volle Lösung.**

@@ -130,11 +130,11 @@ class ReconstructionSearch(unittest.TestCase):
         # merge into the one premise P_std; the pair-summed glue adds P_paar and is therefore not the minimal set here
         self.assertEqual((pc["survivors"], pc["least_free_parameters"], pc["least_premises"]), (162, 1, 8))
         self.assertEqual(pc["minimal_premise_sets"],
-                         [("A*", "I_step", "P_G", "P_IF", "P_curv", "P_lift", "P_ord", "P_std")])
+                         [("A*", "I_step", "P_G", "P_IF", "P_curv", "P_ord", "P_std", "P_zentral")])
         self.assertEqual(pc["clauses_no_survivor_has"], ["graviton"])
         self.assertEqual({i["replaces"]: i["holds"] for i in u["derived"]["implications"]},
                          {"P_RJ": True, "P_sym": True, "P_null": True, "P_viertel": True, "P_univ": True, "P_uhr": True,
-                          "P_R": True, "P_pair": True})
+                          "P_lift": True, "P_R": True, "P_pair": True})
         mm = [o for o in scenario_candidates()[0]
               if o["scenario"]["gravity"] == "MacDowell-Mansouri: modular Cartan connection"]
         self.assertTrue(all({"P_mod", "P_idx", "P_IF"} <= o["premises"] and not {"P_R", "P_pair"} & o["premises"] for o in mm))
@@ -331,9 +331,26 @@ class CompleteSolutionDistance(unittest.TestCase):
         self.assertEqual(d["open_total"], 10)
         self.assertEqual(d["by_question"], {"origin": ["K19", "K20"], "composition": ["P_ord", "P_std"],
                                             "gravity": ["P_G", "P_curv", "graviton"],
-                                            "identification": ["I_step", "P_lift"],
+                                            "identification": ["I_step", "P_zentral"],
                                             "statistics": ["P_paar"]})
         self.assertTrue(all("pair of seams" in label for label in d["best"]))
+
+    def test_unification_candidates_close_nothing_by_derivation(self):
+        import reconstruction_search as rs
+        u = rs.unification_candidates()
+        # z175 to z177: eleven candidates for one object behind several open items, each with a computed test
+        self.assertEqual(len(u["candidates"]), 11)
+        self.assertEqual(u["counts"], {"excluded": 8, "holds": 2, "reading": 1})
+        self.assertEqual(u["closed_by_derivation"], [])
+        self.assertEqual(u["open_total"], 10)
+        verdict = {r["candidate"]: r["verdict"] for r in u["candidates"]}
+        self.assertEqual(verdict["pair of seams = the two sheets of P1"], "excluded")
+        self.assertEqual(verdict["number of seams from anomaly, positivity and normal statistics"], "holds")
+        self.assertEqual(verdict["superselection of the pair clock = gauge sum"], "reading")
+        self.assertEqual(verdict["graviton as an excitation of one glued object"], "excluded")
+        # the one reading would leave eight items; it is not derived and does not count
+        self.assertEqual(u["open_under_readings"],
+                         ["I_step", "P_G", "P_curv", "P_ord", "P_paar", "P_std", "P_zentral", "graviton"])
 
 
 if __name__ == "__main__":

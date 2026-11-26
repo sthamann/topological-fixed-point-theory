@@ -15,6 +15,9 @@ Teil B  Modultest der Z4-Verklebung nach der Methode von z113 (nichtchirale Naht
         Bahnen, Anomalie, Positivität für X = R i^(-2h), den Spiegel X' = R i^(2h) und die J-kovariante Fassung
         X_p = R R-quer^-1 i^(-2h); robuste Auswertung der langen Nähte über Normalformen.
 Teil C  Eintrag ins Suchprogramm (OriginLab reconstruction_search) und neuer Abstand zur Komplettlösung.
+
+Hinweis: Prüfung C3 beschreibt den Stand vor z175 (Annahme P_lift). Seit z175 führt das Suchprogramm an ihrer Stelle
+P_zentral; ein erneuter Lauf verfehlt deshalb C3. z174_ergebnis.json bleibt als Stand der Runde stehen.
 """
 import json
 import sys
