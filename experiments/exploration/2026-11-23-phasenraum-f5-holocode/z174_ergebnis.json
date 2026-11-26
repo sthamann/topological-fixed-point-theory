@@ -1,0 +1,662 @@
+{
+ "checks": {
+  "A1 [E] Standardform aus der Definition (K = 2: 16, K = 3: 64 Zustände): Omega = vec(rho^(1/2)), J = Seitentausch mit Konjugation, Delta = rho (x) rho^-1; S = J Delta^(1/2) erfüllt S x Omega = x^+ Omega auf allen Matrixeinheiten. Omega trägt nur n_A = n_B je Mode (also Q_A = Q_B), J Omega = Omega, und Delta^(-i/2) ist die Paaruhr i^(Q_A - Q_B) (z130)": true,
+  "A2 [E] Der Standardvektor ist ein Transfer-Singulett: J^+ Omega = J^- Omega = 0, und der Strahlteiler B_theta = e^(-i theta J_x) lässt Omega für jeden Winkel fest (K = 2, 3; ebenso für K = 4 pi E_lad). Der Winkel theta der Komposition ist auf dem Standardvektor unsichtbar. Kontrolle: Ein in der Besetzungsbasis nicht diagonaler Zustand ist kein Singulett (|J^+ Omega| = 0.327, 0.281)": true,
+  "A3 [E] Gatterfamilie U = B_theta^+ e^(-i phi H) B_theta auf Omega (13 Winkel, 9 Phasen): Mit dem nahtsymmetrischen Gesetz H_Q = (Q_A^2 + Q_B^2)/2 gilt U Omega = e^(-i phi H_Q) Omega unabhängig von theta, auf dem Paarsektor also die Phase e^(-i phi Q^2). Mit dem modularen Gesetz (Q_A^2 - Q_B^2)/2 bleibt Omega für alle theta, phi fest": true,
+  "A4 [E] Klein-Identität: e^(-i pi Q^2/2) = (1 + i (-1)^Q)/(1 + i) = i^(-Q) (-1)^(Q(Q-1)/2) für alle ganzen Q (|Q| <= 8): Die Viertelphase des Gatters ist auf dem Paarsektor genau die Klein-Verdrehung Z der gradierten Standardform. Der fermionische Standardvektor Omega_g = prod_c (1 + q a_c^+ b_c^+)|0> ist (-1)^(Q(Q-1)/2) Omega (z122, z130). Daher U(theta, +pi/2) Omega = R^-1 Omega_g, U(theta, -pi/2) Omega = R Omega_g und U(theta, pi) Omega = R^2 Omega": true,
+  "A5 [E, entscheidend] Uhrbahn der Standardvektoren: Unter den 24 Phasen phi = k pi/12 liegt U(theta, phi) Omega genau für phi = 0 und pi in der Uhrbahn {R^j Omega} des bosonischen Standardvektors und genau für phi = pi/2 und 3 pi/2 in der Uhrbahn {R^j Omega_g} des fermionischen; sonst in keiner (K = 2, 3; beide KMS-Zustände). Das ist die Menge phi in (pi/2) Z aus z144 (P_uhr), hier als Eigenschaft des Zustandsvektors": true,
+  "A6 [E] Mit Oszillatoranteil (Phasengesetz e^(-i phi H_Q - i chi L_0^osc) je Seite, exakte Phasenarithmetik, Q <= 6, Niveau m <= 3, Gitter 24 x 24): Das Bild liegt genau dann in einer der beiden Uhrbahnen, wenn phi in (pi/2) Z und chi in pi Z. Der Rest chi = pi ist (-1)^(L_0^osc + L-quer_0^osc), auf niveaugleichen Zuständen die 2 pi-Drehung U_2pi aus z113, die Omega festlässt. Bis auf U_2pi ist das Kriterium also P_uhr (z144: phi in (pi/2) Z, chi = 0)": true,
+  "A7 [E] Wechselwirkung (z144: ein Gatter ist einkörperig, wenn es die Transfer-su(2) je Gesamtladung normalisiert): Im symmetrischen Gesetz ist das Gatter bei theta = pi/2 genau für phi in {0, pi} einkörperig, im modularen Gesetz für jede Phase. Jedes Mitglied beider Familien, das Omega festlässt, ist damit wechselwirkungsfrei; die wechselwirkenden Gatter bewegen Omega, und unter ihnen landen nur phi = +-pi/2 auf einem nativen Standardvektor": true,
+  "A8 [E] Symmetrien der Standardform (unitär, erhalten den natürlichen Kegel und vertauschen mit J): Seitentausch F (F M F = M'), Modulfluss und Paaruhr erhalten den Kegel (200 Stichproben je Modell) und lassen Omega fest. Exakt ist F = i^(Q_A + Q_B) (-1)^(Q_A Q_B) B_pi: der halbe Transferumlauf mal Produktuhr mal Klein-Kozyklus (z106). Das Viertelgatter, der einkörperige Tausch bei phi = pi und die Klein-Verdrehung erhalten den Kegel nicht: Die einzige nicht faktorisierte Symmetrie der Standardform ist der Seitentausch, und er ist einkörperig": true,
+  "B1 [E] Bausteine (mpmath, 50 Stellen): Tr e^(2 pi i r L_0^osc) q^(L_0^osc - 1/24) = e^(2 pi i r/24)/eta(tau + r) gegen das Produkt für r = +-1/4, 1/2. Bahnen der Spuren mit Einschub: ohne Einschub 6, G = U R^2 und G_tot je 24, die Z4-Einschübe X, X', X_p, X_p^3 und i^(-2h) je 96 Elemente ({'1': 6, 'X = R i^(-2h)': 96, \"X' = R i^(2h)\": 96, 'G = U R^2': 24, 'X_p = R Rq^-1 i^(-2h)': 96, 'X_p^3': 96, 'i^(-2h)': 96, 'G_tot = U (-1)^(F+Fq)': 24}). Robuste Auswertung: Jedes Bahnelement ist c_j mal eine Normalform aus Thetafunktionen und eta((A tau + B)/D) (lange Nähte, A D = 16 bzw. 4); die Konstanz von c_j ist an zwei Punkten je Element geprüft (max. Fehler 2e-49)": true,
+  "B2 [E, entscheidend] Anomalie: Die einseitige Verklebung X = R i^(-2h) (Sektorcharakter aus z122) und ihr Spiegel X' = R i^(2h) haben für N = 1 und N = 3 keinen widerspruchsfreien Charakter: Über ein einzelnes Paar Naht + Partner lässt sich die Verklebung nicht modulinvariant summieren. Für N = 2 und 4 ist die Bahnsumme frei (Charaktere ['T 0, S 0', 'T 1/2, S 1/2']). Die J-kovariante Fassung X_p = R R-quer^-1 i^(-2h) ist für jedes N frei; ihre Bahn enthält X_p^3 und i^(-2h) mit Koeffizient {'X_p^3': '0', 'i^(-2h)': '0'} (auf niveaugleichen Zuständen ist X_p = i^(-2h))": true,
+  "B3 [N] Kontrolle gegen z113: Z_1 + Z_G (Projektion G = +1) reproduziert für N = 1..4 die dortigen kleinsten Spinmoden (N = 1: -222.69, relative Abweichung 7e-22); alle Summen sind reell (größter relativer Imaginärteil 3e-26)": true,
+  "B4 [N, entscheidend] Positivität der verklebten Zustandssumme (Projektion auf X = i^j, alle Spinmoden |s| <= 5 bei Y = 0,35, 0,6, 1,0): Für zwei Paare (N = 2, diagonal X_1 X_2) sind genau ['X = i^2', 'X = i^3'] Hilbertraumspuren, im Spiegel [\"X' = i^2\", \"X' = i^3\"] (dieselben Eigenwerte -1 und -i); X = +1 und X' = +1 (die Sektoren mit dem Skalarvakuum R = 1, h = 0) geben negative Vielfachheiten. Für N = 4 bleibt nur ['X = i^1'] bzw. [\"X' = i^1\"] (ungerades j, also G = -1). Mit normaler Statistik (G = X^2 = +1) ist die Verklebung genau über zwei Paare summierbar und dort genau mit dem Eigenwert -1": true,
+  "B5 [N] J-kovariante Fassung: X_p = +1 ist für N = 1..4 eine Hilbertraumspur, X_p = -1 nie. Auf niveaugleichen Zuständen heißt X_p = +1 aber 2h = 0 mod 4: Die J-kovariante Verklebung ist modulverträglich, weil sie im unverdrehten Sektor keine Spinoren enthält (die Z4-Fortsetzung von U = +1 aus z113)": true,
+  "B6 [E] Was der Eigenwert -1 bedeutet: X' = R i^(2h) = -1 ist R = Z_SU^-1 mit Z_SU = i^(2h-2) (z97, z122), die Verklebung Z_SU (x) R = +1 aus z117, auf allen Zuständen. Sie gibt die Tabelle h = 0: R = -1 (Skalare, die (10,6)); h = +-1: R = 1 (Vektoren, die Ströme (45,1) + (1,15)); h = +1/2: R = i (die 16); h = -1/2: R = -i (die 16-quer). X = -1 ist der Spiegel (16 bei h = -1/2), das Bit P_IF. Mit X^2 = G = U R^2 = +1 gilt die normale Statistik": true,
+  "C1 [E] Suchprogramm (OriginLab, reconstruction_search): neuer Achsenwert 'Z4-Verklebung, über ein Paar von Nähten summiert' mit Beleg B2, B4 und Prämissen P_IF (Konvention) und P_paar; der alte Wert (pro Naht) trägt die Klausel modular_statistics weiterhin nicht (0 von 54), der neue trägt sie (54 von 54)": true,
+  "C2 [E] Implikationen: P_univ -> P_std (z130: nativ in der Partnerlesart) und P_uhr -> P_std (A5, A6) sind eingetragen und gelten; P_std ist als Prämisse benannt": true,
+  "C3 [E] Abstand zur Komplettlösung nach der Runde: 1 fehlende Klausel (graviton), 1 freie Zahl (P_G), 7 Prämissen über A* hinaus (['I_step', 'P_G', 'P_curv', 'P_lift', 'P_ord', 'P_paar', 'P_std']), dazu K19 und K20: zehn offene Punkte statt elf. Vorher (z173): 2 Klauseln, 1 freie Zahl, 7 Prämissen": true
+ },
+ "befunde": {
+  "Teil A: In der Standardform (Naht + Tomita-Partner) ist P_univ nativ (z130) und P_uhr gleichwertig dazu, dass die Komposition den Standardvektor in die Uhrbahn eines nativen Standardvektors abbildet. Beides zusammen ist eine Prämisse P_std (Komposition als Morphismus der gradierten Standardform), nicht zwei. Hergeleitet aus A* ist P_std nicht; P_ord (Kette aus mehr als zwei Nähten) berührt das Paar nicht": true,
+  "Teil B: Die Z4-Verklebung besteht den Modultest von z113 nicht pro Naht (anomal auf einem Paar), aber diagonal über zwei Paare, und dort genau im Sektor der physikalischen Spintabelle (Vektoren uhrneutral, Skalare R = -1, Weyl-Fermionen R = +-i) bis auf das Spiegelbit; der Sektor mit dem Skalarvakuum fällt durch. Über vier Paare als Ganzes geht nur vertauschte Statistik. Neue benannte Prämisse: P_paar (die Statistikregel wird über ein Paar von Nähten summiert)": true,
+  "Teil C: Keine Komplettlösung. Die Statistikfrage ist von 'keine Variante besteht' zu 'besteht unter P_paar' geworden, die Kompositionsfrage von drei Prämissen zu zwei (P_std, P_ord)": true
+ },
+ "zahlen": {
+  "A1_reste (S, Träger Q_A != Q_B, Moden, Paaruhr, J Omega)": {
+   "2": [
+    1.1102230246251565e-16,
+    0.0,
+    0.0,
+    1.2246467991473532e-16,
+    0.0
+   ],
+   "3": [
+    1.1102230246251565e-16,
+    0.0,
+    0.0,
+    1.8369701987210297e-16,
+    0.0
+   ]
+  },
+  "A2 (Rest, Kontrolle gedrehter Zustand, zweiter Zustand)": {
+   "2": [
+    0.0,
+    0.32748326665520716,
+    0.0
+   ],
+   "3": [
+    0.0,
+    0.28129047934804063,
+    0.0
+   ]
+  },
+  "A3_reste (+ Gesetz, - Gesetz)": {
+   "2": [
+    0.0,
+    0.0
+   ],
+   "3": [
+    0.0,
+    0.0
+   ]
+  },
+  "A4_reste": {
+   "2": [
+    6.938893903907228e-18,
+    1.229177745518607e-17,
+    1.229177745518607e-17,
+    2.4403341762326752e-17
+   ],
+   "3": [
+    1.734723475976807e-18,
+    1.1946278088509341e-17,
+    1.1946278088509341e-17,
+    2.3892556177018682e-17
+   ]
+  },
+  "A5_treffer (phi = k pi/12 -> Uhrpotenz)": {
+   "K = pi Q, K = 2": {
+    "bosonisch": {
+     "0": [
+      0
+     ],
+     "12": [
+      2
+     ]
+    },
+    "fermionisch": {
+     "6": [
+      3
+     ],
+     "18": [
+      1
+     ]
+    }
+   },
+   "K = pi Q, K = 3": {
+    "bosonisch": {
+     "0": [
+      0
+     ],
+     "12": [
+      2
+     ]
+    },
+    "fermionisch": {
+     "6": [
+      3
+     ],
+     "18": [
+      1
+     ]
+    }
+   },
+   "K = 4 pi E_lad, K = 2": {
+    "bosonisch": {
+     "0": [
+      0
+     ],
+     "12": [
+      2
+     ]
+    },
+    "fermionisch": {
+     "6": [
+      3
+     ],
+     "18": [
+      1
+     ]
+    }
+   },
+   "K = 4 pi E_lad, K = 3": {
+    "bosonisch": {
+     "0": [
+      0
+     ],
+     "12": [
+      2
+     ]
+    },
+    "fermionisch": {
+     "6": [
+      3
+     ],
+     "18": [
+      1
+     ]
+    }
+   }
+  },
+  "A6_gitter_treffer (phi = k pi/12, chi = l pi/12)": [
+   [
+    0,
+    0
+   ],
+   [
+    0,
+    12
+   ],
+   [
+    6,
+    0
+   ],
+   [
+    6,
+    12
+   ],
+   [
+    12,
+    0
+   ],
+   [
+    12,
+    12
+   ],
+   [
+    18,
+    0
+   ],
+   [
+    18,
+    12
+   ]
+  ],
+  "A7_linearitaetsrest (phi = k pi/4: + Gesetz, - Gesetz)": {
+   "2": {
+    "0": [
+     0.0,
+     0.0
+    ],
+    "1": [
+     1.0,
+     0.0
+    ],
+    "2": [
+     1.414214,
+     0.0
+    ],
+    "3": [
+     1.0,
+     0.0
+    ],
+    "4": [
+     0.0,
+     0.0
+    ],
+    "5": [
+     1.0,
+     0.0
+    ],
+    "6": [
+     1.414214,
+     0.0
+    ],
+    "7": [
+     1.0,
+     0.0
+    ]
+   },
+   "3": {
+    "0": [
+     0.0,
+     0.0
+    ],
+    "1": [
+     2.236068,
+     0.0
+    ],
+    "2": [
+     2.828427,
+     0.0
+    ],
+    "3": [
+     2.236068,
+     0.0
+    ],
+    "4": [
+     0.0,
+     0.0
+    ],
+    "5": [
+     2.236068,
+     0.0
+    ],
+    "6": [
+     2.828427,
+     0.0
+    ],
+    "7": [
+     2.236068,
+     0.0
+    ]
+   }
+  },
+  "A8_kegel (min Eigenwert, Hermitizitätsrest)": {
+   "2": {
+    "F_rest": 4.4408920985006257e-16,
+    "kegel": {
+     "Seitentausch F": [
+      -3.8183284100590235e-15,
+      1.7763568394002505e-15
+     ],
+     "Modulfluss": [
+      -3.723841339911636e-15,
+      1.2560739669470201e-15
+     ],
+     "Paaruhr": [
+      -4.618549678581203e-15,
+      1.7763568394002505e-15
+     ],
+     "Gatter (pi/2, pi/2)": [
+      -7.113776085876666,
+      22.021990611522245
+     ],
+     "Gatter (pi/2, pi)": [
+      -14.313856941326518,
+      17.067449062881863
+     ],
+     "Klein Z_A": [
+      -4.231805673938897,
+      22.021990611522245
+     ]
+    },
+    "Omega fest": {
+     "Seitentausch F": 0.0,
+     "Modulfluss": 0.0,
+     "Paaruhr": 0.0,
+     "Gatter (pi/2, pi/2)": 0.2818080846782641,
+     "Gatter (pi/2, pi)": 0.3985368153383867,
+     "Klein Z_A": 0.2818080846782641
+    }
+   },
+   "3": {
+    "F_rest": 4.450754738630974e-16,
+    "kegel": {
+     "Seitentausch F": [
+      -5.813234612694687e-15,
+      8.881784197001252e-16
+     ],
+     "Modulfluss": [
+      -1.5868958471636832e-14,
+      1.9860273225978185e-15
+     ],
+     "Paaruhr": [
+      -7.688046942108754e-15,
+      8.881784197001252e-16
+     ],
+     "Gatter (pi/2, pi/2)": [
+      -17.373573449132152,
+      29.129583376244867
+     ],
+     "Gatter (pi/2, pi)": [
+      -28.903859302075613,
+      22.829138387531735
+     ],
+     "Klein Z_A": [
+      -6.935694075722484,
+      29.129583376244867
+     ]
+    },
+    "Omega fest": {
+     "Seitentausch F": 0.0,
+     "Modulfluss": 0.0,
+     "Paaruhr": 0.0,
+     "Gatter (pi/2, pi/2)": 0.2759095684472146,
+     "Gatter (pi/2, pi)": 0.3901950536865586,
+     "Klein Z_A": 0.2759095684472146
+    }
+   }
+  },
+  "B1": {
+   "Oszillatorspur_Fehler": 8.022208357568681e-51,
+   "Normalform_Konstanzfehler": {
+    "1": 2.539126474587586e-50,
+    "X = R i^(-2h)": 1.5439754094435694e-49,
+    "X' = R i^(2h)": 1.4836230996952473e-49,
+    "G = U R^2": 2.7086245978560803e-50,
+    "X_p = R Rq^-1 i^(-2h)": 8.953761778808855e-50,
+    "X_p^3": 1.6170226496057784e-49,
+    "i^(-2h)": 1.750660885110388e-49,
+    "G_tot = U (-1)^(F+Fq)": 3.073679416606025e-50
+   },
+   "Bahnen": {
+    "1": 6,
+    "X = R i^(-2h)": 96,
+    "X' = R i^(2h)": 96,
+    "G = U R^2": 24,
+    "X_p = R Rq^-1 i^(-2h)": 96,
+    "X_p^3": 96,
+    "i^(-2h)": 96,
+    "G_tot = U (-1)^(F+Fq)": 24
+   },
+   "max |c| der Vertreter": 8
+  },
+  "B2_charaktere": {
+   "X = R i^(-2h)": {
+    "1": [],
+    "2": [
+     "T 0, S 0",
+     "T 1/2, S 1/2"
+    ],
+    "3": [],
+    "4": [
+     "T 0, S 0",
+     "T 1/2, S 1/2"
+    ]
+   },
+   "X' = R i^(2h)": {
+    "1": [],
+    "2": [
+     "T 0, S 0",
+     "T 1/2, S 1/2"
+    ],
+    "3": [],
+    "4": [
+     "T 0, S 0",
+     "T 1/2, S 1/2"
+    ]
+   },
+   "X_p = R Rq^-1 i^(-2h)": {
+    "1": [
+     "T 0, S 0",
+     "T 1/2, S 1/2"
+    ],
+    "2": [
+     "T 0, S 0",
+     "T 1/2, S 1/2"
+    ],
+    "3": [
+     "T 0, S 0",
+     "T 1/2, S 1/2"
+    ],
+    "4": [
+     "T 0, S 0",
+     "T 1/2, S 1/2"
+    ]
+   }
+  },
+  "B2_Xp_Bahn_enthaelt (rel. Koeffizient)": {
+   "X_p^3": "0",
+   "i^(-2h)": "0"
+  },
+  "B3_positivitaet (min normierter Spinmode, rel. Imaginärteil; Y = 0.35, 0.6, 1.0, |s| <= 5)": {
+   "1": {
+    "Z_1": [
+     1.2691688891315906e-12,
+     5.990651485875358e-32
+    ],
+    "Z_1 + Z_G": [
+     -222.69372975356166,
+     7.655636969260271e-31
+    ],
+    "Z_1 - Z_G": [
+     2.1940994699373523e-09,
+     7.590455241799265e-31
+    ],
+    "X_p = +1": [
+     1.4915785410179734,
+     1.8227791804377118e-26
+    ],
+    "X_p = -1": [
+     -9.396997726465275e+16,
+     1.8227791804377207e-26
+    ]
+   },
+   "2": {
+    "Z_1": [
+     2.8477129934038478e-11,
+     1.5460265016032912e-31
+    ],
+    "Z_1 + Z_G": [
+     4.6335946024776417e-07,
+     9.803914666908673e-31
+    ],
+    "Z_1 - Z_G": [
+     -77983.29774621403,
+     9.80412645298092e-31
+    ],
+    "X = i^0": [
+     -6.701182404305415e+34,
+     3.401952223163085e-64
+    ],
+    "X = i^1": [
+     -1.4277306825917376e+32,
+     1.5973431338945696e-61
+    ],
+    "X = i^2": [
+     38515164.46668112,
+     3.401952223163085e-64
+    ],
+    "X = i^3": [
+     14546486.863899734,
+     1.5973431338945696e-61
+    ],
+    "X' = i^0": [
+     -6.701182404305415e+34,
+     3.401952223163085e-64
+    ],
+    "X' = i^1": [
+     -1.4277306825917376e+32,
+     1.5973431338945696e-61
+    ],
+    "X' = i^2": [
+     38515164.46668112,
+     3.401952223163085e-64
+    ],
+    "X' = i^3": [
+     14546486.863899734,
+     1.5973431338945696e-61
+    ],
+    "X_p = +1": [
+     27320738.606860366,
+     2.745260585204529e-26
+    ],
+    "X_p = -1": [
+     -3.357734162205736e+34,
+     2.745260585204529e-26
+    ]
+   },
+   "3": {
+    "Z_1": [
+     2.40303118782199e-10,
+     2.46831337312466e-31
+    ],
+    "Z_1 + Z_G": [
+     -18615205.737790756,
+     9.270182399269151e-31
+    ],
+    "Z_1 - Z_G": [
+     -11.282862314727195,
+     9.270181596849975e-31
+    ],
+    "X_p = +1": [
+     66610555722246.914,
+     2.6418259380979125e-26
+    ],
+    "X_p = -1": [
+     -8.079508715029537e+51,
+     2.6418259380979125e-26
+    ]
+   },
+   "4": {
+    "Z_1": [
+     1.2463026233792218e-09,
+     3.0487065730783525e-31
+    ],
+    "Z_1 + Z_G": [
+     -82.32551862752672,
+     7.426524465646244e-31
+    ],
+    "Z_1 - Z_G": [
+     -4024922914.992072,
+     7.426524468363792e-31
+    ],
+    "X = i^0": [
+     -2.2630030016154485e+21,
+     1.5902374594755288e-101
+    ],
+    "X = i^1": [
+     6.6157188091570364e+19,
+     1.902264348647392e-99
+    ],
+    "X = i^2": [
+     -3.5439221997470255e+69,
+     1.5902374594755288e-101
+    ],
+    "X = i^3": [
+     -2.919047620392484e+67,
+     1.902264348647392e-99
+    ],
+    "X' = i^0": [
+     -2.2630030016154485e+21,
+     1.5902374594755288e-101
+    ],
+    "X' = i^1": [
+     6.6157188091570364e+19,
+     1.902264348647392e-99
+    ],
+    "X' = i^2": [
+     -3.5439221997470255e+69,
+     1.5902374594755288e-101
+    ],
+    "X' = i^3": [
+     -2.919047620392484e+67,
+     1.902264348647392e-99
+    ],
+    "X_p = +1": [
+     7.61697686569711e+19,
+     2.0887444307943e-26
+    ],
+    "X_p = -1": [
+     -1.786602483667416e+69,
+     2.0887444307943e-26
+    ]
+   }
+  },
+  "B3_kontrolle_gegen_z113": 7.411538288475128e-22,
+  "B4_positive_Eigenwerte": {
+   "X": {
+    "2": [
+     "X = i^2",
+     "X = i^3"
+    ],
+    "4": [
+     "X = i^1"
+    ]
+   },
+   "X'": {
+    "2": [
+     "X' = i^2",
+     "X' = i^3"
+    ],
+    "4": [
+     "X' = i^1"
+    ]
+   }
+  },
+  "B6_spintabelle (2h -> Uhrexponent T, R = i^T)": {
+   "X' = -1": {
+    "-2": [
+     0
+    ],
+    "-1": [
+     3
+    ],
+    "0": [
+     2
+    ],
+    "1": [
+     1
+    ],
+    "2": [
+     0
+    ]
+   },
+   "X = -1": {
+    "-2": [
+     0
+    ],
+    "-1": [
+     1
+    ],
+    "0": [
+     2
+    ],
+    "1": [
+     3
+    ],
+    "2": [
+     0
+    ]
+   }
+  },
+  "C_abstand": {
+   "distance": {
+    "missing_clauses": 1,
+    "free_numbers": 1,
+    "premises_beyond_axiom": 7
+   },
+   "open_total": 10,
+   "by_question": {
+    "origin": [
+     "K19",
+     "K20"
+    ],
+    "identification": [
+     "I_step",
+     "P_lift"
+    ],
+    "gravity": [
+     "P_G",
+     "P_curv",
+     "graviton"
+    ],
+    "composition": [
+     "P_ord",
+     "P_std"
+    ],
+    "statistics": [
+     "P_paar"
+    ]
+   },
+   "best": [
+    "step type | internal spin-Z4 | radial conformal | energy levels | P0-graded two-seam composition | seed rho_1 + spin-Z4 | Z4 glue summed over a pair of seams (P_glue, P_paar) | local coherent transfer gate",
+    "step type | internal spin-Z4 | radial conformal | energy levels | P0-graded two-seam composition | two binary observations | Z4 glue summed over a pair of seams (P_glue, P_paar) | local coherent transfer gate"
+   ],
+   "open_items": [
+    "I_step",
+    "P_G",
+    "P_curv",
+    "P_lift",
+    "P_ord",
+    "P_paar",
+    "P_std",
+    "graviton"
+   ]
+  }
+ },
+ "urteil": "Schritt 1 ist gerechnet, mit zwei positiven und zwei negativen Befunden. (1) Standardform: Der Standardvektor von Naht und Tomita-Partner ist ein Transfer-Singulett; der Winkel der Komposition ist auf ihm unsichtbar, und die Gatterfamilie wirkt nur über ihr Phasengesetz. Die Bilder des Standardvektors liegen genau für phi in (pi/2) Z in der Uhrbahn eines nativen Standardvektors: für 0 und pi beim bosonischen (kein Gatter, einkörperiger Tausch), für +-pi/2 beim fermionischen (die Wechselwirkung). Die Viertelphase ist exakt die Klein-Verdrehung der gradierten Standardform. Damit fallen P_univ (z130) und P_uhr in eine Prämisse P_std zusammen: Die Komposition ist ein Morphismus der gradierten Standardform. Negativ: Kein Mitglied der Familie, das den Standardvektor festlässt, wechselwirkt, und die einzige nicht faktorisierte Symmetrie der Standardform ist der einkörperige Seitentausch. Die Wechselwirkung liegt also nicht in der Standardform einer Naht, sie braucht P_std als Zusatz; P_ord bleibt unberührt. (2) Statistik: Der in z113 offene Modultest der Z4-Verklebung ist gerechnet. Pro Naht ist sie anomal. Diagonal über zwei Paare ist sie modulinvariant und positiv, und zwar genau im Sektor R = Z_SU^-1 mit normaler Statistik: Vektoren uhrneutral, Skalare bei R = -1, Weyl-Fermionen bei R = +-i, bis auf das Spiegelbit. Der Sektor mit dem Skalarvakuum fällt durch. Die J-kovariante Fassung besteht immer, enthält aber keine Spinoren. Die diagonale Vervollständigung einer einzelnen Naht trägt die Spinorstatistik damit nicht; nötig ist die Summe über ein Paar (P_paar). Abstand zur Komplettlösung: 1 Klausel, 1 freie Zahl, 7 Prämissen, dazu K19 und K20, zehn Punkte statt elf. Keine Komplettlösung."
+}

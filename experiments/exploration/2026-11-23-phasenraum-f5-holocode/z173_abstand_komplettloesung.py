@@ -12,6 +12,9 @@ Teil A  Abstand der besten Szenarien zur Komplettlösung
 Teil B  Die offene Liste, nach fünf Fragen geordnet
 Teil C  Eine Quelle für drei Fragen: die Standardform des Nahtzustands
 Teil D  Bilanz und Urteil.
+
+Hinweis (z174): Die Prüfungen dieses Skripts beschreiben den Stand z173 (108 Szenarien, Abstand 2/1/7, elf Punkte). Seit z174 gibt das
+Suchprogramm 162 Szenarien, Abstand 1/1/7 und zehn Punkte aus; die Ergebnisdatei z173_ergebnis.json bleibt als Stand vor z174 stehen.
 """
 import json
 import sys

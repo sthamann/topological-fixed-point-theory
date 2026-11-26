@@ -730,6 +730,28 @@ Yang–Mills-artige Form (Bestand z150), nicht über konforme Gravitation. W5 is
 Flusszahl bleibt eine Wahl. Pflichtenheft und nächste Rechnungen M1 bis M4 stehen in
 `docs/research/GESAMTSTAND-UND-STRATEGIEN.md`, Nachtrag z165.
 
+**Schritt 1: Standardform für Statistik und Zusammensetzung (z174, 17 Prüfungen, selbst gerechnet; OriginLab
+`reconstruction_search`): P_univ und P_uhr fallen in P_std zusammen; die ℤ₄-Verklebung ist über zwei Nahtpaare
+modular und positiv, über eines anomal [E/N, E negativ]. Zehn offene Punkte statt elf. Keine volle Lösung.**
+
+- A1, A2 [E]: Standardform aus der Definition (16 und 64 Zustände); Ω trägt nur n_A = n_B je Mode und ist ein
+  Transfer-Singulett; der Winkel θ ist auf Ω unsichtbar.
+- A3 bis A6 [E]: U(θ, φ)Ω = e^(−iφH_Q)Ω; e^(−iπQ²/2) = (1 + i(−1)^Q)/(1 + i) (Klein-Verdrehung); das Bild liegt
+  genau für φ ∈ (π/2)ℤ in einer Uhrbahn (0, π: Ω; ±π/2: Ω_g), mit Oszillatoren zusätzlich χ ∈ πℤ (Rest U_2π).
+- A7, A8 [E negativ]: Was Ω festlässt, ist einkörperig. Kegelerhaltend sind Modulfluss, Paaruhr und der
+  Seitentausch F = i^(Q_A+Q_B) (−1)^(Q_A Q_B) B_π; das Viertelgatter nicht.
+- B1 [E]: Bahnen 6, 24, 96; Normalformen der langen Nähte auf 49 Stellen geprüft.
+- B2 [E]: X = R·i^(−2h) und der Spiegel sind für N = 1 und 3 anomal, für N = 2 und 4 frei; die J-kovariante Fassung
+  ist immer frei.
+- B3 bis B5 [N]: Kontrolle gegen z113 (−222,69). N = 2: positiv genau X = −1 und −i (ebenso im Spiegel); N = 4:
+  nur X = i. X_p = +1 ist immer positiv und spinorfrei.
+- B6 [E]: X′ = −1 ist R = Z_SU⁻¹: h = 0 bei R = −1, h = ±1 bei R = 1, h = ±1/2 bei R = ±i; G = +1.
+- C1 bis C3 [E]: neuer Statistikwert mit P_paar; Implikationen P_univ → P_std und P_uhr → P_std; Abstand
+  (1, 1, 7), dazu K19 und K20.
+
+**Was das bedeutet.** Die Standardform einer Naht trägt weder die Wechselwirkung noch die Spinorstatistik. Beides
+verlangt ein Paar von Nähten. Offen bleibt, woher das Paar kommt (K19, K20), dazu P_ord.
+
 **Kurskorrektur und Abstand zur Komplettlösung (z173, 8 Prüfungen; OriginLab `complete_solution_distance`): elf
 offene Punkte in fünf Fragen; α ist kein Ziel.**
 

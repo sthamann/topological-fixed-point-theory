@@ -757,6 +757,16 @@ hergeleitet, 7 unter benannter Lesart, keines gescheitert, offen oder gesetzt. K
         Gravitation (P_curv, P_G, Graviton), Statistik (modulare Statistik). P_IF ist Konvention.
       - Kernstrategie: alles aus der Standardform des Nahtzustands. Sie ist die diagonale der 27
         Vervollständigungen (modular invariant, 16 als Skalar) und Kandidat für Statistik und Zusammensetzung.
+    - Schritt 1, Standardform für Statistik und Zusammensetzung (Z174, 17 Prüfungen):
+      - Der Standardvektor von Naht und Partner ist ein Transfer-Singulett. Sein Bild unter dem Gatter liegt genau
+        für φ ∈ (π/2)ℤ in der Uhrbahn eines nativen Standardvektors; ±π/2 führt auf den fermionischen. Die
+        Viertelphase ist die Klein-Verdrehung. P_univ und P_uhr fallen in eine Annahme P_std zusammen.
+      - Negativ: Was den Standardvektor festlässt, wechselwirkt nicht. Die einzige nicht faktorisierte Symmetrie
+        der Standardform ist der einkörperige Seitentausch. P_ord bleibt.
+      - Modultest der ℤ₄-Verklebung (in Z113 offen): anomal auf einem Paar Naht plus Partner; über zwei Paare
+        modulinvariant und positiv genau im Sektor R = Z_SU⁻¹ mit normaler Statistik (Vektoren uhrneutral, Skalare
+        bei R = −1, Weyl-Fermionen bei R = ±i) und in einem Sektor mit vertauschter Statistik. Neue Annahme P_paar.
+      - Abstand: 1 fehlende Klausel, 1 freie Zahl, 7 Annahmen, dazu K19 und K20, zusammen zehn Punkte.
     - Zopfrelation: Sie gilt nur für einkörperige Operatoren (Nahtuhr und Strahlteiler = Ising-Zopfmatrizen). Das
       wechselwirkende Gatter verletzt sie mit Defekt √(3/8). Die Defektstruktur ist endlich (Clifford-Typ). [E]
     - Eichdynamik: Plakettenstruktur und sin²θ_W = 3/8 sind nativ, die absolute Kopplung und die Linkdynamik nicht.

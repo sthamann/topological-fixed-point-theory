@@ -834,21 +834,26 @@ SCENARIO_AXES = {
                 "double copy of seam amplitudes (P_diag)", "moved algebra at fixed state"],
     "origin": ["seed rho_1 + spin-Z4", "two binary observations"],
     "statistics": ["untwisted lift", "clock-twisted lift (P_GSO)", "E8 glue with A3 = conformal (P_A3)",
-                   "Z4 glue on the spinor module (P_glue)"],
+                   "Z4 glue on the spinor module (P_glue)", "Z4 glue summed over a pair of seams (P_glue, P_paar)"],
     "interaction": ["fusion over even or linear algebras", "vertex operators = level-1 currents", "chosen two-body term",
                     "twistor action from seam currents (T)", "transfer exchange (twirl)", "local coherent transfer gate"],
 }
 # the statistics rules of z97 live on charge lattice (x) radial standard form (step type = spinor index, modes = levels)
 RADIAL_STATISTICS = ("clock-twisted lift (P_GSO)", "E8 glue with A3 = conformal (P_A3)",
-                     "Z4 glue on the spinor module (P_glue)")
+                     "Z4 glue on the spinor module (P_glue)", "Z4 glue summed over a pair of seams (P_glue, P_paar)")
 CHIRAL_STATISTICS = {"untwisted lift": False, "clock-twisted lift (P_GSO)": False,       # z97: index 0 per R class
                      "E8 glue with A3 = conformal (P_A3)": True,                         # z97: chiral Z4, 16 one helicity
-                     "Z4 glue on the spinor module (P_glue)": True}                      # z117: one chiral 16 with the cut
+                     "Z4 glue on the spinor module (P_glue)": True,                      # z117: one chiral 16 with the cut
+                     "Z4 glue summed over a pair of seams (P_glue, P_paar)": True}                         # the same glue (z117)
 # z113 (H6h49): summing the 2 pi rotation U_2pi over the seam torus, modular invariance plus positivity per seam keeps
 # only U = +1 (no spinors); the per-seam rule G = U R^2 = +1 has negative long-seam multiplicities, and no lift is
-# compatible with (E8)_1, where the clock is frozen; the spinor-module glue of z117 was not tested there (no clause)
+# compatible with (E8)_1, where the clock is frozen. z174 (H6h50) ran the same test for the Z4 glue X = R i^(-2h) and its
+# mirror: on one pair seam + partner the glue is anomalous (no consistent character), so the per-seam value stays without
+# the clause; summed diagonally over two pairs it is modular and positive exactly for the eigenvalue -1 (R = Z_SU^-1 on
+# all states, normal statistics) and for one eigenvalue with exchanged statistics, which is the pair-summed value
 MODULAR_STATISTICS = {"untwisted lift": True, "clock-twisted lift (P_GSO)": False,
-                      "E8 glue with A3 = conformal (P_A3)": False, "Z4 glue on the spinor module (P_glue)": False}
+                      "E8 glue with A3 = conformal (P_A3)": False, "Z4 glue on the spinor module (P_glue)": False,
+                      "Z4 glue summed over a pair of seams (P_glue, P_paar)": True}
 
 
 def _check_named(d, fragment):
@@ -981,6 +986,13 @@ EVIDENCE = [
      "(SU(2,2) x Spin(10))/Z4_diag); with the cut one chiral 16 remains; whether the neutral scalar ladder stays outside "
      "the spinor module is open",
      lambda d: _check_named(d, "Verklebung = Gesamtchiralität = Z4-Regel") and _check_named(d, "Schnitt und Helizität")),
+    ("statistics", "Z4 glue summed over a pair of seams (P_glue, P_paar)", "conditional", "z174_ergebnis.json",
+     "the Z4 glue of z117 summed over the seam torus by the method of z113: anomalous on one pair seam + partner, free on "
+     "two; there the projections on X = -1 (R = Z_SU^-1 on all states: vectors clock-neutral, scalars at R = -1, Weyl "
+     "fermions at R = +-i, normal statistics) and on one eigenvalue with exchanged statistics are Hilbert space traces, the "
+     "sector of the scalar vacuum is not; over four pairs as a whole only exchanged statistics survives",
+     lambda d: _check_named(d, "Anomalie: Die einseitige Verklebung")
+     and _check_named(d, "Positivität der verklebten Zustandssumme") and _check_named(d, "Was der Eigenwert -1 bedeutet")),
     ("gravity", "moved algebra at fixed state", "excluded", "z115_ergebnis.json", "the family J(M_g, Omega) is an orbit of "
      "the state's stabiliser (compact dual U(2)), flat in its own model; the quadratic response vanishes on the family "
      "directions, condensates spread over the orbit with a free amplitude (scoped)",
@@ -1085,6 +1097,7 @@ VALUE_PREMISES = {
     ("origin", "two binary observations"): ("A*", "P_sym"),
     ("statistics", "clock-twisted lift (P_GSO)"): ("P_CAR", "P_GSO"),
     ("statistics", "Z4 glue on the spinor module (P_glue)"): ("P_IF",),
+    ("statistics", "Z4 glue summed over a pair of seams (P_glue, P_paar)"): ("P_IF", "P_paar"),                    # z174
     ("interaction", "chosen two-body term"): ("P_2body",),
     ("interaction", "twistor action from seam currents (T)"): ("T", "P_N4", "P_norm", "P_X"),          # z123, z124
     ("interaction", "local coherent transfer gate"): ("P_null", "P_viertel", "P_ord"),               # z121
@@ -1108,6 +1121,17 @@ IMPLICATIONS = [
      "spin 2 on)",
      lambda d: _check_named(d, "Funktion der Uhrwerte (Q mod 4)") and _check_named(d, "Leckfreiheit des Paarsektors")
      and _check_named(d, "k gerade: das Gatter normalisiert")),
+    (lambda sc: sc["interaction"] == "local coherent transfer gate", "P_univ", ("P_std",), "z130_ergebnis.json",
+     "with the Tomita partner as second seam the conservation of seam parity is level matching of the doubled seam, "
+     "native from modular invariance (z113, z130)",
+     lambda d: _check_named(d, "[E] Physikalischer Raum der verdoppelten Naht")
+     and _check_named(d, "[E] Besetzung: Der KMS-Vektor")),
+    (lambda sc: sc["interaction"] == "local coherent transfer gate", "P_uhr", ("P_std",), "z174_ergebnis.json",
+     "the gate maps the standard vector of seam + partner into the clock orbit of a native standard vector (bosonic or "
+     "fermionic) exactly for phi in (pi/2)Z, and with oscillators for chi in pi Z, where chi = pi is the 2 pi rotation "
+     "that fixes the vector; the quarter phase is the Klein twist of the graded standard form",
+     lambda d: _check_named(d, "Uhrbahn der Standardvektoren") and _check_named(d, "Mit Oszillatoranteil")
+     and _check_named(d, "Klein-Identität")),
     (lambda sc: sc["gravity"] == "MacDowell-Mansouri: modular Cartan connection", "P_R", ("P_mod", "P_idx"),
      "z127_ergebnis.json", "the clock as trace weight follows from the finite modular weights and the KMS ladder up to "
      "the reading choices P_mod and P_idx", lambda d: all(d["checks"].values())),
@@ -1120,6 +1144,11 @@ PREMISE_MEANING = {
     "P_sym": "the quarter turn A -> B -> -A of the two binary operations is inner, tau = i (z80, z94)",
     "P_univ": "every physical composition conserves the fermion parity of each seam, the pair clock is superselected (z125); "
               "its native form is level matching, native when the second seam is the Tomita partner (P_TP, z130)",
+    "P_std": "the composition is a morphism of the graded standard form of one seam: its second seam is the Tomita "
+             "partner, and it maps the standard vector into the clock orbit of a native standard vector (z130, z174); "
+             "gives P_univ and P_uhr; not derived from A*, and the gate is then a holomorphic-antiholomorphic coupling",
+    "P_paar": "the statistics rule (the Z4 glue) is summed diagonally over a pair of seams, each with its partner; on one "
+              "pair it is anomalous, on four as a whole only exchanged statistics is positive (z174)",
     "I_step": "identification doubled diagonal step = native single step: spinor index = step type, modes = levels (z83)",
     "P_lift": "the clock is the Z4 of the 16 on the carrier through a spinor lift branch (z82)",
     "P_vac": "physical time is read in the vacuum sector; the thermal original has no positive continuous time (z72, z84)",
@@ -1300,6 +1329,11 @@ FRONTIER = {
                "the Tomita partner (z130); one partner is the only real Lorentzian net of the catalogue (z172)"),
     "P_uhr": ("composition", "the composition phase is a function of the clock values as a theorem (z144)"),
     "P_ord": ("composition", "ordered distinguishable seams as a theorem (z121)"),
+    "P_std": ("composition", "the composition as a morphism of the graded standard form derived from A*; recorded: no "
+              "member of the gate family that fixes the standard vector interacts, and the only non-product symmetry of "
+              "the standard form is the one-body side exchange (z174), so the interaction needs this premise"),
+    "P_paar": ("statistics", "why the glue is summed over exactly two seams; recorded: one pair is anomalous, two pairs are "
+               "modular and positive in the sector R = Z_SU^-1, four as a whole are not (z174)"),
     "P_curv": ("gravity", "a family carrying curvature with fixed coefficient derived from the seam (z100, z115, z128)"),
     "P_G": ("gravity", "the pure number G/R_vac^2 derived; recorded: one relation eps^2 G/a^2 = 4 c3^3 exp(-2/alpha) from "
             "the native infinity twistor and the ledger rung (z164, z172), the second relation is missing"),

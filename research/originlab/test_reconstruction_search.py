@@ -57,7 +57,7 @@ class ReconstructionSearch(unittest.TestCase):
     # ------------------------------------------------------------ whole-theory scenarios (H6h42, S7)
     def test_scenarios_enumerate_all_axes_and_respect_recorded_exclusions(self):
         u = self.universe("scenarios")
-        self.assertEqual(u["objects"], 4*3*4*2*10*2*4*6)                 # + gravity, statistics, interaction (H6h49)
+        self.assertEqual(u["objects"], 4*3*4*2*10*2*5*6)                 # + pair-summed glue (H6h50, z174)
         sc, info = scenario_candidates()
         for o in sc:
             if (o["scenario"]["time"] == "modular flow" or o["scenario"]["spinor_index"] == "quarter oscillators"
@@ -69,22 +69,22 @@ class ReconstructionSearch(unittest.TestCase):
         self.assertEqual(info["native_lorentz"], {"quarter oscillators": True, "step type": True, "eta doublet": False,
                                                   "seam doublet V_1": False})
 
-    def test_scenarios_h6h49_leave_graviton_and_modular_statistics_open(self):
+    def test_scenarios_leave_graviton_open_and_modular_statistics_to_the_pair_sum(self):
         u = self.universe("scenarios")
         # H6h47 left graviton and chirality open; with the twistor-line index (z114) chirality is conditional under
-        # P_GSO, and the new blocker is the modular consistency of the statistics rule (z113)
-        self.assertEqual(u["minimal_empty_rules"], [["graviton"], ["admissible", "modular_statistics"],
-                                                    ["chiral_matter", "modular_statistics"],
-                                                    ["modular_statistics", "spin_statistics"]])
+        # P_GSO, and the blocker of H6h49 was the modular consistency of the statistics rule (z113). z174 ran that test
+        # for the Z4 glue: anomalous per seam, modular and positive summed over a pair of seams (P_paar)
+        self.assertEqual(u["minimal_empty_rules"], [["graviton"]])
         matter = "admissible+coherent+lorentzian_native+positive_time+one_field+spin_statistics+interacting"
         for name in (matter, matter + "+chiral_matter"):
             q = u["questions"][name]
-            self.assertEqual((q["verdict"], len(q["survivors"])), ("AMBIGUOUS", 108))
+            self.assertEqual((q["verdict"], len(q["survivors"])), ("AMBIGUOUS", 162))
         self.assertEqual(u["questions"]["admissible+chiral_matter"]["verdict"], "AMBIGUOUS")
-        self.assertEqual(u["questions"]["admissible+modular_statistics"]["verdict"], "EMPTY")
+        self.assertEqual(u["questions"]["admissible+modular_statistics"]["verdict"], "AMBIGUOUS")
         self.assertEqual(u["questions"]["admissible+graviton"]["verdict"], "EMPTY")
         vals = u["derived"]["values_in_base_survivors"]
         self.assertEqual(vals["statistics"], ["Z4 glue on the spinor module (P_glue)",       # z117, one bit
+                                              "Z4 glue summed over a pair of seams (P_glue, P_paar)",                                       # z174
                                               "clock-twisted lift (P_GSO)"])                 # z97/z113, conditional
         self.assertEqual(vals["interaction"], ["chosen two-body term", "local coherent transfer gate",
                                                "twistor action from seam currents (T)"])    # z99, z120, z110/z111
@@ -101,7 +101,10 @@ class ReconstructionSearch(unittest.TestCase):
                 self.assertNotIn("admissible", o["clauses"])
             if o["scenario"]["statistics"] in ("clock-twisted lift (P_GSO)", "Z4 glue on the spinor module (P_glue)"):
                 self.assertIn("chiral_matter", o["clauses"])                               # z114 (T, K2, P_RJ), z117
-                self.assertNotIn("modular_statistics", o["clauses"])                       # z113, not tested for P_glue
+                self.assertNotIn("modular_statistics", o["clauses"])                       # z113; z174: anomalous per seam
+            if o["scenario"]["statistics"] == "Z4 glue summed over a pair of seams (P_glue, P_paar)":
+                self.assertTrue({"chiral_matter", "modular_statistics"} <= o["clauses"])    # z117, z174
+                self.assertTrue({"P_IF", "P_paar"} <= o["premises"])
         ev = info["evidence"]
         self.assertEqual(ev["statistics: E8 glue with A3 = conformal (P_A3)"]["status"], "excluded")
         self.assertEqual(ev["statistics: clock-twisted lift (P_GSO)"]["source"], "z113_ergebnis.json")
@@ -112,6 +115,8 @@ class ReconstructionSearch(unittest.TestCase):
         self.assertEqual(ev["gravity: MacDowell-Mansouri: modular Cartan connection"]["source"], "z136_ergebnis.json")
         self.assertEqual(ev["interaction: local coherent transfer gate"]["source"], "z144_ergebnis.json")
         self.assertEqual(ev["statistics: Z4 glue on the spinor module (P_glue)"]["status"], "conditional")
+        self.assertEqual((ev["statistics: Z4 glue summed over a pair of seams (P_glue, P_paar)"]["status"], ev["statistics: Z4 glue summed over a pair of seams (P_glue, P_paar)"]["source"]),
+                         ("conditional", "z174_ergebnis.json"))
         self.assertEqual(ev["gravity: moved algebra at fixed state"]["status"], "excluded")
         self.assertEqual({k: v["status"] for k, v in info["clause_evidence"].items()},
                          {"modular_statistics": "conditional", "twistor_line_index": "conditional"})
@@ -121,13 +126,15 @@ class ReconstructionSearch(unittest.TestCase):
         pc = u["premise_closure"]
         # free parameters weigh first (K14): the chosen two-body term loses to the coherent gate, which trades P_sym for
         # P_univ (z125) and needs P_ord (z121) and P_uhr, which replaces P_null and P_viertel (z144); chirality costs one
-        # bit P_IF on both routes (z117, z122)
-        self.assertEqual((pc["survivors"], pc["least_free_parameters"], pc["least_premises"]), (108, 1, 9))
+        # bit P_IF on both routes (z117, z122). With the Tomita partner as second seam P_univ (z130) and P_uhr (z174)
+        # merge into the one premise P_std; the pair-summed glue adds P_paar and is therefore not the minimal set here
+        self.assertEqual((pc["survivors"], pc["least_free_parameters"], pc["least_premises"]), (162, 1, 8))
         self.assertEqual(pc["minimal_premise_sets"],
-                         [("A*", "I_step", "P_G", "P_IF", "P_curv", "P_lift", "P_ord", "P_uhr", "P_univ")])
-        self.assertEqual(pc["clauses_no_survivor_has"], ["graviton", "modular_statistics"])
+                         [("A*", "I_step", "P_G", "P_IF", "P_curv", "P_lift", "P_ord", "P_std")])
+        self.assertEqual(pc["clauses_no_survivor_has"], ["graviton"])
         self.assertEqual({i["replaces"]: i["holds"] for i in u["derived"]["implications"]},
-                         {"P_RJ": True, "P_sym": True, "P_null": True, "P_viertel": True, "P_R": True, "P_pair": True})
+                         {"P_RJ": True, "P_sym": True, "P_null": True, "P_viertel": True, "P_univ": True, "P_uhr": True,
+                          "P_R": True, "P_pair": True})
         mm = [o for o in scenario_candidates()[0]
               if o["scenario"]["gravity"] == "MacDowell-Mansouri: modular Cartan connection"]
         self.assertTrue(all({"P_mod", "P_idx", "P_IF"} <= o["premises"] and not {"P_R", "P_pair"} & o["premises"] for o in mm))
@@ -309,7 +316,7 @@ class ReconstructionSearch(unittest.TestCase):
         self.assertEqual(self.result["status"], "RECONSTRUCTION_SEARCHED")
         text = json.dumps(self.result, sort_keys=True, allow_nan=False)
         self.assertEqual(text, json.dumps(run_reconstruction(), sort_keys=True, allow_nan=False))
-        self.assertEqual(self.result["objects_enumerated"], 54 + 66 + 10 + 6 + 4 + 46080)  # + doublets and position spaces (H6h40)
+        self.assertEqual(self.result["objects_enumerated"], 54 + 66 + 10 + 6 + 4 + 57600)  # + doublets and position spaces (H6h40)
 
 
 class CompleteSolutionDistance(unittest.TestCase):
@@ -317,13 +324,16 @@ class CompleteSolutionDistance(unittest.TestCase):
         import reconstruction_search as rs
         d = rs.complete_solution_distance()
         self.assertFalse(d["complete"])
-        self.assertEqual(d["distance"], {"missing_clauses": 2, "free_numbers": 1, "premises_beyond_axiom": 7})
+        # z173: (2, 1, 7) and eleven items; z174: the pair-summed glue carries modular_statistics under P_paar, and
+        # P_univ, P_uhr merge into P_std
+        self.assertEqual(d["distance"], {"missing_clauses": 1, "free_numbers": 1, "premises_beyond_axiom": 7})
         self.assertTrue(d["conventions"]["P_IF"]["holds"])
-        self.assertEqual(d["open_total"], 11)
-        self.assertEqual(d["by_question"], {"origin": ["K19", "K20"], "composition": ["P_ord", "P_uhr", "P_univ"],
+        self.assertEqual(d["open_total"], 10)
+        self.assertEqual(d["by_question"], {"origin": ["K19", "K20"], "composition": ["P_ord", "P_std"],
                                             "gravity": ["P_G", "P_curv", "graviton"],
                                             "identification": ["I_step", "P_lift"],
-                                            "statistics": ["modular_statistics"]})
+                                            "statistics": ["P_paar"]})
+        self.assertTrue(all("pair of seams" in label for label in d["best"]))
 
 
 if __name__ == "__main__":

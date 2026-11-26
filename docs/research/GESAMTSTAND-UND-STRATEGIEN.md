@@ -1481,6 +1481,76 @@ Eingetragen ist er noch nicht.
 
 Prüfbank unverändert 13 P / 7 L. Keine Komplettlösung, nichts befördert.
 
+### Nachtrag z174: Schritt 1, die Standardform für Statistik und Zusammensetzung
+
+**Frage.** Schritt 1 der Kernstrategie aus z173: Was gibt die Standardform des Nahtzustands (Naht plus
+Tomita-Partner) für die vier Punkte modulare Statistik, P_univ, P_uhr und P_ord her? Gerechnet in z174
+(17 Prüfungen, selbst gerechnet; OriginLab `reconstruction_search`).
+
+**Zusammensetzung (Teil A, endliches Modell mit 2 und 3 Moden je Seite) [E].**
+
+- Der Standardvektor Ω ist ein Transfer-Singulett: J⁺Ω = J⁻Ω = 0. Der Strahlteiler lässt Ω für jeden Winkel fest;
+  der Winkel der Komposition ist auf Ω unsichtbar.
+- Die Gatterfamilie U = B_θ⁺ e^(−iφH_Q) B_θ wirkt auf Ω nur über ihr Phasengesetz: e^(−iφQ²) auf dem Paarsektor.
+- Das Bild liegt genau für φ ∈ (π/2)ℤ in der Uhrbahn eines nativen Standardvektors:
+  - φ = 0 und π: beim bosonischen Vektor Ω (kein Gatter, einkörperiger Tausch);
+  - φ = ±π/2: beim fermionischen Vektor Ω_g = ∏(1 + q a⁺b⁺)|0⟩ (die Wechselwirkung).
+- Klein-Identität, exakt für alle ganzen Q: e^(−iπQ²/2) = (1 + i(−1)^Q)/(1 + i). Die Viertelphase des Gatters ist die
+  Klein-Verdrehung der gradierten Standardform.
+- Mit Oszillatoranteil χ: Das Kriterium gibt φ ∈ (π/2)ℤ und χ ∈ πℤ. Der Rest χ = π ist die 2π-Drehung U_2π, die Ω
+  festlässt. Bis auf U_2π ist das genau P_uhr aus z144.
+- Folge: P_univ (nativ in der Partnerlesart, z130) und P_uhr fallen in eine Annahme **P_std** zusammen: Die
+  Komposition ist ein Morphismus der gradierten Standardform (zweite Naht ist der Tomita-Partner, Standardvektoren
+  gehen in Uhrbahnen von Standardvektoren). Das ist eine Zusammenlegung, keine Herleitung aus A\*.
+
+**Was die Standardform nicht hergibt [E negativ].**
+
+- Kein Mitglied der Familie, das Ω festlässt, wechselwirkt. Mit dem modularen Phasengesetz (Q_A² − Q_B²)/2 bleibt Ω
+  immer fest, und das Gatter ist immer einkörperig.
+- Die Symmetrien der Standardform (erhalten den natürlichen Kegel, vertauschen mit J) sind Modulfluss, Paaruhr und
+  der Seitentausch F. Exakt gilt F = i^(Q_A+Q_B) (−1)^(Q_A Q_B) B_π: halber Transferumlauf mal Produktuhr mal
+  Klein-Kozyklus. F ist einkörperig. Das Viertelgatter erhält den Kegel nicht.
+- Die Wechselwirkung liegt damit nicht in der Standardform einer Naht. Sie braucht P_std als Zusatz.
+- P_ord (Kette aus mehr als zwei Nähten) berührt das Paar nicht und bleibt.
+
+**Statistik (Teil B, Modultest nach z113) [E/N].** In z113 war die ℤ₄-Verklebung aus z117 nicht geprüft worden. Sie
+ist jetzt gerechnet, für X = R·i^(−2h), den Spiegel X′ = R·i^(2h) und die J-kovariante Fassung
+X_p = R R̄⁻¹ i^(−2h). Die langen Nähte werden über Normalformen ausgewertet (jedes der 96 Bahnelemente auf
+49 Stellen geprüft).
+
+- Ein Paar Naht plus Partner: Die Verklebung ist anomal. Es gibt keine modulinvariante Summe.
+- Zwei Paare (diagonal): modulinvariant. Positiv sind genau die Eigenwerte −1 und −i; +1 und i geben negative
+  Vielfachheiten.
+- Vier Paare als Ganzes: positiv ist nur ein Eigenwert mit vertauschter Statistik.
+- Der Eigenwert −1 von X′ ist R = Z_SU⁻¹ auf allen Zuständen, die Verklebung aus z117, mit normaler Statistik
+  (G = +1). Er gibt die Tabelle: Skalare bei R = −1 (die (10,6)), Vektoren bei R = 1 (die Ströme), die 16 bei
+  h = +1/2, die 16-quer bei h = −1/2. X = −1 ist der Spiegel (das Bit P_IF).
+- Der Sektor mit dem Skalarvakuum (R = 1, h = 0) fällt durch. Das beantwortet im Geltungsbereich des Tests den
+  offenen Punkt aus z117: Die neutrale Skalarleiter gehört nicht dazu.
+- Die J-kovariante Fassung besteht für jedes N, enthält im unverdrehten Sektor aber keine Spinoren.
+- Folge: Die diagonale Vervollständigung einer einzelnen Naht trägt die Spinorstatistik nicht. Nötig ist die Summe
+  über ein Paar von Nähten, neue benannte Annahme **P_paar**. In der Programmsuche ist das ein eigener Wert der
+  Statistikachse; der alte Wert (pro Naht) bleibt ohne die Klausel.
+
+**Abstand zur Komplettlösung.** Vorher 2 fehlende Klauseln, 1 freie Zahl, 7 Annahmen, dazu K19 und K20 (elf
+Punkte). Jetzt **1 fehlende Klausel, 1 freie Zahl, 7 Annahmen, dazu K19 und K20: zehn Punkte.**
+
+| Frage | Punkte | Änderung |
+| --- | --- | --- |
+| Ursprung | K19, K20 | unverändert |
+| Zusammensetzung | P_std, P_ord | P_univ und P_uhr sind in P_std aufgegangen |
+| Zuordnung | I_step, P_lift | unverändert |
+| Gravitation | P_curv, P_G, Klausel Graviton | unverändert |
+| Statistik | P_paar | die Klausel modulare Statistik ist erfüllt, unter P_paar |
+
+**Einordnung.** Schritt 1 hat nicht vier Punkte geschlossen, sondern einen. Zwei Dinge sind schärfer als vorher:
+Die Wechselwirkung ist kein Inhalt der Standardform einer Naht, und die Spinorstatistik verlangt genau zwei Nähte.
+Beides zeigt auf dieselbe Stelle: Die Welt braucht ein Paar von Nähten, und die Frage ist, woher das Paar kommt. Das
+gehört zu K19 und K20.
+
+**Nächster Schritt (Reihenfolge aus z173).** Schritt 2, die Zuordnung: P_lift gegen Sp R = 0 tauschen und prüfen, ob
+Sp R = 0 aus A\* folgt. Prüfbank unverändert 13 P / 7 L. Keine Komplettlösung, nichts befördert.
+
 ### Was die Runde bedeutet
 
 - **Der Kandidat** braucht neun Prämissen: A*, I_step, P_lift, P_IF, P_univ, P_uhr, P_ord, P_curv und P_G als freie

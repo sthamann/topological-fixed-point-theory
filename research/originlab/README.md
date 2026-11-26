@@ -248,6 +248,13 @@ clauses no survivor reaches.
   P_G stays a free pure number G/R_vac^2: clock trace, entanglement equilibrium, induced gravity and double copy give
   rows that do not agree (z127, z136, z137). Still no survivor reaches graviton or modular statistics. Test updated.
 
+Standard form for statistics and composition (H6h50, z174): the statistics axis has a fifth value, the Z4 glue
+summed over a pair of seams (premises P_IF, P_paar), with computed evidence from the modular test of z174 (anomalous
+on one pair seam + partner; on two pairs modular and positive for the eigenvalue -1, the sector R = Z_SU^-1). The
+per-seam glue value stays without the clause `modular_statistics`. Two implications replace P_univ (z130) and P_uhr
+(z174) by one premise P_std, the composition as a morphism of the graded standard form. Current distance: 1 missing
+clause (graviton), 1 free number, 7 premises, plus K19 and K20.
+
 Distance to the complete solution (H6h50, z173): `reconstruction_search.complete_solution_distance()` reports, for
 the admissible coherent scenarios, the triple (missing clauses, free numbers, premises beyond the axiom A*), the best
 scenarios and the open items grouped by question (origin, composition, identification, gravity, statistics);
