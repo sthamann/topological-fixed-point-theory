@@ -698,6 +698,38 @@ nativ (P_inf erfüllt), die Zahl ε² ist P_G in neuer Gestalt. Die Einstein-Red
 Beide Zahlen hängen im Ledger an α; der Engpass ist ALPHA.QUILLEN.EXACT.01. Nächste Rechnungen N0 bis N2 stehen in
 `docs/research/GESAMTSTAND-UND-STRATEGIEN.md`, Nachtrag z164.
 
+**Einundzwanzigste externe Analyse (z165, 19 Prüfungen, selbst gerechnet): Die gerechneten Aussagen stimmen. Sie
+korrigieren den ersten Test von W3 und den Hintergrund von W2. Der Kandidat „relative graduierte Determinante“ ist
+enger gefasst; das Objekt selbst fehlt [E/C/L]. Keine volle Lösung.**
+
+**Bilanz:** unverändert 13 P und 7 L von 20. Das Skript läuft unter PYTHONHASHSEED 0 und 7 byteweise gleich.
+
+**Nachrechnung [E].**
+- A1: Kern e^(−ωt)(A + Bt), gespiegelte Determinante −B²(t₁ − t₂)²e^(−2ω(t₁+t₂)).
+- A2: Punkte 0 und 1/2: 1/(1 − z̄w)² hat det 7/9, (1 − z̄w)² hat det −7/16 (Taylor-Koeffizienten 1, −2, 1).
+- A3: q = dz²/(z⁴ − 1) geht unter z ↦ iz und z ↦ 1/z in −q über (Bestand: Prüfung H6h34, W1).
+- A4: C = R²UBU und C² = UB²U für B = circ(2,−1,0,−1), C = circ(0,1,2,1); Spektren {0,2,2,4} und {−2,−2,0,4}. Das
+  ist die Operatorform des Kanaltauschs aus ALPHA.QUILLEN.EXACT.01; U R U = −R.
+- A5: Λ·G = 3/(32π³)e^(−2/α) = 2,83508·10⁻¹²².
+- A6: Reiner elektromagnetischer Fluss nur für m ≡ 0 mod 3; m = 1, 2, 4 nur mit Farbfluss.
+- A7: f₀f₄ − f₂² = w₁w₂(1/s₁ − 1/s₂)² ≥ 0 für positive Gewichte; mit einem negativen Gewicht nicht.
+- A8: Eguchi–Hanson bei r = 3/2, a = 1: Ricci null (10⁻³²), Riem² = 2,9596 = 384a⁸/r¹². Nicht konform flach;
+  verträglich mit S⁴/AdS₄ nur am Orbifoldpunkt.
+
+**Folgerechnungen.**
+- B1 [E/C unter P_MM]: εFF mit F = R − (Λ/3)e∧e ist Euler − (4Λ/3)(R − 2Λ); Koeffizient c = −3/(64πGΛ),
+  |c| = 10^119,7. Erste Ordnung plus Vertex b² gibt F²/4V: zweiter Ordnung, kein Doppelpol.
+- B2 [E/L]: ρ_Λc₃²/M̄⁴ = φ_seam(1/α) − φ_base; am elektrischen Punkt ist die Abweichung 0,2235 % des Basiswerts,
+  q(α) = 1,18561·10⁻⁴. Der Exponent ist 2α_m (m = 2) oder m²/(8α) mit m = 4: nicht eindeutig.
+- B3 [N]: Als Momente eines positiven Profils wäre das Verhältnis f₀f₄/f₂² gleich 10^−119,5.
+- B4 [E]: Uhr-Klassen (60, 64, 60, 64); Sp(Rⁿ) = 248, 0, −8, 0; Sp(RX²) = 4p₂ − 12q₂.
+- B5 [E]: C = R²·(UBU) mit [R², UBU] = 0; det(1 − xC) = (1 − 4x)(1 + 2x)², det(1 − xUBU) = (1 − 4x)(1 − 2x)².
+
+**Was das bedeutet.** W3 braucht einen neuen ersten Test (Propagator, getrennte Spiegelungen). W2 läuft über die
+Yang–Mills-artige Form (Bestand z150), nicht über konforme Gravitation. W5 ist als relative Antwort formuliert, die
+Flusszahl bleibt eine Wahl. Pflichtenheft und nächste Rechnungen M1 bis M4 stehen in
+`docs/research/GESAMTSTAND-UND-STRATEGIEN.md`, Nachtrag z165.
+
 **Neunzehnte externe Analyse (z144, 67 Prüfungen, selbst gerechnet): Die gerechneten Aussagen stimmen. Die Zopfrelation
 legt das wechselwirkende Gatter nicht fest; die Phase folgt aber aus der Uhr.**
 - **Gitter [E]:**

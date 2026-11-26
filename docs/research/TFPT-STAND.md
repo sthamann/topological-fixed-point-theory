@@ -664,6 +664,19 @@ hergeleitet, 7 unter benannter Lesart, keines gescheitert, offen oder gesetzt. K
       - Folge: Beide Zahlen hängen im Ledger an α. Der Engpass ist der offene Rest des α-Blocks („warum diese
         Funktion“, ALPHA.QUILLEN.EXACT.01). Nächste Rechnung: die α-Funktion aus der Abstiegskette Twistorraum →
         Raumzeit → Gerade.
+    - Einundzwanzigste externe Analyse und Kandidat „relative graduierte Determinante“ (Z165): alle acht
+      gerechneten Aussagen stimmen.
+      - Korrekturen: Der erste Positivitätstest von W3 war am falschen Objekt gestellt (Vertexkern statt
+        Propagator). Ein Doppelpol verletzt die Positivität. Die aufgelöste ALE-Geometrie des Celest-Vertrags und
+        der native Unendlichkeitstwistor sind nur am Orbifoldpunkt verträglich. Die Anomalie legt die Kopplung nicht
+        fest; dafür fehlt die Metrik der Determinantenlinie (Bismut–Freed).
+      - Eigene Folgerechnungen: Gravitation in erster Ordnung mit Vertex b² und so(3,2)-Krümmung hat keinen
+        Doppelpol; einzige Kopplung 1/(GΛ). Die Λ-Stufe ist exakt die Abweichung der Nahtantwort vom Basiswert am
+        dualen Punkt; als absolutes Moment eines positiven Profils wäre sie um 119 Größenordnungen ausgeschlossen.
+        Die native Graduierung ist die Uhr: Sp₂₄₈(R) = 0. Die beiden Markenmatrizen des α-Blocks sind ein mit
+        R² = (−1)^F graduiertes Paar (C = R²·UBU).
+      - Stand: Pflichtenheft für das eine Objekt mit sechs Punkten; das Objekt selbst (Operator, Maß, Metrik der
+        Linie, zweiter Sektor) fehlt. Keine volle Lösung.
     - Zopfrelation: Sie gilt nur für einkörperige Operatoren (Nahtuhr und Strahlteiler = Ising-Zopfmatrizen). Das
       wechselwirkende Gatter verletzt sie mit Defekt √(3/8). Die Defektstruktur ist endlich (Clifford-Typ). [E]
     - Eichdynamik: Plakettenstruktur und sin²θ_W = 3/8 sind nativ, die absolute Kopplung und die Linkdynamik nicht.

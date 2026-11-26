@@ -915,6 +915,75 @@ Prüfungen, reproduziert).
    Einstein-Zuständen mit I_π − ε²I_ω; Koeffizient gegen Λ·G.
 4. **W3 und W4** (Positivität, Materie) wie geplant.
 
+### Nachtrag z165: einundzwanzigste externe Analyse und der Kandidat „relative graduierte Determinante“
+
+**Anlass.** Eine externe Analyse zum Stand z163 prüft W1 bis W5 und schlägt als ein Objekt eine relative graduierte
+Determinante über dem Raum der Twistorgeraden vor. Alle acht gerechneten Aussagen sind nachgerechnet und stimmen
+(z165, 19 Prüfungen, reproduziert).
+
+**Was die Analyse korrigiert.**
+
+- **W3 war falsch gestellt [E negativ]:** Der Stromkern 1/(1 − z̄w)² ist positiv (det 7/9 an den Punkten 0 und 1/2).
+  Mit dem Vertexzähler wird er (1 − z̄w)² und ist es nicht (det −7/16). Positivität gehört an den Propagator
+  (Serre-Paarung mit Spiegelung, z123), nicht an den Vertex. Radiale Spiegelung der Naht, Serre-Paarung und
+  vierdimensionale Zeitspiegelung sind drei verschiedene Operationen.
+- **Doppelpol [E]:** Der Kern e^(−ωt)(A + Bt) hat die gespiegelte Determinante −B²(t₁ − t₂)²e^(−2ω(t₁+t₂)). Ein
+  Doppelpol verletzt die Positivität; man kann der konformen Gravitation keinen Einstein-Anteil hinzufügen.
+- **Hintergrund [E für A₁]:** Die aufgelöste ALE-Geometrie ist Ricci-flach und nicht konform flach (Eguchi–Hanson:
+  Riem² = 384a⁸/r¹²). S⁴ und AdS₄ aus z164 sind konform flach. Verträglich sind beide nur am Orbifoldpunkt a = 0.
+  Der Operator muss die Twistorgeometrie selbst deformieren können.
+- **Anomalie und Kopplung:** Die Anomalie legt den nicht invarianten Teil fest, nicht den invarianten. Das deckt
+  sich mit z164 (eine freie Zahl). Die Zahl verlangt die Metrik der Determinantenlinie (Bismut–Freed), den offenen
+  Schritt von ALPHA.QUILLEN.EXACT.01 und SEAM.DETLINE.UNIFICATION.01.
+- **W5 [E]:** Λ·G = 3/(32π³)·e^(−2/α) = 2,83508·10⁻¹²². Reiner elektromagnetischer Fluss ist nur für m ≡ 0 mod 3
+  zulässig; m = 2 (α_m = 1/α) braucht Farbfluss und wird von der Eichgruppe nicht ausgezeichnet.
+- **Eine Skala [E]:** Für ein positives Spektralprofil gilt f₀f₄ ≥ f₂². Das ist der strukturelle Grund hinter D2.
+
+**Eigene Folgerechnungen.**
+
+- **Gravitation ohne Doppelpol [E/C unter P_MM]:** Mit F = R − (Λ/3)e∧e ist εFF = Euler − (4Λ/3)(R − 2Λ). Geht die
+  Gravitation wie Spin 1 als erste Ordnung plus Vertex b² ein, ist die Wirkung zweiter Ordnung, mit einfachem Pol.
+  Das verlangt Λ ≠ 0, was der native Unendlichkeitstwistor liefert (z164). Die einzige Kopplung ist
+  c = −3/(64πGΛ), mit der Leiter |c| = 10^119,7. Die native so(3,2)-Struktur steht im Bestand von H6.
+- **Λ als relative Antwort [E/L]:** ρ_Λc₃²/M̄⁴ = φ_seam(1/α) − φ_base. Die Λ-Stufe ist die Abweichung der
+  Nahtantwort von ihrem Basiswert am dualen Punkt. Am elektrischen Punkt ist dieselbe Abweichung 0,22 % des
+  Basiswerts. Als absolutes Moment eines positiven Profils wäre Λ um 119 Größenordnungen ausgeschlossen.
+- **Die duale Lesart ist nicht eindeutig [E/L]:** Derselbe Exponent ist 2α_m mit m = 2 oder die Maxwell-Wirkung des
+  Flusses m = 4 auf der Einheitssphäre. Keine der beiden ist als reiner elektromagnetischer Fluss zulässig.
+- **Native Graduierung [E; Bedeutung L]:** Sp₂₄₈(R) = Sp₂₄₈(R³) = 0 und Sp₂₄₈(R²) = −8. Im Uhr-verdrehten Sektor
+  verschwindet die Zählspur (Volumenterm), die quadratische nicht: Sp(RX²) = 4p₂ − 12q₂. Die Graduierung ist die
+  Uhr, nicht Supersymmetrie.
+- **Der α-Block ist schon graduiert [E]:** Mit B = circ(2,−1,0,−1) (Sprungmatrix) und C = circ(0,1,2,1) (Greensche
+  Matrix der Marken) gilt C = R²·(UBU), und R² vertauscht mit UBU. In H6 ist R² = (−1)^F. Daher
+  det(1 − xC) = (1 − 4x)(1 + 2x)² gegen det(1 − xUBU) = (1 − 4x)(1 − 2x)²: Das Verhältnis sieht nur das ungerade
+  Dublett. U ist der Charakter −1 der Vierteldrehung, derselbe wie der von q = dz²/(z⁴ − 1), der die Familien
+  verdreht (W4).
+
+**Pflichtenheft für das eine Objekt.** Γ[X] = −log(sdet D_X / sdet D_X*) mit dem uhrsymmetrischen Referenzpunkt X*.
+
+1. Graduierung durch die Uhr (R² = (−1)^F); am Referenzpunkt kein Volumenterm.
+2. Definiert auf allen zulässigen Hintergründen: Eichhintergrund, komplexe Struktur und die Auflösung weg vom
+   Orbifoldpunkt.
+3. Eichfelder und Gravitation in erster Ordnung mit quadratischem Vertex: einfache Pole, Gravitation mit
+   so(3,2)-Krümmung.
+4. Determinantenlinie mit Metrik und Zusammenhang; die α-Gleichung ist ihre Stationarität, die Λ-Stufe ihre
+   relative Antwort.
+5. Positivität am Propagator, mit getrennten Spiegelungen.
+6. Materie als Nullmoden; Familien über den Twist mit dem Charakter von q.
+
+**Nächste Rechnungen.**
+
+1. **M1, Metrik der Linie.** Krümmung der Determinantenlinie der Nahtfamilie bei τ = i für den
+   Hyperladungs-Hintergrund, gegen den Koeffizienten −2c₃³ der α-Gleichung. Erfolg: Der Blatt-Term folgt.
+2. **M2, graduierte Kontaktentwicklung.** Gibt log der relativen Determinante von C gegen UBU mit
+   x = c₃·ln 2 die Nahtantwort q(1 − q)^(−5/4)? Endliche Rechnung mit Ledgerdaten.
+3. **M3, Einstein in Twistorvariablen.** Der Vertex b² mit der so(3,2)-Krümmung auf den Geraden; ersetzt N2.
+4. **M4, Auflösung.** Erste Ordnung in den Auflösungsparametern: Wie ändert sich die relative Determinante?
+
+**Ehrliche Einordnung.** Der Kandidat ist enger gefasst und an fünf Stellen mit dem Bestand verbunden. Das Objekt
+selbst fehlt: Operator, Zustandsraum, Maß, Metrik der Linie und die Auswahl des zweiten Sektors. Eine volle Lösung
+liegt nicht vor. Nichts ist befördert.
+
 ### Was die Runde bedeutet
 
 - **Der Kandidat** braucht neun Prämissen: A*, I_step, P_lift, P_IF, P_univ, P_uhr, P_ord, P_curv und P_G als freie
