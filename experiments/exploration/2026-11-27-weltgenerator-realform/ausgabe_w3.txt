@@ -1,0 +1,76 @@
+w3: Twistorbruecke, Z4-Regel und Doppelbrechung
+
+A  Paare von Realformen ueber diagonale Involutionen von O(16) (16 = 10 Eich + 6 Raumzeit)
+  [ok] Spinor S+ hat Dimension 128
+    Raumzeitfaktor so(6, 0): Eichfaktor so(8, 2) in E8(8), so(6, 4) in E8(-24)
+    Raumzeitfaktor so(5, 1): Eichfaktor so(7, 3) in E8(8), so(7, 3) in E8(-24)
+    Raumzeitfaktor so(4, 2): Eichfaktor so(10, 0) in E8(-24), so(8, 2) in E8(-24), so(6, 4) in E8(8)
+    Raumzeitfaktor so(3, 3): Eichfaktor so(9, 1) in E8(-24), so(5, 5) in E8(8)
+  [ok] Involution nur fuer m = 0 mod 4 (so(14,2), so(10,6) kommen nicht vor)
+  [ok] kompakte Eichalgebra so(10) nur mit so(4,2), und dann E8(-24)
+  [ok] euklidische konforme Algebra so(5,1) nur mit Eichfaktor so(7,3): {(7, 3)}
+  [ok] reelle so(3,3) = sl(4,R) nur mit so(9,1) oder so(5,5): {(9, 1), (5, 5)}
+    Folgerung: z79 (Markensymmetrie nur euklidisch) und kompakte Spin(10) schliessen sich in E8 aus;
+    die euklidische Seite haette so(7,3) als Eichalgebra (enthaelt so(6) + so(3,1)).
+
+B  Blocksatz neu gerechnet: Uhr rho4 = diag(i,1,i,1), Woit-Struktur rho_tw = Rechts-j
+  [ok] Uhrvertraeglichkeit: 16 -> 8 reelle Parameter, Kreuzbloecke null: 8 Parameter
+  [ok] Zweig eps = -1 (Minkowski): Signatur immer (2,2): {(2, 2)}
+  [ok] Zweig eps = +1 (euklidisch): (4,0), (0,4) und (2,2) kommen vor: [(0, 4), (2, 2), (4, 0)]
+  [ok] Minkowski-Zweig: Nahtgerade (e1,e2) traegt a(|z|^2 - 1), Nullort ist der Nahtkreis
+  [ok] diagonale Mitglieder: Minkowski diag(a,-a,c,-c), euklidisch diag(a,a,c,c)
+  [ok] Minkowski-Zweig traegt genau die Paarungen {13|24} und {14|23}
+  [ok] die dritte Paarung {12|34} liegt im euklidischen Zweig (Nahtgerade definit, kein Schnitt)
+  [ok] fuer a c > 0 ist die Cartan-Involution Ad(rho4^2): die Uhr ist dann zentral in der maximal kompakten
+    Folgerung: Der in w2 offene Tomita-Test ist im Ledger entschieden (WOIT.BETA3.DUALITY.01) und hier
+    unabhaengig bestaetigt: Uhr und Woit-Struktur erzwingen su(2,2). Zwei der drei Paarungen aus B5 sind
+    die beiden Minkowski-Mitglieder, die dritte hat keinen Nullkreis.
+  [ok] E8 hat 240 Wurzeln
+
+C  Die Uhr als Vierteldrehung der konformen Zeit
+  [ok] Klebeklassen: 52 + 64 + 60 + 64 Wurzeln (Klassen 0, 1, 2, 3): {0: 52, 1: 64, 2: 60, 3: 64}
+  [ok] g = exp(i pi/2 H) hat Ordnung 4 auf su(4) und Ordnung 8 auf E8: 4, 8
+  [ok] theta = exp(i pi (e6+e7)) ist trivial auf D5 und hat kompakte Dimension 136 (E8(-24)): 136
+  [ok] g^2 = theta mal Klebeuhr z (auf allen 240 Wurzeln)
+  [ok] g^4 = z^2 = (-1)^F: +1 auf D8, -1 auf dem Spinor
+  [ok] keine Wurzel vertauscht mit D5 + A3, Rang 5 + 3 = 8: kein U(1) der Helizitaet in E8
+    Lesart: exp(i pi H) = theta z. Die halbe Periode der konformen Zeit ist die Cartan-Involution mal der
+    Uhr der Verklebung; die Uhr mu4 ist zugleich Zentrum von Spin(10) und von SU(2,2).
+
+D  Z4-Regel fuer Spin und Ladung
+  [ok] z10 wirkt auf Klasse k als i^k (16: i, 10: -1, 16bar: -i, Adjungierte: 1)
+  [ok] z4^-1 wirkt auf Klasse k als i^(-k)
+  [ok] (z10, z4^-1) wirkt trivial auf allen Wurzeln: Zentrum von Spin(10) = Zentrum von SU(2,2) in E8(-24)
+  [ok] [a1 b1, a1+ b1+] = N_a1 + N_b1 + 1 (legt die Ordnungskonstante des Zentrums fest)
+  [ok] Zentrum von SU(2,2) wirkt auf der Leiter der Helizitaet h = C/2 als i^(C+2)
+    Orientierung +1: Klasse 0 (45, 15, 1): h = -1, 1; Klasse 1 (16): h = -1/2; Klasse 2 (10): h = 0; Klasse 3 (16bar): h = 1/2
+    Orientierung -1: Klasse 0 (45, 15, 1): h = -1, 1; Klasse 1 (16): h = 1/2; Klasse 2 (10): h = 0; Klasse 3 (16bar): h = -1/2
+  [ok] Klasse 0 (Eichbosonen) nur mit h = +-1, Klasse 2 (die 10) nur mit h = 0
+  [ok] die 16 traegt genau eine Helizitaet, die 16bar die entgegengesetzte: keine Spiegelgeneration
+  [ok] die Orientierung ist das einzige freie Bit: sie vertauscht die Helizitaeten von 16 und 16bar
+  [ok] Skalare nur in Klasse 2: genau die Yukawa-Darstellungen 10, 120, 126
+    Lesart: Felder sind Darstellungen von (Spin(10) x SU(2,2))/Z4. Die Chiralitaet folgt aus der globalen
+    Gestalt der Gruppe, nicht aus der Zerlegung der 248 unter SL(2,C) (Einwand Distler-Garibaldi).
+    Praemisse: die Gruppe wirkt als Quotient, also treu wie in E8(-24), und masselose Felder sind Leitern.
+
+E  Doppelbrechung als Formbedingung
+  [ok] beta = phi0/(4 pi) = 0,24243503 Grad (eingefrorener Wert): 0.2424350309
+  [ok] Phase der Helizitaets-U(1): beta/2 = c3 phi0: 0.0021156448 rad
+  [ok] Budget: Omega_b + beta = phi0, Anteile (1 - 2 c3, 2 c3)
+    ACT DR6 (Diego-Palazuelos & Komatsu 2025): 0.215 +- 0.074 Grad, Abstand +0.37 sigma
+    Planck PR4 (Eskilt 2022): 0.3 +- 0.11 Grad, Abstand -0.52 sigma
+    gewichtetes Mittel (ACT, Planck PR4): 0.2415 +- 0.0614 Grad; von null 3.9 sigma, von TFPT +0.02 sigma
+  [ok] beide unabhaengigen Messungen haben dasselbe Vorzeichen und liegen innerhalb 1 sigma
+  [ok] achromatisch: Frequenzexponent mit 0 vertraeglich, Faraday (n = -2) ueber 3 sigma entfernt: n = -0.35, Faraday 3.4 sigma
+    Formbedingungen (aus C, D und den Daten):
+    1. Eine Drehung der Polarisation um beta ist eine Phase 2 beta zwischen den Helizitaeten +-1, also
+       ein Element der Helizitaets-U(1). In E8 gibt es diese U(1) nicht (C), nur ihr Z4, und das Z4
+       wirkt auf Photonen trivial (D). beta ist deshalb keine Groesse der Kinematik, sondern eine
+       Antwort des Zustands: jede Loesung mit SU(2,2)-invariantem Vakuum als Weltzustand gibt beta = 0.
+    2. beta ist ungerade unter Paritaet. Das Vorzeichen ist dasselbe Bit wie die Orientierung in D, die
+       festlegt, welche Helizitaet die 16 traegt. Eine vollstaendige Loesung muss das Vorzeichen von
+       beta an die Linkshaendigkeit der schwachen Wechselwirkung binden.
+    3. beta ist achromatisch und eine reine Zahl. Das passt zu einer festen Phase des Randes und nicht
+       zu einem langsam rollenden Feld, dessen Winkel von der Geschichte abhinge.
+
+Pruefungen: 34/34

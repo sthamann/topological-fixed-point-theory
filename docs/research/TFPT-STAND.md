@@ -11,6 +11,12 @@ keine Originalquelle. Statuskürzel: **E** exakt unter genannten Voraussetzungen
 physikalische Identifikation, **N** numerischer Vergleich, **O** offene Herleitung. Maßgeblich
 bleiben `verification/status_ledger.csv`, die Papiere unter `documents/` und der Atlas.
 
+**Abschnitt 3 ist eine Auswahl, kein Inventar (Befund 27. November).** Dieser Stand nannte 12 der 784 aktiven
+Ledger-Behauptungen beim Namen; ganze Zweige fehlten (Twistorbrücke, 4D-Lesart, Gravitation, Vorhersagen). Die
+vollständige Karte ist [`LEDGER-KARTE.md`](LEDGER-KARTE.md), erzeugt aus dem Ledger: 256 exakt, 410 exakt mit
+bedingtem oder offenem Teil, 45 bedingt, 39 offen. Vor jeder Aussage „neu“ oder „offen“ dort nachsehen
+(`research/originlab/ledger_map.py --find 'Muster'`).
+
 ## 1. Das Ziel
 
 TFPT erklärt bereits sehr viel aus zwei gesetzten Eingaben. Gesucht ist die **vollständige
@@ -113,6 +119,33 @@ Prozessquotienten; ein positiver Wortkern rekonstruiert eine zyklische Darstellu
 Im ursprünglichen L/J Baustein reichen genau 68 innere Richtungen: 5 sichtbar, 63 Gedächtnis
 (R022/R023) [E]. Endliches E₈/Code/Clifford Gerüst; exakte stochastische Interpolation des
 Transferspektrums auf endlicher Stufe [E].
+
+**Was das Ledger darüber hinaus trägt (Nachtrag 27. November, Einzelheiten in `LEDGER-KARTE.md`).**
+
+- **Vorhersagen.** Zwanzig dimensionslose Werte sind seit 9. Juni 2026 eingefroren
+  (`verification/predictions_frozen.json`, jede mit Kill-Kriterium): α⁻¹, sin²θ₁₂ = 0,30675, sin²θ₁₃ = 0,02311 (rund
+  2σ Spannung), δ_PMNS = 240°, kosmische Doppelbrechung β = φ₀/(4π) = 0,2424° (ACT 0,215 ± 0,074, Planck PR4
+  0,30 ± 0,11; zusammen 0,24 ± 0,06, 3,9σ von null), Ω_b, Cabibbo, CKM, Massenverhältnisse, n_s, r,
+  Skalaronmasse 3,06·10¹³ GeV, ρ_Λ. Fünf Seed-Auslesungen lösen unabhängig auf dasselbe φ₀ zurück
+  (SEED.CROSSVAL.01, SEED.CROSSSECTOR.01). Es gilt Ω_b + β = φ₀. [E für Werte und Formeln, C je Kanal]
+- **Twistorbrücke.** Auf dem Twistorraum C⁴ der Naht normalisieren genau zwei Familien antilinearer Strukturen die
+  Uhr; freie Reflexionspositivität wählt dieselbe Familie wie Θ ρ Θ = ρ⁻¹ (WOIT.THETA.FREE.01). Jede uhrverträgliche
+  Dualität im Minkowski-Zweig hat Signatur (2,2), ihr Nullort trifft die Nahtgerade genau im Nahtkreis
+  (WOIT.BETA3.DUALITY.01). Das interne SU(2) vertauscht mit der Raumzeitwirkung (WOIT.SU2.KIN.01). Offen ist die
+  wechselwirkende Algebra mit einer chiralen Generation ohne Spiegel (Vertrag WOIT.OS.TWISTOR.01, sieben
+  Kill-Tests). Dazu 23 Behauptungen zur Himmelskugel (CELEST). [E frei und kinematisch, O wechselwirkend]
+- **4D-Lesart.** Kanonisch ist die Rand-QFT (QFT4D.FORK.01). Materieinhalt des Spektraltripels und Baumrelationen
+  exakt (QFT4D.MATTER.01); Epstein–Glaser gibt (b₁, b₂, b₃) = (41/10, −19/6, −7) (QFT4D.SPERT.03); die reine
+  SM-Vereinigung ist als Kill-Test erledigt; Higgs-Quartik λ = β_λ = 0 an der Naht (HIGGS.FREESEAM.01). Offen: das
+  4D-Osterwalder–Schrader-Paket, eine explizite 4D-Gitterwirkung, chirale Gittermaterie (QFT4D.OS.RECON.01,
+  TFPT4D.LATTICE.ACTION.01, CHIRAL4D.NOMIRROR.01). Bedingter Dimensionswähler d = 4 unter vier benannten Axiomen
+  (DIMENSION.SELECTOR.4D.01).
+- **Gravitation.** Die kovariante Feldgleichung G_ab + Λg_ab = c₃⁻¹T_ab ist im Ledger parameterfrei geführt
+  (GRAV.NONLINEAR.01, GATE.METRIC.01), dazu R + R² mit Skalaronmasse c₃^(7/2)·M̄ (GRAV.FR.01) und 22 Horizont-
+  Auslesungen (HOR). Offen bleiben die Flächennormierung als Herleitung, der eine dimensionsbehaftete Anker und die
+  Quelle (Abschnitt 5). [E mit bedingtem Teil]
+- **CP und Seed.** Beide CP-Phasen als μ₆-Potenzen einer hexagonalen Einheit (CP.MU6.01); der Vorfaktor 4/3 des
+  Seeds als Spuranomalie (SEED.ANOMALY.01).
 
 **Jüngste Befunde (18.–20. November).** τ = i ist der symmetrieerzwungene kritische Punkt
 jeder Spektralfunktion der antiperiodischen Struktur (KERNSYM). Bei τ = i 32 chirale Nullmoden
@@ -947,6 +980,17 @@ die Naht überhaupt eine flache zweiblättrige Fläche ist. Kandidat H6 (Abschni
 Punkte unter den Prämissen A\*, C″, D, E, G her; offen bleibt dort vor allem, was den Defekt im
 Grundzustand erzwingt.
 
+**Zwei weitere Rollen aus den Vorhersagen (Exploration 27. November, Kandidat, nicht befördert).** Eine
+vollständige Lösung muss außerdem (a) eine chirale Generation ohne Spiegel und (b) eine paritätsungerade Antwort des
+Weltzustands mit festem Vorzeichen liefern (β ≠ 0). In E₈ gibt es keine Helizitäts-U(1), und das ℤ₄ wirkt auf
+Photonen trivial; β ist deshalb eine Antwort des Zustands und keine Größe der Kinematik. Jede Lösung mit
+SU(2,2)-invariantem Vakuum als Weltzustand gibt β = 0. Quelle:
+`experiments/exploration/2026-11-27-weltgenerator-realform/VERDICT.md` (w3, w4). Der Flavortest (w5) hat die
+dort benutzte Gleichsetzung „Familienrichtungen = Cartan von su(2,2) mit der Twistoruhr ρ₄“ widerlegt. Im
+Wörterbuch des Bestands (Familien = H⁰(K(D))) sind die Familien die so(2,1) der Nahtgeraden in so(4,2) mit der
+Uhr −Ad(ρ₄); welche der beiden Lesarten des Familienraums der A₃-Faktor von E₈ ist, ist offen, und Q, K, R, L
+folgen aus keiner.
+
 **Was nicht fehlt:** Die vier R113 Endpunktwerte (Z0, ZU, ZY, ZUY) der ursprünglichen
 Quellverträge sind ein Test, ob *diese* Originalquelle ihre markierten Antworten liefert.
 Diese Route ist blockiert; das ist ein eingeschränkter Befund über sie, keine Lücke der
@@ -964,6 +1008,8 @@ den Weg wieder.
 
 ## 7. Wo mehr steht
 
+- **Ledger-Karte** [`LEDGER-KARTE.md`](LEDGER-KARTE.md): alle 784 aktiven Behauptungen nach Gebiet und Block mit
+  Klasse; erzeugt, bei Ledgeränderung mit `research/originlab/ledger_map.py --write` erneuern.
 - **Atlas** (MCP `tfpt-knowledge`): `theory_overview` (Karte, 21 Muster), `research_state`,
   `search_knowledge`, `list_attempts`, `get_dossier`; Web http://127.0.0.1:8731.
 - **Prüfkatalog** `docs/catalog/TFPT_Pruefkatalog_2026-11-20.xlsx`: Verifikationen (707),

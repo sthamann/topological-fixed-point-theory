@@ -15,6 +15,62 @@ R113 mark": that is a scoped statement about the original route, not a
 defect of the lane. A new origin model is checked through its own candidate
 contract ([F1-CANDIDATE-CONTRACT.md](F1-CANDIDATE-CONTRACT.md)).
 
+## Ledger map and shape search, 27 November 2026 (second pass)
+
+`ledger_map.py` generates `docs/research/LEDGER-KARTE.md` from `verification/status_ledger.csv`: all 784 active claims
+by area and block with a class read off the status text (256 exact, 410 exact with a conditional or open part,
+45 conditional, 39 open). It exists because the entry document of exploration sessions named 12 of the 784 claims
+and the first pass below called the Tomita test open although the ledger had decided it
+(WOIT.BETA3.DUALITY.01). `--find 'pattern'` searches the full claim text, `--check` fails when the map is stale;
+`test_ledger_map.py` holds the map current.
+
+Section E of `whole_solution_search.py` extends the contract of section D without changing it:
+
+- two roles read off the frozen predictions, `chirality` (one chiral generation without mirror) and
+  `parity_response` (a parity-odd response of the world state with a fixed sign, cosmic birefringence);
+- the ledger reading `twistor_bridge` with its bridges, and the statements `family_is_twistor` and `oriented_state`;
+- `z4_gates()`: exact statements on the 240 roots. The centre of Spin(10) is the centre of SU(2,2) inside E8(-24);
+  the half period of conformal time is the Cartan involution times the glue clock, the full period is (-1)^F; the
+  centre acts on the helicity ladder C/2 as i^(C+2), which gives the rule class 0 with helicity +-1, class 2 with 0,
+  the 16 with one helicity and the 16bar with the other; E8 holds no helicity U(1);
+- `run_shape_search()`: 26 roles, 11 readings, no complete solution, best distance 9; five statements lower it to 1
+  (rest flavour); two recorded tensions, between `ladder` and `oriented_state` and inside `family_is_twistor`;
+- `family_clock_gates()` (flavour test of 27 November, w5): the family clock of the ledger is a Coxeter element of
+  W(A3); its square has the signature (1,-1,-1), which among the real forms of A3 only su(2,2) has as Cartan
+  involution on a maximally split Cartan (E8(-24) with compact Spin(10), compact dimension 136); the centraliser is
+  D4 = W(C2), restricted roots C2 with multiplicities 1 and 2. As elements of SL(4) the family clock (Ad-spectrum
+  (3,4,4,4)) and the twistor clock rho4 (7,4,0,4) are not conjugate and share their square. The statement
+  `family_is_twistor` is corrected accordingly: its earlier form (family directions = Cartan of su(2,2) with the
+  clock rho4) is refuted; in the ledger dictionary H^0(K(D)) the families are the so(2,1) of the seam line with
+  the clock -Ad(rho4). Q, K, R, L are not explained.
+
+Scripts and verdict: `experiments/exploration/2026-11-27-weltgenerator-realform/` (w3 34/34, w4 9/9, w5 50/50).
+
+## Seed worlds, readings and assemblies, 27 November 2026 (Exploration mode)
+
+`whole_solution_search.py`, section D, searches for complete solutions from the basics of
+`docs/research/TFPT-STAND.md` instead of from the premises of one candidate.
+
+- **World:** a seed (k sheets, n marks, N carrier modes, f families, d dimensions), 16 464 seeds. `worlds()` computes
+  every clause from the seed and the numbers (alpha, Cabibbo, solar angle, Omega_b) from the recorded law forms with
+  the seed inserted. The generalised forms for foreign seeds are conventions stated at the head of the section.
+- **Rule search:** `world_rule_search()` runs over all rules of at most five of 26 principles, seven of which the
+  recorded world does not satisfy, and keeps the smallest worlds (same semantics as `genesis_rules.search`, tested
+  against it). `coherent_worlds()` lists the seeds that close, independent of the pool: only (2, 4, 5, 3).
+- **Readings and assemblies:** `READINGS` are ten basic objects with the principles they bring and the roles they
+  deliver. `assembly()` computes ten of the 24 roles of a complete solution from the consequences of the rule and
+  reads fourteen from the record with a class (own, extra, input). `run_assembly_search()` ranks 386 assemblies;
+  `run_leverage()` states which single statements move the distance; `completeness_audit()` plants a complete
+  reading and checks that it is recognised.
+- **Ladder gates:** `ladder_gates()` computes positivity, a continuous positive time and the Weyl dimension for the
+  smallest ladder of so(d,2).
+
+Result: no complete solution; best distance 7; no reading delivers reflection positivity, time, continuum, Einstein
+dynamics, area normalisation or the rest flavour from its own object. With the new reading `real_form`
+(E8(-24) with Spin(10) x SU(2,2), exact in `experiments/exploration/2026-11-27-weltgenerator-realform/w2_bruecken.py`)
+three statements lower the distance to 1. A new origin idea enters as one entry of `READINGS` with computed clauses.
+Nothing is promoted.
+
 ## Process rule search, 24 November 2026
 
 `process_rules.py` turns the genesis engine (`genesis_rules.search`) on the open slots of the TFPT process instead of
@@ -247,6 +303,26 @@ clauses no survivor reaches.
   survivors now have one free parameter and 9 premises: A*, I_step, P_lift, P_IF, P_curv, P_G, P_univ, P_uhr, P_ord.
   P_G stays a free pure number G/R_vac^2: clock trace, entanglement equilibrium, induced gravity and double copy give
   rows that do not agree (z127, z136, z137). Still no survivor reaches graviton or modular statistics. Test updated.
+
+Attack on P_std (H6h52, z183): `counter_models()` has three more condition sets that need no mirror bit and are
+counted by spectrum (the multiset of weights): A* with time neutrality (8 models, 3 spectra), A* with orientation
+reversal of the section bases (6 models, 2 spectra) and A* with one local field around which the parents have the
+deck parity as monodromy (4 models, 1 spectrum, unique: the gauge sum). Every report row now carries `spectra` and
+`counted_by`. `unification_candidates()` lists twenty-one candidates: the pair-clock part of P_std is equivalent
+under A* to "no one-sided current mixes the deck halves" (holds), and its derivation from A*, time neutrality or the
+covering of the four marks is excluded by six counter-models in two spectra. The three spectra of the pair under A*
+are a recorded ambiguity. P_std stays a premise; the distance is unchanged (eight independent items).
+
+Follow-up programmes F1 to F6 (H6h51, z178 to z182): `unification_candidates()` now lists nineteen candidates with
+a fourth verdict, derived: the item follows from inventory (A*, the GNS rule) and from premises that are already
+counted (`BENCH_DERIVED`). K19 rests on P_std and K20 on P_std and P_zentral, so neither is an independent open item
+and neither is closed; `complete_solution_distance()` reports eight independent items and lists both rows under
+`bench_derived`. Without the result files nothing is derived. `counter_models()` is the automatic counter-model
+report: it enumerates the 27 completions of the 16 clock sectors and counts the physically different models for
+nested condition sets (S alone 27, A* 10, A* and superselection 3, with the GNS rule 1, without T 2), and it lists
+the ambiguities recorded by results (the value of G/a^2 under the area rule, the gate phase under P_uhr, the
+orientation of the four marks). More than one model is reported as an ambiguity and never resolved by choice.
+`run_reconstruction()` reports it under `counter_models`.
 
 Unification candidates (H6h50, z175 to z177): `reconstruction_search.unification_candidates()` lists eleven
 candidates for one object behind several open items, each with a computed test in z175, z176 or z177 and one of the
