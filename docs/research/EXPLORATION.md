@@ -20,7 +20,8 @@ weiterzubauen.
 ## Ablauf
 
 1. **Stand lesen.** `TFPT-STAND.md` vollständig. Für Einzelheiten jederzeit Atlas
-   (`theory_overview`, `search_knowledge`, `get_dossier`) und Prüfkatalog
+   (`theory_overview` mit `ledger_areas` = alle 784 Ledger-Behauptungen nach Gebiet,
+   `search_knowledge` auf Deutsch oder Englisch, `get_dossier`) und Prüfkatalog
    `docs/catalog/TFPT_Pruefkatalog_2026-11-20.xlsx`. Nicht vorab: PLAN.md, RESULTS.md,
    progress.json, Vertragsketten und deren „Nächste Schritte“.
 2. **Vielfalt prüfen.** `ls experiments/exploration/` und die Gebiete der letzten Ordner
@@ -36,7 +37,7 @@ weiterzubauen.
 6. **Zahlenspielkontrolle.** Jeder Zahlentreffer braucht eine Basislinie: wie viele Ausdrücke
    gleicher Komplexität aus denselben Bausteinen treffen dieselbe Größe gleich genau?
    Strukturtreffer (3 Familien, 16, E₈, 3+1) zählen mehr als Dezimalstellen.
-7. **Abgleich.** Mit Atlas und Prüfkatalog: schon versucht? Unter welchen genauen
+7. **Abgleich.** Mit Ledger-Karte (`LEDGER-KARTE.md`, `research/originlab/ledger_map.py --find`), Atlas und Prüfkatalog: schon versucht? Unter welchen genauen
    Voraussetzungen ausgeschlossen? Ein Ausschluss trifft nur bei übereinstimmenden
    Voraussetzungen. Welche vorhandenen Ergebnisse trägt der Ansatz, welche bricht er?
    Widerspricht er einer bisherigen Identifikation, diese benennen und prüfen, statt

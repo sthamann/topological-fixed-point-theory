@@ -21,6 +21,12 @@ Read the repository `AGENTS.md` and pick the mode first.
   blocked". That is scoped to the original source of those contracts. It is never
   a gate for another origin model or for F1, and never the default next step
   (user decision of 2026-11-23, `AGENTS.md`).
+- **Before calling anything new or open:** `theory_overview` carries
+  `ledger_areas` (every active ledger claim counted by area and class; the full
+  list is `docs/research/LEDGER-KARTE.md`). `search_knowledge` takes German or
+  English questions, drops function words, weighs rare concepts higher and lists
+  ledger claims, reviewed findings and theory-map aspects (`map:…`) before
+  sub-records and archived paper passages. Check both before the verdict.
 - **Continuation:** `graph_status`, `theory_overview`, then
   `research_state(query, lang, max_chars=12000)` for the named task, together with
   the top of `PLAN.md` and the compact `progress.json`.

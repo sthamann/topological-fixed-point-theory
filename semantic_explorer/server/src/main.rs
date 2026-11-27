@@ -15,6 +15,7 @@ use tower_http::services::{ServeDir, ServeFile};
 mod cross;
 mod overview;
 mod papers;
+mod rank;
 mod research;
 mod service;
 use service::{GraphStore, SearchRequest};

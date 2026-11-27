@@ -1446,15 +1446,21 @@ fn explicit_priority_question_uses_live_plan_result_owner_without_overriding_exa
 fn research_problem_ranking_returns_alpha_provenance_for_natural_question() {
     let Some(p) = installed_program() else { return; };
     let temp = TempDir::new("actual-alpha-provenance");
-    for query in [
-        "Welche Faktoren der Alpha Herleitung sind schon hergeleitet und was fehlt noch?",
-        "alpha coefficient primitive 5/4 double cover e^-2alpha 48 c3",
-        "Woher kommen die Korrekturfaktoren der Feinstrukturkonstante?",
+    // Provenance questions return the provenance record.  The coefficient question
+    // returns the records on the coefficient itself: since 18 November 2026 the
+    // problem holds dedicated 5/4 findings, which fill the budget before the
+    // general provenance record and answer that question more directly.
+    for (query, expected) in [
+        ("Welche Faktoren der Alpha Herleitung sind schon hergeleitet und was fehlt noch?",
+            "finding:alpha-archive-term-provenance-and-master-functional-scope"),
+        ("alpha coefficient primitive 5/4 double cover e^-2alpha 48 c3",
+            "finding:alpha-five-quarters-coefficient-chronology-20261118"),
+        ("Woher kommen die Korrekturfaktoren der Feinstrukturkonstante?",
+            "finding:alpha-archive-term-provenance-and-master-functional-scope"),
     ] {
         let v = state(&p, &KnowledgeGraph::default(), temp.path(), query, "de", 24_000, 0, 0).unwrap();
         assert_eq!(v["problems"][0]["id"], "problem:alpha-fixed-input-root", "{query}");
-        assert!(v["problems"][0]["findings"].as_array().unwrap().iter().any(|f|
-            f["id"] == "finding:alpha-archive-term-provenance-and-master-functional-scope"), "{query}");
+        assert!(v["problems"][0]["findings"].as_array().unwrap().iter().any(|f| f["id"] == expected), "{query}");
     }
 }
 

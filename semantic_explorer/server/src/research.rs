@@ -849,6 +849,7 @@ fn tokens(s: &str) -> HashSet<String> {
         .filter(|w| {
             (w.chars().count() > 2
                 || (w.chars().count() >= 2 && w.chars().any(|c| c.is_ascii_digit())))
+                && !crate::rank::is_stopword(w)
                 && ![
                     "the",
                     "and",
@@ -1125,27 +1126,33 @@ fn detail_records(full: &Value, query: &str) -> Result<Vec<(&'static str, usize)
         } else if needle.is_empty() || query == full["id"].as_str().unwrap_or_default() {
             0
         } else {
-            needle
+            let size = documents.len() as f64 + 1.0;
+            // Logarithmic rarity inside this problem: every covered concept adds,
+            // a rare one adds more, a word that most records share adds almost
+            // nothing, and the share of the question a record covers scales it.
+            let rarity = |token: &String| ((size / (frequencies[token] as f64 + 1.0)).ln() / size.ln()).max(0.05);
+            let total: f64 = needle.iter().map(rarity).sum();
+            let mut covered = 0.0f64;
+            let weighted: f64 = needle
                 .iter()
                 .map(|token| {
-                    let rarity = (documents.len() / frequencies[token]).max(1);
                     if headline.contains(token) {
-                        20 * rarity
+                        covered += rarity(token);
+                        2000.0 * rarity(token)
                     } else if content.contains(token) {
-                        5 * rarity
+                        covered += rarity(token);
+                        500.0 * rarity(token)
                     } else if metadata.contains(token) {
-                        1
+                        1.0
                     } else {
-                        0
+                        0.0
                     }
                 })
-                .sum()
+                .sum();
+            let share = if total > 0.0 { covered / total } else { 0.0 };
+            (weighted * (0.35 + 0.65 * share)).round() as usize
         };
-        let coverage = if needle.is_empty() || query == full["id"].as_str().unwrap_or_default() {
-            0
-        } else {
-            needle.intersection(content).count()
-        };
+        let coverage = 0usize;
         let anchored = if *id == query {
             2
         } else if owns_result(
@@ -1479,6 +1486,15 @@ pub fn state(
     } else {
         Vec::new()
     };
+    let rarity: HashMap<&String, f64> = needle
+        .iter()
+        .map(|token| {
+            let frequency = documents.iter().filter(|(_, words)| words.contains(token)).count().max(1);
+            let size = documents.len() as f64 + 1.0;
+            (token, ((size / (frequency as f64 + 1.0)).ln() / size.ln()).max(0.05))
+        })
+        .collect();
+    let distinctive = rarity.values().filter(|value| **value > 0.05).count();
     let mut matches: Vec<_> = p
         .problems
         .iter()
@@ -1519,17 +1535,24 @@ pub fn state(
             } else {
                 // A large historical problem must not combine unrelated findings
                 // into a better match than a focused answer to the actual question.
+                // A concept counts by the logarithm of its rarity across the problems.
+                // A word that nearly every problem contains distinguishes none of
+                // them, and one chance match of a rare word must not outweigh a
+                // passage that covers most concepts of the question.
                 let score_passage = |headline: &HashSet<String>, content: &HashSet<String>| {
-                    let coverage = needle.intersection(content).count();
+                    let mut covered = 0usize;
                     let weighted = needle.iter().filter(|t| content.contains(*t)).map(|t| {
-                        let frequency = documents.iter()
-                            .filter(|(_, words)| words.contains(t)).count().max(1);
-                        (if headline.contains(t) { 400 } else { 100 }) / frequency
-                    }).sum::<usize>();
-                    (coverage, weighted)
+                        if rarity[t] > 0.05 {
+                            covered += 1;
+                        }
+                        (if headline.contains(t) { 400.0 } else { 100.0 }) * rarity[t]
+                    }).sum::<f64>();
+                    let share = covered as f64 / distinctive.max(1) as f64;
+                    // second entry: number of distinguishing concepts the passage covers
+                    ((weighted * (0.35 + 0.65 * share)).round() as usize, covered)
                 };
                 let problem_title = tokens(&format!("{} {}", q.title.de, q.title.en));
-                let (heading_coverage, heading_score) = score_passage(&problem_title, title);
+                let (heading_score, heading_coverage) = score_passage(&problem_title, title);
                 let finding_score = q.findings.iter().map(|finding| {
                     let headline = tokens(&format!("{} {}", finding.title.de, finding.title.en));
                     let mut content = headline.clone();
@@ -1545,7 +1568,7 @@ pub fn state(
                     let words = tokens(topic);
                     needle.intersection(&words).count()
                 }).sum::<usize>() * 1000;
-                let (coverage, weighted) = finding_score.max(strategy_score);
+                let (weighted, coverage) = finding_score.max(strategy_score);
                 (topic_score + 4 * (heading_score + weighted) + 100 * coverage.max(heading_coverage)).min(14_999)
             };
             (score, q)

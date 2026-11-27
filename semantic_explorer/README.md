@@ -167,6 +167,16 @@ python3 semantic_explorer/refresh.py --check
 Die Aktualisierung inventarisiert offline und erhält den Quellen-Cache, baut anschließend die Atlas-Quelldaten und den Forschungskontext und aktualisiert die strukturelle Qualitätsprüfung. `--check` liest nur und prüft registrierte Quellen sowie Ledger-Zeilen gegen den letzten Import. `run.sh export` gibt den aktiven, zusammengeführten Atlas-Snapshot als ein JSON-Dokument auf stdout aus; es erzeugt und speichert keinen weiteren Graphen. KI-Annotationen, Modellprüfungen und Rohquellen sind Navigations- und Reviewmaterial. Sie gelten nicht als mathematischer Beweis oder unabhängige Validierung.
 
 
+### Suche, Ledger-Übersicht und Kartenquellen (27.11.2026)
+
+Die Suche `search_knowledge` wertet Begriffe statt Zeichenketten: `server/src/rank.rs` entfernt Funktionswörter beider Sprachen, vergleicht ganze Wörter mit leichter Stammbildung, kennt ein deutsch-englisches Glossar der Theorievokabeln (Doppelbrechung ↔ birefringence, Naht ↔ seam, Herleitung ↔ derivation), zerlegt Komposita in bekannten Kopf und Schwanz und gewichtet seltene Begriffe höher als häufige. Ledger-Behauptungen, geprüfte Befunde und Aspekte der Theoriekarte (`map:…`, Typ `theory_map_aspect`) stehen vor Unterdatensätzen und archivierten Papierabschnitten. Neue Vokabeln gehören in die Tabelle `GLOSSARY` in `rank.rs`; `run.sh` baut den Dienst beim nächsten Start neu.
+
+`theory_overview` trägt zusätzlich `ledger_areas`: alle aktiven Ledger-Behauptungen nach zehn Gebieten und Klasse, erzeugt von `research/originlab/ledger_map.py --write` nach `semantic_explorer/ledger_areas.json`. Der Dienst liest die Datei bei jedem Aufruf und meldet `current: false`, wenn das Ledger danach geändert wurde.
+
+`map_refs.py` hält die Quellenverweise der Theoriekarte aktuell: Ein Verweis, dessen Auszug an den zitierten Zeilen noch steht, bekommt den neuen Dateihash; ein Verweis, dessen Auszug fehlt, wird gemeldet und nicht angefasst. `refresh.py` ruft beide Werkzeuge auf, `refresh.py --check` prüft sie mit.
+
+Ein laufender MCP-Prozess behält die alte Suchlogik, bis er neu gestartet wird; Karte, Ledger-Übersicht und Forschungsprogramm liest auch ein alter Prozess frisch von der Platte.
+
 ## Gesamtbild und kompakte Forschungsarbeit
 
 `/#map` zeigt die quellengebundene Karte P1/P2 → Naht/Cover → D5/A3/E8 → Clocks/Anker/Readouts sowie die offenen lokalen, dynamischen und gravitativen Anschlüsse. Ein Knoten trägt seinen Geltungsbereich und Quellenauszüge. Die Karte ist eine Orientierung, kein weiterer Beweis.

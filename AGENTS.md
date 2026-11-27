@@ -20,7 +20,12 @@ Read [`docs/research/TFPT-STAND.md`](docs/research/TFPT-STAND.md) (what works,
 patterns, what is missing) and follow
 [`docs/research/EXPLORATION.md`](docs/research/EXPLORATION.md). Atlas and the
 catalogue `docs/catalog/TFPT_Pruefkatalog_2026-11-20.xlsx` are available for
-details at any time. Do not read PLAN.md, RESULTS.md, progress.json or contract
+details at any time. TFPT-STAND is a selection: before calling anything new or
+open, look it up in [`docs/research/LEDGER-KARTE.md`](docs/research/LEDGER-KARTE.md)
+(all active ledger claims by area, generated) or with
+`research/originlab/ledger_map.py --find 'pattern'`; the Atlas gives the same
+view in `theory_overview.ledger_areas` and `search_knowledge` answers German
+and English questions with ledger claims first. Do not read PLAN.md, RESULTS.md, progress.json or contract
 chains beforehand, and do not start from an existing TFPT object: those objects
 are what a new idea must produce.
 
@@ -76,6 +81,11 @@ solution, of F1, or of any other origin model.
 - AI annotations, graph edges and Atlas links are navigation, not proof.
 
 ## Atlas and tools
+
+After a ledger change run `python3 semantic_explorer/refresh.py` (offline, no
+model calls): it regenerates the ledger map, the Atlas ledger summary and the
+source hashes of the theory map; `refresh.py --check` and
+`research/originlab/test_ledger_map.py` fail while any of them is stale.
 
 `tfpt-knowledge` (`.mcp.json`) is the sole theory-atlas interface:
 `graph_status`, `theory_overview`, `research_state`, `assess_research_plan`,

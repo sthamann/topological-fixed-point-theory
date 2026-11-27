@@ -75,13 +75,26 @@ def main():
     if args.check:
         inventory = subprocess.run([sys.executable, str(HERE / 'source_inventory.py'), '--check'], cwd=REPO)
         papers = refresh_papers(check=True)
-        return 0 if check_ledger() and inventory.returncode == 0 and papers == 0 else 1
+        venv = REPO / '.venv/bin/python'
+        navigation = [subprocess.run(command, cwd=REPO).returncode for command in (
+            [str(venv) if venv.exists() else sys.executable, str(REPO / 'research/originlab/ledger_map.py'), '--check'],
+            [sys.executable, str(HERE / 'map_refs.py'), '--check'])]
+        return 0 if check_ledger() and inventory.returncode == 0 and papers == 0 and not any(navigation) else 1
     # The extractor owns its process lock. If an extraction is active, stop here
     # instead of racing its publication or running a second model pass.
     for script, flags in [('extract.py', ['--offline', '--preserve-cache']),
                           ('build_corpus.py', []), ('build_context.py', []),
                           ('audit_extractions.py', [])]:
         result = subprocess.run([sys.executable, str(HERE / script), *flags], cwd=REPO)
+        if result.returncode:
+            return result.returncode
+    # Navigation files that go stale with every ledger commit: the per-area ledger
+    # summary of the overview and the source hashes of the authored theory map.
+    venv = REPO / '.venv/bin/python'
+    python = str(venv) if venv.exists() else sys.executable
+    for command in ([python, str(REPO / 'research/originlab/ledger_map.py'), '--write'],
+                    [sys.executable, str(HERE / 'map_refs.py'), '--refresh']):
+        result = subprocess.run(command, cwd=REPO)
         if result.returncode:
             return result.returncode
     return refresh_papers()

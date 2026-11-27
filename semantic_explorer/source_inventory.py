@@ -692,7 +692,8 @@ def _contract_nodes(root: Path, valid_claims: set[str], sources: dict[str, dict[
             attrs["source_refs"].append(next_txt_source_id)
         node_id = f"contract:{folder.name}"
         label = str(attrs.get("question") or folder.name)
-        result.append(_node(node_id, "contract", label, attrs, str(attrs.get("summary_de") or attrs.get("verdict_raw") or "")))
+        first_finding = next((str(item.get("text")) for item in attrs.get("findings") or [] if isinstance(item, dict) and item.get("text")), "")
+        result.append(_node(node_id, "contract", label, attrs, str(attrs.get("summary_de") or attrs.get("verdict_raw") or _clip(first_finding, 400))))
     return result
 
 
@@ -773,6 +774,43 @@ def _rh_nodes(root: Path, valid_claims: set[str], sources: dict[str, dict[str, A
     return result
 
 
+def _clip(text: Any, width: int) -> str:
+    text = re.sub(r"\s+", " ", str(text or "")).strip()
+    return text if len(text) <= width else text[:width].rsplit(" ", 1)[0] + " …"
+
+
+def _scorecard_summary(row: dict[str, Any]) -> str:
+    """One readable line per scorecard row: prediction, data, status and kill condition, as recorded."""
+    parts = []
+    if row.get("observable"):
+        parts.append(_clip(row["observable"], 160) + ".")
+    if row.get("tfpt_value"):
+        parts.append("TFPT: " + _clip(row["tfpt_value"], 260) + ".")
+    if row.get("data_value"):
+        parts.append("Data: " + _clip(row["data_value"], 420) + ".")
+    status = " / ".join(str(row[key]) for key in ("status", "stage") if row.get(key))
+    if status:
+        pull = row.get("pull_sigma")
+        parts.append(f"Status: {status}" + (f", pull {pull} sigma." if pull is not None else "."))
+    if row.get("kill_condition"):
+        parts.append("Kill: " + _clip(row["kill_condition"], 220) + ".")
+    return " ".join(parts)
+
+
+def _failure_summary(record: dict[str, Any]) -> str:
+    """Scoped negative result in one line: what was tried, under which conditions it is excluded, what stays."""
+    parts = []
+    if record.get("approach_class"):
+        parts.append(_clip(record["approach_class"], 260) + ".")
+    excluded = [_clip(item, 200) for item in record.get("excluded_under", []) if item][:2]
+    if excluded:
+        parts.append("Excluded under: " + "; ".join(excluded) + ".")
+    kept = [_clip(item, 200) for item in record.get("not_excluded", []) if item][:1]
+    if kept:
+        parts.append("Not excluded: " + kept[0] + ".")
+    return " ".join(parts)
+
+
 def _scorecard_nodes(root: Path, valid_claims: set[str], sources: dict[str, dict[str, Any]], edges: list[dict[str, Any]]) -> list[dict[str, Any]]:
     path = root / "experiments" / "evidence_scorecard.json"
     payload = _read_json(path)
@@ -791,9 +829,9 @@ def _scorecard_nodes(root: Path, valid_claims: set[str], sources: dict[str, dict
         observable = str(row.get("observable") or "").strip()
         slug = _slugify(observable)
         node_id = f"scorecard:{domain}:{slug}"
-        attrs = {key: row.get(key) for key in ("domain", "observable", "status", "stage", "evidence_class", "pull_sigma", "kill_condition", "source") if key in row}
+        attrs = {key: row.get(key) for key in ("domain", "observable", "tfpt_value", "data_value", "status", "stage", "claim_type", "bridge_type", "evidence_class", "pull_sigma", "kill_condition", "source") if key in row}
         attrs.update({"source_refs": [source_id] if source_id else [], "firewall": "experiments", "reviewed": False})
-        result.append(_node(node_id, "scorecard", f"{domain}: {observable[:60]}", attrs))
+        result.append(_node(node_id, "scorecard", f"{domain}: {observable[:60]}", attrs, _scorecard_summary(row)))
         for claim in sorted(set(token for token in CLAIM_TOKEN_RE.findall(json.dumps(row, ensure_ascii=False)) if token in valid_claims)):
             _edge(edges, node_id, f"claim:{claim}", "tests", source="scorecard_exact_claim_token")
         source_text = str(row.get("source") or "").lower().replace("_", "-")
@@ -816,7 +854,7 @@ def _failure_nodes(root: Path, known_ids: set[str], valid_claims: set[str], edge
         attrs = {key: value for key, value in record.items() if key != "id"}
         attrs["reviewed"] = bool(record.get("provenance", {}).get("reviewed"))
         attrs["inventory_source"] = "verification/graph_v2/failure_scopes.json"
-        result.append(_node(node_id, "failure", record["id"], attrs))
+        result.append(_node(node_id, "failure", record["id"], attrs, _failure_summary(record)))
         for evidence in record.get("evidence", []):
             raw_target = str(evidence)
             if raw_target.startswith(("contract:", "claim:", "rh:")):
