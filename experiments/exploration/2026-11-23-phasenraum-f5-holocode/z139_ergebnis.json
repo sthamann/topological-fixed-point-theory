@@ -1,0 +1,490 @@
+{
+ "checks": {
+  "[E] Native Gebiete und ihre Möbiusfelder (sympy): v_O1 = cos, v_V+ = sin, v_N+ = cos + sin - 1, v_N- = cos - sin - 1 (Nullstellen genau in den Marken). Wiesbrock-Differenzen: (K_O1 - K_N+)/2 pi = G_(1 - sin) = P^(pi/2), (K_V+ - K_N+)/2 pi = G_(1 - cos) = P^(0) = K_0, (K_O1 - K_N-)/2 pi = G_(1 + sin) = P^(-pi/2): parabolisch (doppelte Nullstelle in der gemeinsamen Marke), Faktor cot(pi/4) - cot(pi/2) = 1 (Einheit der Marken). Lie-Relationen [K_O1, P^(pi/2)] = +2 pi i P^(pi/2), [K_V+, P^(0)] = -2 pi i P^(0), [K_O1, P^(-pi/2)] = -2 pi i P^(-pi/2). Die Uhr ist der Moduldefekt der drei nativen Gebiete: K_O1 + K_V+ - K_(O1 cap V+) = 2 pi L_0 = K_Uhr/2": true,
+  "[E] Einseitigkeit exakt (rationale Möbiusflüsse der Kappe, e^(s/2) = 2, 3, 7/5 und Kehrwerte, s = 2 pi t): N_+ = (0, 1) wird genau für s >= 0 in sich abgebildet (Bild für e^(s/2) = 2: (3/5, 1)), N_- = (-1, 0) genau für s <= 0: zwei halbseitige Inklusionen entgegengesetzten Vorzeichens im selben M = O_1. Negativkontrolle: der streng geschachtelte Bogen (-1/2, 1/2) ohne gemeinsamen Endpunkt verlässt sich in beiden Richtungen (Bild (1/7, 11/13)); seine Differenz ist G_(1 - (sqrt 2 - 1) cos) (elliptisch, a^2 - b^2 = -2 + 2*sqrt(2) > 0) und erfüllt die Lie-Relation in keiner Orientierung": true,
+  "[N] Hislop-Longo als Resultat aus dem Zustand (Peschel, 640 Bit, niedrige Moden |x| < 2): K_O1 = 2 pi H_1, K_V+ = 2 pi H_2, K_N+ = 2 pi (H_1 + H_2 - L_0) mit rel. Abweichung 6.9e-03 (M = 128) -> 1.9e-03 (M = 256); Wiesbrock-Differenzen = P^(pi/2), P^(0), P^(-pi/2) mit Faktor 1 (6.9e-03 -> 1.9e-03); Uhr K_O1 + K_V+ - K_N+ = 2 pi L_0 (6.9e-03 -> 1.9e-03). Die Abweichung fällt mit der Gitterweite; Rechengenauigkeit: grösstes |h| = 291 bei 444 verfügbaren Nepern": true,
+  "[N] Borchers-Relationen aus dem Zustand (M = 256): [K_M, P] = +-2 pi i P mit den exakt vorhergesagten Vorzeichen (rel. Defekt 2.1e-03; falsche Orientierung 2.00); Fock-Positivität der drei Translationserzeuger auf der Kompression |x| < 3 (min 0.208 > 0). Negativkontrolle (K_O1 - K_Ic)/2 pi mit Ic = (-pi/4, pi/4): gleich L_0 - (sqrt 2 - 1) H_1 (1.9e-03), positiv mit Lücke 0.455 (vorhergesagt sqrt(2 sqrt 2 - 2)/2 = 0.455), Lie-Relation verfehlt in beiden Orientierungen (1.00): Positivität allein macht keine Translation (z72)": true,
+  "[N] Halbseitigkeit aus dem Zustand (Definition direkt; Gausspaket der Breite 0,12 in der Bogenmitte, |t| = 0,1; 0,2; 0,3; M = 256): im Vakuum bleibt das Paket aus N_+ für t > 0 in N_+ (Leckage 3e-16; bei M = 128 noch 1e-05, Gitterartefakt der gestauchten Paketbreite) und verlässt es für t < 0 (1.00); für N_- umgekehrt (3e-16 gegen 1.00): beide Vorzeichen nativ. Negativkontrolle Ic = (-pi/4, pi/4): Leckage in beiden Richtungen (1.00, 1.00). Originalzustand (alpha = 1/4, beta = 4 pi): Vorwärtsleckage 1.6e-03 (M = 128: 1.5e-03, konvergiert), über 10^6 mal das Vakuum: keine halbseitige Inklusion (z72 bestätigt)": true,
+  "[E] Positivität exakt (sympy, D_1/2 und D_1): <h|P^k|h> = (2h)_k/2^k für k = 1..6 und alle drei nativen Translationserzeuger P^(pi/2), P^(-pi/2), P^(0): das Spektralmass des Grundzustands ist Gamma(2h, 1/2) auf [0, oo), absolut stetig, ohne Lücke (kleinster Eigenwert der Trunkierung 0.0036 -> 0.0009, ~ 1/N). Kontrollen: die elliptische Differenz hat die Lücke 0.4551 = h sqrt(a^2 - b^2) (Uhr, keine Translation); der Modulgenerator K_O1/2 pi = H_1 ist spektral symmetrisch (<H_1> = <H_1^3> = 0, <H_1^2> = h/2) und nach unten unbeschränkt (-190 -> -783)": true,
+  "[N] Die zwei nativen halbseitigen Translationen einer Naht vertauschen nicht (M = 256, aus dem Zustand): [P^(pi/2), P^(0)] = -i K_(N+)/2 pi (rel. Defekt 1.1e-02 -> 6.8e-03; gleiches N in O_1 und V_+) und [P^(pi/2), P^(-pi/2)] = -i K_(O1)/pi (2.4e-02 -> 1.4e-02; gleiches M, N_+ und N_-); der Kommutator hat relative Grösse 1.01, nicht 0. Der Kommutator der beiden Translationen ist der Modulgenerator des gemeinsamen Gebiets": true,
+  "[E] Lie-Algebra (2x2-Darstellung, Konventionsfehler 0e+00): die beiden Translationen einer Naht erzeugen sl(2,R) (Dimension 3 bzw. 3, Killing-Form vom Rang 3: halbeinfach), also die Möbiusgruppe eines Lichtstrahls, nicht zwei vertauschende Lichtkegelkoordinaten. [C unter P_chir] Mit zwei Arten a, b und artabhängiger Verkleinerung (a am einen, b am anderen Ende) gilt [K, P_a] = +2 pi i P_a, [K, P_b] = -2 pi i P_b, [P_a, P_b] = 0 (Defekte 0e+00): die 1+1-Poincaré-Algebra (Dimension 3, Killing-Rang 1: auflösbar). Kontrollen: artblind vertauschen die Translationen nicht (2.00); gleiches Ende für beide Arten gibt zweimal dasselbe Vorzeichen (Defekt 12.6): kein +-Paar": true,
+  "[E] su(2,2) auf dem Twistorraum (Form (2,2), Erzeuger in der Algebra: 0e+00; radiale sl(2,R) E = L_0, Q^- = H_1, D = H_2: 0e+00). Kegel V_+ (Modulgenerator = Dilatation): Für jedes a gilt K_(V+) - K_(V+ + a) ~ a.P exakt (0e+00) und Ad(e^(sD)) a.P = e^s a.P (9e-16); V_+ + a liegt in V_+ genau für a im abgeschlossenen Vorwärtskegel, und genau dort liegt a.P im invarianten Positivkegel (-i H X >= 0; zeitartig und lichtartig ja, raumartig und vergangen nein). Die halbseitige Familie eines Gebiets mit fester Spitze ist also die ganze Translationsgruppe R^4 (Dimension 4, abelsch 0e+00) mit Spektralbedingung; die Familien zweier Spitzen ({P_mu} und {K_mu}) erzeugen die ganze konforme Algebra (Dimension 15)": true,
+  "[E/C] Native Auswahl in su(2,2): Unter den vier Translationen ist genau eine so(3)-invariant (Dimension 1: die Zeit P_0); eine Raum- oder Lichtrichtung verlangt die Wahl einer Achse n in S^2. Für ein Nullpaar a_+- = e_0 +- n vertauschen die Translationen (0e+00), tragen unter dem Boost längs n die Gewichte +1 und -1 (Keil: +-Paar, 0e+00) und unter der Dilatation beide +1 (Kegel: gleiches Vorzeichen, 0e+00). Native Kappe: (K_O1 - K_N+)/2 pi = E - D und (K_V+ - K_N+)/2 pi = E - Q^- = K_0 sind nilpotent (0e+00), liegen im Positivkegel (min 0e+00) und E - D liegt in der Spitzenfamilie Ad(e^(-pi E/2)) span{P_mu} der oberen Kappenspitze (Lie-Hülle bleibt 4-dimensional; mit der Familie der unteren Spitze dagegen 15); ihr Kommutator ist der Modulgenerator von N_+ (0e+00). Der Modulgenerator Q^- selbst ist indefinit ([-0.5, -0.5, 0.5, 0.5])": true,
+  "[E] Plätze der Kette sind Bögen EINER Naht: Die relativen Kommutanten N_(n+1)' cap N_n sind auf Einteilchenebene L^2(n, n+1) in y = tan(theta/2), die Bogenlängen ell_n = 2 (arctan(n+1) - arctan n) summieren sich zu 2*pi (Teleskop), d. h. alle Plätze zusammen sind eine Naht ohne den Punkt t*. Jede Nahtmode e_x liegt mit dem Gewicht ell_n/2 pi auf Platz n (Platz 0 und -1: 0.25, Platz 1: 0.1024), unabhängig von x. Das Dublett der Naht (zwei Moden im Abstand 1) hat auf dem grössten Platz die Gram-Eigenwerte 1/4 +- sqrt(2)/(2 pi) = 0.4751, 0.0249 (Gitterprobe 0.4751; Platz 1: 0.2031 gegen 0.2033 mit gerundetem Endpunkt); kein Platz trägt auch nur eine der zwei Dublettmoden zur Hälfte, die ganze Kette teilt sich ein Dublett (Spur 2)": true,
+  "[N] Ein Platz ist unendlich, eine Naht endlich: Die Vakuumentropie des Platzes 0 wächst logarithmisch mit dem Gitter (S = 1.846, 2.077, 2.308, 2.539 für M = 128..1024, Steigung 0.3333 je ln M; das Gitter hat zwei Fermipunkte, das chirale Kontinuum gäbe 1/6), die Zahl der Modulniveaus |h| < 20 ebenso (16, 18, 22, 24: dichtes Spektrum, hyperbolisch, beta = 2 pi). Die Naht im Originalzustand hat die gitterunabhängige Entropie 0.173287 je Quarter (= ln 2/4, z68; Abweichung 1e-15) und die periodische Uhr 4 pi (Z + alpha). Platz (Bogen) und Naht (Kreis) sind verschiedene Objekte; nach den bekannten Sätzen Typ III_1 gegen Typ I (nicht gerechnet, gerechnet sind Entropiewachstum und Niveaudichte)": true,
+  "[N] Translationskovarianz und Marke der Plätze (M = 1024): Die gegenseitige Information zweier Plätze hängt nur vom Doppelverhältnis ab, I = (1/3) ln(1/(1 - eta)) (Verhältnis 0.3331 bis 0.3333 für acht Paare): Plätze im Abstand 2 haben stets eta = 1/4 (I = 0.0954 bis 0.0964, Streuung nur durch Gitterrundung der Endpunkte), im Abstand 3 eta = 1/9 (I = 0.0392), im Abstand 4 eta = 1/16 (I = 0.0222). Die Plätze sind innerlich gleiche Kopien; unterscheidbar sind sie nur durch ihre Lage in der Kette (die Korrelation fällt mit dem Abstand: nicht austauschbar)": true,
+  "[E] Kein endlicher Platz: Für hermitesche K, P in endlicher Dimension ist Tr(P ([K, P] - 2 pi i P)) = -2 pi i Tr P^2 (Fehler 1e-15), also ||[K, P] - 2 pi i P||_F >= 2 pi ||P||_F (kleinstes Verhältnis über neun Zufallspaare in d = 2, 4, 16: 1.04 >= 1): die Borchers-Relation erzwingt P = 0. Auf der Trunkierung von D_1/2 (N = 40) gilt sie im Inneren exakt (6e-13) und der ganze Defekt 4.50 sitzt am Abschneiderand. Eine Wiesbrock-Translation lebt also nie auf endlich vielen endlichen Plätzen wie (C^2)^L; die z121-Kette kann höchstens eine Diskretisierung sein": true,
+  "[E] Schrittweite: Der Modulfluss von M skaliert die Translation, Dil(lambda) T_1 Dil(lambda)^(-1) = T_lambda (sympy): alle Schrittweiten sind unitär äquivalent, die Inklusion allein kennt keinen Schritt (z72: keine eigene Skala). Die Marken geben eine Einheit [C, z83/z104]: N = Viertelbogen zwischen Marken, M = Halbbogen, Faktor 1, also T_1 mit den Marken y = 0, 1, oo, -1 (Vierteldrehung: 0 -> 1 -> oo -> -1 -> 0). Aber schon der zweite Kettenendpunkt y = 2 liegt bei 1.4097 Viertelkreisen, keiner Marke, und die Vierteldrehung bildet die Kette nicht auf sich ab (2, 3, 4 -> -3, -2, -5/3)": true,
+  "[E] Uhr und Kette sind nicht gemeinsam diskret: R T_1 (Vierteldrehung mal Einheitstranslation) hat die Spur sqrt(2)/2 mit Minimalpolynom 2*x**2 - 1 (nicht normiert, also nicht ganzalgebraisch, also kein 2 cos(pi p/q)): ein elliptisches Element unendlicher Ordnung, die erzeugte Gruppe ist nicht diskret (numerisch: (R T_1)^k kommt +-1 bis auf 0.001 nahe, k <= 2000, ohne es zu erreichen). Kontrollen: mit der Halbdrehung ist S T_1 von Ordnung 3 (Modulgruppe), mit dem Doppelschritt ist R T_2 von Ordnung 2 (Spur 0; Dreiecksgruppe (2, 4, oo)). Die Uhr ist das Mittel der vier nativen Translationen, L_0 = (1/4) sum_k P^(k pi/2): keine einzelne ist uhrinvariant, die Wahl von t* bricht Z4": true,
+  "[E] Die z121-Kette trägt die Lichtkegelstruktur (L = 4, 6, 8, volle Matrizen): U_R = t(-1/2)/2^(L/4) und U_L = (t(1/2)/2^(L/4))^(-1) sind unitär (2e-15), vertauschen (0e+00), und F = U_R U_L, T^2 = U_R U_L^(-1) bis auf Phase (0e+00, 2e-15): zwei vertauschende Translationen, Zeit- und Raumschritt als Produkt und Quotient. F vertauscht mit T^2 (0e+00), nicht mit dem Einplatzschritt T (2.45): die Einheitszelle hat zwei Plätze (Untergitter = zwei Bewegungsrichtungen). Die Ziegellagen selbst sind nicht das +-Paar: sie vertauschen nicht (2.45) und sind keine der beiden Translationen (Abstand 5.29)": true,
+  "[E] Lichtkegelmatrix aus den nativen Translationen: Native Translationen sind quasifrei (zweite Quantisierung eines Einteilchenflusses); auf zwei Untergittern (P_chir, Schritt 2) geben sie W_R (gerade Plätze um +2) und W_L (ungerade um -2), und W_R W_L ist exakt die Tauschkette F(u = oo) (0e+00), T^2 = W_R W_L^(-1) (0e+00), F_Tausch^(L/2) = 1 (0e+00). Mit z121s Gatter u = 1 stimmt das Spektrum nicht: Spurabstand max_k ||Tr F^k| - |Tr F_Tausch^k||/dim = 0.94, 0.91, 0.91 (L = 4, 6, 8), F(1)^(L/2) ist keine Phase (5.5); erst für u -> oo schliesst sich der Abstand (0.088 bei u = 16, 0.0004 bei u = 256, L = 8). Die Translationen liefern die Geometrie (freie Rechts- und Linksläufer), nicht das Gatter": true,
+  "[E] Das Gatter ist ein Skalar der nahtinternen Translation (zwei native Nähte, Moden -7/4..5/4, Fock 256; Gatter aus den Nullmoden wie z121): Es vertauscht mit der gemeinsamen Translation dGamma(P_0) beider Nähte (2e-15), nicht mit der relativen (36.66) und nicht mit der einer Naht (18.33), und ist nicht trivial (16.2). Die internen Translationen zweier Nähte vertauschen (0e+00) und werden vom Nahttausch aufeinander abgebildet (1e-14). Die halbseitige Translation verschiebt also innerhalb jeder Naht und lässt den Nahtindex fest: Sie steht quer zur Kette der Nähte, das Gatter verbindet Nähte bei gleicher interner Lage": true
+ },
+ "befunde": {
+  "E/N: Die halbseitige modulare Inklusion ist nativ, im Vakuumsektor der rekonstruierten Uhr: Kappe O_1 und Kegel V_+ (z104, aus E und tau) mit N_+ = O_1 cap V_+ bzw. N_- geben halbseitige Inklusionen beider Vorzeichen, exakt geometrisch und am Gitter aus dem Zustand; die Wiesbrock-Differenzen sind die parabolischen Erzeuger in den Marken mit Faktor 1, positiv mit Gamma-Spektralmass. Im Originalzustand (beta = 4 pi) gibt es sie nicht (z72: Leckage, global Takesaki)": true,
+  "E: Die zwei Vorzeichen einer Naht geben keine zwei Lichtkegelkoordinaten: Ihre Translationen vertauschen nicht, der Kommutator ist der Modulgenerator des gemeinsamen Gebiets, zusammen sl(2,R) (Möbiusgruppe eines Lichtstrahls). Zwei vertauschende lichtartige Translationen brauchen zwei unabhängige Lichtstrahlen: zwei Arten mit entgegengesetzter Zuordnung (P_chir) oder in su(2,2) (z83, C) ein Nullpaar zu einer gewählten Achse n (P_richt)": true,
+  "E: 'Geordnete Nähte' ist nicht die Kette der Inklusion. Die Kette ordnet Bögen einer einzigen Naht (in y = t: Einheitsintervalle der Minkowskizeit auf der Achse, Erzeuger P_0 = E + Q^-). Jeder Platz ist ein Bogen: unendlich viele Moden, Typ III, hyperbolischer Modulfluss bei 2 pi, kein Dublett; eine Naht ist ein Kreis: Typ I, Uhr 4 pi, endliche Entropie. Ein endlicher Platz ist ausgeschlossen (Borchers-Relation)": true,
+  "E/C: Die Beschriftung ist nicht kanonisch. Die Translation ist kontinuierlich und skalenfrei; die Marken geben den ersten Schritt (Viertelbogen in Halbbogen), danach liegen die Kettenendpunkte auf keiner Marke. Nativ diskret und geordnet ist nur der Ring der vier Viertelbögen unter der Uhr (zyklisch Z4), keine Kette Z; Uhr und Einheitstranslation erzeugen zusammen eine nichtdiskrete Gruppe": true,
+  "E: Das Gatter lebt nicht auf der Kette der Inklusion. Die z121-Kette hat zwar genau die Form zweier vertauschender Translationen (F = U_R U_L, T^2 = U_R U_L^(-1)), aber (i) das +-Paar sind die diagonalen Transfermatrizen, nicht die Ziegellagen, und es braucht zwei Untergitter (P_chir); (ii) die nativen Translationen sind quasifrei und geben die Tauschkette u = oo, das Gatter u = 1 bleibt P_null/P_viertel; (iii) die native Translation wirkt in jeder Naht und vertauscht mit dem Gatter nur gemeinsam; (iv) endliche Plätze tragen keine Wiesbrock-Translation": true,
+  "E/N: Unterscheidbarkeit. In einer Wiesbrock-Kette ist die Marke die Lage selbst: Die Plätze sind innerlich gleich, aber durch die Inklusion total geordnet (N_(n+1) in N_n), die Richtung ist das Vorzeichen der Halbseitigkeit (Positivität von P), und der Zustand ist nicht austauschbar (I fällt mit dem Abstand). Das wäre genau die Marke gegen den Twirl von z119, aber für Plätze (Bögen einer Naht), nicht für Nähte: Die nativen Nahtdaten tragen sie nicht (interne Translationen verschiedener Nähte vertauschen und sind unter dem Tausch gleich)": true,
+  "Einstufung P_ord: (b) bedingt auf P_platz (+ P_chir, t*, Schritt); nicht (a), weil die native Kette Bögen einer Naht ordnet und im Originalzustand gar nicht existiert; nicht als (c) gewertet, weil eine einzige Inklusion Ordnung, Richtung, Translation und Marke zugleich lieferte": true
+ },
+ "zahlen": {
+  "exakt": {
+   "v_O1": "cos(theta)",
+   "v_V+": "sin(theta)",
+   "v_N+": "sin(theta) + cos(theta) - 1",
+   "v_N-": "-sin(theta) + cos(theta) - 1",
+   "(K_O1 - K_N+)/2pi": "1 - sin(theta)",
+   "(K_V+ - K_N+)/2pi": "1 - cos(theta)",
+   "(K_O1 - K_N-)/2pi": "sin(theta) + 1",
+   "Faktor cot(pi/4) - cot(pi/2)": "1",
+   "Kontrolle (K_O1 - K_Ic)/2pi": "1 - (sqrt(2) - 1)*cos(theta)",
+   "a^2 - b^2 der Kontrolle": "-2 + 2*sqrt(2)",
+   "Bild von N+ = (0, 1) für e^(s/2) = 2": [
+    "3/5",
+    "1"
+   ],
+   "Bild der Kontrolle (-1/2, 1/2) für e^(s/2) = 2": [
+    "1/7",
+    "11/13"
+   ]
+  },
+  "gitter_vakuum": {
+   "128": {
+    "hl": 0.00687,
+    "wiesbrock": 0.00687,
+    "uhr": 0.00687,
+    "borchers": 0.00181,
+    "borchers_falsch": 2.0,
+    "komm_N": 0.0109,
+    "komm_M": 0.0243,
+    "komm_null": 1.01,
+    "fock_min": 0.207,
+    "kontr_feld": 0.00687,
+    "kontr_luecke": 0.456,
+    "kontr_lie": 1.0,
+    "orth": 3.89e-16,
+    "hmax": 142.0
+   },
+   "256": {
+    "hl": 0.0019,
+    "wiesbrock": 0.0019,
+    "uhr": 0.0019,
+    "borchers": 0.00212,
+    "borchers_falsch": 2.0,
+    "komm_N": 0.0068,
+    "komm_M": 0.0141,
+    "komm_null": 1.01,
+    "fock_min": 0.208,
+    "kontr_feld": 0.0019,
+    "kontr_luecke": 0.455,
+    "kontr_lie": 1.0,
+    "orth": 4.44e-16,
+    "hmax": 291.0
+   }
+  },
+  "leckage": {
+   "Vakuum N+, M = 128": {
+    "vorwaerts": 1.2e-05,
+    "rueckwaerts": 1.0,
+    "Start": 3.8e-21
+   },
+   "Vakuum N-, M = 128": {
+    "vorwaerts": 1.0,
+    "rueckwaerts": 1.2e-05,
+    "Start": 3.8e-21
+   },
+   "Vakuum Kontrolle Ic, M = 128": {
+    "vorwaerts": 0.99,
+    "rueckwaerts": 0.99,
+    "Start": 7.6e-21
+   },
+   "Original N+, M = 128": {
+    "vorwaerts": 0.0015,
+    "rueckwaerts": 0.98,
+    "Start": 3.8e-21
+   },
+   "Original N-, M = 128": {
+    "vorwaerts": 0.98,
+    "rueckwaerts": 0.0015,
+    "Start": 3.8e-21
+   },
+   "Vakuum N+, M = 256": {
+    "vorwaerts": 3.4e-16,
+    "rueckwaerts": 1.0,
+    "Start": 8e-21
+   },
+   "Vakuum N-, M = 256": {
+    "vorwaerts": 1.0,
+    "rueckwaerts": 3.4e-16,
+    "Start": 8e-21
+   },
+   "Vakuum Kontrolle Ic, M = 256": {
+    "vorwaerts": 1.0,
+    "rueckwaerts": 1.0,
+    "Start": 1.6e-20
+   },
+   "Original N+, M = 256": {
+    "vorwaerts": 0.0016,
+    "rueckwaerts": 0.98,
+    "Start": 8e-21
+   },
+   "Original N-, M = 256": {
+    "vorwaerts": 0.98,
+    "rueckwaerts": 0.0016,
+    "Start": 8e-21
+   }
+  },
+  "positivitaet": {
+   "min Eigenwert (P^(pi/2), elliptische Kontrolle, K_O1/2pi) bei N = 200": [
+    0.0036055,
+    0.45509,
+    -189.74
+   ],
+   "bei N = 800": [
+    0.00090306,
+    0.45509,
+    -783.33
+   ],
+   "Lücke h sqrt(a^2 - b^2), h = 1/2": 0.45509
+  },
+  "zwei_vorzeichen": {
+   "dim Lie-Hülle {P^(pi/2), P^(0)}": 3,
+   "dim Lie-Hülle {P^(pi/2), P^(-pi/2)}": 3,
+   "Killing-Rang (eine Naht)": 3,
+   "dim Lie-Hülle unter P_chir {K, P_a, P_b}": 3,
+   "Killing-Rang unter P_chir": 1,
+   "P_chir: Defekte [K,P_a] = +2pi i P_a, [K,P_b] = -2pi i P_b, [P_a,P_b] = 0": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "Kontrolle artblind ||[P_+, P_-]||": 2.0,
+   "Kontrolle gleiches Ende: Defekt des Gewichts -1": 12.57
+  },
+  "su22": {
+   "Kegelform -i H X_P(a), Eigenwerte": {
+    "zeitartig (1, 0, 0, 0)": [
+     0.0,
+     0.0,
+     1.0,
+     1.0
+    ],
+    "zeitartig (5/4, 0, 0, 3/4)": [
+     0.0,
+     0.0,
+     0.5,
+     2.0
+    ],
+    "lichtartig (1, 0, 0, 1)": [
+     0.0,
+     0.0,
+     0.0,
+     2.0
+    ],
+    "lichtartig (1, 0, 0, -1)": [
+     0.0,
+     0.0,
+     0.0,
+     2.0
+    ],
+    "raumartig (0, 0, 0, 1)": [
+     -1.0,
+     0.0,
+     0.0,
+     1.0
+    ],
+    "raumartig (3/4, 0, 0, 5/4)": [
+     -0.5,
+     0.0,
+     0.0,
+     2.0
+    ],
+    "vergangen (-1, 0, 0, 0)": [
+     -1.0,
+     -1.0,
+     0.0,
+     0.0
+    ]
+   },
+   "dim Lie-Hülle {P_mu}": 4,
+   "dim Lie-Hülle {P_mu, K_mu}": 15,
+   "dim so(3)-invarianter Translationen": 1,
+   "Nullpaar: [P+,P-], Boostgewichte +1/-1, Dilatationsgewichte +1/+1 (Defekte)": [
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "Kegelform von Q^- (Modulgenerator der Kappe)": [
+    -0.5,
+    -0.5,
+    0.5,
+    0.5
+   ]
+  },
+  "plaetze": {
+   "Anteil einer Nahtmode je Platz n = -4..3 (ell_n/2pi)": {
+    "-4": 0.024437,
+    "-3": 0.045167,
+    "-2": 0.10242,
+    "-1": 0.25,
+    "0": 0.25,
+    "1": 0.10242,
+    "2": 0.045167,
+    "3": 0.024437
+   },
+   "grösster Dublettanteil je Platz": {
+    "-4": 0.048851,
+    "-3": 0.090183,
+    "-2": 0.20307,
+    "-1": 0.47508,
+    "0": 0.47508,
+    "1": 0.20307,
+    "2": 0.090183,
+    "3": 0.048851
+   },
+   "Summe der Bogenlängen": "2*pi",
+   "Gitterprobe Platz 0, 1": [
+    0.47508,
+    0.20331
+   ]
+  },
+  "inhalt": {
+   "Platz 0 (Viertelbogen): M -> (Gitterpunkte, Entropie, Modulniveaus |h| < 20)": {
+    "128": [
+     32,
+     1.84632,
+     16
+    ],
+    "256": [
+     64,
+     2.07736,
+     18
+    ],
+    "512": [
+     128,
+     2.30841,
+     22
+    ],
+    "1024": [
+     256,
+     2.53946,
+     24
+    ]
+   },
+   "Steigung dS/d ln M": [
+    0.333319,
+    0.33333,
+    0.333332
+   ],
+   "Entropie des Originals (alpha = 1/4, beta = 4 pi), M = 128, 1024": [
+    0.17328679514,
+    0.17328679514
+   ],
+   "ln(2)/4": 0.17328679514
+  },
+  "gegenseitige_information": {
+   "(-3, -1)": {
+    "I": 0.095354,
+    "eta (Gitter)": 0.24879,
+    "I/(-ln(1 - eta))": 0.33332
+   },
+   "(-2, 0)": {
+    "I": 0.096,
+    "eta (Gitter)": 0.25024,
+    "I/(-ln(1 - eta))": 0.33333
+   },
+   "(-1, 1)": {
+    "I": 0.096,
+    "eta (Gitter)": 0.25024,
+    "I/(-ln(1 - eta))": 0.33333
+   },
+   "(0, 2)": {
+    "I": 0.095354,
+    "eta (Gitter)": 0.24879,
+    "I/(-ln(1 - eta))": 0.33332
+   },
+   "(1, 3)": {
+    "I": 0.096411,
+    "eta (Gitter)": 0.2512,
+    "I/(-ln(1 - eta))": 0.33328
+   },
+   "(0, 3)": {
+    "I": 0.039245,
+    "eta (Gitter)": 0.11111,
+    "I/(-ln(1 - eta))": 0.33322
+   },
+   "(-1, 2)": {
+    "I": 0.039044,
+    "eta (Gitter)": 0.11054,
+    "I/(-ln(1 - eta))": 0.33331
+   },
+   "(0, 4)": {
+    "I": 0.022165,
+    "eta (Gitter)": 0.064381,
+    "I/(-ln(1 - eta))": 0.33307
+   }
+  },
+  "endliche_dimension": {
+   "min ||[K,P] - 2 pi i P||_F/(2 pi ||P||_F) über Zufallspaare": 1.038,
+   "Spuridentität Tr(P D) = -2 pi i Tr P^2 (Fehler)": 1.2e-15,
+   "Trunkierung D_1/2, N = 40: Defekt innen": 5.7e-13,
+   "Defekt gesamt (relativ)": 4.5
+  },
+  "schritt": {
+   "Marken unter der Vierteldrehung (y)": [
+    "1",
+    "oo",
+    "-1",
+    "0"
+   ],
+   "Spur von R T_1": "sqrt(2)/2",
+   "Minimalpolynom": "2*x**2 - 1",
+   "Spur von R T_2": "0",
+   "min Abstand (R T_1)^k zu +-1, k <= 2000": 0.00111,
+   "Bild der Endpunkte 2, 3, 4 unter der Vierteldrehung": [
+    "-3",
+    "-2",
+    "-5/3"
+   ],
+   "Endpunkt y = 2 in Einheiten der Marke": 1.40967
+  },
+  "lichtkegel": {
+   "4": {
+    "unitaer": 0.0,
+    "[U_R, U_L]": 0.0,
+    "F = U_R U_L": 0.0,
+    "T^2 = U_R U_L^-1": 0.0,
+    "[F, T^2]": 0.0,
+    "[F, T]": 2.45,
+    "[U_gerade, U_ungerade]": 2.45,
+    "U_gerade gegen U_R, U_L": 5.29
+   },
+   "6": {
+    "unitaer": 1.79e-15,
+    "[U_R, U_L]": 0.0,
+    "F = U_R U_L": 0.0,
+    "T^2 = U_R U_L^-1": 1.69e-15,
+    "[F, T^2]": 0.0,
+    "[F, T]": 8.4,
+    "[U_gerade, U_ungerade]": 8.4,
+    "U_gerade gegen U_R, U_L": 11.1
+   },
+   "8": {
+    "unitaer": 0.0,
+    "[U_R, U_L]": 0.0,
+    "F = U_R U_L": 0.0,
+    "T^2 = U_R U_L^-1": 0.0,
+    "[F, T^2]": 0.0,
+    "[F, T]": 18.8,
+    "[U_gerade, U_ungerade]": 18.8,
+    "U_gerade gegen U_R, U_L": 22.5
+   }
+  },
+  "frei": {
+   "4": {
+    "F_Tausch = W_R W_L": 0.0,
+    "T^2 = W_R W_L^-1": 0.0,
+    "[W_R, W_L]": 0.0,
+    "F_Tausch^(L/2) = 1": 0.0,
+    "Spurabstand F(u) zu F_Tausch": {
+     "1.0": 0.9375,
+     "16.0": 0.1914,
+     "256.0": 0.0008237
+    },
+    "F(1)^(L/2) gegen Phase": 5.477
+   },
+   "6": {
+    "F_Tausch = W_R W_L": 0.0,
+    "T^2 = W_R W_L^-1": 0.0,
+    "[W_R, W_L]": 0.0,
+    "F_Tausch^(L/2) = 1": 0.0,
+    "Spurabstand F(u) zu F_Tausch": {
+     "1.0": 0.9054,
+     "16.0": 0.1879,
+     "256.0": 0.0008236
+    },
+    "F(1)^(L/2) gegen Phase": 10.76
+   },
+   "8": {
+    "F_Tausch = W_R W_L": 0.0,
+    "T^2 = W_R W_L^-1": 0.0,
+    "[W_R, W_L]": 0.0,
+    "F_Tausch^(L/2) = 1": 0.0,
+    "Spurabstand F(u) zu F_Tausch": {
+     "1.0": 0.9061,
+     "16.0": 0.08832,
+     "256.0": 0.0003661
+    },
+    "F(1)^(L/2) gegen Phase": 21.54
+   }
+  },
+  "gatter_translation": {
+   "[U, P_A + P_B]": 2.48e-15,
+   "[U, P_A - P_B]": 36.7,
+   "[U, P_A]": 18.3,
+   "U nichttrivial": 16.2,
+   "Tausch: P_A -> P_B": 1.41e-14,
+   "[e^(-i P_A), e^(-i P_B)]": 0.0
+  },
+  "bilanz": [
+   {
+    "status": "E",
+    "aussage": "Halbseitige modulare Inklusionen beider Vorzeichen existieren nativ im Vakuumsektor: O_1, V_+ (z104) mit N_+- = Viertelbögen zwischen Marken; Differenzen = parabolische Erzeuger in den Marken, Faktor 1, positiv (Gamma-Mass)"
+   },
+   {
+    "status": "N",
+    "aussage": "dasselbe aus dem Gitterzustand (640 Bit): Hislop-Longo, Wiesbrock, Borchers, Leckage einseitig; Kontrolle (geschachtelt ohne gemeinsamen Endpunkt) scheitert; Originalzustand beta = 4 pi: keine halbseitige Inklusion"
+   },
+   {
+    "status": "E",
+    "aussage": "Uhr = Moduldefekt: K_O1 + K_V+ - K_(O1 cap V+) = 2 pi L_0; L_0 = Mittel der vier Translationen in den Marken"
+   },
+   {
+    "status": "E",
+    "aussage": "die zwei Vorzeichen einer Naht: [P, P'] = -i K_gemeinsam, zusammen sl(2,R) (ein Lichtstrahl), keine Lichtkegelkoordinaten"
+   },
+   {
+    "status": "C",
+    "aussage": "zwei vertauschende Lichttranslationen: P_chir (zwei Arten, entgegengesetzte Enden) gibt die 1+1-Poincaré-Algebra"
+   },
+   {
+    "status": "E/C",
+    "aussage": "su(2,2) (z83): die halbseitige Familie einer Spitze ist R^4 mit Vorwärtskegel-Positivität (3+1-Kinematik); so(3)-invariant ist nur die Zeit; Raum- und Lichtrichtung verlangen eine Achse (P_richt)"
+   },
+   {
+    "status": "E",
+    "aussage": "Plätze der Kette = Bögen einer Naht (Summe 2 pi); kein Platz trägt das Dublett; Platz unendlich (Typ III), Naht endlich (Typ I); endliche Plätze ausgeschlossen"
+   },
+   {
+    "status": "E/C",
+    "aussage": "Schritt frei (skalenkovariant); Einheit aus den Marken nur für den ersten Schritt; Uhr und Einheitstranslation erzeugen eine nichtdiskrete Gruppe; nativ diskret ist nur der Z4-Ring der Viertelbögen"
+   },
+   {
+    "status": "E",
+    "aussage": "z121-Kette: F = U_R U_L, T^2 = U_R U_L^(-1), [U_R, U_L] = 0; Ziegellagen sind nicht das +-Paar"
+   },
+   {
+    "status": "E",
+    "aussage": "native (quasifreie) Translationen geben die Tauschkette u = oo, nicht das Gatter u = 1; das Gatter vertauscht nur mit der gemeinsamen internen Translation beider Nähte"
+   },
+   {
+    "status": "C",
+    "aussage": "P_ord folgt (Ordnung, Richtung, Translation, Marke) aus einer Prämisse P_platz: 'die Nähte sind die Plätze einer gemeinsamen Wiesbrock-Kette' (zweite Naht = halbseitig modular eingeschlossenes Bild der ersten)"
+   },
+   {
+    "status": "O",
+    "aussage": "P_platz selbst: nativ sind die Plätze Bögen, keine Nähte (Typ, Dublett, Uhr); dazu P_chir, die Wahl von t* (bricht Z4), ein diskreter Schritt und weiter P_null/P_viertel für das Gatter"
+   },
+   {
+    "status": "O",
+    "aussage": "3+1 und Kontinuum: die Route gibt Kinematik (Translationen mit Spektralbedingung) nur im Vakuumsektor und unter z83; keine native Raumrichtung, kein Gitter von Nähten, kein Kontinuumslimes des Gatters"
+   }
+  ],
+  "einstufung_P_ord": "(b) bedingt: P_ord ist keine native Folge der Modulstruktur. Es reduziert sich auf die Prämisse P_platz (Nähte = Plätze einer gemeinsamen Wiesbrock-Kette, d. h. eine zweite Naht als halbseitig modular eingeschlossene Unteralgebra) samt P_chir (zwei Lichtstrahlen), der Wahl von t* und eines diskreten Schritts. P_platz ist nicht kleiner als P_ord im Sinn von schwächer, sondern strukturell: eine Inklusion statt L markierter Nähte; die native Wiesbrock-Kette erfüllt P_platz nicht (ihre Plätze sind Bögen einer Naht)."
+ },
+ "urteil": "P_ord ist keine Folge der Modultheorie, sondern bedingt (b). Nativ ist viel: Im Vakuumsektor der rekonstruierten Uhr bilden die Kappe O_1 und der Kegel V_+ (z104) mit den Viertelbögen N_+- zwischen den Marken halbseitige modulare Inklusionen beider Vorzeichen, exakt (Möbius) und am Gitter aus dem Zustand (Hislop-Longo 2e-03, Borchers 2e-03, Leckage 3e-16 einseitig gegen 1.00); die Wiesbrock-Differenzen sind die parabolischen Erzeuger in den Marken mit Faktor 1, positiv mit Gamma-Mass, und die Uhr ist ihr Mittel bzw. der Moduldefekt K_O1 + K_V+ - K_(O1 cap V+) = 2 pi L_0. Im Originalzustand (beta = 4 pi) gibt es keine solche Inklusion (Leckage 2e-03; z72). Aber: (1) Die zwei Vorzeichen einer Naht geben keine Lichtkegelkoordinaten; ihre Translationen vertauschen nicht, der Kommutator ist der Modulgenerator des gemeinsamen Gebiets, zusammen sl(2,R). Zwei vertauschende Lichttranslationen verlangen zwei Arten mit entgegengesetzter Zuordnung (P_chir) oder in su(2,2) ein Nullpaar zu einer gewählten Achse. (2) Die Plätze der Kette N_n sind Bögen einer einzigen Naht (Bogenlängen summieren sich zu 2 pi), in y = t Einheitsintervalle der Minkowskizeit; jeder Platz ist unendlich (Typ III, Entropie ~ ln M, dichtes Modulspektrum), keiner trägt das Dublett (grösster Anteil 0.475), während die Naht endlich ist (Entropie 0.1733, Uhr 4 pi); endliche Plätze sind durch die Borchers-Relation ausgeschlossen. 'Geordnete Nähte' ist also nicht die Kette der Inklusion. (3) Der Schritt ist frei (skalenkovariant); die Marken geben nur den ersten Schritt, Uhr und Einheitstranslation erzeugen eine nichtdiskrete Gruppe, nativ diskret ist allein der Z4-Ring der vier Viertelbögen. (4) Die z121-Kette hat die Form zweier vertauschender Translationen (F = U_R U_L, T^2 = U_R U_L^(-1)), doch die nativen quasifreien Translationen geben nur die Tauschkette u = oo; das Gatter u = 1 vertauscht bloss mit der gemeinsamen internen Translation beider Nähte, die halbseitige Translation steht quer zur Nahtkette. Übrig bleibt die benannte Prämisse P_platz (Nähte = Plätze einer gemeinsamen Wiesbrock-Kette; zweite Naht als halbseitig eingeschlossene Unteralgebra) samt P_chir, t* und Schritt; unter ihr folgten Ordnung, Richtung, Translation und die Marke gegen den Twirl von z119 aus einer Inklusion. Raum: Eine Naht gibt nur einen Lichtstrahl; in su(2,2) (z83, bedingt) ist die halbseitige Familie einer Spitze die volle Translationsgruppe R^4 mit Vorwärtskegel-Positivität, aber so(3)-invariant ist nur die Zeit, eine Raumrichtung verlangt eine Achsenwahl. Für '3+1' heisst das Kinematik im Vakuumsektor ohne native Richtung und ohne Nahtgitter, für 'Kontinuum' nichts Neues: Der Limes des Gatters bleibt der von z121. Nichts ist befördert."
+}

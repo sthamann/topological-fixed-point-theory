@@ -1,0 +1,853 @@
+{
+ "checks": {
+  "[E] alpha^-1 als Wurzel von F_U(1) (v3, Budget 41) = 137.035999216841; Soll 137,03599921684; c_3 = 1/(8 pi), delta_top = 48 c_3^4 = 0.00012030448, phi_0 = 0.05317195218. Kontrolle: Budget 40 gibt 138.16194": true,
+  "[E] Quelle gelesen: v3 enthält die Rückwirkung als 'dt * mp.e**(-2 * a)' und den Exponenten -5/4 (die hier benutzte Funktion ist dieselbe)": true,
+  "[E] Anker: aus CODATA G folgen l_Pl = 1.616255e-35 m, t_Pl = 5.391246e-44 s, Mbar = (8 pi G)^(-1/2) = 2.435323e+18 GeV = 4.34136e-9 kg (Korpus: 2,435323e18 GeV)": true,
+  "[E] Inventar (26 native dimensionslose Zahlen), Abgleich mit dem Bestand: r = e^(-4 pi) = 3.4873424e-6; M_f/M_g = 0.001867445988 (z48: 0.0018674460); S je Quarter = ln 2/4 = 0.1732867951 (z68: 0.17328679514); kappa_2 = 0.7982113249 (z68: 0.798211324915); DdV m a = 0.8315183054 (z121); l = 1/2, Lambda = -12 (z98); 64 je Index (z118)": true,
+  "[E] No-Unit in Maschinenform für H6 und Korpus: Alle 7 Relationen zwischen Größen mit Dimension sind unter L -> lambda L homogen (Grade [-1, 2, -1, 1, 2, 4, 0]); keine legt lambda fest, auch P_Lambda nicht (Grad 0: sie fixiert nur die reine Zahl G/R_Vak^2). Die Zahlen des Inventars haben Massendimension 0. Negativkontrollen: 'R_Vak = 5/2' (Länge gleich reine Zahl) ist in keinem Grad homogen ([False, False, False]), und mit falsch typisiertem 1/G (Dimension 1) fällt die Newton-Relation durch (False)": true,
+  "[E] Matrix A (physikalische Dimension, 12 Zeilen über (L, T, M, Theta, I)): Rang modulo der exakt gesetzten hbar, c, k_B = 1: genau ein Einheiten-Torsor R_+. Eine zusätzliche fiktive Länge ändert daran nichts (Rang 1): in A ist jede Länge dieselbe Einheit. Negativkontrollen: eine neue Basisdimension (Ladung) hebt den Rang auf 2, und ohne c als Umrechnung sind Länge und Zeit getrennt (Rang 2)": true,
+  "[E] Matrix B (unabhängige Skalen nach Einsetzen nur der vorhandenen Relationen): H6 nativ hat Rang 1 (alles ist Zahl mal R_Vak); mit G Rang 2, also genau eine freie reine Zahl G/R_Vak^2; der zertifizierte Korpusblock hat Rang 1 (wie v725), mit dem Flavour-Absolutwert 2 (freie Zahl Mbar/v_EW); alles zusammen 3, unter P_Lambda 2, erst mit abgeleitetem Mbar/v_EW 1. Negativkontrolle: eine fiktive unabhängige Länge hebt den Rang (1 -> 2, 3 -> 4)": true,
+  "[E] natives AdS (z98, Einheit R_Vak = Im x_Vak = 1): g = eta/Omega^2 mit Omega = 1 + det x hat Ricci-Skalar -48 = -12/l^2, also l = 1/2 R_Vak und Lambda = -3/l^2 = -12/R_Vak^2; die dS-Wahl Omega = 1 - det x hat 48. Kontrolle der Routine: runde S^4 mit Radius 3 gibt 4/3 = 12/9": true,
+  "[E] Die Uhr E = (P_0 + K_0)/2 ist Killingfeld genau des nativen AdS, die Kappe Q^- = (P_0 - K_0)/2 genau des dS (Lie-Ableitung der Metrik = 0: {'E in AdS': True, 'Q^- in dS': True, 'E in dS': False, 'Q^- in AdS': False}). Auf der Achse x = 0 ist g(xi_E, xi_E) = -1/4 und g(xi_Q, xi_Q) = -1/4, konstant längs der ganzen Bahn: Eigenzeit = l mal Flussparameter, exakt, mit l = 1/2": true,
+  "[E] Bahnen auf der Achse: Uhr t = tan(theta/2) (reelle Periode 2 pi, keine imaginäre: bei theta + 4 pi i Abweichung 1.06), Kappe t = tanh(s/2) (imaginäre Periode 2 pi, Abweichung 3.7e-43). Die 2 pi der Kappe ist eine geometrische Periode (Gibbons-Hawking), die 4 pi der Uhr ist ein Datum des Zustands (KMS), keine Periode des Flusses": true,
+  "[E] In so(4,2) ist genau eine der beiden Kombinationen (P_0 +- K_0)/2 elliptisch (E, Eigenwerte +-i) und die andere hyperbolisch (Q^-, Eigenwerte +-1): ['elliptisch', 'hyperbolisch']; exp(2 pi E) = 1 und exp(2 pi i Q^-) = 1 (4e-16, 9e-16), aber exp(4 pi i E) ist nicht 1 (Operatornorm 286750 = e^(4 pi) - 1; z104: 286750) und exp(pi E) auch nicht (2). Es gilt K_cap = 2 pi Q^- = 2 pi (P_0 - E) = 2 pi P_0 - K_Uhr/2 mit K_Uhr = 4 pi E": true,
+  "[E] Umrechnung: Der Zustand ist rho = e^(-4 pi E); die Eigenzeit am Zentrum ist tau = l theta, also H = E/l und beta_phys = 4 pi l = 2*pi*R_Vak (hbar = c = k_B = 1), T = 1/(2 pi R_Vak). Das ist formal die Gibbons-Hawking-/Unruh-Formel zum Radius R_Vak (beta l = 2 pi R_Vak gilt exakt: True); der native Horizont der Kappe hat aber den Radius l = R_Vak/2 und beta_GH = 2 pi l = pi*R_Vak. Verhältnis beta_phys/beta_GH = 2 (z104: 2)": true,
+  "[E] Die Angabe gilt am Zentrum: abseits ist -g(xi_E, xi_E) = (x**2 + 1)**2/(4*(x - 1)**2*(x + 1)**2) >= 1/4 (bei t = 0), die lokale inverse Temperatur also 4 pi sqrt(-g(xi, xi)) >= 2 pi R_Vak (Tolman); das Zentrum ist der heißeste Punkt, und zum Rand r -> 1 geht die lokale Temperatur gegen null": true,
+  "[E] Native Zeiten sind reine Zahlen mal R_Vak/c: Markenschritt pi/4, Takt der Uhr R pi, inverse Temperatur 2 pi, Rückkehr R^4 = 1 nach 4 pi; native Energien sind Zahlen mal hbar c/R_Vak: Stromquant 2, Lücke 1/2. Konsistenz: beta mal Stromquant = 4 pi, beta mal Lücke = pi, Rückkehrzeit = 2 beta, und e^(2 pi i/4) hat genau die Ordnung 4 (Quellen: Marken z104, R = e^(2 pi i L_0) z118, L_0 = 1/4 mit Lücke pi in VERDICT.md)": true,
+  "[E] gelöster Block, Leptonen (v20): m_mu/m_tau = (c_mu/c_tau) phi_0 = (8/7) phi_0 = 0.060767945 (PDG 0.0594635), m_e/m_mu = (12/7) phi_0^2 = 0.0048467254 (PDG 0.00483633); Produkt der c = 32/9. Der Vergleich mit Polmassen braucht die Transfervorschrift [C]": true,
+  "[N] Quarks (v18, Lambda-Tabelle dreistellig): m_u/m_d = 0.470085 (55/117 = 0.470085), m_c/m_s = 13.607, m_t/m_b = 40.802 (v18: 0,470085, 13,61, 40,80); exakte Quarkkoeffizienten und die absolute Quarkamplitude sind offen (TFPT-STAND §5)": true,
+  "[O] Die Massen stehen in Einheiten von v_EW, nicht von Mbar: H_EW = ln(Mbar/(v_EW/sqrt2)) = 37.177 (v725: 37,1776) ist nicht abgeleitet; als Leiterstufe wäre es 11.53 Stufen von c_3 oder 12.67 von phi_0, nicht ganzzahlig (v725: 11,53 und 12,67). Die Teilchenmassen über Mbar sind damit je eine bekannte Zahl mal der offenen Zahl v_EW/Mbar": true,
+  "[N] COSMO.LAM.01 nachgerechnet: rho_L/Mbar^4 = 48 c_3^2 e^(-2/alpha) = 7.12533e-121 (v7: 7,12533e-121), rho_L^(1/4) = 2.23747 meV; aus Planck-Werten (Omega_L = 0,6847, H_0 = 67,36) folgt 2.2395 meV mit etwa 0.48 % Breite: Abweichung -0.088 % (0.18 sigma). v274: Mbar aus 2,24 meV = 2.4381e+18 GeV, 0.11 % über dem Wert aus G. Die 0,11 % liegen innerhalb der Messbreite; mit H_0 = 73,04 wären es rund 4 %": true,
+  "[E] COSMO.LAM.01 in H6-Variablen (z96/z98): l_dS^2/G = 32 pi^3 e^(2/alpha) = 1.0582e+122, l_dS = 1.0287e+61 l_Pl; mit R_Vak = 2 l: G/R_Vak^2 = e^(-2/alpha)/(128 pi^3) = 10^-122.627 (z112: -122.6266); |rho| = 12/(8 pi G R_Vak^2) gibt dasselbe rho_L/Mbar^4 (Betrag; das native Vorzeichen ist negativ)": true,
+  "[N] Anti-Numerologie am Bestand: Der beobachtete Vorfaktor vor e^(-2/alpha) ist A = 0.07626; 48 c_3^2 = 0.07599 liegt im 1-sigma-Fenster (+-1.9 % in rho). In der Familie n c_3^k (n <= 64, k <= 6, 448 Ausdrücke) liegen 2 im 1-sigma- und 4 im 2-sigma-Fenster, (n, k) = [(47, 2), (48, 2), (49, 2), (50, 2)]; bei der lokalen Dichte 17.2 je ln-Einheit sind 0.66 bzw. 1.3 Zufallstreffer zu erwarten. Die Messung legt den Vorfaktor nur auf etwa 2 % fest (n = 48 +- 1); er allein ist nicht signifikant. Tragend ist der Exponent: ln(Mbar^4/rho_obs)/alpha^-1 = 2.0188": true,
+  "[E] Tabelle vollständig typisiert: 26 Zeilen, davon 10 durch einen Mechanismus (innerhalb der jeweiligen Annahmen), 5 numerische Treffer, 8 bedingt/Lesart/Kandidat, 3 offen; M_scal = 3.06e+13 GeV (v7: 3,06e13)": true,
+  "[E/N] SI-Umrechnung mit einem Anker: l_dS = 1.6626e+26 m = 17.57 Mrd. Lichtjahre (z96: 17,6), M_scal = 5.455e-14 kg, Länge zu rho_L^(1/4) = 88.19 Mikrometer. Die neun Teilchenmassen lassen sich mit G allein nicht umrechnen (v_EW/Mbar offen); mit dem Messwert v_EW sind die Quellmassen m_tau = 1.8041, m_mu = 0.10963, m_e = 0.53136e-3 GeV (1.5, 3.8, 4.0 % über den Polmassen)": true,
+  "[E] (a) Als Boltzmann-Gewicht: e^(-2/alpha) = r^E* mit r = e^(-4 pi) und E* = alpha^-1/(2 pi) = 21.8099567. Die nativen Niveaus liegen in Z/4 (Stromquant 1, Lücke 1/4); E* liegt bei 0.24 des Niveauabstands zwischen 21.75 und 22.0, die nächsten nativen Gewichte sind 10^-118.701 und 10^-120.065 (Faktor 2.12 und 10.9 daneben). Mit der Kappe (beta = 2 pi) wäre E = alpha^-1/pi = 43.61991, ebenfalls kein Niveau": true,
+  "[E] (a) In der Fixpunktgleichung kommt 2/alpha nicht vor: F_U(1) enthält genau die Exponentialargumente ['-2*a'] (die Nahtrückwirkung Q(alpha) = delta_top e^(-2 alpha), bei alpha = 1/137 nahe 1; ohne sie wäre alpha^-1 = 137.036507). 2 alpha^-1 tritt dort weder als Wirkung noch als beta E auf. Exakte Identität: rho_L G^2 = delta_top e^(-2/alpha) = Q(1/alpha), dieselbe Funktion am inversen Argument (True). Kontrolle: die Lambda-Formel selbst hat das Argument ['-2/a']": true,
+  "[E/L] (b) Lichtkegelgitter (z121: R(u) = u + i P, Inhomogenitäten -+Theta): Der gekleidete Kern ist 1/(2 cosh pi lambda) (Fourier-Quadratur, Abweichung 1.1e-35; Kontrolle mit cosh(lambda) statt cosh(pi lambda): 0.14), also E a = gd(pi(lambda + Theta)) - gd(pi(lambda - Theta)). Daraus v = tanh(pi Theta) je Platz; bei Theta = 1/2 je Platzpaar 1.8343047 = z121 (1.8343047), Kontrolle Theta = 1: 1.99254. Massenskala pi - E(0) = 0.81984 bei Theta = 1/2 (Asymptotik 4 e^(-pi Theta) = 0.83152), bei Theta = 3 0.000322798 gegen 0.000322798": true,
+  "[E] (b) Native Zahl: m a = 4 e^(-pi/2) = 0.831518, also O(1) und keine Hierarchie (z121: der Vakuumsektor ist bei Theta = 1/2 kritisch, kein Parameter schickt m a gegen null). Für m a = e^(-1/alpha) wäre Theta = (alpha^-1 + ln 4)/pi = 44.0612 nötig (nativ 1/2), als Kopplung g = 1/Theta = 0.0227 nahe pi alpha = 0.02293 (nativ 2). Mit der Kopplung alpha selbst verlangt exp(-2 pi/(b alpha)) = e^(-2/alpha) den Koeffizienten b = pi (für e^(-1/alpha): b = 2 pi); die nativen b sind rational (5 geprüft). Am nächsten liegt |b_2| = 19/6 mit Exponent 271.902 gegen 274.072 (19/6 liegt 0,8 % neben pi), also e^(-2/alpha) um den Faktor 8.76 verfehlt": true,
+  "[E] (c) Vorfaktor: 3/(4 pi^2) = 48 c_3^2 = (8 pi)^2 delta_top exakt (sympy), und 48 = 3 x 16 ist die Zahl der Weyl-Zustände. Die Nullmodenzahl eines Einheitsinstantons in einer Wurzel-SU(2) von Spin(10) ist aber 2 T(R): 4 je 16 (vier Dubletts, acht Singuletts), 2 für die 10, 12 für drei Familien (z33: 12 plus 4 Eltern). 48 ist keine Nullmodenzahl": true,
+  "[E] (c) Wirkung: Ein Einheitsinstanton hat S = 8 pi^2/g^2 = 2 pi/alpha_g (z33: e^(-2 pi 60) = 1.88e-164, nachgerechnet: True). 2/alpha = 8 pi/e^2 = 1/(c_3 e^2) ist das 1/pi-fache der Instantonwirkung zur Kopplung alpha, kein ganzzahliges oder 1/N-Vielfaches. Nötig wäre alpha_g^-1 = alpha^-1/pi = 43.61991; die im Bestand vorhandenen Kopplungen (5) geben log10 = ['-10.915', '-62.761', '-140.23', '-163.73', '-373.94'] gegen -119.028": true,
+  "[E] (d) Zählung: S_dS = pi l^2/G = 32 pi^4 e^(2/alpha) = 10^122.522 (z112: 122.5217); als Nahtzahl wären das 9.59e+122 Nähte zu ln 2/2. Als Zustandszahl d^n = e^(2/alpha) für d in [2, 3, 4, 12, 16] (Abtastgröße 5): n = ['395.402', '249.471', '197.701', '110.295', '98.8506'], keine ganze Zahl innerhalb 0,05 (erwartete Zufallstreffer 0.5). Die Nahtzahl N ist nativ frei (z119: K_H(S) für jedes N)": true,
+  "[E] Vorzeichen: Lambda R_Vak^2 = -12 (a - b)/(a + b) für Q_0 = a E + b Q^- (z104) gibt -12 für die Uhr E (nativ, AdS), 0 parabolisch und 12 für die Kappe (dS, Prämisse P_cap). COSMO.LAM.01 verlangt rho_L > 0. Die native Kombination wäre rho_L/Mbar^4 = -48 c_3^2 e^(-2/alpha)": true
+ },
+ "befunde": {
+  "E: Es gibt keine zweite unabhängige Einheit: Die physikalische Dimension aller nativen Größen ist ein einziger Torsor (Matrix A, Rang 1). Was fehlt, sind keine Einheiten, sondern reine Zahlen: G/R_Vak^2 (Gravitationssektor von H6) und Mbar/v_EW (Flavour-Absolutwert), dazu die im Ledger als externe Eingaben geführten M_R, T_reh und alpha_s(M_Z) (Matrix B, Rang 3 statt 1)": true,
+  "E/L: beta l = 2 pi R_Vak ist eine exakte Folge zweier nativer Daten (beta = 4 pi aus dem Zustand, l = R_Vak/2 aus der Kinematik), aber keine erzwungene Gibbons-Hawking-Beziehung: Die Uhr E hat keine imaginäre Periode, und der native Horizont (Kappe, nur unter P_cap) hat Radius l, nicht R_Vak. Zwischen beiden steht der Faktor 2 ohne Mechanismus (S^1 x S^3 gegen S^4, z104). Die Übereinstimmung mit 'Horizont vom Radius R_Vak' ist ein Zufall der Normierung": true,
+  "E/O: Die Theorie erzeugt keine Zeiteinheit, sondern exakte Zeitverhältnisse: jede native Zeit ist (pi/4, pi, 2 pi oder 4 pi) mal R_Vak/c. Welche SI-Zeit das ist, hängt an der einen offenen Zahl G/R_Vak^2: unter P_Lambda ist der Takt 110.4 Mrd. Jahre, unter den O(1)-Prämissen von z112 6.7e-44 bis 1.7e-42 s; dazwischen liegen 61 Größenordnungen": true,
+  "(a) Boltzmann/KMS: Mechanismus vorhanden (r = e^(-4 pi) ist nativ), aber er gibt andere Zahlen: r^E mit E in Z/4, nächstgelegen 10^-118,70 und 10^-120,07 statt 10^-119,03, und nichts zeichnet ein Niveau bei 22 aus. alpha^-1/(2 pi) ist keine native Energie. Die Identität rho_L G^2 = Q(1/alpha) ist eine Schreibweise des Ledgereintrags, kein Mechanismus: in den gelesenen Quellen wertet kein Operator Q am inversen Argument aus": true,
+  "(b) Dimensionale Transmutation: Mechanismus vorhanden (die native Kette hat die Destri-de-Vega-Formel und eine laufende Strom-Strom-Kopplung), aber er gibt eine andere Zahl: m a = 0,83 am nativen Punkt Theta = 1/2. Für e^(-1/alpha) bräuchte es Theta = 44,06 bzw. g nahe pi alpha; weder Theta noch g sind nativ mit alpha verbunden (z99: die Kopplung ist gewählt; z121: Theta = 1/2 kommt aus P_viertel). b = pi ist für rationale native Koeffizienten ausgeschlossen": true,
+  "(c) Instanton/Tunneln: kein solcher Mechanismus. Der Vorfaktor 48 c_3^2 ist eine exakte Identität, aber 48 zählt Weyl-Zustände, nicht Nullmoden (12 bzw. 16). Kein Instanton des Bestands hat die Wirkung 2/alpha = 1/(c_3 e^2): die Instantonwirkung zur Kopplung alpha ist 2 pi/alpha (10^-374), und alpha^-1/pi = 43,62 ist keine vorhandene Kopplung": true,
+  "(d) Zählung: kein solcher Mechanismus. l^2/G proportional N ist eine Buchhaltung, solange nichts N festlegt; die Theorie fixiert weder die Nahtzahl noch die Fläche je Naht (z68, z90, z119; die Zählung selbst rechnet z137)": true,
+  "Vorzeichen: Kein Mechanismus (a)-(d) liefert zugleich die große Zahl und Lambda > 0. (a) und P_cap schließen einander aus, (c) gibt natürlich das AdS-Vorzeichen, (d) setzt P_cap voraus, (b) ist neutral": true
+ },
+ "zahlen": {
+  "inventar_dimensionslos": [
+   {
+    "Zahl": "beta = 4 pi",
+    "Wert": "12.5663706143592",
+    "Ort": "z46/z58/z94, VERDICT 'KMS bei beta = 4 pi'",
+    "misst": "KMS-Wert der Naht zur Uhr E = L_0",
+    "exakt": "exakt"
+   },
+   {
+    "Zahl": "r = e^(-4 pi)",
+    "Wert": "3.487342356209e-6",
+    "Ort": "z47/z48/z118",
+    "misst": "Boltzmann-Faktor je Stromquant; Gewicht der massiven Linie",
+    "exakt": "exakt"
+   },
+   {
+    "Zahl": "Uhrordnung 4 (R^4 = 1)",
+    "Wert": "4.0",
+    "Ort": "z82/z113/z118",
+    "misst": "R = e^(2 pi i L_0), L_0 in Z/4",
+    "exakt": "exakt"
+   },
+   {
+    "Zahl": "Lücke 4 pi L_0 = pi (L_0 = 1/4)",
+    "Wert": "3.14159265358979",
+    "Ort": "VERDICT (Jacobi-Tripelprodukt)",
+    "misst": "niedrigste Anregung in Moduleinheiten",
+    "exakt": "exakt"
+   },
+   {
+    "Zahl": "c_3 = 1/(8 pi)",
+    "Wert": "0.0397887357729738",
+    "Ort": "tfpt_constants.py (P1)",
+    "misst": "Nahtnormierung; 8 pi G = 1/c_3 in v_geo-Einheiten",
+    "exakt": "exakt (Eingabe P1)"
+   },
+   {
+    "Zahl": "delta_top = 48 c_3^4",
+    "Wert": "0.000120304479547082",
+    "Ort": "tfpt_constants.py",
+    "misst": "topologischer Term des Seeds",
+    "exakt": "exakt"
+   },
+   {
+    "Zahl": "phi_0 = 1/(6 pi) + 48 c_3^4",
+    "Wert": "0.0531719521768455",
+    "Ort": "tfpt_constants.py",
+    "misst": "Seed der Flavourleiter (Schrittweite der Massen)",
+    "exakt": "exakt"
+   },
+   {
+    "Zahl": "lambda_Y = sqrt(phi_0 (1 - phi_0))",
+    "Wert": "0.224376236884722",
+    "Ort": "v18",
+    "misst": "Yukawa-Schritt je Wortlänge",
+    "exakt": "exakt"
+   },
+   {
+    "Zahl": "alpha^-1",
+    "Wert": "137.035999216841",
+    "Ort": "v3_em_alpha.py",
+    "misst": "Kopplung; einzige Wurzel von F_U(1)",
+    "exakt": "Wurzel exakt bestimmt, Lesart C"
+   },
+   {
+    "Zahl": "Indexspur 64 (32 je J-Summand)",
+    "Wert": "64.0",
+    "Ort": "z118",
+    "misst": "ganzzahliges Gewicht des eps-Terms",
+    "exakt": "exakt"
+   },
+   {
+    "Zahl": "|Lambda| R_Vak^2 = 12",
+    "Wert": "12.0",
+    "Ort": "z98",
+    "misst": "Krümmung des nativen AdS in Vakuumeinheiten",
+    "exakt": "exakt"
+   },
+   {
+    "Zahl": "l/R_Vak = 1/2",
+    "Wert": "0.5",
+    "Ort": "z98",
+    "misst": "AdS-Radius gegen Vakuumgröße Im x_Vak",
+    "exakt": "exakt"
+   },
+   {
+    "Zahl": "beta l/R_Vak = 2 pi",
+    "Wert": "6.28318530717959",
+    "Ort": "z140 Teil 2",
+    "misst": "physikalische inverse Temperatur am Zentrum",
+    "exakt": "exakt"
+   },
+   {
+    "Zahl": "beta_Original/beta_dS = 2",
+    "Wert": "2.0",
+    "Ort": "z104",
+    "misst": "KMS-Wert der Uhr gegen Gibbons-Hawking der Kappe",
+    "exakt": "exakt, ohne Mechanismus"
+   },
+   {
+    "Zahl": "S je Quarter = ln 2/4",
+    "Wert": "0.173286795139986",
+    "Ort": "z68",
+    "misst": "Entropie am KMS-Punkt (Naht ln 2/2, E8-Naht ln 12)",
+    "exakt": "exakt"
+   },
+   {
+    "Zahl": "kappa_2 = Gamma(1/4)^8/(384 pi^4)",
+    "Wert": "0.798211324915435",
+    "Ort": "z68/VERDICT",
+    "misst": "Hesse-Form der Modulfunktion",
+    "exakt": "exakt"
+   },
+   {
+    "Zahl": "log 3",
+    "Wert": "1.09861228866811",
+    "Ort": "z116/z119",
+    "misst": "Vielfachheitsterm der Spur (dim Isospin 1), keine Energie",
+    "exakt": "exakt"
+   },
+   {
+    "Zahl": "M_f/M_g = 1/sqrt(e^(4 pi) - 1)",
+    "Wert": "0.00186744598792257",
+    "Ort": "z48/z96",
+    "misst": "bimetrische Lesart der Gewichte",
+    "exakt": "exakt als Zahl, Lesart L"
+   },
+   {
+    "Zahl": "DdV: m a = 4 e^(-pi Theta), Theta = 1/2",
+    "Wert": "0.831518305403048",
+    "Ort": "z121",
+    "misst": "Massenformel des Lichtkegelgitters am nativen Punkt",
+    "exakt": "Formel L, Zahl exakt"
+   },
+   {
+    "Zahl": "v = 2 tanh(pi/2)",
+    "Wert": "1.83430467133455",
+    "Ort": "z121",
+    "misst": "Spinonengeschwindigkeit der Nahtkette (Plätze je Periode)",
+    "exakt": "Lesart L"
+   },
+   {
+    "Zahl": "Leiterexponenten K = (4,2,0), (4,3,2), (5,3,2)",
+    "Wert": "25.0",
+    "Ort": "v46",
+    "misst": "phi_0-Potenzen der neun Massen; Summe 25",
+    "exakt": "exakt (innerhalb der Annahmen)"
+   },
+   {
+    "Zahl": "Leptonkoeffizienten (16/7, 4/3, 7/6)",
+    "Wert": "3.55555555555556",
+    "Ort": "v20",
+    "misst": "Produkt 32/9",
+    "exakt": "exakt (innerhalb der Annahmen)"
+   },
+   {
+    "Zahl": "c_3^(7/2)",
+    "Wert": "1.25649420832284e-5",
+    "Ort": "v7 (GRAV.SCAL.01)",
+    "misst": "M_scal/Mbar",
+    "exakt": "Zahl exakt, Zuordnung N"
+   },
+   {
+    "Zahl": "48 c_3^2 e^(-2/alpha)",
+    "Wert": "7.12532952670622e-121",
+    "Ort": "v7/v60 (COSMO.LAM.01)",
+    "misst": "rho_Lambda/Mbar^4",
+    "exakt": "Zahl exakt, Zuordnung N/C"
+   },
+   {
+    "Zahl": "(1 - 1/(4 pi)) phi_0",
+    "Wert": "0.0489406626654501",
+    "Ort": "v7 (COSMO.OMB.01)",
+    "misst": "Omega_b (Anteil, kein Skalenverhältnis)",
+    "exakt": "Zahl exakt, Zuordnung N"
+   },
+   {
+    "Zahl": "e^(3/4)",
+    "Wert": "2.11700001661267",
+    "Ort": "v152",
+    "misst": "m/mu der Naht-EH-Normierung",
+    "exakt": "exakt"
+   }
+  ],
+  "matrix_A": {
+   "Zeilen": [
+    "R_Vak (Vakuumgröße Im x_Vak)",
+    "l = R_Vak/2 (AdS-Radius)",
+    "Lambda = -12/R_Vak^2",
+    "Takt der Uhr R",
+    "T_phys der Naht",
+    "Energiequant",
+    "Nahtlänge L, Kragenbreite L/2, Gitterabstand a",
+    "G (Koeffizient der Einsteinwirkung)",
+    "Mbar = v_geo",
+    "rho_Lambda (Energiedichte)",
+    "M_scal, f_a, m_f, v_EW, M_R (Massen)",
+    "Lambda_QCD, T_reh (Energie, Temperatur)"
+   ],
+   "Rang modulo (hbar, c, k_B)": 1,
+   "mit zusätzlicher fiktiver Länge": 1,
+   "mit neuer Basisdimension (Ladung A s)": 2,
+   "ohne c als Umrechnung": 2
+  },
+  "matrix_B": {
+   "Spalten": [
+    "R_Vak",
+    "l_G",
+    "l_EW",
+    "l_fiktiv"
+   ],
+   "Ränge": {
+    "H6 nativ (ohne G)": 1,
+    "H6 mit G (MM-Koeffizient frei)": 2,
+    "H6 mit G unter P_Lambda (COSMO.LAM.01) und P_cap": 1,
+    "Korpus, zertifizierter Block": 1,
+    "Korpus mit Flavour-Absolutwert": 2,
+    "alles, nur vorhandene Relationen": 3,
+    "alles unter P_Lambda": 2,
+    "alles unter P_Lambda und abgeleitetem Mbar/v_EW": 1,
+    "Negativkontrolle: H6 nativ plus fiktive unabhängige Länge": 2,
+    "Negativkontrolle: alles plus fiktive Länge": 4
+   }
+  },
+  "zeit_perioden": {
+   "tan(theta/2): reelle Periode 2 pi": "2.296e-41",
+   "tanh(s/2): imaginäre Periode 2 pi": "3.666e-43",
+   "tan(theta/2) bei theta + 4 pi i (keine Periode)": "1.065",
+   "tanh(s/2) bei s + 4 pi i (zweite Periode)": "7.333e-43"
+  },
+  "zeit": {
+   "Faktoren vor R_Vak/c": {
+    "Markenschritt (theta = pi/2, Marken z^4 = 1)": "pi/4",
+    "Takt der Uhr R = e^(2 pi i L_0) (theta = 2 pi)": "pi",
+    "inverse Temperatur hbar/(k_B T) (beta = 4 pi)": "2*pi",
+    "Rückkehr R^4 = 1 (theta = 8 pi)": "4*pi"
+   },
+   "Energien in hbar c/R_Vak": {
+    "Stromquant (Delta L_0 = 1)": "2",
+    "Lücke (L_0 = 1/4, Twistzustand)": "1/2"
+   },
+   "unter P_Lambda (R_Vak = 2 l_dS)": {
+    "R_Vak [m]": "3.3252e+26",
+    "R_Vak/c [s]": "1.1092e+18",
+    "Takt [Mrd. Jahre]": "110.42",
+    "inverse Temperatur [Mrd. Jahre]": "220.84",
+    "T [K]": "1.096e-30",
+    "Stromquant [eV]": "1.187e-33"
+   },
+   "unter O(1)-Prämissen (z112, R_Vak = 0,40 bis 10,03 l_Pl)": {
+    "R_Vak [m]": [
+     "6.425e-36",
+     "1.621e-34"
+    ],
+    "Takt [s]": [
+     "6.732e-44",
+     "1.698e-42"
+    ],
+    "Stromquant [GeV]": [
+     "2.435e+18",
+     "6.143e+19"
+    ]
+   }
+  },
+  "lambda": {
+   "rho_L/Mbar^4": "7.12533e-121",
+   "rho_L^(1/4) [meV]": "2.237473",
+   "beobachtet (Planck 2018, Omega_L und H_0 hier eingetippt) [meV]": "2.23946",
+   "1 sigma der vierten Wurzel [%]": "0.481",
+   "Abweichung [%]": "-0.0885",
+   "Abweichung [sigma]": "-0.184",
+   "mit H_0 = 73,04 statt 67,36 [meV]": "2.332",
+   "Mbar aus rho_L (2,24 meV) [GeV]": "2.4381e+18",
+   "gegen Mbar aus G [%]": "0.113",
+   "l^2/G": "1.05817e+122",
+   "l_dS/l_Pl": "1.02867e+61",
+   "G/R_Vak^2": "2.36257e-123",
+   "log10 G/R_Vak^2": "-122.6266"
+  },
+  "anti_numerologie_vorfaktor": {
+   "Familie": "n c_3^k, n = 1..64, k = 0..6",
+   "Größe": 448,
+   "beobachteter Vorfaktor A": "0.07626",
+   "48 c_3^2": "0.075991",
+   "Treffer in 1 sigma (n, k)": [
+    [
+     48,
+     2
+    ],
+    [
+     49,
+     2
+    ]
+   ],
+   "Treffer in 2 sigma (n, k)": [
+    [
+     47,
+     2
+    ],
+    [
+     48,
+     2
+    ],
+    [
+     49,
+     2
+    ],
+    [
+     50,
+     2
+    ]
+   ],
+   "lokale Dichte je ln-Einheit": "17.15",
+   "erwartete Zufallstreffer 1 sigma, 2 sigma": [
+    "0.661",
+    "1.32"
+   ],
+   "ln(Mbar^4/rho_obs)/alpha^-1": "2.01878"
+  },
+  "verhaeltnisse": [
+   {
+    "Verhältnis": "alpha^-1",
+    "Formel": "Wurzel von F_U(1)",
+    "Wert": "137.0359992",
+    "Quelle": "v3",
+    "Status": "M: Fixpunktgleichung; Lesart als Elektromagnetismus C"
+   },
+   {
+    "Verhältnis": "l/R_Vak",
+    "Formel": "1/2",
+    "Wert": "0.5",
+    "Quelle": "z98",
+    "Status": "M (Kinematik des Kandidaten H6)"
+   },
+   {
+    "Verhältnis": "|Lambda| R_Vak^2",
+    "Formel": "12",
+    "Wert": "12.0",
+    "Quelle": "z98",
+    "Status": "M (H6); Vorzeichen nativ negativ (AdS)"
+   },
+   {
+    "Verhältnis": "c beta_phys/R_Vak",
+    "Formel": "2 pi",
+    "Wert": "6.283185307",
+    "Quelle": "z140",
+    "Status": "M (H6): beta = 4 pi und l = R_Vak/2"
+   },
+   {
+    "Verhältnis": "c Takt/R_Vak",
+    "Formel": "pi",
+    "Wert": "3.141592654",
+    "Quelle": "z140",
+    "Status": "M (H6)"
+   },
+   {
+    "Verhältnis": "Energiequant R_Vak/(hbar c)",
+    "Formel": "2",
+    "Wert": "2.0",
+    "Quelle": "z140",
+    "Status": "M (H6)"
+   },
+   {
+    "Verhältnis": "m_mu/m_tau",
+    "Formel": "(8/7) phi_0",
+    "Wert": "0.06076794534",
+    "Quelle": "v20",
+    "Status": "M innerhalb der Annahmen; Polvergleich C (+2,2 %)"
+   },
+   {
+    "Verhältnis": "m_e/m_mu",
+    "Formel": "(12/7) phi_0^2",
+    "Wert": "0.004846725426",
+    "Quelle": "v20",
+    "Status": "M innerhalb der Annahmen; Polvergleich C (+0,2 %)"
+   },
+   {
+    "Verhältnis": "m_u/m_d",
+    "Formel": "55/117",
+    "Wert": "0.4700854701",
+    "Quelle": "v18/v49",
+    "Status": "M (Quellverhältnis); Vergleich C"
+   },
+   {
+    "Verhältnis": "m_c/m_s",
+    "Formel": "lambda_Y^-2 L_c/L_s",
+    "Wert": "13.6071479",
+    "Quelle": "v18",
+    "Status": "N (Tabelle dreistellig)"
+   },
+   {
+    "Verhältnis": "m_t/m_b",
+    "Formel": "lambda_Y^-2 L_t/L_b",
+    "Wert": "40.80204754",
+    "Quelle": "v18",
+    "Status": "N (Tabelle dreistellig)"
+   },
+   {
+    "Verhältnis": "m_tau/v_EW",
+    "Formel": "(pi/sqrt2)(7/6) phi_0^2",
+    "Wert": "0.007327348967",
+    "Quelle": "v20/v46",
+    "Status": "M innerhalb der Annahmen (Quellmasse)"
+   },
+   {
+    "Verhältnis": "m_t/v_EW",
+    "Formel": "0,986/sqrt2",
+    "Wert": "0.6972072862",
+    "Quelle": "v18",
+    "Status": "N"
+   },
+   {
+    "Verhältnis": "v_EW/Mbar (also jede Masse über Mbar)",
+    "Formel": "nicht abgeleitet",
+    "Wert": "1.011034691e-16",
+    "Quelle": "v725, Ledger ANCHOR.VGEO.01",
+    "Status": "O (Wert ist Messung)"
+   },
+   {
+    "Verhältnis": "M_Pl/v_EW",
+    "Formel": "nicht abgeleitet",
+    "Wert": "4.958540588e+16",
+    "Quelle": "Ledger",
+    "Status": "O (Wert ist Messung)"
+   },
+   {
+    "Verhältnis": "M_scal/Mbar",
+    "Formel": "c_3^(7/2)",
+    "Wert": "1.256494208e-5",
+    "Quelle": "v7 GRAV.SCAL.01",
+    "Status": "N; ungemessen (Vorhersage)"
+   },
+   {
+    "Verhältnis": "f_a/Mbar",
+    "Formel": "(c_3/4)^(7/2)",
+    "Wert": "9.816361003e-8",
+    "Quelle": "v25",
+    "Status": "Vermutung; ungemessen"
+   },
+   {
+    "Verhältnis": "rho_Lambda/Mbar^4",
+    "Formel": "48 c_3^2 e^(-2/alpha)",
+    "Wert": "7.125329527e-121",
+    "Quelle": "v7/v60 COSMO.LAM.01",
+    "Status": "N, bedingt auf Lambda-Zweig; kein Mechanismus für e^(-2/alpha)"
+   },
+   {
+    "Verhältnis": "R_Vak/l_Pl",
+    "Formel": "sqrt(128 pi^3) e^(1/alpha)",
+    "Wert": "2.057349502e+61",
+    "Quelle": "z96/z98",
+    "Status": "C: P_Lambda (COSMO.LAM.01), P_cap (Vorzeichen), MM-Wirkung; nativ O"
+   },
+   {
+    "Verhältnis": "R_Vak/l_Pl (Alternative)",
+    "Formel": "O(1)-Prämissen P_L",
+    "Wert": "10.0265",
+    "Quelle": "z112",
+    "Status": "C: 0,40 bis 10,03 (Obergrenze gezeigt)"
+   },
+   {
+    "Verhältnis": "Energiequant/Mbar",
+    "Formel": "2 sqrt(8 pi) l_Pl/R_Vak",
+    "Wert": "4.873509867e-61",
+    "Quelle": "z140",
+    "Status": "C wie R_Vak/l_Pl"
+   },
+   {
+    "Verhältnis": "Lambda_QCD/v_EW",
+    "Formel": "b_3 = -7, alpha_s(M_Z) gemessen",
+    "Wert": "0.002030707135",
+    "Quelle": "v164 QCD.LAMBDA.01",
+    "Status": "O: braucht alpha_s(M_Z) als Eingabe (mu_conf ~ 0,5 GeV)"
+   },
+   {
+    "Verhältnis": "M_R/M_scal",
+    "Formel": "Kandidat 3",
+    "Wert": "3.0",
+    "Quelle": "FLAV.NUSCALE.05",
+    "Status": "Kandidat unter y_nu = y_t; O"
+   },
+   {
+    "Verhältnis": "T_reh/M_scal",
+    "Formel": "importierte Reheating-Physik",
+    "Wert": "0.0003120945812",
+    "Quelle": "COSMO.NSTAR.01",
+    "Status": "P (importiert); O"
+   },
+   {
+    "Verhältnis": "M_f/M_g",
+    "Formel": "1/sqrt(e^(4 pi) - 1)",
+    "Wert": "0.001867445988",
+    "Quelle": "z48",
+    "Status": "L (bimetrische Lesart)"
+   },
+   {
+    "Verhältnis": "m a (Nahtkette)",
+    "Formel": "4 e^(-pi/2)",
+    "Wert": "0.8315183054",
+    "Quelle": "z121",
+    "Status": "L; O(1), keine Hierarchie"
+   }
+  ],
+  "si_tabelle": [
+   {
+    "Größe": "Planck-Länge l_Pl",
+    "Wert": "1.6163e-35",
+    "Einheit": "m",
+    "Grundlage": "Definition des Ankers, keine Vorhersage"
+   },
+   {
+    "Größe": "Planck-Zeit t_Pl",
+    "Wert": "5.3912e-44",
+    "Einheit": "s",
+    "Grundlage": "Definition des Ankers, keine Vorhersage"
+   },
+   {
+    "Größe": "Mbar",
+    "Wert": "4.3414e-9",
+    "Einheit": "kg",
+    "Grundlage": "Definition des Ankers, keine Vorhersage"
+   },
+   {
+    "Größe": "M_scal (Masse)",
+    "Wert": "5.4549e-14",
+    "Einheit": "kg",
+    "Grundlage": "N: c_3^(7/2), ungemessen"
+   },
+   {
+    "Größe": "M_scal (Compton-Länge)",
+    "Wert": "6.4487e-30",
+    "Einheit": "m",
+    "Grundlage": "N"
+   },
+   {
+    "Größe": "M_scal (Zeit)",
+    "Wert": "2.151e-38",
+    "Einheit": "s",
+    "Grundlage": "N"
+   },
+   {
+    "Größe": "f_a (Masse)",
+    "Wert": "4.2616e-16",
+    "Einheit": "kg",
+    "Grundlage": "Vermutung"
+   },
+   {
+    "Größe": "rho_Lambda (Massendichte)",
+    "Wert": "5.8149e-27",
+    "Einheit": "kg/m^3",
+    "Grundlage": "NUR numerischer Treffer (COSMO.LAM.01)"
+   },
+   {
+    "Größe": "Länge zu rho_L^(1/4)",
+    "Wert": "8.8192e-5",
+    "Einheit": "m",
+    "Grundlage": "NUR numerischer Treffer"
+   },
+   {
+    "Größe": "l_dS = sqrt(3/Lambda)",
+    "Wert": "1.6626e+26",
+    "Einheit": "m",
+    "Grundlage": "NUR numerischer Treffer (dieselbe Aussage)"
+   },
+   {
+    "Größe": "l_dS in Mrd. Lichtjahren",
+    "Wert": "17.574",
+    "Einheit": "Gly",
+    "Grundlage": "NUR numerischer Treffer"
+   },
+   {
+    "Größe": "H6: R_Vak = 2 l_dS",
+    "Wert": "3.3252e+26",
+    "Einheit": "m",
+    "Grundlage": "bedingt: P_Lambda, P_cap, MM-Wirkung"
+   },
+   {
+    "Größe": "H6: Takt der Uhr R = pi R_Vak/c",
+    "Wert": "3.4846e+18",
+    "Einheit": "s",
+    "Grundlage": "bedingt wie R_Vak"
+   },
+   {
+    "Größe": "H6: inverse Temperatur 2 pi R_Vak/c",
+    "Wert": "6.9691e+18",
+    "Einheit": "s",
+    "Grundlage": "bedingt wie R_Vak"
+   },
+   {
+    "Größe": "H6: T = hbar c/(2 pi k_B R_Vak)",
+    "Wert": "1.096e-30",
+    "Einheit": "K",
+    "Grundlage": "bedingt wie R_Vak"
+   },
+   {
+    "Größe": "H6: Stromquant 2 hbar c/R_Vak",
+    "Wert": "1.1869e-33",
+    "Einheit": "eV",
+    "Grundlage": "bedingt wie R_Vak"
+   },
+   {
+    "Größe": "H6 Alternative: R_Vak (z112, Obergrenze)",
+    "Wert": "1.6205e-34",
+    "Einheit": "m",
+    "Grundlage": "bedingt: O(1)-Prämissen P_L"
+   },
+   {
+    "Größe": "H6 Alternative: Takt (z112, Obergrenze)",
+    "Wert": "1.6982e-42",
+    "Einheit": "s",
+    "Grundlage": "bedingt: O(1)-Prämissen P_L"
+   },
+   {
+    "Größe": "m_e (Quellmasse)",
+    "Wert": "9.4724e-31",
+    "Einheit": "kg",
+    "Grundlage": "braucht ZWEITEN Messwert v_EW; Verhältnisse M"
+   },
+   {
+    "Größe": "m_mu (Quellmasse)",
+    "Wert": "1.9544e-28",
+    "Einheit": "kg",
+    "Grundlage": "braucht ZWEITEN Messwert v_EW; Verhältnisse M"
+   },
+   {
+    "Größe": "m_tau (Quellmasse)",
+    "Wert": "3.2162e-27",
+    "Einheit": "kg",
+    "Grundlage": "braucht ZWEITEN Messwert v_EW; Verhältnisse M"
+   },
+   {
+    "Größe": "m_u (Quellmasse)",
+    "Wert": "3.9099e-30",
+    "Einheit": "kg",
+    "Grundlage": "braucht v_EW; N (Tabelle dreistellig)"
+   },
+   {
+    "Größe": "m_d (Quellmasse)",
+    "Wert": "8.3175e-30",
+    "Einheit": "kg",
+    "Grundlage": "braucht v_EW; N (Tabelle dreistellig)"
+   },
+   {
+    "Größe": "m_s (Quellmasse)",
+    "Wert": "1.6645e-28",
+    "Einheit": "kg",
+    "Grundlage": "braucht v_EW; N (Tabelle dreistellig)"
+   },
+   {
+    "Größe": "m_c (Quellmasse)",
+    "Wert": "2.2649e-27",
+    "Einheit": "kg",
+    "Grundlage": "braucht v_EW; N (Tabelle dreistellig)"
+   },
+   {
+    "Größe": "m_b (Quellmasse)",
+    "Wert": "7.5002e-27",
+    "Einheit": "kg",
+    "Grundlage": "braucht v_EW; N (Tabelle dreistellig)"
+   },
+   {
+    "Größe": "m_t (Quellmasse)",
+    "Wert": "3.0602e-25",
+    "Einheit": "kg",
+    "Grundlage": "braucht v_EW; N (Tabelle dreistellig)"
+   },
+   {
+    "Größe": "Lambda_QCD ~ mu_conf",
+    "Wert": "8.9133e-28",
+    "Einheit": "kg",
+    "Grundlage": "braucht alpha_s(M_Z) und v_EW-Skala (v164)"
+   }
+  ],
+  "massen_GeV": {
+   "e": "0.000531365",
+   "mu": "0.109634",
+   "tau": "1.80414",
+   "u": "0.0021933",
+   "d": "0.00466575",
+   "s": "0.0933692",
+   "c": "1.27049",
+   "b": "4.20729",
+   "t": "171.666"
+  },
+  "mechanismus_a": {
+   "E* = alpha^-1/(2 pi) (beta = 4 pi)": "21.8099566569",
+   "alpha^-1/pi (beta = 2 pi)": "43.6199133138",
+   "nächste Niveaus in Z/4": [
+    "21.75",
+    "22.0"
+   ],
+   "Lage im Niveauabstand": "0.23983",
+   "log10 r^E der Nachbarn": [
+    "-118.7007",
+    "-120.0651"
+   ],
+   "log10 Ziel": "-119.028",
+   "Ziel/Nachbar": [
+    "0.4707",
+    "10.89"
+   ],
+   "Exponentialargumente in F_U(1)": [
+    "-2*a"
+   ],
+   "alpha^-1 ohne die Rückwirkung e^(-2 alpha)": "137.036506732"
+  },
+  "mechanismus_b": {
+   "Kernabweichung (Fourier gegen 1/(2 cosh pi lambda))": "1.15e-35",
+   "v(Theta = 1/2) je Platzpaar": "1.834304671",
+   "z121": "1.834304671",
+   "pi - E(0) exakt (Theta = 1/2, 3)": [
+    "0.81984187",
+    "0.00032279807"
+   ],
+   "4 e^(-pi Theta)": [
+    "0.83151831",
+    "0.00032279807"
+   ],
+   "nötiges Theta für m a = e^(-1/alpha)": "44.061185",
+   "alpha^-1/pi": "43.619913",
+   "natives Theta": "1/2",
+   "nötige Kopplung g = 1/Theta (b = h-dual = 2)": "0.0226957",
+   "nötige Kopplung bei b = 4 (z99: sum f f = 4)": "0.0113479",
+   "native g": "2",
+   "pi alpha": "0.0229253",
+   "Einschleifenexponent 2 pi/(b alpha) für native b": {
+    "b_1 = 41/10": "210.0055",
+    "|b_2| = 19/6": "271.9019",
+    "|b_3| = 7": "123.0032",
+    "2 h-dual su(2) = 4 (z99)": "215.2556",
+    "h-dual su(2) = 2": "430.5113"
+   },
+   "nötig": {
+    "b für e^(-2/alpha)": "pi",
+    "b für e^(-1/alpha)": "2 pi",
+    "2/alpha": "274.072"
+   }
+  },
+  "mechanismus_c": {
+   "48 c_3^2 = 3/(4 pi^2) = (8 pi)^2 delta_top": true,
+   "Nullmoden 16": "4",
+   "Nullmoden 10": "2",
+   "drei Familien": "12",
+   "z33": {
+    "Vektor 10": 2,
+    "Spinor 16": 4,
+    "Eltern (psi, chi je (10,1)+(1,6))": 4,
+    "drei Familien": 12,
+    "gesamt": 16
+   },
+   "Instantonwirkung 2 pi/alpha_g, nötig alpha_g^-1 = alpha^-1/pi": "43.619913",
+   "log10 e^(-2 pi alpha_g^-1) für vorhandene Kopplungen": {
+    "induziert stark (z33)": "-10.915",
+    "z33, Wert 23": "-62.7613",
+    "(3/8) alpha^-1 (sin^2 theta_W = 3/8, ohne Laufen)": "-140.227",
+    "nackte SO(10) (z25)": "-163.725",
+    "alpha^-1 selbst": "-373.937"
+   },
+   "log10 Ziel": "-119.028",
+   "2/alpha in Einheiten der Instantonwirkung 2 pi/alpha": "0.31830989"
+  },
+  "mechanismus_d": {
+   "S_dS = pi l^2/G = 32 pi^4 e^(2/alpha)": "3.32434e+122",
+   "log10": "122.5217",
+   "nötige Nahtzahl je Entropieeinheit": {
+    "ln 2/2 (Quarterquelle je Naht)": "9.592e+122",
+    "ln 3 (Vielfachheit Isospin 1)": "3.0259e+122",
+    "ln 12 (E8-Naht)": "1.3378e+122"
+   },
+   "n mit d^n = e^(2/alpha)": {
+    "2": "395.4023",
+    "3": "249.4711",
+    "4": "197.7012",
+    "12": "110.2947",
+    "16": "98.85058"
+   },
+   "Abstand zur nächsten ganzen Zahl": {
+    "2": "0.402",
+    "3": "0.471",
+    "4": "0.299",
+    "12": "0.295",
+    "16": "0.149"
+   },
+   "Abtastgröße": 5,
+   "erwartete Zufallstreffer bei Fenster 0,05": "0.5"
+  },
+  "vorzeichen": {
+   "(a) Boltzmann/KMS": "r = e^(-4 pi) gehört zur elliptischen Uhr E (AdS, diskrete positive Niveaus). Unter P_cap ist die Zeit der Kappenfluss mit beta = 2 pi und kontinuierlichem, symmetrischem Spektrum (z104): es gibt dann keine Niveaus, an denen ein Boltzmann-Gewicht r^E abgelesen werden könnte. Der Mechanismus und das beobachtete Vorzeichen schließen einander aus",
+   "(b) Transmutation": "legt nur einen Betrag m a fest; das Vorzeichen von Lambda bleibt die Zeitklasse (P_cap). Unberührt, aber auch nicht geholfen",
+   "(c) Instanton": "ein verdünntes Instantongas senkt die Vakuumenergie (-2 K e^(-S) cos theta): das natürliche Vorzeichen ist negativ, passend zum nativen AdS und gegen die Beobachtung",
+   "(d) Zählung": "S_dS = pi l^2/G zählt einen kosmologischen Horizont, den es nur für Lambda > 0 gibt; im nativen AdS fehlt die Fläche, auf der gezählt würde. Die Zählung setzt P_cap voraus"
+  },
+  "mechanismen": {
+   "(a) Boltzmann/KMS": "vorhanden, andere Zahl (10^-118,70 oder 10^-120,07 statt 10^-119,03; kein Niveau ausgezeichnet)",
+   "(b) Transmutation": "vorhanden, andere Zahl (m a = 0,83 statt e^(-1/alpha) = 10^-59,5)",
+   "(c) Instanton": "kein solcher Mechanismus (Wirkung 2 pi/alpha statt 2/alpha; 12 Nullmoden statt 48)",
+   "(d) Zählung": "kein solcher Mechanismus (N frei)"
+  }
+ },
+ "urteil": "Die Theorie erzeugt Maßverhältnisse, aber kein Maß. (1) Als abgeleitete Ergebnisse (durch einen Mechanismus, innerhalb der jeweils benannten Annahmen) liefert sie reine Zahlen: alpha^-1 = 137,03599921684 als Wurzel der Fixpunktgleichung; die Massenverhältnisse der phi_0-Leiter (m_mu/m_tau = (8/7) phi_0, m_e/m_mu = (12/7) phi_0^2, m_u/m_d = 55/117) und jede geladene Masse in Einheiten von v_EW; im Kandidaten H6 die Kinematik l = R_Vak/2, |Lambda| R_Vak^2 = 12 und die Zeit: Eigenzeit = l mal Uhrwinkel, inverse Temperatur 2 pi R_Vak/c, Takt der Uhr R gleich pi R_Vak/c, Rückkehr R^4 = 1 nach 4 pi R_Vak/c, Stromquant 2 hbar c/R_Vak, Lücke hbar c/(2 R_Vak). Das sind exakte Zeit- und Energieverhältnisse, keine Zeiteinheit. beta l = 2 pi R_Vak gilt exakt, ist aber keine erzwungene Gibbons-Hawking-Beziehung: der native Horizont hätte den Radius l, der Faktor 2 hat keinen Mechanismus (z104). (2) Nur als numerische Treffer oder unter benannten Prämissen: rho_Lambda/Mbar^4 = 48 c_3^2 e^(-2/alpha) = 7,125e-121 (2,2375 meV gegen 2,2395 meV aus Planck-Werten, 0,09 %, innerhalb der Messbreite von etwa 0,5 %; Ledger: Numerical, bedingt auf den Lambda-Zweig) und damit l_dS = 1,03e61 l_Pl = 17,6 Mrd. Lichtjahre; im Kandidaten H6 R_Vak = 2,06e61 l_Pl, Takt 110,4 Mrd. Jahre, T = 1,10e-30 K unter den Prämissen P_Lambda (COSMO.LAM.01 als Eingabe), P_cap (dS-Vorzeichen) und MacDowell-Mansouri-Wirkung, alternativ R_Vak = 0,4 bis 10 l_Pl unter den O(1)-Prämissen von z112; M_scal/Mbar = c_3^(7/2) (ungemessen); Quarkverhältnisse m_c/m_s, m_t/m_b aus dreistelliger Tabelle; M_f/M_g als Lesart. In der Familie n c_3^k (448 Ausdrücke) liegen vier im 2-sigma-Fenster des Vorfaktors (n = 47 bis 50 bei k = 2; zufällig erwartet 1,3): die Messung legt ihn nur auf etwa 2 % fest, er allein trägt nicht, tragend ist der Exponent 2/alpha. (3) Prinzipiell nicht erzeugbar ist die eine Einheit: Alle nativen Größen mit Dimension liegen auf einem einzigen Torsor (Rang 1 modulo hbar, c, k_B), eine zweite unabhängige Einheit gibt es nicht. Offen sind reine Zahlen: G/R_Vak^2 im Gravitationssektor von H6, Mbar/v_EW (H_EW = 37,18; die neun Massen lassen sich mit G allein nicht in Kilogramm umrechnen), dazu alpha_s(M_Z), M_R und T_reh als externe Eingaben. Für die große Zahl e^(-2/alpha) hat H6 keinen Mechanismus: (a) Das native Boltzmann-Gewicht r = e^(-4 pi) verlangt E = alpha^-1/(2 pi) = 21,81, kein Niveau in Z/4 (nächste Gewichte 10^-118,70 und 10^-120,07), und in der Fixpunktgleichung steht e^(-2 alpha), nicht e^(-2/alpha); rho_L G^2 = Q(1/alpha) ist eine Schreibweise, kein Mechanismus. (b) Die native Kette hat dimensionale Transmutation, gibt aber m a = 4 e^(-pi/2) = 0,83; nötig wäre Theta = 44,06 statt 1/2 bzw. ein Koeffizient b = pi. (c) Kein Instanton hat die Wirkung 2/alpha (vorhanden ist 2 pi/alpha), und 48 zählt Weyl-Zustände, nicht Nullmoden (12). (d) Die Nahtzahl ist frei. Das Vorzeichenproblem verschärft (a), (c), (d): die Niveaus gehören zur AdS-Uhr, Instantonen senken die Vakuumenergie, und eine Horizontzählung braucht P_cap. Entscheiden würde eine einzige Rechnung: der native Wert des MacDowell-Mansouri-Koeffizienten b = R_Vak^2/(256 pi G), also die Normierung des Einsteinterms der relativen Uhrspur für das volle, wechselwirkende Nahtsystem. Heute liefert sie nur ganze Zahlen (64 je Index, z118); COSMO.LAM.01 verlangt |b| = (pi^2/2) e^(2/alpha). Nichts ist befördert.",
+ "bilanz": [
+  "[E] Ein Torsor: Die physikalische Dimension aller nativen Größen hat Rang 1 modulo hbar, c, k_B; eine absolute Einheit kann die Theorie prinzipiell nicht ausgeben (No-Unit, v153).",
+  "[E] Offene reine Zahlen statt offener Einheiten: G/R_Vak^2 (H6), Mbar/v_EW (Flavour-Absolutwert), dazu alpha_s(M_Z), M_R, T_reh als externe Eingaben (Matrix B: Rang 3).",
+  "[E] Zeit: tau = l theta, beta_phys = 2 pi R_Vak/c, Takt der Uhr R = pi R_Vak/c, Stromquant 2 hbar c/R_Vak; exakte Verhältnisse, keine Einheit. beta l = 2 pi R_Vak ist exakt, als Gibbons-Hawking-Beziehung aber Zufall der Normierung (Faktor 2 zum nativen Horizontradius l).",
+  "[E/C] Durch einen Mechanismus (innerhalb der jeweiligen Annahmen): alpha^-1, die Massenverhältnisse der Leiter, l/R_Vak = 1/2, |Lambda| R_Vak^2 = 12, die Zeit- und Energieverhältnisse der Naht.",
+  "[N/C] Nur numerisch oder bedingt: rho_L/Mbar^4 = 48 c_3^2 e^(-2/alpha) (0,09 % neben Planck, innerhalb der Messbreite; Vorfaktor allein nicht signifikant), R_Vak/l_Pl = 2,06e61 unter P_Lambda und P_cap, M_scal/Mbar = c_3^(7/2), Quarkverhältnisse aus dreistelliger Tabelle, M_f/M_g als Lesart.",
+  "[O] Die große Zahl hat keinen nativen Mechanismus: (a) und (b) geben andere Zahlen, (c) und (d) gibt es nicht; das Vorzeichen (nativ AdS) verschärft (a), (c), (d)."
+ ]
+}

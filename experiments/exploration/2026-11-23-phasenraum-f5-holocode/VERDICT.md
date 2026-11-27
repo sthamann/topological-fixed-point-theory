@@ -746,6 +746,60 @@ Zehn offene Punkte. Keine volle Lösung.**
 
 Einzelheiten: `docs/research/GESAMTSTAND-UND-STRATEGIEN.md`, Nachtrag z175–z177.
 
+**Angriff auf P_std (z183, 13 Prüfungen, selbst gerechnet; OriginLab `counter_models` mit drei neuen Bedingungen):
+P_std ist nicht hergeleitet. Sein Paaruhr-Teil ist unter A\* gleichwertig mit „kein einseitiger Strom mischt die
+Deckhälften“; sechs Gegenmodelle in zwei Spektren [E, E negativ]. Acht offene Punkte wie zuvor, nichts geschlossen.**
+
+- A1 [E]: Die 16 Eltern sind die Vektorgewichte von D₅ + D₃. Ein Feld im Sektor (x, y) hat mit ihnen die Monodromie
+  (−1)^x auf den zehn und (−1)^y auf den sechs. Die Eltern sehen die Deckparität genau um die acht Sektoren mit h in
+  ungeraden Achteln (1/8, 3/8, 5/8, 7/8). Kein Feld von E₈ hat diese Monodromie.
+- A2 [E] Lemma, alle 27: Eine Vervollständigung enthält ein solches Markenfeld genau dann, wenn der Mischstrom
+  (10, 6) auf keiner Seite lokal ist. Das gilt für 12 der 27.
+- A3, A4 [E] Satz: Unter A\* sind es genau die vier Graphen, ein Spektrum, die Eichsummen aus z178. Gleichwertig
+  unter A\*: Superauswahl der Paaruhr mit GNS-Regel; ein Markenfeld; kein Mischstrom; die 16 ist ein lokales Feld des
+  Paars (Dimension 5/4); die 4 ist eines (3/4). Ohne T fallen die Aussagen auseinander.
+- B1, B2 [E/N]: Zehn Vervollständigungen unter A\* in drei Spektren: vier Eichsummen (60 Ströme je Seite), zwei
+  so(16)-Formen (120), vier Formen E₈ ⊗ Ē₈ (248). Z(i) = 80 + 48√2 für die Eichsumme, 144 für die anderen. Die
+  so(16)-Form und E₈ ⊗ Ē₈ haben auf der ganzen imaginären Achse dieselbe Zustandssumme und unterscheiden sich nur im
+  Spin (496 = 248 + 248 = 120 + 120 + 256).
+- B3 bis B5 [E]: Der Orientierungswechsel einer Schnittbasis führt E₈ in die zweite Verklebung; invariant sind die
+  Graphen und die so(16)-Formen, keine faktorisierte. Die Zeitneutralität (Tausch von Naht und Partner) schließt nur
+  zwei der zehn aus und kein Spektrum. Die so(16)-Formen fallen nur durch die Aussage selbst: In ihnen dreht eine
+  stetige Symmetrie die Teilung 10 | 6 in jede andere.
+- C1 [E/N negativ]: Die relative Spinstruktur δ der Deckhälften hat unter SL(2, ℤ) die Bahnen {0} und drei weitere.
+  δ = 0 ist für sich invariant: A verlangt die getrennte Summe nicht.
+- C2 [N negativ]: Jeder Zyklus des Nahttorus umläuft zwei der vier Marken ungerade oft (Windungen (0, 1, 1),
+  (−1, −1, 0), (−1, 0, −1) um e₁, 0, −e₁). Ungerade Schnitte sind dort einwertig. Die Überlagerung gibt δ = 0, also
+  die gemeinsame Summe, nicht die Eichsumme.
+- C3 [E, Gleichsetzung L]: Der native Träger der Antwortpotenz 5/4 (die 16, z170) ist unter A\* nur in den vier
+  Graphen ein lokales Feld. Das stützt P_std, leitet es nicht her.
+- D1 [E]: Abstand (1, 1, 7), acht unabhängige offene Punkte; K19 und K20 ruhen weiter auf P_std.
+
+**Was das bedeutet.** P_std hat zwei Teile. Der erste (Paaruhr) heißt jetzt ohne Standardform: Jede stetige Symmetrie
+des Paars erhält die Teilung 10 | 6, gleichbedeutend: Die 16 ist ein lokales Feld und die geladenen Ströme von E₈
+sind es nicht. Er folgt nicht aus A\*, nicht aus der Zeitneutralität und nicht aus der Überlagerung. Der zweite Teil
+(P_uhr) ist nicht berührt.
+
+Einzelheiten: `docs/research/GESAMTSTAND-UND-STRATEGIEN.md`, Nachtrag z183.
+
+**Folgeprogramme F1 bis F6 (z178–z182; 12, 7, 9, 5 und 7 Prüfungen; OriginLab `counter_models`, `BENCH_DERIVED`):
+K19 und K20 hängen ohne Lesart an P_std und P_zentral, drei Wege mit Sperrsatz geschlossen [E/N, E negativ].
+Acht unabhängige offene Punkte. Kein Punkt geschlossen, keine volle Lösung.**
+
+- F1 Eichvervollständigung (z178): Über der uhrneutralen Algebra liegen fünf der 27 Vervollständigungen. GNS-Regel
+  und Standardform geben den Gauß-Zwang U = 1 als Satz; S und T lassen genau die diagonale Vervollständigung.
+  Gegenmodelle: E₈ ⊗ Ē₈ mit Auswahlregel (scheitert an GNS), Spin-Form (scheitert an T). Die Nahtzahl ist für jedes
+  N gerade (Assoziatorklasse 2 in ℤ₄); „genau zwei“ numerisch bis N = 24.
+- F6 Uhr (z179): Die Deckparität der Schnitte hat genau zwei Fortsetzungen auf die Naht, beide von Ordnung 4.
+  P_zentral ⇔ „Uhr = Deckparität“ (P_deck); die Identifikation bleibt.
+- F2 Modularität (z180): ℘ = π²K². Gegenüberliegende Bögen sind Naht und Partner. Im Zustand von A\* gibt es keine
+  halbseitige Inklusion, und S kehrt den Umlaufsinn um: P_vac, P_ord, I_step bleiben.
+- F3 Verklebung (z181): H³_ab(ℤ₄) = ℤ₈. Die Topologie legt nur diskrete Phasen fest.
+- F4 und F5 Gravitation (z182): kein masseloser Pol aus mehreren Nähten; Weinberg–Witten als Darstellungssatz. Die
+  Entropie des Zustands von A\* ist genau log 12. Unter der Flächenregel G/a² = 1/(4 s₁) mit drei Werten für s₁.
+
+Einzelheiten: `docs/research/GESAMTSTAND-UND-STRATEGIEN.md`, Nachtrag z178–z182.
+
 **Schritt 1: Standardform für Statistik und Zusammensetzung (z174, 17 Prüfungen, selbst gerechnet; OriginLab
 `reconstruction_search`): P_univ und P_uhr fallen in P_std zusammen; die ℤ₄-Verklebung ist über zwei Nahtpaare
 modular und positiv, über eines anomal [E/N, E negativ]. Zehn offene Punkte statt elf. Keine volle Lösung.**

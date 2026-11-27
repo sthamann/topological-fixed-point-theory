@@ -1,0 +1,126 @@
+Teil 1: Gradierte Permutationsorbifaltigkeit über N Nähte (P_ident mit P_CAR)
+   [ok] [E] Koszul-Spuridentität: Für den gradierten N-Zyklus Gamma(sigma) auf V^(x)N (Superraum 2|2, zufälliges gerades A) gilt Tr(Gamma(sigma) A^(x)N) = Tr(K^(N-1) A^N), für den ungradierten Tr(A^N) (Fehler 2e-14). Gegenprobe: Für gerade N unterscheiden sich beide (|Differenz| 17.15, 149.48), für N = 3 nicht (0e+00): Der Koszul-Faktor eines k-Zyklus ist K^(k-1), also die R^2-Parität für gerade Zyklen
+   [ok] [E] Der gradierte N-Zyklus ist gaußsch: Seine Spur auf N Originalen ist exakt das Produkt der Spuren der N Fouriermoden mit den Phasen e^(2 pi i k/N) auf beiden Quartern, Tr_C(K^(N-1) q^(N L_0)) = prod_k Tr(e^(2 pi i (k/N)(Q_a + Q_b)) q^(L_0)) (Verhältnis 1, Streuung 1e-25 für N = 2, 3, 4; Thetaidentität). Die langen Nähte des gradierten Zyklus sind also Fouriermoden mit Verdrillung k/N. Gegenprobe: Die ungradierte Spur ist für N = 2 und 4 kein solches Produkt (relative Streuung 0.189, 0.013); für N = 3 sind beide Spuren gleich
+   (Laufzeit bisher 0 s)
+   [ok] [E, entscheidend] Anomalie der Koszul-Permutation: Mit P_CAR auf dem Original (z106) ist die Spur des gradierten Tauschs die einseitige R^2-Spur bei 2 tau (gleiche Funktion: True), und deren Bahn hat keinen Charakter, wie das einseitige R^2 einer Naht (z113: []): Der gradierte Tausch (N = 2) und das gradierte Z4 (N = 4, 4-Zyklus und Doppeltausch) sind anomal (modular: False, False). Für N = 3 ist der Koszul-Faktor trivial und die Permutation frei (True). Ungradiert und mit J-kovarianter CAR (Koszul-Vorzeichen auch auf dem Partner) ist sie frei für N = 2 und 4; bei N = 2 sind beide dieselbe Bahnsumme
+   [ok] [E] Anomalieaufhebung durch Kleidung: Der mit einem GSO-Faktor gekleidete Tausch Gamma(sigma) G_1 hat die Spur von U = G R^2 bei N tau (gleiche Funktion für N = 2: True), denn K G = R^2 U R^2 = U; er ist für N = 2 und 4 anomaliefrei (True, True), ebenso Gamma(sigma) U_1 (Spur G bei N tau; True, True). Die Koszul-Permutation ist modular nur zusammen mit einer 2 pi-Drehung einer Naht, also als Tausch mit Drehung (Finkelstein-Rubinstein-Form der Spin-Statistik, Lesart L)
+   (Laufzeit bisher 3 s)
+   Positivität N = 2 (gemeinsame Uhrverdrillung wie z113; Minimum normierter Spinmode):
+      N2 diag G = +1 (z113): min 4.63e-07 (Rauschen 3e-20) -> positiv  (Laufzeit bisher 6 s)
+      N2 diag G = -1 (z113): min -7.8e+04 (Rauschen 3e-20) -> NEGATIV  (Laufzeit bisher 6 s)
+      N2 pro Naht G = +1: min 4.58e-07 (Rauschen 3e-20) -> positiv  (Laufzeit bisher 6 s)
+      N2 pro Naht G = -1: min 4.67e-07 (Rauschen 3e-20) -> positiv  (Laufzeit bisher 6 s)
+      N2 Tausch ungradiert: min 2.86e-11 (Rauschen 5e-26) -> positiv  (Laufzeit bisher 7 s)
+      N2 pro Naht G = +1 + Tausch ungradiert: min -5.48e+05 (Rauschen 2e-18) -> NEGATIV  (Laufzeit bisher 10 s)
+      N2 pro Naht G = -1 + Tausch ungradiert: min 3.37e-06 (Rauschen 2e-18) -> positiv  (Laufzeit bisher 10 s)
+      N2 pro Naht G = +1 + Tausch Koszul (Original): keine modulare Ergänzung (anomal oder inkonsistent)  (Laufzeit bisher 10 s)
+      N2 diag G = +1 + Tausch ungradiert: min 4.63e-07 (Rauschen 3e-20) -> positiv  (Laufzeit bisher 10 s)
+      N2 gekleidet Gamma(pi) G_1 = i^0: min 3.37e-06 (Rauschen 2e-18) -> positiv  (Laufzeit bisher 10 s)
+      N2 gekleidet Gamma(pi) G_1 = i^1: min -7.8e+04 (Rauschen 3e-20) -> NEGATIV  (Laufzeit bisher 10 s)
+      N2 gekleidet Gamma(pi) G_1 = i^2: min -5.48e+05 (Rauschen 2e-18) -> NEGATIV  (Laufzeit bisher 10 s)
+      N2 gekleidet Gamma(pi) G_1 = i^3: min -7.8e+04 (Rauschen 3e-20) -> NEGATIV  (Laufzeit bisher 10 s)
+      N2 gekleidet Gamma(pi) U_1 = i^0: min -5.47e+05 (Rauschen 2e-18) -> NEGATIV  (Laufzeit bisher 10 s)
+      N2 gekleidet Gamma(pi) U_1 = i^1: min -7.84e+04 (Rauschen 3e-20) -> NEGATIV  (Laufzeit bisher 10 s)
+      N2 gekleidet Gamma(pi) U_1 = i^2: min 3.38e-06 (Rauschen 2e-18) -> positiv  (Laufzeit bisher 10 s)
+      N2 gekleidet Gamma(pi) U_1 = i^3: min -7.84e+04 (Rauschen 3e-20) -> NEGATIV  (Laufzeit bisher 10 s)
+   [FEHLER] [E] Reproduktion und Kontrolle: Der neue Aufbau (Kranzprodukt, Multimengen-Bahnen) gibt z113 exakt wieder: N = 2 diagonal G = +1 min 4.634e-07 (z113 4.634e-07), G = -1 -77983.3 (z113 -77983.3). Mit getrennter Nativprojektion je Naht (Produkt zweier N = 1-Summen) bleibt G = +1 negativ (3.51e-07), G = -1 positiv (3.7e-07): Die gemeinsame Uhrverdrillung ist Prämisse der folgenden N = 2-Ergebnisse
+   [ok] [E, entscheidend] N = 2 mit summierter 2 pi-Drehung: Pro Naht ist G = +1 (P_GSO auf jeder Naht) bei gemeinsamer Uhrverdrillung positiv (min 4.58e-07), ebenso G = -1 (4.67e-07); z113 hatte pro Naht nur N = 1 geprüft. Mit P_ident wird es negativ oder anomal: ungradierter (= J-kovarianter) Tausch -5.48e+05, Koszul-Tausch (P_CAR) ohne modulare Ergänzung. Mit Tausch bleiben pro Naht G = -1 (3.4e-06) und diagonal G = +1 (4.6e-07) positiv
+   [ok] [E, entscheidend] N = 2 gekleideter Koszul-Tausch: Von den vier Charakteren von <Gamma(pi) G_1> (Z4, Quadrat = G_1 G_2) ist genau Gamma(pi) G_1 = +1 positiv (min 3.4e-06; i^1, i^2, i^3: -7.8e+04, -5.48e+05, -7.8e+04). Dort gilt auf allen Zuständen G_1 G_2 = +1 und auf den P_GSO-Zuständen (G_1 = G_2 = 1) Gamma(pi) = +1, also P_ident mit P_CAR (Pauli). Mit der Drehung statt GSO (Gamma(pi) U_1) ist nur -1 positiv: Identische Paare überleben dann nur mit G = -1
+   (Laufzeit bisher 10 s)
+   Positivität N = 3 und N = 4 (zyklische Permutationen, lange Nähte der Längen 3 bzw. 2 und 4):
+      N3 diag G = +1 (z113): min -1.86e+07 (Rauschen 7e-18) -> NEGATIV  (Laufzeit bisher 10 s)
+      N3 pro Naht G = +1: min -1.86e+07 (Rauschen 7e-18) -> NEGATIV  (Laufzeit bisher 11 s)
+      N3 pro Naht G = -1: min 2.4e-05 (Rauschen 7e-18) -> positiv  (Laufzeit bisher 11 s)
+      N3 Z3 ungradiert: min 6.4e-10 (Rauschen 1e-24) -> positiv  (Laufzeit bisher 13 s)
+      N3 Z3 + diag G = +1: min -6.18e+08 (Rauschen 5e-13) -> NEGATIV  (Laufzeit bisher 32 s)
+      N3 Z3 + pro Naht G = +1: min -2.41e+09 (Rauschen 2e-12) -> NEGATIV  (Laufzeit bisher 32 s)
+      N3 Z3 + pro Naht G = -1: min 0.00168 (Rauschen 2e-12) -> positiv  (Laufzeit bisher 32 s)
+      N4 diag G = +1 (z113): min -82.3 (Rauschen 1e-15) -> NEGATIV  (Laufzeit bisher 32 s)
+      N4 pro Naht G = +1: min -47.9 (Rauschen 1e-15) -> NEGATIV  (Laufzeit bisher 32 s)
+      N4 pro Naht G = -1: min -78.1 (Rauschen 1e-15) -> NEGATIV  (Laufzeit bisher 32 s)
+      N4 Z4 ungradiert: min 1.25e-09 (Rauschen 8e-26) -> positiv  (Laufzeit bisher 33 s)
+      N4 Z4 + diag G = +1: min -80.9 (Rauschen 1e-15) -> NEGATIV  (Laufzeit bisher 33 s)
+      N4 Z4 + pro Naht G = +1: min -3.9e+12 (Rauschen 3e-09) -> NEGATIV  (Laufzeit bisher 40 s)
+      N4 Z4 + pro Naht G = -1: min 0.236 (Rauschen 3e-09) -> positiv  (Laufzeit bisher 40 s)
+      N4 Z4 J-kovariant + pro Naht G = +1: min -3.9e+12 (Rauschen 3e-09) -> NEGATIV  (Laufzeit bisher 40 s)
+      N3 gekleidet Gamma(sigma) G_1 = e^(2 pi i 0/6): min -6.18e+08 (Rauschen 5e-13) -> NEGATIV  (Laufzeit bisher 40 s)
+      N3 gekleidet Gamma(sigma) G_1 = e^(2 pi i 1/6): min -2.81e+08 (Rauschen 2e-13) -> NEGATIV  (Laufzeit bisher 40 s)
+      N3 gekleidet Gamma(sigma) G_1 = e^(2 pi i 2/6): min 0.000183 (Rauschen 2e-13) -> positiv  (Laufzeit bisher 40 s)
+      N3 gekleidet Gamma(sigma) G_1 = e^(2 pi i 3/6): min 0.000436 (Rauschen 5e-13) -> positiv  (Laufzeit bisher 40 s)
+      N3 gekleidet Gamma(sigma) G_1 = e^(2 pi i 4/6): min 0.000183 (Rauschen 2e-13) -> positiv  (Laufzeit bisher 40 s)
+      N3 gekleidet Gamma(sigma) G_1 = e^(2 pi i 5/6): min -2.81e+08 (Rauschen 2e-13) -> NEGATIV  (Laufzeit bisher 40 s)
+      N4 gekleidet Gamma(sigma) G_1 = e^(2 pi i 0/8): min 0.0676 (Rauschen 8e-10) -> positiv  (Laufzeit bisher 40 s)
+      N4 gekleidet Gamma(sigma) G_1 = e^(2 pi i 1/8): min -4.02e+09 (Rauschen 1e-15) -> NEGATIV  (Laufzeit bisher 40 s)
+      N4 gekleidet Gamma(sigma) G_1 = e^(2 pi i 2/8): min -1.26e+11 (Rauschen 1e-12) -> NEGATIV  (Laufzeit bisher 40 s)
+      N4 gekleidet Gamma(sigma) G_1 = e^(2 pi i 3/8): min -4.02e+09 (Rauschen 1e-15) -> NEGATIV  (Laufzeit bisher 40 s)
+      N4 gekleidet Gamma(sigma) G_1 = e^(2 pi i 4/8): min -9.06e+11 (Rauschen 8e-10) -> NEGATIV  (Laufzeit bisher 40 s)
+      N4 gekleidet Gamma(sigma) G_1 = e^(2 pi i 5/8): min -4.02e+09 (Rauschen 1e-15) -> NEGATIV  (Laufzeit bisher 40 s)
+      N4 gekleidet Gamma(sigma) G_1 = e^(2 pi i 6/8): min -1.26e+11 (Rauschen 1e-12) -> NEGATIV  (Laufzeit bisher 40 s)
+      N4 gekleidet Gamma(sigma) G_1 = e^(2 pi i 7/8): min -4.02e+09 (Rauschen 1e-15) -> NEGATIV  (Laufzeit bisher 40 s)
+      N4 gekleidet Gamma(sigma) U_1 = e^(2 pi i 0/8): min -9.06e+11 (Rauschen 8e-10) -> NEGATIV  (Laufzeit bisher 40 s)
+      N4 gekleidet Gamma(sigma) U_1 = e^(2 pi i 4/8): min 0.0638 (Rauschen 8e-10) -> positiv  (Laufzeit bisher 40 s)
+   [ok] [E] Reproduktion z113 bei N = 3, 4: diagonal G = +1 min -1.86152e+07 (z113 -18615205.7) und -82.3255 (z113 -82.3255)
+   [ok] [E, entscheidend] P_ident macht G = +1 pro Naht für N = 3 und 4 nicht positiv: pro Naht allein -1.86e+07 bzw. -47.9, mit zyklischer Permutation -2.41e+09 bzw. -3.9e+12 (ungradiert; N = 3 ist gradiert dasselbe), J-kovariant bei N = 4 -3.9e+12; die Koszul-Permutation ist bei N = 4 anomal. Dagegen ist die vertauschte Statistik G = -1 pro Naht mit Permutation positiv (0.0017, 0.24)
+   [ok] [E, entscheidend] Gekleidete Koszul-Permutation bei N = 4: Von den acht Charakteren von <Gamma(sigma) G_1> (Z8, vierte Potenz = G_1 G_2 G_3 G_4) ist genau Gamma(sigma) G_1 = +1 positiv (min 0.0676; positiv: [True, False, False, False, False, False, False, False]). Damit ist die diagonale GSO-Regel G_d = +1, allein bei N = 4 negativ (z113: -82.3) und mit ungradiertem Z4 ebenfalls (-80.9), als geeichtes Element (G_d = (Gamma G_1)^4) auf allen Zuständen erfüllt und positiv. Bei N = 3 ist dagegen +1 negativ (-6.18e+08); positiv sind dort nur die Charaktere [2, 3, 4] (Sechstel), also G_d = +1 nur mit nichttrivialem Z3-Charakter ohne P_ident
+   (Laufzeit bisher 40 s)
+   [ok] [E] Direkte Gegenprobe der Modulinvarianz (unabhängig von der Bahnbuchhaltung, drei Testpunkte): Die Summen pro Naht G = +1 (N = 2) und gekleidet Gamma G_1 = +1 (N = 2, 4) sind S- und T-invariant (größter relativer Fehler 9e-24); der Originalsektor allein ohne Bahnergänzung ist es nicht (S-Abweichung 0.06)
+   [Befund: ja] Teil 1: Die Koszul-Permutation (P_ident mit P_CAR des Originals) ist für gerade N anomal; ihre Anomalie ist die des einseitigen R^2 und wird genau durch einen GSO-Faktor einer Naht aufgehoben (Gamma G_1 hat die Spur von U bei N tau). P_ident macht G = +1 pro Naht für N = 2, 3, 4 nicht positiv. Die gekleidete Koszul-Permutation Gamma G_1 = +1 ist bei N = 2 und 4 modulinvariant und positiv; dort gilt die Spin-Statistik als Gesamtregel G_d = +1 auf allen Zuständen, und auf den P_GSO-Zuständen ist die Austauschregel genau P_ident mit P_CAR. Bei N = 3 gelingt das nicht
+   (Laufzeit bisher 42 s)
+
+Teil 2: P_glue unter Modulsummation
+   [ok] [E] Projektoralgebra (exakt auf allen 16 Eigenwertpaaren von A = i^(N - Nquer) und R): Mit Z_SU = -A ist P_glue (Z_SU R = 1 auf dem Spinormodul U = -1, G = 1 auf den Bosonen) = (1/8)[3 + U + R^2 + 3G - AR + A^3R + AR^3 - A^3R^3] (Indikator True), P_A3 = (1/4)[1 - AR + G - A^3R^3] (True). Der Vierteldrehungsanteil von P_glue ist (1/8)(U - 1)(AR - AR^3) (True), er lebt nur auf dem Spinormodul; außerdem enthält P_glue das einseitige R^2 = U G mit Koeffizient 1/8
+   [ok] [E, entscheidend] Bahnen der Vierteldrehung (96 Elemente, lange Nähte bis Länge 16): Für jede Uhrpotenz R^r und jeden Nativeinschub liegen A R^r und A^3 R^r = U A R^r in derselben SL(2,Z)-Bahn mit relativem Koeffizienten exakt 1 (N = 1, 2, 4: True). Anomal sind bei N = 1 die ungeraden Uhrpotenzen [1, 3], bei N = 2 und 4 keine ([], []). Folge: Jede modulare Ergänzung eines Vierteldrehungsterms ist proportional zu (1 + U) und verschwindet auf dem Spinormodul
+   [ok] [E, entscheidend] P_glue hat für N = 1, 2, 3, 4 keine modulare Ergänzung ([False, False, False, False]): N = 1, 3 anomal (Vierteldrehung mit ungerader Uhrpotenz und einseitiges R^2), N = 2 einseitiges R^2 nur mit Charakter (1/2, 1/2) und die Vierteldrehungsbahnen inkonsistent, N = 4 inkonsistent (['inkonsistent (Bahn 96)', 'inkonsistent (Bahn 96)']): Die Vorzeichen -AR, +A^3R verlangen den relativen Koeffizienten -1, die Bahn erzwingt +1. Der definierende Anteil (U - 1)(AR - AR^3) ist genau der modular unsichtbare
+   [ok] [E] P_A3 (die Z4-Regel ohne Einschränkung auf Spinoren, AR = -1): für ungerade N anomal ({1: False, 3: False}); für N = 2 und 4 ergänzt die Bahn A^3R mit demselben Koeffizienten wie AR ((-1.0 + 0.0j)), der Originalsektor wird (1/4)[1 + G - (1 + U)(AR + A^3R^3)] mit kleinstem Eigenwert -0.5 (N = 2) bzw. -0.5 (N = 4) auf den neutralen Bosonen A = R = 1: negative Vielfachheiten schon im Originalsektor. Der Spiegel AR = +1 ebenso (-0.5). Kontrolle: P_GSO ergänzt sich zum Projektor (Eigenwerte -4.7e-27 bis 1)
+   [Befund: ja] Teil 2: Die Einschränkung auf den Spinormodul umgeht z113s Hindernis nicht, sie verschärft es. Modulsummation paart jede Vierteldrehung A X mit U A X (Koeffizient 1), sieht also auf dem Spinormodul nur U und R^2, wie bei P_GSO. Der chirale Z4-Inhalt von P_glue liegt genau dort, wo die Modulsummation nichts sieht; P_glue hat für N = 1..4 keine modulare Ergänzung, P_A3 ergänzt sich nur zu einem Nicht-Projektor
+   (Laufzeit bisher 46 s)
+
+Teil 3: Klassifikation der modulverträglichen Statistikregeln der Naht
+      N1 diag U = +1: min 2.19e-09 (Rauschen 5e-23) -> positiv  (Laufzeit bisher 46 s)
+      N1 diag U = -1: min -227 (Rauschen 5e-23) -> NEGATIV  (Laufzeit bisher 46 s)
+      N1 diag G = U R^2 = +1: min -223 (Rauschen 5e-23) -> NEGATIV  (Laufzeit bisher 46 s)
+      N1 diag G = U R^2 = -1: min 2.19e-09 (Rauschen 5e-23) -> positiv  (Laufzeit bisher 46 s)
+      N2 diag U = +1: min 4.8e-07 (Rauschen 3e-20) -> positiv  (Laufzeit bisher 46 s)
+      N2 diag U = -1: min -7.84e+04 (Rauschen 3e-20) -> NEGATIV  (Laufzeit bisher 46 s)
+      N2 diag G = U R^2 = +1: min 4.63e-07 (Rauschen 3e-20) -> positiv  (Laufzeit bisher 46 s)
+      N2 diag G = U R^2 = -1: min -7.8e+04 (Rauschen 3e-20) -> NEGATIV  (Laufzeit bisher 46 s)
+      N3 diag U = +1: min 2.88e-05 (Rauschen 9e-18) -> positiv  (Laufzeit bisher 46 s)
+      N3 diag U = -1: min -1.88e+07 (Rauschen 9e-18) -> NEGATIV  (Laufzeit bisher 46 s)
+      N3 diag G = U R^2 = +1: min -1.86e+07 (Rauschen 7e-18) -> NEGATIV  (Laufzeit bisher 46 s)
+      N3 diag G = U R^2 = -1: min -11.3 (Rauschen 7e-18) -> NEGATIV  (Laufzeit bisher 46 s)
+      N4 diag U = +1: min 0.001 (Rauschen 2e-15) -> positiv  (Laufzeit bisher 46 s)
+      N4 diag U = -1: min -4.1e+09 (Rauschen 2e-15) -> NEGATIV  (Laufzeit bisher 46 s)
+      N4 diag G = U R^2 = +1: min -82.3 (Rauschen 1e-15) -> NEGATIV  (Laufzeit bisher 46 s)
+      N4 diag G = U R^2 = -1: min -4.02e+09 (Rauschen 1e-15) -> NEGATIV  (Laufzeit bisher 46 s)
+      N = 1: U = +1: True; U = -1: False; G = U R^2 = +1: False; G = U R^2 = -1: True; U R (Z4-Hebung, Quadrat R^2): anomal; A = +1 (Vierteldrehung, nur Bosonen): modular; A = +i (Vierteldrehung auf Spinoren): nicht ergänzbar; P_A3: anomal; P_glue: keine Ergänzung
+      N = 2: U = +1: True; U = -1: False; G = U R^2 = +1: True; G = U R^2 = -1: False; U R (Z4-Hebung, Quadrat R^2): anomal; A = +1 (Vierteldrehung, nur Bosonen): modular; A = +i (Vierteldrehung auf Spinoren): nicht ergänzbar; P_A3: Nicht-Projektor; P_glue: keine Ergänzung
+      N = 3: U = +1: True; U = -1: False; G = U R^2 = +1: False; G = U R^2 = -1: False; U R (Z4-Hebung, Quadrat R^2): anomal; A = +1 (Vierteldrehung, nur Bosonen): modular; A = +i (Vierteldrehung auf Spinoren): nicht ergänzbar; P_A3: anomal; P_glue: keine Ergänzung
+      N = 4: U = +1: True; U = -1: False; G = U R^2 = +1: False; G = U R^2 = -1: False; U R (Z4-Hebung, Quadrat R^2): modular; A = +1 (Vierteldrehung, nur Bosonen): modular; A = +i (Vierteldrehung auf Spinoren): nicht ergänzbar; P_A3: Nicht-Projektor; P_glue: keine Ergänzung
+   [ok] [E] Klassifikation der Hebungen auf N Nähten (diagonal): Die unverdrehte Hebung ist für N = 1..4 nur mit U = +1 positiv ([True, True, True, True], U = -1: [False, False, False, False]); P_GSO diagonal G = +1: [False, True, False, False], G = -1: [True, False, False, False]; die Z4-Hebung U R (Quadrat = einseitiges R^2) ist erst bei N = 4 modular (['anomal', 'anomal', 'anomal', 'modular']); die Vierteldrehung allein ist nur mit reellem Eigenwert (A = +-1, also U = +1, keine Spinoren) ergänzbar, mit A = +-i (auf Spinoren) nie
+   [E] unverdrehte Hebung U = +1: positiv N = 1..4, keine Spinoren
+   [E] P_GSO diagonal (z113): positiv nur N = 2
+   [E] P_GSO pro Naht, gemeinsame Uhr: positiv nur N = 2 (beide Vorzeichen); N = 3, 4 negativ
+   [E] P_GSO pro Naht + P_ident: N = 2, 3, 4 negativ (ungradiert, J-kovariant) oder anomal (Koszul)
+   [E] vertauschte Statistik G = -1 pro Naht + P_ident: positiv N = 2, 3, 4
+   [E] gekleidete Koszul-Permutation Gamma G_1 = +1: positiv N = 2, 4 (G_d = +1 auf allen Zuständen); N = 3 negativ
+   [E] Z4-Hebung U R: anomal N = 1, 2, 3
+   [E] P_A3: anomal (ungerade N), Nicht-Projektor (gerade N)
+   [E] P_glue: keine modulare Ergänzung N = 1..4
+   [Befund: ja] Teil 3: Spin-Statistik (2 pi-Drehung = (-1)^F) ist im Nahtrahmen modulverträglich, aber nur als Gesamtregel und nur für gerade N: bei N = 2 diagonal oder pro Naht ohne P_ident, bei N = 2 und 4 mit P_ident als gekleidete Koszul-Permutation Gamma G_1 = +1. Pro Naht zusammen mit P_ident ist sie für N = 2, 3, 4 ausgeschlossen. Ihre chirale Z4-Verfeinerung auf Spinoren (P_glue, P_A3) ist modular nie verträglich
+   (Laufzeit bisher 46 s)
+   [E] Koszul-Spuridentität, gaußscher Zyklus: Tr Gamma(sigma) = Tr K^(N-1) q^(N L_0) = Produkt der Fouriermoden
+   [E (negativ)] Koszul-Permutation (P_CAR Original): anomal für gerade N (Anomalie des einseitigen R^2)
+   [E] J-kovariante CAR: frei; bei N = 2 gleich dem ungradierten Tausch
+   [E] gekleideter Tausch Gamma G_1: anomaliefrei (Spur von U bei N tau); +1 positiv bei N = 2, 4, negativ bei N = 3
+   [E] P_GSO pro Naht: positiv nur bei N = 2 mit gemeinsamer Uhr; mit P_ident nie (N = 2, 3, 4)
+   [E] Vierteldrehung: A X und U A X in einer Bahn (Koeffizient 1): modular unsichtbar auf Spinoren
+   [E (negativ)] P_glue: keine modulare Ergänzung für N = 1..4
+   [E (negativ)] P_A3: anomal (ungerade N), ergänzt zu Nicht-Projektor (gerade N)
+   [C] Spin-Statistik modular: als Gesamtregel bei N = 2, 4 unter P_dress (gekleidete Koszul-Permutation) und gemeinsamer Uhrverdrillung; pro Naht mit P_ident nein
+   [L] Lesart Tausch mit Drehung: Gamma G_1 ist auf P_GSO-Zuständen der Koszul-Tausch; die Kleidung trägt eine 2 pi-Drehung (Finkelstein-Rubinstein)
+   [O] N >= 5, N = 6, 8: nicht gerechnet
+
+Urteil
+   Teil 1 (gradierte Permutationsorbifaltigkeit): Die Koszul-Permutation mit P_CAR des Originals (z106) ist gaußsch: Der gradierte N-Zyklus wirkt auf den Fouriermoden mit e^(2 pi i k/N), seine Spur ist exakt das Produkt der verdrillten Modenspuren, seine langen Nähte sind verdrillte Fouriermoden. Für gerade N ist er anomal. Seine Spur ist das einseitige R^2 bei N tau, dessen Bahn keinen Charakter hat (z113). Für N = 3 ist der Koszul-Faktor trivial. Mit J-kovarianter CAR (Partner mitgradiert) ist die Permutation frei, bei N = 2 aber identisch mit dem ungradierten Tausch. Die Anomalie wird genau durch einen GSO-Faktor einer Naht aufgehoben: Gamma(sigma) G_1 hat die Spur von U bei N tau. Ergebnis der Positivität bei gemeinsamer Uhrverdrillung (z113-Rahmen): P_GSO pro Naht ist bei N = 2 positiv (neu; z113 hatte pro Naht nur N = 1), bei N = 3, 4 negativ. Zusammen mit P_ident ist P_GSO pro Naht für N = 2, 3, 4 negativ (ungradiert, J-kovariant) oder anomal (Koszul). Die vertauschte Statistik G = -1 pro Naht bleibt mit P_ident positiv. Die gekleidete Koszul-Permutation mit Gamma G_1 = +1 ist bei N = 2 und N = 4 modulinvariant (auch direkt geprüft) und positiv; als einziger ihrer Charaktere. Dort ist G_d = (Gamma G_1)^N geeicht, also gilt die Spin-Statistik als Gesamtregel auf allen Zuständen. Auf den P_GSO-Zuständen ist die Austauschregel genau P_ident mit P_CAR (Pauli). Bei N = 4 rettet das die diagonale GSO-Regel, die allein (z113: -82,3) und mit ungradiertem Z4 negativ ist. Bei N = 3 ist +1 negativ. Teil 2 (P_glue): P_glue = (1/8)[3 + U + R^2 + 3G - AR + A^3R + AR^3 - A^3R^3] mit A = -Z_SU = i^(N - Nquer). Sein chiraler Anteil (1/8)(U - 1)(AR - AR^3) lebt nur auf dem Spinormodul. Modulsummation legt dagegen jede Vierteldrehung A X mit U A X in eine Bahn mit Koeffizient 1, also ist jede modulare Ergänzung eines Vierteldrehungsterms proportional zu (1 + U) und verschwindet auf Spinoren. Darum hat P_glue für N = 1..4 keine modulare Ergänzung (N = 1, 3 anomal, N = 2 R^2 nur mit Charakter (1/2, 1/2), N = 4 inkonsistent). P_A3 ist für ungerade N anomal und ergänzt sich für gerade N nur zu (1/4)[1 + G - (1 + U)(AR + A^3R^3)] mit Eigenwert -1/2 auf den neutralen Bosonen. Die Einschränkung auf den Spinormodul umgeht z113s Hindernis also nicht: Auf Spinoren sieht die Modulsummation nur U und R^2, wie bei P_GSO. Teil 3 (Klassifikation): Modulinvariant und positiv sind die unverdrehte Hebung (U = +1, N = 1..4, keine Spinoren), P_GSO diagonal nur bei N = 2, P_GSO pro Naht nur bei N = 2 ohne P_ident, die vertauschte Statistik pro Naht mit P_ident (N = 2, 3, 4) und die gekleidete Koszul-Permutation Gamma G_1 = +1 (N = 2, 4). Die Z4-Hebung U R ist erst bei N = 4 modular. Die Vierteldrehung ist nur auf Bosonen ergänzbar; P_A3 und P_glue nie. Spin-Statistik ist im Nahtrahmen also modulverträglich, aber nur als Gesamtregel und nur für gerade N (gerechnet N = 2, 4). Mit identischen Nähten braucht sie die Prämisse P_dress: Nähte werden über den mit einem GSO-Faktor gekleideten Koszul-Tausch komponiert, bei gemeinsamer Uhrverdrillung. Pro Naht zusammen mit P_ident ist sie ausgeschlossen. Folge für die Szenario-Klausel modular_statistics: Die Statistik P_GSO kann sie bedingt erhalten, unter P_dress mit N = 2 oder 4. P_glue und P_A3 erhalten sie nicht; das ist jetzt geprüft und negativ. Die unverdrehte Hebung behält sie, ohne Spinoren. Die Chiralität muss deshalb aus der Indexroute kommen (z114), nicht aus der Z4-Verklebung. Nichts ist befördert.
+
+Alle Prüfungen bestanden: False (15/16)

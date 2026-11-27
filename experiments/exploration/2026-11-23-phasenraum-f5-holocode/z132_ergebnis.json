@@ -1,0 +1,523 @@
+{
+ "checks": {
+  "[E] Bestandsabgleich (nur gelesen): z82s Zweigtabelle R~ Lambda(-R)^-1 für R~ = Lambda(R)/s ist nachgerechnet ({'i': '-i', '-i': 'i'}: True); z116 (R = i Gamma_11), z117 (I_F = R = i Gamma_11), z118 (Uhrrichtung durch die Marken) und z122 (R = i, die 16, auf die Originalgerade) benutzen alle den Zweig eps = +1 (s = -i), z117 nennt den Hebungszweig als offenes Vorzeichen (True); z113s Uhrkoeffizienten {'R': '1/4', 'R2': '1/2', 'R3': '3/4'}": true,
+  "[E] Die zwei Hebungen R~_eps = eps i Lambda(R) auf S (32): beide haben genau Ordnung 4, R~^2 = -Lambda(R^2) mit Lambda(R^2) = Lambda(e^(6 pi i Y)) eichartig (True), also R~^2 = (-1)^F modulo G_SM; R~_eps Lambda(-R)^-1 = z_X^eps auf allen 32 (True); R~_-eps = z_X^2 R~_eps = -R~_eps (True): der Zweigwechsel ist das zentrale -1 von Spin(10), der Kern von Spin(10) -> SO(10). Beide Zweige und die naive Hebung wirken auf den zehn Majoranas gleich (True; Drehwinkel je Ebene [0.0, 1.0, 2.0, 3.0, 0.0] x pi/2 = die Viertelcharaktere von R): jedes Datum, das über die Vektordarstellung läuft, ist zweigblind. Naive Hebung eichtrivial auf der 16 und ohne Spinregel (True). Kontrolle: R~_+(nu^c) - R~_-(nu^c) = i x 2": true,
+  "[E] Das Urbild von <R> in der Doppelüberlagerung {(g, s): s^2 = det g} hat 8 Elemente, ist abgeschlossen und abelsch (True, True) mit Ordnungen {1: 1, 2: 3, 4: 4}, also Z4 x Z2 (nicht Z8, nicht Q8); genau 2 Schnitte sind Homomorphismen ([('1', '-i', '-1', 'i'), ('1', 'i', '-1', '-i')]), s_1 = -eps i gehört zu R~_eps: Die Gruppentheorie bietet zwei gleichwertige Z4-Hebungen und bevorzugt keine": true,
+  "[E] Eichinvariante Lesung: Unter su(3) + su(2) + u(1)_Y (Träger, R^2-Schnitt) hat die 16 genau ein Singulett, nu^c (True); jedes g in G_SM (zufällige Gruppenelemente) lässt nu^c fest (True). Also ist eps i = R~_eps(nu^c) die Uhrladung eines G_SM-Singuletts und eichunabhängig. Auf den 1 Singuletts in 16 x 16 wirkt R~ x R~ für beide Zweige als -1 ({1: True, -1: True}, Eichteil trivial: True); erst ungerade Produkte sehen den Zweig (nu^c x nu^c x nu^c: {1: '-i', -1: 'i'})": true,
+  "[E] Der Zweig als mod-8-Datum: Für alle 3125 ganzzahligen Logarithmen R = exp(i pi W/2), w_m in m + 4{-2..2}, ist die Spinorhebung längs exp(i t pi W/2) einer der beiden Zweige; tr W = 2 mod 4 immer (die Charaktere legen tr W nur mod 4 fest), und eps = -1 genau für tr W = 2 mod 8, eps = +1 für tr W = 6 mod 8 (True; Anteile {1: 1562, -1: 1563}). Mit Hauptwinkeln |theta| <= pi sind e_0, e_1, e_3, e_4 eindeutig (0, pi/2, -pi/2, 0), nur die R = -1-Mode e_2 hat zwei (+-pi): eps = -sgn theta_2 ({'(0, 1, -2, -1, 0)': 1, '(0, 1, 2, -1, 0)': -1}). Der Zweig sitzt also auf der Halbdrehung von e_2, der Mitte der Drei und dem erzwungenen Teiler (uv)^2 von z92": true,
+  "[E] Lift auf die homogenen Koordinaten: Die vier Ordnung-4-Elemente g = diag(i mu, mu) (mu^4 = 1) wirken auf Sym^4 = H^0(O(4)) alle als R; ihre kanonische Torushebung (Charakter (lambda mu)^-5) ist eps = -1 genau für det g = i und eps = +1 für det g = -i ({'1': {'wirkt als R auf Sym^4': True, 'det': 'i', 'Zweig': -1}, 'i': {'wirkt als R auf Sym^4': True, 'det': '-i', 'Zweig': 1}, '-1': {'wirkt als R auf Sym^4': True, 'det': 'i', 'Zweig': -1}, '-i': {'wirkt als R auf Sym^4': True, 'det': '-i', 'Zweig': 1}}). Der SL(2)-Lift diag(om, om^-1) (Ordnung 8, z92) wirkt als -R mit kanonischer Hebung Lambda(-R): eichtrivial, ohne Spin-Z4 (True). U(1)_X: R = e^(i theta_X) 1_5 (-R) mit theta_X = +-pi; die Hebung längs theta_X ist z_X für -pi und z_X^-1 für +pi, also eps = -theta_X/pi (True); z82s 'Zweig i^X' ist die Halbdrehung im Uhrzeigersinn der komplexen Struktur des Trägers": true,
+  "[E, negativ] X-Ladung und 3+2-Schnitte: X = 5 - 2p ist ohne R definiert (auf der 16: {-3: 5, 1: 10, 5: 1}), Y = (I - 5R^2)/12 hängt nur an R^2, und R~_+^2 = R~_-^2 (True); beide Zweige halten den R^2- und den V4-Schnitt (gleiche Vektorwirkung, True); die mod-16-Bilanz ist für beide 16 eps = 0 mod 16 (nu = {1: 16, -1: -16}, drei Familien 48 eps, ohne nu^c 15 eps: für beide anomal). U1s Regel 'Zweig aus der X-Ladung', R~ = exp(i pi X/2) Lambda(-R), gibt eps = 1; dieselbe Regel mit der anderen Orientierung X' = -X (Spektrum {-5: 1, -1: 10, 3: 5}, gleiche Beträge, gleiche Anomaliezählung) gibt eps = -1: Die Regel ist die Wahl der Orientierung von U(1)_X relativ zur Uhr, kein natives Datum. Kontrolle: nu^c sieht den Zweig (1.1)": true,
+  "[C] Hardy-Orientierung: A_q = S^+(1 - q S^4) hat auf H^2 am Punkt 0 (Kern, Kokern) = (1, 0), Index +1, mit der Nullmode auf den Marken = [0] mod 4; ausgetauscht (0, 1), Index -1 ({'H^2 an 0 (A_q)': [(1, 0), (1, 0)], 'getauscht (A_q^T)': [(0, 1), (0, 1)]}); die Verschwindungsordnungen von H^0(O(D)) sind an 0 und an unendlich je [0, 1, 2, 3, 4] und [0, 1, 2, 3, 4], mit Charakteren i^k bzw. i^-k (True). Die Filtration am Punkt 0, wo die Uhr um +pi/2 dreht, gibt die Gewichte (0, 1, 2, 3, 4) und eps = -1; die an unendlich (-4, -3, -2, -1, 0) und eps = 1. Das Original liefert die leichtesten Energien je Uhrklasse ({'-I': '3/4', 'I': '1/4'}: R = i bei 1/4, R = -i bei 3/4, Hardy-Marken 1, 3); ihre Fortsetzung auf einen Torusfluss der homogenen Koordinaten ist eindeutig ([{alpha: 1, beta: 0}]) und gibt (0, 1, 2, 3, 4), also eps = -1, entgegen der Bestandskonvention. Gegenregel: leichteste Energie je Mode, (0, 1, 2, 3, 0), gibt eps = 1. Die Hardy-Orientierung wählt den Zweig nur zusammen mit einer Gradierungsregel; beide Regeln sind 'leichteste positive Energie' und unterscheiden sich allein in der zweiten R = 1-Mode e_4 der Drei (Energie 1 oder 0)": true,
+  "[E] Spiegelungen. tau: z -> 1/z-quer (Spiegelung am Kreis der Marken) hält jede Marke fest (True), vertauscht mit der Vierteldrehung (tau R tau^-1 = R: True), hält Y, X und die 16 (True, True, True) und kippt den Zweig: tau R~_eps tau^-1 = R~_(-eps) (True). Tabelle (Zweig relativ zur Bilduhr, und ob die Uhr am Bild des Hardy-Punkts 0 weiter um +pi/2 dreht): {'J_F (Teilchen-Loch, z116)': {'Zweig relativ zur Bilduhr': {1: 1, -1: -1}, 'Hardy-Korrelation erhalten': True}, 'K (z -> z-quer, R -> R^-1)': {'Zweig relativ zur Bilduhr': {1: -1, -1: 1}, 'Hardy-Korrelation erhalten': False}, 's (z -> 1/z)': {'Zweig relativ zur Bilduhr': {1: 1, -1: -1}, 'Hardy-Korrelation erhalten': True}, 'tau (z -> 1/z-quer)': {'Zweig relativ zur Bilduhr': {1: -1, -1: 1}, 'Hardy-Korrelation erhalten': False}}. Genau die Operationen, die diese native Korrelation von Uhrrichtung und Hardy-Orientierung erhalten (J_F, s: z -> 1/z mit s^* e_m = -e_(4-m): True, R -> R^-1: True), erhalten eps; die sie brechen (K, tau), kippen eps (True). Der Zweig hängt also an dieser Korrelation, aber mit einem Vorzeichen, das keine Operation festlegt. J_F hält beide Zweige ({1: True, -1: True}, z_X^eps: {1: True, -1: True}, tauscht 16 und 16q: True); die Tomita-artige Konjugation bildet R~_eps auf R~_eps^-1 ab ({1: True, -1: True}), für beide Zweige kovariant; auch z118s Begründung 'J R J^-1 = R' gilt für beide": true,
+  "[E] Verklebter Spinormodul (W (x) S, 256): Die native Paarung in Spinorform, R_Original = sigma_IF Z_SU^-1 mit R_Original = z_X^eps (P_lift), ist exakt die Verklebung ker(I_T - sigma_glue z_X) von z117 mit sigma_glue = sigma_IF eps, also P_glue = P_IF x P_lift (True); die 16 sitzt bei T genau für sigma_IF eps = +1 ({'sigma_IF = +1, eps = +1': {'= P_glue mit sigma_glue': 1, 'dim (T x 16) darin': 64, 'Dimension': 128}, 'sigma_IF = +1, eps = -1': {'= P_glue mit sigma_glue': -1, 'dim (T x 16) darin': 0, 'Dimension': 128}, 'sigma_IF = -1, eps = +1': {'= P_glue mit sigma_glue': -1, 'dim (T x 16) darin': 0, 'Dimension': 128}, 'sigma_IF = -1, eps = -1': {'= P_glue mit sigma_glue': 1, 'dim (T x 16) darin': 64, 'Dimension': 128}}). Der Blatttausch Theta (T <-> T*) kippt sigma bei festem eps, der Zweigwechsel B kippt eps bei festem sigma, auf dem Modul wirken beide gleich und B Theta hält alle vier Moduln fest: Die Buchung 'P_IF = P_glue, ein Bit' (z117, z122, OriginLab) enthält stillschweigend eps = +1": true,
+  "[L] z122s Forderung 'die 16, nicht die 16q, trägt R = +i auf der Originalgeraden' ist zirkulär: unter P_IF (sigma_IF = +1) gilt sie genau für eps = +1, unter dem Spiegel für eps = -1 ({'sigma_IF = +1': [1], 'sigma_IF = -1': [-1]}); sie ist mit P_IF gleichwertig zu P_glue (sigma_glue = +1), also das Chiralitätsvorzeichen selbst. Die Uhrspur des inneren Faktors kippt mit dem Zweig: Tr_16 z_X^eps = 16 eps i, Tr_16q = -16 eps i ({1: ('i', '-i'), -1: ('-i', 'i')}); z117s c = 64 x Chiralität x Schnitt x Uhrrichtung hat auf der 16 die Uhrrichtung eps, denn R~_(-eps) R~_eps = Lambda(R^2) ist eichartig, also R~_(-eps) = R~_eps^-1 modulo G_SM ({1: True, -1: True}): z118s Umkehrung 'R -> R^-1' ist auf der 16 der Zweigwechsel; die Marken legen R nur auf C^5 fest (1.1)": true,
+  "[E, negativ] Eingefrorene Uhr (z113): Die Viernaht ist exakt E8 im Rahmen y in (c/4) 1 + Z^8, sum y = -c mod 4 (240 Wurzeln, je Sektor [56, 64, 56, 64], ganzzahlig und spiegelungsabgeschlossen); z113s Koeffizienten projizieren auf R = -i ({'1': '0', 'i': '0', '-1': '0', '-i': '1'}), das ist der Originalsektor c = 3 (Minimalnorm der Originalimpulse 0.5, kein E8-Vektor; erst die Stufe 1 hat 64 Zustände). Die Viernaht-Uhr hat die Vielfachheiten {'1': 64, 'i': 64, '-1': 56, '-i': 64} (Zentralisator u(8)), z_X von D5 + A3 {'1': 60, 'i': 64, '-1': 60, '-i': 64} (so(10) + su(4), Kleber z_X z_A3 = 1 bis 5e-16), die gehobene Uhr R~_eps in E8 für beide Zweige dieselben {'1': 82, 'i': 56, '-1': 54, '-i': 56} (D5-Treue True): drei paarweise nicht konjugierte Elemente, die Zweige in E8 ununterscheidbar. Die eingefrorene Schicht ist auch als Unterraum weder (16q, 4q) noch (16, 4): [V, V] und [V, V-quer] haben (56, np.int64(64)) gegen (60, np.int64(60)) Dimensionen. Der Wert R = -i lässt sich auf die 16 nicht übertragen": true,
+  "[E, negativ] Original und Partner (je zwei Moden pro Quarter, Partner mit R_phys = R R-quer^-1, 256 Zustände, alle 65536 Matrixeinheiten): Ad_R hat auf ungeraden Operatoren genau ['-i', 'i'], auf geraden ['-1', '1'], R^2 = (-1)^F überall (True). Der Partner liefert wie das Original nur die 2; eine fermionische Mode mit Charakter +-1 gibt es nicht": true,
+  "[E, negativ] Kompositionen: Über N = 1, 2, 3 Nähte und alle 84 Uhren R_k = prod R_s^(k_s) gibt es eine fermionische (ungerade) Mode mit Charakter +-1 genau dann, wenn R_k^2 = (-1)^F verletzt ist, und das genau, wenn ein k_s gerade ist (True; ohne Quelle bleiben 14 = 2 + 4 + 8 Uhren, alle k_s ungerade). Ein Quarter mit alpha = 0 oder 1/2 hätte Charakter +-1 und R^2 = +1 auf seinem Fermion ({'0': {'Charakter': '1', 'R^2 auf dem Fermion': '1'}, '1/4': {'Charakter': 'i', 'R^2 auf dem Fermion': '-1'}, '1/2': {'Charakter': '-1', 'R^2 auf dem Fermion': '1'}, '3/4': {'Charakter': '-i', 'R^2 auf dem Fermion': '-1'}}). Jede fermionische Quelle der Drei bricht also genau die Regel R^2 = (-1)^F, die z82 die Spinorhebung wählen lässt": true,
+  "[E] Determinantenschranke (z82 nachgerechnet): Über alle 256 diagonalen mu4-Eichelemente mit det 1 bleibt mindestens 1 Charakter von R g mit Quadrat +1: Auch modulo G_SM sind nie alle fünf Trägermoden fermionisch, weil det R = -1": true,
+  "[E] Die bosonische Drei (z92): e_1^2/e_2 = e_0, e_1 e_3/e_2 = e_2, e_3^2/e_2 = e_4 exakt, und e_4 - e_0 = 1 (die Einsrelation des Markenschnitts) exakt (True, True). Ganzzahlige Gradierungen, die die Charaktere heben (Fenster m + 4{-3..3}): produktverträglich 13 (Zweige {-1: 5, 1: 8}), einsverträglich 2058 ({-1: 1032, 1: 1026}), beides 0: die Produktrelationen erzwingen w_4 - w_0 = 2(w_3 - w_1) = 4 mod 8. Mit den leichtesten Energien des Originals auf der 2 ist die produktverträgliche Fortsetzung eindeutig [(0, 1, 2, 3, 4)] (eps = -1, Torus, Filtration an 0), die leichteste einsverträgliche (0, 1, 2, 3, 0) (eps = 1). Die Z8-Daten der 2 (Halbuhr e^(i pi L_0), z97) lassen beide Zweige offen ({'(w_1, w_3) mod 8 = (1, 3)': [-1, 1], '(w_1, w_3) mod 8 = (5, 7)': [-1, 1]}): Der Zweig ist das Z16-Datum der Drei, das keine native Struktur liefert": true,
+  "[C] Auftragskriterien: 6 native Daten geprüft, jedes mit Gegenprobe im anderen Zweig; keines wählt den Zweig ohne Zusatzidentifikation (4 blind, kovariant, kippend oder nicht übertragbar; zwei wählen nur mit Regel bzw. zirkulär), die beiden natürlichen Regeln geben entgegengesetzte Zweige, und der Zweig ist exakt das Relativvorzeichen sigma_glue sigma_IF": true
+ },
+ "befunde": {
+  "P_lift als endliche Aussage: 'Die Uhr des Originals wirkt auf S = Lambda^* C^5 (x) det^(-1/2) als R~_eps = eps i Lambda(R) mit eps = +1.' Gleichwertig: (a) die Uhrladung des G_SM-Singuletts nu^c ist eps i; (b) tr W = 6 mod 8 für jeden ganzzahligen Logarithmus von R; (c) die R = -1-Mode e_2 dreht im Hauptwinkel um -pi; (d) die Vierteldrehung wirkt auf (u, v) mit det = -eps i; (e) ihr U(1)_X-Anteil ist die Halbdrehung -pi, R~ = z_X Lambda(-R); (f) die Identifikation der Original-Z4 mit dem Zentrum Z4 von Spin(10) ist R -> z_X^eps. Zweigfrei und exakt ist der Rest: beide Zweige geben modulo G_SM die anomalierelevante Spin-Z4 (z82), die Regel R^2 = (-1)^F wählt die Spinorhebung; auf der Drei ist die Wirkung die des Trägers, nicht die des Originals (Teil 3)": true,
+  "Teil 2: Kein natives Datum wählt den Zweig. Alles, was über die Vektordarstellung läuft (Träger, Marken, R auf C^5, X, Y, beide 3+2-Schnitte, mod-16-Bilanz), ist blind; J_F und die Tomita-artige Konjugation sind für beide Zweige kovariant; die Spiegelung tau am Markenkreis kippt den Zweig bei festem R, festen Marken, Y, X und 16 und kehrt dabei nur die Hardy- und Energieorientierung um. Die Hardy-Orientierung (Index +1) wählt deshalb erst mit einer Gradierungsregel: Torusfortsetzung der leichtesten Energien des Originals eps = -1, leichteste Energie je Mode eps = +1. Die eingefrorene Uhr ist nicht übertragbar, z122s Forderung ist P_glue. Exakt gilt P_glue = P_IF x P_lift": true,
+  "Teil 3: Die Drei bekommt keine native fermionische Quelle. Original und Partner liefern auf ungeraden Operatoren nur +-i; in jeder Komposition über Nähte ist eine fermionische +-1-Mode gleichbedeutend mit dem Bruch von R^2 = (-1)^F, Quarter mit alpha = 0, 1/2 ebenso, und det R = -1 lässt modulo G_SM stets eine R^2-gerade Mode. Bosonisch existiert die Drei (z92: Sym^2(2)/(uv)^2), aber keine Gradierung respektiert zugleich ihre Produktrelationen und die Einsrelation des Markenschnitts, und genau dort sitzt der Zweig: produktverträglich und leichteste Energien eps = -1, einsverträglich und leichteste Energien eps = +1": true
+ },
+ "zahlen": {
+  "Bestand": {
+   "z82 R~ Lambda(-R)^-1 je s (Datei)": {
+    "1j": "-1j",
+    "(-0-1j)": "(-0+1j)"
+   },
+   "nachgerechnet": {
+    "i": "-i",
+    "-i": "i"
+   },
+   "Konventionsstellen (Prüfungen bestanden)": {
+    "z116: R = i Gamma_11": [
+     true
+    ],
+    "z117: I_F = R = i Gamma_11": [
+     true
+    ],
+    "z118: Uhrrichtung durch die Marken": [
+     true
+    ],
+    "z122: R = i (die 16) auf die Originalgerade": [
+     true
+    ]
+   },
+   "z113 Koeffizienten R, R^2, R^3": {
+    "R": "1/4",
+    "R2": "1/2",
+    "R3": "3/4"
+   }
+  },
+  "Hebungen": {
+   "R~_eps(nu^c)": {
+    "1": "i",
+    "-1": "-i"
+   },
+   "Drehwinkel der Vektorwirkung je Ebene (Einheiten pi/2)": [
+    0.0,
+    1.0,
+    2.0,
+    3.0,
+    0.0
+   ]
+  },
+  "Gruppe": {
+   "Ordnungen im Urbild": {
+    "1": 1,
+    "2": 3,
+    "4": 4
+   },
+   "Schnitte k -> (R^k, s_k)": [
+    [
+     "1",
+     "-i",
+     "-1",
+     "i"
+    ],
+    [
+     "1",
+     "i",
+     "-1",
+     "-i"
+    ]
+   ]
+  },
+  "Eichinvariant": {
+   "G_SM-Singuletts in 16": 1,
+   "in 16 x 16": 1,
+   "R~ x R~ auf 16 x 16-Singuletts": {
+    "1": "-1",
+    "-1": "-1"
+   },
+   "R~^3 auf nu^c x nu^c x nu^c": {
+    "1": "-i",
+    "-1": "i"
+   }
+  },
+  "mod 8": {
+   "Logarithmen (w_m in m + 4{-2..2})": 3125,
+   "Zweige": {
+    "1": 1562,
+    "-1": 1563
+   },
+   "Hauptlogarithmen -> Zweig": {
+    "(0, 1, -2, -1, 0)": 1,
+    "(0, 1, 2, -1, 0)": -1
+   }
+  },
+  "GL2": {
+   "Torus diag(i mu, mu)": {
+    "1": {
+     "wirkt als R auf Sym^4": true,
+     "det": "i",
+     "Zweig": -1
+    },
+    "i": {
+     "wirkt als R auf Sym^4": true,
+     "det": "-i",
+     "Zweig": 1
+    },
+    "-1": {
+     "wirkt als R auf Sym^4": true,
+     "det": "i",
+     "Zweig": -1
+    },
+    "-i": {
+     "wirkt als R auf Sym^4": true,
+     "det": "-i",
+     "Zweig": 1
+    }
+   },
+   "SL(2) diag(om, om^-1) auf Sym^4": [
+    "-1",
+    "-i",
+    "1",
+    "i",
+    "-1"
+   ]
+  },
+  "X und 3+2": {
+   "X auf der 16": {
+    "-3": 5,
+    "1": 10,
+    "5": 1
+   },
+   "Y auf der 16": {
+    "-0.666666667": 3,
+    "-0.5": 2,
+    "0.0": 1,
+    "0.166666667": 6,
+    "0.333333333": 3,
+    "1.0": 1
+   },
+   "mod-16-Bilanz je Zweig": {
+    "1": 16,
+    "-1": -16
+   },
+   "U1-Regel R~ = exp(i pi X/2) Lambda(-R) je Orientierung": {
+    "X = 5 - 2p": 1,
+    "X' = 2p - 5": -1
+   }
+  },
+  "Hardy": {
+   "Index (H^2 an 0, getauscht)": {
+    "H^2 an 0 (A_q)": [
+     [
+      1,
+      0
+     ],
+     [
+      1,
+      0
+     ]
+    ],
+    "getauscht (A_q^T)": [
+     [
+      0,
+      1
+     ],
+     [
+      0,
+      1
+     ]
+    ]
+   },
+   "Verschwindungsordnungen an 0 / unendlich": [
+    [
+     0,
+     1,
+     2,
+     3,
+     4
+    ],
+    [
+     4,
+     3,
+     2,
+     1,
+     0
+    ]
+   ],
+   "Gewichte an 0 / unendlich": [
+    [
+     0,
+     1,
+     2,
+     3,
+     4
+    ],
+    [
+     -4,
+     -3,
+     -2,
+     -1,
+     0
+    ]
+   ],
+   "Zweige an 0 / unendlich": [
+    -1,
+    1
+   ],
+   "leichteste Energien je Uhrklasse des Originals": {
+    "-I": "3/4",
+    "I": "1/4"
+   },
+   "Torusfortsetzung (alpha, beta)": {
+    "alpha": "1",
+    "beta": "0"
+   },
+   "Gewichte Torus / minimal je Mode": [
+    [
+     0,
+     1,
+     2,
+     3,
+     4
+    ],
+    [
+     0,
+     1,
+     2,
+     3,
+     0
+    ]
+   ],
+   "Zweig Torus / minimal": [
+    -1,
+    1
+   ]
+  },
+  "Spiegelungen": {
+   "Operationen": {
+    "J_F (Teilchen-Loch, z116)": {
+     "Zweig relativ zur Bilduhr": {
+      "1": 1,
+      "-1": -1
+     },
+     "Hardy-Korrelation erhalten": true
+    },
+    "K (z -> z-quer, R -> R^-1)": {
+     "Zweig relativ zur Bilduhr": {
+      "1": -1,
+      "-1": 1
+     },
+     "Hardy-Korrelation erhalten": false
+    },
+    "s (z -> 1/z)": {
+     "Zweig relativ zur Bilduhr": {
+      "1": 1,
+      "-1": -1
+     },
+     "Hardy-Korrelation erhalten": true
+    },
+    "tau (z -> 1/z-quer)": {
+     "Zweig relativ zur Bilduhr": {
+      "1": -1,
+      "-1": 1
+     },
+     "Hardy-Korrelation erhalten": false
+    }
+   },
+   "J_F R~_eps J_F^-1 = R~_eps": {
+    "1": true,
+    "-1": true
+   },
+   "K: conj R~_eps = R~_eps^-1": {
+    "1": true,
+    "-1": true
+   }
+  },
+  "verklebter Modul": {
+   "sigma_IF = +1, eps = +1": {
+    "= P_glue mit sigma_glue": 1,
+    "dim (T x 16) darin": 64,
+    "Dimension": 128
+   },
+   "sigma_IF = +1, eps = -1": {
+    "= P_glue mit sigma_glue": -1,
+    "dim (T x 16) darin": 0,
+    "Dimension": 128
+   },
+   "sigma_IF = -1, eps = +1": {
+    "= P_glue mit sigma_glue": -1,
+    "dim (T x 16) darin": 0,
+    "Dimension": 128
+   },
+   "sigma_IF = -1, eps = -1": {
+    "= P_glue mit sigma_glue": 1,
+    "dim (T x 16) darin": 64,
+    "Dimension": 128
+   }
+  },
+  "Forderung und Uhrspur": {
+   "16 bei T (Originalseite) für eps": {
+    "sigma_IF = +1": [
+     1
+    ],
+    "sigma_IF = -1": [
+     -1
+    ]
+   },
+   "Tr_16 z_X^eps / 16, Tr_16q / 16": {
+    "1": [
+     "i",
+     "-i"
+    ],
+    "-1": [
+     "-i",
+     "i"
+    ]
+   }
+  },
+  "eingefrorene Uhr": {
+   "Viernaht-Gitter: Wurzeln je Sektor c": [
+    56,
+    64,
+    56,
+    64
+   ],
+   "ganzzahlig, Spiegelungen": [
+    true,
+    true
+   ],
+   "Vielfachheiten (1, i, -1, -i)": {
+    "Viernaht-Uhr": {
+     "1": 64,
+     "i": 64,
+     "-1": 56,
+     "-i": 64
+    },
+    "z_X (D5 + A3)": {
+     "1": 60,
+     "i": 64,
+     "-1": 60,
+     "-i": 64
+    },
+    "R~_+ in E8": {
+     "1": 82,
+     "i": 56,
+     "-1": 54,
+     "-i": 56
+    },
+    "R~_- in E8": {
+     "1": 82,
+     "i": 56,
+     "-1": 54,
+     "-i": 56
+    }
+   },
+   "[V,V] und [V,V-quer]": {
+    "Viernaht, R = -i": [
+     56,
+     64
+    ],
+    "(16q, 4q)": [
+     60,
+     60
+    ]
+   },
+   "z113-Projektor auf R": {
+    "1": "0",
+    "i": "0",
+    "-1": "0",
+    "-i": "1"
+   },
+   "Minimalnorm des Originalsektors": 0.5
+  },
+  "Kompositionen": {
+   "Uhren": 84,
+   "ohne fermionische +-1": 14,
+   "Quarter alpha": {
+    "0": {
+     "Charakter": "1",
+     "R^2 auf dem Fermion": "1"
+    },
+    "1/4": {
+     "Charakter": "i",
+     "R^2 auf dem Fermion": "-1"
+    },
+    "1/2": {
+     "Charakter": "-1",
+     "R^2 auf dem Fermion": "1"
+    },
+    "3/4": {
+     "Charakter": "-i",
+     "R^2 auf dem Fermion": "-1"
+    }
+   }
+  },
+  "Gradierungen der Drei": {
+   "produktverträglich": 13,
+   "einsverträglich": 2058,
+   "beides": 0,
+   "Zweige produkt / eins": [
+    {
+     "1": 8,
+     "-1": 5
+    },
+    {
+     "1": 1026,
+     "-1": 1032
+    }
+   ],
+   "Z8-Daten der 2 -> Zweige": {
+    "(w_1, w_3) mod 8 = (1, 3)": [
+     -1,
+     1
+    ],
+    "(w_1, w_3) mod 8 = (5, 7)": [
+     -1,
+     1
+    ]
+   },
+   "leichteste produkt / eins": [
+    [
+     [
+      0,
+      1,
+      2,
+      3,
+      4
+     ]
+    ],
+    [
+     0,
+     1,
+     2,
+     3,
+     0
+    ]
+   ]
+  },
+  "status": {
+   "P_lift als endliche Aussage": [
+    "E",
+    "R~_eps = eps i Lambda(R), eps = +1; gleichwertig nu^c-Ladung, tr W mod 8, Hauptwinkel von e_2, det des (u, v)-Lifts, U(1)_X-Halbdrehung"
+   ],
+   "Existenz der Spin-Z4 (zweigfrei)": [
+    "E",
+    "beide Zweige modulo G_SM = z_X^(+-1); R^2 = (-1)^F wählt die Spinorhebung; Vektordarstellung zweigblind"
+   ],
+   "X-Ladung, 3+2-Schnitt": [
+    "E (negativ)",
+    "blind; U1-Regel ist Orientierung von U(1)_X"
+   ],
+   "Hardy-Orientierung": [
+    "C",
+    "Torusfortsetzung der leichtesten Energien eps = -1 (gegen die Konvention), leichteste Energie je Mode eps = +1"
+   ],
+   "Tomita, J_F, K": [
+    "E (negativ)",
+    "kovariant für beide Zweige; z118s 'J R J^-1 = R' für beide"
+   ],
+   "Spiegelung tau": [
+    "E",
+    "kippt eps, hält R, Marken, Y, X, 16, kehrt Hardy- und Energieorientierung um"
+   ],
+   "eingefrorene Uhr (z113)": [
+    "E (negativ)",
+    "nicht auf die 16 übertragbar; Zweige in E8 gleich"
+   ],
+   "z122-Forderung": [
+    "L",
+    "zirkulär, unter P_IF gleich P_glue"
+   ],
+   "P_glue = P_IF x P_lift": [
+    "E",
+    "sigma_glue = sigma_IF eps; Theta und Zweigwechsel wirken auf dem Modul gleich"
+   ],
+   "fehlende Drei": [
+    "E (negativ)",
+    "keine fermionische Quelle ohne Bruch von R^2 = (-1)^F; bosonisch ohne verträgliche Gradierung"
+   ],
+   "Herkunft des Zweigs": [
+    "O",
+    "Z16-Datum der Drei; kein natives Datum; Kandidat: Z8 der Verzweigungsfelder an den Marken (z92)"
+   ],
+   "gesamt": [
+    "irreduzibel",
+    "nicht nativ, nicht gleich P_IF; exakt das Relativbit von P_glue gegen P_IF"
+   ]
+  },
+  "native_Daten": {
+   "X-Ladung und 3+2-Schnitt": "blind (Vektordarstellung); U1-Regel = Orientierung von U(1)_X",
+   "Hardy-Orientierung / Index von A_q": "wählt nur mit Gradierungsregel: Torus eps = -1, je Mode eps = +1",
+   "Tomita J, J_F, K": "kovariant für beide Zweige",
+   "Spiegelung tau am Markenkreis": "kippt eps bei festem R, Marken, Y, X, 16; kehrt Hardy- und Energieorientierung um",
+   "eingefrorene Uhr R = -i (z113)": "nicht übertragbar (u(8) gegen so(10) + su(4); R~_+ und R~_- in E8 gleich)",
+   "z122-Forderung (16 mit R = +i auf der Originalgeraden)": "zirkulär: mit P_IF gleich P_glue"
+  },
+  "z132_urteil_kurz": {
+   "Urteil": "P_lift irreduzibel: nicht nativ, nicht dasselbe Bit wie P_IF; exakt P_glue = P_IF x P_lift",
+   "Prämissenliste": "P_lift bleibt; Inhalt geschärft: (i) zweigfrei die Uhr auf der unquelligen Drei, (ii) Zweig eps = sigma_glue sigma_IF; die Buchung P_IF = P_glue setzt eps = +1 voraus",
+   "Chiralität": "Existenz (eine Weyl-16, N16 = +-3) zweigunabhängig; Vorzeichen (Seite der 16, N16, eps-Term der Uhrspur) = sigma_IF eps",
+   "Konvention": "Bestand eps = +1; Torusfortsetzung der leichtesten Energien gäbe eps = -1"
+  }
+ },
+ "urteil": "P_lift ist nicht nativ und nicht auf P_IF reduzierbar; es ist ein eigenes Bit, das sich exakt als Relativvorzeichen schreiben lässt: eps = sigma_glue sigma_IF, also P_glue = P_IF x P_lift. (1) Endliche Aussage [E]: Die Uhr des Originals wirkt auf S = Lambda^* C^5 (x) det^(-1/2) als R~_eps = eps i Lambda(R), eps = +1. Beide Zweige haben Ordnung 4, erfüllen R~^2 = -Lambda(R^2) (Spinregel modulo G_SM), sind z_X^eps mal Eichelement und wirken auf den zehn Majoranas gleich; der Zweigwechsel ist das zentrale -1 von Spin(10). Das Urbild von <R> ist Z4 x Z2 mit genau zwei Schnitten. Gleichwertig ist eps i die Uhrladung des G_SM-Singuletts nu^c, tr W = 6 mod 8 für jeden ganzzahligen Logarithmus, die Halbdrehung -pi der R = -1-Mode e_2 im Hauptwinkel, det = -i des Ordnung-4-Lifts auf (u, v) und die U(1)_X-Halbdrehung -pi. Zweigfrei und exakt ist die Spin-Z4 selbst (z82). (2) Native Daten: Alles, was über die Vektordarstellung läuft (Träger, Marken, R auf C^5, X, Y, beide 3+2-Schnitte, mod-16-Bilanz), ist blind; U1s Regel 'Zweig aus X' ist die Orientierung von U(1)_X. J_F und die Tomita-artige Konjugation sind für beide Zweige kovariant, auch z118s Begründung 'J R J^-1 = R'. Die Spiegelung tau: z -> 1/z-quer am Kreis der Marken hält R, die Marken, Y, X und die 16 fest und kippt eps; sie kehrt nur die Hardy-Orientierung (Index von A_q) und das Energievorzeichen um. Darum wählt die Hardy-Orientierung den Zweig erst mit einer Gradierungsregel, und die beiden natürlichen Regeln widersprechen sich: Die eindeutige Torusfortsetzung der leichtesten Energien des Originals (1/4 für R = i, 3/4 für R = -i) gibt die Gewichte (0, 1, 2, 3, 4) und eps = -1, entgegen der Bestandskonvention; die leichteste Energie je Mode gibt (0, 1, 2, 3, 0) und eps = +1. Die eingefrorene Uhr R = -i der Viernaht-(E8)_1 ist nicht übertragbar: Viernaht-Uhr (Zentralisator u(8)), z_X (so(10) + su(4)) und die gehobene Uhr (in E8 für beide Zweige gleich) sind paarweise nicht konjugiert, und die eingefrorene Stufe-1-Schicht ist weder (16, 4) noch (16q, 4q). z122s Forderung '16 mit R = +i auf der Originalgeraden' ist unter P_IF gleich P_glue, also zirkulär. (3) Die fehlende Drei hat keine native fermionische Quelle: Partner und Original liefern auf ungeraden Operatoren nur +-i; in allen 84 Uhren über bis zu drei Nähte gibt es eine fermionische +-1-Mode genau dann, wenn R^2 = (-1)^F verletzt ist; Quarter mit alpha = 0, 1/2 ebenso; det R = -1 lässt modulo G_SM stets eine R^2-gerade Mode. Bosonisch existiert sie (z92), aber keine ganzzahlige Gradierung respektiert zugleich ihre Produktrelationen und die Einsrelation e_4 - e_0 = 1 des Markenschnitts, und die Z8-Daten der 2 lassen beide Zweige offen: Der Zweig ist ein Z16-Datum der Drei. (4) Urteil: irreduzibel. Folgen: Die Existenz der Chiralität (eine Weyl-16, N16 = +-3) hängt nicht am Zweig. Ihr Vorzeichen (16 auf der Original- oder Partnergeraden, N16 = +3 oder -3, Vorzeichen des eps-Terms der Uhrspur) ist sigma_IF eps; z122s 'N16 = +3 auf der Originalgeraden' und die Buchung 'P_IF = P_glue, ein Bit' setzen eps = +1 stillschweigend voraus. In der Prämissenliste bleibt P_lift stehen, mit geschärftem Inhalt: zweigfrei die Uhr auf der unquelligen Drei, dazu der Zweig als Relativbit von P_glue gegen P_IF; wer P_IF und P_glue als ein Bit zählt, muss P_lift behalten. Nichts ist befördert; 3+1-Aussagen bleiben Kinematik der Einpaarschicht."
+}

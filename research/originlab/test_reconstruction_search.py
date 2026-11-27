@@ -328,29 +328,81 @@ class CompleteSolutionDistance(unittest.TestCase):
         # P_univ, P_uhr merge into P_std
         self.assertEqual(d["distance"], {"missing_clauses": 1, "free_numbers": 1, "premises_beyond_axiom": 7})
         self.assertTrue(d["conventions"]["P_IF"]["holds"])
-        self.assertEqual(d["open_total"], 10)
-        self.assertEqual(d["by_question"], {"origin": ["K19", "K20"], "composition": ["P_ord", "P_std"],
+        # z178, z180: K19 follows from P_std, the GNS rule and A*, K20 from P_std and P_zentral with the geometric
+        # partner; neither is an independent item any more, and neither is closed. Eight independent items remain
+        self.assertEqual(d["open_total"], 8)
+        self.assertEqual(d["by_question"], {"origin": [], "composition": ["P_ord", "P_std"],
                                             "gravity": ["P_G", "P_curv", "graviton"],
                                             "identification": ["I_step", "P_zentral"],
                                             "statistics": ["P_paar"]})
+        self.assertEqual(sorted(d["bench_derived"]), ["K19", "K20"])
+        self.assertEqual(d["bench_derived"]["K19"]["rests_on"], ["P_std"])
+        self.assertEqual(d["bench_derived"]["K20"]["rests_on"], ["P_std", "P_zentral"])
+        self.assertEqual(d["bench_open"], {})
         self.assertTrue(all("pair of seams" in label for label in d["best"]))
 
     def test_unification_candidates_close_nothing_by_derivation(self):
         import reconstruction_search as rs
         u = rs.unification_candidates()
-        # z175 to z177: eleven candidates for one object behind several open items, each with a computed test
-        self.assertEqual(len(u["candidates"]), 11)
-        self.assertEqual(u["counts"], {"excluded": 8, "holds": 2, "reading": 1})
+        # z175 to z177: eleven candidates for one object behind several open items; z178 to z182: eight more;
+        # z183: the attack on P_std adds one equivalence and one exclusion
+        self.assertEqual(len(u["candidates"]), 21)
+        self.assertEqual(u["counts"], {"excluded": 12, "holds": 6, "reading": 1, "derived": 2})
         self.assertEqual(u["closed_by_derivation"], [])
-        self.assertEqual(u["open_total"], 10)
+        self.assertEqual(u["derived_under_premises"], {"K19": ["P_std"], "K20": ["P_std", "P_zentral"]})
+        self.assertEqual(u["open_total"], 8)
         verdict = {r["candidate"]: r["verdict"] for r in u["candidates"]}
         self.assertEqual(verdict["pair of seams = the two sheets of P1"], "excluded")
         self.assertEqual(verdict["number of seams from anomaly, positivity and normal statistics"], "holds")
         self.assertEqual(verdict["superselection of the pair clock = gauge sum"], "reading")
         self.assertEqual(verdict["graviton as an excitation of one glued object"], "excluded")
-        # the one reading would leave eight items; it is not derived and does not count
+        self.assertEqual(verdict["gauge completion of the pair clock from superselection, the GNS rule and A*"], "derived")
+        self.assertEqual(verdict["clock = deck parity of the sections extended to the seam (P_deck)"], "holds")
+        self.assertEqual(verdict["graviton as a collective excitation of several seams"], "excluded")
+        self.assertEqual(verdict["pair-clock part of P_std as locality: no one-sided current mixes the deck halves"],
+                         "holds")
+        self.assertEqual(verdict["P_std from A*, time neutrality or the covering of the four marks"], "excluded")
+        # the z176 reading left eight items; z178 and z180 reach the same eight without the reading
         self.assertEqual(u["open_under_readings"],
                          ["I_step", "P_G", "P_curv", "P_ord", "P_paar", "P_std", "P_zentral", "graviton"])
+
+    def test_derived_bench_row_needs_its_premise_and_its_result(self):
+        import pathlib
+        import tempfile
+        import reconstruction_search as rs
+        with tempfile.TemporaryDirectory() as tmp:                      # without the result files nothing is derived
+            d = rs.complete_solution_distance(pathlib.Path(tmp))
+            self.assertEqual(d["bench_derived"], {})
+            self.assertEqual(sorted(d["bench_open"]), ["K19", "K20"])
+
+    def test_counter_models(self):
+        import reconstruction_search as rs
+        c = rs.counter_models()
+        rep = {r["conditions"]: r for r in c["completions_of_the_clock_sectors"]}
+        self.assertEqual(rep["base changes S alone (fixed spin structure)"]["models"], 27)
+        self.assertEqual(rep["A*: S and T"]["models"], 10)
+        self.assertEqual(rep["A*: S and T"]["verdict"], "ambiguous")
+        # A* and superselection alone do not gauge: several completions without charged local field remain
+        self.assertEqual(rep["A* and no local field with pair-clock charge"]["verdict"], "ambiguous")
+        self.assertEqual((rep["A*, superselection and the GNS rule"]["models"],
+                          rep["A*, superselection and the GNS rule"]["verdict"]), (1, "unique"))
+        # without T a spin form survives: flux 1 with charge 2 and spin 1/2
+        without_t = rep["S, superselection and the GNS rule, without T"]
+        self.assertEqual((without_t["models"], without_t["verdict"]), (2, "ambiguous"))
+        # z183: conditions without a mirror bit, counted by spectrum. Time neutrality and orientation reversal of the
+        # section bases leave counter-models to P_std; one local field with the deck parity as monodromy gives the gauge sum
+        self.assertEqual({r["conditions"]: r["spectra"] for r in c["completions_of_the_clock_sectors"]}["A*: S and T"], 3)
+        ex = rep["A* and time neutrality (exchange of seam and partner)"]
+        self.assertEqual((ex["models"], ex["spectra"], ex["verdict"]), (8, 3, "ambiguous"))
+        refl = rep["A* and orientation reversal of the section bases"]
+        self.assertEqual((refl["models"], refl["spectra"], refl["verdict"]), (6, 2, "ambiguous"))
+        mark = rep["A* and a local field with the deck parity as monodromy of the parents"]
+        self.assertEqual((mark["models"], mark["spectra"], mark["verdict"]), (4, 1, "unique"))
+        self.assertEqual(c["ambiguous"], ["value of G/a^2 under the area rule", "gate phase under P_uhr",
+                                          "orientation of the circle through the four marks",
+                                          "spectrum of the pair of seam and partner under A*"])
+        self.assertEqual([r["verdict"] for r in c["recorded"]],
+                         ["ambiguous", "ambiguous", "ambiguous", "unique", "ambiguous"])
 
 
 if __name__ == "__main__":

@@ -1,0 +1,3100 @@
+{
+ "checks": {
+  "[E] Koszul-Spuridentität: Für den gradierten N-Zyklus Gamma(sigma) auf V^(x)N (Superraum 2|2, zufälliges gerades A) gilt Tr(Gamma(sigma) A^(x)N) = Tr(K^(N-1) A^N), für den ungradierten Tr(A^N) (Fehler 2e-14). Gegenprobe: Für gerade N unterscheiden sich beide (|Differenz| 17.15, 149.48), für N = 3 nicht (0e+00): Der Koszul-Faktor eines k-Zyklus ist K^(k-1), also die R^2-Parität für gerade Zyklen": true,
+  "[E] Der gradierte N-Zyklus ist gaußsch: Seine Spur auf N Originalen ist exakt das Produkt der Spuren der N Fouriermoden mit den Phasen e^(2 pi i k/N) auf beiden Quartern, Tr_C(K^(N-1) q^(N L_0)) = prod_k Tr(e^(2 pi i (k/N)(Q_a + Q_b)) q^(L_0)) (Verhältnis 1, Streuung 1e-25 für N = 2, 3, 4; Thetaidentität). Die langen Nähte des gradierten Zyklus sind also Fouriermoden mit Verdrillung k/N. Gegenprobe: Die ungradierte Spur ist für N = 2 und 4 kein solches Produkt (relative Streuung 0.189, 0.013); für N = 3 sind beide Spuren gleich": true,
+  "[E, entscheidend] Anomalie der Koszul-Permutation: Mit P_CAR auf dem Original (z106) ist die Spur des gradierten Tauschs die einseitige R^2-Spur bei 2 tau (gleiche Funktion: True), und deren Bahn hat keinen Charakter, wie das einseitige R^2 einer Naht (z113: []): Der gradierte Tausch (N = 2) und das gradierte Z4 (N = 4, 4-Zyklus und Doppeltausch) sind anomal (modular: False, False). Für N = 3 ist der Koszul-Faktor trivial und die Permutation frei (True). Ungradiert und mit J-kovarianter CAR (Koszul-Vorzeichen auch auf dem Partner) ist sie frei für N = 2 und 4; bei N = 2 sind beide dieselbe Bahnsumme": true,
+  "[E] Anomalieaufhebung durch Kleidung: Der mit einem GSO-Faktor gekleidete Tausch Gamma(sigma) G_1 hat die Spur von U = G R^2 bei N tau (gleiche Funktion für N = 2: True), denn K G = R^2 U R^2 = U; er ist für N = 2 und 4 anomaliefrei (True, True), ebenso Gamma(sigma) U_1 (Spur G bei N tau; True, True). Die Koszul-Permutation ist modular nur zusammen mit einer 2 pi-Drehung einer Naht, also als Tausch mit Drehung (Finkelstein-Rubinstein-Form der Spin-Statistik, Lesart L)": true,
+  "[E] Reproduktion und Kontrolle: Der neue Aufbau (Kranzprodukt, Multimengen-Bahnen) gibt z113 exakt wieder: N = 2 diagonal G = +1 min 4.634e-07 (z113 4.634e-07), G = -1 -77983.3 (z113 -77983.3). Mit getrennter Nativprojektion je Naht (Produkt zweier N = 1-Summen) bleibt G = +1 negativ (3.51e-07), G = -1 positiv (3.7e-07): Die gemeinsame Uhrverdrillung ist Prämisse der folgenden N = 2-Ergebnisse": false,
+  "[E, entscheidend] N = 2 mit summierter 2 pi-Drehung: Pro Naht ist G = +1 (P_GSO auf jeder Naht) bei gemeinsamer Uhrverdrillung positiv (min 4.58e-07), ebenso G = -1 (4.67e-07); z113 hatte pro Naht nur N = 1 geprüft. Mit P_ident wird es negativ oder anomal: ungradierter (= J-kovarianter) Tausch -5.48e+05, Koszul-Tausch (P_CAR) ohne modulare Ergänzung. Mit Tausch bleiben pro Naht G = -1 (3.4e-06) und diagonal G = +1 (4.6e-07) positiv": true,
+  "[E, entscheidend] N = 2 gekleideter Koszul-Tausch: Von den vier Charakteren von <Gamma(pi) G_1> (Z4, Quadrat = G_1 G_2) ist genau Gamma(pi) G_1 = +1 positiv (min 3.4e-06; i^1, i^2, i^3: -7.8e+04, -5.48e+05, -7.8e+04). Dort gilt auf allen Zuständen G_1 G_2 = +1 und auf den P_GSO-Zuständen (G_1 = G_2 = 1) Gamma(pi) = +1, also P_ident mit P_CAR (Pauli). Mit der Drehung statt GSO (Gamma(pi) U_1) ist nur -1 positiv: Identische Paare überleben dann nur mit G = -1": true,
+  "[E] Reproduktion z113 bei N = 3, 4: diagonal G = +1 min -1.86152e+07 (z113 -18615205.7) und -82.3255 (z113 -82.3255)": true,
+  "[E, entscheidend] P_ident macht G = +1 pro Naht für N = 3 und 4 nicht positiv: pro Naht allein -1.86e+07 bzw. -47.9, mit zyklischer Permutation -2.41e+09 bzw. -3.9e+12 (ungradiert; N = 3 ist gradiert dasselbe), J-kovariant bei N = 4 -3.9e+12; die Koszul-Permutation ist bei N = 4 anomal. Dagegen ist die vertauschte Statistik G = -1 pro Naht mit Permutation positiv (0.0017, 0.24)": true,
+  "[E, entscheidend] Gekleidete Koszul-Permutation bei N = 4: Von den acht Charakteren von <Gamma(sigma) G_1> (Z8, vierte Potenz = G_1 G_2 G_3 G_4) ist genau Gamma(sigma) G_1 = +1 positiv (min 0.0676; positiv: [True, False, False, False, False, False, False, False]). Damit ist die diagonale GSO-Regel G_d = +1, allein bei N = 4 negativ (z113: -82.3) und mit ungradiertem Z4 ebenfalls (-80.9), als geeichtes Element (G_d = (Gamma G_1)^4) auf allen Zuständen erfüllt und positiv. Bei N = 3 ist dagegen +1 negativ (-6.18e+08); positiv sind dort nur die Charaktere [2, 3, 4] (Sechstel), also G_d = +1 nur mit nichttrivialem Z3-Charakter ohne P_ident": true,
+  "[E] Direkte Gegenprobe der Modulinvarianz (unabhängig von der Bahnbuchhaltung, drei Testpunkte): Die Summen pro Naht G = +1 (N = 2) und gekleidet Gamma G_1 = +1 (N = 2, 4) sind S- und T-invariant (größter relativer Fehler 9e-24); der Originalsektor allein ohne Bahnergänzung ist es nicht (S-Abweichung 0.06)": true,
+  "[E] Projektoralgebra (exakt auf allen 16 Eigenwertpaaren von A = i^(N - Nquer) und R): Mit Z_SU = -A ist P_glue (Z_SU R = 1 auf dem Spinormodul U = -1, G = 1 auf den Bosonen) = (1/8)[3 + U + R^2 + 3G - AR + A^3R + AR^3 - A^3R^3] (Indikator True), P_A3 = (1/4)[1 - AR + G - A^3R^3] (True). Der Vierteldrehungsanteil von P_glue ist (1/8)(U - 1)(AR - AR^3) (True), er lebt nur auf dem Spinormodul; außerdem enthält P_glue das einseitige R^2 = U G mit Koeffizient 1/8": true,
+  "[E, entscheidend] Bahnen der Vierteldrehung (96 Elemente, lange Nähte bis Länge 16): Für jede Uhrpotenz R^r und jeden Nativeinschub liegen A R^r und A^3 R^r = U A R^r in derselben SL(2,Z)-Bahn mit relativem Koeffizienten exakt 1 (N = 1, 2, 4: True). Anomal sind bei N = 1 die ungeraden Uhrpotenzen [1, 3], bei N = 2 und 4 keine ([], []). Folge: Jede modulare Ergänzung eines Vierteldrehungsterms ist proportional zu (1 + U) und verschwindet auf dem Spinormodul": true,
+  "[E, entscheidend] P_glue hat für N = 1, 2, 3, 4 keine modulare Ergänzung ([False, False, False, False]): N = 1, 3 anomal (Vierteldrehung mit ungerader Uhrpotenz und einseitiges R^2), N = 2 einseitiges R^2 nur mit Charakter (1/2, 1/2) und die Vierteldrehungsbahnen inkonsistent, N = 4 inkonsistent (['inkonsistent (Bahn 96)', 'inkonsistent (Bahn 96)']): Die Vorzeichen -AR, +A^3R verlangen den relativen Koeffizienten -1, die Bahn erzwingt +1. Der definierende Anteil (U - 1)(AR - AR^3) ist genau der modular unsichtbare": true,
+  "[E] P_A3 (die Z4-Regel ohne Einschränkung auf Spinoren, AR = -1): für ungerade N anomal ({1: False, 3: False}); für N = 2 und 4 ergänzt die Bahn A^3R mit demselben Koeffizienten wie AR ((-1.0 + 0.0j)), der Originalsektor wird (1/4)[1 + G - (1 + U)(AR + A^3R^3)] mit kleinstem Eigenwert -0.5 (N = 2) bzw. -0.5 (N = 4) auf den neutralen Bosonen A = R = 1: negative Vielfachheiten schon im Originalsektor. Der Spiegel AR = +1 ebenso (-0.5). Kontrolle: P_GSO ergänzt sich zum Projektor (Eigenwerte -4.7e-27 bis 1)": true,
+  "[E] Klassifikation der Hebungen auf N Nähten (diagonal): Die unverdrehte Hebung ist für N = 1..4 nur mit U = +1 positiv ([True, True, True, True], U = -1: [False, False, False, False]); P_GSO diagonal G = +1: [False, True, False, False], G = -1: [True, False, False, False]; die Z4-Hebung U R (Quadrat = einseitiges R^2) ist erst bei N = 4 modular (['anomal', 'anomal', 'anomal', 'modular']); die Vierteldrehung allein ist nur mit reellem Eigenwert (A = +-1, also U = +1, keine Spinoren) ergänzbar, mit A = +-i (auf Spinoren) nie": true
+ },
+ "befunde": {
+  "Teil 1: Die Koszul-Permutation (P_ident mit P_CAR des Originals) ist für gerade N anomal; ihre Anomalie ist die des einseitigen R^2 und wird genau durch einen GSO-Faktor einer Naht aufgehoben (Gamma G_1 hat die Spur von U bei N tau). P_ident macht G = +1 pro Naht für N = 2, 3, 4 nicht positiv. Die gekleidete Koszul-Permutation Gamma G_1 = +1 ist bei N = 2 und 4 modulinvariant und positiv; dort gilt die Spin-Statistik als Gesamtregel G_d = +1 auf allen Zuständen, und auf den P_GSO-Zuständen ist die Austauschregel genau P_ident mit P_CAR. Bei N = 3 gelingt das nicht": true,
+  "Teil 2: Die Einschränkung auf den Spinormodul umgeht z113s Hindernis nicht, sie verschärft es. Modulsummation paart jede Vierteldrehung A X mit U A X (Koeffizient 1), sieht also auf dem Spinormodul nur U und R^2, wie bei P_GSO. Der chirale Z4-Inhalt von P_glue liegt genau dort, wo die Modulsummation nichts sieht; P_glue hat für N = 1..4 keine modulare Ergänzung, P_A3 ergänzt sich nur zu einem Nicht-Projektor": true,
+  "Teil 3: Spin-Statistik (2 pi-Drehung = (-1)^F) ist im Nahtrahmen modulverträglich, aber nur als Gesamtregel und nur für gerade N: bei N = 2 diagonal oder pro Naht ohne P_ident, bei N = 2 und 4 mit P_ident als gekleidete Koszul-Permutation Gamma G_1 = +1. Pro Naht zusammen mit P_ident ist sie für N = 2, 3, 4 ausgeschlossen. Ihre chirale Z4-Verfeinerung auf Spinoren (P_glue, P_A3) ist modular nie verträglich": true
+ },
+ "zahlen": {
+  "koszul_spuridentitaet (Superraum 2|2, zufälliges gerades A)": {
+   "2": {
+    "gradiert - Tr(K^(N-1) A^N)": 1.7763568394002505e-15,
+    "ungradiert - Tr(A^N)": 1.897149936107019e-15,
+    "|gradiert - ungradiert|": 17.150597211568265
+   },
+   "3": {
+    "gradiert - Tr(K^(N-1) A^N)": 0.0,
+    "ungradiert - Tr(A^N)": 0.0,
+    "|gradiert - ungradiert|": 0.0
+   },
+   "4": {
+    "gradiert - Tr(K^(N-1) A^N)": 1.4210854715202004e-14,
+    "ungradiert - Tr(A^N)": 2.1316282072803006e-14,
+    "|gradiert - ungradiert|": 149.48085737727243
+   }
+  },
+  "fourierzerlegung_gradierter_zyklus": {
+   "2": {
+    "gradiert/Fourierprodukt": "(1.0 - 1.66553593984e-26j)",
+    "|1 - Verhältnis|": 5.431542788916404e-26,
+    "Streuung gradiert": 2.951428477299962e-26,
+    "Streuung ungradiert (rel.)": 0.18925748292568048
+   },
+   "3": {
+    "gradiert/Fourierprodukt": "(1.0 + 2.23809199932e-26j)",
+    "|1 - Verhältnis|": 3.419205693233955e-26,
+    "Streuung gradiert": 1.3037158166429654e-25,
+    "Streuung ungradiert (rel.)": 1.3037158166429654e-25
+   },
+   "4": {
+    "gradiert/Fourierprodukt": "(1.0 - 3.68460386733e-26j)",
+    "|1 - Verhältnis|": 6.348539419430851e-26,
+    "Streuung gradiert": 5.62511448014991e-26,
+    "Streuung ungradiert (rel.)": 0.013268086302823058
+   }
+  },
+  "anomalie_permutationen": {
+   "N = 2, ungradiert": {
+    "modular": true,
+    "Bahnen": [
+     [
+      6,
+      [
+       "T 0, S 0"
+      ]
+     ],
+     [
+      3,
+      [
+       "T 0, S 0"
+      ]
+     ]
+    ]
+   },
+   "N = 2, Koszul (Original)": {
+    "modular": false,
+    "Bahnen": [
+     [
+      6,
+      [
+       "T 0, S 0"
+      ]
+     ],
+     [
+      6,
+      []
+     ]
+    ]
+   },
+   "N = 2, Koszul (J-kovariant)": {
+    "modular": true,
+    "Bahnen": [
+     [
+      6,
+      [
+       "T 0, S 0"
+      ]
+     ],
+     [
+      3,
+      [
+       "T 0, S 0"
+      ]
+     ]
+    ]
+   },
+   "N = 4, ungradiert": {
+    "modular": true,
+    "Bahnen": [
+     [
+      6,
+      [
+       "T 0, S 0"
+      ]
+     ],
+     [
+      6,
+      [
+       "T 0, S 0"
+      ]
+     ],
+     [
+      3,
+      [
+       "T 0, S 0"
+      ]
+     ]
+    ]
+   },
+   "N = 4, Koszul (Original)": {
+    "modular": false,
+    "Bahnen": [
+     [
+      6,
+      [
+       "T 0, S 0"
+      ]
+     ],
+     [
+      6,
+      []
+     ],
+     [
+      6,
+      []
+     ]
+    ]
+   },
+   "N = 4, Koszul (J-kovariant)": {
+    "modular": true,
+    "Bahnen": [
+     [
+      6,
+      [
+       "T 0, S 0"
+      ]
+     ],
+     [
+      3,
+      [
+       "T 0, S 0"
+      ]
+     ],
+     [
+      3,
+      [
+       "T 0, S 0"
+      ]
+     ]
+    ]
+   },
+   "N = 2, Gamma G_1 (gekleidet)": {
+    "modular": true,
+    "Bahnen": [
+     [
+      6,
+      [
+       "T 0, S 0"
+      ]
+     ],
+     [
+      24,
+      [
+       "T 0, S 0",
+       "T 1/2, S 1/2"
+      ]
+     ],
+     [
+      24,
+      [
+       "T 0, S 0",
+       "T 1/2, S 1/2"
+      ]
+     ]
+    ]
+   },
+   "N = 2, Gamma U_1 (gekleidet)": {
+    "modular": true,
+    "Bahnen": [
+     [
+      6,
+      [
+       "T 0, S 0"
+      ]
+     ],
+     [
+      24,
+      [
+       "T 0, S 0",
+       "T 1/2, S 1/2"
+      ]
+     ],
+     [
+      24,
+      [
+       "T 0, S 0",
+       "T 1/2, S 1/2"
+      ]
+     ]
+    ]
+   },
+   "N = 4, Gamma G_1 (gekleidet)": {
+    "modular": true,
+    "Bahnen": [
+     [
+      6,
+      [
+       "T 0, S 0"
+      ]
+     ],
+     [
+      24,
+      [
+       "T 0, S 0"
+      ]
+     ],
+     [
+      24,
+      [
+       "T 0, S 0",
+       "T 1/2, S 1/2"
+      ]
+     ],
+     [
+      24,
+      [
+       "T 0, S 0",
+       "T 1/2, S 1/2"
+      ]
+     ]
+    ]
+   },
+   "N = 4, Gamma U_1 (gekleidet)": {
+    "modular": true,
+    "Bahnen": [
+     [
+      6,
+      [
+       "T 0, S 0"
+      ]
+     ],
+     [
+      24,
+      [
+       "T 0, S 0"
+      ]
+     ],
+     [
+      24,
+      [
+       "T 0, S 0",
+       "T 1/2, S 1/2"
+      ]
+     ],
+     [
+      24,
+      [
+       "T 0, S 0",
+       "T 1/2, S 1/2"
+      ]
+     ]
+    ]
+   },
+   "N = 3, Koszul (Original)": {
+    "modular": true,
+    "Bahnen": [
+     [
+      6,
+      [
+       "T 0, S 0"
+      ]
+     ],
+     [
+      24,
+      [
+       "T 0, S 0"
+      ]
+     ]
+    ]
+   },
+   "Spuridentität": {
+    "Gamma(pi) = einseitiges R^2 bei 2 tau": true,
+    "Gamma(pi) G_1 = U bei 2 tau": true,
+    "einseitiges R^2 (N = 1) Charaktere": []
+   }
+  },
+  "kontrolle_getrennte_nativprojektion_N2": {
+   "G = +1": 3.5053220004833534e-07,
+   "G = -1": 3.702760584021918e-07
+  },
+  "direkte_ST_invarianz": {
+   "N2 pro Naht G = +1": {
+    "S": 1.3411246864953199e-24,
+    "T": 1.4510544993419174e-24
+   },
+   "N2 gekleidet Gamma(pi) G_1 = +1": {
+    "S": 3.3944093210281206e-25,
+    "T": 5.723506756899151e-25
+   },
+   "N4 gekleidet Gamma(sigma) G_1 = +1": {
+    "S": 1.918235605671457e-24,
+    "T": 8.876879593960288e-24
+   },
+   "Gegenprobe: Originalsektor ohne Ergänzung, S": 0.06373439569362148
+  },
+  "pglue_projektor": {
+   "P_glue": "(1/8)[3 + U + R^2 + 3G - AR + A^3R + AR^3 - A^3R^3]",
+   "Viertelanteil": "(1/8)(U - 1)(AR - AR^3)",
+   "R^2-Koeffizient": "1/8 (= U G)",
+   "P_A3": "(1/4)[1 - AR + G - A^3R^3]"
+  },
+  "vierteldrehung_bahnen": {
+   "1": {
+    "anomal (Uhrpotenz r, nativ b)": "[1, 3]",
+    "A R^r und A^3 R^r in einer Bahn, rel. Koeffizient": "[(0, True, '0'), (2, True, '0')]",
+    "Bahngröße": "96",
+    "Charaktere A": "['T 0, S 0', 'T 1/2, S 1/2']"
+   },
+   "2": {
+    "anomal (Uhrpotenz r, nativ b)": "[]",
+    "A R^r und A^3 R^r in einer Bahn, rel. Koeffizient": "[(0, True, '0'), (1, True, '0'), (2, True, '0'), (3, True, '0')]",
+    "Bahngröße": "96",
+    "Charaktere A": "['T 0, S 0', 'T 1/2, S 1/2']"
+   },
+   "4": {
+    "anomal (Uhrpotenz r, nativ b)": "[]",
+    "A R^r und A^3 R^r in einer Bahn, rel. Koeffizient": "[(0, True, '0'), (1, True, '0'), (2, True, '0'), (3, True, '0')]",
+    "Bahngröße": "96",
+    "Charaktere A": "['T 0, S 0', 'T 1/2, S 1/2']"
+   }
+  },
+  "pglue_modular": {
+   "1": {
+    "modular": false,
+    "Gründe": [
+     "anomal (Bahn 6, Charaktere [])",
+     "anomal (Bahn 96, Charaktere [])",
+     "anomal (Bahn 96, Charaktere [])"
+    ]
+   },
+   "2": {
+    "modular": false,
+    "Gründe": [
+     "anomal (Bahn 6, Charaktere ['T 1/2, S 1/2'])",
+     "inkonsistent (Bahn 96)",
+     "inkonsistent (Bahn 96)"
+    ]
+   },
+   "3": {
+    "modular": false,
+    "Gründe": [
+     "anomal (Bahn 6, Charaktere [])",
+     "anomal (Bahn 96, Charaktere [])",
+     "anomal (Bahn 96, Charaktere [])"
+    ]
+   },
+   "4": {
+    "modular": false,
+    "Gründe": [
+     "inkonsistent (Bahn 96)",
+     "inkonsistent (Bahn 96)"
+    ]
+   }
+  },
+  "pa3_ergaenzung (Originalsektor, normiert)": {
+   "2": {
+    "P_A3 ergänzt: min Eigenwert": -0.5,
+    "P_A3 ergänzt: A^3R mit": "(-1.0 + 0.0j)",
+    "Spiegel ergänzt: min Eigenwert": -0.5,
+    "P_GSO ergänzt: min Eigenwert": -4.7015686029789286e-27,
+    "P_GSO ergänzt: max Eigenwert": 1.0
+   },
+   "4": {
+    "P_A3 ergänzt: min Eigenwert": -0.5,
+    "P_A3 ergänzt: A^3R mit": "(-1.0 + 0.0j)",
+    "Spiegel ergänzt: min Eigenwert": -0.5,
+    "P_GSO ergänzt: min Eigenwert": -4.7015686029789286e-27,
+    "P_GSO ergänzt: max Eigenwert": 1.0
+   }
+  },
+  "pa3_modular_ungerade_N": {
+   "1": false,
+   "3": false
+  },
+  "klassifikation_hebungen_diagonal": {
+   "1": {
+    "U = +1": true,
+    "U = -1": false,
+    "G = U R^2 = +1": false,
+    "G = U R^2 = -1": true,
+    "U R (Z4-Hebung, Quadrat R^2)": "anomal",
+    "A = +1 (Vierteldrehung, nur Bosonen)": "modular",
+    "A = +i (Vierteldrehung auf Spinoren)": "nicht ergänzbar",
+    "P_A3": "anomal",
+    "P_glue": "keine Ergänzung"
+   },
+   "2": {
+    "U = +1": true,
+    "U = -1": false,
+    "G = U R^2 = +1": true,
+    "G = U R^2 = -1": false,
+    "U R (Z4-Hebung, Quadrat R^2)": "anomal",
+    "A = +1 (Vierteldrehung, nur Bosonen)": "modular",
+    "A = +i (Vierteldrehung auf Spinoren)": "nicht ergänzbar",
+    "P_A3": "Nicht-Projektor",
+    "P_glue": "keine Ergänzung"
+   },
+   "3": {
+    "U = +1": true,
+    "U = -1": false,
+    "G = U R^2 = +1": false,
+    "G = U R^2 = -1": false,
+    "U R (Z4-Hebung, Quadrat R^2)": "anomal",
+    "A = +1 (Vierteldrehung, nur Bosonen)": "modular",
+    "A = +i (Vierteldrehung auf Spinoren)": "nicht ergänzbar",
+    "P_A3": "anomal",
+    "P_glue": "keine Ergänzung"
+   },
+   "4": {
+    "U = +1": true,
+    "U = -1": false,
+    "G = U R^2 = +1": false,
+    "G = U R^2 = -1": false,
+    "U R (Z4-Hebung, Quadrat R^2)": "modular",
+    "A = +1 (Vierteldrehung, nur Bosonen)": "modular",
+    "A = +i (Vierteldrehung auf Spinoren)": "nicht ergänzbar",
+    "P_A3": "Nicht-Projektor",
+    "P_glue": "keine Ergänzung"
+   }
+  },
+  "klassifikation_gesamt": {
+   "unverdrehte Hebung U = +1": "positiv N = 1..4, keine Spinoren",
+   "P_GSO diagonal (z113)": "positiv nur N = 2",
+   "P_GSO pro Naht, gemeinsame Uhr": "positiv nur N = 2 (beide Vorzeichen); N = 3, 4 negativ",
+   "P_GSO pro Naht + P_ident": "N = 2, 3, 4 negativ (ungradiert, J-kovariant) oder anomal (Koszul)",
+   "vertauschte Statistik G = -1 pro Naht + P_ident": "positiv N = 2, 3, 4",
+   "gekleidete Koszul-Permutation Gamma G_1 = +1": "positiv N = 2, 4 (G_d = +1 auf allen Zuständen); N = 3 negativ",
+   "Z4-Hebung U R": "anomal N = 1, 2, 3",
+   "P_A3": "anomal (ungerade N), Nicht-Projektor (gerade N)",
+   "P_glue": "keine modulare Ergänzung N = 1..4"
+  },
+  "status": {
+   "Koszul-Spuridentität, gaußscher Zyklus": [
+    "E",
+    "Tr Gamma(sigma) = Tr K^(N-1) q^(N L_0) = Produkt der Fouriermoden"
+   ],
+   "Koszul-Permutation (P_CAR Original)": [
+    "E (negativ)",
+    "anomal für gerade N (Anomalie des einseitigen R^2)"
+   ],
+   "J-kovariante CAR": [
+    "E",
+    "frei; bei N = 2 gleich dem ungradierten Tausch"
+   ],
+   "gekleideter Tausch Gamma G_1": [
+    "E",
+    "anomaliefrei (Spur von U bei N tau); +1 positiv bei N = 2, 4, negativ bei N = 3"
+   ],
+   "P_GSO pro Naht": [
+    "E",
+    "positiv nur bei N = 2 mit gemeinsamer Uhr; mit P_ident nie (N = 2, 3, 4)"
+   ],
+   "Vierteldrehung": [
+    "E",
+    "A X und U A X in einer Bahn (Koeffizient 1): modular unsichtbar auf Spinoren"
+   ],
+   "P_glue": [
+    "E (negativ)",
+    "keine modulare Ergänzung für N = 1..4"
+   ],
+   "P_A3": [
+    "E (negativ)",
+    "anomal (ungerade N), ergänzt zu Nicht-Projektor (gerade N)"
+   ],
+   "Spin-Statistik modular": [
+    "C",
+    "als Gesamtregel bei N = 2, 4 unter P_dress (gekleidete Koszul-Permutation) und gemeinsamer Uhrverdrillung; pro Naht mit P_ident nein"
+   ],
+   "Lesart Tausch mit Drehung": [
+    "L",
+    "Gamma G_1 ist auf P_GSO-Zuständen der Koszul-Tausch; die Kleidung trägt eine 2 pi-Drehung (Finkelstein-Rubinstein)"
+   ],
+   "N >= 5, N = 6, 8": [
+    "O",
+    "nicht gerechnet"
+   ]
+  },
+  "positivitaet (min normierter Spinmode, Y = 0.35, 0.6, 1.0, |s| <= 5)": {
+   "N2 diag G = +1 (z113)": {
+    "N": 2,
+    "Gruppe": 2,
+    "modular": true,
+    "min": 4.6335946024776417e-07,
+    "Rauschen": 3.00005049518804e-20,
+    "positiv": true,
+    "Bahnen": [
+     {
+      "Bahn": 6,
+      "Charaktere": [
+       "T 0, S 0"
+      ],
+      "konsistent": true,
+      "lambda": "(1.0 + 0.0j)"
+     },
+     {
+      "Bahn": 24,
+      "Charaktere": [
+       "T 0, S 0",
+       "T 1/2, S 1/2"
+      ],
+      "konsistent": true,
+      "lambda": "(0.8660254 - 0.5j)"
+     }
+    ]
+   },
+   "N2 diag G = -1 (z113)": {
+    "N": 2,
+    "Gruppe": 2,
+    "modular": true,
+    "min": -77983.29774621403,
+    "Rauschen": 2.9310807391534995e-20,
+    "positiv": false,
+    "Bahnen": [
+     {
+      "Bahn": 6,
+      "Charaktere": [
+       "T 0, S 0"
+      ],
+      "konsistent": true,
+      "lambda": "(1.0 + 0.0j)"
+     },
+     {
+      "Bahn": 24,
+      "Charaktere": [
+       "T 0, S 0",
+       "T 1/2, S 1/2"
+      ],
+      "konsistent": true,
+      "lambda": "(-0.8660254 + 0.5j)"
+     }
+    ]
+   },
+   "N2 pro Naht G = +1": {
+    "N": 2,
+    "Gruppe": 4,
+    "modular": true,
+    "min": 4.578692084731285e-07,
+    "Rauschen": 3.0244734714886197e-20,
+    "positiv": true,
+    "Bahnen": [
+     {
+      "Bahn": 6,
+      "Charaktere": [
+       "T 0, S 0"
+      ],
+      "konsistent": true,
+      "lambda": "(1.0 + 0.0j)"
+     },
+     {
+      "Bahn": 24,
+      "Charaktere": [
+       "T 0, S 0",
+       "T 1/2, S 1/2"
+      ],
+      "konsistent": true,
+      "lambda": "(1.9318517 - 0.51763809j)"
+     },
+     {
+      "Bahn": 24,
+      "Charaktere": [
+       "T 0, S 0",
+       "T 1/2, S 1/2"
+      ],
+      "konsistent": true,
+      "lambda": "(0.8660254 - 0.5j)"
+     }
+    ]
+   },
+   "N2 pro Naht G = -1": {
+    "N": 2,
+    "Gruppe": 4,
+    "modular": true,
+    "min": 4.669969004968246e-07,
+    "Rauschen": 3.0001551216066473e-20,
+    "positiv": true,
+    "Bahnen": [
+     {
+      "Bahn": 6,
+      "Charaktere": [
+       "T 0, S 0"
+      ],
+      "konsistent": true,
+      "lambda": "(1.0 + 0.0j)"
+     },
+     {
+      "Bahn": 24,
+      "Charaktere": [
+       "T 0, S 0",
+       "T 1/2, S 1/2"
+      ],
+      "konsistent": true,
+      "lambda": "(-1.9318517 + 0.51763809j)"
+     },
+     {
+      "Bahn": 24,
+      "Charaktere": [
+       "T 0, S 0",
+       "T 1/2, S 1/2"
+      ],
+      "konsistent": true,
+      "lambda": "(0.8660254 - 0.5j)"
+     }
+    ]
+   },
+   "N2 Tausch ungradiert": {
+    "N": 2,
+    "Gruppe": 2,
+    "modular": true,
+    "min": 2.861989190630693e-11,
+    "Rauschen": 5.238927862954638e-26,
+    "positiv": true,
+    "Bahnen": [
+     {
+      "Bahn": 6,
+      "Charaktere": [
+       "T 0, S 0"
+      ],
+      "konsistent": true,
+      "lambda": "(1.0 + 0.0j)"
+     },
+     {
+      "Bahn": 3,
+      "Charaktere": [
+       "T 0, S 0"
+      ],
+      "konsistent": true,
+      "lambda": "(2.0 + 0.0j)"
+     }
+    ]
+   },
+   "N2 pro Naht G = +1 + Tausch ungradiert": {
+    "N": 2,
+    "Gruppe": 8,
+    "modular": true,
+    "min": -547803.1617103927,
+    "Rauschen": 2.0601757916184374e-18,
+    "positiv": false,
+    "Bahnen": [
+     {
+      "Bahn": 6,
+      "Charaktere": [
+       "T 0, S 0"
+      ],
+      "konsistent": true,
+      "lambda": "(1.0 + 0.0j)"
+     },
+     {
+      "Bahn": 3,
+      "Charaktere": [
+       "T 0, S 0"
+      ],
+      "konsistent": true,
+      "lambda": "(4.0 + 0.0j)"
+     },
+     {
+      "Bahn": 24,
+      "Charaktere": [
+       "T 0, S 0",
+       "T 1/2, S 1/2"
+      ],
+      "konsistent": true,
+      "lambda": "(1.9318517 - 0.51763809j)"
+     },
+     {
+      "Bahn": 24,
+      "Charaktere": [
+       "T 0, S 0",
+       "T 1/2, S 1/2"
+      ],
+      "konsistent": true,
+      "lambda": "(3.8637033 + 1.0352762j)"
+     },
+     {
+      "Bahn": 24,
+      "Charaktere": [
+       "T 0, S 0",
+       "T 1/2, S 1/2"
+      ],
+      "konsistent": true,
+      "lambda": "(0.8660254 - 0.5j)"
+     }
+    ]
+   },
+   "N2 pro Naht G = -1 + Tausch ungradiert": {
+    "N": 2,
+    "Gruppe": 8,
+    "modular": true,
+    "min": 3.371376105486991e-06,
+    "Rauschen": 2.0896908364346347e-18,
+    "positiv": true,
+    "Bahnen": [
+     {
+      "Bahn": 6,
+      "Charaktere": [
+       "T 0, S 0"
+      ],
+      "konsistent": true,
+      "lambda": "(1.0 + 0.0j)"
+     },
+     {
+      "Bahn": 3,
+      "Charaktere": [
+       "T 0, S 0"
+      ],
+      "konsistent": true,
+      "lambda": "(4.0 + 0.0j)"
+     },
+     {
+      "Bahn": 24,
+      "Charaktere": [
+       "T 0, S 0",
+       "T 1/2, S 1/2"
+      ],
+      "konsistent": true,
+      "lambda": "(-1.9318517 + 0.51763809j)"
+     },
+     {
+      "Bahn": 24,
+      "Charaktere": [
+       "T 0, S 0",
+       "T 1/2, S 1/2"
+      ],
+      "konsistent": true,
+      "lambda": "(-3.8637033 - 1.0352762j)"
+     },
+     {
+      "Bahn": 24,
+      "Charaktere": [
+       "T 0, S 0",
+       "T 1/2, S 1/2"
+      ],
+      "konsistent": true,
+      "lambda": "(0.8660254 - 0.5j)"
+     }
+    ]
+   },
+   "N2 pro Naht G = +1 + Tausch Koszul (Original)": {
+    "N": 2,
+    "Gruppe": 8,
+    "modular": false,
+    "Bahnen": [
+     {
+      "Bahn": 6,
+      "Charaktere": [
+       "T 0, S 0"
+      ],
+      "konsistent": true,
+      "lambda": "(1.0 + 0.0j)"
+     },
+     {
+      "Bahn": 6,
+      "Charaktere": [],
+      "konsistent": false,
+      "lambda": null
+     },
+     {
+      "Bahn": 24,
+      "Charaktere": [
+       "T 0, S 0",
+       "T 1/2, S 1/2"
+      ],
+      "konsistent": true,
+      "lambda": "(1.9318517 - 0.51763809j)"
+     },
+     {
+      "Bahn": 24,
+      "Charaktere": [
+       "T 0, S 0",
+       "T 1/2, S 1/2"
+      ],
+      "konsistent": true,
+      "lambda": "(4.0 + 0.0j)"
+     },
+     {
+      "Bahn": 24,
+      "Charaktere": [
+       "T 0, S 0",
+       "T 1/2, S 1/2"
+      ],
+      "konsistent": true,
+      "lambda": "(0.8660254 - 0.5j)"
+     }
+    ]
+   },
+   "N2 diag G = +1 + Tausch ungradiert": {
+    "N": 2,
+    "Gruppe": 4,
+    "modular": true,
+    "min": 4.633597457717087e-07,
+    "Rauschen": 2.9966017552713115e-20,
+    "positiv": true,
+    "Bahnen": [
+     {
+      "Bahn": 6,
+      "Charaktere": [
+       "T 0, S 0"
+      ],
+      "konsistent": true,
+      "lambda": "(1.0 + 0.0j)"
+     },
+     {
+      "Bahn": 3,
+      "Charaktere": [
+       "T 0, S 0"
+      ],
+      "konsistent": true,
+      "lambda": "(4.0 + 0.0j)"
+     },
+     {
+      "Bahn": 24,
+      "Charaktere": [
+       "T 0, S 0",
+       "T 1/2, S 1/2"
+      ],
+      "konsistent": true,
+      "lambda": "(0.8660254 - 0.5j)"
+     }
+    ]
+   },
+   "N2 gekleidet Gamma(pi) G_1 = i^0": {
+    "N": 2,
+    "Gruppe": 4,
+    "modular": true,
+    "min": 3.367739640479474e-06,
+    "Rauschen": 2.084793028450312e-18,
+    "positiv": true,
+    "Bahnen": [
+     {
+      "Bahn": 6,
+      "Charaktere": [
+       "T 0, S 0"
+      ],
+      "konsistent": true,
+      "lambda": "(1.0 + 0.0j)"
+     },
+     {
+      "Bahn": 24,
+      "Charaktere": [
+       "T 0, S 0",
+       "T 1/2, S 1/2"
+      ],
+      "konsistent": true,
+      "lambda": "(4.0 + 0.0j)"
+     },
+     {
+      "Bahn": 24,
+      "Charaktere": [
+       "T 0, S 0",
+       "T 1/2, S 1/2"
+      ],
+      "konsistent": true,
+      "lambda": "(0.8660254 - 0.5j)"
+     }
+    ]
+   },
+   "N2 gekleidet Gamma(pi) G_1 = i^1": {
+    "N": 2,
+    "Gruppe": 4,
+    "modular": true,
+    "min": -77983.29774621403,
+    "Rauschen": 2.9310807391534995e-20,
+    "positiv": false,
+    "Bahnen": [
+     {
+      "Bahn": 6,
+      "Charaktere": [
+       "T 0, S 0"
+      ],
+      "konsistent": true,
+      "lambda": "(1.0 + 0.0j)"
+     },
+     {
+      "Bahn": 24,
+      "Charaktere": [
+       "T 0, S 0",
+       "T 1/2, S 1/2"
+      ],
+      "konsistent": true,
+      "lambda": "(0.0 + 0.0j)"
+     },
+     {
+      "Bahn": 24,
+      "Charaktere": [
+       "T 0, S 0",
+       "T 1/2, S 1/2"
+      ],
+      "konsistent": true,
+      "lambda": "(-0.8660254 + 0.5j)"
+     }
+    ]
+   },
+   "N2 gekleidet Gamma(pi) G_1 = i^2": {
+    "N": 2,
+    "Gruppe": 4,
+    "modular": true,
+    "min": -547692.9243278683,
+    "Rauschen": 2.0639703491374675e-18,
+    "positiv": false,
+    "Bahnen": [
+     {
+      "Bahn": 6,
+      "Charaktere": [
+       "T 0, S 0"
+      ],
+      "konsistent": true,
+      "lambda": "(1.0 + 0.0j)"
+     },
+     {
+      "Bahn": 24,
+      "Charaktere": [
+       "T 0, S 0",
+       "T 1/2, S 1/2"
+      ],
+      "konsistent": true,
+      "lambda": "(-4.0 + 7.5225098e-26j)"
+     },
+     {
+      "Bahn": 24,
+      "Charaktere": [
+       "T 0, S 0",
+       "T 1/2, S 1/2"
+      ],
+      "konsistent": true,
+      "lambda": "(0.8660254 - 0.5j)"
+     }
+    ]
+   },
+   "N2 gekleidet Gamma(pi) G_1 = i^3": {
+    "N": 2,
+    "Gruppe": 4,
+    "modular": true,
+    "min": -77983.29774621403,
+    "Rauschen": 2.9310807391534995e-20,
+    "positiv": false,
+    "Bahnen": [
+     {
+      "Bahn": 6,
+      "Charaktere": [
+       "T 0, S 0"
+      ],
+      "konsistent": true,
+      "lambda": "(1.0 + 0.0j)"
+     },
+     {
+      "Bahn": 24,
+      "Charaktere": [
+       "T 0, S 0",
+       "T 1/2, S 1/2"
+      ],
+      "konsistent": true,
+      "lambda": "(0.0 + 0.0j)"
+     },
+     {
+      "Bahn": 24,
+      "Charaktere": [
+       "T 0, S 0",
+       "T 1/2, S 1/2"
+      ],
+      "konsistent": true,
+      "lambda": "(-0.8660254 + 0.5j)"
+     }
+    ]
+   },
+   "N2 gekleidet Gamma(pi) U_1 = i^0": {
+    "N": 2,
+    "Gruppe": 4,
+    "modular": true,
+    "min": -547238.5416520427,
+    "Rauschen": 2.059040267462824e-18,
+    "positiv": false,
+    "Bahnen": [
+     {
+      "Bahn": 6,
+      "Charaktere": [
+       "T 0, S 0"
+      ],
+      "konsistent": true,
+      "lambda": "(1.0 + 0.0j)"
+     },
+     {
+      "Bahn": 24,
+      "Charaktere": [
+       "T 0, S 0",
+       "T 1/2, S 1/2"
+      ],
+      "konsistent": true,
+      "lambda": "(3.8637033 + 1.0352762j)"
+     },
+     {
+      "Bahn": 24,
+      "Charaktere": [
+       "T 0, S 0",
+       "T 1/2, S 1/2"
+      ],
+      "konsistent": true,
+      "lambda": "(1.0 + 0.0j)"
+     }
+    ]
+   },
+   "N2 gekleidet Gamma(pi) U_1 = i^1": {
+    "N": 2,
+    "Gruppe": 4,
+    "modular": true,
+    "min": -78435.62399391222,
+    "Rauschen": 3.20814535201984e-20,
+    "positiv": false,
+    "Bahnen": [
+     {
+      "Bahn": 6,
+      "Charaktere": [
+       "T 0, S 0"
+      ],
+      "konsistent": true,
+      "lambda": "(1.0 + 0.0j)"
+     },
+     {
+      "Bahn": 24,
+      "Charaktere": [
+       "T 0, S 0",
+       "T 1/2, S 1/2"
+      ],
+      "konsistent": true,
+      "lambda": "(0.0 + 0.0j)"
+     },
+     {
+      "Bahn": 24,
+      "Charaktere": [
+       "T 0, S 0",
+       "T 1/2, S 1/2"
+      ],
+      "konsistent": true,
+      "lambda": "(-1.0 + 1.8806274e-26j)"
+     }
+    ]
+   },
+   "N2 gekleidet Gamma(pi) U_1 = i^2": {
+    "N": 2,
+    "Gruppe": 4,
+    "modular": true,
+    "min": 3.383880223991606e-06,
+    "Rauschen": 2.092009146570759e-18,
+    "positiv": true,
+    "Bahnen": [
+     {
+      "Bahn": 6,
+      "Charaktere": [
+       "T 0, S 0"
+      ],
+      "konsistent": true,
+      "lambda": "(1.0 + 0.0j)"
+     },
+     {
+      "Bahn": 24,
+      "Charaktere": [
+       "T 0, S 0",
+       "T 1/2, S 1/2"
+      ],
+      "konsistent": true,
+      "lambda": "(-3.8637033 - 1.0352762j)"
+     },
+     {
+      "Bahn": 24,
+      "Charaktere": [
+       "T 0, S 0",
+       "T 1/2, S 1/2"
+      ],
+      "konsistent": true,
+      "lambda": "(1.0 + 0.0j)"
+     }
+    ]
+   },
+   "N2 gekleidet Gamma(pi) U_1 = i^3": {
+    "N": 2,
+    "Gruppe": 4,
+    "modular": true,
+    "min": -78435.62399391222,
+    "Rauschen": 3.20814535201984e-20,
+    "positiv": false,
+    "Bahnen": [
+     {
+      "Bahn": 6,
+      "Charaktere": [
+       "T 0, S 0"
+      ],
+      "konsistent": true,
+      "lambda": "(1.0 + 0.0j)"
+     },
+     {
+      "Bahn": 24,
+      "Charaktere": [
+       "T 0, S 0",
+       "T 1/2, S 1/2"
+      ],
+      "konsistent": true,
+      "lambda": "(0.0 + 0.0j)"
+     },
+     {
+      "Bahn": 24,
+      "Charaktere": [
+       "T 0, S 0",
+       "T 1/2, S 1/2"
+      ],
+      "konsistent": true,
+      "lambda": "(-1.0 + 1.8806274e-26j)"
+     }
+    ]
+   },
+   "N3 diag G = +1 (z113)": {
+    "N": 3,
+    "Gruppe": 2,
+    "modular": true,
+    "min": -18615205.737790756,
+    "Rauschen": 6.842944834179817e-18,
+    "positiv": false,
+    "Bahnen": [
+     {
+      "Bahn": 6,
+      "Charaktere": [
+       "T 0, S 0"
+      ],
+      "konsistent": true,
+      "lambda": "(1.0 + 0.0j)"
+     },
+     {
+      "Bahn": 24,
+      "Charaktere": [
+       "T 0, S 0",
+       "T 1/2, S 1/2"
+      ],
+      "konsistent": true,
+      "lambda": "(0.70710678 - 0.70710678j)"
+     }
+    ]
+   },
+   "N3 pro Naht G = +1": {
+    "N": 3,
+    "Gruppe": 8,
+    "modular": true,
+    "min": -18580723.265181523,
+    "Rauschen": 6.821727754404279e-18,
+    "positiv": false,
+    "Bahnen": [
+     {
+      "Bahn": 6,
+      "Charaktere": [
+       "T 0, S 0"
+      ],
+      "konsistent": true,
+      "lambda": "(1.0 + 0.0j)"
+     },
+     {
+      "Bahn": 24,
+      "Charaktere": [
+       "T 0, S 0",
+       "T 1/2, S 1/2"
+      ],
+      "konsistent": true,
+      "lambda": "(2.8977775 - 0.77645714j)"
+     },
+     {
+      "Bahn": 24,
+      "Charaktere": [
+       "T 0, S 0",
+       "T 1/2, S 1/2"
+      ],
+      "konsistent": true,
+      "lambda": "(2.5980762 - 1.5j)"
+     },
+     {
+      "Bahn": 24,
+      "Charaktere": [
+       "T 0, S 0",
+       "T 1/2, S 1/2"
+      ],
+      "konsistent": true,
+      "lambda": "(0.70710678 - 0.70710678j)"
+     }
+    ]
+   },
+   "N3 pro Naht G = -1": {
+    "N": 3,
+    "Gruppe": 8,
+    "modular": true,
+    "min": 2.4038017194987563e-05,
+    "Rauschen": 6.6318461784020064e-18,
+    "positiv": true,
+    "Bahnen": [
+     {
+      "Bahn": 6,
+      "Charaktere": [
+       "T 0, S 0"
+      ],
+      "konsistent": true,
+      "lambda": "(1.0 + 0.0j)"
+     },
+     {
+      "Bahn": 24,
+      "Charaktere": [
+       "T 0, S 0",
+       "T 1/2, S 1/2"
+      ],
+      "konsistent": true,
+      "lambda": "(-2.8977775 + 0.77645714j)"
+     },
+     {
+      "Bahn": 24,
+      "Charaktere": [
+       "T 0, S 0",
+       "T 1/2, S 1/2"
+      ],
+      "konsistent": true,
+      "lambda": "(2.5980762 - 1.5j)"
+     },
+     {
+      "Bahn": 24,
+      "Charaktere": [
+       "T 0, S 0",
+       "T 1/2, S 1/2"
+      ],
+      "konsistent": true,
+      "lambda": "(-0.70710678 + 0.70710678j)"
+     }
+    ]
+   },
+   "N3 Z3 ungradiert": {
+    "N": 3,
+    "Gruppe": 3,
+    "modular": true,
+    "min": 6.404279496097021e-10,
+    "Rauschen": 1.014791155057519e-24,
+    "positiv": true,
+    "Bahnen": [
+     {
+      "Bahn": 6,
+      "Charaktere": [
+       "T 0, S 0"
+      ],
+      "konsistent": true,
+      "lambda": "(1.0 + 0.0j)"
+     },
+     {
+      "Bahn": 24,
+      "Charaktere": [
+       "T 0, S 0"
+      ],
+      "konsistent": true,
+      "lambda": "(2.0 + 0.0j)"
+     }
+    ]
+   },
+   "N3 Z3 + diag G = +1": {
+    "N": 3,
+    "Gruppe": 6,
+    "modular": true,
+    "min": -617617849.6315515,
+    "Rauschen": 4.617644314303886e-13,
+    "positiv": false,
+    "Bahnen": [
+     {
+      "Bahn": 6,
+      "Charaktere": [
+       "T 0, S 0"
+      ],
+      "konsistent": true,
+      "lambda": "(1.0 + 0.0j)"
+     },
+     {
+      "Bahn": 24,
+      "Charaktere": [
+       "T 0, S 0"
+      ],
+      "konsistent": true,
+      "lambda": "(2.0 + 0.0j)"
+     },
+     {
+      "Bahn": 24,
+      "Charaktere": [
+       "T 0, S 0",
+       "T 1/2, S 1/2"
+      ],
+      "konsistent": true,
+      "lambda": "(0.70710678 - 0.70710678j)"
+     },
+     {
+      "Bahn": 96,
+      "Charaktere": [
+       "T 0, S 0",
+       "T 1/2, S 1/2"
+      ],
+      "konsistent": true,
+      "lambda": "(1.4142136 - 1.4142136j)"
+     }
+    ]
+   },
+   "N3 Z3 + pro Naht G = +1": {
+    "N": 3,
+    "Gruppe": 24,
+    "modular": true,
+    "min": -2414591298.8402247,
+    "Rauschen": 1.8470605122344446e-12,
+    "positiv": false,
+    "Bahnen": [
+     {
+      "Bahn": 6,
+      "Charaktere": [
+       "T 0, S 0"
+      ],
+      "konsistent": true,
+      "lambda": "(1.0 + 0.0j)"
+     },
+     {
+      "Bahn": 24,
+      "Charaktere": [
+       "T 0, S 0"
+      ],
+      "konsistent": true,
+      "lambda": "(8.0 + 0.0j)"
+     },
+     {
+      "Bahn": 24,
+      "Charaktere": [
+       "T 0, S 0",
+       "T 1/2, S 1/2"
+      ],
+      "konsistent": true,
+      "lambda": "(2.8977775 - 0.77645714j)"
+     },
+     {
+      "Bahn": 96,
+      "Charaktere": [
+       "T 0, S 0",
+       "T 1/2, S 1/2"
+      ],
+      "konsistent": true,
+      "lambda": "(5.6568542 - 5.6568542j)"
+     },
+     {
+      "Bahn": 24,
+      "Charaktere": [
+       "T 0, S 0",
+       "T 1/2, S 1/2"
+      ],
+      "konsistent": true,
+      "lambda": "(2.5980762 - 1.5j)"
+     },
+     {
+      "Bahn": 24,
+      "Charaktere": [
+       "T 0, S 0",
+       "T 1/2, S 1/2"
+      ],
+      "konsistent": true,
+      "lambda": "(0.70710678 - 0.70710678j)"
+     }
+    ]
+   },
+   "N3 Z3 + pro Naht G = -1": {
+    "N": 3,
+    "Gruppe": 24,
+    "modular": true,
+    "min": 0.0016762717815311339,
+    "Rauschen": 1.8470385457740128e-12,
+    "positiv": true,
+    "Bahnen": [
+     {
+      "Bahn": 6,
+      "Charaktere": [
+       "T 0, S 0"
+      ],
+      "konsistent": true,
+      "lambda": "(1.0 + 0.0j)"
+     },
+     {
+      "Bahn": 24,
+      "Charaktere": [
+       "T 0, S 0"
+      ],
+      "konsistent": true,
+      "lambda": "(8.0 + 0.0j)"
+     },
+     {
+      "Bahn": 24,
+      "Charaktere": [
+       "T 0, S 0",
+       "T 1/2, S 1/2"
+      ],
+      "konsistent": true,
+      "lambda": "(-2.8977775 + 0.77645714j)"
+     },
+     {
+      "Bahn": 96,
+      "Charaktere": [
+       "T 0, S 0",
+       "T 1/2, S 1/2"
+      ],
+      "konsistent": true,
+      "lambda": "(-5.6568542 + 5.6568542j)"
+     },
+     {
+      "Bahn": 24,
+      "Charaktere": [
+       "T 0, S 0",
+       "T 1/2, S 1/2"
+      ],
+      "konsistent": true,
+      "lambda": "(2.5980762 - 1.5j)"
+     },
+     {
+      "Bahn": 24,
+      "Charaktere": [
+       "T 0, S 0",
+       "T 1/2, S 1/2"
+      ],
+      "konsistent": true,
+      "lambda": "(-0.70710678 + 0.70710678j)"
+     }
+    ]
+   },
+   "N4 diag G = +1 (z113)": {
+    "N": 4,
+    "Gruppe": 2,
+    "modular": true,
+    "min": -82.32551862752672,
+    "Rauschen": 1.1885613576636209e-15,
+    "positiv": false,
+    "Bahnen": [
+     {
+      "Bahn": 6,
+      "Charaktere": [
+       "T 0, S 0"
+      ],
+      "konsistent": true,
+      "lambda": "(1.0 + 0.0j)"
+     },
+     {
+      "Bahn": 24,
+      "Charaktere": [
+       "T 0, S 0",
+       "T 1/2, S 1/2"
+      ],
+      "konsistent": true,
+      "lambda": "(0.5 - 0.8660254j)"
+     }
+    ]
+   },
+   "N4 pro Naht G = +1": {
+    "N": 4,
+    "Gruppe": 16,
+    "modular": true,
+    "min": -47.87301395739894,
+    "Rauschen": 1.1787587489803737e-15,
+    "positiv": false,
+    "Bahnen": [
+     {
+      "Bahn": 6,
+      "Charaktere": [
+       "T 0, S 0"
+      ],
+      "konsistent": true,
+      "lambda": "(1.0 + 0.0j)"
+     },
+     {
+      "Bahn": 24,
+      "Charaktere": [
+       "T 0, S 0",
+       "T 1/2, S 1/2"
+      ],
+      "konsistent": true,
+      "lambda": "(3.8637033 - 1.0352762j)"
+     },
+     {
+      "Bahn": 24,
+      "Charaktere": [
+       "T 0, S 0",
+       "T 1/2, S 1/2"
+      ],
+      "konsistent": true,
+      "lambda": "(5.1961524 - 3.0j)"
+     },
+     {
+      "Bahn": 24,
+      "Charaktere": [
+       "T 0, S 0",
+       "T 1/2, S 1/2"
+      ],
+      "konsistent": true,
+      "lambda": "(2.8284271 - 2.8284271j)"
+     },
+     {
+      "Bahn": 24,
+      "Charaktere": [
+       "T 0, S 0",
+       "T 1/2, S 1/2"
+      ],
+      "konsistent": true,
+      "lambda": "(0.5 - 0.8660254j)"
+     }
+    ]
+   },
+   "N4 pro Naht G = -1": {
+    "N": 4,
+    "Gruppe": 16,
+    "modular": true,
+    "min": -78.05105951296747,
+    "Rauschen": 1.188782060682184e-15,
+    "positiv": false,
+    "Bahnen": [
+     {
+      "Bahn": 6,
+      "Charaktere": [
+       "T 0, S 0"
+      ],
+      "konsistent": true,
+      "lambda": "(1.0 + 0.0j)"
+     },
+     {
+      "Bahn": 24,
+      "Charaktere": [
+       "T 0, S 0",
+       "T 1/2, S 1/2"
+      ],
+      "konsistent": true,
+      "lambda": "(-3.8637033 + 1.0352762j)"
+     },
+     {
+      "Bahn": 24,
+      "Charaktere": [
+       "T 0, S 0",
+       "T 1/2, S 1/2"
+      ],
+      "konsistent": true,
+      "lambda": "(5.1961524 - 3.0j)"
+     },
+     {
+      "Bahn": 24,
+      "Charaktere": [
+       "T 0, S 0",
+       "T 1/2, S 1/2"
+      ],
+      "konsistent": true,
+      "lambda": "(-2.8284271 + 2.8284271j)"
+     },
+     {
+      "Bahn": 24,
+      "Charaktere": [
+       "T 0, S 0",
+       "T 1/2, S 1/2"
+      ],
+      "konsistent": true,
+      "lambda": "(0.5 - 0.8660254j)"
+     }
+    ]
+   },
+   "N4 Z4 ungradiert": {
+    "N": 4,
+    "Gruppe": 4,
+    "modular": true,
+    "min": 1.2474529818010957e-09,
+    "Rauschen": 7.678873973898151e-26,
+    "positiv": true,
+    "Bahnen": [
+     {
+      "Bahn": 6,
+      "Charaktere": [
+       "T 0, S 0"
+      ],
+      "konsistent": true,
+      "lambda": "(1.0 + 0.0j)"
+     },
+     {
+      "Bahn": 6,
+      "Charaktere": [
+       "T 0, S 0"
+      ],
+      "konsistent": true,
+      "lambda": "(8.0 + 0.0j)"
+     },
+     {
+      "Bahn": 3,
+      "Charaktere": [
+       "T 0, S 0"
+      ],
+      "konsistent": true,
+      "lambda": "(2.0 + 0.0j)"
+     }
+    ]
+   },
+   "N4 Z4 + diag G = +1": {
+    "N": 4,
+    "Gruppe": 8,
+    "modular": true,
+    "min": -80.92428965595462,
+    "Rauschen": 1.1885613576640473e-15,
+    "positiv": false,
+    "Bahnen": [
+     {
+      "Bahn": 6,
+      "Charaktere": [
+       "T 0, S 0"
+      ],
+      "konsistent": true,
+      "lambda": "(1.0 + 0.0j)"
+     },
+     {
+      "Bahn": 6,
+      "Charaktere": [
+       "T 0, S 0"
+      ],
+      "konsistent": true,
+      "lambda": "(16.0 + 0.0j)"
+     },
+     {
+      "Bahn": 24,
+      "Charaktere": [
+       "T 0, S 0",
+       "T 1/2, S 1/2"
+      ],
+      "konsistent": true,
+      "lambda": "(0.5 - 0.8660254j)"
+     },
+     {
+      "Bahn": 3,
+      "Charaktere": [
+       "T 0, S 0"
+      ],
+      "konsistent": true,
+      "lambda": "(4.0 + 0.0j)"
+     }
+    ]
+   },
+   "N4 Z4 + pro Naht G = +1": {
+    "N": 4,
+    "Gruppe": 64,
+    "modular": true,
+    "min": -3896048101050.5557,
+    "Rauschen": 3.3311431197514537e-09,
+    "positiv": false,
+    "Bahnen": [
+     {
+      "Bahn": 6,
+      "Charaktere": [
+       "T 0, S 0"
+      ],
+      "konsistent": true,
+      "lambda": "(1.0 + 0.0j)"
+     },
+     {
+      "Bahn": 6,
+      "Charaktere": [
+       "T 0, S 0"
+      ],
+      "konsistent": true,
+      "lambda": "(64.0 + 0.0j)"
+     },
+     {
+      "Bahn": 24,
+      "Charaktere": [
+       "T 0, S 0",
+       "T 1/2, S 1/2"
+      ],
+      "konsistent": true,
+      "lambda": "(3.8637033 - 1.0352762j)"
+     },
+     {
+      "Bahn": 3,
+      "Charaktere": [
+       "T 0, S 0"
+      ],
+      "konsistent": true,
+      "lambda": "(8.0 + 0.0j)"
+     },
+     {
+      "Bahn": 24,
+      "Charaktere": [
+       "T 0, S 0"
+      ],
+      "konsistent": true,
+      "lambda": "(64.0 + 0.0j)"
+     },
+     {
+      "Bahn": 24,
+      "Charaktere": [
+       "T 0, S 0",
+       "T 1/2, S 1/2"
+      ],
+      "konsistent": true,
+      "lambda": "(15.454813 + 4.1411047j)"
+     },
+     {
+      "Bahn": 24,
+      "Charaktere": [
+       "T 0, S 0",
+       "T 1/2, S 1/2"
+      ],
+      "konsistent": true,
+      "lambda": "(6.9282032 + 4.0j)"
+     },
+     {
+      "Bahn": 24,
+      "Charaktere": [
+       "T 0, S 0",
+       "T 1/2, S 1/2"
+      ],
+      "konsistent": true,
+      "lambda": "(5.1961524 - 3.0j)"
+     },
+     {
+      "Bahn": 24,
+      "Charaktere": [
+       "T 0, S 0",
+       "T 1/2, S 1/2"
+      ],
+      "konsistent": true,
+      "lambda": "(2.8284271 - 2.8284271j)"
+     },
+     {
+      "Bahn": 24,
+      "Charaktere": [
+       "T 0, S 0",
+       "T 1/2, S 1/2"
+      ],
+      "konsistent": true,
+      "lambda": "(0.5 - 0.8660254j)"
+     }
+    ]
+   },
+   "N4 Z4 + pro Naht G = -1": {
+    "N": 4,
+    "Gruppe": 64,
+    "modular": true,
+    "min": 0.23604646383988953,
+    "Rauschen": 3.3354945539314065e-09,
+    "positiv": true,
+    "Bahnen": [
+     {
+      "Bahn": 6,
+      "Charaktere": [
+       "T 0, S 0"
+      ],
+      "konsistent": true,
+      "lambda": "(1.0 + 0.0j)"
+     },
+     {
+      "Bahn": 6,
+      "Charaktere": [
+       "T 0, S 0"
+      ],
+      "konsistent": true,
+      "lambda": "(64.0 + 0.0j)"
+     },
+     {
+      "Bahn": 24,
+      "Charaktere": [
+       "T 0, S 0",
+       "T 1/2, S 1/2"
+      ],
+      "konsistent": true,
+      "lambda": "(-3.8637033 + 1.0352762j)"
+     },
+     {
+      "Bahn": 3,
+      "Charaktere": [
+       "T 0, S 0"
+      ],
+      "konsistent": true,
+      "lambda": "(8.0 + 0.0j)"
+     },
+     {
+      "Bahn": 24,
+      "Charaktere": [
+       "T 0, S 0"
+      ],
+      "konsistent": true,
+      "lambda": "(-64.0 + 1.2036016e-24j)"
+     },
+     {
+      "Bahn": 24,
+      "Charaktere": [
+       "T 0, S 0",
+       "T 1/2, S 1/2"
+      ],
+      "konsistent": true,
+      "lambda": "(-15.454813 - 4.1411047j)"
+     },
+     {
+      "Bahn": 24,
+      "Charaktere": [
+       "T 0, S 0",
+       "T 1/2, S 1/2"
+      ],
+      "konsistent": true,
+      "lambda": "(6.9282032 + 4.0j)"
+     },
+     {
+      "Bahn": 24,
+      "Charaktere": [
+       "T 0, S 0",
+       "T 1/2, S 1/2"
+      ],
+      "konsistent": true,
+      "lambda": "(5.1961524 - 3.0j)"
+     },
+     {
+      "Bahn": 24,
+      "Charaktere": [
+       "T 0, S 0",
+       "T 1/2, S 1/2"
+      ],
+      "konsistent": true,
+      "lambda": "(-2.8284271 + 2.8284271j)"
+     },
+     {
+      "Bahn": 24,
+      "Charaktere": [
+       "T 0, S 0",
+       "T 1/2, S 1/2"
+      ],
+      "konsistent": true,
+      "lambda": "(0.5 - 0.8660254j)"
+     }
+    ]
+   },
+   "N4 Z4 J-kovariant + pro Naht G = +1": {
+    "N": 4,
+    "Gruppe": 64,
+    "modular": true,
+    "min": -3896048101050.564,
+    "Rauschen": 3.3311396355758507e-09,
+    "positiv": false,
+    "Bahnen": [
+     {
+      "Bahn": 6,
+      "Charaktere": [
+       "T 0, S 0"
+      ],
+      "konsistent": true,
+      "lambda": "(1.0 + 0.0j)"
+     },
+     {
+      "Bahn": 3,
+      "Charaktere": [
+       "T 0, S 0"
+      ],
+      "konsistent": true,
+      "lambda": "(64.0 + 0.0j)"
+     },
+     {
+      "Bahn": 24,
+      "Charaktere": [
+       "T 0, S 0",
+       "T 1/2, S 1/2"
+      ],
+      "konsistent": true,
+      "lambda": "(3.8637033 - 1.0352762j)"
+     },
+     {
+      "Bahn": 3,
+      "Charaktere": [
+       "T 0, S 0"
+      ],
+      "konsistent": true,
+      "lambda": "(8.0 + 0.0j)"
+     },
+     {
+      "Bahn": 24,
+      "Charaktere": [
+       "T 0, S 0"
+      ],
+      "konsistent": true,
+      "lambda": "(64.0 + 0.0j)"
+     },
+     {
+      "Bahn": 24,
+      "Charaktere": [
+       "T 0, S 0",
+       "T 1/2, S 1/2"
+      ],
+      "konsistent": true,
+      "lambda": "(15.454813 + 4.1411047j)"
+     },
+     {
+      "Bahn": 24,
+      "Charaktere": [
+       "T 0, S 0",
+       "T 1/2, S 1/2"
+      ],
+      "konsistent": true,
+      "lambda": "(6.9282032 + 4.0j)"
+     },
+     {
+      "Bahn": 24,
+      "Charaktere": [
+       "T 0, S 0",
+       "T 1/2, S 1/2"
+      ],
+      "konsistent": true,
+      "lambda": "(5.1961524 - 3.0j)"
+     },
+     {
+      "Bahn": 24,
+      "Charaktere": [
+       "T 0, S 0",
+       "T 1/2, S 1/2"
+      ],
+      "konsistent": true,
+      "lambda": "(2.8284271 - 2.8284271j)"
+     },
+     {
+      "Bahn": 24,
+      "Charaktere": [
+       "T 0, S 0",
+       "T 1/2, S 1/2"
+      ],
+      "konsistent": true,
+      "lambda": "(0.5 - 0.8660254j)"
+     }
+    ]
+   },
+   "N3 gekleidet Gamma(sigma) G_1 = e^(2 pi i 0/6)": {
+    "N": 3,
+    "Gruppe": 6,
+    "modular": true,
+    "min": -617617849.6315515,
+    "Rauschen": 4.617670061169385e-13,
+    "positiv": false,
+    "Bahnen": [
+     {
+      "Bahn": 6,
+      "Charaktere": [
+       "T 0, S 0"
+      ],
+      "konsistent": true,
+      "lambda": "(1.0 + 0.0j)"
+     },
+     {
+      "Bahn": 96,
+      "Charaktere": [
+       "T 0, S 0",
+       "T 1/2, S 1/2"
+      ],
+      "konsistent": true,
+      "lambda": "(1.4142136 - 1.4142136j)"
+     },
+     {
+      "Bahn": 24,
+      "Charaktere": [
+       "T 0, S 0"
+      ],
+      "konsistent": true,
+      "lambda": "(2.0 + 0.0j)"
+     },
+     {
+      "Bahn": 24,
+      "Charaktere": [
+       "T 0, S 0",
+       "T 1/2, S 1/2"
+      ],
+      "konsistent": true,
+      "lambda": "(0.70710678 - 0.70710678j)"
+     }
+    ]
+   },
+   "N3 gekleidet Gamma(sigma) G_1 = e^(2 pi i 1/6)": {
+    "N": 3,
+    "Gruppe": 6,
+    "modular": true,
+    "min": -280886116.2421748,
+    "Rauschen": 2.3087939618017755e-13,
+    "positiv": false,
+    "Bahnen": [
+     {
+      "Bahn": 6,
+      "Charaktere": [
+       "T 0, S 0"
+      ],
+      "konsistent": true,
+      "lambda": "(1.0 + 0.0j)"
+     },
+     {
+      "Bahn": 96,
+      "Charaktere": [
+       "T 0, S 0",
+       "T 1/2, S 1/2"
+      ],
+      "konsistent": true,
+      "lambda": "(0.70710678 - 0.70710678j)"
+     },
+     {
+      "Bahn": 24,
+      "Charaktere": [
+       "T 0, S 0"
+      ],
+      "konsistent": true,
+      "lambda": "(-1.0 + 2.5849394e-26j)"
+     },
+     {
+      "Bahn": 24,
+      "Charaktere": [
+       "T 0, S 0",
+       "T 1/2, S 1/2"
+      ],
+      "konsistent": true,
+      "lambda": "(-0.70710678 + 0.70710678j)"
+     }
+    ]
+   },
+   "N3 gekleidet Gamma(sigma) G_1 = e^(2 pi i 2/6)": {
+    "N": 3,
+    "Gruppe": 6,
+    "modular": true,
+    "min": 0.00018317061726470744,
+    "Rauschen": 2.308755879867132e-13,
+    "positiv": true,
+    "Bahnen": [
+     {
+      "Bahn": 6,
+      "Charaktere": [
+       "T 0, S 0"
+      ],
+      "konsistent": true,
+      "lambda": "(1.0 + 0.0j)"
+     },
+     {
+      "Bahn": 96,
+      "Charaktere": [
+       "T 0, S 0",
+       "T 1/2, S 1/2"
+      ],
+      "konsistent": true,
+      "lambda": "(-0.70710678 + 0.70710678j)"
+     },
+     {
+      "Bahn": 24,
+      "Charaktere": [
+       "T 0, S 0"
+      ],
+      "konsistent": true,
+      "lambda": "(-1.0 + 2.5849394e-26j)"
+     },
+     {
+      "Bahn": 24,
+      "Charaktere": [
+       "T 0, S 0",
+       "T 1/2, S 1/2"
+      ],
+      "konsistent": true,
+      "lambda": "(0.70710678 - 0.70710678j)"
+     }
+    ]
+   },
+   "N3 gekleidet Gamma(sigma) G_1 = e^(2 pi i 3/6)": {
+    "N": 3,
+    "Gruppe": 6,
+    "modular": true,
+    "min": 0.0004364171248427541,
+    "Rauschen": 4.617648478820051e-13,
+    "positiv": true,
+    "Bahnen": [
+     {
+      "Bahn": 6,
+      "Charaktere": [
+       "T 0, S 0"
+      ],
+      "konsistent": true,
+      "lambda": "(1.0 + 0.0j)"
+     },
+     {
+      "Bahn": 96,
+      "Charaktere": [
+       "T 0, S 0",
+       "T 1/2, S 1/2"
+      ],
+      "konsistent": true,
+      "lambda": "(-1.4142136 + 1.4142136j)"
+     },
+     {
+      "Bahn": 24,
+      "Charaktere": [
+       "T 0, S 0"
+      ],
+      "konsistent": true,
+      "lambda": "(2.0 + 0.0j)"
+     },
+     {
+      "Bahn": 24,
+      "Charaktere": [
+       "T 0, S 0",
+       "T 1/2, S 1/2"
+      ],
+      "konsistent": true,
+      "lambda": "(-0.70710678 + 0.70710678j)"
+     }
+    ]
+   },
+   "N3 gekleidet Gamma(sigma) G_1 = e^(2 pi i 4/6)": {
+    "N": 3,
+    "Gruppe": 6,
+    "modular": true,
+    "min": 0.00018317061726470744,
+    "Rauschen": 2.308755879867132e-13,
+    "positiv": true,
+    "Bahnen": [
+     {
+      "Bahn": 6,
+      "Charaktere": [
+       "T 0, S 0"
+      ],
+      "konsistent": true,
+      "lambda": "(1.0 + 0.0j)"
+     },
+     {
+      "Bahn": 96,
+      "Charaktere": [
+       "T 0, S 0",
+       "T 1/2, S 1/2"
+      ],
+      "konsistent": true,
+      "lambda": "(-0.70710678 + 0.70710678j)"
+     },
+     {
+      "Bahn": 24,
+      "Charaktere": [
+       "T 0, S 0"
+      ],
+      "konsistent": true,
+      "lambda": "(-1.0 + 2.5849394e-26j)"
+     },
+     {
+      "Bahn": 24,
+      "Charaktere": [
+       "T 0, S 0",
+       "T 1/2, S 1/2"
+      ],
+      "konsistent": true,
+      "lambda": "(0.70710678 - 0.70710678j)"
+     }
+    ]
+   },
+   "N3 gekleidet Gamma(sigma) G_1 = e^(2 pi i 5/6)": {
+    "N": 3,
+    "Gruppe": 6,
+    "modular": true,
+    "min": -280886116.2421748,
+    "Rauschen": 2.3087939618017755e-13,
+    "positiv": false,
+    "Bahnen": [
+     {
+      "Bahn": 6,
+      "Charaktere": [
+       "T 0, S 0"
+      ],
+      "konsistent": true,
+      "lambda": "(1.0 + 0.0j)"
+     },
+     {
+      "Bahn": 96,
+      "Charaktere": [
+       "T 0, S 0",
+       "T 1/2, S 1/2"
+      ],
+      "konsistent": true,
+      "lambda": "(0.70710678 - 0.70710678j)"
+     },
+     {
+      "Bahn": 24,
+      "Charaktere": [
+       "T 0, S 0"
+      ],
+      "konsistent": true,
+      "lambda": "(-1.0 + 2.5849394e-26j)"
+     },
+     {
+      "Bahn": 24,
+      "Charaktere": [
+       "T 0, S 0",
+       "T 1/2, S 1/2"
+      ],
+      "konsistent": true,
+      "lambda": "(-0.70710678 + 0.70710678j)"
+     }
+    ]
+   },
+   "N4 gekleidet Gamma(sigma) G_1 = e^(2 pi i 0/8)": {
+    "N": 4,
+    "Gruppe": 8,
+    "modular": true,
+    "min": 0.06761072762438278,
+    "Rauschen": 8.351252836147787e-10,
+    "positiv": true,
+    "Bahnen": [
+     {
+      "Bahn": 6,
+      "Charaktere": [
+       "T 0, S 0"
+      ],
+      "konsistent": true,
+      "lambda": "(1.0 + 0.0j)"
+     },
+     {
+      "Bahn": 24,
+      "Charaktere": [
+       "T 0, S 0"
+      ],
+      "konsistent": true,
+      "lambda": "(16.0 + 0.0j)"
+     },
+     {
+      "Bahn": 24,
+      "Charaktere": [
+       "T 0, S 0",
+       "T 1/2, S 1/2"
+      ],
+      "konsistent": true,
+      "lambda": "(4.0 + 0.0j)"
+     },
+     {
+      "Bahn": 24,
+      "Charaktere": [
+       "T 0, S 0",
+       "T 1/2, S 1/2"
+      ],
+      "konsistent": true,
+      "lambda": "(0.5 - 0.8660254j)"
+     }
+    ]
+   },
+   "N4 gekleidet Gamma(sigma) G_1 = e^(2 pi i 1/8)": {
+    "N": 4,
+    "Gruppe": 8,
+    "modular": true,
+    "min": -4024922914.992072,
+    "Rauschen": 1.2412806270280299e-15,
+    "positiv": false,
+    "Bahnen": [
+     {
+      "Bahn": 6,
+      "Charaktere": [
+       "T 0, S 0"
+      ],
+      "konsistent": true,
+      "lambda": "(1.0 + 0.0j)"
+     },
+     {
+      "Bahn": 24,
+      "Charaktere": [
+       "T 0, S 0"
+      ],
+      "konsistent": true,
+      "lambda": "(0.0 + 0.0j)"
+     },
+     {
+      "Bahn": 24,
+      "Charaktere": [
+       "T 0, S 0",
+       "T 1/2, S 1/2"
+      ],
+      "konsistent": true,
+      "lambda": "(0.0 + 0.0j)"
+     },
+     {
+      "Bahn": 24,
+      "Charaktere": [
+       "T 0, S 0",
+       "T 1/2, S 1/2"
+      ],
+      "konsistent": true,
+      "lambda": "(-0.5 + 0.8660254j)"
+     }
+    ]
+   },
+   "N4 gekleidet Gamma(sigma) G_1 = e^(2 pi i 2/8)": {
+    "N": 4,
+    "Gruppe": 8,
+    "modular": true,
+    "min": -125977240512.3245,
+    "Rauschen": 1.0745409825113248e-12,
+    "positiv": false,
+    "Bahnen": [
+     {
+      "Bahn": 6,
+      "Charaktere": [
+       "T 0, S 0"
+      ],
+      "konsistent": true,
+      "lambda": "(1.0 + 0.0j)"
+     },
+     {
+      "Bahn": 24,
+      "Charaktere": [
+       "T 0, S 0"
+      ],
+      "konsistent": true,
+      "lambda": "(0.0 + 0.0j)"
+     },
+     {
+      "Bahn": 24,
+      "Charaktere": [
+       "T 0, S 0",
+       "T 1/2, S 1/2"
+      ],
+      "konsistent": true,
+      "lambda": "(-4.0 + 7.5225098e-26j)"
+     },
+     {
+      "Bahn": 24,
+      "Charaktere": [
+       "T 0, S 0",
+       "T 1/2, S 1/2"
+      ],
+      "konsistent": true,
+      "lambda": "(0.5 - 0.8660254j)"
+     }
+    ]
+   },
+   "N4 gekleidet Gamma(sigma) G_1 = e^(2 pi i 3/8)": {
+    "N": 4,
+    "Gruppe": 8,
+    "modular": true,
+    "min": -4024922914.992072,
+    "Rauschen": 1.2412806270280299e-15,
+    "positiv": false,
+    "Bahnen": [
+     {
+      "Bahn": 6,
+      "Charaktere": [
+       "T 0, S 0"
+      ],
+      "konsistent": true,
+      "lambda": "(1.0 + 0.0j)"
+     },
+     {
+      "Bahn": 24,
+      "Charaktere": [
+       "T 0, S 0"
+      ],
+      "konsistent": true,
+      "lambda": "(0.0 + 0.0j)"
+     },
+     {
+      "Bahn": 24,
+      "Charaktere": [
+       "T 0, S 0",
+       "T 1/2, S 1/2"
+      ],
+      "konsistent": true,
+      "lambda": "(0.0 + 0.0j)"
+     },
+     {
+      "Bahn": 24,
+      "Charaktere": [
+       "T 0, S 0",
+       "T 1/2, S 1/2"
+      ],
+      "konsistent": true,
+      "lambda": "(-0.5 + 0.8660254j)"
+     }
+    ]
+   },
+   "N4 gekleidet Gamma(sigma) G_1 = e^(2 pi i 4/8)": {
+    "N": 4,
+    "Gruppe": 8,
+    "modular": true,
+    "min": -905989850784.4341,
+    "Rauschen": 8.32994466450465e-10,
+    "positiv": false,
+    "Bahnen": [
+     {
+      "Bahn": 6,
+      "Charaktere": [
+       "T 0, S 0"
+      ],
+      "konsistent": true,
+      "lambda": "(1.0 + 0.0j)"
+     },
+     {
+      "Bahn": 24,
+      "Charaktere": [
+       "T 0, S 0"
+      ],
+      "konsistent": true,
+      "lambda": "(-16.0 + 3.0090039e-25j)"
+     },
+     {
+      "Bahn": 24,
+      "Charaktere": [
+       "T 0, S 0",
+       "T 1/2, S 1/2"
+      ],
+      "konsistent": true,
+      "lambda": "(4.0 + 0.0j)"
+     },
+     {
+      "Bahn": 24,
+      "Charaktere": [
+       "T 0, S 0",
+       "T 1/2, S 1/2"
+      ],
+      "konsistent": true,
+      "lambda": "(0.5 - 0.8660254j)"
+     }
+    ]
+   },
+   "N4 gekleidet Gamma(sigma) G_1 = e^(2 pi i 5/8)": {
+    "N": 4,
+    "Gruppe": 8,
+    "modular": true,
+    "min": -4024922914.992072,
+    "Rauschen": 1.2412806270280299e-15,
+    "positiv": false,
+    "Bahnen": [
+     {
+      "Bahn": 6,
+      "Charaktere": [
+       "T 0, S 0"
+      ],
+      "konsistent": true,
+      "lambda": "(1.0 + 0.0j)"
+     },
+     {
+      "Bahn": 24,
+      "Charaktere": [
+       "T 0, S 0"
+      ],
+      "konsistent": true,
+      "lambda": "(0.0 + 0.0j)"
+     },
+     {
+      "Bahn": 24,
+      "Charaktere": [
+       "T 0, S 0",
+       "T 1/2, S 1/2"
+      ],
+      "konsistent": true,
+      "lambda": "(0.0 + 0.0j)"
+     },
+     {
+      "Bahn": 24,
+      "Charaktere": [
+       "T 0, S 0",
+       "T 1/2, S 1/2"
+      ],
+      "konsistent": true,
+      "lambda": "(-0.5 + 0.8660254j)"
+     }
+    ]
+   },
+   "N4 gekleidet Gamma(sigma) G_1 = e^(2 pi i 6/8)": {
+    "N": 4,
+    "Gruppe": 8,
+    "modular": true,
+    "min": -125977240512.3245,
+    "Rauschen": 1.0745409825113248e-12,
+    "positiv": false,
+    "Bahnen": [
+     {
+      "Bahn": 6,
+      "Charaktere": [
+       "T 0, S 0"
+      ],
+      "konsistent": true,
+      "lambda": "(1.0 + 0.0j)"
+     },
+     {
+      "Bahn": 24,
+      "Charaktere": [
+       "T 0, S 0"
+      ],
+      "konsistent": true,
+      "lambda": "(0.0 + 0.0j)"
+     },
+     {
+      "Bahn": 24,
+      "Charaktere": [
+       "T 0, S 0",
+       "T 1/2, S 1/2"
+      ],
+      "konsistent": true,
+      "lambda": "(-4.0 + 7.5225098e-26j)"
+     },
+     {
+      "Bahn": 24,
+      "Charaktere": [
+       "T 0, S 0",
+       "T 1/2, S 1/2"
+      ],
+      "konsistent": true,
+      "lambda": "(0.5 - 0.8660254j)"
+     }
+    ]
+   },
+   "N4 gekleidet Gamma(sigma) G_1 = e^(2 pi i 7/8)": {
+    "N": 4,
+    "Gruppe": 8,
+    "modular": true,
+    "min": -4024922914.992072,
+    "Rauschen": 1.2412806270280299e-15,
+    "positiv": false,
+    "Bahnen": [
+     {
+      "Bahn": 6,
+      "Charaktere": [
+       "T 0, S 0"
+      ],
+      "konsistent": true,
+      "lambda": "(1.0 + 0.0j)"
+     },
+     {
+      "Bahn": 24,
+      "Charaktere": [
+       "T 0, S 0"
+      ],
+      "konsistent": true,
+      "lambda": "(0.0 + 0.0j)"
+     },
+     {
+      "Bahn": 24,
+      "Charaktere": [
+       "T 0, S 0",
+       "T 1/2, S 1/2"
+      ],
+      "konsistent": true,
+      "lambda": "(0.0 + 0.0j)"
+     },
+     {
+      "Bahn": 24,
+      "Charaktere": [
+       "T 0, S 0",
+       "T 1/2, S 1/2"
+      ],
+      "konsistent": true,
+      "lambda": "(-0.5 + 0.8660254j)"
+     }
+    ]
+   },
+   "N4 gekleidet Gamma(sigma) U_1 = e^(2 pi i 0/8)": {
+    "N": 4,
+    "Gruppe": 8,
+    "modular": true,
+    "min": -905914514450.012,
+    "Rauschen": 8.322527994550407e-10,
+    "positiv": false,
+    "Bahnen": [
+     {
+      "Bahn": 6,
+      "Charaktere": [
+       "T 0, S 0"
+      ],
+      "konsistent": true,
+      "lambda": "(1.0 + 0.0j)"
+     },
+     {
+      "Bahn": 24,
+      "Charaktere": [
+       "T 0, S 0"
+      ],
+      "konsistent": true,
+      "lambda": "(16.0 + 0.0j)"
+     },
+     {
+      "Bahn": 24,
+      "Charaktere": [
+       "T 0, S 0",
+       "T 1/2, S 1/2"
+      ],
+      "konsistent": true,
+      "lambda": "(3.4641016 + 2.0j)"
+     },
+     {
+      "Bahn": 24,
+      "Charaktere": [
+       "T 0, S 0",
+       "T 1/2, S 1/2"
+      ],
+      "konsistent": true,
+      "lambda": "(1.0 + 0.0j)"
+     }
+    ]
+   },
+   "N4 gekleidet Gamma(sigma) U_1 = e^(2 pi i 4/8)": {
+    "N": 4,
+    "Gruppe": 8,
+    "modular": true,
+    "min": 0.06381727070364261,
+    "Rauschen": 8.344167265719558e-10,
+    "positiv": true,
+    "Bahnen": [
+     {
+      "Bahn": 6,
+      "Charaktere": [
+       "T 0, S 0"
+      ],
+      "konsistent": true,
+      "lambda": "(1.0 + 0.0j)"
+     },
+     {
+      "Bahn": 24,
+      "Charaktere": [
+       "T 0, S 0"
+      ],
+      "konsistent": true,
+      "lambda": "(-16.0 + 3.0090039e-25j)"
+     },
+     {
+      "Bahn": 24,
+      "Charaktere": [
+       "T 0, S 0",
+       "T 1/2, S 1/2"
+      ],
+      "konsistent": true,
+      "lambda": "(3.4641016 + 2.0j)"
+     },
+     {
+      "Bahn": 24,
+      "Charaktere": [
+       "T 0, S 0",
+       "T 1/2, S 1/2"
+      ],
+      "konsistent": true,
+      "lambda": "(1.0 + 0.0j)"
+     }
+    ]
+   },
+   "N1 diag U = +1": {
+    "N": 1,
+    "Gruppe": 2,
+    "modular": true,
+    "min": 2.1944363786307317e-09,
+    "Rauschen": 4.933689644063875e-23,
+    "positiv": true,
+    "Bahnen": [
+     {
+      "Bahn": 6,
+      "Charaktere": [
+       "T 0, S 0"
+      ],
+      "konsistent": true,
+      "lambda": "(1.0 + 0.0j)"
+     },
+     {
+      "Bahn": 24,
+      "Charaktere": [
+       "T 0, S 0",
+       "T 1/2, S 1/2"
+      ],
+      "konsistent": true,
+      "lambda": "(1.0 + 0.0j)"
+     }
+    ]
+   },
+   "N1 diag U = -1": {
+    "N": 1,
+    "Gruppe": 2,
+    "modular": true,
+    "min": -226.74790799232767,
+    "Rauschen": 4.980272882672401e-23,
+    "positiv": false,
+    "Bahnen": [
+     {
+      "Bahn": 6,
+      "Charaktere": [
+       "T 0, S 0"
+      ],
+      "konsistent": true,
+      "lambda": "(1.0 + 0.0j)"
+     },
+     {
+      "Bahn": 24,
+      "Charaktere": [
+       "T 0, S 0",
+       "T 1/2, S 1/2"
+      ],
+      "konsistent": true,
+      "lambda": "(-1.0 + 1.8806274e-26j)"
+     }
+    ]
+   },
+   "N1 diag G = U R^2 = +1": {
+    "N": 1,
+    "Gruppe": 2,
+    "modular": true,
+    "min": -222.69372975356166,
+    "Rauschen": 4.559271157676248e-23,
+    "positiv": false,
+    "Bahnen": [
+     {
+      "Bahn": 6,
+      "Charaktere": [
+       "T 0, S 0"
+      ],
+      "konsistent": true,
+      "lambda": "(1.0 + 0.0j)"
+     },
+     {
+      "Bahn": 24,
+      "Charaktere": [
+       "T 0, S 0",
+       "T 1/2, S 1/2"
+      ],
+      "konsistent": true,
+      "lambda": "(0.96592583 - 0.25881905j)"
+     }
+    ]
+   },
+   "N1 diag G = U R^2 = -1": {
+    "N": 1,
+    "Gruppe": 2,
+    "modular": true,
+    "min": 2.1940994699373523e-09,
+    "Rauschen": 4.7360063301234023e-23,
+    "positiv": true,
+    "Bahnen": [
+     {
+      "Bahn": 6,
+      "Charaktere": [
+       "T 0, S 0"
+      ],
+      "konsistent": true,
+      "lambda": "(1.0 + 0.0j)"
+     },
+     {
+      "Bahn": 24,
+      "Charaktere": [
+       "T 0, S 0",
+       "T 1/2, S 1/2"
+      ],
+      "konsistent": true,
+      "lambda": "(-0.96592583 + 0.25881905j)"
+     }
+    ]
+   },
+   "N2 diag U = +1": {
+    "N": 2,
+    "Gruppe": 2,
+    "modular": true,
+    "min": 4.795013045253841e-07,
+    "Rauschen": 3.155466638235886e-20,
+    "positiv": true,
+    "Bahnen": [
+     {
+      "Bahn": 6,
+      "Charaktere": [
+       "T 0, S 0"
+      ],
+      "konsistent": true,
+      "lambda": "(1.0 + 0.0j)"
+     },
+     {
+      "Bahn": 24,
+      "Charaktere": [
+       "T 0, S 0",
+       "T 1/2, S 1/2"
+      ],
+      "konsistent": true,
+      "lambda": "(1.0 + 0.0j)"
+     }
+    ]
+   },
+   "N2 diag U = -1": {
+    "N": 2,
+    "Gruppe": 2,
+    "modular": true,
+    "min": -78435.62399391222,
+    "Rauschen": 3.20814535201984e-20,
+    "positiv": false,
+    "Bahnen": [
+     {
+      "Bahn": 6,
+      "Charaktere": [
+       "T 0, S 0"
+      ],
+      "konsistent": true,
+      "lambda": "(1.0 + 0.0j)"
+     },
+     {
+      "Bahn": 24,
+      "Charaktere": [
+       "T 0, S 0",
+       "T 1/2, S 1/2"
+      ],
+      "konsistent": true,
+      "lambda": "(-1.0 + 1.8806274e-26j)"
+     }
+    ]
+   },
+   "N2 diag G = U R^2 = +1": {
+    "N": 2,
+    "Gruppe": 2,
+    "modular": true,
+    "min": 4.6335946024776417e-07,
+    "Rauschen": 3.00005049518804e-20,
+    "positiv": true,
+    "Bahnen": [
+     {
+      "Bahn": 6,
+      "Charaktere": [
+       "T 0, S 0"
+      ],
+      "konsistent": true,
+      "lambda": "(1.0 + 0.0j)"
+     },
+     {
+      "Bahn": 24,
+      "Charaktere": [
+       "T 0, S 0",
+       "T 1/2, S 1/2"
+      ],
+      "konsistent": true,
+      "lambda": "(0.8660254 - 0.5j)"
+     }
+    ]
+   },
+   "N2 diag G = U R^2 = -1": {
+    "N": 2,
+    "Gruppe": 2,
+    "modular": true,
+    "min": -77983.29774621403,
+    "Rauschen": 2.9310807391534995e-20,
+    "positiv": false,
+    "Bahnen": [
+     {
+      "Bahn": 6,
+      "Charaktere": [
+       "T 0, S 0"
+      ],
+      "konsistent": true,
+      "lambda": "(1.0 + 0.0j)"
+     },
+     {
+      "Bahn": 24,
+      "Charaktere": [
+       "T 0, S 0",
+       "T 1/2, S 1/2"
+      ],
+      "konsistent": true,
+      "lambda": "(-0.8660254 + 0.5j)"
+     }
+    ]
+   },
+   "N3 diag U = +1": {
+    "N": 3,
+    "Gruppe": 2,
+    "modular": true,
+    "min": 2.8776020569999172e-05,
+    "Rauschen": 8.936619024904706e-18,
+    "positiv": true,
+    "Bahnen": [
+     {
+      "Bahn": 6,
+      "Charaktere": [
+       "T 0, S 0"
+      ],
+      "konsistent": true,
+      "lambda": "(1.0 + 0.0j)"
+     },
+     {
+      "Bahn": 24,
+      "Charaktere": [
+       "T 0, S 0",
+       "T 1/2, S 1/2"
+      ],
+      "konsistent": true,
+      "lambda": "(1.0 + 0.0j)"
+     }
+    ]
+   },
+   "N3 diag U = -1": {
+    "N": 3,
+    "Gruppe": 2,
+    "modular": true,
+    "min": -18822687.832586125,
+    "Rauschen": 9.174875301480037e-18,
+    "positiv": false,
+    "Bahnen": [
+     {
+      "Bahn": 6,
+      "Charaktere": [
+       "T 0, S 0"
+      ],
+      "konsistent": true,
+      "lambda": "(1.0 + 0.0j)"
+     },
+     {
+      "Bahn": 24,
+      "Charaktere": [
+       "T 0, S 0",
+       "T 1/2, S 1/2"
+      ],
+      "konsistent": true,
+      "lambda": "(-1.0 + 1.8806274e-26j)"
+     }
+    ]
+   },
+   "N3 diag G = U R^2 = +1": {
+    "N": 3,
+    "Gruppe": 2,
+    "modular": true,
+    "min": -18615205.737790756,
+    "Rauschen": 6.842944834179817e-18,
+    "positiv": false,
+    "Bahnen": [
+     {
+      "Bahn": 6,
+      "Charaktere": [
+       "T 0, S 0"
+      ],
+      "konsistent": true,
+      "lambda": "(1.0 + 0.0j)"
+     },
+     {
+      "Bahn": 24,
+      "Charaktere": [
+       "T 0, S 0",
+       "T 1/2, S 1/2"
+      ],
+      "konsistent": true,
+      "lambda": "(0.70710678 - 0.70710678j)"
+     }
+    ]
+   },
+   "N3 diag G = U R^2 = -1": {
+    "N": 3,
+    "Gruppe": 2,
+    "modular": true,
+    "min": -11.282862314727195,
+    "Rauschen": 6.610668926981785e-18,
+    "positiv": false,
+    "Bahnen": [
+     {
+      "Bahn": 6,
+      "Charaktere": [
+       "T 0, S 0"
+      ],
+      "konsistent": true,
+      "lambda": "(1.0 + 0.0j)"
+     },
+     {
+      "Bahn": 24,
+      "Charaktere": [
+       "T 0, S 0",
+       "T 1/2, S 1/2"
+      ],
+      "konsistent": true,
+      "lambda": "(-0.70710678 + 0.70710678j)"
+     }
+    ]
+   },
+   "N4 diag U = +1": {
+    "N": 4,
+    "Gruppe": 2,
+    "modular": true,
+    "min": 0.0010004782736048625,
+    "Rauschen": 1.895571533241736e-15,
+    "positiv": true,
+    "Bahnen": [
+     {
+      "Bahn": 6,
+      "Charaktere": [
+       "T 0, S 0"
+      ],
+      "konsistent": true,
+      "lambda": "(1.0 + 0.0j)"
+     },
+     {
+      "Bahn": 24,
+      "Charaktere": [
+       "T 0, S 0",
+       "T 1/2, S 1/2"
+      ],
+      "konsistent": true,
+      "lambda": "(1.0 + 0.0j)"
+     }
+    ]
+   },
+   "N4 diag U = -1": {
+    "N": 4,
+    "Gruppe": 2,
+    "modular": true,
+    "min": -4100351008.445813,
+    "Rauschen": 1.9464257936831296e-15,
+    "positiv": false,
+    "Bahnen": [
+     {
+      "Bahn": 6,
+      "Charaktere": [
+       "T 0, S 0"
+      ],
+      "konsistent": true,
+      "lambda": "(1.0 + 0.0j)"
+     },
+     {
+      "Bahn": 24,
+      "Charaktere": [
+       "T 0, S 0",
+       "T 1/2, S 1/2"
+      ],
+      "konsistent": true,
+      "lambda": "(-1.0 + 1.8806274e-26j)"
+     }
+    ]
+   },
+   "N4 diag G = U R^2 = +1": {
+    "N": 4,
+    "Gruppe": 2,
+    "modular": true,
+    "min": -82.32551862752672,
+    "Rauschen": 1.1885613576636209e-15,
+    "positiv": false,
+    "Bahnen": [
+     {
+      "Bahn": 6,
+      "Charaktere": [
+       "T 0, S 0"
+      ],
+      "konsistent": true,
+      "lambda": "(1.0 + 0.0j)"
+     },
+     {
+      "Bahn": 24,
+      "Charaktere": [
+       "T 0, S 0",
+       "T 1/2, S 1/2"
+      ],
+      "konsistent": true,
+      "lambda": "(0.5 - 0.8660254j)"
+     }
+    ]
+   },
+   "N4 diag G = U R^2 = -1": {
+    "N": 4,
+    "Gruppe": 2,
+    "modular": true,
+    "min": -4024922914.992072,
+    "Rauschen": 1.2412806270280299e-15,
+    "positiv": false,
+    "Bahnen": [
+     {
+      "Bahn": 6,
+      "Charaktere": [
+       "T 0, S 0"
+      ],
+      "konsistent": true,
+      "lambda": "(1.0 + 0.0j)"
+     },
+     {
+      "Bahn": 24,
+      "Charaktere": [
+       "T 0, S 0",
+       "T 1/2, S 1/2"
+      ],
+      "konsistent": true,
+      "lambda": "(-0.5 + 0.8660254j)"
+     }
+    ]
+   }
+  },
+  "urteil_kurz": {
+   "Teil 1": "Koszul-Permutation anomal (gerade N); gekleidet Gamma G_1 = +1 modular und positiv bei N = 2, 4; P_GSO pro Naht mit P_ident nie positiv",
+   "Teil 2": "P_glue ohne modulare Ergänzung (N = 1..4); Vierteldrehung auf Spinoren modular unsichtbar",
+   "Teil 3": "Spin-Statistik nur als Gesamtregel, gerade N; Spinor-Z4 nie",
+   "modular_statistics": "P_GSO bedingt wahr unter P_dress (N = 2, 4, gemeinsame Uhr); P_glue, P_A3 falsch (jetzt geprüft); unverdrehte Hebung wahr (ohne Spinoren)"
+  }
+ },
+ "urteil": "Teil 1 (gradierte Permutationsorbifaltigkeit): Die Koszul-Permutation mit P_CAR des Originals (z106) ist gaußsch: Der gradierte N-Zyklus wirkt auf den Fouriermoden mit e^(2 pi i k/N), seine Spur ist exakt das Produkt der verdrillten Modenspuren, seine langen Nähte sind verdrillte Fouriermoden. Für gerade N ist er anomal. Seine Spur ist das einseitige R^2 bei N tau, dessen Bahn keinen Charakter hat (z113). Für N = 3 ist der Koszul-Faktor trivial. Mit J-kovarianter CAR (Partner mitgradiert) ist die Permutation frei, bei N = 2 aber identisch mit dem ungradierten Tausch. Die Anomalie wird genau durch einen GSO-Faktor einer Naht aufgehoben: Gamma(sigma) G_1 hat die Spur von U bei N tau. Ergebnis der Positivität bei gemeinsamer Uhrverdrillung (z113-Rahmen): P_GSO pro Naht ist bei N = 2 positiv (neu; z113 hatte pro Naht nur N = 1), bei N = 3, 4 negativ. Zusammen mit P_ident ist P_GSO pro Naht für N = 2, 3, 4 negativ (ungradiert, J-kovariant) oder anomal (Koszul). Die vertauschte Statistik G = -1 pro Naht bleibt mit P_ident positiv. Die gekleidete Koszul-Permutation mit Gamma G_1 = +1 ist bei N = 2 und N = 4 modulinvariant (auch direkt geprüft) und positiv; als einziger ihrer Charaktere. Dort ist G_d = (Gamma G_1)^N geeicht, also gilt die Spin-Statistik als Gesamtregel auf allen Zuständen. Auf den P_GSO-Zuständen ist die Austauschregel genau P_ident mit P_CAR (Pauli). Bei N = 4 rettet das die diagonale GSO-Regel, die allein (z113: -82,3) und mit ungradiertem Z4 negativ ist. Bei N = 3 ist +1 negativ. Teil 2 (P_glue): P_glue = (1/8)[3 + U + R^2 + 3G - AR + A^3R + AR^3 - A^3R^3] mit A = -Z_SU = i^(N - Nquer). Sein chiraler Anteil (1/8)(U - 1)(AR - AR^3) lebt nur auf dem Spinormodul. Modulsummation legt dagegen jede Vierteldrehung A X mit U A X in eine Bahn mit Koeffizient 1, also ist jede modulare Ergänzung eines Vierteldrehungsterms proportional zu (1 + U) und verschwindet auf Spinoren. Darum hat P_glue für N = 1..4 keine modulare Ergänzung (N = 1, 3 anomal, N = 2 R^2 nur mit Charakter (1/2, 1/2), N = 4 inkonsistent). P_A3 ist für ungerade N anomal und ergänzt sich für gerade N nur zu (1/4)[1 + G - (1 + U)(AR + A^3R^3)] mit Eigenwert -1/2 auf den neutralen Bosonen. Die Einschränkung auf den Spinormodul umgeht z113s Hindernis also nicht: Auf Spinoren sieht die Modulsummation nur U und R^2, wie bei P_GSO. Teil 3 (Klassifikation): Modulinvariant und positiv sind die unverdrehte Hebung (U = +1, N = 1..4, keine Spinoren), P_GSO diagonal nur bei N = 2, P_GSO pro Naht nur bei N = 2 ohne P_ident, die vertauschte Statistik pro Naht mit P_ident (N = 2, 3, 4) und die gekleidete Koszul-Permutation Gamma G_1 = +1 (N = 2, 4). Die Z4-Hebung U R ist erst bei N = 4 modular. Die Vierteldrehung ist nur auf Bosonen ergänzbar; P_A3 und P_glue nie. Spin-Statistik ist im Nahtrahmen also modulverträglich, aber nur als Gesamtregel und nur für gerade N (gerechnet N = 2, 4). Mit identischen Nähten braucht sie die Prämisse P_dress: Nähte werden über den mit einem GSO-Faktor gekleideten Koszul-Tausch komponiert, bei gemeinsamer Uhrverdrillung. Pro Naht zusammen mit P_ident ist sie ausgeschlossen. Folge für die Szenario-Klausel modular_statistics: Die Statistik P_GSO kann sie bedingt erhalten, unter P_dress mit N = 2 oder 4. P_glue und P_A3 erhalten sie nicht; das ist jetzt geprüft und negativ. Die unverdrehte Hebung behält sie, ohne Spinoren. Die Chiralität muss deshalb aus der Indexroute kommen (z114), nicht aus der Z4-Verklebung. Nichts ist befördert."
+}

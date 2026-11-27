@@ -1152,16 +1152,22 @@ PREMISE_MEANING = {
               "its native form is level matching, native when the second seam is the Tomita partner (P_TP, z130)",
     "P_std": "the composition is a morphism of the graded standard form of one seam: its second seam is the Tomita "
              "partner, and it maps the standard vector into the clock orbit of a native standard vector (z130, z174); "
-             "gives P_univ and P_uhr; not derived from A*, and the gate is then a holomorphic-antiholomorphic coupling",
+             "gives P_univ and P_uhr; not derived from A*, and the gate is then a holomorphic-antiholomorphic coupling; "
+             "its pair-clock part is under A* equivalent to 'no one-sided current mixes the deck halves' and to 'the 16 is "
+             "a local field of the pair'; A*, time neutrality and the covering geometry do not give it: six counter-models "
+             "in two spectra (z183)",
     "P_paar": "the statistics rule (the Z4 glue) is one-sided and summed diagonally over separately closed seams, each with "
               "its partner; then anomaly, positivity and normal statistics leave exactly two pairs among N = 1..12 (z174, "
               "z177; the same anomaly of order 2 in the sector object, z176); the pair is neither the sheet doubling of P1 "
-              "(z176) nor a cyclic gluing of two copies (z177)",
+              "(z176) nor a cyclic gluing of two copies (z177); the evenness of N is the associator class 2 in Z4 of the "
+              "one-sided clock and holds for every N, 'exactly two' is numerical for N <= 24 (z178)",
     "I_step": "identification doubled diagonal step = native single step: spinor index = step type, modes = levels (z83)",
     "P_lift": "the clock is the Z4 of the 16 on the carrier through a spinor lift branch (z82)",
     "P_zentral": "the clock has order 4 and commutes with the base changes of the sections of both deck halves (so(10) + "
                  "so(6) of the 16 seam parents, family-number U(1) included); gives R = c^+-1, Tr R = 0, R^2 = (-1)^F and "
-                 "the statement of P_lift (z175); not derived from A*, and Tr R = 0 does not follow from <T> = 0",
+                 "the statement of P_lift (z175); not derived from A*, and Tr R = 0 does not follow from <T> = 0; "
+                 "equivalent to P_deck, 'the clock is the deck parity of the sections extended to the seam': that "
+                 "extension exists in exactly two mutually inverse forms, both of order 4 (z179)",
     "P_vac": "physical time is read in the vacuum sector; the thermal original has no positive continuous time (z72, z84)",
     "P_CAR": "shared CAR of the seams (z106)",
     "P_GSO": "clock-twisted lift G = U_2pi R^2 = +1 (z97); not modular-native, per seam incompatible with a summed U_2pi "
@@ -1330,31 +1336,42 @@ CONVENTIONS = [
 FRONTIER = {
     "graviton": ("gravity", "a spin-2 response derived from the seam with fixed coefficient (a gravity value with status "
                  "supported); closes together with P_curv and P_G; recorded: the glued single object has no clock-neutral "
-                 "spin 2, h = 2 with R = 1 exists only as a state of two objects (z177)"),
+                 "spin 2, h = 2 with R = 1 exists only as a state of two objects (z177); products of massless "
+                 "representations of su(2,2) contain no massless representation, so no pole arises as a collective "
+                 "excitation, and the elementary h = +-2 state carries no bilinear stress tensor (z182)"),
     "modular_statistics": ("statistics", "a statistics rule that is chiral and modular; recorded candidate: the 16 as "
                            "clock-defect endpoint of a left-right completion glued by the Tomita conjugation (z170, z130), "
                            "not yet a scenario value"),
-    "I_step": ("identification", "the doubled diagonal step is the native single step as a theorem (z83)"),
+    "I_step": ("identification", "the doubled diagonal step is the native single step as a theorem (z83); recorded: "
+               "half-sided modular inclusions fix the unit step (the mark spacing) only in the vacuum of the base, the "
+               "standard form of the state of A* is type I and has none (z180)"),
     "P_lift": ("identification", "the seam clock is the Z4 of the 16 as a theorem; recorded candidate: trace zero pins "
                "the clock among the classes of E8 (z170), which trades P_lift for the requirement Tr R = 0"),
     "P_zentral": ("identification", "centrality of the clock as a theorem: that 'base changes are symmetries' of A* also "
                   "means the section bases of the two deck halves (z175); recorded: Tr R = 0 follows from centrality and "
-                  "from the mark count n = 4, not from <T> = 0"),
+                  "from the mark count n = 4, not from <T> = 0; restated as P_deck: what is left is the identification of "
+                  "the clock of the composition with the deck parity of the sections (z179)"),
     "P_univ": ("composition", "seam parity conserved by every composition as a theorem; native when the second seam is "
                "the Tomita partner (z130); one partner is the only real Lorentzian net of the catalogue (z172)"),
     "P_uhr": ("composition", "the composition phase is a function of the clock values as a theorem (z144)"),
-    "P_ord": ("composition", "ordered distinguishable seams as a theorem (z121)"),
+    "P_ord": ("composition", "ordered distinguishable seams as a theorem (z121); recorded: S reverses the orientation of "
+              "the circle through the four marks and fixes the state of A*, so the order needs a bit that breaks S (z180), "
+              "and pentagon, hexagon and Yang-Baxter for three and four seams require no order (z181)"),
     "P_std": ("composition", "the composition as a morphism of the graded standard form derived from A*; recorded: no "
               "member of the gate family that fixes the standard vector interacts, and the only non-product symmetry of "
               "the standard form is the one-body side exchange (z174), so the interaction needs this premise; the "
               "standard form of a pair of seams admits the interacting gate as a symmetry but selects neither angle nor "
-              "phase (z177)"),
+              "phase (z177); the pair-clock part is the statement that every continuous symmetry of the pair preserves the "
+              "split 10 | 6, and the covering of the four marks gives the joint spin structure, not the gauge sum (z183)"),
     "P_paar": ("statistics", "why the glue is one-sided and summed over separately closed seams; recorded: the number two "
                "then follows (N = 2 alone among 1..12 has normal statistics, z177), the sheets of P1 and the cyclic gluing "
-               "are excluded as its source (z176, z177)"),
+               "are excluded as its source (z176, z177); evenness holds for every N, the number two is numerical for "
+               "N <= 24 (z178)"),
     "P_curv": ("gravity", "a family carrying curvature with fixed coefficient derived from the seam (z100, z115, z128)"),
     "P_G": ("gravity", "the pure number G/R_vac^2 derived; recorded: one relation eps^2 G/a^2 = 4 c3^3 exp(-2/alpha) from "
-            "the native infinity twistor and the ledger rung (z164, z172), the second relation is missing"),
+            "the native infinity twistor and the ledger rung (z164, z172), the second relation is missing; G Lambda = "
+            "12 X is already fixed, the free number is G/a^2 alone; under the area rule G/a^2 = 1/(4 s_1) with the "
+            "entropy per seam s_1, which the spectrum gives in three physically different values (z182)"),
 }
 
 
@@ -1370,10 +1387,35 @@ BENCH_OPEN = {
 }
 
 
-# H6h50 (z175 to z177): candidates for one object behind several open items, each with a computed test. Verdicts:
-# "excluded" (the test fails, with the scope in the meaning), "holds" (the test passes and the content of the item
-# shrinks or is restated, the count stays), "reading" (the items close under a named reading that is not derived).
-# Only a derivation would change the distance; no row is one.
+# H6h51 (z178): bench rows that follow from inventory and from premises the best scenarios already carry. Such a row
+# is no independent open item any more: it closes when its premises close. It is not closed, and it is listed with the
+# premises it rests on. Inventory used: the GNS rule of the process structure (status E) and A*.
+BENCH_DERIVED = [
+    ("K19", ("P_std",), (("z178_ergebnis.json",
+     "superselection of the pair clock (P_std) and the GNS rule give the Gauss constraint U = 1 on the state space as a "
+     "theorem of the standard form; S and T invariance from A* then leave exactly one completion over the clock-neutral "
+     "algebra, the diagonal one with all 16 clock sectors, with fixed weights (12 sqrt(2) - 13)/14 in the sectors of odd "
+     "clock flux. The reading 'superselection = gauge sum' of z176 is replaced by this derivation",
+     lambda d: _check_named(d, "A1 [E] Die uhrneutrale Algebra") and _check_named(d, "A3 [E] Modulgleichung")
+     and _check_named(d, "B1 [E, drei Modelle] Standardform") and _check_named(d, "B2 [E] Gegenmodelle")
+     and _check_named(d, "F1 [E] Kette")),)),
+    ("K20", ("P_std", "P_zentral"), (("z178_ergebnis.json",
+     "the parent is the state of A* on the torus: its one-sided modulator gives T = rho^(-i), with the fusion that is now "
+     "derived (K19) this gives S, the sheet exchange S^2 = C and the clock as the monodromy with one sector (z176 C4); "
+     "the split seam | partner is the pair of opposite arcs of the four marks, two parallel cycles at the distance of "
+     "the half period (z180). Which sector carries the monodromy is the identification of the clock, so the row rests on "
+     "P_zentral as well",
+     lambda d: _check_named(d, "F1 [E] Kette")),
+     ("z176_ergebnis.json", "", lambda d: _check_named(d, "C4 [E] Sektorenobjekt")),
+     ("z180_ergebnis.json", "", lambda d: _check_named(d, "B1 [N] Zweipunktfunktion") and _check_named(d, "B2 [E] Modulare Flüsse")))),
+]
+
+
+# H6h50 and H6h51 (z175 to z182): candidates for one object behind several open items, each with a computed test.
+# Verdicts: "excluded" (the test fails, with the scope in the meaning), "holds" (the test passes and the content of the
+# item shrinks or is restated, the count stays), "reading" (the items close under a named reading that is not derived),
+# "derived" (the item follows from inventory and from premises that are already counted, see BENCH_DERIVED; it stops
+# being an independent open item and is not closed).
 UNIFICATION_CANDIDATES = [
     ("pair of seams = the two sheets of P1", ("P_paar",), "z176_ergebnis.json", "excluded",
      "the sheet exchange is the full charge conjugation S^2 = C, not R^2, not the one-sided conjugation and not the side "
@@ -1424,7 +1466,168 @@ UNIFICATION_CANDIDATES = [
      "the spin table R = i^(2-2h) has clock-neutral states only at odd h; h = 2 with R = 1 exists only as a state of two "
      "objects, which is the double-copy route",
      lambda d: _check_named(d, "Erweiterte Spintabelle")),
+    ("gauge completion of the pair clock from superselection, the GNS rule and A*", ("K19",), "z178_ergebnis.json",
+     "derived",
+     "over the clock-neutral algebra lie five of the 27 completions (three bosonic, two spin forms); the GNS space of the "
+     "state over the neutral observables is the U-invariant subspace, and S and T leave one completion without charged "
+     "field. K19 rests on P_std; the counter-models are E8 (x) E8-bar with a selection rule (fails the GNS rule) and a "
+     "spin form (fails T)",
+     lambda d: _check_named(d, "A1 [E] Die uhrneutrale Algebra") and _check_named(d, "A3 [E] Modulgleichung")
+     and _check_named(d, "B1 [E, drei Modelle] Standardform") and _check_named(d, "B2 [E] Gegenmodelle")),
+    ("one parent: the state of A* on the torus, its modulator and the opposite arcs of the marks", ("K20",),
+     "z180_ergebnis.json", "derived",
+     "the reading is no longer needed for clock, defect and sheet exchange from T = rho^(-i) (z178, z176 C4), and the "
+     "split seam | partner is the pair of opposite arcs of the four marks; the sector that carries the monodromy is the "
+     "identification of the clock. K20 rests on P_std and P_zentral",
+     lambda d: _check_named(d, "B1 [N] Zweipunktfunktion") and _check_named(d, "B2 [E] Modulare Flüsse")),
+    ("evenness of the number of seams from the associator class of the clock", ("P_paar",), "z178_ergebnis.json", "holds",
+     "the anomaly of the one-sided clock is the class 2 in Z4 of an explicit abelian 3-cocycle and is additive, so N is "
+     "even for every N; 'exactly two' is numerical for N <= 24, and the one-sided summed glue stays the premise",
+     lambda d: _check_named(d, "C1 [E] Expliziter abelscher 3-Kozykel") and _check_named(d, "E1 [N, 80 Stellen]")),
+    ("clock = deck parity of the sections extended to the seam (P_deck)", ("P_zentral",), "z179_ergebnis.json", "holds",
+     "the deck parity (+1 on ten, -1 on six parents) has exactly two extensions to E8, mutually inverse and of order 4; "
+     "they commute with the base changes of both deck halves and are the only elements of order 4 that do. P_zentral is "
+     "equivalent to the identification of the clock with the deck parity; the count stays",
+     lambda d: _check_named(d, "A2 [E] Eindeutigkeit der Hebung") and _check_named(d, "B1 [E] Fortsetzung auf E8")
+     and _check_named(d, "C1 [E] Natürlichkeit") and _check_named(d, "D1 [E] Umkehrung")),
+    ("spacetime and order from the relative modularity of the mark arcs", ("P_ord", "I_step", "P_std"),
+     "z180_ergebnis.json", "excluded",
+     "in the state of A* the four arcs have only two modular flows, the commuting translations of the torus, and no "
+     "half-sided modular inclusion; S reverses the orientation of the marks and fixes the state, so no time direction "
+     "follows. Translation, positivity, adjacency and the unit step come from the same inclusions only in the vacuum of "
+     "the base",
+     lambda d: _check_named(d, "B2 [E] Modulare Flüsse") and _check_named(d, "C2 [N] Zustand von A*")
+     and _check_named(d, "D1 [E] Zeitrichtung")),
+    ("interaction from the gluing of three and four seams", ("P_ord", "P_std"), "z181_ergebnis.json", "excluded",
+     "associator and braiding of the clock are classified by H^3_ab = Z8 (Z4 for the parity) without a continuous "
+     "parameter; the gate family is associative and Yang-Baxter for every phase on integer charges, and under P_uhr the "
+     "phase lies on a grid of eight values that still contains zero. Topology fixes discrete phases, neither the point "
+     "of the grid nor an order nor a coupling",
+     lambda d: _check_named(d, "A1 [E] Abelsche 3-Kozykel") and _check_named(d, "B1 [E] Gatterfamilie")
+     and _check_named(d, "C1 [E, N = 3 und 4")),
+    ("graviton as a collective excitation of several seams", ("graviton", "P_curv"), "z182_ergebnis.json", "excluded",
+     "the product of two massless representations of su(2,2) starts one unit above every massless representation, so "
+     "two-seam states are conserved currents and the spin-2 channel is a continuum; the elementary h = +-2 state has no "
+     "bilinear stress tensor (Weinberg-Witten as a statement on characters), so universal coupling needs a gauge "
+     "principle",
+     lambda d: _check_named(d, "A1 [E, Potenzreihen") and _check_named(d, "A2 [E] Kein masseloser Pol")
+     and _check_named(d, "B1 [E] Weinberg-Witten")),
+    ("second gravity relation from the entropy of the state of A*", ("P_G",), "z182_ergebnis.json", "holds",
+     "the spectrum of one seam induces no Einstein term at fixed tau, and its entropy is exactly log 12 because <T> = 0; "
+     "under the area rule G/a^2 = 1/(4 s_1), with three physically different values of s_1. The free real number becomes "
+     "a discrete ambiguity under a named premise; P_G stays",
+     lambda d: _check_named(d, "C1 [N, 40 Stellen]") and _check_named(d, "C2 [E/N] Entropie")
+     and _check_named(d, "D2 [C, Mehrdeutigkeit]")),
+    # H6h52 (z183): the attack on P_std. Its pair-clock part is restated as a locality statement and stays a premise.
+    ("pair-clock part of P_std as locality: no one-sided current mixes the deck halves", ("P_std",),
+     "z183_ergebnis.json", "holds",
+     "the parents see the deck parity as monodromy exactly around the eight sectors with h in odd eighths; a completion "
+     "contains such a mark field exactly if the mixing current (10, 6) is local on neither side (all 27), and under A* "
+     "these are the four graphs with one spectrum, the gauge sums of z178. Superselection of the pair clock with the "
+     "GNS rule, a mark field, no mixing current and 'the 16 is a local field of the pair' are equivalent under A*; the "
+     "standard form is not needed. The carrier of the response power 5/4 (z170) is local only there. P_std stays",
+     lambda d: _check_named(d, "A2 [E] Lemma") and _check_named(d, "A3 [E] Satz")
+     and _check_named(d, "A4 [E] Gleichwertig") and _check_named(d, "C3 [E] Gelöster alpha-Block")),
+    ("P_std from A*, time neutrality or the covering of the four marks", ("P_std",), "z183_ergebnis.json", "excluded",
+     "under A* there are ten completions in three spectra; the six without gauge sum (four of type E8 (x) E8-bar, two of "
+     "type so(16)) satisfy A* with the deck parity as a symmetry. Time neutrality removes two of the ten and no "
+     "spectrum; orientation reversal of the section bases removes E8 (x) E8-bar and leaves so(16). 'No distinguished "
+     "cycles' admits the relative spin structure zero on its own, and every cycle of the seam torus encircles two marks, "
+     "so odd sections are single-valued there: the covering gives the joint sum, not the gauge sum",
+     lambda d: _check_named(d, "B1 [E] Die zehn") and _check_named(d, "B3 [E] Orientierungswechsel")
+     and _check_named(d, "B5 [E] Zeitneutralität") and _check_named(d, "C1 [E/N] A allein")
+     and _check_named(d, "C2 [N] Überlagerungsgeometrie")),
 ]
+
+
+# H6h51: ambiguities recorded by exploration results: sets of physically different models that satisfy the same
+# conditions. An ambiguity is reported and never resolved by choice.
+RECORDED_AMBIGUITIES = [
+    ("value of G/a^2 under the area rule", ("P_G",), "z182_ergebnis.json", 3,
+     "entropy per cell: one seam (log 12), a gauged pair (half of log(80 + 48 sqrt(2))) or one seam minus the "
+     "topological term log 4",
+     lambda d: _check_named(d, "D2 [C, Mehrdeutigkeit]")),
+    ("gate phase under P_uhr", ("P_std",), "z181_ergebnis.json", 8,
+     "pentagon and hexagon on the clock values leave the eight classes of H^3_ab(Z4), among them zero (no gate) and "
+     "P_viertel",
+     lambda d: _check_named(d, "B1 [E] Gatterfamilie")),
+    ("orientation of the circle through the four marks", ("P_ord",), "z180_ergebnis.json", 2,
+     "the two orientations are exchanged by S, which fixes the state of A*; a time direction or an order of the arcs is "
+     "a bit that breaks S",
+     lambda d: _check_named(d, "D1 [E] Zeitrichtung")),
+    ("natural Z4 of the geometry with the fixed algebra of H6", ("P_zentral",), "z180_ergebnis.json", 1,
+     "of the quarter turn of the marks, the half turn of the seam and the deck parity of the sections only the last has "
+     "the fixed algebra so(10) + so(6)",
+     lambda d: _check_named(d, "D2 [E] Drei geometrische Kandidaten")),
+    ("spectrum of the pair of seam and partner under A*", ("P_std",), "z183_ergebnis.json", 3,
+     "the gauge sum with all 16 clock sectors (Z(i) = 80 + 48 sqrt(2)), the so(16) form and E8 (x) E8-bar (both 144 at "
+     "tau = i); the last two have the same partition function on the whole imaginary axis and differ in spin only",
+     lambda d: _check_named(d, "B1 [E] Die zehn") and _check_named(d, "B2 [N, 40 Stellen]")),
+]
+
+
+def counter_models(root=None):
+    """Automatic counter-models. Part one enumerates OriginLab's own universe of the 27 left-right completions of the 16
+    clock sectors and counts, for nested sets of conditions, the physically different models that satisfy all of them.
+    Part two lists the ambiguities recorded by exploration results. More than one model is an ambiguity."""
+    import sys as _sys
+    here = str(_Path(__file__).resolve().parent)
+    if here not in _sys.path:
+        _sys.path.insert(0, here)
+    import clock_sector_search as cs
+    root = EXPLORATION if root is None else _Path(root)
+    comp = [frozenset(x) for x in cs.isotropic_subgroups() if len(x) == 16]
+    glue = [(k, k) for k in range(4)]
+    untwisted = frozenset((a, b) for a in glue for b in glue)
+    neutral = frozenset((a, a) for a in glue)
+    charge = lambda g: (g[0][0] - g[1][0]) % 4
+    flux = lambda g: (g[0][0] - g[0][1]) % 4
+
+    def signature(L):
+        return ("bosonic" if all(cs.Q_lr(g) == 0 for g in L) else "spin", len(L & untwisted),
+                tuple(sorted({charge(g) for g in L & untwisted})),
+                tuple(sorted({(charge(g), str(cs.Q_lr(g))) for g in L if flux(g) == 1})))
+
+    # z183: conditions without a mirror bit. The parents see the deck parity around a sector (x, y) exactly if x + y is
+    # odd; a reflection of one parent acts as x -> -x (or y -> -y) on both sides; the spectrum is the multiset of weights.
+    odd = lambda a: (a[0] + a[1]) % 2 == 1
+    image = lambda L, fx, fy: frozenset((((fx * g[0][0]) % 4, (fy * g[0][1]) % 4), ((fx * g[1][0]) % 4, (fy * g[1][1]) % 4))
+                                        for g in L)
+    spectrum = lambda L: tuple(sorted((str(cs.q_form(g[0])), str(cs.q_form(g[1]))) for g in L))
+    cond = {"S": lambda L: True,
+            "T": lambda L: all(cs.Q_lr(g) == 0 for g in L),
+            "superselection": lambda L: all(charge(g) == 0 for g in L & untwisted),
+            "GNS": lambda L: L & untwisted == neutral,
+            "mark": lambda L: any(odd(g[0]) and odd(g[1]) for g in L),
+            "reflection": lambda L: image(L, 3, 1) == L and image(L, 1, 3) == L,
+            "exchange": lambda L: frozenset((g[1], g[0]) for g in L) == L}
+    levels = [("base changes S alone (fixed spin structure)", ["S"], "signature"),
+              ("A*: S and T", ["S", "T"], "signature"),
+              ("A* and no local field with pair-clock charge", ["S", "T", "superselection"], "signature"),
+              ("A*, superselection and the GNS rule", ["S", "T", "superselection", "GNS"], "signature"),
+              ("S, superselection and the GNS rule, without T", ["S", "superselection", "GNS"], "signature"),
+              ("A* and time neutrality (exchange of seam and partner)", ["S", "T", "exchange"], "spectrum"),
+              ("A* and orientation reversal of the section bases", ["S", "T", "reflection"], "spectrum"),
+              ("A* and a local field with the deck parity as monodromy of the parents", ["S", "T", "mark"], "spectrum")]
+    reports = []
+    for name, cs_, by in levels:
+        models = [L for L in comp if all(cond[c](L) for c in cs_)]
+        sigs = sorted({signature(L) for L in models})
+        spectra = len({spectrum(L) for L in models})
+        n = len(sigs) if by == "signature" else spectra
+        reports.append({"conditions": name, "models": len(models), "physically_different": len(sigs), "spectra": spectra,
+                        "counted_by": by,
+                        "signatures (statistics, untwisted sectors, charges, (charge, spin) at clock flux 1)":
+                            [[a, b, list(c), [list(x) for x in d]] for a, b, c, d in sigs],
+                        "verdict": "unique" if n == 1 else ("empty" if not n else "ambiguous")})
+    recorded = []
+    for name, items, fname, n, meaning, pred in RECORDED_AMBIGUITIES:
+        path = root / fname
+        ok = path.exists() and pred(json.loads(path.read_text()))
+        recorded.append({"question": name, "items": list(items), "source": fname, "models": n if ok else None,
+                         "verdict": "pending" if not ok else ("unique" if n == 1 else "ambiguous"), "meaning": meaning})
+    return {"completions_of_the_clock_sectors": reports, "recorded": recorded,
+            "ambiguous": [r["question"] for r in recorded if r["verdict"] == "ambiguous"]}
 
 
 def unification_candidates(root=None):
@@ -1442,7 +1645,10 @@ def unification_candidates(root=None):
     counts = {}
     for r in rows:
         counts[r["verdict"]] = counts.get(r["verdict"], 0) + 1
-    return {"candidates": rows, "counts": counts, "closed_by_derivation": [], "open_total": d["open_total"],
+    derived = sorted({x for r in rows if r["verdict"] == "derived" for x in r["would_close"]} & set(d["bench_derived"]))
+    return {"candidates": rows, "counts": counts, "closed_by_derivation": [],
+            "derived_under_premises": {k: d["bench_derived"][k]["rests_on"] for k in derived},
+            "open_total": d["open_total"],
             "open_under_readings": sorted(open_items - read), "open_total_under_readings": len(open_items - read)}
 
 
@@ -1465,16 +1671,24 @@ def complete_solution_distance(root=None):
     least = min(r[0] for r in rows)
     best = [r for r in rows if r[0] == least]
     items = sorted({x for r in best for x in r[2] + r[3]})
-    by_question = {"origin": sorted(BENCH_OPEN)}
+    derived = {}
+    for row, prem, sources in BENCH_DERIVED:
+        paths = [(root / fname, pred) for fname, _, pred in sources]
+        if set(prem) <= set(items) and all(p_.exists() and pred(json.loads(p_.read_text())) for p_, pred in paths):
+            derived[row] = {"rests_on": list(prem), "inventory": [AXIOM, "GNS rule"],
+                            "sources": [fname for fname, _, _ in sources], "meaning": sources[0][1]}
+    bench = {k: v for k, v in BENCH_OPEN.items() if k not in derived}
+    by_question = {"origin": sorted(bench)}
     for x in items:
         by_question.setdefault(FRONTIER.get(x, ("unnamed", ""))[0], []).append(x)
     return {"target": "all clauses, axiom alone, no free number, bench rows K19 and K20 closed", "scenarios": len(rows),
             "distance": {"missing_clauses": least[0], "free_numbers": least[1], "premises_beyond_axiom": least[2]},
-            "complete": least == (0, 0, 0) and not BENCH_OPEN, "best": [r[1] for r in best],
+            "complete": least == (0, 0, 0) and not bench, "best": [r[1] for r in best],
             "open_items": {x: {"question": FRONTIER.get(x, ("unnamed", ""))[0], "closes_with": FRONTIER.get(x, ("", ""))[1],
                                "recorded": PREMISE_MEANING.get(x, "clause of the scenario pool")} for x in items},
-            "bench_open": {k: {"question": q, "closes_with": t} for k, (q, t) in BENCH_OPEN.items()},
-            "open_total": len(items) + len(BENCH_OPEN), "by_question": by_question, "conventions": conv}
+            "bench_open": {k: {"question": q, "closes_with": t} for k, (q, t) in bench.items()},
+            "bench_derived": derived,
+            "open_total": len(items) + len(bench), "by_question": by_question, "conventions": conv}
 
 
 class _Survivors:
@@ -1671,6 +1885,7 @@ def run_reconstruction(root=None):
     out["universes"]["scenarios"] = res
     out["complete_solution"] = complete_solution_distance(root)
     out["unification"] = unification_candidates(root)
+    out["counter_models"] = counter_models(root)
     h6 = next(o for o in s2 if o["t"] == "0")
     dq = out["universes"]["doublet_states"]["questions"]["+".join(DOUBLET_QUESTION)]
     bq = out["universes"]["normal_bundles"]["questions"]["twistor_line+choice_free"]

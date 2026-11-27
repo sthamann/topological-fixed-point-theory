@@ -1681,3 +1681,196 @@ nichts befördert.
   Ledgerwert verlangt 9,6·10¹²² Nähte je Horizont. Zustandsprofile tragen keine Krümmung.
 - **Abgebrochen und offen:** modulare Statistik (z126), I_step (z131), Uhrhebung (z132), konforme Gravitation (z134),
   Spin-2-Pol (z138), Ordnung (z139), Maßbilanz (z140), Relativentropie-Wirkung (z141), ρ⋆ (z142).
+
+### Nachtrag z178–z182: die sechs Folgeprogramme F1 bis F6, gerechnet
+
+Grundlage ist der Auftrag „Weg zur vollständigen Lösung“ vom 27. November 2026 mit sechs Folgeprogrammen. Alle sechs
+sind gerechnet (fünf Läufe, 40 Prüfungen, alle bestanden). Ergebnis in einem Satz: K19 und K20 hängen jetzt ohne
+Lesart an schon gezählten Annahmen, die übrigen acht Punkte bleiben offen, drei davon mit einem Sperrsatz.
+
+| Programm | Lauf | Prüfungen | Ziel | Urteil |
+| --- | --- | --- | --- | --- |
+| F1 Eichvervollständigung | z178 | 12 | K19, K20, P_paar, P_std | K19 und K20 folgen aus P_std (K20 dazu P_zentral), GNS-Regel und A\*; Geradzahligkeit für jedes N; P_std bleibt |
+| F6 Uhr aus Natürlichkeit | z179 | 7 | P_zentral | gleichwertig mit „Uhr = Deckparität der Schnitte“ (P_deck); Ordnung 4 erzwungen; Identifikation offen |
+| F2 relative Modularität | z180 | 9 | P_std, P_ord, I_step | Sperrsatz im Zustand von A\*; alles Verlangte nur im Vakuum der Basis |
+| F3 Verklebung mehrerer Nähte | z181 | 5 | P_std, P_ord, Dynamik | nur diskrete Phasen (ℤ₈), keine Ordnung, keine Kopplung |
+| F4 Graviton kollektiv | z182 | 7 (mit F5) | Graviton, P_curv | kein Pol aus mehreren Nähten; Weinberg–Witten als Darstellungssatz |
+| F5 zweite Gleichung | z182 | | P_G | bedingt G/a² = 1/(4 s₁), drei Werte für s₁: Mehrdeutigkeit |
+
+**F1, die Naht als notwendige Eichvervollständigung (z178).**
+
+- **Fixpunktalgebren [E].** Die uhrneutrale Algebra N = (E₈ ⊗ Ē₈)^U (U = R ⊗ R̄⁻¹) liegt in genau fünf der 27
+  Vervollständigungen. Drei sind bosonisch: E₈ ⊗ Ē₈ selbst (alle Ladungen, kein Uhrfluss), eine Zwischenform (nur
+  die Fermionparität geeicht) und die Eichsumme (alle vier Flüsse, keine Ladung). Zwei sind Spin-Formen. Die
+  Sektoren von N sind das Doppel D(ℤ₄) mit q = xy/4 (x Fluss, y Ladung).
+- **Superauswahl ist noch keine Eichung, aber die Lücke ist ein Satz [E].** In der Standardform ist der GNS-Raum
+  des Zustands über den uhrneutralen Observablen genau der U-invariante Teilraum. E(X) = ¼ Σ UᵏXU⁻ᵏ ist die
+  Kompression darauf (Jones-Projektion), und im Quarterzustand ist U = Δ^(−i/2). Mit der GNS-Regel des Bestands
+  folgt der Gauß-Zwang U = 1.
+- **Eindeutigkeit [E].** S und T (A\*) lassen auf den 16 Sektoren von N einen dreidimensionalen invarianten Raum;
+  mit „Vakuum einmal, keine Ladung“ bleibt genau eine Lösung, jeder Fluss einmal. Das ist die diagonale
+  Vervollständigung mit Z(i) = 80 + 48√2 und dem Gewicht (12√2 − 13)/14 bei ungeradem Uhrfluss.
+- **Zwei Gegenmodelle.** „E₈ ⊗ Ē₈ mit Auswahlregel“ erfüllt A\* und die Superauswahl, scheitert aber an der
+  GNS-Regel. Eine Spin-Form (Fluss 1 mit Ladung 2 und Spin ½) erfüllt Superauswahl, GNS-Regel und S, scheitert
+  aber an T.
+- **Assoziator und Anomalie [E].** Ein expliziter abelscher 3-Kozykel der 16 Sektoren erfüllt Pentagon und beide
+  Hexagone. Die Anomalie der einseitigen Uhr ist die Klasse 2 in ℤ₄ und additiv: 2(N_L − N_R) mod 4. Die Nahtzahl
+  ist damit für jedes N gerade (bisher numerisch bis 12). Eine lokale Erweiterung ist genau dann assoziativ und
+  kommutativ, wenn q = 0 ist (neun Fälle, Smith-Form).
+- **Dieselbe Operation wie in H6 [E/N].** Die Eichsumme ist die Spinstruktursumme der zwei Deckhälften getrennt
+  (10 und 6 Eltern). A\* allein wählt zwischen ihr, so(16)₁ diagonal und E₈ ⊗ Ē₈ nicht.
+- **Nahtzahl [N].** Normale Statistik nur für N = 2, jetzt für gerade N bis 24 bei 80 Stellen. Kein Beweis.
+- **Was bleibt.** P_std selbst (warum die Paaruhr superselektiert ist) und der Rest von P_paar (einseitig, getrennt
+  summiert, genau zwei).
+
+**F6, die Uhr aus der Deckstruktur (z179).**
+
+- **Satz [E].** Die Deckparität der 16 Eltern (+1 auf zehn, −1 auf sechs) hat auf der Naht genau zwei
+  Fortsetzungen, ω und ω⁻¹ (ω = Produkt der sechs ungeraden Eltern). Beide haben Ordnung 4; eine Fortsetzung der
+  Ordnung 2 verletzt die Fusion 128 × 128 → 120.
+- **Folgen [E].** ω² = (−1)^F, Sp ω = 0, Fixalgebra so(10) ⊕ so(6). ω vertauscht mit allen Basiswechseln der
+  Deckhälften; Orientierungswechsel der ungeraden Hälfte und die Ladungskonjugation geben ω⁻¹ (das ist C R C = R⁻¹).
+- **Umkehrung [E].** c und c⁻¹ sind die einzigen Elemente der Ordnung 4, die mit so(10) ⊕ so(6) vertauschen.
+- **Urteil.** P_zentral ist gleichwertig mit „die Uhr ist die Deckparität der Schnitte“ (P_deck). Offen ist die
+  Identifikation: dass der Schritt der Zusammensetzung diese Deckparität meint. A\* benennt keine Uhr.
+
+**F2, Raumzeit aus relativer Modularität (z180).**
+
+- **Wörterbuch [N].** Die Koordinate der Basis ist das Quadrat der Zweipunktfunktion des Zustands von A\*
+  (℘ = π²K²). Jeder Bogen zwischen benachbarten Marken ist ein ganzer Zyklus des Torus. Gegenüberliegende Bögen
+  sind Naht und Tomita-Partner, die anderen zwei ihr S-Bild. Die dritte Paarung ist der Kanal mit Halbdrehung.
+- **Vakuum der Basis [E, L].** Die Inklusionen der Bögen geben Translation mit positivem Erzeuger,
+  Zusammensetzung benachbarter Bögen, sl(2, ℝ) und den Einheitsschritt als Markenabstand.
+- **Sperrsatz im Zustand von A\* [E/N].** Vier Bögen haben nur zwei modulare Flüsse, die Translationen des Torus.
+  Sie vertauschen und haben keinen Fixpunkt. Es gibt keine halbseitige Inklusion; im Typ I gibt es sie nie.
+- **Keine Zeitrichtung [E].** S kehrt den Umlaufsinn der Marken um und lässt den Zustand fest. P_ord braucht ein
+  Bit, das S bricht.
+- **Urteil.** P_vac, P_ord und I_step bleiben. Der Weg „ohne Zustandstausch“ ist in dieser Form geschlossen.
+
+**F3, Wechselwirkung aus der Verklebung (z181).**
+
+- **Klassifikation [E].** H³_ab(ℤ₂) = ℤ₄ und H³_ab(ℤ₄) = ℤ₈ aus der Smith-Normalform, ohne kontinuierlichen
+  Parameter. Die 16 Sektoren tragen die Klassen 5 und 3; auf dem E₈-Kleber heben sie sich auf.
+- **Gatter [E].** e^(−iφQ₁Q₂) ist auf ganzen Ladungen für jedes φ assoziativ und erfüllt Yang–Baxter für drei und
+  vier Nähte. Erst unter P_uhr wird φ diskret: acht Werte, darunter null und P_viertel.
+- **Urteil.** Die Topologie legt die Statistikklasse fest, nicht den Punkt im Raster, keine Ordnung, keine Kopplung.
+
+**F4 und F5, Gravitation (z182).**
+
+- **Kein kollektiver Pol [E].** Das Produkt zweier masseloser Darstellungen von su(2,2) beginnt eine Einheit über
+  jeder masselosen Darstellung (15 Paare). Zweinahtzustände sind erhaltene Ströme; der Spin-2-Kanal ist ein
+  Kontinuum.
+- **Weinberg–Witten als Darstellungssatz [E].** Die Bilinearen der Helizität j sind Ströme vom Spin ≥ 2j. Das
+  elementare h = ±2 der Standardform (z83) hat keinen bilinearen Energie-Impuls-Tensor. Universelle Kopplung
+  braucht ein Eichprinzip, also P_curv.
+- **Buchführung [E].** GΛ = 12X = 2,84·10⁻¹²² und S_dS = π/(4X) liegen durch die erste Relation fest. P_G ist nur
+  die Verteilung auf G/a² und ε².
+- **Kein induzierter Einstein-Term [N].** log Z(iy) = 2π/(3y) plus exponentiell kleine Terme, ohne Potenzterm.
+- **Entropie [E/N].** Weil ⟨T⟩ = 0 ist, ist die Entropie des Zustands von A\* genau log Z: log 12 je Naht.
+- **Bedingte zweite Gleichung [C].** Unter der Flächenregel ist G/a² = 1/(4 s₁). Für s₁ gibt es drei
+  verschiedene Werte (eine Naht, geeichtes Paar, mit topologischem Term). Das ist eine Mehrdeutigkeit, kein Wert.
+
+**OriginLab.** `reconstruction_search` führt jetzt 19 Kandidaten (11 ausgeschlossen, 5 gelten, 1 Lesart, 2
+hergeleitet unter Annahmen), die Liste `BENCH_DERIVED` und den Bericht `counter_models`. Der Bericht zählt in der
+Welt der 27 Vervollständigungen die physikalisch verschiedenen Modelle je Bedingungssatz und führt gemeldete
+Mehrdeutigkeiten.
+
+| Bedingungen | Modelle | Urteil |
+| --- | --- | --- |
+| nur S (feste Spinstruktur) | 27 | mehrdeutig |
+| A\*: S und T | 10 | mehrdeutig |
+| A\* und kein Feld mit Paaruhr-Ladung | 3 | mehrdeutig |
+| A\*, Superauswahl und GNS-Regel | 1 | eindeutig |
+| ohne T | 2 | mehrdeutig (Spin-Form) |
+
+Gemeldete Mehrdeutigkeiten: der Wert von G/a² unter der Flächenregel (3), die Gatterphase unter P_uhr (8), der
+Umlaufsinn der Marken (2).
+
+**Abstand.** 1 fehlende Klausel, 1 freie Zahl, 7 Annahmen wie zuvor. K19 und K20 sind keine eigenen Punkte mehr:
+acht unabhängige offene Punkte statt zehn. Geschlossen ist keiner.
+
+| Frage | Punkte | Änderung |
+| --- | --- | --- |
+| Ursprung | keine eigenen | K19 ruht auf P_std, K20 auf P_std und P_zentral (mit GNS-Regel und A\*) |
+| Zusammensetzung | P_std, P_ord | P_std trägt jetzt auch den Ursprung; P_ord mit Sperrsatz (S-Symmetrie) |
+| Zuordnung | I_step, P_zentral | P_zentral ⇔ P_deck; I_step mit Sperrsatz (Typ I) |
+| Gravitation | P_curv, P_G, Klausel Graviton | kollektiver Pol ausgeschlossen; P_G diskret mehrdeutig unter Flächenregel |
+| Statistik | P_paar | Geradzahligkeit bewiesen; „genau zwei“ numerisch bis 24 |
+
+**Einordnung.** Die Leithypothese des Auftrags trägt an einer Stelle: Das Fundamentale ist die Relation zwischen
+Naht und Partner (ihre uhrneutrale Algebra), und daraus folgt die Naht mit Defekt. Sie trägt an drei Stellen
+nicht: Aus relativer Modularität, aus der Verklebung und aus kollektiven Anregungen folgen weder Zeitrichtung noch
+Kopplung noch Graviton. P_std ist jetzt die Annahme mit dem größten Gewicht; an ihr hängen drei Punkte.
+
+**Nächster Schritt.** P_std herleiten oder widerlegen: Folgt die Superauswahl der Paaruhr aus A\*, angewandt auf
+die Spinstrukturen der zwei Deckhälften einzeln (z178 D1, z179)? Die Prüfung ist ein Gegenmodell-Lauf: Gibt es ein
+Modell mit A\* und GNS-Regel, in dem ein Feld mit Paaruhr-Ladung lokal ist und die Deckhälften trotzdem getrennte
+Spinstrukturen tragen? Prüfbank unverändert 13 P / 7 L. Keine Komplettlösung, nichts befördert.
+
+### Nachtrag z183: Angriff auf P_std
+
+**Auftrag.** Der nächste Schritt aus dem Nachtrag z178–z182: P_std herleiten oder widerlegen. Gerechnet ist `z183`
+(13 Prüfungen, alle bestanden), dazu drei neue Bedingungen in `counter_models()`.
+
+**Ergebnis in einem Satz.** P_std ist nicht hergeleitet und nicht widerlegt; sein für K19 nötiger Teil ist jetzt eine
+Lokalitätsaussage ohne Standardform, und die Gegenmodelle sind vollständig aufgezählt.
+
+**Was P_std für den Ursprung verlangt.** Nur der erste Teil von P_std trägt K19 und K20: Die Paaruhr ist
+superselektiert. Mit P_deck (z179) wirkt die Paaruhr auf die Eltern beider Seiten als Deckparität. Die Frage ist
+also, ob die Deckparität eine Symmetrie des Paars ist oder eine Redundanz.
+
+**Neue exakte Form (Teil A).**
+
+- Die 16 Eltern sind die Vektorgewichte von D₅ + D₃. Ein Feld im Sektor (x, y) hat mit ihnen die Monodromie (−1)^x
+  auf den zehn und (−1)^y auf den sechs. Die Eltern sehen die Deckparität genau um die acht Sektoren mit h in
+  ungeraden Achteln. Kein Feld von E₈ hat diese Monodromie.
+- Lemma (alle 27 Vervollständigungen): Ein solches Markenfeld ist genau dann lokal, wenn der Mischstrom (10, 6) auf
+  keiner Seite lokal ist. Grund: Die Parität ist die Monodromie mit dem Mischstrom, und jede Vervollständigung ist
+  ihr eigenes Orthogonal.
+- Satz: Unter A\* sind das genau die vier Graphen mit einem Spektrum, die Eichsummen aus z178.
+- Unter A\* gleichwertig: Superauswahl der Paaruhr mit GNS-Regel; ein Markenfeld; kein einseitiger Strom mischt die
+  Deckhälften; die 16 ist ein lokales Feld des Paars (h = h̄ = 5/8); die 4 ist eines (3/8).
+
+**Gegenmodelle (Teil B).**
+
+| Typ unter A\* | Anzahl | Ströme je Seite | Z(i) | Deckparität |
+| --- | --- | --- | --- | --- |
+| Eichsumme (Graph) | 4 | 60 | 80 + 48√2 | Redundanz |
+| so(16)-Form | 2 | 120 | 144 | Symmetrie |
+| E₈ ⊗ Ē₈ | 4 | 248 | 144 | Symmetrie |
+
+Die so(16)-Form und E₈ ⊗ Ē₈ haben auf der ganzen imaginären Achse dieselbe Zustandssumme; sie unterscheiden sich nur
+im Spin. Thermische Größen trennen also nur die Eichsumme von den beiden anderen.
+
+| Bedingung zusätzlich zu A\* | Modelle | Spektren | Urteil |
+| --- | --- | --- | --- |
+| keine | 10 | 3 | mehrdeutig |
+| Zeitneutralität (Tausch Naht ↔ Partner) | 8 | 3 | mehrdeutig |
+| Orientierungswechsel der Schnittbasen | 6 | 2 | mehrdeutig |
+| ein Markenfeld | 4 | 1 | eindeutig |
+
+Der Orientierungswechsel einer Schnittbasis führt E₈ in die zweite, isomorphe Verklebung und schließt damit den Typ
+E₈ ⊗ Ē₈ aus. Die so(16)-Formen fallen nur durch die Aussage selbst.
+
+**Der Bestand entscheidet nicht (Teil C).**
+
+- A allein: Die relative Spinstruktur δ der Deckhälften hat die Bahnen {0} und eine Dreierbahn. δ = 0 ist für sich
+  invariant; „keine ausgezeichneten Zyklen“ verlangt die getrennte Summe nicht.
+- Überlagerung: Jeder Zyklus des Nahttorus umläuft zwei der vier Marken. Ungerade Schnitte sind dort einwertig. Die
+  Geometrie gibt δ = 0, also die gemeinsame Summe. Die Eichsumme kommt nicht aus der Überlagerung.
+- Gelöster α-Block: Der native Träger der Antwortpotenz 5/4 (die 16, z170) ist nur in der Eichsumme ein lokales Feld.
+  Die Gleichsetzung ist in z170 eine Lesart; sie stützt P_std und leitet es nicht her.
+
+**Abstand.** Unverändert: 1 fehlende Klausel, 1 freie Zahl, 7 Annahmen, acht unabhängige offene Punkte. K19 und K20
+ruhen weiter auf P_std (K20 zusätzlich auf P_zentral). Neu als Mehrdeutigkeit gemeldet: das Spektrum des Paars unter
+A\* (3).
+
+**Einordnung.** Der Paaruhr-Teil von P_std lautet jetzt: Jede stetige Symmetrie des Paars erhält die Teilung 10 | 6.
+Gleichbedeutend ist ein Entweder-oder: Entweder sind die geladenen Ströme von E₈ lokal und die 16 ist das Ende einer
+Defektlinie, oder die 16 ist ein lokales Feld und diese Ströme sind es nicht. A\* lässt beides zu. Der zweite Teil
+von P_std (P_uhr) ist nicht berührt.
+
+**Nächster Schritt.** Die Lesart aus z170 prüfen, an der die einzige Stütze hängt: Ist die Antwortpotenz 5/4 des
+gelösten α-Blocks zwingend die Zweipunktfunktion eines lokalen Felds vom Gewicht 5/8? Wenn ja, folgt der Paaruhr-Teil
+von P_std aus A\* und einem gelösten Block. Wenn nein, bleibt er eine unabhängige Annahme. Prüfbank unverändert
+13 P / 7 L. Keine Komplettlösung, nichts befördert.

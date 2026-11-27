@@ -1,0 +1,167 @@
+{
+ "checks": {
+  "A1 [E] Abelsche 3-Kozykel (omega, c) der Uhrgruppe, also Assoziator und Verzopfung zusammen (Pentagon und beide Hexagone als ganzzahliges lineares System, Smith-Normalform). Die Zusammenhangskomponente der Lösungen besteht genau aus den Korändern (gleiche Dimension), und die Komponentengruppe ist H^3_ab(Z_2, U(1)) = Z_[4] und H^3_ab(Z_4, U(1)) = Z_[8]. Für die Fermionparität gibt es also genau vier Verklebungen (Boson, Semion, Fermion, Antisemion), für die Uhr der Ordnung 4 genau acht. Einen kontinuierlichen Parameter gibt es nicht": true,
+  "A2 [E] Vertreter: Für m = 0..7 erfüllt c(a, b) = e^(2 pi i m a b/8), omega(a, b, c) = (-1)^(m a u) (u der Übertrag von b + c) Pentagon und beide Hexagone. Die acht Klassen sind durch den Spin des Erzeugers c(1, 1) = e^(2 pi i m/8) getrennt, und der ist unter Korändern invariant. In den 16 Uhrsektoren stehen die Klassen m = 5 (so(10)-Hälfte) und m = 3 (so(6)-Hälfte); auf dem E8-Kleber (k, k) addieren sie sich zu 8 = 0 (bosonisch, kein Assoziator)": true,
+  "B1 [E] Gatterfamilie e^(-i phi Q_1 Q_2): Auf ganzzahligen Ladungen ist sie für jedes phi ein Bicharakter, also streng assoziativ und ohne jede Bedingung an phi. Als Funktion der Uhrwerte Q mod 4 (P_uhr) ist sie ohne Assoziator wohldefiniert genau für phi in (pi/2) Z (vier Werte: 0, pi/2, pi, 3 pi/2); mit dem Assoziator omega = e^(-4 i phi a u) erfüllt sie das Pentagon für phi in (pi/8) Z und die Hexagone für phi in (pi/4) Z. Zusammen bleiben genau acht Werte, die Klassen von H^3_ab(Z_4). P_viertel (phi = pi/2) ist die Klasse der Ordnung 4; sie ist die Monodromie der so(10)-Hälfte mit sich selbst, e^(2 pi i 2 * 5 k^2/8) = i^(k^2), und zugleich die Differenz 5 - 3 der beiden Deckhälften auf dem Kleber. Aus P_uhr folgt damit ein diskretes Raster, aber nicht, welcher seiner Punkte gilt: phi = 0 (kein Gatter) besteht alle Bedingungen ebenso": true,
+  "C1 [E, N = 3 und 4 Nähte, Ladungen 0..3, drei Werte von phi] Auf ganzzahligen Ladungen vertauschen alle Paargatter. Das Produkt über alle Paare hängt nicht von der Reihenfolge ab und ist e^(-i phi ((Summe Q)^2 - Summe Q_i^2)/2), also eine Funktion der Gesamtladung und der Einzelladungen. Die Tauschgatter P_i G_(i,i+1) erfüllen die Zopfrelationen für jedes phi, und ihr Quadrat ist das Gatter zu 2 phi. Die Verklebung von drei und vier Nähten stellt also keine Bedingung an phi und verlangt keine Ordnung der Nähte: Aus Pentagon, Hexagon und Yang-Baxter folgt weder P_viertel noch P_ord": true,
+  "C2 [E] Defektsektor: N gleiche Uhrsektoren (1, 0) (die 16, Spin 5/8) tragen eine eindimensionale Darstellung der Zopfgruppe B_N mit sigma_i = e^(2 pi i 5/8). Sie hat die Ordnung 8, sigma_i^2 = i ist nicht 1: Der Tausch faktorisiert nicht über die Permutationsgruppe (N = 3, 4 und jedes N), die Nähte im Defektsektor sind weder Bosonen noch Fermionen. Im unverdrillten Teil (E8-Kleber, Spin 0) ist der Tausch trivial. Die Anomalie der diagonalen Uhr über N Nähte ist 2N mod 4 = [2, 0, 2, 0, 2, 0] (z178): drei Nähte sind anomal, vier nicht. Eine Zopfphase ordnet die Nähte nicht: Sie ist eine Zahl, kein Etikett. P_ord folgt daraus nicht": true
+ },
+ "befunde": {
+  "Die Verklebungsdaten der Uhr sind vollständig klassifiziert und diskret (Z_8, für die Parität Z_4)": true,
+  "Unter P_uhr legt die Topologie phi auf ein Raster von acht Werten fest": true,
+  "Die Topologie wählt den Punkt des Rasters (P_viertel) oder schließt phi = 0 aus": false,
+  "Die Verklebung von drei und vier Nähten erzwingt eine Ordnung der Nähte (P_ord)": false,
+  "Die Topologie legt eine dynamische Kopplung fest (kontinuierlicher Parameter, nichtlineare Dynamik)": false,
+  "Komplettlösung": false
+ },
+ "zahlen": {
+  "A1": {
+   "2": {
+    "Variablen": 12,
+    "Gleichungen": 32,
+    "Rang": 10,
+    "Torsion": [
+     4
+    ],
+    "Dimension der Kozykel": 2,
+    "Rang der Koränder": 2,
+    "Koränder sind Kozykel": true,
+    "Konvention (omega, c)": "(1, -1)",
+    "Rechnung": "flint"
+   },
+   "4": {
+    "Variablen": 80,
+    "Gleichungen": 384,
+    "Rang": 68,
+    "Torsion": [
+     8
+    ],
+    "Dimension der Kozykel": 12,
+    "Rang der Koränder": 12,
+    "Koränder sind Kozykel": true,
+    "Konvention (omega, c)": "(1, -1)",
+    "Rechnung": "flint"
+   }
+  },
+  "A2": {
+   "Klassen m = 0..7 erfüllen (Pentagon, H1, H2)": {
+    "0": [
+     true,
+     true,
+     true
+    ],
+    "1": [
+     true,
+     true,
+     true
+    ],
+    "2": [
+     true,
+     true,
+     true
+    ],
+    "3": [
+     true,
+     true,
+     true
+    ],
+    "4": [
+     true,
+     true,
+     true
+    ],
+    "5": [
+     true,
+     true,
+     true
+    ],
+    "6": [
+     true,
+     true,
+     true
+    ],
+    "7": [
+     true,
+     true,
+     true
+    ]
+   },
+   "Spin des Erzeugers c(1, 1)": [
+    "0",
+    "1/8",
+    "1/4",
+    "3/8",
+    "1/2",
+    "5/8",
+    "3/4",
+    "7/8"
+   ]
+  },
+  "B1": {
+   "phi = pi j/32, erlaubte j": {
+    "wohldefiniert ohne Assoziator": [
+     0,
+     16,
+     32,
+     48
+    ],
+    "Pentagon": [
+     0,
+     4,
+     8,
+     12,
+     16,
+     20,
+     24,
+     28,
+     32,
+     36,
+     40,
+     44,
+     48,
+     52,
+     56,
+     60
+    ],
+    "Hexagone": [
+     0,
+     8,
+     16,
+     24,
+     32,
+     40,
+     48,
+     56
+    ],
+    "Pentagon und Hexagone": [
+     0,
+     8,
+     16,
+     24,
+     32,
+     40,
+     48,
+     56
+    ]
+   }
+  },
+  "C1": {
+   "Yang-Baxter für jedes phi": true,
+   "Reihenfolge der Paare gleichgültig": true
+  },
+  "C2": {
+   "Tausch zweier Defekte": "(-0.7071067811865477-0.7071067811865475j)",
+   "Ordnung": 8,
+   "Monodromie": "(3.3306690738754696e-16+1.0000000000000002j)",
+   "Anomalie der diagonalen Uhr über N Nähte (in Z_4)": {
+    "1": 2,
+    "2": 0,
+    "3": 2,
+    "4": 0,
+    "5": 2,
+    "6": 0
+   }
+  }
+ },
+ "urteil": "F3 ist gerechnet und entschieden: Die Verklebung legt nur diskrete Phasen fest. (1) Assoziator und Verzopfung der Uhr sind durch H^3_ab klassifiziert: Z_4 für die Fermionparität, Z_8 für die Uhr der Ordnung 4, ohne kontinuierlichen Parameter; die 16 Uhrsektoren tragen die Klassen 5 und 3, die sich auf dem E8-Kleber aufheben. (2) Das native Gatter e^(-i phi Q_1 Q_2) ist auf ganzzahligen Ladungen für jedes phi assoziativ, erfüllt Yang-Baxter für drei und vier Nähte und hängt nicht von der Reihenfolge der Paare ab. Erst als Funktion der Uhrwerte (P_uhr) wird phi diskret: vier Werte ohne Assoziator, acht mit Pentagon und Hexagon. P_viertel ist die Klasse der Ordnung 4, gleich der Monodromie der so(10)-Hälfte (z144); ausgewählt wird sie von der Topologie nicht, phi = 0 besteht ebenso. (3) Im Defektsektor ist der Tausch zweier Nähte die Phase e^(2 pi i 5/8) der Ordnung 8; das ist Statistik, keine Ordnung. P_ord und jede kontinuierliche Kopplung bleiben außerhalb dessen, was Pentagon und Hexagon festlegen. Der Weg 'Wechselwirkung aus der Verklebung' gibt damit die Statistikklassen und das Raster von phi, aber weder die Auswahl im Raster noch die Dynamik. Keine Komplettlösung, nichts befördert."
+}

@@ -8152,3 +8152,9 @@ Agentenläufe z110–z115 und z117–z119 (alle reproduziert), eigene Prüfung z
 - **Szenario-Suche:** 46 080 Szenarien; 108 erfüllen alles außer Graviton und modular konsistenter Statistik.
 
 **Prüfstand:** 13 P, 7 L (K13, K15, K16, K19 präzisiert). Atlas-Revision 4fe8d713fac851fc02a42226. Ledger unverändert, nichts befördert.
+
+## WELLENPAAR20261126 · Zwei schaltbare Anregungen und die Herkunft ihrer Paarung
+
+Bei der freien chiralen Quelle mit der vollständigen geometrischen Kovarianz des Annulus sind die Anregungszahlen auf beiden Rändern pro positiver Stromfrequenz exakt gleich. Die geordnete Normungleichung ist gesättigt. Im einzelnen Paarsektor folgen der positive Szegőkern, der einseitige Shift und die dimensionslose modulare Energielücke. Die zwei separaten Quarterströme derselben thermischen Quelle faktorisieren. Chandrasekarans Scherversuch am Nullkegel liefert dieselbe dimensionslose Kreuzantwort bei fester Boostfrequenz. Ein Puls mit endlicher Frequenzbreite verfehlt die exakte Paarung. Bei den klassischen Wellen zerstört eine exakte Einstein Vakuumkollision die harmonische Viererlage. Das schließt die allgemeine Schutzbehauptung aus.
+
+Der erste offene physische Schritt ist die Zweirandkovarianz der markierten Originalquelle. Die Randnorm des Stroms, die absolute P1 Normierung und physische Zeit haben unterschiedliche Voraussetzungen. F1 bleibt offen. Der Abgleich mit den elf Kandidaten von Z175 bis Z177 bestätigt für die getrennte H6 Summe genau zwei Nahtpaare im getesteten Fenster. Ein realer Scherboost um 4π kehrt im Nullkegelversuch nicht zurück. Zwei Wellen mit verschiedenen positiven nullartigen Impulsen haben zeitartigen Gesamtimpuls. Atlasrevision nach Quellenabgleich `5c24890a1c222386004c22df`. [Herleitung, Schaltertabellen, Gegenproben und Quellen](../../../experiments/theory-contracts/wellenpaar-zweiquellen-20261126/REPORT.md)
